@@ -5,10 +5,18 @@
   "type": "module",
   "exports": "./src/index.ts",
   "dependencies": {
+    "@fastify/cors": "11.3.0",
     "@flow/contracts": "workspace:*",
     "fastify": "5.12.5",
-    "@fastify/cors": "11.3.0",
+    "npm-package-arg": "13.0.2",
+    "pacote": "21.5.1",
     "pg": "8.23.1",
-    "pg-boss": "12.37.0"
+    "pg-boss": "12.37.0",
+    "ssri": "13.0.1"
+  },
+  "devDependencies": {
+    "@types/npm-package-arg": "6.1.4",
+    "@types/pacote": "11.1.8",
+    "@types/ssri": "7.1.5"
   }
 }
