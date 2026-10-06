@@ -1,16 +1,33 @@
-# D06 独立审查
+# D06 独立审查记录
 
-状态：NOT_STARTED。
+状态：APPROVED — 仅固定源码架构数据与下列限定检查。
 
-- Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Base：8f1481df880cf5077e1ddb9a8f302fe700a7ece8；target：d5a87b851e3d5a820585180cb4efa47b6148632a。
-- Scope：apps/execution-dashboard/public/architecture-data.js、apps/execution-dashboard/test/architecture.test.mjs，以及本任务plan/evidence。
-- Reviewer：root（只读，尚未执行）。
+## Target 与 scope
 
-## 可复制审查任务
+- Review target commit：`ef42277ff55d1cbb76ea707836481a9788619033`。
+- Base commit：`8f1481df880cf5077e1ddb9a8f302fe700a7ece8`；branch codex/dashboard-architecture-refresh，worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh。
+- Scope：architecture-data.js、architecture.test.mjs及本任务plan/evidence，保留既有renderer。固定源码图不是moving main的实时能力说明。
+- Reviewer：root / gpt-6-astra ultra，独立只读，2026-10-06 04:20 UTC记录结论；源码协审w01_owner / gpt-6-astra ultra。
+- [plan](plan.md) · [status](status.md) · [作者验证](../../docs/evidence/d06/validation.md)。
 
-先读本树AGENTS/plans规则、plan/status与证据，核branch/base/target/dirty。按固定8f源码核五图：受限goals、conversation中心而非新Web、可信host与PG registry、PG详情/无运行blob、assistant与usage/verification/completed分离、活动态到终态/uncertain及C02新task。运行局部architecture.test.mjs并审图可读性证据；禁止将其他分支能力写成基线已交付。只读报告具体severity/文件/复现/限制，修复交唯一owner；结论只绑定固定target。
+## 实际独立检查与未执行
 
-## 检查、findings与结论
+w01_owner在固定初稿d5a87b851e3d5a820585180cb4efa47b6148632a独立运行Node24 architecture.test.mjs 5/5（825.872ms），读两实现文件和固定源码：FSM所有活动态completed/uncertain、C02安全retry另task、assistant身份/digest/PG、goal/conversation/registry/I01限定、串行runtime、依赖版本与Pool8+3。无代码写入，没有重跑browser/PG产品/模型/全库/性能。
 
-尚未执行独立review；blocking findings未评估，不视为空。作者检查见[validation](../../docs/evidence/d06/validation.md)，不替代独审。新提交不自动继承旧D05或本任务未来approval。
+root读全范围diff/source及d5→ef一行来源修正，独立diffcheck0、实现对ef diff0；实际目视states-light/modules-light/data-dark390可读；新临时CUA页打开模块→后继执行与插件→源码依据，href精确8f/apps/execution-dashboard/src/registry.mjs，随后只关闭自身临时页。root未重跑五个Node测试、全部浏览器或产品模型；w01在d5的五测试结果复用，不伪称在ef重跑。作者ef已重跑5tests与该href局部Chrome检查，几何/行为没变化，旧六图与全浏览器检查未重跑。
+
+## Findings与修复链
+
+| ID | Severity | Blocking | 固定target与问题 | 修复与复审 |
+| --- | --- | --- | --- | --- |
+| D06-R1 | P3 | 否，已关闭 | d5a87b8 nextbackend列R04/P03却指full-plan-matrix，该文件无这两个登记ID | ef42277仅source改实际registry，root独立CUA核href；CLOSED |
+
+w01源码范围无P0–P3 actionable finding；root最终无新blocking。原R1保留，不因最终通过删去历史。
+
+## 结论与限制
+
+Root正式整体限定APPROVED ef42277/base8f。此审查不代表最新main所有分支、产品执行/模型容量、已部署4320或未来功能通过。独立blob仍planned，中心conversation不等当前8f Web已持续聊天，trusted Web host与PG插件登记不等完整安装/隔离。Safari/Firefox/屏读和产品PG未测。下一源码变更必须新target/复审。
+
+## 可复制复审入口
+
+读本树AGENTS/plans规则、plan/status与证据，核实际base/target/dirty及有效claim；以固定baseline的源码而非当前main逐项核五图。检查source链接、已实现/planned、真实FSM与独立verification、工程PG隔离。只读回传severity/复现/建议与确实运行的检查，修复交owner，不能复用旧approval覆盖新实现。

@@ -1,6 +1,6 @@
 # D06 固定候选验证
 
-实现target `d5a87b851e3d5a820585180cb4efa47b6148632a`，base/策展源码 `8f1481df880cf5077e1ddb9a8f302fe700a7ece8`。Node24.20.0 / pnpm9.15.4 / Chrome154.0.8037.98。全部检查在提交前相同源码完成；随后只提交，源码无改动，不声称在固定commit后重新运行。
+初稿实现target `d5a87b851e3d5a820585180cb4efa47b6148632a`，base/策展源码 `8f1481df880cf5077e1ddb9a8f302fe700a7ece8`。Node24.20.0 / pnpm9.15.4 / Chrome154.0.8037.98。全部检查在提交前相同源码完成；随后只提交，源码无改动，不声称在固定commit后重新运行。
 
 ## 依据与事实
 
@@ -22,3 +22,7 @@
 ## 范围与限制
 
 两个实现文件全落v1 claim四scope；rootmanifest/lock、registry、renderer、CSS均diff0。恢复本地预览：Node24执行`node docs/evidence/d06/preview.mjs`，动态URL以stdout为准，当前55247/PID42719仅本owner服务。原产品49922/55049/63743与工程4320保持。未测Safari/Firefox/屏读、真实吞吐/模型、未部署main，图不是实时拓扑。无新增依赖，offline frozen安装只建ignored node_modules。
+
+## 来源P3窄修与最终审查
+
+最终target `ef42277ff55d1cbb76ea707836481a9788619033`。Root指出R04/P03实际登记源在固定registry而非full-plan-matrix；ef只改nextbackend.source，完整X01父范围仍见固定full-plan-matrix REQ11–13。重新5Node通过及[局部href报告](source-review-check.json)，不重跑无变化全浏览器或六图。Root独立CUA确认准确href并APPROVED；w01独立d5语义/5tests与root审图结果如[review](../../../plans/d06-architecture-refresh/review.md)，检查来源不混写。

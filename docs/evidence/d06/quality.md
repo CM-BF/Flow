@@ -11,3 +11,5 @@ codebase-design用于保持策展数据这一小Interface、局部验证source�
 事实纠偏：root/worker先将R04联想到runner并发、P03联想到持久input-required；本owner核固定8f registry原标签，分别为“中心有界停机”和“外部协议传输优化”，root接受更正。图保留串行runner和无持久input-required这一源码限制，不给它们虚构task编号。此研究为只读输入，实际图修正由D06 owner执行。
 
 实际检查过程：首次Node测试因新树未安装pg失败（0通过），用既有锁offline/frozen安装77包后环境恢复，无rootlock/manifest diff。新增语义测试一次误取description而文字实际在locality，修正字段后5/5；浏览器第一次innerText只读到折叠summary，改为textContent核固定SHA，并使用现有theme select。视觉检查发现verification箭头穿过passed、retry标签近节点，已修数据route并重跑5Node+浏览器。最终产物见validation；没有删断言或以换图掩盖失败。
+
+04:20 UTC 独立review收口：Root D06-R1 P3发现nextbackend source实际应指固定registry，ef42277只改一行。owner重跑5Node与单hrefChrome，root实际CUA复验关闭；w01独立d5源码/5tests通过。clean-code再次检查事实命名、来源与无关复杂度：没有为source小修扩renderer或重复全套。最终源码冻结，待Lead登记/集成，不继承未来main能力。
