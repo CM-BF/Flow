@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:25:37 UTC / 2026-10-06 09:11:30 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:27:57 UTC / 2026-10-06 09:27:57 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,13 +10,13 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / 0d0524c3439363d1fe60aad63f62817ba51fa2a5（固定实现；后继仅metadata，实际HEAD由Git核） |
-| 工作树dirty状态 | 语义approval metadata提交后clean；本次隔离片仅3scope内新文件与计划/接口，提交后由Git核 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / e535fc04364c3be4a08ab0c6bc8bebe25afed977（当前隔离静态设计；后继metadata，实际HEAD由Git核） |
+| 工作树dirty状态 | 语义approval metadata提交后clean；隔离设计target已提交；本次仅固定target和共享review回执metadata，提交后由Git核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | NOT_RUN：隔离片只执行2项JavaScript语法与SBPL词法/链接检查；没有运行sandbox或canary |
-| 已集成main状态 / HEAD | 未集成；最近观察main77c420cf9ee5de0291ea93014b6ea11aead6fab5；注册已入main，consumer未集成 |
-| 实现目标 | 隔离设计提交后绑定；已审语义目标见后继字段 |
+| 已集成main状态 / HEAD | 未集成；最近观察maindf29fb511df029a0922ace0f4973f3fe3736e502；注册已入main，consumer未集成 |
+| 实现目标 | e535fc04364c3be4a08ab0c6bc8bebe25afed977 |
 | 实现范围 | experiments/codex-app-server-conformance/isolation, docs/evidence/wpf-mature-02/isolation, docs/evidence/wpf-mature-02/isolated-run-plan.md, docs/evidence/wpf-mature-02/interface.md, plans/wpf-mature-02-harness-capabilities |
 | 阶段 | M2 |
 | 优先级 | 2 |
