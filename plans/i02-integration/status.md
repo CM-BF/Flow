@@ -13,7 +13,7 @@
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | 恢复准备57绑定、操作18绑定和14项独立保留核对通过；本批精确文件同源、status/parser及文档核对，无新增产品测试/个人probe/provider。 |
-| 已集成main状态 / HEAD | 本批受控接收中心恢复记录与自托管后继规划；个人运行af51/v18、Web d629/v3，main与运行源分别记录。本批发布前仍观察main b178。 |
+| 已集成main状态 / HEAD | 已接收 main/origin 122bdcaa790118154f8288c12ef6627da5e616b8 clean；[本次main回执](../../docs/evidence/i02/center-af51-main-receipt.json)。个人运行仍af51/v18、Web d629/v3；没有部署新产品。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |

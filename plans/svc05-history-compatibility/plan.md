@@ -48,4 +48,4 @@
 
 ## SVC05H01-07 同版本中心恢复
 
-- [x] **SVC05H01-07** 共享PG恢复后，已按新单次许可恢复af51/v18中心；runner/Web/数据/配置保持，OPS14 PID-only监督2095ms、8保留检查通过。Execution Lead独立14项结果核验通过，64表raw无变，窗口23:46关闭；记录尚待main接收，原失败与许可不重用。见[独审原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-independent-review.json)。
+- [x] **SVC05H01-07** 共享PG恢复后，已按新单次许可恢复af51/v18中心；runner/Web/数据/配置保持，OPS14 PID-only监督2095ms、8保留检查通过。Execution Lead独立14项结果核验通过，64表raw无变，窗口23:46关闭；记录已精确接收main 122bdcaa，原失败与许可不重用。见[独审原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-independent-review.json)。

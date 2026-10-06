@@ -154,3 +154,8 @@ Execution Lead 已独立 APPROVED 实现d8349bdec815b53f29ddae54d6b5b1ce49d78bd5
 唯一 reviewer Execution Lead 已核原始before/after/result等8份文件，14项检查全true，64表raw摘要无变化；结论 APPROVED_RECORDED_CENTER_RECOVERY，绑定实际target a498b0153ef9512ba6c79fefd9483f20b68b64ca（实现d834不变）。[独审原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-independent-review.json)。
 
 23:46:17 Lead将root恢复clean main/origin b178d17a6e711d4f4c28ee0e33f001171ed42652，[窗口CLOSED原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/source-window-closed.json)。本owner只归档，不追加个人probe/服务动作。旧Python入口失败和旧恢复/发布raw不变。限制：中心原退出原因未知，摘要不是语义真实性证明，运行中的服务不是冻结依赖产物；新恢复记录尚未main。claim保留待接收，全源码停止写入。
+
+
+## 2026-10-06 23:51:26 UTC：main 接收 / 停写
+
+固定main `122bdcaa790118154f8288c12ef6627da5e616b8` 已精确包含delivery `8ac8588de9b0361492569d20dc2d57c4a41c80e8` 的恢复目录及plan/status/review，逐文件同blob共35项；[接收回执](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/main-receipt.json)。原实现/原始证据不变，无新probe/tests/服务操作。本片delivered，提交后fresh原子release，CHAT05的验证准入仍独立。
