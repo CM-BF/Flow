@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import { afterEach, expect, it } from 'vitest';
 import { eventBatchSchema, type ClaimedTask, type EventBatch, type RunnerEvent, type RunnerEventData, type TaskSubmission } from '@flow/contracts';
-import { runRunner, type RunnerOptions, type RunnerNotice } from './index.js';
+import { createClaudeAdapter, runRunner, type RunnerOptions, type RunnerNotice } from './index.js';
 
 const cleanup: (() => Promise<unknown>)[] = [];
 afterEach(async () => { for (const stop of cleanup.splice(0).reverse()) await stop(); });
@@ -379,4 +379,18 @@ it.each([
   await api.start();
   const saved = JSON.parse(await readFile(join(directory, 'pending-events.json'), 'utf8'));
   expect(saved).toEqual(api.batches[0]);
+});
+
+
+it('executes an injected Claude adapter through the same runner ownership and HTTP event boundary', async () => {
+  const api = await center({ harness: 'claude', verification: { kind: 'contains', expected: 'native-seam-result' } });
+  api.options.adapters = [createClaudeAdapter({ materialFiles: [], query: () => Object.assign((async function* () {
+    yield { type: 'result', subtype: 'success', is_error: false, session_id: 'native-seam', uuid: 'native-result-1', result: 'native-seam-result', modelUsage: {}, permission_denials: [] } as unknown as import('@anthropic-ai/claude-agent-sdk').SDKMessage;
+  })(), { close() {} }) })];
+  api.start();
+  await eventually(() => api.events.some(event => event.type === 'completed'));
+  expect(api.events).toContainEqual(expect.objectContaining({ type: 'session', nativeSessionId: 'native-seam' }));
+  expect(api.events).toContainEqual(expect.objectContaining({ type: 'artifact', content: 'native-seam-result' }));
+  expect(api.events).toContainEqual(expect.objectContaining({ type: 'verification', result: 'passed' }));
+  expect(api.events.filter(event => event.type === 'completed')).toEqual([expect.objectContaining({ outcome: 'succeeded' })]);
 });
