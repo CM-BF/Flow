@@ -128,7 +128,7 @@ D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVIT
 | 已main / 收口 | DPERF02、RELEASE01 | da041已接902c，1cb4 v2已释放，close8e9推送偏差归档；c450已接7805，RELEASE owner41276 normalpush/clean后20a v2 released；个人发布另由SVC04 |
 | 已main / 已释放 | CONTEXTI、STEIRI、ACTIVITYREAD、D08、VISUAL、D06/runtime | 各canonical与release见[集中队列](../../docs/evidence/web-platform/mature-task-handoff.md)；片段通过不等六大task完成 |
 | 独立有界基线 | WORKSPACEPERF01 | c815 v1四scope/basec450，真实App HTTPfixture累计8/16/32，90s含cleanup/≤8MiB；仅观测，不修改App/投影，不冒JS堆或总体性能 |
-| 等合同/客户端实际输入 | ATTACHI01附件Web | official Thread既有附件控件接持久上传/引用/恢复，先固定public输入；不得预占宽23scope挡共享ACK窗口 |
+| P1独立模块实施 | ATTACHI01附件Web | 已审8701 DTO基线、94b84c59 v1十一全新scope，typed ports/官方Threadfixture；公共六client/真实HTTP/生产App接线后继，不预占旧23范围 |
 | 专项已验 | 六计划+父关联/take | root10:44–10:45实际页面六parent/co-lead/子片领取与父导航通过；不是六feature功能Done |
 
 当前三队4/4/4上限12，本树root+现三成员=4。普通进展只status→dashboard；GO只完整大task独立blocker与Done(1)，不重复私信/转发。历史真实两query2/2只引用，不新增模型预算。

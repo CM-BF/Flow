@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-10-06T11:02:57.588887+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+  "branch": "codex/attachment-resources",
+  "implementation": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+  "finalLocalAndRemote": "1d236cbe2299117e3b63887fda3d1c0e140f56b0",
+  "dirty": false,
+  "combinedManifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/docs/evidence/wpf-attach01/runtime-candidate.json",
+  "manifestSha256": "a9a4f56117cfcab9aadc3b224e460032d26dde2741d9cd509382d310da80931e",
+  "declaredSourceCount": 16,
+  "sourceMismatch": [],
+  "declaredReadOnlyDependencyCount": 19,
+  "readOnlyDependencies": "root independent audit binds 19 to fixed base; manager did not rerun tests",
+  "phase1IncludedAndTwoImplementationsUnchanged": [
+    "packages/contracts/src/attachments.ts",
+    "packages/contracts/src/conversation-context.ts"
+  ],
+  "checksPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/docs/evidence/wpf-attach01/runtime-checks.json",
+  "checksSha256": "327d7b9b06774d2277d461480d33e7e0044e4201a2575256891621f98d24207d",
+  "testsRepeated": false
+}

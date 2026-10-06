@@ -1,5 +1,13 @@
 # 成熟聊天大task来源与登记队列
 
+## Lead当前所需：ATTACH phase1+runtime唯一完整manifest
+
+已实核 2026-10-06 11:02:57UTC：`attachment-resources` local=remote **1d236cbe2299117e3b63887fda3d1c0e140f56b0**，clean；实现 **8701a6cf547248e70aa5758f05da1d7d314ae9c0**。
+
+完整合并输入唯一清单：[/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/docs/evidence/wpf-attach01/runtime-candidate.json](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/docs/evidence/wpf-attach01/runtime-candidate.json)，SHA256 `a9a4f56117cfcab9aadc3b224e460032d26dde2741d9cd509382d310da80931e`。包含全部16执行源（phase1两实现+runtime+当前专测），19只读依赖另列；16 current/fixed/manifest零失配，phase1两实现仍6bc原字节，[管理只读审计](attach01-runtime-final-manifest-audit.json)。同目录runtime-checks.json SHA256 `327d7b9b06774d2277d461480d33e7e0044e4201a2575256891621f98d24207d`；root78独审/3DB清理已归档，不重复运行。不要仅接runtime增量遗漏phase1。
+
+[六项公共桥接](attachment-runtime-public-bridge.md)给唯一exports/client/shared ACK-v2/mount owner；首消费者复用同一public matcher。ATTACHI已经从8701直接只读DTO开始隔离模块，不复制shared文件或协议，实际HTTP/生产App仍后继。
+
 ## TUI01C：交权已由 Lead 确认完成
 
 **Web co-lead /root确认这5个已交付Web路径目前没有任何待写动作，同意TUI01C原子amend claim1c911f44成功后接管；两原owner均停写，ACK/RELEASE/ATTACH无冲突。**
@@ -14,13 +22,15 @@ Lead最新正式来源：已读本中央确认并完成 TUI01C claim1c911f44 v2 
 
 **Lead统一共享桥接**：受控接已审runtime+026，与原F01/TUI唯一writer协调contracts/index/public client六操作、同一ACK decoder显式template1/2，以及server/index migrateAttachments/registerAttachmentRoutes；本组backend不写这些共享出口。入口先migration后owner-auth下mount，CREATE稳定false、GET capability只026就绪时动态提供；空附件保持v1，非空v2。客户端/decoder/mount组合核后，ATTACHI从准确公开输入推进；不得另造Web v2验码器或借旧phase1猜公开接通。本片0provider/个人服务，PG/HTTP是真实隔离实证。六项精确桥接/测试输入见[唯一公共桥接记录](attachment-runtime-public-bridge.md)，请共享owner消费，不重复猜协议。
 
-## ATTACHI01 新模块精确输入依赖（未take）
+## ATTACHI01 已授权DTO独立首片
 
-[11个全新literal/预算/验收提案](attachi01-module-proposal.json)不占App/Thread/receipt调用点，直接父MATURE03，w01唯一候选。当前main c450无公共attachments出口和六client方法；需要共享owner提供已审固定SHA。runtime8701的小ref/DTO已批准，尚不能拿私有moving文件冒public-ready。模块可按root受控输入裁决先做窄port/controller/recovery/官方Threadfixture，真实HTTP验收等固定六方法；v2 decoder/生产mount是后继App接线前置。没有重复Web fetch协议或v2 ACK验码器。
+Root正式决定无需等待完整公共桥接；[11新scope/预算/验收](attachi01-module-proposal.json)，直接父MATURE03、w01，新树web-attachment-input-preview/codex同名从已审8701a6cf547248e70aa5758f05da1d7d314ae9c0开始，已核base/branch/clean并[94b84c59 v1 COMMITTED](attachi01-take-receipt.json)11:02:32.557Z十一scope，followup_task已正式派发；首canonical d6e6eba1b9e51979c9e53994a0967076b808e2f7 clean，owner live/actualparser0/human完整，唯一source web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md。当前main e4c82ccb1655612fb175c26fe472dce736f848ed无六client方法/attachments出口，故保持指定固定DTO基线，不复制/挑拣共享文件。
+
+第一片controller/recovery/Picker与真实官方Thread fixture，typed注入port返回已验证receipt；adapter仅UI/官方adapter，不写HTTP、不复制ACK/upload decoder或stub不存在的方法。真正六public方法/实际HTTP/生产App接线明确pending；ACK已移除turn旧v1重复guard，queue v2 dispatch仍由同一共享桥接处理。首片独审不等整个附件Done。
 
 ## 最新接收与领取变化（2026-10-06 10:56 UTC）
 
-- **ACK01 已审待main**：实现2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d，最终4e4e247176d3f6181af59ca6bc35920464b5f8d2正常push/clean（仅stateBadge标准前缀修正，先前ebe6保原审查），五源零diff；root10:52独立150/150，作者137+13/types分开。a267 v1七scope产品冻结，source web-shared-ack-consumer/plans/wpf-ack01-shared-consumer，入口同树docs/evidence/wpf-ack01/README.md。公开v2扩展仍由同一decoder owner负责。
+- **ACK01 已main、owner收口中**：实现2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d，最终4e4e247176d3f6181af59ca6bc35920464b5f8d2正常push/clean（仅stateBadge标准前缀修正，先前ebe6保原审查），五源零diff；root10:52独立150/150，作者137+13/types分开。Lead正式main e4c82ccb1655612fb175c26fe472dce736f848ed五源同/shareddc7未变；132来源11:00:58Z实际登记沿Lead归因，不采API。a267 v1七scope产品冻结，owner仅main metadata后双端clean再release，source web-shared-ack-consumer/plans/wpf-ack01-shared-consumer，入口同树docs/evidence/wpf-ack01/README.md。公开v2扩展仍由同一decoder owner负责。
 - **RELEASE01 已main**：Lead正式接收c450c2da7e6185b88db9f46e0299ee504ee6f3e8，7805/db08两源+reports/checks相同。w01仅own metadata收口41276e2ecd154087f66958339d9abfce4d44964c正常push且管理ls-remote/clean实核后全停写，[20a v2 released](release01-main-release-receipt.json)10:59:06.085Z；个人Web发布仍runner_owner/SVC04，不能main=用户页面。
 - **DPERF02 已main并释放**：da041已接902c/aa715，三source树相同；本地收口8e9faf049e868ebedcd930111d7392699369cb60现已最终normal push成功，remote同SHA/clean。前两次remote commit_refs失败与release先于检查push结果的流程偏差如实记录在[归档](dperf02-publication-closeout.json)；1cb4 v2已release，不再改旧scope。没有重跑27/Trace2或实际服务采样。
 - **WORKSPACEPERF01 正式受领**：[c815bc00 v1](workspaceperf01-take-receipt.json)，10:56:20.443Z，panels独立web-workspace-lifecycle-baseline/codex同名，base c450；仅两新fixture/browser+自身plan/evidence四scope，直接父MATURE05。真实App HTTPfixture累计8/16/32会话、同时≤2pane，90s含10s清理/≤8MiB；DOM/读请求不冒JS堆，unknown/草稿/knowledge用真实动作核。首canonical待owner实际提交，未有源码成果不填检查通过。
@@ -76,7 +86,7 @@ DPERF02在RELEASE01与ATTACH实际运行后已按root恢复授权完成限额实
 | D06 → D01，main收口完成 | impl2c3160f42784ee814d968a953d557251c81a243d / acceptedmain8d8ab520a9d43c7b9dafb22911416ee799ebf665；owner final631173ab正常push/clean，五source逐hash同 | dashboard-architecture-runtime / plans/d06-architecture-refresh；全四scope停写后[84fd v2 release](d06-runtime-main-release-receipt.json)10:24:18.920Z；唯一source迁移/126registry由Lead确认，root实际页面已观察D06/D08范围不变；个人产物仍单列 |
 | WPF-RELEASE01 → MATURE01，已main c450，owner收口/释放完成 | fixedWeb8d8ab520a9d43c7b9dafb22911416ee799ebf665；旧Web/backend b1c2e39837c2208e6fc2c59a80e16797f26448b5；[20a6529a v1](release01-take-receipt.json)四literal | web-release-compatibility / codex/web-release-compatibility / plans/wpf-release01-product-compatibility / docs/evidence/wpf-release01；fixed7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b / finaldb08e7b5976ce462a0b829bbf6a5554fcaf43121 pushed/clean，root10:46:30APPROVED；只两新test及记录，真实App构建/隔离HTTP-PG-fixture，不含provider或个人发布许可 |
 | WPF-DPERF02 → D01，已main/已释放 | impl902c9b5d35e1795d564c077034dc78cf1a36b6a0 / main da04127fd0c033135d20657742979845e1b80a63 / close8e9faf049e868ebedcd930111d7392699369cb60 local=remote/clean | dashboard-proof-batching / plans/wpf-dashboard-proof-batching；1cb4 v2 released；三源同，受控scope集成非祖先；push流程偏差见归档，未重测 |
-| WPF-ACK01 → MATURE06，已审待main | impl2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d / final4e4e247176d3f6181af59ca6bc35920464b5f8d2 normalpush/clean；五source相同 | web-shared-ack-consumer / plans/wpf-ack01-shared-consumer / docs/evidence/wpf-ack01；a267 v1保留，root150独立；仅shared v1消费者，v2待同一公开decoder扩展 |
+| WPF-ACK01 → MATURE06，已main e4c82、owner收口中 | impl2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d / final4e4e247176d3f6181af59ca6bc35920464b5f8d2 normalpush/clean；五source相同 | web-shared-ack-consumer / plans/wpf-ack01-shared-consumer / docs/evidence/wpf-ack01；a267 v1保留至owner收口，root150独立；仅shared v1消费者，v2待同一公开decoder扩展 |
 | WPF-WORKSPACEPERF01 → MATURE05，已take实施 | c815bc00 v1四scope/basec450；首canonical待owner实际提交 | web-workspace-lifecycle-baseline / plans/wpf-workspace-lifecycle-baseline / docs/evidence/wpf-workspace-lifecycle-baseline；真实App有界HTTPfixture，90s/8MiB，仅基线无生产改动 |
 | D01，合法owner显式父身份metadata | 2f3f33bf29177b930c524263115a5745ab67c66e 已push/clean，产品未改 | execution-dashboard原唯一plans/d01-execution-dashboard，只补大task/co-lead；D08读取原canonical，不复制状态 |
 

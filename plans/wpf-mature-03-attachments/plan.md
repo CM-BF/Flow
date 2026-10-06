@@ -51,12 +51,16 @@ Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资�
 
 installed core0.3.22已有attachment add/send/remove接口；当前Thread.onNew仅消费text，忽略message.attachments，因此新输入必须显式映射授权不可变refs，paperclip/预览不等于已发送。现core remove仅对尚未complete的attachment调用adapter.remove，center/outbox负责保留与in-use回收，不能依赖删草稿回调。官方[附件指南](https://www.assistant-ui.com/docs/guides/attachments)与[custom adapter](https://www.assistant-ui.com/docs/integrations/attachments/custom-adapter)仅作为方法来源，当前网站推荐版本不构成本项目SDK升级授权。本段无上传、provider或实际附件输入验收。
 
-当前两案和共享单写边界见[附件依赖清单](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。后端WPF-ATTACH01的schema phase1已审6bc2918/final339086；runtime已v2领取18literal，Web整体23仍候选未预领；F01 v23已释放contracts/conversations.ts，026已预留，F01保留公共出口/client/server index。Web调用点与TUI共享ACK迁移须一个owner/有序窗口，不能因09:51无writer就预领。首.txt限制、TTL/配额与template2设计方向已由root冻结，typed SHA已独审待Lead受控发布/exports；HTTP/PG/App能力未实现，不能把合同当运行ready。
+当前两案和共享单写边界见[附件依赖清单](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。后端WPF-ATTACH01的schema phase1已审6bc2918/final339086；runtime已v2领取18literal，Web整体23仍候选未预领；F01 v23已释放contracts/conversations.ts，026已预留，F01保留公共出口/client/server index。Web调用点与TUI共享ACK迁移须一个owner/有序窗口，不能因09:51无writer就预领。首.txt限制、TTL/配额与template2设计方向已由root冻结，typed SHA已独审待Lead受控发布/exports；后端runtime8701已root78独审（真实隔离PG/HTTP）；publicclient/ACK-v2/生产mount与App仍待接，不能把后端fixture当产品已连通。
 
 ### 共享回执与上传恢复接缝（root/两owner只读方案）
 
-attachments[]/template2固定shape交F01唯一公共receipt decoder扩展，保旧template1与Web queue matcher，不另造第二份ACK验证器；附件UI与该输入成套接收，后台资源可先独立推进，不阻TUI首片。Web候选改recovery.ts替代自有receipts.ts，恢复查找/expiry/replay/pin与浏览器有限metadata intent由root冻结后才实施。unknown lookup404不证明未提交；重选原文件同digest/length/metadata才能原key重试，ready不自动附到新稿。16条/64KiB与recoveryScope仍只是提案，跨reload未知Send/Queue未因此获恢复承诺。详见[集中依赖](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。
+attachments[]/template2固定shape交F01唯一公共receipt decoder扩展，保旧template1与Web queue matcher，不另造第二份ACK验证器；附件UI与该输入成套接收，后台资源可先独立推进，不阻TUI首片。Web候选改recovery.ts替代自有receipts.ts，恢复查找/expiry/replay/pin与浏览器有限metadata intent已root冻结，ATTACHI首片按typed注入ports实施；不复制publicdecoder。unknown lookup404不证明未提交；重选原文件同digest/length/metadata才能原key重试，ready不自动附到新稿。16条/64KiB恢复journal为已授权首片预算，recoveryScope只是命名空间不授权，跨reload未知Send/Queue未因此获恢复承诺。详见[集中依赖](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。
 
 ### 旧客户端兼容矩阵（固定f181源码研究，待实际consumer验证）
 
 沿[逐路径研究](../../docs/evidence/web-platform/attachment-v2-compatibility-research.json)：仅每请求非空attachments生成template2，省略/[]和原v1 receipt重放不变；不能按项目或会话升级。旧bundle可读v2 turn/queue正文但不展示材料，明确这个限制。新bundle对旧center缺cap禁附件，plain请求彻底省略attachments而不是发[]，旧strictObject否则拒绝。F01唯一shared decoder验v1/v2 exact ordered identity，恶意v2 ACK对v1请求仍unknown保原key/body。此矩阵并入03-04/05/06验收，不增加无证据的Accept协商或GET字段剥离；真实legacy/current HTTPfixture尚未执行。
+
+### ATTACHI01已授权独立输入模块
+
+基线8701a6cf547248e70aa5758f05da1d7d314ae9c0已审DTO，94b84c59 v1十一新scope、w01唯一owner，直接归本大task，[精确方案](../../docs/evidence/web-platform/attachi01-module-proposal.json)/[原子receipt](../../docs/evidence/web-platform/attachi01-take-receipt.json)。controller/recovery/Picker/官方Thread fixture使用typed注入ports与已验证receipt，adapter仅官方UI接口；禁止私写HTTP/重复ACK或upload decoder/虚构公共方法。真正FlowClient六方法、实际HTTP、App Send/Queue接线保持pending，后续消费固定public bridge前核base兼容。不预占原23scope、不把独立组件审过当完整附件Done。

@@ -22,3 +22,13 @@ w01固定f181、root复核8d8：真实ConversationList无AppSlot，App conversat
 GO/root固定0b0d5fe7af9c0f40861ec6d2847f7383bcd76739：App877所有ChatPane挂载+hidden；closeNow515–536仅setVisible(false)并保views/projection/drafts。stream/activity预算不代表整个workspace预算；turns/turnVersions/details随访问增长是源码观察，未测浏览器内存或延迟。Projection.dispose会queue/lifetime/outbox.dispose并清未确认entry，不能普通closed回收；setVisible(false)仅abort观察，loadReply/loadMore仍用lifetime，关闭后可能迟到回填；机械删历史prefix会使从turn1连续扫描的historyCursor退0、重新读历史。
 
 后继MATURE05并关联06-04：visible/hidden/closed-clean/closed-protected明确读缓存/代次/可回收矩阵；App drafts/profileSelections、knowledgeBindings、stream/view登记一起处理，mutation/outbox保唯一authority。未知receipt/草稿/附件选择需pin，容量满且全protected时拒新打开/新未决而非丢失；关视图不cancel后台task，重开固定会话恢复。实际App有界0model验内容/DOM/订阅effects/读取数、输入与切换时延及未确认恢复，区分agent并发、visible pane和驻留缓存预算。[React Activity](https://react.dev/reference/react/Activity) hidden保state/DOM、清effects且可低优先render，不能机械替换hidden宣称省内存。此段仅只读提案，优先RELEASE01/ACK/ATTACHI。
+
+## Overview与workspace feed生命周期（GO/root固定c450，只读输入）
+
+固定 `c450c2da7e6185b88db9f46e0299ee504ee6f3e8`：WorkspaceOverview始终挂载，effect无条件start；active仅改hidden/ActivityWindow，未接pageVisible。workspace-feed默认2500ms轮询，entries/buffered merge无驻留上限。这同时供sidebar/task summaries，不能离开overview就全停；stop/invalidate还影响actions pending，后继必须分观察与命令生命周期。本段是源码事实，不推算实际后台QPS/heap。
+
+WORKSPACEPERF01若尚未冻结且原90s/8MiB预算有余量，可区分可见overview/聊天隐藏overview/pagehidden的/api/workspace与stream请求；否则仅保后继，不增加时限或为该输入重跑。DOM/请求不是JS私有cache或heap证明，生产修改另fresh精确scope。沿MATURE05-05与06-04，不新大task。
+
+### c450成本路径与稀疏cursor约束（root进一步只读）
+
+WorkspaceFeedProjection在arrived=[]/following=true时仍merge旧entries/buffered、sort并新数组；ActivityWindow useMemo因此可能重建全entries的ids/indices/Float64Array。DOM窗口不能界定CPU/JS驻留，未实测成本或收益。server m2-workspace的nextCursor/previousCursor按rawEntries计算，之后legacyTimelineEntries过滤，cursor可自然稀疏。后继不能以保留列表末条替代deliveredCursor或将不连续当漏事件；裁剪前缀要同时定义历史窗口/anchor/hasEarlier及重取语义，不能残留旧previousCursor使被裁内容不可再取。读旧页时新buffer需明确受保护anchor、待取区间及watermark，不能无限增长或静默跳过。App syncWorkspaceSummaries还给catalog/legacy TaskProjection轻摘要；观察暂停/摘要与按需活动历史应单一owner划分，不造重复authority。来源root本地codebase-design/clean-code与[MDN Page Visibility](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)，不追加本轮实验或生产scope。

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:56 UTC / DPERF与RELEASE已main；ATTACH runtime/ACK已审待接；WORKSPACEPERF fresh受领 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:56 UTC / DPERF与RELEASE已main；ATTACH runtime已审待接；ACK已main待收口；ATTACHI/WORKSPACEPERF fresh受领 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -18,7 +18,7 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 附件runtime与ACK均已审，DPERF/RELEASE已main；六计划父关联专项已实际通过，完整功能仍开放 |
-| 下一可用交付 | Lead接收ATTACH runtime/ACK及统一公共桥接；panels做有界workspace基线，w01准备ATTACHI新模块 |
+| 下一可用交付 | Lead接收ATTACH runtime及统一公共桥接；panels有界workspace基线、w01 ATTACHI新模块分别实施 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
@@ -80,7 +80,9 @@
 | D08 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links/plans/d08-task-links/status.md)，原panels，49510580 v2 released | 已main f181；605957 push/clean后9scope停写释放；root实际六计划父关联/take页面核已完成 |
 | STEER01 → MATURE06 | [模块source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) | 已main77c，2bae v2 released；原树只读；实际App接线现属STEIRI01独立13scope，原模块不再写 |
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
-| ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v1七scope | 2fa8/4e4e已独审150、pushclean；五源码冻结，待main；v2公共扩展仍待准确输入 |
+| ATTACHI01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md)，94b84c59 v1十一scope | base8701已审DTO/typed ports/官方Threadfixture；六client/HTTP/App仍pending，首canonical d6e6eba clean/parser0已owner建立 |
+| WORKSPACEPERF01 → MATURE05 | c815bc00 v1四scope / web-workspace-lifecycle-baseline | 90s/8MiB实际AppHTTP基线，overview/feed观察仅预算内，不生产优化 |
+| ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v1七scope | 2fa8/4e4e已独审150、main e4c82五源同；owner收口后release；v2公共扩展仍待准确输入 |
 | DPERF02 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md)，1cb4 v2 released四scope停写 | 已main da041，close8e9最终normalpush成功；两次失败/先release偏差已归档，无重测 |
 
 ## 当前依赖与登记队列
