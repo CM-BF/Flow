@@ -454,15 +454,15 @@ export class FlowClient {
   }
 
   show(id: string, signal?: AbortSignal): Promise<TaskSnapshot> { return this.request(`/api/tasks/${encodeURIComponent(id)}`, { signal }); }
-  detail(id: string): Promise<Detail> { return this.request(`/api/details/${encodeURIComponent(id)}`); }
+  detail(id: string, signal?: AbortSignal): Promise<Detail> { return this.request(`/api/details/${encodeURIComponent(id)}`, { signal }); }
   events(id: string, after = 0): Promise<EventPage> { return this.request(`/api/tasks/${encodeURIComponent(id)}/events?after=${after}`); }
 
-  decide(id: string, answer: DecisionAnswer, key: string): Promise<TaskSummary> {
-    return this.request(`/api/tasks/${encodeURIComponent(id)}/decision`, { method: 'POST', body: JSON.stringify(answer), headers: { 'Idempotency-Key': key } });
+  decide(id: string, answer: DecisionAnswer, key: string, signal?: AbortSignal): Promise<TaskSummary> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/decision`, { method: 'POST', body: JSON.stringify(answer), headers: { 'Idempotency-Key': key }, signal });
   }
 
-  cancel(id: string, key: string): Promise<TaskSummary> {
-    return this.request(`/api/tasks/${encodeURIComponent(id)}/cancel`, { method: 'POST', body: '{}', headers: { 'Idempotency-Key': key } });
+  cancel(id: string, key: string, signal?: AbortSignal): Promise<TaskSummary> {
+    return this.request(`/api/tasks/${encodeURIComponent(id)}/cancel`, { method: 'POST', body: '{}', headers: { 'Idempotency-Key': key }, signal });
   }
 
   reconciliation(id: string, after = 0): Promise<ReconciliationView> {
