@@ -1,3 +1,4 @@
+import { nativeEngineeringProfilePageSchema, nativeEngineeringProfilePublishedSchema, type NativeEngineeringProfileConfiguration, type NativeEngineeringProfilePage, type NativeEngineeringProfilePublished } from '@flow/contracts';
 import { decodeConversationCreated, decodeConversationTurnAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
 import { EXECUTION_PROFILE_HEADER, NATIVE_EXECUTION_PROFILE_VERSION, nativeExecutionProfileCatalogPageSchema, type NativeExecutionProfileCatalogPage } from '@flow/contracts';
 import { engineeringProfilePageSchema, engineeringProfilePublishedSchema, type EngineeringProfileConfiguration, type EngineeringProfilePage, type EngineeringProfilePublished } from '@flow/contracts';
@@ -338,6 +339,16 @@ export class FlowClient {
     const query = new URLSearchParams();
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return engineeringProfilePageSchema.parse(await this.request<unknown>(`/api/engineering-profiles${query.size ? `?${query}` : ''}`, { signal }));
+  }
+  async publishNativeEngineeringProfile(input: { configuration: NativeEngineeringProfileConfiguration }, signal?: AbortSignal): Promise<NativeEngineeringProfilePublished> {
+    return nativeEngineeringProfilePublishedSchema.parse(await this.request<unknown>('/api/runner/native-engineering-profile', {
+      method: 'POST', body: JSON.stringify(input), signal,
+    }));
+  }
+  async listNativeEngineeringProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<NativeEngineeringProfilePage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return nativeEngineeringProfilePageSchema.parse(await this.request<unknown>(`/api/native-engineering-profiles${query.size ? `?${query}` : ''}`, { signal }));
   }
   publishNativeExecutionProfile(input: { configuration: NativeExecutionProfileConfiguration }, signal?: AbortSignal): Promise<NativeExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
