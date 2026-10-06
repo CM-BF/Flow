@@ -24,7 +24,9 @@
 | --- | --- | --- | --- |
 | D05-01 | completed | Lead | [架构数据](../../apps/execution-dashboard/public/architecture-data.js)，固定3773db5、45节点来源检查 |
 | D05-02 | completed | Lead | 五视图、100%默认/图内滚动、节点说明、稳定状态 |
-| D05-03 | in-progress | Lead / Goal Owner | [局部2项](../../docs/evidence/d05/local-checks.txt)、[CUA](../../docs/evidence/d05/browser-checks.json)，独立固定target审查待执行 |
+| D05-03 | in-progress | Lead / Goal Owner | [局部2项](../../docs/evidence/d05/local-checks-final.txt)、[CUA](../../docs/evidence/d05/browser-checks.json)，独立固定target审查待执行 |
 | D05-04 | pending | Lead | 原子claim 3a6240d0-f861-41fd-b245-3546b2e2dbf3 v1；D04已release |
 
 进度唯一事实源为本status；不修改产品Web。架构只描述明确基线，不是自动实时拓扑，不等于未来功能已实现。
+
+初稿测试证据错误已纠正：初始Host负例1失败原样保留，final2/2才是通过依据。详见quality.md，不将早期错误声明当审批。

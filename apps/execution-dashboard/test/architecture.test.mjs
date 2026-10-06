@@ -1,4 +1,5 @@
 import test from 'node:test';
+import http from 'node:http';
 import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
 import {views,baseline} from '../public/architecture-data.js';
@@ -26,7 +27,11 @@ test('architecture static assets stay within existing read-only loopback server 
     const response=await fetch(base+asset);assert.equal(response.status,200);assert.ok(response.headers.get('content-security-policy').includes("script-src 'self'"));
     assert.equal((await fetch(base+asset,{method:'POST'})).status,405);
   }
-  assert.equal((await fetch(base+'/architecture-data.js',{headers:{host:'evil.example'}})).status,403);
+  const rejectedHost = await new Promise((resolve,reject)=>{
+    const request=http.get(`${base}/architecture-data.js`,{headers:{host:'evil.example'}},response=>{response.resume();response.on('end',()=>resolve(response.statusCode));});
+    request.on('error',reject);
+  });
+  assert.equal(rejectedHost,403);
   assert.equal((await fetch(base+'/api/source?path=apps/server/src/index.ts')).status,404);
   const html=await(await fetch(base)).text();assert.match(html,/id="architecture-panel"/);assert.match(html,/id="progress-panel"/);
 });
