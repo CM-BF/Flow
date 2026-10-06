@@ -3,14 +3,13 @@ import type { HarnessAdapter } from '@flow/contracts';
 import { engineeringReceiptJson, engineeringReceiptResult, engineeringVerificationInput, type EngineeringReceipt } from '../../../../packages/contracts/src/engineering.js';
 import { NativeExecutionError } from '../native-harness/settlement.js';
 import type { TrustedChecker } from './checker.js';
-import type { EngineeringWorkspace, SyntheticProject } from './workspace.js';
+import type { SyntheticProject } from './workspace.js';
+import { executeEngineeringWriter, type EngineeringWriter } from './writer.js';
 import { digest } from './resources.js';
 
-export interface EngineeringFixture {
+export interface EngineeringFixture extends EngineeringWriter {
   project: SyntheticProject;
   checker: TrustedChecker;
-  /** A trusted deterministic writer, not code supplied by a task or a native provider. */
-  execute(workspace: EngineeringWorkspace, signal: AbortSignal): Promise<void>;
 }
 
 /** A dedicated fixture host composes this adapter; the existing runtime owns claim, lease, journal, outbox and terminal events. */
@@ -24,8 +23,16 @@ export function createEngineeringFixtureAdapter(runnerId: string, fixtures: Engi
     await context.assertOwnership();
     const workspace = await fixture.project.acquire(); let unknown = false;
     try {
-      await context.assertOwnership(); await fixture.execute(workspace, context.signal);
-      await context.assertOwnership();
+      await context.assertOwnership(); context.signal.throwIfAborted();
+      unknown = true;
+      const written = await executeEngineeringWriter(fixture.execute, {
+        directory: workspace.directory, leaseId: workspace.leaseId, baseCommit: fixture.project.baseCommit,
+        prompt: context.task.prompt, signal: context.signal, assertOwnership: () => context.assertOwnership(),
+      });
+      if (written.settlement === 'unknown') throw new NativeExecutionError('unknown');
+      unknown = false;
+      if (written.outcome === 'failed') throw new NativeExecutionError('settled');
+      await context.assertOwnership(); context.signal.throwIfAborted();
       const before = await workspace.snapshot();
       const checked = await fixture.checker.run(workspace.directory, context.signal);
       unknown = !checked.command.childExited;

@@ -11,7 +11,6 @@ import { expireLeases } from '../../../server/src/runners.js';
 import { engineeringReceiptSchema } from '../../../../packages/contracts/src/engineering.js';
 import { runRunner, type RunnerNotice } from '../runtime.js';
 import { createFixtureAdapter } from '../fixture.js';
-import { NativeExecutionError } from '../native-harness/settlement.js';
 import { createEngineeringFixtureAdapter } from './adapter.js';
 import { createTrustedChecker } from './checker.js';
 import { createSyntheticProject, type EngineeringWorkspace } from './workspace.js';
@@ -46,16 +45,21 @@ afterAll(async () => {
   } finally { await admin.end(); if (process.env.FLOW_ENG01A_EVIDENCE) await writeFile(process.env.FLOW_ENG01A_EVIDENCE, JSON.stringify(facts, null, 2) + '\n'); }
 });
 
-async function scenario(mode: 'success' | 'failed' | 'unknown') {
+async function scenario(mode: 'success' | 'failed' | 'unknown' | 'rejected') {
   const directory = await mkdtemp(join(tmpdir(), 'flow-eng01a-pg-')), identity = await owner.registerRunner({ name: `Engineering ${mode}`, harnesses: ['fixture'], capacity: 1 });
   const project = await createSyntheticProject(directory, `synthetic-${randomUUID()}`, { 'calculator.mjs': 'export const add=(a,b)=>a-b;\nexport const subtract=(a,b)=>a-b;\n', 'obsolete.txt': 'obsolete\n', 'run.sh': 'exit 0\n' });
   const checker = await createTrustedChecker(directory, 'fixed-math', baseline, ['sum', 'difference']);
   let writes = 0, workspace: EngineeringWorkspace | undefined;
+  const acquire = project.acquire;
+  vi.spyOn(project, 'acquire').mockImplementation(async () => { workspace = await acquire(); return workspace; });
+  const checked = vi.spyOn(checker, 'run');
   const adapter = createEngineeringFixtureAdapter(identity.runnerId, [{ project, checker, async execute(value) {
-    workspace = value; writes++;
+    writes++;
     await writeFile(join(value.directory, 'calculator.mjs'), `export const add=(a,b)=>a${mode === 'failed' ? '-' : '+'}b;\nexport const subtract=(a,b)=>a-b;\n`);
     await rm(join(value.directory, 'obsolete.txt')); await writeFile(join(value.directory, 'README.txt'), 'Synthetic engineering delivery\n'); await chmod(join(value.directory, 'run.sh'), 0o700);
-    if (mode === 'unknown') throw new NativeExecutionError('unknown');
+    if (mode === 'unknown') return { leaseId: value.leaseId, settlement: 'unknown' };
+    if (mode === 'rejected') throw new Error('Unclassified writer failure after dispatch.');
+    return { leaseId: value.leaseId, settlement: 'stopped', outcome: 'completed' };
   } }]);
   const profile = (await publishEngineeringProfile(pool, identity.runnerId, { protocol: 'flow.engineering-profile.v1', harness: 'fixture', adapterVersion: 'engineering-1', purpose: 'engineering-fixture', recipe: 'calculator-v1', project: { id: project.id, baseCommit: project.baseCommit }, checker: checker.selection, limits: { checkerTimeoutMs: 30_000 } })).profile.reference;
   const accepted = await owner.submit({ title: 'Synthetic engineering', prompt: 'Repair the controlled calculator', harness: 'fixture', engineering: {
@@ -71,13 +75,13 @@ async function scenario(mode: 'success' | 'failed' | 'unknown') {
   cleanup.push(async () => {
     for (const run of executions) run.controller.abort(); await Promise.allSettled(executions.map(run => run.promise));
     await checker.dispose();
-    if (mode === 'unknown') {
-      // This fixture deliberately threw unknown after awaited local writes, with no child. Only test teardown has this extra knowledge.
+    if (mode === 'unknown' || mode === 'rejected') {
+      // This fixture returned unknown or threw after awaited local writes, with no child. Only test teardown has this extra knowledge.
       await workspace?.release();
     }
     await project.dispose(); await rm(directory, { recursive: true });
   });
-  return { taskId: accepted.task.id, project, notices, start, writes: () => writes,
+  return { taskId: accepted.task.id, project, checked, notices, start, writes: () => writes,
     admission: async () => JSON.parse(await readFile(join(hostDirectory, digest(baseUrl), 'admission.json'), 'utf8')) };
 }
 
@@ -113,8 +117,8 @@ it('keeps failed engineering checks readable and lets the existing host publish 
   expect((await owner.reconciliation(api.taskId)).reservationHeld).toBe(false); facts.samples.push({ scenario: 'failed', checkerChildExited: receipt.command.childExited, writes: api.writes() });
 });
 
-it('retains an injected uncertain write and project lease across host restart without replaying writes', async () => {
-  const api = await scenario('unknown'), run = api.start(); await eventually(() => api.notices.some(notice => notice.type === 'admission-blocked'));
+it.each(['unknown', 'rejected'] as const)('retains an injected %s write and project lease across host restart without replaying writes', async mode => {
+  const api = await scenario(mode), run = api.start(); await eventually(() => api.notices.some(notice => notice.type === 'admission-blocked'));
   await expect(api.project.acquire()).rejects.toThrow('already leased'); await expect(api.project.dispose()).rejects.toThrow('unresolved');
   await pool.query("UPDATE flow.attempts SET lease_expires_at=clock_timestamp()-interval '1 second' WHERE task_id=$1", [api.taskId]); await expireLeases(pool);
   expect((await owner.show(api.taskId)).status).toBe('uncertain'); expect((await owner.reconciliation(api.taskId)).reservationHeld).toBe(true);
@@ -122,7 +126,8 @@ it('retains an injected uncertain write and project lease across host restart wi
   const count = api.notices.length, restarted = api.start(); await eventually(() => api.notices.slice(count).some(notice => notice.type === 'admission-blocked'));
   restarted.controller.abort(); await restarted.promise; expect(api.writes()).toBe(1);
   expect((await pool.query('SELECT count(*)::int AS n FROM flow.runner_events e JOIN flow.attempts a ON a.id=e.attempt_id WHERE a.task_id=$1', [api.taskId])).rows[0].n).toBe(0);
-  facts.samples.push({ scenario: 'unknown', uncertainty: 'Explicit fixture injection after awaited writes; no child dispatched', writes: api.writes(), reservationHeld: true, journalRetained: true });
+  expect(api.checked).not.toHaveBeenCalled();
+  facts.samples.push({ scenario: mode, uncertainty: 'Explicit fixture result or ordinary exception after awaited writes; no child dispatched', writes: api.writes(), checkerCalls: api.checked.mock.calls.length, reservationHeld: true, journalRetained: true });
 });
 
 it('replays a lost artifact acknowledgement without fabricating the verification or reexecuting engineering', async () => {

@@ -59,8 +59,12 @@ export async function prepareEngineeringSetup(workingDirectory: string, manifest
       saved = await readDirectoryRecord(root, 'profile-pin.json', executionProfileReferenceSchema);
     }
     if (JSON.stringify(saved) !== JSON.stringify(reference)) throw new Error('Engineering setup belongs to another published identity.');
-    const adapter = createEngineeringFixtureAdapter(reference.runnerId, [{ project, checker, async execute(workspace, signal) {
-      signal.throwIfAborted(); await writeFile(join(workspace.directory, 'calculator.mjs'), recipe.fixedSource); signal.throwIfAborted();
+    const adapter = createEngineeringFixtureAdapter(reference.runnerId, [{ project, checker, async execute({ directory, leaseId, signal }) {
+      // This fixed writer owns one awaited file operation and starts no child or background work.
+      try {
+        signal.throwIfAborted(); await writeFile(join(directory, 'calculator.mjs'), recipe.fixedSource); signal.throwIfAborted();
+        return { leaseId, settlement: 'stopped', outcome: 'completed' };
+      } catch { return { leaseId, settlement: 'stopped', outcome: 'failed' }; }
     } }]);
     return { ...adapter, async run(context) {
       const selected = context.task.engineering?.profile;
