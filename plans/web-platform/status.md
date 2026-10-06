@@ -19,11 +19,11 @@
 | 下一可用交付 | 将增量正文接入聊天，完成知识引用选择组件 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 实现目标 | UNKNOWN |
+| 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
-| 检查状态 | NOT_RUN；本次固定发布快照待绑定新target，仅管理文档检查，不继承c075历史审批 |
+| 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
 | 已集成main状态 / HEAD | 管理独核main/origin6426b44cd32d10216141af13ecfa83b8879025fb clean；ActivityI ba341祖先，S01 3ac/PERF03 f909及各final祖先、8源码相同。两旧claim已v2释放。ExecutionLead回执个人center/runner b54 accepting v6、61227/61228原端口与数据保留，0新增provider；本管理未服务验证。管理文档main仍旧副本，当前固定发布另待独审/Lead同步 |
-| Review | [review.md](review.md)，本次固定发布NOT_STARTED；历史c075仅见归档，不覆盖本次 |
+| Review | [review.md](review.md)，本次固定发布NOT_STARTED a5e500136438b197305339cbe0a5e10a196a4317；历史c075仅见归档，不覆盖本次 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |

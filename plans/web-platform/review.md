@@ -4,11 +4,11 @@
 
 **状态：NOT_STARTED**
 
-- Review target commit：`UNKNOWN`，待固定此次发布内容后绑定完整SHA。
+- Review target commit：`a5e500136438b197305339cbe0a5e10a196a4317`。
 - Reviewer：root；本次仅准备管理文档独立审查，未继承历史审批。
 - Base：`de879b471b079a3943a9248bf29c93cc18aa631e`管理上一安全停点；产品读取基线为已接受main `6426b44cd32d10216141af13ecfa83b8879025fb`。
 - Scope：`plans/web-platform`与`docs/evidence/web-platform`；当前三件套、U00–U12/REQ01–45、现有后继与引用证据、发布语义。不覆盖产品实现或服务部署。
-- 作者检查：固定候选后记录实际parser/TODO/相对链接/需求保存/范围/diffcheck；不重复产品测试、API或模型。
+- 作者检查：固定target作者检查：27TODO/parser0、32md384links的发布overlay相对断链0、U00–U12/REQ01–45保存、26改动全在两目录、diffcheck0；不重复产品测试、API或模型。
 - 当前未审：主线尚未同步本次快照；只有Execution Lead可按独审target进行受控同步。
 
 历史c075审查原文见[原样归档](../../docs/evidence/web-platform/publication/historical-c075-review.txt)。它仅批准02:15时点的旧管理文档，不覆盖后来U11、发布副本或产品。
