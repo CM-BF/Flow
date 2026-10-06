@@ -1,6 +1,6 @@
 # E01 上游 Harness 合成验证
 
-2026-10-06。首 auth 片段状态：completed（作者观察/检查）；独立 review 待执行。Owner：runner_owner / gpt-6-astra。此为已授权、可丢弃的 auth spike；不改产品，不作选型完成声明。
+2026-10-06。两片段状态：completed（作者观察/检查）；auth独立review通过，Paseo独立review待执行。Owner：runner_owner / gpt-6-astra。此为已授权、可丢弃的 spike；不改产品，不作选型完成声明。
 
 ## 范围与方案
 
@@ -19,3 +19,9 @@
 交付 target 8e232a0c2f52fd08565c2d377215c9d3a8904641；9场景完成，发现受控并发刷新与同PID tmp竞争、取消未传递。结果与输入差异见 [证据](../../docs/evidence/e01/README.md)。这是诊断交付，不是生产改造。
 
 写范围仅 experiments/harness-probes/、plans/e01-harness-probes/、docs/evidence/e01/；D04 claim 4c525d50-50a4-4bf4-83be-4f978b601b1d version1，已核验 active。
+
+## 第二有界片段
+
+- [x] E01-04 Paseo固定7a30305503c600bc46ea2a94a6750eac5cede278、Apache-2.0 的公开JSONL decoder/RPC seam：真实合成Node子进程中文/emoji跨字节chunk、2MiB无newline、退出pending和合成stderr marker，保存结果/限制。0模型/云；不实现产品修复，不改auth源码与原始JSON。已有本地固定source可直接复用，单次进程组看门狗3秒，避免研究拖延首片段。
+
+第二实现 target db2f2d0f6c2b0db3cab454d6cfe617b4671196b1，约0.214秒合成运行，记录Unicode跨字节损坏、2MiB行保留、退出pending拒绝、stderr8192字符尾部仍含合成marker。此探针独立review尚未执行，不继承auth片段批准。

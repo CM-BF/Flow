@@ -32,3 +32,24 @@
 有限观察支持：使用这个helper做并发native auth前，需要独立处理刷新互斥/轮换、持久化与取消时限；不能仅凭包内PID tmp路径视为并发安全。未测真实服务端策略、真正Keychain、跨PID协调、模型、完整doStart或Flow系统闭环，不据此宣称真实登录已修复。注入fetch的timeout/cancel只是可行的seam证明，不是产品修复。Paseo RPC留下一有界片段。
 
 03:04 UTC clean-code复核：区分原文、VM依赖注入、场景、父进程清理；将所有可能挂起的helper调用关在有硬看门狗的短子进程。未知依赖/默认home/默认网络/外部命令失败关闭；清理不修改共享目录。上游自身并发/取消缺口是本实验输出，不在本scope修第三方包；没有新增产品实现。
+
+## Paseo 第二小片段
+
+固定源码 target **db2f2d0f6c2b0db3cab454d6cfe617b4671196b1**。raw SHA256 **a123e8e560f595bf12b1bc26d771c2699c1debc27f85c9e2c4bb032368d52c7a**，1,378字节；不覆盖auth原始JSON。
+
+固定 FLOW-002 来源 getpaseo/paseo@7a30305503c600bc46ea2a94a6750eac5cede278，实际 checkout clean；`jsonl-rpc-process.ts`、`jsonl-frame-decoder.ts` 与LICENSE逐字/hash核对。最小副本来源/注入说明及复跑命令见 [Paseo探针](../../../experiments/harness-probes/paseo/README.md)。auth原始文件hash与源码target8e232a0保持不变。
+
+2026-10-06 **03:09:29.503–29.717 UTC**，Node24.20.0，约0.214秒。真实合成Node subprocess/pipes + decoder公开入口；[原始JSON](paseo-observations.json) 从已运行/tmp文件逐字保存，不改结果。两个MJS语法检查、逐文件Git固定commit字节/hash对照通过；[运行源码hash](paseo-source-hashes.json)。
+
+| 场景 | 直接观察 |
+| --- | --- |
+| 中文/emoji跨字节chunk | 真实stdout chunks为64/7/6 bytes；期望`中文🙂`，得到`���文���`，matches=false。源码逐chunk toString对应这一缺口；未修改upstream |
+| 2MiB无newline行 | newline前0 frame/0 problem，收尾后完整恢复2,097,152字符；这个范围没有触发行长度保护，不外推无限内存/容量 |
+| 子进程退出时pending | 两个无请求超时的pending均拒绝，约24.6ms；实测exit7、process closed；退出后stop-work调用完成 |
+| stderr边界/脱敏 | 保留末8192字符，本次ASCII亦8192字节，旧prefix已截掉；合成secret marker仍保留，未自动脱敏。实际凭据从未使用 |
+
+开发初次启动遇到Node父进程未启用VM命名导出、类型擦除留下空child_process import，均在进入上游案例前失败；修正仅加载器，不改上游源码。最终JSON仅记录修复后的实际probe。03:09 UTC clean-code复核：来源/合成fixture/公开seam分离，输出不包含大字符串或假装真实secret；独立进程组3秒hard watchdog，正常实际退出并清理，不触碰其他服务。上游完整tree-kill、V2 chunk协议、真实CLI与模型未测；0模型/云，不能作上游整体通过结论。
+
+## 独立审查事实
+
+Goal Owner已只读方法审查APPROVED auth固定8e232a0：完整模块/证据和10个复制文件/license hash、raw/9场景吻合，无blocking，未重跑；批准不扩展真实provider policy、频率、跨进程或完整SDK启动。Paseo target db2f2d0 的独立review仍NOT_STARTED。两个结论不得合并成“整个上游已通过”。
