@@ -1,6 +1,9 @@
 import {
   CONVERSATION_CONTEXT_LIMITS, KNOWLEDGE_LIMITS, conversationCreationSchema, conversationTurnSchema,
   conversationContextSelectionSchema, parseAttachmentContextReceipt, executionProfileReferenceSchema, idSchema, knowledgeCitationSchema,
+  CLAUDE_TURN_SETTINGS_PROTOCOL, CONVERSATION_QUEUE_PREVIEW_BYTES, claudeTurnSettingsSchema, claudeMessageSettingsFinalSchema,
+  assertClaudeTurnSettingsMatch, conversationQueueEnqueueSchema,
+  type ClaudeTurnSettings, type ConversationQueueEnqueue, type ConversationQueueAccepted,
   type ConversationCreated, type ConversationCreation, type ConversationTurnAccepted, type ConversationTurnAdmission, type KnowledgeCitation, type AttachmentReference, type AttachmentDescriptor,
 } from '@flow/contracts';
 
@@ -19,6 +22,7 @@ function record(value: unknown): Record<string, unknown> {
 }
 const text = (value: unknown, max: number, min = 1) => typeof value === 'string' && value.length >= min && value.length <= max;
 const id = (value: unknown) => idSchema.safeParse(value).success;
+const uuid = (value: unknown) => executionProfileReferenceSchema.shape.id.safeParse(value).success;
 const digest = (value: unknown) => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
 const integer = (value: unknown, min = 0, max = 2_147_483_647) => typeof value === 'number' && Number.isInteger(value) && value >= min && value <= max;
 const timestamp = (value: unknown) => text(value, 80) && Number.isFinite(Date.parse(value as string));
@@ -86,8 +90,22 @@ function capabilities(value: unknown) {
   requireValue(result.followUp === true && typeof result.queue === 'boolean'
     && ['steer', 'perTurnModel', 'perTurnThinking', 'perTurnTools'].every(key => result[key] === false)
     && ['liveAssistantText', 'knowledgeContext', 'attachmentContext'].every(key => result[key] === undefined || typeof result[key] === 'boolean'));
+  if (result.messageSettings !== undefined) {
+    const settings = record(result.messageSettings);
+    requireValue(settings.protocol === CLAUDE_TURN_SETTINGS_PROTOCOL && settings.choices === 'execution-profile'
+      && executionProfileReferenceSchema.safeParse(settings.profile).success);
+  }
 }
-function effective(value: unknown, taskId: unknown) {
+function messageSettings(value: unknown, expected?: ClaudeTurnSettings): ClaudeTurnSettings | undefined {
+  if (value === undefined && expected === undefined) return undefined;
+  const parsed = claudeTurnSettingsSchema.safeParse(value); requireValue(parsed.success);
+  if (expected !== undefined) {
+    try { assertClaudeTurnSettingsMatch(expected, parsed.data); }
+    catch { throw new UnknownConversationAcknowledgementError(); }
+  }
+  return parsed.data;
+}
+function effective(value: unknown, taskId: unknown, snapshot?: ClaudeTurnSettings) {
   const result = record(value);
   requireValue((result.model === null || text(result.model, 180)) && oneOf(result.thinking, ['disabled', 'unknown'])
     && (oneOf(result.tools, [null, 'unknown', 'configured-readonly']) || Array.isArray(result.tools) && result.tools.length <= 100 && result.tools.every(tool => text(tool, 200)))
@@ -100,6 +118,12 @@ function effective(value: unknown, taskId: unknown) {
   if (result.runnerRequested !== undefined) {
     const requested = record(result.runnerRequested);
     requireValue(text(requested.model, 180) && requested.permissionMode === 'dontAsk' && requested.thinking === 'disabled');
+  }
+  if (result.messageSettings !== undefined) {
+    const parsed = claudeMessageSettingsFinalSchema.safeParse(result.messageSettings);
+    requireValue(parsed.success && snapshot !== undefined && result.runnerRequested === undefined);
+    messageSettings(parsed.data.snapshot, snapshot);
+    requireValue(result.model === (parsed.data.observed?.model ?? null));
   }
 }
 function assistant(value: unknown, taskId: unknown) {
@@ -127,7 +151,8 @@ function turn(value: unknown, conversationId: string, input: ConversationTurnAdm
   requireValue(id(task.id) && text(task.title, 180) && task.harness === 'claude' && timestamp(task.createdAt) && timestamp(task.updatedAt)
     && oneOf(task.status, ['queued', 'running', 'waiting', 'cancel_requested', 'succeeded', 'failed', 'cancelled', 'uncertain'])
     && oneOf(task.verificationStatus, ['pending', 'passed', 'failed']) && telemetry.kind === 'execution' && telemetry.taskId === task.id && text(telemetry.title, 180));
-  effective(result.effective, task.id); assistant(result.assistant, task.id);
+  const snapshot = messageSettings(result.messageSettings, input.messageSettings);
+  effective(result.effective, task.id, snapshot); assistant(result.assistant, task.id);
   requireValue(!input.attachments?.length || typeof projectId === 'string');
   assertConversationContextMatches(input.knowledge, result.context, input.attachments?.length ? { projectId: projectId as string, attachments: input.attachments } : undefined);
 }
@@ -144,4 +169,21 @@ export function decodeConversationTurnAccepted(raw: unknown, conversationId: str
   requireValue((parsed.data.knowledge ?? []).every(ref => ref.projectId === conversation.projectId));
   turn(result.turn, conversationId, parsed.data, conversation.projectId);
   return raw as ConversationTurnAccepted;
+}
+
+/** Opt-in enqueue acceptance is immutable; current promotion state belongs to a later read. */
+export function decodeConversationQueueAccepted(raw: unknown, conversationId: string, input: ConversationQueueEnqueue): ConversationQueueAccepted {
+  const parsed = conversationQueueEnqueueSchema.safeParse(input);
+  requireValue(parsed.success && parsed.data.messageSettings !== undefined && id(conversationId));
+  const result = record(raw); const item = record(result.item);
+  requireValue(result.conversationId === conversationId && typeof result.replayed === 'boolean'
+    && integer(result.queueRevision, 1) && result.queueRevision === parsed.data.expectedQueueRevision + 1);
+  requireValue(uuid(item.id) && item.conversationId === conversationId && item.sequence === result.queueRevision
+    && item.state === 'waiting' && item.promoted === null && timestamp(item.createdAt) && timestamp(item.updatedAt));
+  requireValue(text(item.preview, CONVERSATION_QUEUE_PREVIEW_BYTES)
+    && new TextEncoder().encode(item.preview as string).length <= CONVERSATION_QUEUE_PREVIEW_BYTES
+    && parsed.data.text.startsWith(item.preview as string) && item.truncated === (item.preview !== parsed.data.text));
+  if (new TextEncoder().encode(parsed.data.text).length <= CONVERSATION_QUEUE_PREVIEW_BYTES) requireValue(item.preview === parsed.data.text);
+  messageSettings(item.messageSettings, parsed.data.messageSettings);
+  return raw as ConversationQueueAccepted;
 }

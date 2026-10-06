@@ -2,7 +2,7 @@ import { afterEach, expect, test } from 'vitest';
 import { createServer } from 'node:http';
 import { randomUUID } from 'node:crypto';
 import { FlowClient, decodeConversationCreated, decodeConversationTurnAccepted, assertConversationCreationMatches, assertConversationContextMatches, UnknownConversationAcknowledgementError } from './index.js';
-import { conversationCreationSchema, type ConversationCreated, type ConversationTurnAccepted, type KnowledgeCitation, type ConversationContextReference } from '@flow/contracts';
+import { conversationCreationSchema, type ClaudeTurnSettings, type ConversationCreated, type ConversationTurnAccepted, type KnowledgeCitation, type ConversationContextReference } from '@flow/contracts';
 const closers: (() => Promise<void>)[] = [];
 afterEach(async () => { for (const close of closers.splice(0).reverse()) await close(); });
 const creation = conversationCreationSchema.parse({ title: 'Original' });
@@ -53,6 +53,80 @@ test('HTTP mismatched accepted turn is unknown and never becomes delivery succes
 });
 
 const citation = (n = 1): KnowledgeCitation => ({ projectId: 'project-a', sourceId: `10000000-0000-4000-8000-${String(n).padStart(12, '0')}`, version: 1, contentDigest: 'a'.repeat(64), locator: { kind: 'utf8-bytes', start: 2, end: 6 } });
+
+function messageSettings(): ClaudeTurnSettings {
+  return { protocol: 'flow.claude-turn-settings.v1' as const,
+    profile: { id: randomUUID(), runnerId: randomUUID(), configDigest: 'a'.repeat(64) },
+    requested: { model: 'configured-alias', thinking: 'adaptive' as const, effort: { kind: 'level' as const, value: 'high' as const }, speed: 'fast' as const } };
+}
+test('rejects a missing message settings snapshot in an otherwise valid send receipt', () => {
+  const value = accepted();
+  expect(() => decodeConversationTurnAccepted(value, value.conversation.id, {
+    expectedRevision: 0, text: value.turn.user.text, mode: 'follow-up', messageSettings: messageSettings(),
+  })).toThrow(UnknownConversationAcknowledgementError);
+});
+
+test('nested send settings stay frozen to the exact body while a caller edits its next request', async () => {
+  const value = accepted(); value.turn.messageSettings = messageSettings();
+  const input = { ...turnInput(value), messageSettings: structuredClone(value.turn.messageSettings) };
+  const sent = JSON.stringify(input); const { client, requests } = await http(() => JSON.stringify(value));
+  const pending = client.submitConversationTurn(value.conversation.id, input, 'settings-stable');
+  input.messageSettings.profile.configDigest = 'b'.repeat(64); input.messageSettings.requested.model = 'next-draft';
+  input.messageSettings.requested.effort = { kind: 'level', value: 'low' };
+  expect(await pending).toEqual(value); expect(requests).toEqual([{ body: sent, key: 'settings-stable' }]);
+});
+
+test('send settings mismatch or malformed observations retain unknown without raw response or retry', async () => {
+  const value = accepted(); value.turn.messageSettings = messageSettings();
+  const input = { ...turnInput(value), messageSettings: structuredClone(value.turn.messageSettings) };
+  const variants = [undefined, null, { ...input.messageSettings, protocol: 'wrong' },
+    ...['id', 'runnerId', 'configDigest'].map(field => ({ ...input.messageSettings, profile: { ...input.messageSettings.profile, [field]: field === 'configDigest' ? 'b'.repeat(64) : randomUUID() } })),
+    { ...input.messageSettings, requested: { ...input.messageSettings.requested, model: 'unconfirmed-secret-model' } }];
+  let body: unknown = value;
+  const { client, requests } = await http(() => JSON.stringify(body));
+  for (const snapshot of variants) {
+    body = { ...value, turn: { ...value.turn, messageSettings: snapshot } };
+    await expect(client.submitConversationTurn(value.conversation.id, input, 'unchanged-key')).rejects.toMatchObject({
+      code: 'conversation_ack_unknown', message: 'The conversation acknowledgement is unconfirmed. Keep the original request identity.',
+    });
+  }
+  expect(requests).toHaveLength(variants.length);
+  expect(requests.every(request => request.key === 'unchanged-key' && request.body === JSON.stringify(input))).toBe(true);
+});
+
+test('requested and observed settings preserve absent, null and alias facts and reject contradictory wrappers', () => {
+  const value = accepted(); const snapshot = messageSettings(); value.turn.messageSettings = snapshot;
+  const input = { ...turnInput(value), messageSettings: snapshot };
+  for (const observed of [null, { source: 'claude.sdk.system.init' as const, model: 'actual-model-alias' },
+    { source: 'claude.sdk.system.init' as const, model: 'actual-model-alias', effort: null, fastModeState: 'cooldown' as const, fastModeDisabledReason: 'pending' as const }]) {
+    value.turn.effective = { ...value.turn.effective, model: observed?.model ?? null, messageSettings: { snapshot, observed } };
+    const result = decodeConversationTurnAccepted(value, value.conversation.id, input);
+    expect(result.turn.effective.messageSettings!.observed).toEqual(observed);
+    expect(result.turn.messageSettings!.requested.model).toBe('configured-alias');
+  }
+  for (const observed of [{ source: 'wrong', model: 'actual-model-alias' }, { source: 'claude.sdk.system.init', model: '' },
+    { source: 'claude.sdk.system.init', model: 'actual-model-alias', effort: 'unsupported' },
+    { source: 'claude.sdk.system.init', model: 'actual-model-alias', fastModeState: null }]) {
+    const bad = { ...value, turn: { ...value.turn, effective: { ...value.turn.effective, messageSettings: { snapshot, observed } } } };
+    expect(() => decodeConversationTurnAccepted(bad, value.conversation.id, input)).toThrow(UnknownConversationAcknowledgementError);
+  }
+  value.turn.effective.model = snapshot.requested.model;
+  expect(() => decodeConversationTurnAccepted(value, value.conversation.id, input)).toThrow(UnknownConversationAcknowledgementError);
+  value.turn.effective.model = 'actual-model-alias';
+  value.turn.effective.messageSettings!.snapshot = { ...snapshot, profile: { ...snapshot.profile, runnerId: randomUUID() } };
+  expect(() => decodeConversationTurnAccepted(value, value.conversation.id, input)).toThrow(UnknownConversationAcknowledgementError);
+});
+
+test('optional settings capability is finite and leaves all legacy capability flags false', () => {
+  const value = created(); const settings = messageSettings();
+  value.capabilities.messageSettings = { protocol: settings.protocol, profile: settings.profile, choices: 'execution-profile' };
+  expect(decodeConversationCreated(value, creation)).toEqual(value);
+  expect(value.capabilities.perTurnThinking).toBe(false);
+  for (const patch of [{ protocol: 'wrong' }, { profile: { ...settings.profile, id: 'invalid' } }, { choices: 'arbitrary' }]) {
+    const bad = { ...value, capabilities: { ...value.capabilities, messageSettings: { ...value.capabilities.messageSettings, ...patch } } };
+    expect(() => decodeConversationCreated(bad, creation)).toThrow(UnknownConversationAcknowledgementError);
+  }
+});
 const context = (refs: KnowledgeCitation[]): ConversationContextReference => ({ id: 'context-a', contextDigest: 'b'.repeat(64), executionInputId: 'input-a', executionInputDigest: 'c'.repeat(64), templateVersion: 1,
   sources: refs.map(ref => ({ citation: structuredClone(ref), byteLength: ref.locator.end - ref.locator.start, currentVersionAtFreeze: 2, isCurrentAtFreeze: false })) });
 function turnInput(value: ConversationTurnAccepted) { return { expectedRevision: value.turn.number - 1, text: value.turn.user.text, mode: 'follow-up' as const }; }
