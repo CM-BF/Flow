@@ -1,12 +1,12 @@
 # ENG-001 真实工程任务交付
 
-状态：accepted / planning。创建2026-10-06。承接FLOW-001 REQ-06与FLOW-002-T07，唯一生产大task；E01保留harness公平对照与合成研究，不复制本实现计划。Goal Owner定义用户结果，Execution Lead自主拆分sub-tasks。统一遵循[模块与性能规则](../../AGENTS.md#modular-design)。
+状态：accepted / ENG001-02合同细化与ENG001-03实施ready。创建2026-10-06。承接FLOW-001 REQ-06与FLOW-002-T07，唯一生产大task；E01保留harness公平对照与合成研究，不复制本实现计划。Goal Owner定义用户结果，Execution Lead自主拆分sub-tasks。统一遵循[模块与性能规则](../../AGENTS.md#modular-design)。
 
 ## 用户结果和优先级
 
 用户在Web或TUI为明确项目提交工程请求，中心持久保存目标、工作区、权限和执行配置。runner复用已认可native harness，在独立分支/worktree实际修改源码并运行局部检查；界面退出后工作继续。交付显示实际diff、固定版本、runner监督得到的检查结果及独立验收依据，明确失败、未验、取消、未知和待接受，不以模型文字或fixture的success代替。
 
-顺序：TUI首片与R05/Codex基础接通之后、COST观测扩展之前；不等待所有Web视觉/语音完成。先一条真实纵向旅程，再扩第二harness/复杂工具。当前仅plan/evidence领取，实施槽与产品路径待独立take，不打断现workers。
+顺序：TUI首片与R05/Codex基础接通之后、COST观测扩展之前；不等待所有Web视觉/语音完成。先一条真实纵向旅程，再扩第二harness/复杂工具。2026-10-06 mainf181d84已接收TUI01A和R05C/C1，原基础依赖满足。ENG001-02/03进入ready：不再等待Mika真实Codex诊断、完整capability或全部Web。当前仅plan/evidence领取，native_center_owner在R05D最小可冻结点后接独立工程子片；SVC04不中断，生产路径仍需新take。
 
 ## 当前已核事实与边界
 
@@ -50,3 +50,9 @@ Flow项目写入只允许确认>=Sol的模型，优先本机可确认gpt-6-astra
 ## 完成和非目标
 
 完整完成依赖上述用户旅程全部可用与真实证据；单个模拟、read-only回复、类型通过、计划或CLI薄壳均不足。E01保留公平比较，COST复用usage账本提供成本解释，不是本纵向片必须等待的工程实现。优先保存已受影响局部检查；不为文档重跑产品全集。
+
+## ENG001-02 受信检查与Git固定内容集补充
+
+当前runner verifier/server evidence/runner合同仍限flow.text的nonempty/contains。工程通路需独立的受信检查来源、版本、退出结果与产物收据；不能把日志非空当工程验证通过，中心只验证收据/产物关联，不声称重跑远端命令，旧text验证保持兼容。
+
+受管worktree共享Git refs及默认config；worktree lock只防移动/清理，不是并发写锁。交付内容集须覆盖新增未跟踪、已暂存/未暂存、删除、文件类型/模式；首片可明确拒绝binary/submodule，不可漏掉仍称完整。受信检查前后必须绑定同一内容集，禁外部diff与textconv，只读Git用GIT_OPTIONAL_LOCKS=0；不为这些约束造通用Git框架。来源：[Git worktree](https://git-scm.com/docs/git-worktree)、[Git diff](https://git-scm.com/docs/git-diff)，GO于2026-10-06提供的已核研究输入，实施owner仍核实际固定工具行为。
