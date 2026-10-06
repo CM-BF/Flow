@@ -17,8 +17,8 @@
 
 ## TODO
 
-- [ ] ACK01-01 三处薄入口委托公共回执验证，保既有Web投影和冻结策略。
-- [ ] ACK01-02 真实HTTP故障/恢复及直接消费者局部验证；记录clean-code和固定来源。
+- [x] ACK01-01 三处薄入口委托公共回执验证，保既有Web投影和冻结策略。
+- [x] ACK01-02 真实HTTP故障/恢复及直接消费者局部验证；记录clean-code和固定来源。
 - [ ] ACK01-03 独立review、主线接收；分支通过不等main完成。
 
 验收包括坏200JSON/shape/identity/context不清unknown原key/body；已知GET优于旧ACK；409无自动重发；创建profile/project匹配、知识有序tuple与Queue直接消费者保持。只跑本模块/直接依赖，不重跑完整浏览器矩阵。

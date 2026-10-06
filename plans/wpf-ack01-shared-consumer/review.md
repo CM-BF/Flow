@@ -2,7 +2,7 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：UNKNOWN
+Review target commit：2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d
 
 Base：0cee7556befa1988e60bae94b510240122c34b88
 
@@ -11,3 +11,5 @@ Base：0cee7556befa1988e60bae94b510240122c34b88
 独立审查说明：只读核实际branch/HEAD/dirty及固定sourcehash；检查公共decoder为单一规则，GET/history/Queue冻结、已知turn冲突与read-sequence未被删除；实际HTTP坏2xx未知、显式same-key/body恢复、409与close/epoch边界。确认未知v2仍拒，profile/cap UI规则不被公共decoder代替。记录severity/blocking、实际命令与未验证范围。
 
 入口：[plan](plan.md)、[status](status.md)、[quality](../../docs/evidence/wpf-ack01/quality.md)。
+
+作者固定检查：[README](../../docs/evidence/wpf-ack01/README.md)、[source-manifest](../../docs/evidence/wpf-ack01/source-manifest.json)。尚无独立review结论。
