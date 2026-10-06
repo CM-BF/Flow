@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-06 17:54:35 UTC",
+  "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+  "entries": [
+    {
+      "path": "apps/cli/README.md",
+      "bytes": 8350,
+      "sha256": "c56778839a6eaf81e63f59ba63f8be25c2bf0667ad82a33b9d74f9edd28839ba",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e"
+    },
+    {
+      "path": "apps/cli/src/cli.test.ts",
+      "bytes": 17834,
+      "sha256": "90c50bcc6ce46dd1506926268759187a2488b9ccf522180ba12323e8ce1c25f7",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e"
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 25827,
+      "sha256": "0b55574691abce3ac8edc93f0a25e4bb0ab0f786ad68acc8ac2590719ea5f1ae",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.test.ts",
+      "bytes": 24251,
+      "sha256": "62449d0899aa3450919fee44c7edcc6d1c928c6605b096a0475d6ca08bdf050b",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 14330,
+      "sha256": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e"
+    },
+    {
+      "path": "packages/client/src/conversation-queue.test.ts",
+      "bytes": 11995,
+      "sha256": "97ee6565dde24d037be38640b2b5c8b2a1fad06e5617e671233c4e9b92521e34",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e"
+    },
+    {
+      "path": "packages/client/src/execution-profiles.test.ts",
+      "bytes": 12124,
+      "sha256": "c1775f97e444d14e7a39b46135369dda40474f0c889dc41f6b73bacb041b2ae7",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 52725,
+      "sha256": "6355ed6f114a7b01833a03488ed4b0c59fb9ebd91f88acedffcd4051834bbee5",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1467,
+      "sha256": "d62739a19e76a0f65effacb34d4e1b0d2d7d5fd90bf32fd2e2bcb1ef79351384",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e"
+    }
+  ],
+  "sourceMismatches": [],
+  "integrationFactsFromExecutionLead": "FF/push/clean;45 settings exact;TUI ec30/Web2d1 direct type consumers;root noEmit0/9.09s,firstred retained",
+  "ownerChecks": "Only fixed/current/main9source bytes/hash comparison;0tests/provider",
+  "limit": "C01 client/CLI consumer only;main composition does not imply live model/UI acceptance."
+}
