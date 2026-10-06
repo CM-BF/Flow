@@ -2,31 +2,31 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:35 UTC / 2026-10-06 02:30 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 03:15 UTC / 2026-10-06 03:04 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | d444608ab6c796c731e44e51a892868bf39bec2a / f2e8af203c8311f8e82fa5f4f17a94a50dc05a89（本记录前集成commit） |
-| 工作树dirty状态 | 组件已审实现已合入；本次系统证据和registry增量待提交 |
-| 工作分支状态 | in-progress |
-| 检查状态 | PASSED C02集成13703a4accef004d16fd40312dd565d390896e09直接影响16/16；C02+M02交叉5/5（另12未选择） |
-| 已集成main状态 / HEAD | C02+M02首段已进入main/origin 108fddbd8261963f3d49088873b5a611b70a5dbf；跨批次受理顺序修复待独立review |
-| Review | [review.md](review.md)，整体NOT_STARTED，component review分别引用 |
+| 工作基线 / HEAD | d444608ab6c796c731e44e51a892868bf39bec2a / 1eb4196f1beecb13b7f845e680480babf1110d52（本记录前集成commit） |
+| 工作树dirty状态 | 仅本次交付记录；实现已提交 |
+| 工作分支状态 | completed（本批已审集成片段） |
+| 检查状态 | PASSED；G01/P02/CLI/client/harness直接影响10/10；实际A2A生产入口选择1/1（14未选择）；Web20/20+typecheck/build；0模型 |
+| 已集成main状态 / HEAD | main/origin ea8d44f为03:04观察值；本批已核验组件与检查就绪，待本记录提交后fast-forward |
+| Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 优先级 | 1 |
-| 当前产出 | 协议与新版聊天界面已完成整合检查，执行看板即将更新 |
-| 下一可用交付 | Web与CLI共享跨任务决策和安全恢复能力 |
+| 优先级 | 2 |
+| 当前产出 | 统一Web、版本化项目命令与持久外部执行已完成整合检查 |
+| 下一可用交付 | 本批发布后由O01接自然语言目标执行、WPF-I01接插件挂载 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| I02-T01 | completed | Lead | C02独立APPROVED97ab1e5；main13703a4；[集成16项](../../docs/evidence/i02/c02-integration.txt) |
-| I02-T02 | in-progress | Lead | M02首段e888862获独立APPROVED；合并后[交叉5项](../../docs/evidence/i02/m02-c02-integration.txt)通过 |
-| I02-T03 | in-progress | Lead | SDK首段APPROVED已入集成树，11项独立检查通过；完整P02出站后继open |
-| I02-T04 | in-progress | Lead | D03独立APPROVED260d53c，22源聚合通过，待更新4320 |
-| I02-T05 | in-progress | Lead / 外部UI | 已审Thread cb4a392在真实中心整浏览器旅程通过；WPF-M02统一入口仍实现中 |
+| I02-T01 | completed | Lead | C02 APPROVED97ab1e5；main13703a4；[集成16项](../../docs/evidence/i02/c02-integration.txt) |
+| I02-T02 | completed | Lead | M02首段及201task因果修复已审并集成；[因果顺序](../../docs/evidence/i02/causal-order.md) |
+| I02-T03 | completed | Lead | P01 SDK11项已审并集成；P02 task-based出站f942独审，生产入口选择1项与G01共享组合10项通过；MCP持久交互仍open |
+| I02-T04 | completed | Lead | D03与D04已独审，4320真实ea8 28源已核；新30源注册在本批，无产品语义变化 |
+| I02-T05 | completed | Lead / 外部UI | 新Thread真实中心完整旅程；WPF-M02 d47独审、10task真PG/HTTP4组及8chat/双split/窄屏证据，集成Web20项通过 |
 
 ## 限制与handoff
 
@@ -34,10 +34,12 @@
 
 ## Dashboard同步
 
-唯一来源本status；已通知D03 owner登记I02，未部署前不说4320已新增此项。
+唯一来源本status；I02已在实际4320登记。历史main观察值不要求随每个metadata提交追赶。
 
 ## 本段修复
 
-[201 task 因果顺序回归](../../docs/evidence/i02/causal-order.md)：先红后绿，workspace 6/6；修复未改变公共接口，独立 delta review 待执行。
+[201 task 因果顺序回归](../../docs/evidence/i02/causal-order.md)：先红后绿，workspace 6/6；修复未改变公共接口，已完成独立delta review并在main8c57f2集成。
 
 [本批组件与真实系统检查](../../docs/evidence/i02/approved-slices.md)保留准确target、模型/测试边界和未完成的整体M2目标。
+
+[本轮完整集成清单与验证边界](../../docs/evidence/i02/2026-10-06-integration.md)。全Flow长期目标继续，O01/X01/KB/容量等仍open。
