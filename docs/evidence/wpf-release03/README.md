@@ -1,8 +1,8 @@
-# RELEASE03 固定组合验证（旧A失败；新后端重绑待审）
+# RELEASE03 固定组合验证（新A部分通过／资源中断）
 
-当前后继修复target `269103d44f153f13a2f35fadb08bf11d4f62e48d` 已固定，未运行；原1a7详情合同P1源级finding保留，修复已获源码限定APPROVED，实际新A/B仍未运行；[backend输入接口](backend-input-interface.md)。旧362结果仍绑定432b，未回填新后端。
+当前源码target `269103d44f153f13a2f35fadb08bf11d4f62e48d` 获源码条件批准；A3以实际HEAD0b3e/backend af51/artifact d629运行4,109ms：attachment-only通过，mixed因磁盘停止线中断。完整兼容未通过，B/Chrome NOT_RUN、0provider；[本次结果与raw hash](history3-result.json)。累计7,983/180,000ms，剩余172,017ms。数据库与自有worker清理完成。原outcome的phaseB=FAILED是无worker完成结果的fallback标签，不代表实际运行B，原raw保留。
 
-历史固定432b已完成唯一一次 A-only 真实HTTP检查：attachment-only与mixed两项均失败，复现固定362的附件历史缺口；专库/worker清理成功。累计3,874/180,000ms，B/Chrome NOT_RUN，0provider，无SVC全绿报告或发布操作。见[本次结果及原样hash](history-result-152729.json)。原strict noEmit成功与源码条件批准保持其历史范围，不等业务兼容通过。
+旧362两项业务失败绑定432b，原1a7详情DTO P1及后继269103源码修复均保留。A2资源未准入是0运行，不混为产品失败。A3部分通过不能复用为成功A证明；新准入仍由管理提供，不自动重试/发布。
 
 ## 初始432b输入与后继
 

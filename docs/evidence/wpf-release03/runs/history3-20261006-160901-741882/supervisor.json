@@ -1,0 +1,32 @@
+{
+  "checksAndCleanupPassed": false,
+  "errors": [
+    "Free space reached stop margin",
+    "Worker did not return a complete result"
+  ],
+  "cleanup": {
+    "databaseName": "flow_release03_f043891611ba49e9ad73",
+    "databaseCreateAttempted": true,
+    "databaseCreated": true,
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "errors": [],
+    "processIds": [
+      {
+        "pid": 47927,
+        "exitCode": null,
+        "signalCode": "SIGTERM"
+      }
+    ],
+    "finishedAt": "2026-10-06T16:09:24.715Z"
+  },
+  "resourcePolicy": {
+    "startMargin": 1107296256,
+    "stopMargin": 1090519040,
+    "admittedStart": 1107296256
+  },
+  "minimumFreeBytes": 1090244608,
+  "freeAtEnd": 1089323008,
+  "attribution": "Shared filesystem observations; not exclusively attributable to this run",
+  "providerQueries": 0
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 15:55:47 UTC |
+| 最近更新时间 | 2026-10-06 16:10:42 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
@@ -10,25 +10,25 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 269103d44f153f13a2f35fadb08bf11d4f62e48d（后继源码固定） |
-| 工作树dirty状态 | 修复源码269103d已提交；本记录为metadata提交前时点，完成后local/remote/clean另核 |
+| 工作树dirty状态 | 执行时0b3e clean；本次只更新原始证据与metadata，提交后local/remote/clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | NOT_RUN 269103d44f153f13a2f35fadb08bf11d4f62e48d（新后端及B-only源码）；旧432b实际A两项FAILED，B未运行 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；新后端重绑待独审；旧A失败/新组合未运行 |
+| 检查状态 | PARTIAL 269103d44f153f13a2f35fadb08bf11d4f62e48d：A3 attachment-only通过；mixed因资源停止未完成；B NOT_RUN |
+| 已集成main状态 / HEAD | NOT_INTEGRATED；源码条件已审，新组合部分运行；完整兼容未通过 |
 | 实现目标 | 269103d44f153f13a2f35fadb08bf11d4f62e48d |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 修复后的验证脚本已复核，等待实际组合检查 |
+| 当前产出 | 附件单独使用检查通过，混合材料检查因磁盘余量停止 |
 | 下一可用交付 | 后台最小修复后继续未完成的真实前端验证 |
-| 当前阻塞 | ACTIVE: 原后台检查失败；修复组合及验证源码已固定，等待本次实际检查准入 |
+| 当前阻塞 | ACTIVE: 磁盘触及停止余量；混合材料与真实页面检查未完成，等待明确新准入 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，269103d源码条件APPROVED，1a7 P1源修已闭合；完整兼容NOT_STARTED；旧432b源码条件APPROVED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | RELEASE03-01 | completed | w01_owner | [固定源码审查](../../docs/evidence/wpf-release03/source-review-432b.json)、[manifest](../../docs/evidence/wpf-release03/source-manifest.json) |
-| RELEASE03-02 | pending | w01_owner | [实际A结果](../../docs/evidence/wpf-release03/history-result-152729.json)：2/2失败，累计3,874/180,000ms；B未运行 |
+| RELEASE03-02 | pending | w01_owner | [A3部分结果](../../docs/evidence/wpf-release03/history3-result.json)：单附件通过、混合中断，累计7,983/180,000ms；旧362两失败保留，B未运行 |
 | RELEASE03-03 | pending | w01_owner | 432b源码条件独审已通过；root已独立核实际A失败原始证据；B/主线交付未完成 |
 
 ## 架构影响与未验
@@ -84,3 +84,11 @@ root对1a7源码指出P1：把GET详情当执行输入reference解析，会拒�
 ## 2026-10-06 15:55:47 UTC 后继源码独审通过／等待单次A2
 
 root在15:55:02Z固定269103d独立源码复审APPROVED/0blocking，原1a7 P1报告原样保留，source-addressed。两源current/fixed相同，browser未变；独立peer只读browser结论另归档。见[root原报告](../../docs/evidence/wpf-release03/source-review-2691-root.json)、[原P1](../../docs/evidence/wpf-release03/source-review-1a7-root.json)。这是源码准入条件，不是新后台HTTP或完整兼容通过；新A/B未执行，累计仍3874ms。先固定本metadata HEAD再供manager新准入，本人不交错改源或自动启动。
+
+## 2026-10-06 16:10:42 UTC A2未准入与A3资源中断
+
+A2 15:57唯一freshfree1,103,237,120B<start1,107,296,256B，未生成gate、0运行；[原样准入](../../docs/evidence/wpf-release03/history2-not-run-resource.json)。A3 16:09:01 fresh准入通过，执行HEAD0b3e/源码269103d、实际backend af51与artifact d629。本人live核v3原4scope后只跑history一次，16:09:20.610Z开始、4,109ms结束。attachment-only真实HTTP通过；mixed因监督器资源停止中断，不记产品失败。minimumFree1,090,244,608B低于stop1,090,519,040B，freeAtEnd1,089,323,008B均为共享卷观察，不归因本任务。
+
+[结果及全部raw hash](../../docs/evidence/wpf-release03/history3-result.json)、[原始history](../../docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/history.json)、[cleanup](../../docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/cleanup.json)。专库flow_release03_f043891611ba49e9ad73有marker并已删除；唯一worker47927由SIGTERM结束，cleanup errors=[]。累计7,983ms、剩余172,017ms/180秒；B/Chrome/原keyApp/Queue NOT_RUN，compatibilityId=null，0provider。原outcome的phaseB=FAILED为无完整worker结果的监督器fallback标签，实际history入口没有启动Chrome或B；原JSON不改，本说明纠正解读。9份raw共47,136B。
+
+窗口与清理事实已交管理/root，无自动重跑/资源重采/类型检查；两源码继续固定269103d。A3不是两项完整成功，不能作为B准入的成功A attestation，也不能生成SVC绿回执。

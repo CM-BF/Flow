@@ -43,3 +43,7 @@
 ## 2026-10-06 15:55:47 UTC 独审归档安全点
 
 仅原样复制root两份report并更新当前源码批准事实；保留旧P1/旧362两项失败。产品两源继续固定269103d，wholefeature未验，不误用SOURCE批准授权运行。先normal metadata提交/push/核clean，再告manager实际HEAD，避免准入期间元数据竞态；0产品检查/PG/Chrome/资源查询。
+
+## 2026-10-06 16:10:42 UTC A3安全停点
+
+只封存一次已获准history结果与metadata，源码保持269103d。区分attachment-only业务通过、mixed资源中断、B实际未运行与raw fallback标签；保留全部原JSON，不捏造第二项结果或成功A证明。累计7,983ms不清零，cleanup有marker删除/worker退出/errors[]，不把清理成功当兼容通过。沿已读clean-code方法核证据名称/来源/失败边界；没有重跑types、业务或free查询。

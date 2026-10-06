@@ -45,3 +45,7 @@ root固定1a7源码结论REQUEST_CHANGES：GET ContextDetail不含executionInput
 ## 2026-10-06 15:55:47 UTC 269103d源码限定APPROVED
 
 root独立SOURCE review于2026-10-06T15:55:02.202190Z通过，0blocking；[完整原报告](../../docs/evidence/wpf-release03/source-review-2691-root.json)。RELEASE1A7-P1 source-addressed；原[REQUEST_CHANGES报告](../../docs/evidence/wpf-release03/source-review-1a7-root.json)不覆盖。两固定源=current，history region59cde31c，旧raw未变；peer未变browser证据范围亦无新增blocking。未运行新types/HTTP/PG/Chrome；完整feature审查仍NOT_STARTED。manager freshgate未到，不把源码批准当allowRun。
+
+## 2026-10-06 16:10:42 UTC A3部分运行，不扩展批准
+
+源码批准仍固定269103d。A3 attachment-only通过，mixed资源中断，B未执行；完整兼容保持NOT_STARTED。见[原始结果索引](../../docs/evidence/wpf-release03/history3-result.json)。旧362业务失败、A2未准入与A3资源中断分别记录，不混合归因，不把单项通过当成功A attestation。
