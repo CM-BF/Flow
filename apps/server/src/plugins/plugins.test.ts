@@ -29,8 +29,10 @@ async function request(path: string, body?: unknown, options: { token?: string; 
 }
 async function startServer() {
   server = await createServer({ databaseUrl, ownerToken });
-  await migratePlugins(pool!);
-  registerPluginRoutes(server, pool!);
+  if (!server.hasRoute({ method: 'POST', url: '/api/plugins' })) {
+    await migratePlugins(pool!);
+    registerPluginRoutes(server, pool!);
+  }
   baseUrl = await server.listen({ host: '127.0.0.1', port: 0 });
 }
 beforeAll(async () => {
