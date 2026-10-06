@@ -21,3 +21,5 @@ conversationMessages接口保持现状。按不可变ConversationTurn对象身�
 架构影响：仅原消息展示转换函数内部缓存，不改变模块公开接口/协议/FSM/DB，无需架构图改造。
 
 2026-10-06 07:31 UTC：固定f909d32f5fcff5b0ac6408dc96e8630bfeffae4e，3文件实现；最终8+此前77局部/typecheck通过，小计数证明未变200条复用且实际converter回调200→0，变化末轮仅2；不等于runtime/React工作为0。独立review NOT_STARTED，主线未接收。
+
+2026-10-06 07:37 UTC：root固定f909独立APPROVED，实际8/8通过、0 findings。PERF03-03仅审查部分完成，main接收仍待Lead，保留未勾选；交付阶段integration。

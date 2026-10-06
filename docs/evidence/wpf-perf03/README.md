@@ -1,6 +1,6 @@
 # PERF03 消息对象复用
 
-固定实现：f909d32f5fcff5b0ac6408dc96e8630bfeffae4e；base：30b97cbf3665c4ef7a314a6a8b59394ae68781af。分支codex/web-message-reuse。只改消息转换函数内部WeakMap与两份专用检查；未改Thread、App、conversation projection、stream、shared或依赖。独立review尚未开始；主线未集成。
+固定实现：f909d32f5fcff5b0ac6408dc96e8630bfeffae4e；base：30b97cbf3665c4ef7a314a6a8b59394ae68781af。分支codex/web-message-reuse。只改消息转换函数内部WeakMap与两份专用检查；未改Thread、App、conversation projection、stream、shared或依赖。root于2026-10-06 07:37:06 UTC对固定f909独立APPROVED；主线未集成。
 
 ## 行为与边界
 
@@ -39,3 +39,7 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversatio
 最后命令只在内存中跑100turn/200messages固定样本，baseline由git show固定base原messages.ts经TypeScript擦除类型后加载；candidate为本树模块。实际安装core内部入口仅用于这份测试/探针，固定0.3.22且版本不符失败，生产不依赖internal。无网络/模型/产品DB；不统计耗时。
 
 [质量](quality.md) · [status](../../../plans/wpf-perf03-message-reuse/status.md) · [review](../../../plans/wpf-perf03-message-reuse/review.md)。新source已由ExecutionLead于07:27:49Z在4320的87源采样观察到首canonical8f2959 live/issues=[]；这是Lead来源、旧时点，不冒称本人采样或当前target已部署。
+
+## 独立审查与交付
+
+root完整审三source及实际消费者，独立8/8通过（07:36:56Z，59ms tests / 477ms总），核三hash/19路径scope/source diffcheck、b35工作树clean，0 findings。未重跑作者77/typecheck/200消息计数或React/browser；详见[review](../../../plans/wpf-perf03-message-reuse/review.md)。本次只转录审查metadata，三source/probe原始JSON不变，不重复产品检查。最终文档HEAD与clean随Git交付回执交manager，不把metadata HEAD当新的实现批准。
