@@ -2,6 +2,11 @@
 
 Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf-mature-02-harness-capabilities/plan.md)。当前仅实验consumer，不另造R05宿主。
 
+## Lead待输入
+
+- [04权威center-store请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/center-store-request.md)：请分配唯一migration号与DDL owner，解锁真实PG验证；04 owner建议负责DDL及同Module migration函数。这里仅路由请求，进度仍见04权威status。
+- 本目录生产target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22` 已独审APPROVED，client接线待共享owner。[集成输入](integration-readiness.md)。已停止写入唯一共享store.ts并完成[部分交回COMMITTED回执](catalog-store-partial-handback.json)（v4，10:39:02.809 UTC）；[停写与固定source](catalog-store-stopped.json)。ENG01B/Lead可take该单一路径，其他四个目录路径仍由本owner保留，P3测试delta独立短复审。
+
 ## 首片可独立实现
 
 固定codex-cli0.154.0 stable schema，注入小的request/receive Interface并只处理已解码帧；R06 runner_owner独占JSONL/stdio/ID关联/背压/timeout/child关闭，caller等待R06 ready成功（它独占initialize→initialized），consumer只负责model/list分页边界与目录归一、ordinary final/failed/interrupted语义。没有spawn/auth/provider/账户文件读取。
@@ -180,4 +185,4 @@ R05D接入依赖：已只读核[main41315b四源接收](r05d-dependency.json)等
 
 共享接收指针：[S01P03 integration-ready](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop/docs/evidence/s01p03/integration-ready.md)及[权威status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop/plans/s01-graceful-stop/status.md)。这里只指向owner交付，时间/进度由该处维护。
 
-目录固定实现target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22`，当前待status_read独立只读review；manifest只绑定此source，后继纯metadata不改变它。原R06五源/薄consumer仍独立已审待Lead集成，不将当前目录尚未通过review混入其approval。
+目录固定实现target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22`，status_read / gpt-6-astra于2026-10-06 10:35:37 UTC独审APPROVED，0 P1/P2，Mika接收；manifest只绑定此source。33 distinct分次证据与strict0未重跑。原R06五源/薄consumer仍独立已审待Lead集成；目录配置事实不证明provider可用，client未接线。非阻断test-only清理delta见native-catalog/ack-cleanup，store.ts已按收窄协调v4单路径交回，其他四目录路径保留。

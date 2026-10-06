@@ -23,3 +23,8 @@ R06五源在本记录安全点逐字等于077固定Git；字节与SHA如下，�
 本次使用既有本地find-skills方法匹配TypeScript合同/SQL reader/接口设计，采用codebase-design的小Interface与单一状态权威、clean-code命名/职责/安全错误检查。clean-code来源固定sickn33/agentic-awesome-skills@bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5；无安装、无测试、无新child。能力目录只是后继设计，不是本收据接收范围。
 
 当前main只读参照更新为41315b033deb0b1953484359b686c0b228997367；已比五路径仍与0778847不同，optional privateStderr尚未main。R05D四源集成不覆盖本seam。catalog/启动假设见唯一interface，仅待实施设计。10:22 UTC architecture_read补充APPROVED诊断faithful FAIL evidence，无P1/P2，不改变canary FAILED。
+
+
+## 原生配置目录独立接收（2026-10-06 10:37:43 UTC）
+
+固定生产target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22`，status_read/gpt-6-astra于10:35:37 UTC独审APPROVED，Mika复核接收，0P1/P2。[目录manifest](native-catalog/manifest.json)42项逐字匹配；33 distinct分次行为证据与strict0，不是一次33/33、review未重跑。精确路径：packages/contracts/src/execution-profiles.ts及.test.ts，apps/server/src/execution-profiles/store.ts、index.ts、native-catalog.test.ts。生产合同/reader/routes可独立接收；client未接线，configured/not-probed不代表真实Codex/普通会话可用。非阻断test-only CREATE ACK清理修复另[delta](native-catalog/ack-cleanup/README.md)，不重写原target证据；Lead将共享接缝收窄为store.ts单路径：已停写并v4 amend移除，见[COMMITTED部分交回回执](catalog-store-partial-handback.json)。其余四目录路径、R06五源和本task证据继续保留，不代写ENG01B publication新文件。
