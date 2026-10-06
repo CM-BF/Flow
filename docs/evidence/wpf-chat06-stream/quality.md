@@ -17,3 +17,5 @@
 2026-10-06 07:26 UTC 交付前clean-code：读取五个实现/专测文件，检查命名/错误处理/重复/预算和行为。单flight与lifetime在同一模块，不增事件总线、poll或无用hook；稳定scope/两reader是唯一外部接口。发现合法前缀后的历史缺口会错误清空失败计数，补红测后仅完整flight成功才清零。root实际installed core的小探针确认无status的final会跟随global running；本模块显式complete/unknown并补测试，不改任务状态或发送门禁。metadata提前报告interrupted亦保留。54直接检查+Web类型检查通过，来源绑定固定3ac11，不重复无关工程套件。
 
 未解决但属后继明确范围：App可见状态标记、host opt-in/生命周期预算、真实provider/HTTP/浏览器与性能验收。当前不以模块状态metadata冒称已完成可视化；独立review仍由root执行，作者清码不替代独审。
+
+2026-10-06 07:27 UTC 独立交付复核：root @07:26:24Z正式批准固定3ac11，另跑54并核五hash/来源/边界，无新finding。作者转录与检查归因见review；源码冻结，只整理metadata。后续App可见状态和真实性限制保留，不以独立模块批准代替产品上线。

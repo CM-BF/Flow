@@ -1,6 +1,6 @@
 # WPF-CHAT06S01 交付入口
 
-实现 `3ac11cba14ce8baac3b3a769c19827f6343ca4a7`，基线 `fa9a8288341d4f2bd8160e03fe9173dafa2de1a6`。独立模块提供已协商的 assistant patch 正文累计、有界读取与官方 Thread 消息适配；尚未接入产品 App。
+实现 `3ac11cba14ce8baac3b3a769c19827f6343ca4a7`，基线 `fa9a8288341d4f2bd8160e03fe9173dafa2de1a6`。独立模块提供已协商的 assistant patch 正文累计、有界读取与官方 Thread 消息适配；尚未接入产品 App。root @2026-10-06T07:26:24Z 独立限定 APPROVED；main 集成待Lead。
 
 - [计划](../../../plans/wpf-chat06-stream/plan.md)、[唯一状态](../../../plans/wpf-chat06-stream/status.md)、[独立审查入口](../../../plans/wpf-chat06-stream/review.md)
 - [消费接口与后继UI职责](interface.md)、[验证与失败历史](validation.md)、[技能及clean-code](quality.md)
