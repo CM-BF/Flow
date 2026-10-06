@@ -2,13 +2,13 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 05:25:05 UTC |
+| 最近更新 | 2026-10-06 05:25:20 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 实现已固定；仅交付metadata待提交 |
+| 工作树dirty状态 | 实现已固定；最终metadata提交后clean，实时状态由Git聚合 |
 | 工作分支状态 | completed（领域片段已验收，待main） |
 | 检查状态 | PASSED ea0c4cba1792dbb498487fb5b6ae47393340b77e；31不同用例组合/noEmit；Mika独立技术review APPROVED |
 | 已集成main状态 / HEAD | 未集成；base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f |
@@ -40,3 +40,5 @@ claim 76b6ae1a-f414-49bb-a93d-d80cead6bd61 v1 ACTIVE，COMMITTED 05:10:36.101Z�
 2026-10-06 05:23:46 UTC：固定实现 ea0c4cba1792dbb498487fb5b6ae47393340b77e。Mika预审发现CAS回执条件断言可跳过，已改为无条件重放赢家原input/key，cas-replay-fixed 1/1（30 skipped）通过；31 distinct仍不重复计数。最后fixture加hasRoute仅防未来生产重复注册，noEmit过；本base手工路径行为未变，未执行生产自动mount。Mika独立技术review后由Goal Owner验收接收范围。报告/manifest已固，架构target ea0c4cba1792dbb498487fb5b6ae47393340b77e 交Lead后续同步。
 
 2026-10-06 05:25:05 UTC：Mika独立技术review APPROVED ea0c4cba1792dbb498487fb5b6ae47393340b77e，核9源码/5只读基线/47raw hash、31 distinct与所有8库清理，未重跑；无blocking finding。Goal Owner接收产品范围随后进行，不再重复技术review。当前本片段integration，K01-05待Lead实际main回执；metadata提交后明确停止领域写入，保留claim76b6ae1a v1用于集成修复。
+
+2026-10-06 05:25:20 UTC：dashboard 2026-10-06T05:25:10.384Z 实采clean c95d6c9、approved/passed/unchanged/current/issues[]，delivery=integration，[回执](../../docs/evidence/k01/dashboard-receipt.json)。本metadata提交后停止K01领域写入；保留claim76b6ae1a-f414-49bb-a93d-d80cead6bd61 v1待明确main接收或授权修复。
