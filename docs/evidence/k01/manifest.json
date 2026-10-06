@@ -1,0 +1,611 @@
+{
+  "taskId": "K01",
+  "generatedAt": "2026-10-06T05:23:46.908409+00:00",
+  "baseCommit": "1f59f8261d191ba65edb27ce53fe7ef32c20fc5f",
+  "implementationTarget": "ea0c4cba1792dbb498487fb5b6ae47393340b77e",
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/knowledge/fixture.ts",
+      "sha256": "4873445fb6634d33462a249a69062025b383621035c740a2d45aa91b719379b7"
+    },
+    {
+      "path": "apps/server/src/knowledge/index.ts",
+      "sha256": "28fd0fd2a053c8e1764913cd0a09f1dc9e73576746a38e49bb2b11def94ae5a7"
+    },
+    {
+      "path": "apps/server/src/knowledge/knowledge.test.ts",
+      "sha256": "5e5a5a74a5b1d0b8087b8decc8238c07d6f723b7ea379811733df5d89d7d9e0e"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "sha256": "20467c23531ea87a0c05586609e303d796a8e58371495d72f3bdd39f8681c2d6"
+    },
+    {
+      "path": "apps/server/src/knowledge/text.ts",
+      "sha256": "f44e78e9214fe76b0513f8080acf71d0546c90d62c440b0617e13a73d0d26ce1"
+    },
+    {
+      "path": "docs/evidence/k01/check.mjs",
+      "sha256": "6430b4959fae92abb9081167c75c99b01e3f25f32b71f68c0d2d126133886876"
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "packages/storage/migrations/015-knowledge-sources.sql",
+      "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1"
+    }
+  ],
+  "readOnlyBaseInputs": [
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "9f409c140beb844f872eb49069b942fa1e885136be26ec930ed3c04ed3e0a636"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "sha256": "c5fcf1edca0c2be2ebaa60fc361728a050b7d40f39c97163f5b461f171763477"
+    },
+    {
+      "path": "apps/server/src/projects/storage.ts",
+      "sha256": "ab878ada49e11408f19b7c0b0ea805a216eaf1e272ffb7f7ab61d8df02a1a814"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "sha256": "1e5cbd013e678f4f734c620018a01f410c665008e92274b988a7c7d3b459f7c0"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/k01/boundary-extra-cleanup.json",
+      "sha256": "c108fb924ac53142c9334aa6758d9743235aa3310c64ea5002ca7c85cdf4cd20"
+    },
+    {
+      "path": "docs/evidence/k01/boundary-extra-resource.json",
+      "sha256": "00e6c0a5f8e9a2b7c7d7aea76868f6874d7e9012618021cc0d0a8bbe7fc8b389"
+    },
+    {
+      "path": "docs/evidence/k01/boundary-extra-result.json",
+      "sha256": "e6cadb2b4eb6d94225b490b517cff8677e6131bfee130e93925980e6a8ce20fd"
+    },
+    {
+      "path": "docs/evidence/k01/boundary-extra.log",
+      "sha256": "27ec0fdfd9f81d2d7642827d5b1e85b4f0bc5ae8fbad0ee2649f0b72f9b6a384"
+    },
+    {
+      "path": "docs/evidence/k01/capacity-fixed-cleanup.json",
+      "sha256": "3ad8ae2b6afa967eddb5f627fb74d4c7b526b93004210e7ef5f7b0245818ab00"
+    },
+    {
+      "path": "docs/evidence/k01/capacity-fixed-resource.json",
+      "sha256": "c4d42061815b8dc7e6e993d9c35c915695d546ae5756c198c518c0bdba939cba"
+    },
+    {
+      "path": "docs/evidence/k01/capacity-fixed-result.json",
+      "sha256": "10e9afbb54185632188e083a6645d851a69781bb8b894beb7b6643b4592b8e6e"
+    },
+    {
+      "path": "docs/evidence/k01/capacity-fixed-samples.json",
+      "sha256": "ca8b12e0a48e1d2145cacda6a268fc72461d8506f4c4f00fb50bd321b550df85"
+    },
+    {
+      "path": "docs/evidence/k01/capacity-fixed.log",
+      "sha256": "5872c0a2bbab0d79713cf36b871c0341a2ae17f188be7dee7aeb655f9c384b86"
+    },
+    {
+      "path": "docs/evidence/k01/cas-replay-fixed-cleanup.json",
+      "sha256": "5f4a1179a17e19726b6ed8d6e77dfefc238f11ecfd00a8dfc03c1c0525151e92"
+    },
+    {
+      "path": "docs/evidence/k01/cas-replay-fixed-resource.json",
+      "sha256": "864dd12cfa6c97ef0d2366d0ec70fce730acc82a6411c29fa24904cddabe3e62"
+    },
+    {
+      "path": "docs/evidence/k01/cas-replay-fixed-result.json",
+      "sha256": "4469fafbee81b6722edaec83e7b203bdf3d8c055f374bbd4f7db9e9283fd6d27"
+    },
+    {
+      "path": "docs/evidence/k01/cas-replay-fixed.log",
+      "sha256": "ce14b0c542bb09ae85e053335f6c0a6151c216fa18cb7e853e5006e04effa0ff"
+    },
+    {
+      "path": "docs/evidence/k01/environment.json",
+      "sha256": "e6ee262c26f659109a998c07df20fe19a0d364f9414f448a9e6633b80d2c209e"
+    },
+    {
+      "path": "docs/evidence/k01/fixture-typecheck-result.json",
+      "sha256": "b792b74a8cd5ab585d38a32aaf05acc900553d83e2c05b62d8d6572de495a079"
+    },
+    {
+      "path": "docs/evidence/k01/fixture-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/k01/matrix-first-cleanup.json",
+      "sha256": "0baf44945e224e5ede51ccce14c00dccb63fe36d6c23195be792124602992066"
+    },
+    {
+      "path": "docs/evidence/k01/matrix-first-resource.json",
+      "sha256": "503feca6c2e018fbf9b176bbce0b200fc231418571b0bd8f23f793cb9513c1dc"
+    },
+    {
+      "path": "docs/evidence/k01/matrix-first-result.json",
+      "sha256": "6ea64ae842150bc83e679deef4d8ea67d67662741bcbb5ba99d47b0361bedf1c"
+    },
+    {
+      "path": "docs/evidence/k01/matrix-first-samples.json",
+      "sha256": "11daebab28193a12851df3a93fe7cef9d059a03742122c3b622cf1b12893915d"
+    },
+    {
+      "path": "docs/evidence/k01/matrix-first.log",
+      "sha256": "502d1a6ecab4e9d324c0f81ceca1212dc99e66e5ef47a17e7e1ca183fcf4cb63"
+    },
+    {
+      "path": "docs/evidence/k01/search-green-cleanup.json",
+      "sha256": "66999fc137bebc8d264e28d878e478ae3f1543017ed0564ad31bad1618d5b933"
+    },
+    {
+      "path": "docs/evidence/k01/search-green-resource.json",
+      "sha256": "82086570c17b7cba1b0e725c968b22bbed664bf8798c8554fe07f7f3b0ae37a3"
+    },
+    {
+      "path": "docs/evidence/k01/search-green-result.json",
+      "sha256": "4ae473ed87481c05ac05e1152412244d27f64ef86862a53a82be86a1c943ea4c"
+    },
+    {
+      "path": "docs/evidence/k01/search-green.log",
+      "sha256": "d9aafa67e679480c34a0ba4b18ed1f495251505d3a0db04250b3b0530f5e7c66"
+    },
+    {
+      "path": "docs/evidence/k01/search-red-cleanup.json",
+      "sha256": "00aacebd84c04110669c0f1bf2926b0953ff89f0a3e790ba9813103316fa899d"
+    },
+    {
+      "path": "docs/evidence/k01/search-red-resource.json",
+      "sha256": "b9ff9988df8fccf79a5d073f6128811c8398bae63e44bc6c86fb91c88a9b5f7f"
+    },
+    {
+      "path": "docs/evidence/k01/search-red-result.json",
+      "sha256": "d4c5ba761a174a1204fd59295b6a5631e966b85069bab127cdaed6860eecb9d0"
+    },
+    {
+      "path": "docs/evidence/k01/search-red.log",
+      "sha256": "f245165c6b0cdeba32cb5f8bffebf995eb3430572ca60630914c8af9de2bffb1"
+    },
+    {
+      "path": "docs/evidence/k01/source-green-fixed-cleanup.json",
+      "sha256": "03c9d56a5ab10230e0d1f6ac9e970104896475507069ad3a16007c1ff0e41049"
+    },
+    {
+      "path": "docs/evidence/k01/source-green-fixed-resource.json",
+      "sha256": "9250d9b46c788a6f641ec96246cc4680107347c2f61e161389d7668fe53efebb"
+    },
+    {
+      "path": "docs/evidence/k01/source-green-fixed-result.json",
+      "sha256": "cd514130948725a8b4e967060a9c8ae89ae6e4957b5a1e576c58882c2c6d7012"
+    },
+    {
+      "path": "docs/evidence/k01/source-green-fixed.log",
+      "sha256": "b0d14d38d47ac4690318672253e0176138b2572dbe7b5f01eb504382c3841708"
+    },
+    {
+      "path": "docs/evidence/k01/source-green-result.json",
+      "sha256": "1b652777e512afd50f84a5f1d7fc13e423b7c1372adb5cf9d8e511d394bb6b1f"
+    },
+    {
+      "path": "docs/evidence/k01/source-green.log",
+      "sha256": "58339c626d441e1ce6bf97dafee7d049eb96c085f0eda20557ff269a090bcc49"
+    },
+    {
+      "path": "docs/evidence/k01/source-red-cleanup.json",
+      "sha256": "e4efb49bc902c5d19671de65dc59e6d43a3a711a5c061f1f937437ba73384f62"
+    },
+    {
+      "path": "docs/evidence/k01/source-red-resource.json",
+      "sha256": "ea59bd0a59e80068a450a82b19ce9a462e1c2aa17b05b4b964cf76f3ae3db004"
+    },
+    {
+      "path": "docs/evidence/k01/source-red-result.json",
+      "sha256": "a33cb629da13ce917d43091f8be3da3c9bda14baf0a048eb17da692487c07bbe"
+    },
+    {
+      "path": "docs/evidence/k01/source-red.log",
+      "sha256": "876162ac97ad2ec2863f6b2cf39cbbd5122a9c2cdce26ee43ce1b1a223cb9db3"
+    },
+    {
+      "path": "docs/evidence/k01/typecheck-final-result.json",
+      "sha256": "e9f42f3ea2459b13d24da4a386530e9421d3fe2560c3df74b8fabca7aff04e4f"
+    },
+    {
+      "path": "docs/evidence/k01/typecheck-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/k01/typecheck-first-result.json",
+      "sha256": "77fb3e5f32f78465a6cc8f7be363d072e4ea5feb2680febe8118d7a3732d58e3"
+    },
+    {
+      "path": "docs/evidence/k01/typecheck-first.log",
+      "sha256": "70d49d21af8c244036c53acbba03793e091714b7a062fc45a64ceb2ac394cde5"
+    },
+    {
+      "path": "docs/evidence/k01/typecheck-fixed-result.json",
+      "sha256": "acfc3bb68ef44a85d0412edd8b162f30397fa147241572f66759cd29d9f64752"
+    },
+    {
+      "path": "docs/evidence/k01/typecheck-fixed.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/k01/typecheck-reviewed-result.json",
+      "sha256": "500636df1745b72d022af8c8fb317bd1f9cebe085d91622e2c295ca1065c82af"
+    },
+    {
+      "path": "docs/evidence/k01/typecheck-reviewed.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [
+    {
+      "label": "boundary-extra",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/knowledge/knowledge.test.ts",
+        "-t",
+        "Unicode chunks|stable per-source",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:21:00.477Z",
+      "endedAt": "2026-10-06T05:21:02.406Z",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "label": "capacity-fixed",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/knowledge/knowledge.test.ts",
+        "-t",
+        "project retained-byte cap",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:19:53.703Z",
+      "endedAt": "2026-10-06T05:20:04.841Z",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "label": "cas-replay-fixed",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/knowledge/knowledge.test.ts",
+        "-t",
+        "two publishing clients",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "sourceFiles": [
+        {
+          "path": "apps/server/src/knowledge/index.ts",
+          "sha256": "28fd0fd2a053c8e1764913cd0a09f1dc9e73576746a38e49bb2b11def94ae5a7"
+        },
+        {
+          "path": "apps/server/src/knowledge/storage.ts",
+          "sha256": "20467c23531ea87a0c05586609e303d796a8e58371495d72f3bdd39f8681c2d6"
+        },
+        {
+          "path": "apps/server/src/knowledge/search.ts",
+          "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42"
+        },
+        {
+          "path": "apps/server/src/knowledge/text.ts",
+          "sha256": "f44e78e9214fe76b0513f8080acf71d0546c90d62c440b0617e13a73d0d26ce1"
+        },
+        {
+          "path": "apps/server/src/knowledge/knowledge.test.ts",
+          "sha256": "5e5a5a74a5b1d0b8087b8decc8238c07d6f723b7ea379811733df5d89d7d9e0e"
+        },
+        {
+          "path": "apps/server/src/knowledge/fixture.ts",
+          "sha256": "73627ca0019db370cdf092221863834338a1b219c1a58a9dc9936c011e7c4cb3"
+        },
+        {
+          "path": "packages/contracts/src/knowledge.ts",
+          "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+        },
+        {
+          "path": "packages/storage/migrations/015-knowledge-sources.sql",
+          "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1"
+        },
+        {
+          "path": "docs/evidence/k01/check.mjs",
+          "sha256": "6430b4959fae92abb9081167c75c99b01e3f25f32b71f68c0d2d126133886876"
+        }
+      ],
+      "startedAt": "2026-10-06T05:21:59.297Z",
+      "endedAt": "2026-10-06T05:22:04.066Z",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "label": "fixture-typecheck",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "sourceFiles": [
+        {
+          "path": "apps/server/src/knowledge/index.ts",
+          "sha256": "28fd0fd2a053c8e1764913cd0a09f1dc9e73576746a38e49bb2b11def94ae5a7"
+        },
+        {
+          "path": "apps/server/src/knowledge/storage.ts",
+          "sha256": "20467c23531ea87a0c05586609e303d796a8e58371495d72f3bdd39f8681c2d6"
+        },
+        {
+          "path": "apps/server/src/knowledge/search.ts",
+          "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42"
+        },
+        {
+          "path": "apps/server/src/knowledge/text.ts",
+          "sha256": "f44e78e9214fe76b0513f8080acf71d0546c90d62c440b0617e13a73d0d26ce1"
+        },
+        {
+          "path": "apps/server/src/knowledge/knowledge.test.ts",
+          "sha256": "5e5a5a74a5b1d0b8087b8decc8238c07d6f723b7ea379811733df5d89d7d9e0e"
+        },
+        {
+          "path": "apps/server/src/knowledge/fixture.ts",
+          "sha256": "4873445fb6634d33462a249a69062025b383621035c740a2d45aa91b719379b7"
+        },
+        {
+          "path": "packages/contracts/src/knowledge.ts",
+          "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+        },
+        {
+          "path": "packages/storage/migrations/015-knowledge-sources.sql",
+          "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1"
+        },
+        {
+          "path": "docs/evidence/k01/check.mjs",
+          "sha256": "6430b4959fae92abb9081167c75c99b01e3f25f32b71f68c0d2d126133886876"
+        }
+      ],
+      "startedAt": "2026-10-06T05:22:28.254Z",
+      "endedAt": "2026-10-06T05:22:32.220Z",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "label": "matrix-first",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/knowledge/knowledge.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:19:24.287Z",
+      "endedAt": "2026-10-06T05:19:37.617Z",
+      "exitCode": 1,
+      "signal": null
+    },
+    {
+      "label": "search-green",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/knowledge/knowledge.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:17:32.515Z",
+      "endedAt": "2026-10-06T05:17:33.874Z",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "label": "search-red",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/knowledge/knowledge.test.ts",
+        "-t",
+        "search returns",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:17:08.619Z",
+      "endedAt": "2026-10-06T05:17:09.946Z",
+      "exitCode": 1,
+      "signal": null
+    },
+    {
+      "label": "source-green-fixed",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/knowledge/knowledge.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:16:51.839Z",
+      "endedAt": "2026-10-06T05:16:53.220Z",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "label": "source-green",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/knowledge/knowledge.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:16:42.212Z",
+      "endedAt": "2026-10-06T05:16:43.110Z",
+      "exitCode": 1,
+      "signal": null
+    },
+    {
+      "label": "source-red",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/knowledge/knowledge.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:15:47.113Z",
+      "endedAt": "2026-10-06T05:15:48.642Z",
+      "exitCode": 1,
+      "signal": null
+    },
+    {
+      "label": "typecheck-final",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-06T05:21:22.950Z",
+      "endedAt": "2026-10-06T05:21:26.984Z",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "label": "typecheck-first",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-06T05:20:04.877Z",
+      "endedAt": "2026-10-06T05:20:09.204Z",
+      "exitCode": 2,
+      "signal": null
+    },
+    {
+      "label": "typecheck-fixed",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-06T05:20:17.007Z",
+      "endedAt": "2026-10-06T05:20:21.734Z",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "label": "typecheck-reviewed",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "sourceFiles": [
+        {
+          "path": "apps/server/src/knowledge/index.ts",
+          "sha256": "28fd0fd2a053c8e1764913cd0a09f1dc9e73576746a38e49bb2b11def94ae5a7"
+        },
+        {
+          "path": "apps/server/src/knowledge/storage.ts",
+          "sha256": "20467c23531ea87a0c05586609e303d796a8e58371495d72f3bdd39f8681c2d6"
+        },
+        {
+          "path": "apps/server/src/knowledge/search.ts",
+          "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42"
+        },
+        {
+          "path": "apps/server/src/knowledge/text.ts",
+          "sha256": "f44e78e9214fe76b0513f8080acf71d0546c90d62c440b0617e13a73d0d26ce1"
+        },
+        {
+          "path": "apps/server/src/knowledge/knowledge.test.ts",
+          "sha256": "5e5a5a74a5b1d0b8087b8decc8238c07d6f723b7ea379811733df5d89d7d9e0e"
+        },
+        {
+          "path": "apps/server/src/knowledge/fixture.ts",
+          "sha256": "73627ca0019db370cdf092221863834338a1b219c1a58a9dc9936c011e7c4cb3"
+        },
+        {
+          "path": "packages/contracts/src/knowledge.ts",
+          "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+        },
+        {
+          "path": "packages/storage/migrations/015-knowledge-sources.sql",
+          "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1"
+        },
+        {
+          "path": "docs/evidence/k01/check.mjs",
+          "sha256": "6430b4959fae92abb9081167c75c99b01e3f25f32b71f68c0d2d126133886876"
+        }
+      ],
+      "startedAt": "2026-10-06T05:22:04.115Z",
+      "endedAt": "2026-10-06T05:22:09.361Z",
+      "exitCode": 0,
+      "signal": null
+    }
+  ],
+  "validation": {
+    "distinctCases": 31,
+    "composition": "27 passing unaffected matrix-first cases + 1 unconditional CAS replay replacement + 1 fixed capacity case + 2 new boundary cases; first single/2-case runs overlap, not added. Fixture hasRoute final compatibility edit typechecked, current base manual path unchanged; production auto-mount unexecuted.",
+    "matrixFirst": {
+      "selected": 29,
+      "passed": 28,
+      "failed": 1
+    },
+    "capacityFixed": {
+      "selected": 1,
+      "passed": 1,
+      "skipped": 28
+    },
+    "boundaryExtra": {
+      "selected": 2,
+      "passed": 2,
+      "skipped": 29
+    },
+    "casReplayFixed": {
+      "selected": 1,
+      "passed": 1,
+      "skipped": 30
+    },
+    "noEmit": "fixture-typecheck exit0"
+  },
+  "executionHashLimit": "Per-command source hashes introduced at cas-replay-fixed. Earlier executions retain original logs/result timestamps; six production files are byte-identical from pre-matrix b14516d to final target. Initial conditional CAS test preserved at c4c68a3, replaced unconditionally and rerun. Capacity-only fixture content changed from repeated words to legal newline text; no production limits weakened.",
+  "integration": "Production shared export/client/migrate/register mount pending Execution Lead; fixture uses real createServer auth with manual route registration at this base."
+}
