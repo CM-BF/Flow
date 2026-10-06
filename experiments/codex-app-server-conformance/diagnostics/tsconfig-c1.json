@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "vitest": ["/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest"],
+      "zod": ["/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod"],
+      "@flow/contracts": ["../../../packages/contracts/src/index.ts"]
+    }
+  },
+  "include": [
+    "../../../apps/runner/src/codex/**/*.ts",
+    "../../../apps/runner/src/codex.test.ts",
+    "../../../apps/runner/src/native-harness/codex/index.ts",
+    "../../../apps/runner/src/native-harness/codex/adapter.test.ts",
+    "../../../apps/runner/src/native-harness/codex/evidence.test.ts"
+  ],
+  "exclude": []
+}

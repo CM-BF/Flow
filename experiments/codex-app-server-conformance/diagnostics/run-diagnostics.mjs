@@ -33,6 +33,11 @@ function safeClose(report) {
 function classify(bytes, expectedControlHash) {
   if (!bytes.length) return 'empty';
   if (hash(bytes) === expectedControlHash) return 'expected-control';
+  if (bytes.includes(Buffer.from('Assertion')) || bytes.includes(Buffer.from('Check failed'))) {
+    for (const name of ['uv_thread_create', 'uv_loop_init', 'uv_async_init']) {
+      if (bytes.includes(Buffer.from(name))) return `startup-check-${name}`;
+    }
+  }
   if (bytes.includes(Buffer.from('Operation not permitted'))) return 'permission-denial-text';
   if (bytes.includes(Buffer.from('Library not loaded:'))) return 'loader-error-text';
   if (bytes.includes(Buffer.from('FATAL ERROR:'))) return 'node-fatal-error-text';
@@ -109,7 +114,7 @@ function cleanupPrivate(directory, rootIdentity, cwdRecord, owned) {
 
 /** No retry or third-attempt hook. Later invocation cannot reuse the consumed wx batch or clock. */
 export async function runDiagnosticBatch() {
-  const inputFile = path.join(evidence, 'driver-input-v2.json');
+  const inputFile = path.join(evidence, 'driver-input-v3.json');
   const input = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
   if (input.maxChildren !== 3 || input.totalMs !== 60000 || input.thirdAttempt !== 'NOT_RUN') throw safeError();
   for (const [relative, expected] of Object.entries(input.files)) {

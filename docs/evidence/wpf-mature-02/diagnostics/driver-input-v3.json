@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-06T10:04:49.891901+00:00",
+  "execution": "NOT_RUN; driver v3 source review and exclusive diagnosis window required",
+  "maxChildren": 3,
+  "implementedMaximumChildren": 2,
+  "thirdAttempt": "NOT_RUN",
+  "totalMs": 60000,
+  "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "nodeSha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+  "r06OriginalTarget": "a239b14d5328c78cca02a8757e26f2b65502f926",
+  "r06Meaning": "original peer/composition compatibility only; current transport source is bound below",
+  "controlStderrSha256": "ca5c7bbdd4599b7cb7154d4895952561b9f7e94d48d84dba22c898910af1130c",
+  "files": {
+    "apps/runner/src/codex/index.ts": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc",
+    "apps/runner/src/codex/types.ts": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828",
+    "apps/runner/src/codex/options.ts": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843",
+    "apps/runner/src/codex/stderr-capture.ts": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31",
+    "apps/runner/src/codex/stderr-capture.test.ts": "b3dae983e3486ae08c359b7560e01894fc742f64eff5891df6e73f0c9471a575",
+    "experiments/codex-app-server-conformance/diagnostics/immediate-exit.mjs": "6dc50ded369eab65ca2080685646ae8771978a3d572997307bb92087b9558785",
+    "experiments/codex-app-server-conformance/diagnostics/run-diagnostics.mjs": "3e4541e53c62727bc029d84261280cf0e05f873ac7d4fc0bf9c62330a47b594c",
+    "experiments/codex-app-server-conformance/diagnostics/execute-reviewed.mjs": "b0a4922803fc84a5c479acd76b10a9dfef026fe202154c25884c6ffddb56e8fe",
+    "experiments/codex-app-server-conformance/diagnostics/vitest.config.mjs": "0010c1017f72aa3810ea3970d72ec5b8f11e21c76a2b7221d54a364e3e11a275",
+    "experiments/codex-app-server-conformance/diagnostics/tsconfig.json": "e36339d24921a36ecd047ec38e3311cfafdf94353ce530c9a5b272926ed82425",
+    "apps/runner/src/codex/framing.ts": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d",
+    "apps/runner/src/codex/writer.ts": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21",
+    "apps/runner/src/codex/fixtures/peer.mjs": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf",
+    "experiments/codex-app-server-conformance/isolation/compose-canary.mjs": "f292ab419840a96f5158203fd4c909860ec9e96f05c35ef44ff0b674bf0ceb85",
+    "experiments/codex-app-server-conformance/isolation/canary-preload.mjs": "d197b240be265f2606b0f6b9d00efd30993fc3de31c5ec0bd46daeb59a183e30",
+    "experiments/codex-app-server-conformance/isolation/default-deny.sb": "b050b371c0739f8081a26fd3e4df27487075fdd6b0adee0107da05b12e1ef779",
+    "docs/evidence/wpf-mature-02/isolation/bootstrap-inspection.json": "98cd28ee66084d5562c3cfed8e143e246118e68884d2eaf1713ddd11a66d18a1",
+    "docs/evidence/wpf-mature-02/isolation/r06-binding.json": "0b5746cbe159ab5d82291f8a8d087029f59fbd95f7cc3a0406a1dd85e78e8dbd"
+  },
+  "externalInputs": {
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/package.json": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/package.json": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/package.json": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+  },
+  "controlledMain": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "merge": "3b35ba3d52acbceff24f10dc30e551db47019052"
+}
