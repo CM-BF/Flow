@@ -1,6 +1,6 @@
 # WPF-CHAT01 验证记录
 
-实现target `84242ca1d214f9a9ff369b07c13657918862f226`，原Web base `b5844442699733558a152c12392ea78f26c393a4`。作者Astra Ultra；独立review结论以canonical review为准。
+最终已审target `7cbabb737f26b108275e80f1b6cd0425699f3c18`（原首候选`84242ca1d214f9a9ff369b07c13657918862f226`，下列每条按实际执行时点记录），原Web base `b5844442699733558a152c12392ea78f26c393a4`。作者Astra Ultra；独立review结论以canonical review为准。
 
 ## 已运行与时间关系
 
@@ -31,3 +31,11 @@ Projection晚snapshot不能降revision，晚ACK不能覆盖同revision异步fina
 作者未调用SDK/模型，也未在此Web树跑真PG中心。主线已批准的CHAT01/CHAT02真PG证据仅作输入provenance；实际集成后两次真实模型query由MainLead负责。capfalse后继需求、voice、真实tool/thinking、新模型设置、完整持久插件管理、PTY/fs仍未实现。本记录不声明main已集成，也不继承I01旧approval。
 
 04:04:44 UTC dashboard实采：42 sources，WPF-CHAT01 own source current=true/stale=false、human.complete=true、issues=[]、checks passed绑定842、review not_started、implementationProof unchanged、claim08259c1d v1 active matchesSource=true，main8f method not-contained。采样时仅metadata dirty；见[摘录](dashboard-observation.json)。
+
+## 独立review修复（7cb）
+
+2026-10-06 04:07 UTC，固定`7cbabb737f26b108275e80f1b6cd0425699f3c18`只改projection与相应test。原842正式REQUEST_CHANGES：CHAT-R1重试saved ACK以更高请求序号覆盖final，新增回归实际先失败后通过；CHAT-R2别处一次新增多turn后缺口无cursor，新增[1]→revision3→可加载cursor1→[1,2,3]通过。16projection+9outbox共25 PASS，typecheck0、两文件diffcheck0。旧33/11/11+1证据保持各自target与时间；没有把修复作者结果冒充独立复验或全套重跑。
+
+## 最终独立复验
+
+2026-10-06 04:09 UTC root正式整体限定APPROVED 7cbabb737f26b108275e80f1b6cd0425699f3c18，R1/R2 CLOSED。w01独立16projection+3额外公开探针PASS（saved replay保持final、54→62turn gap分页、fresh ACK→GET升级）；Root代码/来源/局部diff审查与此前CUA/截图复用无其他blocking。原842独立33 tests不冒称在7cb重跑，作者旧11生产/11开发报告不冒称最终全跑。未扩实际模型/真PG或main结论。

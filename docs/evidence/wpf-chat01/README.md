@@ -1,6 +1,6 @@
 # WPF-CHAT01 首批交付入口
 
-固定实现：`84242ca1d214f9a9ff369b07c13657918862f226`；完整Web审查基线：`b5844442699733558a152c12392ea78f26c393a4`。不能把中途输入746当作全部实现基线，早期`0d4e050057b9204ea761541d7847b9932331a519`的outbox属于本feature，须完整审查。`bac6a6e`（合同4c）、`a3b9cfa`（841精确compat）、`746364e`（a780+2e精确typed合同）是Lead授权的固定共享输入；详见[provenance](inputs.md)。本owner未合main。
+最终已审实现：`7cbabb737f26b108275e80f1b6cd0425699f3c18`（原842独立REQUEST_CHANGES后修复；CHAT-R1/R2 CLOSED）；完整Web审查基线：`b5844442699733558a152c12392ea78f26c393a4`。不能把中途输入746当作全部实现基线，早期`0d4e050057b9204ea761541d7847b9932331a519`的outbox属于本feature，须完整审查。`bac6a6e`（合同4c）、`a3b9cfa`（841精确compat）、`746364e`（a780+2e精确typed合同）是Lead授权的固定共享输入；详见[provenance](inputs.md)。本owner未合main。Root已整体限定APPROVED；完整metadata HEAD由Git交接给Lead，生产实现停止修改。
 
 - [计划](../../../plans/wpf-chat01-conversations/plan.md)、[唯一status](../../../plans/wpf-chat01-conversations/status.md)、[独立review](../../../plans/wpf-chat01-conversations/review.md)
 - [验证与复用边界](validation.md)、[技能与clean-code](quality.md)
