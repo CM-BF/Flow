@@ -1,0 +1,92 @@
+{
+  "kind": "read-only real deployment preflight",
+  "startedAt": "2026-10-06T05:57:42.071Z",
+  "webHead": "3d4985fca060155435b159e0467815bf8e88b8b8",
+  "loadedHead": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "sdk": "0.3.290",
+  "requestedManifest": {
+    "model": "claude-sonnet-5-5",
+    "materialFiles": [],
+    "allowRead": false,
+    "requireReadApproval": false,
+    "maxTurns": 2,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 60000
+  },
+  "configurationDigest": "84021f7b329d7369805482a4a65a4c161bd10a36ea37bee9a55ba1caa256297d",
+  "deployment": {
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "observedAt": "2026-10-06T05:57:41.974Z",
+    "startedAt": "2026-10-06T05:38:49.700Z",
+    "sourceAtStart": {
+      "head": "fb906cb42391971a8b315dbd813f7633927d7265",
+      "dirty": false
+    },
+    "configured": "claude-sonnet-5-5",
+    "provider": "not-probed",
+    "processes": {
+      "center": "running",
+      "runner": "running",
+      "web": "running"
+    },
+    "center": {
+      "url": "http://127.0.0.1:61227",
+      "reachable": true
+    },
+    "webUrl": "http://127.0.0.1:61228",
+    "database": "owned",
+    "work": {
+      "total": 0,
+      "pending": 0,
+      "lastTaskSucceededAt": null,
+      "lastHeartbeatAt": null
+    },
+    "lastError": null,
+    "profile": {
+      "id": "7ed454e9-f1db-420c-ac7f-4aa53f3856c0",
+      "source": "runner-configured",
+      "model": "claude-sonnet-5-5"
+    },
+    "lastProcessExits": {},
+    "credentialsFile": "/Users/citrine/.flow-personal/config.json",
+    "limits": {
+      "maxTurns": 2,
+      "maxBudgetUsd": 0.2,
+      "timeoutMs": 60000,
+      "scope": "per-query-not-project-total"
+    }
+  },
+  "maintenance": {
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "version": 3,
+    "state": "accepting",
+    "operationId": null,
+    "activeAttempts": 0,
+    "uncertainAttempts": 0,
+    "updatedAt": "2026-10-06T05:40:32.995Z",
+    "stopPermitted": false
+  },
+  "initialCounts": {
+    "tasks": 0,
+    "unfinished_attempts": 0,
+    "runners": 1
+  },
+  "sdkQueryLimit": 2,
+  "sdkQueryCount": 0,
+  "providerRequestCount": "unknown",
+  "costSemantics": "Normalized complete SDK modelUsage samples. Resume baseline unknown; sum is a conservative upper bound, not incremental billing.",
+  "nonce": null,
+  "steps": [],
+  "browsers": [],
+  "pageErrors": [],
+  "mutations": [],
+  "turns": [],
+  "testWebPreflight": {
+    "url": "http://127.0.0.1:49716",
+    "pageReady": true,
+    "realCenterProxyReady": true,
+    "fixture": false,
+    "modelQueries": 0
+  },
+  "status": "PASSED_ZERO_QUERY_PREFLIGHT"
+}

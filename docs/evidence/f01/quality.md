@@ -118,3 +118,11 @@ Mika审c03发现P2：open只读FIFO会在fstat前等待；多个短读的subarra
 固定bf03a7c241d8f1c1d9d0bfa1ee7f9be49e090c00，017 await位于scheduler前，8route注册在原owner/runner鉴权后；缺路由实证red保留。公共client新PG用例明确hasRoute存在，不用test helper补挂；受理/角色拒绝/native409/restart同key/审计/撤销通过，O06原8用例直接使用已挂生产入口合计9/9（11.95s）与noEmit通过，专库正常清理。未重跑其他25旧领域，无模型/预览进程变化。clean-code复核仅3行生产接线和真实consumer，保持领域/原生能力边界。
 
 2026-10-06 05:47 UTC：Mika审薄client发现test-only P2，ownership错含taskId而宽松HTTPstub未拒绝。固定a9cd4b04da1b249871398461fadd071ee180520b删除额外字段，四runner路径各用实际strict schema验证请求，非法400；所有旧字段/actor/replay/abort断言保留。仅该HTTP1/1（40ms）+noEmit重跑通过，生产/领域零改动，原证据不覆写。生产bf03已获Mika独审APPROVED，薄client待本delta复审。
+
+## 队列真实验收准备 / 2026-10-06 05:59 UTC
+
+本工作段复用本地webapp-testing/codebase-design/clean-code，浏览器动作抽为一个小Interface，synthetic/live caller只替换事实读取与完成等待；live不包含synthetic写入hook。初次fixture复制了旧task provenance，Web正确拒绝，原65秒失败与截图保留initial-*；修复fixture归属后同driver10步骤通过、两Chrome进程真实退出、聚焦pane第二assistant精确nonce、浅色和390深色图片已目视。最终0模型预演未把正文中其他nonce当回复。
+
+新live caller默认只读：0600配置、owned进程/DB、固定Web3d与后台fb906、manifest精确比对、0tasks/attempts/唯一runner/v3 accepting；独立动态Vite的真实代理health可达且正常关闭，未POST/未query。显式执行flag仍须GO窗口；浏览器只允许create/turn/pause/enqueue/resume各一次，首结果完整modelUsage已知且≤$.20并预留第二60s才Continue。SDK query上界与底层provider请求unknown分开；browser退出后实时task状态决定后台继续能否证明；失败无重试，现有服务/DB保留。
+
+clean-code复核了秘密不输出、读预检与有副作用执行分隔、浏览器/Vite生命周期、失败保存、已存在started文件拒绝重跑；发现attempt表无created_at，最终审计只读实际列，避免成功后证据SQL失败。没有重复产品全套测试/模型调用。

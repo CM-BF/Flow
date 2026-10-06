@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:43:00 UTC / 2026-10-06 05:43:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:59:00 UTC / 2026-10-06 05:49:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
@@ -11,15 +11,15 @@
 | 工作树dirty状态 | 实现已固定；仅本次证据与status收尾 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；当前薄client HTTP1/1与typecheck，原失败保留；不代表PG/原生模型 |
-| 已集成main状态 / HEAD | main fb906cb42391971a8b315dbd813f7633927d7265 已含K01/SVC02领域、薄client、CLI与015/016；SVC02独立部署证据确认常驻同SHA/v3接受。O06共享增量尚未main |
+| 已集成main状态 / HEAD | main 3d4985fca060155435b159e0467815bf8e88b8b8 已含O06 client/mount与QUEUE01；常驻center/runner仍fb906cb/v3接受，Web测试使用独立main3d入口 |
 | Review | O06薄client79e06+a9cd与生产bf03均Mika独立APPROVED；test P2已关闭，见review.md |
 | 实现目标 | 79e06efdda45f04e713838086de2400f75949710 |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/goal-graph-runs.test.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 知识原文保存检索与真实预览安全升级已可用；正在接入受限目标拆分 |
-| 下一可用交付 | 让获授权的执行者读取固定计划版本并提交有限拆分提案 |
+| 当前产出 | 已接入持久排队与受限目标拆分；真实聊天验收的浏览器预演已通过 |
+| 下一可用交付 | 验证运行中排队后能在同一会话收到真实回复，关闭重开仍可读 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
