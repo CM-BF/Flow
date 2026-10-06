@@ -97,3 +97,9 @@ Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conv
 ## 2026-10-06 20:02:41 UTC — RECOVERY-RESTORE-EDIT 作者修复待复审
 
 限定target `2b01eb6ff345175f7073c4e57125f5eecfd52cac` / previous7ca / 本次8源，[manifest](../../docs/evidence/wpf-conversation-recovery/restore-edit-checkpoint.json)。P1作者SOURCE_ADDRESSED_PENDING_REVIEW；独审未到，不覆盖原CHANGES_REQUESTED结论。请核同view提前租约、完整editable fingerprint+edit-revert invalidation、App共用refresh/apply seam、prepare所有材料后再写editor、auth失效与并发、deferred当前稿正常CAS。当前50新增组合源码未运行、types未跑；旧38/原browser失败原样。完整feature仍NOT_STARTED/targetUNKNOWN。
+
+## 2026-10-06 20:11:48 UTC — 2b01独立限定源码批准
+
+Root实际review时间2026-10-06T20:06:10.368661+00:00，固定target `2b01eb6ff345175f7073c4e57125f5eecfd52cac`、metadata a990；[原报告](../../docs/evidence/wpf-conversation-recovery/2b01-restore-edit-root-approval.json) **APPROVED_SCOPED_RESTORE_EDIT_SOURCE_NOT_RUN / 0 blocking**。W01 [原报告](../../docs/evidence/wpf-conversation-recovery/2b01-restore-edit-peer/report.md)及[audit](../../docs/evidence/wpf-conversation-recovery/2b01-restore-edit-peer/audit.json)独立同结论。原P1输入和作者修复待审历史不改，当前源码addressed。
+
+50项未运行；新回归使用App共用helper和真实session/RecoveryWorkspace/projection/steering，但editor受控，未挂载Workspace/Thread、未执行整个App材料prepare回调。数组顺序受完整signature保护是源码结论，尚无双ref重排的实际运行证明。Root/peer均未复跑types或行为。旧38/原browser失败继续各原范围，完整feature NOT_STARTED/targetUNKNOWN。

@@ -88,3 +88,7 @@ RECOVERY01-04新增生命周期/observer共38受控case已单次通过，源7cc�
 ### 2026-10-06 20:02:41 UTC — Restore冲突语义冻结
 
 RECOVERY01-03/04修复target `2b01eb6ff345175f7073c4e57125f5eecfd52cac`，见[接口/源码回归边界](../../docs/evidence/wpf-conversation-recovery/restore-edit-source.md)。当前50仅静态计数/未运行。Root澄清不新建slot或双存draft：Restore冲突不得删/套用旧record，当前新稿按原owner/slot与CAS正常保存，成功会更新同slot。已建conversation项目在应用前核中心身份，新chat项目选择受编辑租约保护。原38与所有预算/完整验收开放状态不变。
+
+### 2026-10-06 20:11:48 UTC — 同一恢复编辑修复源码验收
+
+RECOVERY01-03/04的2b01修复已获root和peer限定源码通过，见[review](review.md)；50项受控检查待新单次准入，原TODO不因源码批准勾完。完整App材料prepare、mounted Thread和真实IDB/cookie旅程继续开放；本段仅metadata归档与tmp候选准备，不改变容量、事务、原identity或运行预算。

@@ -145,3 +145,9 @@ Root受控证据接受报告已逐字归档，SHA256 `11492f4990a29ffe5aca3ec59b
 ## 2026-10-06 20:01:25 UTC — Restore编辑P1 clean-code安全点
 
 复用本地find-skills方法，读取clean-code/codebase-design现有版本，未安装。职责审查发现原binding无声丢通知、App等待后仅核auth、steering预检晚于写正文；修为私有完整稿租约与同一个App实际owner seam，材料校验仍各自原controller实现，避免复制校验/第二authority。名称区分check/bindView/apply与同步prepareRestore，旧restore保持立即语义；记录prepare闭包只同栈消费。静态复核修正一次误置handoff guard，移至真正restore入口（未运行）；核dispose清租约、并发早拒、受保护恢复无法回收、auth失败延迟保存。当前新12case/50总case及types/browser均未运行，完整feature未审。技能为方法参考，不扩大原21或运行许可。
+
+## 2026-10-06 20:11:48 UTC — 2b01独审归档与候选准备安全点
+
+复用已读本地find-skills/clean-code/codebase-design方法，未安装。核两独立报告原字节、固定19源、唯一status与证据归因。P1的私有租约/现owner同步prepare职责获得限定源码认可，无新增blocking；不把受控helper当挂载App或完整材料回调，也不把旧38改绑2b01。源码不改，无新增types/runtime。
+
+下一检查复用单文件父监督，精确剩余预算6868已用/23132可提议，至少5000清理；候选必须新tmp、默认无gate拒跑、保持旧目录和raw。监督器适配中的清理/末尾计量若需收窄将单列diff交root，不自签运行。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 20:02:41 UTC |
+| 最近更新 | 2026-10-06 20:11:48 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,21 +10,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前P1限定source2b01eb6ff345175f7073c4e57125f5eecfd52cac；旧38受控执行仍bf14/7cc；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 0ac929 clean输入；8源码固定2b01，其余11源及首browser10raw保持；本次metadata正常push后核local=origin/clean |
+| 工作树dirty状态 | a990 clean输入；19源固定2b01不改；本次仅审批metadata正常push后核local=origin/clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 恢复等待期间的新稿保护已修复源码；正文、设置与材料的冲突回归待运行和独立审查 |
-| 下一可用交付 | 独审本次恢复与编辑冲突修复；有新准入后验证完整实际恢复旅程 |
-| 当前阻塞 | ACTIVE: 新恢复冲突修复尚未独审或运行；首浏览器失败及完整中心恢复验收保持开放 |
+| 当前产出 | 恢复等待期间的新稿保护已获限定源码审查通过；新增冲突回归和实际恢复旅程待验证 |
+| 下一可用交付 | 准备定向回归的固定检查入口；取得新准入后验证当前恢复编辑行为 |
+| 当前阻塞 | ACTIVE: 新50项回归尚未运行；首浏览器失败未复验，完整中心恢复验收保持开放 |
 | 需用户决定 | NONE |
 | 检查状态 | FAILED: 首真实browser草稿旅程失败保留；当前7cc受控38/38 PASS，0skip/todo，direct累计6.868/30s、清理通过；types未新增52.814/60s，不代表真实IDB/App通过 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；2026-10-06T19:46:19.159Z管理fresh/唯一owner/nooverlap原件已核；本段source-only，不含运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；2026-10-06T20:09:08.353Z管理fresh/唯一owner/nooverlap原件已核；本段仅metadata与独立tmp候选准备，不含运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -32,7 +32,7 @@
 | WPF-RECOVERY01-01 | in-progress | workspace_panels_owner | [live领取](../../docs/evidence/wpf-conversation-recovery/live-claim.json)，输入/容量研究已读，ConnectionSession/Journal第一段源码与types检查已落 |
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt屏障与部分恢复受控case已通过；完整真实controller旅程未完成 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
-| WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前38 direct](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)源绑定7cc通过，38/38、0skip/todo；受控IDB/mock fetch，不冒真实浏览器或完整controller矩阵 |
+| WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [历史38 direct](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)源绑定7cc通过；当前2b01静态展开50未运行，共用owner helper不冒mounted Workspace/Thread或完整App材料prepare通过 |
 | WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)保留；38受控case通过；[父监督及Crashpad源码修复](../../docs/evidence/wpf-conversation-recovery/browser-crashpad-checkpoint.json)已获限定源审/NOT_RUN，真实旅程未重跑 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
@@ -195,3 +195,9 @@ Root于2026-10-06T19:37:18.288778+00:00对固定7ca31ca3a65af587b1cf80713b03a6db
 固定 `2b01eb6ff345175f7073c4e57125f5eecfd52cac`，八源变化/另11源等7ca，[累计19源manifest](../../docs/evidence/wpf-conversation-recovery/restore-edit-checkpoint.json)。同view租约与完整可编辑稿复核、等待通知保留、同步材料预检已源码落地；[实际接口与限制](../../docs/evidence/wpf-conversation-recovery/restore-edit-source.md)。作者标P1 SOURCE_ADDRESSED_PENDING_REVIEW，未自签关闭。新增12case，当前40普通+6/2/2参数=50静态总数，全数当前NOT_RUN；旧38只绑定7cc受控实证。
 
 Root澄清同slot不要求留两份：冲突不套用/删除旧稿，正常新稿CAS成功后允许更新该stable slot。项目是已建conversation的中心身份时由App核saved envelope，不把首次展示加载当编辑；新chat项目选择及所有材料仍完整守护。清理旧raw10份17415B逐hash相同，0types/tests/HTTP/PG/Chrome/import/free，原预算未消费。完整feature NOT_STARTED/targetUNKNOWN/main未接。源冻结交独审，normalpush后核clean。
+
+## 2026-10-06 20:11:48 UTC — Restore编辑修复限定独审归档
+
+固定source `2b01eb6ff345175f7073c4e57125f5eecfd52cac`；root [原报告](../../docs/evidence/wpf-conversation-recovery/2b01-restore-edit-root-approval.json)与W01 [peer报告](../../docs/evidence/wpf-conversation-recovery/2b01-restore-edit-peer/report.md)均0blocking、仅源码批准。RECOVERY-RESTORE-EDIT源码addressed；50静态case仍NOT_RUN，旧38只绑定7cc。App使用的共用restore helper与真实session/projection/steering属于受控回归接缝，未挂载Workspace/Thread，也未运行完整App材料prepare。
+
+首browser失败14846.267375ms/10raw不改，余75153.732625ms含15000ms清理；direct累计6868ms/余23132ms，types余7186ms，无新消费或准入。完整feature NOT_STARTED/targetUNKNOWN/main未接。正常metadata seal后仅在全新own/tmp准备单文件50候选，绑定最终HEAD/2b01十九hash、previous6868/work18132/cleanup5000；默认拒跑，等待独立监督器审查和管理freshgate。
