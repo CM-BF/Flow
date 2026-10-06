@@ -1,6 +1,6 @@
 # 聊天知识接线验证
 
-固定实现 `d0e05c26df6f331e0b1f15e7b738e4fe53208125`，基线 `d7e1e64e7792f4d1ad4933db042f10f266ad0cca`。本片将显式项目、零消息会话准备、知识选择和冻结引用接入真实 App 的 Send / Queue；不是本地文件上传或完整附件功能。独立 review 已通过（仅固定十八 apps 文件），main 未集成。
+固定实现 `d0e05c26df6f331e0b1f15e7b738e4fe53208125`，基线 `d7e1e64e7792f4d1ad4933db042f10f266ad0cca`。本片将显式项目、零消息会话准备、知识选择和冻结引用接入真实 App 的 Send / Queue；不是本地文件上传或完整附件功能。独立 review 已通过（仅固定十八 apps 文件），main `df29fb511df029a0922ace0f4973f3fe3736e502` 已接收。
 
 ## 可查看版本与重现
 
@@ -50,4 +50,6 @@ pnpm --filter @flow/web exec tsx test/conversation-context-integration.fixture.t
 
 ## 独立审查与交付
 
-/root 已于 2026-10-06 09:09:37 UTC 后完成固定目标审查，无 blocking finding；另独立执行 144/144 直接消费者检查及生产 App 抽验。其具体操作 / 来源边界在 [review.md](../../../plans/wpf-context-i01-integration/review.md)。作者两套浏览器报告没有被改写为独立重跑。提交后的 metadata 分支已推送供 Lead 接收，生产十八文件保持固定目标，main 尚待集成。
+/root 已于 2026-10-06 09:09:37 UTC 后完成固定目标审查，无 blocking finding；另独立执行 144/144 直接消费者检查及生产 App 抽验。其具体操作 / 来源边界在 [review.md](../../../plans/wpf-context-i01-integration/review.md)。作者两套浏览器报告没有被改写为独立重跑。提交后的 metadata 分支已推送供 Lead 接收，生产十八文件保持固定目标，主线接收已核；个人 runtime 保持原版本。
+
+[正式 main 回执](main-receipt.json) · [owner 祖先/十八源/claim 核验](main-observation.json)。本次仅 Git 与 metadata 检查，没有重跑测试、模型、数据库或 API。全部二十旧 scope 提交后停写，由管理者释放。

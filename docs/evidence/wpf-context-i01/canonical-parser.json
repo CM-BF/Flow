@@ -1,15 +1,15 @@
 {
-  "at": "2026-10-06T09:10:25.814Z",
+  "at": "2026-10-06T09:26:18.261Z",
   "status": {
     "human": {
       "delivery": {
-        "state": "integration",
+        "state": "delivered",
         "source": "explicit"
       },
       "phase": "M2",
       "priority": 1,
-      "output": "可选择项目知识并发送或排队，草稿和未确认请求分别保留",
-      "next": "接入主线聊天界面",
+      "output": "项目知识选择、发送与排队已接入主线，草稿和未确认请求分别保留",
+      "next": "完整附件能力由所属大任务继续交付",
       "blocker": {
         "state": "none",
         "text": ""
@@ -49,8 +49,8 @@
     "owner": "w01_owner / gpt-6-astra ultra（派发指定）",
     "branch": "codex/web-context-integration",
     "branchState": "completed（branch implementation；independent review approved）",
-    "updatedAt": "2026-10-06T09:10:00.000Z",
-    "updatedRecord": "2026-10-06 09:10:00 UTC",
+    "updatedAt": "2026-10-06T09:26:18.000Z",
+    "updatedRecord": "2026-10-06 09:26:18 UTC",
     "todos": [
       {
         "id": "WPF-CONTEXTI01-01",
@@ -72,21 +72,21 @@
       },
       {
         "id": "WPF-CONTEXTI01-04",
-        "state": "in-progress",
+        "state": "completed",
         "owner": "w01_owner",
-        "evidence": "[固定目标独审通过](review.md)；main 接收仍 pending"
+        "evidence": "[独审通过](review.md)与[主线接收](../../docs/evidence/wpf-context-i01/main-observation.json)"
       }
     ],
     "errors": [],
     "declaredHead": "d7e1e64e7792f4d1ad4933db042f10f266ad0cca；实现 HEAD d0e05c26df6f331e0b1f15e7b738e4fe53208125",
-    "declaredDirty": "09:10 收到独审前 HEAD 75c52ff clean；当前仅批准记录 metadata 待提交，十八源码保持固定目标。最终 dirty 以提交后的 Git 回执为准。",
+    "declaredDirty": "主线收口前 009e67fd34b3bbef34a369d22acd67f08421620d clean；本次仅 main 回执 metadata，十八源码保持固定目标。最终 dirty 以提交后的 Git 回执为准。",
     "checks": {
       "state": "passed",
       "target": "d0e05c26df6f331e0b1f15e7b738e4fe53208125",
       "record": "PASSED d0e05c26df6f331e0b1f15e7b738e4fe53208125；144 局部/直接依赖、Web typecheck、build、实际 App HTTP fixture dev12/prod12；0 page errors。限模拟中心，详见证据。"
     },
     "reviewRecord": "[review.md](review.md)，APPROVED d0e05c26df6f331e0b1f15e7b738e4fe53208125",
-    "mainRecord": "NOT_INTEGRATED；实现已提交，尚未主线接收",
+    "mainRecord": "INTEGRATED df29fb511df029a0922ace0f4973f3fe3736e502；18 源逐字同固定目标，本人核验祖先与 hash",
     "next": "",
     "risks": "",
     "decisions": ""

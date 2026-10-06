@@ -19,3 +19,7 @@ Root 实际完整阅读十一生产 / 七测试变更及接口记录，核 75c52
 Root 在生产 64537 隔离页实操：显式 Knowledge P01、None 默认和同名项目 ID、project02 零 turn prepare 保留草稿且锁定 profile/project、搜索两项与显式正文展开 / script 字符转义、Escape 回 composer、Send 流文本、第二来源 Queue Enter accepted 且当前任务保留、selection 清零与新稿隔离、深色显示；console error=[]。目视作者 390 浅色截图，dev12/prod12 引用作者报告，未冒称独立重跑。临时页已关闭，预览保留。
 
 真实中心/provider/模型/DB、reload 回执与草稿恢复、完整附件功能、跨浏览器与屏读仍未验证。主线尚未集成，由 Execution Lead 接收。
+
+## 主线接收
+
+Execution Lead 正式 main receipt `df29fb511df029a0922ace0f4973f3fe3736e502` 已接收目标及交付 metadata。Owner 本次独立核十八源码与 target/manifest/current 逐字一致，两个提交均为 receipt 祖先；[本次观察](../../docs/evidence/wpf-context-i01/main-observation.json)。Lead 的 Web typecheck exit0 与原独审复用在[原始接收证据](../../docs/evidence/wpf-context-i01/main-receipt.json)，owner 没有重跑产品检查。个人 runtime 不因此升级。
