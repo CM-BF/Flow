@@ -1,0 +1,72 @@
+{
+  "observedAt": "2026-10-06T14:25:26.013756+00:00",
+  "candidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey",
+  "fixedHead": "8823b5bd44af1b25d651e42b7d16c2a21eaf30fe",
+  "ledgerAt": "2026-10-06T14:25:22.060Z",
+  "openFiles": [],
+  "gitExit": 0,
+  "stdout": "",
+  "stderr": "",
+  "freeBeforeBytes": 1208266752,
+  "freeAfterBytes": 1263362048,
+  "sourceManifestSha256": "345755c52babb41c5da9e665f10b39a52b4c9274a243edfa8873e06c8a020572",
+  "patternsSha256": "833d2f9bb5c98d43d4a05c1bfc10f6ad19c8de4db488bca29eaa2f50e5248711",
+  "retainedFiles": 3619,
+  "dematerializedFiles": 3542,
+  "logicalBytes": 45769998,
+  "allocatedBytesBefore": 54882304,
+  "allRetainedHashesEqual": true,
+  "otherWorktreesUnchanged": {
+    "/Users/citrine/Projects/AgentHarness/Flow": {
+      "head": "ec50957fc7bd39e47cb6c44de852fe99373e05e7",
+      "status": "",
+      "indexHash": "ab51109d8d2328862a4dee0b486d179a727edb1dd1e8a65ca6bb92463658a9c5",
+      "indexMtime": 1791296548741993308
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration": {
+      "head": "ec50957fc7bd39e47cb6c44de852fe99373e05e7",
+      "status": "",
+      "indexHash": "8ee9d03b39fff20487c9c0bb30830fb6490b0f980d293dbbdf310105da515940",
+      "indexMtime": 1791296548860861370
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation": {
+      "head": "e4775cdecfd0a361a07cc7f6965288a381e85135",
+      "status": "",
+      "indexHash": "db90f2e8e65dce449f6710f305e2db6d6824efbcfb1600479a6477b55e22bf3e",
+      "indexMtime": 1791296701017452926
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review": {
+      "head": "2d117ebd535068140af4183819db16d2fad50e3f",
+      "status": "",
+      "indexHash": "9ee6f4f20bf9958083cfce106e193a0ddeca6567d6caed9136f8fd2d1a47c13c",
+      "indexMtime": 1791296725066969796
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/cost-usage-readout": {
+      "head": "f2ba0a8a4cad542e1487dd40e1ccbaaffceca3a9",
+      "status": "",
+      "indexHash": "d58334a7a11eae2c845f1e4cec762d2d79814525d94d1c4449a2d6f4f0b3cbce",
+      "indexMtime": 1791295946097606192
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls": {
+      "head": "e5c47893b5973571ac02d55bd7b510952d59c06f",
+      "status": "",
+      "indexHash": "b776f6de5668be9ed964a5bb47ba3e9df26e8c0ea4e28dba4754629dd016c2fd",
+      "indexMtime": 1791296549687099289
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session": {
+      "head": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "status": "",
+      "indexHash": "fa675e99acefdfc7a7abdbd505e4660200d00ce4bb7dea3f4cee7ebd771236d0",
+      "indexMtime": 1791296280006766319
+    }
+  },
+  "clean": true,
+  "sharedConfigDelta": "unchanged (already enabled); only this worktree gains sparse configuration",
+  "localConfig": "[core]\n\tsparseCheckout = true\n\tsparseCheckoutCone = false\n",
+  "rollback": "git -C <candidate> sparse-checkout disable; restores tracked files, shared worktreeConfig remains enabled",
+  "unrelatedRuntimeChanged": false,
+  "providerCalls": 0,
+  "pgExperiments": 0,
+  "observedFreeDeltaBytes": 55095296,
+  "physicalAttribution": "shared volume before/after observation, not exclusive attribution"
+}
