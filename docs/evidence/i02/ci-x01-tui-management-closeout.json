@@ -1,0 +1,34 @@
+{
+  "at": "2026-10-06T23:20:08.423780+00:00",
+  "base": "93a92c918b29126b6761b02258cef523906eca94",
+  "scope": "Management metadata only; no product source or runtime update. CI activation remains pending; TUI source provision is not a test.",
+  "inputs": [
+    {
+      "source": "303ffdad294c9f8a5c5685ae81986768c639588b",
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 65113,
+      "sha256": "ae08bf993e2929e606b02c917d177da4659f6c4eb4e82336658630e04272a089"
+    },
+    {
+      "source": "303ffdad294c9f8a5c5685ae81986768c639588b",
+      "path": "docs/quality/tui01g-source-provision.json",
+      "bytes": 54439,
+      "sha256": "0b0f5dc0e81150535e8382f42e4a42b24036bbdaf234da715166b7d5ba7403ea"
+    },
+    {
+      "source": "9b17521b78619a3961fa397964ce653adc0617b4",
+      "path": "docs/evidence/d05/x01-binding-live.json",
+      "bytes": 2888,
+      "sha256": "87034e643ae28b563fc8e3db2f918869f1dcea2fd9a747f5f74398b3d2e9ea38"
+    },
+    {
+      "source": "9b17521b78619a3961fa397964ce653adc0617b4",
+      "path": "plans/d05-architecture-view/status.md",
+      "bytes": 27765,
+      "sha256": "39e3c0cdacab6ca93649bbbfce8e28dd11a6760e674365046e9c2d00034336d5"
+    }
+  ],
+  "productTests": "NOT_RUN_NO_PRODUCT_CHANGE",
+  "userRuntime": "backend af51 / runner accepting v18 / Web d629 v3 unchanged",
+  "checks": "fixed Git byte/hash equality and documentation consistency"
+}
