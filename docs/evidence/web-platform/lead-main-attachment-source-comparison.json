@@ -1,0 +1,144 @@
+{
+  "base": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
+  "sources": [
+    {
+      "path": "apps/server/src/attachments/attachments.test.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 12901,
+      "sha256": "25f102dccd567251faad7376e240c1d6436ad3a45fe52a62c13be6d5fe7d50f2"
+    },
+    {
+      "path": "apps/server/src/attachments/context.test.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 27442,
+      "sha256": "6bfd2830c9ee8b89e5f7ca7d1c12671ee02c3d76eb1e0d7b813fc9fd4ddbfa71"
+    },
+    {
+      "path": "apps/server/src/attachments/fixture.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 15625,
+      "sha256": "584cf45b3c12375d20031ac80e63de4e529c7b2351243136f2eab8bfbd28b0d2"
+    },
+    {
+      "path": "apps/server/src/attachments/index.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 5023,
+      "sha256": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516"
+    },
+    {
+      "path": "apps/server/src/attachments/storage.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 11534,
+      "sha256": "7e62dee9b16a164b250b6d7d0331319fb5f4ea8c7493e91c8b8e25a133c70560"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 14160,
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 3242,
+      "sha256": "82e5e104e68cda1b925908ecfa1b34daf78b07d96fe9f952830746cbc95dd603"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 3805,
+      "sha256": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 3554,
+      "sha256": "14652c6fd14d11a685c8a520d337c5e51e23f43f1a9b40cd174739d77df3fe57"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 3222,
+      "sha256": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada"
+    },
+    {
+      "path": "packages/contracts/src/attachments.test.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 25626,
+      "sha256": "68af16525405b9837e4db8162670ba8ed2037254e4bf4da4410e6971c7fa9127"
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 3951,
+      "sha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 6138,
+      "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705"
+    },
+    {
+      "path": "packages/storage/migrations/026-attachment-resources.sql",
+      "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+      "bytes": 2994,
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "target": "df8d077accea7a28536f1f56407a729c41e4639c",
+      "bytes": 11246,
+      "sha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.test.ts",
+      "target": "df8d077accea7a28536f1f56407a729c41e4639c",
+      "bytes": 16234,
+      "sha256": "137239308138f0e20e28e8d97aa588aac9f73a48849f45bd409ecc855b26dbdf"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "target": "df8d077accea7a28536f1f56407a729c41e4639c",
+      "bytes": 1050,
+      "sha256": "34d05a279569a727cc54cb4bfca56765d77b0e5b244c1a7faa12f6d0053e7e7d"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "target": "ab1bcb14531995ccb3916492eaf328cdae2213b3",
+      "bytes": 43005,
+      "sha256": "2be3b8b7a9c7b1674fc028b919efce4ae4736350c1c523ec624f6be58849a0b4"
+    },
+    {
+      "path": "packages/client/src/attachments.test.ts",
+      "target": "ab1bcb14531995ccb3916492eaf328cdae2213b3",
+      "bytes": 3620,
+      "sha256": "73af8dc0d953ad48171f850574a223b18b93ec353b443b34bf3393672733ba5a"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "target": "69eb2476ba59308a906c891c4391e243e3b2512a",
+      "bytes": 13133,
+      "sha256": "effd24a27add22ca14c508022abc5c132600081da9d3d3d5e3a52855a287dde6"
+    },
+    {
+      "path": "packages/client/src/attachment-production.test.ts",
+      "target": "f04cb29633ca678b35aa423e02a16953add0cfba",
+      "bytes": 11992,
+      "sha256": "f6a3d2d86bb2195c05195f5dc6d1114bdc5253231741d88254ee1b0883f7acb1"
+    }
+  ],
+  "composition": "8701 domain + approved1f0 fixture + df8 ACK + ab1 client + 69eb mount + f04 cleanup"
+}

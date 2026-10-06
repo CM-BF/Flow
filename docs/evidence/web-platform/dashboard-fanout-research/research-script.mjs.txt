@@ -1,0 +1,40 @@
+import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { createHash } from 'node:crypto';
+const exec = promisify(execFile), root = await mkdtemp(path.join(tmpdir(), 'flow-dashboard-fanout-research-'));
+const project = '/Users/citrine/Projects/AgentHarness/Flow';
+const source = path.join(project, 'apps/execution-dashboard/src/aggregate.mjs');
+const env = { ...process.env, GIT_CONFIG_GLOBAL: '/dev/null', GIT_CONFIG_SYSTEM: '/dev/null', GIT_OPTIONAL_LOCKS: '0' };
+delete env.GIT_TRACE2_EVENT; delete env.FLOW_COORDINATION_DATABASE_URL; delete env.FLOW_COORDINATION_REPO;
+const runGit = (cwd, args) => exec('git', ['-C', cwd, ...args], { env, timeout: 5000, maxBuffer: 1024 * 1024 });
+const repos = [], runs = [];
+const report = { recordedAt: new Date().toISOString(), sourceHead: (await exec('git', ['-C', project, 'rev-parse', 'HEAD'])).stdout.trim(), source: 'apps/execution-dashboard/src/aggregate.mjs', sourceSha256: createHash('sha256').update(await readFile(source)).digest('hex'), scope: 'observeGit only on 8 empty temporary Git repositories; trace peak counts start-to-exit intervals, not OS census, full aggregate, production workload, or CPU causality', runs, cleanup: null };
+try {
+  for (let n = 0; n < 8; n++) {
+    const dir = path.join(root, `repo-${n}`); await mkdir(dir); repos.push(dir);
+    await runGit(dir, ['init', '-q', '-b', 'main']);
+    await writeFile(path.join(dir, 'sample.txt'), 'temporary research sample\n');
+    await runGit(dir, ['add', 'sample.txt']);
+    await runGit(dir, ['-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', '-c', 'core.hooksPath=/dev/null', 'commit', '-q', '--no-gpg-sign', '-m', 'temporary sample']);
+  }
+  for (const count of [1, 4, 8]) {
+    const trace = path.join(root, `trace-${count}.jsonl`), started = performance.now();
+    const code = `import { observeGit } from ${JSON.stringify(new URL('file://' + source).href)}; const values = await Promise.all(JSON.parse(process.argv[1]).map(observeGit)); console.log(JSON.stringify(values));`;
+    const result = await exec(process.execPath, ['--input-type=module', '-e', code, JSON.stringify(repos.slice(0, count))], { env: { ...env, GIT_TRACE2_EVENT: trace }, timeout: 15000, maxBuffer: 1024 * 1024 });
+    const observations = JSON.parse(result.stdout), events = (await readFile(trace, 'utf8')).trim().split('\n').map(line => JSON.parse(line));
+    const intervals = events.filter(e => e.event === 'start' || e.event === 'exit').sort((a,b) => a.time.localeCompare(b.time));
+    const active = new Set(); let peak = 0;
+    for (const event of intervals) { if (event.event === 'start') active.add(event.sid); else active.delete(event.sid); peak = Math.max(peak, active.size); }
+    runs.push({ repositories: count, gitStarts: events.filter(e => e.event === 'start').length, tracePeakIntervals: peak, unclosedIntervals: active.size, elapsedMsIncludingChildImport: +(performance.now() - started).toFixed(2), available: observations.filter(x => x.available).length, dirty: observations.filter(x => x.dirty).length, errors: observations.filter(x => !x.available).map(x => x.error) });
+    await writeFile(path.join(root, `observations-${count}.json`), JSON.stringify(observations, null, 2) + '\n');
+  }
+} catch (error) { report.failure = String(error.stack || error); process.exitCode = 1; }
+finally {
+  for (const dir of repos) await rm(dir, { recursive: true, force: true });
+  report.cleanup = { removedTemporaryRepositories: repos.length, onlyOwnedPaths: true };
+  await writeFile(path.join(root, 'report.json'), JSON.stringify(report, null, 2) + '\n');
+  console.log(JSON.stringify({ directory: root, ...report }, null, 2));
+}

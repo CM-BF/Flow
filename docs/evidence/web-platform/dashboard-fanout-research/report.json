@@ -1,0 +1,43 @@
+{
+  "recordedAt": "2026-10-06T11:35:30.677Z",
+  "sourceHead": "9db6708fa5072915d3354d27becd847dbbf8f6cb",
+  "source": "apps/execution-dashboard/src/aggregate.mjs",
+  "sourceSha256": "81a20492f80e58cdbc28a36c49ef514aae0c656782020c413ce8e11f4c29494c",
+  "scope": "observeGit only on 8 empty temporary Git repositories; trace peak counts start-to-exit intervals, not OS census, full aggregate, production workload, or CPU causality",
+  "runs": [
+    {
+      "repositories": 1,
+      "gitStarts": 4,
+      "tracePeakIntervals": 4,
+      "unclosedIntervals": 0,
+      "elapsedMsIncludingChildImport": 96.11,
+      "available": 1,
+      "dirty": 0,
+      "errors": []
+    },
+    {
+      "repositories": 4,
+      "gitStarts": 16,
+      "tracePeakIntervals": 3,
+      "unclosedIntervals": 0,
+      "elapsedMsIncludingChildImport": 90.11,
+      "available": 4,
+      "dirty": 0,
+      "errors": []
+    },
+    {
+      "repositories": 8,
+      "gitStarts": 32,
+      "tracePeakIntervals": 4,
+      "unclosedIntervals": 0,
+      "elapsedMsIncludingChildImport": 125.24,
+      "available": 8,
+      "dirty": 0,
+      "errors": []
+    }
+  ],
+  "cleanup": {
+    "removedTemporaryRepositories": 8,
+    "onlyOwnedPaths": true
+  }
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 11:29 UTC |
+| 最近更新 | 2026-10-06 11:34 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-03](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 已可选择知识引用并发送；文本附件保存、预览与恢复模块已独审，生产聊天附件接线仍待完成 |
-| 下一可用交付 | 组合验证正式中心入口，并将已审附件选择与恢复模块接入实际聊天 |
+| 下一可用交付 | 接收已审附件选择模块，CACHE共享窗口交回后接入实际聊天 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -36,7 +36,7 @@
 
 ## 依赖与领取
 
-CONTEXTI01已main并释放；ATTACH01 runtime8701/final1d236已root独审78、16源/19依赖，ef617 v2保留；fixture1f0两文件已root独审2case，finald32a正常pushclean，新累计16源清单已交Lead；旧8701/78不变，正式factory自动挂载仍未验。ATTACHI01由w01在web-attachment-input-preview/codex同名、base8701取94b84c59 v1十一新scope，固定4c4d/final4a9已root独审17并正常pushclean，9源不变；仅DTO+typed ports/官方Threadfixture，publicclient/HTTP/App仍pending。Lead协调共享出口/decoder/mount/main，资源后端仍本组已交付。
+CONTEXTI01已main并释放；ATTACH01 runtime/fixture与公共六client/sharedv2/factory已正式main fd1322，23源逐字相同，Lead有限组合6项/8自动启动无fallback/4DB清零。owner c698正常pushclean后18scope全停写，ef617 v3已release；[正式证据](../../docs/evidence/web-platform/attachment-main-fd1322-observation.json)。ATTACHI01 fixed4c4d/final4a9、9源码仍已审待main，不在这23源内，94b84 v1保留。ATTACHI02完整24literal结构已批准但未take，公共依赖已满足，待模块准确组合base及CACHE六路径短窗口交权。真实App/SendQueue仍开放。
 
 当前子任务来源：[ATTACH01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)；[CONTEXTI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。该子任务直接归本大task，WPF管理只做来源追溯。
 
@@ -48,6 +48,4 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 
 附件v2由唯一shared decoder配套；Webrecovery替代重复receipt matcher，查找/恢复/retention与11scope首片已root授权并fresh take；不依赖不存在公共方法。[具体回复置于集中队列顶部](../../docs/evidence/web-platform/mature-task-handoff.md)。
 
-生产factory升级直接消费者接缝已实施并root独审通过；pre026真实PG原行/首次026/HTTP重放与六项定向验收、固定共享输入边界见[集中接缝记录](../../docs/evidence/web-platform/attach01-fixture-handoff.json)。共享ACK df8d已独审，六方法ab1b仍薄审/生产mount固定输入待到，不借fixture fallback声称实际生产接通。
-
-公共依赖新事实：[F01固定输入观察](../../docs/evidence/web-platform/attachment-public-bridge-observation-1129.json)确认六client/sharedv2分别已独审；factory69eb清理P2修复f04仍待增量审，main53ce尚未接。生产绑定与CACHE的App/session窗口先方案结构审查，再按[精确范围时点](../../docs/evidence/web-platform/workspace-attachment-sequence-observation.json) fresh take，不预占。
+正式factory组合已接收，上述当前事实替代11:29前“factory增量待审/main未接”观察；原历史证据保留在[F01固定输入时点](../../docs/evidence/web-platform/attachment-public-bridge-observation-1129.json)。现[两方案](../../docs/evidence/web-platform/workspace-cache-attachment-binding-proposals.json)明确六交集包含两专测；pending submission/capture即使items移除仍保护，不能将发送中的身份作为缓存回收对象。

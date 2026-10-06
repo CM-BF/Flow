@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 11:29 UTC |
+| 最近更新 | 2026-10-06 11:34 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-05](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -12,10 +12,10 @@
 | 工作基线 / HEAD | 管理基线d444608ab6c796c731e44e51a892868bf39bec2a；当前HEAD/dirty由Git聚合 |
 | 工作分支状态 | in-progress |
 | 阶段 | M2 |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | 已有split/merge与workspace-state基础；尚未完成一个顶层tab内A与B组合的完整验收。 |
-| 下一可用交付 | 先设计关闭视图后的有界缓存与草稿保护；附件中心验证修复优先，组合标签仍保留后继 |
+| 下一可用交付 | 实施关闭视图与正文缓存的有界保护；组合标签仍保留后继 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -31,7 +31,7 @@
 | WPF-MATURE-05-02 | pending | Web co-lead | 同顶层tab显示A与B，独立焦点/滚动/未发草稿/上下文，不靠全局focused授权其他pane；真实ConversationList扩展用conversation/view上下文，不借旧task slot冒覆盖。 |
 | WPF-MATURE-05-03 | pending | Web co-lead | 比例调整、交换、合回与恢复；关闭视图不cancel，split/merge只改布局不拼接history；组合pane菜单复用P01 registry并核sample贡献/禁用及跨连接身份。比例键盘与窄屏焦点实际验证；有显著按需加载延迟的tab使用方向键移动focus、Enter/Space手动激活，关闭后焦点落相邻tab或New Chat。 |
 | WPF-MATURE-05-04 | pending | Web co-lead | 模型可容chat/文件/产物；首个两栏旅程与3+后继分明，390键盘可达且不强迫外部内容同色。 |
-| WPF-MATURE-05-05 | pending | Web co-lead | 实际App双会话及内容pane交互/刷新恢复/关闭重开证据，主题和比例/焦点测试；大量反复开关后DOM/缓存/订阅有界，区分visible/hidden/closed-clean/closed-protected，草稿/附件/unknown不可静默丢失，满额保护时拒新开，重开恢复且不cancel后台任务；实际0模型测DOM/effects读取/切换输入时延及未确认恢复，Activity不是内存上限；overview/feed观察与命令生命周期须分离，后台请求仅预算内观测，不从源码推算QPS/heap；关联MATURE06-04，没有实现的3+明确开放。 |
+| WPF-MATURE-05-05 | in-progress | Web co-lead | 实际App双会话及内容pane交互/刷新恢复/关闭重开证据，主题和比例/焦点测试；大量反复开关后DOM/缓存/订阅有界，区分visible/hidden/closed-clean/closed-protected，草稿/附件/unknown不可静默丢失，满额保护时拒新开，重开恢复且不cancel后台任务；实际0模型测DOM/effects读取/切换输入时延及未确认恢复，Activity不是内存上限；overview/feed观察与命令生命周期须分离，后台请求仅预算内观测，不从源码推算QPS/heap；关联MATURE06-04，没有实现的3+明确开放。 |
 
 ## 依赖与领取
 
@@ -53,4 +53,4 @@ WORKSPACEPERF01 [限定审查来源](../../docs/evidence/web-platform/workspacep
 
 11:11管理fresh检查：固定main2e71、App/Thread/outbox/session/workspace-state当前无writer；projection的ACK已release，client归F01。仅时点，不是预占；panels正式只读最小cache Interface，ATTACHI未来App窗口仍需有序协调，[scope依据](../../docs/evidence/web-platform/workspace-cache-scope-observation.json)。
 
-最新只读scope观察为11:27:52，[App/session等候选无writer](../../docs/evidence/web-platform/workspace-attachment-sequence-observation.json)；等待两owner精确Interface后，先结构审查ready CACHE小接口，再fresh take，ATTACHI App窗口后接。未新增claim、没有生产修改。
+CACHE已root结构批准并fresh领取883321bc v1十六scope，fixed fd1322新独立web-workspace-cache/codex同名；[receipt](../../docs/evidence/web-platform/workspacecache01-take-receipt.json)。首canonical由panels在本任务树创建。32含initial/open/protected，closed-clean0；reply2/2MiB、queue4/64KiB只正文UTF8。未提交profile/project选择、pending composer capture（即使items移除）、未dismiss receipts均保护。与ATTACHI02六条交集含两专测，短窗口后停写交权再amend；当前无缓存已实现/heap保证，原基线仍partial。

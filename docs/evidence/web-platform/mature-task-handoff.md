@@ -1,18 +1,18 @@
 # 成熟聊天大task来源与登记队列
 
-## 公共桥接最新固定事实与共享写入窗口（11:28只读）
+## ATTACH正式main接收与CACHE领取（当前）
 
-固定ab1b第六方法实际为 **attachmentUploadReceipt(projectId,{scope,key},signal)**，非早期简称attachmentReceipt；content实际也为五位置参数。六方法只薄transport，`response.json() as T`不做runtime decode。生产host须保留公共schema/journal校验，区分明确不支持、receipt404→null与401/403/其他409/坏200异常，不能吞错；[已纠正的唯一桥接记录](attachment-runtime-public-bridge.md)。这是消费者事实核实，不要求公共owner重新独审。
+**附件公共桥接/运行域已接 main `fd1322f9c0c1d085d5e343e39f6216b20d26c264`。** [管理只读核验](attachment-main-fd1322-observation.json)逐项核23 source与批准target/manifest字节相同；[Lead原组合结果](lead-main-attachment-integration.json)为actualFactory 6pass/23deselected、14.62s，8次start/restart全部自动026+六route且fallback=false、4DB清零/roottypes0。管理没有重复产品测试、API或个人服务操作。旧8701/1f0本树fallback证据不改；这是新正式factory组合，不是追改历史。
 
-[权威F01/实际Git/manifest审计](attachment-public-bridge-observation-1129.json)：`m2-shared-foundation` **b2c5e3a2c9d0650ec523b76e6af08facb165d895** local=origin/clean。六client **ab1bcb14531995ccb3916492eaf328cdae2213b3** 已Mika 11:15:12 UTC APPROVED；shared v2 ACK **df8d077accea7a28536f1f56407a729c41e4639c** 已native_center_owner APPROVED。这纠正下方11:18历史“六方法待审”，不扩大批准到领域或生产。
+ATTACH owner最终 **c6989b894aa4e9103472279e697d129b28cce5ff** normal push、local=origin/clean，18scope全停写；fresh CAS **ef617 v3 released** 于11:33:32.480Z，[receipt](attach01-main-release-receipt.json)。受控源码组合不是整分支祖先merge。第六client准确名 `attachmentUploadReceipt(projectId,{scope,key},signal)`；六方法薄transport不做runtime decode，生产host继续公共schema/journal校验及错误隔离，见[唯一桥接接口](attachment-runtime-public-bridge.md)。
 
-正式factory固定 **69eb2476ba59308a906c891c4391e243e3b2512a** 已有026+owner routes及生产专测；Mika发现唯一P2为测试资源清理。修复 **f04cb29633ca678b35aa423e02a16953add0cfba** 只改生产专测，F01 11:27权威status仍为增量待复审，原3行生产/index/client/ACK未变。输入分别是同树 `docs/evidence/f01/attachment-production-manifest.json`、`attachment-cleanup-manifest.json`；作者3/3和types0按原来源，不由本管理重测或先标批准。原ATTACH1f0已审fixture可供Lead正式factory下有限组合验证，仍未收到该组合通过/main receipt。
+**ATTACHI01仍请Lead按原固定清单接收**：4c4de124b24a85b9e2a13e097b29c80b1e84d11a / final4a9b167888cd9dab3490886d039fc50e7fb39083 / [9-source manifest](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/docs/evidence/wpf-attach-i01/source-manifest.json)。本次23源不含该模块；不得将fd公共桥接当UI模块或生产App已上线。94b84 v1保留待模块main；正常受控接收不需重审或自行复制到其他树。
 
-本次实际main/origin **53ce2ec2c95b489aa7a2a2eaa49849821af00c16** clean；只读核server无附件mount、client无六方法、shared ACK无v2分支，因此不能把F01分支可用等同main已接收。个人backend/static不操作、不采样。I02唯一status11:23仍描述附件公共入口后继，工程53ce后续不改变此附件结论。
+**WPF-WORKSPACECACHE01已正式领取**：panels，独立 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache` / `codex/web-workspace-cache`，固定fd1322（实核对53ce整个apps/web零diff、HEAD/branch/clean）。Root结构批准16literal后fresh无冲突，**883321bc-933f-4da0-8f86-f200c02620cf v1 COMMITTED 11:33:51.839Z**，[receipt](workspacecache01-take-receipt.json)。唯一source待owner首提交于该树`plans/wpf-workspace-cache/status.md`，直接父MATURE05/co-lead Web/root；普通登记由Lead读本队列，尚不冒称进度卡已部署。
 
-[CACHE/ATTACHI精确窗口时点](workspace-attachment-sequence-observation.json)：11:27:52.141Z fresh账本available，App.tsx、ConversationThread.tsx、conversation projection/outbox/queue projection、plugin-integration/session.ts、workspace-state.ts均无active/handoff writer；现ATTACHI94b84十一新模块与ATTACHef617十八scope仍各自持有。这只是观察，**不是预占或写许可**。先结构审查已ready的CACHE小Interface/精确范围，再fresh COMMITTED领取；ATTACHI生产绑定按其后明确App/session交权窗口，不双方预领宽scope，不把模块claim扩成App授权。两proposal尚待实际owner给出，不承诺未知路径都已可并行。
+双方[批准方案与精确范围](workspace-cache-attachment-binding-proposals.json)：CACHE先短窗口，ATTACHI02完整24literal已结构批准但未take，需模块4c正式组合base后先独立实际consumer；六共用路径含App/session/两projection及两专测，全部待CACHE停写+合法交权后fresh amend。保护pending composer submission/capture，即使当前items已移除；仅未提交profile/project选择保护。32conversation含initial/open/protected、closed-clean0，reply2/2MiB+queue4/64KiB是UTF8正文预算，非heap/全workspace保证。
 
-## ATTACH01 最新获审完整输入：runtime + factory fixture
+## ATTACH01 已接收固定输入：runtime + factory fixture（11:24交付记录）
 
 **Lead请消费固定1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9，最终metadata d32a2a2507dc96508479f8d5dd40714c3167e9e0。** 11:24:56UTC管理已核local=origin/clean、fixed/current/新manifest累计16源全等，原runtime-candidate.json及8701/78证据未改；[只读审计](attach01-fixture-final-audit.json)。
 
@@ -28,7 +28,7 @@ Root对1f0两文件独审APPROVED/0blocking：独立2pass、27deselected、9.23s
 
 Root APPROVED/0blocking：全文九文件、独立17/17两test文件807ms、9源四方hash和截图；作者十组官方Thread browser/types未由root重跑。批准仅DTO+typed内存ports的controller/recovery/adapter/Picker；真实公共HTTP/生产App/SendQueue、已选草稿reload和跨tab原子性仍pending，不能报MATURE03完成。94b84c59 v1十一scope保留等main收口，不提前释放。
 
-w01下一只读最小生产绑定，等待准确六client/sharedv2/factory输入；与panels CACHE逐literal核App/session/Thread/projection窗口，不双方预占。新增宿主验收：storage拒绝/损坏导致createAttachmentInput初始journal读取throw时保raw/unknown身份，呈现可行动附件错误但纯文本Thread继续；不自动清损坏记录、不令整个Session失败。cap null/旧namespace缓存须由明确binding生命周期重建/失效，不能只凭URL复用授权。这些属03-05/05-05后继验收，未追记为已批准模块实测。
+w01下一生产绑定已有fd1322公共输入，仍等4c模块main准确组合base；与panels CACHE逐literal核App/session/Thread/projection窗口，不双方预占。新增宿主验收：storage拒绝/损坏导致createAttachmentInput初始journal读取throw时保raw/unknown身份，呈现可行动附件错误但纯文本Thread继续；不自动清损坏记录、不令整个Session失败。cap null/旧namespace缓存须由明确binding生命周期重建/失效，不能只凭URL复用授权。这些属03-05/05-05后继验收，未追记为已批准模块实测。
 
 ## ATTACH01 fixture 接缝授权依据（11:18历史，交付以上方新输入为准）
 
@@ -306,3 +306,7 @@ panels完成ATTACH最终metadata后，只读准备MATURE05-05真实App开关/闭
 ## CACHE与附件生产绑定：两份精确只读方案已到
 
 [完整候选/Interface/容量/验收/精确literal](workspace-cache-attachment-binding-proposals.json)：CACHE proposed WPF-WORKSPACECACHE01直接父MATURE05，panels，16范围；attachment production直接父MATURE03，w01，24范围（新ID待结构审/管理确认）。两者**确切相交六个literal**：四生产App/session/两projection，加conversation-projection.test.ts、conversation-queue.test.ts两专测。已排先ready CACHE小Interface结构审查，再fresh精确take；附件实际App绑定后续单writer窗口，不预领宽scope。32conversation view/closed-clean0、reply2/2MiB与queue4/64KiB是CACHE提议预算非已实现；保护全部未dismiss材料、unknown、稿件，session release不销命令authority；实际消费者与90s/8MiB定向验证同片交付。附件绑定需准确整套公共输入和4c主线，不能把本记录当授写。
+
+ATTACHI02首阶段12literal（同一生产UI任务、尚未take）：详[精确方案](workspace-cache-attachment-binding-proposals.json)，现有Outbox/Queue与真实PluginHost是实际消费者，无Session stub/cast；余12含CACHE六条及Thread/react/messages/浏览器挂载留后续amend。完整dev/prod累计≤10分钟含每轮至少20秒清理、每轮单随机库/1Chromium、证据≤16MiB；超预算如实停，不冒完整App/HTTP已完成。仍待4c模块正式main准确组合base。
+
+Root已批准ATTACHI02首12literal及最终24完整消费者验收，仍须4c正式main组合base后fresh take；测试每轮先定回归目的、记累计耗时，不因失败无限重跑。CACHE六重叠后合法交权再amend。

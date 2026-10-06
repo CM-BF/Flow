@@ -57,3 +57,5 @@ CACHE与附件宿主的共享接缝：session.ts可能同时承担知识binding�
 共享写入窗口准备（11:27:52 fresh账本）：App/Thread/session与候选projection/outbox/queueprojection/workspace-state当时无writer，详[时点记录](../../docs/evidence/web-platform/workspace-attachment-sequence-observation.json)。先ready CACHE小Interface经root结构审查后精确领取，再为ATTACHI实际绑定明确单writer窗口；free不是写权，不提前领宽scope或改变两层task归属。
 
 CACHE完整[16literal只读方案](../../docs/evidence/web-platform/workspace-cache-attachment-binding-proposals.json)已到，待root结构审查；预算32驻留conversation、closed-clean0、reply2/2MiB与queue4/64KiB、每类1flight，保护稿件/选择/任意未dismiss收据并提供重开入口。与附件生产24literal相交四生产及两专测，先CACHE小Interface再明确交权，fresh COMMITTED前不建可写实现。以上为候选，不把UTF8正文上限当JS堆/全workspace上限，不预占宽scope。
+
+执行安全点（11:34）：附件运行域/公共桥接已受控main fd1322；独立UI模块4c尚待main。CACHE root批准16literal后已fresh COMMITTED883321 v1，六共享路径含两专测先CACHE后ATTACHI02。双方保护pending composer submission/capture，即使items已移除也不自动回收；未提交profile/project选择才属选择保护。范围、容量、输入与收口见[当前集中队列](../../docs/evidence/web-platform/mature-task-handoff.md)及[精确方案](../../docs/evidence/web-platform/workspace-cache-attachment-binding-proposals.json)，不继承旧claim。

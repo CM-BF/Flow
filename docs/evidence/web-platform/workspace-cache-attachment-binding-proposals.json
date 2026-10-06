@@ -1,6 +1,6 @@
 {
-  "state": "PROPOSAL_ONLY_NOT_TAKEN",
-  "source": "two existing owners read-only proposals, root structural review pending",
+  "state": "CACHE_APPROVED_AND_TAKEN_ATTACHMENT_PRODUCTION_APPROVED_NOT_TAKEN",
+  "source": "root structural approvals; manager fresh D04 COMMITTED after owner main-close",
   "baseObserved": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
   "cache": {
     "proposedTaskId": "WPF-WORKSPACECACHE01",
@@ -58,7 +58,8 @@
       "all non-dismissed queue receipts including rejected/accepted",
       "steering page entry/risks",
       "unknown protection state fail closed",
-      "future attachment Input.items/capture/unknown from its sole binding; current production not attached"
+      "future attachment Input.items/capture/unknown from its sole binding; current production not attached",
+      "pending composer submission/capture even after current items removed"
     ],
     "acceptance": [
       "32 cap before new key/route, existing reopen allowed, retained-drafts reopen entry",
@@ -72,10 +73,14 @@
       "heap or reliable latency guarantee",
       "Arc layout rewrite",
       "production attachment behavior before actual binding"
-    ]
+    ],
+    "base": "fd1322f9c0c1d085d5e343e39f6216b20d26c264",
+    "claimId": "883321bc-933f-4da0-8f86-f200c02620cf",
+    "claimVersion": 1,
+    "receipt": "workspacecache01-take-receipt.json"
   },
   "attachmentProduction": {
-    "taskId": null,
+    "taskId": "WPF-ATTACHI02",
     "proposedPlan": "wpf-attach-i02-production-binding",
     "parent": "WPF-MATURE-03",
     "owner": "w01_owner",
@@ -105,14 +110,15 @@
       "plans/wpf-attach-i02-production-binding",
       "docs/evidence/wpf-attach-i02"
     ],
-    "requiredBase": "approved six client/shared-v2/factory input + module4c all integrated, then fixed combined base",
+    "requiredBase": "fd1322 public bridge is integrated; await official main receipt for approved module4c before fixed combined base",
     "interface": [
       "one P01 trusted builtin composer actions/context with injectable official AttachmentAdapter factory",
       "attachment.read/upload explicit private authority before/after connection/view/project/conversation checks, no knowledge-right substitution",
       "synchronous composerSubmit captures intent/text/profile/creation/knowledge/attachment tokens before await; onNew uses only that capture, actual new receipt handoff consumes both tokens",
       "reuse shared v2 decoder and deep-freeze through existing context wrapper; preserve plain omitted attachments/v1",
       "require explicitly bound project conversation; GET cap confirms send; message mapper keeps lightweight attachment metadata",
-      "storage errors local to attachment UI preserve raw/unknown and plaintext; cap null/namespace lifecycle explicit"
+      "storage errors local to attachment UI preserve raw/unknown and plaintext; cap null/namespace lifecycle explicit",
+      "pending submission/capture remains protected even if current attachment items have been removed"
     ],
     "tests": [
       "real HTTP v1/v2 and old center",
@@ -126,7 +132,33 @@
       "five4c attachment module sources",
       "official Thread",
       "shared/client/dependencies"
-    ]
+    ],
+    "phase1Scopes": [
+      "apps/web/src/conversation-context/receipts.ts",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugins/types.ts",
+      "apps/web/src/plugins/validation.ts",
+      "apps/web/test/conversation-context-receipts.test.ts",
+      "apps/web/test/conversation-outbox.test.ts",
+      "apps/web/test/plugin-host.test.ts",
+      "apps/web/test/attachment-integration.test.ts",
+      "plans/wpf-attach-i02-production-binding",
+      "docs/evidence/wpf-attach-i02"
+    ],
+    "phase1State": "root approved12literal; no take until module4c formal combinedmain",
+    "phase1Consumers": [
+      "real Outbox.begin and QueueCommands.execute with shared materials freeze and shared v2 matcher",
+      "real PluginHost loading builtin with bound authority; no missing Session stub/cast"
+    ],
+    "endToEndBudget": {
+      "devPlusProductionTotalSeconds": 600,
+      "minimumCleanupPerRoundSeconds": 20,
+      "oneRandomDatabaseAndChromiumPerRound": true,
+      "maxEvidenceBytes": 16777216,
+      "eachRoundHasFixedPurposeAndCumulativeTime": true
+    }
   },
   "exactIntersection": [
     "apps/web/src/App.tsx",
@@ -136,6 +168,6 @@
     "apps/web/test/conversation-projection.test.ts",
     "apps/web/test/conversation-queue.test.ts"
   ],
-  "sequence": "CACHE small actual-consumer interface first after root structural approval and fresh D04 take; attachment production six common literals wait explicit handback/amend. No preclaim by this proposal.",
+  "sequence": "CACHE16 committed first. Attachment production must not take six intersecting paths until cache owner stops writes and legal release/amend handback; independent actual consumers only after module4c fixed main.",
   "currentLedgerEvidence": "workspace-attachment-sequence-observation.json"
 }

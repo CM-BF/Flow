@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:29 UTC / 六client与sharedv2已审；factory清理增量待审，main未接附件桥接；CACHE/ATTACHI窗口准备 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:34 UTC / ATTACH公共桥接fd1322接收；ef617已释放，CACHE883321已领取16scope |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,8 +17,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 附件保存、输入预览与恢复模块已通过独立检查；正式中心与聊天接线仍待组合验证 |
-| 下一可用交付 | 完成正式中心接线组合验证；安排缓存保护与附件生产绑定的单一写入窗口 |
+| 当前产出 | 附件正式中心入口及公共桥接已接主线；输入模块已审待接收，生产聊天附件绑定尚未完成 |
+| 下一可用交付 | CACHE关闭视图与正文缓存保护实施；其六共享路径交回后接附件生产绑定 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
@@ -66,12 +66,14 @@
 
 | WPF-001-35 | pending | d01_owner | RS13固定产物去重/初始依赖图/延后chat及静态host cache-encoding冷暖与回滚验收已落plan；未take/实施，ACK/附件/发布优先，0个人服务/模型。 |
 
+| WPF-001-36 | pending | d01_owner | D01/DPERF fanout后继已登记，静态532构造非实测峰值；CACHE/附件后临时样本先量再定，未take/测试，不重做原02或压4320。 |
+
 ## 当前唯一来源、写权与下一步
 
 | 工作 | 唯一来源 / 写权 | 当前下一步 |
 | --- | --- | --- |
 | WPF管理 | 本worktree，632a7149 v3，仅两管理目录与四Web大task目录 | 管理索引只追溯；普通变化status→dashboard，不构成第三执行层 |
-| ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v2十八scope | runtime8701/root78 + fixture1f0/root2已审；finald32a双端clean，新累计16-source清单位于queue顶部，ef617 v2保留等main；正式factory组合未验 |
+| ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v3 released十八scope | 已main fd1322、23批准源同；正式factory6项/8自动启动/无fallback归Lead；ownerc698双端clean全停写后ef617 v3释放 |
 | RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，20a6529a v2 released四scope | 7805/db08已main c450，owner41276 pushclean后停写/release；format2与descriptor绑定，个人发布仍Lead |
 | VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
@@ -81,9 +83,10 @@
 | STEER01 → MATURE06 | [模块source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) | 已main77c，2bae v2 released；原树只读；实际App接线现属STEIRI01独立13scope，原模块不再写 |
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
 | RELEASE02 → MATURE01 | web-release-type-fix / 03323bce v2 released三scope | fixed560c已Lead独审并main648e；ownerfed5 normalpush双端clean/parser0后全停写，03323 v2已release；0浏览器/PG/个人发布 |
-| ATTACHI01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md)，94b84c59 v1十一scope | fixed4c4d/final4a9已root独审17、normalpushclean/9源同；仅DTO/typed ports/官方Threadfixture，六client/HTTP/App仍pending，94b84保留等main |
+| ATTACHI01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md)，94b84c59 v1十一scope | fixed4c4d/final4a9已root独审17、normalpushclean/9源同；仅DTO/typed ports/官方Threadfixture；公共桥接已fd main，模块/实际App仍待接，94b84保留等main |
 | WORKSPACEPERF01 → MATURE05 | c815bc00 v1四scope / web-workspace-lifecycle-baseline | fixed1711/final628156已独审partial基线待main；8完成/1失败、累计79.322s，0生产优化 |
-| ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v2 released七scope | 2fa8已main e4c82；owner8301991 normalpush/clean后全停写释放；v2公共扩展仍待准确输入 |
+| WORKSPACECACHE01 → MATURE05 | web-workspace-cache / 883321bc v1十六scope | fixedfd1322新树，root结构批准且fresh COMMITTED；首canonical待owner。六路径短窗口后交ATTACHI02，不冒整体cache/Arc完成 |
+| ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v2 released七scope | 2fa8已main e4c82；owner8301991 normalpush/clean后全停写释放；v2公共扩展已fd1322接收，生产附件consumer另片 |
 | DPERF02 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md)，1cb4 v2 released四scope停写 | 已main da041，close8e9最终normalpush成功；两次失败/先release偏差已归档，无重测 |
 
 ## 当前依赖与登记队列
@@ -92,7 +95,7 @@
 - Lead09:09:25正式观察111 sources/current/issues[]，六MATURE/CONTEXTI/STEER/VISUAL已登记；本管理不重复API。D08已main f181；root10:44–10:45实际页面已核六parent与子片父/worker领取；MATURE04 stale已自恢复，剩余声明格式交Mika合法owner。
 - D05 registry evidenceDir应为docs/evidence/d05-first-fit；现owner仍Lead队，仅其可修registry，本组不抢写。
 - CONTEXTI已main并释放；STEIRI01、ACTIVITYREAD和D08已main f181并全部停写释放，source见集中handoff。
-- GO已将MATURE03附件端到端责任交Web/root；root已冻结附件设计；panels十八scope运行域已审，现只修两fixture接缝；w01 ATTACHI已取十一新scope实施。共享receipt四Web路径09:51:27 fresh账本无writer；仅时点观察，未来仍fresh take。
+- GO已将MATURE03附件端到端责任交Web/root；root已冻结附件设计；panels运行域与两fixture增量已fd1322 main并release；w01 ATTACHI模块已审待main，CACHE已领16scope实施。共享receipt四Web路径09:51:27 fresh账本无writer；仅时点观察，未来仍fresh take。
 - 跨lead接口/资源裁决才有界直接协调；GO每完整大task只独立blocker与Done一次。无不可解除的整体阻塞；用户再次要求take在dashboard明确展示、各lead防overlap，已核plan U08/U12与REQ37完整覆盖；fresh COMMITTED后才写、停止后fresh release及其账本展示保持验收项。
 
 ## 当前服务与验收边界
@@ -103,4 +106,4 @@ ExecutionLead最新正式来源：个人backend仍b1c、static仍8d8，本次REL
 
 ## 证据与历史入口
 
-[本次收敛前原文历史](status-history.md)保留原时点、失败、未验、SHA与原始证据链接；仅历史不得更新成第二状态源。[plan](plan.md)保留完整U00–U12/REQ01–45与稳定35TODO；[research](../../docs/evidence/web-platform/research.md)记录研究依据；[固定发布说明](../../docs/evidence/web-platform/publication/README.md)界定a5独审副本；[本轮成熟度handoff](../../docs/evidence/web-platform/mature-task-handoff.md)供正常登记/集成。
+[本次收敛前原文历史](status-history.md)保留原时点、失败、未验、SHA与原始证据链接；仅历史不得更新成第二状态源。[plan](plan.md)保留完整U00–U12/REQ01–45与稳定36TODO；[research](../../docs/evidence/web-platform/research.md)记录研究依据；[固定发布说明](../../docs/evidence/web-platform/publication/README.md)界定a5独审副本；[本轮成熟度handoff](../../docs/evidence/web-platform/mature-task-handoff.md)供正常登记/集成。

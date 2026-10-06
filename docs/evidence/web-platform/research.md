@@ -669,3 +669,13 @@ K02中心预算边界（同root固定源研究）：4refs/8192 locator bytes预�
 `vite.config.ts` 将 @assistant-ui、@radix-ui、assistant-stream归同assistant-ui组；App静态导入Radix Dialog/Tooltip及ConversationThread/TaskThread，fixtureMode也由TaskThread导出。只lazy ConversationThread不必然延后依赖，应核实际产物HTML/preload/图，考虑稳定Connection壳到Workspace/两Thread边界。lazy失败沿现错误边界可重试，不reload丢草稿/unknown；onNew实时closure和known-task消费者需回归。当前无App/vite写权或产物收益声明。
 
 static-web每次snapshot→releaseAsset执行lstat/realpath/readFile/sha，现4并发/32等待/5s且finishWork等待HTTP结束；编码不能绕原bytes身份、做无界cache或同步CPU。相同source/toolchain/releaseId可重用artifact，而namespace冲突仅检查当前retained集合，长max-age需先定义相同URL永不换bytes及清理/重装边界。优先评估资产ETag+no-cache条件重验，HTML/身份/API/错误保持各自语义，不默认全站immutable。压缩若进入精确新scope：Vary Accept-Encoding；gzip/identity强ETag按representation分开；Content-Length是编码后大小；HEAD/304无body；q=0/wildcard/identity完整处理；缓存仅已核digest+encoding且预算/失效明确。验解压hash、warm304、oldnamespace、rollback、缺失/tamper失败关闭与首屏/首次chat权衡。来源root已读MDN Caching/Content-Encoding及[RFC9110 8.8.3.3](https://www.rfc-editor.org/rfc/rfc9110.html#section-8.8.3.3) /12.5.3。本管理只记录来源，无实际host实验、不动个人服务。
+
+## GO工程看板fanout后继（经root准确转述，未实测）
+
+GO只读静态计数当前139项registry，含main为133不同tree；aggregate以Promise.all逐tree observeGit，每树构造4条Git，共构造532次调用。该数是静态调用构造，不是实际同时运行峰值、CPU占用或因果证明。integrationProof逐task重复观察main dirty/untracked；同flight snapshot已有合并、可见UI20秒全量刷新。目标在保持新鲜准确的前提下降低资源争用。来源为本轮GO→root管理消息，本管理未采4320/压真实repo。
+
+沿D01/DPERF既有工程结果，在当前CACHE/附件真实接线后，以独立临时Git样本先量启动数与峰值；再评价同snapshot主线观察复用/有界执行。DPERF01同target去重与DPERF02tree批量已有固定交付，不重复实施；不先跨snapshot缓存，不改变dirty/unknown/缺路径/失败语义，不造全局框架。正式实验/改动仍需新独立WT与fresh精确claim和固定预算；当前仅后继待办，不抢dashboard共享代码，0provider、不压4320。
+
+Root后续独立只读临时样本已原字节[归档](dashboard-fanout-research/report.json)，[来源/改后缀映射及SHA](dashboard-fanout-research/source-binding.json)。固定main9db6708/aggregate SHA81a20492，只observeGit到1/4/8个空临时repo，4/16/32 Git启动、Trace2 start-exit区间峰4/3/4、unclosed0/available全/dirty0；96.11/90.11/125.24ms含child import，8个自有repo已清。这只能支持启动数线性，不能据静态532推实际峰值/CPU因果或真实看板延迟；管理没有执行脚本，原报告/三trace/脚本均字节保留。
+
+Root候选Interface：aggregate和proof各有execFile包装，只限制observeGit外层map会漏compareImplementation/备用gitshow/末尾integrationProof。可评估同snapshot执行context与有界runGit覆盖这些入口，main dirty/untracked懒读一次绑定mainDirectory+observedHead；每次snapshot重新数据观察，不跨snapshotgreen。保MAXBUFFER/E2BIG串行二分、literal/unknown及已交去重/批量树语义；逻辑inflight、Trace2区间、OS存活三口径分开，读取HEAD/dirty仍不是Git原子快照。正式owner依小Interface和测量择优，本条不是已实现/新claim。
