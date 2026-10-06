@@ -1,3 +1,4 @@
+import { loadRunnerAdapters } from './configuration.js';
 import { runRunner } from './runtime.js';
 
 const shutdown = new AbortController();
@@ -11,6 +12,7 @@ try {
     token: process.env.FLOW_RUNNER_TOKEN ?? '',
     workingDirectory: process.env.FLOW_RUNNER_WORKDIR ?? '',
     signal: shutdown.signal,
+    adapters: await loadRunnerAdapters(process.env.FLOW_CLAUDE_MATERIALS_FILE),
     onNotice: notice => process.stderr.write(`${JSON.stringify(notice)}\n`),
   });
 } catch {
