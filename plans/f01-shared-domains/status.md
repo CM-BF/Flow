@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:36:51 UTC / main2f16e30a |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:40:38 UTC / main2f16e30a |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -14,14 +14,14 @@
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED d6d5089c680f862e34a8e4d25f8f65d03057e70e；新red1后3/3 HTTP/SSE、types0；生产3分轮与旧queue3历史有效 |
-| 已集成main状态 / HEAD | ENG01H + native工程薄client已main280289；X01依赖待与leaf独立批准后接收 |
-| Review | CHANGES_REQUESTED：Mika薄client5be P2已修d6d5089c待增量复审；生产9406独立APPROVED保留 |
+| 已集成main状态 / HEAD | 此前ENG01H与X01 leaf/依赖已main2f16e30a；本批浏览器会话领域/client/生产接线待受控集成 |
+| Review | APPROVED d6d5089c680f862e34a8e4d25f8f65d03057e70e；Mika接收status_read增量独审，P2 CLOSED；生产9406由native_center_owner独审APPROVED |
 | 实现目标 | d6d5089c680f862e34a8e4d25f8f65d03057e70e |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/browser-session.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 登录会话已接入真实中心；客户端鉴权边界的小修正已验证，正在完成复审。 |
+| 当前产出 | 登录恢复接口及客户端鉴权修正已通过独立审查，正在合入主线。 |
 | 下一可用交付 | 合入登录恢复公开接口，供网页自动恢复同一连接。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
