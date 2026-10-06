@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:40:56 UTC / main 4391bbf9f1785212d098ef6aa1c01a0320a003d3，本owner只读核HEAD/clean、target祖先与6路径 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T10:25:47.007032+00:00 / main 8d8ab520a9d43c7b9dafb22911416ee799ebf665，6源码未集成；受控合入此固定main已获mika授权 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -11,17 +11,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
 | 工作基线 / HEAD | b1c2e39837c2208e6fc2c59a80e16797f26448b5 / Adapter P2修复3ab95d288a91214d03dec719dc6b44024206118a；后继仅本计划/证据metadata |
-| 工作树dirty状态 | 核验5ef354c4d4273ce7f47dafff148f65d7c4629355 clean与v3 ACTIVE后，仅澄清store候选/自有metadata；6已审源码未改，提交后核clean并push |
-| 工作分支状态 | review-approved |
-| 本片段交付阶段 | integration |
+| 工作树dirty状态 | 核验cd817aff clean与v3 ACTIVE后仅更新自有metadata；6已审源码与各target逐字一致 |
+| 工作分支状态 | in-progress |
+| 本片段交付阶段 | implementation |
 | 检查状态 | PASSED 3ab95d288a91214d03dec719dc6b44024206118a；2显式文件49/49（26 Adapter+23直接projection）、局部root严格noEmit0；[证据](../../docs/evidence/wpf-mature-04/claude-summary.md)，无采集/产品挂载/模型/全库验收 |
-| 已集成main状态 / HEAD | 未集成：main 4391bbf9f1785212d098ef6aa1c01a0320a003d3 无6个已审源码文件，879与3ab双target均非其祖先；[核验](../../docs/evidence/wpf-mature-04/context-cut-audit.json) |
+| 已集成main状态 / HEAD | 未集成：固定main 8d8ab520a9d43c7b9dafb22911416ee799ebf665 无6源码，879/3ab双target非祖先；[唯一集成输入](../../docs/evidence/wpf-mature-04/integration-readiness.json) |
 | 实现目标 | 3ab95d288a91214d03dec719dc6b44024206118a |
 | 实现范围 | apps/runner/src/context-observations/claude-summary.ts, apps/runner/src/context-observations/claude-summary.test.ts |
 | 阶段 | M2 |
-| 优先级 | 3 |
-| 当前产出 | 规范估算及执行会话摘要转换均已通过审查，等待集成 |
-| 下一可用交付 | 集成已审模块；先固定历史样本存储范围及当前窗口的可信消费边界 |
+| 优先级 | 1 |
+| 当前产出 | 已审规范估算与摘要转换可独立集成；正在实现可追溯的历史样本保存和读取 |
+| 下一可用交付 | 历史观测接口与局部读回，明确当前占用及剩余容量未知 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，当前3ab95d288a91214d03dec719dc6b44024206118a APPROVED，status_read/gpt-6-astra，root于09:28 UTC接收，无剩余P1/P2；旧e81f200 CHANGES_REQUESTED，status_read/gpt-6-astra，1P2/0P1；第一片879c989a594a8f4f266b9a78a885e311c52eca0d仍APPROVED，Mika/gpt-6-astra，09:14:39 UTC |
@@ -32,7 +32,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-04-01 | completed | architecture_read | bbfb7037ee3ca3e37bf14a078f8a05582b209f48已push；7文档/6 TODO/9验收自查通过 |
 | WPF-MATURE-04-02 | completed | architecture_read / mika | 879c989a594a8f4f266b9a78a885e311c52eca0d；30/30、局部strict noEmit；Mika独立APPROVED，无P1/P2 |
-| WPF-MATURE-04-03 | pending | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已固定；已撤回全事件序号等式；首store建议限历史样本，current消费cut/共享scope/迁移号待mika固定，未实施 |
+| WPF-MATURE-04-03 | in-progress | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已获mika批准历史首片8新路径；待amend和唯一迁移DDL，当前/remaining/SDK采集仍未知 |
 | WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | 纯Adapter P2修复源码已完成，49/49与strict noEmit0，独立APPROVED；不含真实采集、压缩事件或生产接线 |
 | WPF-MATURE-04-05 | pending | d01 管理 Web owner | 沿本计划与中心合同消费；未实施 |
 | WPF-MATURE-04-06 | pending | architecture_read / mika | 仅schema/纯投影独审已过；完整矩阵与后继独审、main交付未完成 |
@@ -58,3 +58,5 @@
 2026-10-06 09:40:24 UTC：只读确认completed推进last_sequence且随后拒绝新event，原sample.sequence===last_sequence候选不能支持结束后的current。已在一页请求撤回此条件；建议先交历史sample存储，current另依已有result/receipt/seal定义有限可信消费边界，不降完整CT-02/CT-06验收、不造通用FSM。待mika确定最小输入，不扩claim、不测试、不改6源码。
 
 09:40:56 UTC补核main4391的runtime.ts新settlement门禁：unknown不发送completed；确定结束仍在adapter后发送。只读行依据已更新为216/229–230，对accepted completed导致旧等式失效的结论不变；不以没有completed推断上下文未变化。
+
+2026-10-06T10:25:47.007032+00:00：GO优先推进历史保存/公开读回；mika批准8新独立文件与合入固定main 8d8ab520a9d43c7b9dafb22911416ee799ebf665。本轮先固定已审两片integration-readiness，不重跑原检查；后继唯一migration号/owner待Lead，禁止复制临时DDL。当前计划继续推进，不等待Codex，完整current/压缩/Web验收仍开放。
