@@ -7,3 +7,5 @@
 未解决边界：shared挂载与Web由Lead；显式读取能力不证明模型生成，不操作live服务。CHAT06领域原prefix O(n²)DB读取风险未在此改善。原树授权test delta仅一处断言，其他源不改，已重新停写；两个claim保留独立审查/集成回修。
 
 2026-10-06 06:54:51 UTC：独立批准metadata收口，仅核target/批准范围/后继和相对链接一致；原manifest/source/raw不改，源码停写保留claim，未新增产品检查。
+
+2026-10-06 07:03 UTC：按Lead授权仅适配直接消费者测试夹具。显式disabled readApp取代旧生产factory永远未开启的假设；missing-readiness用本测试随机专库暂时隐藏patch表并finally恢复。保留原8项所有header/ACK/cursor断言，产品代码不变。不宣称此故障注入证明首次022升级。共享计时窗口不新起测试，Lead将在固定F01真实组合运行8项+types；本提交仅diff检查。
