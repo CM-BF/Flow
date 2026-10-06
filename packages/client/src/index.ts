@@ -1,4 +1,4 @@
-import type { SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage } from '@flow/contracts';
+import type { SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage, SteeringMailbox, SteeringFinalizationInput, SteeringFinalizationResult, SteeringProposalLookup, SteeringProposalStatus } from '@flow/contracts';
 import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
 import type { AssistantStreamPage, AssistantStreamPatchPage, AssistantStreamBlock } from '@flow/contracts';
 import type { NativeActivityPage, NativeActivity } from '@flow/contracts';
@@ -98,6 +98,15 @@ export class FlowClient {
   }
   reportSteeringReceipt(input: SteeringReceiptInput, signal?: AbortSignal): Promise<SteeringCommandResult> {
     return this.request('/api/runner/steering/receipts', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  steeringMailbox(input: Ownership, signal?: AbortSignal): Promise<SteeringMailbox> {
+    return this.request('/api/runner/steering/mailbox', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  finalizeSteering(input: SteeringFinalizationInput, signal?: AbortSignal): Promise<SteeringFinalizationResult> {
+    return this.request('/api/runner/steering/finalize', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  steeringProposalStatus(input: SteeringProposalLookup, signal?: AbortSignal): Promise<SteeringProposalStatus> {
+    return this.request('/api/runner/steering/proposals/status', { method: 'POST', body: JSON.stringify(input), signal });
   }
 
   nativeActivities(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<NativeActivityPage> {
