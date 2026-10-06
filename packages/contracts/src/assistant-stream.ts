@@ -20,11 +20,18 @@ export const assistantStreamDataSchema = z.strictObject({
   blockIndex: z.number().int().min(0).max(10000),
   revision: z.number().int().min(1).max(100000),
   fromBytes: z.number().int().min(0).max(ASSISTANT_ATTEMPT_BYTES),
-  text: z.string().max(ASSISTANT_PATCH_BYTES).refine(value => new TextEncoder().encode(value).byteLength <= ASSISTANT_PATCH_BYTES, 'Patch exceeds byte limit'),
+  text: z.string().max(ASSISTANT_PATCH_BYTES).refine(value => new TextEncoder().encode(value).byteLength <= ASSISTANT_PATCH_BYTES, 'Patch exceeds byte limit').refine(value => !value.includes('\0') && new TextDecoder().decode(new TextEncoder().encode(value)) === value, 'Text must contain valid Unicode without NUL'),
   prefixDigest: digest,
   phase: assistantStreamPhaseSchema,
   reason: assistantStreamReasonSchema.nullable(),
   truncated: z.boolean(),
+}).superRefine((patch, context) => {
+  const problem = (message:string) => context.addIssue({code:'custom',message});
+  if (['streaming','block-complete'].includes(patch.phase) && patch.reason !== null) problem('Open/complete blocks cannot carry an interruption reason.');
+  if (patch.phase === 'incomplete' && (patch.reason === null || patch.reason === 'superseded')) problem('Incomplete blocks require an interruption reason.');
+  if (patch.phase === 'superseded' && patch.reason !== 'superseded') problem('Replaced blocks require their explicit reason.');
+  if (patch.truncated && !['incomplete','superseded'].includes(patch.phase)) problem('Truncated text cannot be declared complete.');
+  if (patch.phase === 'streaming' && patch.text === '') problem('An open patch must add text.');
 });
 export type AssistantStreamData = z.infer<typeof assistantStreamDataSchema>;
 export interface AssistantStreamReference extends Omit<AssistantStreamData, 'type' | 'text' | 'fromBytes'> {

@@ -13,6 +13,7 @@ export const idSchema = z.string().min(1).max(128);
 export const referenceSchema = z.strictObject({
   id: idSchema, title: z.string().min(1).max(180),
   activity: z.strictObject({ kind: z.literal('native-activity'), activityId: idSchema }).optional(),
+  stream: z.strictObject({ kind: z.literal('assistant-stream'), streamId: idSchema, revision: z.number().int().positive() }).optional(),
 });
 export const verificationRuleSchema = z.discriminatedUnion('kind', [
   z.strictObject({ kind: z.literal('nonempty') }),
