@@ -13,8 +13,8 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 37条需求追溯；M02固定候选范围核验；P01模块审查闭环；I01独立集成计划/领取准备 |
-| 下一可用交付 | M02整体独立review与P01 UI审查；随后D04明确交接后独立WPF-I01实际挂载 |
-| 当前阻塞 | NONE |
+| 下一可用交付 | P01 PH-R4修复复审；D04明确交接与I01新receipt后独立挂载 |
+| 当前阻塞 | ACTIVE: P01 e534的PH-R4任务切换丢失workspace详情tab，独立二次确认；唯一host owner修复后复审，I01只准备不实施 |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/integration-checklist.md,docs/evidence/web-platform/research.md |
@@ -28,7 +28,7 @@
 | WPF-001-02 | completed | d01_owner | 5个子计划齐三件套；P01/M02转独立唯一owner，dashboard/性能/I01准备在管理树 |
 | WPF-001-03 | in-progress | d01_owner | W01 cb4a392历史APPROVED；后发现SSE由M02 d47修复，M02 d47独立APPROVED已关闭；待正式交原Lead集成 |
 | WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
-| WPF-001-05 | in-progress | d01_owner | P01模块3d812独立APPROVED，PH-R1/R2关闭；整包d810 PH-R3已由root窄复验关闭，e534整包等待追加只读UI审查，完整X01仍开放；I01实际App挂载另计划 |
+| WPF-001-05 | in-progress | d01_owner | P01模块3d812独立APPROVED，PH-R1/R2关闭；整包d810 PH-R3关闭；e534新增PH-R4布局丢失P2，整包REQUEST_CHANGES，原模块approval保留，完整X01仍开放；I01实际App挂载另计划 |
 | WPF-001-06 | pending | d01_owner | PERF按生产测量排队，已有eager双chunk基线；未声称体积或吞吐已优化 |
 | WPF-001-07 | in-progress | d01_owner | M02实现d47c602、metadata c526c1 clean；20局部/9总览/6观察/4真实PG组owner通过；root整体APPROVED，未代main集成 |
 | WPF-001-08 | in-progress | d01_owner | 精确scope已交主线迁移，WorkspacePanels追加c2de313已回执；D04 PG迁移M02/P01 v1与管理v2已只读核；I01三文件owner停写确认已回Lead，账本amend/take待回执 |

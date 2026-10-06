@@ -168,4 +168,7 @@ root对固定M02 d47公开refresh做只读内存fixture：100批×100条、每�
 
 管理者只读D04实际migration-receipts：M02 dea92c6b-3450-404c-a32c-3fd007485ac6 v1、P01 0686525b-d323-49b5-affa-cefc66cb13be v1；管理WPF001632a7149-e812-4ddb-b342-99572c554cc5经amend为v2，observedAt纠正02:48:42，原未来02:55审计仍保留，不能倒填。M02 owner最终metadata c526c1c889437ee39155d669921577995195c74e clean并确认App/TaskThread/WorkspacePanels三路径停写，已tool报原GoalOwner请求amend再I01take；停写事实不冒充PG已变更。D04 take需真实worktree，root许可owner仅从c526初始化新tree只读，未取得receipt/审定输入不写实现。
 
-02:56后续：P01 PH-R3 root独立CUA复验关闭；e534整体仍待另一只读React/接口检查再给总范围结论，模块/单finding/整体分开。父status NONE括号解释导致D03缺字段已按实际问题修为纯NONE，解释移正文；这是管理记录格式修复，不改变聚合器或他人状态。
+02:55后续：P01 PH-R3 root独立CUA复验关闭；e534整体仍待另一只读React/接口检查再给总范围结论，模块/单finding/整体分开。父status NONE括号解释导致D03缺字段已按实际问题修为纯NONE，解释移正文；这是管理记录格式修复，不改变聚合器或他人状态。
+
+
+PH-R4 P2正式blocking，target e5341915ebbffd9a667f68f7d1ca9c45c14c7c52：workspace_panels_owner独立只读审查发现，root二次CUA确认A打开report detail→B→A，原report tab count1→0。PluginView contextKey/loading/RenderBoundary remount销毁真实WorkspacePanels内部每task布局缓存，退化已验证A/B/A保留。P01唯一owner仅plugins范围修，不能跨改待转交WorkspacePanels；需A/B与Notes↔Workspace回归和新target独立复验。整包REQUEST_CHANGES，模块scoped不撤；管理者已tool通知原Lead I01只建树/账本准备，P01输入尚未审定。

@@ -4,7 +4,7 @@
 
 | TODO ID | 状态 | Owner | 证据/下一步 |
 | --- | --- | --- | --- |
-| WPF-I01-01 | pending | d01_owner→拟workspace_panels_owner | 两候选整体review及D04交接待完成 |
+| WPF-I01-01 | pending | d01_owner→拟workspace_panels_owner | M02d47已APPROVED；P01e534 PH-R4整包REQUEST_CHANGES，D04交接待完成 |
 | WPF-I01-02 | pending | 待正式领取 | 接口沿P01 v1，不建第二协议 |
 | WPF-I01-03 | pending | 待正式领取 | 实现后局部/产品验证 |
 | WPF-I01-04 | pending | 待正式领取 | NOT_STARTED，目标UNKNOWN |
