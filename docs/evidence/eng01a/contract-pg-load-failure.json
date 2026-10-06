@@ -1,0 +1,11 @@
+{
+  "command": "pnpm exec vitest run apps/server/src/engineering/verification.test.ts",
+  "exitCode": 1,
+  "source": "direct process stdout/stderr",
+  "elapsedSeconds": 1.61,
+  "resourceOutput": "docs/evidence/eng01a/contract-pg-resources.json",
+  "selected": 0,
+  "passed": 0,
+  "failedSuites": 1,
+  "limitation": "Test package import failed before beforeAll; no PG case executed"
+}

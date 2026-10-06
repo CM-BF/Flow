@@ -9,8 +9,8 @@
 
 ## TODO
 
-- [x] **ENG01A-01** 固定来源、9项literal claim、Interface及独立WT。
-- [ ] **ENG01A-02** 严格工程intent/receipt/checker合同及最窄中心关联/targetRunner过滤，旧flow.text不变。
+- [x] **ENG01A-01** 固定来源、10项literal claim、Interface及独立WT。
+- [x] **ENG01A-02** 严格工程intent/receipt/checker合同及最窄中心关联/targetRunner过滤，旧flow.text不变。
 - [ ] **ENG01A-03** 工作区/内容快照/checker/fixture adapter模块，受信基线不可由fixture配置改写，资源有界。
 - [ ] **ENG01A-04** 随机真实PG+自有合成Git/命令纵向，公开artifact读回；失败/篡改/lease lost/丢ACK与重启未知覆盖。
 - [ ] **ENG01A-05** 固定manifest、局部验证、独审、受控main集成与资源收口。

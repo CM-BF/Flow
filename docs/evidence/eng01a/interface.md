@@ -11,3 +11,5 @@ checker只消费workspace snapshot与host外部固定baseline，命令/期望不
 adapter复用HarnessContext.assertOwnership/emit、现宿主claim/lease/outbox/verifier事件与NativeExecutionError，runtime仍唯一发completed。artifact为有界canonical receipt+diff/log，各digest对应同一内容集；中心验当前attempt/targetRunner/intent/artifact/receipt的关联及结构一致性，不声称重跑远端命令。旧flow.text兼容不变，沿现task/artifact/detail公开读取，无新API壳/第二调度器。
 
 范围：apps/runner/src/engineering、packages/contracts/src/engineering.ts/tasks.ts/runner.ts、apps/server/src/engineering/evidence.ts/runners.ts、本plans/docs。F01保留contracts/index/public exports/必要薄client；实际编译接缝先明确窄路径，不越claim改写。
+
+窄completion hook已获Lead批准并原子amend v2：apps/server/src/events.ts仅engineering intent且outcome succeeded时，在关闭steering/写terminal前调用assertEngineeringCompletion(client,task,attempt)，要求当前attempt/最新artifact完整内容集与可信receipt verification passed；旧flow.text完成规则不变，事务错误回滚完整事件批次。

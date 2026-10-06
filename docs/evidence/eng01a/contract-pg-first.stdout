@@ -1,0 +1,31 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-workspace-pipeline
+
+ ❯ apps/server/src/engineering/verification.test.ts (10 tests | 1 failed) 2433ms
+   ✓ pins engineering work to its designated fixture runner before claim 66ms
+   ✓ rolls back a whole batch when engineering success has no verified artifact, then accepts and replays the exact valid receipt 63ms
+   ✓ rejects text verification for engineering and rejects engineering receipts for ordinary tasks 70ms
+   ✓ refuses success when a newer artifact invalidates the earlier passed receipt 56ms
+   × requires the current attempt rather than inheriting a prior attempt passed receipt 40ms
+   ✓ keeps failed checker evidence readable and rejects a succeeded terminal for it 85ms
+   ✓ rejects forged intent association even if the artifact has a matching content hash 82ms
+   ✓ rejects forged snapshot association even if the artifact has a matching content hash 75ms
+   ✓ rejects forged diff association even if the artifact has a matching content hash 75ms
+   ✓ rejects forged result association even if the artifact has a matching content hash 85ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/engineering/verification.test.ts > requires the current attempt rather than inheriting a prior attempt passed receipt
+error: duplicate key value violates unique constraint "attempt_one_effective"
+ ❯ node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js:45:11
+ ❯ apps/server/src/engineering/verification.test.ts:113:3
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  03:21:11
+   Duration  3.80s (transform 569ms, setup 0ms, import 1.12s, tests 2.43s, environment 0ms)
+
