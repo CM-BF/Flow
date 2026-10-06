@@ -7,7 +7,8 @@
 `migrateGoals(pool)` 与 `registerGoalRoutes(app,pool,boss)`，在已有 owner preHandler 下挂载。共享生产入口由 Lead 接入。
 
 - POST /api/goals，owner + Idempotency-Key，输入 projectId/originalGoal/constraints/acceptance。
-- GET /api/goals/:id：当前图最多 200 节点、各自当前输入/最新执行/已验交付资格及最近 50 条持久事实解释；不生成摘要、不写数据库。
+- GET /api/goals/:id：当前图最多 200 节点、各自当前输入版本/最新执行元数据/已验交付资格及最近 50 条持久事实解释；不生成摘要、不写数据库。
+- GET /api/goals/:id/inputs/:nodeId?version=：完整当前或历史实际输入按需读，不在轻读 snapshot 重复。
 - POST /api/goals/:id/commands：define-input / execute / accept-delivery，owner + Idempotency-Key。每种有明确版本门槛，返回持久原始命令结果；GET 另取当前事实。
 - GET /api/goals/:id/executions?nodeId=&after=&limit=：最多 100，保留旧输入和绑定。单个 execution 固定 goal 原始字段、node 输入、依赖内容摘要及 artifact 引用；真实 task prompt 使用这些实际输入。
 
@@ -25,6 +26,6 @@ Goal tools 接收可信 host 注入的固定 goalId、allowedNodeIds、allowedCo
 
 ## 查询、解释与边界
 
-所有快照在只读 repeatable-read 下读。当前投影只返回每节点当前定义、最近执行与单一 accepted 引用；历史另分页。每次实际修改保存递增的固定事实解释及 input/execution/project revision 来源；普通 GET 不写解释、更不调用模型。图修改导致的资格变化直接显示明确失效原因，历史解释不冒充当前资格。完整自然语言总结留后续。
+所有快照在只读 repeatable-read 下读。当前投影只返回每节点当前定义版本、最近执行元数据与单一 accepted 引用；历史另分页。每次实际修改保存递增的固定事实解释及 input/execution/project revision 来源；普通 GET 不写解释、更不调用模型。图修改导致的资格变化直接显示明确失效原因，历史解释不冒充当前资格。完整自然语言总结留后续。
 
 输出实际输入有 16,000 字符 task prompt 上限；过大依赖上下文显式拒绝，不能隐式截断改变输入。原始产物内容不嵌入轻读投影，执行时读取并绑定。取消、失联恢复沿已有 task/C02 公共入口；本段不创建另一恢复引擎。
