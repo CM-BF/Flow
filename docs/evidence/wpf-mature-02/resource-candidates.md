@@ -53,3 +53,7 @@ B01（architecture_read核）：task-read-projections，HEAD429a2dbd3be92093f10a
 P03（status_read核，ledger17:05:58.733Z；本owner后续只读核同HEAD clean）：protocol-payload，HEAD06cddb84f3f33c5e3f602e43a0ca4c7765a55ff1；权威`plans/p03-protocol-payload/status.md`，claimf61ea3f3-f3dd-4d4c-a322-f05a4fb84c77 v2 RELEASED04:13:37.137Z，无active/handoff。**KEEP完整`docs/evidence/w01/workspace-panels`**：vite.config root就是该目录；typecheck.mjs直接include preview.tsx；browser-checks.mjs读取FLOW_WORKSPACE_PREVIEW_URL并向同目录输出，连preview/html/CSS闭包一起保留。`packages/protocols/test/fixtures/mcp-2026.json`是source test明确readFile输入，保留。scripts/native-system-probe.ts及web-system-probe.ts中的docs/evidence/i01路径为输出，不据此认定输入依赖或全目录无用。
 
 P03自身tsconfig/dependency依赖本树source/root规则与main已装SDK；现CORE/S01已知配置未引用protocol-payload。loadProtocolEndpoints允许外部显式absolute manifest，未登记consumer保持unknown；若Lead有手工回放manifest，须保留其精确输入。这里不宣布无其他消费者，也不触未知/active素材。原较早候选快照与X01 ACTIVE KEEP不追改。
+
+## next4c补充（记录于2026-10-06T17:42:02.701921+00:00）
+
+Mika本轮只读核B01 HEAD429a2dbd3be92093f10aec938b8edc470e15680d与P03 HEAD06cddb84f3f33c5e3f602e43a0ca4c7765a55ff1均clean。本组自17:05原审计以来没有新增未落盘/未登记的两树历史evidence消费者；native probe、CHAT06P03、S01 idle候选均未引用这些历史副本。原B01六fixture、P03完整w01/workspace-panels与mcp-2026.json、各树own/source/rules/plans/deps/executable fixture照旧KEEP，除此没有新增KEEP路径。仅本组已知计划；外部absolute consumer仍unknown。sole Lead fresh核ledger/进程/ref后决定操作，本组0稀疏/回收；不追改原17:05观察。
