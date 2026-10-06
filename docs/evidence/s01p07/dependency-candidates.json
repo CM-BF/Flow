@@ -1,0 +1,100 @@
+{
+  "kind": "read-only existing installation metadata; no import, linking or checks",
+  "aliasesMustUseThisWorktree": [
+    "@flow/contracts",
+    "@flow/client",
+    "@flow/plugin-runtime"
+  ],
+  "packages": [
+    {
+      "name": "vitest",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "version": "4.0.18"
+    },
+    {
+      "name": "typescript",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+      "version": "5.9.3"
+    },
+    {
+      "name": "tsx",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "version": "4.23.15"
+    },
+    {
+      "name": "@types/node",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types/node",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "version": "24.19.1"
+    },
+    {
+      "name": "@types/pg",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types/pg",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg",
+      "version": "8.23.1"
+    },
+    {
+      "name": "zod",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "version": "4.6.5"
+    },
+    {
+      "name": "@anthropic-ai/claude-agent-sdk",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/@anthropic-ai/claude-agent-sdk",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk",
+      "version": "0.3.290"
+    },
+    {
+      "name": "fastify",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/fastify",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "version": "5.12.5"
+    },
+    {
+      "name": "@fastify/cors",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@fastify/cors",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "version": "11.3.0"
+    },
+    {
+      "name": "pg",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/pg",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "version": "8.23.1"
+    },
+    {
+      "name": "pg-boss",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/pg-boss",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "version": "12.37.0"
+    },
+    {
+      "name": "npm-package-arg",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/npm-package-arg",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "version": "13.0.2"
+    },
+    {
+      "name": "pacote",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/pacote",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "version": "21.5.1"
+    },
+    {
+      "name": "ssri",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/ssri",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "version": "13.0.1"
+    },
+    {
+      "name": "tar",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "resolved": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "version": "7.5.22"
+    }
+  ]
+}

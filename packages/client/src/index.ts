@@ -1,4 +1,5 @@
 import type { GoalPlanConfirmation, GoalPlanConfirmationResult } from '@flow/contracts';
+import { runnerIdentitySchema, runnerClaimRequestSchema, decodeRunnerClaimResponse, type RunnerIdentity, type RunnerClaimRequest, type RunnerClaimResponse } from '@flow/contracts';
 import type { PluginInstallRequest, PluginInstallCommand, PluginInstallAccepted, PluginMaterialInstall, PluginInstallList, PluginInstallHistory } from '@flow/contracts';
 import type { GoalProgressionAuthorization, GoalProgressionRevocation, GoalProgressionResult, GoalProgressionSnapshot } from '@flow/contracts';
 import type { TaskUsageReadout } from '@flow/contracts';
@@ -584,6 +585,19 @@ export class FlowClient {
   }
 
   claim(signal?: AbortSignal): Promise<ClaimResponse> { return this.request('/api/runner/claim', { method: 'POST', body: '{}', signal }); }
+  async runnerIdentity(signal?: AbortSignal): Promise<RunnerIdentity> {
+    return runnerIdentitySchema.parse(await this.request('/api/runner/identity', { method: 'GET', signal }));
+  }
+  async claimOpportunity(input: RunnerClaimRequest, signal?: AbortSignal): Promise<RunnerClaimResponse> {
+    const expected = runnerClaimRequestSchema.parse(input);
+    const response = await this.request('/api/runner/claim-opportunity', { method: 'POST', body: JSON.stringify(expected), signal });
+    return decodeRunnerClaimResponse(response, expected, 'claim');
+  }
+  async claimOpportunityStatus(input: RunnerClaimRequest, signal?: AbortSignal): Promise<RunnerClaimResponse> {
+    const expected = runnerClaimRequestSchema.parse(input);
+    const response = await this.request('/api/runner/claim-opportunity/status', { method: 'POST', body: JSON.stringify(expected), signal });
+    return decodeRunnerClaimResponse(response, expected, 'status');
+  }
   heartbeat(ownership: Ownership, signal?: AbortSignal): Promise<HeartbeatResponse> { return this.request('/api/runner/heartbeat', { method: 'POST', body: JSON.stringify(ownership), signal }); }
   report(batch: EventBatch, signal?: AbortSignal): Promise<EventAcknowledgement> { return this.request('/api/runner/events', { method: 'POST', body: JSON.stringify(batch), signal }); }
 
