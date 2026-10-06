@@ -41,3 +41,7 @@ Root于2026-10-06T16:23:29.859009Z独立核原始六文件/归档逐字、19固�
 ## 2026-10-06T17:14:15.495150+00:00 — fixture native HTTP源码修正待窄审
 
 Source checkpoint `ec91d1113898e70f380f9bb503f3b5ceff9467b2`，相对1b8只有原fixture。Root认可旧代理Host不保留的readiness推断，未给本修正运行或APPROVED。当前[manifest](../../docs/evidence/wpf-conversation-recovery/native-proxy-checkpoint.json)明确19源码、18不变及待验清单；多Set-Cookie、SSE/abort/错误路径尚无实证。本片当前types/direct/browser均NOT_RUN，历史1b8 direct27接受范围保留；三项中心语义和完整feature审查仍开放。
+
+## 2026-10-06T17:35:32.287102+00:00 — 两harness源码候选待窄审
+
+固定 `7686139952becf530bcf57966425bd9d7b88b697`，原ec91→本段仅fixture/browser变化，17其他源不变。作者只静态diffcheck0；当前types/direct/browser均NOT_RUN，完整feature仍NOT_STARTED/targetUNKNOWN。两个实际PG连接观察时序按本树真实依赖源码修正，未归因TUI实测；body-loss从已审RELEASE方法适配但不移用其运行证据。[manifest](../../docs/evidence/wpf-conversation-recovery/bodyloss-checkpoint.json)与[限制](../../docs/evidence/wpf-conversation-recovery/bodyloss-source.md)供独立源码审查。

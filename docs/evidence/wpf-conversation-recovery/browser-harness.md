@@ -39,3 +39,7 @@ The binding now owns a small `syncComposerDraft` operation. React triggers it on
 The fixture now uses node:http.request to its owned center socket while forwarding the browser public Host and the existing allowlist of raw caller headers, including duplicates. It does not manufacture Origin or Forwarded headers. Request bytes are forwarded unchanged with an explicit body length. Response Set-Cookie arrays remain separate; ordinary and SSE responses pipe with backpressure. Browser close, lifecycle abort and transport errors destroy the owned upstream request/response; late errors remain handled. Deliberate lost ACK drains the committed response and then destroys the browser response.
 
 This replaces the Node fetch Host-normalization seam; it does not change center authentication, permissions or cookie protocol. The new fixed source and all19 hashes are in native-proxy-checkpoint.json. No HTTP/type/browser execution was performed. Future admission must bind the new actual metadata HEAD/hashes and still satisfy90s including15s cleanup, resource prerequisites, and the unresolved central semantics. Historical1b8 direct27 evidence is unchanged.
+
+## 2026-10-06T17:35:32.287102+00:00 — body-loss与DB零连接观察（未运行）
+
+最新两harness固定 `7686139952becf530bcf57966425bd9d7b88b697`，见[19源manifest](bodyloss-checkpoint.json)及[边界](bodyloss-source.md)。运行gate必须重新绑定当前实际HEAD与19hash；旧ec91/1b8 gate不适用。现有lost-turn更强前提不会覆盖未写的CREATE/Queue/Steer实际旅程。parent90s/15s cleanup及证据8MiB不变；PG观察使用parent绝对deadline，不因两轮观察延长。原真实browser仍0运行。

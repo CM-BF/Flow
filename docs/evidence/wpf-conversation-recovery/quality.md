@@ -87,3 +87,9 @@ P1源码修复：所有submit在官方send/同步localreceipt前检查Input完�
 已核管理17:09:07.111Z原21/v4/owner/WT/branch/overlap[]。find-skills本地优先，复用clean-code/codebase-design/webapp-testing，实际文件hash见native-proxy-checkpoint；无安装。最小改动仅fixture原代理：nativeHTTP保公共Host和raw重复caller字段由中心校验，不另建公开HTTP层或复制认证；原字节body和Content-Length保持，多个Set-Cookie用数组。单个request Promise拥有upstream生命周期，finish幂等，普通body与SSE共用pipe/backpressure，browser close及父abort销毁上游；迟到错误handler保留到对象回收避免未处理error，响应完成/close listeners显式移除。已静态检查迟到response在settled后销毁、同步end异常和截断aborted错误路径。无新增运行时事实。
 
 命名/职责/错误处理/重复复核：没有新增模块/权限/状态机，原DB lease/父supervisor/受理与故意丢ACK语义不改。static diffcheck0；所有19源码current=fixed、18=1b8。当前types/direct/browser NOT_RUN，旧1b8 direct27和首失败raw保持；三项中心语义、真实IDB/HTTP/cookie/SSE仍未验。仅源码、Git和小metadata操作；0产品import/测试/PG/Chrome/free。完整feature NOT_STARTED。
+
+## 2026-10-06T17:35:32.287102+00:00 — body-loss / ownedDB clean-code安全点
+
+复用本地find-skills/codebase-design/clean-code/webapp-testing，路径hash见bodyloss-readonly-inputs，无安装。实际修复两项验证前提：preheaders断开可被透明重试；Pool.end清空本地列表先于实际关闭。职责限readAcknowledgement/故障输出/同Request观察/ownedDB零连接观察，不另建HTTP层或修改中心认证。错误不静默：ACK晚失败仍进入fixture cleanup，query错误/连接持续存在使DB清理失败；不删unknown CREATE、无FORCE。父绝对deadline传入cleanup，新的两短观察不另续预算。有限记录、body/身份不截断、17非harness源码不动。
+
+独立检查前静态自审：丢ACK真实完整framing/UTF8/contenttype/identity，多个Set-Cookie仍数组；异步写操作均有catch并由close等待；observer避免response.finished并清listener。正常响应体新ACK捕获仅三命令域，bounded128KiB/累计wire1MiB，session credentials不被附入响应raw。source diffcheck0，未运行类型或行为；所有既有direct原raw和ec91保留。新类型/浏览器仍需后续合法门槛，不把静态审当运行。

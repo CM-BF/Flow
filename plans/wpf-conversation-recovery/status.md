@@ -2,20 +2,20 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 17:28 UTC |
+| 最近更新 | 2026-10-06T17:35:32.287102+00:00 |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前fixture source checkpoint ec91d1113898e70f380f9bb503f3b5ceff9467b2；18其他源保持1b8；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | fixture源码已固定、仅own metadata收口；正常push后核local=origin/clean；18其他源保持1b8 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前两harness source checkpoint 7686139952becf530bcf57966425bd9d7b88b697；17其他源保持1b8；当前metadata HEAD以Git为准 |
+| 工作树dirty状态 | 两harness源码已固定、仅own metadata收口；正常push后核local=origin/clean；17其他源保持1b8 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 原材料direct27已通过；正在原两harness修真实ACK body-loss和owned DB零连接观察，source-only |
+| 当前产出 | 原材料direct27已通过；两harness已固定真实ACK body-loss和owned DB零连接观察，source-only待窄审 |
 | 下一可用交付 | 刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复 |
 | 当前阻塞 | ACTIVE: 真实浏览器与完整构建仍等待运行资源和中心会话语义核验；本段定向检查已完成 |
 | 需用户决定 | NONE |
@@ -123,3 +123,7 @@ Root于16:23:29.859009Z对本次原raw/source绑定独立核验，限定[证据�
 ## 2026-10-06 17:28 UTC — body-loss / PG关闭source-only修复启动
 
 本人核[管理fresh观察](../../docs/evidence/wpf-conversation-recovery/bodyloss-claim.json)：6ff v4原21/本owner/WT/branch/无overlap，02398a clean，apps/web等ec91。preheaders destroy有透明重试风险；本树pg8.23.1/pg-pool3.14.0的Pool.end先移除客户端再等异步关闭，见[root独核](../../docs/evidence/wpf-conversation-recovery/bodyloss-pg-root-risk.json)，不冒TUI故障归因或实际复现。仅两harness及own记录改写：严格真实ACK prefix与同Request headers→failure证据、两个ownedDB检查点有界零连接观察。CREATE/Queue仅helper支持，实际journey仍PENDING；原90s/15s清理不扩，direct剩25.426s/types剩7.186s未使用。0import/types/test/HTTP/PG/Chrome/free/install。
+
+## 2026-10-06T17:35:32.287102+00:00 — body-loss / PG清理固定源码安全点
+
+固定 `7686139952becf530bcf57966425bd9d7b88b697`；[19源manifest](../../docs/evidence/wpf-conversation-recovery/bodyloss-checkpoint.json)核仅两harness变化、其余17源=ec91/1b8。[接口与边界](../../docs/evidence/wpf-conversation-recovery/bodyloss-source.md)：真实ACK full-length/strict-prefix/Connection-close，同Request headers→requestfailed和exact1/2原身份；两个ownedDB零连接观察各≤1s/≤8次并受parent同一hardAt，有限pid/state+safe code，无FORCE。全部NOT_RUN，旧27PASS/原raw保持，不借RELEASE运行证明。CREATE/Queue/Steer实际journey仍PENDING，完整target UNKNOWN/review NOT_STARTED。0types/runtime/PG/Chrome/free；source冻结待独审，metadata正常push后核双端clean。
