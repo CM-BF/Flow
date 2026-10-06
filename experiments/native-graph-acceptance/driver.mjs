@@ -149,7 +149,14 @@ export async function run(mode, outputDirectory, authorization) {
     assert.deepEqual(ordered.map(node => node.dependsOn), [[], [ordered[0].id], [ordered[1].id]]);
     assert(nodes.every(node => node.taskId === null)); assert.match(report.final.content, /未执行子任务/);
     assert.equal(report.final.taskId, task.id); assert.equal(report.final.attemptId, task.attempt.id); assert.equal(report.final.source, 'claude.sdk.result');
-    if (mode === 'native') { assert(worker.effective); assert(worker.result); }
+    if (mode === 'native') {
+      assert(worker.effective); assert(worker.result);
+      assert.equal(worker.permissionDenials?.state, 'reported'); assert.equal(worker.permissionDenials.total, 0);
+      assert(worker.hostToolDecisions?.length >= 3);
+      assert(worker.hostToolDecisions.every(row => row.decision === 'allowed' && row.source === 'sdk' && row.server === 'flow-graph' && EXPECTED_TOOLS.includes(row.toolName)));
+      assert(worker.hostToolDecisions.some(row => row.toolName === 'mcp__flow-graph__graph_read'));
+      // Center audit above proves committed effects; host allow alone is not execution proof.
+    }
     report.outcome = mode === 'native' ? 'native-acceptance-passed' : 'rehearsal-passed';
   } catch {
     report.failurePhase = report.phase; report.outcome = 'failed-or-unknown'; report.error = 'Acceptance was not established. Do not retry the native approval; inspect saved local facts.';

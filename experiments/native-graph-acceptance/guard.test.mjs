@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { LIMITS } from './config.mjs';
+import { LIMITS, MANAGED_BASELINE } from './config.mjs';
 import { validatePermit, reserveAttempt, queryGate, observeFrame } from './guard.mjs';
 const identity = { digest: 'a'.repeat(64), root: '/synthetic-o08-test/' };
 function permit() { return { kind: 'flow-o08-one-shot', authorizedBy: 'Goal Owner', approvalId: 'synthetic-test-only', authorizationReference: 'Synthetic test record; not native execution permission',
@@ -35,8 +35,8 @@ test('effective extensions, unknown native cost and over-budget/turn results can
   for (const fields of [{}, { num_turns: 5, total_cost_usd: .01 }, { num_turns: 4, total_cost_usd: .21 }]) assert.throws(() => observeFrame({ type: 'result', ...fields }, { mode: 'native' }));
 });
 
-test('native capability reports must prove the actual SDK source, exact tools and no extensions', () => {
-  const event = { type: 'system', subtype: 'init', tools: ['mcp__flow-graph__graph_read', 'mcp__flow-graph__graph_command'], plugins: [], skills: [], model: 'observed-model', permissionMode: 'dontAsk', mcp_servers: [{ name: 'flow-graph', source: 'sdk', status: 'connected' }] };
+test('native capability reports must declare the actual SDK source, exact tools and known managed resources', () => {
+  const event = { type: 'system', subtype: 'init', tools: ['mcp__flow-graph__graph_read', 'mcp__flow-graph__graph_command'], plugins: MANAGED_BASELINE.plugins.map(name => ({ name })), skills: MANAGED_BASELINE.skills, model: 'observed-model', permissionMode: 'dontAsk', mcp_servers: [{ name: 'flow-graph', source: 'sdk', status: 'connected' }] };
   observeFrame(event, { mode: 'native' });
   assert.throws(() => observeFrame({ ...event, mcp_servers: [{ name: 'flow-graph', status: 'connected' }] }, { mode: 'native' }));
   assert.throws(() => observeFrame({ ...event, tools: undefined }, { mode: 'native' }));

@@ -12,6 +12,11 @@ export const GOAL = '为合成产品“纸鸢”0.1版本准备一份短发布�
 export const CONSTRAINTS = '仅建立计划，不执行任何子任务，不访问工程文件、终端、网页、插件或子代理。只使用授予的graph工具。';
 export const PROMPT = `先用graph_read读取空底稿，再用一次graph_command propose提出三个节点，标题依次为“${TITLES.join('”、“')}”，后一步依赖前一步，总共两条边。然后用返回的proposalId/proposalDigest及baseRevision调用apply一次。对同一意图保持相同idempotencyKey。最后用中文说明已记录计划、尚未执行子任务；不要声称发布说明已完成。`;
 export const EXPECTED_TOOLS = ['mcp__flow-graph__graph_read', 'mcp__flow-graph__graph_command'];
+// Names observed in the fixed BASE's saved SDK session; not plugin trust or version pins.
+export const MANAGED_BASELINE = Object.freeze({
+  plugins: ['cc-plugin-agents-md', 'cc-plugin-telemetry', 'cc-plugin-plugin-authoring'],
+  skills: ['design', 'doctor', 'plugin-authoring'],
+});
 export function adapterOptions(mode) {
   return { materialFiles: [], allowRead: false, goalGraphTools: true, model: mode === 'native' ? 'sonnet' : 'synthetic-no-query',
     maxTurns: LIMITS.maxTurns, maxBudgetUsd: LIMITS.maxBudgetUsd, timeoutMs: mode === 'native' ? LIMITS.timeoutMs : 12_000 };

@@ -7,7 +7,7 @@ import { createClaudeAdapter } from '../../apps/runner/src/claude.ts';
 import { guardExecutionProfile } from '../../apps/runner/src/execution-profiles.ts';
 import { runRunner } from '../../apps/runner/src/runtime.ts';
 import { adapterOptions, sourceIdentity } from './config.mjs';
-import { queryGate, observeFrame, validatePermit } from './guard.mjs';
+import { queryGate, observeFrame, validatePermit, recordHostDecisions } from './guard.mjs';
 import { rehearseQuery } from './peer.mjs';
 
 const config = JSON.parse(await readFile(process.argv[2], 'utf8'));
@@ -26,6 +26,7 @@ if (config.mode === 'native') {
 const gate = queryGate(config.mode, report);
 const query = input => {
   gate(input);
+  recordHostDecisions(input, report);
   let original;
   if (config.mode === 'native') {
     validatePermit(config.permit, identity);

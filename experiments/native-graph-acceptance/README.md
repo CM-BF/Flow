@@ -25,7 +25,7 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH node --import tsx experiments/native-gr
 
 固定候选限额：最多 **1次SDK query调用**，SDK最多4turns、SDK估算$0.20；不等于1次底层模型HTTP请求或账单硬上限。adapter合作90s取消；父进程90s观察deadline会停止自有runner进程组，整组最多另等3s再SIGKILL，并另用1s核查PGID不存在。event-loop阻塞/OS停顿/文件系统等待不因此变成硬实时保证。没有实际native超时/强杀验收；本轮已用零模型Node24进程树验证leader先退出而孙进程忽略TERM的整组强杀。
 
-有效能力必须由实际init证明：permissionMode=dontAsk，恰好`mcp__flow-graph__graph_read`和`mcp__flow-graph__graph_command`，唯一MCP `flow-graph`且source=sdk/status=connected，无skills/plugins；缺省/未知不当通过。SDK实际版本、model、tools、extensions、session、final turns/估算费用均记录；禁止保存thinking原文。发生未知费用、越界或工具配置差异时失败收尾、不补次。最终图/audit/final须来自同runner/task/attempt/fence并忠实说明未执行child。
+有效能力必须由实际init证明：permissionMode=dontAsk，恰好`mcp__flow-graph__graph_read`和`mcp__flow-graph__graph_command`，唯一MCP `flow-graph`且source=sdk/status=connected，plugins与skills声明必须分别精确匹配已知managed基线（下述3+3），无重复/缺失/新增；缺省/未知不当通过。SDK实际版本、model、tools、extensions、session、final turns/估算费用均记录；禁止保存thinking原文。发生未知费用、越界、未知资源或工具配置差异时失败收尾、不补次。最终图/audit/final须来自同runner/task/attempt/fence并忠实说明未执行child。
 
 native将复用批准的本机provider环境；driver不读取或输出token内容，owner随机token仅父进程，runner随机token仅私有0600配置/host闭包，生产SDK环境过滤保护Flow/DB凭据。演练使用新空HOME，无继承provider凭据。所有异常只输出固定说明；失败会保留可读的task/graph/audit和worker报告。中心cancel ACK不当实际停止；cleanup独立核查本次detached进程组不存在；leader退出不算组停止。私有库/tmp随后清理，成功演练/失败均保存result；若无法确认runner结束则保留其tmp，不把不完整cleanup当通过。
 
@@ -42,4 +42,8 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH node --import tsx --test \
 
 Root P2修复：观察deadline与finally共享同一个停止promise；只向本次detached worker的负PGID发信号。signal 0仅ESRCH确认组已不存在，权限错误/未知/强杀后仍存在均拒绝，结果保持failed-or-unknown并保留私有tmp。此证明限定未脱离该进程组的进程；主动setsid/重分组的进程未隔离或枚举，不声称OS沙箱或全宿主进程树保证。
 
-**原生未就绪**：固定BASE已有真实历史[SDK会话记录](../../docs/evidence/f01/queue-live/turn-1.json)，resources列出3个managed plugins（cc-plugin-agents-md、cc-plugin-telemetry、cc-plugin-plugin-authoring）及3个skills（design、doctor、plugin-authoring）。它与本driver的零扩展gate不匹配；这是历史已知配置事实，不是当前环境再次探测。不能用注入演练或默认零query预检宣称native配置已可运行，也不能仅为探测而开新query或绕过组织配置。解除条件沿GO既有配置/预算流程另定，当前仍0provider。
+**历史配置差异与当前准备状态**：固定BASE已有真实历史[SDK会话记录](../../docs/evidence/f01/queue-live/turn-1.json)，resources列出3个managed plugins（cc-plugin-agents-md、cc-plugin-telemetry、cc-plugin-plugin-authoring）及3个skills（design、doctor、plugin-authoring）。它曾与原准备的零扩展gate不匹配。GO现已接受在此已知managed资源基线下只授予两图工具；本候选仅核SDK声明名字集合，不信任插件自报版本或文件，不证明无副作用。这是历史已知配置事实，不是当前环境再次探测。不能用注入演练或默认零query预检宣称native配置已可运行，也不能仅为探测而开新query或绕过组织配置。解除条件沿GO既有配置/预算流程另定，当前仍0provider。
+
+2026-10-06 managed候选：requested生产SDK配置完全不变（settingSources/plugins/skills仍空，strictMcpConfig/dontAsk及两工具）；SDK init仅作为声明保存，插件路径不保存。settingSources只控制文件设置加载，skills是上下文过滤而非沙箱；组织startup/hooks不被证明隔离。host wrapper只观测现有PreToolUse回调，不增加权限，最多64条，每条仅工具名/来源/server/有限ID/allowed|denied|unknown；execution一律not-observed，许可不是执行证据。SDK result.permission_denials只保留最多32条名字/ID及总数/是否省略，明确剔除参数，缺失为unknown。成功仍须中心同attempt持久图与审计及typed final，并要求host记录均allowed、SDK结果零denial；尚未发生调用与被拒绝分开。主动请求额外工具、出现未知或超限观察均不能通过，不补query。
+
+不宣称插件未加载、hooks无副作用、全进程无网络/文件写或组织配置被绕过。真实原生运行仍未就绪：本候选待固定review及GO既有单次预算流程，尚无permit/query。旧decf只批准原零query准备，不能覆盖新候选实现。
