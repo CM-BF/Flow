@@ -16,7 +16,7 @@
 | Branch | codex/web-workspace-lifecycle-baseline |
 | 工作基线 / HEAD | c450c2da7e6185b88db9f46e0299ee504ee6f3e8 / 当前Git聚合 |
 | 工作树dirty状态 | 两个测试源已固定；本次仅证据/三件套收口，实际Git聚合为准 |
-| 工作分支状态 | approved |
+| 工作分支状态 | in-progress / approved / waiting-main |
 | 本片段交付阶段 | integration |
 | 检查状态 | FAILED 1711e2b0933ec28b8bbd9af11cba4243b644e0d7；有界实验 partial：8完成/1末尾locator失败，定向types通过；全Web既有两类型错误 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
