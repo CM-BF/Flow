@@ -31,3 +31,9 @@ Reviewer：status_read，2026-10-06 21:36:02UTC；Mika另核六源diff/SQL约束
 ## 验证与fixture修复复审请求
 
 Target `d209eb7275777d50f214fd73f66d6b3c1520c459`，产品6源相对3cd不变；仅turn-page-batch.test.ts一行显式row guard修复TS18048。green26/26在修前test/固定产品上执行；strict首错保留，修后focused strict-v2 exit0，26绿组未重跑。不自动扩大上次source approval：结果忠实性/fixture修复复审PENDING。请核[检查记录](../../docs/evidence/req15-turn-page-batch/checks.md)、[来源manifest](../../docs/evidence/req15-turn-page-batch/validation-source-manifest.json)、[原始输出manifest](../../docs/evidence/req15-turn-page-batch/validation-output-manifest.json)。真实PG/HTTP/main仍NOT_RUN。
+
+## 定向验证与fixture修复独立复审
+
+Mika，2026-10-06 21:45UTC，target `d209eb7275777d50f214fd73f66d6b3c1520c459`，**APPROVED /0 P1/P2**（限局部source+fake行为+strict）。Reviewer核5b8eb93 clean、6产品与3cd无diff、唯一row guard不删断言；green26/26、strict-v2实际exit0，108B首次类型错误与own组/TMP清理原件保留。source manifest SHA `2abe118da942b25be4f22c872c015dec123b8597f19a740409c2ba2213e1bfd0`（8/55181B）、output SHA `6f4f40ba876ecca2734a5122e0774f851e5e0151d476e033bdba2da65f04b120`（6/12275B）逐Git(d209)=WT=bytes/hash。非PG/HTTP/main批准。
+
+下一片仅[真实PG准备设计](../../docs/evidence/req15-turn-page-batch/pg-acceptance-plan.md)与两SQL固定供给请求，未执行、未作为本approval范围。产品冻结，准备packet待下一轮审查。
