@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:03:13 UTC / 最近main核验0cee7556 clean；本次恢复唯一DDL实施 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T11:08:57.479785+00:00 / main 2e71fabc218df28f6ccb78a927432ae1101c17c5 clean；未将分支验证当main功能 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -10,29 +10,29 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
-| 工作基线 / HEAD | 原始b1c2e398；已受控合入8d8ab520 / 当前实现 a7357c21511a81ca8e603b728c3a24725d7cc140；metadata随后提交 |
-| 工作树dirty状态 | 核bdea351a clean与v4 ACTIVE；v5 COMMITTED后实施027/局部入口/真实PG检查；旧6源码冻结 |
+| 工作基线 / HEAD | 原始b1c2e398；受控合入8d8ab520 / 实现 9ac549dddd12b6bb186bf34116c4c72fe9889cfc；metadata随后提交 |
+| 工作树dirty状态 | 实现9ac549dd已固定；本轮仅自有交审metadata，10源及原始证据停写等待独审 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN a7357c21511a81ca8e603b728c3a24725d7cc140：真实PG事务/rollback/约束及全局owner鉴权待验；局部41/41与8根文件strict noEmit0见[证据](../../docs/evidence/wpf-mature-04/history-checks.json) |
-| 已集成main状态 / HEAD | 未集成：固定main 8d8ab520a9d43c7b9dafb22911416ee799ebf665 无6源码，879/3ab双target非祖先；[唯一集成输入](../../docs/evidence/wpf-mature-04/integration-readiness.json) |
-| 实现目标 | a7357c21511a81ca8e603b728c3a24725d7cc140 |
-| 实现范围 | apps/server/src/context-transparency/routes.test.ts, apps/server/src/context-transparency/routes.ts, apps/server/src/context-transparency/store.test.ts, apps/server/src/context-transparency/store.ts, packages/contracts/src/context-observation-event.test.ts, packages/contracts/src/context-observation-event.ts, packages/contracts/src/context-observation-history.test.ts, packages/contracts/src/context-observation-history.ts |
+| 本片段交付阶段 | review |
+| 检查状态 | PASS 9ac549dddd12b6bb186bf34116c4c72fe9889cfc：50/50（41既有+9真实PG）、root严格noEmit0；真实专库已DROP；全局鉴权/挂载NOT_RUN，见[证据](../../docs/evidence/wpf-mature-04/history-pg-checks.json) |
+| 已集成main状态 / HEAD | 未集成：本次核main 2e71fabc218df28f6ccb78a927432ae1101c17c5 clean，879/3ab/9ac均非祖先；[固定集成输入](../../docs/evidence/wpf-mature-04/integration-readiness.json) |
+| 实现目标 | 9ac549dddd12b6bb186bf34116c4c72fe9889cfc |
+| 实现范围 | apps/server/src/context-transparency/migration.ts, apps/server/src/context-transparency/routes.test.ts, apps/server/src/context-transparency/routes.ts, apps/server/src/context-transparency/store.test.ts, apps/server/src/context-transparency/store.ts, packages/contracts/src/context-observation-event.test.ts, packages/contracts/src/context-observation-event.ts, packages/contracts/src/context-observation-history.test.ts, packages/contracts/src/context-observation-history.ts, packages/storage/migrations/027-context-observation-history.sql |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 历史样本保存和读回模块已完成局部验证；现已开始正式数据库持久化验证 |
-| 下一可用交付 | 采用唯一正式迁移完成数据库验证，再挂载历史读回；当前占用及剩余容量仍未知 |
-| 当前阻塞 | NONE：唯一正式迁移027已分配并领取，正在验证历史保存、回滚与重启读回 |
+| 当前产出 | 历史样本已验证可靠保存、重放和重启后读回；正式迁移与局部接口等待独审 |
+| 下一可用交付 | 独审通过后由Lead接入既有事件与鉴权读回，供界面展示历史估算；当前占用与剩余仍未知 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED a7357c21511a81ca8e603b728c3a24725d7cc140：待唯一DDL和真实PG后最终审查；2026-10-06 10:42:39 UTC静态/模块预审无P1/P2，不批准生产接入，见[review.md](review.md) |
-| Claim | [COMMITTED amend v4](../../docs/evidence/wpf-mature-04/history-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v4 ACTIVE；仅追加8新history文件，已审6源码冻结 |
-| 架构影响 | 中心历史record/readLatestHistory与局部GET已实现未挂载，沿原事务/fence，无新runner端点；唯一DDL027由本owner实施，新增局部migration入口/归属外键及历史索引；全局挂载与架构视图待Lead集成target更新 |
+| Review | NOT_STARTED 9ac549dddd12b6bb186bf34116c4c72fe9889cfc：正式027/真实PG组合待独审；a735静态预审与旧两片批准独立保留 |
+| Claim | [COMMITTED amend v5](../../docs/evidence/wpf-mature-04/history-ddl-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v5 ACTIVE；18 scopes；review修复期保留，旧6停写 |
+| 架构影响 | 新增中心历史record/read/local GET、唯一027表/归属复合FK与索引、migration(pool)入口；无新runner端点/FSM；全局挂载及固定架构视图由Lead于集成target更新 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-MATURE-04-01 | completed | architecture_read | bbfb7037ee3ca3e37bf14a078f8a05582b209f48已push；7文档/6 TODO/9验收自查通过 |
 | WPF-MATURE-04-02 | completed | architecture_read / mika | 879c989a594a8f4f266b9a78a885e311c52eca0d；30/30、局部strict noEmit；Mika独立APPROVED，无P1/P2 |
-| WPF-MATURE-04-03 | in-progress | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已获mika批准历史首片8新路径；v4已追加；41/41局部合同/HTTP/事务consumer与strict noEmit0；唯一迁移DDL及真实PG待验，当前/remaining/SDK采集仍未知 |
+| WPF-MATURE-04-03 | in-progress | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已获mika批准历史首片8新路径；v5已追加唯一027及局部入口；50/50含9真实PG、严格noEmit0，正式组合待独审/集成；当前/remaining/SDK采集仍未知 |
 | WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | 纯Adapter P2修复源码已完成，49/49与strict noEmit0，独立APPROVED；不含真实采集、压缩事件或生产接线 |
 | WPF-MATURE-04-05 | pending | d01 管理 Web owner | 沿本计划与中心合同消费；未实施 |
 | WPF-MATURE-04-06 | pending | architecture_read / mika | 仅schema/纯投影独审已过；完整矩阵与后继独审、main交付未完成 |
@@ -70,3 +70,5 @@
 2026-10-06 10:45:51 UTC：metadata解析安全点；Mika报告2026-10-06 10:45:18 UTC对4320的一次snapshot已确认04 source live、stale=false、955650ed clean，任务层级大task/co-lead正确；本owner未另抓大聚合。修正8个实现literal、ACTIVE阻塞及NOT_RUN总体验证字段；TODO完成度不变。当前review首状态/target改为a735待PG最终审，静态预审与旧批准分开保留。
 
 2026-10-06 11:03:13 UTC：Execution Lead正式分配027-context-observation-history.sql，026仍属ATTACH01。fresh bdea351a clean、原v4后原子追加SQL及局部migration.ts为v5；[收据](../../docs/evidence/wpf-mature-04/history-ddl-amend-receipt.json)。仅正式DDL供真实随机专库验证，未改全局mount/事件/client；旧6与历史raw保持固定。
+
+2026-10-06T11:08:57.479785+00:00：实现固定9ac549dddd12b6bb186bf34116c4c72fe9889cfc，50/50（9真实PG+既有41，前49轮重叠不累计）、strict noEmit0；两次随机专库均0连接后DROP，未用026，未启动server/scheduler/runner/provider。原两轮strict解析错误保留且仅以实际源码声明/已安装类型路径解决。10source/8raw/4support/6旧已审source逐字绑定[manifest](../../docs/evidence/wpf-mature-04/history-pg-manifest.json)；所有source/raw停写待独审。main观测与target祖先事实见manifest，不以本分支通过宣称main已上线。
