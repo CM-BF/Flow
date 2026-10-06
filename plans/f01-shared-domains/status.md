@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:52 UTC / main3609；runtime固定362/v15 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:56 UTC / main280289 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -13,16 +13,16 @@
 | 工作基线 / HEAD | 已审ENG01H合同916e；共享实现79b569a14d14c218874781e2d05ae6e42e234ce2 |
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 真实HTTP旧/新2/2与root types0；首红保留，未跑PG/provider |
-| 已集成main状态 / HEAD | 此前O12已main；本次native工程薄传输待独审/集成，个人runtime不变 |
-| Review | APPROVED：assignment_review固定79b569；此前结论保留历史 |
-| 实现目标 | 79b569a14d14c218874781e2d05ae6e42e234ce2 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/engineering-profiles.test.ts, packages/contracts/src/index.ts |
+| 检查状态 | offline lock/frozen install/实际resolution exit0；无生命周期脚本或个人服务操作 |
+| 已集成main状态 / HEAD | ENG01H + native工程薄client已main280289；X01依赖待与leaf独立批准后接收 |
+| Review | NOT_STARTED：X01三共享依赖文件；此前79b thinclient已审main280289 |
+| 实现目标 | f63502e26d44f33a86a01e98761b22aefbd5fa60 |
+| 实现范围 | apps/runner/package.json, apps/server/package.json, pnpm-lock.yaml |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 工程执行配置已有明确用途和身份检查，正在接入公共客户端。 |
-| 下一可用交付 | 通过同一客户端登记与读取原生工程配置；插件安装模块的正式依赖接线并行准备。 |
+| 当前产出 | 原生工程公共接口已进入主线；插件模块已具备明确的本地依赖来源和安装记录。 |
+| 下一可用交付 | 独审固定依赖接线，交插件owner运行真实安装与loader检查。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -176,3 +176,5 @@
 | F01-35 | in-progress | Lead | [原生工程薄传输](../../docs/evidence/f01/native-engineering-client-manifest.json)；2HTTP/types0待独审 |
 
 2026-10-06 12:52 UTC：F01 v33已交回events.ts给S01P05；[原子回执](../../docs/evidence/f01/s01p05-events-handback.json)。server/runner manifest与lock仍本owner短单写窗口处理X01正式workspace依赖，不阻其他源码领取。
+
+| F01-36 | in-progress | Lead | [插件安装模块依赖](../../docs/evidence/f01/plugin-runtime-dependency-manifest.json)；只3共享路径和正式workspace输入，待独审 |
