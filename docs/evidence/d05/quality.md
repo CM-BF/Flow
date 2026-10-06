@@ -17,3 +17,5 @@ clean-code工作段/合并前：架构数据、SVG交互、原进度聚合各自
 后续registry维护：新增真实已领取且canonical status存在的B01/X02/WPF-PERF02/CHAT02，精确owner树只读登记。架构仍固定3773；main4e817后的O01、WPF-I01/R03结构增量待本owner刷新基线，不把图的历史基线当实时main。
 
 2026-10-06 03:58 UTC registry metadata：CHAT03与P03已原子领取、各自真实三件套存在，登记唯一status与精确WT/branch，41源验证合法/无重复。仅登记，不继承实现approval；不跑产品测试。架构仍明确3773固定基线，当前CHAT/X02结构变化待本批主线固定后刷新，旧图不冒充新增能力。
+
+03:59同批补登记R04：claim1714e82b v1、真实canonical三件套已存在；42源合法，仍只有owner status为进度源。
