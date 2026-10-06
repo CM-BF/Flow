@@ -1,0 +1,66 @@
+{
+  "fixedSource": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "readOnlySources": [
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "gitBlob": "c2a2ed1947f578ab252df426dab0a5abb7decb24",
+      "sha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "gitBlob": "8ee5f5bfcc77d37358ded0734381766c71603fb4",
+      "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "gitBlob": "24af53c11c17f2b512ae8011b25302e4c98a6a15",
+      "sha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414"
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "gitBlob": "299a9307ac00d06a85acb2e0df63e002aa92c685",
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "gitBlob": "cae354221f04dc372ef094be2138eb84e4913c65",
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "gitBlob": "355302afcf5fa8d82ed77fde10856645e0023e4a",
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "gitBlob": "a4f902410a08491368227d39ec6db85d745e970f",
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "gitBlob": "dbed737aab5305b7c1ca75ab9bcc652c01e5dfe5",
+      "sha256": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "gitBlob": "99391575d41d52abe6625f5d705c6ef6ee12a04c",
+      "sha256": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523"
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "gitBlob": "33a57e88335fb7bee084ee9753d79ef77ed8bac9",
+      "sha256": "be419bae85345d5d12d83f4a9fa3067c4ec479ca001dbda86fa4b3360dcbddc2"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "gitBlob": "f64806657eaaf8e66d5a73dd8d386604bdafc39a",
+      "sha256": "b7c180fe00e97272aa48e7fd0e0b76e28234f4483b01bfd796518d4ff94f87c9"
+    }
+  ],
+  "requestProbeInput": {
+    "directory": "/tmp/recovery01-request-bounds",
+    "manifestSHA256": "d34dec73abd22c2f41e4483c7557b09fe88f0408b97b2453324b34ee74387d00"
+  },
+  "ourProbeSHA256": "e406c02cff2778817ad2f6e153c9d517c80992a9db30221a4867acfb5b7e1f28",
+  "resultsSHA256": "9207021c882ddd42057c17a121c687883d088ecb84ed29b710ec2e0eaff69f19"
+}

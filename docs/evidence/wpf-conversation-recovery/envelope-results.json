@@ -1,0 +1,180 @@
+{
+  "at": "2026-10-06T13:34:02.679Z",
+  "fixedBase": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "runtime": "v24.20.0",
+  "kind": "pure-memory candidate-envelope design; not journal implementation or IDB/runtime proof",
+  "units": "UTF8(compact JSON.stringify)",
+  "samples": [
+    {
+      "case": "create-turn-k0-a4",
+      "initialRecordBytes": 110082,
+      "initialAuxBytes": 455,
+      "initialWithAux": 110537,
+      "initialWithAllNamespaceAndManifest": 116451,
+      "checkpointRecordBytes": 117948,
+      "growthIncludingBoundSlot": 8805,
+      "chargedWithReserveAndNamespace": 149219
+    },
+    {
+      "case": "enqueue-k0-a4",
+      "initialRecordBytes": 107114,
+      "initialWithAux": 108309,
+      "ackIdentityBytes": 6274
+    },
+    {
+      "case": "create-turn-k1-a3",
+      "initialRecordBytes": 109829,
+      "initialAuxBytes": 455,
+      "initialWithAux": 110284,
+      "initialWithAllNamespaceAndManifest": 116198,
+      "checkpointRecordBytes": 117078,
+      "growthIncludingBoundSlot": 8188,
+      "chargedWithReserveAndNamespace": 148966
+    },
+    {
+      "case": "enqueue-k1-a3",
+      "initialRecordBytes": 106861,
+      "initialWithAux": 108056,
+      "ackIdentityBytes": 5657
+    },
+    {
+      "case": "create-turn-k2-a2",
+      "initialRecordBytes": 109577,
+      "initialAuxBytes": 455,
+      "initialWithAux": 110032,
+      "initialWithAllNamespaceAndManifest": 115946,
+      "checkpointRecordBytes": 116210,
+      "growthIncludingBoundSlot": 7572,
+      "chargedWithReserveAndNamespace": 148714
+    },
+    {
+      "case": "enqueue-k2-a2",
+      "initialRecordBytes": 106609,
+      "initialWithAux": 107804,
+      "ackIdentityBytes": 5041
+    },
+    {
+      "case": "create-turn-k3-a1",
+      "initialRecordBytes": 109325,
+      "initialAuxBytes": 455,
+      "initialWithAux": 109780,
+      "initialWithAllNamespaceAndManifest": 115694,
+      "checkpointRecordBytes": 115342,
+      "growthIncludingBoundSlot": 6956,
+      "chargedWithReserveAndNamespace": 148462
+    },
+    {
+      "case": "enqueue-k3-a1",
+      "initialRecordBytes": 106357,
+      "initialWithAux": 107552,
+      "ackIdentityBytes": 4425
+    },
+    {
+      "case": "create-turn-k4-a0",
+      "initialRecordBytes": 109074,
+      "initialAuxBytes": 455,
+      "initialWithAux": 109529,
+      "initialWithAllNamespaceAndManifest": 115443,
+      "checkpointRecordBytes": 114422,
+      "growthIncludingBoundSlot": 6287,
+      "chargedWithReserveAndNamespace": 148211
+    },
+    {
+      "case": "enqueue-k4-a0",
+      "initialRecordBytes": 106106,
+      "initialWithAux": 107301,
+      "ackIdentityBytes": 3756
+    },
+    {
+      "case": "steer",
+      "initialRecordBytes": 104364,
+      "initialWithAux": 105549,
+      "ackIdentityBytes": 3476
+    },
+    {
+      "case": "cancel-task",
+      "initialRecordBytes": 4432,
+      "originalTargetPreserved": true,
+      "bodyBytes": 2,
+      "initialWithAux": 5618,
+      "ackIdentityBytes": 809
+    },
+    {
+      "case": "create-only",
+      "initialRecordBytes": 6121,
+      "initialWithAux": 7308,
+      "ackIdentityBytes": 802
+    },
+    {
+      "case": "pause",
+      "initialRecordBytes": 3680,
+      "initialWithAux": 4875,
+      "ackIdentityBytes": 3247
+    },
+    {
+      "case": "resume",
+      "initialRecordBytes": 4469,
+      "initialWithAux": 5664,
+      "ackIdentityBytes": 6463
+    },
+    {
+      "case": "cancel-item",
+      "initialRecordBytes": 4466,
+      "initialWithAux": 5658,
+      "ackIdentityBytes": 4056
+    }
+  ],
+  "maxFullInitialIncludingAuxNamespaceManifest": {
+    "case": "create-turn-k0-a4",
+    "initialRecordBytes": 110082,
+    "initialAuxBytes": 455,
+    "initialWithAux": 110537,
+    "initialWithAllNamespaceAndManifest": 116451,
+    "checkpointRecordBytes": 117948,
+    "growthIncludingBoundSlot": 8805,
+    "chargedWithReserveAndNamespace": 149219
+  },
+  "structuralOverestimateAllMetadataFields": 129651,
+  "structuralOverestimateWarning": "Includes both title and name plus invalid control-character name/date/key maxima; upper-bound byte accounting only, not schema-valid admission.",
+  "ackIdentityBytes": {
+    "create": 802,
+    "turn": 7024,
+    "enqueue": 6274,
+    "cancelItem": 4056,
+    "pause": 3247,
+    "resume": 6463,
+    "cancelTask": 809,
+    "steer": 3476
+  },
+  "namespaceBytes": 5781,
+  "manifestBytes": 133,
+  "indexBytes": 253,
+  "originalSlotBytes": 202,
+  "boundSlotBytes": 939,
+  "maxStructuredBodyObjectBytes": 110082,
+  "sameEnvelopeWithJSONBodyStringsBytes": 127212,
+  "roundTripPreservesBodyIdentity": true,
+  "limits": {
+    "initialUnitCandidate": 131072,
+    "growthReservation": 32768,
+    "global": 4194304,
+    "maxDrafts": 32,
+    "maxLogicalCommands": 128
+  },
+  "nonProofs": [
+    "No IndexedDB storage, transaction, quota, durability, CAS or runtime test",
+    "No full public decoder ACK samples executed; identity projections are proposed after existing validation",
+    "Request maxima are schema-valid but not evidence of simultaneous server admission",
+    "4096B base URL bound is a proposed local persistence policy, not public HTTP limit",
+    "Namespace center/principal fields conservatively id128; final center DTO integration pending",
+    "CreatedAt/updatedAt raw80 bound is journal policy where current Queue/Steer validation lacks such bound"
+  ],
+  "sideEffects": {
+    "http": 0,
+    "pg": 0,
+    "browser": 0,
+    "provider": 0,
+    "projectWrites": 0,
+    "installs": 0
+  }
+}

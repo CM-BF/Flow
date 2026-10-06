@@ -1,0 +1,30 @@
+# WPF-RECOVERY01 连接、草稿和未决发送恢复
+
+状态：in-progress。创建/更新：2026-10-06 13:49 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+
+目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
+
+已批准设计：ConnectionSession只消费固定公开cookie client，ConversationJournal负责namespace/IDB事务/CAS/预算；Outbox、QueueCommands、Steering controller仍为原命令authority。P01 sidebar.footer私有binding提供实际恢复入口，App保持view唯一权威。完整草稿含正文、intent、profile/project、knowledge、附件metadata及steering草稿，恢复原顺序与refs，不自动上传/读正文。库异常可继续内存编辑，不能绕过prepare/CAS发送纯文。
+
+同步localreceipt接管→strict IDB事务complete→dispatching CAS complete→HTTP。CREATE两key/两body先冻结，绑定checkpoint完成后才turn。未知不自动重投、不换key、不靠同文GET猜受理；其他tab不能覆盖unknown。原稿交接严格draft version CAS，composer空通知或迟到ACK不得删除下一稿。普通close/switch/auth失效保journal，eligible dismiss另明确操作。
+
+候选容量：command初始record+slot/index128KiB，增长32KiB全额预收；draft128KiB，最多32draft/128logicalcommands，global4MiB含namespace/manifest。每个状态精确UTF8 JSON计费，unknown不可淘汰。合法完整envelope超限需提高单条cap/接受更少条，不截身份或材料；现116451B设计样本不冒完整证明。上传旧journal的跨tabCAS/历史namespace展示不纳本片解决。
+
+固定base 84005a260dfcb668cd38b09c21564d0754a0f513。共享client/domain/factory已正式main；不改shared/server/认证DTO，不复制HTTP。callerOrigin、迟到Clear-Cookie、重复Connect32slot三语义仍由中心owner协调，最终真实browser/approval前核准。
+
+## TODO
+
+- [ ] WPF-RECOVERY01-01：固定输入、合法scope和唯一canonical；实现有界ConnectionSession/Journal。
+- [ ] WPF-RECOVERY01-02：四类原controller同步接管和durable barrier，CREATE两阶段及错误/CAS恢复。
+- [ ] WPF-RECOVERY01-03：实际App/P01入口、完整草稿/材料和namespace隔离恢复。
+- [ ] WPF-RECOVERY01-04：定向storage/controller直接行为验证与来源hash。
+- [ ] WPF-RECOVERY01-05：资源允许后真实cookie/HTTP/SSE/App旅程，累计≤90s含≥15s清理、≤8MiB、1PG+1Chrome、0provider/个人服务。
+- [ ] WPF-RECOVERY01-06：独立固定审查、修复、push和明确main接收。
+
+## 验证与资源
+
+当前仅轻量source/metadata；禁止安装/build/PG/browser。full install/build必须fresh空间≥2.5GiB且预计physical增量后≥1GiB。基础direct tests另记，不冒browser/IDB真实运行。浏览器失败保raw并评估剩余预算，不无限重跑。个人61227/61228/4320不采不改。
+
+## 范围与证据
+
+精确21literal以[take回执](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)为准；新增path须先amend。[Interface](../../docs/evidence/wpf-conversation-recovery/interface.md)、[质量](../../docs/evidence/wpf-conversation-recovery/quality.md)、[状态](status.md)、[审查](review.md)。
