@@ -60,7 +60,7 @@ try {
   const f = await fixture({ after: callback => cleanups.push(callback) });
   const task = f.tasks[0];
   const injected = '<img src=x onerror="window.pwned=true"><script>window.pwned=true</script>';
-  await f.writeStatus(task, { owner: injected, next: injected, checks: `PASSED ${git(task.worktree, 'rev-parse', 'HEAD')}` });
+  await f.writeStatus(task, { updated: new Date().toISOString().slice(0, 16).replace('T', ' ') + ' UTC', owner: injected, next: injected, checks: `PASSED ${git(task.worktree, 'rev-parse', 'HEAD')}` });
   const sampleContext = await browser.newContext({ viewport: { width: 1000, height: 900 } });
   const sample = await sampleContext.newPage(); sample.on('pageerror', error => report.errors.push(error.message));
   await sample.goto(f.url); await sample.waitForLoadState('networkidle');

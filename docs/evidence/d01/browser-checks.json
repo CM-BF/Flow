@@ -1,13 +1,14 @@
 {
-  "outcome": "failed",
-  "at": "2026-10-06T01:22:58.808Z",
+  "outcome": "passed",
+  "at": "2026-10-06T01:23:28.465Z",
   "browser": "154.0.8037.98",
   "checks": [
     "真实登记首屏渲染5工作线、9来源；无页面错误",
     "浅深主题切换及localStorage持久化",
     "键盘Enter打开详情、按需读取status、Esc关闭并返回原按钮焦点",
     "390px窄屏双主题无页面横向溢出，减少动画偏好生效",
-    "初始读取失败后筛选不崩溃，刷新成功恢复"
+    "初始读取失败后筛选不崩溃，刷新成功恢复",
+    "临时样本HTML/script在首页和资料查看器均以文本呈现，未执行"
   ],
   "screenshots": [
     "dashboard-light.png",
@@ -15,6 +16,5 @@
     "dashboard-light-narrow.png",
     "dashboard-dark-narrow.png"
   ],
-  "errors": [],
-  "failure": "Expected values to be strictly equal:\n\n0 !== 1\n"
+  "errors": []
 }

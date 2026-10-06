@@ -32,7 +32,7 @@ PLAYWRIGHT_MODULE=/Users/citrine/.cache/codex-runtimes/codex-primary-runtime/dep
 
 ## 失败与修复
 
-首轮 Host 测试失败是 Node fetch 不允许覆盖 Host；换用内置 http 客户端后验证403通过。首次浏览器脚本使用不稳定“显示”label定位超时；补明确可访问名称后重跑通过。未删除这些失败事实；最终产物只保存最新成功检查。
+首轮 Host 测试失败是 Node fetch 不允许覆盖 Host；换用内置 http 客户端后验证403通过。首次浏览器脚本使用不稳定“显示”label定位超时；补明确可访问名称后重跑通过。补充历史检查徽标断言时，固定未来样本时间触发“待同步”，因此该断言失败；浏览器样本改用实际当前 UTC，重跑验证历史检查不会成为当前通过。未删除这些失败事实；最终产物只保存最新检查。
 
 ## 未验证与限制
 
