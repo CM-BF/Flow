@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:38 UTC / ATTACH公共桥接fd1322接收；ef617已释放，CACHE883321已领取16scope |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:44 UTC / CACHE883321实施；DASHSUM01 fe63511a已领六范围，附件模块待main |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -18,7 +18,7 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 附件正式中心入口及公共桥接已接主线；输入模块已审待接收，生产聊天附件绑定尚未完成 |
-| 下一可用交付 | CACHE关闭视图与正文缓存保护实施；其六共享路径交回后接附件生产绑定 |
+| 下一可用交付 | CACHE生命周期保护与dashboard首屏关系摘要并行；附件绑定待模块main及六共享路径交回 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
@@ -85,6 +85,7 @@
 | RELEASE02 → MATURE01 | web-release-type-fix / 03323bce v2 released三scope | fixed560c已Lead独审并main648e；ownerfed5 normalpush双端clean/parser0后全停写，03323 v2已release；0浏览器/PG/个人发布 |
 | ATTACHI01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md)，94b84c59 v1十一scope | fixed4c4d/final4a9已root独审17、normalpushclean/9源同；仅DTO/typed ports/官方Threadfixture；公共桥接已fd main，模块/实际App仍待接，94b84保留等main |
 | WORKSPACEPERF01 → MATURE05 | c815bc00 v1四scope / web-workspace-lifecycle-baseline | fixed1711/final628156已独审partial基线待main；8完成/1失败、累计79.322s，0生产优化 |
+| DASHSUM01 → D01 | dashboard-human-summary / fe63511a v1六scope | fixed2c6df独立树，root结构批准、fresh COMMITTED后已派w01；首canonical待owner，筛选/长身份/父子下钻同片，不碰CACHE |
 | WORKSPACECACHE01 → MATURE05 | web-workspace-cache / 883321bc v1十六scope | fixedfd1322新树，root结构批准且fresh COMMITTED；首canonical44b4已建立并实施。六路径短窗口后交ATTACHI02，不冒整体cache/Arc完成 |
 | ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v2 released七scope | 2fa8已main e4c82；owner8301991 normalpush/clean后全停写释放；v2公共扩展已fd1322接收，生产附件consumer另片 |
 | DPERF02 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md)，1cb4 v2 released四scope停写 | 已main da041，close8e9最终normalpush成功；两次失败/先release偏差已归档，无重测 |

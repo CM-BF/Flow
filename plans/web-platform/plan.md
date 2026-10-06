@@ -360,3 +360,5 @@ U11布局后继继续排在stream接线之后：目前FrozenConfiguration常驻h
 - [x] **WPF-001-34** 六大task计划与dashboard可见请求：四Web大task三件套、Mika02/04唯一链接、当前worker父关联和真实页面展示齐后集中验收；[唯一登记队列](../../docs/evidence/web-platform/mature-task-handoff.md)。本项是管理请求，不是第三执行层或六featureDone。
 
 RS13既有首屏后继已补RELEASE最终artifact唯一asset字节与静态host cache/编码候选，[固定研究](../../docs/evidence/web-platform/research.md)区分解码字节/TTI、同URL不变与回滚，优先ACK/附件/实际发布，不新大task或擅改SVC。
+
+GO首屏需求执行（11:44）：工程dashboard当前与下一交付应优先不同大task，子片从对应父下钻，长技术owner放详情；仅D08已确认显式关系，不猜层级、不合成父进度/Done，子blocker/decision和unknown始终可达。原D01直接父的WPF-DASHSUM01由w01在独立dashboard-human-summary/fixed2c6df取fe63511a v1六scope实施，registry/parser/aggregate不写；[明确Interface/预算与原始查重](../../docs/evidence/web-platform/dashboard-summary-proposal.json)。root结构批准、独审NOT_STARTED，90秒含10清理/8MiB临时浏览器；不抢CACHE/附件App或混DPERF候选。

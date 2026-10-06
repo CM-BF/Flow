@@ -312,3 +312,13 @@ ATTACHI02首阶段12literal（同一生产UI任务、尚未take）：详[精确�
 Root已批准ATTACHI02首12literal及最终24完整消费者验收，仍须4c正式main组合base后fresh take；测试每轮先定回归目的、记累计耗时，不因失败无限重跑。CACHE六重叠后合法交权再amend。
 
 DPERF后继root最终隔离4task调用样本已[原字节归档](dashboard-proof-fanout-research/source-binding.json)：28starts/main dirty及untracked各4/Trace2区间峰4，非生产snapshot峰值/CPU；本轮不再测。后续只在模块正式main或新固定候选等实质事件推进，不无变化轮询。
+
+## D01首屏父子重复占位小片（已批准受领，首canonical待owner）
+
+GO明确首屏优先不同大task，子片在对应父下钻，长技术owner放详情；unknown和子片blocker/decision不能隐藏，不合成父进度/Done。[候选与查重](dashboard-summary-proposal.json)：WPF-DASHSUM01直接父D01，w01，独立dashboard-human-summary/codex同名，main2c6df475只读clean；11:42:08 fresh账本候选无writer，原D07/D08均released、无同功能ready owner。原五scope仅筛选不足，实际app.js仍显示长lead/worker且缺parent→children，所以拟加app.js为六literal，待root结构审查。没有建树/take/改实现，不抢CACHE或附件App。
+
+原D01权威明确大task/co-lead，FLOW只追溯。human仅消费D08确认的显式关系，父自身未在current/complete/active时不以child推父状态；被摘要略过child仍可从其他active/对应父下钻，blocker/decision/unknown仍独立显示。app.js详情保完整原owner/领取/来源，卡片短状态不让模型重写身份。新tests只写自身evidence，旧D08报告不改。ATTACHI02若模块main先到仅记录ready，由同一w01依序执行，不两处并行改产品。
+
+Root已结构批准DASHSUM01以上六literal，w01最终接口一致；预检独立树/2c6df后fresh COMMITTED才写。active/delivery同筛选，不继承child blocker排序；unknown带targetId仍不可归组。定向Chrome临时fixture累计90秒含10秒清理/8MiB，不跑proof/PG或4320；第七scope先amend，review NOT_STARTED，整段后clean-code。
+
+DASHSUM01正式[fe63511a v1 COMMITTED](dashsum01-take-receipt.json)于11:43:40.838Z，fresh available/六范围0冲突、ID未重号；新树dashboard-human-summary/codex同名、fixed2c6df HEAD/branch/clean已核。w01已followup唤醒，先live核与唯一三件套再实施，父D01/co-lead Web/root；[scope/预算/Interface](dashboard-summary-proposal.json)。唯一source为`/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary/plans/wpf-dashboard-summary/status.md`，等实际首提交登记，不把领取当进度卡。CACHE继续原883321scope；若附件模块先main仅记依赖ready，w01不第二处并行写。

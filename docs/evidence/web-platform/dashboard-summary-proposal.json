@@ -1,0 +1,94 @@
+{
+  "recordedAt": "2026-10-06T11:43:00.512034+00:00",
+  "state": "ROOT_APPROVED_FRESH_D04_COMMITTED_IMPLEMENTATION_DISPATCHED",
+  "taskId": "WPF-DASHSUM01",
+  "parent": "D01",
+  "parentCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md",
+  "coLead": "Web /root",
+  "owner": "w01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary",
+  "branch": "codex/dashboard-human-summary",
+  "baseRead": "2c6df4754f4fea75fbb2e1e750cad89524b1f5fa",
+  "branchAndPathCreated": true,
+  "scope": [
+    "apps/execution-dashboard/src/human.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/human-summary.test.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "plans/wpf-dashboard-summary",
+    "docs/evidence/wpf-dashboard-summary"
+  ],
+  "ledgerObservedAt": "2026-10-06T11:42:08.635Z",
+  "scopeConflicts": [],
+  "previousOwners": [
+    {
+      "task": "D07",
+      "role": "human delivery stages",
+      "claimState": "released"
+    },
+    {
+      "task": "D08",
+      "role": "explicit task link parsing/render",
+      "claimState": "released"
+    }
+  ],
+  "sourceDifferenceFromWorkerD02": [],
+  "workerOriginalFiveScopeProposal": "Only explicit known subtask relations whose parent is also current/complete/active may remove duplicate parent+child from first three active/delivery positions; suppressed child remains otherActive, blocker/decision/unknown/history retained. Original5 omitted app.js.",
+  "managerReadFindings": [
+    "app.js compactTask still renders long technical lead/worker",
+    "openTask has child-to-parent navigation but no parent-to-child list",
+    "D01 canonical explicitly big task; FLOW only traceability, not third level"
+  ],
+  "additionalRequiredInterface": [
+    "app.js compact rows show concise allocation state, full original owner identities remain in details",
+    "parent detail lists only explicitly confirmed direct children with normal registered task navigation; no inferred relation or synthetic parent progress",
+    "child blocker/decision and unknown sources remain visible independently of summary dedup"
+  ],
+  "forbiddenChanges": [
+    "registry",
+    "parser",
+    "aggregate",
+    "styles unless specifically justified/amended",
+    "product Web/App/CACHE/attachments"
+  ],
+  "checksProposed": [
+    "pure selection with parent absent/planning/stale/incomplete/delivered/unknown/cycle; input not mutated",
+    "child priority never promotes parent state; child blockers/decisions remain visible",
+    "actual dashboard home/delivery duplicate removal, more-active/parent child drilldown, keyboard modal focus,390lightdark",
+    "existing browser output redirected to own evidence only; never overwrite docs/evidence/d08",
+    "unknown with targetId not grouped; child blocked+decision both remain visible",
+    "parent planning/delivered/stale/missing summary does not hide child"
+  ],
+  "testsRun": 0,
+  "apiSamples": 0,
+  "implementationWrites": 0,
+  "budget": {
+    "browserTotalSeconds": 90,
+    "cleanupReserveSeconds": 10,
+    "maxEvidenceBytes": 8388608,
+    "temporaryFixtureRandomPort": true,
+    "chromeOnly": true,
+    "productionApi": false,
+    "proofOrPgTests": false
+  },
+  "interface": [
+    "active/delivery same known-direct-child and current-complete-active-parent filter; no child blocker priority transferred to parent",
+    "summary mode short claim state and relationship anomalies; full workstreams unchanged; no long technical lead/worker/co-lead in summary",
+    "parent detail reverse lists only known explicit direct children, own raw output/delivery and registered taskButton, no synthetic progress",
+    "unknown relationship even with targetId remains ungrouped and accessible; all blocker/decision/unknown signals unchanged"
+  ],
+  "workerFinalInterfaceSource": "w01 read-only six-scope proposal confirmed consistent with root approval; 0 tests/API",
+  "claim": {
+    "id": "fe63511a-8d99-4b0b-be09-a1efd971dd3d",
+    "version": 1,
+    "committedAt": "2026-10-06T11:43:40.838Z",
+    "receipt": "dashsum01-take-receipt.json"
+  },
+  "sourceCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary/plans/wpf-dashboard-summary/status.md",
+  "skills": [
+    "local find-skills method",
+    "codebase-design",
+    "clean-code"
+  ],
+  "review": "NOT_STARTED"
+}
