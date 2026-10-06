@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:19 UTC / 固定77c420c |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:28 UTC / main df29fb511df029a0922ace0f4973f3fe3736e502 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-cost |
 | Branch | codex/execution-cost |
-| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 初始计划 |
-| 工作树dirty状态 | 本计划文档待固定 |
+| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 6b719bd7a941c37ee27b9b9eb054b5f127183289；后续仅本status |
+| 工作树dirty状态 | 本次metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | planning |
 | 检查状态 | NOT_RUN；只读源码/一手研究及文档核对，产品未实现 |
-| 已集成main状态 / HEAD | 本计划待发布；产品尚未实现 |
+| 已集成main状态 / HEAD | 计划6b719bd已在main e785a29发布；114源实际看板已核。产品尚未实现 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/cost01-execution-cost, docs/evidence/cost01 |
 | 阶段 | M2 |
@@ -37,4 +37,4 @@
 | COST001-06 | pending | 待派工 | OTel仅出口候选 |
 | COST001-07 | pending | 独立review / Execution Lead | 大task完整验收尚未完成 |
 
-唯一source等待本批registry；不抢当前实现槽、不将排队称阻塞。
+唯一source已进入registry与实际114源看板（2026-10-06 09:20:38 UTC）；不抢当前实现槽、不将排队称阻塞。待执行工具和终端首片安全交付后细化来源归一纵向片，不新增provider探针验证字段。
