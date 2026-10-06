@@ -1,0 +1,29 @@
+.flow-plugin-management { color: var(--foreground); min-width: 0; width: 100%; }
+.flow-plugin-management section, .flow-plugin-management li, .flow-plugin-management button { min-width: 0; }
+.flow-plugin-management h2 { margin: 0; font-size: 17px; font-weight: 600; }
+.flow-plugin-management h3 { font-size: 15px; margin: 0 0 14px; }
+.flow-plugin-management h4 { font-size: 13px; margin: 16px 0 8px; }
+.flow-plugin-management p { margin: 8px 0; line-height: 1.5; }
+.flow-plugin-management header p, .flow-plugin-note, .flow-plugin-management small, .flow-plugin-management time { color: var(--muted-foreground); font-size: 12px; }
+.flow-plugin-management button { font: inherit; color: inherit; background: var(--background); border: 1px solid var(--border); border-radius: 6px; padding: 7px 10px; cursor: pointer; text-align: left; }
+.flow-plugin-management button:hover { background: var(--accent); }
+.flow-plugin-management :focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+.flow-plugin-rows, .flow-plugin-history { list-style: none; margin: 12px 0; padding: 0; }
+.flow-plugin-rows > li { border-bottom: 1px solid var(--border); }
+.flow-plugin-management .flow-plugin-row { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; border: 0; border-radius: 4px; padding: 12px 4px; }
+.flow-plugin-row > span:first-child { min-width: 0; }
+.flow-plugin-row strong, .flow-plugin-row small { display: block; overflow-wrap: anywhere; }
+.flow-plugin-row strong { font-size: 13px; font-weight: 550; }
+.flow-plugin-status { font-size: 12px; color: var(--muted-foreground); flex-shrink: 0; max-width: 45%; text-align: right; }
+.flow-plugin-list-heading, .flow-plugin-paging, .flow-plugin-history-controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.flow-plugin-list-heading { justify-content: space-between; font-size: 12px; color: var(--muted-foreground); margin-top: 18px; }
+.flow-plugin-detail { margin: 2px 0 12px; padding: 16px; border-left: 2px solid var(--border); background: var(--muted); border-radius: 0 6px 6px 0; }
+.flow-plugin-history-controls { margin-top: 18px; }
+.flow-plugin-facts { display: grid; grid-template-columns: minmax(105px, 1fr) minmax(0, 3fr); gap: 6px 16px; margin: 8px 0; font-size: 12px; line-height: 1.5; }
+.flow-plugin-facts > div { display: contents; }
+.flow-plugin-facts dt { color: var(--muted-foreground); }
+.flow-plugin-facts dd { margin: 0; overflow-wrap: anywhere; }
+.flow-plugin-history > li { padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 12px; }
+.flow-plugin-local { border-top: 1px solid var(--border); padding-top: 24px; margin-top: 28px; }
+.flow-plugin-error { color: var(--destructive); overflow-wrap: anywhere; font-size: 12px; }
+@media (max-width: 520px) { .flow-plugin-detail { padding: 12px; } .flow-plugin-management .flow-plugin-row { align-items: flex-start; } .flow-plugin-facts { grid-template-columns: minmax(90px, 1fr) minmax(0, 1.8fr); gap: 6px 10px; } }
