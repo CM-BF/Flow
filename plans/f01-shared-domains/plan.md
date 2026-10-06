@@ -19,5 +19,7 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 
 - [x] **F01-08** CHAT03执行配置公共client/export/挂载与局部消费者验证，目录配置与实际在线/生效事实分开。
 
-- [ ] **F01-09** CHAT04持久队列client、生产串行恢复扫描，与兼容Web reader成套接收。
-- [ ] **F01-10** O03受限goal工具公共client/生产挂载；native权限另O04纵向owner。
+- [x] **F01-09** CHAT04持久队列client、生产串行恢复扫描，与兼容Web reader成套接收。
+- [x] **F01-10** O03受限goal工具公共client/生产挂载；native权限另O04纵向owner。
+
+- [ ] **F01-11** O05版本化图提案公共client/导出与生产接线，保持owner授权，不冒认模型自动拆解。

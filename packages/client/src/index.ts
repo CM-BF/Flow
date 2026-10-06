@@ -1,3 +1,4 @@
+import type { GoalGraphProposalInput, GoalGraphProposalApply, GoalGraphProposalCreated, GoalGraphProposalPage, GoalGraphProposal, GoalGraphProposalApplied } from '@flow/contracts';
 import type { ExecutionProfilePublication, ExecutionProfilePublished, ExecutionProfilePage } from '@flow/contracts';
 import type { GoalToolRunAdmission, GoalToolRunAccepted, GoalToolRun, GoalToolRunRevoked, GoalToolAuditPage, GoalToolRunReference, GoalToolInputCall, GoalToolCommandCall, GoalToolSnapshotResult, GoalToolInputResult, GoalToolCommandResult } from '@flow/contracts';
 import type { ConversationQueueEnqueue, ConversationQueueCancel, ConversationQueuePause, ConversationQueueResume, ConversationQueueAccepted, ConversationQueueCancelled, ConversationQueuePaused, ConversationQueueResumed, ConversationQueuePage, ConversationQueueItemDetail } from '@flow/contracts';
@@ -78,6 +79,21 @@ export class FlowClient {
     const query = new URLSearchParams({ nodeId: options.nodeId });
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/goals/${encodeURIComponent(id)}/executions?${query}`, { signal });
+  }
+
+  createGoalGraphProposal(goalId: string, input: GoalGraphProposalInput, key: string, signal?: AbortSignal): Promise<GoalGraphProposalCreated> {
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/graph-proposals`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  goalGraphProposals(goalId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<GoalGraphProposalPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/graph-proposals${query.size ? `?${query}` : ''}`, { signal });
+  }
+  goalGraphProposal(id: string, signal?: AbortSignal): Promise<GoalGraphProposal> {
+    return this.request(`/api/goal-graph-proposals/${encodeURIComponent(id)}`, { signal });
+  }
+  applyGoalGraphProposal(id: string, input: GoalGraphProposalApply, key: string, signal?: AbortSignal): Promise<GoalGraphProposalApplied> {
+    return this.request(`/api/goal-graph-proposals/${encodeURIComponent(id)}/apply`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   admitGoalToolRun(goalId: string, input: GoalToolRunAdmission, key: string, signal?: AbortSignal): Promise<GoalToolRunAccepted> {
