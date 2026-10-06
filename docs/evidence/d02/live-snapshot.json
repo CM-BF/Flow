@@ -1,0 +1,1863 @@
+{
+  "generatedAt": "2026-10-06T01:38:52.499Z",
+  "staleAfterHours": 24,
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T01:38:52.581Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "tasks": [
+    {
+      "id": "FLOW-001",
+      "title": "产品与技术架构",
+      "role": "总体计划",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+      "branch": "codex/plan-status-review",
+      "planDir": "plans/flow-001-architecture",
+      "evidenceDir": "docs/evidence/flow-001",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:19:39.445Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.6979163888888889
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/plan-status-review",
+        "head": "58e637f891a3a3208e0282dd64bde2b04c969c1b",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T01:38:52.581Z"
+      },
+      "status": {
+        "taskId": "FLOW-001",
+        "owner": "Execution Lead / gpt-6-astra ultra",
+        "branch": "codex/plan-status-review",
+        "branchState": "依下方TODO；未提交工作不等于已交付",
+        "updatedAt": "2026-10-06T00:57:00.000Z",
+        "updatedRecord": "2026-10-06 00:57 UTC / 2026-10-06 00:57 UTC",
+        "todos": [
+          {
+            "id": "FLOW-001-T01",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "本文或既有已归档证据；见下方边界"
+          },
+          {
+            "id": "FLOW-001-T02",
+            "state": "pending",
+            "owner": "Execution Lead",
+            "evidence": "未完成，无通过结论"
+          },
+          {
+            "id": "FLOW-001-T03",
+            "state": "pending",
+            "owner": "Execution Lead",
+            "evidence": "未完成，无通过结论"
+          },
+          {
+            "id": "FLOW-001-T04",
+            "state": "pending",
+            "owner": "Execution Lead",
+            "evidence": "未完成，无通过结论"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "`3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `3995ec16ce2cbcb4d5f5e99333b86575233fd89c`（仅表示同步时观察值）",
+        "declaredDirty": "有未提交修改",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED，未获得独立approval",
+        "mainRecord": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "next": "Owner在合并此文档基线后立即核验实际branch/head并接管本status；此初始化记录不替代owner后续更新。启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。\n2026-10-06 01:14 UTC：新增 [架构改进研究](research-2026-10-05.md)，由 Goal Owner 提供官方资料结论，标记研究建议/未实测。未改冻结 M1/Web/dashboard 契约，也未新增完成标记。\n2026-10-06 01:19 UTC：[前端开发与测试工具研究](frontend-tools-2026-10-05.md)记录官方候选、真实浏览器方法与四类验收，尚无Flow接入/收益结论；不改冻结W01/D01。",
+        "risks": "- 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。\n- 应用端到端、真实harness、双主题及故障验收仍待相应feature证据，短probe不能代替。",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED — 模板待review，不构成approval。**",
+        "target": null
+      },
+      "documents": [
+        {
+          "path": "plans/flow-001-architecture/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/flow-001-architecture/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/flow-001-architecture/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/flow-001-architecture/research-2026-10-05.md",
+          "title": "架构改进研究",
+          "kind": "evidence"
+        },
+        {
+          "path": "plans/flow-001-architecture/frontend-tools-2026-10-05.md",
+          "title": "前端开发与测试工具研究",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 1,
+        "total": 4
+      },
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "FLOW-002",
+      "title": "Provider 与 Harness",
+      "role": "技术验证",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+      "branch": "codex/plan-status-review",
+      "planDir": "plans/flow-002-provider-harness",
+      "evidenceDir": "docs/evidence/flow-002",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T00:57:52.339Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-002-provider-harness/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.6979163888888889
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/plan-status-review",
+        "head": "58e637f891a3a3208e0282dd64bde2b04c969c1b",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T01:38:52.581Z"
+      },
+      "status": {
+        "taskId": "FLOW-002",
+        "owner": "Execution Lead / gpt-6-astra ultra",
+        "branch": "codex/plan-status-review",
+        "branchState": "依下方TODO；未提交工作不等于已交付",
+        "updatedAt": "2026-10-06T00:57:00.000Z",
+        "updatedRecord": "2026-10-06 00:57 UTC / 2026-10-06 00:57 UTC",
+        "todos": [
+          {
+            "id": "FLOW-002-T01",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "本文或既有已归档证据；见下方边界"
+          },
+          {
+            "id": "FLOW-002-T02",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "本文或既有已归档证据；见下方边界"
+          },
+          {
+            "id": "FLOW-002-T03",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "本文或既有已归档证据；见下方边界"
+          },
+          {
+            "id": "FLOW-002-T04",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "本文或既有已归档证据；见下方边界"
+          },
+          {
+            "id": "FLOW-002-T05",
+            "state": "pending",
+            "owner": "Execution Lead",
+            "evidence": "未完成，无通过结论"
+          },
+          {
+            "id": "FLOW-002-T06",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "本文或既有已归档证据；见下方边界"
+          },
+          {
+            "id": "FLOW-002-T07",
+            "state": "pending",
+            "owner": "Execution Lead",
+            "evidence": "未完成，无通过结论"
+          },
+          {
+            "id": "FLOW-002-T08",
+            "state": "pending",
+            "owner": "Execution Lead",
+            "evidence": "未完成，无通过结论"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "`3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `3995ec16ce2cbcb4d5f5e99333b86575233fd89c`（仅表示同步时观察值）",
+        "declaredDirty": "有未提交修改",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED，未获得独立approval",
+        "mainRecord": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "next": "Owner在合并此文档基线后立即核验实际branch/head并接管本status；此初始化记录不替代owner后续更新。启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。",
+        "risks": "- 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。\n- 应用端到端、真实harness、双主题及故障验收仍待相应feature证据，短probe不能代替。",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED — 模板待review，不构成approval。**",
+        "target": null
+      },
+      "documents": [
+        {
+          "path": "plans/flow-002-provider-harness/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/flow-002-provider-harness/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/flow-002-provider-harness/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 5,
+        "total": 8
+      },
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "FLOW-003",
+      "title": "M1 执行与验收",
+      "role": "里程碑",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+      "branch": "codex/plan-status-review",
+      "planDir": "plans/flow-003-m1-execution",
+      "evidenceDir": "docs/evidence/flow-003",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:21:25.238Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-003-m1-execution/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.2979163888888889
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/plan-status-review",
+        "head": "58e637f891a3a3208e0282dd64bde2b04c969c1b",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T01:38:52.581Z"
+      },
+      "status": {
+        "taskId": "FLOW-003",
+        "owner": "Execution Lead / gpt-6-astra ultra",
+        "branch": "codex/plan-status-review",
+        "branchState": "F00/C01/R01/L01已提交并集成验证；完整M1未完成",
+        "updatedAt": "2026-10-06T01:21:00.000Z",
+        "updatedRecord": "2026-10-06 01:21 UTC / 2026-10-06 01:21 UTC",
+        "todos": [
+          {
+            "id": "M1-A01",
+            "state": "in-progress",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "中心/runner/CLI启动与两个runner已验证，Web待交付"
+          },
+          {
+            "id": "M1-A02",
+            "state": "completed",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "真实中心重启后丢响应重试同任务，内容冲突HTTP测试通过"
+          },
+          {
+            "id": "M1-A03",
+            "state": "in-progress",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "CLI决策/真实SSE断线重连通过，浏览器关闭/重开未验收"
+          },
+          {
+            "id": "M1-A04",
+            "state": "completed",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "观察timeout不取消；显式取消/竞争/重复事件公开测试通过"
+          },
+          {
+            "id": "M1-A05",
+            "state": "in-progress",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "中心/SSE/CLI轻量引用与262KiB展开通过，Web待核对"
+          },
+          {
+            "id": "M1-A06",
+            "state": "completed",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "固定artifact版本、独立verifier和成功/验收分离通过"
+          },
+          {
+            "id": "M1-A07",
+            "state": "completed",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "queued中心重启恢复；runner退出uncertain不重派通过，不含活动透明恢复"
+          },
+          {
+            "id": "M1-A08",
+            "state": "in-progress",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "R02实际3/5小调用，系统harness闭环待合入"
+          },
+          {
+            "id": "M1-A09",
+            "state": "in-progress",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "确定性累计/去重/unknown测试通过；native系统usage待核对"
+          },
+          {
+            "id": "M1-A10",
+            "state": "in-progress",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "检查/限制已分开记录，UI/native/性能各自待交付"
+          },
+          {
+            "id": "F00",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "本文或既有已归档证据；见下方边界"
+          },
+          {
+            "id": "C01",
+            "state": "completed",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "8481168，独立review+真实PG测试；尚未集成main"
+          },
+          {
+            "id": "R01",
+            "state": "completed",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "3382637，修复outbox后独立复审通过；尚未集成main"
+          },
+          {
+            "id": "L01",
+            "state": "completed",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "1baf123，修复信号后独立复审通过；尚未集成main"
+          },
+          {
+            "id": "W01",
+            "state": "pending",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "reserved-external/awaiting-dispatch，base eacee76不变"
+          },
+          {
+            "id": "D01",
+            "state": "pending",
+            "owner": "reserved-external",
+            "evidence": "外部任务待用户派发，尚未实现；见 [plan](../d01-execution-dashboard/plan.md)"
+          },
+          {
+            "id": "R02",
+            "state": "in-progress",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "runner_owner，m1-native-harness/codex/m1-native-harness；真实调用3/5，留2次系统验收"
+          },
+          {
+            "id": "I01",
+            "state": "in-progress",
+            "owner": "Execution Lead 汇总 / 对应feature owner",
+            "evidence": "564febf：全检54/54及新5/5跨进程场景；原4场景独立review通过"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "`eacee76fa7f1b6cc46b06b57ae68458637be4a26` / `eacb5237e75abd9a0da145f8235e2b6bee6f6102`（仅表示同步时观察值）",
+        "declaredDirty": "仅本次汇总metadata待提交",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED，未获得独立approval",
+        "mainRecord": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "next": "Owner在合并此文档基线后立即核验实际branch/head并接管本status；此初始化记录不替代owner后续更新。启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。\n2026-10-06 01:21 UTC：跨任务汇总事实源已更新；[I01证据](../../docs/evidence/i01/checks.json)、[恢复边界](../../docs/architecture/recovery-boundaries.md)。新活跃LAB01由assignment_review负责，独立worktree `performance-probes` / branch `codex/performance-probes`，只做0模型/0云的两个有界toy；自身status在该worktree的 `plans/lab01-performance/status.md`。汇总不代写其状态。",
+        "risks": "- 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。\n- 应用端到端、真实harness、双主题及故障验收仍待相应feature证据，短probe不能代替。",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED — 模板待review，不构成approval。**",
+        "target": null
+      },
+      "documents": [
+        {
+          "path": "plans/flow-003-m1-execution/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/flow-003-m1-execution/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/flow-003-m1-execution/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 8,
+        "total": 18
+      },
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "OPS-001",
+      "title": "计划状态与审查规范",
+      "role": "工程协作",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+      "branch": "codex/plan-status-review",
+      "planDir": "plans/ops-001-status-review",
+      "evidenceDir": "docs/evidence/ops-001",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T00:58:34.198Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/ops-001-status-review/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.6979163888888889
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/plan-status-review",
+        "head": "58e637f891a3a3208e0282dd64bde2b04c969c1b",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T01:38:52.581Z"
+      },
+      "status": {
+        "taskId": "OPS-001",
+        "owner": "Execution Lead / gpt-6-astra",
+        "branch": "codex/plan-status-review",
+        "branchState": "依下方TODO；未提交工作不等于已交付",
+        "updatedAt": "2026-10-06T00:57:00.000Z",
+        "updatedRecord": "2026-10-06 00:57 UTC / 2026-10-06 00:57 UTC",
+        "todos": [
+          {
+            "id": "OPS-001-01",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "[结构检查](../../docs/evidence/ops-001/checks.json)：8plans/49TODO/128links，26实验文件hash未改；待提交"
+          },
+          {
+            "id": "OPS-001-02",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "[结构检查](../../docs/evidence/ops-001/checks.json)：8plans/49TODO/128links，26实验文件hash未改；待提交"
+          },
+          {
+            "id": "OPS-001-03",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "[结构检查](../../docs/evidence/ops-001/checks.json)：8plans/49TODO/128links，26实验文件hash未改；待提交"
+          },
+          {
+            "id": "OPS-001-04",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "[结构检查](../../docs/evidence/ops-001/checks.json)：8plans/49TODO/128links，26实验文件hash未改；待提交"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "`3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `3995ec16ce2cbcb4d5f5e99333b86575233fd89c`（仅表示同步时观察值）",
+        "declaredDirty": "有未提交修改",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED，未获得独立approval",
+        "mainRecord": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "next": "Owner在合并此文档基线后立即核验实际branch/head并接管本status；此初始化记录不替代owner后续更新。启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。\n独立模板复核：assignment_review（Astra）只读检查plan/status/review模板与plans规则，报告无阻塞遗漏；完整feature的commit-bound review尚待本次提交后记录，不以此冒充全实现approval。",
+        "risks": "- 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。\n- 应用端到端、真实harness、双主题及故障验收仍待相应feature证据，短probe不能代替。",
+        "decisions": ""
+      },
+      "review": {
+        "state": "unknown",
+        "record": "SCOPED_REVIEW_COMPLETE — 仅模板与plans规则范围完成只读审查，不代表应用approval。**",
+        "target": "edca9fc5fe950a05ffe1ff89e5d31686182fb38c"
+      },
+      "documents": [
+        {
+          "path": "plans/ops-001-status-review/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/ops-001-status-review/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/ops-001-status-review/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/ops-001/checks.json",
+          "title": "结构检查",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "C01",
+      "title": "控制中心",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-control-plane",
+      "branch": "codex/m1-control-plane",
+      "planDir": "plans/c01-control-plane",
+      "evidenceDir": "docs/evidence/c01",
+      "appEvidence": "apps/server/EVIDENCE.md",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:29:32.278Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-control-plane/plans/c01-control-plane/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.16458305555555555
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/m1-control-plane",
+        "head": "90f4930d402c35fdf6e0bc08cacb2a49a264d744",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T01:38:52.581Z"
+      },
+      "status": {
+        "taskId": "C01",
+        "owner": "assignment_review / gpt-6-astra",
+        "branch": "codex/m1-control-plane",
+        "branchState": "C01四项TODO完成；Execution Lead固定target独立审查无blocking，已进入I01集成分支；应用代码检查绑定实现HEAD",
+        "updatedAt": "2026-10-06T01:29:00.000Z",
+        "updatedRecord": "2026-10-06 01:29 UTC / 2026-10-06 01:26 UTC",
+        "todos": [
+          {
+            "id": "C01-01",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "fdd0cc2；重启/并发受理、幂等冲突、owner/runner角色与撤销测试"
+          },
+          {
+            "id": "C01-02",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "fdd0cc2；并发claim、重启后决策、取消实际结果、session归属、失联不重派测试"
+          },
+          {
+            "id": "C01-03",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "fdd0cc2；详情折叠、分页、独立验证、usage去重/恢复基线/未知、TCP SSE测试"
+          },
+          {
+            "id": "C01-04",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "fdd0cc2；完整pnpm check通过（14/14），clean-code及diff检查通过；Execution Lead对交付8481168的独立源代码审查无blocking"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "F00 `542f70b`；已同步公共client与计划 edca9fc / 实现HEAD `fdd0cc296819efc38ba8113bb87624b747bfb646`；交付HEAD `848116863f1c6532f5d774518bb253b0e0abdbc6`；本记录随后仅metadata提交不改变实现",
+        "declaredDirty": "核验时clean；本次仅status review事实同步待提交，文档提交后应为clean",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
+        },
+        "reviewRecord": "SCOPED_REVIEW_COMPLETE，target `848116863f1c6532f5d774518bb253b0e0abdbc6`；权威审查记录由Execution Lead维护在m1-integration的`plans/c01-control-plane/review.md`，本worktree的review模板仍为旧副本，不据此推翻已确认审查事实",
+        "mainRecord": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "next": "Execution Lead已完成独立审查与I01分支集成检查；等待其明确main合并流程，不由本owner合并。此次仅同步status事实，无实现修改或额外测试。此status为C01唯一手填事实源，等待dashboard按m1-control-plane聚合；尚未核验其展示。",
+        "risks": "- 2026-10-06 01:29 UTC只读核对Execution Lead的独立审查记录（review时间01:12，target8481168），覆盖事务/lease/连续事件/verifier/usage/HTTP。Execution Lead另报告I01集成全检54/54通过，绑定I01 target `5bdb7fa293ebd0d13515fe367f004687927f1897`；不能将其外推为全部故障或main能力。\n- 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。\n- 应用端到端、真实harness、双主题及故障验收仍待相应feature证据，短probe不能代替。\n- C01刻意保留uncertain attempt占用的容量与session，等待人工核对，不自动释放后重跑；当前没有核对UI。未测数据库硬故障、真实Claude恢复、跨机器或100+并发。SSE慢客户端会被断开，需从已交付cursor重连。",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED — 模板待review，不构成approval。**",
+        "target": null
+      },
+      "documents": [
+        {
+          "path": "plans/c01-control-plane/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/c01-control-plane/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/c01-control-plane/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "apps/server/EVIDENCE.md",
+          "title": "证据",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "R01",
+      "title": "执行 Runner",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-runner",
+      "branch": "codex/m1-runner",
+      "planDir": "plans/r01-runner",
+      "evidenceDir": "docs/evidence/r01",
+      "appEvidence": "apps/runner/EVIDENCE.md",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:18:29.916Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-runner/plans/r01-runner/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.43124972222222224
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/m1-runner",
+        "head": "2e9592854a9ad4d896b617c696b8f9db7ff84aea",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T01:38:52.581Z"
+      },
+      "status": {
+        "taskId": "R01",
+        "owner": "runner_owner / gpt-6-astra",
+        "branch": "codex/m1-runner",
+        "branchState": "review P1 修复已完成，新增并发落盘与旧前缀恢复回归通过，待提交后复审",
+        "updatedAt": "2026-10-06T01:13:00.000Z",
+        "updatedRecord": "2026-10-06 01:13 UTC / 2026-10-06 01:05 UTC",
+        "todos": [
+          {
+            "id": "R01-01",
+            "state": "completed（branch）",
+            "owner": "runner_owner",
+            "evidence": "`b393a51`：领取/心跳、独立租约失效、环境入口与SIGTERM检查通过"
+          },
+          {
+            "id": "R01-02",
+            "state": "completed（branch）",
+            "owner": "runner_owner",
+            "evidence": "`b393a51`：最终ACK丢失重报、runtime重建、拒收保留、2MiB上限检查通过"
+          },
+          {
+            "id": "R01-03",
+            "state": "completed（branch）",
+            "owner": "runner_owner",
+            "evidence": "`b393a51`：六种fixture、决策去重/拒绝/批准/取消、版本产物、独立验证状态通过"
+          },
+          {
+            "id": "R01-04",
+            "state": "completed（branch）",
+            "owner": "runner_owner",
+            "evidence": "`b393a51`：19条runner与4条公共测试、类型检查、clean-code自查通过；已提交待独立review"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "F00 `542f70ba430b3236055d736198bfd5444c684348` / 实现 `b393a5196b687bf81fd65ee7785ee198006e344b`",
+        "declaredDirty": "实现提交后干净；本状态记录作为后续文档提交，review时重新核对最终HEAD",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
+        },
+        "reviewRecord": "[review.md](review.md)，PASSED：独立 reviewer 绑定 `338263736e2cf64efd32037cfc92bcb49069d9ab` 复审通过；见下方记录",
+        "mainRecord": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "next": "实现与自查完成，已把 `b393a5196b687bf81fd65ee7785ee198006e344b` 交给 Execution Lead；本次文档提交后附最终HEAD供独立review。尚未获得review approval，尚未合并 main；R02真实harness另行派工。",
+        "risks": "- 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。\n- 应用端到端、真实harness、双主题及故障验收仍待相应feature证据，短probe不能代替。",
+        "decisions": ""
+      },
+      "review": {
+        "state": "unknown",
+        "record": "PASSED — 独立复审仅绑定 `338263736e2cf64efd32037cfc92bcb49069d9ab`，实际记录见文末。**",
+        "target": "338263736e2cf64efd32037cfc92bcb49069d9ab"
+      },
+      "documents": [
+        {
+          "path": "plans/r01-runner/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/r01-runner/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/r01-runner/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "apps/runner/EVIDENCE.md",
+          "title": "证据",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "R02",
+      "title": "原生 Harness",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-native-harness",
+      "branch": "codex/m1-native-harness",
+      "planDir": "plans/r02-native-harness",
+      "evidenceDir": "docs/evidence/r02",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:36:03.216Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-native-harness/plans/r02-native-harness/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.06458305555555556
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/m1-native-harness",
+        "head": "4b94d269de33b61cab23e840a05cb70cc00b5de3",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T01:38:52.581Z"
+      },
+      "status": {
+        "taskId": "R02",
+        "owner": "runner_owner / gpt-6-astra",
+        "branch": "codex/m1-native-harness",
+        "branchState": "已交付只读adapter与manifest入口，已验证，独立review通过",
+        "updatedAt": "2026-10-06T01:35:00.000Z",
+        "updatedRecord": "2026-10-06 01:35 UTC / 2026-10-06 01:28 UTC",
+        "todos": [
+          {
+            "id": "R02-01",
+            "state": "completed（branch e4f12ef）",
+            "owner": "runner_owner",
+            "evidence": "私有材料快照、canonical路径与逐工具ownership gate、cancel/timeout模拟通过"
+          },
+          {
+            "id": "R02-02",
+            "state": "completed（branch e4f12ef）",
+            "owner": "runner_owner",
+            "evidence": "session/保存产物/verifier、累计modelUsage与unknown恢复基线通过"
+          },
+          {
+            "id": "R02-03",
+            "state": "completed（branch e4f12ef）",
+            "owner": "runner_owner",
+            "evidence": "57/57、typecheck、diffcheck、16本地链接；独立复跑Claude/configuration 28/28与typecheck"
+          },
+          {
+            "id": "R02-04",
+            "state": "completed（branch与I01）",
+            "owner": "runner_owner",
+            "evidence": "R02原始3次未知读取/同host恢复/无历史对照；I01补2次真实批准/取消；总5/5已用完"
+          },
+          {
+            "id": "R02-05",
+            "state": "completed（branch e4f12ef）",
+            "owner": "runner_owner",
+            "evidence": "提交、证据、review与预算状态已交Lead；main集成待Lead协调"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "初始base `39f2e178df5914e2610c796bbd98537e459ea9c8` / 当前metadata HEAD `5361167b70b1b8a4dc16b6e60d99d43ada9ea607`；实现 `e4f12efbe1c2efdc4fd287dfe39a6e6949b4d1a2`，父提交 `64b4f69355bc75b2e7c7c47141c110020b3b93da`",
+        "declaredDirty": "更新前干净；本次仅规范status表格，不改实现与历史证据",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "57/57分支测试与typecheck通过；独立Claude/configuration 28/28与typecheck通过；R02+I01真实5/5预算已用完"
+        },
+        "reviewRecord": "[review.md](review.md)，PASSED，绑定实现e4f12ef与metadata a0336ca；Execution Lead/gpt-6-astra，无blocking",
+        "mainRecord": "尚未集成；`0763d4653264b09ddd355c292fc8bd88dfc3c584`；不以集成worktree验证代替main能力",
+        "next": "总5/5真实query已用完，不再调用任何模型。SDK仍发现3plugins/3skills，不声称完全隔离环境或OS沙箱；仅同host明确session恢复；取消用量unknown，不承诺撤回在途外部副作用。跨机、容量、wrapper登录修复未验证。\n独立review通过，下一步由Execution Lead协调main集成。此次review为Lead审查R02；本owner对I01新增测试/probe做独立只读review，未自审R02、未启动I01测试或再调用模型。",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "unknown",
+        "record": "PASSED — Execution Lead独立审查通过，严格绑定下列源码/集成提交。**",
+        "target": "e4f12efbe1c2efdc4fd287dfe39a6e6949b4d1a2"
+      },
+      "documents": [
+        {
+          "path": "plans/r02-native-harness/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/r02-native-harness/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/r02-native-harness/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/r02/README.md",
+          "title": "证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/r02/native-results.json",
+          "title": "R02原始3次JSON",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 5,
+        "total": 5
+      },
+      "main": {
+        "record": "尚未集成；`0763d4653264b09ddd355c292fc8bd88dfc3c584`；不以集成worktree验证代替main能力",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "L01",
+      "title": "命令行",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-cli",
+      "branch": "codex/m1-cli",
+      "planDir": "plans/l01-cli",
+      "evidenceDir": "docs/evidence/l01",
+      "appEvidence": "apps/cli/EVIDENCE.md",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:21:25.079Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-cli/plans/l01-cli/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.4979163888888889
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/m1-cli",
+        "head": "b2d55948f53ee34efaa83776402de55d57c4c684",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T01:38:52.581Z"
+      },
+      "status": {
+        "taskId": "L01",
+        "owner": "Execution Lead / gpt-6-astra",
+        "branch": "codex/m1-cli",
+        "branchState": "依下方TODO；未提交工作不等于已交付",
+        "updatedAt": "2026-10-06T01:09:00.000Z",
+        "updatedRecord": "2026-10-06 01:09 UTC / 2026-10-06 01:09 UTC",
+        "todos": [
+          {
+            "id": "L01-01",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "[CLI evidence](../../apps/cli/EVIDENCE.md)，11 CLI HTTP tests + 4 shared tests/typecheck passed；待独立review"
+          },
+          {
+            "id": "L01-02",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "[CLI evidence](../../apps/cli/EVIDENCE.md)，11 CLI HTTP tests + 4 shared tests/typecheck passed；待独立review"
+          },
+          {
+            "id": "L01-03",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "[CLI evidence](../../apps/cli/EVIDENCE.md)，11 CLI HTTP tests + 4 shared tests/typecheck passed；待独立review"
+          },
+          {
+            "id": "L01-04",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "clean-code与独立review完成；1baf123修复后16/16+typecheck通过"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "`eacee76fa7f1b6cc46b06b57ae68458637be4a26` / `1baf123e43a9be762342eb51bfe254fa7a6e60f9`（仅表示同步时观察值）",
+        "declaredDirty": "实现已提交；本记录为后续metadata提交",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVE，绑定1baf123e43a9be762342eb51bfe254fa7a6e60f9",
+        "mainRecord": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "next": "Owner在合并此文档基线后立即核验实际branch/head并接管本status；此初始化记录不替代owner后续更新。启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。",
+        "risks": "- 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。\n- 应用端到端、真实harness、双主题及故障验收仍待相应feature证据，短probe不能代替。",
+        "decisions": ""
+      },
+      "review": {
+        "state": "unknown",
+        "record": "APPROVE，独立复审完成，绑定 `1baf123e43a9be762342eb51bfe254fa7a6e60f9`。**",
+        "target": "1baf123e43a9be762342eb51bfe254fa7a6e60f9"
+      },
+      "documents": [
+        {
+          "path": "plans/l01-cli/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/l01-cli/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/l01-cli/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "apps/cli/EVIDENCE.md",
+          "title": "CLI evidence",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "W01",
+      "title": "产品 Web",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-web",
+      "branch": "codex/m1-web",
+      "planDir": "plans/w01-web",
+      "evidenceDir": "docs/evidence/w01",
+      "appEvidence": "apps/web/EVIDENCE.md",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:26:10.383Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-web/plans/w01-web/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.23124972222222223
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/m1-web",
+        "head": "b04df95821a55384c55c833e94405daaf35af8ad",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T01:38:52.581Z"
+      },
+      "status": {
+        "taskId": "W01",
+        "owner": "W01 owner / 派发 gpt-6-astra / ultra；运行时无独立型号查询接口",
+        "branch": "codex/m1-web",
+        "branchState": "completed；实现与模拟验收完成，独立review通过，等待原 Execution Lead 集成",
+        "updatedAt": "2026-10-06T01:25:00.000Z",
+        "updatedRecord": "2026-10-06 01:25 UTC / 2026-10-06 01:21 UTC",
+        "todos": [
+          {
+            "id": "W01-01",
+            "state": "completed",
+            "owner": "W01 owner",
+            "evidence": "[技能/设计/质量记录](../../docs/evidence/w01/skills-and-quality.md)"
+          },
+          {
+            "id": "W01-02",
+            "state": "completed",
+            "owner": "W01 owner",
+            "evidence": "[公共 HTTP 行为及浏览器证据](../../docs/evidence/w01/validation.md)；真实中心联调未执行"
+          },
+          {
+            "id": "W01-03",
+            "state": "completed",
+            "owner": "W01 owner",
+            "evidence": "[双主题主要状态截图](../../docs/evidence/w01/validation.md)"
+          },
+          {
+            "id": "W01-04",
+            "state": "completed",
+            "owner": "W01 owner",
+            "evidence": "[窄屏/键盘/长记录/减少动画及5浏览器测试](../../docs/evidence/w01/validation.md)；[独立review APPROVED实现866c20e](review.md)"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "`eacee76fa7f1b6cc46b06b57ae68458637be4a26` / 实现 `866c20e8462f295736f685541e2ecb9ba8639101`",
+        "declaredDirty": "clean（交付metadata提交后核验）；根 lock 已恢复；实时git事实由D01采样",
+        "checks": {
+          "state": "passed",
+          "target": "866c20e8462f295736f685541e2ecb9ba8639101",
+          "record": "PASSED；实现 866c20e8462f295736f685541e2ecb9ba8639101：全仓typecheck、13 tests、build、5 browser tests；HTTP fixture范围"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED target `866c20e8462f295736f685541e2ecb9ba8639101`；metadata HEAD不自动继承",
+        "mainRecord": "NOT_INTEGRATED；`0763d4653264b09ddd355c292fc8bd88dfc3c584` 于01:21 UTC实际只读核验main；W01 未 merge main",
+        "next": "协调者已独立APPROVED实现 `866c20e8462f295736f685541e2ecb9ba8639101`。原 Execution Lead 统一集成manifest对应根lock、跨任务索引和真实中心联调；本owner不合并main。共享变更清单仅根lock集成和计划索引状态更新。",
+        "risks": "- 无阻塞实现项。真实中心/runner/harness 联调、真实数据库持久受理、真实模型与跨机恢复未执行。\n- 根锁由原 Execution Lead 统一集成；不得把此分支检查当 main 能力。\n- 独立 review W01-R1 P2已由866c20e修复并独立复审关闭；约定范围无剩余blocking finding。",
+        "decisions": "无；这两项feature已授权实施，现有未验证项由工程集成继续推进。"
+      },
+      "review": {
+        "state": "outdated",
+        "record": "独立 review 绑定旧提交，当前 HEAD 未获 approval。",
+        "target": "866c20e8462f295736f685541e2ecb9ba8639101"
+      },
+      "documents": [
+        {
+          "path": "plans/w01-web/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/w01-web/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/w01-web/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/w01/validation.md",
+          "title": "检查与截图",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/w01/skills-and-quality.md",
+          "title": "技能/设计/质量记录",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/w01/browser-results.json",
+          "title": "浏览器机器结果",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/w01/dependency-lock.patch",
+          "title": "依赖patch",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/w01/production-smoke.json",
+          "title": "生产构建冒烟",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "main": {
+        "record": "NOT_INTEGRATED；`0763d4653264b09ddd355c292fc8bd88dfc3c584` 于01:21 UTC实际只读核验main；W01 未 merge main",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "D01",
+      "title": "工程进度",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard",
+      "branch": "codex/execution-dashboard",
+      "planDir": "plans/d01-execution-dashboard",
+      "evidenceDir": "docs/evidence/d01",
+      "appEvidence": "apps/execution-dashboard/EVIDENCE.md",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:26:38.596Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.23124972222222223
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/execution-dashboard",
+        "head": "6783562696cd268274398a02ebd3dff41aed2ce0",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T01:38:52.581Z"
+      },
+      "status": {
+        "taskId": "D01",
+        "owner": "d01_owner / gpt-6-astra ultra",
+        "branch": "codex/execution-dashboard",
+        "branchState": "completed（branch）；实现和验证完成，独立 review 已通过实现 target，等待原 Execution Lead 集成",
+        "updatedAt": "2026-10-06T01:25:00.000Z",
+        "updatedRecord": "2026-10-06 01:25 UTC / 2026-10-06 01:25 UTC",
+        "todos": [
+          {
+            "id": "D01-01",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "worktree/branch/base/clean已核验，已读本地技能及固定来源；[技能与质量](../../docs/evidence/d01/quality.md)"
+          },
+          {
+            "id": "D01-02",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "权威9源只读聚合、JSON、未知/缺失/过期/冲突、Git/main/review分离；[Node10/10](../../docs/evidence/d01/node-tests.txt)"
+          },
+          {
+            "id": "D01-03",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "本地网页、资料下钻、完整浅深主题、主题tokens；[启动说明](../../apps/execution-dashboard/README.md)、[浅色](../../docs/evidence/d01/dashboard-light.png)、[深色](../../docs/evidence/d01/dashboard-dark.png)"
+          },
+          {
+            "id": "D01-04",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "临时样本与真实只读smoke、6组浏览器检查、390px/键盘/减少动画、独立review；[验证记录](../../docs/evidence/d01/validation.md)、[浏览器JSON](../../docs/evidence/d01/browser-checks.json)"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "`eacee76fa7f1b6cc46b06b57ae68458637be4a26` / `9c236c5f86b197c3e262a6b197f21ba2371ab9b0`（实现候选；之后仅交付 metadata，最终 HEAD 另行回传）",
+        "declaredDirty": "实现树 clean；本次 plan/status/review/证据 metadata 待提交，交付时用实时 Git 核验 clean",
+        "checks": {
+          "state": "passed",
+          "target": "9c236c5f86b197c3e262a6b197f21ba2371ab9b0",
+          "record": "PASSED；实现 target `9c236c5f86b197c3e262a6b197f21ba2371ab9b0`；Node24 10/10、浏览器6组、语法/diff检查通过；后续 metadata 不自动继承当前提交测试"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED，仅 target `9c236c5f86b197c3e262a6b197f21ba2371ab9b0`；新 metadata HEAD 不自动继承全量 approval",
+        "mainRecord": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；D01 未集成，未 merge main",
+        "next": "原 Execution Lead 取 D01 分支提交并协调跨任务索引更新；共享协调清单：更新 `plans/README.md` 与原交接的 reserved-external / awaiting-dispatch 总索引；D01 无生产依赖或根 lock 修改。workspace lock 随 W01 由 Lead 集成；登记继续冻结交接9任务，新 R02/I01 需 Lead 明确登记后再扩展。独立 review 只覆盖上述实现 target，metadata 不自动继承；不合并 main。资料和检查入口见 [review](review.md) 与 [验证记录](../../docs/evidence/d01/validation.md)。",
+        "risks": "无阻塞。未验证 Safari/Firefox、屏幕阅读器人工验收、多用户远程部署和恶意并发文件系统替换。当前 JSON 为只读观察，没有保证跨文件原子快照。main 未集成，不代表产品中心或 W01 真实联调通过。保守解析未识别字段为未知；24小时未更新默认待同步。",
+        "decisions": "无新增事项。外部双任务已授权实施；按原 Execution Lead 的集成流程继续。"
+      },
+      "review": {
+        "state": "outdated",
+        "record": "独立 review 绑定旧提交，当前 HEAD 未获 approval。",
+        "target": "9c236c5f86b197c3e262a6b197f21ba2371ab9b0"
+      },
+      "documents": [
+        {
+          "path": "plans/d01-execution-dashboard/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/d01-execution-dashboard/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/d01-execution-dashboard/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/d01/validation.md",
+          "title": "验证记录",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d01/quality.md",
+          "title": "技能/clean-code",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d01/node-tests.txt",
+          "title": "Node10/10",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d01/dashboard-light.png",
+          "title": "浅色",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d01/dashboard-dark.png",
+          "title": "深色",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d01/browser-checks.json",
+          "title": "浏览器JSON",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d01/dashboard-light-narrow.png",
+          "title": "浅色窄屏",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d01/dashboard-dark-narrow.png",
+          "title": "深色窄屏",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d01/live-smoke.json",
+          "title": "live-smoke.json",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；D01 未集成，未 merge main",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "I01",
+      "title": "M1 集成验收",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-integration",
+      "branch": "codex/m1-integration",
+      "planDir": "plans/i01-integration",
+      "evidenceDir": "docs/evidence/i01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:36:35.694Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-integration/plans/i01-integration/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.04791638888888889
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/m1-integration",
+        "head": "db60ac6593d56181b5d8dbc0d21940354db4319e",
+        "dirty": true,
+        "changedFiles": 1,
+        "observedAt": "2026-10-06T01:38:52.590Z"
+      },
+      "status": {
+        "taskId": "I01",
+        "owner": "Execution Lead / gpt-6-astra ultra",
+        "branch": "codex/m1-integration",
+        "branchState": "in-progress；C01/R01/L01/R02/W01/D01/LAB01交付已接收合入，正在真实Web闭环",
+        "updatedAt": "2026-10-06T01:36:00.000Z",
+        "updatedRecord": "2026-10-06 01:36 UTC / 2026-10-06 01:34 UTC",
+        "todos": [
+          {
+            "id": "I01-01",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "C01/R01/L01实现及修复独立审查通过，见各review"
+          },
+          {
+            "id": "I01-02",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "5项真实PG/TCP/独立runner与CLI进程检查及SSE重连；6434fba独立重跑5/5通过"
+          },
+          {
+            "id": "I01-03",
+            "state": "in-progress",
+            "owner": "Execution Lead",
+            "evidence": "W01已接收b04df958，独立APPROVED实现866c20e；HTTP fixture证据已完成，真实Web关闭/CLI决策/重连正在验证"
+          },
+          {
+            "id": "I01-04",
+            "state": "completed",
+            "owner": "Execution Lead",
+            "evidence": "[native系统原始证据](../../docs/evidence/i01/native-system.json)：真实approve验证产物、cancel无产物；R02三项对照另见其报告；模型预算5/5已用完"
+          },
+          {
+            "id": "I01-05",
+            "state": "in-progress",
+            "owner": "Execution Lead",
+            "evidence": "cleanup P2已解决、端口冲突已修复；最终Web整合检查/review和main集成待完成"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "`647d57b4dfe84cfc242875ae010ac2d491ee80c8` / `c11ff52079c28c9a26c56528e5e11f046e46f1dd`",
+        "declaredDirty": "本次根lock集成与状态更新待提交；实时Git由dashboard读取",
+        "checks": {
+          "state": "failed",
+          "target": "6434fba78bba5097376555a66114462f5432ca25",
+          "record": "FAILED；`6434fba78bba5097376555a66114462f5432ca25`全检83/84、typecheck通过；唯一4320端口冲突已由948e6bc改动态端口，受影响SSE检查1/1通过；新增Web后全检待执行"
+        },
+        "reviewRecord": "[review.md](review.md)；已有5个确定性场景及native cleanup独立复核；真实Web整合待review",
+        "mainRecord": "NOT_INTEGRATED；`0763d4653264b09ddd355c292fc8bd88dfc3c584`，应用尚未合入main",
+        "next": "真实Web提交到PG持久受理，关闭整个浏览器，独立runner继续，CLI对同task决策/取消，新浏览器验证同attempt产物版本与独立验证；两主题截图与真实进程证据。通过后完成差异独立review及main集成。M1是持久执行基础，M2再验收统一跨任务决策/解释入口，不能据M1宣称最终心流体验实现。",
+        "risks": "端口冲突已解除，当前无需要用户决定的阻塞。完整Web真实中心旅程、根lock集成后总检查与最终独立review尚未完成。不证明DB硬故障/掉电、跨机、真实模型容量。运行中中心失联会保守中断adapter，uncertain保留占用且没有受审计核对恢复入口，见[恢复边界](../../docs/architecture/recovery-boundaries.md)。原生插件/技能仍加载，不能声称OS隔离或资源全部关闭。",
+        "decisions": "无。"
+      },
+      "review": {
+        "state": "not_started",
+        "record": "SCOPED_APPROVE，限固定提交的4个确定性集成场景；完整M1未审查完成。**",
+        "target": null
+      },
+      "documents": [
+        {
+          "path": "plans/i01-integration/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/i01-integration/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/i01-integration/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/i01/native-system.json",
+          "title": "native系统原始证据",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 3,
+        "total": 5
+      },
+      "main": {
+        "record": "NOT_INTEGRATED；`0763d4653264b09ddd355c292fc8bd88dfc3c584`，应用尚未合入main",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "LAB01",
+      "title": "性能样例",
+      "role": "技术验证",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/performance-probes",
+      "branch": "codex/performance-probes",
+      "planDir": "plans/lab01-performance",
+      "evidenceDir": "docs/evidence/lab01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:36:30.492Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/performance-probes/plans/lab01-performance/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.04791638888888889
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/performance-probes",
+        "head": "5d55db1328fecf4c06863b8905e8189ecbf6eae6",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T01:38:52.591Z"
+      },
+      "status": {
+        "taskId": "LAB01",
+        "owner": "assignment_review / gpt-6-astra",
+        "branch": "codex/performance-probes",
+        "branchState": "completed（branch）；两个vanilla样例、80正式样本+8预热、四张截图与报告完成；固定实现独立方法review APPROVED",
+        "updatedAt": "2026-10-06T01:36:00.000Z",
+        "updatedRecord": "2026-10-06 01:36 UTC / 2026-10-06 01:36 UTC",
+        "todos": [
+          {
+            "id": "LAB01-01",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "全部timeline身份/正文摘要、展开SHA、8192事件/128最终状态/实际DOM一致"
+          },
+          {
+            "id": "LAB01-02",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "[原始数据](../../docs/evidence/lab01/results.json) 每策略20有效样本；[重算](../../docs/evidence/lab01/checks.json) p50/p95与源码摘要一致"
+          },
+          {
+            "id": "LAB01-03",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "desktop/narrow×浅深四图已逐一查看，无横向溢出；[报告与图](../../docs/evidence/lab01/README.md)"
+          },
+          {
+            "id": "LAB01-04",
+            "state": "completed",
+            "owner": "assignment_review",
+            "evidence": "`f226c42dba577053f64a14dcf213180bf150f66d`已提交；Execution Lead固定实现独立方法审查APPROVED，无blocking"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "base `5bdb7fa293ebd0d13515fe367f004687927f1897`；当前metadata `0cf96179a8538bb5da1aace952e008304102dd9e`；实现/证据 `f226c42dba577053f64a14dcf213180bf150f66d`",
+        "declaredDirty": "核验时clean，本次仅规范status/review字段，不改变测量源码/JSON/截图",
+        "checks": {
+          "state": "passed",
+          "target": "f226c42dba577053f64a14dcf213180bf150f66d",
+          "record": "PASSED `f226c42dba577053f64a14dcf213180bf150f66d`；样本正确性/摘要/分位数重算、语法、链接、截图检查通过，后续metadata不声称重跑"
+        },
+        "reviewRecord": "[review](review.md)：APPROVED，Execution Lead独立只读方法审查，仅实现target `f226c42dba577053f64a14dcf213180bf150f66d`",
+        "mainRecord": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；LAB01未集成",
+        "next": "Execution Lead已批准固定实现及既有证据，独立重算统计/hash并查看2张图，无重跑benchmark。等待lead集成安排；不合并main。全局索引由lead维护。本status是本任务唯一手填进度源，等待D01按此权威worktree聚合，尚未核验dashboard展示。",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "outdated",
+        "record": "独立 review 绑定旧提交，当前 HEAD 未获 approval。",
+        "target": "f226c42dba577053f64a14dcf213180bf150f66d"
+      },
+      "documents": [
+        {
+          "path": "plans/lab01-performance/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/lab01-performance/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/lab01-performance/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/lab01/README.md",
+          "title": "结果报告",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/lab01/results.json",
+          "title": "原始数据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/lab01/checks.json",
+          "title": "重算",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；LAB01未集成",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "LAB02",
+      "title": "多观察端样例",
+      "role": "技术验证",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/observer-probes",
+      "branch": "codex/observer-probes",
+      "planDir": "plans/lab02-observer-probes",
+      "evidenceDir": "docs/evidence/lab02",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:38:19.266Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/observer-probes/plans/lab02-observer-probes/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.014583055555555556
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/observer-probes",
+        "head": "6434fba78bba5097376555a66114462f5432ca25",
+        "dirty": true,
+        "changedFiles": 2,
+        "observedAt": "2026-10-06T01:38:52.596Z"
+      },
+      "status": {
+        "taskId": "LAB02",
+        "owner": "runner_owner / gpt-6-astra",
+        "branch": "codex/observer-probes",
+        "branchState": "in-progress；已建立隔离 worktree，未运行 benchmark",
+        "updatedAt": "2026-10-06T01:38:00.000Z",
+        "updatedRecord": "2026-10-06 01:38 UTC / 2026-10-06 01:28 UTC",
+        "todos": [
+          {
+            "id": "LAB02-T01",
+            "state": "completed",
+            "owner": "runner_owner",
+            "evidence": "独立 worktree / base 核验；本地 skills 与候选源阅读"
+          },
+          {
+            "id": "LAB02-T02",
+            "state": "in-progress",
+            "owner": "runner_owner",
+            "evidence": "实现前计划已建立"
+          },
+          {
+            "id": "LAB02-T03",
+            "state": "pending",
+            "owner": "runner_owner",
+            "evidence": "未运行"
+          },
+          {
+            "id": "LAB02-T04",
+            "state": "pending",
+            "owner": "runner_owner",
+            "evidence": "交付前执行"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "`6434fba78bba5097376555a66114462f5432ca25` / 同基线",
+        "declaredDirty": "本任务计划和脚本开发中",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "frozen install 通过；测量尚未执行"
+        },
+        "reviewRecord": "NOT_STARTED；[模板](review.md)，无 approval",
+        "mainRecord": "未集成；`0763d4653264b09ddd355c292fc8bd88dfc3c584`",
+        "next": "无模型调用；预算 5/5 已耗尽。共享主机短样本不能代表容量，pool 等待未测。先完成有界脚本和类型检查，再在独立 flow_lab02 上测量。证据与质量记录见 [README](../../docs/evidence/lab02/README.md)。",
+        "risks": "无模型调用；预算 5/5 已耗尽。共享主机短样本不能代表容量，pool 等待未测。先完成有界脚本和类型检查，再在独立 flow_lab02 上测量。证据与质量记录见 [README](../../docs/evidence/lab02/README.md)。",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED — 模板待review，不构成approval。**",
+        "target": null
+      },
+      "documents": [
+        {
+          "path": "plans/lab02-observer-probes/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/lab02-observer-probes/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/lab02-observer-probes/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/lab02/README.md",
+          "title": "证据",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 1,
+        "total": 4
+      },
+      "main": {
+        "record": "未集成；`0763d4653264b09ddd355c292fc8bd88dfc3c584`",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    },
+    {
+      "id": "D02",
+      "title": "进度来源同步",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-progress-sync",
+      "branch": "codex/dashboard-progress-sync",
+      "planDir": "plans/d02-progress-sync",
+      "evidenceDir": "docs/evidence/d02",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:38:52.423Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-progress-sync/plans/d02-progress-sync/status.md",
+        "syncedAt": "2026-10-06T01:38:52.499Z",
+        "stale": false,
+        "ageHours": 0.014583055555555556
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/dashboard-progress-sync",
+        "head": "6783562696cd268274398a02ebd3dff41aed2ce0",
+        "dirty": true,
+        "changedFiles": 5,
+        "observedAt": "2026-10-06T01:38:52.597Z"
+      },
+      "status": {
+        "taskId": "D02",
+        "owner": "assignment_review / gpt-6-astra",
+        "branch": "codex/dashboard-progress-sync",
+        "branchState": "in-progress，R02/I01/LAB01/LAB02/D02已登记，末次真实HTTP核对进行中",
+        "updatedAt": "2026-10-06T01:38:00.000Z",
+        "updatedRecord": "2026-10-06 01:38 UTC / 2026-10-06 01:38 UTC",
+        "todos": [
+          {
+            "id": "D02-01",
+            "state": "in-progress",
+            "owner": "assignment_review",
+            "evidence": "五个新增来源已核对唯一owner/实际路径；LAB02 owner确认实现中、未测"
+          },
+          {
+            "id": "D02-02",
+            "state": "in-progress",
+            "owner": "assignment_review",
+            "evidence": "[Node10/10](../../docs/evidence/d02/node-tests.txt)，[首轮HTTP核对](../../docs/evidence/d02/live-checks.json)；LAB02已确认，末次固化中"
+          },
+          {
+            "id": "D02-03",
+            "state": "in-progress",
+            "owner": "assignment_review",
+            "evidence": "技能已读，clean-code与证据整理中，尚未交付"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "`6783562696cd268274398a02ebd3dff41aed2ce0`；开工核验clean",
+        "declaredDirty": "本次计划/登记实现进行中",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN；尚无已提交实现target；未提交代码Node10/10与动态端口HTTP首轮通过，见证据"
+        },
+        "reviewRecord": "[review](review.md)，NOT_STARTED",
+        "mainRecord": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；D02未集成",
+        "next": "登记、必要Node测试和真实snapshot；当前4320旧实例不动，使用独立动态端口。",
+        "risks": "无阻塞；来源文件并发更新不构成原子快照，记录获取时间/实际HEAD。unknown及metadata review target差异保持保守。新UI/浏览器/模型测试不在范围。",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED。模板不是approval。",
+        "target": null
+      },
+      "documents": [
+        {
+          "path": "plans/d02-progress-sync/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/d02-progress-sync/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/d02-progress-sync/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/d02/node-tests.txt",
+          "title": "Node10/10",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d02/live-checks.json",
+          "title": "首轮HTTP核对",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 0,
+        "total": 3
+      },
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；D02未集成",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      }
+    }
+  ],
+  "milestones": {
+    "taskId": "FLOW-003",
+    "current": true,
+    "todos": [
+      {
+        "id": "M1-A01",
+        "state": "in-progress",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "中心/runner/CLI启动与两个runner已验证，Web待交付"
+      },
+      {
+        "id": "M1-A02",
+        "state": "completed",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "真实中心重启后丢响应重试同任务，内容冲突HTTP测试通过"
+      },
+      {
+        "id": "M1-A03",
+        "state": "in-progress",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "CLI决策/真实SSE断线重连通过，浏览器关闭/重开未验收"
+      },
+      {
+        "id": "M1-A04",
+        "state": "completed",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "观察timeout不取消；显式取消/竞争/重复事件公开测试通过"
+      },
+      {
+        "id": "M1-A05",
+        "state": "in-progress",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "中心/SSE/CLI轻量引用与262KiB展开通过，Web待核对"
+      },
+      {
+        "id": "M1-A06",
+        "state": "completed",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "固定artifact版本、独立verifier和成功/验收分离通过"
+      },
+      {
+        "id": "M1-A07",
+        "state": "completed",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "queued中心重启恢复；runner退出uncertain不重派通过，不含活动透明恢复"
+      },
+      {
+        "id": "M1-A08",
+        "state": "in-progress",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "R02实际3/5小调用，系统harness闭环待合入"
+      },
+      {
+        "id": "M1-A09",
+        "state": "in-progress",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "确定性累计/去重/unknown测试通过；native系统usage待核对"
+      },
+      {
+        "id": "M1-A10",
+        "state": "in-progress",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "检查/限制已分开记录，UI/native/性能各自待交付"
+      },
+      {
+        "id": "F00",
+        "state": "completed",
+        "owner": "Execution Lead",
+        "evidence": "本文或既有已归档证据；见下方边界"
+      },
+      {
+        "id": "C01",
+        "state": "completed",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "8481168，独立review+真实PG测试；尚未集成main"
+      },
+      {
+        "id": "R01",
+        "state": "completed",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "3382637，修复outbox后独立复审通过；尚未集成main"
+      },
+      {
+        "id": "L01",
+        "state": "completed",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "1baf123，修复信号后独立复审通过；尚未集成main"
+      },
+      {
+        "id": "W01",
+        "state": "pending",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "reserved-external/awaiting-dispatch，base eacee76不变"
+      },
+      {
+        "id": "D01",
+        "state": "pending",
+        "owner": "reserved-external",
+        "evidence": "外部任务待用户派发，尚未实现；见 [plan](../d01-execution-dashboard/plan.md)"
+      },
+      {
+        "id": "R02",
+        "state": "in-progress",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "runner_owner，m1-native-harness/codex/m1-native-harness；真实调用3/5，留2次系统验收"
+      },
+      {
+        "id": "I01",
+        "state": "in-progress",
+        "owner": "Execution Lead 汇总 / 对应feature owner",
+        "evidence": "564febf：全检54/54及新5/5跨进程场景；原4场景独立review通过"
+      }
+    ]
+  }
+}
