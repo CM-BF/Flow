@@ -103,3 +103,21 @@ Dashboard最近独立观察2026-10-06T02:31:15.901Z：4320仍17源，W01 actual 
 
 
 Host接口协调：M02已接受interface.md的ports/exports方向，P01进入实现。管理者发现局部ExtensionSlot context与global getContext可能不一致，要求hostUI绑定本次invocation上下文并验证args资源匹配，覆盖active A时B行action；ResourceContext实际判别kind/message/composer/reference身份。HostPort Promise<void>可throw，PluginHost返回OperationResult，两层约定分清。这两项属于同接口澄清，不另造协议，双方已收到；composer无安全接缝时明确unsupported不成功noop。完整接口/实现冻结记录由P01 owner维护。
+
+
+## RS14 多chat SSE连接占用：从假设到确认缺陷
+
+初始调查假设：W01所有曾打开未关闭chat均保持TaskProjection.watch，包括terminal；FlowClient fetch SSE，中心HTTP/1持续keepalive/查询。MDN[Using SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)说明非HTTP/2浏览器同源连接限制。不能以Node HTTP并发测试代替浏览器证明。
+
+随后root独立CUA在63182实际复现并定为P2 blocking：空会话依次打开Independent task13至8，共6个Live未关闭chat；再开demo-queued，任务区空并最终signal timed out。关闭13释放一条，再关闭失败queued/重开，queued即时正常Live。关闭的只是观察/视图，无任务取消副作用；这是有关闭视图workaround的网络功能阻塞。
+
+根将修复交M02唯一App owner，不由P01重复改旧W01。方向为实际可见pane观察、后台summary由workspace供给或其他经验证方案；需7–8chat真实浏览器复验show/decision/feed/重开catch-up、观察数与关tab不cancel。旧cb4历史review结论按当时检查保留，review追加后发现；本轮交付不能继续无保留称零blocking。管理者已明确通知原Goal Owner/Lead，待修复SHA与独立复验。
+
+
+## RS15 局部UX与连接范围集成验收
+
+原Goal Owner低优先观察：真实中心reconnected-completed-light.png已Completed/Verified仍显示accepted task continues at center。root只读TaskThread.tsx264–270确认terminal也落此文案，已交M02唯一apps/web owner做准确结束语义且验证状态分离。artifact-dark-narrow.png活动正文与可见tab标签不一致；源码controlled effect仅更新focusedTab，仍须窄屏浏览器实证后再列confirmed bug。两项仅对应状态/窄屏检查，不重复全套，P01不并发写旧组件；SSE修复优先。
+
+P01×M02连接范围：root接口审读要求App断开/换中心dispose或generation失效旧host/ports/contributions，旧async activation/command/render闭包不能用新连接复活，尤其同taskId跨中心；host提供注册/清理机制，M02绑定connection epoch并重验bridge。测试旧host完全清理、新连接host分离，不把token放context、不改公共API。已交两owner。
+
+SSE验收补充来自原Goal Owner并直接交M02：连接池跨同浏览器同origin页面，补2page、hidden恢复与2split局部检查，留命令/详情预算；退订不重置decision/cancel幂等ACK，HTTP2不是唯一修复。跨多窗口集中预算归B01后续，不在当前临时引SharedWorker/BroadcastChannel；所有新结果仍待owner证据与root独立复验。

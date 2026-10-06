@@ -24,6 +24,8 @@ React.lazy会缓存load Promise/rejection；仅reset ErrorBoundary不保证重�
 
 原Goal Owner定向增量：后续用固定1/16/128合成task连续更新，同时实际输入与滚动，记录输入延迟/render数/long tasks/attention出现延迟。保持每task独立projection、未变对象与可见片区窄订阅；不指望startTransition把external mutation变非阻塞，不为猜测引状态库或全量机械memo。此为UI合成负载而非agent容量证明；现阶段M02/P01继续。
 
+优先正确性发现：root已用7chat浏览器复现HTTP/1 SSE连接占满，P2 blocking，修复归当前M02 App owner；性能轮保留观察请求数/可见pane预算回归，不等待bundle优化。Node并发测试不替代浏览器连接池证明，停观察不可cancel任务或重置幂等ACK；当前补2page/hidden恢复/2split的实际局部验收。跨多窗口集中预算留主线B01后续，当前不引SharedWorker/BroadcastChannel。具体步骤见研究RS14。
+
 ## TODO
 
 - [ ] **WPF-PERF01-01** 记录新W01生产体积、依赖使用和固定环境/fixture交互基线。

@@ -14,7 +14,7 @@
 | 优先级 | 2 |
 | 当前产出 | 36条需求追溯、唯一owner转交、正式W01交付与两新feature独立派工 |
 | 下一可用交付 | WPF-M02工作总览预览与WPF-P01冻结接口/host候选 |
-| 当前阻塞 | NONE |
+| 当前阻塞 | ACTIVE: 7chat的HTTP/1 SSE占满已复现P2；M02 owner修复与独立浏览器复验前不能无保留交付 |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/integration-checklist.md,docs/evidence/web-platform/research.md |
@@ -26,9 +26,9 @@
 | --- | --- | --- | --- |
 | WPF-001-01 | completed | d01_owner | [plan](plan.md)含U00～U07原话/准确转述及WPF-REQ-01～36 |
 | WPF-001-02 | completed | d01_owner | 四个子计划登记（plugin/M02已转独立owner唯一三件套；dashboard协作/性能留管理树），owner边界、接口及依赖已落盘；无编号冲突 |
-| WPF-001-03 | in-progress | d01_owner | panels最终组件46a1dbd获独立APPROVED并已接齐；W01实现cb4a392整体APPROVED，最终metadata a22ae38已报Lead，等待主线集成 |
+| WPF-001-03 | in-progress | d01_owner | panels最终组件46a1dbd获独立APPROVED并已接齐；W01历史cb4a392已审；后发现7chat SSE P2归M02修复，已通知Lead，需修复复验后闭环 |
 | WPF-001-04 | in-progress | d01_owner | [来源集成清单](../../docs/evidence/web-platform/integration-checklist.md)已发主线Goal Owner；等待D03登记与只读核验 |
-| WPF-001-05 | in-progress | d01_owner | WPF-P01为X01 Web子项，新树web-plugin-host基线0673653已核验，唯一status转至plans/wpf-p01-plugin-host；typed接口已由M02接受方向并进入实现；局部invocation context与判别类型正在最后对齐，无外部阻塞 |
+| WPF-001-05 | in-progress | d01_owner | WPF-P01为X01 Web子项，新树web-plugin-host基线0673653已核验，唯一status转至plans/wpf-p01-plugin-host；typed接口v1已对齐判别context/局部invocation并进入实现；新增跨中心旧host失效回归，不阻塞独立模块开发 |
 | WPF-001-06 | pending | d01_owner | WPF-PERF01排队；W01已报告新JS总1.08MB/gzip323KB，待读取正式证据并选实测瓶颈，不把体积当验收 |
 | WPF-001-07 | in-progress | d01_owner | [WPF-M02](unified-workspace/plan.md)已建立，M02 e888862只读核验clean，已复用panels owner正式派发web-unified-workspace独立树；W01 cb4a392+完整M02 e888862输入，新树merge c0c41f988已回报，唯一status已转交 |
 
@@ -46,7 +46,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-无需要用户批准的新事项。M02主线受控main已8c57f2f，包含已审>200投影因果修复；两新owner已通知安全停点受控合入，不reset、不自行解共享/lock冲突。W01整体review已通过；新feature不继承该approval，后续修复须明确commit同步。管理源尚未注册4320；nested子计划路径仍受限。完整plugin全栈由X01协调，真实PTY/fs请求BR-01未接收实现SHA，当前UI不伪造。
+无需要用户批准的新事项。M02主线受控main已8c57f2f，包含已审>200投影因果修复；两新owner已通知安全停点受控合入，不reset、不自行解共享/lock冲突。W01历史review通过后新发现7chat SSE P2，root已独立复现并交M02修复；历史approval不覆盖该边界，新修复须绑定SHA复验。管理源尚未注册4320；nested子计划路径仍受限。完整plugin全栈由X01协调，真实PTY/fs请求BR-01未接收实现SHA，当前UI不伪造。
 
 ## 需要用户决定
 
