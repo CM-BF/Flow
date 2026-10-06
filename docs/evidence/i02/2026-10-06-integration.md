@@ -172,3 +172,10 @@ O08 prepared7403 and native fixed75ff/metadataacaa accepted from GO independent 
 ## 2026-10-06 07:38 UTC Web stream模块候选
 
 受控原样接收3ac11cba/metadata63b7a302：3个新模块+2tests逐hash与Web独审target一致（原54检查复用），当前含ActivityI的组合Web typecheck exit0。模块尚未接App，无新browser/HTTP/provider结论。main仍固定b54供SVC02已授窗口，不提前发布本候选。
+
+
+## 2026-10-06 07:43 UTC — 流式模块与消息复用候选
+
+接收 Web 独审 `3ac11cba14ce8baac3b3a769c19827f6343ca4a7`（3 个独立 stream 模块/2 测试）及 `f909d32f5fcff5b0ac6408dc96e8630bfeffae4e`（immutable turn 的消息转换复用/2 检查文件）。8 个源码逐字节等于各自固定审批 target。stream 模块直接消费 conversationMessages，所以仅运行这条组合：3 文件 62/62（22+32+8），Web typecheck exit0。原输出与摘要见 [组合回执](stream-reuse-integration-receipt.json)。未重跑 browser/性能负载，无 provider 调用；转换次数减少不代表浏览器延迟改善。clean-code 复核模块接口、不可变输入和错误边界，无新实现或待修项。
+
+当前仅候选，main 固定 b54 供 SVC02 窗口；不在 refresh/resume 期间推进 main。stream 模块尚未接入 App，不称用户已看到逐段正文。

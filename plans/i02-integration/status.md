@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:27 UTC / 2026-10-06 07:27 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:43 UTC / 2026-10-06 07:43 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 253b8ad38fd869297e7d9948a26c1d310fef5c6c / 本批仅管理登记与交付回执 |
+| 工作基线 / HEAD | b54de1dbb08e3ccc7d33a27295a318f2799e76ae / stream 与消息转换复用的已审组合候选 |
 | 工作树dirty状态 | 候选已提交；当前交付记录整理 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；87源唯一性/三件套/parser校验，本批相对253b无产品实现变化；不重跑工程 |
-| 已集成main状态 / HEAD | 253b8ad38fd869297e7d9948a26c1d310fef5c6c 已含聊天工具活动主界面及原生图验收证据；本批87源和owner回执待fast-forward。个人center/runner仍fb906。 |
+| 检查状态 | PASSED；已审 stream/reuse 8 源逐字相同，直接组合 62/62 与 Web typecheck；无模型调用 |
+| 已集成main状态 / HEAD | b54de1dbb08e3ccc7d33a27295a318f2799e76ae 已含聊天活动主界面及87源；个人新版本已启动并保持 maintenance，待明确 resume。stream/reuse 仍候选，main 保持冻结。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 聊天中查看工具和推理详情的界面已发布；真实入口正在准备安全更新。 |
-| 下一可用交付 | 把已完成的聊天改进更新到真实入口，逐段正文显示继续实施。 |
+| 当前产出 | 聊天中查看工具和推理详情的界面已发布；真实入口的新版本已启动，正在核对更新后的状态。 |
+| 下一可用交付 | 恢复真实入口接收任务；逐段正文模块已通过组合检查，等待接入聊天界面。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -81,3 +81,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 06:30 UTC：实际main/origin acfd409；020和活动模块已接收，75源06:27:06.326Z实采可核。新增S01/RENDERERI01与D06唯一来源迁移登记77源候选，原图仍固定eb149且未改renderer/data，无产品测试。实际center/runner仍fb906。
 
 2026-10-06 06:48 UTC：K03领域/021接线、rendererI与D06固定图已受控合并，源码对各审批target零diff，组合root/Web types及8详情消费者+10架构检查通过；下一动作main fast-forward。CHAT06独立发布门槛不拖本批，实际个人backend仍fb906。
+
+2026-10-06 07:43 UTC：stream/reuse 候选检查及固定输入见 `docs/evidence/i02/stream-reuse-integration-receipt.json`；SVC02 maintenance 保持，main 不前进，待窗口结束发布。
