@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T21:45:18.987803+00:00",
+  "source": "GO bounded cache inventory, Vite documented regenerable cache; first6 independent readonly audit",
+  "bindings": [
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/flow-six-vite-cache-audit.json",
+      "bytes": 28919,
+      "sha256": "7d90d38f46a88595be245109b8682096c66ba278c653963a1433d5fc12fe44fa"
+    },
+    {
+      "path": "docs/quality/vite-cache-2026-10-06/flow-six-vite-cache-processes.json",
+      "bytes": 29060,
+      "sha256": "02ff778076166c2dd51f3c01d8942d76c85c91c711adcf83f6b97b70ab3043ec"
+    }
+  ],
+  "eligible": 0,
+  "mutations": 0,
+  "decision": "KEEP active retained preview; other 9 exact candidates under readonly audit",
+  "realDependencies": "preserved",
+  "skills": [
+    "find-skills local discovery",
+    "clean-code lifecycle separation",
+    "codebase-design small Interface; no new cleanup framework"
+  ]
+}

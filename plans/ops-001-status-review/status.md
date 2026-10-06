@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:30 UTC / mainc8e2e9e（个人窗口已关闭，root恢复main） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:47 UTC / main2af8639d（个人窗口已关闭） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/originc8e2e9e已接F04修复及消息设置独立组件；21:27个人更新成功，实际backend af51 accepting v18、Web d629 v3，与源码main分开。 |
+| 已集成main状态 / HEAD | main/origin2af8639d已接个人发布完整独审证据；实际backend af51 accepting v18、Web d629 v3，与源码main分开。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 个人后台与新版网页已更新，原数据和旧网页资源保留；后续检查窗口已归还，批量读取依赖已补齐。 |
-| 下一可用交付 | 事务连接修复的真实HTTP验证，随后终端与网页双端接续；进程监督复用模块并行实施。 |
-| 当前阻塞 | ACTIVE: 完整后台固定产物仍待2.5GiB门槛；其他检查逐项fresh资源准入，个人发布旧intent阻塞已解除，不降低原门槛。 |
+| 当前产出 | 个人后台与新版网页已更新，原数据和旧网页资源保留；正在回收已结束工作的可恢复副本，恢复后续验证余量。 |
+| 下一可用交付 | 恢复足够磁盘余量后验证事务连接修复，再接终端与网页双端接续；进程监督模块已审待主线接收。 |
+| 当前阻塞 | ACTIVE: 最新结束观察约1.15GB可用，仍低于共享HTTP/浏览器验证门槛；完整后台固定产物仍需2.5GiB。个人发布旧intent已解除，其他检查按真实增量单独准入。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -295,3 +295,11 @@ S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补�
 [窄批summary](../../docs/quality/sparse-worktree-2026-10-06/readability-two/summary.json)：两棵readability树各232个与fixedGit/main同blob的非自有历史文件可逆收起。全部保留文件哈希与clean HEAD复核成立，源码/测试/计划/规则/自有raw/实际输入/依赖与旧预览均保留。首树观测卷增18,587,648B；次操作前后增18,329,600B，但共享卷持续波动，最后约1.063GB，仍缺原重运行线约145MB，不把逻辑35,853,616B当物理保证。
 
 第二树Git操作exit0之后共享/其他worktree配置hash断言失败，原APPLIED_PENDING_VERIFY不改；另次只读复核保留内容map、clean/head及精确候选缺省状态。shared config前值当时仅内存，无法归因该hash变化，明确NOT_PROVEN；未改共享配置、重试sparse或回滚掩盖。后续批次先持久化配置前hash/受保护字段，仍仅单一Git operator；原两树数量到限停。当前等待已授权项目副本的下一组候选事实，worker源码/只读审查可继续；不反复试探运行门槛。
+
+## 2026-10-06 21:47 UTC 资源回收与小验证
+
+两棵本队已结束树按原可逆稀疏方法完成，见 [own-two-next](../../docs/quality/sparse-worktree-2026-10-06/own-two-next/summary.json)：1,226项非自有历史副本、14,050,181逻辑字节；各树原源码/测试/计划/自有原始证据与依赖保留，目标树以外Git配置和保护树均不变。两次局部卷差分别7,983,104B、9,097,216B，不作排他的物理回收归因；最后观察1,152,081,920B。此前readability第二树的共享配置旧before缺失UNKNOWN保持，不追认为本次修复。
+
+第一批六处精确Vite缓存仍由保留预览使用，全部KEEP，见 [cache intake](../../docs/quality/vite-cache-2026-10-06/intake.json)。接着仅审查GO列出的另九处精确缓存；不停止预览，不删除真实npm包、全局store、用户数据或原始证据。资源观察不是未来运行准入，PG/Chrome门槛不降低。
+
+OPS14固定3097730的两项局部补验经fresh小额准入后2/2、11未选、581ms，唯一独审已核；13different来自不同轮次，原失败/NOT_RUN保留。两个真实包装器迁移尚未完成。上述资源操作0产品测试/0provider，模块验证由原owner自有范围完成。
