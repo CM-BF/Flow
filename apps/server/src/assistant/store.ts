@@ -40,6 +40,23 @@ export async function readAssistantFinal(client: PoolClient, taskId: string, att
   const row = (await client.query<MessageRow>(`SELECT ${columns},settings FROM flow.assistant_messages WHERE task_id=$1 AND attempt_id=$2`, [taskId, attemptId])).rows[0];
   return row ? withContent(client, row) : null;
 }
+export interface AssistantFinalPreview extends AssistantMessageReference {
+  text: string;
+  truncated: boolean;
+  settings: AssistantSettings;
+}
+/** Validate the entire stored UTF-8 body at read time, transferring only its bounded prefix. */
+export async function readAssistantFinalPreview(client: PoolClient, taskId: string, attemptId: string): Promise<AssistantFinalPreview | null> {
+  const row = (await client.query<MessageRow>(`SELECT ${columns},settings FROM flow.assistant_messages WHERE task_id=$1 AND attempt_id=$2`, [taskId, attemptId])).rows[0];
+  if (!row) return null;
+  const detail = (await client.query<{ prefix: string; has_more: boolean; digest: string }>(`SELECT left(content,4000) AS prefix, char_length(content)>4000 AS has_more,
+    encode(sha256(convert_to(content,'UTF8')),'hex') AS digest
+    FROM flow.details WHERE id=$1 AND task_id=$2 AND attempt_id=$3`, [row.detail_id, row.task_id, row.attempt_id])).rows[0];
+  if (!detail || detail.digest !== row.content_digest) throw new HttpError(409, 'assistant_content_mismatch', 'The stored assistant content no longer matches its source digest.');
+  // PostgreSQL counts Unicode characters; keep the existing UTF-16 preview boundary after transfer.
+  const text = detail.prefix.slice(0, 4000).replace(/[\uD800-\uDBFF]$/, '');
+  return { ...reference(row), text, truncated: detail.has_more || text.length < detail.prefix.length, settings: row.settings };
+}
 export async function assistantMessage(pool: Pool, messageId: string): Promise<AssistantMessage> {
   return transaction(pool, async client => {
     const row = (await client.query<MessageRow>(`SELECT ${columns},settings FROM flow.assistant_messages WHERE id=$1`, [messageId])).rows[0];

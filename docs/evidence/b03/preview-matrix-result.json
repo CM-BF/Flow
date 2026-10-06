@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/assistant/preview.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner"
+  ],
+  "startedAt": "2026-10-06T05:00:06.491Z",
+  "endedAt": "2026-10-06T05:00:08.051Z",
+  "exitCode": 0
+}

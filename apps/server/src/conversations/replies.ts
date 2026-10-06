@@ -2,8 +2,7 @@ import type { PoolClient } from 'pg';
 import { runnerEventSchema } from '../../../../packages/contracts/src/runner.js';
 import type { ConversationAssistantReply, ConversationEffectiveSettings, ConversationSession } from '../../../../packages/contracts/src/conversations.js';
 import { HttpError, sha256 } from '../database.js';
-import { readAssistantFinal } from '../assistant/index.js';
-import type { AssistantMessage } from '../../../../packages/contracts/src/assistant.js';
+import { readAssistantFinalPreview, type AssistantFinalPreview } from '../assistant/index.js';
 import type { TaskRecord } from '../tasks.js';
 
 const legacyAdapterVersion = 'claude-sdk-0.3.290-v1' as const;
@@ -52,10 +51,10 @@ async function legacyReply(client: PoolClient, task: TaskRecord): Promise<Conver
     contentRef: { kind: 'artifact', id: artifact.detail_id, title: artifact.title, taskId: task.id, attemptId: artifact.attempt_id },
     source: { kind: 'adapter-final-artifact', adapterVersion: legacyAdapterVersion, taskId: task.id, attemptId: artifact.attempt_id, artifactId: artifact.artifact_id, artifactVersion: artifact.version, detailId: artifact.detail_id } };
 }
-type TypedFinal = AssistantMessage | 'invalid' | null;
+type TypedFinal = AssistantFinalPreview | 'invalid' | null;
 async function readBoundTypedFinal(client: PoolClient, task: TaskRecord, session: SessionEvidence): Promise<TypedFinal> {
   try {
-    const message = await readAssistantFinal(client, task.id, session.identity.sourceAttemptId);
+    const message = await readAssistantFinalPreview(client, task.id, session.identity.sourceAttemptId);
     if (message && (message.taskId !== task.id || message.attemptId !== task.current_attempt_id || message.nativeSessionId !== session.identity.nativeSessionId || message.source !== 'claude.sdk.result')) return 'invalid';
     return message;
   } catch (error) {
@@ -67,9 +66,9 @@ function bodyPreview(content: string) {
   const text = content.slice(0, 4000).replace(/[\uD800-\uDBFF]$/, '');
   return { text, truncated: text.length < content.length };
 }
-function typedReply(message: AssistantMessage): ConversationAssistantReply {
+function typedReply(message: AssistantFinalPreview): ConversationAssistantReply {
   return { state: 'available', role: 'assistant', messageId: message.id,
-    ...bodyPreview(message.content),
+    text: message.text, truncated: message.truncated,
     contentRef: { kind: 'detail', id: message.detail.id, title: message.detail.title, taskId: message.taskId, attemptId: message.attemptId },
     source: { kind: 'assistant-final', source: message.source, messageId: message.id, taskId: message.taskId, attemptId: message.attemptId,
       nativeSessionId: message.nativeSessionId, eventId: message.eventId, sourceMessageId: message.sourceMessageId, contentDigest: message.contentDigest, detailId: message.detail.id } };
