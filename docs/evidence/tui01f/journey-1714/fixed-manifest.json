@@ -1,0 +1,493 @@
+{
+  "kind": "TUI01F03-first-real-HTTP-PG-PTY-attempt",
+  "at": "2026-10-06T17:19:44.647837+00:00",
+  "sourceTarget": "40508f18432ffc20eadd638b208841a364c72bea",
+  "backendBase": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+  "validationTree": "92202abf3229596fb8cdbfb75493408ac2b14ed7",
+  "rawTarget": "7dd07e90fd72624c382bf6219dc9789c80e40c22",
+  "operatorEvidenceTarget": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+  "entries": [
+    {
+      "kind": "source",
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "7511b33d20c4f41918daa75ac4a812a26e74b337",
+      "bytes": 21603,
+      "sha256": "b67b3dfeec27ca409d1ad661c49fba96498e8101e144e822135bed91e10accc2"
+    },
+    {
+      "kind": "source",
+      "path": "apps/tui/src/task-controls/journey.test.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "a7b1d6fd74d58086dec1424716b77348a9ff4d8f",
+      "bytes": 4182,
+      "sha256": "91cf664a55a281989b0e240448e2b1d4694e059c09fca00b14e4e7d0c63d4153"
+    },
+    {
+      "kind": "source",
+      "path": "apps/tui/test-fixtures/cancel_driver.py",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "a404ab911c4c96f12fa150b4ab1ef8268e0105fe",
+      "bytes": 4898,
+      "sha256": "aec992928bb8bf93feb237444a78d63372c35441a2bc600ea3f1716ad2f85b6f"
+    },
+    {
+      "kind": "protected",
+      "path": "packages/interaction/src/task-control/index.ts",
+      "ref": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "blob": "6e22daceadc54bfb1399da8ab40aa9db74096002",
+      "bytes": 1122,
+      "sha256": "9186c28eaf3d4efcb74aa3925b193dd8d6feaccbadb3fef9a6b6f9dc00f5eeeb"
+    },
+    {
+      "kind": "protected",
+      "path": "packages/interaction/src/task-control/controller.test.ts",
+      "ref": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "blob": "386501b7d3a762aedcf90573c0d4fb08abd3d84e",
+      "bytes": 13386,
+      "sha256": "a7f5cf3af02be395dcc50c302b8bcf7280bef9d3dfbb7648ac24ba9a739178e5"
+    },
+    {
+      "kind": "protected",
+      "path": "packages/interaction/src/types.ts",
+      "ref": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "blob": "a5d64623a69fc5c71069d1489e2cacba5a57f370",
+      "bytes": 2645,
+      "sha256": "3cfcb54ddd03737a6aaa6e471c6ed67b32b30f0fa93cf2efb9f53ce8902ced4b"
+    },
+    {
+      "kind": "protected",
+      "path": "packages/interaction/src/commands.ts",
+      "ref": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "blob": "02790b169ebe4368c2ea0e6a163e79bac330b1f4",
+      "bytes": 6131,
+      "sha256": "dff891136914fca2774faf199f3181fe3667c4055d7dab6a2c5e5ac30983e0e8"
+    },
+    {
+      "kind": "protected",
+      "path": "packages/interaction/src/controller.ts",
+      "ref": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "blob": "5ba4709302ffe5ef7d4f79665356465f86b575fb",
+      "bytes": 22678,
+      "sha256": "2214199346f91f0fb91230e1dc694f704a664362682ff054399cdbc16141fa0b"
+    },
+    {
+      "kind": "protected",
+      "path": "apps/tui/src/main.tsx",
+      "ref": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "blob": "c8331d4b337b3d2d0ff69e1b7e575ce7597f7c07",
+      "bytes": 4161,
+      "sha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892"
+    },
+    {
+      "kind": "protected",
+      "path": "apps/tui/src/screen.tsx",
+      "ref": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "blob": "4a1382d5cf8aefb659516e9f37b4a70e3f21a5db",
+      "bytes": 7341,
+      "sha256": "59794da3bc2e93346f9f8d87663e2dcf284a77f867db9dbd3cf7530c2d14618a"
+    },
+    {
+      "kind": "protected",
+      "path": "apps/tui/src/task-controls/consumer.test.ts",
+      "ref": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "blob": "e6f07aa6705b707da2777766794596696eab3126",
+      "bytes": 2249,
+      "sha256": "4d697e10b2b88c311cbaf949c6809e919f16376a21df4a0632d4c773204157cf"
+    },
+    {
+      "kind": "protected",
+      "path": "apps/tui/README.md",
+      "ref": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "blob": "9eabccfb300923045137151cc6e17cd42eae8081",
+      "bytes": 10768,
+      "sha256": "d8cde961719bed44c34e622c6db2b640f033b33109c40942ca3d2540dbc144f3"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/tui/src/main.tsx",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "c8331d4b337b3d2d0ff69e1b7e575ce7597f7c07",
+      "bytes": 4161,
+      "sha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/tui/src/screen.tsx",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "4a1382d5cf8aefb659516e9f37b4a70e3f21a5db",
+      "bytes": 7341,
+      "sha256": "59794da3bc2e93346f9f8d87663e2dcf284a77f867db9dbd3cf7530c2d14618a"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/tui/src/intent-store.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "725aadef14866d98e61672a9d654fcc270886281",
+      "bytes": 659,
+      "sha256": "33555b4ff95d4a7b79990fce57fba1c865d7ffbaa5eab37b36c22c886ebba3b7"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/tui/src/private-journal.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "af834072ec55610e2e9cb372c65981e1d10d1553",
+      "bytes": 3195,
+      "sha256": "beb8e8374811998d4b55997fe90a50857115fc89220b8b841b56075f005e2bf2"
+    },
+    {
+      "kind": "directInput",
+      "path": "packages/interaction/src/controller.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "5ba4709302ffe5ef7d4f79665356465f86b575fb",
+      "bytes": 22678,
+      "sha256": "2214199346f91f0fb91230e1dc694f704a664362682ff054399cdbc16141fa0b"
+    },
+    {
+      "kind": "directInput",
+      "path": "packages/interaction/src/types.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "a5d64623a69fc5c71069d1489e2cacba5a57f370",
+      "bytes": 2645,
+      "sha256": "3cfcb54ddd03737a6aaa6e471c6ed67b32b30f0fa93cf2efb9f53ce8902ced4b"
+    },
+    {
+      "kind": "directInput",
+      "path": "packages/interaction/src/task-control/index.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "6e22daceadc54bfb1399da8ab40aa9db74096002",
+      "bytes": 1122,
+      "sha256": "9186c28eaf3d4efcb74aa3925b193dd8d6feaccbadb3fef9a6b6f9dc00f5eeeb"
+    },
+    {
+      "kind": "directInput",
+      "path": "packages/client/src/index.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "41de9f49b3fa70479f85ce3b49b46fb768770c13",
+      "bytes": 51680,
+      "sha256": "297f77f7a05c0eda2fd588b63915a70034de260fefe6d17d87cc1d3dc069f75f"
+    },
+    {
+      "kind": "directInput",
+      "path": "packages/contracts/src/tasks.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "bb5bdf53f810698f45b6111c6cf7399838a80301",
+      "bytes": 5574,
+      "sha256": "6d7765c8e8c295c4da1b6aca845348604917108d5b359b20bd601d1053e3d884"
+    },
+    {
+      "kind": "directInput",
+      "path": "packages/contracts/src/runner.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "a5e258d5d94a04379a8a6062e45fb82313894b29",
+      "bytes": 7285,
+      "sha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465"
+    },
+    {
+      "kind": "directInput",
+      "path": "packages/contracts/src/workspace.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "86f13be197ca3ea491d8c7e3db369c84ef918a7e",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/runner/src/runtime.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "b6393a6a043233ce0bf674a3ec3b47fb463e722a",
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/runner/src/attempt-control.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "c453c1ca216d7a3fc9eae5569199adc875a15f0b",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/runner/src/outbox.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "28e7864cb1137601879ecbe0f65926100bc75721",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/runner/src/verifier.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "0a607a5486f39e8f4b9320cc85a901974e122a56",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/server/src/index.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "2c30aa54892d1d8fdc3dd0c529e8d745b544ae21",
+      "bytes": 13801,
+      "sha256": "6df36211fe717f5e8934120e44a8732d5f59a32a04c69eaed89338c3d6268b1c"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/server/src/commands.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "3fd654d4ac946b4d7e6558558beffbf4c5abd059",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/server/src/conversations/admission.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "75e798302e714b28e818c34022dad36a43e5e3ce",
+      "bytes": 3967,
+      "sha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/server/src/conversations/replies.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "8be540867853e255ef92e9c72c0ae4fbedd65fb8",
+      "bytes": 8294,
+      "sha256": "0d8638a7432a34e69b736b50f0307f2f2b7a75eca8dc2f1fa0522355e2def43c"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/server/src/events.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "4bc731ee2fbc2e9ef0b780b668dbd7264fa025c5",
+      "bytes": 8529,
+      "sha256": "270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02"
+    },
+    {
+      "kind": "directInput",
+      "path": "apps/server/src/shutdown/index.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "5dfd71e98be6d62e16d1775af9a27c40bfcef5b0",
+      "bytes": 1327,
+      "sha256": "26b5afc5018f1a63a69d10c5bc451602d11df87f17183a32f87f1cbf7396de10"
+    },
+    {
+      "kind": "directInput",
+      "path": "pnpm-lock.yaml",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "f7d61920414fbcc0b80353c3c81bb67bdea5a4fb",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    },
+    {
+      "kind": "directInput",
+      "path": "vitest.config.ts",
+      "ref": "40508f18432ffc20eadd638b208841a364c72bea",
+      "blob": "0f5938f691bd5abe92bb808b3ef9ed6ed2b10e3a",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/README.md",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "ce220346a4472d9457f4a2f0248f133d3ab473f6",
+      "bytes": 2926,
+      "sha256": "a2de853ac41f685e2c06ecd7bb15511fe37eb1075a3298269cd551c35eccec47"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/claim-observation.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "ac212e19d1f8fc41e64a64319ff38217dc2c5530",
+      "bytes": 936,
+      "sha256": "db98ec4464b168e09b2d9fa68dbffec9becafec0284c8f6590e1ede18b2c99bc"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/fixture-ack-drop.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "46bf57df01142b607b669d1e7a14091e54f405cd",
+      "bytes": 605,
+      "sha256": "d73ab5917055a43514a40a40d3b290aa5e4e20fa7f5f980ea1085726638f83a8"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/fixture-checkpoint.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "b89d08fba32c628656b86e433e02587619dd0e75",
+      "bytes": 27572,
+      "sha256": "45f99e4cdebeca55a203b40d25896a93aad63612e85e2785ab80867ea02c53a5"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/fixture-pty.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "d30d1f8be68a3ec8982200bedfeb0ddd00056745",
+      "bytes": 21208,
+      "sha256": "3f5769a69f755ea79f682e67797a0b0071d693107313fac45cd6e1f02863d66e"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/fixture-reservation.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "dd17e1c59f42276ceb40580fa0d0ab836f1deb72",
+      "bytes": 219,
+      "sha256": "5c6c10136ba1ffab390fdec62d2ad9a15a44a20bb413e5d323aa8b934cfd9e90"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/fixture-result.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "6708ed3d3fc4d5837659be078935191f97b0c9d7",
+      "bytes": 27675,
+      "sha256": "2a3182893101eae6dbe9d82fe8136d98af485d90b59ed42bb0dd1c9bcc62bd0b"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/one-shot-supervisor.py",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "bdda110b13e7461f92449bc2fbbdb8d1803286a5",
+      "bytes": 7077,
+      "sha256": "a2675ac71f41d7f59809a33eb9561114c51485b5cd63b98c92235ba209a09fb9"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/operator-cleanup.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "55a2e52e4a868b90228712205575d5ba61a3a895",
+      "bytes": 587,
+      "sha256": "48da90139a1b21c51ea931f1ab09fed997953fc68ee60a849df3e01c87971e7a"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/operator-followup.md",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "d88c2fbe41566df9c8d6c328e4accc5b3b038502",
+      "bytes": 2169,
+      "sha256": "19878304a5b9d6e3d2060fb59b13170c23c89dd7044c3d906295b8f1dcce65b6"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/operator-observation.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "7b16e8a53b9f2ec25547f12f7e99b82813e72ae5",
+      "bytes": 1303,
+      "sha256": "0f9263e8d48d677b81cadbe966fd4839a1412032db89cf670c9def0393f78d03"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/outer-reservation.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "6b09f8a78f6cd436e99c50794d2c3f687dfd50a5",
+      "bytes": 1274,
+      "sha256": "5f4b3c981a9f2e3f2e06a85bc0ec62985889ca6b858b42e7c0091a27a174d1e7"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/outer-spawn.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "cd7b094b87b3e0fa981d52fa1bd4f6fadcb9a371",
+      "bytes": 80,
+      "sha256": "970556bc3f9edfd804d0ff7f405cc4958ed66034b8dd5525c3d3d79612703b13"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/outer-stderr.txt",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "70e66096b4f947efe677cff429915f5f915a01a4",
+      "bytes": 826,
+      "sha256": "31d651af90c4caab33062311941ed6801d09466d587ff6fc9e4f4338ff0ca3a1"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/outer-stdout.txt",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "920ff56b89db2f1dffe82ac2b97dd95a3acd1c70",
+      "bytes": 551,
+      "sha256": "e6e27e50b5a4cf63cbfc990c722a47c7c7035fd039b42128af7ca857930683ac"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/outer-supervisor-result.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "82a9473f4ec032d509e9a6fda7febe15d6f0d32e",
+      "bytes": 31474,
+      "sha256": "6da7d88eb50ef94b335736fd3118511cb7a494d85439fb2cc799eee873553a77"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/journey-1714/window-envelope.json",
+      "ref": "cb484fd121e9e2f5984b2e537adf014cd8df6905",
+      "blob": "d92ef70c3bb0e160f6b69c0256e63b4dded25ad6",
+      "bytes": 1929,
+      "sha256": "bc1bb0258d2390cf53b7d563885bd01afffb6b5776baf7e309b6d5cb1f9cf426"
+    },
+    {
+      "kind": "preflight",
+      "path": "docs/evidence/tui01f/journey-entry-static.json",
+      "ref": "92202abf3229596fb8cdbfb75493408ac2b14ed7",
+      "blob": "f89416de1b72ee085832163b09040cbcdfdb57a1",
+      "bytes": 86737,
+      "sha256": "4443ded0245fc5814f542baa64cd69ff606d039794f7e4c51b566b26ae13241b"
+    },
+    {
+      "kind": "preflight",
+      "path": "docs/evidence/tui01f/journey-runtime-view-receipt.json",
+      "ref": "92202abf3229596fb8cdbfb75493408ac2b14ed7",
+      "blob": "922f4f2f9995b8a0a157567f01cdd49c9c116174",
+      "bytes": 4578,
+      "sha256": "983e13b9448f85b225104c94b985719468cb3ca45f35f5302648df3466def4ab"
+    },
+    {
+      "kind": "preflight",
+      "path": "docs/evidence/tui01f/journey-runtime-entry.md",
+      "ref": "92202abf3229596fb8cdbfb75493408ac2b14ed7",
+      "blob": "70077fa45a97ded3b087f4f5824126f89547c020",
+      "bytes": 4822,
+      "sha256": "4ae563ca940a9013f446f8a40ea779087b9fe8dfadc4818dad0419cd9ff1f631"
+    }
+  ],
+  "checks": {
+    "selected": 2,
+    "passedBehaviorCases": 2,
+    "suitePassed": false,
+    "processExit": 1,
+    "failure": "afterAll connections unknown",
+    "runCount": 1,
+    "types": "NOT_RERUN",
+    "historical36": "NOT_RERUN",
+    "providers": 0,
+    "browser": 0
+  },
+  "cleanup": {
+    "originalFixture": "failed-or-unknown-retained; irreversibleCleanup=false",
+    "originalGroupsStopped": true,
+    "operator": "one authorized exact DB observation connections[]; normal DROP remaining[]",
+    "temp": "KEEP: initial inode not recorded; no operator rm",
+    "originalRawUnchanged": true
+  },
+  "bounds": {
+    "observedRawMaxBytes": 78656,
+    "observedTmpMaxBytes": 3085874,
+    "minimumSampledFreeBytes": 1212129280,
+    "cacheGrowth": 0,
+    "elapsedSeconds": 8.31,
+    "PGWALBytes": "not measured; excluded from temp",
+    "thresholdsNotHardReservations": true
+  },
+  "review": "NOT_STARTED actual attempt; prior40508f scoped static approval retained",
+  "limitations": [
+    "Both behavior cases use real public center/runner/HTTP and one real PTY, but synthetic adapter has0provider.",
+    "No App/native/A2A stopping or whole TUI acceptance proof.",
+    "Original immediate connections query discarded rows/error; later zero does not explain original cause.",
+    "No automatic retry or product source change; follow-up cleanup advice only."
+  ],
+  "counts": {
+    "source": 3,
+    "protected": 9,
+    "directInput": 23,
+    "evidence": 17,
+    "preflight": 3
+  }
+}
