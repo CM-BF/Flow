@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { setTimeout as sleep } from 'node:timers/promises';
 import { createServer } from '../../apps/server/src/index.js';
 import { canonical } from '../../apps/server/src/database.js';
 import { runRunner } from '../../apps/runner/src/runtime.js';
@@ -9,20 +10,29 @@ import type { HarnessAdapter } from '../../packages/contracts/src/index.js';
 import { boundedText } from './http.js';
 
 type Configuration = { role: 'center'; databaseUrl: string; ownerToken: string } |
-  { role: 'runner'; baseUrl: string; token: string; directory: string; label: string };
+  { role: 'runner'; baseUrl: string; token: string; directory: string; label: string; deferStart?: boolean; measuredDelayMs?: number };
 const shutdown = new AbortController();
+const executionStart = new AbortController();
 const send = (value: Record<string, unknown>) => { if (process.connected) process.send?.({ ...value, pid: process.pid, monotonicMs: performance.now() }); };
 const hash = (value: string | Buffer) => createHash('sha256').update(value).digest('hex');
 process.on('SIGTERM', () => shutdown.abort());
-process.on('message', value => { if ((value as { kind?: string }).kind === 'stop') shutdown.abort(); });
+process.on('message', value => {
+  if ((value as { kind?: string }).kind === 'stop') shutdown.abort();
+  if ((value as { kind?: string }).kind === 'start') executionStart.abort();
+});
 process.on('disconnect', () => shutdown.abort());
 
 async function center(config: Extract<Configuration, { role: 'center' }>) {
   const app = await createServer({ databaseUrl: config.databaseUrl, ownerToken: config.ownerToken, leaseMs: 10_000 });
-  let activeRequests = 0;
+  const activeRequests = new Set<string>();
+  const activeStreams = new Set<string>();
   let connectionsPending = false;
-  app.addHook('onRequest', async () => { activeRequests++; });
-  app.addHook('onResponse', async () => { activeRequests--; });
+  app.addHook('onRequest', async (request, reply) => {
+    activeRequests.add(request.id);
+    if (request.url.includes('/stream?')) activeStreams.add(request.id);
+    reply.raw.once('close', () => { activeRequests.delete(request.id); activeStreams.delete(request.id); });
+  });
+  app.addHook('onResponse', async request => { activeRequests.delete(request.id); activeStreams.delete(request.id); });
   const baseUrl = await app.listen({ host: '127.0.0.1', port: 0 });
   send({ kind: 'ready', baseUrl });
   const timer = setInterval(() => {
@@ -30,7 +40,7 @@ async function center(config: Extract<Configuration, { role: 'center' }>) {
     connectionsPending = true;
     app.server.getConnections((error, tcpConnections) => {
       connectionsPending = false;
-      if (!error) send({ kind: 'center-sample', activeRequests, tcpConnections, rssBytes: process.memoryUsage().rss, cpu: process.cpuUsage() });
+      if (!error) send({ kind: 'center-sample', activeRequests: activeRequests.size, activeStreams: activeStreams.size, tcpConnections, rssBytes: process.memoryUsage().rss, cpu: process.cpuUsage() });
     });
   }, 100);
   try { await new Promise<void>(resolve => shutdown.signal.aborted ? resolve() : shutdown.signal.addEventListener('abort', () => resolve(), { once: true })); }
@@ -70,7 +80,7 @@ async function runner(config: Extract<Configuration, { role: 'runner' }>) {
     async run(context) {
       const taskId = claimedTaskId;
       if (!taskId) throw new Error('S01 adapter has no observed claim identity.');
-      send({ kind: 'adapter-start', taskId, label: config.label });
+      send({ kind: 'adapter-start', taskId, label: config.label, rssBytes: process.memoryUsage().rss, cpu: process.cpuUsage() });
       try {
         await context.assertOwnership();
         send({ kind: 'tool-start', taskId, label: config.label });
@@ -81,15 +91,24 @@ async function runner(config: Extract<Configuration, { role: 'runner' }>) {
         const actual = await readFile(file);
         if (hash(actual) !== hash(bytes)) throw new Error('S01 local operation digest mismatch.');
         send({ kind: 'tool-end', taskId, label: config.label, elapsedMs: performance.now() - startedAt, bytes: actual.length, digest: hash(actual) });
+        if (config.measuredDelayMs) {
+          send({ kind: 'wait-start', taskId, configuredMs: config.measuredDelayMs });
+          await sleep(config.measuredDelayMs, undefined, { signal: context.signal });
+          send({ kind: 'wait-end', taskId, configuredMs: config.measuredDelayMs });
+        }
         await fixture.run({ ...context, async emit(data) {
           const start = performance.now();
           await context.emit(data);
           send({ kind: 'emit-ack', taskId, label: config.label, eventType: data.type, elapsedMs: performance.now() - start });
         } });
-      } finally { send({ kind: 'adapter-end', taskId, label: config.label }); }
+      } finally { send({ kind: 'adapter-end', taskId, label: config.label, rssBytes: process.memoryUsage().rss, cpu: process.cpuUsage() }); }
     },
   };
   send({ kind: 'ready', label: config.label });
+  if (config.deferStart) {
+    const gate = AbortSignal.any([executionStart.signal, shutdown.signal]);
+    if (!gate.aborted) await new Promise<void>(resolve => gate.addEventListener('abort', () => resolve(), { once: true }));
+  }
   try {
     await runRunner({ baseUrl: config.baseUrl, token: config.token, workingDirectory: config.directory, adapters: [adapter], signal: shutdown.signal,
       pollIntervalMs: 50, heartbeatIntervalMs: 1000, requestTimeoutMs: 3000, onNotice: notice => send({ kind: 'notice', label: config.label, notice }) });

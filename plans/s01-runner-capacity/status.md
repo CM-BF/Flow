@@ -8,17 +8,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；实现 53c8713cb8e6a3c9b7d869c896656dad4e7a086d；metadata后继单列 |
-| 工作树dirty状态 | 仅独审与证据metadata待提交，review target65d7a57目录停写 |
-| 工作分支状态 | delivered |
+| 工作树dirty状态 | 开始正式场景入口开发；既有smoke target65d7a57批准保持历史边界 |
+| 工作分支状态 | in-progress |
 | 检查状态 | PASSED 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a；执行源同53c8713：修复复核4任务/24事件一致/4工具/3进程exit0、DB与outbox清空；noEmit0。原首轮4任务FAILED永久保留 |
 | 已集成main状态 / HEAD | 未集成；最近核验main115b0dbdfa02db5483f9e9699852682ce699633c |
 | 实现目标 | 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 四任务功能验证片段已独立审查通过，原失败与修复结果均可追溯 |
-| 下一可用交付 | 准备正式并发测量入口并协调运行窗口；该后继尚未实现 |
+| 当前产出 | 四任务基础已验证，正在加入128个背景会话与四进程并发计量 |
+| 下一可用交付 | 提交正式测量入口独审，再协调共享主机的运行窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a：仅合同+四任务smoke；正式容量/故障/browser未覆盖 |
@@ -49,3 +49,7 @@ claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` v1 ACTIVE，06:22:33.774Z；[回执
 2026-10-06 06:43 UTC 修复复核：固定53c8713，smoke-repair整体PASS、2.821秒含清理，原smoke-first整体FAIL不变。已使用8/8功能smoke任务；不再重跑。总64额度余56，后继正式16+16+12、gate8、ACK2、browser2未运行。独立worker只读复核中，产品源码无变化。
 
 2026-10-06 06:44 UTC 独立review完成：worker只读APPROVED target65d7a57；无P1/P2。功能片段已交付但main未集成；完整S01开放TODO不勾完。正式后继仍需实现与具体运行窗口。
+
+2026-10-06 06:46 UTC 正式入口开工：Mika同一权威worktree/claim v1，沿用本任务find-skills与clean-code/codebase-design方法。保留smoke批准记录，新增源码不沿用批准；worker并行只读核真实字段/分页/计量界限。正式运行尚无窗口。
+
+2026-10-06 06:51 UTC 正式入口实质进展：新增场景/统计module、128会话分页/16预受理task/四进程共同放行、96runner/80timeline/96workspace分层校验、单循环轻读/PG观察/区间峰值。3统计测试通过、noEmit0，未启动负载。准备提交只读review；协议超领gate将作同窗口前置，仍未实现。旧smoke批准target不覆盖新源码。

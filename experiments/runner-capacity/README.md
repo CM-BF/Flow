@@ -31,7 +31,7 @@
 | 未完成attempt | 真实claim响应与server记录；runner/任务双归属，峰值及采样时间 |
 | runner声明/有效容量 | 注册值、独立PID、adapter开始结束区间；有效值按重叠区间最大值，不能仅按100ms采样猜峰值 |
 | 工具并发 | 本次有界FS/hash操作开始/结束区间；与attempt并发分开 |
-| 中心连接 | Fastify server实际TCP连接数、在途HTTP请求数、SSE连接数分别记录；PG按专库/application_name分center/scheduler/observer连接数及wait_event采样，不把pool最大值当已使用连接 |
+| 中心连接 | Fastify server实际TCP连接数、在途HTTP请求数、SSE连接数分别记录；PG按专库/application_name区分observer与center+scheduler合并连接数及wait_event采样（当前两生产pool共用URL，无法可靠拆开center与scheduler），不把pool最大值当已使用连接 |
 
 跨进程计数以父进程IPC事件接收时间与子进程单调起止时钟分别保存；IPC延迟只影响全局近似边界。用首次claim初始租期推导的领取区间与中心completed_at核对容量；量化边界内不能排除重叠时记精度不足；不把不同时钟绝对值直接相减。
 
@@ -39,7 +39,7 @@
 
 - **队列等待**：PG同一时钟task.created_at→首次claim返回的leaseExpiresAt减remainingLeaseMs推导时刻（attempt表没有creation/claim时间列；只保留首次成功assignment租期，不使用会被heartbeat更新的DB租期。claim序列化及task时间各有毫秒量化，差值保守按2ms精度余量；不是精确持久claim时间）；单列admission HTTP耗时、dispatch-ready首次观察和claim请求RTT。因dispatch-ready无持久时间戳，轮询观察只能给区间，不宣称精确调度时刻。
 - **事件**：runtime emit开始→ACK收到（包含outbox落盘），以及HTTP提交→响应体完整读取；原始每次时长、字节和event身份一起保存。重放/故障样本不混入正常分位数；成功、失败、重报分别计数。
-- **轻读取**：有执行负载时每100ms以单个await循环轮换读取（single-flight，不累积定时器请求）固定任务snapshot、events增量页、workspace增量页、conversations首屏，逐端点单列实际n/成功错误/UTF-8字节/首次请求与steady样本。详情不预取；只在核对产物时按引用读取。
+- **轻读取**：有执行负载时每次请求完成后等待100ms，以单个await循环轮换读取（single-flight，不累积定时器请求；不意味着每个端点均每100ms读取）固定任务snapshot、events增量页、workspace增量页、conversations首屏，逐端点单列实际n/成功错误/UTF-8字节/首次请求与steady样本。详情不预取；只在核对产物时按引用读取。
 - **统计**：保留全部原始样本，nearest-rank p50/p95/p99及n。16个排队样本的p99即该批最大值，只是经验值；不称产品SLO、稳态尾延迟或统计显著性。故障/超时不能删去。记录Node24/pnpm9.15.4/Vitest4.0.18、PG版本、硬件、loadavg、实际进程RSS/CPU、配置与源hash。
 - **通过条件**：每runner未完成attempt不超过声明capacity；每task同时至多一有效attempt；首轮证实实际重叠达到4或明确记录限制；server事件集/顺序/内容摘要与outbox发送记录一致，无丢失或额外重放；固定产物digest与verification一致；浏览器关闭后执行继续；全部独有资源已关闭。任一未验证项单列，不用其他通过项抵消。
 - **观察开销**：一条专用只读PG连接、最多一个轻读循环、一个浏览器/stream；观察开销和查询数单列。pool等待若没有直接计时只能标未测，不能从PG连接数推算。
@@ -50,8 +50,18 @@
 
 finally顺序：停止新增任务和读循环→关闭本人浏览器/代理连接→Abort/SIGTERM本人runner并限时等待→必要时仅对本人仍活PID SIGKILL并标记异常→关闭本人center/scheduler→关闭观察pool→确认专库连接为0再DROP→删除本人临时文件。无权停止他人服务或强制驱逐共享DB连接。每一步记录成功/失败及PID/端口/库不存在的最终独立观察；无法证明清理不能写全部完成。
 
-正式运行必须绑定实施commit与固定基线及当时实际source hash。功能入口为 `experiments/runner-capacity/smoke.ts`，需要本机专用PostgreSQL的 `FLOW_S01_ADMIN_URL`（不输出值）。从本worktree以Node24运行：`node --import tsx experiments/runner-capacity/smoke.ts <全新证据标签>`，并设置 `TSX_TSCONFIG_PATH=experiments/runner-capacity/tsconfig.json`。目录拒绝覆盖；4任务/2个runner，30秒含清理，工作预算20秒。正式场景和故障/浏览器入口尚未实现。runner HTTP计量包装会完整读取响应后重新构造Response，此观察开销属于实验配置，不能将延迟当无观察器的生产值。
+正式运行必须绑定实施commit与固定基线及当时实际source hash。功能入口为 `experiments/runner-capacity/smoke.ts`，需要本机专用PostgreSQL的 `FLOW_S01_ADMIN_URL`（不输出值）。从本worktree以Node24运行：`node --import tsx experiments/runner-capacity/smoke.ts <全新证据标签>`，并设置 `TSX_TSCONFIG_PATH=experiments/runner-capacity/tsconfig.json`。目录拒绝覆盖；4任务/2个runner，30秒含清理，工作预算20秒。正式四进程入口已实现待独审/窗口；超领门禁与故障/浏览器仍待实现。runner HTTP计量包装会完整读取响应后重新构造Response，此观察开销属于实验配置，不能将延迟当无观察器的生产值。
 
 首轮功能结果整体FAIL：固定bfe49a4的smoke-first因校验SQL引用不存在的attempt.created_at失败；4任务完成与24事件核验、ACK/outbox/资源清理通过只是部分事实。原结果不改写。修复依据实际schema并由独立worker核对首次租期推导方法，第二轮另用新目录。
 
 修复复核固定实现 `53c8713cb8e6a3c9b7d869c896656dad4e7a086d`：smoke-repair整体PASS，4任务/24事件/4工具，源前后hash一致，3自有进程exit0、DB与outbox清空。两次smoke总8任务额度已耗尽，不再运行；正式后继未执行。见 [固定证据](../../docs/evidence/s01/smoke-manifest.json)。
+
+## 首个正式入口（未运行）
+
+`node --import tsx experiments/runner-capacity/formal.ts <新标签>`，沿用Node24/TSX_TSCONFIG_PATH/FLOW_S01_ADMIN_URL，并必须设置已协调窗口的 `FLOW_S01_WINDOW_ID`。该标识是协调回执索引，不是自动获得窗口。再次执行已记录的同scenario会拒绝。旧smoke入口已封闭以遵守8任务额度；历史结果对应各自固定commit。
+
+正式场景128空会话需完整分页与DB数量核对；16任务全部先受理，4个独立runner就绪后同一IPC门放行。启动等待与setup另分相位，不算模型执行。人工200ms可取消等待置于实验adapter包装内并记录起止，API fixture.delayMs设0，随后仍调用原fixture adapter。每个工具只有一次64KiB读写hash，独立记录工具/adapter/等待区间。
+
+实际事件分层校验：96 runner events；80 task timeline；workspace含16 accepted共96。三个游标空间分别核对，轻读与最终追赶/详情验证的延迟不混算；正文仅最终按artifact detail引用获取。首次dispatch-ready已true表示左侧未知，保留SQL请求边界，不推造精确调度时刻。PG observer有独立URL app name并观察实际连接；center与scheduler只能合并报告，pool获取等待未测。正式场景不打开SSE，因此应报告0；实际关闭浏览器仍属后继独立功能，不以此替代。
+
+3个纯统计单测与noEmit通过，只验证nearest-rank、小样本/非法输入、半开区间与IPC/子进程时钟分离；没有运行正式负载，也没有容量结果。正式之前合同中的8任务协议超领门禁仍须完成准备并协调同一运行窗口。
