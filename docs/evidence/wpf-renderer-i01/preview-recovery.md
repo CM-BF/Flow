@@ -5,3 +5,5 @@
 该长驻dev服务在并行独立dev/production消费者验证期间共享同树Vite依赖缓存；缓存污染为待证实解释，不能由此认定产品修复。仅停止本任务服务、清理本树生成的Vite cache后重启，生产源码保持8014不变，其他服务不动。恢复结果另记。
 
 06:39 UTC确认cache绝对路径在本树内，仅删除生成cache并重启原fixture；新服务http://127.0.0.1:60956，centers60953/60954，进程9055。源码未改，root将在新URL独占复核，owner未重复打开浏览器。
+
+Root于06:40:07Z正式回报新60956实际App抽验正常、无新增error，临时tab29已关闭。核验Enter展开/草稿/native隐藏恢复/disable fallback/split/dark。此恢复仅证明重新启动的预览可用，cache共享归因仍未被独立证实。

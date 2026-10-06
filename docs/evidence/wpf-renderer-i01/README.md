@@ -1,6 +1,6 @@
 # 聊天详情 renderer 接线交付
 
-固定实现 `8014cf9be49391157fb54eeb857a41ee1d6af68c`，base `115b0dbdfa02db5483f9e9699852682ce699633c`。当前独立review待执行，metadata不代替实现批准。
+固定实现 `8014cf9be49391157fb54eeb857a41ee1d6af68c`，base `115b0dbdfa02db5483f9e9699852682ce699633c`。root于2026-10-06T06:40:07Z独立APPROVED该目标，metadata不扩大实现批准范围。主线接收仍pending。
 
 预览 http://127.0.0.1:60956 （真实App + HTTPfixture，无真实模型/产品数据库）。独立新服务，旧49415及其他owner服务保留。启动：在本树根目录运行 `PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversation-queue.fixture.ts --queue-preview`；端口由系统分配，以命令输出为准。现有fixture文件只读复用。
 
@@ -30,3 +30,7 @@ App原有关闭conversation保留缓存策略未改；每次挂载的新bridge�
 [管理部署过渡采样](dashboard-transition-observation.json)来自管理者06:36:34.965Z原始77源响应。它证明唯一source与claim登记，当时状态仍启动阶段；不能证明后续固定检查或review已被live聚合。
 
 [独立预览错误/恢复](preview-recovery.md)：原57108长驻dev入口曾报_jsxDEV错误；保留来源并清理本树生成cache后重启，未改产品源码。新URL的root复核与原专用报告分列。
+
+## 独立批准
+
+Root独立31/31局部测试通过并逐读七path；报告/target/current源码hash一致。60956真实App CUA覆盖Enter展开、草稿、native隐藏恢复、停用fallback、分屏/暗主题，页面无新增error；已目视production双主题图。root未重复整套browser/typecheck/build，以作者原始记录为对应来源。详细边界见[固定review](../../../plans/wpf-renderer-i01-integration/review.md)。
