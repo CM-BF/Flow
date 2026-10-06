@@ -1,3 +1,5 @@
+当前源码修复固定 `9927bb071494ec16a9d8091a6ba5edb4ea72c18a`：真实聊天区 Files 定位与完整all12raw中的成功A复用；待独立源审/新app-only gate，未执行新检查。原all事实与全部失败原始材料如下。
+
 # RELEASE03 固定组合验证（A通过，B定位器失败）
 
 固定target `c18bd6630cbdbb431460688a0f6bea9248f4151f` / 实际HEADba7dea，backend af51 + formal artifact d629，16:47一次all已完成：attachment-only与mixed真实history两项PASS，B真实App plain Send通过后Files双按钮定位歧义失败。完整兼容未通过，未生成/import SVC绿报告，0provider；[原样结果与12raw hash](all-result-164711.json)。本次12,326ms，累计20,309/180,000ms、余159,691ms。DB/worker/Chrome清理errors=[]，窗口已交回。

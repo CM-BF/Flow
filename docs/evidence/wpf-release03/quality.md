@@ -53,3 +53,7 @@
 仅按执行mode确定未进入B，避免缺worker结果被误读为B失败；保持原raw、契约和业务断言不变。源码一行diffcheck通过；无产品import/测试/types/资源采样。实际运行与后继修复两个target明确分开。
 
 2026-10-06 16:47:43 UTC 窗口安全收口：A真实两项通过/B定位器strict歧义分别归因；完整worker和全部原始HTTP/截图保留，不删除favicon404或误写产品红。DB marker/两个过程组已清理；未重复A、未修业务预期、未生成通过report。累计20309ms/余159691ms，后继源定位与运行需固定复审/freshgate。
+
+## 2026-10-06 16:55:32 UTC locator / proof清码停点
+
+复用已读find-skills、clean-code、codebase-design本地方法：定位以实际conversation owner为Interface，避免first/nth与全页歧义；proof保唯一history事实函数，只适配已观察10/12raw两种生命周期，完整失败材料/清理/预算共同约束，不重写原raw。未新增通用框架，fixture/产品/工具零改。Git文本差异和逐字hash核31raw/契约不变；这不是verifier执行或类型通过。首次git add因sparse匹配拒绝，随后仅对明确授权单文件使用git add --sparse，没有改sparse配置。当前运行额度不消耗。

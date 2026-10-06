@@ -1,7 +1,7 @@
 {
-  "implementationTarget": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+  "implementationTarget": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
   "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
-  "method": "Single-line history mode phaseB label fix, source logic and byte checks only; no runtime/type/test repeat",
+  "method": "Files scoped to actual conversation owner; sealed all-run A prerequisite adapter, source-only repair",
   "files": [
     {
       "path": "apps/web/test/web-current-preview.fixture.ts",
@@ -10,19 +10,19 @@
     },
     {
       "path": "apps/web/test/web-current-preview.browser.ts",
-      "bytes": 43491,
-      "sha256": "fd5a216059bfc85600dfb832c00b7948bd89f35d7f4d985a203017ee7a8d0e10"
+      "bytes": 44917,
+      "sha256": "fe3219fa3787eb27c4159f442c01884b64085cb7e3dda32d78213a18afdc084e"
     }
   ],
   "checks": {
     "sourceDiffCheck": 0,
     "protectedLocalInputDiff": "empty",
-    "oldTenRawHashes": "unchanged",
+    "oldRunsRawHashes": "31 files unchanged, 319542 bytes",
     "newTargetTypecheck": "NOT_RUN",
-    "newBackendPG": "A all-run164711 attachment-only+mixed PASS",
-    "Chrome": "Actual App plain Send PASS then Files locator ambiguity; full B FAIL",
-    "compatibility": "NOT_VERIFIED",
-    "newTargetRuntime": "all run12326ms, cleanup errors[]"
+    "newTargetRuntime": "NOT_RUN",
+    "priorActualHistory": "all164711 two PASS",
+    "priorActualApp": "plain PASS; Files ambiguity; B incomplete",
+    "compatibility": "NOT_VERIFIED"
   },
   "executionMode": "history / app (pinned successful history only) / all; each requires its own fresh explicit gate",
   "resourcePolicy": {

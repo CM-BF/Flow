@@ -2,17 +2,17 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：c18bd6630cbdbb431460688a0f6bea9248f4151f
+Review target commit：9927bb071494ec16a9d8091a6ba5edb4ea72c18a
 
 Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
-完整兼容审查范围：两新验证脚本及相应固定输入/原始运行证据。实际A已失败、B未运行，完整兼容审查仍NOT_STARTED；已完成的源码条件批准单独如下。
+完整兼容审查范围：两新验证脚本及相应固定输入/原始运行证据。最近all的两项A已通过并获独立raw核验，B plain通过后定位歧义；新定位/复用源码尚未独审，完整兼容未通过。历史失败与源码条件批准单独如下。
 
 ## 后续只读任务
 
 核 actual factory/client/contracts 来源、正式 format2 全 descriptor、history attachment-only/mixed门槛、实际App原key/body与新稿保护、生命周期/累计预算/清理、SVC observation条件。绑定固定commit；问题交作者修，原始失败不覆盖。检查与未执行范围分别列明；个人发布不在此批准内。
 
-当前A两项业务失败且清理完成，B未验；无兼容通过结论。原997d定向strict noEmit通过，未对432b重复。
+历史362两项业务失败保留；新af51两项A实际通过，B未完成；无完整兼容通过结论。原997d定向strict noEmit通过，未对432b重复。
 
 ## 原checkpoint限定审查
 
@@ -53,3 +53,7 @@ root独立SOURCE review于2026-10-06T15:55:02.202190Z通过，0blocking；[完�
 ## 2026-10-06 16:11:23 UTC 标签修复候选
 
 c18bd6630cbdbb431460688a0f6bea9248f4151f一行history模式标签修正待源码窄审，不改变已执行A3或history契约。完整兼容仍NOT_STARTED，无新增运行。
+
+## 2026-10-06 16:55:32 UTC 新源码待独审
+
+Target `9927bb071494ec16a9d8091a6ba5edb4ea72c18a`，only browser delta。请核exact conversation Files两调用、原Send/Queue key/body/ref断言、all完整12raw proof与history10raw双分支、原失败保留/累计预算。fixture及historycontract59cde字节不变；本段没有运行verifier/types/PG/browser。原raw已由root独审接受，仅代表A可作后继条件；B仍须新gate与实际通过。

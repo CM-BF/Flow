@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:47:43 UTC |
+| 最近更新时间 | 2026-10-06 16:55:32 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / c18bd6630cbdbb431460688a0f6bea9248f4151f（后继标签源码固定） |
-| 工作树dirty状态 | 执行前ba7dea clean；本次仅原始证据/metadata待提交，提交后双端clean另核 |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 9927bb071494ec16a9d8091a6ba5edb4ea72c18a（页面定位与A证据复用修复） |
+| 工作树dirty状态 | 修复源码已提交；本段metadata提交前观察待提交，最终commit/push后双端clean另核，不当运行时HEAD |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | PARTIAL c18bd6630cbdbb431460688a0f6bea9248f4151f；A两项PASS，B plain通过后locator失败 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；源码条件已审，新组合部分运行；完整兼容未通过 |
-| 实现目标 | c18bd6630cbdbb431460688a0f6bea9248f4151f |
+| 实现目标 | 9927bb071494ec16a9d8091a6ba5edb4ea72c18a |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 附件单独与混合使用检查通过，真实页面验证停在按钮定位歧义 |
+| 当前产出 | 后台两项检查通过；页面测试定位和证据复用已修，等待独审 |
 | 下一可用交付 | 修正测试定位并复用已通过后台证据完成真实页面检查 |
-| 当前阻塞 | ACTIVE: 页面Files测试定位歧义；完整兼容未完成，修复与新准入待定 |
+| 当前阻塞 | ACTIVE: 页面验证尚未完成；等待修复独审与独占运行窗口 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，269103d源码条件APPROVED，1a7 P1源修已闭合；完整兼容NOT_STARTED；旧432b源码条件APPROVED |
 
@@ -104,3 +104,9 @@ manager16:47:11 fresh all准入通过，本人live核bfb v3四scope后，固定c
 B真实App plain Send省略材料字段与旧receipt路径已PASS；随后Files locator匹配顶栏和聊天region两个button，Playwright strict mode失败。未到附件Send/Queue同键重试与主题全旅程；不推断产品失败，不生成/import兼容报告，compatibilityId=null。页面pageErrors=[]；另favicon404如实保留待判断，未吞日志。12份raw191,936B，包括完整worker/history/wire/screenshot；[结果及hash](../../docs/evidence/wpf-release03/all-result-164711.json)。
 
 自有DB flow_release03_8d7a4c6f5bcb45f1acd9 marker确认并删除，worker85006/Chrome87401 exit0，cleanup errors=[]。累计20,309ms、余159,691ms/180秒；旧raw不改，源不改，0自动重试。窗口已交回manager/root，后继仅可独立审查已成功A后另fresh app-only准入，不擅自再跑A或发布。
+
+## 2026-10-06 16:55:32 UTC 页面定位与A复用源码修复
+
+固定`9927bb071494ec16a9d8091a6ba5edb4ea72c18a`仅browser脚本：Files及两次附件选择/芯片定位统一用真实conversation region；Send、Queue、回执、输入沿该owner，原key/body/ref断言不变。app-only可接受独立gate钉住的完整all失败旅程12raw，只复用其中连续A prefix，旧B失败和截图保留；两process均退出、DB marker清理、预算与完整backend/artifact/contract必须一致。原history10raw入口保留，PNG只校hash不JSON parse，不重新hash已redact runner token正文。
+
+[root实际证据审](../../docs/evidence/wpf-release03/all-164711-root-review.json)、[peer源码建议](../../docs/evidence/wpf-release03/source-review-c18-files-peer.md)、[静态audit](../../docs/evidence/wpf-release03/app-repair-source-audit.json)。新源码没有运行；原31raw/319542B全字节不变，累计20309ms/余159691ms。旧all实际HEADba7dea、sourcec18不改；新source待独审，CORE独占PG期间本组0PG/Chrome/types/资源采样。
