@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:13:24 UTC / 固定main2f4a已同步；当前main 362af3bac77541e5a60979326bcf4d4b8c947915 clean只读观察，未追随 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:15:12 UTC / 固定main2f4a已同步；当前main 362af3bac77541e5a60979326bcf4d4b8c947915 clean只读观察，未追随 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -34,7 +34,7 @@
 | WPF-MATURE-04-02 | completed | architecture_read / mika | 879c989a594a8f4f266b9a78a885e311c52eca0d；30/30、局部strict noEmit；Mika独立APPROVED，无P1/P2 |
 | WPF-MATURE-04-03 | in-progress | architecture_read / mika | 9ac正式027/历史模块50/50含9真实PG、strict0、独审APPROVED；已随生产reportEvents/owner历史GET进入bf067e3；[接收收据](../../docs/evidence/wpf-mature-04/main-acceptance.json)。当前/remaining/SDK采集仍未知，不据此勾完完整验收 |
 | WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | 原3ab批准保留；纯归一化c1733a0c4a2ce389489a8bc11ea3b68ef5693d34，58/58+strict0、status_read独审APPROVED，4源逐字进入bf067e3；不含真实SDK采集与压缩事件 |
-| WPF-MATURE-04-05 | pending | d01 管理 Web owner | 沿本计划与中心合同消费；未实施 |
+| WPF-MATURE-04-05 | pending | d01 管理 Web owner | 12:15 fresh核Web管理权威status/registry/active claims，未确认独立history UI开工；已补[现有交接页](../../docs/evidence/wpf-mature-04/handoff-current.md)消费边界；知识引用UI不等于本验收 |
 | WPF-MATURE-04-06 | pending | architecture_read / mika | schema/纯投影/历史领域/归一化已有独审并进入main；完整矩阵与producer/current/压缩/Web等后继验收未完成 |
 
 ## 当前边界与下一步
@@ -98,3 +98,5 @@
 2026-10-06 12:11:16 UTC：producer四源完成，最终121不同通过与局部strict0。首次完整组合120/121失败为旧fixture首例3秒超时，单项1/1及随后相同五路径121/121通过，原断言/超时/源码未为失败调整，原因unknown、全部raw保留。46新行为含public runRunner真实loopback/journal未知重启阻挡；0PG/真实SDK/provider。源码停写准备固定独审，旧18源/批准不变，main尚无新producer。
 
 2026-10-06 12:13:24 UTC：实现冻结 `eccb1ba6d9f3bf95cca4f50693dde8e32707ed40`，4source/14raw/9support/31readonly均在target，随后唯一[producer manifest](../../docs/evidence/wpf-mature-04/producer-manifest.json)绑定。121不同+strict0，首轮失败完整保留；旧18源和9ac/c173绑定raw/support逐字不变。当前main未含本producer，不以branch检查声称main能力；交chatui01_owner独审。
+
+2026-10-06 12:15:12 UTC：source/raw仍冻结eccb，HEAD06a3802d clean/v8后仅补已有handoff-current的Web消费核对。Web权威管理树bb30ceb dirty、status12:10明确context仍开放；main registry/源码和fresh账本未确认独立history UI开工，TODO05保留pending，未根据未回传猜测。已有main GET/DTO/thin client可复用，只显示当前attempt按原sequence取latest的历史估算，current/remaining/compression/cut不冒可用；无Web源码、scope或新合同修改，无工程重测。

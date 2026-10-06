@@ -26,3 +26,15 @@ Lead在ENG01D接口冻结后fresh核账本、受控追加/交接写权，复用�
 - 正式027及局部owner GET可以由F01先挂载并验证迁移、现有auth与typed reader；runner union/event handler需等合法共享scope。尚无producer时读回空历史也须如实，不以人工构造样本冒充SDK采集。后继producer使用已审c173 **`normalizeClaudeSummary`**，无fake ref；runtime/Claude采样仍未授权开工。
 
 接线影响验证由合法owner在实际集成点完成：union与batch接收/隐私及字节拒绝、原事件兼容、现有fence/sequence/digest与同事务幂等回滚、全局owner auth和HTTP typed reader。04本次仅metadata，无工程重测。历史domain固定输入为 [history-integration-ready.json](history-integration-ready.json)，纯归一化为 [normalize-integration-ready.json](normalize-integration-ready.json)；二者均独立APPROVED，current/remaining/cut/Web仍开放。
+
+## Web 历史消费者交接核对（2026-10-06 12:15:12 UTC）
+
+此段更新前文“共享接线未完成”的历史事实，不修改9ac绑定请求或producer已冻结输入。main `362af3bac77541e5a60979326bcf4d4b8c947915` clean 已有历史 GET/DTO、薄client及原reportEvents接线；04 producer `eccb1ba6d9f3bf95cca4f50693dde8e32707ed40` 仅branch固定待独审/集成，不能假定当前服务已有样本或已部署。
+
+**Web 权威来源。** main registry将大task WPF-MATURE-04映射到本owner计划，没有第二份04计划。Web管理权威为 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/status.md`（12:10 UTC），实际HEAD `bb30ceb1066917dc012b5cb88768a23290172155`、管理范围dirty；其WPF-001-09仍把context列开放后继，当前实际工作为ATTACHI02/DPERF03。该树 `docs/evidence/web-platform/mature-task-handoff.md:211` 仅写“Mika / P2，Web消费UI”并链接本唯一plan。12:15:12 fresh账本的Web active任务为WPF-001/ATTACHI02/DPERF03/WORKSPACEPERF01；未见独立context-history UI claim。main Web源码也无 `contextHistory`/`context-history.v1` 消费。故现有权威输入**未确认04历史UI已开工**；这不是根据未回传推断，更不把知识引用选择/发送模块当作窗口用量UI完成。TODO05保持pending，后继由d01按fresh派工/领取协调，不干扰其现有任务。
+
+**可直接消费的现成 Interface。** `FlowClient.contextHistory(taskId, signal)`（`packages/client/src/index.ts:56`）调用 owner GET `/api/tasks/:id/context/history`，按 `contextHistoryResponseSchema` 解码并核返回taskId。server全局owner-auth后挂载（`apps/server/src/index.ts:131–141,166`），runner凭据不得读；不要复制HTTP客户端、携带expected/current identity或把403当“无样本”。GET禁止额外query，`Cache-Control:no-store`。task由中心加载，`readLatestHistory`（store.ts:99–104）仅选择其 **current_attempt_id**，按**原始eventSequence降序**返回最多一条；它不是整个task跨attempt历史列表，也不是当前占用/实时模型状态。
+
+**显示边界。** `latest:null` 表示当前attempt没有可用历史sample，不能显示已用0、充足或已完成采样；identity以响应绑定task/attempt/session/profile为准，不把旧attempt样本贴到新attempt。sample的observedAt与中心receivedAt分别显示/保留来源；used与compactionWindow是SDK估算，modelCapacity仍unknown，rawMaxTokens不得标成model硬上限。响应 `current` / `remaining` 均固定unknown/history-only；不要据elapsed、eventSequence、free类别、累计session账单或两个历史值相减制造current/remaining。compression `not-observed` 不是“未发生压缩”。过期/未采样/权限错误显示各自状态，不把网络失败沿用为新鲜结果。
+
+**按需有限内容。** materials仅中心已授权精确citation+bytes或metadata-unavailable，tokens为null；选择了材料不证明已经驻留。默认面板不重传全文，用户展开时使用现有 `FlowClient.detail(sample.detailRef.id, signal)`（index.ts:457）/已有授权引用reader，保留版本/locator/ref，不自行补正文或猜token。producer增量仅令普通显式Claude成功root result后有机会出现历史sample；缺方法/reject/非法值可无样本，pending unknown可保留uncertain。steering/goal/graph、current cut、压缩跟踪及真实SDK可用性均不在本片。消费端无需等待新contract，但具体Web实现/双主题窄屏与真实服务验证仍由d01另领scope。
