@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:26 UTC / main df29fb511df029a0922ace0f4973f3fe3736e502 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:38 UTC / main80ba95ad70cdf724251be4d88130b6bac56d3606 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已纳入成熟交互、终端客户端和成本预算计划；终端首个可运行片段已开始实施。 |
+| 当前产出 | 看板已纳入真实工程交付目标，终端客户端和执行工具接入进度可见。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -47,3 +47,5 @@
 规则已要求每子task所属大task/co-lead；实际status已有字段，但当前聚合器尚未把两者解析成页面关联。此真实展示缺口已交Web协调有界独立子片，不能把本次登记写成关系展示完成。注册发布不操作个人61227/61228或用户标签。
 
 实际部署：2026-10-06 09:09:25.827 UTC，原4320自有进程身份核对后正常换载，main1737cd6，111源；本批十项current=true/issues=[]，见 [mature-registry-live.json](../../docs/evidence/d05/mature-registry-live.json)。新R05B刚领取在下一正常登记批，未把领取状态当已登记。个人静态预览保持原b1c/v12。
+
+2026-10-06 09:36:30 UTC：确认自有4320进程身份后正常换载main80ba95；117来源，ENG-001/R05C/TUI01A唯一权威source均current、人读完整、parse errors[]与issues[]。见[实际部署回执](../../docs/evidence/d05/engineering-native-registry-live.json)。只登记与看板部署，不改固定架构图或个人61227/61228，也未刷新用户标签。
