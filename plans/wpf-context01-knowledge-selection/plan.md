@@ -8,8 +8,8 @@
 
 预算：只保留最近一次搜索的20hits；最多4选中引用；正文LRU最多8项/32768 UTF8 bytes；同一时刻1搜索+2正文请求，无隐式排队或分页。显式重试；取消生命周期后无自动重读。UI紧凑原生checkbox/button/details，不自造Dialog/focus体系、URL状态或虚拟化。现有公共契约、App/Thread/会话/Queue/薄reader保持只读。
 
-- [ ] WPF-CONTEXT01-01：独立选择/请求生命周期与紧凑组件。
-- [ ] WPF-CONTEXT01-02：局部模块与HTTP fixture、390双主题键盘/减动画验证。
+- [x] WPF-CONTEXT01-01：独立选择/请求生命周期与紧凑组件。
+- [x] WPF-CONTEXT01-02：局部模块与HTTP fixture、390双主题键盘/减动画验证。
 - [ ] WPF-CONTEXT01-03：固定提交独立review与main交接。
 - [ ] WPF-CONTEXT01-04：后继正式Send/Queue引用传递、ACK核验与实际App接线（另领，不属本片）。
 
