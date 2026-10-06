@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-06T21:52:32.910993+00:00",
+  "reviewer": "astra_ultra_execution_lead/assignment_review",
+  "verdict": "APPROVED_LIMITED_CAPTURE_INCREMENT",
+  "sourceTarget": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+  "priorApprovedSource": "3097730ee1abbb054c09ae2ed14c998ebde3ef49",
+  "delivery": "7bfa57dbc34cf1cdae605ff93e594232e27b16f7",
+  "manifestSha256": "18f35f2319cedef8773bc0965a82313f660ac40737013fcfc71d8ba19bd0e3f3",
+  "bindings": {
+    "path": "/tmp/flow-ops14-capture-independent-bindings.json",
+    "bytes": 18074,
+    "sha256": "3b4d3cb3ad2a48edb123c716a2d7da2b507184b9adc326219f8cfde3d5b2a19c",
+    "count": 29,
+    "mismatches": []
+  },
+  "scope": [
+    "Full three-file Capture delta from previously approved309, plus current Interface and original focused raw.",
+    "No re-review of prior complete module or rerun of old13 checks."
+  ],
+  "findings": [],
+  "reasoning": [
+    "Finite Capture enum validated before spawn; old four-argument Launch defaults to separate.",
+    "MERGED delegates stderr to the original stdout pipe at Popen, retains merged bytes in stdout and empty stderr, and EOF tracks only the actual pipe. No fabricated cross-stream ordering.",
+    "_Capture registers only non-None streams. Shared retained/observed byte cap, nonblocking reads, first failure, drain deadline and owned-child/group signal rules retain previous implementations.",
+    "Tests directly cover sequential kernel-pipe ABCD, combined64KiB cap and owned-group stop/absence, plus the actual default old Launch shape and separated bytes.",
+    "Three new source/raw hashes and all26 other bindings match fixedGit/current. Original failure evidence and four unmigrated-wrapper bindings remain intact."
+  ],
+  "evidence": {
+    "selected": 3,
+    "passed": 3,
+    "unselected": 12,
+    "exitCode": 0,
+    "outerElapsedMs": 237,
+    "unittestSeconds": 0.102,
+    "rawBytes": 533,
+    "newDistinct": 2,
+    "totalDifferentAcrossRounds": 15,
+    "oldMatrixRerun": false,
+    "reviewerRerun": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0
+  },
+  "limits": [
+    "Serial ABCD proves that bounded controlled write order, not arbitrary concurrent semantic ordering.",
+    "Original ownership/EPERM/escaped-descendant/persistence limits continue.",
+    "No real SVC05H/SVC07 wrapper migration or actual personal-service/PG acceptance is claimed.",
+    "The changed Report gains capture metadata; original lifecycle and cleanup authority remain caller-owned."
+  ],
+  "methods": "Existing local find-skills/clean-code/codebase-design: finite interface, single output ownership, default compatibility, bounded resource/error semantics; no generic framework expansion."
+}

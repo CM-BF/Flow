@@ -1,6 +1,6 @@
 # OPS14 独立 review
 
-状态：NOT_STARTED；当前 Capture 增量。历史3097730模块批准 / main接收保持。
+状态：APPROVED；仅 Capture 增量（APPROVED_LIMITED_CAPTURE_INCREMENT），两真实 consumer 仍未迁移。
 Review target commit：afd01a0387f8cc9d9797109be1fdead74606a4af
 Base：c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05
 Scope：tools/owned-process-supervision
@@ -30,3 +30,5 @@ assignment_review 原样[增量批准](../../docs/evidence/ops14/independent-val
 ## Capture 增量审查入口
 
 该增量仅 finite enum / Launch 默认 / 单 pipe stderr=STDOUT / Report.mode+实际EOF 与3个直接 consumer。原309 scope独审不覆盖此增量。新3/3、12未选，2新+1默认旧consumer；0PG/Chrome/provider，未重跑原13。核源差异、默认四项Launch兼容、内核单pipe捕获语义、同总cap、原最早错误与unknown逻辑未改、两实际wrapper无差。此增量仍未将两个wrapper接入。
+
+Capture 唯一独审原样[报告](../../docs/evidence/ops14/independent-capture-review.json)/[绑定](../../docs/evidence/ops14/independent-capture-review-bindings.json)：完整3源delta与29bindings一致，无P1/P2，3/3原输出成立，reviewer0重跑；原309范围与raw保持。
