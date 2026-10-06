@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution
+
+ ✓ apps/server/src/goal-tool-runs/authorization.test.ts (9 tests) 7913ms
+   ✓ enforces current runner/attempt/grant scope and preserves the whole-goal read policy  1145ms
+   ✓ counts distinct admitted keys, keeps bounded audit and replays across restart without bypassing input conflicts  611ms
+   ✓ revokes authority durably and rechecks authorization before returning cached commands  609ms
+   ✓ rejects expired, completed and revoked-runner ownership without reviving cached authority  1608ms
+   ✓ serializes an in-flight cached command against revoke without granting a post-revocation replay  569ms
+   ✓ serializes an in-flight cached command against cancel without granting a post-revocation replay  508ms
+   ✓ rolls back failed application without consuming authority and protects immutable scope and audit history  984ms
+   ✓ applies execution in the same grant transaction and gives no delegated authority to its fixture child  967ms
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)
+   Start at  21:45:35
+   Duration  8.46s (transform 197ms, setup 0ms, import 435ms, tests 7.91s, environment 0ms)
+

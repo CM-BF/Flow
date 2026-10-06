@@ -1,0 +1,33 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution
+
+ ✓ apps/runner/src/claude.test.ts (26 tests) 123ms
+ ✓ apps/server/src/goal-tool-runs/authorization.test.ts (9 tests) 8101ms
+   ✓ enforces current runner/attempt/grant scope and preserves the whole-goal read policy  1103ms
+   ✓ counts distinct admitted keys, keeps bounded audit and replays across restart without bypassing input conflicts  524ms
+   ✓ revokes authority durably and rechecks authorization before returning cached commands  564ms
+   ✓ rejects expired, completed and revoked-runner ownership without reviving cached authority  1562ms
+   ✓ serializes an in-flight cached command against revoke without granting a post-revocation replay  584ms
+   ✓ serializes an in-flight cached command against cancel without granting a post-revocation replay  523ms
+   ✓ rolls back failed application without consuming authority and protects immutable scope and audit history  931ms
+   ✓ applies execution in the same grant transaction and gives no delegated authority to its fixture child  978ms
+ ✓ apps/server/src/execution-profiles/execution-profiles.test.ts (7 tests) 2993ms
+   ✓ pins a selected conversation to the configured runner and preserves that choice in the claimed task  544ms
+   ✓ executes the selected configuration, separates reported settings, and resumes only on the original runner  1396ms
+ ✓ apps/runner/src/goal-tool-bridge/integration.test.ts (3 tests) 2932ms
+   ✓ runs real runner -> SDK MCP -> HTTP/PG commands and persists only the actual final result  854ms
+   ✓ reconciles a lost HTTP command ACK with the same key and rejects that replay after revoke  1041ms
+ ✓ apps/runner/src/execution-profiles.test.ts (6 tests) 791ms
+   ✓ publishes from the real startup entry before polling (publication accepted: true)  470ms
+   ✓ publishes from the real startup entry before polling (publication accepted: false)  312ms
+ ✓ apps/runner/src/goal-tool-bridge/sdk.test.ts (10 tests) 35ms
+ ✓ apps/server/src/goal-tool-runs/native.test.ts (1 test) 1732ms
+   ✓ admits only explicit native goal profiles and refuses ordinary submit/conversation authority  1055ms
+ ✓ apps/runner/src/goal-tool-bridge/configuration.test.ts (6 tests) 10ms
+ ✓ apps/runner/src/configuration.test.ts (9 tests) 11ms
+
+ Test Files  9 passed (9)
+      Tests  77 passed (77)
+   Start at  21:54:33
+   Duration  18.96s (transform 302ms, setup 0ms, import 1.54s, tests 16.73s, environment 1ms)
+

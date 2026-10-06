@@ -1,0 +1,313 @@
+{
+  "boundary": "Official MCP client tool requests/responses; query transport injected, no model",
+  "wire": [
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "goal_read",
+        "arguments": {
+          "request": {
+            "view": "overview"
+          }
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"goalId\":\"6615a826-6d05-43ff-b7b3-0b5f52477e7c\",\"projectId\":\"8f75b249-78d5-4340-be9a-0fd51c3db6de\",\"projectRevision\":2,\"snapshotRef\":\"ab02803a758349d4d1461b0781134374ed4e669a3450844a2c90da0a1e3be013\",\"goalRef\":{\"view\":\"goal\",\"snapshotRef\":\"ab02803a758349d4d1461b0781134374ed4e669a3450844a2c90da0a1e3be013\"},\"totalNodes\":1,\"nodes\":[{\"nodeId\":\"1a715d8b-c5a9-46f2-852a-14705d05146c\",\"title\":\"A\",\"ref\":{\"view\":\"node\",\"nodeId\":\"1a715d8b-c5a9-46f2-852a-14705d05146c\",\"snapshotRef\":\"ab02803a758349d4d1461b0781134374ed4e669a3450844a2c90da0a1e3be013\"},\"inputRef\":null,\"dependencyCount\":0,\"deliveryCurrent\":false,\"dependenciesReady\":true,\"execution\":null}],\"next\":null,\"explanations\":{\"availableCount\":1,\"firstVersion\":1,\"lastVersion\":1,\"latestRef\":{\"view\":\"explanation\",\"snapshotRef\":\"ab02803a758349d4d1461b0781134374ed4e669a3450844a2c90da0a1e3be013\",\"version\":1},\"history\":\"Only the current center window (at most 50) is available; older versions may be unavailable.\"},\"omitted\":[\"original goal text\",\"complete inputs\",\"execution prompts\",\"dependency lists\",\"explanation history\"]}"
+          }
+        ]
+      }
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "goal_command",
+        "arguments": {
+          "command": {
+            "kind": "define-input",
+            "nodeId": "1a715d8b-c5a9-46f2-852a-14705d05146c",
+            "expectedInputVersion": 0,
+            "input": {
+              "goal": "确定性输入🙂",
+              "constraints": "No model",
+              "acceptance": "Nonempty",
+              "verification": {
+                "kind": "nonempty"
+              }
+            },
+            "reason": "Scoped native tool"
+          },
+          "idempotencyKey": "define-stable"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"goalId\":\"6615a826-6d05-43ff-b7b3-0b5f52477e7c\",\"nodeId\":\"1a715d8b-c5a9-46f2-852a-14705d05146c\",\"inputVersion\":1,\"explanation\":{\"version\":2,\"kind\":\"define-input\",\"text\":\"Actual input version 1 was saved. Scoped native tool\",\"source\":{\"nodeId\":\"1a715d8b-c5a9-46f2-852a-14705d05146c\",\"inputVersion\":1,\"projectRevision\":2},\"createdAt\":\"2026-10-06T04:54:47.150Z\"},\"changed\":true,\"replayed\":false,\"omitted\":[]}"
+          }
+        ]
+      }
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "goal_command",
+        "arguments": {
+          "command": {
+            "kind": "define-input",
+            "nodeId": "1a715d8b-c5a9-46f2-852a-14705d05146c",
+            "expectedInputVersion": 0,
+            "input": {
+              "goal": "确定性输入🙂",
+              "constraints": "No model",
+              "acceptance": "Nonempty",
+              "verification": {
+                "kind": "nonempty"
+              }
+            },
+            "reason": "Scoped native tool"
+          },
+          "idempotencyKey": "define-stable"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"goalId\":\"6615a826-6d05-43ff-b7b3-0b5f52477e7c\",\"nodeId\":\"1a715d8b-c5a9-46f2-852a-14705d05146c\",\"changed\":true,\"explanation\":{\"kind\":\"define-input\",\"text\":\"Actual input version 1 was saved. Scoped native tool\",\"source\":{\"nodeId\":\"1a715d8b-c5a9-46f2-852a-14705d05146c\",\"inputVersion\":1,\"projectRevision\":2},\"version\":2,\"createdAt\":\"2026-10-06T04:54:47.150Z\"},\"inputVersion\":1,\"replayed\":true,\"omitted\":[]}"
+          }
+        ]
+      }
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "goal_command",
+        "arguments": {
+          "command": {
+            "kind": "define-input",
+            "nodeId": "0ede954f-8312-4656-8ec0-959ddc6d7da3",
+            "expectedInputVersion": 0,
+            "input": {
+              "goal": "确定性输入🙂",
+              "constraints": "No model",
+              "acceptance": "Nonempty",
+              "verification": {
+                "kind": "nonempty"
+              }
+            },
+            "reason": "Scoped native tool"
+          },
+          "idempotencyKey": "denied"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"error\":\"scope_denied\"}"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "goal_read",
+        "arguments": {
+          "request": {
+            "view": "input",
+            "nodeId": "1a715d8b-c5a9-46f2-852a-14705d05146c",
+            "version": 1
+          }
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"definition\":{\"nodeId\":\"1a715d8b-c5a9-46f2-852a-14705d05146c\",\"version\":1,\"input\":{\"goal\":\"确定性输入🙂\",\"acceptance\":\"Nonempty\",\"constraints\":\"No model\",\"verification\":{\"kind\":\"nonempty\"}},\"projectRevision\":2,\"createdAt\":\"2026-10-06T04:54:47.149Z\"}}"
+          }
+        ]
+      }
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "goal_command",
+        "arguments": {
+          "command": {
+            "kind": "execute",
+            "nodeId": "1a715d8b-c5a9-46f2-852a-14705d05146c",
+            "expectedInputVersion": 1,
+            "dependencies": [],
+            "previousExecutionId": null,
+            "fixture": {
+              "scenario": "success"
+            },
+            "reason": "Fixture execution"
+          },
+          "idempotencyKey": "execute-stable"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"goalId\":\"6615a826-6d05-43ff-b7b3-0b5f52477e7c\",\"nodeId\":\"1a715d8b-c5a9-46f2-852a-14705d05146c\",\"inputVersion\":1,\"executionId\":\"c6c8e2f4-182f-4dfa-9edc-d58c0904c519\",\"task\":{\"id\":\"ffee5cc1-b7ee-4c21-9313-c2349a5550f2\",\"status\":\"queued\",\"verificationStatus\":\"pending\",\"updatedAt\":\"2026-10-06T04:54:47.220Z\"},\"explanation\":{\"version\":3,\"kind\":\"execute\",\"text\":\"Execution was authorized with input version 1 and 0 fixed dependencies. Fixture execution\",\"source\":{\"nodeId\":\"1a715d8b-c5a9-46f2-852a-14705d05146c\",\"inputVersion\":1,\"executionId\":\"c6c8e2f4-182f-4dfa-9edc-d58c0904c519\",\"projectRevision\":2},\"createdAt\":\"2026-10-06T04:54:47.222Z\"},\"changed\":true,\"replayed\":false,\"omitted\":[\"task prompt; use task id and versioned input refs\"]}"
+          }
+        ]
+      }
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "goal_command",
+        "arguments": {
+          "command": {
+            "kind": "define-input",
+            "nodeId": "1a715d8b-c5a9-46f2-852a-14705d05146c",
+            "expectedInputVersion": 0,
+            "input": {
+              "goal": "确定性输入🙂",
+              "constraints": "No model",
+              "acceptance": "Nonempty",
+              "verification": {
+                "kind": "nonempty"
+              }
+            },
+            "reason": "Changed intent"
+          },
+          "idempotencyKey": "define-stable"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"error\":\"center_rejected\",\"status\":409}"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "goal_read",
+        "arguments": {
+          "request": {
+            "view": "overview"
+          }
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"goalId\":\"03eb92ca-8b8b-46be-b2a0-17a2d349a79c\",\"projectId\":\"00a9a27d-1aea-49ad-b2eb-f1233d4c153a\",\"projectRevision\":2,\"snapshotRef\":\"38989a95bd1319b24b94f6059a42f302221a62439fa43bf3caccd9b155bc39b0\",\"goalRef\":{\"view\":\"goal\",\"snapshotRef\":\"38989a95bd1319b24b94f6059a42f302221a62439fa43bf3caccd9b155bc39b0\"},\"totalNodes\":1,\"nodes\":[{\"nodeId\":\"b4d8a130-9d71-4e9e-9dfd-03ad68af2a85\",\"title\":\"A\",\"ref\":{\"view\":\"node\",\"nodeId\":\"b4d8a130-9d71-4e9e-9dfd-03ad68af2a85\",\"snapshotRef\":\"38989a95bd1319b24b94f6059a42f302221a62439fa43bf3caccd9b155bc39b0\"},\"inputRef\":null,\"dependencyCount\":0,\"deliveryCurrent\":false,\"dependenciesReady\":true,\"execution\":null}],\"next\":null,\"explanations\":{\"availableCount\":1,\"firstVersion\":1,\"lastVersion\":1,\"latestRef\":{\"view\":\"explanation\",\"snapshotRef\":\"38989a95bd1319b24b94f6059a42f302221a62439fa43bf3caccd9b155bc39b0\",\"version\":1},\"history\":\"Only the current center window (at most 50) is available; older versions may be unavailable.\"},\"omitted\":[\"original goal text\",\"complete inputs\",\"execution prompts\",\"dependency lists\",\"explanation history\"]}"
+          }
+        ]
+      }
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "goal_command",
+        "arguments": {
+          "command": {
+            "kind": "define-input",
+            "nodeId": "d768af04-e330-4fc2-b1d2-dfbcf2132bd2",
+            "expectedInputVersion": 0,
+            "input": {
+              "goal": "Lost ACK input",
+              "constraints": "",
+              "acceptance": "No duplicate",
+              "verification": {
+                "kind": "nonempty"
+              }
+            },
+            "reason": "Same intent"
+          },
+          "idempotencyKey": "lost-ack"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"error\":\"outcome_unknown\",\"message\":\"The request could not be completed. For a command, reconcile using the same idempotency key. No automatic retry was performed.\"}"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "goal_command",
+        "arguments": {
+          "command": {
+            "kind": "define-input",
+            "nodeId": "d768af04-e330-4fc2-b1d2-dfbcf2132bd2",
+            "expectedInputVersion": 0,
+            "input": {
+              "goal": "Lost ACK input",
+              "constraints": "",
+              "acceptance": "No duplicate",
+              "verification": {
+                "kind": "nonempty"
+              }
+            },
+            "reason": "Same intent"
+          },
+          "idempotencyKey": "lost-ack"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"goalId\":\"c154320b-4e30-4cf9-9bd3-1c831a4140c9\",\"nodeId\":\"d768af04-e330-4fc2-b1d2-dfbcf2132bd2\",\"changed\":true,\"explanation\":{\"kind\":\"define-input\",\"text\":\"Actual input version 1 was saved. Same intent\",\"source\":{\"nodeId\":\"d768af04-e330-4fc2-b1d2-dfbcf2132bd2\",\"inputVersion\":1,\"projectRevision\":2},\"version\":2,\"createdAt\":\"2026-10-06T04:54:48.525Z\"},\"inputVersion\":1,\"replayed\":true,\"omitted\":[]}"
+          }
+        ]
+      }
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "goal_command",
+        "arguments": {
+          "command": {
+            "kind": "define-input",
+            "nodeId": "d768af04-e330-4fc2-b1d2-dfbcf2132bd2",
+            "expectedInputVersion": 0,
+            "input": {
+              "goal": "Lost ACK input",
+              "constraints": "",
+              "acceptance": "No duplicate",
+              "verification": {
+                "kind": "nonempty"
+              }
+            },
+            "reason": "Same intent"
+          },
+          "idempotencyKey": "lost-ack"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"error\":\"center_rejected\",\"status\":409}"
+          }
+        ],
+        "isError": true
+      }
+    }
+  ]
+}

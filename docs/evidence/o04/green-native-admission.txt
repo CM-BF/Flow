@@ -1,0 +1,35 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution
+
+ ❯ apps/server/src/goal-tool-runs/native.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-tool-runs/native.test.ts [ apps/server/src/goal-tool-runs/native.test.ts ]
+Error: Transform failed with 1 error:
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution/packages/contracts/src/index.ts:14:0: ERROR: Unexpected "<<"
+  Plugin: vite:esbuild
+  File: /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution/packages/contracts/src/index.ts:14:0
+  
+  Unexpected "<<"
+  12 |  export * from './plugins.js';
+  13 |  export * from './execution-profiles.js';
+  14 |  <<<<<<< HEAD
+     |  ^
+  15 |  =======
+  16 |  export * from './conversation-queue.js';
+  
+ ❯ failureErrorWithLog node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js:1752:15
+ ❯ node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js:1019:50
+ ❯ responseCallbacks.<computed> node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js:886:9
+ ❯ handleIncomingPacket node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js:941:12
+ ❯ Socket.readFromStdout node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js:864:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  21:47:46
+   Duration  189ms (transform 43ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

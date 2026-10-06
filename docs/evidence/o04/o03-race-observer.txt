@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution
+
+ ✓ apps/server/src/goal-tool-runs/authorization.test.ts (9 tests | 7 skipped) 1673ms
+   ✓ serializes an in-flight cached command against revoke without granting a post-revocation replay  559ms
+   ✓ serializes an in-flight cached command against cancel without granting a post-revocation replay  477ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed | 7 skipped (9)
+   Start at  21:48:50
+   Duration  2.14s (transform 186ms, setup 0ms, import 375ms, tests 1.67s, environment 0ms)
+
