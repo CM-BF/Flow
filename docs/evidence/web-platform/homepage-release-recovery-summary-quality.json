@@ -1,0 +1,142 @@
+{
+  "at": "2026-10-06T13:40:07.637206+00:00",
+  "finding": "Root found homepage human output/next/blocker fields lagging the detailed canonical queue: Recovery-only summary and NONE hid concrete RELEASE03/Recovery readiness gates. Same stale NONE found in legitimate MATURE01/06 summaries.",
+  "correction": "Align output, next delivery and specific waiting conditions in three authoritative status files; keep all branch states in-progress, no entire-goal blocked claim, no new feature claim or another progress source.",
+  "scope": [
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-01-visual/status.md",
+    "plans/wpf-mature-06-chat/status.md"
+  ],
+  "claim": {
+    "id": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3,
+    "observedAt": "2026-10-06T13:39:30.229Z"
+  },
+  "method": "Previously read local find-skills/clean-code method applied to one responsibility per field, user outcomes before technical detail, canonical state consistency and no duplicate status authority.",
+  "gatesPreserved": "Release formalformat2 requires>=2.5GiB and anticipatedphysicalgrowth+1GiBmargin; backend362specificattachmenthistoryfix/combination. Recoveryapprovedmainclient prerequisite; threecentersemantics parallel untilfinalbrowser. Detailed thresholds remain existingproposal.",
+  "productsChanged": 0,
+  "productTests": 0,
+  "newFeatureClaims": 0,
+  "initialParser": [
+    {
+      "path": "plans/web-platform/status.md",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "附件发送与架构更新已进入主线；已审页面发布和刷新恢复两条线正在并行准备",
+        "next": "验证稳定页面与当前后台的兼容组合并交原发布方；恢复接口获审并进入主线后领取实现",
+        "blocker": {
+          "state": "unknown",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [
+          "当前阻塞"
+        ],
+        "complete": false
+      },
+      "branchState": "in-progress；按轮验收，持续目标未宣称完成",
+      "todos": 36
+    },
+    {
+      "path": "plans/wpf-mature-01-visual/status.md",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "已审页面已进入主线；新预览产物与当前后台的兼容验证方案已确定，个人页面尚未切换",
+        "next": "满足正式产物构建资源及后台附件历史修复条件后，完成定向兼容验证，交原发布方更新预览",
+        "blocker": {
+          "state": "unknown",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [
+          "当前阻塞"
+        ],
+        "complete": false
+      },
+      "branchState": "in-progress",
+      "todos": 5
+    },
+    {
+      "path": "plans/wpf-mature-06-chat/status.md",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "连接与草稿、未决发送恢复方案已批准；同步交接、材料保留和持久记录容量已有只读依据，尚未实现",
+        "next": "共享客户端独审和主线组合输入就绪、轻量资源允许后，领取恢复实现；页面发布由另一条线推进",
+        "blocker": {
+          "state": "unknown",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [
+          "当前阻塞"
+        ],
+        "complete": false
+      },
+      "branchState": "in-progress",
+      "todos": 6
+    }
+  ],
+  "formatCorrection": "Initial free prose in blocker field was correctly rejected as unknown by signal parser; added required ACTIVE: prefix while leaving branch in-progress. No parser change or fabricated NONE.",
+  "parser": [
+    {
+      "path": "plans/web-platform/status.md",
+      "errors": [],
+      "humanComplete": true,
+      "blocker": {
+        "state": "active",
+        "text": "发布等待正式format2构建资源（可用≥2.5GiB，扣预计增量后余≥1GiB），以及后台362的附件历史修复与组合验证；恢复等待共享客户端独审及主线输入。两片尚未领取，其他独立工作继续"
+      },
+      "branchState": "in-progress；按轮验收，持续目标未宣称完成",
+      "todos": 36
+    },
+    {
+      "path": "plans/wpf-mature-01-visual/status.md",
+      "errors": [],
+      "humanComplete": true,
+      "blocker": {
+        "state": "active",
+        "text": "RELEASE03等待正式format2构建空间（可用≥2.5GiB，扣预计增量后余≥1GiB），以及后台362已审附件历史修复的部署与组合验证；不等待整套恢复功能完成"
+      },
+      "branchState": "in-progress",
+      "todos": 5
+    },
+    {
+      "path": "plans/wpf-mature-06-chat/status.md",
+      "errors": [],
+      "humanComplete": true,
+      "blocker": {
+        "state": "active",
+        "text": "RECOVERY01等待共享客户端独审及正式主线组合输入；中心三项会话语义并行对齐，作为最终浏览器验收条件，不阻挡届时先实现持久记录"
+      },
+      "branchState": "in-progress",
+      "todos": 6
+    }
+  ]
+}
