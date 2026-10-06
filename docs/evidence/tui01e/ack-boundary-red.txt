@@ -1,0 +1,54 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls
+
+ ❯ packages/interaction/src/queue-control/controller.test.ts (9 tests | 2 failed | 7 skipped) 9ms
+   ↓ queue pause uses the observed revision and the one durable intent before dispatch
+   ↓ unknown malformed ACK survives restart and explicit recover reuses the original key/body
+   ↓ deterministic CAS rejection keeps draft, refreshes queue and never retries with a new version
+   ↓ resume persists observed task identity and ignores unexpected unsigned user fields
+   ↓ old center capability false and unrelated queue pages fail closed
+   × a queue ACK with an impossible revision remains unknown and keeps its durable request 7ms
+   × a resume ACK without promotion must retain the frozen task identity 1ms
+   ↓ only twenty bounded previews are retained and unsolicited item bodies are omitted
+   ↓ disconnect drops a late queue read without installing it in the new epoch
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/queue-control/controller.test.ts > a queue ACK with an impossible revision remains unknown and keeps its durable request
+AssertionError: expected 'ACCEPTED' to be 'UNKNOWN' // Object.is equality
+
+Expected: "UNKNOWN"
+Received: "ACCEPTED"
+
+ ❯ packages/interaction/src/queue-control/controller.test.ts:89:53
+     87|   const f = fixture(); await f.controller.initialize(); await f.contro…
+     88|   f.queue.pauseConversationQueue = async () => ({ conversationId: f.id…
+     89|   expect((await f.controller.input('/pause')).code).toBe('UNKNOWN'); e…
+       |                                                     ^
+     90| });
+     91| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/interaction/src/queue-control/controller.test.ts > a resume ACK without promotion must retain the frozen task identity
+AssertionError: expected 'ACCEPTED' to be 'UNKNOWN' // Object.is equality
+
+Expected: "UNKNOWN"
+Received: "ACCEPTED"
+
+ ❯ packages/interaction/src/queue-control/controller.test.ts:96:54
+     94|   f.queue.resumeConversationQueue = (async () => ({ conversationId: f.…
+     95|     currentTurn: { taskId: randomUUID(), taskStatus: 'running', turnId…
+     96|   expect((await f.controller.input('/resume')).code).toBe('UNKNOWN'); …
+       |                                                      ^
+     97| });
+     98| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 7 skipped (9)
+   Start at  06:41:05
+   Duration  437ms (transform 217ms, setup 0ms, import 334ms, tests 9ms, environment 0ms)
+
