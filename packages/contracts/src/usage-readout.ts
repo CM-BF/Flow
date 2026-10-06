@@ -7,7 +7,8 @@ export const USAGE_READOUT_SOURCE_LIMIT = 32;
 /** value is null if any contribution is unknown or the bounded read is incomplete. */
 export interface UsageQuantity {
   value: number | null;
-  knownSubtotal: number;
+  /** null also represents a sum outside the safe numeric range. */
+  knownSubtotal: number | null;
   knownSamples: number;
   unknownSamples: number;
 }
@@ -47,6 +48,7 @@ export interface TaskUsageReadout {
     informationalRead: number;
     hasMore: boolean;
     sourceLimit: 32;
+    /** Omitted groups within samplesRead; further samples may contain more sources. */
     sourcesOmitted: number;
   };
   sources: UsageSourceReadout[];
