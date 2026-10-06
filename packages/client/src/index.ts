@@ -48,9 +48,9 @@ export class FlowClient {
     return this.request(`/api/runners/${encodeURIComponent(id)}/revoke`, { method: 'POST', body: '{}' });
   }
 
-  claim(): Promise<ClaimResponse> { return this.request('/api/runner/claim', { method: 'POST', body: '{}' }); }
-  heartbeat(ownership: Ownership): Promise<HeartbeatResponse> { return this.request('/api/runner/heartbeat', { method: 'POST', body: JSON.stringify(ownership) }); }
-  report(batch: EventBatch): Promise<EventAcknowledgement> { return this.request('/api/runner/events', { method: 'POST', body: JSON.stringify(batch) }); }
+  claim(signal?: AbortSignal): Promise<ClaimResponse> { return this.request('/api/runner/claim', { method: 'POST', body: '{}', signal }); }
+  heartbeat(ownership: Ownership, signal?: AbortSignal): Promise<HeartbeatResponse> { return this.request('/api/runner/heartbeat', { method: 'POST', body: JSON.stringify(ownership), signal }); }
+  report(batch: EventBatch, signal?: AbortSignal): Promise<EventAcknowledgement> { return this.request('/api/runner/events', { method: 'POST', body: JSON.stringify(batch), signal }); }
 
   async *watch(id: string, after = 0, signal?: AbortSignal): AsyncGenerator<EventPage> {
     const response = await fetch(`${this.baseUrl}/api/tasks/${encodeURIComponent(id)}/stream?after=${after}`, { headers: { Authorization: `Bearer ${this.token}`, Accept: 'text/event-stream' }, signal });

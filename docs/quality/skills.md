@@ -39,3 +39,5 @@
 2026-10-06 00:50 UTC：Execution Lead 检查 contracts/client/probe；中心与runner owners独立只读复核公共Interface。已修复分页末游标与最新水位歧义、终态重报确认、批量字节上限、usage基线/唯一入账口径/成本类型、指定verifier摘要，以及SSE跨块CRLF解析。命名与职责检查通过；stream parser保留单一状态循环，未为函数长度拆出无价值转发层。
 
 验证范围：Node24.20.0下类型检查、4个contracts/client行为测试；真实PostgreSQL16.13 + pg-boss12.37.0的事务回滚、队列进程重启、稳定ID重试和完成。人工等待、取消、失联、应用重启、UI及真实模型验收仍待C01/R01/I01/R02，不由短probe代替。
+
+2026-10-06 00:52 UTC client接口工作段：按runner owner反馈为claim/heartbeat/report加可选AbortSignal，使runtime独立deadline真正取消网络请求；保持既有返回/状态语义。类型与现有接口测试通过，无剩余项；runner失联行为仍由R01测试。
