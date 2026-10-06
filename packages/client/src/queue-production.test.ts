@@ -13,8 +13,8 @@ const pool = new Pool({ connectionString: databaseUrl, max: 3 });
 let server: Awaited<ReturnType<typeof createServer>> | undefined;
 let client: FlowClient;
 let created = false;
-async function start() {
-  server = await createServer({ databaseUrl, ownerToken: 'f01-queue-owner' });
+async function start(automaticQueueScan = true) {
+  server = await createServer({ databaseUrl, ownerToken: 'f01-queue-owner', automaticQueueScan });
   client = new FlowClient({ baseUrl: await server.listen({ host: '127.0.0.1', port: 0 }), token: 'f01-queue-owner' });
 }
 beforeAll(async () => { await admin.query(`CREATE DATABASE ${name}`); created = true; await start(); });
@@ -64,4 +64,17 @@ it('waits for an in-flight scan before disposing its pool and does not overlap i
     await lock.query('ROLLBACK'); lock.release();
     await closing;
   }
+});
+
+it('allows module tests to disable automatic scanning explicitly while the next default startup recovers the same intent', async () => {
+  await server?.close(); server = undefined;
+  await start(false);
+  const { conversation } = await client.createConversation(conversationCreationSchema.parse({ title: 'Manually driven module' }), randomUUID());
+  const accepted = await client.enqueueConversationTurn(conversation.id, { expectedQueueRevision: 0, text: 'Waiting for explicit module driver' }, randomUUID());
+  await delay(1200);
+  expect((await client.conversationQueueItem(conversation.id, accepted.item.id)).item.state).toBe('waiting');
+  expect((await client.conversation(conversation.id)).lastTurn).toBeNull();
+  await server!.close(); server = undefined;
+  await start();
+  expect((await client.conversationQueueItem(conversation.id, accepted.item.id)).item.state).toBe('promoted');
 });
