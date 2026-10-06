@@ -81,3 +81,5 @@ Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conv
 ## 2026-10-06 19:32:54 UTC — 76a限定源码通过 / Crashpad小项待审
 
 独立reviewer root，时间2026-10-06T19:30:46.598697+00:00，固定76a766a24614b9b3cfdc996bdb275a8826532a84，metadata43a081；[原报告](../../docs/evidence/wpf-conversation-recovery/76a-root-parent-source-review.json)APPROVED_SCOPED_PARENT_SOURCE_NOT_RUN，0blocking，TAIL-RESOURCE/GROUP-ABSENCE源码addressed。未运行任何新检查。另按primary来源边界补自有BREAKPAD_DUMP_LOCATION，待新固定diff复核；不把此配置当Chrome完整OS写入隔离或Recovery实际nested故障。38/首失败仍各原范围，完整feature NOT_STARTED/targetUNKNOWN。
+
+新配置待审固定 `7ca31ca3a65af587b1cf80713b03a6dbe22e1f75`，见[manifest](../../docs/evidence/wpf-conversation-recovery/browser-crashpad-checkpoint.json)。仅parent窄diff，76a尾部批准保持原范围；本配置NOT_RUN。

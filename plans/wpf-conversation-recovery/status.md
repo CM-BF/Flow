@@ -2,15 +2,15 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 19:32:54 UTC |
+| 最近更新 | 2026-10-06 19:33:24 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前限定source76a766a24614b9b3cfdc996bdb275a8826532a84；38受控执行仍bf14/7cc；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 43a081 clean输入；本段仅browser parent自有Crashpad配置及own记录，18其他源冻结 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前限定source7ca31ca3a65af587b1cf80713b03a6dbe22e1f75；38受控执行仍bf14/7cc；当前metadata HEAD以Git为准 |
+| 工作树dirty状态 | Crashpad配置限定source已提交并冻结；当前只metadata收口，normalpush后核local=origin/clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
@@ -177,3 +177,5 @@ Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conv
 Root于2026-10-06T19:30:46.598697+00:00对76a给[APPROVED_SCOPED_PARENT_SOURCE_NOT_RUN](../../docs/evidence/wpf-conversation-recovery/76a-root-parent-source-review.json)，TAIL-RESOURCE/GROUP-ABSENCE源码关闭，0blocking；原件逐字归档。当前追加只把BREAKPAD_DUMP_LOCATION明确指自有scratch/crashpad（创建后checkpoint）并入既有白名单launch记录；不改原MAC临时目录、HOME/native Chrome sandbox或worker场景，不增加Settings外层sandbox/collector。
 
 [本段权属观察](../../docs/evidence/wpf-conversation-recovery/browser-crashpad-claim.json)已核19:31:48.442Z原21/v4/无overlap。没有Recovery复现nested问题的证据，也不声明Chrome所有文件写入受OS约束。新配置待固定源审，0runtime/import/types/38复跑/HTTP/PG/Chrome/free；首失败14.846267375s和10raw保持，余75.153732625s含15s清理仍非许可，完整feature NOT_STARTED。
+
+固定配置checkpoint `7ca31ca3a65af587b1cf80713b03a6dbe22e1f75`；[累计19源manifest](../../docs/evidence/wpf-conversation-recovery/browser-crashpad-checkpoint.json)核仅parent两处环境字段和一个owned目录准备变化、18源等76a，当前types/运行NOT_RUN，原10raw不变。源码diffcheck0；源冻结交root窄审，metadata正常push后核clean。
