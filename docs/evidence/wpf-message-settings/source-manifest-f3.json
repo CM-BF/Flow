@@ -1,7 +1,7 @@
 {
-  "at": "2026-10-06 19:10:12 UTC",
+  "at": "2026-10-06 18:24:17 UTC",
   "base": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
-  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
   "files": [
     {
       "path": "apps/web/src/execution-profiles/catalog.ts",
@@ -30,8 +30,8 @@
     },
     {
       "path": "apps/web/test/message-settings.browser.ts",
-      "bytes": 11628,
-      "sha256": "9b851ff0a28efb497fa396847d3d2c008f32f7c291ec9ee9fc69f93b803f4254"
+      "bytes": 11558,
+      "sha256": "11083f2ba938e4ca6919792224c6280682b3972ccc38480ec7311687074f546f"
     }
   ],
   "protectedPaths": [
@@ -53,6 +53,6 @@
   ],
   "protectedDiff": [],
   "readonlyCreationParameterPreserved": "configuredSelection(input: Immutable<DirectoryProfile>)",
-  "runtimeChecks": "New one-line browser fixture configuration NOT_RUN; original f3 strict noEmit/direct37 PASS evidence retained; first f3/f800 browser startup FAILED before UI,5197ms. No current target runtime approval.",
-  "previousImplementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2"
+  "runtimeChecks": "NOT_RUN",
+  "previousImplementation": "ed769f929a7efe01a279ddd85c2e1e88b46839e6"
 }
