@@ -1,6 +1,6 @@
 # TUI01F — 聊天任务显式取消与接续
 
-状态：in-progress；创建：2026-10-06 15:47 UTC；最近更新：2026-10-06 16:13 UTC。所属大task [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，原 TODO06/08；co-lead Execution Lead。
+状态：in-progress；创建：2026-10-06 15:47 UTC；最近更新：2026-10-06 16:23 UTC。所属大task [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，原 TODO06/08；co-lead Execution Lead。
 
 ## 小交付与 Interface
 
@@ -26,3 +26,5 @@
 2026-10-06 16:03 UTC：追加已授权局部运行，35+1 分轮全绿（36 distinct），focused noEmit0。依赖视图由 Lead 受控创建，0安装/PG/HTTPserver/PTY/browser/provider。原 source-only NOT_RUN 说明为历史；03/04 仍开放。
 
 2026-10-06 16:13 UTC：controller+静态Ink接线限定 APPROVED，main `83f535b54f2390a729f02bc818e07ba684d94ccb` 接收9源零差。本片段delivered不等完整TUI；03/04未勾选，下一最小source闭包见 [followup](../../docs/evidence/tui01f/followup-acceptance.md)。仍保留原claim，无新运行/产品写入。
+
+2026-10-06 16:23 UTC：同claim实施03测试harness源码；仅fixture.ts、journey.test.ts、cancel_driver.py。最多一个随机库/一个中心与runner/A-B-C三个轮次，两项显式cancel及A原key重报。完整checkpoint成功先于DROP/rm，整个owned PGID停止未确认则保留。尚未运行，04 App driver本轮不创建。
