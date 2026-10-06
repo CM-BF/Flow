@@ -59,3 +59,12 @@ A回取SHA256 `73ccdbddae45ef30d0c3fc6da36c6f0552472c239b438d206a467d68699a4195`
 未测试：未知字段/任意损坏或恶意store、跨进程/跨机恢复、多compaction插件竞争、实际provider签名/缓存、模型是否会自行正确写summary或调用工具、Pi其他版本、原文被外部改写后的生命周期。未来schema未拒绝和默认资源发现是采用缺口；本实验不修stock，不新装proxy，不推断费用/容量。
 
 2026-10-06 05:05:27 UTC clean-code交付复核：实际运行/声明/未测分开，loader对照显式mode，所有raw保留；probe计数字段歧义已在最终输出改为声明并保留历史解释。两脚本职责清晰、只有真实SDK seam，不另建mock协议。
+
+
+## 独立批准与后继采用门禁
+
+Root于2026-10-06独立只读批准固定实现8abe014f61df5ed7e1548e30d53538e7c4580c4c（clean metadata9084095f182fc5dbfe4df6077a2afaf2a4b83386）；核上游/脚本/raw/材料hash与方法，未重跑。完整范围见[review](../../../plans/ctx02-pi-hook/review.md)。6组断言加1组实际观察不代表7项安全成功。
+
+X01候选正式采用前须单独落实：默认资源加载不能越过材料/目录授权；未知sidecar schema必须fail-closed，或经明确受审迁移保留旧值，不可仅warn后无声覆写为1。缺失store重建只在本合成journal得到观察，不能外推任意缺失/损坏记录。压缩owner、关闭默认自动更新、原生签名/恢复seam及质量/账单边界仍需后继验收。本实验不修改stock。X01 canonical登记由Lead协调已释放文档scope的合法owner；当前只有本证据与status更新。
+
+2026-10-06 05:11:55 UTC clean-code metadata复核：批准范围、负结果、未测和待采用条件分开；源码与raw保持不变，无需重跑产品或实验。
