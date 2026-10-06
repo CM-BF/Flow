@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T22:57:02.883Z",
+  "count": 181,
+  "task": {
+    "id": "OPS-CI01",
+    "title": "远程最小合同验证准备",
+    "role": "工程协作",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/ops-remote-validation",
+    "branch": "codex/ops-remote-validation",
+    "planDir": "plans/ops-ci01-remote-validation",
+    "evidenceDir": "docs/evidence/ops-ci01"
+  },
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "已明确一个无需模型或个人凭据的远程验证候选，正在修正文档与检查入口。",
+    "next": "提交可审的手动 Ubuntu 合同与数据库验证模板。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "firstInvocation": "parseStatus called without required taskId produced identity error; invocation corrected, no parser/source change",
+  "provider": 0,
+  "PG": 0,
+  "liveDeployment": "pending normal main batch"
+}
