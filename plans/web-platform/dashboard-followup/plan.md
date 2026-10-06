@@ -39,3 +39,5 @@ D04领取详情已经root实际CUA验证ID/version/lead/worker/scope/branch/时�
 ## 有证据的后继性能候选（未领取）
 
 root两次只读/api/snapshot工具elapsed约2.67/2.73秒、51源，属于端到端观察而非benchmark。源码aggregate.mjs对同task先compareImplementation(target)，review approved且target相同时再跑相同proof；proof.mjs每次spawn多条git。server已合并in-flight HTTP，无持续cache；可见页面20秒刷新。候选先做单次snapshot内部同key（worktree、target、HEAD、literal scopes）的Promise复用实验，不跨snapshot缓存dirty或claim、不降事实新鲜度。不同target必须分开；如果再考虑Git并发上限，先测进程/延时，不凭感觉限流。实验/实现须明确原owner停写与独立D07 scope/receipt，不因本协作计划获得写权，不阻PROFILE/queue当前交付。
+
+05:00 协作编号更新：WPF-D01-07的proof性能候选正式移交WPF-DPERF01，不能称主线D07（后者human筛选由其owner负责）。新bb7ef22fv1四scope已take，canonical初始化，实际实现/检查由独立owner记录；本协作项只跟踪，不写dashboard或另建第二进度源。

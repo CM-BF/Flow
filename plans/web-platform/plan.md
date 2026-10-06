@@ -167,6 +167,8 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-10** WPF-X03I01：消费Mika已审X03模块，在真实App设置挂载只读插件管理；84acdc整体限定APPROVED/final4b7e0f，独立scope/docs通过，交Lead集成仍另计。
 - [x] **WPF-001-11** WPF-PROFILE01：独立选择模块4f198576限定APPROVED/finale730，混合目录/显式聊天allowlist/冻结creation与pin校验完成；真实App接线另受领，U11完整目标继续开放。
 - [x] **WPF-001-12** WPF-QUEUE00：最小boolean reader已5acc限定APPROVED/final498，false旧行为保持且不伪启完整队列；source字段已交root一次桥接ready与注册，Lead成套集成另计。
+- [ ] **WPF-001-13** WPF-PROFILEI01：将整份执行配置选择接入聊天，验证创建即锁、完整pin、原key未知回执、新草稿与连接隔离；仅正式受领10scope，模块存在不等用户旅程完成。
+- [ ] **WPF-001-14** WPF-DPERF01：只消除同task单snapshot同target的重复实现/审查证明，临时Git样本证明语义保持和实际工作量变化；不跨snapshot缓存、不改human筛选或真实服务。
 
 ## 验收、风险与持续方式
 
@@ -260,3 +262,9 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 04:55 PROFILE最终模块4f1985769564eafad9218570411d5ce1114b4ec0/rootAPPROVED、metadatae7303b9aa4d666d6d694a1a60659db71431e43dc clean；管理20path/9scope、7实现零差、6md20links4TODO通过，读取作者04:53实际review.state=approved/target4f/双proof unchanged/claim匹配。QUEUE00 ready已root一次桥Lead，不重复通知；后继PROFILEI01→完整queue UI串行受领。queue只读设计发现running且无adapter时内置Enter直接return，单改sendLabel/onNew不能保证一致，需先核最小官方Thread受控输入接缝和精确scope，不能伪造isRunning或adapter。
 
 04:56 GoalOwner现场看板反馈：人类摘要必须直接说实际能力/下一交付，不堆任务编号、SHA、schema或测试缩写。已将本status改为“插件入口已接入；聊天执行选项已验证，排队兼容已交付”/“把执行选项接到聊天界面，再开放排队操作”；技术target/claim/测试保留独立技术字段与下钻。已通知未释放的两owner按同法纯metadata更新；不重新写X03/D06已released记录，不跑工程测试。本约束属于现有用户可读看板要求的具体反馈，不新建重复需求。
+
+04:57 GoalOwner明确授权既有U11/SVC首连帮助候选的小文案范围，沿原需求不新编号：空地址的本地含义、管理员远端地址、owner token用途/安全取得路径；原App唯一owner后续精确take，0query验证，无secret展示/自动复制/匿名接口/新服务。排现PROFILEI01/queue文件窗口，不阻当前交付。D07同snapshot proof复用获root准备指令，由已交PROFILE的w01复用槽只读设计；正式新tree/take尚未执行，当前仅候选，不以工具三次波动作为性能结果。
+
+05:00 两新片正式受领：MainLead明确发布698ffcd94ae073b23bcc67f6665fb19f707a93e4含QUEUE00/CHAT04/client/PROFILE，管理git ls-remote独立核同SHA。QUEUE00与PROFILE各owner先主线纯metadata（d10b4b0/7f10889）再全scope停写release；CHATv3→v4仅移出Thread/outbox/outbox-test3文件，保留9。PROFILEI01新698树核clean后take7f1daa29 v1于04:59:25.825Z，10scope精确无冲突。性能小片正式身份WPF-DPERF01，旧研究临时代称D07保留历史映射，主线D07另做人类摘要筛选不能重号；新698树takebb7ef22f v1于04:59:56.342Z仅aggregate/直接test/plan/evidence4scope，无旧占用不需amend。两owner先canonical/source再实现，未有成品/审批，不动常驻61227的75a构建。
+
+05:01 REQ37现场追溯补证：root独立CUA在04:59:56同步的4320页面看见两新任务领取状态及owner/lead/worktree/branch，处于“已领取，进度来源待登记”，并确认本父人类摘要已可直接阅读。领取展示与进度源注册分开；等两个canonical首SHA齐后一次交Lead登记，不另手填状态。

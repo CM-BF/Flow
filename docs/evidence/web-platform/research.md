@@ -377,3 +377,11 @@ root本段clean-code安全停点（正式X03审查04:36:39）：核bound reader�
 
 
 root新增dashboard性能候选：两次51sources只读/api/snapshot工具elapsed约2.67/2.73s，非benchmark。aggregate同task在实现与approved review同target时重复compareImplementation，proof每次spawn多条git；server已有in-flight请求合并，无跨请求cache，可见页面20s刷新。候选单snapshot同(worktree,target,head,literal scopes)复用proof Promise，跨snapshot保持dirty/claim新鲜；不同target必须独立验证。进一步有界Git并发先测进程/延时再选。已列协作WPF-D01-07；无新D07树/take/生产修改，不抢scope。D06已release不能续写。
+
+## 04:57 后继公平测量与首连帮助授权
+
+D07准备：root04:53:48.691Z因registry提交eef40cf读取54源snapshot，工具约1.35秒；此前51源2.67/2.73秒受现场负载影响，不据这三点宣称产品卡顿或优化幅度。下一小片只以可复现临时Git样本的调用计数和输出语义保持为主，精确target/dirty/unknown/main证明与跨snapshot新鲜度均保留；没有跨请求TTL、并发限流或全局重构授权。w01只读准备最窄scope，管理04:55 live账本未见aggregate/proof占用，git ls-remote独立确认已发布main e802854f346a81749efdef3f36737b16141b98ef；尚未新take或写dashboard，后续必须freshledger和正式receipt。
+
+GoalOwner明确授权首连帮助小UX，沿既有U11/SVC候选，不新重复计划：空地址连接当前部署中心、远端填管理员提供地址、说明owner token用途及向中心管理员/本机受保护配置取得；复用适当现启动文档链接。产品UI不显示secret、不自动复制、不加匿名token端点；0query验证文案可读性，不新服务/代理。原App owner另领精确scope，排PROFILEI01/queue窗口，不能抢App或阻模块集成。root曾提copy-owner-token仅SVC owner CLI候选，不等于授权执行读取真实凭据。
+
+05:00 名称纠正与方法冻结：此前D07只是我队proof性能候选临时代称，主线已用D07作human下一交付筛选，正式新片改WPF-DPERF01，不能重用编号。首片仅同task/同snapshot/review.target等于implementation.target时直接复用既有compare结果；tree/main dirty重复只留后继假设，不建通用缓存接口。root已核官方[Git Trace2](https://git-scm.com/docs/api-trace2)，可对子进程设置临时GIT_TRACE2_EVENT记录start argv统计真实调用，不改全局Git配置/公开proof接口/真实凭据命令。owner独立新698树、4scope receipt已受领，事实与counter结果由其canonical单写。

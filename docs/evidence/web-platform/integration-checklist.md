@@ -19,6 +19,8 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | WPF-X03I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration | codex/web-plugin-management-integration | plans/wpf-x03-plugin-integration | docs/evidence/wpf-x03 |
 | WPF-PROFILE01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles | codex/web-execution-profiles | plans/wpf-profile01-execution-profiles | docs/evidence/wpf-profile01 |
 | WPF-QUEUE00 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-queue-compatibility | codex/web-queue-compatibility | plans/wpf-queue00-compatibility | docs/evidence/wpf-queue00 |
+| WPF-PROFILEI01（canonical初始化/待注册） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration | codex/web-profile-integration | plans/wpf-profile-integration | docs/evidence/wpf-profile-integration |
+| WPF-DPERF01（canonical初始化/待注册） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance | codex/dashboard-proof-performance | plans/wpf-dashboard-proof-performance | docs/evidence/wpf-dperf01 |
 
 WPF-D01仅协作，无第二dashboard实现；七源均已实际聚合，未知/未验证项仍来自各owner。新增两项证据见[实采与19claim范围审计](chat-perf-source-verification.json)。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
 
@@ -264,3 +266,15 @@ PROFILE01已完成02683后继目录兼容，impl4f1985769564eafad9218570411d5ce1
 QUEUE00 final498/impl5acc已有独审，root04:49桥接ready/source一次，等待Leadregistry/main正式回报，收到后唯一owner单次采样、自己的mainmetadata及停写release；不把claim可见当任务卡注册。X03 release原样[x03-release-receipt](x03-release-receipt.json)已保存，05b92d30c953413ab66d8b69447c9b44c9121a6a记录main80e，a104v2 released、59473保持，旧scope不追写。
 
 root04:53:48实际4320已54源，QUEUE00唯一source/claim/approved可见，主线尚未集成；已触发唯一owner按约定只采一次自己的记录。此为root直接观察来源，管理不重复同一API采样。PROFILE ready也已root一次桥Lead，等确切消费base，不重复通知。
+
+04:57 唯一owner纯metadata续报：PROFILE3919a62a02e4c07e2a28fcc9927b7bb2a56f2a3b只改人类摘要两行，固定4f不变，claim17093v1先live核再写。QUEUE00d6044b0e8e5ccd3795c0738082ddee87c0696be8记录04:56:56.921Z唯一一次54源原样摘录：current/live/human完整/issues空，checks/review5acc、proof unchanged、13185v1matchesSource、main e802未含。两树owner核clean，未重跑产品；main ready桥接由root统一，登记已闭合。
+
+## 05:00 新基线与正式移交
+
+MainLead明确698ffcd94ae073b23bcc67f6665fb19f707a93e4已发布clean，含已审reader/queue域/client/PROFILE，管理git ls-remote独立同SHA。QUEUE00最后d10b4b0f00dff88cbb74cd67abfd4f5f657d6183、PROFILE最后7f10889d9cb0ce015c2d72ac4f95c57236b74995均由owner核main祖先与各自实现相同后metadata收口，分别[13185v2释放](queue00-release-receipt.json)、[17093v2释放](profile01-release-receipt.json)，旧树全部scope停写，不再追写metadata。
+
+CHATowner明确停写Thread/outbox/outbox-test，管理实核083clean+livev3后[04:59:15.117Z amend v4](chat-profilei01-amend-receipt.json)仅移出三文件，余9保留。新PROFILEI01树从698核branch/clean，freshledger10scope无冲突，[04:59:25.825Z take](profilei01-take-receipt.json) claim7f1daa29-78e0-463e-ab88-99e295e9e648 v1。唯一worker workspace_panels_owner，canonical plans/wpf-profile-integration，收到首SHA再正式登记；App接线后须另review，不能继承模块4f批准。
+
+性能片旧研究临时代称D07，正式改WPF-DPERF01，主线D07 human筛选另owner且不触碰。同698新dashboard-proof-performance/codex/dashboard-proof-performance树核clean，freshledger4scope无人占，[04:59:56.342Z take](dperf01-take-receipt.json) claimbb7ef22f-e7d9-4cd3-8b72-cc69c591c2c7 v1；只aggregate/new proof-snapshot.test.mjs/plan/evidence。没有必要旧scope移交；proof.mjs仅只读，不扩缓存层。唯一worker w01_owner，先canonical后实现；root提供可选官方[Git Trace2](https://git-scm.com/docs/api-trace2)临时子进程计数方法，不全局配置、不真实凭据命令。当前只有开工许可，不是产出/性能结论。
+
+PROFILEI01首canonical9fefee445567ee8d6e1f7b5a2a11d2378c79c23c已管理只读核：三件套、人类字段、UNKNOWN target/NOT_STARTED和claim7f1daav1一致；检查时只有自身install.log未跟踪，安装无产品变更。root04:59:56页面同期实看两新claim在未登记区，正确显示lead/worker/branch/tree；这是已领取事实，不表示已有进度卡。两首source齐后统一登记，避免重复桥接。
