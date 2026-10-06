@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:13:06 UTC / mainc34033234e0f313e89b0982eb233f268b5f2172e |
+| 最近更新 / 最近main同步核验 | 2026-10-06T10:18:50.449758+00:00 / mainc9c0842406e77082f2ba4bd6e98c5279da7cd2dd |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 187d97648dd2d4edf45641720f8ba771ea9f25fa / 已审终端、Codex adapter 与聊天操作组合 |
+| 工作基线 / HEAD | c9c0842406e77082f2ba4bd6e98c5279da7cd2dd / 已审Codex配置与网页独立发布组合 |
 | 工作树dirty状态 | 固定实现零差；本批证据随后提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；59 个实现源与获审 target 一致，root/Web 类型检查 exit0，4 个直接消费者文件 50/50；0provider |
-| 已集成main状态 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066已推送；本批59源码及122来源已发布，实际4320领取状态available。个人backend/static仍b1c2、accepting v12。 |
+| 检查状态 | PASSED；18项固定源码/保护输入完全一致，root类型检查exit0；复用原局部行为与浏览器证据，0provider |
+| 已集成main状态 / HEAD | 前批c9c0842已推送；本批已审候选待紧接fast-forward。个人backend/static仍b1c2、accepting v12。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 终端会话首片、聊天操作和Codex执行接口已进入主线，进度看板同步完成。 |
-| 下一可用交付 | 本片段已交付；工程任务通路、Codex启动配置和网页独立发布由各自后继推进。 |
+| 当前产出 | Codex显式启动配置和网页独立发布工具已完成审查，原页面资源可在发布和回退后继续读取。 |
+| 下一可用交付 | 发布固定组合后，核对个人网页与后台的实际兼容组合；工程通路继续并行。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -117,3 +117,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T09:58:56.844754+00:00：本批[固定集成回执](../../docs/evidence/i02/native-tui-integration.json)记录59源同获审target一致、4文件50直接检查及root/Web类型检查通过。TUI两项P2已由原owner修复并获Mika独审；离线固定锁安装41复用、0下载、未运行安装脚本。未重跑领域/PTY/浏览器验收，未调用provider或修改个人服务。
 
 2026-10-06 10:13:06 UTC：工程/附件唯一计划与共享026交接、S01配置范围归还、125源候选组成纯metadata批。4个相关source解析/人读字段完整；产品目录无改，不重复工程测试。实际123源旧回执保留，125实际部署另记；个人b1c/v12不动。见[本批记录](../../docs/evidence/i02/attachment-engineering-metadata.json)。
+
+2026-10-06T10:18:50.449758+00:00：已审R05D配置与SVC04独立网页发布组合接收，18项逐文件相同、root类型检查exit0；不重跑已核72/15与原浏览器/PG。首次类型命令退出码包装失败保留，后一次独立记录exit0。个人服务不动。见[固定组合](../../docs/evidence/i02/launch-web-release-integration.json)。
