@@ -34,7 +34,10 @@ export const taskSubmissionSchema = z.strictObject({
   resumeSessionId: idSchema.optional(),
   executionProfile: executionProfileReferenceSchema.optional(),
 }).superRefine((task, context) => {
-  if (task.executionProfile && task.harness !== 'claude') context.addIssue({ code: 'custom', message: 'Execution profiles are only supported for Claude tasks.' });
+  if (task.executionProfile && !['claude', 'codex'].includes(task.harness)) context.addIssue({ code: 'custom', message: 'Execution profiles require a recognized native harness.' });
+  if (task.harness === 'codex' && (!task.executionProfile || task.resumeSessionId || task.fixture)) {
+    context.addIssue({ code: 'custom', message: 'Codex tasks require an explicit profile and do not support resume or fixture options.' });
+  }
   if (task.harness === 'a2a') {
     if (!task.protocol || task.resumeSessionId || task.fixture) context.addIssue({ code: 'custom', message: 'A2A tasks require an endpoint reference and cannot reuse native sessions or fixture options.' });
   } else if (task.protocol) context.addIssue({ code: 'custom', message: 'Protocol endpoint configuration is only valid for A2A tasks.' });

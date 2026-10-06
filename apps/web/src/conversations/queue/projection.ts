@@ -1,3 +1,4 @@
+import { freezeContextSelection, type FrozenCitation } from "../../conversation-context/selection";
 import { TERMINAL_STATUSES, type ConversationQueuePage, type ConversationQueueItemDetail } from "@flow/contracts";
 import { QueueCommands, assertCurrentTurn, assertQueueItem, queueError, validRevision, type QueuePort, type QueueReceipt } from "./commands";
 
@@ -25,6 +26,8 @@ export class ConversationQueueProjection {
   readonly commands: QueueCommands | null;
   private state: QueueState = { available: false, page: null, loading: false, stale: false, online: true, error: null, receipts: [], details: {} };
   private id: string | null = null;
+  private knowledgeProject: string | null = null;
+  private knowledgeSupported = false;
   private visible = false;
   private windowSize = 20;
   private generation = 0;
@@ -51,6 +54,7 @@ export class ConversationQueueProjection {
     this.invalidate(); this.update({ available });
     if (available && this.visible && this.state.online) void this.refresh();
   }
+  configureKnowledge(projectId: string | null, supported: boolean) { this.knowledgeProject = projectId; this.knowledgeSupported = supported; }
   setVisible(visible: boolean) { if (visible === this.visible) return; this.visible = visible; this.invalidate(); if (visible) void this.refresh(); }
   setOnline(online: boolean) { if (online === this.state.online) return; this.invalidate(); this.update({ online, stale: Boolean(this.state.page) }); if (online && this.visible) void this.refresh(); }
   private invalidate() { this.generation++; this.observation.abort(); this.observation = new AbortController(); clearTimeout(this.timer); this.flight = undefined; this.update({ loading: false }); }
@@ -96,7 +100,7 @@ export class ConversationQueueProjection {
     return null;
   }
   private ready(slot: string) { const reason = this.actionDisabledReason(slot); if (reason) throw Error(reason); return this.state.page!; }
-  async enqueue(text: string) { const page = this.ready("enqueue"); await this.commands!.execute({ kind: "enqueue", conversationId: this.id!, input: { expectedQueueRevision: page.queueRevision, text } }); }
+  async enqueue(text: string, knowledge?: readonly FrozenCitation[]) { const page = this.ready("enqueue"); if (knowledge?.length) { if (!this.knowledgeProject || !this.knowledgeSupported) throw Error("Knowledge requires a supported fixed conversation project."); freezeContextSelection(knowledge, this.knowledgeProject); } await this.commands!.execute({ kind: "enqueue", conversationId: this.id!, input: { expectedQueueRevision: page.queueRevision, text, ...(knowledge === undefined ? {} : { knowledge }) } }); }
   async pause() { const page = this.ready("control"); await this.commands!.execute({ kind: "pause", conversationId: this.id!, input: { expectedQueueRevision: page.queueRevision } }); }
   async resume() {
     this.ready("control"); if (!(await this.refresh(true))) return;

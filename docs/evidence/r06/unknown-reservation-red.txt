@@ -1,0 +1,66 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-transport
+
+ ❯ apps/runner/src/codex.test.ts (30 tests | 1 failed | 29 skipped) 64ms
+   ↓ initializes the owned peer before exposing readiness, without returning private codexHome
+   ↓ correlates three responses out of order and ignores duplicate settled responses
+   ↓ reassembles Chinese and emoji split at every UTF8 byte
+   ↓ remote error has a distinct outcome but never leaks raw diagnostic content
+   ↓ request abort before enqueue is not sent, and abort after receipt is unknown without closing the connection
+   ↓ timeout is unknown after write and a late response cannot satisfy a new request
+   ↓ server requests require explicit delivery before response and preserve number/string identity
+   ↓ invalid-json is a terminal protocol failure, never success
+   ↓ invalid-utf8 is a terminal protocol failure, never success
+   ↓ truncated is a terminal protocol failure, never success
+   ↓ future-id is a terminal protocol failure, never success
+   ↓ wrong-id-type is a terminal protocol failure, never success
+   ↓ duplicate-server is a terminal protocol failure, never success
+   ↓ no-newline oversized stdout fails at the byte limit
+   ↓ bounded inbound backlog fails rather than dropping notifications
+   ↓ pending requests and duplicate consumers are explicitly bounded
+   ↓ exit rejects every pending request and reports actual local exit without asserting remote stop
+   ↓ close is bounded, idempotent and escalates only its own child that ignores TERM
+   ↓ stderr is drained but only its byte count is retained
+   ↓ initialization timeout and malformed response never expose ready
+   ↓ output backpressure keeps one active frame, permits queued cancellation, and respects byte budget
+   ↓ explicit child environment excludes parent markers and rejects nonallowlisted keys before spawn
+   ↓ lifetime abort closes the child, and abort before create never spawns it
+   ↓ spawn failure is sanitized and terminates readiness without an orphaned handle
+   ↓ inbound byte and outstanding server request budgets are independent of frame count
+   ↓ outgoing UTF8 byte limit rejects before any request is sent
+   ↓ invalid JSON-shaped inputs are rejected before write, preserving connection usability
+   ↓ nonenumerable toJSON cannot replace bounded outgoing data or execute itself
+   ↓ 16 concurrent real pipe requests preserve JSON scalars and release all request slots
+   × unknown sent requests keep their concurrency reservation until reply or connection close 63ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/codex.test.ts > unknown sent requests keep their concurrency reservation until reply or connection close
+AssertionError: promise resolved "{ initialized: true, …(1) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "initialized": true,
++   "value": "must-not-overcommit",
+  }
+
+ ❯ apps/runner/src/codex.test.ts:203:64
+    201|   const check = expect(pending).rejects.toMatchObject({ code: 'ABORTED…
+    202|   await transport.receive(); abort.abort(); await check;
+    203|   await expect(transport.request('echo', 'must-not-overcommit')).rejec…
+       |                                                                ^
+    204|   await transport.close();
+    205| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 29 skipped (30)
+   Start at  02:13:21
+   Duration  280ms (transform 76ms, setup 0ms, import 95ms, tests 64ms, environment 0ms)
+

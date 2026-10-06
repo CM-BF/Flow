@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:08:06 UTC / main 3d31ba89bc3696e64d15f12f9d8c703e4d7bd914 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:26 UTC / main df29fb511df029a0922ace0f4973f3fe3736e502 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 架构页可展开模块和源码依据；新增六项成熟产品任务及独立实施来源已登记。 |
+| 当前产出 | 看板已纳入成熟交互、终端客户端和成本预算计划；终端首个可运行片段已开始实施。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |

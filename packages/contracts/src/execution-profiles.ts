@@ -48,3 +48,33 @@ export interface ExecutionProfile {
 }
 export interface ExecutionProfilePublished { profile: ExecutionProfile; replayed: boolean }
 export interface ExecutionProfilePage { profiles: ExecutionProfile[]; nextCursor: string | null }
+
+export const CODEX_ADAPTER_VERSION = 'codex-app-server-0.154.0-v1';
+/** Fixed native request fields; none is Flow intent, never/read-only is not proof of no tool execution. */
+export const codexExecutionProfileConfigurationSchema = z.strictObject({
+  harness: z.literal('codex'),
+  adapterVersion: z.literal(CODEX_ADAPTER_VERSION),
+  model: modelValue,
+  reasoningEffort: modelValue.nullable(),
+  serviceTier: modelValue.nullable(),
+  serviceTierForTurn: modelValue.nullable(),
+  access: z.literal('none'),
+  approvalPolicy: z.literal('never'),
+  sandboxMode: z.literal('read-only'),
+  // Host resource bounds, never provider USD or turn-count guarantees.
+  hostLimits: z.strictObject({ wallTimeMs: z.number().int().min(1).max(90_000), maxOutputBytes: z.number().int().min(1).max(1_048_576) }),
+});
+export type CodexExecutionProfileConfiguration = z.infer<typeof codexExecutionProfileConfigurationSchema>;
+export const nativeExecutionProfileConfigurationSchema = z.discriminatedUnion('harness', [executionProfileConfigurationSchema, codexExecutionProfileConfigurationSchema]);
+export type NativeExecutionProfileConfiguration = z.infer<typeof nativeExecutionProfileConfigurationSchema>;
+export const nativeExecutionProfilePublicationSchema = z.strictObject({ configuration: nativeExecutionProfileConfigurationSchema });
+/** The legacy branch is parsed by its unchanged codec, with no defaulted new fields. */
+export function nativeExecutionProfileConfigurationJson(value: NativeExecutionProfileConfiguration): string {
+  return JSON.stringify(nativeExecutionProfileConfigurationSchema.parse(value));
+}
+export interface CodexExecutionProfile extends Omit<ExecutionProfile, 'configuration' | 'controls'> {
+  configuration: CodexExecutionProfileConfiguration;
+  controls: { model: 'select-configured-profile'; thinking: 'unsupported'; effort: 'configured-request'; serviceTier: 'configured-request'; access: 'requested-none'; queue: false; steer: false };
+}
+export type NativeExecutionProfile = ExecutionProfile | CodexExecutionProfile;
+export interface NativeExecutionProfilePublished { profile: NativeExecutionProfile; replayed: boolean }

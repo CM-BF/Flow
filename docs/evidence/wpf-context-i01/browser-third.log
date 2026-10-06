@@ -1,0 +1,22 @@
+PASS explicit bounded project pages, no default and empty project plaintext
+1:55:09 AM [vite] http proxy error: /api/conversations
+Error: socket hang up
+    at Socket.socketOnEnd (node:_http_client:790:25)
+    at Socket.emit (node:events:526:24)
+    at endReadableNT (node:internal/streams/readable:1757:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+PASS prepare-only lost CREATE uses original key and freezes project/profile with zero turns
+PASS search whole citations, zero eager body, explicit lazy body/cache, close and keyboard preserve draft
+PASS Send sends frozen references; delayed unknown ACK leaves new text and reselected refs intact
+PASS Queue Enter uses the same selected refs and does not cancel current execution
+PASS plugin disable stops reads and retains selected reference plus new draft
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /Switch to dark theme/ })[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web/test/conversation-context-integration.browser.ts:52:64)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web/test/conversation-context-integration.browser.ts:16:56)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web/test/conversation-context-integration.browser.ts:49:2)
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx test/conversation-context-integration.browser.ts

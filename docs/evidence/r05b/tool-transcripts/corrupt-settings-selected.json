@@ -1,0 +1,12 @@
+{
+  "kind": "tool-transcript-transcription",
+  "provenance": "Verbatim visible tool output. The command ran after the final persisted-settings assertion was added; ten tests were deliberately not selected by -t, not accepted as passed.",
+  "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vitest run apps/server/src/assistant/native-harness.test.ts -t 'rejects unknown sources'",
+  "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy",
+  "sessionId": 24931,
+  "chunks": [
+    { "tool": "exec_command", "chunkId": "07880d", "exitCode": null, "output": "\n RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy\n\n" },
+    { "tool": "write_stdin", "chunkId": "65c2b5", "exitCode": 0, "output": " ✓ apps/server/src/assistant/native-harness.test.ts (11 tests | 10 skipped) 2077ms\n   ✓ rejects unknown sources and malformed raw identity at the database seam  623ms\n\n Test Files  1 passed (1)\n      Tests  1 passed | 10 skipped (11)\n   Start at  02:19:38\n   Duration  3.37s (transform 807ms, setup 0ms, import 1.21s, tests 2.08s, environment 0ms)\n\n" }
+  ],
+  "result": { "exitCode": 0, "selectedFiles": 1, "selectedTests": 1, "passedTests": 1, "unselectedTests": 10, "alreadyIncludedInDistinctCount": true }
+}

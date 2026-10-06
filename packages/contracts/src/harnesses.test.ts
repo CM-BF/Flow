@@ -21,3 +21,10 @@ it('never assigns remote or unknown source usage to the Claude accounting policy
   expect(isAuthoritativeUsageAllowed('claude', { ...sample, source: 'untrusted' })).toBe(false);
   expect(isAuthoritativeUsageAllowed('fixture', { scope: 'session', source: 'fixture' })).toBe(true);
 });
+
+it('registers only the fixed Codex harness without borrowing authoritative usage', () => {
+  expect(registerRunnerSchema.parse({ name: 'Codex', harnesses: ['codex'] }).harnesses).toEqual(['codex']);
+  expect(registerRunnerSchema.safeParse({ name: 'Unknown', harnesses: ['codex-next'] }).success).toBe(false);
+  expect(isAuthoritativeUsageAllowed('codex', { scope: 'session', source: 'claude.modelUsage', model: 'gpt-5.4' })).toBe(false);
+  expect(isAuthoritativeUsageAllowed('codex', { scope: 'session', source: 'codex.tokenUsage', model: 'gpt-5.4' })).toBe(false);
+});

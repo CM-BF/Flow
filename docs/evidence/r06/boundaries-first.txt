@@ -1,0 +1,70 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-transport
+
+ ❯ apps/runner/src/codex.test.ts (20 tests | 2 failed) 1259ms
+   ✓ initializes the owned peer before exposing readiness, without returning private codexHome 42ms
+   ✓ correlates three responses out of order and ignores duplicate settled responses 39ms
+   ✓ reassembles Chinese and emoji split at every UTF8 byte 100ms
+   ✓ remote error has a distinct outcome but never leaks raw diagnostic content 198ms
+   ✓ request abort before enqueue is not sent, and abort after receipt is unknown without closing the connection 71ms
+   × timeout is unknown after write and a late response cannot satisfy a new request 147ms
+   ✓ server requests require explicit delivery before response and preserve number/string identity 60ms
+   ✓ invalid-json is a terminal protocol failure, never success 44ms
+   ✓ invalid-utf8 is a terminal protocol failure, never success 45ms
+   ✓ truncated is a terminal protocol failure, never success 44ms
+   ✓ future-id is a terminal protocol failure, never success 42ms
+   ✓ wrong-id-type is a terminal protocol failure, never success 45ms
+   ✓ duplicate-server is a terminal protocol failure, never success 42ms
+   ✓ no-newline oversized stdout fails at the byte limit 43ms
+   ✓ bounded inbound backlog fails rather than dropping notifications 43ms
+   ✓ pending requests and duplicate consumers are explicitly bounded 44ms
+   ✓ exit rejects every pending request and reports actual local exit without asserting remote stop 44ms
+   × close is bounded, idempotent and escalates only its own child that ignores TERM 46ms
+   ✓ stderr is drained but only a saturated byte count is retained 45ms
+   ✓ initialization timeout and malformed response never expose ready 73ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/codex.test.ts > timeout is unknown after write and a late response cannot satisfy a new request
+CodexTransportError: Codex transport: PROTOCOL (unknown)
+ ❯ stop apps/runner/src/codex/index.ts:47:51
+     45|     if (state === 'closing' || state === 'closed') return;
+     46|     state = 'closing'; reason = code;
+     47|     for (const [id, entry] of pending) settle(id, new CodexTransportEr…
+       |                                                   ^
+     48|     writer.stop(); decoder.clear();
+     49|     receiver?.(null); receiver = undefined;
+ ❯ Socket.<anonymous> apps/runner/src/codex/index.ts:117:50
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/runner/src/codex.test.ts > close is bounded, idempotent and escalates only its own child that ignores TERM
+AssertionError: expected { reason: 'CLOSED', …(4) } to match object { child: 'confirmed-exited', …(2) }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "child": "confirmed-exited",
+    "reason": "CLOSED",
+-   "signal": "SIGKILL",
++   "signal": null,
+  }
+
+ ❯ apps/runner/src/codex.test.ts:107:23
+    105|   const transport = await connected('ignore-term', { limits: { termina…
+    106|   const first = transport.close(); expect(transport.close()).toBe(firs…
+    107|   expect(await first).toMatchObject({ child: 'confirmed-exited', signa…
+       |                       ^
+    108| });
+    109| test('stderr is drained but only a saturated byte count is retained', …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 18 passed (20)
+   Start at  02:09:18
+   Duration  1.40s (transform 43ms, setup 0ms, import 54ms, tests 1.26s, environment 0ms)
+

@@ -1,3 +1,6 @@
+import { ConversationKnowledge, createKnowledgePlugin, KNOWLEDGE_OWNER, KNOWLEDGE_PANEL, type KnowledgeReaders, type KnowledgeIdentity } from "./knowledge";
+import type { ConversationProjection } from "../conversations/projection";
+import type { FrozenCitation } from "../conversation-context/selection";
 import { StreamConnectionBudget, STREAM_PANEL, type StreamIdentity, type StreamReaders, type StreamAuthority } from "../conversation-stream/host";
 import { createAssistantStreamPlugin } from "./react";
 import type { TaskSnapshot, Detail, EventPage, NativeActivity, NativeActivityPage } from "@flow/contracts";
@@ -32,6 +35,7 @@ export interface AppActions {
   task(id: string): TaskSnapshot | null;
   hasDraft(id: string): boolean;
   activity?: ActivityReaders;
+  knowledge?: KnowledgeReaders;
   stream?: StreamReaders;
   ownsMessage?(taskId: string, messageId: string, role: "user" | "assistant"): boolean;
   openTask(id: string): void;
@@ -53,6 +57,7 @@ export class AppPluginSession {
   readonly host: PluginHost;
   readonly streamBudget = new StreamConnectionBudget();
   readonly dataRenderers: ReturnType<typeof createDataRendererRegistry>;
+  private readonly knowledgeBindings = new Map<string, ConversationKnowledge>();
   private readonly lifetime = new AbortController();
   get signal() { return this.lifetime.signal; }
   private closed = false;
@@ -109,6 +114,11 @@ export class AppPluginSession {
     this.host.register(createTaskActionsPlugin());
     this.host.register(createActivityPlugin());
     this.host.register(createAssistantStreamPlugin());
+    this.host.register(createKnowledgePlugin(viewId => {
+      const binding = [...this.knowledgeBindings.values()].find(item => { const context = item.context(); return context.kind === "composer" && context.viewId === viewId; });
+      if (!binding) throw Error("Knowledge is not available in this composer.");
+      binding.open();
+    }));
   }
 
   updateActions(actions: AppActions) { if (!this.closed) this.actions = actions; }
@@ -132,6 +142,31 @@ export class AppPluginSession {
       this.theme.set({ themeId: theme.id, scheme: theme.scheme, availableThemes: [...themes, ...(themes.some(item => item.id === theme.id) ? [] : [theme])] });
   }
   private authorizeResource(_capability: Capability, context: ResourceContext) { return !this.closed && this.validContext(context); }
+  knowledgeBinding(viewKey: string, projection: ConversationProjection) {
+    let binding = this.knowledgeBindings.get(viewKey);
+    if (!binding) { binding = new ConversationKnowledge(viewKey, projection, this); this.knowledgeBindings.set(viewKey, binding); }
+    return binding;
+  }
+  canReadKnowledge(identity: KnowledgeIdentity, context: ResourceContext, knowledge: boolean) {
+    const binding = this.knowledgeBindings.get(identity.viewKey);
+    const source = binding?.projection.getSnapshot();
+    return !this.closed && identity.connectionId === this.id && !!binding && this.validContext(context)
+      && this.actions.knowledge?.current(identity) === true && this.host.checkView(KNOWLEDGE_PANEL, context).ok
+      && this.host.list().find(plugin => plugin.id === KNOWLEDGE_OWNER)?.state === "active"
+      && this.authorizeResource(knowledge ? "knowledge.read" : "workspace.read", context)
+      && (!knowledge || (!!identity.projectId && source?.snapshot?.capabilities.knowledgeContext === true));
+  }
+  private async readKnowledge<T>(identity: KnowledgeIdentity, context: ResourceContext, signal: AbortSignal, knowledge: boolean, operation: (readers: KnowledgeReaders, signal: AbortSignal) => Promise<T>): Promise<T> {
+    signal = AbortSignal.any([signal, this.signal]);
+    const current = () => { const binding = this.knowledgeBindings.get(identity.viewKey), state = binding?.getSnapshot(); return !signal.aborted && this.canReadKnowledge(identity, context, knowledge) && state?.open && state.visible && binding?.projection.getSnapshot().connection === "live"; };
+    if (!current() || !this.actions.knowledge) throw Error("Knowledge reading is unavailable in this view.");
+    const result = await operation(this.actions.knowledge, signal);
+    if (!current()) throw Error("Knowledge reading belongs to an expired view.");
+    return result;
+  }
+  readKnowledgeProjects(identity: KnowledgeIdentity, context: ResourceContext, after: string | null, signal: AbortSignal) { return this.readKnowledge(identity, context, signal, false, (readers, bound) => readers.projects(identity, after, bound)); }
+  readKnowledgeSearch(identity: KnowledgeIdentity, context: ResourceContext, query: { q: string; limit: number }, signal: AbortSignal) { return this.readKnowledge(identity, context, signal, true, (readers, bound) => readers.search(identity, query, bound)); }
+  readKnowledgeBody(identity: KnowledgeIdentity, context: ResourceContext, citation: FrozenCitation, signal: AbortSignal) { return this.readKnowledge(identity, context, signal, true, (readers, bound) => readers.resolve(identity, citation, bound)); }
   canReadActivity(identity: ActivityIdentity) {
     return !this.closed && identity.connectionId === this.id && this.actions.hasDraft(identity.viewId)
       && this.validContext({ kind: "message", taskId: identity.taskId, messageId: identity.messageId, role: "user" });
@@ -204,6 +239,7 @@ export class AppPluginSession {
     if (this.closed) return;
     this.closed = true;
     this.lifetime.abort();
+    this.knowledgeBindings.forEach(binding => binding.dispose()); this.knowledgeBindings.clear();
     this.dataRenderers.dispose();
     // Clear the old connection's custom palette synchronously, before a new connection can render.
     const active = this.theme.getSnapshot();

@@ -1,0 +1,28 @@
+{
+  "kind": "tool-transcript-transcription",
+  "provenance": "Transcribed visible tool output, not a process log. The test-generated preview-cleanup.json and preview-resource.json were copied from the legacy fixture output path into this task evidence directory, as documented in README.md.",
+  "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vitest run apps/server/src/assistant/preview.test.ts",
+  "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy",
+  "sessionId": 8239,
+  "chunks": [
+    {
+      "tool": "exec_command",
+      "chunkId": "fda89a",
+      "exitCode": null,
+      "output": "\n RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy\n\n"
+    },
+    {
+      "tool": "write_stdin",
+      "chunkId": "4aaec9",
+      "exitCode": 0,
+      "output": " ✓ apps/server/src/assistant/preview.test.ts (21 tests) 1370ms\n\n Test Files  1 passed (1)\n      Tests  21 passed (21)\n   Start at  02:19:04\n   Duration  2.01s (transform 330ms, setup 0ms, import 567ms, tests 1.37s, environment 0ms)\n"
+    }
+  ],
+  "result": {
+    "exitCode": 0,
+    "selectedFiles": 1,
+    "selectedTests": 21,
+    "passedTests": 21,
+    "unselectedTests": 0
+  }
+}

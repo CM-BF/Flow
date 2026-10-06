@@ -1,0 +1,254 @@
+{
+  "at": "2026-10-06T08:59:42.663Z",
+  "sourceCommit": "d0e05c26df6f331e0b1f15e7b738e4fe53208125",
+  "hashes": {
+    "apps/web/src/App.tsx": "dd95cc085103fea31c11430530bb40ee0a92980262dc66822c8f8928d00ebbdf",
+    "apps/web/src/conversation-context/projects.ts": "04b47c9b45cd1365b35b858ae93010d83fef2bd6edf1fa1768be560a13f93fa0",
+    "apps/web/src/conversations/ConversationThread.tsx": "0bb775447faaa83a3b685bf6928fdf19da9bd153370662d7b8d7ffcee0e9866c",
+    "apps/web/src/conversations/outbox.ts": "2c2e726dc0ade601b62cc0fbf2a0a617929f8e514878230804f84d12bdef1461",
+    "apps/web/src/conversations/projection.ts": "808395c53eb621ca0298ab3edb4d3ebf51330cdb189fe2252f6b6a020e942925",
+    "apps/web/src/conversations/queue/projection.ts": "5adbf3bc3765f72ce3fa7f4097332fb52702f6df6eccf4604938fd7bb8fb5e47",
+    "apps/web/src/plugin-integration/knowledge.tsx": "8a325158037cb0d2c59cd6b5c86630a0fe6495feb4195b254c1fd58673c83298",
+    "apps/web/src/plugin-integration/react.tsx": "fe7d2951dc342d3c63b3a32eddc274aad41c8480733b7fbcc818bb7392763093",
+    "apps/web/src/plugin-integration/session.ts": "c15fc54641856c4b90f5e941afc5af3a49cac36ec0c293c687d565d1e74374fa",
+    "apps/web/src/plugins/types.ts": "9b2effc324ea05afb923d581313266dcf12071233d1029516b68899e204bbea2",
+    "apps/web/src/plugins/validation.ts": "47aa014d47408187c75ab432336536c296764947f811251818dd6f02eb081abc",
+    "apps/web/test/conversation-context-integration.browser.ts": "c4424deb816da2815ca1edf88977b59320e15fcf96046948c7e192e746148581",
+    "apps/web/test/conversation-context-integration.fixture.ts": "11693e5df7949e81575266ee2d4eec95cbeff50e78bf803b9f64bd96c6b0fd04",
+    "apps/web/test/conversation-context-integration.test.ts": "03245cda1671a3bed9bb7dbbd4a76aa0e9e9195318ec36e8197c1f2d0a2a1f5e",
+    "apps/web/test/conversation-outbox.test.ts": "6aff3efa4ab241bf8f51b352b22ce04301318f2aeb4583a121638887931be33d",
+    "apps/web/test/conversation-projection.test.ts": "202d6863801ac699b2b085a67078dad78477c07474ad92817a7d1feb3f9f205b",
+    "apps/web/test/conversation-queue.test.ts": "675bd29c7da084204c285bcf5c6e65c313cd34baecdea6097a6bcb74a9ab3dff",
+    "apps/web/test/plugin-host.test.ts": "ff492a7f4ea0a773175bec1427bdbf3f79c1a402d0a87aaf05d07b1e18a60594"
+  },
+  "production": true,
+  "checks": [
+    "explicit bounded project pages, no default and empty project plaintext",
+    "prepare-only lost CREATE uses original key and freezes project/profile with zero turns",
+    "search whole citations, zero eager body, explicit lazy body/cache, close and keyboard preserve draft",
+    "Send sends frozen references; delayed unknown ACK leaves new text and reselected refs intact",
+    "Queue Enter uses the same selected refs and does not cancel current execution",
+    "plugin disable stops reads and retains selected reference plus new draft",
+    "local validation without a new receipt preserves the original text and selection without HTTP",
+    "budget rejection retains old receipt while a new draft and new references remain independent",
+    "390 light/dark reduced-motion keyboard dialog retains selection and text",
+    "real native hidden and both split panes retain separate project bindings",
+    "connection replacement rejects old scope and starts same IDs with no selected refs",
+    "unsupported project capability and legacy no-project conversation retain plaintext without knowledge reads"
+  ],
+  "errors": [],
+  "failure": null,
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations",
+      "key": "ddce1ab5-b7c1-4c31-94c3-db46697c125a:create",
+      "body": "{\"title\":\"Keep my knowledge draft\",\"harness\":\"claude\",\"projectId\":\"project-01\",\"requested\":{\"model\":\"runner-default\",\"thinking\":\"disabled\",\"tools\":\"configured-readonly\"}}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations",
+      "key": "ddce1ab5-b7c1-4c31-94c3-db46697c125a:create",
+      "body": "{\"title\":\"Keep my knowledge draft\",\"harness\":\"claude\",\"projectId\":\"project-01\",\"requested\":{\"model\":\"runner-default\",\"thinking\":\"disabled\",\"tools\":\"configured-readonly\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365/queue?after=0&limit=20",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365/turns",
+      "key": "6558fc34-5f39-4815-a197-81913b61b3b0:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Send old text with knowledge\",\"mode\":\"follow-up\",\"knowledge\":[{\"projectId\":\"project-01\",\"sourceId\":\"10000000-0000-4000-8000-000000000001\",\"version\":1,\"contentDigest\":\"530d7e8906bbe5159da57f6cda24372da7a2e7ed318f496c9022532ce049b08c\",\"locator\":{\"kind\":\"utf8-bytes\",\"start\":0,\"end\":60}}]}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365/turns",
+      "key": "6558fc34-5f39-4815-a197-81913b61b3b0:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Send old text with knowledge\",\"mode\":\"follow-up\",\"knowledge\":[{\"projectId\":\"project-01\",\"sourceId\":\"10000000-0000-4000-8000-000000000001\",\"version\":1,\"contentDigest\":\"530d7e8906bbe5159da57f6cda24372da7a2e7ed318f496c9022532ce049b08c\",\"locator\":{\"kind\":\"utf8-bytes\",\"start\":0,\"end\":60}}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365-task-1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365-task-1/stream?after=1"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365/queue",
+      "key": "096e2894-6084-4866-8989-470339eca4df",
+      "body": "{\"expectedQueueRevision\":1,\"knowledge\":[{\"projectId\":\"project-01\",\"sourceId\":\"10000000-0000-4000-8000-000000000001\",\"version\":1,\"contentDigest\":\"530d7e8906bbe5159da57f6cda24372da7a2e7ed318f496c9022532ce049b08c\",\"locator\":{\"kind\":\"utf8-bytes\",\"start\":0,\"end\":60}}],\"text\":\"Queued with knowledge\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365/queue?after=0&limit=20",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365/queue?after=0&limit=20",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=174"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/chat-3",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/chat-3/turns?after=0&limit=20",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/chat-3/queue?after=0&limit=20",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/chat-3-task-1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/chat-3-task-1/stream?after=2"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365-task-1/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365/queue?after=0&limit=20",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365-task-1/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365/queue?after=0&limit=20",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/d555fa2d-4a29-49d5-a36b-bcdbc0dbc365",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/chat-3-task-1/stream?after=2"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/chat-3/queue?after=0&limit=20",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/chat-3",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=175"
+    }
+  ],
+  "reads": [
+    {
+      "center": 0,
+      "kind": "projects"
+    },
+    {
+      "center": 0,
+      "kind": "projects"
+    },
+    {
+      "center": 0,
+      "kind": "projects"
+    },
+    {
+      "center": 0,
+      "kind": "projects"
+    },
+    {
+      "center": 0,
+      "kind": "search",
+      "project": "project-01"
+    },
+    {
+      "center": 0,
+      "kind": "resolve",
+      "project": "project-01"
+    },
+    {
+      "center": 0,
+      "kind": "search",
+      "project": "project-02"
+    }
+  ]
+}
