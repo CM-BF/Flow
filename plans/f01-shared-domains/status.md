@@ -187,8 +187,10 @@
 
 2026-10-06 14:07:02 UTC：O13/client主线接收见[receipt](../../docs/evidence/f01/goal-run-list-main-receipt.json)。usage.ts已停止写入并在F01 v36原子移交COST01A v2，共享入口仍由本owner管理；未重测原HTTP/领域。
 
-| F01-39 | in-progress | Lead | [用量thin manifest](../../docs/evidence/f01/usage-readout-client-manifest.json)，独审与领域/挂载待接收 |
+| F01-39 | completed | Lead | 域27d4/薄clientfb0/生产7150各自独审，main617已接收，十源零差。 |
 
 2026-10-06 14:23 UTC：真实生产factory唯一新1/1通过（非原领域14项重跑），默认owner hook保护读口；原样重放/重启和旧summary保持、无正文、401/403/404/no-store实际核验。随机库before[]/created=true/connections[]/remaining[]，0模型。空间门槛1GiB+96MiB前检通过；新库完成后仍保收尾余量，SVC06门槛未解除。见[生产manifest](../../docs/evidence/f01/usage-readout-production-manifest.json)。
 
 2026-10-06 14:30 UTC：生产用量读口已main617。新增只读 `usage <task-id>` 命令沿同FlowClient，不提交任务/模型，JSON保持null/coverage；真实HTTP1/1+types0，0新增PG。help/403/409/abort/缺ID与不泄synthetic token已覆盖；独审绑定[CLI manifest](../../docs/evidence/f01/usage-readout-cli-manifest.json)。
+
+| F01-40 | in-progress | Lead | [CLI用量manifest](../../docs/evidence/f01/usage-readout-cli-manifest.json)，只读HTTP1/1+types0，独审中。 |
