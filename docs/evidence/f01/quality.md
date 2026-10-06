@@ -202,3 +202,14 @@ Fixed fe5bc2d9b8dab231996b1b156bc086d858846117 only server index + steering-prod
 New production checks2red (missing024/table) →2green1.356s: default migration/routes/role/cap gate and ordinary string-query injectedSDK final with024 present. Random database facts before[]/createdtrue/connections[]/remaining[] captured in both stdout. Existing author vertical selected1/13 (12notselected), actual production factory now owns migration/routes with explicit activeSteering:true; 1green353ms/test1.544s. This separately confirms real runtime→outbox→HTTP/PG→two injectedSDK results/one consumedcommand/onefinal. Typecheck exit0 independently. Three distinct local checks across two green commands, not full106 rerun. No provider or personal service action.
 
 Domain20source hashes match approved d4e; fixed shared source and four raw logs in steering-production-manifest.json. Clean-code/codebase-design: reused domain migration/routes and existing startup/auth lifecycle; no authorization or finalization logic duplicated. Required resources use random owned DB and normal DROP, no global cleanup. Current limitations are explicit profile/startup/attempt capability binding, real SDK optional fields, and Web control enablement; these remain next slices.
+
+
+## 2026-10-06 07:59 UTC O09 thin owner client
+
+Fixed 1bd4855f1582107e3b1b17ba9ba77cb43801e74d consumes strict contract d5d32ec173fd2139d8a732235440c0995a4019f7. Three files: public export, one existing-request method, one HTTP consumer. 1 missing-method red →1green24ms/suite201ms, typecheck0. Actual strict schema validates original body; exact goal-path encoding, owner bearer, fixed node input/dependency versions/profile digest/previous execution/reason/key, replay receipt, 409 and pre-aborted signal retained without retries. No PG/provider and no domain completion claim. The receipt is transport fixture data, not native execution evidence. Clean-code: no client authorization, retry or verifier policy duplicated. Manifest native-node-client-manifest.json.
+
+## 2026-10-06 08:07 UTC — O09 production
+
+固定 c587436c12324b5c121957643d51173cfc66009e。继续应用已发现的本地clean-code/codebase-design：仅两行挂载复用深领域，无第二loop/权限分支。新测试直接真实createServer，不用领域fixture自动补路由；默认scan不关闭。最终2/2 2.41s + noEmit0，随机库创建前空/cleanup连接空/正常DROP余库空都在原stdout。参见native-node-production-manifest.json。
+
+首次missingroute2红；readonly测试配置为空正确拒绝、receipt与snapshot字段位置假设失败、TypeScript推断UUID token过窄均保留各独立输出。修正的是测试输入/断言位置，不放宽门禁。最终验证owner auth、24默认关闭、FlowClient精确pin/key重放仅一执行、原readonly adapter stringquery、flow.text+typedfinal、业务accepted仍null。旧27领域不重跑、0provider/0真实登录。final tsc在固定源上exit0；早期绿tsc在两处测试断言修正前，明确历史。个人runtime仍b54不操作。

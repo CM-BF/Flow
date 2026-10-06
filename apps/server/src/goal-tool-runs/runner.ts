@@ -5,7 +5,7 @@ import type { GoalToolCommandCall, GoalToolInputCall, GoalToolRunReference } fro
 import { canonical, HttpError, sha256 } from '../database.js';
 import { commandInTransaction } from '../tasks.js';
 import { applyGoalCommand } from '../goals/commands.js';
-import { definition, snapshot } from '../goals/state.js';
+import { definition, executionRows, snapshot } from '../goals/state.js';
 import { authorized, requireGrantedNode } from './authorize.js';
 import { runView } from './store.js';
 
@@ -27,6 +27,10 @@ export async function runnerCommand(pool: Pool, boss: PgBoss, runnerId: string, 
   return authorized(pool, runnerId, input, input.grant, async (client, run, state) => {
     requireGrantedNode(run, input.command.nodeId);
     if (!run.scope.allowedCommands.includes(input.command.kind)) throw new HttpError(403, 'goal_tool_scope', 'The command is outside this grant.');
+    if (input.command.kind === 'accept-delivery') {
+      const execution = (await executionRows(client, run.goal_id, [input.command.executionId]))[0];
+      if (execution && execution.task.harness !== 'fixture') throw new HttpError(403, 'native_delivery_owner_required', 'Only the owner may accept a native node delivery.');
+    }
     const accepted = await commandInTransaction(client, `goal-tool-command:${run.id}`, key, input.command, async () => {
       const existing = state.inputs.get(input.command.nodeId)?.input.knowledge ?? [];
       if (input.command.kind === 'define-input' && canonical(existing) !== canonical(input.command.input.knowledge ?? [])) throw new HttpError(403, 'goal_knowledge_owner_required', 'Only the owner may add, remove or reorder knowledge references.');

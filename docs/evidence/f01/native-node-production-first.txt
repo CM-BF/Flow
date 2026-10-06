@@ -1,0 +1,32 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+stdout | apps/server/src/goal-native-production.test.ts
+NATIVE_GOAL_PRODUCTION_DATABASE_FACTS {"database":"flow_native_mount_2a30457357ad4bfea609da5aab01a498","created":true,"before":[],"connections":[],"remaining":[]}
+
+ ❯ apps/server/src/goal-native-production.test.ts (2 tests | 1 failed) 1089ms
+   ✓ mounts owner native admission behind existing authentication without enabling active steering 43ms
+   × connects the public client to the real factory and runs one pinned text child with the existing verifier 49ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-native-production.test.ts > connects the public client to the real factory and runs one pinned text child with the existing verifier
+FlowApiError: Native node execution requires an explicitly configured readonly profile.
+ ❯ assertResponse packages/client/src/index.ts:478:9
+    476|   if (response.ok) return;
+    477|   const body = await response.json().catch(() => ({})) as { error?: { …
+    478|   throw new FlowApiError(response.status, body.error?.code ?? 'http_er…
+       |         ^
+    479| }
+    480| 
+ ❯ FlowClient.request packages/client/src/index.ts:470:5
+ ❯ apps/server/src/goal-native-production.test.ts:81:47
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  01:05:32
+   Duration  2.12s (transform 449ms, setup 0ms, import 915ms, tests 1.09s, environment 0ms)
+

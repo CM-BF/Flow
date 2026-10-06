@@ -1,0 +1,32 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-node-execution
+
+ ❯ apps/server/src/goal-native-executions/admission.test.ts (5 tests | 1 failed | 4 skipped) 2141ms
+   ↓ durably admits one owner-selected readonly execution and recovers its receipt after an unread response and center restart
+   ↓ rejects runner credentials, forged controls and non-readonly or invalid profile pins without consuming admission
+   ↓ keeps current input, dependency and predecessor gates while serializing concurrent owner admissions
+   ↓ claims only on the selected profile and preserves a committed receipt after the runner is revoked
+   × keeps native execution and delivery owner-only while the old node grant still executes and accepts a fixture child 1054ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-native-executions/admission.test.ts > keeps native execution and delivery owner-only while the old node grant still executes and accepts a fixture child
+AssertionError: expected 409 to be 403 // Object.is equality
+
+- Expected
++ Received
+
+- 403
++ 409
+
+ ❯ apps/server/src/goal-native-executions/admission.test.ts:109:191
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 skipped (5)
+   Start at  00:54:07
+   Duration  2.75s (transform 305ms, setup 0ms, import 539ms, tests 2.14s, environment 0ms)
+
