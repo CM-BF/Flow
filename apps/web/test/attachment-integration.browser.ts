@@ -59,7 +59,14 @@ const work = async () => {
       await input().fill("Keep long-name draft");
       await files().click(); await expect(dialog()).toBeVisible(); await page.keyboard.press("Escape");
       await expect(page.getByRole("button", { name: "Add Attachment", exact: true }).filter({ visible: true }).first()).toBeEnabled();
-      for (const name of names) await upload({ name, mimeType: "text/plain", buffer: Buffer.from("Long name content") });
+      for (const name of names) {
+        await upload({ name, mimeType: "text/plain", buffer: Buffer.from("Long name content") });
+        await expect.poll(() => posts(/\/projects\/[^/]+\/attachments$/).some(row => row.status === 201 && JSON.parse(row.body).name === name)).toBe(true);
+        await files().click();
+        const row = dialog().getByRole("region", { name: "Files in this draft" }).locator("article").filter({ has: page.getByText(name, { exact: true }) });
+        await expect(row.locator(".attachment-row-title > span")).toHaveText("ready");
+        await page.keyboard.press("Escape");
+      }
       await expect.poll(() => posts(/\/projects\/[^/]+\/attachments$/).filter(row => row.status === 201).length).toBe(2);
       if (await page.getByRole("complementary", { name: "Chats", exact: true }).isVisible()) await page.getByRole("button", { name: "Chats", exact: true }).click();
       await page.setViewportSize({ width: 390, height: 844 });
