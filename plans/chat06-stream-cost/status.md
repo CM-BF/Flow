@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:23 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:27 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | chat06p01_owner / gpt-6-astra（符合Sol以上门槛）；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-cost-probe |
 | Branch | codex/assistant-stream-cost-probe |
-| 工作基线 / HEAD | base fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；纯生成target37709097b879a7afff32b25da971f559d740058a；安全点metadata HEAD5321c08f7c6a7110cb0470e938aad964dac62968 |
-| 工作树dirty状态 | 源码固定3770909；当前仅原始日志/manifest/status metadata待提交 |
+| 工作基线 / HEAD | base fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；纯生成target37709097b879a7afff32b25da971f559d740058a；安全点metadata HEAD2241a8bbfd909954757b66c04102d124ddb3e438 |
+| 工作树dirty状态 | 源码固定3770909；已核2241 clean；本次仅独审metadata待提交 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 37709097b879a7afff32b25da971f559d740058a；3个不同纯生成行为/noEmit0，仅准备片段；首依赖加载0test失败/行为红/类型失败均保留；0PG测量 |
 | 已集成main状态 / HEAD | 本片未集成；产品基线main fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 |
 | 实现目标 | 37709097b879a7afff32b25da971f559d740058a |
 | 实现范围 | experiments/assistant-stream-cost |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 相同正文与三种分片的生成器已验证，正在审查测量准备 |
+| 当前产出 | 相同正文与三种分片的生成器已独审通过，正在准备请求与SQL观察器 |
 | 下一可用交付 | 完成服务端观察器与隔离运行入口，再申请极小测量窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，APPROVED仅pure target377；新observer/入口另审 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -29,7 +29,7 @@
 | CHAT06P01-02 | in-progress | chat06p01_owner | 纯生成器3/3及noEmit0；观察器/PG入口尚未实现，见preparation-manifest |
 | CHAT06P01-03 | pending | chat06p01_owner / mika | 未运行PG测量；无窗口 |
 | CHAT06P01-04 | pending | chat06p01_owner | 未产生实测 |
-| CHAT06P01-05 | pending | chat06p01_owner / mika / Lead | 未独审/main未接收 |
+| CHAT06P01-05 | pending | chat06p01_owner / mika / Lead | pure片段已独审；完整准备/实测待独审，main未接收 |
 
 ## 权限、边界与下一步
 
@@ -46,3 +46,5 @@ claim ff4d1ec7-ecd2-4154-94a8-99804b3c1b49 v1 ACTIVE，COMMITTED 2026-10-06T07:1
 本安全点交Mika只读审纯片段，暂时停止本feature写入转S01 W2只读审；返回后继续观察器，不新增agent。dashboard当前仍未登记该task，等待Lead登记，实际回执见[聚合观察](../../docs/evidence/chat06p01/dashboard-preparation.json)。
 
 解析字段按Lead反馈改为标准UTC及纯NONE；当前方法/纯准备无阻塞，真实PG矩阵尚未获窗口，不因字段规范化变更验收事实。未重测。
+
+2026-10-06 07:27 UTC：完成S01 W2只读独审后回到本唯一worktree。Mika已批准pure片段，GO认可3task/84patch方法预算方向；尚无PG运行窗口，下一观察器先覆盖错误计数与原样回传、ESM named crypto同步、查询发起时ALS归属及finally恢复。新源不会沿用pure批准。
