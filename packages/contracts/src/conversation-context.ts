@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import { KNOWLEDGE_LIMITS, knowledgeCitationSchema, type KnowledgeCitation } from './knowledge.js';
+import { KNOWLEDGE_LIMITS, knowledgeCitationSchema, knowledgeLocatorSchema, type KnowledgeCitation } from './knowledge.js';
 import { idSchema } from './tasks.js';
-import { attachmentDescriptorSchema, attachmentReferenceKey, attachmentSelectionSchema, type AttachmentDescriptor, type AttachmentReference } from './attachments.js';
+import { attachmentDescriptorSchema, attachmentReferenceSchema, attachmentReferenceKey, attachmentSelectionSchema, type AttachmentDescriptor, type AttachmentReference } from './attachments.js';
 
 export const CONVERSATION_CONTEXT_LIMITS = { references: 4, rawBytes: 8192, executionCodeUnits: 16000, executionBytes: 49152, detailResponseBytes: 65536 } as const;
 export const conversationContextSelectionSchema = z.array(knowledgeCitationSchema).max(CONVERSATION_CONTEXT_LIMITS.references).refine(refs => {
@@ -71,8 +71,7 @@ const conversationContextV2ReferenceSchema = z.strictObject({
   sources: z.array(sourceSchema).max(CONVERSATION_CONTEXT_LIMITS.references),
   attachments: z.array(attachmentDescriptorSchema).min(1).max(CONVERSATION_CONTEXT_LIMITS.references),
 });
-export const conversationContextReferenceSchema = z.discriminatedUnion('templateVersion', [conversationContextV1ReferenceSchema, conversationContextV2ReferenceSchema])
-  .superRefine((value, ctx) => {
+function validateContextReferences(value: ConversationContextReference, ctx: z.RefinementCtx): void {
     const attachments = value.templateVersion === 2 ? value.attachments : [];
     const refs = attachments.map(item => item.reference);
     const knowledge = value.sources.map(source => source.citation);
@@ -83,7 +82,24 @@ export const conversationContextReferenceSchema = z.discriminatedUnion('template
       || value.sources.reduce((sum, source) => sum + source.byteLength, 0) + attachments.reduce((sum, item) => sum + item.byteLength, 0) > CONVERSATION_CONTEXT_LIMITS.rawBytes) {
       ctx.addIssue({ code: 'custom', message: 'Combined context exceeds its reference or raw-byte budget.' });
     }
-  });
+}
+/** Producer schema: catches accidental body/extra-field publication. */
+export const conversationContextReferenceSchema = z.discriminatedUnion('templateVersion', [conversationContextV1ReferenceSchema, conversationContextV2ReferenceSchema])
+  .superRefine(validateContextReferences);
+
+// Consumer projection reuses the field validators, including locator/source refinements.
+// Ignore additive response fields at every level; never retain them in client state.
+const responseSourceSchema = sourceSchema.safeExtend({
+  citation: knowledgeCitationSchema.extend({ locator: knowledgeLocatorSchema.strip() }).strip(),
+}).strip();
+const responseAttachmentSchema = attachmentDescriptorSchema.extend({ reference: attachmentReferenceSchema.strip() }).strip();
+export const conversationContextResponseSchema = z.discriminatedUnion('templateVersion', [
+  conversationContextV1ReferenceSchema.extend({ sources: z.array(responseSourceSchema).max(CONVERSATION_CONTEXT_LIMITS.references) }).strip(),
+  conversationContextV2ReferenceSchema.extend({
+    sources: z.array(responseSourceSchema).max(CONVERSATION_CONTEXT_LIMITS.references),
+    attachments: z.array(responseAttachmentSchema).min(1).max(CONVERSATION_CONTEXT_LIMITS.references),
+  }).strip(),
+]).superRefine(validateContextReferences);
 
 /** Empty/absent attachments take the unchanged v1 branch; no references means no context. */
 export function conversationContextTemplate(knowledge: readonly KnowledgeCitation[] = [], attachments: readonly AttachmentReference[] = []): 1 | 2 | null {
@@ -106,7 +122,7 @@ export function parseAttachmentContextReceipt(expected: {
   const knowledge = conversationContextSelectionSchema.parse(expected.knowledge ?? []);
   const attachments = expected.attachments.map(({ reference, name, mediaType, byteLength }) => attachmentDescriptorSchema.parse({ reference, name, mediaType, byteLength }));
   if (conversationContextTemplate(knowledge, attachments.map(item => item.reference)) !== 2) throw Error('Attachment receipt requires nonempty frozen attachments.');
-  const actual = conversationContextReferenceSchema.parse(wire);
+  const actual = conversationContextResponseSchema.parse(wire);
   if (actual.templateVersion !== 2 || actual.sources.length !== knowledge.length || actual.attachments.length !== attachments.length) throw Error('attachment_reference_mismatch');
   for (const [index, citation] of knowledge.entries()) {
     if (citation.projectId !== projectId || citationKey(actual.sources[index]!.citation) !== citationKey(citation)) throw Error('attachment_reference_mismatch');

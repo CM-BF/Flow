@@ -16,7 +16,7 @@ import {
   type AttachmentCapabilities, type AttachmentDescriptor, type AttachmentUpload,
 } from './attachments.js';
 import {
-  CONVERSATION_CONTEXT_LIMITS, conversationContextReferenceSchema, conversationContextTemplate,
+  CONVERSATION_CONTEXT_LIMITS, conversationContextReferenceSchema, conversationContextResponseSchema, conversationContextTemplate,
   parseAttachmentContextReceipt, type ConversationContextDetail, type ConversationContextReference,
 } from './conversation-context.js';
 import type { KnowledgeCitation } from './knowledge.js';
@@ -174,6 +174,29 @@ describe('additive conversation context receipts', () => {
     const expected = { projectId, knowledge: [citation, another], attachments: [descriptor()] };
     expect(() => parseAttachmentContextReceipt(expected, { ...v2(), sources: [next, source] })).toThrow('attachment_reference_mismatch');
     expect(conversationContextReferenceSchema.safeParse({ ...v1, sources: [{ ...source, citation: { ...citation, version: 2 } }] }).success).toBe(false);
+  });
+  it('projects additive response fields away at every nesting level without weakening producer publication checks', () => {
+    const original = v2(); const wire = { ...original, future: 'context',
+      sources: [{ ...source, future: 'source', citation: { ...citation, future: 'citation', locator: { ...citation.locator, future: 'locator' } } }],
+      attachments: [{ ...descriptor(), text: 'must not enter metadata state', future: 'descriptor', reference: { ...descriptor().reference, future: 'reference' } }],
+    };
+    const before = structuredClone(wire);
+    expect(conversationContextReferenceSchema.safeParse(wire).success).toBe(false);
+    expect(parseAttachmentContextReceipt({ projectId, knowledge: [citation], attachments: [descriptor()] }, wire)).toEqual(original);
+    expect(wire).toEqual(before);
+    expect(conversationContextResponseSchema.parse({ ...v1, future: true, sources: wire.sources })).toEqual(v1);
+  });
+  it('keeps known field, nested locator, version, source consistency and total budget checks strict for additive responses', () => {
+    const withExtra = { ...v2(), future: true };
+    for (const wire of [
+      { ...withExtra, templateVersion: 3 },
+      { ...withExtra, sources: [{ ...source, isCurrentAtFreeze: false, future: true }] },
+      { ...withExtra, sources: [{ ...source, citation: { ...citation, locator: { ...citation.locator, end: 4097, future: true } } }] },
+      { ...withExtra, attachments: [{ ...descriptor(), reference: { ...descriptor().reference, version: 2, future: true } }] },
+      { ...withExtra, attachments: [descriptor(id, 'a'.repeat(8192))] },
+      { ...withExtra, attachments: [{ ...descriptor(), byteLength: 4, future: true }] },
+      { ...withExtra, attachments: [{ ...descriptor(), name: 'different.txt', future: true }] },
+    ]) expect(() => parseAttachmentContextReceipt({ projectId, knowledge: [citation], attachments: [descriptor()] }, wire)).toThrow();
   });
 });
 
