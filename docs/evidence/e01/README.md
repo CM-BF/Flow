@@ -1,0 +1,34 @@
+# E01 auth 首片段证据
+
+2026-10-06：唯一 owner runner_owner / gpt-6-astra，独立 harness-auth-probes worktree，base b5b4ce21bd8ae5e0fd729c526226e8f8a49a7a47，开工 clean；协调 claim4c525d50 v1 active，scope已核验。
+
+本地 find-skills 方法：Node/TypeScript 上游源码行为 spike 与隔离 I/O seam 匹配已有 codebase-design、tdd、clean-code；实际读取这些技能及 brainstorming，未安装无关 auth 技能。clean-code 固定 sickn33/agentic-awesome-skills@bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5。技能要求设计与测试 seam 已由 Lead 明确授权，使用简短 spike 设计，不重复要求用户审批。应用：最小 helper seam、分离上游代码和注入、有限可证伪行为案例，不让试验变成产品依赖。
+
+已确认 @ai-sdk/harness-claude-code1.0.143、@ai-sdk/harness1.0.139，均 Apache-2.0；最小副本/完整 SHA256 见 experiments/harness-probes/auth/provenance.json。doStart 在870行直接 await resolver，未在该 auth await 传入 startOpts.abortSignal；这只是源码事实，是否挂住/并发结果必须由后续合成案例观察。
+
+## 实际观察
+
+固定源码 target：**8e232a0c2f52fd08565c2d377215c9d3a8904641**。源码提交前运行，所提交3个MJS字节与已执行版本一致；[probe-source-hashes.json](probe-source-hashes.json)保存这些字节的SHA256。原文副本逐字对照安装来源并通过；3个MJS `node --check` 与提交diffcheck通过。没有运行产品全套检查，scope未改产品或依赖。
+
+2026-10-06 **03:04:13.898–03:04:15.390 UTC**，Node24，9个场景全部完成探针断言，总约1.49秒；这不是上游可靠性通过。原始 [auth-observations.json](auth-observations.json)，44,974字节，SHA256 **bb7d3f9ba09b354cab5a517c7211959b9b2267d0160594ecf7e7698b3bacee68**，提交后不得覆盖。
+
+| 场景 | 直接观察 |
+| --- | --- |
+| 文件优先级 | 有效文件优先于合成Keychain，即使文件过期；file refresh返回400时抛错，不回退到合成Keychain中的新鲜值 |
+| 来源写回 | 文件来源刷新写文件；无有效文件时合成Keychain来源刷新只写合成Keychain。自定义配置目录缺文件时不回落默认Keychain；显式env凭据不读subscription |
+| 阈值 | now+300001ms不刷新；now+300000ms、299999ms及已过期均刷新 |
+| 同PID2 / 16，单次轮换策略 | 发出2 / 16次fake refresh，全部使用同一旧token；成功1、失败1 / 15（HTTP400）；成功结果持久化 |
+| 同PID2 / 16，所有响应成功+受控文件交错 | 各自只有一个PID tmp路径；成功1、失败1 / 15（ENOENT rename），均无剩余tmp文件，最终文件权限600 |
+| 返回值与持久化值 | 本次16调用共享tmp案例：成功caller返回synthetic-access-05，文件却保存synthetic-access-16/refresh-16；2调用本次一致。不能将发生率外推 |
+| 无额外取消策略 | fake fetch未收到signal；调用者取消后150ms helper仍pending；父进程约704ms SIGTERM结束，退出不是helper自行响应取消 |
+| 显式注入fetch策略 | timeout约62ms产生TimeoutError；caller cancel约33ms产生AbortError。该策略是试验注入，未进入产品或上游 |
+
+所有案例 forbiddenCalls=[]；真实网络/refresh/Keychain/模型调用均0。原始JSON中的token均为显式 `synthetic-*` 标签，没有读出或输出真实凭据。全部子进程已结束、临时目录由父进程清理。最初开发试跑在/tmp，未作为本表最终数据；本表仅绑定上述保存的原始文件。
+
+## 方法、复跑与限制
+
+[探针说明](../../../experiments/harness-probes/auth/README.md)记录复跑命令、调用链、I/O注入差异、屏障交错与进程超时。最小上游模块原文/许可/hash在同目录upstream与provenance.json；loader没有修改上游函数，也没有引入整个harness成为产品依赖。
+
+有限观察支持：使用这个helper做并发native auth前，需要独立处理刷新互斥/轮换、持久化与取消时限；不能仅凭包内PID tmp路径视为并发安全。未测真实服务端策略、真正Keychain、跨PID协调、模型、完整doStart或Flow系统闭环，不据此宣称真实登录已修复。注入fetch的timeout/cancel只是可行的seam证明，不是产品修复。Paseo RPC留下一有界片段。
+
+03:04 UTC clean-code复核：区分原文、VM依赖注入、场景、父进程清理；将所有可能挂起的helper调用关在有硬看门狗的短子进程。未知依赖/默认home/默认网络/外部命令失败关闭；清理不修改共享目录。上游自身并发/取消缺口是本实验输出，不在本scope修第三方包；没有新增产品实现。
