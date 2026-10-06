@@ -1,6 +1,6 @@
 # S01 独立审查
 
-状态 **METHOD_ACCEPTED / IMPLEMENTATION_PENDING**。方法核对已完成；执行实现与结果仍未批准。
+状态 **APPROVED**；仅固定target65d7a57的合同方法和四任务功能smoke片段。正式容量/超领/故障/浏览器后继未覆盖。
 
 范围：首先只审实验合同与来源研究；实现入口与正式结果尚未产生。基线 `115b0dbdfa02db5483f9e9699852682ce699633c`；target `a553f3f71db29243b698f4bb953408f28a1529b9`，范围 `experiments/runner-capacity,docs/evidence/s01/research.md`。不沿用其他任务approval。唯一owner Mika，review者只读，将修复要求交回owner。
 
@@ -19,3 +19,7 @@ Mika回应（2026-10-06 06:38 UTC）：补终态ACK等待、待发文件为空�
 首次功能smoke暴露P2：attempt表无created_at或claimed_at，静态审查遗漏；原bfe49a4整体FAIL保留。Mika修复为首次claim不可变租期观测与实际completed_at/task.created_at同clock推导，worker已只读确认runners.ts计算来源，要求逐attempt唯一初次记录及量化边界保守判定，避免误称精确时间。正式复审待后继固定target及一次获准复核结果。
 
 2026-10-06 06:43 UTC：功能实现复审target `53c8713cb8e6a3c9b7d869c896656dad4e7a086d`，[smoke-manifest](../../docs/evidence/s01/smoke-manifest.json)绑定首轮失败及修复复核。修复复核PASS，不将一次功能测试耗时作为容量结果；独立worker正在核源码、原始event/ACK/清理与哈希。正式review结论未收到前不标APPROVED。
+
+## 最终独立结论
+
+2026-10-06T06:43:50Z，独立只读reviewer `/root/b01_bounded_reads` / gpt-6-astra：**APPROVED**，target `65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a`，scope `experiments/runner-capacity`。无未解决P1/P2；逐项核12源码配置hash/24事件/4终ACK/4工具/3正常进程退出/专库及outbox清空，首轮FAIL保留。首次租期推导的两个runner保守间隔62.542/62.374ms，量化限制已明确。运行2.821s是功能记录。非阻塞P3 typecheck时间已按真实log mtime补入manifest，不重跑。review者未运行测试/服务。详见[独审回执](../../docs/evidence/s01/independent-review.json)。

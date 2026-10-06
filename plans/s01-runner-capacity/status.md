@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:43 UTC；登记main a26a，产品基线115b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:44 UTC；登记main a26a，产品基线115b |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；实现 53c8713cb8e6a3c9b7d869c896656dad4e7a086d；metadata后继单列 |
-| 工作树dirty状态 | 仅本段结果与状态metadata待提交；53c8713实验源码停写待独审 |
-| 工作分支状态 | in-progress |
+| 工作树dirty状态 | 仅独审与证据metadata待提交，review target65d7a57目录停写 |
+| 工作分支状态 | delivered |
 | 检查状态 | PASSED 53c8713cb8e6a3c9b7d869c896656dad4e7a086d：修复复核4任务/24事件一致/4工具/3进程exit0、DB与outbox清空；noEmit0。原首轮4任务FAILED永久保留 |
 | 已集成main状态 / HEAD | 未集成；最近核验main115b0dbdfa02db5483f9e9699852682ce699633c |
-| 实现目标 | 53c8713cb8e6a3c9b7d869c896656dad4e7a086d |
+| 实现目标 | 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 优先级 | 4 |
-| 当前产出 | 四任务功能验证已通过，事件和资源清理均有记录，正在独立审查 |
-| 下一可用交付 | 交付功能验证片段；随后准备正式并发测量入口并协调运行窗口 |
+| 当前产出 | 四任务功能验证片段已独立审查通过，原失败与修复结果均可追溯 |
+| 下一可用交付 | 准备正式并发测量入口并协调运行窗口；该后继尚未实现 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，合同方法接受；功能实现53c8713由独立worker复审，正式结果尚无 |
+| Review | [review.md](review.md)，APPROVED 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a：仅合同+四任务smoke；正式容量/故障/browser未覆盖 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -47,3 +47,5 @@ claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` v1 ACTIVE，06:22:33.774Z；[回执
 2026-10-06 预算重分配：Goal Owner明确批准一次最多4 tasks/attempts复核；smoke总8（4已用+4待用），可选声明capacity4对照16→12，其余不变、总64。第二轮若失败停止重跑；正式窗口未授权。首轮证据 docs/evidence/s01/smoke-first/result.json 原封保留，4.33秒；3个自有进程exit0、DB remaining=[]、pendingOutbox=[]。缺少attempt.created_at列，改首次claim初始lease反推区间并标毫秒精度，不能把第一次结果改为通过。
 
 2026-10-06 06:43 UTC 修复复核：固定53c8713，smoke-repair整体PASS、2.821秒含清理，原smoke-first整体FAIL不变。已使用8/8功能smoke任务；不再重跑。总64额度余56，后继正式16+16+12、gate8、ACK2、browser2未运行。独立worker只读复核中，产品源码无变化。
+
+2026-10-06 06:44 UTC 独立review完成：worker只读APPROVED target65d7a57；无P1/P2。功能片段已交付但main未集成；完整S01开放TODO不勾完。正式后继仍需实现与具体运行窗口。
