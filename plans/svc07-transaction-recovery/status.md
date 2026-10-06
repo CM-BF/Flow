@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:09:48 UTC；固定分支基线22a |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:10:30 UTC；固定分支基线22a |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect |
 | Branch | codex/server-transaction-disconnect |
 | 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；源码e28c4ed0a30ec2800eeca2ca5c444c0081c38165；本次metadata提交后核clean/push |
-| 工作树dirty状态 | 源码已提交；仅本片metadata待提交 |
+| 工作树dirty状态 | 源码与证据已提交推送；本次追加独立review metadata |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 实现目标 | e28c4ed0a30ec2800eeca2ca5c444c0081c38165 |
 | 实现范围 | apps/server/src/database.ts, apps/server/src/database-transaction.test.ts, plans/svc07-transaction-recovery, docs/evidence/svc07 |
 | 检查状态 | PASSED e28c4ed0a30ec2800eeca2ca5c444c0081c38165：显式fake15/15，局部types exit0；[证据](../../docs/evidence/svc07/checks.md) |
 | 已集成main状态 / HEAD | 未集成；分支基线22a不含本片修复 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 事务连接失效的保护修复已通过定向验证，正在独立审查 |
-| 下一可用交付 | 完成独立审查和直接消费者验证后，将修复纳入主线 |
+| 当前产出 | 事务连接失效的保护修复已通过定向验证和独立审查 |
+| 下一可用交付 | 完成隔离的真实连接与直接消费者验证，再将修复纳入主线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED；先前设计审不等于源码通过 |
+| Review | [review.md](review.md)，APPROVED e28c4ed0a30ec2800eeca2ca5c444c0081c38165；真实PG/HTTP不在已审通过范围 |
 | Claim | 3bbb8293-c36d-40c8-a133-723463801943 v1 ACTIVE；[原子回执](../../docs/evidence/svc07/claim-receipt.json) |
 | 架构影响 | 借用期连接错误/释放生命周期变化；待 source 固定后由 Execution Lead 更新 apps/execution-dashboard/public/architecture-data.js，分支设计未作为main事实 |
 
@@ -32,8 +32,8 @@
 | --- | --- | --- | --- |
 | SVC07-01 | completed | db_transaction_owner | 固定22a输入与20:03:32.621Z原子领取 |
 | SVC07-02 | completed | db_transaction_owner | 首红保留；[15例绿色与类型检查](../../docs/evidence/svc07/checks.md) |
-| SVC07-03 | in-progress | db_transaction_owner / 独立reviewer | 定向检查已通过；source review待执行 |
-| SVC07-04 | pending | mika / Execution Lead | 真实直接消费者与main接收尚未执行 |
+| SVC07-03 | completed | db_transaction_owner / Mika | 15/15+types0，固定source独审APPROVED/0 P1/P2 |
+| SVC07-04 | in-progress | db_transaction_owner / mika / Execution Lead | 准备独立专库探针；实际窗口/消费者/main未执行 |
 
 ## Dashboard 同步
 
