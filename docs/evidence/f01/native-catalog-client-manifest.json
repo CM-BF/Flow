@@ -1,0 +1,96 @@
+{
+  "target": "5ffe8c19e89a7beb8de6b940cddc24d3d1cfcdf7",
+  "base": "6a41a0bd7c61f85bd83888b7121cf45b04b95b08",
+  "observedAt": "2026-10-06T10:47:57.089851+00:00",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 39800,
+      "sha256": "e986d23b9701ec6c97beea57caa3417cdd183419c7e62b2f16ab77efa7d7201c"
+    },
+    {
+      "path": "packages/client/src/native-profile-catalog.test.ts",
+      "bytes": 4086,
+      "sha256": "0abc50c6603312330f7194a81e8e36977bb8c1b886fecb10f3ea5b118fa29929"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/native-catalog-client-green.json",
+      "bytes": 303,
+      "sha256": "10b6c5d3d803cdf1f1ddadddd25b472d798360ab06b5ec3c192f9c4d63804fe4"
+    },
+    {
+      "path": "docs/evidence/f01/native-catalog-client-green.stdout",
+      "bytes": 393,
+      "sha256": "ed0d40d1d61cd5d4c56b446a1521a34df36df7157fac79504f421384ae5e17a0"
+    },
+    {
+      "path": "docs/evidence/f01/native-catalog-client-offline-install.json",
+      "bytes": 235,
+      "sha256": "7911fe604f99987c51188ec112c0faad22e2445e87eddf3529ac01c25aa92d7e"
+    },
+    {
+      "path": "docs/evidence/f01/native-catalog-client-offline-install.stdout",
+      "bytes": 328,
+      "sha256": "c2ea2207c73799af00146ca9e131e16a2d9b47e5af073907e684437e04325902"
+    },
+    {
+      "path": "docs/evidence/f01/native-catalog-client-red.json",
+      "bytes": 91,
+      "sha256": "74547cb1308b3bce37486b1695992bb377c36cfdaeaeb572d6c2ec8bed53ee69"
+    },
+    {
+      "path": "docs/evidence/f01/native-catalog-client-red.stdout",
+      "bytes": 1272,
+      "sha256": "8bb11ab680a3b2f8bf78783d323056a21fe7bd88f5204b60398cfda4d6222692"
+    },
+    {
+      "path": "docs/evidence/f01/native-catalog-client-types-final.json",
+      "bytes": 171,
+      "sha256": "91d972f83ff9f0ba08dadc2558f83cac162d7472edda86add519f5dcb282789c"
+    },
+    {
+      "path": "docs/evidence/f01/native-catalog-client-types-final.stdout",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a"
+    },
+    {
+      "path": "docs/evidence/f01/native-catalog-client-types.json",
+      "bytes": 171,
+      "sha256": "fb4d8594b0473bf227dec49c918af6f11d01700d4d2d0335565e2bc5ccdf0b9a"
+    },
+    {
+      "path": "docs/evidence/f01/native-catalog-client-types.stdout",
+      "bytes": 7499,
+      "sha256": "d893a4e8fa84d445bb603a93846a15e96103b1b851ad18300538750348970d22"
+    }
+  ],
+  "readonlyInputs": [
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 9174,
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+    },
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "bytes": 1134,
+      "sha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278664,
+      "sha256": "621490272149c9e9468c6ebec407f0eff3b508b7ca1e5b285573f101bb8a062d"
+    }
+  ],
+  "checks": {
+    "httpNew": 1,
+    "httpLegacy": 2,
+    "httpTotal": 3,
+    "typecheckExit": 0,
+    "firstTypecheckExit": 2,
+    "offlineFrozenInstallExit": 0,
+    "providerQueries": 0
+  },
+  "limits": "Thin authenticated GET transport and strict response decoder only. No capability probing or native auth; configured/not-probed and Codex conversation unsupported remain explicit. Initial typecheck failed from stale workspace install; exact frozen offline install left lock unchanged before final typecheck."
+}

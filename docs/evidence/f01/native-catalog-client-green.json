@@ -1,0 +1,13 @@
+{
+  "startedAt": "2026-10-06T10:44:49.853643+00:00",
+  "finishedAt": "2026-10-06T10:44:50.933150+00:00",
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "packages/client/src/native-profile-catalog.test.ts",
+    "packages/client/src/execution-profiles.test.ts"
+  ],
+  "exitCode": 0
+}

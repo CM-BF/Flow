@@ -1,0 +1,74 @@
+{
+  "target": "3a12ed7ebd8e69325309bd004043f06dabbf7ff4",
+  "observedAt": "2026-10-06T10:57:01.620370+00:00",
+  "interfaceTarget": "6c9fbfde15e27ea5be69ef53b6e74d0ec5b83664",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 40801,
+      "sha256": "9a11d6c51e0b170166efb41126a65e8d3688a46b79c2087b0e1ff6e24a744ae9"
+    },
+    {
+      "path": "packages/client/src/engineering-profiles.test.ts",
+      "bytes": 3846,
+      "sha256": "1441c8cc5db2abe98fbd83806bd60788c1e3a8c214ecbfb2531044bb9529d14b"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1015,
+      "sha256": "4370db0e328f79ebb4f9d775f7a71a63c0c6e58292911b4f4070224b3b4a3f07"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/engineering-profile-client-green.json",
+      "bytes": 359,
+      "sha256": "5c56869b743784c2f5c2c0bdd162c2e728677873a1f1fbccaa9979f09d562520"
+    },
+    {
+      "path": "docs/evidence/f01/engineering-profile-client-green.stdout",
+      "bytes": 461,
+      "sha256": "77c5f47f8a8caf64946a7048d10a838bc56b8ae32f3fb73dcf84f4e00111f308"
+    },
+    {
+      "path": "docs/evidence/f01/engineering-profile-client-red.json",
+      "bytes": 247,
+      "sha256": "b98a7ada438e2971ba4d0477918c2f337f537a1483725dd81e10210be2d2bac6"
+    },
+    {
+      "path": "docs/evidence/f01/engineering-profile-client-red.stdout",
+      "bytes": 1259,
+      "sha256": "b9f77ad39f08ca4d99193da683c69ccc8d615f43a421db9be8d8b120fc0ba199"
+    },
+    {
+      "path": "docs/evidence/f01/engineering-profile-client-types.json",
+      "bytes": 171,
+      "sha256": "bcfb49cb35fe4e137baeb7fd631104721e0b7473038e32c76364917c2212c5ec"
+    },
+    {
+      "path": "docs/evidence/f01/engineering-profile-client-types.stdout",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a"
+    }
+  ],
+  "readonlyInputs": [
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    }
+  ],
+  "checks": {
+    "newHttp": 1,
+    "existingNativeAndLegacyHttp": 3,
+    "httpTotal": 4,
+    "typecheckExit": 0,
+    "providerQueries": 0
+  },
+  "limits": "Thin transport/export; fixture purpose remains explicit. Uses fixed interface only; no domain/mount/PG or native execution approval. Types and HTTP ran before separate mount1c081. Publication preserves body/auth/replay; strict decoder rejects unknown purpose; no retry/fallback."
+}
