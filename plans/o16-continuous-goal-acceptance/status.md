@@ -11,12 +11,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974 |
-| HEAD | 首Interface提交后固定；当前无产品实现 |
+| HEAD | 首Interface59249f90；permit源码62511c4b47132ca7b3065b62818eb47ff7dfdfb9；后续只metadata/新driver待实现 |
 | Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1 active；三literal，18:16:25.736 UTC取得 |
 | 工作分支状态 | in-progress |
 | 检查状态 | Node内建纯permit检查5不同通过；最初missing-module红保留，4+5分轮重叠不累计；0SDK/PG/provider |
 | Review | NOT_STARTED |
-| 实现目标 | UNKNOWN |
+| 实现目标 | 62511c4b47132ca7b3065b62818eb47ff7dfdfb9 |
 | 实现范围 | experiments/continuous-goal-acceptance |
 | 已集成main状态 | 未集成；基线已含O15/CLI，不证明本实验 |
 | 阶段 | M2 |
@@ -37,3 +37,5 @@
 | O16-06 | pending | native_center_owner | 新模型预算未授，旧O08/O10封存；不影响零query准备 |
 
 架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
+
+2026-10-06 18:24 UTC：Lead批准39个既有依赖链接，11个workspace均指本树，28第三方版本逐项相符；无安装/导入，package/lock/sharedconfig与gitstatus保持。原sparse未含新目录导致首次普通add拒绝，两源后以已授权exact --sparse独立提交62511；Lead已补本树精确规则，原失败如实保留。
