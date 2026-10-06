@@ -1,0 +1,11 @@
+{
+  "source": "faithful transcript of this conversation exec_command tool result; not synthetic process log",
+  "chunkId": "0d6510",
+  "exitCode": 1,
+  "wallTimeSeconds": 0.298227833,
+  "command": "python3 -B tools/owned-process-supervision/supervise.test.py SupervisionTests.test_svc07_shape_combined_output_limit_stops_session SupervisionTests.test_leader_exit_keeps_group_authority_until_descendant_stopped > docs/evidence/ops14/group-failure-detail.stdout 2>&1",
+  "selected": 2,
+  "passed": 0,
+  "purpose": "Show structured group failure after first 10-case run; diagnostic assertion included Report repr",
+  "sourceBindingLimitation": "Implementation remained 293149a6 blob; diagnostic-only test assertion was not hashed at invocation. Do not claim exact test invocation blob attestation."
+}

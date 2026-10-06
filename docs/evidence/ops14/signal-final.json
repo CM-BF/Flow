@@ -1,0 +1,33 @@
+{
+  "startedAt": "2026-10-06T21:30:02.258840+00:00",
+  "freeBeforeBytes": 1135398912,
+  "minimumFreeBytes": 1077936128,
+  "selectedExpected": 1,
+  "unselected": 11,
+  "PG": 0,
+  "browser": 0,
+  "providerCalls": 0,
+  "sources": [
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "sha256": "32222d5cf08c5064429e35259d6aeefe2086dda25d97ef17320936a98be13c8d",
+      "bytes": 11827
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "sha256": "2119a00de5f9b7737aee7fed332bf62ef9bb7ea2ce52244fc9a3c137945afd85",
+      "bytes": 10417
+    }
+  ],
+  "command": [
+    "python3",
+    "-B",
+    "tools/owned-process-supervision/supervise.test.py",
+    "SupervisionTests.test_signal_permission_failure_does_not_escalate"
+  ],
+  "exitCode": 0,
+  "elapsedMs": 572,
+  "outputBytes": 528,
+  "state": "COMPLETED",
+  "outputSha256": "54e7791feaeaec350e4903e0523b6d670d4e3c98415a978ab2c4fa63ee7b0e14"
+}

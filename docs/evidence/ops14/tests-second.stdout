@@ -1,0 +1,35 @@
+test_cleanup_failure_keeps_primary_work_failure (__main__.SupervisionTests.test_cleanup_failure_keeps_primary_work_failure) ... ok
+test_eof_does_not_cancel_alive_operator_deadline (__main__.SupervisionTests.test_eof_does_not_cancel_alive_operator_deadline) ... ok
+test_final_output_is_drained_after_stop_before_pipe_close (__main__.SupervisionTests.test_final_output_is_drained_after_stop_before_pipe_close) ... ok
+test_invalid_policy_or_external_pid_not_accepted (__main__.SupervisionTests.test_invalid_policy_or_external_pid_not_accepted) ... ok
+test_leader_exit_keeps_group_authority_until_descendant_stopped (__main__.SupervisionTests.test_leader_exit_keeps_group_authority_until_descendant_stopped) ... ok
+test_normal_session_exits_without_converting_zombie_eperm_to_absence (__main__.SupervisionTests.test_normal_session_exits_without_converting_zombie_eperm_to_absence) ... ok
+test_normal_short_child_keeps_streams_and_exit (__main__.SupervisionTests.test_normal_short_child_keeps_streams_and_exit) ... ok
+test_signal_permission_failure_does_not_escalate (__main__.SupervisionTests.test_signal_permission_failure_does_not_escalate) ... /opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py:1140: ResourceWarning: subprocess 2780 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+FAIL
+test_spawn_failure_does_not_leak_command_or_exception (__main__.SupervisionTests.test_spawn_failure_does_not_leak_command_or_exception) ... ok
+test_svc05h_shape_blocked_report_kills_only_operator (__main__.SupervisionTests.test_svc05h_shape_blocked_report_kills_only_operator) ... ok
+test_svc07_shape_combined_output_limit_stops_session (__main__.SupervisionTests.test_svc07_shape_combined_output_limit_stops_session) ... ok
+test_unknown_group_observation_never_escalates_or_reports_absent (__main__.SupervisionTests.test_unknown_group_observation_never_escalates_or_reports_absent) ... /opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py:1140: ResourceWarning: subprocess 3614 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+======================================================================
+FAIL: test_signal_permission_failure_does_not_escalate (__main__.SupervisionTests.test_signal_permission_failure_does_not_escalate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.test.py", line 152, in test_signal_permission_failure_does_not_escalate
+    self.assertEqual(result.owned_state, 'unknown')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'present' != 'unknown'
+- present
++ unknown
+
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.695s
+
+FAILED (failures=1)
