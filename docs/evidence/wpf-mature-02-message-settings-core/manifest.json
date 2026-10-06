@@ -1,0 +1,151 @@
+{
+  "sourceTarget": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+  "validationTarget": "8c56f15c5a70afd4e33031876244f70d1284d957",
+  "base": "70cc4e852365e974cefde30bfad75c7d233985c6",
+  "generatedAt": "2026-10-06T15:30:17.836326+00:00",
+  "sources": [
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "gitTarget": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.test.ts",
+      "gitTarget": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+      "bytes": 7216,
+      "sha256": "6b2f2fe959563997d2d949475d641123dadbdc70cab10f905e94cd6753e95f6a"
+    }
+  ],
+  "configs": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vitest.config.ts",
+      "gitTarget": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "bytes": 552,
+      "sha256": "14ed3c6e4d5d4356f1f2ed5c0ab7d097261a8f33867e93a97ab62d70138e991b"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/tsconfig.json",
+      "gitTarget": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "bytes": 541,
+      "sha256": "8ee4bc0bdb2f90c383efeedc7b99555d1d538117988af70948b4efd0ce7fb32e"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/checks.json",
+      "gitTarget": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "bytes": 1759,
+      "sha256": "e8e6f6cbad5a07fa0019c954472de16c31b2912e337718917b56ac2aab404619"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/cleanup.json",
+      "gitTarget": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "bytes": 455,
+      "sha256": "6d14d028e4bd78ab3f5824dcd27075440c6700aa6ac384d47fb6111edd097fd4"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vitest.log",
+      "gitTarget": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "bytes": 333,
+      "sha256": "418ba4ecc87a65f932ae6413cc1027f23322c35a008322219568241b0dc1c23a"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vitest.exit",
+      "gitTarget": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/strict.log",
+      "gitTarget": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/strict.exit",
+      "gitTarget": "8c56f15c5a70afd4e33031876244f70d1284d957",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    }
+  ],
+  "readOnly": [
+    {
+      "path": "tsconfig.json",
+      "gitTarget": "70cc4e852365e974cefde30bfad75c7d233985c6",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "gitTarget": "70cc4e852365e974cefde30bfad75c7d233985c6",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    }
+  ],
+  "support": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-receipt.json",
+      "gitTarget": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+      "bytes": 753,
+      "sha256": "4a8c949f6c59f0acf8a224aee71064f878a3471365df2afbe4a8f89b77b32693"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/provision.json",
+      "gitTarget": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+      "bytes": 848,
+      "sha256": "af05f2940d50b4b7424ed18ef1d707bceb440e7878bc4dcbd21886aa8482e7bc"
+    }
+  ],
+  "externalDependencies": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "name": "zod",
+      "version": "4.6.5",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "name": "vitest",
+      "version": "4.0.18",
+      "bytes": 5513,
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "name": "typescript",
+      "version": "5.9.3",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/package.json",
+      "name": "@types/node",
+      "version": "24.19.1",
+      "bytes": 4068,
+      "sha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    }
+  ],
+  "checks": {
+    "vitestSelected": 5,
+    "vitestPassed": 5,
+    "vitestUnselected": 0,
+    "vitestTestMs": 6,
+    "vitestExit": 0,
+    "localStrictExit": 0,
+    "redRun": false,
+    "pg": 0,
+    "sdk": 0,
+    "provider": 0,
+    "installation": false,
+    "testedSource": "this worktree, no product source aliases"
+  },
+  "limits": {
+    "snapshotCanonicalUtf8Bytes": 1024,
+    "choicesCanonicalUtf8Bytes": 16384,
+    "choices": 32,
+    "scope": "plain contract leaf only; no SDK/default reset/provider availability/persistence proof"
+  },
+  "review": "NOT_STARTED; independent source pre-read is not the final validation verdict"
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "typeRoots": ["/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"],
+    "paths": {
+      "zod": ["/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.d.cts"],
+      "vitest": ["/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/dist/index.d.ts"]
+    }
+  },
+  "include": [
+    "../../../packages/contracts/src/claude-turn-settings.ts",
+    "../../../packages/contracts/src/claude-turn-settings.test.ts"
+  ]
+}
