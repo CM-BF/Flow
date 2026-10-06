@@ -1,8 +1,14 @@
 # B01 task轻投影独立review
 
-Review target commit: NOT_IMPLEMENTED
+状态：REVIEW_REQUIRED
 
-NOT_STARTED：新片源码未实现、尚无独审批准。权威WT task-read-projections / codex/task-read-projections，base fd1322f9c0c1d085d5e343e39f6216b20d26c264。review默认只读固定source/raw/hash与scope，不重复PG。验收按[Interface](../../docs/evidence/b01/task-projections/interface.md)：两真实reader无prompt结果字段、完整输出/分页/rawcursor/reset/状态更新等价、snapshot/写锁/auth未变、数据字节口径和有界清理；不把TOAST/吞吐/第三reader当已优化。固定提交后补实际检查和独审结论。
+Review target commit：c96a6bb867bfa83b8ce26f79236ff13b14b63e65
+
+Reviewer：mika / gpt-6-astra（待实际只读结论，不能以预审或旧B01批准代替）。权威WT task-read-projections / codex/task-read-projections，base fd1322f9c0c1d085d5e343e39f6216b20d26c264，claim190bd45e v1 ACTIVE。
+
+当前新片最终8/8真实PG/HTTP与局部strict0，原2次red及其历史source绑定完整保留；累计7tasks，三库都已确认不存在。检查与边界见[证据说明](../../docs/evidence/b01/task-projections/README.md)，[manifest](../../docs/evidence/b01/task-projections/manifest.json)包含6source/config、17readonly、18raw、9support及9历史red source、19旧B01冻结文件。独审需核固定target三生产源、测试/fixture、字节/SQL/HTTP口径和清理，不默认重跑PG。c855e33f的独立预读暂无P1/P2，明确不覆盖最终list/test，也不是正式APPROVED。
+
+验收遵循[Interface](../../docs/evidence/b01/task-projections/interface.md)与根模块规则。新TaskSummaryRow/formatter由两个reader真实复用；snapshot/写锁/auth/rawcursor/pagination/RR保留；第三reader、TOAST/吞吐/模型能力没有完成声明。本片尚未main；Lead负责权威registry迁移与集成。
 
 ## 旧B01固定review历史（不批准新片）
 

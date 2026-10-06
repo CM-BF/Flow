@@ -9,12 +9,12 @@
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections |
 | Branch | codex/task-read-projections |
-| 工作基线 / HEAD | fd1322f9c0c1d085d5e343e39f6216b20d26c264 / 实现提交准备封存；最终metadata HEAD由Git读取 |
-| 工作树dirty状态 | 实现、原始证据与metadata准备固定 |
+| 工作基线 / HEAD | fd1322f9c0c1d085d5e343e39f6216b20d26c264 / c96a6bb867bfa83b8ce26f79236ff13b14b63e65；最终metadata HEAD由Git读取 |
+| 工作树dirty状态 | 源码/raw已固定；仅manifest及review/status metadata待提交 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 最终8/8真实PG/HTTP；局部strict exit0。两次目标red原样保留，详见证据 |
 | 已集成main状态 / HEAD | 旧B01已main；本片两reader已实现/未main |
-| 实现目标 | SOURCE_COMMIT_PENDING |
+| 实现目标 | c96a6bb867bfa83b8ce26f79236ff13b14b63e65 |
 | 实现范围 | apps/server/src/tasks.ts, apps/server/src/queries.ts, apps/server/src/task-read-projection.ts, apps/server/src/task-read-projection.test.ts, docs/evidence/b01/task-projections, experiments/bounded-reads/task-projections |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
