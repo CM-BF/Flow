@@ -5,7 +5,7 @@
 ## 建议的最小工具链
 
 - Playwright CLI + 已有 webapp-testing 方法负责真实浏览器操作与证据；Playwright Test 负责可重复回归、截图基线和 axe 检查。
-- Chrome DevTools MCP/CLI 按需诊断 trace、network、console；不同时维持多套浏览器控制器。
+- Chrome DevTools MCP 按需诊断 trace、network、console；其 CLI 仍 experimental，仅作候选试验，不作为稳定底座，不同时维持多套浏览器控制器。
 - React Grab 作为用户指认元素、回传组件/源码位置的开发工具候选。Storybook MCP 等组件数量增加后再评估；agent-browser 作为 CLI 备选，不同时堆三套控制器。
 
 以上是工具职责建议，并非所有工具现在都需要安装。先用项目已有 Playwright 与明确 ready 信号完成行为验证，再按缺口增加工具。
@@ -14,7 +14,7 @@
 
 [Microsoft Playwright CLI](https://github.com/microsoft/playwright-cli) 支持按需页面输出、独立 session，show 可查看浏览器预览，当前 SKILL 还有 show --annotate。[Playwright MCP README](https://github.com/microsoft/playwright-mcp) 建议 coding agents 考虑 CLI + skills；官方 token 宣传不是 Flow 实测节省。
 
-[Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) 提供 trace、network、screenshot、source-mapped console，并有 CLI。后续试验要固定版本与独立浏览器 profile；显式使用 `--no-usage-statistics`、`--no-performance-crux` 关闭相应采集，不将内网 URL 发往 CrUX。
+[Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) 提供 trace、network、screenshot、source-mapped console，并有 CLI。[官方 CLI 文档](https://raw.githubusercontent.com/ChromeDevTools/chrome-devtools-mcp/main/docs/cli.md)明确标记 experimental，支持 `--workspace` 限制文件工具目录；未来只指定当前worktree/evidence路径。后续试验要固定版本与独立浏览器 profile；显式使用 `--no-usage-statistics`、`--no-performance-crux` 关闭相应采集，不将内网 URL 发往 CrUX。
 
 [React Grab](https://github.com/aidenybai/react-grab) 使用 MIT 许可，支持 Vite dev-only import，可将选中元素与组件/源码位置交给 agent。它是开发工具候选，不混入生产包，当前不改外部 W01。
 
