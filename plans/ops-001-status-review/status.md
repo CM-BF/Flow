@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 22:05 UTC / main8dcd3c9d（个人窗口已关闭） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 22:22:27 UTC / mainfc3246b3（个人窗口已关闭） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin8dcd3c9d已接个人发布与监督模块限定独审证据；实际backend af51 accepting v18、Web d629 v3，与源码main分开。 |
+| 已集成main状态 / HEAD | main/originfc3246b3已接个人发布、监督模块和首个实际消费者限定独审证据；实际backend af51 accepting v18、Web d629 v3，与源码main分开。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
-| 优先级 | 5 |
+| 优先级 | 1 |
 | 当前产出 | 个人后台与新版网页已更新，原数据和旧网页资源保留；正在回收已结束工作的可恢复副本，恢复后续验证余量。 |
-| 下一可用交付 | 恢复足够磁盘余量后验证事务连接修复，再接终端与网页双端接续；监督模块已进主线，首个实际恢复包装器正在独审。 |
-| 当前阻塞 | ACTIVE: 最新结束观察约1.156GB可用，仍低于共享HTTP/浏览器验证门槛；完整后台固定产物仍需2.5GiB。个人发布旧intent已解除，其他检查按真实增量单独准入。 |
+| 下一可用交付 | 恢复足够磁盘余量后验证事务连接修复，再接终端与网页双端接续；监督模块与首个实际恢复包装器已审进主线。 |
+| 当前阻塞 | ACTIVE: 22:19样本开始观察约1.113GB可用，仍低于共享PG/浏览器验证门槛；完整后台固定产物仍需2.5GiB。个人发布旧intent已解除，其他检查按真实增量单独准入。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -321,3 +321,9 @@ OPS14 两个实际wrapper通过精确4482字节源码供给后由唯一owner实�
 资源下一有界只读候选为workspace-cache真实依赖恢复完整性；未授权删除依赖，既有cache许可不扩大。唯一监督模块的SVC07真实consumer仍是下一版本，当前已审待运行候选不变。
 
 2026-10-06 22:07:12 UTC：已独审chat单缓存operator仅目标/审计文件名收窄，fresh全部身份/ledger/consumer/文件hash后实际COMPLETE，60文件/17,530,080逻辑字节；卷观察1,138,155,520→1,155,792,896（+17,637,376B，非独占APFS归因）。[结果](../../docs/quality/vite-cache-2026-10-06/retired-two/web-conversations-cleanup.json)与[独审](../../docs/quality/vite-cache-2026-10-06/retired-two/independent-operator-review.json)。Activity缓存因其他预览消费者仍KEEP；无真实依赖/源码/证据删除，无服务操作。距离1,207,959,552共享线仍缺52,166,656B，此结束值不作未来准入。workspace-cache的精确依赖恢复审计继续，仅已有本地固定来源，未删除或安装。
+
+2026-10-06T22:14:17.205811+00:00: 原OPS资源后继已完成workspace-cache只读内容来源审计：581包、29,606 payload逐字匹配本机CAS，无缺失/修改；26,549唯一CAS内容实读核验，未安装/恢复/删除。72生成布局和root缓存继续KEEP，外部消费者确认及精确可恢复方法尚未关闭；[审计](../../docs/quality/dependency-retirement-2026-10-06/initial-readonly-audit.json)、[最窄候选](../../docs/quality/dependency-retirement-2026-10-06/proposal.json)。逻辑508MB不等于APFS可回收量。
+
+2026-10-06T22:14:17.205811+00:00: 原CHAT05–06完整原文后继已分派assignment_review独立source-only树native-activity-body，固定fc3246，523files/3,714,128逻辑字节全部固定blob匹配，0安装/执行；[供给](../../docs/quality/chat05p01-source-provision.json)。scope/interface仍待fresh原子领取，runtime与共享exports的既有S01P07 writer不被覆盖；先源码/合同与局部传输，实际PG继续后验。
+
+2026-10-06T22:21:50.392984+00:00：已收到workspace-cache原owner限定消费者确认与3文件离线恢复样本（1473B，完整hash/mode/xattr核对，正常移除自有scratch）。全部真实依赖payload仍KEEP；下一步全映射属性核对及独立operator审查，不把样本当全树恢复证明。CHAT05P01已在fixed fc3246新树领取12scope并提交首合同7d075，资源验证与工具原文实现并行，0新PG/browser/provider。见[准备绑定](../../docs/quality/dependency-retirement-2026-10-06/preparation-bindings.json)。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:32 UTC / main0bc8d40b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 22:22:27 UTC / mainfc3246b3 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,7 +12,7 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin0bc8d40b已接终端修复、消息设置组件及178来源；个人实际backend af51 accepting v18、Web d629/current v3。已审旧intent精确退役和固定发布完成，运行版本与main分开。 |
+| 已集成main状态 / HEAD | main/originfc3246b3已接终端修复、消息设置组件、监督消费者及179来源；个人实际backend af51 accepting v18、Web d629/current v3。已审旧intent精确退役和固定发布完成，运行版本与main分开。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 个人后台与新版网页已更新并恢复接收；原会话、数据和旧页面资源保留。消息设置独立组件与终端诊断修复已进入主线。 |
@@ -144,3 +144,5 @@ SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB�
 2026-10-06 19:10:54 UTC：FLOW-001-T04-SCAN-01 proposed；单会话/项目行锁下无关推进与整轮关闭时限纳入REQ15后继。GO固定22a源码观察保留为未复现风险，未领取产品scope、未运行PG/负载；兼容发布/消息设置仍优先。
 
 2026-10-06 21:32 UTC：本次个人发布已由Execution Lead独立核100项固定/现文件、24命令和25最终检查；同op drain→hold→旧runner整组停止→0600原件先行/精确intent退役→af51 refresh→explicit resume v18→d629 Web CAS v3。总drain166.030s/900s，0主动task/provider/tab；旧claim仍unknown，不造ACK。独审[I02结果](../../../m2-integration/docs/evidence/i02/svc05h-retirement-release-result-review.json)。64表保护摘要/27迁移/4历史保留，不把摘要核对称逐值明文证明，也不把固定发布等同moving main全部功能或新真实UI验收。
+
+2026-10-06 22:22:27 UTC：工具完整原文后继CHAT05P01已建立唯一实施树与12scope领取（首canonical7d0751b2，033专用前进迁移），合同/本地持久分块/reader先并行，公共挂载与真实PG后验。复用旧outbox及事务接收；现2MiB事件包与1MiB普通detail边界不靠简单调大绕过。旧64KiB前缀历史不伪称全文可恢复，完整用户验收仍开放。唯一来源[CHAT05P01](../../../native-activity-body/plans/chat05p01-native-activity-body/status.md)。

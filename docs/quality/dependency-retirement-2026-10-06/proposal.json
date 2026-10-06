@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-06T22:14:17.205811+00:00",
+  "candidate": "web-workspace-cache",
+  "state": "KEEP_PENDING_EXACT_OPERATOR_REVIEW",
+  "proposal": "Retire only exact store-backed payload with durable identity map and offline <=2MiB sample reconstruction; keep all generated/shim/layout/root cache/link/directory/source/evidence files in place. No reinstall or network.",
+  "fixedReadOnlyProof": {
+    "packageCount": 581,
+    "payloadFiles": 29606,
+    "payloadLogicalBytes": 508198354,
+    "uniqueCASContentsReadAndVerified": 26549
+  },
+  "remainingConditions": [
+    "Full target/CAS metadata equality, exact compressed manifest",
+    "Independent fixed operator review and fresh execution guards"
+  ],
+  "scopeLimit": "No removal yet. Earlier .vite authorization does not cover dependency files; this is a distinct guarded candidate within existing OPS resource authorization.",
+  "latestEvidence": "preparation-bindings.json"
+}
