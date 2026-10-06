@@ -1,0 +1,29 @@
+{
+  "sourceTarget": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+  "validationTarget": "8c56f15c5a70afd4e33031876244f70d1284d957",
+  "deliveryTarget": "78c73677438efec7455fc68b44109fa7da9ce5f5",
+  "manifestSHA256": "2f113f0c9b5a373c6e90907f1b1ab349d2ab76552cadf6a34fb2b64fcba2f7ce",
+  "reviews": [
+    {
+      "reviewer": "mika",
+      "model": "gpt-6-astra",
+      "at": "2026-10-06 15:31:09 UTC",
+      "verdict": "APPROVED",
+      "p1": 0,
+      "p2": 0,
+      "scope": "14 Git bindings plus 4 package metadata, 5/5 and strict0, own cache absent"
+    },
+    {
+      "reviewer": "architecture_read",
+      "model": "gpt-6-astra",
+      "at": "2026-10-06 15:31:25 UTC",
+      "verdict": "APPROVED",
+      "p1": 0,
+      "p2": 0,
+      "scope": "full source pre-read plus fixed packet, 0 review test/PG/provider/write"
+    }
+  ],
+  "limits": "plain shared contract/ACK leaf only; excludes export, product consumers, admission, SDK and resume behavior",
+  "main": "NOT_INTEGRATED",
+  "writer": "c652bc61-f8a9-4848-a709-978adbb425ed v1 retained"
+}

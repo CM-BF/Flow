@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:28:59 UTC / fixed base 70cc4e852365e974cefde30bfad75c7d233985c6 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:31:25 UTC / fixed base 70cc4e852365e974cefde30bfad75c7d233985c6 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core |
 | Branch | codex/claude-message-settings-core |
 | 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 4e7b7f968a2160a60989b3b6343506ae8fb5ef6a（source）；validation 8c56f15c5a70afd4e33031876244f70d1284d957（后续仅metadata） |
-| 工作树dirty状态 | 8c56f15c 验证封存 clean；本次仅 manifest/交审 metadata，commit 后核 clean |
+| 工作树dirty状态 | 78c73677438efec7455fc68b44109fa7da9ce5f5 已核 clean；本次仅独审/集成 metadata |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED — 4e7b7f968a2160a60989b3b6343506ae8fb5ef6a 本树单文件5/5，局部strict exit0；PG/SDK/provider/target未运行 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；没有本片 main 接收回执 |
 | 实现目标 | 4e7b7f968a2160a60989b3b6343506ae8fb5ef6a |
 | 实现范围 | packages/contracts/src/claude-turn-settings.ts, packages/contracts/src/claude-turn-settings.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 逐消息设置契约与精确回执匹配已通过局部验证，等待独立审查 |
-| 下一可用交付 | 独立审查后交付可供中心与用户入口复用的设置契约 |
+| 当前产出 | 逐消息设置契约已通过验证和独立审查，等待主线接收 |
+| 下一可用交付 | 主线接收契约；后继把已冻结设置传到现有Claude执行入口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，APPROVED 4e7b7f968a2160a60989b3b6343506ae8fb5ef6a / 0P1P2 |
 | Claim | c652bc61-f8a9-4848-a709-978adbb425ed v1 ACTIVE；[commit 后 receipt](../../docs/evidence/wpf-mature-02-message-settings-core/claim-receipt.json) |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -31,8 +31,9 @@
 | M02CORE-01 | completed | status_read | 已批准有界设计、独立树与 2026-10-06T15:24:10.824Z COMMITTED claim |
 | M02CORE-02 | completed | status_read | 4e7b7f968a2160a60989b3b6343506ae8fb5ef6a 两源固定 |
 | M02CORE-03 | completed | status_read | 5 selected / 5 passed；局部strict0；[checks](../../docs/evidence/wpf-mature-02-message-settings-core/checks.json) |
-| M02CORE-04 | in-progress | status_read | 独审 NOT_STARTED |
-| M02CORE-05 | pending | status_read | 未 main，保留 writer 修复期 |
+| M02CORE-04 | completed | status_read | Mika15:31:09 / architecture_read15:31:25 UTC APPROVED，原packet不改 |
+| M02CORE-05 | in-progress | status_read | [integration-ready](../../docs/evidence/wpf-mature-02-message-settings-core/integration-ready.md)，未main，保留writer |
+| M02CORE-06 | in-progress | status_read | 后继实际接线只读设计；未amend，现有产品source禁止修改 |
 
 ## 阻塞 / 风险 / 未验证
 

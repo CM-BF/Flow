@@ -1,6 +1,6 @@
 # WPF-MATURE-02-CORE 独立审查
 
-**NOT_STARTED — 未审查，不构成 approval。**
+**APPROVED — 仅固定 contract leaf，0 P1/P2；下一片不继承。**
 
 ## Target 与 scope
 
@@ -23,8 +23,8 @@
 | 设计与依赖自审 | 作者只读 | [quality.md](../../docs/evidence/wpf-mature-02-message-settings-core/quality.md) |
 | 五组 Vitest | PASSED | [vitest.log](../../docs/evidence/wpf-mature-02-message-settings-core/vitest.log)，5/5；不存在运行前红证据 |
 | 局部 strict | PASSED | [checks.json](../../docs/evidence/wpf-mature-02-message-settings-core/checks.json)，strict exit0、继承root基线 |
-| 独立 review | NOT_STARTED | Reviewer/时间/结论均未产生 |
+| 独立 review | APPROVED | [receipt](../../docs/evidence/wpf-mature-02-message-settings-core/independent-review.json)，Mika15:31:09 / architecture_read15:31:25 UTC |
 
 ## Findings / 作者回应 / 复审
 
-Severity 与 blocking 数尚未评估；不是 0 findings。独立 reviewer 给精确 commit/行号/触发与建议，owner 在本 scope 修复后以新 target 复审。无历史 approval 继承。
+Mika与architecture_read正式固定审均0 P1/P2；无待修finding。完整来源/时间/范围见独审receipt。未复跑检查；批准不覆盖export/consumer/admission/SDK/resume。后继source需新target与独审。
