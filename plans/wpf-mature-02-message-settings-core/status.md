@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:52:30 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:58:48 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core |
 | Branch | codex/claude-message-settings-core |
-| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 最新PG execution HEAD723d4bb153be418584f34f77dab42cb67fac8243；source ea276572c3c99fb8400808a93efc69ce530d55a4不变；metadata提交以实际Git HEAD为准 |
-| 工作树dirty状态 | source ea276不变；本次仅封存PG初始化失败raw/清理事实与缺失输入说明 |
+| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 最近预核HEAD26eeced143f266acdc6909dcc782d7d50e39ab47；已执行PG HEAD723d4bb；source ea276572c3c99fb8400808a93efc69ce530d55a4不变；metadata提交以实际Git HEAD为准 |
+| 工作树dirty状态 | source ea276不变；本次仅封存4SQL恢复/静态closure及新窗口资源NOT_RUN |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | FAILED：PG beforeAll缺012 SQL，1 failed suite/8 skipped/0case通过；既有21 distinct与两strict0保留，真实SDK/provider未运行 |
+| 检查状态 | PARTIAL：21 distinct与两strict0已过；首PG初始化失败/8 skipped；新窗口因resource NOT_RUN，PG用例0通过/真实SDK未运行 |
 | 已集成main状态 / HEAD | 首leaf已main 22d5ca67159b35bb794b2711cf6df0cb905b92e8；下一纵向已在本branch实施，未main |
 | 实现目标 | 纵向source ea276572c3c99fb8400808a93efc69ce530d55a4，生产checkpoint92f；已局部验证/未main；首leaf4e7历史已main |
 | 实现范围 | v3 39 literal：contracts、center/queue、Claude adapter、final/context/retry、032与定向tests；F01/client/Web/TUI共享入口另owner |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 消息设置已沿中心和Claude执行入口接线，合同及注入执行检查通过 |
-| 下一可用交付 | 补齐4个只读SQL输入后，在新的独占窗口验证8组专库行为 |
-| 当前阻塞 | ACTIVE: 本次PG初始化发现动态SQL闭包漏4文件，待Lead补只读输入及新窗口；F01/Web/TUI共享接线待协作 |
+| 下一可用交付 | 固定资源门槛满足并取得新独占窗口后，验证原8组专库行为 |
+| 当前阻塞 | ACTIVE: 4SQL输入已恢复；新窗口free低于1GiB+128MiB，NOT_RUN已交回，待资源与新授权；F01/Web/TUI共享接线待协作 |
 | 需用户决定 | NONE |
 | Review | NOT_STARTED（下一纵向正式交付审未开始）；SOURCE_REVIEW静态范围无剩余P1/P2，原.extend与cleanup P2已关闭；运行/外部消费待验证，详见review.md |
 | Claim | c652bc61-f8a9-4848-a709-978adbb425ed v3 ACTIVE/39 literal；[amend receipt](../../docs/evidence/wpf-mature-02-message-settings-core/next-slice-v3-amend-receipt.json) |
@@ -81,3 +81,5 @@ Root静态发现prepared PG config的`.js`引用在native loader下不存在；�
 下一ready专库窗口请求已固定：[PG/HTTP slot](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-pg-slot-request.md)。仅8组/120s工作+80s清理/≤32tasks，拟fresh floor1,207,959,552B含128MiB规划余量；DB/WAL增量未实测且共享增长UNKNOWN。当前NOT_OPEN，不运行探容量，不将自有migration验证当F01生产factory挂载。
 
 2026-10-06 16:52:30 UTC唯一PG窗口已结束并归还：1 failed suite/8 skipped（beforeAll ENOENT012），0用例断言通过；1legacy task/0attempt/0HTTP，库连接0/普通DROP后absent、errors=[]，所有owned进程/cache/temp已结束。原source ea276不变，无重试。完整[失败结果](../../docs/evidence/wpf-mature-02-message-settings-core/pg-once-result.md)与[manifest](../../docs/evidence/wpf-mature-02-message-settings-core/pg-setup-failure-manifest.json)固定。此前“source闭包已补全”只对227清单为真，实际动态SQL读取还缺4项，现[精确补充](../../docs/evidence/wpf-mature-02-message-settings-core/pg-migration-read-closure-supplement.json)已提出；不改历史声明/raw来掩盖遗漏。
+
+2026-10-06 16:58:48 UTC CORE-PG-RETRY-20261006-1658唯一fresh预核NOT_RUN：free1,192,939,520B<1,207,959,552B，差15,020,032B。claim v3、HEAD26e、236source/input/config和两份外部receipt hash全符，前次库/process/cache清理已确立。0新Vitest/PG/HTTP/DB/child/provider，立即交回窗口；不降线、不循环df等涨、不自动第三次。Lead4SQL恢复与assignment175源/28SQL/10第三方入口静态齐备已归档，均不证明初始化通过。见[资源NOT_RUN](../../docs/evidence/wpf-mature-02-message-settings-core/pg-retry-resource-not-run.json)；旧失败raw/manifest保持原字节。

@@ -56,3 +56,5 @@ Mika/root随后对metadata650bb固定包独核34 source + 3 prepared config + 3 
 Root静态发现prepared PG config的`.js`引用在native loader下不存在；仅改为磁盘已有`.ts`，不放宽compiler、不重跑21项。旧source manifest保留历史config hash，新局部manifest显式绑定这一prepared delta；未实际加载PG配置或连接数据库。
 
 2026-10-06 16:52:30 UTC实际专库验证失败收口：beforeAll缺动态migration URL输入012，1 failed suite/8 skipped/0case断言，保留原raw并交回窗口；真实专库已确认0连接/absent、ownedcache/temp清理。source ea276未修改，先前21distinct与两strict0不重复累计；4个只读SQL5539B补充给Lead，worker未物化/重试。此次失败不据静态审升级为整体APPROVED。错误根因为原静态closure遗漏固定数组模板URL；clean-code复核选择补输入事实，不修改生产错误处理或绕过migration求通过。
+
+2026-10-06 16:58:48 UTC第二窗口仅预核，资源门槛不足NOT_RUN，0新增工程/PG/目标。4动态SQL恢复与独立静态closure输入已核/归档，原失败不回写；known input错误解除但运行未知保留。窗口立即交回，不以资源曾满足或static closure齐备替代fresh准入，不重跑已绿21项/两strict。

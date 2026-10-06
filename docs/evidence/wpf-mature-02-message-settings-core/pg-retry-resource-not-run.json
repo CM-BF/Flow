@@ -1,0 +1,47 @@
+{
+  "kind": "resource-gate NOT_RUN; no test/PG/child created",
+  "windowId": "CORE-PG-RETRY-20261006-1658",
+  "state": "NOT_RUN",
+  "sourceCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+  "executionHead": "26eeced143f266acdc6909dcc782d7d50e39ab47",
+  "preflight": {
+    "path": "docs/evidence/wpf-mature-02-message-settings-core/pg-retry-20261006-1658.preflight.json",
+    "bytes": 1462,
+    "sha256": "4e59180ac74ea84e46f9e8bda46d34127085209bca25d24f936cea399054b0c5"
+  },
+  "restoredInputs": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/four-sql-source-materialization.json",
+      "bytes": 2484,
+      "sha256": "74f262a5ecf07423200c74f17feb5e8c7d26e6eea7a018a1f564f2c7ee9a6bd0"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/runtime-read-closure-review.json",
+      "bytes": 73047,
+      "sha256": "0af5842095dcc9ebdf4cf7761abd6296dcd5b6dfe4028b29e28af962997a8c8b"
+    }
+  ],
+  "freeBytes": 1192939520,
+  "requiredFreeBytes": 1207959552,
+  "shortfallBytes": 15020032,
+  "inputErrors": [],
+  "errors": [
+    "insufficient-space"
+  ],
+  "previousCleanupConfirmed": true,
+  "counts": {
+    "testInvocations": 0,
+    "PGConnections": 0,
+    "newDatabases": 0,
+    "HTTPRequests": 0,
+    "targetChildren": 0,
+    "providerCalls": 0
+  },
+  "windowReturned": true,
+  "automaticRetry": false,
+  "limitations": [
+    "Resource probe occurs once; no claim about later free space",
+    "Four restored SQL now match fixed Git but original failure records remain absent-at-run history",
+    "175 source/28 SQL/10 third-party closure review is static, not initialization or runtime proof"
+  ]
+}

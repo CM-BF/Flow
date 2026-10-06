@@ -1,0 +1,47 @@
+{
+  "windowId": "CORE-PG-RETRY-20261006-1658",
+  "state": "NOT_RUN",
+  "at": "2026-10-06T16:58:48.196268+00:00",
+  "executionHead": "26eeced143f266acdc6909dcc782d7d50e39ab47",
+  "sourceCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+  "bindingsChecked": 236,
+  "errors": [
+    "insufficient-space"
+  ],
+  "freeBytes": 1192939520,
+  "requiredFreeBytes": 1207959552,
+  "claim": {
+    "claimId": "c652bc61-f8a9-4848-a709-978adbb425ed",
+    "version": 3,
+    "state": "active",
+    "lead": "mika",
+    "worker": "status_read",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+    "branch": "codex/claude-message-settings-core"
+  },
+  "ledgerObservedAt": "2026-10-06T16:58:48.085Z",
+  "externalInputs": [
+    {
+      "path": "/tmp/flow-core-four-sql-source-receipt.json",
+      "bytes": 2484,
+      "sha256": "74f262a5ecf07423200c74f17feb5e8c7d26e6eea7a018a1f564f2c7ee9a6bd0"
+    },
+    {
+      "path": "/tmp/flow-core-message-settings-runtime-closure.json",
+      "bytes": 73047,
+      "sha256": "0af5842095dcc9ebdf4cf7761abd6296dcd5b6dfe4028b29e28af962997a8c8b"
+    }
+  ],
+  "previousCleanupConfirmed": true,
+  "limits": {
+    "workMs": 120000,
+    "cleanupMs": 80000,
+    "totalMs": 200000,
+    "maxTasks": 32,
+    "maxHTTP": 256,
+    "rawBytes": 1048576,
+    "cacheBytes": 33554432,
+    "fixtureReceiptBytes": 32768
+  },
+  "scope": "only original eight-case PG/HTTP file; no provider; no automatic retry"
+}
