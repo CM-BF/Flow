@@ -118,3 +118,30 @@ Mika审c03发现P2：open只读FIFO会在fstat前等待；多个短读的subarra
 固定bf03a7c241d8f1c1d9d0bfa1ee7f9be49e090c00，017 await位于scheduler前，8route注册在原owner/runner鉴权后；缺路由实证red保留。公共client新PG用例明确hasRoute存在，不用test helper补挂；受理/角色拒绝/native409/restart同key/审计/撤销通过，O06原8用例直接使用已挂生产入口合计9/9（11.95s）与noEmit通过，专库正常清理。未重跑其他25旧领域，无模型/预览进程变化。clean-code复核仅3行生产接线和真实consumer，保持领域/原生能力边界。
 
 2026-10-06 05:47 UTC：Mika审薄client发现test-only P2，ownership错含taskId而宽松HTTPstub未拒绝。固定a9cd4b04da1b249871398461fadd071ee180520b删除额外字段，四runner路径各用实际strict schema验证请求，非法400；所有旧字段/actor/replay/abort断言保留。仅该HTTP1/1（40ms）+noEmit重跑通过，生产/领域零改动，原证据不覆写。生产bf03已获Mika独审APPROVED，薄client待本delta复审。
+
+## 队列真实验收准备 / 2026-10-06 05:59 UTC
+
+本工作段复用本地webapp-testing/codebase-design/clean-code，浏览器动作抽为一个小Interface，synthetic/live caller只替换事实读取与完成等待；live不包含synthetic写入hook。初次fixture复制了旧task provenance，Web正确拒绝，原65秒失败与截图保留initial-*；修复fixture归属后同driver10步骤通过、两Chrome进程真实退出、聚焦pane第二assistant精确nonce、浅色和390深色图片已目视。最终0模型预演未把正文中其他nonce当回复。
+
+新live caller默认只读：0600配置、owned进程/DB、固定Web3d与后台fb906、manifest精确比对、0tasks/attempts/唯一runner/v3 accepting；独立动态Vite的真实代理health可达且正常关闭，未POST/未query。显式执行flag仍须GO窗口；浏览器只允许create/turn/pause/enqueue/resume各一次，首结果完整modelUsage已知且≤$.20并预留第二60s才Continue。SDK query上界与底层provider请求unknown分开；browser退出后实时task状态决定后台继续能否证明；失败无重试，现有服务/DB保留。
+
+clean-code复核了秘密不输出、读预检与有副作用执行分隔、浏览器/Vite生命周期、失败保存、已存在started文件拒绝重跑；发现attempt表无created_at，最终审计只读实际列，避免成功后证据SQL失败。没有重复产品全套测试/模型调用。
+
+2026-10-06 06:02 UTC：assignment_review只读outerguard发现Playwright fill失败call log可含password值；本轮真实调用尚未开始。修复为统一evidenceJson/错误输出脱敏ownerToken、runner token与DB URLs；合成fill TimeoutError/转义秘密回归1/1通过，不触真实凭据/模型。已保存证据扫描无秘密匹配。120s是query准入与结果观察门槛，每query实际SDK60s/$.20；driver截图/资源关闭可超过120s，不称OS硬终止或provider底层request≤2。
+
+2026-10-06 06:04 UTC：GO明确窗口后运行固定0695 caller一次，06:02:19～28完整通过；2query保守SDK和$.012396，后台继续用browser exit后即时GET running证明，严格visible第二assistant精确nonce。两实图已目视，原服务/DB保留，0未完attempt。GO已读事实/目视接受，无重跑/第三query；报告保留plugins/skills实际差异、usage累计unknown与显式Continue边界。
+
+
+## 2026-10-06 06:13 UTC K02/O07 production integration
+
+Fixed shared delta549f6b3: only 018 migrate/register, context type export and one owner client method. Existing O07 migrate applies17/19; all awaited before scheduler or default serial queue scan. Domain approvals stay bound to K02a6/O07c224. Production fixture uses createServer default, no module self-mount/manual migrate/scan. First red3/3 preserves missing route/client/migration failures; green7/7=3new+4existing production cases. Separate actual legacy34/34=conversation22+C02reconciliation12, not claimed selected63 or a single run41. Queue32-domain evidence reused; default readiness/in-flight shutdown/disabled scan3 production cases rerun at this integration point. New context-production DB has explicit random-name creation/cleanup facts. The original C02 consumer in legacy34 used fixed flow_c02 without a recorded pre-run ownership check; its resource ownership is NOT_PROVEN. Old consumer output is retained; it does not establish C02 resource ownership. No provider. Web controlled compatibility763 and independent renderer747 merged without domain conflicts; local116 tests and Web tsc passed, no repeat browser suite.
+
+Applied existing local find-skills/codebase-design/clean-code: the domain remains a deep module, only startup/auth/client seam changes; avoid per-reader body patches. Public prompt/bubble stay original; startup queue promotes frozenv1 despite sourcev2; explicit owner detail and private runner assignment checked. Restart fixture setup changes paused flag only while its center closed and is labelled synthetic input, not product unpause. Graph native provider/NL and context picking UI remain unproven. Manifest binds source/raw outputs; no metadata-driven retest.
+
+
+X04 shared dependency9cde241 independent reviewer runner_owner APPROVED (read-only): only server importer changed, all91 new package/snapshot entries reachable from6 roots withSRI; existing lock entries including Claude0.3.290/Anthropic0.131.0 untouched. Actual local package metadata verifiedruntime3versions/ISC/engine andtypes3MIT; no preinstall/install/postinstall among added91. Install used--ignore-scripts, no global/file import. Consumer execution belongsX04; this approval does not imply package installation/trust capability.
+
+
+## C02 fixture isolation correction / 2026-10-06 06:15 UTC
+
+GO review caught the original legacy34 C02 fixture reusing fixedflow_c02, resetting schemas and conditionallyDROP FORCE. I ran it directly and did not capture pre-run ownership, so cannot substantiate own-only DB for that historical run; no retrospective facts are invented. P2 fixed under F01 claimv13 exact reconciliation.test.ts: per-run random DB, existence refusal, create-success ownership flag before any reset, normalDROP after server/pools close, optional explicit resource output. Actual fresh run12/12 andtsc passed; original test bodies/assertions unchanged, CHAT22/new7 not rerun. Facts showbefore=[],created=true,connectionsBeforeDrop=[],remaining=[] for flow_c02_a51ef0c8620c48129e1fdfaa6b0bfab4 at06:14:47→06:15:17. New evidence is independent of historical34green.

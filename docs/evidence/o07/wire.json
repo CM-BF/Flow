@@ -1,0 +1,522 @@
+{
+  "boundary": "Official MCP peer -> SDK in-process server -> public FlowClient -> HTTP/PostgreSQL; production adapter query transport injected, zero native query/model calls; same-process runner runtime, not child-process proof",
+  "wire": [
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "graph_read",
+        "arguments": {
+          "request": {
+            "view": "graph",
+            "limit": 3
+          }
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"goalId\":\"5e2db605-dca8-4657-a373-fb5c5d583bc8\",\"projectId\":\"522d5bc3-0fd1-49b7-b8c8-012b14828230\",\"baseRevision\":1,\"currentRevision\":1,\"stale\":false,\"nodes\":[],\"nextCursor\":null}"
+          }
+        ]
+      },
+      "requestBytes": 72,
+      "responseBytes": 237
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "graph_command",
+        "arguments": {
+          "command": {
+            "kind": "propose",
+            "proposal": {
+              "expectedProjectRevision": 1,
+              "reason": "发布说明三步🙂",
+              "additions": [
+                {
+                  "key": "A",
+                  "title": "汇总变更",
+                  "dependencies": []
+                },
+                {
+                  "key": "B",
+                  "title": "草拟发布说明",
+                  "dependencies": [
+                    {
+                      "kind": "proposed",
+                      "key": "A"
+                    }
+                  ]
+                },
+                {
+                  "key": "C",
+                  "title": "检查完整性",
+                  "dependencies": [
+                    {
+                      "kind": "proposed",
+                      "key": "B"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "idempotencyKey": "propose-stable"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"kind\":\"propose\",\"proposal\":{\"id\":\"dbd54d5d-6f0d-4a46-a82f-69f4bb2a0ae2\",\"goalId\":\"5e2db605-dca8-4657-a373-fb5c5d583bc8\",\"projectId\":\"522d5bc3-0fd1-49b7-b8c8-012b14828230\",\"baseRevision\":1,\"goalDigest\":\"2fed8550ad4b8def5e1c6a8f19df502a8ec87732ff840905e8609d90fd2ec432\",\"proposalDigest\":\"e91538732118e0419961dcdf25d78df48c1843b7006c6d864c5ba648f76fa4db\",\"source\":{\"kind\":\"goal-graph-run\",\"runId\":\"1c169259-6596-4bc1-b80b-0e3a503cb9c5\",\"runnerId\":\"7ee54833-1003-43f0-aeb4-606f513acd84\",\"taskId\":\"ccbdc5ba-beb1-4866-9e8a-ea10b9be03d0\",\"attemptId\":\"25026b04-b2f1-4cd7-b7df-52fe68d3c267\",\"ownerVersion\":1},\"createdAt\":\"2026-10-06T05:53:04.684Z\",\"nodeCount\":3,\"edgeCount\":2,\"state\":\"proposed\",\"appliedRevision\":null},\"replayed\":false}"
+          }
+        ]
+      },
+      "requestBytes": 416,
+      "responseBytes": 836
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "graph_read",
+        "arguments": {
+          "request": {
+            "view": "proposal",
+            "proposalId": "dbd54d5d-6f0d-4a46-a82f-69f4bb2a0ae2"
+          }
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"id\":\"dbd54d5d-6f0d-4a46-a82f-69f4bb2a0ae2\",\"proposalDigest\":\"e91538732118e0419961dcdf25d78df48c1843b7006c6d864c5ba648f76fa4db\",\"baseRevision\":1,\"input\":{\"reason\":\"发布说明三步🙂\",\"additions\":[{\"key\":\"A\",\"title\":\"汇总变更\",\"dependencies\":[]},{\"key\":\"B\",\"title\":\"草拟发布说明\",\"dependencies\":[{\"key\":\"A\",\"kind\":\"proposed\"}]},{\"key\":\"C\",\"title\":\"检查完整性\",\"dependencies\":[{\"key\":\"B\",\"kind\":\"proposed\"}]}],\"expectedProjectRevision\":1}}"
+          }
+        ]
+      },
+      "requestBytes": 117,
+      "responseBytes": 563
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "graph_command",
+        "arguments": {
+          "command": {
+            "kind": "apply",
+            "proposalId": "dbd54d5d-6f0d-4a46-a82f-69f4bb2a0ae2",
+            "expectedProjectRevision": 1,
+            "proposalDigest": "e91538732118e0419961dcdf25d78df48c1843b7006c6d864c5ba648f76fa4db"
+          },
+          "idempotencyKey": "apply-stable"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"kind\":\"apply\",\"receipt\":{\"proposalId\":\"dbd54d5d-6f0d-4a46-a82f-69f4bb2a0ae2\",\"goalId\":\"5e2db605-dca8-4657-a373-fb5c5d583bc8\",\"projectId\":\"522d5bc3-0fd1-49b7-b8c8-012b14828230\",\"proposalDigest\":\"e91538732118e0419961dcdf25d78df48c1843b7006c6d864c5ba648f76fa4db\",\"fromRevision\":1,\"toRevision\":6,\"nodeIds\":{\"A\":\"5e0734ef-0345-40b1-9c14-1478da59e256\",\"B\":\"c0ecd021-15b9-4f74-94fe-7ca5b826f02d\",\"C\":\"3a6988b5-8c32-4331-b818-9c6b9c5eaaad\"},\"actor\":{\"kind\":\"goal-graph-run\",\"runId\":\"1c169259-6596-4bc1-b80b-0e3a503cb9c5\",\"runnerId\":\"7ee54833-1003-43f0-aeb4-606f513acd84\",\"taskId\":\"ccbdc5ba-beb1-4866-9e8a-ea10b9be03d0\",\"attemptId\":\"25026b04-b2f1-4cd7-b7df-52fe68d3c267\",\"ownerVersion\":1},\"appliedAt\":\"2026-10-06T05:53:04.745Z\"},\"alreadyApplied\":false,\"replayed\":false}"
+          }
+        ]
+      },
+      "requestBytes": 261,
+      "responseBytes": 873
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "graph_command",
+        "arguments": {
+          "command": {
+            "kind": "apply",
+            "proposalId": "dbd54d5d-6f0d-4a46-a82f-69f4bb2a0ae2",
+            "expectedProjectRevision": 1,
+            "proposalDigest": "e91538732118e0419961dcdf25d78df48c1843b7006c6d864c5ba648f76fa4db"
+          },
+          "idempotencyKey": "apply-stable"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"kind\":\"apply\",\"receipt\":{\"actor\":{\"kind\":\"goal-graph-run\",\"runId\":\"1c169259-6596-4bc1-b80b-0e3a503cb9c5\",\"taskId\":\"ccbdc5ba-beb1-4866-9e8a-ea10b9be03d0\",\"runnerId\":\"7ee54833-1003-43f0-aeb4-606f513acd84\",\"attemptId\":\"25026b04-b2f1-4cd7-b7df-52fe68d3c267\",\"ownerVersion\":1},\"goalId\":\"5e2db605-dca8-4657-a373-fb5c5d583bc8\",\"nodeIds\":{\"A\":\"5e0734ef-0345-40b1-9c14-1478da59e256\",\"B\":\"c0ecd021-15b9-4f74-94fe-7ca5b826f02d\",\"C\":\"3a6988b5-8c32-4331-b818-9c6b9c5eaaad\"},\"appliedAt\":\"2026-10-06T05:53:04.745Z\",\"projectId\":\"522d5bc3-0fd1-49b7-b8c8-012b14828230\",\"proposalId\":\"dbd54d5d-6f0d-4a46-a82f-69f4bb2a0ae2\",\"toRevision\":6,\"fromRevision\":1,\"proposalDigest\":\"e91538732118e0419961dcdf25d78df48c1843b7006c6d864c5ba648f76fa4db\"},\"alreadyApplied\":false,\"replayed\":true}"
+          }
+        ]
+      },
+      "requestBytes": 261,
+      "responseBytes": 872
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "graph_read",
+        "arguments": {
+          "request": {
+            "view": "graph"
+          }
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"goalId\":\"5e2db605-dca8-4657-a373-fb5c5d583bc8\",\"projectId\":\"522d5bc3-0fd1-49b7-b8c8-012b14828230\",\"baseRevision\":1,\"currentRevision\":6,\"stale\":true,\"nodes\":[],\"nextCursor\":null}"
+          }
+        ]
+      },
+      "requestBytes": 62,
+      "responseBytes": 236
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "graph_command",
+        "arguments": {
+          "command": {
+            "kind": "propose",
+            "proposal": {
+              "expectedProjectRevision": 1,
+              "reason": "发布说明三步🙂",
+              "additions": [
+                {
+                  "key": "A",
+                  "title": "汇总变更",
+                  "dependencies": []
+                },
+                {
+                  "key": "B",
+                  "title": "草拟发布说明",
+                  "dependencies": [
+                    {
+                      "kind": "proposed",
+                      "key": "A"
+                    }
+                  ]
+                },
+                {
+                  "key": "C",
+                  "title": "检查完整性",
+                  "dependencies": [
+                    {
+                      "kind": "proposed",
+                      "key": "B"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "idempotencyKey": "proposal"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"kind\":\"propose\",\"proposal\":{\"id\":\"171e7bca-b1e9-422d-916f-1345019760ac\",\"goalId\":\"952083ce-2515-4db5-b7b3-3637e1fc6245\",\"projectId\":\"dbed1cd5-5107-4a01-bde8-e8f58c902393\",\"baseRevision\":1,\"goalDigest\":\"30465f500a41189cf254d6df96bb0dc5f536c699c1e2b96a87079273ad2f1934\",\"proposalDigest\":\"dc6b59b3f0e0ac86af64a4f25e3fe865236cc7c664066134bd230c0ef8d1fb01\",\"source\":{\"kind\":\"goal-graph-run\",\"runId\":\"faabc74c-e538-4496-845b-4fc0bf6e286f\",\"runnerId\":\"97117356-2425-438b-b851-f61e7cf9b67f\",\"taskId\":\"9155121b-52cd-4af9-8445-4d507dd6c7bb\",\"attemptId\":\"fcad2503-ffdc-4514-8e4f-ec73cbb7a44c\",\"ownerVersion\":1},\"createdAt\":\"2026-10-06T05:53:05.103Z\",\"nodeCount\":3,\"edgeCount\":2,\"state\":\"proposed\",\"appliedRevision\":null},\"replayed\":false}"
+          }
+        ]
+      },
+      "requestBytes": 410,
+      "responseBytes": 836
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "graph_command",
+        "arguments": {
+          "command": {
+            "kind": "apply",
+            "proposalId": "171e7bca-b1e9-422d-916f-1345019760ac",
+            "expectedProjectRevision": 1,
+            "proposalDigest": "dc6b59b3f0e0ac86af64a4f25e3fe865236cc7c664066134bd230c0ef8d1fb01"
+          },
+          "idempotencyKey": "apply-stable"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"error\":\"outcome_unknown\",\"message\":\"The request could not be completed. For a command, reconcile using the same idempotency key. No automatic retry was performed.\"}"
+          }
+        ],
+        "isError": true
+      },
+      "requestBytes": 261,
+      "responseBytes": 228
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "graph_command",
+        "arguments": {
+          "command": {
+            "kind": "apply",
+            "proposalId": "171e7bca-b1e9-422d-916f-1345019760ac",
+            "expectedProjectRevision": 1,
+            "proposalDigest": "dc6b59b3f0e0ac86af64a4f25e3fe865236cc7c664066134bd230c0ef8d1fb01"
+          },
+          "idempotencyKey": "apply-stable"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"kind\":\"apply\",\"receipt\":{\"actor\":{\"kind\":\"goal-graph-run\",\"runId\":\"faabc74c-e538-4496-845b-4fc0bf6e286f\",\"taskId\":\"9155121b-52cd-4af9-8445-4d507dd6c7bb\",\"runnerId\":\"97117356-2425-438b-b851-f61e7cf9b67f\",\"attemptId\":\"fcad2503-ffdc-4514-8e4f-ec73cbb7a44c\",\"ownerVersion\":1},\"goalId\":\"952083ce-2515-4db5-b7b3-3637e1fc6245\",\"nodeIds\":{\"A\":\"cf2bc7fc-ab26-49a9-900a-7a101b07cc44\",\"B\":\"a744d5ab-1e14-41a7-902e-89eca9eeb9b0\",\"C\":\"9bbbb2f3-50b4-43e6-b488-0c10dad6d44a\"},\"appliedAt\":\"2026-10-06T05:53:05.138Z\",\"projectId\":\"dbed1cd5-5107-4a01-bde8-e8f58c902393\",\"proposalId\":\"171e7bca-b1e9-422d-916f-1345019760ac\",\"toRevision\":6,\"fromRevision\":1,\"proposalDigest\":\"dc6b59b3f0e0ac86af64a4f25e3fe865236cc7c664066134bd230c0ef8d1fb01\"},\"alreadyApplied\":false,\"replayed\":true}"
+          }
+        ]
+      },
+      "requestBytes": 261,
+      "responseBytes": 872
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "graph_command",
+        "arguments": {
+          "command": {
+            "kind": "apply",
+            "proposalId": "171e7bca-b1e9-422d-916f-1345019760ac",
+            "expectedProjectRevision": 1,
+            "proposalDigest": "dc6b59b3f0e0ac86af64a4f25e3fe865236cc7c664066134bd230c0ef8d1fb01"
+          },
+          "idempotencyKey": "apply-stable"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"error\":\"center_rejected\",\"status\":409}"
+          }
+        ],
+        "isError": true
+      },
+      "requestBytes": 261,
+      "responseBytes": 100
+    },
+    {
+      "method": "tools/call",
+      "request": {
+        "name": "graph_read",
+        "arguments": {
+          "request": {
+            "view": "graph"
+          }
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"goalId\":\"3fe3e16c-a733-485f-9083-648c58dc077c\",\"projectId\":\"bf4c2390-6c38-4196-ac89-c998c89f6b2e\",\"baseRevision\":1,\"currentRevision\":1,\"stale\":false,\"nodes\":[],\"nextCursor\":null}"
+          }
+        ]
+      },
+      "requestBytes": 62,
+      "responseBytes": 237
+    }
+  ],
+  "facts": [
+    {
+      "scenario": "complete-graph-plan",
+      "taskId": "ccbdc5ba-beb1-4866-9e8a-ea10b9be03d0",
+      "attemptId": "25026b04-b2f1-4cd7-b7df-52fe68d3c267",
+      "receipt": {
+        "proposalId": "dbd54d5d-6f0d-4a46-a82f-69f4bb2a0ae2",
+        "goalId": "5e2db605-dca8-4657-a373-fb5c5d583bc8",
+        "projectId": "522d5bc3-0fd1-49b7-b8c8-012b14828230",
+        "proposalDigest": "e91538732118e0419961dcdf25d78df48c1843b7006c6d864c5ba648f76fa4db",
+        "fromRevision": 1,
+        "toRevision": 6,
+        "nodeIds": {
+          "A": "5e0734ef-0345-40b1-9c14-1478da59e256",
+          "B": "c0ecd021-15b9-4f74-94fe-7ca5b826f02d",
+          "C": "3a6988b5-8c32-4331-b818-9c6b9c5eaaad"
+        },
+        "actor": {
+          "kind": "goal-graph-run",
+          "runId": "1c169259-6596-4bc1-b80b-0e3a503cb9c5",
+          "runnerId": "7ee54833-1003-43f0-aeb4-606f513acd84",
+          "taskId": "ccbdc5ba-beb1-4866-9e8a-ea10b9be03d0",
+          "attemptId": "25026b04-b2f1-4cd7-b7df-52fe68d3c267",
+          "ownerVersion": 1
+        },
+        "appliedAt": "2026-10-06T05:53:04.745Z"
+      },
+      "audit": {
+        "run": {
+          "id": "1c169259-6596-4bc1-b80b-0e3a503cb9c5",
+          "version": 1,
+          "goalId": "5e2db605-dca8-4657-a373-fb5c5d583bc8",
+          "projectId": "522d5bc3-0fd1-49b7-b8c8-012b14828230",
+          "goalDigest": "2fed8550ad4b8def5e1c6a8f19df502a8ec87732ff840905e8609d90fd2ec432",
+          "taskId": "ccbdc5ba-beb1-4866-9e8a-ea10b9be03d0",
+          "scope": {
+            "maxNewEdges": 2,
+            "maxNewNodes": 3,
+            "baseRevision": 1,
+            "maxProposals": 1,
+            "maxApplications": 1,
+            "allowedExistingNodes": []
+          },
+          "mode": "claude",
+          "usedCommands": 2,
+          "usedProposals": 1,
+          "usedApplications": 1,
+          "createdAt": "2026-10-06T05:53:04.145Z",
+          "revokedAt": null,
+          "revocationReason": null
+        },
+        "calls": [
+          {
+            "sequence": 1,
+            "runnerId": "7ee54833-1003-43f0-aeb4-606f513acd84",
+            "attemptId": "25026b04-b2f1-4cd7-b7df-52fe68d3c267",
+            "ownerVersion": 1,
+            "key": "propose-stable",
+            "digest": "4e230501bff01d92e75d8e396519b29d1b779f25fc2a9eb5043b2069a6e425e0",
+            "kind": "propose",
+            "proposalId": "dbd54d5d-6f0d-4a46-a82f-69f4bb2a0ae2",
+            "proposalDigest": "e91538732118e0419961dcdf25d78df48c1843b7006c6d864c5ba648f76fa4db",
+            "appliedRevision": null,
+            "createdAt": "2026-10-06T05:53:04.686Z"
+          },
+          {
+            "sequence": 2,
+            "runnerId": "7ee54833-1003-43f0-aeb4-606f513acd84",
+            "attemptId": "25026b04-b2f1-4cd7-b7df-52fe68d3c267",
+            "ownerVersion": 1,
+            "key": "apply-stable",
+            "digest": "6296a9bc2f4a0b97af9fddda92e8e996a0137df192f0ad85396f7d71032c9d7b",
+            "kind": "apply",
+            "proposalId": "dbd54d5d-6f0d-4a46-a82f-69f4bb2a0ae2",
+            "proposalDigest": "e91538732118e0419961dcdf25d78df48c1843b7006c6d864c5ba648f76fa4db",
+            "appliedRevision": 6,
+            "createdAt": "2026-10-06T05:53:04.746Z"
+          }
+        ],
+        "nextCursor": null
+      },
+      "graph": {
+        "revision": 6,
+        "reason": "Apply goal graph proposal dbd54d5d-6f0d-4a46-a82f-69f4bb2a0ae2",
+        "actor": "goal-graph-run",
+        "actorSource": {
+          "kind": "goal-graph-run",
+          "runId": "1c169259-6596-4bc1-b80b-0e3a503cb9c5",
+          "runnerId": "7ee54833-1003-43f0-aeb4-606f513acd84",
+          "taskId": "ccbdc5ba-beb1-4866-9e8a-ea10b9be03d0",
+          "attemptId": "25026b04-b2f1-4cd7-b7df-52fe68d3c267",
+          "ownerVersion": 1
+        },
+        "createdAt": "2026-10-06T05:53:04.744Z",
+        "nodes": [
+          {
+            "id": "5e0734ef-0345-40b1-9c14-1478da59e256",
+            "title": "汇总变更",
+            "taskId": null,
+            "version": 1,
+            "parentId": null,
+            "dependsOn": []
+          },
+          {
+            "id": "c0ecd021-15b9-4f74-94fe-7ca5b826f02d",
+            "title": "草拟发布说明",
+            "taskId": null,
+            "version": 2,
+            "parentId": null,
+            "dependsOn": [
+              "5e0734ef-0345-40b1-9c14-1478da59e256"
+            ]
+          },
+          {
+            "id": "3a6988b5-8c32-4331-b818-9c6b9c5eaaad",
+            "title": "检查完整性",
+            "taskId": null,
+            "version": 2,
+            "parentId": null,
+            "dependsOn": [
+              "c0ecd021-15b9-4f74-94fe-7ca5b826f02d"
+            ]
+          }
+        ]
+      },
+      "final": "计划已记录🙂，未执行子任务。",
+      "nativeQueries": 0
+    },
+    {
+      "scenario": "lost-ack-current-auth",
+      "audit": {
+        "run": {
+          "id": "faabc74c-e538-4496-845b-4fc0bf6e286f",
+          "version": 1,
+          "goalId": "952083ce-2515-4db5-b7b3-3637e1fc6245",
+          "projectId": "dbed1cd5-5107-4a01-bde8-e8f58c902393",
+          "goalDigest": "30465f500a41189cf254d6df96bb0dc5f536c699c1e2b96a87079273ad2f1934",
+          "taskId": "9155121b-52cd-4af9-8445-4d507dd6c7bb",
+          "scope": {
+            "maxNewEdges": 2,
+            "maxNewNodes": 3,
+            "baseRevision": 1,
+            "maxProposals": 1,
+            "maxApplications": 1,
+            "allowedExistingNodes": []
+          },
+          "mode": "claude",
+          "usedCommands": 2,
+          "usedProposals": 1,
+          "usedApplications": 1,
+          "createdAt": "2026-10-06T05:53:04.918Z",
+          "revokedAt": "2026-10-06T05:53:05.162Z",
+          "revocationReason": "No further tools"
+        },
+        "calls": [
+          {
+            "sequence": 1,
+            "runnerId": "97117356-2425-438b-b851-f61e7cf9b67f",
+            "attemptId": "fcad2503-ffdc-4514-8e4f-ec73cbb7a44c",
+            "ownerVersion": 1,
+            "key": "proposal",
+            "digest": "4e230501bff01d92e75d8e396519b29d1b779f25fc2a9eb5043b2069a6e425e0",
+            "kind": "propose",
+            "proposalId": "171e7bca-b1e9-422d-916f-1345019760ac",
+            "proposalDigest": "dc6b59b3f0e0ac86af64a4f25e3fe865236cc7c664066134bd230c0ef8d1fb01",
+            "appliedRevision": null,
+            "createdAt": "2026-10-06T05:53:05.104Z"
+          },
+          {
+            "sequence": 2,
+            "runnerId": "97117356-2425-438b-b851-f61e7cf9b67f",
+            "attemptId": "fcad2503-ffdc-4514-8e4f-ec73cbb7a44c",
+            "ownerVersion": 1,
+            "key": "apply-stable",
+            "digest": "6771d8217a40d955c8be0d16c4fc8b985a332c5bd8b6fa4be1c518dc113c3543",
+            "kind": "apply",
+            "proposalId": "171e7bca-b1e9-422d-916f-1345019760ac",
+            "proposalDigest": "dc6b59b3f0e0ac86af64a4f25e3fe865236cc7c664066134bd230c0ef8d1fb01",
+            "appliedRevision": 6,
+            "createdAt": "2026-10-06T05:53:05.139Z"
+          }
+        ],
+        "nextCursor": null
+      }
+    },
+    {
+      "scenario": "cancel-late-final",
+      "taskId": "c9952c75-83a3-4a54-920f-94ee327c8e34",
+      "status": "cancelled",
+      "artifacts": 0
+    },
+    {
+      "cleanup": {
+        "database": "flow_o07_http_91915c410fdd4f7eb6e9916f509f6d6c",
+        "removed": true
+      }
+    }
+  ]
+}

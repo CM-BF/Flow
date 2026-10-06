@@ -1,0 +1,24 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-tools
+
+ ❯ apps/runner/src/goal-graph-tools/integration.test.ts (4 tests | 1 failed | 3 skipped) 1299ms
+   ↓ executes read -> propose -> apply -> actual typed final through the production adapter and real HTTP/PG without executing children
+   ↓ recovers a lost apply ACK with its stable key and rejects cached replay after revoke
+   ↓ cancels a live bridged query without accepting a late final or artifact
+   × keeps the existing node bridge versioned and node-only through the shared host authority helper 533ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/goal-graph-tools/integration.test.ts > keeps the existing node bridge versioned and node-only through the shared host authority helper
+TypeError: Cannot read properties of undefined (reading 'input')
+ ❯ apps/runner/src/goal-graph-tools/integration.test.ts:147:79
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 skipped (4)
+   Start at  22:55:44
+   Duration  1.88s (transform 270ms, setup 0ms, import 496ms, tests 1.30s, environment 0ms)
+

@@ -7,6 +7,7 @@ import type { GoalToolRunAdmission, GoalToolRunAccepted, GoalToolRun, GoalToolRu
 import type { ConversationQueueEnqueue, ConversationQueueCancel, ConversationQueuePause, ConversationQueueResume, ConversationQueueAccepted, ConversationQueueCancelled, ConversationQueuePaused, ConversationQueueResumed, ConversationQueuePage, ConversationQueueItemDetail } from '@flow/contracts';
 import type { PluginRegistration, PluginCommand, PluginMutationResult, PluginSnapshot, PluginList, PluginVersions, PluginOperations, PluginOperation } from '@flow/contracts';
 import type { ConversationCreation, ConversationCreated, ConversationList, ConversationSnapshot, ConversationTurnAdmission, ConversationTurnAccepted, ConversationTurnPage } from '@flow/contracts';
+import type { ConversationContextDetail } from '@flow/contracts';
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
 import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
 import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
@@ -253,6 +254,9 @@ export class FlowClient {
   }
   conversationDetail(id: string, turnId: string, detailId: string, signal?: AbortSignal): Promise<Detail> {
     return this.request(`/api/conversations/${encodeURIComponent(id)}/turns/${encodeURIComponent(turnId)}/details/${encodeURIComponent(detailId)}`, { signal });
+  }
+  conversationContext(id: string, contextId: string, signal?: AbortSignal): Promise<ConversationContextDetail> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/contexts/${encodeURIComponent(contextId)}`, { signal });
   }
 
   enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {

@@ -1,0 +1,29 @@
+{
+  "target": "d6406f906829b875d062e875dbd5aca613500e16",
+  "productTarget": "549f6b3e54f902d7b75ebe6d17f293a2085e7a6c",
+  "passed": 12,
+  "typecheckExit": 0,
+  "files": [
+    {
+      "path": "apps/server/src/reconciliation.test.ts",
+      "bytes": 23964,
+      "sha256": "fc713446b0dd3f9949473ebf93cc9868adfe42f99e90c3c73d7f4d0611c78730"
+    },
+    {
+      "path": "docs/evidence/f01/context-c02-isolated-checks.txt",
+      "bytes": 1707,
+      "sha256": "560b0f37518be393e442f87168d2f331c9fa0e5cfc9384ff8462c1ed68d43a71"
+    },
+    {
+      "path": "docs/evidence/f01/context-c02-isolated-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/f01/context-c02-isolated-facts.json",
+      "bytes": 234,
+      "sha256": "d6f46a64a21d50b008c4b1bfc275554666291f5a91c701de19f91ee0f1f798eb"
+    }
+  ],
+  "historicalLimitation": "The first legacy34 run used fixed flow_c02; before-run ownership was not recorded and is not retrospectively proven."
+}

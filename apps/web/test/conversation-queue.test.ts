@@ -22,6 +22,19 @@ const disposables: { dispose(): void }[] = [];
 afterEach(() => { disposables.splice(0).forEach(value => value.dispose()); vi.useRealTimers(); });
 function setup() { const api = port(); const queue = new ConversationQueueProjection(api, 100000); disposables.push(queue); queue.configure("chat", true); return { api, queue }; }
 describe("queue commands and current projection", () => {
+  it("preserves optional context metadata in waiting items and accepts metadata-bearing receipts without context reads", async () => {
+    const context: NonNullable<ConversationQueueItem["context"]> = { id: "context-only", contextDigest: "a".repeat(64), executionInputId: "private-input-id", executionInputDigest: "b".repeat(64), templateVersion: 1, sources: [] };
+    const { api, queue } = setup();
+    api.conversationQueue.mockResolvedValue(page({ items: [{ ...item(1), context }] })); await queue.refresh();
+    expect(queue.getSnapshot().page?.items[0]?.context).toEqual(context);
+    expect(queue.getSnapshot().page?.items[0]?.preview).toBe("message 1"); expect(api.conversationQueueItem).not.toHaveBeenCalled();
+    api.enqueueConversationTurn.mockRejectedValueOnce(Error("Response lost")).mockResolvedValueOnce({ conversationId: "chat", queueRevision: 2, replayed: true, item: { ...item(2), context } });
+    await queue.enqueue("message 2"); const receipt = queue.getSnapshot().receipts[0]!; expect(receipt.state).toBe("unknown");
+    await queue.retry(receipt.key); expect(queue.getSnapshot().receipts[0]?.state).toBe("accepted");
+    expect(api.enqueueConversationTurn.mock.calls[1]!.slice(0,3)).toEqual(api.enqueueConversationTurn.mock.calls[0]!.slice(0,3));
+    expect(api.enqueueConversationTurn.mock.calls[0]![1]).toEqual({ expectedQueueRevision: 1, text: "message 2" });
+    expect(api.conversationQueueItem).not.toHaveBeenCalled();
+  });
   it("rejects 16000 UTF-8 byte overflow before allocating a receipt or HTTP command", async () => {
     const api = port(), commands = new QueueCommands(api, async () => {}); disposables.push(commands);
     await expect(commands.execute({ kind: "enqueue", conversationId: "chat", input: { expectedQueueRevision: 1, text: "你".repeat(6000) } })).rejects.toThrow();

@@ -9,7 +9,7 @@ import { readProject } from '../projects/storage.js';
 import { revokeAuthority, type AuthorityStore } from '../goal-run-authority/runner-project-fence.js';
 
 export interface GraphRunRow {
-  id: string; version: 1; goal_id: string; task_id: string; mode: 'fixture'; used_commands: number;
+  id: string; version: 1; goal_id: string; task_id: string; mode: 'fixture' | 'claude'; used_commands: number;
   scope: GoalGraphScope & { projectId: string; goalDigest: string };
   created_at: Date; revoked_at: Date | null; revocation_reason: string | null;
 }
@@ -36,7 +36,7 @@ export async function runView(client: PoolClient, row: GraphRunRow): Promise<Goa
     createdAt: row.created_at.toISOString(), revokedAt: row.revoked_at?.toISOString() ?? null, revocationReason: row.revocation_reason };
 }
 export async function admit(pool: Pool, boss: PgBoss, goalId: string, input: GoalGraphRunAdmission, key: string): Promise<GoalGraphRunAccepted> {
-  if (input.execution.harness !== 'fixture') throw new HttpError(409, 'native_graph_tools_unavailable', 'Native graph tools require their dedicated execution bridge.');
+  if (input.execution.harness === 'claude' && !input.execution.executionProfile) throw new HttpError(409, 'native_graph_tools_unavailable', 'Native graph tools require their dedicated execution bridge.');
   const result = await command(pool, `goal-graph-run:create:${goalId}`, key, input, async client => {
     const context = await goalContext(client, goalId, true);
     if (context.project.revision !== input.scope.baseRevision) throw new HttpError(409, 'stale_project_revision', 'The grant must name the current project revision.');
@@ -44,8 +44,14 @@ export async function admit(pool: Pool, boss: PgBoss, goalId: string, input: Goa
     for (const ref of input.scope.allowedExistingNodes) {
       if (!graph.graph.nodes.some(node => node.id === ref.nodeId && node.version === ref.expectedVersion)) throw new HttpError(409, 'goal_graph_scope', 'An allowed existing reference is not in the base graph.');
     }
-    const task = await acceptTask(client, boss, { title: 'Goal graph run', prompt: input.prompt, harness: 'fixture', fixture: { scenario: 'success' } });
-    const row = (await client.query<GraphRunRow>('INSERT INTO flow.goal_graph_runs(id,goal_id,task_id,version,scope,mode) VALUES($1,$2,$3,1,$4,\'fixture\') RETURNING *', [randomUUID(), goalId, task.id, { ...input.scope, projectId: context.project.id, goalDigest: context.goalDigest }])).rows[0]!;
+    const native = input.execution.harness === 'claude';
+    const prompt = native ? JSON.stringify({ goal: context.goal.original, instruction: input.prompt }) : input.prompt;
+    if (prompt.length > 16_000) throw new HttpError(409, 'input_too_large', 'Graph input exceeds the task limit; no text was truncated.');
+    const execution = input.execution.harness === 'fixture'
+      ? { harness: 'fixture' as const, fixture: { scenario: 'success' as const } }
+      : { harness: 'claude' as const, executionProfile: input.execution.executionProfile };
+    const task = await acceptTask(client, boss, { title: 'Goal graph run', prompt, ...execution }, native ? 'goal-graph-tools' : 'ordinary');
+    const row = (await client.query<GraphRunRow>('INSERT INTO flow.goal_graph_runs(id,goal_id,task_id,version,scope,mode) VALUES($1,$2,$3,1,$4,$5) RETURNING *', [randomUUID(), goalId, task.id, { ...input.scope, projectId: context.project.id, goalDigest: context.goalDigest }, input.execution.harness])).rows[0]!;
     return { run: await runView(client, row), task };
   });
   return { ...result.value, replayed: result.replayed };

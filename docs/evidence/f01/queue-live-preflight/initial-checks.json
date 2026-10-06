@@ -1,0 +1,126 @@
+{
+  "kind": "synthetic browser rehearsal",
+  "sourceMain": "3d4985fca060155435b159e0467815bf8e88b8b8",
+  "modelCalls": 0,
+  "realCenter": false,
+  "startedAt": "2026-10-06T05:51:25.002Z",
+  "steps": [
+    {
+      "name": "first-task-running",
+      "at": "2026-10-06T05:51:26.238Z",
+      "taskId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-task-1"
+    },
+    {
+      "name": "pause-ack",
+      "at": "2026-10-06T05:51:26.367Z",
+      "receipt": {
+        "conversationId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa",
+        "queueRevision": 2,
+        "paused": true,
+        "currentTurn": {
+          "taskId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-task-1",
+          "taskStatus": "running",
+          "turnId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-turn-1",
+          "turnNumber": 1,
+          "queueItemId": null
+        },
+        "replayed": false
+      }
+    },
+    {
+      "name": "enqueue-ack",
+      "at": "2026-10-06T05:51:26.476Z",
+      "receipt": {
+        "conversationId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa",
+        "queueRevision": 3,
+        "item": {
+          "id": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-queued-3",
+          "conversationId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa",
+          "sequence": 3,
+          "state": "waiting",
+          "preview": "只回复刚才记住的标记，不要任何其他文字。",
+          "truncated": false,
+          "promoted": null,
+          "createdAt": "2026-10-06T05:51:26.450Z",
+          "updatedAt": "2026-10-06T05:51:26.450Z"
+        },
+        "replayed": false
+      }
+    },
+    {
+      "name": "queued-durably-while-first-running",
+      "at": "2026-10-06T05:51:26.481Z",
+      "queueItemId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-queued-3"
+    },
+    {
+      "name": "fixture-only: first reply published; no SDK usage assertion",
+      "at": "2026-10-06T05:51:26.481Z"
+    },
+    {
+      "name": "continue-ack",
+      "at": "2026-10-06T05:51:26.611Z",
+      "receipt": {
+        "conversationId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa",
+        "queueRevision": 4,
+        "paused": false,
+        "currentTurn": {
+          "taskId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-task-2",
+          "taskStatus": "succeeded",
+          "turnId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-turn-2",
+          "turnNumber": 2,
+          "queueItemId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-queued-3"
+        },
+        "promoted": {
+          "id": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-queued-3",
+          "conversationId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa",
+          "sequence": 3,
+          "state": "promoted",
+          "preview": "只回复刚才记住的标记，不要任何其他文字。",
+          "truncated": false,
+          "promoted": {
+            "taskId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-task-2",
+            "turnId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-turn-2",
+            "turnNumber": 2
+          },
+          "text": "只回复刚才记住的标记，不要任何其他文字。",
+          "createdAt": "2026-10-06T05:51:26.450Z",
+          "updatedAt": "2026-10-06T05:51:26.602Z"
+        },
+        "replayed": false
+      }
+    },
+    {
+      "name": "second-task-running-before-browser-exit",
+      "at": "2026-10-06T05:51:26.612Z",
+      "taskId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-task-2"
+    },
+    {
+      "name": "dedicated-browser-process-exited",
+      "at": "2026-10-06T05:51:26.679Z"
+    }
+  ],
+  "browsers": [
+    {
+      "pid": 5809,
+      "openedAt": "2026-10-06T05:51:25.314Z",
+      "closedAt": "2026-10-06T05:51:26.679Z",
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "pid": 5844,
+      "openedAt": "2026-10-06T05:51:26.883Z",
+      "closedAt": "2026-10-06T05:52:32.563Z",
+      "exitCode": 0,
+      "signal": null
+    }
+  ],
+  "pageErrors": [],
+  "conversationId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa",
+  "firstTaskId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-task-1",
+  "queueItemId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-queued-3",
+  "secondTaskId": "c0f11ff3-d3a1-465d-a832-e2d90ac0d5aa-task-2",
+  "status": "FAILED_SYNTHETIC",
+  "error": "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').locator('[data-slot=\"aui_assistant-message-root\"] [data-slot=\"aui_assistant-message-content\"]')\nExpected: 2\nReceived: 0\nTimeout:  65000ms\n\nCall log:\n  - Expect \"toHaveCount\" locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').locator('[data-slot=\"aui_assistant-message-root\"] [data-slot=\"aui_assistant-message-content\"]') with timeout 65000ms\n  - waiting for locator('.flow-chat-group.focused .flow-tab-body:not([hidden])').locator('[data-slot=\"aui_assistant-message-root\"] [data-slot=\"aui_assistant-message-content\"]')\n    133 × locator resolved to 0 elements\n        - unexpected value \"0\"\n",
+  "endedAt": "2026-10-06T05:52:32.566Z"
+}

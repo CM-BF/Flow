@@ -6,6 +6,20 @@ const input = { conversationId: "chat-a", expectedRevision: 2, text: "  hi\n" };
 const setup = () => { let id = 0; return new ConversationOutbox(() => `command-${++id}`); };
 
 describe("conversation admission outbox", () => {
+  it("detaches and freezes project identity through unknown CREATE and turn retries without adding knowledge", () => {
+    const source = { ...creation, projectId: "project-a" };
+    const outbox = setup(); const first = outbox.begin({ ...input, conversationId: null, expectedRevision: 0, creation: source });
+    source.projectId = "project-b";
+    expect(first.creation?.projectId).toBe("project-a");
+    expect(Reflect.set(first.creation!, "projectId", "project-c")).toBe(false);
+    outbox.fail(first.id, "CREATE response lost", false);
+    expect(outbox.retry(first.id)).toMatchObject({ creationKey: first.creationKey, creation: { projectId: "project-a" } });
+    outbox.bindConversation(first.id, "created"); outbox.fail(first.id, "Turn response lost", false);
+    const retry = outbox.retry(first.id)!;
+    expect(retry.creation).toBe(first.creation); expect(retry.turnKey).toBe(first.turnKey); expect(retry.request).toBe(first.request);
+    expect(retry.request).toEqual({ expectedRevision: 0, text: input.text, mode: "follow-up" });
+    expect(retry.request).not.toHaveProperty("knowledge");
+  });
   it("deep-freezes the cloned execution profile pin through unknown CREATE and turn retries", () => {
     const pin = { id: "10000000-0000-4000-8000-000000000001", runnerId: "10000000-0000-4000-8000-000000000002", configDigest: "a".repeat(64) };
     const source = { ...creation, executionProfile: pin };

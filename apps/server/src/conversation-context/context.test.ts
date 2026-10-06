@@ -1,0 +1,297 @@
+import { afterAll, beforeAll, expect, test, vi } from 'vitest';
+import { Client } from 'pg';
+import { mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { createClaudeAdapter, type ClaudeQuery } from '../../../runner/src/claude.js';
+import { runRunner } from '../../../runner/src/runtime.js';
+import { randomUUID } from 'node:crypto';
+import { expireLeases } from '../runners.js';
+import { promoteReady } from '../conversation-queue/promotion.js';
+import { startContextFixture } from './fixture.js';
+let f: Awaited<ReturnType<typeof startContextFixture>>;
+beforeAll(async () => { f = await startContextFixture(process.env.FLOW_K02_RUN_LABEL ?? 'context'); });
+afterAll(async () => { await f?.close(); });
+
+test('freezes selected text privately while public prompt and bubble remain original', async () => {
+  const projectId = await f.project();
+  const source = await f.http(`/api/projects/${projectId}/knowledge/sources`, { expectedVersion: 0, title: 'Frozen material', text: 'material-secret-古😀' }); expect(source.status).toBe(201);
+  const citation = { projectId, sourceId: source.body.source.id, version: 1, contentDigest: source.body.version.contentDigest, locator: { kind: 'utf8-bytes', start: 0, end: Buffer.byteLength('material-secret-古😀') } };
+  const conversation = await f.http('/api/conversations', { title: 'Context turn', projectId }); expect(conversation.status).toBe(201);
+  const id = conversation.body.conversation.id;
+  const turn = await f.http(`/api/conversations/${id}/turns`, { expectedRevision: 0, text: 'Use the selected source.', knowledge: [citation] }); expect(turn.status, JSON.stringify(turn.body)).toBe(202);
+  expect(turn.body.turn.user.text).toBe('Use the selected source.'); expect(JSON.stringify(turn.body)).not.toContain('material-secret');
+  const snapshot = await f.http(`/api/tasks/${turn.body.turn.task.id}`); expect(snapshot.body.prompt).toBe('Use the selected source.'); expect(JSON.stringify(snapshot.body)).not.toContain('material-secret');
+  const runner = await f.http('/api/runners', { name: 'Context fixture', harnesses: ['claude'], capacity: 1 });
+  await f.pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [turn.body.turn.task.id]);
+  const claim = await f.http('/api/runner/claim', {}, { token: runner.body.token });
+  expect(claim.status).toBe(200); expect(claim.body.assignment.task.prompt).toContain('material-secret-古😀');
+  expect(claim.body.assignment.conversationContext.contextDigest).toBe(turn.body.turn.context.contextDigest);
+  const detail = await f.http(`/api/conversations/${id}/contexts/${turn.body.turn.context.id}`); expect(detail.body.sources[0].text).toBe('material-secret-古😀');
+  expect(detail.httpUtf8Bytes).toBeLessThanOrEqual(65536);
+});
+
+async function pendingContextTurn(text = 'context-secret') {
+  const projectId = await f.project();
+  const source = await f.http(`/api/projects/${projectId}/knowledge/sources`, { expectedVersion: 0, title: 'Material', text });
+  const citation = { projectId, sourceId: source.body.source.id, version: 1, contentDigest: source.body.version.contentDigest, locator: { kind: 'utf8-bytes', start: 0, end: Buffer.byteLength(text) } };
+  const conversation = await f.http('/api/conversations', { title: 'Context pending', projectId });
+  const id = conversation.body.conversation.id;
+  const turn = await f.http(`/api/conversations/${id}/turns`, { expectedRevision: 0, text: 'raw user', knowledge: [citation] });
+  expect(turn.status, JSON.stringify(turn.body)).toBe(202);
+  await f.pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [turn.body.turn.task.id]);
+  return { projectId, source: source.body, citation, conversationId: id, turn: turn.body.turn };
+}
+
+test('claim rejects mismatched raw input or corrupted digest and rolls back assignment writes', async () => {
+  const created = await pendingContextTurn(); const taskId = created.turn.task.id; const inputId = created.turn.context.executionInputId;
+  const original = (await f.pool.query('SELECT * FROM flow.conversation_execution_inputs WHERE id=$1', [inputId])).rows[0];
+  const runner = await f.http('/api/runners', { name: 'Fail closed', harnesses: ['claude'], capacity: 1 });
+  for (const [column, value] of [['user_text','different public text'],['execution_input_digest','0'.repeat(64)]] as const) {
+    await f.pool.query('ALTER TABLE flow.conversation_execution_inputs DISABLE TRIGGER conversation_execution_inputs_immutable');
+    try { await f.pool.query(`UPDATE flow.conversation_execution_inputs SET ${column}=$2 WHERE id=$1`, [inputId, value]); }
+    finally { await f.pool.query('ALTER TABLE flow.conversation_execution_inputs ENABLE TRIGGER conversation_execution_inputs_immutable'); }
+    try {
+      const claim = await f.http('/api/runner/claim', {}, { token: runner.body.token });
+      expect(claim.status).toBe(409); expect(claim.body.error.code).toBe('conversation_context_invalid');
+      expect((await f.pool.query('SELECT status,current_attempt_id,owner_version FROM flow.tasks WHERE id=$1', [taskId])).rows[0]).toEqual({ status: 'queued', current_attempt_id: null, owner_version: 0 });
+      expect((await f.pool.query('SELECT 1 FROM flow.attempts WHERE task_id=$1', [taskId])).rowCount).toBe(0);
+    } finally {
+      await f.pool.query('ALTER TABLE flow.conversation_execution_inputs DISABLE TRIGGER conversation_execution_inputs_immutable');
+      try { await f.pool.query('UPDATE flow.conversation_execution_inputs SET user_text=$2,execution_input_digest=$3 WHERE id=$1', [inputId, original.user_text, original.execution_input_digest]); }
+      finally { await f.pool.query('ALTER TABLE flow.conversation_execution_inputs ENABLE TRIGGER conversation_execution_inputs_immutable'); }
+    }
+  }
+  await expect(f.pool.query('UPDATE flow.tasks SET conversation_input_id=NULL WHERE id=$1', [taskId])).rejects.toMatchObject({ code: '23514' });
+  await expect(f.pool.query('INSERT INTO flow.tasks(id,submission,conversation_input_id) VALUES($1,$2,$3)', [randomUUID(), { title: 'Invalid binding', prompt: 'raw', harness: 'claude' }, randomUUID()])).rejects.toMatchObject({ code: '23503' });
+  expect((await f.http('/api/runner/claim', {}, { token: runner.body.token })).body.assignment.task.prompt).toContain('context-secret');
+});
+
+test('zero-context legacy conversation claims the original prompt without private metadata', async () => {
+  const conversation = await f.http('/api/conversations', { title: 'Legacy plain' }); expect(conversation.status).toBe(201);
+  const turn = await f.http(`/api/conversations/${conversation.body.conversation.id}/turns`, { expectedRevision: 0, text: 'unchanged raw prompt' }); expect(turn.status).toBe(202);
+  expect(turn.body.turn).not.toHaveProperty('context'); expect(conversation.body.conversation).not.toHaveProperty('projectId');
+  await f.pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [turn.body.turn.task.id]);
+  const runner = await f.http('/api/runners', { name: 'Legacy', harnesses: ['claude'], capacity: 1 });
+  const claimed = await f.http('/api/runner/claim', {}, { token: runner.body.token });
+  expect(claimed.body.assignment.task.prompt).toBe('unchanged raw prompt'); expect(claimed.body.assignment).not.toHaveProperty('conversationContext');
+});
+
+async function contextSelection(text = 'queued frozen text') {
+  const projectId = await f.project();
+  const source = await f.http(`/api/projects/${projectId}/knowledge/sources`, { expectedVersion: 0, title: 'Selected', text }); expect(source.status).toBe(201);
+  const citation = { projectId, sourceId: source.body.source.id, version: 1, contentDigest: source.body.version.contentDigest, locator: { kind: 'utf8-bytes', start: 0, end: Buffer.byteLength(text) } };
+  const conversation = await f.http('/api/conversations', { title: 'Selection', projectId }); expect(conversation.status).toBe(201);
+  return { projectId, source: source.body, citation, conversationId: conversation.body.conversation.id };
+}
+test('enqueue freezes once through restart and automatic promotion despite source update', async () => {
+  const c = await contextSelection(); const path = `/api/conversations/${c.conversationId}/queue`; const key = randomUUID(); const input = { expectedQueueRevision: 0, text: 'queued raw text', knowledge: [c.citation] };
+  const accepted = await f.http(path, input, { key }); expect(accepted.status).toBe(202); expect(accepted.body.item.context).toBeDefined();
+  const context = accepted.body.item.context; expect(JSON.stringify(accepted.body)).not.toContain('queued frozen text');
+  expect((await f.http(`/api/projects/${c.projectId}/knowledge/sources/${c.source.source.id}/versions`, { expectedVersion: 1, text: 'new source text' })).status).toBe(201);
+  await f.restart();
+  const promotion = await promoteReady(f.pool, f.boss, c.conversationId); expect(promotion.outcome).toBe('promoted');
+  const current = (await f.http(`${path}/${accepted.body.item.id}`)).body; expect(current.item.context).toEqual(context); expect(current.item.text).toBe('queued raw text');
+  expect((await f.http(path, input, { key })).body).toEqual({ ...accepted.body, replayed: true });
+  const snapshot = (await f.http(`/api/conversations/${c.conversationId}`)).body; expect(snapshot.lastTurn.context).toEqual(context); expect(snapshot.lastTurn.user.text).toBe('queued raw text');
+  const detail = await f.http(`/api/conversations/${c.conversationId}/contexts/${context.id}`); expect(detail.body.sources[0]).toMatchObject({ text: 'queued frozen text', currentVersion: 2, isCurrent: false, currentVersionAtFreeze: 1, isCurrentAtFreeze: true });
+  const runner = await f.http('/api/runners', { name: 'Queue frozen', harnesses: ['claude'], capacity: 1 }); await f.pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [snapshot.lastTurn.task.id]);
+  const claim = await f.http('/api/runner/claim', {}, { token: runner.body.token }); expect(claim.body.assignment.task.prompt).toContain('queued frozen text'); expect(claim.body.assignment.task.prompt).not.toContain('new source text');
+});
+
+for (const strategy of ['revised-work', 'no-side-effects'] as const) test(`reconciliation ${strategy} recompiles frozen context without repeating the old execution input`, async () => {
+  const created = await pendingContextTurn('recovery frozen secret');
+  const runner = await f.http('/api/runners', { name: 'Recovery', harnesses: ['claude'], capacity: 1 });
+  const claimed = (await f.http('/api/runner/claim', {}, { token: runner.body.token })).body.assignment;
+  const ownership = { attemptId: claimed.attempt.id, ownerVersion: claimed.attempt.ownerVersion };
+  const path = `/api/tasks/${created.turn.task.id}/reconciliation`;
+  expect((await f.http(`${path}/retry`, { ...ownership, resolutionId: randomUUID(), safety: { strategy: 'revised-work', prompt: 'Only verify existing output', evidence: { explanation: 'Read-only verification' } } })).status).toBe(409);
+  await f.pool.query("UPDATE flow.attempts SET lease_expires_at=clock_timestamp()-interval '1 second' WHERE id=$1", [ownership.attemptId]); await expireLeases(f.pool);
+  const resolved = await f.http(`${path}/resolve`, { ...ownership, stoppedConfirmed: true, stopEvidence: { explanation: 'Fixture process stopped' }, sideEffects: strategy === 'no-side-effects' ? 'none-confirmed' : 'reviewed', effectsEvidence: { explanation: 'Fixture ledger inspected' }, outcome: 'failed' }); expect(resolved.status).toBe(200);
+  const fence = { ...ownership, resolutionId: resolved.body.audit.id };
+  if (strategy === 'revised-work') {
+    expect((await f.http(`${path}/retry`, { ...fence, safety: { strategy: 'no-side-effects', evidence: { explanation: 'Unsafe repeat' } } })).status).toBe(409);
+    expect((await f.http(`${path}/retry`, { ...fence, safety: { strategy, prompt: 'raw user', evidence: { explanation: 'Unchanged' } } })).status).toBe(409);
+  }
+  const before = (await f.pool.query('SELECT (SELECT count(*) FROM flow.tasks)::int AS tasks,(SELECT count(*) FROM flow.conversation_execution_inputs)::int AS inputs')).rows[0];
+  const oversized = await f.http(`${path}/retry`, { ...fence, safety: { strategy: 'revised-work', prompt: 'x'.repeat(15200), evidence: { explanation: 'Complete evidence remains' } } }); expect(oversized.status).toBe(400);
+  expect((await f.pool.query('SELECT (SELECT count(*) FROM flow.tasks)::int AS tasks,(SELECT count(*) FROM flow.conversation_execution_inputs)::int AS inputs')).rows[0]).toEqual(before);
+  expect((await f.http(`/api/projects/${created.projectId}/knowledge/sources/${created.source.source.id}/versions`, { expectedVersion: 1, text: 'replacement source content' })).status).toBe(201);
+  const input = { ...fence, safety: strategy === 'revised-work' ? { strategy, prompt: 'Only verify existing output', evidence: { explanation: 'Read-only verification' } } : { strategy, evidence: { explanation: 'No external effects' } } }; const key = randomUUID();
+  const retried = await f.http(`${path}/retry`, input, { key }); expect(retried.status, JSON.stringify(retried.body)).toBe(200);
+  expect((await f.http(`${path}/retry`, input, { key })).body).toEqual({ ...retried.body, replayed: true });
+  const publicTask = await f.http(`/api/tasks/${retried.body.task.id}`); expect(publicTask.body.prompt).toContain('Recorded recovery context'); expect(JSON.stringify(publicTask.body)).not.toContain('recovery frozen secret');
+  await f.pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [retried.body.task.id]);
+  const next = (await f.http('/api/runner/claim', {}, { token: runner.body.token })).body.assignment;
+  expect(next.task).not.toHaveProperty('resumeSessionId'); expect(next.task.prompt).toContain('recovery frozen secret'); expect(next.task.prompt).not.toContain('replacement source content'); expect(next.task.prompt).toContain(publicTask.body.prompt);
+  expect(next.conversationContext.contextDigest).toBe(claimed.conversationContext.contextDigest); expect(next.conversationContext.executionInputDigest).not.toBe(claimed.conversationContext.executionInputDigest); expect(next.conversationContext.executionInputId).not.toBe(claimed.conversationContext.executionInputId);
+});
+
+test('lost send response replays immutable metadata after restart and public initial SSE stays raw', async () => {
+  const c = await contextSelection('private-sse-sentinel'); const path = `/api/conversations/${c.conversationId}/turns`; const key = randomUUID(); const input = { expectedRevision: 0, text: 'public original', knowledge: [c.citation] };
+  expect(await f.discardReply(path, input, key)).toBe(202);
+  const original = (await f.http(`/api/conversations/${c.conversationId}`)).body.lastTurn;
+  await f.restart(); const replay = await f.http(path, input, { key }); expect(replay.body).toMatchObject({ replayed: true, turn: original });
+  expect((await f.pool.query('SELECT count(*)::int AS n FROM flow.conversation_contexts WHERE conversation_id=$1', [c.conversationId])).rows[0].n).toBe(1);
+  for (const route of [`/api/conversations/${c.conversationId}`, `${path}?limit=1`, `/api/tasks/${original.task.id}`]) expect(JSON.stringify((await f.http(route)).body)).not.toContain('private-sse-sentinel');
+  const stream = await f.initialStream(original.task.id); expect(stream.status).toBe(200); expect(stream.text).toContain('event: update'); expect(stream.text).not.toContain('private-sse-sentinel');
+});
+
+test('pause cancel and explicit resume preserve each frozen queue item and immutable receipts', async () => {
+  const c = await contextSelection('pause-resume-frozen'); const path = `/api/conversations/${c.conversationId}/queue`;
+  const first = (await f.http(path, { expectedQueueRevision: 0, text: 'first', knowledge: [c.citation] })).body;
+  const pauseKey = randomUUID(); const pauseInput = { expectedQueueRevision: 1 };
+  const paused = await f.http(`${path}/pause`, pauseInput, { key: pauseKey }); expect(paused.status).toBe(200);
+  expect(await promoteReady(f.pool, f.boss, c.conversationId)).toMatchObject({ outcome: 'blocked', reason: 'queue-paused' });
+  const cancelKey = randomUUID(); const cancelInput = { expectedQueueRevision: 2 };
+  const cancelled = await f.http(`${path}/${first.item.id}/cancel`, cancelInput, { key: cancelKey }); expect(cancelled.body.item).toMatchObject({ state: 'cancelled', context: first.item.context });
+  const second = (await f.http(path, { expectedQueueRevision: 3, text: 'second', knowledge: [c.citation] })).body;
+  expect((await f.http(`/api/projects/${c.projectId}/knowledge/sources/${c.source.source.id}/versions`, { expectedVersion: 1, text: 'updated source' })).status).toBe(201);
+  const resumeKey = randomUUID(); const resumeInput = { expectedQueueRevision: 4, expectedTaskId: null };
+  const resumed = await f.http(`${path}/resume`, resumeInput, { key: resumeKey }); expect(resumed.status, JSON.stringify(resumed.body)).toBe(202); expect(resumed.body.promoted.context).toEqual(second.item.context);
+  expect((await f.http(`${path}/resume`, resumeInput, { key: resumeKey })).body).toEqual({ ...resumed.body, replayed: true });
+  expect((await f.http(`${path}/pause`, pauseInput, { key: pauseKey })).body).toEqual({ ...paused.body, replayed: true });
+  expect((await f.http(`${path}/${first.item.id}/cancel`, cancelInput, { key: cancelKey })).body).toEqual({ ...cancelled.body, replayed: true });
+  const current = (await f.http(path)).body; expect(current.paused).toBe(false); expect(current.items).toHaveLength(0); expect(current.currentTurn.taskId).toBe(resumed.body.promoted.promoted.taskId);
+  const detail = await f.http(`/api/conversations/${c.conversationId}/contexts/${second.item.context.id}`); expect(detail.body.sources[0].text).toBe('pause-resume-frozen');
+  expect((await f.pool.query('SELECT count(*)::int AS n FROM flow.conversation_turns WHERE conversation_id=$1', [c.conversationId])).rows[0].n).toBe(1);
+});
+
+for (const boundary of ['foreign-project','bad-digest','bad-utf8','duplicate','five-refs','raw-total','compiled-budget'] as const) test(`rejects ${boundary} selection without partial task context or revision`, async () => {
+  const c = await contextSelection(boundary === 'raw-total' ? 'x'.repeat(12288) : 'A😀selected');
+  let refs = [c.citation]; let text = 'raw';
+  if (boundary === 'foreign-project') refs = [{ ...c.citation, projectId: await f.project() }];
+  if (boundary === 'bad-digest') refs = [{ ...c.citation, contentDigest: '0'.repeat(64) }];
+  if (boundary === 'bad-utf8') refs = [{ ...c.citation, locator: { ...c.citation.locator, start: 2 } }];
+  if (boundary === 'duplicate') refs = [c.citation, c.citation];
+  if (boundary === 'five-refs') refs = Array.from({ length: 5 }, (_, n) => ({ ...c.citation, locator: { ...c.citation.locator, start: 5+n, end: 6+n } }));
+  if (boundary === 'raw-total') refs = Array.from({ length: 3 }, (_, n) => ({ ...c.citation, locator: { ...c.citation.locator, start: n*4096, end: (n+1)*4096 } }));
+  if (boundary === 'compiled-budget') text = 'x'.repeat(16000);
+  const result = await f.http(`/api/conversations/${c.conversationId}/turns`, { expectedRevision: 0, text, knowledge: refs }); expect([400,404,409]).toContain(result.status);
+  expect((await f.http(`/api/conversations/${c.conversationId}`)).body.conversation.revision).toBe(0);
+  expect((await f.pool.query('SELECT (SELECT count(*) FROM flow.conversation_turns WHERE conversation_id=$1)::int AS turns,(SELECT count(*) FROM flow.conversation_contexts WHERE conversation_id=$1)::int AS contexts', [c.conversationId])).rows[0]).toEqual({ turns: 0, contexts: 0 });
+});
+
+test('enqueue rejects the compiled budget before persisting a waiting item', async () => {
+  const c = await contextSelection('a'.repeat(4096));
+  const response = await f.http(`/api/conversations/${c.conversationId}/queue`, { expectedQueueRevision: 0, text: 'x'.repeat(15000), knowledge: [c.citation] }); expect(response.status).toBe(400); expect(response.body.error.code).toBe('conversation_context_budget');
+  expect((await f.http(`/api/conversations/${c.conversationId}/queue`)).body).toMatchObject({ queueRevision: 0, items: [] });
+  expect((await f.pool.query('SELECT 1 FROM flow.conversation_contexts WHERE conversation_id=$1', [c.conversationId])).rowCount).toBe(0);
+});
+
+test('context detail is explicit owner-only, conversation-bound, exact and JSON bounded', async () => {
+  const text = '\u0001'.repeat(1900) + '\r\n\\😀'; const c = await contextSelection(text);
+  const queued = (await f.http(`/api/conversations/${c.conversationId}/queue`, { expectedQueueRevision: 0, text: 'raw', knowledge: [c.citation] })).body;
+  const route = `/api/conversations/${c.conversationId}/contexts/${queued.item.context.id}`;
+  const detail = await f.http(route); expect(detail.status).toBe(200); expect(detail.body.sources[0].text).toBe(text); expect(detail.httpUtf8Bytes).toBe(Buffer.byteLength(JSON.stringify(detail.body))); expect(detail.httpUtf8Bytes).toBeLessThanOrEqual(65536);
+  const other = await f.http('/api/conversations', { title: 'Other' }); expect((await f.http(`/api/conversations/${other.body.conversation.id}/contexts/${queued.item.context.id}`)).status).toBe(404);
+  const runner = await f.http('/api/runners', { name: 'No knowledge grant', harnesses: ['claude'], capacity: 1 }); expect((await f.http(route, undefined, { token: runner.body.token })).status).toBe(403);
+  expect((await f.http(route, undefined, { token: 'wrong-token' })).status).toBe(401);
+  for (const sql of ['UPDATE flow.conversation_contexts SET raw_bytes=raw_bytes', 'DELETE FROM flow.conversation_execution_inputs', 'TRUNCATE flow.conversation_contexts CASCADE']) await expect(f.pool.query(sql)).rejects.toMatchObject({ code: '23514' });
+  await expect(f.pool.query('UPDATE flow.conversations SET project_id=NULL WHERE id=$1', [c.conversationId])).rejects.toMatchObject({ code: '23514' });
+  await expect(f.pool.query('UPDATE flow.conversation_queue SET conversation_input_id=NULL WHERE id=$1', [queued.item.id])).rejects.toMatchObject({ code: '23514' });
+});
+
+
+test('fifty waiting contexts use one metadata SQL batch and four citations use one bounded source read', async () => {
+  const c = await contextSelection('batch-private-source'); const path = `/api/conversations/${c.conversationId}/queue`;
+  const refs = Array.from({ length: 4 }, (_, n) => ({ ...c.citation, locator: { ...c.citation.locator, start: n, end: n+5 } }));
+  let sourceReads = 0; const sourceSpy = vi.spyOn(Client.prototype, 'query');
+  try {
+    expect((await f.http(path, { expectedQueueRevision: 0, text: 'raw 0', knowledge: refs })).status).toBe(202);
+    sourceReads = sourceSpy.mock.calls.filter(call => typeof call[0] === 'string' && call[0].includes('FROM jsonb_to_recordset($2) AS r')).length;
+    expect(sourceReads).toBe(1);
+  } finally { sourceSpy.mockRestore(); }
+  for (let n=1; n<50; n++) expect((await f.http(path, { expectedQueueRevision: n, text: `raw ${n}`, knowledge: [c.citation] })).status).toBe(202);
+  const spy = vi.spyOn(Client.prototype, 'query');
+  try {
+    const page = await f.http(`${path}?limit=50`); expect(page.status).toBe(200); expect(page.body.items).toHaveLength(50); expect(page.body.nextCursor).toBeNull(); expect(JSON.stringify(page.body)).not.toContain('batch-private-source');
+    const queries = spy.mock.calls.map(call => call[0]).filter((query): query is string => typeof query === 'string');
+    const metadata = queries.filter(query => query.includes('jsonb_array_elements(c.sources)')); expect(metadata).toHaveLength(1); expect(metadata[0]).not.toContain('execution_prompt'); expect(metadata[0]).not.toContain("item-'text'");
+    expect(page.body.items.every((item: { context: { sources: object[] } }) => item.context.sources.every(source => Object.keys(source).sort().join(',') === 'byteLength,citation,currentVersionAtFreeze,isCurrentAtFreeze'))).toBe(true);
+    await writeFile(`docs/evidence/k02/${process.env.FLOW_K02_RUN_LABEL}-bounded-reads.json`, JSON.stringify({ sourceReadsForFourRefs: sourceReads, metadataSelectsForFiftyItems: metadata.length, httpResponseUtf8Bytes: page.httpUtf8Bytes, itemCount: page.body.items.length, limitations: 'Counts match identified SQL statements during real HTTP requests, not performance or PG wire measurements.' }, null, 2));
+  } finally { spy.mockRestore(); }
+});
+
+test('actual runner and injected Claude query receive the frozen private prompt with no model call', async () => {
+  // Cancel only pending tasks from earlier tests in this isolated database before starting a polling runner.
+  for (const task of (await f.pool.query("SELECT id FROM flow.tasks WHERE status='queued'")).rows) expect((await f.http(`/api/tasks/${task.id}/cancel`, {})).status).toBe(200);
+  const created = await pendingContextTurn('sdk-private-material'); const taskId = created.turn.task.id;
+  const expected = (await f.pool.query('SELECT execution_prompt FROM flow.conversation_execution_inputs WHERE id=$1', [created.turn.context.executionInputId])).rows[0].execution_prompt;
+  const runner = await f.http('/api/runners', { name: 'Injected SDK', harnesses: ['claude'], capacity: 1 });
+  const workingDirectory = await mkdtemp(join(tmpdir(), 'flow-k02-runner-')); const controller = new AbortController(); const nativeSessionId = randomUUID(); let seen: unknown;
+  type QueryMessage = ReturnType<ClaudeQuery> extends AsyncIterable<infer Message> ? Message : never;
+  const query: ClaudeQuery = ({ prompt }) => Object.assign((async function* () {
+    seen = prompt;
+    yield { type: 'system', subtype: 'init', session_id: nativeSessionId, model: 'injected', claude_code_version: 'injected', tools: [], plugins: [], skills: [], mcp_servers: [] } as unknown as QueryMessage;
+    yield { type: 'result', subtype: 'success', is_error: false, uuid: randomUUID(), session_id: nativeSessionId, result: 'Injected final without source echo', modelUsage: {}, permission_denials: [] } as unknown as QueryMessage;
+  })(), { close() {} });
+  const running = runRunner({ baseUrl: f.baseUrl, token: runner.body.token, workingDirectory, signal: controller.signal, pollIntervalMs: 25, heartbeatIntervalMs: 100, adapters: [createClaudeAdapter({ materialFiles: [], query, timeoutMs: 2000 })] });
+  try {
+    await expect.poll(async () => (await f.http(`/api/tasks/${taskId}`)).body.status, { timeout: 5000 }).toBe('succeeded');
+    expect(seen).toBe(expected); expect(seen).toContain('sdk-private-material');
+    const snapshot = await f.http(`/api/conversations/${created.conversationId}`); expect(snapshot.body.lastTurn.user.text).toBe('raw user'); expect(snapshot.body.lastTurn.assistant.text).toBe('Injected final without source echo'); expect(JSON.stringify(snapshot.body)).not.toContain('sdk-private-material');
+    expect((await f.http(`/api/tasks/${taskId}`)).body.prompt).toBe('raw user');
+  } finally { controller.abort(); try { await running; } finally { await rm(workingDirectory, { recursive: true, force: true }); } }
+});
+
+for (const corruption of ['context-digest', 'compiled-prompt'] as const) test(`claim fails closed on ${corruption} without consuming attempt ownership`, async () => {
+  // Earlier tests may intentionally leave queued work. Only this fixture's own pending tasks are cancelled.
+  for (const task of (await f.pool.query("SELECT id FROM flow.tasks WHERE status='queued'")).rows) await f.http(`/api/tasks/${task.id}/cancel`, {});
+  const created = await pendingContextTurn('integrity sentinel'); const ref = created.turn.context;
+  const table = corruption === 'context-digest' ? 'conversation_contexts' : 'conversation_execution_inputs';
+  const column = corruption === 'context-digest' ? 'context_digest' : 'execution_prompt'; const id = corruption === 'context-digest' ? ref.id : ref.executionInputId;
+  const original = (await f.pool.query(`SELECT ${column} AS value FROM flow.${table} WHERE id=$1`, [id])).rows[0].value;
+  await f.pool.query(`ALTER TABLE flow.${table} DISABLE TRIGGER ${table}_immutable`);
+  try { await f.pool.query(`UPDATE flow.${table} SET ${column}=$2 WHERE id=$1`, [id, corruption === 'context-digest' ? '0'.repeat(64) : 'x'.repeat(16001)]); }
+  finally { await f.pool.query(`ALTER TABLE flow.${table} ENABLE TRIGGER ${table}_immutable`); }
+  try {
+    const runner = await f.http('/api/runners', { name: 'Integrity', harnesses: ['claude'], capacity: 1 });
+    const claim = await f.http('/api/runner/claim', {}, { token: runner.body.token }); expect(claim.status).toBe(409); expect(claim.body.error.code).toBe('conversation_context_invalid');
+    expect((await f.pool.query('SELECT status,current_attempt_id,owner_version FROM flow.tasks WHERE id=$1', [created.turn.task.id])).rows[0]).toEqual({ status: 'queued', current_attempt_id: null, owner_version: 0 });
+    expect((await f.pool.query('SELECT 1 FROM flow.attempts WHERE task_id=$1', [created.turn.task.id])).rowCount).toBe(0);
+  } finally {
+    await f.pool.query(`ALTER TABLE flow.${table} DISABLE TRIGGER ${table}_immutable`);
+    try { await f.pool.query(`UPDATE flow.${table} SET ${column}=$2 WHERE id=$1`, [id, original]); }
+    finally { await f.pool.query(`ALTER TABLE flow.${table} ENABLE TRIGGER ${table}_immutable`); }
+  }
+});
+
+test('context digest depends on ordered exact citations and text while execution digest also binds user text', async () => {
+  const c = await contextSelection('first second'); const path = `/api/conversations/${c.conversationId}/queue`;
+  const a = { ...c.citation, locator: { ...c.citation.locator, start: 0, end: 5 } }; const b = { ...c.citation, locator: { ...c.citation.locator, start: 6, end: 12 } };
+  const first = await f.http(path, { expectedQueueRevision: 0, text: 'user one', knowledge: [a,b] }); expect(first.status).toBe(202);
+  const second = await f.http(path, { expectedQueueRevision: 1, text: 'user two', knowledge: [a,b] }); expect(second.status).toBe(202);
+  const reverse = await f.http(path, { expectedQueueRevision: 2, text: 'user one', knowledge: [b,a] }); expect(reverse.status).toBe(202);
+  expect(first.body.item.context.contextDigest).toBe(second.body.item.context.contextDigest); expect(first.body.item.context.executionInputDigest).not.toBe(second.body.item.context.executionInputDigest);
+  expect(first.body.item.context.contextDigest).not.toBe(reverse.body.item.context.contextDigest);
+  const detail = await f.http(`/api/conversations/${c.conversationId}/contexts/${reverse.body.item.context.id}`); expect(detail.body.sources.map((source: { text: string }) => source.text)).toEqual(['second','first']);
+});
+
+test('valid 8192 byte selection remains exact while claim corruption rolls back native session reservation', async () => {
+  for (const task of (await f.pool.query("SELECT id FROM flow.tasks WHERE status='queued'")).rows) await f.http(`/api/tasks/${task.id}/cancel`, {});
+  const c = await contextSelection('x'.repeat(8192)); const refs = [0,4096].map(start => ({ ...c.citation, locator: { ...c.citation.locator, start, end: start+4096 } }));
+  const first = await f.http(`/api/conversations/${c.conversationId}/turns`, { expectedRevision: 0, text: 'initial', knowledge: refs }); expect(first.status).toBe(202);
+  const detail = await f.http(`/api/conversations/${c.conversationId}/contexts/${first.body.turn.context.id}`); expect(detail.body.sources.reduce((sum: number, source: { text: string }) => sum+Buffer.byteLength(source.text), 0)).toBe(8192); expect(detail.httpUtf8Bytes).toBeLessThanOrEqual(65536);
+  const runner = await f.http('/api/runners', { name: 'Session rollback', harnesses: ['claude'], capacity: 1 }); await f.pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [first.body.turn.task.id]);
+  const claim = (await f.http('/api/runner/claim', {}, { token: runner.body.token })).body.assignment; const sessionId = randomUUID();
+  const report = await f.http('/api/runner/events', { attemptId: claim.attempt.id, ownerVersion: claim.attempt.ownerVersion, events: [
+    { id: randomUUID(), type: 'session', sequence: 1, nativeSessionId: sessionId, adapterVersion: 'claude-sdk-0.3.290-v1' },
+    { id: randomUUID(), type: 'completed', sequence: 2, outcome: 'succeeded' },
+  ] }, { token: runner.body.token }); expect(report.status).toBe(200);
+  const next = await f.http(`/api/conversations/${c.conversationId}/turns`, { expectedRevision: 1, text: 'follow up', knowledge: refs }); expect(next.status).toBe(202);
+  const inputId = next.body.turn.context.executionInputId;
+  await f.pool.query('ALTER TABLE flow.conversation_execution_inputs DISABLE TRIGGER conversation_execution_inputs_immutable');
+  try { await f.pool.query('UPDATE flow.conversation_execution_inputs SET execution_input_digest=$2 WHERE id=$1', [inputId, '0'.repeat(64)]); }
+  finally { await f.pool.query('ALTER TABLE flow.conversation_execution_inputs ENABLE TRIGGER conversation_execution_inputs_immutable'); }
+  try {
+    await f.pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [next.body.turn.task.id]);
+    const rejected = await f.http('/api/runner/claim', {}, { token: runner.body.token }); expect(rejected.status).toBe(409);
+    expect((await f.pool.query('SELECT active_task_id FROM flow.sessions WHERE id=$1', [sessionId])).rows[0].active_task_id).toBeNull();
+    expect((await f.pool.query('SELECT 1 FROM flow.attempts WHERE task_id=$1', [next.body.turn.task.id])).rowCount).toBe(0);
+  } finally {
+    await f.pool.query('ALTER TABLE flow.conversation_execution_inputs DISABLE TRIGGER conversation_execution_inputs_immutable');
+    try { await f.pool.query('UPDATE flow.conversation_execution_inputs SET execution_input_digest=$2 WHERE id=$1', [inputId, next.body.turn.context.executionInputDigest]); }
+    finally { await f.pool.query('ALTER TABLE flow.conversation_execution_inputs ENABLE TRIGGER conversation_execution_inputs_immutable'); }
+  }
+});
