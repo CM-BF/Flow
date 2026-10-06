@@ -1,17 +1,17 @@
 import { createServer as createHttpServer, type ServerResponse } from 'node:http';
-import { mkdtemp, mkdir, readdir, readFile, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, readdir, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { afterEach, expect, it } from 'vitest';
-import type { ClaimedTask, EventBatch, HarnessAdapter, HarnessContext, RunnerEventData } from '@flow/contracts';
+import type { ClaimedTask, EventBatch, HarnessAdapter, HarnessContext } from '@flow/contracts';
 import { FlowClient } from '@flow/client';
 import { randomUUID } from 'node:crypto';
 import { Pool } from 'pg';
 import { createServer as createFlowServer } from '../../server/src/index.js';
 import { commandRunnerMaintenance } from '../../server/src/runner-maintenance/store.js';
 import { runRunner, type RunnerOptions, type RunnerNotice } from './runtime.js';
-import { textDigest, verifyText } from './verifier.js';
+import { textDigest } from './verifier.js';
 import { EventStorageError } from './outbox.js';
 
 const cleanup: (() => Promise<unknown>)[] = [];
@@ -31,8 +31,6 @@ async function peer(total = 8, capacity = 16) {
   let claims = 0, assigned = 0, peak = 0;
   let claimHook: ((index: number, response: ServerResponse) => boolean) | undefined;
   let heartbeatHook: ((attemptId: string, response: ServerResponse) => boolean) | undefined;
-  let assignmentHook: ((value: ClaimedTask) => ClaimedTask) | undefined;
-  let routeHook: ((path: string, response: ServerResponse, body: Record<string, unknown>) => boolean) | undefined;
   let reportHook: ((batch: EventBatch, response: ServerResponse) => boolean) | undefined;
   const server = createHttpServer(async (request, response) => {
     const parts: Buffer[] = []; for await (const part of request) parts.push(part as Buffer);
@@ -45,7 +43,6 @@ async function peer(total = 8, capacity = 16) {
         assignment = { attempt: { id, runnerId: 'runner-test', ownerVersion: 1, leaseExpiresAt: new Date(Date.now() + 10000).toISOString() },
           task: { id: `task-${assigned}`, title: 'Deterministic no-model attempt', prompt: String(assigned), harness: 'fixture' } };
       }
-      if (assignment && assignmentHook) assignment = assignmentHook(assignment);
       response.end(JSON.stringify({ assignment, remainingLeaseMs: assignment ? 10000 : 0 })); return;
     }
     if (request.url === '/api/runner/heartbeat') {
@@ -58,7 +55,6 @@ async function peer(total = 8, capacity = 16) {
       for (const event of batch.events) if (event.type === 'completed') { running.delete(batch.attemptId); outcomes.set(batch.attemptId, event.outcome); }
       response.end(JSON.stringify({ accepted: batch.events.length, lastSequence: batch.events.at(-1)!.sequence })); return;
     }
-    if (routeHook?.(request.url ?? '', response, body)) return;
     response.writeHead(404).end('{}');
   });
   await new Promise<void>(resolve => server.listen(0, '127.0.0.1', resolve));
@@ -68,7 +64,6 @@ async function peer(total = 8, capacity = 16) {
   return {
     batches, notices, outcomes, workingDirectory, baseUrl, running,
     get claims() { return claims; }, get assigned() { return assigned; }, get peak() { return peak; },
-    assignment(hook: typeof assignmentHook) { assignmentHook = hook; }, route(hook: typeof routeHook) { routeHook = hook; },
     claim(hook: typeof claimHook) { claimHook = hook; }, heartbeat(hook: typeof heartbeatHook) { heartbeatHook = hook; }, report(hook: typeof reportHook) { reportHook = hook; },
     start(adapter: HarnessAdapter, extra: Partial<RunnerOptions> = {}) {
       const shutdown = new AbortController(); shutdowns.push(shutdown);
@@ -107,10 +102,10 @@ it('cancels only the requested slot while the other attempt continues', async ()
 it('awaits every started adapter on host abort and on swallowed heartbeat authentication rejection', async () => {
   for (const auth of [false, true]) {
     const api = await peer(4); let entered = 0, settled = 0;
-    api.heartbeat((_id, response) => { if (auth && entered === 4) { response.writeHead(403).end(JSON.stringify({ error: { code: 'wrong_role', message: 'Runner role rejected.' } })); return true; } return false; });
+    api.heartbeat((_id, response) => { if (auth && entered === 4) { response.writeHead(403).end(JSON.stringify({ error: { code: 'revoked', message: 'Runner revoked.' } })); return true; } return false; });
     const running = api.start(adapter(async context => { entered++; try { await held(context); } finally { await sleep(20); settled++; } }), { maxConcurrentAttempts: 4 });
     await eventually(() => entered === 4);
-    if (auth) await expect(running.promise).rejects.toMatchObject({ status: 403, code: 'wrong_role' });
+    if (auth) await expect(running.promise).rejects.toMatchObject({ status: 403, code: 'revoked' });
     else { running.shutdown.abort(); await running.promise; }
     expect(settled).toBe(4); expect(api.assigned).toBe(4);
   }
@@ -153,8 +148,8 @@ it('never replays an active outbox while another slot is being admitted', async 
   firstResponse!.end(JSON.stringify({ accepted: 1, lastSequence: 1 })); running.shutdown.abort(); await running.promise;
 });
 
-it.each([0, 17, 1.5, NaN, null, '4'])('rejects an invalid local slot limit %s before admission', async limit => {
-  const api = await peer(); await expect(api.start(adapter(async () => undefined), { maxConcurrentAttempts: limit as number }).promise).rejects.toThrow('one through sixteen'); expect(api.claims).toBe(0);
+it.each([0, 17, 1.5, NaN])('rejects an invalid local slot limit %s before admission', async limit => {
+  const api = await peer(); await expect(api.start(adapter(async () => undefined), { maxConcurrentAttempts: limit }).promise).rejects.toThrow('one through sixteen'); expect(api.claims).toBe(0);
 });
 
 async function realCenter(capacity: number) {
@@ -169,7 +164,7 @@ async function realCenter(capacity: number) {
   cleanup.push(async () => {
     for (const process of processes) process.shutdown.abort();
     await Promise.allSettled(processes.map(process => process.promise));
-    try { app?.server.closeIdleConnections(); await app?.close(); }
+    try { await app?.close(); }
     finally {
       try { await pool.end(); }
       finally {
@@ -264,83 +259,4 @@ it('real PG/HTTP keeps draining and uncertain occupancy authoritative while othe
   execution.shutdown.abort(); await execution.promise;
   let restarted = 0; const retry = api.start(adapter(async () => { restarted++; })); await sleep(80); retry.shutdown.abort(); await retry.promise;
   expect(restarted).toBe(0); expect((await api.owner.runnerMaintenance(api.identity.runnerId)).activeAttempts).toBe(1);
-});
-
-function finalEvents(): RunnerEventData[] {
-  const content = 'Synthetic bounded final', artifactId = 'final-artifact';
-  return [{ type: 'artifact', artifactId, title: 'Final', version: textDigest(content), content, mediaType: 'text/plain' }, verifyText(artifactId, content),
-    { type: 'assistant-final', nativeSessionId: 'native-test', source: 'claude.sdk.result', sourceMessageId: 'result-test',
-      messageId: textDigest(JSON.stringify(['native-test', 'result-test'])), content,
-      settings: { requested: { model: 'synthetic', thinking: 'disabled', permissionMode: 'dontAsk' }, effective: { model: null, thinking: 'unknown', permissionMode: null, tools: null } } }];
-}
-function unauthorized(response: ServerResponse): true { response.writeHead(401).end(JSON.stringify({ error: { code: 'revoked', message: 'Test credential revoked.' } })); return true; }
-
-it.each(['events', 'final-status'] as const)('preserves authentication failure before quiescent %s recovery can swallow it', async kind => {
-  const api = await peer(); const directory = join(api.workingDirectory, textDigest(api.baseUrl), textDigest('attempt-previous'));
-  await mkdir(directory, { recursive: true });
-  const ownership = { attemptId: 'attempt-previous', ownerVersion: 1 };
-  if (kind === 'events') {
-    await writeFile(join(directory, 'pending-events.json'), JSON.stringify({ ...ownership, events: [{ id: randomUUID(), sequence: 1, type: 'completed', outcome: 'succeeded' }] }));
-    api.report((_batch, response) => unauthorized(response));
-  } else {
-    await writeFile(join(directory, 'pending-final-proposal.json'), JSON.stringify({ ...ownership, proposalId: randomUUID(), afterSequence: 0, expectedRevision: 0,
-      nativeSessionId: 'native-test', resultId: 'result-test', events: finalEvents().map((event, index) => ({ ...event, id: randomUUID(), sequence: index + 1 })) }));
-    api.route((_path, response) => unauthorized(response));
-  }
-  await expect(api.start(adapter(async () => undefined)).promise).rejects.toMatchObject({ status: 401, code: 'revoked' }); expect(api.claims).toBe(0);
-  expect((await readdir(directory)).length).toBeGreaterThan(0);
-});
-
-it('settles all slots when final submission converts an authentication failure to FinalizationUnknown', async () => {
-  const api = await peer(2); let entered = 0, settled = 0;
-  api.assignment(value => ({ ...value, task: { ...value.task, harness: 'claude' } }));
-  api.route((_path, response) => unauthorized(response));
-  const execution = api.start({ name: 'claude', version: 'synthetic-no-sdk', async run(context) {
-    entered++; try {
-      await eventually(() => entered === 2);
-      if (context.task.prompt === '1') await context.steering!.finalize({ expectedRevision: 0, nativeSessionId: 'native-test', resultId: 'result-test', events: finalEvents() }).catch(() => undefined);
-      await held(context);
-    } finally { await sleep(10); settled++; }
-  } }, { maxConcurrentAttempts: 2, activeSteering: true });
-  await expect(execution.promise).rejects.toMatchObject({ status: 401, code: 'revoked' }); expect(settled).toBe(2);
-});
-
-it('settles all slots when a goal tool consumer catches its own authorization rejection', async () => {
-  const api = await peer(2); let entered = 0, settled = 0;
-  api.assignment(value => ({ ...value, goalToolRun: { id: 'grant-test', version: 1 }, task: { ...value.task, harness: 'claude', executionProfile: { id: randomUUID(), runnerId: value.attempt.runnerId, configDigest: '0'.repeat(64) } } }));
-  api.route((path, response, body) => {
-    if (path.endsWith('/grant')) { response.end(JSON.stringify({ id: 'grant-test', version: 1, taskId: String(body.attemptId).replace('attempt-', 'task-'), mode: 'claude', revokedAt: null, goalId: 'goal-test',
-      scope: { readScope: 'whole-goal', allowedNodeIds: ['node-test'], allowedCommands: [], maxCommands: 1 } })); return true; }
-    return unauthorized(response);
-  });
-  const execution = api.start({ name: 'claude', version: 'synthetic-no-sdk', async run(context) {
-    entered++; try {
-      await eventually(() => entered === 2);
-      if (context.task.prompt === '1') await context.goalTools!.port.readGoal('goal-test').catch(() => undefined);
-      await held(context);
-    } finally { settled++; }
-  } }, { maxConcurrentAttempts: 2 });
-  await expect(execution.promise).rejects.toMatchObject({ status: 401, code: 'revoked' }); expect(settled).toBe(2);
-});
-
-it('keeps a goal permission denial local while a second known attempt continues', async () => {
-  const api = await peer(2); let entered = 0, localDenial = false, secondAborted = false; const release = Promise.withResolvers<void>();
-  api.assignment(value => ({ ...value, goalToolRun: { id: 'grant-test', version: 1 }, task: { ...value.task, harness: 'claude', executionProfile: { id: randomUUID(), runnerId: value.attempt.runnerId, configDigest: '0'.repeat(64) } } }));
-  api.route((path, response, body) => {
-    if (path.endsWith('/grant')) { response.end(JSON.stringify({ id: 'grant-test', version: 1, taskId: String(body.attemptId).replace('attempt-', 'task-'), mode: 'claude', revokedAt: null, goalId: 'goal-test',
-      scope: { readScope: 'whole-goal', allowedNodeIds: ['node-test'], allowedCommands: [], maxCommands: 1 } })); return true; }
-    response.writeHead(403).end(JSON.stringify({ error: { code: 'goal_tool_scope', message: 'Command is outside this grant.' } })); return true;
-  });
-  const execution = api.start({ name: 'claude', version: 'synthetic-no-sdk', async run(context) {
-    entered++; await eventually(() => entered === 2);
-    if (context.task.prompt === '1') {
-      await expect(context.goalTools!.port.readGoal('goal-test')).rejects.toMatchObject({ status: 403, code: 'goal_tool_scope' }); localDenial = true;
-    } else {
-      await Promise.race([release.promise, held(context)]); secondAborted = context.signal.aborted;
-    }
-  } }, { maxConcurrentAttempts: 2 });
-  await eventually(() => localDenial && api.outcomes.get('attempt-1') === 'succeeded');
-  expect(api.outcomes.has('attempt-2')).toBe(false); expect(secondAborted).toBe(false);
-  release.resolve(); await eventually(() => api.outcomes.get('attempt-2') === 'succeeded');
-  execution.shutdown.abort(); await execution.promise; expect(secondAborted).toBe(false);
 });

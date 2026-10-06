@@ -1,0 +1,59 @@
+{
+  "kind": "lease",
+  "selection": "counts delayed claim|never revives|checks the monotonic|keeps shutdown final|stops rather than retrying|closes heartbeat",
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/lease.test.ts",
+    "--config",
+    "docs/evidence/s01p01/vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "-t",
+    "counts delayed claim|never revives|checks the monotonic|keeps shutdown final|stops rather than retrying|closes heartbeat"
+  ],
+  "startedAt": "2026-10-06T08:23:20.556Z",
+  "completedAt": "2026-10-06T08:23:23.338Z",
+  "elapsedMs": 2780.563459,
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "sha256": "ee98f31764184eedf903e401ef98f4e8dfc97656c8c29bdb085b782215226b78"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "path": "apps/runner/src/lease.test.ts",
+      "sha256": "64045287d3ed52c0966d237864c2306c8dde4ce6a4e7ddba88f528f6d029e2c3"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "sha256": "40e103f5d9941e7519a80b8d116a0ac316a6376bbbe570cc51a3dc11e63b3d78"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "90df43508ce748fe08f201a6781b3814a4427539c20e77bacb6c2f56bd848f33"
+    },
+    {
+      "path": "docs/evidence/s01p01/check.mjs",
+      "sha256": "6d2399c7078646cdf1d5ad10c4c0107b2cc34cb7a311feae3b61493feece1b15"
+    },
+    {
+      "path": "docs/evidence/s01p01/types.tsconfig.json",
+      "sha256": "c75d8c36a5bed972a5fa76fac39ad5c7e753040b5fcdefcd2634d5755b85b7ca"
+    },
+    {
+      "path": "docs/evidence/s01p01/vitest.config.mjs",
+      "sha256": "8db216ac2bf6ec48c3fae74de376f254154b685e59474fb06eb1a89f63428d34"
+    }
+  ],
+  "log": "docs/evidence/s01p01/lease-final.log",
+  "logSha256": "79e06ffbb36df44b6cda90e550a54c29871a7fc4593423d0dd64a68c22749d26",
+  "sourceHead": "b9f5eab48f7c1f6c3c79292dd6ea9a1e86459e5e"
+}

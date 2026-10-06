@@ -153,8 +153,8 @@ it('never replays an active outbox while another slot is being admitted', async 
   firstResponse!.end(JSON.stringify({ accepted: 1, lastSequence: 1 })); running.shutdown.abort(); await running.promise;
 });
 
-it.each([0, 17, 1.5, NaN, null, '4'])('rejects an invalid local slot limit %s before admission', async limit => {
-  const api = await peer(); await expect(api.start(adapter(async () => undefined), { maxConcurrentAttempts: limit as number }).promise).rejects.toThrow('one through sixteen'); expect(api.claims).toBe(0);
+it.each([0, 17, 1.5, NaN])('rejects an invalid local slot limit %s before admission', async limit => {
+  const api = await peer(); await expect(api.start(adapter(async () => undefined), { maxConcurrentAttempts: limit }).promise).rejects.toThrow('one through sixteen'); expect(api.claims).toBe(0);
 });
 
 async function realCenter(capacity: number) {

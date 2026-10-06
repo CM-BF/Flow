@@ -1,0 +1,235 @@
+[
+  {
+    "path": "apps/runner/src/admission-journal.test.ts",
+    "sha256": "4f2fdfabb097126297014da2fa88e704ac9f4119f4a29382eaff53b0bce16d7d",
+    "snapshot": "docs/evidence/s01p01/source-history/admission-journal.test.ts-4f2fdfabb097.txt",
+    "runs": [
+      "types-first-result.json",
+      "capacity-auth-result.json",
+      "capacity-green-result.json",
+      "capacity-pg-result.json",
+      "consumer-invalid-ack-result.json",
+      "types-boundaries-result.json",
+      "consumer-recovery-result.json",
+      "capacity-first-result.json",
+      "capacity-fixture-fixed-result.json",
+      "types-fixed-result.json",
+      "journal-bounded-green-result.json",
+      "consumer-lease-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/admission-journal.test.ts",
+    "sha256": "8331166a1ebfc895a22daf5d8fbdb2052d23656cc8c2b7b79f674b1de470ef63",
+    "snapshot": "docs/evidence/s01p01/source-history/admission-journal.test.ts-8331166a1ebf.txt",
+    "runs": [
+      "types-auth-scoped-result.json",
+      "journal-fifo-red-result.json",
+      "types-journal-fixed-result.json",
+      "journal-fifo-fixed-result.json",
+      "capacity-auth-scoped-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/admission-journal.test.ts",
+    "sha256": "c338bb5d7f805d64e695a64c3c09e30f717bf341bd8e13ce7b8a90a9838abf1e",
+    "snapshot": "docs/evidence/s01p01/source-history/admission-journal.test.ts-c338bb5d7f80.txt",
+    "runs": [
+      "capacity-red-result.json",
+      "journal-red-result.json",
+      "journal-green-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/admission-journal.test.ts",
+    "sha256": "ee98f31764184eedf903e401ef98f4e8dfc97656c8c29bdb085b782215226b78",
+    "snapshot": "docs/evidence/s01p01/source-history/admission-journal.test.ts-ee98f3176418.txt",
+    "runs": [
+      "capacity-final-result.json",
+      "journal-final-result.json",
+      "consumer-final-result.json",
+      "lease-final-result.json",
+      "types-final-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/admission-journal.ts",
+    "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+    "snapshot": "docs/evidence/s01p01/source-history/admission-journal.ts-8a8180ddcc29.txt",
+    "runs": [
+      "types-auth-scoped-result.json",
+      "capacity-final-result.json",
+      "journal-final-result.json",
+      "consumer-final-result.json",
+      "types-journal-fixed-result.json",
+      "lease-final-result.json",
+      "journal-fifo-fixed-result.json",
+      "capacity-auth-scoped-result.json",
+      "types-final-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/admission-journal.ts",
+    "sha256": "a732698c2a6770e92d01a0fe225152fde5b5695325f425f787a25fdad6091d60",
+    "snapshot": "docs/evidence/s01p01/source-history/admission-journal.ts-a732698c2a67.txt",
+    "runs": [
+      "capacity-red-result.json",
+      "journal-green-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/admission-journal.ts",
+    "sha256": "f074eda352d606a916080172ee9ea4b119fff7ceede404185dc5d687056971c8",
+    "snapshot": "docs/evidence/s01p01/source-history/admission-journal.ts-f074eda352d6.txt",
+    "runs": [
+      "types-first-result.json",
+      "journal-fifo-red-result.json",
+      "capacity-auth-result.json",
+      "capacity-green-result.json",
+      "capacity-pg-result.json",
+      "consumer-invalid-ack-result.json",
+      "types-boundaries-result.json",
+      "consumer-recovery-result.json",
+      "capacity-first-result.json",
+      "capacity-fixture-fixed-result.json",
+      "types-fixed-result.json",
+      "journal-bounded-green-result.json",
+      "consumer-lease-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime-capacity.test.ts",
+    "sha256": "236fb7c9e1823b1a02451b198782e7bcef6f81dc1b1bbc6595f7c85945196b29",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime-capacity.test.ts-236fb7c9e182.txt",
+    "runs": [
+      "capacity-pg-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime-capacity.test.ts",
+    "sha256": "40e103f5d9941e7519a80b8d116a0ac316a6376bbbe570cc51a3dc11e63b3d78",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime-capacity.test.ts-40e103f5d994.txt",
+    "runs": [
+      "capacity-final-result.json",
+      "journal-final-result.json",
+      "consumer-final-result.json",
+      "lease-final-result.json",
+      "types-final-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime-capacity.test.ts",
+    "sha256": "593cf01b88de0e1365d28a42f6c11ec545006a3f754b9ad08c267db1dbe8c49b",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime-capacity.test.ts-593cf01b88de.txt",
+    "runs": [
+      "types-auth-scoped-result.json",
+      "capacity-auth-scoped-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime-capacity.test.ts",
+    "sha256": "bffccb9b59168a0f56bcb6ecec52dbf75b70d9bddc4ec4ab948ad03a3e331494",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime-capacity.test.ts-bffccb9b5916.txt",
+    "runs": [
+      "capacity-green-result.json",
+      "consumer-recovery-result.json",
+      "capacity-fixture-fixed-result.json",
+      "types-fixed-result.json",
+      "journal-bounded-green-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime-capacity.test.ts",
+    "sha256": "ce9bced1e395c0704d686d4d2d0f1567eaadab3f04969d577cda582ed669f3a2",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime-capacity.test.ts-ce9bced1e395.txt",
+    "runs": [
+      "journal-fifo-red-result.json",
+      "capacity-auth-result.json",
+      "consumer-invalid-ack-result.json",
+      "types-boundaries-result.json",
+      "types-journal-fixed-result.json",
+      "journal-fifo-fixed-result.json",
+      "consumer-lease-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime-capacity.test.ts",
+    "sha256": "e36772427a95fb88eb41ad44c481f197dbe68b34f138bd826ec6a21bdf738bb8",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime-capacity.test.ts-e36772427a95.txt",
+    "runs": [
+      "capacity-red-result.json",
+      "types-first-result.json",
+      "capacity-first-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime.ts",
+    "sha256": "38448a6d89890315047d3e82f192481eb78fc159c98ab44547d70925a6d65042",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime.ts-38448a6d8989.txt",
+    "runs": [
+      "capacity-red-result.json",
+      "journal-red-result.json",
+      "journal-green-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime.ts",
+    "sha256": "90df43508ce748fe08f201a6781b3814a4427539c20e77bacb6c2f56bd848f33",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime.ts-90df43508ce7.txt",
+    "runs": [
+      "capacity-final-result.json",
+      "journal-final-result.json",
+      "consumer-final-result.json",
+      "lease-final-result.json",
+      "types-final-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime.ts",
+    "sha256": "9fb515d0c00b3af3bfc91b471797383de861b16608c31dfb348e4c7d18392022",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime.ts-9fb515d0c00b.txt",
+    "runs": [
+      "journal-fifo-red-result.json",
+      "capacity-auth-result.json",
+      "capacity-green-result.json",
+      "capacity-pg-result.json",
+      "consumer-invalid-ack-result.json",
+      "types-boundaries-result.json",
+      "consumer-recovery-result.json",
+      "types-fixed-result.json",
+      "types-journal-fixed-result.json",
+      "journal-bounded-green-result.json",
+      "journal-fifo-fixed-result.json",
+      "consumer-lease-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime.ts",
+    "sha256": "a35ce988210d331795f1e1979e5a32af059fd294398f7498701d61f6e9c5c529",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime.ts-a35ce988210d.txt",
+    "runs": [
+      "types-auth-scoped-result.json",
+      "capacity-auth-scoped-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime.ts",
+    "sha256": "e3345b7f5ac4f255ea0eeda952087c893b7adb0a714568455f90470de82c1d6e",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime.ts-e3345b7f5ac4.txt",
+    "runs": [
+      "types-first-result.json",
+      "capacity-first-result.json",
+      "capacity-fixture-fixed-result.json"
+    ]
+  },
+  {
+    "path": "apps/runner/src/runtime.ts",
+    "sha256": "cb91b42d9bc672b767f8539c2e5989e558c896a95acf128cca3b7b4519dac740",
+    "snapshot": "docs/evidence/s01p01/source-history/runtime.ts-cb91b42d9bc6.txt",
+    "runs": [
+      "capacity-settle-result.json",
+      "lease-settle-result.json",
+      "types-settle-result.json"
+    ]
+  }
+]

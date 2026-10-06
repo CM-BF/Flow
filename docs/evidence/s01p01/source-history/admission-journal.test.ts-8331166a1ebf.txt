@@ -51,7 +51,6 @@ it('clears only a definite empty response and bounds retained assignments to six
   expect(journal.unresolved(new Set())).toBe(false);
   for (let i = 0; i < 16; i++) { await journal.begin(); await journal.accept({ ...assignment, attemptId: `attempt-${i}` }); }
   await expect(journal.begin()).rejects.toThrow('Sixteen');
-  expect((await AdmissionJournal.open(path)).unresolved(new Set(Array.from({ length: 16 }, (_, i) => `attempt-${i}`)))).toBe(false);
 });
 
 it('fails closed on corrupt or oversized existing journals', async () => {

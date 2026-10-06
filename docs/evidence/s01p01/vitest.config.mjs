@@ -63,7 +63,8 @@ export default {
     "include": [
       "apps/runner/src/admission-journal.test.ts",
       "apps/runner/src/runtime-capacity.test.ts",
-      "apps/runner/src/runner.test.ts"
+      "apps/runner/src/runner.test.ts",
+      "apps/runner/src/lease.test.ts"
     ],
     "fileParallelism": false,
     "testTimeout": 15000,

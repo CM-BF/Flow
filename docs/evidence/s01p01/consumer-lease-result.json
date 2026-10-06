@@ -1,0 +1,59 @@
+{
+  "kind": "lease",
+  "selection": "counts delayed claim|never revives|checks the monotonic|keeps shutdown final|stops rather than retrying|closes heartbeat",
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/lease.test.ts",
+    "--config",
+    "docs/evidence/s01p01/vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "-t",
+    "counts delayed claim|never revives|checks the monotonic|keeps shutdown final|stops rather than retrying|closes heartbeat"
+  ],
+  "startedAt": "2026-10-06T08:20:41.853Z",
+  "completedAt": "2026-10-06T08:20:44.849Z",
+  "elapsedMs": 2994.578625,
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "sha256": "4f2fdfabb097126297014da2fa88e704ac9f4119f4a29382eaff53b0bce16d7d"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "sha256": "f074eda352d606a916080172ee9ea4b119fff7ceede404185dc5d687056971c8"
+    },
+    {
+      "path": "apps/runner/src/lease.test.ts",
+      "sha256": "64045287d3ed52c0966d237864c2306c8dde4ce6a4e7ddba88f528f6d029e2c3"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "sha256": "ce9bced1e395c0704d686d4d2d0f1567eaadab3f04969d577cda582ed669f3a2"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "9fb515d0c00b3af3bfc91b471797383de861b16608c31dfb348e4c7d18392022"
+    },
+    {
+      "path": "docs/evidence/s01p01/check.mjs",
+      "sha256": "6d2399c7078646cdf1d5ad10c4c0107b2cc34cb7a311feae3b61493feece1b15"
+    },
+    {
+      "path": "docs/evidence/s01p01/types.tsconfig.json",
+      "sha256": "c75d8c36a5bed972a5fa76fac39ad5c7e753040b5fcdefcd2634d5755b85b7ca"
+    },
+    {
+      "path": "docs/evidence/s01p01/vitest.config.mjs",
+      "sha256": "8db216ac2bf6ec48c3fae74de376f254154b685e59474fb06eb1a89f63428d34"
+    }
+  ],
+  "log": "docs/evidence/s01p01/consumer-lease.log",
+  "logSha256": "810fa0222e79845ef01ca0ef7cbd1c9be881f0ecd980b7cb056f744a4b5e5c4d",
+  "sourceHead": "b9f5eab48f7c1f6c3c79292dd6ea9a1e86459e5e"
+}

@@ -1,0 +1,42 @@
+--- tested-46/runtime.ts
++++ final/runtime.ts
+@@ -35,7 +35,8 @@
+   const options = { ...input, signal: AbortSignal.any([input.signal, shutdown.signal]) };
+   let fatal: unknown;
+   const stop = (error: unknown) => { fatal ??= error; shutdown.abort(error); };
+-  const client = authenticatedClient(options, stop);
++  const requests = new Set<Promise<unknown>>();
++  const client = authenticatedClient(options, stop, requests);
+   const adapters = options.adapters ?? [createFixtureAdapter()];
+   const stateDirectory = join(options.workingDirectory, textDigest(options.baseUrl.replace(/\/$/, '')));
+   await prepareDirectory(stateDirectory);
+@@ -101,6 +102,7 @@
+   } finally {
+     shutdown.abort();
+     await Promise.allSettled(active.values());
++    await Promise.allSettled(requests);
+   }
+   if (fatal) throw fatal;
+ }
+@@ -123,12 +125,17 @@
+ }
+ 
+ /** Observe auth before heartbeat, replay or tool adapters can translate the original rejection. */
+-function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => void): FlowClient {
++function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => void, pending: Set<Promise<unknown>>): FlowClient {
+   const client = new FlowClient(options);
+   function guard<Args extends unknown[], Result>(operation: (...args: Args) => Promise<Result>) {
+-    return async (...args: Args): Promise<Result> => {
+-      try { return await operation(...args); }
+-      catch (error) { if (isHostAuthenticationError(error)) stop(error); throw error; }
++    return (...args: Args): Promise<Result> => {
++      const request = (async () => {
++        try { return await operation(...args); }
++        catch (error) { if (isHostAuthenticationError(error)) stop(error); throw error; }
++      })();
++      pending.add(request);
++      void request.then(() => pending.delete(request), () => pending.delete(request));
++      return request;
+     };
+   }
+   client.claim = guard(client.claim.bind(client));

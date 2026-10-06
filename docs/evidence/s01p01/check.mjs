@@ -5,12 +5,12 @@ import { openSync, closeSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 const [kind, label, selection] = process.argv.slice(2);
-assert(['journal', 'capacity', 'consumer', 'types'].includes(kind));
+assert(['journal', 'capacity', 'consumer', 'lease', 'types'].includes(kind));
 assert(/^[a-z][a-z0-9-]+$/.test(label ?? ''));
 assert(process.versions.node.startsWith('24.'));
 const repository = dirname(resolve(execFileSync('git', ['rev-parse', '--git-common-dir'], { encoding: 'utf8' }).trim()));
 const directory = 'docs/evidence/s01p01';
-const testFiles = kind === 'consumer' ? ['apps/runner/src/runner.test.ts']
+const testFiles = kind === 'lease' ? ['apps/runner/src/lease.test.ts'] : kind === 'consumer' ? ['apps/runner/src/runner.test.ts']
   : [kind === 'journal' ? 'apps/runner/src/admission-journal.test.ts' : 'apps/runner/src/runtime-capacity.test.ts'];
 const args = kind === 'types'
   ? [resolve(repository, 'node_modules/typescript/bin/tsc'), '-p', `${directory}/types.tsconfig.json`, '--noEmit']

@@ -1,0 +1,48 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool
+
+ ❯ apps/runner/src/admission-journal.test.ts (8 tests | 2 failed | 6 skipped) 4029ms
+   ↓ persists an unknown claim across restart without credentials or task text
+   ↓ atomically hands the claim to a durable assignment before execution, cleared only by matching completion ACK
+   ↓ serializes concurrent completion and the next claim handoff without losing either record
+   ↓ clears only a definite empty response and bounds retained assignments to sixteen
+   ↓ fails closed on corrupt or oversized existing journals
+   ↓ retains the original storage error and the persisted guard when a handoff cannot be written
+   × rejects a real FIFO at admission.json within a bounded child lifetime 2017ms
+   × rejects a real FIFO at admission.json.tmp within a bounded child lifetime 2012ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/admission-journal.test.ts > rejects a real FIFO at admission.json within a bounded child lifetime
+ FAIL  apps/runner/src/admission-journal.test.ts > rejects a real FIFO at admission.json.tmp within a bounded child lifetime
+AssertionError: expected { exit: null, signal: 'SIGTERM', …(2) } to deeply equal { exit: +0, signal: null, …(2) }
+
+- Expected
++ Received
+
+  {
+-   "error": undefined,
+-   "exit": 0,
+-   "signal": null,
++   "error": "spawnSync /opt/homebrew/Cellar/node@24/24.20.0/bin/node ETIMEDOUT",
++   "exit": null,
++   "signal": "SIGTERM",
+    "stderr": "",
+  }
+
+ ❯ apps/runner/src/admission-journal.test.ts:86:107
+     84|     encoding: 'utf8', timeout: 2000,
+     85|   });
+     86|   expect({ exit: child.status, signal: child.signal, error: child.erro…
+       |                                                                                                           ^
+     87|   expect(child.stdout).toBe('bounded-storage-rejection');
+     88| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 6 skipped (8)
+   Start at  01:21:12
+   Duration  4.24s (transform 90ms, setup 0ms, import 139ms, tests 4.03s, environment 0ms)
+
