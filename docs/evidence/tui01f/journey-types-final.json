@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-06T16:44:01.292882+00:00",
+  "freeBefore": 1222946816,
+  "requiredFreeBytes": 1082130432,
+  "sourceHead": "3b7f4ca3ff814f611f77406c089e59696db80e09",
+  "selectedRootFiles": [
+    "apps/tui/src/task-controls/fixture.ts",
+    "apps/tui/src/task-controls/journey.test.ts"
+  ],
+  "testCasesRun": 0,
+  "providerCalls": 0,
+  "pgCalls": 0,
+  "scope": "Focused static TypeScript compiler only, direct import type closure; not root noEmit or runtime import",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/tui01f/journey-focused-tsconfig.json",
+    "--pretty",
+    "false",
+    "--listFiles"
+  ],
+  "temporaryDirectory": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-types-y6j73gey",
+  "configurationSha256": "e78021825330cc6d6a84885cd91725acabadd1ada6881fd0f1536c7f0cc5d562",
+  "maxSeconds": 30,
+  "rawLimit": 2097152,
+  "rawAndTemporaryLimit": 8388608,
+  "state": "COMPLETED",
+  "exitCode": 0,
+  "elapsedSeconds": 2.1641594589455053,
+  "rawBytes": 98867,
+  "rawSha256": "d442ac18d8fdd50f91428d09472bf133896cdd469067e60268210c3c5d084b77",
+  "temporaryPeakSampledBytes": 0,
+  "temporaryRemoved": true,
+  "freeAfter": 1223426048
+}

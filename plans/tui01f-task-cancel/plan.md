@@ -30,3 +30,5 @@
 2026-10-06 16:23 UTC：同claim实施03测试harness源码；仅fixture.ts、journey.test.ts、cancel_driver.py。最多一个随机库/一个中心与runner/A-B-C三个轮次，两项显式cancel及A原key重报。完整checkpoint成功先于DROP/rm，整个owned PGID停止未确认则保留。尚未运行，04 App driver本轮不创建。
 
 2026-10-06 16:33 UTC：03固定da673获得SOURCE_PRECHECK_NO_P1_P2，仅源码；运行仍NOT_RUN，03/04未勾选。原a1f限定controller/static Ink批准与main83f保留。
+
+2026-10-06 16:45 UTC：TUI01F-03已执行有界focused类型检查，修正fixture宿主身份字段；实际两场景PG/PTY仍NOT_RUN，保留03 in-progress/04 pending。见[类型检查证据](../../docs/evidence/tui01f/journey-static-validation.md)。

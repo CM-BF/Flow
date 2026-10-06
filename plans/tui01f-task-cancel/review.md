@@ -1,6 +1,12 @@
+# TUI01F-03 静态修复增量待审
+
+Review target commit: 40508f18432ffc20eadd638b208841a364c72bea
+
+NOT_STARTED（本增量独立审查待安排）。fixture改为宿主executionIdentity并缺失拒绝，focused配置仅公开类型映射；作者首次1类型诊断→focused noEmit0，不运行旅程。原独立source-precheck保持绑定da673，不能自动扩为新增量批准。[增量与原始记录](../../docs/evidence/tui01f/journey-static-validation.md)。原9产品逐字未变，03/04仍open。
+
 # 当前 TUI01F-03 源码预检
 
-Review target commit: da673b81c4390c2e811d1582d68a9899180d55d2
+Historical source-precheck target: da673b81c4390c2e811d1582d68a9899180d55d2
 
 SOURCE_PRECHECK_NO_P1_P2。native_center_owner 完整读3文件及生命周期直接依赖，36绑定无差，未发现P1/P2；未运行tests/types/HTTP/PG/PTY/provider。此结论仅源审，不能替代实际旅程运行。请核中心受理后丢ACK、原key恢复/第二client身份、组停止/未知保留、checkpoint先于不可恢复清理与后继callback取消。固定manifest见[绑定](../../docs/evidence/tui01f/journey-source-manifest.json)，运行状态全部NOT_RUN。原9源已审已main，以下历史批准不扩大到本次新文件。
 

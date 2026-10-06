@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:33 UTC；原限定片main83f事实不变，03已独立源审 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:45 UTC；原限定片main83f事实不变，03局部类型检查已执行 |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
-| 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5 / 实现 a1f82f36a5e63f859ecdcdbd1da3575724e82101；03 source da673b81c4390c2e811d1582d68a9899180d55d2 |
-| 工作树dirty状态 | da673三新源停写；本次仅独立源审metadata，提交后clean |
+| 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5 / 实现 a1f82f36a5e63f859ecdcdbd1da3575724e82101；03 source 40508f18432ffc20eadd638b208841a364c72bea |
+| 工作树dirty状态 | 40508f18固定fixture增量；本次只证据/状态收口，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN da673b81c4390c2e811d1582d68a9899180d55d2（03新源）；原a1f的35+1/focused types为已审历史，不覆盖新源 |
+| 检查状态 | PASSED 40508f18432ffc20eadd638b208841a364c72bea（2 roots focused noEmit0；首次1诊断已修）；实际03旅程NOT_RUN，原36历史不重复 |
 | 已集成main状态 / HEAD | 已集成 83f535b54f2390a729f02bc818e07ba684d94ccb；9源对target零差；03/04未验 |
-| 实现目标 | da673b81c4390c2e811d1582d68a9899180d55d2 |
+| 实现目标 | 40508f18432ffc20eadd638b208841a364c72bea |
 | 实现范围 | apps/tui/src/task-controls/fixture.ts, apps/tui/src/task-controls/journey.test.ts, apps/tui/test-fixtures/cancel_driver.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 显式取消控制已在主线；三轮验收代码通过独立源码预检，尚未实际运行。 |
+| 当前产出 | 显式取消控制已在主线；验收代码已修复任务身份读取并通过局部类型检查，真实终端旅程尚未运行。 |
 | 下一可用交付 | 资源窗口允许后，实测中心回执恢复、终端取消及退出续跑。 |
-| 当前阻塞 | ACTIVE: 真实HTTP/PG/PTY旅程尚无运行窗口；Web A→B优先，未进行依赖导入或类型检查。 |
+| 当前阻塞 | ACTIVE: 真实HTTP/PG/PTY旅程尚无运行窗口；Web A→B优先，运行依赖视图仍需另核。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，SOURCE_PRECHECK_NO_P1_P2 da673b81c4390c2e811d1582d68a9899180d55d2；实际03 NOT_RUN，非运行批准 |
+| Review | [review.md](review.md)，NOT_STARTED 40508f18432ffc20eadd638b208841a364c72bea（身份读取增量待审）；da673源审历史保留，实际03 NOT_RUN |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v1 |
 | 架构影响 | 现 interaction controller 增一种 task-cancel 意图与可选单方法端口；旧中心/授权/调度不变，架构基线更新待本片固定交 Execution Lead。 |
 
@@ -41,3 +41,5 @@
 2026-10-06 16:25 UTC：03新source `da673b81c4390c2e811d1582d68a9899180d55d2`；[source manifest](../../docs/evidence/tui01f/journey-source-manifest.json) / [职责与未运行边界](../../docs/evidence/tui01f/journey-source-preparation.md)。03未完成、04未实现；本次只静态源/空白核验，无新增运行证据。
 
 2026-10-06 16:33 UTC：归档native_center_owner唯一独立源审（3源/36bindings无差、0运行）。[原始review](../../docs/evidence/tui01f/independent-journey-source-review.json) SHA44f2b93439e05b11eff0368f26e210b790cdeab7ac1cf1905128af511474cc05；[bindings](../../docs/evidence/tui01f/independent-journey-source-bindings.json)。03/04仍open；不把原36局部通过、源码预检或旧main接收扩大为新旅程验收。
+
+2026-10-06 16:45 UTC：新增focused类型检查首次exit2/唯一TS2339→宿主executionIdentity修复→exit0，两轮约2.18s/2.16s，0 tests/PG/PTY/provider。[固定原始与资源](../../docs/evidence/tui01f/journey-static-validation.md)。9保护源及23输入逐字未变；本次不执行实际03，不扩大旧源审批准。
