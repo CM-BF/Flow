@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:03:06 UTC / mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:27:04 UTC / main8d8ab520a9d43c7b9dafb22911416ee799ebf665 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,10 +12,10 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066；已含TUI01A、R05C/C1、S01P02与聊天操作界面。真实Codex进程诊断和配置接入仍后继；个人backend/static保持b1c2e398、accepting v12。10:00:58.896Z实际看板122源且账本available。 |
+| 已集成main状态 / HEAD | 8d8ab520a9d43c7b9dafb22911416ee799ebf665；已含TUI01A、R05C/C1、R05D配置D0、SVC04工具与D06固定f181图。真实Codex启动与实际新Web/旧后台兼容仍待验；个人backend/static保持b1c2e398、accepting v12。10:22:38.966Z实际看板126源/账本available；S01P03新canonical下一批登记。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 终端会话首片、Codex普通任务执行接口和聊天操作已进入主线；工程任务通路进入准备。 |
+| 当前产出 | 终端与网页正在共用发送确认规则；工程工作区通路正在接通，网页独立发布工具已进入主线。 |
 | 下一可用交付 | 独立更新网页，并交付可实际改代码、运行受信检查和回看差异的工程通路。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -92,3 +92,5 @@ main3773db5已推送clean；G01/P02/F01/WPF-M02分别获独立审查，必要组
 2026-10-06 08:57:11 UTC：SVC03实际窗口已结束，接受v12；4任务成功、无未完attempt/等待队列、业务摘要及迁移列表保留。一次属性顺序比较误报保留，未重复refresh。0operator provider/用户tab操作。新成熟界面六大task沿WPF-001唯一源，宿主依赖见FLOW-002-T09。
 
 2026-10-06 09:45 UTC：新增已授权SVC04 Web独立发布后继，复用当前固定artifact并保留正在执行的后台任务与旧tab惰性资源；具体实现由原runner_owner在TUI修复安全点独立领取。视觉片已main不等个人服务已更新，不为纯前端发布复用全后台drain假称独立。
+
+2026-10-06 10:27:04 UTC：本批只对齐已审主线与实际运行版本。TUI01B共享ACK与跨客户端409读恢复由runner_owner独立实施；ENG01A E0收据关联/完成门禁限定批准，E1真实Git/checker纵向实施；SVC04的合成兼容与58项真实构建JS请求不替代个人新Web/旧b1c后台的兼容证据。完整工程、真实Codex与新Web发布保持open；不新增provider或重复产品检查。
