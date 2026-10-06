@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 23:35 UTC / main0da869f7（文档接收；个人运行源单列） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 23:47:36 UTC / main b178d17a（固定源码与个人运行源分开） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin93a92c91已接远程准备、三缓存结果与X01单一来源迁移；23:14:39实际dashboard181源。个人backend af51 accepting v18、Web d629 v3保持。 |
+| 已集成main状态 / HEAD | main/origin b178d17a已接远程候选、182来源及环境恢复记录。本次同af51中心恢复成功且独立核对通过；runner accepting v18、Web d629 v3保留，root已恢复main clean。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 原数据库与协作连接已恢复；个人后台正在按原版本准备恢复，现有网页保留。 |
-| 下一可用交付 | 恢复个人后台后按实际空间安排已准备的检查；远程验证继续等待用户原选择。 |
-| 当前阻塞 | ACTIVE: 共享数据库已恢复，个人后台仍不可连接；原版本恢复准备优先。空间仍不足局部验证余量，远程启用等待用户原选择。 |
+| 当前产出 | 个人后台已按原版本恢复，原数据库、任务、配置和网页保持；开发工作区已恢复，未新增模型调用。 |
+| 下一可用交付 | 按实际空间继续终端设置与完整工具原文验证；长期自托管服务监督已列入现有发布后继，远程验证等待用户原选择。 |
+| 当前阻塞 | ACTIVE: 23:34最后实采余量仍低于局部验证线，不能据服务恢复启动检查；远程启用仍等待用户原选择。 |
 | 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -365,3 +365,5 @@ Mika协调读取失败后，Lead独立确认OrbStack Stopped、Docker socket缺�
 23:35追加事实：唯一orbctl start在15,118ms返回timeout1，随后只读Running；未重试。固定原容器8项身份均同19:26锚后仅一次start exit0，23:34:50 healthy/55432 listening，协调list正常。未重建容器/卷、未操作其他自启动服务；恢复cause仍unknown。实际free1,055,133,696B，仍不足产品检查余量。个人center61227仍无监听、Web61228保持；旧SVC claim已released，新owner仅准备af51/v18精确恢复，旧362/v15许可不可重用。当前共享重验证无holder，个人恢复准备优先。[实际恢复与identity](../../docs/quality/resource-space-2026-10-06/daemon-recovery-2332/container-after.json)。
 
 2026-10-06 23:38 UTC：原daemon恢复回执已由native_center_owner独立只读限定APPROVED_RECORDED_RECOVERY_ONLY，11绑定/current同源，8项容器身份与一次启动证据一致；不证明DB业务内容或个人center恢复。[独审](../../docs/quality/resource-space-2026-10-06/daemon-recovery-2332/independent-result-review.json)。新center恢复由原owner合法claim22000abe的两个精确范围准备，OPS14监督module复用，不重跑旧许可。TUI01G源审已归档，pending validation不改成产品批准。
+
+2026-10-06 23:47:36 UTC：同版本中心恢复窗口已闭合。固定d834准备、a498原始结果由独立角色核对；一次spawn/2.095s/8项检查，64表raw摘要本次全部相同，runner/Web记录、私有配置与retained产物不变。root从af51恢复main b178 clean，main/origin未漂移。未新增个人probe、模型、任务或迁移；23:32退出根因仍unknown，不将后继监督策略作为根因。唯一操作事实见personal-history-compatibility的center-recovery-af51，源窗口与独审见I02对应2343记录。
