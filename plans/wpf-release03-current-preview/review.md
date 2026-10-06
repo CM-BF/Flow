@@ -57,3 +57,7 @@ c18bd6630cbdbb431460688a0f6bea9248f4151f一行history模式标签修正待源码
 ## 2026-10-06 16:55:32 UTC 新源码待独审
 
 Target `9927bb071494ec16a9d8091a6ba5edb4ea72c18a`，only browser delta。请核exact conversation Files两调用、原Send/Queue key/body/ref断言、all完整12raw proof与history10raw双分支、原失败保留/累计预算。fixture及historycontract59cde字节不变；本段没有运行verifier/types/PG/browser。原raw已由root独审接受，仅代表A可作后继条件；B仍须新gate与实际通过。
+
+## 2026-10-06 17:11:55 UTC 新B-only作者运行（非完整批准）
+
+固定9927/实际b6c，A证明真实复用，B plain/文件选择到达后未知回执断言失败；点击Retry前已同键第二POST。19626ms/累计39935ms，两个自有进程和专库清理完整。原raw供独立核验，不能冒B兼容通过，未重复A或运行后修改source。

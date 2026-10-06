@@ -1,0 +1,172 @@
+{
+  "passed": false,
+  "historyPassed": true,
+  "history": [],
+  "app": {
+    "passed": false,
+    "checks": [
+      "Real plain Send omits both material fields and uses the legacy receipt path"
+    ],
+    "error": "expect(locator).toContainText(expected) failed\n\nLocator: getByRole('region', { name: 'RELEASE03 fixed attachment', exact: true }).getByRole('region', { name: 'Message receipt', exact: true })\nExpected substring: \"Receipt unknown\"\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toContainText\" getByRole('region', { name: 'RELEASE03 fixed attachment', exact: true }).getByRole('region', { name: 'Message receipt', exact: true }) with timeout 5000ms\n  - waiting for getByRole('region', { name: 'RELEASE03 fixed attachment', exact: true }).getByRole('region', { name: 'Message receipt', exact: true })\n    - locator resolved to <section aria-label=\"Message receipt\" class=\"flow-conversation-receipt\">…</section>\n    - unexpected value \"Sending message…RELEASE03 fixed attachmentWaiting for durable acceptance.\"\n",
+    "pageErrors": [],
+    "consoleErrors": [
+      {
+        "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "url": "http://127.0.0.1:51033/favicon.ico"
+      }
+    ],
+    "loadedAssets": [
+      {
+        "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/assistant-ui-CcdakA0V.css",
+        "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+      },
+      {
+        "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/index-DzESKX8S.css",
+        "sha256": "f7e34bb0b280ed753b5b2b40f509d90a9f36704c3f658136bacbe83d1e1ce036"
+      },
+      {
+        "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/rolldown-runtime-qXqUbbKo.js",
+        "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+      },
+      {
+        "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/index-CZaGITme.js",
+        "sha256": "a7178926f022221df9cba8b816145c2bafed25ba8239ab8e0ae617d17a8b843e"
+      },
+      {
+        "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/assistant-ui-C7NurJFc.js",
+        "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e"
+      }
+    ]
+  },
+  "errors": [],
+  "cleanupErrors": [],
+  "historyEvidence": {
+    "run": "all-20261006-164711-15b54e",
+    "sourceCommit": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+    "contractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+    "files": [
+      {
+        "name": "app-failure.png",
+        "bytes": 54336,
+        "sha256": "767dd49678fdb83a41192e55c9df9c4532e7de10da036628902d8a6f7e7b869a"
+      },
+      {
+        "name": "app.json",
+        "bytes": 1878,
+        "sha256": "e430516442a395fcb00bc06510cddd61534d9eac8f4f54f500bad15d4206df04"
+      },
+      {
+        "name": "budget.json",
+        "bytes": 135,
+        "sha256": "bf6dcf76be58f8ffa29d35bb3f561e3c6dc05000d9c21e70282cc61e2369a671"
+      },
+      {
+        "name": "cleanup.json",
+        "bytes": 414,
+        "sha256": "6db59c1782760399a6e5dd424f08db5fed3dcc43d68dbd476786ebb05c7010a1"
+      },
+      {
+        "name": "database-owner.json",
+        "bytes": 169,
+        "sha256": "26c7e4618e705fe5f20f7e8b794b68fb74b1b7ce9e9dad1c46471be4e7a0f971"
+      },
+      {
+        "name": "history.json",
+        "bytes": 12466,
+        "sha256": "960d62b355e36aa1f0a3ab2ac4fbcaf3bed30810924376830914d738678832ad"
+      },
+      {
+        "name": "outcome.json",
+        "bytes": 293,
+        "sha256": "4059ca8b2ba00147d5e4a255d3710a22ec4fc0db25a6d8427e4f2ada41c32844"
+      },
+      {
+        "name": "process.log",
+        "bytes": 7130,
+        "sha256": "119618847811d66593e9207678215b1dcabd710eee7edb5988646be99197e64c"
+      },
+      {
+        "name": "sources.json",
+        "bytes": 5521,
+        "sha256": "705a1a8dcce18bed7a318c45816f3c24b275eb057e12fbd66761fa7cf351c176"
+      },
+      {
+        "name": "supervisor.json",
+        "bytes": 16929,
+        "sha256": "7d3daea3bf3a8b42fee3b56f7bd049890ccc7e903968f7cb091fed1ebddab49e"
+      },
+      {
+        "name": "wire.json",
+        "bytes": 77397,
+        "sha256": "0625c4f54e11ccd7e6a8f63b2b54d2fe159d18330231a215af2c53a4707e07eb"
+      },
+      {
+        "name": "worker.json",
+        "bytes": 15268,
+        "sha256": "d0c2eec40f45a8ccc92ce50f5fd5e7c3cf6308392a91e872c057e90a95c7afb4"
+      }
+    ],
+    "backend": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "head": "af51c621696230fbced12227670f014ca73bd8a1",
+      "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+      "metadata": [
+        {
+          "path": "docs/evidence/svc05-history-compatibility/claim-receipt.json",
+          "sha256": "3b7aa17ed2d3dcd428a01aedc784b084b6d0a023e22d1a250e18b499499cd716"
+        },
+        {
+          "path": "docs/evidence/svc05-history-compatibility/dependency-view.json",
+          "sha256": "8eca2632a14ffaf3c8aaf9cec4b0a491b56b88ebc94a55d22ba03679222d4bde"
+        },
+        {
+          "path": "docs/evidence/svc05-history-compatibility/interface.md",
+          "sha256": "829daf5f3c35be84f7a0b9414b836d271f0505c19bfc89fba4134e3dbbf68b2c"
+        },
+        {
+          "path": "docs/evidence/svc05-history-compatibility/manifest.json",
+          "sha256": "5eb1f1a5aa1bbfc15b5d45bfca48a2332b1c42b9954aed49e67aec65b5069754"
+        },
+        {
+          "path": "docs/evidence/svc05-history-compatibility/old-a-result.json",
+          "sha256": "7292991d07dadbd920a44e3be22c4b8d7a908d308fd52704d566e2165c27c234"
+        },
+        {
+          "path": "docs/evidence/svc05-history-compatibility/old-a-review.json",
+          "sha256": "a1304d49692d80b0d9aa36f990eab2b19a9bc0602354f7b58ce418a39f17e24d"
+        },
+        {
+          "path": "docs/evidence/svc05-history-compatibility/provision.json",
+          "sha256": "c903fbfd2552ba02fb67b5c4dbae2d350701ec8acdea03a5add6ac997b3f524d"
+        },
+        {
+          "path": "docs/evidence/svc05-history-compatibility/quality.md",
+          "sha256": "4d3174b95347d6bee81d719cd8a100b39230acfbb6797255d0d141a6d33ba3d3"
+        },
+        {
+          "path": "docs/evidence/svc05-history-compatibility/source-bindings.json",
+          "sha256": "f9a76ccdd93b3b49fa38489ffb83a6008dcd43934c6d51257d4809d293901af8"
+        },
+        {
+          "path": "docs/evidence/svc05-history-compatibility/source-precheck.json",
+          "sha256": "bef82168b40dfd3e7217eaa419141576f5625d2f3a78c4bb6358170f7fb70290"
+        },
+        {
+          "path": "plans/svc05-history-compatibility/plan.md",
+          "sha256": "90541be95f20c50127c05afe46214b72a8e1204071624354dd5535d66b952a83"
+        },
+        {
+          "path": "plans/svc05-history-compatibility/review.md",
+          "sha256": "9d74948f5f695a1b75a434cf5845c51f99d036bd278668aa9b5f7f50e4a72c0c"
+        },
+        {
+          "path": "plans/svc05-history-compatibility/status.md",
+          "sha256": "5256457c6b31f2690cd92a7f42537cbb7742c789962a7dd9486744191d9fae41"
+        }
+      ]
+    },
+    "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "sourceMode": "all",
+    "sourcePhaseB": "FAILED"
+  }
+}

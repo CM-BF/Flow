@@ -57,3 +57,7 @@
 ## 2026-10-06 16:55:32 UTC locator / proof清码停点
 
 复用已读find-skills、clean-code、codebase-design本地方法：定位以实际conversation owner为Interface，避免first/nth与全页歧义；proof保唯一history事实函数，只适配已观察10/12raw两种生命周期，完整失败材料/清理/预算共同约束，不重写原raw。未新增通用框架，fixture/产品/工具零改。Git文本差异和逐字hash核31raw/契约不变；这不是verifier执行或类型通过。首次git add因sparse匹配拒绝，随后仅对明确授权单文件使用git add --sparse，没有改sparse配置。当前运行额度不消耗。
+
+## 2026-10-06 17:11:55 UTC B-only安全收口
+
+只执行新freshgate一次，不重跑A；proof真实消费与B失败分开。原raw不改，先记录Sending→消失以及点击Retry前已出现same-key第二POST，未猜测传输/产品因果；不把正确幂等重放当手动恢复完整验收。原窗口cleanup confirmed/无provider，累计39935ms，后继不得自动重试。仅metadata封存、源码9927冻结。

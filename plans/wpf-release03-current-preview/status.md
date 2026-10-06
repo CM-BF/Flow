@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:55:32 UTC |
+| 最近更新时间 | 2026-10-06 17:11:55 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
@@ -13,15 +13,15 @@
 | 工作树dirty状态 | 修复源码已提交；本段metadata提交前观察待提交，最终commit/push后双端clean另核，不当运行时HEAD |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PARTIAL c18bd6630cbdbb431460688a0f6bea9248f4151f；A两项PASS，B plain通过后locator失败 |
+| 检查状态 | PARTIAL 9927bb071494ec16a9d8091a6ba5edb4ea72c18a；成功A复用；B未知回执断言失败 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；源码条件已审，新组合部分运行；完整兼容未通过 |
 | 实现目标 | 9927bb071494ec16a9d8091a6ba5edb4ea72c18a |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 后台两项检查通过；页面测试定位和证据复用已修，等待独审 |
-| 下一可用交付 | 修正测试定位并复用已通过后台证据完成真实页面检查 |
-| 当前阻塞 | ACTIVE: 页面验证尚未完成；等待修复独审与独占运行窗口 |
+| 当前产出 | 后台证据复用和文件选择通过，页面回执时序仍待定位 |
+| 下一可用交付 | 查明丢回执后的重发时序，再完成页面兼容验证 |
+| 当前阻塞 | ACTIVE: 丢回执后已出现同键第二请求，未知回执断言未满足；完整兼容待验 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，269103d源码条件APPROVED，1a7 P1源修已闭合；完整兼容NOT_STARTED；旧432b源码条件APPROVED |
 
@@ -110,3 +110,11 @@ B真实App plain Send省略材料字段与旧receipt路径已PASS；随后Files 
 固定`9927bb071494ec16a9d8091a6ba5edb4ea72c18a`仅browser脚本：Files及两次附件选择/芯片定位统一用真实conversation region；Send、Queue、回执、输入沿该owner，原key/body/ref断言不变。app-only可接受独立gate钉住的完整all失败旅程12raw，只复用其中连续A prefix，旧B失败和截图保留；两process均退出、DB marker清理、预算与完整backend/artifact/contract必须一致。原history10raw入口保留，PNG只校hash不JSON parse，不重新hash已redact runner token正文。
 
 [root实际证据审](../../docs/evidence/wpf-release03/all-164711-root-review.json)、[peer源码建议](../../docs/evidence/wpf-release03/source-review-c18-files-peer.md)、[静态audit](../../docs/evidence/wpf-release03/app-repair-source-audit.json)。新源码没有运行；原31raw/319542B全字节不变，累计20309ms/余159691ms。旧all实际HEADba7dea、sourcec18不改；新source待独审，CORE独占PG期间本组0PG/Chrome/types/资源采样。
+
+## 2026-10-06 17:11:55 UTC 唯一B-only实际结果
+
+本人live核bfbv3四scope/9927实际HEADb6c clean后，按manager唯一gate运行modeapp。17:11:35.622Z起19626ms，完整消费已独立审查all12份历史证明，worker.history=[]，没有重跑A。固定af51 backend/506正式artifactd629不变。B plain省略材料通过，Files入口与实际既有文件选择已到达；附件turn成功202首响应被fixture丢弃，wire34/35记录同key/body/turn的第二POST已在测试点击Retry之前发生，second replay事实见[精确结果](../../docs/evidence/wpf-release03/app-result-171109.json)。
+
+回执断言先见Sending，后元素不见，等待Receipt unknown失败；这不证明产品业务失败，也未证明自动重发来自哪一层。保留原页面error[]、favicon404、全部wire/失败截图；Queue及手动原key recovery后续没有到达。compatibilityId=null，未生成/import通过报告。12raw145329B，旧31raw319542B逐字不变，合43raw464871B。
+
+自有DB flow_release03_3aa7c8c85b6548af9de2 marker确认删除，worker1710/Chrome3420 exit0，cleanup errors=[]；累计39935/180000ms，剩余140065ms。窗口已交回manager/root；无自动重试、源修改、资源重采。后继定位只能source-only，实际再验需要新固定独审与freshgate。

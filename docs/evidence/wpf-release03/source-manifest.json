@@ -19,9 +19,9 @@
     "protectedLocalInputDiff": "empty",
     "oldRunsRawHashes": "31 files unchanged, 319542 bytes",
     "newTargetTypecheck": "NOT_RUN",
-    "newTargetRuntime": "NOT_RUN",
+    "newTargetRuntime": "modeapp19626ms; sealed A proof consumed, B unknown receipt assertion FAIL; cleanup complete",
     "priorActualHistory": "all164711 two PASS",
-    "priorActualApp": "plain PASS; Files ambiguity; B incomplete",
+    "priorActualApp": "plain PASS and file selection reached; turn ACK dropped then same-key second POST before Retry click",
     "compatibility": "NOT_VERIFIED"
   },
   "executionMode": "history / app (pinned successful history only) / all; each requires its own fresh explicit gate",
@@ -42,7 +42,8 @@
   "historicalRunEvidence": [
     "history-result-152729.json",
     "history3-result.json",
-    "all-result-164711.json"
+    "all-result-164711.json",
+    "app-result-171109.json"
   ],
   "backendInput": "External fresh gate backend={path,head,tree,metadata:[{path,sha256}]}; root approved final af51 audit is candidate input, not run permission",
   "backendProvenance": {
@@ -55,5 +56,5 @@
   },
   "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
   "historyContractRegionBytes": 11859,
-  "gateAccounting": "All completed runs20309/180000ms; remaining159691ms; no automatic retry"
+  "gateAccounting": "All completed runs39935/180000ms; remaining140065ms; no automatic retry"
 }
