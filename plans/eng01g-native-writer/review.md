@@ -10,4 +10,4 @@ Base: 362af3bac77541e5a60979326bcf4d4b8c947915
 
 105 different分轮：96 affected +8 unchanged descriptor +1 reentry，最后单选20未选；最终root types0。初始peer握手与目录别名失败、诊断来源/退出记录限制全部保留，不把重叠相加。
 
-批准仅private exchange与受限工程writer的0query注入组合；缺authority不启动transport，unknown不变stopped。authority为受信host扩展点，本片没有生产实现，不证明actual模型>=Sol、实际强制范围或完整native停止。file-only仅本片策略，不限制另行审定的有界shell。旧profile/runtime/中心/fixture v1保持；后继公开purpose/receipt与真实模型验收仍未完成。源码继续停写等main接收。
+批准仅private exchange与受限工程writer的0query注入组合；缺authority不启动transport，unknown不变stopped。authority为受信host扩展点，本片没有生产实现，不证明actual模型>=Sol、实际强制范围或完整native停止。file-only仅本片策略，不限制另行审定的有界shell。旧profile/runtime/中心/fixture v1保持；后继公开purpose/receipt与真实模型验收仍未完成。已由main 557397e9f756bfd9500107d7c1d1ce0ae65f7906 精确接收；[main回执](../../docs/evidence/eng01g/main-receipt.json)。源码保持停写，原claim收口释放。
