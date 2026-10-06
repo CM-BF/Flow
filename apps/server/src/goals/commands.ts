@@ -22,15 +22,18 @@ export async function createGoal(pool: Pool, input: GoalCreation, key: string) {
   return { goal: accepted.value, replayed: accepted.replayed };
 }
 export async function changeGoal(pool: Pool, boss: PgBoss, goalId: string, input: GoalCommand, key: string): Promise<GoalCommandResult> {
-  const accepted = await command(pool, `goal:command:${goalId}`, key, input, async client => {
-    const state = await loadState(client, goalId, true);
-    requireNode(state, input.nodeId);
-    if (input.kind === 'define-input') return defineInput(client, state, input);
-    if (input.kind === 'execute') return execute(client, boss, state, input);
-    return acceptDelivery(client, state, input);
-  });
+  const accepted = await command(pool, `goal:command:${goalId}`, key, input, client => applyGoalCommand(client, boss, goalId, input));
   return { ...accepted.value, replayed: accepted.replayed };
 }
+/** Apply within the caller's transaction; authorization and command replay are caller-owned. */
+export async function applyGoalCommand(client: PoolClient, boss: PgBoss, goalId: string, input: GoalCommand): Promise<Result> {
+  const state = await loadState(client, goalId, true);
+  requireNode(state, input.nodeId);
+  if (input.kind === 'define-input') return defineInput(client, state, input);
+  if (input.kind === 'execute') return execute(client, boss, state, input);
+  return acceptDelivery(client, state, input);
+}
+
 async function explain(client: PoolClient, state: GoalState, kind: GoalExplanation['kind'], text: string, source: Omit<GoalExplanation['source'], 'projectRevision'>): Promise<GoalExplanation> {
   const updated = await client.query<{ explanation_version: number }>('UPDATE flow.goals SET explanation_version=explanation_version+1 WHERE id=$1 RETURNING explanation_version', [state.goal.id]);
   const version = updated.rows[0]!.explanation_version;
