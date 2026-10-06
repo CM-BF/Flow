@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-06T22:31:10.248650+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "state": "QUALIFICATION_REVIEWED_NO_RETIREMENT",
+  "bindings": [
+    {
+      "path": "docs/quality/dependency-retirement-2026-10-06/flow-workspace-cache-qualified-payload.json.gz",
+      "bytes": 3311047,
+      "sha256": "b5f39740a9f4db45a0b5793680834233d382235f1e4a663cc98f3a06a5dcd9b3"
+    },
+    {
+      "path": "docs/quality/dependency-retirement-2026-10-06/flow-workspace-cache-qualification-summary.json",
+      "bytes": 1242,
+      "sha256": "bd5cca0945a970736c0b59362466d8b2afe32d7371a1e12792ba5ce47a60507b"
+    },
+    {
+      "path": "docs/quality/dependency-retirement-2026-10-06/flow-workspace-cache-qualify-attributes.py",
+      "bytes": 7989,
+      "sha256": "accabc5d84b301d87400304a45a108a314155722bf325fd776eaa7bdf3aff815"
+    }
+  ],
+  "review": "Read complete qualification implementation and fixed summary. Exact 29606 target mode/owner/group/flags/xattr equality, no ACL, reversible original-map hash. Original sample6bindings independently hash checked. Fresh hash/identity/CAS must be validated before actual operation; all dependencies remain KEEP until fixed operator review.",
+  "limits": "No actual removal/reinstall/full-tree restore/performance proof. 508198354 logical bytes not physical reclaim."
+}

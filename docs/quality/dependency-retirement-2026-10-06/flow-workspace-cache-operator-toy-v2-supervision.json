@@ -1,0 +1,60 @@
+{
+  "atUnix": 1791326262.645161,
+  "freeBytes": 1096622080,
+  "minimumBytes": 33554432,
+  "permission": "second explicitly authorized run; real /private/tmp parent and durable OPS state-parent fix only; bounded resource-recovery operator toy only; 3 scenarios; 128KiB fixture + 128KiB results; <=30s; not product-test gate relaxation",
+  "sources": [
+    {
+      "path": "/tmp/flow-workspace-cache-payload-operator.py",
+      "bytes": 23526,
+      "sha256": "f187f94794f7a725109655905255236559f1f56f6a11c510163973eb6cb19036"
+    },
+    {
+      "path": "/tmp/flow-workspace-cache-payload-operator-toy.py",
+      "bytes": 9491,
+      "sha256": "d466fad833b81e4baaa7ead1c7694e6ee976713e24fc76849e03e027819e60ea"
+    }
+  ],
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "provider": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "realDependencyWrites": 0,
+  "state": "EXECUTED",
+  "report": {
+    "pid": 72935,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 168,
+    "stdout": "{\"selected\": 3, \"passed\": 3, \"exitCode\": 0, \"scratchRemoved\": true, \"fixtureBytes\": 4280, \"checkpointSha256\": \"e7a74395c2464992392277b7b1f3656917263597177c682e8528175a5ade786d\", \"elapsedMs\": 40}\n",
+    "stderr": "",
+    "observed_bytes": 195,
+    "retained_bytes": 195,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  }
+}

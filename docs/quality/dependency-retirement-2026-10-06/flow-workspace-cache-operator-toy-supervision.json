@@ -1,0 +1,66 @@
+{
+  "atUnix": 1791326197.533329,
+  "freeBytes": 1090301952,
+  "minimumBytes": 33554432,
+  "permission": "bounded resource-recovery operator toy only; 3 scenarios; 128KiB fixture + 128KiB results; <=30s; not product-test gate relaxation",
+  "sources": [
+    {
+      "path": "/tmp/flow-workspace-cache-payload-operator.py",
+      "bytes": 23167,
+      "sha256": "eecfc54c78f0cea11f6aff742a33f823fd61fc69a81710ba498de2289653752e"
+    },
+    {
+      "path": "/tmp/flow-workspace-cache-payload-operator-toy.py",
+      "bytes": 9447,
+      "sha256": "3545202e044f01e453080fc6872844272c6ae8ae621dbde00d05bdb5091bc9e9"
+    }
+  ],
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "provider": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "realDependencyWrites": 0,
+  "state": "EXECUTED",
+  "report": {
+    "pid": 25067,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 1,
+    "elapsed_ms": 124,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/flow-workspace-cache-payload-operator-toy.py\", line 172, in <module>\n    raise SystemExit(run())\n                     ~~~^^\n  File \"/tmp/flow-workspace-cache-payload-operator-toy.py\", line 145, in run\n    mod.write_new(RESERVATION, mod.encoded(reservation))\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/flow-workspace-cache-payload-operator.py\", line 63, in write_new\n    sync_directory(path.parent)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"/tmp/flow-workspace-cache-payload-operator.py\", line 50, in sync_directory\n    fd = os.open(path, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)\nNotADirectoryError: [Errno 20] Not a directory: '/tmp'\n",
+    "observed_bytes": 712,
+    "retained_bytes": 712,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  }
+}

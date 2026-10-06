@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-06T22:30:12.100968+00:00",
+  "source": "/tmp/flow-workspace-cache-qualify-attributes.py",
+  "sourceSha256": "accabc5d84b301d87400304a45a108a314155722bf325fd776eaa7bdf3aff815",
+  "rawBytes": 10581774,
+  "rawSha256": "f44c39c1ae10cddbfc10b38899c7849f3fd30a3b6b42eb2538922d916bc054f4",
+  "compressedPath": "/tmp/flow-workspace-cache-qualified-payload.json.gz",
+  "compressedBytes": 3311047,
+  "compressedSha256": "b5f39740a9f4db45a0b5793680834233d382235f1e4a663cc98f3a06a5dcd9b3",
+  "roundTripQualifiedEqual": true,
+  "roundTripOriginalMapEqual": true,
+  "originalMapRawSha256": "064104abd211285b77e8febfbde451e7cfcdb1c5fd3780cb2bdfce381ace8ab3",
+  "qualifiedFiles": 29606,
+  "qualifiedLogicalBytes": 508198354,
+  "keepUniqueFiles": 0,
+  "keepReasonCounts": {},
+  "xattrProfileCount": 1,
+  "ACL": {
+    "reader": "/bin/ls -lden <at most 256 exact literal paths>",
+    "batches": 220,
+    "observed": 56155,
+    "states": {
+      "absent": 56155
+    },
+    "errors": [],
+    "unknownRemainder": "KEEP"
+  },
+  "elapsedMs": 18699,
+  "noPayloadRehash": true,
+  "noDependencyMutation": true,
+  "priorAttempt": "Original direct gzip duplicated SRI; failed final size assertion before writing any manifest. No dependency changes."
+}

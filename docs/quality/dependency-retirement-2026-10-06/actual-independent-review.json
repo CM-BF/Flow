@@ -1,0 +1,231 @@
+{
+  "at": "2026-10-06T22:45:59.799962+00:00",
+  "reviewer": "assignment_review/gpt-6-astra",
+  "decision": "APPROVED_LIMITED_OPERATION_FACTS",
+  "findings": [],
+  "runId": "3111a61fe8964590ae9b68ce0538f965",
+  "sourceHead": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+  "sourceClean": true,
+  "retiredCount": 29606,
+  "exactBeforeAfterPairs": 29606,
+  "eventLines": 61064,
+  "pending": null,
+  "recoverableMapRawSha256": "064104abd211285b77e8febfbde451e7cfcdb1c5fd3780cb2bdfce381ace8ab3",
+  "restorePathsLocatable": true,
+  "preserveCounts": {
+    "directories": 4169,
+    "symlinks": 2228,
+    "generatedFiles": 73,
+    "CAS": 26549,
+    "packageIndexes": 581
+  },
+  "preservationEvidence": "Full counts/postcheck claims read and cross-bound to exact map. Reviewer independently sampled 15 metadata facts; did not rehash all payloads/CAS/indexes or rerun operator. Complete preserved hash/identity statements come from original operator preflight/postcheck.",
+  "currentSamples": [
+    {
+      "fileId": 0,
+      "targetAbsent": true,
+      "CASIdentityMatches": true
+    },
+    {
+      "fileId": 14803,
+      "targetAbsent": true,
+      "CASIdentityMatches": true
+    },
+    {
+      "fileId": 29605,
+      "targetAbsent": true,
+      "CASIdentityMatches": true
+    },
+    {
+      "group": "directories",
+      "index": 0,
+      "metadataMatches": true
+    },
+    {
+      "group": "directories",
+      "index": 2084,
+      "metadataMatches": true
+    },
+    {
+      "group": "directories",
+      "index": 4168,
+      "metadataMatches": true
+    },
+    {
+      "group": "symlinks",
+      "index": 0,
+      "metadataMatches": true
+    },
+    {
+      "group": "symlinks",
+      "index": 1114,
+      "metadataMatches": true
+    },
+    {
+      "group": "symlinks",
+      "index": 2227,
+      "metadataMatches": true
+    },
+    {
+      "group": "generatedAndRootCache",
+      "index": 0,
+      "metadataMatches": true
+    },
+    {
+      "group": "generatedAndRootCache",
+      "index": 36,
+      "metadataMatches": true
+    },
+    {
+      "group": "generatedAndRootCache",
+      "index": 72,
+      "metadataMatches": true
+    },
+    {
+      "group": "packageIndex",
+      "index": 0,
+      "metadataMatches": true
+    },
+    {
+      "group": "packageIndex",
+      "index": 290,
+      "metadataMatches": true
+    },
+    {
+      "group": "packageIndex",
+      "index": 580,
+      "metadataMatches": true
+    }
+  ],
+  "supervisor": {
+    "pid": 22466,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 41009,
+    "observed_bytes": 268,
+    "retained_bytes": 268,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "runId": "3111a61fe8964590ae9b68ce0538f965",
+    "atUnix": 1791326631.65217,
+    "afterFreeBytes": 1079205888,
+    "stdoutSha256": "b20005a2f2201e717541477dd189f23b581de509c59374078f5f958792b9818f",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sharedVolumeDeltaBytes": 1769472,
+  "logicalSelectedBytes": 508198354,
+  "limits": [
+    "The shared volume free-space delta is not attribution of physical blocks reclaimed. 508198354 B is logical selected content, not reclaimed disk.",
+    "Resource preparation gate not reached; PG remains blocked.",
+    "Restore map is locatable and bound; no real restoration or runtime entrypoint verified. Marker remains NOT_RUNTIME_READY.",
+    "Supervisor intermediate UNKNOWN errno1 is preserved; final absent is reported after reap. Reviewer did not signal/restart/probe services."
+  ],
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/operator-independent-review.json",
+      "bytes": 1840,
+      "sha256": "d517cec2364c90775e47780247001283fd55d0bfdf48e7382662abf3a7826837"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/caller-review-and-final-guard.json",
+      "bytes": 464,
+      "sha256": "3e943e05846130b78ef57ca1b2f3fba665160cf4528bfe70c68efe00dccd3e5a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/one-shot-retire-reservation.json",
+      "bytes": 301,
+      "sha256": "e7c6f2c58b274fd2d34460ce88ac8e779517b1a9cc52b60b66b5c784b4771356"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/one-shot-retire-supervision.json",
+      "bytes": 629,
+      "sha256": "7f61f44a37a03b1bc7ba5e96c2414fd24422e68f39203613ff3c0dc781dea9e9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/actual-retirement-postcheck.json",
+      "bytes": 1721,
+      "sha256": "9060c3a4c09ee61c6440722d66294069d302e80d0d569aaea52ec85414a477a4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/one-shot-retire-permit.json",
+      "bytes": 522,
+      "sha256": "01924daf3b81ff46ea5872782d4f3942378ebc09a410ad5258bd0ad6d3ebcbc3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/one-shot-retire.stdout",
+      "bytes": 268,
+      "sha256": "b20005a2f2201e717541477dd189f23b581de509c59374078f5f958792b9818f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/one-shot-retire.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/flow-workspace-cache-qualified-payload.json.gz",
+      "bytes": 3311047,
+      "sha256": "b5f39740a9f4db45a0b5793680834233d382235f1e4a663cc98f3a06a5dcd9b3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/flow-workspace-cache-payload-operator.py",
+      "bytes": 23526,
+      "sha256": "f187f94794f7a725109655905255236559f1f56f6a11c510163973eb6cb19036"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/actions/3111a61fe8964590ae9b68ce0538f965/intent.json",
+      "bytes": 741,
+      "sha256": "0fdb58651e6b2931ec195d432140083d84584844269f720f5bbe875a91bb2e85"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/actions/3111a61fe8964590ae9b68ce0538f965/result.json",
+      "bytes": 240103,
+      "sha256": "c295132c692ed099322e987f52a89b9b5f7b2c29657604034ce4b0b583362691"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/actions/3111a61fe8964590ae9b68ce0538f965/events.jsonl",
+      "bytes": 2478862,
+      "sha256": "a960c2a5f2dc434644d5dd682c1d1ee74c0f957af9262c75fd258a0d43f0ba91"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/actions/3111a61fe8964590ae9b68ce0538f965/recoverable-manifest.json.gz",
+      "bytes": 3311047,
+      "sha256": "b5f39740a9f4db45a0b5793680834233d382235f1e4a663cc98f3a06a5dcd9b3"
+    }
+  ],
+  "reviewerOperations": {
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "delete": 0,
+    "restore": 0,
+    "fullRehash": 0
+  },
+  "currentMarker": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/node_modules/NOT_RUNTIME_READY.flow-payload.json",
+    "bytes": 477,
+    "sha256": "dc10fe4081ba8198e67767119af52ac85c1987b8d38acf1b2fe149d9b291083e",
+    "state": "NOT_RUNTIME_READY",
+    "run": "3111a61fe8964590ae9b68ce0538f965"
+  }
+}
