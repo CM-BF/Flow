@@ -1,3 +1,5 @@
+import { migrateContextObservationHistory } from './context-transparency/migration.js';
+import { registerContextHistoryRoutes } from './context-transparency/routes.js';
 import { registerGoalNativeExecutionRoutes } from './goal-native-executions/index.js';
 import { migrateNativeHarnessSources } from './native-harness-migration.js';
 import { migrateActiveSteering, registerActiveSteeringRoutes } from './active-steering/index.js';
@@ -83,6 +85,7 @@ export async function createServer(options: ServerOptions) {
     await migrateActiveSteering(pool);
     await migrateNativeHarnessSources(pool);
     await migrateAttachments(pool);
+    await migrateContextObservationHistory(pool);
     if (options.packageFetchHost) packageWorker = await startPackageFetchWorker(pool, options.packageFetchHost);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => {
@@ -158,6 +161,7 @@ export async function createServer(options: ServerOptions) {
   registerConversationQueueRoutes(app, pool, boss);
   registerConversationContextRoutes(app, pool);
   registerAttachmentRoutes(app, pool);
+  registerContextHistoryRoutes(app, pool);
   registerGoalToolRunRoutes(app, pool, boss);
   registerGoalGraphProposalRoutes(app, pool);
   registerKnowledgeRoutes(app, pool);
