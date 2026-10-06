@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:20 UTC；新窗口因保留产物比较误拒在材料前停止 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:21 UTC；描述符比较窄修与3纯例已固定待审 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -13,17 +13,17 @@
 | 工作树dirty状态 | 固定源码停写；本次仅own metadata提交，clean以实际Git回执为准 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED 0a8dd95bae123b3c749d859a42c2357e65321bcf（18不同纯/小文件用例分轮，入口语法）；真实host/PG/个人操作NOT_RUN |
+| 检查状态 | PASSED 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736（新增3纯例3/3；原18不同未重跑）；实际发布NOT_RUN |
 | 已集成main状态 / HEAD | 同版本中心恢复3271的41文件逐字同main6223c7493a3b6f392813a5d9d82c24d87312ad26（aca6接收，非祖先）；实际仍362/v15+caa1/v2，新发布未执行 |
-| 实现目标 | 0a8dd95bae123b3c749d859a42c2357e65321bcf |
-| 实现范围 | docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window.py, docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json, docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json, docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py, docs/evidence/svc05-history-compatibility/release-operation/observe.mjs |
+| 实现目标 | 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736 |
+| 实现范围 | docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window.py, docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json, docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json, docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py, docs/evidence/svc05-history-compatibility/release-operation/observe.mjs, docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/descriptor.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新现场身份和工作状态通过；保留产物字段值相同但比较器受键顺序影响，已在任何服务变更前停止并保存原始证据。 |
-| 下一可用交付 | 完成描述符比较的最小修正与独审后，另开受控窗口继续原发布。 |
-| 当前阻塞 | ACTIVE: 保留产物比较器误拒同值描述符；个人更新尚未开始，待局部修正。 |
+| 当前产出 | 已修正同值产物因字段顺序被误拒的问题；未知字段和实际值变化仍会停止发布。 |
+| 下一可用交付 | 增量独审后以全新现场准入继续原受控发布，不复用失败窗口。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；Lead APPROVED_EXECUTABLE_PREPARATION 0a8dd95bae123b3c749d859a42c2357e65321bcf，130fixed/129current无差；真实执行未开始 |
+| Review | [review.md](review.md)；原0a8独审保持，descriptor窄修待Lead增量独审；原21:18失败不改 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
 | 架构影响 | 仅证据范围的单次operator：确认Adapter复用host锁/同runner行锁，私有原件与audit先于精确字节替换；普通idle与产品API不变。准备未集成/未个人运行，待Execution Lead登记固定target。 |
 
@@ -111,3 +111,7 @@ GO经Lead已批准a7d提案1–5；当前实现/局部证明而非个人执行�
 ### 21:18新窗口停止
 
 01 fresh observed/613ms，02preflight exit1/57ms，唯一false retained。已保存descriptor三字段值全同而对象键顺序不同，JSON.stringify导致误拒；兼容报告null在preflight允许，不是此失败原因。03后及退役四步骤均未执行，没有drain时标/个人request；0个人变更/provider/用户tab。Lead已关闭源窗口，原raw不改，[分析与manifest](../../docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/analysis.json)。仅只读定位，尚未改比较器。
+
+### 2026-10-06 21:21 UTC 描述符等价窄修待审
+
+固定6e7109c47b41ae6d45fdcc9a8ef365375dcd2736，保存的真实01反例+键序/未知键/字段值/有序列表3纯例3/3；原18未重跑。只针对严格三字段tuple，普通数据hash/bytes/compatID不变；原窗口false/exit1与0后继动作保留，[delta](../../docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-README.md)。

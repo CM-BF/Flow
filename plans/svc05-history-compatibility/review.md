@@ -113,3 +113,7 @@ Execution Lead APPROVED_EXECUTABLE_PREPARATION target0a8dd95bae123b3c749d859a42c
 ## 21:18个人窗口前置失败（原准备批准不回填为执行通过）
 
 新exclusive窗口01通过、02 retained-only失败，后继零动作；确定旧比较器JSON.stringify误把descriptor键顺序当值差异。原false/exit1和全部源仍保留。仅基于存储事实定位，不另探测个人环境、不重跑，源码后继待窄修授权。
+
+## 2026-10-06 21:21 UTC descriptor窄修待增量独审
+
+source6e7109c47b41ae6d45fdcc9a8ef365375dcd2736，全局JSON等价不变；只严格三字段artifact对象及有序artifact数组复用专用比较。3纯例red→green，真实保存01反例通过；原18不重跑、真实个人窗口未重开。原失败raw/manifest保持，作者不自批。
