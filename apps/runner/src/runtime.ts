@@ -11,6 +11,7 @@ import { createFixtureAdapter } from './fixture.js';
 import { textDigest } from './verifier.js';
 import { AttemptControl, type LeaseGrant } from './attempt-control.js';
 import { EventOutbox, EventStorageError, replayPending, reportBatch } from './outbox.js';
+import { NativeExecutionError, type NativeExecutionSettlement } from './native-harness/settlement.js';
 
 export interface RunnerNotice { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained' | 'admission-blocked' | 'recovery-waiting'; attemptId?: string }
 export interface RunnerOptions {
@@ -195,6 +196,7 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   };
   const adapter = adapters.find(adapter => adapter.name === assignment.task.harness);
   let outcome: 'succeeded' | 'failed' | 'cancelled' = 'succeeded';
+  let nativeSettlement: NativeExecutionSettlement = 'settled';
   try {
     if (!adapter) throw new Error('The assigned harness is unavailable.');
     await control.assertOwnership();
@@ -214,12 +216,17 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
     await adapter.run(context);
   } catch (error) {
     if (error instanceof EventStorageError) throw error;
-    if (!options.signal.aborted && control.reason !== 'lost') {
+    if (error instanceof NativeExecutionError && error.settlement === 'unknown') {
+      nativeSettlement = 'unknown';
+      control.interrupt('lost');
+    } else if (!options.signal.aborted && control.reason !== 'lost') {
       if (control.reason !== 'cancel') options.onNotice?.({ type: 'adapter-failed', attemptId: assignment.attempt.id });
       outcome = control.reason === 'cancel' ? 'cancelled' : 'failed';
     }
   } finally { control.close(); await outbox.settle(); }
-  if (!options.signal.aborted && control.reason !== 'lost') {
+  // A prior cancel reason stays authoritative in AttemptControl, but is not proof
+  // that an adapter's external execution stopped. Retain its admission in that case.
+  if (nativeSettlement === 'settled' && !options.signal.aborted && control.reason !== 'lost') {
     await emit({ type: 'completed', outcome, ...(outcome === 'failed' ? { error: 'Harness execution did not complete.' } : {}) });
     return true;
   }
