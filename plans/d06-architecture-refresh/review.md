@@ -3,7 +3,7 @@
 状态：NOT_STARTED。
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Base：8f1481df880cf5077e1ddb9a8f302fe700a7ece8；target：UNKNOWN，候选提交后绑定完整SHA。
+- Base：8f1481df880cf5077e1ddb9a8f302fe700a7ece8；target：d5a87b851e3d5a820585180cb4efa47b6148632a。
 - Scope：apps/execution-dashboard/public/architecture-data.js、apps/execution-dashboard/test/architecture.test.mjs，以及本任务plan/evidence。
 - Reviewer：root（只读，尚未执行）。
 
@@ -13,4 +13,4 @@
 
 ## 检查、findings与结论
 
-尚未执行独立review；blocking findings未评估，不视为空。作者检查另见quality。新提交不自动继承旧D05或本任务未来approval。
+尚未执行独立review；blocking findings未评估，不视为空。作者检查见[validation](../../docs/evidence/d06/validation.md)，不替代独审。新提交不自动继承旧D05或本任务未来approval。
