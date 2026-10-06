@@ -1,10 +1,10 @@
 # X01 零长度metadata修复增量复审
 
-状态：NOT_STARTED
+状态：APPROVED
 
 Review target commit：bf33781450d2a5036e026ace03c1682e4d7f0f17
 
-[当前唯一增量manifest](../../docs/evidence/x01/leaf-meta-manifest.json)，delta base `2d20e35ca0019854e102cf051252675eb3f16da6`。生产仅Parser最大metadata参数及注释；测试仅扩类型与追加六种meta×前后位置12case，原53断言保持。真实12red→12green；最终65不同（51材料+14真实loader）与strict0、66own根删除。原43bindings中除两改动源码的41项逐字保持；原53不是修后65的额外累计。独立复审只读固定Git/source/raw，0新增执行；唯一P2待复核关闭。
+[当前唯一增量manifest](../../docs/evidence/x01/leaf-meta-manifest.json)，delta base `2d20e35ca0019854e102cf051252675eb3f16da6`。生产仅Parser最大metadata参数及注释；测试仅扩类型与追加六种meta×前后位置12case，原53断言保持。真实12red→12green；最终65不同（51材料+14真实loader）与strict0、66own根删除。原43bindings中除两改动源码的41项逐字保持；原53不是修后65的额外累计。独立复审只读固定Git/source/raw，0新增执行；Mika/gpt-6-astra于2026-10-06 13:17:47 UTC独立APPROVED，唯一P2已关闭、0剩余P1/P2；[正式收据](../../docs/evidence/x01/leaf-independent-review.json)。
 
 ---
 
