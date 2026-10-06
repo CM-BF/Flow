@@ -1,0 +1,134 @@
+{
+  "observedAt": "2026-10-06T10:04:04.831263+00:00",
+  "scopeOutside": [],
+  "changedPaths": [
+    "docs/evidence/web-platform/activityread01-main-release-receipt.json",
+    "docs/evidence/web-platform/attachment-shared-dependencies.json",
+    "docs/evidence/web-platform/d08-main-release-receipt.json",
+    "docs/evidence/web-platform/main-f181-closeout.json",
+    "docs/evidence/web-platform/main-f181-final-ledger.json",
+    "docs/evidence/web-platform/main-f181-management-check.json",
+    "docs/evidence/web-platform/main-f181-pre-release-ledger.json",
+    "docs/evidence/web-platform/main-f181-source-observation.json",
+    "docs/evidence/web-platform/mature-task-handoff.md",
+    "docs/evidence/web-platform/mature-theme-presentation-research.md",
+    "docs/evidence/web-platform/steiri01-main-release-receipt.json",
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-03-attachments/plan.md",
+    "plans/wpf-mature-03-attachments/status.md",
+    "plans/wpf-mature-06-chat/plan.md",
+    "plans/wpf-mature-06-chat/status.md"
+  ],
+  "checkedLinks": 95,
+  "brokenLinks": [],
+  "todos": [
+    {
+      "taskId": "WPF-001",
+      "count": 34,
+      "matchingOrderAndCompletion": true
+    },
+    {
+      "taskId": "WPF-MATURE-03",
+      "count": 6,
+      "matchingOrderAndCompletion": true
+    },
+    {
+      "taskId": "WPF-MATURE-06",
+      "count": 6,
+      "matchingOrderAndCompletion": true
+    }
+  ],
+  "parser": [
+    {
+      "id": "WPF-001",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "聊天补充指令、活动简化与任务关联已进入主线；附件资源和输入方案已收",
+        "next": "核实际看板关联；冻结附件合同与共享调用点，启动资源和输入接线；更新固定架构图",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementationErrors": []
+    },
+    {
+      "id": "WPF-MATURE-03",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "CONTEXTI知识App已main；GO明确本组附件端到端责任，完整资源/输入两案准备中，上传与@file仍未实现",
+        "next": "Web/root端到端附件负责；panels后端/w01输入预览并行只读方案，root固定合同后独立领取实际片段",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementationErrors": [
+        "实现目标需完整 SHA"
+      ]
+    },
+    {
+      "id": "WPF-MATURE-06",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "聊天补充指令与活动简化已进入主线；完整聊天和真实服务验收仍开放",
+        "next": "受控发布已接收界面；语音、跨重启恢复及其余聊天自然呈现仍待完成",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementationErrors": [
+        "实现目标需完整 SHA"
+      ]
+    }
+  ],
+  "productTests": 0,
+  "dashboardApi": 0,
+  "skills": {
+    "find-skills": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "clean-code": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "application": "Reuse installed skills; keep one current status, fixed-source evidence and timestamped history separate; no product changes or extra abstractions."
+  },
+  "readDiagnostics": [
+    "Tried nonexistent coordination/validation.mjs; actual normalizer is input.mjs and was read before writes.",
+    "Tried docs/OPS.md which is absent; current main AGENTS/plans rules were read instead."
+  ],
+  "finalMetadataCheckedAt": "2026-10-06T10:04:42.396758+00:00"
+}

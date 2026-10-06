@@ -52,3 +52,7 @@ Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资�
 installed core0.3.22已有attachment add/send/remove接口；当前Thread.onNew仅消费text，忽略message.attachments，因此新输入必须显式映射授权不可变refs，paperclip/预览不等于已发送。现core remove仅对尚未complete的attachment调用adapter.remove，center/outbox负责保留与in-use回收，不能依赖删草稿回调。官方[附件指南](https://www.assistant-ui.com/docs/guides/attachments)与[custom adapter](https://www.assistant-ui.com/docs/integrations/attachments/custom-adapter)仅作为方法来源，当前网站推荐版本不构成本项目SDK升级授权。本段无上传、provider或实际附件输入验收。
 
 当前两案和共享单写边界见[附件依赖清单](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。后端WPF-ATTACH01与Web WPF-ATTACHI01均仅候选：15与23 literal待root合同固定复核；F01仍持contracts/conversations.ts及共享出口，迁移号待其精确预留。Web调用点与TUI共享ACK迁移须一个owner/有序窗口，不能因09:51无writer就预领。首.txt限制、TTL/配额与template2均是proposal，不写为已批准公共合同。
+
+### 共享回执与上传恢复接缝（root/两owner只读方案）
+
+attachments[]/template2固定shape交F01唯一公共receipt decoder扩展，保旧template1与Web queue matcher，不另造第二份ACK验证器；附件UI与该输入成套接收，后台资源可先独立推进，不阻TUI首片。Web候选改recovery.ts替代自有receipts.ts，恢复查找/expiry/replay/pin与浏览器有限metadata intent由root冻结后才实施。unknown lookup404不证明未提交；重选原文件同digest/length/metadata才能原key重试，ready不自动附到新稿。16条/64KiB与recoveryScope仍只是提案，跨reload未知Send/Queue未因此获恢复承诺。详见[集中依赖](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。

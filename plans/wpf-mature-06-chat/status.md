@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 09:54:02 UTC |
+| 最近更新 | 2026-10-06 10:03:33 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,14 +14,14 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 聊天中的补充指令与活动简化已通过独立审查，等待主线接收；完整聊天验收仍开放 |
-| 下一可用交付 | 接收补充指令与活动简化片段；语音、跨重启恢复及其余聊天自然呈现仍待完成 |
+| 当前产出 | 聊天补充指令与活动简化已进入主线；完整聊天和真实服务验收仍开放 |
+| 下一可用交付 | 受控发布已接收界面；语音、跨重启恢复及其余聊天自然呈现仍待完成 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |
 | 检查状态 | NOT_RUN；当前为整体计划，已有子片检查只沿各canonical，不继承为全体验收 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；计划登记/大task功能验收分别记录 |
+| 已集成main状态 / HEAD | 局部STEIRI01与ACTIVITYREAD01已INTEGRATED f181d84b5fb3652d62e2a181acff442d42b3e066；整个大task尚未验收，个人产物未据此更新 |
 | Review | [review.md](review.md)，NOT_STARTED；完整大task未验收 |
 | 写权 | 管理632a7149 v3仅本计划目录；实现子task各自claim不由本表替代 |
 
@@ -29,7 +29,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-06-01 | in-progress | Web co-lead | 逐条引用stream/activity/queue/readability固定证据与限制，模块/fixture/真实provider分开，不重复勾整体Done。 |
 | WPF-MATURE-06-02 | in-progress | Web co-lead | admission仅快照非许可，POST重验、原key unknown、receiptRevision更新、received不冒模型遵从；模块和App接线分别验收。 |
-| WPF-MATURE-06-03 | in-progress | Web co-lead | 自然状态/Details按需绑定普通hi、stream/tool、queue等待、断线unknown四旅程；ACTIVITYREAD仅展开活动区，queue/stream/react与全组合仍开放；[细目](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。 |
+| WPF-MATURE-06-03 | in-progress | Web co-lead | 自然状态/Details按需绑定普通hi、stream/tool、queue等待、断线unknown四旅程；ACTIVITYREAD仅展开活动区，queue/stream/react与全组合仍开放；正文规则不冒工程Verified，产物版本/source未绑定须限定或unknown，关联ENG-001后继；[细目](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。 |
 | WPF-MATURE-06-04 | pending | Web co-lead | 键盘/IME/下一草稿、断线重连、queue/steer/cancel、lostACK原身份恢复；当前跨reload未完成项明确开放。 |
 | WPF-MATURE-06-05 | pending | Web co-lead | 后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿，无自动模型调用。 |
 | WPF-MATURE-06-06 | pending | Web co-lead | 实际App fixture覆盖失败/恢复/双pane；明确预算后单次真实provider观察，至少两次正文增长才称增量，没有partial如实记录不补query。 |

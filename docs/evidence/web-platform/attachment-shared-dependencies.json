@@ -257,5 +257,108 @@
     "no claim/take/migration reservation",
     "no product tests/API/model/DB changes",
     "no generic cross-lead request sent before contract freeze"
-  ]
+  ],
+  "followup": {
+    "recordedAt": "2026-10-06 10:03:33 UTC",
+    "mainAccepted": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+    "steiriRelease": "steiri01-main-release-receipt.json",
+    "sharedDecoder": "F01 owns attachment-v2 branch/extension in same receipt decoder; no parallel Web ACK decoder; legacy v1 and queue matcher remain",
+    "webProposalReplacement": {
+      "remove": "apps/web/src/conversation-attachments/receipts.ts",
+      "add": "apps/web/src/conversation-attachments/recovery.ts"
+    },
+    "recoveryProposalOnly": {
+      "lookup": "authorized project+uploadKey; 404 does not establish noncommit or allow a new key",
+      "recoveryScope": "center namespace/project binding only, not authorization; root contract pending",
+      "intentBudget": "16 metadata intents / 64KiB proposed; no token, body, File or base64; unknown never silently evicted",
+      "reselect": "same file metadata/digest/byteLength, strict UTF8 preserve BOM/newlines; original key only",
+      "limits": "Web Send/Queue unknown receipt remains page-local; do not claim cross-reload recovery"
+    },
+    "noAttachmentTake": true
+  },
+  "backendInterfaceProposal": {
+    "receivedAt": "2026-10-06T10:04:33.916853+00:00",
+    "status": "root final freeze pending; no write authorization",
+    "fixedRead": "187d97648dd2d4edf45641720f8ba771ea9f25fa",
+    "candidateBase": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+    "capabilities": {
+      "route": "GET /api/projects/:projectId/attachments/capabilities",
+      "protocol": "text-v1",
+      "mediaTypes": [
+        "text/plain"
+      ],
+      "extensions": [
+        ".txt"
+      ],
+      "maxFileBytes": 8192,
+      "requiresProject": true,
+      "maxCombinedReferences": 4,
+      "maxCombinedBytes": 8192,
+      "order": "knowledge-then-attachments",
+      "conversationCapability": "attachmentContext?:boolean; missing/false unsupported; only advertise mounted feature",
+      "limitsProposed": "unbound24h TTL; 128 live+retained items / 1MiB perproject"
+    },
+    "immutableReference": {
+      "kind": "upload",
+      "projectId": "bound project",
+      "resourceId": "center-issued",
+      "version": 1,
+      "contentDigest": "exact original-byte digest"
+    },
+    "metadata": [
+      "reference",
+      "name",
+      "mediaType",
+      "byteLength",
+      "createdAt",
+      "expiresAt",
+      "state ready|expired",
+      "retained"
+    ],
+    "textValidation": "strict UTF8 fatal decode then encode equality, preserve BOM/CRLF, no trim/NFC; empty/NUL/invalid/oversize reject, not truncate; display name rejects path separators/control",
+    "routes": [
+      "POST /api/projects/:p/attachments; Idempotency-Key; {recoveryScopeId,name,mediaType,text,byteLength,contentDigest}",
+      "GET /api/projects/:p/attachments?q&after&limit (<=20, authorized ready metadata)",
+      "GET /api/projects/:p/attachments/:id (metadata)",
+      "GET /api/projects/:p/attachments/:id/versions/:version/content?digest=... (explicit <=8KiB raw /64KiB encoded, response exact reference)",
+      "GET /api/projects/:p/attachments/upload-receipt?scope=...&key=... (original receipt + current available/expired/unavailable)"
+    ],
+    "uploadReceipt": "{uploadKey,recoveryScopeId,requestDigest,resource:metadata,replayed}; transaction commits before ready; permanent original command receipt tombstone",
+    "auth": "existing owner auth + project existence for all owner routes; no invented read/write role; runner credential403; recoveryScope is DB namespace not principal/permission",
+    "recoveryScope": "opaque DB migration initialized singleton namespace for current singleowner domain; token rotation same domain; future multiowner requires actual principal binding",
+    "templateCompatibility": "attachments absent/[] => exactly old template1, no knowledge => no context; nonempty attachments => discriminated template2 with order, existing knowledge sources plus ordered frozen attachment metadata; explicit full v2 digests and body detail, do not change old v1 algorithms/guards or migration018",
+    "freezeAndLockOrder": "command replay before first freeze/pin; operation-key advisory -> conversation(if applicable) -> project -> resource IDs sorted; cleanup project -> same sorted resources, never reversed conversation/task; pin/context/input/queue or task bind in one transaction",
+    "cleanup": "DB clock expired AND unbound only, FK/delete guard and recheck after waiting on pin; used metadata/body stay, queue cancel/draft deletion never unpin; expired unbound resource may be deleted but original command receipt remains; lookup expired does not revive original key",
+    "truthfulLimits": "no pending upload row; pending is client receipt uncertainty, disconnect may still commit; no global command-journal GC claim; full pinned quota rejects new upload",
+    "errorsProposed": {
+      "400": [
+        "invalid_attachment_request",
+        "invalid_attachment_text",
+        "attachment_digest_mismatch"
+      ],
+      "413": [
+        "attachment_too_large",
+        "conversation_context_budget"
+      ],
+      "415": [
+        "attachment_type_unsupported"
+      ],
+      "404": [
+        "attachment_not_found",
+        "attachment_upload_receipt_not_found (not proof of noncommit)"
+      ],
+      "409": [
+        "attachment_scope_mismatch",
+        "attachment_reference_mismatch",
+        "conversation_project_required",
+        "attachment_budget",
+        "idempotency_conflict"
+      ],
+      "410": [
+        "attachment_expired"
+      ]
+    },
+    "scopeCoordination": "14 uncontested original backend literals + conversations.ts via F01 input/handoff; exact migration reserved then literal amended; F01 owns exports/client6methods/servermount+ordering, Web/root owns resource/context/PG implementation",
+    "validation": "dedicated PG/HTTP: metadata excludes body; strict Unicode/BOM/limits; project/ref/version/digest; lostACK/restart/key/body conflict; lookup404 vs inflightcommit; TTL replay; concurrent pin/cleanup both lock orderings; pinned and knowledge audit retained; Send/Queue promotion/recovery and authorized HTTPclaim/fake HarnessAdapter exact prompt. 0provider or personal service."
+  }
 }

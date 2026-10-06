@@ -1,0 +1,39 @@
+{
+  "observedAt": "2026-10-06 10:03:33 UTC",
+  "acceptedMain": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "sourceComparison": "main-f181-source-observation.json",
+  "tasks": [
+    {
+      "taskId": "D08",
+      "ownerFinal": "605957f15470dbabef24c98c3614ead39442bcb2",
+      "localEqualsRemote": true,
+      "dirty": [],
+      "ownerStoppedWriting": true,
+      "release": "d08-main-release-receipt.json",
+      "version": 2,
+      "committedAt": "2026-10-06T10:02:11.377Z"
+    },
+    {
+      "taskId": "WPF-ACTIVITYREAD01",
+      "ownerFinal": "be977a23cff08edf6ac46d18750c3400bf9a2218",
+      "localEqualsRemote": true,
+      "dirty": [],
+      "ownerStoppedWriting": true,
+      "release": "activityread01-main-release-receipt.json",
+      "version": 3,
+      "committedAt": "2026-10-06T10:02:11.452Z"
+    },
+    {
+      "taskId": "WPF-STEIRI01",
+      "ownerFinal": "8273d71ef8970399b9d4f171edafb99184316ec8",
+      "localEqualsRemote": true,
+      "dirty": [],
+      "ownerStoppedWriting": true,
+      "release": "steiri01-main-release-receipt.json",
+      "version": 2,
+      "committedAt": "2026-10-06T10:01:48.252Z"
+    }
+  ],
+  "deployment": "122 source registry in main; formal deployment pending; no dashboard API sampled",
+  "productTests": 0
+}

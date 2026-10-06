@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 09:59:05 UTC |
+| 最近更新 | 2026-10-06 10:03:33 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-03](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -45,3 +45,5 @@ CONTEXTI01已main并释放；GO裁定Web/root端到端负责，panels只读后�
 原owner待定观察已由本轮GO正式责任裁决解除；[历史观察](../../docs/evidence/web-platform/mature03-owner-observation.json)不代表当前阻塞。02adapter只消费/04复用metadata；首类型片段不等于完整附件Done。旧scope不续写，不上传用户文件、不调用provider。
 
 [两份只读候选与共享依赖](../../docs/evidence/web-platform/attachment-shared-dependencies.json)已收：后端15/Web23 scope尚未take；F01共享出口/contract ownership、精确迁移编号与Web receipt调用点窗口须统一。现官方Thread已有能力门控附件按钮/dropzone/list，gap是持久引用和实际发送接线，不是控件缺失；本地固定SDK保持不升级。
+
+附件v2由F01唯一shared decoder配套，Web候选recovery替代自有receipt matcher；查找/恢复/retention仍待root冻结，无新take。[具体回复置于集中队列顶部](../../docs/evidence/web-platform/mature-task-handoff.md)。

@@ -21,3 +21,9 @@ root静态核themes.initialTheme()只认builtin ID；main.tsx启动applyTheme(in
 GO总体验收约束：默认正文、简短自然状态及需要行动；可识别tool标题，stream轻状态。native ID、字节/来源计数、Provider observations分页、原因和协议诊断统一Details按需。系统通知与模型回复来源分明，不用模板冒充回复、不调用模型润色系统文案。error/unknown/取消未确认及恢复操作保持可见或一步可达；queue/steer受理与实际生效不能混同，不能为简洁把input-ready称running或把unknown称success。
 
 稳定验收四旅程：普通hi、正常stream/tool、queue等待、断线unknown；1280与390、双pane不长期被工程说明占据。原始诊断仍可下钻，不改数据库事实/公共合同。ACTIVITYREAD01仅覆盖已展开native活动区域及其Details，仍保lazy0→1→cache、错误与刷新；queue/stream/外层footer与react默认语言属于后继，当前子片不能关闭整个MATURE06-03。MATURE01负责呈现层一致性，业务事实仍来自现projection。
+
+## 2026-10-06 GO可信度源码观察（MATURE06-03 / ENG-001依赖）
+
+固定main f181d84b5fb3652d62e2a181acff442d42b3e066：apps/web/src/App.tsx256–261把task.verificationStatus=passed显示Verified；apps/server/src/evidence.ts22–31检查的是flow.text非空/contains规则，不是工程检查或语义验收。Root补核：后端确实核event的task/artifact/version/attempt与inputDigest，仅latestartifact对应才更新task summary，持久verification detail也有artifactVersion，不能说后端完全未作版本校验。实际缺口是公共TaskSummary没有逐版bound-check输入，apps/web/src/components/workspace/WorkspacePanels.tsx171仍把task级verification传给任意artifact，panels.tsx118–120放在artifact version旁。以上为GO/root只读源码观察，管理未新增browser或产品验证；未来缺绑定的产物先显示unknown和任务级正文规则范围，已存在detail按需取，不在首屏扫描全部details。
+
+同一自然呈现TODO必须区分正文规则、实际工程检查、独立审查/用户接受；缺来源或版本绑定如实限定/unknown，不能一个绿色Verified概括。A版本failed、B版本passed后重开A不得继承B结果，普通非空聊天不表示代码已验证。保持轻投影和按需details，不新增验证authority；后继App/WorkspacePanels/产物consumer精确scope先fresh避附件，若需元数据合同交现owner同级协调，不挤入当前附件片。

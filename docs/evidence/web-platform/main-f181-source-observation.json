@@ -1,0 +1,80 @@
+{
+  "observedAt": "2026-10-06T10:01:40.627614+00:00",
+  "acceptedMain": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "leadEvidence": "docs/evidence/i02/native-tui-integration.json",
+  "tasks": [
+    {
+      "taskId": "D08",
+      "implementation": "eca59a5edab0820f724a9bd5bc854e22f48d9ea9",
+      "approvedDelivery": "ce038f0b064d1348d4aa77f1e91f223d7bc5ea31",
+      "ancestryExitCodes": {
+        "implementation": 0,
+        "approvedDelivery": 0
+      },
+      "sourceCount": 7,
+      "sourceDiff": [],
+      "sourcePaths": [
+        "apps/execution-dashboard/public/app.js",
+        "apps/execution-dashboard/public/styles.css",
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/status.mjs",
+        "apps/execution-dashboard/src/task-links.mjs",
+        "apps/execution-dashboard/test/task-links.browser.mjs",
+        "apps/execution-dashboard/test/task-links.test.mjs"
+      ],
+      "ownerHead": "605957f15470dbabef24c98c3614ead39442bcb2",
+      "ownerDirty": []
+    },
+    {
+      "taskId": "WPF-ACTIVITYREAD01",
+      "implementation": "f2bcaae6623176acd718cf53707892154579970a",
+      "approvedDelivery": "4f86c6251a73c33db5882e49a4aa031c52114e83",
+      "ancestryExitCodes": {
+        "implementation": 0,
+        "approvedDelivery": 0
+      },
+      "sourceCount": 4,
+      "sourceDiff": [],
+      "sourcePaths": [
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "apps/web/src/conversation-activity/native/tool.tsx",
+        "apps/web/test/conversation-activity-integration.browser.ts",
+        "apps/web/test/conversation-activity-integration.test.ts"
+      ],
+      "ownerHead": "4f86c6251a73c33db5882e49a4aa031c52114e83",
+      "ownerDirty": [
+        " M docs/evidence/wpf-activity-readability/README.md",
+        " M docs/evidence/wpf-activity-readability/quality.md",
+        " M plans/wpf-activity-readability/plan.md",
+        " M plans/wpf-activity-readability/status.md",
+        "?? docs/evidence/wpf-activity-readability/main-observation.json"
+      ]
+    },
+    {
+      "taskId": "WPF-STEIRI01",
+      "implementation": "5cfebc639d7acd458d27f4543d00a32a9fd96fc7",
+      "approvedDelivery": "57f8aa94ac2c9fad148619594e1cab9237bd3773",
+      "ancestryExitCodes": {
+        "implementation": 0,
+        "approvedDelivery": 0
+      },
+      "sourceCount": 11,
+      "sourceDiff": [],
+      "sourcePaths": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/test/conversation-steering-integration.browser.ts",
+        "apps/web/test/conversation-steering-integration.fixture.ts",
+        "apps/web/test/conversation-steering-integration.test.ts",
+        "apps/web/test/plugin-host.test.ts"
+      ],
+      "ownerHead": "8273d71ef8970399b9d4f171edafb99184316ec8",
+      "ownerDirty": []
+    }
+  ]
+}
