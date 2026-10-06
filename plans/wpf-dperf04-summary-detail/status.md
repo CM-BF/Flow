@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:45:52 UTC |
+| 最近更新时间 | 2026-10-06 16:57:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail |
 | Branch | codex/dashboard-summary-detail |
-| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / 1441d86baa40e98f4cb81b82dcc551202973209b |
+| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / abd2aff768f97350762b2eaddbe7ae6843902f48 |
 | 工作树dirty状态 | 七源码固定已提交；本记录为metadata安全点，提交后双端clean另核 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 检查状态 | FAILED 1441d86baa40e98f4cb81b82dcc551202973209b；6子项通过，Host断言未通过 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | 1441d86baa40e98f4cb81b82dcc551202973209b |
+| 实现目标 | abd2aff768f97350762b2eaddbe7ae6843902f48 |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 首轮直接检查已完成，Host防护用例未通过，原始结果已保留 |
-| 下一可用交付 | 核对Host失败原因并完成剩余行为验证 |
+| 当前产出 | 首轮失败已保留，测试现在会核实服务端实际收到的Host |
+| 下一可用交付 | 独审修复后完成剩余直接检查和页面验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，CHANGES_REQUESTED（4fac历史，后继修复待复审） |
@@ -37,7 +37,7 @@
 
 ## 检查边界
 
-当前0运行，不采4320/PG，不安装依赖。GO单次慢响应与静态20ms由管理来源记录，非本worker采样或性能基准。Node/browser预算分别后置；RELEASE真资源窗口到达时安全停点优先切回。
+当前首轮Node已运行1632ms；修复后未复验，不采4320/PG，不安装依赖。GO单次慢响应与静态20ms由管理来源记录，非本worker采样或性能基准。Node/browser预算分别后置；RELEASE真资源窗口到达时安全停点优先切回。
 
 ## 2026-10-06 16:24:08 UTC 固定源码安全点
 
@@ -66,3 +66,9 @@ root发现原future-clock替换写死2026-10-06。固定后继 `1441d86baa40e98f
 固定1441 / 实际HEAD36d687fc682809ce73a90910d86ad34c6349d9dc，通过manager一次freshgate与已审父监督器执行。总1632ms，剩28368ms；7子项中前6通过，第7在Host断言期望403实际200失败，父项因子失败一起记FAIL，TAP总6PASS/2FAIL。未执行到该子项后续文档安全/完整snapshot断言；不能称整套通过。原样[result](../../docs/evidence/wpf-dperf04/node-first/result.json)/[TAP](../../docs/evidence/wpf-dperf04/node-first/node.log)，失败因果尚待源码核对，不先归为产品漏洞或环境问题。
 
 监督器cleanup fulfilled/errors[]，own PGID absent、scratch absent；实际自身loopbackHTTP、0PG/Chrome/外网。未重试，源未改。RELEASE新的A→B准入优先，本片修复暂顺延；browser保持NOT_RUN，未使用其预算。
+
+## 2026-10-06 16:57:00 UTC Host用例源码修复
+
+固定 `abd2aff768f97350762b2eaddbe7ae6843902f48` 仅原direct test：用node:http.request直接连自有loopback服务器并设置Host example.invalid，服务端request监听器同时记录实际入站headers.host；先断言精确入站值，再保403预期。响应流消费完再结算、2秒socket超时destroy、error/aborted拒绝，finally移除监听器，agent:false不保连接池。无改server/保护规则或原断言目标。
+
+首轮未捕获入站Host，不能从200结果断言生产防护失效或断言fetch改写已证实。原六子项通过/Host失败/未到达的后续document与snapshot断言保持，[原始日志](../../docs/evidence/wpf-dperf04/node-first/node.log)不改；[源码/hash审计](../../docs/evidence/wpf-dperf04/host-request-fix-source.json)。新修复仅文本/范围检查、NOT_RUN，Node已用1632/余28368ms；新fresh gate/父runner需重绑target后才可检查，0自动重试/Chrome/PG/free。

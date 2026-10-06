@@ -1,7 +1,7 @@
 {
-  "implementationTarget": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+  "implementationTarget": "1441d86baa40e98f4cb81b82dcc551202973209b",
   "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
-  "recordedAt": "2026-10-06 16:57:00 UTC",
+  "recordedAt": "2026-10-06 16:42:53 UTC",
   "files": [
     {
       "path": "apps/execution-dashboard/src/read-model.mjs",
@@ -25,8 +25,8 @@
     },
     {
       "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
-      "bytes": 12804,
-      "sha256": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5"
+      "bytes": 11898,
+      "sha256": "6a679056223aa37dacfed10f4b1628f6af0fb4b768f4f003bbf69c4a6d2f6f4b"
     },
     {
       "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
@@ -59,7 +59,7 @@
   "protectedDiff": "",
   "checks": {
     "sourceDiffCheck": 0,
-    "Node": "New Host request construction NOT_RUN; first1441 run preserved FAILED (6 subtests pass, Host200!=403; parent failed),1632ms/cleanup fulfilled",
+    "Node": "First run FAILED: six subtests passed, Host expected403 actual200; parent also failed; 1632ms, cleanup fulfilled",
     "browser": "NOT_RUN; requires separate cumulative60s gate",
     "production4320": "NOT_OBSERVED",
     "PG": 0,
@@ -74,5 +74,5 @@
     "completedProofCache": false,
     "ledgerAuthority": "Original dynamically imported PG ledger; synthetic observer is test-only and grants no writer scope"
   },
-  "revision": "Only direct test: node:http explicit Host plus inbound server observation; production/app/browser unchanged"
+  "revision": "Date-independent direct test maintenance; app/browser bytes unchanged from b0e"
 }

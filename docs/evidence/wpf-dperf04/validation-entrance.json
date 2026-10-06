@@ -8,7 +8,7 @@
     "repositories": 2,
     "tasks": 2,
     "dependencies": "Node built-ins only; actual ledger import never called; all observers explicit synthetic",
-    "current": "First run FAILED; raw node-first/result.json; no retry",
+    "current": "Source Host probe fixed, NOT_RUN; first1632ms failure preserved; fresh reviewed runner/gate required",
     "temporaryLayout": "One owned temporary root containing owner/main Git repositories",
     "network": "Owned loopback HTTP only; external network and real registry/PG forbidden",
     "supervision": "External parent runner required: 25s work + 5s cleanup, own TMPDIR/PGID, tmp8MiB/raw2MiB; node:test timeout alone is insufficient",
@@ -35,5 +35,5 @@
     "fixture": "Same two temporary repositories and explicit unknown ledger; no real registry/PG",
     "current": "NOT_RUN; no browser dependencies provisioned or assumed"
   },
-  "implementationTarget": "1441d86baa40e98f4cb81b82dcc551202973209b"
+  "implementationTarget": "abd2aff768f97350762b2eaddbe7ae6843902f48"
 }

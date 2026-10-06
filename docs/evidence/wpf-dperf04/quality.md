@@ -23,3 +23,7 @@
 2026-10-06 16:42:53 UTC clean-code窄维护：消除写死今天日期的测试前提，使用fixture声明时间作为唯一now；旧/未来输入经真实status写入口生成，断言字段生效而非容许replace无操作。未改生产或browser，不增加测试运行预算。尚NOT_RUN。
 
 2026-10-06 16:45:52 UTC 运行安全收口：首Node1632ms，Host断言真实200!=403已保原TAP，不清洗、不自动放宽或重跑；六子项通过与父聚合失败分别记录。监督器确认group/scratch清理、0PG/Chrome。生产源不变，余Node28368ms；新RELEASE窗口优先，后续定位/修复需另准入才能复验。
+
+## 2026-10-06 16:57:00 UTC Host probe clean-code安全点
+
+沿本地find-skills/clean-code/codebase-design：测试的真实HTTP输入与响应为同一Interface，不用可能受transport策略影响的便捷层推断入站Host；独立request事件观察不改server。错误与timeout有界、finally释放观察、断言403保留、无通用网络框架。静态diff仅1test/原6其他源及15保护路径0差，首raw全字节保留。未经运行不称修复已绿；后续只剩必要定向复验。
