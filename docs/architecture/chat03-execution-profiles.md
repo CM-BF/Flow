@@ -1,0 +1,7 @@
+# CHAT03 执行profile
+
+中心profile为已注册runner声明的不可变配置，source=runner-configured、availability=not-probed。仅允许已知claude v2 policy；model.value来自manifest，resolvedModel=null/providerCapabilities=unknown，SDK ModelInfo只复用字段概念，不执行supportedModels或认证网络。configuration digest由固定schema顺序JSON计算；materialScopeDigest是本地材料路径集合的opaque摘要，不发送路径/正文，不证明材料内容版本。
+
+runner token只能发布自己的profile；锁runner后同config重放返回同profile，修改拒绝，需新runner identity。owner按reference id/runnerId/configDigest选择；conversation创建与turn公共acceptTask校验同一pin，claim加runner约束且再次核对profile。无profile继续既有行为。resume需原session runner，不能借新profile迁移上下文。
+
+普通runner启动从一次读取的manifest同时产生adapter和profile；发布得到reference，外层adapter guard在调用真实adapter前比较reference/configDigest。profile requested声明与CHAT02实际effective分离，SDK init未知不会被目录默认值填补。任务仍使用既有lease/fencing，不新增provider连接、热更新、预热或会话状态机。
