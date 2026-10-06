@@ -21,4 +21,4 @@ WPF-MATURE-02实验writer仍为chatui01_owner/co-lead mika；此交接建立时f
 
 生产错误边界：实验使用node:assert，AssertionError可能持有actual/expected（含native IDs/正文）。R05C不得把原始AssertionError或远端params/body写入detail/log/UI。可保留throw后投影失效语义，但host必须归一为固定reason/code并回报unknown/unsupported，不暴露rawactual/expected；若改专用错误，由实际消费者验证。此项是生产提升约束，不是现已审纯实验发生泄漏的结论。
 
-后继实际消费：已审main 4391bbf9f1785212d098ef6aa1c01a0320a003d3 通过受控merge进入本树，薄入口target 38516be71bf267ab546347a39da2adbe71f79e20保留同一public API；final.test.mjs未改，27项直接消费者一次通过。共享production Module为唯一算法来源，历史0d manifest保留，新[manifest](production-import/manifest.json)单列。当前consumer独审NOT_STARTED。
+后继实际消费：已审main 4391bbf9f1785212d098ef6aa1c01a0320a003d3 通过受控merge进入本树，薄入口target 38516be71bf267ab546347a39da2adbe71f79e20保留同一public API；final.test.mjs未改，27项直接消费者一次通过。共享production Module为唯一算法来源，历史0d manifest保留，新[manifest](production-import/manifest.json)单列。当前consumer已于2026-10-06 09:47:22 UTC由Mika/gpt-6-astra独审APPROVED。
