@@ -5,7 +5,7 @@
 - [x] K01-01 固定 DTO、015、migrate/register Interface，交 Lead 接公共入口。
 - [x] K01-02 实现事务来源/CAS/幂等、不可变版本与有界原文引用。
 - [x] K01-03 实现项目当前版本词法检索、短摘要与真实 JSON 预算。
-- [ ] K01-04 真实 PG/HTTP 验证并独立 review，记录生产挂载依赖。
+- [x] K01-04 真实 PG/HTTP 验证并独立 review，记录生产挂载依赖。
 - [ ] K01-05 接收 main 事实；真实生产入口验收由 Lead 独立完成。
 
 容量锁定：正文 <=256KiB；project <=128 sources；每 source <=16 retained versions；project retained raw <=64MiB。project 行锁→source 锁→命令幂等锁（operation 含 project/source），同事务插版本/chunks 后切 head；不递增 project.revision。达到容量明确拒绝，不自动删除旧版本。chunk <=4096 UTF8B/至少256B重叠，边界向前对齐、严格推进；每版本至多69块（ordinal0..68），衍生原文字节额外 <=69×4096，与原文总量分别说明。

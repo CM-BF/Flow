@@ -1,6 +1,6 @@
 # K01 手动文本来源、固定引用与有界词法检索
 
-已实现 project 范围的手动文本来源：原文不可变版本与原回执重放，旧引用仍返回旧原文，并附同快照 currentVersion/isCurrent。搜索只读当前版本，短摘要与按需原文片段分离。实现 target ea0c4cba1792dbb498487fb5b6ae47393340b77e；canonical [manifest](manifest.json) 绑定9实现/测试/harness文件与原始证据。Mika 独立技术 review 待定；之后由 Goal Owner 验收接收产品范围。
+已实现 project 范围的手动文本来源：原文不可变版本与原回执重放，旧引用仍返回旧原文，并附同快照 currentVersion/isCurrent。搜索只读当前版本，短摘要与按需原文片段分离。实现 target ea0c4cba1792dbb498487fb5b6ae47393340b77e；canonical [manifest](manifest.json) 绑定9实现/测试/harness文件与原始证据。Mika 已于2026-10-06 05:24:35 UTC独立技术review APPROVED；之后由 Goal Owner 验收接收产品范围。
 
 31 个不同用例通过：matrix-first 首轮28绿中的27个保留，原条件式CAS回执断言被无条件赢家回执断言替换并定向1绿，容量夹具修后1绿，新增Unicode/排序边界2绿。初轮1/2用例与后续矩阵重叠，不重复累计。最终 noEmit exit0。命令、实际UTC和exit均在 *-result.json，空stdout不是独立成功依据。首轮原条件断言保留于 c4c68a3，产品6文件从首行为实现 b14516d 至最终 target 字节一致。
 
