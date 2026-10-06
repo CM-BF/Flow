@@ -10,7 +10,7 @@
 | 用户来源 | [成熟度原话与六项分工](../../docs/evidence/web-platform/mature-task-handoff.md)；原WPF REQ仅追溯，不形成第三层 |
 | 收益 | 用户可通过按钮、拖放和@file把明确版本的材料附到当前草稿，并真实用于Send或Queue执行。 |
 | 边界 | 本计划定义完整用户结果；具体实现须独立worktree、fresh精确scope take和固定独审，计划目录领取不授产品写权 |
-| 依赖 | CONTEXTI01已main df29并收口释放；GO已裁定Web/root端到端负责附件；拟panels后端资源、w01 Web输入/预览并行只读提案，root冻结公共合同后各自fresh take；Lead只协调占用中的共享出口/迁移编号/main。 |
+| 依赖 | CONTEXTI01已main df29并收口释放；GO已裁定Web/root端到端负责附件；panels合同已审6bc2918并获runtime18literal；w01输入只读且优先RELEASE01，公共合同/decoder固定后再精确取Web范围；Lead只协调占用中的共享出口/迁移编号/main。 |
 
 ## 已有能力与gap
 
@@ -18,7 +18,7 @@ CONTEXT01选择模块736ef和CONTEXT02深冻/ACK guard5e821已main；K01/K02提�
 
 现官方Thread已包含附件按钮、AttachmentDropzone、列表/预览删除等控件，按钮由attachments capability门控；当前缺的是持久资源adapter、@file授权目录以及固定材料Send/Queue/ACK/runner输入接线，不能重复造一套控件。类型/大小/权限与固定版本送入model context仍须实现；本地上传与runner文件不能用知识模块冒充。
 
-当前子任务唯一来源：[CONTEXTI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。该子任务直接归本大task，WPF管理只做来源追溯。
+当前子任务来源：[ATTACH01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)；[CONTEXTI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。该子任务直接归本大task，WPF管理只做来源追溯。
 
 ## 稳定TODO与完整验收
 
@@ -43,7 +43,7 @@ root只读实际react0.15.23/core0.3.22：external-store-adapter.ts已有adapter
 
 ### 附件端到端责任已确定（GO正式裁决，经root转达）
 
-Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资源worker与独立Web输入/预览worker并行。当前panels已在attachment-resources/f181独立树fresh ef617d78 v1领取五scope，实施两个typed合同与pure test；w01继续只读Web adapter/recovery方案，未领Web写权。root统一固定轻引用、ready、授权读取与保留合同，然后各自独立worktree/fresh literal claim。ExecutionLead仅协调已占共享index/合同出口、迁移编号与main，不再把“等待Lead后端owner”作为阻塞。02 adapter消费同一协议，04复用metadata，不造第二上传协议。此前[有界owner观察](../../docs/evidence/web-platform/mature03-owner-observation.json)仅保留其历史时点，已由本裁决解除。
+Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资源worker与独立Web输入/预览worker并行。当前panels已在attachment-resources/f181独立树完成phase1固定合同独审，ef617d78 v2共18literal已原子扩权运行域；w01继续只读Web adapter/recovery方案，未领Web写权。root统一固定轻引用、ready、授权读取与保留合同，然后各自独立worktree/fresh literal claim。ExecutionLead仅协调已占共享index/合同出口、迁移编号与main，不再把“等待Lead后端owner”作为阻塞。02 adapter消费同一协议，04复用metadata，不造第二上传协议。此前[有界owner观察](../../docs/evidence/web-platform/mature03-owner-observation.json)仅保留其历史时点，已由本裁决解除。
 
 首个支持类型可做有界切片；完整验收仍是按钮/drag/@file→ready固定版本与顺序→Send/Queue→远端runner实际读取同材料并留输入证据。pending/expired/provider unsupported必须阻止并保草稿；不能丢附件只发文字。删除草稿不回收in-use，失败/取消有界清理；断线/重启/撤权/unknown保留身份与原键。复用project/context/storage授权、版本与预算，metadata首屏、正文按需。区分upload、knowledge和授权runner file，不用blob URL、绝对path或base64 timeline假接。先做真实PG/HTTP fixture，0provider；完整模型验收仍须单独明确预算。
 
@@ -51,7 +51,7 @@ Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资�
 
 installed core0.3.22已有attachment add/send/remove接口；当前Thread.onNew仅消费text，忽略message.attachments，因此新输入必须显式映射授权不可变refs，paperclip/预览不等于已发送。现core remove仅对尚未complete的attachment调用adapter.remove，center/outbox负责保留与in-use回收，不能依赖删草稿回调。官方[附件指南](https://www.assistant-ui.com/docs/guides/attachments)与[custom adapter](https://www.assistant-ui.com/docs/integrations/attachments/custom-adapter)仅作为方法来源，当前网站推荐版本不构成本项目SDK升级授权。本段无上传、provider或实际附件输入验收。
 
-当前两案和共享单写边界见[附件依赖清单](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。后端WPF-ATTACH01的schema phase1已领五scope，15runtime与23Web仍候选待固定合同/精确amend；F01 v23已释放contracts/conversations.ts，026已预留，F01保留公共出口/client/server index。Web调用点与TUI共享ACK迁移须一个owner/有序窗口，不能因09:51无writer就预领。首.txt限制、TTL/配额与template2设计方向已由root冻结，typed SHA仍待独审发布，不能称公共输入已ready。
+当前两案和共享单写边界见[附件依赖清单](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。后端WPF-ATTACH01的schema phase1已审6bc2918/final339086；runtime已v2领取18literal，Web整体23仍候选未预领；F01 v23已释放contracts/conversations.ts，026已预留，F01保留公共出口/client/server index。Web调用点与TUI共享ACK迁移须一个owner/有序窗口，不能因09:51无writer就预领。首.txt限制、TTL/配额与template2设计方向已由root冻结，typed SHA已独审待Lead受控发布/exports；HTTP/PG/App能力未实现，不能把合同当运行ready。
 
 ### 共享回执与上传恢复接缝（root/两owner只读方案）
 

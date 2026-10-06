@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | CONTEXTI知识App已main；GO明确本组附件端到端责任，合同小片已领实施，输入按统一合同准备，上传与@file仍未实现 |
-| 下一可用交付 | Web/root端到端附件负责；panels先固定typed合同及接口供独审，w01按同一输入准备后续接线 |
+| 当前产出 | CONTEXTI知识App已main；GO明确本组附件端到端责任，小合同已独审固定，后端运行域已精准扩权实施，输入按统一合同准备，上传与@file仍未实现 |
+| 下一可用交付 | Web/root端到端附件负责；panels实现隔离中心资源/保留与PG证据；公共合同先交共享decoder，w01当前优先真实Web发布兼容 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -36,14 +36,14 @@
 
 ## 依赖与领取
 
-CONTEXTI01已main并释放；GO裁定Web/root端到端负责，panels只读后端资源proposal、w01只读Web输入/预览proposal。root已冻结设计方向，panels获ef617 v1五scope仅typed合同/专测/自身记录；后端runtime与Web均未领写权。Lead只协调共享出口/迁移号/main。
+CONTEXTI01已main并释放；GO裁定Web/root端到端负责，panels phase1 impl6bc2918/final339086已root独审，ef617 v2现18literal运行域已领；w01附件输入仍只读，当前实施独立RELEASE01。Lead只协调共享出口/迁移号/main。
 
-当前子任务唯一来源：[CONTEXTI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。该子任务直接归本大task，WPF管理只做来源追溯。
+当前子任务来源：[ATTACH01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)；[CONTEXTI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。该子任务直接归本大task，WPF管理只做来源追溯。
 
 登记/父关联待执行dashboard原owner处理，见[唯一管理登记队列](../../docs/evidence/web-platform/mature-task-handoff.md)。不得把新增字段等同已在页面显示；局部登记不阻断独立已授权实现。
 
 原owner待定观察已由本轮GO正式责任裁决解除；[历史观察](../../docs/evidence/web-platform/mature03-owner-observation.json)不代表当前阻塞。02adapter只消费/04复用metadata；首类型片段不等于完整附件Done。旧scope不续写，不上传用户文件、不调用provider。
 
-[两份只读候选与共享依赖](../../docs/evidence/web-platform/attachment-shared-dependencies.json)已收：原后端15/Web23是整体候选；phase1已仅领取两个合同+一专测+两目录；F01共享出口/contract ownership、精确迁移编号与Web receipt调用点窗口须统一。现官方Thread已有能力门控附件按钮/dropzone/list，gap是持久引用和实际发送接线，不是控件缺失；本地固定SDK保持不升级。
+[两份只读候选与共享依赖](../../docs/evidence/web-platform/attachment-shared-dependencies.json)已收：原后端15/Web23是整体候选；phase1固定合同已审；runtime现18literal精准领取；F01共享出口/contract ownership、精确迁移编号与Web receipt调用点窗口须统一。现官方Thread已有能力门控附件按钮/dropzone/list，gap是持久引用和实际发送接线，不是控件缺失；本地固定SDK保持不升级。
 
 附件v2由F01唯一shared decoder配套，Web候选recovery替代自有receipt matcher；查找/恢复/retention仍待root冻结，无新take。[具体回复置于集中队列顶部](../../docs/evidence/web-platform/mature-task-handoff.md)。

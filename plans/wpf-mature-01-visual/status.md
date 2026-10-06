@@ -42,3 +42,5 @@
 登记/父关联待执行dashboard原owner处理，见[唯一管理登记队列](../../docs/evidence/web-platform/mature-task-handoff.md)。不得把新增字段等同已在页面显示；局部登记不阻断独立已授权实现。
 
 既有01/02 TODO已有[18literal只读提案](../../docs/evidence/web-platform/theme-extension-proposal.json)，不构成take或新产品事实。附件P1优先；后继需固定base、全范围fresh查重、独立树，不能沿VISUAL旧释放范围写入。
+
+真实Web发布兼容由独立[WPF-RELEASE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)实施，首canonical1eff6e6f7543c7fdf30e5d94cec3c43b148bb764，20a6529a v1四scope；真实新旧App构建/专用PG及fixture runner，0provider/个人发布操作，尚无结果。
