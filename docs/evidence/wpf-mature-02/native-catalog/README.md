@@ -1,6 +1,6 @@
 # Native configured catalog — first implementation
 
-Implementation target is the source commit containing this manifest; exact SHA is recorded in the task review/status after commit. Baseline main41315b033deb0b1953484359b686c0b228997367 merged without conflicts at944780d803ed36deb010d0760f7dd46f75cc3a6f using scope=[] integration receipt, now released. Writer claim0dd97484…v3 remains active; only five approved production paths changed.
+Implementation target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22`; independent review NOT_STARTED. Baseline main41315b033deb0b1953484359b686c0b228997367 merged without conflicts at944780d803ed36deb010d0760f7dd46f75cc3a6f using scope=[] integration receipt, now released. Writer claim0dd97484…v3 remains active; only five approved production paths changed.
 
 Exact single native-v1 opts GET /api/execution-profiles into the strict flow.native-execution-profile-catalog.v1 envelope. Existing no-header/steering-v1 readers keep their Claude SQL and admission behavior. The new SQL filters known harness+adapter and revoked rows before limit, validates digest/shape including its sentinel, and returns configured/not-probed only. Codex and goal-purpose ordinary conversations are explicitly unsupported. Strict wrapper validation rejects contradictory conversation flags, effective-model/readiness/fast claims, duplicates and bad cursors. No old configuration fields/digest are removed or defaulted.
 

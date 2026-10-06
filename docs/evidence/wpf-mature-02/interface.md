@@ -179,3 +179,5 @@ R05D接入依赖：已只读核[main41315b四源接收](r05d-dependency.json)等
 [固定source/raw/checks](native-catalog/README.md)落实设计：精确native-v1、strict新page、known-pair SQL过滤与哨兵digest、Codex/goal conversation unsupported；旧reader/codec与公共挂载不变。writer v3已原子追加五文件；受控main41315b merge944780d无冲突。33 distinct局部行为检查（7合同+9目录分次证据+17旧消费者）及strict0，真实Codex/provider/新诊断child0。client/index无修改，由当前TUI01B/Lead后续接新method。该新实现待独立review，不继承此前诊断/语义approval。
 
 共享接收指针：[S01P03 integration-ready](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop/docs/evidence/s01p03/integration-ready.md)及[权威status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop/plans/s01-graceful-stop/status.md)。这里只指向owner交付，时间/进度由该处维护。
+
+目录固定实现target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22`，当前待status_read独立只读review；manifest只绑定此source，后继纯metadata不改变它。原R06五源/薄consumer仍独立已审待Lead集成，不将当前目录尚未通过review混入其approval。

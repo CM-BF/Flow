@@ -1,6 +1,6 @@
 # Current native configured catalog review
 
-State: NOT_STARTED. Fixed source target will be recorded after this source commit. [Manifest](../../docs/evidence/wpf-mature-02/native-catalog/manifest.json) binds5 approved production files+2 local check configs,11 unchanged direct inputs,raw and receipts. Please read-only review native protocol gating, SQL filter/limit/sentinel/digest, strict cross-field compatibility, unchanged legacy bytes/admission, safe errors and actual selected counts. 33 distinct local checks with explicit fixture-failure/delta history; strict0. No real app-server/provider/diagnostic child; do not rerun by default. client/index is a later shared-owner dependency, not implemented here.
+State: NOT_STARTED. Fixed source target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22`. [Manifest](../../docs/evidence/wpf-mature-02/native-catalog/manifest.json) binds5 approved production files+2 local check configs,11 unchanged direct inputs,raw and receipts. Please read-only review native protocol gating, SQL filter/limit/sentinel/digest, strict cross-field compatibility, unchanged legacy bytes/admission, safe errors and actual selected counts. 33 distinct local checks with explicit fixture-failure/delta history; strict0. No real app-server/provider/diagnostic child; do not rerun by default. client/index is a later shared-owner dependency, not implemented here.
 
 # Current sealed diagnostic result review
 
