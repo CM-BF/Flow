@@ -17,10 +17,10 @@
 - [x] **R05-A01** 核验独立工作树、原子 claim 与有限 Interface。
 - [x] **R05-A02** 提取 Claude 配置与公开 profile 描述，fixture 与旧入口兼容，生产启动消费 descriptor。
 - [x] **R05-A03** 局部 red/green、直接消费者、类型检查与 clean-code；固定源码及原始证据。
-- [ ] **R05-A04** 独立 review、修复、main 接收与 claim 收口。
+- [x] **R05-A04** 独立 review、修复、main 接收与 claim 收口。
 - [ ] **R05-A05** 独立后继：执行结局 settled/unknown 的明确语义；本片不修改 Promise<void> 或宿主终态。
 - [ ] **R05-B01** 后继：中心认可的 final/profile/session 来源与命名空间、兼容前进迁移。
-- [ ] **R05-C01** 后继：真实 Pi SDK 零远程调用 conformance，再到 PG task/Web 普通 final。
+- [ ] **R05-C01** 后继：优先真实 Codex stable 0.154.0 协议零远程调用 conformance，再到 PG task/Web 普通 final；Pi 研究保留，非必经串行门槛。
 
 ## 当前设计与取舍
 
@@ -29,6 +29,10 @@
 loadRunnerConfiguration 的旧 adapters/profile/activeSteering 结果与普通字符串路径继续兼容，新增 harnesses 供 main 消费。descriptor 不送中心、不进入现有 profile JSON、不授予权限；没有声明的可选 port 不可用。fixture 无公开 profile；A2A 仍走独立 durable-dispatch driver。
 
 边界：不修改 runtime、claude adapter loop、harness enum、中心/Web、索引/锁；不改变 S01 journal/容量与 CHAT09 pinned/unpinned 行为。B/C 不因 A 提取完成而勾选。0 query、0 provider、0 个人服务操作。
+
+## 后继设计与本片审查
+
+2026-10-06：A 固定 47e6943080a0d4713190c51dd5ffb234b8efd915 已获 Execution Lead 独立 APPROVED，已进入 main/origin 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7，技术实现停写，8 个源码范围已交回，claim v2 仅保留计划/证据。用户新方向 Claude + Codex 优先；[B 接口候选](../../docs/evidence/r05/b-codex-interface.md) 只核中心静态来源、旧 profile/hash、前进迁移及旧 Web 协商，未实现/未运行 Codex。B/C 与终态后继保留未完成。A/B/C 是同一大 task 下本 subtask 的稳定 TODO，不增第三层计划。
 
 ## 验证与交付
 
