@@ -2,17 +2,17 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T03:43:00Z |
+| 最近更新 / 最近main同步核验 | 2026-10-06T03:44:09Z |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra（lead mika） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance |
 | Branch | codex/bounded-read-performance |
-| 工作基线 / HEAD | edee6b1c5d74c2ee46ec98bab2844579db6a00c4 / edee6b1c5d74c2ee46ec98bab2844579db6a00c4 |
-| 工作树dirty状态 | 是：新建本任务计划和证据 |
+| 工作基线 / HEAD | edee6b1c5d74c2ee46ec98bab2844579db6a00c4 / 70af7b45814d5ed31d9638649512358e1a0a834b（实现target；metadata HEAD由Git聚合） |
+| 工作树dirty状态 | 03:44:08核验clean；本次仅更新交付metadata |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 8/8真实PG功能测试、局部typecheck；首轮23检查/候选31检查；修后性能复测待窗口 |
-| 已集成main状态 / HEAD | 未集成 B01；main edee6b1c5d74c2ee46ec98bab2844579db6a00c4 |
-| 实现目标 | bb81fba（测量基线；产品未改） |
+| 检查状态 | PASSED 8/8真实PG功能测试、局部typecheck，target 70af7b45814d5ed31d9638649512358e1a0a834b；首轮23检查/候选31检查；修后性能复测待窗口 |
+| 已集成main状态 / HEAD | 未集成 B01；03:44:08 main ac4e34de2331dce276440df8969883c1883060ef clean |
+| 实现目标 | 70af7b45814d5ed31d9638649512358e1a0a834b |
 | 实现范围 | experiments/bounded-reads, plans/b01-bounded-reads, docs/evidence/b01, apps/server/src/m2-workspace.ts, apps/server/src/m2-workspace.test.ts |
 | 阶段 | M2 |
 | 优先级 | 3 |
@@ -24,7 +24,7 @@
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| B01-01 | in-progress | b01_bounded_reads | [首轮结果](../../docs/evidence/b01/initial-results.json)：23检查通过、临时资源清理；候选分析进行中 |
+| B01-01 | completed | b01_bounded_reads | [首轮结果](../../docs/evidence/b01/initial-results.json)：23检查通过、临时资源清理；候选8组等价、已交具体修复 |
 | B01-04 | in-progress | b01_bounded_reads | 局部修复和8/8回归完成；等待修后性能短测 |
 | B01-02 | pending | mika / b01_bounded_reads | 独立 review 待实现 commit |
 | B01-03 | pending | Execution Lead | 未集成 |
@@ -35,7 +35,7 @@
 
 ## Dashboard 同步
 
-唯一手填事实源为本 status。已向 mika 提交 WT/branch/claim 信息，由 Execution Lead 登记索引与聚合来源。当前等待聚合器展示，未声称已同步。
+唯一手填事实源为本 status。已向 mika 提交 WT/branch/claim 信息，由 Execution Lead 登记索引与聚合来源。2026-10-06T03:44:08.256Z聚合已确认B01 live source为本WT status、branch正确、head 70af7b45814d5ed31d9638649512358e1a0a834b、dirty=false、issues=[]。
 
 ## 2026-10-06T03:36Z 实质进展
 
@@ -54,3 +54,7 @@
 ## 2026-10-06T03:43Z 功能交付进展
 
 候选窗口与8/8功能回归证据见[报告](../../docs/evidence/b01/README.md)。第一次新测试持锁等待造成1失败，原始证据与修正依据保留。产品修改只在两文件内；准备固定实现提交。修后正式性能短测等Web矩阵结束，不抢占其计时窗口。
+
+## 当前交付与handoff
+
+实现target 70af7b45814d5ed31d9638649512358e1a0a834b 已通知mika独立只读review，claimv2保留。修后正式短测待Web计时窗口结束，8项功能与类型检查已通过；尚未review approval/main集成。没有新用户决定。
