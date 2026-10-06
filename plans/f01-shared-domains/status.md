@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:03 UTC / 2026-10-06 07:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:14 UTC / 2026-10-06 07:09 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main ba908a2d84a05b336d74fbaccd7a36d3d254c501；本轮生产流式读取 da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2 |
-| 工作树dirty状态 | 固定实现，当前仅metadata更新 |
+| 工作基线 / HEAD | main fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；本轮steering client 1b16d23de5b00f897fe9bd0fa07879c84d78e936 |
+| 工作树dirty状态 | 实现已提交；当前仅证据与状态整理 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED；生产2红→2绿/独立types，原始日志及随机库清理事实保存；未重新跑旧领域 |
-| 已集成main状态 / HEAD | ba908a2d84a05b336d74fbaccd7a36d3d254c501 已推送，K03/021与X05可选下载入口已交付。流式领域/兼容/公共入口已分别独审，等待消费者组合；实际center/runner仍fb906cb。 |
-| Review | APPROVED da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2；独立assignment_review只读，兼容消费者发布门另列 |
-| 实现目标 | da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2 |
-| 实现范围 | apps/server/src/index.ts, packages/client/src/assistant-stream-production.test.ts |
+| 检查状态 | PASSED；本轮薄client实际HTTP1/1与类型检查；领域16项复用原独立审查 |
+| 已集成main状态 / HEAD | fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 已推送；流式协议与两类旧页面兼容已成套接收。个人center/runner仍fb906cb；实际流式聊天页面待Web后继。 |
+| Review | NOT_STARTED；仅本轮steering薄client，历史批准保留 |
+| 实现目标 | 1b16d23de5b00f897fe9bd0fa07879c84d78e936 |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/active-steering.test.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 逐段回复读取和新旧活动列表兼容已完成组合验证。 |
-| 下一可用交付 | 交付正文流式读取和兼容活动分页，供聊天页面接入。 |
+| 当前产出 | 逐段回复读取和旧页面兼容已经交付；补充指令的公共接收与查询接口已完成。 |
+| 下一可用交付 | 核验补充指令的公共接口，为实际模型消费准备接线。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -79,13 +79,13 @@
 
 2026-10-06 06:28 UTC：020薄client+生产挂载获Root独立只读APPROVED；领域216由Mika独立批准。保留0provider/64KiB截断不可追回余文边界，下一动作main接收。
 
-| F01-18 | in-progress | Lead | X05固定合同1405551的5个薄client方法，1/1HTTP+tsc，target07b1b11060c069db76f9f958f92c1c53af9fca46已获Root独审；PG/worker未就绪不挂生产 |
+| F01-18 | completed | Lead | X05固定合同1405551的5个薄client方法，1/1HTTP+tsc，target07b1b11060c069db76f9f958f92c1c53af9fca46已获Root独审；PG/worker未就绪不挂生产 |
 
 2026-10-06 06:30 UTC：X05只消费固定领域合同，未知状态/409/abort原样传递，不暗重试。契约1405551来源保留，无本片领域或模型能力推断。
 
 2026-10-06 06:31 UTC：X05五方法薄client获Root限定独立批准，无领域能力承诺；下一生产/CLI片等待X05领域固定独审，0新增模型。
 
-| F01-19 | in-progress | Lead | K03固定版本context薄client 77465eb59121bad5ac2785036961f1707911d21b；1/1HTTP+tsc，待独审/021生产挂载 |
+| F01-19 | completed | Lead | K03固定版本context薄client 77465eb59121bad5ac2785036961f1707911d21b；1/1HTTP+tsc，待独审/021生产挂载 |
 
 2026-10-06 06:41:32 UTC：K03完整领域21d2获Mika独审，薄client77465获Root独审；当前021生产delta44bd8bc8e8e30ec49f86b6828f4947bf2c47d148待独审。4different局部各有最终绿，stagefixture修复只改测试输入，不降低原迁移断言；个人服务仍fb906。
 
@@ -93,4 +93,8 @@
 
 2026-10-06 06:52 UTC：知识固定引用片段已main86a36。可恢复包下载已接生产factory/可信配置与CLI，5项局部通过、领域零diff，待独立review；个人服务保持fb906，未启用包下载。流式兼容C02另独立工作线，发布门槛仍有效。
 
-| F01-20 | in-progress | Lead | 流式三读取方法与显式协议协商；1/1 HTTP+tsc，待独审/生产挂载 |
+| F01-20 | completed | Lead | 流式三读取方法与显式协议协商；1/1 HTTP+tsc，待独审/生产挂载 |
+
+| F01-21 | in-progress | Lead | steering薄client 1b16d23de5b00f897fe9bd0fa07879c84d78e936；真实HTTP1/1+tsc，待独立review；未mount024或开放生产受理 |
+
+2026-10-06 07:14 UTC：F01-18/19/20已按各固定独审输入进入main，旧条目中的等待描述为当时记录。本轮仅5个steering薄传输方法及统一export，原文/key/fence/receiptRevision透传，409/abort无自动重投。

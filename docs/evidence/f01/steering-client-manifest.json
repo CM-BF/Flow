@@ -1,0 +1,52 @@
+{
+  "target": "1b16d23de5b00f897fe9bd0fa07879c84d78e936",
+  "domain": "21371153c6d83c67c3a3d7d0051c915c55f7b60b",
+  "source": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 36053,
+      "sha256": "6da7c969edf0175cc771bbab53ec7f6c75bdd2ef7be0db38ab1748dad9fbbd5c"
+    },
+    {
+      "path": "packages/client/src/active-steering.test.ts",
+      "bytes": 4500,
+      "sha256": "5b89b0dec336c682fe829ae0e8c04206f4978a6dcd094ae7e137400bd170332a"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 928,
+      "sha256": "80c23378f03eeed122a42c9dbc415216149dda36b173cd6921c8d4bb88dab05b"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/steering-client-red.txt",
+      "bytes": 1230,
+      "sha256": "0f682ae735736c4a1aa725a77ae21d2bfd6b94916ac42f8ec1c35b4dc4f4dd2e"
+    },
+    {
+      "path": "docs/evidence/f01/steering-client-green.txt",
+      "bytes": 317,
+      "sha256": "41116fcc678e70c1956d7cedc7ad195ec3d7a7288c93c103eff7bf8c29bc760b"
+    },
+    {
+      "path": "docs/evidence/f01/steering-client-typecheck.txt",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a"
+    }
+  ],
+  "checks": {
+    "http": {
+      "passed": 1,
+      "milliseconds": 33,
+      "suiteMilliseconds": 210
+    },
+    "typecheckExit": 0,
+    "providerQueries": 0
+  },
+  "limits": [
+    "thin transport only",
+    "no production mount or runner delivery",
+    "accepted or received never implies model compliance"
+  ]
+}

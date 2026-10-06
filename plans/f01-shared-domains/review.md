@@ -1,10 +1,10 @@
 # F01 共享接线审查
 
-**当前增量状态：APPROVED（流式正文生产接线；兼容消费者发布门仍待闭合）**
+**当前增量状态：NOT_STARTED（steering薄client）**
 
-Review target commit：da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2
+Review target commit：1b16d23de5b00f897fe9bd0fa07879c84d78e936
 
-Scope：apps/server/src/index.ts、packages/client/src/assistant-stream-production.test.ts。manifest：docs/evidence/f01/assistant-stream-production-manifest.json。
+Scope：packages/client/src/index.ts, packages/client/src/active-steering.test.ts, packages/contracts/src/index.ts。manifest：docs/evidence/f01/steering-client-manifest.json。
 
 ## K01薄client独立批准
 Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。
