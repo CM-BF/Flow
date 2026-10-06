@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:23:11 UTC / main32c371d389a913f8dd71c3bd8b98dd0697411256 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:45:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
@@ -10,14 +10,14 @@
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
 | 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
 | 工作分支状态 | planning；原历史TODO与独立review边界保留 |
-| 已集成main状态 / HEAD | 30b97cbf3665c4ef7a314a6a8b59394ae68781af；原生Claude聊天已接入且真实两轮/排队旅程有封存证据；工程写改与原样wrapper对照仍未完成。 |
+| 已集成main状态 / HEAD | d7e1e64e7792f4d1ad4933db042f10f266ad0cca；首个原生Claude adapter已用于聊天与限定只读目标子任务。可替换接口和第二真实harness消费者尚未完成；历史wrapper工程对照保持开放。 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | planning |
-| 优先级 | 4 |
+| 优先级 | 1 |
 | 当前产出 | 原生聊天与恢复路径已有实际验收，身份刷新和上下文插件实验记录了明确限制。 |
-| 下一可用交付 | 后续比较现成执行工具的真实工程交付能力，保留版本与授权差异。 |
+| 下一可用交付 | 收拢执行器与原生工具的边界，并让第二种实际执行工具消费同一接口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -42,7 +42,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-- 当前工程配额为本队4/Web4/Mika2，共10。历史单树第5worker被拒是当时工具上限记录，不代表当前全队容量或产品runner容量。
+- 当前用户授权配额为本队4/Web4/Mika4，总上限12；不是实际运行数。历史单树第5worker被拒是当时工具上限记录，不代表当前全队容量或产品runner容量。
 - M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
@@ -52,3 +52,7 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 2026-10-06 07:18 UTC：本次补人读摘要，不改历史TODO完成定义、不新增模型调用。当前已接受原生Claude为首聊天adapter，不等于FLOW-002-T07代表性工程任务完整验收；E01工程对照待独立范围与预算，不能把重写wrapper当现成harness选型。原本实验与失败证据不覆盖。
 
 2026-10-06 08:23:11 UTC：只核本权威来源既有6个人读字段均齐备，保留FLOW-002未完成工程验收与OPS历史review边界；本次仅更新协作配额/观察时间，不新增产品测试或模型。
+
+| FLOW-002-T09 | in-progress | Execution Lead / 只读审查双方 | 用户要求提升为下一小批；本机运行时与Pi/AI SDK两端事实汇总后确定精确scope/独立owner，接口和第二真实消费者均必须验收。当前仅只读设计，未完成产品抽象。 |
+
+2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。

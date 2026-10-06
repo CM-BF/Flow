@@ -25,7 +25,7 @@
 
 - [x] **OPS-001-05** 用户完整目标滚动规则、22项原要求验收追溯与C02/P01/M02来源登记；2026-10-06新增，工程检查见status。
 
-- [x] **OPS-001-06** 三队并发预算与直接技术路由（2026-10-06）：本任务4人（Goal Owner、Execution Lead、2 workers）；外部Web最多4人；Mika队最多2人，合计不超过10。任何队增人先协调，不反复探测或通过新用户task绕过实际cap。
+- [x] **OPS-001-06** 三队并发预算与直接技术路由（2026-10-06）：用户最新覆盖（2026-10-06 08:45 UTC）：每个Lead任务最多1+3；本队4、Web4、Mika4，授权总上限12。任何队增人先协调，不反复探测或通过新用户task绕过实际cap。
 
 Execution Lead可主动直发Web用户task `01a10ec2-ff1a-76d0-a277-446baf89b19d` 与Mika用户task `01a10f3f-4ef0-7ca2-8e66-f1947fa4b295`，带任务ID、固定SHA、实际边界、所需动作。外部两Lead之间可双向直投。Execution Lead本身是subagent，没有可直投的独立用户task；外部回本task注明“收件人ExecutionLead”，Goal Owner立即桥接，不额外增加技术审批。不创建新task来绕过此限制。关键里程碑、scope冲突、全局容量与用户决策抄Goal Owner；owner status/evidence仍唯一事实源，消息不是第二进度账本。发现直接回唯一writer（跨队经该Lead），consumer合同直接发消费方，降低无必要中转。
 
@@ -33,6 +33,8 @@ Execution Lead可主动直发Web用户task `01a10ec2-ff1a-76d0-a277-446baf89b19d
 
 2026-10-06 07:18 UTC维护：本片当前摘要与实际main对齐，历史实验/TODO证据保留；详见唯一status。无新产品或模型验证。
 
-- [x] **OPS-001-08** 用户及时交付与Lead职责（2026-10-06 08:37:23 UTC）：有界功能或修复达到可审停点即提交并推送独立分支；独立审查通过后，只完成必要直接消费者验证便受控合入main并推送，不积压等待无关片段。不得为频繁提交把同一不可分验证拆成伪完成，也不得改写已审固定target。各Lead优先负责完整方向、优先级、公共接口、scope移交、验收和集成；新实现、测试driver与服务工具由具备权限和有效独立worktree/claim的workers承担。尽量并行独立任务，slot转移先核真实状态/当前工作，合计仍≤10；不以开新用户task或新增隐形agent绕cap。运行窗口明确要求固定source时，候选分支可及时push，main仍遵守窗口冻结。
+- [x] **OPS-001-08** 用户及时交付与Lead职责（2026-10-06 08:37:23 UTC）：有界功能或修复达到可审停点即提交并推送独立分支；独立审查通过后，只完成必要直接消费者验证便受控合入main并推送，不积压等待无关片段。不得为频繁提交把同一不可分验证拆成伪完成，也不得改写已审固定target。各Lead优先负责完整方向、优先级、公共接口、scope移交、验收和集成；新实现、测试driver与服务工具由具备权限和有效独立worktree/claim的workers承担。尽量并行独立任务，slot转移先核真实状态/当前工作，当前授权上限≤12；不以开新用户task或新增隐形agent绕cap。运行窗口明确要求固定source时，候选分支可及时push，main仍遵守窗口冻结。
 
-2026-10-06 08:38 UTC容量变更（Goal Owner明确决定）：本队降为3（Goal Owner、Execution Lead、SVC03 worker）；Web保持4；Mika升为3（Lead、S01P01 worker、CHATUI01 worker），全局仍10。assignment_review仅完成O10语义metadata/push后正式idle，Mika新worker在此之前只可准备不得激活。CHATUI01未take/无双writer，唯一新执行源由Mika独立tree/claim建立；F01历史proposal不成为第二driver。后续slot转移同样核实际running状态与任务，禁止推测空位。
+历史2026-10-06 08:38 UTC容量变更（已被用户后续4/4/4覆盖，不作当前规则）：本队降为3（Goal Owner、Execution Lead、SVC03 worker）；Web保持4；Mika升为3（Lead、S01P01 worker、CHATUI01 worker），全局仍10。assignment_review仅完成O10语义metadata/push后正式idle，Mika新worker在此之前只可准备不得激活。CHATUI01未take/无双writer，唯一新执行源由Mika独立tree/claim建立；F01历史proposal不成为第二driver。后续slot转移同样核实际running状态与任务，禁止推测空位。
+
+2026-10-06 08:45 UTC：授权配额4/4/4不代表12个实际运行agent。Mika新增/复用completed worker遇工具threadlimit时停止重试，不开新用户任务绕过；现有工作照常，实际active仅按工具观察记录。assignment_review在O10收口后由GO复用为只读runner宿主抽象审查；CHATUI01仍由Mika唯一worker执行。

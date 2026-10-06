@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:21:00 UTC / 32c371d389a913f8dd71c3bd8b98dd0697411256（固定观察快照） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:45:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
@@ -10,11 +10,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256；逐段正文App、CHAT09配置目录兼容、O09原生单节点API/CLI及P02存储传输优化均已审main。个人center/runner仍b54de1dbb08e3ccc7d33a27295a318f2799e76ae / accepting v6；08:19:48看板95来源。运行服务升级另等窗口。 |
+| 已集成main状态 / HEAD | d7e1e64e7792f4d1ad4933db042f10f266ad0cca；CHAT10受理门禁、S01P01有界并发内核、CHATREAD紧凑展示、O10限定验收均已审接收。个人center/runner固定32c371d / accepting v9；97源为上次已部署观察，98源候选在main。Web当前Vite可随主线变化，SVC03固定构建实现中。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 逐段正文聊天界面和原生子任务命令行已完成；知识引用选择模块已可供接线。 |
-| 下一可用交付 | 将已审界面更新到个人服务，并验证真实正文逐步显示；并行完善知识发送和执行中补充指令。 |
+| 当前产出 | 真实聊天服务已安全更新；紧凑聊天展示、可靠指令受理条件和有界并行运行内核已合入。 |
+| 下一可用交付 | 固定网页版本避免开发更新打断体验；用第二种实际执行工具验证可替换接口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -38,7 +38,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-- 当前工程协作配额为本队4 + Web4 + Mika2，总10；历史单树cap4失败记录不再描述当前全队能力。这与产品runner真实并发分别计量。
+- 当前用户授权配额为本队4 + Web4 + Mika4，总上限12；实际工具threadlimit仍须服从，不声称12个正在运行；历史单树cap4失败记录不再描述当前全队能力。这与产品runner真实并发分别计量。
 - M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
@@ -84,3 +84,5 @@ main3773db5已推送clean；G01/P02/F01/WPF-M02分别获独立审查，必要组
 ## 2026-10-06 08:21:00 UTC 当前滚动事实
 
 主线32c371d与origin一致clean。WPF-CHAT06I01假分支R1已修复并独审，CHAT09和O09CLI各独审，I02仅运行2个readonly直接消费者+组合类型检查；34固定源码一致。个人服务仍b54/v6，更新仅准备，未启steering/新增query。O10单child原生验收仍0query准备；S01P01有界并发池与CHAT10受理状态各独立实施，CONTEXT02收据链不占App。
+
+2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
