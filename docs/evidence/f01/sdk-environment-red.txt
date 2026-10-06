@@ -1,0 +1,53 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ apps/runner/src/claude.test.ts (26 tests | 1 failed | 25 skipped) 7ms
+   ↓ runs the public adapter with only a private material snapshot and verifies its saved result
+   ↓ denies outside access even when permission callbacks would autoallow
+   ↓ denies shell access even when permission callbacks would autoallow
+   ↓ denies missing access even when permission callbacks would autoallow
+   ↓ denies no-tools access even when permission callbacks would autoallow
+   ↓ checks ownership on every tool and aborts the SDK when the lease is lost
+   ↓ aborts and closes an active SDK query on cancel without emitting completion
+   ↓ aborts and closes an active SDK query on timeout without emitting completion
+   ↓ does not start the SDK when the attempt is already cancelled
+   ↓ keeps resumed model usage cumulative with unknown baseline and stable sample IDs
+   ↓ uses durable runtime decisions then rechecks ownership before allowing Read
+   ↓ does not turn a success-shaped API error into a successful artifact or zero usage
+   ↓ preserves measured model usage when execution reaches a turn limit
+   ↓ fails closed when durable decision delivery fails and stops the SDK query
+   ↓ stops waiting for a human decision when the query deadline expires
+   ↓ denies a material snapshot that has been replaced with a symlink outside the allowlist
+   ↓ records SDK permission refusals without publishing their raw tool inputs
+   ↓ preserves token counts but does not present an unknown SDK price basis as known cost
+   ↓ rejects an unexpected resumed session before publishing any native session reference
+   ↓ emits exactly the successful final result as typed assistant text after consuming trailing system frames
+   ↓ marks effective settings unknown without an init frame and keeps stable source identity across repeat delivery
+   ↓ rejects conflicting results instead of silently replacing an earlier turn outcome
+   ↓ publishes no assistant final for session failure
+   ↓ publishes no assistant final for stream-error failure
+   ↓ publishes no assistant final for unicode-size failure
+   × passes only explicit native SDK environment and excludes Flow service credentials 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/claude.test.ts > passes only explicit native SDK environment and excludes Flow service credentials
+AssertionError: expected undefined to be defined
+ ❯ apps/runner/src/claude.test.ts:304:25
+    302|   vi.stubEnv('CLAUDE_CODE_OAUTH_TOKEN', 'synthetic-provider-session');
+    303|   const query = sdk(async function* (options) {
+    304|     expect(options.env).toBeDefined();
+       |                         ^
+    305|     // A real child process receives the exact options environment; it…
+    306|     const { stdout } = await promisify(execFile)(process.execPath, ['-…
+ ❯ Object.run apps/runner/src/claude.ts:60:26
+ ❯ apps/runner/src/claude.test.ts:314:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 25 skipped (26)
+   Start at  21:33:34
+   Duration  297ms (transform 101ms, setup 0ms, import 212ms, tests 7ms, environment 0ms)
+

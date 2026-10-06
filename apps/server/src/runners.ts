@@ -1,3 +1,4 @@
+import { assertTaskExecutionProfile } from './execution-profiles/store.js';
 import { randomBytes, randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { AttemptView, ClaimResponse, Ownership, RegisterRunner, RunnerRegistration, HeartbeatResponse, DecisionAnswer } from '@flow/contracts';
@@ -40,22 +41,24 @@ export async function claim(pool: Pool, runnerId: string, leaseMs: number): Prom
   return transaction(pool, async client => {
     const runner = await lockRunner(client, runnerId);
     const busy = await client.query<{ count: number }>("SELECT count(*)::integer AS count FROM flow.attempts WHERE runner_id=$1 AND completed_at IS NULL", [runnerId]);
-    if (busy.rows[0]!.count >= runner.capacity) return { assignment: null };
+    if (busy.rows[0]!.count >= runner.capacity) return { assignment: null, remainingLeaseMs: 0 };
     const result = await client.query<{ id: string }>(`
       SELECT t.id FROM flow.tasks t LEFT JOIN flow.sessions s ON s.id=t.submission->>'resumeSessionId' AND s.harness=t.submission->>'harness'
       WHERE t.status='queued' AND t.dispatch_ready AND t.submission->>'harness'=ANY($1)
+      AND (t.submission->'executionProfile' IS NULL OR t.submission->'executionProfile'->>'runnerId'=$2)
       AND (t.submission->>'resumeSessionId' IS NULL OR (s.runner_id=$2 AND s.active_task_id IS NULL))
       ORDER BY t.created_at,t.id FOR UPDATE OF t SKIP LOCKED LIMIT 1`, [runner.harnesses, runnerId]);
-    if (!result.rows[0]) return { assignment: null };
+    if (!result.rows[0]) return { assignment: null, remainingLeaseMs: 0 };
     const task = await loadTask(client, result.rows[0].id);
+    await assertTaskExecutionProfile(client, task.submission);
     if (task.submission.resumeSessionId) {
       const session = await client.query('UPDATE flow.sessions SET active_task_id=$3 WHERE id=$1 AND harness=$2 AND runner_id=$4 AND active_task_id IS NULL RETURNING id', [task.submission.resumeSessionId, task.submission.harness, task.id, runnerId]);
-      if (!session.rowCount) return { assignment: null };
+      if (!session.rowCount) return { assignment: null, remainingLeaseMs: 0 };
     }
     const id = randomUUID();
     const inserted = await client.query<AttemptRecord>("INSERT INTO flow.attempts(id,task_id,runner_id,owner_version,lease_expires_at) VALUES($1,$2,$3,$4,clock_timestamp()+$5 * interval '1 millisecond') RETURNING *", [id, task.id, runnerId, task.owner_version + 1, leaseMs]);
     await client.query("UPDATE flow.tasks SET status='running',current_attempt_id=$2,owner_version=owner_version+1,updated_at=clock_timestamp() WHERE id=$1", [task.id, id]);
-    return { assignment: { attempt: attemptView(inserted.rows[0]!), task: { ...task.submission, id: task.id } } };
+    return { assignment: { attempt: attemptView(inserted.rows[0]!), task: { ...task.submission, id: task.id } }, remainingLeaseMs: leaseMs };
   });
 }
 export async function heartbeat(pool: Pool, runnerId: string, ownership: Ownership, leaseMs: number): Promise<HeartbeatResponse> {

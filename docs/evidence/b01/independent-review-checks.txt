@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance
+
+ ✓ apps/server/src/m2-workspace.test.ts (8 tests) 5644ms
+   ✓ shows accepted tasks together through a durable lightweight workspace page  459ms
+   ✓ delivers a late source commit after the observer already passed a newer committed source  343ms
+   ✓ paginates both directions and serializes concurrent projection without duplicate source events  376ms
+   ✓ projects acceptance before output across the 200-task batch boundary without losing events  1668ms
+   ✓ exposes ten task decisions together and rejects a stale decision after cancellation  1475ms
+   ✓ provides an authorized updated-order task index with exact filtered totals and bound cursors  353ms
+   ✓ preserves per-task cursor prefixes when another writer waits for the task lock  371ms
+   ✓ projects a long task in ordered prefixes across multiple 200-event batches  376ms
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  20:44:52
+   Duration  5.98s (transform 98ms, setup 0ms, import 253ms, tests 5.64s, environment 0ms)
+

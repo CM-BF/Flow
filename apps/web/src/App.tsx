@@ -1,5 +1,7 @@
 import {
+  Activity,
   useEffect,
+  useMemo,
   useCallback,
   useLayoutEffect,
   useRef,
@@ -10,6 +12,7 @@ import {
   type RefObject,
 } from "react";
 import { FlowClient } from "@flow/client";
+import type { PluginRegistryReader } from "./plugin-management/PluginManagement";
 import {
   TERMINAL_STATUSES,
   type TaskStatus,
@@ -24,17 +27,19 @@ import {
   PanelLeftClose,
   PanelRight,
   Plus,
-  RefreshCw,
   Settings2,
   Sun,
   Terminal,
   X,
 } from "lucide-react";
 import {
-  WorkspacePanels,
   type WorkspaceTabId,
 } from "./components/workspace/WorkspacePanels";
 import { TaskProjection } from "./projection";
+import { ConversationProjection, ConversationCatalog } from "./conversations/projection";
+import { ConversationThread } from "./conversations/ConversationThread";
+import { ConversationList } from "./conversations/ConversationList";
+import { userMessageId } from "./conversations/messages";
 import { WorkspaceOverview } from "./workspace-feed/WorkspaceOverview";
 import { TaskThread, fixtureMode, type DraftState } from "./TaskThread";
 import { Button } from "./components/ui/button";
@@ -47,7 +52,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "./components/ui/dialog";
-import { applyTheme, initialTheme } from "./themes";
+import { applyTheme, initialTheme, themes, type Theme } from "./themes";
+import { AppPluginSession, type AppActions } from "./plugin-integration/session";
+import { PluginProvider, AppSlot, PluginRail, PluginSettings, PluginWorkspace } from "./plugin-integration/react";
 import {
   closeChat,
   mergeChats,
@@ -133,7 +140,7 @@ function CloseChatButton({
   );
   return (
     <button
-      aria-label={`Close ${state.task?.title ?? view.title}`}
+      aria-label={`Close ${view.conversation?.getSnapshot().snapshot?.conversation.title ?? state.task?.title ?? view.title}`}
       tabIndex={-1}
       onClick={onClose}
     >
@@ -146,7 +153,8 @@ function ChatTitle({ view }: { view: View }) {
     view.projection.subscribe,
     view.projection.getSnapshot,
   );
-  return state.task?.title ?? view.title;
+  const conversation = useSyncExternalStore(view.conversation?.subscribe ?? noSubscription, view.conversation?.getSnapshot ?? noSnapshot);
+  return conversation?.snapshot?.conversation.title ?? state.task?.title ?? view.title;
 }
 const noSubscription = () => () => undefined;
 const noSnapshot = () => null;
@@ -167,6 +175,7 @@ function ChatListItem({
   );
   const latest = snapshot ?? task;
   return (
+    <div className={`flow-chat-row ${selected ? "selected" : ""}`}>
     <button
       title={latest.title}
       className={selected ? "selected" : ""}
@@ -178,11 +187,15 @@ function ChatListItem({
       />
       <span>{latest.title}</span>
     </button>
+    <AppSlot slot="sidebar.item.actions" context={{ kind: "task", taskId: task.id }} />
+    </div>
   );
 }
 interface View {
+  readonly key: string;
   projection: TaskProjection;
   title: string;
+  conversation?: ConversationProjection;
 }
 interface PanelFocusRequest { serial: number; taskId: string; tab: WorkspaceTabId }
 function ChatPane({
@@ -192,6 +205,8 @@ function ChatPane({
   onAccepted,
   onOpenReference,
   onActivate,
+  onInspect,
+  onOpenTask,
 }: {
   viewId: string;
   view: View;
@@ -199,6 +214,8 @@ function ChatPane({
   onAccepted: (id: string) => void;
   onOpenReference: (id: string) => void;
   onActivate: () => void;
+  onInspect: (taskId: string) => void;
+  onOpenTask: (taskId: string) => void;
 }) {
   const state = useSyncExternalStore(
     view.projection.subscribe,
@@ -206,6 +223,7 @@ function ChatPane({
   );
   const [confirm, setConfirm] = useState(false);
   const task = state.task;
+  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewId={viewId} projection={view.conversation} drafts={drafts} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
   if (!task && !viewId.startsWith("draft-")) return <section className="flow-no-chat" aria-label="Task loading state">
     {state.error ? <><p role="alert">Could not load this task: {state.error}</p><Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button></> : <p role="status">{state.connection === "disconnected" ? "Task is not loaded. Reconnect to the center or retry." : "Loading task…"}</p>}
     {!state.error && state.connection === "disconnected" && <Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button>}
@@ -220,9 +238,10 @@ function ChatPane({
       {task && (
         <div
           className="flow-task-bar"
-          data-extension-slot="chat.message.actions"
+          data-extension-slot="chat.task.actions"
         >
           <Status status={task.status} />
+          <AppSlot slot="chat.task.actions" context={{ kind: "task", taskId: task.id }} />
           <span className={`verification-${task.verificationStatus}`}>
             {task.verificationStatus === "passed"
               ? "Verified"
@@ -324,10 +343,17 @@ function Workspace({
 }: {
   client: FlowClient;
   onDisconnect: () => void;
-  theme: string;
-  onTheme: () => void;
+  theme: Theme;
+  onTheme: (theme: Theme) => void;
 }) {
+  const registry = useMemo<PluginRegistryReader>(() => ({
+    plugins: (options, signal) => client.plugins(options, signal),
+    plugin: (id, revision, signal) => client.plugin(id, revision, signal),
+    pluginVersions: (id, options, signal) => client.pluginVersions(id, options, signal),
+    pluginOperations: (id, options, signal) => client.pluginOperations(id, options, signal),
+  }), [client]);
   const [catalog] = useState(() => new TaskProjection(client));
+  const [conversations] = useState(() => new ConversationCatalog(client));
   const list = useSyncExternalStore(catalog.subscribe, catalog.getSnapshot);
   const [views] = useState(() => new Map<string, View>());
   const [drafts] = useState(() => new Map<string, DraftState>());
@@ -336,13 +362,14 @@ function Workspace({
   const [sidebar, setSidebar] = useState(() => window.innerWidth > 800);
   const [query, setQuery] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
+  const [panelVisited, setPanelVisited] = useState(false);
   const panelContainer = useRef<HTMLDivElement>(null);
   const [panelFocusRequest, setPanelFocusRequest] = useState<PanelFocusRequest | null>(null);
   const [panelTabs, setPanelTabs] = useState<Record<string, WorkspaceTabId>>(
     {},
   );
   const [loadingList, setLoadingList] = useState(false);
-  const [overview, setOverview] = useState(() => !new URLSearchParams(location.hash.slice(1)).has("task"));
+  const [overview, setOverview] = useState(() => location.hash === "#workspace");
   const [pageVisible, setPageVisible] = useState(() => document.visibilityState === "visible");
   useEffect(() => {
     const changed = () => setPageVisible(document.visibilityState === "visible");
@@ -357,9 +384,19 @@ function Workspace({
   };
   const ensureView = (id: string): View => {
     let view = views.get(id);
+    if (!view && id.startsWith("conversation:")) {
+      const cached = [...views.entries()].find(([, item]) => item.conversation?.getSnapshot().snapshot?.conversation.id === id.slice(13));
+      if (cached) {
+        const [oldId, existing] = cached; view = existing; views.delete(oldId); views.set(id, existing);
+        const draft = drafts.get(oldId); if (draft) { drafts.set(id, draft); drafts.delete(oldId); }
+        setGroups(previous => previous.map(group => ({ ...group, tabs: group.tabs.map(tab => tab === oldId ? id : tab), activeId: group.activeId === oldId ? id : group.activeId })));
+      }
+    }
     if (!view) {
       view = {
+        key: crypto.randomUUID(),
         projection: new TaskProjection(client),
+        ...((id.startsWith("draft-") || id.startsWith("conversation:")) ? { conversation: new ConversationProjection(client, id.startsWith("conversation:") ? id.slice(13) : null) } : {}),
         title: id.startsWith("draft-")
           ? "New chat"
           : (list.tasks.find((task) => task.id === id)?.title ?? "Task"),
@@ -367,7 +404,8 @@ function Workspace({
       views.set(id, view);
       view.projection.setVisible(false);
       view.projection.setOnline(navigator.onLine);
-      if (!id.startsWith("draft-")) void view.projection.select(id);
+      view.conversation?.setOnline(navigator.onLine);
+      if (!id.startsWith("draft-") && !view.conversation) void view.projection.select(id);
     }
     return view;
   };
@@ -393,20 +431,25 @@ function Workspace({
         ? openChat(previous, activeGroup, id)
         : [{ id: "main", tabs: [id], activeId: id }];
     });
-    history.replaceState(null, "", `#task=${encodeURIComponent(id)}`);
+    history.replaceState(null, "", id.startsWith("conversation:") ? `#conversation=${encodeURIComponent(id.slice(13))}` : `#task=${encodeURIComponent(id)}`);
   };
   useEffect(() => {
     void refreshChats();
+    void conversations.refresh();
     const followRoute = () => {
-      const id = new URLSearchParams(location.hash.slice(1)).get("task");
-      if (id) select(id);
-      else setOverview(true);
+      const params = new URLSearchParams(location.hash.slice(1));
+      const conversation = params.get("conversation");
+      const id = params.get("task");
+      if (conversation) select(`conversation:${conversation}`);
+      else if (id) select(id);
+      else if (location.hash === "#workspace") setOverview(true);
+      else newChat();
     };
     followRoute();
     const online = () =>
-      views.forEach((view) => view.projection.setOnline(true));
+      views.forEach((view) => { view.projection.setOnline(true); view.conversation?.setOnline(true); });
     const offline = () =>
-      views.forEach((view) => view.projection.setOnline(false));
+      views.forEach((view) => { view.projection.setOnline(false); view.conversation?.setOnline(false); });
     window.addEventListener("hashchange", followRoute);
     window.addEventListener("online", online);
     window.addEventListener("offline", offline);
@@ -414,16 +457,19 @@ function Workspace({
       window.removeEventListener("hashchange", followRoute);
       window.removeEventListener("online", online);
       window.removeEventListener("offline", offline);
-      views.forEach((view) => view.projection.disconnect());
+      views.forEach((view) => { view.projection.disconnect(); view.conversation?.dispose(); });
+      conversations.dispose();
       catalog.disconnect();
     };
   }, [client]);
   const focused = groups.find((group) => group.id === activeGroup) ?? groups[0];
   const selectedId = focused?.activeId;
   const selected = selectedId ? views.get(selectedId) : null;
+  const selectedTask = useSyncExternalStore(selected?.projection.subscribe ?? noSubscription, selected ? () => selected.projection.getSnapshot().task : noSnapshot);
+  const selectedTaskId = selectedTask?.id ?? null;
   useEffect(() => {
     const visible = new Set(overview || !pageVisible ? [] : groups.map(group => group.activeId));
-    views.forEach((view, id) => view.projection.setVisible(visible.has(id)));
+    views.forEach((view, id) => { view.projection.setVisible(visible.has(id)); view.conversation?.setVisible(visible.has(id)); });
   }, [groups, overview, pageVisible, views]);
   const syncWorkspaceSummaries = useCallback((tasks: TaskSummary[]) => {
     tasks.forEach(task => { catalog.syncSummary(task); views.get(task.id)?.projection.syncSummary(task); });
@@ -435,14 +481,19 @@ function Workspace({
         "",
         selectedId.startsWith("draft-")
           ? location.pathname + location.search
-          : `#task=${encodeURIComponent(selectedId)}`,
+          : selectedId.startsWith("conversation:") ? `#conversation=${encodeURIComponent(selectedId.slice(13))}` : `#task=${encodeURIComponent(selectedId)}`,
       );
   }, [selectedId, overview]);
   const panel = panelTabs[selectedId ?? ""] ?? "files";
   const setPanel = (tab: WorkspaceTabId, id = selectedId) => {
+    setPanelVisited(true);
     if (id) setPanelTabs((previous) => ({ ...previous, [id]: tab }));
-    if (id && tab.startsWith("detail:")) setPanelFocusRequest(previous => ({ serial: (previous?.serial ?? 0) + 1, taskId: id, tab }));
+    if (id) setPanelFocusRequest(previous => ({ serial: (previous?.serial ?? 0) + 1, taskId: views.get(id)?.projection.getSnapshot().task?.id ?? id, tab }));
     setPanelOpen(true);
+  };
+  const closePanel = () => {
+    setPanelOpen(false);
+    requestAnimationFrame(() => document.querySelector<HTMLButtonElement>('.flow-workspace-bar button[aria-label="Toggle workspace panel"]')?.focus());
   };
   const close = (id: string) => {
     const next = closeChat(groups, id);
@@ -459,15 +510,23 @@ function Workspace({
           );
       target?.focus();
     });
-    views.get(id)?.projection.disconnect();
-    views.delete(id);
-    drafts.delete(id);
+    const closing = views.get(id);
+    if (closing?.conversation) { closing.conversation.setVisible(false); closing.projection.setVisible(false); }
+    else { closing?.projection.disconnect(); views.delete(id); drafts.delete(id); }
     void refreshChats();
   };
   const accepted = (oldId: string, id: string) => {
     void refreshChats();
     const view = views.get(oldId);
     if (!view) return;
+    if (view.conversation) {
+      const nextId = `conversation:${id}`;
+      if (oldId === nextId) { void conversations.refresh(); return; }
+      views.delete(oldId); views.set(nextId, view);
+      const draft = drafts.get(oldId); if (draft) { drafts.set(nextId, draft); drafts.delete(oldId); }
+      setGroups(previous => previous.map(group => ({ ...group, tabs: group.tabs.map(tab => tab === oldId ? nextId : tab), activeId: group.activeId === oldId ? nextId : group.activeId })));
+      void conversations.refresh(); return;
+    }
     views.delete(oldId);
     view.title = view.projection.getSnapshot().task?.title ?? "Task";
     views.set(id, view);
@@ -479,8 +538,52 @@ function Workspace({
       })),
     );
   };
+  const taskView = (taskId: string) => [...views.entries()].find(([, view]) => view.projection.getSnapshot().task?.id === taskId);
+  const conversationOwnsTask = (taskId: string) => [...views.values()].some(view => view.conversation?.getSnapshot().turns.some(turn => turn.task.id === taskId));
+  const inspect = async (viewId: string, taskId: string, tab: WorkspaceTabId = "terminal") => {
+    const view = views.get(viewId); if (!view) return;
+    if (view.projection.getSnapshot().task?.id !== taskId) await view.projection.select(taskId);
+    setPanel(tab, viewId);
+  };
+  const actions: AppActions = {
+    knowsTask: id => Boolean(taskView(id)) || conversationOwnsTask(id) || catalog.getSnapshot().tasks.some(task => task.id === id),
+    task: id => taskView(id)?.[1].projection.getSnapshot().task ?? null,
+    hasDraft: id => Boolean(views.get(id)?.conversation) || (id.startsWith("draft-") && views.has(id)),
+    ownsMessage: (taskId, id, role) => [...views.values()].some(view => view.conversation?.getSnapshot().turns.some(turn => turn.task.id === taskId && (role === "user" ? userMessageId(turn) === id : turn.assistant.state === "available" && turn.assistant.messageId === id))),
+    openTask: select,
+    openWorkspace: (id, tab) => {
+      const owner = taskView(id) ?? [...views.entries()].find(([, view]) => view.conversation?.getSnapshot().turns.some(turn => turn.task.id === id));
+      if (owner) { select(owner[0]); void inspect(owner[0], id, tab); }
+      else { select(id); setPanel(tab, id); }
+    },
+    closeWorkspace: closePanel,
+    loadReference: async (id, referenceId) => {
+      const projection = taskView(id)?.[1].projection;
+      if (!projection) throw Error("Open this task before loading its reference.");
+      await projection.loadDetail(referenceId);
+      const result = projection.getSnapshot().details[referenceId];
+      if (result?.error) throw Error(result.error);
+    },
+    setTheme: onTheme,
+    copy: text => navigator.clipboard.writeText(text),
+  };
+  const [session, setSession] = useState<AppPluginSession | null>(null);
+  const actionsRef = useRef(actions);
+  actionsRef.current = actions;
+  useLayoutEffect(() => {
+    const created = new AppPluginSession(actionsRef.current, theme);
+    setSession(created);
+    return () => { void created.dispose(); };
+  }, [client]);
+  useLayoutEffect(() => {
+    session?.updateActions(actions);
+    session?.publishNavigation({ activeTaskId: selectedTaskId, workspaceTab: panel, workspaceOpen: panelOpen },
+      selectedTaskId ? { kind: "task", taskId: selectedTaskId } : selectedId ? { kind: "composer", viewId: selectedId, isDraft: true } : { kind: "global" });
+    session?.publishTheme(theme);
+  });
+  if (!session) return <p role="status">Opening workspace…</p>;
   return (
-    <div className="flow-shell">
+    <PluginProvider session={session}><div className="flow-shell">
       <nav
         data-extension-slot="activityBar.primary"
         className="flow-rail"
@@ -528,12 +631,14 @@ function Workspace({
           className="flow-rail-bottom"
         >
           <IconButton
-            label={theme === "dark" ? "Use light theme" : "Use dark theme"}
-            onClick={onTheme}
+            label={theme.scheme === "dark" ? "Use light theme" : "Use dark theme"}
+            onClick={() => onTheme(themes.find(item => item.id === (theme.scheme === "dark" ? "light" : "dark"))!)}
           >
-            {theme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
+            {theme.scheme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
           </IconButton>
-          <IconButton label="Change connection" onClick={onDisconnect}>
+          <PluginRail />
+          <PluginSettings registry={registry} />
+          <IconButton label="Change connection" onClick={() => { void session.dispose(); onDisconnect(); }}>
             <Settings2 size={18} />
           </IconButton>
         </div>
@@ -545,6 +650,7 @@ function Workspace({
             className="flow-sidebar-heading"
           >
             <span>Personal</span>
+            <AppSlot slot="sidebar.header" />
             <IconButton
               label="Hide chat list"
               onClick={() => setSidebar(false)}
@@ -562,54 +668,14 @@ function Workspace({
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
-          <div className="flow-section-label">
-            <span>Chats</span>
-            <IconButton
-              label="Refresh task list"
-              onClick={() => void catalog.list()}
-            >
-              <RefreshCw size={13} />
-            </IconButton>
-          </div>
-          {loadingList && (
-            <p className="flow-list-notice" role="status">
-              Loading chats…
-            </p>
-          )}
-          {list.error && (
-            <div className="flow-list-notice" role="alert">
-              {list.error}
-              <button className="flow-link" onClick={() => void refreshChats()}>
-                Retry chat list
-              </button>
-            </div>
-          )}
-          <nav
-            className="flow-chat-list"
-            data-extension-slot="sidebar.item.actions"
-          >
-            {list.tasks
-              .filter((task) =>
-                task.title.toLowerCase().includes(query.toLowerCase()),
-              )
-              .map((task) => (
-                <ChatListItem
-                  key={task.id}
-                  task={task}
-                  view={views.get(task.id)}
-                  selected={selectedId === task.id}
-                  onSelect={() => select(task.id)}
-                />
-              ))}
-          </nav>
-          {list.nextListCursor && (
-            <button
-              className="flow-link"
-              onClick={() => void refreshChats(true)}
-            >
-              Load more chats
-            </button>
-          )}
+          <ConversationList catalog={conversations} selectedId={selectedId?.startsWith("conversation:") ? selectedId.slice(13) : undefined} query={query} onSelect={id => select(`conversation:${id}`)} />
+          {overview && <details className="flow-legacy-tasks"><summary>Execution tasks</summary>
+            {loadingList && <p role="status">Loading tasks…</p>}
+            {list.error && <p role="alert">{list.error}</p>}
+            <nav className="flow-chat-list">{list.tasks.filter(task => task.title.toLowerCase().includes(query.toLowerCase())).map(task => <ChatListItem key={task.id} task={task} view={views.get(task.id)} selected={selectedId === task.id} onSelect={() => select(task.id)} />)}</nav>
+            {list.nextListCursor && <button className="flow-link" onClick={() => void refreshChats(true)}>More tasks</button>}
+          </details>}
+          <AppSlot slot="sidebar.footer" />
           {fixtureMode && (
             <p
               className="flow-fixture-label"
@@ -627,6 +693,7 @@ function Workspace({
           hidden={overview}
         >
           <span>Flow</span>
+          <AppSlot slot="chat.header" context={selectedTaskId ? { kind: "task", taskId: selectedTaskId } : selectedId ? { kind: "composer", viewId: selectedId, isDraft: true } : { kind: "global" }} />
           {fixtureMode && (
             <span className="flow-fixture-inline">Fixture preview</span>
           )}
@@ -662,7 +729,7 @@ function Workspace({
             <IconButton
               label="Toggle workspace panel"
               active={panelOpen}
-              onClick={() => setPanelOpen(!panelOpen)}
+              onClick={() => { setPanelVisited(true); setPanelOpen(!panelOpen); }}
             >
               <PanelRight size={16} />
             </IconButton>
@@ -697,7 +764,7 @@ function Workspace({
                   >
                     {group.tabs.map((id) => (
                       <div
-                        key={id}
+                        key={views.get(id)!.key}
                         className={`flow-tab ${group.activeId === id ? "selected" : ""}`}
                       >
                         <button
@@ -751,7 +818,7 @@ function Workspace({
                       aria-labelledby={`tab-${id}`}
                       className="flow-tab-body"
                       hidden={group.activeId !== id}
-                      key={id}
+                      key={views.get(id)!.key}
                     >
                       <ChatPane
                         viewId={id}
@@ -759,6 +826,8 @@ function Workspace({
                         drafts={drafts}
                         onAccepted={(taskId) => accepted(id, taskId)}
                         onActivate={() => setActiveGroup(group.id)}
+                        onInspect={taskId => { setActiveGroup(group.id); void inspect(id, taskId); }}
+                        onOpenTask={select}
                         onOpenReference={(referenceId) => {
                           setActiveGroup(group.id);
                           setPanel(`detail:${referenceId}`, id);
@@ -774,35 +843,32 @@ function Workspace({
             )}
           </div>
           <div className="flow-panel-mount" hidden={!panelOpen} ref={panelContainer}>
-            {selected ? (
-              <WorkspacePanelMount
+            {selected && (panelOpen || panelVisited) ? (
+              <Activity mode={panelOpen ? "visible" : "hidden"}><WorkspacePanelMount
                 view={selected}
                 activeTab={panel}
-                onActiveTabChange={(tab) => setPanel(tab)}
-                onClose={() => setPanelOpen(false)}
+                onClose={closePanel}
                 focusRequest={panelFocusRequest}
                 container={panelContainer}
-              />
+              /></Activity>
             ) : (
               <p>Select a task to inspect its files and output.</p>
             )}
           </div>
         </div>
       </main>
-    </div>
+    </div></PluginProvider>
   );
 }
 function WorkspacePanelMount({
   view,
   activeTab,
-  onActiveTabChange,
   onClose,
   focusRequest,
   container,
 }: {
   view: View;
   activeTab: WorkspaceTabId;
-  onActiveTabChange: (id: WorkspaceTabId) => void;
   onClose: () => void;
   focusRequest: PanelFocusRequest | null;
   container: RefObject<HTMLDivElement | null>;
@@ -811,25 +877,7 @@ function WorkspacePanelMount({
     view.projection.subscribe,
     view.projection.getSnapshot,
   );
-  const focusedRequest = useRef<number | null>(null);
-  useLayoutEffect(() => {
-    if (!focusRequest || focusRequest.serial === focusedRequest.current || focusRequest.taskId !== state.task?.id || activeTab !== focusRequest.tab) return;
-    const tab = container.current?.querySelector<HTMLButtonElement>('[role="tab"][aria-selected="true"]');
-    if (!tab?.getAttribute("aria-controls")?.endsWith(encodeURIComponent(activeTab))) return;
-    tab.focus();
-    focusedRequest.current = focusRequest.serial;
-  }, [focusRequest, state.task, activeTab, container]);
-  return (
-    <WorkspacePanels
-      task={state.task}
-      details={state.details}
-      connection={state.connection}
-      onLoadDetail={(id) => view.projection.loadDetail(id)}
-      activeTab={activeTab}
-      onActiveTabChange={onActiveTabChange}
-      onClose={onClose}
-    />
-  );
+  return <PluginWorkspace state={state} activeTab={activeTab} focusRequest={focusRequest} container={container} onClose={onClose} />;
 }
 function Connection({
   onConnect,
@@ -878,7 +926,8 @@ function Connection({
   );
 }
 export default function App() {
-  const [theme, setTheme] = useState(initialTheme);
+  const [theme, setTheme] = useState(() => themes.find(item => item.id === initialTheme())!);
+  const [connectionScope, setConnectionScope] = useState(() => crypto.randomUUID());
   const [client, setClient] = useState<FlowClient | null>(() =>
     fixtureMode
       ? new FlowClient({ baseUrl: "", token: "flow-fixture-only" })
@@ -899,16 +948,18 @@ export default function App() {
       </a>
       {client ? (
         <Workspace
+          key={connectionScope}
           client={client}
           onDisconnect={() => setClient(null)}
           theme={theme}
-          onTheme={() => setTheme(theme === "dark" ? "light" : "dark")}
+          onTheme={setTheme}
         />
       ) : (
         <Connection
-          onConnect={(baseUrl, token) =>
-            setClient(new FlowClient({ baseUrl, token }))
-          }
+          onConnect={(baseUrl, token) => {
+            setConnectionScope(crypto.randomUUID());
+            setClient(new FlowClient({ baseUrl, token }));
+          }}
         />
       )}
     </TooltipProvider>

@@ -1,0 +1,23 @@
+9:05:45 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+{
+  "startedAt": "2026-10-06T04:05:45.458Z",
+  "completedAt": "2026-10-06T04:05:51.184Z",
+  "exitCode": 1,
+  "checks": [
+    "public client registers config/grants/versions; same revision survives real center restart",
+    "closed view sends zero registry requests"
+  ],
+  "failure": "expect(locator).toBeVisible() failed\n\nLocator: getByRole('button', { name: 'View @flow-test/registered-4', exact: true })\nExpected: visible\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('button', { name: 'View @flow-test/registered-4', exact: true }) with timeout 3000ms\n  - waiting for getByRole('button', { name: 'View @flow-test/registered-4', exact: true })\n",
+  "pageErrors": [],
+  "cleanup": [
+    {
+      "database": "flow_x03_55742_0_f2490c09",
+      "remaining": 0
+    },
+    {
+      "database": "flow_x03_55742_1_15332594",
+      "remaining": 0
+    }
+  ],
+  "boundary": "Isolated module fixture, real PG/HTTP/host. Production App mounting is separate acceptance."
+}

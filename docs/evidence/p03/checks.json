@@ -1,0 +1,105 @@
+{
+  "recordedAt": "2026-10-06T03:58:45.697093+00:00",
+  "implementationCommit": "61d1192140d53c195f7d736d12e26932c9a5c0d5",
+  "baseCommit": "ac4e34de2331dce276440df8969883c1883060ef",
+  "node": "v24.20.0",
+  "pnpm": "9.15.4",
+  "vitest": "4.0.18",
+  "sdk": "1.3.0",
+  "uniquePassingBehaviorCases": 21,
+  "checks": [
+    {
+      "log": "protocol-red.log",
+      "command": "/opt/homebrew/opt/node@24/bin/node node_modules/vitest/vitest.mjs run packages/protocols/test/a2a-official-peer.test.ts --no-cache --configLoader runner",
+      "exitCode": 1,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0,
+      "note": "Fixture error envelope sampler threw; timeout is not intended behavioral red.",
+      "sha256": "5f19fe1d48c1a63e1483e2e0c296a755d30675214973d9864ba3945eb6234cb6"
+    },
+    {
+      "log": "protocol-red-corrected.log",
+      "command": "/opt/homebrew/opt/node@24/bin/node node_modules/vitest/vitest.mjs run packages/protocols/test/a2a-official-peer.test.ts --no-cache --configLoader runner",
+      "exitCode": 1,
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0,
+      "note": "Intended red: selection object converted to wrong task ID.",
+      "sha256": "016789ad1f0b9ca8f0861ce40c3cb3247d03b62ff030e59c6a42c0571d32a198"
+    },
+    {
+      "log": "protocol-green.log",
+      "command": "/opt/homebrew/opt/node@24/bin/node node_modules/vitest/vitest.mjs run packages/protocols/test/a2a-official-peer.test.ts --no-cache --configLoader runner",
+      "exitCode": 0,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "note": "First protocol vertical slice; included in later protocol six.",
+      "sha256": "6b2882af353f75026370928703ee73da42d077f3e7552d37dd839009f55cc2ab"
+    },
+    {
+      "log": "protocol-regression.log",
+      "command": "/opt/homebrew/opt/node@24/bin/node node_modules/vitest/vitest.mjs run packages/protocols/test/a2a-official-peer.test.ts packages/protocols/test/a2a-client.test.ts packages/protocols/test/a2a-observe.test.ts --no-cache --configLoader runner",
+      "exitCode": 0,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "note": "Final protocol tests.",
+      "sha256": "cb1ca18842ccd6002a03db9568b0d68edbad105269cc009462aa53bb93310ac6"
+    },
+    {
+      "log": "runner-red.log",
+      "command": "/opt/homebrew/opt/node@24/bin/node node_modules/vitest/vitest.mjs run apps/runner/src/protocol-dispatch/runtime.test.ts -t 'bound remote Task survives' --no-cache --configLoader runner",
+      "exitCode": 1,
+      "passed": 0,
+      "failed": 1,
+      "skipped": 14,
+      "note": "Fixture assertion used nonexistent digest field; corrected to public artifact version.",
+      "sha256": "5834f9ea83106ba6c847ba51b8c38a1b6ff4dbaa4fab1d4e2b80e76364591a3e"
+    },
+    {
+      "log": "runner-red-corrected.log",
+      "command": "/opt/homebrew/opt/node@24/bin/node node_modules/vitest/vitest.mjs run apps/runner/src/protocol-dispatch/runtime.test.ts -t 'bound remote Task survives' --no-cache --configLoader runner",
+      "exitCode": 1,
+      "passed": 0,
+      "failed": 1,
+      "skipped": 14,
+      "note": "Intended red: HTTP historyLength property absent. 14 unselected tests, not final skips.",
+      "sha256": "367b9b9d3b192364a47e0fb4c63aecd9d29386dcfa0dcf170cbd1ab319e37ed2"
+    },
+    {
+      "log": "runner-green.log",
+      "command": "/opt/homebrew/opt/node@24/bin/node node_modules/vitest/vitest.mjs run apps/runner/src/protocol-dispatch/runtime.test.ts --no-cache --configLoader runner",
+      "exitCode": 0,
+      "passed": 15,
+      "failed": 0,
+      "skipped": 0,
+      "note": "Final full runtime file; own DB cleanup confirmed.",
+      "sha256": "226189d38fe50491b7e4da55690e727c22e7d62edc18688465b81c5265b89827"
+    }
+  ],
+  "typecheck": {
+    "command": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--project",
+      "docs/evidence/p03/tsconfig.json"
+    ],
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-payload",
+    "startedAt": "2026-10-06T03:58:12.269641Z",
+    "completedAt": "2026-10-06T03:58:13.467452Z",
+    "exitCode": 0,
+    "log": "typecheck.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sourceFiles": {
+    "apps/runner/src/protocol-dispatch/index.ts": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51",
+    "apps/runner/src/protocol-dispatch/official-peer.ts": "e680c05a8bd6baee1ff37d4c9c6db744f3c1483948533817cec2f41f11554e42",
+    "apps/runner/src/protocol-dispatch/runtime.test.ts": "2470b074dac0a70841f76598c5e2aa098ae4b5a28e4bd2adb411f22cfa50091f",
+    "packages/protocols/src/a2a-client.ts": "a2e45e629c34480237ab7336f392bb0db9a555c086af3f029b533e346eb38219",
+    "packages/protocols/test/a2a-observe.test.ts": "44027b00057d587ef2da84c7a72a84f9ed93808777fd728900df12e881f0c1a0",
+    "packages/protocols/test/a2a-official-peer.test.ts": "4b38f5803c8fd7d2eaf1eb127a42c12ced929987685c2d403d5448cf270c2113"
+  },
+  "timingLimit": "Functional local runs on shared host, not performance latency/SLO evidence. Only same-task UTF8 body bytes compared."
+}

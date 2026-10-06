@@ -1,0 +1,31 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-native-events
+
+ ❯ apps/server/src/assistant/assistant.test.ts (10 tests) 37258ms
+   ✓ accepts a typed final through the ordered authenticated event interface  537ms
+   ✓ deduplicates an acknowledged final across center restart and terminal acknowledgement replay  552ms
+   ✓ requires a matching recorded session and rolls back an out-of-order batch atomically  542ms
+   ✓ rejects foreign credentials, wrong fence and caller-invented conversation ownership  1006ms
+   ✓ keeps a single immutable final per attempt and checks stable native identity  495ms
+   ✓ keeps large assistant bodies out of light pages and binds bounded cursors to their task  1023ms
+   ✓ recovers a durable final after runner and center restart with a lost response before-save  614ms
+   ✓ recovers a durable final after runner and center restart with a lost response after-save  661ms
+   ✓ refuses a new final after lease expiry even when its native session remains recorded  553ms
+   ✓ records a failed synthetic SDK run without persisting error text as an assistant reply  595ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/assistant/assistant.test.ts [ apps/server/src/assistant/assistant.test.ts ]
+Error: Hook timed out in 30000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ apps/server/src/assistant/assistant.test.ts:30:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 passed (10)
+   Start at  20:46:42
+   Duration  37.87s (transform 227ms, setup 0ms, import 506ms, tests 37.26s, environment 0ms)
+

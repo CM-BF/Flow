@@ -3,11 +3,13 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import type { Options, SDKMessage } from '@anthropic-ai/claude-agent-sdk';
 import type { HarnessContext, RunnerEventData } from '@flow/contracts';
-import { afterEach, expect, it } from 'vitest';
+import { afterEach, expect, it, vi } from 'vitest';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import { createClaudeAdapter, type ClaudeQuery } from './claude.js';
 
 const directories: string[] = [];
-afterEach(async () => { for (const directory of directories.splice(0)) await rm(directory, { recursive: true, force: true }); });
+afterEach(async () => { vi.unstubAllEnvs(); for (const directory of directories.splice(0)) await rm(directory, { recursive: true, force: true }); });
 async function setup() {
   const directory = await mkdtemp(join(tmpdir(), 'flow-claude-test-'));
   directories.push(directory);
@@ -95,7 +97,7 @@ it('checks ownership on every tool and aborts the SDK when the lease is lost', a
   await expect(createClaudeAdapter({ materialFiles: [test.material], query }).run(test.context)).rejects.toThrow();
   expect(decision).toMatchObject({ hookSpecificOutput: { permissionDecision: 'deny' } });
   expect(aborted).toBe(true);
-  expect(test.events.some(event => event.type === 'artifact' || event.type === 'completed')).toBe(false);
+  expect(test.events.some(event => event.type === 'artifact' || event.type === 'assistant-final' || event.type === 'completed')).toBe(false);
 });
 
 it.each(['cancel', 'timeout'] as const)('aborts and closes an active SDK query on %s without emitting completion', async reason => {
@@ -157,7 +159,7 @@ it('does not turn a success-shaped API error into a successful artifact or zero 
   const test = await setup();
   await expect(createClaudeAdapter({ materialFiles: [], query: sdk(async function* () { yield result({ is_error: true, modelUsage: {} }); }) }).run(test.context)).rejects.toThrow('did not complete');
   expect(test.events).toContainEqual(expect.objectContaining({ type: 'usage', inputTokens: null, costUsd: null, costKind: 'unknown' }));
-  expect(test.events.some(event => event.type === 'artifact')).toBe(false);
+  expect(test.events.some(event => event.type === 'artifact' || event.type === 'assistant-final')).toBe(false);
 });
 
 it('preserves measured model usage when execution reaches a turn limit', async () => {
@@ -181,7 +183,7 @@ it('fails closed when durable decision delivery fails and stops the SDK query', 
   await expect(createClaudeAdapter({ materialFiles: [test.material], query, requireReadApproval: true }).run(test.context)).rejects.toThrow();
   expect(decision).toMatchObject({ hookSpecificOutput: { permissionDecision: 'deny' } });
   expect(aborted).toBe(true);
-  expect(test.events.some(event => event.type === 'artifact')).toBe(false);
+  expect(test.events.some(event => event.type === 'artifact' || event.type === 'assistant-final')).toBe(false);
 });
 
 it('stops waiting for a human decision when the query deadline expires', async () => {
@@ -236,5 +238,79 @@ it('rejects an unexpected resumed session before publishing any native session r
     yield { type: 'system', subtype: 'init', session_id: 'native-wrong', tools: [], skills: [], plugins: [], mcp_servers: [] } as unknown as SDKMessage;
     yield result({ session_id: 'native-wrong' });
   }) }).run(test.context)).rejects.toThrow('resume');
-  expect(test.events.some(event => event.type === 'session' || event.type === 'artifact')).toBe(false);
+  expect(test.events.some(event => event.type === 'session' || event.type === 'artifact' || event.type === 'assistant-final')).toBe(false);
+});
+
+it('emits exactly the successful final result as typed assistant text after consuming trailing system frames', async () => {
+  const test = await setup(); let ended = false;
+  const query = sdk(async function* () {
+    yield { type: 'system', subtype: 'init', session_id: 'native-1', model: 'effective-model', permissionMode: 'dontAsk', tools: [], plugins: [], skills: [], mcp_servers: [], claude_code_version: 'test-runtime' } as unknown as SDKMessage;
+    yield { type: 'stream_event', event: { type: 'content_block_delta', delta: { type: 'text_delta', text: 'repeated draft' } }, session_id: 'native-1', parent_tool_use_id: null } as unknown as SDKMessage;
+    for (const content of [[{ type: 'text', text: 'repeated draft' }], [{ type: 'tool_use', id: 'tool-1', name: 'Read', input: { secret: 'tool secret' } }], [{ type: 'thinking', thinking: 'private thinking' }]]) {
+      yield { type: 'assistant', message: { id: 'same-message', content }, parent_tool_use_id: null, session_id: 'native-1' } as unknown as SDKMessage;
+    }
+    yield { type: 'assistant', message: { id: 'child', content: [{ type: 'text', text: 'child output' }] }, parent_tool_use_id: 'child-tool', session_id: 'native-1' } as unknown as SDKMessage;
+    yield result({ result: '最终正文 🌱\n仅此一次' });
+    yield result({ result: '最终正文 🌱\n仅此一次' });
+    yield { type: 'system', subtype: 'status', status: null, session_id: 'native-1' } as unknown as SDKMessage;
+    ended = true;
+  });
+  await createClaudeAdapter({ materialFiles: [], model: 'requested-model', query }).run(test.context);
+  expect(ended).toBe(true);
+  const finals = test.events.filter(event => event.type === 'assistant-final');
+  expect(finals).toHaveLength(1);
+  expect(finals[0]).toMatchObject({ content: '最终正文 🌱\n仅此一次', nativeSessionId: 'native-1', source: 'claude.sdk.result', sourceMessageId: 'result-1', settings: {
+    requested: { model: 'requested-model', permissionMode: 'dontAsk', thinking: 'disabled' },
+    effective: { model: 'effective-model', permissionMode: 'dontAsk', tools: [], thinking: 'unknown' },
+  } });
+  expect(JSON.stringify(test.events)).not.toMatch(/repeated draft|tool secret|private thinking|child output/);
+  expect(test.events.findIndex(event => event.type === 'assistant-final')).toBeGreaterThan(test.events.findIndex(event => event.type === 'verification'));
+});
+
+it('marks effective settings unknown without an init frame and keeps stable source identity across repeat delivery', async () => {
+  const first = await setup(); const second = await setup();
+  const query = sdk(async function* () { yield result(); });
+  await createClaudeAdapter({ materialFiles: [], query }).run(first.context);
+  await createClaudeAdapter({ materialFiles: [], query }).run(second.context);
+  const a = first.events.find(event => event.type === 'assistant-final');
+  const b = second.events.find(event => event.type === 'assistant-final');
+  expect(a).toEqual(b);
+  expect(a).toMatchObject({ settings: { effective: { model: null, permissionMode: null, tools: null, thinking: 'unknown' } } });
+});
+it('rejects conflicting results instead of silently replacing an earlier turn outcome', async () => {
+  const test = await setup();
+  const query = sdk(async function* () { yield result(); yield result({ result: 'different result', uuid: 'result-2' }); });
+  await expect(createClaudeAdapter({ materialFiles: [], query }).run(test.context)).rejects.toThrow('multiple');
+  expect(test.events.some(event => event.type === 'assistant-final' || event.type === 'artifact')).toBe(false);
+});
+it.each(['session', 'stream-error', 'unicode-size'] as const)('publishes no assistant final for %s failure', async failure => {
+  const test = await setup();
+  const query = sdk(async function* () {
+    if (failure === 'session') yield { type: 'system', subtype: 'init', session_id: 'native-different', model: 'model', permissionMode: 'dontAsk', tools: [], plugins: [], skills: [], mcp_servers: [] } as unknown as SDKMessage;
+    yield result({ result: failure === 'unicode-size' ? '🌱'.repeat(262_145) : 'ordinary response' });
+    if (failure === 'stream-error') throw new Error('Stream failed after result');
+  });
+  await expect(createClaudeAdapter({ materialFiles: [], query }).run(test.context)).rejects.toThrow();
+  expect(test.events.some(event => event.type === 'assistant-final' || event.type === 'artifact')).toBe(false);
+});
+
+it('passes only explicit native SDK environment and excludes Flow service credentials', async () => {
+  const test = await setup();
+  for (const key of ['FLOW_TOKEN', 'FLOW_RUNNER_TOKEN', 'FLOW_PREVIEW_ADMIN_URL', 'DATABASE_URL', 'PGPASSWORD', 'UNRELATED_SECRET']) vi.stubEnv(key, 'synthetic-service-secret');
+  vi.stubEnv('ANTHROPIC_API_KEY', 'synthetic-provider-key');
+  vi.stubEnv('CLAUDE_CONFIG_DIR', '/synthetic-claude-config');
+  vi.stubEnv('CLAUDE_CODE_OAUTH_TOKEN', 'synthetic-provider-session');
+  const query = sdk(async function* (options) {
+    expect(options.env).toBeDefined();
+    // A real child process receives the exact options environment; it prints only synthetic checks.
+    const { stdout } = await promisify(execFile)(process.execPath, ['-e', `
+      const forbidden = Object.keys(process.env).filter(key => /^(FLOW_|DATABASE_URL$|PGPASSWORD$|UNRELATED_SECRET$)/.test(key));
+      console.log(JSON.stringify({ forbidden, provider: process.env.ANTHROPIC_API_KEY === 'synthetic-provider-key', config: process.env.CLAUDE_CONFIG_DIR === '/synthetic-claude-config', session: process.env.CLAUDE_CODE_OAUTH_TOKEN === 'synthetic-provider-session', path: Boolean(process.env.PATH), home: Boolean(process.env.HOME) }));
+    `], { env: options.env });
+    expect(JSON.parse(stdout)).toEqual({ forbidden: [], provider: true, config: true, session: true, path: true, home: true });
+    expect(process.env.FLOW_RUNNER_TOKEN).toBe('synthetic-service-secret');
+    yield result();
+  });
+  await createClaudeAdapter({ materialFiles: [], query }).run(test.context);
+  expect(JSON.stringify(test.events)).not.toContain('synthetic-');
 });

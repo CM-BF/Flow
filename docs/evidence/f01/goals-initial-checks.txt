@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ✓ apps/cli/src/goals.test.ts (1 test) 681ms
+   ✓ round-trips goal versions through public CLI/client and production registration without implicitly executing  680ms
+ ✓ apps/cli/src/projects.test.ts (1 test) 620ms
+   ✓ uses production registration and the same versioned project through public client and CLI, retaining history and rejecting stale writes  620ms
+ ✓ packages/client/src/client.test.ts (4 tests) 58ms
+
+ Test Files  3 passed (3)
+      Tests  6 passed (6)
+   Start at  20:31:07
+   Duration  2.09s (transform 157ms, setup 0ms, import 480ms, tests 1.36s, environment 0ms)
+

@@ -1,0 +1,52 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown
+
+stdout | apps/server/src/shutdown/main.test.ts > bounds real main SIGTERM with an unfinished claim connection and no active database query
+{"databaseActiveBeforeSignal":[],"socketDestroyed":false}
+
+stdout | apps/server/src/shutdown/main.test.ts > bounds real main SIGTERM with an unfinished claim connection and no active database query
+{"case":"SIGTERM","elapsedMs":1033,"result":{"code":0,"signal":null},"output":"Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.\n"}
+
+stdout | apps/server/src/shutdown/main.test.ts > lets normal SIGINT exit without exhausting the drain deadline and preserves accepted commands on restart
+{"case":"SIGINT","elapsedMs":26,"result":{"code":0,"signal":null},"output":""}
+
+stdout | apps/server/src/shutdown/main.test.ts > lets normal SIGINT exit without exhausting the drain deadline and preserves accepted commands on restart
+{"case":"SIGTERM","elapsedMs":23,"result":{"code":0,"signal":null},"output":""}
+
+stdout | apps/server/src/shutdown/main.test.ts > ends a live SSE observer and handles repeated signals without killing the process
+{"case":"SIGTERM","elapsedMs":1042,"result":{"code":0,"signal":null},"output":"Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.\n"}
+
+stdout | apps/server/src/shutdown/main.test.ts > recovers a command after shutdown loses its ACK while the owned transaction finishes
+{"case":"SIGTERM","elapsedMs":1244,"result":{"code":0,"signal":null},"output":"Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.\n"}
+
+stdout | apps/server/src/shutdown/main.test.ts > recovers a command after shutdown loses its ACK while the owned transaction finishes
+{"case":"SIGTERM","elapsedMs":23,"result":{"code":0,"signal":null},"output":""}
+
+ ❯ apps/server/src/shutdown/main.test.ts (5 tests | 1 failed) 9238ms
+   ✓ bounds real main SIGTERM with an unfinished claim connection and no active database query  1828ms
+   ✓ lets normal SIGINT exit without exhausting the drain deadline and preserves accepted commands on restart  915ms
+   ✓ ends a live SSE observer and handles repeated signals without killing the process  1455ms
+   × closes after actual claim client aborts without treating the socket as transaction cancellation 2824ms
+   ✓ recovers a command after shutdown loses its ACK while the owned transaction finishes  1988ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/shutdown/main.test.ts > closes after actual claim client aborts without treating the socket as transaction cancellation
+Error: No expected database wait: Lock
+ ❯ waitForDatabaseWait apps/server/src/shutdown/main.test.ts:135:9
+    133|     await sleep(20);
+    134|   }
+    135|   throw Error(`No expected database wait: ${type}`);
+       |         ^
+    136| }
+    137| 
+ ❯ apps/server/src/shutdown/main.test.ts:120:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  21:02:57
+   Duration  9.34s (transform 13ms, setup 0ms, import 29ms, tests 9.24s, environment 0ms)
+

@@ -1,0 +1,20 @@
+.plugin-action-menu {
+  position: relative;
+  display: inline-block;
+}
+.plugin-action-menu [role="menu"] {
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  padding: 4px;
+  background: var(--popover);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.plugin-action-menu [role="menuitem"] {
+  display: block;
+  width: calc(100% - 6px);
+  text-align: left;
+}

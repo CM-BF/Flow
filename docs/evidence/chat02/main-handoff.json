@@ -1,0 +1,24 @@
+{
+  "observedAt": "2026-10-06T04:40:17Z",
+  "main": "75a33dec228e17bbbd0d3be9fd01bc9ac18a0133",
+  "featureHeadBeforeMetadata": "42be9a3be479c13f3b929d9db5b597fb098a5423",
+  "id": "CHAT02",
+  "target": "fcbc248cb10aa3ad750c106840beb88193b500bd",
+  "ancestor": true,
+  "scopeChanges": [
+    "M\tapps/runner/src/claude.test.ts",
+    "M\tapps/runner/src/claude.ts"
+  ],
+  "recentScopeHistory": [
+    "26ddd8d fix(runner): isolate native SDK environment from service credentials",
+    "fcbc248 Verify production assistant routes and bound owned test connection cleanup",
+    "2e10985 Verify assistant final recovery and keep message listings light",
+    "c014d61 Check final result identity and SDK output boundaries",
+    "bc44afc Persist native assistant finals through ordered runner events",
+    "fb78d01 Define durable typed assistant final contract",
+    "3487ffe Anchor runner leases to request-start monotonic time",
+    "b8155e9 feat: provide fenced protocol client and explicit harness usage policies"
+  ],
+  "remainingScopeSourceEqual": true,
+  "explanation": "差异仅已于v2交回的claude.ts与claude.test.ts，main后继26ddd8d隔离SDK env；剩余核心范围一致。"
+}

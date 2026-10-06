@@ -3,16 +3,25 @@ import { isAbsolute } from 'node:path';
 import type { HarnessAdapter } from '@flow/contracts';
 import { createFixtureAdapter } from './fixture.js';
 import { createClaudeAdapter, type ClaudeAdapterOptions } from './claude.js';
+import { describeExecutionProfile } from './execution-profiles.js';
+import type { ExecutionProfileConfiguration } from '../../../packages/contracts/src/execution-profiles.js';
 
 /** An explicit operator manifest enables Claude; omission preserves fixture-only startup. */
 export async function loadRunnerAdapters(manifestFile?: string): Promise<HarnessAdapter[]> {
+  return (await loadRunnerConfiguration(manifestFile)).adapters;
+}
+
+export async function loadRunnerConfiguration(manifestFile?: string): Promise<{ adapters: HarnessAdapter[]; profile: ExecutionProfileConfiguration | null }> {
   const adapters = [createFixtureAdapter()];
-  if (!manifestFile) return adapters;
+  if (!manifestFile) return { adapters, profile: null };
   if (!isAbsolute(manifestFile) || (await stat(manifestFile)).size > 16_384) throw new Error('Claude manifest must be a small, explicitly selected absolute file.');
   const content = await readFile(manifestFile, 'utf8');
   if (Buffer.byteLength(content) > 16_384) throw new Error('Claude manifest exceeds its size limit.');
-  adapters.push(createClaudeAdapter(parseManifest(JSON.parse(content))));
-  return adapters;
+  const options = parseManifest(JSON.parse(content));
+  const adapter = createClaudeAdapter(options);
+  const profile = describeExecutionProfile(options, adapter);
+  adapters.push(adapter);
+  return { adapters, profile };
 }
 
 function parseManifest(value: unknown): ClaudeAdapterOptions {

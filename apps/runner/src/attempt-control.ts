@@ -7,22 +7,28 @@ export class AttemptInterrupted extends Error {
   constructor(readonly reason: 'cancel' | 'lost' | 'shutdown') { super(`Attempt interrupted: ${reason}`); }
 }
 
+export interface LeaseGrant { remainingLeaseMs: number; requestedAt: number }
+
 export class AttemptControl {
   private readonly abort = new AbortController();
   readonly signal: AbortSignal;
   readonly ownership: Ownership;
   reason: AttemptInterrupted['reason'] | undefined;
   private heartbeatInFlight: Promise<void> | undefined;
-  private interval: ReturnType<typeof setInterval>;
+  private interval: ReturnType<typeof setInterval> | undefined;
   private expiry: ReturnType<typeof setTimeout> | undefined;
   private decisions = new Map<string, DecisionAnswer['answer']>();
   private closed = false;
+  private deadline = 0;
+  private readonly onShutdown = () => this.close();
 
-  constructor(private assignment: ClaimedTask, private client: FlowClient, private options: RunnerOptions) {
+  constructor(private assignment: ClaimedTask, private client: FlowClient, private options: RunnerOptions, initialLease: LeaseGrant) {
     this.ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
     this.signal = AbortSignal.any([this.abort.signal, options.signal]);
-    this.renew(assignment.attempt.leaseExpiresAt, performance.now());
-    this.interval = setInterval(() => { void this.heartbeat().catch(() => undefined); }, options.heartbeatIntervalMs ?? 2000);
+    if (options.signal.aborted) { this.close(); return; }
+    options.signal.addEventListener('abort', this.onShutdown, { once: true });
+    this.renew(initialLease.remainingLeaseMs, initialLease.requestedAt);
+    if (!this.reason) this.interval = setInterval(() => { void this.heartbeat().catch(() => undefined); }, options.heartbeatIntervalMs ?? 2000);
   }
 
   async assertOwnership() {
@@ -43,19 +49,23 @@ export class AttemptControl {
   interrupt(reason: AttemptInterrupted['reason']) {
     if (this.reason || this.options.signal.aborted) return;
     this.reason = reason;
+    clearInterval(this.interval);
+    clearTimeout(this.expiry);
     this.abort.abort(new AttemptInterrupted(reason));
     if (reason === 'lost') this.options.onNotice?.({ type: 'ownership-lost', attemptId: this.assignment.attempt.id });
   }
 
   close() {
     this.closed = true;
+    this.options.signal.removeEventListener('abort', this.onShutdown);
     clearInterval(this.interval);
     clearTimeout(this.expiry);
     this.abort.abort();
   }
 
   private assertActive() {
-    if (this.options.signal.aborted) throw new AttemptInterrupted('shutdown');
+    if (this.options.signal.aborted || this.closed) throw new AttemptInterrupted('shutdown');
+    if (!this.reason && performance.now() >= this.deadline) this.interrupt('lost');
     if (this.reason) throw new AttemptInterrupted(this.reason);
   }
 
@@ -77,7 +87,7 @@ export class AttemptControl {
       if (response.action === 'cancel') this.interrupt('cancel');
       else if (response.action === 'stop') this.interrupt('lost');
       else if (response.action === 'continue') {
-        this.renew(response.leaseExpiresAt, started);
+        this.renew(response.remainingLeaseMs, started);
         if (response.decision) this.decisions.set(response.decision.decisionId, response.decision.answer);
       } else this.interrupt('lost');
     } catch (error) {
@@ -87,10 +97,14 @@ export class AttemptControl {
     this.assertActive();
   }
 
-  private renew(leaseExpiresAt: string, started: number) {
+  private renew(remainingLeaseMs: number, requestedAt: number) {
+    if (this.closed || this.reason || this.options.signal.aborted) return;
     clearTimeout(this.expiry);
-    const remaining = Math.min(Date.parse(leaseExpiresAt) - Date.now(), 10_000 - (performance.now() - started));
-    if (!Number.isFinite(remaining) || remaining <= 0) { this.interrupt('lost'); return; }
+    this.deadline = requestedAt + remainingLeaseMs;
+    const remaining = this.deadline - performance.now();
+    if (!Number.isSafeInteger(remainingLeaseMs) || remainingLeaseMs < 1 || remainingLeaseMs > 300_000 || !Number.isFinite(remaining) || remaining <= 0) {
+      this.interrupt('lost'); return;
+    }
     this.expiry = setTimeout(() => this.interrupt('lost'), remaining);
   }
 }

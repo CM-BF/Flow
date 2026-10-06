@@ -1,0 +1,21 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center
+
+ ✓ apps/server/src/conversations/conversations.test.ts (14 tests) 12230ms
+   ✓ projects only the exact final result and follows up on the same native session and runner  1621ms
+   ✓ pages immutable turns and returns long assistant content only through an owned lazy detail  600ms
+   ✓ rejects follow-up while queued, running, waiting, cancelling or uncertain without duplicating work  4349ms
+   ✓ keeps unknown-adapter unavailable instead of guessing from telemetry or a title  541ms
+   ✓ keeps missing-session unavailable instead of guessing from telemetry or a title  439ms
+   ✓ keeps missing-result unavailable instead of guessing from telemetry or a title  503ms
+   ✓ keeps ambiguous-result unavailable instead of guessing from telemetry or a title  506ms
+   ✓ keeps invalid-result unavailable instead of guessing from telemetry or a title  495ms
+   ✓ maps the actual Claude adapter final-result path through the runner using only an injected SDK  1115ms
+   ✓ never promotes retained artifacts belonging to a superseded attempt  410ms
+   ✓ leaves the effective model unknown when the session did not record one  472ms
+
+ Test Files  1 passed (1)
+      Tests  14 passed (14)
+   Start at  20:39:53
+   Duration  12.61s (transform 145ms, setup 0ms, import 306ms, tests 12.23s, environment 0ms)
+

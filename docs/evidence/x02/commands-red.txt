@@ -1,0 +1,34 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-registry
+
+ ❯ apps/server/src/plugins/plugins.test.ts (2 tests | 1 failed) 845ms
+   ✓ registers a fixed declaration without granting capabilities or claiming the package was installed 47ms
+   × versions configuration and explicit grants with CAS and original-result idempotency 17ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/plugins/plugins.test.ts > versions configuration and explicit grants with CAS and original-result idempotency
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ apps/server/src/plugins/plugins.test.ts:69:29
+     67|   const key = randomUUID();
+     68|   const configured = await request(`/api/plugins/${id}/commands`, inpu…
+     69|   expect(configured.status).toBe(200);
+       |                             ^
+     70|   expect(configured.body.snapshot).toMatchObject({ revision: 2, config…
+     71|   const attempts = await Promise.all([['tool'], ['renderer']].map(capa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  20:39:16
+   Duration  1.22s (transform 114ms, setup 0ms, import 291ms, tests 845ms, environment 0ms)
+

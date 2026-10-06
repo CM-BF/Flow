@@ -1,0 +1,182 @@
+{
+  "generatedAt": "2026-10-06T04:37:33.126Z",
+  "taskId": "WPF-X03I01",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T04:37:23.689Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/plans/wpf-x03-plugin-integration/status.md",
+    "syncedAt": "2026-10-06T04:37:33.126Z",
+    "stale": false,
+    "ageHours": 0.009201666666666667
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/web-plugin-management-integration",
+    "head": "692eb7b3361f5b198a8f20f6bb97125aea12aa5f",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T04:37:33.464Z"
+  },
+  "human": {
+    "phase": "M2",
+    "priority": 2,
+    "output": "Settings懒挂载已获root独立APPROVED；开发8/生产7项、typecheck/build通过，固定源码hash已复算",
+    "next": "MainLead集成已审挂载；59473保留可查看",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": {
+    "state": "passed",
+    "target": "84acdcaaa9687a4ca75ebdb40a6efc7e5539029a",
+    "record": "PASSED 84acdcaaa9687a4ca75ebdb40a6efc7e5539029a; 开发8/生产7/typecheck/build；报告当时a534+dirty，五源码hash匹配固定target；0模型/DB"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "84acdcaaa9687a4ca75ebdb40a6efc7e5539029a",
+    "proof": {
+      "target": "84acdcaaa9687a4ca75ebdb40a6efc7e5539029a",
+      "head": "692eb7b3361f5b198a8f20f6bb97125aea12aa5f",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/plugin-integration/integration.css",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/test/plugin-management-integration.browser.ts",
+        "apps/web/test/plugin-management-integration.fixture.ts"
+      ],
+      "observedAt": "2026-10-06T04:37:34.038Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/wpf-x03/README.md",
+        "docs/evidence/wpf-x03/browser-failure.png",
+        "docs/evidence/wpf-x03/browser-results.json",
+        "docs/evidence/wpf-x03/browser.log",
+        "docs/evidence/wpf-x03/build.log",
+        "docs/evidence/wpf-x03/chunk-retry-red-browser-results.json",
+        "docs/evidence/wpf-x03/chunk-retry-red-browser.log",
+        "docs/evidence/wpf-x03/dependency-install.log",
+        "docs/evidence/wpf-x03/first-browser-failure.png",
+        "docs/evidence/wpf-x03/first-browser-results.json",
+        "docs/evidence/wpf-x03/first-browser.log",
+        "docs/evidence/wpf-x03/integration-dark-390.png",
+        "docs/evidence/wpf-x03/integration-dark.png",
+        "docs/evidence/wpf-x03/integration-light-390.png",
+        "docs/evidence/wpf-x03/integration-light.png",
+        "docs/evidence/wpf-x03/production-browser-results.json",
+        "docs/evidence/wpf-x03/production-browser.log",
+        "docs/evidence/wpf-x03/quality.md",
+        "docs/evidence/wpf-x03/source-manifest.json",
+        "docs/evidence/wpf-x03/typecheck.log",
+        "docs/evidence/wpf-x03/validation.md",
+        "plans/wpf-x03-plugin-integration/plan.md",
+        "plans/wpf-x03-plugin-integration/review.md",
+        "plans/wpf-x03-plugin-integration/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "declarationProof": "unchanged"
+  },
+  "implementationProof": {
+    "target": "84acdcaaa9687a4ca75ebdb40a6efc7e5539029a",
+    "head": "692eb7b3361f5b198a8f20f6bb97125aea12aa5f",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/plugin-integration/integration.css",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/test/plugin-management-integration.browser.ts",
+      "apps/web/test/plugin-management-integration.fixture.ts"
+    ],
+    "observedAt": "2026-10-06T04:37:33.502Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-x03/README.md",
+      "docs/evidence/wpf-x03/browser-failure.png",
+      "docs/evidence/wpf-x03/browser-results.json",
+      "docs/evidence/wpf-x03/browser.log",
+      "docs/evidence/wpf-x03/build.log",
+      "docs/evidence/wpf-x03/chunk-retry-red-browser-results.json",
+      "docs/evidence/wpf-x03/chunk-retry-red-browser.log",
+      "docs/evidence/wpf-x03/dependency-install.log",
+      "docs/evidence/wpf-x03/first-browser-failure.png",
+      "docs/evidence/wpf-x03/first-browser-results.json",
+      "docs/evidence/wpf-x03/first-browser.log",
+      "docs/evidence/wpf-x03/integration-dark-390.png",
+      "docs/evidence/wpf-x03/integration-dark.png",
+      "docs/evidence/wpf-x03/integration-light-390.png",
+      "docs/evidence/wpf-x03/integration-light.png",
+      "docs/evidence/wpf-x03/production-browser-results.json",
+      "docs/evidence/wpf-x03/production-browser.log",
+      "docs/evidence/wpf-x03/quality.md",
+      "docs/evidence/wpf-x03/source-manifest.json",
+      "docs/evidence/wpf-x03/typecheck.log",
+      "docs/evidence/wpf-x03/validation.md",
+      "plans/wpf-x03-plugin-integration/plan.md",
+      "plans/wpf-x03-plugin-integration/review.md",
+      "plans/wpf-x03-plugin-integration/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "issues": [],
+  "current": true,
+  "main": {
+    "record": "NOT_INTEGRATED；main基线仅有X03模块，不含本App挂载",
+    "recordedHead": null,
+    "target": "84acdcaaa9687a4ca75ebdb40a6efc7e5539029a",
+    "mainHead": "75a33dec228e17bbbd0d3be9fd01bc9ac18a0133",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/plugin-integration/integration.css",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/test/plugin-management-integration.browser.ts",
+      "apps/web/test/plugin-management-integration.fixture.ts"
+    ],
+    "observedAt": "2026-10-06T04:37:33.464Z",
+    "current": false,
+    "historicalIntegrated": false,
+    "method": "not-contained",
+    "scopeEqual": false,
+    "dirtyScopePaths": [],
+    "reason": "main 声明范围与目标不同，或存在未提交变化"
+  },
+  "assignments": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/plugin-integration/integration.css",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/test/plugin-management-integration.browser.ts",
+        "apps/web/test/plugin-management-integration.fixture.ts",
+        "docs/evidence/wpf-x03",
+        "plans/wpf-x03-plugin-integration"
+      ],
+      "state": "active",
+      "branch": "codex/web-plugin-management-integration",
+      "origin": "new",
+      "taskId": "WPF-X03I01",
+      "worker": "workspace_panels_owner",
+      "claimId": "a1044bb0-46ed-4cc4-a39a-c3f27a67cea4",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+      "createdAt": "2026-10-06T04:28:04.867Z",
+      "updatedAt": "2026-10-06T04:28:04.867Z",
+      "observedAt": null,
+      "needsVerification": false,
+      "matchesSource": true
+    }
+  ]
+}

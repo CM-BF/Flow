@@ -1,0 +1,52 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-native-events
+
+ ❯ apps/runner/src/claude.test.ts (20 tests | 1 failed | 19 skipped) 7ms
+   ↓ runs the public adapter with only a private material snapshot and verifies its saved result
+   ↓ denies outside access even when permission callbacks would autoallow
+   ↓ denies shell access even when permission callbacks would autoallow
+   ↓ denies missing access even when permission callbacks would autoallow
+   ↓ denies no-tools access even when permission callbacks would autoallow
+   ↓ checks ownership on every tool and aborts the SDK when the lease is lost
+   ↓ aborts and closes an active SDK query on cancel without emitting completion
+   ↓ aborts and closes an active SDK query on timeout without emitting completion
+   ↓ does not start the SDK when the attempt is already cancelled
+   ↓ keeps resumed model usage cumulative with unknown baseline and stable sample IDs
+   ↓ uses durable runtime decisions then rechecks ownership before allowing Read
+   ↓ does not turn a success-shaped API error into a successful artifact or zero usage
+   ↓ preserves measured model usage when execution reaches a turn limit
+   ↓ fails closed when durable decision delivery fails and stops the SDK query
+   ↓ stops waiting for a human decision when the query deadline expires
+   ↓ denies a material snapshot that has been replaced with a symlink outside the allowlist
+   ↓ records SDK permission refusals without publishing their raw tool inputs
+   ↓ preserves token counts but does not present an unknown SDK price basis as known cost
+   ↓ rejects an unexpected resumed session before publishing any native session reference
+   × emits exactly the successful final result as typed assistant text after consuming trailing system frames 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/claude.test.ts > emits exactly the successful final result as typed assistant text after consuming trailing system frames
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ apps/runner/src/claude.test.ts:259:18
+    257|   expect(ended).toBe(true);
+    258|   const finals = test.events.filter(event => event.type === 'assistant…
+    259|   expect(finals).toHaveLength(1);
+       |                  ^
+    260|   expect(finals[0]).toMatchObject({ content: '最终正文 🌱\n仅此一次', nativeSe…
+    261|     requested: { model: 'requested-model', permissionMode: 'dontAsk', …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 19 skipped (20)
+   Start at  20:36:37
+   Duration  274ms (transform 63ms, setup 0ms, import 176ms, tests 7ms, environment 0ms)
+

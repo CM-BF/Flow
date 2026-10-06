@@ -1,0 +1,267 @@
+{
+  "recordedAt": "2026-10-06T04:18:37.740198+00:00",
+  "implementationCommit": "895c8999d22fb3d911de2d46969e37b40051fdea",
+  "baseCommit": "8f1481df880cf5077e1ddb9a8f302fe700a7ece8",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "apps/web/test/plugin-management/browser.ts"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management",
+  "finalBrowser": {
+    "sourceCommit": "895c8999d22fb3d911de2d46969e37b40051fdea",
+    "startedAt": "2026-10-06T04:16:17.584Z",
+    "completedAt": "2026-10-06T04:16:24.201Z",
+    "exitCode": 0,
+    "checks": [
+      "public client registers config/grants/versions; same revision survives real center restart",
+      "closed view sends zero registry requests",
+      "opened view reads scoped real registry",
+      "bounded 10-row scoped list, nextCursor replacement, detail only on expansion, config/grants match durable revision",
+      "versions 10+2 and audit 10+4 use public paginated reads only after user expansion",
+      "real trusted host activate/disable/fail observed independently; no registry/client/token in PluginContext",
+      "project scope forwarded, personal/project data separated, empty scope described",
+      "401/503/offline read errors visible, explicit retry recovers without auto loop; refresh and next-page controls retain focus",
+      "close aborts reads; same-ID different-center data isolated; ignored-abort late result rejected; closed center switch zero reads",
+      "open view session change aborts old detail and rejects old-center late result with the same plugin ID",
+      "legal 48-character key and 128-character semver wrap at 390px without clipping, overlap or page overflow",
+      "390px light/dark no horizontal overflow, keyboard expansion and visible focus"
+    ],
+    "pageErrors": [],
+    "closeErrors": [],
+    "cleanup": [
+      {
+        "database": "flow_x03_42660_0_3c2e6533",
+        "closingConnections": [],
+        "remaining": 0
+      },
+      {
+        "database": "flow_x03_42660_1_56f4093a",
+        "closingConnections": [],
+        "remaining": 0
+      }
+    ],
+    "boundaryMeasurements": {
+      "keyLength": 48,
+      "versionLength": 128,
+      "keyBounds": {
+        "right": 143.84375,
+        "valueLeft": 153.84375,
+        "textRights": [
+          138.796875,
+          139.28125,
+          95.234375
+        ]
+      },
+      "versionBounds": {
+        "right": 366,
+        "textRights": [
+          60.6875,
+          360.40625,
+          360.40625,
+          207.140625
+        ]
+      }
+    },
+    "reads": [
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins?limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins?after=d3ad7c3d-e68d-4a2a-b21f-2a5d69c24630&limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins?limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e/versions?limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e/versions?after=eddcea91-f3c5-4419-9580-5f66c56b1cdd&limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e/operations?limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e/operations?after=4b02e657-00e4-4eb2-b15b-ccf654787709&limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins?projectId=b4c7e349-8e6c-45a0-af7d-301fa895c4e3&limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins?projectId=6ac62b5a-eb5c-4081-8406-fab8c750830d&limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins?limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins?limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins?limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins?limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins?limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+      },
+      {
+        "center": 1,
+        "method": "GET",
+        "path": "/api/plugins?limit=10"
+      },
+      {
+        "center": 1,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+      },
+      {
+        "center": 1,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+      },
+      {
+        "center": 1,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins?limit=10"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e"
+      },
+      {
+        "center": 0,
+        "method": "GET",
+        "path": "/api/plugins/04383878-27c9-45c8-a758-2a394a49e85e/versions?limit=10"
+      }
+    ],
+    "boundary": "Isolated module fixture, real PG/HTTP/host. Production App mounting is separate acceptance."
+  },
+  "finalResultSha256": "d1b960c8d934f2fa4a5805e15439e9509265568d6f0747dcaf6170f1f06e4468",
+  "sourceFiles": {
+    "apps/web/src/plugin-management/PluginManagement.tsx": "7fd729e4899dcc13730f96dc9f5930256ff4613a4782955fcc721ba98a304786",
+    "apps/web/src/plugin-management/management.css": "c1aadb7d3dc944b98c41f2b7ba48aa66fbee8442af6da31771bd807f2a0ab51c",
+    "apps/web/src/plugin-management/use-read.ts": "0f32db860d45717394ceed7576bc06051d8c082271269261b705aadf82c3fbba",
+    "apps/web/test/plugin-management/browser.ts": "dd26b270431a49e50abdca1d3f839ef4cbb79dfddecc324a19e1f077c884fa79",
+    "apps/web/test/plugin-management/fixture/index.html": "600e659f551a0ca3a675d41ec78bc78599fabb5adf013ef846fd8dc7b63f9f8f",
+    "apps/web/test/plugin-management/fixture/main.tsx": "b4819af5412cea6320be099a040837bfbccbfaec94f74d1f5951609a8f104e5d",
+    "apps/web/test/plugin-management/fixture/style.css": "32995333f829e688ef2c7447c963450aefcbc1e0e1cf36ec4f8e791e780f6010"
+  },
+  "logs": [
+    {
+      "file": "browser-red.log",
+      "exitCode": 1,
+      "note": "Expected stub list failure; 2 preceding checks.",
+      "sha256": "35f6ba1ae92288ce18701a856d7be293bd55b56821dfb47f40f865193c27bb3e"
+    },
+    {
+      "file": "browser-first-green.log",
+      "exitCode": 0,
+      "note": "3-check first vertical slice.",
+      "sha256": "af798c725c52a7e47a126d9c13d9e6d5f61b80e13a8e1394d9e774c1c8b19c00"
+    },
+    {
+      "file": "typecheck-initial.log",
+      "exitCode": 2,
+      "note": "Missing vite/client type resolution; subsequent noEmit correction recorded.",
+      "sha256": "3b32d54f4d9599847feaf337ca33f29c4bdb31243163f2a82ddd08dc4cfeebc9"
+    },
+    {
+      "file": "browser-full-first.log",
+      "exitCode": 0,
+      "note": "10-check historical run; not the later failed cleanup run.",
+      "sha256": "2137d66f6649bf8f657aaf30e110a1fa4e5aed6516119af472e1d9d01adcd069"
+    },
+    {
+      "file": "browser-cleanup-failure.log",
+      "exitCode": 1,
+      "note": "57P01 during own DB forced cleanup; sanitized stack, original internal PG client object excluded.",
+      "sha256": "537d926deaa1b6b1adc997c0bf8aecd608ec712fe740f34ecae56ba77843e03a"
+    },
+    {
+      "file": "browser-focus-red.log",
+      "exitCode": 1,
+      "note": "Expected Next page focus regression; 3 preceding checks.",
+      "sha256": "bb588afaff90b2492d32df14e1d9f3d3622592a3c5b11ec74216e157f58fcdfa"
+    },
+    {
+      "file": "browser-candidate.log",
+      "exitCode": 0,
+      "note": "12-check candidate before explicit401/offline expansion.",
+      "sha256": "282abc0ad3621aa67f939f6319ff12ed4be79338aa9dc7f6a4d7973c84ab6fa5"
+    },
+    {
+      "file": "browser-final.log",
+      "exitCode": 0,
+      "note": "Final12 named browser checks at fixed implementationCommit.",
+      "sha256": "be393b96cd3d35a9484e814db79b55bbb6548378de67adc56d5d87302c1b67b5"
+    }
+  ],
+  "typecheck": {
+    "sourceCommit": "895c8999d22fb3d911de2d46969e37b40051fdea",
+    "command": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--project",
+      "docs/evidence/x03/tsconfig.json"
+    ],
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management",
+    "startedAt": "2026-10-06T04:17:13.041748Z",
+    "completedAt": "2026-10-06T04:17:14.517156Z",
+    "exitCode": 0,
+    "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "boundary": "Module fixture is complete; X03-04 production App mounting and acceptance remains pending."
+}

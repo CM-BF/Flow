@@ -18,3 +18,58 @@
 CLI链路：个人workspace→创建project→版本命令增节点→同key重放→旧revision拒绝(exit3)→旧历史可读→中心重启后revision2仍在；计划节点不隐式创建执行task。P02实际server/main、runner/main、CLI全链由P02 owner单独执行并保存其report，不能用本记录代替。
 
 Goal Owner独立只读接线APPROVED：9db3ce18e17ded201673bb3e514d5005cd68d866 / 71bff1f8a974fee7321c4d2cc5ee2dddde22abd3 / 36aeaff12000d77ebd025859f999c69612fce653；已读源码与测试，未重跑。只覆盖入口接线，G01 core6394、P02 coref942各自另有独立review。clean-code复核：领域schema复用、薄client不暗重试、显式稳定key、原P02初始化两P2由原owner修复，不能让共享approval掩盖模块问题。
+
+## O01 public consumer接线 2026-10-06 03:32 UTC
+
+接收O01固定6bb380b与a4e1348修复；早期cherry-pick历史导致11处add/add，全部使用原owner完整6bb版本，O01领域实现范围零diff，未手工重写。原始证据stdout的尾行/空白保持不改，diffcheck仅对非原始txt实施。共享client新增createGoal/readGoal/readGoalInput/commandGoal/goalExecutions；CLI薄层复用schema与显式稳定key，不生成隐式执行。
+
+首次局部6/6（目标CLI1+项目CLI1+client4）2.09s；typecheck发现测试构造缺schema默认化后的workspaceId/taskId/parent，原错误保留。仅补明确测试字段，最终typecheck通过、受影响目标CLI1/1 1.10s。真实独立flow_goal_cli_PID_TIME DB/动态端口，重启保留原文、历史input读取、旧revision拒绝、幂等重放、无implicit任务。原始输出分列goals-*.txt，0模型，没有重跑O01完整模块/全库。
+
+clean-code复核：领域事务不复制进client/CLI，JSON输入受schema约束，所有命令显式key/AbortSignal，无不明自动重试。尚不含自然语言规划或native tool挂载；CHAT01普通会话走独立模块，不等待编排。
+
+CHAT client/export frozen84117ca：真实HTTP传输5/5、typecheck，0模型；中心模块尚未可用。Web基线无O01上下文导致pick冲突，共享owner生成web-chat-transport.patch（基线bac6）仅同三文件聊天内容，manifest逐文件hash，外部受控应用而非另改client。两轮真实模型提案见chat-live-proposal.md，预算已条件批准，三端审查/main/实际配置未就绪；0调用。
+
+
+## CHAT生产入口与X02消费者 2026-10-06 03:51 UTC
+
+沿用同TypeScript/Fastify/pg/client/CLI任务的find-skills发现；再次读本地clean-code/codebase-design，将业务约束保留原领域module，薄消费者只负责传输/输入schema/稳定key。没有新依赖。CHAT完整挂载37ab367在createServer初始化007会话和009正文、鉴权hook后注册接口；初期1d4/e599只import/register未迁移的中间态未交外部当完整可用入口，最终37ab已补完整并typecheck。
+
+X02接收已独审3d0cfc8完整领域，生产008位于projects/会话之后、正文009之前；插件client七方法与CLI register/list/show/versions/history/operation/change只使用owner HTTP。无install/enable等虚假命令，输出runtimeStatus仍unavailable。输入32KiB/公开schema，命令显式稳定key，CAS409保持exit3，不暗重试。领域实现未改；新增依赖/根锁变化均为零。
+
+固定共享目标095497dc1719d10df8309fdf17d95539fc891e06：真实PG+公开CLI1条纵向行为与client4条共5/5，2.25s；typecheck通过。原始输出plugins-checks.txt/plugins-typecheck.txt。注册重报、配置更新、旧revision冲突、历史读取、project过滤、中心重启和无隐式task/包安装均断言；专库flow_plugin_cli_PID_TIME与临时输入、动态端口清理。没有重复X02全17或全库，0模型。
+
+clean-code检查：错误不回显私密配置，CLI不把登记当安装，领域schema只有一个来源，thin methods保持统一鉴权/AbortSignal。CHAT02正式10模块测试由该owner保存（含首次HTTP teardown失败及修复后10/10）；共享入口独审另绑定37ab，不以CLI测试代替聊天完整验收。
+
+完整模块接收后集成候选149f50eb8440ed56e49cbdddb83f37bd18d6caa0：只选真实adapter注入SDK两轮、typed pending→success/重报重启、unknown与长正文lazy三条直接消费者，3/3通过（明确另外19条未选，非22重跑），3.38s。原始chat-production-consumer.txt；正式createServer含007/008/009，不用测试旁路挂载。CHAT01领域相对独审d0f零diff，CHAT02 test修复fcbc另独审；0模型，Web新聊天尚未完成独审。
+
+独立接线批准：Mika只读APPROVED 095497，五文件及raw hash已核，未重跑，无finding；Goal Owner只读APPROVED 37ab（1d4父版本→37ab的两文件组合），007/009 await位于serve前、owner auth后注册、pool异常清理与export准确，10/10原始stdout和共享source hash吻合。字段/限制与领域review分开，真实模型仍0。
+
+## 执行配置薄接口 2026-10-06 04:11 UTC
+
+固定target94f50acf38213caacb2852d740c818b8480e3d15：executionProfiles分页只读与publishExecutionProfile runner声明两方法，复用统一HTTP鉴权/AbortSignal，不添加可用性推断。领域合同60b由唯一owner维护。原始execution-profile-client.txt为1/1，366ms；execution-profile-client-typecheck.txt通过。0模型、无PG领域验证或在线能力背书。已发Mika独立只读review，尚未批准。clean-code复核共享方法不复制业务，不暗重试发布，client只传输。
+
+main8f1481现场核实已含X02/CHAT共享接线，原095/37ab独立approval仍各自限定；本新增target不继承。
+
+2026-10-06 04:12 UTC：Mika上述94f独审APPROVED，受审三文件/source合同对固定94f零diff，不覆盖随后O02依赖。O02需要的直接依赖声明dac8c391只增加runner zod4.6.5及dev MCP SDK1.32.1 importer；均为现有lock已固定版本，offline lock-only无新下载/版本漂移，依赖功能由O02真实MCP零模型用例验证。R04已停写index且claim1714v2移出，F01 claim8470v7原子接回；接收已审R04完整3770以保持其停机hook。
+
+## CHAT03生产挂载 2026-10-06 04:17 UTC
+
+固定300f0035b4c754cd09a4e38680378d8fb81924cc：server/index三行，010在scheduler前await，runner/owner角色hook之后路由，保留R04。生产createServer直接消费者只选3/7（目录重启/选择选路/两轮配置生效分层），3/3通过3.12s，4未选；typecheck通过，原始profile-production-consumer.txt/profile-production-typecheck.txt。0模型，测试SDK注入不冒充provider验收。Root只读独立APPROVED，无finding/未重跑，source固定与working一致；consumer hash 0ef54c31a9cec4991e12fbf392d102153f9aed14f9f925f14014e81c1b143338 / tsc1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a。领域a28由Mika独审，范围分开。
+
+## 真实两轮报告及零模型补证 2026-10-06 04:29 UTC
+
+复用本地find-skills/webapp-testing/clean-code，明确ready locator而非networkidle。真实2query固定dd1b/de9源码，原检查弱UI断言及pending截图原样保留；补focused visible second assistant exact text，仅重放保存响应，不再付费。首次主题定位失败和侧栏遮挡截图保留，04:28重放显式关闭侧栏后桌面/390px深色已目视正文可读，0POST/pageErrors空。报告区分SDK请求空扩展数组与init实际3plugins/3skills、归一化modelUsage与原始wire、累计估算与未知增量；无需为metadata重跑产品套件。manifest更新覆盖所有证据。
+
+Root新增独立APPROVED dac8c3910eee1828e7081a3d33e19a89a056f4d4：仅runner package/lock importer，zod4.6.5对应O02生产import、MCP1.32.1仅dev peer；未改resolved块或SDK版本。O02固定8/8+tsc支持使用，无重跑，不与Mika94f客户端审查混同。
+
+## O03事务内复用seam 2026-10-06 04:33 UTC
+
+固定dbb57268889b82efb74c330bbf268b13f01b6402：只提取tasks.commandInTransaction与goals.applyGoalCommand，原pool事务方法复用它们。调用方必须在同事务完整授权后进入，含replay路径；本helper本身不构成新授权。F01 claim v8按CHAT03单文件停写/amend后接入tasks.ts；O01旧goals claim已released。
+
+原goal公开HTTP/PG9/9通过，13.86s（原专库若存在失败关闭，实际创建/清理）；仅直接消费者，没有全库或模型。首次tsc因该WT尚未链接新增O02依赖失败，原o03-shared-seams-typecheck.txt保留；frozen offline install无锁变化，最终o03-shared-seams-typecheck-final.txt通过。clean-code检查只将原行为放在小Interface后，不新造domain mutation/通用workflow；O03独立授权/锁竞争测试归其owner。
+
+## Native SDK环境隔离 2026-10-06 04:34 UTC
+
+固定26ddd8de9fde0d67e6e42bd81a583facc993a31a，仅claude.ts/test；原CHAT02 owner停写/amend后F01v9接收。固定SDK0.3.290 sdk.d.ts1645–1662明确env替换而非合并，未设置时继承宿主。新增明确系统/本机provider认证允许清单，排除Flow token、数据库凭据和无关环境；保留HOME/PATH与本机SDK合法认证入口，不读取或打印真实凭据。没有改模型、工具政策、native session或profile声明能力。
+
+先公开adapter新用例红（options.env缺失），原sdk-environment-red.txt保留；修复后完整此模块26/26，403ms，typecheck通过。注入query仅观察options，并启动真实Node子进程传精确env验证合成marker隔离/合法provider变量保留、宿主环境未变、事件不泄漏。没有真实SDK/query/provider实验，因此不宣称实际登录可用性；启动器角色隔离另由SVC715ec独审。

@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-06T04:09:56.974Z",
+  "completedAt": "2026-10-06T04:10:01.594Z",
+  "exitCode": 0,
+  "checks": [
+    "public client registers config/grants/versions; same revision survives real center restart",
+    "closed view sends zero registry requests",
+    "opened view reads scoped real registry",
+    "bounded 10-row scoped list, nextCursor replacement, detail only on expansion, config/grants match durable revision",
+    "versions 10+2 and audit 10+4 use public paginated reads only after user expansion",
+    "real trusted host activate/disable/fail observed independently; no registry/client/token in PluginContext",
+    "project scope forwarded, personal/project data separated, empty scope described",
+    "read error is visible and explicit retry recovers without automatic loop",
+    "close aborts reads; same-ID different-center data isolated; ignored-abort late result rejected; closed center switch zero reads",
+    "390px light/dark no horizontal overflow, keyboard expansion and visible focus"
+  ],
+  "pageErrors": [],
+  "cleanup": [
+    {
+      "database": "flow_x03_8304_0_875e3095",
+      "remaining": 0
+    },
+    {
+      "database": "flow_x03_8304_1_c6b1345b",
+      "remaining": 0
+    }
+  ],
+  "boundary": "Isolated module fixture, real PG/HTTP/host. Production App mounting is separate acceptance."
+}

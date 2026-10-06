@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-06T03:19:51.304Z",
+  "source": "a4e1348bc514d9c32cadc5239df22111a12e9faf",
+  "sourceHashes": {
+    "apps/server/src/tasks.ts": "b18cba50eb0902abba40603665a1a081b193b2dfb0af9ad189cd7703d404da3b",
+    "apps/server/src/index.ts": "b837bdc7c978245c03b012838bfaec540f194d8f981d030215b137550175ce75",
+    "packages/contracts/src/index.ts": "937344bdca3e88f69152d70f79b359fbe009423d97f89422b1a5033e50faf2ff",
+    "packages/contracts/src/goals.ts": "11ae9fe22c2b65ceab9ee42205d1881978551096e39bd818b7cc912f48cf2240",
+    "apps/server/src/goals/index.ts": "0e33bcbc20f54e91214859d9d2eca096a40bef748ba500938a6015bc488f5842",
+    "apps/server/src/goals/commands.ts": "d385357a21c07fd705d8b3d1ce9f28e7d1c8d539dc856d325de29093d2d80fce",
+    "apps/server/src/goals/state.ts": "bfcdf9b5c02863b1e3f30507c057a39ed2800d2c78e757c6444370b5c93e467c",
+    "apps/server/src/goals/goals.test.ts": "6115b135a281f2f6b7cf736c40a578e766a255c4697561162965d28b519bd345",
+    "apps/runner/src/goal-tools/index.ts": "1def37a4dcc48150687305ed15994ab2d49ce4a5f7e518b9ab992d9acc1b09ce",
+    "apps/runner/src/goal-tools/goal-tools.test.ts": "bd6baa74a290228f3d6b4ac37c9ad2fc0321fa739f80fe298ff3ae35392becdd",
+    "packages/storage/migrations/006-goals.sql": "e7174fdb547df194bcae5286981135c1cda3e47a2ea442afcafee0791a762a49"
+  },
+  "evidenceHashes": {
+    "final/diamond.json": "81aa3c083e9da3e0ad06b3f34be85145fd2545150fd279a262201507d6ddece9",
+    "final/uncertain.json": "b0195569899c9db0ac4b42c314269bbbecf27d0dcda3154b81477bbc31b8afbb",
+    "final/bounded-read.json": "85630eac7f79c3270424942c4d7098ee27cdede495941d9b37536854e31a6995",
+    "final/noop-provenance.json": "f6bd68b863b7d52892b048f97b661054aba282498b6083903e83b002cdb142d6"
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "os": "25.6.0",
+    "cpu": "Apple M3 Max",
+    "postgres": "PostgreSQL 16.13 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit",
+    "claudeSdk": "0.3.290"
+  },
+  "checks": {
+    "publicHttpPg": 9,
+    "restrictedTools": 2,
+    "passed": 11,
+    "elapsedSeconds": 14.94,
+    "typecheck": "passed",
+    "modelCalls": 0,
+    "cloudCalls": 0,
+    "databaseRemoved": true,
+    "recordedDiamondRunnerProcessesExited": true,
+    "matchingRunnerProcessesRemaining": 0
+  },
+  "limits": [
+    "fixture only",
+    "no natural-language reasoning",
+    "no native SDK tool mount",
+    "no full-plan completion"
+  ]
+}

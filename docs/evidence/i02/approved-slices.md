@@ -23,3 +23,11 @@ P01独立复跑官方A2A bridge6+MCP peer3+A2A client2，11/11，4.55秒，0模�
 ## 独立集成差异复核
 
 assignment_review / gpt-6-astra 于2026-10-06 02:37 UTC只读 APPROVED `873738d9eb998c10bc71721d9b325fcc76ecd7b5` 的probe与registry差异：断言未弱化，final checks五份源码hash独立复算吻合，完整browser退出、同task/attempt、产物/verification、0→1→2详情与取消0artifact保留；两个新增WPF权威status实际存在。未重跑整旅程/模型，不把此结论扩张为未实现M2产品能力。
+
+## 2026-10-06 04:26 UTC 小批次：X03 / O02 / D06
+
+接收独立批准的固定源码：X03 `895c8999d22fb3d911de2d46969e37b40051fdea`（final1290e7d）；O02 `d8198b13a15a0e27ef1686afa8495916a6aa8abc`（final2290f24）；D06 `ef42277ff55d1cbb76ea707836481a9788619033`（finalb4c2ab1）。分别核对模块/测试与集成树实现零差异，未重跑作者已经通过的局部套件。实际 root 与 Web typecheck 通过，原始输出见 `plugin-goal-root-typecheck.txt`、`plugin-goal-web-typecheck.txt`。
+
+X03仅只读插件登记/浏览器host视图，App挂载仍归外部WPF-X03I01；O02仅受限MCP桥接，真实query授权与NL规划仍未完成；D06图固定8f1481d历史架构基线，不能当当前main全量事实。新增D06/CHAT04两个权威来源，registry共47；实际4320切换另记。
+
+本段复用本地find-skills、codebase-design、clean-code：检查小Interface、中心授权与UI事实来源隔离、固定review target以及错误/限制说明；没有引入新框架或反复全库验证。

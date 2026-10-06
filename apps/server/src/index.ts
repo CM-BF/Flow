@@ -1,3 +1,8 @@
+import { migrateExecutionProfiles, registerExecutionProfileRoutes } from './execution-profiles/index.js';
+import { registerShutdown } from './shutdown/index.js';
+import { migratePlugins, registerPluginRoutes } from './plugins/index.js';
+import { migrateConversations, registerConversationRoutes } from './conversations/index.js';
+import { migrateAssistantMessages, registerAssistantRoutes } from './assistant/index.js';
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import { timingSafeEqual } from 'node:crypto';
@@ -17,19 +22,32 @@ import { registerReconciliation } from './reconciliation-http.js';
 import { migrateProjects, registerProjectRoutes } from './projects/index.js';
 import { migrateProtocolDispatch, registerProtocolDispatch } from './protocol-dispatch/index.js';
 
+import { migrateGoals, registerGoalRoutes } from './goals/index.js';
+
 declare module 'fastify' { interface FastifyRequest { runnerId: string | null } }
 
-export interface ServerOptions { databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string }
+export interface ServerOptions { databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string; shutdownGraceMs?: number }
 export async function createServer(options: ServerOptions) {
   if (!options.ownerToken) throw new Error('ownerToken is required.');
   const app = Fastify({ bodyLimit: MAX_BATCH_BYTES, logger: false });
+  registerShutdown(app, options.shutdownGraceMs);
   app.decorateRequest('runnerId', null);
   const leaseMs = options.leaseMs ?? 10_000;
   if (!Number.isSafeInteger(leaseMs) || leaseMs < 50 || leaseMs > 300_000) throw new Error('Invalid leaseMs.');
   if (options.allowedOrigin) await app.register(cors, { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] });
   const pool = new Pool({ connectionString: options.databaseUrl, max: 8, connectionTimeoutMillis: 5000, statement_timeout: 10_000 });
   pool.on('error', error => app.log.error(error));
-  try { await migrate(pool); await migrateWorkspace(pool); await migrateProjects(pool); await migrateProtocolDispatch(pool); } catch (error) { await pool.end(); throw error; }
+  try {
+    await migrate(pool);
+    await migrateWorkspace(pool);
+    await migrateProjects(pool);
+    await migrateProtocolDispatch(pool);
+    await migrateGoals(pool);
+    await migrateConversations(pool);
+    await migratePlugins(pool);
+    await migrateAssistantMessages(pool);
+    await migrateExecutionProfiles(pool);
+  } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => { await pool.end(); throw error; });
   let pendingSweep: Promise<void> | undefined;
   const sweep = setInterval(() => {
@@ -69,6 +87,11 @@ export async function createServer(options: ServerOptions) {
   registerReconciliation(app, pool, boss);
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
+  registerGoalRoutes(app, pool, boss);
+  registerConversationRoutes(app, pool, boss);
+  registerPluginRoutes(app, pool);
+  registerAssistantRoutes(app, pool);
+  registerExecutionProfileRoutes(app, pool);
   registerStreams(app, pool);
   app.post('/api/runners', async request => {
     const input = registerRunnerSchema.safeParse(request.body);

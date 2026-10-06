@@ -1,0 +1,74 @@
+{
+  "id": "B01",
+  "git": {
+    "available": true,
+    "branch": "codex/bounded-read-performance",
+    "head": "b5638266fe1495fd1444d069083aa9159ec29436",
+    "dirty": true,
+    "changedFiles": 1,
+    "observedAt": "2026-10-06T04:01:13.225Z"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "70af7b45814d5ed31d9638649512358e1a0a834b",
+    "proof": {
+      "target": "70af7b45814d5ed31d9638649512358e1a0a834b",
+      "head": "b5638266fe1495fd1444d069083aa9159ec29436",
+      "scopes": [
+        "apps/server/src/m2-workspace.ts",
+        "apps/server/src/m2-workspace.test.ts",
+        "experiments/bounded-reads"
+      ],
+      "observedAt": "2026-10-06T04:01:13.547Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/b01/README.md",
+        "docs/evidence/b01/after-results.json",
+        "docs/evidence/b01/dashboard-receipt.json",
+        "docs/evidence/b01/independent-review-checks.txt",
+        "docs/evidence/b01/validation-history.md",
+        "plans/b01-bounded-reads/plan.md",
+        "plans/b01-bounded-reads/review.md",
+        "plans/b01-bounded-reads/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "declarationProof": "unchanged"
+  },
+  "implementationProof": {
+    "target": "70af7b45814d5ed31d9638649512358e1a0a834b",
+    "head": "b5638266fe1495fd1444d069083aa9159ec29436",
+    "scopes": [
+      "apps/server/src/m2-workspace.ts",
+      "apps/server/src/m2-workspace.test.ts",
+      "experiments/bounded-reads"
+    ],
+    "observedAt": "2026-10-06T04:01:13.248Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/b01/README.md",
+      "docs/evidence/b01/after-results.json",
+      "docs/evidence/b01/dashboard-receipt.json",
+      "docs/evidence/b01/independent-review-checks.txt",
+      "docs/evidence/b01/validation-history.md",
+      "plans/b01-bounded-reads/plan.md",
+      "plans/b01-bounded-reads/review.md",
+      "plans/b01-bounded-reads/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "issues": [],
+  "current": true,
+  "generatedAt": "2026-10-06T04:01:12.915Z",
+  "updatedAt": "2026-10-06T04:01:12.000Z",
+  "checks": {
+    "state": "passed",
+    "target": "70af7b45814d5ed31d9638649512358e1a0a834b",
+    "record": "PASSED 8/8真实PG功能测试、局部typecheck，target 70af7b45814d5ed31d9638649512358e1a0a834b；首轮23检查/候选31检查；修后23项检查/8.887秒通过"
+  }
+}

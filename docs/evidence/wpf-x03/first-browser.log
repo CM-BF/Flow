@@ -1,0 +1,18 @@
+PASS App and collapsed Settings read no registry or lazy module; first expansion reads one personal page
+PASS real App details, versions and audit are explicit and paginated without settings CSS contamination
+PASS same-named center registration remains unavailable while local disable/enable changes only the live host
+PASS Close and Escape return focus; collapsing aborts a pending detail and removes its reading subtree
+PASS center replacement rejects a late old detail with identical plugin ID and resets the disclosure
+PASS registry read failure is visible and retry preserves Settings and its independent local controls
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Use light theme', exact: true })[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/test/plugin-management-integration.browser.ts:123:93)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/test/plugin-management-integration.browser.ts:38:67)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/test/plugin-management-integration.browser.ts:122:3) {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Use light theme', exact: true })"
+  ],
+  name: 'TimeoutError'
+}

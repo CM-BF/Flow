@@ -1,0 +1,75 @@
+{
+  "generatedAt": "2026-10-06T04:39:22.752Z",
+  "id": "O03",
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-tool-authorization/plans/o03-goal-tool-authorization/status.md",
+  "git": {
+    "available": true,
+    "branch": "codex/goal-tool-authorization",
+    "head": "fbdb18df130f8a95d165c9c48e3cbd0374d36eb3",
+    "dirty": true,
+    "changedFiles": 1,
+    "observedAt": "2026-10-06T04:39:23.095Z"
+  },
+  "status": {
+    "updatedAt": "2026-10-06T04:38:43.000Z",
+    "checks": {
+      "state": "passed",
+      "target": "94e012ac44095ab3d4aca54df7951d0971f69dfa",
+      "record": "PASSED 94e012ac44095ab3d4aca54df7951d0971f69dfa；公开 HTTP/真实 PG 9/9（8.11s）+ tsc；[原始检查](../../docs/evidence/o03/checks-final.txt)"
+    },
+    "todos": [
+      {
+        "id": "O03-01",
+        "state": "completed",
+        "owner": "assignment_review",
+        "evidence": "claim、合同/锁序记录"
+      },
+      {
+        "id": "O03-02",
+        "state": "completed",
+        "owner": "assignment_review",
+        "evidence": "持久 grant、同事务授权和既有 mutation helper复用"
+      },
+      {
+        "id": "O03-03",
+        "state": "completed",
+        "owner": "assignment_review",
+        "evidence": "真实HTTP/PG 9/9；重启/锁阻塞 race/隔离清理"
+      },
+      {
+        "id": "O03-04",
+        "state": "completed",
+        "owner": "assignment_review",
+        "evidence": "[7 source / 9 output hashes](../../docs/evidence/o03/manifest.json)、clean-code与固定target交审"
+      }
+    ]
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED。Review target commit：94e012ac44095ab3d4aca54df7951d0971f69dfa；base 4e0289f29ffa48c6c49003837d4520f57c22b6b0。不构成批准。",
+    "target": "94e012ac44095ab3d4aca54df7951d0971f69dfa"
+  },
+  "issues": [],
+  "progress": {
+    "completed": 4,
+    "total": 4
+  },
+  "main": {
+    "record": "本片段未集成；建树基线如上",
+    "recordedHead": null,
+    "target": "94e012ac44095ab3d4aca54df7951d0971f69dfa",
+    "mainHead": "75a33dec228e17bbbd0d3be9fd01bc9ac18a0133",
+    "scopes": [
+      "apps/server/src/goal-tool-runs",
+      "packages/contracts/src/goal-tool-runs.ts",
+      "packages/storage/migrations/012-goal-tool-runs.sql"
+    ],
+    "observedAt": "2026-10-06T04:39:23.096Z",
+    "current": false,
+    "historicalIntegrated": false,
+    "method": "not-contained",
+    "scopeEqual": false,
+    "dirtyScopePaths": [],
+    "reason": "main 声明范围与目标不同，或存在未提交变化"
+  }
+}

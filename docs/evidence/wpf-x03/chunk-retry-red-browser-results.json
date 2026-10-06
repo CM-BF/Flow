@@ -1,0 +1,99 @@
+{
+  "startedAt": "2026-10-06T04:34:00.364Z",
+  "endedAt": "2026-10-06T04:34:10.094Z",
+  "sourceCommit": "a5340cd9a4a41790de5cffa026949fbf3ff12ec7",
+  "production": false,
+  "checks": [
+    "App and collapsed Settings read no registry or lazy module; first expansion reads one personal page",
+    "real App details, versions and audit are explicit and paginated without settings CSS contamination",
+    "same-named center registration remains unavailable while local disable/enable changes only the live host",
+    "Close and Escape return focus; collapsing aborts a pending detail and removes its reading subtree",
+    "center replacement rejects a late old detail with identical plugin ID and resets the disclosure",
+    "registry read failure is visible and retry preserves Settings and its independent local controls",
+    "desktop and 390px light/dark Settings keep keyboard focus, readable registry and no horizontal overflow"
+  ],
+  "pageErrors": [],
+  "failure": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByRole('region', { name: 'Center registry', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByRole('region', { name: 'Center registry', exact: true }) with timeout 5000ms\n  - waiting for getByRole('region', { name: 'Center registry', exact: true })\n",
+  "registryReads": [
+    {
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins/registration-0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins/registration-0/versions?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins/registration-0/versions?after=10&limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins/registration-0/operations?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins/registration-0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins/registration-0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins/registration-0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins/registration-0"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins?limit=10"
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins/registration-0"
+    }
+  ],
+  "modules": [
+    "http://127.0.0.1:60385/src/plugin-management/PluginManagement.tsx"
+  ],
+  "scope": "Actual Flow App through public HTTP fixture; no center/DB/SDK/model executed"
+}

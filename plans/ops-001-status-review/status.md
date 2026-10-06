@@ -48,3 +48,13 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 | OPS-001-05 | completed | Execution Lead | 完整矩阵22项、规则/索引、C02/P01/M02登记；10/10 dashboard Node检查、实际17源均live且新3源0issues；本工作段相对链接检查通过，运行中4320刷新另行核验 |
 
 本次clean-code复核：runtime差异仅registry新增3项，未更改解析器/状态猜测/业务UI；metadata不追逐main精确HEAD，不修改历史实验JSON/hash。功能和UX问题仍登记D03未实现。文档中原候选技术/旧变更记录保留历史范围，当前状态明确完整目标持续。此交付不代表22项要求完成。
+
+## 2026-10-06 03:38 UTC 三队协作规则
+
+| TODO ID | 状态 | Owner | 完成证据/检查 |
+| --- | --- | --- | --- |
+| OPS-001-06 | completed | Execution Lead | 三队4/4/2预算、单向主Lead外投/Root即时回桥接、两外部Lead双向；实际CHAT客户端patch与R03证据直接消息已执行。只文档内容核验，无产品测试 |
+
+### 2026-10-06 04:30 UTC
+
+OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留canonical status/evidence。全矩阵更新核实main4e0289f与实际4320的47源，不重跑产品测试；保留原始验收和未完成项。
