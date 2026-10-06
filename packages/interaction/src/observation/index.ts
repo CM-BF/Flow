@@ -2,12 +2,13 @@ import type { FlowClient } from '@flow/client';
 import { MAX_DETAIL_BYTES, type ConversationTurn, type NativeActivity, type NativeActivityReference } from '@flow/contracts';
 import { ConversationStreamProjection, projectBodySegments, readCanonicalFinal, utf8Bytes, type BodySegment } from '../stream/index.js';
 import { parseNativeActivityPage, parseNativeActivityBody } from '../activity/index.js';
+import { observationPage } from './page.js';
 import { ObservationReads } from './reads.js';
 export type ObservationClient = Pick<FlowClient,'assistantStream'|'assistantStreamPatches'|'nativeActivities'|'nativeActivity'|'conversationDetail'>;
 export interface TurnObservationView {
-  turnId: string; number: number; panel: 'body'|'activity'|'detail'|'reply'; segments: readonly BodySegment[];
+  turnId: string; number: number; textPage: number|null; panel: 'body'|'activity'|'detail'|'reply'; segments: readonly BodySegment[];
   loading: boolean; stale: boolean; error: string|null;
-  activities: readonly NativeActivityReference[]; hasMore: boolean;
+  activities: readonly NativeActivityReference[]; activityStale: boolean; hasMore: boolean;
   detail: {title:string; text:string; truncated:boolean; redacted:boolean}|null;
 }
 
@@ -34,7 +35,7 @@ export class TurnObservation {
   update(turn: ConversationTurn, capability: boolean, visible: boolean) {
     if (this.turn?.id !== turn.id) {
       this.dispose(); this.turn=turn; this.finalContent=undefined; this.next=null; this.bodies.clear();
-      this.state={turnId:turn.id,number:turn.number,panel:'body',segments:[],loading:false,stale:false,error:null,activities:[],hasMore:false,detail:null};
+      this.state={turnId:turn.id,number:turn.number,textPage:null,panel:'body',segments:[],loading:false,stale:false,error:null,activities:[],activityStale:false,hasMore:false,detail:null};
       const taskId=turn.task.id;
       this.stream=new ConversationStreamProjection({connectionId:this.connectionId,viewId:'terminal',conversationId:turn.conversationId,turnId:turn.id,taskId}, {
         readMetadata:(options,signal)=>this.reads.run(signal,()=>this.client.assistantStream(taskId,options,signal)),
@@ -42,6 +43,7 @@ export class TurnObservation {
       });
       this.unsubscribe=this.stream.subscribe(()=>this.publish());
     }
+    if (this.turn && this.state?.activities.length && (this.turn.task.updatedAt !== turn.task.updatedAt || this.turn.task.status !== turn.task.status)) this.state={...this.state,activityStale:true};
     this.turn=turn; this.capability=capability; this.visible=visible; this.updateHost();
   }
   private updateHost() {
@@ -69,12 +71,12 @@ export class TurnObservation {
     if (generation!==this.generation) throw Error('Old turn observation ignored.');
     parseNativeActivityPage(page,turn.task.id,after ?? null);
     this.next=page.nextCursor; this.bodies.clear();
-    this.publish({panel:'activity',activities:page.activities,hasMore:page.nextCursor!==null,detail:null});
+    this.publish({panel:'activity',activities:page.activities,activityStale:false,hasMore:page.nextCursor!==null,detail:null});
   }
   async detail(number: number) {
     const generation=this.generation;
     const header=this.state?.activities[number-1]; if (!header) throw Error('Choose a reference from the displayed activity page.');
-    if (!header.detail || header.phase==='redacted') { this.publish({panel:'detail',detail:{title:header.toolName??header.kind,text:'No public body is available.',truncated:false,redacted:true}}); return; }
+    if (!header.detail || header.phase==='redacted') { this.publish({panel:'detail',textPage:1,detail:{title:header.toolName??header.kind,text:'No public body is available.',truncated:false,redacted:true}}); return; }
     let data=this.bodies.get(header.id);
     if (!data) {
       data=await this.read(signal=>this.client.nativeActivity(header.id,signal));
@@ -83,7 +85,7 @@ export class TurnObservation {
       if (this.bodies.size===4) this.bodies.delete(this.bodies.keys().next().value!);
       this.bodies.set(header.id,data);
     }
-    this.publish({panel:'detail',detail:{title:header.toolName??header.kind,text:data.body?.content ?? 'No public body is available.',truncated:data.body?.truncated??false,redacted:data.body===null}});
+    this.publish({panel:'detail',textPage:1,detail:{title:header.toolName??header.kind,text:data.body?.content ?? 'No public body is available.',truncated:data.body?.truncated??false,redacted:data.body===null}});
   }
   async reply() {
     const generation=this.generation;
@@ -96,9 +98,10 @@ export class TurnObservation {
     if (generation!==this.generation) throw Error('Old turn observation ignored.');
     this.finalContent=detail.content; this.updateHost(); await this.stream?.refresh();
     if (generation!==this.generation) throw Error('Old turn observation ignored.');
-    this.publish({panel:'reply',detail:{title:'Final reply',text:detail.content,truncated:false,redacted:false}});
+    this.publish({panel:'reply',textPage:1,detail:{title:'Final reply',text:detail.content,truncated:false,redacted:false}});
   }
-  back() { this.publish({panel:'body',detail:null}); }
+  back() { this.publish({panel:'body',textPage:null,detail:null}); }
+  page(number: number) { if (!this.state || number > observationPage(this.state).pages) throw Error('Text page is outside the displayed body.'); this.publish({textPage:number}); }
   dispose() {
     this.generation++; this.lifetime.abort(); this.lifetime=new AbortController(); this.unsubscribe?.(); this.unsubscribe=undefined;
     this.stream?.dispose(); this.stream=null; this.turn=null; this.state=null; this.visible=false; this.bodies.clear(); this.finalContent=undefined;

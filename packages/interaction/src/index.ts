@@ -3,3 +3,4 @@ export { commandDescriptors, commandSchema, parseInput, completeInput, type Comm
 export { terminalText, boundedText } from './projection.js';
 export { intentSchema } from './types.js';
 export type { Intent, IntentStore, InteractionClient, InteractionController, InteractionSnapshot, CommandResult, TurnView } from './types.js';
+export { observationPage } from './observation/page.js';

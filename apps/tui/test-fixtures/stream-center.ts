@@ -18,7 +18,7 @@ export async function streamCenter() {
     body:{content:index===0?'\u001b]52;c;UNTRUSTED\u0007 {"path":"synthetic"':'body-'+index,mediaType:'application/json',truncated:index===0,sha256:digest('full synthetic payload'),originalBytes:index===0?100:6},
   } as NativeActivity;});
   activities[1]={...activities[1]!,kind:'thinking',phase:'redacted',status:'redacted',toolName:null,toolUseId:null,detail:null,body:null};
-  const calls:{method:string;url:string;protocol:string|undefined}[]=[]; let capability=true; let breakPatches=false; let badBody=false; let badReply=false;
+  const calls:{method:string;url:string;protocol:string|undefined}[]=[]; let capability=true; let breakPatches=false; let badBody=false; let badReply=false; let badContent=false;
   let releaseBody:(()=>void)|null=null; let bodyWait:Promise<void>|null=null;
   let content='';
   function append(text:string,phase:AssistantStreamPatch['phase']='streaming') {
@@ -44,14 +44,14 @@ export async function streamCenter() {
     else if(url.pathname.endsWith('/assistant-stream')) value=meta;
     else if(url.pathname.endsWith('/native-activities')) value={activities:activities.map(({body:_body,...ref})=>ref),nextCursor:null};
     else if(url.pathname.includes('/native-activities/')){if(bodyWait)await bodyWait;const body=activities.find(a=>url.pathname.endsWith(a.id));value=badBody&&body?{...body,attemptId:'other-attempt'}:body;}
-    else if(url.pathname.includes('/details/'))value={id:badReply?'other':turn.assistant.state==='available'?turn.assistant.contentRef.id:'none',title:'Final',kind:'detail',content,mediaType:'text/plain'};
+    else if(url.pathname.includes('/details/'))value={id:badReply?'other':turn.assistant.state==='available'?turn.assistant.contentRef.id:'none',title:'Final',kind:'detail',content:badContent?'Wrong bound content':content,mediaType:'text/plain'};
     else if(url.pathname.endsWith('/turns'))value={conversation,turns:[turn],nextCursor:null};
     else value={conversation,capabilities:{followUp:true,queue:false,steer:false,perTurnModel:false,perTurnThinking:false,perTurnTools:false,liveAssistantText:capability},nativeSession:null,lastTurn:turn};
     res.writeHead(200,{'content-type':'application/json'});res.end(JSON.stringify(value));
   });
   await new Promise<void>(done=>server.listen(0,'127.0.0.1',done)); const address=server.address();if(!address||typeof address==='string')throw Error('No fixture port');
   return {url:`http://127.0.0.1:${address.port}`,conversation,turn,meta,patches,activities,calls,append,finish,
-    setCapability(value:boolean){capability=value;},setBrokenPatches(value:boolean){breakPatches=value;},setBadBody(value:boolean){badBody=value;},setBadReply(value:boolean){badReply=value;},
+    setCapability(value:boolean){capability=value;},setBrokenPatches(value:boolean){breakPatches=value;},setBadBody(value:boolean){badBody=value;},setBadReply(value:boolean){badReply=value;},setBadContent(value:boolean){badContent=value;},
     holdBody(){bodyWait=new Promise<void>(done=>{releaseBody=done;});},releaseBody(){releaseBody?.();bodyWait=null;},
     async close(){releaseBody?.();server.closeAllConnections();await new Promise<void>(done=>server.close(()=>done()));}};
 }

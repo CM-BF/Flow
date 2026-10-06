@@ -1,4 +1,4 @@
-import { parseNativeActivityPage as validatePage, parseNativeActivityBody as validateBody } from '@flow/interaction/activity';
+import { nativeActivityIdentity as identity, parseNativeActivityPage as validatePage, parseNativeActivityBody as validateBody } from '@flow/interaction/activity';
 import { type NativeActivity, type NativeActivityPage, type TaskSummary } from "@flow/contracts";
 import type { ActivityScope } from "../projection";
 

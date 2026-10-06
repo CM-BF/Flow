@@ -1,6 +1,6 @@
 import {afterEach,expect,test} from 'vitest';
 import {FlowClient} from '@flow/client';
-import {createInteractionController,type InteractionController} from '@flow/interaction';
+import {createInteractionController,observationPage,type InteractionController} from '@flow/interaction';
 import {streamCenter} from '../test-fixtures/stream-center.js';
 const close:(()=>Promise<void>)[]=[];
 afterEach(async()=>{for(const fn of close.splice(0).reverse())await fn();});
@@ -59,4 +59,24 @@ test('only four loaded bodies are cached and final details require the bound rou
   fixture.finish('Complete reply');await expect.poll(()=>controller.snapshot().turns[0]?.assistant.state).toBe('available');fixture.setBadReply(true);
   expect((await controller.input('/reply')).ok).toBe(false);fixture.setBadReply(false);expect((await controller.input('/reply')).ok).toBe(true);
   expect(fixture.calls.some(c=>c.url===`/api/conversations/${fixture.conversation.id}/turns/${fixture.turn.id}/details/${fixture.turn.assistant.state==='available'?fixture.turn.assistant.contentRef.id:''}`)).toBe(true);
+});
+
+test('full final detail cannot override a verified nontruncated preview with different bytes',async()=>{
+  const {fixture,controller,open}=await setup();fixture.finish('Expected canonical body');await open();fixture.setBadContent(true);
+  expect((await controller.input('/reply')).ok).toBe(false);expect(controller.snapshot().observation?.detail).toBeNull();
+});
+
+test('long assistant text stays bounded on screen and earlier pages remain explicitly readable',async()=>{
+  const {fixture,controller,open}=await setup();fixture.append('x'.repeat(5000));await open();await expect.poll(()=>texts(controller)?.[0]?.length).toBe(5005);
+  const latest=observationPage(controller.snapshot().observation!);expect(latest.page).toBe(3);expect(latest.segments[0]?.text.length).toBe(1005);
+  expect((await controller.input('/page 1')).ok).toBe(true);expect(observationPage(controller.snapshot().observation!).segments[0]?.text.startsWith('First')).toBe(true);
+  expect((await controller.input('/page 4')).ok).toBe(false);await controller.input('/back');expect(observationPage(controller.snapshot().observation!).page).toBe(3);
+});
+
+test('task changes mark opened activity as stale until an explicit bounded page refresh',async()=>{
+  const {fixture,controller,open}=await setup();await open();await controller.input('/activity');fixture.activities[0]!.status='unknown';fixture.append(' changed');fixture.turn.task.status='cancelled';
+  await expect.poll(()=>controller.snapshot().observation?.activityStale).toBe(true);
+  expect(controller.snapshot().observation?.activities[0]?.status).toBe('input-ready');
+  expect(fixture.calls.filter(c=>new URL(c.url,fixture.url).pathname.endsWith('/native-activities'))).toHaveLength(1);
+  await controller.input('/activity');expect(controller.snapshot().observation?.activities[0]?.status).toBe('unknown');expect(controller.snapshot().observation?.activityStale).toBe(false);
 });

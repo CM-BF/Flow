@@ -141,6 +141,7 @@ export function createInteractionController(options: { client: InteractionClient
       requireObservation(); if (!loadedTurns.some(turn => turn.number === command.number)) throw new LocalError('TURN_NOT_LOADED', 'Select a turn from the loaded history.');
       focused = command.number; patch({view:'conversation'}); syncObservation(); await observation!.refresh(); return result(true,'TURN','Turn selected.');
     },
+    page: async command => { requireObservation().page(command.number); return result(true,'PAGE','Text page selected; /back follows the latest text.'); },
     activity: async command => { await requireObservation().activities(command.next ?? false); return result(true,'ACTIVITY','Activity references loaded; bodies are read only on request.'); },
     detail: async command => { await requireObservation().detail(command.number); return result(true,'DETAIL','Selected activity body loaded.'); },
     reply: async () => { await requireObservation().reply(); return result(true,'REPLY','Recorded final reply loaded.'); },

@@ -9,7 +9,7 @@ export interface CanonicalFinal {
 export async function readCanonicalFinal(turn: ConversationTurn, fullContent?: string): Promise<CanonicalFinal | null> {
   const reply = turn.assistant;
   if (reply.state !== "available" || reply.source.kind !== "assistant-final") return null;
-  const source = reply.source, text = reply.truncated ? fullContent : reply.text;
+  const source = reply.source, text = fullContent ?? (reply.truncated ? undefined : reply.text);
   if (text === undefined) return null;
   if (typeof text !== "string" || ![source.taskId, source.attemptId, source.nativeSessionId, source.messageId, source.detailId].every(value => idSchema.safeParse(value).success)) throw Error("Invalid canonical final identity.");
   if (source.taskId !== turn.task.id || source.messageId !== reply.messageId || reply.contentRef.taskId !== source.taskId

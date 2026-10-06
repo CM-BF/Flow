@@ -20,3 +20,4 @@ export function streamConversationMessages(turn: ConversationTurn, state: Stream
     const original=normal.find(message=>message.id===segment.id)!;
     return segment.truncated ? original : {...original,content:[{type:'text' as const,text:segment.text}]};
   })];
+}

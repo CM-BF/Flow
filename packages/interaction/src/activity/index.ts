@@ -1,6 +1,6 @@
 import { idSchema, referenceSchema, nativeActivityDataSchema, type NativeActivity, type NativeActivityPage, type NativeActivityReference, type TaskSummary } from "@flow/contracts";
 const digest = (value: unknown): value is string => typeof value === "string" && /^[a-f0-9]{64}$/.test(value);
-const identity = (row: NativeActivityReference) => JSON.stringify([row.id, row.activityId, row.taskId, row.attemptId, row.eventId, row.sequence, row.createdAt, row.nativeSessionId, row.source, row.sourceMessageId, row.nativeMessageId, row.blockIndex, row.parentToolUseId, row.kind, row.phase, row.toolUseId, row.toolName, row.detail]);
+export const nativeActivityIdentity = (row: NativeActivityReference) => JSON.stringify([row.id, row.activityId, row.taskId, row.attemptId, row.eventId, row.sequence, row.createdAt, row.nativeSessionId, row.source, row.sourceMessageId, row.nativeMessageId, row.blockIndex, row.parentToolUseId, row.kind, row.phase, row.toolUseId, row.toolName, row.detail]);
 
 function validateHeader(row: NativeActivityReference, taskId: string) {
   if (!row || row.taskId !== taskId || !digest(row.activityId) || row.id !== row.activityId
@@ -24,7 +24,7 @@ export function parseNativeActivityPage(page: NativeActivityPage, taskId: string
 }
 export function parseNativeActivityBody(data: NativeActivity, header: NativeActivityReference) {
   validateHeader(data, header.taskId);
-  if (identity(data) !== identity(header)) throw Error("Native activity body identity does not match the loaded observation.");
+  if (nativeActivityIdentity(data) !== nativeActivityIdentity(header)) throw Error("Native activity body identity does not match the loaded observation.");
   nativeActivityDataSchema.parse({ type: "native-activity", activityId: data.activityId, nativeSessionId: data.nativeSessionId,
     source: data.source, sourceMessageId: data.sourceMessageId, nativeMessageId: data.nativeMessageId, blockIndex: data.blockIndex,
     parentToolUseId: data.parentToolUseId, kind: data.kind, phase: data.phase, toolUseId: data.toolUseId, toolName: data.toolName, body: data.body });
