@@ -19,6 +19,11 @@
       "taskId": "WPF-ATTACHI02",
       "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
       "note": "Production source main; fixed new Web waits RELEASE03 evidence before personal publication."
+    },
+    {
+      "taskId": "TUI01F",
+      "target": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "note": "Reviewed controller/Ink static binding accepted; actualHTTP/PG/PTY/App acceptance open."
     }
   ],
   "releaseQueue": [
@@ -66,12 +71,6 @@
       "target": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/plans/o15-goal-input-confirmation/status.md",
       "next": "Independent source precheck noP1/P2 at9fd1; PGNOT_RUN, no full approval. Fresh resource gate required."
-    },
-    {
-      "taskId": "TUI01F",
-      "target": "044ab84db42606fb1757903258078e3dfbab9545",
-      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/plans/tui01f-task-cancel/status.md",
-      "next": "Only source precheck completed; actual selected checks pending owner result, complete approval not granted."
     }
   ],
   "sourceProvisionQueue": [
