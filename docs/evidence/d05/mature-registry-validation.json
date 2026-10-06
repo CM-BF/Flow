@@ -1,0 +1,97 @@
+{
+  "observedAt": "2026-10-06T09:08:06.392Z",
+  "count": 111,
+  "idsUnique": true,
+  "checks": [
+    {
+      "id": "WPF-MATURE-01",
+      "branch": "codex/web-platform-management",
+      "planDir": "plans/wpf-mature-01-visual",
+      "evidenceDir": "docs/evidence/web-platform",
+      "errors": [],
+      "human": true,
+      "owner": "d01_owner / gpt-6-astra ultra"
+    },
+    {
+      "id": "WPF-MATURE-02",
+      "branch": "codex/claude-codex-capabilities",
+      "planDir": "plans/wpf-mature-02-harness-capabilities",
+      "evidenceDir": "docs/evidence/wpf-mature-02",
+      "errors": [],
+      "human": true,
+      "owner": "chatui01_owner / gpt-6-astra"
+    },
+    {
+      "id": "WPF-MATURE-03",
+      "branch": "codex/web-platform-management",
+      "planDir": "plans/wpf-mature-03-attachments",
+      "evidenceDir": "docs/evidence/web-platform",
+      "errors": [],
+      "human": true,
+      "owner": "d01_owner / gpt-6-astra ultra"
+    },
+    {
+      "id": "WPF-MATURE-04",
+      "branch": "codex/context-transparency",
+      "planDir": "plans/wpf-mature-04-context-transparency",
+      "evidenceDir": "docs/evidence/wpf-mature-04",
+      "errors": [],
+      "human": true,
+      "owner": "architecture_read / gpt-6-astra"
+    },
+    {
+      "id": "WPF-MATURE-05",
+      "branch": "codex/web-platform-management",
+      "planDir": "plans/wpf-mature-05-workspace",
+      "evidenceDir": "docs/evidence/web-platform",
+      "errors": [],
+      "human": true,
+      "owner": "d01_owner / gpt-6-astra ultra"
+    },
+    {
+      "id": "WPF-MATURE-06",
+      "branch": "codex/web-platform-management",
+      "planDir": "plans/wpf-mature-06-chat",
+      "evidenceDir": "docs/evidence/web-platform",
+      "errors": [],
+      "human": true,
+      "owner": "d01_owner / gpt-6-astra ultra"
+    },
+    {
+      "id": "R06",
+      "branch": "codex/codex-native-transport",
+      "planDir": "plans/r06-codex-native-transport",
+      "evidenceDir": "docs/evidence/r06",
+      "errors": [],
+      "human": true,
+      "owner": "runner_owner / gpt-6-astra"
+    },
+    {
+      "id": "WPF-CONTEXTI01",
+      "branch": "codex/web-context-integration",
+      "planDir": "plans/wpf-context-i01-integration",
+      "evidenceDir": "docs/evidence/wpf-context-i01",
+      "errors": [],
+      "human": true,
+      "owner": "w01_owner / gpt-6-astra ultra（派发指定）"
+    },
+    {
+      "id": "WPF-STEER01",
+      "branch": "codex/web-steering-control",
+      "planDir": "plans/wpf-steering-control",
+      "evidenceDir": "docs/evidence/wpf-steering-control",
+      "errors": [],
+      "human": true,
+      "owner": "workspace_panels_owner / gpt-6-astra ultra"
+    },
+    {
+      "id": "WPF-VISUAL01",
+      "branch": "codex/web-visual-shell",
+      "planDir": "plans/wpf-visual01-shell",
+      "evidenceDir": "docs/evidence/wpf-visual01",
+      "errors": [],
+      "human": true,
+      "owner": "d01_owner / gpt-6-astra ultra"
+    }
+  ]
+}
