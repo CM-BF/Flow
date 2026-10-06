@@ -18,7 +18,7 @@ FLOW_DEPENDENCY_ROOT=/absolute/Flow-with-installed-dependencies /opt/homebrew/op
 /opt/homebrew/opt/node@24/bin/node --test experiments/stream-ui-acceptance/evidence.test.mjs
 ```
 
-`FLOW_DEPENDENCY_ROOT`仅借用已安装依赖；package.json、锁文件和Web依赖声明必须与冻结产品一致，无安装。产品源码archive写入本scope被忽略的`.runtime`；Vite alias与Node resolve hook把Flow自身代码固定到该副本，运行前后核234项源码hash（以实际checks记录为准）。源码根不会使用用户正在运行的main Vite。原始运行目录按nonce唯一，reservation wx且fsync，未知不重用。
+`FLOW_DEPENDENCY_ROOT`仅借用已安装依赖；package.json、锁文件和Web依赖声明必须与冻结产品一致，无安装。产品源码archive写入本scope被忽略的`.runtime`；Vite alias与Node resolve hook把Flow自身代码固定到该副本，运行前后核230项源码hash。源码根不会使用用户正在运行的main Vite。原始运行目录按nonce唯一，reservation wx且fsync，未知不重用。
 
 ## 固定证据与边界
 

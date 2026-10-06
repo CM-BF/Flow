@@ -7,13 +7,13 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/stream-ui-acceptance |
 | Branch | codex/stream-ui-acceptance |
-| 工作基线 / HEAD | 7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 / bf78639771e78956211aeda225863fe5ddd7e1ce（实现提交前观察） |
-| 工作树dirty状态 | 实现与证据待提交；仅3个领取scope |
+| 工作基线 / HEAD | 7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 / 3c9952583fa6b3413f76bdcb8a8c33b52c984fb1（实现target；metadata HEAD由Git核验） |
+| 工作树dirty状态 | 提交前核验clean；本次仅metadata同步，最终HEAD由Git核验 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED；6个guard/checkpoint行为检查，1条实际App最终旅程；[checks](../../docs/evidence/chatui01/run-2026-10-06T08-46-06.332Z-8c1e338d/checks.json) |
+| 检查状态 | PASSED 3c9952583fa6b3413f76bdcb8a8c33b52c984fb1；6个guard/checkpoint行为检查，1条实际App最终旅程；[checks](../../docs/evidence/chatui01/run-2026-10-06T08-46-06.332Z-8c1e338d/checks.json) |
 | 已集成main状态 / HEAD | 未集成；main核验7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 |
-| 实现目标 | 未提交 |
+| 实现目标 | 3c9952583fa6b3413f76bdcb8a8c33b52c984fb1 |
 | 实现范围 | experiments/stream-ui-acceptance、plans/chatui01-stream-acceptance、docs/evidence/chatui01 |
 | 阶段 | M2 |
 | 优先级 | 2 |
@@ -21,7 +21,7 @@
 | 下一可用交付 | 审查后交付可重复运行的零模型验收工具；真实调用窗口是后继工作。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，PENDING 独立审查 |
 | 架构影响 | 仅实验验收接口；产品结构无变化。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -34,7 +34,7 @@
 
 ## Dashboard 同步
 
-本status为唯一手填事实源；首canonical已准备，等待Execution Lead登记聚合来源。claim f412ea19-f81b-4b34-a2d6-4d9d8f31a883 v1 ACTIVE（2026-10-06 08:41:10.740 UTC）。
+本status为唯一手填事实源；Execution Lead已登记100来源；本owner本地parser复核errors=[]、human.complete=true（2026-10-06 08:48 UTC），等待聚合展示刷新。claim f412ea19-f81b-4b34-a2d6-4d9d8f31a883 v1 ACTIVE（2026-10-06 08:41:10.740 UTC）。
 
 ## 后继与限制
 
