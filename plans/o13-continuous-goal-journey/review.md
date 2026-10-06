@@ -1,11 +1,13 @@
 # O13 独立审查
 
-状态：NOT_STARTED
+状态：APPROVED；Reviewer astra_ultra_execution_lead / gpt-6-astra
 
 Review target commit: ddf9f9404561515b61a85d89aa203d609dbfff8e
 
-作者 native_center_owner；审查者由 Execution Lead 指派。首 DTO b4f28b9486905c4bee2c468aa39f194e881f0df2 为历史 interface-only；现固定实现及原始证据，未获独立批准。base 2f16e30a7e4dbeb7d4bc28e03284835764ef19a0。
+审查时间 2026-10-06 14:00:57 UTC；观察 clean metadata 5fc7bb4f651e79d5c53d65a0bf574d14fbb94324。作者 native_center_owner；审查者独立于作者。原始回执归档 [independent-review.json](../../docs/evidence/o13/independent-review.json)，逐项核验 [independent-review-bindings.json](../../docs/evidence/o13/independent-review-bindings.json)。
 
-已固定 11 产品路径，2 个 F01 受控输入；见 docs/evidence/o13/fixed-manifest.json。审查只读：核实际 worktree/head/dirty、manifest bytes/hash、全部 delta 与直接消费者；核原输入/key 持久化先于发送、旧 Intent v1 兼容、unknown 不新建请求、goal/run/task 归属、列表/正文界限、取消只结束观察以及机械/语义分层。不重复模型/PG检查；如出现具体 finding 由作者在原 claim 修复后定向验证。
+完整11产品/测试源码delta及原始证据已读，90 fixed/current bindings 全同；24不同检查分轮、root types0、3份具名随机库清理事实均核。无未解P1/P2。审查者未重复运行测试/PG/模型，0provider。F01薄client 98e 独立Mika批准、此树受控pick，不宣称整个client文件等于F01后继树。
 
-作者24不同检查分轮通过、root types0；原红及未选保留。无 findings 不代表通过。真实 query、实际 UI 和个人部署不在本片批准范围。
+批准范围：可恢复需求入口、原GoalSession单Intent v1扩展显式规划/只读执行、goal归属且正文惰性的规划轻列表；固定key/body恢复、task身份、微秒游标和有限读界限。机械校验和独立owner语义接受保持分离。首DTO interface-only历史不当作产品批准。
+
+限制：合成MCP图及注入SDK并非实际模型规划；每个child仍须显式冻结实际输入并授权执行，不是中心自主推进；真实Web/TUI、个人部署和新模型预算均未验证。早期immutable fixture失败的具名cleanup JSON被覆盖，原process/afterAll结果保留，不能补造该轮具名清理证明。当前main已改变保护输入server/index.ts（Connection），由Execution Lead进行实际组合验证及主线接收，原24不重跑。
