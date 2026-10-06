@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:59 UTC / 2026-10-06 07:48 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:10 UTC / main9c6fa9b |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
@@ -16,8 +16,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 聊天活动界面和原有记录已保留到真实入口；逐段正文模块已进入主线，界面接线正在实施。 |
-| 下一可用交付 | 接入逐段正文界面，并完成运行中补充指令的受控中心接线。 |
+| 当前产出 | 已审的原生文本子任务、知识选择组件和正文存储优化已完成组合核验。 |
+| 下一可用交付 | 发布本批成果与最新计划；聊天逐段正文的界面接线继续独立推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -89,3 +89,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 07:59 UTC：CHAT06P01固定f490自身三scope逐文件与已审输入一致，历史产品fa9证据不替换；SVC最终release metadata只收事实。O09与Web逐段正文接线首canonical已登记，未假称完成。无产品测试/provider/个人服务重启。
 
 2026-10-06 08:01 UTC：CHAT08领域d4e/薄client3d811/默认关闭生产挂载fe5分别已独审；固定24源码逐字相同，server/runner/contracts/storage对fe5无新增差异，无理由重跑相同106/局部3项。仅F01批准metadata上下文冲突，保留原作者CHAT08批准段落，未带入后继未审O09代码。即将main接收；个人运行仍b54/v6，不启补充指令。
+
+2026-10-06 08:10 UTC：O09领域7ddd/薄client1bd/生产c587、CONTEXT01 736ef独立模块、CHAT06P02 b009均按各唯一独审固定输入受控接收。产品逐字比对与root/Web组合types绿见native-context-prefix-integration.json；未重跑领域/provider。Web父计划仅从33bd两个批准目录发布，权威仍原管理WT；F01 metadata冲突精确采用canonical1be，不改产品。registry92含CHAT09/P02及D06来源迁移，尚待本次实际部署回执。个人center/runner仍b54/v6。
