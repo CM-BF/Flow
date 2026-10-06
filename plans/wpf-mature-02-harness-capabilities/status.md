@@ -2,9 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:11:30 UTC / 2026-10-06 09:11:30 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:16:37 UTC / 2026-10-06 09:11:30 UTC |
 | Plan | [plan.md](plan.md) |
-| 所属大task | [WPF-MATURE-02](plan.md) |
+| 任务层级 | 大task |
+| 大task ID | [WPF-MATURE-02](plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
@@ -12,29 +13,29 @@
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / 0d0524c3439363d1fe60aad63f62817ba51fa2a5（固定实现；后继仅metadata，实际HEAD由Git核） |
 | 工作树dirty状态 | 实现提交后clean；本次仅target绑定metadata，提交后由Git核 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED 0d0524c3439363d1fe60aad63f62817ba51fa2a5：27/27本地语义检查，0 skipped；真实进程NOT_RUN |
 | 已集成main状态 / HEAD | 未集成；最近观察main77c420cf9ee5de0291ea93014b6ea11aead6fab5；注册已入main，consumer未集成 |
 | 实现目标 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5 |
 | 实现范围 | plans/wpf-mature-02-harness-capabilities, docs/evidence/wpf-mature-02, experiments/codex-app-server-conformance |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Codex目录与普通完成消息的本地验证模块已实现；支持选项与实际生效保持清晰区别。 |
-| 下一可用交付 | 独立审查并接收本地模块，再与统一通信层和会话设置合同组合。 |
+| 当前产出 | Codex目录与普通完成消息的本地验证模块已通过独立审查；支持选项与实际生效保持清晰区别。 |
+| 下一可用交付 | 接收已审本地模块；另行准备真实目录探针的隔离设计。 |
 | 当前阻塞 | ACTIVE: 真实目录探针仍需验证隔离；本地模块可先审查集成。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，APPROVED 0d0524c3439363d1fe60aad63f62817ba51fa2a5（仅纯语义片） |
 | 架构影响 | 当前实验不改产品结构；生产host/合同由R05共享owner维护，后继接线需登记架构target。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-MATURE-02-01 | completed | chatui01_owner | [领取回执](../../docs/evidence/wpf-mature-02/take-receipt.json)，固定基线/计划/来源登记 |
-| WPF-MATURE-02-02 | completed | chatui01_owner | [manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)，27/27本地行为检查；仅作者完成，独审未开始 |
+| WPF-MATURE-02-02 | completed | chatui01_owner | [manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)，27/27本地行为检查；status_read独审APPROVED；未集成 |
 | WPF-MATURE-02-03 | blocked | chatui01_owner | 真实进程文件/Keychain/外连隔离尚未证明；未启动，fixture独立继续 |
 | WPF-MATURE-02-04 | pending | chatui01_owner | 等R05共享合同与路径交接；当前可继续独立实验 |
 | WPF-MATURE-02-05 | pending | d01（Web子任务owner） | 按本大task接口独立交付，尚未获得本task跨端验收证据 |
 | WPF-MATURE-02-06 | pending | chatui01_owner | 真实续接/账号/取消恢复未验收 |
-| WPF-MATURE-02-07 | in-progress | chatui01_owner | 固定本片提交后交Mika独审，未集成 |
+| WPF-MATURE-02-07 | in-progress | chatui01_owner | 纯语义固定target已独审通过，待集成；后继隔离片另审 |
 | WPF-MATURE-02-08 | pending | chatui01_owner | 完整目标未验收 |
 | WPF-MATURE-02-09 | pending | R05共享owner / d01 | 下一条配置可变与历史/当前/队列冻结分离；CAS/未知ACK/恢复/跨harness，04测量失效，见唯一interface |
 

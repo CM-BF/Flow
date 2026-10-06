@@ -1,6 +1,6 @@
 # WPF-MATURE-02 独立审查
 
-状态：NOT_STARTED；不构成approval。
+状态：APPROVED；仅固定target的纯已解码语义consumer。
 
 Base：9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；Review target commit: 0d0524c3439363d1fe60aad63f62817ba51fa2a5。worktree/branch/status见[status](status.md)。范围为本任务3scope；共享host/中心合同/Web修改不在首片。
 
@@ -10,4 +10,8 @@ Base：9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；Review target commit: 0d0524c3
 
 ## Findings / 结论
 
-独立review未审查；reviewer未运行检查；所有独立findings未评估。作者27项本地语义检查已通过；[manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)绑定source/raw，固定target `0d0524c3439363d1fe60aad63f62817ba51fa2a5`，6 source / 1 raw / 29 schema hash与Git逐一相等。真实运行方案由Mika另审，不由本模板产生许可。
+独立reviewer：status_read / gpt-6-astra；Mika接收时间：2026-10-06 09:15:59 UTC。reviewer实读catalog/discover/final及测试，6 source / 1 TAP / 29 schema逐一匹配现场、固定target与0.154冻结归档；无P1/P2阻断发现。仅只读核验，未重跑工程测试。作者27项本地语义检查已通过；[manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)绑定source/raw，固定target `0d0524c3439363d1fe60aad63f62817ba51fa2a5`，6 source / 1 raw / 29 schema hash与Git逐一相等。真实运行方案由Mika另审，不由本模板产生许可。
+
+## 通过范围与后继
+
+只批准固定target `0d0524c3439363d1fe60aad63f62817ba51fa2a5` 的纯已解码语义consumer。R06组合、Seatbelt隔离、真实app-server/auth/provider、production与Web均不在approval范围。后继隔离设计单列证据，不改已审语义source/raw/manifest。claim保留，待受控集成。

@@ -1,6 +1,6 @@
 # WPF-MATURE-02 Interface请求与交接
 
-Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../plans/wpf-mature-02-harness-capabilities/plan.md)。当前仅实验consumer，不另造R05宿主。
+Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf-mature-02-harness-capabilities/plan.md)。当前仅实验consumer，不另造R05宿主。
 
 ## 首片可独立实现
 
