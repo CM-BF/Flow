@@ -133,3 +133,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 15:38:16 UTC单次真实snapshot（15:38:26响应完成）164来源；新两项与RELEASE03均live/issues=[]，独立source路径准确，原产品页面未刷新。[实采](../../docs/evidence/d05/claude-settings-history-compatibility-live.json)。仅更新4320自有dashboard进程，个人61227/61228/runner未动。
 
 2026-10-06 15:56 UTC：TUI01F首canonical d658与fresh9fe77a96 v1真实存在，登记为165来源候选；父TUI-001/Execution Lead关联及六个人读字段完整，parser0。只做registry/路径核验，当前运行实采仍164，安全换载后另记实际值；不改固定架构或个人服务，不跑产品测试。见[登记](../../docs/evidence/d05/tui-cancel-registration.json)。
+
+2026-10-06T16:02:28.501687+00:00：本次main e807登记后仅重载自有4320，单次实际GET为165来源，TUI01F live/current/issues[]；[实际回执](../../docs/evidence/d05/tui-cancel-live-receipt.json)。同期产品个人服务、用户tabs未动，10.45秒是这次聚合观察而非性能SLO。
