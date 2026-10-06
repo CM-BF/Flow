@@ -2,7 +2,9 @@
 
 Review target commit: da673b81c4390c2e811d1582d68a9899180d55d2
 
-NOT_STARTED。3文件fixture/journey/PTY driver，仅源码准备；独立预检不替代HTTP/PG/PTY运行。请核中心受理后丢ACK、原key恢复/第二client身份、组停止/未知保留、checkpoint先于不可恢复清理与后继callback取消。固定manifest见[绑定](../../docs/evidence/tui01f/journey-source-manifest.json)，运行状态全部NOT_RUN。原9源已审已main，以下历史批准不扩大到本次新文件。
+SOURCE_PRECHECK_NO_P1_P2。native_center_owner 完整读3文件及生命周期直接依赖，36绑定无差，未发现P1/P2；未运行tests/types/HTTP/PG/PTY/provider。此结论仅源审，不能替代实际旅程运行。请核中心受理后丢ACK、原key恢复/第二client身份、组停止/未知保留、checkpoint先于不可恢复清理与后继callback取消。固定manifest见[绑定](../../docs/evidence/tui01f/journey-source-manifest.json)，运行状态全部NOT_RUN。原9源已审已main，以下历史批准不扩大到本次新文件。
+
+[独立源审原回执](../../docs/evidence/tui01f/independent-journey-source-review.json) / [绑定](../../docs/evidence/tui01f/independent-journey-source-bindings.json)。实际运行前仍需资源/依赖准入；timeout只限制等待，不证明任意in-process operation已停止，unknown保留DB/tmp；PTY仅ICANON/ECHO恢复断言，非全部termios结构；synthetic session不证明native/A2A停止或真实App接续。
 
 # TUI01F review 当前绑定
 

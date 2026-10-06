@@ -28,3 +28,5 @@
 2026-10-06 16:13 UTC：controller+静态Ink接线限定 APPROVED，main `83f535b54f2390a729f02bc818e07ba684d94ccb` 接收9源零差。本片段delivered不等完整TUI；03/04未勾选，下一最小source闭包见 [followup](../../docs/evidence/tui01f/followup-acceptance.md)。仍保留原claim，无新运行/产品写入。
 
 2026-10-06 16:23 UTC：同claim实施03测试harness源码；仅fixture.ts、journey.test.ts、cancel_driver.py。最多一个随机库/一个中心与runner/A-B-C三个轮次，两项显式cancel及A原key重报。完整checkpoint成功先于DROP/rm，整个owned PGID停止未确认则保留。尚未运行，04 App driver本轮不创建。
+
+2026-10-06 16:33 UTC：03固定da673获得SOURCE_PRECHECK_NO_P1_P2，仅源码；运行仍NOT_RUN，03/04未勾选。原a1f限定controller/static Ink批准与main83f保留。
