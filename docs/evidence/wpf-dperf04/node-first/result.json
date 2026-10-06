@@ -1,0 +1,95 @@
+{
+  "startedAt": "2026-10-06T16:45:50.826145+00:00",
+  "implementation": "1441d86baa40e98f4cb81b82dcc551202973209b",
+  "sourceHead": "36d687fc682809ce73a90910d86ad34c6349d9dc",
+  "sourceHashes": {
+    "apps/execution-dashboard/src/read-model.mjs": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0",
+    "apps/execution-dashboard/src/aggregate.mjs": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc",
+    "apps/execution-dashboard/src/server.mjs": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994",
+    "apps/execution-dashboard/public/app.js": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "6a679056223aa37dacfed10f4b1628f6af0fb4b768f4f003bbf69c4a6d2f6f4b",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "d0a07d497b6842a581b3a52c57f44ad10a132cd7adaa0057d1b236855871d4e5",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712"
+  },
+  "bindingSha256": "59892025f5ac3705dfd55c912dd44c17bd3725d536df56d5a1de9651446dab4b",
+  "runnerSha256": "c45999bf132e13fcabd50b4250744e7eda06e25216c768a23dd888b270a19dfd",
+  "sandboxSha256": "34b1d7c5be162a2ea8bb456617086c210f6ff9ea97899e1a578b8539266d2335",
+  "limits": {
+    "totalSeconds": 30,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "finalReportReserveBytes": 131072,
+    "pollSeconds": 0.25
+  },
+  "kind": "one Node test file; one owned loopback HTTP server; two tiny Git repositories; synthetic ledger; no PG/browser/external network",
+  "samples": [
+    {
+      "seconds": 0.066,
+      "freeBytes": 1237663744,
+      "tmpBytes": 30344
+    },
+    {
+      "seconds": 0.323,
+      "freeBytes": 1237245952,
+      "tmpBytes": 93088
+    },
+    {
+      "seconds": 0.624,
+      "freeBytes": 1237237760,
+      "tmpBytes": 91752
+    },
+    {
+      "seconds": 0.879,
+      "freeBytes": 1237213184,
+      "tmpBytes": 91773
+    },
+    {
+      "seconds": 1.133,
+      "freeBytes": 1237184512,
+      "tmpBytes": 91773
+    },
+    {
+      "seconds": 1.592,
+      "freeBytes": 1237180416,
+      "tmpBytes": 92502
+    }
+  ],
+  "previousRuntimeMs": 0,
+  "initialFreeBytes": 1237663744,
+  "command": [
+    "/usr/bin/sandbox-exec",
+    "-f",
+    "/private/tmp/dperf04-node-once-kz6cfj2k/sandbox.sb",
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "apps/execution-dashboard/test/summary-detail.test.mjs"
+  ],
+  "pgid": 12985,
+  "cleanup": {
+    "state": "fulfilled",
+    "errors": [],
+    "seconds": 0.0,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "serverClosureBasis": "Fixed server and Git children remain within the terminated/reaped owned process group; no external service used"
+  },
+  "exitCode": 1,
+  "logBytes": 3505,
+  "droppedObservedLogBytes": 0,
+  "elapsedMs": 1632,
+  "cumulativeMs": 1632,
+  "remainingMs": 28368,
+  "finishedAt": "2026-10-06T16:45:52.457847+00:00",
+  "tap": {
+    "passed": 6,
+    "failed": 2,
+    "expectedTests": 8
+  },
+  "state": "FAIL",
+  "sourceMeaning": "A successful bounded fixture does not establish production4320 latency, realPG assignments or browser behavior."
+}

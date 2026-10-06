@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:42:53 UTC |
+| 最近更新时间 | 2026-10-06 16:45:52 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
@@ -13,14 +13,14 @@
 | 工作树dirty状态 | 七源码固定已提交；本记录为metadata安全点，提交后双端clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN 1441d86baa40e98f4cb81b82dcc551202973209b |
+| 检查状态 | FAILED 1441d86baa40e98f4cb81b82dcc551202973209b；6子项通过，Host断言未通过 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
 | 实现目标 | 1441d86baa40e98f4cb81b82dcc551202973209b |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已修复后台同步打断阅读和领取范围显示问题，等待复审与行为检查 |
-| 下一可用交付 | 核对摘要、详情与领取更新不会互相覆盖 |
+| 当前产出 | 首轮直接检查已完成，Host防护用例未通过，原始结果已保留 |
+| 下一可用交付 | 核对Host失败原因并完成剩余行为验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，CHANGES_REQUESTED（4fac历史，后继修复待复审） |
@@ -28,7 +28,7 @@
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | DPERF04-01 | in-progress | w01_owner | [interface](../../docs/evidence/wpf-dperf04/interface.md) |
-| DPERF04-02 | pending | w01_owner | 运行后置fresh资源准入，当前NOT_RUN |
+| DPERF04-02 | in-progress | w01_owner | [首轮Node原始结果](../../docs/evidence/wpf-dperf04/node-first/result.json)；browser未运行 |
 | DPERF04-03 | pending | w01_owner | review/main/实际部署未完成 |
 
 ## 来源与架构影响
@@ -60,3 +60,9 @@ root固定6c18源复核认可scope原文/绝对deadline修正，发现未登记c
 ## 2026-10-06 16:42:53 UTC 日期专测维护
 
 root发现原future-clock替换写死2026-10-06。固定后继 `1441d86baa40e98f4cb81b82dcc551202973209b` 只改直接test：从同一fixture更新时间定义now，旧/未来分别±48小时；写入后明确断言Updated字段与原文不同，再传同一now给readSummary。b0e获审中的app/browser逐字未动，其他源亦零差。静态diffcheck0，0运行/free，manifest重新绑定，首次Node准入尚待。
+
+## 2026-10-06 16:45:52 UTC 唯一Node窗口
+
+固定1441 / 实际HEAD36d687fc682809ce73a90910d86ad34c6349d9dc，通过manager一次freshgate与已审父监督器执行。总1632ms，剩28368ms；7子项中前6通过，第7在Host断言期望403实际200失败，父项因子失败一起记FAIL，TAP总6PASS/2FAIL。未执行到该子项后续文档安全/完整snapshot断言；不能称整套通过。原样[result](../../docs/evidence/wpf-dperf04/node-first/result.json)/[TAP](../../docs/evidence/wpf-dperf04/node-first/node.log)，失败因果尚待源码核对，不先归为产品漏洞或环境问题。
+
+监督器cleanup fulfilled/errors[]，own PGID absent、scratch absent；实际自身loopbackHTTP、0PG/Chrome/外网。未重试，源未改。RELEASE新的A→B准入优先，本片修复暂顺延；browser保持NOT_RUN，未使用其预算。

@@ -8,10 +8,12 @@
     "repositories": 2,
     "tasks": 2,
     "dependencies": "Node built-ins only; actual ledger import never called; all observers explicit synthetic",
-    "current": "NOT_RUN",
+    "current": "First run FAILED; raw node-first/result.json; no retry",
     "temporaryLayout": "One owned temporary root containing owner/main Git repositories",
     "network": "Owned loopback HTTP only; external network and real registry/PG forbidden",
-    "supervision": "External parent runner required: 25s work + 5s cleanup, own TMPDIR/PGID, tmp8MiB/raw2MiB; node:test timeout alone is insufficient"
+    "supervision": "External parent runner required: 25s work + 5s cleanup, own TMPDIR/PGID, tmp8MiB/raw2MiB; node:test timeout alone is insufficient",
+    "spentMs": 1632,
+    "remainingMs": 28368
   },
   "browser": {
     "commands": [
