@@ -53,4 +53,4 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 
 - [x] **F01-26** Codex中心025生产接线，保持旧迁移/默认消费者，独立review后与R05B成套集成。
 
-- [ ] **F01-27** 通用native profile发布薄传输，保持旧Claude消费者类型与目录语义；独立HTTP/类型审查后供R05C消费。
+- [x] **F01-27** 通用native profile发布薄传输，保持旧Claude消费者类型与目录语义；独立HTTP/类型审查后供R05C消费。

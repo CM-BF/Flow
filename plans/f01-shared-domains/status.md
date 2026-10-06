@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:33 UTC / main3418fe682944145494463dca9e09f89c8b9c2295 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:43 UTC / main4391bbf9f1785212d098ef6aa1c01a0320a003d3 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[范围](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -13,14 +13,14 @@
 | 工作树dirty状态 | 本次仅共享检查证据和metadata待固定 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED：新native publication HTTP1 + 旧profile2，共3/3；根noEmit exit0，原红保留；0provider |
-| 已集成main状态 / HEAD | 025与严格来源领域已审main3418；native publication client待独审。个人服务仍b1c/v12，无运行变更。 |
-| Review | 当前client NOT_STARTED；025两行由Mika独审APPROVED5365，已main。 |
+| 已集成main状态 / HEAD | 025与严格来源领域已审main3418；native publication client已独审待本批接收。个人服务仍b1c/v12，无运行变更。 |
+| Review | 当前client由status_read独立APPROVED095，经Mika接收；025独审5365已main。 |
 | 实现目标 | 095bdb849a4ba688be7c2b55d90021b9d15e4b53 |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/native-profile-publication.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | Codex中心规则已接入，通用执行配置的发布接口正在独立审查。 |
+| 当前产出 | Codex中心规则已接入，通用执行配置发布接口已审可供执行器使用。 |
 | 下一可用交付 | 由原生执行器消费固定配置并完成普通任务验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -121,10 +121,12 @@
 
 | F01-25 | completed | Lead | CHAT10只读受理状态client 25a22e0488d6d9aef1f3308e3179e0e874fa425f；真实HTTP1/1+tsc，Mika独立APPROVED；不包含生产启动/模型 |
 
-| F01-26 | completed | Lead | 025 await接线候选5365acb；领域/R05B组合检查与独审尚待 |
+| F01-26 | completed | Lead | 025 await接线5365acb已由Mika独审并与R05B进入main3418 |
 
 2026-10-06 09:08：F01 v20正式移出harnesses.ts及专测，R05B唯一owner接回；[receipt](../../docs/evidence/f01/r05b-scope-amend.json)。本树未复制其领域源码，受控mount只供组合验证。
 
-| F01-27 | in-progress | Lead | native profile publication固定095bdb8，3/3 HTTP+类型，待独审；[manifest](../../docs/evidence/f01/native-profile-client-manifest.json) |
+| F01-27 | completed | Lead | native profile publication固定095bdb8，3/3 HTTP+类型，status_read独审/Mika接收APPROVED；[manifest](../../docs/evidence/f01/native-profile-client-manifest.json) |
 
 2026-10-06 09:33 UTC：F01-26的025两行挂载已由Mika独立只读APPROVED5365、与R05B组合main3418；原始回执见r05b-mount-review.md。TUI临时锁文件写权已归还F01 v22，原TUI package/lock尚未当作已实现终端交付。
+
+2026-10-06 09:38:11 UTC独审回执已归档：[native profile client](../../docs/evidence/f01/native-profile-client-review.md)。2源码3raw与固定target匹配，独审未重跑测试；批准仅薄传输，不是原生执行授权。

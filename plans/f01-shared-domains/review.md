@@ -195,5 +195,11 @@ Root独立APPROVED 0d48fddd37f55854437946ea04da6c845f5b6119；3源5raw固定hash
 025 mount：Mika独立只读APPROVED5365acb8b9bde4889f83715aa650bc6aed155c9b，限定server/index import+await，回执见[证据](../../docs/evidence/f01/r05b-mount-review.md)，已main3418。
 
 Review target commit: 095bdb849a4ba688be7c2b55d90021b9d15e4b53
-Review status: NOT_STARTED
+Review status: APPROVED
 当前范围仅native publication薄client和直接HTTP测试，manifest固定2source/3raw与B1合同输入；不继承领域或025挂载批准。
+
+## 2026-10-06 09:38 native publication 独立批准
+
+Review target commit: 095bdb849a4ba688be7c2b55d90021b9d15e4b53
+
+status_read / gpt-6-astra 独立只读APPROVED，Mika接收；2source/3raw bytes和SHA全同，3/3原HTTP与manifest记载tsc0已核，无P1/P2、未重跑。保持原JSON/Bearer/signal/error、409不重试与旧Claude消费者；仅薄client，不涵盖PG或原生access。完整原结论见[receipt](../../docs/evidence/f01/native-profile-client-review.md)。
