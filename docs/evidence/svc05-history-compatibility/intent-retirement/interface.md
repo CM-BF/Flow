@@ -19,4 +19,8 @@ Module 只负责在确认屏障内将精确 v1 journal 的 `inFlight` 变为 nul
 
 局部验证：新临时根、合成 UUID/确认端口；≤10s、tmp/raw 合计保守≤1MiB、fresh≥1GiB+8MiB，0PG/服务/PTY/provider。覆盖成功保历史、备份/意图/最后审计故障、源/hold/stop/pending 拒绝、hash/namespace/inode 漂移、重复不写、读后判定不修改。真实 Adapter 的 PG/进程端口本轮仅源码核验；原锁序 tests 不重跑也不冒充本次证据。
 
+`host-fence.mjs` 只接受固定安装/root/runner/af51；复用 withPreviewLock、assertPreviewMarker、inspectOwnedProcess。它只核已有 hold，不自行 drain/stop/resume：这些步骤仍走既有维护/进程入口并保存独立意图。持有 runner 行锁期间两次确认全部未完/uncertain/非终态任务为零，完整 runner 树只准已保存的四个历史 result hash 与精确 journal，其余 pending/unknown 一律拒绝。ps 只核固定部署方式的已知 runner 入口、输出不落盘，不宣称可发现恶意隐藏进程。实际操作 request 须由新现场身份/hash和原历史绑定生成，当前没有可执行个人 request/permit。
+
+`operator.mjs --retire-once <0600 request> <sha256> <existing evidence dir>` 是未来唯一入口，先 exclusive durable reservation，再调用上述 Module；外层沿 center-recovery/supervise.py。此文件的准备不会运行它。scope 没有扩大到产品工具、普通 idle gate 或新恢复产品。
+
 选用本地 find-skills / codebase-design / clean-code；无新增依赖或通用恢复框架。将不可逆写限制在小 Module，确认端口与文件提交分离，生命周期和 unknown 显式返回。既有明确设计和 GO 边界作为 brainstorming 输入，不再重复设计审批。
