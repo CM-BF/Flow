@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 08:34 UTC |
+| 最近更新时间 | 2026-10-06 08:36 UTC |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-child-acceptance |
 | Branch | codex/native-child-acceptance |
@@ -17,8 +17,8 @@
 | 实现范围 | experiments/native-child-acceptance/ |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 验收准备获独立批准，已获一次只读文本原生验收预算 |
-| 下一可用交付 | 一次固定材料的实际输出与Read证据，交GO独立语义验收 |
+| 当前产出 | 一次只读文本已实际生成，Read与机械验证证据齐全；待独立语义验收 |
+| 下一可用交付 | 独立验收实际正文与证据，固定主线可接收记录 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 架构影响 | 仅独立实验验收器，复用产品入口与已审清理helper，不改变产品Interface |
@@ -29,6 +29,7 @@
 | O10-02 | completed | assignment_review | 预检/一次性标记/声明与Read观察guard通过 |
 | O10-03 | completed | assignment_review | 1成功+4拒绝、五个自有PGID/DB/tmp已清理 |
 | O10-04 | in-progress | assignment_review / Root | Root批准b1a88/P2关闭；main接收后收口 |
+| O10-05 | in-progress | assignment_review / Root | [一次原生结果](../../docs/evidence/o10/native-0834-report.md)已封存，GO语义待审 |
 
 claim3c13f3b0-b6c2-4e48-a148-8cbe09ae6494 v1于08:12:28.443Z提交，3scope；fresh ledger无既有O10。0query/0服务操作；真实执行预算未批不影响0query准备。
 
@@ -41,3 +42,5 @@ claim3c13f3b0-b6c2-4e48-a148-8cbe09ae6494 v1于08:12:28.443Z提交，3scope；fr
 2026-10-06 08:31 UTC：P2 fixed b1a88ce90d2366f0fda6e4411471a4ddc5894e5e，先实际写失败红再2/2绿，2次注入0query旅程sourceDigest c7fa26cdf75f63eb62723a13f3a6ea29b9f82b1453a1ed51b56b8c2743b8d0c6。失败分支保留由测试操作者核验后清理；成功先checkpoint再删除。原11及所有历史raw/manifest保持，不重跑。源码重新冻结，待Root唯一增量review。
 
 2026-10-06 08:34 UTC：Root独立APPROVED b1a88，另发ONE_SHOT_GO o10-native-20261006-0834-b1a88，固定sourceDigest c7fa26…/fc113，1query/3turn/$.10/60s，到09:04:12。Lead确认无并行agent模型。预算授权是Root依据用户既有授权分配，非用户新直接批准；仅本次限定Read文本child，失败封存不补次，GO亲读语义后定。本owner先转录review和permit再走既有reservation/query marker，未改任何已审实验实现。
+
+2026-10-06 08:36 UTC：唯一native入口已结束，预算SEALED；1query/2turn/SDK估算$.0148666（含辅助Haiku），实际Read请求/hostallow/工具成功结果匹配，正文mechanical passed、accepted仍null。08:35:29–38、PGID41628/DB/tmp清理true，checkpoint先保存。0重试/0个人服务/tab动作；原始结果待Root独立语义。
