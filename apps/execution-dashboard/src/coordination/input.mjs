@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { realpath, lstat } from 'node:fs/promises';
+import { realpath, lstat, readdir } from 'node:fs/promises';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 const execute = promisify(execFile);
@@ -13,7 +13,7 @@ function label(value, name) {
 }
 function actor(value) { return { lead: label(value?.lead, 'lead'), worker: label(value?.worker, 'worker') }; }
 const git = async (directory, ...args) => (await execute('git', ['-C', directory, ...args], { timeout: 2000, maxBuffer: 65536 })).stdout.trim();
-async function location(input, repository) {
+export async function location(input, repository) {
   requireValue(typeof input.worktree === 'string' && path.isAbsolute(input.worktree), 'worktree 必须为绝对路径');
   const worktree = await realpath(input.worktree);
   const branch = label(input.branch, 'branch');
@@ -28,7 +28,7 @@ export function literalScope(values) {
   return [...new Set(values.map(value => {
     requireValue(typeof value === 'string' && value.length <= 512 && value === value.trim() && !/[\\*?\[\]{}\x00-\x1f]/.test(value), 'scope 必须为 literal 路径，禁止 glob');
     const normalized = value.replace(/\/$/, '');
-    requireValue(normalized && !path.posix.isAbsolute(normalized) && normalized.split('/').every(part => part && part !== '.' && part !== '..' && part !== '.git'), 'scope 禁止绝对路径、空段与 ./../');
+    requireValue(normalized && !path.posix.isAbsolute(normalized) && normalized.split('/').every(part => part && part !== '.' && part !== '..' && part.toLowerCase() !== '.git'), 'scope 禁止绝对路径、空段与 ./../');
     return normalized;
   }))].sort();
 }
@@ -36,13 +36,19 @@ async function rejectSymlinks(worktree, scope) {
   for (const relative of scope) {
     let current = worktree;
     for (const segment of relative.split('/')) {
+      const parent = current;
       current = path.join(current, segment);
-      try { requireValue(!(await lstat(current)).isSymbolicLink(), 'scope 不允许 symlink，须登记真实仓库路径'); }
+      try {
+        requireValue(!(await lstat(current)).isSymbolicLink(), 'scope 不允许 symlink，须登记真实仓库路径');
+        requireValue((await readdir(parent)).includes(segment), 'scope 大小写/Unicode 拼写必须与实际仓库路径一致');
+      }
       catch (error) { if (error.code === 'ENOENT') break; throw error; }
     }
   }
 }
-export const scopesOverlap = (left, right) => left.some(a => right.some(b => a === b || a.startsWith(`${b}/`) || b.startsWith(`${a}/`)));
+// Conservative portable conflict keys also reserve not-yet-created case/Unicode aliases.
+const scopeKey = value => value.normalize('NFD').toLowerCase();
+export const scopesOverlap = (left, right) => left.map(scopeKey).some(a => right.map(scopeKey).some(b => a === b || a.startsWith(`${b}/`) || b.startsWith(`${a}/`)));
 export const sameActor = (a, b) => a.lead === b.lead && a.worker === b.worker;
 export async function normalizeCommand(raw, repository) {
   const command = { action: label(raw.action, 'action'), requestId: label(raw.requestId, 'requestId'), actor: actor(raw.actor) };

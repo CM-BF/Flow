@@ -1,6 +1,6 @@
 import pg from 'pg';
 import { randomUUID } from 'node:crypto';
-import { ClaimError, normalizeCommand, sameActor, scopesOverlap, validateAmendedScope } from './input.mjs';
+import { ClaimError, normalizeCommand, sameActor, scopesOverlap, validateAmendedScope, location } from './input.mjs';
 
 export function coordinationPool(connectionString = process.env.FLOW_COORDINATION_DATABASE_URL) {
   if (!connectionString) throw new ClaimError('UNAVAILABLE', '未配置协调 PostgreSQL，领取状态未知');
@@ -27,14 +27,16 @@ function assertNoConflict(candidate, active) {
     }
   }
 }
-async function transition(previous, command) {
+async function transition(previous, command, repository) {
   if (!previous) throw new ClaimError('NOT_FOUND', 'claim 不存在');
   assertOwner(previous, command);
   if (previous.state === 'released') throw new ClaimError('RELEASED', 'claim 已释放，不得继续写入');
   const claim = { ...previous, version: previous.version + 1 };
   if (command.action === 'accept') {
     if (previous.state !== 'handoff_pending') throw new ClaimError('INVALID_STATE', '没有待接收的交接');
-    return { ...claim, ...previous.next, next: null, state: 'active' };
+    const target = await location(previous.next, repository);
+    await validateAmendedScope({ ...previous, ...target }, previous.scope);
+    return { ...claim, ...previous.next, ...target, next: null, state: 'active' };
   }
   if (previous.state !== 'active') throw new ClaimError('INVALID_STATE', '交接期间原 owner 已停止写入，只能由新 owner 接收');
   if (command.action === 'release') claim.state = 'released';
@@ -44,7 +46,10 @@ async function transition(previous, command) {
       claim.observedAt = command.observedAt;
     }
   }
-  if (command.action === 'handoff') { claim.state = 'handoff_pending'; claim.next = command.next; }
+  if (command.action === 'handoff') {
+    await validateAmendedScope({ ...previous, ...command.next }, previous.scope);
+    claim.state = 'handoff_pending'; claim.next = command.next;
+  }
   return claim;
 }
 export async function applyCommand(pool, raw, repository) {
@@ -64,7 +69,7 @@ export async function applyCommand(pool, raw, repository) {
     const previous = command.action === 'take' ? null : values.find(claim => claim.claimId === command.claimId);
     let claim = command.action === 'take'
       ? { claimId: randomUUID(), version: 1, taskId: command.taskId, ...command.actor, worktree: command.worktree, branch: command.branch, scope: command.scope, role: command.role, state: 'active', next: null, origin: command.origin, observedAt: command.observedAt }
-      : await transition(previous, command);
+      : await transition(previous, command, repository);
     if (claim.state !== 'released') assertNoConflict(claim, values.filter(value => value.state !== 'released'));
     const { rows } = await client.query('SELECT clock_timestamp() AS recorded_at');
     const timestamp = rows[0].recorded_at.toISOString();

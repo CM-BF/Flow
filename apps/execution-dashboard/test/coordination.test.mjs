@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { mkdtemp, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, writeFile, rm, mkdir, symlink } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
@@ -20,6 +20,8 @@ test('literal paths compare by segments, reject traversal/globs, and normalize d
   assert.deepEqual(literalScope(['foo/', 'foo', 'foobar/file']), ['foo', 'foobar/file']);
   assert.equal(scopesOverlap(['foo'], ['foobar/file']), false);
   assert.equal(scopesOverlap(['foo'], ['foo/child']), true);
+  assert.equal(scopesOverlap(['apps/example'], ['APPS/example']), true);
+  assert.equal(scopesOverlap(['caf\u00e9'], ['cafe\u0301/file']), true);
   for (const value of ['../x', 'a/../b', '/tmp/x', './foo', 'a//b', '**/foo', 'a\\b', 'foo[0]', '.git/config']) assert.throws(() => literalScope([value]));
 });
 
@@ -59,6 +61,10 @@ test('independent PostgreSQL processes allocate atomically, replay receipts, fen
     const nested = await Promise.all([peer(command('PARENT', 0, ['src'])), peer(command('CHILD', 1, ['src/nested/file.ts']))]);
     assert.equal(nested.filter(value => value.ok).length, 1);
     await release(nested.find(value => value.ok).receipt.claim);
+    const caseFirst = await peer(command('CASE-ONE', 0, ['future/path']));
+    assert.ok(caseFirst.ok);
+    assert.equal((await peer(command('CASE-TWO', 1, ['FUTURE/path']))).error.code, 'CONFLICT');
+    await release(caseFirst.receipt.claim);
     const separateInputs = [command('FREE-A', 0, ['foo']), command('FREE-B', 1, ['foobar'])];
     const separate = await Promise.all(separateInputs.map(peer));
     assert.ok(separate.every(value => value.ok));
@@ -75,7 +81,16 @@ test('independent PostgreSQL processes allocate atomically, replay receipts, fen
     current = amended.claim;
     await assert.rejects(applyCommand(pool, update('release'), repository), error => error.code === 'INVALID');
     const next = { lead: 'next-lead', worker: 'next-worker', worktree: worktrees[2], branch: `codex/d04-test-${process.pid}-2` };
+    await symlink(temporary, path.join(worktrees[2], 'foo'));
+    await assert.rejects(applyCommand(pool, update('handoff', { stoppedWriting: true, next }), repository), error => error.code === 'INVALID');
+    await rm(path.join(worktrees[2], 'foo'));
     const handing = await applyCommand(pool, update('handoff', { stoppedWriting: true, next }), repository);
+    await symlink(temporary, path.join(worktrees[2], 'foo'));
+    await assert.rejects(applyCommand(pool, { action: 'accept', requestId: 'changed-target-path', actor: next, claimId: current.claimId, version: handing.claim.version }, repository), error => error.code === 'INVALID');
+    await rm(path.join(worktrees[2], 'foo'));
+    await execute('git', ['-C', worktrees[2], 'switch', '--detach']);
+    await assert.rejects(applyCommand(pool, { action: 'accept', requestId: 'changed-target-branch', actor: next, claimId: current.claimId, version: handing.claim.version }, repository), error => error.code === 'INVALID');
+    await execute('git', ['-C', worktrees[2], 'switch', next.branch]);
     assert.equal(handing.claim.state, 'handoff_pending');
     assert.equal((await peer(command('INTRUDER', 3, ['new/file']))).error.code, 'CONFLICT');
     const accepted = await applyCommand(pool, { action: 'accept', requestId: 'accept', actor: next, claimId: current.claimId, version: handing.claim.version }, repository);
