@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 新增流式正文哈希优化的唯一进度来源，当前登记已核，发布后可见。 |
+| 当前产出 | 流式正文哈希优化已在看板可见；所有任务继续读取各自负责人的状态。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -145,3 +145,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-06T16:48:32.870117+00:00：main56421f47已登记MATURE02C01；仅自有4320受控换代码后单次HTTP200实际167来源，新source实时读取合法owner/status，implementation/未审未完成均保留。[实际回执](../../docs/evidence/d05/mature02c01-live-receipt.json)。个人后台362/Web8d8及用户tabs未操作，架构固定基线不变。
 
 2026-10-06 17:25 UTC：CHAT06P03真实canonical2a333、正式e8c06a73v1与三件套已齐，新增唯一source至168；关联FLOW-001/Mika、parser0、人读完整。产品仍implementation/NOT_RUN，不借登记推断优化通过；[登记事实](../../docs/evidence/d05/chat06p03-registration.json)。固定架构/个人入口不变，仅来源核验，运行换载另记。
+
+2026-10-06 17:27 UTC：固定mainc843登记仅换载自有4320，单次HTTP200实际168来源，CHAT06P03 live/current/issues=[]、人读完整；[实采](../../docs/evidence/d05/chat06p03-live-receipt.json)。本次10,786ms聚合只作观察，不称SLO；个人服务/原tabs/固定架构均不变，0产品测试。
