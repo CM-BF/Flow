@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T19:04:19.214598+00:00 / main8d84接收事实由Lead报告，部署未核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T19:06:44.732219+00:00 / main8d84由Lead报告，部署未核 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；native source51c11fca6e91069c69790c787025a214a3e114bf，检查证据另固定；旧候选按历史Git保留 |
-| 工作树dirty状态 | system-config唯一实际窗口已消费，正在固定结果；source/input/prepared不改。 |
+| 工作树dirty状态 | system-config结果5e6cf361已双审，最小seal；source/raw/原清单不改，残留KEEP。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | Claude中心与公共客户端已接入主线；真实Codex已完成初始化，但目录结果尚未取得，自有残留完整保留。 |
-| 下一可用交付 | 固定本次失败与保留资源事实，等待独立结果审查；跨端设置验收继续。 |
+| 下一可用交付 | 本次失败与保留资源已独审封存；后继有限链接/通知观察准备，跨端设置验收继续。 |
 | 当前阻塞 | ACTIVE: 原生目录未取得，根清单与完整输出计量未知；Claude完整跨端产品验收仍待完成。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | system-config 8737组合Root19:01:37 APPROVED；实际结果忠实性待审，功能失败/计量UNKNOWN；窗口CONSUMED。 |
+| Review | system-config5e6cf361：Mika19:05:43/architecture_read19:05:55忠实失败双审，0P1/P2；完整计量UNKNOWN，窗口CONSUMED。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | native薄caller复用R06唯一stdio/process owner及同一policy，不改生产接口；单页目录不作账号/实际模型或writer停止证明。Claude架构接线由CORE/共享consumer与Lead同步。 |
 
