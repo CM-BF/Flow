@@ -27,7 +27,7 @@ let snapshot;
 let selectedTask;
 let documentRequest;
 
-function taskLinks(task) {
+function taskLinks(task, { summary = false } = {}) {
   const section = element('div', undefined, 'task-links');
   const links = task.links;
   const parent = element('p');
@@ -42,8 +42,10 @@ function taskLinks(task) {
     else parent.append(element('span', '未知'));
     if (links?.parent.state !== 'known') parent.append(element('span', ` · ${links?.parent.reason || '未声明'}`, 'muted'));
   }
-  section.append(parent, element('p', `co-lead：${links?.coLead.state === 'known' ? links.coLead.value : `未知 · ${links?.coLead.reason || '未声明'}`}`));
-  if (links?.parent.record || links?.coLead.record) {
+  section.append(parent);
+  if (!summary) section.append(element('p', `co-lead：${links?.coLead.state === 'known' ? links.coLead.value : `未知 · ${links?.coLead.reason || '未声明'}`}`));
+  else if (links?.coLead.state !== 'known') section.append(element('p', '责任归属待核对', 'muted'));
+  if (!summary && (links?.parent.record || links?.coLead.record)) {
     const raw = element('details', undefined, 'task-link-records');
     raw.append(element('summary', '关联声明原文'));
     if (links.parent.record) raw.append(element('p', links.parent.record));
@@ -53,7 +55,7 @@ function taskLinks(task) {
   return section;
 }
 
-function compactTask(task, subtitle) {
+function compactTask(task, subtitle, { summary = true } = {}) {
   const row = element('article', undefined, 'task-row');
   const text = element('div', undefined, 'task-copy');
   const title = element('div', undefined, 'task-heading');
@@ -63,8 +65,8 @@ function compactTask(task, subtitle) {
   const allocation = element('p', undefined, 'allocation');
   if (task.assignments === null) allocation.textContent = '领取状态未知';
   else if (!task.assignments?.length) allocation.textContent = '尚无领取登记；接手前须核对';
-  else allocation.textContent = task.assignments.map(claim => `${claim.role === 'review' ? '只读审查' : claim.role === 'integration' ? '受控集成' : claim.state === 'handoff_pending' ? '交接待接收' : '已领取'} · ${claim.lead} / ${claim.worker}${claim.needsVerification ? ' · 待核对（仍占用）' : ''}${claim.matchesSource ? '' : ' · 进度来源待对齐'}`).join('；');
-  text.append(taskLinks(task), allocation);
+  else allocation.textContent = [...new Set(task.assignments.map(claim => `${claim.role === 'review' ? '只读审查' : claim.role === 'integration' ? '受控集成' : claim.state === 'handoff_pending' ? '交接待接收' : '已领取'}${summary ? '' : ` · ${claim.lead} / ${claim.worker}`}${claim.needsVerification ? ' · 待核对（仍占用）' : ''}${claim.matchesSource ? '' : ' · 进度来源待对齐'}`))].join('；');
+  text.append(taskLinks(task, { summary }), allocation);
   row.append(text, taskButton(task));
   return row;
 }
@@ -74,7 +76,7 @@ function renderWorkstreams() {
   const filter = $('#filter').value;
   const tasks = snapshot.tasks.filter(task => filter === 'all' || (filter === 'unknown' ? !task.current || !task.status.human?.complete : /^in-progress/.test(task.status.branchState ?? '')));
   $('#workstreams').replaceChildren(...tasks.map(task => {
-    const row = compactTask(task);
+    const row = compactTask(task, undefined, { summary: false });
     const status = element('div', undefined, 'task-stages');
     status.append(task.current ? stateBadge(task.status.branchState) : badge('来源待同步'), element('span', `${task.progress.completed ?? '?'} / ${task.progress.total ?? '?'} 项`, 'muted'), reviewBadge(task), mainBadge(task));
     row.querySelector('.task-copy').append(status);
@@ -133,6 +135,22 @@ async function refresh() {
 
 function humanSignal(value) { return value?.state === 'none' ? '无' : value?.state === 'active' ? value.text : '未知，待负责人核对'; }
 function addFact(list, label, value) { list.append(element('dt', label), element('dd', plain(value || '未知'))); }
+function childTasks(parent) {
+  const children = snapshot.tasks.filter(task => task.links?.kind === 'subtask'
+    && task.links.parent.state === 'known' && task.links.parent.targetId === parent.id);
+  if (!children.length) return null;
+  const section = element('section', undefined, 'direct-children');
+  section.setAttribute('aria-label', '直属子任务');
+  section.append(element('h3', '直属子任务'), element('p', '以下是各子任务自己的记录，不代表父任务进度。', 'muted'));
+  const labels = { planning: '计划中', implementation: '实施中', review: '审查中', integration: '待集成', delivered: '已交付' };
+  for (const child of children) {
+    const row = compactTask(child, child.status.human?.output || '当前产出待补');
+    const delivery = child.status.human?.delivery;
+    row.querySelector('.task-copy').append(element('p', `本片段阶段：${delivery?.source === 'explicit' ? labels[delivery.state] || '未知' : '未显式声明'}`, 'muted'));
+    section.append(row);
+  }
+  return section;
+}
 function openTask(id) {
   const task = snapshot?.tasks.find(task => task.id === id); if (!task) return;
   const navigatingInsideDialog = $('#task-dialog').open;
@@ -140,6 +158,7 @@ function openTask(id) {
   $('#detail-id').textContent = task.id; $('#detail-title').textContent = task.title;
   const content = $('#detail-content'); content.replaceChildren();
   content.append(element('h3', '任务关联'), taskLinks(task));
+  const children = childTasks(task); if (children) content.append(children);
   for (const issue of task.issues) content.append(element('p', issue, 'notice warning'));
   const facts = element('dl', undefined, 'detail-facts');
   for (const [label, value] of [
