@@ -1,3 +1,6 @@
+import { FinalProposalJournal, type FinalizationTransport } from './active-steering/proposal.js';
+import { steeringFinalizationSchema } from '../../../packages/contracts/src/runner.js';
+import type { ActiveSteeringPort, SteeringFinalizationResult } from '../../../packages/contracts/src/active-steering.js';
 import { randomUUID } from 'node:crypto';
 import { readFile, readdir, rename, stat, unlink, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -16,14 +19,19 @@ export class EventOutbox {
   private tail: Promise<void> = Promise.resolve();
   private failure: unknown;
   private readonly file: string;
+  private readonly finalJournal: FinalProposalJournal;
+  private barrier: Promise<void> | undefined;
 
   constructor(directory: string, private ownership: Ownership, private report: Report, initialSequence = 0) {
     if (!Number.isSafeInteger(initialSequence) || initialSequence < 0) throw new Error('Initial event sequence must be a nonnegative safe integer.');
     this.sequence = initialSequence;
     this.file = join(directory, 'pending-events.json');
+    this.finalJournal = new FinalProposalJournal(directory);
   }
 
   emit(data: RunnerEventData): Promise<void> {
+    if (this.failure) return Promise.reject(this.failure);
+    if (this.barrier) return this.barrier.then(() => this.emit(data));
     const event = runnerEventSchema.parse({ ...data, id: randomUUID(), sequence: this.sequence + 1 });
     const batch = eventBatchSchema.parse({ ...this.ownership, events: [...this.events, event] });
     this.events = batch.events;
@@ -42,6 +50,23 @@ export class EventOutbox {
     });
     this.tail = next.catch(() => undefined);
     return next;
+  }
+
+  async finalize(input: Parameters<ActiveSteeringPort['finalize']>[0], transport: FinalizationTransport): Promise<SteeringFinalizationResult> {
+    if (this.barrier || this.failure) throw this.failure ?? new Error('Another final proposal is in progress.');
+    let release!: () => void, reject!: (error: unknown) => void;
+    this.barrier = new Promise<void>((resolve, fail) => { release = resolve; reject = fail; });
+    void this.barrier.catch(() => undefined);
+    try {
+      await this.tail;
+      if (this.failure) throw this.failure;
+      const proposal = steeringFinalizationSchema.parse({ ...this.ownership, ...input, proposalId: randomUUID(), afterSequence: this.sequence,
+        events: input.events.map((event, index) => ({ ...event, id: randomUUID(), sequence: this.sequence + index + 1 })) });
+      const result = await this.finalJournal.commit(proposal, transport);
+      if (result.state === 'committed') this.sequence = result.lastSequence;
+      release(); return result;
+    } catch (error) { this.failure = error; reject(error); throw error; }
+    finally { this.barrier = undefined; }
   }
 
   async settle() { await this.tail; }

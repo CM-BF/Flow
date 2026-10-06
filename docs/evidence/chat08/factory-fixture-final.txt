@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering
+
+ ✓ apps/server/src/active-steering/finalization.test.ts (13 tests) 3796ms
+   ✓ connects one SDK streaming-input query through the real runtime, durable outbox and PG with two results and one consumed command  332ms
+   ✓ enforces the result evidence bound at the HTTP ingress while identical replays do not consume the limit  519ms
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  00:46:19
+   Duration  5.53s (transform 864ms, setup 0ms, import 1.63s, tests 3.80s, environment 0ms)
+

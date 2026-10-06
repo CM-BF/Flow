@@ -1,6 +1,7 @@
 import { bindGraphToolCapability } from './goal-graph-tools/bind.js';
 import { bindGoalToolCapability } from './goal-tool-bridge/index.js';
-import { mkdir } from 'node:fs/promises';
+import { FinalizationUnknown, FinalProposalJournal } from './active-steering/proposal.js';
+import { mkdir, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { FlowApiError, FlowClient } from '@flow/client';
@@ -17,6 +18,8 @@ export interface RunnerOptions {
   workingDirectory: string;
   signal: AbortSignal;
   adapters?: HarnessAdapter[];
+  /** Explicit host opt-in; public conversation capabilities remain disabled. */
+  activeSteering?: boolean;
   pollIntervalMs?: number;
   heartbeatIntervalMs?: number;
   requestTimeoutMs?: number;
@@ -33,6 +36,11 @@ export async function runRunner(options: RunnerOptions): Promise<void> {
   while (!options.signal.aborted) {
     try {
       await replayPending(stateDirectory, batch => reportBatch(client, batch, requestSignal(options)), attemptId => options.onNotice?.({ type: 'events-retained', attemptId }));
+      for (const entry of await readdir(stateDirectory, { withFileTypes: true })) {
+        if (!entry.isDirectory() || !/^[a-f0-9]{64}$/.test(entry.name)) continue;
+        const recovered = await new FinalProposalJournal(join(stateDirectory, entry.name)).recover(input => client.steeringProposalStatus(input, requestSignal(options)));
+        if (recovered !== 'missing') options.onNotice?.({ type: 'events-retained', attemptId: recovered.attemptId });
+      }
       const requestedAt = performance.now();
       const { assignment, remainingLeaseMs } = await client.claim(requestSignal(options));
       disconnected = false;
@@ -91,6 +99,16 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
     if (assignment.goalToolRun && assignment.goalGraphRun) throw new Error('Conflicting planner authorities.');
     if (assignment.goalGraphRun) context.goalGraphTools = await bindGraphToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
     if (assignment.goalToolRun) context.goalTools = await bindGoalToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
+    if (options.activeSteering && adapter.name === 'claude') context.steering = {
+      async mailbox() { await control.assertOwnership(); return client.steeringMailbox(ownership, AbortSignal.any([control.signal, requestSignal(options)])); },
+      async finalize(input) {
+        await control.assertOwnership();
+        try { return await outbox.finalize(input, {
+          submit: proposal => client.finalizeSteering(proposal, requestSignal(options)),
+          status: proposal => client.steeringProposalStatus(proposal, requestSignal(options)),
+        }); } catch (error) { if (error instanceof FinalizationUnknown) control.interrupt('lost'); throw error; }
+      },
+    };
     await adapter.run(context);
   } catch (error) {
     if (error instanceof EventStorageError) throw error;

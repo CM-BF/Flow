@@ -1,7 +1,9 @@
 import { readFile } from 'node:fs/promises';
 import type { FastifyInstance } from 'fastify';
 import type { Pool } from 'pg';
-import { steeringCommandSchema, steeringReceiptSchema, steeringPageSchema, steeringStateQuerySchema } from '../../../../packages/contracts/src/active-steering.js';
+import { steeringCommandSchema, steeringReceiptSchema, steeringPageSchema, steeringStateQuerySchema, steeringMailboxSchema, steeringProposalLookupSchema } from '../../../../packages/contracts/src/active-steering.js';
+import { steeringFinalizationSchema } from '../../../../packages/contracts/src/runner.js';
+import { finalizeSteering, steeringMailbox, steeringProposalStatus } from './finalization.js';
 import { HttpError, transaction } from '../database.js';
 import { acceptSteering, recordReceipt } from './commands.js';
 import { steeringAudit, steeringState, steeringText } from './queries.js';
@@ -27,6 +29,9 @@ export function registerActiveSteeringRoutes(app: FastifyInstance, pool: Pool, o
     const result = await acceptSteering(pool, request.params.id, parse(steeringCommandSchema, request.body), typeof key === 'string' ? key : '');
     return reply.code(202).send(result);
   });
+  app.post('/api/runner/steering/mailbox', request => steeringMailbox(pool, request.runnerId!, parse(steeringMailboxSchema, request.body)));
+  app.post('/api/runner/steering/finalize', request => finalizeSteering(pool, request.runnerId!, parse(steeringFinalizationSchema, request.body)));
+  app.post('/api/runner/steering/proposals/status', request => steeringProposalStatus(pool, request.runnerId!, parse(steeringProposalLookupSchema, request.body)));
   app.post('/api/runner/steering/receipts', request => recordReceipt(pool, request.runnerId!, parse(steeringReceiptSchema, request.body)));
   app.get<{ Params: { id: string } }>('/api/tasks/:id/steering', (request, reply) => {
     reply.header('Cache-Control', 'no-store');
