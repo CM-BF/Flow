@@ -385,3 +385,5 @@ D07准备：root04:53:48.691Z因registry提交eef40cf读取54源snapshot，工�
 GoalOwner明确授权首连帮助小UX，沿既有U11/SVC候选，不新重复计划：空地址连接当前部署中心、远端填管理员提供地址、说明owner token用途及向中心管理员/本机受保护配置取得；复用适当现启动文档链接。产品UI不显示secret、不自动复制、不加匿名token端点；0query验证文案可读性，不新服务/代理。原App owner另领精确scope，排PROFILEI01/queue窗口，不能抢App或阻模块集成。root曾提copy-owner-token仅SVC owner CLI候选，不等于授权执行读取真实凭据。
 
 05:00 名称纠正与方法冻结：此前D07只是我队proof性能候选临时代称，主线已用D07作human下一交付筛选，正式新片改WPF-DPERF01，不能重用编号。首片仅同task/同snapshot/review.target等于implementation.target时直接复用既有compare结果；tree/main dirty重复只留后继假设，不建通用缓存接口。root已核官方[Git Trace2](https://git-scm.com/docs/api-trace2)，可对子进程设置临时GIT_TRACE2_EVENT记录start argv统计真实调用，不改全局Git配置/公开proof接口/真实凭据命令。owner独立新698树、4scope receipt已受领，事实与counter结果由其canonical单写。
+
+05:02 派工时序纠正：DPERF新take后管理者首次使用send_message时worker已completed，消息只入邮箱未启动。root通过actual list_agents发现HEAD仍698 clean/无canonical；管理者改用followup_task携完整bb7ef22fv1 receipt/四scope正式唤醒，明确直接开工。此前仅宣称领取与等待canonical，没有伪造source/实现。以后completed/idle统一followup，running才send_message；不新增agent绕过队列。

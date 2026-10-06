@@ -2,12 +2,12 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:00 UTC / 已发布main698由Lead确认且管理git ls-remote核；两新claim已committed |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:03 UTC / 已发布main698由Lead确认且管理git ls-remote核；两新canonical与claim已交登记 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `dc22bfcebe7298c776db548dbf3b60656984b308`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `776daaba61246366ba136d3c5156538b06bc8911`（本次管理停点前实核） |
 | 工作树dirty状态 | 本次仅管理范围的交付、正式领取回执与计划文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
@@ -134,3 +134,5 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 04:49当前结论：QUEUE00 final498b2cdc46eee484d8dd148715821ee800669965 clean/5acc批准已交root一次桥接，卡未注册历史保持、等Lead通知后owner单次实采。PROFILE a28旧合同批准保留，新02683要求goal-tools/unknown可见但不可用于chat、合法邻项不被拖失败，原九scope新增适配后绑定新target；root观察旧review解析unknown已交owner同轮格式修正，最终采state/target/proof不只issues。后继reader→PROFILE App→queue UI顺序明确，F01共享client候选未并入任何我方新树。
 
 05:01 root独立CUA实证（页面同步04:59:56，临时tab21已关）：首页WPF-001人类摘要/下一交付已经直接描述能力；已领取但进度来源待登记区同时可见WPF-DPERF01/w01_owner/dashboard-proof-performance及WPF-PROFILEI01/workspace_panels_owner/web-profile-integration，lead/branch/tree正确。仅领取展示，不冒称canonical已注册；对应REQ37实际验收。PROFILEI01首source9fefee已核，等DPERF首SHA齐后一次桥Lead登记。
+
+05:03 两新canonical首SHA均核三件套/claim/人类摘要及实际源路径后，一次给root桥Lead登记；尚未获得registry通知，不声称进度卡已出现。DPERF首次send_message未唤醒idle的实际时序已记research，05:02 followup正式唤醒后37e1ed已实际创建，未在此前伪报开工产物。后续MainLead82e只metadata组合，两树继续698不追moving。
