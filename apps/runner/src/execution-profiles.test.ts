@@ -7,8 +7,8 @@ import { fileURLToPath } from 'node:url';
 import { afterEach, expect, it } from 'vitest';
 import { randomUUID } from 'node:crypto';
 import type { HarnessAdapter, HarnessContext } from '@flow/contracts';
-import { executionProfileConfigurationJson } from '../../../packages/contracts/src/execution-profiles.js';
-import { describeExecutionProfile, guardExecutionProfile } from './execution-profiles.js';
+import { executionProfileConfigurationJson, nativeExecutionProfileConfigurationJson, type CodexExecutionProfileConfiguration } from '../../../packages/contracts/src/execution-profiles.js';
+import { describeExecutionProfile, guardExecutionProfile, publishNativeExecutionProfile } from './execution-profiles.js';
 import { textDigest } from './verifier.js';
 import { loadRunnerConfiguration } from './configuration.js';
 
@@ -143,4 +143,43 @@ it('preserves the exact original canonical configuration and digest when steerin
   }
   expect(textDigest(expected)).toBe('40c6ea4295f5527f2f22fd586e8896984f26493ccac38fdde747cab1ef5d9f78');
   expect(executionProfileConfigurationJson(describeExecutionProfile({ materialFiles: [] }, adapter, true))).not.toBe(expected);
+});
+
+function nativeConfiguration(): CodexExecutionProfileConfiguration {
+  return { harness: 'codex', adapterVersion: 'codex-app-server-0.154.0-v1', model: 'synthetic', reasoningEffort: null,
+    serviceTier: null, serviceTierForTurn: 'default', approvalPolicy: 'never', sandboxMode: 'read-only', access: 'none',
+    hostLimits: { wallTimeMs: 1000, maxOutputBytes: 1024 } };
+}
+
+it('requires the exact Codex profile pin and rejects unsupported steering before entering its adapter', async () => {
+  const configuration = nativeConfiguration(); let calls = 0;
+  const adapter: HarnessAdapter = { name: 'codex', version: configuration.adapterVersion, async run() { calls++; } };
+  const reference = { id: randomUUID(), runnerId: randomUUID(), configDigest: textDigest(nativeExecutionProfileConfigurationJson(configuration)) };
+  const guarded = guardExecutionProfile(adapter, reference, configuration);
+  const context: HarnessContext = { task: { title: 'Native pinned', harness: 'codex', prompt: 'hi', executionProfile: reference },
+    workingDirectory: '', signal: new AbortController().signal, async assertOwnership() {}, async emit() {}, async waitForDecision() { return 'reject'; } };
+  for (const changed of [{ configDigest: '0'.repeat(64) }, { runnerId: randomUUID() }, { id: randomUUID() }]) {
+    await expect(guarded.run({ ...context, task: { ...context.task, executionProfile: { ...reference, ...changed } } })).rejects.toThrow('does not match');
+  }
+  await expect(guarded.run({ ...context, task: { ...context.task, executionProfile: undefined } })).rejects.toThrow('requires');
+  await expect(guarded.run({ ...context, task: { ...context.task, harness: 'claude' } })).rejects.toThrow('does not match');
+  await expect(guarded.run({ ...context, steering: { async mailbox() { throw new Error('unused'); }, async finalize() { throw new Error('unused'); } } })).rejects.toThrow('steering port');
+  expect(calls).toBe(0); await guarded.run(context); expect(calls).toBe(1);
+});
+
+it.each(['configuration', 'digest'] as const)('rejects a native publication whose confirmed %s changed', async changed => {
+  const configuration = nativeConfiguration();
+  const server = createServer(async (request, response) => {
+    for await (const _chunk of request) { /* Drain this synthetic request. */ }
+    response.setHeader('content-type', 'application/json');
+    response.end(JSON.stringify({ profile: {
+      configuration: changed === 'configuration' ? { ...configuration, serviceTierForTurn: null } : configuration,
+      reference: { id: randomUUID(), runnerId: randomUUID(), configDigest: changed === 'digest' ? '0'.repeat(64) : textDigest(nativeExecutionProfileConfigurationJson(configuration)) },
+    }, replayed: false }));
+  });
+  await new Promise<void>(resolve => server.listen(0, '127.0.0.1', resolve));
+  try {
+    const address = server.address(); if (!address || typeof address === 'string') throw new Error('No synthetic port.');
+    await expect(publishNativeExecutionProfile({ baseUrl: `http://127.0.0.1:${address.port}`, token: 'synthetic', configuration })).rejects.toThrow('did not confirm');
+  } finally { server.closeAllConnections(); await new Promise<void>(resolve => server.close(() => resolve())); }
 });

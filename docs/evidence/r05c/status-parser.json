@@ -1,0 +1,93 @@
+{
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 2,
+      "output": "普通回复与不确定终态保护已通过独审，等待主线集成",
+      "next": "集成已审普通回复适配片段；真实Codex运行另行验收",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c",
+      "scopes": [
+        "apps/runner/src/execution-profiles.test.ts",
+        "apps/runner/src/execution-profiles.ts",
+        "apps/runner/src/native-harness/codex/adapter.test.ts",
+        "apps/runner/src/native-harness/codex/adapter.ts",
+        "apps/runner/src/native-harness/codex/evidence.test.ts",
+        "apps/runner/src/native-harness/codex/evidence.ts",
+        "apps/runner/src/native-harness/codex/index.ts",
+        "apps/runner/src/native-harness/codex/integration.test.ts",
+        "apps/runner/src/native-harness/codex/peer.mjs",
+        "apps/runner/src/native-harness/codex/policy.ts",
+        "apps/runner/src/native-harness/codex/wire.ts",
+        "apps/runner/src/native-harness/descriptor.ts",
+        "packages/contracts/src/native-harness.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "R05C",
+    "owner": "native_center_owner / gpt-6-astra",
+    "branch": "codex/codex-native-adapter",
+    "branchState": "ready-for-integration",
+    "updatedAt": "2026-10-06T09:53:46.000Z",
+    "updatedRecord": "2026-10-06 09:53:46 UTC",
+    "todos": [
+      {
+        "id": "R05C-01",
+        "state": "completed",
+        "owner": "native_center_owner",
+        "evidence": "[claim](../../docs/evidence/r05c/claim.json)、[Interface](../../docs/evidence/r05c/interface.md)"
+      },
+      {
+        "id": "R05C-02",
+        "state": "completed",
+        "owner": "native_center_owner",
+        "evidence": "C0固定27022407f175597d1d9c897f23f59261f24ab49b；92不同检查与[manifest](../../docs/evidence/r05c/c0-fixed-manifest.json)，Execution Lead APPROVED"
+      },
+      {
+        "id": "R05C-03",
+        "state": "completed",
+        "owner": "native_center_owner",
+        "evidence": "C1固定7127b5bfda3135670e1595dd4b6e90c4c9ea416c；[manifest](../../docs/evidence/r05c/c1-fixed-manifest.json)，95检查；projection独审已main，实验scope仍属Mika"
+      },
+      {
+        "id": "R05C-04",
+        "state": "in-progress",
+        "owner": "native_center_owner",
+        "evidence": "Lead独立只读APPROVED；manifest与原始证据已固定，等待main receipt"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "3418fe682944145494463dca9e09f89c8b9c2295 / C1 7127b5bfda3135670e1595dd4b6e90c4c9ea416c；随后仅metadata",
+    "declaredDirty": "C0/projection/C1源码冻结；仅本scope证据和状态更新",
+    "checks": {
+      "state": "passed",
+      "target": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c",
+      "record": "PASSED 7127b5bfda3135670e1595dd4b6e90c4c9ea416c：C1 95不同检查有通过证据；PG首次4通过/1失败，修复单选1通过/4未选；tsc exit0。C0/projection先前92/15另计"
+    },
+    "reviewRecord": "[review.md](review.md)，C0/projection/C1 APPROVED",
+    "mainRecord": "C0/projection已集成main253035e11ab18ba33095c018949f856442021d49；已审client095亦集成；C1已审待集成（Lead固定receipt）",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED；C1仅注入普通final路径，C0与projection各自批准范围保留。",
+    "target": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+  }
+}

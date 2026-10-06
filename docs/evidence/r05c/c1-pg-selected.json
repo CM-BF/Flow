@@ -1,0 +1,11 @@
+{
+  "command": "FLOW_R05C_EVIDENCE=docs/evidence/r05c/c1-pg-selected-resources.json pnpm exec vitest run apps/runner/src/native-harness/codex/integration.test.ts -t 'runs the real JSONL transport'",
+  "exitCode": 0,
+  "source": "process stdout/stderr captured directly",
+  "output": "c1-pg-selected.stdout",
+  "reason": "Repair a test-only evidence query: details have no created_at; use actual timeline cursor order without weakening ordering/content assertions",
+  "selected": 1,
+  "passed": 1,
+  "unselected": 4,
+  "failed": 0
+}
