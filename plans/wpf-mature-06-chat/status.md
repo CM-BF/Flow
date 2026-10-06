@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 13:48 UTC |
+| 最近更新 | 2026-10-06 13:51 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -16,7 +16,7 @@
 | 优先级 | 1 |
 | 当前产出 | 连接与持久草稿、未决发送恢复已领取实施；共享会话输入已获审进入主线，完整用户旅程尚未验证 |
 | 下一可用交付 | 先实现原回执同步接管和持久检查点、完整材料恢复及真实插件入口，再按资源条件验证刷新与显式原key恢复 |
-| 当前阻塞 | ACTIVE: 轻量实现已可进行；完整安装/构建等待可用≥2.5GiB及增量后余≥1GiB，最终浏览器旅程还需对齐callerOrigin、迟到注销Cookie及重复连接名额语义 |
+| 当前阻塞 | ACTIVE: 轻量实现继续；新Web产物或依赖复制须先估实际峰值并留约1GiB，尚无build许可；最终旅程还需对齐callerOrigin、迟到注销Cookie及重复连接名额语义 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |
@@ -50,4 +50,4 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 
 原21[批准Interface](../../docs/evidence/web-platform/recovery01-fixed-cde-proposal.json)保持：同步原authority receipt接管后durable prepare/dispatching事务complete/CAS才HTTP，CREATE两步、完整draft与有序材料、P01真入口和权限绑定；存储失败可继续编辑但0mutation，unknown不降级不自动重投。完整envelope128KiB+32KiBreserve/4MiB候选已获结构批准，仍待实际serializer/IDB准入验证，不保证数量满载。
 
-仅轻量代码/metadata先开工；实际建后available1,416,241,152B，不达完整install/build门槛。真实App/HTTP仍累计90秒含15秒清理/8MiB/1PG+1Chrome，开始前复核资源；center三语义并行，是最终验收gate而非第一行代码blocker。上传journal跨tabCAS仍独立未解，未因本片设计冒称修复。
+仅轻量代码/metadata先开工；13:46实际建后available1,416,241,152B事实不改。按[13:49最新政策](../../docs/evidence/web-platform/resource-policy-1349.json)，仅SVC06需2.5GiB，其他Web新产物/依赖复制先估峰值并留约1GiB；当前仍无build许可。真实App/HTTP仍累计90秒含15秒清理/8MiB/1PG+1Chrome，开始前复核资源；center三语义并行，是最终验收gate而非第一行代码blocker。上传journal跨tabCAS仍独立未解，未因本片设计冒称修复。

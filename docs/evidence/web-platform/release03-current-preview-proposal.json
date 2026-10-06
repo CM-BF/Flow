@@ -68,15 +68,18 @@
   },
   "resourcePreflight": {
     "availableKiB": 1750444,
-    "fullInstallBuildMinimumGiB": 2.5,
     "extraMargin": "estimatedphysicalincrement+1GiB",
     "baseTrackedFiles": 6103,
     "baseLogicalBytes": 87006191,
     "rounded4KiBFileDataEstimate": 102043648,
     "estimateBoundary": "Not physicalmeasurement; excludes directories/gitindex/dependencies/build/DB/browser. Dependencyincrement unknown, no claimingcapacitysafe.",
-    "takeDecision": "No placeholdertake/newtree/install/build/PG; actualAPI requires formalbuild and currentgatefails. Legal existingformat2descriptor orresourcegates plus exactpreflight required."
+    "takeDecision": "No placeholdertake orbuild. Current formalformat2 route requires actualpeak estimate plus about1GiB completionmargin or matching existingdescriptor; root awaits W01 own existingATTACHI source/deps/caches readonlyplan before specific decision.",
+    "historicalGateAtObservation": {
+      "fullInstallBuildMinimumGiB": 2.5,
+      "supersededBy": "resource-policy-1349.json"
+    }
   },
-  "recoveryParallel": "Panels stays Recoverydesign; w01draft research complete, available forreleasevalidation onlyafterCOMMITTED. No newagents orsharedscopeclaims.",
+  "recoveryParallel": "Panels formallydispatched Recovery21 onmain84005; W01 readonlyrelease preparation remainsseparate until freshexact4COMMITTED. No newagents/overlap.",
   "archives": [
     {
       "source": "/tmp/root-attachi02-existing-release-artifact-audit.json",
@@ -102,5 +105,6 @@
       "bytes": 6927,
       "sha256": "2d2835845f4c8df32c8972d59e7622fcdfdba2b4179cd5ec40c9450b7b594fa3"
     }
-  ]
+  ],
+  "currentResourcePolicy": "resource-policy-1349.json"
 }
