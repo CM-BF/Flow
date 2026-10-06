@@ -1,6 +1,6 @@
 # S01 确定性 Runner 容量验证
 
-创建/更新：2026-10-06 08:11 UTC。状态 in-progress；owner Mika / gpt-6-astra。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；已审主线基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
+创建/更新：2026-10-06 12:08:19 UTC。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；已审主线基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
 
 目标：在真实中心、PostgreSQL、独立 runner 进程及持久 outbox 上，区分持久会话数、中心声明容量、实际执行并发与本次确定性工具负载。先找出最小容量缺口，不把观察者、数据库行数或模拟模型当真实 provider 容量。父要求见 [FLOW-001](../flow-001-architecture/plan.md) 与 [FLOW-002](../flow-002-provider-harness/plan.md)。
 
@@ -90,3 +90,11 @@ owner status_read / gpt-6-astra，co-lead mika，所属 FLOW-001、M2。完整�
 - [ ] 如实封存本次结果/资源/unknown、独审和主线接收；不对旧journal作自动恢复。
 
 2026-10-06 after-drain实际窗口已完成：两组门禁PASS、资源清理完成，1次heartbeat错误原因unknown保留，实际结果独审/main接收仍开放。原FAIL不能改为PASS；本次仅固定fixture混合负载证明，无>100实际执行或SLO。
+
+## S01-04 / S01-05 / S01-06：REQ-18 128实际fixture执行后继
+
+GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika开门禁；一个8×16 case，最多128独立task/attempt与持久fixture session，180秒含启动/证据/cleanup，256MiB；无warmup/预演/补数/SDK/provider。固定设计见[Interface](../../docs/evidence/s01/mixed-128-preparation/interface.md)。
+
+- [ ] 固定main1c496835输入、profile与128身份/持续行为/预算/资源验收，独立review准备代码与纯checks。
+- [ ] Mika点名fixedHEAD后仅一次实际window，失败如实停止，0额外capacity调用。
+- [ ] 全量session/attempt/event ACK/fence/unknown与资源证据封存独审；REQ-18真实模型/完整故障/部署边界继续开放。

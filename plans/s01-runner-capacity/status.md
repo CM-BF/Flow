@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:54:25 UTC；实际窗口base0cee；当前main c450c2d，结果未作main集成声明 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:08:19 UTC；新准备base main1c496835，当前0新窗口 |
 | Plan | [plan.md](plan.md) |
-| 所属大task | FLOW-001（[架构主计划](/Users/citrine/Projects/AgentHarness/Flow/plans/flow-001-architecture/plan.md)） |
+| 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新实现51541b0cad73dcad32c7374dc87d631f0b9a8432；实际执行5ea1b26f23fd7f24d1b89199a10b553dcab7fc18；新结果339147cb015fdd40ed1cedbc66aca26e736b3ee7；原634/121/6a596历史保留 |
-| 工作树dirty状态 | 新结果339147cb已固定clean；其后仅manifest/status/review metadata，源码与raw冻结 |
+| 工作树dirty状态 | 开始07c8a0b clean；当前仅128准备合同和owner metadata；旧raw/manifest冻结 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新唯一窗口PASS且独审APPROVED：32实际attempt、1027事件ACK、5journal清空；保留1次原因unknown heartbeat错误；19.272秒/计量完整 |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | 实现目标 | 339147cb015fdd40ed1cedbc66aca26e736b3ee7 |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | planning |
 | 优先级 | 4 |
-| 当前产出 | 两组固定混合验证的真实通过证据已独审接收，资源已清理，旧失败完整保留 |
-| 下一可用交付 | 本片段已交付 |
+| 当前产出 | 128持久fixture会话与实际执行窗口正在固定拓扑、计量和清理合同；旧通过/失败结果完整保留 |
+| 下一可用交付 | 固定一个8×16实验profile及可复核输入，独审后由Mika开放唯一运行窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | 新PASS结果339147cb015fdd40ed1cedbc66aca26e736b3ee7于2026-10-06 10:53:39 UTC经Mika/gpt-6-astra独审APPROVED，0P1/P2；仅本固定负载 |
@@ -155,3 +155,9 @@ Mika在准备独审后批准唯一window `mika-s01-mixed-20261006-100634`，执�
 2026-10-06T10:51:52.971Z：固定新PASS结果target `339147cb015fdd40ed1cedbc66aca26e736b3ee7`；[result manifest](../../docs/evidence/s01/mixed-after-drain-run/manifest.json)绑定21source/21readonly/8raw/7support，SHA d2e7debddc741a69ad940315cd5b52d39d3e35b8c20078e162fad65a6baa2d2a，旧515准备/5ea执行与新339结果明确分开。源/raw已冻结，待独立只读结果review，不重跑。
 
 2026-10-06 10:54:25 UTC：Mika独立只读APPROVED固定339147cb，57项Git/WT/hash/bytes一致；实际计量与归档保守上界成立，1heartbeat未知错误及timer/actual overlap区别保留。见[独审回执](../../docs/evidence/s01/mixed-after-drain-run/independent-review.json)。本片交付delivered，原S01其他验收TODO、>100实际容量/ACK/browser/真实provider及完整未知恢复不勾完。下一产品片S01P04按FLOW-001两层在独立worktree/claim开展，不在本树改产品；本source/raw停止修改，writer v3仍保留到Lead明确交接。当前main c450c2d未作为新实验result已集成的证明。
+
+## 2026-10-06 12:08:19 UTC REQ-18 后继准备
+
+GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅设计/实现准备，实际调用0；须独立固定source/profile/budget/cleanup review和Mika具体运行门禁。fresh writer8e4660a6-625f-4ada-8558-20c19b9e23e0 v3 ACTIVE，三scope不变；integration bb7d2d35 v1 take后无冲突合main1c496835至07c8a0b，旧三scope零diff，并已v2 release。详见[Interface](../../docs/evidence/s01/mixed-128-preparation/interface.md)与[领取观察](../../docs/evidence/s01/mixed-128-preparation/owner-observation.json)。
+
+本地find-skills/brainstorming/clean-code/codebase-design应用于固定profile复用和资源责任，路径/hash见skills.json；不安装、0工程测试/PG负载/provider。一个runner child内8 runtime×16，独立OS进程数另报；128真实fixture session须逐项持久绑定，不代表nativeSDK/model或conversation对象。旧172 Git文件已冻结，旧unknown journal未操作；架构影响仅实验私有输入/观测，无产品API/池/锁/调度改变。后续检查证据等待固定实现，当前无新通过声明。
