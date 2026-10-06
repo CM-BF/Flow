@@ -25,9 +25,9 @@
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
-| X04-01 | complete | assignment_review | [claim](../../docs/evidence/x04/claim-receipt.json)、[方法](../../docs/evidence/x04/quality.md) |
-| X04-02 | complete | assignment_review | [Interface](../../docs/evidence/x04/interface.md) |
-| X04-03 | complete | assignment_review | [13/13与原始事实](../../docs/evidence/x04/README.md) |
+| X04-01 | completed | assignment_review | [claim](../../docs/evidence/x04/claim-receipt.json)、[方法](../../docs/evidence/x04/quality.md) |
+| X04-02 | completed | assignment_review | [Interface](../../docs/evidence/x04/interface.md) |
+| X04-03 | completed | assignment_review | [13/13与原始事实](../../docs/evidence/x04/README.md) |
 | X04-04 | in-progress | assignment_review | clean-code完成；固定target待独审/main |
 
 Claim c2a58860-7f71-49cd-b432-d081d080d78b v1，四literal范围。0provider/0模型；无生产registry绑定。架构影响：新增本地压缩包验证深模块，非安装/执行宿主；交付后登记Lead更新工程架构基线。
