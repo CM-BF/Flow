@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-06 19:34:22 UTC",
+  "source": "4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa",
+  "sourceBindings": [
+    {
+      "path": "experiments/continuous-goal-acceptance/decision.mjs",
+      "bytes": 892,
+      "sha256": "5731378e23c3c90427bb5173603285add473f9cf0dfd233e15abaf6ce10ff224"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/decision.test.mjs",
+      "bytes": 3191,
+      "sha256": "98593b744b52be1d88c120377b3efd00cd1bb2d5737d03de2d03f101f0b1f2e0"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "bytes": 18266,
+      "sha256": "bfdbffbfbe6d5616651d5597a038923be18cfb3911e520d521ed0dc06592a6e1"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "bytes": 8929,
+      "sha256": "b3b55b8c33390b1f756d115bf95a0a7a2a24ab6bc53c7e6f51554f3f2fe75f80"
+    }
+  ],
+  "directInputs": [
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "bytes": 12626,
+      "sha256": "fa77a60fee9c06513969ffa634a6e41832687157770f9894069ea7f902256741"
+    },
+    {
+      "path": "packages/interaction/src/goal/types.ts",
+      "bytes": 3194,
+      "sha256": "5f9f7f0ca5f8494333a3b656514b3289b9c0100e28909db5908cfd7fd15ad530"
+    },
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "bytes": 14007,
+      "sha256": "66fc56ff48c46bd9f9ebaac51614985d9f9dbbeec31cf161011dd1ff3813ba32"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/records.mjs",
+      "bytes": 2062,
+      "sha256": "48eddfb0d31010056ce8f7e4aca82f57100c31744e5d58dcccd558ec3f92bfe7"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "docs/evidence/o16/decision-cas-pure-run.json",
+      "bytes": 2879,
+      "sha256": "e4b5cc35840b317ed67d5da7a486128993b43d06861ec4ac853f4f76d5d4e653"
+    },
+    {
+      "path": "docs/evidence/o16/decision-cas-pure.stdout.txt",
+      "bytes": 230,
+      "sha256": "6b12a3dd76ab4e94d03f3956a5f5694c813a00838cfbb71d57568a2ea7ac5afc"
+    },
+    {
+      "path": "docs/evidence/o16/decision-cas-pure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/decision-cas-independent-source-review.json",
+      "bytes": 1227,
+      "sha256": "76da06971bc15d1f4c8409e5825349b202ff2bd931a42ec27a561915e28b0a6b"
+    },
+    {
+      "path": "docs/evidence/o16/decision-cas-manifest.json",
+      "bytes": 2661,
+      "sha256": "13a817cf39db69185dc1410cced5592c75be2b1d0ec1a39ddaf91d0c392c30d9"
+    },
+    {
+      "path": "docs/evidence/o16/decision-cas-not-run.json",
+      "bytes": 264,
+      "sha256": "2d3d2045d19a6c244284bcce9ff5cbc704bd72823cffb04548c9dd375f60c25c"
+    },
+    {
+      "path": "docs/evidence/o16/pg-one-shot-red-summary.json",
+      "bytes": 3795,
+      "sha256": "afe9774ac9a56aaf36b4bbf4a00dbc33debb4fe7bf604eabc7d6390166d04836"
+    },
+    {
+      "path": "docs/evidence/o16/pg-one-shot-red-manifest.json",
+      "bytes": 9665,
+      "sha256": "1d738808cc3895200cd6827c9594254d1b4844705a85f7348d727b8ec490a6c0"
+    }
+  ],
+  "checks": {
+    "selected": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "elapsedMs": 1209,
+    "original25Repeated": false,
+    "totalDistinctPurePreparationAcrossRounds": 26,
+    "actualPg": "original 1 selected/0 passed/1 failed; unchanged",
+    "retainedPgTouched": false,
+    "provider": 0,
+    "pg": 0
+  },
+  "resources": {
+    "rawBytes": 230,
+    "temporaryPeakObservedBytes": 1917,
+    "processGroup": "absent",
+    "cleanup": "own empty temporary parent removed"
+  },
+  "review": {
+    "source": "APPROVED_SOURCE_NOT_RUN prior independent report; immutable historical scope",
+    "newPureEvidence": "PENDING independent read-only verification"
+  },
+  "limitations": "Pure helper covers accepted=null or prior accepted ID. Actual driver still requires fresh never-accepted nodes; no expanded replacement workflow. Original failed run is not resubmitted or cleaned."
+}
