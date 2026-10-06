@@ -14,14 +14,16 @@ catalog 是 configured policy，不是 provider/account entitlement。无探测�
 
 ## 真实消费者与后继
 
-本片实际直接消费者是公共 FlowClient HTTP 目录专测和受控 React fixture；源码已准备，均尚未运行。fixture 的 A/B 为纯本地 capture 样本，不是发送/排队回执。旧 ExecutionProfilePicker 锁定分支保留；新 requested.model 不用 creation model 代替。
+本片实际直接消费者是公共 FlowClient HTTP 目录专测和受控 React fixture；HTTP目录直接专测已随37项检查通过，受控 React 浏览器 fixture 尚未运行。fixture 的 A/B 为纯本地 capture 样本，不是发送/排队回执。旧 ExecutionProfilePicker 锁定分支保留；新 requested.model 不用 creation model 代替。
 
 App/Thread 后继须在用户 click 同步栈捕获 settings+intent/profile/materials/text；准备附件的 await 之后不能重新读取新 UI。已有 outbox/Queue/Recovery 是唯一请求/key/body/持久身份 authority；当前 A、队列 B、后续草稿 C 各自 snapshot。新提交须核当前 conversation profile/cap；重试沿原 frozen body/key，不因目录更新覆盖原值。公共 matcher 处理 ACK，坏 200 为 unknown，不自动重发。
 
 requested/observed 读回另属后继：保真实 nullable/omitted fast/effort 与 init 观测范围，不补造 provider 成功。`message-settings-unsupported` queue 原因必须保留。details 不扩大 PluginHost 权限。
 
-## 运行入口（当前 NOT_RUN）
+## 运行入口与当前验证边界
 
 Direct：`apps/web/test/message-settings.test.ts` + 原 `execution-profiles.test.ts`。必要 noEmit 使用本树公共 source aliases，第三方只读固定 realpaths，禁止 moving @flow/dist。具体依赖指纹见 [proposal](readonly-dependency-proposal.json)。无本树 node_modules 安装/链接。
 
-Browser 文件没有自动 launcher；导出 `startMessageSettingsFixture({cacheDir,aliases})` 与 `checkMessageSettingsPicker(page,fixture,evidence)`。未来获准外层 supervisor 先持有 own scratch/deadline，再创建唯一 Chrome/Page，调用一次检查，finally 独立关闭 browser 与 fixture。Vite configFile=false，缓存必须落 own scratch，aliases 固定本树 @flow source 与已审第三方；不会调用默认实际 registry/center。所有类型、import、HTTP、浏览器运行目前 NOT_RUN。预算与全体 cleanup 由后续明确准入的父 runner 负责，不能直接把导出函数当运行许可。
+Browser 文件没有自动 launcher；导出 `startMessageSettingsFixture({cacheDir,aliases})` 与 `checkMessageSettingsPicker(page,fixture,evidence)`。未来获准外层 supervisor 先持有 own scratch/deadline，再创建唯一 Chrome/Page，调用一次检查，finally 独立关闭 browser 与 fixture。Vite configFile=false，缓存必须落 own scratch，aliases 固定本树 @flow source 与已审第三方；不会调用默认实际 registry/center。类型检查与两direct共37项已运行通过，包含专测自有loopback HTTP；原父计数FAIL单独保留，见[root限定证据](root-direct-evidence-review.json)。浏览器入口/Chrome/真实App仍NOT_RUN。浏览器预算与全体 cleanup 由后续明确准入的父 runner 负责，不能直接把导出函数当运行许可。
+
+浏览器准备已通过[root/peer限定源码审查](root-browser-preparation-review.json)，[固定准备稿](browser-preparation/report.md)复用已有监督方法；无运行gate，不改变六个已审源。下次实际绑定须使用届时metadata HEAD。

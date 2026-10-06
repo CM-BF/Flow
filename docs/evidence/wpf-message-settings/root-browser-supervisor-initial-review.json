@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-06T18:46:16.132426+00:00",
+  "state": "CHANGES_REQUESTED_SOURCE_ONLY_NOT_RUN",
+  "scope": "Root parent supervisor and binding review; panels separately reviews worker/aliases",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "head": "010cb9c7847e35e4632d505c8eb866dcaa40f7b9",
+  "claim": {
+    "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+    "version": 1,
+    "scopeCount": 8,
+    "worker": "w01_owner"
+  },
+  "pins": {
+    "sources": 6,
+    "readOnlyDependencies": 116,
+    "externalPins": 37,
+    "preparedFiles": 3,
+    "allMatchedBeforeRevision": true
+  },
+  "files": [
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/supervisor.py",
+      "sha256": "afb37fe499098c2146e1e18d4792bcd68386b73f41023674dceab8f63aadd61d",
+      "bytes": 10939
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/binding.json",
+      "sha256": "55d5a4bf7381340d6f57aeb7ef4b8ef8b04e2e656d1b1c3aa14f6253f94f4672",
+      "bytes": 33332
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/worker.mjs",
+      "sha256": "a05181db3f9954a2a8b6e8bab2c9c3988dcb1869eb3b4918bbb974617846fda4",
+      "bytes": 8548
+    },
+    {
+      "path": "/private/tmp/message-settings-browser-candidate/manifest.json",
+      "sha256": "b282019e44b38b81df354642401e9d6e7edbb6e13f884b5154ea758d86dbb700",
+      "bytes": 1874
+    }
+  ],
+  "finding": {
+    "priority": "P2",
+    "file": "/private/tmp/message-settings-browser-candidate/supervisor.py",
+    "line": 133,
+    "title": "Final scratch/free observation omitted before deletion",
+    "trigger": "The worker writes profile or cache after the final 250 ms work checkpoint and exits; finally removes scratch after owned-group cleanup without observing its final size or free space.",
+    "effect": "A final observable cap breach can be erased and a run reported PASS based only on an earlier sample. This is an evidence/classification defect in the runner, not a demonstrated product failure.",
+    "requestedFix": "After own process-group absence and before scratch removal, sample free bytes, scratch logical/allocated and retained evidence. Report breached thresholds or sampling errors, still perform own cleanup. Keep total deadline, final evidence reserve, no work-deadline checkpoint in cleanup."
+  },
+  "acceptedBoundaries": [
+    "One inherited new process group; explicit own Chrome profile/PID/CDP; no personal browser discovery",
+    "One cumulative60s clock with15s cleanup reserve, externally owned budget and exclusive consumed gate",
+    "Project writes denied, own scratch/output only; loopback network only and provider/PG env stripped",
+    "Six fixed implementation sources frozen; actual public-client synthetic catalog scenario invoked, not actualApp integration",
+    "Prepared source state rejects launch; fresh manager gate and Lead shared-window scheduling still mandatory"
+  ],
+  "limitations": [
+    "No Node/import/HTTP/Chrome/PG product run or space sampling; static source/hash review only",
+    "External transitive bytes and Chrome framework not exhaustively pinned; entry/package metadata boundary documented",
+    "Measured polling limits are not hard OS quotas; no broader safety claim"
+  ],
+  "methods": "Reused local find-skills, webapp-testing and clean-code; checked resource ownership, error containment and evidence truthfulness. Root wrote only this /tmp review."
+}
