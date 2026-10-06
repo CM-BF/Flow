@@ -16,7 +16,7 @@
 | 优先级 | 1 |
 | 当前产出 | 发布af51两A完整通过；9927本次B-only复用all12证明且未重跑A，普通Send/Files已到达，unknown回执等待失败beforeheaders故障前提不足，原四scope窄修中；cleanup完整，后继窗口未授予。DPERF七叶+父Node通过，Recovery受控27通过，均不冒浏览器或整片通过 |
 | 下一可用交付 | W01已封存12raw，已固定ef458/495f真实ACK body-loss窄修，root+peer限定源审0blocking，待新B窗口；累计39.935秒/余140.065秒不自动重试。DPERF browser后置；M02固定已审八literal等待Lead物化 |
-| 当前阻塞 | ACTIVE: B未完成兼容，回执等待失败保留，ef458确定性fault窄修双独审已闭合，后继浏览器仍未验；TUI已归还、后继窗口未授予。Recovery真实浏览器与DPERF浏览器未验；源码与有界只读工作正常 |
+| 当前阻塞 | ACTIVE: B未完成兼容，回执等待失败保留，ef458确定性fault窄修双独审已闭合，后继浏览器仍未验；TUI已归还、当前F01_032独占PG，Web等实际清理归还。Recovery真实浏览器与DPERF浏览器未验；源码与有界只读工作正常 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |

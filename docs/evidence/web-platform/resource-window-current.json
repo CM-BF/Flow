@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T17:21:55.982824+00:00",
-  "state": "TUI01F_CLEANED_NO_SUCCESSOR_WINDOW_GRANTED",
-  "groupWindowOwnership": "Lead confirms TUI01F window returned after17:18 owned cleanup; no PG/Chrome holder or successor Web grant. Wait explicit next coordination.",
+  "recordedAt": "2026-10-06T17:30:25.267883+00:00",
+  "state": "F01_032_EXCLUSIVE_PG_WEB_SOURCE_ONLY",
+  "groupWindowOwnership": "Lead assigned exclusive PG to F01 032production fixed0ee2494, onecase/+64MiB/120+30s,0provider/noChrome. Web B waits explicitactualcleanup return and newwindow.",
   "release03": {
     "state": "B_FAILURE_PRESERVED_FAULT_FIX_SOURCE_ONLY",
     "run": "app-20261006-171109-8cf8c3",
@@ -211,6 +211,10 @@
     {
       "source": "LatestLead via root",
       "coordination": "TUI01F2behaviorpassed/afterAllexit1;17:18oneownership+zero-connectionsnormalDROP, ownprocesses stopped/windowreturned. RELEASE39935/remaining140065 unchanged; sourcefix/review only, no autoB/A."
+    },
+    {
+      "source": "LatestLead via root",
+      "coordination": "F01_032 exclusive onecase fixed0ee2494 with approvedCOREea276/C016d114; noChrome. Web0PG and budget39935/140065 unchanged."
     }
   ],
   "limits": [
@@ -219,5 +223,5 @@
     "A failure prevents Chrome/B; no automatic retry, artifact rebuild, provider or personal service operation",
     "Prior old362failure/A3partial retained; Node failing Host test does not establish product bypass"
   ],
-  "latestCoordination": "lead-tui01f-return-1718.json"
+  "latestCoordination": "lead-f01-032-window.json"
 }

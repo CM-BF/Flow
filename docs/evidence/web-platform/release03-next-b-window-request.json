@@ -1,6 +1,6 @@
 {
   "recordedAt": "2026-10-06T17:27:06.680796+00:00",
-  "state": "SOURCE_REVIEWS_APPROVED_AWAITING_NEW_B_WINDOW",
+  "state": "SOURCE_APPROVED_AWAITING_F01_032_ACTUAL_RETURN_AND_NEW_B_WINDOW",
   "task": "WPF-RELEASE03",
   "owner": "w01_owner",
   "source": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
@@ -30,7 +30,7 @@
     "startBytes": 1207959552,
     "stopBytes": 1140850688,
     "freshSample": "NOT_TAKEN",
-    "grant": "NOT_GRANTED_AFTER_TUI_RETURN"
+    "grant": "NOT_GRANTED_F01_032_HOLDS_PG"
   },
   "mode": "app only, no A rerun, no artifact rebuild",
   "requirements": [
@@ -42,5 +42,6 @@
   "parallel": "W01 can edit DPERF wrapper source-only; return to frozenRELEASE at safe point when eligiblewindow is explicitly granted",
   "peerReview": "release03-ef458-peer-source-review.md",
   "rootReview": "release03-ef458-root-source-review.json",
-  "reviewBoundary": "Two source-only independent approvals/0blocking; newruntime NOT_RUN, no compatibility green"
+  "reviewBoundary": "Two source-only independent approvals/0blocking; newruntime NOT_RUN, no compatibility green",
+  "windowEvidence": "lead-f01-032-window.json"
 }

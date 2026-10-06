@@ -122,7 +122,7 @@
   "runScopeProposal": "release03-run-scope-proposal.json",
   "currentRunState": "B-only app-20261006-171109-8cf8c3 completed19626ms; cumulative39935/remaining140065; no retry; cause pending fixed review",
   "sparseSourceCandidate": "Historical estimate only; actual Lead-provisioned fixed362 source tree and four-scope receipt remain archived. No new source provision or in-place rewrite authorized.",
-  "updatedAt": "2026-10-06T17:25:55.259474+00:00",
+  "updatedAt": "2026-10-06T17:30:25.267883+00:00",
   "prepareState": "PREPARED_RELEASED",
   "validationState": "EF458_SOURCE_APPROVED_AWAITING_NEW_B_WINDOW",
   "historicalRawArtifact": {
@@ -215,8 +215,8 @@
   "latestActualEvidence": "release03-app-171109-intake.json",
   "sourceRepairAdvice": "release03-app-cause-intake.json",
   "currentWindow": {
-    "state": "NO_SUCCESSOR_GRANTED_AFTER_TUI_RETURN",
-    "evidence": "lead-tui01f-return-1718.json"
+    "state": "F01_032_EXCLUSIVE_WEB_WAITING",
+    "evidence": "lead-f01-032-window.json"
   },
   "nextWindowRequest": "release03-next-b-window-request.json"
 }
