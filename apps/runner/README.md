@@ -43,6 +43,6 @@ FLOW_CLAUDE_MATERIALS_FILE=/absolute/private/claude-materials.json pnpm runner
 
 `runRunner({ baseUrl, token, workingDirectory, signal, adapters })` 支持注入 `createClaudeAdapter({ materialFiles, ... })`；`loadRunnerAdapters(manifestPath?)` 与普通入口使用同一配置规则。默认 `runRunner` 仍只包含 fixture。
 
-`pnpm check` 运行模拟 SDK / loopback HTTP 回归，不会启动真实模型。`apps/runner/probes/native.ts` 是需要明确预算的手工证据工具，不属于测试套件；本轮已消耗 3/5 次，余下 2 次由 Execution Lead 用于 I01 系统验收，不要重复运行它。
+`pnpm check` 运行模拟 SDK / loopback HTTP 回归，不会启动真实模型。`apps/runner/probes/native.ts` 是需要明确预算的手工证据工具，不属于测试套件；本轮 R02 3 次与 I01 2 次合计 5/5 已用完，不要再次运行任何真实 probe。
 
 实际模拟与真实结果、当前限制见 [R02 evidence](../../docs/evidence/r02/README.md)，状态见 [R02 status](../../plans/r02-native-harness/status.md)。
