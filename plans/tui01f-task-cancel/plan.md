@@ -15,7 +15,7 @@
 - [ ] TUI01F-03：资源/依赖具备后，真实 HTTP 与专用 PG 丢 ACK/恢复旅程及实际 PTY 验证。
 - [ ] TUI01F-04：实际 App ↔ TUI 同会话交替，CAS 拒绝保草稿与观察接续；独立 review/main 收口。
 
-当前只授权 source/合同/用例准备。禁止安装/复制依赖/full build/PG/browser/provider；没有依赖时不借 moving main 运行，也不把 NOT_RUN 写成 red/green。A-E 已有检查作为历史输入，不重复全集。源码用例覆盖缺端口/错误目标/回执身份/原 key 重报/退出/旧 journal；03/04 待 fresh 资源窗口。有限实际 source-only 闭包见 design-input.json，runner/center 未物化，不偷用最新树。
+最初阶段只授权 source/合同/用例准备；后续已获得文末所列独立运行窗口。仍禁止安装/复制依赖/full build/未授权PG/browser/provider；不借 moving main 运行，也不把 NOT_RUN 写成 red/green。A-E 已有检查作为历史输入，不重复全集。源码用例覆盖缺端口/错误目标/回执身份/原 key 重报/退出/旧 journal；03/04 待 fresh 资源窗口。有限实际 source-only 闭包见 design-input.json，runner/center 未物化，不偷用最新树。
 
 ## 验收边界
 
@@ -40,3 +40,5 @@
 2026-10-06 17:17 UTC：03首次真实2场景行为通过，但afterAll连接检查unknown导致suite失败，未完成03。原DB/tmp和checkpoint保留；[窗口结果](../../docs/evidence/tui01f/journey-1714/README.md)。未自动重试/清理，04浏览器仍open。
 
 2026-10-06 17:29 UTC：原claim内收尾修复仅test-only：≤3s连接观察、初始dev/ino和checkpoint门槛。10新定向检查/types0；未重跑原两行为或36，原suite exit1/旧tmp KEEP保留，03/04继续open。独立审查后再决定必要PG cleanup-only。
+
+2026-10-06 17:43 UTC：独立cleanup-only actual1/1、源f4批准/新证据待审。历史2行为suite exit1不改、旧tmp KEEP；03暂保持开放直到独审收口，04未实现。另原claim v2增旧TUI journey.test.ts用于新profile union直接消费者兼容，仅focused types0，无旧旅程重跑。

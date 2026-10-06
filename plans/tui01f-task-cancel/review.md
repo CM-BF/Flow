@@ -1,4 +1,12 @@
-独立cleanup-only consumer当前source `f4f9c47c8c36d7c05614ac477f7af3bb49a31680`，新增focused types0；PG NOT_RUN/未获运行许可。它不包含在下列45709c独立批准中。
+# 新单项收尾证据与旧 profile 消费者（待独审）
+
+Submitted test-only target: ec30bb6246ac95e5843c7166dee7118b684fd089
+
+本提交仅原TUI fixture profile联合类型兼容，focused noEmit0；[原始与固定输入](../../docs/evidence/tui01f/legacy-profile-compatibility/README.md)。NOT_STARTED，不自动继承旧产品批准。
+
+Execution Lead已独立APPROVED source f4f9c47c8c36d7c05614ac477f7af3bb49a31680（237绑定、focused types0，reviewer0重跑）。[source回执](../../docs/evidence/tui01f/cleanup-1740/source-review.json)。其后唯一cleanup-only实际1/1 exit0，新的[运行证据](../../docs/evidence/tui01f/cleanup-1740/README.md)待独立读核；原2行为suite exit1不回填，04仍open。
+
+历史17:36观察：独立cleanup-only consumer source `f4f9c47c8c36d7c05614ac477f7af3bb49a31680`，当时新增focused types0、PG NOT_RUN/尚未获运行许可。它不包含在下列45709c独立批准中。
 
 # TUI01F test-only cleanup repair
 
