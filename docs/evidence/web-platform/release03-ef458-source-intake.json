@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-06T17:25:55.259474+00:00",
+  "state": "FIXED_SOURCE_INDEPENDENT_REVIEW_IN_PROGRESS",
+  "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+  "metadata": "495f7287273ce7d4bfd56503c093c273a0a5b92c",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
+  "manifest": "release03-ef458-source-manifest.json",
+  "ownerAudit": "release03-ef458-owner-source-audit.json",
+  "managerVerification": {
+    "headClean": true,
+    "twoFixedCurrentHashes": true,
+    "historyRegionBytes": 11859,
+    "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+    "oldRawCount": 43,
+    "oldRawBytes": 464871,
+    "oldRawEqualsCommit": "6411ba7a43f0f54b5fc924ef8850b88d80e44ac2",
+    "scopeObservation": "2026-10-06T17:24:31.584Z",
+    "claim": "bfb209ae v3 original4 active/nooverlap"
+  },
+  "reviewDispatch": {
+    "reviewer": "workspace_panels_owner",
+    "rootParallel": true,
+    "method": "followup_task active",
+    "range": "6411 -> ef458 two harness, framing/requestidentity/originalassertions/budget/Acontract/raw",
+    "runtime": "NOT_RUN;0space/import/types/Node/HTTP/PG/Chrome"
+  },
+  "runtimeBudget": {
+    "usedMs": 39935,
+    "remainingMs": 140065
+  },
+  "window": "No successor granted after TUIreturn",
+  "next": "Wait fixed source independent reviews; no automatic B/A; DPERFwrapper source work remains queued",
+  "quality": {
+    "method": "Existing local find-skills/clean-code reused: pin evidence and author status separately from runtime/independent review; no new modules or product checks",
+    "metadata": {
+      "files": 8,
+      "jsonValid": 5,
+      "localLinks": 379,
+      "broken": [],
+      "scopeErrors": 0,
+      "diffCheck": 0
+    },
+    "statusParser": "errors[]/humancomplete WPF36/M01 5/M06 6/DPERF3"
+  }
+}

@@ -122,9 +122,9 @@
   "runScopeProposal": "release03-run-scope-proposal.json",
   "currentRunState": "B-only app-20261006-171109-8cf8c3 completed19626ms; cumulative39935/remaining140065; no retry; cause pending fixed review",
   "sparseSourceCandidate": "Historical estimate only; actual Lead-provisioned fixed362 source tree and four-scope receipt remain archived. No new source provision or in-place rewrite authorized.",
-  "updatedAt": "2026-10-06T17:21:55.982824+00:00",
+  "updatedAt": "2026-10-06T17:25:55.259474+00:00",
   "prepareState": "PREPARED_RELEASED",
-  "validationState": "B_FAILED_CAUSALITY_REVIEWED_FAULT_FIX_SOURCE_ONLY",
+  "validationState": "EF458_FIXED_SOURCE_REVIEW_IN_PROGRESS_B_NOT_RUN",
   "historicalRawArtifact": {
     "source": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
     "artifact": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
@@ -199,18 +199,16 @@
     "currentRuntime": "3874ms/180000ms; both A failed, B/Chrome NOT_RUN, cleanup completed; remaining176126ms frozen; Lead accepted/window returned"
   },
   "currentHarness": {
-    "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
-    "actualMetadataHead": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
-    "review": "release03-2691-source-review-root.json",
-    "sourceReview": "APPROVED_SOURCE_CHECKPOINT_ZERO_BLOCKING",
-    "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
-    "runtimeAdmission": "NOT_RUN_RESOURCE",
-    "intake": "release03-a2-not-run-intake.json"
+    "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "metadata": "495f7287273ce7d4bfd56503c093c273a0a5b92c",
+    "evidence": "release03-ef458-source-intake.json"
   },
   "latestSourceReview": {
-    "target": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
-    "state": "APPROVED_SOURCE_SCOPED",
-    "runtime": "B_FAILED causality review; future fault delta requires new fixed review"
+    "target": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "state": "IN_PROGRESS",
+    "rootParallel": true,
+    "peer": "workspace_panels_owner",
+    "runtime": "NOT_RUN"
   },
   "latestActualEvidence": "release03-app-171109-intake.json",
   "sourceRepairAdvice": "release03-app-cause-intake.json",

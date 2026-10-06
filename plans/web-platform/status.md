@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:22 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:25 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -18,8 +18,8 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 发布af51两A完整通过；9927本次B-only复用all12证明且未重跑A，普通Send/Files已到达，unknown回执等待失败beforeheaders故障前提不足，原四scope窄修中；cleanup完整，后继窗口未授予。DPERF七叶+父Node通过，Recovery受控27通过，均不冒浏览器或整片通过 |
-| 下一可用交付 | W01已封存12raw，正仅源码修真实ACK body-loss，固定后独审；累计39.935秒/余140.065秒不自动重试。DPERF browser后置；M02固定已审八literal等待Lead物化 |
-| 当前阻塞 | ACTIVE: B未完成兼容，回执等待失败保留，确定性fault窄修待固定审；TUI已归还、后继窗口未授予。Recovery真实浏览器与DPERF浏览器未验；源码与有界只读工作正常 |
+| 下一可用交付 | W01已封存12raw，已固定ef458/495f真实ACK body-loss窄修，root+peer源码独审中；累计39.935秒/余140.065秒不自动重试。DPERF browser后置；M02固定已审八literal等待Lead物化 |
+| 当前阻塞 | ACTIVE: B未完成兼容，回执等待失败保留，ef458确定性fault窄修已固定、独审中；TUI已归还、后继窗口未授予。Recovery真实浏览器与DPERF浏览器未验；源码与有界只读工作正常 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |

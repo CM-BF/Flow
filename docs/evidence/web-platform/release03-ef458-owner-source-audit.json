@@ -1,0 +1,262 @@
+{
+  "implementationTarget": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+  "previous": "6411ba7a43f0f54b5fc924ef8850b88d80e44ac2",
+  "observedAt": "2026-10-06 17:24:37 UTC",
+  "scope": "Original4; only two test sources changed",
+  "files": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 32158,
+      "sha256": "4016c7811e77e12d8c8dbf2e6d90a433f93a3559bdff1e34b3a268a651c6d974"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 49676,
+      "sha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7"
+    }
+  ],
+  "sourceDiffCheck": 0,
+  "protectedPaths": [
+    "apps/server",
+    "packages/client",
+    "packages/contracts",
+    "tools/personal-preview",
+    "pnpm-lock.yaml",
+    "package.json",
+    "apps/web/src"
+  ],
+  "protectedDiff": "empty",
+  "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+  "historyContractBytes": 11859,
+  "oldRaw": [
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/app-failure.png",
+      "bytes": 54336,
+      "sha256": "767dd49678fdb83a41192e55c9df9c4532e7de10da036628902d8a6f7e7b869a"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/app.json",
+      "bytes": 1878,
+      "sha256": "e430516442a395fcb00bc06510cddd61534d9eac8f4f54f500bad15d4206df04"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/budget.json",
+      "bytes": 135,
+      "sha256": "bf6dcf76be58f8ffa29d35bb3f561e3c6dc05000d9c21e70282cc61e2369a671"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/cleanup.json",
+      "bytes": 414,
+      "sha256": "6db59c1782760399a6e5dd424f08db5fed3dcc43d68dbd476786ebb05c7010a1"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/database-owner.json",
+      "bytes": 169,
+      "sha256": "26c7e4618e705fe5f20f7e8b794b68fb74b1b7ce9e9dad1c46471be4e7a0f971"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/history.json",
+      "bytes": 12466,
+      "sha256": "960d62b355e36aa1f0a3ab2ac4fbcaf3bed30810924376830914d738678832ad"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/outcome.json",
+      "bytes": 293,
+      "sha256": "4059ca8b2ba00147d5e4a255d3710a22ec4fc0db25a6d8427e4f2ada41c32844"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/process.log",
+      "bytes": 7130,
+      "sha256": "119618847811d66593e9207678215b1dcabd710eee7edb5988646be99197e64c"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/sources.json",
+      "bytes": 5521,
+      "sha256": "705a1a8dcce18bed7a318c45816f3c24b275eb057e12fbd66761fa7cf351c176"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/supervisor.json",
+      "bytes": 16929,
+      "sha256": "7d3daea3bf3a8b42fee3b56f7bd049890ccc7e903968f7cb091fed1ebddab49e"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/wire.json",
+      "bytes": 77397,
+      "sha256": "0625c4f54e11ccd7e6a8f63b2b54d2fe159d18330231a215af2c53a4707e07eb"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/all-20261006-164711-15b54e/worker.json",
+      "bytes": 15268,
+      "sha256": "d0c2eec40f45a8ccc92ce50f5fd5e7c3cf6308392a91e872c057e90a95c7afb4"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/app-failure.png",
+      "bytes": 58257,
+      "sha256": "f5e70b203d399b334392571c5ddf42eda757c211f577c023dcace8a4e260bbd2"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/app.json",
+      "bytes": 2186,
+      "sha256": "3ea4d48a0be713f0ed51656560eff18ca3c9eee28102471db3005ac6095a3eac"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/budget.json",
+      "bytes": 136,
+      "sha256": "39c692b1ddfaf212768538a3ea19b4166fc87f61fb21bb4d09901c0f84a4e8dd"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/cleanup.json",
+      "bytes": 412,
+      "sha256": "0a36a8cae4ec5eb0358e9c5387f8ec2a9bc894cec9fd30dac9936d967c3604b4"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/database-owner.json",
+      "bytes": 169,
+      "sha256": "8caf34077d48fe83b9b190fe0031d34a85f71a4688ce6a5ce321e995add6cf1b"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/history-attestation.json",
+      "bytes": 4659,
+      "sha256": "414fe8e30e5f4f9e175d941eb3560dd04e3d952c0217a0702d750c22bd87db45"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/outcome.json",
+      "bytes": 5230,
+      "sha256": "4862913f71698ca8bc63dc7db6a49f6f6a0351a1d446fe4b95711e40d38f1096"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/process.log",
+      "bytes": 5496,
+      "sha256": "e357a57b6bddc8a8067411d648356f4b9a192c27e2476fde7322090ddce3a81b"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/sources.json",
+      "bytes": 5521,
+      "sha256": "9b8fc611007e3ef3faac0df1d52fcbcee4967194eb161e74f1f43b9289687ace"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/supervisor.json",
+      "bytes": 8479,
+      "sha256": "a951b81e33939698b5ad205a130af4ab4912db73cb19060aae9f5d8d71a816a3"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/wire.json",
+      "bytes": 47478,
+      "sha256": "fec6ccd225f84a4dc79f153bd2211c573de98c1b5c8f8804d567ac45992cc5d1"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/worker.json",
+      "bytes": 7306,
+      "sha256": "747a0526dceba1f93e8b41393bc26db77a852d1727efd7de03ce57027e23d21e"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/budget.json",
+      "bytes": 130,
+      "sha256": "bcb5a5c00c8dd5f1aeaf1a20027a95f45c544e9183e989ff08e887142b4536a9"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/cleanup.json",
+      "bytes": 333,
+      "sha256": "4aa56df066f005d55c9c3ddf6ad35aebdda095bae96f5f7364a5e300ee260f8a"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/database-owner.json",
+      "bytes": 169,
+      "sha256": "48854241d7bc4235916c04ac8b4cae5473dbcd6f089c145b95622a65afa79dae"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/history.json",
+      "bytes": 10667,
+      "sha256": "ec0acc6f40709c56a5e0251fbac50daf7d3e6a1d159b1f96fc82166d2cb9c9ef"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/outcome.json",
+      "bytes": 299,
+      "sha256": "9d1f8d2484123c39c0384eb7f53ea63c407c243fcc325740fadcc27be6556f60"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/process.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/sources.json",
+      "bytes": 1779,
+      "sha256": "116fde366ebd9c15211b334ed6c552a996f92e332c8116015f8505914ea47ae1"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/supervisor.json",
+      "bytes": 12802,
+      "sha256": "4848a7019a7a5818e0e0e5afb5312c19437d3964208753b2a74e2e0735bd78f8"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/wire.json",
+      "bytes": 42857,
+      "sha256": "518256c57ea810d85bf633f938ca1744007ebda0be596aeb7d70bd3cda49bb82"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/worker.json",
+      "bytes": 11434,
+      "sha256": "1f2070ccf37da760b1ca567dd314f2765738a7b31681ddc07fe18b6cc1ab22b0"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/budget.json",
+      "bytes": 133,
+      "sha256": "92893bfc471347a6e2a96567fa7c2f0a05518496699a6909905a6034bb3ef71e"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/cleanup.json",
+      "bytes": 343,
+      "sha256": "c084ba5f9bfa768dd136702aebf30558d0a6ba397f02e47edc55c86599c2e3cb"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/database-owner.json",
+      "bytes": 169,
+      "sha256": "9b7e7cd24dbed8dc6d519fab523072b915656325f78e6a896e4f052ba4c295b5"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/history.json",
+      "bytes": 6401,
+      "sha256": "f09d94cd8e194206e7275723738a1232987209883dc95e05692b1c6ee21a6f1d"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/outcome.json",
+      "bytes": 385,
+      "sha256": "4d966c2bc38556d67717a16eeabffd4068bad4299b8be6a869e8ad907ee59210"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/process.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/sources.json",
+      "bytes": 5526,
+      "sha256": "3714a000e8ee188e0e034f5d6cb096625d0f484b9140dda6f38c45716d0d8895"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/supervisor.json",
+      "bytes": 826,
+      "sha256": "10b5171b2289c7c75f7e5b97afc3e9dc4ca83a01c2254eaa2ce59a7e7c38a9e9"
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history3-20261006-160901-741882/wire.json",
+      "bytes": 33353,
+      "sha256": "e62fb022ad1cf2e751ec83dd7a621c7e6a0f8e2ad21ae16a1921b5479ca0ac9a"
+    }
+  ],
+  "oldRawBytes": 464871,
+  "cumulativeRuntimeMs": 39935,
+  "remainingRuntimeMs": 140065,
+  "newChecks": {
+    "types": "NOT_RUN",
+    "imports": "NOT_RUN",
+    "runtime": "NOT_RUN",
+    "space": "NOT_SAMPLED"
+  },
+  "limitations": [
+    "Local flush does not prove browser reception; exact Request response headers and requestfailed are mandatory",
+    "No new compatibility or publication approval",
+    "Chromium cause remains hypothesis for prior B"
+  ]
+}

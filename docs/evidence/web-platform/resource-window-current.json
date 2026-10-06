@@ -86,7 +86,14 @@
     "evidenceReview": "release03-app-171109-root-review.json",
     "ownerMetadata": "6411ba7a43f0f54b5fc924ef8850b88d80e44ac2",
     "minimumSampledFreeBytes": 1220063232,
-    "finalSampledFreeBytes": 1230462976
+    "finalSampledFreeBytes": 1230462976,
+    "sourceRepair": {
+      "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+      "metadata": "495f7287273ce7d4bfd56503c093c273a0a5b92c",
+      "review": "IN_PROGRESS root+peer source-only",
+      "runtime": "NOT_RUN",
+      "evidence": "release03-ef458-source-intake.json"
+    }
   },
   "recoveryDirect": {
     "state": "CONTROLLED_DIRECT_PASS_CLEANED",

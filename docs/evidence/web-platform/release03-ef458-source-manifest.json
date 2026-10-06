@@ -1,0 +1,60 @@
+{
+  "implementationTarget": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+  "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "method": "Real successful ACK strict prefix after headers; exact browser Request failure and original-key recovery assertions",
+  "files": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 32158,
+      "sha256": "4016c7811e77e12d8c8dbf2e6d90a433f93a3559bdff1e34b3a268a651c6d974"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 49676,
+      "sha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7"
+    }
+  ],
+  "checks": {
+    "sourceDiffCheck": 0,
+    "protectedLocalInputDiff": "empty",
+    "oldRunsRawHashes": "43 files unchanged, 464871 bytes",
+    "newTargetTypecheck": "NOT_RUN",
+    "newTargetRuntime": "NOT_RUN (source-only repair; prior B raw immutable)",
+    "priorActualHistory": "all164711 two PASS",
+    "priorActualApp": "plain PASS and file selection reached; turn ACK dropped then same-key second POST before Retry click",
+    "compatibility": "NOT_VERIFIED"
+  },
+  "executionMode": "history / app (pinned successful history only) / all; each requires its own fresh explicit gate",
+  "resourcePolicy": {
+    "history": {
+      "startBytes": 1107296256,
+      "stopBytes": 1090519040,
+      "totalMaxMs": 60000,
+      "cleanupReserveMs": 20000
+    },
+    "all": {
+      "startBytes": 1207959552,
+      "stopBytes": 1140850688
+    },
+    "sourcePeakProof": false,
+    "basis": "Lead prior same-factory database size12,360,727B; WAL/OS/other-process peak unknown; 250ms monitor is not hard quota"
+  },
+  "historicalRunEvidence": [
+    "history-result-152729.json",
+    "history3-result.json",
+    "all-result-164711.json",
+    "app-result-171109.json"
+  ],
+  "backendInput": "External fresh gate backend={path,head,tree,metadata:[{path,sha256}]}; root approved final af51 audit is candidate input, not run permission",
+  "backendProvenance": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+    "sourceTarget": "b29807979a5589678a61d3fb84781950cf366396",
+    "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "approvedFix": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+  },
+  "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+  "historyContractRegionBytes": 11859,
+  "gateAccounting": "All completed runs39935/180000ms; remaining140065ms; no automatic retry"
+}
