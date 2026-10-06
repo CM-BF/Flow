@@ -8,6 +8,7 @@ import { loadPreviewConfiguration, readPreviewJson, savePreviewJson, withPreview
 import { inspectOwnedProcess, stopOwnedProcess } from './process.mjs';
 import { migrateRunnerMaintenance, commandRunnerMaintenance, readRunnerMaintenance } from '../../apps/server/src/runner-maintenance/index.ts';
 
+import { readWebRelease } from './web-release.mjs';
 import { backendById, backendRuntime } from './backend-release/host.mjs';
 
 const execute = promisify(execFile);
@@ -40,7 +41,11 @@ function assertOperation(operation, view) {
 }
 async function bootstrap(config, pool, state, target, backendId) {
   const backendArtifact = backendId ? await backendById(config.directory, backendId) : state.backendArtifact ?? null;
-  if (backendArtifact) await backendRuntime(config, backendArtifact);
+  if (backendArtifact) {
+    await backendRuntime(config, backendArtifact);
+    if (!await readWebRelease(config.directory)) fail('BACKEND_REQUIRES_WEB_RELEASE');
+    await preparePreviewWeb(config, backendArtifact.sourceHead);
+  }
   const facts = await processFacts(state);
   if (Object.values(facts).some(value => value !== 'running')) fail('EXISTING_PROCESSES_UNCONFIRMED');
   await migrateRunnerMaintenance(pool);

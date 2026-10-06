@@ -19,7 +19,7 @@ export async function buildBackend({ repository, target, stage, offlineStore, pn
   if (pnpm.name !== 'pnpm' || pnpm.version !== '9.15.4') fail('BACKEND_PNPM_VERSION');
   // Read the fixed tree; never execute checkout hooks or use working-tree source bytes.
   const tree = (await execute('git', ['-C', source, 'ls-tree', '-r', target, '--', ...sourcePaths], { timeout: 5000, maxBuffer: 8 * 1024 * 1024 })).stdout;
-  if (tree.split('\n').filter(Boolean).some(line => !/^100(644|755) blob /.test(line))) fail('BACKEND_SOURCE_LINK_OR_SUBMODULE');
+  if (tree.split('\n').filter(Boolean).some(line => !/^100(644|755) blob /.test(line) || /(?:^|\/)(?:\.npmrc|\.?pnpmfile\.cjs)$/.test(line.split('\t')[1] ?? ''))) fail('BACKEND_SOURCE_LINK_OR_SUBMODULE');
   const archive = join(stage, 'source.tar');
   await execute('git', ['-C', source, 'archive', '--format=tar', '--output', archive, target, ...sourcePaths], { timeout: 20_000 });
   await execute('/usr/bin/tar', ['-xf', archive, '-C', root], { timeout: 20_000 });
@@ -46,5 +46,5 @@ export async function buildBackend({ repository, target, stage, offlineStore, pn
     }
   }
   await strip(root);
-  return { root, sourceRepository: source, lockDigest: lockBefore, pnpm: { version: pnpm.version, cli, sha256: await hashFile(cli) }, buildOutput: { stdout: result.stdout, stderr: result.stderr, exit: 0 }, installation: { offline: true, frozen: true, scripts: false, importMethod: 'copy' } };
+  return { root, sourceRepository: source, lockDigest: lockBefore, pnpm: { version: pnpm.version, cli, sha256: await hashFile(cli), bundleSha256: await hashFile(join(dirname(dirname(cli)), 'dist/pnpm.cjs')) }, buildOutput: { stdout: result.stdout, stderr: result.stderr, exit: 0 }, installation: { offline: true, frozen: true, scripts: false, importMethod: 'copy' } };
 }
