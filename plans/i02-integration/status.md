@@ -169,3 +169,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 14:29 UTC：COST01A 27d4、thin fb0、生产7150分别独审APPROVED；受控组合十源固定hash相同，[集成绑定](../../docs/evidence/i02/cost01a-source-comparison.json)。实际公共工厂1/1/类型0已有有效直接证据，未重复原领域14项。OPS三树稀疏事实和D04更正保留、O14仅source登记；不含其未审实现。个人服务与旧Web发布指针不变。
 
 2026-10-06 14:34 UTC：受控接收已审CLI0550及COST01A主线收口dbb73916；五个直接源码/输入零差，无额外工程重测。见[固定比较](../../docs/evidence/i02/usage-cli-source-comparison.json)。个人runtime362/v15、Web8d8/v2不变。
+
+2026-10-06T14:39:25.366843+00:00：接收X01已审中心静态材料领域a578，八源逐hash一致、root strict0；不重跑14领域用例。仅领域代码与029文件进入主线候选，默认factory/client/CLI尚未挂，不能称已启用插件或完整安装生命周期。三处metadata冲突全部取原X01唯一权威8e520b7，无产品冲突。
