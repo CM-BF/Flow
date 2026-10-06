@@ -7,11 +7,11 @@
 | 单一 status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
-| 工作基线 / HEAD | base 3773db5d014a6d38d09553acd0a5fe8df900b7c4；文档交付 target 提交后记录；无产品实现 target |
+| 工作基线 / HEAD | base 3773db5d014a6d38d09553acd0a5fe8df900b7c4；文档交付 target 888308dce1d8061ab66ce93c10c023ec66d6eb58；其后仅本scope metadata；无产品实现 target |
 | 工作树 dirty 状态 | 本次仅已领取的 X01 计划/证据目录，交付提交后 clean |
 | 工作分支状态 | 计划交付 completed；完整 X01 实现 pending |
-| 检查状态 | NOT_RUN（产品）；本轮仅文档链接/事实/一致性与 diffcheck，结果见证据 |
-| Review | NOT_STARTED；本轮审计划完整性，不构成产品批准 |
+| 检查状态 | NOT_RUN（产品）；文档 888308dce1d8061ab66ce93c10c023ec66d6eb58 的链接/事实/10TODO对应/diffcheck 已通过，非产品测试 |
+| Review | NOT_STARTED；文档 target 888308dce1d8061ab66ce93c10c023ec66d6eb58，本轮审计划完整性，不构成产品批准 |
 | 已集成 main 状态 / HEAD | 本计划尚未集成；观察基线 main 3773db5d014a6d38d09553acd0a5fe8df900b7c4；不声称完整插件管理存在 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | UNKNOWN（本轮仅文档，后续 writer 需另领取） |

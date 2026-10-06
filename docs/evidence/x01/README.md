@@ -28,3 +28,5 @@
 工作段复核关注：重复authority、权限和版本含混、操作错误/未知恢复、主动scope扩张、凭据暴露、计划成为第二个已实现声明。后续实现按稳定TODO分片并独立领取，不在此文档任务中膨胀成平台代码。
 
 2026-10-06 03:21 UTC clean-code复核完成：移除对用户选择工程版本的不必要要求，只保留确切候选仓库身份；区分WPF已审模块与moving App、文档已交付与产品未实现。没有未解决的文档阻塞；候选身份只影响X01-09，不阻塞中心生命周期合同。
+
+文档source target：888308dce1d8061ab66ce93c10c023ec66d6eb58。其后仅补target/检查metadata；完整产品implementation仍UNKNOWN。最终本地链接复查包含新增document-checks.json引用，共17条均存在；10TODO逐项对应。0产品测试/模型/云。

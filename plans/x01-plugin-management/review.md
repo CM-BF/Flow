@@ -5,7 +5,7 @@
 ## Target 与 scope
 
 - Base：3773db5d014a6d38d09553acd0a5fe8df900b7c4；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan`；branch `codex/plugin-management-plan`。
-- 文档 target：提交后由唯一 owner 记录完整 SHA；产品实现 target UNKNOWN。
+- 文档 target：888308dce1d8061ab66ce93c10c023ec66d6eb58；产品实现 target UNKNOWN。
 - Scope：`plans/x01-plugin-management/`、`docs/evidence/x01/`。不改产品、其他 owner status、全局索引/registry/矩阵。
 - 验收：完整覆盖 FLOW-001§10 和 REQ-11/12/13；Web/CLI 共用中心持久命令、六项生命周期、权限/秘密/版本pin/副作用边界、可信与第三方隔离、扩展类型/fallback、唯一compression owner和候选恢复矩阵；不把前置 host 或计划当完成。
 
