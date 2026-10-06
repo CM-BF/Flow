@@ -1,0 +1,19 @@
+{
+  "recordedAt": "2026-10-06 04:58:38 UTC",
+  "mainReceiptObservedAt": "2026-10-06T04:57:55Z",
+  "main": "698ffcd94ae073b23bcc67f6665fb19f707a93e4",
+  "implementation": "fac202e32cc4c223e2e6abc64c67d11d39e439b0",
+  "implementationAncestor": true,
+  "productScopeDiff": [],
+  "integrationOwners": "Lead: domain+client83f+mountb87; Web reader5acc",
+  "residentCenter": "not restarted at receipt",
+  "additionalProductionTest": {
+    "commit": "dc506b9419cae76b679d0166e99f6a96ef62ac7c",
+    "reportedBy": "Root/Lead; no worker rerun",
+    "selected": 1,
+    "passed": 1,
+    "notSelected": 2,
+    "behavior": "explicit false waits >1s still waiting/lastTurn null; restart with default promotes"
+  },
+  "ownerWrites": "stopped after metadata commit; Root to release claim3be53dee v1"
+}

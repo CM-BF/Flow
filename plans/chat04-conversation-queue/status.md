@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:55:48 UTC / main仍待Lead集成receipt |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:58:38 UTC / fixed receipt 2026-10-06 04:57:55 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue |
 | Branch | codex/conversation-queue |
 | 工作基线 / HEAD | base dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；实现HEAD fac202e32cc4c223e2e6abc64c67d11d39e439b0；metadata由Git聚合 |
-| 工作树dirty状态 | 实现已提交；仅交付metadata待提交 |
+| 工作树dirty状态 | 实现与检查已clean提交；仅main receipt metadata待提交 |
 | 工作分支状态 | completed（模块与测试seam均已APPROVED） |
 | 检查状态 | PASSED fac202e32cc4c223e2e6abc64c67d11d39e439b0；32 queue/noEmit重新通过，原22consumer证据保留 |
-| 已集成main状态 / HEAD | 未集成此target；启动main/origin dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8 clean；不将模块fixture当生产接线 |
+| 已集成main状态 / HEAD | INTEGRATED 698ffcd94ae073b23bcc67f6665fb19f707a93e4；fac202 ancestor且产品scope零diff；常驻center未重启 |
 | 实现目标 | fac202e32cc4c223e2e6abc64c67d11d39e439b0 |
 | 实现范围 | apps/server/src/conversation-queue, apps/server/src/conversations/commands.ts, apps/server/src/conversations/admission.ts, apps/server/src/conversations/state.ts, packages/contracts/src/conversations.ts, packages/contracts/src/conversation-queue.ts, packages/storage/migrations/011-conversation-queue.sql, docs/evidence/chat04/run-consumer.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 持久队列与测试seam已APPROVED，32项/noEmit新证据固定 |
-| 下一可用交付 | Lead接收测试seam；生产默认scan另验，后续B03待take |
+| 下一可用交付 | main已接收；Lead运行部署验收，worker已转B03 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED target fac202e32cc4c223e2e6abc64c67d11d39e439b0 |
@@ -62,3 +62,9 @@ R01：Root指出公共capabilities.queue literal true拒绝旧center的false；�
 2026-10-06 04:54:46 UTC Root复审APPROVED fac202e：15源/21日志hash、32/noEmit/cleanup匹配，无blocking finding。默认自动scan/集成false option由Lead负责，不以旧factory忽略flag的本分支结果代替。当前仅收尾review metadata；提交clean后明确停止CHAT04写入，claim3be53dee v1保留集成期。B02已clean dace800 approved并停写，B03仅完成只读设计核查，未新claim/改产品。
 
 最新dashboard实际2026-10-06T04:55:48.334Z：approved/passed/unchanged/current/issues[]，采样clean b69f6c5；见docs/evidence/chat04/scan-seam-dashboard-receipt.json。此metadata提交后停止写入，保留claim v1待Lead接收。
+
+## Main接收与停止写入
+
+2026-10-06 04:58:38 UTC：接收Root/Lead固定main 698ffcd94ae073b23bcc67f6665fb19f707a93e4，owner只读核fac202祖先与7个产品literal scope零diff。领域、client83f、mountb87、Webreader5acc已成套合入；常驻center尚未重启，不声称已部署。额外dc506b94生产测试由Lead运行：显式false等待>1秒保持waiting/lastTurn null，重启默认扫描后提升，1/1通过（2未选），owner未重跑。见main-receipt.json。
+
+本metadata提交后明确停止CHAT04全部写入；claim3be53dee-08c2-4c88-85ee-a29781842223 v1由Root随后原子release。B03红夹具已提交clean安全停点，完成此收尾后顺序返回B03；不再追moving main SHA，不改本源码。
