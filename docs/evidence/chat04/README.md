@@ -1,20 +1,28 @@
-# CHAT04 v1 验证证据（v2 pause/resume 待实现）
+# CHAT04 v2 验证证据
 
-实现 target `6fc9df40033e135159719121f7a3ae473d025a9f`（包含可执行 consumer harness，产品源码与77168cc完全一致），固定 base `dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8`。`checks.json` 绑定全部实现文件及原始日志 SHA256、确切命令、实际 UTC 与退出码。
+固定实现 `2f40ac20326dd4084f342297f94c7f1b668ffc7e`，base `dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8`。完整[manifest](checks.json)绑定产品、测试和consumer可执行harness的实际SHA256、原始日志、命令、退出码及UTC。
 
-- 最终 queue 15/15，`queue-final.log`：真实 HTTP + PostgreSQL + pg-boss。包含实际 onSend 断开已提交命令 ACK，原 key 重放仍得原 receipt，readItem 得 promoted 事实。
-- 直接 consumer 22/22，`consumer.log`：原 `conversations.test.ts` 的全部 test body/断言保持；`run-consumer.mjs` 仅生成到已领范围，替换临时资源生命周期并显式 migration11，执行后删除生成文件。原源码/生成文件 hash 记 consumer-result。测试通过注入 SDK，不调用真实模型。首次缺已安装 SDK 的 0 tests 是失败（保留），复用既有依赖后重跑通过。
-- noEmit exit0：`typecheck-result.json` 有准确命令/时间；初次参数隐式any exit2保留。首轮14矩阵不与最终15重复计数。
-- 首red除了预期enqueue未实现外误用了Vitest afterAll中的expect.poll，清理失败；仅本worker唯一库确认0连接后正常DROP，恢复见 first-red-cleanup-recovery。修后red与各green自有DB均清。没有强制DROP、停止他人服务或旧 flow_chat01 suite。
+最终32个queue用例 +22个原conversation消费者用例 = **54个不同用例通过**，noEmit exit0。旧1/2/14/15/16/18片段、v1 consumer均不重复相加；resume-red的16 skipped来自定向测试选择，最终32全跑无skip。
 
-## 关键行为与限度
+## 真实验证与资源
 
-conversation锁先于task锁；task、pg-boss wake、turn、item promoted同事务。受控数据库触发器使item更新失败，公开queue/turn不变且无孤立wake；scan单项失败报错，公平轮转已先提交，从而继续其他ready项。轮转不增queueRevision。列表只waiting，SQL从PG取最多512字符前缀及byte长度标记，输出再按完整code point截≤512 UTF8 bytes；detail才取全文≤16000B。pending≤100、page≤50。
+- `v2-matrix.log`：真实HTTP/PostgreSQL/pg-boss，32/32；实际fixture起止见v2-matrix-cleanup。onSend在命令COMMIT后直接断开连接来丢失enqueue/pause/resume ACK；重放原receipt与GET当前事实分开断言。
+- `consumer.log`：22/22。`run-consumer.mjs`保留固定原conversations.test.ts所有test body/断言，只替换临时资源生命周期及显式migration11，生成测试位于已领范围并finally删除。原文件/生成文件hash与实际时间在consumer-result。涉及模型适配器的用例使用既有注入SDK，0真实模型/云。
+- `typecheck-result.json`：强制noEmit的确切命令、exit0及真实时间，空stdout的hash不单独冒充完成证据。
+- 唯一临时库创建前拒绝既存、动态HTTP端口、关闭own centers/boss/pools、等自有DB连接归零后普通DROP；queue/consumer cleanup均remaining[]。不碰旧flow_chat01、4320/49922/55049或他人服务。已安装依赖复用且11个@flow链接均指本WT；无安装/lock改动。
 
-成功后的known session/初次空conversation可提升；failed/cancelled/uncertain/active/unknown或missing session/invalid pin/busy session冻结。SQL fixture只构造有出处的执行状态来验证queue门禁；不冒充真实模型或128-agent容量。22个直接消费者用例覆盖既有 runner/assistant/session 行为。取消待提升项和提升持同锁裁决，promotion先时明确返回task引用；follow-up不得插队。
+## 行为覆盖
 
-真实生产迁移、路由、public client、定时scan/onClose与Web入口由Lead分别接线；本branch不能据模块通过声称生产入口已挂。Stop与success竞态意图边界待Goal Owner确定；当前仅按真实task状态，不新增stop-all/pause。
+FIFO/双客户端CAS、只读等待分页/UTF8边界、100pending上限、取消与提升同锁竞争、双中心最多一次、重启、unknown/missing/busy session/invalid pin/失败取消uncertain冻结；conversation锁先task锁，task/wake/turn/item同事务。受控PG触发器使item更新失败，公开queue/turn状态不变且无孤立wake；scan失败报错并轮转，不饿死其他ready项，检查时间不增revision。
 
-## 资源
+v2持久pause先于cancel。真实HTTP reportEvents在cancel_requested后提交succeeded，pause跨重启仍挡自动提升；另有pause/完成/promote三方并发。promotion抢先时旧pause revision 409，刷新后新ACK返回真实currentTurn；terminal引用不冒称active。空queue同样queue-paused，follow-up不能绕过；enqueue/cancel保留暂停。
 
-`latest-cleanup.json` 与 `consumer-cleanup.json`：两个独立临时数据库仅创建前拒绝既存、关闭全部own pools/centers、等0连接再普通DROP，remaining[]。随机动态HTTP端口。固定 Node24/Vitest4.0.18，已安装依赖复用，@flow contracts 指本WT，未安装/改lock。
+resume严格queue+task双CAS、前task门禁，显式同事务提升首waiting并清pause，双resume只一次。failed/cancelled需要显式continue；新失败不能继承许可。空queue可按同门禁unpause，但后来的waiting不获自动失败续跑授权。active/uncertain/unknown/revoked/busy/invalid pin均拒绝且状态不变。resume中途失败回滚pause清除与task/wake/turn/item。无marker、新broker或runner/events/SDK产品改动。
+
+## 失败保留与修正
+
+首red除了预期enqueue stub失败，还有fixture afterAll误用expect.poll导致清理失败；只清自有唯一库，恢复JSON证明0连接后普通DROP。改为显式有界等待后重跑红/绿。首次consumer缺已安装SDK导致0 tests失败，复用既有依赖后通过；未把0 tests计通过。初次noEmit因测试callback隐式any exit2，补类型后通过。v1/v2的预期red日志均保留，最终日志未掩盖它们。
+
+## 实际边界
+
+SQL fixture仅构造受控执行状态以测queue门禁，不冒充模型执行；stop竞态则走真实既有HTTP cancel/reportEvents。54项是模块及直接consumer证据，生产migration/routes/client/scan生命周期与Web真实入口仍由Lead/Web接线并另验。review尚待Mika绑定本target；main尚未接收该target。

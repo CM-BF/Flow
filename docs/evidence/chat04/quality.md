@@ -7,3 +7,5 @@
 2026-10-06 04:30:26 UTC：完成代码段 clean-code 检查。queue模块封装事务/CAS/有界分页，admission集中共享session/profile/turn规则；不新增broker/缓存/抽象层。按独审预读修复SQL CHECK NULL漏洞与列表SELECT全文开销。命令replay与实时read职责分明，固定target 77168ccabfe5aaf6c11f7d3a7b2aa8168aab5310。未解决边界为Stop竞态产品语义（等待Goal Owner），生产接线归Lead。
 
 2026-10-06 04:34:22 UTC：Root今日只读 review 应用本地 codebase-design/clean-code：共享admission深模块、conversation→task事务职责、错误/幂等重放边界；发现仅terminal状态不能保留Stop意图，需v2 pause/continue竞争覆盖。未批准旧target，也没有新增并行agent。writer先暂停源码，仅维护唯一status/合同；等待Lead接线确认。
+
+2026-10-06 04:40:18 UTC：v2完成工作段clean-code复核：复用promoteItem封装task/wake/turn/item，pause/resume命令沿既有幂等事务；currentTurn独立小读取，queue gate共享一次。无持久授权marker、隐藏resume策略或runner反序锁。32+22/noEmit通过，固定2f40ac20326dd4084f342297f94c7f1b668ffc7e，待Mika独审；未解决实现finding当前无自知项，生产接线另验。

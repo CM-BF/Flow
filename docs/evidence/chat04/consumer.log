@@ -1,29 +1,29 @@
 
  RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue
 
- ✓ apps/server/src/conversation-queue/consumer.test.ts (22 tests) 17155ms
-   ✓ projects only the exact final result and follows up on the same native session and runner  1683ms
-   ✓ pages immutable turns and returns long assistant content only through an owned lazy detail  610ms
-   ✓ rejects follow-up while queued, running, waiting, cancelling or uncertain without duplicating work  4306ms
-   ✓ keeps unknown-adapter unavailable instead of guessing from telemetry or a title  512ms
-   ✓ keeps missing-session unavailable instead of guessing from telemetry or a title  517ms
-   ✓ keeps missing-result unavailable instead of guessing from telemetry or a title  475ms
-   ✓ keeps ambiguous-result unavailable instead of guessing from telemetry or a title  513ms
-   ✓ keeps invalid-result unavailable instead of guessing from telemetry or a title  484ms
-   ✓ maps the actual Claude adapter final-result path through the runner using only an injected SDK  1061ms
-   ✓ never promotes retained artifacts belonging to a superseded attempt  451ms
-   ✓ leaves the effective model unknown when the session did not record one  528ms
-   ✓ prioritizes a typed final over artifacts and reports actual settings without overwriting unknown thinking  455ms
-   ✓ never falls back to a v1 artifact when a v2 attempt lacks its typed final  509ms
-   ✓ keeps a typed final pending until task success and deduplicates it through restart and replay  604ms
-   ✓ rejects foreign task/session/fence reports and confines each typed lazy reference to its bound turn  1151ms
-   ✓ does not reuse an old typed final after the current attempt binding changes  417ms
-   ✓ does not expose a reply when the actual adapter receives a non-success SDK result  558ms
-   ✓ keeps a corrupted typed body unavailable without falling back to its intact artifact  478ms
-   ✓ preserves null effective facts and exposes long typed content through its exact detail  446ms
+ ✓ apps/server/src/conversation-queue/consumer.test.ts (22 tests) 16632ms
+   ✓ projects only the exact final result and follows up on the same native session and runner  1652ms
+   ✓ pages immutable turns and returns long assistant content only through an owned lazy detail  617ms
+   ✓ rejects follow-up while queued, running, waiting, cancelling or uncertain without duplicating work  4254ms
+   ✓ keeps unknown-adapter unavailable instead of guessing from telemetry or a title  502ms
+   ✓ keeps missing-session unavailable instead of guessing from telemetry or a title  512ms
+   ✓ keeps missing-result unavailable instead of guessing from telemetry or a title  520ms
+   ✓ keeps ambiguous-result unavailable instead of guessing from telemetry or a title  446ms
+   ✓ keeps invalid-result unavailable instead of guessing from telemetry or a title  564ms
+   ✓ maps the actual Claude adapter final-result path through the runner using only an injected SDK  1059ms
+   ✓ never promotes retained artifacts belonging to a superseded attempt  454ms
+   ✓ leaves the effective model unknown when the session did not record one  475ms
+   ✓ prioritizes a typed final over artifacts and reports actual settings without overwriting unknown thinking  523ms
+   ✓ never falls back to a v1 artifact when a v2 attempt lacks its typed final  484ms
+   ✓ keeps a typed final pending until task success and deduplicates it through restart and replay  545ms
+   ✓ rejects foreign task/session/fence reports and confines each typed lazy reference to its bound turn  1096ms
+   ✓ does not reuse an old typed final after the current attempt binding changes  434ms
+   ✓ does not expose a reply when the actual adapter receives a non-success SDK result  548ms
+   ✓ keeps a corrupted typed body unavailable without falling back to its intact artifact  480ms
+   ✓ preserves null effective facts and exposes long typed content through its exact detail  499ms
 
  Test Files  1 passed (1)
       Tests  22 passed (22)
-   Start at  21:28:34
-   Duration  18.82s (transform 905ms, setup 0ms, import 1.55s, tests 17.16s, environment 0ms)
+   Start at  21:38:35
+   Duration  17.08s (transform 195ms, setup 0ms, import 370ms, tests 16.63s, environment 0ms)
 
