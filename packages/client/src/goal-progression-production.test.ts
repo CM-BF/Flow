@@ -64,7 +64,6 @@ async function goal(pin: GoalProgressionAuthorization['nodes'][number]['executio
     maxAdmissions: count, intermediatePolicy: 'verified-artifact-within-this-authorization', expiresAt: new Date(Date.now() + 60_000).toISOString(), reason: 'Bounded owner permission' };
   return { goalId: goal.id, projectId: snapshot.project.id, authorization };
 }
-let pin: GoalProgressionAuthorization['nodes'][number]['executionProfile'];
 it('migrates 030 before default readiness, resumes queue and progression without a client loop, and preserves two native inputs', { timeout: 20_000 }, async () => {
   expect((await pool.query('SELECT version FROM flow.migrations WHERE version=30')).rows).toEqual([{ version: 30 }]);
   const runner = await client.registerRunner({ name: 'Production synthetic Claude', harnesses: ['claude'], capacity: 1 });
@@ -77,7 +76,7 @@ it('migrates 030 before default readiness, resumes queue and progression without
   })(), { close() { closed++; } });
   const options = { materialFiles: [material], allowRead: true, requireReadApproval: false, model: 'synthetic', timeoutMs: 5000, maxTurns: 2, maxBudgetUsd: 0.1, query };
   const adapter = createClaudeAdapter(options), configuration = describeExecutionProfile(options, adapter);
-  pin = (await new FlowClient({ baseUrl: base, token: runner.token }).publishExecutionProfile({ configuration })).profile.reference;
+  const pin = (await new FlowClient({ baseUrl: base, token: runner.token }).publishExecutionProfile({ configuration })).profile.reference;
   const s = await goal(pin), key = randomUUID();
   const receipt = await client.authorizeGoalProgression(s.goalId, s.authorization, key);
   expect(receipt.progression.admissions).toBe(0);
@@ -108,6 +107,13 @@ it('migrates 030 before default readiness, resumes queue and progression without
   facts.journey = { defaultReadyQueue: true, defaultReadyProgression: true, intervalSecondNode: true, actualInjectedQueries: prompts.length, providerCalls: 0, admissions: 2, accepted: false, recoveredKey: true };
 });
 it('keeps one in-flight work scan and drains it before closing the production pool', { timeout: 10_000 }, async () => {
+  // This case owns its server mode and profile, including when selected alone.
+  await app!.close(); app = undefined; await start();
+  const runner = await client.registerRunner({ name: 'Lifecycle-only synthetic profile', harnesses: ['claude'], capacity: 1 });
+  const material = join(directory, 'lifecycle-source.txt'); await writeFile(material, 'Synthetic lifecycle source', { mode: 0o600 });
+  const options = { materialFiles: [material], allowRead: true, requireReadApproval: false, model: 'synthetic', timeoutMs: 5000, maxTurns: 2, maxBudgetUsd: 0.1 };
+  const configuration = describeExecutionProfile(options, createClaudeAdapter(options));
+  const pin = (await new FlowClient({ baseUrl: base, token: runner.token }).publishExecutionProfile({ configuration })).profile.reference;
   const s = await goal(pin, 1), receipt = await client.authorizeGoalProgression(s.goalId, s.authorization, randomUUID());
   const lock = await pool.connect(); let closing: Promise<void> | undefined;
   const blockedScans = async () => Number((await pool.query("SELECT count(*)::int AS n FROM pg_stat_activity WHERE datname=current_database() AND wait_event_type='Lock' AND query LIKE '%flow.projects%' ")).rows[0].n);
@@ -118,6 +124,6 @@ it('keeps one in-flight work scan and drains it before closing the production po
     let closed = false; closing = app!.close().then(() => { closed = true; }); await delay(40); expect(closed).toBe(false);
     await lock.query('COMMIT'); await closing; app = undefined;
     expect((await pool.query('SELECT count(*)::int AS n FROM flow.goal_progression_executions WHERE progression_id=$1', [receipt.progression.id])).rows[0].n).toBe(1);
-    facts.lifecycle = { maxBlockedScans: 1, waitedForInFlightBeforePoolClose: true };
+    facts.lifecycle = { maxBlockedScans: 1, waitedForInFlightBeforePoolClose: true, admissionTiming: 'Not asserted: project lock may block initial admission or later evaluation.' };
   } finally { await lock.query('ROLLBACK'); lock.release(); await closing; }
 });
