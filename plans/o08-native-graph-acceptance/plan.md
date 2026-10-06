@@ -9,9 +9,11 @@
 未来候选预算最多1 SDK query、4turns、SDK估算$0.20、90s合作取消；尚未批准实际执行。私有临时DB、动态端口、专属PID/目录；清理证据与执行证据分开；SDK费用上限不冒称最终账单硬上限。
 
 - [x] O08-01 claim/固定基线/技能与三件套。
-- [ ] O08-02 默认零query预检、单次授权/marker与预算guard。
-- [ ] O08-03 可运行隔离配置、复用生产runner/SDK桥接的0query真实MCP/HTTP/PG演练。
+- [x] O08-02 默认零query预检、单次授权/marker与预算guard。
+- [x] O08-03 可运行隔离配置、复用生产runner/SDK桥接的0query真实MCP/HTTP/PG演练。
 - [ ] O08-04 原始证据/清理/clean-code/固定交付与独立review。
 - [ ] O08-05 新GO单次预算后才真实原生query/NL验收；本轮不执行。
 
 范围只有experiments/native-graph-acceptance、plans/o08-native-graph-acceptance、docs/evidence/o08；不改生产/lock/真实服务/真实凭据。普通技术选择沿已批准边界直接执行，后继原生调用须另获授权。
+
+06:49 UTC：固定6b864881a3acb4957ad8482a7bffc71619f2c8d8，8不同作者检查通过，真实native/NL仍未执行。GO提出未来同次已授权窗口可采CHAT05工具与CHAT06 partial/settlement事实，仅候选、不等组合、不扩大本准备；无UI观察不称live UI。
