@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-06T16:28:59.119961+00:00",
+  "target": "4facd052c25e63ea300f72ea46c03c51fb983980",
+  "archives": [
+    {
+      "source": "/tmp/root-dperf04-4fac-source-review.json",
+      "archive": "dperf04-4fac-source-review-root.json",
+      "bytes": 5312,
+      "sha256": "ad4faa0a9952114e7603ab71aadfefb2c6e369899c32b1a4b727169b9274688c"
+    },
+    {
+      "source": "/tmp/dperf04-4fac-client-review/report.md",
+      "archive": "dperf04-4fac-client-review/report.md",
+      "bytes": 8769,
+      "sha256": "c1c7d4d82961ec8e35a57f02d5fd195479e5481ec46faee0464cef757a6d1318"
+    },
+    {
+      "source": "/tmp/dperf04-4fac-client-review/sources.json",
+      "archive": "dperf04-4fac-client-review/sources.json",
+      "bytes": 3136,
+      "sha256": "62859850b659bb14fbae41ce57b464d680e9d5198c74e852d39f977f03a72d3a"
+    },
+    {
+      "source": "/tmp/d01-dperf04-node-supervisor-proposal.json",
+      "archive": "dperf04-node-supervisor-proposal.json",
+      "bytes": 5065,
+      "sha256": "7e3417e98e336857a08771ac534039eab7977e97ddb7284ac40f7d58f73d2213"
+    }
+  ],
+  "fixedBlobsVerified": {
+    "apps/execution-dashboard/src/read-model.mjs": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0",
+    "apps/execution-dashboard/src/aggregate.mjs": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc",
+    "apps/execution-dashboard/src/server.mjs": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994",
+    "apps/execution-dashboard/src/human.mjs": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+    "apps/execution-dashboard/src/coordination/input.mjs": "d950149a4c173dfef82912b207635750ccd3a9c318cebf7d140c18a1c9af2fa1",
+    "apps/execution-dashboard/public/app.js": "688998b3d8376fc9f68d8fc0e33c795a3463710a9e3fda66ae4ca1807e01f3b2",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "6439f771e20942859c7934d4888656bc19d27fbc9f3f2acbdfa03fb5fcb2c885",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "2220e2e48a117ade0c72aead0189103b8bd6514be377e867050048200e0d20f6",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712",
+    "apps/execution-dashboard/public/index.html": "bb1bfbefd5cf80794f658a32b4530bfc28a18d08d09978fb8a8461b69e8a8614",
+    "apps/execution-dashboard/test/fixture.mjs": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757"
+  },
+  "state": "CHANGES_REQUESTED_SOURCE_ONLY",
+  "findings": [
+    {
+      "id": "DPERF04-RAW-SCOPE",
+      "severity": "P2",
+      "source": "root + owner self-review",
+      "meaning": "plain strips legal literal scope characters; render exact textContent"
+    },
+    {
+      "id": "DPERF04-REFRESH-READING / peer C1",
+      "severity": "P2",
+      "source": "root and peer independently",
+      "meaning": "20s refresh collapses current document/removes focus"
+    },
+    {
+      "id": "DPERF04-C2",
+      "severity": "P2",
+      "source": "peer",
+      "meaning": "late response negative assertion lacks actual route/body settlement; test evidence could turn green before stimulus"
+    }
+  ],
+  "authority": "W01 original9 scope only; no new task or writer. Owner status remains sole product progress source.",
+  "node": "NOT_RUN;4fac readiness historical. External30s supervisor proposal only; wait new frozen correction target and reviewed entry, then one fresh admission. Real ownloopbackHTTP, no PG/externalnetwork.",
+  "browser": "NOT_RUN; separate later60s budget and gate",
+  "registry": "656 registration is not implementation integration",
+  "spaceSamples": 0,
+  "runnerProposalDecision": {
+    "at": "2026-10-06T16:29:42.064615+00:00",
+    "previousDraftSha256": "220697863c87937a718259c68b0cefc887d568027f09d973644f92e0bf46eb0a",
+    "rootDecision": "STRUCTURE_APPROVED_WITH_HOME_CORRECTION",
+    "correction": "Removed proposed HOME redirection before any environment/run existed; actual HOME/home/CODEX_HOME never changed. C2 accepted as third P2; wait combined source fix."
+  }
+}

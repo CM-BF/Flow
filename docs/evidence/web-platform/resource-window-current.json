@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T16:23:03.997181+00:00",
-  "state": "PURE_CHECK_COMPLETE_RELEASE_AB_PAUSED",
-  "groupWindowOwnership": "LEAD coordination; next12 complete. Recovery single pure check finished, no active group runtime; A/B remain paused.",
+  "recordedAt": "2026-10-06T16:28:09.597115+00:00",
+  "state": "LEAD_NEW_RESOURCE_BATCH_AB_PAUSED",
+  "groupWindowOwnership": "Lead new bounded resource batch; whole batch before A→B. Group0runtime; Recovery pure check complete.",
   "release03": {
     "state": "PARTIAL_RESOURCE_STOP",
     "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
@@ -54,9 +54,12 @@
     "version": 1,
     "scopeCount": 9,
     "mode": "SOURCE_ONLY",
-    "runtime": "NOT_ADMITTED",
+    "runtime": "NOT_RUN; fixed source corrections and external Node supervisor proposal before fresh admission",
     "firstCanonical": "704894e97f573f7683e1c3fa37020fc0d9a5205c",
-    "sourceReady": "dperf04-source-ready.json"
+    "sourceReady": "dperf04-source-ready.json",
+    "registration": "REGISTERED",
+    "registrationCommit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+    "registrationEvidence": "dperf04-registration-656-intake.json"
   },
   "leadEvents": [
     {
@@ -85,5 +88,5 @@
     "No B/Chrome/SVCgreen/deployment",
     "No automatic retry/free polling; A/B remain paused despite completed pure check."
   ],
-  "latestCoordination": "lead-next12-complete-1619.json"
+  "latestCoordination": "lead-next-resource-batch-candidate-handoff.json"
 }

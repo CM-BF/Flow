@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-06T16:28:09.597115+00:00",
+  "registryCommit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+  "registrySha256": "12d1daeac14a009f15b3ddbeed650af54f8059fafe0c65af925bf2c7d6d34a37",
+  "changedPaths": [
+    "apps/execution-dashboard/src/registry.mjs",
+    "docs/evidence/d05/dperf04-registration.json",
+    "plans/d05-architecture-view/status.md"
+  ],
+  "originalReceipt": "dperf04-registration-656-original.json",
+  "receiptSha256": "ac32e82ba1a4fce95ed348746373602d645a0ffbef51c0a185a09ada5870e9e3",
+  "source": {
+    "id": "WPF-DPERF04",
+    "title": "看板首页摘要与按需详情",
+    "role": "工程协作",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+    "branch": "codex/dashboard-summary-detail",
+    "planDir": "plans/wpf-dperf04-summary-detail",
+    "evidenceDir": "docs/evidence/wpf-dperf04"
+  },
+  "sourceParent": "D01 from owner status; Lead actual dashboard current parentD01 issues[]",
+  "registration": "COMPLETE via fixed Git registration plus formal Lead actual4320 inbound166/current/issues[]",
+  "receiptTiming": "Fixed original receipt at16:20:03.722 says deployment PENDING_NEXT_SAFE_RELOAD. Later Lead inbound reports actual166/current; original preserved unchanged.",
+  "implementation": "4fac is NOT integrated by this commit: registry and registration metadata only. Product reviews/checks remain separate.",
+  "observer": "Manager read fixed Git objects only; 0snapshot/GET/reload/PG/page/service/space sampling"
+}

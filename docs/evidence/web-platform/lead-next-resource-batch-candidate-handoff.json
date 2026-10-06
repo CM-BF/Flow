@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-06T16:28:09.597115+00:00",
+  "source": "New formal Lead inbound relayed byroot; supersedes prior next12 closed-batch scheduling only",
+  "operator": "Lead sole Git operator; no group sparse/config/deletion",
+  "limit": "New batch at most12 previously unoperated delivered/released/clean trees, stop when free reaches1GiB+160MiB=1241513984B or12; finish full batch before A then B",
+  "candidateSources": [
+    "sparse-next-candidates/report.md",
+    "sparse-next-candidates/observations.json"
+  ],
+  "existingOnly": true,
+  "candidates": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/plans/wpf-perf03-message-reuse/status.md",
+      "ownEvidence": "docs/evidence/wpf-perf03",
+      "disposition": "KEEP_UNTIL_LEAD_EXACT_CONSUMER_CLOSURE; nominal released-clean candidate only"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary/plans/wpf-profileux-execution-summary/status.md",
+      "ownEvidence": "docs/evidence/wpf-profileux",
+      "disposition": "KEEP_ACTIVE_PREVIEW"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance/plans/wpf-dashboard-proof-performance/status.md",
+      "ownEvidence": "docs/evidence/wpf-dperf01",
+      "disposition": "KEEP_UNTIL_LEAD_EXACT_CONSUMER_CLOSURE; nominal released-clean candidate only"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md",
+      "ownEvidence": "docs/evidence/wpf-context-receipts",
+      "disposition": "KEEP_UNTIL_LEAD_EXACT_CONSUMER_CLOSURE; nominal released-clean candidate only"
+    }
+  ],
+  "requirement": "PROFILEUX actualwatcherKEEP. Other3 nominal only; soleoperator must finish reverseconsumer/fixture/evidenceclosure and confirm no prior handling. Not automatically safe to operate.",
+  "groupActions": {
+    "scan": 0,
+    "space": 0,
+    "sparse": 0,
+    "newCandidates": 0
+  },
+  "runtime": "A/B still paused until formal batch completion plus fresh gates. No resources assumed from target."
+}

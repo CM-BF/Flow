@@ -1,0 +1,68 @@
+{
+  "reviewedAt": "2026-10-06T16:27:59.027544+00:00",
+  "reviewer": "workspace_panels_owner / gpt-6-astra ultra",
+  "target": "4facd052c25e63ea300f72ea46c03c51fb983980",
+  "metadataInput": "84c3cb195bbbe707f51dcf70087c427018cf7f6d",
+  "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "head": "84c3cb195bbbe707f51dcf70087c427018cf7f6d",
+  "branch": "codex/dashboard-summary-detail",
+  "dirty": "",
+  "sources": {
+    "apps/execution-dashboard/public/app.js": {
+      "sha256": "688998b3d8376fc9f68d8fc0e33c795a3463710a9e3fda66ae4ca1807e01f3b2",
+      "bytes": 28617,
+      "role": "review target",
+      "currentMatchesFixed": true
+    },
+    "apps/execution-dashboard/test/summary-detail.test.mjs": {
+      "sha256": "6439f771e20942859c7934d4888656bc19d27fbc9f3f2acbdfa03fb5fcb2c885",
+      "bytes": 11294,
+      "role": "review target",
+      "currentMatchesFixed": true
+    },
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": {
+      "sha256": "2220e2e48a117ade0c72aead0189103b8bd6514be377e867050048200e0d20f6",
+      "bytes": 22781,
+      "role": "review target",
+      "currentMatchesFixed": true
+    },
+    "apps/execution-dashboard/test/task-links.browser.mjs": {
+      "sha256": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712",
+      "bytes": 10845,
+      "role": "review target",
+      "currentMatchesFixed": true
+    },
+    "apps/execution-dashboard/src/read-model.mjs": {
+      "sha256": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0",
+      "bytes": 8802,
+      "role": "necessary interface/import reference",
+      "currentMatchesFixed": true
+    },
+    "apps/execution-dashboard/src/server.mjs": {
+      "sha256": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994",
+      "bytes": 5487,
+      "role": "necessary interface/import reference",
+      "currentMatchesFixed": true
+    },
+    "apps/execution-dashboard/public/index.html": {
+      "sha256": "bb1bfbefd5cf80794f658a32b4530bfc28a18d08d09978fb8a8461b69e8a8614",
+      "bytes": 6397,
+      "role": "necessary interface/import reference",
+      "currentMatchesFixed": true
+    },
+    "apps/execution-dashboard/test/fixture.mjs": {
+      "sha256": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+      "bytes": 4181,
+      "role": "necessary interface/import reference",
+      "currentMatchesFixed": true
+    }
+  },
+  "skills": {
+    "/Users/citrine/.agents/skills/find-skills/SKILL.md": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+    "/Users/citrine/.agents/skills/codebase-design/SKILL.md": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+    "/Users/citrine/.agents/skills/clean-code/SKILL.md": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+  },
+  "execution": "NOT_RUN: source-only; no product imports, tests, space sampling, services, API, PG or browser",
+  "decision": "CHANGES_REQUESTED: client P2 automatic refresh destroys current document/focus; late-response test settlement P2 for browser validation"
+}

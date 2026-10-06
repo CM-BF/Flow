@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-06T16:28:09.597115+00:00",
+  "state": "PROPOSAL_ONLY_NO_RUN_NO_GATE_NO_RESOURCE_SAMPLE",
+  "task": "WPF-DPERF04 original9literal; no new task/scope",
+  "currentInput": {
+    "implementation": "4facd052c25e63ea300f72ea46c03c51fb983980",
+    "metadata": "84c3cb195bbbe707f51dcf70087c427018cf7f6d",
+    "claim": "b554ddb6-094e-46db-90f3-b9e5deb78edb v1; original9",
+    "readiness": "/tmp/d01-dperf04-node-admission-materials-4fac.json",
+    "supersession": "Root/panels two App P2 fixes must produce a new frozen source/current manifest before actual one run; do not run old4fac solely to use budget."
+  },
+  "entry": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-concurrency=1",
+    "apps/execution-dashboard/test/summary-detail.test.mjs"
+  ],
+  "sourceFacts": [
+    "Fixed4fac direct imports summaryFixture from browser module, not the guarded browser main; fixture binds one127.0.0.1 dynamic port and fetches only own URL. This IS loopbackHTTP, not0HTTP.",
+    "One parent node:test timeout25000ms does not externally bound module import, synchronousGit or stalled cleanup; outer parent deadline required.",
+    "summaryFixture uses os.tmpdir() for one ownedroot containing two tiny repos/two synthetic tasks; temporary status deliberately exceeds2MiB; explicit assignmentObserver means no realPG/registry.",
+    "Git children inherit processgroup and have3s timeout; original test registers server.closeAllConnections/close and root rm cleanup, but outer parent must enforce independent deadline and removal on child failure."
+  ],
+  "outerSupervisor": {
+    "method": "Reuse established Python subprocess/own PGID polling and cleanup pattern from Recovery direct, no new reusable framework/product file. Prepared under private0700 /tmp only.",
+    "clock": "Start external monotonic deadline before child spawn/import. At25s stopwork; total<=30s including at least5s cleanup reserve. No deadline reset between tests or during import.",
+    "environment": "Leave HOME/home/CODEX_HOME unchanged. Redirect only TMPDIR/TMP/TEMP/XDG_CACHE_HOME and tool-specific compilecache locations to own private run; disable Node/tsx caches, clear FLOW_/PG/DATABASE_URL/NODE_OPTIONS; GIT_CONFIG_GLOBAL/SYSTEM=/dev/null. Node builtins, no installs.",
+    "filesystem": "Child deny file writes outside own private temp+/dev/null; source/deps read only; supervisor retains logs/report after cleanup to owner evidence within existing scope. Delete only identified owned scratch, not source/cache donor/other tmp.",
+    "network": "No blanket network-deny because actual ownloopback HTTP is part of check. Proposed sandbox permits only127.0.0.1 local listener/outbound; fixedsource binds/fetches solely its own dynamic listener. Deny external network. Exact profile rules must be read/reviewed and pinned before launch; do not silently drop sandbox if unsupported.",
+    "limits": "Poll<=500ms: recursive logical regular-file bytes across wholeownroot<=8MiB, no following symlinks; combined stdout/stderr+allretainedJSON<=2MiB with explicit finalreport reserve. Capture pipes bounded, do not allow uncontrolled stdoutfile growth. Stop on quota/monitorfailure, no truncation-as-PASS. Sampling is not hardquota or peak proof.",
+    "space": "Approved low-incremental Node start1090519040B (1GiB+16MiB), stop1082130432B (1GiB+8MiB), based on tmp8MiB/raw2MiB and0PG/Chrome. Fresh sample only after newsource/exactrunner+profilepins ready; do not reuse Recovery samples or allow A/B.",
+    "cleanup": "OnlyownPGID TERM thenKILL within5s; reapchild and verifygroupabsent; remove ownscratch/verifyabsent. On natural childexit also check remaining group/HTTPlistener lifetime. Any stopreason/cleanupfailure/nonzero/invalidreport =>failed, preserve partialraw; no rerun.",
+    "success": "Exit0 plus TAP expectedcounts and complete cleanup, <=30s and budgets. 0PG/browser/production4320/provider/install/build; localHTTP declared.",
+    "records": "Bind implementation vs actualmetadataHEAD, seven sourcehashes, relevant read-only dependencies, Node identity, command/supervisor/sandbox/preflight hashes, exactclaim/version, fresh gate/time/free, elapsed/cumulative budget, samples/cleanup and outputhashes."
+  },
+  "budget": {
+    "totalMs": 30000,
+    "usedMs": 0,
+    "cleanupReserveMs": 5000,
+    "tmpBytes": 8388608,
+    "allRawBytes": 2097152
+  },
+  "pending": "Root structurally approved with environment correction and16/8MiB margins; newfixed threeP2source plus exactsingleuse runner/profilepins then one fresh admission. No repeat permission required for these same conditions. No runtime permission in this preparation record.",
+  "revision": {
+    "at": "2026-10-06T16:29:42.064615+00:00",
+    "previousDraftSha256": "220697863c87937a718259c68b0cefc887d568027f09d973644f92e0bf46eb0a",
+    "rootDecision": "STRUCTURE_APPROVED_WITH_HOME_CORRECTION",
+    "correction": "Removed proposed HOME redirection before any environment/run existed; actual HOME/home/CODEX_HOME never changed. C2 accepted as third P2; wait combined source fix."
+  }
+}

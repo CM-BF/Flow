@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-06T16:29:42.188466+00:00",
+  "managementScope": {
+    "claim": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3,
+    "changedPathsWithinSixScopes": 12
+  },
+  "checks": {
+    "fixedRegistryCommit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+    "registryOnlyPlusMetadata": true,
+    "fixedReviewBlobHashes": 11,
+    "newLocalLinks": 9,
+    "brokenLinks": [],
+    "parser": [
+      {
+        "tree": "web-platform-management",
+        "path": "plans/web-platform/status.md",
+        "id": "WPF-001",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 36
+      },
+      {
+        "tree": "web-platform-management",
+        "path": "plans/wpf-mature-01-visual/status.md",
+        "id": "WPF-MATURE-01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 5
+      },
+      {
+        "tree": "web-platform-management",
+        "path": "plans/wpf-mature-06-chat/status.md",
+        "id": "WPF-MATURE-06",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "tree": "dashboard-summary-detail",
+        "path": "plans/wpf-dperf04-summary-detail/status.md",
+        "id": "WPF-DPERF04",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 3
+      }
+    ]
+  },
+  "cleanCode": "Current handoff now distinguishes registry, implementation, source findings and run admission. Exactsource evidence kept; duplicate C1/rootfinding counted as oneissue, C2 remains test causality issue. No task split or newauthority. Home redirection proposal removed before implementation; use approved toolcache variables only.",
+  "skills": "Local find-skills/clean-code/codebase-design same previously pinned methods reused; no install.",
+  "productRuntime": 0,
+  "resourceSamples": 0,
+  "operation": "No newscan/sparse/config/user-service/PG/Chrome. Existing fourcandidate originals reused with KEEP constraints; Lead soleoperator."
+}

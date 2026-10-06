@@ -49,4 +49,4 @@ RELEASE01兼容输入已main c450且20a v2释放；后继根严格类型检查�
 
 实际发布新增[RELEASE03批准方案](../../docs/evidence/web-platform/release03-current-preview-proposal.json)：w01唯一验证owner、四范围已bfb209ae v1 COMMITTED，原SVCoperator发布。现成9eec hash核齐但无正式format2；14:25fresh准入后一次正式prepare成功，14:28两cache已释放；backend362有特定history v2缺口须最小差分/合法修复，不等整Recovery或全SVC06。0个人操作，当前产物保持8d8/caa1/v2，来源与解除条件见中央队列。
 
-最新原始结果已由Lead接收；next12已12/12完成停止，A/B继续暂停；[c18bd标签窄审](../../docs/evidence/web-platform/release03-c18bd-label-review-root.json)只批准报告逻辑，完整A/B仍未通过。后继运行依实际窗口/原预算，不因该审查自动启用。
+最新原始结果已由Lead接收；上一next12已完成，Lead新批最多12棵资源整理进行中，A/B继续暂停；[c18bd标签窄审](../../docs/evidence/web-platform/release03-c18bd-label-review-root.json)只批准报告逻辑，完整A/B仍未通过。后继运行依实际窗口/原预算，不因该审查自动启用。
