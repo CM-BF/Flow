@@ -27,3 +27,5 @@
 ## 仍待准备
 
 Web管理回固定locator/启用流程后形成最小driver与0模型演练证据，再交GO审一次具体新窗口。目前无新模型许可，也未承诺provider一定发partial或完整U11通过。
+
+补充观察门槛：只观察当前可见且聚焦的会话面板；至少记录两次实际正文增长，才能判定增量正文可见。只在 flow.assistant-stream 当前关闭时开启；被动网络记录限白名单响应，不自动展开详情。typed final 与 settlement 身份、草稿 retain/replace 和 task terminal 分开核验；未观察到足够 partial 则 NOT_PROVEN，绝不补 query。保留未发送草稿并核无虚假分支按钮。

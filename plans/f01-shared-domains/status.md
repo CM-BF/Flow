@@ -11,15 +11,15 @@
 | 工作树dirty状态 | 产品已固定；本次证据与状态提交 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 25a22e0488d6d9aef1f3308e3179e0e874fa425f；HTTP1/1与tsc0，0provider |
-| 已集成main状态 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256 已含O09CLI和CHAT09薄client/领域；个人center/runner仍b54/v6，未开启steering。 |
-| Review | NOT_STARTED：CHAT10只读受理状态client；先前899配置协商已独审main。 |
+| 已集成main状态 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256 已含O09CLI和CHAT09薄client/领域；个人center/runner已32c/v9，未开启steering。 |
+| Review | APPROVED：Mika独立只读25a22薄client；CHAT10领域a329由Lead独立审查，生产启动挂载另验。 |
 | 实现目标 | 25a22e0488d6d9aef1f3308e3179e0e874fa425f |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/steering-admission.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 客户端已能读取当前任务是否可提交补充指令及具体原因。 |
-| 下一可用交付 | 完成受理状态读取的独立审查，再接中心实现。 |
+| 下一可用交付 | 接入中心显式启动配置，保持默认关闭并给出可提交补充指令的具体原因。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -117,4 +117,4 @@
 
 2026-10-06 08:20:30 UTC：main/origin32c371d已接CLI0d48、配置client899与CHAT09 cd859；本片批准绑定保持原target，不继承为provider或个人服务已开启。I02固定34source精确相同、O09 readonly组合2/2与root/Webtypes0。
 
-| F01-25 | in-progress | Lead | CHAT10只读受理状态client 25a22e0488d6d9aef1f3308e3179e0e874fa425f；真实HTTP1/1+tsc，待独立审查；不包含中心门禁/模型 |
+| F01-25 | in-progress | Lead | CHAT10只读受理状态client 25a22e0488d6d9aef1f3308e3179e0e874fa425f；真实HTTP1/1+tsc，Mika独立APPROVED；不包含生产启动/模型 |

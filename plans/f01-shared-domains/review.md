@@ -1,10 +1,10 @@
 # F01 共享接线审查
 
-**当前增量状态：NOT_STARTED（CHAT10只读受理状态client）**
+**当前增量状态：APPROVED（CHAT10只读受理状态client）**
 
 Review target commit：25a22e0488d6d9aef1f3308e3179e0e874fa425f
 
-Scope：packages/client/src/index.ts, packages/client/src/steering-admission.test.ts。证据 steering-admission-client-manifest.json；仅公开DTO薄读取，不预先批准CHAT10领域或启用开关。
+Scope：packages/client/src/index.ts, packages/client/src/steering-admission.test.ts。证据 steering-admission-client-manifest.json。Mika独立只读APPROVED，2source/3raw/1DTO固定hashbytes全部匹配；真实HTTP1/1与tsc0原证据，无P1/P2、未重跑。仅公开DTO薄读取，不预先批准生产启动开关。
 
 ## 上一薄client批准（已main32c）
 
