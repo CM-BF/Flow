@@ -141,3 +141,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-06 16:21 UTC：main65659028登记已在唯一自有4320实际加载，单次GET观察166来源，DPERF04 live/current/issues=[]且关联D01；[实际回执](../../docs/evidence/d05/dperf04-live-receipt.json)。6352ms是本次聚合观察，不作SLO结论。个人端口/用户页不变；本记录复用已采事实，不再次重启或采样。
 
 2026-10-06T16:40:10.844935+00:00：MATURE02C01真实领取8578v1/首canonical87fc已登记，167来源候选；父WPF-MATURE-02与ExecutionLead关联，只核三件套/唯一ID/状态解析。产品由native_center_owner实施，尚未审/未集成；[登记事实](../../docs/evidence/d05/mature02c01-registration.json)。当前4320实际仍166，随本正常批次换载一次；不改架构图或用户产品页。
+
+2026-10-06T16:48:32.870117+00:00：main56421f47已登记MATURE02C01；仅自有4320受控换代码后单次HTTP200实际167来源，新source实时读取合法owner/status，implementation/未审未完成均保留。[实际回执](../../docs/evidence/d05/mature02c01-live-receipt.json)。个人后台362/Web8d8及用户tabs未操作，架构固定基线不变。
