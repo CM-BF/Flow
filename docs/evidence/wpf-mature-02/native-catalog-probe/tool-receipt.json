@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-10-06T17:47:03.807350+00:00",
+  "window": "go-native-catalog-probe-once",
+  "state": "CONSUMED",
+  "command": "/bin/sh experiments/codex-app-server-conformance/native-catalog-probe/execute-window.sh --reviewed-native-catalog-probe-window",
+  "executionHead": "02106c8173dfd3b39f2f369b53eab8c4e6ef2a00",
+  "toolBeforeUtc": "2026-10-06 17:44:57 UTC",
+  "toolAfterUtc": "2026-10-06 17:44:57 UTC",
+  "utcResolutionSeconds": 1,
+  "conservativeUtcUpperSeconds": 1,
+  "toolChunk": "fe3460",
+  "toolExitCode": 1,
+  "toolWallSeconds": 0.364166334,
+  "toolOutputBytes": 0,
+  "internalFinalElapsedMs": 436.690458,
+  "internalBasis": "after-result-persistence-before-cli",
+  "clockLimits": "Independent readings; tool wall not equated to internal performance clock. Later manual archiving/review/Git outside the runtime clock; bytes still counted."
+}

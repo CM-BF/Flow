@@ -1,0 +1,56 @@
+{
+  "observedAt": "2026-10-06T17:47:03.807350+00:00",
+  "roots": [
+    {
+      "path": "/private/tmp/flow-native-catalog-allow-32YLd6",
+      "identity": {
+        "dev": 16777234,
+        "ino": 123105801
+      },
+      "runtimeRemoved": true,
+      "exactPathsNowAbsent": {
+        "/private/tmp/flow-native-catalog-allow-32YLd6": true,
+        "/private/tmp/flow-native-catalog-allow-32YLd6/control/candidate.sb": true,
+        "/private/tmp/flow-native-catalog-allow-32YLd6/control/stderr.raw": true,
+        "/private/tmp/flow-native-catalog-allow-32YLd6/state/home": true,
+        "/private/tmp/flow-native-catalog-allow-32YLd6/state/codex": true,
+        "/private/tmp/flow-native-catalog-allow-32YLd6/state/tmp": true,
+        "/private/tmp/flow-native-catalog-allow-32YLd6/state/cwd": true
+      }
+    },
+    {
+      "path": "/private/tmp/flow-native-catalog-deny-SPzQ4G",
+      "identity": {
+        "dev": 16777234,
+        "ino": 123105802
+      },
+      "runtimeRemoved": true,
+      "exactPathsNowAbsent": {
+        "/private/tmp/flow-native-catalog-deny-SPzQ4G": true
+      }
+    }
+  ],
+  "processCleanupComplete": true,
+  "rootCleanupComplete": true,
+  "retainedRoots": [],
+  "retainedDiagnosticArtifact": {
+    "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/docs/evidence/wpf-mature-02/native-catalog-probe/private-stderr.raw",
+    "owned": true,
+    "identity": {
+      "dev": 16777234,
+      "ino": 123105814,
+      "regular": true
+    },
+    "bytes": 344,
+    "sha256": "1d5a53e7a98a2beeec6a99298b0cba841a7f7d75ea87c21db73a26e1a7da4748",
+    "closed": true,
+    "flushed": true,
+    "identityConfirmed": true,
+    "inputComplete": true,
+    "complete": true,
+    "removed": false
+  },
+  "privateArtifactIsSeparateFromRootCleanup": true,
+  "wholeWriterSettlement": "unknown",
+  "catalogAbsent": true
+}

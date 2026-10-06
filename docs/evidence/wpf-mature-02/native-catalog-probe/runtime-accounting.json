@@ -1,0 +1,43 @@
+{
+  "basis": "after-result-persistence CLI plus actual outer files; later archive counted separately",
+  "preparedBytes": 168751,
+  "runtimeOutput": {
+    "preparedBytes": 168751,
+    "policyDiskBytes": 16762,
+    "stderrCapturedBytes": 344,
+    "stderrDiskBytes": 688,
+    "catalogDiskBytes": 0,
+    "receiptBytes": 3169,
+    "stdoutWireBytes": null
+  },
+  "runtimeKnownBytes": 189714,
+  "cliBytes": 3625,
+  "receiptAndCliBytes": 6794,
+  "receiptAndCliLimit": 32768,
+  "outer": {
+    "capture": 207,
+    "diskCopy": 207,
+    "actualOtherAndSelfReceipts": 225,
+    "totalBytes": 639,
+    "limit": 8192
+  },
+  "knownRuntimeCliOuterBytes": 193978,
+  "wireStdoutBytes": null,
+  "wireTotalComplete": false,
+  "retainedMaterialAccountingComplete": true,
+  "ownRootsSampled": [
+    {
+      "complete": true,
+      "entries": 10,
+      "logicalBytes": 17874,
+      "allocatedBytes": 24576,
+      "withinLimit": true,
+      "maxSampledLogicalBytes": 17874,
+      "maxSampledAllocatedBytes": 24576
+    }
+  ],
+  "unobservedActivePeak": "unknown",
+  "hardQuota": false,
+  "deletedCopiesStillCharged": true,
+  "privateCopiesCounted": 2
+}
