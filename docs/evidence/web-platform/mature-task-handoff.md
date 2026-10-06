@@ -2,6 +2,10 @@
 
 当前共享运行窗口已归还 Lead：Recovery 首轮浏览器子集失败后，专库、worker、Chrome 和 scratch 均已清理；没有重试许可。设置控件已登记并完成一次类型与定向检查，类型和37项定向检查已获独立证据接收，原父计数FAIL保留；恢复修复已固定获限定源码批准，38项受控检查已通过并获独立证据接收。DPERF浏览器等独立窗口。[资源事实](resource-window-current.json)。
 
+## 看板时间格式窄修 SOURCE_REQUEST
+
+GO于18:35:38.966Z实际4320观察到TUI/COST/MATURE02来源已live、人读完整，仍被UTC时间格式误判。固定main **ec5da343** 的 parser不接小数/+00:00，非法日期还可能抛异常。原DPERF04九范围明确不含该文件。[WPF-DPERF05 独立四范围候选](dperf05-utc-source-request.json)直接父D01、唯一owner拟panels；18:39:39 fresh D04显示status.mjs无人占用/四范围无overlap，新ID/路径/分支未用。[精确只读源码闭包](dperf05-utc-source-closure.json)10文件79,472 B；等待Lead唯一Git物化固定ec5的新dashboard-status-timestamps树，实际receipt后再fresh原子take。当前无take/provision/实现，不修改其他status或用mtime掩盖，0页面复采/运行。发布后的三条实际恢复观察仍由Lead提供。
+
 ## 已交付验证与发布接续
 
 RELEASE03 已正式接入 main `8fc76397c4243bdea93c3ca5e1bf6b4c5ef16981`；原两源及 B1750 的24文件与固定输入相同。Lead 组合 root noEmit 为0/9.075298625秒，未重跑 A/B。[main 接收](release03-main-intake.json) / [owner main-close 原件](release03-main-close-owner.json)。唯一 [owner status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md) 与 [review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/review.md) 已 delivered / ef458 scoped APPROVED；最终9d4641c正常push/clean并全四范围停写后，18:05:46.125Z [bfb209ae v4 RELEASED](release03-main-release-receipt.json)。
@@ -26,7 +30,7 @@ W01固定 **ed769/8bdc** 六源与[现有依赖和两类检查准备](message-se
 
 [独立因果报告](recovery01-rec667-cause/report.md)及[root源审](recovery01-rec667-root-failure-source-review.json)确认P1默认保存未激活、P2只读probe可造空库/异常Promise悬挂。原raw缺插件/IDB事件时间轴，不能称唯一动态根因。18:08:34 fresh核6ff v4原21唯一writer/无overlap后，[已派panels source-only窄修](recovery01-idb-repair-dispatch.json)：现有host仅对已配置且授权registered生命周期启动，disabled不自动启用；只读observer不创建/迁移/删schema，所有错误终结/关闭。不能先点击Saved drafts掩盖、不能补store/放宽断言。无运行窗/新资源采样。
 
-修复固定 **7cc7629b / bf14ae68**，5源变化/14同667，[19源入站核验](recovery01-7cc-source-intake.json)与[root限定源码批准](recovery01-7cc-root-source-review.json)记录当时尚未运行。P1/P2已获限定源码批准，现38项受控检查已通过并获独立实证接收。[38项父监督](recovery01-38-supervisor-prepared/preparation.json)获[peer结构审](recovery01-38-supervisor-peer/report.md)与[root审](recovery01-38-supervisor-root-review.json)后，经18:36:19 fresh原21无overlap/19源及依赖pins/free1,693,122,560 B核验，panels单次[实际38/38 PASS](recovery01-38-check-intake.json)。耗时2294ms，累计6868/30000、余23132仅算术；清理完整，networkdeny，0types/HTTP/PG/Chrome。[root独立证据审](recovery01-38-root-evidence-review.json)已接受新增5生命周期+6observer实际通过，但不是真实IDB/完整浏览器通过，旧browser失败14.846秒不改。旧1b8 runner绑定不可直接运行，新schema/真实IDB和完整feature仍待各自验收。
+修复固定 **7cc7629b / bf14ae68**，5源变化/14同667，[19源入站核验](recovery01-7cc-source-intake.json)与[root限定源码批准](recovery01-7cc-root-source-review.json)记录当时尚未运行。P1/P2已获限定源码批准，现38项受控检查已通过并获独立实证接收。[38项父监督](recovery01-38-supervisor-prepared/preparation.json)获[peer结构审](recovery01-38-supervisor-peer/report.md)与[root审](recovery01-38-supervisor-root-review.json)后，经18:36:19 fresh原21无overlap/19源及依赖pins/free1,693,122,560 B核验，panels单次[实际38/38 PASS](recovery01-38-check-intake.json)。耗时2294ms，累计6868/30000、余23132仅算术；清理完整，networkdeny，0types/HTTP/PG/Chrome。[root独立证据审](recovery01-38-root-evidence-review.json)已接受新增5生命周期+6observer实际通过，但不是真实IDB/完整浏览器通过，旧browser失败14.846秒不改。panels最新原样封存 **3896ca58** 已push/clean，源码仍7cc，claim原21继续持有。旧1b8 runner绑定不可直接运行，新schema/真实IDB和完整feature仍待各自验收。
 
 旧1b8受控27/27只证明原范围，新的完整feature仍NOT_STARTED；实际callerOrigin绑定、迟到logout清cookie和重复connect/32slot三中心语义、CREATE/Queue/Steer/第二中心/SSE交付等仍按原完整验收保留。
 

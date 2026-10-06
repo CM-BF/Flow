@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-06T18:41:11.506974+00:00",
+  "state": "SOURCE_REQUEST_NOT_PROVISIONED_NOT_TAKEN",
+  "taskCandidate": "WPF-DPERF05",
+  "parent": "D01",
+  "title": "看板 UTC 时间格式兼容",
+  "ownerCandidate": "workspace_panels_owner",
+  "ownerSequence": "Recovery3896 metadata pushed clean and source frozen; this independent source-only leaf starts only after provision+atomicCOMMITTED. ExistingRecoveryclaim remains independent; do not edit its source or stealW01settings work.",
+  "worktreeCandidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
+  "branchCandidate": "codex/dashboard-status-timestamps",
+  "base": "ec5da343880879154e2392f52eaa915d5b08aa77",
+  "scope": [
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "plans/wpf-dperf05-status-timestamps",
+    "docs/evidence/wpf-dperf05"
+  ],
+  "sourceClosure": "dperf05-utc-source-closure.json",
+  "sourceBytes": 79472,
+  "rounded4KiBEstimateBytes": 106496,
+  "files": 10,
+  "physicalCaveat": "Exact blob/4KiB estimate excludes Git/admin filesystem overhead; not sampled physical allocation",
+  "provisionOwner": "Original Execution Lead sole Git operator; manager settings one-path exception does not apply",
+  "pathExists": false,
+  "branchExists": false,
+  "ledger": {
+    "observedAt": "2026-10-06T18:39:39.061Z",
+    "state": "available",
+    "overlaps": [],
+    "currentWriterForStatusMjs": null,
+    "DPERF04": "b554 v1 original9 excludesstatus.mjs; status is protectedreadonly input",
+    "D05": "3a624 v3 registry/index/rules only, no overlap",
+    "newTaskId": "DPERF01–04 only in ledger; fixedec5registry has noDPERF05"
+  },
+  "reportedProductEvidence": {
+    "source": "GO via root, not manager resampling",
+    "at": "2026-10-06T18:35:38.966Z",
+    "surface": "4320/api/snapshot",
+    "tasks": [
+      "TUI-001",
+      "COST-001",
+      "MATURE02"
+    ],
+    "facts": "source.live/human.complete true while stale/unknown; UTC parser rejects fractional+00:00; MATURE02temporaryZ workaround reported",
+    "examples": [
+      "2026-10-06T16:10:36.850746+00:00",
+      "2026-10-06T14:35:06.228081+00:00"
+    ]
+  },
+  "fixedSourceFinding": "status.mjs41 regex excludesfraction/+00:00;42 toISOString may throw malformedcalendar. Root reviewing exact date boundary. Aggregatecatch/stale/future policy remains unchanged.",
+  "acceptance": [
+    "Keep existing UTC and Z formats, accept fractional seconds and explicit+00:00 forUTC",
+    "Reject illegal day/month/time safely via parsererrors/null, never throw snapshot; no arbitraryoffset acceptance inferred",
+    "Preserve realstale/future failclosed policies; no mtimefallback, no rewriteotherstatus",
+    "Focused Node-only direct regression uses fixedfixtures, malformed/boundary cases; no live4320/PG/browser",
+    "After reviewedmain/deployment Lead provides actual3task recovered observations; sourceproof is not deploymentproof"
+  ],
+  "budgetProposal": {
+    "state": "PROPOSED_NOT_AUTHORIZED_RUN",
+    "totalMs": 15000,
+    "cleanupMs": 5000,
+    "tmpBytes": 2097152,
+    "rawBytes": 524288,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "network": false,
+    "PG": false,
+    "Chrome": false,
+    "install": false
+  },
+  "next": "Root final scopeddesign+Lead unique source provision receipt, verifyactualbranch/head/clean then freshatomic4take and solepanels dispatch; no writes beforeCOMMITTED",
+  "managerProductRuns": 0,
+  "managerPageSamples": 0,
+  "managerFreeSamples": 0
+}
