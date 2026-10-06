@@ -1,0 +1,8 @@
+
+> @flow/web@0.1.0 typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web
+> tsc --noEmit -p tsconfig.json
+
+src/conversation-steering/control.ts(165,15): error TS7022: 'previous' implicitly has type 'any' because it does not have a type annotation and is referenced directly or indirectly in its own initializer.
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @flow/web@0.1.0 typecheck: `tsc --noEmit -p tsconfig.json`
+Exit status 2
