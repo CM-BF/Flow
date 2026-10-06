@@ -2,14 +2,14 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 00:57 UTC / 2026-10-06 00:57 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 01:42 UTC / 2026-10-06 01:42 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `3995ec16ce2cbcb4d5f5e99333b86575233fd89c`（仅表示同步时观察值） |
-| 工作树dirty状态 | 有未提交修改 |
-| 工作分支状态 | 依下方TODO；未提交工作不等于已交付 |
+| 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
+| 工作树dirty状态 | 本次规则/汇总metadata待提交 |
+| 工作分支状态 | 依下方TODO；M1系统旅程已验证，最终独立review/main集成进行中 |
 | 已集成main状态 / HEAD | `0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
@@ -35,8 +35,8 @@
 ## 阻塞 / 风险 / 未验证
 
 - 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。
-- 应用端到端、真实harness、双主题及故障验收仍待相应feature证据，短probe不能代替。
+- M1真实Web旅程、原生approve/cancel与双主题证据已具备；main仍待最终工程review。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
 
-Owner在合并此文档基线后立即核验实际branch/head并接管本status；此初始化记录不替代owner后续更新。启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。
+Execution Lead已接管本权威status并核验实际owner交付；启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。
