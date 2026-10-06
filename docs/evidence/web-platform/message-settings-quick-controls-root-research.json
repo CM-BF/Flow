@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-06T18:55:30.190784+00:00",
+  "kind": "MATURE02 TODO11 bounded interaction research, NOT_IMPLEMENTED_NOT_RUN",
+  "request": "GO18:53 inbound: quick model/thinking-effort/speed controls; do not require scanning profile×choices radios; keep exact center allowlist, currentleaf closure, A/B/C authority and scope handoff. Existing TODO11 only, no new bigtask or parallel status.",
+  "fixedSource": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "sources": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 11558,
+      "sha256": "11083f2ba938e4ca6919792224c6280682b3972ccc38480ec7311687074f546f"
+    }
+  ],
+  "findings": [
+    "Picker117–120 flatMaps every loaded profile into fulltuple radio entries; selection133+ is then disabled for all but the authorized exact profile. This is a source-confirmed discoverability/DOM issue, not a measured latency result.",
+    "Public message settings contract limits each profile to32choices and16KiB, catalog requests20profiles/page. One full page can therefore present up to640tuple radios before further pages; this arithmetic is an upper bound, not a benchmark or actual observed catalog.",
+    "messageSettingsAvailability already resolves one exact context/capability profile(id,runnerId,digest). That authorized profile alone is the selectable domain; exposing every unrelated tuple is unnecessary to select the next message.",
+    "Contract has four independent requested axes: model, thinking(disabled/adaptive), effort(not-requested or5levels), speed(standard/fast). Three user-facing sections must not collapse distinct thinking/effort or infer disabled=>not-requested. Undefined whole request is also a separate explicit omission, never a default or reset."
+  ],
+  "alternatives": [
+    {
+      "name": "Three compact user-facing sections with constrained choice filtering",
+      "decision": "RECOMMENDED",
+      "tradeoff": "Fast direct access and explicit dependent compatibility; local incomplete selection must be separated from the committed draft tuple."
+    },
+    {
+      "name": "Grouped complete-tuple radios only for the current profile",
+      "decision": "Valid small intermediate but insufficient final acceptance",
+      "tradeoff": "Removes unrelated profiles and bounds32rows, but still forces users to compare full combinations."
+    },
+    {
+      "name": "Searchable whole-tuple command palette",
+      "decision": "Optional later shortcut, not primary replacement",
+      "tradeoff": "Compact but requires knowing tuple wording and still does not give clear separate model/effort/speed adjustment."
+    }
+  ],
+  "recommendedInteraction": [
+    "Keep one compact next-message summary trigger, showing the actual controlled draft value in user vocabulary. Within the existing dialog use three labeled sections: Model, Thinking/effort, Speed. Profile/runner/digest/protocol remain in details. Existing modal/dialog and close-before-navigation seam can be reused.",
+    "Resolve the authorized exact profile before deriving controls. Do not instantiate controls/radios for all other profiles. Model options are unique declared models from that profile; use a searchable manual-selection combobox only if needed for actual model count, otherwise a labeled native select. Never accept free text as a model request.",
+    "Thinking/effort section preserves separate underlying thinking mode and effort fields, with not-requested clearly distinguished. Speed options are center-declared values. Filter the full declared tuple set; options/counts come from candidate tuples, not a Cartesian product or guessed provider matrix.",
+    "Model search query, highlighted option and incomplete filter choices are private dialog state. They never call host onChange or mutate the canonical draft. Only an explicit apply of an exact declared tuple crosses captureMessageSettings and emits one immutable controlled value. Closing/canceling leaves the original draft unchanged.",
+    "When changing one axis leaves the prior other axes incompatible, preserve the host draft and visibly mark which local choices need adjustment. Do not choose the first/nearest/default tuple or silently rewrite dependent settings. Keep matching candidates discoverable to avoid filter dead ends; a clear-filters action clears only local search/filter state.",
+    "If compatible axes resolve to exactly one tuple, show the complete preview then explicit apply; even this path must recheck current catalog generation/context/capability at apply. Equal requested fields across another profile never qualify. Refresh/revocation cannot silently rebind the same display model to a new identity.",
+    "Keep current draft summary visible when its profile/value is not in the loaded page. Say not yet confirmed in the loaded directory, with explicit load-more/refresh/reconnect affordances. Missing from one page is not unsupported or deletion. Load failure preserves selection and incomplete search, but disables apply if authority is stale/unknown. No auto-request loop or eager page exhaustion.",
+    "Once the authorized profile is present its whole configured choice list is in that profile; no reason to expand unrelated profiles just to adjust a message. If not present, only explicit paging uses the existing public catalog. No fabricated search-by-model/profile endpoint. Existing catalog accumulation is not proven bounded merely because rendered choices are bounded.",
+    "Explicit omit-message-settings remains an action with its own semantics. It must not be triggered by no search matches, empty directory, load failure, Escape, capability loss or switching panes. A sent/B queued snapshots remain under receipt owners; only C draft may change after apply."
+  ],
+  "moduleAndPluginDecision": "Keep public controlled MessageSettingsPicker/catalog/context/value/onChange shape if possible. Factor a private pure declared-choice projection only when it concentrates option derivation/error semantics; no generic form framework, global settings store or new public protocol. The host-owned plugin/button contribution opens this controlled picker; plugin disable/unload removes its UI without rewriting draft or receipt settings. Existing host close/navigation composition remains the action authority. Final host implementation scopes must be freshly coordinated after current owners stop writing.",
+  "accessibility": [
+    {
+      "source": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/",
+      "derived": "Use explicit label, expanded/controls state and the chosen combobox pattern consistently; manual text filtering is not an arbitrary accepted value. Keyboard option exploration can cancel without committing the prior value; do not hijack native text-editing keys."
+    },
+    {
+      "source": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "derived": "Keep tab focus inside the modal, provide a visible close control, Escape close and appropriate focus return. Nested model popup Escape should close that popup first; the next Escape can cancel the containing settings dialog."
+    }
+  ],
+  "boundedPerformancePlan": [
+    "Measure actual component render count/DOM and interaction latency at one authorized profile containing32legal choices, plus a catalog page with20profiles and an explicit later page. Treat32/640 as contract arithmetic, not observed speedup.",
+    "Derive only the authorized profile choices; no new virtualization dependency for this32choice bound. Consider memoization against stable catalog/context/value identities only if measured rerenders justify it. Do not cache authorization or generated tuple decisions across connection/identity changes.",
+    "Capture long180character model labels,390px light/dark/reduced-motion focus and keyboard; no side scroll or hidden apply/close. Loading and result-count announcements should be concise; error announcement must not steal input focus."
+  ],
+  "acceptanceForExistingTODO11": [
+    "Find a model then change effort/speed without scanning fulltuple rows, and apply only an exact catalogtuple; unsupported combinations explain the unavailable axis without offering a fake request.",
+    "Catalog with20profiles×up to32choices: currentprofile-only interaction and boundedsmall DOM; exactidentitynotfirstprofile. Keep single catalog lifecycle and explicit reads.",
+    "Selected tuple absent from initial page; loadmore later resolves sameid/runner/digest; oldvalue survives errors, pagination, empty page and refresh. Digest replacement stays mismatched until explicitauthorizedhostchange.",
+    "Changing query/highlight/filter and closing modal leaves C unchanged; applying updates C once. A sent/B queued snapshots remain byte-identical, including recovery/export/import and unknown originalkey retry.",
+    "Keyboard tabs/arrow keys/Enter/Space/Escape and close-navigation focus; narrow390light/dark/180char model and reduced motion actual screenshots.",
+    "No schema widening, profile switching in an existing lockedconversation, provider probe, implicit default, or claim that configuredfast was actually observedfast."
+  ],
+  "methods": "Local find-skills discovery reused brainstorming bounded alternatives, codebase-design controlled interface/private seam and clean-code dataflow review. User already authorized ongoing research; this is a source-only recommendation, no implementation or new runtime permission. Primary WAI patterns checked. Only /tmp artifact written; manager persists within existing TODO11 and own scopes.",
+  "notDone": [
+    "No project edit, newclaim/task, provider/HTTP/PG/browser run, currentcomponent rewrite or independentreview override",
+    "This recommendation does not blockf3limitedclosure, Settingsbrowserqueue orDPERF05sourcework",
+    "Future exacthosthandoff and fixedconsumerverification still required"
+  ]
+}

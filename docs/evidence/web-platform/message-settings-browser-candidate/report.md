@@ -1,0 +1,29 @@
+# MessageSettings browser preparation — NOT_RUN
+
+Fixed implementation f3a6a7ec89d5b3f789c49b0d8662401b23032ab2, actual metadata HEAD 010cb9c7847e35e4632d505c8eb866dcaa40f7b9 clean. Six source files remain byte-identical. Only this private 0700 directory was created. No gate, Node/import, HTTP, Chrome, PG, build, install, links, space sampling or product test ran. Python ast.parse checked only supervisor syntax; JS syntax/runtime remain unexecuted.
+
+## Narrow reuse and ownership
+
+`supervisor.py` is the existing reviewed DPERF parent adapted to one MessageSettings worker; `supervisor.diff` is the exact delta. It retains one cumulative60s clock including startup, reserves15s cleanup, monitors free space, writes the sole budget and owns the process group. The only candidate command is `python3 /private/tmp/message-settings-browser-candidate/supervisor.py --gate <future-manager-gate>`. Current binding state deliberately rejects execution. Review/rebinding and a fresh single-use manager gate are still required.
+
+`worker.mjs` uses actual fixed exports startMessageSettingsFixture/checkMessageSettingsPicker; no scenario or assertions copied. It starts Vite with own scratch/cache, launches explicit Chrome with detached:false, then reads this profile's DevToolsActivePort and attaches pinned Playwright over loopback CDP. It neither discovers existing tabs nor uses a user profile. Chrome PID is recorded immediately. Child signals only that PID; parent TERM(<=3s)/KILL/reap applies only to the new session PGID. Scratch deletion requires confirmed group absence. Late fixture startup is assigned before checkpoint/cleanup; imports/startup stuck past deadline are killed with the same owned group, not abandoned promises.
+
+Parent absolute deadlines precede source/hash setup. Child imports are after gate validation and use the parent's remaining deadline. No browser launch/new page after stopped/deadline checkpoints. Cleanup failure, missing/unknown result, nonzero exit, page error, unfinished fixture/Chrome/group/scratch, or timeout is failure; no automatic retries. The two390 screenshots and all four existing scenario groups remain unchanged. This is an independent component + synthetic public-client HTTP catalog, not production App/Send/Queue/Recovery integration.
+
+## Actual runtime inputs
+
+`runtime-tsconfig.json` is JS runtime mapping, separate from earlier declarations-only typecheck configuration. Node24 uses fixed TSX loader.mjs via --import and TSX_TSCONFIG_PATH; unlike TSX CLI it does not add a launcher child that would obscure parentPid. Installed TSX register source explicitly reads that environment variable. `aliases.json` creates anchored exact Vite regexes (React, jsx-runtime, jsx-dev-runtime, react-dom/client, Radix, Lucide, utilities, Zod, Tailwind CSS, tw-animate CSS). No react prefix alias or .d.ts target. @flow/client and contracts map only to this WT source, never moving dist.
+
+Binding pins six reviewed sources,116 existing own readonly files (including real execution-profiles.css and public @flow closure),37 external entry/package metadata files, Node24 executable, and all three prepared worker/config files. JS/CSS paths/versions originate in the earlier runtime preparation manifest. Full external transitive bytes and Chrome framework are not exhaustively hashed; package metadata/entry hashes are the stated boundary. Chrome version and exact executable are pinned without executing it. No project dependencies or caches are written.
+
+Vite configFile:false avoids config-loader adjacent .vite-temp fallback. Child sandbox writes only the exact own scratch and run output plus /dev/null, denies external network and allows only loopback bind/inbound/outbound. HOME is unchanged; TMP/TEMP/TMPDIR/XDG_CACHE_HOME/NODE_COMPILE_CACHE point to scratch and compile/TSX cache is disabled. Vite may write only explicit scratch/cache; any native tool/package write elsewhere fails closed. Existing Vite fs.strict remains enabled. Runtime alias/CSS resolution and nested Chrome/macOS sandbox compatibility are unverified; failure cannot justify widening paths or installing packages.
+
+## Resource and evidence bounds
+
+Temporary scratch/profile/Vite cache cap64MiB for both logical and st_blocks allocated accounting; retained evidence8MiB separately covers all candidate config/raw/log/result/budget and screenshots. Worker stdout cap1MiB, Chrome log64KiB, final JSON reserve128KiB. Parent polls250ms during work and checks between input reads. Start>=1,207,959,552B (1GiB+128MiB), stop<=1,140,850,688B (1GiB+64MiB), monitor failure stops. These are observed limits, not hard disk quotas or isolation from OS swap/concurrent writers. No new profile peak or free-space measurement has been made;64MiB remains the approved conservative temporary budget candidate.
+
+A fresh future gate binds reviewed binding/runner hashes, exact sourceHead/six hashes, same claim/no overlap, expiry/run/previous cumulative browser budget and the60s remainder. No command/runtime gate is written here. Earlier noEmit/direct37 evidence is separate; its parent count assertion FAIL and2,762ms are retained and never relabelled as this browser's execution.
+
+## Clean-code / skills
+
+Reused installed find-skills, webapp-testing and clean-code methods, no installation. Applied real role waits in existing scenarios, one budget owner, explicit resources and fail-closed cleanup. Did not run generic webapp helper because this dispatch only allows preparing the previously reviewed resource supervisor. Static review corrected bounded Chrome log storage and avoided overwriting early page errors. No production delta is needed for this candidate.

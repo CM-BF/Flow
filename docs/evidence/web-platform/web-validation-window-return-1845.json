@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-06T18:46:29.411800+00:00",
+  "state": "WINDOW_RETURNED_NO_OWN_ACTIVE_HEAVY_OR_PURE_CHECK",
+  "holder": "Execution Lead controls nextsharedwindow; R01 preparation only, PG/Chrome notstarted per inbound",
+  "source": "Authorcleanup+rootindependentrawreview; Leadlatestinbound, no managerpersonal/processresampling",
+  "cleanupEvidence": [
+    {
+      "task": "MessageSettings focusedcheck",
+      "pgid": 66175,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "record": "message-settings-first-check/result.json",
+      "review": "message-settings-first-root-evidence-review.json",
+      "PG": false,
+      "Chrome": false
+    },
+    {
+      "task": "Recovery38 controlleddirect",
+      "pgid": 57186,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "record": "recovery01-38-first-check/result.json",
+      "review": "recovery01-38-root-evidence-review.json",
+      "PG": false,
+      "Chrome": false
+    },
+    {
+      "task": "Recovery first realbrowser subset",
+      "worker": 25550,
+      "Chrome": 25768,
+      "groupsAbsent": true,
+      "scratchRemoved": true,
+      "databaseRemoved": true,
+      "connections": 0,
+      "remaining": [],
+      "record": "recovery01-browser-first-intake.json",
+      "review": "recovery01-rec667-root-evidence-review.json"
+    }
+  ],
+  "leadLatest": {
+    "mainReported": "888c clean",
+    "dashboardSourcesReported": 172,
+    "sameVersionRestoration": "SVC05sameversionwindowclosed",
+    "personalTupleReported": "source362/v15+caa1/v2 remains; no af51 publication",
+    "R01": "Fouroldscripts adaptedforretained461a/caa1→af51 Appcompatibility preparation; noPG/Chrome start; notd629rerun"
+  },
+  "restrictions": [
+    "NoSettingsorRecoverybrowsergate",
+    "Do not treatpuredirectasPG/Chromewindow",
+    "NoexternalLeadmessageattempt;canonicalhandoffonly",
+    "Do notre-runpassed37/38checks"
+  ]
+}

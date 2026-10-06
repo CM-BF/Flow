@@ -1,11 +1,11 @@
 {
-  "at": "2026-10-06T18:41:11.506974+00:00",
-  "state": "SOURCE_REQUEST_NOT_PROVISIONED_NOT_TAKEN",
+  "at": "2026-10-06T18:53:15.161090+00:00",
+  "state": "COMMITTED_SOURCE_READY_IMPLEMENTING",
   "taskCandidate": "WPF-DPERF05",
   "parent": "D01",
   "title": "看板 UTC 时间格式兼容",
   "ownerCandidate": "workspace_panels_owner",
-  "ownerSequence": "Recovery3896 metadata pushed clean and source frozen; this independent source-only leaf starts only after provision+atomicCOMMITTED. ExistingRecoveryclaim remains independent; do not edit its source or stealW01settings work.",
+  "ownerSequence": "Recovery3896 source/metadata frozen; panels dispatched only to independent DPERF05 tree. Its existing Recovery claim remains occupied without concurrent writes.",
   "worktreeCandidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
   "branchCandidate": "codex/dashboard-status-timestamps",
   "base": "ec5da343880879154e2392f52eaa915d5b08aa77",
@@ -21,8 +21,8 @@
   "files": 10,
   "physicalCaveat": "Exact blob/4KiB estimate excludes Git/admin filesystem overhead; not sampled physical allocation",
   "provisionOwner": "Original Execution Lead sole Git operator; manager settings one-path exception does not apply",
-  "pathExists": false,
-  "branchExists": false,
+  "pathExists": true,
+  "branchExists": true,
   "ledger": {
     "observedAt": "2026-10-06T18:39:39.061Z",
     "state": "available",
@@ -47,7 +47,7 @@
       "2026-10-06T14:35:06.228081+00:00"
     ]
   },
-  "fixedSourceFinding": "status.mjs41 regex excludesfraction/+00:00;42 toISOString may throw malformedcalendar. Root reviewing exact date boundary. Aggregatecatch/stale/future policy remains unchanged.",
+  "fixedSourceFinding": "status regex excludesfraction/+00:00,unguardedtoISOString maythrow; root fixedec5 privateparser boundary approved, aggregateaging remainsunchanged",
   "acceptance": [
     "Keep existing UTC and Z formats, accept fractional seconds and explicit+00:00 forUTC",
     "Reject illegal day/month/time safely via parsererrors/null, never throw snapshot; no arbitraryoffset acceptance inferred",
@@ -56,7 +56,7 @@
     "After reviewedmain/deployment Lead provides actual3task recovered observations; sourceproof is not deploymentproof"
   ],
   "budgetProposal": {
-    "state": "PROPOSED_NOT_AUTHORIZED_RUN",
+    "state": "DESIGN_REASONABLE_FIXED_ENTRANCE_AND_FRESH_GATE_STILL_REQUIRED",
     "totalMs": 15000,
     "cleanupMs": 5000,
     "tmpBytes": 2097152,
@@ -68,8 +68,70 @@
     "Chrome": false,
     "install": false
   },
-  "next": "Root final scopeddesign+Lead unique source provision receipt, verifyactualbranch/head/clean then freshatomic4take and solepanels dispatch; no writes beforeCOMMITTED",
+  "next": "Owner continues source-only; originalLead registers uniqueownerstatus fromSOURCE_READY; fixedsource andreview before pureparsergate",
   "managerProductRuns": 0,
   "managerPageSamples": 0,
-  "managerFreeSamples": 0
+  "managerFreeSamples": 0,
+  "designReview": "dperf05-utc-root-design.json",
+  "designVerdict": "Four scopes/10fixedfiles/79472B approved; normal atomic write claim now COMMITTED, runtime gate absent",
+  "latestClaimObservation": {
+    "at": "2026-10-06T18:49:13.360Z",
+    "state": "available",
+    "overlaps": [],
+    "committedAt": "2026-10-06T18:49:44.597Z",
+    "claimId": "9a876001-611c-4f79-819f-2284c04d8f61",
+    "version": 1,
+    "receipt": "dperf05-take-receipt.json"
+  },
+  "validationSplit": {
+    "leaf": "Pure parseStatus Node builtins only; no aggregate/legacyfixture import, PG, Gitrepos or HTTP",
+    "integration": "Lead installedtree actualaggregate old/future/malformed/fractionage regressions; do not copyagingformula and claimconsumertested",
+    "deployment": "Lead actualTUI/COST/MATURE02 freshness observations afterverifieddeployment, reportrealagedouttruthfully"
+  },
+  "owner": "workspace_panels_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
+  "branch": "codex/dashboard-status-timestamps",
+  "provisionReceipt": "dperf05-provision.json",
+  "takeReceipt": "dperf05-take-receipt.json",
+  "takePreflight": "dperf05-take-preflight.json",
+  "claim": {
+    "claimId": "9a876001-611c-4f79-819f-2284c04d8f61",
+    "version": 1,
+    "taskId": "WPF-DPERF05",
+    "lead": "external_web_d01_owner",
+    "worker": "workspace_panels_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
+    "branch": "codex/dashboard-status-timestamps",
+    "scope": [
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "docs/evidence/wpf-dperf05",
+      "plans/wpf-dperf05-status-timestamps"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-06T18:49:44.597Z",
+    "createdAt": "2026-10-06T18:49:44.597Z"
+  },
+  "dispatch": {
+    "method": "collaboration.followup_task",
+    "recipient": "/root/workspace_panels_owner",
+    "sourceOnly": true,
+    "canonical": "plans/wpf-dperf05-status-timestamps/status.md",
+    "registration": "Firstcanonical edd4e6b pushed clean; normal SOURCE_READY sent via canonical forLead registry, not deployed"
+  },
+  "provisionObservation": {
+    "owner": "Original Execution Lead sole Git operator",
+    "base": "ec5da343880879154e2392f52eaa915d5b08aa77",
+    "cleanBeforeTake": true,
+    "fixedPinsMatched": true,
+    "files": 10,
+    "logicalBytes": 79472,
+    "reportedAllocatedKiB": 108,
+    "managerProvisionOperations": 0
+  },
+  "sourceReady": "dperf05-source-ready.json"
 }

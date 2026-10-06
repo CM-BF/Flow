@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-06T18:55:24.672579+00:00",
+  "taskId": "WPF-DPERF05",
+  "parentTaskId": "D01",
+  "lead": "external_web_d01_owner",
+  "worker": "workspace_panels_owner",
+  "state": "SOURCE_READY_REGISTRATION_REQUESTED",
+  "sourceMeaning": "First unique owner canonical, not completed implementation or approved runtime",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
+  "branch": "codex/dashboard-status-timestamps",
+  "base": "ec5da343880879154e2392f52eaa915d5b08aa77",
+  "commit": "edd4e6b15d799a535debb778a7c03984aaaca322",
+  "localEqualsRemote": true,
+  "cleanAtObservation": true,
+  "canonical": "plans/wpf-dperf05-status-timestamps/status.md",
+  "files": [
+    {
+      "path": "plans/wpf-dperf05-status-timestamps/plan.md",
+      "bytes": 2141,
+      "sha256": "5f951f9e8d34e7737ca9502d312a331341dddd3aed6af5d65682f695d3369165"
+    },
+    {
+      "path": "plans/wpf-dperf05-status-timestamps/status.md",
+      "bytes": 2495,
+      "sha256": "ca374be216ade2efcd1aa8e1cb7e1539d7c522f190365d206ac522d33519ba74"
+    },
+    {
+      "path": "plans/wpf-dperf05-status-timestamps/review.md",
+      "bytes": 793,
+      "sha256": "4dde2766a16ec41ff576f5d45c14b5772ed20c5832597cfff01db6cedbc4e80c"
+    }
+  ],
+  "claimId": "9a876001-611c-4f79-819f-2284c04d8f61",
+  "claimVersion": 1,
+  "receipt": "dperf05-take-receipt.json",
+  "checks": "NOT_RUN",
+  "review": "NOT_STARTED",
+  "registration": "Pending original Lead registry; do not infer actual dashboard display from SOURCE_READY",
+  "productRuns": 0,
+  "pageSamples": 0
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:11 UTC |
+| 最近更新 | 2026-10-06 18:50 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 恢复功能已能建立浏览器会话，但草稿保存未通过首轮真实检查；失败证据和清理结果已保留。 |
-| 下一可用交付 | 修复默认保存启动和数据库观察器，审查固定源码后再验证刷新恢复；成功排队回执的紧凑呈现留在原计划。 |
-| 当前阻塞 | ACTIVE: 草稿恢复有两项明确源码问题正在修复；跨中心、注销竞态及完整发送恢复旅程仍未验收。 |
+| 当前产出 | 草稿保存启动和数据库观察器已修复，38项受控检查通过；首轮真实浏览器失败证据仍保留。 |
+| 下一可用交付 | 在独立窗口复验真实浏览器的草稿保存与刷新恢复；成功排队回执的紧凑呈现留在原计划。 |
+| 当前阻塞 | ACTIVE: 源码修复与38项受控检查已完成，真实浏览器尚未复验；跨中心、注销竞态及完整发送恢复旅程仍未验收。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |
@@ -59,4 +59,4 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 
 历史17:18 [ec91 fixture固定接收](../../docs/evidence/web-platform/recovery01-ec91-intake.json)与[root独立源审](../../docs/evidence/web-platform/recovery01-ec91-native-proxy-root-review.json)只确认Host/SSE/清理接缝源码修复，未运行新fixture；原1b8受控27保原目标。丢ACK注入的浏览器透明retry前提和三中心语义仍须真实验收，full review仍NOT_STARTED。
 
-本安全点：[首轮真实浏览器失败及清理](../../docs/evidence/web-platform/recovery01-browser-first-intake.json)、[两项源审修复派工](../../docs/evidence/web-platform/recovery01-idb-repair-dispatch.json)归原06-04；[accepted queue后继](../../docs/evidence/web-platform/accepted-queue-506-intake.json)归原06-03。原27受控通过与新browser失败分开，不修改失败raw或全feature验收状态。
+本安全点：7cc两项源码修复已获限定独审，单次[38项受控检查通过](../../docs/evidence/web-platform/recovery01-38-check-intake.json)并获[root限定实证接收](../../docs/evidence/web-platform/recovery01-38-root-evidence-review.json)，owner3896已封存。它们归原06-04，不改变[首轮真实浏览器失败及清理](../../docs/evidence/web-platform/recovery01-browser-first-intake.json)，真实IDB/浏览器与完整旅程仍未复验。[accepted queue后继](../../docs/evidence/web-platform/accepted-queue-506-intake.json)归原06-03；整体大task检查仍未通过，不继承子片绿色结果。

@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-06T18:48:22.681519+00:00",
+  "request": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/dperf05-utc-source-request.json",
+  "requestSHA256": "054418742d4c1bf0895af83897ad766680673d9b254b008b32e87d9861954887",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
+  "branch": "codex/dashboard-status-timestamps",
+  "fixedBase": "ec5da343880879154e2392f52eaa915d5b08aa77",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 17226,
+      "sha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa"
+    },
+    {
+      "path": "apps/execution-dashboard/package.json",
+      "bytes": 362,
+      "sha256": "8492f44ae6f90dd60a76676f84801f1048256abd5c79b708126358731da8d8aa"
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "bytes": 2396,
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a"
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074"
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "bytes": 6883,
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 5238,
+      "sha256": "45322a4e1eb0884c212b05f356cbf19f73e79f8c01758426216c52aa32ee7748"
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "bytes": 5903,
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4"
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "bytes": 15077,
+      "sha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c"
+    },
+    {
+      "path": "plans/README.md",
+      "bytes": 21199,
+      "sha256": "c85c10ff1847d08814878392794a5b225da83a6817924898607d3222c2d52394"
+    }
+  ],
+  "count": 10,
+  "logicalBytes": 79472,
+  "allocatedKiB": 108,
+  "availableBeforeBytes": 1556619264,
+  "availableAfterBytes": 1555337216,
+  "clean": true,
+  "mainAndSharedConfigUnchanged": true,
+  "ledgerObservedAt": "2026-10-06T18:48:21.911Z",
+  "selection": [
+    "AGENTS.md",
+    "apps/execution-dashboard/package.json",
+    "apps/execution-dashboard/src/git-snapshot.mjs",
+    "apps/execution-dashboard/src/human.mjs",
+    "apps/execution-dashboard/src/proof.mjs",
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/src/task-links.mjs",
+    "package.json",
+    "plans/AGENTS.md",
+    "plans/README.md",
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "plans/wpf-dperf05-status-timestamps",
+    "docs/evidence/wpf-dperf05"
+  ],
+  "scopePermission": "source provision only, Web fresh atomic take required",
+  "install": 0,
+  "imports": 0,
+  "tests": 0,
+  "PG": 0,
+  "provider": 0
+}

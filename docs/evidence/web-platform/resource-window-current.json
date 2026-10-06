@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T18:23:18.805082+00:00",
-  "state": "RECOVERY_FIRST_BROWSER_FAILED_CLEANED_WINDOW_RETURNED",
-  "groupWindowOwnership": "Recovery prepared subset one run ended FAILED/cleanupcomplete; returned immediately to Lead. No automatic retry/DPERF window. Private ownadmin env removed after all ownedprocesses ended.",
+  "recordedAt": "2026-10-06T18:53:15.161090+00:00",
+  "state": "GROUP_WINDOW_RETURNED_NO_ACTIVE_HEAVY_CHECK",
+  "groupWindowOwnership": "Lead explicitly accepted web-validation-window-return-1845.json. Web has no active PG/Chrome/HTTP/pure-check. R01 next heavy window is Lead coordinated; new DPERF05 source claim is control plane, not product runtime admission.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -390,7 +390,7 @@
     "Recovery累计14846.267375/90000ms、余75153.732625仅算术；失败后窗口已返，源码修复不带运行许可。",
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
-  "latestCoordination": "Lead SVC05H same-version Web-only restore finished, checkoutmain ec5clean; no newaf51 deployment. Our MessageSettings/directRecovery checks completed with ownedgroups/scratch absent; no active groupPG/Chrome. Settingsbrowser candidate not admitted; nextsharedwindow must be explicitly coordinated.",
+  "latestCoordination": "Lead latest: SVC05sameversionrestoreclosed/main888cclean/172sources; personal362-v15+caa1-v2 unchanged; R01preparationnext, noPG/Chrome yet. Webwindowreturned/ownallgroups+scratchcleared; no newbrowsergate.",
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
     "claimId": "e0b86bb5-b373-4ad6-9257-6d8c18d06335",
@@ -445,10 +445,10 @@
     "version": 1,
     "sourceRequest": "mature02-message-settings-source-request.json",
     "PG": false,
-    "browser": false,
+    "browser": "NOT_RUN_NO_WINDOW_OR_GATE",
     "sourceReady": "message-settings-source-ready.json",
     "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
-    "metadata": "010cb9c7847e35e4632d505c8eb866dcaa40f7b9",
+    "metadata": "f80052b26f5f3c6057a6a056fa6875f984fd700b",
     "registration": "message-settings-registration-intake.json",
     "checkPreparation": "message-settings-check-preparation/report.md",
     "sourceFixedBeforeDelta": "Historical ed769 estimate20 not authoritative; actual f3 sixsources executed at85aba",
@@ -461,7 +461,11 @@
     "cleanupComplete": true,
     "evidence": "message-settings-first-check-intake.json",
     "parentReview": "message-settings-supervisor-root-review.json",
-    "evidenceReview": "message-settings-first-root-evidence-review.json"
+    "evidenceReview": "message-settings-first-root-evidence-review.json",
+    "browserCandidate": "message-settings-browser-candidate/intake.json",
+    "browserCandidateState": "APPROVED_SOURCE_PREPARATION_SCOPED_NOT_RUN_NO_WINDOW_OR_GATE",
+    "metadataSeal": "message-settings-browser-metadata-seal.json"
   },
-  "retainedAf51": "Lead originalassignment_review accepted six-scope/newtree preparation; no Web ownership or runtime; see retained-af51-owner-scope-proposal.json"
+  "retainedAf51": "Lead originalassignment_review accepted six-scope/newtree preparation; no Web ownership or runtime; see retained-af51-owner-scope-proposal.json",
+  "currentWindowReturn": "web-validation-window-return-1845.json"
 }

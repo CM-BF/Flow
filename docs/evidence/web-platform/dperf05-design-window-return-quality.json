@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-06T18:53:15.161090+00:00",
+  "scope": "Originalmanagement6 only; rootdesign/leadreceipt/workerpreparation sourceonlyintake",
+  "skills": "Reuse find-skills/clean-code; keep candidate state explicit, raw unchanged, no parallelmanualprogress; ownerstatus remains authoritative",
+  "archivedOriginals": [
+    {
+      "source": "/tmp/root-dashboard-take-traceability-review.json",
+      "destination": "dashboard-take-traceability-root-review.json",
+      "sha256": "0c9fa77e762f413c4293d6e67e0e834fdf3b1ea9903b9adca995bfbc4e067034"
+    },
+    {
+      "source": "/tmp/root-message-settings-browser-supervisor-initial-review.json",
+      "destination": "message-settings-browser-candidate/root-initial-review.json",
+      "sha256": "d3a72eeb3e5d8d947a976688a6d10889e7b6ac458d0adc32b519796e7d6d50ca"
+    },
+    {
+      "source": "/tmp/message-settings-browser-worker-peer-review/report.md",
+      "destination": "message-settings-browser-candidate/peer/report.md",
+      "sha256": "b478e892af4c9bd2e45fba22bb772f0a2c9b9a58314136f75761e4a12c305405"
+    },
+    {
+      "source": "/tmp/message-settings-browser-worker-peer-review/audit.json",
+      "destination": "message-settings-browser-candidate/peer/audit.json",
+      "sha256": "ecd8eedf7c6fd0a89bdbe543bbcb1a02b862f7ffbd3e4e3dc3e6d80afc14ac00"
+    }
+  ],
+  "checks": "JSON syntax, exact scope, raw hashes, latest9-file candidate manifest, Markdown links and actual status parser; no product runtime",
+  "productRuns": 0,
+  "freeSamples": 0,
+  "HTTPOrPGOrChromeValidation": 0,
+  "newClaims": 1,
+  "newWorktrees": 0,
+  "controlPlane": "Existingmanager632v3/fresh18:49:13 confirmed; normal D04 atomic take9a876v1 committed18:49:44 afterLeadprovision, source-onlydispatch; no productPG experiment",
+  "window": "ReturnedtoLead; rootreads canonical; noexternalmessageattempt",
+  "pending": "DPERF05 source-only implementation and Lead registry afterfirstcanonicaledd4e6b; Settings futurebrowserwindow+rebind, no gate",
+  "findingsAndFixes": [
+    "MATURE06 current human summary lagged7cc repair/direct38 acceptance; corrected current capabilities and next browser boundary without markingwholeparentpassed.",
+    "DPERF05 pre-take snapshot preserved historical; current row derives atomicreceipt, no parallelprogresssource.",
+    "Settings final candidate pins replace current initialcandidate reference; both originalreviews and initialfailure preserved."
+  ],
+  "validation": {
+    "files": 28,
+    "json": 20,
+    "markdown": 7,
+    "localLinks": 234,
+    "historicalMissing": 15,
+    "newBrokenLinks": 0,
+    "statusParserCount": 7,
+    "statusParserErrors": 0,
+    "allHumanComplete": true,
+    "originalCopiesExact": 9,
+    "diffcheck": "Passed for management changed files; no owner raw diff rewritten",
+    "sourceOnly": true
+  }
+}

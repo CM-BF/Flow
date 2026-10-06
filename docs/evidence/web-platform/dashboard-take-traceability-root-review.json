@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-06T18:47:12.232509+00:00",
+  "fixedMain": "771324083b23bf7bc70dd9704b773380ff61498b",
+  "scope": "Source traceability of latest user requirement: coordinate other leads and show actual takes in dashboard",
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 7025,
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "bytes": 7058,
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 18589,
+      "sha256": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9"
+    },
+    {
+      "path": "apps/execution-dashboard/test/coordination-browser.mjs",
+      "bytes": 5394,
+      "sha256": "bd82005ad6e41d62bb5e6bfa22255ee48d8a1c5564448e5e48af5e407ca8a58e"
+    }
+  ],
+  "observations": [
+    {
+      "file": "apps/execution-dashboard/src/aggregate.mjs",
+      "line": 81,
+      "fact": "Registered task assignments derive from available ledger claims, exclude released, and expose branch/worktree source mismatch; unavailable is null rather than no owner."
+    },
+    {
+      "file": "apps/execution-dashboard/src/aggregate.mjs",
+      "line": 85,
+      "fact": "Active claims with no registered task are separately exposed, so taken work is not silently hidden."
+    },
+    {
+      "file": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "line": 73,
+      "fact": "A take is checked against active task/worktree/scope conflicts before transaction commit and receipt; request replay is payload-bound."
+    },
+    {
+      "file": "apps/execution-dashboard/public/app.js",
+      "line": 66,
+      "fact": "Card differentiates unknown, no registered take, taken, pending handoff, stale still occupied, and source mismatch."
+    },
+    {
+      "file": "apps/execution-dashboard/public/app.js",
+      "line": 176,
+      "fact": "Details display claim ID/version, Lead/Worker, role/state, branch/worktree, literal scopes, origin and update/verification time."
+    },
+    {
+      "file": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "line": 95,
+      "fact": "Coordination DB unavailable returns unknown with explicit do-not-take semantics, never free or released."
+    }
+  ],
+  "checks": "Existing coordination-browser test source includes actual-claim and unknown/unregistered-claim display assertions. Root did not run it or treat test source as passing evidence.",
+  "conclusion": "Current source has a single-ledger path from committed claim to user-visible take details; manager must keep new tasks NOT_TAKEN until real committed receipt and registered owner source. No new parallel manual status table needed.",
+  "limitations": [
+    "No actual4320 page or snapshot resampled",
+    "No DB read/mutation, product test or runtime import",
+    "Source review does not establish current deployment/live display"
+  ],
+  "skills": "Existing local find-skills and clean-code applied to ownership data flow, unknown-state truthfulness and avoiding duplicate manual facts."
+}
