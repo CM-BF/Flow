@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T19:33:36.037729+00:00 / main8d84由Lead报告，部署未核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T19:44:52.442490+00:00 / main8d84由Lead报告，部署未核 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；native source51c11fca6e91069c69790c787025a214a3e114bf，检查证据另固定；旧候选按历史Git保留 |
-| 工作树dirty状态 | 本轮仅协调恢复记录、父canonical去重及current归档会计；source/检查/fixedinput和原错误收据不变。 |
+| 工作树dirty状态 | 本轮仅SVC07精确provision路由、重复叙述压缩及current归档会计；source/检查/fixedinput和原错误收据不变。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
@@ -99,3 +99,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收�
 17:16安全点：沿TODO-03固定[native最小设计](../../docs/evidence/wpf-mature-02/native-catalog-probe/README.md)，0目标/检查，当前与已封存Node候选分开。R06/loader/policy只读；fresh v6三scope，已应用本地find-skills/openai-docs/brainstorming/clean-code。CORE正式批准及CHAT06P03已领取只作canonical路由，子状态由原owner维护。
 
 17:57新pagesize段：GO/Mika已批准仅准备一个C观测器与A/B policy，新增hw.pagesize是两臂唯一权限差；两臂共同exact helper规则显式列出。固定上游/SDK声明与当前clang/ld指纹只读核，0编译/helper。新片预算独立，旧native7a72 sealed-accounting按历史Git保留，功能仍失败。
+
+19:44:10管理核验：本父claim v6 ACTIVE三scope、75e266分支clean；仅路由GO授权SVC07准备请求，S01P07/REQ15仍保留。沿已读find-skills/clean-code复核单一owner、当前/历史边界与重复叙述；0检查/服务/PG/native，center恢复优先，实际NOT_OPEN。
