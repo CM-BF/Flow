@@ -143,7 +143,7 @@ describe('additive conversation context receipts', () => {
   it('uses v2 only for nonempty uploads, retaining two explicit ordered segments', () => {
     const attachments = [descriptor(secondId, 'second'), descriptor(id, 'first')]; const actual = v2(attachments);
     expect(conversationContextTemplate([citation], attachments.map(item => item.reference))).toBe(2);
-    expect(parseAttachmentContextReceipt({ projectId, knowledge: [citation], attachments }, actual)).toEqual(actual);
+    expect(parseAttachmentContextReceipt({ projectId, knowledge: [citation], attachments: attachments.map(value => value.reference) }, actual)).toEqual(actual);
     expect(conversationContextReferenceSchema.safeParse({ ...actual, attachments: [] }).success).toBe(false);
     expect(conversationContextReferenceSchema.safeParse({ ...v1, attachments }).success).toBe(false);
     expect(conversationContextReferenceSchema.safeParse({ ...actual, order: 'attachments-then-knowledge' }).success).toBe(false);
@@ -162,7 +162,7 @@ describe('additive conversation context receipts', () => {
     expect(() => conversationContextTemplate([citation], [wrong.reference])).toThrow('attachment_reference_mismatch');
   });
   it('checks frozen upload receipt descriptors, not merely count/digest presence, while leaving the caller input untouched', () => {
-    const attachments = [descriptor(), descriptor(secondId, 'second')]; const expected = { projectId, knowledge: [citation], attachments }; const before = structuredClone(expected);
+    const attachments = [descriptor(), descriptor(secondId, 'second')]; const expected = { projectId, knowledge: [citation], attachments: attachments.map(value => value.reference), descriptors: attachments }; const before = structuredClone(expected);
     for (const wire of [v2([...attachments].reverse()), v2([{ ...attachments[0]!, byteLength: 4 }, attachments[1]!]), v2([{ ...attachments[0]!, name: 'other.txt' }, attachments[1]!]), v2([{ ...attachments[0]!, reference: { ...attachments[0]!.reference, contentDigest: hash('different') } }, attachments[1]!]), v1]) {
       expect(() => parseAttachmentContextReceipt(expected, wire)).toThrow();
     }
@@ -171,7 +171,7 @@ describe('additive conversation context receipts', () => {
   });
   it('checks knowledge order independently and rejects a fabricated current-version observation', () => {
     const another = { ...citation, sourceId: '30000000-0000-4000-8000-000000000002' }; const next = { ...source, citation: another };
-    const expected = { projectId, knowledge: [citation, another], attachments: [descriptor()] };
+    const expected = { projectId, knowledge: [citation, another], attachments: [descriptor().reference] };
     expect(() => parseAttachmentContextReceipt(expected, { ...v2(), sources: [next, source] })).toThrow('attachment_reference_mismatch');
     expect(conversationContextReferenceSchema.safeParse({ ...v1, sources: [{ ...source, citation: { ...citation, version: 2 } }] }).success).toBe(false);
   });
@@ -182,7 +182,7 @@ describe('additive conversation context receipts', () => {
     };
     const before = structuredClone(wire);
     expect(conversationContextReferenceSchema.safeParse(wire).success).toBe(false);
-    expect(parseAttachmentContextReceipt({ projectId, knowledge: [citation], attachments: [descriptor()] }, wire)).toEqual(original);
+    expect(parseAttachmentContextReceipt({ projectId, knowledge: [citation], attachments: [descriptor().reference] }, wire)).toEqual(original);
     expect(wire).toEqual(before);
     expect(conversationContextResponseSchema.parse({ ...v1, future: true, sources: wire.sources })).toEqual(v1);
   });
@@ -196,7 +196,19 @@ describe('additive conversation context receipts', () => {
       { ...withExtra, attachments: [descriptor(id, 'a'.repeat(8192))] },
       { ...withExtra, attachments: [{ ...descriptor(), byteLength: 4, future: true }] },
       { ...withExtra, attachments: [{ ...descriptor(), name: 'different.txt', future: true }] },
-    ]) expect(() => parseAttachmentContextReceipt({ projectId, knowledge: [citation], attachments: [descriptor()] }, wire)).toThrow();
+    ]) expect(() => parseAttachmentContextReceipt({ projectId, knowledge: [citation], attachments: [descriptor().reference], descriptors: [descriptor()] }, wire)).toThrow();
+  });
+  it('lets a shared decoder validate frozen wire references without inventing upload display facts', () => {
+    const attachments = [descriptor().reference, descriptor(secondId).reference];
+    const expected = { projectId, knowledge: [citation], attachments };
+    const received = v2([{ ...descriptor(), name: 'recorded.txt' }, descriptor(secondId)]);
+    expect(parseAttachmentContextReceipt(expected, received)).toEqual(received);
+    expect(() => parseAttachmentContextReceipt(expected, v2([...received.attachments].reverse()))).toThrow('attachment_reference_mismatch');
+    expect(() => parseAttachmentContextReceipt(expected, v2([descriptor()]))).toThrow('attachment_reference_mismatch');
+    expect(() => parseAttachmentContextReceipt(expected, v2([{ ...descriptor(), reference: { ...descriptor().reference, contentDigest: hash('wrong') } }, descriptor(secondId)]))).toThrow('attachment_reference_mismatch');
+    expect(() => parseAttachmentContextReceipt({ ...expected, descriptors: [descriptor()] }, received)).toThrow('attachment_reference_mismatch');
+    expect(() => parseAttachmentContextReceipt({ ...expected, descriptors: [descriptor(secondId), descriptor()] }, received)).toThrow('attachment_reference_mismatch');
+    expect(() => parseAttachmentContextReceipt({ ...expected, descriptors: [descriptor(), descriptor(secondId)] }, received)).toThrow('attachment_reference_mismatch');
   });
 });
 

@@ -113,24 +113,30 @@ export function conversationContextTemplate(knowledge: readonly KnowledgeCitatio
 const citationKey = (citation: KnowledgeCitation) => JSON.stringify([citation.projectId, citation.sourceId, citation.version, citation.contentDigest, citation.locator.start, citation.locator.end]);
 
 /** Pure v2 guard shared by consumers after validating the outer task/turn/queue receipt.
- * Expected descriptors come from frozen, verified upload receipts, never runtimeComplete.
+ * Ordered references come from the frozen request. Optional descriptors are extra
+ * expectations from verified upload receipts, never inferred from a bare reference.
  * A mismatch leaves command admission unknown; this function grants no authorization. */
 export function parseAttachmentContextReceipt(expected: {
-  projectId: string; knowledge?: readonly KnowledgeCitation[]; attachments: readonly AttachmentDescriptor[];
+  projectId: string; knowledge?: readonly KnowledgeCitation[]; attachments: readonly AttachmentReference[];
+  descriptors?: readonly AttachmentDescriptor[];
 }, wire: unknown): ConversationContextV2Reference {
   const projectId = idSchema.parse(expected.projectId);
   const knowledge = conversationContextSelectionSchema.parse(expected.knowledge ?? []);
-  const attachments = expected.attachments.map(({ reference, name, mediaType, byteLength }) => attachmentDescriptorSchema.parse({ reference, name, mediaType, byteLength }));
-  if (conversationContextTemplate(knowledge, attachments.map(item => item.reference)) !== 2) throw Error('Attachment receipt requires nonempty frozen attachments.');
+  const attachments = attachmentSelectionSchema.parse(expected.attachments);
+  const descriptors = expected.descriptors?.map(value => attachmentDescriptorSchema.parse(value));
+  if (conversationContextTemplate(knowledge, attachments) !== 2) throw Error('Attachment receipt requires nonempty frozen attachments.');
+  if (descriptors && descriptors.length !== attachments.length) throw Error('attachment_reference_mismatch');
   const actual = conversationContextResponseSchema.parse(wire);
   if (actual.templateVersion !== 2 || actual.sources.length !== knowledge.length || actual.attachments.length !== attachments.length) throw Error('attachment_reference_mismatch');
   for (const [index, citation] of knowledge.entries()) {
     if (citation.projectId !== projectId || citationKey(actual.sources[index]!.citation) !== citationKey(citation)) throw Error('attachment_reference_mismatch');
   }
-  for (const [index, descriptor] of attachments.entries()) {
+  for (const [index, reference] of attachments.entries()) {
     const received = actual.attachments[index]!;
-    if (descriptor.reference.projectId !== projectId || attachmentReferenceKey(received.reference) !== attachmentReferenceKey(descriptor.reference)
-      || received.byteLength !== descriptor.byteLength || received.name !== descriptor.name || received.mediaType !== descriptor.mediaType) throw Error('attachment_reference_mismatch');
+    if (reference.projectId !== projectId || attachmentReferenceKey(received.reference) !== attachmentReferenceKey(reference)) throw Error('attachment_reference_mismatch');
+    const descriptor = descriptors?.[index];
+    if (descriptor && (attachmentReferenceKey(descriptor.reference) !== attachmentReferenceKey(reference)
+      || received.byteLength !== descriptor.byteLength || received.name !== descriptor.name || received.mediaType !== descriptor.mediaType)) throw Error('attachment_reference_mismatch');
   }
   return actual;
 }
