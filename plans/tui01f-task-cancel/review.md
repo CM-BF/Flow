@@ -1,10 +1,10 @@
-独立后续consumer source `9d81b77f0ce0c67ae347a3d1309acbfa5ae650e5` 单独NOT_STARTED/NOT_RUN，仅新增cleanup-journey.test.ts；不包含在45709c的10项局部检查或focused types中。
+独立cleanup-only consumer当前source `f4f9c47c8c36d7c05614ac477f7af3bb49a31680`，新增focused types0；PG NOT_RUN/未获运行许可。它不包含在下列45709c独立批准中。
 
 # TUI01F test-only cleanup repair
 
 Review target commit: 45709c982df080af5a71ecbd66760a76ab65cf94
 
-NOT_STARTED。作者仅新增10项纯定向检查/focused types0；原实际2行为passed、suite exit1保留。请独立审查连接观察有界、异常保留、checkpoint顺序、初始目录身份与删除前核对；真实PG cleanup-only未运行，不据局部检查勾03。[固定证据](../../docs/evidence/tui01f/cleanup-local/README.md)。
+APPROVED。Execution Lead独立全文读3源/10用例/原red-green-types-resource，71fixed/current SHA/bytes逐项一致，无P1/P2，未重跑。批准限10纯检查+focused类型，不含新cleanup-only PG case；原suite exit1保留。[独立批准转录](../../docs/evidence/tui01f/cleanup-local/independent-review.json) / [原始binding](../../docs/evidence/tui01f/cleanup-local/independent-review-bindings.json)。
 
 # TUI01F-03 限定静态准备批准
 

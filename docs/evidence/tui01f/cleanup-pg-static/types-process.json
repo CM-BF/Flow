@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T17:35:07.264569+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/tui01f/cleanup-pg-static/tsconfig.json",
+    "--pretty",
+    "false"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 2.0601541670039296,
+  "pid": 10038,
+  "processGroup": "absent",
+  "freeBeforeBytes": 1185857536,
+  "rawBytes": 0,
+  "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "initialScratch": {
+    "path": "/tmp/flow-tui01f-cleanup-pg-types",
+    "dev": 16777234,
+    "ino": 123102513
+  },
+  "sourceSha256": "0def7b25c74f7f4aa55f785c4f011ed1283887ca178fb216c0c52403b41ce9bf",
+  "scope": "only new cleanup case and direct type closure, no root noEmit/test/PG/import"
+}
