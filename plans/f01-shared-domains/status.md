@@ -15,14 +15,14 @@
 | 工作分支状态 | completed |
 | 检查状态 | PASSED fb0e992e8b308a987bcea273e29e883b9cf13caf；真实HTTP1/1与类型0，0PG/provider |
 | 已集成main状态 / HEAD | 98e规划列表与O13领域已main5dbabadc7dda02da558f48505677eddbc9c83fb5并推送；个人runtime362/v15不变 |
-| Review | NOT_STARTED fb0e992e8b308a987bcea273e29e883b9cf13caf；COST领域由独立owner审，本片仅薄transport |
+| Review | APPROVED fb0e992e8b308a987bcea273e29e883b9cf13caf；assignment_review独立只读，领域与mount各自限定 |
 | 实现目标 | fb0e992e8b308a987bcea273e29e883b9cf13caf |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/usage-readout.test.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | 已准备各端共用的用量读取接口，完整保留来源、缓存和未知覆盖信息。 |
-| 下一可用交付 | 通过独立审查后，将用量说明接入公开中心。 |
+| 下一可用交付 | 将已审用量说明接入公开中心，并验证授权和旧汇总保持。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
