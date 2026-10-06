@@ -171,3 +171,11 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 ## 2026-10-06 20:52:18 UTC — 第二次browser失败安全点
 
 复用本地find-skills/webapp-testing/clean-code方法：保严格定位失败不改.first()/删除断言；观察事实与因果分开，较晚parent stdout/actualexit优先于较早序列化budget。原11run文件和外部capture/gate逐hash保存，19源码不改，先交资源清理再归档。当前暂无代码修复或新抽象；后继需固定身份/真实记录证据定位，不能把来源相同conversation当唯一draft owner的假设直接改为产品结论。0重试/types/direct。
+
+## 2026-10-06 21:10:21 UTC — saved-record identity / focus clean-code安全点
+
+复用本地find-skills、clean-code、codebase-design、webapp-testing、assistant-ui与React方法；当前安装SKILL.md字节hash见本段manifest，无联网安装。命名/职责：draftPreview只投影有界字符串，RecoveryDraftSummary只呈现已载入record；未为摘要调用完整restore parser或增加副作用。未知JSON/date有显式fallback，Unicode按码点而非UTF16切断，长ID/route可换行。材料数字仅本地条数，非ready/授权事实。
+
+发现并修正：合法同route不同viewKey不能当重复稿删除，原locator必须跟已捕获draftId；同时受控Radix没有Trigger引用，补自有invoker与原authority的namespace/generation谓词，而不是绕过host/写第二焦点系统。权限谓词只读，失效返回false；element已移除/hidden/inert/disabled或页面不可见时不focus，teardown清引用。保持原focus trap/default open autofocus和原键盘断言。
+
+源diffcheck0，19current=fixed、仅两源delta/17不变；25raw保真。未知项：摘要窄屏/Unicode/invalid-record展示、真实button回焦及下一browser材料/CAS仍NOT_RUN，不能从静态检查或旧50推行为通过。仅小源码/Git/metadata操作，0tests/types/产品import/HTTP/PG/Chrome/free；完整feature未批准。

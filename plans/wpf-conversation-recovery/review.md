@@ -129,3 +129,15 @@ Root实际时点2026-10-06T20:39:13.481403+00:00，固定 `4d3303d7e107b400ebe8e
 ## 2026-10-06 20:52:18 UTC — 原子集第二次运行证据
 
 [第二次browser验证](../../docs/evidence/wpf-conversation-recovery/browser-second-validation.md)执行d3d45/固定4d330，FAILED/actualexit1；cookieRead PASS，textIntentDraft的Restore定位匹配2行，后续未完成。作者只记录原始事实，尚未作产品或harness根因裁决。清理完整，晚终态累计25520.435ms，未来整数carry25521/剩64479且含15s清理；没有重试许可。19源、首轮10raw、50受控实证各保原范围。完整feature独审NOT_STARTED/targetUNKNOWN，当前运行等待独立证据复核，不自行APPROVED。
+
+## 2026-10-06 21:01:31 UTC — RECOVERY-SAVED-RECORD-IDENTITY P2源码修复派工
+
+Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-identity-design-review.json)确认record按namespace/viewKey区分而现UI/两定位退化为route，合法同route多稿不可辨；真实生成路径仍未唯一证实。按[原21fresh](../../docs/evidence/wpf-conversation-recovery/saved-record-identity-claim.json)只改binding呈现及browser两exact row入口，保原restore/journal/App authority和所有材料/noPOST/CAS断言。0tests/types/运行/free；原两次browser失败、50受控与25520.435ms累计保持。
+
+## 2026-10-06 21:10:21 UTC — 两项P2作者修正待独审
+
+固定 `8ed2741327779e57d717653d10c2180e1897c26a`，仅binding.tsx与conversation-recovery.browser.ts，[19源manifest](../../docs/evidence/wpf-conversation-recovery/saved-record-identity-checkpoint.json)。[Root identity设计](../../docs/evidence/wpf-conversation-recovery/saved-record-identity-design-review.json)与[return-focus源审](../../docs/evidence/wpf-conversation-recovery/saved-record-focus-root-review.json)原样归档，后者[peer原报告](../../docs/evidence/wpf-conversation-recovery/saved-record-focus-peer-report.md)亦保原文。作者两项SOURCE_ADDRESSED_PENDING_REVIEW，未自签CLOSED/APPROVED。
+
+RECOVERY-SAVED-RECORD-IDENTITY：摘要/时间/intent/材料数和折叠完整ID、受控exact row；browser两处原draftId+count1，未去重/删稿/first/nth或减弱原断言。RECOVERY-RETURN-FOCUS：Radix原autofocus生命周期保真实invoker，只在同namespace/generation授权和仍visible/connected/enabled时回焦；旧Workspace撤权/隐藏/卸载不能抢焦点。当前types/direct/browser NOT_RUN；旧50不覆盖新render/焦点。
+
+[Root rec4d运行原件](../../docs/evidence/wpf-conversation-recovery/browser-second-root-review.json)仅FAILED_RUNTIME_EVIDENCE_AND_CLEANUP_ONLY，原两次失败和25raw逐hash保持。完整feature NOT_STARTED、target UNKNOWN、main未接；待root限定两源独审，后续实际验收须另准入。

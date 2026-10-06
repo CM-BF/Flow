@@ -2,29 +2,29 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 20:52:18 UTC |
+| 最近更新 | 2026-10-06 21:10:21 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；产品/helper2b01；当前browser parent限定source4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb；metadata HEAD以Git为准 |
-| 工作树dirty状态 | d3d45 clean执行输入；19源固定4d330且不改；本次归档实际失败raw/metadata，正常push后核local=origin/clean |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段两源checkpoint 8ed2741327779e57d717653d10c2180e1897c26a；其余17源=4d330；metadata HEAD以Git为准 |
+| 工作树dirty状态 | 两源已固定；本次仅收口own metadata，正常push后核local=origin/clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 第二次实际浏览器验证在选择恢复记录时遇到重复按钮，已保留失败证据并完成隔离资源清理 |
-| 下一可用交付 | 先定位同会话恢复记录的身份与定位歧义，再按明确派工推进 |
-| 当前阻塞 | ACTIVE: 第二次浏览器恢复记录选择失败，完整草稿恢复与中心旅程尚未通过 |
+| 当前产出 | 同会话多稿增加本地摘要、保存时间与完整身份详情，两处恢复按原record精确定位；外部P01入口回焦具备原namespace/代际守护 |
+| 下一可用交付 | 本段两源固定候选交root独立源码复审；实际浏览器须另fresh准入 |
+| 当前阻塞 | ACTIVE: 新UI/定位/回焦源码未运行，原第二次browser失败保持；完整恢复与中心旅程未通过 |
 | 需用户决定 | NONE |
 | 检查状态 | FAILED: 第二次browser strict locator匹配2记录，actualexit1/清理完整；browser晚终态累计25520.435ms；2b01受控50/50原PASS/direct保守9969ms不改，types未新增 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；manager本次rec4d gate核原21/唯一owner/nooverlap；唯一browser运行已结束/无续跑许可，现仅归档原raw |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；21:01:31.118Z及21:05:22.444Z管理fresh原件已本人窄核、唯一owner/nooverlap；仅本段source-only，无运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -225,3 +225,13 @@ Root于2026-10-06T20:39:13.481403+00:00给[原始批准](../../docs/evidence/wpf
 ## 2026-10-06 20:52:18 UTC — 第二次浏览器实际失败封存
 
 [原报告](../../docs/evidence/wpf-conversation-recovery/browser-second-validation.md)与[15原件manifest](../../docs/evidence/wpf-conversation-recovery/browser-second-manifest.json)绑定d3d45/4d330。仅一次same-origin子集，actualexit1；Restore按同conversation route定位出2行，尚未判产品或harness因果。原19源冻结，旧10raw保留，清理完整已回manager。晚终态累计25520.435ms/余64479.565ms含下一次15s清理，未来整数保守25521/64479，非新许可。完整feature NOT_STARTED/targetUNKNOWN/main未接。
+
+## 2026-10-06 21:01:31 UTC — RECOVERY-SAVED-RECORD-IDENTITY P2源码修复派工
+
+Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-identity-design-review.json)确认record按namespace/viewKey区分而现UI/两定位退化为route，合法同route多稿不可辨；真实生成路径仍未唯一证实。按[原21fresh](../../docs/evidence/wpf-conversation-recovery/saved-record-identity-claim.json)只改binding呈现及browser两exact row入口，保原restore/journal/App authority和所有材料/noPOST/CAS断言。0tests/types/运行/free；原两次browser失败、50受控与25520.435ms累计保持。
+
+## 2026-10-06 21:10:21 UTC — identity/focus两源固定 / 当前NOT_RUN
+
+固定 `8ed2741327779e57d717653d10c2180e1897c26a`；[累计19源manifest](../../docs/evidence/wpf-conversation-recovery/saved-record-identity-checkpoint.json)及[接口/限制](../../docs/evidence/wpf-conversation-recovery/saved-record-identity-source.md)。RECOVERY-SAVED-RECORD-IDENTITY与RECOVERY-RETURN-FOCUS按授权源码修正，作者SOURCE_ADDRESSED_PENDING_REVIEW；原restore/journal/App和另17源不变，原25browser raw逐hash保持。Root[第二次运行证据](../../docs/evidence/wpf-conversation-recovery/browser-second-root-review.json)仅接受失败与清理，不能当功能批准。
+
+本地草稿摘要/UTC时间/intent/材料数+折叠完整ID、不读取正文；两处用已捕获draftId exact count1，不删除/合并记录或弱化原材料/noPOST/CAS。P01实际invoker通过原Radix生命周期回焦，同namespace/generation授权、可见/connected/未disabled才可返回；正常teardown清理。当前types/direct/browser均NOT_RUN，原50仅旧2b01范围，完整feature NOT_STARTED/targetUNKNOWN/main未接。browser晚累计25520.435ms/余64479.565ms含15s清理保持，无新gate。只做静态源/原件hash、相对链接与Git格式核查，未运行产品或status parser。

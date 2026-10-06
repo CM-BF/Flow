@@ -1,0 +1,115 @@
+{
+  "fixedCommit": "4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb",
+  "scope": "Remaining browser steps 398–524 and their real consumer seams; source inspection only",
+  "sourceCount": 12,
+  "sources": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "gitBlob": "70d1a53c803b607d4fc7a1922ee8afed53425103",
+      "sha256": "06d8cab64eac8d25f099eea0121a0de21167c2333fa5a42fee0469b9b3d290ae",
+      "bytes": 46423
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "gitBlob": "77a222c670ceb7f9ce557bac19550fb62a73d958",
+      "sha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+      "bytes": 27003
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "gitBlob": "0334de34f6ffe4c6d61a5cbd5b8c3807679c1b2f",
+      "sha256": "67218f6d868b180f9c64bd3b5c418c96dacac3e79040e6b88c36fc70c5b9130f",
+      "bytes": 70874
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "gitBlob": "d3944f7b88471eb8e6b6bde1ab2b9b19712e2d21",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "bytes": 24416
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "gitBlob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53",
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "bytes": 22929
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "gitBlob": "0b0ebd59c533b4c31faa03762e8a857d01c84ee7",
+      "sha256": "e0e9772f77fe8ccacb0b2c71be8874a66c6f500faea5de01a6869b29ccbaa5a1",
+      "bytes": 29965
+    },
+    {
+      "path": "apps/web/src/attachments/AttachmentPicker.tsx",
+      "gitBlob": "38196c63f2317dd28e3ea7772b8de0ed4c49384e",
+      "sha256": "31f580820d0c161e016ce13856d47a91638800548f9f4445b1ad17de194e3858",
+      "bytes": 7475
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/attachment.aui.tsx",
+      "gitBlob": "4e357311054bbcccc76f711d7e1c83f9607b983c",
+      "sha256": "e647bf0e550ee8217cd3058bab2336a2b480b48328050bdc97572a8adcdb88de",
+      "bytes": 9213
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "gitBlob": "2af7f577118bb3cba07a4bfb6dcdee165172cb44",
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241",
+      "bytes": 12209
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "gitBlob": "f94b75d126125885bda0fc62f405c9dc59d0f293",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "bytes": 23725
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "gitBlob": "a5c812d7f7e5fdae9a5bcb7166544f8956d94664",
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0",
+      "bytes": 3853
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "gitBlob": "c34ba2b917ea6b0744f351ad5ba3976e489a8ef1",
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f",
+      "bytes": 648
+    }
+  ],
+  "externalReadOnlyDependency": {
+    "name": "@radix-ui/react-dialog",
+    "version": "1.2.0",
+    "files": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/package.json",
+        "sha256": "9f7cc1487d93a25d543e96beb00204a59d1b11d3e36b4161ae1c8c10c1e47bde",
+        "bytes": 2226
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/dist/index.mjs",
+        "sha256": "e32c21a189358f22749c171f666bddea31ae2ebe5e8c4d6c5c8aedd3916a04d7",
+        "bytes": 14132
+      }
+    ],
+    "qualification": "Existing dependency realpath observed read-only; no package import, installation or execution. Fixed Vite config has no alternative alias for this dependency."
+  },
+  "runtime": "NOT_RUN",
+  "findings": [
+    {
+      "id": "RECOVERY-4D330-FOCUS",
+      "priority": "P2",
+      "status": "CONFIRMED_SOURCE_GAP_NOT_RUNTIME_REPRODUCED",
+      "primary": "apps/web/src/recovery/binding.tsx:408",
+      "assertion": "apps/web/test/conversation-recovery.browser.ts:514",
+      "summary": "Controlled modal has neither DialogTrigger nor onCloseAutoFocus; external P01 button is not wired to modal triggerRef. Radix default modal return-focus handler prevents fallback restoration and focuses null triggerRef."
+    }
+  ],
+  "exclusions": [
+    "Known draft-row identity/locator issues at lines 398/441 are assigned to panels and not counted again.",
+    "No supervisor re-review, project writes, imports, checks, tests, HTTP, PG, Chrome, free-space sampling or personal service probes."
+  ],
+  "methods": [
+    "Existing local /Users/citrine/.agents/skills/clean-code/SKILL.md: trace ownership and actual interface rather than introducing a second UI path.",
+    "Existing local /Users/citrine/.agents/skills/webapp-testing/SKILL.md: match accessible role/name to actual mounted elements; distinguish source evidence from browser execution."
+  ]
+}
