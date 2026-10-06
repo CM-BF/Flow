@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['TUI01A', '终端会话与可靠发送', '工作线', 'tui-conversations', 'tui01a-conversations'],
   ['TUI-001', '可日用终端客户端', '总体计划', 'tui-client', 'tui01-terminal-client'],
   ['COST-001', '执行成本与预算解释', '总体计划', 'execution-cost', 'cost01-execution-cost'],
   ['R05B', 'Codex中心身份与来源校验', '工作线', 'native-center-policy', 'r05b-native-center-policy'],
