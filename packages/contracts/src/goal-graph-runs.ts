@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { idSchema, type TaskSummary } from './tasks.js';
 import { ownershipSchema } from './runner.js';
 import { projectNodeReferenceSchema, projectVersionSchema } from './projects.js';
-import { goalGraphProposalInputSchema, goalGraphProposalApplySchema, type GoalGraphProposalSummary, type GoalGraphProposalReceipt } from './goal-graph-proposals.js';
+import { goalGraphProposalInputSchema, goalGraphProposalApplySchema, type GoalGraphProposalSummary, type GoalGraphProposalReceipt, type GoalGraphProposalInput } from './goal-graph-proposals.js';
 
 export const goalGraphScopeSchema = z.strictObject({
   baseRevision: projectVersionSchema,
@@ -20,6 +20,7 @@ export const goalGraphRunAdmissionSchema = z.strictObject({
 });
 export type GoalGraphRunAdmission = z.infer<typeof goalGraphRunAdmissionSchema>;
 export const goalGraphRunReferenceSchema = z.strictObject({ id: idSchema, version: z.literal(1) });
+export type GoalGraphRunReference = z.infer<typeof goalGraphRunReferenceSchema>;
 export const goalGraphRunCallSchema = ownershipSchema.extend({ grant: goalGraphRunReferenceSchema });
 export const goalGraphReadCallSchema = goalGraphRunCallSchema.extend({ after: z.string().min(1).max(2_000).optional(), limit: z.number().int().min(1).max(50).default(20) });
 export const goalGraphDetailCallSchema = goalGraphRunCallSchema.extend({ proposalId: idSchema });
@@ -53,3 +54,6 @@ export interface GoalGraphAudit {
   kind: 'propose' | 'apply'; proposalId: string; proposalDigest: string; appliedRevision: number | null; createdAt: string;
 }
 export interface GoalGraphAuditPage { run: GoalGraphRun; calls: GoalGraphAudit[]; nextCursor: number | null }
+
+/** Full immutable proposal text is fetched separately, after checking this grant owns it. */
+export interface GoalGraphDetailResult { id: string; proposalDigest: string; baseRevision: number; input: GoalGraphProposalInput }
