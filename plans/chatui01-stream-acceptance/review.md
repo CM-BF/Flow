@@ -1,29 +1,31 @@
 # CHATUI01 独立审查
 
-状态：PENDING；待独立review，不构成approval。target 3c9952583fa6b3413f76bdcb8a8c33b52c984fb1。
+状态：**APPROVED**，仅限CHATUI01零模型preparation。固定target `4a442af83faa91b419357ef0036627566e5f85a8`。Reviewer：Mika / gpt-6-astra；时间：2026-10-06 08:58:17 UTC。Owner依据独立只读报告记录结论，不自批。
 
 ## Target / scope
 
-base：7106a35447bf43026ad7b5ad7c25dc530fd0c4f5；target：3c9952583fa6b3413f76bdcb8a8c33b52c984fb1。worktree和branch见[status](status.md)，3scope见[plan](plan.md)。
+Base：7106a35447bf43026ad7b5ad7c25dc530fd0c4f5；固定实现target：4a442af83faa91b419357ef0036627566e5f85a8；review观察metadata HEAD：8eb001f81405f10ec8986e194e5a5aaf3decf9fe clean。worktree、branch、main事实见[status](status.md)。Scope：experiments/stream-ui-acceptance、plans/chatui01-stream-acceptance、docs/evidence/chatui01；不包含产品改动、真实query入口或真实provider能力。
 
-## 可复制审查说明
+## 独立检查与证据
 
-只读核实际head/dirty、根与plans指令及技能。核同一driver零模型actualApp证据、可见pane/同ID三样本、typed final/settlement/retain-replace、草稿和无假branch；核一次create/turn guard、wx reservation、源码绑定、fsync-before-cleanup、脱敏及专属浏览器退出。检查证据实际范围；不运行真实模型/个人服务，不重复Web全suite。结论绑定具体commit，severity/行/场景/影响明确，修复交owner。
+- 原3c995258范围：6 source/5 canonical raw逐hash，230产品archive文件对7106逐hash，actualApp driver与target匹配；已查看light/390dark截图。除下述P2外无其他阻断项。
+- 最终delta：[turn-fix-manifest](../../docs/evidence/chatui01/turn-fix-manifest.json)，SHA256 `1480e55ea5a8ba574a173bcb36c3f3942530b6d7882517762a784b0a9bba3c89`。7 source/6 raw与Git/实际run driver hash全部吻合。
+- create和turn均route.fetch，maxRetries0/maxRedirects0；创建回执身份与配置已验证、持久后只允许相同conversation ID的turn。失败锁定，已消费的许可不恢复。
+- f80真实网络2个red复现turn隐式重发/非2xx缺口，最终3/3相关network delta绿；actualApp同driver旅程3个增长样本、2次写操作、final一次、Chrome exit0，raw相符。此前f80的9检查保留原target，未声称全部在最终target重跑。
+- Reviewer只读源码、hash、raw和截图；**未重跑工程测试**。Owner本次记录approval只改metadata，不改manifest/raw，不工程重测。
 
-## 检查 / findings / 结论
+## Finding与复审
 
-未执行独立review；findings未评估；真实query未授权且未执行。作者已绑定固定target与[manifest](../../docs/evidence/chatui01/manifest.json)。6/6行为检查与1/1 actualApp canonical旅程通过；检查不等于独立approval。产品功能/主线集成不得由此推断。
+| ID | Severity | 原Blocking | 场景与影响 | Owner修复 | 最终复审 |
+| --- | --- | --- | --- | --- | --- |
+| CHATUI01-R1 | P2 | yes | route.continue完成不代表创建receipt已确认，未绑定会话且丢响应可隐式重发turn POST | f80先修创建receipt；4a442af83faa91b419357ef0036627566e5f85a8补全create/turn共同无重试发送、receipt校验/持久与失败锁定 | RESOLVED，Mika 2026-10-06 08:58:17 UTC |
 
-## 第一次独立review与P2修复
+原结论CHANGES_REQUESTED已被本次固定target的APPROVED替代；旧manifest/raw保留历史，不改写失败事实。当前blocking findings：0。
 
-Reviewer：Mika / gpt-6-astra，只读。原target 3c9952583fa6b3413f76bdcb8a8c33b52c984fb1：6 source/5 canonical raw hashes、230产品源码对7106及light/390dark截图已核，其余范围无阻断项。结论 CHANGES_REQUESTED，非approval。
+## 结论与限制
 
-| ID | Severity | Blocking | 复现场景与影响 | Owner回应 | 修复commit | 复审 |
-| --- | --- | --- | --- | --- | --- | --- |
-| CHATUI01-R1 | P2 | yes | route.continue resolve后创建响应未知/非2xx仍允许任意会话的首turn | 已接受；真实网络5/5红，再校验并持久创建receipt、绑定唯一会话，未知锁死 | f80fb6606fbcba942fc8741f56b2f2c6f285f2df | PENDING |
+批准零模型验收准备片段集成。real live仍NOT_AUTHORIZED，入口未实现；真实task terminal、runner/SDK/provider usage与真实Web部署绑定未由fixture证明。主线集成由Execution Lead另行核实，approval不表示已经集成或运行在个人服务。
 
-修复检查：[guard-fix-manifest](../../docs/evidence/chatui01/guard-fix-manifest.json)，9/9 behavior/network +1/1 actualApp。复审仅guard delta与相关raw；真实调用和完整终态/usage未实施。等待reviewer结论，owner不自批。
+## 可复制delta审查范围
 
-## 同一P2补全：turn implicit retry
-
-第二次只读反馈：f80的turn仍route.continue；真实丢响应时浏览器可重发最关键POST，原P2尚未关闭。Owner接受，2个新真实网络场景先红；create与turn统一无重试route.fetch，turn receipt验证并checkpoint后fulfill，失败锁死。完整修复target 4a442af83faa91b419357ef0036627566e5f85a8；[turn-fix-manifest](../../docs/evidence/chatui01/turn-fix-manifest.json)。本次3/3相关网络＋1/1 actualApp；前轮9检查保留版本边界。结论 DELTA_PENDING，无owner自批。
+如需后续变更，先核实际head/dirty与领取；只读比对相应固定target源码、manifest和新raw。真实query/个人服务不在此许可内，不重复未受影响的产品全suite。修复交owner，结论绑定具体commit。

@@ -1,6 +1,6 @@
 # CHATUI01 零模型流式UI验收准备
 
-可执行入口：[preflight.mjs](../../../experiments/stream-ui-acceptance/preflight.mjs)。本片产品基线固定7106a35447bf43026ad7b5ad7c25dc530fd0c4f5；实验只新增自身3scope。实现target见[status](../../../plans/chatui01-stream-acceptance/status.md)，独立review尚未完成。
+可执行入口：[preflight.mjs](../../../experiments/stream-ui-acceptance/preflight.mjs)。本片产品基线固定7106a35447bf43026ad7b5ad7c25dc530fd0c4f5；实验只新增自身3scope。实现target见[status](../../../plans/chatui01-stream-acceptance/status.md)，独立review APPROVED `4a442af83faa91b419357ef0036627566e5f85a8`（Mika/gpt-6-astra，2026-10-06 08:58:17 UTC），仅限零模型准备；待主线集成。
 
 ## 已验证
 
@@ -30,8 +30,14 @@ FLOW_DEPENDENCY_ROOT=/absolute/Flow-with-installed-dependencies /opt/homebrew/op
 
 原3c995258仅creation receipt guard存在P2：route.continue先返回并不证明响应成功，而且首turn未绑定创建会话。[真实网络红证据](guard-network-red.txt)5/5复现。修复target f80fb6606fbcba942fc8741f56b2f2c6f285f2df：create仅route.fetch一次、maxRetries0/maxRedirects0；校验fresh receipt身份、配置与revision，checkpoint后绑定turn，unknown/non2xx/bad receipt锁死全部后续mutation。没有再次发create补证。
 
-旧两个弱mock被5个真实网络场景替代；旧日志和旧manifest保留。新9项检查与一条actualApp直接消费者通过，只待独立delta复审。产品230文件与Web全suite不重复review，不新增live入口。
+旧两个弱mock被5个真实网络场景替代；旧日志和旧manifest保留。该轮9项检查与一条actualApp直接消费者通过，后续同P2补全见下文。产品230文件与Web全suite不重复review，不新增live入口。
 
 复审补全同一P2：第一段f80仍让turn走route.continue，真实丢响应[2条红证据](turn-network-red.txt)证明浏览器隐式重发（总POST3而非2）。完整修复target 4a442af83faa91b419357ef0036627566e5f85a8统一create/turn为maxRetries0/maxRedirects0 route.fetch，并校验turn receipt身份/编号/正文，先持久后fulfill。未知或非2xx锁死后继，不恢复预算。
 
-本次仅[3条受影响网络检查](turn-fix-checks.txt)通过（2新故障＋1已有身份正常路径），并复跑1条actualApp。此前9项检查绑定f80，不声称全部在4a442重跑；合计独特行为11项，重叠项不另加。旧manifest/raw完整保留，独立delta review仍待结论。
+本次仅[3条受影响网络检查](turn-fix-checks.txt)通过（2新故障＋1已有身份正常路径），并复跑1条actualApp。此前9项检查绑定f80，不声称全部在4a442重跑；合计独特行为11项，重叠项不另加。旧manifest/raw完整保留，独立delta review已APPROVED 4a442af83faa91b419357ef0036627566e5f85a8（2026-10-06 08:58:17 UTC）。
+
+## 最终独立结论
+
+Mika/gpt-6-astra只读复审批准4a442af83faa91b419357ef0036627566e5f85a8的零模型preparation，原P2已完整关闭；未重跑工程测试。7 source/6 raw、actualApp driver/source hash、3增长样本/2写操作/final一次/Chrome exit0均核对。此前9检查保持f80边界。真实live入口仍未实现、NOT_AUTHORIZED；领取保留至主线接收，未把approval记为已集成。
+
+2026-10-06 08:58 UTC clean-code安全停点：仅核review/status/README事实一致、命名、链接和交付边界，无代码/接口变化，无新增工程测试。
