@@ -1,0 +1,33 @@
+# O05 状态
+
+| 字段 | 记录 |
+| --- | --- |
+| 最近更新 / 最近main同步核验 | 2026-10-06T05:09:38Z |
+| Plan | [plan.md](plan.md) |
+| 单一status owner / model | assignment_review / gpt-6-astra |
+| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-graph-proposals |
+| Branch | codex/goal-graph-proposals |
+| 工作基线 / HEAD | da8d73a984118e0a5c406bd04dbfbc5d5c9c148f |
+| 工作树dirty状态 | 开工前clean，现新增合同/计划 |
+| 工作分支状态 | implementation |
+| 检查状态 | NOT_RUN |
+| 已集成main状态 / HEAD | 本片段未集成；base da8d73a984118e0a5c406bd04dbfbc5d5c9c148f |
+| 实现目标 | 未提交 |
+| 实现范围 | packages/contracts/src/goal-graph-proposals.ts, apps/server/src/goal-graph-proposals, apps/server/src/projects/commands.ts, packages/storage/migrations/014-goal-graph-proposals.sql |
+| 阶段 | M2 |
+| 本片段交付阶段 | implementation |
+| 优先级 | 2 |
+| 当前产出 | 开始建立可保存、可核对的目标拆分提案 |
+| 下一可用交付 | 一次应用完整提案，遇到过期或循环则整份拒绝 |
+| 当前阻塞 | NONE |
+| 需用户决定 | NONE |
+| Review | NOT_STARTED，[review.md](review.md) |
+
+| TODO ID | 状态 | Owner | 完成证据/检查 |
+| --- | --- | --- | --- |
+| O05-01 | in-progress | assignment_review | 合同/设计与G01同事务接缝 |
+| O05-02 | pending | assignment_review | 尚未实现 |
+| O05-03 | pending | assignment_review | 尚未运行 |
+| O05-04 | pending | assignment_review | 等待固定交付 |
+
+claim954db8ab-2113-4c86-9c14-3ef07229d96e v1，[回执](../../docs/evidence/o05/claim-receipt.json)。本status为唯一事实源，已向Lead请求登记canonical源；架构影响为持久提案/原子应用module，待固定交付由Lead更新架构视图。0模型，真实自然语言和工具graph权限均不在本片段。
