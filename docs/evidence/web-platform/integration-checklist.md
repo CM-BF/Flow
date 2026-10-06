@@ -235,3 +235,6 @@ CHAT04候选e423abb5f404334b4bb781de1fe1a429278762d4仅固定合同/stub，路�
 D06 final6ea2/impl ef已在main4e且4320图固定8f实际部署，claimf619 v2 released，四scope全部停写；后继标题旁固定快照提示必须另领renderer范围。WPF-X03I01 fixed4e/a104v1七scope实际开工，canonical a534已由Lead登记；Lead04:32:26.186Z报main292ad4d/49源、X03I01/O03 live/issues空。作者在下一固定交付时单次实采，不重复轮询。旧CHATv2/I01v3两CAS原样receipt与新take链已经存证。
 
 WPF-PROFILE01下一片仅新选择模块/pure creation与pin helpers、局部tests/自身plan-evidence；无App/旧conversation文件，不amend旧CHAT范围。新9scope与现claim无重叠，待真实新树/commit后receipt派工；真实App接线后续单独受领。queue v2由Mika/Lead冻结及独审，Web无queue claim；最新PG pause/continue/currentTurn与旧ACK replay的新鲜度规则详见[队列证据](chat-queue-research.md)，不能用旧e423stub或内存adapter启用按钮。
+
+
+PROFILE01正式take：04:36:37.979Z，claim17093c4c-a8fa-4e43-bc72-6bd54cab0795 v1，actor external_web_d01_owner/w01_owner；tree web-execution-profiles、branch codex/web-execution-profiles、base4e0289f29ffa48c6c49003837d4520f57c22b6b0。原样[receipt](profile01-take-receipt.json)列精确9scope，仅7新module/test文件+自身plan/evidence。canonical计划预定plans/wpf-profile01-execution-profiles，evidence docs/evidence/wpf-profile01，等首commit再登记；不新增第二份管理子计划，不把模块当App接线完成。

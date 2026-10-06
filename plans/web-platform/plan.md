@@ -104,7 +104,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-CHAT01持续对话 | workspace_panels_owner / web-conversations / codex/web-conversations | 已审7cb / 集成metadata083978b；claim08259c1d v2已将App/react转X03I01，原其余14scope保留；实现已在dd1/main4e，真实模型验收仍归Lead |
 | WPF-PERF02有界窗口 | w01_owner / web-activity-window / codex/web-activity-window | 实现a87已审且集成；claimd36cd583 v2 released，全部8scope停写，后续修复须新take |
 | WPF-X03I01实际插件管理挂载 | workspace_panels_owner / web-plugin-management-integration / codex/web-plugin-management-integration | claim a1044bb0 v1七scope，固定main4e；不改Mika模块/shared；canonical a534已建立 |
-| WPF-PROFILE01配置选择模块 | w01_owner / 拟web-execution-profiles / codex/web-execution-profiles | 仅7个新模块/测试文件+plan/evidence两目录，旧CHAT/App不转交；核新树后take才写 |
+| WPF-PROFILE01配置选择模块 | w01_owner / web-execution-profiles / codex/web-execution-profiles | claim17093c4c v1，04:36:37.979Z已take；仅7新模块/测试文件+两元数据目录，旧CHAT/App不转交 |
 | WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | claim632a7149 v2，仅plans/web-platform与docs/evidence/web-platform；不代写其他owner事实 |
 
 冻结 `WorkspacePanels` 接口（在panels owner的 `types.ts` 权威定义）：
@@ -150,7 +150,7 @@ type WorkspacePanelsProps = {
 | 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadatacc334；未做生产优化，probe已受控转PERF02 |
 | 已集成首批 / 后继开放 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 7cb限定APPROVED，083978b记录dd1/main已含；queue/steer/语音及完整模型控制仍开放，真实两query仅Lead执行、结果未收到 |
 | 当前实施 | WPF-X03I01 | 固定4e / a104v1七scope，实际App只读插件管理挂载；唯一owner workspace_panels_owner |
-| 下一独立模块 | WPF-PROFILE01 | 已发布整份profile选择与纯pin helper，无旧UI文件；新树/receipt后实施，不把模块当App接通 |
+| 当前独立模块 | WPF-PROFILE01 | 已发布整份profile选择与纯pin helper，无旧UI文件；fixed4e/17093c4c v1已受领，不把模块当App接通 |
 | 已集成 | WPF-PERF02 | 固定a87f64f及报告获独立APPROVED，metadata b617实证main8f包含/范围相同；claimv2已released，不继续占用已完成八scope |
 
 ## TODO
@@ -234,3 +234,5 @@ CHAT04 Web接缝研究补充：assistant-ui实装queue adapter会接管普通tai
 U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示runner配置声明、未探测可用性，不是任意模型目录。未来首draft选择整profile并在create锁定，follow-up沿pin；thinking fixed-disabled、effort unsupported等不能做伪选择。固定dd1只读研究与ACK/跨连接验收已归[证据](../../docs/evidence/web-platform/execution-profiles-research.md)，尚无新take/实现，不抢X03接线scope。
 
 04:34 当前轮：X03I01七scope已正式开工；PROFILE01根据GoalOwner新切分只创建独立选择模块、pure pin helpers/局部tests与自身三件套，不转交现ConversationThread/projection/outbox/App。04:33 live ledger可读、拟9scope无literal冲突，等待新树实际核验后原子take。REQ44已更新PG pause/continue新决定，保留旧e423历史，不新增queue writer。
+
+04:36:37.979Z PROFILE01新take已committed，claim17093c4c-a8fa-4e43-bc72-6bd54cab0795 v1，管理者独立核fixed4e/branch/clean后领取，原样[receipt](../../docs/evidence/web-platform/profile01-take-receipt.json)。精确9scope与X03无重叠，已派w01先唯一canonical后模块实施；未改旧CHAT/App/共享接口，0模型。
