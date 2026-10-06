@@ -116,3 +116,5 @@ Mika审c03发现P2：open只读FIFO会在fstat前等待；多个短读的subarra
 
 ## O06生产挂载 / 2026-10-06 05:46 UTC
 固定bf03a7c241d8f1c1d9d0bfa1ee7f9be49e090c00，017 await位于scheduler前，8route注册在原owner/runner鉴权后；缺路由实证red保留。公共client新PG用例明确hasRoute存在，不用test helper补挂；受理/角色拒绝/native409/restart同key/审计/撤销通过，O06原8用例直接使用已挂生产入口合计9/9（11.95s）与noEmit通过，专库正常清理。未重跑其他25旧领域，无模型/预览进程变化。clean-code复核仅3行生产接线和真实consumer，保持领域/原生能力边界。
+
+2026-10-06 05:47 UTC：Mika审薄client发现test-only P2，ownership错含taskId而宽松HTTPstub未拒绝。固定a9cd4b04da1b249871398461fadd071ee180520b删除额外字段，四runner路径各用实际strict schema验证请求，非法400；所有旧字段/actor/replay/abort断言保留。仅该HTTP1/1（40ms）+noEmit重跑通过，生产/领域零改动，原证据不覆写。生产bf03已获Mika独审APPROVED，薄client待本delta复审。
