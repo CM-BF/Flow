@@ -1,0 +1,29 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-native-events
+
+ ❯ apps/server/src/assistant/assistant.test.ts (1 test | 1 failed) 944ms
+   × accepts a typed final through the ordered authenticated event interface 533ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/assistant/assistant.test.ts > accepts a typed final through the ordered authenticated event interface
+AssertionError: {"error":{"code":"unsupported_event","message":"This event is not supported yet."}}: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ request apps/server/src/assistant/assistant.test.ts:24:85
+
+ ❯ apps/server/src/assistant/assistant.test.ts:47:10
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  20:37:23
+   Duration  1.31s (transform 119ms, setup 0ms, import 282ms, tests 944ms, environment 0ms)
+
