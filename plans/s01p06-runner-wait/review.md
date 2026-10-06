@@ -20,3 +20,7 @@ Reviewer architecture_read / gpt-6-astra，2026-10-06 13:31:41 UTC；Mika正式�
 ## 交接
 
 [精确source/config清单](../../docs/evidence/s01p06/integration-ready.md)，按固定实现接收，不把旧red版本当产品。原只读review指令已实际完成，后继source改动需独立新target复审。
+
+## Main接收（2026-10-06 14:07:13 UTC）
+
+5dbabadc7dda02da558f48505677eddbc9c83fb5已接受固定cdd3五source/config，owner核source/hash与接收方raw；1定向旅程/root+Webtypes0复用，0owner重测。新main事实见[main-acceptance](../../docs/evidence/s01p06/main-acceptance.json)，前述尚未main是独审时历史。源/raw不变，最终metadata后全部停写并release，实际receipt外部保存。
