@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-06T18:16:02.943719+00:00",
+  "head": "e5daba90648c25ae1240a4eff3efc8a5d27586dc",
+  "cleanBeforePreflight": true,
+  "claim": {
+    "observedAt": "2026-10-06T18:16:02.382Z",
+    "claim": {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/wpf-mature-02",
+        "experiments/codex-app-server-conformance",
+        "plans/wpf-mature-02-harness-capabilities"
+      ],
+      "state": "active",
+      "branch": "codex/claude-codex-capabilities",
+      "origin": "new",
+      "taskId": "WPF-MATURE-02",
+      "worker": "chatui01_owner",
+      "claimId": "0dd97484-f0ce-4738-8075-505bd5e2541a",
+      "version": 6,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+      "createdAt": "2026-10-06T08:59:56.664Z",
+      "updatedAt": "2026-10-06T15:43:03.052Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  },
+  "freeBytes": 1663594496,
+  "threshold": 1107296256,
+  "inputSHA": "5c609aa98f2fcc92d3339a14d202e265ef2b4f292cafe2a85e47e5ee0f56c3ac",
+  "manifestSHA": "c6c04a311c0b6d71e057e4d0c38914490fe286f24c2648be75ce6bc2aa3a0e8f",
+  "verified": {
+    "runtime": 12,
+    "prepared": 29,
+    "externalIncludingNode": 34,
+    "outputsAbsent": 19
+  },
+  "errors": [],
+  "actualCompileHelpersSoFar": 0
+}
