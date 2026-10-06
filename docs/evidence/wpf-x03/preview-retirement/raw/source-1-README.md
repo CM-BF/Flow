@@ -1,13 +1,5 @@
 # WPF-X03I01 交付入口
 
-**当前预览：已退役。** 原 `http://127.0.0.1:59473/` 于 2026-10-06 22:47:46.557547 UTC 仅向即时核实的原 Node PID `56147` 发送 SIGTERM；原 session `96967` 实际退出 `143`，随后精确 PID、原 PGID 和本服务三端口均无残留。`143` 不证明异步 close handler 每条语句均已完成。
-
-[实际退役回执](preview-retirement/retirement-receipt.json) · [root 限定证据审查](preview-retirement/root-retirement-review.json) · [本树原始身份/退出记录](preview-retirement/raw/preflight.json)。本次只更新生命周期元数据；未重启、删除依赖/cache 或重跑产品检查。恢复需另获授权并核依赖/资源，以下旧启动命令不代表当前已验证可运行。
-
-## 历史交付与原预览说明
-
-以下原默认保留、URL、启动方式、检查和功能范围完整保留为历史；当前运行事实以上述退役记录为准。
-
 固定实现 `84acdcaaa9687a4ca75ebdb40a6efc7e5539029a` / base `4e0289f29ffa48c6c49003837d4520f57c22b6b0`。branch codex/web-plugin-management-integration。三生产接缝+两个专测，本批仅已审X03真实App入口；独立review入口见[review](../../../plans/wpf-x03-plugin-integration/review.md)，已于04:36:39 UTC获root独立APPROVED，04:47实采已集成main 80e3c50e7a368c562a7730567503d8c82772b77a，五实现/测试文件与84相同。
 
 在现有 **Extensions and appearance → Plugin management** 展开。Personal center registry只读显示版本/config/grants/audit；下方This browser connection独立显示本地trusted runtime，上方原本地controls继续启停，不把注册记录按名字匹配本地插件。关闭/折叠停止读取，换中心以session.id清除旧读取状态。模块加载失败可继续聊天，需先保留未发送文字再手动reload；不自动重载。

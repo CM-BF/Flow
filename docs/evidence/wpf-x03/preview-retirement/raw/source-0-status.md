@@ -1,16 +1,14 @@
 # WPF-X03I01 状态
 
-**当前预览：已退役。** 原 `http://127.0.0.1:59473/` 于 2026-10-06 22:47:46.557547 UTC 仅向即时核实的原 Node PID `56147` 发送 SIGTERM；原 session `96967` 实际退出 `143`，随后精确 PID、原 PGID 和本服务三端口均无残留。`143` 不证明异步 close handler 每条语句均已完成。 [回执](../../docs/evidence/wpf-x03/preview-retirement/retirement-receipt.json)，[限定审查](../../docs/evidence/wpf-x03/preview-retirement/root-retirement-review.json)。旧默认保留说明只属历史，不是新的启动承诺。
-
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 22:51:35 UTC / 历史 main 核验 2026-10-06 04:47 UTC / origin/main 80e3c50e7a368c562a7730567503d8c82772b77a |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:47 UTC / origin/main 80e3c50e7a368c562a7730567503d8c82772b77a |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | Settings懒挂载已获root独立APPROVED；开发8/生产7项、typecheck/build通过，固定源码hash已复算 |
-| 下一可用交付 | 原功能已集成；59473已退役，本次仅生命周期metadata提交后停写交管理释放 |
+| 下一可用交付 | 已集成；全scope停止写入并释放领取，59473保留 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration |
@@ -23,7 +21,7 @@
 | 实现目标 | 84acdcaaa9687a4ca75ebdb40a6efc7e5539029a |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/plugin-integration/integration.css, apps/web/src/plugin-integration/react.tsx, apps/web/test/plugin-management-integration.browser.ts, apps/web/test/plugin-management-integration.fixture.ts |
 | Review | [review.md](review.md)，APPROVED，target 84acdcaaa9687a4ca75ebdb40a6efc7e5539029a |
-| D04 claim（原产品历史） | a1044bb0-46ed-4cc4-a39a-c3f27a67cea4 / v1 / active；04:28:04.867Z；[receipt](../../docs/evidence/wpf-x03/take-receipt.json) |
+| D04 claim | a1044bb0-46ed-4cc4-a39a-c3f27a67cea4 / v1 / active；04:28:04.867Z；[receipt](../../docs/evidence/wpf-x03/take-receipt.json) |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -45,11 +43,3 @@ http://127.0.0.1:59473/，exec session96967，owner本agent，HTTP fixture模拟
 ## 主线与停写交接
 
 04:47 UTC只读Git实采：origin/main 80e3c50e7a368c562a7730567503d8c82772b77a，4b7e0f6553025ba1dbb93e7e3c2b82a9958b92e3为ancestor，五实现/测试路径对84零diff。仅更新metadata，不重跑产品检查，不声称SVC61228已升级（服务仍有独立构建基线）或新增真实模型验收。本次metadata提交后全部七scope停止写入，按当前a104 v1正式release；具体committed receipt交manager保存，后续live账本优先于本释放前历史快照。旧预览59473与其他服务保留。
-
-## 本次生命周期元数据收口（2026-10-06 22:51:35 UTC）
-
-本次新 metadata claim `741c80b3-242e-4519-b16f-0ac61737e78e` v1，仅覆盖原status、own README和preview-retirement目录；原产品released写权未恢复。本人live观察 `2026-10-06T22:50:37.846481+00:00` 与owner/branch/三scope一致。[新take原件](../../docs/evidence/wpf-x03/preview-retirement/metadata-take-receipt.json)。本次正常commit/push后这三scope全部停写，manager另行fresh CAS release，释放后不追写。
-
-固定原HEAD `05b92d30c953413ab66d8b69447c9b44c9121a6a` 下的源码、原启动命令与可取得session增量log已归档；不是完整启动日志重建。原功能TODO、已审实现目标、原检查和主线事实不扩大。本次无产品/parser/HTTP/PG/Chrome/模型检查，无free采样、缓存/依赖删除或服务重启；其他明确保留服务未操作。root只对三精确preview退役证据作限定接受，不是产品新approval。生命周期事实交管理更新canonical，未另采dashboard。
-
-上述原交付段内“保留预览”等措辞均为此前时点的历史规则；当前本服务已退役。未来重放必须经批准并重新核依赖/资源，不能借已NOT_RUNTIME_READY的web-workspace-cache依赖。

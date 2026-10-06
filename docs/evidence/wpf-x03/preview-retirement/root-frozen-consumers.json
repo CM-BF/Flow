@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-06T22:46:35.226274+00:00",
+  "reviewer": "root",
+  "verdict": "NO_DECLARED_THREE_TREE_CONSUMER_IN_BOUNDED_FROZEN_INPUTS",
+  "exactTrees": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control"
+  ],
+  "exactCacheCandidates": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite"
+  ],
+  "frozenInputs": [
+    {
+      "path": "/private/tmp/recovery-browser-next8ed-0v6ddc46/manifest.json",
+      "bytes": 26129,
+      "sha256": "4db938e316990f45c90561fd0357035ed3de8e25d13f6450973f1a0b3afa7546"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/binding.json",
+      "bytes": 15255,
+      "sha256": "9fab801921548b4322e21ea35824c5a2f19f26690773e8615f5c3cd28bcdf3df"
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/binding.json",
+      "bytes": 44555,
+      "sha256": "2bd46393c60cad848227b73dc7d2c00951d557dd8744fd8773159a9d94b0f9c1"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/binding.json",
+      "bytes": 34260,
+      "sha256": "dbd44eb3de82d2c5e6d6ac9886a90a118db67ed1d88dee089ac90b09d345adde"
+    }
+  ],
+  "entrySourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 46943,
+      "sha256": "06cfb63a8bc29e8510b17574d16ad3ec9dc5c37cbb63766f47e24e3ea752c455"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 27003,
+      "sha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "bytes": 31990,
+      "sha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/worker.mjs",
+      "bytes": 6976,
+      "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.browser.ts",
+      "bytes": 23499,
+      "sha256": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e"
+    }
+  ],
+  "declaredExistingAbsolutePathsResolved": 321,
+  "hits": [],
+  "placement": [
+    "Recovery next8ed explicitly passes owned scratch/vite-cache to its fixture.",
+    "DPERF b2 creates synthetic repositories and its Node dashboard server; no Vite runtime in the entry.",
+    "Historical Settings01 b5 closed runtime used scratch/vite; it is not a proposed rerun.",
+    "QuickControls c1 is Node checks with own scratch Vite cache and m2-integration donor; new browser fixture accepts explicit cacheDir. New browser packet is being prepared and is not yet frozen/admitted."
+  ],
+  "limitations": [
+    "This only closes this group known declared frozen-path dependency question; not a global consumer or user-retention absence certificate.",
+    "Original owner must separately prove each exact preview identity/live handle, no user-retention or unfinished experiment, and reproducible restart before graceful retirement. Unknown means KEEP.",
+    "Only Lead may subsequently remove confirmed exact .vite paths after fresh kernel/directory checks; no whole node_modules approval.",
+    "No imports, tests, cache traversal/size scan, process/free sampling, service termination/restart, project write or filesystem removal performed."
+  ],
+  "method": "Read four named sealed JSONs and five exact entry files; resolve their existing explicit absolute path declarations only. No repository or dependency scan."
+}

@@ -1,0 +1,80 @@
+{
+  "state": "THREE_EXACT_OWNED_PREVIEWS_RETIRED",
+  "at": "2026-10-06T22:48:39.974775+00:00",
+  "services": [
+    {
+      "service": "plugin-management",
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+      "head": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+      "pid": 56147,
+      "pgid": 55402,
+      "session": 96967,
+      "port": 59473,
+      "sentAt": "2026-10-06T22:47:46.557547+00:00",
+      "observedAt": "2026-10-06T22:47:54.948153+00:00",
+      "originalSessionExitCode": 143,
+      "exactPidAbsent": true,
+      "originalGroupAbsent": true,
+      "listedPortsHaveNoListener": true,
+      "projectClean": true,
+      "restartCommand": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/plugin-management-integration.fixture.ts --app-preview"
+    },
+    {
+      "service": "profile",
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+      "head": "07cffeba1a818f5697c23efc37a7e5c2b813c035",
+      "pid": 8693,
+      "pgid": 8676,
+      "session": 68857,
+      "port": 51832,
+      "sentAt": "2026-10-06T22:48:03.338875+00:00",
+      "observedAt": "2026-10-06T22:48:09.465436+00:00",
+      "originalSessionExitCode": 143,
+      "exactPidAbsent": true,
+      "originalGroupAbsent": true,
+      "listedPortsHaveNoListener": true,
+      "projectClean": true,
+      "restartCommand": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/execution-profile-integration.fixture.ts --profile-preview"
+    },
+    {
+      "service": "steering",
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+      "head": "01842a87f768bd28ce7370681ff02d7b834765f7",
+      "pid": 46425,
+      "pgid": 45304,
+      "session": 13237,
+      "port": 63251,
+      "sentAt": "2026-10-06T22:48:20.695816+00:00",
+      "observedAt": "2026-10-06T22:48:39.640574+00:00",
+      "originalSessionExitCode": 143,
+      "exactPidAbsent": true,
+      "originalGroupAbsent": true,
+      "listedPortsHaveNoListener": true,
+      "projectClean": true,
+      "restartCommand": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversation-steering.fixture.ts --steering-preview"
+    }
+  ],
+  "method": "Sequential immediate identity checks, SIGTERM to exact Node PID only; original exec-session terminal observation, exact PID/group/listen-port verification. No group signal/KILL/restart.",
+  "limitations": [
+    "Session exit 143 and absence establish retirement, not full async close-handler execution.",
+    "Available session log observations are incremental, not a reconstructed complete startup transcript.",
+    "No known frozen consumer according to root bounded named-manifest audit; no global future-consumer guarantee.",
+    "No dependency readiness tested. Restart requires future explicit authorization and dependency/resource recheck; no workspace-cache donor usage."
+  ],
+  "unchanged": [
+    "All project files and Git config",
+    "All dependencies/caches",
+    "4320, 61227/61228, 49922/55049, 61108/55616, activity51452–51454, data-renderers and all active/unknown services"
+  ],
+  "consumerEvidence": "root-frozen-consumers.json",
+  "sourceEvidence": "Each service preflight plus fixed/current source files",
+  "checksNotRun": [
+    "HTTP",
+    "PG",
+    "Chrome",
+    "product tests",
+    "model/provider",
+    "free/du",
+    "restart"
+  ]
+}
