@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import type { Detail, TaskSummary } from './tasks.js';
+import type { AssistantSettings } from './assistant.js';
 
 /** Requested controls are validated against the selected adapter before admission. */
 export const conversationSettingsSchema = z.strictObject({
@@ -40,6 +41,7 @@ export interface ConversationCapabilities {
 }
 export interface ConversationSummary extends ConversationCreation {
   id: string;
+  /** Admission CAS only. Execution updates require task.updatedAt/reply-source refresh. */
   revision: number;
   createdAt: string;
   updatedAt: string;
@@ -54,8 +56,12 @@ export interface ConversationSession {
 export interface ConversationEffectiveSettings {
   model: string | null;
   thinking: 'disabled' | 'unknown';
-  tools: 'configured-readonly' | 'unknown';
-  source: { kind: 'recorded-adapter-session'; adapterVersion: string; taskId: string; attemptId: string; detailId: string } | null;
+  tools: 'configured-readonly' | 'unknown' | string[] | null;
+  permissionMode?: string | null;
+  /** Adapter request is evidence, separate from the user's conversation.requested controls. */
+  runnerRequested?: AssistantSettings['requested'];
+  source: { kind: 'recorded-adapter-session'; adapterVersion: string; taskId: string; attemptId: string; detailId: string } |
+    { kind: 'assistant-final'; messageId: string; taskId: string; attemptId: string; detailId: string } | null;
 }
 export interface ConversationDetailReference {
   kind: Detail['kind'];
@@ -64,7 +70,7 @@ export interface ConversationDetailReference {
   taskId: string;
   attemptId: string;
 }
-export interface ConversationReplySource {
+export interface ConversationArtifactReplySource {
   kind: 'adapter-final-artifact';
   adapterVersion: 'claude-sdk-0.3.290-v1';
   taskId: string;
@@ -73,6 +79,19 @@ export interface ConversationReplySource {
   artifactVersion: string;
   detailId: string;
 }
+export interface ConversationTypedReplySource {
+  kind: 'assistant-final';
+  source: 'claude.sdk.result';
+  messageId: string;
+  taskId: string;
+  attemptId: string;
+  nativeSessionId: string;
+  eventId: string;
+  sourceMessageId: string;
+  contentDigest: string;
+  detailId: string;
+}
+export type ConversationReplySource = ConversationArtifactReplySource | ConversationTypedReplySource;
 export type ConversationAssistantReply = {
   state: 'available';
   role: 'assistant';
