@@ -8,12 +8,13 @@ import { intentSchema, type CommandResult, type Intent, type IntentStore, type I
 import { TurnObservation, type ObservationClient } from './observation/index.js';
 import { ObservationReads } from './observation/reads.js';
 import { dispatchQueueIntent, readQueuePage, type QueueControlPort } from './queue-control/index.js';
+import { dispatchTaskCancel, type TaskControlPort } from './task-control/index.js';
 class LocalError extends Error { constructor(readonly code: string, message: string) { super(message); } }
 const result = (ok: boolean, code: string, message: string): CommandResult => ({ ok, code, message });
 const freeze = <T>(value: T): T => { if (value && typeof value === 'object') { Object.freeze(value); for (const child of Object.values(value)) freeze(child); } return value; };
 
 /** Owns local observation and immutable intent, never center task/queue/execution state. */
-export function createInteractionController(options: { client: InteractionClient; connectionId: string; intents: IntentStore; makeKey?: () => string; pollMs?: number; observe?: ObservationClient; queue?: QueueControlPort }): InteractionController {
+export function createInteractionController(options: { client: InteractionClient; connectionId: string; intents: IntentStore; makeKey?: () => string; pollMs?: number; observe?: ObservationClient; queue?: QueueControlPort; taskControl?: TaskControlPort }): InteractionController {
   if (!options.connectionId || options.connectionId.length > 160 || options.pollMs !== undefined && (!Number.isInteger(options.pollMs) || options.pollMs < 100 || options.pollMs > 60_000)) throw new Error('Invalid interaction options');
   const { client, intents } = options;
   let state: InteractionSnapshot = freeze({ view: 'conversations', connected: false, busy: false, closed: false, draft: '', notice: 'Use /help or /conversations.', observation: null, queue: null, selected: null, turns: [], conversations: [], conversationCursor: null, profiles: [], profileCursor: null, pending: null });
@@ -75,6 +76,12 @@ export function createInteractionController(options: { client: InteractionClient
   }
   function requireObservation() { if (!observation || !state.connected || !loadedTurns.length) throw new LocalError('NO_TURN', 'Open a connected turn first.'); return observation; }
   function requireFree() { if (intent) throw new LocalError('UNRESOLVED', 'An earlier request is unresolved. Use /recover with its original identity.'); }
+  function displayedTask() {
+    if (state.view === 'queue' && state.queue?.conversationId === state.selected?.id) return state.queue?.currentTurn;
+    if (state.view !== 'conversation') return null;
+    const turn = state.observation ? state.turns.find(value => value.id === state.observation!.turnId) : state.turns.at(-1);
+    return turn ? { turnId: turn.id, taskId: turn.taskId } : null;
+  }
   async function mutate(pending: Intent, recovering: boolean) {
     rotate();
     const operation = performMutation(pending, recovering); activeMutation = operation;
@@ -90,6 +97,9 @@ export function createInteractionController(options: { client: InteractionClient
       if (pending.kind === 'queue-pause' || pending.kind === 'queue-resume') {
         if (!options.queue) throw new LocalError('UNSUPPORTED_QUEUE', 'Queue transport is unavailable; original request remains unresolved.');
         await dispatchQueueIntent(options.queue, pending, signal);
+      } else if (pending.kind === 'task-cancel') {
+        if (!options.taskControl) throw new LocalError('UNSUPPORTED_TASK_CONTROL', 'Cancellation transport is unavailable; original request remains unresolved.');
+        await dispatchTaskCancel(options.taskControl, pending, signal);
       } else {
         const response = pending.kind === 'create' ? await client.createConversation(pending.input, pending.key, signal)
           : await client.submitConversationTurn(pending.conversationId, pending.input, pending.key, signal);
@@ -98,6 +108,12 @@ export function createInteractionController(options: { client: InteractionClient
       if (!current(version)) throw new LocalError('UNKNOWN', 'Observation changed before acknowledgement was accepted.');
       await intents.clear(); intent = null;
       if (!current(version)) { patch({ pending: null }); return result(true, 'ACCEPTED', 'Center accepted the request; observation remains stopped.'); }
+      if (pending.kind === 'task-cancel') {
+        patch({ pending: null, view: 'conversation' });
+        try { await refresh(pending.conversationId, version); }
+        catch { if (current(version)) patch({ connected: false, notice: 'Cancellation acknowledged. Use /recover to observe current facts.' }); }
+        return result(true, 'ACCEPTED', 'Cancellation acknowledged for the saved task. Observe its current state; acknowledgement does not prove it stopped.');
+      }
       if (!conversation) {
         const id = (pending as Extract<Intent, { kind: 'queue-pause' | 'queue-resume' }>).conversationId;
         queueAfter ??= 0; patch({ pending: null, view: 'queue' });
@@ -194,6 +210,15 @@ export function createInteractionController(options: { client: InteractionClient
     },
     pause: async () => queueCommand('queue-pause'),
     resume: async () => queueCommand('queue-resume'),
+    cancel: async command => {
+      requireFree();
+      if (!options.taskControl) throw new LocalError('UNSUPPORTED_TASK_CONTROL', 'This client has no task cancellation transport.');
+      if (!state.connected || !state.selected) throw new LocalError('NO_CONVERSATION', 'Open a connected conversation first.');
+      const target = displayedTask();
+      if (!target || target.taskId !== command.taskId) throw new LocalError('TASK_NOT_DISPLAYED', 'Use the task ID of the focused/latest turn, or the current task shown by /queue.');
+      return mutate(intentSchema.parse({ version: 1, connectionId: options.connectionId, key: (options.makeKey ?? randomUUID)(), kind: 'task-cancel',
+        conversationId: state.selected.id, turnId: target.turnId, taskId: target.taskId, input: {} }), false);
+    },
     disconnect: async () => { disconnect(); return result(true, 'DISCONNECTED', 'Observation stopped. Center work is not cancelled.'); },
     quit: async () => { await dispose(); return result(true, 'QUIT', 'Terminal closed. Center work is not cancelled.'); },
   };
