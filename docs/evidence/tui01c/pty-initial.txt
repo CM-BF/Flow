@@ -1,0 +1,44 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity
+
+stdout | apps/tui/src/stream-pty.test.ts > real PTY shows two verified prefixes, lazy/redacted tool bodies and sanitized text; exit leaves center work running
+TUI01C PTY {"exitCode":0,"bytes":17217,"elapsedMs":3602,"visibleCheckpoints":["Ctrl-C disconnect and quit","/open e4fed53c-9ba3-449f-8176-adeb7dbc3ebb","Saved conversation opened.","Assistant: First","First 中文🙂 second","/activity","Activity · turn 1","/detail 2","No public body is available.","/detail 1","Truncated public fragment","\\u001b]52;c;UNTRUSTED\\u0007","/back","Back to assistant text."],"rawModeRestored":true,"untrustedOscExecuted":false}
+
+ ❯ apps/tui/src/stream-pty.test.ts (1 test | 1 failed) 4128ms
+   × real PTY shows two verified prefixes, lazy/redacted tool bodies and sanitized text; exit leaves center work running 4128ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/tui/src/stream-pty.test.ts > real PTY shows two verified prefixes, lazy/redacted tool bodies and sanitized text; exit leaves center work running
+Error: Command failed: /opt/homebrew/Cellar/node@24/24.20.0/bin/node --import tsx --eval import {FlowClient} from '@flow/client'; import {createInteractionController} from '@flow/interaction'; const client=new FlowClient({baseUrl:process.env.FLOW_URL,token:process.env.FLOW_TOKEN,assistantStreamProtocol:'patch-v1'}); const c=createInteractionController({client,observe:client,connectionId:'reopen',intents:{load:async()=>null,save:async()=>{},clear:async()=>{}}}); await c.initialize(); await c.input('/open e4fed53c-9ba3-449f-8176-adeb7dbc3ebb'); console.log(JSON.stringify(c.snapshot().turns[0])); await c.dispose();
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@flow/client' imported from /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity/[eval1]
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:784:25)
+    at moduleResolve (node:internal/modules/esm/resolve:873:18)
+    at defaultResolve (node:internal/modules/esm/resolve:1006:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:705:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:725:38)
+    at nextStep (node:internal/modules/customization_hooks:189:26)
+    at resolveBaseSync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:11092)
+    at resolveDirectorySync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:12398)
+    at resolveTsPathsSync (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:13605) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v24.20.0
+
+ ❯ resolveBaseSync node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:11092
+ ❯ resolveDirectorySync node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs:2:12398
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  03:50:39
+   Duration  4.30s (transform 42ms, setup 0ms, import 65ms, tests 4.13s, environment 0ms)
+

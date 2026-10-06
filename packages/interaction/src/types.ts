@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import type { FlowClient } from '@flow/client';
 import { conversationCreationSchema, conversationTurnSchema } from '@flow/contracts';
+import type { TurnObservationView } from './observation/index.js';
 import type { Command } from './commands.js';
 const identity = { version: z.literal(1), connectionId: z.string().min(1).max(160), key: z.uuid() };
 export const intentSchema = z.discriminatedUnion('kind', [
@@ -18,6 +19,7 @@ export interface TurnView {
 export interface InteractionSnapshot {
   view: 'conversation' | 'conversations' | 'profiles' | 'help';
   connected: boolean; busy: boolean; closed: boolean; draft: string; notice: string;
+  observation: TurnObservationView | null;
   selected: { id: string; title: string; revision: number; requestedModel: string } | null;
   turns: TurnView[];
   conversations: { id: string; title: string }[]; conversationCursor: string | null;
