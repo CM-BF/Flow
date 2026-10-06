@@ -4,10 +4,10 @@
 
 首片范围为 [Interface](../../docs/evidence/tui01a/interface.md) 中共享命令/controller、Ink与headless、私有未决intent和基础会话。中心持久事实不复制；slash仅语法层，不建立第二协议/agent loop。原文/身份/epoch、未知ACK与退出不cancel是验收不变量。
 
-- [x] TUI01A-01 固定API/依赖候选与合法scope；依赖锁由Lead独占。
-- [ ] TUI01A-02 共享descriptor/typed handler/controller与持久intent，纯行为验收。
-- [ ] TUI01A-03 Ink/headless同controller，实际包API、renderer与PTY检查。
-- [ ] TUI01A-04 真实HTTP/随机PG fixture发送→退出→恢复，0provider。
+- [x] TUI01A-01 固定API/依赖候选与合法scope；依赖锁曾精确移交并固定1cec921，已交还Lead。
+- [x] TUI01A-02 共享descriptor/typed handler/controller与持久intent，纯行为验收。
+- [x] TUI01A-03 Ink/headless同controller，实际包API、renderer与PTY检查。
+- [x] TUI01A-04 真实HTTP/随机PG fixture发送→退出→恢复，0provider。
 - [ ] TUI01A-05 固定证据/独立review/集成。
 
 后继stream/工具/thinking详情、真实model/access、附件、queue/steer/cancel/decision、管理与真实provider见父plan，首片不勾完整TUI目标。UI格式不决定能力。
