@@ -31,11 +31,14 @@ export async function checkDisk(directory: string, reserveBytes = COMPARISON.tot
   assert(availableBytes >= 1024 ** 3 + reserveBytes, 'comparison_disk_reserve_unavailable');
   return availableBytes;
 }
+export function preparedGit(preparationDeadlineMs: number, accounting: InputAccounting, execute: (timeoutMs: number) => Buffer, now = performance.now.bind(performance)) {
+  accounting.work();
+  const bytes = execute(Math.max(1, Math.min(5000, accounting.remainingMs)));
+  accounting.chargeCommon('git-output', bytes.length); return bytes;
+}
 function frozenFiles(repo: string, side: Side, accounting: InputAccounting): InputFile[] {
   const git = (args: string[], input?: string) => {
-    accounting.work();
-    const bytes = execFileSync('git', ['-C', repo, ...args], { input, maxBuffer: 12 * 1024 * 1024, timeout: Math.max(1, Math.min(5000, accounting.remainingMs)) });
-    accounting.chargeCommon('git-output', bytes.length); return bytes;
+    return preparedGit(15000, accounting, timeout => execFileSync('git', ['-C', repo, ...args], { input, maxBuffer: 12 * 1024 * 1024, timeout }));
   };
   const rows = git(['ls-tree', '-rz', COMPARISON.revisions[side], '--', ...INPUT_PATHS]).toString('utf8').split('\0').filter(Boolean);
   const entries = rows.map(row => {

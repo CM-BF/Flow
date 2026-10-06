@@ -17,13 +17,13 @@
 | 实现目标 | 新A/B da93263a1f47039abcfe7d20670cc2040c457136；旧c259不覆盖新编排 |
 | 实现范围 | 新claim仅mixed目录、mixed-ab-preparation、mixed-ab-run、原plan目录；无产品写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
 | 当前产出 | A/B固定输入与总预算Interface；当前实际窗口NOT_OPEN |
 | 下一可用交付 | 共用mixed的A/B薄编排、pure/fake checks、固定target独审 |
 | 当前阻塞 | 实现NONE；实际执行RESOURCE_PENDING/NOT_OPEN |
 | 需用户决定 | NONE |
-| Review | PENDING：新A/B固定da93263a1f47039abcfe7d20670cc2040c457136待独审；历史c259与64911 APPROVED仅其固定范围 |
+| Review | CHANGES_REQUESTED da93263a1f47039abcfe7d20670cc2040c457136；1P2同步Git未夹pre15，正在最小修复 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -201,3 +201,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 13:58:44 UTC：A/B薄编排准备完成；[checks](../../docs/evidence/s01/mixed-ab-preparation/checks.json)保留red/全部失败，61distinct=19new+42direct，最终覆盖来自59首次选择与13定向修复，非单批61/61。Root预读15s及绝对side期限已修，尚待fixedtarget独审。0actual/固定输入未导出，磁盘RESOURCE_PENDING不作实现阻塞；旧raw/source历史仍按fixedGit。
 
 2026-10-06 14:01:45 UTC：固定target `da93263a1f47039abcfe7d20670cc2040c457136`，manifest `a06e0d3cd2d839b47b033df929f39ecb3e9a7b654bcbbab132bbd62959f732a7`；[review-ready](../../docs/evidence/s01/mixed-ab-preparation/review-ready.md)。新四scope claim508f9c85 v1 ACTIVE/修复期保留。旧source只有已声明接线/fixture drift，旧raw tree保持；新actual output absent，当前磁盘门槛不满足。0PG/负载，不申请OPEN。
+
+2026-10-06 14:07:59 UTC：architecture_read补核确认da932唯一P2，撤回此前14:04:38准备APPROVED并改CHANGES_REQUESTED；root尚未接收/启窗。同步Git timeout仍取outer300余量，14.9秒可能获5秒；仅修pre15绝对剩余和返回后门禁，fake-clock/exec选项反例，不真实导出/PG。原87bindings/da932/raw冻结，新证据在preparation-deadline-fix。P06已先main收口/release，不与本508f writer混用。

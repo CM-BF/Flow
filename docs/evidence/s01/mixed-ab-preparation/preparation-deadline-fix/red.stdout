@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+ ❯ experiments/runner-capacity/mixed/preparation-git.test.ts (3 tests | 3 failed) 5ms
+   × at14.9seconds synchronous Git gets at most100ms from the absolute preparation deadline 3ms
+   × an exhausted preparation clock executes zero Git commands even when outer time remains 1ms
+   × a late synchronous return is charged then rejected, never made successful by a blocked timer 0ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  07:08:00
+   Duration  146ms (transform 35ms, setup 0ms, import 46ms, tests 5ms, environment 0ms)
+

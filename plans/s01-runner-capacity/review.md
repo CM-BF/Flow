@@ -137,3 +137,7 @@ Review target commit: `339147cb015fdd40ed1cedbc66aca26e736b3ee7`。状态APPROVE
 Review target commit: `da93263a1f47039abcfe7d20670cc2040c457136`
 
 状态PENDING；本片独审尚未发生。范围[review-ready](../../docs/evidence/s01/mixed-ab-preparation/review-ready.md)，manifest `a06e0d3cd2d839b47b033df929f39ecb3e9a7b654bcbbab132bbd62959f732a7`。不沿用c259/64911历史APPROVED。61distinct/strict0是pure/fake准备，实际A/B NOT_OPEN。
+
+## da932追加P2（2026-10-06 14:07:59 UTC）
+
+architecture_read原14:04:38 APPROVED经root同步Git期限补读后更正为CHANGES_REQUESTED，1P2/0P1。`ab-input.ts frozenFiles`使用outer remaining而不是pre15 remaining；14.9秒可同步阻塞至19.9秒。旧raw/manifest不动，最小source修复由owner在原508f v1执行，0actual。
