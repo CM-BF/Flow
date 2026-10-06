@@ -109,3 +109,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 09:40 UTC：[视觉与C0组合](../../docs/evidence/i02/visual-c0-source-comparison.json)12源码与各独审target完全一致，其中原10项也与manifest完全一致，root/Web类型检查exit0；沿用固定领域/浏览器证据，无模型或个人服务更新。C0仅可信原生未知状态，不涵盖正在实施的Codex adapter。ENG计划与117源实采回执同批归档；纯文档不跑工程测试。
 
 同批普通终文投影提升6313c885另获Execution Lead限定独审：算法与Mika原0d0524来源逐字相同，15项原断言仅换import后的原始输出已核。当前无adapter连接，不将投影completed等同Flow任务完成；未来adapter必须归一可能含原文的AssertionError。
+
+2026-10-06 09:43 UTC：通用native profile薄client095已由status_read独审、Mika接收；本批两源码对target/manifest完全一致，原3/3 HTTP和类型检查复用，无重复PG/模型。见[独审接收](../../docs/evidence/i02/native-profile-client-integration.json)。此接口只透明发布，配置存在不等于工具授权或原生运行完成。
