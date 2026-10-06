@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-06T17:56:31.411473+00:00",
+  "source": "5069586a9f17332de526e101eca3a4250cbc8d91",
+  "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "note": "Backend is context only; this audit reads only frontend fixed Git objects.",
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 50767,
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d"
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "bytes": 13124,
+      "sha256": "52a733934b498c8940c710898f34576c035b37a810bc0b8857600cebe8f8e3c4"
+    }
+  ],
+  "report": "/tmp/root-506-narrow-navigation-research.md",
+  "reportSha256": "599405cee081deb721ab2dbbef7b0adc8138319b919a354ff3faf602a77ead1e",
+  "evidence": "app1750 actual390 sidebar-open screenshot, no new browser run",
+  "limits": "Proposal/source observations only, no implementation or claim"
+}

@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-06T17:55:23.282287+00:00",
+  "state": "DELIVERED_MAIN_INTEGRATED_RELEASED",
+  "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "implementation": "2d1e2ade19941e9a8b38f18148e6a2d434f8c730",
+  "source": {
+    "path": "apps/web/src/execution-profiles/selection.ts",
+    "bytes": 5068,
+    "sha256": "fe983e85eb444a7be08fc126877184ad62a8a1b71c07bbe16fe063a9f52749c0",
+    "fixedMainCurrentEqual": true
+  },
+  "archives": [
+    {
+      "source": "8d84d529a0756116bd0fc8bad969d61a6c26248e:docs/evidence/i02/profilec02-independent-review.json",
+      "archive": "profile-readonly-main/profilec02-independent-review.json",
+      "bytes": 890,
+      "sha256": "ddc2d1b17031e1e14e2df7dc3a47f7d17ad733424f0f071fb116fd2db69231b1"
+    },
+    {
+      "source": "8d84d529a0756116bd0fc8bad969d61a6c26248e:docs/evidence/i02/message-settings-root-types-final.txt",
+      "archive": "profile-readonly-main/message-settings-root-types-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "8d84d529a0756116bd0fc8bad969d61a6c26248e:docs/evidence/i02/message-settings-root-types-final.json",
+      "archive": "profile-readonly-main/message-settings-root-types-final.json",
+      "bytes": 446,
+      "sha256": "a55a9f604edf5fd3766f250bbccd74f205b5d654fd0ba74b1141819f94957dc4"
+    }
+  ],
+  "checks": {
+    "source": "Execution Lead actual I02 combinedroot noEmit",
+    "exitCode": 0,
+    "seconds": 9.085672041052021,
+    "rawBytes": 0,
+    "localDedicatedChecks": "NOT_RUN_CANCELLED_DUPLICATE"
+  },
+  "review": "ExecutionLeadAPPROVED + root source review, typecompatibilityonly",
+  "registration": "Lead registry169 source-only; actual4320load not received",
+  "release": {
+    "claimId": "e0b86bb5-b373-4ad6-9257-6d8c18d06335",
+    "version": 2,
+    "committedAt": "2026-10-06T17:56:15.159Z",
+    "evidence": "profile-readonly-release-receipt.json"
+  },
+  "limits": [
+    "No message settings UI/provider capability delivered by this one annotation.",
+    "No repeat local types/test/PG/resource sample."
+  ],
+  "ownerFinal": "f704714abb8edddd8f6769483495507cf83c93c7",
+  "ownerLocalEqualsLsRemote": true,
+  "ownerClean": true,
+  "integrationProof": "Fixed source/main/current equal; implementation2d1 is not claimed to be main ancestor."
+}

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:38 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:52 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 发布af51两A完整通过，原B失败已封存；ef458真实ACK body-loss双独审0blocking、5819796 clean。1736单次fresh空间不足，0gate/运行并归还窗口。DPERF b17 wrapper双源码审0blocking；旧abd2 Node8及Recovery1b8受控27通过保持原范围 |
-| 下一可用交付 | RELEASE等待后继明确窗口及fresh原128/64MiB门槛，累计39.935秒/余140.065秒不重试；DPERF每entry binding/依赖pins和browser仍待。Recovery768两harness固定，root P2与peer源审待合并；M02八scope等Lead物化 |
-| 当前阻塞 | ACTIVE: B未完成兼容；1736 available1179914240B低于start1207959552B，未签gate，窗口归还。Recovery真实浏览器/DPERF浏览器未验，768部分源审P2待修；源码及独立只读正常，无需用户决定 |
+| 当前产出 | RELEASE B1750实际3Appchecks PASS，复用af51两A而未重跑；ef458/581979执行，compatibility599a5b17已生成，DB/worker/Chrome清理完成并归还窗口。原失败/未准入保留；DPERF旧Node8与Recovery1b8受控27通过保持原范围 |
+| 下一可用交付 | RELEASE获root独立实证限定批准，待原SVC operator受管发布，个人服务尚未更新；累计50.809秒/余129.191秒不自动续跑。DPERF候选binding获结构审、browser待独立窗；Recovery667限定源审通过；PROFILEC02已main8d84接收/组合root noEmit0并e0b v2释放，本地重复检查取消 |
+| 当前阻塞 | ACTIVE: RELEASE精确tuple兼容已独立批准，受管发布尚未执行；Recovery/DPERF真实浏览器仍待。PROFILEC02已交付并释放，独立settings UI leaf继续排队，独立settings UI leaf未交付；无需用户决定 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |

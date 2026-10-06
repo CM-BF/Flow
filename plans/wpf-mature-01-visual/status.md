@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 17:38 UTC |
+| 最近更新 | 2026-10-06 17:52 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 发布af51两A完整通过，原B失败已封存；ef458真实ACK body-loss双独审0blocking、5819796 clean。1736单次fresh空间不足，0gate/运行并归还窗口。DPERF b17 wrapper双源码审0blocking；旧abd2 Node8及Recovery1b8受控27通过保持原范围 |
-| 下一可用交付 | RELEASE等待后继明确窗口及fresh原128/64MiB门槛，累计39.935秒/余140.065秒不重试；DPERF每entry binding/依赖pins和browser仍待。Recovery768两harness固定，root P2与peer源审待合并；M02八scope等Lead物化 |
-| 当前阻塞 | ACTIVE: B未完成兼容；1736 available1179914240B低于start1207959552B，未签gate，窗口归还。Recovery真实浏览器/DPERF浏览器未验，768部分源审P2待修；源码及独立只读正常，无需用户决定 |
+| 当前产出 | RELEASE B1750实际3Appchecks PASS并获root精确tuple独立批准，复用af51两A不重跑；ef458/d629/compat599a5b17，DB及worker/Chrome清理并归还窗口。DPERF旧abd2 Node8通过，b17 wrapper与候选binding限定源审完成，browser未跑 |
+| 下一可用交付 | 原SVC operator接受固定af51+506/d629+compat599a5b17后受管发布；当前个人服务未变。DPERF summary-detail候选binding还须fresh独立browser窗口，task-links后继另绑；CHATREAD/视觉同层计划保持后继 |
+| 当前阻塞 | ACTIVE: 发布兼容检查已完成，实际受管发布尚未发生；DPERF浏览器交互未验。历史失败/NOT_RUN保留，累计50.809秒/余129.191秒不自动续跑，无需用户决定 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |

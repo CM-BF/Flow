@@ -1,0 +1,97 @@
+{
+  "state": "CANDIDATE_NOT_RUN",
+  "preparedAt": "2026-10-06T17:47:16.646807+00:00",
+  "sourceChecks": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "fixedCurrentHeadEqual": true,
+      "bytes": 8802
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "fixedCurrentHeadEqual": true,
+      "bytes": 6686
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "fixedCurrentHeadEqual": true,
+      "bytes": 5487
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "fixedCurrentHeadEqual": true,
+      "bytes": 33937
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "fixedCurrentHeadEqual": true,
+      "bytes": 12804
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "fixedCurrentHeadEqual": true,
+      "bytes": 33817
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "fixedCurrentHeadEqual": true,
+      "bytes": 10845
+    }
+  ],
+  "worktreeCleanObserved": true,
+  "packageVersions": [
+    {
+      "name": "@playwright/test",
+      "version": "1.63.0",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test"
+    },
+    {
+      "name": "playwright",
+      "version": "1.63.0",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright"
+    },
+    {
+      "name": "playwright-core",
+      "version": "1.63.0",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core"
+    }
+  ],
+  "nodeVersionEvidence": "24.20.0 from resolved Homebrew directory and INSTALL_RECEIPT; no binary execution",
+  "chromeVersionEvidence": {
+    "InfoPlistVersion": "154.0.8037.98",
+    "notRuntimeProbe": true
+  },
+  "previousBrowserBudget": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-budget.json",
+    "exists": false,
+    "runsDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs",
+    "runsExists": false,
+    "matchingResultOrBudgetFiles": [],
+    "previousRuntimeMs": 0,
+    "meaning": "No retained browser run evidence exists under this authoritative evidence directory; not proof about unrecorded external execution"
+  },
+  "supervisor": {
+    "original": "/private/tmp/dperf04-browser-preparation/supervisor.py",
+    "copiedExact": "/private/tmp/dperf04-summary-binding-candidate-xyzepmut/supervisor.py",
+    "sha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43",
+    "bytes": 10938
+  },
+  "bindingSha256": "ddf8e09b352e11c1d575c8a7c693e176ce3fe696d7a86269b57a21d0c5347d04",
+  "sandboxCandidateSha256": "fe63fb84357747fd04e2c6cf8f89ecda998ba0b05d55800994071f2be2e07535",
+  "candidatePaths": {
+    "base": "/private/tmp/dperf04-summary-binding-candidate-xyzepmut",
+    "scratch": "/private/tmp/dperf04-summary-binding-candidate-xyzepmut/scratch",
+    "output": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/summary-detail-20261006-174716-candidate",
+    "run": "summary-detail-20261006-174716-candidate"
+  },
+  "execution": "NONE: no Node/import/syntax/browser/HTTP/PG/free/install, no project/dependency writes",
+  "freshRequirements": [
+    "Manager confirms current claim/version/owner/scopes and sole run window",
+    "Independent populated-binding/sandbox approval; CANDIDATE must not be treated as REVIEWED_SOURCE_BOUND",
+    "Manager verifies current HEAD/clean/seven source hashes and all readOnlyFiles/supervisor again",
+    "Manager verifies previous budget absence or exact newly-present budget and cumulative elapsed; no reset",
+    "Fresh start>=1207959552 and stop<=1140850688, work45s/cleanup15s within combined60000ms",
+    "Fresh expiring one-use signed gate bound to actual reviewed binding digest/runner/source/entry/run; currently no gate",
+    "If source/dependencies/run/path/budget changes, rebind and review rendered sandbox before gate"
+  ]
+}

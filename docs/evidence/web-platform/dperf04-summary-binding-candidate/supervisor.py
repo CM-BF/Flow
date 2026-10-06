@@ -1,0 +1,153 @@
+"""REVIEW DRAFT. Requires source delta + separately reviewed binding + fresh one-use gate.
+Do not execute for syntax checking: no runtime admission is granted by this file.
+"""
+import datetime, hashlib, json, os, re, selectors, shutil, signal, stat, subprocess, sys, time
+from pathlib import Path
+BASE = Path(__file__).resolve().parent
+MiB = 1024 ** 2
+TOTAL_MS = 60000
+CLEANUP_MS = 15000
+ENTRIES = {'summary-detail': 'apps/execution-dashboard/test/summary-detail.browser.mjs',
+           'task-links': 'apps/execution-dashboard/test/task-links.browser.mjs'}
+
+def load(p):
+    assert Path(p).is_file() and not Path(p).is_symlink() and Path(p).stat().st_size <= MiB
+    return json.loads(Path(p).read_text())
+def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def save(p, value): Path(p).write_text(json.dumps(value, indent=2) + '\n')
+def sizes(root):
+    logical = allocated = 0
+    if not root.exists(): return (0, 0)
+    for parent, directories, files in os.walk(root, followlinks=False):
+        directories[:] = [n for n in directories if not (Path(parent)/n).is_symlink()]
+        for name in files:
+            try: s = (Path(parent)/name).lstat()
+            except FileNotFoundError: continue
+            if stat.S_ISREG(s.st_mode): logical += s.st_size; allocated += s.st_blocks * 512
+    return logical, allocated
+
+def free(p):
+    s = os.statvfs(p); return s.f_bavail * s.f_frsize
+
+def alive(p):
+    if p is None: return False
+    try: os.killpg(p.pid, 0); return True
+    except ProcessLookupError: return False
+
+def stop(p, sig):
+    if p:
+        try: os.killpg(p.pid, sig)
+        except ProcessLookupError: pass
+
+def main():
+    assert len(sys.argv) == 3 and sys.argv[1] == '--gate'
+    binding = load(BASE/'binding.json')
+    assert binding['state'] == 'REVIEWED_SOURCE_BOUND', 'No binding until revised source and supervisor are independently reviewed'
+    gate = load(sys.argv[2])
+    assert gate['allowRun'] is True and gate['singleUse'] is True and gate['mode'] == 'dperf-browser'
+    assert gate['bindingSha256'] == sha(BASE/'binding.json') and gate['runnerSha256'] == sha(__file__)
+    assert gate['claim'] == binding['claim'] and gate['overlaps'] == []
+    assert datetime.datetime.fromisoformat(gate['expiresAt'].replace('Z','+00:00')) > datetime.datetime.now(datetime.timezone.utc)
+    assert gate['entry'] in ENTRIES and re.fullmatch('[a-zA-Z0-9-]{1,80}', gate['run'])
+    assert gate['sourceHead'] == binding['head'] and gate['sourceHashes'] == binding['sources']
+    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs']
+    assert 0 <= gate['previousRuntimeMs'] < TOTAL_MS-CLEANUP_MS
+    assert gate['totalMs'] == TOTAL_MS-gate['previousRuntimeMs']
+    assert gate['startFreeBytes'] >= 1024**3+128*MiB and gate['stopFreeBytes'] >= 1024**3+64*MiB
+    root = Path(binding['worktree']); evidence = root/'docs/evidence/wpf-dperf04'
+    assert root.resolve() == root and evidence.resolve() == evidence
+    budget = evidence/'browser-budget.json'
+    if budget.exists():
+        assert sha(budget) == gate['previousBudgetSha256']
+        previous = load(budget); assert previous['complete'] is True and previous['spentMs'] == gate['previousRuntimeMs']
+    else: assert gate['previousRuntimeMs'] == 0 and gate['previousBudgetSha256'] is None
+    consumed = BASE/'consumed-gate.json'
+    with consumed.open('x') as f: json.dump(gate, f)  # Failure after consumption still counts; never retry here.
+    started = time.monotonic(); wall_ms = int(time.time()*1000)
+    hard = started+gate['totalMs']/1000; work = hard-CLEANUP_MS/1000
+    scratch = BASE/'scratch'; output = evidence/'browser-runs'/gate['run']; log = BASE/'worker.log'
+    process = None; errors = []; cleanup = []; samples = []; result = None; log_bytes = 0
+    selector = selectors.DefaultSelector()
+    report = {'state':'FAILED', 'sourceHead':binding['head'], 'implementation':binding['implementation'],
+              'entry':gate['entry'], 'startedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'previousRuntimeMs':gate['previousRuntimeMs'], 'samples':samples, 'errors':errors}
+    def checkpoint():
+        if time.monotonic() >= work: raise TimeoutError('Work deadline; cleanup reserve begins')
+        available = free(root); tmp = sizes(scratch); retained = sizes(evidence)[0]+sizes(BASE)[0]-tmp[0]
+        samples.append({'seconds':round(time.monotonic()-started,3),'freeBytes':available,'scratchLogical':tmp[0],'scratchAllocated':tmp[1],'retainedBytes':retained})
+        if available <= gate['stopFreeBytes']: raise RuntimeError('Free-space stop')
+        if max(tmp) > 64*MiB: raise RuntimeError('Scratch/profile observed cap')
+        if retained > 8*MiB-128*1024: raise RuntimeError('Retained evidence reserve exhausted')
+    def git(*args):
+        remaining=work-time.monotonic(); assert remaining > 0
+        return subprocess.check_output(['git',*args],cwd=root,text=True,timeout=min(2,remaining),env={**os.environ,'GIT_OPTIONAL_LOCKS':'0','GIT_CONFIG_GLOBAL':'/dev/null','GIT_CONFIG_SYSTEM':'/dev/null'}).strip()
+    try:
+        assert git('rev-parse','HEAD') == binding['head'] and git('branch','--show-current') == binding['branch']
+        assert git('status','--porcelain') == ''
+        save(budget, {'complete':False, 'spentMs':gate['previousRuntimeMs'], 'run':gate['run'], 'startedAt':report['startedAt']})
+        for p,h in binding['sources'].items(): assert sha(root/p) == h
+        for item in binding['readOnlyFiles']:
+            p=Path(item['path']); assert str(p.resolve()) == item['realpath'] and sha(p) == item['sha256']
+        assert free(root) >= gate['startFreeBytes']
+        checkpoint(); assert not scratch.exists() and not output.exists()
+        scratch.mkdir(mode=0o700); output.mkdir(parents=True,mode=0o700)
+        profile=BASE/'sandbox.sb'
+        profile.write_text('(version 1)\n(allow default)\n(deny file-write*)\n(allow file-write* (subpath '+json.dumps(str(scratch)) +') (subpath '+json.dumps(str(output))+') (literal "/dev/null"))\n(deny network*)\n(allow network-bind (local ip "localhost:*"))\n(allow network-inbound (local ip "localhost:*"))\n(allow network-outbound (remote ip "localhost:*"))\n')
+        child_gate={**gate,'chromeExecutable':binding['chrome'],'playwrightModule':binding['playwrightModule'],
+          'playwrightSha256':next(item['sha256'] for item in binding['readOnlyFiles'] if item['realpath']==binding['playwrightModule']),
+          'supervision':{'startedAtMs':wall_ms,'workDeadlineMs':wall_ms+gate['totalMs']-CLEANUP_MS,
+            'hardDeadlineMs':wall_ms+gate['totalMs'],'scratch':str(scratch),'output':str(output),'parentPid':os.getpid()}}
+        save(BASE/'child-gate.json',child_gate)
+        env={k:v for k,v in os.environ.items() if not k.startswith(('FLOW_','PG','POSTGRES_','DPERF04_')) and k not in ('DATABASE_URL','NODE_OPTIONS','HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy')}
+        for key in ('TMPDIR','TMP','TEMP','XDG_CACHE_HOME','NODE_COMPILE_CACHE'): env[key]=str(scratch)
+        env.update({'NODE_DISABLE_COMPILE_CACHE':'1','TSX_DISABLE_CACHE':'1','GIT_CONFIG_GLOBAL':'/dev/null','GIT_CONFIG_SYSTEM':'/dev/null','GIT_OPTIONAL_LOCKS':'0','DPERF04_BROWSER_GATE':str(BASE/'child-gate.json')})
+        checkpoint()
+        with log.open('xb') as stream:
+            process=subprocess.Popen(['/usr/bin/sandbox-exec','-f',str(profile),binding['node'],ENTRIES[gate['entry']]],cwd=root,env=env,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,start_new_session=True)
+            report['pgid']=process.pid; os.set_blocking(process.stdout.fileno(),False); selector.register(process.stdout,selectors.EVENT_READ)
+            while True:
+                checkpoint()
+                for key,_ in selector.select(min(.25,max(0,work-time.monotonic()))):
+                    chunk=os.read(key.fileobj.fileno(),65536)
+                    if not chunk: selector.unregister(key.fileobj); continue
+                    keep=min(len(chunk),max(0,MiB-log_bytes)); stream.write(chunk[:keep]);stream.flush();log_bytes+=keep
+                    if keep != len(chunk): raise RuntimeError('Worker log cap')
+                if process.poll() is not None and not selector.get_map(): break
+    except BaseException as e: errors.append(type(e).__name__+': '+str(e))
+    finally:
+        selector.close()
+        try:
+            stop(process,signal.SIGTERM); until=min(hard-5,time.monotonic()+3)
+            while alive(process) and time.monotonic()<until:
+                process.poll();time.sleep(.025)
+            if alive(process): stop(process,signal.SIGKILL)
+            if process: process.wait(timeout=max(.01,min(1,hard-time.monotonic())))
+            until=min(hard-3,time.monotonic()+1)
+            while alive(process) and time.monotonic()<until: time.sleep(.025)
+            if alive(process): cleanup.append('Own process group remains; scratch retained')
+        except BaseException as e: cleanup.append('Process cleanup: '+str(e))
+        if process and process.stdout: process.stdout.close()
+        try:
+            if not alive(process) and scratch.exists(): shutil.rmtree(scratch)
+            if scratch.exists(): cleanup.append('Scratch remains')
+        except BaseException as e: cleanup.append('Scratch cleanup: '+str(e))
+        if time.monotonic()>hard: cleanup.append('Total deadline exceeded')
+        try:
+            result=load(output/'browser-results.json')
+            assert result['sourceHead']==binding['head'] and result['sourceHashes']==binding['sources']
+            assert result['outcome']=='passed' and result['errors']==[] and result['cleanupErrors']==[]
+            assert result['serverClosed'] is True and result['fixtureRemoved'] is True and result['chromeExited'] is True
+        except BaseException as e: errors.append('Browser report: '+str(e))
+        elapsed=round((time.monotonic()-started)*1000); cumulative=gate['previousRuntimeMs']+elapsed
+        if cumulative>TOTAL_MS: errors.append('Cumulative allowance exceeded')
+        retained=sizes(evidence)[0]+sizes(BASE)[0]-sizes(scratch)[0]
+        if retained>8*MiB-128*1024: errors.append('Retained evidence budget exceeded')
+        report.update(elapsedMs=elapsed,cumulativeMs=cumulative,remainingMs=max(0,TOTAL_MS-cumulative),
+          exitCode=process.returncode if process else None,logBytes=log_bytes,retainedBytes=retained,
+          cleanup={'errors':cleanup,'groupAbsent':not alive(process),'scratchAbsent':not scratch.exists()},
+          state='PASS' if not errors and not cleanup and process and process.returncode==0 else 'FAILED')
+        save(BASE/'result.json',report)
+        save(budget,{'complete':not cleanup,'spentMs':cumulative,'limitMs':TOTAL_MS,'cleanupReserveMs':CLEANUP_MS,'run':gate['run'],'supervisorResult':str(BASE/'result.json')})
+    return 0 if report['state']=='PASS' else 1
+
+if __name__ == '__main__': sys.exit(main())

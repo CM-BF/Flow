@@ -80,3 +80,7 @@ Arc后继当前只读18literal方案已集中到[现有研究入口](../../docs/
 结构恢复先核中心/主体身份，再按版本化有界view引用、比例和选中项恢复；不复制journal、请求、controller或凭据，不为同稿造第二view.key，未知引用有界占位。首验同顶层tab内A|B；3pane仍开放，须核stream lease在持续hasMore/wake/reacquire下的进展及reply/queue整体并发，不从lease上限2推断公平或饥饿已实证。P01 pane目标需协调实际typed context，不用global focus/task冒归属，私有App仍唯一mutation owner。
 
 真实App必须覆盖独立焦点/选择/scroll、profile/知识/附件及pending capture/原receipt保留、手动tab激活/相邻关闭焦点/390 splitter键盘；纯reducer或stable key本身不证明这些行为。此研究0产品执行，不扩Recovery21，后继仍待合法App交权与独审。
+
+原05-03/04/05加入[app1750固定截图的用户结果验收](../../docs/evidence/web-platform/app1750-product-acceptance-followup.json)：390展开导航遮盖内容不是完整移动验收或单独bug证据；关闭导航后需完整读消息/编辑发送/展开详情，desktop↔narrow切换保持草稿、焦点与可见性，导航开关键盘语义明确。沿现布局/草稿authority，不新增状态源、任务或App写范围；不重跑已green RELEASE。
+
+同一app1750验收补[root固定506导航两源研究](../../docs/evidence/web-platform/app1750-narrow-navigation-root.md)：fresh窄屏与desktop resize须分别验；导航开关expanded与关闭/选会话后的焦点回交需真实键盘验证，保持main/draftMap和原plugin slots身份。源码推导不等运行bug，原native disclosure/modal取舍按实际交互核；不阻RELEASE或新建任务。

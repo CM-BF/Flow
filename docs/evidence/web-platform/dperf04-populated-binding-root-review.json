@@ -1,0 +1,34 @@
+{
+  "reviewer": "root independent read-only",
+  "at": "2026-10-06T17:48:18.759027+00:00",
+  "verdict": "APPROVED_BINDING_STRUCTURE_SCOPED_NOT_RUN",
+  "implementation": "b17bb05c797cfccc8dbeb4c3de26e57143600bec",
+  "head": "032b4418f5a944150b888e10fef342b64f3e3655",
+  "entry": "summary-detail",
+  "run": "summary-detail-20261006-174716-candidate",
+  "candidateBindingPath": "/private/tmp/dperf04-summary-binding-candidate-xyzepmut/binding.json",
+  "candidateBindingSha256": "ddf8e09b352e11c1d575c8a7c693e176ce3fe696d7a86269b57a21d0c5347d04",
+  "supervisorSha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43",
+  "renderedSandboxSha256": "fe63fb84357747fd04e2c6cf8f89ecda998ba0b05d55800994071f2be2e07535",
+  "checks": {
+    "sourceCount": 7,
+    "readOnlyFileCount": 32,
+    "allHashesAndRealpathsMatch": true,
+    "headBranchCleanMatch": true,
+    "sandboxExactlyParentRender": true,
+    "scratchOutputGateBudgetAbsent": true
+  },
+  "scope": "Only fixed summary-detail entry/run/base/scratch/output and finite pinned dependency set. task-links remains separately bound successor, not automatically launched.",
+  "admission": [
+    "This source/binding review grants no run window or resource sample. Existing CANDIDATE intentionally fails runner.",
+    "Manager may produce reviewed binding changing only state to REVIEWED_SOURCE_BOUND, retain exact reviewed tuple, compute final digest and bind fresh expiring single-use gate after exclusive window/fresh claim/current hashes/clean/budget/space checks.",
+    "Original cumulative browser60000ms includes15000ms cleanup; previous0 currently from no recorded browser run, recheck before admission.",
+    "Run/path/head/dependency/source or budget changes require exact rebind and rendered sandbox re-review. Source-only metadata changes can be verified without rerunning behavior."
+  ],
+  "boundaryNotes": [
+    "Native sandbox permits own scratch/output plus devnull writes, loopback network; localhost access is not exclusive-port isolation and polling is not hardquota.",
+    "Node executable/libnode + relevant Playwright implementation/package chain are pinned; Chrome launcher/plist not every framework byte. Actual nested sandbox compatibility/peak/cleanup remain untested.",
+    "Candidate audit freshRequirements says stop<=1140850688: clarify this means observed free<=stop threshold; supervisor correctly requires stopFreeBytes>=1GiB+64MiB. Do not lower stop threshold."
+  ],
+  "cleanCode": "One parent budget and process-group owner; child writes exact scoped outputs; genuine check bodies retained. No additional blocking source/binding finding."
+}

@@ -102,3 +102,7 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 2026-10-06 17:18 UTC，原06-04验收接缝更新：[ec91固定nativeHTTP fixture源审](../../docs/evidence/web-platform/recovery01-ec91-native-proxy-root-review.json)仅源码批准，实际public Host、重复caller headers、分离Set-Cookie、SSE/backpressure及abort/close仍待真实运行。丢ACK注入必须证明已提交且浏览器只见不确定结果，不能把无headers socket销毁当不可透明重发的保证；保原key/body/material顺序与显式Retry断言，不改产品适应harness。未增task/scope/预算。
 
 原06-04同层测试接缝后继已[17:28 fresh原21派工](../../docs/evidence/web-platform/recovery01-bodyloss-cleanup-source-dispatch.json)：只两harness/ownrecords修确定性ACK body-loss与ownedDB清理。先核实际pg-pool/pg版本；Pool.end不直接等价server连接0，短有界观察持续nonzero/queryerror必须失败，保有限pid/state与安全errorcode，禁止FORCE/终止他人连接。CREATE/turn/queue原身份、材料、显式Retry断言不减；不把RELEASE方法的源码或运行证据当Recovery已验。预算不变，0新运行。
+
+原06-03呈现后继补[app1750用户验收](../../docs/evidence/web-platform/app1750-product-acceptance-followup.json)：桌面accepted queue receipt的大块技术说明可研究紧凑项/状态；unknown、失败、必须动作与原请求身份仍明确保留，不能以美化隐藏。390需在关闭导航后实读消息/编辑发送/展开详情，跨宽度保草稿与可见焦点。固定截图与兼容green不代完整移动或a11y验收；无新增运行/任务/当前scope。
+
+同一app1750验收补[root固定506导航两源研究](../../docs/evidence/web-platform/app1750-narrow-navigation-root.md)：fresh窄屏与desktop resize须分别验；导航开关expanded与关闭/选会话后的焦点回交需真实键盘验证，保持main/draftMap和原plugin slots身份。源码推导不等运行bug，原native disclosure/modal取舍按实际交互核；不阻RELEASE或新建任务。

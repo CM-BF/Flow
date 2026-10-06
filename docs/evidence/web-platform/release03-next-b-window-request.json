@@ -1,6 +1,6 @@
 {
   "recordedAt": "2026-10-06T17:38:19.616370+00:00",
-  "state": "SOURCE_APPROVED_B1736_NOT_RUN_RESOURCE_WINDOW_RETURNED",
+  "state": "COMPATIBILITY_APPROVED_OPERATOR_HANDOFF_READY",
   "task": "WPF-RELEASE03",
   "owner": "w01_owner",
   "source": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
@@ -30,7 +30,7 @@
     "startBytes": 1207959552,
     "stopBytes": 1140850688,
     "freshSample": "17:35:43.958730Z 1179914240B below1207959552B; one sample only",
-    "grant": "B1736 returned; no gate or runtime, awaits distinct later window/resource event"
+    "grant": "B1736 returnedNOT_RUN; O15 now ownsPG, later B requires fresh original128MiB margin and explicit window"
   },
   "mode": "app only, no A rerun, no artifact rebuild",
   "requirements": [
@@ -43,5 +43,16 @@
   "peerReview": "release03-ef458-peer-source-review.md",
   "rootReview": "release03-ef458-root-source-review.json",
   "reviewBoundary": "Two source-only independent approvals/0blocking; newruntime NOT_RUN, no compatibility green",
-  "windowEvidence": "release03-app2-not-run-1736.json"
+  "windowEvidence": "release03-app2-not-run-1736.json",
+  "latestResult": "release03-app1750-intake.json",
+  "runtimeBudget": {
+    "spentMs": 50809,
+    "remainingMs": 129191,
+    "notAutomaticRetry": true
+  },
+  "next": "No B retry requested. Original SVC operator accepts af51 backend+506 source/d629 formal artifact+compat599a5b17 through existing controlled flow; actual deployment receipt remains pending.",
+  "evidenceReview": "release03-app1750-root-review.json",
+  "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+  "ownerMetadata": "51e8597d10e14146f95c5d572cb3bf5d30545b07",
+  "operatorHandoff": "release03-operator-fixed-handoff.json"
 }

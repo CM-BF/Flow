@@ -1,0 +1,19 @@
+{
+  "reviewer": "root independent source review",
+  "at": "2026-10-06T17:48:57.190499+00:00",
+  "verdict": "APPROVED_SOURCE_SCOPED",
+  "base": "4015c667f1e2b833755b2fda6ed205fb951ec576",
+  "target": "2d1e2ade19941e9a8b38f18148e6a2d434f8c730",
+  "observedHead": "0f4e68927754b188026711b588a722166a618994",
+  "sourceSha256": "fe983e85eb444a7be08fc126877184ad62a8a1b71c07bbe16fe063a9f52749c0",
+  "blockingFindings": [],
+  "delta": "Single configuredSelection parameter changed DirectoryProfile -> Immutable<DirectoryProfile>. Reversing exactly that annotation reproduces complete original bytes. No runtime body or shared source change.",
+  "reasoning": [
+    "Catalog produces Immutable<DirectoryProfile[]> and selected profiles are Immutable<ChatProfile>; new nested choices are readonly arrays, matching the three original4015 diagnostics.",
+    "Function only forwards input to the existing unknown-entry reader, which structuredClones, validates and freezes. Receiving readonly input describes actual consumption and accepts the existing mutable producers without casts.",
+    "Existing access allowlist and all runtime configuration/schema/receipt checks remain identical. No new setting UI, protocol, any or cast added.",
+    "Existing execution-profiles test/catalog/Picker and shared client/contracts/root config byte-identical to base."
+  ],
+  "validation": "Source-only; local noEmit/specific tests pending owner evidence. Sparse tree lacks full Picker/React closure so no full Web/root check is claimed. Lead owns final combination check and integration.",
+  "cleanCode": "Local find-skills/clean-code/codebase-design used to correct the single Interface responsibility without copying validators or adding overloads; source change needs existing direct caller checks, not unrelated full suite."
+}

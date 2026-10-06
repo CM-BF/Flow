@@ -1,0 +1,34 @@
+{
+  "recordedAt": "2026-10-06T17:54:16.876136+00:00",
+  "source": "GO via root after viewing original app1750 light1280/dark390; root independent evidence review viewed both PNGs. Manager does not claim an additional browser/AT check.",
+  "fixedTuple": {
+    "frontendSource": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+  },
+  "screenshots": [
+    {
+      "name": "app-dark-390.png",
+      "bytes": 39549,
+      "sha256": "15d647ab892d7063f606d192831dd3576d81133a5f55406c1f775157e80d46d3"
+    },
+    {
+      "name": "app-light.png",
+      "bytes": 67021,
+      "sha256": "5011916dcbd3dd48f35951d653925bd2ed3b886603877d7cacd0c108595761fc"
+    }
+  ],
+  "mapping": [
+    "WPF-MATURE-01-03/04 and CHATREAD/REQ43",
+    "WPF-MATURE-05-03/04/05",
+    "WPF-MATURE-06-03"
+  ],
+  "acceptance": [
+    "390 navigation-open overlay is evidence only for that state, neither complete mobile usability proof nor alone a product bug.",
+    "Close navigation, then actually read complete messages, edit/send and expand details. Preserve editable draft and visible focus across desktop/narrow transitions; verify navigation button keyboard semantics.",
+    "Investigate compact desktop accepted queue items/status within existing presentation follow-up. Keep unknown/failure/required action and original request identity clearly available.",
+    "Do not rerun already-green RELEASE journey, rewrite raw, expand current App scope, create a new task, or call this full a11y acceptance."
+  ],
+  "runtime": "NONE; existing plan acceptance only",
+  "releaseGate": "Does not block accepted exacttuple compatibility evidence"
+}

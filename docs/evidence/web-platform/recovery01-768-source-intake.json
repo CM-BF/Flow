@@ -5,8 +5,11 @@
   "metadata": "a3c81dd9a4fb4a5027b48181416fd7be70833263",
   "writer": "workspace_panels_owner",
   "claim": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 original21",
-  "review": "REQUEST_CHANGES_PENDING_SCOPE: root partial review, peer W01 in progress",
-  "finding": "Root P2 at browser~394: retryAck.turn.taskId and originalAck.turn.taskId are absent in public turn shape; both undefined may pass. Required real turn.task.id nonempty and same turn.id/receipt. Await root full review before one merged writer dispatch.",
+  "review": "REQUEST_CHANGES_SOURCE_SCOPED: root complete + W01 peer oneP2; no otherblocking",
+  "finding": "One consolidated RECOVERY-768-P2-TASK-IDENTITY: validate public ACK/input and real nested turn.task.id nonempty/equal, preserve same turn.id; runtime imports worker-only. Root fullreport and peer align.",
   "runtime": "NOT_RUN; old1b8 27 controlled cases not relabeled; budgets unchanged",
-  "manifest": "recovery01-768-bodyloss-owner-manifest.json"
+  "manifest": "recovery01-768-bodyloss-owner-manifest.json",
+  "dispatch": "recovery01-768-repair-dispatch.json",
+  "rootReview": "recovery01-768-root-source-review.json",
+  "peerReview": "recovery01-768-peer-review/report.md"
 }

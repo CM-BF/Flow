@@ -64,3 +64,7 @@ VISUAL01固定a8b/交付f708已独审并main4391接收，owner558895d收口且35
 - 富活动/普通控件/分页详情采用disclosure语义；原真正command menu保其focus/键盘模型。以Enter/Space、expanded、关闭回焦点与有意义status验收，不将整个body/每行改alert。WAI三主源由root实查，Flow方案仍待真实browser/辅助技术验证，不冒AT合规。
 
 以上仅原TODO验收细化；原root四源/历史截图报告与peer五源报告字节均保留。Task output独立第六blob补足peer未查声明，不改写其原报告，也不声称后端Terminal加载或页面导航已经实测。发布与DPERF后排期，当前无产品领取。
+
+app1750新增用户结果验收仍归原01-03/04与CHATREAD/REQ43：[固定506+af51截图后继](../../docs/evidence/web-platform/app1750-product-acceptance-followup.json)。390导航展开覆盖聊天只证明当时状态；后继实际关闭导航后读完整消息、编辑发送和展开详情，验证desktop↔narrow草稿与可见焦点保留、导航开关键盘语义。此补充不否定已通过发布兼容、不冒完整移动/a11y验收，不重跑原green旅程。
+
+同一app1750验收补[root固定506导航两源研究](../../docs/evidence/web-platform/app1750-narrow-navigation-root.md)：fresh窄屏与desktop resize须分别验；导航开关expanded与关闭/选会话后的焦点回交需真实键盘验证，保持main/draftMap和原plugin slots身份。源码推导不等运行bug，原native disclosure/modal取舍按实际交互核；不阻RELEASE或新建任务。

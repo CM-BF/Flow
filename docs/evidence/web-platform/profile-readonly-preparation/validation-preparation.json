@@ -1,0 +1,69 @@
+{
+  "createdAt": "2026-10-06T17:47:39.822373+00:00",
+  "state": "PREPARED_NOT_RUN",
+  "thirdParty": [
+    {
+      "label": "typescript",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+      "name": "typescript",
+      "version": "5.9.3",
+      "packageSha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "label": "vitest",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "name": "vitest",
+      "version": "4.0.18",
+      "packageSha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "label": "nodeTypes",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "name": "@types/node",
+      "version": "24.19.1",
+      "packageSha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    },
+    {
+      "label": "zod",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "name": "zod",
+      "version": "4.6.5",
+      "packageSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    }
+  ],
+  "sourceAliases": {
+    "@flow/client": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-readonly-compatibility/packages/client/src/index.ts",
+    "@flow/contracts": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-readonly-compatibility/packages/contracts/src/index.ts"
+  },
+  "scratch": "/private/tmp/profilec02-check-preparation",
+  "noInstallLinksOrCacheTargetWrites": true,
+  "commands": [
+    [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc",
+      "--project",
+      "/private/tmp/profilec02-check-preparation/tsconfig.json",
+      "--noEmit"
+    ],
+    [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+      "run",
+      "--config",
+      "/private/tmp/profilec02-check-preparation/vitest.config.mjs",
+      "--configLoader",
+      "native",
+      "apps/web/test/execution-profiles.test.ts"
+    ]
+  ],
+  "configs": [
+    {
+      "path": "/private/tmp/profilec02-check-preparation/tsconfig.json",
+      "sha256": "2f75c153e9023493c2df2acc2a932d6c2d724f985d2e0a0d8eed779668df780f"
+    },
+    {
+      "path": "/private/tmp/profilec02-check-preparation/vitest.config.mjs",
+      "sha256": "805a8dfedcdf30c027a90841d5974114a90215c421bab814ba8fa177d2cd4906"
+    }
+  ]
+}

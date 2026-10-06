@@ -1,0 +1,73 @@
+{
+  "recordedAt": "2026-10-06T17:56:00.533555+00:00",
+  "state": "EXACT_NEW_TUPLE_COMPATIBILITY_READY_FOR_ORIGINAL_OPERATOR",
+  "authority": "Lead accepted evidence/cleanup; original SVC05H operator owns release operations. Manager no personal service reads or deployment.",
+  "source": {
+    "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "sealedHead": "51e8597d10e14146f95c5d572cb3bf5d30545b07",
+    "leadPreviouslyObserved": "ee6d0a5282d1820f1d37e059bf94ad268ac41f22",
+    "delta": "Only one current review summary sentence, source/raw unchanged",
+    "review": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/review.md",
+    "rootReview": "release03-app1750-root-review.json"
+  },
+  "artifactRoot": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts",
+  "artifactDirectory": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+  "descriptor": {
+    "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+  },
+  "releaseId": "388371a4972c469b8ace623454594132",
+  "backend": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6"
+  },
+  "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+  "compatibilitySourceDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs/app1750-20261006-175014-344a04/compatibility",
+  "verifiedReportsRoot": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs/app1750-20261006-175014-344a04/verified-reports",
+  "verifiedCompatibilityDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs/app1750-20261006-175014-344a04/verified-reports/web-compatibility/599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+  "reportFiles": [
+    {
+      "name": "report.json",
+      "bytes": 646,
+      "sha256": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9"
+    },
+    {
+      "name": "read.json",
+      "bytes": 249,
+      "sha256": "bbfccc446c91b11d70bae5cf93955eb49c17153a91b64e7ca583137eab19481c"
+    },
+    {
+      "name": "send.json",
+      "bytes": 239,
+      "sha256": "50134443cca2ab9cd04262a91b7f8de3d031a0e56dabd757607fd22481313a83"
+    },
+    {
+      "name": "recover.json",
+      "bytes": 231,
+      "sha256": "9dde466bc8ef9d6870a238014deb2608d98ff634b2f0f76e64fc41a05bb9e2b1"
+    },
+    {
+      "name": "negotiation.json",
+      "bytes": 265,
+      "sha256": "9206dcacfd63481c7d67ec7cad6e08529d01ab490c9d654715c34d55240db933"
+    }
+  ],
+  "all12AProof": "REUSED exact retained proof; not rerun",
+  "budget": {
+    "spentMs": 50809,
+    "remainingMs": 129191,
+    "notAutomaticRuntimeAllowance": true
+  },
+  "retainedCompatibility": {
+    "state": "UNKNOWN_NOT_READ_BY_MANAGEMENT",
+    "knownPriorTuple": "Personal backend362/v15 plus Web8d8/v2, source receipt only; not newly sampled",
+    "needed": "Original operator reads old retained artifact/report and checks exact retained artifact × af51 compatibility through existing release path. Known old362 tuple does not establish this cross-combination.",
+    "forbiddenShortcut": "Do not edit old362 report to relabel its backend or assume compatibility from newd629 evidence."
+  },
+  "limits": [
+    "No additional A/B tests, personal reads/restarts/reload or service mutation by this management action.",
+    "Actual main integration receipt and personal deployment are separate; neither claimed here."
+  ]
+}
