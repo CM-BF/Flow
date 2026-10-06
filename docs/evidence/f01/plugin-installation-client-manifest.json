@@ -1,0 +1,96 @@
+{
+  "target": "67fd45924e51c3356ca07e199335f35038f34968",
+  "observedAt": "2026-10-06T14:41:45.167657+00:00",
+  "scope": "five owner methods and public exports only; domain a578 already main56d90",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 50566,
+      "sha256": "3a8543bed0fb5c680f198311e8f48669ac94fb8eba76c08b8ff9f2b934f701ec"
+    },
+    {
+      "path": "packages/client/src/plugin-installations.test.ts",
+      "bytes": 5230,
+      "sha256": "dba7aea1d155b5d39e53666c36990185421e296d17f1b568e0b76998a972920b"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1385,
+      "sha256": "1b60d4582bee11db36b0335f8927d48f7597d13b51ab46395363bb7c40749c6e"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/plugin-installation-client-red.txt",
+      "bytes": 1257,
+      "sha256": "8a7d5412b7230e3208ba5055bd4825be7adea1d76f0c6439cfcb204eb4f0b77d"
+    },
+    {
+      "path": "docs/evidence/f01/plugin-installation-client-red.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/evidence/f01/plugin-installation-client-green.txt",
+      "bytes": 324,
+      "sha256": "de85632911f00f873202261c1df482b17d04fc814b2323ef06a2d4d44dbbf67a"
+    },
+    {
+      "path": "docs/evidence/f01/plugin-installation-client-green.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/plugin-installation-client-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/f01/plugin-installation-client-types.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    }
+  ],
+  "readonlyInputs": [
+    {
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394",
+      "target": "a578bfd977f5f8f8376cee613307f7011d8778a7"
+    }
+  ],
+  "checks": {
+    "red": {
+      "exit": 1,
+      "cases": 1
+    },
+    "green": {
+      "exit": 0,
+      "cases": 1,
+      "durationMs": 38,
+      "totalMs": 370
+    },
+    "types": {
+      "exit": 0,
+      "toolChunk": "17a3c1"
+    },
+    "newPG": 0,
+    "provider": 0
+  },
+  "limits": [
+    "202 acceptance is not current installation success",
+    "partial GET fixture tests transparent transport, not full DTO validation",
+    "no default server mount, CLI, host execution or settlement evidence in this slice",
+    "lost ACK not automatically retried; explicit caller same-key attempt illustrated"
+  ],
+  "skills": {
+    "classification": "bounded; existing approved center-interface reused under standing co-lead authorization",
+    "local": [
+      "find-skills",
+      "codebase-design",
+      "clean-code",
+      "brainstorming"
+    ],
+    "application": "single request/auth/error/abort transport reused; no duplicate domain state machine or new protocol; red then actual loopback green"
+  }
+}
