@@ -341,3 +341,10 @@ CHAT04中心queue（Mika/root转交方向，尚无TS实现）：enqueue(conversa
 固定core0.3.22的`src/runtime/queue/external-thread-queue-adapter.ts` queue Interface同时要求enqueue/steer/move/edit/remove，callbacks是void，queue item仅id/prompt/parts，没有中心ACK/blocked/status。`external-store-thread-runtime-core.ts` 704–714只要有queue adapter，普通tail append都走adapter而不再onNew；message.steer未指定且isRunning=true默认走steer，305按adapter存在宣布queue能力。不可机械接createMessageQueue或noop不支持的steer/move/edit冒充成功。CHAT04 queue-only应使用明确排队入口/呈现或严格拒绝路径，按冻结合同再选；按钮/Enter/快捷键同语义，pending/unknown receipt单列，中心仍权威提升顺序/取消阻塞/revision/幂等，库items不是PG事实。root仅本地固定库只读，0模型/执行/改动；当前unsupported按钮不改。
 
 U11执行配置消费候选已收到w01固定dd1只读报告，完整[研究](execution-profiles-research.md)。核心为整份runner不可变profile选择、create即pin、false控件不造组合、requested/profile声明/runnerRequested/effective四层分开；unknown ACK固定reference与key，不以新选择重试。后继先X03 App挂载，配置选择尚未take/实现，无模型。
+
+
+### CHAT04首合同已固定（待实现/独审）
+
+Mika/root交候选e423abb5f404334b4bb781de1fe1a429278762d4，claim3be53dee-08c2-4c88-85ee-a29781842223 v1，canonical conversation-queue/docs/evidence/chat04/interface.md。管理读时该树已出现后续实施dirty，故以git show固定SHA重读interface/合同，不沿用先前clean声称当前仍clean，也不评审moving实现。候选commands/reads/promotion显式stub、生产未批准。公共barrel/client/迁移接线仍Lead唯一writer。
+
+固定合同：POST queue `{expectedQueueRevision,text}`→202 receipt、GET waiting页after稳定sequence/default20/max50、GET item有界全文、POST item/cancel `{expectedQueueRevision}`。两个命令需幂等key；旧receipt的queueRevision/item不可当最新状态。preview≤512 UTF8 bytes/text≤16000/waiting≤100。promoted绑定task/turn/turnNumber；取消已promoted返回already-promoted而不撤回。root额外澄清（固定首文档尚未显式写、后续接口文本已补）：list只waiting含blocked，after不是feed，queueRevision变化从头重读；promoted/cancelled从readItem/receipt恢复。只succeeded+knownsession+有效pin提升，failed/cancelled/uncertain冻结。缺steer/edit/reorder/resume明确不支持。Web队列接线继续待完整实现/公共client/独审，不以stub签名开放按钮。

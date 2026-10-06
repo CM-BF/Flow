@@ -224,3 +224,5 @@ GoalOwner经root确认Mika承担X03最小只读模块，仅新apps/web/src/plugi
 ### WPF-X03I01受控接线（04:22，尚未take）
 
 输入等待：Lead两次真实query结束后的精确含CHAT与MikaX03 main；不将1290e7db模块metadata或movingmain自行当综合base。原owner已明确三文件停写。CHAT claim08259c1d v2移出App.tsx与plugin-integration/react.tsx，[原receipt](chat-x03-amend-receipt.json)；I01 claimb666 v3移出integration.css，[原receipt](i01-x03-amend-receipt.json)。没有释放整claim，其他14/10范围保留。新task WPF-X03I01/worker workspace_panels_owner，七scope已在父plan，独立新tree须精确base+clean才take。receipt未有不实施；source到位后向Lead登记唯一canonical，不建第二手填状态。
+
+CHAT04候选e423abb5f404334b4bb781de1fe1a429278762d4仅固定合同/stub，路径[Interface](/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue/docs/evidence/chat04/interface.md)随owner实施会变化，读取需固定gitshow。claim3be53dee v1为Mika队唯一writer，外部Web未take新消费；waiting列表与独立queueRevision/receipt重放语义已记research。生产实现、client/export与独审ready前不得代替已有unsupported行为。
