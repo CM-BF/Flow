@@ -21,7 +21,7 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 原生配置目录已集成main，旧目录保持兼容；旧诊断失败证据已获独立接收；新的诊断已确认控制进程三个stdio均为socket；受限profile目标仍异常退出，已停止并保留有界编译日志，清理和输出计量完成。 |
-| 下一可用交付 | 交付本次失败测量的独立结果审查；既有已审R06与薄入口仍可独立集成。 |
+| 下一可用交付 | 交付本次失败测量独审，以及缺失普通文件stdio对照的有界设计；既有已审R06与薄入口仍可独立集成。 |
 | 当前阻塞 | ACTIVE: 受限profile目标异常退出且无报告，原因仍未知；本次窗口已消费，真实Codex目录仍缺隔离验证。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：当前v2候选851fd8c7 APPROVED（Mika，2026-10-06 11:20:49 UTC，0P1/P2）；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
