@@ -52,4 +52,6 @@
 
 ## 独立审查事实
 
-Goal Owner已只读方法审查APPROVED auth固定8e232a0：完整模块/证据和10个复制文件/license hash、raw/9场景吻合，无blocking，未重跑；批准不扩展真实provider policy、频率、跨进程或完整SDK启动。Paseo target db2f2d0 的独立review仍NOT_STARTED。两个结论不得合并成“整个上游已通过”。
+Goal Owner已只读方法审查APPROVED auth固定8e232a0：完整模块/证据和10个复制文件/license hash、raw/9场景吻合，无blocking，未重跑；批准不扩展真实provider policy、频率、跨进程或完整SDK启动。Paseo target db2f2d0 已另获 Goal Owner 独立方法 review APPROVED，原文/许可/raw吻合，完整probe/fixture/RPC/decoder已读，未重跑；采用前须修 streaming UTF8、byte bound、redaction。两个结论不得合并成“整个上游已通过”。
+
+03:14 UTC clean-code / metadata 复核：两个原始 JSON 和探针源码不变；分开记录独立审查范围、实际观察与采用前修复条件。下一工程对照仅做提案，现仍 0 模型/云。

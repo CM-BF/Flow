@@ -1,6 +1,6 @@
 # E01 上游 Harness 合成验证
 
-2026-10-06。两片段状态：completed（作者观察/检查）；auth独立review通过，Paseo独立review待执行。Owner：runner_owner / gpt-6-astra。此为已授权、可丢弃的 spike；不改产品，不作选型完成声明。
+2026-10-06。两片段状态：completed（作者观察/检查）；auth 与 Paseo 均独立方法 review 通过。Owner：runner_owner / gpt-6-astra。此为已授权、可丢弃的 spike；不改产品，不作选型完成声明。
 
 ## 范围与方案
 
@@ -24,4 +24,4 @@
 
 - [x] E01-04 Paseo固定7a30305503c600bc46ea2a94a6750eac5cede278、Apache-2.0 的公开JSONL decoder/RPC seam：真实合成Node子进程中文/emoji跨字节chunk、2MiB无newline、退出pending和合成stderr marker，保存结果/限制。0模型/云；不实现产品修复，不改auth源码与原始JSON。已有本地固定source可直接复用，单次进程组看门狗3秒，避免研究拖延首片段。
 
-第二实现 target db2f2d0f6c2b0db3cab454d6cfe617b4671196b1，约0.214秒合成运行，记录Unicode跨字节损坏、2MiB行保留、退出pending拒绝、stderr8192字符尾部仍含合成marker。此探针独立review尚未执行，不继承auth片段批准。
+第二实现 target db2f2d0f6c2b0db3cab454d6cfe617b4671196b1，约0.214秒合成运行，记录Unicode跨字节损坏、2MiB行保留、退出pending拒绝、stderr8192字符尾部仍含合成marker。此探针已另获 Goal Owner 独立只读方法 review APPROVED db2f2d0，未重跑；采用前须修 streaming UTF8 / byte bound / redaction。
