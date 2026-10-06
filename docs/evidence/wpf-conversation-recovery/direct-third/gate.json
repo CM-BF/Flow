@@ -1,0 +1,32 @@
+{
+  "allowRun": true,
+  "mode": "recovery-direct",
+  "taskId": "WPF-RECOVERY01",
+  "singleUse": true,
+  "expiresAt": "2026-10-06T18:41:37.378606+00:00",
+  "bindingSha256": "93e788298fb4cb434e8106e4ca08fc52458c1fd7beb30a92f8b12b0f422943f3",
+  "runnerSha256": "22b8eb121b1fe81877a70884a53777a31c1d2c5c46ca61ae8cc4d593b7db810d",
+  "sandboxSha256": "bbcdbc593100578638a2dee1840411dd7845c3bcf7b1159b0d99f7a66675a560",
+  "sourceHead": "bf14ae68c2c9b1ba9666f9f5b6314ca15353625d",
+  "implementation": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+  "claim": {
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "scopeCount": 21,
+    "worker": "workspace_panels_owner"
+  },
+  "overlaps": [],
+  "previousRuntimeMs": 4574,
+  "limits": {
+    "totalSeconds": 25.426,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "structuredReportBytes": 262144,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.25
+  },
+  "admissionSha256": "73cdc1ae4d824f688a6e612e58f55b2d4d9a5155e0ae98e94a170c6485f3adb1"
+}

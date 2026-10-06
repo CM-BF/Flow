@@ -65,3 +65,9 @@ Root [原报告](../../docs/evidence/wpf-conversation-recovery/667-first-failure
 作者修复checkpoint `7cc7629b6603a6ccc7e2ab6143125dea8daae685`，5源/14其他源不变，[manifest](../../docs/evidence/wpf-conversation-recovery/idb-lifecycle-checkpoint.json)。默认启动通过原host仅registered+configured+authorized；更新actions和host转移共用sync，active后同namespace新generation可重放现有draft，旧namespace不转存；disabled/failed不自动启动。观察器缺库abort upgrade+pending，malformed/sync throw/blocked/timeout统一拒绝关闭，不修库。新增11用例源码未运行，首次真实失败原raw保留。
 
 本修复独立结论PENDING；完整feature仍NOT_STARTED/targetUNKNOWN，剩余预算不代表运行许可。
+
+## 2026-10-06 18:39:00 UTC — 7cc源码审批与38受控行为证据
+
+独立reviewer root于2026-10-06T18:19:47.437937Z对7cc给[APPROVED_SOURCE_SCOPED_NOT_RUN](../../docs/evidence/wpf-conversation-recovery/7cc-root-source-review.json)，0blocking，P1默认激活/P2observer源码修复认可；原报告逐字归档。作者本次经独立gate运行[38/38 direct](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)，2.294s、清理通过。不得把作者运行改写成root重跑；真实IDB/React/cookie旅程和完整feature审查仍NOT_STARTED/targetUNKNOWN，首次真实失败不改绿。
+
+Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conversation-recovery/direct-third-root-review.json)逐字归档，核38/38含新增5生命周期+6observer、19源/gate绑定与完整清理；未独立复跑、不推真实浏览器或完整feature批准。

@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-06 18:02 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-06 18:39:00 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -70,3 +70,7 @@ RECOVERY01-05首一次真实浏览器cookieRead通过，随后草稿存储旅程
 ### 18:08 UTC 首次失败修复边界
 
 原RECOVERY01-03/04/05落实已授权配置的默认插件生命周期，撤权/namespace/generation/disabled仍守门；缺库observer只能pending并abort升级，已有malformed明确失败，不修库。复用同一纯observer于browser与受控case，五源限定。0运行，新检查NOT_RUN；首轮失败不是两静态问题唯一动态因果证明。
+
+### 2026-10-06 18:39:00 UTC — 定向检查安全点
+
+RECOVERY01-04新增生命周期/observer共38受控case已单次通过，源7cc、执行bf14，[原报告](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)。direct累计6.868/30s；剩余额度不授权重试。RECOVERY01-05真实browser首失败仍保留，修复后未重跑；RECOVERY01-06完整独审/main未完成，不因局部通过勾完TODO。

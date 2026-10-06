@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-06T18:31:15.284377+00:00",
+  "state": "CANDIDATE_NOT_RUN",
+  "root": "/private/tmp/recovery38-once-lsab03fv",
+  "source": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+  "head": "bf14ae68c2c9b1ba9666f9f5b6314ca15353625d",
+  "sources": 19,
+  "expectedCases": 38,
+  "previousRuntimeMs": 4574,
+  "remainingMs": 25426,
+  "workMs": 20426,
+  "cleanupMs": 5000,
+  "files": {
+    "run.py": {
+      "bytes": 17419,
+      "sha256": "22b8eb121b1fe81877a70884a53777a31c1d2c5c46ca61ae8cc4d593b7db810d"
+    },
+    "binding.json": {
+      "bytes": 19314,
+      "sha256": "9fba479038ee7e47d03a3f95496c6102c198c684be503178b40dae7063e4869e"
+    },
+    "steps.mjs": {
+      "bytes": 1191,
+      "sha256": "bb43c0c12aa87f3fdca1f71a1979486c31d9f21ed5dfcd3b08ab630abb781a82"
+    },
+    "vitest.config.mjs": {
+      "bytes": 413,
+      "sha256": "81bed649c1d92f3235bc7de112f0a209c3ddec7bca76bbc21a64c4c1a404b26a"
+    },
+    "sandbox.sb": {
+      "bytes": 155,
+      "sha256": "bbcdbc593100578638a2dee1840411dd7845c3bcf7b1159b0d99f7a66675a560"
+    },
+    "settings-to-recovery.diff": {
+      "bytes": 5777,
+      "sha256": "3a1f3a254c2a762f883c475c6489fd7f2f9b4c19f54c60043fdb2f5de0b6621f"
+    }
+  },
+  "sourceParent": "/private/tmp/message-settings-once-ljkinqq3/run.py",
+  "sourceParentSha256": "adb3580e17e66894f1b4c06608b7a92f66c02b5630660afc1a407ba80d56db70",
+  "gates": false,
+  "spaceSamples": false,
+  "checks": "Python AST only; no product import, compiler/test/profile probe, HTTP/PG/Chrome",
+  "futureCommand": [
+    "python3",
+    "/private/tmp/recovery38-once-lsab03fv/run.py",
+    "--gate",
+    "<future exact single-use gate>"
+  ],
+  "oldEvidence": "Original direct-first/second runner and raw untouched; no project archives written by this preparation"
+}

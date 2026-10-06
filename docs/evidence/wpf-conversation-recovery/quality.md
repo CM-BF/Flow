@@ -117,3 +117,11 @@ Root/peer同一真实P2：JSON.parse的any掩盖public结构中没有taskId。�
 观察器只在既有fixture提取为page.evaluate可序列化纯函数，受控测试直接复用它；函数不捕获模块变量/导入。实际只读安装tsx4.23.15源码keepNames:true，内部helper采用对象方法避免外层__name捕获，尚未执行serialization。统一有界settle/close/abort，无删库补store、无默认点击Saved drafts、无放宽完整草稿断言。5生命周期+6observer case新增未运行，保旧27与首失败。
 
 命名/单一职责/错误/代际/重复源码审查完成，git diff --check=0；5源固定7cc7629b6603a6ccc7e2ab6143125dea8daae685。状态UTC格式按真实parser要求修正，parse单列。0产品import/types/test/HTTP/PG/Chrome/free采样，不把静态修复当行为CLOSED。
+
+## 2026-10-06 18:39:00 UTC — 第三轮证据归档 / clean-code安全点
+
+复用固定local find-skills/clean-code/codebase-design方法，本段仅证据与canonical，不改源码。实际复核：单cleanup owner、失败与原raw保留、最小direct入口、真实38/0skip结果与静态计数分开；fixture纯observer复用通过受控事件case，不越界宣称nativeIDB或page.evaluate成功。原runner改造由manager唯一候选，旧hardcoded计时/归档与最终资源检查风险已由已审父监督结构收敛，本轮实际cleanup全确认；250ms采样不冒硬quota。
+
+19源码仍固定7cc，14原文件原样入direct-third，旧direct-first/second与browser10rawhash不变。累计direct6.868/30s与browser14.846267375/90s独立；后者首失败保留，无新types/HTTP/PG/Chrome/install/build。root源码APPROVED与作者行为PASS分别归因，fullfeature NOT_STARTED/main未接，不夸大局部验收。未新增产品复杂度或接口，本段无新未解决clean-code项；真实浏览器/完整覆盖限制继续开放。
+
+Root受控证据接受报告已逐字归档，SHA256 `11492f4990a29ffe5aca3ec59bcd8327ec98edbeb6dd4993e995f4fa3f98c27c`；作者运行、root只读接受、完整feature未审三层分别标明。

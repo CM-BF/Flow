@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:18:39 UTC |
+| 最近更新 | 2026-10-06 18:39:00 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；限定5源checkpoint 7cc7629b6603a6ccc7e2ab6143125dea8daae685；14其他源等667；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 五源已固定；本段仅own metadata收口，normal push后核双端clean |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；固定source7cc7629b6603a6ccc7e2ab6143125dea8daae685；本轮执行metadata bf14ae68c2c9b1ba9666f9f5b6314ca15353625d；当前metadata HEAD以Git为准 |
+| 工作树dirty状态 | 19源固定不改；本次独立第三轮证据及own metadata，提交/normal push后核双端clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已补默认草稿保存的插件启动与无副作用观察器；新增用例尚未运行，首轮失败保留 |
-| 下一可用交付 | 独立审查本次修复，按新准入验证默认保存与真实恢复；重新连接仍不自动投递 |
-| 当前阻塞 | ACTIVE: 两项静态缺口已修待独审与受控验证；首真实旅程失败未关闭，完整恢复及中心语义仍开放 |
+| 当前产出 | 默认草稿保存生命周期及无副作用观察器的受控检查已通过；首轮真实浏览器失败保留 |
+| 下一可用交付 | 在新准入后验证真实默认保存、材料恢复与原身份重试；重新连接仍不自动投递 |
+| 当前阻塞 | ACTIVE: 当前受控检查已通过，但修复后的真实浏览器旅程未运行；完整恢复及中心语义仍开放 |
 | 需用户决定 | NONE |
-| 检查状态 | FAILED: 首真实browser子集cookieRead PASS、textIntentDraft FAILED、materialDraft NOT_COMPLETED；14.846267375s/90s，cleanup通过。旧1b8受控27PASS独立保留；当前types未新增，52.814/60s |
+| 检查状态 | FAILED: 首真实browser草稿旅程失败保留；当前7cc受控38/38 PASS，0skip/todo，direct累计6.868/30s、清理通过；types未新增52.814/60s，不代表真实IDB/App通过 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
@@ -30,10 +30,10 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-RECOVERY01-01 | in-progress | workspace_panels_owner | [live领取](../../docs/evidence/wpf-conversation-recovery/live-claim.json)，输入/容量研究已读，ConnectionSession/Journal第一段源码与types检查已落 |
-| WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt后检查点屏障已接源码；行为待测 |
+| WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt屏障与部分恢复受控case已通过；完整真实controller旅程未完成 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
-| WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前27 direct](../../docs/evidence/wpf-conversation-recovery/direct-second.json)通过，源绑定1b8；受控IDB/mock fetch，不冒真实浏览器或完整controller矩阵 |
-| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首次真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)：cookieRead已过，草稿存储两个静态缺口已修待验，后续未运行 |
+| WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前38 direct](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)源绑定7cc通过，38/38、0skip/todo；受控IDB/mock fetch，不冒真实浏览器或完整controller矩阵 |
+| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)保留；两项源码修正及受控case通过，真实旅程尚未重跑 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
 ## 阻塞 / 风险 / 未验证
@@ -42,7 +42,7 @@ pre-provision可用1,584,984,064B，建树后管理报告1,416,241,152B，非当
 
 ## 下一步与handoff
 
-已在App接cookie观察器/P01入口，两harness源码已获限定审查；1b8 direct27通过。首真实browser子集已单次失败并完成清理，已修默认插件启动与观察器静态缺口，待固定独审及另行准入验证；不自行续跑，不以孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
+7cc默认生命周期与只读observer源码已获root限定批准，当前38受控case单次通过；[第三轮原证据](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)独立归档。首真实browser失败与后续未运行项保留，下一实际旅程必须新准入，不自行续跑。完整feature目标仍UNKNOWN、review NOT_STARTED、main未接，唯一status由本owner维护。
 
 ## Dashboard同步
 
@@ -153,3 +153,9 @@ Root于 `2026-10-06T17:44:07.363712+00:00` 对固定 `667889058d3decc0abc9f635a3
 限定checkpoint `7cc7629b6603a6ccc7e2ab6143125dea8daae685`：[19源manifest](../../docs/evidence/wpf-conversation-recovery/idb-lifecycle-checkpoint.json)。P1/P2作者源码修正待独审；新增11个受控case未运行、types/browser未运行。原10raw逐字等2f32，旧1b8的27通过不覆盖新生命周期。当前唯一status时间改为parser支持的UTC格式，真实parse结果单列，不是产品测试。
 
 Root静态点数纠正：当前直接文件展开38case，较旧27新增11（5生命周期+6observer），此前估12已改；此为源码计数，全部新增未运行。
+
+## 2026-10-06 18:39:00 UTC — 第三轮38 direct完成 / 完整验收仍开放
+
+[第三轮结果](../../docs/evidence/wpf-conversation-recovery/direct-third/result.json)绑定bf14/7cc19源：38/38 PASS、0skip/todo/fail、exit0，supervisor2.294s/direct2.136s。累计6.868/30s，余23.132s仅算术；cleanup fulfilled/errors[]/owned group与scratch均不存在。原raw独立14文件归档，历史direct-second和首browser10raw逐字保留。[7cc root源码结论](../../docs/evidence/wpf-conversation-recovery/7cc-root-source-review.json)仅源码批准；本次是作者受控IDB事件/mockfetch结果，非root复跑或真实浏览器证明。types/browser未新增，完整feature NOT_STARTED/targetUNKNOWN/main未接。
+
+Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conversation-recovery/direct-third-root-review.json)逐字归档，核38/38含新增5生命周期+6observer、19源/gate绑定与完整清理；未独立复跑、不推真实浏览器或完整feature批准。

@@ -1,0 +1,248 @@
+{
+  "at": "2026-10-06T18:37:53.953351+00:00",
+  "verdict": "ACCEPTED_DIRECT38_EVIDENCE_SCOPED_BROWSER_PENDING",
+  "implementation": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+  "runtimeHead": "bf14ae68c2c9b1ba9666f9f5b6314ca15353625d",
+  "rawDirectory": "/private/tmp/recovery38-once-lsab03fv",
+  "rawFiles": [
+    {
+      "file": "run.py",
+      "bytes": 17419,
+      "sha256": "22b8eb121b1fe81877a70884a53777a31c1d2c5c46ca61ae8cc4d593b7db810d"
+    },
+    {
+      "file": "steps.mjs",
+      "bytes": 1191,
+      "sha256": "bb43c0c12aa87f3fdca1f71a1979486c31d9f21ed5dfcd3b08ab630abb781a82"
+    },
+    {
+      "file": "binding.json",
+      "bytes": 19387,
+      "sha256": "93e788298fb4cb434e8106e4ca08fc52458c1fd7beb30a92f8b12b0f422943f3"
+    },
+    {
+      "file": "gate.json",
+      "bytes": 1121,
+      "sha256": "68aab68213656878905207a798eb49c937c48e8f428b84d148b0c5a8c63de688"
+    },
+    {
+      "file": "consumed-gate.json",
+      "bytes": 1121,
+      "sha256": "68aab68213656878905207a798eb49c937c48e8f428b84d148b0c5a8c63de688"
+    },
+    {
+      "file": "sandbox.sb",
+      "bytes": 155,
+      "sha256": "bbcdbc593100578638a2dee1840411dd7845c3bcf7b1159b0d99f7a66675a560"
+    },
+    {
+      "file": "vitest.config.mjs",
+      "bytes": 413,
+      "sha256": "81bed649c1d92f3235bc7de112f0a209c3ddec7bca76bbc21a64c4c1a404b26a"
+    },
+    {
+      "file": "result.json",
+      "bytes": 5392,
+      "sha256": "43ff5a261e607cc093696fadc3f72bd69dbb41596d32e7acc53df9a257946d6d"
+    },
+    {
+      "file": "step-results.json",
+      "bytes": 95,
+      "sha256": "1710c8c8a85a5a50162fadebccde830eafe0edbffc67980646b99e9bfd03b175"
+    },
+    {
+      "file": "vitest-results.json",
+      "bytes": 16861,
+      "sha256": "447df0bfeb8a50f936fb838b62480b9cdc1dba97d949936b1d0d538cdf8c3ea8"
+    },
+    {
+      "file": "node.log",
+      "bytes": 89,
+      "sha256": "4cc2754c3123fff2a9e13bfd6ba41ee1767f21e4a439ac7af6e7708697354467"
+    }
+  ],
+  "fixedSources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "01216d648c226549c9a8b79410c597669dfec5f0c42c38cde43233f6b774c0c1",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "664d61c88a923ed8f3ee14558c6aa17bf6531fec409195ea1cc16c8ca1ead6dd",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "07f26356643439cc5a08d3a9eb7c938f6d01bdc1b98d5818340cf40310fde6d4",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "2c7c1e5b5f90832562be04da3feac2b46133a2ec7276fce45f90a9c497747877",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "e855cea0267552129caa1bc9caa5111a2f388e36aae702017b926ff22b569d3e",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+      "fixedEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "042134d0cf9d53ec43f02a628d10cfc805c94c7ce79aaab2bf5e18ab1a71d198",
+      "fixedEqualsCurrent": true
+    }
+  ],
+  "actualResult": {
+    "state": "PASS",
+    "direct": {
+      "success": true,
+      "numTotalTests": 38,
+      "numPassedTests": 38,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTodoTests": 0
+    },
+    "steps": [
+      {
+        "name": "direct",
+        "exitCode": 0,
+        "signal": null,
+        "elapsedMs": 2136
+      }
+    ],
+    "testFile": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.test.ts",
+    "caseNames": [
+      "default Recovery lifecycle (actual private session and host, controlled IDB) checkpoints a normal edit without opening Saved drafts or explicitly activating the host",
+      "default Recovery lifecycle (actual private session and host, controlled IDB) requires both configuration and authorization before default activation",
+      "default Recovery lifecycle (actual private session and host, controlled IDB) does not write after pending activation loses auth, then replays on same-namespace reauth while already active",
+      "default Recovery lifecycle (actual private session and host, controlled IDB) never moves an activation-pending draft to a different namespace and closes on dispose",
+      "default Recovery lifecycle (actual private session and host, controlled IDB) does not automatically restart disabled or failed entries on actions or edits",
+      "same serialized journal observer (controlled opening events, no schema mutation) aborts a missing-database upgrade and returns pending without reading or creating stores",
+      "same serialized journal observer (controlled opening events, no schema mutation) rejects an existing incompatible version and missing stores without repairing either",
+      "same serialized journal observer (controlled opening events, no schema mutation) settles and closes a synchronous transaction failure",
+      "same serialized journal observer (controlled opening events, no schema mutation) settles and closes a synchronous store failure",
+      "same serialized journal observer (controlled opening events, no schema mutation) waits for read transaction completion and rejects an abort instead of hanging",
+      "same serialized journal observer (controlled opening events, no schema mutation) rejects blocked or timed-out opens and closes late success or aborts late creation",
+      "restored attachment draft synchronization (controlled composer port) blocks send before receipt/HTTP for unverified or partial selections; explicit removal is intentional",
+      "restored attachment draft synchronization (controlled composer port) blocks queue before receipt/HTTP for unverified or partial selections; explicit removal is intentional",
+      "restored attachment draft synchronization (controlled composer port) retains A,B order when B is verified before A and rejects incomplete or reordered composer handoff",
+      "restored attachment draft synchronization (controlled composer port) adds the same verified IDs once and removes explicit deletions without re-binding preparation",
+      "restored attachment draft synchronization (controlled composer port) does not finish an old sync after visibility/permission revoke and does not append held material to a new draft",
+      "recovery storage barriers (controlled IDB event port) waits for strict transaction completion, including put-success followed by commit abort",
+      "recovery storage barriers (controlled IDB event port) uses actual version CAS across two ports and cannot downgrade accepted with a stale checkpoint",
+      "recovery storage barriers (controlled IDB event port) rejects a delayed restored prepare after another port dispatches or binds CREATE",
+      "recovery storage barriers (controlled IDB event port) does not automatically rebind a waiting handoff after same-namespace reauthentication",
+      "recovery storage barriers (controlled IDB event port) an explicit retry can open storage after a failed open, without an automatic retry loop",
+      "recovery storage barriers (controlled IDB event port) remembers a committed draft version while the revoked public namespace is null, without resuming its send",
+      "recovery storage barriers (controlled IDB event port) closes abandoned blocked-open late success without replacing the newer database",
+      "recovery storage barriers (controlled IDB event port) clears only a reconciled terminal handoff blocker and persists the deferred next draft",
+      "recovery storage barriers (controlled IDB event port) prevents a different command replacing the unresolved slot and retains full cancel-task target",
+      "recovery storage barriers (controlled IDB event port) keeps the source draft when prepare fails and official transient empty is deferred",
+      "recovery storage barriers (controlled IDB event port) does not queue center A draft into B when the namespace changes before the async write",
+      "recovery storage barriers (controlled IDB event port) updates only draft A, while charging and preserving unrelated B in the same manifest transaction",
+      "recovery storage barriers (controlled IDB event port) blocks HTTP on failed preparation and retries the exact queue key/body after storage recovers",
+      "connection and original authority consumers keeps safe API base paths without persisting credentials or doubling the public /api prefix",
+      "connection and original authority consumers revokes public business authorization synchronously while one logout uses the captured CSRF",
+      "connection and original authority consumers recovers a lost connect ACK using cookie-only GET without another login POST",
+      "connection and original authority consumers retains both CREATE keys and payloads, restores rejected as rejected and never makes accepted resendable",
+      "connection and original authority consumers reconciles the same original unknown outbox identity to accepted without touching a separate draft",
+      "connection and original authority consumers binds a durable accepted CREATE before the original in-memory projection was bound, with zero POST",
+      "connection and original authority consumers reconciles an existing unknown queue key to its durable accepted identity without resending",
+      "connection and original authority consumers restores a public 255 ASCII filename as metadata and rejects altered project identity",
+      "connection and original authority consumers explicitly resolving an old restored knowledge version verifies it even when search omits it"
+    ]
+  },
+  "resourceObservations": {
+    "elapsedMs": 2294,
+    "previousRuntimeMs": 4574,
+    "cumulativeMs": 6868,
+    "remainingMsArithmeticOnly": 23132,
+    "sampleMinFreeBytes": 1598066688,
+    "sampleMaxTmpBytes": 2920536,
+    "logBytes": 89,
+    "droppedObservedLogBytes": 0,
+    "cleanup": {
+      "state": "fulfilled",
+      "errors": [],
+      "seconds": 0.0,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "serverClosureBasis": "Single direct command and fork remain in the inherited worker group; no external service used"
+    },
+    "scratchCurrentlyAbsent": true
+  },
+  "scope": "Single explicit Vitest file,38 actual expanded cases,controlled IDB event port and mock fetch. Five activation-lifecycle and six read-observer additions now have direct runtime evidence, along with existing27. No HTTP/PG/Chrome/compiler was launched by the admitted test source; sandbox denies network.",
+  "notEstablished": [
+    "Real browser IndexedDB upgrade/transaction behavior and page.evaluate serialization remain NOT_RUN at7cc.",
+    "First667 browser failure and original14.846267375s budget usage remain retained.",
+    "No light/dark screenshots or real App authentication/reconnect/CREATE/Send/Queue/Steer/SSE journey approval.",
+    "No main integration,deployment,personal service/provider claim; remaining budget is not permission to rerun."
+  ],
+  "method": "Read retained parent,step,Vitest assertions and source pins; matched19fixed/current and11raw hashes. Root no product rerun,space re-sample or project writes. Reused local find-skills/clean-code focused on failure ownership and exact evidence scope."
+}
