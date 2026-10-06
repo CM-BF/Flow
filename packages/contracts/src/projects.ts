@@ -80,10 +80,13 @@ export interface ProjectNode {
   /** Planning edges only in this slice: these do not gate existing task dispatch. */
   dependsOn: string[];
 }
+export interface GraphRunActor { kind: 'goal-graph-run'; runId: string; runnerId: string; taskId: string; attemptId: string; ownerVersion: number }
+export type ProjectActor = { kind: 'owner' } | GraphRunActor;
 export interface ProjectRevision {
   revision: number;
   reason: string;
-  actor: 'owner';
+  actor: 'owner' | 'goal-graph-run';
+  actorSource?: GraphRunActor;
   createdAt: string;
   nodes: ProjectNode[];
 }

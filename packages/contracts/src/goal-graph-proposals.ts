@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { idSchema } from './tasks.js';
-import { projectVersionSchema } from './projects.js';
+import { projectVersionSchema, type GraphRunActor, type ProjectActor } from './projects.js';
 
 export const MAX_GRAPH_PROPOSAL_BYTES = 65_536;
 export const MAX_GRAPH_PROPOSAL_NODES = 16;
@@ -28,7 +28,7 @@ export type GoalGraphProposalApply = z.infer<typeof goalGraphProposalApplySchema
 export const goalGraphProposalPageSchema = z.strictObject({ after: idSchema.optional(), limit: z.coerce.number().int().min(1).max(50).default(20) });
 export interface GoalGraphProposalSummary {
   id: string; goalId: string; projectId: string; baseRevision: number; goalDigest: string; proposalDigest: string;
-  source: { kind: 'owner-submission' }; createdAt: string; nodeCount: number; edgeCount: number;
+  source: { kind: 'owner-submission' } | GraphRunActor; createdAt: string; nodeCount: number; edgeCount: number;
   state: 'proposed' | 'applied'; appliedRevision: number | null;
 }
 export interface GoalGraphProposal extends GoalGraphProposalSummary { input: GoalGraphProposalInput }
@@ -37,6 +37,6 @@ export interface GoalGraphProposalPage { proposals: GoalGraphProposalSummary[]; 
 export interface GoalGraphProposalReceipt {
   proposalId: string; goalId: string; projectId: string; proposalDigest: string;
   fromRevision: number; toRevision: number; nodeIds: Record<string, string>;
-  actor: { kind: 'owner' }; appliedAt: string;
+  actor: ProjectActor; appliedAt: string;
 }
 export interface GoalGraphProposalApplied { receipt: GoalGraphProposalReceipt; alreadyApplied: boolean; replayed: boolean }
