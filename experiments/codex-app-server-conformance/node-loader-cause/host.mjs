@@ -14,6 +14,7 @@ function fixedRecipe(name) {
   if (name === 'loader-cause') return { window: 'go-node-loader-cause-once', profile: 'node-rootliteral/candidate.sb', diskLimit: 24576, control: false };
   if (name === 'runtime-metadata-control') return { window: 'go-node-runtime-metadata-once', profile: 'node-runtime-metadata/candidate.sb', diskLimit: 65536, control: true };
   if (name === 'failure-text') return { window: 'go-node-failure-text-once', profile: 'node-runtime-metadata/candidate.sb', diskLimit: 65536, retainText: true };
+  if (name === 'owned-openssl') return { window: 'go-node-owned-openssl-once', profile: 'node-runtime-metadata/candidate.sb', diskLimit: 65536, retainText: true, ownedOpenSsl: true };
   return fail();
 }
 export function makeCauseBudget(prepared, recipeName = 'loader-cause') {
@@ -82,13 +83,17 @@ export async function runCause({ evidenceDirectory, repository, preparedBytes, r
       io.mkdirSync(directory, { mode: 0o700 }); const row = { directory, identity: null }; directories.push(row);
       const stat = io.lstatSync(directory); row.identity = { ino: stat.ino, dev: stat.dev };
     }
-    for (const [from, name] of [[recipe.profile, 'default-deny.sb'], ['diagnostics/immediate-exit.mjs', 'immediate-exit.mjs']]) {
+    const inputs = [[recipe.profile, 'default-deny.sb'], ['diagnostics/immediate-exit.mjs', 'immediate-exit.mjs']];
+    if (recipe.ownedOpenSsl) inputs.push(['node-owned-openssl/openssl.cnf', 'openssl.cnf']);
+    for (const [from, name] of inputs) {
       const bytes = io.readFileSync(path.join(repository, 'experiments/codex-app-server-conformance', from));
       persist(path.join(control, name), bytes, true); io.chmodSync(path.join(control, name), 0o400);
     }
     const executable = '/opt/homebrew/Cellar/node@24/24.20.0/bin/node';
     const options = { executable: '/usr/bin/sandbox-exec', args: ['-D', `ALLOW_ROOT=${allowed}`, '-D', `DENY_ROOT=${denied}`,
-      '-f', path.join(control, 'default-deny.sb'), executable, '--jitless', '--no-addons', path.join(control, 'immediate-exit.mjs')],
+      '-f', path.join(control, 'default-deny.sb'), executable,
+      ...(recipe.ownedOpenSsl ? [`--openssl-config=${path.join(control, 'openssl.cnf')}`] : []),
+      '--jitless', '--no-addons', path.join(control, 'immediate-exit.mjs')],
       cwd: state, environment: { PATH: '/usr/bin:/bin', HOME: path.join(state, 'home'), CODEX_HOME: path.join(state, 'codex'), TMPDIR: path.join(state, 'tmp'), LANG: 'C', LC_ALL: 'C', TZ: 'UTC' },
       stdio: 'pipe', captureMaxBytes: 8192, timeoutMs: Math.min(8000, 20000 - now()) };
     if (options.timeoutMs <= 0) fail();

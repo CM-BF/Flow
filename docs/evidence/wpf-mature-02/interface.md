@@ -4,6 +4,9 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [F01 goal progression薄client已审](goal-progression-client-review.md)：deef0e48，status_read15:04:20/Mika15:05:27 APPROVED，仅薄transport，领域/公开mount不扩大。
+- [自有OpenSSL配置小对照准备](node-owned-openssl/README.md)：原candidate/权限不变，仅显式own config argv；actual NOT_OPEN，检查PENDING_RESOURCE。三种运行角色独立，Claude纵线不等待本探针。
+
 - [私有错误文本单目标结果](node-failure-text/run-report.md)：本次确认Node报告OpenSSL配置打开错误；完整246B已独审并精确清理；a442结果忠实性APPROVED，目标exit1，观察/清理/计量完成，窗口已消费。具体规则与native资格未证明，未扩权限。
 
 - Claude逐消息设置后继：当前诊断收束后请Lead协调R05/中心配置及低磁盘独立WT，Mika另派≥Sol实现；固定SDK0.3.290声明+注入SDK/真实中心首片，0付费/安装。model/thinking或effort/fast、requested/observed/unsupported、历史/运行/队列冻结与Web/TUI合同沿[原plan](../../../plans/wpf-mature-02-harness-capabilities/plan.md)，不等Codex全资格，不在诊断WT并行改产品。

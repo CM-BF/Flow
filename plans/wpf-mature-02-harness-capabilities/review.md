@@ -1,5 +1,7 @@
 # WPF-MATURE-02 review
 
+当前owned-openssl小候选：GO准备授权，NOT_STARTED / PENDING_RESOURCE；无新检查/target，不继承旧APPROVED。[设计](../../docs/evidence/wpf-mature-02/node-owned-openssl/README.md)。
+
 当前failure-text结果a442819a已获architecture_read/gpt-6-astra15:03:58与Mika/gpt-6-astra15:04:39 UTC RESULT_FIDELITY_APPROVED，0P1/P2：1目标exit1、完整246B经独审后已按授权精确清理，CLI0仅观察/保留成功；本次文本明确OpenSSL配置fopen/Operation not permitted，errno和具体规则未知。窗口CONSUMED，[安全结果](../../docs/evidence/wpf-mature-02/node-failure-text/run-report.md)。
 
 当前failure-text：组合744ccb6fc6c8346060426db1d002ae5006ca1ed0 / source65c69e0124e419030182eb615f0bcdb6cf4b9485，architecture_read/gpt-6-astra14:52:14功能与14:56:25最终packet、Mika/gpt-6-astra14:56:41 UTC PREPARATION_APPROVED，0P1/P2；19 distinct分轮原文只读未重测。仅准备批准，actual NOT_OPEN；[正式收据](../../docs/evidence/wpf-mature-02/node-failure-text/preparation-review.json)。

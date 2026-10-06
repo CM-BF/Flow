@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:05:39 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:09:01 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,14 +11,14 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 65c69e0124e419030182eb615f0bcdb6cf4b9485（failure-text源码；旧3c53封存） |
-| 工作树dirty状态 | 新failure-text私有保存/薄入口/用例和cause单分支；源码65c69e01/组合744ccb6f已审；已执行唯一窗口，结果a442获双独审；私有副本已按精确身份授权删除，当前仅最终收口metadata。旧profile/R06/已封存raw未改。 |
+| 工作树dirty状态 | 新failure-text私有保存/薄入口/用例和cause单分支；源码65c69e01/组合744ccb6f已审；已执行唯一窗口，旧38e78已封存；新owned-openssl仅cause小分支/固定配置/薄入口/用例，尚未验证。旧profile/R06/已封存raw未改。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | 19 distinct分轮（原17+新保留失败2）；末轮定向8/8含6重叠，真实red与中途7/8均保留；原生0factory/0listener、syntax0；0实际目标/监听/PG/provider；组合准备已独审APPROVED，未重测。 |
+| 当前检查 | PENDING_RESOURCE：Data1020632KiB低于1GiB+32MiB；仅小源码，0新Vitest/target/compile/listener/PG/provider。旧19检查与审批不继承本片。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
-| 实现目标 / 范围 | 新node-failure-text固定recipe及host私有副本；cause最小分支、薄entry/outer与定向纯检查，生产R06只读；source65c69e01/组合744ccb6f准备APPROVED；窗口CONSUMED，1目标exit1，完整文本已独审并精确清理，结果忠实性APPROVED |
+| 实现目标 / 范围 | 新owned-openssl固定recipe/自有注释配置/argv，复用原owner/保留副本；未固定验证/独审，actual NOT_OPEN。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 已保留完整私有错误文本，确认本次Node报告OpenSSL配置打开失败；目标与临时资源已回收，副本已独审并精确清理。 |
@@ -26,7 +26,7 @@
 | 当前阻塞 | ACTIVE: Node/Codex启动隔离与真实权限资格仍未证明；旧对照首步失败且窗口已消费；本次有限文本已定位配置打开错误，具体沙箱规则与修复尚未验证；窗口已消费。Claude设置独立推进。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | failure-text PREPARATION_APPROVED：architecture_read14:56:25 / Mika14:56:41，0P1/P2；准备已审；结果a442忠实性APPROVED：architecture_read15:03:58 / Mika15:04:39；非bootstrap通过，无剩余运行授权。 |
+| Review | owned-openssl NOT_STARTED；旧failure-text a442结果APPROVED且38e78已封存，不视为新片通过。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | Node复用已交回R06唯一进程owner、旧owned canary与私有sink；新增仅实验接缝，未改变生产Interface/运行生命周期。ENG当前仅资格/撤销输入建议，无新公共合同。 |
 
@@ -71,3 +71,7 @@
 ## 下一用户能力（GO优先级调整）
 
 本次诊断收束后沿TODO-04/05/09，独立WT推进Claude逐消息model/thinking或effort/fast，requested/observed/unsupported分开；运行中及已入队输入冻结，旧会话可读可续，Web/TUI共享中心合同。首段固定SDK0.3.290声明、注入SDK与真实中心验证，0付费/新安装；Mika安排两层子任务与≥Sol owner，Lead协调共享R05/字段及低磁盘provision。本诊断WT不并行改Claude产品，完整Codex及后续验收不减。
+
+## 三种运行角色
+
+Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收；现bootstrap-inspection的Codex依赖不含Homebrew Node/OpenSSL。本Node错误不证明真实Codex失败，也不是所有harness永久前置。Codex自身启动/权限/模型/停止验收保留；Claude逐消息设置独立用户线不等待此探针。
