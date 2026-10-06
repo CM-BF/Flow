@@ -95,7 +95,7 @@ const legacy: ExecutionProfileConfiguration = {
   limits: { maxTurns: 1, maxBudgetUsd: 0.1, timeoutMs: 1000 },
 };
 async function publish(optIn: boolean) {
-  const runner = await client.registerRunner({ name: 'Synthetic settings production reader', harnesses: ['claude'], capacity: 1 }, signal());
+  const runner = await client.registerRunner({ name: 'Synthetic settings production reader', harnesses: ['claude'], capacity: 1 });
   const runnerClient = new FlowClient({ baseUrl: origin, token: runner.token });
   const configuration: ExecutionProfileConfiguration = { ...legacy,
     ...(optIn ? { turnSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices } } : {}) };
