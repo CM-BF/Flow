@@ -4,8 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
-- [Sandbox syscall 67固定候选](sandbox67/README.md)：GO已选唯一grant，当前只准备，status_read独审及Mika执行门禁前0新运行。
-- [P04已main接收的权威比对回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/runner-read-fence-source-comparison.json)。覆盖先前移交历史，详情仅查权威receipt。
+- [Sandbox syscall 67固定候选](sandbox67/README.md)：GO已选唯一grant，固定源码f960a1dc、16局部检查通过；status_read独审及Mika执行门禁前0新运行。
+- [P04已main接收的权威比对回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/runner-read-fence-source-comparison.json)。覆盖先前移交历史；P04最终owner064183b984f0dd7bc6818ef84e68dbc9e4fc5de7，release实际以[外部COMMITTED回执](/tmp/flow-p04-final-release-receipt-20261006.json)为准，详情只查权威输入。
 
 - [Native工程file-only / ≥Sol身份 / 全writer停止边界](native-engineering-boundaries.md)：固定main52eb与0.154/R06输入；缺证阻native promote，不阻零模型fixture/checker/snapshot。
 - [04 main接收权威回执](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/main-acceptance.json)。仅路由，状态由04维护。
@@ -14,7 +14,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 - [B01已审首片集成输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/integration-ready.md)。请Lead按权威输入独立接收，不等待第三reader；原authority请求保留。
 
 - [Codex诊断v3结果：regular-file对照仍SIGABRT](fd-canary-v3/run-report.md)：获批唯一窗口已消费，1compile/2目标，父regular身份已核但子报告缺失；measurement未完成，清理/机器证据/计量完成；architecture_read于11:45:46 UTC限定faithful FAIL APPROVED（d8038d3a），无隔离或因果结论。无剩余运行授权。
-- [B01轻投影权威来源/registry变更请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/authority-request.md)。请Lead按权威请求切换登记；root核main017adc仍旧来源，authority尚待登记。[第三reader已审集成输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/head/integration-ready.md)正式metadata已到；不复制TODO。
+- [B01轻投影权威来源/registry变更请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/authority-request.md)。请Lead按权威请求切换登记；root核main2f4a仍旧来源，authority尚待Lead登记。[第三reader已审集成输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/head/integration-ready.md)正式metadata已到；不复制TODO。
 
 - [Codex诊断v2最终结果：控制socket已测，profile SIGABRT](fd-canary-v2/run-report.md)：获批唯一窗口已消费，1编译/2目标，第三NOT_RUN；测量未完成、清理/输出计量完成，architecture_read于11:30:14 UTC限定faithful incomplete/FAIL APPROVED，无剩余运行许可。
 - [04归一化集成输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/normalize-integration-ready.md)。请Lead按此权威输入接收，进度仅在04维护。
