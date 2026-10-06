@@ -5,7 +5,7 @@ import { constants, writeFileSync } from "node:fs";
 import { mkdir, readFile, writeFile, readdir, lstat, statfs, rm, realpath, open } from "node:fs/promises";
 import { isAbsolute, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import type { Browser, Page } from "@playwright/test";
+import type { Browser, Locator, Page } from "@playwright/test";
 import type { ConversationTurnAccepted, ConversationQueueAccepted } from "../../../packages/contracts/src/index.js";
 import type { BackendInput, CurrentPreview, Wire } from "./web-current-preview.fixture.js";
 
@@ -32,7 +32,7 @@ async function freeBytes() { const value = await statfs(root); return value.bava
 type Mode = "history" | "app" | "all";
 type EvidenceFile = { name: string; bytes: number; sha256: string };
 type HistoryAdmission = { run: string; sourceCommit: string; contractSha256: string; files: EvidenceFile[] };
-type HistoryProof = HistoryAdmission & { backend: BackendInput; artifactId: string };
+type HistoryProof = HistoryAdmission & { backend: BackendInput; artifactId: string; sourceMode: "history" | "all"; sourcePhaseB: "NOT_RUN" | "FAILED" };
 type Gate = { allowRun: true; mode: Mode; backend: BackendInput; history?: HistoryAdmission; artifactId: string; run: string; expiresAt: string; totalMs: number; previousRuntimeMs: number; minimumFreeBytes: number };
 type Init = { kind: "start"; mode: Mode; backend: BackendInput; history?: HistoryProof; directory: string; databaseUrl: string; token: string; workDeadline: number };
 type Observations = Record<string, Record<string, boolean>>;
@@ -41,6 +41,7 @@ type WorkerResult = { passed: boolean; historyPassed: boolean; history: unknown[
 
 const HISTORY_FILES = ["sources.json", "history.json", "wire.json", "worker.json", "cleanup.json", "supervisor.json",
   "outcome.json", "budget.json", "database-owner.json", "process.log"].sort();
+const ALL_FAILED_APP_FILES = [...HISTORY_FILES, "app.json", "app-failure.png"].sort();
 
 async function regularDirectory(path: string) {
   assert.equal(await realpath(path), path); const stat = await lstat(path); assert.ok(stat.isDirectory() && !stat.isSymbolicLink());
@@ -72,13 +73,19 @@ async function verifyHistoryAdmission(gate: Gate, sources: Awaited<ReturnType<ty
   const pin = gate.history; assert.ok(pin); assert.match(pin.run, /^[a-z0-9-]{1,48}$/); assert.notEqual(pin.run, gate.run);
   assert.match(pin.sourceCommit, /^[a-f0-9]{40}$/); assert.match(pin.contractSha256, /^[a-f0-9]{64}$/);
   assert.equal(pin.contractSha256, sources.historyContractSha256, "History contract changed");
-  assert.ok(Array.isArray(pin.files)); assert.deepEqual(pin.files.map(file => file.name).sort(), HISTORY_FILES);
+  assert.ok(Array.isArray(pin.files));
+  const fromAll = pin.files.some(file => file.name === "app.json");
+  const expectedFiles = fromAll ? ALL_FAILED_APP_FILES : HISTORY_FILES;
+  assert.deepEqual(pin.files.map(file => file.name).sort(), expectedFiles);
   assert.ok(pin.files.reduce((total, file) => total + file.bytes, 0) <= EVIDENCE_BYTES);
   const runs = join(evidence, "runs"), directory = join(runs, pin.run);
   await regularDirectory(evidence); await regularDirectory(runs); await regularDirectory(directory);
-  assert.deepEqual((await readdir(directory)).sort(), HISTORY_FILES, "Incomplete or unexpected A evidence");
+  assert.deepEqual((await readdir(directory)).sort(), expectedFiles, "Incomplete or unexpected A evidence");
   const raw: Record<string, unknown> = {};
-  for (const file of pin.files) { const bytes = await pinnedFile(directory, file); if (file.name !== "process.log") raw[file.name] = JSON.parse(bytes.toString("utf8")); }
+  for (const file of pin.files) {
+    const bytes = await pinnedFile(directory, file);
+    if (file.name.endsWith(".json")) raw[file.name] = JSON.parse(bytes.toString("utf8"));
+  }
   const { factRecord: record, assertHistoryFacts } = await import("./web-current-preview.fixture.js");
   const previous = record(raw["sources.json"]), outcome = record(raw["outcome.json"]), budget = record(raw["budget.json"]);
   assert.equal(previous.head, pin.sourceCommit); assert.equal(previous.historyContractSha256, pin.contractSha256);
@@ -86,12 +93,15 @@ async function verifyHistoryAdmission(gate: Gate, sources: Awaited<ReturnType<ty
   const protocolFiles = (value: unknown) => { assert.ok(Array.isArray(value)); return value.map(record).filter(file => !String(file.path).startsWith("apps/web/test/")); };
   assert.deepEqual(protocolFiles(previous.files), protocolFiles(sources.files), "History protocol dependency changed");
   assert.equal(outcome.backend, gate.backend.head); assert.equal(outcome.artifactId, ARTIFACT);
-  assert.equal(outcome.mode, "history"); assert.equal(outcome.historyPassed, true); assert.equal(outcome.phaseB, "NOT_RUN");
+  assert.equal(outcome.mode, fromAll ? "all" : "history"); assert.equal(outcome.historyPassed, true);
+  assert.equal(outcome.phaseB, fromAll ? "FAILED" : "NOT_RUN"); assert.equal(outcome.passed, false);
   assert.equal(outcome.compatibilityId, null); assert.deepEqual(outcome.errors, []); assert.deepEqual(outcome.cleanupErrors, []);
   assert.equal(budget.complete, true); assert.ok(typeof budget.startedAt === "string" && Number.isFinite(Date.parse(budget.startedAt)));
   assert.ok(typeof budget.elapsedMs === "number" && Number.isFinite(budget.elapsedMs) && budget.elapsedMs > 0);
-  assert.ok(typeof budget.permittedMs === "number" && budget.permittedMs > CLEANUP_MS && budget.permittedMs <= 60_000 && budget.elapsedMs <= budget.permittedMs);
+  assert.ok(typeof budget.permittedMs === "number" && budget.permittedMs > CLEANUP_MS
+    && budget.permittedMs <= (fromAll ? MAX_TOTAL_MS : 60_000) && budget.elapsedMs <= budget.permittedMs);
   assert.ok(typeof budget.previousMs === "number" && Number.isFinite(budget.previousMs) && budget.previousMs >= 0);
+  assert.ok(budget.previousMs + budget.permittedMs <= MAX_TOTAL_MS);
   const cleanup = record(raw["cleanup.json"]), owner = record(raw["database-owner.json"]), supervisor = record(raw["supervisor.json"]), worker = record(raw["worker.json"]);
   assert.equal(owner.backend, gate.backend.head); assert.equal(cleanup.databaseName, owner.databaseName);
   assert.match(String(owner.databaseName), /^flow_release03_[a-f0-9]{20}$/); assert.match(String(owner.marker), /^[a-f0-9-]{36}$/);
@@ -100,10 +110,16 @@ async function verifyHistoryAdmission(gate: Gate, sources: Awaited<ReturnType<ty
   assert.equal(supervisor.providerQueries, 0); assert.deepEqual(supervisor.result, worker);
   assert.ok(typeof cleanup.finishedAt === "string" && Date.parse(cleanup.finishedAt) >= Date.parse(budget.startedAt));
   assert.ok(Date.parse(cleanup.finishedAt) <= Date.parse(budget.startedAt) + budget.elapsedMs + 1000);
-  assert.ok(Array.isArray(cleanup.processIds) && cleanup.processIds.length === 1);
-  const child = record(cleanup.processIds[0]); assert.ok(typeof child.pid === "number" && child.pid > 0); assert.equal(child.exitCode, 0); assert.equal(child.signalCode, null);
+  assert.ok(Array.isArray(cleanup.processIds) && cleanup.processIds.length === (fromAll ? 2 : 1));
+  const children = cleanup.processIds.map(record); assert.equal(new Set(children.map(child => child.pid)).size, children.length);
+  for (const child of children) { assert.ok(typeof child.pid === "number" && child.pid > 0); assert.equal(child.exitCode, 0); assert.equal(child.signalCode, null); }
   assert.equal(worker.historyPassed, true); assert.deepEqual(worker.errors, []); assert.deepEqual(worker.cleanupErrors, []);
-  assert.equal(record(worker.app).state, "NOT_RUN"); assert.deepEqual(worker.history, raw["history.json"]);
+  if (fromAll) {
+    const app = record(raw["app.json"]); assert.deepEqual(worker.app, app);
+    assert.equal(app.passed, false); assert.notEqual(app.state, "NOT_RUN"); assert.ok(typeof app.error === "string" && app.error.length > 0);
+    assert.equal(worker.passed, false); assert.equal(supervisor.checksAndCleanupPassed, false);
+  } else assert.equal(record(worker.app).state, "NOT_RUN");
+  assert.deepEqual(worker.history, raw["history.json"]);
   const history = raw["history.json"], wire = raw["wire.json"]; assert.ok(Array.isArray(history) && history.length === 2 && Array.isArray(wire) && wire.length <= 1000);
   assert.deepEqual(history.map(value => record(value).label), ["attachment-only", "mixed"]);
   let end = 0;
@@ -111,8 +127,10 @@ async function verifyHistoryAdmission(gate: Gate, sources: Awaited<ReturnType<ty
     const facts = record(value); assert.equal(facts.passed, true); assertHistoryFacts(value, wire, gate.backend);
     assert.ok(Array.isArray(facts.wireRange)); assert.equal(facts.wireRange[0], end); end = facts.wireRange[1];
   }
-  assert.equal(end, wire.length);
-  return { ...pin, backend: gate.backend, artifactId: ARTIFACT };
+  // An all-run retains the complete failed App tail; only its contiguous A prefix grants reuse.
+  if (fromAll) assert.ok(end < wire.length); else assert.equal(end, wire.length);
+  return { ...pin, backend: gate.backend, artifactId: ARTIFACT,
+    sourceMode: fromAll ? "all" : "history", sourcePhaseB: fromAll ? "FAILED" : "NOT_RUN" };
 }
 
 /** Own process groups include Chrome, started by the supervisor rather than an untracked launch promise. */
@@ -375,12 +393,14 @@ async function actualApp(fixture: CurrentPreview, browser: Browser, directory: s
     await page.getByRole("dialog", { name: "Execution profile", exact: true }).getByRole("radio", { name: /release-synthetic-app/ }).check();
     await page.keyboard.press("Escape");
   };
-  const chooseFile = async () => {
-    await page.getByRole("button", { name: "Files", exact: true }).filter({ visible: true }).click();
+  const chooseFile = async (chat: Locator) => {
+    await expect(chat).toHaveCount(1); await expect(chat).toBeVisible();
+    const files = chat.getByRole("button", { name: "Files", exact: true });
+    await expect(files).toHaveCount(1); await expect(files).toBeVisible(); await files.click();
     const dialog = page.getByRole("dialog", { name: "Project text files", exact: true });
     await dialog.getByRole("button", { name: "Browse files", exact: true }).click();
     await dialog.getByRole("button", { name: "Use existing.txt", exact: true }).click(); await page.keyboard.press("Escape");
-    await expect(page.locator(".aui-composer-attachments .aui-attachment-root").filter({ visible: true })).toHaveCount(1);
+    await expect(chat.locator(".aui-composer-attachments .aui-attachment-root")).toHaveCount(1);
   };
   try {
     await connect(); await profile();
@@ -401,33 +421,35 @@ async function actualApp(fixture: CurrentPreview, browser: Browser, directory: s
     await knowledge.getByLabel("Conversation project").selectOption(material.projectId);
     await knowledge.getByRole("button", { name: "Prepare conversation in project", exact: true }).click();
     await expect(knowledge).toContainText("Conversation project locked"); await page.keyboard.press("Escape");
-    await expect(input(page)).toHaveValue(text); await chooseFile();
-    fixture.loseNext("turn"); await page.getByRole("button", { name: "Send message", exact: true }).filter({ visible: true }).click();
-    await expect(input(page)).toHaveValue(""); await input(page).fill(nextDraft);
-    await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
+    const chat = page.getByRole("region", { name: text, exact: true });
+    const composer = chat.getByRole("textbox", { name: "Message input", exact: true });
+    await expect(composer).toHaveValue(text); await chooseFile(chat);
+    fixture.loseNext("turn"); await chat.getByRole("button", { name: "Send message", exact: true }).click();
+    await expect(composer).toHaveValue(""); await composer.fill(nextDraft);
+    await expect(chat.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
     const first = posts(/\/turns$/).at(-1)!; assert.ok(first.dropped); assert.deepEqual(JSON.parse(first.body).attachments, [material.ref]);
     const accepted = decoded<ConversationTurnAccepted>(first), conversationId = accepted.conversation.id, taskId = accepted.turn.task.id;
     decodeConversationTurnAccepted(accepted, conversationId, conversationTurnSchema.parse(JSON.parse(first.body)));
     assert.equal(accepted.turn.context?.templateVersion, 2);
     const running = await runner.claim(taskId);
     await runner.report(running, 1, { type: "session", nativeSessionId: randomUUID(), adapterVersion: runner.configuration.adapterVersion });
-    await page.getByRole("button", { name: "Retry same message", exact: true }).click();
-    await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toHaveCount(0); await expect(input(page)).toHaveValue(nextDraft);
+    await chat.getByRole("button", { name: "Retry same message", exact: true }).click();
+    await expect(chat.getByRole("region", { name: "Message receipt", exact: true })).toHaveCount(0); await expect(composer).toHaveValue(nextDraft);
     const sameTurnPosts = posts(/\/turns$/).filter(row => row.path === first.path); assert.equal(sameTurnPosts.length, 2);
     const retry = sameTurnPosts[1]!; const retried = decoded<ConversationTurnAccepted>(retry);
     assert.equal(retry.key, first.key); assert.equal(retry.body, first.body); assert.equal(retried.turn.id, accepted.turn.id); assert.equal(retried.replayed, true);
     checks.push("Real v2 lost successful ACK retries the same key/body/turn; next draft survives");
-    await chooseFile(); await page.getByRole("radio", { name: "Queue next", exact: true }).filter({ visible: true }).check();
-    await input(page).fill("Queue fixed attachment"); fixture.loseNext("queue"); await input(page).press("Enter");
-    await expect(page.getByRole("region", { name: "enqueue receipt", exact: true })).toContainText("Receipt unknown");
-    const queued = posts(/\/queue$/).at(-1)!; assert.ok(queued.dropped); await input(page).fill("Independent queue draft");
-    await page.getByRole("button", { name: "Retry same enqueue", exact: true }).click();
-    await expect(page.getByRole("region", { name: "enqueue receipt", exact: true })).toContainText("accepted");
+    await chooseFile(chat); await chat.getByRole("radio", { name: "Queue next", exact: true }).check();
+    await composer.fill("Queue fixed attachment"); fixture.loseNext("queue"); await composer.press("Enter");
+    await expect(chat.getByRole("region", { name: "enqueue receipt", exact: true })).toContainText("Receipt unknown");
+    const queued = posts(/\/queue$/).at(-1)!; assert.ok(queued.dropped); await composer.fill("Independent queue draft");
+    await chat.getByRole("button", { name: "Retry same enqueue", exact: true }).click();
+    await expect(chat.getByRole("region", { name: "enqueue receipt", exact: true })).toContainText("accepted");
     const queueRetry = posts(/\/queue$/).at(-1)!; const queueAck = decoded<ConversationQueueAccepted>(queueRetry);
     assert.equal(queueRetry.key, queued.key); assert.equal(queueRetry.body, queued.body);
     assert.equal(queueAck.item.id, decoded<ConversationQueueAccepted>(queued).item.id); assert.equal(queueAck.item.context?.templateVersion, 2);
     assertConversationContextMatches(undefined, queueAck.item.context, { projectId: material.projectId, attachments: [material.ref] });
-    assert.equal(posts(/\/cancel$/).length, 0); await expect(input(page)).toHaveValue("Independent queue draft");
+    assert.equal(posts(/\/cancel$/).length, 0); await expect(composer).toHaveValue("Independent queue draft");
     checks.push("Queue Enter preserves v2 references and same-key recovery without cancelling the running task");
     const negotiated = (await until(async () => fixture.wire, rows => rows.some(row => row.path === `/api/conversations/${conversationId}` && row.forwardedStream === "patch-v1"), signal))
       .find(row => row.path === `/api/conversations/${conversationId}` && row.forwardedStream === "patch-v1")!;
