@@ -15,3 +15,12 @@ Fixed SDK0.3.290；实现尚在进行，0provider。
 ## 主正文自动读取（修订首合同）
 
 `GET /api/tasks/:taskId/assistant-stream/patches?attemptId=<id>&after=<runnerSequence>&limit=8` 返回AssistantStreamPatchPage。after默认0、limit默认8且最大8，按attempt稳定sequence升序；每页含至多8个≤8KiB正文patch，附属字段亦受schema限制。UI自动将patch应用到按streamId维护的正文，不要求展开详情。初次/重连从0或已应用cursor分页读取；不轮询增长的完整content，不把丢失未flush片段补成事实。响应总是taskId/attemptId，attempt必须属于路径task；当前task列表返回current attempt，UI切turn时丢弃旧请求结果。单块全文只提供明确task+block绑定的诊断/按需恢复；不能回退通用detail。已观察的source frame ID与持久patch transport ID不是同一个ID。
+
+## 显式 final 展示结算（正式修订）
+
+固定SDK result没有nativeMessageId关联字段，本模块绝不声称provider一一correlation。`settlement`为中心与assistant-final同一事务持久的Flow展示规则：policy=`flow.assistant-draft`、policyVersion=`1`、task/attempt/nativeSession/finalMessageId、replaceStreamIds/retainStreamIds，两集合完整且不交叉，原patch永不删除。Web直接按这份记录结束/替换临时正文，不按文字相同、opaque ID或最后一块推测。
+
+- adapter在实际root tool_use边界前flush已观察文字，再报告有序tool marker；最终中心同时核CHAT05同attempt/session的tool输入证据。最后root工具边界前的完整文字（包括独立native text message）归retain；工具后的临时正文group归replace。无工具时采用attempt-draft规则。superseded历史仍保留其明确状态。
+- gap、aborted、缺完整块/工具证据或一个block文字跨工具边界均返回correlation=`unavailable`及unavailableReason；replace为空、retain覆盖全部已保存块，final仍独立可显示。不猜关联，不宣称中断半句完成。
+- 完整assistant单块可先于block_stop：mapper在block identity上核对，不按content数组下标猜。source wire uuid、native message id、final result uuid分别记录；supersedes按已观察wire uuid处理，未知目标保守不补造正文。
+- `finalMessageId`兼容保留；消费者必须以显式settlement而非这个ID自行推断替换集合。本规则为展示政策，不是原始SDK身份映射。

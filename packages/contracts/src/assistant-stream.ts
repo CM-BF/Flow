@@ -51,6 +51,7 @@ export interface AssistantStreamPage {
    * Earlier message blocks (e.g. before tools) remain readable as history.
    * The final body is fetched through the existing assistant-message owner route. */
   finalMessageId: string | null;
+  settlement: AssistantStreamSettlement | null;
 }
 /** Main reply UI consumes patches automatically; it must not poll growing full blocks. */
 export interface AssistantStreamPatch extends AssistantStreamData {
@@ -67,4 +68,28 @@ export interface AssistantStreamPatchPage {
   /** Last included runner sequence, or the supplied cursor when empty. */
   nextCursor: number;
   hasMore: boolean;
+}
+/** Ordered marker: pending root text is sealed BEFORE its tool boundary is emitted. */
+export const assistantStreamMarkerSchema = z.strictObject({
+  type: z.literal('assistant-stream-marker'),
+  markerId: digest,
+  nativeSessionId: idSchema,
+  sourceMessageId: idSchema,
+  kind: z.enum(['tool-boundary', 'unavailable']),
+  toolUseId: idSchema.nullable(),
+  reason: assistantStreamReasonSchema.nullable(),
+});
+export type AssistantStreamMarker = z.infer<typeof assistantStreamMarkerSchema>;
+export interface AssistantStreamSettlement {
+  policy: 'flow.assistant-draft';
+  policyVersion: '1';
+  correlation: 'presentation-policy' | 'unavailable';
+  unavailableReason: 'no-draft' | 'incomplete-stream' | 'missing-tool-evidence' | 'crossed-tool-boundary' | null;
+  taskId: string;
+  attemptId: string;
+  nativeSessionId: string;
+  finalMessageId: string;
+  /** Complete disjoint partition of this attempt's durable blocks. No history is deleted. */
+  replaceStreamIds: string[];
+  retainStreamIds: string[];
 }
