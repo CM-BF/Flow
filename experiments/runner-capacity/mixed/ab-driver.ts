@@ -46,7 +46,7 @@ export async function runComparison(windowId: string, target: string, started = 
         actualWindowAuthorization: 'requires separate named OPEN; this directory consumes that single attempt' }); budget.work();
       preparationPhase = 'fixed-source-export'; sourceRoot = join(tmpdir(), 'flow-s01-ab-input-' + randomUUID());
       await mkdir(sourceRoot, { mode: 0o700 }); sourceCreated = true; budget.work();
-      const exported = await exportInputs(process.cwd(), sourceRoot, budget);
+      const exported = await exportInputs(process.cwd(), sourceRoot, budget, preparationDeadline);
       preparationPhase = 'input-evidence'; await finalEvidence('inputs.json', exported); budget.work();
       preparationPhase = 'complete';
     });

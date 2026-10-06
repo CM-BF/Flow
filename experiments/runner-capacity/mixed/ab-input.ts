@@ -33,12 +33,17 @@ export async function checkDisk(directory: string, reserveBytes = COMPARISON.tot
 }
 export function preparedGit(preparationDeadlineMs: number, accounting: InputAccounting, execute: (timeoutMs: number) => Buffer, now = performance.now.bind(performance)) {
   accounting.work();
-  const bytes = execute(Math.max(1, Math.min(5000, accounting.remainingMs)));
-  accounting.chargeCommon('git-output', bytes.length); return bytes;
+  const remainingMs = Math.min(preparationDeadlineMs - now(), accounting.remainingMs);
+  const timeoutMs = Math.min(5000, Math.floor(remainingMs));
+  if (!Number.isFinite(timeoutMs) || timeoutMs < 1) throw new Error('comparison_preparation_exhausted');
+  const bytes = execute(timeoutMs);
+  accounting.chargeCommon('git-output', bytes.length);
+  if (now() >= preparationDeadlineMs) throw new Error('comparison_preparation_exhausted');
+  accounting.work(); return bytes;
 }
-function frozenFiles(repo: string, side: Side, accounting: InputAccounting): InputFile[] {
+function frozenFiles(repo: string, side: Side, accounting: InputAccounting, preparationDeadlineMs: number): InputFile[] {
   const git = (args: string[], input?: string) => {
-    return preparedGit(15000, accounting, timeout => execFileSync('git', ['-C', repo, ...args], { input, maxBuffer: 12 * 1024 * 1024, timeout }));
+    return preparedGit(preparationDeadlineMs, accounting, timeout => execFileSync('git', ['-C', repo, ...args], { input, maxBuffer: 12 * 1024 * 1024, timeout }));
   };
   const rows = git(['ls-tree', '-rz', COMPARISON.revisions[side], '--', ...INPUT_PATHS]).toString('utf8').split('\0').filter(Boolean);
   const entries = rows.map(row => {
@@ -95,10 +100,10 @@ export async function materializeInput(repo: string, destination: string, files:
   assert.equal(await realpath(join(dirname(await realpath(join(destination, 'apps/server/node_modules/pg-boss'))), 'pg')), pg, 'input_scheduler_pg_mismatch');
   return dependencies;
 }
-export async function exportInputs(repo: string, root: string, accounting: InputAccounting) {
+export async function exportInputs(repo: string, root: string, accounting: InputAccounting, preparationDeadlineMs: number) {
   const encodedBindings = await readFile(new URL('./ab-dependencies.json', import.meta.url)); accounting.chargeCommon('dependency-bindings', encodedBindings.length);
   const bindings = JSON.parse(encodedBindings.toString('utf8')) as ExternalBinding[];
-  const a = frozenFiles(repo, 'A', accounting), b = frozenFiles(repo, 'B', accounting); verifyPair(a, b);
+  const a = frozenFiles(repo, 'A', accounting, preparationDeadlineMs), b = frozenFiles(repo, 'B', accounting, preparationDeadlineMs); verifyPair(a, b);
   const manifest = [];
   for (const [side, files] of [['A', a], ['B', b]] as const) {
     await checkDisk(repo);
