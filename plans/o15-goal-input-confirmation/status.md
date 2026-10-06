@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:04:34 UTC |
+| 最近更新 | 2026-10-06 15:13:29 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation |
 | Branch | codex/goal-input-confirmation |
-| 工作基线 / HEAD | af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458 / 首合同待commit |
-| 工作树dirty状态 | 首DTO和records；提交后clean |
+| 工作基线 / HEAD | af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458 / b214d582ce83490d6c92b8e1d4ce632190e5a3ab（首DTO；领域候选见工作树） |
+| 工作树dirty状态 | 权限/事务组合与局部测试已写；验证窗口待安排 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 实现目标 | 尚未固定完整产品 |
 | 实现范围 | packages/contracts/src/goal-graph-proposals.ts, packages/contracts/src/goal-plan-confirmation.ts, packages/contracts/src/goal-graph-runs.ts, apps/server/src/goal-plan-confirmation/index.ts, apps/server/src/goal-plan-confirmation/store.ts, apps/server/src/goal-plan-confirmation/confirmation.test.ts, apps/server/src/goal-plan-confirmation/fixture.ts, apps/server/src/goal-progression/store.ts, apps/server/src/goal-progression/progression.test.ts, apps/server/src/goal-graph-proposals/proposals.test.ts, apps/server/src/goal-graph-runs/store.ts, apps/server/src/goal-graph-runs/runner.ts, apps/server/src/goal-graph-runs/runs.test.ts, apps/runner/src/goal-graph-tools/mcp.ts, apps/runner/src/goal-graph-tools/mcp.test.ts, packages/storage/migrations/031-goal-plan-confirmations.sql |
-| 检查状态 | NOT_RUN：首DTO/interface，不代表领域已可用 |
+| 检查状态 | NOT_RUN：PG验收未执行；SDK6+schema1不同检查通过、权限首red保留，domain及测试类型修复后roottypes0 |
 | 已集成main状态 / HEAD | 未集成；固定base af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已固定完整输入提案和一次确认的范围，正在实现权限与事务组合。 |
+| 当前产出 | 完整提案的显式权限与一次确认事务已实现；纯检查通过，正在准备数据库边界验证。 |
 | 下一可用交付 | 用户可一次审阅并确认完整输入，由中心按已授权依赖推进。 |
-| 当前阻塞 | NONE |
+| 当前阻塞 | ACTIVE: 本机磁盘低于保留线，数据库验收等待Lead与Web协调窗口；源码工作可继续。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 | Claim | bbeea8d5-f25b-49c8-9a1d-d8ac17100241 v1 active，18 literal；[回执](../../docs/evidence/o15/claim.json) |
@@ -29,9 +29,9 @@
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
-| O15-01 | in-progress | native_center_owner | 首DTO/interface待固定commit |
-| O15-02 | pending | native_center_owner | 待实现 |
+| O15-01 | completed | native_center_owner | 首合同b214d582；[Interface](../../docs/evidence/o15/interface.md) |
+| O15-02 | in-progress | native_center_owner | 权限与single-TX组合候选已写，等待真PG验证 |
 | O15-03 | pending | native_center_owner | PG窗口待Lead/Web协调，源码与纯检查可独立继续 |
 | O15-04 | pending | Execution Lead | 固定后独审/main |
 
-看板来源等待Execution Lead登记；本status为唯一手填事实源。PG窗口仅限制验证，不阻当前源码实施。无真实provider预算，未触个人服务。
+看板来源已交Execution Lead列D05候选；本status为唯一手填事实源。PG窗口仅限制验证，不阻当前源码实施。无真实provider预算，未触个人服务。

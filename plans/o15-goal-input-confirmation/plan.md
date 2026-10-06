@@ -6,7 +6,7 @@
 
 已批准设计见[设计](../../docs/evidence/o15/approved-design.md)与[Interface](../../docs/evidence/o15/interface.md)；统一引用[模块化规则](../../AGENTS.md#modular-design)。原O05图提案、O01输入版本、K03材料冻结和O14授权为唯一领域实现，新模块仅原子组合并保存确认收据。旧graph grant无新增protocol时不获得完整输入提案能力；现时权限先于幂等恢复，业务CAS只在new-command分支。
 
-- [ ] O15-01 固定DTO/Interface、独立scope与权威状态。
+- [x] O15-01 固定DTO/Interface、独立scope与权威状态。
 - [ ] O15-02 实现显式提案能力及原子确认/唯一收据。
 - [ ] O15-03 验证局部0模型两节点公开旅程、失败/恢复与旧直接消费者。
 - [ ] O15-04 固定证据，独立review后主线接收及范围释放。

@@ -1,0 +1,38 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation
+
+ ❯ apps/runner/src/goal-graph-tools/mcp.test.ts (6 tests | 1 failed | 5 skipped) 19ms
+   ↓ keeps legacy scope and proposal JSON unchanged while requiring complete keyed inputs
+   × requires the explicit host-bound input proposal capability without adding an SDK tool 18ms
+   ↓ exposes exactly two actual SDK MCP tools with bounded read and explicit write annotations
+   ↓ forwards the exact stable command once and exposes uncertainty without leaking exception text
+   ↓ rejects oversized page and unknown write kinds before reaching the host port
+   ↓ reports known center rejection and refuses oversized encoded replies without truncation
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/goal-graph-tools/mcp.test.ts > requires the explicit host-bound input proposal capability without adding an SDK tool
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ apps/runner/src/goal-graph-tools/mcp.test.ts:48:21
+     46|       expect((await peer.client.listTools()).tools.map(tool => tool.na…
+     47|       const result = await peer.client.callTool({ name: 'graph_command…
+     48|       expect(calls).toBe(permitted ? 1 : 0);
+       |                     ^
+     49|       expect(Boolean(result.isError)).toBe(!permitted);
+     50|     } finally { await peer.close(); }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 skipped (6)
+   Start at  08:05:36
+   Duration  532ms (transform 183ms, setup 0ms, import 427ms, tests 19ms, environment 0ms)
+

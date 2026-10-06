@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
-import type { GoalGraphAudit, GoalGraphAuditPage, GoalGraphRun, GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRunRevoked, GoalGraphScope, GoalGraphRunPage } from '../../../../packages/contracts/src/goal-graph-runs.js';
+import { goalGraphScopeSchema, type GoalGraphAudit, type GoalGraphAuditPage, type GoalGraphRun, type GoalGraphRunAdmission, type GoalGraphRunAccepted, type GoalGraphRunRevoked, type GoalGraphScope, type GoalGraphRunPage } from '../../../../packages/contracts/src/goal-graph-runs.js';
 import { HttpError, transaction } from '../database.js';
 import { acceptTask, command } from '../tasks.js';
 import { goalContext } from '../goal-graph-proposals/store.js';
@@ -37,12 +37,14 @@ export async function runView(client: PoolClient, row: GraphRunRow): Promise<Goa
     createdAt: row.created_at.toISOString(), revokedAt: row.revoked_at?.toISOString() ?? null, revocationReason: row.revocation_reason };
 }
 export async function admit(pool: Pool, boss: PgBoss, goalId: string, input: GoalGraphRunAdmission, key: string): Promise<GoalGraphRunAccepted> {
+  // Persist the explicitly admitted capability; absent legacy fields are never defaulted.
+  const scope = goalGraphScopeSchema.parse(input.scope);
   if (input.execution.harness === 'claude' && !input.execution.executionProfile) throw new HttpError(409, 'native_graph_tools_unavailable', 'Native graph tools require their dedicated execution bridge.');
   const result = await command(pool, `goal-graph-run:create:${goalId}`, key, input, async client => {
     const context = await goalContext(client, goalId, true);
-    if (context.project.revision !== input.scope.baseRevision) throw new HttpError(409, 'stale_project_revision', 'The grant must name the current project revision.');
-    const graph = await readProject(client, context.project.id, input.scope.baseRevision);
-    for (const ref of input.scope.allowedExistingNodes) {
+    if (context.project.revision !== scope.baseRevision) throw new HttpError(409, 'stale_project_revision', 'The grant must name the current project revision.');
+    const graph = await readProject(client, context.project.id, scope.baseRevision);
+    for (const ref of scope.allowedExistingNodes) {
       if (!graph.graph.nodes.some(node => node.id === ref.nodeId && node.version === ref.expectedVersion)) throw new HttpError(409, 'goal_graph_scope', 'An allowed existing reference is not in the base graph.');
     }
     const native = input.execution.harness === 'claude';
@@ -52,7 +54,7 @@ export async function admit(pool: Pool, boss: PgBoss, goalId: string, input: Goa
       ? { harness: 'fixture' as const, fixture: { scenario: 'success' as const } }
       : { harness: 'claude' as const, executionProfile: input.execution.executionProfile };
     const task = await acceptTask(client, boss, { title: 'Goal graph run', prompt, ...execution }, native ? 'goal-graph-tools' : 'ordinary');
-    const row = (await client.query<GraphRunRow>('INSERT INTO flow.goal_graph_runs(id,goal_id,task_id,version,scope,mode) VALUES($1,$2,$3,1,$4,$5) RETURNING *', [randomUUID(), goalId, task.id, { ...input.scope, projectId: context.project.id, goalDigest: context.goalDigest }, input.execution.harness])).rows[0]!;
+    const row = (await client.query<GraphRunRow>('INSERT INTO flow.goal_graph_runs(id,goal_id,task_id,version,scope,mode) VALUES($1,$2,$3,1,$4,$5) RETURNING *', [randomUUID(), goalId, task.id, { ...scope, projectId: context.project.id, goalDigest: context.goalDigest }, input.execution.harness])).rows[0]!;
     return { run: await runView(client, row), task };
   });
   return { ...result.value, replayed: result.replayed };

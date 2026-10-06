@@ -1,4 +1,4 @@
-# O15 Interface v1 — interface-only, not yet executable
+# O15 Interface v1 — implementation candidate, PG validation pending
 
 Existing GoalGraphProposalInput gains optional inputProposal { protocol: flow.goal-input-proposal.v1, nodes:[{key,input:GoalInput}] }. Exactly one full GoalInput per addition key, <=16 additions/128 edges and the original whole-proposal64KiB bound. Old missing-field JSON and digest remain unchanged. Actual goal/constraints/acceptance/verification/knowledge citations are explicit, never inferred from title. Existing list remains body-free; existing detail is bounded and lazy.
 
@@ -12,4 +12,4 @@ Ports for F01: migrateGoalPlanConfirmations(pool), registerGoalPlanConfirmationR
 
 Unknown ACK retains key/body; cancel/disconnect never proves stopped or revokes tasks. Failed/uncertain progression follows existing O14. Editing B's input through the existing OWNER command invalidates old current delivery; old exact artifact/history stays readable, and no replacement task is authorized automatically. Mechanical verification remains separate from owner semantic acceptance.
 
-Resources: <=64KiB request and storedjson confirmation/proposal bounds, <=16nodes, existing <=4 citations/8192rawB per input, existing prompt bounds fail without truncation. No new cache, timer, loop or DB connection owner. Actual batch preflight and rollback assertions will cover cumulative resource errors. PG only after Lead/Web window and measured reserve; current module remains NOT_RUN.
+Resources: <=64KiB request and storedjson confirmation/proposal bounds, <=16nodes, existing <=4 citations/8192rawB per input, existing prompt bounds fail without truncation. No new cache, timer, loop or DB connection owner. Actual batch preflight and rollback assertions will cover cumulative resource errors. PG only after Lead/Web window and measured reserve; pure SDK/schema checks passed; current PG module journey remains NOT_RUN.
