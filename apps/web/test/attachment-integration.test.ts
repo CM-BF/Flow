@@ -20,8 +20,8 @@ const cap: AttachmentCapabilities = { protocol: "text-v1", recoveryScopeId: scop
 function deferred<T>() { let resolve!: (value: T) => void; const promise = new Promise<T>(done => { resolve = done; }); return { promise, resolve }; }
 const disposables: (() => void | Promise<void>)[] = [];
 afterEach(async () => { for (const dispose of disposables.splice(0).reverse()) await dispose(); vi.unstubAllGlobals(); vi.useRealTimers(); });
-function setup(storage = { read: (): string | null => null, write: (_value: string) => {} }) {
-  let view: AttachmentView | null = { viewId: "draft-route", conversationId: null, projectId: "project-a", visible: true, online: true, canRead: true, canUpload: true, attachmentContext: false };
+function setup(storage = { read: (): string | null => null, write: (_value: string) => {} }, projectId = "project-a") {
+  let view: AttachmentView | null = { viewId: "draft-route", conversationId: null, projectId, visible: true, online: true, canRead: true, canUpload: true, attachmentContext: false };
   const lifetime = new AbortController(); let binding: ConversationAttachments;
   const constant = <T,>(value: T) => ({ getSnapshot: () => value, subscribe: () => () => {} });
   const grants = { read: true, upload: true };
@@ -37,7 +37,7 @@ function setup(storage = { read: (): string | null => null, write: (_value: stri
     uploadAttachment: vi.fn<AttachmentClient["uploadAttachment"]>(async (_project, request, key) => ({ replayed: false, uploadKey: key, recoveryScopeId: request.recoveryScopeId, requestDigest: "a".repeat(64), resource: { ...meta(), name: request.name, byteLength: request.byteLength, reference: { ...meta().reference, contentDigest: request.contentDigest } } })),
   };
   host.register(createAttachmentPlugin(route => view?.viewId === route ? binding : undefined));
-  binding = new ConversationAttachments({ connectionId: "connection-a", viewKey: "stable-view", projectId: "project-a" }, { host, client, signal: lifetime.signal, current: () => view, storage });
+  binding = new ConversationAttachments({ connectionId: "connection-a", viewKey: "stable-view", projectId }, { host, client, signal: lifetime.signal, current: () => view, storage });
   disposables.push(() => host.dispose(), () => binding.dispose());
   return { binding, host, client, grants, lifetime, configure(patch: Partial<AttachmentView>) { view = { ...view!, ...patch }; binding.sync(); },
     async ready() { const result = await host.execute(ATTACHMENT_OPEN, undefined, binding.context()); expect(result.ok).toBe(true); await binding.input!.browse(); },
@@ -89,6 +89,31 @@ describe("private attachment host binding", () => {
     await f.binding.input!.recover(item.uploadKey!); expect(f.binding.input!.getSnapshot().error).toBe("Denied explicitly");
     expect(f.binding.input!.getSnapshot().recovery[0]?.state).toBe("unknown");
     f.closeIdentity(); await f.binding.input!.recover(item.uploadKey!); expect(f.client.attachmentUploadReceipt).toHaveBeenCalledTimes(2);
+  });
+  it("protects only the view that owns an unknown upload, including after chip removal", async () => {
+    let raw: string | null = null; const storage = { read: () => raw, write: (value: string) => { raw = value; } };
+    const a = setup(storage); await a.ready(); a.client.uploadAttachment.mockRejectedValueOnce(Error("lost ACK"));
+    const item = await a.binding.input!.upload(new File(["hello"], "lost.txt", { type: "text/plain" }));
+    a.binding.input!.remove(item.id); expect(a.binding.protection()).toEqual(["Unknown upload receipt"]);
+    const original = raw;
+    for (const project of ["project-a", "project-b"]) {
+      const b = setup(storage, project);
+      expect(b.binding.input!.getSnapshot().recovery).toHaveLength(1);
+      expect(b.binding.protection()).toEqual([]);
+      expect(b.client.attachmentCapabilities).not.toHaveBeenCalled();
+      expect(b.client.attachmentUploadReceipt).not.toHaveBeenCalled();
+      expect(b.client.uploadAttachment).not.toHaveBeenCalled();
+      b.binding.dispose(); expect(raw).toBe(original);
+    }
+    // A newly connected same-project view retains access to the directory without
+    // acquiring its draft ownership or querying a previous namespace implicitly.
+    const reopened = setup(storage); await reopened.ready();
+    reopened.client.attachmentCapabilities.mockResolvedValueOnce({ ...cap, recoveryScopeId: "30000000-0000-4000-8000-000000000001" });
+    reopened.configure({ online: false }); reopened.configure({ online: true });
+    await reopened.binding.input!.recover(item.uploadKey!);
+    expect(reopened.client.attachmentUploadReceipt).not.toHaveBeenCalled();
+    expect(reopened.binding.protection()).toEqual([]); expect(raw).toBe(original);
+    expect(a.binding.protection()).toContain("Unknown upload receipt");
   });
   it("propagates local upload cancellation through the P01 command to the real private client", async () => {
     const f = setup(); await f.ready(); const pending = deferred<Awaited<ReturnType<AttachmentClient["uploadAttachment"]>>>();
@@ -151,13 +176,17 @@ it("real QueueCommands + FlowClient retains ordered v2 materials after a malform
 // Actual installed core0.3.22 send/restore, not a copied composer implementation.
 const require = createRequire(import.meta.url), reactRequire = createRequire(require.resolve("@assistant-ui/react"));
 const { BaseComposerRuntimeCore } = await import(pathToFileURL(reactRequire.resolve("@assistant-ui/core/internal")).href);
-for (const kind of ["complete", "requires-action"] as const) it(`official ${kind} async rejection restores controller ownership and supports a fresh captured retry`, async () => {
+for (const kind of ["complete", "requires-action", "prepare-failure", "prepare-cancel", "mixed-failure", "mixed-cancel"] as const) it(`official ${kind} async rejection restores controller ownership and supports a fresh captured retry`, async () => {
   const f = setup(); await f.ready(); f.configure({ conversationId: "chat", attachmentContext: true });
   let token: ReturnType<typeof capture>;
   class Composer extends BaseComposerRuntimeCore {
     get canSend() { return !this.isEmpty && !this.isSubmitting; }
     get canCancel() { return false; }
-    getAttachmentAdapter() { return f.binding.adapter; }
+    getAttachmentAdapter() {
+      if (kind.endsWith("failure")) return { ...f.binding.adapter, send: async () => { throw Error("Controlled preparation failure"); } };
+      if (kind.endsWith("cancel")) return { ...f.binding.adapter, send: async (_file: unknown, options: { signal: AbortSignal }) => new Promise((_, reject) => options.signal.addEventListener("abort", () => reject(options.signal.reason), { once: true })) };
+      return f.binding.adapter;
+    }
     getDictationAdapter() { return undefined; }
     threadMessageIds() { return []; }
     async handleSend() { const error = new MessageNotSentError("No receipt created"); f.binding.failed(token, error); throw error; }
@@ -166,11 +195,33 @@ for (const kind of ["complete", "requires-action"] as const) it(`official ${kind
   const composer = new Composer(); disposables.push(() => composer.__internal_dispose());
   const port: Pick<ComposerRuntime, "getState" | "subscribe"> = { subscribe: listener => composer.subscribe(listener), getState: () => ({ type: "thread", canCancel: false, canSend: composer.canSend, isEditing: false, isEmpty: composer.isEmpty,
     text: composer.text, role: "user", attachments: composer.attachments, runConfig: {}, attachmentAccept: ".txt", dictation: undefined, quote: undefined, queue: [], submission: composer.submission, inTransit: composer.inTransit }) };
+  if (kind.startsWith("mixed")) { const id = f.binding.input!.select(meta(2)); await composer.addAttachment(createExistingAttachment(f.binding.input!, id)); }
   if (kind === "complete") { const id = f.binding.input!.select(meta()); await composer.addAttachment(createExistingAttachment(f.binding.input!, id)); }
   else await composer.addAttachment(new File(["hello"], "upload.txt", { type: "text/plain" }));
-  const unbind = f.binding.bindComposer(port); disposables.push(unbind); composer.setText("original text");
+  const failed = vi.fn(); const unbind = f.binding.bindComposer(port, failed); disposables.push(unbind); composer.setText("original text");
   const ids = port.getState().attachments.map(item => item.id); token = capture(f.binding, ids);
-  await composer.send(); await new Promise<void>(done => setImmediate(done));
-  expect(composer.text).toBe("original text"); expect(composer.attachments).toHaveLength(1); expect(f.binding.input!.getSnapshot().items).toHaveLength(1);
+  const sending = composer.send();
+  if (kind.endsWith("cancel")) { await vi.waitFor(() => expect(composer.submission).toBeDefined()); composer.cancelSubmission(); }
+  await sending;
+  await new Promise<void>(done => setImmediate(done));
+  if (kind.startsWith("prepare-") || kind.startsWith("mixed")) { expect(failed).toHaveBeenCalledTimes(1); expect(f.binding.getSnapshot().submission?.state).toBe("failed"); }
+  const count = kind.startsWith("mixed") ? 2 : 1;
+  expect(composer.text).toBe("original text"); expect(composer.attachments).toHaveLength(count); expect(f.binding.input!.getSnapshot().items).toHaveLength(count);
+  if (kind.startsWith("mixed")) {
+    // No edit or recapture: directly remove the complete chip restored alongside
+    // an upload whose preparation failed/cancelled before onNew was called.
+    await composer.removeAttachment(ids[0]!); await new Promise<void>(done => setImmediate(done));
+    expect(port.getState().attachments.map(file => file.id)).toEqual([ids[1]]);
+    expect(f.binding.input!.getSnapshot().items.map(item => item.id)).toEqual([ids[1]]);
+    expect(f.binding.getSnapshot().submission?.value.ids).toEqual(ids);
+    expect(f.binding.protection()).toContain("Material submission or recovery"); return;
+  }
   expect(() => capture(f.binding, ids)).not.toThrow();
+  // A failed capture can be recovered, then explicitly removed through the real
+  // composer without the automatic-clear guard swallowing that user action.
+  const retry = f.binding.getSnapshot().submission!.value;
+  f.binding.failed(retry, Error("retry not sent")); composer.setText("edited restored draft");
+  await composer.removeAttachment(ids[0]!); await new Promise<void>(done => setImmediate(done));
+  expect(composer.attachments).toHaveLength(0); expect(f.binding.input!.getSnapshot().items).toHaveLength(0);
+  expect(f.binding.protection()).toContain("Material submission or recovery");
 });

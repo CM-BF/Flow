@@ -7,7 +7,9 @@ import {
   type ConversationSummary,
   type ConversationTurn,
   type Detail,
+  type AttachmentReference,
 } from "@flow/contracts";
+import { freezeMaterialRequest } from "../conversation-context/receipts";
 import { ReadCache, bodyBytes } from "./read-cache";
 import { ConversationOutbox, type OutboxEntry } from "./outbox";
 import { freezeContextSelection, type FrozenCitation } from "../conversation-context/selection";
@@ -69,6 +71,7 @@ function assertTurn(value: ConversationTurn, conversationId: string) {
 function readCapabilities(snapshot: Pick<ConversationSnapshot, "capabilities">) {
   const value = snapshot.capabilities;
   if (!value || value.followUp !== true || typeof value.queue !== "boolean"
+    || (value.attachmentContext !== undefined && typeof value.attachmentContext !== "boolean")
     || (value.knowledgeContext !== undefined && typeof value.knowledgeContext !== "boolean")
     || (value.liveAssistantText !== undefined && typeof value.liveAssistantText !== "boolean")
     || [value.steer, value.perTurnModel, value.perTurnThinking, value.perTurnTools].some(value => value !== false))
@@ -107,6 +110,7 @@ export class ConversationProjection {
   private update(patch: Partial<ConversationState>) {
     if (this.lifetime.signal.aborted) return;
     this.state = { ...this.state, ...patch };
+    this.queue.configureAttachments(this.state.snapshot?.conversation.projectId ?? null, this.state.snapshot?.capabilities.attachmentContext === true);
     this.queue.configureKnowledge(this.state.snapshot?.conversation.projectId ?? null, this.state.snapshot?.capabilities.knowledgeContext === true);
     this.queue.configure(this.id, this.state.snapshot?.capabilities.queue === true);
     this.listeners.forEach(listener => listener());
@@ -249,7 +253,10 @@ export class ConversationProjection {
     const reason = this.sendDisabledReason();
     if (reason) throw Error(reason);
     if (this.id) throw Error("This conversation already has a fixed project and execution configuration.");
-    return this.dispatch(this.outbox.beginCreation(creation));
+    const id = await this.dispatch(this.outbox.beginCreation(creation));
+    // CREATE advertises a conservative attachment capability. Negotiate the real GET before returning preparation.
+    if (id) await this.refresh();
+    return id;
   }
 
   validateKnowledge(knowledge?: readonly FrozenCitation[]) {
@@ -260,13 +267,16 @@ export class ConversationProjection {
     freezeContextSelection(knowledge, snapshot.conversation.projectId);
   }
 
-  async send(text: string, creation?: ConversationCreation, knowledge?: readonly FrozenCitation[]): Promise<string | undefined> {
+  async send(text: string, creation?: ConversationCreation, knowledge?: readonly FrozenCitation[], attachments?: readonly AttachmentReference[]): Promise<string | undefined> {
     const reason = this.sendDisabledReason();
     if (reason) throw Error(reason);
     this.validateKnowledge(knowledge);
+    if (attachments?.length && (!this.state.snapshot?.conversation.projectId || this.state.snapshot.capabilities.attachmentContext !== true)) throw Error("Prepare a supported project conversation before sending files.");
+    freezeMaterialRequest({ knowledge, attachments }, this.state.snapshot?.conversation.projectId);
     const entry = this.outbox.begin({
       conversationId: this.id, expectedRevision: this.state.snapshot?.conversation.revision ?? 0, text,
       ...(knowledge === undefined ? {} : { knowledge }),
+      ...(attachments?.length ? { attachments } : {}),
       ...(!this.id ? { creation: creation ?? { title: text.trim().split("\n")[0]!.slice(0, 180), harness: "claude" as const,
         requested: { model: "runner-default", thinking: "disabled" as const, tools: "configured-readonly" as const } } } : {}),
     });

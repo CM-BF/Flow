@@ -55,6 +55,8 @@ export class ConversationAttachments {
   private readonly unsubscribeHost: () => void;
   private readonly unsubscribeInput: () => void;
   private readonly unbind = new Set<() => void>();
+  private readonly ownedUploadKeys = new Set<string>();
+  private readonly restoredDraftIds = new Set<string>();
   private lastReadable = false;
   private lastWritable = false;
   private readonly reconciliationInput: AttachmentInput | null;
@@ -64,8 +66,15 @@ export class ConversationAttachments {
     this.identity = Object.freeze({ ...identity });
     let input: AttachmentInput | null = null;
     try {
+      const journal = createRecoveryJournal(options.storage);
+      // The persistent journal is a recovery directory, not this view's draft.
+      // Ownership starts only when this input prepares an upload, even if its
+      // chip is later removed. Other views may browse/recover the same directory.
+      const ownedJournal = { ...journal, begin: (identity: Parameters<typeof journal.begin>[0]) => {
+        const record = journal.begin(identity); this.ownedUploadKeys.add(record.key); return record;
+      } };
       input = createAttachmentInput({ binding: { connectionKey: identity.connectionId, viewId: identity.viewKey, projectId: identity.projectId },
-        readiness: this.readiness(), journal: createRecoveryJournal(options.storage), ports: {
+        readiness: this.readiness(), journal: ownedJournal, ports: {
           capabilities: signal => this.read(signal, bound => options.client.attachmentCapabilities(identity.projectId, bound)),
           list: (query, signal) => this.read(signal, bound => options.client.attachments(identity.projectId, query, bound)),
           content: (ref, signal) => this.read(signal, bound => options.client.attachmentContent(identity.projectId, ref.resourceId, ref.version, ref.contentDigest, bound)),
@@ -88,7 +97,8 @@ export class ConversationAttachments {
     // Complete attachments temporarily disappear before an async rejection restores
     // them. Only automatic reconciliation is held; explicit draft removal is real.
     this.reconciliationInput = input ? { ...input, remove: id => {
-      if (!this.state.submission?.value.ids.includes(id)) input.remove(id);
+      const held = this.state.submission;
+      if (!held?.value.ids.includes(id) || (held.state === "failed" && this.restoredDraftIds.has(id))) input.remove(id);
     } } : null;
     this.unsubscribeInput = input?.subscribe(() => this.update({})) ?? (() => {});
     this.unsubscribeHost = options.host.subscribe(() => this.sync());
@@ -101,7 +111,7 @@ export class ConversationAttachments {
   private update(patch: Partial<BindingSnapshot>) { this.state = Object.freeze({ ...this.state, ...patch }); this.emit(); }
   context(): ResourceContext {
     const view = this.options.current();
-    return { kind: "composer", viewId: view?.viewId ?? "closed", isDraft: !view?.conversationId };
+    return { kind: "composer", viewId: view?.viewId ?? "closed", isDraft: true };
   }
   private readable() {
     const view = this.options.current();
@@ -152,10 +162,33 @@ export class ConversationAttachments {
   }
   open() { this.assertAllowed(); this.update({ open: true }); }
   close() { this.update({ open: false }); } // Closing a Dialog is not hiding the composer.
-  bindComposer(composer: Pick<ComposerRuntime, "getState" | "subscribe">): () => void {
+  bindComposer(composer: Pick<ComposerRuntime, "getState" | "subscribe">, onPreparationFailed?: (value: AttachmentSubmission, error: Error) => void): () => void {
     if (!this.reconciliationInput) return () => {};
     const stop = bindAttachmentComposer(this.reconciliationInput, composer);
-    const release = () => { stop(); this.unbind.delete(release); };
+    let preparing: AttachmentSubmission | null = null, active = true;
+    const watch = composer.subscribe(() => {
+      const held = this.state.submission, state = composer.getState();
+      // Core publishes the restored draft before our queued failure transition.
+      // Observe that return while this exact preparation is still marked active.
+      if (held && (held.state === "failed" || (preparing === held.value && !state.submission)))
+        for (const item of state.attachments) if (held.value.ids.includes(item.id)) this.restoredDraftIds.add(item.id);
+      if (held?.state === "preparing" && state.submission) preparing = held.value;
+      const observed = preparing;
+      queueMicrotask(() => {
+        if (!active || !observed || observed !== preparing || this.state.submission?.value !== observed || this.state.submission.state !== "preparing") return;
+        const current = composer.getState();
+        if (current.submission || current.inTransit?.some(item => item.attachments.some(file => observed.ids.includes(file.id)))) return;
+        // Successful preparation dispatches synchronously before this microtask and
+        // handoff clears the hold. Failure/cancel bypasses onNew entirely.
+        preparing = null; const error = Error("Attachment preparation stopped before a receipt took ownership. Your draft and files are kept.");
+        this.failed(observed, error); onPreparationFailed?.(observed, error);
+      });
+    });
+    const release = () => {
+      active = false; watch(); stop(); this.unbind.delete(release);
+      const held = this.state.submission;
+      if (held?.state === "preparing") { const error = Error("Composer changed before material handoff. Recover the original draft explicitly."); this.failed(held.value, error); onPreparationFailed?.(held.value, error); }
+    };
     this.unbind.add(release); return release;
   }
   capture(input: Omit<Parameters<AttachmentInput["capture"]>[0], "conversationProjectId" | "attachmentContext">, previous: LocalReceipt | null): AttachmentSubmission {
@@ -167,7 +200,7 @@ export class ConversationAttachments {
     const view = this.options.current(); this.assertAllowed();
     const capture = this.input.capture({ ...input, conversationProjectId: view?.projectId, attachmentContext: view?.attachmentContext });
     const value = Object.freeze({ capture, ids: Object.freeze([...input.ids]), conversationId: view?.conversationId ?? null, previousReceiptId: receiptId(previous) });
-    this.update({ submission: Object.freeze({ value, state: "preparing", error: null }) }); return value;
+    this.restoredDraftIds.clear(); this.update({ submission: Object.freeze({ value, state: "preparing", error: null }) }); return value;
   }
   assertSubmission(value: AttachmentSubmission, preparedIds?: readonly string[]) {
     if (this.state.submission?.value !== value || this.state.submission.state !== "preparing") throw Error("This material submission is no longer preparing.");
@@ -187,18 +220,18 @@ export class ConversationAttachments {
       || (request.attachments?.length ?? 0) !== value.capture.attachments.length
       || request.attachments?.some((ref, index) => attachmentReferenceKey(ref) !== attachmentReferenceKey(value.capture.attachments[index]!)))
       throw Error("The local receipt does not own the captured materials.");
-    this.input!.consume(value.capture); this.update({ submission: null });
+    this.input!.consume(value.capture); this.restoredDraftIds.clear(); this.update({ submission: null });
   }
   failed(value: AttachmentSubmission, error: unknown) {
     if (this.state.submission?.value === value) this.update({ submission: Object.freeze({ value, state: "failed", error: errorText(error) }) });
   }
   discardFailedSubmission() {
     if (this.state.submission?.state === "preparing") throw Error("Wait for the material preparation to finish.");
-    this.update({ submission: null });
+    this.restoredDraftIds.clear(); this.update({ submission: null });
   }
   protection(): readonly string[] {
     const snapshot = this.input?.getSnapshot();
-    return [...(snapshot?.items.length ? ["Attachment draft"] : []), ...(snapshot?.recovery.some(item => item.state === "unknown") ? ["Unknown upload receipt"] : []),
+    return [...(snapshot?.items.length ? ["Attachment draft"] : []), ...(snapshot?.recovery.some(item => item.state === "unknown" && this.ownedUploadKeys.has(item.key)) ? ["Unknown upload receipt"] : []),
       ...(this.state.submission ? ["Material submission or recovery"] : []), ...(this.state.error ? ["Attachment recovery storage error"] : [])];
   }
   /** Terminal only: App must first confirm protected materials may be discarded. */
@@ -224,7 +257,7 @@ export function createAttachmentPlugin(find: (viewId: string) => ConversationAtt
     if (resource.kind !== "composer") throw Error("An attachment composer is required.");
     const value = find(resource.viewId);
     const current = value?.context();
-    if (!value || current?.kind !== "composer" || current.viewId !== resource.viewId) throw Error("This composer binding is unavailable.");
+    if (!value || current?.kind !== "composer" || current.viewId !== resource.viewId) throw Error("Prepare a supported project conversation using Knowledge before attaching files.");
     return value;
   };
   return { manifest: { id: ATTACHMENT_OWNER, version: "1.0.0", hostApi: 1, capabilities: ["attachment.read", "attachment.upload"],

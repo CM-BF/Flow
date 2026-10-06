@@ -7,6 +7,16 @@ import { coreFixture, makeTurn, projectionFixture } from "./conversation-message
 const pending = (turn: ConversationTurn): ConversationTurn => ({ ...turn, task: { ...turn.task, status: "running" }, assistant: { state: "pending", reason: "execution-pending" } });
 
 describe("immutable conversation message projection", () => {
+  it("shows fixed attachment metadata without copying body into the message or invalidating unchanged turns", () => {
+    const turn = makeTurn();
+    turn.context = { id: "context", contextDigest: "a".repeat(64), executionInputId: "input", executionInputDigest: "b".repeat(64), templateVersion: 2, order: "knowledge-then-attachments", sources: [], attachments: [{
+      reference: { kind: "upload", projectId: "project-a", resourceId: "10000000-0000-4000-8000-000000000001", version: 1, contentDigest: "c".repeat(64) }, name: "note.txt", mediaType: "text/plain", byteLength: 5,
+    }] };
+    const before = conversationMessages([turn]);
+    expect(before[0]?.attachments).toMatchObject([{ name: "note.txt · v1", content: [], status: { type: "complete" } }]);
+    expect(before[0]?.content).toBe(turn.user.text); expect(conversationMessages([turn])[0]).toBe(before[0]);
+  });
+
   it("reuses message objects after a real unchanged projection refresh while keeping a fresh ordered array", async () => {
     const fixture = projectionFixture([makeTurn(), makeTurn(2)]);
     try {
@@ -63,6 +73,7 @@ describe("immutable conversation message projection", () => {
     const turns = Array.from({ length: 25 }, (_, i) => makeTurn(i + 1)); const fixture = projectionFixture(turns);
     try {
       await fixture.projection.refresh(); const before = new Map(conversationMessages(fixture.projection.getSnapshot().turns).map(message => [message.id, message]));
+      fixture.projection.setVisible(true);
       await fixture.projection.loadMore(); const loaded = fixture.projection.getSnapshot().turns; const after = conversationMessages(loaded);
       expect(loaded.map(turn => turn.number)).toEqual(turns.map(turn => turn.number)); expect(after).toHaveLength(50);
       for (const message of after) if (before.has(message.id)) expect(message).toBe(before.get(message.id));

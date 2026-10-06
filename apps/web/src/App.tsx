@@ -630,6 +630,17 @@ function Workspace({
       state: (identity, options, signal) => { if (!ownsSteering(identity)) throw Error("Expired steering view."); return client.steering(identity.taskId, options, signal); },
       accept: (identity, input, key, signal) => { if (!ownsSteering(identity)) throw Error("Expired steering view."); return client.acceptSteering(identity.taskId, input, key, signal); },
     },
+    attachments: {
+      client,
+      // Journal contains only bounded upload identities, never credentials or file bodies.
+      storage: { read: () => localStorage.getItem("flow.attachment-recovery.v1"), write: value => localStorage.setItem("flow.attachment-recovery.v1", value) },
+      allowed: (viewKey, projection, projectId, mode) => {
+        const view = [...views.values()].find(item => item.key === viewKey);
+        // Explicit private owner policy for both capabilities; the center still authorizes every HTTP request.
+        return (mode === "read" || mode === "upload") && view?.conversation === projection
+          && projection.getSnapshot().snapshot?.conversation.projectId === projectId;
+      },
+    },
     knowledge: {
       current: identity => {
         const view = [...views.values()].find(view => view.key === identity.viewKey);
@@ -683,14 +694,14 @@ function Workspace({
     session?.publishTheme(theme);
   });
   useEffect(() => {
-    const preventLoss = (event: BeforeUnloadEvent) => { if (session?.steering.risks()) { event.preventDefault(); event.returnValue = ""; } };
+    const preventLoss = (event: BeforeUnloadEvent) => { if (session?.steering.risks() || session?.hasProtectedAttachments()) { event.preventDefault(); event.returnValue = ""; } };
     window.addEventListener("beforeunload", preventLoss); return () => window.removeEventListener("beforeunload", preventLoss);
   }, [session]);
   const disconnectNow = () => { void session?.dispose(); onDisconnect(); };
   if (!session) return <p role="status">Opening workspace…</p>;
   return (
     <PluginProvider session={session}><SteeringSurfaces workspace={session.steering} />
-    <Dialog open={!!leaving} onOpenChange={open => { if (!open) setLeaving(null); }}><DialogContent><DialogHeader><DialogTitle>Leave unconfirmed steering receipts?</DialogTitle><DialogDescription>Leaving loses this page’s original command keys and local recovery record. A command may already be accepted or running. Closing this view does not cancel work at the center.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" onClick={() => setLeaving(null)}>Keep this page</Button><Button onClick={() => { const destination = leaving; setLeaving(null); if (destination?.kind === "view") closeNow(destination.id, true); else if (destination) disconnectNow(); }}>Leave and discard local recovery</Button></DialogFooter></DialogContent></Dialog>
+    <Dialog open={!!leaving} onOpenChange={open => { if (!open) setLeaving(null); }}><DialogContent><DialogHeader><DialogTitle>{session.hasProtectedAttachments() && !session.steering.risks() ? "Leave attachment drafts?" : "Leave unconfirmed steering receipts?"}</DialogTitle><DialogDescription>Leaving loses this page’s original command keys and local recovery record. A command may already be accepted or running. Closing this view does not cancel work at the center. Selected files, held submissions, and message receipts are local to this page. Upload recovery identities may remain in browser storage, but do not restore a draft automatically.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" onClick={() => setLeaving(null)}>Keep this page</Button><Button onClick={() => { const destination = leaving; setLeaving(null); if (destination?.kind === "view") closeNow(destination.id, true); else if (destination) disconnectNow(); }}>Leave and discard local recovery</Button></DialogFooter></DialogContent></Dialog>
     <Dialog open={retainedOpen} onOpenChange={setRetainedOpen}><DialogContent onCloseAutoFocus={event => { event.preventDefault(); const destination = retainedDestination.current; requestAnimationFrame(() => { const target = destination ? document.getElementById(`tab-${destination}`) : retainedInvoker.current; if (target?.isConnected) target.focus(); }); }}><DialogHeader><DialogTitle>Retained chats</DialogTitle><DialogDescription>{residentCount()} / {MAX_RESIDENT_CONVERSATIONS} conversation views in this connection. Close an empty chat to free a place. Drafts and receipts are kept until you resolve them.</DialogDescription></DialogHeader>
       {capacityBlocked && <p role="alert">No place for another chat. Your current tabs, route and drafts were kept.</p>}
       <ul className="max-h-64 space-y-2 overflow-y-auto">{[...views].filter(([, view]) => view.conversation).map(([id, view]) => {
@@ -752,7 +763,7 @@ function Workspace({
           </IconButton>
           <PluginRail />
           <PluginSettings registry={registry} />
-          <IconButton label="Change connection" onClick={() => { if (session.steering.risks()) setLeaving({ kind: "connection" }); else disconnectNow(); }}>
+          <IconButton label="Change connection" onClick={() => { if (session.steering.risks() || session.hasProtectedAttachments()) setLeaving({ kind: "connection" }); else disconnectNow(); }}>
             <Settings2 size={18} />
           </IconButton>
         </div>

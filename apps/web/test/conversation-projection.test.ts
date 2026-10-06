@@ -49,6 +49,22 @@ function setup(initial = snapshot(), id: string | null = "chat", withQueue = fal
 }
 
 describe("public conversation projection", () => {
+  it("requires the confirmed attachment capability, freezes files and retains unknown v2 receipts for original-key retry", async () => {
+    const initial = snapshot(); initial.conversation.projectId = "project-a"; initial.capabilities = { ...initial.capabilities, attachmentContext: true };
+    const { projection, client } = setup(initial); await projection.refresh();
+    const ref = { kind: "upload" as const, projectId: "project-a", resourceId: pin.id, version: 1 as const, contentDigest: "a".repeat(64) };
+    await projection.send("file message", undefined, undefined, [ref]);
+    expect(projection.getSnapshot().outbox).toMatchObject({ state: "unknown", request: { attachments: [ref] } });
+    const first = client.submitConversationTurn.mock.calls[0]!; ref.contentDigest = "b".repeat(64);
+    await projection.retry(); expect(client.submitConversationTurn.mock.calls[1]!.slice(0,3)).toEqual(first.slice(0,3));
+    expect(first[1].attachments?.[0]?.contentDigest).toBe("a".repeat(64));
+    const unsupported = setup(snapshot()); await unsupported.projection.refresh();
+    await expect(unsupported.projection.send("files", undefined, undefined, [ref])).rejects.toThrow("supported project");
+    expect(unsupported.client.submitConversationTurn).not.toHaveBeenCalled(); expect(unsupported.projection.outbox.getSnapshot()).toBeNull();
+    await unsupported.projection.send("plain", undefined, undefined, []);
+    expect(unsupported.client.submitConversationTurn.mock.calls[0]![1]).not.toHaveProperty("attachments");
+  });
+
   it.each(["revision", "task timestamp", "effective source"])("uses the shared decoder for a non-HTTP port's invalid %s success", async field => {
     const { projection, client } = setup(); await projection.refresh();
     const value = { conversation: snapshot(turn()).conversation, turn: turn(), replayed: false };

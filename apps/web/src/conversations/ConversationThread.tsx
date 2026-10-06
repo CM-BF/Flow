@@ -1,9 +1,11 @@
+import { ATTACHMENT_OWNER, ATTACHMENT_OPEN, type AttachmentSubmission } from "../plugin-integration/attachments";
+import { createExistingAttachment } from "../attachments/adapter";
 import { ConversationSteering } from "../plugin-integration/react";
-import { useContext, useMemo, useLayoutEffect, useEffect, useState, useSyncExternalStore, type ComponentProps, type ReactNode } from "react";
+import { useContext, useRef, useMemo, useLayoutEffect, useEffect, useState, useSyncExternalStore, type ComponentProps, type ReactNode } from "react";
 import { AssistantRuntimeProvider, MessageNotSentError, useExternalStoreRuntime, type ThreadMessage } from "@assistant-ui/react";
 import { TERMINAL_STATUSES, conversationTurnSchema, conversationQueueEnqueueSchema, type ConversationTurn, type ConversationSnapshot, type ConversationCreation } from "@flow/contracts";
 import { Thread } from "../components/assistant-ui/elements/thread.aui";
-import { SessionContext, ComposerActions, MessageActions, PluginThreadScope, ConversationDataRenderers, ConversationActivities, MessageFooter, ConversationStreams, useConversationStream } from "../plugin-integration/react";
+import { SessionContext, AttachmentComposer, ComposerActions, MessageActions, PluginThreadScope, ConversationDataRenderers, ConversationActivities, MessageFooter, ConversationStreams, useConversationStream } from "../plugin-integration/react";
 import { fixtureMode, type DraftState } from "../TaskThread";
 import { ConversationProjection } from "./projection";
 import { ExecutionProfilePicker } from "../execution-profiles/ExecutionProfilePicker";
@@ -70,6 +72,11 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
   const knowledge = useMemo(() => session.knowledgeBinding(viewKey, projection), [session, viewKey, projection]);
   useLayoutEffect(() => { knowledge.configure(viewId, visible); return () => knowledge.configure(viewId, false); }, [knowledge, viewId, visible]);
   const state = useSyncExternalStore(projection.subscribe, projection.getSnapshot);
+  const attachments = useMemo(() => session.attachmentBinding(viewKey, projection), [session, viewKey, projection, state.snapshot?.conversation.projectId]);
+  const attachmentActive = useSyncExternalStore(session.host.subscribe, () => session.host.list().find(plugin => plugin.id === ATTACHMENT_OWNER)?.state === "active");
+  const materialState = useSyncExternalStore(attachments?.subscribe ?? (() => () => {}), attachments?.getSnapshot ?? (() => null));
+  const mention = useRef<{ text: string; start: number; end: number } | null>(null);
+  const pending = useRef<{ intent: "follow-up" | "queue"; text: string; selection: ReturnType<typeof knowledge.capture>; creation?: ConversationCreation; material?: AttachmentSubmission; binding: typeof attachments } | null>(null);
   const profileCatalog = useSyncExternalStore(profiles.subscribe, profiles.getSnapshot);
   const queue = useSyncExternalStore(projection.queue.subscribe, projection.queue.getSnapshot);
   const [intent, setIntent] = useState<"follow-up" | "queue">("follow-up");
@@ -89,39 +96,83 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
   useEffect(() => { if (last) onCurrentTask(last.task.id); }, [last?.task.id]);
   const runtime = useExternalStoreRuntime<ThreadMessage>({ messageRepository: streamState.repository,
     isRunning: Boolean(last && !TERMINAL_STATUSES.includes(last.task.status)), isLoading: state.loading || Boolean(state.error && !state.snapshot), isSendDisabled: Boolean(reason),
+    adapters: { attachments: attachmentActive ? attachments?.adapter : undefined },
     onNew: async message => {
-      const blocked = projection.sendDisabledReason(intent) ?? profileReason();
-      if (blocked) throw new MessageNotSentError(blocked);
-      const text = message.content.filter(part => part.type === "text").map(part => part.text).join("\n");
-      let capture: ReturnType<typeof knowledge.capture>;
-      let creation: ConversationCreation | undefined;
+      const captured = pending.current;
+      if (!captured) throw new MessageNotSentError("Capture this draft before preparing its materials.");
+      let handedOff = false;
       try {
-        capture = knowledge.capture();
-        if (intent === "queue") { if (!conversationQueueEnqueueSchema.safeParse({ expectedQueueRevision: queue.page?.queueRevision, text, knowledge: capture.knowledge }).success) throw Error("Use a non-empty message up to 16,000 UTF-8 bytes for the queue. Your references are kept."); }
-        else {
-          if (!conversationTurnSchema.safeParse({ text, expectedRevision: state.snapshot?.conversation.revision ?? 0, mode: "follow-up", knowledge: capture.knowledge }).success) throw Error("Use 1–16,000 characters. Your references are kept.");
-          if (!state.snapshot) creation = knowledge.creation(freezeConversationCreation(text.trim().split("\n")[0]!.slice(0, 180), profileSelection));
-        }
-      } catch (error) { const message = error instanceof Error ? error.message : "This message cannot be submitted."; setSendError(message); throw new MessageNotSentError(message); }
-      setSendError(null);
-      const previous = intent === "queue" ? projection.queue.commands?.getSnapshot().find(item => item.slot === "enqueue")?.key : projection.outbox.getSnapshot()?.id;
-      const operation = intent === "queue" ? projection.queue.enqueue(text, capture.knowledge) : projection.send(text, creation, capture.knowledge);
-      // Async methods can reject before their first await. A new local receipt, not a Promise, proves handoff.
-      const receipt = intent === "queue" ? projection.queue.commands?.getSnapshot().find(item => item.slot === "enqueue") : projection.outbox.getSnapshot();
-      const receiptId = receipt && ("key" in receipt ? receipt.key : receipt.id);
-      const handedOff = !!receiptId && receiptId !== previous;
-      if (handedOff) knowledge.consume(capture);
-      try {
-        const id = await operation;
-        if (!handedOff) throw Error("The message was not handed to a receipt. Your references are kept.");
-        if (id) onAccepted(id);
+        const blocked = projection.sendDisabledReason(captured.intent); if (blocked) throw Error(blocked);
+        const ids = (message.attachments ?? []).map(item => item.id);
+        if (captured.material) captured.binding!.assertSubmission(captured.material, ids);
+        else if (ids.length) throw Error("These files are not bound to an authorized material submission.");
+        const previous = captured.intent === "queue" ? projection.queue.commands?.getSnapshot().find(item => item.slot === "enqueue")?.key : projection.outbox.getSnapshot()?.id;
+        const operation = captured.intent === "queue"
+          ? projection.queue.enqueue(captured.text, captured.selection.knowledge, captured.material?.capture.attachments)
+          : projection.send(captured.text, captured.creation, captured.selection.knowledge, captured.material?.capture.attachments);
+        // Consume only after a new local receipt synchronously takes the frozen body.
+        // Always handle the Promise, including async rejection before the first await.
+        const receipt = captured.intent === "queue" ? projection.queue.commands?.getSnapshot().find(item => item.slot === "enqueue") : projection.outbox.getSnapshot();
+        const id = receipt && ("key" in receipt ? receipt.key : receipt.id);
+        handedOff = !!id && id !== previous;
+        try {
+          if (handedOff) {
+            if (captured.material) {
+              if (!receipt || ("kind" in receipt && receipt.kind !== "turn")) throw Error("A turn receipt is required for captured files.");
+              captured.binding!.handoff(captured.material, receipt);
+            }
+            knowledge.consume(captured.selection);
+          }
+        } catch (error) { void operation.catch(() => {}); throw error; }
+        const conversationId = await operation;
+        if (!handedOff) throw Error("The message was not handed to a receipt. Your materials are kept.");
+        if (conversationId) onAccepted(conversationId);
       } catch (error) {
-        const message = error instanceof Error ? error.message : "Message could not be sent."; setSendError(message);
-        if (!handedOff) throw new MessageNotSentError(message);
-        // Once a receipt owns the request, its failures must never prepend old text into the next draft.
-      }
+        const description = error instanceof Error ? error.message : "Message could not be sent."; setSendError(description);
+        if (!handedOff) {
+          if (captured.material) captured.binding!.failed(captured.material, error);
+          // A later draft must never receive asynchronously prepended old text.
+          const draft = runtime.thread.composer.getState();
+          if (!draft.text && !draft.attachments.length) {
+            runtime.thread.composer.setText(captured.text);
+            if (captured.material && captured.binding?.input) for (const id of captured.material.ids) {
+              if (captured.binding.input.getSnapshot().items.some(item => item.id === id && item.state === "ready"))
+                await runtime.thread.composer.addAttachment(createExistingAttachment(captured.binding.input, id));
+            }
+          }
+        }
+      } finally { if (pending.current === captured) pending.current = null; }
     },
   });
+  useEffect(() => {
+    if (!attachments) return;
+    const held = attachments.getSnapshot().submission?.value.ids ?? [];
+    // Stable App binding owns ready draft refs through split/merge remounts.
+    // Failed old submissions stay separate and are never attached to a newer draft.
+    for (const item of attachments.input?.getSnapshot().items ?? []) if (item.state === "ready" && !held.includes(item.id) && !runtime.thread.composer.getState().attachments.some(file => file.id === item.id))
+      void runtime.thread.composer.addAttachment(createExistingAttachment(attachments.input!, item.id)).catch(error => setSendError(String(error)));
+    return attachments.bindComposer(runtime.thread.composer, (value, error) => {
+      if (pending.current?.material === value) { pending.current = null; setSendError(error.message); }
+    });
+  }, [attachments, runtime]);
+  const submit = () => {
+    if (pending.current || runtime.thread.composer.getState().submission) return;
+    try {
+      const blocked = projection.sendDisabledReason(intent) ?? profileReason(); if (blocked) throw Error(blocked);
+      const draft = runtime.thread.composer.getState(), selection = knowledge.capture();
+      const creation = state.snapshot ? undefined : knowledge.creation(freezeConversationCreation(draft.text.trim().split("\n")[0]!.slice(0, 180), profileSelection));
+      const wire = { text: draft.text, knowledge: selection.knowledge };
+      if (intent === "queue") conversationQueueEnqueueSchema.parse({ ...wire, expectedQueueRevision: projection.queue.getSnapshot().page?.queueRevision });
+      else conversationTurnSchema.parse({ ...wire, expectedRevision: state.snapshot?.conversation.revision ?? 0, mode: "follow-up" });
+      const previous = intent === "queue" ? projection.queue.commands?.getSnapshot().find(item => item.slot === "enqueue") ?? null : projection.outbox.getSnapshot();
+      if (previous && "kind" in previous && previous.kind !== "turn") throw Error("Wait for conversation preparation to finish.");
+      const material = draft.attachments.length ? attachments?.capture({ ids: draft.attachments.map(item => item.id), submissionId: crypto.randomUUID(), text: draft.text,
+        intent: intent === "queue" ? "queue" : "send", knowledge: selection.knowledge }, previous ?? null) : undefined;
+      if (draft.attachments.length && !material) throw Error("Prepare an authorized project before sending files.");
+      pending.current = { intent, text: draft.text, selection, creation, material, binding: attachments }; setSendError(null);
+      runtime.thread.composer.send({ startRun: intent !== "queue" });
+    } catch (error) { setSendError(error instanceof Error ? error.message : "This draft cannot be submitted."); }
+  };
   useEffect(() => {
     runtime.thread.composer.setText(drafts.get(viewId)?.text ?? "");
     return runtime.thread.composer.subscribe(() => {
@@ -138,9 +189,15 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
     } catch (error) { setSendError(error instanceof Error ? error.message : "Conversation could not be prepared."); }
   };
   return <PluginThreadScope editableComposer viewId={viewId} taskId={last?.task.id ?? null} messageTask={id => streamState.members.get(id)?.taskId ?? null}><AssistantRuntimeProvider runtime={runtime}><ConversationDataRenderers viewId={viewId} projection={projection} visible={visible}>
-    <ConversationSteering session={session} viewKey={viewKey} viewId={viewId} projection={projection} visible={visible}><ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
-      composerSubmit={intent === "queue" ? () => { if (!projection.sendDisabledReason("queue")) runtime.thread.composer.send({ startRun: false }); } : undefined}
+    <ConversationSteering session={session} viewKey={viewKey} viewId={viewId} projection={projection} visible={visible}><ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><AttachmentComposer binding={attachments} runtime={runtime} onAttached={() => {
+      const value = mention.current; mention.current = null;
+      if (value && runtime.thread.composer.getState().text === value.text) runtime.thread.composer.setText(value.text.slice(0, value.start) + value.text.slice(value.end));
+    }}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
+      composerSubmit={submit}
       composerInputOnKeyDown={event => {
+        if (event.key === "Tab" && /@file$/.test(event.currentTarget.value.slice(0, event.currentTarget.selectionStart))) {
+          event.preventDefault(); mention.current = { text: event.currentTarget.value, start: event.currentTarget.selectionStart - 5, end: event.currentTarget.selectionStart }; void session.host.execute(ATTACHMENT_OPEN, null, { kind: "composer", viewId, isDraft: true }).then(result => { if (!result.ok) setSendError(result.error); }); return;
+        }
         if (event.defaultPrevented || event.nativeEvent.isComposing || event.keyCode === 229 || event.key !== "Enter") return;
         if ((event.ctrlKey || event.metaKey) && event.shiftKey) { event.preventDefault(); setSendError("Use Guide running task at the current turn for a separate instruction. This shortcut does not send your draft."); return; }
         if (intent === "queue" && last && !TERMINAL_STATUSES.includes(last.task.status) && !event.shiftKey && !event.ctrlKey && !event.metaKey && !event.altKey) { event.preventDefault(); if (!projection.sendDisabledReason(intent)) event.currentTarget.form?.requestSubmit(); }
@@ -152,8 +209,8 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
           details: navigate => <ConversationBehavior live={streamState.enabled}><ExecutionSummary turns={state.turns} requested={state.snapshot?.conversation.requested}
             onInspect={id => navigate(() => onInspect(id))}
             onOpenTask={id => navigate(() => { onOpenTask(id); requestAnimationFrame(() => document.getElementById(`tab-${id}`)?.focus()); })} /></ConversationBehavior> }} />}
-      footer={<div className="flow-conversation-footer"><KnowledgeSelectionSummary binding={knowledge} />{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}{reason && <p role="status">{reason}</p>}</div>}
+      footer={<div className="flow-conversation-footer"><KnowledgeSelectionSummary binding={knowledge} />{!state.snapshot?.conversation.projectId && <p>Use Knowledge to choose and prepare a project before attaching text files.</p>}{materialState?.submission?.state === "preparing" && <p role="status">Preparing captured materials…</p>}{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}{reason && <p role="status">{reason}</p>}</div>}
 
     />
-  </KnowledgeComposer></ConversationActivities></ConversationStreams></ConversationSteering></ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
+  </KnowledgeComposer></AttachmentComposer></ConversationActivities></ConversationStreams></ConversationSteering></ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
 }
