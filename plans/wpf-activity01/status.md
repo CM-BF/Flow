@@ -34,3 +34,5 @@
 架构影响：拟增加宿主绑定只读执行活动模块，不增加SSE/自动poll或公共API。固定交付后列入主Lead架构更新队列。0模型/真实DB，旧全部服务保持。
 
 独立预览 http://127.0.0.1:53851/ ，service owner workspace_panels_owner / session46011；HTTP fixture，0模型/真实DB，非App已接线。以当前固定源启，后续只metadata；启动法见[交付](../../docs/evidence/wpf-activity01/README.md)。同模块首版52883已确认自身PID/cwd后关闭重启，所有旧产品/工程预览未改。
+
+Dashboard已由manager一次合采实际展示：2026-10-06T06:14:43.956Z，73源、ACTIVITY source live/issues=[]/human完整、claim51f v1 matchesSource。采样恰逢61b9349+dirty15、当时status仍implementation/targetUNKNOWN/checkunknown/reviewNOT_STARTED/proofunknown，原样保留[过渡摘录](../../docs/evidence/wpf-activity01/dashboard-excerpt.json)，不能改成后来的candidate状态。此后canonical已经更新固定61b/检查，独立review仍NOT_STARTED；本地actual parser核当前字段，不为凑绿色再取API。

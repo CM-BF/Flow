@@ -1,0 +1,83 @@
+{
+  "observedAt": "2026-10-06T06:16:16.670Z",
+  "note": "Local actual dashboard parser; no additional HTTP snapshot",
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "可按需查看执行活动与详情，长记录按页显示",
+      "next": "完成独立审查，再把活动模块交给聊天页面接入",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+      "scopes": [
+        "apps/web/src/conversation-activity/projection.ts",
+        "apps/web/src/conversation-activity/ConversationActivity.tsx",
+        "apps/web/src/conversation-activity/activity.css",
+        "apps/web/test/conversation-activity.test.ts",
+        "apps/web/test/conversation-activity.fixture.ts",
+        "apps/web/test/conversation-activity.browser.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-ACTIVITY01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/web-conversation-activity",
+    "branchState": "COMPLETED",
+    "updatedAt": "2026-10-06T06:15:00.000Z",
+    "updatedRecord": "2026-10-06 06:15 UTC / 固定3d4985fca060155435b159e0467815bf8e88b8b8",
+    "todos": [
+      {
+        "id": "WPF-ACTIVITY01-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[接口](../../docs/evidence/wpf-activity01/interface.md)、[技能](../../docs/evidence/wpf-activity01/quality.md)"
+      },
+      {
+        "id": "WPF-ACTIVITY01-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "reader与身份/代际/reset/详情按需22直接检查"
+      },
+      {
+        "id": "WPF-ACTIVITY01-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "dev7/prod7、双主题390/键盘、只读HTTPfixture；不是App接线"
+      },
+      {
+        "id": "WPF-ACTIVITY01-04",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "已固定target待独立review，source已交manager登记，未实采聚合"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "3d4985fca060155435b159e0467815bf8e88b8b8 / 实际HEAD由Git聚合",
+    "declaredDirty": "六个新源/专测已固定；当前仅本任务metadata收口",
+    "checks": {
+      "state": "passed",
+      "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+      "record": "PASSED 61b9349af390c137cc4cfeabd38bad058ec69cb5；22 direct、typecheck、dev7/prod7与独立fixture build；[验证](../../docs/evidence/wpf-activity01/validation.md)"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  }
+}
