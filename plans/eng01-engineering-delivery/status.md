@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:32:04 UTC / mainfd1322f9 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:51:15 UTC / mainbf067e328bc1dc63cde39acf4b637cfb055e467a |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -13,24 +13,24 @@
 | 工作树dirty状态 | 本次仅父计划与实际子片状态对齐，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | ENG01A E0/E1独审通过并main；集成点新S01停止语义下3个直接PG旅程和root类型通过，本管理批不重测 |
-| 已集成main状态 / HEAD | ENG01A 040fdede227fe22504972ea7a053c23f14a30f52 已在c5bab40受控接收；当前main648e331c已接ENG01B a750及3a12/1c081已审接线；RELEASE fixture tuple独立修复并完成组合root types exit0 |
+| 检查状态 | 各子片固定独审与直接消费者证据复用；ENG01E68不同局部检查/类型0，无新增provider。 |
+| 已集成main状态 / HEAD | ENG01A/B/C/D 已受控 main；ENG01D 身份与单次 Codex turn 接缝在bf067，ENG01E纯受信检查模块独审通过待当前接收。 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/eng01-engineering-delivery, docs/evidence/eng01 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 合成工程任务已能在受管工作区实际修改代码、运行受信检查并保存固定差异；未知结果保持原事实。 |
-| 下一可用交付 | 复用已交付工程宿主接入合格原生writer，准备实际写改与独立接受旅程。 |
+| 当前产出 | 工程宿主已保存真实执行身份；受限源码检查可由宿主独立生成结果，避免信任模型自报。 |
+| 下一可用交付 | 把真实完整文件快照与可信检查收据接入原生writer，补齐停止证明后准备真实工程验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 | Claim | 2c8bf375-8247-458b-8891-2dc2b4a289cd v1，仅plan/evidence |
-| 架构影响 | ENG01A workspace/checker/receipt已main；ENG01B独立profile用途与持久setup扩展，继续复用单一runtime |
+| 架构影响 | 复用已审workspace/writer生命周期及runtime；ENG01D只读身份/单Codex turn、ENG01E受限语法检查为独立模块，不更改旧只读配置。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | ENG001-01 | completed | Execution Lead | plan / research / source-observation / claim receipt |
-| ENG001-02 | in-progress | native_center_owner | ENG01A工作区/检查合同已main；[ENG01B执行配置](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)补用途/pin/恢复门禁 |
+| ENG001-02 | completed | native_center_owner | ENG01A工作区/检查合同已main；[ENG01B执行配置](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)补用途/pin/恢复门禁 |
 | ENG001-03 | completed | native_center_owner / 独立runner_owner review | ENG01A E0+E1固定040已mainc5；真实Git/checker/PG、unknown重启/丢ACK恢复；fixture非native |
 | ENG001-04 | in-progress | native_center_owner | ENG01B已main并释放；ENG01C已main53ce；[ENG01D](../../../engineering-native-seams/plans/eng01d-native-writer-seams/status.md)实施真实只读身份与单Codex turn复用，受信检查与实际native后继仍开放 |
 | ENG001-05 | pending | 独立operator/reviewer | 无新provider许可或执行 |
@@ -51,3 +51,5 @@
 11:22：ENG01B canonical b0ae9ad已核main648的20源码零差并释放v3；runners.ts正式交S01P04，不被native准备预占。ENG01C已main53ce并释放v3；此句更新当前事实，原范围证据不变。真实执行身份与不受被测源码控制的检查报告/完整停止判定是native前置，见plan新增边界；未授权provider调用。
 
 11:32:04：ENG01D a1177b12 v1已独立take8scope，首6843/interface固定；只加真实assignment身份与保持ordinary生命周期，不扩工具/工作区权限。首真实native必须模型自身实际工程通路，host应用有限代码候选不能默认为替代完整验收。与O11统一目标读口独立并行，0provider。
+
+2026-10-06 11:51:15 UTC：ENG01D 855e 已mainbf067且原claim释放；[ENG01E受信检查](../../../engineering-native-checker/plans/eng01e-trusted-calculator-checker/status.md)固定30dd独审通过，仅解释完整受限calculator源码并生成host报告。下一步先以真实已停writer的完整snapshot来源接线，独立versionedreceipt不冒充旧fixture v1；模型实际写入/停止和业务接受保持open。不为父状态更新重复测试。
