@@ -11,6 +11,8 @@ const utf8Bytes = (value: string) => new TextEncoder().encode(value).length;
 const validText = (value: string) => !/[\u0000\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/u.test(value) && !value.includes('\0');
 const textSchema = z.string().max(KNOWLEDGE_LIMITS.textBytes).refine(validText).refine(value => utf8Bytes(value) <= KNOWLEDGE_LIMITS.textBytes);
 const titleSchema = z.string().min(1).max(180).refine(value => validText(value) && !/[\u0000-\u001F\u007F]/u.test(value) && value.trim().length > 0 && utf8Bytes(value) <= 512);
+export const knowledgeSourceIdSchema = z.uuid();
+export const knowledgeVersionNumberSchema = z.coerce.number().int().min(1).max(KNOWLEDGE_LIMITS.versionsPerSource);
 export const knowledgeCreateSchema = z.strictObject({ expectedVersion: z.literal(0), title: titleSchema, text: textSchema });
 export const knowledgePublishSchema = z.strictObject({ expectedVersion: z.number().int().min(1).max(KNOWLEDGE_LIMITS.versionsPerSource), text: textSchema });
 export const knowledgeListSchema = z.strictObject({ after: z.uuid().optional(), limit: z.coerce.number().int().min(1).max(50).default(20) });
@@ -30,7 +32,7 @@ export interface KnowledgeAccepted { source: KnowledgeSource; version: Knowledge
 /** Metadata only. Stable ID cursor is not a change feed. */
 export interface KnowledgeSourceList { sources: KnowledgeSource[]; nextCursor: string | null }
 export interface KnowledgeVersionSnapshot { source: KnowledgeSource; version: KnowledgeVersion; isCurrent: boolean }
-export interface KnowledgeResolved { citation: KnowledgeCitation; text: string; isCurrent: boolean }
+export interface KnowledgeResolved { citation: KnowledgeCitation; text: string; isCurrent: boolean; currentVersion: number }
 export interface KnowledgeSearchHit {
   source: KnowledgeSource;
   citation: KnowledgeCitation;
