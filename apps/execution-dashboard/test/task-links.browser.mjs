@@ -1,51 +1,30 @@
 import assert from 'node:assert/strict';
-import { readFile, writeFile, mkdir, readdir, stat } from 'node:fs/promises';
-import { createHash } from 'node:crypto';
-import { execFileSync } from 'node:child_process';
 import path from 'node:path';
-import { fixture } from './fixture.mjs';
+import { runBrowserCheck } from './summary-detail.browser.mjs';
 
-const output = path.resolve('docs/evidence/wpf-dashboard-summary');
-const started = Date.now(), budgetMs = 90_000, cleanupReserveMs = 10_000;
-let spentMs = 0;
-try { spentMs = JSON.parse(await readFile(path.join(output, 'browser-budget.json'), 'utf8')).spentMs; } catch (error) { if (error.code !== 'ENOENT') throw error; }
-if (!Number.isFinite(spentMs) || spentMs >= budgetMs - cleanupReserveMs) throw Error('Cumulative browser budget exhausted; do not start another run.');
-const sources = ['src/human.mjs', 'public/app.js', 'test/human-summary.test.mjs', 'test/task-links.browser.mjs'].map(file => `apps/execution-dashboard/${file}`);
-const git = (...args) => execFileSync('git', args, { encoding: 'utf8' }).trim();
-const cleanups = [];
-await mkdir(output, { recursive: true });
-const report = { at: new Date().toISOString(), sourceHead: git('rev-parse', 'HEAD'), sourceDirty: Boolean(git('status', '--porcelain')), sourceHashes: Object.fromEntries(await Promise.all(sources.map(async file => [file, createHash('sha256').update(await readFile(file)).digest('hex')]))), checks: [], screenshots: [], errors: [], failure: null };
-let browser, f, deadline;
-try {
-  f = await fixture({ after: callback => cleanups.push(callback) });
+await runBrowserCheck('task-links', async ({ page, f, report, output }) => {
   const [sub, parent] = f.tasks;
   const human = { 本片段交付阶段: 'implementation', 阶段: 'M2', 优先级: '1', 当前产出: '任务关系可从唯一记录核对', 下一可用交付: '核对父任务与责任人', 当前阻塞: 'NONE', 需用户决定: 'NONE' };
   const parentRows = { ...human, 任务层级: '大task', '大task ID': '[T02](plan.md)', 'co-lead': 'Web /root（执行管理 d01_owner）/ technical-owner-context /Users/example/long-owner-identity' };
   const subRows = { ...human, 本片段交付阶段: 'review', 所属大task: `[T02](${parent.worktree}/${parent.planDir}/plan.md)`, 'co-lead': 'Web /root（执行管理 d01_owner）/ technical-owner-context /Users/example/long-owner-identity' };
   await f.writeStatus(parent, { human: parentRows }); await f.writeStatus(sub, { human: subRows });
-  report.url = f.url;
-  const { chromium } = await import('@playwright/test');
-  browser = await chromium.launch({ channel: 'chrome', headless: true, timeout: 10_000 });
-  deadline = setTimeout(() => { void browser.close(); }, Math.max(1, budgetMs - spentMs - cleanupReserveMs - (Date.now() - started)));
-  const context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: 'reduce' });
-  const page = await context.newPage();
-  page.setDefaultTimeout(3500);
   let knownAssignments = true;
   const technicalLead = '/Users/example/long-technical-lead', technicalWorker = 'agent-technical-worker-123456';
-  await page.route('**/api/snapshot', async route => {
+  await page.route('**/api/assignments', async route => {
     const response = await route.fetch(), body = await response.json();
-    for (const task of body.tasks) task.assignments = knownAssignments ? [{ claimId: 'fixture-only', version: 1, role: 'writer', state: 'active', lead: technicalLead, worker: technicalWorker, branch: task.branch, worktree: task.worktree, scope: [], needsVerification: true, matchesSource: false }] : null;
+    body.assignments = { state: knownAssignments ? 'available' : 'unknown', observedAt: body.completedAt, claims: [], message: 'Injected observation' };
+    for (const task of f.tasks) body.byTask[task.id] = knownAssignments ? [{ claimId: 'fixture-only', version: 1, role: 'writer', state: 'active', lead: technicalLead, worker: technicalWorker, branch: task.branch, worktree: task.worktree, scope: [], needsVerification: true, matchesSource: false }] : null;
     await route.fulfill({ response, json: body });
   });
   report.assignmentFixture = 'Rendering-only injected claims; no coordination database read or write.';
-  page.on('pageerror', error => report.errors.push(error.message));
   const requests = []; page.on('request', request => requests.push(request.url()));
   const ready = () => page.locator('#sync-state').filter({ hasText: '已同步' }).waitFor();
-  const refresh = async () => { await page.locator('#refresh').click(); await page.waitForFunction(() => !document.querySelector('#refresh').disabled); await ready(); };
+  const refresh = async () => { const previous = await page.locator('#assignment-observation').getAttribute('data-read-id'); await page.locator('#refresh').click(); await page.waitForFunction(() => !document.querySelector('#refresh').disabled); await ready(); await page.waitForFunction(previous => document.querySelector('#assignment-observation').dataset.readId !== previous, previous); };
   const firstChild = () => page.locator('#active-work .task-row, #other-activity-items .task-row').filter({ has: page.locator('.task-code', { hasText: 'T01' }) });
   const parentRow = () => page.locator('#active-work .task-row').filter({ has: page.locator('.task-code', { hasText: 'T02' }) });
   const showOther = async () => { const details = page.locator('#other-activity'); if (!(await details.evaluate(node => node.open))) await details.locator('summary').click(); };
   await page.goto(f.url); await ready();
+  await page.locator('#active-work .allocation').filter({ hasText: '已领取' }).waitFor();
   assert.equal(await page.locator('#active-work .task-row').count(), 1);
   assert.equal(await page.locator('#next-deliveries .task-row').count(), 1);
   assert.match(await parentRow().innerText(), /T02/);
@@ -127,22 +106,4 @@ try {
   const detailShot = 'detail-narrow-dark.png'; await page.screenshot({ path: path.join(output, detailShot), animations: 'disabled' }); report.screenshots.push(detailShot);
   await page.keyboard.press('Escape');
   report.checks.push('1280×720 and 390×844 light/dark home and narrow detail: no horizontal overflow, reduced-motion, keyboard raw record');
-  assert.deepEqual(report.errors, []); report.outcome = 'passed';
-} catch (error) { report.failure = error.stack; report.outcome = 'failed'; throw error; }
-finally {
-  clearTimeout(deadline);
-  const cleanupErrors = [];
-  try { await browser?.close(); } catch (error) { cleanupErrors.push(String(error)); }
-  for (const cleanup of cleanups.reverse()) try { await cleanup(); } catch (error) { cleanupErrors.push(String(error)); }
-  report.fixtureRemoved = f ? await stat(f.root).then(() => false, error => { if (error.code === 'ENOENT') return true; throw error; }) : null;
-  report.serverClosed = f ? !f.server.listening : null;
-  report.cleanupErrors = cleanupErrors;
-  report.elapsedMs = Date.now() - started;
-  report.cumulativeMs = spentMs + report.elapsedMs;
-  await writeFile(path.join(output, 'browser-budget.json'), JSON.stringify({ spentMs: report.cumulativeMs, limitMs: budgetMs, cleanupReserveMs }) + '\n');
-  if (cleanupErrors.length || report.fixtureRemoved === false || report.serverClosed === false || report.cumulativeMs > budgetMs) { report.outcome = 'failed'; process.exitCode = 1; }
-  report.evidenceBytes = (await Promise.all((await readdir(output)).map(async name => (await stat(path.join(output, name))).size))).reduce((a,b) => a+b, 0);
-  if (report.evidenceBytes > 8 * 1024 * 1024) { report.outcome = 'failed'; process.exitCode = 1; }
-  report.finishedAt = new Date().toISOString(); await writeFile(path.join(output, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');
-}
-console.log(JSON.stringify({ outcome: report.outcome, checks: report.checks.length, screenshots: report.screenshots, errors: report.errors }));
+});
