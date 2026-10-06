@@ -10,11 +10,11 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence |
 | Branch | codex/runner-read-fence |
 | 工作基线 / HEAD | base c450c2da7e6185b88db9f46e0299ee504ee6f3e8；preparation target cd13e01e871adaaf7dee1cc6676f7a52145e316f（非生产实现） |
-| 工作树dirty状态 | 已审main648已受控合入；当前仅本片两源/证据/metadata修改待固定 |
+| 工作树dirty状态 | 两源/raw已固定e1847ce1；仅manifest/status/review metadata跟随 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新PG9/9 + ENG定向1/1（12未选）=10 distinct；局部strict0；两个专库清理完成 |
 | 已集成main状态 / HEAD | main648e331c58043cf7ee307300521ab1c628cb2ee1已作输入合入d7e9136f；P04本身尚未main |
-| 实现目标 | 两源已实现/验证，待固定commit独审 |
+| 实现目标 | e1847ce1c66646eb40b7eb4111a31468d4681e1f |
 | 实现范围 | plans/s01p04-runner-read-fence, docs/evidence/s01p04, apps/server/src/runner-read-fence.test.ts, apps/server/src/runners.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
@@ -23,7 +23,7 @@
 | 下一可用交付 | 固定提交进入独立审查，再交主线集成 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED；方法已获Mika同意，不等于实现批准 |
+| Review | REVIEW_REQUIRED；固定target e1847ce1c66646eb40b7eb4111a31468d4681e1f，尚无实现独审批准 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -50,3 +50,5 @@
 2026-10-06 11:17:01.704 UTC writer amend COMMITTED cb7 v2加入runners.ts；ENG v3 RELEASED已fresh核验。scope=[] integration cb92 v1受控merge648→d7e9136f，无手工冲突、原三scope未变、改前runners逐字=648；11:17:20.057 UTC integration v2 RELEASED。现在仅writer自有范围实施私有FOR SHARE授权读取点，9项新PG与strict待本轮实际结果。
 
 本轮真实green：2026-10-06 11:18:15.119Z→11:18:17.983Z，9/9；PG160013，连接closed/专库absent。ENG直接consumer仅1/1通过、12未选，另一专库removed；strict0。原red未重跑，0provider/0新容量窗口。见[checks](../../docs/evidence/s01p04/implementation-checks.json)及[本段质量](../../docs/evidence/s01p04/implementation-quality.md)。
+
+实现固定 `e1847ce1c66646eb40b7eb4111a31468d4681e1f`；48项[implementation manifest](../../docs/evidence/s01p04/implementation-manifest.json)=3 source/config +14 raw +14 support +17 readonly，targetGit=WT=hash/bytes，17 readonly逐字=648。新9PG+ENG1=10 distinct通过、12未选、strict0；独审待完成，writer cb7 v2保留。待Lead登记S01P04权威source/架构基线，尚未确认dashboard聚合。
