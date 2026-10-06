@@ -1,3 +1,4 @@
+import { migrateAssistantMessages, registerAssistantRoutes } from './assistant/index.js';
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import { timingSafeEqual } from 'node:crypto';
@@ -72,6 +73,7 @@ export async function createServer(options: ServerOptions) {
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
   registerGoalRoutes(app, pool, boss);
+  registerAssistantRoutes(app, pool);
   registerStreams(app, pool);
   app.post('/api/runners', async request => {
     const input = registerRunnerSchema.safeParse(request.body);
