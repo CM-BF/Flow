@@ -44,3 +44,7 @@ it.each(['true', null, { protocol: 'flow.active-steering.v1' }])('rejects a non-
 it('refuses steering configuration for a planner tool profile', async () => {
   await expect(loadRunnerAdapters(await manifest({ materialFiles: [], goalTools: true, activeSteering: true }))).rejects.toThrow();
 });
+
+it('refuses to silently drop steering configuration through the legacy adapter-only loader', async () => {
+  await expect(loadRunnerAdapters(await manifest({ materialFiles: [], activeSteering: true }))).rejects.toThrow('loadRunnerConfiguration');
+});

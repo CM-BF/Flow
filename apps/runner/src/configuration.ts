@@ -8,7 +8,9 @@ import type { ExecutionProfileConfiguration } from '../../../packages/contracts/
 
 /** An explicit operator manifest enables Claude; omission preserves fixture-only startup. */
 export async function loadRunnerAdapters(manifestFile?: string): Promise<HarnessAdapter[]> {
-  return (await loadRunnerConfiguration(manifestFile)).adapters;
+  const configured = await loadRunnerConfiguration(manifestFile);
+  if (configured.activeSteering) throw new Error('Use loadRunnerConfiguration to preserve the active steering runtime configuration.');
+  return configured.adapters;
 }
 
 export async function loadRunnerConfiguration(manifestFile?: string): Promise<{ adapters: HarnessAdapter[]; profile: ExecutionProfileConfiguration | null; activeSteering: boolean }> {
