@@ -1,0 +1,15 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model
+
+ ✓ apps/server/src/goal-delivery/delivery.test.ts (7 tests) 9654ms
+   ✓ keeps input and plan page identity stable through unrelated live activity without repeating materials  597ms
+   ✓ rejects related plan changes while retaining exact historical inputs and rejecting obsolete writes  526ms
+   ✓ tracks exact dependency delivery replacement and preserves state across a center restart  2006ms
+   ✓ reports expired execution as uncertain and never infers a verified or accepted delivery  2975ms
+   ✓ reads the existing 200-node maximum in bounded pages without silently truncating the plan  1562ms
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  04:34:43
+   Duration  11.86s (transform 1.24s, setup 0ms, import 2.05s, tests 9.65s, environment 0ms)
+
