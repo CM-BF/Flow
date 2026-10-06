@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-06T16:14:49.776209+00:00",
+  "scope": "Readonly fixedregistry/source identity, no aggregate/runtime",
+  "registryCommit": "83f535b54f2390a729f02bc818e07ba684d94ccb",
+  "registrySha256": "1d8eec1bf517a59e573f70b38081b6893590b6c408cdc07dfd8bfde7460293e3",
+  "idOccurrence": 0,
+  "worktreeOccurrence": 0,
+  "expectedRow": {
+    "id": "WPF-DPERF04",
+    "title": "看板首页摘要与按需核验",
+    "role": "工程协作",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+    "branch": "codex/dashboard-summary-detail",
+    "planDir": "plans/wpf-dperf04-summary-detail",
+    "evidenceDir": "docs/evidence/wpf-dperf04"
+  },
+  "sourceCommit": "704894e97f573f7683e1c3fa37020fc0d9a5205c",
+  "manifest": [
+    {
+      "path": "plans/wpf-dperf04-summary-detail/plan.md",
+      "fixedSha256": "1a51a1020f9c5c81be162a6b40f67a4f60f26094988f872eb393e1fb146484ec",
+      "currentEqual": true
+    },
+    {
+      "path": "plans/wpf-dperf04-summary-detail/status.md",
+      "fixedSha256": "edc2c3ce084537b8d7a9cf316c35009ee6c20b884d73413c0e8a43fdb38c990e",
+      "currentEqual": true
+    },
+    {
+      "path": "plans/wpf-dperf04-summary-detail/review.md",
+      "fixedSha256": "102f9896805852c6f2b1ad3a3ccfadf29105c2320d07f49981c943bfc1f623cd",
+      "currentEqual": true
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/claim-receipt.json",
+      "fixedSha256": "66bdde86ffe82427dc5732c0fa686c533594b738c4ac3b493e4388b7eff2aaa8",
+      "currentEqual": true
+    }
+  ],
+  "parentLink": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md",
+  "parentExists": true,
+  "claim": "b554ddb6-094e-46db-90f3-b9e5deb78edb v1 exactnine",
+  "result": "SOURCE_INPUT_COMPLETE; registry needs one authoritative assignment row. Default evidenceDir id.toLowerCase() already resolves docs/evidence/wpf-dperf04, so no new exception or alias is needed.",
+  "runtime": {
+    "snapshot": 0,
+    "pgProduct": 0,
+    "service": 0,
+    "registryEdits": 0
+  },
+  "suggestedAssignmentRow": [
+    "WPF-DPERF04",
+    "看板首页摘要与按需核验",
+    "工程协作",
+    "dashboard-summary-detail",
+    "wpf-dperf04-summary-detail"
+  ]
+}

@@ -120,7 +120,7 @@
   "currentResourcePolicy": "resource-policy-1349.json",
   "existingSourceReuseStudy": "release03-existing-source-resource-study/report.md",
   "runScopeProposal": "release03-run-scope-proposal.json",
-  "currentRunState": "New af51 A3 attachment-only HTTP passed; mixed interrupted below stop margin; no complete A/B. Window returned; source-only phaseB label correction pending.",
+  "currentRunState": "A3 attachment-only actual passed; mixed interrupted by resource stop, no completeA/B; window returnedLead. c18bd label source narrowly approved, doesnotreplace runtime269103/0b3e.",
   "sparseSourceCandidate": "Historical estimate only; actual Lead-provisioned fixed362 source tree and four-scope receipt remain archived. No new source provision or in-place rewrite authorized.",
   "updatedAt": "2026-10-06T16:12:56.808881+00:00",
   "prepareState": "PREPARED_RELEASED",
@@ -206,5 +206,13 @@
     "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
     "runtimeAdmission": "NOT_RUN_RESOURCE",
     "intake": "release03-a2-not-run-intake.json"
+  },
+  "latestSourceReview": {
+    "target": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+    "metadata": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+    "decision": "APPROVED_SOURCE_LABEL_FIX",
+    "evidence": "release03-c18bd-label-review-root.json",
+    "newRuntime": 0,
+    "historyContract": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086"
   }
 }

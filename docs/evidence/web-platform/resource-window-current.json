@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T16:12:56.808881+00:00",
+  "recordedAt": "2026-10-06T16:15:38.454745+00:00",
   "state": "A3_RESOURCE_STOP_CLEANED_WINDOW_RETURNED_TO_LEAD",
-  "groupWindowOwnership": "RETURNED_TO_LEAD; no group PG/Chrome/direct window; source-onlyDPERF dispatch",
+  "groupWindowOwnership": "LEAD; A3accepted/cleaned; no newgroupA/B/direct. DPERFsource continues.",
   "release03": {
     "state": "PARTIAL_RESOURCE_STOP",
     "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
@@ -19,7 +19,14 @@
     "gateConsumed": true,
     "cleanupComplete": true,
     "evidence": "release03-a3-intake.json",
-    "B": "NOT_RUN"
+    "B": "NOT_RUN",
+    "labelSource": {
+      "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+      "metadata": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+      "review": "APPROVED_SOURCE_LABEL_FIX",
+      "runtime": "NOT_RUN; A3remains269103/0b3e",
+      "evidence": "release03-c18bd-label-review-root.json"
+    }
   },
   "recoveryDirect": {
     "state": "REBOUND_READY_NOT_RUN_RESOURCE",
@@ -68,5 +75,6 @@
     "A3 RESOURCE_STOP is not mixed product failure; old362 actual two failures remain historical",
     "No B/Chrome/SVCgreen/deployment",
     "No automatic retry/free polling; future independent check needs its own fresh conditions"
-  ]
+  ],
+  "latestCoordination": "lead-a3-resource-next12-notice.json"
 }

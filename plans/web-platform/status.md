@@ -125,3 +125,5 @@ DPERF既有后继：[单次首页观察/固定摘要设计](../../docs/evidence/
 连接页插件方案仅归WPF-001-05/REQ22–23：[原报告](../../docs/evidence/web-platform/connection-plugin-2498/report.md)与[来源核验](../../docs/evidence/web-platform/connection-plugin-2498-intake.json)为只读候选，六产品+两专测不是已领取范围。Recovery724的RB1–3源码窄审已闭合、worker断言另审、browser/22direct未跑，PG/Chrome窗口仍Lead；本管理未采样空间或个人服务。
 
 DPERF04直接D01子task已[原九scope COMMITTED](../../docs/evidence/web-platform/dperf04-take-receipt.json)，W01独立树源码派工；[首canonical704894已正常推送且parser0](../../docs/evidence/web-platform/dperf04-source-ready.json)，registry与页面展示不由此推断。原DPERF03/WPF-001-36完成记录保持原范围。
+
+最新原始结果已由Lead接收，继续next12资源整理并保留本组运行暂停；[c18bd标签窄审](../../docs/evidence/web-platform/release03-c18bd-label-review-root.json)只批准报告逻辑，完整A/B仍未通过。后继运行依实际窗口/原预算，不因该审查自动启用。
