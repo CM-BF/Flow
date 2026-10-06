@@ -1,5 +1,22 @@
 # WPF-MATURE-04 独立审查记录
 
+状态：NOT_STARTED（当前Claude summary纯Adapter；第一片879保持APPROVED）
+
+## 当前target与只读交审
+
+- Target：PENDING_ADAPTER_TARGET；base：278dba39c80dc38397afbcefee0eca72a85c9cd8；branch codex/context-transparency，权威worktree不变。
+- 当前源码scope仅apps/runner/src/context-observations/claude-summary.ts、apps/runner/src/context-observations/claude-summary.test.ts；先前已审4文件diff为空。
+- 作者检查：23 Adapter + 23直接projection = 46/46，2显式文件，局部root严格noEmit0；证据见[纯Adapter](../../docs/evidence/wpf-mature-04/claude-summary.md)。合成SDK形状帧，不含真实provider、采集、持久化或Web。
+- 独立reviewer/结论：尚未执行，NOT_STARTED；作者自查不代替独审。severity/blocking findings：尚无独立结论。
+
+```text
+只读review WPF-MATURE-04第二片 target PENDING_ADAPTER_TARGET，base278dba39c80dc38397afbcefee0eca72a85c9cd8。先核branch/head/dirty、v3 scope及2新文件hash，确认已审879的4源码不变。读取固定SDK0.3.290证据，核camelCase响应、type-only import、summary-only gate、host冻结身份/resolved mismatch、估算准确度与双窗口、稳定匿名分类/32行边界/安全整数、拒绝缺失或partial截断、无path/name/billing读取，以及Adapter→现公共projection的失效/派生语义。依据46/46和strict noEmit原始记录；如复跑只用显式局部路径。禁止Query/provider/auth/安装/个人服务与共享文件写入。返回绑定target的severity/行号/blocking/结论与未检查项，修复归owner。此片不包含SDK实际采集、中心防自证/持久化/权限/Web完整交付。
+```
+
+作者回应/修复：等待独立review；已审第一片记录如下保留。
+
+# 第一片：已完成独立审查
+
 状态：APPROVED
 
 ## Target 与 scope

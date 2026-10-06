@@ -4,12 +4,12 @@
 | --- | --- |
 | 计划编号 / 状态 | WPF-MATURE-04 / in-progress |
 | 创建日期 / 最近更新 | 2026-10-06 / 2026-10-06 |
-| 所属大task | [WPF-MATURE-04](plan.md)；本目录为本大task唯一正文，不复制 Web 管理计划 |
+| 任务层级 / 大task ID | 大task / [WPF-MATURE-04](plan.md)；本目录为本大task唯一正文，不复制 Web 管理计划 |
 | co-lead / 单一 owner / model | mika / architecture_read / gpt-6-astra（由派发 lead 确认继承模型，满足 Sol 门槛） |
 | 权威 worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency / codex/context-transparency |
 | 固定启动基线 | b1c2e39837c2208e6fc2c59a80e16797f26448b5 |
 | 当前阶段 | M2 |
-| 当前写入范围 | plan/evidence及[amend v2](../../docs/evidence/wpf-mature-04/amend-receipt.json)的4个新合同/纯投影文件；不含生产挂载 |
+| 当前写入范围 | plan/evidence及[amend v3](../../docs/evidence/wpf-mature-04/sdk-amend-receipt.json)追加的2个runner纯Adapter新文件；已审4源码固定，不含生产挂载 |
 
 ## 用户结果与已确认边界
 
@@ -51,7 +51,7 @@ GO/用户已授权该方向及规划实施。首片规划已固定，mika随后�
 ## 稳定 TODO 与阶段交付
 
 - [x] **WPF-MATURE-04-01** 固定权威计划、原子 claim、源码/依赖差距和全部用户验收；首片文档自查、commit/push，独立 review 保持 NOT_STARTED。
-- [x] **WPF-MATURE-04-02** 确定上下文测量公有合同和精确 writable scope；独立实现 schema/纯投影，覆盖 unknown、不可比、材料版本、模型变化及超限；879c989a594a8f4f266b9a78a885e311c52eca0d，30/30与局部strict noEmit，待独立review。
+- [x] **WPF-MATURE-04-02** 确定上下文测量公有合同和精确 writable scope；独立实现 schema/纯投影，覆盖 unknown、不可比、材料版本、模型变化及超限；879c989a594a8f4f266b9a78a885e311c52eca0d，30/30与局部strict noEmit，Mika于09:14:39 UTC独立APPROVED。
 - [ ] **WPF-MATURE-04-03** 实现受 ownership 保护的中心观测持久化与 owner 读取；提供去重/重放/过期/重启/权限证据，保留已有 usage 与全文隔离。
 - [ ] **WPF-MATURE-04-04** 接入受支持 harness 的实际容量/当前窗口/压缩来源与估算方法；unsupported 明确 unknown，唯一压缩 owner 与结果/原文 refs 可追溯。
 - [ ] **WPF-MATURE-04-05** d01 管理的 Web 插件消费中心 Interface，覆盖草稿/执行/换模型/材料变化、过期、超限、双主题/窄屏及按需详情；不重复传全文。
@@ -93,3 +93,5 @@ GO/用户已授权该方向及规划实施。首片规划已固定，mika随后�
 2026-10-06 09:04 UTC：首片bbfb7037ee3ca3e37bf14a078f8a05582b209f48已push。mika批准候选的4个新文件和局部行为验证；fresh ledger无冲突，claim v2已COMMITTED。遵循主仓3d31版本[统一模块化规则](/Users/citrine/Projects/AgentHarness/Flow/AGENTS.md#modular-design)；本任务仅补小Interface、状态归属、metadata字节界限与直接消费者证据，不复制通用规则。纯投影无状态、无IO；中心仍唯一持久事实owner，未来runner/SDK负责观测来源。
 
 2026-10-06 09:09 UTC：纯投影/schema的2文件30个行为检查及继承root严格配置的局部noEmit通过。追加下一条设置revision与queued/attempt冻结语义；修正derived准确度不可升级估算、SDK autocompact reading不可冒充model hard limit。未挂载生产，完整任务不完成。
+
+2026-10-06 09:17 UTC：mika批准追加`apps/runner/src/context-observations/claude-summary.ts`及`.test.ts`，claim v3原子amend已COMMITTED。只适配固定SDK0.3.290的camelCase summary响应，不调用Query、full、token-count或模型。host提供冻结identity与有界证据；model不符拒绝；unknown保持；rawMaxTokens仅策略窗口。分类只读kind/tokens，最多32输入行并拒绝非法/溢出，不解析名字、路径或正文；经已审公共投影验证。本小片不覆盖采集/持久化/压缩事实，-04仍开放。

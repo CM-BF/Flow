@@ -1,6 +1,8 @@
-# WPF-MATURE-04 纯投影片证据
+# WPF-MATURE-04 上下文透明度证据
 
-权威[plan](../../../plans/wpf-mature-04-context-transparency/plan.md) / [status](../../../plans/wpf-mature-04-context-transparency/status.md) / [review](../../../plans/wpf-mature-04-context-transparency/review.md)。本片只有独立schema和无IO的公开metadata投影，未挂载生产API/runner/Web，不代表完整上下文透明度交付。
+权威[plan](../../../plans/wpf-mature-04-context-transparency/plan.md) / [status](../../../plans/wpf-mature-04-context-transparency/status.md) / [review](../../../plans/wpf-mature-04-context-transparency/review.md)。当前包含独立schema/无IO投影与纯Claude summary响应Adapter；未挂载生产API/采集/runner/Web，不代表完整上下文透明度交付。
+
+第二片target `PENDING_ADAPTER_TARGET`：2个新runner文件，23+23 = 46/46、局部root严格noEmit0，独立review NOT_STARTED；[详细证据](claude-summary.md)、[source manifest](sdk-implementation-check.json)、[claim v3](sdk-amend-receipt.json)。以下30/30与APPROVED记录仅对应第一片879。
 
 固定环境：Node24.20.0、pnpm9.15.4、Vitest4.0.18。复用主仓固定已安装依赖；临时配置给Vitest设置真实worktree root及Zod路径、给TypeScript继承该worktree根strict/noUncheckedIndexedAccess等配置并列4个受影响根文件。没有安装、node_modules symlink、改项目配置、provider/auth/个人服务操作。配置快照见[validation-config.json](validation-config.json)。
 
@@ -27,4 +29,4 @@ pnpm exec tsc --noEmit -p /tmp/wpf-mature-04-tsconfig.json
 
 固定实现target：`879c989a594a8f4f266b9a78a885e311c52eca0d`。交付完整diff的空白检查对Vitest原始txt输出报告了结尾空行及一条源摘录尾空白；这些原始输出原样保留。代码/Markdown/JSON排除txt后的diff检查另核，不把原始日志空白警告写成全部diff通过，也不删改失败日志。
 
-当前为integration阶段，main接收待mika协调。此approval只覆盖schema/纯投影，未覆盖SDK采集、持久化、权限/Web或实际服务部署；本轮仅更新metadata，不重跑已过检查。
+第一片已审待integration，main接收待mika协调。此approval只覆盖schema/纯投影，未覆盖SDK采集、持久化、权限/Web或实际服务部署；本段对应的approval记录是metadata更新；后继Adapter交审单独记录。

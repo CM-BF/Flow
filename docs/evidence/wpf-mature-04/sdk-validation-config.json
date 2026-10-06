@@ -1,0 +1,46 @@
+{
+  "vitest": {
+    "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+    "cacheDir": "/tmp/wpf-mature-04-sdk-vite-cache",
+    "resolve": {
+      "alias": {
+        "zod": "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod/index.js"
+      }
+    },
+    "test": {
+      "include": [
+        "apps/runner/src/context-observations/claude-summary.test.ts",
+        "apps/server/src/context-transparency/projection.test.ts"
+      ],
+      "fileParallelism": false
+    }
+  },
+  "typescript": {
+    "extends": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/tsconfig.json",
+    "compilerOptions": {
+      "typeRoots": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"
+      ],
+      "paths": {
+        "zod": [
+          "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod/index.d.ts"
+        ],
+        "vitest": [
+          "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/dist/index.d.ts"
+        ],
+        "@anthropic-ai/claude-agent-sdk": [
+          "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts"
+        ]
+      },
+      "incremental": false,
+      "noEmit": true
+    },
+    "include": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/runner/src/context-observations/claude-summary.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/runner/src/context-observations/claude-summary.test.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/server/src/context-transparency/projection.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/server/src/context-transparency/projection.test.ts"
+    ],
+    "exclude": []
+  }
+}

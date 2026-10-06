@@ -1,0 +1,31 @@
+{
+  "requestId": "wpf-mature-04-claude-summary-amend-20261006-v1",
+  "action": "amend",
+  "committedAt": "2026-10-06T09:17:33.927Z",
+  "claim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/runner/src/context-observations/claude-summary.test.ts",
+      "apps/runner/src/context-observations/claude-summary.ts",
+      "apps/server/src/context-transparency/projection.test.ts",
+      "apps/server/src/context-transparency/projection.ts",
+      "docs/evidence/wpf-mature-04",
+      "packages/contracts/src/context-transparency.test.ts",
+      "packages/contracts/src/context-transparency.ts",
+      "plans/wpf-mature-04-context-transparency"
+    ],
+    "state": "active",
+    "branch": "codex/context-transparency",
+    "origin": "new",
+    "taskId": "WPF-MATURE-04",
+    "worker": "architecture_read",
+    "claimId": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+    "createdAt": "2026-10-06T08:58:31.292Z",
+    "updatedAt": "2026-10-06T09:17:33.927Z",
+    "observedAt": null
+  }
+}

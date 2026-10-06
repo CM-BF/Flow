@@ -18,3 +18,5 @@
 2026-10-06 09:09 UTC实现交付前clean-code复核：schema负责形状/数值证据语义，projection负责当前identity/freshness及窗口算术，无IO或隐藏状态；复用现有harness/profile/knowledge引用合同，不复制auth/usage/压缩状态机。发现并修复两处语义漏洞：derived输入为estimate不能在输出升级provider；SDK autocompact report不能填hard modelCapacity。源与方法分离，limits命名区分modelHardLimit/compactionPolicy。遵循[唯一模块化规则](/Users/citrine/Projects/AgentHarness/Flow/AGENTS.md#modular-design)，未复制框架规则。
 
 资源界限：4材料/8192选中bytes、32categories、65536响应bytes；未知与失效在Interface内集中；pure函数返回detached对象，既有固定队列/attempt不受draft变更影响。没有声明性能提升或provider真实token精度。剩余限制：host将真实素材变更可靠映射到identity digest、SDK来源适配、持久化/鉴权/重启与UI尚未实施，由完整TODO继续跟踪。
+
+2026-10-06 09:22 UTC第二片复核：继续使用相同本地find-skills/brainstorming/codebase-design/clean-code，无重装。按既有授权选纯summary-response Adapter；直接透传泄漏路径/名称，full采集引入provider调用，均不采纳。新2文件只持数值归一化职责，与中心projection权限/持久owner分离；type-only SDK、最多32分类、4匿名kind分组、reject overflow/缺字段，不截断。23 Adapter + 23直接消费者 = 46/46，局部strict noEmit通过。先前4源码保持879审定内容；不增加通用框架或改变共享接口。证据见[纯适配器](claude-summary.md)，未解决项明确留原TODO。

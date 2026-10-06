@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-06 09:22:28 UTC",
+  "sourceCommit": "PENDING_ADAPTER_TARGET",
+  "baseMetadataCommit": "278dba39c80dc38397afbcefee0eca72a85c9cd8",
+  "priorApprovedTarget": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+  "priorFourSourceFilesUnchanged": true,
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.ts",
+      "sha256": "672042625d37a6bc083c8266d264341400606325a7ed43f0aa5421058da78828"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.test.ts",
+      "sha256": "21a2880b1369324cb6d230f7dfa8c05c52600a106b7e0987bd36cbe247eb75f1"
+    }
+  ],
+  "environment": {
+    "node": "24.20.0",
+    "pnpm": "9.15.4",
+    "vitest": "4.0.18"
+  },
+  "testFilesSelected": 2,
+  "testFilesPassed": 2,
+  "testsSelected": 46,
+  "testsPassed": 46,
+  "testsFailed": 0,
+  "testsSkipped": 0,
+  "adapterTests": 23,
+  "directProjectionTests": 23,
+  "testExit": 0,
+  "strictNoEmitExit": 0,
+  "providerCalls": 0,
+  "sdkRuntimeImports": 0,
+  "credentialReads": 0,
+  "personalServicesStarted": 0,
+  "installations": 0,
+  "scope": "Synthetic official SDK-shaped response through pure adapter and existing public projection; no collection, persistence, ownership enforcement or production attachment."
+}

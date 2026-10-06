@@ -1,6 +1,6 @@
 # WPF-MATURE-04 最小公共 Interface 候选
 
-状态：首片schema/纯投影已实现于879c989a594a8f4f266b9a78a885e311c52eca0d，并获Mika独立APPROVED；生产SDK采集、持久化、公开挂载及Web仍属proposal/未实现。对应[唯一计划](../../../plans/wpf-mature-04-context-transparency/plan.md)。当前只领取并实施下述4文件，不占用后继共享路径。
+状态：首片schema/纯投影已实现于879c989a594a8f4f266b9a78a885e311c52eca0d，并获Mika独立APPROVED；生产SDK采集、持久化、公开挂载及Web仍属proposal/未实现。对应[唯一计划](../../../plans/wpf-mature-04-context-transparency/plan.md)。当前已有4文件首片和后继2文件纯Adapter；生产采集/事件/持久化共享路径未领取。
 
 ## 统一语义
 
@@ -74,3 +74,15 @@ identity包含harness/requested/resolvedModel/profile reference/input digest/mat
 已知测量保留source+version、measurementMethod、tokenBasis、full/partial coverage与持久evidenceRef。derived结果显式两operand的value/kind/引用，不能提升estimate；SDK context来源不能填modelCapacity，仅作为compactionWindow/used候选。此处provider-capability/provider-window仅是规范来源类别，不是已接入某个provider或通过schema就获得报告权限。
 
 压缩本片仅保留observed/not-observed/unsupported及可选summaryRef/covered refs；缺摘要正文不能假造引用。真正有序持久记录、trigger、前后epoch/计量和授权可访问性仍属TODO -03/-04，不由此pure DTO验收。
+
+## 第二片：固定SDK summary纯Adapter
+
+仅新增`apps/runner/src/context-observations/claude-summary.ts`及`.test.ts`，使用claim v3，不修改第一片合同。固定target `PENDING_ADAPTER_TARGET`；[Interface/来源/边界与行为证据](claude-summary.md)。输入是host已经取得的0.3.290 SDKControlGetContextUsageResponse camelCase响应，明确summary literal，输出既有ContextObservation。model identity来自host冻结配置；未知resolved保留unknown，精确不符拒绝。只映射estimated totalTokens与策略rawMaxTokens，hard capacity和压缩发生未知。按kind汇总的匿名分类不是工具/技能或材料身份，稳定ID且有界，不复制名称、路径或正文。零SDK调用、零生产挂载，采样生命周期仍待后继。
+
+## 后继中心接线待协调（未实施）
+
+mika转来的只读研究绑定main77c420cf9ee5de0291ea93014b6ea11aead6fab5：复用reportEvents/ownedAttempt既有runner→task→attempt锁、fence、连续sequence与event digest，在原事务内接一个窄context-observation事件；不另造上报端点或sequence。中心核task/attempt/ownerVersion/harness/nativeSession/profile；K02部分任务才有executionInputDigest。resolvedModel/historyEpoch需来源allowlist及adapter版本的受信host证据，不能让reporter同时传expected/current自证。
+
+current判定需中心最小cut：既有event sequence与已覆盖steering revision，steering accepted立即使旧值失效；后续序号/attempt/input改变保守失效。材料revision须从按序精确citation refs版本化派生，不能把含正文的contextDigest改名顶替。事务owner存attempt+observationId；canonical内容相同重报不刷新时间，异内容409；receivedAt取DB时间、按sequence选最新、refs核归属。缺可信绑定可存历史sample，但公开current=unknown。上述依赖尚未实装，本pure projection不能替代中心鉴权/防自证。
+
+共享runner.ts由R05B、共享index/client由Lead协调，migration编号与精确scope待当前ledger核定；本片不领取或修改它们。后继仍使用本plan/status为唯一进度源，不复制第二状态权威。
