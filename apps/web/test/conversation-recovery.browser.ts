@@ -133,13 +133,14 @@ async function supervisor() {
     scratch = await mkdtemp(join(gate.scratchParent, "flow-recovery-browser-"));
     await json(join(directory, "scratch-owner.json"), { scratch, maxBytes: gate.maxScratchBytes, retainedEvidence: false });
     await checkpoint();
-    const childEnv: NodeJS.ProcessEnv = { ...process.env, TSX_DISABLE_CACHE: "1", NODE_DISABLE_COMPILE_CACHE: "1", TMPDIR: scratch, TMP: scratch, TEMP: scratch, MAC_CHROMIUM_TMPDIR: scratch, XDG_CACHE_HOME: join(scratch, "cache") };
+    const crashpad = join(scratch, "crashpad"); await mkdir(crashpad); await checkpoint();
+    const childEnv: NodeJS.ProcessEnv = { ...process.env, TSX_DISABLE_CACHE: "1", NODE_DISABLE_COMPILE_CACHE: "1", TMPDIR: scratch, TMP: scratch, TEMP: scratch, MAC_CHROMIUM_TMPDIR: scratch, BREAKPAD_DUMP_LOCATION: crashpad, XDG_CACHE_HOME: join(scratch, "cache") };
     delete childEnv.FLOW_RECOVERY_TEST_ADMIN;
     const chromeExecutable = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", profile = join(scratch, "chrome");
     const chromeArgs = ["--headless=new", "--remote-debugging-port=0", "--remote-debugging-address=127.0.0.1", `--user-data-dir=${profile}`,
       "--no-first-run", "--no-default-browser-check", "--disable-background-networking", "--disable-component-update", "--disable-sync", "about:blank"];
     await json(join(directory, "launch-config.json"), {
-      temp: { TMPDIR: scratch, TMP: scratch, TEMP: scratch, MAC_CHROMIUM_TMPDIR: scratch, XDG_CACHE_HOME: join(scratch, "cache") },
+      temp: { TMPDIR: scratch, TMP: scratch, TEMP: scratch, MAC_CHROMIUM_TMPDIR: scratch, BREAKPAD_DUMP_LOCATION: crashpad, XDG_CACHE_HOME: join(scratch, "cache") },
       worker: { executable: process.execPath, selectedArgv: [fileURLToPath(import.meta.url), "--worker"], inheritedRuntimeArguments: "not recorded" },
       chrome: { executable: chromeExecutable, argv: chromeArgs },
     }); // Deliberate whitelist: never serialize inherited environment or credential-bearing arguments.

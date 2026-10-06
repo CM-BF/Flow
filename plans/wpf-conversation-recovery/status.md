@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 19:29:04 UTC |
+| 最近更新 | 2026-10-06 19:32:54 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,7 +10,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前限定source76a766a24614b9b3cfdc996bdb275a8826532a84；38受控执行仍bf14/7cc；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | browser parent限定source已提交并冻结；本段只metadata收口，最终clean/local=origin由handoff实核 |
+| 工作树dirty状态 | 43a081 clean输入；本段仅browser parent自有Crashpad配置及own记录，18其他源冻结 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
@@ -24,7 +24,7 @@
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；最近权属观察2026-10-06T19:18:39.046Z active/唯一owner/无overlap。19:24管理报告D04不可用，当前账本未知；沿本段既授权范围收口，未重新探测或扩权 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；2026-10-06T19:31:48.442Z管理fresh观察active/唯一owner/无overlap，本人核原件；仅parent Crashpad配置及own记录，不含运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -171,3 +171,9 @@ Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conv
 固定 `76a766a24614b9b3cfdc996bdb275a8826532a84`；[累计19源manifest](../../docs/evidence/wpf-conversation-recovery/browser-tail-checkpoint.json)核current=fixed、仅browser parent改变、另18源/worker/ENOENT helper不变，旧10raw17415B逐hash相同。显式组消失、reap后/删除前及报告后终态计量、错误安全清理与owned MAC_CHROMIUM_TMPDIR白名单记录已落源，待root独立审查；0runtime/import/types/HTTP/PG/Chrome/free。
 
 权属沿2026-10-06T19:18:39.046Z原21/v4观察与管理继续收口授权；19:24管理报告D04不可用，因此当前账本UNKNOWN，未标fresh active、未另探测。原browser14846.267375ms与余75153.732625ms（含15000ms清理）、direct6.868/30s、types52.814/60s均未新增消费。源冻结，仅metadata正常push；完整featureNOT_STARTED/targetUNKNOWN。
+
+## 2026-10-06 19:32:54 UTC — 76a批准归档 / 原parent Crashpad配置source-only
+
+Root于2026-10-06T19:30:46.598697+00:00对76a给[APPROVED_SCOPED_PARENT_SOURCE_NOT_RUN](../../docs/evidence/wpf-conversation-recovery/76a-root-parent-source-review.json)，TAIL-RESOURCE/GROUP-ABSENCE源码关闭，0blocking；原件逐字归档。当前追加只把BREAKPAD_DUMP_LOCATION明确指自有scratch/crashpad（创建后checkpoint）并入既有白名单launch记录；不改原MAC临时目录、HOME/native Chrome sandbox或worker场景，不增加Settings外层sandbox/collector。
+
+[本段权属观察](../../docs/evidence/wpf-conversation-recovery/browser-crashpad-claim.json)已核19:31:48.442Z原21/v4/无overlap。没有Recovery复现nested问题的证据，也不声明Chrome所有文件写入受OS约束。新配置待固定源审，0runtime/import/types/38复跑/HTTP/PG/Chrome/free；首失败14.846267375s和10raw保持，余75.153732625s含15s清理仍非许可，完整feature NOT_STARTED。

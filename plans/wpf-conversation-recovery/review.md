@@ -77,3 +77,7 @@ Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conv
 [Root固定7cc尾部审查](../../docs/evidence/wpf-conversation-recovery/browser-tail-root-review.json)两项P2按源码收敛：显式自有组消失才删scratch；reap后删除前及report/budget后终态配额/free/elapsed检查，异常判失败但继续安全清理。[修复接口与限制](../../docs/evidence/wpf-conversation-recovery/browser-tail-source.md)明确白名单MAC_CHROMIUM_TMPDIR/argv和原计时边界。本段尚未独立审查，0types/运行；旧38PASS不推本新parent已验，首真实browser失败未改绿。完整feature仍NOT_STARTED/targetUNKNOWN。
 
 限定待审source `76a766a24614b9b3cfdc996bdb275a8826532a84`，前序7cc。见[累计manifest](../../docs/evidence/wpf-conversation-recovery/browser-tail-checkpoint.json)：一browser parent差异、18其余源/worker/原helper不变，diffcheck0，只有静态核对。本次root报告是修复输入，尚未收到新source批准；0运行，旧38与首browser证据不扩张。
+
+## 2026-10-06 19:32:54 UTC — 76a限定源码通过 / Crashpad小项待审
+
+独立reviewer root，时间2026-10-06T19:30:46.598697+00:00，固定76a766a24614b9b3cfdc996bdb275a8826532a84，metadata43a081；[原报告](../../docs/evidence/wpf-conversation-recovery/76a-root-parent-source-review.json)APPROVED_SCOPED_PARENT_SOURCE_NOT_RUN，0blocking，TAIL-RESOURCE/GROUP-ABSENCE源码addressed。未运行任何新检查。另按primary来源边界补自有BREAKPAD_DUMP_LOCATION，待新固定diff复核；不把此配置当Chrome完整OS写入隔离或Recovery实际nested故障。38/首失败仍各原范围，完整feature NOT_STARTED/targetUNKNOWN。

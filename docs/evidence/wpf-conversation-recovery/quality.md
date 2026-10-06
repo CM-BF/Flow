@@ -133,3 +133,7 @@ Root受控证据接受报告已逐字归档，SHA256 `11492f4990a29ffe5aca3ec59b
 源码自审覆盖命名、职责、错误/清理路径、有限报告写入与预算边界；只browser parent改动，另外18源和worker/ENOENT helper不动。新行为NOT_RUN，38受控结果及首browser失败保留，未冒独立批准。当前账本未知，仅沿19:18:39合法观察与管理继续收口指令，无新资源/运行采样。
 
 本段source固定 `76a766a24614b9b3cfdc996bdb275a8826532a84`；19current=fixed，18等7cc，worker与treeBytes原样，原10raw17415B hash一致；源码diffcheck0。仅静态核对，未运行parser/类型/测试。
+
+## 2026-10-06 19:32:54 UTC — 原生Crashpad配置clean-code安全点
+
+复用已读local find-skills/clean-code/codebase-design/webapp-testing。配置仍在唯一parent构建childEnv时指定，owned scratch内crashpad目录创建后复用checkpoint；同一值进入现白名单launch记录，无新collector/全局helper。原MAC临时路径、HOME和nativeChrome sandbox、worker场景与尾部规则不变；错误沿现try/finally清理。root76a限定批准原件已归档，不转为运行批准。本段只源码差异/hash静态核对，不import或运行，不声称所有Chrome写路径被限制。

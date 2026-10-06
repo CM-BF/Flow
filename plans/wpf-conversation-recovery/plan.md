@@ -78,3 +78,5 @@ RECOVERY01-04新增生命周期/observer共38受控case已单次通过，源7cc�
 ### 2026-10-06 19:21:36 UTC — 同一browser父监督尾部修正
 
 仅ESRCH证明owned process group不存在；未知/活跃保留scratch并失败。确认组消失后、删除前独立检查scratch/evidence/free，无work-phase门槛；计量错误入raw，安全清理继续。报告/budget后再有界观察真实占用/耗时，失败不绿。显式MAC_CHROMIUM_TMPDIR归own scratch，仅记录白名单临时目录/实际argv，复用既有PID退出记录，不复制第二collector。原计时在准入/历史budget核验后开始；新尾部计量覆盖报告写入，不冒包含全部preflight/物理硬配额。无新运行预算。
+
+2026-10-06 19:32:54 UTC：沿原-05准备项补自有scratch/crashpad的BREAKPAD_DUMP_LOCATION及白名单记录。此为配置source-only，不增加任务/范围/运行预算，不声明完整Chrome OS隔离。
