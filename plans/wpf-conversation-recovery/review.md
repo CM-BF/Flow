@@ -45,3 +45,7 @@ Source checkpoint `ec91d1113898e70f380f9bb503f3b5ceff9467b2`，相对1b8只有�
 ## 2026-10-06T17:35:32.287102+00:00 — 两harness源码候选待窄审
 
 固定 `7686139952becf530bcf57966425bd9d7b88b697`，原ec91→本段仅fixture/browser变化，17其他源不变。作者只静态diffcheck0；当前types/direct/browser均NOT_RUN，完整feature仍NOT_STARTED/targetUNKNOWN。两个实际PG连接观察时序按本树真实依赖源码修正，未归因TUI实测；body-loss从已审RELEASE方法适配但不移用其运行证据。[manifest](../../docs/evidence/wpf-conversation-recovery/bodyloss-checkpoint.json)与[限制](../../docs/evidence/wpf-conversation-recovery/bodyloss-source.md)供独立源码审查。
+
+## 2026-10-06T17:43:28.863916+00:00 — 768 P2修正待独立复审
+
+[Root原文](../../docs/evidence/wpf-conversation-recovery/768-root-source-review.json)及[peer原文](../../docs/evidence/wpf-conversation-recovery/768-peer-review/report.md)原样保留：768仅一项P2，turn.taskId不存在可使undefined等于undefined。作者固定 `667889058d3decc0abc9f635a37fd0f05f2c090c`，只browser改用公共schema/decoder及非空嵌套身份断言，[manifest](../../docs/evidence/wpf-conversation-recovery/ack-identity-checkpoint.json)核18源不变。作者标SOURCE_ADDRESSED待review；没有types/direct/browser运行，没有全feature批准。1s观察policy不冒pool acquire/hard settlement上限。

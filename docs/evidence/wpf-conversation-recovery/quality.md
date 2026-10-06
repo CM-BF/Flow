@@ -93,3 +93,9 @@ P1源码修复：所有submit在官方send/同步localreceipt前检查Input完�
 复用本地find-skills/codebase-design/clean-code/webapp-testing，路径hash见bodyloss-readonly-inputs，无安装。实际修复两项验证前提：preheaders断开可被透明重试；Pool.end清空本地列表先于实际关闭。职责限readAcknowledgement/故障输出/同Request观察/ownedDB零连接观察，不另建HTTP层或修改中心认证。错误不静默：ACK晚失败仍进入fixture cleanup，query错误/连接持续存在使DB清理失败；不删unknown CREATE、无FORCE。父绝对deadline传入cleanup，新的两短观察不另续预算。有限记录、body/身份不截断、17非harness源码不动。
 
 独立检查前静态自审：丢ACK真实完整framing/UTF8/contenttype/identity，多个Set-Cookie仍数组；异步写操作均有catch并由close等待；observer避免response.finished并清listener。正常响应体新ACK捕获仅三命令域，bounded128KiB/累计wire1MiB，session credentials不被附入响应raw。source diffcheck0，未运行类型或行为；所有既有direct原raw和ec91保留。新类型/浏览器仍需后续合法门槛，不把静态审当运行。
+
+## 2026-10-06T17:43:28.863916+00:00 — typed ACK语义断言clean-code安全点
+
+Root/peer同一真实P2：JSON.parse的any掩盖public结构中没有taskId。修复复用现公共decoder返回的typed ACK，原wire先经conversationTurnSchema，非空turn.id和嵌套task.id同原回执；不复制ACK逻辑、不用cast绕类型。Worker内动态导入保parent built-ins-only；源码diffcheck0，18源保持768、4个只读public入口hash等base。技能沿已读本地版本，只有静态复核，无安装/运行。名称实核本树是conversationTurnSchema，并未发明conversationTurnAdmissionSchema。
+
+保留原报告和错误历史；1s零连接观察是policy而非pool acquisition硬上限，代码post-await拒迟到零、parent hard截止保持未完成证据。当前P2修复未测，direct/type/browser余量未用；完整feature未审。

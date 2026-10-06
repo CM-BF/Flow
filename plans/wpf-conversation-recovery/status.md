@@ -2,20 +2,20 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06T17:35:32.287102+00:00 |
+| 最近更新 | 2026-10-06T17:43:28.863916+00:00 |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前两harness source checkpoint 7686139952becf530bcf57966425bd9d7b88b697；17其他源保持1b8；当前metadata HEAD以Git为准 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；最新browser窄修checkpoint 667889058d3decc0abc9f635a37fd0f05f2c090c，fixture=768/17其他源=1b8；当前metadata HEAD以Git为准 |
 | 工作树dirty状态 | 两harness源码已固定、仅own metadata收口；正常push后核local=origin/clean；17其他源保持1b8 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 原材料direct27已通过；两harness已固定真实ACK body-loss和owned DB零连接观察，source-only待窄审 |
+| 当前产出 | 768 ACK task身份P2已源码修正，公共decoder校验原请求与嵌套task.id；固定候选待窄审/尚未运行 |
 | 下一可用交付 | 刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复 |
 | 当前阻塞 | ACTIVE: 真实浏览器与完整构建仍等待运行资源和中心会话语义核验；本段定向检查已完成 |
 | 需用户决定 | NONE |
@@ -131,3 +131,7 @@ Root于16:23:29.859009Z对本次原raw/source绑定独立核验，限定[证据�
 ## 2026-10-06 17:41 UTC — 768 唯一P2源码修复启动
 
 本人核[管理fresh窄观察](../../docs/evidence/wpf-conversation-recovery/768-task-identity-claim.json)：6ff v4原21/唯一owner/overlap[]，a3c clean。[Root原审查](../../docs/evidence/wpf-conversation-recovery/768-root-source-review.json)与[peer](../../docs/evidence/wpf-conversation-recovery/768-peer-review/report.md)一致确认turn.taskId不存在，两个undefined可能错误相等。仅改browser为公共decoder和实际公开conversationTurnSchema（本树无conversationTurnAdmissionSchema同名出口）核原请求与两个真实ACK、非空turn.id/task.id；worker内导入保parent built-ins-only。新P2未运行；0types/import/test/HTTP/PG/Chrome/free，预算不变。
+
+## 2026-10-06T17:43:28.863916+00:00 — ACK身份修复固定源码安全点
+
+固定 `667889058d3decc0abc9f635a37fd0f05f2c090c`；[19源manifest](../../docs/evidence/wpf-conversation-recovery/ack-identity-checkpoint.json)仅browser变化、18源=768。现公共 `conversationTurnSchema` 校验原wire，`decodeConversationTurnAccepted` 对两真实ACK核原conversation/request，明确非空 `turn.id`/`turn.task.id` 后等原身份；worker-only导入，无新公开协议/DTO/HTTP。768唯一P2源码addressed待独立复核，NOT_RUN；旧raw/1b8 direct27保留。1s零连接是观察policy，不含pool acquire的硬上限；迟到零仍拒且parent hard stop记录未完成。0types/import/test/HTTP/PG/Chrome/free，预算不变；完整feature仍NOT_STARTED/targetUNKNOWN。

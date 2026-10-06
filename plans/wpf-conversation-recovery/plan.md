@@ -54,3 +54,7 @@ RECOVERY01-05真实浏览器入口先修原fixture代理传输：public Host/Ori
 ### 2026-10-06 17:28 UTC 验证前提窄修
 
 RECOVERY01-05保留真实body-loss：完整中心ACK先验证并记录，再送真实headers/full字节Content-Length与严格正文prefix，优雅关闭连接；既有lost-turn须观测同一Request的headers→requestfailed和exact1 preRetry/exact2 postRetry、原key/body/refs。CREATE/Queue仅支持故障helper，不冒实际用例通过。ownedDB清理在marker前后均短时观察零连接，受同一parent硬截止；持续连接/查询错为失败，不FORCE、不终止其他连接。此段source-only，无新运行门槛。
+
+### 2026-10-06T17:43:28.863916+00:00 — 768语义断言修复
+
+Root/peer唯一P2按公共decoder修复，固定 `667889058d3decc0abc9f635a37fd0f05f2c090c`。要求ACK真实task身份为 `turn.task.id`；不再比较不存在的两个taskId。原请求通过现有conversationTurnSchema，公共decoder消费attachments/knowledge与原conversation，禁止另造codec；导入只worker。无新journey或预算。另明确DB1s为观察policy，非连接获取硬上限；原parent绝对清理截止不变。源码修复不是运行通过。
