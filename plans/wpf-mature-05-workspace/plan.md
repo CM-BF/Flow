@@ -69,3 +69,5 @@ CACHE完整[16literal只读方案](../../docs/evidence/web-platform/workspace-ca
 原05-02/03的具体后继验收：现App方向键立即activate、关闭active默认最后tab仅是已定位源码事实（未browser测）；Arc新接口须显式focus/Enter或Space激活、关闭后稳定相邻焦点。同一view只归一个pane，split/merge移动已有view.key，拒不存在/重复key且无history副作用，App仍唯一保护/回收owner。详[现有研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，当前不领取App。
 
 Arc后继当前只读18literal方案已集中到[现有研究入口](../../docs/evidence/web-platform/workspace-arc-readonly-proposal.json)，仍归本计划01/02/03；没有新写权或第三层执行计划。候选同一平铺ChatPane父节点保持view.key与实际composer/材料，唯一layout有界pane数组；首片2可见、3+和持久化后继。正式实施先等附件固定接收和五条当前交集移交，再核准确base/结构/fresh scope；90秒/10秒清理/8MiB只是候选验收预算，尚未执行。
+
+最新GO优先级覆盖此前Arc紧随缓存的候选排程：附件与已审dashboard安全停点后先完成原MATURE06-04连接/刷新/未决发送恢复，Arc/装饰后排。18literal仍只读未领，复用已有研究，不因等待而预占App或产生并行writer。

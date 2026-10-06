@@ -1,16 +1,24 @@
 # 成熟聊天大task来源与登记队列
 
+## 当前优先队列（12:30 UTC；以下较早时点只作历史）
+
+1. **MATURE04 × attachment-only**：Mika已确认收到，将交原合法owner修复；尚无固定修复target/claim回执。已确认范围是合法v2仅附件触发history known/min1拒绝，运行链影响尚未HTTP/PG验证，mixed材料coverage语义待其明确。[固定诊断与边界](context-attachment-shape-research/source-binding.json)。
+2. **ATTACHI02**：w01实际持0b7fc000 v2全24范围实施真实App/HTTP，未独审/未交付；唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/plans/wpf-attach-i02-production-binding/status.md)。SVC05等其固定Send/Queue输入，实施不等待发布准备。
+3. **下一完整旅程MATURE06-04**：附件与获审dashboard安全点后优先于Arc/装饰。Root已批准Interface/合法owner协调；请Lead指定中心session唯一writer，独立六产品路径+own records可先行，mount/exports/client/精确migration由Lead协调现写权。Web consumer/Recovery拟panels **pending legal scope，未领取**，App交集须ATTACHI02 main/release后fresh领取。详[具体dispatch及两Module接口](connection-recovery-readonly-proposal.json)、[共享writer观察](connection-session-shared-owner-observation.json)、[完整原要求](connection-recovery-priority.md)。
+4. **DPERF03已完成主线收口并释放**：5609五源已main a8aef，owner7cc5正常push双端clean，全七scope停写后db0b v3 released12:26:50.034Z，[原receipt](dperf03-main-release-receipt.json)。不是待接收任务。
+5. **实际看板148有限观察已到**：[root既有DOM/Lead账本来源](dashboard-148-root-dom-observation.json)。main a8aef/148、顶部ENG/TUI/WPF分散；未点击领取详情、未刷新或新GET，不扩大为完整交互复验。用户U08/REQ37的唯一status/fresh精确take/释放可见要求持续，不建重复事实源。
+
 ## MATURE04 × 附件v2组合缺陷：请Mika合法owner优先处理（12:22 UTC）
 
 **当前跨lead实际输入**：[root原诊断/三源hash](context-attachment-shape-research/result.json)、[原脚本](context-attachment-shape-research/diagnostic.mts.txt)、[归因及fresh写权观察](context-attachment-shape-research/source-binding.json)。固定mainf3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa，`apps/server/src/context-transparency/store.ts` frozenMaterials:72–77仅投影context.sources并计算knowledge-only materialRevisionDigest。**已确认缺陷是合法v2仅附件sources=[]触发history known/min1拒绝。** 混合输入的knowledge-only metadata/revision属于额外coverage语义待owner明确，不在缺定义依据时把每项都定为bug。实际public schemas+原投影表达式纯内存已复现，但**不是reportEvents/HTTP/PG端到端复现，尚不推断运行任务具体失败**。[补充固定三源审计](context-attachment-shape-research/fixed-source-audit.json)与报告f3e569逐hash相同；原文件字节/hash保留，管理未重跑。
 
 12:21:58 fresh账本这三精确路径无有效writer；现有MATURE04唯一owner属Mika，应先合法fresh取最小范围修复并真实组合定向验证，不由W01越权。若现协议不足表达附件材料，应准确unknown而非known全量或放宽空数组；保execution identity及历史事实，不丢附件/禁采样绕过。公共history入口ready仍成立，组合材料正确性是该合法owner需解除的依赖。ATTACHI继续当前生产UI范围，后续完整组合验收须覆盖该输入，未将整个大task标blocked。
 
-## DPERF03 固定批准输入，请受控接收（12:22 UTC）
+## DPERF03 固定批准输入（12:22交付历史；已完成main收口）
 
 **实现 5609ea719ec400a803bb6036429312b7a212c90f / final cc390fd7613c5a0b6ce801bb5dccc85b20437764**，normalpush、ls-remote=local、clean已核；[管理五源/十三只读依赖/原始独审字节核验](dperf03-final-management-audit.json)。唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/plans/wpf-dperf03/status.md)，完整[5-source candidate manifest](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/docs/evidence/wpf-dperf03/candidate.json)、[review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/plans/wpf-dperf03/review.md)、[root audit](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/docs/evidence/wpf-dperf03/root-audit.json)、[原独立37项log](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/docs/evidence/wpf-dperf03/root-direct-tests.log)。Root12:18:07限定APPROVED，37/37独立26713.567ms；作者直接回归与2次临时Git累计2.151s是不同口径。四proof23starts、三共用观察各一次、trace峰4/unclosed0与两临时root清理按原raw；首红/hash差和非原子/非CPU/SLO限制保留。管理不重跑工程测试/实验。
 
-全部七scope源码停写，**db0b7d25 v2保留至正式main收口**，尚未main/部署；不得借批准省掉受控source接收。
+DPERF已正式main a8aef五源同；owner主线收口7cc5f1cc9270ee067c8ad5924b948c45dde87e80双端clean/parser0后全部七scope停写，**db0b7d25 v3 released12:26:50.034Z**，[原receipt](dperf03-main-release-receipt.json)、[收口审计](dperf03-main-closeout-audit.json)。148来源实际DOM观察另见本队列最新记录，不扩大为整套交互复验。
 
 **WORKSPACEPERF01 主线收口/释放完成**：final12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50正常push双端clean，两源=1711/正式main362，source intake非祖先merge；[收口审计](workspaceperf-main-closeout-audit.json)。四scope全停写后 **c815bc00 v2 released12:21:16.237Z**，[原receipt](workspaceperf-main-release-receipt.json)。检查仍FAILED/partial8完成1locator失败，没有新browser或完整性能结论，旧树不再写。
 
@@ -398,3 +406,31 @@ ATTACHI02新增组合失败路径已有[root纯内存实证](attachment-complete
 Lead正式告ATTACHI02已登记147-source候选并随main **7cbda706632c85fc5da12a371b282419c933ab9a** 发布，原话“4320即刻正常换载”。这是registry/换载宣布，尚不是本组实际页面证据；root现在仅沿既有页面一次read-only DOM核147/摘要，无refresh/新API，本管理不重复采样。DPERF03固定批准仍等独立main接收，不能由来源登记推源码已接。
 
 SVC05唯一source仍personal-current-release/plans/svc05-current-release，负责actualApp+全部retained artifacts对backend362兼容；个人现runtime b1c/8d8未据此宣称变更。ATTACHI02固定真实App后交新的可审Web target，实施不等待发布准备。04 producer已main仅history，attachment-only组合缺陷仍须合法owner处理，不能因producer接收而省掉组合验证。
+
+## 下一完整旅程与实际看板观察（12:25）
+
+[GO恢复旅程指令](connection-recovery-priority.md)已绑定原MATURE06-04完整TODO/status：附件与已审dashboard安全点后优先连接/刷新/未决发送恢复，先于Arc/装饰；panels暂只读Interface/scope，ATTACHI写权优先，无新take。
+
+DPERF03正式main **a8aef18291de147c0a6ce9a3bba9383b54f5cf1f** 五源等5609，[原Lead receipt](lead-dperf03-main-receipt.json)、[管理固定哈希核验](dperf03-main-observation.json)。唯一新增验证是registry定向1/1，未重跑37/实验；作者已7cc5主线metadata收口双端clean/全停写，db0b v3正式释放。
+
+[实际148来源观察](dashboard-148-root-dom-observation.json)：Lead12:24:33.364Z ledger available/unregistered[]；root仅已有IAB tab3只读DOM，标题项目进度、148、main a8aef clean，顶部ENG-001/TUI-001/WPF-001分散；DPERF3/4已审/与main同，ATTACHI2/4待审/集成待核。无reload/click/GET，未展开claim细节，不冒完整部署或取权交互复验。本管理未重复浏览器/API。
+
+Mika线程当前明确收到attachment-only组合缺陷并将交原owner修复；尚无固定修复target/合法claim回执。只认后续实际来源，不替他方填写status。
+
+## MATURE06-04 中心session接口/共享写权待协调
+
+[固定T3研究](t3-auth-fixed-research/README.md)已满足root所核SHA9bd1/MIT许可，六source原audit保留；只采用transport单owner、HTTP/流分离、epoch、re-auth不重投等方法，未运行/复制外部实现。issue7756是closed duplicate旧nightly失败场景，不是当前Flow/T3复现，不采用JS可读cookie绕过。
+
+请Lead为中心session接口指定唯一合法writer与精确范围，并与Web原06-04独立发送恢复Interface冻结接缝，可先并行中心输入而不等整个UI。[12:26:42.163Z写权观察](connection-session-shared-owner-observation.json)：F01 v31仍持 `apps/server/src/index.ts` / `packages/client/src/index.ts`，Web不抢。新session domain/DTO/routes/storage/transport范围尚未冻结或take，不能默认F01承包整个实现。需明确expiry/revoke/rotation、HTTP与已有流停止、cookie/Origin/CSRF及Bearer优先级；公开client消费与Web发送恢复保持不同职责。panels目前仅只读方案，ATTACHI当前24scope优先，Arc未领后排。
+
+原MATURE06-04的[panels六点只读候选](connection-recovery-readonly-proposal.json)已到：ConnectionSession与ConversationRecovery两独立Module，中心身份/session与原controller持久checkpoint分离；A13候选literal另有共享出口/迁移待合法协调，B16候选literal等ATTACHI02固定接收后交权。所有数量/路径/容量仍是proposal；方向已批准进入接口/owner协调，具体领取尚未发生；管理已将误写steering.ts纠为fixed a8aef实际steering.tsx。无新树/产品/实验，留root结构审查，不机械复制T3或另建大task。
+
+**Root已批准进入Interface/合法owner协调，未授共享中心写权。** 可选dispatch明确到：由Lead指定唯一中心writer，对 `packages/contracts/src/browser-session.ts`、`apps/server/src/browser-session/index.ts`、`store.ts`、`session.test.ts`、`fixture.ts`（四项完整前缀apps/server/src/browser-session/）、`apps/server/src/streams.ts` 加其唯一plan/evidence fresh领取；受控mount/exports/publicclient与精确迁移编号由Lead协调现F01写权。候选canonical为plans/wpf-connection-session、docs/evidence/wpf-connection-session，最终owner/ID/范围落定后才能登记领取成功。
+
+Web consumer/Recovery **拟panels，pending legal scope、尚未take**，必须待ATTACHI02正式main/release后fresh拿App等交集。每子task直接归MATURE06，不因两个Module造第三执行层。4MiB/32draft/128command仅候选，须对齐现有public正文上限，不截断或淘汰unknown；checkpoint存相同key/body、有序knowledge/attachmentrefs及下一draft；stablecenter/principal中心发，不由tokenhash，同中心不同账号隔离。完整验收沿原06-04，不等整个UI才允许合法中心输入先行。
+
+## Recovery同步接管与耐久屏障修订（12:30，只读设计）
+
+Root跨片约束及panels八点修订已合入[唯一接口候选](connection-recovery-readonly-proposal.json)：保原outbox/queue同步begin并publish唯一冻结localreceipt，Thread同栈核receipt后consume capture；其后先durable prepare、每次HTTP前CAS dispatching，不能先await IndexedDB再begin。storage/配额/损坏/CAS失败保证本次0HTTP并保同receipt/key/body/materials与下一draft，不把旧稿恢复覆盖新稿，原everUnknown不洗白。
+
+重启prepared不自动发，dispatching一律unknown，ACK到达但checkpoint未完成也保unknown；accepted耐久后不再POST。CREATE ACK和conversation绑定必须耐久后才允许turn HTTP，不自动续发下一步。多tab CAS按认证namespace/稳定draft-conversation/slot，输家保本地收据且0HTTP；中心原key幂等是最后裁决。首次journal提交前崩溃虽无HTTP，最新未落盘文字不保证恢复，UI须分saving/saved。容量候选不截断/淘汰unknown；authenticated center/principal后才hydrate精确匹配记录，同URL换库/账号不可混。这是未来设计与crash验收，尚未实现/测试，不倒填当前ATTACHI或module历史。

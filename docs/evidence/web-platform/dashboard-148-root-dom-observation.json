@@ -1,0 +1,32 @@
+{
+  "recordedAt": "2026-10-06T12:26:17.442188+00:00",
+  "source": "Root existing IAB tab3 read-only DOM observation; Lead separate deployed-snapshot statement",
+  "main": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+  "leadSnapshot": {
+    "at": "2026-10-06T12:24:33.364Z",
+    "sources": 148,
+    "ledger": "available",
+    "unregistered": []
+  },
+  "rootDom": {
+    "title": "项目进度",
+    "sources": 148,
+    "mainShown": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+    "dirtyShown": false,
+    "pageTimeLocal": "2026/10/6 05:24:33",
+    "topTasks": [
+      "ENG-001",
+      "TUI-001",
+      "WPF-001"
+    ],
+    "dperfRow": "3/4 已审范围未变/范围与main相同",
+    "attachmentRow": "2/4 待审/集成待核实"
+  },
+  "actions": {
+    "reload": false,
+    "click": false,
+    "newGET": false,
+    "claimDetailsOpened": false
+  },
+  "limits": "Existing page DOM only; not full deployment, child drilldown or atomic claim interaction retest. Manager did not sample browser/API."
+}

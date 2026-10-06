@@ -1,0 +1,75 @@
+{
+  "observedAt": "2026-10-06T12:26:42.843091+00:00",
+  "final": "7cc5f1cc9270ee067c8ad5924b948c45dde87e80",
+  "remote": "7cc5f1cc9270ee067c8ad5924b948c45dde87e80",
+  "dirty": "",
+  "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+  "main": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee"
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a"
+    },
+    {
+      "path": "apps/execution-dashboard/test/git-snapshot.test.mjs",
+      "sha256": "1acb9177f68de415b716aa8acdd023da08d9bd83be051bffe17d9be785cc4ae2"
+    },
+    {
+      "path": "apps/execution-dashboard/test/proof-snapshot.test.mjs",
+      "sha256": "f74c0eea4d774ac53068e9f10258c24a38c8cbfa381f755e3c6950a317994de3"
+    }
+  ],
+  "productDiffAfterApproval": [],
+  "allSevenScopesStopped": true,
+  "managerTests": 0,
+  "parser": {
+    "errors": [],
+    "humanComplete": true,
+    "implementation": {
+      "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+      "scopes": [
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/proof.mjs",
+        "apps/execution-dashboard/src/git-snapshot.mjs",
+        "apps/execution-dashboard/test/git-snapshot.test.mjs",
+        "apps/execution-dashboard/test/proof-snapshot.test.mjs"
+      ],
+      "errors": []
+    },
+    "todos": [
+      {
+        "id": "WPF-DPERF03-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Interface](../../docs/evidence/wpf-dperf03/interface.md)、[质量](../../docs/evidence/wpf-dperf03/quality.md)"
+      },
+      {
+        "id": "WPF-DPERF03-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[固定5源](../../docs/evidence/wpf-dperf03/candidate.json)"
+      },
+      {
+        "id": "WPF-DPERF03-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[验证/失败/预算](../../docs/evidence/wpf-dperf03/validation.md)"
+      },
+      {
+        "id": "WPF-DPERF03-04",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "root 12:18:07 UTC独审APPROVED；main已接收"
+      }
+    ]
+  },
+  "releaseReceipt": "dperf03-main-release-receipt.json"
+}

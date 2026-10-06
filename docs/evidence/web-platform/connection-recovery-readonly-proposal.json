@@ -1,0 +1,150 @@
+{
+  "at": "2026-10-06T12:29:09.217077+00:00",
+  "state": "ROOT_DIRECTION_APPROVED_INTERFACE_AND_LEGAL_OWNER_COORDINATION_ONLY",
+  "parent": "WPF-MATURE-06",
+  "stableTodo": "WPF-MATURE-06-04",
+  "source": "workspace_panels_owner six-point bounded study, no new files/trees/claims/experiments by worker",
+  "fixedMain": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+  "existingFacts": [
+    "App memoryBearer/randomconnectionScope; client HTTP/watch each build Bearer",
+    "server index Bearer authorization, establishedstreams lack expiry/revocation recheck",
+    "App drafts/outbox/queue memory and dispose clears receipts; uploadjournal is not send recovery"
+  ],
+  "moduleA": {
+    "name": "ConnectionSession",
+    "interface": [
+      "readSession",
+      "connect",
+      "logout"
+    ],
+    "authority": "Center; stable random centerId+ownerPrincipalId from authenticated response, not token-derived",
+    "candidateStorage": "Finite revocable HttpOnly session; serverhash/expiry/revocation, restart sameDB; owner token rotation semantics to freeze; no multiuser engine",
+    "authorization": "Invalid explicit Authorization401 with no cookie fallback; runnerBearer unchanged; Bearer only explicitconnect and never localStorage/URL",
+    "host": "One supervisor per center; offline/unreachable,expired/unauthenticated,forbidden,ready distinct; blocked no retries without action; epoch rejects late",
+    "transport": "Public HTTP/watch sameauth; reload readSession before center locator/route recovery; metadata refresh does not tear healthy stream; establishedstream rechecks expiration/revoke in readcycle/beforepublish",
+    "boundaries": "logout stopsobservation !=cancel; sameorigin trusted baseline; cookie cannot isolateport/Path; crossorigin exactOrigin+credentials+CSRF, no reflection/wildcard",
+    "candidateScopes": [
+      "packages/contracts/src/browser-session.ts",
+      "apps/server/src/browser-session/index.ts",
+      "apps/server/src/browser-session/store.ts",
+      "apps/server/src/browser-session/session.test.ts",
+      "apps/server/src/browser-session/fixture.ts",
+      "apps/server/src/streams.ts",
+      "apps/web/src/connection/session.ts",
+      "apps/web/src/connection/Connection.tsx",
+      "apps/web/test/connection-session.test.ts",
+      "apps/web/test/connection-session.fixture.ts",
+      "apps/web/test/connection-session.browser.ts",
+      "plans/wpf-connection-session",
+      "docs/evidence/wpf-connection-session"
+    ],
+    "sharedScopesNeedExactHandoff": [
+      "apps/server/src/index.ts",
+      "packages/contracts/src/index.ts",
+      "packages/client/src/index.ts",
+      "packages/client/src/browser-session.test.ts"
+    ],
+    "migration": "No number selected; Lead must reserve exact path before claim"
+  },
+  "moduleB": {
+    "name": "ConversationRecovery",
+    "authority": "Durable checkpoint adapter for existing controllers, no secondoutbox/autoscheduler",
+    "interface": [
+      "loadVerified(scope)",
+      "saveDraft(viewKey,version,value)",
+      "prepare(envelope)",
+      "checkpoint(id,revision,state)",
+      "dismissConfirmed"
+    ],
+    "persistence": "Original controller synchronously creates/publishes the unique frozen local receipt and hands off capture; durable prepare + dispatching CAS barriers precede HTTP. Storage failure preserves receipt/key/body/materials and next draft with 0 HTTP. No second outbox and no MessageNotSentError restoration over next draft.",
+    "identity": "Freeze create/turnkey, exactbody/revision/profile/knowledge/attachmentorder, queue/steer/cancel operation+target; restart sending=>unknown,everUnknown retained; verifiedACK checkpoint before clearingpending;checkpoint preserves samekey/exactbody/orderedknowledge+attachmentrefs AND nextdraft;stablecenter/principal fromcenter, distinctaccounts cannotmix",
+    "drafts": "Original viewKey with nextdraft separate; no matching text/GETlist to inferreceipt",
+    "multitab": "Version CAS protectsstore; BroadcastChannel invalidation only; explicitsamekeyretry remainscenteridempotency",
+    "recovery": "reload/reauth0mutation until explicitsamekey retry;401403404 do not clearunknown;409 no newkey/revision;createunknown samecreatekey,knowncreate onlyretryturn, no auto followingstep",
+    "proposedBudget": {
+      "drafts": 32,
+      "commands": 128,
+      "serializedUtf8Bytes": 4194304,
+      "overflow": "retainunknown;rejectnewhandoff, no silentLRU",
+      "constraint": "Notfinalproductlimits; alignexistingpublicbodylimits, never silenttruncate or evictunknown"
+    },
+    "attachments": "No File/rawattachmentbody in checkpoint; exactreadyrefs/uploadjournal remainexisting;expiryblocksnewSend notrewritesoldreceipt",
+    "candidateScopes": [
+      "apps/web/src/recovery/store.ts",
+      "apps/web/src/recovery/checkpoints.ts",
+      "apps/web/src/recovery/RecoveryPanel.tsx",
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/test/conversation-recovery.test.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "plans/wpf-conversation-recovery",
+      "docs/evidence/wpf-conversation-recovery"
+    ],
+    "sequence": "Only after ATTACHI02 fixedmain and exactApp/Thread/outbox/projection/queuecommands/session handoff; currently nottaken",
+    "crashBoundaryRevision": {
+      "source": "workspace_panels_owner read-only revision; ATTACHI02 moving c5f5cb94+dirty Thread onNew108-125 read, not fixed implementation/test",
+      "handoff": "Turn/Queue original outbox/commands synchronously begin/publish then return Promise; Thread immediately checks receipt identity and consumes capture. Never await IndexedDB before begin.",
+      "states": "prepared -> dispatching -> accepted/rejected/unknown; prepared transaction complete still0HTTP; dispatchingCAS before each publicclient call",
+      "recovery": "prepared does not auto send; recovered dispatching alwaysunknown even crash before call; ACK before checkpoint remainsunknown; accepted durablecheckpoint requires noPOST onrestore",
+      "failure": "Storage/quota/corruption/CAS failure retains sameID/key/body/materials and nextdraft,0HTTP; existingeverUnknown never downgraded by newlocalfailure/4xx; explicit retry save or disposition only",
+      "authorities": "Turn=ConversationOutbox; queue slots=QueueCommands; steer existinggeneration/digestpreparing then synchronously receipt then durablebarrier; handoffPromise must not wait for centerACK",
+      "create": "Keep creationKey+turnKey and intentidentity; decoded CREATE ACK andconversationbinding mustdurablycheckpoint before turn dispatching/HTTP; failedsave stopssecondstep; restartnoIDchange/autocontinuation",
+      "multitab": "CAS authenticatednamespace+stableconversation/draftID+commandslot; unknown cannot be overwritten; loserretainsmemoryreceipt,0HTTP,showsconflict/readsrecord; explicitretryoriginalkey/body remainscenteridempotency; BroadcastChannel onlyinvalidation",
+      "hydrate": "Only authenticated readSession centerId+ownerprincipal may unlock exact URL/origin+centerId+principal records; sameURLnewDB/center/account mustnotmix; tokenhash notidentity",
+      "limits": "4MiB/32draft/128command candidate only; countcompleteserializedbytes, no truncation/unknownLRU; overlimitblocks durableadmission/HTTP butpreservesreceipt+nextdraft",
+      "honestDurability": "Beforefirstjournalcommit crash has0HTTP but newestunpersistedtext may be lost; UI distinguishes saving/saved, recovery promise onlyafterdurablebarrier",
+      "acceptance": "Crashboundaries/storageCAS/CREATEcheckpoint/twotabs/namespaces/reauth0POST/attachmentcapture+nextdraft; shareddecoder soleACKauthority, GETsametext is notacceptance",
+      "executed": false
+    }
+  },
+  "acceptance": [
+    "Actualbrowserconnect cookie=>readSession+SSE=>reload samecenter/conversation",
+    "Two publicFlowClient consumers samekey oneturn;GETlatest versusoriginalACK distinct",
+    "Multitab/twocenters sameIDs;expiry/revoke;invalidBearer plusvalidcookie;Origin/CSRF;alreadyopenSSE revocation",
+    "POST commit/lostACK=>reload/reauth0POST=>explicitsamekey/bodyrecover",
+    "CREATE boundary,nextdraft/attachmentrefs;quota/corruption/full/CAS;logout0cancel"
+  ],
+  "environment": "Syntheticowner,isolatedPG,dynamicports,0provider;budget tofreeze beforetake;personal61227/61228 unchanged",
+  "scopeSpellingCorrection": {
+    "workerCandidate": "apps/web/src/plugin-integration/steering.ts",
+    "actualFixedGitPath": "apps/web/src/plugin-integration/steering.tsx",
+    "method": "manager gitls-tree at fixeda8aef"
+  },
+  "methods": "Localfind-skills/codebase-design/clean-code/brainstorming; fixedT3 MIT concepts only, no copiedimplementation",
+  "newClaims": 0,
+  "newWorktrees": 0,
+  "experiments": 0,
+  "approvalBoundary": "No shared center write authorization or fresh claim. Center owner chosen byExecutionLead; Webconsumer/Recovery proposedpanels pending ATTACHI02main/release and exactscope.",
+  "dispatchCandidate": {
+    "parent": "WPF-MATURE-06",
+    "centerOwner": "PENDING_EXECUTION_LEAD_ASSIGNMENT",
+    "centerProductScopes": [
+      "packages/contracts/src/browser-session.ts",
+      "apps/server/src/browser-session/index.ts",
+      "apps/server/src/browser-session/store.ts",
+      "apps/server/src/browser-session/session.test.ts",
+      "apps/server/src/browser-session/fixture.ts",
+      "apps/server/src/streams.ts"
+    ],
+    "centerCanonicalCandidate": [
+      "plans/wpf-connection-session",
+      "docs/evidence/wpf-connection-session"
+    ],
+    "sharedOwnerCoordination": [
+      "apps/server/src/index.ts",
+      "packages/contracts/src/index.ts",
+      "packages/client/src/index.ts",
+      "packages/client/src/browser-session.test.ts",
+      "One exactmigration filename/number notyetreserved"
+    ],
+    "webConsumerAndRecoveryOwner": "workspace_panels_owner — proposed, pending legal scope; not claimed",
+    "hierarchy": "Each implementation subtask directlyparentMATURE06, ownunique status; Module decomposition is not thirdexecutionlayer"
+  }
+}

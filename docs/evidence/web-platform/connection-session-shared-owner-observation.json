@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-10-06T12:26:42.163Z",
+  "source": "D04 PG list read-only observation",
+  "currentSharedWriter": {
+    "taskId": "F01",
+    "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+    "version": 31,
+    "lead": "astra_ultra_execution_lead",
+    "worker": "astra_ultra_execution_lead",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation"
+  },
+  "reservedSharedPaths": [
+    "apps/server/src/index.ts",
+    "packages/client/src/index.ts"
+  ],
+  "newSessionImplementationOwner": "UNASSIGNED; Lead must designate one legal owner and exact fresh handoff/new scopes before writes",
+  "scopeGap": "No approved center-session implementation tree, DTO/routes/storage/client mount slice or frozen Interface. F01 existing entrypoints cannot be concurrently written by Web.",
+  "WebSide": "panels bounded read-only design for originalMATURE06-04; no new claim; ATTACHI02 App/session current writer takes precedence",
+  "parallelization": "Freeze center session+HTTP/stream authority and publicclient seam independently of whole Web UI; mutation receipt recovery remains separate Interface, no auto resend",
+  "personalServices": "No operation;0provider",
+  "externalAuditSha256": "4df3eebe26d8f506cc19e85b15cd156c529860f30ac57646d07c002ea7e1756c"
+}

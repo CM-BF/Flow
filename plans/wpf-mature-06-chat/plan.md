@@ -25,7 +25,7 @@ CHAT06I01固定9da已main，官方runtime权威repository避免伪branch；Activ
 - [ ] **WPF-MATURE-06-01** 盘点通过项与真实缺口：逐条引用stream/activity/queue/readability固定证据与限制，模块/fixture/真实provider分开，不重复勾整体Done。
 - [ ] **WPF-MATURE-06-02** 完成STEER独立控制与接线：admission仅快照非许可，POST重验、原key unknown、receiptRevision更新、received不冒模型遵从；模块和App接线分别验收。
 - [ ] **WPF-MATURE-06-03** 验证正文与活动显示：真实增量、settlement retain/replace、typed-final完成状态、provider实际thinking才显示、tool unknown不伪造；Markdown/复制/懒详情。默认正文+简短自然状态，工程ID/计数/原因Details按需；成功回复的Activity succeeded/Open task controls/More actions/Task output/空0 waiting Center queue入口收敛，error/unknown/decision始终直接可见；普通hi、正常stream/tool、queue等待、断线unknown四旅程及390/双pane验收，error/unknown/恢复不能隐藏，系统通知不冒模型回复。 验证呈现区分正文规则、工程检查、独立审查/用户接受；缺source或artifact版本绑定为限定范围/unknown，A失败/B通过不能回写A。GO固定f181源码观察与ENG-001依赖见[研究](../../docs/evidence/web-platform/mature-theme-presentation-research.md)，不是新browser复现。
-- [ ] **WPF-MATURE-06-04** 完成输入错误与持久恢复：键盘/IME/下一草稿、断线重连、queue/steer/cancel、lostACK原身份恢复；当前跨reload未完成项明确开放；有效登录期内刷新/重开回同中心会话，HTTP+SSE一致认证，错误Bearer不得回退owner，cookie不隔离端口，详见下方与[接口研究](../../docs/evidence/web-platform/mature-task-handoff.md)。
+- [ ] **WPF-MATURE-06-04** 完成连接/刷新/未决发送恢复完整旅程（附件与已审dashboard安全停点后的下一优先，先于Arc/装饰）：有效登录期刷新/重开回同中心和会话，草稿与原未决identity保留；离线、认证过期、明确拒绝各有可行动提示。HTTP与流一致认证，跨tab/切中心/过期撤销/重启/丢ACK实际验证；重新认证不自动重投或换key，退出会话不cancel任务，取消操作另行明确。两公开客户端沿中心权威，认证与发送恢复为独立Module/Interface；键盘/IME/下一草稿、queue/steer/cancel原验收继续。invalid Bearer不回退owner、cookie不隔离端口、Origin/CSRF边界沿既有研究；0provider且不动个人登录/61227/61228。详细[原指令与调度](../../docs/evidence/web-platform/connection-recovery-priority.md)。
 - [ ] **WPF-MATURE-06-05** 控制滚动与语音退路：后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿，无自动模型调用。
 - [ ] **WPF-MATURE-06-06** 完成可靠真实聊天旅程：实际App fixture覆盖失败/恢复/双pane；明确预算后单次真实provider观察，至少两次正文增长才称增量，没有partial如实记录不补query。
 
@@ -46,3 +46,17 @@ WPF-MATURE-06-03的事实/呈现边界与四旅程细目见[固定研究](../../
 ## 会话刷新恢复补充（GO经root，2026-10-06 10:24:48 UTC）
 
 归原WPF-MATURE-06-04，不新task：明确浏览器登录有效期内刷新/重开应回同中心/会话，避免反复复制owner token。GO只读Connect页面/README，未reload/登录/发送，不推断断开原因。候选中心可撤销有限期HttpOnly session，token不入localStorage/URL；须中心owner精确接口与独立claim后实施。验退出/撤销/过期/重启、多tab/切中心；退出停止观察不cancel，unknown发送不自动重投。同源自托管优先，跨origin/127.0.0.1多端口边界单列，cookie须Origin/CSRF防护不只SameSite。此为结果/责任/验收研究，未实现/未授权改auth。
+
+## 当前排程与独立恢复接口（GO经root，12:25）
+
+附件贯通与获审dashboard到安全点后，06-04是下一完整用户旅程，优先于Arc及装饰；仍沿10:24完整验收，不另造同义计划。panels暂先只读固定主线Interface/精确scope，认证和发送恢复分成独立Module，中心与原公开客户端是唯一权威；不镜像receipt/权限状态。实际写入必须等ATTACHI02共享App范围合法交出后fresh claim，Arc18保持未领。
+
+真实HTTP和流认证验收须分别观察：登录POST authenticated=true不能代替随后受保护read与stream成功；离线/过期/撤销/拒绝的提示和恢复动作分明，多tab、切中心及重启身份隔离，丢ACK仍原key/body/材料，不因重新认证自动重投。退出停止会话观察、任务取消走显式独立动作。0provider，自有动态端口/隔离资源，不碰个人已登录页或61227/61228。GO只读两个既有Connect页是页面观察，不是断线原因证明。T3 environment-auth.md/connection-runtime.md仅在固定SHA及许可核实后参考，issue7756仅失败场景；本轮没有读取/采用外部实现。[原指令](../../docs/evidence/web-platform/connection-recovery-priority.md)。
+
+T3固定输入后续已核：root实际只读SHA `9bd1d8009a6b7c50f9dd9458e2bf27d481ff3b43` 与MIT/T3 Tools Inc.，原[source audit及应用摘要](../../docs/evidence/web-platform/t3-auth-fixed-research/README.md)。每中心唯一transport、HTTP授权与流生命周期分离、epoch/缓存新鲜度/不自动mutation重投沿原TODO04；issue7756是closed duplicate旧nightly，仅失败场景，不采用JS可读cookie workaround。中心session唯一合法writer及精确domain/DTO/公开client接缝待Lead与Web协调，当前F01 v31持server/client index；Web不越权写，输入可独立先行而不等整个UI。
+
+只读实现准备已收敛为[两个Module的现有TODO04候选](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)：中心ConnectionSession负责auth/session/流失效，ConversationRecovery只为原controllers增加durablecheckpoint；13/16候选literal及32draft/128command/4MiB仅待精确owner/scope与容量审定的设计，不是已批准容量/写权。A共享出口/迁移唯一owner待Lead明确，B等ATTACHI02准确组合main与交权；真实HTTP/browser预算实施前冻结，本轮零实验。
+
+Root方向已批准进入Interface与合法owner协调，不授共享中心写入；中心独立Module由Lead指定唯一writer先受领可独立六产品路径及own records，共享mount/exports/client/migration仍精确协调。Web consumer/Recovery拟panels pending legal scope；都直接父MATURE06。checkpoint保相同key/body/知识与附件有序refs及下一draft；center/principal来自中心、同中心不同账号隔离。容量候选先对齐公开正文上限，禁止静默截断/淘汰unknown。
+
+恢复持久化必须保ATTACHI同步handoff：原outbox/commands先同步生成publish唯一receipt，Thread同栈核对后consume；随后durable prepare/CAS dispatching成功才可HTTP。失败保同ID/key/body/材料与下一稿且本次0HTTP，everUnknown不降级；prepared恢复不发、dispatching恢复unknown，ACK未耐久仍unknown。CREATE绑定耐久后才允许turn；初次journal提交前的未保存稿不冒崩溃可恢复。详[crash边界候选](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)，只是后继设计约束，非当前生产复现。

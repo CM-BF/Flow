@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-06T12:26:17.379409+00:00",
+  "main": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+  "head": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+  "origin": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+  "dirty": "",
+  "source": [
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "mainMatches": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "mainMatches": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "mainMatches": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/git-snapshot.test.mjs",
+      "sha256": "1acb9177f68de415b716aa8acdd023da08d9bd83be051bffe17d9be785cc4ae2",
+      "mainMatches": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/proof-snapshot.test.mjs",
+      "sha256": "f74c0eea4d774ac53068e9f10258c24a38c8cbfa381f755e3c6950a317994de3",
+      "mainMatches": true
+    }
+  ],
+  "rawReceipt": "lead-dperf03-main-receipt.json",
+  "leadNewValidation": {
+    "command": "env -u FLOW_COORDINATION_DATABASE_URL -u FLOW_COORDINATION_REPO node --test --test-name-pattern='registry sources have unique valid identities' apps/execution-dashboard/test/human-proof.test.mjs",
+    "exitCode": 0,
+    "selected": 1,
+    "raw": "dperf03-registry-consumer.txt",
+    "sha256": "c9d0cfed3e8548a483477bca39afe144a53c8c49f6e381bb72be7e8a21498815"
+  },
+  "old37AndExperimentRerun": false,
+  "ownerCloseout": "Requested; keep db0b v2 active until fixed metadata push/clean and all7stop",
+  "managerTests": 0
+}

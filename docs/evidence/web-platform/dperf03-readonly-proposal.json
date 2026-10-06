@@ -1,6 +1,6 @@
 {
   "recordedAt": "2026-10-06T12:15:16.630381+00:00",
-  "state": "FIXED_IMPLEMENTATION_INDEPENDENTLY_APPROVED_WAITING_MAIN",
+  "state": "FIXED_IMPLEMENTATION_INTEGRATED_MAIN_CLAIM_RELEASED",
   "candidateId": "WPF-DPERF03",
   "candidateIdUniqueness": "Verified registry/index/plans directory/ledger no existing WPF-DPERF03 before take",
   "parent": "D01",
@@ -153,7 +153,8 @@
     "target": "5609ea719ec400a803bb6036429312b7a212c90f",
     "final": "cc390fd7613c5a0b6ce801bb5dccc85b20437764",
     "managementAudit": "dperf03-final-management-audit.json",
-    "claimState": "v2 active until main; all7source scopes stopped",
-    "main": "NOT_INTEGRATED"
+    "claimState": "v3 released; all7 scopes stopped",
+    "main": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+    "mainCloseout": "7cc5f1cc9270ee067c8ad5924b948c45dde87e80"
   }
 }
