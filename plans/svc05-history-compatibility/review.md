@@ -51,3 +51,9 @@ Execution Lead独立APPROVED target `d8b4c961b9d36915f07ff4109299fac642566519`�
 新同版本Web恢复准备是只读操作证据；[manifest](../../docs/evidence/svc05-history-compatibility/web-recovery/manifest.json)绑定现身份、两类准确backend报告和固定362工具。未执行bootstrap；独立审查与单次窗口待Lead。旧af51产品冻结不变。
 
 2026-10-06 18:37 UTC：同版本恢复准备获Lead独立17固定绑定+52实际输入核验，限定原工具一次bootstrap。已执行原窗口、exit0/ready与前后保护事实由Lead只读确认并恢复main；正式事实见web-recovery/operation-manifest.json和source-window-closed回执。未复跑工程测试，个人64 CLOSED根因仍NOT_PROVEN，新af51发布尚未执行。
+
+## 2026-10-06 18:57 UTC 操作独审与main接收
+
+Execution Lead 独立 APPROVED 固定 `796d6d7df6bb500fdabc43b4b46290a1bc6c0149`；21 fixed/source/raw hash核对、前后保护事实独立比较，reviewer0重跑。原始 false preflight、空白解析纠正、唯一 bootstrap ready、旧 group消失均保留；旧Web收到TERM后的exit1不改作clean0。原[独审回执](../../docs/evidence/svc05-history-compatibility/web-recovery/operation-independent-review.json)限定同版本仅Web恢复忠实性，不证明根因，不授权新发布。
+
+main `888cfd3b1c414b32298661f1fdf5f33bddbe956c` 的21绑定内容逐字相同；原target并非该main祖先，不虚称merge关系。[main receipt](../../docs/evidence/svc05-history-compatibility/web-recovery/operation-main-receipt.json)。未重新探测个人HTTP/服务/数据库。R01已另树领取，不扩大本claim。

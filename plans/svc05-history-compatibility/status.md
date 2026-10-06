@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:37 UTC；原版本Web恢复已完成，af51候选仍冻结 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:57 UTC；同版本恢复独审及main已接收 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -14,7 +14,7 @@
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | integration |
 | 检查状态 | PASSED af51c621696230fbced12227670f014ca73bd8a1（RELEASE03 A12+B3分轮与独审）；本owner0重跑 |
-| 已集成main状态 / HEAD | 本候选未集成；原修复来源已审不代表固定旧后台组合已验证 |
+| 已集成main状态 / HEAD | 操作796d的21绑定内容已main 888cfd3b1c414b32298661f1fdf5f33bddbe956c；非祖先同内容；实际仍362+caa1/v2，新发布未执行 |
 | 实现目标 | b29807979a5589678a61d3fb84781950cf366396 |
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
@@ -23,9 +23,9 @@
 | 下一可用交付 | 继续两个保留页面与新后台的兼容验证，报告齐备后准备受管发布。 |
 | 当前阻塞 | ACTIVE: 新后台发布仍缺两个保留页面的对应报告；原网页恢复窗口已关闭。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，源码预审保留；Root APPROVED RELEASE03 af51+d629限定组合，不代表个人部署 |
+| Review | [review.md](review.md)，源码/RELEASE03限定批准保留；同版本恢复796d由Execution Lead独立APPROVED，0重跑 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
-| 架构影响 | 产品历史投影无新边界；新增固定目标操作脚本复用host锁/marker，file-only seam与Mac排他rename，非通用发布平台；实际操作未启用。 |
+| 架构影响 | 产品历史投影无新边界；新增固定目标操作脚本复用host锁/marker，file-only seam与Mac排他rename，非通用发布平台；仅同版本Web恢复已执行，d629搬运及af51新发布未启用。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -60,3 +60,5 @@
 2026-10-06 18:33 UTC：隔离诊断获Lead限定APPROVED，原133attempt/清理证据不变，个人残留根因仍未证明。按新优先级暂停SVC05R01（尚未take/写）；一次只读恢复快照确认后台362、runner accepting/v15、原三个group身份/监听，Web子进程64 CLOSED。两个362兼容报告及两个pointer历史b1c报告均独立核验，pointer仍caa1/v2；config/profile/marker一致，0新增HTTP/provider/服务动作。现只准备原`web bootstrap`同版本入口，原Flow checkout须由Lead固定到362；见[固定facts与操作方案](../../docs/evidence/svc05-history-compatibility/web-recovery/proposal.json)。
 
 2026-10-06 18:37 UTC：同版本恢复窗口关闭，一次bootstrap exit0/922ms，旧Web group已退出、新23534/23631 owned/ready；原false preflight保留且仅修正观察器空白解析，未重复bootstrap。checkpoint已先保存，config/profile/pointer/后台runner与已观察DB元数据保持；Lead已恢复main ec5。见[操作事实与边界](../../docs/evidence/svc05-history-compatibility/web-recovery/README.md)；本轮0operator provider/用户tab操作，无后续个人探针。05新后台/页面发布仍open。
+
+2026-10-06 18:57 UTC：唯一操作独审与main内容接收已归档；原raw/manifest/两产品blob不改。R01兼容准备位于独立权威树，未做个人新探针。
