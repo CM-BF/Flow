@@ -46,8 +46,9 @@ async function observeClosedConnections() {
     const remaining = deadline - performance.now();
     assert(remaining > 0, 'Database connections did not close within the observation bound.');
     try {
-      const result = await admin.query({ text: 'SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid', values: [database],
-        query_timeout: Math.min(500, Math.ceil(remaining)) });
+      const query = { text: 'SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid', values: [database],
+        query_timeout: Math.min(500, Math.ceil(remaining)) };
+      const result = await admin.query(query);
       facts.connections = result.rows;
       observations.push({ elapsedMs: Math.floor(performance.now() - started), connections: result.rows });
       if (result.rows.length === 0) return;

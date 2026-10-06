@@ -1,0 +1,6 @@
+packages/client/src/claude-message-settings-production.test.ts(50,9): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Object literal may only specify known properties, and 'query_timeout' does not exist in type 'QueryConfig<string[]>'.
+packages/client/src/claude-message-settings-production.test.ts(51,34): error TS2339: Property 'rows' does not exist on type 'Submittable'.
+packages/client/src/claude-message-settings-production.test.ts(52,99): error TS2339: Property 'rows' does not exist on type 'Submittable'.
+packages/client/src/claude-message-settings-production.test.ts(53,18): error TS2339: Property 'rows' does not exist on type 'Submittable'.
