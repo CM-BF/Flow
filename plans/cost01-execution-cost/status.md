@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:28 UTC / main df29fb511df029a0922ace0f4973f3fe3736e502 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:27:04 UTC / main8d8ab520a9d43c7b9dafb22911416ee799ebf665 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -20,7 +20,7 @@
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 当前产出 | 已明确成本解释与预算的统一目标，保留缺测和订阅账单区别。 |
-| 下一可用交付 | 在终端首片与执行工具接通后，先提供有来源说明的token与估价汇总。 |
+| 下一可用交付 | 在工程、终端与附件当前片段收口后，先提供有来源说明的token与估价汇总。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -38,3 +38,5 @@
 | COST001-07 | pending | 独立review / Execution Lead | 大task完整验收尚未完成 |
 
 唯一source已进入registry与实际114源看板（2026-10-06 09:20:38 UTC）；不抢当前实现槽、不将排队称阻塞。待执行工具和终端首片安全交付后细化来源归一纵向片，不新增provider探针验证字段。
+
+10:27管理安全点：COST001-02来源记录补稳定资料前缀候选与最多100输入/10秒/2MiB的0模型toy边界；未派工、未执行、未更改任何模板或冻结请求。
