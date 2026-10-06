@@ -1,3 +1,4 @@
+import { publishEngineeringProfile } from '../../../server/src/engineering/profile.js';
 import { randomUUID } from 'node:crypto';
 import { chmod, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -56,8 +57,9 @@ async function scenario(mode: 'success' | 'failed' | 'unknown') {
     await rm(join(value.directory, 'obsolete.txt')); await writeFile(join(value.directory, 'README.txt'), 'Synthetic engineering delivery\n'); await chmod(join(value.directory, 'run.sh'), 0o700);
     if (mode === 'unknown') throw new NativeExecutionError('unknown');
   } }]);
+  const profile = (await publishEngineeringProfile(pool, identity.runnerId, { protocol: 'flow.engineering-profile.v1', harness: 'fixture', adapterVersion: 'engineering-1', purpose: 'engineering-fixture', recipe: 'calculator-v1', project: { id: project.id, baseCommit: project.baseCommit }, checker: checker.selection, limits: { checkerTimeoutMs: 30_000 } })).profile.reference;
   const accepted = await owner.submit({ title: 'Synthetic engineering', prompt: 'Repair the controlled calculator', harness: 'fixture', engineering: {
-    protocol: 'flow.engineering.v1', targetRunnerId: identity.runnerId, projectId: project.id, baseCommit: project.baseCommit, checker: checker.selection } }, randomUUID());
+    protocol: 'flow.engineering.v1', targetRunnerId: identity.runnerId, projectId: project.id, baseCommit: project.baseCommit, checker: checker.selection, profile } }, randomUUID());
   await pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [accepted.task.id]);
   const notices: RunnerNotice[] = [], executions: { controller: AbortController; promise: Promise<void> }[] = [];
   const hostDirectory = join(directory, 'host');
@@ -157,14 +159,8 @@ it('preserves ordinary text verification but cannot accept engineering success w
   cleanup.push(async () => { controller.abort(); await promise; await rm(directory, { recursive: true }); });
   await eventually(async () => (await owner.show(plain.task.id)).status === 'succeeded');
   expect((await owner.show(plain.task.id)).verificationStatus).toBe('passed');
-  const misdirected = await owner.submit({ title: 'Deliberately misdirected engineering', prompt: 'No engineering configuration here', harness: 'fixture', engineering: {
-    protocol: 'flow.engineering.v1', targetRunnerId: identity.runnerId, projectId: 'not-registered', baseCommit: 'a'.repeat(40), checker: { id: 'not-registered', version: '1', baselineDigest: 'b'.repeat(64) } } }, randomUUID());
-  await pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [misdirected.task.id]);
-  await eventually(() => notices.some(notice => notice.type === 'admission-blocked'));
-  expect((await pool.query('SELECT runner_id FROM flow.attempts WHERE task_id=$1', [misdirected.task.id])).rows[0].runner_id).toBe(identity.runnerId);
-  expect((await owner.show(misdirected.task.id)).verificationStatus).toBe('pending');
-  expect((await pool.query("SELECT count(*)::int AS n FROM flow.details WHERE task_id=$1 AND kind='verification'", [misdirected.task.id])).rows[0].n).toBe(0);
-  await pool.query("UPDATE flow.attempts SET lease_expires_at=clock_timestamp()-interval '1 second' WHERE task_id=$1", [misdirected.task.id]); await expireLeases(pool);
-  expect((await owner.show(misdirected.task.id)).status).toBe('uncertain');
-  facts.samples.push({ scenario: 'misdirected-ordinary-fixture', actuallyClaimed: true, verificationStatus: 'pending', statusAfterLeaseExpiry: 'uncertain', capabilityAuthentication: false, legacyTextTask: 'succeeded/passed' });
+  await expect(owner.submit({ title: 'Deliberately misdirected engineering', prompt: 'No engineering configuration here', harness: 'fixture', engineering: {
+    protocol: 'flow.engineering.v1', targetRunnerId: identity.runnerId, projectId: 'not-registered', baseCommit: 'a'.repeat(40), checker: { id: 'not-registered', version: '1', baselineDigest: 'b'.repeat(64) } } }, randomUUID())).rejects.toMatchObject({ status: 409 });
+  expect(notices.some(notice => notice.type === 'admission-blocked')).toBe(false);
+  facts.samples.push({ scenario: 'misdirected-ordinary-fixture', accepted: false, actuallyClaimed: false, status: 409, legacyTextTask: 'succeeded/passed' });
 });
