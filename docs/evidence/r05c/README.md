@@ -24,7 +24,7 @@ Mika回执许可只读提升固定0d0524c3439363d1fe60aad63f62817ba51fa2a5的fin
 
 ## C1 已固定的普通任务纵向片段
 
-源码target：7127b5bfda3135670e1595dd4b6e90c4c9ea416c，13个literal文件见c1-fixed-manifest.json；源码冻结等待独审。已审C0与projection未修改。F01受控输入095bdb849a4ba688be7c2b55d90021b9d15e4b53原样cherry-pick为fa39510aca91e032af7925cd79e81d27873da03c，两个共享文件没有本owner新改动，见c1-shared-inputs.json。main253035e11ab18ba33095c018949f856442021d49包含C0/projection/client；C1尚未审/集成。
+源码target：7127b5bfda3135670e1595dd4b6e90c4c9ea416c，13个literal文件见c1-fixed-manifest.json；源码冻结，Execution Lead独立只读APPROVED。已审C0与projection未修改。F01受控输入095bdb849a4ba688be7c2b55d90021b9d15e4b53原样cherry-pick为fa39510aca91e032af7925cd79e81d27873da03c，两个共享文件没有本owner新改动，见c1-shared-inputs.json。main253035e11ab18ba33095c018949f856442021d49包含C0/projection/client；C1已审待集成。
 
 configureCodexHarness显式组合R06 transport factory、冻结的严格profile、现有descriptor/guard。没有默认executable、环境或个人配置入口。宿主仍独占claim、lease、journal、outbox和completed；adapter只映射一个普通turn、拒绝原生server requests、验证有界final evidence并调用原有verifier。旧Claude发布方法/编码行为通过直接消费者保持。抽象仅增加真实第二实现所需的泛型profile边界，无新SDK loop或第二运行状态权威。
 
@@ -45,4 +45,6 @@ access:none只是Flow请求意图。never/readOnly/networkAccess:false与收到�
 
 该片只ordinary final，stream/resume/steer/goal/context不受支持。允许忽略有界文本/reasoning delta，不提供产品流式能力。取消/超时关闭自有transport；没有依赖turn/interrupt ACK来宣称远端停止。本地child退出只是资源释放证据，终态未确认仍unknown且不发completed。已经确认原生failed/interrupted可settled失败；已确认正常终态但超出host输出上限也settled失败。所有投影/协议异常归一成固定NativeExecutionError，无raw/cause/actual/expected日志；unknown不发布session/final。真实provider、账户可用性、模型目录、effective工具隔离与预算另行验收。
 
-Clean-code复核：2026-10-06 09:51:14 UTC，C1的13源与固定共享输入边界。单一投影/单一R06接收者；wire只投影需要字段，policy有限deny，evidence只持有有界临时身份/帧，adapter负责组合与释放；修复无用test export，新增响应前拒绝与缓存界限证据。未增加框架/默认可执行项，未复制宿主状态机。无已知未解决owner finding；等待独立review。
+Clean-code复核：2026-10-06 09:51:14 UTC，C1的13源与固定共享输入边界。单一投影/单一R06接收者；wire只投影需要字段，policy有限deny，evidence只持有有界临时身份/帧，adapter负责组合与释放；修复无用test export，新增响应前拒绝与缓存界限证据。未增加框架/默认可执行项，未复制宿主状态机。无已知未解决owner finding；后续Execution Lead独立review获批，无P1/P2。
+
+C1独审回执：Execution Lead核13源/47个manifest条目/7既审输入与95不同检查、tsc0，未重跑且0provider；APPROVED target7127b5bfda3135670e1595dd4b6e90c4c9ea416c。批准边界与完整结论见唯一review.md；main receipt待接，保持claim和源码冻结。
