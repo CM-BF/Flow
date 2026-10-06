@@ -1,0 +1,85 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-native-events
+
+stdout | apps/server/src/assistant/assistant.test.ts > deduplicates an acknowledged final across center restart and terminal acknowledgement replay
+CHAT02 preClose
+
+stdout | apps/server/src/assistant/assistant.test.ts > deduplicates an acknowledged final across center restart and terminal acknowledgement replay
+CHAT02 outstanding HTTP []
+
+stdout | apps/server/src/assistant/assistant.test.ts > deduplicates an acknowledged final across center restart and terminal acknowledgement replay
+CHAT02 HTTP closed; entering earlier shutdown hooks
+
+stdout | apps/server/src/assistant/assistant.test.ts > recovers a durable final after runner and center restart with a lost response before-save
+CHAT02 preClose
+
+stdout | apps/server/src/assistant/assistant.test.ts > recovers a durable final after runner and center restart with a lost response before-save
+CHAT02 outstanding HTTP []
+
+stdout | apps/server/src/assistant/assistant.test.ts > recovers a durable final after runner and center restart with a lost response before-save
+CHAT02 HTTP closed; entering earlier shutdown hooks
+
+stdout | apps/server/src/assistant/assistant.test.ts > recovers a durable final after runner and center restart with a lost response after-save
+CHAT02 preClose
+
+stdout | apps/server/src/assistant/assistant.test.ts > recovers a durable final after runner and center restart with a lost response after-save
+CHAT02 outstanding HTTP []
+
+stdout | apps/server/src/assistant/assistant.test.ts > recovers a durable final after runner and center restart with a lost response after-save
+CHAT02 HTTP closed; entering earlier shutdown hooks
+
+stdout | apps/server/src/assistant/assistant.test.ts > refuses a new final after lease expiry even when its native session remains recorded
+CHAT02 preClose
+
+stdout | apps/server/src/assistant/assistant.test.ts > refuses a new final after lease expiry even when its native session remains recorded
+CHAT02 outstanding HTTP []
+
+stdout | apps/server/src/assistant/assistant.test.ts > refuses a new final after lease expiry even when its native session remains recorded
+CHAT02 HTTP closed; entering earlier shutdown hooks
+
+stdout | apps/server/src/assistant/assistant.test.ts > refuses a new final after lease expiry even when its native session remains recorded
+CHAT02 preClose
+
+stdout | apps/server/src/assistant/assistant.test.ts > refuses a new final after lease expiry even when its native session remains recorded
+CHAT02 outstanding HTTP []
+
+stdout | apps/server/src/assistant/assistant.test.ts > refuses a new final after lease expiry even when its native session remains recorded
+CHAT02 HTTP closed; entering earlier shutdown hooks
+
+stdout | apps/server/src/assistant/assistant.test.ts
+CHAT02 cleanup closing HTTP center
+
+stdout | apps/server/src/assistant/assistant.test.ts
+CHAT02 preClose
+
+stdout | apps/server/src/assistant/assistant.test.ts
+CHAT02 outstanding HTTP [ 'req-1o:/api/runner/claim' ]
+
+ ❯ apps/server/src/assistant/assistant.test.ts (10 tests) 37027ms
+   ✓ accepts a typed final through the ordered authenticated event interface  532ms
+   ✓ deduplicates an acknowledged final across center restart and terminal acknowledgement replay  575ms
+   ✓ requires a matching recorded session and rolls back an out-of-order batch atomically  577ms
+   ✓ rejects foreign credentials, wrong fence and caller-invented conversation ownership  1004ms
+   ✓ keeps a single immutable final per attempt and checks stable native identity  445ms
+   ✓ keeps large assistant bodies out of light pages and binds bounded cursors to their task  1046ms
+   ✓ recovers a durable final after runner and center restart with a lost response before-save  631ms
+   ✓ recovers a durable final after runner and center restart with a lost response after-save  639ms
+   ✓ refuses a new final after lease expiry even when its native session remains recorded  432ms
+   ✓ records a failed synthetic SDK run without persisting error text as an assistant reply  578ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/assistant/assistant.test.ts [ apps/server/src/assistant/assistant.test.ts ]
+Error: Hook timed out in 30000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ apps/server/src/assistant/assistant.test.ts:34:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 passed (10)
+   Start at  20:49:15
+   Duration  37.53s (transform 206ms, setup 0ms, import 397ms, tests 37.03s, environment 0ms)
+
