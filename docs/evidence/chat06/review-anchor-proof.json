@@ -1,0 +1,26 @@
+{
+  "target": "d9a162738c5c3b3531fc7f5da3a5c0ea1e846e67",
+  "head": "24d38078a8c2da02cc4d571cd824d0c597a05442",
+  "scopes": [
+    "packages/contracts/src/assistant-stream.ts",
+    "packages/contracts/src/runner.ts",
+    "packages/contracts/src/tasks.ts",
+    "apps/runner/src/assistant-stream",
+    "apps/runner/src/claude.ts",
+    "apps/server/src/assistant-stream",
+    "apps/server/src/events.ts",
+    "packages/storage/migrations/022-assistant-stream.sql"
+  ],
+  "observedAt": "2026-10-06T07:15:52.915Z",
+  "state": "unchanged",
+  "implementationChanges": [],
+  "outsideChanges": [],
+  "metadataChanges": [
+    "docs/evidence/chat06/main-receipt.json",
+    "plans/chat06-assistant-stream/review.md",
+    "plans/chat06-assistant-stream/status.md",
+    "docs/evidence/chat06/review-anchor-claim.json",
+    "docs/evidence/chat06/review-anchor.json"
+  ],
+  "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+}
