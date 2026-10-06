@@ -4,10 +4,10 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- **优先Claude逐消息设置**：[唯一core→consumer交接请求](claude-message-settings-handoff.md)。请协调status_read/mika的source-only独立WT/branch、sibling管理路径、R05兼容合同、F01 v40与RECOVERY01 v4、唯一migration号及最小精确scope；02四个execution-profile路径当前仅记录可移交，不先amend。
+- **优先Claude逐消息设置**：[唯一core→consumer交接请求](claude-message-settings-handoff.md)。status_read/mika已COMMITTED core四scope并实施；child canonical存在后请登记dashboard，后继R05/F01 v40/RECOVERY01 v4兼容接线和唯一SQL编号仍逐片协调。02四个execution-profile路径不先amend。
 - [F01 goal progression薄client正式APPROVED](goal-progression-client-review.md)：deef0e48，仅薄transport，供Lead受控接收；[plugin installation薄client正式APPROVED](plugin-installation-client-review.md)沿同一既有收据，不重复审。
 
-OpenSSL ca6a候选保持PENDING_RESOURCE/NOT_OPEN，不继续扩诊断，不阻Claude独立产品线。已完成诊断/跨task审查及历史路由保持原证据与Git ca6a7a15；本页仅保留最新可行动请求，进度仍由各owner唯一status维护。
+OpenSSL ca6a候选已只读[SOURCE_REVIEW/PENDING_VALIDATION](node-owned-openssl/source-review.json)，0执行，保持PENDING_RESOURCE/NOT_OPEN，不继续扩诊断，不阻Claude独立产品线。已完成诊断/跨task审查及历史路由保持原证据与Git ca6a7a15；本页仅保留最新可行动请求，进度仍由各owner唯一status维护。
 
 ## 首片可独立实现
 

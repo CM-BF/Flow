@@ -1,12 +1,12 @@
 # Claude逐消息设置：Lead最小交接请求
 
-2026-10-06 15:23:02 UTC；parent WPF-MATURE-02，co-lead mika。GO当前优先Claude产品线；本页是正式待输入，不是领取/实现批准或已交付能力。父进度只在[status](../../../plans/wpf-mature-02-harness-capabilities/status.md)。
+2026-10-06 15:25:25 UTC；parent WPF-MATURE-02，co-lead mika。GO当前优先Claude产品线；本页是正式待输入，不是领取/实现批准或已交付能力。父进度只在[status](../../../plans/wpf-mature-02-harness-capabilities/status.md)。
 
 ## 当前只请求最小core provision与登记
 
-Lead已provision source-only `/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core`，branch `codex/claude-message-settings-core`，base `70cc4e852365e974cefde30bfad75c7d233985c6`，clean；95 files/2422458 logicalB、0install/PG，见[正式receipt](/tmp/flow-claude-message-settings-provision.json)。拟owner status_read/gpt-6-astra、co-lead mika；已取得独立源码树，等待新owner fresh take四scope/实施，尚未声称claim成功。child canonical存在后再由Lead登记dashboard。
+Lead已provision source-only `/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core`，branch `codex/claude-message-settings-core`，base `70cc4e852365e974cefde30bfad75c7d233985c6`，clean；95 files/2422458 logicalB、0install/PG，见[正式receipt](/tmp/flow-claude-message-settings-provision.json)。owner status_read/gpt-6-astra、co-lead mika；已COMMITTED领取claim c652bc61-f8a9-4848-a709-978adbb425ed v1（2026-10-06 15:24:10.824Z），task WPF-MATURE-02-CORE，fresh ACTIVE，小源码实施中。child canonical存在后再由Lead登记dashboard。
 
-随后由新owner fresh账本、原子take以下四个精确scope，COMMITTED后可开始小源码：
+新owner已原子取得以下四个精确scope；仅这些范围可实施，后继扩大仍须amend：
 
 - `packages/contracts/src/claude-turn-settings.ts`
 - `packages/contracts/src/claude-turn-settings.test.ts`
@@ -21,7 +21,7 @@ Lead已provision source-only `/Users/citrine/Projects/AgentHarness/Flow-worktree
 
 | 父稳定TODO | 直接子任务与顺序 | 当前状态 |
 | --- | --- | --- |
-| WPF-MATURE-02-10 | 产品core：两文件有限契约leaf → 中心冻结snapshot → 既有Claude adapter/query传递；status_read/mika | 独立源码树已取得；等待fresh take/实施，child canonical存在后登记 |
+| WPF-MATURE-02-10 | 产品core：两文件有限契约leaf → 中心冻结snapshot → 既有Claude adapter/query传递；status_read/mika | 四scope已COMMITTED，小源码实施；child canonical存在后登记，检查资源pending |
 | WPF-MATURE-02-11 | 共享consumer：同中心合同client/interaction/Web/TUI下一草稿控件、intent与历史snapshot；owner/独立WT/精确scope后定 | 待core兼容接口，不在诊断树实现 |
 
 用户可为Claude下一条选择实际支持的model、thinking或effort、fast；requested/observed/unsupported分开。运行A、持久队列B、后来草稿C互不改写；历史可读可续，Web/TUI同合同。不等Codex全资格或Node诊断。

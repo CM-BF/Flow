@@ -1,8 +1,8 @@
 # WPF-MATURE-02 review
 
-当前优先Claude逐消息设置两层交接：产品core→共享consumer，独立WT/精确scope/兼容合同待Lead；尚未实现/领取，Review NOT_STARTED。OpenSSL ca6a保持PENDING_RESOURCE，不展开新诊断。
+当前优先Claude逐消息设置两层交接：产品core已COMMITTED四scope并实施→后续共享consumer，兼容接线待Lead；实现Review NOT_STARTED。OpenSSL ca6a保持PENDING_RESOURCE，不展开新诊断。
 
-当前owned-openssl小候选：GO准备授权，NOT_STARTED / PENDING_RESOURCE；无新检查/target，不继承旧APPROVED。[设计](../../docs/evidence/wpf-mature-02/node-owned-openssl/README.md)。
+当前owned-openssl ca6固定源码：architecture_read/gpt-6-astra15:24:36 UTC SOURCE_REVIEW/PENDING_VALIDATION，0P1/P2，四fake设计只读、0检查/target执行；PENDING_RESOURCE/NOT_OPEN，不是APPROVED/ready。[设计](../../docs/evidence/wpf-mature-02/node-owned-openssl/README.md)。
 
 当前failure-text结果a442819a已获architecture_read/gpt-6-astra15:03:58与Mika/gpt-6-astra15:04:39 UTC RESULT_FIDELITY_APPROVED，0P1/P2：1目标exit1、完整246B经独审后已按授权精确清理，CLI0仅观察/保留成功；本次文本明确OpenSSL配置fopen/Operation not permitted，errno和具体规则未知。窗口CONSUMED，[安全结果](../../docs/evidence/wpf-mature-02/node-failure-text/run-report.md)。
 

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:23:02 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:25:25 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -13,20 +13,20 @@
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / ca6a7a15f76d333f20caf0690ed85b76e29d2c54（源码checkpoint不变；本轮仅管理metadata） |
 | 工作树dirty状态 | 本轮仅父plan/status/review/canonical与Claude交接文档；ca6a源码、旧raw/profile/R06不变，提交后clean。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
 | 当前检查 | 仅管理文档一致性/链接核验，0工程测试/目标/PG/build；OpenSSL ca6a仍PENDING_RESOURCE。fresh Data1056984KiB低于1GiB+32MiB门槛。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
-| 实现目标 / 范围 | 当前优先Claude逐消息设置：产品core→共享consumer两层子任务，core独立source-only WT已取得/base70cc，等待新owner fresh take两契约文件+sibling管理scope/实施；后继分片扩大，本树只parent管理。 |
+| 实现目标 / 范围 | 当前优先Claude逐消息设置：产品core→共享consumer两层子任务，core独立source-only WT已取得/base70cc，core owner已COMMITTED领取两契约文件+sibling管理scope，当前小源码实施；后继分片扩大，本树只parent管理。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已明确Claude下一条消息设置的交付边界：用户选择模型、思考/effort和fast，历史与已发送/排队配置各自保留。已收窄为两个新契约文件的核心首片，再接中心/执行及共享界面。 |
+| 当前产出 | 已明确Claude下一条消息设置的交付边界：用户选择模型、思考/effort和fast，历史与已发送/排队配置各自保留。两个新契约文件的核心首片已正式领取实施，再接中心/执行及共享界面。 |
 | 下一可用交付 | 先交付Claude中心冻结配置与执行传递，再把同一能力接到Web/TUI；不等待Codex全资格或Node小对照完成。 |
-| 当前阻塞 | ACTIVE: Claude独立源码树已取得；当前等待core fresh领取/实施与后继共享兼容接线；涉及PG/构建的验证还需磁盘满足预留。小范围计划与源码准备可继续。 |
+| 当前阻塞 | ACTIVE: Claude独立源码树已取得；core已正式领取实施，后继共享兼容接线待协调；涉及PG/构建的验证还需磁盘满足预留。小范围计划与源码准备可继续。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | Claude子任务尚未领取/实现，NOT_STARTED；历史诊断审批不继承产品线。OpenSSL checkpoint未审且NOT_OPEN。 |
+| Review | Claude core实施中、实现review尚未开始；OpenSSL ca6已只读SOURCE_REVIEW/PENDING_VALIDATION（0P1/P2、0执行），不是APPROVED/ready/OPEN。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 计划在既有中心profile与事务边界加入逐消息配置snapshot，并由Web/TUI共享消费；当前仅设计交接、无产品结构变化。固定实现后由core owner与Lead同步架构基线。 |
 
@@ -41,7 +41,7 @@
 | WPF-MATURE-02-07 | in-progress | chatui01_owner | 纯语义固定target已独审通过，待集成；后继隔离片另审 |
 | WPF-MATURE-02-08 | pending | chatui01_owner | 完整目标未验收 |
 | WPF-MATURE-02-09 | pending | R05共享owner / d01 | 下一条配置可变与历史/当前/队列冻结分离；CAS/未知ACK/恢复/跨harness，04测量失效，见唯一interface |
-| WPF-MATURE-02-10 | pending | status_read（拟owner）/ mika | Claude产品core先两文件有限v1 leaf，再中心/adapter；source-only WT已取得，等待fresh take四scope/实施，未声称claim成功 |
+| WPF-MATURE-02-10 | in-progress | status_read / mika | WPF-MATURE-02-CORE已COMMITTED c652bc61 v1（15:24:10.824Z）领取四scope，小源码实施；真实检查资源pending，后接中心/adapter |
 | WPF-MATURE-02-11 | pending | Lead待分配 | 同合同client/interaction/Web/TUI consumer；待core固定接口与独立WT/精确scope，不在诊断树实现 |
 
 ## 接口与dashboard
@@ -85,3 +85,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收�
 15:20设计决策：draft只在客户端，不新建中心next-settings/settingsRevision；profile reference/configDigest与请求body完整组合的既有幂等digest复用。task沿submission JSONB，queue仅后继nullable snapshot，turn从task读；自动/手动promotion都沿已存组合。031已O15，SQL编号不猜。最小provision请求经canonical正式待输入，跨task App发送已被runtime拒绝。
 
 15:23协调更新：Lead已provision core95文件/2422458logicalB、base70cc4e852365e974cefde30bfad75c7d233985c6、clean/0install/PG；正式[receipt](/tmp/flow-claude-message-settings-provision.json)。跨Lead阻塞解除，child canonical出现后登记dashboard。首leaf Interface已固定，5组检查仍只是设计；当前不替新owner领取。
+
+15:25:25 fresh父v5与core c652bc61-f8a9-4848-a709-978adbb425ed v1均ACTIVE；core任务WPF-MATURE-02-CORE/status_read/mika，独立WT/branch70cc四scope已COMMITTED15:24:10.824Z。WT阻塞解除，child canonical存在后Lead登记dashboard；真实检查仍资源pending。[OpenSSL只读源码收据](../../docs/evidence/wpf-mature-02/node-owned-openssl/source-review.json)仅PENDING_VALIDATION，ca6六源不变、0执行。
