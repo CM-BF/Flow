@@ -2,8 +2,7 @@ import { z } from 'zod';
 import { idSchema, type TaskStatus, type Reference } from './tasks.js';
 import { ownershipSchema, type ClaimedTask } from './runner.js';
 
-export const protocolTaskSchema = z.strictObject({ endpointRef: z.string().regex(/^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,63}$/) });
-export type ProtocolTask = z.infer<typeof protocolTaskSchema>;
+export { protocolTaskSchema, type ProtocolTask } from './protocol-task.js';
 export const protocolCommandSchema = ownershipSchema.extend({ commandId: idSchema });
 export const protocolBindSchema = protocolCommandSchema.extend({ remoteTaskId: idSchema });
 export const protocolUncertainSchema = protocolCommandSchema.extend({ reason: z.enum(['send-result-unknown', 'recovered-inflight-send', 'remote-read-failed', 'unsupported-remote-result', 'local-storage-failed']) });
