@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:37:54 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:41:31 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,17 +11,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 4331c267bc5ef7c01328369ecaa57fc9434c7473（v2修复源；组合HEAD由Git核） |
-| 工作树dirty状态 | v2源码/raw固定且已独审；本次仅正式review/status收口，0新target。 |
+| 工作树dirty状态 | 固定v2唯一窗口已消费；当前仅安全结果/metadata归档，源码未改。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | 准备58 distinct分次通过；唯一运行2目标：EXPECTED/FAILED/NOT_RUN，0listener/compile/Codex/provider。cleanup确认；整体输出计量UNKNOWN，见结果限定。 |
+| 检查状态 | 当前cause准备33distinct；实际1目标SIGABRT但双流完整、受限分类与清理确认。原58/2目标及其计量UNKNOWN仍按旧结果保留。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
-| 实现目标 | cause source4331c267bc5ef7c01328369ecaa57fc9434c7473；原f6两P2已修复，33distinct分次证据，v2 a5984db6已独审APPROVED；go-node-loader-cause-once NOT_OPEN |
+| 实现目标 | cause source4331c267bc5ef7c01328369ecaa57fc9434c7473；原f6两P2已修复，33distinct分次证据，v2 a5984db6已独审APPROVED；go-node-loader-cause-once CONSUMED；1目标完整观察，SIGABRT启动失败 |
 | 实现范围 | 新node-rootliteral实验；diagnostics/run-diagnostics.mjs导出/计量私有helper；isolation/compose-canary.mjs固定场景/资源清理接缝；本计划与证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 受限观察准备包已通过独立审查；两项审查问题均关闭。 |
-| 下一可用交付 | 等待已授权单目标观察的执行门禁，实际窗口未开放。 |
+| 当前产出 | 单目标观察已完整捕获库加载错误；目标启动仍失败，资源清理已确认。 |
+| 下一可用交付 | 安全结果交独立忠实性审查；无剩余运行授权。 |
 | 当前阻塞 | ACTIVE: Node/Codex完整隔离、真实模型资格与全部writer停止仍未验证；C成功不能替代。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：status_read13:37:35 UTC APPROVED cause v2 a598；仅准备批准，旧结果限制不变。 |
@@ -56,8 +56,8 @@
 
 [固定结果](../../docs/evidence/wpf-mature-02/node-rootliteral/run-report.md)及[result-limits](../../docs/evidence/wpf-mature-02/node-rootliteral/result-limits.md)：失败槽正常stdout上界未确认，机器accounting=true不能替代整体UNKNOWN。旧e7 raw/manifest不追改；窗口已消费，无剩余授权。58 distinct准备检查与实际失败分开。
 
-## 新cause准备阶段
+## 新cause结果阶段
 
-[Interface](../../docs/evidence/wpf-mature-02/node-loader-cause/interface.md)沿TODO-03；GO方向授权，NOT_OPEN。原f6两P2的纯反例与修复保留：新8项通过，受影响旧消费者6项/预算3项通过，累计33distinct非同轮；native import0spawn/0listener。外部27依赖+Node=28；当前v2与旧f6 manifest/raw分开解释，旧Node5b归档不回填。
+[Interface](../../docs/evidence/wpf-mature-02/node-loader-cause/interface.md)沿TODO-03；窗口已消费，结果待独审。原f6两P2的纯反例与修复保留：新8项通过，受影响旧消费者6项/预算3项通过，累计33distinct非同轮；native import0spawn/0listener。外部27依赖+Node=28；当前v2与旧f6 manifest/raw分开解释，旧Node5b归档不回填；1目标完整观察不等启动或隔离成功。
 
 资源仅核本树12个明确路径均不存在、回收0B；不扫他树/个人文件，不启动大构建。双流观察计完整received chunk，capture cap不作总量证明；30s末次自动写入门禁之外，实际exit需外部完成回执。clean-code沿固定bdacd76检查命名、单一owner/错误传播/有限分类与资源清理，无扩大权限。
