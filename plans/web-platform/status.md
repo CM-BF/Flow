@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:49 UTC / 04:28:28 D06 dashboard与4320图实际核验main4e |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:55 UTC / PROFILE最终固定提交与作者04:53:18.107Z采样已核；main事实沿各owner既有观察 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `4a00f687c4f961384f9949795e08c35030d8aed3`（本次管理停点前实核） |
-| 工作树dirty状态 | 仅本管理范围的当前状态、队列研究和PROFILE派工文档pending |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `c9b998931f55a5c99a768ff0a721a2b4f16c5629`（本次管理停点前实核） |
+| 工作树dirty状态 | 本次仅管理范围内PROFILE交付、queue键盘研究与当前计划文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | X03I01已由Lead集入80e；QUEUE00 5acc已审交付；PROFILE新增02683目录模式适配中，旧a28批准不覆盖新schema |
-| 下一可用交付 | WPF-QUEUE00最小能力兼容reader先行，PROFILE01独立模块并行；PROFILE App串接排其后 |
+| 当前产出 | 插件入口已接入；聊天执行选项已验证，排队兼容已交付 |
+| 下一可用交付 | 把执行选项接到聊天界面，再开放排队操作 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -34,22 +34,22 @@
 | WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验；最新CHATv2/I01v3→X03I01v1有原始receipt |
 | WPF-001-09 | in-progress | d01_owner | CHAT7cb/083已审集成main；真实两query仅Lead执行、结果未收到；profile/queue/steer/voice完整需求仍开放 |
 | WPF-001-10 | completed | d01_owner | X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计 |
-| WPF-001-11 | in-progress | d01_owner | PROFILE01只含新模块/局部tests，fixed4e新树核clean后04:36:37.979Z take17093c4c v1，canonical ae47c8a已交root注册；实际App接入另受领 |
+| WPF-001-11 | completed | d01_owner | PROFILE独立模块4f198576获rootAPPROVED、finale730clean，管理范围/6md20links/4TODO通过；App接线仍另片 |
 | WPF-001-12 | completed | d01_owner | QUEUE00 5acc root限定APPROVED/final498 clean，scope/docs通过；已一次给root桥Lead ready+source，main集成另计 |
 
 ## 当前唯一owner、claim与下一步
 
-管理者只写本树两目录，04:41:15.660Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审。workspace_panels_owner已交X03I01并停止产品写，已记录main80e并release a104v2；当前QUEUE00固定5acc进入独审；w01_owner转PROFILE01模块，不并发改旧CHAT文件。本队最多4、主线4、Mika2总上限10；claim数不代表agent数。
+管理者只写本树两目录，04:55:17.068Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审。workspace_panels_owner已交X03I01并停止产品写，已记录main80e并release a104v2；QUEUE00固定5acc和PROFILE模块4f均已审，产品停止写入。workspace_panels_owner仅受派只读修订queue键盘接缝，w01_owner等待后续明确任务，不并发改旧CHAT文件。本队最多4、主线4、Mika2总上限10；claim数不代表agent数。
 
 | 当前工作 | 已核事实与边界 |
 | --- | --- |
 | WPF-X03I01 | web-plugin-management-integration / codex/web-plugin-management-integration，base4e，claim a1044bb0-46ed-4cc4-a39a-c3f27a67cea4 v2 released，04:46:47.517Z；原v1于04:28:04.867Z committed；7scope限App/react/CSS、2test与plan/evidence，不改Mika模块。实现84acdcaaa9687a4ca75ebdb40a6efc7e5539029a获rootAPPROVED，原final4b7e0f，集成metadata05b92d30c953413ab66d8b69447c9b44c9121a6a clean，main80e祖先/5实现paths相同，全部七scope已停写释放；作者04:37:33实采checks/review84、claim匹配/proof unchanged/main未含（采样HEAD692，后续仅metadata），管理未重复采样 |
-| WPF-PROFILE01 | w01_owner，仅execution-profiles四新文件/三test与plan/evidence九scope；树web-execution-profiles，fixed4e，claim17093c4c-a8fa-4e43-bc72-6bd54cab0795 v1已committed，候选b2后追加1未知access消费者test至a28c78cc3a1ac8557f7fd95afa074c4971128246，生产4文件0diff，作者14tests通过/root独审中；b2的5HTTPbrowser/typecheck/隔离生产编译复用边界明确，metadata8c6 scope/docs通过；旧conversation/App不转交，模块不等App消费完成 |
-| WPF-QUEUE00 | workspace_panels_owner / web-queue-compatibility / codex/web-queue-compatibility，fixed75a33dec228e17bbbd0d3be9fd01bc9ac18a0133，claim13185d8f-fcc4-453b-9ff1-4e4ca38f0666 v1；旧CHAT04:43:26.665Z v2→v3移出两文件，其余12scope不变，新take04:43:35.187Z；首canonical f8928c72b3a96e4ad858cb8b46dfd07feac0c3d0已实核并交root注册，固定实现5acc5b1bde23e9c587a4580da55a75340811ecdd / metadataafd308f352a0c62db8eefb24795ad1befcef10f5 clean，作者35tests/typecheck，root独审中；04:47作者单次实采尚未注册，等Lead通知后再核 |
+| WPF-PROFILE01 | w01_owner / web-execution-profiles / codex/web-execution-profiles，base4e，claim17093c4c-a8fa-4e43-bc72-6bd54cab0795 v1 active；实现4f1985769564eafad9218570411d5ce1114b4ec0 rootAPPROVED，最终e7303b9aa4d666d6d694a1a60659db71431e43dc clean。20变更路径全在9scope、7实现对target零差；6md20links4TODO通过。目录goal-tools/unknown可见禁选且合法邻项保留，0模型，尚未App接线/main集成 |
+| WPF-QUEUE00 | workspace_panels_owner / web-queue-compatibility / codex/web-queue-compatibility，fixed75a33dec228e17bbbd0d3be9fd01bc9ac18a0133，claim13185d8f-fcc4-453b-9ff1-4e4ca38f0666 v1 active。旧CHATv2→v3仅移出projection/直接test，新take04:43:35.187Z。实现5acc5b1bde23e9c587a4580da55a75340811ecdd获root限定APPROVED、final498b2cdc46eee484d8dd148715821ee800669965 clean；04:47作者单次实采尚未注册，root04:53:48实际54源中已核注册/claim/approved；已通知owner一次自身采样，main集成仍待Lead |
 | 已交付CHAT | 7cb / 集成metadata083978b318ede4bb1cabb5050f8d211b17bb9055 clean；owner04:21实际dashboard main ancestor/scopeEqual，14实现paths相同。claim08259c1d v3已转App/react给X03与projection/直接test给QUEUE00，当前其余12scope保留。真实两query不冒称通过 |
 | 已交付D06 | ef42277ff55d1cbb76ea707836481a9788619033 / final6ea2e68a3362df3cb50ef4a063fc4cbfc3026966 clean；固定8f图已集成4e，04:28:28.679Z实际47源/图已部署。claimf619 v2 released于04:29:52.844Z，旧树全部停写；后继标题快照提示需新take |
 | 已交付PERF02 | a87 / b61707d20ee9803e7397f21961549deb65ceef1d clean，main已含；claimd36 v2 released于04:12:26.441Z，后续修复新take |
-| 跨Lead | Mika负责CHAT04持久队列和X03模块；ExecutionLead负责公共API/集成/4320。queue v2 pause/continue待固定技术合同；不另设Web queue writer |
+| 跨Lead | Mika负责CHAT04持久队列/暂停/继续，ExecutionLead负责公共API/集成/4320；域ae9已由其root独审，client83f7/metadata400ae仍待Lead固定批准与消费base。无完整queue UI writer；PROFILE实际App消费排其前，共享路径串行新take |
 
 ## 当前发布门槛（局部依赖，不是整个goal受阻）
 
@@ -65,7 +65,7 @@ CHAT04后台queue=true与现Web强制false不兼容，管理已在clean CHAT083�
 
 ## Dashboard与服务
 
-04:07:57实际42源/21activewriterclaims literal0overlap、领取详情字段都可见；04:28:28 D06实际47源/唯一source/人读字段/checks+review ef/proof unchanged/main相同。两次是固定时点，不称永久无冲突。Lead已通知main292ad4d/4320于04:32:26.186Z共49源，X03I01/O03 live且issues空；该事实明确为Lead采样，X03作者下一固定交付时实读，我不重复同采样。PROFILE已登记51源；作者04:44:34.265Z实采HEADbc3e、human/issues空、checks b2/reviewNOT_STARTED/proof unchanged/17093v1匹配/main未含，随后仅metadata8c6。管理未重复采样。
+04:07:57实际42源/21activewriterclaims literal0overlap、领取详情字段都可见；04:28:28 D06实际47源/唯一source/人读字段/checks+review ef/proof unchanged/main相同。两次是固定时点，不称永久无冲突。Lead已通知main292ad4d/4320于04:32:26.186Z共49源，X03I01/O03 live且issues空；该事实明确为Lead采样，X03作者下一固定交付时实读，我不重复同采样。PROFILE已登记51源；作者04:53:18.107Z单次最终采样HEADa213 clean、checks/review均4f通过、双proof unchanged、human完整/issues空、17093v1匹配/main未含。管理读取原始dashboard-final.json核字段，再核最终e730 clean/实现零差，不冒充e730时点重新采样；旧04:44快照只留历史。root04:53:48实见54源中QUEUE00已注册/approved/claim可见，通知owner一次记录；不反复轮询，main集成尚未确认。
 
 [用户M02预览](http://127.0.0.1:49922/) session17885、[I01](http://127.0.0.1:55049/) session79831、[CHAT](http://127.0.0.1:63743/) session14932均由workspace_panels_owner保留；[D06固定8f图](http://127.0.0.1:55247/#architecture) PID42719保留。4320服务仍主线独占；本管理者不重启、不替换用户预览。
 
@@ -73,7 +73,7 @@ SVC01首连现状（GoalOwner经root，04:39）：真实Web61228/center61227服�
 
 ## 本次质量停点
 
-04:34按本地find-skills/clean-code复核事实所有权、当前与历史、receipt和错误边界；直接更正主plan/status旧“CHAT实施中/待main”、旧claim版本及D06仍排队，保留后段带时间历史。新增队列研究记录来源与暂停语义演进，不把候选当已实现。仅文档一致性验证，不跑产品/性能/模型；c075旧审批不扩到本轮。
+04:55按既有本地find-skills/clean-code方法复核事实所有权、当前/历史target、领取与错误边界。修正当前表中过期的PROFILE a28候选、QUEUE00仍待独审和旧下一步；保留带时间历史。独立核PROFILE最终范围、引用、TODO及review解析证据，补queue内置Enter在running无adapter时阻止发送的实际库约束，要求方案修订而不越scope实现。仅文档/只读scope验证，无重复产品/性能/模型检查；c075旧审批不扩到本轮。
 
 ## 历史停点记录（以日期为准，不覆盖上方当前状态）
 

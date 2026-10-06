@@ -150,7 +150,7 @@ type WorkspacePanelsProps = {
 | 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadatacc334；未做生产优化，probe已受控转PERF02 |
 | 已集成首批 / 后继开放 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 7cb限定APPROVED，083978b记录dd1/main已含；queue/steer/语音及完整模型控制仍开放，真实两query仅Lead执行、结果未收到 |
 | 已集成/释放 | WPF-X03I01 | 84acdc / metadata05b92 clean，main80e已核，a104v2 released于04:46:47.517Z，59473保留 |
-| 当前独立模块 | WPF-PROFILE01 | 已发布整份profile选择与纯pin helper，无旧UI文件；fixed4e/17093c4c v1已受领，不把模块当App接通 |
+| 已审独立模块 | WPF-PROFILE01 | 4f198576限定APPROVED、最终e7303b9 clean；混合目录和显式chat allowlist，fixed4e/17093v1；App接线另受领 |
 | 已集成 | WPF-PERF02 | 固定a87f64f及报告获独立APPROVED，metadata b617实证main8f包含/范围相同；claimv2已released，不继续占用已完成八scope |
 
 ## TODO
@@ -165,7 +165,7 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-08** 收取两owner精确literal范围并交主线单点登记，验证D04领取/转交/冲突展示，避免多lead重复派工。
 - [ ] **WPF-001-09** 优先推进U11真实持续对话：冻结center能力/会话/queue-steer接缝，分阶段独立派工并真实验收。
 - [x] **WPF-001-10** WPF-X03I01：消费Mika已审X03模块，在真实App设置挂载只读插件管理；84acdc整体限定APPROVED/final4b7e0f，独立scope/docs通过，交Lead集成仍另计。
-- [ ] **WPF-001-11** WPF-PROFILE01：独立新模块实现整份已发布执行配置选择、冻结creation与pin校验；局部测试/fixture后独审，真实App接线另受领，不能把模块完成当U11完成。
+- [x] **WPF-001-11** WPF-PROFILE01：独立选择模块4f198576限定APPROVED/finale730，混合目录/显式聊天allowlist/冻结creation与pin校验完成；真实App接线另受领，U11完整目标继续开放。
 - [x] **WPF-001-12** WPF-QUEUE00：最小boolean reader已5acc限定APPROVED/final498，false旧行为保持且不伪启完整队列；source字段已交root一次桥接ready与注册，Lead成套集成另计。
 
 ## 验收、风险与持续方式
@@ -256,3 +256,7 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 04:47 X03旧owner提交05b92d30c953413ab66d8b69447c9b44c9121a6a记录main80e集成，正式a104 v2 released，七scope全停写；原receipt与后继研究保留。QUEUE00固定5acc/metadataafd已交root独审，最小读取兼容不等完整queue命令UI，注册待Lead通知。PROFILE候选a28仅补测试、4生产文件不变，等待整体结论。
 
 04:49 PROFILE新正式02683合同引入goal-tools，按GoalOwner新要求在原九scope做DirectoryProfile只读目录与聊天Selection分离：goal-tools/unknown条目可见禁选，不阻同页合法项，显式聊天allowlist与非mode严格校验；旧a28批准不扩到新schema。QUEUE00 5acc已独审、final498只读scope/docs通过，优先交Lead，不等PROFILE。后继PROFILE App接线在完整queue UI之前，旧projection/Thread必须新claim串行转交；public client83f7/400ae完整输入仍待独审和准确base，不并入QUEUE00。
+
+04:55 PROFILE最终模块4f1985769564eafad9218570411d5ce1114b4ec0/rootAPPROVED、metadatae7303b9aa4d666d6d694a1a60659db71431e43dc clean；管理20path/9scope、7实现零差、6md20links4TODO通过，读取作者04:53实际review.state=approved/target4f/双proof unchanged/claim匹配。QUEUE00 ready已root一次桥Lead，不重复通知；后继PROFILEI01→完整queue UI串行受领。queue只读设计发现running且无adapter时内置Enter直接return，单改sendLabel/onNew不能保证一致，需先核最小官方Thread受控输入接缝和精确scope，不能伪造isRunning或adapter。
+
+04:56 GoalOwner现场看板反馈：人类摘要必须直接说实际能力/下一交付，不堆任务编号、SHA、schema或测试缩写。已将本status改为“插件入口已接入；聊天执行选项已验证，排队兼容已交付”/“把执行选项接到聊天界面，再开放排队操作”；技术target/claim/测试保留独立技术字段与下钻。已通知未释放的两owner按同法纯metadata更新；不重新写X03/D06已released记录，不跑工程测试。本约束属于现有用户可读看板要求的具体反馈，不新建重复需求。

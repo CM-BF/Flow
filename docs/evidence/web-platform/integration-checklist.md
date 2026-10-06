@@ -18,7 +18,7 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | D06 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh | codex/dashboard-architecture-refresh | plans/d06-architecture-refresh | docs/evidence/d06 |
 | WPF-X03I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration | codex/web-plugin-management-integration | plans/wpf-x03-plugin-integration | docs/evidence/wpf-x03 |
 | WPF-PROFILE01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles | codex/web-execution-profiles | plans/wpf-profile01-execution-profiles | docs/evidence/wpf-profile01 |
-| WPF-QUEUE00（待注册） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-queue-compatibility | codex/web-queue-compatibility | plans/wpf-queue00-compatibility | docs/evidence/wpf-queue00 |
+| WPF-QUEUE00 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-queue-compatibility | codex/web-queue-compatibility | plans/wpf-queue00-compatibility | docs/evidence/wpf-queue00 |
 
 WPF-D01仅协作，无第二dashboard实现；七源均已实际聚合，未知/未验证项仍来自各owner。新增两项证据见[实采与19claim范围审计](chat-perf-source-verification.json)。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
 
@@ -256,3 +256,11 @@ QUEUE00首canonical f8928c72b3a96e4ad858cb8b46dfd07feac0c3d0已管理者实核�
 
 
 X03释放闭环：owner核origin/main80e、4b7e祖先、84五实现paths零diff后提交05b92d30c953413ab66d8b69447c9b44c9121a6a clean；全部七scope停写，04:46:47.517Z [a104 v2 released](x03-release-receipt.json)。59473保留，此后旧canonical不追写，后继App写权另take。QUEUE00 afd308f clean/5acc实现不变、6md17links4TODO/docs范围通过；作者04:47一次采样缺卡，等待registry而非反复轮询。PROFILE a28只加未知access test/生产文件0diff，root复核14后给结论，管理不重复产品tests。
+
+## 04:55 新ready与后继顺序
+
+PROFILE01已完成02683后继目录兼容，impl4f1985769564eafad9218570411d5ce1114b4ec0/rootAPPROVED，finale7303b9aa4d666d6d694a1a60659db71431e43dc clean，claim17093v1 active；canonical与registry已存在。管理scope/docs核验通过，作者04:53:18.107Z实际review approved+target4f/proof unchanged/claim匹配/main未含。预览[64954](http://127.0.0.1:64954)，独立HTTPfixture0模型；App仍未接。完整ready已给root一次桥Lead，等准确含模块及QUEUE00输入的base后新take PROFILEI01，随后才完整queueUI，不并行写projection/Thread。
+
+QUEUE00 final498/impl5acc已有独审，root04:49桥接ready/source一次，等待Leadregistry/main正式回报，收到后唯一owner单次采样、自己的mainmetadata及停写release；不把claim可见当任务卡注册。X03 release原样[x03-release-receipt](x03-release-receipt.json)已保存，05b92d30c953413ab66d8b69447c9b44c9121a6a记录main80e，a104v2 released、59473保持，旧scope不追写。
+
+root04:53:48实际4320已54源，QUEUE00唯一source/claim/approved可见，主线尚未集成；已触发唯一owner按约定只采一次自己的记录。此为root直接观察来源，管理不重复同一API采样。PROFILE ready也已root一次桥Lead，等确切消费base，不重复通知。

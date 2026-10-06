@@ -82,3 +82,13 @@ MainLead公共client实现83f7da6c6e366e3520c8373c7d21408dad5fb145、F01 metadat
 root再核ae9 DTO/83f7 client要求：等待页按queueRevision一致合并，但sameRevision GET仍更新currentTurn.taskStatus/blocked/paused；enqueue/cancel/pause/resume各自冻结body/key，未知结果原key核对，旧ACK只确认历史不盖新GET；already-promoted展示真实turn目标而非撤回运行；pause与task cancel分别报告，pause replay后最新GET若他端resume/promote不能按历史currentTurn取消。现ConversationOutbox只处理follow-up，不得无辨别复用于所有queue操作。
 
 root已读本地AI Elements queue参考及[官方Queue](https://elements.ai-sdk.dev/components/queue)：它是Collapsible/ScrollArea/ItemAction可组合展示，可接中心waiting、不提供持久执行。官方[external-store runtime](https://www.assistant-ui.com/docs/api-reference/external-store/runtime)与queue-item仍要求steer/move/edit/remove且默认有打断；不能为列表可见伪接缺失命令。保持官方Thread，后继queue控制由public client事实驱动。项目已有radix-ui/Collapsible、没有Queue副本或ScrollArea封装；未来只取实际使用展示片段并固定上游来源，不全量CLI安装或擅改根依赖。本项已交owner只读设计，未take或实现。
+
+## 04:55 后继UI只读设计与键盘接缝待冻结
+
+workspace_panels_owner固定读ae9domain/83f7client提出QueueProjection sidecar，与ConversationProjection共享connection/conversation lifetime，专管waiting分页/blocked/paused/currentTurn；独立QueueCommandOutbox分别冻enqueue/cancel-waiting/pause/resume/task-cancel，不改旧follow-up outbox。App现有client/View足够，visible最多两pane轮询，hidden停止读但不取消已发命令。pause历史ACK后fresh GET确认paused及当前task，再独立明确选择取消该task，失败/false/terminal/变化不自动cancel；两种receipt分别展示。这是设计建议，未领取实现，publicclient批准与准确base仍等Lead。
+
+候选12scope为既有projection.ts、conversation-projection.test.ts、ConversationThread.tsx，新增conversations/queue/{commands.ts,projection.ts,ConversationQueue.tsx,queue-elements.tsx}、test/conversation-queue.{test.ts,fixture.ts,browser.ts}、plans/wpf-queue01-ui、docs/evidence/wpf-queue01。PROFILEI01先消费，之后重新核实际claim版本再转交，不能依赖旧owner版本。AI Elements只取实际展示片段并固定source/hash；不新增根依赖。
+
+root实际读@assistant-ui/react0.15.23 ComposerInput.tsx:254确认：isRunning=true且没有queue adapter，内置Enter直接return；core0.3.22 composer.canSend自身不查running。故候选单改sendLabel/onNew会产生按钮可入队但Enter不发送。已followup原worker做有界只读修订，可能需要官方thread.aui.tsx可选受控input handler/slot及新literal claim；未冻结12scope不变的假设。必须保留IME/Shift+Enter/defaultPrevented、unsupported steer明确反馈，禁止isRunning伪false、伪queue adapter或document级监听。不把设计阶段接缝问题称已实现产品bug，需先实证最小路线再受领。
+
+只读修订已核：原12候选scope须增加官方`apps/web/src/components/assistant-ui/elements/thread.aui.tsx`，合计13，当前CHAT082v3拥有该路径。最小可选`composerInputOnKeyDown`经Thread内部context只传主ComposerPrimitive.Input；未传时旧调用者不变。已有Radix composeEventHandlers先执行外部handler，defaultPrevented挡后续库逻辑。先尊重defaultPrevented/IME/isComposing与229；ShiftEnter换行；steer快捷键明确拒绝且不清稿；仅显式Queue+captrue+running的普通Enter局部preventDefault并textarea.form.requestSubmit，和按钮同ComposerRoot/onNew最新门禁。保持真实isRunning/无假adapter、不手动清textarea或全局监听。未来要实际测按钮与Enter单发、IME/换行/热键、不同pane和unknown门禁；当前只有读码方案，没有产品验证。
