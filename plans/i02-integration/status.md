@@ -2,14 +2,14 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:29 UTC / input mainec50957f |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:34 UTC / input main61744371 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | mainec50957f；COST已审领域/薄client/生产接线十个源逐hash一致 |
+| 工作基线 / HEAD | main61744371；CLI三源及两client输入与独审target逐hash一致 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
 | 检查状态 | 生产公共读口1/1 PG/HTTP、strict0已有原证据，集成十源零diff；无新provider/重复领域测量 |
@@ -18,7 +18,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 同一任务的输入、缓存、输出和估价已接通共用读口，并保留来源与未知覆盖。 |
+| 当前产出 | 同一任务的输入、缓存、输出和估价已接通共用读口及终端命令，保留来源与未知覆盖。 |
 | 下一可用交付 | 已授权目标节点持续推进，以及各端直接查看用量说明。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -167,3 +167,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T14:05:33.650596+00:00：[连续目标与有界等待组合](../../docs/evidence/i02/o13-s01p06-integration.json)保留13个O13/共享client源及5个S01P06源与固定审查一致；仅运行实际当前factory/runtime旅程1项与类型检查。未把显式owner逐步调用称中心自动推进。
 
 2026-10-06 14:29 UTC：COST01A 27d4、thin fb0、生产7150分别独审APPROVED；受控组合十源固定hash相同，[集成绑定](../../docs/evidence/i02/cost01a-source-comparison.json)。实际公共工厂1/1/类型0已有有效直接证据，未重复原领域14项。OPS三树稀疏事实和D04更正保留、O14仅source登记；不含其未审实现。个人服务与旧Web发布指针不变。
+
+2026-10-06 14:34 UTC：受控接收已审CLI0550及COST01A主线收口dbb73916；五个直接源码/输入零差，无额外工程重测。见[固定比较](../../docs/evidence/i02/usage-cli-source-comparison.json)。个人runtime362/v15、Web8d8/v2不变。

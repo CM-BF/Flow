@@ -1,0 +1,43 @@
+{
+  "observedAt": "2026-10-06T14:34:07.735732+00:00",
+  "sources": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "target": "0550b3e7318133fb0d023fd8cc4372d8b7663e78",
+      "bytes": 21135,
+      "sha256": "15dfc443cf60dafd1a4bcef7ef8d86eb87333a112a68b45385f77f957841ea21",
+      "matches": true
+    },
+    {
+      "path": "apps/cli/src/usage-readout.test.ts",
+      "target": "0550b3e7318133fb0d023fd8cc4372d8b7663e78",
+      "bytes": 2443,
+      "sha256": "40fc06117a7ac8cf36d3caa6e887dcecea4eae015f9dd9d189d9f1b535584aa9",
+      "matches": true
+    },
+    {
+      "path": "apps/cli/README.md",
+      "target": "0550b3e7318133fb0d023fd8cc4372d8b7663e78",
+      "bytes": 4684,
+      "sha256": "08c27dda14e3a3dffb939bcb9732c1ea3111831b5935a0b5852cb10f4c9859e3",
+      "matches": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "target": "fb0e992e8b308a987bcea273e29e883b9cf13caf",
+      "bytes": 48519,
+      "sha256": "7f8fbbb5fbc4e9a1eedcf26644b0d45a20650c00c61eb6cd00c33cba4b701163",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "target": "fb0e992e8b308a987bcea273e29e883b9cf13caf",
+      "bytes": 1342,
+      "sha256": "814f69e47f57ccfa8dafb1460d32137a9e00b309367824ec2ee053fc946e0323",
+      "matches": true
+    }
+  ],
+  "checks": "Direct HTTP1/1 and types0 at reviewed fixed source reused; no product change at integration, no rerun.",
+  "domainCloseout": "dbb73916d5ccd5e0cc37f4e3fb8125f11f02eeb8",
+  "personalRuntimeChanged": false
+}
