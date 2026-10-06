@@ -9,8 +9,8 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；已推249894321f22763ec4801af8bd9c2ef0e0e3c36b；本段仅未来验证脚本及记录修改 |
-| 工作树dirty状态 | 未来浏览器harness与本任务证据修改；正式恢复源码/22case保持2498固定 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段harness源码固定724424237962ed8563db08f5ea8597ee6e7eb11d；16生产+直接test仍2498；当前metadata HEAD以Git为准 |
+| 工作树dirty状态 | 两harness已固定；当前仅本任务metadata收口，完成提交后核Git clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
@@ -75,3 +75,5 @@ Root只读[2498预检](../../docs/evidence/wpf-conversation-recovery/2498-browse
 ## 15:17 UTC source-only harness安全点
 
 RB1–3已源码修正：父监督持有两进程组和DB lease，硬截止/清理未确认阻止重跑；未知CREATE不凭随机名删除，非空remaining必报错；cache独立scratch/native配置加载、递归计量与live监测写入未来入口。RB4新增实际UI文件引用+丢ACK原body以及无reload的IDB写入abort/auth-loss旅程，但全部NOT_RUN。[覆盖矩阵与运行门禁](../../docs/evidence/wpf-conversation-recovery/browser-harness.md)。本段0types/测试/产品import/HTTP/PG/Chrome，types余7.186s、direct余27.460s；17其他源码及22case对2498零改。待新fixed后，旧2498 direct预检manifest须重绑，不可直接运行。
+
+固定harness提交：`724424237962ed8563db08f5ea8597ee6e7eb11d`；完整feature implementation target仍UNKNOWN，等待必要实际行为和终审。本段只静态diffcheck0，未运行新类型/22case/浏览器；源清单见[harness checkpoint](../../docs/evidence/wpf-conversation-recovery/harness-source-checkpoint.json)。
