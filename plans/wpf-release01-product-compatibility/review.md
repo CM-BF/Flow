@@ -21,3 +21,7 @@ Base：8d8ab520a9d43c7b9dafb22911416ee799ebf665
 发布条件：严格固定new format2 releaseId `8d8ab520a9d43c7b9dafb22911416ee7` 和已测完整descriptor/manifest相同；不能仅相同source SHA复用。源码后续改变须重新定target。此次metadata提交不改变获审两源码。
 
 入口：[plan](plan.md)、[status](status.md)、[quality](../../docs/evidence/wpf-release01/quality.md)。
+
+## 主线接收
+
+2026-10-06 10:56:51 UTC，owner只读核固定main `c450c2da7e6185b88db9f46e0299ee504ee6f3e8` 已接收两源码，target/main/current逐字相同；[记录](../../docs/evidence/wpf-release01/main-source-observation.json)。原实现及批准metadata SHA并非该main祖先，不把源码接收冒称原commit合并。原APPROVED目标不变。未重跑产品检查，也不表示个人入口已发布。

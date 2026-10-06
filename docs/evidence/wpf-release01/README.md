@@ -56,3 +56,7 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/web-release
 首四轮失败及原始日志在 [first-run](first-run/cleanup.json)、[second-run](second-run/browser-results.json)、[third-run](third-run/cleanup.json)、[fourth-run](fourth-run/cleanup.json)：依次为断言漏掉真实 202、legacy 重载侧栏 locator 时机、33 位 releaseId 被工具拒绝、修正时误伤固定 SHA 被预检拒绝。全部保留，未当产品失败或成功依据。第五轮 [结果](fifth-run/browser-results.json)已 PASS，最后仅修代理超预算异常退出与 unused import，再以本固定 target 完整重跑生成根目录最终证据。旧 v1 新页诊断不为最终 format2 背书。
 
 尚未验证：真实 provider/模型、个人运行入口/数据、浏览器重启后 unknown 收据持久恢复、所有插件/知识/附件/队列/steering 组合、全接口或未来 Web/中心版本、Safari/Firefox/屏读。本验证固定旧中心，未以 moving main 替换。完整检查日志见 [final-run](final-run.log)、[typecheck](typecheck.log)、[HTTP旧](old-http.json)/[HTTP新](new-http.json)、[cleanup](cleanup.json)。原始数据未清洗。
+
+## 主线交付
+
+固定main `c450c2da7e6185b88db9f46e0299ee504ee6f3e8` 已接收本片；owner于2026-10-06 10:56:51 UTC核两源码逐字相同，见[主线观察](main-source-observation.json)与[Lead原始回执](main-lead-receipt.json)。原分支target/metadata非该main祖先，交付依据为Lead固定源码和报告接收。此片已交付并停写，实际个人发布另由Lead执行，完整descriptor门禁仍有效。
