@@ -34,4 +34,5 @@ export interface PackageFetchAudit {
   reason: string | null; error: string | null; createdAt: string;
 }
 export interface PackageFetchHistory { events: PackageFetchAudit[]; nextCursor: string | null }
-export interface PackageFetchList { operations: PackageFetchOperation[]; nextCursor: string | null }
+export type PackageFetchSummary = Omit<PackageFetchOperation, 'attempts' | 'artifact'>;
+export interface PackageFetchList { operations: PackageFetchSummary[]; nextCursor: string | null }
