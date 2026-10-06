@@ -10,15 +10,15 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 3c53ca5a6de10850dd3ea8df9e6a864408236bdd（旧窗口封存；本片源码待固定） |
-| 工作树dirty状态 | 新failure-text私有保存/薄入口/用例和cause单分支；当前定向验证已完成，封包中。旧profile/R06/已封存raw未改。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 65c69e0124e419030182eb615f0bcdb6cf4b9485（failure-text源码；旧3c53封存） |
+| 工作树dirty状态 | 新failure-text私有保存/薄入口/用例和cause单分支；源码固定65c69e01，组合准备交独审。旧profile/R06/已封存raw未改。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
 | 当前检查 | 19 distinct分轮（原17+新保留失败2）；末轮定向8/8含6重叠，真实red与中途7/8均保留；原生0factory/0listener、syntax0；0实际目标/监听/PG/provider，待固定独审。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
-| 实现目标 / 范围 | 新node-failure-text固定recipe及host私有副本；cause最小分支、薄entry/outer与定向纯检查，生产R06只读；source/组合待固定独审，实际NOT_OPEN |
+| 实现目标 / 范围 | 新node-failure-text固定recipe及host私有副本；cause最小分支、薄entry/outer与定向纯检查，生产R06只读；source65c69e01/组合待独审，实际NOT_OPEN |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 已准备保留有界私有错误文本的单目标对照，以定位仍未知的启动失败；当前未实际运行。 |
