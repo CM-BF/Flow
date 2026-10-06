@@ -1,0 +1,39 @@
+{
+  "target": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+  "verdict": "APPROVED",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "independent": {
+    "reviewer": "chatui01_owner",
+    "model": "gpt-6-astra",
+    "at": "2026-10-06T13:50:35Z"
+  },
+  "rootAccepted": {
+    "reviewer": "Mika",
+    "model": "gpt-6-astra",
+    "at": "2026-10-06T13:51:12Z"
+  },
+  "recordedAt": "2026-10-06T13:52:17.129715+00:00",
+  "manifest": {
+    "path": "center-manifest.json",
+    "sha256": "cfd29ad0abf3c8bc229d9de9bfb040309e032f6e4319a86e9e9dda482bcbcaf8",
+    "bindings": 100
+  },
+  "evidence": "14 distinct = 11 real dedicated PG/HTTP + 3 DTO; strict local noEmit 0; six DB receipts connections 0 then DROP/absent and six owned roots observed absent; 49 fixture tar children closed 0. Historical cleanup receipts without adminClosed are not expanded into that later explicit field.",
+  "reviewExecution": {
+    "tests": 0,
+    "PG": 0,
+    "children": 0,
+    "projectWrites": 0
+  },
+  "scope": "center static material module + official029 only",
+  "excluded": [
+    "default server mount",
+    "public client/CLI",
+    "enabled/loaded/callable",
+    "task binding and real runner journey",
+    "cross-process settlement proof"
+  ]
+}

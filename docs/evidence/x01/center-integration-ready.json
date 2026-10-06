@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "implementationCommit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+  "metadataInput": "4ce745884b92beb1b20571b2434eb904c26bfcc6",
+  "base": "cb20a75dddc0bddc724b88d66437444b397391f9",
+  "owner": "architecture_read",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+  "branch": "codex/plugin-management-plan",
+  "claim": {
+    "id": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 4,
+    "state": "active",
+    "sourceWrites": "stopped; held through integration/fix period"
+  },
+  "review": "center-independent-review.json",
+  "manifest": {
+    "path": "center-manifest.json",
+    "sha256": "cfd29ad0abf3c8bc229d9de9bfb040309e032f6e4319a86e9e9dda482bcbcaf8"
+  },
+  "source": [
+    {
+      "kind": "source",
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394"
+    },
+    {
+      "kind": "source",
+      "path": "packages/contracts/src/plugin-installations.test.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 1576,
+      "sha256": "7838934889e6309e7893203c3ed8e66e8e0ae4ec3110c403860e3260bd905057"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/commands.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 11568,
+      "sha256": "829bef240c694be86f8f9fef0808d81586a2f624607ed41d238065bde3bcee89"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/store.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2459,
+      "sha256": "0856920e72facb705bd2a7e1d038d7ea2a9f10633f4a1f98902b09322f7e786a"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/routes.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 6527,
+      "sha256": "8931b177ace5ff0ecff7a14d799c629979e33f63b5cfc3d4bb88c72355c2269c"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/migration.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 760,
+      "sha256": "894abb00a1cd3375e87ef4f05c3607bb7315867a16c1c042989b04eaf26a73c6"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/installations.test.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 26150,
+      "sha256": "a5de0d126c01d5c19678dba8ecc76f9b46311b729df82f10f5151cc262ebbfb8"
+    },
+    {
+      "kind": "source",
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 4435,
+      "sha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea"
+    }
+  ],
+  "localConfig": {
+    "module": "apps/server/src/plugin-installations/commands.ts#PluginInstallHost",
+    "artifactStore": [
+      "root: canonical trusted X05 artifact root",
+      "storeId: exact frozen X05 store identity"
+    ],
+    "materialStore": [
+      "root: existing canonical private directory owned by host user",
+      "storeId: stable logical material store identifier",
+      "allowedDigests: explicit operator allowlist of self-owned SHA256"
+    ],
+    "signal": "optional host lifecycle AbortSignal; mounted module also handles request disconnect and preClose",
+    "executionSettled": "optional trusted exact executionId -> Promise<boolean>; omit when no trustworthy prior-I/O settlement evidence, leaving reconciliation unknown. Never HTTP input or unconditional true."
+  },
+  "integration": {
+    "contractsExports": "PLUGIN_INSTALL_LIMITS, pluginInstallRequestSchema, pluginInstallCommandSchema and PluginInstall* / PluginMaterialInstall types from plugin-installations.ts",
+    "migration": "migratePluginInstallations(pool) after migratePlugins(008) and migratePackageFetches(023); official029 only; independent of028",
+    "server": "registerPluginInstallationRoutes(app,pool,host) after existing owner-auth; host config opt-in must be explicit",
+    "client": "thin calls consume exact five endpoints and DTO from center-interface.md; no duplicate state authority",
+    "sharedOwner": "Execution Lead/F01 must fresh coordinate index/client/server/config scopes"
+  },
+  "tests": {
+    "selected": 14,
+    "passed": 14,
+    "distinct": 14,
+    "raw": "center-review-ready-tests.stdout",
+    "typecheck": "center-review-ready-typecheck.stdout",
+    "typecheckExit": 0,
+    "rerunOld65": false,
+    "providerCalls": 0
+  },
+  "main": "awaiting formal center-module MAIN_RECEIPT; old8leaf+3dependencies already accepted main2f16e30a",
+  "limits": [
+    "default server mount",
+    "public client/CLI",
+    "enabled/loaded/callable",
+    "task binding and real runner journey",
+    "cross-process settlement proof"
+  ]
+}

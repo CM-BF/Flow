@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 13:48:53 UTC |
+| 最近更新时间 | 2026-10-06 13:52:17 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -15,15 +15,15 @@
 | 工作树 dirty 状态 | 中心8源/raw固定a578bfd977f5f8f8376cee613307f7011d8778a7；后继仅metadata，实际clean由Git聚合 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 当前中心14/14（11真实PG/HTTP+3DTO）、strict局部0；6轮专库0连接后DROP且own根删除，49制包child自然0；首8fixture失败保留，不累计重复 |
-| Review | NOT_STARTED a578bfd977f5f8f8376cee613307f7011d8778a7；当前中心片待独立只读review，历史leaf批准不挪用 |
+| Review | APPROVED a578bfd977f5f8f8376cee613307f7011d8778a7；chatui01_owner/gpt-6-astra 13:50:35 UTC，Mika 13:51:12接收，0P1/P2 |
 | 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；bf3378八leaf+f635三依赖已main2f16e30a，完整npm生命周期未实现 |
 | 实现目标 | a578bfd977f5f8f8376cee613307f7011d8778a7 |
 | 实现范围 | packages/contracts/src/plugin-installations.ts, packages/contracts/src/plugin-installations.test.ts, apps/server/src/plugin-installations/store.ts, apps/server/src/plugin-installations/commands.ts, apps/server/src/plugin-installations/routes.ts, apps/server/src/plugin-installations/migration.ts, apps/server/src/plugin-installations/installations.test.ts, packages/storage/migrations/029-plugin-material-installs.sql |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 公开中心静态安装与历史读回已实现并通过局部真实验证，等待独审 |
-| 下一可用交付 | 独审后接入默认中心和共用客户端；完整启用及任务绑定沿原计划继续 |
+| 当前产出 | 公开中心静态安装与历史读回已独审通过，准备接入默认中心 |
+| 下一可用交付 | 接入默认中心和共用客户端；下一启用及任务绑定先核现有公共接口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -89,3 +89,5 @@
 2026-10-06 13:48:53 UTC：中心安装片源码检查完成，[Interface](../../docs/evidence/x01/center-interface.md)、[checks](../../docs/evidence/x01/center-checks.json)、[资源](../../docs/evidence/x01/center-resources.json)、[质量/架构影响](../../docs/evidence/x01/center-quality.md)。仅新增中心7源/正式029，旧8leaf已main且写权已交回。模块状态/DB→FS时序有结构影响，集成后dashboard架构基线由Lead更新；本树不改全局图。当前中心独审NOT_STARTED，生产默认mount/client/CLI未接；旧leaf APPROVED不覆盖本片。
 
 当前中心固定实现`a578bfd977f5f8f8376cee613307f7011d8778a7`，[100项manifest](../../docs/evidence/x01/center-manifest.json)（SHA `cfd29ad0abf3c8bc229d9de9bfb040309e032f6e4319a86e9e9dda482bcbcaf8`），8产品/测试/DDL、33只读输入；源码/raw已冻结待review。`center-review-ready-*`是当前14/14及strict0证据；历史重复不累计。
+
+2026-10-06 13:51:12 UTC：Mika接收chatui01_owner独立APPROVED，正式[审查收据](../../docs/evidence/x01/center-independent-review.json)与[稳定集成输入](../../docs/evidence/x01/center-integration-ready.md)已记录；8source/原raw/support/manifest不改，v4保留修复期。默认mount/client/CLI与完整enable/task绑定仍后继，不冒称整X01完成。仅metadata，无14/65重测。

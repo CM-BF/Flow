@@ -1,6 +1,6 @@
 # X01 当前中心静态安装 / 公开读回独立审查
 
-状态：NOT_STARTED
+状态：APPROVED
 
 Review target commit：a578bfd977f5f8f8376cee613307f7011d8778a7
 
@@ -8,7 +8,7 @@ Review target commit：a578bfd977f5f8f8376cee613307f7011d8778a7
 - [唯一manifest](../../docs/evidence/x01/center-manifest.json)，SHA `cfd29ad0abf3c8bc229d9de9bfb040309e032f6e4319a86e9e9dda482bcbcaf8`；8source +33readonly +48raw +11support，绑定targetGit/current bytes与哈希。
 - 最后14/14=11真实专库HTTP+3DTO、严格局部noEmit0；初期8fixture失败/各轮重叠原raw保留，6专库清理/49实际自有tar child关闭，无provider/旧65重测。详见[checks](../../docs/evidence/x01/center-checks.json)。
 - 核验criteria：公开source/CAS/幂等；preparing ACK前零材料写、FS事务外；相同session锁及失联unknown；trusted exact lifecycle证据+纯read reconcile；finite DTO/no paths；唯一029组合FK/不可变输入/审计；实际root owner-auth，动态端口/专库关闭。
-- 只读核Git/head/dirty/claim与manifest，实读8源/Interface/raw；不重跑PG/tests/child，不编辑owner树。发现回owner，绑定固定target。当前0独审结论，不套旧leaf approval。
+- 只读核Git/head/dirty/claim与manifest，实读8源/Interface/raw；不重跑PG/tests/child，不编辑owner树。发现回owner，绑定固定target。chatui01_owner/gpt-6-astra于2026-10-06 13:50:35 UTC独立APPROVED，Mika于13:51:12 UTC接收，0P1/P2；[收据](../../docs/evidence/x01/center-independent-review.json)。未重跑检查，不套旧leaf approval。
 - 不覆盖默认生产mount/client/CLI、完整enable/真实runner任务、第三方隔离、跨进程自动settlement证据。
 
 ---
