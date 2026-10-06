@@ -2,9 +2,9 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:57:11 UTC / mainb1c2e39837c2208e6fc2c59a80e16797f26448b5 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:03:06 UTC / mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
 | Plan | [plan.md](plan.md) |
-| 所属大task | FLOW-002（[大task定义](plan.md)） |
+| 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
@@ -12,14 +12,14 @@
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
 | 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
 | 工作分支状态 | planning；原历史TODO与独立review边界保留 |
-| 已集成main状态 / HEAD | d7e1e64e7792f4d1ad4933db042f10f266ad0cca；首个原生Claude adapter已用于聊天与限定只读目标子任务。可替换接口和第二真实harness消费者尚未完成；历史wrapper工程对照保持开放。 |
+| 已集成main状态 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066；已含TUI01A、R05C/C1、S01P02与聊天操作界面。真实Codex进程诊断和配置接入仍后继；个人backend/static保持b1c2e398、accepting v12。10:00:58.896Z实际看板122源且账本available。 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | planning |
 | 优先级 | 1 |
-| 当前产出 | 原生聊天与恢复路径已有实际验收，身份刷新和上下文插件实验记录了明确限制。 |
-| 下一可用交付 | 保留Claude使用体验，接通Codex的真实模型与执行能力。 |
+| 当前产出 | 终端会话首片、Codex普通任务执行接口和聊天操作已进入主线；工程任务通路进入准备。 |
+| 下一可用交付 | 保持现有Claude行为，接通Codex可信启动配置与真实能力观察。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 

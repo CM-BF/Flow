@@ -129,3 +129,7 @@ Root只读指出SSE每250ms eventPage复用loadTask SELECT*，任务列表summar
 ## 2026-10-06 08:57:11 UTC 当前交付与成熟界面追溯
 
 SVC03固定Web产物已实际部署，backend b1c/v12与artifact461a973分别追溯；未来main不自动等于用户页面。R05-A配置提取独审通过、B/C继续：用户优先Claude+Codex，Pi不再是必经前置。WPF-MATURE六个大task由GO定义边界，各co-lead自主拆subtasks；模型/thinking/fast/access及context透明由Mika，视觉/双主题、文件输入、单tab双面板与聊天可靠性由Web，共享runner/center由ExecutionLead依赖接线。完整真实能力与UI验收尚未完成，旧模型预算保持封存。
+
+## 2026-10-06 main f181d84 接收补充
+
+TUI01A与R05C/C1分别独审后已进入main；Codex证据为受控transport/真实PG，真实app-server启动仍由Mika固定诊断，不能称已完成原生调用。S01P02显式并发入口不等于provider容量。ENG-001的ENG001-02/03基础依赖已满足，进入ready，不等待完整能力目录、全部Web或真实Codex诊断；工程检查来源与产物关联按唯一[ENG计划](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)实施。个人backend/static仍b1c2/v12，SVC04验证兼容Web独立发布。0新增provider。
