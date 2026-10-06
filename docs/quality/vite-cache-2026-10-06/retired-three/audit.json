@@ -1,0 +1,1485 @@
+{
+  "atUnix": 1791327329.661131,
+  "ledgerObservedAt": "2026-10-06T22:55:28.575Z",
+  "items": [
+    {
+      "tree": "web-plugin-management-integration",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+      "head": {
+        "value": "fc838e66621d1e68531c0fd8da989921f26e4991"
+      },
+      "status": {
+        "value": ""
+      },
+      "claims": [
+        {
+          "claimId": "741c80b3-242e-4519-b16f-0ac61737e78e",
+          "state": "released",
+          "version": 2
+        },
+        {
+          "claimId": "a1044bb0-46ed-4cc4-a39a-c3f27a67cea4",
+          "state": "released",
+          "version": 2
+        }
+      ],
+      "pathComponents": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+          "dev": 16777234,
+          "ino": 117739417
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps",
+          "dev": 16777234,
+          "ino": 117739432
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web",
+          "dev": 16777234,
+          "ino": 117739583
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 117800634
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 117801657
+        }
+      ],
+      "fileAudit": {
+        "directories": [
+          {
+            "path": ".",
+            "dev": 16777234,
+            "ino": 117801657
+          },
+          {
+            "path": "deps",
+            "dev": 16777234,
+            "ino": 117801660
+          }
+        ],
+        "files": [
+          {
+            "path": "deps/_metadata.json",
+            "dev": 16777234,
+            "ino": 117801779,
+            "bytes": 7094,
+            "sha256": "3ac88a383d5118cbdd2b291ca9e1d05ea8f61305ad4dfb57a24e8c69c529e6d3"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js",
+            "dev": 16777234,
+            "ino": 117801742,
+            "bytes": 93688,
+            "sha256": "7cf60edaef1dabed87527126a577dee85c9bbd59cfd936038c8a9febc64d9a39"
+          },
+          {
+            "path": "deps/clsx.js.map",
+            "dev": 16777234,
+            "ino": 117801758,
+            "bytes": 1075,
+            "sha256": "19332de7b6d898c3e260f47d1a3a74c0b3c2a05fc896cfd6fe467723dafcb7cb"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js",
+            "dev": 16777234,
+            "ino": 117801741,
+            "bytes": 2122,
+            "sha256": "3ec4b4559a34d1ae08d6dc29f34dce84567e5b70d4d4e58d6e393b6423ae196c"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js.map",
+            "dev": 16777234,
+            "ino": 117801768,
+            "bytes": 98742,
+            "sha256": "96ef758f7cbc572e26fd95a46d6f3f2ae27da5b0afc63dfae5c4a240fe923c8a"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js.map",
+            "dev": 16777234,
+            "ino": 117801755,
+            "bytes": 9306,
+            "sha256": "4a3dd255a865249068a08f8ddfe7b272c7a2d5bda00edc565355c3298e6801ce"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js.map",
+            "dev": 16777234,
+            "ino": 117801759,
+            "bytes": 183124,
+            "sha256": "f2c7877f8da9a62596ad562419b21fd7916af9bb4221429e5103e14f3c3316b9"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js",
+            "dev": 16777234,
+            "ino": 117801751,
+            "bytes": 56615,
+            "sha256": "3a4bfdcd6cac53addc62e0dc8962a3a3b6b1b99eadbc3c6906b581531b71661a"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js",
+            "dev": 16777234,
+            "ino": 117801744,
+            "bytes": 14264,
+            "sha256": "4783eae030c2c505cbf9015a382ba029126a207120ceff0cae7d5e8ca1368a9a"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js",
+            "dev": 16777234,
+            "ino": 117801748,
+            "bytes": 804,
+            "sha256": "8f976b86072d44d7f261f8471c4f549d348df585b8d512b601a843ab64cbcd04"
+          },
+          {
+            "path": "deps/ansi-to-react.js",
+            "dev": 16777234,
+            "ino": 117801728,
+            "bytes": 46242,
+            "sha256": "3fd9abb98537d6aabef27e83a134b1929393a4c0129d78afd8001a3cf1de1ab6"
+          },
+          {
+            "path": "deps/react-dom_client.js",
+            "dev": 16777234,
+            "ino": 117801734,
+            "bytes": 912111,
+            "sha256": "962c56bd7d9d1f9bf1419d28bcc25fc4a0e6a0de90f5608289c97a2b44191156"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js.map",
+            "dev": 16777234,
+            "ino": 117801778,
+            "bytes": 3731,
+            "sha256": "f0e762b51474cca99d9ab532cbb6ae69bb1bf92eb8836a41ce99b8ee92ed4869"
+          },
+          {
+            "path": "deps/@assistant-ui_react-markdown.js.map",
+            "dev": 16777234,
+            "ino": 117801753,
+            "bytes": 798000,
+            "sha256": "28dfb24b8e96717cd494b74f369daf261be2d43a21d8eb70bd0e2dcd81d4748d"
+          },
+          {
+            "path": "deps/tailwind-merge.js.map",
+            "dev": 16777234,
+            "ino": 117801776,
+            "bytes": 147342,
+            "sha256": "305eb162970dfccad6517d08bbad34d48a9bb254ce4952e0a41a2a5ec3ec19a4"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js",
+            "dev": 16777234,
+            "ino": 117801736,
+            "bytes": 10872,
+            "sha256": "2996f5d71562345aa5e4601fd788e8956487a2b576944b25b4c0c1ad30cfc995"
+          },
+          {
+            "path": "deps/react.js",
+            "dev": 16777234,
+            "ino": 117801735,
+            "bytes": 39849,
+            "sha256": "92bd6ec455992c9d183d598f9a6a59f86a80277261109dbff0a5fb96c939ce20"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js.map",
+            "dev": 16777234,
+            "ino": 117801766,
+            "bytes": 118739,
+            "sha256": "bfe525cd64451f97a8b21a8b63114f84de2675f2132924fe75259df3610214ef"
+          },
+          {
+            "path": "deps/react-dom_client.js.map",
+            "dev": 16777234,
+            "ino": 117801771,
+            "bytes": 1665355,
+            "sha256": "b2dc38d86cda5d8bb3cae71c04df540a013e65492a101bb214e567e8e721ee4d"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js",
+            "dev": 16777234,
+            "ino": 117801743,
+            "bytes": 14748,
+            "sha256": "005fd2de37f5f053725e079d66e0214c84b7cf083379da084690e969ea5a747b"
+          },
+          {
+            "path": "deps/class-variance-authority.js",
+            "dev": 16777234,
+            "ino": 117801729,
+            "bytes": 2714,
+            "sha256": "08017aaa068389a314c1a6bbf1551c24b229e87719bcb0b52043fe0c5b413121"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js",
+            "dev": 16777234,
+            "ino": 117801749,
+            "bytes": 55964,
+            "sha256": "67b35eef69defbdb9a0f9bd69697cee3b18ffe34c4046dc3a40f362cda0f1384"
+          },
+          {
+            "path": "deps/react-dom.js.map",
+            "dev": 16777234,
+            "ino": 117801770,
+            "bytes": 26923,
+            "sha256": "9031ac49df911a8da2dd8dc6f342d4bdcbddef11f741d97088736a7bd7e59813"
+          },
+          {
+            "path": "deps/radix-ui.js",
+            "dev": 16777234,
+            "ino": 117801732,
+            "bytes": 2104,
+            "sha256": "d7027c9f08f1588e267dc90a61caff8c5156ff3fb658962798ae933ef8b89e4d"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js",
+            "dev": 16777234,
+            "ino": 117801747,
+            "bytes": 7626,
+            "sha256": "9d19f826619b8b8be37d88e3ff03924bedd5f99d6c96fb6d5c9fafa58ba1526c"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js",
+            "dev": 16777234,
+            "ino": 117801745,
+            "bytes": 412622,
+            "sha256": "c6a7acd250aeedd18289ec03e88f423f3966b59c8c07a5fd0c1986277206c1c8"
+          },
+          {
+            "path": "deps/zod.js",
+            "dev": 16777234,
+            "ino": 117801740,
+            "bytes": 654186,
+            "sha256": "a1925d9c874283ff66714552ee1d0c1c2983384d9869d2fed0b4734335e204e6"
+          },
+          {
+            "path": "deps/ansi-to-react.js.map",
+            "dev": 16777234,
+            "ino": 117801756,
+            "bytes": 84631,
+            "sha256": "74ccc31ea9ad47bff4f7f36b76e48f3cb16b00aa0da403f92d906c876e987905"
+          },
+          {
+            "path": "deps/class-variance-authority.js.map",
+            "dev": 16777234,
+            "ino": 117801757,
+            "bytes": 4677,
+            "sha256": "6861124690d80cc4dfa2aa50c188f6d6f660917efae65268a807143adae90222"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js.map",
+            "dev": 16777234,
+            "ino": 117801754,
+            "bytes": 9678,
+            "sha256": "80692c445f462a6a9222751b50edf3d459dd756fa67a61f5e0998eda8a00122e"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js.map",
+            "dev": 16777234,
+            "ino": 117801763,
+            "bytes": 2780351,
+            "sha256": "f7f9a1c997b6446947c64a19913458d90108ae6776b6e7cbb880999af1fed5be"
+          },
+          {
+            "path": "deps/remark-gfm.js",
+            "dev": 16777234,
+            "ino": 117801738,
+            "bytes": 137174,
+            "sha256": "4e30ae01c87ab752d965975769ffeafd71f6ed6aa14e7aea30828ae94daf3998"
+          },
+          {
+            "path": "deps/@radix-ui_react-dialog.js",
+            "dev": 16777234,
+            "ino": 117801725,
+            "bytes": 604,
+            "sha256": "a2a8310bf20d4e65e7ae1e6db703cf0053669a9e188aabb90d8d986491bc71a7"
+          },
+          {
+            "path": "deps/rolldown-runtime-CoDluQUr.js",
+            "dev": 16777234,
+            "ino": 117801752,
+            "bytes": 1608,
+            "sha256": "907183563e7b3bfa427aefa9a0368ddc4928d8cfbc20fa7f5ae3208fe91621fc"
+          },
+          {
+            "path": "deps/zod.js.map",
+            "dev": 16777234,
+            "ino": 117801777,
+            "bytes": 1272523,
+            "sha256": "cc748c60f55462fbaf7bcde16dcf8eaafdf6e026ac9e32ddbbe927d9ac783b88"
+          },
+          {
+            "path": "deps/@radix-ui_react-tooltip.js",
+            "dev": 16777234,
+            "ino": 117801727,
+            "bytes": 459,
+            "sha256": "d221c27c64f05974728ce02d3c07a0e08cae2ec858e1a3035075e1cef759b9f5"
+          },
+          {
+            "path": "deps/@radix-ui_react-slot.js",
+            "dev": 16777234,
+            "ino": 117801726,
+            "bytes": 174,
+            "sha256": "ebb6d40561dc9bb1e59b435116d56ece0adb581cfd36199c9f8f0105547c972d"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js.map",
+            "dev": 16777234,
+            "ino": 117801774,
+            "bytes": 19609,
+            "sha256": "7d6993eb601101d8dd96809b62cefa68689196b04d303485560b8462f285c80f"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js",
+            "dev": 16777234,
+            "ino": 117801737,
+            "bytes": 11400,
+            "sha256": "e39fe6b60bbabfc6c3b41d7504e2586bcef5354ac982f1d7037e2d2442acfdd5"
+          },
+          {
+            "path": "deps/package.json",
+            "dev": 16777234,
+            "ino": 117801661,
+            "bytes": 23,
+            "sha256": "3ca9d4afd21425087cf31893b8f9f63c81b0b8408db5e343ca76e5f8aa26ab9a"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js",
+            "dev": 16777234,
+            "ino": 117801724,
+            "bytes": 6169,
+            "sha256": "e70d4407e09ad03548ad0a9cf15d38e5d35e2c6cbe9459477af273c5af27f282"
+          },
+          {
+            "path": "deps/lucide-react.js",
+            "dev": 16777234,
+            "ino": 117801731,
+            "bytes": 1719283,
+            "sha256": "1547ecdb40c94570d6b73f70a31de2204f846c9df144c66395db695fb4c6a3f7"
+          },
+          {
+            "path": "deps/react-dom.js",
+            "dev": 16777234,
+            "ino": 117801733,
+            "bytes": 15245,
+            "sha256": "54f2a6b71b624d7a8341d5b0d021dd1348fd5710a4b1307bab38640488e7facf"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js",
+            "dev": 16777234,
+            "ino": 117801746,
+            "bytes": 1526101,
+            "sha256": "bf398660489c7539f23e72d0992a128554ded25e89c927d354588015f587f725"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js.map",
+            "dev": 16777234,
+            "ino": 117801762,
+            "bytes": 709972,
+            "sha256": "02951023e58f25317269ce01094d5cc2220c77f03f977ae5a022f1ffdf908231"
+          },
+          {
+            "path": "deps/tailwind-merge.js",
+            "dev": 16777234,
+            "ino": 117801739,
+            "bytes": 92171,
+            "sha256": "fed9020e9e18f2552bc60b748e9d4fd1cd0368329210ad8655c35e9cb7e8c4b4"
+          },
+          {
+            "path": "deps/react.js.map",
+            "dev": 16777234,
+            "ino": 117801772,
+            "bytes": 71699,
+            "sha256": "0a3081c32940053ba3fdac41ce22610c83f41dd97e9943c63fb24dbb0c611638"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js.map",
+            "dev": 16777234,
+            "ino": 117801773,
+            "bytes": 18721,
+            "sha256": "60a0a4f29f6b3fca4cd45713e5223af8e045a7bc94b26798957562214c76da6c"
+          },
+          {
+            "path": "deps/@assistant-ui_react-markdown.js",
+            "dev": 16777234,
+            "ino": 117801721,
+            "bytes": 468947,
+            "sha256": "fb767bf3fa9e2179c88c6852e0c277a7c7ad938f436fcbd6c4df63d1426b8a00"
+          },
+          {
+            "path": "deps/remark-gfm.js.map",
+            "dev": 16777234,
+            "ino": 117801775,
+            "bytes": 242262,
+            "sha256": "1a51f5f57f5a516f49265a4a80347a1d9cb5d6fc0b18bd44508e7cf16bf40c12"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js",
+            "dev": 16777234,
+            "ino": 117801723,
+            "bytes": 6414,
+            "sha256": "39010ebc05001319dac5d6e980ad3654a5f568fbd6841e185b7b6f4be866689b"
+          },
+          {
+            "path": "deps/lucide-react.js.map",
+            "dev": 16777234,
+            "ino": 117801769,
+            "bytes": 2854745,
+            "sha256": "3fb5cb8638b44cfc5df664e4d097fbcca4466e29be454fcd449c802d7fd1c452"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js.map",
+            "dev": 16777234,
+            "ino": 117801760,
+            "bytes": 24099,
+            "sha256": "7232ef8a5a0a54b0a13fbd5b188a74be05464b0d67c3467126a5e83227b15b86"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js.map",
+            "dev": 16777234,
+            "ino": 117801764,
+            "bytes": 12853,
+            "sha256": "d38323a7a6bc3e19e08a7fb12d7ed2dd5a076a007c5ec6e642dd73defc793da0"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js.map",
+            "dev": 16777234,
+            "ino": 117801767,
+            "bytes": 9914,
+            "sha256": "d4ea13fe39938f4b5f872ca08b94f34b150b1ea698580dd3d40e77844cc779ef"
+          },
+          {
+            "path": "deps/clsx.js",
+            "dev": 16777234,
+            "ino": 117801730,
+            "bytes": 595,
+            "sha256": "c31b97899bb8f5b4e521c21f2432b92a9b25f55a3b594c120a06d9a1c4117ea9"
+          },
+          {
+            "path": "deps/@assistant-ui_react.js",
+            "dev": 16777234,
+            "ino": 117801722,
+            "bytes": 9314,
+            "sha256": "7b53598b1beb90fe228ef4af7d2ad17f352e797038570d6810cfe6230418b2ec"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js.map",
+            "dev": 16777234,
+            "ino": 117801761,
+            "bytes": 25310,
+            "sha256": "3d60c7065639c78a136a2e4839e15cd9a62118580dceb26eb7e9b96dfad8074d"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js",
+            "dev": 16777234,
+            "ino": 117801750,
+            "bytes": 6273,
+            "sha256": "96b5a7b9db00cd271abc8e2f0a9b1efa2790692d2ffcea9cf28e5b23b31deddf"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js.map",
+            "dev": 16777234,
+            "ino": 117801765,
+            "bytes": 1120,
+            "sha256": "7e030290f2cf57ac238caff7419a8bfd503ec330086cbfcf854bce9d0ba88e7f"
+          }
+        ],
+        "logicalBytes": 17530080,
+        "fileCount": 60
+      },
+      "kernelHits": [],
+      "processHits": [],
+      "verdict": "ELIGIBLE_LOCAL_PENDING_EXTERNAL_CHECK"
+    },
+    {
+      "tree": "web-profile-integration",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+      "head": {
+        "value": "e90492d759421d153641a024ed0b6e1c42bf334e"
+      },
+      "status": {
+        "value": ""
+      },
+      "claims": [
+        {
+          "claimId": "7f1daa29-78e0-463e-ab88-99e295e9e648",
+          "state": "released",
+          "version": 2
+        },
+        {
+          "claimId": "d9f7ff54-4406-4097-b8b8-a889cba8d9c2",
+          "state": "released",
+          "version": 2
+        }
+      ],
+      "pathComponents": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+          "dev": 16777234,
+          "ino": 117946529
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps",
+          "dev": 16777234,
+          "ino": 117946544
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web",
+          "dev": 16777234,
+          "ino": 117946711
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 117979103
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 118048670
+        }
+      ],
+      "fileAudit": {
+        "directories": [
+          {
+            "path": ".",
+            "dev": 16777234,
+            "ino": 118048670
+          },
+          {
+            "path": "deps",
+            "dev": 16777234,
+            "ino": 118048671
+          }
+        ],
+        "files": [
+          {
+            "path": "deps/_metadata.json",
+            "dev": 16777234,
+            "ino": 118048821,
+            "bytes": 7094,
+            "sha256": "6199f60d054d79d5159b2a2c80472d54f27701dd7bd07f6701a35cf92f78c1b1"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js",
+            "dev": 16777234,
+            "ino": 118048783,
+            "bytes": 93688,
+            "sha256": "7cf60edaef1dabed87527126a577dee85c9bbd59cfd936038c8a9febc64d9a39"
+          },
+          {
+            "path": "deps/clsx.js.map",
+            "dev": 16777234,
+            "ino": 118048799,
+            "bytes": 1075,
+            "sha256": "19332de7b6d898c3e260f47d1a3a74c0b3c2a05fc896cfd6fe467723dafcb7cb"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js",
+            "dev": 16777234,
+            "ino": 118048782,
+            "bytes": 2122,
+            "sha256": "3ec4b4559a34d1ae08d6dc29f34dce84567e5b70d4d4e58d6e393b6423ae196c"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js.map",
+            "dev": 16777234,
+            "ino": 118048809,
+            "bytes": 98742,
+            "sha256": "96ef758f7cbc572e26fd95a46d6f3f2ae27da5b0afc63dfae5c4a240fe923c8a"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js.map",
+            "dev": 16777234,
+            "ino": 118048796,
+            "bytes": 9306,
+            "sha256": "4a3dd255a865249068a08f8ddfe7b272c7a2d5bda00edc565355c3298e6801ce"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js.map",
+            "dev": 16777234,
+            "ino": 118048800,
+            "bytes": 183124,
+            "sha256": "f2c7877f8da9a62596ad562419b21fd7916af9bb4221429e5103e14f3c3316b9"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js",
+            "dev": 16777234,
+            "ino": 118048792,
+            "bytes": 56615,
+            "sha256": "3a4bfdcd6cac53addc62e0dc8962a3a3b6b1b99eadbc3c6906b581531b71661a"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js",
+            "dev": 16777234,
+            "ino": 118048785,
+            "bytes": 14264,
+            "sha256": "4783eae030c2c505cbf9015a382ba029126a207120ceff0cae7d5e8ca1368a9a"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js",
+            "dev": 16777234,
+            "ino": 118048789,
+            "bytes": 804,
+            "sha256": "8f976b86072d44d7f261f8471c4f549d348df585b8d512b601a843ab64cbcd04"
+          },
+          {
+            "path": "deps/ansi-to-react.js",
+            "dev": 16777234,
+            "ino": 118048769,
+            "bytes": 46242,
+            "sha256": "3fd9abb98537d6aabef27e83a134b1929393a4c0129d78afd8001a3cf1de1ab6"
+          },
+          {
+            "path": "deps/react-dom_client.js",
+            "dev": 16777234,
+            "ino": 118048775,
+            "bytes": 912111,
+            "sha256": "962c56bd7d9d1f9bf1419d28bcc25fc4a0e6a0de90f5608289c97a2b44191156"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js.map",
+            "dev": 16777234,
+            "ino": 118048819,
+            "bytes": 3731,
+            "sha256": "f0e762b51474cca99d9ab532cbb6ae69bb1bf92eb8836a41ce99b8ee92ed4869"
+          },
+          {
+            "path": "deps/@assistant-ui_react-markdown.js.map",
+            "dev": 16777234,
+            "ino": 118048794,
+            "bytes": 798000,
+            "sha256": "28dfb24b8e96717cd494b74f369daf261be2d43a21d8eb70bd0e2dcd81d4748d"
+          },
+          {
+            "path": "deps/tailwind-merge.js.map",
+            "dev": 16777234,
+            "ino": 118048817,
+            "bytes": 147342,
+            "sha256": "305eb162970dfccad6517d08bbad34d48a9bb254ce4952e0a41a2a5ec3ec19a4"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js",
+            "dev": 16777234,
+            "ino": 118048777,
+            "bytes": 10872,
+            "sha256": "2996f5d71562345aa5e4601fd788e8956487a2b576944b25b4c0c1ad30cfc995"
+          },
+          {
+            "path": "deps/react.js",
+            "dev": 16777234,
+            "ino": 118048776,
+            "bytes": 39849,
+            "sha256": "92bd6ec455992c9d183d598f9a6a59f86a80277261109dbff0a5fb96c939ce20"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js.map",
+            "dev": 16777234,
+            "ino": 118048807,
+            "bytes": 118739,
+            "sha256": "bfe525cd64451f97a8b21a8b63114f84de2675f2132924fe75259df3610214ef"
+          },
+          {
+            "path": "deps/react-dom_client.js.map",
+            "dev": 16777234,
+            "ino": 118048812,
+            "bytes": 1665355,
+            "sha256": "b2dc38d86cda5d8bb3cae71c04df540a013e65492a101bb214e567e8e721ee4d"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js",
+            "dev": 16777234,
+            "ino": 118048784,
+            "bytes": 14748,
+            "sha256": "005fd2de37f5f053725e079d66e0214c84b7cf083379da084690e969ea5a747b"
+          },
+          {
+            "path": "deps/class-variance-authority.js",
+            "dev": 16777234,
+            "ino": 118048770,
+            "bytes": 2714,
+            "sha256": "08017aaa068389a314c1a6bbf1551c24b229e87719bcb0b52043fe0c5b413121"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js",
+            "dev": 16777234,
+            "ino": 118048790,
+            "bytes": 55964,
+            "sha256": "67b35eef69defbdb9a0f9bd69697cee3b18ffe34c4046dc3a40f362cda0f1384"
+          },
+          {
+            "path": "deps/react-dom.js.map",
+            "dev": 16777234,
+            "ino": 118048811,
+            "bytes": 26923,
+            "sha256": "9031ac49df911a8da2dd8dc6f342d4bdcbddef11f741d97088736a7bd7e59813"
+          },
+          {
+            "path": "deps/radix-ui.js",
+            "dev": 16777234,
+            "ino": 118048773,
+            "bytes": 2104,
+            "sha256": "d7027c9f08f1588e267dc90a61caff8c5156ff3fb658962798ae933ef8b89e4d"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js",
+            "dev": 16777234,
+            "ino": 118048788,
+            "bytes": 7626,
+            "sha256": "9d19f826619b8b8be37d88e3ff03924bedd5f99d6c96fb6d5c9fafa58ba1526c"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js",
+            "dev": 16777234,
+            "ino": 118048786,
+            "bytes": 412622,
+            "sha256": "c6a7acd250aeedd18289ec03e88f423f3966b59c8c07a5fd0c1986277206c1c8"
+          },
+          {
+            "path": "deps/zod.js",
+            "dev": 16777234,
+            "ino": 118048781,
+            "bytes": 654186,
+            "sha256": "a1925d9c874283ff66714552ee1d0c1c2983384d9869d2fed0b4734335e204e6"
+          },
+          {
+            "path": "deps/ansi-to-react.js.map",
+            "dev": 16777234,
+            "ino": 118048797,
+            "bytes": 84631,
+            "sha256": "74ccc31ea9ad47bff4f7f36b76e48f3cb16b00aa0da403f92d906c876e987905"
+          },
+          {
+            "path": "deps/class-variance-authority.js.map",
+            "dev": 16777234,
+            "ino": 118048798,
+            "bytes": 4677,
+            "sha256": "6861124690d80cc4dfa2aa50c188f6d6f660917efae65268a807143adae90222"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js.map",
+            "dev": 16777234,
+            "ino": 118048795,
+            "bytes": 9678,
+            "sha256": "80692c445f462a6a9222751b50edf3d459dd756fa67a61f5e0998eda8a00122e"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js.map",
+            "dev": 16777234,
+            "ino": 118048804,
+            "bytes": 2780351,
+            "sha256": "f7f9a1c997b6446947c64a19913458d90108ae6776b6e7cbb880999af1fed5be"
+          },
+          {
+            "path": "deps/remark-gfm.js",
+            "dev": 16777234,
+            "ino": 118048779,
+            "bytes": 137174,
+            "sha256": "4e30ae01c87ab752d965975769ffeafd71f6ed6aa14e7aea30828ae94daf3998"
+          },
+          {
+            "path": "deps/@radix-ui_react-dialog.js",
+            "dev": 16777234,
+            "ino": 118048766,
+            "bytes": 604,
+            "sha256": "a2a8310bf20d4e65e7ae1e6db703cf0053669a9e188aabb90d8d986491bc71a7"
+          },
+          {
+            "path": "deps/rolldown-runtime-CoDluQUr.js",
+            "dev": 16777234,
+            "ino": 118048793,
+            "bytes": 1608,
+            "sha256": "907183563e7b3bfa427aefa9a0368ddc4928d8cfbc20fa7f5ae3208fe91621fc"
+          },
+          {
+            "path": "deps/zod.js.map",
+            "dev": 16777234,
+            "ino": 118048818,
+            "bytes": 1272523,
+            "sha256": "cc748c60f55462fbaf7bcde16dcf8eaafdf6e026ac9e32ddbbe927d9ac783b88"
+          },
+          {
+            "path": "deps/@radix-ui_react-tooltip.js",
+            "dev": 16777234,
+            "ino": 118048768,
+            "bytes": 459,
+            "sha256": "d221c27c64f05974728ce02d3c07a0e08cae2ec858e1a3035075e1cef759b9f5"
+          },
+          {
+            "path": "deps/@radix-ui_react-slot.js",
+            "dev": 16777234,
+            "ino": 118048767,
+            "bytes": 174,
+            "sha256": "ebb6d40561dc9bb1e59b435116d56ece0adb581cfd36199c9f8f0105547c972d"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js.map",
+            "dev": 16777234,
+            "ino": 118048815,
+            "bytes": 19609,
+            "sha256": "7d6993eb601101d8dd96809b62cefa68689196b04d303485560b8462f285c80f"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js",
+            "dev": 16777234,
+            "ino": 118048778,
+            "bytes": 11400,
+            "sha256": "e39fe6b60bbabfc6c3b41d7504e2586bcef5354ac982f1d7037e2d2442acfdd5"
+          },
+          {
+            "path": "deps/package.json",
+            "dev": 16777234,
+            "ino": 118048672,
+            "bytes": 23,
+            "sha256": "3ca9d4afd21425087cf31893b8f9f63c81b0b8408db5e343ca76e5f8aa26ab9a"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js",
+            "dev": 16777234,
+            "ino": 118048765,
+            "bytes": 6169,
+            "sha256": "e70d4407e09ad03548ad0a9cf15d38e5d35e2c6cbe9459477af273c5af27f282"
+          },
+          {
+            "path": "deps/lucide-react.js",
+            "dev": 16777234,
+            "ino": 118048772,
+            "bytes": 1719283,
+            "sha256": "1547ecdb40c94570d6b73f70a31de2204f846c9df144c66395db695fb4c6a3f7"
+          },
+          {
+            "path": "deps/react-dom.js",
+            "dev": 16777234,
+            "ino": 118048774,
+            "bytes": 15245,
+            "sha256": "54f2a6b71b624d7a8341d5b0d021dd1348fd5710a4b1307bab38640488e7facf"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js",
+            "dev": 16777234,
+            "ino": 118048787,
+            "bytes": 1526101,
+            "sha256": "bf398660489c7539f23e72d0992a128554ded25e89c927d354588015f587f725"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js.map",
+            "dev": 16777234,
+            "ino": 118048803,
+            "bytes": 709972,
+            "sha256": "02951023e58f25317269ce01094d5cc2220c77f03f977ae5a022f1ffdf908231"
+          },
+          {
+            "path": "deps/tailwind-merge.js",
+            "dev": 16777234,
+            "ino": 118048780,
+            "bytes": 92171,
+            "sha256": "fed9020e9e18f2552bc60b748e9d4fd1cd0368329210ad8655c35e9cb7e8c4b4"
+          },
+          {
+            "path": "deps/react.js.map",
+            "dev": 16777234,
+            "ino": 118048813,
+            "bytes": 71699,
+            "sha256": "0a3081c32940053ba3fdac41ce22610c83f41dd97e9943c63fb24dbb0c611638"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js.map",
+            "dev": 16777234,
+            "ino": 118048814,
+            "bytes": 18721,
+            "sha256": "60a0a4f29f6b3fca4cd45713e5223af8e045a7bc94b26798957562214c76da6c"
+          },
+          {
+            "path": "deps/@assistant-ui_react-markdown.js",
+            "dev": 16777234,
+            "ino": 118048762,
+            "bytes": 468947,
+            "sha256": "fb767bf3fa9e2179c88c6852e0c277a7c7ad938f436fcbd6c4df63d1426b8a00"
+          },
+          {
+            "path": "deps/remark-gfm.js.map",
+            "dev": 16777234,
+            "ino": 118048816,
+            "bytes": 242262,
+            "sha256": "1a51f5f57f5a516f49265a4a80347a1d9cb5d6fc0b18bd44508e7cf16bf40c12"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js",
+            "dev": 16777234,
+            "ino": 118048764,
+            "bytes": 6414,
+            "sha256": "39010ebc05001319dac5d6e980ad3654a5f568fbd6841e185b7b6f4be866689b"
+          },
+          {
+            "path": "deps/lucide-react.js.map",
+            "dev": 16777234,
+            "ino": 118048810,
+            "bytes": 2854745,
+            "sha256": "3fb5cb8638b44cfc5df664e4d097fbcca4466e29be454fcd449c802d7fd1c452"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js.map",
+            "dev": 16777234,
+            "ino": 118048801,
+            "bytes": 24099,
+            "sha256": "7232ef8a5a0a54b0a13fbd5b188a74be05464b0d67c3467126a5e83227b15b86"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js.map",
+            "dev": 16777234,
+            "ino": 118048805,
+            "bytes": 12853,
+            "sha256": "d38323a7a6bc3e19e08a7fb12d7ed2dd5a076a007c5ec6e642dd73defc793da0"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js.map",
+            "dev": 16777234,
+            "ino": 118048808,
+            "bytes": 9914,
+            "sha256": "d4ea13fe39938f4b5f872ca08b94f34b150b1ea698580dd3d40e77844cc779ef"
+          },
+          {
+            "path": "deps/clsx.js",
+            "dev": 16777234,
+            "ino": 118048771,
+            "bytes": 595,
+            "sha256": "c31b97899bb8f5b4e521c21f2432b92a9b25f55a3b594c120a06d9a1c4117ea9"
+          },
+          {
+            "path": "deps/@assistant-ui_react.js",
+            "dev": 16777234,
+            "ino": 118048763,
+            "bytes": 9314,
+            "sha256": "7b53598b1beb90fe228ef4af7d2ad17f352e797038570d6810cfe6230418b2ec"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js.map",
+            "dev": 16777234,
+            "ino": 118048802,
+            "bytes": 25310,
+            "sha256": "3d60c7065639c78a136a2e4839e15cd9a62118580dceb26eb7e9b96dfad8074d"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js",
+            "dev": 16777234,
+            "ino": 118048791,
+            "bytes": 6273,
+            "sha256": "96b5a7b9db00cd271abc8e2f0a9b1efa2790692d2ffcea9cf28e5b23b31deddf"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js.map",
+            "dev": 16777234,
+            "ino": 118048806,
+            "bytes": 1120,
+            "sha256": "7e030290f2cf57ac238caff7419a8bfd503ec330086cbfcf854bce9d0ba88e7f"
+          }
+        ],
+        "logicalBytes": 17530080,
+        "fileCount": 60
+      },
+      "kernelHits": [],
+      "processHits": [],
+      "verdict": "ELIGIBLE_LOCAL_PENDING_EXTERNAL_CHECK"
+    },
+    {
+      "tree": "web-steering-control",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+      "head": {
+        "value": "300aacd5b961fcacbe8f5f7520f2f1d5e7cb6eaa"
+      },
+      "status": {
+        "value": ""
+      },
+      "claims": [
+        {
+          "claimId": "2bae5026-8490-4880-8f43-74bd1b9bb863",
+          "state": "released",
+          "version": 2
+        },
+        {
+          "claimId": "40ec6625-2a14-4033-bc26-0c223e1f7677",
+          "state": "released",
+          "version": 2
+        }
+      ],
+      "pathComponents": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+          "dev": 16777234,
+          "ino": 119572921
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps",
+          "dev": 16777234,
+          "ino": 119572936
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web",
+          "dev": 16777234,
+          "ino": 119573246
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 119619697
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 119697516
+        }
+      ],
+      "fileAudit": {
+        "directories": [
+          {
+            "path": ".",
+            "dev": 16777234,
+            "ino": 119697516
+          },
+          {
+            "path": "deps",
+            "dev": 16777234,
+            "ino": 119697517
+          }
+        ],
+        "files": [
+          {
+            "path": "deps/_metadata.json",
+            "dev": 16777234,
+            "ino": 119699648,
+            "bytes": 7094,
+            "sha256": "c4d6f053aa076524596b13ceccc3f5fb2fc7e3690ca7db3979fd0bf0b09d8bdd"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js",
+            "dev": 16777234,
+            "ino": 119699611,
+            "bytes": 93688,
+            "sha256": "7cf60edaef1dabed87527126a577dee85c9bbd59cfd936038c8a9febc64d9a39"
+          },
+          {
+            "path": "deps/clsx.js.map",
+            "dev": 16777234,
+            "ino": 119699627,
+            "bytes": 1075,
+            "sha256": "19332de7b6d898c3e260f47d1a3a74c0b3c2a05fc896cfd6fe467723dafcb7cb"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js",
+            "dev": 16777234,
+            "ino": 119699610,
+            "bytes": 2122,
+            "sha256": "3ec4b4559a34d1ae08d6dc29f34dce84567e5b70d4d4e58d6e393b6423ae196c"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js.map",
+            "dev": 16777234,
+            "ino": 119699637,
+            "bytes": 98742,
+            "sha256": "96ef758f7cbc572e26fd95a46d6f3f2ae27da5b0afc63dfae5c4a240fe923c8a"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js.map",
+            "dev": 16777234,
+            "ino": 119699624,
+            "bytes": 9306,
+            "sha256": "4a3dd255a865249068a08f8ddfe7b272c7a2d5bda00edc565355c3298e6801ce"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js.map",
+            "dev": 16777234,
+            "ino": 119699628,
+            "bytes": 183124,
+            "sha256": "f2c7877f8da9a62596ad562419b21fd7916af9bb4221429e5103e14f3c3316b9"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js",
+            "dev": 16777234,
+            "ino": 119699620,
+            "bytes": 56615,
+            "sha256": "3a4bfdcd6cac53addc62e0dc8962a3a3b6b1b99eadbc3c6906b581531b71661a"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js",
+            "dev": 16777234,
+            "ino": 119699613,
+            "bytes": 14264,
+            "sha256": "4783eae030c2c505cbf9015a382ba029126a207120ceff0cae7d5e8ca1368a9a"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js",
+            "dev": 16777234,
+            "ino": 119699617,
+            "bytes": 804,
+            "sha256": "8f976b86072d44d7f261f8471c4f549d348df585b8d512b601a843ab64cbcd04"
+          },
+          {
+            "path": "deps/ansi-to-react.js",
+            "dev": 16777234,
+            "ino": 119699597,
+            "bytes": 46242,
+            "sha256": "3fd9abb98537d6aabef27e83a134b1929393a4c0129d78afd8001a3cf1de1ab6"
+          },
+          {
+            "path": "deps/react-dom_client.js",
+            "dev": 16777234,
+            "ino": 119699603,
+            "bytes": 912111,
+            "sha256": "962c56bd7d9d1f9bf1419d28bcc25fc4a0e6a0de90f5608289c97a2b44191156"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js.map",
+            "dev": 16777234,
+            "ino": 119699647,
+            "bytes": 3731,
+            "sha256": "f0e762b51474cca99d9ab532cbb6ae69bb1bf92eb8836a41ce99b8ee92ed4869"
+          },
+          {
+            "path": "deps/@assistant-ui_react-markdown.js.map",
+            "dev": 16777234,
+            "ino": 119699622,
+            "bytes": 798000,
+            "sha256": "28dfb24b8e96717cd494b74f369daf261be2d43a21d8eb70bd0e2dcd81d4748d"
+          },
+          {
+            "path": "deps/tailwind-merge.js.map",
+            "dev": 16777234,
+            "ino": 119699645,
+            "bytes": 147342,
+            "sha256": "305eb162970dfccad6517d08bbad34d48a9bb254ce4952e0a41a2a5ec3ec19a4"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js",
+            "dev": 16777234,
+            "ino": 119699605,
+            "bytes": 10872,
+            "sha256": "2996f5d71562345aa5e4601fd788e8956487a2b576944b25b4c0c1ad30cfc995"
+          },
+          {
+            "path": "deps/react.js",
+            "dev": 16777234,
+            "ino": 119699604,
+            "bytes": 39849,
+            "sha256": "92bd6ec455992c9d183d598f9a6a59f86a80277261109dbff0a5fb96c939ce20"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js.map",
+            "dev": 16777234,
+            "ino": 119699635,
+            "bytes": 118739,
+            "sha256": "bfe525cd64451f97a8b21a8b63114f84de2675f2132924fe75259df3610214ef"
+          },
+          {
+            "path": "deps/react-dom_client.js.map",
+            "dev": 16777234,
+            "ino": 119699640,
+            "bytes": 1665355,
+            "sha256": "b2dc38d86cda5d8bb3cae71c04df540a013e65492a101bb214e567e8e721ee4d"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js",
+            "dev": 16777234,
+            "ino": 119699612,
+            "bytes": 14748,
+            "sha256": "005fd2de37f5f053725e079d66e0214c84b7cf083379da084690e969ea5a747b"
+          },
+          {
+            "path": "deps/class-variance-authority.js",
+            "dev": 16777234,
+            "ino": 119699598,
+            "bytes": 2714,
+            "sha256": "08017aaa068389a314c1a6bbf1551c24b229e87719bcb0b52043fe0c5b413121"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js",
+            "dev": 16777234,
+            "ino": 119699618,
+            "bytes": 55964,
+            "sha256": "67b35eef69defbdb9a0f9bd69697cee3b18ffe34c4046dc3a40f362cda0f1384"
+          },
+          {
+            "path": "deps/react-dom.js.map",
+            "dev": 16777234,
+            "ino": 119699639,
+            "bytes": 26923,
+            "sha256": "9031ac49df911a8da2dd8dc6f342d4bdcbddef11f741d97088736a7bd7e59813"
+          },
+          {
+            "path": "deps/radix-ui.js",
+            "dev": 16777234,
+            "ino": 119699601,
+            "bytes": 2104,
+            "sha256": "d7027c9f08f1588e267dc90a61caff8c5156ff3fb658962798ae933ef8b89e4d"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js",
+            "dev": 16777234,
+            "ino": 119699616,
+            "bytes": 7626,
+            "sha256": "9d19f826619b8b8be37d88e3ff03924bedd5f99d6c96fb6d5c9fafa58ba1526c"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js",
+            "dev": 16777234,
+            "ino": 119699614,
+            "bytes": 412622,
+            "sha256": "c6a7acd250aeedd18289ec03e88f423f3966b59c8c07a5fd0c1986277206c1c8"
+          },
+          {
+            "path": "deps/zod.js",
+            "dev": 16777234,
+            "ino": 119699609,
+            "bytes": 654186,
+            "sha256": "a1925d9c874283ff66714552ee1d0c1c2983384d9869d2fed0b4734335e204e6"
+          },
+          {
+            "path": "deps/ansi-to-react.js.map",
+            "dev": 16777234,
+            "ino": 119699625,
+            "bytes": 84631,
+            "sha256": "74ccc31ea9ad47bff4f7f36b76e48f3cb16b00aa0da403f92d906c876e987905"
+          },
+          {
+            "path": "deps/class-variance-authority.js.map",
+            "dev": 16777234,
+            "ino": 119699626,
+            "bytes": 4677,
+            "sha256": "6861124690d80cc4dfa2aa50c188f6d6f660917efae65268a807143adae90222"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js.map",
+            "dev": 16777234,
+            "ino": 119699623,
+            "bytes": 9678,
+            "sha256": "80692c445f462a6a9222751b50edf3d459dd756fa67a61f5e0998eda8a00122e"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js.map",
+            "dev": 16777234,
+            "ino": 119699632,
+            "bytes": 2780351,
+            "sha256": "f7f9a1c997b6446947c64a19913458d90108ae6776b6e7cbb880999af1fed5be"
+          },
+          {
+            "path": "deps/remark-gfm.js",
+            "dev": 16777234,
+            "ino": 119699607,
+            "bytes": 137174,
+            "sha256": "4e30ae01c87ab752d965975769ffeafd71f6ed6aa14e7aea30828ae94daf3998"
+          },
+          {
+            "path": "deps/@radix-ui_react-dialog.js",
+            "dev": 16777234,
+            "ino": 119699594,
+            "bytes": 604,
+            "sha256": "a2a8310bf20d4e65e7ae1e6db703cf0053669a9e188aabb90d8d986491bc71a7"
+          },
+          {
+            "path": "deps/rolldown-runtime-CoDluQUr.js",
+            "dev": 16777234,
+            "ino": 119699621,
+            "bytes": 1608,
+            "sha256": "907183563e7b3bfa427aefa9a0368ddc4928d8cfbc20fa7f5ae3208fe91621fc"
+          },
+          {
+            "path": "deps/zod.js.map",
+            "dev": 16777234,
+            "ino": 119699646,
+            "bytes": 1272523,
+            "sha256": "cc748c60f55462fbaf7bcde16dcf8eaafdf6e026ac9e32ddbbe927d9ac783b88"
+          },
+          {
+            "path": "deps/@radix-ui_react-tooltip.js",
+            "dev": 16777234,
+            "ino": 119699596,
+            "bytes": 459,
+            "sha256": "d221c27c64f05974728ce02d3c07a0e08cae2ec858e1a3035075e1cef759b9f5"
+          },
+          {
+            "path": "deps/@radix-ui_react-slot.js",
+            "dev": 16777234,
+            "ino": 119699595,
+            "bytes": 174,
+            "sha256": "ebb6d40561dc9bb1e59b435116d56ece0adb581cfd36199c9f8f0105547c972d"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js.map",
+            "dev": 16777234,
+            "ino": 119699643,
+            "bytes": 19609,
+            "sha256": "7d6993eb601101d8dd96809b62cefa68689196b04d303485560b8462f285c80f"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js",
+            "dev": 16777234,
+            "ino": 119699606,
+            "bytes": 11400,
+            "sha256": "e39fe6b60bbabfc6c3b41d7504e2586bcef5354ac982f1d7037e2d2442acfdd5"
+          },
+          {
+            "path": "deps/package.json",
+            "dev": 16777234,
+            "ino": 119697518,
+            "bytes": 23,
+            "sha256": "3ca9d4afd21425087cf31893b8f9f63c81b0b8408db5e343ca76e5f8aa26ab9a"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js",
+            "dev": 16777234,
+            "ino": 119699593,
+            "bytes": 6169,
+            "sha256": "e70d4407e09ad03548ad0a9cf15d38e5d35e2c6cbe9459477af273c5af27f282"
+          },
+          {
+            "path": "deps/lucide-react.js",
+            "dev": 16777234,
+            "ino": 119699600,
+            "bytes": 1719283,
+            "sha256": "1547ecdb40c94570d6b73f70a31de2204f846c9df144c66395db695fb4c6a3f7"
+          },
+          {
+            "path": "deps/react-dom.js",
+            "dev": 16777234,
+            "ino": 119699602,
+            "bytes": 15245,
+            "sha256": "54f2a6b71b624d7a8341d5b0d021dd1348fd5710a4b1307bab38640488e7facf"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js",
+            "dev": 16777234,
+            "ino": 119699615,
+            "bytes": 1526101,
+            "sha256": "bf398660489c7539f23e72d0992a128554ded25e89c927d354588015f587f725"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js.map",
+            "dev": 16777234,
+            "ino": 119699631,
+            "bytes": 709972,
+            "sha256": "02951023e58f25317269ce01094d5cc2220c77f03f977ae5a022f1ffdf908231"
+          },
+          {
+            "path": "deps/tailwind-merge.js",
+            "dev": 16777234,
+            "ino": 119699608,
+            "bytes": 92171,
+            "sha256": "fed9020e9e18f2552bc60b748e9d4fd1cd0368329210ad8655c35e9cb7e8c4b4"
+          },
+          {
+            "path": "deps/react.js.map",
+            "dev": 16777234,
+            "ino": 119699641,
+            "bytes": 71699,
+            "sha256": "0a3081c32940053ba3fdac41ce22610c83f41dd97e9943c63fb24dbb0c611638"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js.map",
+            "dev": 16777234,
+            "ino": 119699642,
+            "bytes": 18721,
+            "sha256": "60a0a4f29f6b3fca4cd45713e5223af8e045a7bc94b26798957562214c76da6c"
+          },
+          {
+            "path": "deps/@assistant-ui_react-markdown.js",
+            "dev": 16777234,
+            "ino": 119699590,
+            "bytes": 468947,
+            "sha256": "fb767bf3fa9e2179c88c6852e0c277a7c7ad938f436fcbd6c4df63d1426b8a00"
+          },
+          {
+            "path": "deps/remark-gfm.js.map",
+            "dev": 16777234,
+            "ino": 119699644,
+            "bytes": 242262,
+            "sha256": "1a51f5f57f5a516f49265a4a80347a1d9cb5d6fc0b18bd44508e7cf16bf40c12"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js",
+            "dev": 16777234,
+            "ino": 119699592,
+            "bytes": 6414,
+            "sha256": "39010ebc05001319dac5d6e980ad3654a5f568fbd6841e185b7b6f4be866689b"
+          },
+          {
+            "path": "deps/lucide-react.js.map",
+            "dev": 16777234,
+            "ino": 119699638,
+            "bytes": 2854745,
+            "sha256": "3fb5cb8638b44cfc5df664e4d097fbcca4466e29be454fcd449c802d7fd1c452"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js.map",
+            "dev": 16777234,
+            "ino": 119699629,
+            "bytes": 24099,
+            "sha256": "7232ef8a5a0a54b0a13fbd5b188a74be05464b0d67c3467126a5e83227b15b86"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js.map",
+            "dev": 16777234,
+            "ino": 119699633,
+            "bytes": 12853,
+            "sha256": "d38323a7a6bc3e19e08a7fb12d7ed2dd5a076a007c5ec6e642dd73defc793da0"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js.map",
+            "dev": 16777234,
+            "ino": 119699636,
+            "bytes": 9914,
+            "sha256": "d4ea13fe39938f4b5f872ca08b94f34b150b1ea698580dd3d40e77844cc779ef"
+          },
+          {
+            "path": "deps/clsx.js",
+            "dev": 16777234,
+            "ino": 119699599,
+            "bytes": 595,
+            "sha256": "c31b97899bb8f5b4e521c21f2432b92a9b25f55a3b594c120a06d9a1c4117ea9"
+          },
+          {
+            "path": "deps/@assistant-ui_react.js",
+            "dev": 16777234,
+            "ino": 119699591,
+            "bytes": 9314,
+            "sha256": "7b53598b1beb90fe228ef4af7d2ad17f352e797038570d6810cfe6230418b2ec"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js.map",
+            "dev": 16777234,
+            "ino": 119699630,
+            "bytes": 25310,
+            "sha256": "3d60c7065639c78a136a2e4839e15cd9a62118580dceb26eb7e9b96dfad8074d"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js",
+            "dev": 16777234,
+            "ino": 119699619,
+            "bytes": 6273,
+            "sha256": "96b5a7b9db00cd271abc8e2f0a9b1efa2790692d2ffcea9cf28e5b23b31deddf"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js.map",
+            "dev": 16777234,
+            "ino": 119699634,
+            "bytes": 1120,
+            "sha256": "7e030290f2cf57ac238caff7419a8bfd503ec330086cbfcf854bce9d0ba88e7f"
+          }
+        ],
+        "logicalBytes": 17530080,
+        "fileCount": 60
+      },
+      "kernelHits": [],
+      "processHits": [],
+      "verdict": "ELIGIBLE_LOCAL_PENDING_EXTERNAL_CHECK"
+    }
+  ],
+  "mutations": "none to candidate trees; own audit only",
+  "verifiedRetirementRawFiles": 35,
+  "managerConfirmationSha256": "94a8a85e048a32d9fe9665275be8a7b926e8ff86ad2df49be0baffa1115cdc31",
+  "PG": 0,
+  "provider": 0,
+  "servicesStoppedByLead": 0
+}

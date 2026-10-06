@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 22:44:13 UTC / main60ca1942 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T23:00:55.047696+00:00 / main37f75d36 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,16 +12,16 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin60ca1942已接完整原文任务登记，dashboard180源；个人实际backend af51 accepting v18、Web d629 v3，与源码main分开。 |
+| 已集成main状态 / HEAD | main/origin37f75d36已接资源回收限定证据，dashboard180源；OPS-CI01第181源待本批发布。个人backend af51 accepting v18、Web d629 v3保持。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 已完成一个停用工作目录的精确依赖回收并保留恢复材料；个人网页与后台正常版本保持。共享卷实际增量很小，继续核对可退役临时预览。 |
-| 下一可用交付 | 恢复足够实际磁盘余量后验证事务连接修复、完整工具正文，再接终端与网页双端接续。 |
-| 当前阻塞 | ACTIVE: 单树回收后实采约1.080GB，仍不足1GiB+128MiB的PG/浏览器线；逻辑508MB仅观察到约1.8MB共享卷增量。完整后台固定产物仍需2.5GiB，小检查按实际增量准入。 |
-| 需用户决定 | NONE |
+| 当前产出 | 三处已退役临时预览的生成缓存已清理，原始证据和依赖保留；本地空间仍不足，最小远程验证文档进入独审。 |
+| 下一可用交付 | 交付可由用户启用的远程零模型验证文件；本地真实数据库、浏览器和完整工具正文验证继续等待足够空间。 |
+| 当前阻塞 | ACTIVE: 三缓存结束后卷余量1,073,909,760B，本记录fresh为1063604224B，仍不足1GiB+128MiB的PG/浏览器线。远程候选尚未启用/运行，现只完成静态检查。 |
+| 需用户决定 | NONE：启用候选尚在独审；文件固定后会给一个准确的最终启用动作。 |
 
 ## TODO状态（与plan稳定ID逐项对应）
 
@@ -337,3 +337,11 @@ OPS14 两个实际wrapper通过精确4482字节源码供给后由唯一owner实�
 唯一对象 web-workspace-cache@10ca8eef，原owner停写/claim released/无已知运行或冻结消费者，fresh kernel无命中。完整源/toy独审与薄caller独审后，固定一次操作3111a61fe8964590ae9b68ce0538f965移除29606清单内常规payload，508198354逻辑字节；41.009s，监督子进程22466 exit0且自有组absent，pending=null。全部73生成/缓存文件、4169目录、2228链接、26549 CAS身份及581包索引后置保留，目标Git clean/HEAD不变。详见[实际后置事实](../../docs/quality/dependency-retirement-2026-10-06/actual-retirement-postcheck.json)、[独立源审查](../../docs/quality/dependency-retirement-2026-10-06/operator-independent-review.json)和[监督结果](../../docs/quality/dependency-retirement-2026-10-06/one-shot-retire-supervision.json)。
 
 实际共享卷before1077436416→after1079205888，仅+1769472B；不是独立测得的物理回收量，未达到准备线，不扩批其他node_modules。该树明确NOT_RUNTIME_READY，历史fixture再执行前须固定精确restore、layout/入口核验及新运行准入；不清marker、不自动恢复。原CAS、私有/原始记录、服务与用户资料未动。一次准备专用持有已结束；共享PG/Chrome无holder。Web原owner接最多3个已交付且非明确保留preview的用途核对/有序退役，再给精确.vite可再生缓存边界；未知KEEP。实际结果由assignment_review独立核验APPROVED；29606 before/after与completed全集一一对应、恢复map重构hash一致、15个现态元数据样本与NOT_RUNTIME_READY marker吻合。全量保留计数归原postcheck，不冒审查者重hash；[限定独审](../../docs/quality/dependency-retirement-2026-10-06/actual-independent-review.json)。
+
+## 2026-10-06T23:00:55.047696+00:00 三预览缓存收尾与远程验证准备
+
+原服务owner已确认三临时预览无当前或冻结验证消费者并分别有序停止，原始日志/启动方法/产品证据保留。唯一operator仅移除三份精确`.vite`集合共180个生成文件；每项fresh ledger/HEAD/目录身份/hash核对，真实npm包/锁/源码/用户服务未动。三个受监督子进程exit0且owned group最终absent，初始EPERM观察与原始回执保留，不把短暂unknown隐藏。见[精简事实](../../docs/quality/vite-cache-2026-10-06/retired-three/compact-result.json)及同目录原始operator/intent/supervision。最后卷观察增加52,494,336B，含共享并发变化，不声称全部可归因；仍未开放PG/Chrome。本批到3处结束，不再新增同类清理。
+
+OPS-CI01唯一source为`ops-remote-validation/plans/ops-ci01-remote-validation`，native_center_owner四scope已原子领取，base37f75d36。源码供给377文件2,821,972逻辑B、0安装；[供给事实](../../docs/quality/ops-ci01-source-provision.json)保留初次未初始化index的准备失败及fresh空树修复。候选只修改docs/ci，两个contract+一个真实PG/Fastify.inject handler检查（非socket/runner旅程），0远程/模型。文件待独审与用户最终启用，不把准备当运行。
+
+| OPS-001-15 | in-progress | native_center_owner / Execution Lead | 远程最小验证候选及准确启用步骤；唯一子任务OPS-CI01，尚未启用/运行。 |
