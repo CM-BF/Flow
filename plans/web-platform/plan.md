@@ -114,12 +114,12 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | 顺序 | 当前计划 / 交付 | 状态与开工条件 |
 | --- | --- | --- |
 | 已集成 / 原范围释放 | WPF-ACTIVITYI01真实工具/思考与footer | ba341已审并在253b祖先/17paths相同，最终9aa35096 clean、122 v2已释放；保留R1红→修与不同target证据，不重复验收 |
-| 并行实施 | WPF-CHAT06S01增量正文独立模块 | d94七scope实施，Lead07:16:38.910Z已实采84源live/issues[]；不将模块完成当App接通 |
-| 并行窄优化 | WPF-PERF03消息对象复用 | 五scope已take，仅同turn对象复用与转换调用计数，不声称浏览器延迟收益；stream接线只读消费现conversationMessages接口 |
-| 后继准备 | stream实际App接线 | 仅scope/interface proposal；ActivityI已main并release；仍需模块固定独审及准确组合base后新take。不并行抢App/Thread，不新建agent |
+| 已审待集成 | WPF-CHAT06S01增量正文独立模块 | 3ac/63b已root独立54批准且管理hash/docs核验，d94七scope停写等main；仅mock模块，不将模块完成当App接通 |
+| 并行窄优化 | WPF-PERF03消息对象复用 | 五scope已take，固定f909候选待root独审，仅同turn对象复用与转换调用计数，不声称浏览器延迟收益；stream接线只读消费现conversationMessages接口 |
+| 后继准备 | stream实际App接线 | 仅scope/interface proposal；ActivityI已main并release；模块3ac已固定独审，仍需准确组合mainbase后新take。不并行抢App/Thread，不新建agent |
 | 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
 | 已验真实持续聊天 | 既有CHAT/QUEUE与GO两query | GO/Lead固定真实两query2/2已验收封存；running入队、继续、浏览器退出与精确第二回复通过。本队只消费固定证据，不重跑模型；steer、语音、完整context等未完成项保持原REQ |
-| 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 当前三active本队claim按真实范围防交叉。GO说明Mika仍2槽、当前无静默窗口；不自发暂停或扩大并发。只发送新可行动里程碑，不重复纯metadata通知 |
+| 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 当前三active本队claim按真实范围防交叉。GO说明Mika仍2槽；仅按明确带截止时间的quiet lease协调重负载，不自发暂停或扩大并发。只发送新可行动里程碑，不重复纯metadata通知 |
 
 ## TODO
 
@@ -318,3 +318,6 @@ GO管理审计规则：active claim按实际开发/持续管理、冻结待审/�
 
 
 07:23 main接收闭环：ActivityI已审ba341/c9在253b主线17paths相同；owner只mainmetadata至9aa35096并全停写，manager fresh CAS release122 v2。原树只读，51454保持。w01转PERF03已初始化30b独立树，messages.ts对253b零差，五scope fresh take2ec58v1；后继stream App只读调用conversationMessages，不与该优化抢文件。原RS08计数研究现转有界验证，不新增性能目标或模型实验。
+
+
+07:28 S01固定3ac/final63b已独立批准并一次交Lead，后继App方向获root明确批准；仍先等准确组合main/newtree/fresh13scope take，不先并行写。后继宿主只给active/待结算turn后台读权限；历史展示缓存有界、淘汰和用户按需恢复须明确，不能Thread.map全历史启动投影或恢复可见时全量刷新。

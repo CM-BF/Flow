@@ -1,15 +1,15 @@
 {
   "observedAt": "2026-10-06T07:21:54.287452+00:00",
-  "state": "proposal only; no tree, branch, claim or product writes",
+  "state": "root direction approved; no tree/claim/writes until exact combined main + fresh take",
   "candidateTask": "WPF-CHAT06I01",
   "sourceInputs": {
-    "currentAcceptedMain": "30b97cbf3665c4ef7a314a6a8b59394ae68781af",
-    "hostCandidate": "ba341d77672ba8456197d64d54193aee79719e46",
-    "streamModuleInterface": "ed187d6ef99e0d4ba1479ebce42f27714ff219c7:docs/evidence/wpf-chat06-stream/interface.md",
-    "moduleImplementation": "not yet fixed/approved; moving implementation not consumed"
+    "currentAcceptedMain": "253b8ad38fd869297e7d9948a26c1d310fef5c6c (manager independently verified product main); Lead later b54de1dbb08e3ccc7d33a27295a318f2799e76ae metadata/registry receipt",
+    "hostCandidate": "ba341d77672ba8456197d64d54193aee79719e46 accepted in253b8ad38fd869297e7d9948a26c1d310fef5c6c",
+    "streamModuleInterface": "63b7a302e3630075b2472904805ff3fe07eb9989:docs/evidence/wpf-chat06-stream/interface.md",
+    "moduleImplementation": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7 APPROVED07:26:24Z; final63b7a302 clean; REVIEW_READY sent once; main receipt pending"
   },
   "proposedBase": "Wait for exact accepted main containing approved ActivityI and approved stream module; do not use moving main or restart existing trees.",
-  "scopeDecisionPending": "Resolved by root: separate trusted flow.assistant-stream builtin, never flow.conversation-activity. Final interface and accepted combination base remain prerequisites; no take yet.",
+  "scopeDecisionPending": "Design approved by root; exact accepted combination base and fresh 13-scope take remain prerequisites. No tree or implementation claim.",
   "currentConflict": {
     "App.tsx": "ActivityI released122v2 at07:23:42; no new write permission inferred",
     "ConversationThread.tsx": "ActivityI released122v2; future integration fresh take required",
@@ -36,12 +36,11 @@
   ],
   "protected": [
     "apps/web/src/conversations/projection.ts",
-    "apps/web/src/conversations/messages.ts unless a fixed consumer seam proves unavoidable and separately approved",
     "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
     "apps/web/src/conversations/queue",
     "approved stream patches/projection/messages modules",
     "shared contracts/client and root dependencies",
-    "apps/web/src/conversations/messages.ts remains read-only; separately proposed PERF03 owns any identity-reuse implementation"
+    "apps/web/src/conversations/messages.ts: PERF03 owns changes; this integration reads it without modification"
   ],
   "method": "Read-only fixed git show App/Thread/messages/client and first canonical module interface; no implementation claim or technical approval requested.",
   "proposedScope": [
@@ -66,5 +65,20 @@
     "scopeLimit": "No second registry, install/grant persistence, plugin settings product or shared API. Types/validation/plugin-host test included only for new explicit read capability.",
     "advertisement": "Protocol GET capability is not permission; enabled P01 state AND bound identity/read grant AND public cap/protocol needed for stream reads."
   },
-  "hostCandidate": "ActivityI ba341 now accepted253b; module still requires fixed review"
+  "hostCandidate": "ActivityI ba341 accepted253b and claim122v2 released; stream module3ac independently approved/final63b, combined main receipt pending",
+  "moduleConsumptionNotes": [
+    "Public factory createConversationStreamProjection(scope,port), updateHost({turn,capability,protocol,visible,online,finalContent?}); preserve exact approved interface.",
+    "Existing module batches at most3 metadata pages(limit100,total256blocks),4 patch pages(limit8) per flight, yields250ms,15s timeout,3consecutive-error budget. Host does not duplicate poll/drain loops or reset failure budget. These are implementation bounds, not UI latency claims.",
+    "Module typed canonical final uses explicit complete/unknown even while global task isRunning=true; footer phase/interruption/pause/truncation remains UI work.",
+    "Metadata taskStatus/phase/observationPaused are factual; Task and verification gates unchanged. No full-block/detail prefetch."
+  ],
+  "hostReadBudget": {
+    "backgroundEligibility": "Only current active turn or still-unsettled final work; never create reading flights from Thread.map over all historical turns.",
+    "visibility": "Existing at-most-two-visible-pane semantics; hidden/reopen must not refresh all cached historical projections.",
+    "settledHistory": "Retained pre-tool drafts may remain in bounded display cache; settled cached turns have no background read permission.",
+    "cacheLimit": "Owner must choose and record conservative numeric turn/text-byte limits before implementation validation, consistent with per-attempt1MiB and module page bounds. No unlimited history claim.",
+    "eviction": "Explicitly record which display history may be evicted and any user-driven lazy recovery; preserve canonical final and existing full-reply entry. Do not silently call eviction complete lossless stream history.",
+    "scheduler": "Reuse module singleflight/bounded drain/error budget; no second interval/poll loop."
+  },
+  "updatedAt": "2026-10-06T07:33:04Z"
 }
