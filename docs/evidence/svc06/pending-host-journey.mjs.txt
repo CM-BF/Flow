@@ -1,0 +1,74 @@
+// NOT RUN: draft for future full artifact journey. Relative imports assume original backend-release test directory.
+// Not executable review evidence; checkpoint cleanup still needs safety review before activation.
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp, mkdir, readFile, writeFile, rm, rename, realpath } from 'node:fs/promises';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { createHash, randomUUID } from 'node:crypto';
+import { Pool } from 'pg';
+import { startPreview, stopPreview, bootstrapPreviewWeb } from '../preview.mjs';
+import { importWebCompatibility } from '../web-release.mjs';
+import { verifyBackendArtifact } from './index.mjs';
+const execute = promisify(execFile), repository = process.cwd();
+const sha = bytes => createHash('sha256').update(bytes).digest('hex');
+const adminUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
+/** Synthetic compatibility attestation exercises the host gate only, never claims new App semantics. */
+async function compatibility(directory, artifact, backendHead) {
+ const fields = {read:['ownerAuthenticated','conversationBound','taskBound'],send:['acceptedTurnBound','requestedProfilePreserved'],recover:['sameKey','sameBody','sameTurn'],negotiation:['legacyReadable','streamHeaderHandled','profileHeaderHandled']};
+ const reportDirectory=join(directory,'test-report');await mkdir(reportDirectory);const checks={};
+ for(const [check,keys] of Object.entries(fields)){const bytes=JSON.stringify({format:1,check,backendHead,artifactId:artifact.artifactId,observations:Object.fromEntries(keys.map(key=>[key,true]))});checks[check]=sha(bytes);await writeFile(join(reportDirectory,check+'.json'),bytes);}
+ await writeFile(join(reportDirectory,'report.json'),JSON.stringify({format:1,policy:'flow-web-api-v1',backendHead,artifact,checks}));
+ return importWebCompatibility({directory,reportDirectory});
+}
+if (process.env.SVC06_ARTIFACT_LOCATION) test('fixed artifact runs real center and runner across checkout dependency loss and preserves maintenance replay', {timeout:180_000}, async()=>{
+ const location=JSON.parse(await readFile(process.env.SVC06_ARTIFACT_LOCATION,'utf8'));
+ const parent=await realpath(await mkdtemp(join(tmpdir(),'svc06-host-'))),directory=join(parent,'install');let config,moved=false,hidden=false;
+ const report={startedAt:new Date().toISOString(),providerCalls:0,compatibility:'synthetic host-gate attestation, not App compatibility revalidation',checks:{}};
+ const receipt=process.env.SVC06_JOURNEY_OUTPUT ?? join(parent,'receipt.json');
+ const originalModules=join(repository,'node_modules'),hiddenModules=join(repository,'.svc06-test-hidden-node_modules');
+ const sourceFile=join(repository,'tools/personal-preview/backend-release/host.mjs');const originalSource=await readFile(sourceFile);let changed=false;
+ let artifactCli;
+ const command=async(action,...extra)=>JSON.parse((await execute(process.execPath,[artifactCli,'maintenance',action,'--directory',directory,...extra],{cwd:parent,env:{PATH:process.env.PATH,HOME:process.env.HOME},timeout:90_000})).stdout);
+ try{
+  await startPreview({directory,adminUrl});config=JSON.parse(await readFile(join(directory,'config.json'),'utf8'));
+  const before=JSON.parse(await readFile(join(directory,'state.json'),'utf8'));
+  const compatibilityId=await compatibility(directory,before.webArtifact,location.artifact.sourceHead);
+  // A fresh test install has the same source. The attestation uses its actual running source for bootstrap.
+  assert.equal(before.source.head,location.artifact.sourceHead);
+  await bootstrapPreviewWeb({directory,expectedVersion:0,expectedBackendHead:before.source.head,compatibilityId});
+  const webBefore=await readFile(join(directory,'web-release.json'),'utf8'),configBefore=await readFile(join(directory,'config.json'),'utf8');
+  await rename(join(location.directory,'backend-artifacts'),join(directory,'backend-artifacts'));moved=true;
+  const verified=await verifyBackendArtifact({directory,artifact:location.artifact});artifactCli=join(verified.root,'tools/personal-preview/cli.mjs');
+  const oldCli=join(repository,'tools/personal-preview/cli.mjs');
+  const drain=JSON.parse((await execute(process.execPath,[oldCli,'maintenance','bootstrap','--directory',directory,'--backend-artifact',location.artifact.artifactId],{timeout:90_000})).stdout);assert.equal(drain.state,'draining');
+  const refresh=await command('refresh','--target',location.artifact.sourceHead);assert.equal(refresh.update,'ready-paused');
+  const ready=JSON.parse(await readFile(join(directory,'state.json'),'utf8'));assert.equal(ready.backendArtifact.artifactId,location.artifact.artifactId);
+  assert.equal(await readFile(join(directory,'web-release.json'),'utf8'),webBefore);assert.equal(await readFile(join(directory,'config.json'),'utf8'),configBefore);
+  for(const role of ['center','runner','web'])assert.ok(ready.processes[role].command.includes(verified.root));
+  await writeFile(sourceFile,'throw new Error("test-only mutable source must not load");\n');changed=true;
+  await rename(originalModules,hiddenModules);hidden=true;
+  const delayed=await execute(process.execPath,['--import','tsx','--input-type=module','-e',"await new Promise(r=>setTimeout(r,25));await import('tsx');const p=await import('./apps/server/src/package-artifacts/index.ts');console.log(JSON.stringify({lateImport:typeof p}))"],{cwd:verified.root,env:{PATH:process.env.PATH},timeout:10_000});
+  assert.equal(JSON.parse(delayed.stdout).lateImport,'object');report.checks.lazyImportAfterDevelopmentLoss=true;
+  assert.equal((await command('refresh','--target',location.artifact.sourceHead)).update,'ready-paused');
+  assert.deepEqual(JSON.parse(await readFile(join(directory,'state.json'),'utf8')).processes,ready.processes);
+  assert.equal((await command('resume')).state,'accepting');assert.equal((await command('resume')).state,'accepting');
+  const pool=new Pool({connectionString:config.databaseUrl});try{
+   report.checks.migrations=(await pool.query('SELECT count(*)::int AS count FROM flow.migrations')).rows[0].count;
+   report.checks.audit=(await pool.query('SELECT count(*)::int AS count FROM flow.runner_maintenance_audit')).rows[0].count;assert.equal(report.checks.audit,3);
+   report.checks.tasks=(await pool.query('SELECT count(*)::int AS count FROM flow.tasks')).rows[0].count;assert.equal(report.checks.tasks,0);
+  }finally{await pool.end();}
+  report.checks.ownedFixedWrappers=true;report.checks.identityConfigWebPreserved=true;report.checks.replayedWithoutNewPids=true;
+ }catch(error){report.failure={name:error.name,code:error.code??null,message:error.message};throw error;}
+ finally{
+  if(hidden)await rename(hiddenModules,originalModules);if(changed)await writeFile(sourceFile,originalSource);
+  await writeFile(receipt,JSON.stringify({...report,cleanup:'pending'},null,2));
+  if(config){const stopped=await stopPreview({directory});assert.ok(Object.values(stopped.processes).every(value=>value==='stopped'));report.stopped=stopped.processes;
+   const admin=new Pool({connectionString:adminUrl});try{await admin.query(`DROP DATABASE "${config.databaseName}"`);report.databaseRemaining=(await admin.query('SELECT datname FROM pg_database WHERE datname=$1',[config.databaseName])).rows;}finally{await admin.end();}}
+  if(moved)await rename(join(directory,'backend-artifacts'),join(location.directory,'backend-artifacts'));
+  await writeFile(receipt,JSON.stringify({...report,cleanup:'complete',finishedAt:new Date().toISOString()},null,2));
+  if(!receipt.startsWith(parent+'/'))await rm(parent,{recursive:true,force:true});
+ }
+});

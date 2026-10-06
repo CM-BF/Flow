@@ -1,6 +1,6 @@
 # SVC06 固定后台发布产物
 
-创建/更新：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。accepted，当前仅计划/evidence写权；实施在现TUI01D交付安全点后由可用worker接手，不抢原生ENG01H。
+创建：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。当前 owner assignment_review 已按 claim v4 实施固定小片；完整产物运行验证受资源限制，个人服务不在当前操作范围。
 
 用户结果：中心与runner运行源码、依赖及Node执行身份固定；正常开发checkout前进和依赖安装不改变已运行release，不再为现有服务切换或冻结main。复用已有单安装operation锁、drain/active0/hold/refresh/resume和Web独立发布，不建第二部署状态权威。
 
@@ -38,3 +38,5 @@ SVC05 fixed362受控更新于12:41:29 closed，v15 accepting，保留会话/两W
 固定pnpm9.15.4的 [deploy源码](https://raw.githubusercontent.com/pnpm/pnpm/v9.15.4/releasing/plugin-commands-deploy/src/deploy.ts) 106–117由GO只读核到关闭frozenLockfile/preferFrozenLockfile且一次选择一个package；不能假设deploy --prod等同本片完整冻结产物。mainaeb的tsx是根devDependency，真实server/runner TS入口与跨包相对SQL迁移路径需要保留。首候选保留所需布局与真实依赖闭包，解析/SQL资源必须在产物目录内；不能省略loader/资源，也不为打包先重构全库imports。此为来源标明的研究输入，尚无本片安装或执行证据。
 
 实施 Interface 与资源界限：[interface.md](../../docs/evidence/svc06/interface.md)。artifact bootstrap 只接已有独立 Web pointer 且全部 retained 的固定后台兼容报告已验证；旧 legacy 未显式选择 artifact 不改变。Python/clonefile 仅构建期；Node和非system dylib固定身份为宿主前置。源码范围遵守9literal claim。
+
+当前可审切片固定 `6d276baee6d3fbf14eb4b638a9ad773ffcec988d`，实际范围与 8 个分轮行为观察见 [README](../../docs/evidence/svc06/README.md)。SVC06-03/04 不因小片已有代码而完成：完整 fixed artifact/运行/开发依赖隔离性仍未验。narrowed seed 只读统计不自动降低 ≥2.5 GiB 的完整构建门槛；恢复条件由本 co-lead 按实际资源协调，不扩大删除路径。

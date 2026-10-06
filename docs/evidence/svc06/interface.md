@@ -8,4 +8,4 @@
 
 host 后继仅增加显式 backend descriptor：bootstrap 前准备和校验、同维护 operation 保存、refresh 停止前再次校验，所有 center/runner/Web wrapper 与 tsx/SQL 从固定 root 加载；resume 核固定 artifact。legacy 未选择 artifact 的行为保持。身份、DB、配置、Web pointer/retained 与维护状态仍由既有模块持有。准备/发布不授权 drain 或真实个人操作。
 
-构建期缓存采用系统 Python/clonefile(2) 独立 CoW 文件，nlink=1；Node24 FICLONE_FORCE 实际 ENOSYS 和普通复制 ENOSPC 原失败保留。clone 不支持拒绝，不普通复制 fallback。构建前至少 2.5 GiB 可用：最多约 1.5 GiB 新 physical 数据/元数据估计 + 至少 1 GiB 给 DB/其他任务；这只是检查，不是空间预留，后续 ENOSPC 仍失败保留事实。完整 clone 第二次实验因 pnpm store/v3 布局错误失败；已用空 cache 实际离线拒绝确认 v3 布局和原始 stdout 持久保存。
+构建期缓存采用系统 Python/clonefile(2) 独立 CoW 文件，nlink=1；Node24 FICLONE_FORCE 实际 ENOSYS 和普通复制 ENOSPC 原失败保留。clone 不支持拒绝，不普通复制 fallback。构建前至少 2.5 GiB 可用：最多约 1.5 GiB 新 physical 数据/元数据估计 + 至少 1 GiB 给 DB/其他任务；这只是检查，不是空间预留，后续 ENOSPC 仍失败保留事实。完整 clone 第二次实验 pnpm exit 1，原 installer stdout 未捕获，不能证明具体错误。依据 pinned pnpm 的 store/v3 布局修正实现后，空 cache 检查实际证明离线拒绝和原始 stdout 持久保存；完整成功仍未验。
