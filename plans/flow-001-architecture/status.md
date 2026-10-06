@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:20 UTC / 2026-10-06 05:20 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:02 UTC / 2026-10-06 05:49 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
@@ -10,11 +10,11 @@
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `93aeea28125f201327d627fafa27c56bab69cd63`（本轮修改前观察值） |
 | 工作树dirty状态 | 本次汇总metadata待提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | `14c61b4062f8040ba6c7239860929366e5bd3fc1`；本次核验已含执行选项App/摘要、O04、B03、CTX02、D07/DPERF；此SHA仅观察值，常驻center/runner仍旧75a33等待安全刷新 |
+| 已集成main状态 / HEAD | `3d4985fca060155435b159e0467815bf8e88b8b8`；已含队列UI、K01、O06、SVC02与D06固定图；常驻center/runner实际fb906cb/v3接受，后继main不自动重载 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 聊天界面已接执行选项与紧凑摘要；预览安全更新和知识原文检索正在实施 |
-| 下一可用交付 | 在聊天中管理待发送消息；安全更新真实预览并接入目标拆分提案 |
+| 当前产出 | 聊天排队、知识原文检索和真实预览安全更新已交付；正在接入可追溯工具活动与引用上下文 |
+| 下一可用交付 | 验证真实运行中排队和同会话回复；让聊天按需显示工具进度与知识依据 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
