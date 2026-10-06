@@ -1,3 +1,4 @@
+import { migrateExecutionProfiles, registerExecutionProfileRoutes } from './execution-profiles/index.js';
 import { registerShutdown } from './shutdown/index.js';
 import { migratePlugins, registerPluginRoutes } from './plugins/index.js';
 import { migrateConversations, registerConversationRoutes } from './conversations/index.js';
@@ -45,6 +46,7 @@ export async function createServer(options: ServerOptions) {
     await migrateConversations(pool);
     await migratePlugins(pool);
     await migrateAssistantMessages(pool);
+    await migrateExecutionProfiles(pool);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => { await pool.end(); throw error; });
   let pendingSweep: Promise<void> | undefined;
@@ -89,6 +91,7 @@ export async function createServer(options: ServerOptions) {
   registerConversationRoutes(app, pool, boss);
   registerPluginRoutes(app, pool);
   registerAssistantRoutes(app, pool);
+  registerExecutionProfileRoutes(app, pool);
   registerStreams(app, pool);
   app.post('/api/runners', async request => {
     const input = registerRunnerSchema.safeParse(request.body);
