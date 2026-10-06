@@ -11,7 +11,7 @@ UploadReference={kind:'upload',projectId,resourceId,version:1,contentDigest}；�
 ## HTTP（后继typed client/mount由Lead唯一writer接线）
 
 - GET /api/projects/:projectId/attachments/capabilities：授权project能力与recoveryScopeId。
-- POST /api/projects/:projectId/attachments：Idempotency-Key；body={recoveryScopeId,name,mediaType,text,byteLength,contentDigest}；事务commit才ready。
+- POST /api/projects/:projectId/attachments：Idempotency-Key为1..200 visible ASCII（不含空白），不trim/Unicode规范化；body={recoveryScopeId,name,mediaType,text,byteLength,contentDigest}；事务commit才ready。
 - GET同集合?q&after&limit：有界ready元数据，limit至多20；nextCursor不是全量总数。
 - GET /api/projects/:projectId/attachments/:resourceId：当前metadata。
 - GET /api/projects/:projectId/attachments/:resourceId/versions/:version/content?digest=…：显式授权正文，返回完整reference；原bytes至多8192、encoded响应至多65536。
@@ -31,8 +31,23 @@ pending是客户端未获事务结果，没有虚构中心后台processing行。
 
 无attachments或[]维持原template1；知识也为空则无context。仅非空attachments用template2，strict discriminated reference含order=knowledge-then-attachments、sources[]知识metadata、attachments[]固定metadata；各段保持请求顺序，总数≤4、原bytes≤8192。旧v1字段/算法/guard不松。v2 digest包含版本/顺序/引用及exact正文，executionInputDigest含userText/template2/编排prompt；prompt仍≤16000codeunits/49152bytes。metadata无正文，contextDetail授权按需可含正文。
 
-公共ACK校验由F01/TUI/Web同一合同消费，必须核完整有序refs/bytes/context身份；不以长度或digest存在冒充匹配。后继freezeContext/private executionInputForTask复用现中心权威，queue promotion/recovery沿原input；runner通过授权claim获得private prompt，不增任意文件读取或provider SDK耦合。018原不可变trigger不放宽，新迁移编号未领取。upload、knowledge、runner file分型；首片runner file/PDF/image均unsupported。
+公共ACK校验由F01/TUI/Web同一合同消费，必须核完整有序refs/bytes/context身份；不以长度或digest存在冒充匹配。后继freezeContext/private executionInputForTask复用现中心权威，queue promotion/recovery沿原input；runner通过授权claim获得private prompt，不增任意文件读取或provider SDK耦合。018原不可变trigger不放宽，026已预留，写权未领取。upload、knowledge、runner file分型；首片runner file/PDF/image均unsupported。
 
 ## 验证与非目标
 
 phase1仅pure schema tests和类型消费者。后继PG/HTTP含原bytes/BOM/digest、元数据0正文、失ACK/restart/同key、lookup404并发commit、pin与expiry/cleanup两种时序、quota并发、in-use/audit不删、队列重启promotion/recovery，以及实际authorized claim→通用fake HarnessAdapter收到冻结材料。0provider；不能将phase1视作后端/App已接通。
+
+## 当前可消费导出与兼容决策
+
+`attachments.ts` 导出 request/reference/descriptor/metadata/capability/receipt/lookup/list/content 的严格 schema 与相应类型、`ATTACHMENT_LIMITS`、局部 `ATTACHMENT_ERRORS`。`decodeAttachmentText` 保原 UTF-8 字节；`assertAttachmentTextDigest` 是必须额外调用的实际 SHA-256 校验，schema 的 digest 正则不代表内容已核。异步调用方在返回后仍须核自己 generation/授权；helper 不管理生命周期。
+
+`conversation-context.ts` 保留原同名类型兼容 v1，新增 V1/V2 discriminated reference、v2 detail、`conversationContextReferenceSchema`、`conversationContextResponseSchema`、`conversationContextTemplate` 与 `parseAttachmentContextReceipt`。后者仅处理本次非空附件 v2：expected 的完整 ordered descriptor 来自已验证、冻结的 upload receipt；外层 conversation/turn/task/queue 身份、幂等 key 和权限仍由调用方先验。v1 请求继续现旧 guard，不因新 helper 而放宽。
+
+Root 已收敛为无需额外媒体协议协商：仅本请求非空 attachments 产生 v2；无附件/[]保持 v1（知识也无则无context），不能按 conversation/project 整体升级。原 key 的持久 v1 ACK 永远原样重放。新 Web 对旧 center 无 capability 时禁附件，纯文字请求必须**省略** attachments 字段；旧 strict schema 连 [] 也拒绝。
+
+实际 f181 旧 Web GET history/queue 可保留 v2 metadata 并显示普通正文，没有附件显示能力；不能声称旧 loaded JS 完整展示附件。其 Send/enqueue guard 只认可自己请求的 v1；错误 v2 ACK 必须 unknown/原key重试，不能伪装成功或确定拒绝。未引入 Accept/header、整页 GET 阻断或删字段冒 v1。新的 shared decoder/客户端序列化和 backend admission 是 runtime 后继，phase1未接生产 capability。
+
+测试直接导入本树与 f181 字节相同的 ConversationProjection、QueueCommands、ConversationQueueProjection、conversationMessages 和 FlowClient；只有 fetch 响应为 fixture，不手写旧 guard。源码/检查来源在 additive-checks.json。F01 受控发布 export/client 时按上述真实消费矩阵接入，本owner不抢写 index/client。
+
+
+共享 ACK decoder 对齐：`conversationContextReferenceSchema` 是中心 producer 严格输出约束；`conversationContextResponseSchema` 是消费者已知字段投影。同一结构/locator/source/合计规则复用，context、source、citation、locator、descriptor、upload reference 的未知附加字段逐层忽略，已知 identity/order/version/bytes/name/type 不放松。返回对象不保留额外正文或未知字段。`parseAttachmentContextReceipt` 内部走 consumer projection，故TUI/F01无需先复制一套strip规则，不会出现外层承诺additive、内层又严格拒额外字段的矛盾。expected冻结描述符与生产请求仍严格，未改旧v1 guard。
