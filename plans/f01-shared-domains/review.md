@@ -1,6 +1,6 @@
 # F01 共享接线审查
 
-**当前增量状态：NOT_STARTED（CHAT08默认关闭的生产挂载）**
+**当前增量状态：APPROVED（CHAT08默认关闭的生产挂载）**
 
 Review target commit：fe5bc2d9b8dab231996b1b156bc086d858846117
 
@@ -149,3 +149,7 @@ Root于2026-10-06 07:34 UTC独立只读APPROVED3d81141324041c2c67680edbb686996ce
 ## O09 thin client pending independent review
 Review target commit: 1bd4855f1582107e3b1b17ba9ba77cb43801e74d
 状态：NOT_STARTED。只3file薄接线，native-node-client-manifest.json固定原始红绿/tsc与合同输入。领域/生产不在本批准范围。
+
+
+## 2026-10-06 08:00 UTC CHAT08 production独立批准
+Root只读APPROVED fe5bc2d9b8dab231996b1b156bc086d858846117 / delivery61ed4b5f969ed1d5d4e2310411873ca1b94f0404。完整2file/factory/auth/迁移顺序已读，2源4raw hash/bytes与manifest e85d515c一致，20domain对d4e不变；2/2生产、既有纵向1selected/12未选及tsc0/随机库连接和余库[]支持限定交付，无重跑/0provider/P1P2。024先worker/scheduler，可信option严格true才受理；CLI/profile/conversation仍关闭，普通stringfinal保留。本批准不含后继O09薄client或CHAT09能力开通。
