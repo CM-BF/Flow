@@ -1,0 +1,110 @@
+{
+  "observedAt": "2026-10-06T23:04:10.551359+00:00",
+  "responseSha256": "b8ef90d0c85aee93f289e34560cbe11f97946c0aa3befe0483082773decc5ab7",
+  "responseBytes": 2491179,
+  "generatedAt": "2026-10-06T23:03:59.082Z",
+  "count": 181,
+  "selected": [
+    {
+      "id": "OPS-CI01",
+      "current": true,
+      "issues": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "远程验证模板候选已获独立审查，等待进入主线供用户最终选择启用。",
+        "next": "受控接收已审文档候选，之后由用户决定是否启用。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "CHAT05P01",
+      "current": true,
+      "issues": [],
+      "human": {
+        "delivery": {
+          "state": "review",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "完整工具材料保存、分块重报与分页读口源码已通过独立审查；剩余验证待资源恢复",
+        "next": "固定正文传输与读口源码供独审，待资源允许补直接检查",
+        "blocker": {
+          "state": "active",
+          "text": "可用空间不足，直接验证等待资源恢复；源码已通过限定独审"
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "TUI01F",
+      "current": true,
+      "issues": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "终端初屏与正常退出已单独验证；启动和收尾失败现可保留诊断，完整双界面接续仍待验证。",
+        "next": "待资源及独占窗口满足后，按已审固定入口验证双界面接续。",
+        "blocker": {
+          "state": "active",
+          "text": "完整双界面接续仍待原门槛的资源复核和新独占窗口；源码修复已审，原首败根因仍未知。"
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "OPS-001",
+      "current": true,
+      "issues": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "三处已退役临时预览的生成缓存已清理，原始证据和依赖保留；本地空间仍不足，最小远程验证文档已获独审，等待用户选择启用。",
+        "next": "交付可由用户启用的远程零模型验证文件；本地真实数据库、浏览器和完整工具正文验证继续等待足够空间。",
+        "blocker": {
+          "state": "active",
+          "text": "三缓存结束后卷余量1,073,909,760B，本记录fresh为1063604224B，仍不足1GiB+128MiB的PG/浏览器线。远程候选尚未启用/运行，现只完成静态检查。"
+        },
+        "decision": {
+          "state": "active",
+          "text": "是否将已审验证文件启用为手动GitHub Actions并运行一次；现有凭据缺workflow权限，未尝试扩权或启用。"
+        },
+        "missing": [],
+        "complete": true
+      }
+    }
+  ],
+  "rawStorage": "Only this bounded projection saved; full raw response not archived."
+}

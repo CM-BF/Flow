@@ -347,3 +347,5 @@ OPS-CI01唯一source为`ops-remote-validation/plans/ops-ci01-remote-validation`�
 | OPS-001-15 | in-progress | native_center_owner / Execution Lead | 远程最小验证候选及准确启用步骤；唯一子任务OPS-CI01，尚未启用/运行。 |
 
 局部status检查发现带说明的NONE不符合既有人读字段格式，原记录保留于9bff6516；已按真实最终启用动作改为REQUIRED，未改parser或运行产品测试。
+
+2026-10-06T23:05:30.238536+00:00：X01源码供给与CI启用解耦。本组仅只读核fixed60ca/384源码零diff及14literal，未创建新树；Mika获exact `plugin-enable-binding`单树source-only Git委派。正式分配034-plugin-runtime.sql给architecture_read在handoff/accept后fresh amend；033仍CHAT05P01。见[唯一分配与边界](../../docs/quality/x01-enable-binding-allocation.json)，不代表已take或PG/产品通过。
