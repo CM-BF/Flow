@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-06T15:28:12.059132+00:00",
-  "main": "fb9fe5e745ee1617f889a7fea420d445a0b7c05c",
+  "recordedAt": "2026-10-06T15:37:14.443713+00:00",
+  "main": "22d5ca67159b35bb794b2711cf6df0cb905b92e8",
   "sourceSampleAt": "2026-10-06T15:19:18.967Z",
   "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
   "reviewedQueue": [],
@@ -33,15 +33,23 @@
     },
     {
       "taskId": "WPF-RELEASE03",
-      "phase": "waiting-first-history-only-window",
+      "phase": "old-backend-history-failed-cleaned",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
-      "next": "Web manager fresh >=1GiB+32MiB; A-only one bounded attempt first, no browser/fullbuild assumption."
+      "next": "3874/180000ms retained; candidate362+three-line approved fixb298 prepared; newtuple/fresh resource before any A/B continuation. No personal switch."
     },
     {
       "taskId": "SVC06",
       "phase": "pure-closure-slice-delivered",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/plans/svc06-backend-release/status.md",
       "next": "Explicit production parser and builder wiring/install/entry proof; full artifact >=2.5GiB gate remains."
+    },
+    {
+      "taskId": "SVC05H01",
+      "target": "b29807979a5589678a61d3fb84781950cf366396",
+      "metadata": "0037921d12c089e6334b001545f698db067087f8",
+      "phase": "fixed-source-only-preparation",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/plans/svc05-history-compatibility/status.md",
+      "next": "Independent source precheck and existing Web A/B with frozen newtuple; source/lock otherwise362,0PG/provider/personal operations."
     }
   ],
   "mainBeforeBatch": "280289008a5a3779e4e5e6453181b96062ed9514",
@@ -50,21 +58,25 @@
       "taskId": "F01/O14",
       "target": "73aabff4fac96c0439817bdc72358c1385371e8d",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/plans/f01-shared-domains/status.md",
-      "next": "Production PG after Web history-only cleanup; isolated lifecycle source P2 closed; thin transport main separately."
+      "next": "15:31 resource preflight1,098,022,912B below1GiB+32MiB,PGNOT_RUN; source P2 closed/thin main."
     },
     {
       "taskId": "O15",
       "target": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/plans/o15-goal-input-confirmation/status.md",
-      "next": "Independent source pre-review and PG after exclusive resource gate; not approved."
+      "next": "Independent source precheck noP1/P2 at9fd1; PGNOT_RUN, no full approval. Fresh resource gate required."
     }
   ],
   "sourceProvisionQueue": [
     {
-      "taskId": "WPF-MATURE-02-10",
-      "worktree": "claude-message-settings-core",
-      "base": "70cc4e852365e974cefde30bfad75c7d233985c6",
-      "state": "source-provision-complete; leaf owner fresh take and canonical required before registry"
+      "taskId": "WPF-MATURE-02-CORE",
+      "state": "reviewed source4e7 and metadata b342 accepted main22d; registry pending164 deployment",
+      "worktree": "claude-message-settings-core"
+    },
+    {
+      "taskId": "SVC05H01",
+      "state": "source-only sparse provision and own fresh4scope claim complete",
+      "worktree": "personal-history-compatibility"
     }
   ]
 }
