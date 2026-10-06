@@ -9,8 +9,8 @@
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core |
 | Branch | codex/claude-message-settings-core |
-| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 4e7b7f968a2160a60989b3b6343506ae8fb5ef6a（source checkpoint；后续仅验证证据/metadata） |
-| 工作树dirty状态 | 源码 checkpoint clean；本次仅 evidence/config/status 封存，完成后核 clean |
+| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 4e7b7f968a2160a60989b3b6343506ae8fb5ef6a（source）；validation 8c56f15c5a70afd4e33031876244f70d1284d957（后续仅metadata） |
+| 工作树dirty状态 | 8c56f15c 验证封存 clean；本次仅 manifest/交审 metadata，commit 后核 clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | PASSED — 4e7b7f968a2160a60989b3b6343506ae8fb5ef6a 本树单文件5/5，局部strict exit0；PG/SDK/provider/target未运行 |
@@ -42,4 +42,4 @@
 
 本 status 是唯一手填事实源。待 Lead 登记新 sub-task 权威 WT/branch/planDir，未声称已聚合。新增纯契约 Module 尚未导出或接入产品；架构图待 Lead 在接线片固定后统一登记，不改共享 registry/架构源。
 
-source/raw/config/manifest 固定供 root 只读审查。真实检查仅纯 contract，并未开放中心/adapter/UI；不把5/5升级为模型能力证据。自有cache2文件/1,357,827逻辑B已清，未动共享依赖或旧资源。没有新增用户决定。父计划索引由 Lead/parent owner 更新，本 owner 不改父 status。
+source/raw/config 固定；[manifest与交审入口](../../docs/evidence/wpf-mature-02-message-settings-core/review-ready.md)供独立只读审查。真实检查仅纯 contract，并未开放中心/adapter/UI；不把5/5升级为模型能力证据。自有cache2文件/1,357,827逻辑B已清，未动共享依赖或旧资源。没有新增用户决定。父计划索引由 Lead/parent owner 更新，本 owner 不改父 status。
