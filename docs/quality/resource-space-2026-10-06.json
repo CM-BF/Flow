@@ -9,16 +9,7 @@
   "scope": "SVC06 full artifact preparation only",
   "ordinarySmallChecks": "allowed with bounded actual budget",
   "cleanupPolicy": "only ended, owned, identity-confirmed, rebuildable temporary resources; preserve user data, other worktrees/dependencies, active/unknown resources and original review evidence",
-  "deletedByExecutionLead": [
-    {
-      "observedAt": "2026-10-06T16:45:42.321628+00:00",
-      "availableBytes": 1238319104,
-      "preparationMarginObservedBytes": 1243852800,
-      "action": "next12b12/12 completed; reversible same-main historical copies only",
-      "evidence": "sparse-worktree-2026-10-06/next12b/summary.json",
-      "decision": "Web A→B next with fresh original guards. No competing PG. SVC06 full gate unchanged."
-    }
-  ],
+  "deletedByExecutionLead": [],
   "personalServicesChanged": false,
   "providerCalls": 0,
   "followUp": {
@@ -153,6 +144,14 @@
       "availableBytes": 1115361280,
       "operation": "21 exact claimed/readonly core sources restored, HEAD5239 unchanged, nominal180224B",
       "decision": "No install/import/tests/PG. Earlier source-only refusal retained; GO clarified later that the PG/build reserve must not gate a ~168KiB exact missing-source restoration. Ordinary bounded source editing may continue; running guards remain unchanged."
+    },
+    {
+      "observedAt": "2026-10-06T16:45:42.321628+00:00",
+      "availableBytes": 1238319104,
+      "preparationMarginObservedBytes": 1243852800,
+      "action": "next12b12/12 completed; reversible same-main historical copies only",
+      "evidence": "sparse-worktree-2026-10-06/next12b/summary.json",
+      "decision": "Web A→B next with fresh original guards. No competing PG. SVC06 full gate unchanged."
     }
   ]
 }
