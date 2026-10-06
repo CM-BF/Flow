@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:55:00 UTC / maincc135026 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:01 UTC / maincc135026 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -19,8 +19,8 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
 | 当前产出 | 四个已交付网页目录完成可逆收起；消息设置所需的小份源码已补齐。 |
-| 下一可用交付 | 优先恢复新版网页的历史兼容检查，再安排目标推进的局部验证。 |
-| 当前阻塞 | ACTIVE: 余量只够尝试小型验证准入；浏览器阶段及大型安装、完整构建仍未解阻。 |
+| 下一可用交付 | 等待网页兼容检查的实际空间准入；并行完成终端小范围验证。 |
+| 当前阻塞 | ACTIVE: 网页历史检查fresh余量仍不足；仅有界纯检查可继续，大型安装和完整构建仍关闭。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -130,3 +130,7 @@ GO已授权最多再8棵本队已交付且released树，达到2.75GiB可用或8�
 2026-10-06 15:55 UTC：四棵Web交付树按明确授权逐一处理，先额外保留实验实际引用/一次性native调用标记和所有可执行evidence目录，再fresh released/clean/remote/openfile与fixed-main blobs核对。四次结果clean，保留hash/六保护树/shared config均不变，依赖未动；卷末1,118,138,368B、随后core小源码恢复后1,115,361,280B，只有实际共享观察，不把逻辑量当物理回收。[完整回执](../../docs/quality/sparse-worktree-2026-10-06/web-four-summary.json)。本批4棵到限停止；Web A2优先fresh gate，F01/O15不并跑，B/full SVC保原门槛。
 
 小源码规则校正：此前对约168KiB exact源码补齐套用1GiB+1MiB前置，确有一次NOT_RUN；该拒绝保留。GO现明确小额源码准备不套PG/build运行reserve，保留现dirty与无覆盖即可。恢复已在四树后完成21文件180224B，0install/import/tests；后续若实际写失败停止，运行验证门槛不因此降低。
+
+2026-10-06 16:01 UTC：源码物化更正：15:54 sparse add新清单时重套初始规则，导致CORE已提交的自有metadata/leaf暂时收起；15:57将四个currentScopes与新增清单一并显式恢复，HEAD5239未变，后续作者dirty保留。原经过与纠正见[回执](../../docs/quality/sparse-worktree-2026-10-06/claude-message-settings-source-expansion.json)，不把中间状态改写为一直完整。后续活跃树物化须先保留全部当前实际文件及完整已领取闭包。
+
+Web A2新tuple脚本独审已过，但15:58 fresh资源少约4MB，实际检查NOT_RUN、原3874ms预算不变；本批四树已到限，未扩大名单。TUI01F用既有精确第三方链接、仅本树workspace aliases进入一次有界纯检查（1GiB+8MiB/输出≤2MiB/≤30s），无PG或浏览器，不降低其他窗口门槛。

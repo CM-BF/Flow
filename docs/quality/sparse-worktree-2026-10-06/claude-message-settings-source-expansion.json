@@ -1,0 +1,133 @@
+{
+  "at": "2026-10-06T15:54:46.484500+00:00",
+  "state": "READY_SOURCE_ONLY",
+  "head": "5239aa4d2969147812749f3e756e1c2af46a0225",
+  "headAfter": "5239aa4d2969147812749f3e756e1c2af46a0225",
+  "newFiles": 21,
+  "bindings": [
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "bytes": 3805,
+      "sha256": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "bytes": 3967,
+      "sha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 3222,
+      "sha256": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "bytes": 8294,
+      "sha256": "0d8638a7432a34e69b736b50f0307f2f2b7a75eca8dc2f1fa0522355e2def43c"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "bytes": 3554,
+      "sha256": "14652c6fd14d11a685c8a520d337c5e51e23f43f1a9b40cd174739d77df3fe57"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "bytes": 3242,
+      "sha256": "82e5e104e68cda1b925908ecfa1b34daf78b07d96fe9f952830746cbc95dd603"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/store.ts",
+      "bytes": 3681,
+      "sha256": "3885d55dc32b052412809f1592a534c0b91bcb887899aed26ce6fa755e106990"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "bytes": 2387,
+      "sha256": "a8c6ca373a085439728ff871f8cdb3f143051ebdaeebdb9c505decaa97552475"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/gate.ts",
+      "bytes": 1849,
+      "sha256": "d6b88877c6190bd2bb026b5c6884a5916a0ea5d49fe9d9cb9f0038776405bf7d"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/promotion.ts",
+      "bytes": 4242,
+      "sha256": "54ad1ef9aba63ea437f6c4ebbec589fe82b0b60b15ad0c153778e1f8e2f95e2f"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/controls.ts",
+      "bytes": 2933,
+      "sha256": "79def0b3ced448deeb0a4bcaf1923484695bcd9f28cd463225a003a00657365e"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 9634,
+      "sha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "bytes": 2512,
+      "sha256": "e3b316109191150ba77a5d29bc1b16000f3a87497d42ade5a8402bdb58a1e9ec"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/native-catalog.test.ts",
+      "bytes": 13777,
+      "sha256": "6783d35e586d38e7811e4a4197867f58fd024b8db2d76b12f622c2b6f219d478"
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "bytes": 11116,
+      "sha256": "15050943fb1182f3c3ca012343fb91542c7fd8740ea39a1bc9cc09d210b87bfa"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 22057,
+      "sha256": "4e4676f7a81ac97cfa05de6d398e1ca96e4e0b69d9968507ba9c4de1de9b4a2b"
+    },
+    {
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "bytes": 3286,
+      "sha256": "fc4626777e2d3215a10280c3047cd0b6384e0c43ada39496273461b22bb7d135"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 11267,
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245"
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "bytes": 11658,
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd"
+    },
+    {
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "bytes": 12618,
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b"
+    }
+  ],
+  "nominal4KiBDataBytes": 180224,
+  "freeBeforeBytes": 1115549696,
+  "freeAfterBytes": 1115361280,
+  "mainUnchanged": true,
+  "sharedConfigUnchanged": true,
+  "tests": 0,
+  "provider": 0,
+  "installation": 0,
+  "limits": "Exact claimed source and one readonly fixture only; full runtime/dependency closure not proven; PG gates unchanged.",
+  "priorDenied": "/tmp/flow-claude-message-settings-source-expansion-denied.json",
+  "correction": {
+    "at": "2026-10-06T15:57:12.586941+00:00",
+    "reason": "sparse add reapplied original leaf patterns; own post-provision tracked metadata/leaf files were not explicitly included. Added all four current claimed scopes before continuing.",
+    "allCurrentScopesRestored": true,
+    "headUnchanged": true,
+    "noTrackedContentDeleted": true,
+    "ownMetadataSource": "5239aa4d2969147812749f3e756e1c2af46a0225",
+    "untrackedAndDirtyPreserved": true
+  }
+}
