@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
 import { lstat, mkdtemp, open, rm, statfs, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
 import { Pool } from 'pg';
 import { PgBoss } from 'pg-boss';
@@ -45,9 +45,11 @@ export async function confirmationFixture() {
       const remaining = deadline - performance.now();
       assert(remaining > 0, 'O15 connections did not close within the observation bound.');
       try {
-        const query = { text: 'SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid', values: [name], query_timeout: Math.min(500, Math.ceil(remaining)) };
+        const query = { text: 'SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid LIMIT 33', values: [name], query_timeout: Math.min(500, Math.ceil(remaining)) };
         const result = await admin.query(query); facts.connections = result.rows;
         observations.push({ elapsedMs: Math.floor(performance.now() - started), connections: result.rows });
+        assert(result.rows.length <= 32, 'O15 connection observation exceeds its bound.');
+        assert(performance.now() <= deadline, 'O15 connection observation deadline elapsed.');
         if (result.rows.length === 0) return;
       } catch {
         observations.push({ elapsedMs: Math.floor(performance.now() - started), error: 'connection-observation-failed' });
@@ -108,6 +110,9 @@ export async function confirmationFixture() {
   }
   try {
     await checkpoint('database-marker-reserved');
+    const parent = await open(dirname(evidencePath), 'r');
+    try { await parent.sync(); } finally { await parent.close(); }
+    facts.evidenceDirectorySynced = true; await checkpoint('reservation-durable');
     console.info(JSON.stringify({ o15Evidence: evidencePath, database: name }));
     assert.deepEqual((await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [name])).rows, []);
     facts.creationRequested = true; await checkpoint('before-create');
