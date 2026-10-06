@@ -32,7 +32,7 @@
 | TUI001-01 | completed | Execution Lead | [设计](plan.md)、[研究来源](../../docs/evidence/tui01/research-provenance.json) |
 | TUI001-02 | completed | runner_owner / Mika独审 | [TUI01A唯一状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations/plans/tui01a-conversations/status.md)；29b两项P2已闭，mainf181d84；原端到端/PTY和增量19不同用例边界保留 |
 | TUI001-03 | completed | runner_owner / Execution Lead | [TUI01C](../../../tui-stream-activity/plans/tui01c-stream-activity/status.md)独审及焦点修复通过、main648e接收；[父回执](../../docs/evidence/tui01/tui01c-main-receipt.json) |
-| TUI001-04 | in-progress | native_center_owner / Execution Lead | TUI01G fixed93a源码已供给；消费已发布Claude合同，shared scope须正式移交后take；Codex与完整模型验收仍开放 |
+| TUI001-04 | in-progress | native_center_owner / Execution Lead | [TUI01G](../../../tui-message-settings/plans/tui01g-message-settings/status.md)首canonical fabc7af2；11scope已正式take，原F六共享源已v5移交；消费已发布Claude合同，Codex与完整模型验收仍开放 |
 | TUI001-05 | pending | TUI owner / Web合同 | 附件生命周期与context |
 | TUI001-06 | in-progress | native_center_owner / Execution Lead | TUI01D/E及F-03已审/main；真实取消/Ink PTY限定验证完成，F-04真实双端与steer/decision仍后继 |
 | TUI001-07 | pending | TUI owner | runner/plugin管理 |
@@ -64,3 +64,5 @@
 2026-10-06 20:26 UTC：F04固定源码d147a636已获Execution Lead准备限定独审，782输入字节/hash一致、4个分轮纯例与两次focused types原始证据成立。实际PG/Chrome/PTY仍NOT_RUN，个人发布后再按fresh资源安排单次共享窗口；不重复F03。原08追加机器输出有界投影/原文显式读取验收，当前仅源码研究、未领取新产品scope；不打断F04或发布。
 
 2026-10-06 23:21 UTC：TUI01F唯一status已读至22:42，实际F04 1/0失败与独立正常cleanup保留，不继续沿用历史NOT_RUN作为当前结果。TUI01G source-only207文件/3,246,155逻辑B已备妥，无安装或产品执行；实现进入原TUI001-04，不新增大task。完整日用/附件/双端和provider验收保持开放，公开合同与headless可先交付，Web与TUI不互作全部后端开发的串行门禁。
+
+2026-10-06 23:23 UTC：fresh账本确认TUI01G claim ecd1c07c v1 active，原F claim v5仅保7实验/取消范围；共享源无双writer。首canonical fabc7af2计划/Interface已push，实施与F04资源等待解耦。父计划不代替子片独审、局部检查和main验收。
