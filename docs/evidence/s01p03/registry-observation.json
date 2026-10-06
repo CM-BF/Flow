@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-10-06 10:36:20 UTC",
+  "observer": "status_read / gpt-6-astra",
+  "mainHead": "0b0d5fe7af9c0f40861ec6d2847f7383bcd76739",
+  "mainDirty": false,
+  "source": "apps/execution-dashboard/src/registry.mjs",
+  "line": 8,
+  "assignment": ["S01P03", "执行器停止与领取排空", "工作线", "runner-graceful-stop", "s01-graceful-stop"],
+  "statusSource": "plans/s01-graceful-stop/status.md",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop",
+  "branch": "codex/runner-graceful-stop",
+  "owner": "status_read",
+  "implementationTarget": "a677f2b8a22aa5ecdcc1be3709cd73a090f34702",
+  "runtimeEqualsMain": false,
+  "shutdownTestExistsOnMain": false,
+  "serviceAggregation": "NOT_VERIFIED",
+  "pageRefresh": "NOT_VERIFIED",
+  "claim": {"claimId": "a3e307fc-a7cc-40d3-a28c-4ec3482b985a", "version": 1, "state": "active"},
+  "testsRerun": false,
+  "scope": "Read-only registration observation. No product integration or service-refresh claim."
+}

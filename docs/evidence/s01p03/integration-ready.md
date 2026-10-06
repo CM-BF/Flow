@@ -1,6 +1,6 @@
 # S01P03 可受控集成
 
-所属大task **FLOW-001**，小task **S01P03**，co-lead **mika**。唯一 owner **status_read / gpt-6-astra**；权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop`，branch `codex/runner-graceful-stop`，唯一进度来源 `plans/s01-graceful-stop/status.md`。请 Lead 登记该来源，目录名 `s01-graceful-stop`；不将 S01 设为第三层父任务。
+所属大task **FLOW-001**，小task **S01P03**，co-lead **mika**。唯一 owner **status_read / gpt-6-astra**；权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop`，branch `codex/runner-graceful-stop`，唯一进度来源 `plans/s01-graceful-stop/status.md`。Lead已在main `0b0d5fe7af9c0f40861ec6d2847f7383bcd76739`登记该来源，目录名 `s01-graceful-stop`；不将 S01 设为第三层父任务。2026-10-06 10:36:20 UTC只读核验见[登记收据](registry-observation.json)，服务聚合/页面刷新未核验，实现尚未集成。
 
 基线 `f181d84b5fb3652d62e2a181acff442d42b3e066`，固定实现 **`a677f2b8a22aa5ecdcc1be3709cd73a090f34702`**；其后仅本任务manifest、独审、status/review与集成说明metadata。2026-10-06 10:30:11 UTC观察 main `8d8ab520a9d43c7b9dafb22911416ee799ebf665`；本片当时尚未集成，不把已有基线能力算本次交付。最终分支HEAD以本次push/交接的Git回执为准，不能把实现target与metadata HEAD混淆。
 
