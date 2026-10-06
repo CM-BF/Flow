@@ -8,12 +8,12 @@ import { pathToFileURL } from 'node:url';
 import { performance } from 'node:perf_hooks';
 import { createHash } from 'node:crypto';
 
-const [work, piPath, pluginPath, sentinel] = process.argv.slice(2);
-const report = { probe: 'CTX02', cases: [], outcome: 'started', promptCalls: 0, providerCalls: 0 };
+const [work, piPath, pluginPath, sentinel, mode] = process.argv.slice(2);
+const report = { probe: 'CTX02', mode, cases: [], outcome: 'started', probeInvokedPrompt: false, probeInvokedProvider: false, providerAttemptCount: 'not-instrumented; OS network blocked' };
 const start = performance.now();
 const sessions = [];
 const hash = value => createHash('sha256').update(value).digest('hex');
-const textOf = messages => messages.flatMap(message => message.content?.filter(part => part.type === 'text').map(part => part.text) ?? []).join('\n');
+const textOf = messages => messages.flatMap(message => typeof message.content === 'string' ? [message.content] : message.content?.filter(part => part.type === 'text').map(part => part.text) ?? []).join('\n');
 const safeError = error => ({ name: error.name, code: error.code, message: error.message, stack: error.stack?.split('\n').slice(0, 8).join('\n') });
 async function check(name, execute) {
   const before = performance.now();
@@ -58,14 +58,36 @@ try {
   const model = { id: 'ctx02-no-provider', name: 'Synthetic metadata only', provider: 'ctx02', api: 'openai-completions', baseUrl: 'http://127.0.0.1:9', reasoning: false, input: ['text'], cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 }, contextWindow: 200000, maxTokens: 1024 };
   const zeroUsage = { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, totalTokens: 0, cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 } };
   const assistant = content => ({ role: 'assistant', content, api: model.api, provider: model.provider, model: model.id, usage: zeroUsage, stopReason: 'stop', timestamp: 1 });
-  const adapter = { modelContextLimit: 200000, autoUpdate: false, delegate: false, throttleRetry: false, preserveRecentMessages: 0, outputHeadroomMaxPct: 0 };
+  const adapter = { modelContextLimit: 200000, autoUpdate: false, delegate: false, throttleRetry: false, preserveRecentMessages: 0, coreOverrides: { preserveRecentTokens: 0 }, outputHeadroomMaxPct: 0 };
+  report.adapter = adapter;
   const fixtures = new Map();
+  async function factoryResources(cwd, enabled) {
+    const { loadExtensionFromFactory, createExtensionRuntime } = await import(pathToFileURL(path.join(piPath, 'dist/core/extensions/loader.js')));
+    const { createEventBus } = await import(pathToFileURL(path.join(piPath, 'dist/core/event-bus.js')));
+    const extensionRuntime = createExtensionRuntime();
+    const extension = await loadExtensionFromFactory(plugin.createAcpExtension({ ...adapter, enabled }), cwd, createEventBus(), extensionRuntime, 'fixed-billion-context-pi-0.1.83');
+    // The SDK ResourceLoader seam receives actual stock-loaded extensions and
+    // explicitly empty resources. Extension APIs/context/actions remain Pi's.
+    return {
+      getExtensions: () => ({ extensions: [extension], errors: [], runtime: extensionRuntime }),
+      getSkills: () => ({ skills: [], diagnostics: [] }), getPrompts: () => ({ prompts: [], diagnostics: [] }),
+      getThemes: () => ({ themes: [], diagnostics: [] }), getAgentsFiles: () => ({ agentsFiles: [] }),
+      getSystemPrompt: () => undefined, getSystemPromptSource: () => undefined,
+      getAppendSystemPrompt: () => [], getAppendSystemPromptSources: () => [],
+      extendResources: () => { throw new Error('No additional resource discovery is authorized'); },
+      reload: async () => { throw new Error('No implicit resource reload is authorized'); },
+    };
+  }
   async function open(label, filename, enabled = true) {
     const cwd = path.join(work, label);
     await fs.mkdir(cwd, { recursive: true });
     const settingsManager = pi.SettingsManager.inMemory({ compaction: { enabled: false }, retry: { enabled: false }, cacheWarming: 'off', packages: [] });
-    const loader = new pi.DefaultResourceLoader({ cwd, agentDir: path.join(work, 'agent'), settingsManager, noExtensions: true, noSkills: true, noPromptTemplates: true, noThemes: true, noContextFiles: true, extensionFactories: [plugin.createAcpExtension({ ...adapter, enabled })] });
-    await loader.reload();
+    let loader;
+    if (mode === 'factory') loader = await factoryResources(cwd, enabled);
+    else {
+      loader = new pi.DefaultResourceLoader({ cwd, agentDir: path.join(work, 'agent'), settingsManager, noExtensions: true, noSkills: true, noPromptTemplates: true, noThemes: true, noContextFiles: true, extensionFactories: [plugin.createAcpExtension({ ...adapter, enabled })] });
+      await loader.reload();
+    }
     assert.deepEqual(loader.getExtensions().errors, []);
     const manager = filename ? pi.SessionManager.open(filename) : pi.SessionManager.create(cwd, path.join(cwd, 'sessions'));
     if (!filename) {
@@ -91,6 +113,11 @@ try {
     assert(definition, `Real registered ${name} tool missing`);
     return definition.execute(callId, args, AbortSignal.timeout(2000), undefined, handle.session.extensionRunner.createContext());
   }
+  async function close(handle) {
+    await handle.session.extensionRunner.emit({ type: 'session_shutdown' });
+    handle.session.dispose();
+    sessions.splice(sessions.indexOf(handle.session), 1);
+  }
   const handles = {};
   await check('real SDK loads two isolated sessions and projects real context hooks', async () => {
     for (const label of ['A', 'B']) {
@@ -115,12 +142,16 @@ try {
       handle.manager.appendMessage(assistant([{ type: 'toolCall', id: callId, name: 'compress', arguments: args }]));
       const compressed = await tool(handle, 'compress', args, callId);
       handle.manager.appendMessage({ role: 'toolResult', toolCallId: callId, toolName: 'compress', content: compressed.content, isError: false, timestamp: 3 });
-      const visible = textOf(await view(handle));
+      const projected = await view(handle);
+      const visible = textOf(projected);
       const restored = await tool(handle, 'decompress', { blockId: 'b1', full: true, inline: true }, `ctx02-decompress-${label}`);
       const restoredText = textOf([restored]);
       report[label].compressResult = textOf([compressed]);
       report[label].restoredPreview = restoredText.slice(0, 300);
-      assert(visible.includes(summary));
+      const survivingCalls = projected.flatMap(message => Array.isArray(message.content) ? message.content.filter(part => part.type === 'toolCall') : []);
+      assert(survivingCalls.some(call => call.name === 'compress' && call.arguments.content?.some(range => range.summary === summary)), 'Summary must survive in the actual transmitted compress call arguments');
+      for (const original of fixtures.get(label)) assert(!visible.includes(original), 'Compressed source must leave the visible text');
+      report[label].summaryRepresentation = 'preserved compress toolCall arguments; synthetic standalone summary omitted by stock Pi adapter';
       for (const original of fixtures.get(label)) assert(restoredText.includes(original), 'Exact original bytes must occur in restored text');
       assert(!restoredText.includes(`CTX02_${label === 'A' ? 'B' : 'A'}_0_`));
       report[label].restoredHash = hash(restoredText);
@@ -129,12 +160,69 @@ try {
     }
     return { exactOriginals: 8, otherSessionMaterialAbsent: true };
   });
-  report.outcome = 'hooks-compressed';
+  await check('real journal and sidecar reopen retain exact block retrieval', async () => {
+    for (const label of ['A', 'B']) {
+      const file = handles[label].manager.getSessionFile();
+      await close(handles[label]);
+      handles[label] = await open(label, file);
+      const visible = textOf(await view(handles[label]));
+      const restored = textOf([await tool(handles[label], 'decompress', { blockId: 'b1', full: true, inline: true }, `restart-${label}`)]);
+      assert.equal(hash(restored), report[label].restoredHash);
+      assert.equal(handles[label].manager.getSessionId(), report[label].sessionId);
+      report[label].reopened = { sessionIdUnchanged: true, restoredHash: hash(restored), projectedHash: hash(visible) };
+    }
+    return { sameSessionIds: true, exactRestoredHashes: true, mechanism: 'new stock factory/runtime + SessionManager.open in same OS process' };
+  });
+  await check('native compaction hook owner is exclusive and disabled plugin stands down', async () => {
+    const { prepareCompaction } = await import(pathToFileURL(path.join(piPath, 'dist/core/compaction/compaction.js')));
+    const eventFor = handle => {
+      const branchEntries = handle.manager.getBranch();
+      const preparation = prepareCompaction(branchEntries, { enabled: true, reserveTokens: 100, keepRecentTokens: 100 });
+      assert(preparation);
+      return { type: 'session_before_compact', preparation, branchEntries, reason: 'manual', willRetry: false, signal: AbortSignal.timeout(2000) };
+    };
+    const active = await handles.B.session.extensionRunner.emit(eventFor(handles.B));
+    assert.deepEqual(active, { cancel: true });
+    const file = handles.B.manager.getSessionFile();
+    await close(handles.B);
+    handles.B = await open('B', file, false);
+    const disabled = await handles.B.session.extensionRunner.emit(eventFor(handles.B));
+    assert.equal(disabled, undefined);
+    assert.equal(handles.B.session.extensionRunner.hasHandlers('context'), false);
+    assert.equal(handles.B.session.extensionRunner.getToolDefinition('compress'), undefined);
+    return { active, disabled: 'no handler/result; no compress tool/context transform', scope: 'actual stock event dispatch, not a native model summarization call' };
+  });
+  await check('missing and future-version sidecars expose their actual stock behavior', async () => {
+    const file = handles.A.manager.getSessionFile();
+    const sidecarFile = `${file}.acp.json`;
+    const original = await fs.readFile(sidecarFile, 'utf8');
+    const observations = [];
+    for (const variant of ['missing', 'future-schema']) {
+      await close(handles.A);
+      if (variant === 'missing') await fs.rm(sidecarFile);
+      else {
+        const future = JSON.parse(original);
+        future.schemaVersion = 999999;
+        await fs.writeFile(sidecarFile, JSON.stringify(future));
+      }
+      handles.A = await open('A', file);
+      const projected = textOf(await view(handles.A));
+      const result = textOf([await tool(handles.A, 'decompress', { blockId: 'b1', full: true, inline: true }, variant)]);
+      const originalsRecovered = fixtures.get('A').every(text => result.includes(text));
+      const sidecar = JSON.parse(await fs.readFile(sidecarFile, 'utf8'));
+      observations.push({ variant, rejected: false, originalsRecovered, resultingSchemaVersion: sidecar.schemaVersion, resultPreview: result.slice(0, 160), projectedHash: hash(projected) });
+    }
+    report.storeObservations = observations;
+    return observations;
+  });
+  for (const handle of Object.values(handles)) await close(handle);
+  report.outcome = 'completed-observations';
 } catch (error) {
   report.outcome = 'blocked';
   report.error = safeError(error);
 } finally {
   for (const session of sessions) session.dispose();
+  try { report.pluginLog = await fs.readFile(process.env.ACP_LOG_FILE, 'utf8'); } catch { /* no log may exist before plugin load */ }
   report.elapsedMs = performance.now() - start;
   process.stdout.write(JSON.stringify(report) + '\n');
 }

@@ -2,6 +2,7 @@
   {
     "file": "01-isolation-import.json",
     "sha256": "c6c35abf5072c7b73c4dc132e32c561b125d45a50b50679737e29ad12822dfa2",
+    "bytes": 1394,
     "status": null,
     "signal": "SIGABRT",
     "outcome": null,
@@ -10,6 +11,7 @@
   {
     "file": "02-isolation-import.json",
     "sha256": "b092cf6a4360cd2bd6f69da84f8593efc2654e65aff012f33cdc9948fc190597",
+    "bytes": 2678,
     "status": null,
     "signal": "SIGABRT",
     "outcome": null,
@@ -18,6 +20,7 @@
   {
     "file": "03-runtime-isolation-import.json",
     "sha256": "c7164324df43c5e8ee35e2739b6d0f00cd4c96db77256920f18f017cd8c5af7d",
+    "bytes": 2970,
     "status": 0,
     "signal": null,
     "outcome": "imported",
@@ -26,9 +29,37 @@
   {
     "file": "04-real-hooks.json",
     "sha256": "c9e0b1b9e686a0af106ab3f74e456364ba6b55382ec59b64de6cabaedc4821fa",
+    "bytes": 9084,
     "status": 0,
     "signal": null,
     "outcome": "blocked",
     "childMs": 397.91925000000003
+  },
+  {
+    "file": "05-stock-factory.json",
+    "sha256": "3cb4e2085d30853478ef5d4db3c9a4bb55e78a774f49bacf6b87868beea39cb3",
+    "bytes": 11763,
+    "status": 0,
+    "signal": null,
+    "outcome": "blocked",
+    "childMs": 450.140708
+  },
+  {
+    "file": "06-stock-factory-lifecycle.json",
+    "sha256": "4e17190df6695182e25591330074649145e3b27d5c00497fe0b40e1393de005d",
+    "bytes": 16777,
+    "status": 0,
+    "signal": null,
+    "outcome": "blocked",
+    "childMs": 430.278167
+  },
+  {
+    "file": "07-stock-factory-lifecycle.json",
+    "sha256": "6c8eaa506aa462b1bdc695bc394a4ef206b90fef1676c9c701f0309fefdba02e",
+    "bytes": 41103,
+    "status": 0,
+    "signal": null,
+    "outcome": "completed-observations",
+    "childMs": 684.670709
   }
 ]

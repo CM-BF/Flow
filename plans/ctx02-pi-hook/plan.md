@@ -13,8 +13,10 @@
 ## TODO
 
 - [x] CTX02-01：独立worktree/原子claim、固定来源/API及隔离方法。
-- [ ] CTX02-02：真实固定宿主加载/公开hook、合成两会话压缩与精确原文回取。
-- [ ] CTX02-03：真实store生命周期与缺失/未知行为、压缩owner/disabled；保留拒绝与限制。
+- [x] CTX02-02：真实固定宿主加载/公开hook、合成两会话压缩与精确原文回取。
+- [x] CTX02-03：真实store生命周期与缺失/未知行为、压缩owner/disabled；保留拒绝与限制。
 - [ ] CTX02-04：固定原始JSON/source/hash/许可、clean-code和独立review（NOT_STARTED）。
 
 实现seam为真实DefaultResourceLoader.extensionFactories→createAgentSession→session.extensionRunner.emitContext与注册tool.execute；无需调用prompt。若stock在隔离下不能驱动，02/03写实际失败/未测，仍可交有边界负结论，不以mock冒通过。技能本地find-skills/codebase-design/clean-code/tdd/brainstorming实际读用；probe方案已由Root/Lead批准，不重复审批。
+
+2026-10-06 05:05:27 UTC 默认loader被白名单拒绝后，Root另批准stock factory+真实SDK上下文对照；07完成7组观察。未来sidecar版本仅warn并写回当前版是已验证采用缺口，不修改stock。所有初始失败保留，不重跑负载。

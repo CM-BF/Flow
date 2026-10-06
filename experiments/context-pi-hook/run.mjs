@@ -12,6 +12,8 @@ const pi = path.join(dependencyRoot, '@ai-sdk/harness-pi/node_modules/@earendil-
 const plugin = await realpath('/tmp/flow-ctx02-upstream-0.1.83/package');
 const node = await realpath('/opt/homebrew/opt/node@24/bin/node');
 const output = process.argv[2];
+const mode = process.argv[3] ?? 'default';
+assert(['default', 'factory'].includes(mode));
 assert(output, 'Pass a new output JSON path; existing evidence is never overwritten');
 const work = await realpath(await mkdtemp(path.join(tmpdir(), 'flow-ctx02-')));
 const sentinel = `${work}-denied.txt`;
@@ -29,7 +31,7 @@ try {
   await writeFile(policyPath, policy);
   const worker = path.join(work, 'worker.mjs');
   await writeFile(worker, await readFile(path.join(source, 'worker.mjs')));
-  const args = ['-f', policyPath, node, '--permission', ...readPaths.map(p => `--allow-fs-read=${p}`), `--allow-fs-write=${work}`, worker, work, pi, plugin, sentinel];
+  const args = ['-f', policyPath, node, '--permission', ...readPaths.map(p => `--allow-fs-read=${p}`), `--allow-fs-write=${work}`, worker, work, pi, plugin, sentinel, mode];
   const result = spawnSync('/usr/bin/sandbox-exec', args, {
     cwd: work,
     env: { PATH: path.dirname(node), LANG: 'en_US.UTF-8', TZ: 'UTC', ACP_AUTO_UPDATE: '0', ACP_LOG_FILE: path.join(work, 'acp.log'), PI_CODING_AGENT_DIR: path.join(work, 'agent') },
@@ -39,7 +41,7 @@ try {
   });
   let child;
   try { child = JSON.parse(result.stdout.trim().split('\n').findLast(line => line.startsWith('{"probe":'))); } catch { /* raw output remains evidence */ }
-  const record = { startedAt, completedAt: new Date().toISOString(), node, pi, plugin, policy, nodePermissions: args.slice(3, args.indexOf(worker)), status: result.status, signal: result.signal, spawnError: result.error?.message, child, stdout: result.stdout, stderr: result.stderr, sourceHashes: {} };
+  const record = { startedAt, completedAt: new Date().toISOString(), mode, node, pi, plugin, policy, nodePermissions: args.slice(3, args.indexOf(worker)), status: result.status, signal: result.signal, spawnError: result.error?.message, child, stdout: result.stdout, stderr: result.stderr, sourceHashes: {} };
   for (const name of ['run.mjs', 'worker.mjs']) record.sourceHashes[name] = hash(await readFile(path.join(source, name)));
   await writeFile(output, JSON.stringify(record, null, 2) + '\n', { flag: 'wx', mode: 0o600 });
   process.stdout.write(JSON.stringify({ output, status: result.status, outcome: child?.outcome, childMs: child?.elapsedMs }) + '\n');
