@@ -28,13 +28,13 @@ function deferred() {let resolve!:()=>void;const promise=new Promise<void>(done=
 it('durably freezes a >2MiB material before first send and transmits every byte under the unchanged batch cap',async()=>{
   const {path,spool}=await setup(), material=input(2*1024*1024+123),batches:EventBatch[]=[];
   const outbox=new EventOutbox(path,ownership,async batch=>{
-    const [job]=await spool.jobs();expect(job).toBeDefined();expect(await spool.content(job!)).toEqual(material.content);
+    const [job]=await spool.jobs();expect(job).toBeDefined();expect((await spool.content(job!)).equals(Buffer.from(material.content))).toBe(true);
     batches.push(batch);expect(Buffer.byteLength(JSON.stringify(batch))).toBeLessThanOrEqual(MAX_BATCH_BYTES);
     expect(batch.events.length).toBeLessThanOrEqual(8);
   });
   await outbox.publishActivityBody(material);
   const chunks=batches.flatMap(batch=>batch.events).filter(event=>event.type==='native-activity-body'&&event.action==='chunk');
-  expect(Buffer.concat(chunks.map(chunk=>Buffer.from(chunk.base64,'base64')))).toEqual(material.content);
+  expect(Buffer.concat(chunks.map(chunk=>Buffer.from(chunk.base64,'base64'))).equals(Buffer.from(material.content))).toBe(true);
   const [job]=await spool.jobs();expect(await spool.acknowledged(job!)).toBe(true);
   await expect(readFile(join(path,'activity-bodies',material.activity.activityId,'content.bin'))).rejects.toMatchObject({code:'ENOENT'});
   expect(batches.flatMap(batch=>batch.events).map(event=>event.sequence)).toEqual(Array.from({length:job!.eventIds.length},(_,i)=>i+1));

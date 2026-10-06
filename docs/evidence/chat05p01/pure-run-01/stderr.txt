@@ -1,0 +1,16 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/native-activity-body/body.test.ts > durably freezes a >2MiB material before first send and transmits every byte under the unchanged batch cap
+Error: Test timed out in 10000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ apps/runner/src/native-activity-body/body.test.ts:28:1
+     26| }
+     27| function deferred() {let resolve!:()=>void;const promise=new Promise<v…
+     28| it('durably freezes a >2MiB material before first send and transmits e…
+       | ^
+     29|   const {path,spool}=await setup(), material=input(2*1024*1024+123),ba…
+     30|   const outbox=new EventOutbox(path,ownership,async batch=>{
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
