@@ -2,7 +2,7 @@
 
 **状态：UNKNOWN — 完整片段的运行验收尚未完成。**
 
-Review target commit：1cd5cd41e47c8c101d9bb1acfdca1e870769c014。新目标仅browser fixture扫描一行；新delta与/tmp启动修复尚待独审，NOT_STARTED。Base：8d84d529a0756116bd0fc8bad969d61a6c26248e。
+Review target commit：1cd5cd41e47c8c101d9bb1acfdca1e870769c014。新目标仅browser fixture扫描一行；root已完成b2限定源码准备审查，后续b2运行初始化失败，完整feature仍UNKNOWN。Base：8d84d529a0756116bd0fc8bad969d61a6c26248e。
 历史f3限定源码结论：**APPROVED_SOURCE_SCOPED_NOT_RUN**，不自动批准上述新目标。Root 于 2026-10-06T18:25:38.301159Z 完成 f3a6 复审，源码无 blocking。该结论为18:25源码审查时点；后续 strict noEmit/direct37 的限定证据已独立接受，后续浏览器入口首次执行在CDP前失败、0界面断言，不构成完整功能或 main/deployment approval。
 
 ## 已执行的源码审查与历史
@@ -15,7 +15,7 @@ Root 转述 peer 对 catalog/selection/direct 源码未发现 blocking；此不�
 
 ## 审查入口
 
-[计划](plan.md)、[状态](status.md)、[当前六源绑定](../../docs/evidence/wpf-message-settings/source-manifest.json)、[初版绑定](../../docs/evidence/wpf-message-settings/source-manifest-initial.json)、[Interface](../../docs/evidence/wpf-message-settings/interface.md)。核公共 tuple/capability、旧目录兼容、取消代际、受控选择和 details 关闭焦点回调。当前目标一行fixture修复已固定，原f3类型/direct检查已完成；原准备已审而新启动修复待独审/准入；真实App/Send/Queue/Recovery后继。
+[计划](plan.md)、[状态](status.md)、[当前六源绑定](../../docs/evidence/wpf-message-settings/source-manifest.json)、[初版绑定](../../docs/evidence/wpf-message-settings/source-manifest-initial.json)、[Interface](../../docs/evidence/wpf-message-settings/interface.md)。核公共 tuple/capability、旧目录兼容、取消代际、受控选择和 details 关闭焦点回调。当前目标一行fixture修复已固定，原f3类型/direct检查已完成；b2限定准备审查已批准但第二次实际初始化仍失败；真实App/Send/Queue/Recovery后继。
 
 ## 已执行的运行证据独立核验
 
@@ -31,6 +31,8 @@ Root 于18:48:17 UTC给出[APPROVED_BROWSER_PREPARATION_SOURCE_SCOPED_NOT_RUN](.
 
 [原始记录](../../docs/evidence/wpf-message-settings/browser-first-observation.json)绑定 f3/f800，5197ms、父FAILED，0行为断言/截图。Chrome在CDP readiness前退出；原日志含ProcessSingleton目录失败及Crashpad写入拒绝，Vite另报自动扫描非fixture图依赖未解析。尚无产品UI行为红/绿结论。ownPGID/Chrome/fixture/scratch清理均确认、无错误，窗口已归还，未重试或扩大权限。完整feature仍UNKNOWN；strict noEmit/direct37证据及父计数FAIL各自保留。
 
-## 当前待审的窄修
+## b2窄修限定审查及其后运行
 
-目标 `1cd5cd41e47c8c101d9bb1acfdca1e870769c014` 只将Vite optimizeDeps.entries指定为已有实际fixture。新 `/private/tmp/msgset-b2` 保留原first预算与raw，只修Mac临时目录/owned socket范围和Chrome退出证据；[源码准备](../../docs/evidence/wpf-message-settings/browser-repair-preparation/report.md)与[完整归档](../../docs/evidence/wpf-message-settings/browser-repair-preparation-archive.json)供独审。没有新gate/运行；原f3批准、37direct和5197ms失败分别绑定原目标。[Root首次证据审](../../docs/evidence/wpf-message-settings/root-first-browser-evidence-review.json)原样保留，不能将父worker code推作Chrome code。
+目标 `1cd5cd41e47c8c101d9bb1acfdca1e870769c014` 只将Vite optimizeDeps.entries指定为已有实际fixture。新 `/private/tmp/msgset-b2` 保留原first预算与raw，只修Mac临时目录/owned socket范围和Chrome退出证据；[源码准备](../../docs/evidence/wpf-message-settings/browser-repair-preparation/report.md)与[完整归档](../../docs/evidence/wpf-message-settings/browser-repair-preparation-archive.json)供独审。此段为19:10准备时点，当时没有新gate/运行；原f3批准、37direct和5197ms失败分别绑定原目标，后续第二次准入结果见下段。[Root首次证据审](../../docs/evidence/wpf-message-settings/root-first-browser-evidence-review.json)原样保留，不能将父worker code推作Chrome code。
+
+2026-10-06 19:19:59 UTC：已原样归档[Root b2准备限定批准](../../docs/evidence/wpf-message-settings/root-browser-b2-preparation-review.json)，不冒行为批准。第二次实际[raw与观察](../../docs/evidence/wpf-message-settings/browser-second-observation.json)绑定1cd/b41c，8551ms、累计13748、Chrome实际SIGTRAP且CDP初始化未完成，0界面断言；完整清理已确认。此运行尚待独立证据核验，不将source approval/noEmit/direct37升级完整功能批准；首次失败和原budget均保留。

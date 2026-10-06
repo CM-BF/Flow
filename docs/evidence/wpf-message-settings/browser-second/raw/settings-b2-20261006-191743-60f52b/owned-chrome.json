@@ -1,0 +1,60 @@
+{
+  "workerPid": 66244,
+  "chromePid": 67309,
+  "profile": "/private/tmp/msgset-b2/scratch/chrome-9eQZd9",
+  "processGroup": "inherited-worker",
+  "argv": [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "--headless=new",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--disable-sync",
+    "--remote-debugging-port=0",
+    "--remote-debugging-address=127.0.0.1",
+    "--user-data-dir=/private/tmp/msgset-b2/scratch/chrome-9eQZd9",
+    "--disk-cache-dir=/private/tmp/msgset-b2/scratch/chrome-9eQZd9/disk-cache",
+    "about:blank"
+  ],
+  "temp": {
+    "TMPDIR": "/private/tmp/msgset-b2/scratch",
+    "TMP": "/private/tmp/msgset-b2/scratch",
+    "TEMP": "/private/tmp/msgset-b2/scratch",
+    "MAC_CHROMIUM_TMPDIR": "/private/tmp/msgset-b2/scratch",
+    "XDG_CACHE_HOME": "/private/tmp/msgset-b2/scratch",
+    "NODE_COMPILE_CACHE": "/private/tmp/msgset-b2/scratch"
+  },
+  "spawnAttemptedAt": "2026-10-06T19:18:08.218Z",
+  "spawnedAt": "2026-10-06T19:18:08.232Z",
+  "cdpReadyAt": "2026-10-06T19:18:12.638Z",
+  "exit": {
+    "code": null,
+    "signal": "SIGTRAP",
+    "at": "2026-10-06T19:18:13.573Z",
+    "beforeCdpReady": false
+  },
+  "close": {
+    "code": null,
+    "signal": "SIGTRAP",
+    "at": "2026-10-06T19:18:13.581Z"
+  },
+  "launchError": null,
+  "signals": [],
+  "streams": {
+    "stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "ended": true,
+      "closed": true
+    },
+    "stderr": {
+      "receivedBytes": 11145,
+      "keptBytes": 11145,
+      "droppedBytes": 0,
+      "ended": true,
+      "closed": true
+    }
+  }
+}

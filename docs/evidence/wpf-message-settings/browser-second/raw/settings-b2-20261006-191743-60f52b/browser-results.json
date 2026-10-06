@@ -1,0 +1,89 @@
+{
+  "sourceHead": "b41c93e7a7e054faec68faed101be5adf4d21225",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "9b851ff0a28efb497fa396847d3d2c008f32f7c291ec9ee9fc69f93b803f4254"
+  },
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "startedAt": "2026-10-06T19:18:07.180Z",
+  "workerPid": 66244,
+  "parentPid": 65926,
+  "chromePid": 67309,
+  "chromeProcessGroup": "inherited-worker",
+  "checks": [],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "failed",
+  "pg": 0,
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "chromeExited": true,
+  "chromeProcess": {
+    "workerPid": 66244,
+    "chromePid": 67309,
+    "profile": "/private/tmp/msgset-b2/scratch/chrome-9eQZd9",
+    "processGroup": "inherited-worker",
+    "argv": [
+      "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "--headless=new",
+      "--no-first-run",
+      "--no-default-browser-check",
+      "--disable-background-networking",
+      "--disable-component-update",
+      "--disable-sync",
+      "--remote-debugging-port=0",
+      "--remote-debugging-address=127.0.0.1",
+      "--user-data-dir=/private/tmp/msgset-b2/scratch/chrome-9eQZd9",
+      "--disk-cache-dir=/private/tmp/msgset-b2/scratch/chrome-9eQZd9/disk-cache",
+      "about:blank"
+    ],
+    "temp": {
+      "TMPDIR": "/private/tmp/msgset-b2/scratch",
+      "TMP": "/private/tmp/msgset-b2/scratch",
+      "TEMP": "/private/tmp/msgset-b2/scratch",
+      "MAC_CHROMIUM_TMPDIR": "/private/tmp/msgset-b2/scratch",
+      "XDG_CACHE_HOME": "/private/tmp/msgset-b2/scratch",
+      "NODE_COMPILE_CACHE": "/private/tmp/msgset-b2/scratch"
+    },
+    "spawnAttemptedAt": "2026-10-06T19:18:08.218Z",
+    "spawnedAt": "2026-10-06T19:18:08.232Z",
+    "cdpReadyAt": "2026-10-06T19:18:12.638Z",
+    "exit": {
+      "code": null,
+      "signal": "SIGTRAP",
+      "at": "2026-10-06T19:18:13.573Z",
+      "beforeCdpReady": false
+    },
+    "close": {
+      "code": null,
+      "signal": "SIGTRAP",
+      "at": "2026-10-06T19:18:13.581Z"
+    },
+    "launchError": null,
+    "signals": [],
+    "streams": {
+      "stdout": {
+        "receivedBytes": 0,
+        "keptBytes": 0,
+        "droppedBytes": 0,
+        "ended": true,
+        "closed": true
+      },
+      "stderr": {
+        "receivedBytes": 11145,
+        "keptBytes": 11145,
+        "droppedBytes": 0,
+        "ended": true,
+        "closed": true
+      }
+    }
+  },
+  "failure": "browserType.connectOverCDP: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - <ws preparing> retrieving websocket url from http://127.0.0.1:65499\u001b[22m\n\u001b[2m  - <ws connecting> ws://127.0.0.1:65499/devtools/browser/c0594768-b77b-4fb1-a41c-15903644e3ad\u001b[22m\n\u001b[2m  - <ws connected> ws://127.0.0.1:65499/devtools/browser/c0594768-b77b-4fb1-a41c-15903644e3ad\u001b[22m\n\u001b[2m  - <ws disconnected> ws://127.0.0.1:65499/devtools/browser/c0594768-b77b-4fb1-a41c-15903644e3ad code=1006 reason=\u001b[22m\n\n    at <anonymous> (/private/tmp/msgset-b2/worker.mjs:123:28)",
+  "finishedAt": "2026-10-06T19:18:15.648Z",
+  "observedElapsedMs": 8468,
+  "profileCleanupOwner": "external-parent-after-process-group-absence"
+}
