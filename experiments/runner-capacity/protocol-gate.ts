@@ -1,39 +1,32 @@
 import assert from 'node:assert/strict';
 import { randomUUID, createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { Pool } from 'pg';
 import type { ClaimResponse } from '../../packages/contracts/src/runner.js';
 import { boundedText } from './http.js';
 import { startProcess, stopProcess, type Observation, type OwnedProcess } from './processes.js';
+import { directoryBytes, reserveRun } from './evidence.js';
 
 const label = process.argv[2];
 assert(label && /^[a-z][a-z0-9-]{1,60}$/.test(label), 'A new evidence label is required.');
+const startedAt = new Date().toISOString(); const start = performance.now();
 const windowId = process.env.FLOW_S01_WINDOW_ID;
 assert(windowId, 'Protocol gate requires a coordinated window identifier.');
 const root = resolve('docs/evidence/s01');
-for (const entry of await readdir(root, { withFileTypes: true })) {
-  if (!entry.isDirectory()) continue;
-  try {
-    const prior = JSON.parse(await readFile(join(root, entry.name, 'run-start.json'), 'utf8'));
-    assert(prior.scenario !== 'protocol-gate', 'Protocol gate already started; reruns are not authorized.');
-  } catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
-}
-const output = join(root, label); await mkdir(output);
-const startedAt = new Date().toISOString(); const start = performance.now();
-const deadline = start + 20_000; const hardDeadline = start + 30_000;
 const databaseName = 'flow_s01_gate_' + process.pid + '_' + randomUUID().replaceAll('-', '');
-await writeFile(join(output, 'run-start.json'), JSON.stringify({ scenario: 'protocol-gate', windowId, startedAt, databaseName, maxTasks: 8, maxAttempts: 8 }), { flag: 'wx' });
-const paths = ['experiments/runner-capacity/protocol-gate.ts','experiments/runner-capacity/processes.ts','experiments/runner-capacity/child.ts','experiments/runner-capacity/http.ts','experiments/runner-capacity/contract.json','apps/server/src/database.ts','apps/server/src/runners.ts','apps/server/src/events.ts','apps/server/src/index.ts'];
+const { output, reservation } = await reserveRun(root, { label, scenario: 'protocol-gate', windowId, databaseName, tasks: 8, attempts: 8 });
+const deadline = start + 20_000; const hardDeadline = start + 30_000;
+const paths = ['experiments/runner-capacity/protocol-gate.ts','experiments/runner-capacity/evidence.ts','experiments/runner-capacity/processes.ts','experiments/runner-capacity/child.ts','experiments/runner-capacity/http.ts','experiments/runner-capacity/contract.json','apps/server/src/database.ts','apps/server/src/runners.ts','apps/server/src/events.ts','apps/server/src/index.ts'];
 const hashes = () => Promise.all(paths.map(async path => ({ path, sha256: createHash('sha256').update(await readFile(path)).digest('hex') })));
 const sourceFiles = await hashes(); const head = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const ownerToken = randomUUID(); const processes: OwnedProcess[] = [];
 const observations: Observation[] = []; const samples: Record<string, unknown>[] = [];
 const cleanup: unknown[] = []; const taskIds: string[] = []; const checks: string[] = [];
 let admin: Pool | undefined; let observer: Pool | undefined; let created = false;
-let baseUrl: string | undefined; let failure: string | null = null; let facts: unknown = null;
+let baseUrl: string | undefined; let failure: string | null = null; let facts: unknown = null; let measuredDataBytes = 0;
 function workBudget() { if (performance.now() + 1500 > deadline) throw new Error('Gate work budget exhausted; cleanup reserved.'); }
 async function query(pool: Pool, sql: string, values?: unknown[]) { workBudget(); return pool.query(sql, values); }
 async function post(path: string, body: unknown, token = ownerToken) {
@@ -87,7 +80,8 @@ try {
   assert.equal(Number((await query(observer, 'SELECT count(*) FROM flow.sessions')).rows[0].count), 0);
   checks.push('All eight tasks cancelled through public APIs, no live attempts or native sessions; no runner/adapter process was executed.');
   const databaseBytes = Number((await query(observer, 'SELECT pg_database_size(current_database()) AS bytes')).rows[0].bytes);
-  assert(databaseBytes + Buffer.byteLength(JSON.stringify({ observations, samples })) < 64 * 1024 * 1024);
+  measuredDataBytes = databaseBytes + await directoryBytes(root);
+  assert(measuredDataBytes + Buffer.byteLength(JSON.stringify({ observations, samples })) < 64 * 1024 * 1024);
   facts = { tasks: 8, attempts: 2, protocolClaimRequests: 8, declaredCapacity: 2, actualRunnerProcesses: 0, adapterExecutions: 0, nativeSessions: 0, assignments: assignments.map(a => ({ taskId: a.task.id, attempt: a.attempt })), active, final, databaseBytes };
 } catch (error) { failure = error instanceof Error ? error.message.replace(/postgres(?:ql)?:\/\/[^\s'"`]+/g, '<redacted-db-url>') : 'Unknown gate failure'; }
 finally {
@@ -111,7 +105,12 @@ finally {
   if (JSON.stringify(sourceFiles) !== JSON.stringify(sourceFilesAfter)) failure ??= 'Gate source changed while running.';
   const elapsedMs = performance.now() - start;
   if (performance.now() > hardDeadline) failure ??= 'Gate budget exceeded including cleanup.';
-  await writeFile(join(output, 'result.json'), JSON.stringify({ kind: 'protocol-capacity-gate-not-execution-capacity', scenario: { id: 'protocol-gate' }, windowId, head, sourceFiles, sourceFilesAfter,
-    startedAt, endedAt: new Date().toISOString(), elapsedMs, modelCalls: 0, cloudCalls: 0, submittedTaskIds: taskIds, checks, failure, facts, cleanup, samples, observations }, null, 2), { flag: 'wx' });
+  const record = { kind: 'protocol-capacity-gate-not-execution-capacity', scenario: { id: 'protocol-gate' }, reservation, windowId, head, sourceFiles, sourceFilesAfter,
+    startedAt, endedAt: new Date().toISOString(), elapsedMs, modelCalls: 0, cloudCalls: 0, submittedTaskIds: taskIds, checks, failure, facts, cleanup, measuredDataBytes, samples, observations };
+  let encoded = JSON.stringify(record, null, 2);
+  if (measuredDataBytes + Buffer.byteLength(encoded) > 64 * 1024 * 1024) {
+    failure ??= 'Gate data and final evidence exceed the storage budget.'; record.failure = failure; encoded = JSON.stringify(record, null, 2);
+  }
+  await writeFile(join(output, 'result.json'), encoded, { flag: 'wx' });
   process.stdout.write(JSON.stringify({ label, passed: !failure, failure, elapsedMs }) + '\n'); process.exitCode = failure ? 1 : 0;
 }

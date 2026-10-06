@@ -7,3 +7,5 @@
 2026-10-06 06:44 UTC feature片段交付复核：独审APPROVED 65d7a57，source/错误收尾/初始租期接口/事件测试范围均已核。首失败保留不删断言、不反复取优；无产品源码修改，未解决项仅正式后继未实现，不虚报完整S01完成。
 
 2026-10-06 06:51 UTC 正式入口段：复用已审资源/事件算法，场景参数与统计独立成module，smoke入口按已用满预算封闭。独立只读核验确认PG connectionString覆盖application_name风险，observer改独立URL；center/scheduler合并观察并声明无法拆分。公开events/workspace独立cursor追赶，实际details端点/api/details/:id已对源码核对，避免凭接口想象。3个统计Vitest用例通过/noEmit0；0新task/模型/query。正式与gate运行未执行。
+
+2026-10-06 06:58 UTC 运行准备review修复：P2末次terminal读混入load已break，保留4端点n=0并细分观测active/queue；P2 gate存储漏计已使用共用evidence文件大小/预算入口，计最终JSON。P3 PG版本已加SHOW只读。共用evidence模块同时减少重复目录统计并保留失败/partial-before-result门禁，无自动重跑；6纯unit tests/noEmit0。正式资源从未启动，原8个smoke计数/2份raw hash不变。

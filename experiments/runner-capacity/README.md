@@ -65,3 +65,5 @@ finally顺序：停止新增任务和读循环→关闭本人浏览器/代理连
 实际事件分层校验：96 runner events；80 task timeline；workspace含16 accepted共96。三个游标空间分别核对，轻读与最终追赶/详情验证的延迟不混算；正文仅最终按artifact detail引用获取。首次dispatch-ready已true表示左侧未知，保留SQL请求边界，不推造精确调度时刻。PG observer有独立URL app name并观察实际连接；center与scheduler只能合并报告，pool获取等待未测。正式场景不打开SSE，因此应报告0；实际关闭浏览器仍属后继独立功能，不以此替代。
 
 3个纯统计单测与noEmit通过，只验证nearest-rank、小样本/非法输入、半开区间与IPC/子进程时钟分离；没有运行正式负载，也没有容量结果。正式之前先在同一已协调窗口运行 `protocol-gate.ts <新标签>`：8个预先ready的任务，8个并发HTTP claim竞争capacity2，必须恰好2个唯一attempt/任务；用正式取消事件及owner cancel使8任务terminal，0 adapter/runner进程。gate与正式各自独有DB、各30秒含清理；gate失败就停止，不启动16任务正式场景。gate首次run-start即封存运行权，失败不能换label自动重跑。
+
+窗口准备复审修复：所有任务terminal后立即退出轻读循环，四个端点即使n=0也列出；按最近SQL观察的running数区分active/queue-only，读取过程中是否恰好完成不作精确保证。gate存储核算包含既有evidence、run-start、owned-process、DB和最终pretty JSON。读取实际PG版本。共用运行回执先检查累计64 tasks/attempts及180秒预算、同scenario禁止重跑、旧未完成run需人工核资源；正式场景还要求已记录成功gate，不能绕过先后次序。新增budget单测3，加统计3，共6通过/noEmit0，未执行gate/formal。

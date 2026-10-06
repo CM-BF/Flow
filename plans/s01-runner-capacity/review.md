@@ -1,7 +1,7 @@
 # S01 独立审查
 
-状态：APPROVED
-Review target commit：65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a
+状态：CHANGES_REQUESTED
+Review target commit：c32d4d17e1de3351fa21a3713baa6031d4fcc612
 
 批准边界：仅固定target65d7a57的合同方法和四任务功能smoke片段。正式容量/超领/故障/浏览器后继未覆盖。
 
@@ -26,3 +26,7 @@ Mika回应（2026-10-06 06:38 UTC）：补终态ACK等待、待发文件为空�
 ## 最终独立结论
 
 2026-10-06T06:43:50Z，独立只读reviewer `/root/b01_bounded_reads` / gpt-6-astra：**APPROVED**，target `65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a`，scope `experiments/runner-capacity`。无未解决P1/P2；逐项核12源码配置hash/24事件/4终ACK/4工具/3正常进程退出/专库及outbox清空，首轮FAIL保留。首次租期推导的两个runner保守间隔62.542/62.374ms，量化限制已明确。运行2.821s是功能记录。非阻塞P3 typecheck时间已按真实log mtime补入manifest，不重跑。review者未运行测试/服务。详见[独审回执](../../docs/evidence/s01/independent-review.json)。
+
+## 正式运行准备的新审查
+
+独立worker只读审c32d4d1 formal与6c5568a gate：两个P2为末次无执行负载读混入load、gate漏计完整存储预算；无其他P1/P2。Mika已修并加入共用预算回执门禁；PG实际版本补读。修复后6纯统计/预算测试与noEmit0，待固定后继commit复审。历史65smoke的APPROVED保持历史范围，新入口尚未批准；正式结果仍不存在。

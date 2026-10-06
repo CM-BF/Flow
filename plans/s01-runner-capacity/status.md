@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:44 UTC；登记main a26a，产品基线115b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:58 UTC；产品基线仍115b，K03已main收口另有回执 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
@@ -15,13 +15,13 @@
 | 实现目标 | 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 四任务基础已验证，正在加入128个背景会话与四进程并发计量 |
-| 下一可用交付 | 提交正式测量入口独审，再协调共享主机的运行窗口 |
+| 当前产出 | 正式计量与超领门禁入口已完成，正在复审统计及资源预算修复 |
+| 下一可用交付 | 取得入口独审后，申请一个最多60秒的门禁与正式测量窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a：仅合同+四任务smoke；正式容量/故障/browser未覆盖 |
+| Review | [review.md](review.md)，正式c32/gate6c两个P2已修待复审；历史65smoke APPROVED不覆盖新入口 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -55,3 +55,5 @@ claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` v1 ACTIVE，06:22:33.774Z；[回执
 2026-10-06 06:51 UTC 正式入口实质进展：新增场景/统计module、128会话分页/16预受理task/四进程共同放行、96runner/80timeline/96workspace分层校验、单循环轻读/PG观察/区间峰值。3统计测试通过、noEmit0，未启动负载。准备提交只读review；协议超领gate将作同窗口前置，仍未实现。旧smoke批准target不覆盖新源码。
 
 2026-10-06 06:54 UTC：正式c32d4d1入口已交独立worker只读review；同时新增8任务protocol gate草稿，使用8个并发HTTP claim竞争capacity2，真实DB核恰好2独有attempt，再用正式completed(cancelled)/owner cancel收尾，不执行adapter或模型。gate noEmit0；未运行。新代码不能沿用smoke approval，窗口未领取。
+
+2026-10-06 06:58 UTC：两项P2已修，6unit tests/noEmit0；运行入口统一总64任务/attempts及180秒预算与同scenario不重跑，缺完成receipt时failclosed。正式要求先成功gate。尚未创建新的DB/task/进程，窗口申请待固定入口复审。

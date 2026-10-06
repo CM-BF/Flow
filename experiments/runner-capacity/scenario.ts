@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { randomUUID, createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { tmpdir, cpus, totalmem, loadavg, platform } from 'node:os';
 import { setTimeout as sleep } from 'node:timers/promises';
@@ -9,6 +9,7 @@ import { Pool } from 'pg';
 import { startProcess, stopProcess, type Observation, type OwnedProcess } from './processes.js';
 import { boundedText } from './http.js';
 import { observedIntervals, peak, quantiles } from './statistics.js';
+import { directoryBytes, reserveRun } from './evidence.js';
 
 export interface Scenario {
   id: 'smoke' | 'four-processes';
@@ -21,23 +22,15 @@ export interface Scenario {
 
 export async function runScenario(label: string | undefined, scenario: Scenario) {
 if (!label || !/^[a-z][a-z0-9-]{1,60}$/.test(label)) throw new Error('Provide a new bounded evidence label.');
-const output = resolve('docs/evidence/s01', label);
+const startedAt = new Date().toISOString(); const start = performance.now();
 assert(scenario.tasks === (scenario.formal ? 16 : 4) && scenario.runners === (scenario.formal ? 4 : 2) && scenario.conversations === (scenario.formal ? 128 : 4), 'Unapproved scenario dimensions.');
 if (scenario.formal) assert(scenario.windowId, 'Formal run needs a coordinated window identifier.');
-for (const entry of await readdir(resolve('docs/evidence/s01'), { withFileTypes: true })) {
-  if (!entry.isDirectory()) continue;
-  try {
-    const prior = JSON.parse(await readFile(resolve('docs/evidence/s01', entry.name, 'result.json'), 'utf8'));
-    assert(prior.scenario?.id !== scenario.id, 'This scenario already ran; automatic reruns are not authorized.');
-  } catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
-}
-await mkdir(output); // Existing evidence is never reused or overwritten.
-const startedAt = new Date().toISOString();
-const start = performance.now();
+const databaseName = 'flow_s01_' + process.pid + '_' + randomUUID().replaceAll('-', '');
+const { output, reservation } = await reserveRun(resolve('docs/evidence/s01'), { label, scenario: scenario.id, windowId: scenario.windowId!, databaseName, tasks: scenario.tasks, attempts: scenario.tasks, requireGate: true });
 const hardBudgetMs = 30000;
 const hardDeadline = start + hardBudgetMs;
 const workDeadline = start + hardBudgetMs - 10000;
-const sourcePaths = ['experiments/runner-capacity/child.ts','experiments/runner-capacity/processes.ts','experiments/runner-capacity/smoke.ts','experiments/runner-capacity/scenario.ts','experiments/runner-capacity/formal.ts','experiments/runner-capacity/statistics.ts','experiments/runner-capacity/http.ts','experiments/runner-capacity/contract.json','experiments/runner-capacity/tsconfig.json','apps/server/src/index.ts','apps/server/src/runners.ts','apps/server/src/events.ts','apps/runner/src/runtime.ts','apps/runner/src/outbox.ts','apps/runner/src/fixture.ts'];
+const sourcePaths = ['experiments/runner-capacity/child.ts','experiments/runner-capacity/processes.ts','experiments/runner-capacity/smoke.ts','experiments/runner-capacity/scenario.ts','experiments/runner-capacity/formal.ts','experiments/runner-capacity/statistics.ts','experiments/runner-capacity/evidence.ts','experiments/runner-capacity/http.ts','experiments/runner-capacity/contract.json','experiments/runner-capacity/tsconfig.json','apps/server/src/index.ts','apps/server/src/runners.ts','apps/server/src/events.ts','apps/runner/src/runtime.ts','apps/runner/src/outbox.ts','apps/runner/src/fixture.ts'];
 const sourceHashes = () => Promise.all(sourcePaths.map(async path => ({ path, sha256: createHash('sha256').update(await readFile(path)).digest('hex') })));
 const sourceFiles = await sourceHashes();
 const implementationHead = execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
@@ -45,11 +38,12 @@ const observations: Observation[] = [];
 const processes: OwnedProcess[] = [];
 const cleanup: Record<string, unknown>[] = [];
 const checks: string[] = [];
-type ReadSample = { path: string; endpoint: string; phase: string; elapsedMs: number; bytes: number; status: number | null; first: boolean; error?: string };
+type ReadSample = { path: string; endpoint: string; phase: string; elapsedMs: number; bytes: number; status: number | null; first: boolean; observedRunningTasks: number | null; error?: string };
 const samples: ReadSample[] = [];
 const querySamples: { phase: string; elapsedMs: number; succeeded: boolean }[] = [];
 const databaseSamples: Record<string, unknown>[] = [];
 let phase = 'setup';
+let observedRunningTasks: number | null = null;
 const firstEndpoints = new Set<string>();
 const eventCursors = new Map<string, number>();
 let workspaceCursor = 0;
@@ -57,7 +51,6 @@ const timelineEntries = new Map<string, Map<number, unknown>>();
 const workspaceEntries = new Map<number, unknown>();
 const dispatchObservations = new Map<string, { lastFalseQuery?: { start: number; end: number }; firstTrueQuery?: { start: number; end: number } }>();
 const taskIds: string[] = [];
-const databaseName = 'flow_s01_' + process.pid + '_' + randomUUID().replaceAll('-', '');
 let created = false;
 let workdir: string | undefined;
 let admin: Pool | undefined;
@@ -96,10 +89,10 @@ async function request(path: string, body?: unknown) {
   status = response.status; bytes = Buffer.byteLength(text);
   assert(response.ok, 'Owned center request failed: ' + response.status);
   const result = JSON.parse(text);
-  samples.push({ path, endpoint, phase, elapsedMs: performance.now() - begin, bytes, status, first });
+  samples.push({ path, endpoint, phase, elapsedMs: performance.now() - begin, bytes, status, first, observedRunningTasks });
   return result;
   } catch (error) {
-    samples.push({ path, endpoint, phase, elapsedMs: performance.now() - begin, bytes, status, first, error: error instanceof Error ? error.name : 'UnknownError' });
+    samples.push({ path, endpoint, phase, elapsedMs: performance.now() - begin, bytes, status, first, observedRunningTasks, error: error instanceof Error ? error.name : 'UnknownError' });
     throw error;
   }
 }
@@ -111,14 +104,6 @@ async function pendingFiles(directory: string): Promise<string[]> {
     else if (['pending-events.json', 'pending-events.json.tmp', 'uncertain-events.json'].includes(entry.name)) found.push(path);
   }
   return found;
-}
-async function directoryBytes(directory: string): Promise<number> {
-  let bytes = 0;
-  for (const entry of await readdir(directory, { withFileTypes: true })) {
-    const path = join(directory, entry.name);
-    bytes += entry.isDirectory() ? await directoryBytes(path) : (await readFile(path)).byteLength;
-  }
-  return bytes;
 }
 async function stopOwned(owned: OwnedProcess, limit: number) {
   try {
@@ -151,6 +136,8 @@ try {
   workdir = await mkdtemp(join(tmpdir(), 'flow-s01-'));
   const center = await startProcess({ role: 'center', databaseUrl: databaseUrl.href, ownerToken }, collect, processes, workDeadline);
   baseUrl = String(center.ready.baseUrl);
+  await writeFile(join(output, 'owned-center.json'), JSON.stringify({ databaseName, pid: center.pid, baseUrl }), { flag: 'wx' });
+  const postgresVersion = (await workQuery(observer, 'SHOW server_version')).rows[0].server_version;
   const conversationIds: string[] = [];
   for (let i = 0; i < scenario.conversations; i++) conversationIds.push((await request('/api/conversations', { title: 'S01 ' + scenario.id + ' ' + i })).conversation.id);
   const listed: string[] = []; const pageSizes: number[] = []; let after: string | null = null;
@@ -191,6 +178,8 @@ try {
     databaseSamples.push({ receivedAtMs: performance.now(), connections, taskStates: rows });
     assert(!rows.some(row => ['failed', 'cancelled', 'uncertain'].includes(row.status)), 'Normal smoke task did not succeed.');
     finished = rows.length === scenario.tasks && rows.every(row => row.status === 'succeeded' && row.verification_status === 'passed');
+    if (finished) break;
+    observedRunningTasks = rows.filter(row => row.status === 'running').length;
     const taskId = taskIds[Math.floor(readIndex / 4) % taskIds.length]!;
     switch (readIndex++ % 4) {
       case 0: await request('/api/tasks/' + taskId); break;
@@ -206,7 +195,7 @@ try {
     }
     if (!finished) await sleep(100);
   }
-  const windowEndedAtMs = performance.now(); phase = 'verification';
+  const windowEndedAtMs = performance.now(); phase = 'verification'; observedRunningTasks = null;
   checks.push(`${scenario.tasks} real runtime/outbox tasks completed and verified.`);
   const saved = (await workQuery(observer, 'SELECT r.attempt_id,r.sequence,r.event_id,r.digest FROM flow.runner_events r JOIN flow.attempts a ON a.id=r.attempt_id WHERE a.task_id=ANY($1::text[]) ORDER BY r.attempt_id,r.sequence', [taskIds])).rows;
   const finalSequences = new Map<string, number>();
@@ -303,11 +292,13 @@ try {
   const waitIntervals = observedIntervals(observations, 'wait', taskIds);
   const attemptPeakLower = peak(attempts.map(a => ({ start: a.claimedAtUpperMs, end: Number(a.completed_epoch_ms) })));
   const attemptPeakUpper = peak(attempts.map(a => ({ start: a.claimedAtLowerMs, end: Number(a.completed_epoch_ms) })));
-  const readStatistics = [...new Set(samples.filter(s => s.phase === 'load').map(s => s.endpoint))].map(endpoint => ({ endpoint,
+  const readStatistics = ['/api/tasks/:taskId', '/api/tasks/:taskId/events', '/api/workspace', '/api/conversations'].map(endpoint => ({ endpoint,
     groups: [true, false].map(first => { const selected = samples.filter(s => s.phase === 'load' && s.endpoint === endpoint && s.first === first);
-      return { first, successes: quantiles(selected.filter(s => !s.error).map(s => s.elapsedMs)), failures: selected.filter(s => s.error), bytes: quantiles(selected.map(s => s.bytes)) }; }) }));
+      return { first, successes: quantiles(selected.filter(s => !s.error).map(s => s.elapsedMs)), failures: selected.filter(s => s.error), bytes: quantiles(selected.map(s => s.bytes)),
+        activeObserved: quantiles(selected.filter(s => !s.error && (s.observedRunningTasks ?? 0) > 0).map(s => s.elapsedMs)),
+        queueOnlyObserved: quantiles(selected.filter(s => !s.error && s.observedRunningTasks === 0).map(s => s.elapsedMs)) }; }) }));
   rawFacts = { conversations: scenario.conversations, conversationTurns: 0, nativeSessions, tasks: scenario.tasks, runnerProcesses: scenario.runners, registeredCapacityPerRunner: 1, counts, attempts, eventCount: saved.length, toolOperations: tools.length, databaseBytes, temporaryBytes,
-    pageSizes, timelineCount: timelineRows.length, workspaceCount: workspaceRows.length, windowStartedAtMs, windowEndedAtMs, dispatchObservations: Object.fromEntries(dispatchObservations),
+    pageSizes, postgresVersion, timelineCount: timelineRows.length, workspaceCount: workspaceRows.length, windowStartedAtMs, windowEndedAtMs, dispatchObservations: Object.fromEntries(dispatchObservations),
     attemptPeakLower, attemptPeakUpper, achievedFourConcurrentAttempts: attemptPeakLower >= 4,
     adapterPeakObserved: peak(adapterIntervals), toolPeakObserved: peak(toolIntervals), adapterIntervals, toolIntervals, waitIntervals,
     artificialWait: { configuredMsPerAttempt: 200, measured: quantiles(waitIntervals.map(i => i.childDurationMs)) },
@@ -346,7 +337,7 @@ finally {
   if (elapsedMs > hardBudgetMs) failure ??= 'Total smoke budget exceeded, including cleanup.';
   const sourceFilesAfter = await sourceHashes();
   if (JSON.stringify(sourceFilesAfter) !== JSON.stringify(sourceFiles)) failure ??= 'Source changed during the smoke.';
-  const record = { kind: scenario.formal ? 'bounded-local-capacity-window' : 'functional-smoke-not-capacity-measurement', scenario, startedAt, endedAt: new Date().toISOString(), head: implementationHead, sourceFiles, sourceFilesAfter,
+  const record = { kind: scenario.formal ? 'bounded-local-capacity-window' : 'functional-smoke-not-capacity-measurement', scenario, reservation, startedAt, endedAt: new Date().toISOString(), head: implementationHead, sourceFiles, sourceFilesAfter,
     environment: { node: process.version, platform: platform(), cpu: cpus()[0]?.model, logicalCpus: cpus().length, memoryBytes: totalmem(), loadavg: loadavg() },
     modelCalls: 0, cloudCalls: 0, submittedTaskIds: taskIds, checks, failure, elapsedMs, cleanupMs: performance.now() - cleanupStartedAtMs, measuredDataBytes, rawFacts, cleanup, samples, querySamples, databaseSamples, observations };
   let encoded = JSON.stringify(record, null, 2);
