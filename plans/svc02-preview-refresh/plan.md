@@ -1,6 +1,6 @@
 # SVC02 常驻预览安全更新
 
-编号SVC02；状态in-progress；创建2026-10-06 05:13:45 UTC。唯一owner runner_owner / gpt-6-astra。base6b4b89f397b35d7e769846df457e76bb29f4a265。
+编号SVC02；状态completed；创建2026-10-06 05:13:45 UTC。唯一owner runner_owner / gpt-6-astra。base6b4b89f397b35d7e769846df457e76bb29f4a265。
 
 ## 已批准目标
 
@@ -19,7 +19,7 @@
 - [x] SVC02-01：固定公开小合同与016/domain，真实旧claim SQL并发及完整回滚证据。
 - [x] SVC02-02：受信本机bootstrap/drain/refresh/resume入口与私有持有校验。
 - [x] SVC02-03：专库/动态端口0模型行为检查，失败保门与清理，固定证据。
-- [ ] SVC02-04：独立review、main接收与另经批准的真实部署窗口。
+- [x] SVC02-04：独立review、main接收与另经批准的真实部署窗口。
 
 共享exports/client/server mount由Lead接。精确scope见[claim](../../docs/evidence/svc02/claim.json)。真实61227/61228本轮禁止操作；当前仅临时专库/自有进程验证，真实部署须另给已审main/实际状态/回退语义并获Root窗口确认。
 
@@ -28,3 +28,9 @@
 本地find-skills先发现，实际读用codebase-design/clean-code/brainstorming/tdd：小domain接口集中并发不变量，真实PG/HTTP与host CLI seam先红后绿；不安装无关技能。Root已批准设计，无需重复普通设计审批。每段与交付前clean-code检查记录own evidence。
 
 测试仅本模块+直接消费者，flow_svc02专库/动态端口；不运行全产品/共享DB套。覆盖身份/旧version/同key异input/重启审计、drain与旧claim交错、已占用session回滚、heartbeat/outbox继续、uncertain阻止hold、显式resume、错误PID/TERM超时/启动失败关门。0模型/0云。
+
+2026-10-06 05:36 UTC：已审实现9aa790552cb8847d6feb8c8f90c870407a54e572进入main fb906cb42391971a8b315dbd813f7633927d7265；SVC02-04仅剩单独窗口和真实部署记录。05:36:59Z原子amend至v2交回 apps/server/src/runners.ts，后续该文件由Lead协调新owner；本owner保留其余scope，不触碰现有服务。
+
+2026-10-06 05:39 UTC：Root批准窗口中，唯一执行owner runner_owner已完成实际bootstrap→refresh并核原DB/配置/native目录/端口保留。更新source固定fb906cb，暂不resume；SVC02-04仅保留明确恢复接收的后续操作，不把进程就绪称模型可用。
+
+2026-10-06 05:40 UTC：Root单独批准恢复后完成一次resume，v3 accepting；全库0任务/未完attempt，3自有进程就绪，0模型。SVC02本片段已交付，原始失败/实验范围与单runner边界保留。真实消息/排队或多runner能力不纳本验收。

@@ -1,0 +1,63 @@
+{
+  "observedAt": "2026-10-06T05:38:22.236Z",
+  "operation": "read-only preflight",
+  "sourceAtStart": {
+    "head": "75a33dec228e17bbbd0d3be9fd01bc9ac18a0133",
+    "dirty": false
+  },
+  "processes": {
+    "center": {
+      "identity": "running",
+      "pid": 49219
+    },
+    "runner": {
+      "identity": "running",
+      "pid": 53414
+    },
+    "web": {
+      "identity": "running",
+      "pid": 54573
+    }
+  },
+  "listenerIdentity": {
+    "center": true,
+    "web": true
+  },
+  "centerPort": 61227,
+  "webPort": 61228,
+  "databaseMarkerMatches": true,
+  "runnerIdentityMatches": true,
+  "managedRunnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+  "registeredRunners": [
+    {
+      "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "harnesses": [
+        "claude"
+      ],
+      "capacity": 1,
+      "revoked": false
+    }
+  ],
+  "unfinishedAttempts": [],
+  "unfinishedAttemptCount": 0,
+  "taskCounts": [],
+  "migrations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "provider": "not-probed",
+  "limits": {
+    "maxTurns": 2,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 60000,
+    "scope": "per-query-not-project-total"
+  }
+}
