@@ -1,0 +1,13 @@
+# 第一阶段实际接口
+
+`freezeMaterialRequest` 是 `freezeKnowledgeRequest` 兼容alias的唯一实现：knowledge/attachments分别clone+deepfreeze、各自保序、共同project/四项，材料正文bytes另由已审Input descriptors与中心权威检查。Outbox.begin 与 QueueCommands.execute 已实际调用；Queue ACK沿公共assertConversationContextMatches第三参，未写新v2decoder。
+
+`ConversationAttachments(identity, options)` 接私有六method Pick<FlowClient>、P01host、signal、current()和storage；identity为connectionId/viewKey/projectId，current()由App确认原projection成员后提供当下route、conversation、project、visibility、online与分别read/upload许可。IDs/manifest不是授权。暂未修改App/session；主入口尚未消费此binding。
+
+input nullable：存储拒绝/损坏raw时本地错误，不能让整个Session构造失败。一个稳定view对应一个project绑定，真正project/connection变动由宿主控制新生命周期；route/CREATE alias不重建。当前getSnapshot/protection供唯一CACHE owner，不分配第二registry。隐藏/离线暂停读，关闭Dialog不改变pane资格。离线清cap缓存，恢复后显式操作重新读取；refreshCapabilities显式清cap但不读/改选择。unknownscope记录从不自动查询其他namespace。
+
+P01内建`flow.conversation-attachments`注册Files按钮与composer.context面板、独立attachment.read/upload能力。按当前route找到既有binding；upload command对经过schema parse的request/key和AbortSignal执行private rawclient，无递归。错误401/403/损坏200不映射unsupported；只有upload receipt的精确404code映射null。空材料plain应绕过附件capture，不能因未支持cap阻断纯文本。
+
+capture在composer.send之前，冻结submissionId/intent/text/refs/IDs/旧receipt身份；assertSubmission在准备后检查。实际新Outbox/QueueReceipt同栈拥有相同conversation/intent/text/有序refs后handoff consume，不能await网络。failed hold保原材料与text，只有同IDs显式重试或明确discard才替换；用户从新draft删除item不等于销毁pending capture。bindComposer只对自动remove使用hold facade，adapter.remove仍是真实draft删除。dispose是终结，须由App确认受保护视图可回收；signal撤销终结授权不等于发送未知回执已持久恢复。
+
+阶段二仍待：Session/actualApp/current()权威映射、同步click/Enter intent/profile/knowledge capture、真实HTTP/factory/browser、protected关闭/恢复UI。首段不宣称完整附件可用。

@@ -24,7 +24,7 @@ Input 的 immutable viewId 使用 view.key。临时 draft→conversation 路由�
 
 ## TODO
 
-- [ ] ATTACHI02-01：材料深冻结接入真实 Outbox/Queue 命令并验证兼容与 ACK。
-- [ ] ATTACHI02-02：P01 私有授权附件 binding 与直接消费者测试。
+- [x] ATTACHI02-01：材料深冻结接入真实 Outbox/Queue 命令并验证兼容与 ACK。
+- [x] ATTACHI02-02：P01 私有授权附件 binding 与直接消费者测试。
 - [ ] ATTACHI02-03：依法取得剩余范围，实际 App/Thread/CACHE 与 HTTP 旅程贯通。
 - [ ] ATTACHI02-04：固定候选、独立 review、主线接收与 scope 收口。
