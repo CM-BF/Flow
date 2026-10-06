@@ -1,0 +1,6 @@
+export default {
+  cacheDir: '/tmp/flow-wpf02-node-failure-text-vitest-cache',
+  resolve: { alias: [{ find: 'vitest', replacement: '/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/dist/index.js' }] },
+  test: { include: ['experiments/codex-app-server-conformance/node-failure-text/*.test.ts', 'experiments/codex-app-server-conformance/node-loader-cause/probe.test.ts'],
+    pool: 'threads', maxWorkers: 1, fileParallelism: false, testTimeout: 3000, hookTimeout: 3000 },
+};

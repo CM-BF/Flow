@@ -4,6 +4,12 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- Claude逐消息设置后继：当前诊断收束后请Lead协调R05/中心配置及低磁盘独立WT，Mika另派≥Sol实现；固定SDK0.3.290声明+注入SDK/真实中心首片，0付费/安装。model/thinking或effort/fast、requested/observed/unsupported、历史/运行/队列冻结与Web/TUI合同沿[原plan](../../../plans/wpf-mature-02-harness-capabilities/plan.md)，不等Codex全资格，不在诊断WT并行改产品。
+- [X01双gate已审接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/host-gates-integration-ready.md)：固定e6827d8a，Mika14:47:23 APPROVED；仅两phase当前权限回调，边界/进度由原owner维护。
+
+- [F01插件安装薄client已审](plugin-installation-client-review.md)：67fd4592，status_read14:43:12 / Mika14:43:34 APPROVED，领域/公开factory边界不扩大。
+- [单目标私有错误文本准备](node-failure-text/README.md)：GO已授权、Mika14:39:09设计批准；仅独立私有诊断副本，实际NOT_OPEN。旧8b1/3c53失败封存不重跑。
+
 - Git忽略收口：先前已向共享 `/Users/citrine/Projects/AgentHarness/Flow/.git/info/exclude` 加入精确 `/docs/evidence/wpf-mature-02/node-runtime-metadata/outer-time.stderr`；现改用本scope可审 [局部.gitignore](node-runtime-metadata/.gitignore)，check-ignore来源已核，未删除共享规则、未动sparse/config；共享规则后续由Lead协调。
 
 - [S01P06唯一已审集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds/docs/evidence/s01p06/integration-ready.md)：metadata31c06b4a / impl cdd3，沿原owner接收。

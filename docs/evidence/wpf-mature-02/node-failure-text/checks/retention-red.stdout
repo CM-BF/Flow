@@ -1,0 +1,25 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities
+
+ ❯ experiments/codex-app-server-conformance/node-failure-text/probe.test.ts (15 tests | 2 failed | 13 skipped) 70ms
+   ↓ one fixed target retains the second private copy while process and target roots are cleaned
+   ↓ old loader-cause recipe never creates the retained diagnostic copy
+   ↓ old runtime-metadata-control recipe never creates the retained diagnostic copy
+   ↓ final safe receipt failure returns retained diagnostic identity without pretending persistence succeeded
+   ↓ unknown process/group or stream completion retains target roots and labels private text incomplete
+   ↓ successful partial writes count before a later failure and exact post-diagnosis cleanup is explicit
+   ↓ partial write loops followed by fsync and close failures retain safe identity without double close
+   ↓ fstat failure still reports creation and an unknown identity
+   ↓ EEXIST never adopts or deletes a previous file
+   ↓ replacement inode blocks diagnostic cleanup
+   ↓ the 8KiB private copy cap and separate 1MiB recipe budget do not change old budgets
+   ↓ late completion cannot pass merely because complete error text was retained
+   ↓ known closed process still retains an explicitly incomplete captured prefix
+   × partial diagnostic copy failure retains the complete original stderr with exact identity 41ms
+   × failure to create the original raw still leaves the diagnostic text already retained 28ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 13 skipped (15)
+   Start at  07:48:30
+   Duration  189ms (transform 37ms, setup 0ms, import 51ms, tests 70ms, environment 0ms)
+

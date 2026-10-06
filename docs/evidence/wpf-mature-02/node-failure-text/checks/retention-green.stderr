@@ -1,0 +1,22 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/codex-app-server-conformance/node-failure-text/probe.test.ts > failure to create the original raw still leaves the diagnostic text already retained
+AssertionError: expected undefined to be false // Object.is equality
+
+- Expected: 
+false
+
++ Received: 
+undefined
+
+ ❯ experiments/codex-app-server-conformance/node-failure-text/probe.test.ts:138:90
+    136|   const r = await runCause(args(t), { io: t.io, now: () => 1, command:…
+    137|   expect(r.retainedDiagnosticArtifact).toMatchObject({ complete: true,…
+    138|   expect(fs.readFileSync(t.file)).toEqual(payload); expect(prepareDeli…
+       |                                                                                          ^
+    139| });
+    140| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

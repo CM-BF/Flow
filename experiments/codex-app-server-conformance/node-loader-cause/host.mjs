@@ -6,28 +6,31 @@ import { performance } from 'node:perf_hooks';
 import { runOwnedCommand } from '../fd-canary/command.mjs';
 import { observeLoader } from './observe.mjs';
 import { observeRuntimeLoader } from '../node-runtime-metadata/observe.mjs';
+import { retainPrivateText } from '../node-failure-text/private-text.mjs';
 const fail = () => { throw Error('Loader observation unavailable'); };
 const hash = data => createHash('sha256').update(data).digest('hex');
 const controlHash = 'ca5c7bbdd4599b7cb7154d4895952561b9f7e94d48d84dba22c898910af1130c';
 function fixedRecipe(name) {
   if (name === 'loader-cause') return { window: 'go-node-loader-cause-once', profile: 'node-rootliteral/candidate.sb', diskLimit: 24576, control: false };
   if (name === 'runtime-metadata-control') return { window: 'go-node-runtime-metadata-once', profile: 'node-runtime-metadata/candidate.sb', diskLimit: 65536, control: true };
+  if (name === 'failure-text') return { window: 'go-node-failure-text-once', profile: 'node-runtime-metadata/candidate.sb', diskLimit: 65536, retainText: true };
   return fail();
 }
 export function makeCauseBudget(prepared, recipeName = 'loader-cause') {
   const recipe = fixedRecipe(recipeName);
-  if (!Number.isSafeInteger(prepared) || prepared < 0 || prepared > 81920) fail();
+  if (!Number.isSafeInteger(prepared) || prepared < 0 || prepared > (recipe.retainText ? 262144 : 81920)) fail();
   if (recipe.control && prepared !== 0) fail(); // The combined caller owns the one prepared charge.
   const value = { prepared, observed: 0, copied: 0, disk: 0, receipts: 0 };
-  const total = () => prepared + value.observed + value.disk + 16384 + 114688 + 4096;
+  const limit = recipe.retainText ? 1048576 : 262144, archiveReserve = recipe.retainText ? 131072 : 114688;
+  const total = () => prepared + value.observed + value.disk + 16384 + archiveReserve + 4096;
   const add = (name, n) => {
     if (!Number.isSafeInteger(n) || n < 0 || !Object.hasOwn(value, name)) fail();
     value[name] += n; // Count even the first overflow before failing.
-    if (total() > 262144 || value.receipts > 16384 || value.disk > recipe.diskLimit) fail();
+    if (total() > limit || value.receipts > 16384 || value.disk > recipe.diskLimit) fail();
   };
   return { observe: n => add('observed', n), consume: n => add('copied', n), disk: n => add('disk', n), receipt: n => add('receipts', n),
-    reserveDisk(n) { if (value.disk + n > recipe.diskLimit || total() + n > 262144) fail(); },
-    snapshot: () => ({ ...value, reservedBytes: total(), limit: 262144, withinBudget: total() <= 262144 && value.receipts <= 16384 && value.disk <= recipe.diskLimit }) };
+    reserveDisk(n) { if (value.disk + n > recipe.diskLimit || total() + n > limit) fail(); },
+    snapshot: () => ({ ...value, reservedBytes: total(), limit, withinBudget: total() <= limit && value.receipts <= 16384 && value.disk <= recipe.diskLimit }) };
 }
 
 export function isExpectedControl(result) {
@@ -95,22 +98,31 @@ export async function runCause({ evidenceDirectory, repository, preparedBytes, r
     allClosed = returned.safe.closeObserved === true && returned.safe.groupGone === true;
     result.target = allClosed ? 'CLOSED' : 'UNKNOWN';
     stage = 'capture';
-    for (const name of ['stdout', 'stderr']) {
+    for (const name of (recipe.retainText ? ['stderr', 'stdout'] : ['stdout', 'stderr'])) {
       const bytes = returned[name]; if (!Buffer.isBuffer(bytes) || bytes.length > 8192) fail();
-      const saved = persist(path.join(allowed, `${name}.raw`), bytes, true), stream = returned.safe.streams?.[name];
+      const stream = returned.safe.streams?.[name];
       const complete = allClosed && !returned.safe.observationFailed && stream?.streamEnded && stream.childCloseObserved
         && !stream.incomplete && !stream.truncated && !stream.observerFailed && stream.observedBytes === bytes.length && stream.writtenBytes === bytes.length;
+      if (name === 'stderr') {
+        // Keep the diagnostic copy before any original-stream persistence can throw.
+        if (recipe.retainText) result.retainedDiagnosticArtifact = retainPrivateText(path.join(evidenceDirectory, 'private-stderr.raw'), bytes, complete, budget, io);
+        result.observation = (recipe.control ? observeRuntimeLoader : observeLoader)(bytes, roles, complete);
+      }
+      const saved = persist(path.join(allowed, `${name}.raw`), bytes, true);
       result.streams.push({ name, bytes: saved.bytes, sha256: saved.hash, complete: Boolean(complete), mode: '0600', identity: saved.identity });
-      if (name === 'stderr') result.observation = (recipe.control ? observeRuntimeLoader : observeLoader)(bytes, roles, complete);
     }
     const observed = Object.values(returned.safe.streams ?? {}).reduce((n, s) => n + s.observedBytes, 0);
     result.outputAccountingComplete = result.streams.length === 2 && result.streams.every(x => x.complete) && observed === budget.snapshot().observed;
-    result.observationComplete = result.outputAccountingComplete && returned.safe.reason === 'completed' && result.observation.errorClass !== 'UNKNOWN';
+    if (recipe.retainText) result.outputAccountingComplete &&= result.retainedDiagnosticArtifact?.complete === true;
+    result.observationComplete = result.outputAccountingComplete && returned.safe.reason === 'completed'
+      && (recipe.retainText || result.observation.errorClass !== 'UNKNOWN');
   } catch { result.failedStage = stage; } finally {
     stage = 'cleanup'; result.retainedRoots = roots.map(x => x.directory); result.retainedRootsComplete = true;
     // Exact owned tree inventory precedes deletion; unknown child or any unexpected entry retains roots.
     try {
       if (!allClosed || !descriptorsClosed || descriptors.some(x => !x.closed)) fail();
+      // A failed/incomplete copy cannot erase the original bounded diagnostic text.
+      if (recipe.retainText && result.targetCalls && result.retainedDiagnosticArtifact?.complete !== true) fail();
       const knownFiles = new Set(files.map(x => x.file)); let entries = 0;
       function verify(directory, depth) {
         if (depth > 3) fail();
@@ -131,6 +143,11 @@ export async function runCause({ evidenceDirectory, repository, preparedBytes, r
       for (const file of files) file.removed = true;
       result.retainedRoots = []; result.cleanupComplete = true;
     } catch { inventoryComplete = false; }
+    if (recipe.retainText) {
+      result.processCleanupComplete = allClosed && descriptorsClosed && descriptors.every(x => x.closed);
+      result.temporaryRootsRemoved = result.cleanupComplete;
+      result.cleanupScope = 'owned process and temporary target roots; excludes deliberately retained diagnostic artifact';
+    }
     result.outputAccountingComplete &&= inventoryComplete;
     result.inventoryComplete = inventoryComplete; result.descriptorsClosed = descriptorsClosed;
     result.privateFiles = files.map(({ file, identity, bytes, hash, closed, removed }) => ({ file, identity, bytes, sha256: hash, closed, removed }));
@@ -138,7 +155,7 @@ export async function runCause({ evidenceDirectory, repository, preparedBytes, r
     result.withinBudget = result.outputAccountingComplete && result.output.withinBudget && now() <= 30000;
     try { receipt('batch-result.json', result); result.resultPersisted = true; }
     catch (error) {
-      if (!recipe.control) throw error;
+      if (!recipe.control && !recipe.retainText) throw error;
       result.resultPersisted = false; result.outputAccountingComplete = false; result.withinBudget = false;
       result.failedStage = 'result-persistence';
     }

@@ -84,3 +84,7 @@ WPF-MATURE-02-03后继rootliteral：沿GO明确单项许可，在已封存sandbo
 ### TODO-03后继：加载失败观察（2026-10-06 13:12:21 UTC）
 
 旧Node结果已限定独审接收。新[单目标cause方案](../../docs/evidence/wpf-mature-02/node-loader-cause/interface.md)只补有界加载错误观察，复用生命周期，不改profile/目标输入，不把新宿主差异当旧协议完整复现。先固定设计/输入，再最小实现与零目标检查、独审，Mika明确OPEN后最多一次；当前NOT_OPEN。仍沿WPF-MATURE-02-03，不新增任务层级。
+
+## 2026-10-06 Claude逐消息设置优先片
+
+按GO新方向，当前私有诊断收束后，TODO-04/05/09并行交付Claude每条消息model/thinking或effort/fast，不等Codex全资格。固定SDK0.3.290声明起步，以注入SDK和真实中心验证；0付费/新安装。中心共享合同承载requested/observed/unsupported，历史、运行中及持久队列配置冻结，旧会话可读可续，Web/TUI共用；不将unsupported伪装支持。Mika另派≥Sol、独立WT两层子任务，Lead协调共享R05/配置与资源；本树只诊断与权威计划，不扩大产品写权。完整02 Codex及真实用户验收仍保留。

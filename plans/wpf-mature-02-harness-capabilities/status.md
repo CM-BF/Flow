@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:39:09 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:49:15 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,21 +10,23 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 26148841fefba19b62acbb566bd9dc51562f0160（新源码；组合metadata另记） |
-| 工作树dirty状态 | 新runtime-metadata组合/观察/用例，以及cause/Node host/compose最小接缝；定向验证完成、运行失败已收束，当前仅结果封存；sealed raw/旧profile/R06未改。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 3c53ca5a6de10850dd3ea8df9e6a864408236bdd（旧窗口封存；本片源码待固定） |
+| 工作树dirty状态 | 新failure-text私有保存/薄入口/用例和cause单分支；当前定向验证已完成，封包中。旧profile/R06/已封存raw未改。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
-| 检查状态 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
+| 本片段交付阶段 | implementation |
+| 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
+| 当前检查 | 19 distinct分轮（原17+新保留失败2）；末轮定向8/8含6重叠，真实red与中途7/8均保留；原生0factory/0listener、syntax0；0实际目标/监听/PG/provider，待固定独审。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
-| 实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
-| 实现范围 | 新node-runtime-metadata实验/证据；后继仅复用cause双流/Node单canary固定recipe；R06已交回只读 |
+| 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
+| 实现目标 / 范围 | 新node-failure-text固定recipe及host私有副本；cause最小分支、薄entry/outer与定向纯检查，生产R06只读；source/组合待固定独审，实际NOT_OPEN |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 一次启动对照未达到预期，已完成清理与结果计量；第二步未运行，原因仍未知。 |
-| 下一可用交付 | 本次失败已独审封存；已授权单目标错误文本保留准备，实际未开放。 |
-| 当前阻塞 | ACTIVE: Node/Codex启动隔离与真实权限资格仍未证明；新对照首步仍失败，原因未知；窗口已消费。 |
+| 当前产出 | 已准备保留有界私有错误文本的单目标对照，以定位仍未知的启动失败；当前未实际运行。 |
+| 下一可用交付 | 先交付有界私有错误诊断；随后并行推进Claude每条消息的模型、思考/effort与fast设置，不等待Codex全部资格。 |
+| 当前阻塞 | ACTIVE: Node/Codex启动隔离与真实权限资格仍未证明；旧对照首步失败且窗口已消费；新私有文本准备待独审/门禁。Claude设置独立推进。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
+| 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
+| Review | failure-text PREPARATION_REVIEW_NOT_STARTED；Mika14:39:09仅设计批准，旧结果审批不继承为本片通过。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | Node复用已交回R06唯一进程owner、旧owned canary与私有sink；新增仅实验接缝，未改变生产Interface/运行生命周期。ENG当前仅资格/撤销输入建议，无新公共合同。 |
 
@@ -65,3 +67,7 @@
 ## 运行库元数据新准备
 
 [最小Interface/策略差异](../../docs/evidence/wpf-mature-02/node-runtime-metadata/interface.md)沿TODO-03；GO允许准备，go-node-runtime-metadata-once CONSUMED。61固定种子派生177精确metadata/test literal，44解析成功/17独立系统文件不存在，不推断缓存或实际需要。0目标/编译/监听；旧cause9605及Node失败结果不回写。策略设计已审；当前两Module接线与直接pure验证完成，固定组合待审。X01 a578只读独审已交原owner收口，接收入口只在canonical路由。
+
+## 下一用户能力（GO优先级调整）
+
+本次诊断收束后沿TODO-04/05/09，独立WT推进Claude逐消息model/thinking或effort/fast，requested/observed/unsupported分开；运行中及已入队输入冻结，旧会话可读可续，Web/TUI共享中心合同。首段固定SDK0.3.290声明、注入SDK与真实中心验证，0付费/新安装；Mika安排两层子任务与≥Sol owner，Lead协调共享R05/字段及低磁盘provision。本诊断WT不并行改Claude产品，完整Codex及后续验收不减。

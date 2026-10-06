@@ -1,0 +1,45 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/codex-app-server-conformance/node-failure-text/probe.test.ts > partial diagnostic copy failure retains the complete original stderr with exact identity
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ experiments/codex-app-server-conformance/node-failure-text/probe.test.ts:127:29
+    125|   const r = await runCause(args(t), { io: t.io, now: () => 1, command:…
+    126|   expect(r.retainedDiagnosticArtifact).toMatchObject({ complete: false…
+    127|   expect(r.cleanupComplete).toBe(false); expect(r.retainedRoots).toHav…
+       |                             ^
+    128|   const original = r.privateFiles.find((f: any) => f.file.endsWith('/s…
+    129|   expect(original).toMatchObject({ closed: true, removed: false, bytes…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  experiments/codex-app-server-conformance/node-failure-text/probe.test.ts > failure to create the original raw still leaves the diagnostic text already retained
+AssertionError: expected undefined to match object { complete: true, bytes: 52, …(1) }
+
+- Expected: 
+{
+  "bytes": 52,
+  "complete": true,
+  "removed": false,
+}
+
++ Received: 
+undefined
+
+ ❯ experiments/codex-app-server-conformance/node-failure-text/probe.test.ts:137:40
+    135|   t.io.openSync = ((file: any, ...rest: any[]) => { if (String(file).e…
+    136|   const r = await runCause(args(t), { io: t.io, now: () => 1, command:…
+    137|   expect(r.retainedDiagnosticArtifact).toMatchObject({ complete: true,…
+       |                                        ^
+    138|   expect(fs.readFileSync(t.file)).toEqual(payload); expect(prepareDeli…
+    139| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
