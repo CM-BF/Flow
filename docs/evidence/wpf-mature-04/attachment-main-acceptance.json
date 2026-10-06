@@ -1,0 +1,71 @@
+{
+  "recordedAt": "2026-10-06 13:13:50 UTC",
+  "target": "4f87934f585b8241faa7cdb76b79a202fd353b6f",
+  "approvedPacket": "7c93b05ee579a205fe18c5f3693bf625b5041395",
+  "acceptedMain": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "mainOriginEqual": true,
+  "mainDirty": false,
+  "ownerBeforeHead": "d389fdad770c39d4bfad6ae2988111d7f14d5846",
+  "ownerBeforeDirty": false,
+  "sourceComparison": "target Git = fixed main Git = main worktree = owner worktree = approved ready bytes/SHA256",
+  "sources": [
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 11267,
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245"
+    },
+    {
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "bytes": 12618,
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b"
+    }
+  ],
+  "leadReceipt": {
+    "path": "docs/evidence/i02/attachment-current-integration.json",
+    "main": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+    "bytes": 5072,
+    "sha256": "0538b101935f0469888b255ef2a487cdd61bcc5abb06b2827e897c214dc2cf89"
+  },
+  "leadChecks": {
+    "firstPgAndBinding": {
+      "exit": 1,
+      "executedTests": 0,
+      "reason": "ENOSPC in import transform; no beforeAll/database creation; original stdout retained"
+    },
+    "afterSpacePg": {
+      "exit": 0,
+      "passed": 2,
+      "unselected": 2,
+      "scope": "real production createServer HTTP/PG attachment-only + mixed v2 reportEvents history; current combination"
+    },
+    "afterSpaceWebBinding": {
+      "exit": 0,
+      "passed": 17,
+      "scope": "official assistant-ui core + actual App attachment module direct consumers; controlled rejection stderr expected"
+    },
+    "rootTypesExit": 0,
+    "webTypesExit": 0,
+    "registry": {
+      "sources": 154,
+      "newSources": 3,
+      "parseErrors": []
+    },
+    "repeatedOldFullMatrices": 0,
+    "newBrowserRuns": 0,
+    "providerQueries": 0
+  },
+  "newAuthorEngineeringChecks": 0,
+  "authorOriginalDistinctChecks": 21,
+  "writing": "Both source literals explicitly stopped before amend v10 to v11; only the two metadata directories remain. Prior producer/18 leaf handbacks unchanged.",
+  "handbackReceipt": "attachment-source-handback-receipt.json",
+  "resourceSafetyPoint": {
+    "newReclaimedBytes": 0,
+    "reason": "No confirmed inactive disposable owner installation/build selected. X01 dependency installation retained as independent-review fixed input; its 54 test roots had already been removed. No other worktree/node_modules/private data touched.",
+    "largeBuildStarted": false
+  },
+  "limits": [
+    "History-only; v2 attachment material inventory unknown and revision null; executionInputDigest preserved.",
+    "No new SDK/provider/current/remaining/cut/real runtime or personal deployment proof.",
+    "Main integration checks are Lead evidence, not author reruns."
+  ]
+}

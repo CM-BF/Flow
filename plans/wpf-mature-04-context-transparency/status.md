@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:31:09 UTC / producer已main7cb；本附件修复待Lead接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:13:50 UTC / 固定main cde6646已接收附件修复 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -10,23 +10,23 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
-| 工作基线 / HEAD | daf66fc50b60d5b0616ad44bc4a1fb30c2d5d29a / 固定main7cb；后继附件修复进行中，Git聚合实际HEAD |
-| 工作树dirty状态 | 两源码/raw/support/manifest固定4f87934f；本轮仅review/status/ready metadata，Git聚合实际clean |
+| 工作基线 / HEAD | daf66fc50b60d5b0616ad44bc4a1fb30c2d5d29a / 接收前d389fdad；本轮仅metadata，Git聚合实际HEAD |
+| 工作树dirty状态 | 两源码/raw/support/manifest固定4f87934f；本轮仅main接收/写权交回metadata，Git聚合实际clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 4f87934f585b8241faa7cdb76b79a202fd353b6f：21不同=4真实PG/HTTP+17直接schema/store；旧9PG NOT_RUN，strict0；原red和清理保留 |
-| 已集成main状态 / HEAD | INTEGRATED 7cbda706632c85fc5da12a371b282419c933ab9a；producer四源逐字=approved eccb Git=固定main Git=双方现场；[接收收据](../../docs/evidence/wpf-mature-04/producer-main-acceptance.json)引用Lead root noEmit0；旧18叶源已集成bf067，未重测；部署未知 |
+| 已集成main状态 / HEAD | INTEGRATED cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd；两源逐字=approved4f879；[附件接收收据](../../docs/evidence/wpf-mature-04/attachment-main-acceptance.json)。旧producer已main7cb、18叶源已mainbf067；未重测，部署未知 |
 | 实现目标 | 4f87934f585b8241faa7cdb76b79a202fd353b6f |
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 附件历史兼容修复独审APPROVED，21不同+strict0；固定两源准备受控集成 |
-| 下一可用交付 | Lead按attachment-integration-ready接收两源；保留v10修复期，真实main回执后交回 |
+| 当前产出 | 仅附件和混合附件任务均可保存、读回历史上下文观测；材料清单明确显示未知，执行输入身份保持可追溯 |
+| 下一可用交付 | 本片段已交付；完整当前上下文、压缩过程与消费界面验收沿原计划继续 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED 4f87934f585b8241faa7cdb76b79a202fd353b6f：Mika/gpt-6-astra，2026-10-06 12:30:29 UTC，0 P1/P2；仅附件历史兼容修复 |
-| Claim | [COMMITTED amend v10](../../docs/evidence/wpf-mature-04/attachment-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 ACTIVE；仅store.ts、新attachment-history.test.ts与两metadata目录；producer四源保持交回 |
-| 架构影响 | 本片仅普通Claude result读取和EOF后历史事件；中心继续原reportEvents/027/owner GET。pending control未知复用原settlement和journal，不新增状态机；current/remaining仍未知 |
+| Claim | [COMMITTED amend v11](../../docs/evidence/wpf-mature-04/attachment-source-handback-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 ACTIVE；仅两metadata目录，附件两源及旧producer/18叶源均停止写入 |
+| 架构影响 | 附件修复不改公有DTO/DB/原reportEvents/owner GET；仅准确表达现有材料表示能力。正式主线接收已记录，current/remaining/cut仍未知 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -47,7 +47,7 @@
 
 ## Dashboard 同步
 
-本status是WPF-MATURE-04唯一手填事实源，当前main事实为表格中的7cbda706；下文是带时间的历史观察。历史4320于10:45:18 UTC由Mika确认04 source live/stale=false；本轮只读parseStatus检查当前字段可聚合，不把它称作4320已刷新或产品已部署。本owner未改registry/全局架构视图。
+本status是WPF-MATURE-04唯一手填事实源，当前main事实为表格中的cde6646；下文是带时间的历史观察。历史4320于10:45:18 UTC由Mika确认04 source live/stale=false；本轮只读parseStatus检查当前字段可聚合，不把它称作4320已刷新或产品已部署。本owner未改registry/全局架构视图。
 
 2026-10-06 09:25:10 UTC独立预审绑定e81f200：CHANGES_REQUESTED，status_read/gpt-6-astra，mika接收，1P2/0P1。Query summary仅已有上下文，不能覆盖未发送draft/queued；当前最小修复收窄为有nativeSessionId的attempt，host仍负责已消费input/history cut。历史46/46保留，不算修复后验证。
 
@@ -110,3 +110,5 @@
 2026-10-06 12:29:04 UTC：固定修复target4f87934f585b8241faa7cdb76b79a202fd353b6f；[唯一manifest](../../docs/evidence/wpf-mature-04/attachment-manifest.json)绑定2source/7raw/5support/27readonly，其中readonly逐字=base daf66fc，原producer四源=已批准eccb。当前两源码/raw停写，v10保留修复期，旧approval不移用。21不同+strict0，不重复S01窗口或产品PG检查。
 
 2026-10-06 12:31:09 UTC：Mika/Astra于12:30:29 UTC独审4f87934f APPROVED，0 P1/P2；41bindings/27readonly/producer4固定一致，21不同与strict0/两DB清理成立；未重测。[正式收据](../../docs/evidence/wpf-mature-04/attachment-independent-review.json)及[固定接收入口](../../docs/evidence/wpf-mature-04/attachment-integration-ready.md)。source/raw冻结，v10待真实MAIN_RECEIPT；旧manifest/support不改，不据此宣布current/真实SDK。
+
+2026-10-06 13:13:50 UTC：正式 MAIN_RECEIPT 后核 main/origin cde6646 clean、owner d389 clean/v10，两源码逐字与批准4f879相同；[接收与质量说明](../../docs/evidence/wpf-mature-04/attachment-main-acceptance.md)。Lead真实组合2PG/HTTP+17UI与types0是已有证据，原21不重跑；明确停写后v11只保留两metadata。新资源回收0 bytes，未删独审所需X01依赖或未知资源；完整TODO保持未完成事实。
