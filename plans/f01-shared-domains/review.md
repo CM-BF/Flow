@@ -1,10 +1,13 @@
 # F01 共享接线审查
 
-**当前增量状态：NOT_STARTED（K01薄client；历史独立批准见下方）**
+**当前增量状态：NOT_STARTED（知识CLI与015/016生产挂载）**
 
-Review target commit：b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69
+Review target commit：c03cc5884a6ed71bad390b3a3ffa2b9e7e297e27
 
-Scope：packages/client/src/index.ts、packages/client/src/knowledge.test.ts、packages/contracts/src/index.ts，仅七个知识传输方法；见knowledge-client-manifest.json。领域K01仍待独审，生产mount未写。
+Scope：apps/server/src/index.ts、apps/cli/src/index.ts、json-input.ts、knowledge.test.ts、README.md。manifest与真实检查见docs/evidence/f01/knowledge-maintenance-manifest.json；领域各自独审不重复覆盖。
+
+## K01薄client独立批准
+Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。
 
 ## 历史已审接线
 

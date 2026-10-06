@@ -97,3 +97,11 @@ Mika发现定时扫描与手动领域测试竞争；已交原owner以显式facto
 
 ## K01薄client 2026-10-06 05:24:09 UTC
 固定b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69，7方法保留原文/版本CAS/key/locator/digest/isCurrent/currentVersion，路径与查询编码、AbortSignal和409不暗重试。实际HTTP1/1及noEmit通过，缺方法red保留；不重跑K01完整领域、不声称生产015已挂载。沿既有传输，不缓存/修改原文，无模型。
+
+## K01 CLI 与015/016生产挂载 / 2026-10-06 05:31 UTC
+
+固定 c03cc5884a6ed71bad390b3a3ffa2b9e7e297e27。领域输入K01 ea0c/metadatae6d已Mika审，SVC02 9aa/metadata129已GO审；本段只5文件接线，不重写领域。015/016在scheduler启动前await，routes在原owner/runner角色hook后注册。知识七命令复用公共client与领域schema，参数化有界JSON读取供已有四类命令复用，原128KiB/32KiB限制不扩大。支持256KiB原文最坏JSON转义（文件预算6倍+4096），strict UTF8解码，不trim/normalize；读取增长也有界。
+
+真实先红Unknown command；初组合17通过，知识新用例因超限退出码4而非2失败，保留 knowledge-cli-green.txt 原失败（文件名不是结果）。加入明确JsonInputError分类后，知识1+维护9+012/013未来迁移消费者1共11/11、typecheck通过；原CLI14/project1/goal1/plugin1各已在同生产挂载组合通过，不为错误分类重跑无变化套件。知识用例覆盖>1.5MiB转义文件、精确Unicode/CRLF/反斜杠引用、版本推进后旧ref、CAS拒绝、restart、坏UTF8/JSON/rawtext与encoded上限拒绝。资源使用动态端口与自有DB正常关闭DROP，无模型/用户预览操作。
+
+find-skills沿同一固定Node/PG/CLI stack复用本地codebase-design、clean-code；本段复核实际Interface/异常/资源生命周期，修复错误分类而不加通用框架。manifest绑定5源/4输出；当前待独立小delta审查，常驻75a33未升级。K01薄client b5和SVC thin caea已获Mika批准，原日志不重复生成。

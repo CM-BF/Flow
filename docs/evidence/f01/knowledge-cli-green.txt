@@ -1,0 +1,41 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ✓ apps/cli/src/cli.test.ts (14 tests) 959ms
+   ✓ reconnects at delivered cursor and drains terminal pages before exiting  408ms
+ ❯ apps/cli/src/knowledge.test.ts (1 test | 1 failed) 1007ms
+   × uses CLI and production knowledge routes for full-size escaped input, immutable citations, CAS and restart 1007ms
+ ✓ apps/cli/src/plugins.test.ts (1 test) 896ms
+   ✓ persists plugin declarations through CLI/client and production routes without claiming a package is installed  895ms
+ ✓ apps/cli/src/projects.test.ts (1 test) 885ms
+   ✓ uses production registration and the same versioned project through public client and CLI, retaining history and rejecting stale writes  885ms
+ ✓ apps/cli/src/goals.test.ts (1 test) 938ms
+   ✓ round-trips goal versions through public CLI/client and production registration without implicitly executing  937ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/cli/src/knowledge.test.ts > uses CLI and production knowledge routes for full-size escaped input, immutable citations, CAS and restart
+AssertionError: expected 4 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 4
+
+ ❯ apps/cli/src/knowledge.test.ts:58:28
+     56|     await writeFile(file, ' '.repeat(KNOWLEDGE_LIMITS.textBytes * 6 + …
+     57|     const oversized = await cli(['create', '--input', file, '--key', '…
+     58|     expect(oversized.code).toBe(2); expect(oversized.errors.join(' '))…
+       |                            ^
+     59|     expect((await cli(['list'])).value.sources).toHaveLength(1);
+     60|   } finally {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  1 failed | 17 passed (18)
+   Start at  22:28:45
+   Duration  5.84s (transform 234ms, setup 0ms, import 797ms, tests 4.68s, environment 0ms)
+
