@@ -22,9 +22,9 @@ Web RELEASE03 owner 继续使用原权威树/累计 runs 账本；已经消费 3
 
 Web driver 已独立改为显式 `BackendInput {path,head,tree}` + runtime factory 导入，local client/contracts/tools 保持固定 362。这些输入与候选相同，不能把候选 server 指向别的树。15:36 前只读其新 `verifyBackend` 发现 diff guard 仍要求只变一个 store.ts；需由 Web owner 窄允许本候选的第二个**精确测试 blob**及本片 metadata 目录，产品仍仅 store.ts 三行。两源码须逐一比对 cde blob/hash；全其他 apps/packages/tools/锁文件与 362 相同。不得放宽成任意已 dirty 工作树或只检查提交消息。
 
-## 依赖复用（尚未挂链接）
+## 依赖复用（已生成最小链接，未 import）
 
-已逐个读取原 Web 依赖声明的 16 个第三方 package.json：实际路径在 web-attachment-production/node_modules/.pnpm，版本/原声明 hash 均同。Node24、pnpm9.15.4 保持；没有 import 包或写 donor。完整列表见 source-bindings.json。候选尚无 node_modules，不能声称已经能解析启动。后续获授权时只挂精确已存在的第三方入口，@flow/contracts 必须指候选自己的 packages/contracts；不借全局 npm、不安装整 workspace、不改原锁、不复制其他 feature 源。
+已逐个读取原 Web 依赖声明的 16 个第三方 package.json：实际路径在 web-attachment-production/node_modules/.pnpm，版本/原声明 hash 均同。Node24、pnpm9.15.4 保持；没有 import 包或写 donor。完整列表见 source-bindings.json。首次 source-binding 时候选没有 node_modules；现已按 Lead 追加授权生成 9 个固定第三方入口 + @flow/contracts 自身源码共 10 链接，见 dependency-view.json。未运行任何 import，不能声称已经能解析启动；@flow/contracts 只指候选自己的 packages/contracts；不借全局 npm、不安装整 workspace、不改原锁、不复制其他 feature 源。
 
 新 attachment-history.test.ts 还需固定 Vitest4.0.18 测试入口，当前 16 包复用清单不含 Vitest；其实际可解析入口需 Lead 另核，当前不为此安装。RELEASE03 现 tsx 路径可直接用于它原有 A/B 脚本，不要求提前运行这份 Vitest 文件。
 

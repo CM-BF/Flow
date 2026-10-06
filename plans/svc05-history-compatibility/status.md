@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:34 UTC；本轮未变更 main |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:39 UTC；本轮未变更 main |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -19,11 +19,11 @@
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 附件历史修复候选已固定，旧失败保留；尚未验证与发布。 |
+| 当前产出 | 附件历史修复候选已通过独立源码核对，运行依赖链接已就绪；兼容性与发布尚未验证。 |
 | 下一可用交付 | 资源足够后验证新后台与实际页面的兼容性。 |
 | 当前阻塞 | ACTIVE: 磁盘余量不足以启动后续隔离验证；候选准备可继续。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED（本候选） |
+| Review | [review.md](review.md)，SOURCE_BINDING / NO_P1_P2；VALIDATION_PENDING，不代替 A/B |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v1，见证据回执 |
 | 架构影响 | 无新增模块/接口/表/依赖；已有历史投影的 v2 未知语义修复，无需改固定架构图。 |
 
@@ -36,3 +36,7 @@
 ## Dashboard
 
 本 status 是唯一手填进度源；首 canonical 交 Execution Lead 登记，聚合结果待其核验。技术 provenance、预算与资源边界见 [interface](../../docs/evidence/svc05-history-compatibility/interface.md)。
+
+## 最小依赖视图准备
+
+[dependency-view.json](../../docs/evidence/svc05-history-compatibility/dependency-view.json)：9 个已固定第三方包 + @flow/contracts 自身源码，共 10 个 ignored symlink；目标字符串 1309 B，仅逻辑链接字节，非物理资源或闭包证明。0 安装/复制/import/type/tests/产品 PG/provider/个人操作。独立源码回执已归档，生成视图只用于随后已授权 Web 的显式候选输入。原 source-bindings 中 nodeModulesPresent=false 保留为更早观察；现以此记录为准。清理归属限本 owner 创建的确切链接，不跟随删除 donor。
