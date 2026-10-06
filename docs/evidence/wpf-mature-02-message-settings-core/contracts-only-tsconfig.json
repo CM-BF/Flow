@@ -1,0 +1,8 @@
+{
+  "extends": "./vertical-tsconfig.json",
+  "include": [
+    "../../../packages/contracts/src/claude-message-settings.test.ts",
+    "../../../packages/contracts/src/assistant.test.ts",
+    "../../../packages/contracts/src/execution-profiles.test.ts"
+  ]
+}

@@ -45,3 +45,5 @@ Mika与architecture_read正式固定审均0 P1/P2；无待修finding。完整来
 2026-10-06 16:17:01 UTC architecture_read/gpt-6-astra 窄复审绑定ea276：cleanup P2、分页独立性P3 CLOSED；.extend P2在92f静态关闭。新test Git=WT/21171B/SHA8d65be70cf7e3c239b9604b05488895bc5f0eec793a1f916ef95b7c7ed1a3db6。SOURCE_REVIEW本范围无剩余P1/P2，VALIDATION_PENDING/0运行；[结构receipt](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-static-review.json)。不是工程/整体APPROVED。
 
 Mika/root随后对metadata650bb固定包独核34 source + 3 prepared config + 3 historical support（manifest SHA b4625c80ac73161cb52cc5ddf990846402538f9300f0df6a14758cabccbdd606），Git/WT/hash/bytes 0 errors；三配置未加载，@flow本树/第三方固定/根strict继承/缓存归属静态成立。生产SOURCE_REVIEW结论延伸至ea276，仍NOT_OPEN/VALIDATION_PENDING/未main。具体审时未单独提供，不补猜时刻。
+
+2026-10-06 16:21:52 UTC首个纵向检查证据：ROOT授权一次contracts-only，精确3文件16/16/exit0、752.427ms；原source ea276不变，raw/cache门限与清理记录见contracts-validation-manifest.json。新runner/真实PG/strict、外部consumer仍pending；不把源码SOURCE_REVIEW升级为整体APPROVED。
