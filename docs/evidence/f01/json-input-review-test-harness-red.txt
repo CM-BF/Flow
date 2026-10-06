@@ -1,0 +1,48 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+(node:11742) Warning: Closing file descriptor 13 on garbage collection
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:11742) [DEP0137] DeprecationWarning: Closing a FileHandle object on garbage collection is deprecated. Please close FileHandle objects explicitly using FileHandle.prototype.close(). In the future, an error will be thrown if a file descriptor is closed during garbage collection.
+ ❯ apps/cli/src/json-input.test.ts (2 tests | 2 failed) 101ms
+   × rejects a real FIFO without waiting for a writer and closes the descriptor 98ms
+   × decodes repeated short UTF-8 reads using one budget-sized buffer and closes on overflow 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/cli/src/json-input.test.ts > rejects a real FIFO without waiting for a writer and closes the descriptor
+TypeError: Cannot spy on export "open". Module namespace is not configurable in ESM. See: https://vitest.dev/guide/browser/#limitations
+ ❯ apps/cli/src/json-input.test.ts:25:8
+     23|     // Repeat in this process to verify that finally closes the handle…
+     24|     const handle = await fs.open(fifo, (await import('node:fs')).const…
+     25|     vi.spyOn(fs, 'open').mockResolvedValueOnce(handle);
+       |        ^
+     26|     await expect(readJsonInput(fifo, 128)).rejects.toThrow('regular JS…
+     27|     await expect(handle.stat()).rejects.toMatchObject({ code: 'EBADF' …
+
+Caused by: TypeError: Cannot redefine property: open
+ ❯ apps/cli/src/json-input.test.ts:25:8
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/cli/src/json-input.test.ts > decodes repeated short UTF-8 reads using one budget-sized buffer and closes on overflow
+TypeError: Cannot spy on export "open". Module namespace is not configurable in ESM. See: https://vitest.dev/guide/browser/#limitations
+ ❯ apps/cli/src/json-input.test.ts:39:8
+     37|     await fs.writeFile(filename, raw);
+     38|     const handle = await fs.open(filename, 'r');
+     39|     vi.spyOn(fs, 'open').mockResolvedValueOnce(handle);
+       |        ^
+     40|     const read = handle.read.bind(handle);
+     41|     const buffers = new Set<ArrayBufferLike>();
+
+Caused by: TypeError: Cannot redefine property: open
+ ❯ apps/cli/src/json-input.test.ts:39:8
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  22:33:18
+   Duration  207ms (transform 20ms, setup 0ms, import 27ms, tests 101ms, environment 0ms)
+

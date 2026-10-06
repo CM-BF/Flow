@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/runner-maintenance.test.ts (1 test | 1 failed) 5ms
+   × preserves maintenance identity and CAS without turning observations or replays into stop permits 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/runner-maintenance.test.ts > preserves maintenance identity and CAS without turning observations or replays into stop permits
+TypeError: client.runnerMaintenance is not a function
+ ❯ packages/client/src/runner-maintenance.test.ts:22:25
+     20|   const client = new FlowClient({ baseUrl: `http://127.0.0.1:${(server…
+     21|   try {
+     22|     expect(await client.runnerMaintenance('runner/1')).toEqual(result);
+       |                         ^
+     23|     await client.runnerMaintenanceHistory('runner/1', { after: 'cursor…
+     24|     const input = { version: 2, operationId: 'operation-1', reason: ' …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  22:21:27
+   Duration  122ms (transform 27ms, setup 0ms, import 44ms, tests 5ms, environment 0ms)
+

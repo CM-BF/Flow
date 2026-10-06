@@ -1,3 +1,5 @@
+import type { KnowledgeCreation, KnowledgePublication, KnowledgeAccepted, KnowledgeSourceList, KnowledgeVersionSnapshot, KnowledgeCitation, KnowledgeResolved, KnowledgeSearchResult } from '@flow/contracts';
+import type { RunnerMaintenanceView, RunnerMaintenanceHistory, RunnerMaintenanceCommand, RunnerMaintenanceResult } from '@flow/contracts';
 import type { GoalGraphProposalInput, GoalGraphProposalApply, GoalGraphProposalCreated, GoalGraphProposalPage, GoalGraphProposal, GoalGraphProposalApplied } from '@flow/contracts';
 import type { ExecutionProfilePublication, ExecutionProfilePublished, ExecutionProfilePage } from '@flow/contracts';
 import type { GoalToolRunAdmission, GoalToolRunAccepted, GoalToolRun, GoalToolRunRevoked, GoalToolAuditPage, GoalToolRunReference, GoalToolInputCall, GoalToolCommandCall, GoalToolSnapshotResult, GoalToolInputResult, GoalToolCommandResult } from '@flow/contracts';
@@ -29,6 +31,48 @@ export class FlowClient {
   constructor(options: ClientOptions) {
     this.baseUrl = options.baseUrl.replace(/\/$/, '');
     this.token = options.token;
+  }
+
+  runnerMaintenance(runnerId: string, signal?: AbortSignal): Promise<RunnerMaintenanceView> {
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance`, { signal });
+  }
+  runnerMaintenanceHistory(runnerId: string, options: { after?: string } = {}, signal?: AbortSignal): Promise<RunnerMaintenanceHistory> {
+    const query = new URLSearchParams();
+    if (options.after) query.set('after', options.after);
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance/history${query.size ? `?${query}` : ''}`, { signal });
+  }
+  drainRunner(runnerId: string, input: RunnerMaintenanceCommand, key: string, signal?: AbortSignal): Promise<RunnerMaintenanceResult> {
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance/drain`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  resumeRunner(runnerId: string, input: RunnerMaintenanceCommand, key: string, signal?: AbortSignal): Promise<RunnerMaintenanceResult> {
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance/resume`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+
+  createKnowledgeSource(projectId: string, input: KnowledgeCreation, key: string, signal?: AbortSignal): Promise<KnowledgeAccepted> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/sources`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  knowledgeSources(projectId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<KnowledgeSourceList> {
+    const query = new URLSearchParams();
+    if (options.after) query.set('after', options.after);
+    if (options.limit !== undefined) query.set('limit', String(options.limit));
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/sources${query.size ? `?${query}` : ''}`, { signal });
+  }
+  knowledgeSource(projectId: string, sourceId: string, signal?: AbortSignal): Promise<KnowledgeVersionSnapshot> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/sources/${encodeURIComponent(sourceId)}`, { signal });
+  }
+  publishKnowledgeVersion(projectId: string, sourceId: string, input: KnowledgePublication, key: string, signal?: AbortSignal): Promise<KnowledgeAccepted> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/sources/${encodeURIComponent(sourceId)}/versions`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  knowledgeVersion(projectId: string, sourceId: string, version: number, signal?: AbortSignal): Promise<KnowledgeVersionSnapshot> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/sources/${encodeURIComponent(sourceId)}/versions/${version}`, { signal });
+  }
+  searchKnowledge(projectId: string, input: { q: string; limit?: number }, signal?: AbortSignal): Promise<KnowledgeSearchResult> {
+    const query = new URLSearchParams({ q: input.q });
+    if (input.limit !== undefined) query.set('limit', String(input.limit));
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/search?${query}`, { signal });
+  }
+  resolveKnowledge(projectId: string, citation: KnowledgeCitation, signal?: AbortSignal): Promise<KnowledgeResolved> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/resolve`, { method: 'POST', body: JSON.stringify({ citation }), signal });
   }
 
   submit(input: TaskSubmission, key: string): Promise<AcceptedTask> {

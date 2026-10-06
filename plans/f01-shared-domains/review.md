@@ -1,8 +1,13 @@
 # F01 共享接线审查
 
-**当前增量状态：APPROVED（O05薄client e28；生产挂载待另审，下方历史批准保留）
-Review target commit：e28d547ed3b446a252595bd1960953382ffa4dd8
-Scope：X02公共挂载/export/client/CLI；CHAT生产入口37ab367另列同批检查。Mika独立只读APPROVED 095497：7薄client方法/CLI稳定key与schema/PG消费者检查完整核对，5源码与raw输出hash一致，无finding，未重跑。CHAT生产37ab由Goal Owner独立只读批准，核007/009迁移、鉴权后挂载、错误清理与10/10原始证据；未重跑。
+**当前增量状态：APPROVED（Mika独立只读，c03主体+59219修复）**
+
+Review target commit：59219dbf693964555c075685cf961aa1f9509cf0
+
+Scope：apps/server/src/index.ts、apps/cli/src/index.ts、json-input.ts、knowledge.test.ts、README.md。manifest与真实检查见docs/evidence/f01/knowledge-maintenance-manifest.json；领域各自独审不重复覆盖。
+
+## K01薄client独立批准
+Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。
 
 ## 历史已审接线
 
@@ -59,3 +64,18 @@ Mika独立只读APPROVED e28d547ed3b446a252595bd1960953382ffa4dd8，现场clean8
 
 Review target commit：208a928969c8e343ea09ecc06db80a6808bbbd74
 范围仅上述三文件；Mika O05领域1f211与薄client e28各自已审。见[o05-production-manifest](../../docs/evidence/f01/o05-production-manifest.json)，8不同检查最终通过、原失败保存；不证明NL/原生query。当前增量NOT_STARTED。
+
+## O05生产挂载独立批准
+Mika只读APPROVED固定208a928969c8e343ea09ecc06db80a6808bbbd74（clean53fcd1e），3源码/6输出与manifest e5ecb7a75be51a9d5794009aa03373c4333f712bc402f9137c384310a4545af1一致，无finding未重跑。证据是首7绿+client红后定向1绿、类型修正后typecheck和client绿，不称一次整套8/8。仅014挂载/迁移历史保持/真实client消费，不包含NL。
+
+## SVC02薄client待审
+Review target commit：caea11bbd5589d33e1cad8d73a328587323ad873
+三文件4方法，1/1 HTTP+noEmit，见maintenance-client-manifest.json；当前NOT_STARTED，不包含维护领域/host安全刷新。
+
+## SVC02薄client独立批准
+Mika独立只读APPROVED caea11bbd5589d33e1cad8d73a328587323ad873，现场clean294612ab；3源3输出hash和固定91878合同核一致，1/1 HTTP/noEmit原证据，无finding未重跑。manifest ace17c6aa83413998c8fc5b0a39faaf92f79ad3bd47d03ed63b593adc5e3deeb。限定薄传输，不含PG维护/host流程。
+
+## K01/016生产挂载局部review
+Mika只读c03挂载与CLI主体无其他阻断，但JSON文件读取P2（FIFO等待/短读backing预算）要求修复，因此c03不批准。59219db修复和2项纯模块证据见json-input-review-manifest.json；旧红事实保留，待Mika复审此delta。
+
+2026-10-06 05:35 UTC：Mika独立只读正式APPROVED c03cc5884a6ed71bad390b3a3ffa2b9e7e297e27 +59219dbf693964555c075685cf961aa1f9509cf0（metadata57f829 clean）；两个manifest固定源与证据已核，P2关闭，未重跑。批准知识CLI/参数化有界读取/015及016生产挂载，不覆盖多runner全局drain、实际常驻更新或未来context。

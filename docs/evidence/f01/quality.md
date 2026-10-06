@@ -91,3 +91,22 @@ Mika发现定时扫描与手动领域测试竞争；已交原owner以显式facto
 ## O05生产挂载 2026-10-06 05:19 UTC
 
 固定208a928969c8e343ea09ecc06db80a6808bbbd74，三文件：014 await在scheduler前、owner鉴权后路由；真实公开client→PG生产入口；旧012/013迁移测试改为旧1..13行及applied_at完整不变、版本唯一，允许合法后继迁移。取得F01 claim v11追加旧迁移test后修改。先实证硬编码13红例，保留red。组合6领域+1迁移通过，新client初次仅JSON对象key顺序断言失败（保存7/8）；排序比较后1/1。类型检查发现缺显式workspaceId，补与server默认相同personal后finaltypecheck及同1client重新通过。8个不同用例最终均有绿证据，不称一次整套8/8。无模型、无103旧套重跑。独立manifest绑定当前源与所有失败/成功输出。clean-code同stack本地方法复用：保持薄接线，领域未手改，错误与auth沿原逻辑；迁移消费者不再耦合未来总数。
+
+## SVC02薄client 05:22 UTC
+固定caea11bbd5589d33e1cad8d73a328587323ad873，4方法仅读维护快照/历史、发送drain/resume，精确保留CAS/operationId/key/原文与AbortSignal；不把计数或重放回执当停机许可，不包含host hold接口。真实HTTP1/1与noEmit通过，缺方法初红保留；无PG/进程/模型调用。沿既有传输Interface与错误机制，未扩第二调度器。
+
+## K01薄client 2026-10-06 05:24:09 UTC
+固定b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69，7方法保留原文/版本CAS/key/locator/digest/isCurrent/currentVersion，路径与查询编码、AbortSignal和409不暗重试。实际HTTP1/1及noEmit通过，缺方法red保留；不重跑K01完整领域、不声称生产015已挂载。沿既有传输，不缓存/修改原文，无模型。
+
+## K01 CLI 与015/016生产挂载 / 2026-10-06 05:31 UTC
+
+固定 c03cc5884a6ed71bad390b3a3ffa2b9e7e297e27。领域输入K01 ea0c/metadatae6d已Mika审，SVC02 9aa/metadata129已GO审；本段只5文件接线，不重写领域。015/016在scheduler启动前await，routes在原owner/runner角色hook后注册。知识七命令复用公共client与领域schema，参数化有界JSON读取供已有四类命令复用，原128KiB/32KiB限制不扩大。支持256KiB原文最坏JSON转义（文件预算6倍+4096），strict UTF8解码，不trim/normalize；读取增长也有界。
+
+真实先红Unknown command；初组合17通过，知识新用例因超限退出码4而非2失败，保留 knowledge-cli-green.txt 原失败（文件名不是结果）。加入明确JsonInputError分类后，知识1+维护9+012/013未来迁移消费者1共11/11、typecheck通过；原CLI14/project1/goal1/plugin1各已在同生产挂载组合通过，不为错误分类重跑无变化套件。知识用例覆盖>1.5MiB转义文件、精确Unicode/CRLF/反斜杠引用、版本推进后旧ref、CAS拒绝、restart、坏UTF8/JSON/rawtext与encoded上限拒绝。资源使用动态端口与自有DB正常关闭DROP，无模型/用户预览操作。
+
+find-skills沿同一固定Node/PG/CLI stack复用本地codebase-design、clean-code；本段复核实际Interface/异常/资源生命周期，修复错误分类而不加通用框架。manifest绑定5源/4输出；当前待独立小delta审查，常驻75a33未升级。K01薄client b5和SVC thin caea已获Mika批准，原日志不重复生成。
+
+## F01 review 修复 / 2026-10-06 05:34 UTC
+Mika审c03发现P2：open只读FIFO会在fstat前等待；多个短读的subarray保留64KiB backing，累计分配可超过输入预算。固定59219dbf693964555c075685cf961aa1f9509cf0：O_NONBLOCK打开后确认regular file，finally关闭；单maxBytes+1 buffer循环读取/严格UTF8解码，无chunks backing累积。旧c03在独占临时FIFO真实750ms超时，Python只结束该测试child，见json-input-fifo-before.json。
+
+新增两个纯模块检查通过：真实FIFO无writer及时拒绝+descriptor关闭；真实文件被限为3B短读（跨中文/emoji字节）正确解码，同一buffer大小严格budget+1；stat观测后内容变长时越界拒绝/关闭。首测试harness误对原生ESM export直接spy失败且GC关闭两descriptor，原日志保留；改用Vitest局部module mock并afterEach清理handles后2/2通过，最终typecheck通过。没有重跑K01/SVC领域。组合批准仍待Mika复审，c03原manifest保持历史内容；新manifest仅本2文件delta。

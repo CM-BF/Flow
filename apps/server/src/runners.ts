@@ -5,7 +5,7 @@ import type { AttemptView, ClaimResponse, Ownership, RegisterRunner, RunnerRegis
 import { HttpError, sha256, transaction } from './database.js';
 import { loadTask } from './tasks.js';
 
-export interface RunnerRecord { id: string; harnesses: string[]; capacity: number; revoked: boolean }
+export interface RunnerRecord { id: string; harnesses: string[]; capacity: number; revoked: boolean; maintenance_state?: 'accepting' | 'draining' | 'maintenance' }
 export interface AttemptRecord {
   id: string; task_id: string; runner_id: string; owner_version: number; lease_expires_at: Date;
   last_heartbeat_at: Date | null; last_event_at: Date | null;
@@ -40,6 +40,7 @@ export async function registerRunner(pool: Pool, input: RegisterRunner): Promise
 export async function claim(pool: Pool, runnerId: string, leaseMs: number): Promise<ClaimResponse> {
   return transaction(pool, async client => {
     const runner = await lockRunner(client, runnerId);
+    if (runner.maintenance_state && runner.maintenance_state !== 'accepting') return { assignment: null, remainingLeaseMs: 0 };
     const busy = await client.query<{ count: number }>("SELECT count(*)::integer AS count FROM flow.attempts WHERE runner_id=$1 AND completed_at IS NULL", [runnerId]);
     if (busy.rows[0]!.count >= runner.capacity) return { assignment: null, remainingLeaseMs: 0 };
     const result = await client.query<{ id: string }>(`

@@ -1,3 +1,5 @@
+import { migrateKnowledge, registerKnowledgeRoutes } from './knowledge/index.js';
+import { migrateRunnerMaintenance, registerRunnerMaintenanceRoutes } from './runner-maintenance/index.js';
 import { migrateGoalGraphProposals, registerGoalGraphProposalRoutes } from './goal-graph-proposals/index.js';
 import { migrateExecutionProfiles, registerExecutionProfileRoutes } from './execution-profiles/index.js';
 import { migrateConversationQueue, registerConversationQueueRoutes, scanConversationQueue } from './conversation-queue/index.js';
@@ -53,6 +55,8 @@ export async function createServer(options: ServerOptions) {
     await migrateConversationQueue(pool);
     await migrateGoalToolRuns(pool);
     await migrateGoalGraphProposals(pool);
+    await migrateKnowledge(pool);
+    await migrateRunnerMaintenance(pool);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => { await pool.end(); throw error; });
   let pendingSweep: Promise<void> | undefined;
@@ -114,6 +118,8 @@ export async function createServer(options: ServerOptions) {
   registerConversationQueueRoutes(app, pool, boss);
   registerGoalToolRunRoutes(app, pool, boss);
   registerGoalGraphProposalRoutes(app, pool);
+  registerKnowledgeRoutes(app, pool);
+  registerRunnerMaintenanceRoutes(app, pool);
   registerStreams(app, pool);
   app.post('/api/runners', async request => {
     const input = registerRunnerSchema.safeParse(request.body);

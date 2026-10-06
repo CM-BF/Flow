@@ -1,0 +1,12 @@
+apps/runner/src/goal-tool-bridge/integration.test.ts(1,29): error TS2307: Cannot find module '@modelcontextprotocol/sdk/client/index.js' or its corresponding type declarations.
+apps/runner/src/goal-tool-bridge/sdk.test.ts(28,49): error TS7006: Parameter 'tool' implicitly has an 'any' type.
+apps/runner/src/goal-tool-bridge/test-peer.ts(2,24): error TS2307: Cannot find module '@modelcontextprotocol/sdk/client/index.js' or its corresponding type declarations.
+apps/runner/src/goal-tool-bridge/test-peer.ts(3,35): error TS2307: Cannot find module '@modelcontextprotocol/sdk/inMemory.js' or its corresponding type declarations.
+apps/runner/src/goal-tools-mcp/bridge.test.ts(2,24): error TS2307: Cannot find module '@modelcontextprotocol/sdk/client/index.js' or its corresponding type declarations.
+apps/runner/src/goal-tools-mcp/bridge.test.ts(3,35): error TS2307: Cannot find module '@modelcontextprotocol/sdk/inMemory.js' or its corresponding type declarations.
+apps/runner/src/goal-tools-mcp/bridge.test.ts(34,25): error TS7006: Parameter 'value' implicitly has an 'any' type.
+apps/runner/src/goal-tools-mcp/read.ts(2,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+apps/runner/src/goal-tools-mcp/test-peer.ts(1,24): error TS2307: Cannot find module '@modelcontextprotocol/sdk/client/index.js' or its corresponding type declarations.
+apps/runner/src/goal-tools-mcp/test-peer.ts(2,35): error TS2307: Cannot find module '@modelcontextprotocol/sdk/inMemory.js' or its corresponding type declarations.
+apps/runner/src/goal-tools-mcp/test-peer.ts(3,37): error TS2307: Cannot find module '@modelcontextprotocol/sdk/types.js' or its corresponding type declarations.
+apps/runner/src/goal-tools-mcp/test-peer.ts(15,29): error TS7019: Rest parameter 'args' implicitly has an 'any[]' type.
