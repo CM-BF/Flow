@@ -1,3 +1,14 @@
+# WPF-MATURE-04 当前附件材料兼容修复审查
+
+状态：NOT_STARTED
+
+- Review target：实现待固定；范围仅store.ts的3行v2 unknown分支和新attachment-history.test.ts。
+- 4真实PG/HTTP组合+17直接schema/store=21不同，strict0；原red与两轮0连接/DROP完整保留；旧9PG未运行不累计。
+- 本次只修history DTO表达能力，不新增attachment材料DTO，不改变public schema、旧v1/stored history或真实executionInputDigest；current/remaining/SDK未知保留。
+- 已交producer eccb的approval及main接收不自动覆盖本次store修复。
+
+---
+
 # WPF-MATURE-04 当前普通 Claude producer 审查
 
 状态：APPROVED（仅producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40；普通历史观察，真实SDK/current/cut不在批准范围）

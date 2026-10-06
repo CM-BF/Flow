@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:24:43 UTC / fixed main 7cbda706632c85fc5da12a371b282419c933ab9a；现场 bfe50bb0d152d792f6a9dead5644763f722fb345 clean |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:28:34 UTC / fixed main7cb同步daf66fc，producer已main；附件修复尚未main |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -10,22 +10,22 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
-| 工作基线 / HEAD | 844fa14bfbf32f5392e48e104b5440a9cb5b9b13 / 固定producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40；后续HEAD为metadata，Git聚合实际HEAD |
-| 工作树dirty状态 | producer四源/raw/support/manifest冻结且已交回写权；本轮仅main接收/handback metadata，实际clean由Git聚合 |
+| 工作基线 / HEAD | daf66fc50b60d5b0616ad44bc4a1fb30c2d5d29a / 固定main7cb；后继附件修复进行中，Git聚合实际HEAD |
+| 工作树dirty状态 | 仅v10两源及自有metadata待固定；旧producer4与public DTO/旧断言未变 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | delivered |
-| 检查状态 | PASSED eccb1ba6d9f3bf95cca4f50693dde8e32707ed40：121/121不同（19read+27adapter+31Claude+11stream+33runtime），局部root严格noEmit0；首次120/121旧fixture超时及定向1/1记录保留，原因unknown |
+| 本片段交付阶段 | review |
+| 检查状态 | PASSED 附件修复21不同=4真实PG/HTTP组合+17直接schema/store；旧9PG未运行，strict noEmit0；attachment-only red1/3未选与两专库清理保留 |
 | 已集成main状态 / HEAD | INTEGRATED 7cbda706632c85fc5da12a371b282419c933ab9a；producer四源逐字=approved eccb Git=固定main Git=双方现场；[接收收据](../../docs/evidence/wpf-mature-04/producer-main-acceptance.json)引用Lead root noEmit0；旧18叶源已集成bf067，未重测；部署未知 |
-| 实现目标 | eccb1ba6d9f3bf95cca4f50693dde8e32707ed40 |
-| 实现范围 | apps/runner/src/claude.ts, apps/runner/src/context-observations/claude-summary-read.ts, apps/runner/src/context-observations/claude-summary-read.test.ts, apps/runner/src/claude-context-observation.test.ts |
+| 实现目标 | 附件材料修复待固定；已交producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40 |
+| 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 普通Claude历史观察producer已独审并进入main7cbda706；四源写权已交回，只保留metadata |
-| 下一可用交付 | 处理附件v2材料历史投影的精确组合缺陷；先最小合同/新scope，current/cut仍未知 |
+| 当前产出 | 附件v2历史投影3行修复及4真实组合回归完成，21不同+strict0；准备固定独审 |
+| 下一可用交付 | 固定两源码/原始证据/manifest后独审；X01保持只读研究队列 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED eccb1ba6d9f3bf95cca4f50693dde8e32707ed40：chatui01_owner/gpt-6-astra，2026-10-06 12:16:43 UTC，Mika接收，0 P1/P2；仅普通history producer |
-| Claim | [COMMITTED partial handback v9](../../docs/evidence/wpf-mature-04/producer-source-handback-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v9 ACTIVE；仅2metadata目录，四producer源及旧18源停止写入 |
+| Review | NOT_STARTED 新附件修复待固定；producer eccb旧APPROVED不移用 |
+| Claim | [COMMITTED amend v10](../../docs/evidence/wpf-mature-04/attachment-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 ACTIVE；仅store.ts、新attachment-history.test.ts与两metadata目录；producer四源保持交回 |
 | 架构影响 | 本片仅普通Claude result读取和EOF后历史事件；中心继续原reportEvents/027/owner GET。pending control未知复用原settlement和journal，不新增状态机；current/remaining仍未知 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -104,3 +104,5 @@
 2026-10-06 12:17:36 UTC：接收chatui01_owner对eccb的APPROVED（12:16:43 UTC，0 P1/P2），Mika接收；58bindings/31readonly/18旧源与121不同+strict0核实，未重测。正式[独审收据](../../docs/evidence/wpf-mature-04/producer-independent-review.json)和[唯一集成入口](../../docs/evidence/wpf-mature-04/producer-integration-ready.md)已固定。source继续冻结、v8修复期保留；main四源未接收，不提前release。原始manifest/raw/support不改，真实SDK/current/cut/Web未知不扩张为完成。
 
 2026-10-06 12:24:43 UTC：正式核main7cbda706接收eccb四源，固定Git/现场逐字一致；Lead58bindings/31inputs/root noEmit0为既有证据，作者未复跑121/provider。明确停止四源写入，原子amend v9仅保留两metadata目录；[收据](../../docs/evidence/wpf-mature-04/producer-source-handback-receipt.json)。历史观察边界及真实SDK/current未知保留。下一已授权附件材料修复另领scope，不恢复旧18/4源码写权。
+
+2026-10-06 12:28:34 UTC：附件v2表达能力修复：unknown/materialRevisionDigest=null，executionInputDigest保留，v1 known与旧history不变。真实公共链路red1后green4，直接17，strict0；两随机专库均0连接后DROP。固定base daf66fc来自main7cb受控合入，仅status/review两个metadata add/add由Mika显式授权owner保留更新事实；其他apps/packages全部=固定main，integration7fff已release；writer v10保留修复期。
