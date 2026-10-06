@@ -14,7 +14,7 @@
 
 [run-check.py](run-check.py)只复用已审固定SVC07的supervise纯函数，在进程内将module.ROOT设成本worktree，不调用main、不修改SVC文件或导入跨树产品。显式两test路径/strict、30s总预算（27s监督+最多1s关闭）、合并raw64KiB、Node编译和Vitest缓存关闭；独立TMP只做前后有界空目录检查，非实时32MiB硬隔离，异常内容/身份保留UNKNOWN。每次own PID/PGID立即fsync，原始stdout与结果分开且不覆盖。0真实PG/provider/native。
 
-## 稳定内部Interface（待独审）
+## 稳定内部Interface（产品source已独审）
 
 | Interface | 输入/输出与生命周期 | 查询预算 |
 | --- | --- | --- |
@@ -23,3 +23,9 @@
 | turnViews（state再导出） | 同PoolClient，≤50 TurnRow，返回同序ConversationTurn；task404不变；caller拥有RR快照 | task1 + 可选context1 + replies最多3 |
 
 turnPage保留conversation读取+limit+1，最大7 reads加BEGIN/COMMIT=9次调用；无context/legacy时更少。单turnView、assistantProjection、sessionEvidence、readAssistantFinalPreview复用批量路径。legacy仍传完整body到JS核digest；session detail最多每task2条，未声称全部传输字节有界或消除TOAST/hash。实际并发snapshot、真实SQL正确性、HTTP和UTF8字节/roundtrip测量仍属REQ15-04，不能从fake或本静态预算推断。
+
+## PG准备独审与质量安全点
+
+2026-10-06 23:39:37 UTC：沿同一find-skills本地匹配（Node/TS/pg/Vitest）、固定clean-code和codebase-design复核。本次仅归档已完成独审，不改源码，不重新安装技能。fixture seed、协议观察、case/DB生命周期和进程调用方各守单一职责；观察器延后到Pool.query seed结束再装，避免callback-form不兼容；SQL结果不替换，原操作不提前释放，清理错误与原错误区分。未新造通用监督框架，复用固定旧supervisor纯函数；其宿主I/O/非实时TMP边界仍显式记录，OPS14后继未迁移。
+
+chatui01_owner 23:38:54UTC fixture/SQL/observer/两case APPROVED/0 P1/P2；Mika/root补审封套/身份清理/失败保留/输出预算无P1/P2。固定target5ddddd6a7991243b5c42e223b11df879f0fa9498，95输入429768B，manifest SHA df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e。Root核261相对import edges/4原始SQL/9deps/8driver/fixed supervisor与Git=WT一致。结论仅PG_PREPARATION_SOURCE_APPROVED；types/collect/PG/HTTP仍NOT_RUN，原26/26与strict-v2保持历史事实。准备包及6个实际输出absent状态冻结；留存claim等待窗口。

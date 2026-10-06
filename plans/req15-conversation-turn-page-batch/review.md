@@ -1,6 +1,6 @@
 # REQ15 独立审查
 
-当前状态：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **REVIEW_PENDING**，尚未执行types/collect/PG。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
+当前状态：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN**。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
 
 ## Target / scope / 验收
 
@@ -53,3 +53,11 @@ root/Mika + architecture_read，2026-10-06（reviewer消息回传，未提供独
 共享协调PG已由Lead报告不可用；当前合法claim保留，本段固定后停写。后继新工作须待Lead恢复并重新核claim，禁止将读取失败当空闲或重复take/amend。
 
 23:35:31.024Z恢复补充：root fresh ledger已available且原v1claim/10scope不变；没有新的领取。资源与窗口仍不足，types/collect/PG保持NOT_RUN，静态source review不受该运行等待影响。
+
+## 真实PG准备包源码独立结论
+
+Target `5ddddd6a7991243b5c42e223b11df879f0fa9498`。chatui01_owner于2026-10-06 23:38:54 UTC对fixture、SQL、observer和两case给出 **APPROVED /0 P1/P2**；Mika/root补审Python封套、身份清理、首失败保留和输出预算未见P1/P2。合并结论 **PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN**，非执行准入、非真实PG或HTTP通过、非main集成。
+
+Root独立复核manifest SHA `df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e`：95文件429768B逐Git=WT=bytes/hash；261相对import edges无缺失；四官方SQL002/007/009/025、9个依赖入口及8个driver文件匹配，supervisor固定SHA982c原字节不变；6个运行输出absent；apps/packages相对d209零diff。该结论不扩大旧26/26与strict-v2的验证范围，也不证明新fixture已collect或通过类型检查。
+
+Owner于23:39:37.392Z重新核原claim v1 ACTIVE、身份/10scope不变，接受无源码修复请求。当前仅归档status/review/质量；已审source/support/manifest保持原字节。最终metadata HEAD由交接消息提供，用于未来exact-head命令重绑；仍须明确窗口及fresh准入，SVC07首次HTTP优先，0新执行。
