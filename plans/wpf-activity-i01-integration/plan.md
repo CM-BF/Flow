@@ -16,9 +16,9 @@ Tool采用固定官方AI Elements最小组件；Reasoning复用现assistant-ui�
 
 ## TODO
 
-- [ ] ACTIVITYI01-01：实现有界原生活动projection及Tool/Reasoning展示，验证身份、分页、状态和截断。
-- [ ] ACTIVITYI01-02：官方Thread footer接P01三类贡献与宿主read ports，保留发送/队列语义。
-- [ ] ACTIVITYI01-03：局部和实际App HTTPfixture验证双主题390、键盘、懒读与隔离。
+- [x] ACTIVITYI01-01：实现有界原生活动projection及Tool/Reasoning展示，验证身份、分页、状态和截断。
+- [x] ACTIVITYI01-02：官方Thread footer接P01三类贡献与宿主read ports，保留发送/队列语义。
+- [x] ACTIVITYI01-03：局部和实际App HTTPfixture验证双主题390、键盘、懒读与隔离。
 - [ ] ACTIVITYI01-04：固定候选独立review、修复与Lead主线接收。
 
 ## 验收与风险
@@ -26,3 +26,5 @@ Tool采用固定官方AI Elements最小组件；Reasoning复用现assistant-ui�
 局部测试覆盖当前页刷新/旧页陈旧、跨attempt顺序、正文身份/字节/错误/取消缓存、permission/visible/epoch；实际App覆盖pending/running用户锚点、两split、native hidden恢复、折叠0请求、hasMore显式分页、队列草稿不回归。dev StrictMode+Activity单独列，不能用它代替native hidden事实。0模型fixture不等真实中心/provider验收。每工作段/约30分钟安全停点/交付应用clean-code。
 
 架构影响：新增宿主活动read port及typed footer slot，固定候选后由Lead协调架构图更新。独立review默认NOT_STARTED。
+
+2026-10-06 07:09 UTC：实现固定e93070c，精确消费已审C03两文件输入889f→07da10c；未改变其内容。局部74、dev11与typecheck/build通过，production10组合通过，独审NOT_STARTED。

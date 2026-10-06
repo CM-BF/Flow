@@ -11,3 +11,17 @@
 - webapp-testing/React：实际App native hidden与dev Activity/StrictMode分别验证；请求计数证明懒读，局部测试优先。
 
 当前尚未运行产品检查。take原件见[take-receipt.json](take-receipt.json)，live核验06:54:17.091Z。派发gpt-6-astra/ultra，运行环境标识GPT-6；不声称额外型号API证明。
+
+## 2026-10-06 07:03 UTC 实现停点
+
+原生深模块与P01 footer已落盘。清码发现并修正：native hidden lease与普通TaskSummary更新的effect必须分离，避免每次状态通知取消合法body；正文read在microtask开头再次核AbortSignal；用户footer以明确gridColumn占整行。原生pagination只刷新当前页，跨attempt sequence不排序。Tool省去未使用AI SDK/CodeBlock依赖，状态映射保持input ready/unknown，无动画伪实时。
+
+实际首轮6原生tests通过；三文件局部26/27，一项generic真实HTTP请求测试只等单tick过早断言，已改等待实际flight，尚未重跑。首次browser6组通过/errors=[]，最后主题locator错误（实际Use dark theme）已修，保留[browser-first.log](browser-first.log)。S01测量协调期间未新起检查；首browser07:02:45.387Z已退出并清理自己的HTTP/browser。初步tsc曾重复NativeActivity类型/组件名，别名修正后通过；新增browser之后的最终tsc待运行。
+
+## 2026-10-06 07:10 UTC 候选交付复核
+
+固定e930实现。检查命名/单一职责/接口/错误/重复：TaskSummary使用值快照；page重读原cursor并原子拒绝身份、顺序与跨页重叠；native当前页与generic nextpage策略分离。正文检验沿原native schema，false截断元数据、UTF8超限及外来identity无缓存；session同一authorizeResource分别重核task.activity.read/reference.read，connection AbortSignal并入真实nativefetch。P01仍唯一生命周期，无新增grant状态。
+
+scope复核：15自有源+2已批准依赖，与17scope领取和受控输入一致；protected/rootlock无差异。本树依赖link正确。最终74局部、tsc/build、dev11/prod10全通过；两最终browser17source hash与commit全符。原工具/fixture失败均已解释保留，没有跳过或降低断言；当前独立review仍NOT_STARTED。目录、页面、身份/完整字节/截断的Interface已给可执行交接，未将fixture视为真实provider。
+
+本轮无额外生产优化：bundle大chunk警告、全历史缓存、真实provider/其他浏览器/屏读列未验证。每工作段均做清码停点，未创建后台timer。
