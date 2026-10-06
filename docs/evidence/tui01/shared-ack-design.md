@@ -22,3 +22,11 @@ FlowClient createConversation / submitConversationTurn 当前透传JSON；Web co
 4. 固定source/证据独审并成套接收，更新TUI001-09；不把首局部修复当已经DRY。架构影响是Web和TUI共同消费client解码器，中心仍唯一持久权威。
 
 方法：本地find-skills已发现codebase-design/clean-code；以两个真实消费者驱动小Interface，区分协议不变量与展示策略，有限字段/引用数沿既有DTO，无额外详情读取或全历史扫描。性能不主张提速，记录额外校验只处理已收到的有界回执。
+
+## TUI01B 实施与冲突恢复
+
+2026-10-06 当前已审主线41315b0为实施输入；runner_owner在独立shared-conversation-ack树负责共享client+interaction，Web消费者由其co-lead独立协调。F01已正式停止并归还client/index与conversations.test.ts，原目录claim展开成其余literal文件；只有take成功后开写。
+
+实际旧controller在发送时rotate清除观察timer，确定4xx路径仅清intent并返回，可能留下connected=true而停止观察。TUI01B直接consumer须验证另一公开客户端先提交后的409：不清用户草稿，不改revision重发mutation；重新读取中心状态并恢复轮询，读取失败显式中断。unknown仍保存原key/body，不能借冲突恢复自动重投。此为小controller责任修复，不扩大共享decoder到历史/展示策略。
+
+同一会话跨客户端验收遵循父计划；首局部采用两个公开HTTP客户端和headless controller，无模型，不替代Web受影响浏览器验收。附件版本2冻结合同由Web资源owner与decoder显式协调，不能静默丢引用身份。
