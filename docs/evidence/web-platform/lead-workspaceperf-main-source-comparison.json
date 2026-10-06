@@ -1,0 +1,302 @@
+{
+  "at": "2026-10-06T12:09:42.680415+00:00",
+  "before": "eb95fba43b0305db0dd40dfe85ccc0d58eb9a6ea",
+  "sources": [
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc",
+      "target": "0778847702e595405f6cba0de51c1058b1436504"
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828",
+      "target": "0778847702e595405f6cba0de51c1058b1436504"
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843",
+      "target": "0778847702e595405f6cba0de51c1058b1436504"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31",
+      "target": "0778847702e595405f6cba0de51c1058b1436504"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.test.ts",
+      "bytes": 10273,
+      "sha256": "b3dae983e3486ae08c359b7560e01894fc742f64eff5891df6e73f0c9471a575",
+      "target": "0778847702e595405f6cba0de51c1058b1436504"
+    },
+    {
+      "path": "apps/web/test/workspace-lifecycle.fixture.ts",
+      "sha256": "44becc897d2fca5288da15b222d69b9094a3f84c31a7001914c22437f6ff3a0d",
+      "bytes": 2576,
+      "target": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7"
+    },
+    {
+      "path": "apps/web/test/workspace-lifecycle.browser.ts",
+      "sha256": "29400ad8913900212dd40cbfa19687c4bdb43dfcfc18a4b9508b247d71d022b5",
+      "bytes": 16863,
+      "target": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/typecheck-1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/typecheck-1.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/typecheck-final-result.json",
+      "bytes": 548,
+      "sha256": "416b0a4ba35d058e6905f46ac4364df82c93a411f9ec6d58ab6d0f55d341efec"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/typecheck-final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/typecheck-final.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/unit-1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/unit-1.stdout",
+      "bytes": 327,
+      "sha256": "5b73d660c45169c8a29c67b1c28a6179118d3287a4bbd084059b2410f41e9471"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/unit-final-result.json",
+      "bytes": 400,
+      "sha256": "469ca9584a8b02d8948dd243941052ab209cd1c97198d3078a14f25b76f6bea3"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/unit-final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/unit-final.stdout",
+      "bytes": 327,
+      "sha256": "5208949c650c740df1e8c2475b46a9554d34200e40861468777dc3a9e9c909dc"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/unit-initial.stderr",
+      "bytes": 1152,
+      "sha256": "e2630838604096579a4acd7792af5cb9486a62dd9399a65507a8e82030e082bb"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/diagnostics/unit-initial.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "plans/wpf-workspace-lifecycle-baseline/plan.md",
+      "bytes": 2669,
+      "sha256": "fe6340dc65708598df28f014013bce16d342e5c2141d7fe0ac0081c23af46314",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "plans/wpf-workspace-lifecycle-baseline/review.md",
+      "bytes": 2834,
+      "sha256": "c0aab12849e0580499041e7f8ecf8b24cc79b824fe18a0ffc3618398a1a94eff",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "plans/wpf-workspace-lifecycle-baseline/status.md",
+      "bytes": 4259,
+      "sha256": "ba891d3d99c3f31dc18537b09fab69fb382ff4926deeb4cc89e3f0db65ac01fd",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/2026-10-06T11-02-23.650Z-budget.json",
+      "bytes": 120,
+      "sha256": "6e7bddbae141ace3fa1da5d4f2f8ff139b1fd80418a27ea07c19a4c6737e4425",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/2026-10-06T11-02-23.650Z-checkpoint.json",
+      "bytes": 116644,
+      "sha256": "b45e42b1844653b9184425d684236f9c35435ea51dcb80b4f257d684e69b34f7",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/2026-10-06T11-02-23.650Z-report.json",
+      "bytes": 139269,
+      "sha256": "2553ff440b3736da15a7e2342e70700fb2cdf4e935e7f29d6cde997e6c6dc150",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/README.md",
+      "bytes": 2230,
+      "sha256": "2872ccc290812c555797c6f97f09257e65ef762d4e87833a741f208b29f48710",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/candidate-parser.json",
+      "bytes": 2822,
+      "sha256": "c44979d295bc44e4e062f1c76441740f9672e9b0467d4c8b88de3325870e7ca5",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/checks.json",
+      "bytes": 58991,
+      "sha256": "96b1fc632044a7cb3a1f61ac78771a2d1f2d9f146dd583db4c34c41055fdd1ec",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/experiment-repaired.log",
+      "bytes": 1941,
+      "sha256": "4acbb346e385332fee9ad817189884036bf5cbc9745c3b898f9d711acb541bec",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/experiment.log",
+      "bytes": 1507,
+      "sha256": "06bfac6cfec6378598ae55f7ca9e6a22e8e5507c42195c599a0c82622e6498e9",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/initial-parser.json",
+      "bytes": 637,
+      "sha256": "3d2c89e611792c149e084017b027003d5529a23d7f19ece5eb04bc1e76ee3dc5",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/install.log",
+      "bytes": 658,
+      "sha256": "b2ced306fad54ba84c1e4b4e5ae115629384fd38048381910bff8ead3adc4779",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/interface.md",
+      "bytes": 3203,
+      "sha256": "a978cdf9c976609d2ac5b1fb26839dae30be9465fea86bb1ac091310892a6f45",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/owner-live.json",
+      "bytes": 98385,
+      "sha256": "a2408272dee7764bc83a122f8e4f9e6fa1f0eb6e8b1d9159d5fcb63ef3c8328b",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/quality.md",
+      "bytes": 4129,
+      "sha256": "2e4dc96d4d32445cb96536ea19541a08448705a88edc658322b07d2ebd1158fe",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/review-parser.json",
+      "bytes": 961,
+      "sha256": "ea9544a7f0163348044e71d6ae668e18548b5b01bfc562a184bc08e8852f5527",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/root-audit.json",
+      "bytes": 847,
+      "sha256": "92a4cfe0f04934b92a1c14963d08a228e5b98c4dcef80528d8c09e0ae6185e0b",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/root-strict-types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/take-receipt.json",
+      "bytes": 778,
+      "sha256": "4d531ba0f0b823e077f7b46c8823e986950fb6eb84adcedb1e32352265811b9f",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/types-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/types-first.log",
+      "bytes": 407,
+      "sha256": "023f5808e64ac1662d1fd88549bf9e3e62ed37b1998312727215db5117969d9f",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/types-fixed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/types-repaired.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/types-targeted.log",
+      "bytes": 179,
+      "sha256": "3b32d54f4d9599847feaf337ca33f29c4bdb31243163f2a82ddd08dc4cfeebc9",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-lifecycle-baseline/validation.md",
+      "bytes": 6470,
+      "sha256": "918c87a04f96b0799711eb1ade70a7ec04d547f0b7a19573cb9f21312fb7eda6",
+      "target": "628156e199ee335ffadd22e28247f16a8887d82f"
+    },
+    {
+      "sourcePath": "docs/evidence/wpf-mature-02/integration-readiness.md",
+      "storedPath": "docs/evidence/i02/native-sink-approved-input.txt",
+      "bytes": 5012,
+      "sha256": "a3cfcc638ea122a398a492b39cec0118beb419ef108de08d31eb4e7f7bb72215",
+      "sourceCommit": "b2a77cf3394e6f63f0385d44a50f2a3427f3f7d1"
+    },
+    {
+      "sourcePath": "plans/wpf-mature-02-harness-capabilities/review.md",
+      "storedPath": "docs/evidence/i02/native-sink-review-history.txt",
+      "bytes": 22068,
+      "sha256": "f39bfbb2a20b29b406f7b10ff160bec26358e397287f59da6b1ce095b0518c94",
+      "sourceCommit": "b2a77cf3394e6f63f0385d44a50f2a3427f3f7d1"
+    }
+  ],
+  "mismatches": [],
+  "reviewReuse": {
+    "nativeSink": "Mika approved exactly five sources; 19 zero-child checks, original strict and C1 compile retained",
+    "workspace": "Web independent approval of partial baseline: 8 passed, one locator failure; cleanup true; no new execution"
+  },
+  "notIncluded": [
+    "diagnostic driver or any native invocation",
+    "full mature capability branch",
+    "production workspace change"
+  ],
+  "limits": [
+    "Private sink opt-in only; no native availability/whole writer settlement claim.",
+    "Workspace measurement retains original partial/exit1, 8 completed and one locator failure; no run on current UI."
+  ],
+  "integrationChecks": {
+    "rootTypes": 0,
+    "webTypes": 0,
+    "providerCalls": 0,
+    "browserRerun": false,
+    "originalNativeUnitSuiteRerun": false
+  },
+  "verifiedAt": "2026-10-06T12:11:20.571694+00:00"
+}

@@ -1,0 +1,99 @@
+{
+  "observedAt": "2026-10-06T12:04:30.745741+00:00",
+  "main": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
+  "mainOriginCleanObserved": true,
+  "formalReceipt": "Execution Lead via root and fixed I02 source comparison",
+  "sourceCount": 9,
+  "sources": [
+    {
+      "slice": "ATTACHI01",
+      "path": "apps/web/src/attachments/AttachmentPicker.tsx",
+      "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+      "sha256": "d9a196ae46bb7f95764d1762ddd9940a30325825e5c0950727e70382eb8d3a25",
+      "bytes": 7336,
+      "baseEqual": true
+    },
+    {
+      "slice": "ATTACHI01",
+      "path": "apps/web/src/attachments/adapter.ts",
+      "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+      "sha256": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3",
+      "bytes": 3138,
+      "baseEqual": true
+    },
+    {
+      "slice": "ATTACHI01",
+      "path": "apps/web/src/attachments/attachments.css",
+      "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+      "sha256": "81b78eed67579a8d5122927590cf6b4ad678cad50c9d2694f8af8f4decd27333",
+      "bytes": 2572,
+      "baseEqual": true
+    },
+    {
+      "slice": "ATTACHI01",
+      "path": "apps/web/src/attachments/controller.ts",
+      "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+      "sha256": "0c6eb70bd3ce9bff108e67c3a0bdf3e7142dcdab1b16371654f6e78e89f20576",
+      "bytes": 22497,
+      "baseEqual": true
+    },
+    {
+      "slice": "ATTACHI01",
+      "path": "apps/web/src/attachments/recovery.ts",
+      "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+      "sha256": "932e2376cea18464b9283b7ed162df2de0ba60a64e988eb74201fdf88b938c0f",
+      "bytes": 7342,
+      "baseEqual": true
+    },
+    {
+      "slice": "ATTACHI01",
+      "path": "apps/web/test/attachment-controller.test.ts",
+      "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+      "sha256": "52a30235e60bd59460568e1841eb19ee29e3f04c1577493a3265159d5d00e93b",
+      "bytes": 16528,
+      "baseEqual": true
+    },
+    {
+      "slice": "ATTACHI01",
+      "path": "apps/web/test/attachment-input.browser.ts",
+      "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+      "sha256": "2768d9b31a339fe7264d4a778f85390941b5d5dd205575226caf254561f5b96f",
+      "bytes": 14519,
+      "baseEqual": true
+    },
+    {
+      "slice": "ATTACHI01",
+      "path": "apps/web/test/attachment-input.fixture.tsx",
+      "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+      "sha256": "1627b9289feeab051860c63a45b9423ce73200fc32a0b5e01da72eca4e79c25f",
+      "bytes": 15761,
+      "baseEqual": true
+    },
+    {
+      "slice": "ATTACHI01",
+      "path": "apps/web/test/attachment-recovery.test.ts",
+      "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+      "sha256": "df209a6158d6d8250c31bdef0ac8241c7e1887047c056589befb06037a15ecbb",
+      "bytes": 3567,
+      "baseEqual": true
+    }
+  ],
+  "mismatches": [],
+  "checksAttributedToLead": [
+    {
+      "path": "docs/evidence/i02/attachment-task-read-root-types.txt",
+      "exitCode": 0,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/attachment-task-read-web-types.txt",
+      "exitCode": 0,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "managerProductTests": 0,
+  "moduleBoundary": "typed ports and official Thread module only; production App/HTTP/SendQueue binding pending",
+  "next": "owner main metadata -> verified normal push clean -> full stop -> fresh release -> new ATTACHI02 first12 take"
+}

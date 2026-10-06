@@ -1,5 +1,25 @@
 # 成熟聊天大task来源与登记队列
 
+## 最新必要接收与写权增量（2026-10-06 12:16 UTC）
+
+DPERF03 原 claim **db0b7d25 v2** 已于12:14:24.927Z [原子 amend](dperf03-amend-receipt.json)，fresh无重叠；原六scope增加唯一 `apps/execution-dashboard/test/proof-snapshot.test.mjs`。只修 comparisons() 的命令形状分类：固定flags后两完整SHA及末尾 `--` 是committed比较，dirty只有一个SHA；保原四行为/次数/跨snapshot/unknown断言。已给唯一owner，独审仍NOT_STARTED，预算不增。
+
+WORKSPACEPERF01 已正式接 **main 362af3bac77541e5a60979326bcf4d4b8c947915**，两源等1711；[固定source核验与Lead归因](workspaceperf-main-observation.json)、[原比较](lead-workspaceperf-main-source-comparison.json)。8完成/1 locator失败保持partial，Lead root/Webtypes0，没有重跑browser。已让panels在DPERF安全点仅旧scope主线metadata收口，正常push双端clean且全停写后再fresh release c815；当前未释放。
+
+Lead同批O12 session/history及interaction/goal出口接收属其权威来源，全部自然语言/UI仍开放；SVC05在其独立assignment准备，不等实际发布。个人backend b1c/static8d8仍未变。**尚无4320正式部署回执**，不将registry文件或main接收当作实际首屏验收。
+
+发布准备需要ATTACHI02后续固定真实Send/Queue合同及唯一source，兼容应覆盖所有retained artifacts；新backend实际App构建/协议检查不代替fixture。当前仍按本组已批首12实施和原完整验证矩阵推进，未形成固定交付，不新增协议或改变当前worker范围。
+
+## ATTACHI模块已main、生产接线首12已领取（2026-10-06 12:07 UTC）
+
+**ATTACHI01正式接收main/origin `1c4968354dabce1e6748f3301a2e6eecd33e77d4`。** [原Lead组合receipt](lead-attachi01-main-source-comparison.json)含附件模块9source；管理仅核本组九源与4c/manifest相同，root/Web types0沿Lead归因，[观察](attachi01-main-receipt-observation.json)。该main已含公共桥接和CACHE/DASHSUM；个人入口不变。原module是typed ports/官方Thread片段，生产App/HTTP SendQueue仍待实际consumer。
+
+owner主线收口 **2b0a33e6ed00673bc66545577abce0d02148a19a** normalpush、ls-remote同/clean、产品0diff/parser0；[收口审计](attachi01-main-closeout-audit.json)。全部十一scope停写后[94b84c59 v2 released](attachi01-main-release-receipt.json)于12:05:09.998Z，旧树不追写。
+
+**WPF-ATTACHI02首12已fresh COMMITTED，未预占全部24。** w01新独立`/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production` / `codex/web-attachment-production`，base1c496/HEAD/branch/clean与不存在检查已核；fresh12无重叠，[preflight](attachi02-preflight-observation.json)。**0b7fc000-2096-4075-95c1-f6c5a347d584 v1**于12:06:02.212Z [take成功](attachi02-take-receipt.json)，[精确12literal](attachi02-take-request.json)。直接父MATURE03/co-lead Web/root；正式followup已唤醒owner按技能/live核/首canonical后实施，唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/plans/wpf-attach-i02-production-binding/status.md)，首canonical6f2299c5d754ee42cb0f816f53a0e88d9b646ab3已实际提交，parser0/human完整4TODO、review NOT_STARTED，尚不冒进度卡已部署。
+
+首段真实Outbox/QueueCommands/PluginHost消费者与公共v2 matcher/材料冻结，不stub或重写HTTP/decoder；原模块五产品源/shared/deps只读。App等余12后段fresh amend，CACHE六交集虽已release也必须再查冲突。完整[生产验证矩阵](attachi02-production-validation-matrix.json)尚未执行，600s累计含构建启动/每轮20s清理/1PG+1Chrome/≤16MiB；capture失效0receipt/0POST保原材料，实际handoff同栈consume、网络ACK不清新稿。不把首12当完整附件Done。
+
 ## 当前接收/交权事实（2026-10-06 12:00 UTC）
 
 **DASHSUM01 与 WORKSPACECACHE01 已正式main接收并完成写权释放。** 固定main/origin `017adc276a888a218bed3ef9963bc4dabbc6cec2` clean；DASHSUM c1de四源 + CACHE4ec十四源与获审target/manifest逐字相同，[管理18-source核验](web-cache-dashsum-main-observation.json)、[Lead原比较/组合types0](lead-web-cache-dashboard-summary-main-comparison.json)。这是受控source intake，原feature commit不是main祖先；原独审/浏览器没有重跑，个人8d8产物不随main改变。
@@ -11,9 +31,10 @@
 
 [main收口/parser/remote审计](cache-dashsum-main-closeout-audit.json)通过；[独审原日志/audit逐字归档核验](candidate-root-raw-preservation.json)四文件一致。DASHSUM作者27/6browser8.374s与root22分开；CACHE作者/独立133及七分次browser68.689s保原限制：仅最终settlement全部14源匹配，早期App差accepted小增量，不冒最终完整browser重跑。CACHE32conversation及正文预算不等heap/全workspace保证。
 
-**登记与部署仍独立等待。** 固定017adc的registry尚无这两项显式记录，Lead正常登记/4320批次进行中；未收到本次部署receipt，本组没有HTTP采样或刷新页面。DASHSUM需要部署回执后由root沿既有页面一次只读首屏检查；临时fixture不代替实际发布。
+**登记与部署仍独立等待。** 固定017adc时尚无这两项，后续[eb95 registry文件观察](registry-eb95-source-observation.json)已正式含DASHSUM/CACHE来源；ATTACHI02/DPERF03新来源待Lead正常批登记；未收到本次部署receipt，本组没有HTTP采样或刷新页面。DASHSUM需要部署回执后由root沿既有页面一次只读首屏检查；临时fixture不代替实际发布。
 
-**剩余关键输入：ATTACHI01模块4c/4a9b。** 017adc仍不含该模块controller；公共桥接fd1322和CACHE main不等附件输入模块或生产App接线已完成。原4c4de124b24a85b9e2a13e097b29c80b1e84d11a / final4a9b167888cd9dab3490886d039fc50e7fb39083继续已审待Lead按[原9-source manifest](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/docs/evidence/wpf-attach-i01/source-manifest.json)受控接收，94b84保留。w01待准确正式组合base才独立新树fresh取已批ATTACHI02首12；CACHE六交集现已released，后续实际amend仍须fresh查重，不能把本时点释放当永久写许可。详见[唯一范围方案](workspace-cache-attachment-binding-proposals.json)。管理本轮0产品重测/0API/0个人服务操作。 ATTACHI02[实际factory/App验证矩阵](attachi02-production-validation-matrix.json)已结构认可但未执行：直接createServer/FlowClient/026六route无fallback，1PG+1Chrome累计600s含构建启动及每轮20s清理；capture失效0receipt/0POST保材料，真实handoff后同步consume，缺cap proxy不冒真实旧center。
+**后续输入已于12:07更新于本页首部。** 017adc时点确实未含4c；现正式1c496已接模块，旧claim已release、ATTACHI02新首12已受领。先前缺输入观察保留在原JSON，不能把后来的接收倒填到017adc时点。
+
 
 ## ATTACH正式main接收与CACHE领取（11:34历史输入）
 
@@ -35,7 +56,7 @@ ATTACH owner最终 **c6989b894aa4e9103472279e697d129b28cce5ff** normal push、lo
 
 Root对1f0两文件独审APPROVED/0blocking：独立2pass、27deselected、9.23s，四自有DB清零；作者六受影响case/严格types分开。最终metadata已原样归档root audit/log，actualparser0/human完整。**本树仍实际走旧factory fallback，正式自动026/mount尚未验证。** 请Lead将此固定输入用于新正式factory专测：普通/child六route全有则不重复注册，partial失败；真实pre026原行先验证，再首次026/fullfactory HTTP原key重放。不要把fallback结果当生产默认接通，不扩大重跑78。
 
-原ef617d78 v2十八scope保留至main合法收口；作者已全源码停写。panels现在恢复CACHE只读Interface/容量与保护/精确scope方案，须对照ATTACHI及其他lead最新writer，root结构审查后fresh COMMITTED才写。WORKSPACEPERF1711限定partial仍待main；这不是缓存优化完成或MATURE05整体阻塞。
+以下11:24原始时点：原ef617d78 v2十八scope保留至main合法收口；作者已全源码停写。panels现在恢复CACHE只读Interface/容量与保护/精确scope方案，须对照ATTACHI及其他lead最新writer，root结构审查后fresh COMMITTED才写。WORKSPACEPERF1711限定partial仍待main；这不是缓存优化完成或MATURE05整体阻塞。
 
 ## ATTACHI01 独立模块已审，可受控接收
 
@@ -337,3 +358,13 @@ GO明确首屏优先不同大task，子片在对应父下钻，长技术owner放
 Root已结构批准DASHSUM01以上六literal，w01最终接口一致；预检独立树/2c6df后fresh COMMITTED才写。active/delivery同筛选，不继承child blocker排序；unknown带targetId仍不可归组。定向Chrome临时fixture累计90秒含10秒清理/8MiB，不跑proof/PG或4320；第七scope先amend，review NOT_STARTED，整段后clean-code。
 
 DASHSUM01正式[fe63511a v1 COMMITTED](dashsum01-take-receipt.json)于11:43:40.838Z，fresh available/六范围0冲突、ID未重号；新树dashboard-human-summary/codex同名、fixed2c6df HEAD/branch/clean已核。w01已followup唤醒，先live核与唯一三件套再实施，父D01/co-lead Web/root；[scope/预算/Interface](dashboard-summary-proposal.json)。唯一source为`/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary/plans/wpf-dashboard-summary/status.md`，等实际首提交登记，不把领取当进度卡。CACHE继续原883321scope；若附件模块先main仅记依赖ready，w01不第二处并行写。
+
+## D01性能后继正式受领（12:08）
+
+WPF-001-36沿原D01保留[只读来源、两方法最终Interface与精确六scope](dperf03-readonly-proposal.json)。root最终结构批准后，在ATTACHI02首12已实际派工的前提下，panels新独立`dashboard-git-snapshot` / `codex/dashboard-git-snapshot`，准确base `eb95fba43b0305db0dd40dfe85ccc0d58eb9a6ea`，与研究源2f4a的aggregate/proof零diff。实际path/branch不存在→正常add→HEAD/branch/clean；fresh12:08:09.148Z六literal无重叠、ID无重号。**db0b7d25-9e70-477d-a75e-f8bfb0878578 v1 COMMITTED** 12:08:09.454Z，[原receipt](dperf03-take-receipt.json)。正式followup已派工，父D01/co-lead Web/root，唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/plans/wpf-dperf03/status.md)，首canonical2a52b8ae5250781c712b71117ccd5321a6b4103d已实际提交，parser0/human完整；未审NOT_STARTED，不等普通登记回执。
+
+预算为root最终批准的临时Git累计≤45s含≥10s清理、raw≤8MiB，最迟35s停止新样本；必要旧consumer回归单列，不重跑旧benchmark，不读真实registry/4320/PG/model。每aggregate一个context覆盖所有Git child，permit finally及serial fallback，captured HEAD比对和末核；预计28→23仅算术。实际产物/固定target/审查另待owner，不把领取当完成。
+
+两新source的[固定首canonical解析观察](attachi02-dperf03-first-source-audit.json)已核，实际注册/部署仍仅按后续Lead回执；用户U08/REQ37继续要求跨lead防overlap及领取/释放在dashboard清楚可见，canonical与PG账本是唯一手填源/领取authority，不另造状态副本。
+
+ATTACHI02新增组合失败路径已有[root纯内存实证](attachment-complete-rollback-research/source-binding.json)：完整附件提交拒绝后chips回退而controller refs缺失，held capture仍可保引用。属于当前绑定生命周期验收，非实际App/HTTP回归；原module历史批准不倒填、不越scope改旧模块。owner已收，矩阵状态与实际修复/未验分开。

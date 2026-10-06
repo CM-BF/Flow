@@ -1,0 +1,51 @@
+{
+  "observedAt": "2026-10-06T12:05:09.936633+00:00",
+  "final": "2b0a33e6ed00673bc66545577abce0d02148a19a",
+  "remote": "2b0a33e6ed00673bc66545577abce0d02148a19a",
+  "clean": true,
+  "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+  "main": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
+  "productDiff": [],
+  "ownerStoppedAllScopes": true,
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/attachments/AttachmentPicker.tsx",
+      "apps/web/src/attachments/adapter.ts",
+      "apps/web/src/attachments/attachments.css",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/attachments/recovery.ts",
+      "apps/web/test/attachment-controller.test.ts",
+      "apps/web/test/attachment-input.browser.ts",
+      "apps/web/test/attachment-input.fixture.tsx",
+      "apps/web/test/attachment-recovery.test.ts",
+      "docs/evidence/wpf-attach-i01",
+      "plans/wpf-attach-i01-input-preview"
+    ],
+    "state": "active",
+    "branch": "codex/web-attachment-input-preview",
+    "origin": "new",
+    "taskId": "WPF-ATTACHI01",
+    "worker": "w01_owner",
+    "claimId": "94b84c59-ab64-4ad5-b1de-fe11e62c443c",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview",
+    "createdAt": "2026-10-06T11:02:32.557Z",
+    "updatedAt": "2026-10-06T11:02:32.557Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerObservedAt": "2026-10-06T12:05:09.295Z",
+  "productTests": 0,
+  "parser": {
+    "errors": [],
+    "human": true,
+    "review": {
+      "state": "approved",
+      "record": "APPROVED**",
+      "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a"
+    }
+  }
+}

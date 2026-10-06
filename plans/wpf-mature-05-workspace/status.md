@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 12:00 UTC |
+| 最近更新 | 2026-10-06 12:16 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-05](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -43,7 +43,7 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 
 实际插件入口覆盖见[root固定main80ba只读研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，沿REQ22–23/WPF-001-05；未browser复现或实施，不扩大STEIRI写权。
 
-WORKSPACEPERF01：panels，base c450，c815bc00 v1四scope，[receipt](../../docs/evidence/web-platform/workspaceperf01-take-receipt.json)。90s含清理/8MiB，仅HTTPfixture真实App累计8/16/32会话观察，生产无改；固定1711/final628156已限定partial独审待main，原TODO05仍in-progress。
+WORKSPACEPERF01：panels，base c450，c815bc00 v1四scope，[receipt](../../docs/evidence/web-platform/workspaceperf01-take-receipt.json)。90s含清理/8MiB，仅HTTPfixture真实App累计8/16/32会话观察，生产无改；固定1711已限定partial独审并main362af3两源一致，ownermetadata收口后才release c815，原TODO05仍in-progress。
 
 GO/root固定c450的Overview/feed发现已落[原研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)与TODO05；WORKSPACEPERF只在原预算未冻结时补请求分类，否则后继，不扩90s/8MiB、不改生产。
 

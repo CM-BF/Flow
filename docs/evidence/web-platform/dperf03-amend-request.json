@@ -1,0 +1,18 @@
+{
+  "requestId": "b27ecba5-db69-45b1-bf13-f59799cadac4",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "workspace_panels_owner"
+  },
+  "claimId": "db0b7d25-9e70-477d-a75e-f8bfb0878578",
+  "version": 1,
+  "scope": [
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/git-snapshot.mjs",
+    "apps/execution-dashboard/src/proof.mjs",
+    "apps/execution-dashboard/test/git-snapshot.test.mjs",
+    "docs/evidence/wpf-dperf03",
+    "plans/wpf-dperf03",
+    "apps/execution-dashboard/test/proof-snapshot.test.mjs"
+  ]
+}

@@ -40,3 +40,9 @@ WorkspaceFeedProjection在arrived=[]/following=true时仍merge旧entries/buffere
 ### Retained chats操作的现有P01接缝（root固定4ec291只读审查，后继）
 
 缓存片在App提供Retained chats按钮，限定批准不代表原插件完整目标完成。root已核现有chat.header/sidebar/workspace.actions等SlotId，chat.header实际挂AppSlot；global/task/composer现有ResourceContext与ui.layout足以承载表现层命令。Retained chats工作区入口后继复用现有P01 slot的builtin command/button贡献；App私有callback仍唯一控制dialog/views，不新slot/通用总线或公开views；验证disabled/unload/连接旧callback及键盘focus。当前缓存片限定批准不等插件完整覆盖，不立即领取App。 此为原REQ22–23/WPF-001-05、MATURE05-03后继，未实施/未browser验收，不抢ATTACHI共享App窗口。
+
+### Arc布局仍开放（root固定eb95，只读）
+
+workspace-state.ts:1–61与App:803–965仍是ChatGroup[]各自tabs/activeId和至多2个独立tablist，splitChat硬上限2，merge flatten回一个tablist；不是一个顶层tab内部A|B。隐藏tab仍挂ChatPane，CACHE限定回收也不代表全部DOM/订阅优化已完成。MATURE05-01/02/03/05继续pending/in-progress：一个唯一layout模型表达顶层tab持有有界pane数组，先A|B、3+另验；stable view.key与App既有views/aliases仍唯一资源owner，layout命令仅移动引用、不复制材料/消息或cancel。无连接/版本/无效ID/storage失败设计与验证的持久布局保持后继未知，不能另造views镜像或通用docking引擎。ATTACHI优先，不另派App/session重叠writer。本段无新实验/代码。
+
+Root后续源码只读定位（同现有MATURE05研究，未browser验证）：App `navigateChatTabs` 110–135方向键立即activate并focus；有加载延迟的pane后继须分离focus与activation，Enter/Space确认。`closeNow` 548+沿workspace-state.closeChat关闭active默认tabs.at(-1)，并非稳定相邻tab。新layout命令只移动原view.key，每view只被一个pane持有，拒不存在/重复key，split/merge不创建新runtime或复制材料/读history；App继续唯一保护/回收权。原05-02/03验收覆盖，不新增App writer。

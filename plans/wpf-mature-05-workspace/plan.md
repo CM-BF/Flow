@@ -63,3 +63,7 @@ CACHE完整[16literal只读方案](../../docs/evidence/web-platform/workspace-ca
 执行审查安全点（11:54）：CACHE固定4ec291/final55b48已获root限定APPROVED，原05仍in-progress。14源与16scope管理核通过，独立133与作者分次7 browser/68.689s分别归因；最终settlement绑定全部14源，早期App差accepted小增量，不称最终完整browser重跑。main尚待正式接收；两阶段附件共享窗口仍先CACHE收口与CAS再ATTACHI。详见[当前队列](../../docs/evidence/web-platform/mature-task-handoff.md)。
 
 正式接收（12:00）：CACHE获审4ec十四源已main017adc，owner10ca8双端clean后全部16scope停写，883321 v2 released；六附件交集已合法释放，后继需fresh领取。完整05/Arc/plugin与附件组合验收仍开放；无新产品测试或部署宣称。
+
+当前Arc边界按root固定eb95[源码研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)：两独立tablist/flatten merge不等顶层tab内A|B，CACHE不等全部DOM/订阅优化。沿01/02/03/05保留唯一layout引用模型、stable view.key和原App资源owner；持久化的连接/版本/无效ID/storage失败未验仍开放，不新增重叠App/session写权。
+
+原05-02/03的具体后继验收：现App方向键立即activate、关闭active默认最后tab仅是已定位源码事实（未browser测）；Arc新接口须显式focus/Enter或Space激活、关闭后稳定相邻焦点。同一view只归一个pane，split/merge移动已有view.key，拒不存在/重复key且无history副作用，App仍唯一保护/回收owner。详[现有研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，当前不领取App。

@@ -1,0 +1,44 @@
+import { createHash } from 'node:crypto';
+import { performance } from 'node:perf_hooks';
+import { createRequire } from 'node:module';
+import { pathToFileURL } from 'node:url';
+import { createAttachmentInput } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/apps/web/src/attachments/controller.ts';
+import { createRecoveryJournal } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/apps/web/src/attachments/recovery.ts';
+import { bindAttachmentComposer, createAttachmentAdapter, createExistingAttachment } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/apps/web/src/attachments/adapter.ts';
+const require = createRequire('/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/apps/web/package.json');
+const reactRequire = createRequire(require.resolve('@assistant-ui/react'));
+const { BaseComposerRuntimeCore } = await import(pathToFileURL(reactRequire.resolve('@assistant-ui/core/internal')).href);
+const { MessageNotSentError } = await import(pathToFileURL(reactRequire.resolve('@assistant-ui/core')).href);
+const started = performance.now();
+const scope = '10000000-0000-4000-8000-000000000001';
+const metadata = { reference: { kind: 'upload', projectId: 'project-a', resourceId: '20000000-0000-4000-8000-000000000001', version: 1, contentDigest: createHash('sha256').update('hello').digest('hex') }, name: 'note.txt', mediaType: 'text/plain', byteLength: 5, state: 'ready', retained: false, createdAt: '2026-10-06T00:00:00Z', expiresAt: '2026-10-07T00:00:00Z' };
+const capabilities = { protocol: 'text-v1', recoveryScopeId: scope, projectId: 'project-a', requiresProject: true, mediaTypes: ['text/plain'], extensions: ['.txt'], maxFileBytes: 8192, maxCombinedReferences: 4, maxCombinedBytes: 8192, order: 'knowledge-then-attachments', unboundTtlSeconds: 86400, resourcesPerProject: 128, retainedBytesPerProject: 1048576 };
+const input = createAttachmentInput({ binding: { connectionKey: 'c', viewId: 'v', projectId: 'project-a' }, readiness: { visible: true, online: true, canRead: true, canUpload: true }, now: () => Date.parse('2026-10-06T12:00:00Z'), journal: createRecoveryJournal({ read: () => null, write: () => {} }), ports: { capabilities: async () => capabilities, list: async () => ({ resources: [metadata], nextCursor: null }), upload: async () => { throw Error('Unexpected upload'); }, content: async () => { throw Error('Unexpected content'); }, lookup: async () => null } });
+const events: unknown[] = [];
+const adapter = createAttachmentAdapter(input);
+class RejectingComposer extends BaseComposerRuntimeCore {
+  get canSend() { return !this.isEmpty && !this.isSubmitting; }
+  get canCancel() { return false; }
+  getAttachmentAdapter() { return adapter; }
+  getDictationAdapter() { return undefined; }
+  threadMessageIds() { return []; }
+  async handleSend() { events.push({ event: 'onNew-rejected', controllerItems: input.getSnapshot().items.length }); throw new MessageNotSentError('No local receipt created'); }
+  handleCancel() {}
+}
+const composer = new RejectingComposer();
+const composerPort = { getState: () => ({ attachments: composer.attachments, submission: composer.submission, inTransit: composer.inTransit }), subscribe: (callback: () => void) => composer.subscribe(callback) };
+let unbind: (() => void) | undefined;
+try {
+  await input.browse();
+  const id = input.select(metadata);
+  await composer.addAttachment(createExistingAttachment(input, id));
+  unbind = bindAttachmentComposer(input, composerPort);
+  composer.setText('original text');
+  const captured = input.capture({ ids: [id], submissionId: 'local-capture', intent: 'send', text: composer.text, conversationProjectId: 'project-a', attachmentContext: true });
+  const before = { text: composer.text, chips: composer.attachments.length, controllerItems: input.getSnapshot().items.length };
+  await composer.send();
+  await new Promise<void>(resolve => setImmediate(resolve));
+  let nextCaptureError: string | null = null;
+  try { input.capture({ ids: composer.attachments.map((item: {id:string}) => item.id), submissionId: 'retry-capture', intent: 'send', text: composer.text, conversationProjectId: 'project-a', attachmentContext: true }); } catch (error) { nextCaptureError = String(error); }
+  console.log(JSON.stringify({ purpose: 'Pure memory diagnostic: official installed core plus unchanged module and explicit rejecting handleSend; not real App/HTTP', versions: { react: '0.15.23', core: '0.3.22' }, before, after: { text: composer.text, chips: composer.attachments.length, controllerItems: input.getSnapshot().items.length, submission: !!composer.submission, inTransit: composer.inTransit.length, retainedCaptureRefs: captured.attachments.length }, nextCaptureError, events, elapsedMs: performance.now() - started, networkCalls: 0, projectWrites: 0 }, null, 2));
+} finally { unbind?.(); composer.__internal_dispose(); input.dispose(); }

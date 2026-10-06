@@ -1,0 +1,24 @@
+{
+  "requestId": "attachi02-1c496-first12-take-20261006",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "taskId": "WPF-ATTACHI02",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+  "branch": "codex/web-attachment-production",
+  "scope": [
+    "apps/web/src/conversation-context/receipts.ts",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/queue/commands.ts",
+    "apps/web/src/plugin-integration/attachments.tsx",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/test/conversation-context-receipts.test.ts",
+    "apps/web/test/conversation-outbox.test.ts",
+    "apps/web/test/plugin-host.test.ts",
+    "apps/web/test/attachment-integration.test.ts",
+    "plans/wpf-attach-i02-production-binding",
+    "docs/evidence/wpf-attach-i02"
+  ]
+}

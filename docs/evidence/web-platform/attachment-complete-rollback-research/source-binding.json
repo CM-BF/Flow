@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-06T12:12:03.120935+00:00",
+  "source": "root independent pure-memory diagnostic; manager archived only, no rerun",
+  "files": [
+    {
+      "source": "/tmp/root-attachment-complete-rollback.mts",
+      "archive": "diagnostic.mts.txt",
+      "bytes": 4984,
+      "sha256": "8f739fe12282b79c94e5cf296aabb62e11688f516190747c7e626e160257c3ab"
+    },
+    {
+      "source": "/tmp/root-attachment-complete-rollback.json",
+      "archive": "result.json",
+      "bytes": 708,
+      "sha256": "c107590a098fde73b0a6c6181dd91f1a356c6b2b596aaa694b7a6ce2a5e09351"
+    }
+  ],
+  "nameMapping": "script stored as .mts.txt for evidence classification; original bytes unchanged",
+  "sourceCheck": "root reports controller/recovery/adapter4c to main1c496 zero diff and original module tree clean",
+  "executionBoundary": "official core0.3.22 real send + current module with explicitly rejecting handleSend; not App/HTTP/PG/browser/production regression",
+  "result": "before chips/controller1/1; after text restored and chips1/controller0, retry capture fails; held capture keeps1ref",
+  "timing": "6.6ms logical /0.46s process, finally completed",
+  "historicalApproval": "approved module original scope/evidence unchanged; new combination failure case belongs ATTACHI02 lifecycle, no unclaimed module edit"
+}

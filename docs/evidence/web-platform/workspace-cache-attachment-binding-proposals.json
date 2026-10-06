@@ -1,5 +1,5 @@
 {
-  "state": "CACHE_MAIN_ACCEPTED_RELEASED_ATTACHMENT_FIRST12_APPROVED_NOT_TAKEN",
+  "state": "CACHE_RELEASED_MODULE_MAIN_ACCEPTED_ATTACHMENT_FIRST12_COMMITTED",
   "source": "root structural approvals; manager fresh D04 COMMITTED after owner main-close",
   "baseObserved": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
   "cache": {
@@ -120,7 +120,7 @@
       "plans/wpf-attach-i02-production-binding",
       "docs/evidence/wpf-attach-i02"
     ],
-    "requiredBase": "fd1322 public bridge is integrated; await official main receipt for approved module4c before fixed combined base",
+    "requiredBase": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
     "interface": [
       "one P01 trusted builtin composer actions/context with injectable official AttachmentAdapter factory",
       "attachment.read/upload explicit private authority before/after connection/view/project/conversation checks, no knowledge-right substitution",
@@ -169,9 +169,34 @@
       "maxEvidenceBytes": 16777216,
       "eachRoundHasFixedPurposeAndCumulativeTime": true
     },
-    "moduleMainObservation": "web-cache-dashsum-main-observation.json",
+    "moduleMainObservation": "attachi01-main-receipt-observation.json",
     "validationMatrix": "attachi02-production-validation-matrix.json",
-    "matrixState": "root approved read-only matrix; not executed; first12 still waits module formal main"
+    "matrixState": "root approved; first12 implementation dispatched, full App/HTTP matrix not yet executed",
+    "base": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+    "branch": "codex/web-attachment-production",
+    "firstStageScopes": [
+      "apps/web/src/conversation-context/receipts.ts",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugins/types.ts",
+      "apps/web/src/plugins/validation.ts",
+      "apps/web/test/attachment-integration.test.ts",
+      "apps/web/test/conversation-context-receipts.test.ts",
+      "apps/web/test/conversation-outbox.test.ts",
+      "apps/web/test/plugin-host.test.ts",
+      "docs/evidence/wpf-attach-i02",
+      "plans/wpf-attach-i02-production-binding"
+    ],
+    "firstStageClaim": {
+      "claimId": "0b7fc000-2096-4075-95c1-f6c5a347d584",
+      "version": 1,
+      "committedAt": "2026-10-06T12:06:02.212Z",
+      "receipt": "attachi02-take-receipt.json"
+    },
+    "firstCanonicalCommit": "6f2299c5d754ee42cb0f816f53a0e88d9b646ab3",
+    "sourceCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/plans/wpf-attach-i02-production-binding/status.md"
   },
   "exactIntersection": [
     "apps/web/src/App.tsx",

@@ -1,0 +1,38 @@
+{
+  "observedAt": "2026-10-06T12:15:16.702321+00:00",
+  "main": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "actualHead": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "actualOriginMain": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "actualMainDirty": "",
+  "sources": [
+    {
+      "path": "apps/web/test/workspace-lifecycle.fixture.ts",
+      "sha256": "44becc897d2fca5288da15b222d69b9094a3f84c31a7001914c22437f6ff3a0d",
+      "bytes": 2576,
+      "target": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7",
+      "fixedMainMatches": true
+    },
+    {
+      "path": "apps/web/test/workspace-lifecycle.browser.ts",
+      "sha256": "29400ad8913900212dd40cbfa19687c4bdb43dfcfc18a4b9508b247d71d022b5",
+      "bytes": 16863,
+      "target": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7",
+      "fixedMainMatches": true
+    }
+  ],
+  "receipt": "lead-workspaceperf-main-source-comparison.json",
+  "leadAttributedChecks": {
+    "rootTypes": 0,
+    "webTypes": 0,
+    "providerCalls": 0,
+    "browserRerun": false,
+    "originalNativeUnitSuiteRerun": false
+  },
+  "reviewReuse": "Web independent approval of partial baseline: 8 passed, one locator failure; cleanup true; no new execution",
+  "checksStillPartial": true,
+  "managerTests": 0,
+  "managerApiSamples": 0,
+  "personalRuntime": "Lead says backend b1c/static8d8 unchanged; no manager observation",
+  "ownerCloseout": "Dispatched to panels safe point; c815 active until push/remote/clean and all scopes stopped; not yet released",
+  "deployment4320Receipt": null
+}

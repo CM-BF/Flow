@@ -1,0 +1,30 @@
+{
+  "purpose": "Pure memory diagnostic: official installed core plus unchanged module and explicit rejecting handleSend; not real App/HTTP",
+  "versions": {
+    "react": "0.15.23",
+    "core": "0.3.22"
+  },
+  "before": {
+    "text": "original text",
+    "chips": 1,
+    "controllerItems": 1
+  },
+  "after": {
+    "text": "original text",
+    "chips": 1,
+    "controllerItems": 0,
+    "submission": false,
+    "inTransit": 0,
+    "retainedCaptureRefs": 1
+  },
+  "nextCaptureError": "Error: Every attachment must be ready before sending.",
+  "events": [
+    {
+      "event": "onNew-rejected",
+      "controllerItems": 1
+    }
+  ],
+  "elapsedMs": 6.6012079999999855,
+  "networkCalls": 0,
+  "projectWrites": 0
+}

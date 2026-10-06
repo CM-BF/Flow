@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 11:34 UTC |
+| 最近更新 | 2026-10-06 12:10 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-03](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 已可选择知识引用并发送；文本附件保存、预览与恢复模块已独审，生产聊天附件接线仍待完成 |
-| 下一可用交付 | 接收已审附件选择模块，CACHE共享窗口交回后接入实际聊天 |
+| 当前产出 | 知识引用可发送；中心文本资源与独立输入模块已main，生产App/SendQueue附件绑定首12实施 |
+| 下一可用交付 | 先完成材料冻结/Outbox/Queue/P01消费者，再fresh amend余12实际App范围；完整验收仍开放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -49,3 +49,5 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 附件v2由唯一shared decoder配套；Webrecovery替代重复receipt matcher，查找/恢复/retention与11scope首片已root授权并fresh take；不依赖不存在公共方法。[具体回复置于集中队列顶部](../../docs/evidence/web-platform/mature-task-handoff.md)。
 
 正式factory组合已接收，上述当前事实替代11:29前“factory增量待审/main未接”观察；原历史证据保留在[F01固定输入时点](../../docs/evidence/web-platform/attachment-public-bridge-observation-1129.json)。现[两方案](../../docs/evidence/web-platform/workspace-cache-attachment-binding-proposals.json)明确六交集包含两专测；pending submission/capture即使items移除仍保护，不能将发送中的身份作为缓存回收对象。
+
+12:07正式执行：模块4c已main1c496九源同，owner2b0a33e pushclean后94b84 v2释放。生产绑定WPF-ATTACHI02以准确1c496新独立web-attachment-production，首12 fresh0b7fc000 v1 COMMITTED；真实Outbox/Queue/PluginHost消费者先行，App等余12后amend，矩阵未执行/大task未完成。详[当前队列](../../docs/evidence/web-platform/mature-task-handoff.md)。

@@ -1,0 +1,152 @@
+{
+  "recordedAt": "2026-10-06T12:15:16.630381+00:00",
+  "state": "ROOT_STRUCTURE_APPROVED_FRESH_CLAIM_COMMITTED_IMPLEMENTATION_DISPATCHED",
+  "candidateId": "WPF-DPERF03",
+  "candidateIdUniqueness": "Verified registry/index/plans directory/ledger no existing WPF-DPERF03 before take",
+  "parent": "D01",
+  "managementTrace": "WPF-001-36",
+  "source": "panels bounded second opinion and final two-method Interface, root formally approved; fresh take and narrow helper-only amend committed",
+  "fixedSource": "2f4a5789ee13937914fa2c25161c8d5ed1071550",
+  "sourceComparison": "panels read-only reports aggregate.mjs/proof.mjs unchanged from9db6708 research base; manager did not rerun product checks",
+  "candidateScopes": [
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/proof.mjs",
+    "apps/execution-dashboard/src/git-snapshot.mjs",
+    "apps/execution-dashboard/test/git-snapshot.test.mjs",
+    "plans/wpf-dperf03",
+    "docs/evidence/wpf-dperf03"
+  ],
+  "interface": [
+    "One private Git context per aggregate call; run(directory,args) and memoized worktreeChanges(directory,observedHead)",
+    "All actual child entry points use the same run: observeGit four commands, frozen status-source fallback show, compareImplementation, integrationProof cat-file/ls-tree/merge-base/diff, MAXBUFFER/E2BIG split children",
+    "Proposed child concurrency4 is an engineering ceiling, not measured optimality; no process spawned before permit",
+    "Permit held only for child lifetime; finally release on success/timeout/synchronous spawn error/E2BIG before serial recursive fallback",
+    "Memoize only main exact dirty/untracked pair per snapshot, keyed at least directory+observedHead; new context next snapshot",
+    "Standalone exports create own context when none supplied; aggregate explicitly passes same instance",
+    "No complete proof/tree/arbitrary command cache, TTL or module-global green reuse"
+  ],
+  "correctness": [
+    "Preserve5s child timeout/2MiB maxBuffer/GIT_OPTIONAL_LOCKS=0",
+    "No partial stdout success, no failed-to-empty-path coercion; shared observation failure makes all dependent proof unknown and next snapshot retries",
+    "Do not replace exact NUL dirty diff+ls-files by porcelain summary or combine different worktree directories by git-dir",
+    "Preserve mode/type/OID/path, literal and missing-path semantics, existing same-target dedup and batch-tree",
+    "Explicit captured HEAD semantics required; test HEAD/branch drift while queued. Observed head time and delayed dirty read are not atomic; conservatively unknown rather than green on mixed generations",
+    "Do not hold outer proof permit while recursively requesting children"
+  ],
+  "measurement": {
+    "observedSource": "dashboard-proof-fanout-research/report.json",
+    "observedStarts": 28,
+    "observedMainDirtyCalls": 4,
+    "observedMainUntrackedCalls": 4,
+    "arithmeticExpectedStarts": 23,
+    "expectedState": "Revised read-only design adds final HEAD check:28→23 arithmetic only; earlier22 estimate superseded. No implementation experiment.",
+    "smallObserveGitReference": "dashboard-fanout-research/report.json",
+    "sourceStartsByTrees": {
+      "1": 4,
+      "4": 16,
+      "8": 32
+    },
+    "traceIntervalPeaks": [
+      4,
+      3,
+      4
+    ],
+    "limits": "Logical context inflight, Trace2 intervals and OS processes distinct; no actual production CPU/latency or full-snapshot peak conclusion"
+  },
+  "proposedValidation": {
+    "temporaryGitSecondsIncludingCleanup": 45,
+    "cleanupReserveSeconds": 10,
+    "maxRawBytes": 8388608,
+    "fixture": "8 tiny repos +4 proof declarations, each one bounded run; partial if budget exceeded, no automatic rerun",
+    "tests": [
+      "budget1/4 across every entry and fallback",
+      "success/timeout/spawn error permit release, no deadlock or unhandled rejection",
+      "one main pair within snapshot; next snapshot fresh tracked/untracked/delete/restore",
+      "different directory/head separation and shared failure unknown",
+      "HEAD changes while queued; no false green",
+      "affected proof-snapshot/tree-batch/human-proof consumer cases only"
+    ],
+    "excluded": [
+      "real registry or4320 pressure",
+      "personal services",
+      "PG/provider",
+      "repeating DPERF01/02 benchmarks"
+    ],
+    "stopNewSamplesBySeconds": 35
+  },
+  "priority": "ATTACHI02 first12 actually dispatched before this independent DPERF03 dispatch",
+  "methods": [
+    {
+      "localPath": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "application": "local-first method; bounded context interface, single responsibility and explicit error/lifecycle invariants; no reinstall"
+    },
+    {
+      "localPath": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "application": "local-first method; bounded context interface, single responsibility and explicit error/lifecycle invariants; no reinstall"
+    },
+    {
+      "localPath": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "application": "local-first method; bounded context interface, single responsibility and explicit error/lifecycle invariants; no reinstall"
+    }
+  ],
+  "followupInterfaceProposal": {
+    "source": "panels fixed two-method interface; root final structure approved",
+    "exports": [
+      "createGitSnapshot().execute(directory,args)",
+      "mainChanges(directory,capturedHead)"
+    ],
+    "mainChanges": "Register promise synchronously keyed by directory+capturedHead; execute precise diff against capturedHead and untracked, then rev-parse HEAD; drift or failed query rejects to existing unknown; cannot detect every A→B→A or concurrent file change, non-atomic",
+    "compareImplementation": "Use existing captured head for dirty comparison; no owner-observation cache",
+    "revisedArithmeticExpectedStarts": 23,
+    "reason": "20 other calls +2 shared change reads +1 final HEAD check, design arithmetic not measured",
+    "budgetChangeRequested": {
+      "cumulativeSeconds": 45,
+      "stopNewSamplesBySeconds": 35,
+      "cleanupReserveSeconds": 10,
+      "rawBytes": 8388608
+    },
+    "budgetAuthorization": "Root formally approved45s including>=10s cleanup/raw<=8MiB before fresh take",
+    "implementationAuthorized": true
+  },
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot",
+  "branch": "codex/dashboard-git-snapshot",
+  "executionBase": "eb95fba43b0305db0dd40dfe85ccc0d58eb9a6ea",
+  "claim": {
+    "id": "db0b7d25-9e70-477d-a75e-f8bfb0878578",
+    "version": 2,
+    "committedAt": "2026-10-06T12:14:24.927Z",
+    "receipt": "dperf03-amend-receipt.json",
+    "originalTakeReceipt": "dperf03-take-receipt.json"
+  },
+  "review": "NOT_STARTED",
+  "sourceCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/plans/wpf-dperf03/status.md",
+  "sourceState": "first canonical actually committed; implementation active",
+  "firstCanonicalCommit": "2a52b8ae5250781c712b71117ccd5321a6b4103d",
+  "originalCandidateScopes": [
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/proof.mjs",
+    "apps/execution-dashboard/src/git-snapshot.mjs",
+    "apps/execution-dashboard/test/git-snapshot.test.mjs",
+    "plans/wpf-dperf03",
+    "docs/evidence/wpf-dperf03"
+  ],
+  "currentScopes": [
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/git-snapshot.mjs",
+    "apps/execution-dashboard/src/proof.mjs",
+    "apps/execution-dashboard/test/git-snapshot.test.mjs",
+    "apps/execution-dashboard/test/proof-snapshot.test.mjs",
+    "docs/evidence/wpf-dperf03",
+    "plans/wpf-dperf03"
+  ],
+  "narrowAmend": {
+    "path": "apps/execution-dashboard/test/proof-snapshot.test.mjs",
+    "allowed": "comparisons() trace classifier only: diff fixed flags plus two full SHAs and final -- is committed comparison; dirty has one SHA",
+    "unchanged": "Four original behavior/count/cross-snapshot/unknown assertions; no other scope expansion",
+    "freshLedgerObservedAt": "2026-10-06T12:14:13.227Z",
+    "conflicts": []
+  }
+}

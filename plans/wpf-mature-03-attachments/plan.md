@@ -88,3 +88,5 @@ root本轮只读发现createAttachmentInput初始journal list可因storage拒绝
 执行安全点（11:34）：附件运行域/公共桥接已受控main fd1322；独立UI模块4c尚待main。CACHE root批准16literal后已fresh COMMITTED883321 v1，六共享路径含两专测先CACHE后ATTACHI02。双方保护pending composer submission/capture，即使items已移除也不自动回收；未提交profile/project选择才属选择保护。范围、容量、输入与收口见[当前集中队列](../../docs/evidence/web-platform/mature-task-handoff.md)及[精确方案](../../docs/evidence/web-platform/workspace-cache-attachment-binding-proposals.json)，不继承旧claim。
 
 ATTACHI02生产验证准备（12:00）：[只读矩阵](../../docs/evidence/web-platform/attachi02-production-validation-matrix.json)已root结构认可，未执行/未take；仍等4c模块正式组合main。真实factory+FlowClient+生产App、026/六routes/fallback=false，累计600s含构建启动与每轮20s清理；pending capture失效在local handoff前0receipt/0POST保原text/refs，实际receipt同步接管后才consume，不以ACK清新稿。旧center缺cap的proxy仅模拟，token/正文不入日志。
+
+12:07输入更新：4c模块已正式main1c496，ATTACHI02新树首12 fresh受领，不再等待模块输入。完整生产消费者仍沿原TODO，第二阶段余12需fresh amend；上述验证准备不是已执行结果。
