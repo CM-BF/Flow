@@ -1,0 +1,287 @@
+{
+  "generatedAt": "2026-10-06T05:37:09.032Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "fb906cb42391971a8b315dbd813f7633927d7265",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T05:37:09.537Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "taskCount": 65,
+  "task": {
+    "id": "D06",
+    "title": "架构固定快照更新",
+    "role": "工程协作",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current",
+    "branch": "codex/dashboard-architecture-current",
+    "planDir": "plans/d06-architecture-refresh",
+    "evidenceDir": "docs/evidence/d06",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T05:36:39.521Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current/plans/d06-architecture-refresh/status.md",
+      "syncedAt": "2026-10-06T05:37:09.032Z",
+      "stale": false,
+      "ageHours": 0.05250888888888889
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/dashboard-architecture-current",
+      "head": "61d70fda9988e7dc5370fb567e4346bd926fdb7d",
+      "dirty": false,
+      "changedFiles": 0,
+      "observedAt": "2026-10-06T05:37:09.537Z"
+    },
+    "status": {
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 3,
+        "output": "架构图已补齐新会话、配置、队列与图提案，图对应版本清晰可见",
+        "next": "将已审架构图更新到工程看板",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "5ec6ce2051ed399be4906c6f99f7183e0ed1bb66",
+        "scopes": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/public/architecture.js",
+          "apps/execution-dashboard/test/architecture.test.mjs",
+          "docs/evidence/d06/current/browser-check.mjs",
+          "docs/evidence/d06/current/review-fix-check.mjs"
+        ],
+        "errors": []
+      },
+      "taskId": "D06",
+      "owner": "w01_owner / 派发 gpt-6-astra ultra",
+      "branch": "codex/dashboard-architecture-current",
+      "branchState": "reviewed",
+      "updatedAt": "2026-10-06T05:34:00.000Z",
+      "updatedRecord": "2026-10-06 05:34 UTC",
+      "todos": [
+        {
+          "id": "D06-01",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "固定新树 clean、正式 receipt/live v1、原历史归档与技能读取"
+        },
+        {
+          "id": "D06-02",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "固定eb源码已核，5ec6ce2三应用文件及两浏览器测试，含R2来源修复"
+        },
+        {
+          "id": "D06-03",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "7 Node/五图Chrome、双主题390与clean-code，current证据"
+        },
+        {
+          "id": "D06-04",
+          "state": "in-progress",
+          "owner": "w01_owner",
+          "evidence": "root APPROVED 5ec6ce2；待Lead接收和最终聚合核验"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "eb14991a170b72d7d974428b2e440e1faada2c1e / 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66（实现；后续 metadata）",
+      "declaredDirty": "实现已冻结，仅本任务 metadata；现场 Git 由聚合器核验",
+      "checks": {
+        "state": "passed",
+        "target": "5ec6ce2051ed399be4906c6f99f7183e0ed1bb66",
+        "record": "PASSED 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66；7局部Node；初始五图Chrome与R2两节点局部Chrome/补图，来源分列"
+      },
+      "reviewRecord": "[review.md](review.md)，APPROVED 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66",
+      "mainRecord": "旧 ef42277 轮已集成；本轮刷新未集成",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED**",
+      "target": "5ec6ce2051ed399be4906c6f99f7183e0ed1bb66",
+      "proof": {
+        "target": "5ec6ce2051ed399be4906c6f99f7183e0ed1bb66",
+        "head": "61d70fda9988e7dc5370fb567e4346bd926fdb7d",
+        "scopes": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/public/architecture.js",
+          "apps/execution-dashboard/test/architecture.test.mjs",
+          "docs/evidence/d06/current/browser-check.mjs",
+          "docs/evidence/d06/current/review-fix-check.mjs"
+        ],
+        "observedAt": "2026-10-06T05:37:09.594Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/d06/current/README.md",
+          "docs/evidence/d06/current/quality.md",
+          "docs/evidence/d06/current/review-fix-browser-output.txt",
+          "docs/evidence/d06/current/review-fix-browser.json",
+          "docs/evidence/d06/current/review-fix-modules-dark-narrow.png",
+          "docs/evidence/d06/current/review-fix-modules-light.png",
+          "docs/evidence/d06/current/review-fix-node-tests.txt",
+          "docs/evidence/d06/current/review-fix-svg-read-failure.txt",
+          "docs/evidence/d06/current/source-binding.json",
+          "plans/d06-architecture-refresh/plan.md",
+          "plans/d06-architecture-refresh/review.md",
+          "plans/d06-architecture-refresh/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "declarationProof": "unchanged"
+    },
+    "implementationProof": {
+      "target": "5ec6ce2051ed399be4906c6f99f7183e0ed1bb66",
+      "head": "61d70fda9988e7dc5370fb567e4346bd926fdb7d",
+      "scopes": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/public/architecture.js",
+        "apps/execution-dashboard/test/architecture.test.mjs",
+        "docs/evidence/d06/current/browser-check.mjs",
+        "docs/evidence/d06/current/review-fix-check.mjs"
+      ],
+      "observedAt": "2026-10-06T05:37:09.594Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/d06/current/README.md",
+        "docs/evidence/d06/current/quality.md",
+        "docs/evidence/d06/current/review-fix-browser-output.txt",
+        "docs/evidence/d06/current/review-fix-browser.json",
+        "docs/evidence/d06/current/review-fix-modules-dark-narrow.png",
+        "docs/evidence/d06/current/review-fix-modules-light.png",
+        "docs/evidence/d06/current/review-fix-node-tests.txt",
+        "docs/evidence/d06/current/review-fix-svg-read-failure.txt",
+        "docs/evidence/d06/current/source-binding.json",
+        "plans/d06-architecture-refresh/plan.md",
+        "plans/d06-architecture-refresh/review.md",
+        "plans/d06-architecture-refresh/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "documents": [
+      {
+        "path": "plans/d06-architecture-refresh/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/d06-architecture-refresh/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/d06-architecture-refresh/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/d06/current/take-receipt.json",
+        "title": "take receipt",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/d06/current/historical-8f-plan.txt",
+        "title": "plan",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/d06/current/historical-8f-status.txt",
+        "title": "status",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/d06/current/historical-8f-review.txt",
+        "title": "review",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/d06/current/quality.md",
+        "title": "本轮质量",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/d06/current/README.md",
+        "title": "本轮验证与固定源码",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 3,
+      "total": 4
+    },
+    "main": {
+      "record": "旧 ef42277 轮已集成；本轮刷新未集成",
+      "recordedHead": null,
+      "target": "5ec6ce2051ed399be4906c6f99f7183e0ed1bb66",
+      "mainHead": "fb906cb42391971a8b315dbd813f7633927d7265",
+      "scopes": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/public/architecture.js",
+        "apps/execution-dashboard/test/architecture.test.mjs",
+        "docs/evidence/d06/current/browser-check.mjs",
+        "docs/evidence/d06/current/review-fix-check.mjs"
+      ],
+      "observedAt": "2026-10-06T05:37:09.537Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main 声明范围与目标不同，或存在未提交变化"
+    },
+    "assignments": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/public/architecture.js",
+          "apps/execution-dashboard/test/architecture.test.mjs",
+          "docs/evidence/d06",
+          "plans/d06-architecture-refresh"
+        ],
+        "state": "active",
+        "branch": "codex/dashboard-architecture-current",
+        "origin": "new",
+        "taskId": "D06",
+        "worker": "w01_owner",
+        "claimId": "e5b2fb56-8e3a-40b7-bfa4-192f34187c0b",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current",
+        "createdAt": "2026-10-06T05:26:04.403Z",
+        "updatedAt": "2026-10-06T05:26:04.403Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  },
+  "capture": {
+    "operator": "d01_owner",
+    "url": "http://127.0.0.1:4320/api/snapshot",
+    "method": "single final read after fixed target and metadata corrections; raw task preserved"
+  }
+}

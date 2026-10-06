@@ -1,0 +1,197 @@
+{
+  "startedSource": "0a4976240706b20dd6a4b457bd26e5c09f762f65",
+  "sourceFiles": {
+    "apps/web/src/App.tsx": "fa940ea321e649258fdd4f749975f4e6e9a68b0b32c6dd8e84cbb540b1a4e049",
+    "apps/web/src/conversation-stream/host.ts": "5561cb7e4e4027855183ce1f60711b06630e9a37b3871a3acf55812b0e2aaca9",
+    "apps/web/src/conversations/ConversationThread.tsx": "fe0ae92a6c1d1b3ed55ce39ad59346459d9c67f4816dac70669a6da789d8994c",
+    "apps/web/src/plugin-integration/react.tsx": "69486ceac7f6215cb26c482a2240717e6b50c261c710996362b60db31172484a",
+    "apps/web/src/plugin-integration/session.ts": "7574aa1a448e67f1e4eca2bfb8964969832557a6015b69b28ea74d8c9e381f3e",
+    "apps/web/src/plugins/types.ts": "2dd8d0d6b9d3108d6546d582e66e0697d25e738d82c3fe5f43ff09ebd03c5e0f",
+    "apps/web/src/plugins/validation.ts": "51d1e9d5abffbd2add15812f3272f606f3d474a668209f0d374d5b1b2c37d5de",
+    "apps/web/test/conversation-stream-integration.browser.ts": "ce2f79d78fb2c007b42392917a1ae5b4d909b651b1d513f237f0e899822a556c",
+    "apps/web/test/conversation-stream-integration.fixture.ts": "550c29f29cfdacb57bcfe49c61e0bc9ff6f8fe07f67888f356a6a48bcd9936df",
+    "apps/web/test/conversation-stream-integration.test.ts": "625d8f21756115e9459a5d38be736c063898dc9657fd0b71243e9ff8b4533aab",
+    "apps/web/test/plugin-host.test.ts": "26f73c5dc218026965831094a3c555c1e775859c4f99619c9a67ca50c0b36e43"
+  },
+  "at": "2026-10-06T08:04:00.464Z",
+  "production": false,
+  "checks": [
+    "official Thread shows an incremental draft, typed final settles once while task remains running",
+    "new conversation Enter uses CREATE without opt-in and GET with patch-v1, first acceptance preserves focus",
+    "unavailable settlement retains draft with truthful interrupted and truncated notices",
+    "stream extension toggles independently, restores focus/draft and disables stream reads",
+    "two split panes update independently; hidden overview and offline suspend streams",
+    "existing queue Enter and button preserve a fresh composer draft",
+    "same IDs after center replacement do not inherit draft cache and connection help explains token source",
+    "390px themes and keyboard preserve composer and visible draft semantics"
+  ],
+  "errors": [],
+  "failure": null,
+  "streamReads": [
+    [
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "patches",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "patches",
+        "after": 3
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "patches",
+        "after": 6
+      },
+      {
+        "taskId": "8fb7fee0-96dd-49de-a703-8a7e02792b97-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "8fb7fee0-96dd-49de-a703-8a7e02792b97-task-1",
+        "kind": "patches",
+        "after": 0
+      },
+      {
+        "taskId": "8fb7fee0-96dd-49de-a703-8a7e02792b97-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "8fb7fee0-96dd-49de-a703-8a7e02792b97-task-1",
+        "kind": "patches",
+        "after": 6
+      },
+      {
+        "taskId": "chat-3-task-2",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-3-task-2",
+        "kind": "patches",
+        "after": 0
+      },
+      {
+        "taskId": "chat-3-task-2",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-3-task-2",
+        "kind": "patches",
+        "after": 0
+      },
+      {
+        "taskId": "chat-4-task-2",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-4-task-2",
+        "kind": "patches",
+        "after": 0
+      },
+      {
+        "taskId": "chat-3-task-2",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-4-task-2",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-3-task-2",
+        "kind": "patches",
+        "after": 6
+      },
+      {
+        "taskId": "chat-4-task-2",
+        "kind": "patches",
+        "after": 0
+      },
+      {
+        "taskId": "chat-4-task-2",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-4-task-2",
+        "kind": "patches",
+        "after": 3
+      },
+      {
+        "taskId": "chat-3-task-2",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-4-task-2",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-4-task-2",
+        "kind": "patches",
+        "after": 6
+      },
+      {
+        "taskId": "chat-3-task-2",
+        "kind": "patches",
+        "after": 6
+      },
+      {
+        "taskId": "chat-3-task-2",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-4-task-2",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-3-task-2",
+        "kind": "patches",
+        "after": 6
+      },
+      {
+        "taskId": "chat-4-task-2",
+        "kind": "patches",
+        "after": 6
+      }
+    ],
+    [
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "patches",
+        "after": 0
+      }
+    ]
+  ],
+  "scope": "Actual Flow App, HTTP fixture only; no model/DB/real credentials"
+}

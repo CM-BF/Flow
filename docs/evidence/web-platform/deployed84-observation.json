@@ -1,0 +1,30 @@
+{
+  "leadObservation": {
+    "source": "ExecutionLead via root; not a manager API request",
+    "snapshotGeneratedAt": "2026-10-06T07:16:38.910Z",
+    "main": "30b97cbf3665c4ef7a314a6a8b59394ae68781af",
+    "sourceCount": 84,
+    "taskId": "WPF-CHAT06S01",
+    "live": true,
+    "issues": []
+  },
+  "managerObservation": {
+    "observedAt": "2026-10-06T07:19:22.563160+00:00",
+    "main": "30b97cbf3665c4ef7a314a6a8b59394ae68781af",
+    "origin": "30b97cbf3665c4ef7a314a6a8b59394ae68781af",
+    "mainClean": true,
+    "priorAcceptedMain": "fa9a8288341d4f2bd8160e03fe9173dafa2de1a6",
+    "protectedProductPathsEqual": true,
+    "registrySourcePath": "apps/execution-dashboard/src/registry.mjs",
+    "registryEntry": {
+      "id": "WPF-CHAT06S01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream",
+      "branch": "codex/web-conversation-stream",
+      "planDir": "plans/wpf-chat06-stream",
+      "evidenceDir": "docs/evidence/wpf-chat06-stream"
+    },
+    "registryValidationSource": "docs/evidence/d05/registry-84-validation.json",
+    "registryValidationAt": "2026-10-06T07:15:35.824Z"
+  },
+  "limits": "No later owner SHA/checks/review/dirty values inferred from Lead live summary. Personal center/runner remains fb906 per Lead. No API, DB, model or product tests by manager."
+}

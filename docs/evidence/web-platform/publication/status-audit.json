@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-06T07:56:21.089Z",
+  "statusErrors": [],
+  "planTodos": 27,
+  "statusTodos": 27,
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "聊天工具与思考界面已入主线；增量正文模块已通过审查",
+    "next": "将增量正文接入聊天，完成知识引用选择组件",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN；本次固定发布快照待绑定新target，仅管理文档检查，不继承c075历史审批"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": null
+  },
+  "note": "Content candidate not yet bound; expected target unknown/not_started. Documentation only."
+}

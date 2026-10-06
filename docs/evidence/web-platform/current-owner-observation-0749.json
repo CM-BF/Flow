@@ -1,0 +1,138 @@
+{
+  "observedAt": "2026-10-06T07:52:13.116176+00:00",
+  "ledgerObservedAt": "2026-10-06T07:49:40.639Z",
+  "method": "One fresh ledger plus the following two committed release receipts; no extra ledger poll.",
+  "activeClaims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T02:49:44.635Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversation-stream/host.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/test/conversation-stream-integration.browser.ts",
+        "apps/web/test/conversation-stream-integration.fixture.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/plugin-host.test.ts",
+        "docs/evidence/wpf-chat06-stream-integration",
+        "plans/wpf-chat06-stream-integration"
+      ],
+      "state": "active",
+      "branch": "codex/web-conversation-stream-integration",
+      "origin": "new",
+      "taskId": "WPF-CHAT06I01",
+      "worker": "workspace_panels_owner",
+      "claimId": "a7293487-e9ef-46ef-9f9f-4b119bf0740f",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration",
+      "createdAt": "2026-10-06T07:48:33.676Z",
+      "updatedAt": "2026-10-06T07:48:33.676Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/conversation-context/ContextPicker.tsx",
+        "apps/web/src/conversation-context/context-picker.css",
+        "apps/web/src/conversation-context/controller.ts",
+        "apps/web/src/conversation-context/selection.ts",
+        "apps/web/test/conversation-context.browser.ts",
+        "apps/web/test/conversation-context.fixture.tsx",
+        "apps/web/test/conversation-context.test.ts",
+        "docs/evidence/wpf-context01",
+        "plans/wpf-context01-knowledge-selection"
+      ],
+      "state": "active",
+      "branch": "codex/web-knowledge-selection",
+      "origin": "new",
+      "taskId": "WPF-CONTEXT01",
+      "worker": "w01_owner",
+      "claimId": "bfecec43-3b3f-438d-9d4f-b657f1fc0ec5",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-knowledge-selection",
+      "createdAt": "2026-10-06T07:43:25.096Z",
+      "updatedAt": "2026-10-06T07:43:25.096Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "releasedClaims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/conversation-stream/messages.ts",
+        "apps/web/src/conversation-stream/patches.ts",
+        "apps/web/src/conversation-stream/projection.ts",
+        "apps/web/test/conversation-stream-projection.test.ts",
+        "apps/web/test/conversation-stream.test.ts",
+        "docs/evidence/wpf-chat06-stream",
+        "plans/wpf-chat06-stream"
+      ],
+      "state": "released",
+      "branch": "codex/web-conversation-stream",
+      "origin": "new",
+      "taskId": "WPF-CHAT06S01",
+      "worker": "workspace_panels_owner",
+      "claimId": "d94ae4bb-0ac1-4a38-b983-e0e1e482b398",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream",
+      "createdAt": "2026-10-06T07:10:10.763Z",
+      "updatedAt": "2026-10-06T07:49:40.959Z",
+      "observedAt": null
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/test/conversation-message-reuse.probe.ts",
+        "apps/web/test/conversation-messages.test.ts",
+        "docs/evidence/wpf-perf03",
+        "plans/wpf-perf03-message-reuse"
+      ],
+      "state": "released",
+      "branch": "codex/web-message-reuse",
+      "origin": "new",
+      "taskId": "WPF-PERF03",
+      "worker": "w01_owner",
+      "claimId": "2ec58c2c-811d-4f24-a14b-cf1a3e89cdb3",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+      "createdAt": "2026-10-06T07:22:56.375Z",
+      "updatedAt": "2026-10-06T07:49:41.137Z",
+      "observedAt": null
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "observedAt": "2026-10-06T06:00:35.021Z",
+  "task": "WPF-K02C01",
+  "metadata": "bec72daec26e6bfc3d944ec3af01fb0bb4ee7796",
+  "actualHead": "bec72daec26e6bfc3d944ec3af01fb0bb4ee7796",
+  "dirty": "",
+  "implementation": "7633937c322090bbd6d526f378df464f2a7436ed",
+  "priorMetadata": "f9cf4733b8481d92aa67a7a42584e89d8af816ff",
+  "metadataOnlyPaths": [
+    "docs/evidence/wpf-k02-compatibility/README.md",
+    "docs/evidence/wpf-k02-compatibility/quality.md",
+    "docs/evidence/wpf-k02-compatibility/validation.md",
+    "plans/wpf-k02-compatibility/review.md",
+    "plans/wpf-k02-compatibility/status.md"
+  ],
+  "protectedImplementationDifference": "",
+  "statusErrors": [],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "聊天已正确保留所属项目，并拒绝身份错配的回执",
+    "next": "集成已通过审查的项目身份兼容更新",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "WPF-K02C01-01",
+      "state": "completed"
+    },
+    {
+      "id": "WPF-K02C01-02",
+      "state": "completed"
+    },
+    {
+      "id": "WPF-K02C01-03",
+      "state": "completed"
+    },
+    {
+      "id": "WPF-K02C01-04",
+      "state": "in-progress"
+    }
+  ],
+  "checks": {
+    "state": "passed",
+    "target": "7633937c322090bbd6d526f378df464f2a7436ed",
+    "record": "PASSED 7633937c322090bbd6d526f378df464f2a7436ed；102 direct、Web typecheck；[验证](../../docs/evidence/wpf-k02-compatibility/validation.md)"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "7633937c322090bbd6d526f378df464f2a7436ed"
+  },
+  "sourceRegistered": "RENDERER01: Lead reported 68-source deployment at 05:49:16.984Z; K02C01 deployment confirmation pending. No new API snapshot in this audit.",
+  "boundary": "Final metadata verification only; reused candidate scope/source binding checks; no product rerun or service/model operation."
+}

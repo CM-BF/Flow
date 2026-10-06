@@ -36,8 +36,11 @@ export async function saveAssistantStream(client:PoolClient,task:TaskRecord,atte
   const patchCount=(await client.query<{count:string}>('SELECT count(*) AS count FROM flow.assistant_stream_patches WHERE attempt_id=$1',[attempt.id])).rows[0]!;
   const added=Buffer.byteLength(data.text);
   if(Number(totals.bytes)+added>ASSISTANT_ATTEMPT_BYTES||(!row&&Number(totals.blocks)>=256)||Number(patchCount.count)>=4096) fail('stream_limit','Assistant stream attempt limit exceeded.');
-  const prefix=await readPrefix(client,data.streamId);
-  if(sha256(prefix+data.text)!==data.prefixDigest) fail('stream_digest','Text prefix digest does not match.');
+  // Keep the full ordered-prefix check inside this transaction without returning its body.
+  const checked=(await client.query<{digest:string}>(`SELECT encode(sha256(convert_to(
+    COALESCE(string_agg(data->>'text','' ORDER BY revision),'') || $2::text,'UTF8')),'hex') AS digest
+    FROM flow.assistant_stream_patches WHERE stream_id=$1`,[data.streamId,data.text])).rows[0]!;
+  if(checked.digest!==data.prefixDigest) fail('stream_digest','Text prefix digest does not match.');
   const {type:_type,text:_text,fromBytes:_from,...header}=data;
   if(row) await client.query('UPDATE flow.assistant_stream_blocks SET last_sequence=$2,revision=$3,bytes=$4,header=$5,updated_at=clock_timestamp() WHERE id=$1',[data.streamId,sequence,data.revision,data.fromBytes+added,header]);
   else await client.query('INSERT INTO flow.assistant_stream_blocks(id,task_id,attempt_id,first_sequence,last_sequence,revision,bytes,header) VALUES($1,$2,$3,$4,$4,$5,$6,$7)',[data.streamId,task.id,attempt.id,sequence,data.revision,added,header]);

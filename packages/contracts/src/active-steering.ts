@@ -54,6 +54,20 @@ export interface SteeringAuditPage { entries: SteeringAudit[]; nextCursor: numbe
 export const steeringPageSchema = z.strictObject({ after: z.coerce.number().int().min(0).max(Number.MAX_SAFE_INTEGER).default(0), limit: z.coerce.number().int().min(1).max(100).default(100) });
 export const steeringStateQuerySchema = steeringPageSchema.extend({ attemptId: idSchema.optional() });
 
+export const steeringAdmissionQuerySchema = z.strictObject({ attemptId: idSchema.optional() });
+export type SteeringAdmissionUnavailableReason =
+  | 'disabled' | 'not-installed' | 'no-attempt' | 'not-current' | 'stale-owner'
+  | 'not-running' | 'decision-pending' | 'lease-expired' | 'runner-revoked'
+  | 'session-unavailable' | 'profile-unsupported' | 'profile-unavailable'
+  | 'final-exists' | 'sealed' | 'pending' | 'unknown-pending' | 'limit-reached';
+/** A task-bound read snapshot, not a reservation or proof of native/model availability.
+ * POST still rechecks current authority, profile, CAS and final/pending state under locks.
+ * Missing control state has revision 0; disabled/uninstalled storage reports null. */
+export type SteeringAdmission =
+  | { taskId: string; attemptId: string; ownerVersion: number; revision: number; state: 'ready'; reason: 'ready' }
+  | { taskId: string; attemptId: string | null; ownerVersion: number | null; revision: number | null;
+      state: 'unavailable'; reason: SteeringAdmissionUnavailableReason };
+
 // CHAT08: all transport methods are runner-authenticated and remain opt-in at the host.
 export const MAX_STEERING_COMMANDS_PER_ATTEMPT = 64;
 /** Host evidence bound, not the SDK maxTurns meaning or a renewed query budget. */

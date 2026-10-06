@@ -1,0 +1,1162 @@
+{
+  "snapshotAt": "2026-10-06T06:36:34.965Z",
+  "localObservedAt": "2026-10-06T06:41:00.790267+00:00",
+  "classificationPending": false,
+  "records": [
+    {
+      "taskId": "CHAT06",
+      "claimId": "62987833-3fa3-491e-ba0d-21dae383b24c",
+      "version": 1,
+      "lead": "astra_ultra_execution_lead",
+      "worker": "runner_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-assistant-stream",
+      "scope": [
+        "apps/runner/src/assistant-stream",
+        "apps/runner/src/claude.ts",
+        "apps/server/src/assistant-stream",
+        "apps/server/src/events.ts",
+        "docs/evidence/chat06",
+        "packages/contracts/src/assistant-stream.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/contracts/src/tasks.ts",
+        "packages/storage/migrations/022-assistant-stream.sql",
+        "plans/chat06-assistant-stream"
+      ],
+      "snapshotHead": "6ec16f014ebae785d5f867516d2774392e95c18f",
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "branchState": "in-progress",
+      "review": "not_started",
+      "mainRecord": "未集成；base为已审CHAT05分支",
+      "target": null,
+      "localHead": "b4d28d7b81eb7d2e4957734199dc1377ddef4fd3",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": null,
+      "retainedProductionScopes": [
+        "apps/runner/src/assistant-stream",
+        "apps/runner/src/claude.ts",
+        "apps/server/src/assistant-stream",
+        "apps/server/src/events.ts",
+        "packages/contracts/src/assistant-stream.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/contracts/src/tasks.ts",
+        "packages/storage/migrations/022-assistant-stream.sql"
+      ],
+      "retainedProductionDifference": null,
+      "readErrors": [],
+      "classification": "development_or_management"
+    },
+    {
+      "taskId": "D05",
+      "claimId": "3a6240d0-f861-41fd-b245-3546b2e2dbf3",
+      "version": 3,
+      "lead": "astra_ultra_execution_lead",
+      "worker": "astra_ultra_execution_lead",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+      "scope": [
+        "AGENTS.md",
+        "apps/execution-dashboard/README.md",
+        "apps/execution-dashboard/public/index.html",
+        "apps/execution-dashboard/src/registry.mjs",
+        "docs/evidence/d05",
+        "plans/AGENTS.md",
+        "plans/README.md",
+        "plans/d05-architecture-view"
+      ],
+      "snapshotHead": "02a2594d9f150eabe8362afb46bec3c98b073c7f",
+      "delivery": {
+        "state": "unknown",
+        "source": "legacy"
+      },
+      "branchState": "completed",
+      "review": "unknown",
+      "mainRecord": "edee6b1c5d74c2ee46ec98bab2844579db6a00c4 已推送；2026-10-06 03:30 UTC实测4320部署，后续metadata不要求精确追赶main HEAD",
+      "target": "cad1251fdbe8f8b527a78c60cf45adce68e4f534",
+      "localHead": "02a2594d9f150eabe8362afb46bec3c98b073c7f",
+      "localDirty": [
+        "?? docs/evidence/d05/registry-77-receipt.json"
+      ],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [
+        "apps/execution-dashboard/README.md",
+        "apps/execution-dashboard/public/index.html",
+        "apps/execution-dashboard/src/registry.mjs"
+      ],
+      "retainedProductionDifference": [
+        "apps/execution-dashboard/README.md",
+        "apps/execution-dashboard/public/index.html",
+        "apps/execution-dashboard/src/registry.mjs"
+      ],
+      "readErrors": [],
+      "classification": "development_or_management"
+    },
+    {
+      "taskId": "D06",
+      "claimId": "981d7c08-a145-4846-b456-496fe0ce5c83",
+      "version": 1,
+      "lead": "external_web_d01_owner",
+      "worker": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-context",
+      "scope": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/test/architecture.test.mjs",
+        "docs/evidence/d06",
+        "plans/d06-architecture-refresh"
+      ],
+      "snapshotHead": "0ec8433e72df1460373621e54d39389d67ef258f",
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "branchState": "IN_PROGRESS",
+      "review": "not_started",
+      "mainRecord": "NOT_INTEGRATED；旧5ec已在本base，新轮未实现",
+      "target": "ebad46356efec7bd86f8aadd9d765bb6b6b190af",
+      "localHead": "033aae7034f0ea019b89c921478d7b436762b027",
+      "localDirty": [
+        " M docs/evidence/d06/context/README.md",
+        " M docs/evidence/d06/context/quality.md",
+        " M docs/evidence/d06/context/validation.md",
+        " M plans/d06-architecture-refresh/plan.md",
+        " M plans/d06-architecture-refresh/review.md",
+        " M plans/d06-architecture-refresh/status.md"
+      ],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": false,
+      "retainedProductionScopes": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/test/architecture.test.mjs"
+      ],
+      "retainedProductionDifference": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/test/architecture.test.mjs"
+      ],
+      "readErrors": [],
+      "classification": "frozen_review_or_integration"
+    },
+    {
+      "taskId": "E01",
+      "claimId": "4c525d50-50a4-4bf4-83be-4f978b601b1d",
+      "version": 1,
+      "lead": "astra_ultra_execution_lead",
+      "worker": "runner_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/harness-auth-probes",
+      "scope": [
+        "docs/evidence/e01",
+        "experiments/harness-probes",
+        "plans/e01-harness-probes"
+      ],
+      "snapshotHead": "bc7efc8171431ff76b099e0df6d62c59a4907ad0",
+      "delivery": {
+        "state": "unknown",
+        "source": "legacy"
+      },
+      "branchState": "两项合成探针 completed/独立已审；工程对照提案已按审定收敛；0模型预检可继续，真实执行 NOT_APPROVED",
+      "review": "unknown",
+      "mainRecord": "本实验未集成；基线 b5b4ce21bd8ae5e0fd729c526226e8f8a49a7a47；无产品功能修改",
+      "target": "db2f2d0f6c2b0db3cab454d6cfe617b4671196b1",
+      "localHead": "bc7efc8171431ff76b099e0df6d62c59a4907ad0",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [
+        "experiments/harness-probes"
+      ],
+      "retainedProductionDifference": [],
+      "readErrors": [],
+      "classification": "integrated_owner_closeout_candidates"
+    },
+    {
+      "taskId": "F01",
+      "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+      "version": 13,
+      "lead": "astra_ultra_execution_lead",
+      "worker": "astra_ultra_execution_lead",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+      "scope": [
+        "apps/cli",
+        "apps/runner/package.json",
+        "apps/runner/src/outbox.test.ts",
+        "apps/runner/src/outbox.ts",
+        "apps/server/package.json",
+        "apps/server/src/goal-tool-runs/migration.test.ts",
+        "apps/server/src/index.ts",
+        "apps/server/src/reconciliation.test.ts",
+        "apps/server/src/usage.ts",
+        "docs/evidence/f01",
+        "packages/client",
+        "packages/contracts/src/harnesses.test.ts",
+        "packages/contracts/src/harnesses.ts",
+        "packages/contracts/src/index.ts",
+        "plans/f01-shared-domains",
+        "pnpm-lock.yaml"
+      ],
+      "snapshotHead": "86cef0950ab88afb4ed37ff4458fdc9a55f7d3b3",
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "branchState": "in-progress",
+      "review": "not_started",
+      "mainRecord": "acfd409a493315a00f1cc19ac96c5f1b36c19e57 已推送，020公共接线/领域及活动展示模块已接收；X05薄client本分支已独审待集成；K03薄client待审。实际center/runner仍fb906cb",
+      "target": "77465eb59121bad5ac2785036961f1707911d21b",
+      "localHead": "44bd8bc8e8e30ec49f86b6828f4947bf2c47d148",
+      "localDirty": [
+        "?? docs/evidence/f01/goal-context-012-upgrade.json",
+        "?? docs/evidence/f01/goal-context-018-upgrade.json",
+        "?? docs/evidence/f01/goal-context-migration-first.txt",
+        "?? docs/evidence/f01/goal-context-production-escaped-facts.json",
+        "?? docs/evidence/f01/goal-context-production-facts.json",
+        "?? docs/evidence/f01/goal-context-production-final.txt",
+        "?? docs/evidence/f01/goal-context-production-first-facts.json",
+        "?? docs/evidence/f01/goal-context-production-green.txt",
+        "?? docs/evidence/f01/goal-context-production-red.txt",
+        "?? docs/evidence/f01/goal-context-production-typecheck-final.txt",
+        "?? docs/evidence/f01/goal-context-production-typecheck.txt"
+      ],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": false,
+      "retainedProductionScopes": [
+        "apps/cli",
+        "apps/runner/package.json",
+        "apps/runner/src/outbox.test.ts",
+        "apps/runner/src/outbox.ts",
+        "apps/server/package.json",
+        "apps/server/src/goal-tool-runs/migration.test.ts",
+        "apps/server/src/index.ts",
+        "apps/server/src/reconciliation.test.ts",
+        "apps/server/src/usage.ts",
+        "packages/client",
+        "packages/contracts/src/harnesses.test.ts",
+        "packages/contracts/src/harnesses.ts",
+        "packages/contracts/src/index.ts",
+        "pnpm-lock.yaml"
+      ],
+      "retainedProductionDifference": [
+        "packages/client/src/goal-context.test.ts",
+        "packages/client/src/index.ts",
+        "packages/client/src/package-fetches.test.ts",
+        "packages/contracts/src/index.ts"
+      ],
+      "readErrors": [],
+      "classification": "frozen_review_or_integration"
+    },
+    {
+      "taskId": "FLOW-001",
+      "claimId": "3cb8bc46-0bfb-4635-aaf3-069d822e1e58",
+      "version": 2,
+      "lead": "astra_ultra_execution_lead",
+      "worker": "astra_ultra_execution_lead",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+      "scope": [
+        "docs/quality",
+        "plans/flow-001-architecture",
+        "plans/flow-002-provider-harness",
+        "plans/flow-003-m1-execution",
+        "plans/ops-001-status-review"
+      ],
+      "snapshotHead": "be1a1e90880d84a3d39ee6f68ddc64bab0c2131c",
+      "delivery": {
+        "state": "unknown",
+        "source": "legacy"
+      },
+      "branchState": "in-progress；M1完成，长期整体工程持续推进",
+      "review": "not_started",
+      "mainRecord": "`115b0dbdfa02db5483f9e9699852682ce699633c`；已含队列UI、K01/K02、O06/O07、X04压缩包与Web兼容、SVC02及D06固定图；常驻center/runner实际fb906cb/v3接受，后继main不自动重载",
+      "target": null,
+      "localHead": "be1a1e90880d84a3d39ee6f68ddc64bab0c2131c",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": null,
+      "retainedProductionScopes": [],
+      "retainedProductionDifference": null,
+      "readErrors": [],
+      "classification": "development_or_management"
+    },
+    {
+      "taskId": "I02",
+      "claimId": "7e9fb042-eefa-4e40-ba26-2b65dc893681",
+      "version": 1,
+      "lead": "astra_ultra_execution_lead",
+      "worker": "astra_ultra_execution_lead",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+      "scope": [
+        "docs/evidence/i02",
+        "plans/i02-integration"
+      ],
+      "snapshotHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "branchState": "in-progress（前批已审片段进入main；CHAT三端继续）",
+      "review": "unknown",
+      "mainRecord": "main/origin 115b0db已含K02/O07/X04和Web兼容/renderer模块；CHAT05领域/020共享接线+活动展示独立模块及75来源已在main acfd409发布，运行center/runner仍fb906",
+      "target": null,
+      "localHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": null,
+      "retainedProductionScopes": [],
+      "retainedProductionDifference": null,
+      "readErrors": [],
+      "classification": "development_or_management"
+    },
+    {
+      "taskId": "K03",
+      "claimId": "fcde300a-4851-415a-ae42-74009f721920",
+      "version": 4,
+      "lead": "mika",
+      "worker": "b01_bounded_reads",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context",
+      "scope": [
+        "apps/server/src/goal-context",
+        "apps/server/src/goal-tool-runs/runner.ts",
+        "apps/server/src/goals/commands.ts",
+        "apps/server/src/goals/state.ts",
+        "apps/server/src/reconciliation.ts",
+        "apps/server/src/runners.ts",
+        "docs/evidence/k03",
+        "packages/contracts/src/goal-context.ts",
+        "packages/contracts/src/goals.ts",
+        "packages/storage/migrations/021-goal-context.sql",
+        "plans/k03-goal-knowledge-context"
+      ],
+      "snapshotHead": "eae9f1c33cec83dc68538d069c2afa5011a9aa55",
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "branchState": "review-ready",
+      "review": "not_started",
+      "mainRecord": "未集成；已观察main3d4985fca060155435b159e0467815bf8e88b8b8，O06后续受控组合",
+      "target": "21d2e05eb571e44883589eb38bff6b5a4b2eaeb7",
+      "localHead": "87767981878185e760c2169c12008e18b7af6c8d",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": false,
+      "retainedProductionScopes": [
+        "apps/server/src/goal-context",
+        "apps/server/src/goal-tool-runs/runner.ts",
+        "apps/server/src/goals/commands.ts",
+        "apps/server/src/goals/state.ts",
+        "apps/server/src/reconciliation.ts",
+        "apps/server/src/runners.ts",
+        "packages/contracts/src/goal-context.ts",
+        "packages/contracts/src/goals.ts",
+        "packages/storage/migrations/021-goal-context.sql"
+      ],
+      "retainedProductionDifference": [
+        "apps/server/src/goal-context/behavior.test.ts",
+        "apps/server/src/goal-context/claim.test.ts",
+        "apps/server/src/goal-context/context.test.ts",
+        "apps/server/src/goal-context/fixture.ts",
+        "apps/server/src/goal-context/freshness.ts",
+        "apps/server/src/goal-context/index.ts",
+        "apps/server/src/goal-context/input.test.ts",
+        "apps/server/src/goal-context/input.ts",
+        "apps/server/src/goal-context/recovery.test.ts",
+        "apps/server/src/goal-context/run-consumers.mjs",
+        "apps/server/src/goal-context/store.ts",
+        "apps/server/src/goal-tool-runs/runner.ts",
+        "apps/server/src/goals/commands.ts",
+        "apps/server/src/goals/state.ts",
+        "apps/server/src/reconciliation.ts",
+        "apps/server/src/runners.ts",
+        "packages/contracts/src/goal-context.ts",
+        "packages/contracts/src/goals.ts",
+        "packages/storage/migrations/021-goal-context.sql"
+      ],
+      "readErrors": [],
+      "classification": "frozen_review_or_integration"
+    },
+    {
+      "taskId": "O07",
+      "claimId": "255d6fc3-58cb-494f-ac28-7e3f5d5d8192",
+      "version": 5,
+      "lead": "astra_ultra_execution_lead",
+      "worker": "assignment_review",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-tools",
+      "scope": [
+        "apps/runner/src/claude.test.ts",
+        "apps/runner/src/configuration.ts",
+        "apps/runner/src/execution-profiles.ts",
+        "apps/runner/src/goal-graph-tools",
+        "apps/runner/src/goal-tool-bridge/authority.ts",
+        "apps/runner/src/goal-tool-bridge/index.ts",
+        "apps/runner/src/goal-tool-bridge/policy.ts",
+        "apps/runner/src/runtime.ts",
+        "apps/server/src/execution-profiles/store.ts",
+        "apps/server/src/goal-graph-runs/index.ts",
+        "apps/server/src/goal-graph-runs/migration.test.ts",
+        "apps/server/src/goal-graph-runs/native-migration.test.ts",
+        "apps/server/src/goal-graph-runs/native.test.ts",
+        "apps/server/src/goal-graph-runs/store.ts",
+        "apps/server/src/tasks.ts",
+        "docs/evidence/o07",
+        "packages/contracts/src/execution-profiles.ts",
+        "packages/contracts/src/goal-graph-runs.ts",
+        "packages/storage/migrations/019-goal-graph-native-mode.sql",
+        "plans/o07-native-graph-tools"
+      ],
+      "snapshotHead": "819b167c25b37775254c445e45f920fd619efdc7",
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "branchState": "APPROVED",
+      "review": "unknown",
+      "mainRecord": "本片未集成；已审main3d4985作为输入；本地K02输入736，最终a6c9b09已获Mika完整批准，Lead须用最终版本并核018/019生产挂载",
+      "target": "c22412b5dd1368e3cdb14cd2c9afb6785b33a0e5",
+      "localHead": "2c6ce1baeb92e959488f6b1e46234637fcf88fd1",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [
+        "apps/runner/src/claude.test.ts",
+        "apps/runner/src/configuration.ts",
+        "apps/runner/src/execution-profiles.ts",
+        "apps/runner/src/goal-graph-tools",
+        "apps/runner/src/goal-tool-bridge/authority.ts",
+        "apps/runner/src/goal-tool-bridge/index.ts",
+        "apps/runner/src/goal-tool-bridge/policy.ts",
+        "apps/runner/src/runtime.ts",
+        "apps/server/src/execution-profiles/store.ts",
+        "apps/server/src/goal-graph-runs/index.ts",
+        "apps/server/src/goal-graph-runs/migration.test.ts",
+        "apps/server/src/goal-graph-runs/native-migration.test.ts",
+        "apps/server/src/goal-graph-runs/native.test.ts",
+        "apps/server/src/goal-graph-runs/store.ts",
+        "apps/server/src/tasks.ts",
+        "packages/contracts/src/execution-profiles.ts",
+        "packages/contracts/src/goal-graph-runs.ts",
+        "packages/storage/migrations/019-goal-graph-native-mode.sql"
+      ],
+      "retainedProductionDifference": [],
+      "readErrors": [],
+      "classification": "integrated_owner_closeout_candidates"
+    },
+    {
+      "taskId": "R04",
+      "claimId": "1714e82b-060c-49be-a8e7-a5a681f8a3e6",
+      "version": 2,
+      "lead": "astra_ultra_execution_lead",
+      "worker": "assignment_review",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown",
+      "scope": [
+        "apps/server/src/main.ts",
+        "apps/server/src/shutdown",
+        "docs/architecture/r04-center-shutdown.md",
+        "docs/evidence/r04",
+        "plans/r04-center-shutdown"
+      ],
+      "snapshotHead": "3770a3c4bcd9464c6c426f12eafbdf336c3a59aa",
+      "delivery": {
+        "state": "unknown",
+        "source": "legacy"
+      },
+      "branchState": "completed",
+      "review": "approved",
+      "mainRecord": "2026-10-06 04:06 UTC main 8f1481df880cf5077e1ddb9a8f302fe700a7ece8；R04尚未集成",
+      "target": "dc1d02fcb7e3edbf99921275d81412768bf08424",
+      "localHead": "3770a3c4bcd9464c6c426f12eafbdf336c3a59aa",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [
+        "apps/server/src/main.ts",
+        "apps/server/src/shutdown"
+      ],
+      "retainedProductionDifference": [],
+      "readErrors": [],
+      "classification": "integrated_owner_closeout_candidates"
+    },
+    {
+      "taskId": "S01",
+      "claimId": "8e4660a6-625f-4ada-8558-20c19b9e23e0",
+      "version": 1,
+      "lead": "mika",
+      "worker": "mika",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+      "scope": [
+        "docs/evidence/s01",
+        "experiments/runner-capacity",
+        "plans/s01-runner-capacity"
+      ],
+      "snapshotHead": "215398a289747175c5ae46231ca8d23bae2c5301",
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "branchState": "in-progress",
+      "review": "unknown",
+      "mainRecord": "未集成；最近核验main115b0dbdfa02db5483f9e9699852682ce699633c",
+      "target": "a553f3f71db29243b698f4bb953408f28a1529b9",
+      "localHead": "bfe49a4b711a9bfa2d49e40cf829d0a9b95b5d22",
+      "localDirty": [
+        "?? docs/evidence/s01/smoke-first/result.json"
+      ],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": false,
+      "retainedProductionScopes": [
+        "experiments/runner-capacity"
+      ],
+      "retainedProductionDifference": [
+        "experiments/runner-capacity/README.md",
+        "experiments/runner-capacity/contract.json"
+      ],
+      "readErrors": [],
+      "classification": "development_or_management"
+    },
+    {
+      "taskId": "SVC02",
+      "claimId": "e8a8767c-4387-4c03-93a6-02153bb491c4",
+      "version": 2,
+      "lead": "astra_ultra_execution_lead",
+      "worker": "runner_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+      "scope": [
+        "apps/server/src/runner-maintenance",
+        "docs/evidence/svc02",
+        "packages/contracts/src/runner-maintenance.ts",
+        "packages/storage/migrations/016-runner-maintenance.sql",
+        "plans/svc02-preview-refresh",
+        "tools/personal-preview"
+      ],
+      "snapshotHead": "a0a2f2a9222d742da59c930566c60d97b60a1a39",
+      "delivery": {
+        "state": "delivered",
+        "source": "explicit"
+      },
+      "branchState": "completed",
+      "review": "approved",
+      "mainRecord": "已集成 fb906cb42391971a8b315dbd813f7633927d7265（05:36 UTC观察）；9aa目标为祖先且声明实现范围零diff；05:40:49Z常驻已更新到同一固定版本且显式恢复接收，0task/0未完attempt/0query",
+      "target": "9aa790552cb8847d6feb8c8f90c870407a54e572",
+      "localHead": "a0a2f2a9222d742da59c930566c60d97b60a1a39",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [
+        "apps/server/src/runner-maintenance",
+        "packages/contracts/src/runner-maintenance.ts",
+        "packages/storage/migrations/016-runner-maintenance.sql",
+        "tools/personal-preview"
+      ],
+      "retainedProductionDifference": [],
+      "readErrors": [],
+      "classification": "integrated_owner_closeout_candidates"
+    },
+    {
+      "taskId": "W01",
+      "claimId": "3a3b963b-aa40-4c50-8324-4445ed8889df",
+      "version": 2,
+      "lead": "external_web_d01_owner",
+      "worker": "w01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-web",
+      "scope": [
+        "plans/w01-web"
+      ],
+      "snapshotHead": "d2631f03b4bdc9bc0d543f09c11c8961a1fdf557",
+      "delivery": {
+        "state": "unknown",
+        "source": "legacy"
+      },
+      "branchState": "completed；官方Thread/shell/panels实现、owner验证和独立review完成；新整改未集成main",
+      "review": "approved",
+      "mainRecord": "PARTIAL；旧交付 `b04df95821a55384c55c833e94405daaf35af8ad` 是main `13703a4accef004d16fd40312dd565d390896e09`祖先（只读核验）。本次新整改尚未集成",
+      "target": "cb4a39211e264538704ba9d474eeb08fc4b2759c",
+      "localHead": "d2631f03b4bdc9bc0d543f09c11c8961a1fdf557",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [],
+      "retainedProductionDifference": null,
+      "readErrors": [],
+      "classification": "integrated_owner_closeout_candidates"
+    },
+    {
+      "taskId": "WPF-001",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 2,
+      "lead": "external_web_d01_owner",
+      "worker": "external_web_d01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform"
+      ],
+      "snapshotHead": "83a37cd14de6b55d05a60a6d2e9d5f602b7173d6",
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "branchState": "in-progress；按轮验收，持续目标未宣称完成",
+      "review": "outdated",
+      "mainRecord": "本管理后续文档未按新target审定；06:23独立Git核main115b含K02/renderer，06:27独立核acfd含ACTIVITY，已审scope均相同；历史06:14:43.956Z实际dashboard读main823fea9bd8bc868243398d58725b4076528a7ffc clean，K02/renderer均not-contained；此前MainLead确认3d4985已push/clean且管理独核；含QUEUE309/D065ec且11/5paths相同，既有PROFILEI01/UX/DPERF均已集成。GO/SVC确认05:40:49常驻61227/61228 center/runner已受控更新为fb906cb、ready/v3 accepting、0任务/0query；此前75a为历史，本队未登录或服务验证，不据main推自动部署",
+      "target": "c075bb5c00ac2f27d54dd264982be30261a9dc51",
+      "localHead": "83a37cd14de6b55d05a60a6d2e9d5f602b7173d6",
+      "localDirty": [
+        " M docs/evidence/web-platform/delivery-snapshot.md",
+        " M docs/evidence/web-platform/research.md",
+        " M plans/web-platform/plan.md",
+        " M plans/web-platform/status.md",
+        "?? docs/evidence/web-platform/d06-context-candidate-audit.json",
+        "?? docs/evidence/web-platform/deployed77-source-observation.json"
+      ],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [],
+      "retainedProductionDifference": null,
+      "readErrors": [],
+      "classification": "development_or_management"
+    },
+    {
+      "taskId": "WPF-CHAT01",
+      "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+      "version": 6,
+      "lead": "external_web_d01_owner",
+      "worker": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+      "scope": [
+        "apps/web/src/conversations/ConversationList.tsx",
+        "apps/web/src/conversations/conversations.css",
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/test/conversation.browser.ts",
+        "apps/web/test/conversation.fixture.ts",
+        "docs/evidence/wpf-chat01",
+        "plans/wpf-chat01-conversations"
+      ],
+      "snapshotHead": "083978b318ede4bb1cabb5050f8d211b17bb9055",
+      "delivery": {
+        "state": "unknown",
+        "source": "legacy"
+      },
+      "branchState": "APPROVED（首批最小持续对话）；后继capability需求仍pending",
+      "review": "approved",
+      "mainRecord": "INTEGRATED dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；04:20 UTC核origin/main包含metadata3319122，14实现/测试路径零diff；集成由MainLead完成，本owner未merge",
+      "target": "7cbabb737f26b108275e80f1b6cd0425699f3c18",
+      "localHead": "083978b318ede4bb1cabb5050f8d211b17bb9055",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [
+        "apps/web/src/conversations/ConversationList.tsx",
+        "apps/web/src/conversations/conversations.css",
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/test/conversation.browser.ts",
+        "apps/web/test/conversation.fixture.ts"
+      ],
+      "retainedProductionDifference": [],
+      "readErrors": [],
+      "classification": "integrated_owner_closeout_candidates"
+    },
+    {
+      "taskId": "WPF-I01",
+      "claimId": "b6666c29-ebc5-47b2-b754-55b62687fd00",
+      "version": 3,
+      "lead": "external_web_d01_owner",
+      "worker": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration",
+      "scope": [
+        "apps/web/src/TaskThread.tsx",
+        "apps/web/src/components/workspace/WorkspacePanels.tsx",
+        "apps/web/src/plugin-integration/slot-fixture.tsx",
+        "apps/web/src/plugin-integration/task-actions.ts",
+        "apps/web/src/themes.ts",
+        "apps/web/test/plugin-integration.browser.ts",
+        "apps/web/test/plugin-integration.config.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "docs/evidence/wpf-i01",
+        "plans/wpf-i01-plugin-integration"
+      ],
+      "snapshotHead": "b5844442699733558a152c12392ea78f26c393a4",
+      "delivery": {
+        "state": "unknown",
+        "source": "legacy"
+      },
+      "branchState": "completed；实现、作者检查和独立 review 均完成，已交原 Lead 集成；main 未集成",
+      "review": "approved",
+      "mainRecord": "NOT_INTEGRATED；03:25 只读 main 3773db5d014a6d38d09553acd0a5fe8df900b7c4，未 merge main",
+      "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+      "localHead": "b5844442699733558a152c12392ea78f26c393a4",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [
+        "apps/web/src/TaskThread.tsx",
+        "apps/web/src/components/workspace/WorkspacePanels.tsx",
+        "apps/web/src/plugin-integration/slot-fixture.tsx",
+        "apps/web/src/plugin-integration/task-actions.ts",
+        "apps/web/src/themes.ts",
+        "apps/web/test/plugin-integration.browser.ts",
+        "apps/web/test/plugin-integration.config.ts",
+        "apps/web/test/plugin-integration.test.ts"
+      ],
+      "retainedProductionDifference": [],
+      "readErrors": [],
+      "classification": "integrated_owner_closeout_candidates"
+    },
+    {
+      "taskId": "WPF-M02",
+      "claimId": "dea92c6b-3450-404c-a32c-3fd007485ac6",
+      "version": 3,
+      "lead": "external_web_d01_owner",
+      "worker": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace",
+      "scope": [
+        "apps/web/src/projection.ts",
+        "apps/web/src/workspace-feed/Attention.tsx",
+        "apps/web/src/workspace-feed/TaskIndex.tsx",
+        "apps/web/src/workspace-feed/projection.ts",
+        "apps/web/src/workspace-feed/task-index.ts",
+        "apps/web/test/fixture-server.ts",
+        "apps/web/test/workspace-browser.ts",
+        "apps/web/test/workspace-fixture.ts",
+        "apps/web/test/workspace-observers-browser.ts",
+        "apps/web/test/workspace-preview.ts",
+        "apps/web/test/workspace-projection.test.ts",
+        "apps/web/test/workspace-real-center.ts",
+        "docs/evidence/wpf-m02",
+        "plans/wpf-m02-web-workspace"
+      ],
+      "snapshotHead": "0c209c83786c411e3b2756110c032e2e6626a27a",
+      "delivery": {
+        "state": "unknown",
+        "source": "legacy"
+      },
+      "branchState": "completed / integrated-main（03:31只读现场核验）",
+      "review": "approved",
+      "mainRecord": "INTEGRATED；03:31 只读 main `edee6b1c5d74c2ee46ec98bab2844579db6a00c4` 包含 d47，dashboard method=ancestor/current=true/scopeEqual=true；集成由原 Lead 执行",
+      "target": "d47c602f3bab1fe97a9be70fd37780c2918bcfbc",
+      "localHead": "0c209c83786c411e3b2756110c032e2e6626a27a",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [
+        "apps/web/src/projection.ts",
+        "apps/web/src/workspace-feed/Attention.tsx",
+        "apps/web/src/workspace-feed/TaskIndex.tsx",
+        "apps/web/src/workspace-feed/projection.ts",
+        "apps/web/src/workspace-feed/task-index.ts",
+        "apps/web/test/fixture-server.ts",
+        "apps/web/test/workspace-browser.ts",
+        "apps/web/test/workspace-fixture.ts",
+        "apps/web/test/workspace-observers-browser.ts",
+        "apps/web/test/workspace-preview.ts",
+        "apps/web/test/workspace-projection.test.ts",
+        "apps/web/test/workspace-real-center.ts"
+      ],
+      "retainedProductionDifference": [],
+      "readErrors": [],
+      "classification": "integrated_owner_closeout_candidates"
+    },
+    {
+      "taskId": "WPF-P01",
+      "claimId": "0686525b-d323-49b5-affa-cefc66cb13be",
+      "version": 1,
+      "lead": "external_web_d01_owner",
+      "worker": "w01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host",
+      "scope": [
+        "apps/web/src/plugins",
+        "apps/web/test/plugin-host.browser.ts",
+        "apps/web/test/plugin-host.config.ts",
+        "apps/web/test/plugin-host.test.ts",
+        "docs/evidence/wpf-p01",
+        "plans/wpf-p01-plugin-host"
+      ],
+      "snapshotHead": "2910ebc8e11fbcb00d1c2773face229c84fe47cd",
+      "delivery": {
+        "state": "unknown",
+        "source": "legacy"
+      },
+      "branchState": "completed；trusted host实现/检查/独立review完成，I01主App接入另验",
+      "review": "approved",
+      "mainRecord": "NOT_INTEGRATED；输入main `8c57f2f97345167207fa0d2590e9ad6310c922d4`，WPF-P01实现完成但未集成",
+      "target": "6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6",
+      "localHead": "2910ebc8e11fbcb00d1c2773face229c84fe47cd",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [
+        "apps/web/src/plugins",
+        "apps/web/test/plugin-host.browser.ts",
+        "apps/web/test/plugin-host.config.ts",
+        "apps/web/test/plugin-host.test.ts"
+      ],
+      "retainedProductionDifference": [],
+      "readErrors": [],
+      "classification": "integrated_owner_closeout_candidates"
+    },
+    {
+      "taskId": "WPF-PERF01",
+      "claimId": "4553f315-7fb4-4fe6-babb-0f4a8e5057c6",
+      "version": 2,
+      "lead": "external_web_d01_owner",
+      "worker": "w01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance",
+      "scope": [
+        "apps/web/test/performance-fixture.ts",
+        "docs/evidence/wpf-perf01",
+        "plans/wpf-perf01-web-performance"
+      ],
+      "snapshotHead": "cc33403cd9b357fcd85484b7bc6952dc1220d689",
+      "delivery": {
+        "state": "unknown",
+        "source": "legacy"
+      },
+      "branchState": "completed；本轮benchmark测量/报告/review完成，后续优化另领",
+      "review": "approved",
+      "mainRecord": "NOT_INTEGRATED；本任务未集成，固定输入不代表当前 main",
+      "target": "3d47cdd4eae959119f154a0d06964cf65006f8c9",
+      "localHead": "cc33403cd9b357fcd85484b7bc6952dc1220d689",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": true,
+      "retainedProductionScopes": [
+        "apps/web/test/performance-fixture.ts"
+      ],
+      "retainedProductionDifference": [],
+      "readErrors": [],
+      "classification": "integrated_owner_closeout_candidates"
+    },
+    {
+      "taskId": "WPF-RENDERERI01",
+      "claimId": "ff62150f-30ec-4ee5-9ea5-19e589125cfc",
+      "version": 1,
+      "lead": "external_web_d01_owner",
+      "worker": "w01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/test/data-renderer-integration.browser.ts",
+        "apps/web/test/data-renderer-integration.test.ts",
+        "docs/evidence/wpf-renderer-i01",
+        "plans/wpf-renderer-i01-integration"
+      ],
+      "snapshotHead": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "branchState": "in-progress",
+      "review": "not_started",
+      "mainRecord": "本接线未集成；115b仅包含已审独立模块",
+      "target": null,
+      "localHead": "985e7e800b10953da66598f8fe093c2ef95478f1",
+      "localDirty": [
+        " M docs/evidence/wpf-renderer-i01/README.md",
+        " M docs/evidence/wpf-renderer-i01/preview-recovery.md",
+        " M docs/evidence/wpf-renderer-i01/quality.md",
+        " M plans/wpf-renderer-i01-integration/review.md",
+        " M plans/wpf-renderer-i01-integration/status.md"
+      ],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": null,
+      "retainedProductionScopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/test/data-renderer-integration.browser.ts",
+        "apps/web/test/data-renderer-integration.test.ts"
+      ],
+      "retainedProductionDifference": null,
+      "readErrors": [],
+      "classification": "frozen_review_or_integration"
+    },
+    {
+      "taskId": "X05",
+      "claimId": "72453aac-7d6c-4c33-81f4-aa7b936f3381",
+      "version": 1,
+      "lead": "astra_ultra_execution_lead",
+      "worker": "assignment_review",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-package-fetches",
+      "scope": [
+        "apps/server/src/package-artifacts/index.ts",
+        "apps/server/src/package-artifacts/input.ts",
+        "apps/server/src/package-artifacts/storage.ts",
+        "apps/server/src/plugin-package-fetches",
+        "docs/evidence/x05",
+        "packages/contracts/src/plugin-package-fetches.ts",
+        "packages/storage/migrations/023-plugin-package-fetches.sql",
+        "plans/x05-package-fetch-operations"
+      ],
+      "snapshotHead": "6b6995451f5d8c4fd6983c77a4b2b9a7d13991ef",
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "branchState": "in-progress",
+      "review": "not_started",
+      "mainRecord": "未集成；X04已在main115b，X05已固定待独立审查，尚未生产挂载",
+      "target": "9ebb3bdd781b3667f0c164405e9a17387ce89d76",
+      "localHead": "447807c321e81d9dd6b8a963a73ba4fc8396e308",
+      "localDirty": [],
+      "fixedSnapshotMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "targetAncestor": false,
+      "retainedProductionScopes": [
+        "apps/server/src/package-artifacts/index.ts",
+        "apps/server/src/package-artifacts/input.ts",
+        "apps/server/src/package-artifacts/storage.ts",
+        "apps/server/src/plugin-package-fetches",
+        "packages/contracts/src/plugin-package-fetches.ts",
+        "packages/storage/migrations/023-plugin-package-fetches.sql"
+      ],
+      "retainedProductionDifference": [
+        "apps/server/src/package-artifacts/index.ts",
+        "apps/server/src/package-artifacts/input.ts",
+        "apps/server/src/plugin-package-fetches/commands.ts",
+        "apps/server/src/plugin-package-fetches/fetches.test.ts",
+        "apps/server/src/plugin-package-fetches/host.ts",
+        "apps/server/src/plugin-package-fetches/index.ts",
+        "apps/server/src/plugin-package-fetches/process-fixture.ts",
+        "apps/server/src/plugin-package-fetches/publication.test.ts",
+        "apps/server/src/plugin-package-fetches/routes.ts",
+        "apps/server/src/plugin-package-fetches/store.ts",
+        "apps/server/src/plugin-package-fetches/worker.ts",
+        "apps/server/src/plugin-package-fetches/workflow.test.ts",
+        "packages/contracts/src/plugin-package-fetches.ts",
+        "packages/storage/migrations/023-plugin-package-fetches.sql"
+      ],
+      "readErrors": [],
+      "classification": "frozen_review_or_integration"
+    }
+  ],
+  "groups": {
+    "development_or_management": {
+      "count": 6,
+      "taskIds": [
+        "CHAT06",
+        "D05",
+        "FLOW-001",
+        "I02",
+        "S01",
+        "WPF-001"
+      ]
+    },
+    "frozen_review_or_integration": {
+      "count": 5,
+      "taskIds": [
+        "D06",
+        "F01",
+        "K03",
+        "WPF-RENDERERI01",
+        "X05"
+      ]
+    },
+    "integrated_owner_closeout_candidates": {
+      "count": 10,
+      "taskIds": [
+        "E01",
+        "O07",
+        "R04",
+        "SVC02",
+        "W01",
+        "WPF-CHAT01",
+        "WPF-I01",
+        "WPF-M02",
+        "WPF-P01",
+        "WPF-PERF01"
+      ]
+    }
+  },
+  "limitations": [
+    "21 active claims are a historical ledger count, not concurrent agents; global authorized agent allocation remains 4+4+2=10.",
+    "Classification combines the single 06:36 snapshot with the separately timestamped read-only fixed-a26 owner Git survey. No repeated API sample and no forced revocation.",
+    "Ancestor and zero retained production-scope diff identify owner closeout candidates, not proof that transferred files remain unchanged or that all future work is complete.",
+    "D05 and F01 retain overarching registration/shared integration duties; no release is inferred from an older ancestor.",
+    "E01 future zero-model preflight intent requires original owner clarification. GO is already coordinating O07; do not duplicate that request."
+  ],
+  "laterOwnerReceipts": [
+    {
+      "requestId": "w01-integrated-release-20261006",
+      "action": "release",
+      "committedAt": "2026-10-06T06:43:14.254Z",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "plans/w01-web"
+        ],
+        "state": "released",
+        "branch": "codex/m1-web",
+        "origin": "migration",
+        "taskId": "W01",
+        "worker": "w01_owner",
+        "claimId": "3a3b963b-aa40-4c50-8324-4445ed8889df",
+        "version": 3,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-web",
+        "createdAt": "2026-10-06T02:48:43.417Z",
+        "updatedAt": "2026-10-06T06:43:14.254Z",
+        "observedAt": "2026-10-06T02:48:42.000Z"
+      }
+    },
+    {
+      "requestId": "wpf-p01-integrated-release-20261006",
+      "action": "release",
+      "committedAt": "2026-10-06T06:43:14.327Z",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/plugins",
+          "apps/web/test/plugin-host.browser.ts",
+          "apps/web/test/plugin-host.config.ts",
+          "apps/web/test/plugin-host.test.ts",
+          "docs/evidence/wpf-p01",
+          "plans/wpf-p01-plugin-host"
+        ],
+        "state": "released",
+        "branch": "codex/web-plugin-host",
+        "origin": "migration",
+        "taskId": "WPF-P01",
+        "worker": "w01_owner",
+        "claimId": "0686525b-d323-49b5-affa-cefc66cb13be",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host",
+        "createdAt": "2026-10-06T02:48:43.178Z",
+        "updatedAt": "2026-10-06T06:43:14.327Z",
+        "observedAt": "2026-10-06T02:41:00.000Z"
+      }
+    },
+    {
+      "requestId": "wpf-perf01-integrated-release-20261006",
+      "action": "release",
+      "committedAt": "2026-10-06T06:43:14.399Z",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/test/performance-fixture.ts",
+          "docs/evidence/wpf-perf01",
+          "plans/wpf-perf01-web-performance"
+        ],
+        "state": "released",
+        "branch": "codex/web-performance",
+        "origin": "new",
+        "taskId": "WPF-PERF01",
+        "worker": "w01_owner",
+        "claimId": "4553f315-7fb4-4fe6-babb-0f4a8e5057c6",
+        "version": 3,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance",
+        "createdAt": "2026-10-06T03:07:10.630Z",
+        "updatedAt": "2026-10-06T06:43:14.399Z",
+        "observedAt": null
+      }
+    },
+    {
+      "requestId": "wpf-chat01-remaining-scope-release-20261006",
+      "action": "release",
+      "committedAt": "2026-10-06T06:45:37.758Z",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/conversations/ConversationList.tsx",
+          "apps/web/src/conversations/conversations.css",
+          "apps/web/src/conversations/messages.ts",
+          "apps/web/test/conversation.browser.ts",
+          "apps/web/test/conversation.fixture.ts",
+          "docs/evidence/wpf-chat01",
+          "plans/wpf-chat01-conversations"
+        ],
+        "state": "released",
+        "branch": "codex/web-conversations",
+        "origin": "new",
+        "taskId": "WPF-CHAT01",
+        "worker": "workspace_panels_owner",
+        "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+        "version": 7,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+        "createdAt": "2026-10-06T03:35:00.744Z",
+        "updatedAt": "2026-10-06T06:45:37.758Z",
+        "observedAt": null
+      }
+    },
+    {
+      "requestId": "wpf-i01-remaining-scope-release-20261006",
+      "action": "release",
+      "committedAt": "2026-10-06T06:45:37.847Z",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/TaskThread.tsx",
+          "apps/web/src/components/workspace/WorkspacePanels.tsx",
+          "apps/web/src/plugin-integration/slot-fixture.tsx",
+          "apps/web/src/plugin-integration/task-actions.ts",
+          "apps/web/src/themes.ts",
+          "apps/web/test/plugin-integration.browser.ts",
+          "apps/web/test/plugin-integration.config.ts",
+          "apps/web/test/plugin-integration.test.ts",
+          "docs/evidence/wpf-i01",
+          "plans/wpf-i01-plugin-integration"
+        ],
+        "state": "released",
+        "branch": "codex/web-plugin-integration",
+        "origin": "new",
+        "taskId": "WPF-I01",
+        "worker": "workspace_panels_owner",
+        "claimId": "b6666c29-ebc5-47b2-b754-55b62687fd00",
+        "version": 4,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration",
+        "createdAt": "2026-10-06T02:58:06.016Z",
+        "updatedAt": "2026-10-06T06:45:37.847Z",
+        "observedAt": null
+      }
+    },
+    {
+      "requestId": "wpf-m02-remaining-scope-release-20261006",
+      "action": "release",
+      "committedAt": "2026-10-06T06:45:37.940Z",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/projection.ts",
+          "apps/web/src/workspace-feed/Attention.tsx",
+          "apps/web/src/workspace-feed/TaskIndex.tsx",
+          "apps/web/src/workspace-feed/projection.ts",
+          "apps/web/src/workspace-feed/task-index.ts",
+          "apps/web/test/fixture-server.ts",
+          "apps/web/test/workspace-browser.ts",
+          "apps/web/test/workspace-fixture.ts",
+          "apps/web/test/workspace-observers-browser.ts",
+          "apps/web/test/workspace-preview.ts",
+          "apps/web/test/workspace-projection.test.ts",
+          "apps/web/test/workspace-real-center.ts",
+          "docs/evidence/wpf-m02",
+          "plans/wpf-m02-web-workspace"
+        ],
+        "state": "released",
+        "branch": "codex/web-unified-workspace",
+        "origin": "migration",
+        "taskId": "WPF-M02",
+        "worker": "workspace_panels_owner",
+        "claimId": "dea92c6b-3450-404c-a32c-3fd007485ac6",
+        "version": 4,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace",
+        "createdAt": "2026-10-06T02:48:43.061Z",
+        "updatedAt": "2026-10-06T06:45:37.940Z",
+        "observedAt": "2026-10-06T02:41:00.000Z"
+      }
+    }
+  ],
+  "laterReceiptNote": "Six original owners’ feature closeouts (W01/P01/PERF01 by w01; CHAT01/I01/M02 by panels) independently confirmed fixed-a26 ancestry, retained-scope equality and no unfinished retained-scope write, recorded main, stopped all scopes, fresh-checked versions, then released. The historical 21-count was not changed; no current global count is inferred."
+}

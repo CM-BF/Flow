@@ -1,0 +1,13 @@
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Conversation 2', exact: true })[22m
+
+    at open (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:15:164)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:20:3)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:16:56)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:19:2) {
+  log: [
+    "  - waiting for getByRole('button', { name: 'Conversation 2', exact: true })"
+  ],
+  name: 'TimeoutError'
+}

@@ -1,0 +1,97 @@
+{
+  "observedAt": "2026-10-06T06:55:04.186Z",
+  "head": "ee294c1473693b83babd0a935597b431d6223346",
+  "dirty": false,
+  "target": "8c56211739ae0c20816c67caad13cee510130514",
+  "checks": {
+    "state": "passed",
+    "target": "8c56211739ae0c20816c67caad13cee510130514",
+    "record": "PASSED 8c56211739ae0c20816c67caad13cee510130514；104局部checks+Webtypecheck，wire模拟；[验证](../../docs/evidence/wpf-chat06-compatibility/validation.md)"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "8c56211739ae0c20816c67caad13cee510130514"
+  },
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "聊天已能读取中心新增的流式能力标记，原有回执和排队保持",
+    "next": "将已审兼容读取更新交主线集成",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "parserErrors": [],
+  "todos": [
+    {
+      "id": "WPF-CHAT06C01-01",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[输入](../../docs/evidence/wpf-chat06-compatibility/input-provenance.json)、[技能](../../docs/evidence/wpf-chat06-compatibility/quality.md)"
+    },
+    {
+      "id": "WPF-CHAT06C01-02",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "已兼容missing/false/true并拒畸形，不启用stream"
+    },
+    {
+      "id": "WPF-CHAT06C01-03",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "104局部检查/Webtypecheck通过，原red14fail记录保留"
+    },
+    {
+      "id": "WPF-CHAT06C01-04",
+      "state": "in-progress",
+      "owner": "workspace_panels_owner",
+      "evidence": "root固定8c56211739ae0c20816c67caad13cee510130514 APPROVED；交Lead集成，唯一source登记尚待部署事实"
+    }
+  ],
+  "proof": {
+    "target": "8c56211739ae0c20816c67caad13cee510130514",
+    "head": "ee294c1473693b83babd0a935597b431d6223346",
+    "scopes": [
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/test/conversation-projection.test.ts"
+    ],
+    "observedAt": "2026-10-06T06:55:03.901Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-chat06-compatibility/README.md",
+      "docs/evidence/wpf-chat06-compatibility/checks.json",
+      "docs/evidence/wpf-chat06-compatibility/green-direct.log",
+      "docs/evidence/wpf-chat06-compatibility/install.log",
+      "docs/evidence/wpf-chat06-compatibility/quality.md",
+      "docs/evidence/wpf-chat06-compatibility/red-direct.log",
+      "docs/evidence/wpf-chat06-compatibility/source-binding.json",
+      "docs/evidence/wpf-chat06-compatibility/typecheck.log",
+      "docs/evidence/wpf-chat06-compatibility/validation.md",
+      "plans/wpf-chat06-compatibility/plan.md",
+      "plans/wpf-chat06-compatibility/review.md",
+      "plans/wpf-chat06-compatibility/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "metadataDeltaFromAnnounced7ce": "plans/wpf-chat06-compatibility/plan.md | 2 +-\n 1 file changed, 1 insertion(+), 1 deletion(-)",
+  "markdownFiles": 6,
+  "localLinks": 29,
+  "brokenLinks": [],
+  "linksObservationAt": "2026-10-06T06:54:52.237Z",
+  "sourceDeployment": "No formal deployment receipt yet. No API request; original b76+dirty check provenance preserved.",
+  "notIndependentProductTest": true
+}

@@ -1,0 +1,80 @@
+{
+  "observedAt": "2026-10-06T07:02:13.687Z",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-cursor-compatibility",
+  "head": "1e49fe4fb387dde5f787e52199b9ed0eb5f483f9",
+  "dirty": "",
+  "branch": "codex/web-activity-cursor-compatibility",
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-cursor-compatibility/plans/wpf-activity-cursor-compatibility/status.md",
+  "claimId": "5896b272-19d9-4727-aee4-1d8dd36d5fec",
+  "version": 1,
+  "scopeCount": 4,
+  "parserErrors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "已确认活动列表翻页兼容规则，正在修复过滤后的空页读取",
+    "next": "活动列表能越过隐藏的流式记录，继续显示普通活动",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "WPF-ACTIVITYC01-01",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[输入来源](../../docs/evidence/wpf-activity-cursor-compatibility/input-provenance.json)、[领取](../../docs/evidence/wpf-activity-cursor-compatibility/take-receipt.json)、[质量](../../docs/evidence/wpf-activity-cursor-compatibility/quality.md)"
+    },
+    {
+      "id": "WPF-ACTIVITYC01-02",
+      "state": "in-progress",
+      "owner": "workspace_panels_owner",
+      "evidence": "已读固定旧reader与C02真实HTTP断言，准备最小校验修复"
+    },
+    {
+      "id": "WPF-ACTIVITYC01-03",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "待实际reader红绿验证"
+    },
+    {
+      "id": "WPF-ACTIVITYC01-04",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "独立review未执行；由manager登记唯一source，等待聚合展示"
+    }
+  ],
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": null
+  },
+  "implementation": {
+    "target": null,
+    "scopes": [
+      "apps/web/src/conversation-activity/projection.ts",
+      "apps/web/test/conversation-activity.test.ts"
+    ],
+    "errors": [
+      "实现目标需完整 SHA"
+    ]
+  },
+  "outside": [],
+  "baseCompatibility": "The two old reader/test files are identical between approved86a and optional newer ba908; tree remains86a."
+}

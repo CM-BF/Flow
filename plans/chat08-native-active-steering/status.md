@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 07:52:34 UTC |
+| 最近更新时间 | 2026-10-06 08:09:59 UTC |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering |
 | Branch | codex/native-active-steering |
@@ -13,15 +13,15 @@
 | 检查目标 | d4e7445fca4fbc261cbf33101fca4d9407879315 |
 | 检查说明 | 106 distinct；105+7(新增1)+13重叠运行，最终tsc exit0；非provider验收 |
 | Review | APPROVED |
-| 已集成main状态 / HEAD | 未集成；未接生产工厂，本片cap保持关闭 |
+| 已集成main状态 / HEAD | 已集成 main/origin 9c6fa9b100f04916f43b04280f05f497b28eeb0f；领域与默认关闭的生产挂载已接收，本片cap保持关闭 |
 | 实现目标 | d4e7445fca4fbc261cbf33101fca4d9407879315 |
 | 产品实现目标 | f78a15c69f3f365a37c9f317249858d8e279503d |
 | 实现范围 | apps/runner/src/active-steering/host.ts,apps/runner/src/active-steering/input.ts,apps/runner/src/active-steering/proposal.ts,apps/runner/src/active-steering/state.test.ts,apps/runner/src/active-steering/state.ts,apps/runner/src/assistant-stream/index.ts,apps/runner/src/claude.test.ts,apps/runner/src/claude.ts,apps/runner/src/outbox.test.ts,apps/runner/src/outbox.ts,apps/runner/src/runner.test.ts,apps/runner/src/runtime.ts,apps/server/src/active-steering/commands.ts,apps/server/src/active-steering/finalization.test.ts,apps/server/src/active-steering/finalization.ts,apps/server/src/active-steering/index.ts,apps/server/src/active-steering/results.ts,apps/server/src/events.ts,packages/contracts/src/active-steering.ts,packages/contracts/src/runner.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 1 |
-| 当前产出 | 执行中补充指令的本地闭环已通过独立审查 |
-| 下一可用交付 | 接入中心后，再验收真实会话与界面 |
+| 当前产出 | 本片段已交付，执行中补充指令的本地闭环已合入中心 |
+| 下一可用交付 | 本片段已交付；真实会话与界面属于后继验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -31,9 +31,13 @@
 | CHAT08-02 | completed | runner_owner | 单输入/多result/UUID覆盖/累计usage/总timeout与decision暂停 |
 | CHAT08-03 | completed | runner_owner | 同TX conditional final、序号冻结、ACK丢失与重启确认 |
 | CHAT08-04 | completed | runner_owner | [106项边界与原始输出](../../docs/evidence/chat08/README.md)，0provider |
-| CHAT08-05 | in-progress | runner_owner / Lead | 独立审查已批准；shared mount与main receipt尚未发生 |
+| CHAT08-05 | completed | runner_owner / Lead | 独立审查已批准；main receipt 9c6fa9b 已接领域及默认关闭的挂载 |
 | CHAT08-06 | pending | 后继owner待派 | 无provider预算；未启用UI/cap，不能以本地seam替代真实验收 |
 
-claim `2f7b66e3-a18c-40df-a5f9-7d5977a4618e` v2仍持有等待共享接线接收或审查修复，源码停止写入。[回执](../../docs/evidence/chat08/claim-amend-v2.json)。[manifest](../../docs/evidence/chat08/manifest.json)绑定20个领域source、2个既有只读消费者与原始检查。原始red/类型失败保留，不与正式独审混淆。个人服务/共享登录/根锁未动，测试使用独占随机数据库和动态端口。
+claim `2f7b66e3-a18c-40df-a5f9-7d5977a4618e` v2 本次metadata提交后全部停止写入，随即执行release；回执 /tmp/flow-chat08-release-receipt.json。[回执](../../docs/evidence/chat08/claim-amend-v2.json)。[manifest](../../docs/evidence/chat08/manifest.json)绑定20个领域source、2个既有只读消费者与原始检查。原始red/类型失败保留，不与正式独审混淆。个人服务/共享登录/根锁未动，测试使用独占随机数据库和动态端口。
 
 2026-10-06 07:52:34 UTC 转录 Execution Lead / gpt-6-astra 的独立只读 APPROVED，目标 d4e7445fca4fbc261cbf33101fca4d9407879315，观测作者clean HEAD 91eb274e5cc11bcda6471fe4fba57f649b53bfdf。核对20 source、20 raw、2 readonly、3 SDK文件和manifest；无P1/P2，未重跑检查、0provider。批准只含PG/HTTP与注入SDK纵向，不含生产挂载、真实原生子进程、模型遵从、UI或cap开启。完整结论见[review](review.md)；原始证据不变。
+
+2026-10-06 08:01:25 UTC main receipt：Lead核24源码与已审挂载逐字一致，未重跑。作者只读核d4e为main祖先；所有本片scope在此提交后停止写入，后继配置受理使用独立CHAT09。原始证据/106检查不变；未宣称provider/UI/个人服务已启用。
+
+2026-10-06 08:09:59 UTC 管理校准：旧产品claim已released v3；新metadata-only claim `ca2ad795-88e5-4c54-8a95-ac35982c68b0` v1仅领取本plan/evidence。将片段阶段标delivered，不重新打开已交付工程；CHAT08-06保持pending，配置准入由独立[CHAT09](/Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-profile-admission/plans/chat09-steering-admission/plan.md)消费。原d4e独审/106检查/main receipt不变。此metadata提交后停止本两目录写入并release，回执 /tmp/flow-chat08-meta-release-receipt.json。

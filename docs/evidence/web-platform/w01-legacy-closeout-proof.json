@@ -1,0 +1,112 @@
+[
+  {
+    "taskId": "W01",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "plans/w01-web"
+      ],
+      "state": "active",
+      "branch": "codex/m1-web",
+      "origin": "migration",
+      "taskId": "W01",
+      "worker": "w01_owner",
+      "claimId": "3a3b963b-aa40-4c50-8324-4445ed8889df",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-web",
+      "createdAt": "2026-10-06T02:48:43.417Z",
+      "updatedAt": "2026-10-06T02:49:44.630Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    },
+    "publishedMainObservedByManager": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+    "managerSnapshotAt": "2026-10-06T06:36:34.965Z",
+    "ownerClaimObservationAt": "2026-10-06T06:42:00.078Z",
+    "implementationTarget": "cb4a39211e264538704ba9d474eeb08fc4b2759c",
+    "targetAncestor": true,
+    "retainedProductionScopes": [],
+    "retainedProductionDifference": [],
+    "note": "Historical complete implementation scope may differ after later features; only current retained production scopes compared. W01 has no retained production scope. No product tests run.",
+    "finalMetadata": "8b674077155a210145797182722b65da9179a34b"
+  },
+  {
+    "taskId": "WPF-P01",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/plugins",
+        "apps/web/test/plugin-host.browser.ts",
+        "apps/web/test/plugin-host.config.ts",
+        "apps/web/test/plugin-host.test.ts",
+        "docs/evidence/wpf-p01",
+        "plans/wpf-p01-plugin-host"
+      ],
+      "state": "active",
+      "branch": "codex/web-plugin-host",
+      "origin": "migration",
+      "taskId": "WPF-P01",
+      "worker": "w01_owner",
+      "claimId": "0686525b-d323-49b5-affa-cefc66cb13be",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host",
+      "createdAt": "2026-10-06T02:48:43.178Z",
+      "updatedAt": "2026-10-06T02:48:43.178Z",
+      "observedAt": "2026-10-06T02:41:00.000Z",
+      "needsVerification": false
+    },
+    "publishedMainObservedByManager": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+    "managerSnapshotAt": "2026-10-06T06:36:34.965Z",
+    "ownerClaimObservationAt": "2026-10-06T06:42:00.078Z",
+    "implementationTarget": "6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6",
+    "targetAncestor": true,
+    "retainedProductionScopes": [
+      "apps/web/src/plugins",
+      "apps/web/test/plugin-host.browser.ts",
+      "apps/web/test/plugin-host.config.ts",
+      "apps/web/test/plugin-host.test.ts"
+    ],
+    "retainedProductionDifference": [],
+    "note": "Historical complete implementation scope may differ after later features; only current retained production scopes compared. W01 has no retained production scope. No product tests run.",
+    "finalMetadata": "28b70c35dbda1603411bfa87402b3182eacc3a9a"
+  },
+  {
+    "taskId": "WPF-PERF01",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/test/performance-fixture.ts",
+        "docs/evidence/wpf-perf01",
+        "plans/wpf-perf01-web-performance"
+      ],
+      "state": "active",
+      "branch": "codex/web-performance",
+      "origin": "new",
+      "taskId": "WPF-PERF01",
+      "worker": "w01_owner",
+      "claimId": "4553f315-7fb4-4fe6-babb-0f4a8e5057c6",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance",
+      "createdAt": "2026-10-06T03:07:10.630Z",
+      "updatedAt": "2026-10-06T03:30:29.445Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    "publishedMainObservedByManager": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+    "managerSnapshotAt": "2026-10-06T06:36:34.965Z",
+    "ownerClaimObservationAt": "2026-10-06T06:42:00.078Z",
+    "implementationTarget": "3d47cdd4eae959119f154a0d06964cf65006f8c9",
+    "targetAncestor": true,
+    "retainedProductionScopes": [
+      "apps/web/test/performance-fixture.ts"
+    ],
+    "retainedProductionDifference": [],
+    "note": "Historical complete implementation scope may differ after later features; only current retained production scopes compared. W01 has no retained production scope. No product tests run.",
+    "finalMetadata": "da1e7a3e5c4906b1ce6a5a0eb712a5b5b4611f55"
+  }
+]

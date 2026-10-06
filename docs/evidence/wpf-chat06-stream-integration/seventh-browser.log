@@ -1,0 +1,16 @@
+PASS official Thread shows an incremental draft, typed final settles once while task remains running
+PASS new conversation Enter uses CREATE without opt-in and GET with patch-v1, first acceptance preserves focus
+PASS unavailable settlement retains draft with truthful interrupted and truncated notices
+PASS stream extension toggles independently, restores focus/draft and disables stream reads
+PASS two split panes update independently; hidden overview and offline suspend streams
+PASS existing queue Enter and button preserve a fresh composer draft
+locator.fill: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for getByLabel('Center URL', { exact: true })[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:48:52)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:16:56)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:46:2) {
+  log: [ "  - waiting for getByLabel('Center URL', { exact: true })" ],
+  name: 'TimeoutError'
+}

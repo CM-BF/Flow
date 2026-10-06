@@ -1,0 +1,79 @@
+{
+  "observedAt": "2026-10-06T07:24:47.605Z",
+  "head": "8f2959d7acd5250dc7a4ff705817b6471836e354",
+  "dirty": "?? docs/evidence/wpf-perf03/install.log",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+  "branch": "codex/web-message-reuse",
+  "base": "30b97cbf3665c4ef7a314a6a8b59394ae68781af",
+  "paths": [
+    "docs/evidence/wpf-perf03/claim-observation.json",
+    "docs/evidence/wpf-perf03/quality.md",
+    "docs/evidence/wpf-perf03/take-receipt.json",
+    "plans/wpf-perf03-message-reuse/plan.md",
+    "plans/wpf-perf03-message-reuse/review.md",
+    "plans/wpf-perf03-message-reuse/status.md"
+  ],
+  "outside": [],
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/plans/wpf-perf03-message-reuse/status.md",
+  "claimId": "2ec58c2c-811d-4f24-a14b-cf1a3e89cdb3",
+  "version": 1,
+  "scope": [
+    "apps/web/src/conversations/messages.ts",
+    "apps/web/test/conversation-message-reuse.probe.ts",
+    "apps/web/test/conversation-messages.test.ts",
+    "docs/evidence/wpf-perf03",
+    "plans/wpf-perf03-message-reuse"
+  ],
+  "parserErrors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 3,
+    "output": "正在减少未变化聊天消息的重复转换",
+    "next": "保留动态回复更新的消息复用实现与验证结果",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "PERF03-01",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "原消息模块内部WeakMap实现"
+    },
+    {
+      "id": "PERF03-02",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "新局部测试与实际core小计数"
+    },
+    {
+      "id": "PERF03-03",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "固定review与主线接收"
+    }
+  ],
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN 尚未实施"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": null
+  },
+  "method": "Read-only canonical/Git/parser, NOT_RUN true before implementation"
+}

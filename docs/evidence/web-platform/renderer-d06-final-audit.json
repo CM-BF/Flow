@@ -1,0 +1,299 @@
+{
+  "observedAt": "2026-10-06T06:44:27.447Z",
+  "method": "Local read-only Git, canonical parser, declared scope proof and link audit; no product tests or dashboard fetch",
+  "records": [
+    {
+      "taskId": "WPF-RENDERERI01",
+      "observedAt": "2026-10-06T06:44:27.208Z",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration",
+      "head": "2a420ffe6a27860156057368a18e94e73957e395",
+      "expectedHead": "2a420ffe6a27860156057368a18e94e73957e395",
+      "branch": "codex/web-data-renderer-integration",
+      "dirty": "",
+      "target": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/plugin-integration/data-renderers.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/test/data-renderer-integration.browser.ts",
+          "apps/web/test/data-renderer-integration.test.ts",
+          "docs/evidence/wpf-renderer-i01",
+          "plans/wpf-renderer-i01-integration"
+        ],
+        "state": "active",
+        "branch": "codex/web-data-renderer-integration",
+        "origin": "new",
+        "taskId": "WPF-RENDERERI01",
+        "worker": "w01_owner",
+        "claimId": "ff62150f-30ec-4ee5-9ea5-19e589125cfc",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration",
+        "createdAt": "2026-10-06T06:25:30.088Z",
+        "updatedAt": "2026-10-06T06:25:30.088Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      "changedCount": 37,
+      "outside": [],
+      "parserErrors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "聊天详情接线已通过独立审查，切换和隐藏会隔离旧读取",
+        "next": "主线接收并验证聊天详情接线",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "todos": [
+        {
+          "id": "RENDERERI01-01",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "显式可见性与窄身份绑定实施"
+        },
+        {
+          "id": "RENDERERI01-02",
+          "state": "completed",
+          "owner": "w01_owner",
+          "evidence": "实际App HTTPfixture与直接消费者验证"
+        },
+        {
+          "id": "RENDERERI01-03",
+          "state": "in-progress",
+          "owner": "w01_owner",
+          "evidence": "固定目标已独立批准；交Lead主线接收"
+        }
+      ],
+      "checks": {
+        "state": "passed",
+        "target": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+        "record": "PASSED 8014cf9be49391157fb54eeb857a41ee1d6af68c；31局部/直接依赖、typecheck/build；dev与prod各9真实App+1独立dev消费者browser"
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED**",
+        "target": "8014cf9be49391157fb54eeb857a41ee1d6af68c"
+      },
+      "implementation": {
+        "target": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/data-renderers.ts",
+          "apps/web/test/data-renderer-integration.test.ts",
+          "apps/web/test/data-renderer-integration.browser.ts"
+        ],
+        "errors": []
+      },
+      "proof": {
+        "target": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+        "head": "2a420ffe6a27860156057368a18e94e73957e395",
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/data-renderers.ts",
+          "apps/web/test/data-renderer-integration.test.ts",
+          "apps/web/test/data-renderer-integration.browser.ts"
+        ],
+        "observedAt": "2026-10-06T06:44:27.070Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/wpf-renderer-i01/README.md",
+          "docs/evidence/wpf-renderer-i01/binding-green.log",
+          "docs/evidence/wpf-renderer-i01/binding-red.log",
+          "docs/evidence/wpf-renderer-i01/browser-final.log",
+          "docs/evidence/wpf-renderer-i01/browser-first.log",
+          "docs/evidence/wpf-renderer-i01/browser-production.log",
+          "docs/evidence/wpf-renderer-i01/browser-second.log",
+          "docs/evidence/wpf-renderer-i01/browser-third.log",
+          "docs/evidence/wpf-renderer-i01/build.log",
+          "docs/evidence/wpf-renderer-i01/dashboard-transition-observation.json",
+          "docs/evidence/wpf-renderer-i01/development-browser.json",
+          "docs/evidence/wpf-renderer-i01/development-dark-390.png",
+          "docs/evidence/wpf-renderer-i01/development-failure.png",
+          "docs/evidence/wpf-renderer-i01/development-light.png",
+          "docs/evidence/wpf-renderer-i01/interface.md",
+          "docs/evidence/wpf-renderer-i01/module-final.log",
+          "docs/evidence/wpf-renderer-i01/module-first.log",
+          "docs/evidence/wpf-renderer-i01/preview-recovery.md",
+          "docs/evidence/wpf-renderer-i01/production-browser.json",
+          "docs/evidence/wpf-renderer-i01/production-dark-390.png",
+          "docs/evidence/wpf-renderer-i01/production-light.png",
+          "docs/evidence/wpf-renderer-i01/quality.md",
+          "docs/evidence/wpf-renderer-i01/source-binding.json",
+          "docs/evidence/wpf-renderer-i01/typecheck-final.log",
+          "docs/evidence/wpf-renderer-i01/typecheck-first.log",
+          "plans/wpf-renderer-i01-integration/plan.md",
+          "plans/wpf-renderer-i01-integration/review.md",
+          "plans/wpf-renderer-i01-integration/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "markdownFiles": 7,
+      "localLinks": 39,
+      "brokenLinks": [],
+      "protectedDifference": ""
+    },
+    {
+      "taskId": "D06",
+      "observedAt": "2026-10-06T06:44:27.400Z",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-context",
+      "head": "e7e37c3cf9441459e03b9463e36d568ffc0bb5ca",
+      "expectedHead": "e7e37c3cf9441459e03b9463e36d568ffc0bb5ca",
+      "branch": "codex/dashboard-architecture-context",
+      "dirty": "",
+      "target": "ff5ca7c880910841e8180df7632753c81aea2492",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/test/architecture.test.mjs",
+          "docs/evidence/d06",
+          "plans/d06-architecture-refresh"
+        ],
+        "state": "active",
+        "branch": "codex/dashboard-architecture-context",
+        "origin": "new",
+        "taskId": "D06",
+        "worker": "workspace_panels_owner",
+        "claimId": "981d7c08-a145-4846-b456-496fe0ce5c83",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-context",
+        "createdAt": "2026-10-06T06:26:57.559Z",
+        "updatedAt": "2026-10-06T06:26:57.559Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      "changedCount": 33,
+      "outside": [],
+      "parserErrors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 3,
+        "output": "架构图已补齐排队、知识上下文和受限图工具，独立模块与产品挂载分别标明",
+        "next": "将已审架构快照交主线集成，保留固定源码与运行服务的区别",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "todos": [
+        {
+          "id": "D06-01",
+          "state": "completed",
+          "owner": "workspace_panels_owner",
+          "evidence": "新树115b clean、receipt/live、历史原文和技能读取"
+        },
+        {
+          "id": "D06-02",
+          "state": "completed",
+          "owner": "workspace_panels_owner",
+          "evidence": "47节点来源、49固定源码依据已核，数据已刷新115b"
+        },
+        {
+          "id": "D06-03",
+          "state": "completed",
+          "owner": "workspace_panels_owner",
+          "evidence": "10局部Node、五视图Chrome、双主题390/键盘/减少动画、原失败记录保留"
+        },
+        {
+          "id": "D06-04",
+          "state": "completed",
+          "owner": "workspace_panels_owner",
+          "evidence": "root06:40:07批准修复目标ff5ca7c880910841e8180df7632753c81aea2492；06:36唯一合采确认新source/owner/claim，固定交付Lead，main仍待集成"
+        }
+      ],
+      "checks": {
+        "state": "passed",
+        "target": "ff5ca7c880910841e8180df7632753c81aea2492",
+        "record": "PASSED ff5ca7c880910841e8180df7632753c81aea2492；修复后10局部Node/source；三项browser输入不变复用五图Chrome/双主题390/键盘/减少动画；[验证](../../docs/evidence/d06/context/validation.md)"
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED**",
+        "target": "ff5ca7c880910841e8180df7632753c81aea2492"
+      },
+      "implementation": {
+        "target": "ff5ca7c880910841e8180df7632753c81aea2492",
+        "scopes": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/test/architecture.test.mjs",
+          "docs/evidence/d06/context/source-audit.mjs",
+          "docs/evidence/d06/context/browser-check.mjs",
+          "docs/evidence/d06/context/preview.mjs"
+        ],
+        "errors": []
+      },
+      "proof": {
+        "target": "ff5ca7c880910841e8180df7632753c81aea2492",
+        "head": "e7e37c3cf9441459e03b9463e36d568ffc0bb5ca",
+        "scopes": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/test/architecture.test.mjs",
+          "docs/evidence/d06/context/source-audit.mjs",
+          "docs/evidence/d06/context/browser-check.mjs",
+          "docs/evidence/d06/context/preview.mjs"
+        ],
+        "observedAt": "2026-10-06T06:44:27.298Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/d06/context/README.md",
+          "docs/evidence/d06/context/dashboard-excerpt.json",
+          "docs/evidence/d06/context/quality.md",
+          "docs/evidence/d06/context/review-fix-direct.log",
+          "docs/evidence/d06/context/source-audit-before-review.json",
+          "docs/evidence/d06/context/source-audit.json",
+          "docs/evidence/d06/context/source-binding-before-review.json",
+          "docs/evidence/d06/context/source-binding.json",
+          "docs/evidence/d06/context/validation.md",
+          "plans/d06-architecture-refresh/plan.md",
+          "plans/d06-architecture-refresh/review.md",
+          "plans/d06-architecture-refresh/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "markdownFiles": 7,
+      "localLinks": 44,
+      "brokenLinks": [],
+      "protectedDifference": ""
+    }
+  ]
+}

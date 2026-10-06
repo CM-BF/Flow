@@ -1,0 +1,265 @@
+{
+  "createdAt": "2026-10-06T08:04:16.430412+00:00",
+  "base": "84fdecebbb4939e43710fb17e48884cc49d1d030",
+  "implementationTarget": "b0090edd594d19e1a441ce54683af65f7e5dc26e",
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/assistant-stream/store.ts",
+      "sha256": "861f058b5c2f407c138bfb1c1cddc5e8997e9af93c744f44b96a1ff938163498"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/prefix-hash.test.ts",
+      "sha256": "cdfd2f9ba4d056346ee24e80826fb87aeef20b7b2d85e48039722bf91c0f632e"
+    },
+    {
+      "path": "docs/evidence/chat06p02/check.mjs",
+      "sha256": "882b7fe437c53714b75274ca63c7435242749a968c4aaeca311fb8c95639aeb7"
+    },
+    {
+      "path": "docs/evidence/chat06p02/vitest.config.mjs",
+      "sha256": "bb0fbaafaa1b628c9820af02213b4c856c9f509ef89180a417488ec56f35bfcc"
+    },
+    {
+      "path": "docs/evidence/chat06p02/types.tsconfig.json",
+      "sha256": "056f6e587734034c76e935258cf94f4c62141b99439861fb03e894e0567f2ea9"
+    }
+  ],
+  "readOnlySources": [
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "bc66bfe0da3d1f72f491efaa42cfdd1cfb3c80b5f3242b32d71c35e767591e74"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "9e293af3092aba2e138cd8b36fd763ff29923a60bb8f8166bd5b8e490c8dcb8c"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "b65dc11d3296e060d11243580e1e36217f6502ed260842b370a967777ea1cc43"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "sha256": "7dd7cfa459e88e924f57d4ff506c5acf4d660dd1dd381edb30551b17b7b90beb"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "sha256": "07ebaa42fd2db171c1f09d82adaee48fae82ad48777f4ae16d073ab7c23f8f13"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382"
+    },
+    {
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/stream.test.ts",
+      "sha256": "e3307e4bbd9eedd903086bd2fd3218d33f35d653a37fea94e623aca330492bff"
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/compatibility.test.ts",
+      "sha256": "9ddb5422e9e27cded31fc25a51925a25cbb52015f71ef3afd721a0fb0964ebed"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/chat06p02/prefix-red.log",
+      "bytes": 11772,
+      "sha256": "365cd5fce5da85f728d989610fc07e85c2bd5a36301262ceabb1a3f3437725d5"
+    },
+    {
+      "path": "docs/evidence/chat06p02/prefix-red-result.json",
+      "bytes": 1532,
+      "sha256": "211719f0d5e93c0bd6a82fd90a8929850f6e597893fcc6bcbe9669b3a020a6b6"
+    },
+    {
+      "path": "docs/evidence/chat06p02/prefix-green.log",
+      "bytes": 1062,
+      "sha256": "30637d03fb1eae9dc7007f36e308e30fa8433f5280ae0bd58bd2277ed92ec976"
+    },
+    {
+      "path": "docs/evidence/chat06p02/prefix-green-result.json",
+      "bytes": 1534,
+      "sha256": "b98d90f44d4d64b2fbb2a6fa80da86b6cbdce05b7454a1f18c9671edfcd0f642"
+    },
+    {
+      "path": "docs/evidence/chat06p02/prefix-boundaries.log",
+      "bytes": 3575,
+      "sha256": "5f6b80d3afbf3f7aee207ff30904bbe2ba89ac919ad0b63a798494038a2dd42b"
+    },
+    {
+      "path": "docs/evidence/chat06p02/prefix-boundaries-result.json",
+      "bytes": 1547,
+      "sha256": "a088f406c47d1b6f9ce058045617bf58690982c155f3ee3aff18bf17411fd792"
+    },
+    {
+      "path": "docs/evidence/chat06p02/types-first.log",
+      "bytes": 45068,
+      "sha256": "bf499abd4111fbcc7cc2019d3a0f96757ff2c8ee902012bc2078597a174a1be3"
+    },
+    {
+      "path": "docs/evidence/chat06p02/types-first-result.json",
+      "bytes": 1439,
+      "sha256": "1fb596c6b2868f29f4c5afd7757fe46c1c391efd20b194e649db70a6ddda016d"
+    },
+    {
+      "path": "docs/evidence/chat06p02/prefix-boundaries-fixed.log",
+      "bytes": 1066,
+      "sha256": "49f35f0ea29b9b3a759d90dd805fda018345f80bf3aa44f69bb8c8662e3a6591"
+    },
+    {
+      "path": "docs/evidence/chat06p02/prefix-boundaries-fixed-result.json",
+      "bytes": 1546,
+      "sha256": "ba0a513ecd3874c2e33ecd7c598c5b51cff245636b1e2ff8443263a7987a2b37"
+    },
+    {
+      "path": "docs/evidence/chat06p02/types-fixed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/chat06p02/types-fixed-result.json",
+      "bytes": 1446,
+      "sha256": "a9bc07c03352fa3744f7725b20d601e885893453a96d64db3e06daeb53dc7c30"
+    },
+    {
+      "path": "docs/evidence/chat06p02/consumers.log",
+      "bytes": 466,
+      "sha256": "c08b455693f43939c0d2a34eb647a9f08f23eba9bb97b5313bd1f502bd1ced8a"
+    },
+    {
+      "path": "docs/evidence/chat06p02/consumers-result.json",
+      "bytes": 2353,
+      "sha256": "3a49136cee9ddc67797cbce72a1805eab783920e4475bcc3681d8d096ce513b9"
+    },
+    {
+      "path": "docs/evidence/chat06p02/boundaries-cleanup-repair.json",
+      "bytes": 207,
+      "sha256": "973922f8e67f518e81789df35d3e080ae187eb0a352dca7c19b004d3bbd1b21f"
+    },
+    {
+      "path": "docs/evidence/chat06p02/cleanup-audit.json",
+      "bytes": 307,
+      "sha256": "ed7a5f5d7e43aa3038c95efceafbaabaef264b6ac50330598be891997d52abc5"
+    },
+    {
+      "path": "docs/evidence/chat06p02/prefix-red-test.snapshot.txt",
+      "bytes": 6184,
+      "sha256": "7c4996867ed830301c6d464b1931b14178c9e03cfef45dd3cd57bfa2d8329859"
+    },
+    {
+      "path": "docs/evidence/chat06p02/prefix-boundaries-test.snapshot.txt",
+      "bytes": 12400,
+      "sha256": "4456abb9fcb2f63c024cb7c14452c430a4c62073584d0b1d8e80ba7fbabd5000"
+    }
+  ],
+  "runs": [
+    {
+      "label": "prefix-red",
+      "exitCode": 1,
+      "startedAt": "2026-10-06T07:57:28.060Z",
+      "completedAt": "2026-10-06T07:57:29.937Z",
+      "elapsedMs": 1876.23075,
+      "selection": null,
+      "summary": "Tests  1 failed (1)"
+    },
+    {
+      "label": "prefix-green",
+      "exitCode": 0,
+      "startedAt": "2026-10-06T07:57:39.349Z",
+      "completedAt": "2026-10-06T07:57:42.846Z",
+      "elapsedMs": 3494.96825,
+      "selection": null,
+      "summary": "Tests  1 passed (1)"
+    },
+    {
+      "label": "prefix-boundaries",
+      "exitCode": 1,
+      "startedAt": "2026-10-06T08:00:52.379Z",
+      "completedAt": "2026-10-06T08:00:54.352Z",
+      "elapsedMs": 1972.4230420000001,
+      "selection": null,
+      "summary": "Tests  1 failed | 9 passed (10)"
+    },
+    {
+      "label": "types-first",
+      "exitCode": 2,
+      "startedAt": "2026-10-06T08:00:54.437Z",
+      "completedAt": "2026-10-06T08:00:55.460Z",
+      "elapsedMs": 1021.417916,
+      "selection": null,
+      "summary": null
+    },
+    {
+      "label": "prefix-boundaries-fixed",
+      "exitCode": 0,
+      "startedAt": "2026-10-06T08:01:48.382Z",
+      "completedAt": "2026-10-06T08:01:50.652Z",
+      "elapsedMs": 2269.407541,
+      "selection": null,
+      "summary": "Tests  10 passed (10)"
+    },
+    {
+      "label": "types-fixed",
+      "exitCode": 0,
+      "startedAt": "2026-10-06T08:01:50.749Z",
+      "completedAt": "2026-10-06T08:01:52.038Z",
+      "elapsedMs": 1287.6654999999998,
+      "selection": null,
+      "summary": null
+    },
+    {
+      "label": "consumers",
+      "exitCode": 0,
+      "startedAt": "2026-10-06T08:02:08.792Z",
+      "completedAt": "2026-10-06T08:02:12.598Z",
+      "elapsedMs": 3804.916,
+      "selection": "makes durable root text|rejects offset/revision/hash/session|settles no-tool drafts|does not invent a replacement mapping|filters legacy task and event reads|advances stream-only event pages|reconnects SSE after a hidden-only page|preserves forward and backward workspace cursors",
+      "summary": "Tests  8 passed | 19 skipped (27)"
+    }
+  ],
+  "distinctPassingTests": 18,
+  "tests": {
+    "dedicated": 10,
+    "directConsumers": 8,
+    "consumerUnselected": 19,
+    "consumerDiscovered": 27,
+    "noEmitExitCode": 0
+  },
+  "resources": {
+    "dedicatedDatabaseRuns": 4,
+    "dedicatedDatabasesRemaining": [],
+    "failedCleanupRepaired": "boundaries-cleanup-repair.json",
+    "finalAudit": "cleanup-audit.json",
+    "consumerDatabases": 2,
+    "consumerCleanupEvidence": "Both existing fixtures normally DROP in afterAll; successful consumer suites. Their DB names were not logged or independently queried.",
+    "providerCalls": 0,
+    "cloudCalls": 0,
+    "realModelCalls": 0
+  },
+  "metrics": {
+    "oldPrefixUtf8Bytes": 8192,
+    "currentPatchUtf8Bytes": 3,
+    "oldDecodedReturnValueUtf8Bytes": 8192,
+    "newDecodedReturnValueUtf8Bytes": 64,
+    "oldDecodedRowsJsonUtf8Bytes": 9744,
+    "newDecodedRowsJsonUtf8Bytes": 79,
+    "aggregateQueriesPerObservedPatch": 1,
+    "newSelectParameterUtf8Bytes": 3,
+    "emptyPrefixOldReturnUtf8Bytes": 0,
+    "newDigestUtf8Bytes": 64
+  },
+  "limitations": [
+    "Decoded values/JSON, not PostgreSQL wire/WAL or end-to-end traffic",
+    "PG still aggregates/hashes full prefix; no CPU, latency, throughput or SLO benefit measured",
+    "Existing INSERT/JSON/other queries unchanged; new SELECT also sends current patch as a text parameter",
+    "Functional tests only; P01 original matrix not rerun",
+    "First boundaries9/10 plus cleanup failure and first noEmit failure preserved, not counted as full passes",
+    "Historical test snapshots reconstructed after final run and verified byte-for-byte against hashes in frozen earlier result records"
+  ]
+}

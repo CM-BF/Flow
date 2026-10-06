@@ -1,0 +1,43 @@
+{
+  "implementation": "736ef0b9f5647faa4c8d8e6c4755eaf95697b02d",
+  "previousImplementation": "34cd2b840b06b22f1c7087e5e1e84ef14eb335f8",
+  "checkedAt": "2026-10-06T07:54:19Z",
+  "files": [
+    {
+      "path": "apps/web/src/conversation-context/selection.ts",
+      "sha256": "6baaf6a13ab95360b628afc70986b7b48599fddc7dd3419c97dfe80c82870543",
+      "unchangedFromBrowserTarget": false
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "794fa1d0b553c323fd097f1fc1549d70b74d9a58b474585861b3caeed7acfea7",
+      "unchangedFromBrowserTarget": false
+    },
+    {
+      "path": "apps/web/src/conversation-context/ContextPicker.tsx",
+      "sha256": "058f8b75af5f31b3852ba733ff09ac05c09b1504d1df3488bf581659090473ee",
+      "unchangedFromBrowserTarget": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/context-picker.css",
+      "sha256": "c81b7b60b5434d491b0a8ac3cad283682050ca56c27ba72055154d8df237bedf",
+      "unchangedFromBrowserTarget": true
+    },
+    {
+      "path": "apps/web/test/conversation-context.test.ts",
+      "sha256": "e43064dbf855b0f609d2992fe19fed17409506aff1a04cc2f1db1cfdfbce0e07",
+      "unchangedFromBrowserTarget": false
+    },
+    {
+      "path": "apps/web/test/conversation-context.fixture.tsx",
+      "sha256": "09b935d98bb545d889068923d55a365c72be238a5e5a11ddae0ca62f1df50761",
+      "unchangedFromBrowserTarget": true
+    },
+    {
+      "path": "apps/web/test/conversation-context.browser.ts",
+      "sha256": "9ed0ed62fac6630c641f8f718405905a65b4386a807f1dcef7e957ecb2112021",
+      "unchangedFromBrowserTarget": true
+    }
+  ],
+  "checks": "18 direct tests + Web typecheck; 9 browser groups/screenshots remain bound to previous implementation, not rerun"
+}

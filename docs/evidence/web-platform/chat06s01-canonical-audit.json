@@ -1,0 +1,102 @@
+{
+  "observedAt": "2026-10-06T07:11:42.642Z",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream",
+  "branch": "codex/web-conversation-stream",
+  "base": "fa9a8288341d4f2bd8160e03fe9173dafa2de1a6",
+  "head": "ed187d6ef99e0d4ba1479ebce42f27714ff219c7",
+  "dirty": "",
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream/plans/wpf-chat06-stream/status.md",
+  "scope": [
+    "apps/web/src/conversation-stream/messages.ts",
+    "apps/web/src/conversation-stream/patches.ts",
+    "apps/web/src/conversation-stream/projection.ts",
+    "apps/web/test/conversation-stream-projection.test.ts",
+    "apps/web/test/conversation-stream.test.ts",
+    "docs/evidence/wpf-chat06-stream",
+    "plans/wpf-chat06-stream"
+  ],
+  "changedPaths": [
+    "docs/evidence/wpf-chat06-stream/claim-observation.json",
+    "docs/evidence/wpf-chat06-stream/input-provenance.json",
+    "docs/evidence/wpf-chat06-stream/interface.md",
+    "docs/evidence/wpf-chat06-stream/quality.md",
+    "docs/evidence/wpf-chat06-stream/take-receipt.json",
+    "plans/wpf-chat06-stream/plan.md",
+    "plans/wpf-chat06-stream/review.md",
+    "plans/wpf-chat06-stream/status.md"
+  ],
+  "outside": [],
+  "claimId": "d94ae4bb-0ac1-4a38-b983-e0e1e482b398",
+  "claimVersion": 1,
+  "parserErrors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "已确定逐步读取回答的独立模块接口，开始实现正文完整性校验",
+    "next": "可独立验证的增量正文模块，之后接入聊天",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "WPF-CHAT06S01-01",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[输入](../../docs/evidence/wpf-chat06-stream/input-provenance.json)、[接口](../../docs/evidence/wpf-chat06-stream/interface.md)、[质量](../../docs/evidence/wpf-chat06-stream/quality.md)"
+    },
+    {
+      "id": "WPF-CHAT06S01-02",
+      "state": "in-progress",
+      "owner": "workspace_panels_owner",
+      "evidence": "累计器设计已核固定domain，待实现"
+    },
+    {
+      "id": "WPF-CHAT06S01-03",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "未开始"
+    },
+    {
+      "id": "WPF-CHAT06S01-04",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "review未执行，交manager登记唯一source，等待聚合展示"
+    }
+  ],
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": null
+  },
+  "implementation": {
+    "target": null,
+    "scopes": [
+      "apps/web/src/conversation-stream/patches.ts",
+      "apps/web/src/conversation-stream/projection.ts",
+      "apps/web/src/conversation-stream/messages.ts",
+      "apps/web/test/conversation-stream.test.ts",
+      "apps/web/test/conversation-stream-projection.test.ts"
+    ],
+    "errors": [
+      "实现目标需完整 SHA"
+    ]
+  },
+  "method": "Read-only Git/status parser; implementation target UNKNOWN is expected before fixed candidate. No API or product test."
+}

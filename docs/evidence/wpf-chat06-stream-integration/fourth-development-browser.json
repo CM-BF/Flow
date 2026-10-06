@@ -1,0 +1,79 @@
+{
+  "startedSource": "0a4976240706b20dd6a4b457bd26e5c09f762f65",
+  "sourceFiles": {
+    "apps/web/src/App.tsx": "56f6ddd07f6c546de6644189653abc1de828f4e970feda29b3720747053c2e8d",
+    "apps/web/src/conversation-stream/host.ts": "b827c73911e3fa69fcc94bde838b31e7e3dafdd9c719735dc6c38639e7f40e38",
+    "apps/web/src/conversations/ConversationThread.tsx": "fe0ae92a6c1d1b3ed55ce39ad59346459d9c67f4816dac70669a6da789d8994c",
+    "apps/web/src/plugin-integration/react.tsx": "69486ceac7f6215cb26c482a2240717e6b50c261c710996362b60db31172484a",
+    "apps/web/src/plugin-integration/session.ts": "7574aa1a448e67f1e4eca2bfb8964969832557a6015b69b28ea74d8c9e381f3e",
+    "apps/web/src/plugins/types.ts": "2dd8d0d6b9d3108d6546d582e66e0697d25e738d82c3fe5f43ff09ebd03c5e0f",
+    "apps/web/src/plugins/validation.ts": "51d1e9d5abffbd2add15812f3272f606f3d474a668209f0d374d5b1b2c37d5de",
+    "apps/web/test/conversation-stream-integration.browser.ts": "a02ed4deb870af06f8af7f8d809895d233f7f9f116e934327599b80178aae3db",
+    "apps/web/test/conversation-stream-integration.fixture.ts": "550c29f29cfdacb57bcfe49c61e0bc9ff6f8fe07f67888f356a6a48bcd9936df",
+    "apps/web/test/conversation-stream-integration.test.ts": "2ec8670f2722d65c562e341da50d4d187259da24633582b5da60f5def859a7e4",
+    "apps/web/test/plugin-host.test.ts": "26f73c5dc218026965831094a3c555c1e775859c4f99619c9a67ca50c0b36e43"
+  },
+  "at": "2026-10-06T08:01:14.302Z",
+  "production": false,
+  "checks": [
+    "official Thread shows an incremental draft, typed final settles once while task remains running"
+  ],
+  "errors": [],
+  "failure": "Error: expect(locator).toBeVisible() failed\n\nLocator: getByText('A: Thinking through your question', { exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeVisible\" getByText('A: Thinking through your question', { exact: true }) with timeout 5000ms\n  - waiting for getByText('A: Thinking through your question', { exact: true })\n",
+  "streamReads": [
+    [
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "patches",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "patches",
+        "after": 3
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "patches",
+        "after": 6
+      },
+      {
+        "taskId": "c29e05cd-9a67-4703-ba32-5f90336b3501-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "c29e05cd-9a67-4703-ba32-5f90336b3501-task-1",
+        "kind": "patches",
+        "after": 0
+      },
+      {
+        "taskId": "c29e05cd-9a67-4703-ba32-5f90336b3501-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "c29e05cd-9a67-4703-ba32-5f90336b3501-task-1",
+        "kind": "patches",
+        "after": 6
+      }
+    ],
+    []
+  ],
+  "scope": "Actual Flow App, HTTP fixture only; no model/DB/real credentials"
+}

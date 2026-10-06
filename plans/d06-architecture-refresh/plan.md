@@ -1,30 +1,14 @@
-# D06 固定基线架构刷新
+# D06 架构固定快照更新
 
-状态：completed（分支交付；main待集成）。更新：2026-10-06T06:40:59Z。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
+2026-10-06；in-progress。本轮唯一owner d01_owner / gpt-6-astra ultra，worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-stream`，branch `codex/dashboard-architecture-stream`。沿原D06任务与ID更新，旧三件套见[原样历史](../../docs/evidence/d06/stream/history.md)。
 
-目标：沿既有五视图，将架构源码事实刷新到固定 main `115b0dbdfa02db5483f9e9699852682ce699633c`，清楚区分代码已集成、仅独立模块、后继计划与真实服务。本轮没有产品运行改动。
+把既有五图更新到已发布main `9c6fa9b100f04916f43b04280f05f497b28eeb0f` 的固定源码事实。只改architecture-data.js、直接architecture.test.mjs及本plan/evidence；renderer/CSS不动。每项能力与source都由git show固定SHA核验，目录存在不是运行或真实provider证明。完整源码snapshot与个人b54 accepting v6运行回执分开。
 
-## 范围和已确认方案
+本轮补齐CHAT05 typed工具/思考按需正文，CHAT06持久正文patch/settlement和模块尚未App接线，CHAT07/08持久指令及默认关闭factory，022–024迁移、X05包worker。浏览器→中心→Runner/SDK/PG连线沿现架构，持久受理不等于实际生效，worker不等第三方沙箱。固定基线未含O09/CHAT09/CHAT06I App实现，后继保持planned。保留cancel/uncertain/verification和PG content/blob未实现的既有界限。
 
-新树 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-context`，branch `codex/dashboard-architecture-context`，base 115b。[正式领取](../../docs/evidence/d06/context/take-receipt.json) claim981d7c08-a145-4846-b456-496fe0ce5c83 v1，06:26:57.559Z committed，06:27:16.818Z owner核live active。旧e5b2 v2已释放且旧owner停写；唯一source迁移由Lead完成，本树不写registry。
+- [x] D06-01：独立树、精确claim、唯一source迁移与历史保存。
+- [x] D06-02：固定源码事实审阅与五图数据刷新。
+- [x] D06-03：直接Node/来源审计、五图浅深390/键盘与局部实际目视。
+- [ ] D06-04：固定target独立review、Lead主线接收与停写释放。
 
-四literal scopes：`apps/execution-dashboard/public/architecture-data.js`、`apps/execution-dashboard/test/architecture.test.mjs`、`plans/d06-architecture-refresh`、`docs/evidence/d06`。renderer architecture.js/CSS/index/server/shared/根依赖不改。证据下新可执行检查脚本属于实现target和scope。
-
-固定源码核Queue Web真实控件、K01/K02、O06/O07、X04；X04只包校验落盘，不能写成npm安装/启用。renderer747已含模块但App未接，CHAT05/06不在基线则planned。当前图不是实时运行拓扑；个人服务历史fb906与本115b快照分别描述，不变更任何服务。使用同一baseline生成source链接，planned节点也必须有115b可验证来源。
-
-## TODO
-
-- [x] D06-01：新树、正式claim、技能、旧canonical原样归档与唯一source迁移交接。
-- [x] D06-02：固定115b源码核验，更新五视图数据与精确来源。
-- [x] D06-03：局部Node/source检查与动态预览，双主题390px、键盘与减少动画，记录clean-code。
-- [x] D06-04：固定实现独立review、唯一聚合与Lead集成交接；main/部署分别记录。
-
-## 验证与历史
-
-仅现有图检查和新事实直接校验；无模型/产品DB/全库/真实服务重启。架构影响为固定策展数据，没有新增运行Interface。当前root独立review APPROVED ff5ca7c880910841e8180df7632753c81aea2492，不继承历史approval。
-
-[旧eb轮索引](../../docs/evidence/d06/context/history.md)保留原三件套txt及历史source路径语义；其5ec目标曾批准并已含本base，不代表本轮批准。原D06-01..04稳定ID沿用。source登记由manager/Lead单点迁移。
-
-[status](status.md) · [review](review.md) · [本轮证据](../../docs/evidence/d06/context/README.md)
-
-固定实现 `ff5ca7c880910841e8180df7632753c81aea2492` 已交root独审；作者10局部检查与五图browser通过，图/browser/preview三文件hash不变复用原browser；两检查脚本复审修复后重跑Node/source，[验证](../../docs/evidence/d06/context/validation.md)。D06-04仍待修复独立复审与Lead交付；06:36唯一聚合已确认，main尚未集成，未提前勾选。
+[状态](status.md) · [审查](review.md) · [领取](../../docs/evidence/d06/stream/take-receipt.json) · [方法/质量](../../docs/evidence/d06/stream/quality.md)。registry迁唯一source由Lead处理，本owner不写registry/4320/其他任务。动态独立preview无产品DB/模型，不停旧预览。

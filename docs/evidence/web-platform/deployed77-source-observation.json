@@ -1,0 +1,2269 @@
+{
+  "path": "/tmp/flow-wpf-deployed77-snapshot.json",
+  "sha256": "68b34bf76dcd26c729fcd939fd8f22ecfd74627df58d5f00eda5988e2f93f033",
+  "receivedAt": "2026-10-06T06:36:39.415208+00:00",
+  "elapsedSeconds": 4.481345000094734,
+  "generatedAt": "2026-10-06T06:36:34.965Z",
+  "sourceCount": 77,
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T06:36:35.856Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "unregisteredAssignments": [],
+  "assignmentState": "available",
+  "assignmentObservedAt": "2026-10-06T06:36:34.965Z",
+  "activeWriterClaimCount": 21,
+  "literalScopeOverlaps": [],
+  "tasks": [
+    {
+      "id": "S01",
+      "title": "实际执行容量验证",
+      "role": "技术验证",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+      "branch": "codex/runner-capacity-probe",
+      "planDir": "plans/s01-runner-capacity",
+      "evidenceDir": "docs/evidence/s01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:32:49.909Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/plans/s01-runner-capacity/status.md",
+        "syncedAt": "2026-10-06T06:36:34.965Z",
+        "stale": false,
+        "ageHours": 0.07637916666666666
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/runner-capacity-probe",
+        "head": "215398a289747175c5ae46231ca8d23bae2c5301",
+        "dirty": true,
+        "changedFiles": 7,
+        "observedAt": "2026-10-06T06:36:35.856Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 4,
+          "output": "实验方法已完成独立核对，正在准备独立进程与事件校验入口",
+          "next": "用四个本地任务检查运行与清理，再预约正式容量窗口",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "a553f3f71db29243b698f4bb953408f28a1529b9",
+          "scopes": [
+            "experiments/runner-capacity",
+            "docs/evidence/s01/research.md"
+          ],
+          "errors": []
+        },
+        "taskId": "S01",
+        "owner": "mika / gpt-6-astra",
+        "branch": "codex/runner-capacity-probe",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T06:32:00.000Z",
+        "updatedRecord": "2026-10-06 06:32 UTC；main基线核验06:23 UTC",
+        "todos": [
+          {
+            "id": "S01-01",
+            "state": "completed",
+            "owner": "mika",
+            "evidence": "[research](../../docs/evidence/s01/research.md)：权威来源/head/dirty核验及差距"
+          },
+          {
+            "id": "S01-02",
+            "state": "completed",
+            "owner": "mika",
+            "evidence": "[合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json)"
+          },
+          {
+            "id": "S01-03",
+            "state": "in-progress",
+            "owner": "mika",
+            "evidence": "子进程与4任务smoke入口草稿；首typecheck发现HarnessContext不含task.id，改从真实claim响应记录；原输出保留，尚未运行"
+          },
+          {
+            "id": "S01-04",
+            "state": "pending",
+            "owner": "mika / Lead",
+            "evidence": "正式计时待协调Web共享主机窗口"
+          },
+          {
+            "id": "S01-05",
+            "state": "in-progress",
+            "owner": "Lead / 独立reviewer",
+            "evidence": "Lead与Goal Owner合同方法核对无阻断；执行实现/结果未审，未集成main"
+          },
+          {
+            "id": "S01-06",
+            "state": "pending",
+            "owner": "后继owner",
+            "evidence": "真实provider与更大并发未包含"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "base 115b0dbdfa02db5483f9e9699852682ce699633c；合同 a553f3f71db29243b698f4bb953408f28a1529b9；metadata后继单列",
+        "declaredDirty": "合同已固定；新增实验入口源码未提交，未运行smoke",
+        "checks": {
+          "state": "passed",
+          "target": "a553f3f71db29243b698f4bb953408f28a1529b9",
+          "record": "PASSED a553f3f71db29243b698f4bb953408f28a1529b9：15本地链接/6项TODO映射/64任务预算与JSON核验、diffcheck；未跑产品/容量测试"
+        },
+        "reviewRecord": "[review.md](review.md)，合同方法已独立核对；执行代码/结果未审",
+        "mainRecord": "未集成；最近核验main115b0dbdfa02db5483f9e9699852682ce699633c",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "unknown",
+        "record": "[review.md](review.md)，合同方法已独立核对；执行代码/结果未审",
+        "target": null
+      },
+      "implementationProof": {
+        "target": "a553f3f71db29243b698f4bb953408f28a1529b9",
+        "head": "215398a289747175c5ae46231ca8d23bae2c5301",
+        "scopes": [
+          "experiments/runner-capacity",
+          "docs/evidence/s01/research.md"
+        ],
+        "observedAt": "2026-10-06T06:36:35.889Z",
+        "state": "changed",
+        "implementationChanges": [
+          "experiments/runner-capacity/child.ts",
+          "experiments/runner-capacity/processes.ts",
+          "experiments/runner-capacity/smoke.ts",
+          "experiments/runner-capacity/tsconfig.json"
+        ],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "plans/s01-runner-capacity/review.md",
+          "plans/s01-runner-capacity/status.md",
+          "docs/evidence/s01/install.txt",
+          "docs/evidence/s01/smoke-typecheck-first.txt"
+        ],
+        "reason": "声明实现范围已有变化"
+      },
+      "documents": [
+        {
+          "path": "plans/s01-runner-capacity/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/s01-runner-capacity/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/s01-runner-capacity/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/s01/research.md",
+          "title": "research",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/s01/claim-receipt.json",
+          "title": "回执",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 2,
+        "total": 6
+      },
+      "main": {
+        "record": "未集成；最近核验main115b0dbdfa02db5483f9e9699852682ce699633c",
+        "recordedHead": "115b0dbdfa02db5483f9e9699852682ce699633c",
+        "target": "a553f3f71db29243b698f4bb953408f28a1529b9",
+        "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "scopes": [
+          "experiments/runner-capacity",
+          "docs/evidence/s01/research.md"
+        ],
+        "observedAt": "2026-10-06T06:36:35.856Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "unknown",
+        "reason": "无法以祖先关系证明，且 owner 实现范围存在变化或未知"
+      },
+      "assignments": [
+        {
+          "lead": "mika",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "docs/evidence/s01",
+            "experiments/runner-capacity",
+            "plans/s01-runner-capacity"
+          ],
+          "state": "active",
+          "branch": "codex/runner-capacity-probe",
+          "origin": "new",
+          "taskId": "S01",
+          "worker": "mika",
+          "claimId": "8e4660a6-625f-4ada-8558-20c19b9e23e0",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+          "createdAt": "2026-10-06T06:22:33.774Z",
+          "updatedAt": "2026-10-06T06:22:33.774Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    },
+    {
+      "id": "WPF-RENDERERI01",
+      "title": "聊天可插拔详情接入",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration",
+      "branch": "codex/web-data-renderer-integration",
+      "planDir": "plans/wpf-renderer-i01-integration",
+      "evidenceDir": "docs/evidence/wpf-renderer-i01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:33:05.657Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/plans/wpf-renderer-i01-integration/status.md",
+        "syncedAt": "2026-10-06T06:36:34.965Z",
+        "stale": false,
+        "ageHours": 0.0597125
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-data-renderer-integration",
+        "head": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+        "dirty": true,
+        "changedFiles": 21,
+        "observedAt": "2026-10-06T06:36:35.856Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "聊天中已可按需展开完整回复，正在核验切换与发送边界",
+          "next": "完成隐藏恢复、连接切换与排队发送的检查",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/conversations/ConversationThread.tsx",
+            "apps/web/src/plugin-integration/session.ts",
+            "apps/web/src/plugin-integration/react.tsx",
+            "apps/web/src/plugin-integration/data-renderers.ts",
+            "apps/web/test/data-renderer-integration.test.ts",
+            "apps/web/test/data-renderer-integration.browser.ts"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "WPF-RENDERERI01",
+        "owner": "w01_owner；派发 gpt-6-astra / ultra，运行时无额外独立型号证明",
+        "branch": "codex/web-data-renderer-integration",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T06:33:00.000Z",
+        "updatedRecord": "2026-10-06 06:33 UTC",
+        "todos": [
+          {
+            "id": "RENDERERI01-01",
+            "state": "in-progress",
+            "owner": "w01_owner",
+            "evidence": "显式可见性与窄身份绑定实施"
+          },
+          {
+            "id": "RENDERERI01-02",
+            "state": "pending",
+            "owner": "w01_owner",
+            "evidence": "实际App HTTPfixture与直接消费者验证"
+          },
+          {
+            "id": "RENDERERI01-03",
+            "state": "pending",
+            "owner": "w01_owner",
+            "evidence": "固定目标后独立审查，Lead集成"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "115b0dbdfa02db5483f9e9699852682ce699633c；当前HEAD ad6c32049241e779b897ea78afd87355967323fe，未提交接线候选",
+        "declaredDirty": "当前七实现/测试与自有证据有未提交修改；共享及根lock无改动",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN；未固定实现：首次typecheck和31模块/直接依赖tests通过，browser进行中，不能把未提交结果当固定交付"
+        },
+        "reviewRecord": "NOT_STARTED",
+        "mainRecord": "本接线未集成；115b仅包含已审独立模块",
+        "next": "实际App预览 http://127.0.0.1:57108 （HTTPfixture/0模型），31局部检查与首批六浏览器场景通过。root预审的same-visible换binding问题已独立consumer红测确认，正在修复与复跑。固定测试后提交review目标。唯一来源为本树，交管理登记；尚未声称dashboard已上线。\n架构影响：既有受信data模块进入App provider，每连接一个registry/P01 host；每pane独立display lease。后继架构图更新由Lead协调固定目标，活动footer不属本片。\n[计划](plan.md) · [review](review.md) · [质量](../../docs/evidence/wpf-renderer-i01/quality.md)",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED**",
+        "target": null
+      },
+      "implementationProof": {
+        "target": null,
+        "head": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/data-renderers.ts",
+          "apps/web/test/data-renderer-integration.test.ts",
+          "apps/web/test/data-renderer-integration.browser.ts"
+        ],
+        "observedAt": "2026-10-06T06:36:35.893Z",
+        "state": "unknown",
+        "reason": "实现目标需完整 SHA"
+      },
+      "documents": [
+        {
+          "path": "plans/wpf-renderer-i01-integration/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-renderer-i01-integration/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-renderer-i01-integration/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/wpf-renderer-i01/take-receipt.json",
+          "title": "原领取",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-renderer-i01/quality.md",
+          "title": "质量",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 0,
+        "total": 3
+      },
+      "main": {
+        "record": "本接线未集成；115b仅包含已审独立模块",
+        "recordedHead": null,
+        "target": null,
+        "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/data-renderers.ts",
+          "apps/web/test/data-renderer-integration.test.ts",
+          "apps/web/test/data-renderer-integration.browser.ts"
+        ],
+        "observedAt": "2026-10-06T06:36:35.856Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "unknown",
+        "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+      },
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/conversations/ConversationThread.tsx",
+            "apps/web/src/plugin-integration/data-renderers.ts",
+            "apps/web/src/plugin-integration/react.tsx",
+            "apps/web/src/plugin-integration/session.ts",
+            "apps/web/test/data-renderer-integration.browser.ts",
+            "apps/web/test/data-renderer-integration.test.ts",
+            "docs/evidence/wpf-renderer-i01",
+            "plans/wpf-renderer-i01-integration"
+          ],
+          "state": "active",
+          "branch": "codex/web-data-renderer-integration",
+          "origin": "new",
+          "taskId": "WPF-RENDERERI01",
+          "worker": "w01_owner",
+          "claimId": "ff62150f-30ec-4ee5-9ea5-19e589125cfc",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration",
+          "createdAt": "2026-10-06T06:25:30.088Z",
+          "updatedAt": "2026-10-06T06:25:30.088Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    },
+    {
+      "id": "WPF-001",
+      "title": "Web 平台持续执行",
+      "role": "工程协作",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "branch": "codex/web-platform-management",
+      "planDir": "plans/web-platform",
+      "evidenceDir": "docs/evidence/web-platform",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:30:48.367Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/status.md",
+        "syncedAt": "2026-10-06T06:36:34.965Z",
+        "stale": false,
+        "ageHours": 0.12637916666666665
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-platform-management",
+        "head": "83a37cd14de6b55d05a60a6d2e9d5f602b7173d6",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T06:36:35.856Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "三项聊天模块已集成；正在接入可插拔详情并刷新架构图",
+          "next": "将按需详情接入聊天，再接入执行活动展示",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "c075bb5c00ac2f27d54dd264982be30261a9dc51",
+          "scopes": [
+            "plans/web-platform/plan.md",
+            "docs/evidence/web-platform/integration-checklist.md",
+            "docs/evidence/web-platform/research.md"
+          ],
+          "errors": []
+        },
+        "taskId": "WPF-001",
+        "owner": "d01_owner（执行管理者）/ gpt-6-astra ultra",
+        "branch": "codex/web-platform-management",
+        "branchState": "in-progress；按轮验收，持续目标未宣称完成",
+        "updatedAt": "2026-10-06T06:29:00.000Z",
+        "updatedRecord": "2026-10-06 06:29 UTC / 两新片已正式开工与登记请求；三模块已集成释放",
+        "todos": [
+          {
+            "id": "WPF-001-01",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "U00～U12与WPF-REQ-01～45落[plan](plan.md)，REQ44后继pause/continue变更保持来源"
+          },
+          {
+            "id": "WPF-001-02",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "七子计划三件套齐；六准备目录已转独立canonical stub；新增实现各自独立平级source"
+          },
+          {
+            "id": "WPF-001-03",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "W01 cb4通过；SSE由M02 d47修复/复验，实证main已含"
+          },
+          {
+            "id": "WPF-001-04",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "管理源和后继来源已实际聚合；05:31:45.221Z65源核QUEUE01新卡与D06唯一迁移/claim匹配"
+          },
+          {
+            "id": "WPF-001-05",
+            "state": "in-progress",
+            "owner": "d01_owner",
+            "evidence": "P01/I01可信host与X02 registry已审集成；X03I01消费只读管理模块，完整npm生命周期/第三方隔离仍开放"
+          },
+          {
+            "id": "WPF-001-06",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "PERF01基线3d47和PERF02窗口a87限定批准、后者main已含；d36 v2 released，未来优化另凭证据领取"
+          },
+          {
+            "id": "WPF-001-07",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "M02 d47已审集成，当前v3范围按正式转交保留"
+          },
+          {
+            "id": "WPF-001-08",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "D04 PG原子领取/实际dashboard详情已验；最新CHATv5→QUEUE01v1与旧D06v2释放→新e5b2v1均有原始receipt"
+          },
+          {
+            "id": "WPF-001-09",
+            "state": "in-progress",
+            "owner": "d01_owner",
+            "evidence": "CHAT与queue已审集成；GO/Lead真实两query结果CLOSED 2/2已收到，沿固定证据不重测；tool/thinking、context、steer、voice后继仍开放"
+          },
+          {
+            "id": "WPF-001-10",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计"
+          },
+          {
+            "id": "WPF-001-11",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "PROFILE独立模块4f198576获rootAPPROVED、finale730clean，管理范围/6md20links/4TODO通过；App接线仍另片"
+          },
+          {
+            "id": "WPF-001-12",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "QUEUE00 5acc已审，d10b4b0记录main698实现相同、claim13185v2 released"
+          },
+          {
+            "id": "WPF-001-13",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "PROFILEI01固定2e4c获审/finalc1dc clean；36paths/10scope、6md37links4TODO与原样60源聚合通过；主线14c61已含，最后07cff记录main/7f1v2 released"
+          },
+          {
+            "id": "WPF-001-14",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "DPERF5cd限定APPROVED/final4d7425 clean；5md15links3TODO/范围0越界，4新检查与旧关联失败分开；main6b4已含、08bd记录后bb7efv2 released"
+          },
+          {
+            "id": "WPF-001-15",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "PROFILEUX55b获root限定APPROVED，60d8交付与5md27links3TODO通过，ef869记录main14c61；d113v2已release"
+          },
+          {
+            "id": "WPF-001-16",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "QUEUE01新14c61树已核clean，CHATv5移出官方Thread，b4ea85d0v1正式13scope受领；首canonical已注册；固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432croot05:40:36 APPROVED、最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean，41paths/13scope、6md36links、原样聚合和11源码hash核验通过；main3d4985已含309且11paths零差，跨reload原key后继F01仍未完成"
+          },
+          {
+            "id": "WPF-001-17",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "[RENDERER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/plans/wpf-renderer01-data-renderers/status.md)固定747cbe616408dc3e44ab3587216c5753e6de3994、final7ff614f6aa210aae5a08119f1f16f2ef08b2298a clean；23paths/8scope、6md28links/4TODO与六source hash已核；作者14tests/typecheck/10browser，root05:58:49Z独立14+局部CUA通过并APPROVED，最终metadata approved/目标匹配已核，06:14单次聚合通过（7ff/两proof不变）；main115b已含、六paths零差，最后4ddcac4f7d0c3c81a758259270bab02596e8ea99 clean，879 v2于06:24:55.018Z released；App另片"
+          },
+          {
+            "id": "WPF-001-18",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "[K02C01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility/plans/wpf-k02-compatibility/status.md)固定7633937c322090bbd6d526f378df464f2a7436ed、final394e2ae35ab9f526c339705b59f6a2bf8a5a6efd clean；受控输入e9a0259与自有八scope分开；25paths/6md25links/4TODO/六hash已核，作者102direct/typecheck，root05:58:18Z独立102并APPROVED、最终metadata approved/目标匹配已核，06:14单次聚合通过（样本bec72/两proof不变）；main115b已含、六path相同，最后2bce444ad910b1f7fdb549ab933b2d145c730a83 clean，5ab v2于06:24:18.370Z released；无context UI"
+          },
+          {
+            "id": "WPF-001-19",
+            "state": "completed",
+            "owner": "d01_owner",
+            "evidence": "WPF-ACTIVITY01 / web-conversation-activity / base3d4985；51f962ee-7e6f-4806-a9f9-df3838dc27f5 v1于06:04:36.078Z committed，八新scope，固定61b9349af390c137cc4cfeabd38bad058ec69cb5，final b024cfc2c3cd150e0f6db02df5dfe3f64159b1f8 clean；29paths/8scope、7md29links/四TODO、dev/prod各7旅程六hash独立match；root06:17:33Z独立22+局部CUA并APPROVED，最终本地parser approved/checks passed target61b、proof unchanged；main acfd已含且六path相同，最后8cc13eaa9c2aa29f77f841637d9891b67fd1264f clean，51f v2于06:28:50.477Z released；无App/shared写入"
+          },
+          {
+            "id": "WPF-001-20",
+            "state": "in-progress",
+            "owner": "d01_owner",
+            "evidence": "WPF-RENDERERI01 / w01_owner / web-data-renderer-integration / 固定115b；ff62150f v1九scope06:25:30.088Z committed，CHAT v6已移出session；首canonical ad6c32049241e779b897ea78afd87355967323fe，actual parser0errors/human完整/3TODO，implementation开始，target UNKNOWN/review NOT_STARTED"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "`d444608ab6c796c731e44e51a892868bf39bec2a` / `89f9d86f55d8477669316418a8be212f13db1c4a`（本次管理停点前实核）",
+        "declaredDirty": "本次仅管理范围的main/release、新take/source审计与研究记录pending",
+        "checks": {
+          "state": "passed",
+          "target": "c075bb5c00ac2f27d54dd264982be30261a9dc51",
+          "record": "PASSED c075bb5c00ac2f27d54dd264982be30261a9dc51；历史管理文档独审目标；后续增补只作本地文档/事实一致性检查，不继承产品或全量review"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED仅管理文档target c075bb5；后续增补未自动获审",
+        "mainRecord": "本管理后续文档未按新target审定；06:23独立Git核main115b含K02/renderer，06:27独立核acfd含ACTIVITY，已审scope均相同；历史06:14:43.956Z实际dashboard读main823fea9bd8bc868243398d58725b4076528a7ffc clean，K02/renderer均not-contained；此前MainLead确认3d4985已push/clean且管理独核；含QUEUE309/D065ec且11/5paths相同，既有PROFILEI01/UX/DPERF均已集成。GO/SVC确认05:40:49常驻61227/61228 center/runner已受控更新为fb906cb、ready/v3 accepting、0任务/0query；此前75a为历史，本队未登录或服务验证，不据main推自动部署",
+        "next": "管理者只写本树两目录；本次fresh CLI确认claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active，时间见本轮候选审计。root持续只读独审；workspace_panels_owner的K02薄兼容已集成115b并全范围停写释放；其执行活动模块已集成acfd并全范围释放；w01_owner的renderer模块已集成115b并释放，已在独立rendererI九scope新tree开工；panels只读活动接线已收，已独立受领D06固定115b图刷新。QUEUE/D06已在main3d4985且原owner全部停写、正式release v2；不恢复旧树写入。两新feature范围不重叠，本队最多4、主线4、Mika2总上限10，claim数不代表agent数。\n| 当前工作 | 已核事实与边界 |\n| WPF-X03I01 | web-plugin-management-integration / codex/web-plugin-management-integration，base4e，claim a1044bb0-46ed-4cc4-a39a-c3f27a67cea4 v2 released，04:46:47.517Z；原v1于04:28:04.867Z committed；7scope限App/react/CSS、2test与plan/evidence，不改Mika模块。实现84acdcaaa9687a4ca75ebdb40a6efc7e5539029a获rootAPPROVED，原final4b7e0f，集成metadata05b92d30c953413ab66d8b69447c9b44c9121a6a clean，main80e祖先/5实现paths相同，全部七scope已停写释放；作者04:37:33实采checks/review84、claim匹配/proof unchanged/main未含（采样HEAD692，后续仅metadata），管理未重复采样 |\n| 已交付PROFILE模块 | 4f限定APPROVED；7f10889d9cb0ce015c2d72ac4f95c57236b74995 clean实核main698祖先/7path零差，claim17093v2 released于04:59:19.406Z；全部9scope停写，64954保留。旧e730交付/04:53采样保留为历史，实际App另片 |\n| 已交付QUEUE00 | 5acc限定APPROVED；d10b4b0f00dff88cbb74cd67abfd4f5f657d6183 clean实核main698祖先/两path相同，claim13185v2 released于04:59:07.633Z；旧04:56:56.921Z一次54源已注册、checks/review5acc/claim匹配/proofunchanged，当时main e802未含 |\n| WPF-PROFILEI01 | 实现2e4c5fe7d795e397ab1b1e492605562a847c5fb0/rootAPPROVED，交付c1dc；最后07cffeba1a818f5697c23efc37a7e5c2b813c035 clean亲核main14c61/8paths相同，7f1daa29 v2于05:18:50.266Z released，全部10scope停写；51832保留 |\n| WPF-DPERF01 | 实现5cd7f00dbe091785b2b7be9cb2b03d33f2af8c52限定APPROVED，最后canonical08bd0a71494f54809f4c4a2fa5b9718285103ea3 clean核main6b4祖先/两path相同；全部四scope停写，bb7ef22f v2于05:14:24.445Z released。4新检查与关联旧registry-count失败分开；proof.mjs/registry/human未修改 |\n| WPF-PROFILEUX01 | w01_owner / web-execution-profile-summary / codex/web-execution-profile-summary，base698；55b244b22a147f3360b12281bac152666749364b获root05:14:39限定APPROVED，交付60d8，main记录ef8698344f90412891e35fed05c21743d97cb708 clean；main14c61祖先/四path相同，d113be51 v2于05:18:15.732Z released，全六scope停写；54239保留 |\n| WPF-QUEUE01 | workspace_panels_owner / web-conversation-queue / codex/web-conversation-queue，固定14c61b4062f8040ba6c7239860929366e5bd3fc1，新树clean预检；b4ea85d0-ad87-4903-9a59-73281ad17752 v1于05:19:31.947Z committed，13scope只含conversation queue+必要官方Input seam/专测/plan/evidence；首canonical c80d1769442b7b610397efe04f49da0bb1eeda6e，05:31:45.221Z实采卡片live/claim匹配/human完整/NOT_STARTED，该观察后作者已固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c，51direct/typecheck/build及dev11/prod11通过；root05:40:36已APPROVED，最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean；05:41:16.755Z作者唯一实采两proof unchanged/claim匹配/stageintegration，main3d4985已含；最终6ca7803c9ea0032a64e534824f35214ed0cd8a6a clean，b4eav2已05:51:14.499Z released |\n| 已交付CHAT | 7cb / 集成metadata083978b318ede4bb1cabb5050f8d211b17bb9055 clean；owner04:21实际dashboard main ancestor/scopeEqual，14实现paths相同。claim08259c1d v5已转App/react给X03与projection/直接test给QUEUE00，04:59再转Thread/outbox/outbox-test给PROFILEI01，05:19再转officialThread给QUEUE01，当前其余七scope保留（06:23:59.268Z v6再移出session.ts供renderer接线）。真实queue两query已由GO/Lead固定证据验收通过，本队未执行 |\n| D06历史eb轮 | 旧ef42277固定8f已审集成且f619v2released，旧tree只读；新w01_owner / dashboard-architecture-current / codex/dashboard-architecture-current / 固定eb14991a170b72d7d974428b2e440e1faada2c1e，e5b2fb56-8e3a-40b7-bfa4-192f34187c0b v1于05:26:04.403Z committed，五scope限原data/renderer/test/同D06plan-evidence；唯一source迁移获Lead确认，首canonical f254e13cb63a343218358a9ba3c5fbf2f72a7e26已核clean/current三件套后一次交root，05:31:45.221Z实采唯一source迁移已生效；固定5ec6ce2051ed399be4906c6f99f7183e0ed1bb66/rootAPPROVED，最终61d70fda9988e7dc5370fb567e4346bd926fdb7d clean；05:37:09.032Z实采两proof unchanged/claim匹配/integration，本轮已由MainLead接收至3d4985，管理独立5ec祖先/5paths零差；最终4452dc8929f81469acc406623cdf80b6583de491 clean，e5b2v2已05:51:45.661Z released；renderer独立继续 |\n| D06当前115b轮 | workspace_panels_owner / dashboard-architecture-context / codex/dashboard-architecture-context；固定115b，981d7c08 v1四scope已take，首canonical b3ec1c4bf7dbdc927d393a26bc94d82265ee4730 clean/parser0errors/human完整，实施中/UNKNOWN/NOT_STARTED；已一次请求Lead迁唯一source，尚未收到部署回执 |\n| 已交付PERF02 | a87 / b61707d20ee9803e7397f21961549deb65ceef1d clean，main已含；claimd36 v2 released于04:12:26.441Z，后续修复新take |\n| 跨Lead | Mika负责CHAT04持久队列/暂停/继续，ExecutionLead负责公共API/集成/4320；域ae9与client83f7已在698成套独审集成。完整queue UI已从14c61新树正式受领13scope，PROFILEI01已release、旧CHAT官方Thread停写后CAS至v5，禁止跨树双写 |",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "outdated",
+        "record": "APPROVED** — 仅绑定下述管理文档target；未来实现及后续增补不自动继承。",
+        "target": "c075bb5c00ac2f27d54dd264982be30261a9dc51",
+        "proof": {
+          "target": "c075bb5c00ac2f27d54dd264982be30261a9dc51",
+          "head": "83a37cd14de6b55d05a60a6d2e9d5f602b7173d6",
+          "scopes": [
+            "plans/web-platform/plan.md",
+            "docs/evidence/web-platform/integration-checklist.md",
+            "docs/evidence/web-platform/research.md"
+          ],
+          "observedAt": "2026-10-06T06:36:35.918Z",
+          "state": "changed",
+          "implementationChanges": [
+            "docs/evidence/web-platform/integration-checklist.md",
+            "docs/evidence/web-platform/research.md",
+            "plans/web-platform/plan.md"
+          ],
+          "outsideChanges": [],
+          "metadataChanges": [
+            "docs/evidence/web-platform/activity01-approved-metadata-audit.json",
+            "docs/evidence/web-platform/activity01-candidate-audit.json",
+            "docs/evidence/web-platform/activity01-canonical-audit.json",
+            "docs/evidence/web-platform/activity01-main-acfd-observation.json",
+            "docs/evidence/web-platform/activity01-release-receipt.json",
+            "docs/evidence/web-platform/activity01-take-receipt.json",
+            "docs/evidence/web-platform/assignment-visibility-verification.json",
+            "docs/evidence/web-platform/chat-approved-dashboard.json",
+            "docs/evidence/web-platform/chat-candidate-scope-audit.json",
+            "docs/evidence/web-platform/chat-interface-research.md",
+            "docs/evidence/web-platform/chat-perf-source-verification.json",
+            "docs/evidence/web-platform/chat-priority-dashboard.json",
+            "docs/evidence/web-platform/chat-profilei01-amend-receipt.json",
+            "docs/evidence/web-platform/chat-queue-research.md",
+            "docs/evidence/web-platform/chat-queue00-amend-receipt.json",
+            "docs/evidence/web-platform/chat-queue01-amend-receipt.json",
+            "docs/evidence/web-platform/chat-rendereri01-amend-receipt.json",
+            "docs/evidence/web-platform/chat-x03-amend-receipt.json",
+            "docs/evidence/web-platform/chat01-take-receipt.json",
+            "docs/evidence/web-platform/combined-source-deployment-observation.json",
+            "docs/evidence/web-platform/d06-context-canonical-audit.json",
+            "docs/evidence/web-platform/d06-context-preflight.json",
+            "docs/evidence/web-platform/d06-context-take-receipt.json",
+            "docs/evidence/web-platform/d06-current-approved-observation.json",
+            "docs/evidence/web-platform/d06-current-release-receipt.json",
+            "docs/evidence/web-platform/d06-current-served-observation.json",
+            "docs/evidence/web-platform/d06-current-take-receipt.json",
+            "docs/evidence/web-platform/d06-queue-source-observation.json",
+            "docs/evidence/web-platform/d06-release-receipt.json",
+            "docs/evidence/web-platform/dashboard-source-verification.json",
+            "docs/evidence/web-platform/delivery-snapshot.md",
+            "docs/evidence/web-platform/dperf01-release-receipt.json",
+            "docs/evidence/web-platform/dperf01-take-receipt.json",
+            "docs/evidence/web-platform/execution-profiles-research.md",
+            "docs/evidence/web-platform/i01-chat-amend-receipt.json",
+            "docs/evidence/web-platform/i01-take-receipt.json",
+            "docs/evidence/web-platform/i01-x03-amend-receipt.json",
+            "docs/evidence/web-platform/k02-compat-input-manifest.json",
+            "docs/evidence/web-platform/k02c01-approved-metadata-audit.json",
+            "docs/evidence/web-platform/k02c01-candidate-audit.json",
+            "docs/evidence/web-platform/k02c01-release-receipt.json",
+            "docs/evidence/web-platform/k02c01-take-receipt.json",
+            "docs/evidence/web-platform/m02-activity-amend-receipt.json",
+            "docs/evidence/web-platform/m02-to-i01-amend-receipt.json",
+            "docs/evidence/web-platform/main115b-fixed-scope-observation.json",
+            "docs/evidence/web-platform/perf01-probe-amend-receipt.json",
+            "docs/evidence/web-platform/perf01-take-receipt.json",
+            "docs/evidence/web-platform/perf02-approved-dashboard.json",
+            "docs/evidence/web-platform/perf02-main-dashboard.json",
+            "docs/evidence/web-platform/perf02-release-receipt.json",
+            "docs/evidence/web-platform/perf02-take-receipt.json",
+            "docs/evidence/web-platform/plugin-seams.md",
+            "docs/evidence/web-platform/profile-delivery-root-observation.json",
+            "docs/evidence/web-platform/profile01-release-receipt.json",
+            "docs/evidence/web-platform/profile01-take-receipt.json",
+            "docs/evidence/web-platform/profilei01-release-receipt.json",
+            "docs/evidence/web-platform/profilei01-take-receipt.json",
+            "docs/evidence/web-platform/profileux01-release-receipt.json",
+            "docs/evidence/web-platform/profileux01-take-receipt.json",
+            "docs/evidence/web-platform/queue-live-ux-observation.json",
+            "docs/evidence/web-platform/queue00-release-receipt.json",
+            "docs/evidence/web-platform/queue00-take-receipt.json",
+            "docs/evidence/web-platform/queue01-final-audit.json",
+            "docs/evidence/web-platform/queue01-release-receipt.json",
+            "docs/evidence/web-platform/queue01-take-receipt.json",
+            "docs/evidence/web-platform/renderer-i01-visibility-scope-preflight.json",
+            "docs/evidence/web-platform/renderer-readiness-observation.json",
+            "docs/evidence/web-platform/renderer01-approved-metadata-audit.json",
+            "docs/evidence/web-platform/renderer01-candidate-audit.json",
+            "docs/evidence/web-platform/renderer01-release-receipt.json",
+            "docs/evidence/web-platform/renderer01-take-receipt.json",
+            "docs/evidence/web-platform/rendereri01-canonical-audit.json",
+            "docs/evidence/web-platform/rendereri01-final-preflight.json",
+            "docs/evidence/web-platform/rendereri01-take-receipt.json",
+            "docs/evidence/web-platform/x03-release-receipt.json",
+            "docs/evidence/web-platform/x03-take-receipt.json",
+            "plans/web-platform/conversation-core/plan.md",
+            "plans/web-platform/conversation-core/review.md",
+            "plans/web-platform/conversation-core/status.md",
+            "plans/web-platform/dashboard-followup/plan.md",
+            "plans/web-platform/dashboard-followup/review.md",
+            "plans/web-platform/dashboard-followup/status.md",
+            "plans/web-platform/performance-cycle/plan.md",
+            "plans/web-platform/performance-cycle/review.md",
+            "plans/web-platform/performance-cycle/status.md",
+            "plans/web-platform/performance-optimization/plan.md",
+            "plans/web-platform/performance-optimization/review.md",
+            "plans/web-platform/performance-optimization/status.md",
+            "plans/web-platform/plugin-integration/plan.md",
+            "plans/web-platform/plugin-integration/review.md",
+            "plans/web-platform/plugin-integration/status.md",
+            "plans/web-platform/plugin-system/plan.md",
+            "plans/web-platform/plugin-system/review.md",
+            "plans/web-platform/plugin-system/status.md",
+            "plans/web-platform/review.md",
+            "plans/web-platform/status.md",
+            "plans/web-platform/unified-workspace/plan.md",
+            "plans/web-platform/unified-workspace/review.md",
+            "plans/web-platform/unified-workspace/status.md"
+          ],
+          "reason": "声明实现范围已有变化"
+        },
+        "declarationProof": "changed"
+      },
+      "implementationProof": {
+        "target": "c075bb5c00ac2f27d54dd264982be30261a9dc51",
+        "head": "83a37cd14de6b55d05a60a6d2e9d5f602b7173d6",
+        "scopes": [
+          "plans/web-platform/plan.md",
+          "docs/evidence/web-platform/integration-checklist.md",
+          "docs/evidence/web-platform/research.md"
+        ],
+        "observedAt": "2026-10-06T06:36:35.918Z",
+        "state": "changed",
+        "implementationChanges": [
+          "docs/evidence/web-platform/integration-checklist.md",
+          "docs/evidence/web-platform/research.md",
+          "plans/web-platform/plan.md"
+        ],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/web-platform/activity01-approved-metadata-audit.json",
+          "docs/evidence/web-platform/activity01-candidate-audit.json",
+          "docs/evidence/web-platform/activity01-canonical-audit.json",
+          "docs/evidence/web-platform/activity01-main-acfd-observation.json",
+          "docs/evidence/web-platform/activity01-release-receipt.json",
+          "docs/evidence/web-platform/activity01-take-receipt.json",
+          "docs/evidence/web-platform/assignment-visibility-verification.json",
+          "docs/evidence/web-platform/chat-approved-dashboard.json",
+          "docs/evidence/web-platform/chat-candidate-scope-audit.json",
+          "docs/evidence/web-platform/chat-interface-research.md",
+          "docs/evidence/web-platform/chat-perf-source-verification.json",
+          "docs/evidence/web-platform/chat-priority-dashboard.json",
+          "docs/evidence/web-platform/chat-profilei01-amend-receipt.json",
+          "docs/evidence/web-platform/chat-queue-research.md",
+          "docs/evidence/web-platform/chat-queue00-amend-receipt.json",
+          "docs/evidence/web-platform/chat-queue01-amend-receipt.json",
+          "docs/evidence/web-platform/chat-rendereri01-amend-receipt.json",
+          "docs/evidence/web-platform/chat-x03-amend-receipt.json",
+          "docs/evidence/web-platform/chat01-take-receipt.json",
+          "docs/evidence/web-platform/combined-source-deployment-observation.json",
+          "docs/evidence/web-platform/d06-context-canonical-audit.json",
+          "docs/evidence/web-platform/d06-context-preflight.json",
+          "docs/evidence/web-platform/d06-context-take-receipt.json",
+          "docs/evidence/web-platform/d06-current-approved-observation.json",
+          "docs/evidence/web-platform/d06-current-release-receipt.json",
+          "docs/evidence/web-platform/d06-current-served-observation.json",
+          "docs/evidence/web-platform/d06-current-take-receipt.json",
+          "docs/evidence/web-platform/d06-queue-source-observation.json",
+          "docs/evidence/web-platform/d06-release-receipt.json",
+          "docs/evidence/web-platform/dashboard-source-verification.json",
+          "docs/evidence/web-platform/delivery-snapshot.md",
+          "docs/evidence/web-platform/dperf01-release-receipt.json",
+          "docs/evidence/web-platform/dperf01-take-receipt.json",
+          "docs/evidence/web-platform/execution-profiles-research.md",
+          "docs/evidence/web-platform/i01-chat-amend-receipt.json",
+          "docs/evidence/web-platform/i01-take-receipt.json",
+          "docs/evidence/web-platform/i01-x03-amend-receipt.json",
+          "docs/evidence/web-platform/k02-compat-input-manifest.json",
+          "docs/evidence/web-platform/k02c01-approved-metadata-audit.json",
+          "docs/evidence/web-platform/k02c01-candidate-audit.json",
+          "docs/evidence/web-platform/k02c01-release-receipt.json",
+          "docs/evidence/web-platform/k02c01-take-receipt.json",
+          "docs/evidence/web-platform/m02-activity-amend-receipt.json",
+          "docs/evidence/web-platform/m02-to-i01-amend-receipt.json",
+          "docs/evidence/web-platform/main115b-fixed-scope-observation.json",
+          "docs/evidence/web-platform/perf01-probe-amend-receipt.json",
+          "docs/evidence/web-platform/perf01-take-receipt.json",
+          "docs/evidence/web-platform/perf02-approved-dashboard.json",
+          "docs/evidence/web-platform/perf02-main-dashboard.json",
+          "docs/evidence/web-platform/perf02-release-receipt.json",
+          "docs/evidence/web-platform/perf02-take-receipt.json",
+          "docs/evidence/web-platform/plugin-seams.md",
+          "docs/evidence/web-platform/profile-delivery-root-observation.json",
+          "docs/evidence/web-platform/profile01-release-receipt.json",
+          "docs/evidence/web-platform/profile01-take-receipt.json",
+          "docs/evidence/web-platform/profilei01-release-receipt.json",
+          "docs/evidence/web-platform/profilei01-take-receipt.json",
+          "docs/evidence/web-platform/profileux01-release-receipt.json",
+          "docs/evidence/web-platform/profileux01-take-receipt.json",
+          "docs/evidence/web-platform/queue-live-ux-observation.json",
+          "docs/evidence/web-platform/queue00-release-receipt.json",
+          "docs/evidence/web-platform/queue00-take-receipt.json",
+          "docs/evidence/web-platform/queue01-final-audit.json",
+          "docs/evidence/web-platform/queue01-release-receipt.json",
+          "docs/evidence/web-platform/queue01-take-receipt.json",
+          "docs/evidence/web-platform/renderer-i01-visibility-scope-preflight.json",
+          "docs/evidence/web-platform/renderer-readiness-observation.json",
+          "docs/evidence/web-platform/renderer01-approved-metadata-audit.json",
+          "docs/evidence/web-platform/renderer01-candidate-audit.json",
+          "docs/evidence/web-platform/renderer01-release-receipt.json",
+          "docs/evidence/web-platform/renderer01-take-receipt.json",
+          "docs/evidence/web-platform/rendereri01-canonical-audit.json",
+          "docs/evidence/web-platform/rendereri01-final-preflight.json",
+          "docs/evidence/web-platform/rendereri01-take-receipt.json",
+          "docs/evidence/web-platform/x03-release-receipt.json",
+          "docs/evidence/web-platform/x03-take-receipt.json",
+          "plans/web-platform/conversation-core/plan.md",
+          "plans/web-platform/conversation-core/review.md",
+          "plans/web-platform/conversation-core/status.md",
+          "plans/web-platform/dashboard-followup/plan.md",
+          "plans/web-platform/dashboard-followup/review.md",
+          "plans/web-platform/dashboard-followup/status.md",
+          "plans/web-platform/performance-cycle/plan.md",
+          "plans/web-platform/performance-cycle/review.md",
+          "plans/web-platform/performance-cycle/status.md",
+          "plans/web-platform/performance-optimization/plan.md",
+          "plans/web-platform/performance-optimization/review.md",
+          "plans/web-platform/performance-optimization/status.md",
+          "plans/web-platform/plugin-integration/plan.md",
+          "plans/web-platform/plugin-integration/review.md",
+          "plans/web-platform/plugin-integration/status.md",
+          "plans/web-platform/plugin-system/plan.md",
+          "plans/web-platform/plugin-system/review.md",
+          "plans/web-platform/plugin-system/status.md",
+          "plans/web-platform/review.md",
+          "plans/web-platform/status.md",
+          "plans/web-platform/unified-workspace/plan.md",
+          "plans/web-platform/unified-workspace/review.md",
+          "plans/web-platform/unified-workspace/status.md"
+        ],
+        "reason": "声明实现范围已有变化"
+      },
+      "documents": [
+        {
+          "path": "plans/web-platform/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/web-platform/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/web-platform/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/web-platform/assignment-visibility-verification.json",
+          "title": "04:07领取视图与42源实证",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/chat01-take-receipt.json",
+          "title": "CHAT receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/perf02-take-receipt.json",
+          "title": "独立receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "plans/web-platform/plugin-system/plan.md",
+          "title": "WPF-P01",
+          "kind": "evidence"
+        },
+        {
+          "path": "plans/web-platform/dashboard-followup/plan.md",
+          "title": "WPF-D01",
+          "kind": "evidence"
+        },
+        {
+          "path": "plans/web-platform/performance-cycle/plan.md",
+          "title": "WPF-PERF01",
+          "kind": "evidence"
+        },
+        {
+          "path": "plans/web-platform/unified-workspace/plan.md",
+          "title": "WPF-M02统一工作总览",
+          "kind": "evidence"
+        },
+        {
+          "path": "plans/web-platform/plugin-integration/plan.md",
+          "title": "WPF-I01插件主App挂载",
+          "kind": "evidence"
+        },
+        {
+          "path": "plans/web-platform/conversation-core/plan.md",
+          "title": "WPF-CHAT01真实持续对话",
+          "kind": "evidence"
+        },
+        {
+          "path": "plans/web-platform/performance-optimization/plan.md",
+          "title": "WPF-PERF02有界Activity",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/chat-queue-research.md",
+          "title": "队列研究与变更",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/execution-profiles-research.md",
+          "title": "证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/profile01-take-receipt.json",
+          "title": "receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/research.md",
+          "title": "研究",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/queue00-take-receipt.json",
+          "title": "receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/profileux01-take-receipt.json",
+          "title": "05:10:12.187Z正式take",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/queue-live-ux-observation.json",
+          "title": "归属与固定证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/delivery-snapshot.md",
+          "title": "交付快照",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/perf02-main-dashboard.json",
+          "title": "04:01:56.630Z实采",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/chat-candidate-scope-audit.json",
+          "title": "逐commit/共享hash/claim证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/chat-approved-dashboard.json",
+          "title": "04:10:28.566Z真实dashboard",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/perf02-release-receipt.json",
+          "title": "PERF02释放回执",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/chat-x03-amend-receipt.json",
+          "title": "CHAT v2 receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/i01-x03-amend-receipt.json",
+          "title": "I01 v3 receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/x03-take-receipt.json",
+          "title": "receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/d06-release-receipt.json",
+          "title": "release v2",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/chat-queue00-amend-receipt.json",
+          "title": "CHAT v3 amend",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/x03-release-receipt.json",
+          "title": "release v2",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/profilei01-release-receipt.json",
+          "title": "PROFILEI01 release",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/chat-queue01-amend-receipt.json",
+          "title": "CHATv5",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/queue01-take-receipt.json",
+          "title": "新take",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/profile-delivery-root-observation.json",
+          "title": "归属明确摘录",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/d06-current-take-receipt.json",
+          "title": "新take",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/d06-queue-source-observation.json",
+          "title": "真实65源采样",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/d06-current-approved-observation.json",
+          "title": "一次最终API",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/renderer01-take-receipt.json",
+          "title": "原take",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/queue01-release-receipt.json",
+          "title": "QUEUEv2",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/d06-current-release-receipt.json",
+          "title": "D06v2",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/d06-current-served-observation.json",
+          "title": "部署证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/k02c01-take-receipt.json",
+          "title": "WPF-K02C01领取",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/k02c01-candidate-audit.json",
+          "title": "项目兼容候选审计",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/renderer01-candidate-audit.json",
+          "title": "renderer候选审计",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/k02c01-approved-metadata-audit.json",
+          "title": "K02最终审核",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/renderer01-approved-metadata-audit.json",
+          "title": "renderer最终审核",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/activity01-take-receipt.json",
+          "title": "take回执",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/activity01-canonical-audit.json",
+          "title": "管理初核",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/combined-source-deployment-observation.json",
+          "title": "实际合采",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/activity01-candidate-audit.json",
+          "title": "审核",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/activity01-approved-metadata-audit.json",
+          "title": "ACTIVITY最终局部审计",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/renderer-i01-visibility-scope-preflight.json",
+          "title": "新鲜ledger只读预检",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/main115b-fixed-scope-observation.json",
+          "title": "06:23:20.958Z",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/chat-rendereri01-amend-receipt.json",
+          "title": "原子amend",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/k02c01-release-receipt.json",
+          "title": "释放5ab v2",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/rendereri01-final-preflight.json",
+          "title": "新鲜九scope零冲突",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/rendereri01-take-receipt.json",
+          "title": "ff62150f v1",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/renderer01-release-receipt.json",
+          "title": "879 v2释放",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/d06-context-take-receipt.json",
+          "title": "正式take981d7c08 v1",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/d06-context-preflight.json",
+          "title": "fresh四scope无冲突",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/activity01-main-acfd-observation.json",
+          "title": "acfd现场",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/web-platform/activity01-release-receipt.json",
+          "title": "51f v2 release",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 17,
+        "total": 20
+      },
+      "main": {
+        "record": "本管理后续文档未按新target审定；06:23独立Git核main115b含K02/renderer，06:27独立核acfd含ACTIVITY，已审scope均相同；历史06:14:43.956Z实际dashboard读main823fea9bd8bc868243398d58725b4076528a7ffc clean，K02/renderer均not-contained；此前MainLead确认3d4985已push/clean且管理独核；含QUEUE309/D065ec且11/5paths相同，既有PROFILEI01/UX/DPERF均已集成。GO/SVC确认05:40:49常驻61227/61228 center/runner已受控更新为fb906cb、ready/v3 accepting、0任务/0query；此前75a为历史，本队未登录或服务验证，不据main推自动部署",
+        "recordedHead": "823fea9bd8bc868243398d58725b4076528a7ffc",
+        "target": "c075bb5c00ac2f27d54dd264982be30261a9dc51",
+        "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "scopes": [
+          "plans/web-platform/plan.md",
+          "docs/evidence/web-platform/integration-checklist.md",
+          "docs/evidence/web-platform/research.md"
+        ],
+        "observedAt": "2026-10-06T06:36:35.856Z",
+        "current": false,
+        "historicalIntegrated": true,
+        "method": "ancestor-changed",
+        "scopeEqual": false,
+        "dirtyScopePaths": [],
+        "reason": "历史已合入；当前声明范围已有变化或未提交内容，需核验后继实现，不判断新实现失效"
+      },
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "docs/evidence/web-platform",
+            "plans/web-platform"
+          ],
+          "state": "active",
+          "branch": "codex/web-platform-management",
+          "origin": "migration",
+          "taskId": "WPF-001",
+          "worker": "external_web_d01_owner",
+          "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+          "createdAt": "2026-10-06T02:48:43.295Z",
+          "updatedAt": "2026-10-06T02:49:44.635Z",
+          "observedAt": "2026-10-06T02:48:42.000Z",
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    },
+    {
+      "id": "D06",
+      "title": "架构固定快照更新",
+      "role": "工程协作",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-context",
+      "branch": "codex/dashboard-architecture-context",
+      "planDir": "plans/d06-architecture-refresh",
+      "evidenceDir": "docs/evidence/d06",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:34:17.089Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-context/plans/d06-architecture-refresh/status.md",
+        "syncedAt": "2026-10-06T06:36:34.965Z",
+        "stale": false,
+        "ageHours": 0.038601388888888886
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/dashboard-architecture-context",
+        "head": "0ec8433e72df1460373621e54d39389d67ef258f",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T06:36:35.856Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "review",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 3,
+          "output": "架构图已补齐排队、知识上下文和受限图工具，独立模块与产品挂载分别标明",
+          "next": "交付可核源码的架构快照并完成独立审查",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "ebad46356efec7bd86f8aadd9d765bb6b6b190af",
+          "scopes": [
+            "apps/execution-dashboard/public/architecture-data.js",
+            "apps/execution-dashboard/test/architecture.test.mjs",
+            "docs/evidence/d06/context/source-audit.mjs",
+            "docs/evidence/d06/context/browser-check.mjs",
+            "docs/evidence/d06/context/preview.mjs"
+          ],
+          "errors": []
+        },
+        "taskId": "D06",
+        "owner": "workspace_panels_owner / gpt-6-astra ultra",
+        "branch": "codex/dashboard-architecture-context",
+        "branchState": "IN_PROGRESS",
+        "updatedAt": "2026-10-06T06:34:16.000Z",
+        "updatedRecord": "2026-10-06T06:34:16Z",
+        "todos": [
+          {
+            "id": "D06-01",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "新树115b clean、receipt/live、历史原文和技能读取"
+          },
+          {
+            "id": "D06-02",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "47节点来源、49固定源码依据已核，数据已刷新115b"
+          },
+          {
+            "id": "D06-03",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "10局部Node、五视图Chrome、双主题390/键盘/减少动画、原失败记录保留"
+          },
+          {
+            "id": "D06-04",
+            "state": "in-progress",
+            "owner": "workspace_panels_owner",
+            "evidence": "固定ebad46356efec7bd86f8aadd9d765bb6b6b190af已交root独审；source迁移/最终聚合待Lead事实"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "115b0dbdfa02db5483f9e9699852682ce699633c / ebad46356efec7bd86f8aadd9d765bb6b6b190af（实现；后续metadata由Git聚合）",
+        "declaredDirty": "五实现/检查脚本已冻结；仅本任务metadata收口",
+        "checks": {
+          "state": "passed",
+          "target": "ebad46356efec7bd86f8aadd9d765bb6b6b190af",
+          "record": "PASSED ebad46356efec7bd86f8aadd9d765bb6b6b190af；10局部Node/source、五图Chrome/双主题390/键盘/减少动画；[验证](../../docs/evidence/d06/context/validation.md)"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "NOT_INTEGRATED；旧5ec已在本base，新轮未实现",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED**",
+        "target": "ebad46356efec7bd86f8aadd9d765bb6b6b190af"
+      },
+      "implementationProof": {
+        "target": "ebad46356efec7bd86f8aadd9d765bb6b6b190af",
+        "head": "0ec8433e72df1460373621e54d39389d67ef258f",
+        "scopes": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/test/architecture.test.mjs",
+          "docs/evidence/d06/context/source-audit.mjs",
+          "docs/evidence/d06/context/browser-check.mjs",
+          "docs/evidence/d06/context/preview.mjs"
+        ],
+        "observedAt": "2026-10-06T06:36:36.063Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/d06/context/README.md",
+          "docs/evidence/d06/context/browser-checks.json",
+          "docs/evidence/d06/context/browser.log",
+          "docs/evidence/d06/context/data-dark-narrow.png",
+          "docs/evidence/d06/context/data-dark.png",
+          "docs/evidence/d06/context/data-light-narrow.png",
+          "docs/evidence/d06/context/direct.log",
+          "docs/evidence/d06/context/first-direct.log",
+          "docs/evidence/d06/context/modules-light.png",
+          "docs/evidence/d06/context/quality.md",
+          "docs/evidence/d06/context/source-audit.json",
+          "docs/evidence/d06/context/source-binding.json",
+          "docs/evidence/d06/context/states-dark.png",
+          "docs/evidence/d06/context/states-light.png",
+          "docs/evidence/d06/context/status-parser.json",
+          "docs/evidence/d06/context/validation.md",
+          "plans/d06-architecture-refresh/plan.md",
+          "plans/d06-architecture-refresh/review.md",
+          "plans/d06-architecture-refresh/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "documents": [
+        {
+          "path": "plans/d06-architecture-refresh/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/d06-architecture-refresh/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/d06-architecture-refresh/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/d06/context/take-receipt.json",
+          "title": "正式领取",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/context/history.md",
+          "title": "旧eb轮索引",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/context/README.md",
+          "title": "本轮证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/context/validation.md",
+          "title": "验证",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/d06/context/quality.md",
+          "title": "quality",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 3,
+        "total": 4
+      },
+      "main": {
+        "record": "NOT_INTEGRATED；旧5ec已在本base，新轮未实现",
+        "recordedHead": null,
+        "target": "ebad46356efec7bd86f8aadd9d765bb6b6b190af",
+        "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "scopes": [
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/test/architecture.test.mjs",
+          "docs/evidence/d06/context/source-audit.mjs",
+          "docs/evidence/d06/context/browser-check.mjs",
+          "docs/evidence/d06/context/preview.mjs"
+        ],
+        "observedAt": "2026-10-06T06:36:35.856Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "not-contained",
+        "scopeEqual": false,
+        "dirtyScopePaths": [],
+        "reason": "main 声明范围与目标不同，或存在未提交变化"
+      },
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/public/architecture-data.js",
+            "apps/execution-dashboard/test/architecture.test.mjs",
+            "docs/evidence/d06",
+            "plans/d06-architecture-refresh"
+          ],
+          "state": "active",
+          "branch": "codex/dashboard-architecture-context",
+          "origin": "new",
+          "taskId": "D06",
+          "worker": "workspace_panels_owner",
+          "claimId": "981d7c08-a145-4846-b456-496fe0ce5c83",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-context",
+          "createdAt": "2026-10-06T06:26:57.559Z",
+          "updatedAt": "2026-10-06T06:26:57.559Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    },
+    {
+      "id": "WPF-RENDERER01",
+      "title": "对话详情展示",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers",
+      "branch": "codex/web-data-renderers",
+      "planDir": "plans/wpf-renderer01-data-renderers",
+      "evidenceDir": "docs/evidence/wpf-renderer01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:24:21.545Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/plans/wpf-renderer01-data-renderers/status.md",
+        "syncedAt": "2026-10-06T06:36:34.965Z",
+        "stale": false,
+        "ageHours": 0.2097125
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-data-renderers",
+        "head": "4ddcac4f7d0c3c81a758259270bab02596e8ea99",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T06:36:35.856Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "delivered",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "消息详情显示模块已交付主线，保留故障回退和双面板隔离",
+          "next": "本片段已交付",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "747cbe616408dc3e44ab3587216c5753e6de3994",
+          "scopes": [
+            "apps/web/src/data-renderers/registry.ts",
+            "apps/web/src/data-renderers/react.tsx",
+            "apps/web/src/data-renderers/flow-reply-detail.tsx",
+            "apps/web/test/data-renderers.test.ts",
+            "apps/web/test/data-renderers.browser.ts",
+            "apps/web/test/data-renderers.fixture.tsx"
+          ],
+          "errors": []
+        },
+        "taskId": "WPF-RENDERER01",
+        "owner": "w01_owner；派发 gpt-6-astra / ultra，运行时无独立型号证明，不另作身份声称",
+        "branch": "codex/web-data-renderers",
+        "branchState": "integrated",
+        "updatedAt": "2026-10-06T06:24:00.000Z",
+        "updatedRecord": "2026-10-06 06:24 UTC",
+        "todos": [
+          {
+            "id": "RENDERER01-01",
+            "state": "completed",
+            "owner": "w01_owner",
+            "evidence": "声明/namespace/版本/P01生命周期已通过局部与浏览器检查"
+          },
+          {
+            "id": "RENDERER01-02",
+            "state": "completed",
+            "owner": "w01_owner",
+            "evidence": "已验证provider本地桥、只读身份绑定及隐藏/迟到隔离"
+          },
+          {
+            "id": "RENDERER01-03",
+            "state": "completed",
+            "owner": "w01_owner",
+            "evidence": "作者14局部/typecheck/10browser通过；root固定747cbe6独立APPROVED"
+          },
+          {
+            "id": "RENDERER01-04",
+            "state": "pending",
+            "owner": "w01_owner",
+            "evidence": "独立后继 App 接线，当前 scope 不含"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "fb906cb42391971a8b315dbd813f7633927d7265；实现747cbe616408dc3e44ab3587216c5753e6de3994，后续仅metadata",
+        "declaredDirty": "六实现/测试文件已固定提交；本次证据metadata提交后clean",
+        "checks": {
+          "state": "passed",
+          "target": "747cbe616408dc3e44ab3587216c5753e6de3994",
+          "record": "PASSED 747cbe616408dc3e44ab3587216c5753e6de3994；14局部测试/typecheck/10组HTTPfixture浏览器，非真实中心或App接线"
+        },
+        "reviewRecord": "APPROVED 747cbe616408dc3e44ab3587216c5753e6de3994；[review.md](review.md)",
+        "mainRecord": "已集成 115b0dbdfa02db5483f9e9699852682ce699633c；main/origin/main同SHA且clean；实现747为祖先，六实现/测试路径内容一致。App接线仍属独立后继",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED**",
+        "target": "747cbe616408dc3e44ab3587216c5753e6de3994",
+        "proof": {
+          "target": "747cbe616408dc3e44ab3587216c5753e6de3994",
+          "head": "4ddcac4f7d0c3c81a758259270bab02596e8ea99",
+          "scopes": [
+            "apps/web/src/data-renderers/registry.ts",
+            "apps/web/src/data-renderers/react.tsx",
+            "apps/web/src/data-renderers/flow-reply-detail.tsx",
+            "apps/web/test/data-renderers.test.ts",
+            "apps/web/test/data-renderers.browser.ts",
+            "apps/web/test/data-renderers.fixture.tsx"
+          ],
+          "observedAt": "2026-10-06T06:36:36.090Z",
+          "state": "unchanged",
+          "implementationChanges": [],
+          "outsideChanges": [],
+          "metadataChanges": [
+            "docs/evidence/wpf-renderer01/README.md",
+            "docs/evidence/wpf-renderer01/browser-final.log",
+            "docs/evidence/wpf-renderer01/browser-first.log",
+            "docs/evidence/wpf-renderer01/browser-results.json",
+            "docs/evidence/wpf-renderer01/browser-second.log",
+            "docs/evidence/wpf-renderer01/browser-third.log",
+            "docs/evidence/wpf-renderer01/deployment-observation.json",
+            "docs/evidence/wpf-renderer01/interface.md",
+            "docs/evidence/wpf-renderer01/module-tests.log",
+            "docs/evidence/wpf-renderer01/quality.md",
+            "docs/evidence/wpf-renderer01/renderers-dark-390.png",
+            "docs/evidence/wpf-renderer01/renderers-light.png",
+            "docs/evidence/wpf-renderer01/source-binding.json",
+            "docs/evidence/wpf-renderer01/typecheck.log",
+            "plans/wpf-renderer01-data-renderers/plan.md",
+            "plans/wpf-renderer01-data-renderers/review.md",
+            "plans/wpf-renderer01-data-renderers/status.md"
+          ],
+          "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+        },
+        "declarationProof": "unchanged"
+      },
+      "implementationProof": {
+        "target": "747cbe616408dc3e44ab3587216c5753e6de3994",
+        "head": "4ddcac4f7d0c3c81a758259270bab02596e8ea99",
+        "scopes": [
+          "apps/web/src/data-renderers/registry.ts",
+          "apps/web/src/data-renderers/react.tsx",
+          "apps/web/src/data-renderers/flow-reply-detail.tsx",
+          "apps/web/test/data-renderers.test.ts",
+          "apps/web/test/data-renderers.browser.ts",
+          "apps/web/test/data-renderers.fixture.tsx"
+        ],
+        "observedAt": "2026-10-06T06:36:36.090Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/wpf-renderer01/README.md",
+          "docs/evidence/wpf-renderer01/browser-final.log",
+          "docs/evidence/wpf-renderer01/browser-first.log",
+          "docs/evidence/wpf-renderer01/browser-results.json",
+          "docs/evidence/wpf-renderer01/browser-second.log",
+          "docs/evidence/wpf-renderer01/browser-third.log",
+          "docs/evidence/wpf-renderer01/deployment-observation.json",
+          "docs/evidence/wpf-renderer01/interface.md",
+          "docs/evidence/wpf-renderer01/module-tests.log",
+          "docs/evidence/wpf-renderer01/quality.md",
+          "docs/evidence/wpf-renderer01/renderers-dark-390.png",
+          "docs/evidence/wpf-renderer01/renderers-light.png",
+          "docs/evidence/wpf-renderer01/source-binding.json",
+          "docs/evidence/wpf-renderer01/typecheck.log",
+          "plans/wpf-renderer01-data-renderers/plan.md",
+          "plans/wpf-renderer01-data-renderers/review.md",
+          "plans/wpf-renderer01-data-renderers/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "documents": [
+        {
+          "path": "plans/wpf-renderer01-data-renderers/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-renderer01-data-renderers/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-renderer01-data-renderers/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/wpf-renderer01/quality.md",
+          "title": "质量记录",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-renderer01/take-receipt.json",
+          "title": "领取回执",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-renderer01/README.md",
+          "title": "固定交付/原始证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-renderer01/interface.md",
+          "title": "公开interface",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-renderer01/deployment-observation.json",
+          "title": "部署观察",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 3,
+        "total": 4
+      },
+      "main": {
+        "record": "已集成 115b0dbdfa02db5483f9e9699852682ce699633c；main/origin/main同SHA且clean；实现747为祖先，六实现/测试路径内容一致。App接线仍属独立后继",
+        "recordedHead": "115b0dbdfa02db5483f9e9699852682ce699633c",
+        "target": "747cbe616408dc3e44ab3587216c5753e6de3994",
+        "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "scopes": [
+          "apps/web/src/data-renderers/registry.ts",
+          "apps/web/src/data-renderers/react.tsx",
+          "apps/web/src/data-renderers/flow-reply-detail.tsx",
+          "apps/web/test/data-renderers.test.ts",
+          "apps/web/test/data-renderers.browser.ts",
+          "apps/web/test/data-renderers.fixture.tsx"
+        ],
+        "observedAt": "2026-10-06T06:36:35.856Z",
+        "current": true,
+        "historicalIntegrated": true,
+        "method": "ancestor",
+        "scopeEqual": true,
+        "dirtyScopePaths": [],
+        "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+      },
+      "assignments": []
+    },
+    {
+      "id": "WPF-ACTIVITY01",
+      "title": "聊天工具活动展示",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity",
+      "branch": "codex/web-conversation-activity",
+      "planDir": "plans/wpf-activity01",
+      "evidenceDir": "docs/evidence/wpf-activity01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:28:43.005Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md",
+        "syncedAt": "2026-10-06T06:36:34.965Z",
+        "stale": false,
+        "ageHours": 0.13137916666666666
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-conversation-activity",
+        "head": "8cc13eaa9c2aa29f77f841637d9891b67fd1264f",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T06:36:35.856Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "delivered",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "可按需查看执行活动与详情，长记录按页显示",
+          "next": "本片段已交付；聊天入口挂载后继另领",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+          "scopes": [
+            "apps/web/src/conversation-activity/projection.ts",
+            "apps/web/src/conversation-activity/ConversationActivity.tsx",
+            "apps/web/src/conversation-activity/activity.css",
+            "apps/web/test/conversation-activity.test.ts",
+            "apps/web/test/conversation-activity.fixture.ts",
+            "apps/web/test/conversation-activity.browser.ts"
+          ],
+          "errors": []
+        },
+        "taskId": "WPF-ACTIVITY01",
+        "owner": "workspace_panels_owner / gpt-6-astra ultra",
+        "branch": "codex/web-conversation-activity",
+        "branchState": "COMPLETED",
+        "updatedAt": "2026-10-06T06:28:42.000Z",
+        "updatedRecord": "2026-10-06T06:28:42Z / acfd409a493315a00f1cc19ac96c5f1b36c19e57",
+        "todos": [
+          {
+            "id": "WPF-ACTIVITY01-01",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "[接口](../../docs/evidence/wpf-activity01/interface.md)、[技能](../../docs/evidence/wpf-activity01/quality.md)"
+          },
+          {
+            "id": "WPF-ACTIVITY01-02",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "reader与身份/代际/reset/详情按需22直接检查"
+          },
+          {
+            "id": "WPF-ACTIVITY01-03",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "dev7/prod7、双主题390/键盘、只读HTTPfixture；不是App接线"
+          },
+          {
+            "id": "WPF-ACTIVITY01-04",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "root06:17:33独立APPROVED；06:14唯一合采已确认过渡来源，当前字段由本地parser核；Lead已集成main，六路径与target零diff"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "3d4985fca060155435b159e0467815bf8e88b8b8 / 实际HEAD由Git聚合",
+        "declaredDirty": "六个新源/专测已固定；当前仅本任务metadata收口",
+        "checks": {
+          "state": "passed",
+          "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+          "record": "PASSED 61b9349af390c137cc4cfeabd38bad058ec69cb5；22 direct、typecheck、dev7/prod7与独立fixture build；[验证](../../docs/evidence/wpf-activity01/validation.md)"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED 61b9349af390c137cc4cfeabd38bad058ec69cb5",
+        "mainRecord": "INTEGRATED acfd409a493315a00f1cc19ac96c5f1b36c19e57；61b祖先、六paths零diff；[Git证据](../../docs/evidence/wpf-activity01/main-integration.json)",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED**",
+        "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+        "proof": {
+          "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+          "head": "8cc13eaa9c2aa29f77f841637d9891b67fd1264f",
+          "scopes": [
+            "apps/web/src/conversation-activity/projection.ts",
+            "apps/web/src/conversation-activity/ConversationActivity.tsx",
+            "apps/web/src/conversation-activity/activity.css",
+            "apps/web/test/conversation-activity.test.ts",
+            "apps/web/test/conversation-activity.fixture.ts",
+            "apps/web/test/conversation-activity.browser.ts"
+          ],
+          "observedAt": "2026-10-06T06:36:36.011Z",
+          "state": "unchanged",
+          "implementationChanges": [],
+          "outsideChanges": [],
+          "metadataChanges": [
+            "docs/evidence/wpf-activity01/README.md",
+            "docs/evidence/wpf-activity01/browser-results.json",
+            "docs/evidence/wpf-activity01/browser.log",
+            "docs/evidence/wpf-activity01/dashboard-excerpt.json",
+            "docs/evidence/wpf-activity01/desktop-light.png",
+            "docs/evidence/wpf-activity01/direct.log",
+            "docs/evidence/wpf-activity01/first-direct.log",
+            "docs/evidence/wpf-activity01/main-integration.json",
+            "docs/evidence/wpf-activity01/narrow-dark.png",
+            "docs/evidence/wpf-activity01/narrow-light.png",
+            "docs/evidence/wpf-activity01/production-browser-results.json",
+            "docs/evidence/wpf-activity01/production-browser.log",
+            "docs/evidence/wpf-activity01/production-desktop-light.png",
+            "docs/evidence/wpf-activity01/production-narrow-dark.png",
+            "docs/evidence/wpf-activity01/production-narrow-light.png",
+            "docs/evidence/wpf-activity01/quality.md",
+            "docs/evidence/wpf-activity01/red-direct.log",
+            "docs/evidence/wpf-activity01/source-binding.json",
+            "docs/evidence/wpf-activity01/status-parser.json",
+            "docs/evidence/wpf-activity01/typecheck.log",
+            "docs/evidence/wpf-activity01/validation.md",
+            "plans/wpf-activity01/plan.md",
+            "plans/wpf-activity01/review.md",
+            "plans/wpf-activity01/status.md"
+          ],
+          "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+        },
+        "declarationProof": "unchanged"
+      },
+      "implementationProof": {
+        "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+        "head": "8cc13eaa9c2aa29f77f841637d9891b67fd1264f",
+        "scopes": [
+          "apps/web/src/conversation-activity/projection.ts",
+          "apps/web/src/conversation-activity/ConversationActivity.tsx",
+          "apps/web/src/conversation-activity/activity.css",
+          "apps/web/test/conversation-activity.test.ts",
+          "apps/web/test/conversation-activity.fixture.ts",
+          "apps/web/test/conversation-activity.browser.ts"
+        ],
+        "observedAt": "2026-10-06T06:36:36.011Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/wpf-activity01/README.md",
+          "docs/evidence/wpf-activity01/browser-results.json",
+          "docs/evidence/wpf-activity01/browser.log",
+          "docs/evidence/wpf-activity01/dashboard-excerpt.json",
+          "docs/evidence/wpf-activity01/desktop-light.png",
+          "docs/evidence/wpf-activity01/direct.log",
+          "docs/evidence/wpf-activity01/first-direct.log",
+          "docs/evidence/wpf-activity01/main-integration.json",
+          "docs/evidence/wpf-activity01/narrow-dark.png",
+          "docs/evidence/wpf-activity01/narrow-light.png",
+          "docs/evidence/wpf-activity01/production-browser-results.json",
+          "docs/evidence/wpf-activity01/production-browser.log",
+          "docs/evidence/wpf-activity01/production-desktop-light.png",
+          "docs/evidence/wpf-activity01/production-narrow-dark.png",
+          "docs/evidence/wpf-activity01/production-narrow-light.png",
+          "docs/evidence/wpf-activity01/quality.md",
+          "docs/evidence/wpf-activity01/red-direct.log",
+          "docs/evidence/wpf-activity01/source-binding.json",
+          "docs/evidence/wpf-activity01/status-parser.json",
+          "docs/evidence/wpf-activity01/typecheck.log",
+          "docs/evidence/wpf-activity01/validation.md",
+          "plans/wpf-activity01/plan.md",
+          "plans/wpf-activity01/review.md",
+          "plans/wpf-activity01/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "documents": [
+        {
+          "path": "plans/wpf-activity01/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-activity01/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-activity01/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/wpf-activity01/validation.md",
+          "title": "验证",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-activity01/main-integration.json",
+          "title": "Git证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-activity01/take-receipt.json",
+          "title": "receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-activity01/interface.md",
+          "title": "接口",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-activity01/quality.md",
+          "title": "技能",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-activity01/README.md",
+          "title": "交付",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-activity01/dashboard-excerpt.json",
+          "title": "过渡摘录",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "main": {
+        "record": "INTEGRATED acfd409a493315a00f1cc19ac96c5f1b36c19e57；61b祖先、六paths零diff；[Git证据](../../docs/evidence/wpf-activity01/main-integration.json)",
+        "recordedHead": "acfd409a493315a00f1cc19ac96c5f1b36c19e57",
+        "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+        "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "scopes": [
+          "apps/web/src/conversation-activity/projection.ts",
+          "apps/web/src/conversation-activity/ConversationActivity.tsx",
+          "apps/web/src/conversation-activity/activity.css",
+          "apps/web/test/conversation-activity.test.ts",
+          "apps/web/test/conversation-activity.fixture.ts",
+          "apps/web/test/conversation-activity.browser.ts"
+        ],
+        "observedAt": "2026-10-06T06:36:35.856Z",
+        "current": true,
+        "historicalIntegrated": true,
+        "method": "ancestor",
+        "scopeEqual": true,
+        "dirtyScopePaths": [],
+        "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+      },
+      "assignments": []
+    },
+    {
+      "id": "WPF-K02C01",
+      "title": "聊天上下文兼容",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility",
+      "branch": "codex/web-context-compatibility",
+      "planDir": "plans/wpf-k02-compatibility",
+      "evidenceDir": "docs/evidence/wpf-k02-compatibility",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:24:11.291Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility/plans/wpf-k02-compatibility/status.md",
+        "syncedAt": "2026-10-06T06:36:34.965Z",
+        "stale": false,
+        "ageHours": 0.20665694444444443
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-context-compatibility",
+        "head": "2bce444ad910b1f7fdb549ab933b2d145c730a83",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T06:36:35.856Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "delivered",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "聊天已正确保留所属项目，并拒绝身份错配的回执",
+          "next": "本片段已交付",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "7633937c322090bbd6d526f378df464f2a7436ed",
+          "scopes": [
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/execution-profiles/selection.ts",
+            "apps/web/test/conversation-outbox.test.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/conversation-queue.test.ts",
+            "apps/web/test/execution-profiles.test.ts"
+          ],
+          "errors": []
+        },
+        "taskId": "WPF-K02C01",
+        "owner": "workspace_panels_owner / gpt-6-astra ultra",
+        "branch": "codex/web-context-compatibility",
+        "branchState": "COMPLETED",
+        "updatedAt": "2026-10-06T06:24:11.000Z",
+        "updatedRecord": "2026-10-06T06:24:11Z / 115b0dbdfa02db5483f9e9699852682ce699633c",
+        "todos": [
+          {
+            "id": "WPF-K02C01-01",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "[输入](../../docs/evidence/wpf-k02-compatibility/input-verification.json)、[技能](../../docs/evidence/wpf-k02-compatibility/quality.md)"
+          },
+          {
+            "id": "WPF-K02C01-02",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "7633937c322090bbd6d526f378df464f2a7436ed；项目字段与能力校验"
+          },
+          {
+            "id": "WPF-K02C01-03",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "102局部检查、typecheck、源码hash绑定；[质量](../../docs/evidence/wpf-k02-compatibility/quality.md)"
+          },
+          {
+            "id": "WPF-K02C01-04",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "root05:58:18独立APPROVED；manager06:14:43合采确认聚合，已交Lead并核main 115b0dbdfa02db5483f9e9699852682ce699633c 集成"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "3d4985fca060155435b159e0467815bf8e88b8b8 / 7633937c322090bbd6d526f378df464f2a7436ed，后续metadata HEAD由Git聚合",
+        "declaredDirty": "六实现/测试文件已固定；本次仅main集成metadata收口，提交后八scope全部停写",
+        "checks": {
+          "state": "passed",
+          "target": "7633937c322090bbd6d526f378df464f2a7436ed",
+          "record": "PASSED 7633937c322090bbd6d526f378df464f2a7436ed；102 direct、Web typecheck；[验证](../../docs/evidence/wpf-k02-compatibility/validation.md)"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED 7633937c322090bbd6d526f378df464f2a7436ed",
+        "mainRecord": "INTEGRATED 115b0dbdfa02db5483f9e9699852682ce699633c；763为祖先，六实现/测试paths零diff；[Git证据](../../docs/evidence/wpf-k02-compatibility/main-integration.json)",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED**",
+        "target": "7633937c322090bbd6d526f378df464f2a7436ed",
+        "proof": {
+          "target": "7633937c322090bbd6d526f378df464f2a7436ed",
+          "head": "2bce444ad910b1f7fdb549ab933b2d145c730a83",
+          "scopes": [
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/execution-profiles/selection.ts",
+            "apps/web/test/conversation-outbox.test.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/conversation-queue.test.ts",
+            "apps/web/test/execution-profiles.test.ts"
+          ],
+          "observedAt": "2026-10-06T06:36:35.983Z",
+          "state": "unchanged",
+          "implementationChanges": [],
+          "outsideChanges": [],
+          "metadataChanges": [
+            "docs/evidence/wpf-k02-compatibility/README.md",
+            "docs/evidence/wpf-k02-compatibility/checks.json",
+            "docs/evidence/wpf-k02-compatibility/dashboard-excerpt.json",
+            "docs/evidence/wpf-k02-compatibility/green-direct.log",
+            "docs/evidence/wpf-k02-compatibility/implementation-diffcheck.log",
+            "docs/evidence/wpf-k02-compatibility/main-integration.json",
+            "docs/evidence/wpf-k02-compatibility/quality.md",
+            "docs/evidence/wpf-k02-compatibility/red-direct.log",
+            "docs/evidence/wpf-k02-compatibility/source-binding.json",
+            "docs/evidence/wpf-k02-compatibility/typecheck.log",
+            "docs/evidence/wpf-k02-compatibility/validation.md",
+            "plans/wpf-k02-compatibility/plan.md",
+            "plans/wpf-k02-compatibility/review.md",
+            "plans/wpf-k02-compatibility/status.md"
+          ],
+          "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+        },
+        "declarationProof": "unchanged"
+      },
+      "implementationProof": {
+        "target": "7633937c322090bbd6d526f378df464f2a7436ed",
+        "head": "2bce444ad910b1f7fdb549ab933b2d145c730a83",
+        "scopes": [
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/execution-profiles/selection.ts",
+          "apps/web/test/conversation-outbox.test.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation-queue.test.ts",
+          "apps/web/test/execution-profiles.test.ts"
+        ],
+        "observedAt": "2026-10-06T06:36:35.983Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/wpf-k02-compatibility/README.md",
+          "docs/evidence/wpf-k02-compatibility/checks.json",
+          "docs/evidence/wpf-k02-compatibility/dashboard-excerpt.json",
+          "docs/evidence/wpf-k02-compatibility/green-direct.log",
+          "docs/evidence/wpf-k02-compatibility/implementation-diffcheck.log",
+          "docs/evidence/wpf-k02-compatibility/main-integration.json",
+          "docs/evidence/wpf-k02-compatibility/quality.md",
+          "docs/evidence/wpf-k02-compatibility/red-direct.log",
+          "docs/evidence/wpf-k02-compatibility/source-binding.json",
+          "docs/evidence/wpf-k02-compatibility/typecheck.log",
+          "docs/evidence/wpf-k02-compatibility/validation.md",
+          "plans/wpf-k02-compatibility/plan.md",
+          "plans/wpf-k02-compatibility/review.md",
+          "plans/wpf-k02-compatibility/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "documents": [
+        {
+          "path": "plans/wpf-k02-compatibility/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-k02-compatibility/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-k02-compatibility/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/wpf-k02-compatibility/input-verification.json",
+          "title": "输入验证",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-k02-compatibility/validation.md",
+          "title": "验证",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-k02-compatibility/main-integration.json",
+          "title": "Git证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-k02-compatibility/take-receipt.json",
+          "title": "receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-k02-compatibility/quality.md",
+          "title": "技能",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-k02-compatibility/dashboard-excerpt.json",
+          "title": "证据",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "main": {
+        "record": "INTEGRATED 115b0dbdfa02db5483f9e9699852682ce699633c；763为祖先，六实现/测试paths零diff；[Git证据](../../docs/evidence/wpf-k02-compatibility/main-integration.json)",
+        "recordedHead": "115b0dbdfa02db5483f9e9699852682ce699633c",
+        "target": "7633937c322090bbd6d526f378df464f2a7436ed",
+        "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "scopes": [
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/execution-profiles/selection.ts",
+          "apps/web/test/conversation-outbox.test.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation-queue.test.ts",
+          "apps/web/test/execution-profiles.test.ts"
+        ],
+        "observedAt": "2026-10-06T06:36:35.856Z",
+        "current": true,
+        "historicalIntegrated": true,
+        "method": "ancestor",
+        "scopeEqual": true,
+        "dirtyScopePaths": [],
+        "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+      },
+      "assignments": []
+    }
+  ],
+  "note": "Single manager fetch; exact task objects including transitional HEAD/dirty and status retained. Elapsed time is not a performance benchmark."
+}

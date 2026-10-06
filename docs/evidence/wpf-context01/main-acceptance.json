@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-06T08:10:49Z",
+  "acceptedMain": "fc113945ff73d1a43092d0a70b51e901aa4be1e2",
+  "ancestorsExitCodes": {
+    "736ef0b9f5647faa4c8d8e6c4755eaf95697b02d": 0,
+    "d6a609a82c3aec3b8b4e6609a83a452d11ac1d89": 0
+  },
+  "sourceEqual": {
+    "apps/web/src/conversation-context/selection.ts": true,
+    "apps/web/src/conversation-context/controller.ts": true,
+    "apps/web/src/conversation-context/ContextPicker.tsx": true,
+    "apps/web/src/conversation-context/context-picker.css": true,
+    "apps/web/test/conversation-context.test.ts": true,
+    "apps/web/test/conversation-context.fixture.tsx": true,
+    "apps/web/test/conversation-context.browser.ts": true
+  },
+  "integrationChecks": "ExecutionLead reported Web types 0; owner did not rerun",
+  "services": "60172 retained; no actual model or DB"
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:44 UTC；W1 main30b，W2结果待main接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:11 UTC；W1/W2 main事实仍为已核6426，独立后继S01P01已开工 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
@@ -11,14 +11,14 @@
 | 工作树dirty状态 | 固定结果0dac4b92747db5a3c8ed2dc25301e7cbecc2e8bf clean，后继仅独审/状态/报告说明metadata |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 2ab：11纯统计/预算/参数tests，noEmit0；W2实跑12tasks/12attempts且正常清理，结果0dac独审APPROVED |
-| 已集成main状态 / HEAD | W1已集成main/origin30b97cbf3665c4ef7a314a6a8b59394ae68781af；W2结果已审待集成 |
+| 已集成main状态 / HEAD | W1/W2已集成main/origin6426b44cd32d10216141af13ecfa83b8879025fb，W2交接5504三scope零diff；slot提案未集成 |
 | 实现目标 | 2ab7967f2eb808fecd1205f7552a119eee8e0b36 |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 4 |
-| 当前产出 | 单进程声明容量4、实测并发1的结果已独审通过，待main接收 |
-| 下一可用交付 | main接收W2；既有plan内提交最小有界slot建议 |
+| 当前产出 | 已确认单runner的串行执行瓶颈，实验结果已集成；并行执行改进已独立开工 |
+| 下一可用交付 | 本实验片段已交付；有界并发及未知领取保护由S01P01验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，W2准备2ab与结果0dac均APPROVED；W1已批准并集成 |
@@ -29,8 +29,8 @@
 | S01-02 | completed | mika | [合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json) |
 | S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
 | S01-04 | in-progress | mika / Lead | W1首个128空会话+4runner/16task场景已运行并清理；可选control16/control12未运行，待证据决定 |
-| S01-05 | in-progress | 独立reviewer / Lead | W1结果9e独审APPROVED/main30b；W2准备2ab与结果0dac独审APPROVED，待main接收；后继ACK/browser开放 |
-| S01-06 | pending | 后继owner | 真实provider与更大并发未包含 |
+| S01-05 | in-progress | 独立reviewer / Lead | W1/W2结果均独审APPROVED并main6426；完整S01后继ACK/browser仍开放 |
+| S01-06 | in-progress | s01p01_owner / Mika独审 / Lead集成 | [独立后继status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/status.md)：已领取保守并发核心，尚无产品验收；真实provider另计 |
 
 ## 权限、优先级与事实边界
 
@@ -81,3 +81,15 @@ W1证明本机四个独立fixture runner可同时执行该固定负载，没有S
 2026-10-06 07:44 UTC W2结果独审APPROVED0dac，无P1/P2。原raw/manifest保持hash；两项P3观察边界已补，首次PG空application_name连接归unknown，停止阶段一次claim失败与72事件ACK区分。累计44/38与20.925025秒未变，0重跑。claim v1 ACTIVE同scope已复核；后继只记录批准/交main与0调用slot方案，dashboard待本次状态聚合。
 
 2026-10-06 07:44 UTC dashboard确认：权威S01 source live/stale=false、0bd16d4 clean，delivery integration、review approved、implementation unchanged/current、issues=[]；W2 main仍not-contained。见[w2-result-dashboard.json](../../docs/evidence/s01/w2-result-dashboard.json)。metadata交接后不重复轮询或运行。
+
+2026-10-06 07:46 UTC S01-06只读提案已写回原plan：一个admission/recovery owner+有限attempt Map，明确注册/执行/unknown占用、session排他、outbox与FinalProposalJournal、maintenance/host与单attempt失败边界。CHAT08权威status/head/dirty及账本核验，未写其scope、未启动测试/负载。W2交接固定止于5504b16，proposal后继不混作W2结果批准；CHAT06P01已准备APPROVED，实际矩阵等SVC操作结束条件。
+
+2026-10-06 07:48 UTC W2 MAIN_ACCEPTED：Lead明确main/origin6426已接收5504；owner核5504为祖先、三scope对main零diff，见[w2-main-receipt.json](../../docs/evidence/s01/w2-main-receipt.json)。不重跑、不把cc741只读提案混入批准。GO已认可提案总体方向但要求补claim丢失回执的真实接口缺口；完成CHAT06结果审查后补，后继实现未授权/未领取。
+
+2026-10-06 07:51 UTC GO只读review修正已落实原plan：当前claim空body/无requestId、丢失回执无可靠公开恢复接口，原“现有恢复协议核实”撤回。首片建议未知claim停admission且保留占用、已知attempt继续；真正自动恢复需事务绑定稳定requestId与原结果的窄接口，未领取产品写权/未预设新表。CHAT06实际结果已独审APPROVED160b，0新增运行；此提案修正待GO接收，不与W2结果或main事实混淆。
+
+2026-10-06 07:55 UTC proposal边界复核：worker只读fc5351未见P1/P2；非阻断补充已纳入：claim发送前持久化in-flight意图，确定响应才清除，重启遗留意图保守unknown，防止提交后/记unknown前崩溃漏记。没有中心回执身份仍不能自动恢复。此建议未实现、不覆盖CHAT08写权。CHAT06P02已由Lead正式解锁给原worker新WT/take，S01后继产品实现仍未领取。
+
+2026-10-06 07:56 UTC main聚合核验：单次snapshot显示S01权威834ffb6 clean/source live/stale=false、delivered/approved/unchanged/current、issues=[]；main当前84fdece仍ancestor包含已审2ab且scopeEqual=true，见[w2-main-dashboard.json](../../docs/evidence/s01/w2-main-dashboard.json)。后继slot提案仍独立metadata，不能冒称生产实现；不再重复聚合或运行。
+
+2026-10-06 08:11 UTC 后继已开工：GO/Lead授权S01P01保守并发核心，worker独立WT `runner-attempt-pool` / branch `codex/runner-attempt-pool`、base9c6、现场155494b clean，canonical plan/status/review已就绪。fresh账本08:10:53 available，S01原claim v1 ACTIVE、原三scope不变，S01P01独立claim599454b1 v1 ACTIVE、六scope无重叠。S01-06保持未完成并转in-progress；实际进度只读后继status，不复制其TODO。已桥接Lead登记权威聚合源及全局索引，等待新源聚合展示；本S01沿用07:56已核聚合事实。W1/W2冻结证据、累计预算及原ACK/browser未验收范围不变，0新增运行/模型。架构影响只登记后继runtime调度与持久恢复边界待Lead按实现target更新，本树仍无产品变化。

@@ -1,0 +1,86 @@
+{
+  "observedAt": "2026-10-06T06:47:13.804Z",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-stream-compatibility",
+  "head": "b76d52967d1ff730fab851a7cb87e39ade3f7c29",
+  "expectedFirstCanonical": "b76d52967d1ff730fab851a7cb87e39ade3f7c29",
+  "dirtyAtAudit": "",
+  "branch": "codex/web-stream-compatibility",
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-stream-compatibility/plans/wpf-chat06-compatibility/status.md",
+  "owner": "workspace_panels_owner / gpt-6-astra ultra",
+  "parserErrors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "正在使聊天兼容中心新增的流式能力标记",
+    "next": "交付兼容读取更新，保留原有回复与排队行为",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "WPF-CHAT06C01-01",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[输入](../../docs/evidence/wpf-chat06-compatibility/input-provenance.json)、[技能](../../docs/evidence/wpf-chat06-compatibility/quality.md)"
+    },
+    {
+      "id": "WPF-CHAT06C01-02",
+      "state": "in-progress",
+      "owner": "workspace_panels_owner",
+      "evidence": "正在实现仅能力读取兼容，不启用stream"
+    },
+    {
+      "id": "WPF-CHAT06C01-03",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "局部wire矩阵/直接依赖/typecheck待跑"
+    },
+    {
+      "id": "WPF-CHAT06C01-04",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "独立review/聚合/Lead交付待执行"
+    }
+  ],
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN；仅输入before/after hash与claim核验"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": null
+  },
+  "implementation": {
+    "target": null,
+    "scopes": [
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/test/conversation-projection.test.ts"
+    ],
+    "errors": [
+      "实现目标需完整 SHA"
+    ]
+  },
+  "controlledInput": {
+    "source": "86fc3af54eb500d24416121b4f36e701ea9fd3c4",
+    "applied": "3363c14d0ba12f4dc6eabc275355f9132564d01f",
+    "oneFileOnly": "packages/contracts/src/conversations.ts",
+    "sharedDifference": ""
+  },
+  "claimId": "ca26e49b-b750-43a7-8bf7-ce1b987f50c9",
+  "claimVersion": 1,
+  "notProductReview": true
+}
