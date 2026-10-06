@@ -59,3 +59,15 @@ root 固定4e只读补充：ConversationThread 当前 runtime 仅 onNew，没有
 ## 后继固定 v2 合同候选79867（root只读核对）
 
 root随后实际读取 `79867bdf1b094957c593dc0f142e6e676f2475df` 的 contracts/conversation-queue.ts 和 interface.md；controls 仍stub，生产未批准、public client待Lead。此为后继固定合同，不将旧e423内容覆盖。精确限制仍为页default20/max50、100waiting、正文16000 UTF-8 bytes；pause HTTP200、resume HTTP202，resume expectedTaskId可null。currentTurn.taskStatus可在同queueRevision下由queued→running→终态，GET不能仅因revision没涨就丢弃新的currentTurn/blocked。历史ACK不能回滚最新GET，与同revision接受新动态状态是两个独立合并要求；分页revision变后重新从头读取。root只读来源，无本队queue实现take或当前按钮变化。
+
+
+## 04:42 已确认发布兼容门槛（不是本队整体goal受阻）
+
+Mika发现后台能力将从queue=false变为true，而现Web `conversations/projection.ts` 的 assertCapabilities 将queue与steer/liveAssistantText/perTurn*一起强制等于false。管理者独立读唯一CHAT树clean HEAD `083978b318ede4bb1cabb5050f8d211b17bb9055`、约58–62行核实：queue=true直接throw，整个conversation snapshot失败。root已通知MainLead不得单独部署新true而没有配套Web；新合同将queue类型拓宽为boolean以兼容旧false，后台新能力仍为true。这是具体消费不兼容，不等于合同boolean本身即可修复旧Web，也不撤销历史7cb在false输入下的限定批准。
+
+解除条件：后台完整独审固定输入、Lead公共client/export固定commit与明确发布顺序、受领Web能力迁移及相应队列行为检查同时就绪。旧false必须继续保留旧follow-up/unsupported路径，true需用实际公开queue/pause接口；不能只去掉断言就声称队列受支持。只读准备最小scope，不私改shared、不先take未知范围。PROFILE新模块继续独立执行，当前管理整体blocker仍NONE。
+
+owner复用workspace_panels_owner，但新功能仍须旧CHAT08259c1d v2相关projection/ConversationThread/测试明确停写→当前版本amend移出→独立新tree与新claim committed后实施。同人或不同worktree不能跳过此移交；PROFILE接线也会修改这些路径，必须按ready输入串行，不能同时写。root已协调Lead输入与顺序，管理只维护本父状态与研究，不新增第二套queue状态。
+
+
+后继解除策略已授权：WPF-QUEUE00 reader独立最小切片先行，不等完整queue UI/client，也不擅改shared。只接受实际boolean并维持false兼容，true的不可操作项必须明确而非默认宣称已支持。具体代码/行为边界由唯一owner冻结精确scope再领。MainLead按已审reader→contract/domain→mount成套交付，PROFILE App接线后排，PROFILE独立模块不受影响。Mika域impl ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 / metadata aef5c6fcd3d811673e8eeb8cd67f225ba0941b8e获其root54项独审，是backend范围证据，不替代Web消费验证。

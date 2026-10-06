@@ -35,3 +35,16 @@ conversation.requested是用户请求；selected profile是runner配置声明；
 当前projection.send201–208硬编码creation；assertSummary36–40未验证executionProfile，ACK223–225仅比title/harness/requested。未来接入须验证完整pin，wrong runner/digest ACK不可accept。outbox46–52目前只freeze requested，未来reference也需deep-freeze；这是新增能力要求，不宣称当前未接UI有暴露漏洞。
 
 必要局部验收：多页同名不丢、empty/error/abort/换中心旧response隔离；A→B只发送B、原selection mutation不改receipt；create/turn ACK丢失原key重试pin不漂移、新draft不丢；wrong-reference ACK不确认；revision0锁/无pin不迁移；revoke409不fallback/不改旧task；false能力0非法请求；requested/effective/null/[]/unknown/alias准确；双主题390键盘与选择不自动send。均HTTP fixture明确0模型。未验证部署目录数量、真实provider可用性、effort/权限成功，不由源码推算；旧owner文档待main字样不覆盖dd1入口实际已挂事实。
+
+
+## 04:42 实际App消费准备（readonly，未领取）
+
+workspace_panels_owner固定ae47模块Interface与已审CHAT/X03源核对后给候选WPF-PROFILEI01：App.tsx（当前X03I01 a104v1）；conversations/ConversationThread.tsx、projection.ts、outbox.ts、test/conversation-outbox.test.ts与conversation-projection.test.ts（当前CHAT082v2）；新test/execution-profile-integration.fixture.ts与execution-profile-integration.browser.ts；plans/wpf-profile-integration、docs/evidence/wpf-profile-integration。共10 literal scopes，无officialThread/TaskThread/CSS/plugin-integration/execution-profiles模块/shared改动。04:41管理live核claim身份版本一致，未amend/take、未建新树。
+
+App bound executionProfiles reader每连接一个catalog，picker首次需要时refresh，dispose旧连接；窄snapshot/actions只给Thread不进PluginContext。按稳定View.key缓存draft选择，tab/split/受理路由替换保留，换中心清寿命；已建会话只读自身creation不从目录补pin。composerHeader实际消费模块，仍整profile而非任意model×thinking×access。
+
+首Send同步选择资格→freezeConversationCreation→outbox.begin，原双key机制保留。现outbox.parse会克隆，故接线必须深冻克隆后的executionProfile，不能只靠模块入参已冻结；未知CREATE立即锁receipt-pending，CREATE成功即使首turn拒绝也锁created。仅明确CREATE被拒且无ID才解锁，后续草稿独立不被receipt覆盖。
+
+创建ACK在bind/首turn前由冻结outbox.creation核title/harness/requested及pin完整三元组和有无；wrong/missing/unexpected pin按unknown处理，不换key/选择，不发首turn。GET/turn ACK同样不能随较高revision改变已绑定creation。旧无pin保持legacy-default，不从后来的catalog迁移。
+
+catalog stale/401阻止新configured创建/选择，不阻断已发outbox原key/pin恢复；目录首次refresh/新部分页里缺少选择并不证明已删除，仍由中心准入核pin。候选验收含同model不同runner、refresh不改选择、receipt重试与stale分离、create丢ACK/turn丢ACK两阶段、wrongpin零turn、新draft和首ACK焦点、旧无pin、同ID跨center迟到清理、390双主题键盘。仅未来HTTPfixture，无模型/DB。模块APPROVED+精确含X03和模块的main+正式scope移交后才能实施；queue迁移会交叉Thread/projection，须明确串行顺序。

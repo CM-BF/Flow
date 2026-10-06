@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:40 UTC / 04:28:28 D06 dashboard与4320图实际核验main4e |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:42 UTC / 04:28:28 D06 dashboard与4320图实际核验main4e |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `53b85f74e9baad9a84a969ba1304d26f688005fd`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `3f08ae36ded52e26925c39c8d875c46e15803b8e`（本次管理停点前实核） |
 | 工作树dirty状态 | 仅本管理范围的当前状态、队列研究和PROFILE派工文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | X03I01实际挂载84已审交付；PROFILE01九scope独立模块实施中，CHAT04新合同仍待共享入口 |
-| 下一可用交付 | PROFILE01独立整份执行配置选择模块；X03I01交Lead集成 |
+| 下一可用交付 | WPF-QUEUE00最小能力兼容reader先行，PROFILE01独立模块并行；PROFILE App串接排其后 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -35,10 +35,11 @@
 | WPF-001-09 | in-progress | d01_owner | CHAT7cb/083已审集成main；真实两query仅Lead执行、结果未收到；profile/queue/steer/voice完整需求仍开放 |
 | WPF-001-10 | completed | d01_owner | X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计 |
 | WPF-001-11 | in-progress | d01_owner | PROFILE01只含新模块/局部tests，fixed4e新树核clean后04:36:37.979Z take17093c4c v1，canonical ae47c8a已交root注册；实际App接入另受领 |
+| WPF-001-12 | in-progress | d01_owner | GoalOwner/Lead批准最小QUEUE00 reader先行，等精确scope/停写→CAS→新take；PROFILE App接线后排，模块并行 |
 
 ## 当前唯一owner、claim与下一步
 
-管理者只写本树两目录，04:33:08.996Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审。workspace_panels_owner已交X03I01并停止产品写入，等待Lead集成/后继领取；w01_owner转PROFILE01模块，不并发改旧CHAT文件。本队最多4、主线4、Mika2总上限10；claim数不代表agent数。
+管理者只写本树两目录，04:41:15.660Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审。workspace_panels_owner已交X03I01并停止产品写入，等待Lead集成/后继领取；w01_owner转PROFILE01模块，不并发改旧CHAT文件。本队最多4、主线4、Mika2总上限10；claim数不代表agent数。
 
 | 当前工作 | 已核事实与边界 |
 | --- | --- |
@@ -48,6 +49,10 @@
 | 已交付D06 | ef42277ff55d1cbb76ea707836481a9788619033 / final6ea2e68a3362df3cb50ef4a063fc4cbfc3026966 clean；固定8f图已集成4e，04:28:28.679Z实际47源/图已部署。claimf619 v2 released于04:29:52.844Z，旧树全部停写；后继标题快照提示需新take |
 | 已交付PERF02 | a87 / b61707d20ee9803e7397f21961549deb65ceef1d clean，main已含；claimd36 v2 released于04:12:26.441Z，后续修复新take |
 | 跨Lead | Mika负责CHAT04持久队列和X03模块；ExecutionLead负责公共API/集成/4320。queue v2 pause/continue待固定技术合同；不另设Web queue writer |
+
+## 当前发布门槛（局部依赖，不是整个goal受阻）
+
+CHAT04后台queue=true与现Web强制false不兼容，管理已在clean CHAT083源码独立核实。root已交MainLead不得先部署true；解除须后台独审固定输入、Lead公共client与配套Web行为/兼容旧false一同就绪。GoalOwner/Lead已批准QUEUE00先行，worker准备projection/直接tests/必要fixture精确scope；尚无queue take或shared/产品改动。PROFILE模块继续；后继profile接线与queue共用部分旧CHAT文件，要停写/CAS移出/新tree新claim并串行，不能因同owner免领。
 
 ## 验收边界与开放目标
 
@@ -59,7 +64,7 @@
 
 ## Dashboard与服务
 
-04:07:57实际42源/21activewriterclaims literal0overlap、领取详情字段都可见；04:28:28 D06实际47源/唯一source/人读字段/checks+review ef/proof unchanged/main相同。两次是固定时点，不称永久无冲突。Lead已通知main292ad4d/4320于04:32:26.186Z共49源，X03I01/O03 live且issues空；该事实明确为Lead采样，X03作者下一固定交付时实读，我不重复同采样。PROFILE待receipt/canonical再送。
+04:07:57实际42源/21activewriterclaims literal0overlap、领取详情字段都可见；04:28:28 D06实际47源/唯一source/人读字段/checks+review ef/proof unchanged/main相同。两次是固定时点，不称永久无冲突。Lead已通知main292ad4d/4320于04:32:26.186Z共49源，X03I01/O03 live且issues空；该事实明确为Lead采样，X03作者下一固定交付时实读，我不重复同采样。PROFILE ae47首canonical+17093v1 receipt已交root桥注册，等待registry通知后由owner适时一次核验。
 
 [用户M02预览](http://127.0.0.1:49922/) session17885、[I01](http://127.0.0.1:55049/) session79831、[CHAT](http://127.0.0.1:63743/) session14932均由workspace_panels_owner保留；[D06固定8f图](http://127.0.0.1:55247/#architecture) PID42719保留。4320服务仍主线独占；本管理者不重启、不替换用户预览。
 
@@ -110,3 +115,7 @@ PROFILE01下一ready仅新选择模块/局部tests/自己plan-evidence，不写A
 04:37 PROFILE01原样[receipt](../../docs/evidence/web-platform/profile01-take-receipt.json)已存；管理者04:36核branch/HEAD4e/clean，原子CLI成功后才派实施，canonical首commit到后送Lead登记，不将claim可见当status卡已注册。
 
 04:40 X03最终metadata核6Markdown39links4TODO/实现差异0；全metadata diffcheck仅原始build.log/typecheck.log空白例外，validation已限定实现检查，保留raw。root一次交MainLead，管理不重复产品review或模型/DB。PROFILE首canonical与receipt已桥注册，尚待registry通知，不把take可见当状态卡已聚合。
+
+04:42管理安全停点：live账本核本管理v2、CHATv2、X03I01v1、PROFILE01v1均active且范围一致；新queue rollout错误从泛候选细化为源码确认兼容门槛，记录责任Lead与解除输入。只有文档/只读源码检查，没有产品实现、重测或模型。
+
+04:43最小QUEUE00先行获明确授权，base候选75a33dec完整SHA已记录，等待owner逐文件scope与停止旧写确认再CAS；不等所有queueclient也不冒称完整queue UI。Mika后端54项独审来源/固定impl ae9d与meta aef5在父plan保留，主Lead负责成套顺序。

@@ -166,6 +166,7 @@ type WorkspacePanelsProps = {
 - [ ] **WPF-001-09** 优先推进U11真实持续对话：冻结center能力/会话/queue-steer接缝，分阶段独立派工并真实验收。
 - [x] **WPF-001-10** WPF-X03I01：消费Mika已审X03模块，在真实App设置挂载只读插件管理；84acdc整体限定APPROVED/final4b7e0f，独立scope/docs通过，交Lead集成仍另计。
 - [ ] **WPF-001-11** WPF-PROFILE01：独立新模块实现整份已发布执行配置选择、冻结creation与pin校验；局部测试/fixture后独审，真实App接线另受领，不能把模块完成当U11完成。
+- [ ] **WPF-001-12** WPF-QUEUE00：先交兼容queue布尔能力的最小Web reader，保留false旧行为且不伪启用完整队列；projection/直接tests与必要fixture精确范围停写移交、独立tree/receipt后实现，供Lead成套发布。
 
 ## 验收、风险与持续方式
 
@@ -243,3 +244,9 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 04:40 X03I01最终4b7e0f6553025ba1dbb93e7e3c2b82a9958b92e3 clean，84acdcaaa9687a4ca75ebdb40a6efc7e5539029a获root限定APPROVED。管理6md/39links/4TODO、保护范围和实现diff0通过；全metadata diffcheck仅两原始log空白例外保留，不清洗证据。PROFILE01 canonical ae47c8a1f8feb7b0dec71435e868c3a262c53d06 已给root桥Lead注册，独立模块实施继续。
 
 04:41 首连研究固定75a33dec228e17bbbd0d3be9fd01bc9ac18a0133：现URL留空可走本机/api代理，onConnect不等认证；未来表单说明候选与SVC owner显式本机copy-owner-token工具候选已记[研究](../../docs/evidence/web-platform/research.md)，无读真实凭据/剪贴板/实现，不扩X03或PROFILE scope。
+
+
+04:42 CHAT04发布顺序已确认有消费不兼容：当前已审Web assertCapabilities只接受queue=false，后台true会使会话snapshot失败。root已交MainLead成套部署门槛，保持旧false兼容；等后台独审/Lead client固定输入和最小Web迁移scope，先不改按钮或shared。PROFILE独立模块并行不受影响；后继PROFILE App接线与queue同需旧CHAT Thread/projection正式移交，按ready输入串行，不因同owner跳过新tree/claim。候选具体scope与验收见[配置研究](../../docs/evidence/web-platform/execution-profiles-research.md)和[队列研究](../../docs/evidence/web-platform/chat-queue-research.md)。
+
+
+04:43 GoalOwner与MainLead明确授权 WPF-QUEUE00 最小reader先行，PROFILE App接线排其后、PROFILE模块照常。拟独立web-queue-compatibility/codex/web-queue-compatibility，从明确固定75a33dec228e17bbbd0d3be9fd01bc9ac18a0133（或Lead后给精确base）初始化；仅projection/直接tests/必要HTTPfixture与自有plan-evidence，等owner精确scope与旧CHATv2停写后CAS，新take后才写。MainLead承诺不先启用queue=true，按reader→contract/domain→mount成套验证。Mika最终域implae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 / metaaef5c6fcd3d811673e8eeb8cd67f225ba0941b8e据其root已独审54项；这里只转交来源，不当本队重跑或Web/生产接线通过。合同沿79867且queue拓宽boolean。
