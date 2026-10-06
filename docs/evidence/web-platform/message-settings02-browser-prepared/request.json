@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-06T22:51:37.569146+00:00",
+  "task": "WPF-MESSAGESETTINGS02",
+  "sourceTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "ownerHead": "38bfce69c632d52e1e1d3ab02cff21fbcc21b826",
+  "ownerStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+  "candidate": "/private/tmp/msgquick-b1",
+  "state": "APPROVED_SCOPED_STATIC_BROWSER_PREPARATION_NOT_RUN",
+  "manifestSha256": "acee9bc2f242388ef36f14d70e36cca3723532e8c19a43dec1973cc4cfa2f654",
+  "bindingSha256": "5498571a23abb98232be1b8253b7545fc543c922f2ea3438e504babf56383ae0",
+  "runnerSha256": "4cfd2d927a8d3908ede1f79d287455dd59e149248432e7f45df5b1baf4ce7c3d",
+  "workerSha256": "cb7bce4aa602e0a0cda355dc406f1dcdc8d42874fe51b782fe36996dc8289d44",
+  "verifiedPreparedFileCount": 12,
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e"
+  },
+  "limits": {
+    "totalMs": 60000,
+    "cleanupMs": 15000,
+    "temporaryBytes": 67108864,
+    "retainedBytes": 8388608,
+    "logBytes": 1048576,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688
+  },
+  "previousRuntimeMs": 0,
+  "actualChecks": "ALL_NOT_RUN",
+  "typesDirectPrerequisite": null,
+  "nativeChromeBoundaryApproval": null,
+  "gate": null,
+  "reservation": false,
+  "resourceSample": false,
+  "grant": false,
+  "notes": [
+    "Six actual controlled-fixture HTTP groups/two390 PNG; real CSS/plugins; no fullApp proof.",
+    "Same-fe6 c1 actual types/direct accepted evidence must precede browser admission.",
+    "c1 unchanged and bound3fb; future admission must rebind actual38bf source-identical HEAD/manifest. No owner metadata loop.",
+    "Settings01 b5 old fourchecks/budget/claim/Chrome acceptance not inherited."
+  ],
+  "reviewEvidence": "root-consumer-scope.json",
+  "dispatch": "dispatch.json",
+  "rootPreparationReview": "root-preparation-review.json",
+  "approvalBoundary": "Static source/preparation only; not new nativeChrome acceptance, budget, gate or window."
+}

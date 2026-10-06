@@ -1,0 +1,169 @@
+{
+  "key": "plugin-management",
+  "tree": "web-plugin-management-integration",
+  "head": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+  "pid": 56147,
+  "ppid": 55996,
+  "pgid": 55402,
+  "port": 59473,
+  "session": 96967,
+  "flag": "--app-preview",
+  "fixture": "apps/web/test/plugin-management-integration.fixture.ts",
+  "status": "plans/wpf-x03-plugin-integration/status.md",
+  "readme": "docs/evidence/wpf-x03/README.md",
+  "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+  "git": {
+    "head": {
+      "args": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exitCode": 0,
+      "stdout": "05b92d30c953413ab66d8b69447c9b44c9121a6a\n",
+      "stderr": ""
+    },
+    "branch": {
+      "args": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exitCode": 0,
+      "stdout": "codex/web-plugin-management-integration\n",
+      "stderr": ""
+    },
+    "dirty": {
+      "args": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "sources": [
+    {
+      "path": "plans/wpf-x03-plugin-integration/status.md",
+      "sha256": "9b4761a249be7e8edaa2bf78d3751f4dc6ff1834e33791e965e3e76c3ec5773a",
+      "bytes": 4639,
+      "currentEqualsFixed": true,
+      "saved": "source-0-status.md"
+    },
+    {
+      "path": "docs/evidence/wpf-x03/README.md",
+      "sha256": "1488b3cef694971b79b0a72fe04f8f49d8730669b26ac3f5f273c19e0fb193f5",
+      "bytes": 2668,
+      "currentEqualsFixed": true,
+      "saved": "source-1-README.md"
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "sha256": "9fa4706fb26e639aed55413ff07d5ff0dbd05dee6a30d14221f2b909b313c692",
+      "bytes": 6161,
+      "currentEqualsFixed": true,
+      "saved": "source-2-plugin-management-integration.fixture.ts"
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "f86e755a32cb6c3c5e81512ca2c0d06844438c67a905d97a4c90ce8d28444344",
+      "bytes": 1327,
+      "currentEqualsFixed": true,
+      "saved": "source-3-package.json"
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f",
+      "bytes": 648,
+      "currentEqualsFixed": true,
+      "saved": "source-4-vite.config.ts"
+    },
+    {
+      "path": "apps/web/test/conversation.fixture.ts",
+      "sha256": "c5639b75d81d884ca122b53533f0b6dec6a816b37d3f12f22ed93e55099fe3a6",
+      "bytes": 11048,
+      "currentEqualsFixed": true,
+      "saved": "source-5-conversation.fixture.ts"
+    }
+  ],
+  "identity": {
+    "args": [
+      "ps",
+      "-p",
+      "56147",
+      "-o",
+      "pid=,ppid=,pgid=,lstart=,user=,command="
+    ],
+    "exitCode": 0,
+    "stdout": "56147 55996 55402 Mon Oct  5 21:31:05 2026     citrine /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/plugin-management-integration.fixture.ts --app-preview\n",
+    "stderr": ""
+  },
+  "cwd": {
+    "args": [
+      "lsof",
+      "-a",
+      "-p",
+      "56147",
+      "-d",
+      "cwd",
+      "-Fn"
+    ],
+    "exitCode": 0,
+    "stdout": "p56147\nfcwd\nn/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration\n",
+    "stderr": ""
+  },
+  "tcp": {
+    "args": [
+      "lsof",
+      "-nP",
+      "-a",
+      "-p",
+      "56147",
+      "-iTCP"
+    ],
+    "exitCode": 0,
+    "stdout": "COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    56147 citrine   18u  IPv4 0x423fd81aef45e231      0t0  TCP 127.0.0.1:59473 (LISTEN)\nnode    56147 citrine   22u  IPv4 0x23af3bad9194c590      0t0  TCP 127.0.0.1:59469 (LISTEN)\nnode    56147 citrine   23u  IPv4 0xa3610c3cf3956986      0t0  TCP 127.0.0.1:59470 (LISTEN)\n",
+    "stderr": ""
+  },
+  "stdio": {
+    "args": [
+      "lsof",
+      "-a",
+      "-p",
+      "56147",
+      "-d",
+      "1,2"
+    ],
+    "exitCode": 0,
+    "stdout": "COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    56147 citrine    1   PIPE 0xbc6a7ffe2b5170c2    16384      ->0xb63aa85b92a04cb7\nnode    56147 citrine    2   PIPE 0x1a22981492a98fb3    16384      ->0xbe98a0197abc5aae\n",
+    "stderr": ""
+  },
+  "groupPids": {
+    "args": [
+      "pgrep",
+      "-g",
+      "55402"
+    ],
+    "exitCode": 0,
+    "stdout": "55402\n55996\n56147\n56430\n",
+    "stderr": ""
+  },
+  "groupMembers": {
+    "args": [
+      "ps",
+      "-p",
+      "55402,55996,56147,56430",
+      "-o",
+      "pid=,ppid=,pgid=,user=,command="
+    ],
+    "exitCode": 0,
+    "stdout": "55402 46117 55402 citrine node /opt/homebrew/bin/pnpm exec tsx apps/web/test/plugin-management-integration.fixture.ts --app-preview\n55996 55402 55402 citrine node ./node_modules/.bin/../tsx/dist/cli.mjs apps/web/test/plugin-management-integration.fixture.ts --app-preview\n56147 55996 55402 citrine /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/plugin-management-integration.fixture.ts --app-preview\n56430 56147 55402 citrine /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild --service=0.28.2 --ping\n",
+    "stderr": ""
+  },
+  "restartCommand": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/plugin-management-integration.fixture.ts --app-preview",
+  "ownerEvidence": "Fixed own status and README explicitly identify workspace_panels_owner; historical session matches manager input.",
+  "preservation": "Historical agent default retained preview; no additional user permanent-retention fact known to this owner. New explicit retirement authorization applies.",
+  "sourceReadLimits": "These are fixed/current file snapshots, not a memory hash of already loaded module bytes. No restart or runtime readiness test."
+}

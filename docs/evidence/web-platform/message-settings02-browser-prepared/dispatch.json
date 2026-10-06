@@ -1,0 +1,83 @@
+{
+  "recordedAt": "2026-10-06T22:42:06.998428+00:00",
+  "task": "WPF-MESSAGESETTINGS02 / existing MSGQUICK-04",
+  "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "freshAt": "2026-10-06T22:41:30.154Z",
+  "freshLedger": "/private/tmp/d01-msgquick-browser-preparation-fresh.json",
+  "freshSha256": "f7b9574f29c43aba9e2b8bf5c1c7872805a460ea2ea12785924afb7e19130878",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.browser.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "docs/evidence/wpf-message-settings-quick-controls",
+      "plans/wpf-message-settings-quick-controls"
+    ],
+    "state": "active",
+    "branch": "codex/web-message-settings-quick-controls",
+    "origin": "new",
+    "taskId": "WPF-MESSAGESETTINGS02",
+    "worker": "w01_owner",
+    "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+    "createdAt": "2026-10-06T22:00:19.358Z",
+    "updatedAt": "2026-10-06T22:00:19.358Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlap": [],
+  "observedHead": "3fbaf49ef761354430ba23bcba536f5bf3a9804c",
+  "branch": "codex/web-message-settings-quick-controls",
+  "localRemoteEqualCleanObserved": true,
+  "productDiffZero": true,
+  "assignment": "New independent own/tmp executable browser packet; unchanged six HTTP fixture/browser scenarios; true JS/CSS/Vite/React/Tailwind/Playwright binding; static reuse of reviewed Settings01 b5 lifecycle methods only",
+  "proposal": {
+    "totalMs": 60000,
+    "cleanupMs": 15000,
+    "scratchBytes": 67108864,
+    "evidenceBytes": 8388608,
+    "notNewBudgetOrRuntimeGrant": true
+  },
+  "prerequisites": [
+    "Actual c1 type/direct pass before browser admission",
+    "New exact source/worker/runner/runtime/sandbox review",
+    "Exact candidate nativeChrome boundary must be independently accepted; old approval not inherited",
+    "New resource/claim/window single-use gate with actual external exit and sealed terminal evidence"
+  ],
+  "preserve": [
+    "c1 packet",
+    "old b5 original/runtime evidence",
+    "Recovery",
+    "DPERF04",
+    "four product sources"
+  ],
+  "operations": {
+    "newClaimOrTask": false,
+    "projectCodeChange": false,
+    "runOrImport": false,
+    "freeOrProcessSample": false,
+    "gateOrReservation": false
+  },
+  "recording": "Queue this receipt for next normal management batch with completed packet; owner normal evidence safe-point only, no metadata-only cycle.",
+  "assignmentAuthority": "Root explicit bounded static preparation; internal followup to original W01",
+  "rootConcreteInputs": [
+    "assistant-ui.css imports tailwindcss and tw-animate-css",
+    "styles.css",
+    "themes.ts",
+    "Picker/dialog/button/utils",
+    "Real Vite React and Tailwind plugins; exact donor runtime resolution",
+    "Six groups use fixed fe6 functions; only actual Light/Dark390 PNG pair, controlled fixture scope"
+  ],
+  "notInheritedFromB5": [
+    "task01 identity",
+    "old claim",
+    "old20609 budget",
+    "old4PASS evidence",
+    "oldnativeChrome exact boundary acceptance"
+  ]
+}

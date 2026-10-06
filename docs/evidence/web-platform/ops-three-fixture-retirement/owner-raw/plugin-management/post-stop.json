@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-06T22:47:54.948153+00:00",
+  "pid": {
+    "args": [
+      "ps",
+      "-p",
+      "56147",
+      "-o",
+      "pid=,ppid=,pgid=,command="
+    ],
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "group": {
+    "args": [
+      "pgrep",
+      "-g",
+      "55402"
+    ],
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "ports": [
+    {
+      "args": [
+        "lsof",
+        "-nP",
+        "-iTCP:59469",
+        "-sTCP:LISTEN"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "lsof",
+        "-nP",
+        "-iTCP:59470",
+        "-sTCP:LISTEN"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "lsof",
+        "-nP",
+        "-iTCP:59473",
+        "-sTCP:LISTEN"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "gitDirty": {
+    "args": [
+      "git",
+      "-C",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+      "status",
+      "--porcelain"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "state": "SIGTERM_SENT_NOT_YET_EXIT_CONFIRMED",
+  "pid": 56147,
+  "scope": "Exact owned Node PID only",
+  "identity": {
+    "args": [
+      "ps",
+      "-p",
+      "56147",
+      "-o",
+      "pid=,ppid=,pgid=,lstart=,user=,command="
+    ],
+    "exitCode": 0,
+    "stdout": "56147 55996 55402 Mon Oct  5 21:31:05 2026     citrine /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/plugin-management-integration.fixture.ts --app-preview\n",
+    "stderr": ""
+  },
+  "cwd": {
+    "args": [
+      "lsof",
+      "-a",
+      "-p",
+      "56147",
+      "-d",
+      "cwd",
+      "-Fn"
+    ],
+    "exitCode": 0,
+    "stdout": "p56147\nfcwd\nn/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration\n",
+    "stderr": ""
+  },
+  "port": {
+    "args": [
+      "lsof",
+      "-nP",
+      "-iTCP:59473",
+      "-sTCP:LISTEN",
+      "-t"
+    ],
+    "exitCode": 0,
+    "stdout": "56147\n",
+    "stderr": ""
+  },
+  "at": "2026-10-06T22:47:46.556811+00:00",
+  "sentAt": "2026-10-06T22:47:46.557547+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "atUnix": 1791326653.640007,
+  "state": "EXACT_PAYLOAD_RETIREMENT_COMPLETED_RESOURCE_GATE_NOT_REACHED",
+  "runId": "3111a61fe8964590ae9b68ce0538f965",
+  "targetHead": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+  "targetClean": true,
+  "retiredFiles": 29606,
+  "logicalBytes": 508198354,
+  "directoriesPreserved": 4169,
+  "symlinksPreserved": 2228,
+  "generatedAndRootCachePreserved": 73,
+  "CASIdentitiesPreserved": 26549,
+  "CASPackageIndexesPreserved": 581,
+  "beforeFreeBytes": 1077436416,
+  "afterSupervisionFreeBytes": 1079205888,
+  "observedSharedVolumeDeltaBytes": 1769472,
+  "postcheckFreeBytes": 1079889920,
+  "elapsedMs": 41009,
+  "ownedState": "absent",
+  "primaryFailure": null,
+  "pendingFileId": null,
+  "runtimeReady": false,
+  "marker": {
+    "state": "NOT_RUNTIME_READY",
+    "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+    "rootIdentity": [
+      16777234,
+      121438928
+    ],
+    "retirementRun": "3111a61fe8964590ae9b68ce0538f965",
+    "stateDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/actions/3111a61fe8964590ae9b68ce0538f965",
+    "replay": "Restore exact missing payloads, verify pinned inputs, then obtain fresh runtime admission."
+  },
+  "limitations": [
+    "Shared volume delta is not an isolated reclaimed-physical-byte measurement.",
+    "CAS content hashes were checked before each retirement; postcheck rechecked CAS identities and indexes, not all payload content again.",
+    "Full restoration/entrypoint verification and separate runtime admission required; no replay authority."
+  ],
+  "provider": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "serviceMutations": 0
+}

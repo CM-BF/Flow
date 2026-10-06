@@ -1,0 +1,162 @@
+{
+  "key": "steering",
+  "tree": "web-steering-control",
+  "head": "01842a87f768bd28ce7370681ff02d7b834765f7",
+  "pid": 46425,
+  "ppid": 46236,
+  "pgid": 45304,
+  "port": 63251,
+  "session": 13237,
+  "flag": "--steering-preview",
+  "fixture": "apps/web/test/conversation-steering.fixture.ts",
+  "status": "plans/wpf-steering-control/status.md",
+  "readme": "docs/evidence/wpf-steering-control/README.md",
+  "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+  "git": {
+    "head": {
+      "args": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exitCode": 0,
+      "stdout": "01842a87f768bd28ce7370681ff02d7b834765f7\n",
+      "stderr": ""
+    },
+    "branch": {
+      "args": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exitCode": 0,
+      "stdout": "codex/web-steering-control\n",
+      "stderr": ""
+    },
+    "dirty": {
+      "args": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "sources": [
+    {
+      "path": "plans/wpf-steering-control/status.md",
+      "sha256": "3c4d31bb8120fc47448c15c5bf4e7a309a294db57e2cd19c11a247ac67175b00",
+      "bytes": 4128,
+      "currentEqualsFixed": true,
+      "saved": "source-0-status.md"
+    },
+    {
+      "path": "docs/evidence/wpf-steering-control/README.md",
+      "sha256": "5972fb23202259f57762b78c4dcc98c1e9d0faabb6ff44e142c9e52fde7839b0",
+      "bytes": 2992,
+      "currentEqualsFixed": true,
+      "saved": "source-1-README.md"
+    },
+    {
+      "path": "apps/web/test/conversation-steering.fixture.ts",
+      "sha256": "7a231d9c723650d05c22124914b6e31abcd25ba566ba309729cf21fd635b95ae",
+      "bytes": 10622,
+      "currentEqualsFixed": true,
+      "saved": "source-2-conversation-steering.fixture.ts"
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "f86e755a32cb6c3c5e81512ca2c0d06844438c67a905d97a4c90ce8d28444344",
+      "bytes": 1327,
+      "currentEqualsFixed": true,
+      "saved": "source-3-package.json"
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f",
+      "bytes": 648,
+      "currentEqualsFixed": true,
+      "saved": "source-4-vite.config.ts"
+    }
+  ],
+  "identity": {
+    "args": [
+      "ps",
+      "-p",
+      "46425",
+      "-o",
+      "pid=,ppid=,pgid=,lstart=,user=,command="
+    ],
+    "exitCode": 0,
+    "stdout": "46425 46236 45304 Tue Oct  6 01:54:43 2026     citrine /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/conversation-steering.fixture.ts --steering-preview\n",
+    "stderr": ""
+  },
+  "cwd": {
+    "args": [
+      "lsof",
+      "-a",
+      "-p",
+      "46425",
+      "-d",
+      "cwd",
+      "-Fn"
+    ],
+    "exitCode": 0,
+    "stdout": "p46425\nfcwd\nn/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control\n",
+    "stderr": ""
+  },
+  "tcp": {
+    "args": [
+      "lsof",
+      "-nP",
+      "-a",
+      "-p",
+      "46425",
+      "-iTCP"
+    ],
+    "exitCode": 0,
+    "stdout": "COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    46425 citrine   16u  IPv4 0xdc49a3dbca640a8d      0t0  TCP 127.0.0.1:63247 (LISTEN)\nnode    46425 citrine   17u  IPv4 0x33b9e0107fea6607      0t0  TCP 127.0.0.1:63248 (LISTEN)\nnode    46425 citrine   18u  IPv4 0xa62a70c8f2255258      0t0  TCP 127.0.0.1:63251 (LISTEN)\n",
+    "stderr": ""
+  },
+  "stdio": {
+    "args": [
+      "lsof",
+      "-a",
+      "-p",
+      "46425",
+      "-d",
+      "1,2"
+    ],
+    "exitCode": 0,
+    "stdout": "COMMAND   PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    46425 citrine    1   PIPE 0xcbc661efc0c3bc8e    16384      ->0x199194ebcb656193\nnode    46425 citrine    2   PIPE 0x2fd5d1520c3fc1d3    16384      ->0xdeae99785e4688b8\n",
+    "stderr": ""
+  },
+  "groupPids": {
+    "args": [
+      "pgrep",
+      "-g",
+      "45304"
+    ],
+    "exitCode": 0,
+    "stdout": "45304\n46236\n46425\n",
+    "stderr": ""
+  },
+  "groupMembers": {
+    "args": [
+      "ps",
+      "-p",
+      "45304,46236,46425",
+      "-o",
+      "pid=,ppid=,pgid=,user=,command="
+    ],
+    "exitCode": 0,
+    "stdout": "45304 46117 45304 citrine node /opt/homebrew/bin/pnpm exec tsx apps/web/test/conversation-steering.fixture.ts --steering-preview\n46236 45304 45304 citrine node ./node_modules/.bin/../tsx/dist/cli.mjs apps/web/test/conversation-steering.fixture.ts --steering-preview\n46425 46236 45304 citrine /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/conversation-steering.fixture.ts --steering-preview\n",
+    "stderr": ""
+  },
+  "restartCommand": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversation-steering.fixture.ts --steering-preview",
+  "ownerEvidence": "Fixed own status and README explicitly identify workspace_panels_owner; historical session matches manager input.",
+  "preservation": "Historical agent default retained preview; no additional user permanent-retention fact known to this owner. New explicit retirement authorization applies.",
+  "sourceReadLimits": "These are fixed/current file snapshots, not a memory hash of already loaded module bytes. No restart or runtime readiness test."
+}

@@ -1,0 +1,101 @@
+{
+  "state": "PREPARED",
+  "task": "WPF-MESSAGESETTINGS02",
+  "sourceTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "metadataHead": "38bfce69c632d52e1e1d3ab02cff21fbcc21b826",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e"
+  },
+  "files": {
+    "binding.json": {
+      "bytes": 35781,
+      "sha256": "5498571a23abb98232be1b8253b7545fc543c922f2ea3438e504babf56383ae0"
+    },
+    "supervisor.py": {
+      "bytes": 25324,
+      "sha256": "4cfd2d927a8d3908ede1f79d287455dd59e149248432e7f45df5b1baf4ce7c3d"
+    },
+    "worker.mjs": {
+      "bytes": 7149,
+      "sha256": "cb7bce4aa602e0a0cda355dc406f1dcdc8d42874fe51b782fe36996dc8289d44"
+    },
+    "runtime-tsconfig.json": {
+      "bytes": 1620,
+      "sha256": "bc0bd602d32d2a03d122fff259684bee15cfe17a7ea40224cc06c1ffd2a51f18"
+    },
+    "aliases.json": {
+      "bytes": 3483,
+      "sha256": "b1e602aa62b5ebff2006e7ad3aefabea5606c9cf0998e14d5afa7aa8ec4110d4"
+    },
+    "report.md": {
+      "bytes": 5548,
+      "sha256": "8ddd44c97436ffa32f13aa6baf454445a9e5ea989a23eb0ea93f34351fb86c46"
+    },
+    "supervisor.py.diff": {
+      "bytes": 14269,
+      "sha256": "42a9a95fd1e086f62a3c37f324f07416a48f1279a541f5e606397830f34bc262"
+    },
+    "worker.mjs.diff": {
+      "bytes": 3348,
+      "sha256": "c9331b74cfeb4e0647fcf5c711499d08f97997da865f71a9dbb197a2e8559889"
+    },
+    "runtime-tsconfig.json.diff": {
+      "bytes": 828,
+      "sha256": "c682917827cce7a1fe4d8b593da9e6ee73ff9e1a2709079e1fd65acbd0fd2817"
+    },
+    "aliases.json.diff": {
+      "bytes": 728,
+      "sha256": "aca6045f5b31c6f43296299a5be7f68bde49e811a9c4541ff838110ac3c6641a"
+    },
+    "root-consumer-scope.json": {
+      "bytes": 6009,
+      "sha256": "ad4f7c75c3372062a106a615dad9925a6496f2b31b3ba8e4327bc06997adf2e8"
+    },
+    "binding-before-final-metadata.json": {
+      "bytes": 35781,
+      "sha256": "72d134d930718d1cfadb7e6ff83dcb8e5bf3db4d6c7194fb1debfc05dd0dd6f2"
+    }
+  },
+  "readOnlyOwnCount": 116,
+  "externalEntryCount": 37,
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "expectedChecks": [
+    "Native Tab/Arrow/Space/Enter filters and explicit Apply commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+    "No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C",
+    "Actual fixture host CAS rejects lagging-props Apply; same-tuple new draft/view invalidates pending choice and omit; unmount preserves host C (production App remains unbound)",
+    "Details close-before-navigation focus, removed-candidate recovery focus, light/dark390,180-character model and reduced-motion keyboard",
+    "Empty/missing selection retained; 40-profile paging still projects only the authorized32 tuples; legacy creation unchanged; new connection has independent controlled drafts",
+    "Already-applied authorized profile21 absent on page1 retains C/A/B/text and blocks Apply; actual after20 HTTP page exposes only exact profile21 tuples; no automatic write and exactly one explicit post-page Apply"
+  ],
+  "expectedScreenshots": [
+    "message-settings-light-390.png",
+    "message-settings-dark-390.png"
+  ],
+  "limits": {
+    "totalMs": 60000,
+    "cleanupMs": 15000,
+    "temporaryBytes": 67108864,
+    "retainedBytes": 8388608,
+    "logBytes": 1048576,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688
+  },
+  "previousRuntimeMs": 0,
+  "previousEvidenceBytes": 0,
+  "prerequisites": {
+    "typesDirectEvidence": null,
+    "nativeChromeBoundaryApproval": null,
+    "gate": null,
+    "meaning": "Unmet. Before admission typesDirectEvidence must pin the independent actual c1 outer exit + unique matching terminal-seal + exact26 checks acceptance, same four source hashes/implementation. Static preparation/source approval or old Settings01 checks are insufficient. Manager rebinds actual source HEAD and exact new native Chrome boundary at fresh admission."
+  },
+  "futureCommand": "python3 /private/tmp/msgquick-b1/supervisor.py --gate <fresh external gate>",
+  "actualChecks": "NOT_RUN",
+  "staticActionsOnly": "Files constructed/read and hashes compared. No packet syntax/import/process/resource or product execution. c1 packet untouched; future admission must rebind its real metadata HEAD as appropriate."
+}

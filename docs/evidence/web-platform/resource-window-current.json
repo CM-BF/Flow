@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T22:40:16.614733+00:00",
-  "state": "NO_WEB_HEAVY_HOLDER_GIT_AUTHORITY_RETURNED_MIKA_SVC07_NEXT_READY",
-  "groupWindowOwnership": "No Web active heavy runtime, reservation or gate. Root exact Git provision completed and authority returned to original Lead. Mika incoming reports no holder/reservation; SVC07 requested first, C02 after fresh shared handoff, neither actual launch inferred.",
+  "recordedAt": "2026-10-06T22:54:29.173282+00:00",
+  "state": "NO_WEB_HEAVY_HOLDER_THREE_OWNED_PREVIEWS_RETIRED",
+  "groupWindowOwnership": "No Web PG/Chrome holder, reservation or gate. Three exact owned preview fixtures retired with actual exit143 and absent groups/listeners; only Lead may later check exact cache candidates. Workspace-cache dependency retirement is complete and NOT_RUNTIME_READY.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -992,7 +992,7 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "ops-two-fixture-retirement/lead-handoff-current.json",
+  "currentWindowEvidence": "ops-three-fixture-retirement/request.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
@@ -1118,16 +1118,14 @@
     "webStarts": 0
   },
   "opsWorkspaceCacheDependencies": {
-    "state": "BOUNDED_USE_AND_FROZEN_CONSUMERS_CONFIRMED_RESTORATION_REVIEW_PENDING",
-    "request": "ops-workspace-cache-dependency-consumers/request.json",
-    "operationAuthorizedByThisRecord": false,
-    "owner": "workspace_panels_owner",
-    "oldClaim": "883321bc v2 RELEASED",
-    "cacheConfirmationDoesNotApply": true,
-    "noWebRuntimeOrSamples": true,
-    "confirmation": "ops-workspace-cache-dependency-consumers/manager-confirmation.json",
-    "rootReview": "ops-workspace-cache-dependency-consumers/root-frozen-dependency-review.json",
-    "latestLeadAck": "Bounded confirmation received; full metadata and restore operator candidate preparation only. Actual payload KEEP; dependencies/preview unchanged. No operation by Web."
+    "state": "EXACT_PAYLOAD_RETIRED_NOT_RUNTIME_READY",
+    "source": "Lead actual postcheck, archived verbatim",
+    "evidence": "ops-three-fixture-retirement/lead-workspace-cache-postcheck.json",
+    "postcheckFreeBytes": 1079889920,
+    "sharedVolumeDeltaBytes": 1769472,
+    "freshManagerResourceSample": false,
+    "runtimeReady": false,
+    "restoreRequiredBeforeAnyReplay": true
   },
   "latestContractSourceIntake": {
     "record": "chat05p01-web-consumer-intake/lead-contract-and-dependency-incoming.json",
@@ -1139,13 +1137,125 @@
   "quickControlsPreparation": {
     "request": "message-settings02-c1-prepared/request.json",
     "state": "APPROVED_STATIC_PREPARATION_NOT_RUN",
-    "ownerHead": "3fbaf49ef761354430ba23bcba536f5bf3a9804c",
     "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
     "grant": false,
     "reservation": false,
     "gate": null,
     "freeSample": false,
     "runtimeStarted": false,
-    "queueUnchanged": "Lead SVC07/C02"
+    "queueUnchanged": "Lead SVC07/C02",
+    "ownerHeadAtPacketSeal": "3fbaf49ef761354430ba23bcba536f5bf3a9804c",
+    "currentOwnerHead": "38bfce69c632d52e1e1d3ab02cff21fbcc21b826",
+    "headRebindRequiredAtFutureAdmission": true
+  },
+  "currentOpsThreeFixtureRetirement": {
+    "state": "THREE_PREVIEWS_RETIRED_LIFECYCLE_CLOSED_ALL_METADATA_CLAIMS_RELEASED",
+    "request": "ops-three-fixture-retirement/request.json",
+    "owner": "workspace_panels_owner",
+    "ports": [
+      59473,
+      51832,
+      63251
+    ],
+    "actualRetirementReceipt": "ops-three-fixture-retirement/owner-raw/receipt.json",
+    "cacheDeletionAuthorizedToWeb": false,
+    "metadataClaimsTaken": false,
+    "managerConfirmation": "ops-three-fixture-retirement/manager-confirmation.json",
+    "actualSignals": [
+      {
+        "port": 59473,
+        "pid": 56147,
+        "at": "2026-10-06T22:47:46.557547+00:00",
+        "sessionExitCode": 143
+      },
+      {
+        "port": 51832,
+        "pid": 8693,
+        "at": "2026-10-06T22:48:03.338875+00:00",
+        "sessionExitCode": 143
+      },
+      {
+        "port": 63251,
+        "pid": 46425,
+        "at": "2026-10-06T22:48:20.695816+00:00",
+        "sessionExitCode": 143
+      }
+    ],
+    "metadataClaimIds": [
+      "741c80b3-242e-4519-b16f-0ac61737e78e",
+      "d9f7ff54-4406-4097-b8b8-a889cba8d9c2",
+      "40ec6625-2a14-4033-bc26-0c223e1f7677"
+    ],
+    "metadataAllReleased": true,
+    "metadataReleases": [
+      {
+        "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+        "branch": "codex/web-plugin-management-integration",
+        "finalHead": "fc838e66621d1e68531c0fd8da989921f26e4991",
+        "claimId": "741c80b3-242e-4519-b16f-0ac61737e78e",
+        "version": 2,
+        "claimState": "RELEASED",
+        "scope": [
+          "docs/evidence/wpf-x03/README.md",
+          "docs/evidence/wpf-x03/preview-retirement",
+          "plans/wpf-x03-plugin-integration/status.md"
+        ],
+        "releaseAt": "2026-10-06T22:53:43.891Z",
+        "receipt": "plugin-management-release-receipt.json",
+        "closeoutCheck": "plugin-management-closeout-check.json",
+        "ownerStoppedWriting": true,
+        "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+        "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY"
+      },
+      {
+        "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+        "branch": "codex/web-profile-integration",
+        "finalHead": "e90492d759421d153641a024ed0b6e1c42bf334e",
+        "claimId": "d9f7ff54-4406-4097-b8b8-a889cba8d9c2",
+        "version": 2,
+        "claimState": "RELEASED",
+        "scope": [
+          "docs/evidence/wpf-profile-integration/README.md",
+          "docs/evidence/wpf-profile-integration/preview-retirement",
+          "plans/wpf-profile-integration/status.md"
+        ],
+        "releaseAt": "2026-10-06T22:53:44.030Z",
+        "receipt": "profile-release-receipt.json",
+        "closeoutCheck": "profile-closeout-check.json",
+        "ownerStoppedWriting": true,
+        "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+        "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY"
+      },
+      {
+        "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+        "branch": "codex/web-steering-control",
+        "finalHead": "300aacd5b961fcacbe8f5f7520f2f1d5e7cb6eaa",
+        "claimId": "40ec6625-2a14-4033-bc26-0c223e1f7677",
+        "version": 2,
+        "claimState": "RELEASED",
+        "scope": [
+          "docs/evidence/wpf-steering-control/README.md",
+          "docs/evidence/wpf-steering-control/preview-retirement",
+          "plans/wpf-steering-control/status.md"
+        ],
+        "releaseAt": "2026-10-06T22:53:44.173Z",
+        "receipt": "steering-release-receipt.json",
+        "closeoutCheck": "steering-closeout-check.json",
+        "ownerStoppedWriting": true,
+        "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+        "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY"
+      }
+    ]
+  },
+  "quickControlsBrowserPreparation": {
+    "state": "APPROVED_SCOPED_STATIC_BROWSER_PREPARATION_NOT_RUN",
+    "ownerHead": "38bfce69c632d52e1e1d3ab02cff21fbcc21b826",
+    "sourceTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "evidence": "message-settings02-browser-prepared/request.json",
+    "actualChecks": "NOT_RUN",
+    "grant": false,
+    "gate": null,
+    "reservation": false,
+    "review": "message-settings02-browser-prepared/root-preparation-review.json"
   }
 }

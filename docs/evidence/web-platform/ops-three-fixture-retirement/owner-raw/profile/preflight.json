@@ -1,0 +1,169 @@
+{
+  "key": "profile",
+  "tree": "web-profile-integration",
+  "head": "07cffeba1a818f5697c23efc37a7e5c2b813c035",
+  "pid": 8693,
+  "ppid": 8685,
+  "pgid": 8676,
+  "port": 51832,
+  "session": 68857,
+  "flag": "--profile-preview",
+  "fixture": "apps/web/test/execution-profile-integration.fixture.ts",
+  "status": "plans/wpf-profile-integration/status.md",
+  "readme": "docs/evidence/wpf-profile-integration/README.md",
+  "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+  "git": {
+    "head": {
+      "args": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exitCode": 0,
+      "stdout": "07cffeba1a818f5697c23efc37a7e5c2b813c035\n",
+      "stderr": ""
+    },
+    "branch": {
+      "args": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exitCode": 0,
+      "stdout": "codex/web-profile-integration\n",
+      "stderr": ""
+    },
+    "dirty": {
+      "args": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "sources": [
+    {
+      "path": "plans/wpf-profile-integration/status.md",
+      "sha256": "c39dbef888707af73b7b0bf0dbd11f63ecb777a5b98de13c1a3ade7c57c2d217",
+      "bytes": 4147,
+      "currentEqualsFixed": true,
+      "saved": "source-0-status.md"
+    },
+    {
+      "path": "docs/evidence/wpf-profile-integration/README.md",
+      "sha256": "e23e2a2a88de919f560531e5ecfff262269490eb271d778e874a234257a38fb4",
+      "bytes": 2994,
+      "currentEqualsFixed": true,
+      "saved": "source-1-README.md"
+    },
+    {
+      "path": "apps/web/test/execution-profile-integration.fixture.ts",
+      "sha256": "939e2c9a88a2a25caa47169d2cae32a0c0a31a34699a31b216d4a2f59f8fd792",
+      "bytes": 6361,
+      "currentEqualsFixed": true,
+      "saved": "source-2-execution-profile-integration.fixture.ts"
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "f86e755a32cb6c3c5e81512ca2c0d06844438c67a905d97a4c90ce8d28444344",
+      "bytes": 1327,
+      "currentEqualsFixed": true,
+      "saved": "source-3-package.json"
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f",
+      "bytes": 648,
+      "currentEqualsFixed": true,
+      "saved": "source-4-vite.config.ts"
+    },
+    {
+      "path": "apps/web/test/conversation.fixture.ts",
+      "sha256": "c5639b75d81d884ca122b53533f0b6dec6a816b37d3f12f22ed93e55099fe3a6",
+      "bytes": 11048,
+      "currentEqualsFixed": true,
+      "saved": "source-5-conversation.fixture.ts"
+    }
+  ],
+  "identity": {
+    "args": [
+      "ps",
+      "-p",
+      "8693",
+      "-o",
+      "pid=,ppid=,pgid=,lstart=,user=,command="
+    ],
+    "exitCode": 0,
+    "stdout": " 8693  8685  8676 Mon Oct  5 22:06:07 2026     citrine /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/execution-profile-integration.fixture.ts --profile-preview\n",
+    "stderr": ""
+  },
+  "cwd": {
+    "args": [
+      "lsof",
+      "-a",
+      "-p",
+      "8693",
+      "-d",
+      "cwd",
+      "-Fn"
+    ],
+    "exitCode": 0,
+    "stdout": "p8693\nfcwd\nn/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration\n",
+    "stderr": ""
+  },
+  "tcp": {
+    "args": [
+      "lsof",
+      "-nP",
+      "-a",
+      "-p",
+      "8693",
+      "-iTCP"
+    ],
+    "exitCode": 0,
+    "stdout": "COMMAND  PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    8693 citrine   22u  IPv4 0xb10864d4302c1483      0t0  TCP 127.0.0.1:51830 (LISTEN)\nnode    8693 citrine   23u  IPv4  0x5f1ee845be02d59      0t0  TCP 127.0.0.1:51831 (LISTEN)\nnode    8693 citrine   25u  IPv4 0xfae173d423d83771      0t0  TCP 127.0.0.1:51832 (LISTEN)\n",
+    "stderr": ""
+  },
+  "stdio": {
+    "args": [
+      "lsof",
+      "-a",
+      "-p",
+      "8693",
+      "-d",
+      "1,2"
+    ],
+    "exitCode": 0,
+    "stdout": "COMMAND  PID    USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME\nnode    8693 citrine    1   PIPE 0x85a3ecf17acd7cec    16384      ->0x1b8c7d3b9bad4f82\nnode    8693 citrine    2   PIPE 0xea06883b3283ddcf    16384      ->0x3d11cf54cbf4f342\n",
+    "stderr": ""
+  },
+  "groupPids": {
+    "args": [
+      "pgrep",
+      "-g",
+      "8676"
+    ],
+    "exitCode": 0,
+    "stdout": "8676\n8685\n8693\n8694\n",
+    "stderr": ""
+  },
+  "groupMembers": {
+    "args": [
+      "ps",
+      "-p",
+      "8676,8685,8693,8694",
+      "-o",
+      "pid=,ppid=,pgid=,user=,command="
+    ],
+    "exitCode": 0,
+    "stdout": " 8676 46117  8676 citrine node /opt/homebrew/bin/pnpm exec tsx apps/web/test/execution-profile-integration.fixture.ts --profile-preview\n 8685  8676  8676 citrine node ./node_modules/.bin/../tsx/dist/cli.mjs apps/web/test/execution-profile-integration.fixture.ts --profile-preview\n 8693  8685  8676 citrine /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/execution-profile-integration.fixture.ts --profile-preview\n 8694  8693  8676 citrine /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild --service=0.28.2 --ping\n",
+    "stderr": ""
+  },
+  "restartCommand": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/execution-profile-integration.fixture.ts --profile-preview",
+  "ownerEvidence": "Fixed own status and README explicitly identify workspace_panels_owner; historical session matches manager input.",
+  "preservation": "Historical agent default retained preview; no additional user permanent-retention fact known to this owner. New explicit retirement authorization applies.",
+  "sourceReadLimits": "These are fixed/current file snapshots, not a memory hash of already loaded module bytes. No restart or runtime readiness test."
+}

@@ -1,0 +1,200 @@
+{
+  "at": "2026-10-06T22:49:22.707168+00:00",
+  "source": "Execution Lead inbound via root; parent latest bounded OPS authorization",
+  "state": "THREE_PREVIEWS_RETIRED_LIFECYCLE_CLOSED_ALL_METADATA_CLAIMS_RELEASED",
+  "owner": "workspace_panels_owner",
+  "managerClaim": "632a7149-e812-4ddb-b342-99572c554cc5",
+  "managerVersion": 3,
+  "candidates": [
+    {
+      "worktree": "web-plugin-management-integration",
+      "head": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+      "port": 59473,
+      "originalSession": 96967
+    },
+    {
+      "worktree": "web-profile-integration",
+      "head": "07cffeba1a818f5697c23efc37a7e5c2b813c035",
+      "port": 51832,
+      "originalSession": 68857
+    },
+    {
+      "worktree": "web-steering-control",
+      "head": "01842a87f768bd28ce7370681ff02d7b834765f7",
+      "port": 63251,
+      "originalSession": 13237
+    }
+  ],
+  "conditions": [
+    "Original owner, fixed source and startup/log/session identity preserved.",
+    "No explicit user retention, active/queued consumer or unfinished experiment; unknown KEEP.",
+    "Root bounded frozen consumers has no declared direct/realpath hit; this is not global absence.",
+    "Immediate exact PID/cwd/argv/port recheck before normal SIGTERM to that Node PID only.",
+    "Actual exec session terminal receipt and owned exact ports/groups checked; no output/timeout is not proof."
+  ],
+  "keep": [
+    "4320",
+    "61227",
+    "61228",
+    "49922",
+    "55049",
+    "61108",
+    "55616",
+    "activity 51452–51454",
+    "data-renderers retained",
+    "all unknown/active consumers"
+  ],
+  "forbidden": [
+    "group kill",
+    "KILL",
+    "automatic restart",
+    "cache or dependency deletion",
+    "other tree expansion",
+    "product runtime/test",
+    "free resampling",
+    "released project writes"
+  ],
+  "lifecycleFollowup": "After actual receipt, fresh new exact metadata-only scopes are required before original owner updates status/evidence.",
+  "newPGChromeGrant": false,
+  "files": [
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/dependency-retirement-2026-10-06/actual-retirement-postcheck.json",
+      "archive": "lead-workspace-cache-postcheck.json",
+      "bytes": 1721,
+      "sha256": "9060c3a4c09ee61c6440722d66294069d302e80d0d569aaea52ec85414a477a4"
+    },
+    {
+      "source": "/tmp/root-three-preview-frozen-consumers.json",
+      "archive": "root-frozen-consumers.json",
+      "bytes": 4189,
+      "sha256": "a3ce136fcd0d5f4b0d286c63bbfdb8fe17ea853f07f8930de026153e6c63eea4"
+    }
+  ],
+  "actualReceipt": "owner-raw/receipt.json",
+  "rootReview": "root-retirement-review.json",
+  "metadataClaims": [
+    {
+      "claimId": "741c80b3-242e-4519-b16f-0ac61737e78e",
+      "version": 1,
+      "taskId": "WPF-X03I01",
+      "lead": "external_web_d01_owner",
+      "worker": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+      "branch": "codex/web-plugin-management-integration",
+      "scope": [
+        "docs/evidence/wpf-x03/README.md",
+        "docs/evidence/wpf-x03/preview-retirement",
+        "plans/wpf-x03-plugin-integration/status.md"
+      ],
+      "role": "writer",
+      "state": "active",
+      "next": null,
+      "origin": "new",
+      "observedAt": null,
+      "updatedAt": "2026-10-06T22:50:15.071Z",
+      "createdAt": "2026-10-06T22:50:15.071Z"
+    },
+    {
+      "claimId": "d9f7ff54-4406-4097-b8b8-a889cba8d9c2",
+      "version": 1,
+      "taskId": "WPF-PROFILEI01",
+      "lead": "external_web_d01_owner",
+      "worker": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+      "branch": "codex/web-profile-integration",
+      "scope": [
+        "docs/evidence/wpf-profile-integration/README.md",
+        "docs/evidence/wpf-profile-integration/preview-retirement",
+        "plans/wpf-profile-integration/status.md"
+      ],
+      "role": "writer",
+      "state": "active",
+      "next": null,
+      "origin": "new",
+      "observedAt": null,
+      "updatedAt": "2026-10-06T22:50:15.371Z",
+      "createdAt": "2026-10-06T22:50:15.371Z"
+    },
+    {
+      "claimId": "40ec6625-2a14-4033-bc26-0c223e1f7677",
+      "version": 1,
+      "taskId": "WPF-STEER01",
+      "lead": "external_web_d01_owner",
+      "worker": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+      "branch": "codex/web-steering-control",
+      "scope": [
+        "docs/evidence/wpf-steering-control/README.md",
+        "docs/evidence/wpf-steering-control/preview-retirement",
+        "plans/wpf-steering-control/status.md"
+      ],
+      "role": "writer",
+      "state": "active",
+      "next": null,
+      "origin": "new",
+      "observedAt": null,
+      "updatedAt": "2026-10-06T22:50:15.552Z",
+      "createdAt": "2026-10-06T22:50:15.552Z"
+    }
+  ],
+  "metadataExecution": "Completed sequentially, all stopped and CAS released. Do not write original trees after release.",
+  "lifecycleCloseout": [
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+      "branch": "codex/web-plugin-management-integration",
+      "finalHead": "fc838e66621d1e68531c0fd8da989921f26e4991",
+      "claimId": "741c80b3-242e-4519-b16f-0ac61737e78e",
+      "version": 2,
+      "claimState": "RELEASED",
+      "scope": [
+        "docs/evidence/wpf-x03/README.md",
+        "docs/evidence/wpf-x03/preview-retirement",
+        "plans/wpf-x03-plugin-integration/status.md"
+      ],
+      "releaseAt": "2026-10-06T22:53:43.891Z",
+      "receipt": "plugin-management-release-receipt.json",
+      "closeoutCheck": "plugin-management-closeout-check.json",
+      "ownerStoppedWriting": true,
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+      "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY"
+    },
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+      "branch": "codex/web-profile-integration",
+      "finalHead": "e90492d759421d153641a024ed0b6e1c42bf334e",
+      "claimId": "d9f7ff54-4406-4097-b8b8-a889cba8d9c2",
+      "version": 2,
+      "claimState": "RELEASED",
+      "scope": [
+        "docs/evidence/wpf-profile-integration/README.md",
+        "docs/evidence/wpf-profile-integration/preview-retirement",
+        "plans/wpf-profile-integration/status.md"
+      ],
+      "releaseAt": "2026-10-06T22:53:44.030Z",
+      "receipt": "profile-release-receipt.json",
+      "closeoutCheck": "profile-closeout-check.json",
+      "ownerStoppedWriting": true,
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+      "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY"
+    },
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+      "branch": "codex/web-steering-control",
+      "finalHead": "300aacd5b961fcacbe8f5f7520f2f1d5e7cb6eaa",
+      "claimId": "40ec6625-2a14-4033-bc26-0c223e1f7677",
+      "version": 2,
+      "claimState": "RELEASED",
+      "scope": [
+        "docs/evidence/wpf-steering-control/README.md",
+        "docs/evidence/wpf-steering-control/preview-retirement",
+        "plans/wpf-steering-control/status.md"
+      ],
+      "releaseAt": "2026-10-06T22:53:44.173Z",
+      "receipt": "steering-release-receipt.json",
+      "closeoutCheck": "steering-closeout-check.json",
+      "ownerStoppedWriting": true,
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+      "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY"
+    }
+  ]
+}

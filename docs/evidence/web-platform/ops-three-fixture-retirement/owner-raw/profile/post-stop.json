@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-06T22:48:09.465436+00:00",
+  "pid": {
+    "args": [
+      "ps",
+      "-p",
+      "8693",
+      "-o",
+      "pid=,ppid=,pgid=,command="
+    ],
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "group": {
+    "args": [
+      "pgrep",
+      "-g",
+      "8676"
+    ],
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "ports": [
+    {
+      "args": [
+        "lsof",
+        "-nP",
+        "-iTCP:51830",
+        "-sTCP:LISTEN"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "lsof",
+        "-nP",
+        "-iTCP:51831",
+        "-sTCP:LISTEN"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "lsof",
+        "-nP",
+        "-iTCP:51832",
+        "-sTCP:LISTEN"
+      ],
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "gitDirty": {
+    "args": [
+      "git",
+      "-C",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+      "status",
+      "--porcelain"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}
