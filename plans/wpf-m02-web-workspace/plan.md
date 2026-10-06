@@ -1,8 +1,8 @@
 # WPF-M02 Web 统一工作入口（M02 消费子项）
 
-创建/更新：2026-10-06。状态：`in-progress`。唯一 owner：workspace_panels_owner / gpt-6-astra ultra；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace`，branch `codex/web-unified-workspace`。本目录是管理草案正式移交后的唯一 plan/status/review 源，稳定 TODO ID 不变；索引/跨任务状态由管理者登记。
+创建/更新：2026-10-06。状态：`completed / awaiting-main-integration`。唯一 owner：workspace_panels_owner / gpt-6-astra ultra；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace`，branch `codex/web-unified-workspace`。本目录是管理草案正式移交后的唯一 plan/status/review 源，稳定 TODO ID 不变；索引/跨任务状态由管理者登记。
 
-W01 稳定输入 `cb4a39211e264538704ba9d474eeb08fc4b2759c`，完整 M02 输入 `e888862570cba3c59789053e68df7d5720650c36`，授权 no-ff 集成提交 `c0c41f9881713f3b371ba62c8f4e68ca5d71e8db`，无冲突，merge 后 clean。仅在本树新增修改 `apps/web/**`、`plans/wpf-m02-web-workspace/**`、`docs/evidence/wpf-m02/**`；不改 shared/backend/其他任务状态。不合并 main。
+W01 稳定输入 `cb4a39211e264538704ba9d474eeb08fc4b2759c`，完整 M02 输入 `e888862570cba3c59789053e68df7d5720650c36`，授权 no-ff 集成提交 `c0c41f9881713f3b371ba62c8f4e68ca5d71e8db`，无冲突，merge 后 clean。后续已审main `8c57f2f97345167207fa0d2590e9ad6310c922d4` 完整合入为实际实现base `35f0bb9df3f57b858c39b13fab940137c747d1f1`。本树实际实现范围以status.md字段表的逐条literal claim为准；metadata仅本目录与docs/evidence/wpf-m02；不改 shared/backend/其他任务状态。不合并 main。
 
 ## 输入与边界
 
@@ -34,7 +34,7 @@ panels owner按固定e888862读取architecture/types/client/server：历史befor
 - [x] **WPF-M02-01** 核验完整M02输入与稳定W01基线，正式派发新worktree/branch及唯一owner/status。
 - [x] **WPF-M02-02** 独立模块实现连续feed/attention/完整任务索引及既有chat/panels接缝。
 - [x] **WPF-M02-03** 运行局部消费/浏览器行为与真实中心联调，覆盖分页/冲突/锚点/100+边界。
-- [ ] **WPF-M02-04** clean-code、独立review、双主题截图及Lead集成清单，登记后续plugin/perf改善。
+- [x] **WPF-M02-04** clean-code、独立review、双主题截图及Lead集成清单，登记后续plugin/perf改善。
 
 ## 决定、风险与来源
 

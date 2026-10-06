@@ -34,4 +34,6 @@ Real center checks cover10durable tasks including running/waiting/uncertain/term
 
 ## Boundaries
 
-Independent review is NOT_STARTED until a reviewer records a fixed target. Current SSE repair remains an independent-review blocker despite owner tests passing. No main integration, plugin-host implementation, real model execution, filesystem or PTY claim. Status fact source is plans/wpf-m02-web-workspace/status.md; manager confirmed dashboard22sources read this task at2026-10-06T02:38:47.600Z with complete human fields and no missing/issues, which does not mean implementation/review passed.
+Independent root review APPROVED fixed implementation `d47c602f3bab1fe97a9be70fd37780c2918bcfbc`; root independently ran20tests/typecheck and CUA8chat/decision/artifact/2split/390px verification, closing SSE P2. Root read but did not rerun the author real-center10task experiment. No main integration, plugin-host implementation, real model execution, filesystem or PTY claim. Status fact source is plans/wpf-m02-web-workspace/status.md; manager confirmed dashboard22sources read this task at2026-10-06T02:38:47.600Z with complete human fields and no missing/issues, which does not mean implementation/review passed.
+
+Raw evidence note: dependency-install.patch retains unified-diff empty context lines and reference-focus-before.txt retains original failure-output whitespace. A full diff--check therefore is not claimed clean. Excluding only these two raw artifacts, implementation/docs diff--check returns0. Metadata-only closure does not rerun behavior tests.
