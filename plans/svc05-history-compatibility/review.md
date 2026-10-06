@@ -131,3 +131,26 @@ Execution Lead独立APPROVED_LIMITED_DESCRIPTOR_COMPARISON_DELTA，target6e7109c
 Reviewer：Execution Lead / gpt-6-astra；target `1994182e4f1d7ff0cb5b08d005defe199d5cbf8c`，observed clean `cf239ba6694b09c80726efffdf794ad27bc020d5`。原件来自I02 `e07d1e64`，镜像[唯一结果review](../../docs/evidence/svc05-history-compatibility/intent-retirement/retirement-release-independent-review.json)，SHA256 `233543b5b1df69a0735a42ca9cdac81998f4cdeaea087c0fc7470f9ef6d768ae`。100 fixed/current绑定无差，24命令exit0、25最终检查全true；hold/旧runner停止→精确退役checkpoint→af51 refresh/resume18→独立Web CAS d629/v3顺序与64表保护摘要/27迁移/4历史/3retained核验成立。无P1/P2，reviewer0测试/0个人probe/0provider。
 
 批准限已保存实际操作忠实性。原claim outcome unknown、ordinaryNativeChecks false、原失败不回写；保留证明是预先声明保护列摘要，不是所有raw字段相等。原0a8实现与6e比较窄修批准分别保留，不扩大到新的恢复API、个人新probe或当前main全功能。
+
+## 2026-10-06 21:54 UTC main接收与正式关闭
+
+既有独立批准范围不变。最终cef5记录已由Lead受控接收main `2af8639ddfa66252ecf97fd6921eaab40389020d`，本owner只读核该提交与后继 `78fb37704d708e3b3b6ea4f1810947f012666196` 的两个完整own范围逐文件零差。源码、原raw、manifest不改，无产品测试或个人状态采样。全部写入停止，整claim释放后不再写本树；未来wrapper复用需新owner精确领取。[接收回执](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json)。
+
+
+## 2026-10-06 23:41:20 UTC：af51/v18 center-only 新恢复准备（NOT_STARTED）
+
+范围仅 center-recovery-af51 的facts/operator/supervise，固定源提交后填写manifest。原362许可不复用，原OPS14 wrapper/module只读固定输入；没有实际启动。独立审查核新版本/v18、唯一spawn、原锁/marker、baseline所有旧列仅queue_checked_at例外、源固定门、PID-only截止和失败unknown。证据见该目录README/runtime-bindings/facts-before/baseline-supervision/historical-boundary。已做一次只读DB基线；未运行产品tests/恢复/HTTP/provider。
+
+本次固定实现 `d8349bdec815b53f29ddae54d6b5b1ce49d78bd5`；[固定manifest](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/fixed-manifest.json)。两个JS语法和PythonAST通过（非运行测试），41绑定核一致；旧历史到fresh的64表原摘要及私有文件/retained全部相等。
+
+
+## 2026-10-06 23:44:39 UTC：准备批准与一次执行事实
+
+Execution Lead 已独立 APPROVED 实现d8349bdec815b53f29ddae54d6b5b1ce49d78bd5，57绑定及三脚本/共享OPS14 consumer、历史至fresh摘要全核。[原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/preparation-independent-review.json)。一次新许可svc05h-center-af51-20261006-2343启动center，wrapper exit0/2095ms，原raw与8保留checks已保存；operator PID已收尾，未向服务发信号。实际结果独审尚待完成，源/历史不改、0后继probe。[实际分析](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-analysis.json)。
+
+
+## 2026-10-06 23:47:00 UTC：实际恢复结果独立 APPROVED
+
+唯一 reviewer Execution Lead 已核原始before/after/result等8份文件，14项检查全true，64表raw摘要无变化；结论 APPROVED_RECORDED_CENTER_RECOVERY，绑定实际target a498b0153ef9512ba6c79fefd9483f20b68b64ca（实现d834不变）。[独审原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-independent-review.json)。
+
+23:46:17 Lead将root恢复clean main/origin b178d17a6e711d4f4c28ee0e33f001171ed42652，[窗口CLOSED原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/source-window-closed.json)。本owner只归档，不追加个人probe/服务动作。旧Python入口失败和旧恢复/发布raw不变。限制：中心原退出原因未知，摘要不是语义真实性证明，运行中的服务不是冻结依赖产物；新恢复记录尚未main。claim保留待接收，全源码停止写入。

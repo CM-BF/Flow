@@ -1,0 +1,235 @@
+{
+  "at": "2026-10-06T23:43:15.248922+00:00",
+  "operator": "Execution Lead only Git owner",
+  "purpose": "one same-af51 center recovery; runner/Web remain running",
+  "before": {
+    "head": "b178d17a6e711d4f4c28ee0e33f001171ed42652",
+    "branch": "main",
+    "main": "b178d17a6e711d4f4c28ee0e33f001171ed42652",
+    "originMain": "b178d17a6e711d4f4c28ee0e33f001171ed42652"
+  },
+  "target": "af51c621696230fbced12227670f014ca73bd8a1",
+  "window": "svc05h-center-af51-20261006-2343",
+  "state": "CLOSED_ROOT_RESTORED",
+  "providerQueries": 0,
+  "fixedAt": "2026-10-06T23:43:16.567637+00:00",
+  "runtimeBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/preview.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/process.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/environment.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/web-artifact.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/web-release.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/server/src/main.ts",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/server/src/index.ts",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/pnpm-lock.yaml",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/server/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/index.js",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/lib/npa.js",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/index.js",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/lib/index.js",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/process.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-artifact.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-release.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/operator.mjs",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/supervise.py",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "same": true,
+      "realpath": true
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "same": true,
+      "realpath": true
+    }
+  ],
+  "allBindingsMatch": true,
+  "mainRefPreserved": true,
+  "closedAt": "2026-10-06T23:46:17.735791+00:00",
+  "after": {
+    "head": "b178d17a6e711d4f4c28ee0e33f001171ed42652",
+    "branch": "main",
+    "clean": true,
+    "main": "b178d17a6e711d4f4c28ee0e33f001171ed42652",
+    "originMain": "b178d17a6e711d4f4c28ee0e33f001171ed42652"
+  },
+  "operationReview": "center-af51-operation-review-2343.json",
+  "servicesOperatedBySourceRestoration": 0
+}

@@ -1,0 +1,144 @@
+{
+  "at": "2026-10-06T23:35:21.680Z",
+  "kind": "AF51_CENTER_RECOVERY_READONLY_NO_PG_HTTP",
+  "helper": {
+    "target": "af51c621696230fbced12227670f014ca73bd8a1",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/process.mjs",
+    "dev": 16777234,
+    "ino": 123060511,
+    "mode": 420,
+    "uid": 501,
+    "bytes": 3493,
+    "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+  },
+  "root": {
+    "dev": 16777234,
+    "ino": 117819905,
+    "mode": 448,
+    "uid": 501
+  },
+  "files": {
+    "config.json": {
+      "dev": 16777234,
+      "ino": 117819925,
+      "mode": 384,
+      "uid": 501,
+      "bytes": 672,
+      "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee"
+    },
+    "state.json": {
+      "dev": 16777234,
+      "ino": 123210671,
+      "mode": 384,
+      "uid": 501,
+      "bytes": 1562,
+      "sha256": "6506f39b961bd38123ddedb83ba6def9f206cf9931501b6817aa85ff17a66d20"
+    },
+    "maintenance.json": {
+      "dev": 16777234,
+      "ino": 123210598,
+      "mode": 384,
+      "uid": 501,
+      "bytes": 314,
+      "sha256": "2d912692cd6ba7ade5dea3d1430f74703d94549d144b08f5131fa170d88dcc7b"
+    },
+    "web-release.json": {
+      "dev": 16777234,
+      "ino": 123210668,
+      "mode": 384,
+      "uid": 501,
+      "bytes": 1332,
+      "sha256": "a276952f95337e42a9642223fbcb24532676f5c9435cd91218c6525edb16fa03"
+    }
+  },
+  "processes": {
+    "center": {
+      "pid": 99092,
+      "group": "ABSENT",
+      "nonceSha256": "573fda75c5d8a28d1e68a174375aaff11c7ddcafcfbdc76b935ab5c46b1a2679",
+      "recordSha256": "0278bb036c938d595a3daebceff8a50290949554514a78d29e02cc0f5afba4fc",
+      "identity": "stopped",
+      "groupErrorCode": "ESRCH",
+      "pgid": 99092
+    },
+    "runner": {
+      "pid": 99312,
+      "group": "PRESENT",
+      "nonceSha256": "f5dbaa6bd497274046ace4fc525f98133a08506ffd922316fc69ae7b6964e3a1",
+      "recordSha256": "251344369898c77709064c61d74f121f5cd60389b5e7e7a95eaa8698ed00254e",
+      "identity": "running",
+      "pgid": 99312,
+      "cwd": [
+        "/Users/citrine/Projects/AgentHarness/Flow"
+      ]
+    },
+    "web": {
+      "pid": 99351,
+      "group": "PRESENT",
+      "nonceSha256": "845f08ab2fb17856a4d0c06709614a03abb962fca0d177bf73c8e989647c32e6",
+      "recordSha256": "80ec24aa142b869429420dfe2593c1389f4e589e6b5e16ef9188deb5869697fb",
+      "identity": "running",
+      "pgid": 99351,
+      "cwd": [
+        "/Users/citrine/Projects/AgentHarness/Flow"
+      ]
+    }
+  },
+  "ports": {
+    "center": {
+      "port": 61227,
+      "state": "ABSENT",
+      "code": 1
+    },
+    "web": {
+      "port": 61228,
+      "pids": [
+        99383
+      ],
+      "owned": true
+    }
+  },
+  "actions": {
+    "http": 0,
+    "pg": 0,
+    "spawn": 0,
+    "serviceSignals": 0,
+    "projectWrites": 0
+  },
+  "identity": {
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "databaseName": "flow_preview_07d6dc6776c8dda8641512aa",
+    "centerPort": 61227,
+    "webPort": 61228,
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "runtimeSource": {
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "dirty": false
+  },
+  "stateExceptCenterSha256": "a8be64c76584a0394ca96399cffec1b5a018e84e2a514fcde88b8d82d9ba02be",
+  "release": {
+    "version": 3,
+    "current": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "backendHead": "af51c621696230fbced12227670f014ca73bd8a1",
+    "artifactCount": 3
+  },
+  "oldCenterExit": {
+    "dev": 16777234,
+    "ino": 123285864,
+    "mode": 384,
+    "uid": 501,
+    "bytes": 104,
+    "sha256": "789ad4aeff119b704f5ea40d24b61fbdfbd974ec252e92e9ce1d90eae6bc8bf9",
+    "at": "2026-10-06T23:31:26.082Z",
+    "code": 1,
+    "signal": null,
+    "nonceSha256": "573fda75c5d8a28d1e68a174375aaff11c7ddcafcfbdc76b935ab5c46b1a2679",
+    "nonceMatches": true
+  },
+  "lock": {
+    "state": "ABSENT",
+    "code": "ENOENT"
+  }
+}

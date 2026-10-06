@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-06T23:44:39.293202+00:00",
+  "outcome": "ready",
+  "interpretation": "One new center only. Raw result and before/after snapshots are authoritative; this explanation reads saved files only.",
+  "sourceTarget": {
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "dirty": false
+  },
+  "runtimeTarget": {
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "dirty": false
+  },
+  "operator": {
+    "pid": 78152,
+    "exit": 0,
+    "elapsedMs": 2095,
+    "stopped": true,
+    "ownedState": "absent",
+    "signals": [],
+    "serviceSignals": 0
+  },
+  "newCenter": {
+    "pid": 78240,
+    "group": 78240,
+    "identity": "running",
+    "recordSha256": "e9214718727551c871953661915538d2e984a8e528243ee7c045f40b39142562"
+  },
+  "runnerUnchanged": true,
+  "webUnchanged": true,
+  "maintenance": [
+    {
+      "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "maintenance_state": "accepting",
+      "maintenance_version": 18,
+      "maintenance_operation_id": null,
+      "maintenance_updated_at": "2026-10-06T21:27:03.063Z"
+    }
+  ],
+  "retained": {
+    "current": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "version": 3,
+    "count": 3,
+    "allExact": true
+  },
+  "allChecks": {
+    "source": true,
+    "identity": true,
+    "privateFiles": true,
+    "stateExceptCenter": true,
+    "runnerAndWeb": true,
+    "retained": true,
+    "database": true,
+    "newCenter": true
+  },
+  "database": {
+    "tableCount": 64,
+    "migrations": 27,
+    "tasks": 4,
+    "unfinished": 0,
+    "uncertain": 0,
+    "differences": [],
+    "scope": "Only conversations.raw_digest is removed from equality comparison; raw saved unchanged. queue_checked_at alone is omitted from its protected_digest; every other column remains protected."
+  },
+  "lock": "after snapshot recorded present inside withPreviewLock; successful returned result is after that helper released. No additional lock probe.",
+  "providerQueries": 0,
+  "taskCommands": 0,
+  "postOperationProbes": 0,
+  "review": "operation evidence pending independent review; preparation approved only",
+  "historicalFailures": "Old Python3.9 pre-child preparation failure remains; old approvals/failed runs unchanged."
+}

@@ -1,0 +1,650 @@
+{
+  "at": "2026-10-06 23:41:20 UTC",
+  "inputs": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/19-published.json",
+      "bytes": 90400,
+      "sha256": "db5cbcdc3022a57ac6dbecb364a0372e20dcb9280baa0755bda0542abd24efc6"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery-af51/facts-before.json",
+      "bytes": 29964,
+      "sha256": "2c23a16817554e1bccac6753d444dca45ae61d203e57aca5e4de3102f58a50ef"
+    }
+  ],
+  "method": "Compare saved reports only; no additional personal probe. Historical per-row MD5 list sorted and concatenated then MD5, matching fresh SQL raw_digest. Protected columns from historical release differ for runner maintenance, so raw comparison is reported separately.",
+  "checks": {
+    "privateFilesExact": true,
+    "identityExact": true,
+    "runtimeSourceExact": true,
+    "releaseExact": true,
+    "retainedDescriptorsFilesAndCompatibilityExact": true,
+    "runnerAndWebRecordsAndStateExact": true
+  },
+  "centerTransition": {
+    "sameRecordedPidGroupAndHash": true,
+    "oldIdentity": "running",
+    "freshIdentity": "stopped",
+    "exit": {
+      "at": "2026-10-06T23:31:26.082Z",
+      "code": 1,
+      "signal": null,
+      "nonceMatches": true
+    }
+  },
+  "databaseRows": [
+    {
+      "table": "artifacts",
+      "countSame": true,
+      "historicalRawDigest": "98b6c437b9af437790d4d36e51935c8b",
+      "freshRawDigest": "98b6c437b9af437790d4d36e51935c8b",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "assistant_messages",
+      "countSame": true,
+      "historicalRawDigest": "42d88bdc3f9ded34b57fd7871a3a5225",
+      "freshRawDigest": "42d88bdc3f9ded34b57fd7871a3a5225",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "assistant_stream_blocks",
+      "countSame": true,
+      "historicalRawDigest": "976127235cf781ddc97c5cbe33287a45",
+      "freshRawDigest": "976127235cf781ddc97c5cbe33287a45",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "assistant_stream_markers",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "assistant_stream_patches",
+      "countSame": true,
+      "historicalRawDigest": "a1f47f9787905224997514286f518972",
+      "freshRawDigest": "a1f47f9787905224997514286f518972",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "assistant_stream_settlements",
+      "countSame": true,
+      "historicalRawDigest": "c963631339e82d0cc6bcdc25afb7d313",
+      "freshRawDigest": "c963631339e82d0cc6bcdc25afb7d313",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "attachment_namespace",
+      "countSame": true,
+      "historicalRawDigest": "ecba8267147a935a00af51467231befd",
+      "freshRawDigest": "ecba8267147a935a00af51467231befd",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "attachment_resources",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "attempts",
+      "countSame": true,
+      "historicalRawDigest": "03c0458fb254b2893fc378b1f5ac7705",
+      "freshRawDigest": "03c0458fb254b2893fc378b1f5ac7705",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "commands",
+      "countSame": true,
+      "historicalRawDigest": "14e16432af3122870c9822b8422d9668",
+      "freshRawDigest": "14e16432af3122870c9822b8422d9668",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "context_observations",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "conversation_attachment_bindings",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "conversation_contexts",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "conversation_execution_inputs",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "conversation_queue",
+      "countSame": true,
+      "historicalRawDigest": "2448e5103adf3d95c1c04a03a50b1e6f",
+      "freshRawDigest": "2448e5103adf3d95c1c04a03a50b1e6f",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "conversation_turns",
+      "countSame": true,
+      "historicalRawDigest": "cdf42b6d657609a83b3c074a8067b4d9",
+      "freshRawDigest": "cdf42b6d657609a83b3c074a8067b4d9",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "conversations",
+      "countSame": true,
+      "historicalRawDigest": "045fc004d435e08b71ac60df1a9f6399",
+      "freshRawDigest": "045fc004d435e08b71ac60df1a9f6399",
+      "sameRaw": true,
+      "historicalOmitted": [
+        "queue_checked_at"
+      ],
+      "freshOmitted": [
+        "queue_checked_at"
+      ]
+    },
+    {
+      "table": "decisions",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "details",
+      "countSame": true,
+      "historicalRawDigest": "ba3f5b5524e3036e3c9f9f2ff55245f8",
+      "freshRawDigest": "ba3f5b5524e3036e3c9f9f2ff55245f8",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "execution_profiles",
+      "countSame": true,
+      "historicalRawDigest": "9f265734d626049c80432b64d0ed1afb",
+      "freshRawDigest": "9f265734d626049c80432b64d0ed1afb",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_acceptances",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_contexts",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_execution_inputs",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_executions",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_explanations",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_graph_applications",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_graph_calls",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_graph_proposals",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_graph_runs",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_inputs",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_nodes",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_tool_calls",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goal_tool_runs",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "goals",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "knowledge_chunks",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "knowledge_sources",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "knowledge_versions",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "migrations",
+      "countSame": true,
+      "historicalRawDigest": "032e14ca545ba288f6039d23fae81f60",
+      "freshRawDigest": "032e14ca545ba288f6039d23fae81f60",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "native_activities",
+      "countSame": true,
+      "historicalRawDigest": "453c7b8df407f91f452f848707ea4ddb",
+      "freshRawDigest": "453c7b8df407f91f452f848707ea4ddb",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "plugin_installations",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "plugin_operations",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "plugin_package_fetch_attempts",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "plugin_package_fetch_audit",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "plugin_package_fetches",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "plugin_revisions",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "plugin_versions",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "project_revisions",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "project_task_bindings",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "projects",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "protocol_intents",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "reconciliation_audit",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "reconciliation_retries",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "runner_events",
+      "countSame": true,
+      "historicalRawDigest": "12197f0e7bec583c55b310f0bc9bd33f",
+      "freshRawDigest": "12197f0e7bec583c55b310f0bc9bd33f",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "runner_maintenance_audit",
+      "countSame": true,
+      "historicalRawDigest": "60ebf3d0d4cc191490f72ee240cf9d8c",
+      "freshRawDigest": "60ebf3d0d4cc191490f72ee240cf9d8c",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "runners",
+      "countSame": true,
+      "historicalRawDigest": "1de073fd7f1a9abcb27f41e87b4beb32",
+      "freshRawDigest": "1de073fd7f1a9abcb27f41e87b4beb32",
+      "sameRaw": true,
+      "historicalOmitted": [
+        "maintenance_state",
+        "maintenance_version",
+        "maintenance_operation_id",
+        "maintenance_updated_at"
+      ],
+      "freshOmitted": []
+    },
+    {
+      "table": "sessions",
+      "countSame": true,
+      "historicalRawDigest": "6b233711428baa795bd427cb6f2973de",
+      "freshRawDigest": "6b233711428baa795bd427cb6f2973de",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "steering_attempts",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "steering_audit",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "steering_commands",
+      "countSame": true,
+      "historicalRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "freshRawDigest": "d41d8cd98f00b204e9800998ecf8427e",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "tasks",
+      "countSame": true,
+      "historicalRawDigest": "fb8fd46cf312425dfac094aa2fc4b16a",
+      "freshRawDigest": "fb8fd46cf312425dfac094aa2fc4b16a",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "timeline",
+      "countSame": true,
+      "historicalRawDigest": "38a7f1f951e94267aa5c12b5de703577",
+      "freshRawDigest": "38a7f1f951e94267aa5c12b5de703577",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "usage_samples",
+      "countSame": true,
+      "historicalRawDigest": "cde657e222742e2b4ee561a37f645108",
+      "freshRawDigest": "cde657e222742e2b4ee561a37f645108",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "workspace_feed",
+      "countSame": true,
+      "historicalRawDigest": "e5f894255eedd55a99057c30d6084aaf",
+      "freshRawDigest": "e5f894255eedd55a99057c30d6084aaf",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    },
+    {
+      "table": "workspaces",
+      "countSame": true,
+      "historicalRawDigest": "d460701ab5e5d7a2d5d1bb4116e793e1",
+      "freshRawDigest": "d460701ab5e5d7a2d5d1bb4116e793e1",
+      "sameRaw": true,
+      "historicalOmitted": [],
+      "freshOmitted": []
+    }
+  ],
+  "freshAuthority": {
+    "sourceAtObservation": {
+      "head": "b178d17a6e711d4f4c28ee0e33f001171ed42652",
+      "dirty": false
+    },
+    "runtimeSource": {
+      "head": "af51c621696230fbced12227670f014ca73bd8a1",
+      "dirty": false
+    },
+    "runner": [
+      {
+        "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "maintenance_state": "accepting",
+        "maintenance_version": 18,
+        "maintenance_operation_id": null,
+        "maintenance_updated_at": "2026-10-06T21:27:03.063Z"
+      }
+    ],
+    "tasks": 4,
+    "unfinished": 0,
+    "uncertain": 0,
+    "queued": 0
+  },
+  "limits": [
+    "Historical equality does not substitute fresh under-lock preconditions.",
+    "No HTTP/service start/maintenance/task/provider operations in preparation.",
+    "Only conversations.queue_checked_at excluded from protected comparison; original raw_digest retained. Every other table/field remains protected."
+  ]
+}

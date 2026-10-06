@@ -44,3 +44,8 @@
 2026-10-06 21:27 UTC：05已在唯一授权2125窗口执行成功，个人后台af51/accepting18与Web d629/v3，24步骤/25保留gate成立；旧80B未知intent严格退役，原ACK未知保持，历史原件在个人私有备份。当前仅结果独审/记录接收尚待完成，原失败不回写，不重跑产品或模型。
 
 2026-10-06 21:32 UTC：05实际发布由Execution Lead唯一独立结果审查通过，target1994182e、100绑定/24命令/25检查核验。本SVC05H片段完成；当前运行af51/v18+d629/v3，不宣称当前main全产品能力或新增UI/provider验证。
+
+
+## SVC05H01-07 同版本中心恢复
+
+- [x] **SVC05H01-07** 共享PG恢复后，已按新单次许可恢复af51/v18中心；runner/Web/数据/配置保持，OPS14 PID-only监督2095ms、8保留检查通过。Execution Lead独立14项结果核验通过，64表raw无变，窗口23:46关闭；记录尚待main接收，原失败与许可不重用。见[独审原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-independent-review.json)。

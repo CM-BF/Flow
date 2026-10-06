@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-06T23:38:03.979841+00:00",
+  "kind": "PRE_CHILD_INTERPRETER_PREPARATION_FAILURE",
+  "invocation": "/usr/bin/python3 imports approved OPS14 module before calling supervise",
+  "source": "actual tool receipt, transcribed; not a re-created process log",
+  "stderr": "File \"tools/owned-process-supervision/supervise.py\", line 45, in Report\n    pid: int | None = None\nTypeError: unsupported operand type(s) for |: type and NoneType",
+  "operatorChildStarted": false,
+  "pgQueries": 0,
+  "serviceChanges": 0,
+  "reason": "System Python cannot evaluate PEP604 annotations; exception occurs during module import before any supervise call."
+}

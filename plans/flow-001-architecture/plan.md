@@ -548,3 +548,22 @@ GO只读输入绑定main22a0806bc2465e11096949618113833f31766b19：index.ts同�
 最小独立验收复用中心事务/admission/生命周期：少量ready会话与目标，受控屏障使首候选在第二阶段等待行锁；无关项应在声明局部预算内推进，释放后原项恰好一次；pause/cancel/授权/FIFO保持，关闭有界，未知事务保守。不能以Promise.race遗弃仍写SQL，不能新增scheduler框架或用128任务负载代替此因果旅程。模块各自拥有领域规则，跨模块组合入口只管有限轮次与关闭。
 
 一手语义参考（本轮已打开，网页current为PG18，生产固定版本行为仍须局部验证）：[SELECT锁定](https://www.postgresql.org/docs/current/sql-select.html#SQL-FOR-UPDATE-SHARE)、[客户端超时配置](https://www.postgresql.org/docs/current/runtime-config-client.html)。本段纯规划，不改已审O14 v1或宣称性能提升。
+
+
+### 自托管长期服务监督（2026-10-06 23:47:36 UTC，REQ-19后继）
+
+- [ ] **FLOW-001-T04-LIFECYCLE-01** 交付每服务唯一监督职责的自托管恢复片。Execution Lead负责界面与排序；候选实施owner为assignment_review，在当前完整工具原文局部片安全点后以独立WT/精确scope领取。当前仅设计输入与只读接口核对，无新产品writer、主机持久配置或运行验证。
+
+当前b178/0da：compose只声明PG且无restart；personal-preview的runService仅spawn一次并等待退出。OPS14仅监督有界test/operator，SVC06仅固定发布产物，两者都不是长期服务监督。23:32的实际停机原因仍unknown，现主机全局监督尚未调查；不能把缺策略当根因或声称加一行即可解决。
+
+职责采用最小成熟平台接缝：Docker容器与宿主非容器服务各自选择唯一supervisor，不同时由Docker策略与宿主管理器监管同一容器。首次设计先只读核可用平台及现监督身份，不修改主机策略。固定release/config身份、依赖readiness、用户stop/drain与意外crash区分；重启次数、退避、日志量及健康状态有界。Flow仍拥有lease、durable queue、授权与unknown副作用，不因进程重启重投未知工作或产生额外探测模型请求。
+
+0模型自有环境验收：受控退出、依赖暂失后同一持久数据接续；明确stop不复活；同一服务无第二进程；旧租约/队列恢复与未知副作用保持；超限停止并给出诊断。实际本机持久配置及服务切换另提供固定、可回退的审查交付，不借本次恢复授权悄悄上线。与SVC06固定runtime/dependencies独立但互相引用，公开健康只反映已观测状态。
+
+一手依据：[Docker restart策略](https://docs.docker.com/engine/containers/start-containers-automatically/)（2026-10-06实际打开）：只约束容器，on-failure不覆盖daemon重启，不能与主机管理器重复监督同一容器。此处记录候选方向与未验证范围，不宣布自动恢复完成。遵循根模块化规则，用find-skills/codebase-design/clean-code评估生命周期、依赖方向和两个实际消费者，避免新调度平台。
+
+后继只读接口核对（native_center_owner，fixed b178，0运行）：当前start为detached+unref，internal-service要求预登记nonce/PID且归属依赖PGID=PID，不能直接塞进平台KeepAlive。候选先提取单role observe/reconcile-stopped接缝与受监督前台模式；明确supervisor、nonce身份和显式stop/maintenance的唯一控制者。只有exact-owned且确证stopped才可替换，unknown/EPERM/原组仍在/持久记录失败即止；不自动解除maintenance或清理unknown工作。整套start入口不用于单role恢复。macOS登录期LaunchAgent不承诺logout后仍运行，关Web与logout分别验收。
+
+[Apple launchd说明](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html)（2026-10-06实际打开）要求受监督进程不得自行daemonize。平台适配与SVC06固定release通过小接口组合，现有短命OPS14不变；本轮未安装或修改任何launchd/Docker策略。
+
+固定只读接口核对见[生命周期后继证据](../../docs/quality/selfhost-lifecycle-2026-10-06.md)。

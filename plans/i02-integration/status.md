@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 23:38 UTC / fixed main0da869f7 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T23:49:28.486955+00:00 / fixed main b178d17a |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main0da869f7；仅接同版本环境恢复事实及182来源实际回执，无新产品源码 |
+| 工作基线 / HEAD | main b178d17a；本批只接同af51中心恢复证据与生命周期后继文档，无新产品源码 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 远程候选已独审；两文档fixed source逐字同、38项管理/缓存/登记固定输入核hash，未新增产品测试/安装/PG/provider。 |
-| 已集成main状态 / HEAD | 本批受控接收OPS恢复事实与TUI01G的182来源记录；个人发布锚af51/v18、d629/v3，center当前退出待恢复，未部署新产品。 |
+| 检查状态 | 恢复准备57绑定、操作18绑定和14项独立保留核对通过；本批精确文件同源、status/parser及文档核对，无新增产品测试/个人probe/provider。 |
+| 已集成main状态 / HEAD | 本批受控接收中心恢复记录与自托管后继规划；个人运行af51/v18、Web d629/v3，main与运行源分别记录。本批发布前仍观察main b178。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 远程验证模板与终端设置来源已登记；原数据库已恢复，个人后台按原版本准备恢复。 |
-| 下一可用交付 | 本片段已交付；个人恢复独立于源码集成，已审但未验证的终端设置仍保留在分支。 |
-| 当前阻塞 | ACTIVE: 个人后台恢复准备中，本地余量仍不足验证；远程仅文档候选，等待用户原启用选择。 |
+| 当前产出 | 个人后台已按原版本恢复并通过保留核验；恢复记录和长期服务监督后继进入本批文档接收。 |
+| 下一可用交付 | 本片段已交付；已审但未验证的终端设置和完整工具正文保持分支，按实际空间继续。 |
+| 当前阻塞 | ACTIVE: 本地余量仍不足已声明验证门槛；远程文档候选等待用户原启用选择。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -275,3 +275,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 23:21 UTC：管理接收只取两个权威树的四份固定文件，[输入清单](../../docs/evidence/i02/ci-x01-tui-management-closeout.json)核逐字/hash相同。OPS远程启用选择PENDING且只由Goal Owner收集；X01原子领取与181-source实际回执已关闭供给等待；TUI01G仅source-ready，原F04与完整双端验收不变。无产品源码、个人服务、模型或检查预算变更。
 
 2026-10-06 23:38 UTC：本管理批仅同步OPS daemon一次恢复事实和182源实际看板回执；无应用/合同/依赖变更，不重跑产品测试。TUI01G固定215063fb仅SOURCE_APPROVED_PENDING_VALIDATION，12新例与types/直接consumer尚NOT_RUN，未进入main产品。[固定来源接收](../../docs/evidence/i02/daemon-recovery-tui-registration-intake.json)。个人center恢复另由原SVC owner准备af51/v18，当前源码提交不等于运行升级。
+
+2026-10-06T23:49:28.486955+00:00：同af51中心恢复单次ready，独立操作核对通过；root开发checkout已恢复main。完整来源见[本批intake](../../docs/evidence/i02/center-af51-integration-intake.json)、[独立结果](../../docs/evidence/i02/center-af51-operation-review-2343.json)、[窗口关闭](../../docs/evidence/i02/center-af51-source-window-2343.json)。仅记录实际保留事实，不认定原故障根因，不扩大TUI/工具正文产品批准。
