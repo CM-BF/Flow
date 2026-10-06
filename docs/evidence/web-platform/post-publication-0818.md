@@ -99,3 +99,9 @@ main b1c2 clean已读取根AGENTS/plans/OPS最终规则；新严格blocker+Done�
 [root唯一08:53采样摘要](two-level-observation.json)为101源/15 activewriter（非agent数）、0overlap；CONTEXTI/STEER仅claim可见未注册进度。当前main解析器/UI缺所属大task/co-lead关联，D05FIT证据路径映射不符，登记现有dashboard backlog并由原owner修复，不抢registry/UI scope、不称已显示。管理没有重复API。D05FIT未被本轮main接收，祖先检查非0且两实现路径不同，原claim保留；不重产品测试。
 
 DPERF02方案已root批准，按当前实际已发布main b1c2核范围后独立树/fresh take；保留原bounded设计，不跟踪moving main。技能复用本地find-skills、codebase-design、clean-code，批量实现隐藏在现tree seam，不新增公共API或第三种状态源。
+
+## 2026-10-06 08:58 UTC 六项成熟度大task覆盖旧单父关系
+
+GO新指派覆盖08:55 WPF-001作为父的临时映射，四Web计划已fresh amend v3合法创建，CONTEXTI直接归03、STEER直接归06，02/04由Mika唯一维护，已一次直达协调。WPF-001/FLOW/REQ只追溯不成第三层。完整用户逐字与Arc抽象准则见[mature handoff](mature-task-handoff.md)，没有提交个人参考图。DPERF尚未take，按新P1排队，不保留虚假active标记。用户本轮要求是计划落盘与真实看板关联，源码文本尚不等实际页面可见。
+
+08:59 D05FIT正式main9d6已owner窄核祖先和两源码逐字，main收口0e528267f3c8aaf5bccdfb34330e73e8f3b01e67正常push/clean后四scope全停写，fresh5dc v2释放原样存管理证据；旧树不追写。六大task当前唯一清单见mature-task-handoff，个人服务最新SVC03归因Lead，main/静态产物/用户tab分开。

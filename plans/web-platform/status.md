@@ -4,9 +4,9 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:55 UTC / main b1c2 clean；两层任务关联缺口已登记 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:58 UTC / 六大task已明确；管理scope v3合法扩展四计划目录 |
 | Plan | [plan.md](plan.md) |
-| 所属大task | [WPF-001](plan.md)（本来源为大task唯一需求/完整验收账本） |
+| 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
@@ -17,14 +17,14 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 紧凑聊天已进入主线，知识实际接线与补充指令模块正在并行实现 |
-| 下一可用交付 | 交付可实际选择知识并发送的聊天界面 |
+| 当前产出 | 六项成熟聊天目标已明确，知识实际接线和补充指令正在并行实现 |
+| 下一可用交付 | 完善六项计划的看板关联，并交付可选择知识发送的实际聊天界面 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
-| 已集成main状态 / HEAD | 当前main/origin b1c2e39837c2208e6fc2c59a80e16797f26448b5 clean（本管理08:54实核）；D05FIT target尚非祖先且两路径不同，保留claim待接收；历史32c接收CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已main7106、六源码相同，66695c收口后b485 v2释放；READ527/2f858已正式main d7e，cd26404收口后c832 v2释放，CONTEXTI55fe v1正式接权。ExecutionLead最新回执个人center/runner32c accepting v9、SVC02关闭、用户实际请求完成/operator0query；本管理未服务验证、无新增query授权。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
+| 已集成main状态 / HEAD | 当前main/origin 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 clean（本管理08:59实核）；D05FIT target/final祖先、两路径相同，0e528267f3c8aaf5bccdfb34330e73e8f3b01e67已push/clean，5dc v2 released08:59:36.337Z；历史32c接收CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已main7106、六源码相同，66695c收口后b485 v2释放；READ527/2f858已正式main d7e，cd26404收口后c832 v2释放，CONTEXTI55fe v1正式接权。历史ExecutionLead SVC02回执个人center/runner32c accepting v9；最新SVC03已固定static/backend b1c2、artifact461a9732/accepting v12，用户tab未reload；本管理未服务验证、无新增query授权。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
 | Review | [review.md](review.md)，本次固定发布APPROVED a5e500136438b197305339cbe0a5e10a196a4317；root2026-10-06 07:59 UTC；历史c075仅见归档，不覆盖本次 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -58,11 +58,13 @@
 | WPF-001-27 | completed | d01_owner | CHAT06I01 9da/e30已审并入32c、十一源同；owner8ca0684c纯main metadata后a729 v2已释放，实际服务/provider验收单列 |
 | WPF-001-28 | completed | d01_owner | CONTEXT02 5e8213/6cacc已main7106，六源码同；66695c记录后b485 v2释放；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md)，实际Send projection/App仍后继 |
 | WPF-001-29 | completed | d01_owner | READ527/2f858已main d7e，cd26404 clean后c832 v2 released；[审计](../../docs/evidence/web-platform/chatread01-final-audit.json) |
-| WPF-001-30 | in-progress | d01_owner | D05FIT01 0ac7已审/final4e24 pushed，四scope冻结待main；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) |
+| WPF-001-30 | completed | d01_owner | D05FIT01 0ac7已main9d6，两源码相同；最终0e52826 pushed/clean，四scope停写且5dc v2释放；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) |
 | WPF-001-31 | in-progress | workspace_panels_owner | STEER01 ca4/2baev1八scope已开工，首a3bf/parser0；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) |
 | WPF-001-32 | in-progress | w01_owner | CONTEXTI01 d7e/55fev1二十scope已开工，首ea1b/parser0；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md) |
 
-| WPF-001-33 | in-progress | d01_owner | WPF-DPERF02有界批量Git证明，root已批准四scope方案，尚未take；[提案](../../docs/evidence/web-platform/dperf02-proposal.json) |
+| WPF-001-33 | in-progress | d01_owner | WPF-DPERF02有界批量Git证明，root已批准但成熟度P1优先，尚未take/建树；[提案](../../docs/evidence/web-platform/dperf02-proposal.json) |
+
+| WPF-001-34 | in-progress | d01_owner | 六大task三件套/唯一Mika链接/真实dashboard关联，[集中验收](../../docs/evidence/web-platform/mature-task-handoff.md)；登记与UI待原owner，不冒称已可见 |
 
 ## 当前唯一owner、claim与下一步
 
@@ -70,21 +72,21 @@
 
 | 当前工作 | 唯一来源、范围与下一步 |
 | --- | --- |
-| WPF-001 | d01_owner / web-platform-management，632a7149 v2，管理两目录；当前必要事件集中收口 |
+| WPF-001 | d01_owner / web-platform-management，632a7149 v3，管理两目录+四Web大task计划目录，632a当前v3；本轮成熟度规划与登记依赖收口 |
 | WPF-CONTEXTI01 | w01_owner / web-context-integration，55fe7c81 v1，固定d7e二十scope；首ea1b已建立，实施中 |
 | WPF-STEER01 | workspace_panels_owner / web-steering-control，2bae5026 v1，固定PUBLIC_READY ca4八新scope；首a3bf已建立，实施中 |
-| WPF-DPERF02 | d01_owner，四scope方案已批准，待独立树/fresh take；详见候选证据 |
-| D05FIT01 | d01_owner / dashboard-architecture-first-fit，5dc3360e v1四scope已冻结；0ac7获root批准/final4e24 clean pushed，等main |
+| WPF-DPERF02 | d01_owner，四scope方案已批准但成熟度P1优先，未建树/take，暂排队；详见候选证据 |
+| D05FIT01 | d01_owner / dashboard-architecture-first-fit，0ac7已main9d6，最终0e52826 pushed/clean；四scope停写，5dc v2 released |
 
 ## 当前交付与依赖（局部窗口，不是整个goal受阻）
 
-K02/renderer/活动/stream/消息复用及CONTEXT01/02均已main。CHAT06I01已32c收口释放，READ527已d7e收口c832v2释放。知识实际UI从完整d7e一个二十scope片正式实施；STEER独立模块仅八新scope，能力与真实个人开关/授权分开。D05首次适配已独审等待集成，不改9c6静态图或个人服务。
-当前个人center/runner版本以ExecutionLead的32c accepting v9回执为准，Web源码、main和后台运行版本分开。 个人Web61228使用main目录Vite，sourceAtStart32c仅启动观察，不能当作当前Web固定源码；用户已登录，本队不刷新其页面或重启服务，固定构建静态服务后继由Lead安排。旧fb906/75a观察在下方历史时点保留，不能据main推进推断服务自动重载。管理文档主线固定副本由Lead受控同步，唯一实时权威仍是管理worktree。
+K02/renderer/活动/stream/消息复用及CONTEXT01/02均已main。CHAT06I01已32c收口释放，READ527已d7e收口c832v2释放。知识实际UI从完整d7e一个二十scope片正式实施；STEER独立模块仅八新scope，能力与真实个人开关/授权分开。D05首次适配已独审并main9d6收口释放，不改9c6静态图或个人服务。
+最新ExecutionLead SVC03回执：个人61228已切固定static，backend b1c2e398、artifact461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90、accepting v12，用户原tab未reload。main不再HMR进个人入口，新UI须受控产物发布，不能main=当前页面；本队不重启/刷新/新增query。前述32c/v9与main目录Vite为历史观察。旧fb906/75a观察在下方历史时点保留，不能据main推进推断服务自动重载。管理文档主线固定副本由Lead受控同步，唯一实时权威仍是管理worktree。
 
 ## 验收边界与开放目标
 
 - 完整SHA、来源、检查、screenshots、技能和限制见[交付快照](../../docs/evidence/web-platform/delivery-snapshot.md)与各唯一owner三件套。本表不复制其他任务TODO。
-- [队列研究](../../docs/evidence/web-platform/chat-queue-research.md)保留e423历史stub与当时按钮未开放的边界；当前QUEUE01固定309已独审通过，排队/暂停/继续/独立取消已在main3d4985，真实center/runner当前按Lead回执32c accepting v9，Web与center升级分开；不能用旧研究覆盖新代码能力。steering仍未支持，须独立受理/送达/实际生效证据。
+- [队列研究](../../docs/evidence/web-platform/chat-queue-research.md)保留e423历史stub与当时按钮未开放的边界；当前QUEUE01固定309已独审通过，排队/暂停/继续/独立取消已在main3d4985，真实center/runner按最新Lead SVC03回执b1c2 accepting v12，Web与center升级分开；不能用旧研究覆盖新代码能力。steering仍未支持，须独立受理/送达/实际生效证据。
 - [执行配置研究](../../docs/evidence/web-platform/execution-profiles-research.md)仅整份已发布runner配置选择；catalog not-probed，不声称模型在线或任意effort/access。PROFILE01模块及PROFILEI01实际App接线均已入main，真实部署状态另核。
 - 完整X01插件npm生命周期/权限/隔离/CLI等价、BR-01真实PTY/fs、后继对话能力仍开放；I01本地Settings和中心registry不是完整插件管理。
 - 本队0真实模型/语音调用；GO确认真实queue窗口06:02结束、2/2 query结果已封存，并独立核原始结果/两实际图/固定manifest：running入队、明确Continue、浏览器退出仍运行、返回精确第二回复均通过。此为GO/Lead执行与验收来源，非本队实跑；main冻结已解除。该历史等待已解除，renderer接线已审集成；ActivityI、增量正文模块与实际正文App接线均已入主线；知识实际UI与补充指令独立模块实施，后继App接线不依赖重新执行真实模型窗口。既有开发预览仍明确fixture，不混作上述真实验收。
@@ -366,3 +368,7 @@ ExecutionLead最新REGISTERED回执：main/origin bbe2b4f7ed1adf58f6f81de0f23a65
 [发布后观察与后继研究](../../docs/evidence/web-platform/post-publication-0818.md)记录fc113实际接收、当前新领取和既有REQ42/43安排，不改a5已审内容或33bd已发布文件来源。无重复API/产品测试/model。
 
 本轮新增管理TODO28/29分别跟踪receipt与readability后继，26/27按独立片段main事实完成。D0632c接收/e06a v2释放见[receipt](../../docs/evidence/web-platform/d06-stream-release-receipt.json)；当前增量不修改a5原hash，也不声称已包含在main33bd固定副本。
+
+## 成熟度大task当前依赖
+
+[四Web大task、两Mika待链接、当前子task及精确registry输入](../../docs/evidence/web-platform/mature-task-handoff.md)是本轮协调入口，不另填产品子task进度。完整规则覆盖旧WPF单父映射。root08:53采样缺两进度卡，主线解析器尚无父/co-lead字段，D05证据路径需修；由ExecutionLead/现dashboard owner消费此队列，未解决前不宣称计划请求已全体验收。当前独立实现继续，无需新agent或GO普通消息。

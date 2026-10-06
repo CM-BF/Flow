@@ -1,0 +1,49 @@
+{
+  "request": "registry owner controlled registration; not deployed evidence",
+  "sources": [
+    {
+      "id": "WPF-MATURE-01",
+      "title": "成熟聊天视觉与材质",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "branch": "codex/web-platform-management",
+      "planDir": "plans/wpf-mature-01-visual",
+      "evidenceDir": "docs/evidence/web-platform",
+      "coLead": "Web /root",
+      "kind": "big-task"
+    },
+    {
+      "id": "WPF-MATURE-03",
+      "title": "附件与文件上下文真实发送",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "branch": "codex/web-platform-management",
+      "planDir": "plans/wpf-mature-03-attachments",
+      "evidenceDir": "docs/evidence/web-platform",
+      "coLead": "Web /root",
+      "kind": "big-task"
+    },
+    {
+      "id": "WPF-MATURE-05",
+      "title": "Arc式组合标签与独立pane",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "branch": "codex/web-platform-management",
+      "planDir": "plans/wpf-mature-05-workspace",
+      "evidenceDir": "docs/evidence/web-platform",
+      "coLead": "Web /root",
+      "kind": "big-task"
+    },
+    {
+      "id": "WPF-MATURE-06",
+      "title": "完整可靠聊天与执行控制",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "branch": "codex/web-platform-management",
+      "planDir": "plans/wpf-mature-06-chat",
+      "evidenceDir": "docs/evidence/web-platform",
+      "coLead": "Web /root",
+      "kind": "big-task"
+    }
+  ],
+  "mikaParentsAwaitingCanonical": [
+    "WPF-MATURE-02",
+    "WPF-MATURE-04"
+  ]
+}

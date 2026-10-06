@@ -15,9 +15,9 @@
 
 ## 当前两层任务关系与通信
 
-WPF-001 是既有 Web 大task的完整需求/验收账本；本组实际片段直接归 WPF-001，不把 FLOW-001 项目追溯再作为task父层。当前活跃sub-task的唯一status填写 `所属大task` 的WPF-001稳定ID与本权威plan链接、`co-lead` 为 Web /root（执行管理 d01_owner）。仅合法owner在安全点补当前源，不机械改历史。GO定用户结果/优先级/边界/依赖/完整验收，co-lead自主子片/人员/审查/提交推送与受控集成；本项目main仍由ExecutionLead独占集成。
+GO最新明确六项成熟聊天大task，完整用户原话、分工、验收与唯一目录见[成熟度来源与登记队列](../../docs/evidence/web-platform/mature-task-handoff.md)。WPF-001现在仅总需求/协调索引，FLOW/REQ也是追溯，不形成第三执行层。CONTEXTI直接归WPF-MATURE-03、STEER直接归WPF-MATURE-06；此前WPF-001父映射是被新指派替代的历史观察。四Web大task目录已合法amend，Mika负责02/04的唯一计划，本队只接其UI输入不复制计划。
 
-最新用户“各lead防overlap、take在dashboard标清楚”由root重申，沿U08逐字原话与REQ37，不伪造新原话。普通ready/review/merge/source/claim只status→dashboard；co-lead→GO每个完整大task仅需其裁决的独立blocker一次与全部验收Done一次，覆盖旧宽泛例外。内部worker通信及co-lead直接依赖协调保留。
+每subtask唯一status写`所属大task`稳定ID+canonical链接与`co-lead`；普通进展/ready/review/merge/claim只status→dashboard，GO每完整大task仅需其裁决的独立blocker一次与完整Done一次。worker内部和co-lead具体依赖协调保留。实际原子take、独审、正常commit/push及主线唯一受控集成流程不变。
 
 ## 用户原话与来源轮次
 
@@ -44,6 +44,8 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 视觉输入文件（已由用户提供；路径仅用于追溯，不复制到其他任务）：
 - `/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/TemporaryItems/NSIRD_screencaptureui_NDMyZU/Screenshot 2026-10-05 at 7.01.44 PM.png`
 - `/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/TemporaryItems/NSIRD_screencaptureui_Q7C3Y2/Screenshot 2026-10-05 at 7.02.26 PM.png`
+
+最新用户逐字成熟度要求和Arc图说明已完整保存于[来源](../../docs/evidence/web-platform/mature-task-handoff.md)，图不提交。该要求拆为GO定义六个大task，不用原REQ有限列表吞掉新增功能或美学验收。
 
 ## 完整需求追溯
 
@@ -130,7 +132,7 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 | 已集成 / 原范围释放 | WPF-CONTEXT02知识引用回执 | 5e8213/6cacc已main7106，六源码同；66695c收口后b485 v2释放；Queue实际guard，Send guard准备但projection未接 |
 | 已集成 / 原范围释放 | WPF-CHATREAD01聊天可读性 | 527/2f858七源已main d7e，cd26404收口后c832 v2释放，CONTEXTI已正式接Thread窗口 |
 | 独立实施 | WPF-CONTEXTI01 / WPF-STEER01 | d7e二十scope实际知识UI与ca4八scope独立补充指令控制并行；精确写权与canonical见当前owner表 |
-| 已审 / 等main | D05FIT01首次适配 | 0ac7/final4e24已push；5dcv1冻结待接收，DPERF02仅后继只读四scope方案 |
+| 已审 / 等main | D05FIT01首次适配 | 0ac7已main9d6，0e52826收口且5dc v2释放；DPERF02暂排队未take |
 | 已集成 / 原范围释放 | WPF-CHAT06I01增量正文 | fixed9da/e30已main32c/十一源码同；8ca0684收口后a729 v2已释放 |
 | 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
 | 已验真实持续聊天 | 既有CHAT/QUEUE与GO两query | GO/Lead固定真实两query2/2已验收封存；running入队、继续、浏览器退出与精确第二回复通过。本队只消费固定证据，不重跑模型；steer、语音、完整context等未完成项保持原REQ |
@@ -172,10 +174,10 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 
 - [x] **WPF-001-28** WPF-CONTEXT02（沿REQ42）：纯引用冻结/回执片，固定fc113八scope，5e8213/6cacc已审并入7106，66695c收口/b485 v2释放；[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md)。该receipt片main收口完成，Send projection与实际UI继续开放。
 - [x] **WPF-001-29** WPF-CHATREAD01沿REQ43：527已审并入d7e，cd26404收口后c832 v2释放；[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)。
-- [ ] **WPF-001-30** D05FIT01四scope首次适配：0ac7已审/final4e24 pushed，等main；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md)。
+- [x] **WPF-001-30** D05FIT01四scope首次适配：0ac7已审并main9d6，0e52826收口且5dc v2释放；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md)。
 - [ ] **WPF-001-31** WPF-STEER01沿REQ44独立控制模块：ca4正式输入，2baev1八scope已开工；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)。
 - [ ] **WPF-001-32** WPF-CONTEXTI01沿REQ42实际知识UI：d7e完整base，55fev1二十scope已开工；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。
-- [ ] **WPF-001-33** WPF-DPERF02批量Git树证明：已批准独立四scope，保留2MiB/5s和缺失/unknown语义；[有界方案](../../docs/evidence/web-platform/dperf02-proposal.json)，新take后实现。
+- [ ] **WPF-001-33** WPF-DPERF02批量Git树证明：已批准但为成熟度P1暂排队，尚未建树/take；保留2MiB/5s和缺失/unknown语义；[有界方案](../../docs/evidence/web-platform/dperf02-proposal.json)，新take后实现。
 
 ## 验收、风险与持续方式
 
@@ -351,3 +353,5 @@ GO管理审计规则：active claim按实际开发/持续管理、冻结待审/�
 管理发布补漏（2026-10-06）：GO指出main旧副本缺后续需求，按唯一canonical原两目录生成固定发布快照，独审后由Lead同步；不是第二手填进度。原U11/SVC首连帮助授权亦在CHAT06I01现App范围内补极小文案：空中心地址为same-origin /api，远端填管理员地址；owner token来自中心管理员或本机受保护配置，不是Claude/Pi token。沿apps/web/README与personal-preview现有status --directory文档，agent不读取/显示/复制真实凭据，不新认证机制。低影响文案随接线验证。
 
 U11布局后继继续排在stream接线之后：目前FrozenConfiguration常驻heading/summary/details三行，composerHeader还有Thinking/Tools/发送意图及footer协议说明；稳定requested/locked/permission/digest归一个可达details/help，只model/access摘要、可操作delivery和失败/unknown常显。保留创建前选择、创建后锁定原因、unknown原身份重试；该明确后继不扩当前13scope或CONTEXT01。
+
+- [ ] **WPF-001-34** 六大task计划与dashboard可见请求：四Web大task三件套、Mika02/04唯一链接、当前worker父关联和真实页面展示齐后集中验收；[唯一登记队列](../../docs/evidence/web-platform/mature-task-handoff.md)。本项是管理请求，不是第三执行层或六featureDone。

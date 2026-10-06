@@ -1,0 +1,34 @@
+# WPF-MATURE-06 完整可靠聊天与执行控制
+
+| 字段 | 内容 |
+| --- | --- |
+| 大task ID | WPF-MATURE-06 |
+| 状态 | in-progress；完整验收未完成 |
+| co-lead | Web /root（执行管理 d01_owner） |
+| 优先级 | P1 |
+| 唯一来源 | 本目录plan/status/review，管理worktree合法claim v3；不另填聚合进度 |
+| 用户来源 | [成熟度原话与六项分工](../../docs/evidence/web-platform/mature-task-handoff.md)；原WPF REQ仅追溯，不形成第三层 |
+| 收益 | 真实增量聊天、工具与thinking详情、队列/补充指令/取消及恢复形成连续可靠旅程，输入与滚动不被后台更新破坏。 |
+| 边界 | 本计划定义完整用户结果；具体实现须独立worktree、fresh精确scope take和固定独审，计划目录领取不授产品写权 |
+| 依赖 | STEER01只新8scope，App后继与CONTEXTI排队；CHAT10 admission/公共client已固定，个人steering仍off。真实provider观察预算须单独明确；voice公开输入依赖待核。 |
+
+## 已有能力与gap
+
+CHAT06I01固定9da已main，官方runtime权威repository避免伪branch；ActivityI ba341懒tool/thinking与offline隔离已交；QUEUE01 pause与cancel分开；READ527保留行动错误和配置详情；通过项仅引用原证据。
+
+尚缺：STEER sender与App接线、端到端生效证据、跨reload原key恢复、voice失败退文本、Markdown/代码复制/重连/滚动/IME完整组合验收。
+
+当前子任务唯一来源：[STEER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)。功能通过不等用户个人runtime已启用；既有源码main与center/runner32c/v9分开。
+
+## 稳定TODO与完整验收
+
+- [ ] **WPF-MATURE-06-01** 盘点通过项与真实缺口：逐条引用stream/activity/queue/readability固定证据与限制，模块/fixture/真实provider分开，不重复勾整体Done。
+- [ ] **WPF-MATURE-06-02** 完成STEER独立控制与接线：admission仅快照非许可，POST重验、原key unknown、receiptRevision更新、received不冒模型遵从；模块和App接线分别验收。
+- [ ] **WPF-MATURE-06-03** 验证正文与活动显示：真实增量、settlement retain/replace、typed-final完成状态、provider实际thinking才显示、tool状态unknown不伪造；Markdown/代码复制与详情懒读。
+- [ ] **WPF-MATURE-06-04** 完成输入错误与持久恢复：键盘/IME/下一草稿、断线重连、queue/steer/cancel、lostACK原身份恢复；当前跨reload未完成项明确开放。
+- [ ] **WPF-MATURE-06-05** 控制滚动与语音退路：后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿，无自动模型调用。
+- [ ] **WPF-MATURE-06-06** 完成可靠真实聊天旅程：实际App fixture覆盖失败/恢复/双pane；明确预算后单次真实provider观察，至少两次正文增长才称增量，没有partial如实记录不补query。
+
+## 验证与交付规则
+
+每个实际子task直接链接本大task稳定ID及co-lead；进度只维护其唯一status。仅完整TODO验收通过、证据环境/固定源码明确并完成受控主线集成后才可将本大taskDone；当前所有大task验收仍开放。普通片段ready/review/merge/claim不向GO发送，内部worker通信保留，需GO解决的整任务独立blocker仅一次。新scope依D04查重/原子领取，本计划不授权重启个人服务、刷新用户tab或新增provider调用。验证按影响范围，不为文档重复产品测试。
