@@ -7,9 +7,9 @@
 ## TODO
 
 - [x] TUI01C-01 固定Interface、作用域、技能与依赖。
-- [ ] TUI01C-02 提取浏览器安全stream/activity纯模块，Web真实消费。
+- [x] TUI01C-02 提取浏览器安全stream/activity纯模块，Web真实消费。
 - [x] TUI01C-03 接终端单回合观察与惰性活动/回复详情，退出只停止观察。
-- [ ] TUI01C-04 共享协议、HTTP fixture、真实PTY及Web直接消费者分层验收。
+- [x] TUI01C-04 共享协议、HTTP fixture、真实PTY及Web直接消费者分层验收。
 - [ ] TUI01C-05 独立review与main集成。
 
 ## 设计与验收
