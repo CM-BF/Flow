@@ -1,0 +1,50 @@
+{
+  "recordedAt": "2026-10-06T08:02:53.457Z",
+  "taskId": "WPF-CONTEXT02",
+  "state": "proposal_waiting_main",
+  "owner": "w01_owner",
+  "suggestedWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+  "suggestedBranch": "codex/web-context-receipts",
+  "scopes": [
+    "apps/web/src/conversation-context/receipts.ts",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/queue/commands.ts",
+    "apps/web/test/conversation-context-receipts.test.ts",
+    "apps/web/test/conversation-outbox.test.ts",
+    "apps/web/test/conversation-queue.test.ts",
+    "plans/wpf-context-receipts",
+    "docs/evidence/wpf-context-receipts"
+  ],
+  "source": {
+    "proposal": "w01_owner fixed 6426 + CONTEXT01 module 736, relayed via root; read-only, no tests or project modifications",
+    "approval": "Root approves direction and requests exact main acceptance before take",
+    "contextTarget": "736ef0b9f5647faa4c8d8e6c4755eaf95697b02d",
+    "contextFinal": "d6a609a82c3aec3b8b4e6609a83a452d11ac1d89"
+  },
+  "ledger": {
+    "observedAt": "2026-10-06T08:00:53.060Z",
+    "activeOverlaps": [],
+    "meaning": "Historical preflight only. No new take; recheck fresh ledger/version immediately before authorized take."
+  },
+  "inputGate": "Wait for exact accepted main containing CONTEXT01 to reuse freezeContextSelection; no independently duplicated reference helper.",
+  "implementationBoundary": "Optional knowledge deep freezing after parse; shared ordered/full-tuple ACK guard; Queue actual guard; Send guard prepared but projection wiring remains separate. No create-only union, App/Thread/projection/plugins/stream/shared changes.",
+  "requirements": [
+    "Immutable citation order and full-tuple identity; detached request data survives later picker/draft edits.",
+    "Missing/mismatched context.sources for nonempty refs stays unknown; retry uses original key and frozen citations.",
+    "Empty knowledge[] compatibility must be explicit; center currentVersionAtFreeze/isCurrentAtFreeze are not picker expectations.",
+    "Budget failures preserve draft and citations; no silent dropping/truncation/new-key retry."
+  ],
+  "futureUiBoundary": [
+    "Explicit authorized paginated project choice; never first-project default or bind old projectless conversations.",
+    "Knowledge capability is learned from CREATE ACK / GET, not inferred from project/search availability. Create-only preparation needs existing outbox receipt/key and separate scoped UI integration.",
+    "Unknown CREATE locks project/profile/citations; exact ACK project and context identity required.",
+    "Actual App/UI/plugin work waits for CHAT06I01 handoff and new exact scope."
+  ],
+  "noWorkPerformed": [
+    "No feature worktree created",
+    "No take",
+    "No feature writes",
+    "No product tests, model, service or dashboard API"
+  ],
+  "publicationBoundary": "This proposal is later than fixed approved DOCS content a5 and final publication HEAD 33bd93ddca59df78a6abb1c54cfd3a01163dba28; it does not modify or roll that controlled handoff."
+}
