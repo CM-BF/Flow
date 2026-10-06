@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
 import { open, statfs, type FileHandle } from 'node:fs/promises';
+import { setTimeout as delay } from 'node:timers/promises';
 import { Pool } from 'pg';
 import { afterAll, beforeAll, expect, it } from 'vitest';
 import {
@@ -38,6 +39,25 @@ async function start() {
   origin = await app.listen({ host: '127.0.0.1', port: 0 });
   client = new FlowClient({ baseUrl: origin, token: ownerToken });
 }
+async function observeClosedConnections() {
+  const started = performance.now(), deadline = started + 3000;
+  const observations: unknown[] = []; facts.connectionObservations = observations;
+  for (;;) {
+    const remaining = deadline - performance.now();
+    assert(remaining > 0, 'Database connections did not close within the observation bound.');
+    try {
+      const result = await admin.query({ text: 'SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid', values: [database],
+        query_timeout: Math.min(500, Math.ceil(remaining)) });
+      facts.connections = result.rows;
+      observations.push({ elapsedMs: Math.floor(performance.now() - started), connections: result.rows });
+      if (result.rows.length === 0) return;
+    } catch {
+      observations.push({ elapsedMs: Math.floor(performance.now() - started), error: 'connection-observation-failed' });
+      throw new Error('Database connection observation is unconfirmed.');
+    }
+    await delay(Math.min(100, Math.max(0, deadline - performance.now())));
+  }
+}
 beforeAll(async () => {
   const space = await statfs(process.cwd()); facts.freeBytesBefore = space.bavail * space.bsize;
   assert(space.bavail * space.bsize >= 1024 ** 3 + 32 * 1024 ** 2, 'Insufficient reserve; no DB created.');
@@ -66,8 +86,7 @@ afterAll(async () => {
       try {
         const row = (await admin.query("SELECT shobj_description(oid,'pg_database') AS marker,pg_database_size(oid)::text AS bytes FROM pg_database WHERE datname=$1", [database])).rows[0];
         assert.equal(row?.marker, marker); facts.databaseBytes = Number(row.bytes);
-        facts.connections = (await admin.query('SELECT pid FROM pg_stat_activity WHERE datname=$1', [database])).rows;
-        assert.deepEqual(facts.connections, []);
+        await observeClosedConnections();
         await checkpoint('before-normal-drop');
         await admin.query(`DROP DATABASE "${database}"`); facts.dropped = true;
       } catch { errors.push('database-cleanup-unconfirmed'); }

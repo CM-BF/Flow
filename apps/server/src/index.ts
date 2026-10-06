@@ -26,6 +26,7 @@ import { migrateGoalToolRuns, registerGoalToolRunRoutes } from './goal-tool-runs
 import { registerShutdown } from './shutdown/index.js';
 import { migratePlugins, registerPluginRoutes } from './plugins/index.js';
 import { migrateConversations, registerConversationRoutes } from './conversations/index.js';
+import { migrateClaudeMessageSettings } from './conversations/message-settings-migration.js';
 import { migrateAssistantMessages, registerAssistantRoutes } from './assistant/index.js';
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
@@ -99,6 +100,7 @@ export async function createServer(options: ServerOptions) {
     await migrateBrowserSessions(pool);
     await migratePluginInstallations(pool);
     await migrateGoalProgressions(pool);
+    await migrateClaudeMessageSettings(pool);
     authentication = await createBrowserSessionAuthentication(pool, options);
     const corsOptions = authentication.corsOptions ?? (options.allowedOrigin ? { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] } : undefined);
     if (corsOptions) await app.register(cors, corsOptions);
