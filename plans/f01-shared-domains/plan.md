@@ -93,4 +93,4 @@ F01当前owner改为native_center_owner，co-lead仍ExecutionLead。沿F01-42先
 
 - [x] **F01-44** 复用已审O15模块，补031生产迁移/owner路由、薄确认client/export及真实factory自动依赖推进直接旅程；旧settings/O14生命周期保持，0provider。
 
-- [ ] **F01-45** 最薄goal plan confirm-inputs命令复用公开严格合同/原key/body/signal/error；一局部HTTP与help/types，独审后集成。
+- [x] **F01-45** 最薄goal plan confirm-inputs命令复用公开严格合同/原key/body/signal/error；一局部HTTP与help/types，独审后集成。
