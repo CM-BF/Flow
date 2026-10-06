@@ -1,0 +1,49 @@
+{
+  "observedAt": "2026-10-06T14:06:21.775136+00:00",
+  "syntax": "Python AST parse only; no supervisor/driver execution",
+  "toolByteChecks": [
+    {
+      "path": "tools/web-artifact.mjs",
+      "fixedSource": "84005a260dfcb668cd38b09c21564d0754a0f513:tools/personal-preview/web-artifact.mjs",
+      "fixedBytesMatch": true,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "tools/environment.mjs",
+      "fixedSource": "84005a260dfcb668cd38b09c21564d0754a0f513:tools/personal-preview/environment.mjs",
+      "fixedBytesMatch": true,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    }
+  ],
+  "files": {
+    "supervise.py": {
+      "sha256": "49b1118911e0d291dbb475c366948d0ed1467309e1efc5681ce0002828d90e15",
+      "bytes": 10770
+    },
+    "driver.mjs": {
+      "sha256": "5370216852dc1ad03c4d5b11c762569fb9c03c280c69d17347db4c3c927c8aed",
+      "bytes": 1069
+    },
+    "prepare.sb": {
+      "sha256": "8fae0a041295498ca35fcd171b9c1ebb853a1c504a4bff07112a86fb176e5a91",
+      "bytes": 455
+    },
+    "config.json": {
+      "sha256": "a328ff2a3b6d45e499c891ee455d1befcb39fc32c54ab67267146c3018af3bd6",
+      "bytes": 1622
+    },
+    "tools/web-artifact.mjs": {
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e",
+      "bytes": 8163
+    },
+    "tools/environment.mjs": {
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+      "bytes": 1983
+    }
+  },
+  "gateExists": false,
+  "buildResultExists": false,
+  "supervisorRunResultExists": false,
+  "resourceDecision": "Blocked: root fresh available952800KiB <1GiB and <start threshold; no new df polling",
+  "execution": false
+}

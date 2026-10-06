@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T14:09:44.264975+00:00",
+  "state": "BOTH_WINDOWS_COMPLETE_DEPENDENCY_WRITE_SCOPES_REMOVED",
+  "owner": "workspace_panels_owner",
+  "claim": "6ff988b2 v2 COMMITTED14:00:53.762Z",
+  "receipt": "recovery01-dependency-amend-receipt.json",
+  "scope": "Original 21 implementation scopes remain. All five ignored dependency directories are read-only after final narrow.",
+  "operation": "thirdparty links toknownexistingATTACHI sameversionpackage realpath; @flow toRecovery ownsource. No entireoldnode_moduleslink oroldtargetwrite. No pnpm install/build/PG/browser/provider.",
+  "budget": "60s including15scleanup/logs2MiB; newlinkmetadataestimate<1MiB/owncache32MiB; startfree>=1GiB+128MiB, stop<=1GiB+64MiB ormonitorfailure (notquota)",
+  "typecheck": "onefirstWebtsc; rootmanifestexistingpg/playwrighttypesmaybelinkedreadonlywithout execution",
+  "releaseCoordination": "Dependency writing has ended and parent scopes have been relinquished; RELEASE03 cache paths have no conflict, but fresh disk admission failed before take. No Release run or claim.",
+  "pnpmFinding": "installed9.15.4hardlink flag still linkOrCopy/copyFileSync fallback; willBeBuiltclone-or-copy. Rootsourceaudit only, noEXDEVexperiment/install. Do notcallthisstrictnocopyinstallation.",
+  "audit": "pnpm-hardlink-fallback-root-audit.json",
+  "firstWindowOwnerReceipt": {
+    "links": 41,
+    "webTypesDurationSeconds": 5.272,
+    "webTypesExit": 2,
+    "twoNewCodeTypeErrors": "ownerreportsfixed afterward; remainingmissingtransitivetypepackages",
+    "cleanup": "fulfilled",
+    "dependencyWriteStopped": "all5afterfirstwindow",
+    "reportedFreeBytes": 1218883584,
+    "attribution": "owner/root report, notmanagernewmeasurement"
+  },
+  "currentClaim": "6ff988b2 v4 COMMITTED 2026-10-06T14:05:53.395Z; original 21 scopes only",
+  "narrowReceipt": "recovery01-dependency-narrow-receipt.json",
+  "secondWindow": {
+    "links": 11,
+    "webTypesDurationSeconds": 5.96908191696275,
+    "webTypesExit": 0,
+    "cleanup": "fulfilled; links retained; no service/cache/experiment created",
+    "ownerCheckpoint": "82d78a9d77f4f51a27dc76fdc413a63dcd88ea72",
+    "availableAfterBytes": 1207238656,
+    "attribution": "Original owner raw, not new manager measurement or complete feature approval"
+  },
+  "finalNarrowReceipt": "recovery01-dependency-final-narrow-receipt.json",
+  "raw": "recovery01-dependency-window-raw/",
+  "currentResourceGate": "resource-admission-1405.json"
+}

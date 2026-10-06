@@ -1,0 +1,144 @@
+{
+  "recordedAt": "2026-10-06T14:09:44.264975+00:00",
+  "state": "CONDITIONAL_RUN_APPROVED_BUT_FRESH_DISK_GATE_FAILED_NOT_TAKEN",
+  "task": "WPF-RELEASE03",
+  "directParent": "WPF-MATURE-01",
+  "writer": "w01_owner",
+  "sourceWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+  "sourceBranch": "codex/web-attachment-production",
+  "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+  "approvedImplementationProvenance": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+  "toolFixedCommit": "84005a260dfcb668cd38b09c21564d0754a0f513",
+  "candidateRunScope": [
+    "apps/web/node_modules/.vite-temp",
+    "apps/web/node_modules/.vite"
+  ],
+  "scopeCheck": {
+    "observedAt": "2026-10-06T13:56:18.946Z",
+    "conflicts": [],
+    "activeSourceWorktreeClaims": [],
+    "freshCheckRequiredBeforeTake": true,
+    "currentConflictAfter1346InitialFreeObservation": {
+      "at": "2026-10-06T14:00:53.762Z",
+      "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+      "version": 2,
+      "parentScope": "apps/web/node_modules",
+      "action": "Recoveryowner stopsdependencywrites; freshamend removesparent beforeReleasecachetake. DifferentWT doesnotbypassgloballedger.",
+      "resolved": "Recoveryv3amend14:03:44.346Z removedapps/webparent and3package dependencydirs; cachetake stillmustfreshcheckaftersecondresourcewindow."
+    },
+    "latestAdmission": "release03-prepare-admission-deferred.json: 14:05:53.498Z ledger, no conflicts; source506 clean"
+  },
+  "originalOwnerAgreement": "W01 explicitly agreed conditional root one-prepare authorization + fresh runclaim, only own two caches/privateoutput; all prior source scopes remain stopped. See archived report.",
+  "claimSequence": "Prefer same RELEASE03 serial runclaim on existingWT two exact ignoredcache dirs, then explicit stop/release before its separate verificationWT fourliteral claim. Fourliteral proposal is untaken so cannot amend it; D04 forbids same task or WT parallelwriter. No additional producttask/thirdlayer.",
+  "privateOutput": "Prepared only private /private/tmp/flow-release03-prepare-5069586-u1zh3mln (0700), gate absent, no build execution. Old source/cache unchanged.",
+  "blockingWriteSeam": {
+    "trigger": "installedVite recursive mkdir(.vite-temp) EACCES triggers configuration-adjacent temp path; writeFile failure later does not fallback",
+    "potentialPath": "apps/web/vite.config.ts.timestamp-<time>-<random>.mjs",
+    "notALiteralScope": "D04 prohibitsglob; two cache literals do not cover sibling path. Do not claim wholeapps/web because Recovery21writer active.",
+    "checksLimit": "stat/access/no consumers at one time are usefulpreconditions, not prevention of racing EACCES/firstoutofscopewrite",
+    "decisionRequired": "Root approved failclosed macOS sandbox-exec filewrite allowlist after7/7toyprobe; no toolsourceschanged. ActualVite/native behavior untested anddenyfailuremuststop, notwidenscope."
+  },
+  "resources": {
+    "priority": "Recovery dependencywindow before RELEASE03build; no concurrent new preparations",
+    "policy": "Lead13:49 onlySVC06 >=2.5GiB; otherWeb actualpeak estimate +about1GiBcompletionmargin",
+    "lastOwnerSnapshot": "13:56 historical sample only; current separate observations in resource-admission-1405.json",
+    "candidateBudgetOnly": "Root conditionally approved 120s including20s cleanup, exact two-cache scope, sandbox allowlist and start/stop gates; currently not admitted, not a hard quota. Product HTTP/browser180s unchanged.",
+    "recoveryWindow": "Both dependency/type windows complete; v4 now original 21 source scopes only, five dependency scopes stopped/removed. Links retained read-only.",
+    "currentAdmission": "Manager 900775936B <1207959552B start threshold, later root952800KiB also below1GiB; no take/build."
+  },
+  "compatibilityGate": "actualbackend362 attachment-only/mixed native context_observation/reportEvents remainsrequired; no SendQueue-only fullPASS, no personalpublishauthorization",
+  "archives": [
+    {
+      "source": "/tmp/release03-existing-source-resource-study/report.md",
+      "archive": "release03-existing-source-resource-study/report.md",
+      "bytes": 7571,
+      "sha256": "35650725f4df0f75ae01cf571d521114841d6719e219b179b42961fec91fdb7c"
+    },
+    {
+      "source": "/tmp/release03-existing-source-resource-study/evidence.json",
+      "archive": "release03-existing-source-resource-study/evidence.json",
+      "bytes": 8231,
+      "sha256": "295f643abd32942658619211abae6c4cc3a2456be55a1b40029cc9bc34f8729e"
+    },
+    {
+      "source": "/tmp/release03-prepare-readonly-preflight/report.md",
+      "archive": "release03-prepare-readonly-preflight/report.md",
+      "bytes": 6810,
+      "sha256": "73a115525e618a9d3a372bdb2b99d0034ed17db1775e09b22ffbf17de9c55b87"
+    },
+    {
+      "source": "/tmp/release03-prepare-readonly-preflight/filesystem.json",
+      "archive": "release03-prepare-readonly-preflight/filesystem.json",
+      "bytes": 3162,
+      "sha256": "f5d049e49a5e7415537d6df84e14b3e1e0234bde7adc3c12b101b3f2aa34a90f"
+    },
+    {
+      "source": "/tmp/release03-prepare-readonly-preflight/consumers.json",
+      "archive": "release03-prepare-readonly-preflight/consumers.json",
+      "bytes": 368,
+      "sha256": "a68109b636f5dc57759cd34347648629ce43c49aa5f1a2d1d2775d371ee19bb9"
+    },
+    {
+      "source": "/private/tmp/release03-sandbox-write-probe-17gw_wd1/result.json",
+      "archive": "release03-sandbox-write-probe/result.json",
+      "bytes": 2316,
+      "sha256": "476058d871c73edc68c2b1fd81b229891deed0cc0d37860305943792791ffe5d"
+    },
+    {
+      "source": "/private/tmp/release03-sandbox-write-probe-17gw_wd1/probe.py",
+      "archive": "release03-sandbox-write-probe/probe.py",
+      "bytes": 1516,
+      "sha256": "08249b54bb6fc566beaa52e72ef873f0d748bdac11697f3adbe63e9d0e87317f"
+    },
+    {
+      "source": "/private/tmp/release03-sandbox-write-probe-17gw_wd1/probe.sb",
+      "archive": "release03-sandbox-write-probe/probe.sb",
+      "bytes": 322,
+      "sha256": "1d7402bb12f432c8255663692cce6b22d3b90494ccc2d423acf319b372f1d6d9"
+    },
+    {
+      "source": "/private/tmp/release03-sandbox-write-probe-17gw_wd1/stdout.txt",
+      "archive": "release03-sandbox-write-probe/stdout.txt",
+      "bytes": 1108,
+      "sha256": "b6deb739c81a962e59fc93639f5c929ff6629d2fb3a42e6c2e2ff51ede40d7d9"
+    },
+    {
+      "source": "/private/tmp/release03-sandbox-write-probe-17gw_wd1/stderr.txt",
+      "archive": "release03-sandbox-write-probe/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/private/tmp/release03-sandbox-write-probe-17gw_wd1/help.txt",
+      "archive": "release03-sandbox-write-probe/help.txt",
+      "bytes": 344,
+      "sha256": "891862114044434f58c4174013afe5a154e60726c7e33e57a6dc747d5724da0b"
+    },
+    {
+      "source": "/private/tmp/release03-sandbox-write-probe-17gw_wd1/manual.txt",
+      "archive": "release03-sandbox-write-probe/manual.txt",
+      "bytes": 1102,
+      "sha256": "0d264f72dc6a8e0db5474840f33b512542c469beb109ed146c17055da287336b"
+    }
+  ],
+  "sandbox": {
+    "rootApproval": "onefutureprepare onlyafterRecoverywindowends/exactclaim/freshresources",
+    "probe": "release03-sandbox-write-probe/result.json",
+    "tool": "byteexact84005 web-artifact.mjs +environment.mjs private/tmp copies",
+    "writes": "deny all file-write except ownrun directory +two exact oldWTcache dirs +/dev/null; denyconfigadjacentfallback",
+    "budget": "120s including20scleanup; ownPGIDonly; artifacts16MiB/128files/cachegrowth4MiB/logs1MiB; startfree>=1GiB+128MiB, stopat<=1GiB+64MiB ormonitorfailure",
+    "limits": "toy7/7notrealVite; deprecatedfacility, notdiskquota/memory/swapcap orcrossleadresourceisolation",
+    "noOtherOperations": "0install/PG/Chrome/provider/personals"
+  },
+  "preparedRunCandidate": {
+    "directory": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln",
+    "mode": "0700 ownerreport",
+    "releaseId": "388371a4972c469b8ace623454594132",
+    "scriptState": "privateconfig/profile/driver/supervisor prepared; PythonASTonly; gateabsent; no build",
+    "fixedTool": "84005two sourcebyteshashed byowner",
+    "rootApproval": "conditional onresourcewindow/freshclaim/free/consumer gates; originaloperatorpublishes",
+    "staticReview": "release03-supervisor-static-review/static-guard-review.md",
+    "executionBeforeFixes": "Two unexecuted supervisor guard findings fixed by W01 and read-only checked by root; see guard-fix-audit.json. No run/probe/build or resource-gate clearance.",
+    "supervisorSha256": "6dcfd01d9713fd6af282d22c2a3e0b9eac83cb268bed2703c1e558e9e50e8d9f"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "observedAt": "2026-10-06T14:00:15.251486+00:00",
+  "task": "WPF-RECOVERY01",
+  "parent": "WPF-MATURE-06",
+  "owner": "workspace_panels_owner",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+  "branch": "codex/web-conversation-recovery",
+  "base": "84005a260dfcb668cd38b09c21564d0754a0f513",
+  "firstCanonical": "dcaf6356a31ac21b02972c8cd5ee33ad0c06e2fb",
+  "currentHead": "82d78a9d77f4f51a27dc76fdc413a63dcd88ea72",
+  "currentChangesWithinClaim": [
+    "apps/web/src/connection/session.ts",
+    "apps/web/src/conversation-context/controller.ts",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/src/recovery/journal.ts"
+  ],
+  "canonicalAndEvidenceDirty": false,
+  "initialCommitClean": "ownerreported; manager laterobserved expected implementationdirty",
+  "parser": {
+    "errors": [],
+    "humanComplete": true,
+    "todos": 6
+  },
+  "review": "NOT_STARTED final feature review; partial 82d78 foundation findings are separately recorded and being corrected",
+  "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+  "version": 1,
+  "claimObservedAt": "2026-10-06T13:56:18.946Z",
+  "registry": "SOURCE_READY forExecutionLead registration; no deployment or page sampling",
+  "remoteObservation": "Owner normalpush confirmed; manager one ls-remote verifieddcaf6356a31ac21b02972c8cd5ee33ad0c06e2fb. Current sourceimplementationdirty; not a fixedtargetapproval.",
+  "productChecks": "Owner first Web types exit2 (preserved); second partial-source Web types exit0 in 5.969s. No behavior/IDB/browser tests or manager retest.",
+  "currentClaim": {
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "scopeCount": 21,
+    "temporaryDependencyScopes": 0,
+    "receipt": "recovery01-dependency-final-narrow-receipt.json"
+  },
+  "currentHeadObservedAt": "2026-10-06T14:09:44.264975+00:00"
+}

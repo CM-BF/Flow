@@ -1,0 +1,82 @@
+{
+  "observedAt": "2026-10-06T13:56:38.401887+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+  "head": "5069586a9f17332de526e101eca3a4250cbc8d91",
+  "branch": "codex/web-attachment-production",
+  "statusPorcelain": "",
+  "uid": 501,
+  "paths": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web",
+      "symlink": false,
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o755",
+      "osAccessWrite": true,
+      "osAccessExecute": true,
+      "permissionProbe": "access/stat only; no write test"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/vite.config.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/vite.config.ts",
+      "symlink": false,
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o644",
+      "osAccessWrite": true,
+      "osAccessExecute": false,
+      "permissionProbe": "access/stat only; no write test"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/node_modules",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/node_modules",
+      "symlink": false,
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o755",
+      "osAccessWrite": true,
+      "osAccessExecute": true,
+      "permissionProbe": "access/stat only; no write test"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/node_modules/.vite-temp",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/node_modules/.vite-temp",
+      "symlink": false,
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o755",
+      "osAccessWrite": true,
+      "osAccessExecute": true,
+      "permissionProbe": "access/stat only; no write test"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/node_modules/.vite",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/node_modules/.vite",
+      "symlink": false,
+      "uid": 501,
+      "gid": 20,
+      "mode": "0o755",
+      "osAccessWrite": true,
+      "osAccessExecute": true,
+      "permissionProbe": "access/stat only; no write test"
+    }
+  ],
+  "df": {
+    "exit": 0,
+    "stdout": "Filesystem   1024-blocks      Used Available Capacity iused    ifree %iused  Mounted on\n/dev/disk3s5   971350180 945201716   1366220   100% 9104531 13662200   40%   /System/Volumes/Data\n/dev/disk3s5   971350180 945201716   1366220   100% 9104531 13662200   40%   /System/Volumes/Data\n",
+    "stderr": ""
+  },
+  "diskUsage": {
+    "worktree": {
+      "total": 994662584320,
+      "used": 993263583232,
+      "free": 1399001088
+    },
+    "tmp": {
+      "total": 994662584320,
+      "used": 993263583232,
+      "free": 1399001088
+    }
+  }
+}

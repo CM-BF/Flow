@@ -368,3 +368,5 @@ GO首屏需求执行（11:44）：工程dashboard当前与下一交付应优先�
 最新调度：附件贯通与已审dashboard安全点后，原MATURE06-04连接/刷新/未决发送恢复完整旅程优先Arc/装饰，沿既有10:24验收；[原指令与共享接口队列](../../docs/evidence/web-platform/connection-recovery-priority.md)。Arc保持未领，认证与发送恢复独立Module/Interface、中心权威、不因重新认证自动重投，0provider且个人服务不动。
 
 当前U08/REQ37对照（D06 fixedaeb批）：用户最新重申“其他 agent leads…不要 overlap；take 工作最好也在 dashboard 标清楚”，沿已有规则与唯一D04账本，不新手填状态源。D06原树四literal fresh6cad30a2 v1，实际receipt与唯一source见[集中入口](../../docs/evidence/web-platform/mature-task-handoff.md)；领取、source登记、已审target、main和部署分别表达，释放也保持可读。
+
+D01/DPERF原WPF-001-36后继（2026-10-06）：GO单次实读首页snapshot为156任务/1,879,706bytes/8545ms/no-store，不是p95/CPU/容量基线。用户结果是尽快可读摘要与按需详情/核验，正常刷新不反复阻塞首页；失败保上次内容、原时间与错误。优先级低于Recovery和可用预览、高于装饰。保持唯一status、作者声明/现场核验区别、fresh/stale/unknown、所有task/claim可达；claim授权仍实时PG原子take。root固定7源只读[结构候选](../../docs/evidence/web-platform/dashboard-summary-readonly-design/report.md)建议保完整snapshot兼容、摘要与单task详细proof分离、client刷新guard/旧详情丢弃，不做HEAD-only跨轮green缓存。已交DPERF01–03保持原完成范围，此后继尚无implementationclaim/实验，不新增通用负载观测框架、不重复4320GET。[单次原观察归因](../../docs/evidence/web-platform/dperf-home-summary-followup.json)。

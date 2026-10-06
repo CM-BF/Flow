@@ -1,0 +1,23 @@
+{
+  "exit": 0,
+  "stdout": "{\"checks\": [{\"name\": \"cache-a\", \"write\": \"allowed\", \"expected\": \"allowed\", \"pass\": true}, {\"name\": \"cache-b\", \"write\": \"allowed\", \"expected\": \"allowed\", \"pass\": true}, {\"name\": \"output\", \"write\": \"allowed\", \"expected\": \"allowed\", \"pass\": true}, {\"name\": \"config-side-fallback\", \"write\": \"denied\", \"errno\": 1, \"error\": \"[Errno 1] Operation not permitted: '/private/tmp/release03-sandbox-write-probe-17gw_wd1/config-side/vite.config.ts.timestamp-probe.mjs'\", \"expected\": \"denied\", \"pass\": true}, {\"name\": \"symlink-escape\", \"write\": \"denied\", \"errno\": 1, \"error\": \"[Errno 1] Operation not permitted: '/private/tmp/release03-sandbox-write-probe-17gw_wd1/cache-a/escape/escaped.txt'\", \"expected\": \"denied\", \"pass\": true}], \"childExit\": 0, \"childStdout\": \"[{\\\"name\\\": \\\"child-allowed\\\", \\\"write\\\": \\\"allowed\\\", \\\"expected\\\": \\\"allowed\\\", \\\"pass\\\": true}, {\\\"name\\\": \\\"child-denied\\\", \\\"write\\\": \\\"denied\\\", \\\"errno\\\": 1, \\\"error\\\": \\\"[Errno 1] Operation not permitted: '/private/tmp/release03-sandbox-write-probe-17gw_wd1/config-side/child.txt'\\\", \\\"expected\\\": \\\"denied\\\", \\\"pass\\\": true}]\\n\", \"childStderr\": \"\"}\n",
+  "stderr": "",
+  "osRejectedSandbox": false,
+  "timedOut": false,
+  "root": "/private/tmp/release03-sandbox-write-probe-17gw_wd1",
+  "elapsedSeconds": 0.064,
+  "pythonExecutable": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+  "profile": "(version 1)\n(allow default)\n(deny file-write*)\n(allow file-write* (subpath \"/private/tmp/release03-sandbox-write-probe-17gw_wd1/cache-a\"))\n(allow file-write* (subpath \"/private/tmp/release03-sandbox-write-probe-17gw_wd1/cache-b\"))\n(allow file-write* (subpath \"/private/tmp/release03-sandbox-write-probe-17gw_wd1/output\"))\n",
+  "helpExit": 64,
+  "manualDeprecated": true,
+  "forbiddenDirectoryFiles": [],
+  "projectWrites": 0,
+  "cacheTouched": false,
+  "builds": 0,
+  "permissionEscalation": false,
+  "limitations": [
+    "Deprecated local macOS facility; toy filesystem write policy only.",
+    "No real Vite/plugin/native build tested; no disk-space quota, memory/swap cap or concurrency isolation.",
+    "No claim or prepare authorization implied."
+  ]
+}

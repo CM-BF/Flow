@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T14:09:19.602588+00:00",
+  "checks": [
+    "Python AST parses; no supervisor invocation",
+    "All cleanup exception handlers now call cleanup_error, which sets success=false",
+    "Parent writes count all root JSON/log/jsonl diagnostics and reserve 64KiB child +128KiB final",
+    "Child JSON aggregate capped64KiB; concurrent driver writes covered by parent reservation",
+    "Final oversized JSON yields explicit failed/incomplete compact report, never silent success",
+    "No gate and no build artifacts/results"
+  ],
+  "files": {
+    "supervise.py": "6dcfd01d9713fd6af282d22c2a3e0b9eac83cb268bed2703c1e558e9e50e8d9f",
+    "driver.mjs": "f1bbb52ac119b39772108966bab3ebf684a2bfee2a665a896aaf4b775945e23e",
+    "prepare.sb": "8fae0a041295498ca35fcd171b9c1ebb853a1c504a4bff07112a86fb176e5a91",
+    "config.json": "a328ff2a3b6d45e499c891ee455d1befcb39fc32c54ab67267146c3018af3bd6",
+    "tools/web-artifact.mjs": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e",
+    "tools/environment.mjs": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+    "guard-fix.diff": "eaa2d4bb340d0fdede32c3f535130e4243f0a22d7a1b88e7b9bfe3804bfb4200"
+  },
+  "gateExists": false,
+  "artifactResultExists": false,
+  "supervisorResultExists": false,
+  "execution": false,
+  "limitations": "Static review only; no new filesystem/process probe, build, df poll, cache/service operation. Disk sampling still not a hard quota."
+}

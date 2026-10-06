@@ -32,8 +32,9 @@
     "scopeCount": 21,
     "conflicts": [],
     "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
-    "canonicalState": "owner dispatched by followup_task; first SOURCE_READY pending",
-    "registryState": "pending new unique source registration by Execution Lead; no dashboard/service read"
+    "canonicalState": "SOURCE_READY dcaf6356 normal push/ls-remote verified. Later partial checkpoint 82d78a, source implementation dirty; no fixed feature target/approval.",
+    "registryState": "pending new unique source registration by Execution Lead; no dashboard/service read",
+    "sourceReadyRecord": "recovery01-source-ready.json"
   },
   "resources": {
     "preflight": {
@@ -47,7 +48,7 @@
       "fullInstallBuildMinimumBytes": 2684354560
     },
     "afterCheckoutAvailableBytes": 1416241152,
-    "permitted": "light source/metadata implementation; no install/build/PG/browser yet",
+    "permitted": "Small source/metadata only while below resource reserve; two dependency/type windows finished, no new artifact tests.",
     "fullBuildGate": "Superseded at Lead13:49: SVC06 alone retains2.5GiB; otherWebnewartifacts/dependencycopies require actualpeak estimation and about1GiB completionmargin. No build authorized yet.",
     "historicalPreflightBoundary": "Embedded13:46preflight/provision observations and originalclaim unchanged; currentpolicy record resource-policy-1349.json."
   },
@@ -114,5 +115,8 @@
     "personal backend362/v15 and Web8d8/v2 unchanged",
     "no new provider/API/PG/browser or usertab operation"
   ],
-  "currentResourcePolicy": "resource-policy-1349.json"
+  "currentResourcePolicy": "resource-policy-1349.json",
+  "currentClaim": "6ff988b2 v4, original 21 scopes only; all temporary dependency scopes relinquished after explicit stop. Receipt recovery01-dependency-final-narrow-receipt.json.",
+  "currentResourceGate": "resource-admission-1405.json",
+  "earlyReview": "recovery01-82d78-root-readonly-findings.json: five early foundation findings, not final review. Earlier three-item message is superseded; raw was expanded before archival."
 }

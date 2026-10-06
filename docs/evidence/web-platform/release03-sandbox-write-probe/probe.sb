@@ -1,0 +1,6 @@
+(version 1)
+(allow default)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/release03-sandbox-write-probe-17gw_wd1/cache-a"))
+(allow file-write* (subpath "/private/tmp/release03-sandbox-write-probe-17gw_wd1/cache-b"))
+(allow file-write* (subpath "/private/tmp/release03-sandbox-write-probe-17gw_wd1/output"))

@@ -1,0 +1,36 @@
+{
+  "recordedAt": "2026-10-06T14:09:44.264975+00:00",
+  "role": "Management record of separate whole-host observations; no repeat sampling",
+  "managerAdmission": {
+    "at": "2026-10-06T14:05:53.519156+00:00",
+    "ledgerObservedAt": "2026-10-06T14:05:53.498Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+    "head": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "branch": "codex/web-attachment-production",
+    "dirty": "",
+    "scope": [
+      "apps/web/node_modules/.vite-temp",
+      "apps/web/node_modules/.vite"
+    ],
+    "conflicts": [],
+    "availableBytes": 900775936,
+    "minimumStartBytes": 1207959552,
+    "take": false
+  },
+  "laterRootMessage": {
+    "availableKiB": 952800,
+    "availableBytes": 975667200,
+    "observedAt": "Root fresh observation reported after manager 14:05:53 preflight; exact measurement timestamp not supplied",
+    "source": "root inbound message",
+    "managerRepeatedDf": false
+  },
+  "decision": "No RELEASE03 run claim/build or new dependency/browser/PG experiment; Recovery small source work and small management metadata continue.",
+  "unlock": "New substantive resource recovery evidence, then one fresh admission satisfying >=1GiB+128MiB and all original scope/consumer/sandbox conditions. Do not poll unchanged state.",
+  "limits": "Both readings are whole-host available space, not allocation attribution or reserved capacity; no deletion, process stopping, personal service access or lowered threshold.",
+  "laterLeadMessage": {
+    "reportedAt": "2026-10-06 14:13 UTC per inbound Lead message",
+    "availableKiB": 887108,
+    "availableBytes": 908398592,
+    "attribution": "Lead whole-host observation via root; not sampled by this manager and not attributable to a team"
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "observedAt": "2026-10-06T13:51:30.663684+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+  "branch": "codex/web-attachment-production",
+  "clean": true,
+  "actualHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+  "actualTree": "f01fca67b9aa396ea6303fd2246c20c1d62d4277",
+  "approvedImplementation": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+  "toolFixedCommit": "84005a260dfcb668cd38b09c21564d0754a0f513",
+  "changesSinceApproved": [
+    "docs/evidence/wpf-attach-i02/README.md",
+    "docs/evidence/wpf-attach-i02/f82-source-manifest.json",
+    "docs/evidence/wpf-attach-i02/final-parser.json",
+    "docs/evidence/wpf-attach-i02/interface.md",
+    "docs/evidence/wpf-attach-i02/longnames-claim-observation.json",
+    "docs/evidence/wpf-attach-i02/longnames-claim-receipt.json",
+    "docs/evidence/wpf-attach-i02/longnames-types.log",
+    "docs/evidence/wpf-attach-i02/main-integration-receipt.json",
+    "docs/evidence/wpf-attach-i02/main-source-observation.json",
+    "docs/evidence/wpf-attach-i02/metadata-check.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-budget.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-build.log",
+    "docs/evidence/wpf-attach-i02/production-longnames-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-fixed-browser.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-fixed-budget.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-fixed-build.log",
+    "docs/evidence/wpf-attach-i02/production-longnames-fixed-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-fixed-failure.png",
+    "docs/evidence/wpf-attach-i02/production-longnames-fixed.log",
+    "docs/evidence/wpf-attach-i02/production-longnames-interruption.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-ready-browser.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-ready-budget.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-ready-build.log",
+    "docs/evidence/wpf-attach-i02/production-longnames-ready-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-ready-dark-390.png",
+    "docs/evidence/wpf-attach-i02/production-longnames-ready-geometry.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-ready-light-390.png",
+    "docs/evidence/wpf-attach-i02/production-longnames-ready.log",
+    "docs/evidence/wpf-attach-i02/production-longnames-second-browser.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-second-budget.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-second-build.log",
+    "docs/evidence/wpf-attach-i02/production-longnames-second-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-second-dark-390.png",
+    "docs/evidence/wpf-attach-i02/production-longnames-second-failure.png",
+    "docs/evidence/wpf-attach-i02/production-longnames-second-geometry.json",
+    "docs/evidence/wpf-attach-i02/production-longnames-second-light-390.png",
+    "docs/evidence/wpf-attach-i02/production-longnames-second.log",
+    "docs/evidence/wpf-attach-i02/production-longnames.log",
+    "docs/evidence/wpf-attach-i02/quality.md",
+    "docs/evidence/wpf-attach-i02/root-9eec-review.json",
+    "docs/evidence/wpf-attach-i02/root-attachi02-f82-source-audit.json",
+    "docs/evidence/wpf-attach-i02/root-attachi02-f82-tests-final.log",
+    "docs/evidence/wpf-attach-i02/root-f82-technical-review.json",
+    "docs/evidence/wpf-attach-i02/source-manifest.json",
+    "plans/wpf-attach-i02-production-binding/plan.md",
+    "plans/wpf-attach-i02-production-binding/review.md",
+    "plans/wpf-attach-i02-production-binding/status.md"
+  ],
+  "equalTreesAndManifests": [
+    {
+      "path": "apps/web",
+      "approvedObject": "0300f1cdabd3222d9681d22582b26fc3a9963f0a",
+      "actualObject": "0300f1cdabd3222d9681d22582b26fc3a9963f0a",
+      "same": true
+    },
+    {
+      "path": "packages",
+      "approvedObject": "e5381eadccfb968f0f9225a4302f8cf100142a36",
+      "actualObject": "e5381eadccfb968f0f9225a4302f8cf100142a36",
+      "same": true
+    },
+    {
+      "path": "package.json",
+      "approvedObject": "34091cf383f1fd79f5fc70496ea6408fdc118fa8",
+      "actualObject": "34091cf383f1fd79f5fc70496ea6408fdc118fa8",
+      "same": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "approvedObject": "4505e3134fad143a23a580db1517d698fc66bce8",
+      "actualObject": "4505e3134fad143a23a580db1517d698fc66bce8",
+      "same": true
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "approvedObject": "e9b0dad63bacd2aa6865fcb9b7e86ad630964730",
+      "actualObject": "e9b0dad63bacd2aa6865fcb9b7e86ad630964730",
+      "same": true
+    }
+  ],
+  "fixedSources": [
+    {
+      "source": "84005a260dfcb668cd38b09c21564d0754a0f513:tools/personal-preview/web-artifact.mjs",
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e",
+      "bytes": 8163
+    },
+    {
+      "source": "84005a260dfcb668cd38b09c21564d0754a0f513:tools/personal-preview/environment.mjs",
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+      "bytes": 1983
+    },
+    {
+      "source": "5069586a9f17332de526e101eca3a4250cbc8d91:apps/web/vite.config.ts",
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f",
+      "bytes": 648
+    },
+    {
+      "source": "5069586a9f17332de526e101eca3a4250cbc8d91:apps/web/src/assistant-ui.css",
+      "sha256": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab",
+      "bytes": 6661
+    },
+    {
+      "source": "5069586a9f17332de526e101eca3a4250cbc8d91:apps/web/package.json",
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "bytes": 1367
+    },
+    {
+      "source": "5069586a9f17332de526e101eca3a4250cbc8d91:pnpm-lock.yaml",
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "bytes": 278830
+    }
+  ],
+  "installedSources": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js",
+      "sha256": "21d5c6b4fb1013b98b1436e9e2a3bb416c8932343ad42ec293bbf760f51a0131",
+      "bytes": 1383675
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react/dist/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react/dist/index.js",
+      "sha256": "ef1c54fcb1f85f26688a807f32099ff7cd49027791f0d9d8b9b4baebf0fb87c2",
+      "bytes": 9936
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite/dist/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite/dist/index.mjs",
+      "sha256": "f80662823db60a7d2060ae37bedb98ab3a5039a32f9ab88a2a0c9c39e79f4d28",
+      "bytes": 8351
+    }
+  ],
+  "rawArtifact": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
+    "files": 10,
+    "logicalBytes": 1588017,
+    "allocatedStatBlocksBytes": 1613824,
+    "releaseId": null,
+    "formalFormat2": false
+  },
+  "noBuild": true,
+  "noInstall": true,
+  "projectWrites": 0,
+  "credentialsRead": false
+}

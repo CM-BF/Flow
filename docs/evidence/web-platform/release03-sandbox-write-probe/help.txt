@@ -1,0 +1,8 @@
+/usr/bin/sandbox-exec: illegal option -- h
+Usage: sandbox-exec [options] command [args]
+Options:
+  -f profile-file     Read profile from file.
+  -n profile-name     Use pre-defined profile.
+  -p profile-string   Specify profile on the command line.
+  -D key=value        Define a profile parameter.
+Exactly one of -f, -n, -p must be specified.

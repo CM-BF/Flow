@@ -1,0 +1,96 @@
+{
+  "at": "2026-10-06T14:07:21.087095+00:00",
+  "fixedCheckpoint": "82d78a9d77f4f51a27dc76fdc413a63dcd88ea72",
+  "scope": "Early independent read-only foundation inspection, not feature acceptance or final review target",
+  "reviewState": "PARTIAL_FINDINGS_NOT_FINAL_REVIEW",
+  "sources": [
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "833b0ba2f81e3d5190b5d71c9fc06f8c985d112e3cb442d785be84c4b9dfdf25"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "35d437eb7afcb3a7ffcf48295eac7fe8e288c1f4842bde218600beae374774e4"
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "195edd84a357d5a6ea471209963df5426dec63ef9c73298612589cda485d55c8"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "1c49c0c9a60b02add563b5484041420b2f57bb86e77eacbb254633d9d230f867"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "b431f3148144f6dea6ad2b5ec7bfb426377ed63ede4ca52ea5ae40dca2033afb"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "e4371f2ec55ac5e96fad0b44f06d9071c493dcbe5f080dc812350ce111c73666"
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "c792e0c5ed589d6c1cb7be7022f484fabf25bd4220c9ea0d7e7cc3b2f0db88db"
+    }
+  ],
+  "findings": [
+    {
+      "id": "RECOVERY-EARLY-01",
+      "priority": "P1",
+      "file": "apps/web/src/recovery/binding.tsx",
+      "line": 105,
+      "title": "Failed durable transfer must not publish composer transient empty as the saved draft",
+      "evidence": "prepare finally invokes endHandoff on rejection; endHandoff enqueues deferred data. If initial draft save committed but command prepare rejects, a deferred transient empty can replace the original durable draft.",
+      "required": "Only commit successful transfer and preserve failed source draft/receipt; distinguish real next draft from pre-onNew empty notification. Cover save success -> prepare reject -> transient empty -> reload."
+    },
+    {
+      "id": "RECOVERY-EARLY-02",
+      "priority": "P1",
+      "file": "apps/web/src/recovery/journal.ts",
+      "line": 177,
+      "title": "Version increments are not compare-and-swap admission",
+      "evidence": "change reads current record then updates without expected version/owner generation; prepare permits same frozen record; dispatch unconditionally sets dispatching. Two tabs can both admit same record and stale checkpoint can regress a later accepted record.",
+      "required": "Bind expected record version/dispatch ownership generation and terminal progression; one contender wins, stale holder cannot overwrite it. Same-key idempotent server handling does not replace required local CAS."
+    },
+    {
+      "id": "RECOVERY-EARLY-03",
+      "priority": "P1",
+      "file": "apps/web/src/recovery/binding.tsx",
+      "line": 50,
+      "title": "Bind queued draft/restore operations to their captured namespace and connection generation",
+      "evidence": "enqueue captures data before deferred run but resolves current namespace/owner only inside run; restore reads list under one namespace then only checks UI plugin state before callback. A switching host can retarget data unless caller-specific invariants prevent it; App binding remains unfinished.",
+      "required": "Capture namespace/owner/local generation synchronously and verify before/after awaits; old A data must not write/hydrate B. Final App integration should test this invariant explicitly."
+    },
+    {
+      "id": "RECOVERY-EARLY-04",
+      "priority": "P1",
+      "file": "apps/web/src/conversations/queue/commands.ts",
+      "line": 150,
+      "title": "Pre-send storage failure must retain an explicitly retryable original identity",
+      "evidence": "RecoveryError before sent is classified rejected; retry only accepts unknown, unresolved excludes rejected, and executing again allocates a new key and replaces the same slot. Analogous classification exists in projection/steering.",
+      "required": "Represent write-before-send blockage without treating it as a definite center rejection; preserve original key/body/materials, allow explicit exact-identity retry after storage recovers, send zero HTTP on barrier failure."
+    },
+    {
+      "id": "RECOVERY-EARLY-05",
+      "priority": "P2",
+      "file": "apps/web/src/connection/session.ts",
+      "line": 93,
+      "title": "Explicit logout should synchronously revoke business authorization",
+      "evidence": "logout increments private generation but leaves published phase ready until awaited HTTP finishes; authorized() and public csrfToken() remain usable.",
+      "required": "Publish revoked/checking state immediately; privately capture CSRF for the one logout request, stop observation/writes and retain journal. Separate from pending center Set-Cookie race policy."
+    }
+  ],
+  "positiveEvidence": [
+    "IDB promise resolves transaction.oncomplete, not put success",
+    "Strict durability requested; no external await inside transaction operation",
+    "No frontend provider call added in inspected foundations"
+  ],
+  "notValidated": [
+    "No runtime IDB/CAS/browser reproduction this turn",
+    "App/official Thread wiring still in progress",
+    "No types/tests rerun by root; owner checkpoint reports Web types exit0",
+    "Connection-session server policy gates remain separate"
+  ],
+  "projectWrites": 0,
+  "cleanCode": "Reviewed responsibility boundaries, failure transitions and cross-tab/namespace state identity; three concrete correction requests sent to original owner."
+}

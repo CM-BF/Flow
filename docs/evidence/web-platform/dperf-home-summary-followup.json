@@ -1,0 +1,54 @@
+{
+  "recordedAt": "2026-10-06T14:00:15.251486+00:00",
+  "source": "GO single read-only sample relayed byroot; no manager request",
+  "observedAt": "2026-10-06T13:52:38.950Z",
+  "request": "GET /api/snapshot",
+  "httpStatus": 200,
+  "tasks": 156,
+  "bytes": 1879706,
+  "durationMs": 8545,
+  "cacheControl": "no-store",
+  "limits": [
+    "one sample, notp95/CPU/capacitybaseline",
+    "no new4320request/aggregate/loadexperiment",
+    "existingD01/DPERFfollowup, no claimimplementation"
+  ],
+  "priority": "afterRecoveryandusablepreview; beforedecoration",
+  "userResult": "Quick readable home summary; on-demand taskdetails/proof. Ordinaryrefreshdoesnotrepeatblockinginitialload.",
+  "invariants": [
+    "uniqueownerstatussolemanualfact",
+    "author declarations vs liveproofdistinct",
+    "all summaries/unknown/tasks/claims remainreachable",
+    "fresh/stale/unknown+lastsuccessoriginaltime/error onrefreshfailure",
+    "PGatomicclaimremainsreal-timeauthority; page cache notgrant",
+    "no crosssnapshotHEAD-only proofgreen cache"
+  ],
+  "rootDesign": {
+    "report": "dashboard-summary-readonly-design/report.md",
+    "source": "dashboard-summary-readonly-design/sources.json",
+    "fixedHead": "d4a2e0a7f255a2c68b99c7aafbc006c7bc3b3b50",
+    "files": 7,
+    "role": "readonlystructuralcandidate, noperformancegainclaim"
+  },
+  "candidate": [
+    "retainfullsnapshotcompatibility",
+    "summaryseamnotwaitfulldetailedproof/doc enumeration",
+    "registered-task-only on-demanddetail withsafeexistingpaths",
+    "clientrefreshinflightguard/generation/abortolddetails/lastsnapshotonfailure",
+    "currentclaimunknownuntilfreshPGobservation"
+  ],
+  "archives": [
+    {
+      "source": "/tmp/root-dashboard-summary-readonly-design/report.md",
+      "archive": "dashboard-summary-readonly-design/report.md",
+      "bytes": 4975,
+      "sha256": "2f471ffb14ba8021c4068403a39a21b39bc730dbf7c2a60f60bc228b895d68f2"
+    },
+    {
+      "source": "/tmp/root-dashboard-summary-readonly-design/sources.json",
+      "archive": "dashboard-summary-readonly-design/sources.json",
+      "bytes": 1476,
+      "sha256": "b6f8f5f6df839aa81d0a16c9af4466662dbece2e715fda069db162578461af51"
+    }
+  ]
+}

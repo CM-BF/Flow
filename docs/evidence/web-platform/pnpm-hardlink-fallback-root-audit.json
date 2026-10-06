@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-06T14:01:36.878844+00:00",
+  "installedVersion": "9.15.4",
+  "source": "/opt/homebrew/lib/node_modules/pnpm/dist/pnpm.cjs",
+  "sha256": "4c319da726786d5535aef95fa78ec5e24f1079382da878a35fa5dd044a7bab96",
+  "findings": [
+    {
+      "at": 78857,
+      "fact": "explicit hardlink binds linkOrCopy; not strict link-only"
+    },
+    {
+      "at": 78981,
+      "fact": "link error except EEXIST copies file"
+    },
+    {
+      "at": 79045,
+      "fact": "willBeBuilt may select clone-or-copy regardless of import flag"
+    }
+  ],
+  "excerpts": {
+    "explicitHardlink": "        case \"clone\":\n          core_loggers_1.packageImportMethodLogger.debug({ method: \"clone\" });\n          return clonePkg.bind(null, createCloneFunction());\n        case \"hardlink\":\n          core_loggers_1.packageImportMethodLogger.debug({ method: \"hardlink\" });\n          return hardlinkPkg.bind(null, linkOrCopy);\n        case \"auto\": {",
+    "fallback": "      }\n    }\n    function pkgLinkedToStore(filesMap, to) {\n      if (filesMap[\"package.json\"]) {\n        if (isSameFile(\"package.json\", to, filesMap)) {\n          return true;\n        }\n      } else {\n        const [anyFile] = Object.keys(filesMap);\n        if (isSameFile(anyFile, to, filesMap))\n          return true;",
+    "willBeBuilt": "      const packageImportMethod = opts.packageImportMethod;\n      const gfm = getFlatMap.bind(null, opts.cafsDir);\n      return async (to, opts2) => {\n        const { filesMap, isBuilt } = gfm(opts2.filesResponse, opts2.sideEffectsCacheKey);\n        const willBeBuilt = !isBuilt && opts2.requiresBuild;\n        const pkgImportMethod = willBeBuilt ? \"clone-or-copy\" : opts2.filesResponse.packageImportMethod ?? packageImportMethod;\n        const impPkg = cachedImporterCreator(pkgImportMethod);\n        const importMethod = await impPkg(to, {\n          disableRelinkLocalDirDeps: opts2.disableRelinkLocalDirDeps,\n          filesMap,\n          resolvedFrom: opts2.filesResponse.resolvedFrom,\n          force: opts2.force,\n          keepModulesDir: Boolean(opts2.keepModulesDir)\n        });\n        return { importMethod, isBuilt };"
+  },
+  "impact": "Do not promise zero-copy using this flag. Recovery selected own-worktree third-party symlink diagnostic environment; no install run.",
+  "projectWrites": 0,
+  "installRuns": 0,
+  "boundary": "Installed-source audit, no runtime EXDEV reproduction and no pnpm behavior change."
+}

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:51 UTC / 13:49资源政策与恢复领取一致 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:09 UTC / 两轮types与写权归还、发布资源未准入 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 附件与会话共享输入已进入主线；刷新恢复已领取实施，稳定页面发布兼容准备并行 |
-| 下一可用交付 | 实现刷新后的完整草稿与原未决回执恢复；发布资源与后台修复就绪后验证稳定页面并交原发布方 |
-| 当前阻塞 | ACTIVE: 发布等待正式format2实际峰值预检及后台362附件历史修复与组合验证；恢复轻量实施继续，新Web产物/依赖复制须估峰值并留约1GiB，最终浏览器旅程需对齐三项中心语义 |
+| 当前产出 | 刷新恢复已开工并通过部分源码类型检查，临时依赖写权已归还；稳定页面发布准备已界定但未运行 |
+| 下一可用交付 | 继续完整草稿与未决回执恢复接线；空间满足门槛后准备正式页面产物并验证当前后台兼容 |
+| 当前阻塞 | ACTIVE: 全机可用空间低于1GiB保留额，发布prepare未take/build，新依赖与浏览器/PG验证暂停；恢复小源码继续，最终旅程仍需中心三语义，发布仍需后台362附件历史组合验证 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -97,7 +97,7 @@
 - 六大task与Mika02/04唯一canonical、用户原话/Arc抽象、登记字段与待集成目标统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)。Web只拥有01/03/05/06，02/04不复制计划。
 - Lead09:09:25正式观察111 sources/current/issues[]，六MATURE/CONTEXTI/STEER/VISUAL已登记；本管理不重复API。D08已main f181；root10:44–10:45实际页面已核六parent与子片父/worker领取；MATURE04 stale已自恢复，剩余声明格式交Mika合法owner。
 - root12:24既有DOM已核148来源、main a8aef、顶部三大task分散；Lead同期ledger available/unregistered[]，没有展开领取详情或本组API采样；[精确观察](../../docs/evidence/web-platform/dashboard-148-root-dom-observation.json)。
-- 下一完整旅程沿MATURE06-04，附件/已审dashboard安全点后优先恢复而非Arc；中心582f/共享d6d/生产9406已正式main84005；panels Recovery新21范围已COMMITTED并派工，source登记待首canonical。[接口/写权队列](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。
+- 下一完整旅程沿MATURE06-04，附件/已审dashboard安全点后优先恢复而非Arc；中心582f/共享d6d/生产9406已正式main84005；panels Recovery新21范围已COMMITTED，首canonical dcaf6356已normalpush/ls-remote核同，SOURCE_READY已置中央登记；当前源码dirty实施不是fixed审批。[接口/写权队列](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。
 - D05 registry evidenceDir应为docs/evidence/d05-first-fit；现owner仍Lead队，仅其可修registry，本组不抢写。
 - CONTEXTI已main并释放；STEIRI01、ACTIVITYREAD和D08已main f181并全部停写释放，source见集中handoff。
 - GO已将MATURE03附件端到端责任交Web/root；运行域及实际ATTACHI02已main cde且旧scope释放，完整MATURE03目标仍开放；CACHE也已main/released。新RECOVERY01仅用自己fresh21claim，不沿已释放写权。
@@ -116,3 +116,5 @@ SVC05窗口已由Lead正式关闭，个人backend362/v15与Web8d8/caa1/v2沿服�
 [RELEASE03候选/批准范围](../../docs/evidence/web-platform/release03-current-preview-proposal.json)直接MATURE01，w01唯一验证owner、未claim；不复用RELEASE01/02释放权，不抢Recovery。原SVCoperator独立接精确descriptor/compatibility后发布；个人服务未操作。
 
 恢复正式领取与唯一来源见[dispatch审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)和[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json)；当前实施事实由新owner status维护，不由管理表复制TODO。13源比对不是13tests，Lead组合为1pass/2未选+types0；本组无产品复测。
+
+DPERF既有后继：[单次首页观察/固定摘要设计](../../docs/evidence/web-platform/dperf-home-summary-followup.json)待排，优先级低于恢复与可用预览、高于装饰。已交DPERF01–03不回改，后继未领取；首页尽快可读与按需proof/详情的验收仍需未来独立片，当前不复采服务。

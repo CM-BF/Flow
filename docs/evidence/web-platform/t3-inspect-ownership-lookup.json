@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-06T14:10:41.445558+00:00",
+  "requestedPath": "/tmp/flow-t3-inspect.fFfqh2",
+  "decision": "UNKNOWN_OWNER_KEEP",
+  "readOnlyChecks": [
+    "Exact rg in current own management evidence/plans returned zero matches",
+    "git log -S exact directory in management docs/evidence/web-platform and plans/web-platform history returned zero matches",
+    "Existing t3-auth-fixed-research/source-audit.json contains six fixed9bd1 public raw URLs, not a clone or install record"
+  ],
+  "knownLocalResearch": "/tmp/root-t3-auth-9bd1-research; only source audit and summary archived",
+  "notEstablished": [
+    "Requested directory original owner",
+    "Completion/active-consumer state",
+    "Owned reconstructible node_modules eligible for cleanup"
+  ],
+  "attributedRootObservation": "Top-level t3code and nested .repos source clones; no top-level node_modules; manager did not repeat filesystem scan",
+  "operations": {
+    "deleted": 0,
+    "du": 0,
+    "processesStopped": 0,
+    "otherThreeDirectoriesTakenOver": false
+  },
+  "limits": "Missing management record does not prove another owner or safe deletion. Preserve source/raw/global store; wait original ownership evidence."
+}

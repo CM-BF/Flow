@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-10-06T13:56:49.555821+00:00",
+  "method": "lsof -nP -Fpcfn; retained only exact target WT paths and executable names, no env/command arguments",
+  "exit": 0,
+  "seconds": 0.563,
+  "stderr": "",
+  "matchingProcesses": [],
+  "limitation": "one unprivileged snapshot; no matches is not proof of future/racing activity or inaccessible processes"
+}

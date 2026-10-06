@@ -1,0 +1,155 @@
+--- supervise.before-budget-fix.py
++++ supervise.py
+@@ -12,11 +12,54 @@
+ PGID = None
+ CACHE_BEFORE = {}
+ LOG_BYTES = 0
++DRIVER_JSON_BYTES = 65_536
++FINAL_REPORT_BYTES = 131_072
++DRIVER_DIAGNOSTICS = {'artifact-result.json', 'driver-failure.json'}
+ SELECTOR = selectors.DefaultSelector()
+ ENV = {k: os.environ[k] for k in ['PATH','HOME','USER','LOGNAME','SHELL','LANG','LC_ALL','LC_CTYPE','TZ'] if k in os.environ}
+ ENV.update({'TMPDIR': str(RUN / 'scratch'), 'TMP': str(RUN / 'scratch'), 'TEMP': str(RUN / 'scratch'), 'GIT_OPTIONAL_LOCKS': '0'})
++def encoded_json(value):
++    return (json.dumps(value, indent=2) + '\n').encode()
++def diagnostic_bytes(exclude=()):
++    # Count all top-level JSON/log diagnostics, including prepared JSON records.
++    return sum(p.stat().st_size for p in RUN.iterdir()
++               if p.is_file() and p.suffix in {'.json', '.log', '.jsonl'} and p.name not in exclude)
++def parent_diagnostic_room(replacing=None):
++    excluded = DRIVER_DIAGNOSTICS | ({replacing} if replacing else set())
++    # The driver can write concurrently: reserve its entire bounded allowance,
++    # plus a final failure report, instead of racing a file-size observation.
++    return LIMIT['logBytes'] - DRIVER_JSON_BYTES - FINAL_REPORT_BYTES - diagnostic_bytes(excluded)
+ def save(name, value):
+-    (RUN / name).write_text(json.dumps(value, indent=2) + '\n')
++    data = encoded_json(value)
++    if len(data) > parent_diagnostic_room(name): raise RuntimeError('TOTAL_DIAGNOSTIC_BUDGET')
++    (RUN / name).write_bytes(data)
++def final_report():
++    remaining = LIMIT['logBytes'] - diagnostic_bytes({'supervisor-result.json'})
++    data = encoded_json(STATE)
++    if len(data) > min(FINAL_REPORT_BYTES, remaining):
++        STATE['success'] = False
++        original_reason = STATE['abortReason']
++        STATE['abortReason'] = 'FINAL_DIAGNOSTIC_BUDGET'
++        # Report a failed/incomplete diagnostic rather than silently truncating
++        # a successful run; original stream files remain untouched.
++        data = encoded_json({'success': False, 'abortReason': STATE['abortReason'],
++            'originalAbortReason': original_reason,
++            'diagnosticsIncomplete': True, 'fullReportBytes': len(data),
++            'startedAt': STATE['startedAt'], 'endedAt': STATE['endedAt'],
++            'elapsedSeconds': STATE['elapsedSeconds'],
++            'processGroupRemaining': STATE['processGroupRemaining'],
++            'cleanupErrors': STATE.get('cleanupErrors', []),
++            'sampleCount': len(STATE['samples'])})
++    if len(data) > remaining:
++        STATE['success'] = False
++        STATE['abortReason'] = 'NO_DIAGNOSTIC_SPACE'
++        return
++    (RUN / 'supervisor-result.json').write_bytes(data)
++def cleanup_error(phase, error):
++    STATE['success'] = False
++    entry = {'phase': phase, 'error': str(error)}
++    STATE['cleanup'].append(entry)
++    STATE.setdefault('cleanupErrors', []).append(entry)
+ def git(*args):
+     return subprocess.check_output(['git','-C',str(SOURCE),*args],text=True,env=ENV,timeout=3).strip()
+ def safe_directory(path):
+@@ -42,13 +85,13 @@
+     caches = {}
+     for p in CACHE_PATHS: caches.update(inventory(p))
+     growth = sum(max(0, v['bytes'] - CACHE_BEFORE.get(p, {}).get('bytes', 0)) for p,v in caches.items())
+-    sample = {'elapsedSeconds':round(time.monotonic()-START,3),'freeBytes':free,'distBytes':sum(v['bytes'] for v in dist.values()),'distAllocatedBytes':sum(v['allocated'] for v in dist.values()),'distFiles':len(dist),'maxDistFileBytes':max([v['bytes'] for v in dist.values()],default=0),'cachePositiveGrowthBytes':growth,'logsBytes':LOG_BYTES}
++    sample = {'elapsedSeconds':round(time.monotonic()-START,3),'freeBytes':free,'distBytes':sum(v['bytes'] for v in dist.values()),'distAllocatedBytes':sum(v['allocated'] for v in dist.values()),'distFiles':len(dist),'maxDistFileBytes':max([v['bytes'] for v in dist.values()],default=0),'cachePositiveGrowthBytes':growth,'capturedStreamBytes':LOG_BYTES,'diagnosticBytesObserved':diagnostic_bytes()}
+     STATE['samples'].append(sample)
+     if free <= LIMIT['stopFreeBytes']: raise RuntimeError('FREE_SPACE_STOP_THRESHOLD')
+     if sample['distBytes'] > LIMIT['distBytes'] or len(dist) > LIMIT['distFiles'] or sample['maxDistFileBytes'] > LIMIT['singleDistBytes']: raise RuntimeError('DIST_OUTPUT_BUDGET')
+     if growth > LIMIT['cacheGrowthBytes']: raise RuntimeError('CACHE_GROWTH_BUDGET')
+     if any(v['bytes'] > LIMIT['singleConfigTempBytes'] for p,v in caches.items() if '/.vite-temp/' in p): raise RuntimeError('CONFIG_TEMP_BUDGET')
+-    if LOG_BYTES > LIMIT['logBytes']: raise RuntimeError('LOG_BUDGET')
++    if diagnostic_bytes(DRIVER_DIAGNOSTICS) + DRIVER_JSON_BYTES + FINAL_REPORT_BYTES > LIMIT['logBytes']: raise RuntimeError('TOTAL_DIAGNOSTIC_BUDGET')
+     return caches
+ 
+ def group_exists():
+@@ -114,10 +157,10 @@
+         for key,_ in SELECTOR.select(timeout=.05):
+             chunk=os.read(key.fileobj.fileno(),65536)
+             if not chunk:SELECTOR.unregister(key.fileobj);continue
+-            room=LIMIT['logBytes']-LOG_BYTES
++            room=max(0,parent_diagnostic_room())
+             with (RUN/key.data).open('ab') as f:f.write(chunk[:max(0,room)])
+             LOG_BYTES+=len(chunk)
+-            if LOG_BYTES>LIMIT['logBytes']:raise RuntimeError('LOG_BUDGET')
++            if len(chunk)>room:raise RuntimeError('TOTAL_DIAGNOSTIC_BUDGET')
+         code=PROCESS.poll()
+         if code is not None and not SELECTOR.get_map():break
+     STATE['childExit']=PROCESS.returncode
+@@ -134,15 +177,15 @@
+     STATE['abortReason']=type(error).__name__+': '+str(error)
+ finally:
+     try:stop_owned_group()
+-    except BaseException as error:STATE['cleanup'].append({'error':str(error)})
++    except BaseException as error:cleanup_error('stop-owned-group',error)
+     STATE['processGroupRemaining']=group_exists()
+     if PROCESS:
+         try:STATE['childExit']=PROCESS.wait(timeout=max(.01,min(2,DEADLINE-time.monotonic())))
+-        except BaseException as error:STATE['cleanup'].append({'waitError':str(error)})
++        except BaseException as error:cleanup_error('wait-owned-process',error)
+     if not STATE['processGroupRemaining']:
+         for stage in (RUN/'artifacts'/'web-artifacts').glob('.stage-*'):
+             try:safe_directory(stage);shutil.rmtree(stage);STATE['cleanup'].append({'removedOwnPartialStage':str(stage)})
+-            except BaseException as error:STATE['cleanup'].append({'stage':str(stage),'error':str(error)})
++            except BaseException as error:cleanup_error('remove-own-stage:'+str(stage),error)
+     try:
+         after={}
+         for p in CACHE_PATHS:after.update(inventory(p))
+@@ -150,12 +193,13 @@
+         STATE['cacheNewOrChanged']={p:v for p,v in after.items() if CACHE_BEFORE.get(p)!=v}
+         STATE['cacheCleanupPolicy']='No preexisting cache removed; unproven cache file ownership is retained and reported.'
+         STATE['sourceAfter']={'head':git('rev-parse','HEAD'),'statusPorcelain':git('status','--porcelain')}
+-        if STATE['sourceAfter']['head']!=CFG['target'] or STATE['sourceAfter']['statusPorcelain']:STATE['success']=False;STATE['cleanup'].append({'error':'SOURCE_CHANGED'})
+-    except BaseException as error:STATE['success']=False;STATE['cleanup'].append({'error':str(error)})
++        if STATE['sourceAfter']['head']!=CFG['target'] or STATE['sourceAfter']['statusPorcelain']:cleanup_error('source-after','SOURCE_CHANGED')
++    except BaseException as error:cleanup_error('cache-and-source-after',error)
+     STATE['endedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat();STATE['elapsedSeconds']=round(time.monotonic()-START,3)
+     STATE['freeAfterBytes']=shutil.disk_usage(RUN).free
+     STATE['minimumSampledFreeBytes']=min([STATE.get('freeBeforeBytes',STATE['freeAfterBytes'])]+[s['freeBytes'] for s in STATE['samples']])
+-    if STATE['processGroupRemaining'] or STATE['elapsedSeconds']>LIMIT['totalSeconds']:STATE['success']=False
+-    save('supervisor-result.json',STATE)
++    if STATE['processGroupRemaining']:cleanup_error('process-group-confirmation','OWN_PROCESS_GROUP_STILL_PRESENT')
++    if STATE['elapsedSeconds']>LIMIT['totalSeconds']:cleanup_error('total-deadline','TOTAL_DEADLINE_EXCEEDED')
++    final_report()
+     print(json.dumps({'success':STATE['success'],'abortReason':STATE['abortReason'],'elapsedSeconds':STATE['elapsedSeconds'],'report':str(RUN/'supervisor-result.json'),'artifact':STATE.get('artifact'),'processGroupRemaining':STATE['processGroupRemaining']}))
+ raise SystemExit(0 if STATE['success'] else 1)
+--- driver.before-budget-fix.mjs
++++ driver.mjs
+@@ -1,12 +1,25 @@
+-import { readFile, writeFile } from 'node:fs/promises';
++import { readFile, writeFile, stat } from 'node:fs/promises';
+ import { prepareWebArtifact, verifyWebArtifact } from './tools/web-artifact.mjs';
+ const config = JSON.parse(await readFile(new URL('./config.json', import.meta.url), 'utf8'));
++const diagnosticNames = ['artifact-result.json', 'driver-failure.json'];
++const driverJsonBytes = 65_536; // Reserved in full by the parent supervisor.
++async function writeDiagnostic(name, value) {
++  const bytes = Buffer.from(`${JSON.stringify(value, null, 2)}\n`);
++  let used = 0;
++  for (const item of diagnosticNames) {
++    try { used += (await stat(`${config.run}/${item}`)).size; }
++    catch (error) { if (error.code !== 'ENOENT') throw error; }
++  }
++  if (used + bytes.length > driverJsonBytes) throw Error('DRIVER_JSON_BUDGET');
++  await writeFile(`${config.run}/${name}`, bytes, { flag: 'wx', mode: 0o600 });
++}
+ try {
+   const artifact = await prepareWebArtifact({ repository: config.sourceRepository, target: config.target, directory: `${config.run}/artifacts`, releaseId: config.releaseId });
+   const verified = await verifyWebArtifact({ directory: `${config.run}/artifacts`, artifact });
+-  await writeFile(`${config.run}/artifact-result.json`, `${JSON.stringify({ artifact, ...verified, approvedProvenance: config.approvedProvenance }, null, 2)}\n`, { flag: 'wx', mode: 0o600 });
++  await writeDiagnostic('artifact-result.json', { artifact, ...verified, approvedProvenance: config.approvedProvenance });
+   process.stdout.write(`${JSON.stringify({ ok: true, artifact })}\n`);
+ } catch (error) {
+-  await writeFile(`${config.run}/driver-failure.json`, `${JSON.stringify({ code: error?.code ?? null, message: String(error?.message ?? error) }, null, 2)}\n`, { flag: 'wx', mode: 0o600 });
++  try { await writeDiagnostic('driver-failure.json', { code: error?.code ?? null, message: String(error?.message ?? error).slice(0, 512) }); }
++  catch { process.stderr.write('DRIVER_DIAGNOSTIC_FAILED\n'); }
+   process.stderr.write(`${error?.code ?? 'PREPARE_FAILED'}\n`); process.exitCode = 1;
+ }
