@@ -623,3 +623,24 @@ ACTIVITYC01已获root44独审，修复来源的HTTP形状仍是对应既有断�
 
 
 07:12实际审查finding（不是新增需求）：ActivityI e930 root通过真实bindings+ConversationProjection内存port验证断线后展开仍发reader；当前visible门禁需叠加真实connection状态，订阅不得仅随turns变化。已派原owner在17scope修复，保护conversations/projection/C01和受控C03输入。已有74direct/dev11与该场景不同，未用它们覆盖P2；本管理未复跑测试。后续独审须绑定修复后的fixedtarget，离线/隐藏/关闭为不同生命周期，不能只修一个render dependency就假设晚到结果安全。
+
+
+## 07:19 stream实际App接线范围候选（未领取）
+
+[精确scope与消费接缝提案](stream-app-integration-proposal.json)以固定ba341宿主、主线30b97/fa9公共client和S01首canonical接口为只读依据；模块尚未固定审定，不能把moving实现当已批准输入。基础八literal只App、ConversationThread、新stream/host、三专测与两元数据目录；App/Thread仍属ActivityI，只有其main/release和模块独审后，取得准确组合base并fresh take才可写。不存在已创建新tree或App writer。
+
+host应绑定connection/view/conversation/turn/task，统一正文消息与message→task身份，覆盖当前AppActions.ownsMessage仅认user/final的接缝；不凭opaque draft ID推导归属。沿现官方Thread单messages入口和稳定converter，实时onNew/queue/outbox/profile不变。初始不扫所有历史turn的stream，不each-message poll；final截断继续按需详情，不能为结算偷读全文。
+
+root新增验收：公开message.status受锁定core尊重；global isRunning与block phase分开，block-complete不等task或verification成功。phase/interrupted/observationPaused/truncated/canonical=false必须在真实Thread可见，不能只埋metadata或指望默认MessageError；现footer“Replies appear when complete”应随真实协商表达。P01禁用/缺cap要求零stream读，但当前模块没有独立插件owner；具体是否新trusted stream builtin沿P01唯一session/react生命周期待root确认，不误把flow.activity禁用当正文权限。若纳入只扩这两个精确宿主路径，最终范围仍需显式冻结、无第二registry。
+
+方法延续已读find-skills本地优先与codebase-design/clean-code：把身份/预算/观察寿命置于单一host，应用层只接选定公共接口。这里只做scope与待验边界，不实施/测试/模拟性能收益。
+
+
+07:21 root消歧已确定：stream实际App接线使用自身trusted builtin `flow.assistant-stream`，不是关闭activity插件就停正文。候选扩为13literal，新增现session/react、plugins/types/validation及直接host测试；显式窄能力`task.assistant-stream.read`复用P01唯一manifest/grant/check路径，module S01不加plugin职责。disable停止其读取并使旧lease/迟到结果失效、保留composer草稿、退回既有canonical展示；reenable校验当前身份/attempt后有界恢复缓存。无第二registry/持久授权/新配置产品。现conversations/messages.ts由独立PERF03后继负责，stream接线只读消费，App/Thread仍等ActivityI释放。
+
+GO对51454 ba341限定fixture产品验收通过，并追加已有U11收拢要求：正文优先；composer稳定Requested/locked/access/thinking和协议长说明收至Execution details或按需帮助，只有待选择/失败等需行动提示常显；input-ready/unknown语义保留，Source identity/bytes作二级。此为stream接线之后、同唯一App owner再领取的UX片，不撤销本轮批准、不扩当前scope、不以美化延误主线。
+
+
+07:24 RS08/stream实际入口补证（root只读，管理未重跑）：在S01树锁定core0.3.22 ExternalStoreRuntimeCore纯内存，isRunning=true且canonical无status时message被推为running；显式complete/unknown后message为complete而thread.isRunning仍true（17ms不是浏览器延迟指标）。panels已采纳于S01纯消息适配，覆盖final先到/task仍running及patch未建fallback；该moving修复由未来fixedtarget/作者证据负责，不改legacy messages或全局Task门禁。MessagePrimitive.Error仅真实error字段时显示，incomplete reason other本身没有可见错误，因此后继App显式phase提示不能遗漏。
+
+PERF03独立五scope已正式受领，保留conversationMessages现接口，仅按不可变turn对象WeakMap复用user/assistant对；输出当前顺序array仍生成，变化turn保守重建。实际core尾auto-status允许合法重转，不能把零转换作为所有动态场景目标；不按id/revision/text缓存，不对整个adapter memo。基线30b与新主线253b messages相同，后继stream接线只读消费，不与messages写权交叉。此为RS08既有证据转有界实现，无新大型基准/依赖/模型或用户时延结论。

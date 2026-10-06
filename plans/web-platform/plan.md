@@ -9,7 +9,7 @@
 | Worktree / branch | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` / `codex/web-platform-management` |
 | 固定基线 | `d444608ab6c796c731e44e51a892868bf39bec2a`；2026-10-06 02:07 UTC 核验 main clean 后创建，不追逐 main 后续 HEAD |
 | 独占写入 | `plans/web-platform/**`、`docs/evidence/web-platform/**`；不写 W01、其他 owner、共享契约或 main |
-| 父目标 | [FLOW-001](../flow-001-architecture/plan.md)、[完整验收矩阵](../flow-001-architecture/full-plan-matrix.md)；Web 实现仍在 [W01](../w01-web/plan.md) 的权威 owner worktree |
+| 父目标 | [FLOW-001](../flow-001-architecture/plan.md)、[完整验收矩阵](../flow-001-architecture/full-plan-matrix.md)；W01为历史起点；当前实现按下方每片唯一owner/status与D04 scope推进 |
 
 ## 用户原话与来源轮次
 
@@ -81,77 +81,45 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-36 | 主线D03要求各权威status提供明确人读字段与实现范围 | 每个唯一owner自行写；管理者协调 | 阶段/优先级1–9/当前产出/下一可用交付/明确阻塞与决定/完整实现target与literal范围；不写其他owner状态 |
 | WPF-REQ-37 | U08/U12 多lead避免重叠、take工作在dashboard标清 | 主线D04唯一账本；各Lead真实actor领取；各owner唯一范围 | taskID/owner/lead/worktree/branch/精确范围、claim版本/状态/时间与交出接收方可见；PG事务拒绝同task及同/父子路径冲突，跨task部分转交先停写→amend→take，不靠口头抢占；[04:07领取视图与42源实证](../../docs/evidence/web-platform/assignment-visibility-verification.json) |
 | WPF-REQ-38 | U09 产品Web打开并保留，可随时查看 | 原Goal Owner选已审M02 49922；原owner保留服务 | 已审M02 http://127.0.0.1:49922/用户tab已打开并保留，明确fixture及恢复方式；I01 55049仅开发验证，不能声称稳定main或真实中心服务已起 |
-| WPF-REQ-39 | U09 工程dashboard新增架构tab | 主线dashboard唯一owner / 原Lead承接 | 架构tab作为dashboard入口可访问；具体实现/来源/验收由其唯一[D05计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)记录，D06旧ef42277固定8f图已审集成并部署，旧claim已释放；前轮5ec固定eb已审集成并部署、e5b2 v2释放；[当前D06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-context/plans/d06-architecture-refresh/plan.md)沿同一图由panels从115b新树取得981d四scope，刷新数据和语义检查；source迁移已请求未冒称部署，图基线与个人运行版本分开 |
+| WPF-REQ-39 | U09 工程dashboard新增架构tab | 主线dashboard唯一owner / 原Lead承接 | 架构tab作为dashboard入口可访问；具体实现/来源/验收由其唯一[D05计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)记录，D06旧ef42277固定8f图已审集成并部署，旧claim已释放；前轮5ec固定eb已审集成并部署、e5b2 v2释放；[当前D06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-context/plans/d06-architecture-refresh/plan.md)沿同一图由panels从115b新树取得981d四scope，刷新数据和语义检查；本轮ff5已审集成accepted86a，981 v2释放且唯一source已部署，图仍固定115b，与个人运行版本分开 |
 | WPF-REQ-40 | U10 plugin管理写进计划里 | 主线X01唯一canonical owner；我方父计划关联 | 主线计划包含Web管理页和CLI公共center命令、持久版本/配置/权限/作用域、npm install/enable/disable/upgrade/rollback/remove、活跃执行版本绑定、可信/隔离边界；实际[X01计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/plan.md)已建立，文档888308d是全栈计划来源；X02持久registry及X03只读Web管理已有限交付，npm执行/完整生命周期与第三方隔离仍未完成。P01/I01本地Settings不冒充完整插件管理 |
 | WPF-REQ-41 | U11 真实持续对话优先与明确演示边界 | [WPF-CHAT01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/plan.md) / workspace_panels_owner；主线center/runner | hi自然回应、同conversation追问、断线重连；49922不暗换/重启，固定fixture不冒充模型输出。Web已按[CHAT receipt](../../docs/evidence/web-platform/chat01-take-receipt.json)独立受领；[PERF02 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/plans/wpf-perf02-activity-window/plan.md)依[独立receipt](../../docs/evidence/web-platform/perf02-take-receipt.json)并行，不占CHAT范围或替代对话优先 |
 | WPF-REQ-42 | U11 模型/effort/access/context/files与发送 | 主线capability catalog契约；Web真实消费 | 控件只展示中心支持的模型/能力和授权范围；unsupported明确，权限不由前端自授；context/files使用授权资源与版本，不能凭显示路径假接文件；K02固定736三contracts已按Lead受控输入消费，新八scope薄reader固定763已独审APPROVED，最终2bce clean已记录main115b、claim5ab v2释放，保持project身份/旧能力缺省与只读metadata；不开放context UI |
-| WPF-REQ-43 | U11 消息气泡与正文优先、tool/thinking懒详情 | Web renderer与中心投影owner | 用户/assistant正文为主；tool及provider可展示thinking初始仅id/title/状态，初始响应/SSE没有大payload；鉴权展开前0detail，首次1/重复缓存，provider无thinking则不伪造；QUEUE/K02兼容后优先在同聊天显示已有task Summary和reference的Execution activity折叠行；现reference不含typed tool/thinking状态，不要求跳任务页。真正partial须native event→持久→read/projection，不用快poll或动画冒充；真实聊天/折叠详情链之后，主组合收拢为单一外层执行折叠入口，默认model/access/queue主要状态可读，其他技术语义可达，unsupported/unknown明确、requested不冒actual |
+| WPF-REQ-43 | U11 消息气泡与正文优先、tool/thinking懒详情 | Web renderer与中心投影owner | 用户/assistant正文为主；tool及provider可展示thinking初始仅id/title/状态，初始响应/SSE没有大payload；鉴权展开前0detail，首次1/重复缓存，provider无thinking则不伪造；现有generic reference没有typed状态；已main CHAT05另有typed native接口，ActivityI消费真实工具/思考并保持generic fallback，未给thinking不造；不要求跳任务页。真正partial须native event→持久→read/projection，不用快poll或动画冒充；真实聊天/折叠详情链之后，主组合收拢为单一外层执行折叠入口，默认model/access/queue主要状态可读，其他技术语义可达，unsupported/unknown明确、requested不冒actual |
 | WPF-REQ-44 | U11 queue和steering | 主线持久commands/runner；Web有权触发与渲染 | 中心队列持久、有序、可取消与重连；按固定main14c61公共合同，pause受理或原key重放后必须fresh GET最新paused/currentTurn，再由用户明确单独取消当前active task，两份receipt/结果分别显示，不称stop-all。same queueRevision也更新动态taskStatus/blocked/paused，旧ACK不覆盖新GET。Web实施见[QUEUE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/plans/wpf-queue01-ui/plan.md)；当前页面unknown key重试与中心状态重载恢复分开，原key跨reload/换连接恢复仍后继。steer仍不支持，须独立受理/送达/生效证据，不以HTTP超时当取消 |
 | WPF-REQ-45 | U11 语音录音/转写与失败恢复 | 主线能力接口；Web受控交互 | 录音与转写分开、明确开始/停止/失败，失败保留文本输入；本轮不偷接付费语音服务，未支持明确，凭据不放浏览器/插件 |
 
 ## 当前 owner 与接口冻结
 
-当前可写范围以D04 live claim为准，下表不重新授权历史广范围。历史源码输入与交付保留在各owner记录。
+本表只列本队当前可写权威来源，实际范围以[本次D04读取与释放回执](../../docs/evidence/web-platform/current-owner-observation-0723.json)和committed receipt为准；不重新授权已释放范围。跨Lead仍只有D04一套账本，claim数量不当作agent并发。
 
-| 工作 | 唯一owner / worktree / branch | 当前边界 |
+| 当前工作 | 唯一 owner / worktree / branch | 写入边界与下一停点 |
 | --- | --- | --- |
-| W01已审交付 | w01_owner / m1-web / codex/m1-web | 实现冻结；claim v2仅plans/w01-web，SSE后发现已由M02闭合 |
-| panels组件已交付 | workspace_panels_owner / web-workspace-panels / codex/web-workspace-panels | 已审输入46a1dbd、metadata16d518；不作为当前App writer |
-| WPF-M02已审工作入口 | workspace_panels_owner / web-unified-workspace / codex/web-unified-workspace | claim v3：projection、workspace-feed剩余四literal模块与对应tests/自身plan/evidence；Overview/css已正式转PERF02，App/TaskThread/WorkspacePanels此前转I01，不恢复父范围 |
-| WPF-P01已审可信host | w01_owner / web-plugin-host / codex/web-plugin-host | claim v1：plugins、三plugin-host test/config、自身plan/evidence；保留修复责任，不写App |
-| WPF-I01主App挂载 | workspace_panels_owner / web-plugin-integration / codex/web-plugin-integration | 实现92a已审；claim b6666c29 v3：此前四文件转CHAT，现integration.css已正式转X03I01；其余literal保留；排除plugins |
-| WPF-PERF01测量 | w01_owner / web-performance / codex/web-performance | claim4553f315 v2保留fixture脚本+plan/evidence，probe已正式转PERF02；无生产/rootlock范围 |
-| WPF-CHAT01持续对话 | workspace_panels_owner / web-conversations / codex/web-conversations | 已审7cb / 集成metadata083978b；claim08259c1d v3已将App/react转X03I01、projection及直接test转QUEUE00，原其余12scope保留；实现已在dd1/main4e，真实模型验收仍归Lead |
-| WPF-PERF02有界窗口 | w01_owner / web-activity-window / codex/web-activity-window | 实现a87已审且集成；claimd36cd583 v2 released，全部8scope停写，后续修复须新take |
-| WPF-X03I01实际插件管理挂载 | workspace_panels_owner / web-plugin-management-integration / codex/web-plugin-management-integration | 84已审集入main80e；claim a1044bb0 v2 released，七scope停写，canonical05b92记录集成；后续新take |
-| WPF-PROFILE01配置选择模块 | w01_owner / web-execution-profiles / codex/web-execution-profiles | claim17093c4c v1，04:36:37.979Z已take；仅7新模块/测试文件+两元数据目录，旧CHAT/App不转交 |
-| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | claim632a7149 v2，仅plans/web-platform与docs/evidence/web-platform；不代写其他owner事实 |
+| WPF-PERF03 | w01_owner / web-message-reuse / codex/web-message-reuse | claim2ec58c2c v1，五literal；固定已审30b，messages.ts对新main253b相同。仅不可变turn身份的消息对象复用/实际core转换计数；不占App/Thread/stream，首canonical8f2959d7已管理核parser0并一次SOURCE_READY |
+| WPF-CHAT06S01 | workspace_panels_owner / web-conversation-stream / codex/web-conversation-stream | claimd94ae4bb v1，七新literal scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream/plans/wpf-chat06-stream/status.md)。完整已审base fa9，三纯模块/两专测/自己plan-evidence；不占App/Thread，不再叠加shared输入 |
+| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | claim632a7149 v2，仅plans/web-platform与docs/evidence/web-platform；不代写其他owner事实或产品实现 |
 
-冻结 `WorkspacePanels` 接口（在panels owner的 `types.ts` 权威定义）：
-
-```ts
-type WorkspaceTabId = 'files' | 'terminal' | `detail:${string}`;
-type WorkspacePanelsProps = {
-  task: TaskSnapshot | null;
-  details: Record<string, { data?: Detail; loading?: boolean; error?: string }>;
-  onLoadDetail: (id: string) => void | Promise<void>;
-  connection?: 'connecting' | 'live' | 'reconnecting' | 'disconnected';
-  activeTab?: WorkspaceTabId;
-  onActiveTabChange?: (tab: WorkspaceTabId) => void;
-  onClose?: () => void;
-  className?: string;
-};
-```
-
-组件不直接持有FlowClient、不新增权威运行状态。W01主shell选择active pane/task并传回调；同task单projection/observer。依赖统一由W01的manifest和既定临时lock例外管理；`ansi-to-react@6.2.6`已由panels核对React19/types，取代早期3.0.0提案。panels验证可以在自己的ignored node_modules只读链接已装依赖，不安装、不写目标、不提交链接；证据必须记录。其他接口变化先同步双方，再修改。
+历史W01/P01/PERF01/CHAT/I01/M02均由原owner在06:43–06:45完成mainmetadata和release；PROFILE17093 v2早于04:59已释放，后继App也已另片集成。rendererI/D06在accepted86a后已释放；C01/ACTIVITYC01在fa9后07:11:50释放；ActivityI已入253b，原122 v2于07:23:42释放。历史原表与WorkspacePanels接口原文保留在[时点归档](../../docs/evidence/web-platform/owner-queue-history-before-0718.txt)，其版本和临时依赖例外不作当前写权；完整原receipt及实现证据沿各canonical与父status历史入口查阅。
 
 ## 已确认决定与工程方案
 
-- 已授权本轮实现，不重复设计批准。W01先闭环官方Thread与用户布局，不把未审shell塞入完整插件框架；保留稳定扩展位置，随后WPF-P01实现统一host。
-- 官方Thread以实际registry及已安装 `@assistant-ui/react@0.15.23` 兼容性为准。最新GitHub main可能含未发布API；不能把“最新源码”直接当可用。对已受理任务隐藏不受契约支持的followup/edit/reload；新任务实际用官方Composer提交；取消维持中心命令与确认，关闭观察不取消任务。
-- split/merge只组织tabGroup，不合并消息。root建议的Arc“合并为分屏项目/拆回独立tab”作为语义研究，本轮实际动作以用户“split、merge回一个tab组”为准。
-- FileTree/Terminal保留官方源及必要可访问性/主题修订；新功能还没有PTY或任意文件读取API。不能从UI能力推断后端能力。
-- [WPF-P01](plugin-system/plan.md)正式编号避免与现有P01协议计划冲突。root早期“P01插件”只是临时代称。X01仍为全栈插件总范围/总owner；Web host是其实现子项。
-- [WPF-D01](dashboard-followup/plan.md)仅为协作需求与来源登记；原Lead D03独占dashboard紧凑中性视觉和高层语义全部实现，我方不另派owner、不启动第二实现，不控制其4320服务（03:17已实核30来源，旧17全部保留）。
-- [WPF-PERF01](performance-cycle/plan.md)采用生产基线/规模与请求/交互证据，禁止用单个bundle阈值或synthetic规模宣称真实模型容量。
+- 继续沿官方Thread和现有公共client，真实持续聊天、工具/思考折叠与增量正文优先；每片独立tree、固定输入、精确take、独审后集成。未消费的能力不因SDK存在而显示已支持。
+- 现有`@assistant-ui/react@0.15.23`/core0.3.22源码是行为依据，不因最新文档存在API就升级依赖或使用不存在的接口；保留composer草稿、原key回执、queue和旧中心语义。
+- split/merge只组织tabGroup，不合并消息；双split各自可见，与全局focused分开。隐藏、离线、关闭、换中心分别验证，关闭观察不取消任务。
+- FileTree/Terminal与现有详情只据真实公共接口展示，不从UI推导PTY或任意文件读取能力。完整X01生命周期/第三方隔离/CLI等价仍归主线唯一计划；P01可组合slot不冒称全栈交付。
+- dashboard由Lead唯一部署/登记；我方只管理本队source和已授权窄采样。性能需实际消费者/规模证据，合成probe不能宣称生产容量或用户延迟收益。
 
 ## 当前执行队列
 
-顺序可因实际阻塞/ready状态调整；修改要写原因，不把排队当已运行。
-
-| 队列 | 计划/交付 | 状态与开工条件 |
+| 顺序 | 当前计划 / 交付 | 状态与开工条件 |
 | --- | --- | --- |
-| 已审交付 | W01 Thread/shell/splitmerge及panels | root整体APPROVED cb4a392，owner正式review metadata收尾；组件46a1dbd通过 |
-| 当前管理 | WPF-001需求账本/研究/接口/来源登记清单 | 执行管理者维护；root只读核对完整性 |
-| 跨团队协作 | WPF-D01需求+管理来源登记 | D04原子claim与唯一source实际可见；D06已刷新固定115b并集成86a，981v2释放，原8f/eb观察保留历史；当前ActivityI17scope正式受领、C01四scope待main，按既有账本与Lead registry协作 |
-| 已集成 | [WPF-M02统一工作总览](unified-workspace/plan.md) | d47整体APPROVED，metadata c526；main3773已含实现，owner转I01 |
-| 已审输入 | WPF-P01插件host | 整体6ce APPROVED、PH-R1～4关闭，最终2910ebc交I01；不覆盖主App |
-| 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584交付；I01v3已转出CHAT四文件和X03I01 CSS，剩余保留范围 |
-| 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadatacc334；未做生产优化，probe已受控转PERF02 |
-| 已集成首批 / 后继开放 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 7cb限定APPROVED，083978b记录dd1/main已含；queue/steer/语音及完整模型控制仍开放，真实两query仅Lead执行、结果未收到 |
-| 已集成/释放 | WPF-X03I01 | 84acdc / metadata05b92 clean，main80e已核，a104v2 released于04:46:47.517Z，59473保留 |
-| 已审独立模块 | WPF-PROFILE01 | 4f198576限定APPROVED、最终e7303b9 clean；混合目录和显式chat allowlist，fixed4e/17093v1；App接线另受领 |
-| 已集成 | WPF-PERF02 | 固定a87f64f及报告获独立APPROVED，metadata b617实证main8f包含/范围相同；claimv2已released，不继续占用已完成八scope |
+| 已集成 / 原范围释放 | WPF-ACTIVITYI01真实工具/思考与footer | ba341已审并在253b祖先/17paths相同，最终9aa35096 clean、122 v2已释放；保留R1红→修与不同target证据，不重复验收 |
+| 并行实施 | WPF-CHAT06S01增量正文独立模块 | d94七scope实施，Lead07:16:38.910Z已实采84源live/issues[]；不将模块完成当App接通 |
+| 并行窄优化 | WPF-PERF03消息对象复用 | 五scope已take，仅同turn对象复用与转换调用计数，不声称浏览器延迟收益；stream接线只读消费现conversationMessages接口 |
+| 后继准备 | stream实际App接线 | 仅scope/interface proposal；ActivityI已main并release；仍需模块固定独审及准确组合base后新take。不并行抢App/Thread，不新建agent |
+| 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
+| 已验真实持续聊天 | 既有CHAT/QUEUE与GO两query | GO/Lead固定真实两query2/2已验收封存；running入队、继续、浏览器退出与精确第二回复通过。本队只消费固定证据，不重跑模型；steer、语音、完整context等未完成项保持原REQ |
+| 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 当前三active本队claim按真实范围防交叉。GO说明Mika仍2槽、当前无静默窗口；不自发暂停或扩大并发。只发送新可行动里程碑，不重复纯metadata通知 |
 
 ## TODO
 
@@ -177,10 +145,11 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-20** [WPF-RENDERERI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/plans/wpf-renderer-i01-integration/plan.md)：消费已审renderer747并在115b独立树领取九scope接实际聊天；显式native-hidden可见性与display lease、真实按需详情、provider清理与原composer行为验证，完整X01/typedCHAT05另片。
 
 - [x] **WPF-001-21** WPF-CHAT06C01：四scope独立a26树消费86fc单文件输入，仅兼容liveAssistantText缺省/boolean，身份与原回执/queue保持；不opt-in或启用增量正文，固定验证后独审/集成。
-- [ ] **WPF-001-22** WPF-ACTIVITYI01：同一U11/REQ43活动接线在固定86a独立树领取17scope，消费已main CHAT05真实typed工具/思考与generic fallback，P01统一message footer button/menu/panel、按需有界详情与生命周期；保留C01/61b/shared只读，完整CHAT06正文另片。
+- [x] **WPF-001-22** WPF-ACTIVITYI01：同一U11/REQ43活动接线在固定86a独立树领取17scope，消费已main CHAT05真实typed工具/思考与generic fallback，P01统一message footer button/menu/panel、按需有界详情与生命周期；保留C01/61b/shared只读，完整CHAT06正文另片。
 
 - [x] **WPF-001-23** WPF-ACTIVITYC01：独立86a树四scope兼容C02过滤页raw-scan游标，固定已过HTTP断言映射的contract fixture经真实61b reader验证，严格身份/排序/上界/reset/hasMore不放宽；独审后交Lead解锁发布，不混完整stream消费者。
 - [ ] **WPF-001-24** WPF-CHAT06S01：七新scope独立模块消费完整已审fa9的公开stream协议，严格patch校验、增量projection与纯message适配；隐藏/连接/attempt隔离，final仅按明确settlement，实际Thread接线在ActivityI交权后另领。
+- [ ] **WPF-001-25** WPF-PERF03：五scope独立30b树按不可变turn身份复用消息对象；同revision动态正文/来源/截断、历史排序与跨中心不误复用，真实installed core计数，不许宣称UI时延改善。
 
 ## 验收、风险与持续方式
 
@@ -343,3 +312,9 @@ GO管理审计规则：active claim按实际开发/持续管理、冻结待审/�
 
 
 07:10 当前执行更新：C01/ACTIVITYC01已审且管理独核main fa9实现相同；ActivityI e930候选独审中。完整stream模块从旧ba908空树按明确授权ff-only推进fa9，七scope正式take d94ae4bb v1，先前5ff单DTO/88四文件输入方案保留为历史、当前无需再apply。其plan/status/review是独立唯一源，本父项只追溯U11/REQ43。用户U08/U12多Lead协作及take dashboard要求继续通过fresh literal冲突检查、committed receipt、首canonical一次SOURCE_READY落实，不另造第二进度账。真实模型与个人服务仍不由本队调用或重启。
+
+
+07:21 U11/REQ43后继范围明确：stream实际App接线复用P01唯一host的独立trusted flow.assistant-stream生命周期，禁用零stream读取/旧响应失效且保留草稿退canonical，重新启用按有界缓存恢复。十三literal仅proposal，等已审模块+ActivityI main/release后精确take，conversations/messages.ts不占。GO新fixture验收后要求将稳定配置与协议长说明收进执行详情/帮助，需选择/失败才常显；input-ready/unknown不掩盖、身份/bytes二级。排在stream接线之后另领范围，沿现REQ不新建重复需求。
+
+
+07:23 main接收闭环：ActivityI已审ba341/c9在253b主线17paths相同；owner只mainmetadata至9aa35096并全停写，manager fresh CAS release122 v2。原树只读，51454保持。w01转PERF03已初始化30b独立树，messages.ts对253b零差，五scope fresh take2ec58v1；后继stream App只读调用conversationMessages，不与该优化抢文件。原RS08计数研究现转有界验证，不新增性能目标或模型实验。

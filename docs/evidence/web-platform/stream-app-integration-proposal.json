@@ -1,0 +1,70 @@
+{
+  "observedAt": "2026-10-06T07:21:54.287452+00:00",
+  "state": "proposal only; no tree, branch, claim or product writes",
+  "candidateTask": "WPF-CHAT06I01",
+  "sourceInputs": {
+    "currentAcceptedMain": "30b97cbf3665c4ef7a314a6a8b59394ae68781af",
+    "hostCandidate": "ba341d77672ba8456197d64d54193aee79719e46",
+    "streamModuleInterface": "ed187d6ef99e0d4ba1479ebce42f27714ff219c7:docs/evidence/wpf-chat06-stream/interface.md",
+    "moduleImplementation": "not yet fixed/approved; moving implementation not consumed"
+  },
+  "proposedBase": "Wait for exact accepted main containing approved ActivityI and approved stream module; do not use moving main or restart existing trees.",
+  "scopeDecisionPending": "Resolved by root: separate trusted flow.assistant-stream builtin, never flow.conversation-activity. Final interface and accepted combination base remain prerequisites; no take yet.",
+  "currentConflict": {
+    "App.tsx": "ActivityI released122v2 at07:23:42; no new write permission inferred",
+    "ConversationThread.tsx": "ActivityI released122v2; future integration fresh take required",
+    "conversations/messages.ts": "PERF03 2ec58v1 active; stream integration read-only",
+    "newHostPath": "currently outside both active literal scopes; still fresh-check before take"
+  },
+  "design": [
+    "App creates protocol-opted-in FlowClient only with working consumer, fixture and real connection construction both covered; existing client limits header to GET conversation, CREATE/replay remains stable false.",
+    "New host owns view/connection/turn/task-bound stream projections and ports; no full client/token exposed. Close/hidden/offline/session epoch separately disable or dispose reads; native hidden and both split panes use existing visible prop.",
+    "Thread uses one official ExternalStoreRuntime/messages path, stable converter and current onNew closure. Current turns/queue/outbox/profile semantics remain; stream messages are not a second runtime.",
+    "Host returns current verified message ownership (message to turn/task), used by PluginThreadScope and AppActions.ownsMessage; never infer task from opaque stream/draft IDs. Existing conversations/messages.ts can remain read-only if host wraps its legacy fallback and merges module output.",
+    "Use current MessageFooter seam for phase/interrupted/observationPaused/truncated/non-canonical notices while preserving P01 footer. Explicit message.status, global task isRunning and verification remain separate; block-complete is not task success.",
+    "Only bounded current/active observed work should read stream metadata; no fetching streams for every loaded historical turn and no per-message polling. Exact settling/retained cache budget follows the fixed module interface.",
+    "Only existing explicitly loaded finalContent may resolve truncated-final settlement; no automatic full reply/detail read. Existing canonical final/flow-reply-detail remains usable.",
+    "Fixed253b existing MessageFooter renders only user anchors. Draft phase notices may be pure host presentation via Thread wrapper; do not give draft actions authority from conversation-stream prefix. Any action mapping must originate in verified pane snapshot membership and exact App ownsMessage. Incomplete reason other alone does not cause MessagePrimitive.Error UI."
+  ],
+  "requiredChecks": [
+    "GET opt-in exact header versus CREATE stable false; cap false/missing/disabled produce zero stream reads.",
+    "Real App pending-to-patch-to-final, retain/replace/unavailable, sequence gaps, zero-text terminal and UTF8 digest boundaries retain module semantics.",
+    "Final/draft message task ownership, same IDs across centers and split panes, hidden/offline/close/late digest rejection.",
+    "Observable paused/interrupted/truncated/non-final states; queue Enter/button/IME, profile locking, unknown receipt retry and fresh composer draft unchanged.",
+    "Bounded requests for long replies/reconnect, no automatic lazy-detail body reads; actual Thread path counts not alternate converter benchmark.",
+    "Desktop and390px both themes, keyboard, truthful fixture labeling; no model or product DB."
+  ],
+  "protected": [
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/conversations/messages.ts unless a fixed consumer seam proves unavoidable and separately approved",
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+    "apps/web/src/conversations/queue",
+    "approved stream patches/projection/messages modules",
+    "shared contracts/client and root dependencies",
+    "apps/web/src/conversations/messages.ts remains read-only; separately proposed PERF03 owns any identity-reuse implementation"
+  ],
+  "method": "Read-only fixed git show App/Thread/messages/client and first canonical module interface; no implementation claim or technical approval requested.",
+  "proposedScope": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversation-stream/host.ts",
+    "apps/web/test/conversation-stream-integration.test.ts",
+    "apps/web/test/conversation-stream-integration.fixture.ts",
+    "apps/web/test/conversation-stream-integration.browser.ts",
+    "plans/wpf-chat06-stream-integration",
+    "docs/evidence/wpf-chat06-stream-integration",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugin-integration/react.tsx",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/test/plugin-host.test.ts"
+  ],
+  "pluginLifecycle": {
+    "ownerId": "flow.assistant-stream",
+    "readCapability": "task.assistant-stream.read (proposed explicit narrow capability; existing P01 manifest/grant/check path only)",
+    "lifecycle": "Reuse P01 sole registry/activation/disposal. Disable invalidates stream read leases and late callbacks, keeps composer draft and falls back to existing canonical conversation display; reenable resumes bounded cache only after current identity/attempt validation.",
+    "scopeLimit": "No second registry, install/grant persistence, plugin settings product or shared API. Types/validation/plugin-host test included only for new explicit read capability.",
+    "advertisement": "Protocol GET capability is not permission; enabled P01 state AND bound identity/read grant AND public cap/protocol needed for stream reads."
+  },
+  "hostCandidate": "ActivityI ba341 now accepted253b; module still requires fixed review"
+}
