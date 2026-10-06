@@ -1,0 +1,112 @@
+{
+  "observedAt": "2026-10-06T08:36:41.465Z",
+  "sourceCommit": "c71b70bf92c26cd80e11c281e4f05f504bd0119e",
+  "sourceFiles": {
+    "apps/web/src/conversations/ConversationThread.tsx": "c25c512abc122a6a257262c6bf91ff6506b7c1021e092eefc9dc61388a733da1",
+    "apps/web/src/conversations/conversations.css": "2e91126603ffdd214ea0cff925818f416deef64fdd8e870e25a10b989bf897d3",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "1a34e83b8236697e61a6cfd1e096bae389e7f08470d452e51cd93fc52390a704",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c",
+    "apps/web/src/execution-profiles/execution-profiles.css": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+    "apps/web/test/conversation-readability.browser.ts": "41fa7656a43cd197ad3affbca0419c21a89d7c702ddf4318617b5adb4f51b52e",
+    "apps/web/test/conversation-readability.fixture.ts": "7ebd91ad495f23962a532fda85c0b7d599f7c0efbda197731ca6000b7f7c3333"
+  },
+  "fixture": "Public HTTP fixture; no model/DB. Not real-center acceptance.",
+  "checks": [
+    "same completed conversation, loaded empty queue, light theme rects at 1280x720 and 390x844",
+    "locked settings modal keeps draft, readable requested/effective details, keyboard loop and both return-focus paths",
+    "execution navigation closes settings and hands focus to interactive workspace/task while preserving conversation draft",
+    "collapsed queue exposes stale error, pause and blockers; disclosure Enter/Space retains keyboard focus",
+    "official running queue input preserves IME and Shift+Enter and sends exactly once from Enter and button",
+    "unknown queue receipt stays visible while collapsed, retry preserves original key/body and independent draft",
+    "new chat profile selection and Enter retain the draft and settle one canonical answer",
+    "dual theme 390px settings and composer remain reachable without horizontal overflow"
+  ],
+  "measurements": [
+    {
+      "width": 1280,
+      "height": 720,
+      "viewport": {
+        "top": 80,
+        "bottom": 720,
+        "height": 640,
+        "width": 996
+      },
+      "footer": {
+        "top": 541.203125,
+        "bottom": 720,
+        "height": 178.796875,
+        "width": 588
+      },
+      "profile": {
+        "top": 541.203125,
+        "bottom": 569.203125,
+        "height": 28,
+        "width": 213.328125
+      },
+      "queue": {
+        "top": 344.5,
+        "bottom": 374.5,
+        "height": 30,
+        "width": 588
+      },
+      "input": {
+        "top": 592.203125,
+        "bottom": 627.203125,
+        "height": 35,
+        "width": 570
+      },
+      "protocolFooter": {
+        "top": 681.703125,
+        "bottom": 699,
+        "height": 17.296875,
+        "width": 588
+      },
+      "bodyAboveComposer": 461.203125,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "viewport": {
+        "top": 80,
+        "bottom": 844,
+        "height": 764,
+        "width": 342
+      },
+      "footer": {
+        "top": 651.5625,
+        "bottom": 844,
+        "height": 192.4375,
+        "width": 314
+      },
+      "profile": {
+        "top": 651.5625,
+        "bottom": 679.5625,
+        "height": 28,
+        "width": 213.328125
+      },
+      "queue": {
+        "top": 344.5,
+        "bottom": 374.5,
+        "height": 30,
+        "width": 314
+      },
+      "input": {
+        "top": 723.203125,
+        "bottom": 758.203125,
+        "height": 35,
+        "width": 296
+      },
+      "protocolFooter": {
+        "top": 812.703125,
+        "bottom": 830,
+        "height": 17.296875,
+        "width": 314
+      },
+      "bodyAboveComposer": 571.5625,
+      "horizontalOverflow": false
+    }
+  ],
+  "errors": [],
+  "failure": null
+}

@@ -31,19 +31,17 @@ export function ConversationQueue({ projection }: { projection: ConversationQueu
   if (!state.available && !state.receipts.length) return null;
   const page = state.page, blocked = projection.actionDisabledReason("control");
   const task = page?.currentTurn, active = Boolean(task && !TERMINAL_STATUSES.includes(task.taskStatus));
-  return <section ref={root} onFocusCapture={event => revealFocusedControl(event.target)} aria-label="Conversation queue" className="my-3 min-w-0 text-sm">
-    <Queue>
+  return <section ref={root} onFocusCapture={event => revealFocusedControl(event.target)} aria-label="Conversation queue" className="flow-conversation-queue min-w-0 text-sm">
+    <Queue className="gap-0 rounded-lg px-0 py-0 shadow-none">
       <QueueSection defaultOpen={false}>
-        <QueueSectionTrigger><QueueSectionLabel label={page ? `${page.items.length} waiting loaded${page.nextCursor ? "; more available" : ""}` : "Queue"} /><span>{state.loading ? "Refreshing…" : state.stale ? "Needs refresh" : page?.paused ? "Paused" : "Center queue"}</span></QueueSectionTrigger>
-        <QueueSectionContent>
+        <QueueSectionTrigger className="gap-2 bg-transparent px-2 py-1.5 text-xs"><QueueSectionLabel label={page ? `${page.items.length} waiting loaded${page.nextCursor ? "; more available" : ""}` : "Queue"} /><span>{state.loading ? "Refreshing…" : state.stale ? "Needs refresh" : page?.paused ? "Paused" : "Center queue"}</span></QueueSectionTrigger>
+        <QueueSectionContent className="px-2 pb-2">
           <p className="my-2 text-xs text-muted-foreground">Accepted messages are stored at the center. Only the center promotes waiting messages into executions.</p>
-          {(error || state.error) && <p role="alert" className="my-2 text-destructive">{error ?? state.error}</p>}
           <div className="my-2 flex flex-wrap gap-2">
             <Button data-queue-refresh type="button" variant="outline" size="sm" disabled={!state.online || state.loading} onClick={() => void run(() => projection.refresh(true))}>Refresh queue</Button>
             <Button type="button" variant="outline" size="sm" disabled={Boolean(blocked) || page?.paused} onClick={() => void run(() => projection.pause())}>Pause queue</Button>
             <Button type="button" variant="outline" size="sm" disabled={Boolean(blocked) || active || !page || (!page.paused && !page.blocked)} onClick={() => void run(() => projection.resume())}>Continue queue</Button>
           </div>
-          {blocked && <p role="status" className="my-2 text-xs text-muted-foreground">{blocked}</p>}
           {page && <p className="my-2 text-xs">{page.paused ? "Paused: new executions will not start from this queue." : "Queue may advance at the center."} {page.blocked && `Waiting reason: ${page.blocked.replaceAll("-", " ")}.`}</p>}
           {task && <p className="my-2 break-words text-xs">Current execution: {task.taskId} · {task.taskStatus.replaceAll("_", " ")}</p>}
           {page?.paused && active && <Button type="button" variant="outline" size="sm" disabled={Boolean(projection.actionDisabledReason(`task:${task!.taskId}`))} onClick={() => setCancelTarget(task!.taskId)}>Cancel current execution…</Button>}
@@ -67,6 +65,8 @@ export function ConversationQueue({ projection }: { projection: ConversationQueu
         </QueueSectionContent>
       </QueueSection>
     </Queue>
+    {(error || state.error) && <p role="alert" className="flow-queue-warning">{error ?? state.error} Open the queue to refresh or retry.</p>}
+    {(blocked || state.stale || page?.paused || page?.blocked) && <p role="status" className="flow-queue-status">{blocked ?? (page?.paused ? "Queue paused. Open to continue or manage the current execution." : page?.blocked ? `Waiting: ${page.blocked.replaceAll("-", " ")}. Open the queue for controls.` : "Queue needs refresh. Open the queue to refresh.")}</p>}
     {state.receipts.map(receipt => <section key={receipt.key} aria-label={`${receipt.command.kind} receipt`} className="my-2 rounded border p-3 text-xs">
       <strong>{receipt.command.kind.replaceAll("-", " ")} · {receipt.state === "unknown" ? "Receipt unknown" : receipt.state}</strong>
       {receipt.command.kind === "enqueue" && <pre className="my-1 max-h-24 overflow-y-auto whitespace-pre-wrap break-words">{receipt.command.input.text}</pre>}

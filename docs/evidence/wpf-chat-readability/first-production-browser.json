@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-10-06T08:28:58.748Z",
+  "sourceCommit": "fce5e07daab8adccb0ac824e55ee3a25659d88cb",
+  "sourceFiles": {
+    "apps/web/src/conversations/ConversationThread.tsx": "4fe16c3966b300c6d9290215a2e92b4f7f2bf4beec29acaf008eecf0f2758b81",
+    "apps/web/src/conversations/conversations.css": "2e91126603ffdd214ea0cff925818f416deef64fdd8e870e25a10b989bf897d3",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "1a34e83b8236697e61a6cfd1e096bae389e7f08470d452e51cd93fc52390a704",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "4d9cc523034b040c13da4b1b8fcb62b2b98dcfe92309a2cb88ace4b25ab3f4a1",
+    "apps/web/src/execution-profiles/execution-profiles.css": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+    "apps/web/test/conversation-readability.browser.ts": "e81e4f8c7f66d573553f64491e4d052b95098095064ea0fe4b254d579c922f70",
+    "apps/web/test/conversation-readability.fixture.ts": "7ebd91ad495f23962a532fda85c0b7d599f7c0efbda197731ca6000b7f7c3333"
+  },
+  "fixture": "Public HTTP fixture; no model/DB. Not real-center acceptance.",
+  "checks": [],
+  "measurements": [],
+  "errors": [],
+  "failure": "locator.fill: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByLabel('Owner token', { exact: true })\u001b[22m\n\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:52:75)"
+}

@@ -1,4 +1,4 @@
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore, type ComponentProps, type ReactNode } from "react";
 import { AssistantRuntimeProvider, MessageNotSentError, useExternalStoreRuntime, type ThreadMessage } from "@assistant-ui/react";
 import { TERMINAL_STATUSES, conversationTurnSchema, conversationQueueEnqueueSchema, type ConversationTurn, type ConversationSnapshot, type ConversationCreation } from "@flow/contracts";
 import { Thread } from "../components/assistant-ui/elements/thread.aui";
@@ -24,6 +24,41 @@ function TurnStatus({ turn, requested, onInspect, onOpenTask }: { turn: Conversa
     </details>
   </div>;
 }
+function ExecutionSummary({ turns, requested, onInspect, onOpenTask }: { turns: readonly ConversationTurn[]; requested: ConversationSnapshot["conversation"]["requested"] | undefined; onInspect: (id: string) => void; onOpenTask: (id: string) => void }) {
+  if (!turns.length) return null;
+  return <details className="flow-conversation-execution"><summary>Execution history · {turns.length} {turns.length === 1 ? "turn" : "turns"}</summary>{turns.map(turn => <TurnStatus key={turn.id} turn={turn} requested={requested} onInspect={onInspect} onOpenTask={onOpenTask} />)}</details>;
+}
+
+function MessageReceipt({ projection, onAccepted }: { projection: ConversationProjection; onAccepted: (id: string) => void }) {
+  const receipt = useSyncExternalStore(projection.subscribe, projection.getSnapshot).outbox;
+  if (!receipt) return null;
+  return <section className="flow-conversation-receipt" aria-label="Message receipt">
+    <strong>{receipt.state === "sending" ? "Sending message…" : receipt.state === "unknown" ? "Receipt unknown" : "Message rejected"}</strong>
+    <pre>{receipt.request.text}</pre><p>{receipt.error ?? "Waiting for durable acceptance."}</p>
+    {receipt.state === "unknown" && <><p>The center may have accepted this message. Retry keeps the same request identity; your new draft stays separate.</p><button className="flow-link" onClick={async () => { const id = await projection.retry(); if (id) onAccepted(id); }}>Retry same message</button></>}
+    {receipt.state === "rejected" && <button className="flow-link" onClick={() => projection.outbox.dismiss(receipt.id)}>Dismiss rejected receipt</button>}
+  </section>;
+}
+
+function ConversationBehavior({ live, children }: { live: boolean; children: ReactNode }) {
+  return <section className="flow-conversation-behavior" aria-label="Conversation behavior">
+    <h3>Conversation behavior</h3>
+    <p>{live ? "Reply drafts update as the center records them. Drafts are not final replies." : "Live reply updates are unavailable or disabled."}</p>
+    <p>Steering and per-turn model, thinking and tool controls are unavailable. Queue next waits for durable center acceptance; unresolved receipts are local to this page. Keep the page open until they are confirmed.</p>
+    {children}
+  </section>;
+}
+
+function ComposerConfiguration({ loading, profile, viewId, intent, queueAvailable, onIntent }: { loading: boolean; profile: ComponentProps<typeof ExecutionProfilePicker>; viewId: string; intent: "follow-up" | "queue"; queueAvailable: boolean; onIntent: (intent: "follow-up" | "queue") => void }) {
+  return <div className="flow-composer-configuration">
+    {loading ? <p role="status">Loading conversation configuration…</p> : <ExecutionProfilePicker {...profile} />}
+    <fieldset className="flow-message-delivery" aria-label="Message delivery">
+      <label><input type="radio" name={`delivery-${viewId}`} checked={intent === "follow-up"} onChange={() => onIntent("follow-up")} /> Send now</label>
+      <label><input type="radio" name={`delivery-${viewId}`} checked={intent === "queue"} disabled={!queueAvailable} onChange={() => onIntent("queue")} /> Queue next</label>
+    </fieldset>
+  </div>;
+}
+
 export function ConversationThread({ viewId, visible, projection, drafts, profiles, profileSelection, onProfileSelection, onAccepted, onInspect, onCurrentTask, onOpenTask }: {
   viewId: string; visible: boolean; projection: ConversationProjection; drafts: Map<string, DraftState>;
   profiles: ExecutionProfileCatalog; profileSelection: ProfileSelection; onProfileSelection: (selection: ProfileSelection) => void;
@@ -85,9 +120,14 @@ export function ConversationThread({ viewId, visible, projection, drafts, profil
         if (intent === "queue" && last && !TERMINAL_STATUSES.includes(last.task.status) && !event.shiftKey && !event.ctrlKey && !event.metaKey && !event.altKey) { event.preventDefault(); if (!projection.sendDisabledReason(intent)) event.currentTarget.form?.requestSubmit(); }
       }}
       beforeMessages={<>{streamState.evicted && <p className="flow-conversation-notice">Older draft text was removed from this page’s limited cache. Final replies remain available.</p>}{state.error && <p className="flow-conversation-alert" role="alert">{state.error} <button className="flow-link" onClick={() => void projection.refresh()}>Retry conversation</button></p>}{state.nextCursor !== null && <p className="flow-conversation-notice">Some turns are not loaded. <button className="flow-link" disabled={state.loadingMore} onClick={() => void projection.loadMore()}>{state.loadingMore ? "Loading…" : "Load more turns"}</button></p>}</>}
-      afterMessages={<><ConversationQueue projection={projection.queue} />{last?.assistant.state === "pending" && <p className="flow-conversation-notice" role="status">Reply pending. You can keep writing below.</p>}{last?.assistant.state === "unavailable" && <p className="flow-conversation-notice" role="status">Reply unavailable · {last.assistant.reason.replaceAll("-", " ")}</p>}{state.turns.length > 0 && <details className="flow-conversation-execution"><summary>Execution details · {state.turns.length} {state.turns.length === 1 ? "turn" : "turns"}</summary>{state.turns.map(turn => <TurnStatus key={turn.id} turn={turn} requested={state.snapshot?.conversation.requested} onInspect={onInspect} onOpenTask={onOpenTask} />)}</details>}{state.outbox && <section className="flow-conversation-receipt" aria-label="Message receipt"><strong>{state.outbox.state === "sending" ? "Sending message…" : state.outbox.state === "unknown" ? "Receipt unknown" : "Message rejected"}</strong><pre>{state.outbox.request.text}</pre><p>{state.outbox.error ?? "Waiting for durable acceptance."}</p>{state.outbox.state === "unknown" && <><p>The center may have accepted this message. Retry keeps the same request identity; your new draft stays separate.</p><button className="flow-link" onClick={async () => { const id = await projection.retry(); if (id) onAccepted(id); }}>Retry same message</button></>}{state.outbox.state === "rejected" && <button className="flow-link" onClick={() => projection.outbox.dismiss(state.outbox!.id)}>Dismiss rejected receipt</button>}</section>}</>}
-      composerHeader={<>{!lockedProfile && !viewId.startsWith("draft-") ? <p role="status">Loading conversation configuration…</p> : <ExecutionProfilePicker catalog={profileCatalog} selection={profileSelection} onSelect={onProfileSelection} onRefresh={() => { void profiles.refresh(); }} onLoadMore={() => { void profiles.loadMore(); }} locked={lockedProfile} />}<div className="flow-conversation-controls" aria-label="Conversation capabilities"><button disabled title="Per-turn thinking controls are unavailable">Thinking</button><button disabled title="Per-turn tool controls are unavailable">Tools</button><fieldset className="flex items-center gap-2" aria-label="Message delivery"><label><input type="radio" name={`delivery-${viewId}`} checked={intent === "follow-up"} onChange={() => setIntent("follow-up")} /> Send now</label><label><input type="radio" name={`delivery-${viewId}`} checked={intent === "queue"} disabled={!queue.available} onChange={() => setIntent("queue")} /> Queue next</label></fieldset><button disabled title="Steering is not available in this Web version">Steer</button></div></>}
-      footer={<div className="flow-conversation-footer">{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}<p role="status">{reason ?? (state.snapshot ? "Continue this conversation." : "Your message starts a new conversation.")}</p><span>{streamState.enabled ? "Reply drafts update as the center records them. " : "Live reply updates are unavailable or disabled. "}Steering and per-turn controls are unavailable. Queue next uses durable center acceptance; unresolved receipts are local to this page.</span></div>}
+      afterMessages={<><ConversationQueue projection={projection.queue} />{last?.assistant.state === "pending" && <p className="flow-conversation-notice" role="status">Reply pending. You can keep writing below.</p>}{last?.assistant.state === "unavailable" && <p className="flow-conversation-notice" role="status">Reply unavailable · {last.assistant.reason.replaceAll("-", " ")}</p>}<MessageReceipt projection={projection} onAccepted={onAccepted} /></>}
+      composerHeader={<ComposerConfiguration loading={!lockedProfile && !viewId.startsWith("draft-")} viewId={viewId} intent={intent} queueAvailable={queue.available} onIntent={setIntent}
+        profile={{ catalog: profileCatalog, selection: profileSelection, onSelect: onProfileSelection, onRefresh: () => { void profiles.refresh(); }, onLoadMore: () => { void profiles.loadMore(); }, locked: lockedProfile,
+          details: navigate => <ConversationBehavior live={streamState.enabled}><ExecutionSummary turns={state.turns} requested={state.snapshot?.conversation.requested}
+            onInspect={id => navigate(() => onInspect(id))}
+            onOpenTask={id => navigate(() => { onOpenTask(id); requestAnimationFrame(() => document.getElementById(`tab-${id}`)?.focus()); })} /></ConversationBehavior> }} />}
+      footer={<div className="flow-conversation-footer">{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}{reason && <p role="status">{reason}</p>}</div>}
+
     />
   </ConversationActivities></ConversationStreams></ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
 }
