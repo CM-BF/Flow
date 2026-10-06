@@ -1,0 +1,49 @@
+{
+  "task": "O12",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "reviewedAt": "2026-10-06T12:08:12.728975+00:00",
+  "target": "60e495b5ea55e1cee12ae2a9deccb03afc7102f4",
+  "delivery": "9c27a364801b436d8c699a3aea0d8174e1797d7c",
+  "manifestSha256": "f8e1643f680c0c6bd6a46f1aae9b4e84b9a9736b18d4e52a49f73ad79f249488",
+  "counts": {
+    "sources": 11,
+    "inputs": 18,
+    "outputs": 39
+  },
+  "mismatches": [],
+  "reviewerTestsRun": 0,
+  "providerCalls": 0,
+  "finishedAt": "2026-10-06T12:09:20.790224+00:00",
+  "result": "APPROVED",
+  "findings": [],
+  "readSourceFiles": 11,
+  "evidenceChecks": {
+    "distinct": 21,
+    "rounds": [
+      {
+        "passed": 20
+      },
+      {
+        "passed": 12,
+        "overlap": 11
+      },
+      {
+        "passed": 1,
+        "notSelected": 3,
+        "existingStrengthened": true
+      }
+    ],
+    "typesExit": 0,
+    "typesSource": "Author conversation exec_command/write_stdin faithful tool-receipt transcript; empty compiler stdout is not itself exit evidence",
+    "typeReceiptPath": "docs/evidence/o12/typecheck-delivery-tool-receipt.json",
+    "typeReceiptSha256": "0345d3107f9418024c35758b8c9f8522314bc062fa17bc6f6312553f36cb839e"
+  },
+  "limits": [
+    "Headless controller and existing immutable goal explanation reads only; no Web/TUI or complete natural-language delivery",
+    "Host owns durable atomic single-writer IntentStore; restart evidence is center/controller recreation, not OS crash",
+    "Unknown retains same key/body; abort/disconnect does not cancel center task",
+    "Mechanical verification is separate from explicit business acceptance",
+    "Package ./goal export and real native execution excluded"
+  ],
+  "observedDelivery": "1469d194c67702017bc0ad09d0a9855919355ac2"
+}
