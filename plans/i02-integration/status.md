@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:10 UTC / main9c6fa9b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:20 UTC / mainfc113945 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 84fdecebbb4939e43710fb17e48884cc49d1d030 / 已审流存储实验和新任务登记 |
+| 工作基线 / HEAD | fc113945ff73d1a43092d0a70b51e901aa4be1e2 / 本批CHAT09、原生CLI与流式界面固定接收 |
 | 工作树dirty状态 | 候选已提交；当前交付记录整理 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；CHAT06P01自身三scope固定源码/证据逐文件一致；registry90唯一且新source解析正常；仅metadata/实验接收，无重跑产品 |
-| 已集成main状态 / HEAD | 84fdecebbb4939e43710fb17e48884cc49d1d030 已含ActivityI、stream模块、消息复用及SVC实际收口；个人center/runner固定b54de1dbb08e3ccc7d33a27295a318f2799e76ae / accepting v6。当前实验与90源登记候选待发布。 |
+| 检查状态 | PASSED；34固定源码比较一致，原生只读直接消费者2/2，root与Web类型检查exit0；0provider |
+| 已集成main状态 / HEAD | fc113945ff73d1a43092d0a70b51e901aa4be1e2；当前已审批次候选待发布。个人center/runner仍b54de1dbb08e3ccc7d33a27295a318f2799e76ae / accepting v6。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 已审的原生文本子任务、知识选择组件和正文存储优化已完成组合核验。 |
-| 下一可用交付 | 发布本批成果与最新计划；聊天逐段正文的界面接线继续独立推进。 |
+| 当前产出 | 聊天逐段正文界面、兼容的执行配置目录和原生子任务命令行已完成组合核验。 |
+| 下一可用交付 | 发布本批界面和入口，再按受控更新流程让个人服务采用已审版本。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -91,3 +91,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 08:01 UTC：CHAT08领域d4e/薄client3d811/默认关闭生产挂载fe5分别已独审；固定24源码逐字相同，server/runner/contracts/storage对fe5无新增差异，无理由重跑相同106/局部3项。仅F01批准metadata上下文冲突，保留原作者CHAT08批准段落，未带入后继未审O09代码。即将main接收；个人运行仍b54/v6，不启补充指令。
 
 2026-10-06 08:10 UTC：O09领域7ddd/薄client1bd/生产c587、CONTEXT01 736ef独立模块、CHAT06P02 b009均按各唯一独审固定输入受控接收。产品逐字比对与root/Web组合types绿见native-context-prefix-integration.json；未重跑领域/provider。Web父计划仅从33bd两个批准目录发布，权威仍原管理WT；F01 metadata冲突精确采用canonical1be，不改产品。registry92含CHAT09/P02及D06来源迁移，尚待本次实际部署回执。个人center/runner仍b54/v6。
+
+2026-10-06 08:20 UTC：已审输入逐文件绑定见 [本批组合](../../docs/evidence/i02/stream-profile-integration.json)。既有F01两metadata冲突仅恢复唯一owner新记录；所有产品blob保持固定已审target。未重跑原领域全套/浏览器，无新增模型，个人服务未更新。
