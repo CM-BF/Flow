@@ -1,0 +1,109 @@
+{
+  "implementationTarget": "21371153c6d83c67c3a3d7d0051c915c55f7b60b",
+  "base": "07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a",
+  "source": [
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "bytes": 4078,
+      "sha256": "993e26f1ca3cf4cfd52f334c2a03d6d1df2e49c258f9dd9e6d974c1eb3d94b7b"
+    },
+    {
+      "path": "apps/server/src/active-steering/commands.ts",
+      "bytes": 5998,
+      "sha256": "8b33a25c568c0ae30ba842ed9befb062f28549aedd43ca011e74ea1b5e19584b"
+    },
+    {
+      "path": "apps/server/src/active-steering/index.ts",
+      "bytes": 3010,
+      "sha256": "53f6572bbcd15761473139a6eb79206babd260a89725d28d387c3b8debadc386"
+    },
+    {
+      "path": "apps/server/src/active-steering/queries.ts",
+      "bytes": 3963,
+      "sha256": "4c4dcca036da762457bd979f9e66b70453008d83ebcaf16823cfdf238a097ede"
+    },
+    {
+      "path": "apps/server/src/active-steering/steering.test.ts",
+      "bytes": 21848,
+      "sha256": "45faf008fe10a7f38eb67ab47414ef81381f236657e98c6f541d7c7207608835"
+    },
+    {
+      "path": "apps/server/src/active-steering/storage.ts",
+      "bytes": 4217,
+      "sha256": "672f030ecb268e2fba024a42f760c7c1f66009b9493b3c2257bed194ced56db9"
+    },
+    {
+      "path": "packages/storage/migrations/024-active-steering.sql",
+      "bytes": 1998,
+      "sha256": "551e54f031591dc22b129cb66097132e94cd3f0828441d60acf6248fac555fac"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/chat07/checks-final.txt",
+      "bytes": 615,
+      "sha256": "5ed5d9928a7e60603bc46e442a2fcf70db3be444e1cd323bd431a8a71778f10f"
+    },
+    {
+      "path": "docs/evidence/chat07/checks-iteration.txt",
+      "bytes": 507,
+      "sha256": "af667b60170df49d7dcfcaf1eba0499902e25ee1ef4dcb236a14002b50a5401d"
+    },
+    {
+      "path": "docs/evidence/chat07/claim-take.json",
+      "bytes": 722,
+      "sha256": "4c0f0c628ee9314f82d4e46d1fd11067184ef7f0a617ad7dfc21da77aac913b1"
+    },
+    {
+      "path": "docs/evidence/chat07/cleanup.json",
+      "bytes": 104,
+      "sha256": "a726c4bb7f269e8d58405ce46f2a91ca1bfe88b7641ffef1f049ac874f843c87"
+    },
+    {
+      "path": "docs/evidence/chat07/first-green-fixed.txt",
+      "bytes": 322,
+      "sha256": "a8b147fb0acb95f9e6f78e958d112cf9417e2f064571c2e0aab5616991b18fd3"
+    },
+    {
+      "path": "docs/evidence/chat07/first-green.txt",
+      "bytes": 1116,
+      "sha256": "8b8d7a357457c1365a759495fcc58ccab567e1d5ae960ad53c17cbb736e6e1f3"
+    },
+    {
+      "path": "docs/evidence/chat07/install.txt",
+      "bytes": 657,
+      "sha256": "ac64908c0b7ebe3df05319cb461ef319a31f159299288af700dd989d530afaa3"
+    },
+    {
+      "path": "docs/evidence/chat07/red.txt",
+      "bytes": 1010,
+      "sha256": "3153bb4b77ee29bfec186c5dc6d11f9cba57f14563a99095b5bb6e1babdba071"
+    },
+    {
+      "path": "docs/evidence/chat07/typecheck-final.txt",
+      "bytes": 103,
+      "sha256": "9ed81060748b72627cc2fe79564c09f31b08bbe28e0249a0fc36a0dd0762b3a1"
+    },
+    {
+      "path": "docs/evidence/chat07/typecheck-iteration.txt",
+      "bytes": 103,
+      "sha256": "9ed81060748b72627cc2fe79564c09f31b08bbe28e0249a0fc36a0dd0762b3a1"
+    }
+  ],
+  "checks": {
+    "behavior": {
+      "passed": 16,
+      "testSeconds": 3.516,
+      "totalSeconds": 4
+    },
+    "typecheckExit": 0,
+    "providerQueries": 0,
+    "remainingOwnedDatabases": 0
+  },
+  "limits": [
+    "domain-only; production intake disabled",
+    "old final events do not call seal",
+    "received and observed-consumed do not prove model compliance",
+    "no runner/SDK/Web/provider validation"
+  ]
+}
