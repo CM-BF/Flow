@@ -1,4 +1,6 @@
 import { decodeConversationCreated, decodeConversationTurnAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
+import { EXECUTION_PROFILE_HEADER, NATIVE_EXECUTION_PROFILE_VERSION, nativeExecutionProfileCatalogPageSchema, type NativeExecutionProfileCatalogPage } from '@flow/contracts';
+import { engineeringProfilePageSchema, engineeringProfilePublishedSchema, type EngineeringProfileConfiguration, type EngineeringProfilePage, type EngineeringProfilePublished } from '@flow/contracts';
 export { decodeConversationCreated, decodeConversationTurnAccepted, assertConversationCreationMatches, assertConversationContextMatches, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
 import type { SteeringAdmission, SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage, SteeringMailbox, SteeringFinalizationInput, SteeringFinalizationResult, SteeringProposalLookup, SteeringProposalStatus } from '@flow/contracts';
 import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
@@ -299,8 +301,25 @@ export class FlowClient {
       ...(options.profileProtocol === 'steering-v1' ? { headers: { 'X-Flow-Execution-Profile': 'steering-v1' } } : {}),
     });
   }
+  async nativeExecutionProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<NativeExecutionProfileCatalogPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return nativeExecutionProfileCatalogPageSchema.parse(await this.request<unknown>(`/api/execution-profiles${query.size ? `?${query}` : ''}`, {
+      signal, headers: { [EXECUTION_PROFILE_HEADER]: NATIVE_EXECUTION_PROFILE_VERSION },
+    }));
+  }
   publishExecutionProfile(input: ExecutionProfilePublication, signal?: AbortSignal): Promise<ExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  async publishEngineeringProfile(input: { configuration: EngineeringProfileConfiguration }, signal?: AbortSignal): Promise<EngineeringProfilePublished> {
+    return engineeringProfilePublishedSchema.parse(await this.request<unknown>('/api/runner/engineering-profile', {
+      method: 'POST', body: JSON.stringify(input), signal,
+    }));
+  }
+  async listEngineeringProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<EngineeringProfilePage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return engineeringProfilePageSchema.parse(await this.request<unknown>(`/api/engineering-profiles${query.size ? `?${query}` : ''}`, { signal }));
   }
   publishNativeExecutionProfile(input: { configuration: NativeExecutionProfileConfiguration }, signal?: AbortSignal): Promise<NativeExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });

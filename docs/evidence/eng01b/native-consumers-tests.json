@@ -1,0 +1,13 @@
+{
+  "command": [
+    "node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/execution-profiles/execution-profiles.test.ts",
+    "apps/server/src/execution-profiles/native-catalog.test.ts",
+    "apps/server/src/execution-profiles/steering-admission.test.ts"
+  ],
+  "exitCode": 0,
+  "source": "actual process redirected stdout",
+  "completedAt": "2026-10-06T10:52:34.616378+00:00"
+}

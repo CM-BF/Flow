@@ -1,0 +1,58 @@
+{
+  "reviewer": "native_center_owner/gpt-6-astra",
+  "target": "3a12ed7ebd8e69325309bd004043f06dabbf7ff4",
+  "reviewedAt": "2026-10-06T10:55:55.275985+00:00",
+  "result": "APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "scope": [
+    "packages/client/src/index.ts",
+    "packages/client/src/engineering-profiles.test.ts",
+    "packages/contracts/src/index.ts"
+  ],
+  "evidence": "Full 65-line delta + shared request/response path; observed 4 distinct HTTP checks and author types exit0; reviewer ran zero tests. Strict domain schemas, auth/cancel/encoding/error preserved. Not center admission/PG or native provider approval.",
+  "files": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 40801,
+      "sha256": "9a11d6c51e0b170166efb41126a65e8d3688a46b79c2087b0e1ff6e24a744ae9",
+      "fixedEqualsWorking": true
+    },
+    {
+      "path": "packages/client/src/engineering-profiles.test.ts",
+      "bytes": 3846,
+      "sha256": "1441c8cc5db2abe98fbd83806bd60788c1e3a8c214ecbfb2531044bb9529d14b",
+      "fixedEqualsWorking": true
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1015,
+      "sha256": "4370db0e328f79ebb4f9d775f7a71a63c0c6e58292911b4f4070224b3b4a3f07",
+      "fixedEqualsWorking": true
+    },
+    {
+      "path": "docs/evidence/f01/engineering-profile-client-green.json",
+      "bytes": 359,
+      "sha256": "5c56869b743784c2f5c2c0bdd162c2e728677873a1f1fbccaa9979f09d562520",
+      "source": "author existing process record read, no rerun"
+    },
+    {
+      "path": "docs/evidence/f01/engineering-profile-client-green.stdout",
+      "bytes": 461,
+      "sha256": "77c5f47f8a8caf64946a7048d10a838bc56b8ae32f3fb73dcf84f4e00111f308",
+      "source": "author existing process record read, no rerun"
+    },
+    {
+      "path": "docs/evidence/f01/engineering-profile-client-types.json",
+      "bytes": 171,
+      "sha256": "bcfb49cb35fe4e137baeb7fd631104721e0b7473038e32c76364917c2212c5ec",
+      "source": "author existing process record read, no rerun"
+    },
+    {
+      "path": "docs/evidence/f01/engineering-profile-client-types.stdout",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a",
+      "source": "author existing process record read, no rerun"
+    }
+  ]
+}

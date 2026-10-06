@@ -1,3 +1,4 @@
+import { loadEngineeringRunner } from './engineering/launch.js';
 import { loadRunnerConfiguration } from './configuration.js';
 import { parseRunnerConcurrency } from './concurrency-configuration.js';
 import { guardExecutionProfile, publishExecutionProfile } from './execution-profiles.js';
@@ -11,6 +12,7 @@ process.on('SIGTERM', stop);
 
 try {
   const endpointsFile = process.env.FLOW_A2A_ENDPOINTS_FILE;
+  const engineeringFile = process.env.FLOW_ENGINEERING_SETUP_FILE;
   const maxConcurrentAttempts = parseRunnerConcurrency(process.env.FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS, endpointsFile ? 'a2a' : 'native');
   const common = {
     baseUrl: process.env.FLOW_URL ?? 'http://127.0.0.1:4310',
@@ -19,7 +21,11 @@ try {
     signal: shutdown.signal,
     onNotice: (notice: unknown) => process.stderr.write(`${JSON.stringify(notice)}\n`),
   };
-  if (endpointsFile) {
+  if (engineeringFile !== undefined) {
+    if (endpointsFile !== undefined || process.env.FLOW_CLAUDE_MATERIALS_FILE !== undefined || maxConcurrentAttempts !== 1) throw new Error('Engineering setup requires its dedicated single-project host.');
+    const adapter = await loadEngineeringRunner({ ...common, manifestFile: engineeringFile });
+    await runRunner({ ...common, adapters: [adapter], maxConcurrentAttempts: 1 });
+  } else if (endpointsFile) {
     await runProtocolRunner({ ...common, endpoints: await loadProtocolEndpoints(endpointsFile) });
   } else {
     const loaded = await loadRunnerConfiguration(process.env.FLOW_CLAUDE_MATERIALS_FILE);
