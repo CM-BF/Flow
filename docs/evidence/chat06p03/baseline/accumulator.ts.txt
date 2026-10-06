@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-type SDKMessage = Parameters<import('../../../../apps/runner/src/assistant-stream/index.js').AssistantTextAccumulator['observe']>[0];
+import type { SDKMessage } from '@anthropic-ai/claude-agent-sdk';
 import { ASSISTANT_ATTEMPT_BYTES, ASSISTANT_PATCH_BYTES, type AssistantStreamData, type AssistantStreamMarker } from '../../../../packages/contracts/src/assistant-stream.js';
 const hash = (text:string) => createHash('sha256').update(text).digest('hex');
 type Phase = AssistantStreamData['phase'];

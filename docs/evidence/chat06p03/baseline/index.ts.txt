@@ -1,4 +1,4 @@
-type SDKMessage = Parameters<import('../../../../apps/runner/src/assistant-stream/index.js').AssistantTextAccumulator['observe']>[0];
+import type { SDKMessage } from '@anthropic-ai/claude-agent-sdk';
 import { ASSISTANT_FLUSH_MS, type AssistantStreamData, type AssistantStreamMarker } from '../../../../packages/contracts/src/assistant-stream.js';
 import { AssistantTextAccumulator } from './accumulator.js';
 export { AssistantTextAccumulator } from './accumulator.js';
