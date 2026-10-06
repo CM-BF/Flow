@@ -34,13 +34,39 @@ async function until(check, timeoutMs) {
   while (performance.now() < deadline) { const result = await check(); if (result) return result; await new Promise(resolve => setTimeout(resolve, 40)); }
   throw new Error('Acceptance observation deadline reached');
 }
-async function stopWorker(child, report) {
+const stoppingWorkers = new WeakMap();
+function signalGroup(pgid, signal) {
+  try { process.kill(-pgid, signal); return true; }
+  catch (error) { if (error.code === 'ESRCH') return false; throw error; }
+}
+async function awaitGroupGone(pgid, timeoutMs) {
+  const deadline = performance.now() + timeoutMs;
+  while (signalGroup(pgid, 0)) {
+    if (performance.now() >= deadline) return false;
+    await new Promise(resolve => setTimeout(resolve, 40));
+  }
+  return true;
+}
+async function stopGroup(child, report) {
+  const pgid = child.pid;
+  report.workerProcessGroup = { pgid, state: 'unknown' };
+  if (!Number.isSafeInteger(pgid) || pgid <= 1) throw new Error('Owned process group is unknown');
+  // detached:true makes this worker the Unix group leader. Its exit is not group exit.
+  if (signalGroup(pgid, 0)) {
+    signalGroup(pgid, 'SIGTERM');
+    if (!await awaitGroupGone(pgid, 3000)) {
+      report.workerForcedKill = true;
+      signalGroup(pgid, 'SIGKILL');
+      if (!await awaitGroupGone(pgid, 1000)) throw new Error('Owned process group remains present');
+    }
+  }
+  report.workerProcessGroup.state = 'stopped';
+}
+export async function stopWorker(child, report) {
   if (!child) return;
-  if (child.exitCode !== null || child.signalCode) return;
-  const exited = new Promise(resolve => child.once('exit', resolve));
-  try { process.kill(-child.pid, 'SIGTERM'); } catch (error) { if (error.code !== 'ESRCH') throw error; }
-  const hard = setTimeout(() => { report.workerForcedKill = true; try { process.kill(-child.pid, 'SIGKILL'); } catch {} }, 3000);
-  try { await exited; } finally { clearTimeout(hard); }
+  // The observation deadline and finally may both stop the same owned group.
+  if (!stoppingWorkers.has(child)) stoppingWorkers.set(child, stopGroup(child, report));
+  await stoppingWorkers.get(child);
 }
 export async function run(mode, outputDirectory, authorization) {
   assert(['rehearsal', 'native'].includes(mode));
