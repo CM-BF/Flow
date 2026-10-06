@@ -21,3 +21,5 @@
 技能与PG官方来源见[quality](quality.md)。architecture仅store内部写校验职责位置调整，公共协议/迁移/FSM/外部依赖不变；主线现有架构说明由Lead接收时按需同步。
 
 独立批准见[independent-review](independent-review.json)。仅本片段和明确计量范围；原manifest/raw不变，无重跑，claim待main保留。
+
+本片段已交付main fc113945ff73d1a43092d0a70b51e901aa4be1e2，owner核完整546片段零diff；见[main-receipt](main-receipt.json)。无需重跑P01或既有18项。

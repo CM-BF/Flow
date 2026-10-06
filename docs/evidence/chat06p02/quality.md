@@ -25,3 +25,5 @@ PG16官方函数依据已读：https://www.postgresql.org/docs/16/functions-bina
 08:04 UTC证据存储校正：首次metadata提交Git提示prefix-red.log中的真实Unicode CRLF会规范化；逐blob核对发现仅该log提交对象与原working字节不符。原working/raw未改，添加本evidence局部*.log -text并重新stage原字节，确保最终Git blob与已冻结manifest/source-run hash相同；不重跑或重写日志。
 
 2026-10-06 08:05 UTC：Mika独立技术review于08:05:23.660360Z APPROVED targetb0090ed，无P1/P2。只读核5source/10readonly/18raw及所有行为/错误/资源证据，未跑测试/PG/服务。owner仅metadata记录，并核命名单一职责/私有SQL职责/无重复抽象、严格错误/事务、真实行为测试与局限；原manifest/raw/source保持，交付后停写等main。
+
+2026-10-06 08:11 UTC main收口：完整546→main fc113945ff73d1a43092d0a70b51e901aa4be1e2四scope零diff/祖先成立；仅metadata，保留所有raw/hash，无新增验证。先停写再release，不在已释放范围补回执。
