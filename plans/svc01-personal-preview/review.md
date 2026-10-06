@@ -2,7 +2,7 @@
 
 状态：NOT_STARTED
 
-Review target commit：UNKNOWN
+Review target commit：0b5b3fec1bed2c86b0493c48e4d39e77741828ad
 
 Scope：tools/personal-preview/；计划与证据下钻。实现基线：dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8（受控合入已审三端/R04；原计划base8f1481）。尚未执行审查，不构成approval。
 
@@ -14,4 +14,6 @@ Scope：tools/personal-preview/；计划与证据下钻。实现基线：dd1b9da
 | --- | --- | --- | --- | --- |
 | 未审查 | 无结论 | unknown | 待定 | 未执行 |
 
-结论/限制：待固定target；真实模型、总项目预算、远程多租户不在启动器零模型验证范围。
+结论/限制：target已固定，尚未独立审查；真实模型、总项目预算、远程多租户不在启动器零模型验证范围。
+
+作者检查：Node公开边界7/7，15.257s，原始输出[behavior-tests.txt](../../docs/evidence/svc01/behavior-tests.txt)；Node语法检查、相对链接、diffcheck通过。测试后只读确认flow_preview_*数据库数量0。独立review尚未执行；未做真实模型、产品浏览器或用户长期服务验收。

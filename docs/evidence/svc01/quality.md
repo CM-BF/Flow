@@ -17,3 +17,5 @@
 clean-code工作段/交付复核：处理了postgres URL.origin为null不能用来比连接身份的问题（改显式protocol/hostname/port/user比较）；发送owner令牌前核监听归属；持久保存待确认spawn身份；内部child需state中PID/nonce匹配；state放置前拒Git工作树，操作锁不超时抢占。职责分为小CLI、个人预览生命周期、进程身份helper；没有自动调度/自动修复/通用服务框架。未知与失败保留，不冒称provider在线或任务完成。
 
 剩余限制：macOS/POSIX本机合作持有，非OS强隔离；启动失败可能需要人工核查私有state/operation.lock，不自动删除未知资源；TERM超时不强杀，外部副作用仍按中心uncertain处理。旧来源历史日志未改；当前日志仅规范末尾多余空行以通过diffcheck。实际产品URL与浏览器/真实聊天验收归Lead，SVC01-03/04仍pending。架构接口说明见tools README，Lead接收target后同步工程dashboard固定拓扑。
+
+2026-10-06 04:31:53 UTC 固定实现 `0b5b3fec1bed2c86b0493c48e4d39e77741828ad`。源码与最终7/7被测内容一致；此后仅metadata绑定目标。交付前本地链接5文件、diffcheck通过；只读PG统计flow_preview_*剩余数据库0（不删除未知库）。独立review保持NOT_STARTED，D04 claim v3保留待修复。
