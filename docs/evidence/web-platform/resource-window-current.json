@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-06T15:32:05.785246+00:00",
+  "recordedAt": "2026-10-06T15:40:26.272754+00:00",
   "state": "RETURNED_TO_LEAD_AFTER_A_HISTORY_FAILURE_AND_CLEANUP",
   "source": "release03-a-actual-intake.json",
   "release03": {
@@ -25,21 +25,16 @@
     "freshAdmission": "release03-a-second-admission.json",
     "actualRawReview": "release03-a-actual-362-review-root.json",
     "nextSourceCandidate": {
-      "implementation": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
-      "metadata": "d83701f81d9e0ee4d6d2c000f749ba9f7ac8e83c",
-      "observedClean": true,
-      "sourceOnly": true,
-      "review": "NOT_STARTED; root local source review pending",
-      "interface": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/backend-input-interface.md",
-      "gate": "backend {registered absolute realpath,exact40hex head,exact40hex tree}; fixed362 diff exactly approved store bytes; actual factory imported from supplied path; no arbitrary moving source",
-      "newRuntime": 0,
-      "remainingRuntimeMs": 176126,
-      "actualTuple": "PENDING_LEAD",
-      "Bmode": "No independent B-only yet; proposal review separate; do not run all under B-only label"
+      "harness": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+      "state": "SOURCE_GUARD_P2_CHANGE_REQUESTED",
+      "backendImplementation": "b29807979a5589678a61d3fb84781950cf366396",
+      "candidateHead": "0037921d12c089e6334b001545f698db067087f8",
+      "candidateTree": "1cf10d9434b0cf57d083c0e5e01b9bc8b72dc074",
+      "pending": "Exact two-source/eleven-metadata closure guard, finalmetadata/dependency receipt, independentreview andfresh run gate"
     }
   },
   "recoveryDirect": {
-    "state": "First4ba20/20 completed; 02d5 owner composer-handoff source fix pending root delta review,24cases/browser NOT_RUN; new manifest/window required",
+    "state": "02d5 fixedsource P1 material completeness/P2 saved ordering changes requested; original21 writer source-only; prepared24direct/browser NOT_RUN",
     "existingBudget": "One fixed test/onefork,30s total incl>=5s cleanup each,own/tmp8MiB/log2MiB,start>=1GiB+32MiB/stop<=1GiB+16MiB",
     "startConditions": [
       "New material shared-window/resource notice",
@@ -121,5 +116,12 @@
     "thresholdBytes": 1107296256,
     "state": "F01 O14 NOT_RUN,0PG/0test,window returned;newbackendtuple pending",
     "basis": "Lead actual observation via root, not manager resampling or new A admission"
+  },
+  "registryLatestInbound": {
+    "source": "Lead in-progress notification via root",
+    "main": "9bdb (abbreviated inbound)",
+    "plannedDashboardSources": 164,
+    "state": "REGISTRATION_AND_4320_UPDATE_IN_PROGRESS_NOT_OBSERVED_COMPLETE",
+    "managerAPIOrPageSamples": 0
   }
 }

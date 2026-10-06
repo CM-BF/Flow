@@ -380,3 +380,5 @@ DPERF04原九范围Interface消歧（固定c837，未领取）：[固定报告](
 2026-10-06 15:32 发布安全点：固定362实际A两项history失败，完整raw/清理与余176.126秒见[唯一接收入口](../../docs/evidence/web-platform/release03-a-actual-intake.json)。Lead已接收，后继只等待原backend owner的immutable362+已审三行修复新HEAD/tree；先新A再B/全兼容后原受管发布，不重跑未变362或改旧期望，不覆盖原WT。DPERF04保持未take，当前个人版本不变。
 
 2026-10-06 15:32 原REQ22/23、WPF-001-05补充[唯一host第二意见](../../docs/evidence/web-platform/connection-plugin-2498-second-opinion/report.md)：主题归app lifetime；只有有效业务lease发布navigation；精确registration disposer与按ID停用分开；用户disable/auth revoke/final dispose不同。纠正旧提案措辞：handler后仅activation-current，不再次auth authorize；旧global callback必须绑定原lease/form，不能借新权限requestSubmit。普通exact disposer未证误删新entry，不能机械报bug。均为未实施后继验收，不扩大Recovery21。
+
+2026-10-06 15:41 固定审查接收：[02d5材料完整性/顺序与b298输入](../../docs/evidence/web-platform/source-review-02d5-b298-intake.json)。原06-04必须在receipt/HTTP前核完整current draft选择及保存顺序，未验证/部分ready不能静默纯文本或少ref；显式移除、旧held/inTransit与下一draft分开。24case未运行，正式review NOT_STARTED。新backend源预审不代A/B兼容，原累计3,874ms不重置，无新运行/空间采样。

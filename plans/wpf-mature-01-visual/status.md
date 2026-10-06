@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:32 UTC |
+| 最近更新 | 2026-10-06 15:41 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 正式format2已备；fixed362实际A两history失败，原raw封存/DB与进程清理完成，B/Chrome NOT_RUN，无兼容绿回执 |
-| 下一可用交付 | 等Lead的immutable362+已审三行history修复新HEAD/tree，同artifact/余176.126秒fresh复验；A通过后才B，再由原operator发布 |
+| 下一可用交付 | b298/003792固定修复源码候选已到；等最终tuple/依赖与dbaa闭包窄修批准，同artifact/余176.126秒fresh新A通过后才B，再由原operator发布 |
 | 当前阻塞 | ACTIVE: 362 attachment-only观察POST500、mixed材料误标known；Lead已接收并准备最小固定修复路径，未部署，运行窗口已归还；不等完整Recovery/SVC06 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |

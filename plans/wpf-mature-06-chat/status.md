@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:38 UTC |
+| 最近更新 | 2026-10-06 15:41 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 4ba受控direct20/20保原证据；724 supervisor源码闭合，02d5恢复附件到官方composer接管P2窄修已固定待root审，当前24case/browser未跑 |
-| 下一可用交付 | 固定原范围P2修复后，以新manifest与fresh窗口核当前24direct/真实App完整材料恢复；源码审查不代行为通过 |
+| 当前产出 | 4ba20/20保旧范围；02d5源审新增P1遗漏未验证/部分材料及P2保存顺序变化，原21 owner修源；24direct/browser NOT_RUN |
+| 下一可用交付 | 私有binding在receipt/HTTP前保完整选择与原顺序，明确移除和旧held材料隔离；固定修复后再按原预算与fresh窗口验证 |
 | 当前阻塞 | ACTIVE: 2498定向行为与真实IDB/HTTP/browser待资源及中心三语义门槛；轻源码可继续，当前无测试窗口 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |

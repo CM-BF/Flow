@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:38 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:41 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | RELEASE03 fixed362实际两history红/清理完成/窗口归还，原raw封存；Recovery02d5原范围P2修源已固定待窄审，24direct/browser未跑；四棵released旧树只读候选交Lead |
-| 下一可用交付 | Lead提供immutable362+已审三行修复新HEAD/tree后，按剩余176.126秒及fresh条件先A再B；DPERF04候选不抢发布优先级 |
-| 当前阻塞 | ACTIVE: backend362两项真实history不兼容阻止发布，待原backend owner固定修复组合及复验；Recovery新增行为/真实IDB与浏览器仍待验证；轻源码正常，个人版本未切 |
+| 当前产出 | 旧362实际两history红已封存/清理完成；b298修复候选已源预审，dbaa精确guard待修；Recovery02d5 P1材料完整性/P2顺序源审交原owner，24direct/browser未跑 |
+| 下一可用交付 | 固定新backend最终tuple/依赖与精确harness闭包获审后，按余176.126秒fresh条件先A再B；Recovery原范围修材料完整性/顺序，不开启运行窗口 |
+| 当前阻塞 | ACTIVE: 新backend组合尚未实际兼容且harness闭包待审；Recovery02d5源审两项需修、真实IDB/App未验；无本组运行窗口，轻源码继续，个人版本未切 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |

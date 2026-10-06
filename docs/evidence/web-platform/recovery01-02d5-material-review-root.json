@@ -1,0 +1,81 @@
+{
+  "recordedAt": "2026-10-06T15:38:54.867577+00:00",
+  "reviewer": "root independent source review",
+  "target": "02d5a49aa2f17261d7dfcc9590f433c84b10defe",
+  "base": "724424237962ed8563db08f5ea8597ee6e7eb11d",
+  "decision": "CHANGES_REQUESTED_SOURCE_DRAFT_MATERIAL_INTEGRITY",
+  "sources": [
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24309,
+      "sha256": "bea71361733ce004bef8bd9a56064a3ad231da9e63e887a3b35b658b7bbcf3f5"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 21212,
+      "sha256": "60d15ca6b1d7bb77c3a45103a6fb26f56a228fd1f463ae8aaf51a34679389fb6"
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 24536,
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 34862,
+      "sha256": "647c3170d623fd196a03c304d4d956702172f26fadf5f268ac247d82b71add55"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 34726,
+      "sha256": "e9aa31f7cf4f51c8d3707e9128f2f41b3dcf5e6d8d38306455a06a4f63fe4de3"
+    },
+    {
+      "path": "plans/wpf-conversation-recovery/plan.md",
+      "bytes": 4194,
+      "sha256": "76b03f0b2f1434469d64e2bb60bb107954ccfc9e4324de5ef71cec84bd3366d6"
+    }
+  ],
+  "addressed": [
+    "Ready publish now triggers sync independently of stable bindComposer lifetime.",
+    "Private binding checks current lease/readability/capability, current immutable item, held submission, composer and inTransit IDs around sequential adds.",
+    "Actual browser candidate now requires official composer chip/name before materialDraft passes; exact first POST ref remains. SSE label reduced to handshake; Enter/Escape actual assertions added."
+  ],
+  "findings": [
+    {
+      "id": "RECOVERY02D-M1",
+      "priority": "P1",
+      "title": "Restored unverified or partially synchronized material can be omitted by Send/Queue",
+      "locations": [
+        "apps/web/src/conversations/ConversationThread.tsx:95-100,161-178",
+        "apps/web/src/plugin-integration/attachments.tsx:165-183",
+        "apps/web/src/attachments/controller.ts:196-208,259-270"
+      ],
+      "sourceTrigger": "Restore text+attachment metadata. Input.restore retains selected item as error/unverified; browser itself expects zero official composer attachments before Browse. Thread submit computes capture only when composer.attachments.length>0 and does not compare Input selected items; recovery/session/profile send reasons do not include draft-material completeness. The same source branch sends a partial subset if only some restored items have reached composer.",
+      "impact": "The source path allows an explicit Send/Queue to omit originally selected draft files without explicit removal. Full original refs requirement is not met; this is source inference, not a runtime reproduction.",
+      "required": "Before either command authority takes a receipt/HTTP, original private binding must validate complete current draft material selection and its composer handoff; unverified or missing items must preserve draft and cause zero new command HTTP with a clear reason. Exclude separately held/consumed/inTransit old material correctly so a legitimate next plain draft is not blocked by an old receipt. Explicit user removal must be the intentional path to a smaller selection.",
+      "validation": "Add real binding/Thread seam tests for restored unverified file+text, two files with only one ready, Send and Queue, no receipt/HTTP and draft intact; explicit removal then send, plus old held receipt/new independent draft."
+    },
+    {
+      "id": "RECOVERY02D-M2",
+      "priority": "P2",
+      "title": "Staged directory verification can reverse restored attachment order",
+      "locations": [
+        "plans/wpf-conversation-recovery/plan.md:7",
+        "apps/web/src/plugin-integration/attachments.tsx:168-182",
+        "apps/web/src/attachments/controller.ts:147-163,259-269"
+      ],
+      "sourceTrigger": "Restore Input order A,B. First authorized directory page contains only B: sync skips A(error) then appends B. A later directory page verifies A: sync appends A after existing B. Thread capture passes composer IDs B,A; Input.capture maps those IDs in supplied order. Current direct fixture returns both resources together, so it does not exercise this sequence.",
+      "impact": "Saved order is not preserved when verification is split across pages or searches; new command material ordering can differ from the restored draft. Not an observed runtime failure.",
+      "required": "Keep original selected ordering through partial verification and actual official composer handoff, with no automatic upload/content fetch, reselection or remount. Do not use reordered composer IDs to silently redefine a saved selection.",
+      "validation": "Restore A,B, confirm B then A through controlled real Input list pages, assert final original IDs/refs order and exactly once composer insertion; include explicit removal and held-material isolation."
+    }
+  ],
+  "limits": [
+    "No product imports, types, direct/browser/PG/HTTP, builds, dependency writes, personal services or resource sampling by root.",
+    "Installed core0.3.22 complete attachment branch was read-only checked to append/notify synchronously before Promise settlement; that supports duplicate-ID guard reasoning but does not prove actual React journey.",
+    "Two new controlled-composer tests/24 total and browser additions remain NOT_RUN. Historical4ba20/20 does not validate this target.",
+    "This is a fixed checkpoint source review, not full feature review or a new runtime admission; formal full feature review remains NOT_STARTED."
+  ],
+  "cleanCode": "Keep one private binding authority for draft membership/order and explicit failure; separate watcher lifetime from reactive sync; avoid another material registry or UI-only disabled state as correctness gate."
+}

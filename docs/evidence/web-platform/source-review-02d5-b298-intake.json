@@ -1,0 +1,153 @@
+{
+  "at": "2026-10-06T15:40:26.272754+00:00",
+  "state": "FIXED_SOURCE_REVIEW_INTAKE_NO_RUNTIME_ADMISSION",
+  "recovery": {
+    "target": "02d5a49aa2f17261d7dfcc9590f433c84b10defe",
+    "archive": {
+      "source": "/tmp/root-recovery-02d5-material-review.json",
+      "archive": "recovery01-02d5-material-review-root.json",
+      "bytes": 6039,
+      "sha256": "e515be96046b1aff2bc5c0c5e63e66d8127e13ce0d5368ff1b02c17de175459f"
+    },
+    "fixedChecks": [
+      {
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/attachments.tsx",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/attachments/controller.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/test/conversation-recovery.test.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/test/conversation-recovery.browser.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "plans/wpf-conversation-recovery/plan.md",
+        "fixedHashMatches": true
+      }
+    ],
+    "decision": "CHANGES_REQUESTED_SOURCE_DRAFT_MATERIAL_INTEGRITY",
+    "findings": [
+      {
+        "id": "RECOVERY02D-M1",
+        "priority": "P1",
+        "title": "Restored unverified or partially synchronized material can be omitted by Send/Queue"
+      },
+      {
+        "id": "RECOVERY02D-M2",
+        "priority": "P2",
+        "title": "Staged directory verification can reverse restored attachment order"
+      }
+    ],
+    "writer": "workspace_panels_owner original21/6ffv4",
+    "action": "Source-only validate complete current draft material membership and order before Turn/Queue receipt or HTTP. Preserve unverified/missing draft, explicit removal only; isolate held/consumed/inTransit old material from next draft. B-first/A-later verification must retain savedA,B order.",
+    "formalReview": "NOT_STARTED",
+    "preparedDirectCases": 24,
+    "newRuntime": 0,
+    "limits": "Source paths reviewed, not reproduced in runtime; old4ba20/20 does not validate02d5.",
+    "freshSourceAuthority": "recovery01-02d-source-claim.json:15:40:37.800Z6ffv4original21active/unique/nooverlap;control-plane read only,not productPG or runtime admission"
+  },
+  "release03": {
+    "harness": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+    "sourceReviewArchives": [
+      {
+        "source": "/tmp/release03-dbaa-backend-binding-review/report.md",
+        "archive": "release03-dbaa-backend-binding-review/report.md",
+        "bytes": 7643,
+        "sha256": "6c92dc64102a286b11cc6f6849e9d30dde3f4788330056adee8b7c64f02c667b"
+      },
+      {
+        "source": "/tmp/release03-dbaa-backend-binding-review/audit.json",
+        "archive": "release03-dbaa-backend-binding-review/audit.json",
+        "bytes": 7912,
+        "sha256": "16bf8e0793213ff0b7c4e615cedd37368178b1ea7803f7efce9458c9a197fe72"
+      }
+    ],
+    "fixedChecks": [
+      {
+        "path": "apps/web/test/web-current-preview.fixture.ts",
+        "commit": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/test/web-current-preview.browser.ts",
+        "commit": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/server/src/context-transparency/store.ts",
+        "commit": "b29807979a5589678a61d3fb84781950cf366396",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+        "commit": "b29807979a5589678a61d3fb84781950cf366396",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/server/src/index.ts",
+        "commit": "b29807979a5589678a61d3fb84781950cf366396",
+        "fixedHashMatches": true
+      }
+    ],
+    "finding": "P2 exact-one-source guard rejects legal fixedb298 two-source plus003792 eleven exact metadata closure; fix only original two harness files/records under original4scope. No broad docs/test/server exemption.",
+    "backendImplementation": "b29807979a5589678a61d3fb84781950cf366396",
+    "backendCandidateHead": "0037921d12c089e6334b001545f698db067087f8",
+    "backendCandidateTree": "1cf10d9434b0cf57d083c0e5e01b9bc8b72dc074",
+    "backendPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "metadataClosureHashMatches": 11,
+    "nativePrecheckArchive": {
+      "source": "/tmp/flow-svc05h01-source-precheck.json",
+      "archive": "release03-backend-b298-native-source-precheck.json",
+      "bytes": 7342,
+      "sha256": "bef82168b40dfd3e7217eaa419141576f5625d2f3a78c4bb6358170f7fb70290"
+    },
+    "nativeBindings": [
+      {
+        "path": "apps/server/src/context-transparency/store.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+        "fixedHashMatches": true
+      }
+    ],
+    "nativeDecision": "SOURCE_BINDING / NO_P1_P2; VALIDATION_PENDING; NOT PRODUCT_OR_DEPLOYMENT_APPROVAL",
+    "pending": [
+      "W01 exact guard delta and independent source review",
+      "Final backend metadata tuple and read-only dependency resolution receipt",
+      "Fresh actual window/resource gate, then newA and separately admittedB"
+    ],
+    "runtimeUsedMs": 3874,
+    "runtimeRemainingMs": 176126,
+    "oldNegativeRaw": "unchanged; B/Chrome NOT_RUN; no SVC green compatibility",
+    "notDeployment": "Candidate source tuple is not actual personal runtime tuple; current backend362/v15 and Web8d8/caa1/v2 unchanged per Lead inbound"
+  },
+  "registration": {
+    "source": "Lead in-progress notification via root",
+    "main": "9bdb (abbreviated inbound)",
+    "plannedDashboardSources": 164,
+    "state": "REGISTRATION_AND_4320_UPDATE_IN_PROGRESS_NOT_OBSERVED_COMPLETE",
+    "managerAPIOrPageSamples": 0
+  },
+  "voice": {
+    "alreadyArchivedAtCommit": "198b7299a83f15f28a7d7a31fd3bb295d8f699e5",
+    "record": "voice-official-adapter-go-research.json",
+    "mapping": [
+      "WPF-REQ-45",
+      "WPF-MATURE-06-05"
+    ],
+    "duplicateTaskOrClaim": false
+  },
+  "window": "No group runtime window or new space sampling",
+  "skills": "Reused local find-skills/codebase-design/clean-code: fixedsource provenance, actual currentdraft ownership/order, literal metadata closure, source vs runtime vs deployment separation"
+}

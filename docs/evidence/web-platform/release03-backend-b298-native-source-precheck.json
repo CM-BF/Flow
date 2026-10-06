@@ -1,0 +1,157 @@
+{
+  "kind": "SOURCE_BINDING_AND_COMBINATION_PRECHECK",
+  "conclusion": "SOURCE_BINDING / NO_P1_P2; VALIDATION_PENDING; NOT PRODUCT_OR_DEPLOYMENT_APPROVAL",
+  "reviewer": "native_center_owner / gpt-6-astra; independent of assignment_review",
+  "observedAt": "2026-10-06T15:37:12.386213+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+  "target": "b29807979a5589678a61d3fb84781950cf366396",
+  "exactSingleParent": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "reviewedBlobSource": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "observedHead": "0037921d12c089e6334b001545f698db067087f8",
+  "observedMain": "22d5ca67159b35bb794b2711cf6df0cb905b92e8",
+  "workingStatus": "",
+  "sourceBindings": [
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 11267,
+      "lines": 108,
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245",
+      "gitBlob": "9db16d2c3ea0d392d632ff19a7caf6bbe287fb47",
+      "matchesReviewedSource": true,
+      "matchesWorking": true,
+      "matchesObservedMain": true
+    },
+    {
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "bytes": 12618,
+      "lines": 162,
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b",
+      "gitBlob": "de497735064237b962e97c77bff64379496c09b9",
+      "matchesReviewedSource": true,
+      "matchesWorking": true,
+      "matchesObservedMain": true
+    }
+  ],
+  "allFixedChangedPaths": [
+    "apps/server/src/context-transparency/attachment-history.test.ts",
+    "apps/server/src/context-transparency/store.ts"
+  ],
+  "allOtherFixedPathsUnchangedFromBase": true,
+  "directInputs": [
+    {
+      "path": "apps/server/src/context-transparency/routes.ts",
+      "bytes": 996,
+      "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "apps/server/src/context-transparency/migration.ts",
+      "bytes": 781,
+      "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "bytes": 14160,
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8678,
+      "sha256": "4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 9634,
+      "sha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "bytes": 8294,
+      "sha256": "0d8638a7432a34e69b736b50f0307f2f2b7a75eca8dc2f1fa0522355e2def43c",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "apps/server/src/goal-context/store.ts",
+      "bytes": 11740,
+      "sha256": "a5ecb7925878db97613bf5812e5e02da8b89c46761c0e7b2e30ef19b4db2680c",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 44108,
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "baseAndWorkingMatch": true
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "baseAndWorkingMatch": true
+    }
+  ],
+  "findings": [],
+  "sourceFacts": [
+    "Full two-file diff and all production store/read/identity context inspected. Only three production lines branch on already-validated templateVersion2.",
+    "v2 retains executionInputDigest, exposes materialRevisionDigest:null and the already-supported unknown/metadata-unavailable materials variant. It does not claim the knowledge subset is the full attachment inventory.",
+    "v1 known-citation construction and material digest are unchanged. Existing stored samples/read validation are unchanged; no historical rows are rewritten.",
+    "The 362 base contextReference already validates and projects v2 attachment metadata; the old history union already supports unknown. No schema/client/mount/migration or dependency expansion is required.",
+    "reportEvents transaction, ownership/lease/replay checks, session/profile identity and owner history route remain exactly base. Detail text remains separate from the metadata response.",
+    "The exact 162-line source test covers attachment-only/mixed/v1 restart and event-batch rollback/replay, auth/no-store and no raw text leakage in history; it was read, not executed."
+  ],
+  "resourceAndCoverageLimits": [
+    "Candidate has no actual A/B, typecheck, test, PG, browser or provider evidence from this review. Historical green on another combination is not candidate validation.",
+    "Historical copied Vitest fixture has no embedded current statfs reserve or DB marker. It uses random DB name, existence/connection checks and bounded cleanup reporting. Any future execution requires the current external resource gate and controlled window; this precheck does not authorize running it.",
+    "The test uses synthetic session/observation events and completed outcomes; it does not demonstrate provider/model behavior or semantic task acceptance.",
+    "Actual static App compatibility tuple, backend dependency resolution, personal deployment, retained-artifact handling and pointer changes remain unverified/not approved.",
+    "Author metadata was still being prepared; only exact product blobs and listed base inputs are bound here."
+  ],
+  "checksByReviewer": {
+    "tests": 0,
+    "typechecks": 0,
+    "pg": 0,
+    "providerCalls": 0,
+    "browser": 0,
+    "projectWrites": 0
+  },
+  "skillsMethod": "Reused local find-skills/codebase-design/clean-code: narrow contract compatibility, one projection responsibility, unchanged state owners, truthful unknown and resource boundaries; no install."
+}
