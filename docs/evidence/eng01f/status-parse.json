@@ -21,13 +21,13 @@
   },
   "human": {
     "delivery": {
-      "state": "review",
+      "state": "integration",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 1,
-    "output": "已完成文件内容和检查结果关联的局部验证，等待独立审查",
-    "next": "经独立审查后交付可核对文件变更、竞态和租约失效的检查收据",
+    "output": "已完成文件内容和检查结果关联的局部验证，已通过独立审查",
+    "next": "集成可核对文件变更、竞态和租约失效的检查收据",
     "blocker": {
       "state": "none",
       "text": ""
@@ -55,8 +55,8 @@
   "owner": "native_center_owner / gpt-6-astra",
   "branch": "codex/engineering-calculator-receipt",
   "branchState": "in-progress",
-  "updatedAt": "2026-10-06T12:02:23.000Z",
-  "updatedRecord": "2026-10-06 12:02:23 UTC",
+  "updatedAt": "2026-10-06T12:04:04.000Z",
+  "updatedRecord": "2026-10-06 12:04:04 UTC",
   "todos": [
     {
       "id": "ENG01F-01",
@@ -80,7 +80,7 @@
       "id": "ENG01F-04",
       "state": "pending",
       "owner": "native_center_owner",
-      "evidence": "独审/main未完成"
+      "evidence": "独审APPROVED；main未完成"
     }
   ],
   "errors": [],
@@ -91,7 +91,7 @@
     "target": "1b3c9023020985f15486368301ccfece993a3ff3",
     "record": "PASSED 1b3c9023020985f15486368301ccfece993a3ff3；20 distinct，root types0；[固定证据](../../docs/evidence/eng01f/fixed-manifest.json)"
   },
-  "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+  "reviewRecord": "[review.md](review.md)，APPROVED 1b3c9023020985f15486368301ccfece993a3ff3",
   "mainRecord": "ENG01F未集成；base已含已审ENG01E",
   "next": "",
   "risks": "",

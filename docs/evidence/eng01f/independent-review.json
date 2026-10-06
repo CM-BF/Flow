@@ -1,0 +1,32 @@
+{
+  "reviewedAt": "2026-10-06T12:03:10.526895+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra ultra",
+  "target": "1b3c9023020985f15486368301ccfece993a3ff3",
+  "manifestSha256": "9af3363dad388b50646a85f124c3095e0cad0b56248dc9cc636ef717314b5aea",
+  "counts": {
+    "source": 4,
+    "protected": 37,
+    "evidence": 10
+  },
+  "mismatches": [],
+  "result": "APPROVED",
+  "findings": [],
+  "reviewedSourceFiles": 4,
+  "protectedSourceFilesUnchanged": 37,
+  "evidenceFiles": 10,
+  "originalChecks": {
+    "receipt": 9,
+    "captureSyntheticGitAndHttpHost": 11,
+    "totalDistinct": 20,
+    "rootTypecheckExit": 0
+  },
+  "reviewerTestsRun": 0,
+  "providerCalls": 0,
+  "scope": "Pure bounded host snapshot evidence and receipt codec only",
+  "limits": [
+    "writerSettlement remains not-attested; two equal snapshots are not a stop proof",
+    "No center receipt admission, old-v1 artifact/completed, or native execution claim",
+    "Same-UID synthetic project trust and existing bounded Git subprocess lifecycle remain explicit"
+  ],
+  "finishedAt": "2026-10-06T12:03:35.399367+00:00"
+}
