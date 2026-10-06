@@ -11,7 +11,7 @@ cd /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links
 PATH=/opt/homebrew/opt/node@24/bin:$PATH node apps/execution-dashboard/test/task-links.browser.mjs --preview
 ```
 
-[Interface](interface.md)、[Validation](validation.md)、[Quality](quality.md)、[checks](checks.json)、[browser](browser-results.json)。浅深截图：[desktop light](home-desktop-light.png)、[desktop dark](home-desktop-dark.png)、[390 light](home-narrow-light.png)、[390 dark](home-narrow-dark.png)、[detail](detail-narrow-dark.png)。
+[Interface](interface.md)、[Validation](validation.md)、[Quality](quality.md)、[checks](checks.json)、[browser](browser-results.json)。浅深截图：[desktop light](home-desktop-light.png)、[desktop dark](home-desktop-dark.png)、[390 light 已核采样](verified-narrow-light.png)、[390 dark 已核采样](verified-narrow-dark.png)、[detail](detail-narrow-dark.png)。
 
 使用Enter打开卡片父任务；详情里父任务按钮替换同一对话框并聚焦新标题；Escape回原触发按钮。原文以details/summary可达，不生成链接。当前原D01没有层级声明，这种真实资料不会由D08反向改写；更正必须由其合法owner处理。
 

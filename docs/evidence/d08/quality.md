@@ -16,3 +16,5 @@
 实际检查：45直接检查覆盖14新关系行为与既有31消费者检查；5组独立临时Git/HTTP浏览器，键盘/同modal父跳转回焦点、转义、未知/陈旧、双主题390，无pageerror。首轮直接测试仅一处作者预期错误：原资料端点拒绝路径为404而不是测试写的403，产品接口不改，first-direct.log保留。首browser启动因未下载Playwright bundled Chromium失败，改用机器已有Chrome，未安装浏览器；browser-launch-failure.log保留。浏览器第二次只调整全页截图的固定头重复采样为视口截图，并补launch失败清理；未改变产品。首浏览器报告保留来源，但截图以最终报告为准。
 
 真实来源仅只读五个登记源：MATURE02/04 owner已经修显式大task，未硬编码；D01旧记录无层级保持unknown。该抽查不等于4320部署。根manifest/lock、registry/server/documents、他人status未修改。无真实模型、产品DB或旧服务操作。
+
+2026-10-06 09:26 UTC review证据纠正：此前只把fullPage切成viewport仍不足，owner/Root图像均见底部旧页头。实际DOM1/rect静态，resize即时capture复现、两animation frame后消失；补每theme独立390context稳定截图与JSON，保留旧图/原来源并明确早期视觉结论过早。无产品或已冻测试源码修改，不重跑无关45；后续截图流程应在resize/theme后等布局绘制稳定。

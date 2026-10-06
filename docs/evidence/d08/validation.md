@@ -11,3 +11,11 @@
 保留失败：[first-direct.log](first-direct.log)是作者写错既有404预期，不是产品权限失效；[browser-launch-failure.log](browser-launch-failure.log)是bundled Chromium不存在，改用已有Chrome，无新增安装。[first-browser-results.json](first-browser-results.json)第一次5组通过来源保留，随后runner只改截图为viewport并补launch失败清理；最终截图对应第二次报告，不冒称首报告旧图仍保留。
 
 未验证：新版4320部署、真实源全部关系完整性、真实领取DB读写、模型/产品DB。图/里程碑/父子进度不改。独立review由root执行，本owner自测不能代替批准。
+
+## 独立review期间截图更正（2026-10-06 09:26 UTC）
+
+Root发现原home-narrow-light图y≈758重复页头。本owner实际检查[header-probe.json](header-probe.json)：header DOM数量1，rect=(0,0,390,65)，position=static，viewport390×844/scrollY0；底部elementFromPoint是focus-layout而非页头。该问题不是重复DOM或新关系UI插入页头。
+
+有界复现：同Chrome context从1280×720改390×844、切theme后立即截图，仍可得到[resize原图](header-probe-resize.png)的旧页头像素；等待两次requestAnimationFrame后[settled图](header-probe-resize-settled.png)正确，未改任何产品/测试源码。最终每主题新建390×844 context并等待两帧，得到[真实浅色viewport](verified-narrow-light.png)、[真实深色viewport](verified-narrow-dark.png)，[capture记录](verified-narrow-capture.json)含时间/DOM/尺寸/hash。归因限定为本机Chrome screenshot在resize/theme后的采样呈现尚未稳定，不推成一般浏览器缺陷。原5组行为与无溢出断言仍保留，但原窄屏图不作为已纠正视觉证据；先前“viewport即可纠正”的判断过早，现以这组稳定采样为准。未重跑45直接测试、未改fixed eca产品来源。
+
+全base→交付metadata diffcheck的原始日志例外：first-direct.log第29、31行断言输出空格；保留原log，不称全范围无空白。七实现路径diffcheck为0。
