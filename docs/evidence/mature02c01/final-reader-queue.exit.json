@@ -1,0 +1,19 @@
+{
+  "startedAt": "2026-10-06T16:46:50.424311+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "packages/client/src/execution-profiles.test.ts",
+    "packages/client/src/conversation-queue.test.ts",
+    "--maxWorkers=1"
+  ],
+  "freeBytesBefore": 1230639104,
+  "exitCode": 0,
+  "timeout": false,
+  "durationSeconds": 0.8542231250321493,
+  "stdout": "final-reader-queue.stdout.txt",
+  "stdoutSha256": "184d74c0cdc832a46a542dc00c082c37c176c75334c5b1e98e6f61038aa742e1",
+  "sourceCommit": "8bf472e3265f0995db2c5503876859cc511a4dca",
+  "note": "Only two changed tests revalidated after adding two direct boundary cases; focused types only, no PG/provider."
+}

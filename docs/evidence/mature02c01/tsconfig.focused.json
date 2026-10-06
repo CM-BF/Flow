@@ -1,0 +1,17 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false
+  },
+  "include": [
+    "../../../packages/client/src/execution-profiles.test.ts",
+    "../../../packages/client/src/conversation-acknowledgement.test.ts",
+    "../../../packages/client/src/conversation-queue.test.ts",
+    "../../../apps/cli/src/cli.test.ts",
+    "../../../apps/cli/src/goal-progression.test.ts",
+    "../../../apps/cli/src/json-input.test.ts",
+    "../../../apps/cli/src/main.ts"
+  ],
+  "exclude": []
+}

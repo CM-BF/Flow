@@ -1,0 +1,23 @@
+{
+  "startedAt": "2026-10-06T16:49:48.596372+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/mature02c01/tsconfig.focused.json",
+    "--pretty",
+    "false"
+  ],
+  "freeBytesBefore": 1219215360,
+  "exitCode": 0,
+  "timeout": false,
+  "durationSeconds": 1.1621939589967951,
+  "stdout": "focused-types-preview-fix.stdout.txt",
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "sourceBeforeCommit": "8bf472e3265f0995db2c5503876859cc511a4dca",
+  "sourceHashes": {
+    "packages/client/src/conversation-acknowledgement.ts": "fac3bbd4bc09a7527011059f27d6f8580981d59d57f0a52bcecb4fb4ea895c31",
+    "packages/client/src/conversation-queue.test.ts": "97ee6565dde24d037be38640b2b5c8b2a1fad06e5617e671233c4e9b92521e34"
+  },
+  "note": "Only two new preview-boundary regressions; 6 existing queue tests deliberately not selected. Types are focused, not root."
+}

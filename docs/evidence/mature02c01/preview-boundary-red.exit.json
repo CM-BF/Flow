@@ -1,0 +1,21 @@
+{
+  "startedAt": "2026-10-06T16:49:33.641264+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "packages/client/src/conversation-queue.test.ts",
+    "-t",
+    "shorter valid prefix|longest complete code-point",
+    "--maxWorkers=1"
+  ],
+  "freeBytesBefore": 1220153344,
+  "exitCode": 1,
+  "timeout": false,
+  "durationSeconds": 0.709686917020008,
+  "stdout": "preview-boundary-red.stdout.txt",
+  "stdoutSha256": "20e25d09b0f193c5f3dcdc9b6a4baae8c6f9b38a03844796d951d1e9df693c75",
+  "sourceCommitBeforeFix": "8bf472e3265f0995db2c5503876859cc511a4dca",
+  "testSha256": "97ee6565dde24d037be38640b2b5c8b2a1fad06e5617e671233c4e9b92521e34",
+  "note": "Lead source finding: shortest-prefix and split surrogate receipt must be unknown; exact complete-code-point boundary must pass."
+}
