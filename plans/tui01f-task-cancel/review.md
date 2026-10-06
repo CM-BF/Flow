@@ -1,3 +1,13 @@
+# 当前 TUI01F-04 terminal观察增量
+
+状态：NOT_STARTED；独立审查待Execution Lead。原full journey1/0保持失败。
+
+Review target commit: c6120945c82f3b89266ea4f21f774c310e924409
+
+[两源增量与固定证据](../../docs/evidence/tui01f/web-handoff/terminal-observation-manifest.json)；作者实际PTY初屏/退出1/1、两受控失败2/2、focused types0，仅该窄范围。不可继承下列历史准备批准，不证明原失败root cause或完整双界面通过。
+
+以下为历史固定审查记录；其NOT_RUN描述限记录时点，当前实际结果以status与one-shot raw为准。
+
 # 当前 TUI01F-04 实现
 
 状态：APPROVED_PREPARATION_DELTA。capture/import独立增量已核，无P1/P2；实际旅程NOT_RUN。

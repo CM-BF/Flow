@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:02:10 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:09:27 UTC |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
-| 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5；04开始前7c5a739258106a2cf9387ebf3a5e54268c122136 / source d147a636f9cb54a8c87a89a89963d13e937cee9c |
+| 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5；04原准备d147 / 当前观察修复source c6120945c82f3b89266ea4f21f774c310e924409 |
 | 工作树dirty状态 | 四源/capture保持冻结；本次仅实际raw/状态，提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 检查状态 | Actual F04 1 selected/0 passed/exit1；最早终端请求未捕获，独立cleanup exit0/正常清理；原4纯+2capture/两focused types仅准备历史 |
 | 已集成main状态 / HEAD | 352246b850e960e1969711e303765a024ff9fc29；04四源准备已精确接收；实际旅程已运行但失败；03历史main8d84保持 |
-| 实现目标 | d147a636f9cb54a8c87a89a89963d13e937cee9c |
-| 实现范围 | apps/tui/src/task-controls/fixture.ts, experiments/tui-web-control-handoff/journey.ts, experiments/tui-web-control-handoff/preview.ts, experiments/tui-web-control-handoff/terminal.py |
+| 实现目标 | c6120945c82f3b89266ea4f21f774c310e924409 |
+| 实现范围 | experiments/tui-web-control-handoff/journey.ts, experiments/tui-web-control-handoff/terminal.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 网页已连接到合成会话，但终端发送尚未到达中心，完整接续验收未通过。 |
-| 下一可用交付 | 定位终端启动与失败证据缺口，先收敛定向修复及小范围验证。 |
+| 当前产出 | 终端初屏与正常退出已单独验证；启动和收尾失败现可保留诊断，完整双界面接续仍待验证。 |
+| 下一可用交付 | 独立审查观察修复与定向证据后，再决定双界面验收窗口。 |
 | 当前阻塞 | 真实双界面验证未通过；最早终端请求未捕获，原因待定向诊断。本次自有资源已清理。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，d147准备APPROVED；076aa544 capture/import增量APPROVED；完整04实际旅程FAILED；准备批准不扩展 |
+| Review | [review.md](review.md)，当前terminal观察delta待独审；原准备批准与实际失败保留。 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v4 active；20:06:00.587Z accept；本次授权仅3实验源/fixture/自有记录 |
 | 架构影响 | 仅测试fixture新增显式factory/recipe与受管观察端口，组合固定真实Web/PTY；生产controller/权限/调度不变，固定架构输入由Execution Lead按实际验收接收。 |
 
@@ -83,3 +83,5 @@
 2026-10-06 21:02:10 UTC：独立授权cleanup-only退出0/587ms，精确marker/0任务/零连接/3组absent/目录dev-ino确认后，先checkpoint再正常DROP及仅该私有目录移除。原actual red与KEEP当时事实不改；[收尾记录](../../docs/evidence/tui01f/web-handoff/cleanup-once-summary.md)明确纯wrapper遗留PG标签更正，实际有PG清理。窗口已归还，未复跑原旅程，当前仅源码诊断。
 
 2026-10-06 21:07:19 UTC：Lead批准仅journey/terminal观察修复：启动progress、失败/退出与held竞争、有限脱敏stderr、停止并收束pipe后第二durable报告。原controller/Ink/fixture与red/cleanup不改。仅一次PTY初屏/ICANON/退出及小故障检查获准，0中心/PG/Chrome/provider，完整旅程未获重跑。
+
+2026-10-06 21:09:27 UTC：窄观察修复固定c6120945c82f3b89266ea4f21f774c310e924409；实际PTY初屏/ICANON/退出1/1，spawn失败/晚failure2/2，focused types0。0中心/PG/Chrome/provider；3组均stopped/私有目录已checkpoint后正常清理。[固定增量](../../docs/evidence/tui01f/web-handoff/terminal-observation-manifest.json)与[范围/原raw](../../docs/evidence/tui01f/web-handoff/terminal-observation-validation.md)。仅当前delta待独审，原actual F04失败原因未被追认，未重跑。
