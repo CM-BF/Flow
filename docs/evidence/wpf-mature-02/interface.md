@@ -4,7 +4,9 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- **S01供给可立即办理：请Lead soleGit按唯一固定请求物化。** [source-supply-request.json](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/source-supply-request.json) / [README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/README.md)，供给请求固定clean/pushed `73157915758b934cce5131045317c892288ddc7a`；WT runner-capacity-probe、claim508f v2 ACTIVE五scope。仅将JSON中固定8d84的57TS+4metadata/284628B按相对路径放入同目录source-snapshot，保留现scope/dirty，不覆盖旧产品src；owner未自行物化。Lead报告原Flow已恢复main ec5 clean，供给无需等PG；sole操作前协调owner当前HEAD/短停点。实际测量仍NOT_OPEN。
+- **下一原生诊断仅准备指定系统配置接缝。** [最小system-config接口](native-system-config/interface.md)：GO/root已确认上一156B为读取公开system requirements文件时EPERM；原180924/f0b6结果不追改。固定0.154仅NotFound忽略，候选只增加六文件exact读/metadata及四目录metadata，fresh缺失gate遇真实配置/未知即停；未忽略管理规则，无真实窗口OPEN。
+
+- **S01只读镜像已供给，准备包进入审查。** [唯一preparation-ready](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/preparation-ready.md)，owner报告fixed38066603c6b9058fb9d7ef51c3a57956d80c8310 clean/pushed，61项284628B已逐hash；无需重复物化，实际测量仍NOT_OPEN，唯一status由原owner维护。
 
 - **原生目录单项许可窗口已消费，仍在握手前退出。** [本次固定失败结果](native-catalog-pagesize-compat/run-report.md)：1native exit1、ready=false/model-list 0；process/root/stdio收束，156B私有诊断KEEP，明确os error1，具体操作/原因unknown。[结果忠实性已双审接收](native-catalog-pagesize-compat/result-review.json)，功能仍失败；无重试或模型资格。
 
