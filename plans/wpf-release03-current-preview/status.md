@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 15:34:33 UTC |
+| 最近更新时间 | 2026-10-06 15:47:11 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / dbaa88fa7a5adf1da077be7739842b6e42664c26（后继源码固定） |
-| 工作树dirty状态 | 负兼容676f双端clean已核；新源码dbaa已提交，本段仅计划/证据待提交，最终clean另核 |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098（后继源码固定） |
+| 工作树dirty状态 | 负兼容676f与后继d837双端clean已核；新源码1a7c已提交，本段仅计划/证据待提交，最终clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | NOT_RUN dbaa88fa7a5adf1da077be7739842b6e42664c26（新后端重绑）；旧432b实际A两项FAILED，B未运行 |
+| 检查状态 | NOT_RUN 1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098（新后端及B-only源码）；旧432b实际A两项FAILED，B未运行 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；新后端重绑待独审；旧A失败/新组合未运行 |
-| 实现目标 | dbaa88fa7a5adf1da077be7739842b6e42664c26 |
+| 实现目标 | 1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098 |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 附件历史问题已定位，修复版本的验证入口已准备 |
+| 当前产出 | 修复版本与分阶段前端验证入口已准备，等待检查 |
 | 下一可用交付 | 后台最小修复后继续未完成的真实前端验证 |
 | 当前阻塞 | ACTIVE: 原后台附件历史检查失败；等待固定修复版本、来源审查和新的运行准入 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，新重绑源码及完整兼容审查NOT_STARTED；旧432b源码条件APPROVED |
+| Review | [review.md](review.md)，新B-only/后端闭包源码及完整兼容审查NOT_STARTED；旧432b源码条件APPROVED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -71,4 +71,8 @@ root已只读独立核10份raw共80,470B，见[原样结果审计](../../docs/ev
 
 ## 2026-10-06 15:34:33 UTC 后继后端输入安全点
 
-原362负兼容记录676f已normalpush/local=remote/clean。只在两脚本增加显式准入的后端realpath/HEAD/tree及真实factory加载，固定dbaa88fa7a5adf1da077be7739842b6e42664c26；[接口](../../docs/evidence/wpf-release03/backend-input-interface.md)、[静态审计](../../docs/evidence/wpf-release03/backend-rebind-static-audit.json)。原断言/资源/累计计数不改；新目标未types/业务运行/PG/Chrome，实际候选由Lead受控交接。当前history/all并无独立B-only入口，不把all重跑A冒称只跑B。
+原362负兼容记录676f已normalpush/local=remote/clean。只在两脚本增加显式准入的后端realpath/HEAD/tree及真实factory加载，固定dbaa88fa7a5adf1da077be7739842b6e42664c26；[接口](../../docs/evidence/wpf-release03/backend-input-interface.md)、[静态审计](../../docs/evidence/wpf-release03/backend-rebind-static-audit.json)。原断言/资源/累计计数不改；新目标未types/业务运行/PG/Chrome，实际候选由Lead受控交接。该历史checkpoint的history/all并无独立B-only入口，不把all重跑A冒称只跑B。
+
+## 2026-10-06 15:47:11 UTC B-only与最终输入待审
+
+固定1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098：metadata闭包改为root外部af51精确列表；新增app模式消费独立审查钉住的成功A十份raw，共用历史事实断言与独立contracthash。不会重复A、不会信passed布尔自动开Chrome。[当前接口](../../docs/evidence/wpf-release03/backend-input-interface.md)、[静态审计](../../docs/evidence/wpf-release03/app-attestation-source-audit.json)。新源码0types/运行，旧3874ms/80470B不变；等待fixed独审及freshgate。前段“无B-only”描述仅dbaa历史，已被本源码候选替代，尚无运行证明。

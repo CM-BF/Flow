@@ -30,3 +30,7 @@
 ## 2026-10-06 15:34:33 UTC 受控后端重绑
 
 原四scope足够增显式backend tuple与真实工厂加载；候选后端由Lead独立source-onlyprovision，不由本worker复制/merge。当前dbaa88fa7a5adf1da077be7739842b6e42664c26待源码独审/实际输入与freshgate；[精确接口](../../docs/evidence/wpf-release03/backend-input-interface.md)。保留旧负兼容10raw/3,874ms，剩余176,126ms，不自行重跑旧362。
+
+## 2026-10-06 15:47:11 UTC 条件链实现
+
+原四scope内fixed 1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098实现history→独立app gate，不将已通过A无理由重跑。historyregion与整个harnessHEAD分开；raw/digest、实际factorytuple、清理/累计预算共同门禁。完整接口与未运行边界见当前backend-input-interface，实际runtime等待源码审查后管理freshgate。

@@ -31,3 +31,7 @@
 ## 2026-10-06 15:34:33 UTC 后端输入clean-code
 
 复用已读本地find-skills/codebase-design/clean-code。输入仅path/head/tree；校验函数统一用于supervisor/worker，报告与真正factory路径共享同一来源。不新造发布框架、不动态搜服务；原断言、累计计数和原始失败不变。源码diffcheck0及Python字节/固定断言比较通过（非产品测试）；类型/业务运行未重做。normal git add遇sparse索引拒绝后使用仅已领两文件的git add --sparse；未改sparse配置/扩checkout。待独审关注真实candidate依赖和A/B独立准入。
+
+## 2026-10-06 15:47:11 UTC 分阶段证据clean-code
+
+复用find-skills/clean-code/codebase-design：原两脚本职责不变，sharedassertHistoryFacts唯一维护live/reuse历史事实，boundedFile复用O_NOFOLLOW/有界读取，backendclosure由外部可信准入提供而非候选自授。改正接口sourceCommit=实际A执行HEAD、cleanup无marker字段；不以false的全链passed否决合法A-only，也不以true布尔替事实。原十rawhash未改、累计不清零。仅Gitdiffcheck/Python固定源与marker/raw/保护范围检查；没有import/types/PG/browser/空间采样。新候选仍NOT_STARTED。

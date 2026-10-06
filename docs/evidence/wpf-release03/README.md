@@ -1,12 +1,12 @@
 # RELEASE03 固定组合验证（旧A失败；新后端重绑待审）
 
-当前后继重绑target `dbaa88fa7a5adf1da077be7739842b6e42664c26` 已固定，未运行；[backend输入接口](backend-input-interface.md)。旧362结果仍绑定432b，未回填新后端。
+当前后继重绑target `1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098` 已固定，未运行；[backend输入接口](backend-input-interface.md)。旧362结果仍绑定432b，未回填新后端。
 
-当前固定432b已完成唯一一次 A-only 真实HTTP检查：attachment-only与mixed两项均失败，复现固定362的附件历史缺口；专库/worker清理成功。累计3,874/180,000ms，B/Chrome NOT_RUN，0provider，无SVC全绿报告或发布操作。见[本次结果及原样hash](history-result-152729.json)。原strict noEmit成功与源码条件批准保持其历史范围，不等业务兼容通过。
+历史固定432b已完成唯一一次 A-only 真实HTTP检查：attachment-only与mixed两项均失败，复现固定362的附件历史缺口；专库/worker清理成功。累计3,874/180,000ms，B/Chrome NOT_RUN，0provider，无SVC全绿报告或发布操作。见[本次结果及原样hash](history-result-152729.json)。原strict noEmit成功与源码条件批准保持其历史范围，不等业务兼容通过。
 
-## 固定输入
+## 初始432b输入与后继
 
-后台/公开 client/contracts 使用本树 `362af3bac77541e5a60979326bcf4d4b8c947915`，不借其他树的工作区包。正式前端 descriptor、sourceHead506、获审来源9eec 与 releaseId 见 [artifact-input](artifact-input.json)。既有 84005 工具和362源码逐字一致，来源见 [fixed-input-sources](fixed-input-sources.json)；本片只调用 verify/import，不 prepare/build，不写 release pointer。
+旧A的后台/公开 client/contracts 使用本树 `362af3bac77541e5a60979326bcf4d4b8c947915`，不借其他树的工作区包。正式前端 descriptor、sourceHead506、获审来源9eec 与 releaseId 见 [artifact-input](artifact-input.json)。既有 84005 工具和362源码逐字一致，来源见 [fixed-input-sources](fixed-input-sources.json)；本片只调用 verify/import，不 prepare/build，不写 release pointer。后继新source从外部已登记af51路径实际加载factory，本树client/contracts仍362；其精确闭包/实际HEAD与历史输入分开，见当前backend输入接口。
 
 ## 两脚本职责
 
@@ -37,3 +37,5 @@
 ## 15:27 唯一A运行与失败隔离
 
 [管理fresh准入](history-admission-152729.json)、[本人live claim](history-owner-live-1527.json)、[完整结果索引](history-result-152729.json)。两项均按真实factory/client/HTTP执行，并各自保留上下文与wire，不因第一项失败跳过第二项。attachment-only的事件HTTP500；mixed的事件HTTP200但历史只标记知识sources，不能代表完整v2材料。A失败按固定入口停止，B/原key App retry/Queue均NOT_RUN，不能给正式前端与362整组背书。原raw不改，不追加自动重跑。
+
+当前候选新增app-only，不重复同输入已绿A；必须独立raw审查/freshgate，参见当前接口。原dbaa无B-only与003792闭包均为历史，不是当前准入示例。

@@ -2,7 +2,7 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：dbaa88fa7a5adf1da077be7739842b6e42664c26
+Review target commit：1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098
 
 Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
@@ -33,3 +33,7 @@ Base：362af3bac77541e5a60979326bcf4d4b8c947915
 ## 2026-10-06 15:34:33 UTC 后继重绑待审
 
 当前target=dbaa88fa7a5adf1da077be7739842b6e42664c26，两脚本修改；仅静态hash/差异/断言不变审计，未重复类型或运行。旧432b源码批准与362实际兼容FAILED保留，不能扩为新tuple批准。新输入必须freshgate绝对realpath/HEAD/tree、仅已审store修复、实际factory从候选加载；计数不归零。[接口](../../docs/evidence/wpf-release03/backend-input-interface.md)。
+
+## 2026-10-06 15:47:11 UTC 新源码待独审
+
+当前target=1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098：B-only原始证据准入、共享history事实断言、contractregion与外部13metadata闭包。纯SOURCE审查待开始，types/PG/Chrome均NOT_RUN；原dbaa批注只说明旧guard不接实际backend，不冒本轮已审。最新实际input见root原样af51审计；旧362业务FAIL独立保留。
