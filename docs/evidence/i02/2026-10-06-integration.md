@@ -151,3 +151,7 @@ full-plan-matrix已按main115b对齐REQ01/08/10/11/15/19/21/22及滚动队列，
 CHAT06领域5ff（Root独审）、d9消费者（C02独审）、C02兼容77与test-only5f、F01薄client88（Root）、生产da7及组合694（assignment_review）、Web能力reader8c和活动cursor889（Web Lead独审）成套接收。stream-source-comparison.json逐个实际文件存在并对其精确审批target字节比对全部相等。唯一冲突是shared conversations注释旧短句对88已审协议定义，完整选择88文件，不产生新语义。
 组合只跑两实际Web consumer121/121（77+44）、root/Web types0；F01真实factory2/2、C02实际mounted组合8/8保存证据复用，不重复原72领域/模型。022在scheduler/worker/scan前迁移；GET需patch-v1且实际schema/routes可读才广告true；旧未协商与创建幂等ACK均false。过滤legacystream引用但保留durablelog/rawcursor，已挂载旧Task/Workspace接受空页进展，新增ACTIVITYreader889也已兼容。
 本片交付持久增量协议/adapter接线，网页真正逐段正文模块与App接入仍后继，不能称provider首token/live UI已验收。实际SDK仅注入；64KiB活动截断/1MiB正文限制/未flush尾段与累计prefix重hash风险保留。个人center/runner仍fb906，未重启，现服务不会因main自动获得022。下一真实入口更新复用SVC02单runner安全流程，独立核activeattempt，不由这次merge默许模型调用。
+
+
+## 2026-10-06 07:17 UTC reviewed experiment and coordination batch
+S01 first-window delivery2784473 includes independently approved preparation9da and W1 result9e. All15 source files match the approved delivery, both retained raw result hashes/bytes match W1 manifest. Fixed fixture facts only: gate8tasks/2attempts and formal16tasks/16attempts/four runner processes/128empty Flow conversations; not provider capacity or SLO, original failed smoke retained. No experiment rerun, runtime change or new query. Registry84 validates unique IDs and canonical three files for WPF-CHAT06S01. X05/E01/SVC02 final main/ownership metadata received without product changes. Existing reviewed CHAT06 remains mainfa9; personal runtime stillfb906.
