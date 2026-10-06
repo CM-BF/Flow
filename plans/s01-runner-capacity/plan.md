@@ -95,6 +95,7 @@ owner status_read / gpt-6-astra，co-lead mika，所属 FLOW-001、M2。完整�
 
 GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika开门禁；一个8×16 case，最多128独立task/attempt与持久fixture session，180秒含启动/证据/cleanup，256MiB；无warmup/预演/补数/SDK/provider。固定设计见[Interface](../../docs/evidence/s01/mixed-128-preparation/interface.md)。
 
-- [ ] 固定main1c496835输入、profile与128身份/持续行为/预算/资源验收，独立review准备代码与纯checks。
+- [x] 固定main1c496835输入、profile与128身份/持续行为/预算/资源验收；41纯checks/strict0，source6de928d。
+- [ ] 独立review固定准备实现；未审前实际窗口NOT_OPEN。
 - [ ] Mika点名fixedHEAD后仅一次实际window，失败如实停止，0额外capacity调用。
 - [ ] 全量session/attempt/event ACK/fence/unknown与资源证据封存独审；REQ-18真实模型/完整故障/部署边界继续开放。

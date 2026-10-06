@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:08:19 UTC；新准备base main1c496835，当前0新窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:28:43 UTC；固定base main1c496835，当前0新窗口 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | 新实现51541b0cad73dcad32c7374dc87d631f0b9a8432；实际执行5ea1b26f23fd7f24d1b89199a10b553dcab7fc18；新结果339147cb015fdd40ed1cedbc66aca26e736b3ee7；原634/121/6a596历史保留 |
-| 工作树dirty状态 | 开始07c8a0b clean；当前仅128准备合同和owner metadata；旧raw/manifest冻结 |
+| 工作基线 / HEAD | main 1c4968354dabce1e6748f3301a2e6eecd33e77d4；受控integration 07c8a0b；实现 6de928d8092ba8c22ac2222ac7c16af3660be48a；metadata HEAD见Git现场 |
+| 工作树dirty状态 | 实现/source/raw已固定；本次仅manifest/owner metadata收口，提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 新唯一窗口PASS且独审APPROVED：32实际attempt、1027事件ACK、5journal清空；保留1次原因unknown heartbeat错误；19.272秒/计量完整 |
+| 检查状态 | PASSED：最终41 distinct纯checks（旧直接24+新17）/局部strict exit0；真实128窗口NOT_OPEN |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
-| 实现目标 | 339147cb015fdd40ed1cedbc66aca26e736b3ee7 |
+| 实现目标 | 6de928d8092ba8c22ac2222ac7c16af3660be48a |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 128持久fixture会话与实际执行窗口正在固定拓扑、计量和清理合同；旧通过/失败结果完整保留 |
-| 下一可用交付 | 固定一个8×16实验profile及可复核输入，独审后由Mika开放唯一运行窗口 |
+| 当前产出 | 128固定8×16 profile、身份/持续行为/采样/预算/资源证明实现已固定，41纯检查与strict原证据已封存 |
+| 下一可用交付 | Mika固定target独审；通过后另点名clean execution HEAD与唯一窗口，当前不运行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | 新PASS结果339147cb015fdd40ed1cedbc66aca26e736b3ee7于2026-10-06 10:53:39 UTC经Mika/gpt-6-astra独审APPROVED，0P1/P2；仅本固定负载 |
+| Review | NOT_STARTED：本次128准备实现待固定commit独立审查；设计已于2026-10-06 12:11:31 UTC批准；历史32窗口批准不覆盖本片 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -161,3 +161,11 @@ Mika在准备独审后批准唯一window `mika-s01-mixed-20261006-100634`，执�
 GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅设计/实现准备，实际调用0；须独立固定source/profile/budget/cleanup review和Mika具体运行门禁。fresh writer8e4660a6-625f-4ada-8558-20c19b9e23e0 v3 ACTIVE，三scope不变；integration bb7d2d35 v1 take后无冲突合main1c496835至07c8a0b，旧三scope零diff，并已v2 release。详见[Interface](../../docs/evidence/s01/mixed-128-preparation/interface.md)与[领取观察](../../docs/evidence/s01/mixed-128-preparation/owner-observation.json)。
 
 本地find-skills/brainstorming/clean-code/codebase-design应用于固定profile复用和资源责任，路径/hash见skills.json；不安装、0工程测试/PG负载/provider。一个runner child内8 runtime×16，独立OS进程数另报；128真实fixture session须逐项持久绑定，不代表nativeSDK/model或conversation对象。旧172 Git文件已冻结，旧unknown journal未操作；架构影响仅实验私有输入/观测，无产品API/池/锁/调度改变。后续检查证据等待固定实现，当前无新通过声明。
+
+## 2026-10-06 12:28:43 UTC 128准备固定交审
+
+实现 `6de928d8092ba8c22ac2222ac7c16af3660be48a`，生产输入固定main `1c4968354dabce1e6748f3301a2e6eecd33e77d4`（含P04与B01），当前claim8e4660a6 v3 ACTIVE、三scope未变；[manifest](../../docs/evidence/s01/mixed-128-preparation/manifest.json) SHA `30264126da6460d25fda946944062efa78779f3ac164f3aa064020fe66181f35`。绑定26source/27readonly/42raw/10support，readonly逐字=base，另6runtime与172历史Git绑定核符；旧raw/support/manifest及保留journal不变。
+
+最终9文件41/41不同纯checks（原直接24+新17）及局部strict0，初始4red/类型失败和40项中间记录保留，不重复累计；[raw](../../docs/evidence/s01/mixed-128-preparation/review-candidate.stdout)与[类型回执](../../docs/evidence/s01/mixed-128-preparation/review-types-receipt.json)。保守样本跨度用末query开始减首query结束，慢查询包络反例已测。工程检查只有fake与readonly Git，无真实PG/HTTP/center/runner/SDK/provider容量调用。
+
+新window仍NOT_OPEN；预算180秒含最终CLI/256MiB/128task与attempt硬上限不变。实际运行时外层time独立记录spawn/import到exit，超180即FAIL；不把driver内部elapsed冒充完整外层时长。源码/raw冻结等待Mika独审，不追main、不重测；dashboard只更新此唯一status，等待既有聚合。未完成原ACK/browser/真实provider/完整unknown恢复验收。

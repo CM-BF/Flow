@@ -1,5 +1,16 @@
 # S01 独立审查
 
+状态：NOT_STARTED
+Review target commit：6de928d8092ba8c22ac2222ac7c16af3660be48a
+
+当前对象：128准备实现，仅实验代码；生产base `1c4968354dabce1e6748f3301a2e6eecd33e77d4`，唯一writer status_read / gpt-6-astra，claim8e4660a6 v3 ACTIVE。Mika于2026-10-06 12:11:31 UTC批准设计，不代替本实现独审；实际window NOT_OPEN。
+
+[固定manifest](../../docs/evidence/s01/mixed-128-preparation/manifest.json) SHA `30264126da6460d25fda946944062efa78779f3ac164f3aa064020fe66181f35`；26source/27readonly/42raw/10support与6runtime/172历史绑定。最新41不同纯checks（24原直接+17新）与局部strict0；全部red/中间失败保留，0真实容量预演。
+
+只读复核fixed source/diff、原raw和readonlymain输入，重点一个8×16 profile、全库128task/attempt/session独立门禁、child单调ACK/heartbeat/adapter持续证据、保守parent DB样本间隔、错误身份/强停unknown、180秒阶段清理/CLI与256MiB可见输入/流/IPC/证据计量。采样事实不作连续无间断证明；实际进程外层wall另记，0模型/SLO承诺。原172固定Git可复现，旧raw/support/manifest不变，旧保留journal不读/改。review只读不运行；发现交owner按claim修复。
+
+## 以下是历史独审，均不覆盖本次128源码
+
 状态：APPROVED
 Review target commit：2ab7967f2eb808fecd1205f7552a119eee8e0b36
 
