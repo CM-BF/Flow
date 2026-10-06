@@ -1,0 +1,36 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/project-graph
+
+ ❯ apps/server/src/projects/projects.test.ts (5 tests | 1 failed) 1208ms
+   ✓ persists personal workspace and a queryable empty project without submitting execution tasks 51ms
+   ✓ adds an unbound versioned node, retains old graph and replays one durable command result 33ms
+   ✓ serializes opposite dependency proposals per project while another project keeps progressing 117ms
+   ✓ fences project, node and parent versions and refuses tree cycles or silently truncated references 98ms
+   × binds an existing task once, reads authoritative live state and preserves graph history across restart 28ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/projects/projects.test.ts > binds an existing task once, reads authoritative live state and preserves graph history across restart
+AssertionError: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ apps/server/src/projects/projects.test.ts:147:24
+    145|   const input = { kind: 'bind-task', nodeId: plan.node.id, expectedNod…
+    146|   const bound = await change(plan.snapshot, input, key);
+    147|   expect(bound.status).toBe(200);
+       |                        ^
+    148|   expect(bound.body.snapshot.tasks).toEqual([task]);
+    149|   expect(bound.body.snapshot.graph.nodes[0]).toMatchObject({ taskId: t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  19:41:58
+   Duration  1.51s (transform 103ms, setup 0ms, import 222ms, tests 1.21s, environment 0ms)

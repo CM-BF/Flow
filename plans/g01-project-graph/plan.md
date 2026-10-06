@@ -1,6 +1,6 @@
 # G01 持久项目与版本化计划图
 
-创建 / 更新：2026-10-06。状态：in-progress。Owner：runner_owner / gpt-6-astra。
+创建 / 更新：2026-10-06。首片段状态：completed（实现与作者检查）；独立 review / main 集成待执行。Owner：runner_owner / gpt-6-astra。
 
 ## 首片段目标与授权
 
@@ -22,8 +22,10 @@
 
 ## TODO 与验收
 
-- [ ] G01-T01 冻结小合同、设计与迁移 seam，交 Lead 提前接线。
-- [ ] G01-T02 纵向 red→green：持久创建/查询、幂等命令与双事务相反依赖，至少一个 409；刷新后循环仍拒绝。
-- [ ] G01-T03 父/子/项目版本拒绝、跨图/重复 task、树循环/依赖循环与被引用删除拒绝；历史/重启/鉴权及不同项目不共用图锁；标明后续调度缺口。
+- [x] G01-T01 冻结小合同、设计与迁移 seam，交 Lead 提前接线。
+- [x] G01-T02 纵向 red→green：持久创建/查询、幂等命令与双事务相反依赖，至少一个 409；刷新后循环仍拒绝。
+- [x] G01-T03 父/子/项目版本拒绝、跨图/重复 task、树循环/依赖循环与被引用删除拒绝；历史/重启/鉴权及不同项目不共用图锁；标明后续调度缺口。
+
+实现目标 6394afad2480da369adb7e6156403bfc45097dfa，作者真实 PG/HTTP 10/10、全库 typecheck、diffcheck 通过；详见 [证据](../../docs/evidence/g01/README.md)。后续 gate / 版本失效决策 / 取消传播不属于本片段完成声明，仍 open。
 
 写入范围：packages/contracts/src/projects.ts、apps/server/src/projects/**、packages/storage/migrations/004-projects.sql、此计划、docs/evidence/g01/**、docs/architecture/g01-projects.md。专用 flow_g01，动态端口，0 模型 / 云。全局索引和集成由 Lead 管理。

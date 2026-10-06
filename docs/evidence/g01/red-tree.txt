@@ -1,0 +1,35 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/project-graph
+
+ ❯ apps/server/src/projects/projects.test.ts (4 tests | 1 failed) 689ms
+   ✓ persists personal workspace and a queryable empty project without submitting execution tasks 46ms
+   ✓ adds an unbound versioned node, retains old graph and replays one durable command result 29ms
+   ✓ serializes opposite dependency proposals per project while another project keeps progressing 110ms
+   × fences project, node and parent versions and refuses tree cycles or silently truncated references 26ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/projects/projects.test.ts > fences project, node and parent versions and refuses tree cycles or silently truncated references
+AssertionError: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ apps/server/src/projects/projects.test.ts:123:26
+    121|   const child = await addNode(parent.snapshot, 'Child', parent.node);
+    122|   const revised = await change(child.snapshot, { kind: 'update-node', …
+    123|   expect(revised.status).toBe(200);
+       |                          ^
+    124|   let current: ProjectSnapshot = revised.body.snapshot;
+    125|   expect(current.graph.nodes.find(node => node.id === parent.node.id)?…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  19:41:12
+   Duration  985ms (transform 102ms, setup 0ms, import 219ms, tests 689ms, environment 0ms)
