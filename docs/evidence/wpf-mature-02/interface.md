@@ -4,7 +4,10 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
-- [Node加载失败单目标观察候选](node-loader-cause/interface.md)：仅只读设计；新窗口go-node-loader-cause-once NOT_OPEN，原结果在5b1d3003封存。明确双流宿主与旧R06观测差异，目标输入/权限不变。
+- [S01完整mixed26固定接收清单](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-integration/README.md)：c0cc598b权威包，6de26仅两observer由已审c259替代；四项基线漂移由接收点核，不重跑capacity。
+- [04附件main接收](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/attachment-main-acceptance.json)与[源码交回](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/attachment-source-handback-receipt.json)：后继沿权威owner。
+
+- [Node加载失败单目标观察候选](node-loader-cause/interface.md)：已批准最小实现/零目标检查；新窗口go-node-loader-cause-once NOT_OPEN，原结果在5b1d3003封存。明确双流宿主与旧R06观测差异，目标输入/权限不变。
 - 资源13:12:21 UTC：Data available1813516KiB（约1.73GiB）；02仅核自己12个明确安装/构建/cache路径，全部不存在，回收0B；不扫全盘/他树，不启动大构建。Root13:11:33观察1822012KiB为前一时点。
 
 - [Node唯一窗口结果及限定](node-rootliteral/result-limits.md)：rootliteral SIGABRT，第三NOT_RUN；清理确认但整体输出计量UNKNOWN，Mika13:08:21限定APPROVED。当前无剩余运行许可。

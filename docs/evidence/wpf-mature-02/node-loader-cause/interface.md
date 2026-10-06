@@ -1,6 +1,6 @@
 # 单目标 Node 加载失败观察候选
 
-Owner chatui01_owner / co-lead mika，WPF-MATURE-02-03；`go-node-loader-cause-once` 当前 **NOT_OPEN**。本页仅设计，尚未写运行逻辑。旧e7结果/e0限定与5b1d3003收口固定，measurement FAIL、全runtime输出UNKNOWN不变。
+Owner chatui01_owner / co-lead mika，WPF-MATURE-02-03；`go-node-loader-cause-once` 当前 **NOT_OPEN**。Mika已允许最小实现/零目标检查；实际运行仍NOT_OPEN。旧e7结果/e0限定与5b1d3003收口固定，measurement FAIL、全runtime输出UNKNOWN不变。
 
 已有输入见[只读清单](readonly-inputs.json)：归档62个运行路径均在固定profile中；所有已记录绝对依赖有literal。Node的两个归档rpath候选一项未列、一项已列；这不是实际dyld搜索/errno证据。旧261B只保留loader-error-text，已删除原文，无法定位缺失库/访问理由。归档不覆盖全部cached系统传递镜像，不能把静态路径存在当加载成功或因果。
 
@@ -16,7 +16,7 @@ Owner chatui01_owner / co-lead mika，WPF-MATURE-02-03；`go-node-loader-cause-o
 
 stderr先写自有0600/wx文件，实际部分写入计副本；仅完整EOF+child close+capture无截断/observer错误+身份匹配后，在内存提取 `errorClass` 有限枚举（library-not-loaded / permission-denied / missing-file / other / UNKNOWN）、明确文本数值errno（无则null/unknown）、最多4个**完全命中固定公开依赖字符串清单**的role。`@rpath/libnode.137.dylib` 等归档公开install-name可单列精确值；任何未知路径、UUID、任意行/栈/环境不出收据，不按basename或substring猜role。原始stdout同样仅私有存放，公开只有bytes/hash/complete。有限匹配只证明观测文字，不代表根因/必要权限。
 
-raw经fsync/close→身份检查→有界分类/hash→finally精确删除；删除前失败或child/group/descriptor未知则保留精确owned identity与unknown，禁止猜删除/杀他人进程。两流累计实际观测/复制分别计量；额外输出、截断、超界、未关闭或计量未知立即停止，不能将短输出或CLI0当Node隔离/资格通过。
+raw经fsync/close→身份检查→有界分类/hash→finally精确删除；删除前失败或child/group/descriptor未知则保留精确owned identity与unknown，禁止猜删除/杀他人进程。关键预算约束：helper原consume只见截断后复制字节，8192上限不是累计输出证明。新增可选observe在每个原始chunk截断前记完整长度，含首次越限及TERM等待期继续收到的chunk；副本按成功写入分别计。双流EOF、child/group close、观察计量任一不全或发生截断/overflow，预算结论FAIL/UNKNOWN，不宣称256KiB完整确认；保留36KiB overflow/收据余量，停止不重试。两流累计实际观测/复制分别计量；额外输出、截断、超界、未关闭或计量未知立即停止，不能将短输出或CLI0当Node隔离/资格通过。
 
 ## 额度、验收与下一步
 

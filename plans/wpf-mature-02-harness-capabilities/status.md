@@ -11,9 +11,9 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 5b1d3003c540667da0389c1febb1554ee4204e5f（旧结果已封存；新cause文档HEAD由Git核） |
-| 工作树dirty状态 | 旧源码/raw冻结；新cause仅设计/证据metadata，0新target，提交后核clean。 |
+| 工作树dirty状态 | 旧源码/raw冻结；新cause最小capture/解析实现中；旧profile/raw冻结，0新target。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | implementation |
 | 检查状态 | 准备58 distinct分次通过；唯一运行2目标：EXPECTED/FAILED/NOT_RUN，0listener/compile/Codex/provider。cleanup确认；整体输出计量UNKNOWN，见结果限定。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
 | 实现目标 | source d17ad56a / combo1f32735e629873196971ea509b767ddf0436949e APPROVED；唯一窗口已消费 |
@@ -21,7 +21,7 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 失败结果已独审接收；现有加载库清单不足以定位原因，正在准备一次受限观察方案。 |
-| 下一可用交付 | 固定单目标加载失败观察设计与预算，待内部独审；尚未开放运行。 |
+| 下一可用交付 | 交付双流实际字节计量与受限错误字段提取，纯检查后交独审；未开放运行。 |
 | 当前阻塞 | ACTIVE: Node/Codex完整隔离、真实模型资格与全部writer停止仍未验证；C成功不能替代。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：Mika13:08:21 UTC已限定APPROVED；FAIL/整体输出UNKNOWN，未重跑。 |
@@ -61,3 +61,5 @@
 [候选Interface](../../docs/evidence/wpf-mature-02/node-loader-cause/interface.md)沿同TODO-03；GO方向已授权，当前NOT_OPEN。仅既有otool归档/profile/static source核对，无新otool/help/target/测试。拟复用既有双流capture/lifecycle，明确宿主差异，待Mika审设计后才实现。旧Node archive129958/131072是5b1d3003历史快照，不用当前共享metadata hash替换旧清单。
 
 资源13:12:21 UTC：Data1813516KiB；只核本树12个明确安装/cache/build路径，均不存在，回收0B。保留raw/unknown资源与所有他树/个人数据；大构建需free≥2.5GiB且共享预留≥1GiB，当前无大构建。
+
+Mika已核5c36设计/8输入并允许实施准备；新增observe完整chunk计量，不能将capture cap当输出总量。保留default65536旧行为，定向纯检查；运行NOT_OPEN。
