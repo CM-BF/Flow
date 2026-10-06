@@ -1,0 +1,1238 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/tasks?limit=40",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "tasks": [],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations?limit=50",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversations": [],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/execution-profiles?limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "profiles": [
+        {
+          "reference": {
+            "id": "894ace9a-06fc-4352-9751-ea62044fd794",
+            "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+            "configDigest": "5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c"
+          },
+          "configuration": {
+            "model": "release-synthetic",
+            "access": "none",
+            "limits": {
+              "maxTurns": 2,
+              "timeoutMs": 30000,
+              "maxBudgetUsd": 0.2
+            },
+            "harness": "claude",
+            "thinking": "disabled",
+            "adapterVersion": "claude-sdk-0.3.290-v2",
+            "permissionMode": "dontAsk",
+            "materialScopeDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "requireReadApproval": false
+          },
+          "source": "runner-configured",
+          "availability": "not-probed",
+          "model": {
+            "value": "release-synthetic",
+            "resolvedModel": null,
+            "displayName": "release-synthetic",
+            "description": "Configured runner request; provider availability has not been probed.",
+            "providerCapabilities": "unknown"
+          },
+          "controls": {
+            "model": "select-configured-profile",
+            "thinking": "fixed-disabled",
+            "effort": "unsupported",
+            "access": "configured-policy",
+            "queue": false,
+            "steer": false
+          },
+          "createdAt": "2026-10-06T10:38:47.858Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/workspace",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "workspaceId": "personal",
+      "entries": [],
+      "nextCursor": 0,
+      "previousCursor": 0,
+      "watermark": 0,
+      "hasMore": false,
+      "hasEarlier": false,
+      "projectionPending": false,
+      "tasks": [],
+      "tasksTruncated": false,
+      "attention": [],
+      "attentionTruncated": false
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/conversations",
+    "status": 201,
+    "dropped": false,
+    "key": "7cb2096b-8856-4f53-80c7-ca796860c643:create",
+    "body": "{\"title\":\"Release old durable message\",\"harness\":\"claude\",\"executionProfile\":{\"id\":\"894ace9a-06fc-4352-9751-ea62044fd794\",\"runnerId\":\"856f6d39-ff31-4e1b-98f6-22e921835517\",\"configDigest\":\"5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c\"},\"requested\":{\"model\":\"release-synthetic\",\"thinking\":\"disabled\",\"tools\":\"none\"}}",
+    "response": {
+      "conversation": {
+        "id": "383b4993-0513-4197-b59a-e39e1ba40b26",
+        "title": "Release old durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "894ace9a-06fc-4352-9751-ea62044fd794",
+          "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+          "configDigest": "5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c"
+        },
+        "revision": 0,
+        "createdAt": "2026-10-06T10:38:53.682Z",
+        "updatedAt": "2026-10-06T10:38:53.682Z"
+      },
+      "capabilities": {
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": false,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "replayed": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/383b4993-0513-4197-b59a-e39e1ba40b26/queue?after=0&limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversationId": "383b4993-0513-4197-b59a-e39e1ba40b26",
+      "queueRevision": 0,
+      "items": [],
+      "nextCursor": null,
+      "blocked": null,
+      "paused": false,
+      "currentTurn": null
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/conversations/383b4993-0513-4197-b59a-e39e1ba40b26/turns",
+    "status": 202,
+    "dropped": true,
+    "key": "7cb2096b-8856-4f53-80c7-ca796860c643:turn",
+    "body": "{\"expectedRevision\":0,\"text\":\"Release old durable message\",\"mode\":\"follow-up\"}",
+    "response": {
+      "conversation": {
+        "id": "383b4993-0513-4197-b59a-e39e1ba40b26",
+        "title": "Release old durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "894ace9a-06fc-4352-9751-ea62044fd794",
+          "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+          "configDigest": "5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-06T10:38:53.682Z",
+        "updatedAt": "2026-10-06T10:38:53.701Z"
+      },
+      "turn": {
+        "id": "368f208c-3f7c-440d-b073-295e7c52f2d1",
+        "conversationId": "383b4993-0513-4197-b59a-e39e1ba40b26",
+        "number": 1,
+        "createdAt": "2026-10-06T10:38:53.701Z",
+        "user": {
+          "role": "user",
+          "text": "Release old durable message"
+        },
+        "task": {
+          "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+          "title": "Release old durable message",
+          "harness": "claude",
+          "status": "queued",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-06T10:38:53.697Z",
+          "updatedAt": "2026-10-06T10:38:53.697Z"
+        },
+        "assistant": {
+          "state": "pending",
+          "reason": "execution-pending"
+        },
+        "effective": {
+          "model": null,
+          "thinking": "unknown",
+          "tools": "unknown",
+          "source": null
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+          "title": "Execution details"
+        }
+      },
+      "replayed": false
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/conversations/383b4993-0513-4197-b59a-e39e1ba40b26/turns",
+    "status": 202,
+    "dropped": false,
+    "key": "7cb2096b-8856-4f53-80c7-ca796860c643:turn",
+    "body": "{\"expectedRevision\":0,\"text\":\"Release old durable message\",\"mode\":\"follow-up\"}",
+    "response": {
+      "turn": {
+        "id": "368f208c-3f7c-440d-b073-295e7c52f2d1",
+        "task": {
+          "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+          "title": "Release old durable message",
+          "status": "queued",
+          "harness": "claude",
+          "createdAt": "2026-10-06T10:38:53.697Z",
+          "updatedAt": "2026-10-06T10:38:53.697Z",
+          "verificationStatus": "pending"
+        },
+        "user": {
+          "role": "user",
+          "text": "Release old durable message"
+        },
+        "number": 1,
+        "assistant": {
+          "state": "pending",
+          "reason": "execution-pending"
+        },
+        "createdAt": "2026-10-06T10:38:53.701Z",
+        "effective": {
+          "model": null,
+          "tools": "unknown",
+          "source": null,
+          "thinking": "unknown"
+        },
+        "telemetry": {
+          "kind": "execution",
+          "title": "Execution details",
+          "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3"
+        },
+        "conversationId": "383b4993-0513-4197-b59a-e39e1ba40b26"
+      },
+      "conversation": {
+        "id": "383b4993-0513-4197-b59a-e39e1ba40b26",
+        "title": "Release old durable message",
+        "harness": "claude",
+        "revision": 1,
+        "createdAt": "2026-10-06T10:38:53.682Z",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "updatedAt": "2026-10-06T10:38:53.701Z",
+        "executionProfile": {
+          "id": "894ace9a-06fc-4352-9751-ea62044fd794",
+          "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+          "configDigest": "5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c"
+        }
+      },
+      "replayed": true
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+      "title": "Release old durable message",
+      "harness": "claude",
+      "status": "succeeded",
+      "verificationStatus": "passed",
+      "createdAt": "2026-10-06T10:38:53.697Z",
+      "updatedAt": "2026-10-06T10:38:54.023Z",
+      "prompt": "Release old durable message",
+      "entries": [
+        {
+          "id": "c9f49e92-bbd0-4285-8a1b-a30170c5a137",
+          "kind": "reference",
+          "cursor": 1,
+          "createdAt": "2026-10-06T10:38:53.950Z",
+          "reference": {
+            "id": "c3664b0a-4e3f-4427-868f-802b25206c1a",
+            "title": "Native session"
+          }
+        },
+        {
+          "id": "cf023670-989a-4b95-a354-2da1db71c377",
+          "kind": "reference",
+          "cursor": 2,
+          "createdAt": "2026-10-06T10:38:53.994Z",
+          "reference": {
+            "id": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f",
+            "title": "Assistant reply"
+          }
+        },
+        {
+          "id": "5f91e276-835b-494d-8d48-a2486c7b2de1",
+          "kind": "reference",
+          "cursor": 3,
+          "createdAt": "2026-10-06T10:38:54.004Z",
+          "reference": {
+            "id": "52efffc4-1d4c-4781-8633-04070a3885e4",
+            "title": "Synthetic output"
+          }
+        },
+        {
+          "id": "c46e4ce4-3862-4e9e-bd91-5c4140ef6dc9",
+          "kind": "reference",
+          "cursor": 4,
+          "createdAt": "2026-10-06T10:38:54.013Z",
+          "reference": {
+            "id": "1ba26c22-f1d1-4cc2-b070-01222f1ed485",
+            "title": "Verification passed"
+          }
+        }
+      ],
+      "watermark": 4,
+      "hasMore": false,
+      "pendingDecision": null,
+      "attempt": {
+        "id": "568a3618-2213-4fe9-a2ba-2792164661e2",
+        "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+        "ownerVersion": 1,
+        "leaseExpiresAt": "2026-10-06T10:39:03.982Z",
+        "nativeSessionId": "8bae6973-a600-4303-93b5-41718ff7a768"
+      },
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks?limit=40",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "tasks": [
+        {
+          "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+          "title": "Release old durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T10:38:53.697Z",
+          "updatedAt": "2026-10-06T10:38:54.023Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations?limit=50",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversations": [
+        {
+          "id": "383b4993-0513-4197-b59a-e39e1ba40b26",
+          "title": "Release old durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "release-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "894ace9a-06fc-4352-9751-ea62044fd794",
+            "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+            "configDigest": "5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T10:38:53.682Z",
+          "updatedAt": "2026-10-06T10:38:53.701Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/383b4993-0513-4197-b59a-e39e1ba40b26/queue?after=0&limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversationId": "383b4993-0513-4197-b59a-e39e1ba40b26",
+      "queueRevision": 0,
+      "items": [],
+      "nextCursor": null,
+      "blocked": null,
+      "paused": false,
+      "currentTurn": {
+        "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+        "taskStatus": "succeeded",
+        "turnId": "368f208c-3f7c-440d-b073-295e7c52f2d1",
+        "turnNumber": 1,
+        "queueItemId": null
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/workspace?after=0",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "workspaceId": "personal",
+      "entries": [
+        {
+          "id": "workspace-1",
+          "cursor": 1,
+          "task": {
+            "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Release old durable message"
+          },
+          "entry": {
+            "id": "accepted:497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-06T10:38:53.697Z"
+          }
+        },
+        {
+          "id": "workspace-2",
+          "cursor": 2,
+          "task": {
+            "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Release old durable message"
+          },
+          "entry": {
+            "id": "c9f49e92-bbd0-4285-8a1b-a30170c5a137",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T10:38:53.950Z",
+            "reference": {
+              "id": "c3664b0a-4e3f-4427-868f-802b25206c1a",
+              "title": "Native session"
+            }
+          }
+        },
+        {
+          "id": "workspace-3",
+          "cursor": 3,
+          "task": {
+            "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Release old durable message"
+          },
+          "entry": {
+            "id": "cf023670-989a-4b95-a354-2da1db71c377",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T10:38:53.994Z",
+            "reference": {
+              "id": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f",
+              "title": "Assistant reply"
+            }
+          }
+        },
+        {
+          "id": "workspace-4",
+          "cursor": 4,
+          "task": {
+            "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Release old durable message"
+          },
+          "entry": {
+            "id": "5f91e276-835b-494d-8d48-a2486c7b2de1",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T10:38:54.004Z",
+            "reference": {
+              "id": "52efffc4-1d4c-4781-8633-04070a3885e4",
+              "title": "Synthetic output"
+            }
+          }
+        },
+        {
+          "id": "workspace-5",
+          "cursor": 5,
+          "task": {
+            "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Release old durable message"
+          },
+          "entry": {
+            "id": "c46e4ce4-3862-4e9e-bd91-5c4140ef6dc9",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T10:38:54.013Z",
+            "reference": {
+              "id": "1ba26c22-f1d1-4cc2-b070-01222f1ed485",
+              "title": "Verification passed"
+            }
+          }
+        }
+      ],
+      "nextCursor": 5,
+      "previousCursor": 1,
+      "watermark": 5,
+      "hasMore": false,
+      "hasEarlier": false,
+      "projectionPending": false,
+      "tasks": [
+        {
+          "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+          "title": "Release old durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T10:38:53.697Z",
+          "updatedAt": "2026-10-06T10:38:54.023Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        }
+      ],
+      "tasksTruncated": false,
+      "attention": [],
+      "attentionTruncated": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/383b4993-0513-4197-b59a-e39e1ba40b26",
+    "status": 200,
+    "dropped": false,
+    "stream": "patch-v1",
+    "forwardedStream": "patch-v1",
+    "response": {
+      "conversation": {
+        "id": "383b4993-0513-4197-b59a-e39e1ba40b26",
+        "title": "Release old durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "894ace9a-06fc-4352-9751-ea62044fd794",
+          "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+          "configDigest": "5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-06T10:38:53.682Z",
+        "updatedAt": "2026-10-06T10:38:53.701Z"
+      },
+      "capabilities": {
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": true,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "nativeSession": {
+        "nativeSessionId": "8bae6973-a600-4303-93b5-41718ff7a768",
+        "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+        "sourceTaskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+        "sourceAttemptId": "568a3618-2213-4fe9-a2ba-2792164661e2"
+      },
+      "lastTurn": {
+        "id": "368f208c-3f7c-440d-b073-295e7c52f2d1",
+        "conversationId": "383b4993-0513-4197-b59a-e39e1ba40b26",
+        "number": 1,
+        "createdAt": "2026-10-06T10:38:53.701Z",
+        "user": {
+          "role": "user",
+          "text": "Release old durable message"
+        },
+        "task": {
+          "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+          "title": "Release old durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T10:38:53.697Z",
+          "updatedAt": "2026-10-06T10:38:54.023Z"
+        },
+        "assistant": {
+          "state": "available",
+          "role": "assistant",
+          "messageId": "c1e9c9344bd174baf8f6c7bfb52e0a53f1ee853562f87a48f7d84ed511a2e6a9",
+          "text": "Release fixture reply: Release old durable message",
+          "truncated": false,
+          "contentRef": {
+            "kind": "detail",
+            "id": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f",
+            "title": "Assistant reply",
+            "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "attemptId": "568a3618-2213-4fe9-a2ba-2792164661e2"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "source": "claude.sdk.result",
+            "messageId": "c1e9c9344bd174baf8f6c7bfb52e0a53f1ee853562f87a48f7d84ed511a2e6a9",
+            "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "attemptId": "568a3618-2213-4fe9-a2ba-2792164661e2",
+            "nativeSessionId": "8bae6973-a600-4303-93b5-41718ff7a768",
+            "eventId": "950899bd-a214-4921-a4a8-7a5f1a67c9f6",
+            "sourceMessageId": "5c26bb89-1cef-4c82-b876-1948634f8124",
+            "contentDigest": "c776c87ab561a23fb4093c55322ec9a0c784570f085f026b592b16839f4cfb90",
+            "detailId": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f"
+          }
+        },
+        "effective": {
+          "model": null,
+          "tools": null,
+          "thinking": "unknown",
+          "permissionMode": null,
+          "runnerRequested": {
+            "model": "release-synthetic",
+            "thinking": "disabled",
+            "permissionMode": "dontAsk"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "messageId": "c1e9c9344bd174baf8f6c7bfb52e0a53f1ee853562f87a48f7d84ed511a2e6a9",
+            "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "attemptId": "568a3618-2213-4fe9-a2ba-2792164661e2",
+            "detailId": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f"
+          }
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+          "title": "Execution details"
+        }
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks?limit=40",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "tasks": [
+        {
+          "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+          "title": "Release old durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T10:38:53.697Z",
+          "updatedAt": "2026-10-06T10:38:54.023Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations?limit=50",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversations": [
+        {
+          "id": "383b4993-0513-4197-b59a-e39e1ba40b26",
+          "title": "Release old durable message",
+          "harness": "claude",
+          "requested": {
+            "model": "release-synthetic",
+            "tools": "none",
+            "thinking": "disabled"
+          },
+          "executionProfile": {
+            "id": "894ace9a-06fc-4352-9751-ea62044fd794",
+            "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+            "configDigest": "5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c"
+          },
+          "revision": 1,
+          "createdAt": "2026-10-06T10:38:53.682Z",
+          "updatedAt": "2026-10-06T10:38:53.701Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/execution-profiles?limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "profiles": [
+        {
+          "reference": {
+            "id": "894ace9a-06fc-4352-9751-ea62044fd794",
+            "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+            "configDigest": "5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c"
+          },
+          "configuration": {
+            "model": "release-synthetic",
+            "access": "none",
+            "limits": {
+              "maxTurns": 2,
+              "timeoutMs": 30000,
+              "maxBudgetUsd": 0.2
+            },
+            "harness": "claude",
+            "thinking": "disabled",
+            "adapterVersion": "claude-sdk-0.3.290-v2",
+            "permissionMode": "dontAsk",
+            "materialScopeDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "requireReadApproval": false
+          },
+          "source": "runner-configured",
+          "availability": "not-probed",
+          "model": {
+            "value": "release-synthetic",
+            "resolvedModel": null,
+            "displayName": "release-synthetic",
+            "description": "Configured runner request; provider availability has not been probed.",
+            "providerCapabilities": "unknown"
+          },
+          "controls": {
+            "model": "select-configured-profile",
+            "thinking": "fixed-disabled",
+            "effort": "unsupported",
+            "access": "configured-policy",
+            "queue": false,
+            "steer": false
+          },
+          "createdAt": "2026-10-06T10:38:47.858Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/workspace",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "workspaceId": "personal",
+      "entries": [
+        {
+          "id": "workspace-1",
+          "cursor": 1,
+          "task": {
+            "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Release old durable message"
+          },
+          "entry": {
+            "id": "accepted:497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "kind": "text",
+            "text": "Task accepted.",
+            "cursor": 0,
+            "createdAt": "2026-10-06T10:38:53.697Z"
+          }
+        },
+        {
+          "id": "workspace-2",
+          "cursor": 2,
+          "task": {
+            "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Release old durable message"
+          },
+          "entry": {
+            "id": "c9f49e92-bbd0-4285-8a1b-a30170c5a137",
+            "kind": "reference",
+            "cursor": 1,
+            "createdAt": "2026-10-06T10:38:53.950Z",
+            "reference": {
+              "id": "c3664b0a-4e3f-4427-868f-802b25206c1a",
+              "title": "Native session"
+            }
+          }
+        },
+        {
+          "id": "workspace-3",
+          "cursor": 3,
+          "task": {
+            "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Release old durable message"
+          },
+          "entry": {
+            "id": "cf023670-989a-4b95-a354-2da1db71c377",
+            "kind": "reference",
+            "cursor": 2,
+            "createdAt": "2026-10-06T10:38:53.994Z",
+            "reference": {
+              "id": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f",
+              "title": "Assistant reply"
+            }
+          }
+        },
+        {
+          "id": "workspace-4",
+          "cursor": 4,
+          "task": {
+            "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Release old durable message"
+          },
+          "entry": {
+            "id": "5f91e276-835b-494d-8d48-a2486c7b2de1",
+            "kind": "reference",
+            "cursor": 3,
+            "createdAt": "2026-10-06T10:38:54.004Z",
+            "reference": {
+              "id": "52efffc4-1d4c-4781-8633-04070a3885e4",
+              "title": "Synthetic output"
+            }
+          }
+        },
+        {
+          "id": "workspace-5",
+          "cursor": 5,
+          "task": {
+            "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Release old durable message"
+          },
+          "entry": {
+            "id": "c46e4ce4-3862-4e9e-bd91-5c4140ef6dc9",
+            "kind": "reference",
+            "cursor": 4,
+            "createdAt": "2026-10-06T10:38:54.013Z",
+            "reference": {
+              "id": "1ba26c22-f1d1-4cc2-b070-01222f1ed485",
+              "title": "Verification passed"
+            }
+          }
+        }
+      ],
+      "nextCursor": 5,
+      "previousCursor": 1,
+      "watermark": 5,
+      "hasMore": false,
+      "hasEarlier": false,
+      "projectionPending": false,
+      "tasks": [
+        {
+          "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+          "title": "Release old durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T10:38:53.697Z",
+          "updatedAt": "2026-10-06T10:38:54.023Z",
+          "ownerVersion": 1,
+          "pendingDecision": null
+        }
+      ],
+      "tasksTruncated": false,
+      "attention": [],
+      "attentionTruncated": false
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/383b4993-0513-4197-b59a-e39e1ba40b26/turns?after=0&limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversation": {
+        "id": "383b4993-0513-4197-b59a-e39e1ba40b26",
+        "title": "Release old durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "894ace9a-06fc-4352-9751-ea62044fd794",
+          "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+          "configDigest": "5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-06T10:38:53.682Z",
+        "updatedAt": "2026-10-06T10:38:53.701Z"
+      },
+      "turns": [
+        {
+          "id": "368f208c-3f7c-440d-b073-295e7c52f2d1",
+          "conversationId": "383b4993-0513-4197-b59a-e39e1ba40b26",
+          "number": 1,
+          "createdAt": "2026-10-06T10:38:53.701Z",
+          "user": {
+            "role": "user",
+            "text": "Release old durable message"
+          },
+          "task": {
+            "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Release old durable message",
+            "harness": "claude",
+            "status": "succeeded",
+            "verificationStatus": "passed",
+            "createdAt": "2026-10-06T10:38:53.697Z",
+            "updatedAt": "2026-10-06T10:38:54.023Z"
+          },
+          "assistant": {
+            "state": "available",
+            "role": "assistant",
+            "messageId": "c1e9c9344bd174baf8f6c7bfb52e0a53f1ee853562f87a48f7d84ed511a2e6a9",
+            "text": "Release fixture reply: Release old durable message",
+            "truncated": false,
+            "contentRef": {
+              "kind": "detail",
+              "id": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f",
+              "title": "Assistant reply",
+              "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+              "attemptId": "568a3618-2213-4fe9-a2ba-2792164661e2"
+            },
+            "source": {
+              "kind": "assistant-final",
+              "source": "claude.sdk.result",
+              "messageId": "c1e9c9344bd174baf8f6c7bfb52e0a53f1ee853562f87a48f7d84ed511a2e6a9",
+              "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+              "attemptId": "568a3618-2213-4fe9-a2ba-2792164661e2",
+              "nativeSessionId": "8bae6973-a600-4303-93b5-41718ff7a768",
+              "eventId": "950899bd-a214-4921-a4a8-7a5f1a67c9f6",
+              "sourceMessageId": "5c26bb89-1cef-4c82-b876-1948634f8124",
+              "contentDigest": "c776c87ab561a23fb4093c55322ec9a0c784570f085f026b592b16839f4cfb90",
+              "detailId": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f"
+            }
+          },
+          "effective": {
+            "model": null,
+            "tools": null,
+            "thinking": "unknown",
+            "permissionMode": null,
+            "runnerRequested": {
+              "model": "release-synthetic",
+              "thinking": "disabled",
+              "permissionMode": "dontAsk"
+            },
+            "source": {
+              "kind": "assistant-final",
+              "messageId": "c1e9c9344bd174baf8f6c7bfb52e0a53f1ee853562f87a48f7d84ed511a2e6a9",
+              "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+              "attemptId": "568a3618-2213-4fe9-a2ba-2792164661e2",
+              "detailId": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f"
+            }
+          },
+          "telemetry": {
+            "kind": "execution",
+            "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "title": "Execution details"
+          }
+        }
+      ],
+      "nextCursor": null
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/383b4993-0513-4197-b59a-e39e1ba40b26",
+    "status": 200,
+    "dropped": false,
+    "stream": "patch-v1",
+    "response": {
+      "conversation": {
+        "id": "383b4993-0513-4197-b59a-e39e1ba40b26",
+        "title": "Release old durable message",
+        "harness": "claude",
+        "requested": {
+          "model": "release-synthetic",
+          "tools": "none",
+          "thinking": "disabled"
+        },
+        "executionProfile": {
+          "id": "894ace9a-06fc-4352-9751-ea62044fd794",
+          "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+          "configDigest": "5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c"
+        },
+        "revision": 1,
+        "createdAt": "2026-10-06T10:38:53.682Z",
+        "updatedAt": "2026-10-06T10:38:53.701Z"
+      },
+      "capabilities": {
+        "knowledgeContext": true,
+        "followUp": true,
+        "queue": true,
+        "steer": false,
+        "liveAssistantText": false,
+        "perTurnModel": false,
+        "perTurnThinking": false,
+        "perTurnTools": false
+      },
+      "nativeSession": {
+        "nativeSessionId": "8bae6973-a600-4303-93b5-41718ff7a768",
+        "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+        "sourceTaskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+        "sourceAttemptId": "568a3618-2213-4fe9-a2ba-2792164661e2"
+      },
+      "lastTurn": {
+        "id": "368f208c-3f7c-440d-b073-295e7c52f2d1",
+        "conversationId": "383b4993-0513-4197-b59a-e39e1ba40b26",
+        "number": 1,
+        "createdAt": "2026-10-06T10:38:53.701Z",
+        "user": {
+          "role": "user",
+          "text": "Release old durable message"
+        },
+        "task": {
+          "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+          "title": "Release old durable message",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T10:38:53.697Z",
+          "updatedAt": "2026-10-06T10:38:54.023Z"
+        },
+        "assistant": {
+          "state": "available",
+          "role": "assistant",
+          "messageId": "c1e9c9344bd174baf8f6c7bfb52e0a53f1ee853562f87a48f7d84ed511a2e6a9",
+          "text": "Release fixture reply: Release old durable message",
+          "truncated": false,
+          "contentRef": {
+            "kind": "detail",
+            "id": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f",
+            "title": "Assistant reply",
+            "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "attemptId": "568a3618-2213-4fe9-a2ba-2792164661e2"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "source": "claude.sdk.result",
+            "messageId": "c1e9c9344bd174baf8f6c7bfb52e0a53f1ee853562f87a48f7d84ed511a2e6a9",
+            "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "attemptId": "568a3618-2213-4fe9-a2ba-2792164661e2",
+            "nativeSessionId": "8bae6973-a600-4303-93b5-41718ff7a768",
+            "eventId": "950899bd-a214-4921-a4a8-7a5f1a67c9f6",
+            "sourceMessageId": "5c26bb89-1cef-4c82-b876-1948634f8124",
+            "contentDigest": "c776c87ab561a23fb4093c55322ec9a0c784570f085f026b592b16839f4cfb90",
+            "detailId": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f"
+          }
+        },
+        "effective": {
+          "model": null,
+          "tools": null,
+          "thinking": "unknown",
+          "permissionMode": null,
+          "runnerRequested": {
+            "model": "release-synthetic",
+            "thinking": "disabled",
+            "permissionMode": "dontAsk"
+          },
+          "source": {
+            "kind": "assistant-final",
+            "messageId": "c1e9c9344bd174baf8f6c7bfb52e0a53f1ee853562f87a48f7d84ed511a2e6a9",
+            "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+            "attemptId": "568a3618-2213-4fe9-a2ba-2792164661e2",
+            "detailId": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f"
+          }
+        },
+        "telemetry": {
+          "kind": "execution",
+          "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+          "title": "Execution details"
+        }
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/383b4993-0513-4197-b59a-e39e1ba40b26/queue?after=0&limit=20",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "conversationId": "383b4993-0513-4197-b59a-e39e1ba40b26",
+      "queueRevision": 0,
+      "items": [],
+      "nextCursor": null,
+      "blocked": null,
+      "paused": false,
+      "currentTurn": {
+        "taskId": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+        "taskStatus": "succeeded",
+        "turnId": "368f208c-3f7c-440d-b073-295e7c52f2d1",
+        "turnNumber": 1,
+        "queueItemId": null
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/tasks/497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+    "status": 200,
+    "dropped": false,
+    "response": {
+      "id": "497bb09e-2e3c-4744-a2f7-16ca54365bb3",
+      "title": "Release old durable message",
+      "harness": "claude",
+      "status": "succeeded",
+      "verificationStatus": "passed",
+      "createdAt": "2026-10-06T10:38:53.697Z",
+      "updatedAt": "2026-10-06T10:38:54.023Z",
+      "prompt": "Release old durable message",
+      "entries": [
+        {
+          "id": "c9f49e92-bbd0-4285-8a1b-a30170c5a137",
+          "kind": "reference",
+          "cursor": 1,
+          "createdAt": "2026-10-06T10:38:53.950Z",
+          "reference": {
+            "id": "c3664b0a-4e3f-4427-868f-802b25206c1a",
+            "title": "Native session"
+          }
+        },
+        {
+          "id": "cf023670-989a-4b95-a354-2da1db71c377",
+          "kind": "reference",
+          "cursor": 2,
+          "createdAt": "2026-10-06T10:38:53.994Z",
+          "reference": {
+            "id": "ed9cd2ad-b7ef-4338-8b63-b2cb7e6e3e3f",
+            "title": "Assistant reply"
+          }
+        },
+        {
+          "id": "5f91e276-835b-494d-8d48-a2486c7b2de1",
+          "kind": "reference",
+          "cursor": 3,
+          "createdAt": "2026-10-06T10:38:54.004Z",
+          "reference": {
+            "id": "52efffc4-1d4c-4781-8633-04070a3885e4",
+            "title": "Synthetic output"
+          }
+        },
+        {
+          "id": "c46e4ce4-3862-4e9e-bd91-5c4140ef6dc9",
+          "kind": "reference",
+          "cursor": 4,
+          "createdAt": "2026-10-06T10:38:54.013Z",
+          "reference": {
+            "id": "1ba26c22-f1d1-4cc2-b070-01222f1ed485",
+            "title": "Verification passed"
+          }
+        }
+      ],
+      "watermark": 4,
+      "hasMore": false,
+      "pendingDecision": null,
+      "attempt": {
+        "id": "568a3618-2213-4fe9-a2ba-2792164661e2",
+        "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+        "ownerVersion": 1,
+        "leaseExpiresAt": "2026-10-06T10:39:03.982Z",
+        "nativeSessionId": "8bae6973-a600-4303-93b5-41718ff7a768"
+      },
+      "usage": {
+        "costUsd": null,
+        "costKind": "unknown",
+        "incomplete": true,
+        "inputTokens": null,
+        "outputTokens": null
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/conversations/383b4993-0513-4197-b59a-e39e1ba40b26",
+    "status": 401,
+    "dropped": false,
+    "response": {
+      "error": {
+        "code": "unauthorized",
+        "message": "Authentication required."
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/execution-profiles",
+    "status": 200,
+    "dropped": false,
+    "profile": "steering-v1",
+    "response": {
+      "profiles": [
+        {
+          "reference": {
+            "id": "894ace9a-06fc-4352-9751-ea62044fd794",
+            "runnerId": "856f6d39-ff31-4e1b-98f6-22e921835517",
+            "configDigest": "5880048199c4ba4d2b6840c933c8370235f234f2e9ea5f68c1ce51ecf6698f5c"
+          },
+          "configuration": {
+            "model": "release-synthetic",
+            "access": "none",
+            "limits": {
+              "maxTurns": 2,
+              "timeoutMs": 30000,
+              "maxBudgetUsd": 0.2
+            },
+            "harness": "claude",
+            "thinking": "disabled",
+            "adapterVersion": "claude-sdk-0.3.290-v2",
+            "permissionMode": "dontAsk",
+            "materialScopeDigest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "requireReadApproval": false
+          },
+          "source": "runner-configured",
+          "availability": "not-probed",
+          "model": {
+            "value": "release-synthetic",
+            "resolvedModel": null,
+            "displayName": "release-synthetic",
+            "description": "Configured runner request; provider availability has not been probed.",
+            "providerCapabilities": "unknown"
+          },
+          "controls": {
+            "model": "select-configured-profile",
+            "thinking": "fixed-disabled",
+            "effort": "unsupported",
+            "access": "configured-policy",
+            "queue": false,
+            "steer": false
+          },
+          "createdAt": "2026-10-06T10:38:47.858Z"
+        }
+      ],
+      "nextCursor": null
+    }
+  }
+]

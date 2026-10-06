@@ -1,0 +1,33 @@
+{
+  "startedAt": "2026-10-06T10:37:11.897Z",
+  "node": "v24.20.0",
+  "backend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "sourceTree": "6ea87fdad7247f577fa2ffb014f84afe428a4abb",
+  "oldWeb": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "newWeb": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+  "releaseId": "8d8ab520a9d43c7b9dafb22911416ee7",
+  "artifacts": [
+    {
+      "label": "old",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "directory": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-release01-uI7StD/old-state",
+      "url": "http://127.0.0.1:53110"
+    },
+    {
+      "label": "new",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "directory": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-release01-uI7StD/new-state",
+      "url": "http://127.0.0.1:53112"
+    }
+  ],
+  "providerQueries": 0,
+  "isolation": "random marked database, generated fixture auth, in-process fixed backend and fixture runner"
+}
