@@ -10,18 +10,30 @@ import { openIntentStore } from './intent-store.js';
 import { runHeadless } from './headless.js';
 import { TerminalScreen } from './screen.js';
 import { closeTerminalResources } from './lifecycle.js';
+import { createGoalTerminal } from './goal/terminal.js';
+import { openGoalIntentStore } from './goal/store.js';
+import { GoalScreen } from './goal/screen.js';
+import { goalHelp } from './goal/commands.js';
 
 export async function runTerminal(args = process.argv.slice(2), env = process.env): Promise<void> {
-  if (args.includes('--help')) { process.stdout.write(`${commandDescriptors.map(command => `${command.usage} — ${command.description}`).join('\n')}\n`); return; }
-  if (args.some(arg => arg !== '--headless')) throw new Error('Unsupported terminal option');
+  if (args.includes('--help')) { process.stdout.write(args.includes('--goal') ? `--goal <id> [--headless]\n${goalHelp}\n` : `${commandDescriptors.map(command => `${command.usage} — ${command.description}`).join('\n')}\n`); return; }
+  let goalId: string | undefined;
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--headless') continue;
+    if (args[i] !== '--goal' || goalId !== undefined || !args[i + 1] || !/^[a-f0-9-]{36}$/i.test(args[i + 1]!)) throw new Error('Unsupported terminal option');
+    goalId = args[++i];
+  }
   const url = new URL(env.FLOW_URL ?? '');
   if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password || url.search || url.hash || url.pathname !== '/') throw new Error('FLOW_URL must be an absolute center origin');
   const token = env.FLOW_TOKEN;
   if (!token || token.length > 4096 || /[\r\n]/.test(token)) throw new Error('FLOW_TOKEN is required in the environment');
   const connectionId = createHash('sha256').update(JSON.stringify([url.origin, token])).digest('hex');
-  const store = await openIntentStore(env.FLOW_TUI_STATE_DIR ?? join(homedir(), '.flow-terminal'), connectionId);
+  const directory = env.FLOW_TUI_STATE_DIR ?? join(homedir(), '.flow-terminal');
+  const store = goalId ? await openGoalIntentStore(directory, connectionId, goalId) : await openIntentStore(directory, connectionId);
   const client = new FlowClient({ baseUrl: url.origin, token, assistantStreamProtocol: 'patch-v1' });
-  const controller = createInteractionController({ client, observe: client, connectionId, intents: store });
+  const goal = goalId ? createGoalTerminal({ client, connectionId, goalId, intents: store as Awaited<ReturnType<typeof openGoalIntentStore>> }) : null;
+  const conversation = goal ? null : createInteractionController({ client, observe: client, connectionId, intents: store as Awaited<ReturnType<typeof openIntentStore>> });
+  const controller = goal ?? conversation!;
   let unmount: (() => void) | undefined;
   const stopObservation = () => { try { unmount?.(); } finally { if (args.includes('--headless')) process.stdin.destroy(); } };
   const stop = () => { void controller.dispose().then(stopObservation, stopObservation).catch(() => { process.exitCode = 1; }); };
@@ -31,7 +43,7 @@ export async function runTerminal(args = process.argv.slice(2), env = process.en
     if (args.includes('--headless')) await runHeadless(controller, process.stdin, process.stdout);
     else {
       if (!process.stdin.isTTY || !process.stdout.isTTY) throw new Error('Interactive mode requires a TTY; use --headless');
-      const app = render(<TerminalScreen controller={controller} />, { exitOnCtrlC: false, patchConsole: false });
+      const app = render(goal ? <GoalScreen controller={goal} /> : <TerminalScreen controller={conversation!} />, { exitOnCtrlC: false, patchConsole: false });
       unmount = app.unmount; await app.waitUntilExit();
     }
   } finally {
