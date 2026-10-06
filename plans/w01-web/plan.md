@@ -17,6 +17,7 @@
 - [x] **W01-01** 读取应用assistant-ui/ai-elements和本地前端技能
 - [x] **W01-02** 中心驱动任务/决策/结果/按需证据与重连
 - [x] **W01-03** 可扩展主题注册/tokens，浅色深色完整主要状态
+- [x] **W01-05** 官方Thread元素/composer、Arc式紧凑chat侧栏、Codex式竖栏、chat tab split/merge、右侧AI Elements Terminal/FileTree及tabs
 - [x] **W01-04** 键盘/窄屏/长记录/减少动画、双主题UI证据及review
 
 ## 验证和交付
@@ -30,3 +31,11 @@
 ## 已交付范围
 
 2026-10-06：实现及修复提交 `866c20e8462f295736f685541e2ecb9ba8639101`。W01-02/03 完成为公共 HTTP fixture 验收范围，真实中心集成仍待原 Execution Lead。W01-04 的键盘/窄屏/长记录/减少动画/截图已通过，独立review发现W01-R1已修复并在866c20e复审APPROVED，该TODO完成。详细[检查与截图](../../docs/evidence/w01/validation.md)。
+
+## 用户明确拒绝后的Thread整改
+
+按用户要求采用官方完整Thread element及依赖元素，不能把现有自制ThreadPrimitive壳改名。保留HTTP行为，撤去蓝灰装饰/大标题/过多卡片，基于官方默认视觉作最少Flow适配。新实现需重新截图/回归/review，不沿用历史approval。
+
+用户追加明确范围：新任务通过官方Composer提交，已受理任务因公共契约无追加消息/编辑/重试接口隐藏composer，不伪造能力。split/merge仅调整视图，同任务保持独立历史、观察与命令，关闭视图不取消中心任务。右侧panel由独立worktree owner实施后明确cherry-pick；数据限公共task文本/引用，不能暗示PTY/任意文件系统。先保留具名plugin slots/command边界，完整plugin系统由后续独立计划管理。
+
+2026-10-06新整改实现target `cb4a39211e264538704ba9d474eeb08fc4b2759c`：W01-01/02/03/05按新证据完成实现与owner验证，W01-04经root独立review APPROVED完成，结论绑定cb4a392；metadata不自动沿用实现review。旧交付已集成main；本次新整改尚未集成。

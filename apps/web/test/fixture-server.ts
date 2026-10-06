@@ -25,6 +25,7 @@ export function createFixture() {
   }[] = [];
   let loseNextSubmit = false;
   let detailDelayMs = 0;
+  let submitDelayMs = 0;
   let snapshotDelayMs = 0;
   let loseNextSnapshot = false;
   const schedule = (action: () => void, ms: number) => {
@@ -327,6 +328,8 @@ export function createFixture() {
           loseNextSubmit = false;
           return res.destroy();
         }
+        if (submitDelayMs)
+          return schedule(() => json(result, 202), submitDelayMs);
         return json(result, 202);
       }
       const detailId = url.pathname.match(/^\/api\/details\/([^/]+)$/)?.[1];
@@ -434,6 +437,9 @@ export function createFixture() {
     },
     loseSnapshotResponse() {
       loseNextSnapshot = true;
+    },
+    delaySubmissions(ms: number) {
+      submitDelayMs = ms;
     },
     delayDetails(ms: number) {
       detailDelayMs = ms;
