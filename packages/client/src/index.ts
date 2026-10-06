@@ -3,6 +3,8 @@ import type { ReconciliationObservation, ReconciliationResolution, Reconciliatio
 import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
 import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
 
+import type { WorkspaceList, ProjectCreation, ProjectCommand, ProjectList, ProjectSnapshot, ProjectMutationResult } from '@flow/contracts';
+
 export class FlowApiError extends Error {
   constructor(public readonly status: number, public readonly code: string, message: string) {
     super(message);
@@ -35,6 +37,22 @@ export class FlowClient {
     const query = new URLSearchParams();
     for (const name of ['after', 'before', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/workspace${query.size ? `?${query}` : ''}`, { signal });
+  }
+
+  workspaces(signal?: AbortSignal): Promise<WorkspaceList> { return this.request('/api/workspaces', { signal }); }
+  projects(options: { workspaceId?: string; after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<ProjectList> {
+    const query = new URLSearchParams();
+    for (const name of ['workspaceId', 'after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/projects${query.size ? `?${query}` : ''}`, { signal });
+  }
+  createProject(input: ProjectCreation, key: string, signal?: AbortSignal): Promise<ProjectMutationResult> {
+    return this.request('/api/projects', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  project(id: string, revision?: number, signal?: AbortSignal): Promise<ProjectSnapshot> {
+    return this.request(`/api/projects/${encodeURIComponent(id)}${revision === undefined ? '' : `?revision=${revision}`}`, { signal });
+  }
+  changeProject(id: string, input: ProjectCommand, key: string, signal?: AbortSignal): Promise<ProjectMutationResult> {
+    return this.request(`/api/projects/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   queryTasks(options: TaskIndexQuery = {}, signal?: AbortSignal): Promise<TaskIndexPage> {

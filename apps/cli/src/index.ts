@@ -3,7 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { FlowClient, FlowApiError } from '@flow/client';
 import { watchTask, taskLine } from './watch.js';
-import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, type TaskSubmission } from '@flow/contracts';
+import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, projectCreationSchema, projectCommandSchema, type TaskSubmission } from '@flow/contracts';
 
 export interface CliIO { out(text: string): void; err(text: string): void }
 const defaultIO: CliIO = { out: text => process.stdout.write(`${text}\n`), err: text => process.stderr.write(`${text}\n`) };
@@ -16,7 +16,7 @@ const options = {
   decision: { type: 'string' }, expect: { type: 'string' }, timeout: { type: 'string' },
   name: { type: 'string' }, capacity: { type: 'string' }, after: { type: 'string' },
   resume: { type: 'string' }, 'delay-ms': { type: 'string' },
-  before: { type: 'string' }, limit: { type: 'string' }, input: { type: 'string' },
+  revision: { type: 'string' }, before: { type: 'string' }, limit: { type: 'string' }, input: { type: 'string' },
 } as const;
 type Flags = ReturnType<typeof parseCliArgs>['values'];
 function parseCliArgs(args: string[]) { return parseArgs({ args, options, allowPositionals: true }); }
@@ -92,10 +92,34 @@ async function executeCommand(context: CommandContext): Promise<number> {
       print(await client.events(required(id, 'task ID'), after));
       return 0;
     }
+    case 'project': return projectCommand(context);
     case 'runner': return runnerCommand(context);
     case 'reconcile': return reconciliationCommand(context);
     default: throw new UsageError(`Unknown command: ${command}. Use --help.`);
   }
+}
+
+
+async function projectCommand({ client, values, positionals, io, signal }: CommandContext): Promise<number> {
+  const action = positionals[1];
+  let result: unknown;
+  switch (action) {
+    case 'workspaces': result = await client.workspaces(signal); break;
+    case 'list': result = await client.projects({ ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) }, signal); break;
+    case 'show': result = await client.project(required(positionals[2], 'project ID'), values.revision ? positiveNumber(values.revision, 'revision') : undefined, signal); break;
+    case 'create': result = await client.createProject(projectCreationSchema.parse({ title: required(values.title, '--title') }), required(values.key, '--key (stable command identifier)'), signal); break;
+    case 'change': {
+      const raw = await readFile(required(values.input, '--input JSON-file'), 'utf8');
+      if (Buffer.byteLength(raw) > 131_072) throw new UsageError('Project input must not exceed 128 KiB.');
+      let input: unknown;
+      try { input = JSON.parse(raw); } catch { throw new UsageError('--input must contain valid JSON.'); }
+      result = await client.changeProject(required(positionals[2], 'project ID'), projectCommandSchema.parse(input), required(values.key, '--key (stable command identifier)'), signal);
+      break;
+    }
+    default: throw new UsageError('Use project workspaces|list|show|create|change.');
+  }
+  io.out(JSON.stringify(result));
+  return 0;
 }
 
 async function reconciliationCommand({ client, values, positionals, io }: CommandContext): Promise<number> {
@@ -168,6 +192,10 @@ Commands:
   watch <task-id> [--timeout milliseconds]
   decision <task-id> approve|reject --decision <decision-id>
   cancel <task-id>
+  project workspaces|list
+  project create --title title --key stable-key
+  project show <project-id> [--revision number]
+  project change <project-id> --input JSON-file --key stable-key
   protocol <task-id>
   detail <reference-id>
   events <task-id> [--after cursor]
