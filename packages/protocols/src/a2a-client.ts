@@ -26,8 +26,9 @@ export class A2APeer {
     catch (error) { if (error instanceof A2AError) throw error; throw new RemoteOutcomeUncertainError('SendMessage', request.message?.taskId || undefined, error); }
   }
 
-  snapshot(id: string, options?: RequestOptions): Promise<Task> {
-    return this.sdk.getTask(GetTaskRequest.fromJSON({ id }), options);
+  snapshot(selection: string | Pick<GetTaskRequest, 'id' | 'historyLength'>, options?: RequestOptions): Promise<Task> {
+    const request = typeof selection === 'string' ? { id: selection } : selection;
+    return this.sdk.getTask(GetTaskRequest.fromJSON(request), options);
   }
 
   list(request: ListTasksRequest, options?: RequestOptions) { return this.sdk.listTasks(request, options); }

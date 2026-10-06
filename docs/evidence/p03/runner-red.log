@@ -1,0 +1,53 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-payload
+
+stdout | apps/runner/src/protocol-dispatch/runtime.test.ts
+P03_DATABASE_CREATED flow_p03_test_12115_7261a4a81cf44b5999adbd9619b32106 2026-10-06T03:56:33.450Z
+
+stdout | apps/runner/src/protocol-dispatch/runtime.test.ts
+P03_DATABASE_CLEANUP flow_p03_test_12115_7261a4a81cf44b5999adbd9619b32106 remaining=0 2026-10-06T03:56:35.306Z
+
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts (15 tests | 1 failed | 14 skipped) 1910ms
+   × bound remote Task survives runner and center restart, then imports one version and independently verifies it 1717ms
+   ↓ a crash after the durable send permit but before its ACK does not dispatch or replay
+   ↓ a crash after remote acceptance but before its ACK preserves an uncertain outcome and never resends
+   ↓ a crash after binding commits but before its ACK recovers by GetTask without another SendMessage
+   ↓ cancel acceptance remains pending across restart until the remote Task actually stops
+   ↓ replays a persisted artifact ACK gap without duplicating its version and completes independent verification
+   ↓ remote execution success does not conceal an independently failed text verifier
+   ↓ heartbeat loss stops remote observation and an expired attempt cannot be revived or dispatched again
+   ↓ a lost center dispatch ACK times out even while heartbeats remain healthy, without remote replay
+   ↓ production server, runner and CLI entry points dispatch and inspect one verified remote task
+   ↓ an unwritable attempt directory stops the production runner without leaked heartbeat timers or a remote send
+   ↓ invalid local endpoint missing-ref exits without dispatch or continuing heartbeats
+   ↓ invalid local endpoint constructor exits without dispatch or continuing heartbeats
+   ↓ invalid local endpoint toString exits without dispatch or continuing heartbeats
+   ↓ invalid local endpoint bad-url exits without dispatch or continuing heartbeats
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/protocol-dispatch/runtime.test.ts > bound remote Task survives runner and center restart, then imports one version and independently verifies it
+AssertionError: expected undefined to be 'fee6a0cc9cbb009e4fb58af1bb7def7e7fa48…' // Object.is equality
+
+- Expected: 
+"fee6a0cc9cbb009e4fb58af1bb7def7e7fa48c47527676b5c0224c60f8298601"
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts:109:66
+    107|   expect(details.some(item => item.kind === 'verification' && JSON.par…
+    108|   expect(result.usage.inputTokens).toBeNull(); expect(result.usage.cos…
+    109|   expect((await client.protocolState(id))?.artifacts[0]?.digest).toBe(…
+       |                                                                  ^
+    110|   expect(peer.exchanges.some(exchange => exchange.method === 'SendMess…
+    111|   expect(peer.exchanges.some(exchange => exchange.method === 'GetTask'…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 skipped (15)
+   Start at  20:56:32
+   Duration  2.32s (transform 135ms, setup 0ms, import 325ms, tests 1.91s, environment 0ms)
+

@@ -1,0 +1,34 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-payload
+
+stdout | apps/runner/src/protocol-dispatch/runtime.test.ts
+P03_DATABASE_CREATED flow_p03_test_32916_610356b130084cb6af157421b490985d 2026-10-06T03:56:59.787Z
+
+stdout | apps/runner/src/protocol-dispatch/runtime.test.ts > bound remote Task survives runner and center restart, then imports one version and independently verifies it
+P03_RUNNER_HISTORY_WIRE {"historyCount":1024,"exchanges":[{"method":"SendMessage","historyLengthPresent":true,"historyLength":0,"responseBytes":179,"historyCount":0},{"method":"GetTask","historyLengthPresent":true,"historyLength":0,"responseBytes":170,"historyCount":0},{"method":"GetTask","historyLengthPresent":true,"historyLength":0,"responseBytes":296,"historyCount":0}]}
+
+stdout | apps/runner/src/protocol-dispatch/runtime.test.ts
+P03_DATABASE_CLEANUP flow_p03_test_32916_610356b130084cb6af157421b490985d remaining=0 2026-10-06T03:57:24.968Z
+
+ ✓ apps/runner/src/protocol-dispatch/runtime.test.ts (15 tests) 25264ms
+   ✓ bound remote Task survives runner and center restart, then imports one version and independently verifies it  1399ms
+   ✓ a crash after the durable send permit but before its ACK does not dispatch or replay  1322ms
+   ✓ a crash after remote acceptance but before its ACK preserves an uncertain outcome and never resends  1357ms
+   ✓ a crash after binding commits but before its ACK recovers by GetTask without another SendMessage  1635ms
+   ✓ cancel acceptance remains pending across restart until the remote Task actually stops  1574ms
+   ✓ replays a persisted artifact ACK gap without duplicating its version and completes independent verification  1432ms
+   ✓ remote execution success does not conceal an independently failed text verifier  1214ms
+   ✓ heartbeat loss stops remote observation and an expired attempt cannot be revived or dispatched again  1663ms
+   ✓ a lost center dispatch ACK times out even while heartbeats remain healthy, without remote replay  2088ms
+   ✓ production server, runner and CLI entry points dispatch and inspect one verified remote task  2960ms
+   ✓ an unwritable attempt directory stops the production runner without leaked heartbeat timers or a remote send  1325ms
+   ✓ invalid local endpoint missing-ref exits without dispatch or continuing heartbeats  1395ms
+   ✓ invalid local endpoint constructor exits without dispatch or continuing heartbeats  1667ms
+   ✓ invalid local endpoint toString exits without dispatch or continuing heartbeats  1415ms
+   ✓ invalid local endpoint bad-url exits without dispatch or continuing heartbeats  2563ms
+
+ Test Files  1 passed (1)
+      Tests  15 passed (15)
+   Start at  20:56:59
+   Duration  25.76s (transform 229ms, setup 0ms, import 408ms, tests 25.26s, environment 0ms)
+

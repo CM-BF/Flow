@@ -1,0 +1,102 @@
+{
+  "id": "P03",
+  "git": {
+    "available": true,
+    "branch": "codex/protocol-payload",
+    "head": "96d1a05fe0552f6f1a6d21a1f8da047074c70a5f",
+    "dirty": true,
+    "changedFiles": 1,
+    "observedAt": "2026-10-06T04:01:13.225Z"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "61d1192140d53c195f7d736d12e26932c9a5c0d5",
+    "proof": {
+      "target": "61d1192140d53c195f7d736d12e26932c9a5c0d5",
+      "head": "96d1a05fe0552f6f1a6d21a1f8da047074c70a5f",
+      "scopes": [
+        "packages/protocols/src/a2a-client.ts",
+        "packages/protocols/test/a2a-official-peer.test.ts",
+        "packages/protocols/test/a2a-observe.test.ts",
+        "apps/runner/src/protocol-dispatch/index.ts",
+        "apps/runner/src/protocol-dispatch/runtime.test.ts",
+        "apps/runner/src/protocol-dispatch/official-peer.ts"
+      ],
+      "observedAt": "2026-10-06T04:01:13.626Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/p03/README.md",
+        "docs/evidence/p03/checks.json",
+        "docs/evidence/p03/claim-receipt.json",
+        "docs/evidence/p03/dashboard-receipt.json",
+        "docs/evidence/p03/dependency-resolution.json",
+        "docs/evidence/p03/protocol-green.log",
+        "docs/evidence/p03/protocol-red-corrected.log",
+        "docs/evidence/p03/protocol-red.log",
+        "docs/evidence/p03/protocol-regression.log",
+        "docs/evidence/p03/quality.md",
+        "docs/evidence/p03/runner-green.log",
+        "docs/evidence/p03/runner-red-corrected.log",
+        "docs/evidence/p03/runner-red.log",
+        "docs/evidence/p03/tsconfig.json",
+        "docs/evidence/p03/typecheck-result.json",
+        "docs/evidence/p03/typecheck.log",
+        "plans/p03-protocol-payload/plan.md",
+        "plans/p03-protocol-payload/review.md",
+        "plans/p03-protocol-payload/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "declarationProof": "unchanged"
+  },
+  "implementationProof": {
+    "target": "61d1192140d53c195f7d736d12e26932c9a5c0d5",
+    "head": "96d1a05fe0552f6f1a6d21a1f8da047074c70a5f",
+    "scopes": [
+      "packages/protocols/src/a2a-client.ts",
+      "packages/protocols/test/a2a-official-peer.test.ts",
+      "packages/protocols/test/a2a-observe.test.ts",
+      "apps/runner/src/protocol-dispatch/index.ts",
+      "apps/runner/src/protocol-dispatch/runtime.test.ts",
+      "apps/runner/src/protocol-dispatch/official-peer.ts"
+    ],
+    "observedAt": "2026-10-06T04:01:13.260Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/p03/README.md",
+      "docs/evidence/p03/checks.json",
+      "docs/evidence/p03/claim-receipt.json",
+      "docs/evidence/p03/dashboard-receipt.json",
+      "docs/evidence/p03/dependency-resolution.json",
+      "docs/evidence/p03/protocol-green.log",
+      "docs/evidence/p03/protocol-red-corrected.log",
+      "docs/evidence/p03/protocol-red.log",
+      "docs/evidence/p03/protocol-regression.log",
+      "docs/evidence/p03/quality.md",
+      "docs/evidence/p03/runner-green.log",
+      "docs/evidence/p03/runner-red-corrected.log",
+      "docs/evidence/p03/runner-red.log",
+      "docs/evidence/p03/tsconfig.json",
+      "docs/evidence/p03/typecheck-result.json",
+      "docs/evidence/p03/typecheck.log",
+      "plans/p03-protocol-payload/plan.md",
+      "plans/p03-protocol-payload/review.md",
+      "plans/p03-protocol-payload/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "issues": [],
+  "current": true,
+  "generatedAt": "2026-10-06T04:01:12.915Z",
+  "updatedAt": "2026-10-06T04:01:12.000Z",
+  "checks": {
+    "state": "passed",
+    "target": "61d1192140d53c195f7d736d12e26932c9a5c0d5",
+    "record": "PASSED 61d1192140d53c195f7d736d12e26932c9a5c0d5；21不同用例（protocol6+runtime15），局部typecheck exit0；原始日志/确切命令/hash见docs/evidence/p03/checks.json"
+  }
+}
