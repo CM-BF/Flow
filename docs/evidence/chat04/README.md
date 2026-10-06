@@ -1,6 +1,6 @@
 # CHAT04 验证证据
 
-实现 target `77168ccabfe5aaf6c11f7d3a7b2aa8168aab5310`，固定 base `dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8`。`checks.json` 绑定全部实现文件及原始日志 SHA256、确切命令、实际 UTC 与退出码。
+实现 target `6fc9df40033e135159719121f7a3ae473d025a9f`（包含可执行 consumer harness，产品源码与77168cc完全一致），固定 base `dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8`。`checks.json` 绑定全部实现文件及原始日志 SHA256、确切命令、实际 UTC 与退出码。
 
 - 最终 queue 15/15，`queue-final.log`：真实 HTTP + PostgreSQL + pg-boss。包含实际 onSend 断开已提交命令 ACK，原 key 重放仍得原 receipt，readItem 得 promoted 事实。
 - 直接 consumer 22/22，`consumer.log`：原 `conversations.test.ts` 的全部 test body/断言保持；`run-consumer.mjs` 仅生成到已领范围，替换临时资源生命周期并显式 migration11，执行后删除生成文件。原源码/生成文件 hash 记 consumer-result。测试通过注入 SDK，不调用真实模型。首次缺已安装 SDK 的 0 tests 是失败（保留），复用既有依赖后重跑通过。

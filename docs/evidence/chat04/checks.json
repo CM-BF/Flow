@@ -1,7 +1,7 @@
 {
   "base": "dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8",
-  "implementation": "77168ccabfe5aaf6c11f7d3a7b2aa8168aab5310",
-  "recordedAt": "2026-10-06 04:30:26 UTC",
+  "implementation": "6fc9df40033e135159719121f7a3ae473d025a9f",
+  "recordedAt": "2026-10-06 04:31:33 UTC",
   "sourceFiles": [
     {
       "path": "apps/server/src/conversation-queue/commands.ts",
@@ -54,6 +54,10 @@
     {
       "path": "packages/storage/migrations/011-conversation-queue.sql",
       "sha256": "78dfb35927657c885fa643a3db5c47b953de5c0210bf02e419a965f39571d838"
+    },
+    {
+      "path": "docs/evidence/chat04/run-consumer.mjs",
+      "sha256": "43c4477d7edf74e4658e0c60b19d13d1b241522343b59a756e3545afde68eec3"
     }
   ],
   "logs": {
@@ -152,5 +156,20 @@
   "testCountExplanation": "15 final queue cases + 22 original conversation consumer cases; earlier subsets/matrices are not added.",
   "actualModels": 0,
   "newCloud": 0,
-  "productionLifecycle": "Not mounted by this branch; Execution Lead owns index/client integration."
+  "productionLifecycle": "Not mounted by this branch; Execution Lead owns index/client integration.",
+  "productImplementation": "77168ccabfe5aaf6c11f7d3a7b2aa8168aab5310",
+  "consumerCommand": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "docs/evidence/chat04/run-consumer.mjs"
+  ],
+  "consumerSelectedTest": "apps/server/src/conversation-queue/consumer.test.ts (generated solely for isolated resources; removed in finally)",
+  "commandForSliceLogs": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/conversation-queue/queue.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner"
+  ]
 }
