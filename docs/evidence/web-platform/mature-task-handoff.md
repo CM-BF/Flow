@@ -1,8 +1,20 @@
 # 成熟聊天大task来源与登记队列
 
+## TUI01C：可直接据此办理原claim追加
+
+**Web co-lead /root确认这5个已交付Web路径目前没有任何待写动作，同意TUI01C原子amend claim1c911f44成功后接管；两原owner均停写，ACK/RELEASE/ATTACH无冲突。**
+
+五literal：`apps/web/src/conversation-stream/patches.ts`、`apps/web/src/conversation-stream/projection.ts`、`apps/web/src/conversation-stream/messages.ts`、`apps/web/src/conversation-activity/native/projection.ts`、`apps/web/package.json`。10:45:17.544Z [fresh原账本](tui01c-web-scope-ledger.json)与[确认](tui01c-web-scope-handoff.json)可读。已有基础claim应原子amend，不是再建take；成功前不得新增写入。
+
+## ATTACH01运行域完整接收入口（root 2026-10-06 10:51:07 UTC来源）
+
+运行域target **8701a6cf547248e70aa5758f05da1d7d314ae9c0**，root 10:49:15 UTC独立APPROVED，78直接检查通过、3个自有DB清零、16source/19只读deps hash一致；phase1两实现保持6bc原字节。作者当前候选metadata6d0a3077fb2f9dc338a413c020fa5dfe1a3e1b98 clean，正在仅转录最终批准，最终完整SHA以owner下一回执为准。唯一canonical `/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md`，完整输入 `docs/evidence/wpf-attach01/{README.md,interface.md,runtime-candidate.json,runtime-checks.json,runtime-validation.md}`。十八scope原claim ef617d78 v2保留，main未接收；不能只拿旧phase1当runtime已接收。
+
+**Lead统一共享桥接**：受控接已审runtime+026，与原F01/TUI唯一writer协调contracts/index/public client六操作、同一ACK decoder显式template1/2，以及server/index migrateAttachments/registerAttachmentRoutes；本组backend不写这些共享出口。入口先migration后owner-auth下mount，CREATE稳定false、GET capability只026就绪时动态提供；空附件保持v1，非空v2。客户端/decoder/mount组合核后，ATTACHI从准确公开输入推进；不得另造Web v2验码器或借旧phase1猜公开接通。本片0provider/个人服务，PG/HTTP是真实隔离实证。
+
 ## 同级立即可消费回复（2026-10-06 10:47:46 UTC）
 
-- **TUI01C五Web路径**：两原owner已明确停写，10:45:17.544Z [fresh PG](tui01c-web-scope-ledger.json)逐literal无active/handoff重叠；[精确范围与确认](tui01c-web-scope-handoff.json)。Lead/TUI01C可自行fresh原子take成功后实施，不等待GO；这条free观察不是写许可。只提纯public模块并做局部Web消费者验证，不移动App/Thread/host私有状态。
+- **TUI01C五Web路径**：两原owner已明确停写，10:45:17.544Z [fresh PG](tui01c-web-scope-ledger.json)逐literal无active/handoff重叠；[精确范围与确认](tui01c-web-scope-handoff.json)。Lead/TUI01C可自行对现claim1c911f44 fresh原子amend成功后实施，不等待GO；这条free观察不是写许可。只提纯public模块并做局部Web消费者验证，不移动App/Thread/host私有状态。
 - **WPF-ACK01已正式受领**：新web-shared-ack-consumer/codex同名、base0cee7556befa1988e60bae94b510240122c34b88；[a2674416 v1](ack01-take-receipt.json)10:45:38.879Z七literal，3wrapper/2test+plans/wpf-ack01-shared-consumer/docs/evidence/wpf-ack01，父MATURE06，owner w01。followup_task已唤醒；首canonical **ff04f355518484419c10d7abe8adf337619a9bf9** 已owner实核clean、parser0/human完整，10:46:15 live身份/七scope匹配。不等ATTACHruntime，不改RELEASE固定pair。
 - **RELEASE01 root已APPROVED**：7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b，10:46:30UTC；[管理范围/38links/两hash审计](release01-delivery-audit.json)核859992e clean且scope外0。root全文/独立tsc/原bytes与保留artifact审查，真实browser是作者证据，PG清理由作者记录；最终批准metadata **db08e7b5976ce462a0b829bbf6a5554fcaf43121** 已正常push/clean，仅7ownmetadata变化、两source对7805零差；原20a v1保留至main。new format2 releaseId `8d8ab520a9d43c7b9dafb22911416ee7`，report仅适用相同完整descriptor，不自动发布个人入口。
 - **六计划UI专项已实际完成**：[root真实页面证据](mature-dashboard-ui-acceptance.json)记录129来源、六大task身份/co-lead、ATTACH/RELEASE/DPERF父/worker领取及父导航。MATURE04旧stale已自恢复；其literal范围与标准阻塞字段另同级Mika合法owner安全修正，不影响父关联通过，不改其源。**这不是六大task功能Done。**
@@ -199,3 +211,9 @@ GO新增DPERF预算已写WPF-001-33与[原proposal](dperf02-proposal.json)：附
 Lead已正式接收TUI01B：main0cee7556（完整SHA待消费preflight读），impldc7f3e186ee7a628187f82734db73f48866b9f6e，metadata52d3；9source/root types沿Lead回执，70不重跑。公共interface在该main docs/evidence/tui01b/interface.md，FlowClient create/submit同decoder，v1严格、v2待ATTACH明确扩展。RELEASE01后w01可七literal薄Web消费新树/fresh take，不等附件runtime、不追改RELEASE固定pair。
 
 RELEASE01最终验收补充：新Web须SVC04正式format2固定releaseId，旧双v1只诊断；交精确source/toolchain/releaseId/完整descriptor及原bytes报告，Lead同参数构建descriptor相等才复用报告，不同需重新验证；不把miniWeb或另一产物报告作兼容证明。
+
+## 既有验收与下一有界槽位（本轮集中安全点）
+
+GO10:47呈现要求已直接进入MATURE06-03稳定TODO；RS13唯一asset/初始依赖图/延后chat以及静态host cache/encoding/版本回滚，已直接进入MATURE01-05与WPF-001-35稳定TODO，研究只提供证据，不替代验收。未重新跑RELEASE或宣称优化收益。
+
+panels完成ATTACH最终metadata后，只读准备MATURE05-05真实App开关/闭合生命周期基线，暂定WPF-WORKSPACEPERF01、两新专测+自己plan/evidence四scope；仅proposal，未建树/take。拟8/16/32合成conversation、≤2可见pane、总≤90s含cleanup/≤8MiB，测DOM/观察读取/草稿与unknown保护，0provider/产品DB/个人服务；最终范围/预算需作者确认可行，再fresh claim，不碰w01未来App/ACK或TUI stream范围，不为占槽造生产框架。

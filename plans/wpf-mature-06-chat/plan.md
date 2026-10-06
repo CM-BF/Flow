@@ -24,7 +24,7 @@ CHAT06I01固定9da已main，官方runtime权威repository避免伪branch；Activ
 
 - [ ] **WPF-MATURE-06-01** 盘点通过项与真实缺口：逐条引用stream/activity/queue/readability固定证据与限制，模块/fixture/真实provider分开，不重复勾整体Done。
 - [ ] **WPF-MATURE-06-02** 完成STEER独立控制与接线：admission仅快照非许可，POST重验、原key unknown、receiptRevision更新、received不冒模型遵从；模块和App接线分别验收。
-- [ ] **WPF-MATURE-06-03** 验证正文与活动显示：真实增量、settlement retain/replace、typed-final完成状态、provider实际thinking才显示、tool unknown不伪造；Markdown/复制/懒详情。默认正文+简短自然状态，工程ID/计数/原因Details按需；普通hi、正常stream/tool、queue等待、断线unknown四旅程及390/双pane验收，error/unknown/恢复不能隐藏，系统通知不冒模型回复。 验证呈现区分正文规则、工程检查、独立审查/用户接受；缺source或artifact版本绑定为限定范围/unknown，A失败/B通过不能回写A。GO固定f181源码观察与ENG-001依赖见[研究](../../docs/evidence/web-platform/mature-theme-presentation-research.md)，不是新browser复现。
+- [ ] **WPF-MATURE-06-03** 验证正文与活动显示：真实增量、settlement retain/replace、typed-final完成状态、provider实际thinking才显示、tool unknown不伪造；Markdown/复制/懒详情。默认正文+简短自然状态，工程ID/计数/原因Details按需；成功回复的Activity succeeded/Open task controls/More actions/Task output/空0 waiting Center queue入口收敛，error/unknown/decision始终直接可见；普通hi、正常stream/tool、queue等待、断线unknown四旅程及390/双pane验收，error/unknown/恢复不能隐藏，系统通知不冒模型回复。 验证呈现区分正文规则、工程检查、独立审查/用户接受；缺source或artifact版本绑定为限定范围/unknown，A失败/B通过不能回写A。GO固定f181源码观察与ENG-001依赖见[研究](../../docs/evidence/web-platform/mature-theme-presentation-research.md)，不是新browser复现。
 - [ ] **WPF-MATURE-06-04** 完成输入错误与持久恢复：键盘/IME/下一草稿、断线重连、queue/steer/cancel、lostACK原身份恢复；当前跨reload未完成项明确开放；有效登录期内刷新/重开回同中心会话，HTTP+SSE一致认证，错误Bearer不得回退owner，cookie不隔离端口，详见下方与[接口研究](../../docs/evidence/web-platform/mature-task-handoff.md)。
 - [ ] **WPF-MATURE-06-05** 控制滚动与语音退路：后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿，无自动模型调用。
 - [ ] **WPF-MATURE-06-06** 完成可靠真实聊天旅程：实际App fixture覆盖失败/恢复/双pane；明确预算后单次真实provider观察，至少两次正文增长才称增量，没有partial如实记录不补query。

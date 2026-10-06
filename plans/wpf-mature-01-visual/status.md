@@ -31,7 +31,7 @@
 | WPF-MATURE-01-02 | in-progress | Web co-lead | 外部theme实际消费者、局部硬值移除、禁用清理及三种plugin reload未验，不用四builtin替代。 |
 | WPF-MATURE-01-03 | in-progress | Web co-lead | 实际空态、长正文、代码/表格、streaming、tool/thinking展开、错误截图；不遮行动错误或unknown。 |
 | WPF-MATURE-01-04 | in-progress | Web co-lead | 390px与桌面、键盘焦点/IME、reduced-motion、不支持/禁用backdrop-filter时不透明可读fallback。 |
-| WPF-MATURE-01-05 | pending | Web co-lead | 实际App前后图与交互证据，源码绑定固定target，局部审查后受控main集成。 |
+| WPF-MATURE-01-05 | pending | Web co-lead | 实际App前后图/交互与固定产物；RS13按唯一asset去重、初始依赖图/延后chat及parse/可输入/首次chat取舍；与SVC owner定义哈希asset cache/encoding和HTML/身份/API边界，有界冷暖/版本切换，未实施。 |
 
 ## 依赖与领取
 

@@ -64,6 +64,8 @@
 | WPF-001-33 | in-progress | d01_owner | 902c实现/167e交付已push、root27独审APPROVED；34.897s/16.08MB Trace2仅临时样本，main未接收；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md) |
 | WPF-001-34 | completed | d01_owner | root10:44–10:45实际129来源页面核六parent/co-lead、三子片领取/父导航；[证据](../../docs/evidence/web-platform/mature-dashboard-ui-acceptance.json)。仅计划落盘/显示专项，不是六feature完成。 |
 
+| WPF-001-35 | pending | d01_owner | RS13固定产物去重/初始依赖图/延后chat及静态host cache-encoding冷暖与回滚验收已落plan；未take/实施，ACK/附件/发布优先，0个人服务/模型。 |
+
 ## 当前唯一来源、写权与下一步
 
 | 工作 | 唯一来源 / 写权 | 当前下一步 |
@@ -98,4 +100,4 @@ ExecutionLead SVC03正式来源：个人61228是固定static；backend b1c2e398�
 
 ## 证据与历史入口
 
-[本次收敛前原文历史](status-history.md)保留原时点、失败、未验、SHA与原始证据链接；仅历史不得更新成第二状态源。[plan](plan.md)保留完整U00–U12/REQ01–45与稳定34TODO；[research](../../docs/evidence/web-platform/research.md)记录研究依据；[固定发布说明](../../docs/evidence/web-platform/publication/README.md)界定a5独审副本；[本轮成熟度handoff](../../docs/evidence/web-platform/mature-task-handoff.md)供正常登记/集成。
+[本次收敛前原文历史](status-history.md)保留原时点、失败、未验、SHA与原始证据链接；仅历史不得更新成第二状态源。[plan](plan.md)保留完整U00–U12/REQ01–45与稳定35TODO；[research](../../docs/evidence/web-platform/research.md)记录研究依据；[固定发布说明](../../docs/evidence/web-platform/publication/README.md)界定a5独审副本；[本轮成熟度handoff](../../docs/evidence/web-platform/mature-task-handoff.md)供正常登记/集成。

@@ -174,6 +174,8 @@ D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVIT
 - [x] **WPF-001-32** WPF-CONTEXTI01沿REQ42实际知识UI：d7e完整base，55fev1二十scope已开工；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。
 - [ ] **WPF-001-33** WPF-DPERF02批量Git树证明与快照内重复工作：附件P1/已审发布及D06安全点之后，以独立临时Git/少量自有WT对16/64/128source做Trace2，先量process启动/峰值再墙时，总≤60秒含清理、证据≤32MiB；不压真实repo/4320。测后选快照内复用或已批准batch-tree，保2MiB/5s、完整record/缺失/unknown和每snapshot fresh dirty/claim，无TTL缓存假绿。无收益也保结果，合成128不当runner容量；沿FLOW-001原工程结果追溯，不新大task。详见[有界方案与结果](../../docs/evidence/web-platform/dperf02-proposal.json)；1cb4 v1已take、固定902c/167e已独审批准并push，待main；该TODO不因分支通过提前完成。
 
+- [ ] **WPF-001-35** RS13既有首屏性能后继：固定RELEASE最终10:39:13.012/new artifact caa1e938的唯一loaded资源1,491,399B（旧1,426,477B，+64,922B），旧10条实为5个唯一asset；不把记录数/解码字节当网络压缩、TTI或收益。查实际index/modulepreload依赖图并按需延后chat chunk，联合测首屏资源/parse/可输入与首次开chat等待；同ExecutionLead/SVC唯一owner确认不可变URL与回滚保留，分别定义HTML/哈希asset/身份/API cache/encoding，保manifest完整，不全站cache或承诺立即撤销。已有artifact独立0模型冷暖/版本切换有界验证，个人服务不动；待关键路径安全后精确scope/fresh claim，不新大task。详见[RS13固定证据](../../docs/evidence/web-platform/research.md)。
+
 ## 验收、风险与持续方式
 
 每轮只在其可验证条件满足时完成；持续总目标保持活动，新增用户要求/研究发现追加到本计划、排队并由明确owner实施。禁止为了持续工作堆无依据复杂度，也不能因“本批完成”就把无限优化声明完成。
