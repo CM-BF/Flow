@@ -300,3 +300,7 @@ w01_owner后续有界只读：固定center2d3bb61/clienta3b9/outbox0d4e的确定
 03:54 CHAT唯一owner首预览http://127.0.0.1:63743/、session14932，明确HTTP fixture，作者Chrome同conversation hi/追问两轮正文/0pageerror。固定输入I01b584+a3b9+typed746，整体moving/targetUNKNOWN；root另开后台tab15，GoalOwner按约定用户视角验收，旧49922与55049不动。root和管理者跨消息同时桥接了同预览，管理者明确发生重复一次并停止额外通知。原owner继续runtimeACK/everUnknown局部约束，w01研究完待派，不为满槽创建新生产。
 
 03:55:53 UTC root实际CUA首CHAT预览：自建后台tab15/63743，新conversation→追问→回复时保留下一个draft，浅深主题目视、执行单折叠。首次发送draft→conversation remount后焦点BODY复现两次，交唯一owner改稳定View.key；reload后新建conversation fba2…首次受理后直接typeText(null)，activeElement仍TEXTAREA/Message input且新draft完整，进行中反馈已关闭。无固定target，整体NOT_STARTED，开发截图不代production验收。另moving源码发现>16000字符本地普通Error可能吃稿，交owner验证；ACK历史unknown后403/malformed2xx约束由w01研究交owner补局部测试，不把未审整个实现提前APPROVED。
+
+04:00跨Lead队列（root转交，待独立现场核验）：主Lead完整main候选8f1481df880cf5077e1ddb9a8f302fe700a7ece8含已审B01/PERF02/X02、未合moving CHAT App，正在推送。这里只登记候选，不据此把本树PERF02 main pending改成已集成；后续收到交付后核真实HEAD/ancestor与声明范围。
+
+GoalOwner批准Mika X03最小只读插件管理模块，独立apps/web/src/plugin-management与专用tests/plan/evidence，不碰CHAT App.tsx或plugin-integration两接缝。固定合同/claim待Mika交root；未来固定交付后由本队唯一App owner明确受领接线，不同时写核心。X03区分中心registry与浏览器extension，没有verified binding就不合并身份，不下载/加载/授予权限，不造新API。CHAT优先不变，本队不重复实现X03；真实两query仍主Lead唯一执行，复用入口要求已交CHAT owner。

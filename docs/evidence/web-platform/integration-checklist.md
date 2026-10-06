@@ -210,3 +210,7 @@ REQ40归属不变：Mika写中心模块，ExecutionLead写共享client/export/CL
 固定实现a87f64f48a3b7e8d03429ab0673c210076a2df0d/basecc33403cd9b357fcd85484b7bc6952dc1220d689；报告d891195688d849e7623cd2805b3f64cfd07b959d；最终metadata172d10d63179a4861cc0fbf986dec10bd0a45f10，codex/web-activity-window clean、apps实现diff0。root限定APPROVED；管理scope/docs检查无blocking，7md39links/TODO/diffcheck0。03:49实际4320字段齐、checks/review均targeta87、proof unchanged、claimd36v1 matchesSource、main not-contained，[证据](perf02-approved-dashboard.json)。
 
 已通过指定GoalOwner桥接“收件人：Execution Lead”交完整SHA/范围/检查/限制，请其局部集成并验证I01/CHAT组合。三Activity生产文件+算法/browser/probe三测试，未改共享/根lock/App/Thread；owner停止主动写八scope，claim保留回修，不自行释放/merge或开下一性能轮。无常驻性能预览，动态测试端口均已清理。
+
+## X03只读管理视图协作边界（主线新授权）
+
+GoalOwner经root确认Mika承担X03最小只读模块，仅新apps/web/src/plugin-management与其专用tests/plan/evidence；具体claim和固定输入待其交付后链接，不当作已有本队权限。禁止并发写CHAT App.tsx/plugin-integration接缝；固定模块通过后再由本队唯一App owner申请明确接线范围。中心registry与浏览器extension独立显示，未验证binding不合并，不下载/加载/赋权，不新造API。P01/I01本地启停与中心持久管理仍分开，外部Web本轮持续聊天优先，不重复建同一模块。
