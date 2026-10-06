@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:46 UTC；固定分支基线22a，main未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:04:07 UTC；固定分支基线22a，main未集成 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,8 +10,8 @@
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect |
 | Branch | codex/server-transaction-disconnect |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品e28c4ed0a30ec2800eeca2ca5c444c0081c38165；PG准备源码HEAD edbe2e0a04b58fd95207904889cbc0e7e5666c53 |
-| 工作树dirty状态 | 2026-10-06 20:43启动核HEAD93dacd96 clean；本次仅真实PG原始结果与状态归档，未改固定源码 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品e28c4ed0a30ec2800eeca2ca5c444c0081c38165；本次准备前HEAD12b29c92b7ef5eb95534f93147006ef3c4321a5c |
+| 工作树dirty状态 | 本次仅http-*证据、执行封套、局部配置与本status；产品2源及已消费PG原件无变；固定packet后交审 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | integration |
 | 实现目标 | e28c4ed0a30ec2800eeca2ca5c444c0081c38165 |
@@ -24,7 +24,7 @@
 | 下一可用交付 | 完成必要直接消费者检查，再将事务断连保护纳入主线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED e28c4ed0a30ec2800eeca2ca5c444c0081c38165；真实PG/HTTP不在已审通过范围 |
+| Review | [review.md](review.md)，APPROVED产品e28及真实PG结果05a3e901；本次HTTP准备包PENDING，实际HTTP NOT_RUN |
 | Claim | 3bbb8293-c36d-40c8-a133-723463801943 v1 ACTIVE；4 literal scopes仅领取事实，非产品target范围；[原子回执](../../docs/evidence/svc07/claim-receipt.json) |
 | 架构影响 | 借用期连接错误/释放生命周期变化；产品source已固定，待集成时由 Execution Lead 更新 apps/execution-dashboard/public/architecture-data.js，分支设计未作为main事实 |
 
@@ -54,3 +54,11 @@
 ## 最新独审与集成责任
 
 Mika于2026-10-06 20:44:52UTC对实际结果target `05a3e901f4abf6f11cb7067cfca6167589a1cf9b`完成APPROVED/0P1P2，[忠实性review](review.md)范围限两断连公开事务/同pool恢复/原始输出及已观察cleanup。HTTP并发claim/command replay+restart必要消费者已交Execution Lead集成队列，owner不扩本树server闭包或重跑两断连例。HEAD05a3e901在本metadata前clean；本次仅独审归档，提交push后停写，claim保留。
+
+## HTTP直接消费者当前准备
+
+Lead后续指派原owner在本evidence内准备独立HTTP旅程；209源/869209B与13额外依赖已按固定22a供给并核hash，既有database产品及pg原件不变。新http-*输入/fixture/封套与已消费pg-*分开，1旅程覆盖原并发命令重放、同库restart/变payload拒绝、双runner唯一claim及取消历史。实际HTTP NOT_OPEN（F04后排窗），旧2断连不重跑。
+
+[http-types-v2](../../docs/evidence/svc07/http-types-v2.json) exit0/1.935556s，仅类型解析；首types原始错误保留，0PG/HTTP。新的执行封套复用既有自有process监督接缝，拟60s总窗/40s工作/15s清理，最多12连接、24HTTP请求/单响应64KiB、raw64KiB；尚未独审批准执行。20:59UTC Mika静态批准一次显式Vitest list收集（10s/64KiB），已收集1条、exit0、wall1.549670s；仅COLLECTED_NOT_EXECUTED，不能称测试通过。HEAD12b29；dirty仅本scope HTTP准备/状态。
+
+2026-10-06 21:04:07 UTC：[HTTP一次执行准备](../../docs/evidence/svc07/http-window.md)与完整manifest固定后交Mika独审；实际执行尚NOT_OPEN。当前没有待launch进程，收集PGID88367 absent且tmp absent。产品/旧PG输入结果不变，本包提交后安全停写，回REQ15等待依赖后实施。
