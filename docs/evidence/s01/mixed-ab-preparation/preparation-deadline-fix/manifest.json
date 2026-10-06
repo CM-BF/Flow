@@ -1,0 +1,116 @@
+{
+  "implementationTarget": "d3ba03a88b8d25d134b7abade7f55f8198b182ba",
+  "priorTarget": "da93263a1f47039abcfe7d20670cc2040c457136",
+  "redSource": "eda844a14e5a510e880703a6764ab4edf33fa2ef",
+  "recordedAt": "2026-10-06 14:09:19 UTC",
+  "source": [
+    {
+      "path": "experiments/runner-capacity/mixed/ab-input.ts",
+      "bytes": 8863,
+      "sha256": "a9be0175d304cbeb217ea64f567ad1670ed1cc2dd5dc2d74ce966e5ec9ddcb93"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-driver.ts",
+      "bytes": 6971,
+      "sha256": "b04f3b676cdf9b8eb6d9f02193c6564fc6032e82c630843163a6bacc0087e4f3"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/preparation-git.test.ts",
+      "bytes": 1217,
+      "sha256": "7e2ed82ab35d49ffa73d609fd502ad2d434bc6aafb9e1c2e18a2c5764d32acc7"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/green-exit.json",
+      "bytes": 100,
+      "sha256": "efd8e762270e8879221bfc147d70112b2c87b220490096b5a1ba6246e6331e49"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/green.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/green.stdout",
+      "bytes": 476,
+      "sha256": "a16b37757e4257bff07541cd3c37b80939bfc8c7bd842df0b340a28064619fe3"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/red-exit.json",
+      "bytes": 102,
+      "sha256": "ca6b9e5ab1db02d2635e85e7a41cae11dacd60e12437bb2494e9f14dbcef33a7"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/red.stderr",
+      "bytes": 2334,
+      "sha256": "fa390857c6737dbb75109c336f34e4650d02857fe162bb6c087fb8cb0893fe66"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/red.stdout",
+      "bytes": 639,
+      "sha256": "d302d15a83ab3f5dfd81de3ec4e5651708492bf03e1c8e087f87d25d76a76310"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/strict-exit.json",
+      "bytes": 16,
+      "sha256": "982b9e9bfb10ffe83cad665807abcfd3fa97b37822db5ab7831157a499548a9e"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/strict.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/strict.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "support": [
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/README.md",
+      "bytes": 1519,
+      "sha256": "ede90fda5ee27aff58ed3a31863f5a3c4954f4f9df18f1fa6fba1119de70b8f6"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/checks.json",
+      "bytes": 567,
+      "sha256": "e77f5775330ffd52576205d630eedfb43d1e1a4b850ea6976989343584035046"
+    }
+  ],
+  "readonly": [
+    {
+      "path": "experiments/runner-capacity/mixed/ab-budget.ts",
+      "bytes": 4763,
+      "sha256": "71e75503ce69605ec63ca8b8e4695b0e0057b76702bba836aad2dfa4e2ea6095"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-input.test.ts",
+      "bytes": 4220,
+      "sha256": "2a8eb050e9372f70425f856b93efa675de7e2d39bd363eb08bb6368eb7757bc6"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-budget.test.ts",
+      "bytes": 4608,
+      "sha256": "f5520376564e8c9cb143d7d1f57d95bb21c57072d7168a55f4396f50aef6a0a0"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/tsconfig.json",
+      "bytes": 258,
+      "sha256": "2f7bfc694006d11811592ae4ef4bc57d50300ce2c89c32c12a190fa305272c52"
+    }
+  ],
+  "history": {
+    "priorManifestSha256": "a06e0d3cd2d839b47b033df929f39ecb3e9a7b654bcbbab132bbd62959f732a7",
+    "all87FixedGitBindingsVerified": 87,
+    "currentExpectedSourceDrift": [
+      "experiments/runner-capacity/mixed/ab-driver.ts",
+      "experiments/runner-capacity/mixed/ab-input.ts"
+    ],
+    "fixed977ProductionBlobsUnchanged": "old production-inputs.json bytes unchanged; no repeat full enumeration"
+  },
+  "checks": "3red ->17green(3new+14direct), strict0; old61 not rerun",
+  "window": "NOT_OPEN",
+  "resource": "RESOURCE_PENDING"
+}

@@ -141,3 +141,9 @@ Review target commit: `da93263a1f47039abcfe7d20670cc2040c457136`
 ## da932追加P2（2026-10-06 14:07:59 UTC）
 
 architecture_read原14:04:38 APPROVED经root同步Git期限补读后更正为CHANGES_REQUESTED，1P2/0P1。`ab-input.ts frozenFiles`使用outer remaining而不是pre15 remaining；14.9秒可同步阻塞至19.9秒。旧raw/manifest不动，最小source修复由owner在原508f v1执行，0actual。
+
+## P2修复待复审（2026-10-06 14:09:19 UTC）
+
+Review target commit: `d3ba03a88b8d25d134b7abade7f55f8198b182ba`
+
+原P2对应同步Git余量显式由preparationDeadline贯穿并返回后核验；3red/17green/strict0，旧61与旧manifest冻结。增量manifest `4a555e969cb445e913c6bb5bf99a7757166eb3a73c56cabc2bd445a53ab39040`，尚未APPROVED，0actual。
