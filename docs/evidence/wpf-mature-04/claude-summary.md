@@ -1,6 +1,6 @@
 # Claude summary 纯适配器证据
 
-当前P2修复target：`3ab95d288a91214d03dec719dc6b44024206118a`，复审NOT_STARTED。旧target `e81f2009153436cacf791aa7c8de492875906586`已被status_read/gpt-6-astra预审判CHANGES_REQUESTED（1P2/0P1），mika于09:25:10 UTC核hash后接收；旧46项记录保留为历史。已审首片879c989的4源码逐文件diff为空；新实现仅`apps/runner/src/context-observations/claude-summary.ts`及`.test.ts`，claim v3 [COMMITTED receipt](sdk-amend-receipt.json)。本页记录静态来源与局部行为，不是采集/持久化事实。
+当前P2修复target：`3ab95d288a91214d03dec719dc6b44024206118a`，复审APPROVED（status_read/gpt-6-astra，root于2026-10-06 09:28 UTC接收，owner于2026-10-06 09:30:13 UTC记录）。旧target `e81f2009153436cacf791aa7c8de492875906586`已被status_read/gpt-6-astra预审判CHANGES_REQUESTED（1P2/0P1），mika于09:25:10 UTC核hash后接收；旧46项记录保留为历史。已审首片879c989的4源码逐文件diff为空；新实现仅`apps/runner/src/context-observations/claude-summary.ts`及`.test.ts`，claim v3 [COMMITTED receipt](sdk-amend-receipt.json)。本页记录静态来源与局部行为，不是采集/持久化事实。
 
 小Interface为`mapClaudeContextSummary({identity, observationId, observedAt, evidenceRef, requestDetail: 'summary', response}) → ContextObservation`。仅接受subject.kind=attempt且nativeSessionId非空；draft/queued拒绝，需后继独立host-estimator。authenticated host负责已消费input/history cut、采样来源、冻结身份、receipt权限；adapter仅规范化数值，中心pure projection仍唯一负责freshness和remaining算术。无Query实例、计数API、时间采样、计时器、auth或持久状态，SDK仅`import type`，运行时不加载它。没有改先前公有schema。
 
@@ -28,3 +28,5 @@ clean-code/codebase-design复核于2026-10-06 09:22 UTC：单一映射函数和�
 预审指出SDK summary只报告已消费Query上下文，不能给未发送draft/queued标full覆盖；作者接受。最小修复仅添加session-bound attempt前置条件，默认合成身份改attempt，新增draft/queued/null session三项拒绝，保留attempt身份/证据detachment及ownership变化失效。该gate不能代替host实际消费cut验证，也没有新增状态机。旧879的4源码未变。
 
 修后实际选中2文件：26 Adapter + 23直接projection = **49/49，0失败/0跳过**，root严格局部noEmit exit0。原始[修后tests](sdk-p2-tests.txt)、[修后noEmit](sdk-p2-typecheck.txt)、[新hash/exit manifest](sdk-p2-check.json)；沿用同一临时配置。旧46记录与sdk-implementation-check.json没有覆盖改写。修复仅验证纯映射和直接公共消费者，不宣称真实采集/生命周期/鉴权或持久化通过。
+
+独立复审结论：1P2已解决，无剩余P1/P2，绑定3ab95d288a91214d03dec719dc6b44024206118a及两源码hash。批准不覆盖SDK采集、鉴权fence、已消费input/history cut、持久化或生产freshness；源码冻结待integration，本轮不重复工程测试。
