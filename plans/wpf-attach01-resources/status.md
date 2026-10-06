@@ -2,27 +2,27 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 11:21:06 UTC |
+| 最近更新 | 2026-10-06 11:24:07 UTC |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | 所属大task | [WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md) |
 | co-lead | Web /root |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已保留真实旧库升级与原收据检查，测试入口可避免重复注册附件路由 |
-| 下一可用交付 | 独立审查测试适配，再与正式中心自动安装入口组合验证 |
+| 当前产出 | 附件运行模块及正式接线所需的测试适配均已独立审查通过 |
+| 下一可用交付 | 将已审模块与公共客户端、正式中心入口组合验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources |
 | Branch | codex/attachment-resources |
 | 工作基线 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066 / 当前Git聚合 |
 | 工作树dirty状态 | 两测试源已固定1f0c196；仅自身metadata收口，最终Git为准 |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 工作分支状态 | in-progress / approved / waiting-main |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9；仅6受影响PG/HTTP case、严格types、4DB清零；正式自动factory分支未验，旧8701/78另保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
 | 实现目标 | 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9 |
 | 实现范围 | apps/server/src/attachments/fixture.ts, apps/server/src/attachments/context.test.ts |
-| Review | [review.md](review.md)，当前fixture增量NOT_STARTED；8701 runtime及phase1历史APPROVED另保留 |
+| Review | [review.md](review.md)，1f0两文件fixture增量APPROVED；8701 runtime及phase1历史APPROVED另保留 |
 | D04 claim | ef617d78-eb39-484e-898e-5f057fca50d4 v2 active，2026-10-06T10:28:42.374Z COMMITTED；十八scope |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -57,3 +57,5 @@ Root兼容裁决：仅请求非空attachments→v2；无附件/[]或原v1 replay
 仅已领fixture.ts/context.test.ts后继；原8701/78日志不改。live ef617 v2 active核实。真正预026独立库先逐项旧migration与领域操作，再首次完整factory+HTTP；普通和child排空插件注册后严格检查六route，部分挂载失败，完全未挂载才fixture fallback。当前本树server/index仍f181旧factory，自动生产mount未消费/未验。0provider/个人服务，六个受影响case与严格types，独立输出目录，详后继validation。
 
 固定fixture兼容增量 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9 / base 1d236cbe2299117e3b63887fda3d1c0e140f56b0，只2专测；[验证](../../docs/evidence/wpf-attach01/fixture-compat-validation.md) / [manifest](../../docs/evidence/wpf-attach01/fixture-compat-candidate.json)。6case与4DB清零实际通过；自动factory仍待Lead固定组合，当前观察全部为明确fallback。原runtime8701全16源除这两个测试外不变。
+
+2026-10-06T11:24:06.499649+00:00：root独立APPROVED1f0两文件增量，2选中case/27未选、4DB清零；作者6case/严格types另记。新[累计16源清单](../../docs/evidence/wpf-attach01/runtime-with-fixture-candidate.json)供主线组合，旧runtime-candidate/raw日志不变。当前全部源码冻结，仅metadata归档/正常push；ef617 v2保持active直到正式main receipt。

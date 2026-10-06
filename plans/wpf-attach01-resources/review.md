@@ -1,12 +1,18 @@
 # WPF-ATTACH01 Review
 
-**状态：NOT_STARTED**（当前fixture兼容增量；历史runtime批准不变）
+**状态：APPROVED**（固定两文件fixture增量；历史runtime批准另保留）
 
 Review target commit：1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9
 
 ## 当前fixture兼容增量审查入口
 
-Base 1d236cbe2299117e3b63887fda3d1c0e140f56b0 → target 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9，仅fixture.ts/context.test.ts两文件；当前NOT_STARTED。完整生产实现8701及其APPROVED历史不撤销、不继承为新fixture批准。读[新validation](../../docs/evidence/wpf-attach01/fixture-compat-validation.md)/[hash manifest](../../docs/evidence/wpf-attach01/fixture-compat-candidate.json)，核预026实际未启动current factory、原行与v1receipt、六route部分注册fail closed、child与普通统一入口及cleanup；独立用/tmp输出运行六case，勿写原作者报告。自动factory分支未实测，仅Lead新输入后可确认。
+Base 1d236cbe2299117e3b63887fda3d1c0e140f56b0 → target 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9，仅fixture.ts/context.test.ts两文件；当前已获root独立APPROVED。完整生产实现8701及其APPROVED历史不撤销、不继承为新fixture批准。读[新validation](../../docs/evidence/wpf-attach01/fixture-compat-validation.md)/[hash manifest](../../docs/evidence/wpf-attach01/fixture-compat-candidate.json)，核预026实际未启动current factory、原行与v1receipt、六route部分注册fail closed、child与普通统一入口及cleanup；独立用/tmp输出运行六case，勿写原作者报告。自动factory分支未实测，仅Lead新输入后可确认。
+
+## Fixture兼容增量独立批准
+
+Independent reviewer：root / gpt-6-astra ultra；结论APPROVED，0 blocking，精确target 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9。审批消息归档于2026-10-06T11:24:06.499649+00:00，不是对方未提供的独立审批完成时刻；原运行8701批准永久保留。Root完整读两文件diff/上下文，独立复验最受影响before026与child SIGKILL：2 passed、27 deselected、9.23s，日志启动04:20:47 PDT；不是重跑作者6case/78套件或types。[原日志](../../docs/evidence/wpf-attach01/root-fixture-compat.log)、[原审计](../../docs/evidence/wpf-attach01/root-fixture-compat-audit.json)和[独占清理](../../docs/evidence/wpf-attach01/root-fixture-compat-resources/upgrade-cleanup.json)逐字归档；四DB remaining=[]/connections0/errors[]。
+
+两source run/current/fixed相同，旧14source/19只读依赖不变；delta diffcheck0。完整历史diffcheck2仅已保留原始日志空白，不清洗raw。strict types0是作者证据，root未重跑。当前factory全部legacy fallback，正式自动026/route尚未验证；当前批准仅测试增量，不扩大运行模块或App/provider/main结论。新[累计16源manifest](../../docs/evidence/wpf-attach01/runtime-with-fixture-candidate.json)明确2源来自本target，旧runtime-candidate保持原样。
 
 ## Runtime审查入口
 

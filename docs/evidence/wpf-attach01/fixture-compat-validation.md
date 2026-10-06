@@ -33,4 +33,4 @@
 PATH=/opt/homebrew/opt/node@24/bin:$PATH FLOW_ATTACH_EVIDENCE_DIR=/tmp/attach-fixture-independent pnpm exec vitest run apps/server/src/attachments/attachments.test.ts apps/server/src/attachments/context.test.ts -t 'before 026|capability is project-bound|lost upload ACK and restart|owner authentication is reevaluated|committed upload survives|lost Send ACK'
 ```
 
-严格types完整命令见checks，reader与database安全规则沿[README](README.md)。独立review当前NOT_STARTED；后续归因另记，不改作者raw。
+严格types完整命令见checks，reader与database安全规则沿[README](README.md)。独立review已APPROVED：root实际2关键case/27未选、9.23s、4DB清零，未重跑作者types/全部6case，详[review](../../../plans/wpf-attach01-resources/review.md)与[原审计](root-fixture-compat-audit.json)。作者raw不改。
