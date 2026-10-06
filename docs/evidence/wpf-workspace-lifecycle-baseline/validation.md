@@ -44,6 +44,10 @@ Delayed snapshot：chat-6 GET 在隐藏后关闭 socket，fixture 延迟到期�
 - 固定目标两新入口及直接依赖 strict TypeScript 于11:06:23 UTC exit0（[精确命令与来源](checks.json)、[固定日志](types-fixed.log)）；前期定向检查亦 PASS（[types-final](types-final.log)、修复后 [types-repaired](types-repaired.log)）；空日志配命令 exit0，由作者观察。
 - 全 Web tsc FAILED：未改的 web-release-compatibility.fixture.ts:127、134 两处 string|undefined；[原日志](types-first.log)。不以定向通过覆盖它。
 - 第一次定向命令从 root 找 vite/client 失败为作者 cwd 调用错误，[日志](types-targeted.log)；随后 apps/web cwd 命令通过。
-- target 范围只有两个新脚本；源 diffcheck0、只读依赖/生产根 manifest/lock 未变。独立审查尚未开始，不能把作者验收当 root review。
+- target 范围只有两个新脚本；源 diffcheck0、只读依赖/生产根 manifest/lock 未变。root于11:07:36 UTC独立审查APPROVED限定partial基线，见下；不能把作者browser当root运行。
 
 未测：native page hidden、JS cache/heap、延迟分位数、32 次逐个关闭后全量回收、late history-page 请求关闭、真实网络/中心/provider/DB、最终双主题 screenshots。后续若需补测须单独预算，不能改本报告的 partial。
+
+## 独立审查归因
+
+Root `2026-10-06 11:07:36 UTC` APPROVED固定1711有界partial基线，未新增blocking。独立严格Node24 tsc exit0；两源/180依赖hash、范围与diffcheck核验原样见 [root-audit](root-audit.json) 与 [root-strict-types](root-strict-types.log)。未重跑browser，cleanup/DOM/HTTP计数是作者报告复核。P3缺项与非机器精确的首轮预算说明保留。主线尚未接收。
