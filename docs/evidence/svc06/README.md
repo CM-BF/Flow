@@ -44,3 +44,7 @@
 - 发布 rename 后失败可能已存在 artifact；已知 ID 随 outcome 保存。fsync 文件不等于目录/掉电持久性，未测 OS hardkill/断电。
 - 保留上限拒绝新准备；没有自动垃圾回收或删除 active/unknown。遗留 stage/锁不自动抢占。
 - 无 App 新兼容重验、无个人部署许可、无 provider。已有 Web pointer/retained compatibility gate 与旧 legacy 行为保留，但 pinned host 正例尚未证明。
+
+## 限定主线接收（2026-10-06 14:54 UTC）
+
+[main-receipt.json](main-receipt.json)记录产品6d276与交付185e已进入main cbd3dd95；观察main/origin d679444c，14source逐字相同。9个直接输入相同，lock workspace importer、server main/index的3项已审变化单独保留。此次只核祖先/字节和canonical metadata，原manifest/raw不变、0重测/构建/安装/provider/个人操作。保护片已交付，完整artifact与固定host正例仍 NOT_PROVEN。
