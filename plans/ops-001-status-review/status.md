@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:14 UTC / mainbd14f984 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:21 UTC / main4df08fb3 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -19,7 +19,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
 | 当前产出 | 两条已结束实验的构建缓存已清理，数据库服务保留；现场余量已恢复到本轮准备线。 |
-| 下一可用交付 | 逐消息设置与目标推进的中心检查已通过；网页兼容仍有待定位项，终端控制接续验证。 |
+| 下一可用交付 | 已通过领域验收的逐消息设置进入生产组合；终端行为证据已保存，收尾检查和网页兼容继续修复。 |
 | 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；小验证按现场余量准入，已失败的准备记录保留。 |
 | 需用户决定 | NONE |
 
@@ -187,3 +187,7 @@ CHAT06P03按已批准原CHAT06后继提供独立source-only树，44文件含完�
 2026-10-06 17:14 UTC：Web B本次17:11:55明确归还，专库removed/errors[]与两个owned PID exit0。复用两项已过A，B plain通过后未知回执断言失败；同key/body/turn第二请求已观察，来源未诊断，不提前断言产品自动重试。累计39,935ms、余140,065ms，未生成兼容报告，个人Web不发布。
 
 TUI01F-03-20261006-1714一次窗口给原assignment_review：固定40508f三源/旧a89后台、原完整2case、fresh≥1GiB+64MiB、120s工作+60s清理、0provider；17:14:13共享卷1,238,429,696B仅调度观察，worker仍须fresh。4MiB总raw/16MiB自有tmp是观测停止阈值、不是硬保留；PG/WAL另计，1GiB剩余线不降。超限/unknown不自动重试或删库，checkpoint成功前不作不可恢复清理。Web/CORE下一运行待本次明确归还。
+
+2026-10-06 17:21 UTC：TUI01F一次窗口已归还。原两行为case通过，但afterAll连接核验unknown使整suite exit1；17:18独立操作者一次核原DB零连接、归属一致及两PGID不存在，再正常DROP，remaining=[]，无FORCE/任务重试。初始tmp inode未保存，约3MB内private tmp继续KEEP；不从后续零连接推定原失败原因，不重写原raw。唯一证据位于tui-task-cancel/docs/evidence/tui01f/journey-1714（af0ef5de）。当前无本轮自有PG/Chrome/PTY进程，下一运行仍fresh验原门槛。
+
+CORE固定ea276/packet23016已由Mika17:13独立APPROVED，29项分轮证据无需重跑；F01唯一owner消费固定输入与032生产入口，client C01补充两项矛盾回执由原owner和原reviewer收口。Web B累计39,935ms/余140,065ms保持，先诊断固定失败再排受影响运行；O15已完成206源码/28动态SQL/18包入口/10配置静态核对但PG尚未准入。静态完整不冒称运行通过。CLAIM账本17:21核本OPS与I02合法范围仍active。
