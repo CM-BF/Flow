@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:06:31 UTC / 上次实采156来源；新158候选 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:29 UTC / mainec50957f |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -113,3 +113,5 @@
 2026-10-06 14:06:31 UTC：[158来源登记](../../docs/evidence/d05/cost-wait-registry-validation.json)新增COST01A/S01P06，唯一ID、实际三件套、人读与解析通过。固定aeb架构未改，未运行产品/全量proof，实际部署另记。
 
 2026-10-06 14:10:11 UTC：[158来源真实回执](../../docs/evidence/d05/cost-wait-158-live.json)记录14:09:14.587Z，四源live/issues空，人读完整。仅替换已核自有4320，架构基线/个人服务/用户tab不变。
+
+2026-10-06 14:29 UTC：新增O14唯一source goal-persistent-progression/plans/o14-goal-progression，固定首e0569488/claimf2f8e15av1；159源候选registry校验ID唯一、Plan/status/review存在、parser0/human完整。仅注册/链接检查，未重跑产品/架构；实际4320仍158，随本批已审COST发布一次加载159。[登记](../../docs/evidence/d05/o14-registry-validation.json)。
