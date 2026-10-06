@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['CHAT09', '补充指令执行配置核验', '工作线', 'steering-profile-admission', 'chat09-steering-admission'],
+  ['CHAT06P02', '正文存储传输优化', '工作线', 'assistant-stream-prefix-hash', 'chat06-prefix-hash'],
   ['O09', '原生执行单个目标节点', '工作线', 'native-goal-node-execution', 'o09-native-node-execution'],
   ['WPF-CHAT06I01', '聊天逐段正文接入', '工作线', 'web-conversation-stream-integration', 'wpf-chat06-stream-integration'],
   ['WPF-CONTEXT01', '聊天知识引用选择', '工作线', 'web-knowledge-selection', 'wpf-context01-knowledge-selection'],
@@ -67,7 +69,7 @@ const assignments = [
   ['CTX01', '上下文内核合成验证', '技术验证', 'context-kernel-probe', 'ctx01-context-kernel'],
   ['WPF-PROFILE01', '对话执行选项', '工作线', 'web-execution-profiles', 'wpf-profile01-execution-profiles'],
   ['O02', '原生目标工具桥接', '工作线', 'native-goal-tools', 'o02-native-goal-tools'],
-  ['D06', '架构固定快照更新', '工程协作', 'dashboard-architecture-context', 'd06-architecture-refresh'],
+  ['D06', '架构固定快照更新', '工程协作', 'dashboard-architecture-stream', 'd06-architecture-refresh'],
   ['CHAT04', '持久消息队列', '工作线', 'conversation-queue', 'chat04-conversation-queue'],
   ['WPF-QUEUE00', '旧新队列能力兼容', '工作线', 'web-queue-compatibility', 'wpf-queue00-compatibility'],
   ['O03', '目标工具执行授权', '工作线', 'goal-tool-authorization', 'o03-goal-tool-authorization'],
