@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:30:24 UTC / main32c371d |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:44:00 UTC / main7106a354 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256 / 已审知识引用回执与97来源登记 |
+| 工作基线 / HEAD | 7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 / 已审受理条件、并行运行内核和紧凑聊天展示 |
 | 工作树dirty状态 | 候选已提交；当前交付记录整理 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；CONTEXT02六源码与已审target逐字一致，组合Web类型检查exit0；registry97两个新来源格式完整；0provider |
-| 已集成main状态 / HEAD | 上一main32c371d已发布；本候选接收CONTEXT02与97来源。个人服务已受控更新到32c371d / accepting v9，原端口/数据/身份保留；用户主动请求正常完成，operator主动0query。 |
+| 检查状态 | PASSED；固定输入逐文件一致，root/Web类型检查exit0；S01初始ES2023红与修复分别保留；0新增provider |
+| 已集成main状态 / HEAD | 上一main7106a354已发布；本候选接收CHAT10、S01P01、CHATREAD01、O10限定验收证据与SVC更新回执。个人服务已受控更新到32c371d / accepting v9，原端口/数据/身份保留；用户主动请求正常完成，operator主动0query。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 真实个人聊天服务已更新；知识引用的发送与排队回执保护已完成集成准备。 |
-| 下一可用交付 | 发布知识引用回执保护，继续接入聊天资料选择和运行中补充指令的受理条件。 |
+| 当前产出 | 聊天布局更紧凑；运行中补充指令的受理条件和有界并行运行内核已审通过。 |
+| 下一可用交付 | 发布已审片段，再接聊天资料选择与可替换运行器接口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -95,3 +95,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 08:20 UTC：已审输入逐文件绑定见 [本批组合](../../docs/evidence/i02/stream-profile-integration.json)。既有F01两metadata冲突仅恢复唯一owner新记录；所有产品blob保持固定已审target。未重跑原领域全套/浏览器，无新增模型，个人服务未更新。
 
 2026-10-06 08:30:24 UTC：SVC02-32窗口已关闭；08:29:29一次resume到v9，08:29:40后置三owned组/端口/身份通过，用户请求后4succeeded/未完0。此为operator回执摘要，原始更新证据由SVC02唯一source固化。CONTEXT02固定5e8213a/6cacc通过六源码比较及Web类型检查，原142与独立124+18不重跑。main后继不改变个人center/runner加载源。
+
+2026-10-06 08:44 UTC：CHAT10领域/薄client/可信启动、CHATREAD01展示、S01P01及ES2023增量各自已独审；固定source与原主线三个runner保护文件hash一致，root/Web组合types通过，S01默认2项生产消费者复用原绿。O10原生单child限定语义由GO独立通过，预算1/1封存，本文未追加模型。初始root类型红保留，未重跑既有领域/浏览器矩阵。证据见pool-readability-final-comparison.json及steering-native-child-comparison.json。个人center/runner仍32c/v9，Vite Web来自移动主线；SVC03固定产物另行实现，不能把main发布称后台重启。
