@@ -36,3 +36,4 @@ export * from './engineering-native.js';
 export * from './browser-session.js';
 export * from './usage-readout.js';
 export * from './plugin-installations.js';
+export * from './goal-progression.js';
