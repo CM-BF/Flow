@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T20:07:55.826235+00:00",
-  "state": "WEB_MESSAGESETTINGS_B4_FAILED_CLEANED_WINDOW_RETURNED",
-  "groupWindowOwnership": "Web single Settings b4 finished and both groups/scratch cleaned; shared window immediately returned toLead. No next Web run authorized.",
+  "recordedAt": "2026-10-06T20:23:39.576168+00:00",
+  "state": "CONTROLLED_DIRECT50_PASS_CLEANED_WINDOW_RETURNED",
+  "groupWindowOwnership": "Recovery50 pure Node finished; owned PGID98483/scratch absent, actualexit0 and final stdout PASS. Opportunity returned to Lead, no automatic follow-on.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -486,10 +486,11 @@
       "metadata": "a99037a47452cc2a314d4767127b04791fb7d664",
       "review": "ROOT_AND_PEER_SCOPED_SOURCE_0_BLOCKING_NOT_RUN",
       "evidence": "recovery01-2b01-source-intake.json",
-      "direct50": "NOT_RUN",
+      "direct50": "50/50 controlled PASS; late terminal cumulative9968.050625, original browser failure not revalidated",
       "browser": "Prior failure remains not revalidated",
       "ownerMetadataSeal": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
-      "direct50Preparation": "Root supervisor P2 SCAN-ERROR/SOFT-STOP pending own/tmp repair, no gate/run; product source approval unchanged"
+      "direct50Preparation": "REVIEWED_READY_NOT_RUN; scan/soft-stop P2 source addressed, no new window or gate",
+      "direct50PreparationEvidence": "recovery01-50-ready/intake.json"
     }
   },
   "settingsLeaf": {
@@ -553,7 +554,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "web-validation-window-return-1946.json",
+  "currentWindowReturn": "recovery01-50-window-return.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -895,5 +896,69 @@
     "provider": 0,
     "personalOperations": 0,
     "next": "Lead schedules next holder; no automatic DPERF04/Recovery/b4 retry. Source/data diagnosis before new fixed candidate and gate."
+  },
+  "recovery50Admission": {
+    "evidence": "recovery01-50-admission.json",
+    "state": "ADMITTED_ONE_CONTROLLED_DIRECT",
+    "run": "recovery50-20261006-202206-1188c7",
+    "runtimeStarted": false
+  },
+  "recovery50Result": {
+    "at": "2026-10-06T20:23:39.576168+00:00",
+    "state": "CONTROLLED_DIRECT50_PASS_CLEANED_WINDOW_RETURNED",
+    "run": "recovery50-20261006-202206-1188c7",
+    "sourceHead": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+    "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+    "actualExitCode": 0,
+    "resultElapsedMs": 3099,
+    "terminalPostWriteMs": 3100.050624925643,
+    "actualCumulativeMs": 9968.050624925643,
+    "actualRemainingMs": 20031.949375074357,
+    "nextIntegerBudgetCeilingUsedMs": 9969,
+    "nextIntegerRemainingMs": 20031,
+    "budgetMeaning": "Use later terminal settlement; result3099/9967 remains original earlier serialization. Rounded future integer budget is conservative accounting, not a new permit.",
+    "checks": {
+      "success": true,
+      "numTotalTests": 50,
+      "numPassedTests": 50,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTodoTests": 0
+    },
+    "ownedPGID": 98483,
+    "cleanup": {
+      "state": "fulfilled",
+      "errors": [],
+      "seconds": 0.0,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "serverClosureBasis": "Single direct command and fork remain in the inherited worker group; no external service used"
+    },
+    "resourcePostWrite": {
+      "tmpBytes": 201465,
+      "rawBytes": 201465,
+      "resultBytes": 5730,
+      "freeBytes": 1304555520,
+      "softStopSignal": null,
+      "elapsedMs": 3100.050624925643,
+      "cumulativeMs": 9968.050624925643,
+      "withinLimits": true
+    },
+    "windowReturned": true,
+    "PG": false,
+    "Chrome": false,
+    "HTTP": false,
+    "provider": false,
+    "noRetry": true,
+    "sourceFiles": {
+      "result": "/private/tmp/recovery50-once-en2_sud5/result.json",
+      "stdout": "/private/tmp/recovery50-parent-stdout.jsonl",
+      "exit": "/private/tmp/recovery50-parent-exit.json"
+    },
+    "review": "DIRECT50_EVIDENCE_ACCEPTED_SCOPED",
+    "evidence": "recovery01-50-window-return.json",
+    "reviewEvidence": "recovery01-50-actual/root-runtime-review.json",
+    "ownerFinal": "c36b1f12d169d09ff9f6bb58d97f99b1bf9e8f83",
+    "ownerSealEvidence": "recovery01-50-owner-seal.json"
   }
 }

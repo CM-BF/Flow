@@ -1,0 +1,12 @@
+--- msgset-b4/supervisor.py
++++ msgset-b5/supervisor.py
+@@ -73,7 +73,8 @@
+     prior = binding['previousEvidenceBasis']; assert sha(prior['path']) == prior['sha256']
+     prior_result = load(prior['path'])
+     assert prior_result['cumulativeMs'] == gate['previousRuntimeMs']
+-    assert prior_result['cleanup'] == {'errors':[], 'groupAbsent':True, 'scratchAbsent':True}
++    assert prior_result['cleanup'] == {'errors':[], 'groupAbsent':True, 'workerGroupAbsent':True,
++                                       'chromeGroupAbsent':True, 'scratchAbsent':True}
+     assert binding['previousEvidenceBytes'] == prior_result['retainedBytes']
+     with (BASE/'consumed-gate.json').open('x') as f: json.dump(gate, f)
+     started = time.monotonic(); wall_ms = int(time.time()*1000)

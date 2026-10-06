@@ -1,5 +1,7 @@
 # Web 当前交接与唯一来源
 
+**Recovery50 单次受控检查已50/50通过并清理，机会已归还Lead。** [实际归还](recovery01-50-window-return.json)：原result3099ms保留；更晚终态stdout postWrite3100.050625ms、累计9968.050625/30000、余20031.949375ms，actualexit0、无soft-stop。owned PGID98483 absent、scratch删除、cleanup errors=[]；0HTTP/PG/Chrome/types/provider，不自动接下一检查。若未来使用整数gate，以累计向上取9969/余20031保守记账，不重置预算。[root实际证据已限定接收](recovery01-50-actual/root-runtime-review.json)，50受控通过不代真实IDB/完整浏览器验收。
+
 **Settings b4唯一检查已失败并清理，当前窗口立即归还Lead。** [实际归还](message-settings-b4-window-return.json)：6861ms，累计20609/60000、余39391仅算术；真实CDP已连接、fixture已显示，首UI断言因dialog内group定位4匹配而strict失败，checks=[]，不能冒产品功能红或说Chrome启动仍失败。原result/budget/raw保持；worker PGID11051、Chrome PGID6481均absent，scratch删除，cleanup errors=[]，fixture/context关闭，Chrome exit/close code0。0PG/provider/个人操作，不自动重试或接DPERF04/Recovery。原[唯一准入](message-settings-b4-admission.json)和[Lead交窗](message-settings-b4-window-received.json)保历史，下一holder由Lead安排。
 
 **已接受的原生Chrome边界：Settings b4本次已运行结束；下一候选另行固定。** [GO决策及固定候选](native-chrome-boundary-go-intake.json)来自线程01a10e15-b908-7a72-b8c0-222a26bf93ff，经root转交：保Chrome原生sandbox、owned短profile/cache/tmp/env/PGID与Node原限制；Chrome退出自定义外层OS写/egress限制，明确不等价，也不包括个人profile/tabs/凭据/provider。[本次只读绑定核验](message-settings-native-ready-pins.json)核18ede/1cd六源、116本树及37外部入口、b4父277166/worker71a643；原13748已用，剩46252=31252工作+15000清理，旧360142 B证据保留。DPERF04同边界另绑其49859父/077a7 wrapper与独立原预算。该单次窗口现已实际运行并清理归还，见页首；边界决定本身不构成后续通用运行许可。
@@ -84,4 +86,8 @@ Recovery恢复编辑P1已固定 **2b01eb6f / a99037a4**，[十九源8变11同](r
 
 上述Settings locator修复已[固定270cfdfa / ba43716f](message-settings-270c-locator-intake.json)，仅原browser断言改唯一可访问名group并检查数量/可见，原Adapter意图保留，其他五源不动；[root固定窄源码复审](message-settings-270c-root-source-review.json)已0blocking，原20609ms/余39391ms与失败原件不变；下一候选仅准备重绑，未授新运行。
 
-Recovery2b01 限定源码批准已由 owner 正常封存为 **994ce852**，19源不变。唯一 direct50 候选仍未运行；[父监督初审](recovery01-50-initial-supervisor-root-review.json)要求只在原/tmp候选修正扫描错误传播和软停止清理，panels 已接派。产品源码批准与原38通过范围不变，50项及真实页面仍待各自准入。
+Recovery2b01 限定源码批准已由 owner 正常封存为 **994ce852**，19源不变。唯一 direct50 候选准备时未运行；[父监督初审](recovery01-50-initial-supervisor-root-review.json)的扫描错误传播和软停止清理两项已获[固定修复批准](recovery01-50-ready/supervisor-root-review.json)。[准备就绪输入](recovery01-50-ready/intake.json)已绑定994ce/2b01与最终binding，累计6868、余23132ms含5秒清理；没有gate或新运行窗，最终必须同时核原result、终态stdout postWrite及实际exit。后继已按页首一次通过50项并完整清理；原38历史不迁移，真实页面仍待独立验收。
+
+Settings270c 源审已由 owner 封存为 **20957ebb**，双端clean/六源固定不变。[新 b5 准备稿](message-settings-b5-prepared/intake.json)仅修正真实 b4 五字段清理回执消费；累计20609、余39391ms含15秒清理、741839 B旧证据完整保留。root正核最小差异与新的精确boundary绑定，当前PREPARED、无gate/无新Chrome窗口；不得以旧b4接受记录覆盖新runner字节。
+
+Recovery50 原件和两阶段监督审查已由 owner 一次封存为 **c36b1f12**，[管理核验](recovery01-50-owner-seal.json)确认双端一致、clean、19源码仍2b01。执行来源永久保994ce，晚终态预算与早result分别保留；原21继续持有并停写，真实浏览器失败未复验，完整feature NOT_STARTED。

@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-06T20:20:30.693710+00:00",
+  "state": "PREPARED_NOT_RUN",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "metadataHead": "20957ebb0df3bbeb907aa3c654eeaa55f71f573d",
+  "newCandidate": "/private/tmp/msgset-b5",
+  "projectWrites": false,
+  "runtime": false,
+  "spaceSampling": false,
+  "parserRun": false,
+  "previousCandidate": {
+    "path": "/private/tmp/msgset-b4",
+    "filesUnchanged": {
+      "binding.json.diff": "5322cd576dc2d2f73ee901e93271d713fb6058cf1604bfadcaeaca36aac9fd3c",
+      "browser-budget.json": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373",
+      "binding-before-boundary.json": "8c7306d6c7162a539b476b9320480d6430e5dc28435777ee3d3a7e6537fa2442",
+      "worker.mjs": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+      "source-audit.json": "6ac388caef3e03665ba16bada0f1ef0b2e4f90cff756816785f583a84e379501",
+      "binding-before-admission.json": "8cf13afe7709d47cbfce70d6c4e1b0c5dba473f70c52f177695d0941e0e2b7b8",
+      "manifest-before-admission.json": "3db9d85c7d9f7fee7e785f3a28169fa900695bd68b5cd541ec2d8ff9fbb2b049",
+      "binding.json": "6328a4846d4966c3e0a022788bfd8f5b726cff1744acf458130b382dd8ec425f",
+      "result.json": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c",
+      "aliases.json": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0",
+      "supervisor.py": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3",
+      "report.md": "b7c27db3a4b4d934d4140701e229db869fa13faf7a5f9cb17b4446e528a3d552",
+      "gate.json": "1e7ed0433c945f58559a392b13534f658f992092173fb4bc27af43ec55317d84",
+      "worker.log": "b5aff1399470c4d26e32116587ddda544ff821a16a636d49da65d1b8fe8fb5eb",
+      "manifest-before-boundary.json": "b927dd1be67f27cab514a00fdf9ceb7136120a6d04303d393ff93ba26b5cbf81",
+      "sandbox.sb": "c5f820ab045fb2b3ca43824fa4959cea979a0f3bdc30f2e68943c0b8e8db5540",
+      "runtime-tsconfig.json": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c",
+      "root-b3-review.json": "918b68510b8ea6026098ac602af4ed02edd20e818f185207e68c05f4023785dc",
+      "manifest.json": "4fb95bb3522f12080f00cbaaf203615213cd4f41f3999256874871e2bf34dda5",
+      "consumed-gate.json": "fb5f475c3a31f9de4bee787611ee1931dec220f48c640b57eef0fcab8af6d3bb",
+      "supervisor.py.diff": "421080bbc0c224773bd5053d06d477503075aafa009240dbea8607838654bbd7",
+      "child-gate.json": "04af1e249e328190815786f22abf697b2d8ae5f42dd1b37570f2afb2479856e6",
+      "owner-live-before-run.json": "757af03575bd663199c209fd0e34c1f08398bc0b6a6bf428eadb710005aea68c",
+      "raw/settings-b4-20261006-200629-5a13ef/chrome.log": "f815fd0e35f5665a8ec67ff287515f0bd0e9895147401ecad0e205b16b90df1c",
+      "raw/settings-b4-20261006-200629-5a13ef/browser-results.json": "9084635eb5ba4757f16b9347c219ee024ae877bc50e13245e2bdd9c068341e09",
+      "raw/settings-b4-20261006-200629-5a13ef/owned-chrome.json": "2feedda831ef9ce95085a55b0f407efa178399df2bde7dde1b579e2ba9a6a014"
+    }
+  },
+  "sources": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c"
+  },
+  "preparedFiles": {
+    "worker.mjs": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+    "runtime-tsconfig.json": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c",
+    "aliases.json": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0",
+    "supervisor.py": "1a478638173e16f1b59a8ea3eb15e445ac305f6aae6de4c801eaa41e21b0e586"
+  },
+  "unchangedInputs": [
+    "worker.mjs",
+    "aliases.json",
+    "runtime-tsconfig.json",
+    "browser-budget.json"
+  ],
+  "readOnlyDependencyPinsCarried": 116,
+  "externalPinsCarried": 37,
+  "previousRuntimeMs": 20609,
+  "remainingMs": 39391,
+  "workMs": 24391,
+  "cleanupMs": 15000,
+  "previousRetainedBytes": 741839,
+  "nativeChromeBoundaryApproval": null,
+  "oldApprovalDoesNotCoverNewParent": true,
+  "sourceApproval": {
+    "path": "/tmp/root-message-settings-270c-locator-source-review.json",
+    "sha256": "a96a893b8ef870da4bcb5d3e12eb4156b4829e2e3f8c3f2f80f5e25f74826abe"
+  },
+  "scopeObservation": "/private/tmp/d01-settings-270c-seal-observation.json"
+}

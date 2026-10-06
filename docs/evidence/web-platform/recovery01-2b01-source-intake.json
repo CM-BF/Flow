@@ -9,17 +9,18 @@
   "fixedCurrentHashes": 19,
   "changed": 8,
   "unchanged": 11,
-  "cases": "50 static; new12 NOT_RUN, old38 evidence unchanged",
+  "cases": "50 controlled cases now PASS; new12 included, original38/browser evidence preserved",
   "review": "root record/CAS/namespace; W01 realApp lease/material/profile/intent/concurrency independent peer dispatched after fixed safe point",
   "budget": "No new consumption or gate; old14.846267375/browser and6868/direct remain",
   "rootReview": "recovery01-2b01-root-source-review.json",
   "peerReview": "recovery01-2b01-peer/report.md",
   "testBoundary": "App-used helper/lease plus realprojection, controllededitor setter; not mountedWorkspace/Thread or fullApp knowledge/attachment prepare callbacks",
-  "next": "Single direct50 candidate source preparation; root found SCAN-ERROR/SOFT-STOP P2, panels dispatched only own/tmp repairs. No gate/runtime.",
+  "next": "No repeat direct. Realbrowser/fullfeature acceptance separately queued; no automatic gate.",
   "reviewMetadataSeal": {
     "head": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
     "source": "owner normal-push/ls-remote/clean receipt; fixed19 unchanged",
     "runtime": "NOT_RUN"
   },
-  "supervisorReview": "recovery01-50-initial-supervisor-root-review.json"
+  "supervisorReview": "recovery01-50-initial-supervisor-root-review.json",
+  "runtimeEvidence": "recovery01-50-actual/root-runtime-review.json"
 }

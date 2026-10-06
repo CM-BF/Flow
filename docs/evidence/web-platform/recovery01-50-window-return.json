@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-06T20:23:39.576168+00:00",
+  "state": "CONTROLLED_DIRECT50_PASS_CLEANED_WINDOW_RETURNED",
+  "run": "recovery50-20261006-202206-1188c7",
+  "sourceHead": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+  "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "actualExitCode": 0,
+  "resultElapsedMs": 3099,
+  "terminalPostWriteMs": 3100.050624925643,
+  "actualCumulativeMs": 9968.050624925643,
+  "actualRemainingMs": 20031.949375074357,
+  "nextIntegerBudgetCeilingUsedMs": 9969,
+  "nextIntegerRemainingMs": 20031,
+  "budgetMeaning": "Use later terminal settlement; result3099/9967 remains original earlier serialization. Rounded future integer budget is conservative accounting, not a new permit.",
+  "checks": {
+    "success": true,
+    "numTotalTests": 50,
+    "numPassedTests": 50,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "numTodoTests": 0
+  },
+  "ownedPGID": 98483,
+  "cleanup": {
+    "state": "fulfilled",
+    "errors": [],
+    "seconds": 0.0,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "serverClosureBasis": "Single direct command and fork remain in the inherited worker group; no external service used"
+  },
+  "resourcePostWrite": {
+    "tmpBytes": 201465,
+    "rawBytes": 201465,
+    "resultBytes": 5730,
+    "freeBytes": 1304555520,
+    "softStopSignal": null,
+    "elapsedMs": 3100.050624925643,
+    "cumulativeMs": 9968.050624925643,
+    "withinLimits": true
+  },
+  "windowReturned": true,
+  "PG": false,
+  "Chrome": false,
+  "HTTP": false,
+  "provider": false,
+  "noRetry": true,
+  "sourceFiles": {
+    "result": "/private/tmp/recovery50-once-en2_sud5/result.json",
+    "stdout": "/private/tmp/recovery50-parent-stdout.jsonl",
+    "exit": "/private/tmp/recovery50-parent-exit.json"
+  },
+  "review": "DIRECT50_EVIDENCE_ACCEPTED_SCOPED",
+  "reviewEvidence": "recovery01-50-actual/root-runtime-review.json"
+}

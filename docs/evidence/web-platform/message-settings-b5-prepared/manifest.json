@@ -1,0 +1,93 @@
+{
+  "state": "PREPARED",
+  "sourceHead": "20957ebb0df3bbeb907aa3c654eeaa55f71f573d",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c"
+  },
+  "previousRuntimeMs": 20609,
+  "remainingMs": 39391,
+  "workMs": 24391,
+  "cleanupMs": 15000,
+  "previousRetainedBytes": 741839,
+  "nativeChromeBoundaryApproval": null,
+  "noGate": true,
+  "files": [
+    {
+      "path": "/private/tmp/msgset-b5/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/binding.json",
+      "bytes": 33970,
+      "sha256": "d11c9272423a097b340c3665119aa8a7afbd718bc55badd28a3e69af0913943b"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/binding.json.before-readonly-pin-fix",
+      "bytes": 33970,
+      "sha256": "04f65810f5b671868e94364fa5f608d3b90145207cc0d454f1d7b6ebc79d16a6"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/binding.json.diff",
+      "bytes": 3737,
+      "sha256": "147f22fd18ab94a359c385a6bf501c9910265ee623194ee767aae71de8e602cf"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/browser-budget.json",
+      "bytes": 199,
+      "sha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/manifest.json.before-readonly-pin-fix",
+      "bytes": 2828,
+      "sha256": "b7822b508182e58888289eef91ce72c7cd7489486c850800c57a2a0864bfa04d"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/readonly-pin-fix.diff",
+      "bytes": 1023,
+      "sha256": "3fb644b54e31207743b70b44c1a6ed6115801884f2d94186ab0b4b7a7f5c84e7"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/report.md",
+      "bytes": 4224,
+      "sha256": "8b359e8caf6258ab058cb91fc94012a986b73e7197ef54b1c60bd3495f6e1650"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/source-audit.json",
+      "bytes": 5781,
+      "sha256": "67b74fb0a448dfe7955df892acb0667c94a5b6556fa5e38191bfbe011f4eadcb"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/source-audit.json.before-readonly-pin-fix",
+      "bytes": 4815,
+      "sha256": "8bdb734b13ed1e863e42afe252f1a73f8ec55a10395e7a106b5e279b925dcabc"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/supervisor.py",
+      "bytes": 21091,
+      "sha256": "1a478638173e16f1b59a8ea3eb15e445ac305f6aae6de4c801eaa41e21b0e586"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/supervisor.py.diff",
+      "bytes": 774,
+      "sha256": "eefec0d38bfc72a8627d00a21e5eebe1e30b363128c15f5145ad50605b39979d"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/worker.mjs",
+      "bytes": 6976,
+      "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b"
+    }
+  ],
+  "duplicateReadonlyPinCorrected": "apps/web/test/message-settings.browser.ts"
+}

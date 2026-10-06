@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-06T20:20:52.481959+00:00",
+  "state": "REVIEWED_READY_NOT_RUN_NO_GATE",
+  "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "metadata": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+  "candidate": "/private/tmp/recovery50-once-en2_sud5",
+  "rootReview": "supervisor-root-review.json",
+  "binding": "binding.json",
+  "identity": "manager-reviewed-binding.json",
+  "window": "No new run authorized; prior Settings sharedwindow returned",
+  "admission": "Fresh original6ffv4/21, current source/dependency pins and actual free required only when new execution opportunity is allocated",
+  "settlement": "Result, terminal stdout postWrite and actual exit all required. A late signal may be recorded only in terminal FAIL/exit.",
+  "budgetMs": {
+    "previous": 6868,
+    "remaining": 23132,
+    "work": 18132,
+    "cleanup": 5000
+  },
+  "noRuntimeOrFreeSampling": true
+}
