@@ -1,0 +1,95 @@
+{
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)",
+      "id": "D01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "delivered",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "高精度 UTC 与坏时间隔离已受控接入主线；看板已实际读取本任务状态。",
+    "next": "本片段已交付。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+    "scopes": [
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs"
+    ],
+    "errors": []
+  },
+  "taskId": "WPF-DPERF05",
+  "owner": "workspace_panels_owner / gpt-6-astra Ultra",
+  "branch": "codex/dashboard-status-timestamps",
+  "branchState": "completed / delivered",
+  "updatedAt": "2026-10-06T20:05:22.000Z",
+  "updatedRecord": "2026-10-06 20:05:22 UTC",
+  "todos": [
+    {
+      "id": "DPERF05-01",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[claim](../../docs/evidence/wpf-dperf05/claim-observation.json)、[设计](../../docs/evidence/wpf-dperf05/approved-design.json)"
+    },
+    {
+      "id": "DPERF05-02",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "私有 parser + 62/62 实际纯parser PASS；旧676b/56未运行"
+    },
+    {
+      "id": "DPERF05-03",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[原始62检查](../../docs/evidence/wpf-dperf05/direct-first/result.json)、[父实际尾部计量](../../docs/evidence/wpf-dperf05/direct-first/parent-stdout.jsonl)"
+    },
+    {
+      "id": "DPERF05-04",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[root限定批准](../../docs/evidence/wpf-dperf05/root-62-runtime-review.json)、[固定main接收](../../docs/evidence/wpf-dperf05/main-close.json)；normalpush后全四scope停写"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "ec5da343880879154e2392f52eaa915d5b08aa77",
+  "declaredDirty": "两产品源c8d=main aca6=current；本次仅metadata main-close，normalpush后核双端clean并全四scope停写",
+  "checks": {
+    "state": "passed",
+    "target": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+    "record": "PASSED c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2 — 原62/62未重跑；Lead/I02一次真实aggregate exit0/506ms，限定读取部署回执已到"
+  },
+  "reviewRecord": "APPROVED — root固定c8d parser source+62证据，Lead/I02限定主线接收；不扩大到全聚合来源或个人产品",
+  "mainRecord": "INTEGRATED aca6e89214711ef3787ac3e3ee3b2754bb40b960；两源码逐字相等，receipt 6223c7493a3b6f392813a5d9d82c24d87312ad26",
+  "next": "本片已交付至main `aca6e89214711ef3787ac3e3ee3b2754bb40b960`。本次只metadata收口，normalpush核local=origin/clean后全四scope停写；管理者fresh CAS release，不由owner追写释放状态。",
+  "risks": "",
+  "decisions": "NONE。"
+}

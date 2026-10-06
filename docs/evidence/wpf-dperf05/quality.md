@@ -22,3 +22,7 @@
 c8d两源码及4只读helpers与run/gate hash逐项相同，未为检查改源。实际62行为覆盖UTC精度/非法日期/主段和main同步/任务号/其他字段；旧676问题和未运行56永久保留。监督tail修复将reap与删除分开、group未知保留scratch、清理后实际配额/时间失败不绿，原runner与delta归档。只归档证据与事实，不机械拆分parser，也不重复运行通过测试。真实aggregate/部署仍未验；各模块职责不变。
 
 Root62证据独审原文已同段归档，0blocking；本片source/runtime批准与主线/部署事实分开，未重跑、未修饰raw。
+
+## 2026-10-06 20:05:22 UTC — main-close clean-code / evidence
+
+复用已固定find-skills/clean-code方法，仅文档一致性：修正旧未执行段的时点歧义、分离root62与Lead506ms/部署证据；两源码逐字等c8d/aca6/current，0产品修改。保173选择范围/I02 humanfalse及原raw，不重复纯检查、服务或空间采样。四scope封存后停写。

@@ -1,6 +1,6 @@
 # WPF-DPERF05 — Status UTC 时间解析
 
-创建与更新：2026-10-06 18:54:27 UTC；状态：in-progress。直接父 [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root。
+创建与更新：2026-10-06 18:54:27 UTC；状态：completed。直接父 [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root。
 
 ## 目标与范围
 
@@ -17,7 +17,7 @@
 - [x] DPERF05-01 — 核领取/固定基线，建立唯一 canonical 与 Interface。
 - [x] DPERF05-02 — 私有 UTC parser 与纯行为测试固定源码。
 - [x] DPERF05-03 — 获明确运行准入后定向检查，保留原始结果。
-- [ ] DPERF05-04 — 独立 review、主线受控接收与停止写入。
+- [x] DPERF05-04 — 独立 review、主线受控接收与停止写入。
 
 ## 验证与边界
 
@@ -26,3 +26,7 @@
 ## 来源
 
 固定 base `ec5da343880879154e2392f52eaa915d5b08aa77`，设计见 [approved-design](../../docs/evidence/wpf-dperf05/approved-design.json)；[根模块规则](../../AGENTS.md#modular-design)。
+
+## 2026-10-06 20:05:22 UTC — main接收
+
+固定main `aca6e89214711ef3787ac3e3ee3b2754bb40b960` 已接两源码，原62不重跑；[Lead/I02接收](../../docs/evidence/wpf-dperf05/main-close.json)含一次实际aggregate506ms和选定DPERF05的部署读取。全片限定parser完成，未扩大到全173来源或个人产品；本次metadata封存后四scope全部停写，等待manager释放。
