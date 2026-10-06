@@ -1,0 +1,89 @@
+{
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+      "id": "WPF-MATURE-01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "新前端的兼容验证脚本已固定，等待受控检查与运行",
+    "next": "给出新前端与现有后台的真实兼容结果",
+    "blocker": {
+      "state": "active",
+      "text": "脚本仍待定向检查与运行资源准入，尚无兼容结果"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "f333eddfb5bec76453e78a08fe76d182998a15d9",
+    "scopes": [
+      "apps/web/test/web-current-preview.fixture.ts",
+      "apps/web/test/web-current-preview.browser.ts"
+    ],
+    "errors": []
+  },
+  "taskId": "WPF-RELEASE03",
+  "owner": "w01_owner / gpt-6-astra / ultra",
+  "branch": "codex/web-current-preview-compatibility",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-06T14:53:08.000Z",
+  "updatedRecord": "2026-10-06 14:53:08 UTC",
+  "todos": [
+    {
+      "id": "RELEASE03-01",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "[take](../../docs/evidence/wpf-release03/take-receipt.json)、[live](../../docs/evidence/wpf-release03/live-claim.json)"
+    },
+    {
+      "id": "RELEASE03-02",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "0兼容运行；180秒预算尚未使用；依赖链接窗口20.132ms不是兼容运行"
+    },
+    {
+      "id": "RELEASE03-03",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "尚未固定实现/独审/交主线"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / f333eddfb5bec76453e78a08fe76d182998a15d9",
+  "declaredDirty": "产品脚本已固定f333；本次仅manifest/review/status待提交，实际提交后clean另核",
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN；仅实际领取/固定输入核验"
+  },
+  "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+  "mainRecord": "NOT_INTEGRATED；本片尚未送固定实现独审",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

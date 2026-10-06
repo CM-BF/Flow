@@ -9,17 +9,17 @@
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 已推首canonical422d0fba，当前源码待提交 |
-| 工作树dirty状态 | 本次安全点：两新脚本及本片证据/状态待提交；17ignored依赖links已停止写入 |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / f333eddfb5bec76453e78a08fe76d182998a15d9 |
+| 工作树dirty状态 | 产品脚本已固定f333；本次仅manifest/review/status待提交，实际提交后clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | NOT_RUN；仅实际领取/固定输入核验 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片尚未送固定实现独审 |
-| 实现目标 | UNKNOWN |
+| 实现目标 | f333eddfb5bec76453e78a08fe76d182998a15d9 |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 新前端的兼容验证脚本已写成，正在核对清理与失败报告 |
+| 当前产出 | 新前端的兼容验证脚本已固定，等待受控检查与运行 |
 | 下一可用交付 | 给出新前端与现有后台的真实兼容结果 |
 | 当前阻塞 | ACTIVE: 脚本仍待定向检查与运行资源准入，尚无兼容结果 |
 | 需用户决定 | NONE |

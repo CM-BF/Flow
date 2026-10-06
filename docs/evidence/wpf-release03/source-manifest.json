@@ -1,0 +1,25 @@
+{
+  "implementationTarget": "f333eddfb5bec76453e78a08fe76d182998a15d9",
+  "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "method": "Fixed git object bytes equal current source; no import or execution",
+  "files": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 17596,
+      "sha256": "41a26ef686cfe6a5ae97ca02fc06f7e4d1a395c6616fed775e7bc3bb51acb52e"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 32557,
+      "sha256": "349a229352f3a44881629081fa1b332571b63f35e5fa8b144da2702ac5339cf4"
+    }
+  ],
+  "checks": {
+    "sourceDiffCheck": 0,
+    "protectedDiff": "empty",
+    "productTypecheck": "NOT_RUN",
+    "PG": "NOT_RUN",
+    "Chrome": "NOT_RUN",
+    "compatibility": "NOT_RUN"
+  }
+}
