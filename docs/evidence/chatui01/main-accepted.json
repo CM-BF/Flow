@@ -1,0 +1,104 @@
+{
+  "checkedAt": "2026-10-06T11:45:57.124222+00:00",
+  "main": "2c6df4754f4fea75fbb2e1e750cad89524b1f5fa",
+  "implementationTarget": "4a442af83faa91b419357ef0036627566e5f85a8",
+  "deliveryMetadata": "54b2dad5c1314e31c2fe5729ffd871e5458b1f7b",
+  "leadReceiptPath": "docs/evidence/i02/chatui01-integration.json",
+  "leadReceiptSha256": "d123a91941387affb60be6cae608a16f9f8f8fa4bcbe199aee2e03dacfda2ea3",
+  "leadReceipt": {
+    "time": "2026-10-06T11:40:10.506649+00:00",
+    "task": "CHATUI01",
+    "target": "4a442af83faa91b419357ef0036627566e5f85a8",
+    "delivery": "54b2dad5c1314e31c2fe5729ffd871e5458b1f7b",
+    "sourceCount": 7,
+    "rawCount": 6,
+    "mismatches": [],
+    "review": "Mika fixed target APPROVED; source/raw binding reused",
+    "validation": "No test/browser/provider rerun. Fixed synthetic driver only, no native permit.",
+    "personalServices": "unchanged"
+  },
+  "bindings": [
+    {
+      "kind": "source",
+      "path": "experiments/stream-ui-acceptance/prepare-runtime.mjs",
+      "bytes": 1738,
+      "sha256": "339e7b812b670a7c5c4e6cbd9dd81966b0c8714cf1429bcb1d50711b8c7969c1"
+    },
+    {
+      "kind": "source",
+      "path": "experiments/stream-ui-acceptance/fixture.mjs",
+      "bytes": 3661,
+      "sha256": "e60fc42b7d64728d919ca0e5772ae333bf6f2cfe96b949d76472c5706fb27e24"
+    },
+    {
+      "kind": "source",
+      "path": "experiments/stream-ui-acceptance/evidence.mjs",
+      "bytes": 7086,
+      "sha256": "6b9c5d02f1db2b9f167b367dae840170d0da8ea31de2fd92a3e9b1f7655c3ff4"
+    },
+    {
+      "kind": "source",
+      "path": "experiments/stream-ui-acceptance/preflight.mjs",
+      "bytes": 5839,
+      "sha256": "26f12a62839201d54b2c7d00d6bb330c33ce681485d833357ed5df25523d424e"
+    },
+    {
+      "kind": "source",
+      "path": "experiments/stream-ui-acceptance/journey.mjs",
+      "bytes": 13948,
+      "sha256": "cf987752367428f3694d0f66e8a76fdbf6ad0c4c6c5525c4073b09a93991333a"
+    },
+    {
+      "kind": "source",
+      "path": "experiments/stream-ui-acceptance/guard-network.test.mjs",
+      "bytes": 6519,
+      "sha256": "f59e6073b13ff1c829dc76c3c59ac600e7bf2978d08fbd0a717f247da3b3e7ef"
+    },
+    {
+      "kind": "source",
+      "path": "experiments/stream-ui-acceptance/evidence.test.mjs",
+      "bytes": 3155,
+      "sha256": "cff46c8dd8c8cdebed6f6293dcc13b22c8415db6d8fc5f76bbc3c9cdfa6a6d1c"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6/checks.json",
+      "bytes": 58418,
+      "sha256": "aa501490b1ff20eb9e470084597e39bfd6e7c58f8183aa77ec64fd00a0ed3cfa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6/reservation.json",
+      "bytes": 257,
+      "sha256": "6209758c72e04c13aa2b1b4390cc13b39bcc0a96666eec4fadef8057706ae5d2"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6/final-dark-narrow.png",
+      "bytes": 71190,
+      "sha256": "e1a9c9c527e4e07af945aec354177012bb80f8ffbc1a1f5a12b907212a8f8a45"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/chatui01/run-2026-10-06T08-53-51.835Z-910d72a6/final-light.png",
+      "bytes": 113651,
+      "sha256": "a24d22b5c9d19d97df6625b8c256680c33f6230fdc287e1b604d7edfa2d8dba4"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/chatui01/turn-fix-checks.txt",
+      "bytes": 439,
+      "sha256": "61a9da8afb3c46a1e55b7f6215633f9229c7df18ca6cfc19c483d12928006fde"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/chatui01/turn-network-red.txt",
+      "bytes": 2503,
+      "sha256": "7a25dd5bcec8a5ec4e65a135df3a08c24b50b1bf2bd80e3f33155f4af9bb3dea"
+    }
+  ],
+  "scope": "zero-model acceptance preparation only",
+  "checks": "13 byte/hash comparisons; no test/browser/driver/provider/PG run",
+  "liveAcceptance": "OPEN; NOT_AUTHORIZED; entry not implemented",
+  "personalServices": "unchanged"
+}

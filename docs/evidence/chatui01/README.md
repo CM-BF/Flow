@@ -1,6 +1,6 @@
 # CHATUI01 零模型流式UI验收准备
 
-可执行入口：[preflight.mjs](../../../experiments/stream-ui-acceptance/preflight.mjs)。本片产品基线固定7106a35447bf43026ad7b5ad7c25dc530fd0c4f5；实验只新增自身3scope。实现target见[status](../../../plans/chatui01-stream-acceptance/status.md)，独立review APPROVED `4a442af83faa91b419357ef0036627566e5f85a8`（Mika/gpt-6-astra，2026-10-06 08:58:17 UTC），仅限零模型准备；待主线集成。
+可执行入口：[preflight.mjs](../../../experiments/stream-ui-acceptance/preflight.mjs)。本片产品基线固定7106a35447bf43026ad7b5ad7c25dc530fd0c4f5；实验只新增自身3scope。实现target见[status](../../../plans/chatui01-stream-acceptance/status.md)，独立review APPROVED `4a442af83faa91b419357ef0036627566e5f85a8`（Mika/gpt-6-astra，2026-10-06 08:58:17 UTC），仅限零模型准备；已由main2c6df475接收，见[主线核验](main-accepted.json)。
 
 ## 已验证
 
@@ -41,3 +41,5 @@ FLOW_DEPENDENCY_ROOT=/absolute/Flow-with-installed-dependencies /opt/homebrew/op
 Mika/gpt-6-astra只读复审批准4a442af83faa91b419357ef0036627566e5f85a8的零模型preparation，原P2已完整关闭；未重跑工程测试。7 source/6 raw、actualApp driver/source hash、3增长样本/2写操作/final一次/Chrome exit0均核对。此前9检查保持f80边界。真实live入口仍未实现、NOT_AUTHORIZED；领取保留至主线接收，未把approval记为已集成。
 
 2026-10-06 08:58 UTC clean-code安全停点：仅核review/status/README事实一致、命名、链接和交付边界，无代码/接口变化，无新增工程测试。
+
+本片段已交付，最终metadata后停写并释放原claim，见[停写记录](stopped-writing.json)；真实验收仍未领取/未授权。本文中的运行命令是历史复现说明，不是新的执行许可。

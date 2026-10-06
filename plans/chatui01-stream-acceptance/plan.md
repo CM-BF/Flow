@@ -17,7 +17,7 @@
 - [x] CHATUI01-01：核空闲领取、独立worktree、技能与首状态。
 - [x] CHATUI01-02：收敛可审通用旅程、持久证据与一次 mutation guard；零模型 unit checks。
 - [x] CHATUI01-03：同driver跑实际App、合成HTTP流，记录两次真实DOM增长/结算/草稿/清理。
-- [ ] CHATUI01-04：固定源码和证据、独立review、及时commit/push与主线接收。
+- [x] CHATUI01-04：固定源码和证据、独立review、及时commit/push与主线接收。
 - [ ] CHATUI01-05：另行取得一次真实query窗口后执行；本次准备不标完成。
 
 ## 取舍与结构影响
@@ -27,3 +27,5 @@
 ## 验证与风险
 
 Node24/pnpm9.15.4/Playwright1.63.0；选中guard/证据行为检查和1条真实页面fixture旅程，不运行产品全suite。provider可能太快，真实流增长不足如实 NOT_PROVEN，不追加query。实际服务版本/固定静态artifact未交付不阻塞本次零模型准备。
+
+主线接收：固定main2c6df475已包含4a442源码与canonical证据，见main-accepted.json；本次metadata后停止原3scope写入并释放claim。CHATUI01-05真实验收仍开放，0重跑。
