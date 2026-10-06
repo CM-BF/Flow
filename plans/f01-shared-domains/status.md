@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:27 UTC / main53ce2ec2 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:30 UTC / main53ce2ec2 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,17 +11,17 @@
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
 | 工作基线 / HEAD | 工程配置已main；当前附件生产接线与清理增量固定 |
-| 工作树dirty状态 | 附件生产清理增量与证据待提交；源码固定后仅metadata |
+| 工作树dirty状态 | 源码固定；独立复审结论已记录，metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 附件ACK47、薄client1HTTP分别独审；生产1PG及2清理回归=3/3、types0，P2增量待复审，0provider |
+| 检查状态 | 附件ACK47、薄client1HTTP分别独审；生产1PG及2清理回归=3/3、types0，P2独立复审关闭，0provider |
 | 已集成main状态 / HEAD | 原生配置薄client095、共享ACK dc7f和工程核心040均已有独立review并main；个人backend/static仍b1c2e398 accepting v12。 |
-| Review | 附件ACK/native_center_owner与六薄client/Mika APPROVED；69eb生产测试清理P2待增量复审 |
+| Review | 附件ACK/native_center_owner与六薄client/Mika APPROVED；69eb+f04生产接线/清理获Mika独审APPROVED；实际factory六case组合待验 |
 | 实现目标 | f04cb29633ca678b35aa423e02a16953add0cfba |
 | 实现范围 | packages/client/src/attachment-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 已审工程配置已进入主线；附件回执一致性已验证，正在接入公共上传与读取。 |
+| 当前产出 | 附件公共上传与读取接线已通过独立审查，正在核对旧数据升级与重启兼容。 |
 | 下一可用交付 | 附件上传、固定引用与公开读取接线，供终端和Web共同消费。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -157,3 +157,5 @@
 11:19 附件生产factory026/owner接线固定 69eb2476ba59308a906c891c4391e243e3b2512a，真实独立PG1/1（同一个旅程重跑不累计）及最终root types0；前置red/类型窄修原输出保留。组合gate是原ATTACH pre026/重复注册fixture最小维护，已交原owner，不删除历史升级断言；domain/shared client/ACK齐套独审后才main，个人DB/服务无改。
 
 11:27：Mika附件六薄client独审APPROVED已归档；生产69eb的唯一P2是失败清理，修复固定f04cb29633ca678b35aa423e02a16953add0cfba，2失败分支原red保留、3/3及types0。新facts单独保存，不覆盖旧成功证据；生产3行/领域无改。Web pre026 fixture增量1f0已独审，待正式factory下有限组合验证。
+
+2026-10-06 11:30 UTC：Mika增量只读APPROVED f04，原69eb挂载保持；1source/8raw核同、清理P2关闭、未重测。下一I02仅实际factory与已审fixture1f0组合六case，不重跑78领域。原审查字节归档 [独审](../../docs/evidence/f01/attachment-production-independent-review.md)，个人服务不变。
