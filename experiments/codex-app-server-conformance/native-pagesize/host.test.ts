@@ -64,6 +64,7 @@ describe('fixed pagesize observations', () => {
   });
   it('rejects a stale identity, extra fields, incomplete report and inconsistent direct value', () => {
     expect(() => decodePagesizeReport(encoded(report()), nonce, 124)).toThrow();
+    expect(() => decodePagesizeReport(encoded(report(123, 'b'.repeat(32))), nonce, 123)).toThrow();
     expect(() => decodePagesizeReport(encoded({ ...report(), extra: 1 }), nonce, 123)).toThrow();
     expect(() => decodePagesizeReport(encoded({ ...report(), complete: false }), nonce, 123)).toThrow();
     const value = report(); value.sysctl.value = 16384;
@@ -83,11 +84,28 @@ describe('fixed pagesize observations', () => {
   });
   it('stops after A close unknown, preserves exact roots and never enters B', async () => {
     const fix = fixture(), calls = [];
-    const result = await runPagesize(args(fix), { now: () => 1000, command: fakeCommand(calls, 'unknown'), rootBase: fix.root });
+    let unknown = false;
+    const fake = fakeCommand(calls, 'unknown');
+    const io = { ...fs, opendirSync(...values) { if (unknown) throw Error('Must not inventory after unknown'); return fs.opendirSync(...values); },
+      rmSync(...values) { if (unknown) throw Error('Must not delete after unknown'); return fs.rmSync(...values); } };
+    const result = await runPagesize(args(fix), { io, now: () => 1000, rootBase: fix.root, command: async (...values) => {
+      const response = await fake(...values); if (!response.safe.closeObserved) unknown = true; return response;
+    } });
     expect(calls).toHaveLength(2); expect(result.targets[1].state).toBe('NOT_RUN');
     expect(result.retainedRoots).toHaveLength(2); expect(result.processCleanupComplete).toBe(false);
     expect(result.retainedRoots.every(item => item.identity && fs.existsSync(item.path))).toBe(true);
     expect(result.outputAccountingComplete).toBe(false);
+  });
+  it('preserves compiler roots when compiler diagnostic persistence fails', async () => {
+    const fix = fixture(), calls = [];
+    const io = { ...fs, openSync(file, ...rest) {
+      if (String(file).endsWith('compiler.stderr')) throw Error('Injected compiler copy failure');
+      return fs.openSync(file, ...rest);
+    } };
+    const result = await runPagesize(args(fix), { io, now: () => 1000, command: fakeCommand(calls), rootBase: fix.root });
+    expect(calls).toHaveLength(1); expect(result.helperCalls).toBe(0); expect(result.retainedRoots).toHaveLength(2);
+    expect(fs.existsSync(path.join(calls[0].cwd, 'pagesize.o'))).toBe(true);
+    expect(result.rootCleanupComplete).toBe(false); expect(result.outputAccountingComplete).toBe(false);
   });
   it('keeps original stderr/root when the diagnostic copy write fails', async () => {
     const fix = fixture(), calls = [];

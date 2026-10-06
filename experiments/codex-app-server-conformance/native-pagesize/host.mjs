@@ -66,7 +66,7 @@ export async function runPagesize({ sourceDirectory, evidenceDirectory, toolchai
   };
   function write(file, bytes, category = 'disk') {
     if (!Buffer.isBuffer(bytes)) bytes = json(bytes);
-    if (bytes.length > 65536 || !fits(bytes.length)) fail();
+    if (bytes.length > 65536 || !fits(bytes.length) || category === 'receipt' && output.receiptBytes + bytes.length > bounds.receiptBytes) fail();
     const record = { file, owned: false, identity: null, bytes: 0, closed: true, flushed: false, identityConfirmed: false };
     descriptors.push(record); let fd;
     try {
@@ -171,8 +171,8 @@ export async function runPagesize({ sourceDirectory, evidenceDirectory, toolchai
     const compiled = await execute('compile', { executable: toolchain.clang, cwd: control, environment: environment('compile'), stdio: 'pipe', timeoutMs: 12000,
       args: ['-v', '-fno-integrated-cc1', '-save-temps=obj', '-std=c11', '-D_DARWIN_C_SOURCE', '-O0', '-Wall', '-Wextra', '-Werror', '-fno-modules',
         '-isysroot', toolchain.sdk, '-arch', 'arm64', '-mmacosx-version-min=15.0', path.join(control, 'pagesize.c'), '-o', binary] });
-    stage = 'compiler-stream-persistence';
-    write(path.join(evidenceDirectory, 'compiler.stdout'), compiled.stdout); write(path.join(evidenceDirectory, 'compiler.stderr'), compiled.stderr);
+    stage = 'compiler-stream-persistence'; diagnosticCopyComplete = false;
+    write(path.join(evidenceDirectory, 'compiler.stdout'), compiled.stdout); write(path.join(evidenceDirectory, 'compiler.stderr'), compiled.stderr); diagnosticCopyComplete = true;
     if (!writersClosed) fail();
     stage = 'compiler-inventory'; const artifacts = inventory();
     result.compilerCommands = compilerInventory(compiled.stderr, control, artifacts, toolchain.clang, toolchain.linker);
