@@ -1,0 +1,19 @@
+{
+  "recordedAt": "2026-10-06 18:07:46 UTC",
+  "source": "Faithful tool-output transcript from this conversation; not fabricated process stdout.",
+  "first": {
+    "chunk": "73fa38",
+    "exitCode": 1,
+    "output": "remote: fatal error in commit_refs\n! [remote rejected] codex/m2-shared-foundation -> codex/m2-shared-foundation (failure)"
+  },
+  "readOnlyConfirmation": {
+    "chunk": "69e7de",
+    "remoteBranch": "bb7bdd5e1a4c344a4ae5e2664bc6ac3c68e61691"
+  },
+  "retry": {
+    "method": "One normal non-force git push",
+    "chunk": "256dd0",
+    "exitCode": 0,
+    "output": "bb7bdd5e..8e87a4bc codex/m2-shared-foundation -> codex/m2-shared-foundation"
+  }
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:06:21 UTC / O15 production main 0e4c7b0f69937f5b7a0c6dee3029ccc27f904364 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:07:46 UTC / O15 main0e4c |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -16,14 +16,14 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | 新CLI真实HTTP1/1（含help/错误/边界）、focusedtypes0；0PG/provider，原领域/生产检查不重跑 |
 | 已集成main状态 / HEAD | settings已main8d84；O15生产4源已main 0e4c7b0f69937f5b7a0c6dee3029ccc27f904364；CLI新三源尚未main |
-| Review | CLI三源待独审；7f59生产独审已main、source原样保持 |
+| Review | APPROVED ccfa04b22d6027c6e7606b22708bcb485e01ae05；Execution Lead唯一窄审，无P1/P2；原生产7f59已main |
 | 实现目标 | ccfa04b22d6027c6e7606b22708bcb485e01ae05 |
 | 实现范围 | apps/cli/src/index.ts, apps/cli/src/goal-plan-confirmation.test.ts, apps/cli/README.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 中心一次确认与自动推进已接入主线，命令行确认入口已完成局部验证。 |
-| 下一可用交付 | 独立审查后交付命令行确认入口。 |
+| 当前产出 | 命令行确认入口已通过独立审查，可复用同一严格输入与稳定请求键。 |
+| 下一可用交付 | 接收命令行薄入口到主线；本轮其他领域和生产接线均已交付。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -248,4 +248,4 @@ O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/
 
 2026-10-06 17:57:49 UTC：F01-O15-PRODUCTION-1756窗口已正常归还；1/1实际生产入口通过，未补跑13领域/旧settings。源码停写，Lead唯一最终窄审。
 
-| F01-45 | in-progress | native_center_owner | [CLI三源固定/1HTTP+types0](../../docs/evidence/f01/goal-plan-confirmation-cli-README.md)，待独立审查/main |
+| F01-45 | in-progress | native_center_owner | [三源独审APPROVED](../../docs/evidence/f01/goal-plan-confirmation-cli-independent-review.json)，targetccfa，待main receipt |

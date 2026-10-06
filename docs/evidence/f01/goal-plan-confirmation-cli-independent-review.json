@@ -1,0 +1,80 @@
+{
+  "at": "2026-10-06T18:07:07.358545+00:00",
+  "result": "APPROVED",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "target": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+  "scope": [
+    "apps/cli/src/index.ts",
+    "apps/cli/src/goal-plan-confirmation.test.ts",
+    "apps/cli/README.md"
+  ],
+  "entries": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 26573,
+      "sha256": "59213e5987492581bde26dd4040bc5729b747d6614e418532884e1c334824449"
+    },
+    {
+      "path": "apps/cli/src/goal-plan-confirmation.test.ts",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 3908,
+      "sha256": "df168d192fa4bdb3fd1271ed2f8838571906fb5e95e98abbf07a615a2f2cbd22"
+    },
+    {
+      "path": "apps/cli/README.md",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 9395,
+      "sha256": "51394b9498562eb51185cbdeb45448d55ea33319537dd15690cd0e2c4bf363a3"
+    },
+    {
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-http.stdout.txt",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 319,
+      "sha256": "8969b7c5dc32be3acd459522907a0f9392fc47ee45843286e5e79a9761030ea3"
+    },
+    {
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-http.exit.json",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 1026,
+      "sha256": "decd33a7d675eb4883e475c07f863d028b6977163edfa2a338ffb49768d85cac"
+    },
+    {
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-types.stdout.txt",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-types.exit.json",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 1018,
+      "sha256": "5ca15bde46f8438c48ca667625b251484d40216aad74887ffb6026b8a3cad9fb"
+    },
+    {
+      "path": "docs/evidence/f01/goal-plan-confirmation-cli-tsconfig.json",
+      "ref": "ccfa04b22d6027c6e7606b22708bcb485e01ae05",
+      "bytes": 211,
+      "sha256": "9752db771dbaa2987cc92dcf7a9ccc17495d3a30f472b80465b7300b3114b419"
+    }
+  ],
+  "sourceFullDiffRead": true,
+  "directInputsRead": [
+    "readJsonInput",
+    "runCli error mapping",
+    "confirmGoalPlan transport and goalPlanConfirmationSchema"
+  ],
+  "findings": [],
+  "checks": {
+    "actualHTTP": 1,
+    "pass": 1,
+    "testMs": 32,
+    "suiteMs": 447,
+    "typesExit": 0,
+    "provider": 0,
+    "PG": 0,
+    "reviewerReruns": 0
+  },
+  "covered": "Strict bounded regular UTF8 JSON, stable key/body, encoded ID, owner auth, abort, 409 no retry, malformed/oversized fail before HTTP, help no query. CLI does not plan, grant extra permission or decide semantic acceptance.",
+  "limitation": "The HTTP receipt fixture is intentionally a thin transport response, not a domain acceptance proof."
+}
