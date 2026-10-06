@@ -15,3 +15,9 @@ RecoveryBinding真实注册P01 sidebar.footer私有命令；App只挂surface和�
 prepare入口在第一次await之前固定namespace/view/project/auth generation；等待期间重新认证不能自动重新保存/POST。明确retry创建新port并保原key/body。持久draft提交恰好跨过reauth时仅同namespace/view记住实际CAS版本，仍拒绝本次旧send。existing command需port既有版本或restored expectedVersion；仅用户明确retry允许未缓存端口读取原记录，不能把迟到prepare称CAS。
 
 已接受CREATE/turn、queue、steering可按同原键及完整冻结材料对账到终态，0 POST；CREATE checkpoint可先绑定尚未绑定的projection，再由GET确认会话/project，失败不清unknown。认证失效或改中心保留旧Workspace为inactive；只有其flush成功或明确放弃未保存页面状态才卸载，不清journal。失败open只清对应attempt，用户重试重新open，已放弃attempt迟到成功close，不后台重试。
+
+## 材料完整性/原序提交接缝（source-only `1b8a335ecf26ece7539ad19e634508ac12ca3729`）
+
+原ConversationAttachments增加captureDraft：消费公开composer快照，派生原Input当前稿选择，校验全部ready且与composer IDs完整同序，才调用原capture。Thread每次Send/Queue均经过它，即使composer无chip；异常在官方send/receipt/HTTP前保稿显示原因。旧held/inTransit且未在当前composer的材料归早期交接，不自动拼下一稿，已consume按原Input消失。syncComposerDraft只推进已ready有序前缀；前A未验证时后B ready不追加B。现有bindComposer监听生命周期不变，不另造材料事实源。
+
+新增3个展开后controlled-port case，合计27 NOT_RUN；未来真实App同一隔离项目添加两固定资源，通过q先验证B再A，未验证/部分时分别Send/Queue要求0POST/0新命令与原稿，最终两实际chip及首次POST保A,B原ref序。明确移除才允许缩小选择。预算不变，未执行；首4ba20/20不覆盖。新入口见[manifest](material-integrity-checkpoint.json)，下一运行gate必须绑定这19源，旧2498/02d gate不可复用。

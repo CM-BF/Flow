@@ -1,6 +1,6 @@
 # Recovery browser harness — prepared, NOT_RUN
 
-The browser/fixture source is a future entry, not execution permission. No PG, browser, HTTP, Vite import, new types or dependency writes were run for RB1–RB4. Overall feature review remains NOT_STARTED. The existing 20/20 controlled-IDB baseline belongs only to 4ba; the later 22-case source and two subsequent material-binding cases (24 total) have not run.
+The browser/fixture source is a future entry, not execution permission. No PG, browser, HTTP, Vite import, new types or dependency writes were run for RB1–RB4. Overall feature review remains NOT_STARTED. The existing 20/20 controlled-IDB baseline belongs only to 4ba; the subsequent source now contains 27 cases (including material completeness/order); that target has not run.
 
 ## Ownership and budget Interface
 
@@ -16,7 +16,7 @@ The browser/fixture source is a future entry, not execution permission. No PG, b
 | Requirement | Prepared observation | Current evidence |
 | --- | --- | --- |
 | Actual browser cookie-only refresh / CSRF / SSE handshake | HttpOnly cookie, public session GET, cookie/no-bearer stream HTTP 200 and missing-CSRF rejection | NOT_RUN; SSE event delivery/reconnect remains PENDING |
-| Text + delivery intent + file material | Files UI selects seeded resource; original reference/order in IDB; reload explicit Restore, unverified metadata; explicit Browse then exactly one official composer chip/name without reselect/remount; zero content reads or mutation | NOT_RUN |
+| Text + delivery intent + file material | Files UI selects two seeded resources A,B; original references/order in IDB; reload explicit Restore; unverified and B-only verified Send/Queue must create no command/POST and preserve draft; then A verification adds two actual composer chips in A,B order without reselect/remount; zero content reads before explicit submit | NOT_RUN |
 | Original material turn with lost ACK | Real center commit, dropped response; subsequent retry body and key exactly match, attachment ref unchanged | NOT_RUN |
 | Two browser tabs CAS | Actual shared IndexedDB; B cannot replace A's restored draft version | NOT_RUN |
 | Auth loss with unsaved page-only text | Force transaction abort through browser IDB method, expire isolated session, real public read via focus; no reload, reconnect retains mounted text, zero command POST | NOT_RUN; failure injection is identified, not spontaneous quota exhaustion |
@@ -31,3 +31,5 @@ No matrix item is marked passed from this preparation. A successful bounded subs
 ## 7244 worker review follow-up — source only
 
 The binding now owns a small `syncComposerDraft` operation. React triggers it on Input publish but keeps the existing preparation watcher bound only to its real lifetime. Synchronization checks current capability/readiness/lease, immutable item membership, held submission, current composer IDs and in-transit IDs after each completed add. The pinned core appends complete metadata synchronously; no file/network preparation is started. Two controlled-composer direct cases are prepared for verified restoration/deduplication/removal and paused add settlement/revocation/held-next-draft isolation; NOT_RUN. The browser case checks real official composer DOM and filename after Browse, retaining the exact first-request attachment-reference assertion. Original 7244 evidence is unchanged.
+
+02d follow-up: the single-file chip journey is retained historically; current candidate prepares A,B verification in reverse arrival order, with the original ordered pair checked on the first actual turn POST and unknown retry body. This is NOT_RUN and does not extend the 90s/15s-cleanup budget.

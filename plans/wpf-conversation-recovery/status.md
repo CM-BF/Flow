@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:34 UTC |
+| 最近更新 | 2026-10-06 15:46 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段材料同步源码固定02d5a49aa2f17261d7dfcc9590f433c84b10defe；父supervisor/fixture仍7244；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 本段4源已固定；仅owner metadata收口，最终以Git clean核验 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段材料完整性源码固定1b8a335ecf26ece7539ad19e634508ac12ca3729；父supervisor保7244，fixture仅增第二材料；当前metadata HEAD以Git为准 |
+| 工作树dirty状态 | 本段5源已固定；仅owner metadata收口，最终以Git clean核验 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已补恢复材料验证后进入消息输入框的同步与可见附件检查，等待受控验证 |
+| 当前产出 | 已在提交前补完整文件选择检查，分批验证按原顺序同步；等待受控验证 |
 | 下一可用交付 | 刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复 |
-| 当前阻塞 | ACTIVE: 浏览器与完整构建等待可用磁盘和中心会话语义核验；本段仅修未来浏览器验证脚本，第二direct仍未运行 |
+| 当前阻塞 | ACTIVE: 浏览器与完整构建等待可用磁盘和中心会话语义核验；本段只修材料提交与同步源码，第二direct仍未运行 |
 | 需用户决定 | NONE |
-| 检查状态 | 4ba基线20/20受控direct PASS；当前24case待测。最新types绿为2498前后阶段，不覆盖本段；累计52.814/60s，浏览器NOT_RUN |
+| 检查状态 | 4ba基线20/20受控direct PASS；当前27case待测。最新types绿为2498前后阶段，不覆盖本段；累计52.814/60s，浏览器NOT_RUN |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
@@ -32,7 +32,7 @@
 | WPF-RECOVERY01-01 | in-progress | workspace_panels_owner | [live领取](../../docs/evidence/wpf-conversation-recovery/live-claim.json)，输入/容量研究已读，ConnectionSession/Journal第一段源码与types检查已落 |
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt后检查点屏障已接源码；行为待测 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
-| WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | 4ba 20/20通过；R4与terminal binding新增2case未运行 |
+| WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | 4ba 20/20通过；后续R4及材料完整性/顺序扩为27case均未运行 |
 | WPF-RECOVERY01-05 | blocked | workspace_panels_owner | 资源与中心语义验收门槛未满足 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 独审/main未完成 |
 
@@ -87,3 +87,11 @@ RB1–3已源码修正：父监督持有两进程组和DB lease，硬截止/清�
 7244 peer P2已按源码修正，未运行：稳定准备watcher与ready同步分离，原binding按身份/held/租期排除旧材料；新增2个controlled-composer case（当前24待测），browser改核实际chip/name、保首POST原ref，SSE仅握手、Enter/Escape实际范围。[源码manifest](../../docs/evidence/wpf-conversation-recovery/chip-sync-checkpoint.json)。本段2生产+2专测变化，其余15源对7244相同。整体targetUNKNOWN/reviewNOT_STARTED；原raw/7244保留，types与direct余量不变，暂无运行门槛。
 
 本段固定source checkpoint：`02d5a49aa2f17261d7dfcc9590f433c84b10defe`，非feature交付target；24case与当前types/browser未运行。等待局部源码审，源停写。
+
+## 15:42 UTC — 02d 材料完整性审查修复启动
+
+Root固定[02d报告](../../docs/evidence/wpf-conversation-recovery/02d-material-review.json)发现P1零chip可漏选中材料、P2先B后A验证可反转发送顺序，均为源码可达路径而非新运行复现。15:40:37.800Z管理fresh原21/v4/唯一writer无冲突[观察](../../docs/evidence/wpf-conversation-recovery/02d-material-claim.json)已核。先在原binding统一检查完整选择，再让Thread所有Send/Queue经过执行门禁；不以禁用按钮代替。原02d与raw保留，0types/tests/PG/Chrome/import/free，预算不变。
+
+## 15:46 UTC — 材料完整性固定源码安全点
+
+固定source `1b8a335ecf26ece7539ad19e634508ac12ca3729`，5源变化（Thread/binding/direct/browser/fixture），其余14源对02d相同，[19源manifest](../../docs/evidence/wpf-conversation-recovery/material-integrity-checkpoint.json)。P1/M1完整Input与composer有序交接在Send/Queue执行前校验，P2/M2分批验证不跳过未ready前项；held/inTransit/consumed旧材料与下一稿分离。当前27case及双文件实际App旅程均NOT_RUN，0额外types或空间采样。只静态diffcheck0；完整feature target UNKNOWN/review NOT_STARTED。源冻结待root窄审，metadata正常push后以local/origin及clean事实核。

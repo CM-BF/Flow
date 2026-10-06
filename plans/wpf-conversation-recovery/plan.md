@@ -36,3 +36,7 @@
 ### 7244 用例窄修
 
 现范围内修恢复附件重新验证后同步到真实composer；binding订阅生命周期保持稳定，held submission不得被状态重渲染清理。浏览器在材料用例完成前核实际chip，再保原首POST attachment ref断言。不重新Use/重新选取或remount。SSE只核握手的当前断言准确标注；键盘用真实打开/关闭焦点断言。本段仅源码，0运行许可。
+
+### 02d 材料完整性 / 原序修复
+
+Send/Queue均先从现绑定检查本稿完整Input选择与composer同序、同ID交接，零chip不等于无选择；未验证、部分同步或不同顺序须在原receipt/HTTP前保稿报错。先B后A的目录验证只更新ready事实，同步不得跳过未ready前项；不改Input或receipt排序。held/inTransit旧交接与已consume材料不混入下一稿；显式remove才缩小本稿选择。必要验证包括受控binding的两个intent、分批metadata/延迟add、原refs有序handoff、显式remove和held/consumed/inTransit隔离，以及未来实际App双文件首POST。此段均源码准备，未增加运行预算。

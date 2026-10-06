@@ -55,3 +55,15 @@ RB4：源码备好真实Files目录选择、metadata-only原ref恢复后显式re
 实读已安装core0.3.22 BaseComposerRuntimeCore:692–730：complete metadata的add在首await前同步追加/notify，Promise只是后续结算；该只读事实与hash记录chip-sync-checkpoint。新增2个controlled-composer binding用例验证重复同步/显式移除、迟到Promise结算/可见性撤权/插件停用与held下一稿隔离，当前合计24case全部新目标NOT_RUN，不冒React或实际官方runtime已测。原4ba20/20保持历史范围。
 
 未来browser不再仅看Files行就标materialDraft：unverified时composer零chip，Browse确认后原runtime恰一chip并实际tooltip文件名；不重新Use/reselect/remount。首turn POST attachments原ref、后续同key/body断言保留。SSE标cookieSseHandshake，event delivery/reconnect明确pending；390实际Enter打开/Escape回焦点，不称完整Tab导航。全段0types/import/tests/HTTP/PG/Chrome/空间采样，仅diffcheck0。types余7.186s/direct余27.460s不变，RELEASE唯一运行窗口不占用。
+
+## 2026-10-06 15:46 UTC — 02d P1/P2 source-only clean-code
+
+已本人读管理15:40:37.800Z窄账本，核6ff v4 active/21literal/本owner WT/branch/0冲突；原root报告原样归档02d-material-review.json。沿find-skills本地优先复用已读codebase-design/clean-code/assistant-ui，不安装。适用选择：让原私有binding持有完整选择/顺序校验，小captureDraft入口同时服务Send/Queue；Thread只在原submit路径调用，原Input/Outbox/Queue业务authority及公开P01不改。不得把composer空附件当无材料、不得把render禁用当执行正确性。
+
+P1源码修复：所有submit在官方send/同步localreceipt前检查Input完整选择；未ready或composer缺/乱序直接throw可行动说明，原稿未清。既有assertSubmission仍在onNew前再次核prepared IDs。当前稿集合由原Input推导，已独立held/inTransit且不在当前composer的项排除，不建立第二registry；显式还原到composer的旧材料仍需完整校验。P2源码修复：sync按原选择顺序添加已ready前缀，遇未验证前项停，不先追加后项；每个await后复核lease/current immutable identity/prefix。稳定bindComposer watcher不随材料publish重建；已消费项不重加。
+
+新增3个展开后直接case（send/queue两intent+先B后A一项），当前27case NOT_RUN；受控公开composer端口+真实Input/binding/Outbox/Queue/publicclient mockfetch，不冒React真实行为。保原24源码断言，加explicit remove、部分add、乱序prepared拒绝、同refs顺序handoff及old held/inTransit/consume下一稿。未来browser增加第二真实seed文本资源（同现PG/90s预算，不加DB或provider），通过真实目录q先B后A，未验证/部分验证时Send和Queue均要求0POST/0新command/原稿，之后两实际chip按名字和首POSTrefs保A,B；不重新Use或remount掩盖。
+
+本段0types/import/tests/HTTP/PG/Chrome/free/install；只有静态git diff --check0。类型余7.186s、direct余27.460s、browser累计90s原门槛全不变。原20/20仅4ba，不能覆盖本段。P1/P2待新固定源码窄审与实际必要行为验证，不标closed或feature批准。
+
+元数据收口一次辅助脚本在尝试追加不存在的README.md时停止（FileNotFoundError）；未创建该文件、未运行产品。改在实际interface.md记录新接缝后继续静态链接检查。这是文档脚本路径错误，不是产品测试红。

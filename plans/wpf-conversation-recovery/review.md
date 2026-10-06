@@ -17,3 +17,7 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 15:34 source-only修正：Thread独立状态触发+原附件binding sync方法，准备watcher生命周期不变；按lease/identity/held/current/inTransit防重复或旧材料追加。现2个新直接case与browser实际chip断言未运行。SSE覆盖限握手，Enter/Escape范围准确。待新固定源审查，未把P2标行为CLOSED。
 
 材料同步局部待审固定source：`02d5a49aa2f17261d7dfcc9590f433c84b10defe`（2生产+2专测，对7244）。本次只有diffcheck0，未运行类型/行为；完整feature审查仍NOT_STARTED。
+
+02d局部审查CHANGES_REQUESTED：[原报告](../../docs/evidence/wpf-conversation-recovery/02d-material-review.json)。P1选中但未进入composer的材料可被静默遗漏，P2分批验证可改变原序。当前源码修复中，未标行为CLOSED；正式feature target仍UNKNOWN。
+
+15:46 source-only后继固定 `1b8a335ecf26ece7539ad19e634508ac12ca3729`（5源，对02d）：M1/M2已按源码修正，27case和更新browser均NOT_RUN；[固定manifest](../../docs/evidence/wpf-conversation-recovery/material-integrity-checkpoint.json)。原controller/官方runtime不改，完整feature审查仍NOT_STARTED，等待独立窄审。
