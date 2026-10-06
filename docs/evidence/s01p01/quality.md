@@ -13,3 +13,5 @@
 开工核base/main输入与新WTclean，fresh ledger无scope冲突，take COMMITTED后才写。读源初次误用proposals.ts不存在，立即改读实际proposal.ts；未更改其它范围。尚未运行测试，不借S01实验峰值当产品完成。
 
 首metadata时间修正：实际clock读08:09:56Z，初稿手填08:11属未来，已更正为08:09 UTC；不改变take实际08:07:56.393Z。后续时间均以工具实际UTC记录。
+
+2026-10-06 08:19 UTC 工作段复核：journal单一原子snapshot、64KiB读取上界、最多16已知绑定（不随localLimit降低丢弃）；intent仅UUID，runner身份仅从实际assignment获得。runtime维持唯一admission/recovery loop，14明确绑定的API包装保留this/参数/原错误；不改outbox或controller。测试发现正常完成被错误标记需恢复造成健康slot空位停领，已移除无意义恢复barrier；未知/失败仍等active0。首fixture不存在log类型与noEmit失败均保留。

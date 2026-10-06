@@ -1,3 +1,4 @@
+import { AdmissionJournal, AdmissionStorageError } from './admission-journal.js';
 import { bindGraphToolCapability } from './goal-graph-tools/bind.js';
 import { bindGoalToolCapability } from './goal-tool-bridge/index.js';
 import { FinalizationUnknown, FinalProposalJournal } from './active-steering/proposal.js';
@@ -11,7 +12,7 @@ import { textDigest } from './verifier.js';
 import { AttemptControl, type LeaseGrant } from './attempt-control.js';
 import { EventOutbox, EventStorageError, replayPending, reportBatch } from './outbox.js';
 
-export interface RunnerNotice { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained'; attemptId?: string }
+export interface RunnerNotice { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained' | 'admission-blocked' | 'recovery-waiting'; attemptId?: string }
 export interface RunnerOptions {
   baseUrl: string;
   token: string;
@@ -20,43 +21,129 @@ export interface RunnerOptions {
   adapters?: HarnessAdapter[];
   /** Explicit host opt-in; public conversation capabilities remain disabled. */
   activeSteering?: boolean;
+  /** Local native attempt bound; the center independently enforces registered capacity. */
+  maxConcurrentAttempts?: number;
   pollIntervalMs?: number;
   heartbeatIntervalMs?: number;
   requestTimeoutMs?: number;
   onNotice?: (notice: RunnerNotice) => void;
 }
 
-export async function runRunner(options: RunnerOptions): Promise<void> {
-  validateOptions(options);
-  const client = new FlowClient(options);
+export async function runRunner(input: RunnerOptions): Promise<void> {
+  validateOptions(input);
+  const shutdown = new AbortController();
+  const options = { ...input, signal: AbortSignal.any([input.signal, shutdown.signal]) };
+  let fatal: unknown;
+  const stop = (error: unknown) => { fatal ??= error; shutdown.abort(error); };
+  const client = authenticatedClient(options, stop);
   const adapters = options.adapters ?? [createFixtureAdapter()];
   const stateDirectory = join(options.workingDirectory, textDigest(options.baseUrl.replace(/\/$/, '')));
   await prepareDirectory(stateDirectory);
-  let disconnected = false;
-  while (!options.signal.aborted) {
-    try {
-      await replayPending(stateDirectory, batch => reportBatch(client, batch, requestSignal(options)), attemptId => options.onNotice?.({ type: 'events-retained', attemptId }));
-      for (const entry of await readdir(stateDirectory, { withFileTypes: true })) {
-        if (!entry.isDirectory() || !/^[a-f0-9]{64}$/.test(entry.name)) continue;
-        const recovered = await new FinalProposalJournal(join(stateDirectory, entry.name)).recover(input => client.steeringProposalStatus(input, requestSignal(options)));
-        if (recovered !== 'missing') options.onNotice?.({ type: 'events-retained', attemptId: recovered.attemptId });
-      }
-      const requestedAt = performance.now();
-      const { assignment, remainingLeaseMs } = await client.claim(requestSignal(options));
-      disconnected = false;
-      if (assignment && !options.signal.aborted) await execute(assignment, client, adapters, options, stateDirectory, { requestedAt, remainingLeaseMs });
-    } catch (error) {
-      if (options.signal.aborted) return;
-      if (error instanceof EventStorageError) throw error;
-      if (error instanceof FlowApiError && [401, 403].includes(error.status)) throw new Error('Runner authentication was rejected by the center.');
+  const journal = await AdmissionJournal.open(stateDirectory);
+  const active = new Map<string, Promise<void>>();
+  let recoveryPending = true, disconnected = false, blockedNotice = false, waitingNotice = false;
+  function failed(error: unknown) {
+    if (error instanceof EventStorageError || error instanceof FlowApiError && [401, 403].includes(error.status)) stop(error);
+    else if (!options.signal.aborted) {
       if (!disconnected) options.onNotice?.({ type: 'connection-lost' });
       disconnected = true;
     }
-    await sleep(options.pollIntervalMs ?? 500, undefined, { signal: options.signal }).catch(() => undefined);
+  }
+  async function wait() {
+    const pause = new AbortController();
+    try {
+      await Promise.race([sleep(options.pollIntervalMs ?? 500, undefined, { signal: AbortSignal.any([options.signal, pause.signal]) }).catch(() => undefined), ...active.values()]);
+    } finally { pause.abort(); }
+  }
+  function start(assignment: ClaimedTask, initialLease: LeaseGrant) {
+    const attemptId = assignment.attempt.id;
+    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop)
+      .then(async completed => { if (completed) await journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }); else recoveryPending = true; })
+      .catch(error => { failed(error); recoveryPending = true; })
+      .finally(() => { active.delete(attemptId); });
+    active.set(attemptId, completion);
+  }
+  try {
+    while (!options.signal.aborted) {
+      try {
+        if (recoveryPending) {
+          if (active.size) {
+            if (!waitingNotice) options.onNotice?.({ type: 'recovery-waiting' });
+            waitingNotice = true; await wait(); continue;
+          }
+          await recover(stateDirectory, client, options, journal);
+          recoveryPending = false; waitingNotice = false;
+        }
+        if (journal.unresolved(new Set(active.keys()))) {
+          if (!blockedNotice) options.onNotice?.({ type: 'admission-blocked' });
+          blockedNotice = true; await wait(); continue;
+        }
+        if (active.size >= (options.maxConcurrentAttempts ?? 1)) { await wait(); continue; }
+        await journal.begin();
+        // No request was sent if shutdown/recovery arrived while the intent was persisted.
+        if (options.signal.aborted || recoveryPending) { await journal.accept(null); continue; }
+        const requestedAt = performance.now();
+        const response = await client.claim(requestSignal(options));
+        if (!response || !Object.hasOwn(response, 'assignment')) throw new Error('Invalid claim response; admission intent retained.');
+        const { assignment, remainingLeaseMs } = response;
+        await journal.accept(assignment === null ? null : {
+          attemptId: assignment.attempt.id, taskId: assignment.task.id,
+          runnerId: assignment.attempt.runnerId, ownerVersion: assignment.attempt.ownerVersion,
+        });
+        disconnected = false;
+        if (assignment && !options.signal.aborted) start(assignment, { requestedAt, remainingLeaseMs });
+        else await wait();
+      } catch (error) {
+        failed(error); recoveryPending = true;
+        if (!options.signal.aborted) await wait();
+      }
+    }
+  } finally {
+    shutdown.abort();
+    await Promise.allSettled(active.values());
+  }
+  if (fatal) throw fatal;
+}
+
+async function recover(directory: string, client: FlowClient, options: RunnerOptions, journal: AdmissionJournal) {
+  await replayPending(directory, async batch => {
+    await reportBatch(client, batch, requestSignal(options));
+    if (batch.events.some(event => event.type === 'completed')) await journal.complete(batch);
+  }, attemptId => options.onNotice?.({ type: 'events-retained', attemptId }));
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    if (!entry.isDirectory() || !/^[a-f0-9]{64}$/.test(entry.name)) continue;
+    const recovered = await new FinalProposalJournal(join(directory, entry.name)).recover(input => client.steeringProposalStatus(input, requestSignal(options)));
+    if (recovered !== 'missing') options.onNotice?.({ type: 'events-retained', attemptId: recovered.attemptId });
   }
 }
 
-async function execute(assignment: ClaimedTask, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant) {
+/** Observe auth before heartbeat, replay or tool adapters can translate the original rejection. */
+function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => void): FlowClient {
+  const client = new FlowClient(options);
+  function guard<Args extends unknown[], Result>(operation: (...args: Args) => Promise<Result>) {
+    return async (...args: Args): Promise<Result> => {
+      try { return await operation(...args); }
+      catch (error) { if (error instanceof FlowApiError && [401, 403].includes(error.status)) stop(error); throw error; }
+    };
+  }
+  client.claim = guard(client.claim.bind(client));
+  client.heartbeat = guard(client.heartbeat.bind(client));
+  client.report = guard(client.report.bind(client));
+  client.steeringMailbox = guard(client.steeringMailbox.bind(client));
+  client.finalizeSteering = guard(client.finalizeSteering.bind(client));
+  client.steeringProposalStatus = guard(client.steeringProposalStatus.bind(client));
+  client.goalToolGrant = guard(client.goalToolGrant.bind(client));
+  client.goalToolSnapshot = guard(client.goalToolSnapshot.bind(client));
+  client.goalToolInput = guard(client.goalToolInput.bind(client));
+  client.goalToolCommand = guard(client.goalToolCommand.bind(client));
+  client.goalGraphGrant = guard(client.goalGraphGrant.bind(client));
+  client.goalGraphRead = guard(client.goalGraphRead.bind(client));
+  client.goalGraphDetail = guard(client.goalGraphDetail.bind(client));
+  client.goalGraphCommand = guard(client.goalGraphCommand.bind(client));
+  return client;
+}
+
+async function execute(assignment: ClaimedTask, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void): Promise<boolean> {
   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
   const directory = join(stateDirectory, textDigest(assignment.attempt.id));
   await prepareDirectory(directory);
@@ -65,7 +152,10 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
     try { await reportBatch(client, batch, requestSignal(options)); }
     catch (error) { control.interrupt('lost'); throw error; }
   });
-  const emit = (data: RunnerEventData) => outbox.emit(data);
+  const emit = (data: RunnerEventData) => outbox.emit(data).catch(error => {
+    if (error instanceof EventStorageError) stop(error);
+    throw error;
+  });
   const decisions = new Map<string, { prompt: string; answer: Promise<DecisionAnswer['answer']> }>();
   let pendingDecision: string | undefined;
   const context: HarnessContext = {
@@ -119,7 +209,9 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   } finally { control.close(); await outbox.settle(); }
   if (!options.signal.aborted && control.reason !== 'lost') {
     await emit({ type: 'completed', outcome, ...(outcome === 'failed' ? { error: 'Harness execution did not complete.' } : {}) });
+    return true;
   }
+  return false;
 }
 
 function requestSignal(options: RunnerOptions) {
@@ -127,6 +219,8 @@ function requestSignal(options: RunnerOptions) {
 }
 
 function validateOptions(options: RunnerOptions) {
+  const limit = options.maxConcurrentAttempts ?? 1;
+  if (!Number.isSafeInteger(limit) || limit < 1 || limit > 16) throw new Error('Runner concurrent attempts must be an integer from one through sixteen.');
   for (const duration of [options.pollIntervalMs ?? 500, options.heartbeatIntervalMs ?? 2000, options.requestTimeoutMs ?? 1500]) {
     if (!Number.isSafeInteger(duration) || duration < 1 || duration > 2_147_483_647) throw new Error('Runner intervals must be positive 32-bit integers.');
   }
@@ -136,5 +230,5 @@ function validateOptions(options: RunnerOptions) {
 
 async function prepareDirectory(directory: string): Promise<void> {
   try { await mkdir(directory, { recursive: true, mode: 0o700 }); }
-  catch { throw new EventStorageError(); }
+  catch (error) { throw new AdmissionStorageError(error); }
 }

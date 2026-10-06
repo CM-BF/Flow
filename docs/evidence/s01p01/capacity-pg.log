@@ -1,0 +1,27 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool
+
+stdout | apps/runner/src/runtime-capacity.test.ts > real PG/HTTP enforces registered capacity 1 with a local four-slot pool
+{"cleanup":"s01p01-own-database","name":"flow_s01p01_b62fc9d21e2c4dd6b8875c0b528b4908","remaining":[]}
+
+Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.
+stdout | apps/runner/src/runtime-capacity.test.ts > real PG/HTTP enforces registered capacity 4 with a local four-slot pool
+{"cleanup":"s01p01-own-database","name":"flow_s01p01_ac155327554c4c5c9f2a962a04aa5d7c","remaining":[]}
+
+stdout | apps/runner/src/runtime-capacity.test.ts > real PG/HTTP preserves native-session exclusion across overlapping local slots
+{"cleanup":"s01p01-own-database","name":"flow_s01p01_2da6b48838084480bf4f063dcc25a0e8","remaining":[]}
+
+stdout | apps/runner/src/runtime-capacity.test.ts > real PG/HTTP keeps draining and uncertain occupancy authoritative while other slots settle
+{"cleanup":"s01p01-own-database","name":"flow_s01p01_fa374ce1d88d4e2bb3eb3f008eb3baa6","remaining":[]}
+
+ ✓ apps/runner/src/runtime-capacity.test.ts (16 tests | 12 skipped) 7306ms
+   ✓ real PG/HTTP enforces registered capacity 1 with a local four-slot pool  1915ms
+   ✓ real PG/HTTP enforces registered capacity 4 with a local four-slot pool  2919ms
+   ✓ real PG/HTTP preserves native-session exclusion across overlapping local slots  1288ms
+   ✓ real PG/HTTP keeps draining and uncertain occupancy authoritative while other slots settle  1184ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed | 12 skipped (16)
+   Start at  01:18:57
+   Duration  8.11s (transform 353ms, setup 0ms, import 733ms, tests 7.31s, environment 0ms)
+

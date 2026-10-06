@@ -1,0 +1,25 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool
+
+ ❯ apps/runner/src/admission-journal.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/admission-journal.test.ts [ apps/runner/src/admission-journal.test.ts ]
+Error: Cannot find module './admission-journal.js' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/apps/runner/src/admission-journal.test.ts'
+ ❯ apps/runner/src/admission-journal.test.ts:5:1
+      3| import { join } from 'node:path';
+      4| import { afterEach, expect, it } from 'vitest';
+      5| import { AdmissionJournal, AdmissionStorageError } from './admission-j…
+       | ^
+      6| 
+      7| const directories: string[] = [];
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  01:14:30
+   Duration  110ms (transform 18ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+
