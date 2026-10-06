@@ -1,0 +1,56 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "远程验证模板候选已完成静态检查，保留用户最终启用决定；尚未远程运行。",
+    "next": "独立审查这份手动 Ubuntu 候选并受控接收。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[OPS-001](../../../plan-status-review/plans/ops-001-status-review/plan.md)",
+      "id": "OPS-001",
+      "location": "../../../plan-status-review/plans/ops-001-status-review/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "implementation": {
+    "target": "b8957d7c4a291ac6bf5b347fba45ceebca75a17a",
+    "scopes": [
+      "docs/ci/README.md",
+      "docs/ci/check-workflow.yml"
+    ],
+    "errors": []
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED",
+    "target": "b8957d7c4a291ac6bf5b347fba45ceebca75a17a"
+  }
+}

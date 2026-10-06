@@ -7,7 +7,7 @@
 职责/输入/输出/错误与资源边界见 [Interface](../../docs/evidence/ops-ci01/interface.md)。只复用原 Vitest 和 C01 fixture，不新建测试框架、调度器或模型授权。基线 37f75d3654fc500d37b1ddfda0871807d878715f，独立 codex/ops-remote-validation。
 
 - [x] OPS-CI01-01：核原模板/真实入口、领取四 scope、冻结短 Interface。
-- [ ] OPS-CI01-02：修订两个 CI 文档与有限静态验收证据。
+- [x] OPS-CI01-02：修订两个 CI 文档与有限静态验收证据。
 - [ ] OPS-CI01-03：固定 target/manifest，独立 review 后受控接收。
 - [ ] OPS-CI01-04：用户最终启用与一次远程真实运行；本片不执行。
 
