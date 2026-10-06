@@ -1,0 +1,31 @@
+{
+  "startUtc": "2026-10-06T21:13:41.798299+00:00",
+  "finishUtc": "2026-10-06T21:13:42.318011+00:00",
+  "elapsedSeconds": 0.5197021670173854,
+  "exitCode": 1,
+  "rawBytes": 5535,
+  "rawSha256": "6b22ffa2082bddd04f571af2af0958a5e01df49cebc8b2dca5903b9ae338fa6b",
+  "ownedBytes": 128,
+  "cleanup": [
+    {
+      "path": "/tmp/flow-c02-contract-red-cache",
+      "dev": 16777234,
+      "ino": 123202224,
+      "sameIdentity": true,
+      "sampledBytes": 128,
+      "absent": true
+    },
+    {
+      "path": "/tmp/flow-c02-contract-red-tmp",
+      "dev": 16777234,
+      "ino": 123202225,
+      "sameIdentity": true,
+      "sampledBytes": 0,
+      "absent": true
+    }
+  ],
+  "withinRunBounds": true,
+  "nativeTargets": 0,
+  "pgCalls": 0,
+  "providerCalls": 0
+}

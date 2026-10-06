@@ -1,0 +1,22 @@
+{
+  "startUtc": "2026-10-06T21:22:07.804665+00:00",
+  "finishUtc": "2026-10-06T21:22:09.547047+00:00",
+  "elapsedSeconds": 1.7420879999408498,
+  "exitCode": 2,
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "-p",
+    "docs/evidence/mature02c02/tsconfig.focused.json",
+    "--pretty",
+    "false"
+  ],
+  "availableBytes": 1154383872,
+  "rawBytes": 1982,
+  "rawSha256": "dbad31fa66ccf47b3ed204838ad453bf1d9a0d2a79c2cc03c157655fc32a7a02",
+  "noEmit": true,
+  "incremental": false,
+  "nativeTargets": 0,
+  "pg": 0,
+  "provider": 0
+}

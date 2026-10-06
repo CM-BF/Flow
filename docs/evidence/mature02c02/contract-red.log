@@ -1,0 +1,75 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity
+
+ ✓ packages/contracts/src/codex-session.test.ts > retains the exact legacy Codex bytes and digest without a default persistence capability 3ms
+ × packages/contracts/src/codex-session.test.ts > accepts only explicit host-owned intent and never accepts a storage path or launch authority 2ms
+   → [
+  {
+    "code": "unrecognized_keys",
+    "keys": [
+      "sessionPersistence"
+    ],
+    "path": [],
+    "message": "Unrecognized key: \"sessionPersistence\""
+  }
+]
+ × packages/contracts/src/codex-session.test.ts > carries only a session ID and pin to center admission while rejecting fixture and private launch fields 1ms
+   → [
+  {
+    "code": "custom",
+    "message": "Codex tasks require an explicit profile and do not support resume or fixture options.",
+    "path": []
+  }
+]
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  14:13:42
+   Duration  242ms (transform 61ms, setup 0ms, import 140ms, tests 6ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/contracts/src/codex-session.test.ts > accepts only explicit host-owned intent and never accepts a storage path or launch authority
+ZodError: [
+  {
+    "code": "unrecognized_keys",
+    "keys": [
+      "sessionPersistence"
+    ],
+    "path": [],
+    "message": "Unrecognized key: \"sessionPersistence\""
+  }
+]
+ ❯ packages/contracts/src/codex-session.test.ts:21:51
+     19| it('accepts only explicit host-owned intent and never accepts a storag…
+     20|   const persistent = { ...legacy, sessionPersistence: 'host-owned' };
+     21|   expect(codexExecutionProfileConfigurationSchema.parse(persistent)).t…
+       |                                                   ^
+     22|   expect(nativeExecutionProfileConfigurationJson(persistent as never))…
+     23|   for (const sessionPersistence of [null, true, 'ephemeral', 'any-path…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { _zod: { def: [ { code: 'unrecognized_keys', keys: [ 'sessionPersistence' ], path: [], message: 'Unrecognized key: "sessionPersistence"' } ], constr: 'Function<ZodError>', traits: { constructor: 'Function<Set>', has: 'Function<has>', add: 'Function<add>', delete: 'Function<delete>', difference: 'Function<difference>', clear: 'Function<clear>', entries: 'Function<entries>', forEach: 'Function<forEach>', intersection: 'Function<intersection>', isSubsetOf: 'Function<isSubsetOf>', isSupersetOf: 'Function<isSupersetOf>', isDisjointFrom: 'Function<isDisjointFrom>', size: 2, symmetricDifference: 'Function<symmetricDifference>', union: 'Function<union>', values: 'Function<values>', keys: 'Function<values>' }, message: '[\n  {\n    "code": "unrecognized_keys",\n    "keys": [\n      "sessionPersistence"\n    ],\n    "path": [],\n    "message": "Unrecognized key: \"sessionPersistence\""\n  }\n]' }, issues: [ { code: 'unrecognized_keys', keys: [ 'sessionPersistence' ], path: [], message: 'Unrecognized key: "sessionPersistence"' } ], format: 'Function<anonymous>', flatten: 'Function<anonymous>', addIssue: 'Function<anonymous>', addIssues: 'Function<anonymous>', isEmpty: false }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/contracts/src/codex-session.test.ts > carries only a session ID and pin to center admission while rejecting fixture and private launch fields
+ZodError: [
+  {
+    "code": "custom",
+    "message": "Codex tasks require an explicit profile and do not support resume or fixture options.",
+    "path": []
+  }
+]
+ ❯ packages/contracts/src/codex-session.test.ts:33:31
+     31| it('carries only a session ID and pin to center admission while reject…
+     32|   const task = { title: 'Continue', prompt: 'Next turn', harness: 'cod…
+     33|   expect(taskSubmissionSchema.parse(task)).toEqual(task);
+       |                               ^
+     34|   for (const patch of [{ executionProfile: undefined }, { fixture: { s…
+     35|     { env: { CODEX_HOME: '/private' } }, { args: ['--resume'] }, { res…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { _zod: { def: [ { code: 'custom', message: 'Codex tasks require an explicit profile and do not support resume or fixture options.', path: [] } ], constr: 'Function<ZodError>', traits: { constructor: 'Function<Set>', has: 'Function<has>', add: 'Function<add>', delete: 'Function<delete>', difference: 'Function<difference>', clear: 'Function<clear>', entries: 'Function<entries>', forEach: 'Function<forEach>', intersection: 'Function<intersection>', isSubsetOf: 'Function<isSubsetOf>', isSupersetOf: 'Function<isSupersetOf>', isDisjointFrom: 'Function<isDisjointFrom>', size: 2, symmetricDifference: 'Function<symmetricDifference>', union: 'Function<union>', values: 'Function<values>', keys: 'Function<values>' }, message: '[\n  {\n    "code": "custom",\n    "message": "Codex tasks require an explicit profile and do not support resume or fixture options.",\n    "path": []\n  }\n]' }, issues: [ { code: 'custom', message: 'Codex tasks require an explicit profile and do not support resume or fixture options.', path: [] } ], format: 'Function<anonymous>', flatten: 'Function<anonymous>', addIssue: 'Function<anonymous>', addIssues: 'Function<anonymous>', isEmpty: false }
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

@@ -13,3 +13,5 @@
 用户指定clean-code安装来源为sickn33/agentic-awesome-skills；此段使用现有安装字节，不重装/不声称重新核了上游commit。文件自身frontmatter另标ClawForge；以以上本地hash明确实际输入，全局安装来源由Lead基线维护。
 
 应用：先作三方案取舍并由mika接受opt-in小纵向；codebase-design划清storage/adapter/exchange/中心锁职责，保持唯一FSM；clean-code核命名、错误未知、重复、实际factory消费，无额外registry/auth或通用恢复框架。static闭包特别纳入SQL数组、MJS声明与engineering直接消费者。旧reader兼容风险已纳入Interface。此为设计/管理质量检查，不是产品测试或source approval。
+
+2026-10-06T21:24:21.638015+00:00: 实现安全点复核clean-code（原本地字节，Lead基线bdacd76）：单storage WeakMap封装宿主factory/目录，不暴露path/auth；共享exchange仅请求选择，unknown无fallback；旧native-v1在LIMIT前排除opt-in。直接readonly草稿review无新finding，完整pin.id仍由现guard核，注入已实用同根文件跨两个transport。未新增R06/FSM/目录endpoint。新fixture缺completedAtMs导致3fail，修fixture后7/7；旧post-terminal peer时序失败保留待确定化，未削断言。编排exitCode误录独立纠正，未覆盖raw。整体源码/PG/main尚未通过。

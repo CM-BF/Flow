@@ -1,0 +1,34 @@
+{
+  "startUtc": "2026-10-06T21:23:22.495995+00:00",
+  "finishUtc": "2026-10-06T21:23:27.476757+00:00",
+  "elapsedSeconds": 4.9804601250216365,
+  "exitCode": 1,
+  "rawBytes": 5324,
+  "rawSha256": "3f3431937c3dec34d4d83a431576890b2203984bf86ed100dfc47199fc2231e9",
+  "ownFinalSampleBytes": 522,
+  "cleanup": [
+    {
+      "path": "/tmp/flow-c02-consumers-cache",
+      "dev": 16777234,
+      "ino": 123208753,
+      "sameIdentity": true,
+      "sampledBytes": 522,
+      "unexpectedFixturePaths": [],
+      "absent": true
+    },
+    {
+      "path": "/tmp/flow-c02-consumers-tmp",
+      "dev": 16777234,
+      "ino": 123208754,
+      "sameIdentity": true,
+      "sampledBytes": 0,
+      "unexpectedFixturePaths": [],
+      "absent": true
+    }
+  ],
+  "withinRunBounds": true,
+  "actualCodexTargets": 0,
+  "pgCalls": 0,
+  "providerCalls": 0,
+  "peerClosure": "Existing tests assert R06 confirmed-exited/closed for every owned peer; final TMP emptiness is supplementary."
+}

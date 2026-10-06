@@ -1,0 +1,33 @@
+{
+  "startUtc": "2026-10-06T21:21:15.113343+00:00",
+  "finishUtc": "2026-10-06T21:21:16.227794+00:00",
+  "elapsedSeconds": 1.1140255000209436,
+  "exitCode": 0,
+  "rawBytes": 341,
+  "rawSha256": "74a2676681da422f0f07ffb86f63e476e2dde205610f105fc66d02f6d2cc70ea",
+  "ownedBytes": 332,
+  "cleanup": [
+    {
+      "path": "/tmp/flow-c02-continuity-green-cache",
+      "dev": 16777234,
+      "ino": 123208234,
+      "sameIdentity": true,
+      "sampledBytes": 332,
+      "unexpectedFixturePaths": [],
+      "absent": true
+    },
+    {
+      "path": "/tmp/flow-c02-continuity-green-tmp",
+      "dev": 16777234,
+      "ino": 123208235,
+      "sameIdentity": true,
+      "sampledBytes": 0,
+      "unexpectedFixturePaths": [],
+      "absent": true
+    }
+  ],
+  "withinRunBounds": true,
+  "nativeTargets": 0,
+  "pgCalls": 0,
+  "providerCalls": 0
+}

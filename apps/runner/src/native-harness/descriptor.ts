@@ -12,6 +12,7 @@ export function describeNativeHarness<Profile extends NativeExecutionProfileConf
         ...(publicProfile?.harness === 'claude' && publicProfile.activeSteering ? { steering: publicProfile.activeSteering.protocol } : {}),
         ...(publicProfile?.access === 'goal-tools' ? { goalTools: 1 as const } : {}),
         ...(publicProfile?.access === 'goal-graph-tools' ? { goalGraphTools: 1 as const } : {}),
+        ...(publicProfile?.harness === 'codex' && publicProfile.sessionPersistence ? { sessionPersistence: publicProfile.sessionPersistence } : {}),
       },
       publicProfile,
     },
