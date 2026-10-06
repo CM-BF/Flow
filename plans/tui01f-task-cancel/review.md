@@ -1,5 +1,11 @@
 # 当前 TUI01F-04 实现
 
+状态：APPROVED_PREPARATION_DELTA。capture/import独立增量已核，无P1/P2；实际旅程NOT_RUN。
+
+Review target commit: 076aa5444a73ecb3eaea42176c0577ed07feb7f6
+
+[原始增量回执](../../docs/evidence/tui01f/web-handoff/independent-capture-review.json)，32固定绑定/2纯直接消费者与import原证据，reviewer0重跑。原四源准备批准仍绑定下列d147，不扩大为实际App/PG/PTY结果。
+
 状态：APPROVED_PREPARATION_ONLY。Execution Lead独立核四源与782绑定/4纯检查分轮和两focused types原始证据，无P1/P2，reviewer0重跑。实际HTTP/PG/Chrome/PTY仍NOT_RUN，不继承03实际验收结论。
 
 Review target commit: d147a636f9cb54a8c87a89a89963d13e937cee9c
