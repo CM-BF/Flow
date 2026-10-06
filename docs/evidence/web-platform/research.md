@@ -296,3 +296,5 @@ w01_owner后续有界只读：固定center2d3bb61/clienta3b9/outbox0d4e的确定
 03:51跨Lead固定事实（root转交，管理者未重跑外队）：Mika B01 after窗口03:46:01.332Z～03:46:10.218Z，8.887秒、23checks、47,496,555bytes，已清理，独立审查批准该实现/after；不推因果倍率或SLO。X02实现3d0cfc898b9e9bba1d0985d33b2eb263c2fc26ee、metadataf9d6dd2a34db78d1818876088ebf9de153a1d3b7获Mika root批准交主Lead，registered/runtime unavailable边界保持；管理者仅git rev-parse补全给定短SHA，没有另做X02 approval。GoalOwner批准CHAT typed融合d0f4f5d8abc8995b22a43879880e090bfb898024，计划在Web首独立交互preview就绪后做用户视角验收；URL/固定输入/fixture身份由CHAT owner回，49922不动，两次真实模型query仍只由主Lead执行。
 
 03:53 w01只读ACK研究交付已合入[同一CHAT接口证据](chat-interface-research.md)，固定2d3/a3/0d4e与typed746差异、源码行号、两事务ACK恢复、unknown后重试401/403不可抹旧不确定性、malformed2xx身份校验全部明确；已交CHAT owner转实际验收，未读moving caller不先判bug。内存outbox不假称跨reload持久，固定中心注册函数不等于单commit可部署，真实模型仍主Lead统一。owner只读交付后空闲，不为填槽创建新生产工作。
+
+03:54 CHAT唯一owner首预览http://127.0.0.1:63743/、session14932，明确HTTP fixture，作者Chrome同conversation hi/追问两轮正文/0pageerror。固定输入I01b584+a3b9+typed746，整体moving/targetUNKNOWN；root另开后台tab15，GoalOwner按约定用户视角验收，旧49922与55049不动。root和管理者跨消息同时桥接了同预览，管理者明确发生重复一次并停止额外通知。原owner继续runtimeACK/everUnknown局部约束，w01研究完待派，不为满槽创建新生产。

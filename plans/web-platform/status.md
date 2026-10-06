@@ -12,8 +12,8 @@
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | CHAT持续对话实施中；PERF02固定实现获独立APPROVED并交Lead集成；两新来源与PERF审查已实采闭环 |
-| 下一可用交付 | CHAT官方Thread持续对话首预览；主线PERF02受控集成与局部组合验证 |
+| 当前产出 | CHAT首独立63743 fixture已可交互，正在用户视角/ACK边界验证；PERF02获审交Lead集成 |
+| 下一可用交付 | CHAT固定可审实现与ACK/reconnect/能力门禁证据；主线PERF02局部集成 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -36,11 +36,11 @@
 
 ## 当前管理工作
 
-root持续只读研究与独立验收；管理者只写此管理树。workspace_panels_owner为WPF-CHAT01唯一Web实现owner；w01_owner已交PERF02并停止主动实现，仅做有界固定版本ACK语义只读研究，保留claim供受控回修。无新增agent。本队最多4、主线4、Mika2总上限10，sources/claims数不代表活跃agent数。
+root持续只读研究与独立验收；管理者只写此管理树。workspace_panels_owner为WPF-CHAT01唯一Web实现owner；w01_owner已交PERF02并停止主动实现，仅做有界固定版本ACK语义只读研究，保留claim供受控回修。w01固定ACK研究已交付，当前待派且不新开生产feature。无新增agent。本队最多4、主线4、Mika2总上限10，sources/claims数不代表活跃agent数。
 
 | 当前工作 | 已核事实与下一步 |
 | --- | --- |
-| [WPF-CHAT01](conversation-core/plan.md) | 新tree web-conversations / claim08259c1d v1精确16scope；共享受控输入a3b9及canonical c72e02就绪，blockerNONE，唯一owner实施持续conversation projection/outbox/官方Thread。当前未交固定实现或UI approval |
+| [WPF-CHAT01](conversation-core/plan.md) | 新tree web-conversations / claim08259c1d v1精确16scope；共享受控输入a3b9及canonical c72e02就绪，blockerNONE，唯一owner实施持续conversation projection/outbox/官方Thread。首HTTP fixture http://127.0.0.1:63743/ / session14932，作者两轮同conversation正文/0pageerror；仍moving、整体targetUNKNOWN，root与GoalOwner用户视角验收中，未给UI approval |
 | [WPF-PERF02](performance-optimization/plan.md) | web-activity-window / claimd36cd583 v1精确8scope；候选a87f64f48a3b7e8d03429ab0673c210076a2df0d，最终metadata172d10d63179a4861cc0fbf986dec10bd0a45f10 clean、实现diff0。作者13局部tests/typecheck/8productionbrowser与三规模通过；root独立限定APPROVED，03:49已交Lead集成。owner停止八scope主动写入，main仍not-contained |
 | Dashboard来源 | 03:46:41.801Z管理者实采39源，两新任务各唯一live source与claim v1/worker/branch匹配，unregistered=[]；当时CHAT issues=[]，PERF02缺分支字段；最终03:49:13.564Z一次再核字段已补、checks/review均绑a87且proof unchanged、issues=[]。完整证据见下 |
 | 多Lead边界 | Mika独占B01后台投影/feed字节/历史性能及下一X02中心registry；本队不写后端。PERF02只改受领窗口接缝，CHAT只改会话与App受领文件，无字面scope重叠 |
@@ -73,3 +73,5 @@ root持续只读研究与独立验收；管理者只写此管理树。workspace_
 03:44管理clean-code复核当前正文、单一事实源、接口/领取边界及历史approval：修正旧claim版本、已交付仍称待派/待接口、旧下一交付等陈旧段落，并把详细历史归研究证据；仅文档变化，不重复全库或性能测量。本管理独立review仍只绑定c075bb5首文档，后续增补未自动继承。根lock例外不沿用给新任务；两新owner使用不写lock安装，无新生产依赖。
 
 03:50 PERF02完整交付与唯一status路径已通过“收件人：Execution Lead”桥接回主线；无自行merge。新只读派工固定center2d3bb61/clienta3b9/outbox0d4e并对比新受控typed输入746364ea2581b8c563a09b07560de5e0b63bcab8，检查明确拒绝/ACKunknown/原key重试；不把该链称最新端到端，不审CHAT moving projection、不调用模型、不新增生产scope。
+
+03:54首CHAT预览由root及管理者近同时桥接一次给GoalOwner（重复通知事实保留，后续统一root UI回程，不再重复）；是新独立fixture，不是将用户49922替换为新版本。ACK形状/身份与先前unknown状态保留正在原scope修正，具体结论等固定候选。
