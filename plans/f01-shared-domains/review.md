@@ -243,3 +243,7 @@ APPROVED — assignment_review独立只读，无P1/P2；4源/8raw/18已审domain
 Review target commit: c05fca7beadd7bc59b1156e582d4d84078c512c8
 
 NOT_STARTED — assignment_review只读新四源薄接线与真实消费者，不复审O11领域。
+
+Review target commit: c05fca7beadd7bc59b1156e582d4d84078c512c8
+
+APPROVED — assignment_review独立只读4source/13raw/9域输入固定hash全符，无P1/P2，未重跑。仅公共接线，完整目标闭环仍open。见[回执](../../docs/evidence/f01/goal-delivery-independent-review.json)。
