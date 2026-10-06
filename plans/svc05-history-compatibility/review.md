@@ -61,3 +61,7 @@ main `888cfd3b1c414b32298661f1fdf5f33bddbe956c` 的21绑定内容逐字相同；
 ## 同版本中心恢复准备（待独立审查）
 
 2026-10-06 19:38 UTC：center-recovery/operator.mjs + facts.mjs仅own evidence实现；固定362工具复用，原产品不改。准备/readonly64表基线已落，操作NOT_RUN。待native_center_owner唯一独审；原网页恢复/发布候选批准不自动扩大到此次恢复。
+
+### 中心恢复期限P2
+
+原独审REQUEST_CHANGES与bindings已归档center-recovery/initial-*。原内部110s回调等fsync后退出且final写在clearTimer后，不能兑现总期限。外层Python subprocess监督从operator启动覆盖reservation至final，超时只kill该child PID。2无服务checks通过（阻塞pipe write与正常返回），真实个人恢复未跑。当前等待native_center_owner唯一增量复审，不自批。

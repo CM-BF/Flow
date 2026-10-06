@@ -14,15 +14,15 @@ if (authorization.kind !== 'svc05h-center-only-once' || authorization.target !==
   || !Number.isFinite(Date.parse(authorization.expiresAt)) || Date.now() >= Date.parse(authorization.expiresAt)) throw Error('AUTHORIZATION_MISMATCH');
 const run = join(evidence, 'run-' + authorization.approvalId);
 await mkdir(run, { mode: 0o700 }); // EEXIST permanently rejects another invocation with this approval.
-await durable(join(run, 'reservation.json'), { at: new Date().toISOString(), authorization, authorizationSha256: sha((await bounded(authorizationPath)).bytes), providerQueries: 0 });
+await durable(join(run, 'reservation.json'), { at: new Date().toISOString(), authorization, authorizationSha256: sha((await bounded(authorizationPath)).bytes), outcome: 'unknown-until-result', providerQueries: 0 });
 const result = { at: new Date().toISOString(), target, outcome: 'unknown', spawnCalls: 0, providerQueries: 0, taskCommands: 0 };
-let phase = 'source-gates'; let timer;
+let phase = 'source-gates';
 function requireTrue(value, code) { if (!value) throw Error(code); }
 function same(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
 function errorCode(e) { return /^[A-Z0-9_]+$/.test(e.code ?? e.message) ? e.code ?? e.message : 'OPERATION_UNCONFIRMED'; }
 async function fixedSource() {
   requireTrue(same(await source(), { head: target, dirty: false }), 'SOURCE_NOT_FIXED');
-  const bindingBytes = (await bounded(join(evidence, 'runtime-bindings.json'))).bytes;
+  const bindingBytes = (await bounded(join(evidence, 'deadline-runtime-bindings.json'))).bytes;
   requireTrue(sha(bindingBytes) === authorization.runtimeBindingsSha256, 'RUNTIME_BINDING_CHANGED');
   const bindings = JSON.parse(bindingBytes);
   for (const item of bindings.files) {
@@ -46,10 +46,6 @@ function safeToStart(f, baseline) {
   requireTrue(same(f.database, baseline.database), 'DATABASE_BASELINE_CHANGED');
 }
 try {
-  timer = setTimeout(() => {
-    void durable(join(run, 'deadline-checkpoint.json'), { ...result, phase, outcome: 'unknown', code: 'OPERATOR_DEADLINE' })
-      .finally(() => process.exit(1)); // Never signals services or clears an uncertain lock.
-  }, 110_000);
   await fixedSource();
   const baselineBytes = (await bounded(join(evidence, 'facts-before.json'))).bytes;
   requireTrue(sha(baselineBytes) === authorization.baselineSha256, 'BASELINE_CHANGED');
@@ -114,7 +110,6 @@ try {
   result.code = errorCode(e); result.phase = phase;
   // Preserve all captured ownership, including a pending spawn. No retry, rollback, cancellation, or other-role stop.
 } finally {
-  clearTimeout(timer);
   await durable(join(run, 'result.json'), { ...result, endedAt: new Date().toISOString() });
 }
 console.log(JSON.stringify({ ...result, evidence: run }));
