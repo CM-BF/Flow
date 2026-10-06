@@ -9,8 +9,8 @@ GO方向及Lead精确6scope已批准。owner显式选择已登记 configured-rea
 ## TODO
 
 - [x] O09-01：fresh领取、固定独立owner合同/接口和技能记录。
-- [ ] O09-02：公开owner受理同TX/幂等/版本/readonly profile与旧grant隔离真实PG闭环。
-- [ ] O09-03：真实HTTP/PG+现Claude query注入跑frozen输入→typed final/产物/verifier；旧fixture必要回归。
+- [x] O09-02：公开owner受理同TX/幂等/版本/readonly profile与旧grant隔离真实PG闭环。
+- [x] O09-03：真实HTTP/PG+现Claude query注入跑frozen输入→typed final/产物/verifier；旧fixture必要回归。
 - [ ] O09-04：原始失败/最终证据、clean-code、固定target，独立review和main接收。
 
 ## 验证与范围

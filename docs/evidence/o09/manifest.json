@@ -1,0 +1,216 @@
+{
+  "createdAt": "2026-10-06T08:00:02.463111+00:00",
+  "base": "84fdecebbb4939e43710fb17e48884cc49d1d030",
+  "target": "7ddd763a2e2274c040dea7e114dcf6d6da226cf6",
+  "owner": "assignment_review / gpt-6-astra",
+  "sources": [
+    {
+      "path": "packages/contracts/src/goal-native-executions.ts",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d",
+      "fixedEqualsWorktree": true
+    },
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "bytes": 13874,
+      "sha256": "19d90e2279d350e133ebea9099e8a0c1b5b601c674e9567758a16b32b2adf316",
+      "fixedEqualsWorktree": true
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/runner.ts",
+      "bytes": 3930,
+      "sha256": "f57db1ed2bde342a0a606fca20374f4bdceaa497f415abffc32ff6b9a2ad60e8",
+      "fixedEqualsWorktree": true
+    },
+    {
+      "path": "apps/server/src/goal-native-executions/admission.test.ts",
+      "bytes": 12997,
+      "sha256": "5e067431472f41508b948585e3931c76d62bc94bfe4542ca0f97761b42443905",
+      "fixedEqualsWorktree": true
+    },
+    {
+      "path": "apps/server/src/goal-native-executions/fixture.ts",
+      "bytes": 4380,
+      "sha256": "c091a0163bdb47a5ea2235fe0f2b15a1005be1734ebabd8abe836c7b0bda8304",
+      "fixedEqualsWorktree": true
+    },
+    {
+      "path": "apps/server/src/goal-native-executions/index.ts",
+      "bytes": 1083,
+      "sha256": "3a3313def7fd540b4b2da2ae3a2f6e31d4a1f42fcbed190c5f358ef7650c12e8",
+      "fixedEqualsWorktree": true
+    },
+    {
+      "path": "apps/server/src/goal-native-executions/runtime.test.ts",
+      "bytes": 11098,
+      "sha256": "cd9c0b89e855976f5e01c0274051c61e908950b525d6e26f95705f6de1047b1b",
+      "fixedEqualsWorktree": true
+    },
+    {
+      "path": "apps/server/src/goal-native-executions/store.ts",
+      "bytes": 1466,
+      "sha256": "1c3960a1eb5b5db431b499e78a0cfb3a9974b459c3e6ed63144f3ba7dbe4c4e5",
+      "fixedEqualsWorktree": true
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "packages/contracts/src/goals.ts",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930",
+      "equalsBase": true
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6497,
+      "sha256": "c83f04c42ec26e69147baf929a18b53f49faf560602df4322cefccd67c40c7fc",
+      "equalsBase": true
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 5524,
+      "sha256": "20ef1992334639b79648bdf2a892478438e4fe9f2e3ec629380e0a3308a7a33e",
+      "equalsBase": true
+    },
+    {
+      "path": "apps/server/src/goal-context/store.ts",
+      "bytes": 11740,
+      "sha256": "a5ecb7925878db97613bf5812e5e02da8b89c46761c0e7b2e30ef19b4db2680c",
+      "equalsBase": true
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 10369,
+      "sha256": "9e293af3092aba2e138cd8b36fd763ff29923a60bb8f8166bd5b8e490c8dcb8c",
+      "equalsBase": true
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 17189,
+      "sha256": "6959ec02de0df33b9d1fdd13537072861f7a7e8d6627338cbe14db4060c575b6",
+      "equalsBase": true
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 6848,
+      "sha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85",
+      "equalsBase": true
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4052,
+      "sha256": "34fb24c09bf4181156b0767cb2d708c3714c190009742b8ec23db35d557c6f2d",
+      "equalsBase": true
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12233,
+      "sha256": "b65dc11d3296e060d11243580e1e36217f6502ed260842b370a967777ea1cc43",
+      "equalsBase": true
+    },
+    {
+      "path": "apps/server/src/goals/goals.test.ts",
+      "bytes": 27791,
+      "sha256": "6115b135a281f2f6b7cf736c40a578e766a255c4697561162965d28b519bd345",
+      "equalsBase": true
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/authorization.test.ts",
+      "bytes": 17135,
+      "sha256": "d908d4567f3fbb576f2c1fbcfb26281198e6c88f99e95fc3441f7cb4145ae4a8",
+      "equalsBase": true
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/o09/admission-cleanup.json",
+      "bytes": 110,
+      "sha256": "660095d6db330264b32688d3f3d78b5b733bb6b457f769802e0ed696d684ec0c"
+    },
+    {
+      "path": "docs/evidence/o09/admission-first-green.txt",
+      "bytes": 477,
+      "sha256": "84964da87e1959d7141b8e0106a1483d25726ee1948861ab1f6370576a3feb18"
+    },
+    {
+      "path": "docs/evidence/o09/admission-five.txt",
+      "bytes": 1920,
+      "sha256": "a590cb69f1ae23067fafd6b9cc0c0330307fd7e52e3e3140f133027b98f5842d"
+    },
+    {
+      "path": "docs/evidence/o09/admission-red.txt",
+      "bytes": 1391,
+      "sha256": "eaafc2bd433b90f8decc3e77f48865221969e746d812f32f3575fa08d17a11ab"
+    },
+    {
+      "path": "docs/evidence/o09/consumers-final.txt",
+      "bytes": 1758,
+      "sha256": "95b6fe71e7b9e8adab57a243118e03a957bb0273b8e53639da8a54805a11145a"
+    },
+    {
+      "path": "docs/evidence/o09/domain-final.txt",
+      "bytes": 1297,
+      "sha256": "a494f94aa5dda1c04f31bc4cdce4a50a07acdd7c28fdb0d8e4c898934fb4fbbb"
+    },
+    {
+      "path": "docs/evidence/o09/grant-green.txt",
+      "bytes": 496,
+      "sha256": "272ddb2e98f7edbb88870523bfe61aa1c9ae1da9674d43c8531887f74d94eafb"
+    },
+    {
+      "path": "docs/evidence/o09/grant-red.txt",
+      "bytes": 1460,
+      "sha256": "d8f8e82d884eb048bcb4d4d3dbfcff9497de34a5c4085ada8d8eec2f699b8bef"
+    },
+    {
+      "path": "docs/evidence/o09/install.txt",
+      "bytes": 655,
+      "sha256": "18409d86cf633f3f1fe63c7e1a2bfe69be97c5d4302d283ee459687eb9e961ab"
+    },
+    {
+      "path": "docs/evidence/o09/runtime-cleanup.json",
+      "bytes": 110,
+      "sha256": "f633e5cb57f4ef195f4924a06a00af823ca48aa6777d0fc73a55e64af67a94f0"
+    },
+    {
+      "path": "docs/evidence/o09/runtime-first.txt",
+      "bytes": 745,
+      "sha256": "9c808aedee23f3b08470384d50bf313b630e1e74a61bad45b2888bed83256ee8"
+    },
+    {
+      "path": "docs/evidence/o09/typecheck-first.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o09/typecheck-second.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "domain": {
+      "passed": 9,
+      "total": 9,
+      "durationSeconds": 11.21
+    },
+    "directConsumers": {
+      "passed": 18,
+      "total": 18,
+      "durationSeconds": 24.75
+    },
+    "differentChecks": 27,
+    "typecheckExitCode": 0,
+    "providerCalls": 0,
+    "nativeSdkQuery": false,
+    "queryInjected": true,
+    "productionMounted": false,
+    "independentReview": "NOT_STARTED"
+  },
+  "limits": [
+    "No real provider or NLP semantic acceptance",
+    "Owner acceptance is a declaration, not automatic semantic verification",
+    "No Web/CLI or production factory mounting",
+    "Old node execute remains fixture-only"
+  ]
+}
