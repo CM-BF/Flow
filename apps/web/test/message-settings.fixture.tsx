@@ -78,14 +78,21 @@ function Connection({ epoch }: { epoch: number }) {
   });
   const snapshot = useSyncExternalStore(catalog.subscribe, catalog.getSnapshot);
   const [advertised, setAdvertised] = useState(true);
+  const [profileNumber, setProfileNumber] = useState(1);
+  const activeReference = { ...reference, id: id(profileNumber) };
   const liveContext = useRef<MessageSettingsContext>({ profile: reference, capability: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, choices: "execution-profile" } });
   useEffect(() => () => catalog.dispose(), [catalog]);
   const context = liveContext.current;
   return <>
-    <Button variant="outline" onClick={() => { liveContext.current = { profile: reference, capability: advertised ? null : { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, choices: "execution-profile" } }; setAdvertised(value => !value); }}>{advertised ? "撤销设置能力" : "恢复设置能力"}</Button>
+    <Button variant="outline" onClick={() => { liveContext.current = { profile: activeReference, capability: advertised ? null : { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: activeReference, choices: "execution-profile" } }; setAdvertised(value => !value); }}>{advertised ? "撤销设置能力" : "恢复设置能力"}</Button>
+    <Button variant="outline" onClick={() => {
+      const laterReference = { ...reference, id: id(21) };
+      liveContext.current = { profile: laterReference, capability: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: laterReference, choices: "execution-profile" } };
+      setAdvertised(true); setProfileNumber(21);
+    }}>后页配置会话</Button>
     <p data-testid="catalog-state">{snapshot.loading ? "loading" : snapshot.stale ? "stale" : "current"}; {snapshot.profiles.length} profiles; connection {epoch}</p>
     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,22rem),1fr))", gap: "1rem" }}>
-      {["left", "right"].map(name => <Pane key={name} name={name} catalog={snapshot} context={context} readCatalog={catalog.getSnapshot} readContext={() => liveContext.current} refresh={() => { void catalog.refresh(); }} loadMore={() => { void catalog.loadMore(); }} />)}
+      {["left", "right"].map(name => <Pane key={`${name}:${profileNumber}`} name={name} catalog={snapshot} context={context} readCatalog={catalog.getSnapshot} readContext={() => liveContext.current} refresh={() => { void catalog.refresh(); }} loadMore={() => { void catalog.loadMore(); }} />)}
     </div>
   </>;
 }

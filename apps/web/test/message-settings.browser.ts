@@ -187,6 +187,48 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
     await page.getByRole("button", { name: "新连接", exact: true }).click();
     await expect(page.getByTestId("catalog-state")).toContainText("stale; 0 profiles; connection 2"); await expect(page.getByTestId("left-current")).toHaveText("omitted");
     checks.push("Empty/missing selection retained; 40-profile paging still projects only the authorized32 tuples; legacy creation unchanged; new connection has independent controlled drafts");
+    // Establish the retained selection through this same HTTP directory and an actual explicit Apply.
+    // The fixture changes conversation authority; keyed panes receive a new draft owner, not a fabricated C snapshot.
+    await page.getByRole("button", { name: "后页配置会话", exact: true }).click();
+    await left.getByLabel("Draft left", { exact: true }).fill("后页配置的草稿仍保留"); await open();
+    await dialog.getByRole("button", { name: "刷新设置目录", exact: true }).click();
+    await expect(page.getByTestId("catalog-state")).toContainText("current; 20"); await expect(apply).toBeDisabled();
+    await dialog.getByRole("button", { name: "加载更多设置", exact: true }).click();
+    await expect(page.getByTestId("catalog-state")).toContainText("current; 40");
+    const laterStandard = dialog.getByRole("radio", { name: /^another-profile-model/ });
+    await laterStandard.check(); await applyAndClose(); await left.getByRole("button", { name: "冻结 A 样本", exact: true }).click();
+    const laterSent = await page.getByTestId("left-sent").textContent(); assert(laterSent); assert.equal(JSON.parse(laterSent).profile.id, id(21));
+    await open(); await dialog.getByRole("radio", { name: /^fast-model/ }).check(); await applyAndClose();
+    await left.getByRole("button", { name: "冻结 B 样本", exact: true }).click();
+    const laterQueued = await page.getByTestId("left-queued").textContent(); assert(laterQueued); assert.equal(JSON.parse(laterQueued).profile.id, id(21));
+    const laterCurrent = await page.getByTestId("left-current").textContent(); assert.equal(laterCurrent, laterQueued);
+    await expect(page.getByTestId("left-commits")).toHaveText("2");
+    const laterGeneration = await page.getByTestId("left-generation").textContent(); assert(laterGeneration);
+    const requestsBeforeRefresh = fixture.requests.length;
+    await open(); await dialog.getByRole("button", { name: "刷新设置目录", exact: true }).click();
+    await expect(page.getByTestId("catalog-state")).toContainText("current; 20");
+    await expect(dialog).toContainText("已加载目录中没有会话的完整配置");
+    await expect(apply).toBeDisabled(); await expect(combinations.getByRole("radio")).toHaveCount(1); // Only explicit omit remains; no page1 tuple is authorized.
+    await expect(page.getByTestId("left-current")).toHaveText(laterCurrent!);
+    await expect(page.getByTestId("left-sent")).toHaveText(laterSent); await expect(page.getByTestId("left-queued")).toHaveText(laterQueued);
+    await expect(left.getByLabel("Draft left", { exact: true })).toHaveValue("后页配置的草稿仍保留");
+    await expect(page.getByTestId("left-commits")).toHaveText("2");
+    await dialog.getByRole("button", { name: "加载更多设置", exact: true }).click();
+    await expect(page.getByTestId("catalog-state")).toContainText("current; 40");
+    const paginationRequests = fixture.requests.slice(requestsBeforeRefresh).map(path => new URL(path, fixture.url));
+    assert.equal(paginationRequests.length, 2);
+    assert.equal(paginationRequests[0]!.pathname, "/connection-2/api/execution-profiles"); assert.equal(paginationRequests[0]!.searchParams.has("after"), false);
+    assert.equal(paginationRequests[1]!.pathname, "/connection-2/api/execution-profiles"); assert.equal(paginationRequests[1]!.searchParams.get("after"), id(20));
+    assert(paginationRequests.every(url => url.searchParams.get("limit") === "20"));
+    await expect(combinations.getByRole("radio")).toHaveCount(3); await expect(laterStandard).toBeEnabled();
+    await expect(dialog.getByRole("radio", { name: new RegExp(`^${model}`) })).toHaveCount(0);
+    await expect(page.getByTestId("left-current")).toHaveText(laterCurrent!); await expect(page.getByTestId("left-commits")).toHaveText("2");
+    await expect(page.getByTestId("left-generation")).toHaveText(laterGeneration);
+    await laterStandard.check(); await expect(page.getByTestId("left-current")).toHaveText(laterCurrent!); await applyAndClose();
+    await expect(page.getByTestId("left-commits")).toHaveText("3"); await expect(page.getByTestId("left-current")).toHaveText(laterSent);
+    await expect(page.getByTestId("left-sent")).toHaveText(laterSent); await expect(page.getByTestId("left-queued")).toHaveText(laterQueued);
+    await expect(left.getByLabel("Draft left", { exact: true })).toHaveValue("后页配置的草稿仍保留");
+    checks.push("Already-applied authorized profile21 absent on page1 retains C/A/B/text and blocks Apply; actual after20 HTTP page exposes only exact profile21 tuples; no automatic write and exactly one explicit post-page Apply");
     assert.deepEqual(errors, []);
     return { checks, pageErrors: errors, requests: fixture.requests, limitation: "Independent controlled component + synthetic HTTP catalog; no App/send/queue/recovery/provider integration." };
   } finally { page.off("pageerror", onError); }
