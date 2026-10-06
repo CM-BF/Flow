@@ -23,7 +23,7 @@
 | 检查状态 | 补充2红→2绿/52未选，focused types0；[增量](../../docs/evidence/mature02c01/supplement-README.md)；历史 PASSED 563b1ea151d8d26a2100238d8faf26b697f38d71；86不同用例分轮，最后2 selected/6未选；focused types exit0；[原始记录](../../docs/evidence/mature02c01/README.md) |
 | Review | APPROVED 6d1145de30eea1eb4c267c88386ebc0479dfbd99 增量；历史 APPROVED 563b1ea151d8d26a2100238d8faf26b697f38d71；[独立审查](review.md)，reviewer assignment_review |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片不能推断父CORE/O14待验输入已通过 |
-| Claim | 85784ec0-9695-470d-b1bd-b1a447c9805a v1 active；16:37:05.888Z committed，16:38:03 fresh核一致 |
+| Claim | 85784ec0-9695-470d-b1bd-b1a447c9805a v2 active，9literal；client/index与contracts/index已明确停写并交回F01，原批准源码不变 |
 
 | TODO ID | 状态 | Owner | 证据 / 下一步 |
 | --- | --- | --- | --- |
@@ -35,3 +35,5 @@
 架构影响：既有 FlowClient 新有限目录方法、原 ACK Module 新 queue decoder 和 CLI conversation 子命令；无DB/runner/FSM变化。固定target后由ExecutionLead同步架构来源；source registry由ExecutionLead确认已登记真实167卡片；架构待更新 target 563b1ea151d8d26a2100238d8faf26b697f38d71，owner ExecutionLead。
 
 限制：配置目录不是账号资格，requested不是observed；旧省略字段不补默认。CORE ea276的6输入、F01 O14的3输入独立来源，保持原验证状态。现复用已装依赖完成局部纯函数/HTTP/CLI检查，无安装/PG/provider/browser；focused types不冒root。
+
+2026-10-06 17:50:00 UTC：[原子部分移交](../../docs/evidence/mature02c01/public-index-partial-handoff.json)将两个已停止写入的public index交F01接O15；原C01最终target6d114与唯一补审不变，其余9scope待main receipt。
