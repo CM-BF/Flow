@@ -1,0 +1,35 @@
+{
+  "recordedAt": "2026-10-06T21:08:43.619213+00:00",
+  "state": "HOLD_NOT_RUN",
+  "command": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "docs/evidence/svc07/execute-http-once.py",
+    "--expected-head",
+    "35f78c8b1edc67f1646b395dd62bc1cf389ebef9",
+    "--manifest-sha256",
+    "13349864e53abfb85b827e13545e6ffb9de5280ba6a242ee1e5f10f0d78bea06"
+  ],
+  "exit": 2,
+  "toolWallSeconds": 0.192968834,
+  "stdout": "Fresh branch / HEAD / clean confirmed\n{\"state\": \"HOLD\", \"reason\": \"Fresh HTTP preflight not confirmed; no attempt opened\"}\n",
+  "testSelected": 0,
+  "testPasses": null,
+  "childSpawned": false,
+  "pgOpened": false,
+  "httpOpened": false,
+  "outputsPresent": [],
+  "readOnlyReconciliation": {
+    "observedAt": "2026-10-06T21:08:06.226Z",
+    "availableBytes": 1176248320,
+    "requiredBytes": 1207959552,
+    "shortfallBytes": 31711232,
+    "manifestMatches": true,
+    "changedInputs": [],
+    "changedDependencies": [],
+    "claimId": "3bbb8293-c36d-40c8-a133-723463801943",
+    "version": 1,
+    "state": "active"
+  },
+  "retry": "NONE; window returned; await fresh original disk floor and explicit Lead handoff"
+}

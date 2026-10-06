@@ -47,3 +47,9 @@ Lead窗口后owner执行一次，真实PG2/2及cleanup CONFIRMED，见[实际结
 Mika / gpt-6-astra，2026-10-06 20:44:52UTC，target `05a3e901f4abf6f11cb7067cfca6167589a1cf9b`，**APPROVED /0 P1/P2**。范围为公开transaction两类真实断连、同pool恢复、输出忠实性与已观察cleanup。4原始输出4464B逐Git=WT、len/SHA/0600/regular全部一致；reviewer独立lstat确认pg-tmp不存在；产品相对e28无变。raw537B/hash67ff4bbb3a6dbce4d244dafc3d8862ddf19edf1a6d9c5d6c616cfd6a7ff93652。
 
 2选2过/exit0/0.773694s；2次guarded terminate、回调各1次、旧写不存在、新事务commit确认。专库absence与backend清理由fixture回执支持，reviewer未新连接数据库；PGID absent/EOF由外层记录支持，未新扫描。旧监督PGID391 EPERM仍UNKNOWN；真实COMMIT丢ACK未注入；HTTP消费者和main仍未验证，已交Execution Lead在集成点以隔离专库完成原有并发claim/command replay+restart断言。此review不扩大为完整SVC07/HTTP/main通过。
+
+## HTTP准备包独立审查
+
+Mika / gpt-6-astra，2026-10-06 21:05:11UTC，固定target `35f78c8b1edc67f1646b395dd62bc1cf389ebef9` / manifest `13349864e53abfb85b827e13545e6ffb9de5280ba6a242ee1e5f10f0d78bea06`，**APPROVED /0 P1/P2**。233文件1394168B逐Git(commit)=WT且bytes/hash一致；18依赖realpath/packagehash一致，8实际输出absent，产品e28两源不变。已核createServer固定闭包/30 SQL、source身份、claim+disk准入、wx输出、同库两个server生命周期、DB OID+marker+零连接普通DROP、primary失败保真及未知、shared supervisor预算、types/import证据范围。此审只批准准备包，不代表实际HTTP/main通过。
+
+随后owner一次入口在准入HOLD，未打开attempt；[记录](../../docs/evidence/svc07/http-hold-20261006-2108.json)。无fixture/封套/manifest修改，未自动重跑。
