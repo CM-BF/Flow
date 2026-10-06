@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 20:50:09 UTC |
+| 最近更新时间 | 2026-10-06 21:25:59 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -10,26 +10,26 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings |
 | Branch | codex/web-message-settings |
 | 工作基线 / HEAD | 8d84d529a0756116bd0fc8bad969d61a6c26248e；实现 270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67；实际b5运行HEAD0925；原b4历史运行HEAD18ede |
-| 工作树dirty状态 | 本轮修改前 63e61217 clean；本次仅批准metadata，最终提交与 remote/clean 以交付回执为准 |
-| 工作分支状态 | in-progress / approved / waiting-main |
-| 检查状态 | PASS（限定片段）；历史strict noEmit/direct37 PASS及父计数FAIL保留；270c/0925 b5实际4/4 browser checks、2截图、pageErrors[]、清理完整，Root已批准受控Picker范围运行证据 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；基线 8d84d529a0756116bd0fc8bad969d61a6c26248e |
+| 工作树dirty状态 | 本轮修改前 3b945339151abd29e213ff37774ea7d6c5aee93f clean；本次仅main-close metadata，最终提交/remote/clean以交付回执为准 |
+| 工作分支状态 | completed / approved / main-received |
+| 检查状态 | PASSED 270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67（受控Picker限定）；历史strict noEmit/direct37 PASS及父计数FAIL保留；b5实际4/4、两390截图及完整清理已独审；本次0重跑 |
+| 已集成main状态 / HEAD | INTEGRATED c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05；[固定main回执](../../docs/evidence/wpf-message-settings/main-component-receipt.json)，六源逐字等270c |
 | 实现目标 | 270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67 |
 | 实现范围 | apps/web/src/execution-profiles/catalog.ts, apps/web/src/execution-profiles/selection.ts, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/test/message-settings.test.ts, apps/web/test/message-settings.fixture.tsx, apps/web/test/message-settings.browser.ts, plans/wpf-message-settings, docs/evidence/wpf-message-settings |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 受控消息设置控件已通过组合选择、键盘、双窗格隔离及390px双主题fixture检查；真实聊天接线另待。 |
-| 下一可用交付 | 受控Picker源码/检查/独审已完成，交主线接收；真实聊天接线与成熟快速选择另待。 |
-| 当前阻塞 | NONE；本片限定独审已完成、等待main接收，真实App/Send/Queue/Recovery及成熟快速选择仍属后继。 |
+| 当前产出 | 受控消息设置组件已接入主线，可选择中心声明的完整组合；键盘、双窗格隔离及390px双主题fixture已验。 |
+| 下一可用交付 | 本片段已交付；真实聊天发送/排队/恢复接线与成熟快速选择仍属父计划TODO-11。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED（受控Picker范围）；Root已核270c/b5实际证据0blocking，main未集成，MATURE02整体仍open |
+| Review | [review.md](review.md)，APPROVED（受控Picker范围）；固定main六源已核，真实App接线与MATURE02整体仍open |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | MSGSET-01 | completed | w01_owner | 源码 f3a6a7ec89d5b3f789c49b0d8662401b23032ab2；[manifest](../../docs/evidence/wpf-message-settings/source-manifest.json)；strict noEmit及37项direct PASS；当前browser结果见MSGSET-02 |
 | MSGSET-02 | completed | w01_owner | [原始检查](../../docs/evidence/wpf-message-settings/checks-first-observation.json) noEmit0/direct37/父FAIL保留；[b5实际browser](../../docs/evidence/wpf-message-settings/browser-fourth-observation.json) 4/4、2截图、清理完成 |
-| MSGSET-03 | in-progress | w01_owner | 270c源码与b5运行证据独审已完成；main接收待完成 |
+| MSGSET-03 | completed | w01_owner | 270c源码/b5独审与固定main接收已完成；[main收口核验](../../docs/evidence/wpf-message-settings/main-close-observation.json) |
 
 ## Dashboard 与边界
 
@@ -93,8 +93,14 @@ PGID66244 absent、Chrome exited、fixtureClosed/scratchAbsent=true、cleanup.er
 
 已读两张真实截图，长model在390容器内换行，浅深主题文案/操作可读；未追加任何浏览器或空间采样。共享窗口在清理后立即归还供F04。本次是受控组件+synthetic HTTP目录，0PG/provider/个人操作，不代表真实App/Send/Queue/Recovery接线；源码不变、37不重跑。当前待root独立证据复核，完整feature Review UNKNOWN/main未集成。
 
-## 2026-10-06 20:50:09 UTC 固定受控Picker范围APPROVED，main尚未接收
+## 2026-10-06 20:50:09 UTC 固定受控Picker范围APPROVED（main接收前历史）
 
 [Root原件](../../docs/evidence/wpf-message-settings/root-browser-b5-runtime-review.json)于20:48:11.224265 UTC给出APPROVED_SCOPED_CONTROLLED_PICKER_BROWSER_EVIDENCE、0blocking，目标270c/实际运行0925。独立核6源、gate与consumed等价且未用[取消gate](../../docs/evidence/wpf-message-settings/browser-b5-cancelled-before-dispatch-gate.json)、4checks、两390截图/长model换行、双group与EOF/drop0/cleanup及28876累计；root未重跑。
 
 [fresh范围原件](../../docs/evidence/wpf-message-settings/browser-b5-runtime-approval-claim.json)仍原a5b v1八范围。历史37/direct/types及父countFAIL、旧三browser失败与全部raw保持，0新增运行/free。批准仅本受控Picker/synthetic HTTP fixture；长model重复占较多纵向空间，成熟紧凑模型/思考力度/速度快速选择、完整大目录、真实App发送/排队/Recovery及MATURE02整体仍open，main/个人部署未发生。
+
+## 2026-10-06 21:25:59 UTC 主线接收与全范围停写
+
+固定main `c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05` 已接收本受控组件；[Lead原回执](../../docs/evidence/wpf-message-settings/main-component-receipt.json)和[Root独立主线核验](../../docs/evidence/wpf-message-settings/root-main-integration-review.json)原样归档。本人核六源 fixed270c/main/current 逐字一致；15个直接消费者不变按Root报告归因，本次不重跑37/direct、4/browser、types或服务。原父计数FAIL、三次browser失败及全部raw保留。
+
+本片MSGSET-01～03完成；真实App/P01/Send/Queue/Recovery、成熟模型/思考力度/速度快速选择和MATURE02整体仍属父TODO-11开放。I02原回执三条相对链接已由Root独立解析为同hash的本组件证据，保留原件，不越权修改I02。本次正常提交/push且双端clean后全部八范围停写，交manager fresh release；释放后不补写。个人部署未由本片执行或验证。

@@ -1,0 +1,80 @@
+{
+  "at": "2026-10-06 21:25:59 UTC",
+  "main": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "ownerInput": "3b945339151abd29e213ff37774ea7d6c5aee93f",
+  "sourcesEqualFixedMainAndCurrent": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee"
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "bytes": 12100,
+      "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19"
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "bytes": 6381,
+      "sha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45"
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 11807,
+      "sha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c"
+    }
+  ],
+  "receipt": {
+    "path": "main-component-receipt.json",
+    "sha256": "db3b2054ac32c3a8162b3314e6dcc9960ca03f45115326094f17f3f8a59ed855"
+  },
+  "rootReview": {
+    "path": "root-main-integration-review.json",
+    "sha256": "7dc668f008287021f7755958698ef1b89beb964a1046cbab9e577d5f8adadf41"
+  },
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/catalog.ts",
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/test/message-settings.browser.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "docs/evidence/wpf-message-settings",
+      "plans/wpf-message-settings"
+    ],
+    "state": "active",
+    "branch": "codex/web-message-settings",
+    "origin": "new",
+    "taskId": "WPF-MESSAGESETTINGS01",
+    "worker": "w01_owner",
+    "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings",
+    "createdAt": "2026-10-06T18:07:51.094Z",
+    "updatedAt": "2026-10-06T18:07:51.094Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "claimObservationSource": "/private/tmp/d01-settings-main-close-live.json",
+  "claimObservationSha256": "dd62d57284cc752f85b63e15749d9e52b1b722243b18a96cb149be1be19c2533",
+  "claimObservationAt": "2026-10-06T21:24:05.952Z",
+  "newProductChecks": 0,
+  "mainRuntimeChecks": 0,
+  "personalDeployment": false,
+  "afterCommit": "All eight scopes stopped; manager fresh release pending; no post-release writes."
+}

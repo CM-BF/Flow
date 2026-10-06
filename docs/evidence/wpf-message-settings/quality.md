@@ -31,3 +31,6 @@
 2026-10-06 20:47:23 UTC：b5唯一准入执行后正常证据收口。parent actualexit0/PASS、4checks/pageErrors[]、双owned组与scratch清理逐项原件核对，窗口即时归还；两真实390截图目视确认长model换行/浅深可读。保持语义定位/count1/原负向断言，无运行中修源/放宽断言；保三旧失败与预算carry，28,876ms累计不重置。clean-code复核实际证据与准备批准分开、唯一资源owner/错误保真/实际host边界；6源不变，37不重跑，无额外Chrome/PG/free或个人操作。
 
 2026-10-06 20:50:09 UTC：最后正常批准metadata段。原a5b v1 fresh范围核符，root实际b5证据报告逐字hash归档；current review为受控Picker范围APPROVED，TODO独审/main分开，真实App与成熟快速选择/MATURE02整体仍open。clean-code复核事实范围、旧失败保真、唯一预算/双组cleanup与原件可追溯；六源和所有旧raw保持，无重复check/free。
+
+2026-10-06 21:25:59 UTC：main-close metadata安全点。复用本地find-skills/clean-code固定方法，核原a5b v1八scope、固定main回执/Root原件hash、六源fixed270c/main/current逐字一致。将主线限定交付与父TODO-11真实接线/成熟快速选择分开；37/direct、4/browser及父countFAIL/旧失败raw不改。只核文档链接/实际status parser/Git范围，0新产品测试/服务/free采样；八scope停写后由manager释放，不越权改I02。
+本段实际parser首核发现human blocker字段要求独立NONE token，分号附注导致unknown；改为精确NONE，后继边界保留在下一交付/正文，再核完整性。此为metadata格式修正，不涉及产品检查。
