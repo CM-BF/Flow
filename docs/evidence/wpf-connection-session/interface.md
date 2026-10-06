@@ -32,6 +32,17 @@ HTTPS cookie使用Secure/HttpOnly/Path=/，SameSite=None允许明确受信跨站
 
 ## Scope / evidence
 
-先DTO/接口可消费；本模块自有fixture真实Fastify+HTTP+PG组合，不写共享createServer/index/client出口，不称生产已挂。真实随机DB先身份记录，动态端口，有限自有streams关闭；expiry/revoke、restart同session、invalidBearer+validcookie、runner、Origin/CSRF、多端口/中心、已有SSE失效、0任务cancel/模型；旧Bearer直接消费者。
+DTO与factory ports已实现；本模块自有fixture真实Fastify+HTTP+PG组合，不写共享createServer/index/client出口，不称生产已挂。真实随机DB先身份记录，动态端口，有限自有streams关闭；expiry/revoke、restart同session、invalidBearer+validcookie、runner、Origin/CSRF、多端口/中心、已有SSE失效、0任务cancel/模型；旧Bearer直接消费者。
 
 方法：本地find-skills/codebase-design/clean-code/brainstorming。既有auth/stream调用路径的有界扩展已Lead授权，不重复普通审批。设计对照[MDN Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie)与[MDN CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS)：credentials、Secure/SameSite和精确origin规则；真实browser行为留给Web验收，不用HTTP模拟冒充。
+
+## Module ownership / composition
+
+| Module | Owns | Dependency / extension |
+| --- | --- | --- |
+| browser-session DTO | finite wire/limits | client与center复用；无认证状态 |
+| store | singleton身份、epoch与32有界session事务 | PG；新cookie发放只能经create，GET纯读 |
+| authentication | Bearer/role与cookie/Origin/CSRF单判断 | store；HTTP hook与SSE port用同函数，宿主替换原hook |
+| streams | 现观察循环/背压/关闭 | 注入authorize；不拥有登录FSM、不撤销任务 |
+
+生命周期：生产宿主先执行028再打开auth store，再注册唯一hook/routes/stream授权。关闭不创建新observer；expiry/revoke每read与publish前重核。认证端口失败即HTTP拒绝/SSE关闭；没有把响应未收到解释成logout已执行。connect响应丢失可能留下一个至多8h的会话并占32限额，不自动重试/驱逐。health与OPTIONS沿原公开例外，其他被鉴权请求显式非法Authorization无cookie fallback。中心HTTP实例重建和独立Node进程重启均实测；shared生产挂载另审。

@@ -22,5 +22,11 @@
       "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
     }
   ],
-  "application": "One auth authority shared by HTTP/SSE; explicit startup settings and random identities; finite storage and no credential output. Behavior tests cover auth precedence, CSRF and revocation; performance records query counts/stream lifecycle, not inferred speed."
+  "application": "One auth authority shared by HTTP/SSE; explicit startup settings and random identities; finite storage and no credential output. Behavior tests cover auth precedence, CSRF and revocation; performance records query counts/stream lifecycle, not inferred speed.",
+  "deliveryReview": {
+    "at": "2026-10-06 13:19:00 UTC",
+    "scope": "7 source / stable DTO+store+auth+SSE+direct tests",
+    "method": "clean-code/codebase-design: cohesive auth authority, startup-only epoch, transaction-serialized capacity, same narrow port in existing stream loop, no second FSM, fixed inputs and bounded cleanup. Failures isolated to test transport/time/nullable typing; no unresolved implementation finding from author check. Independent review required.",
+    "performance": "Actual concurrent32 cap, 4 auth calls before each revocation sample closes, two real process exits0. No system throughput claim."
+  }
 }
