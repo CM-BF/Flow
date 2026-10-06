@@ -18,9 +18,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 终端启动及收尾诊断修复已进入主线；个人新版更新的旧未决记录恢复已审，原操作人员正在按一次性记录执行。 |
-| 下一可用交付 | 完成本次受控更新并核对数据与网页保留；资源窗口归还后接续已就绪的事务、终端和网页检查。 |
-| 当前阻塞 | ACTIVE: 本次个人更新执行中；完整后台产物仍待原空间门槛，F04/SVC07完整检查需重新fresh准入。没有降低磁盘门槛或重新调用模型。 |
+| 当前产出 | 终端启动及收尾诊断修复已进入主线；个人新版更新在停服前的产物身份检查停止，未改变服务或运行记录。 |
+| 下一可用交付 | 修正产物字段顺序的比较误拒后，再沿新固定窗口更新；事务、终端和网页已就绪检查按资源准入接续。 |
+| 当前阻塞 | ACTIVE: 本次个人更新窗口已关闭，旧记录仍保留；完整后台产物仍待原空间门槛，F04/SVC07完整检查需重新fresh准入。没有降低磁盘门槛或重新调用模型。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -279,3 +279,5 @@ S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补�
 2026-10-06 21:02 UTC：F04首验26,512ms失败、0task，原证据保留；独立cleanup-only于20:59:20正常完成，3自有组absent、marker/devino匹配、空连接、DB/tmp删除确认，窗口已归还Web/Mika。停止期PTY输出未持久的诊断缺口明确记录，不把清理成功当行为通过；后继先0PG/Chrome修捕获。MATURE02C02新树source-only操作按GO限定委派Mika，本Lead尚未创建；main/其它树/共享配置仍原边界。
 
 2026-10-06 21:17 UTC：SVC07在21:08因空间HOLD/0child/0PG明确归还；原SVC05H operator曾被runtime拒绝唤醒，在GO释放只读槽后一次恢复成功，未更换操作者/claim。固定0a8/7fb已独审130绑定，通过新exclusive run-retirement-release-20261006T211659Z与I02 388bb3f5 source-window启动一次已授权窗口；root准确af51，main421b冻结。09 drain起≤900秒，每步明确成功才继续，unknown保留维护与原件，0provider/用户tab。两peer已通知无新PG/Chrome；源码工作继续。
+
+2026-10-06 21:21 UTC：run211659仅01只读613ms与02比较57ms；唯一retained false为实际descriptor同三字段不同键序，原JSON.stringify误拒，0材料/维护/退役/发布。窗口已关闭，root恢复main421b后正常发布MessageSettings至c8e，operator仅原范围局部修复，不预占PG/Chrome。原失败保持；独立0a8批准与此次实际失败分开。OPS14最小独立树owned-process-supervision/codex已供给c8e、53,701B，原native_center_owner受派fresh take三scope（tools模块/自有plan/evidence），两个在用wrapper不改；完整复用需后继正式交权。
