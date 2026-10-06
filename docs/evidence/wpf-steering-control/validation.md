@@ -25,3 +25,7 @@ Owner visually inspected final production desktop light and narrow dark: muted t
 The complete implementation was frozen after final browser execution. Remaining review is independent and is not inferred from author checks. Page-memory receipts, standalone UI, no actual App integration and real-center boundaries remain as in [interface](interface.md).
 
 Full staged metadata diffcheck is nonzero only for preserved raw logs: `direct.log:11`, `first-direct.log:37`, `history-budget-red.log:57`, `interleaving-red.log:72,81`, `second-typecheck.log:4`, `typecheck.log:4` (trailing blank lines/one diagnostic whitespace line). The implementation diffcheck is zero. Raw logs were not cleaned to fabricate an all-files-zero result.
+
+## Independent review
+
+Root APPROVED fixed b2cbbca5f823e122ec4e234e16fb7ef45a063af9 after 09:07:34 UTC on 2026-10-06. Independently ran 33 direct tests (09:02:26 UTC, 2.31s), read all six files, verified six hashes/source diffcheck, and performed a separate CUA journey on63251. This was not a rerun of the author dev8/prod8 or typecheck. Exact observations and remaining boundaries are in [review](../../../plans/wpf-steering-control/review.md). No product source changed after fixed approval.

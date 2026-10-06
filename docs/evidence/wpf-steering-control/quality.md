@@ -18,3 +18,5 @@ HTTP段：Chrome在fixture直接destroy响应时透明重试相同POST并获得�
 最终清码发现并先红后绿验证两处真实边界：POST完成早于同时手动读取的旧metadata时，旧Map会丢掉新ACK命令；ACK新增命令的session未与同attempt已知metadata核对。统一小mergeCommand校验并在批次发布前合并当前权威引用；保持receiptRevision单调、跨页原子校验。interleaving-red.log为2真实产品失败+31通过，不混入早期夹具失败。
 
 2026-10-06 09:00:20 UTC 交付clean-code：逐读control/UI/HTTPfixture，合并ACK与分页共有的身份和receiptRevision规则，避免两套校验；controller负责事实/生命周期，UI只render和trigger，未扩通用框架。33 direct与dev8/prod8和Web tsc全部通过；目视production light1280/dark390。实现target `b2cbbca5f823e122ec4e234e16fb7ef45a063af9`，后续只metadata。详细失败归因与未完成App/跨reload边界见validation/README，不把局部成功当大task Done。
+
+2026-10-06 09:08 UTC：root 独立审读 controller/UI/CSS/tests/interface，33 direct+独立CUA通过，无blocking finding。owner只转录review/status/handoff，未改六源码，不重复测试。清码的两真实红测修复与原夹具错误归因继续保留；review覆盖模块边界而非App、持久恢复或真实provider。fresh ledger v1仍active，等待管理集成队列，不自行release。

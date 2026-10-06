@@ -1,6 +1,6 @@
 # WPF-STEER01 handoff
 
-Implementation `b2cbbca5f823e122ec4e234e16fb7ef45a063af9`; base `ca4c3f723d2f786601e7cc9bd0363d756d974810`; branch `codex/web-steering-control`. Independent control and UI for task-bound steering, pending independent review. [Validation](validation.md), [interface](interface.md), [quality](quality.md), [claim](take-receipt.json). Unique [plan](../../../plans/wpf-steering-control/plan.md), [status](../../../plans/wpf-steering-control/status.md), [review](../../../plans/wpf-steering-control/review.md).
+Implementation `b2cbbca5f823e122ec4e234e16fb7ef45a063af9`; base `ca4c3f723d2f786601e7cc9bd0363d756d974810`; branch `codex/web-steering-control`. Independent control and UI for task-bound steering, independently APPROVED by root on 2026-10-06 after 09:07:34 UTC (limited to this module). [Validation](validation.md), [interface](interface.md), [quality](quality.md), [claim](take-receipt.json). Unique [plan](../../../plans/wpf-steering-control/plan.md), [status](../../../plans/wpf-steering-control/status.md), [review](../../../plans/wpf-steering-control/review.md).
 
 Retained preview: http://127.0.0.1:63251/ (session 13237, owner workspace_panels_owner). Independent public HTTP fixture; 0 real models/DB. It is not the product App or personal center. Existing previews stay running.
 
