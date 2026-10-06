@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['O10', '原生文本子任务验收准备', '技术验证', 'native-child-acceptance', 'o10-native-child-acceptance'],
+  ['S01P01', '同一执行器并发任务', '工作线', 'runner-attempt-pool', 's01-attempt-pool'],
   ['CHAT09', '补充指令执行配置核验', '工作线', 'steering-profile-admission', 'chat09-steering-admission'],
   ['CHAT06P02', '正文存储传输优化', '工作线', 'assistant-stream-prefix-hash', 'chat06-prefix-hash'],
   ['O09', '原生执行单个目标节点', '工作线', 'native-goal-node-execution', 'o09-native-node-execution'],
