@@ -4,7 +4,7 @@ import { Pool } from 'pg';
 import type { PgBoss } from 'pg-boss';
 import { afterAll, beforeAll, expect, it } from 'vitest';
 import { createServer } from '../index.js';
-import { migrate } from '../database.js';
+import { migrate, transaction } from '../database.js';
 import { migrateWorkspace } from '../m2-workspace.js';
 import { migrateProjects } from '../projects/index.js';
 import { createProject, changeProject } from '../projects/commands.js';
@@ -22,7 +22,7 @@ import { runnerCommand } from '../goal-tool-runs/runner.js';
 import { migrateGoalGraphProposals } from '../goal-graph-proposals/index.js';
 import { createProposal, applyProposal } from '../goal-graph-proposals/store.js';
 import { migrateGoalGraphRuns } from './index.js';
-import { claim, registerRunner } from '../runners.js';
+import { registerRunner } from '../runners.js';
 import { startScheduler } from '../scheduler.js';
 import type { GoalToolCommandCall } from '../../../../packages/contracts/src/goal-tool-runs.js';
 
@@ -59,16 +59,22 @@ it('upgrades populated 014 grants, audit and owner graph history forward to 017 
   const goal = await createGoal(pool, { projectId, originalGoal: 'Upgrade', constraints: 'No models', acceptance: 'Preserved' }, 'goal');
   const grant = await admit(pool, boss, goal.goal.id, { scope: { readScope: 'whole-goal', allowedNodeIds: [node.changedNodeId!], allowedCommands: ['define-input'], maxCommands: 1 }, prompt: 'Existing grant', execution: { harness: 'fixture' } }, 'grant');
   const runner = await registerRunner(pool, { name: 'Existing node runner', harnesses: ['fixture'], capacity: 1 });
-  let assigned: Awaited<ReturnType<typeof claim>> | undefined;
-  await expect.poll(async () => { assigned = await claim(pool, runner.runnerId, 60_000); return assigned.assignment; }, { timeout: 5000, interval: 20 }).not.toBeNull();
-  const input: GoalToolCommandCall = { attemptId: assigned!.assignment!.attempt.id, ownerVersion: assigned!.assignment!.attempt.ownerVersion, grant: { id: grant.run.id, version: 1 },
+  // A persisted pre-017 fixture attempt: current claim requires newer graph/context tables.
+  // The actual node command below still exercises production authorization and mutation.
+  const attemptId = randomUUID();
+  await transaction(pool, async client => {
+    await client.query("INSERT INTO flow.attempts(id,task_id,runner_id,owner_version,lease_expires_at) VALUES($1,$2,$3,1,clock_timestamp()+interval '60 seconds')", [attemptId, grant.task.id, runner.runnerId]);
+    await client.query("UPDATE flow.tasks SET status='running',current_attempt_id=$2,owner_version=1 WHERE id=$1", [grant.task.id, attemptId]);
+  });
+  const input: GoalToolCommandCall = { attemptId, ownerVersion: 1, grant: { id: grant.run.id, version: 1 },
     command: { kind: 'define-input', nodeId: node.changedNodeId!, expectedInputVersion: 0, input: { goal: 'Retained', constraints: '', acceptance: 'Once', verification: { kind: 'nonempty' } }, reason: 'Before 017' } };
   const result = await runnerCommand(pool, boss, runner.runnerId, input, 'node-command'); expect(result.changed).toBe(true);
   const proposal = (await createProposal(pool, goal.goal.id, { expectedProjectRevision: 2, reason: 'Owner proposal', additions: [{ key: 'N', title: 'Owner addition', dependencies: [] }] }, 'proposal')).proposal;
   const receipt = await applyProposal(pool, proposal.id, { expectedProjectRevision: 2, proposalDigest: proposal.proposalDigest }, 'apply'); expect(receipt.receipt.actor).toEqual({ kind: 'owner' });
   const before = await records(grant.run.id, projectId, proposal.id); expect(before.calls).toHaveLength(1);
   await migrateGoalGraphRuns(pool); const after = (await pool.query('SELECT * FROM flow.migrations ORDER BY version')).rows;
-  expect(after.filter(row => row.version <= 14)).toEqual(versions); expect(after.map(row => row.version)).toEqual([...versions.map(row => row.version), 17]);
+  expect(after.filter(row => row.version <= 14)).toEqual(versions); expect(after.filter(row => row.version === 17)).toHaveLength(1);
+  expect(after.filter(row => row.version > 17).map(row => row.version)).toEqual([19]);
   expect(await records(grant.run.id, projectId, proposal.id)).toEqual(before);
   await migrateGoalGraphRuns(pool); expect((await pool.query('SELECT * FROM flow.migrations ORDER BY version')).rows).toEqual(after);
   expect(await records(grant.run.id, projectId, proposal.id)).toEqual(before);

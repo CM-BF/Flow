@@ -1,3 +1,5 @@
+import type { GoalGraphCapability, GoalGraphRunReference } from './goal-graph-runs.js';
+import type { ConversationContextExecutionReference } from './conversation-context.js';
 import type { GoalToolCapability, GoalToolRunReference } from './goal-tool-runs.js';
 import { z } from 'zod';
 import { assistantFinalDataSchema } from './assistant.js';
@@ -12,7 +14,8 @@ export type RegisterRunner = z.input<typeof registerRunnerSchema>;
 export interface RunnerRegistration { runnerId: string; token: string }
 export const ownershipSchema = z.strictObject({ attemptId: idSchema, ownerVersion: z.number().int().positive() });
 export type Ownership = z.infer<typeof ownershipSchema>;
-export interface ClaimedTask { attempt: AttemptView; task: TaskSubmission & { id: string }; goalToolRun?: GoalToolRunReference }
+/** task.prompt is the private execution input; public TaskSnapshot.prompt remains user-authored text. */
+export interface ClaimedTask { conversationContext?: ConversationContextExecutionReference; attempt: AttemptView; task: TaskSubmission & { id: string }; goalToolRun?: GoalToolRunReference; goalGraphRun?: GoalGraphRunReference }
 export interface ClaimResponse {
   assignment: ClaimedTask | null;
   /** Milliseconds granted at center lease creation, before response transport; 0 without an assignment.
@@ -53,6 +56,7 @@ export interface EventAcknowledgement { accepted: number; lastSequence: number }
 export interface HarnessContext {
   task: TaskSubmission;
   goalTools?: GoalToolCapability;
+  goalGraphTools?: GoalGraphCapability;
   workingDirectory: string;
   signal: AbortSignal;
   assertOwnership(): Promise<void>;

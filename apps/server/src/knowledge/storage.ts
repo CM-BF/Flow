@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
-import { KNOWLEDGE_LIMITS as limits, type KnowledgeCreation, type KnowledgePublication, type KnowledgeSource, type KnowledgeVersion, type KnowledgeAccepted, type KnowledgeSourceList, type KnowledgeVersionSnapshot, type KnowledgeCitation, type KnowledgeResolved } from '../../../../packages/contracts/src/knowledge.js';
+import { knowledgeCitationSchema, KNOWLEDGE_LIMITS as limits, type KnowledgeCreation, type KnowledgePublication, type KnowledgeSource, type KnowledgeVersion, type KnowledgeAccepted, type KnowledgeSourceList, type KnowledgeVersionSnapshot, type KnowledgeCitation, type KnowledgeResolved } from '../../../../packages/contracts/src/knowledge.js';
 import { HttpError, sha256, transaction } from '../database.js';
 import { loadProject } from '../projects/storage.js';
 import { commandInTransaction } from '../tasks.js';
@@ -78,20 +78,28 @@ export async function readVersion(pool: Pool, projectId: string, sourceId: strin
     return { source: sourceView(source), version: versionView(projectId, row), isCurrent: source.current_version === row.version };
   }, true);
 }
-export async function resolveCitation(pool: Pool, projectId: string, citation: KnowledgeCitation): Promise<KnowledgeResolved> {
-  if (projectId !== citation.projectId) throw new HttpError(404, 'knowledge_source_not_found', 'Citation belongs to another project.');
-  return transaction(pool, async client => {
-    await loadProject(client, projectId);
-    const source = await loadSource(client, projectId, citation.sourceId);
-    const { start, end } = citation.locator;
-    const row = (await client.query<{ content_digest: string; byte_length: number; bytes: Buffer; start_byte: number | null; end_byte: number | null }>(`SELECT content_digest,byte_length,
-      substring(convert_to(content,'UTF8') FROM $3+1 FOR $4-$3) AS bytes,
-      CASE WHEN $3<byte_length THEN get_byte(convert_to(content,'UTF8'),$3) END AS start_byte,
-      CASE WHEN $4<byte_length THEN get_byte(convert_to(content,'UTF8'),$4) END AS end_byte
-      FROM flow.knowledge_versions WHERE source_id=$1 AND version=$2`, [citation.sourceId, citation.version, start, end])).rows[0];
-    if (!row) throw new HttpError(404, 'knowledge_version_not_found', 'Source version not found.');
+/** Caller owns its transaction. One bounded SELECT observes all requested versions and heads together. */
+export async function resolveCitationsInTransaction(client: PoolClient, projectId: string, citations: KnowledgeCitation[]): Promise<KnowledgeResolved[]> {
+  if (citations.length > 4 || citations.some(citation => !knowledgeCitationSchema.safeParse(citation).success)) throw new HttpError(400, 'invalid_knowledge_request', 'At most four valid citations are required.');
+  if (citations.some(citation => citation.projectId !== projectId)) throw new HttpError(404, 'knowledge_source_not_found', 'Citation belongs to another project.');
+  await loadProject(client, projectId);
+  const refs = citations.map((citation, ordinal) => ({ ordinal, source_id: citation.sourceId, version: citation.version, start: citation.locator.start, end: citation.locator.end }));
+  const rows = (await client.query<{ ordinal: number; source_id: string | null; version: number | null; current_version: number; content_digest: string; byte_length: number; bytes: Buffer; start_byte: number | null; end_byte: number | null }>(`SELECT r.ordinal,s.id AS source_id,v.version,s.current_version,v.content_digest,v.byte_length,
+    substring(convert_to(v.content,'UTF8') FROM r.start+1 FOR r.end-r.start) AS bytes,
+    CASE WHEN r.start<v.byte_length THEN get_byte(convert_to(v.content,'UTF8'),r.start) END AS start_byte,
+    CASE WHEN r.end<v.byte_length THEN get_byte(convert_to(v.content,'UTF8'),r.end) END AS end_byte
+    FROM jsonb_to_recordset($2) AS r(ordinal integer,source_id uuid,version integer,start integer,"end" integer)
+    LEFT JOIN flow.knowledge_sources s ON s.id=r.source_id AND s.project_id=$1
+    LEFT JOIN flow.knowledge_versions v ON v.source_id=s.id AND v.version=r.version ORDER BY r.ordinal`, [projectId, JSON.stringify(refs)])).rows;
+  return rows.map(row => {
+    const citation = citations[row.ordinal]!;
+    if (!row.source_id) throw new HttpError(404, 'knowledge_source_not_found', 'Source not found in this project.');
+    if (row.version === null) throw new HttpError(404, 'knowledge_version_not_found', 'Source version not found.');
     if (row.content_digest !== citation.contentDigest) throw new HttpError(409, 'knowledge_digest_mismatch', 'The citation digest does not match this immutable version.');
-    if (end > row.byte_length || [row.start_byte, row.end_byte].some(byte => byte !== null && (byte & 0xc0) === 0x80)) throw new HttpError(400, 'knowledge_invalid_locator', 'The byte range must be within the original text on UTF-8 boundaries.');
-    return { citation, text: new TextDecoder('utf-8', { fatal: true }).decode(row.bytes), isCurrent: source.current_version === citation.version, currentVersion: source.current_version };
-  }, true);
+    if (citation.locator.end > row.byte_length || [row.start_byte, row.end_byte].some(byte => byte !== null && (byte & 0xc0) === 0x80)) throw new HttpError(400, 'knowledge_invalid_locator', 'The byte range must be within the original text on UTF-8 boundaries.');
+    return { citation, text: new TextDecoder('utf-8', { fatal: true }).decode(row.bytes), isCurrent: row.current_version === citation.version, currentVersion: row.current_version };
+  });
+}
+export async function resolveCitation(pool: Pool, projectId: string, citation: KnowledgeCitation): Promise<KnowledgeResolved> {
+  return transaction(pool, async client => (await resolveCitationsInTransaction(client, projectId, [citation]))[0]!, true);
 }

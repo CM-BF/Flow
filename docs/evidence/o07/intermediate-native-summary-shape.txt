@@ -1,0 +1,38 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-tools
+
+ ❯ apps/server/src/goal-graph-runs/native.test.ts (2 tests | 1 failed) 1018ms
+   × admits a dedicated graph profile with the original goal and rejects ordinary or node-grant authority 104ms
+   ✓ fails closed for absent, node-only and ordinary profiles without creating graph runs 80ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-graph-runs/native.test.ts > admits a dedicated graph profile with the original goal and rejects ordinary or node-grant authority
+AssertionError: expected undefined to deeply equal { …(3) }
+
+- Expected: 
+{
+  "configDigest": "b7c1bc416bb657324991ab905842e657157c9301642934eb47c783452acc18ef",
+  "id": "7fe29565-4de1-4563-b6a6-0548819cfb72",
+  "runnerId": "aaa5171c-33ca-4681-9300-6fc123d22894",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/server/src/goal-graph-runs/native.test.ts:42:47
+     40|   const admitted = await request(`/api/goals/${context.id}/graph-runs`…
+     41|   expect(admitted.status).toBe(201); expect(admitted.body.run.mode).to…
+     42|   expect(admitted.body.task.executionProfile).toEqual(selected);
+       |                                               ^
+     43|   const stored = (await pool.query('SELECT prompt FROM flow.tasks WHER…
+     44|   for (const value of [context.original.originalGoal, context.original…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  22:44:57
+   Duration  1.44s (transform 213ms, setup 0ms, import 350ms, tests 1.02s, environment 0ms)
+
