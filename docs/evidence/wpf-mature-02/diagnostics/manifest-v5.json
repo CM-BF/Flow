@@ -1,0 +1,397 @@
+{
+  "at": "2026-10-06T10:12:38.560183+00:00",
+  "kind": "composition root registration delta; no profile/peer/preload/grant/canary semantic change",
+  "base": "7be4a8be9fceafd4f8f68dda559034ec34dbf15a",
+  "r06ApprovedImplementation": "0778847702e595405f6cba0de51c1058b1436504",
+  "R06approvalScope": "Mika read-only APPROVED five source files only; old driver was CHANGES_REQUESTED",
+  "sources": {
+    "apps/runner/src/codex/index.ts": {
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    "apps/runner/src/codex/types.ts": {
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    "apps/runner/src/codex/options.ts": {
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    "apps/runner/src/codex/stderr-capture.ts": {
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    "apps/runner/src/codex/stderr-capture.test.ts": {
+      "bytes": 10273,
+      "sha256": "b3dae983e3486ae08c359b7560e01894fc742f64eff5891df6e73f0c9471a575"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/immediate-exit.mjs": {
+      "bytes": 379,
+      "sha256": "6dc50ded369eab65ca2080685646ae8771978a3d572997307bb92087b9558785"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/run-diagnostics.mjs": {
+      "bytes": 13375,
+      "sha256": "591c8d10a22b4b3ac2938a2f11f28bede747c50e0f82f896484572592aad31c3"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/execute-reviewed.mjs": {
+      "bytes": 730,
+      "sha256": "b0a4922803fc84a5c479acd76b10a9dfef026fe202154c25884c6ffddb56e8fe"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/vitest.config.mjs": {
+      "bytes": 451,
+      "sha256": "0010c1017f72aa3810ea3970d72ec5b8f11e21c76a2b7221d54a364e3e11a275"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/tsconfig.json": {
+      "bytes": 467,
+      "sha256": "e36339d24921a36ecd047ec38e3311cfafdf94353ce530c9a5b272926ed82425"
+    },
+    "apps/runner/src/codex/framing.ts": {
+      "bytes": 3554,
+      "sha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d"
+    },
+    "apps/runner/src/codex/writer.ts": {
+      "bytes": 3117,
+      "sha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21"
+    },
+    "apps/runner/src/codex/fixtures/peer.mjs": {
+      "bytes": 3728,
+      "sha256": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf"
+    },
+    "experiments/codex-app-server-conformance/isolation/compose-canary.mjs": {
+      "bytes": 8275,
+      "sha256": "48839822106975d170251d9246464787fa918196df91017ca25e0d13cbcac6a3"
+    },
+    "experiments/codex-app-server-conformance/isolation/canary-preload.mjs": {
+      "bytes": 3457,
+      "sha256": "d197b240be265f2606b0f6b9d00efd30993fc3de31c5ec0bd46daeb59a183e30"
+    },
+    "experiments/codex-app-server-conformance/isolation/default-deny.sb": {
+      "bytes": 6252,
+      "sha256": "b050b371c0739f8081a26fd3e4df27487075fdd6b0adee0107da05b12e1ef779"
+    },
+    "docs/evidence/wpf-mature-02/isolation/bootstrap-inspection.json": {
+      "bytes": 19917,
+      "sha256": "98cd28ee66084d5562c3cfed8e143e246118e68884d2eaf1713ddd11a66d18a1"
+    },
+    "docs/evidence/wpf-mature-02/isolation/r06-binding.json": {
+      "bytes": 384,
+      "sha256": "0b5746cbe159ab5d82291f8a8d087029f59fbd95f7cc3a0406a1dd85e78e8dbd"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/tsconfig-c1.json": {
+      "bytes": 662,
+      "sha256": "f39b931fd993de4f75e6a96ab7377cb2280b9d1591d011a33d2d9e5ff659e463"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/driver-preparation.test.ts": {
+      "bytes": 8040,
+      "sha256": "64cb788dc97c8ce5cd071dadff5cdd6ff585f88b9fe0bdbffe64f7bb98cbabad"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/driver-vitest.config.mjs": {
+      "bytes": 397,
+      "sha256": "7c0ee298b80bd92056971d0e30188cfe34069a622c1cf6a7c2fc72df49cf61e1"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/composition-preparation.test.ts": {
+      "bytes": 3079,
+      "sha256": "1f120951ce7f25fa4c41b25e235cdaa13219d1bed8cdc6049abeb7a1e73aad9e"
+    },
+    "experiments/codex-app-server-conformance/diagnostics/composition-vitest.config.mjs": {
+      "bytes": 407,
+      "sha256": "bf88be4d4c053fe3269bf7c94f82b4f5331fc3ebf7b1e12f2c52e755bf579d32"
+    }
+  },
+  "C1CompileOnlyInputs": {
+    "apps/runner/src/native-harness/codex/index.ts": {
+      "bytes": 851,
+      "sha256": "03575f0f86fdb1b15ceb9298fac13add895b5f92b5a80165ba2e13019639205a"
+    },
+    "apps/runner/src/native-harness/codex/adapter.ts": {
+      "bytes": 6469,
+      "sha256": "59ca472b509f580512b50d6c71406e3e66f411aabd2c8622a90c7ad703821df5"
+    },
+    "apps/runner/src/native-harness/codex/wire.ts": {
+      "bytes": 2016,
+      "sha256": "57d5ce950fbecd4193a432f5dc9fad8b8790ab5a00888ab0ff4095fe17c636d5"
+    },
+    "apps/runner/src/native-harness/codex/policy.ts": {
+      "bytes": 1696,
+      "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c"
+    },
+    "apps/runner/src/native-harness/codex/evidence.ts": {
+      "bytes": 4041,
+      "sha256": "31c5b334c93f2ca3d1f16d0d1fb8b1233b53fd5254d9975dbf73d23e90159ec9"
+    },
+    "apps/runner/src/native-harness/codex/adapter.test.ts": {
+      "bytes": 9014,
+      "sha256": "65bc3e97e891f6fb1767f349e31b3bf4fe92b25ed9daaf331c471c5801e373cb"
+    },
+    "apps/runner/src/native-harness/codex/evidence.test.ts": {
+      "bytes": 2430,
+      "sha256": "8140bc49ddf94ee35ff26760a97f7cf5975834f250a87dc6a38d77e3ddde9dd0"
+    },
+    "apps/runner/src/native-harness/codex/projection.mjs": {
+      "bytes": 5179,
+      "sha256": "01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad"
+    },
+    "apps/runner/src/native-harness/codex/projection.d.mts": {
+      "bytes": 716,
+      "sha256": "8595d7c661688e9c2aad8cb3a69530a904167798cccc218bd0a450bd8e8e3e6c"
+    }
+  },
+  "rawAndReceipts": {
+    "docs/evidence/wpf-mature-02/diagnostics/amend-receipt.json": {
+      "bytes": 853,
+      "sha256": "2c3382bf4115568ea67f9d59e278b108c295382ef0db282e11688a1e87b14610"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/c1-integration-release.json": {
+      "bytes": 557,
+      "sha256": "73a05314e09255074b142a1a94350f01a97fd036415ccadef239a2798b33113d"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/c1-integration-take.json": {
+      "bytes": 552,
+      "sha256": "55c925cd1b6ea4a8d4a354e83c88305ba2229bbf79758400c61e5baad00052be"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/c1-typecheck-result.json": {
+      "bytes": 649,
+      "sha256": "f9f8336cb4a90ec53d06f74cc8c058f3a8dbe15c585b7db8bbe197ec1912f6a5"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/c1-typecheck.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/c1-typecheck.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-classification-result.json": {
+      "bytes": 442,
+      "sha256": "4dc0b598b25dffdb8cae8d9ed9daca4425f05ecba2fefcd0491403fc3c5a02af"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-classification.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-classification.stdout": {
+      "bytes": 361,
+      "sha256": "373a780072b26ba97fc3a4059d8a59e8093bf642a8aa21f896f9c7710e43894d"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-input-v2.json": {
+      "bytes": 3628,
+      "sha256": "35b03a6c13ac3cdd13cdd5c3da102d67ba6d4adb5456e12f579e259f712004c8"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-input-v3.json": {
+      "bytes": 3731,
+      "sha256": "8657fe48dff92f131793c1d57e7c947b491cd6343e99964d36d108c314712953"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-input.json": {
+      "bytes": 3590,
+      "sha256": "d851cc3a46bf255ccdfb608262e39f87ea302d0f53c98688f747f5f9db8e77ba"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-release-result.json": {
+      "bytes": 470,
+      "sha256": "f7f35664ca08daf8df2d65a24ea6f8a2d4a68770b2059fc1aea06277c524f12d"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-release.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-release.stdout": {
+      "bytes": 362,
+      "sha256": "de60ec749e3660be39a73ff72db93499761011dd7ae0b0a55767ae3aacc6258b"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-unit-final-result.json": {
+      "bytes": 487,
+      "sha256": "111b355fc8d810ce06ff21cc8fa5b523bc2a6067781d3ae844eaf2eafbe7e6f0"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-unit-final.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-unit-final.stdout": {
+      "bytes": 359,
+      "sha256": "7fb5668ff607defc93c9b2f2e8eaa299065ee2ffaaf394931095256be1f9af3c"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-unit-result.json": {
+      "bytes": 483,
+      "sha256": "dd1273f9dd45e27020ca22b7be269ef4feb7260d0f6bb30fd8e08a668d8ff997"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-unit.stderr": {
+      "bytes": 234,
+      "sha256": "126dbdc2a137ce44268ede26ac87eed90727713f6713cf80495c1228bf62ab12"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-unit.stdout": {
+      "bytes": 361,
+      "sha256": "bb6c7b222144ce21e5fddd65474e50d262381cd01b3b99a9c56d098b9a022a47"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/static-checks.json": {
+      "bytes": 580,
+      "sha256": "dbfbe07841223cae5caf960486c7095fa5cfe565874a52bbf21875895f77f70f"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/typecheck-1.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/typecheck-1.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/typecheck-final-result.json": {
+      "bytes": 548,
+      "sha256": "416b0a4ba35d058e6905f46ac4364df82c93a411f9ec6d58ab6d0f55d341efec"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/typecheck-final.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/typecheck-final.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-1.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-1.stdout": {
+      "bytes": 327,
+      "sha256": "5b73d660c45169c8a29c67b1c28a6179118d3287a4bbd084059b2410f41e9471"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-final-result.json": {
+      "bytes": 400,
+      "sha256": "469ca9584a8b02d8948dd243941052ab209cd1c97198d3078a14f25b76f6bea3"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-final.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-final.stdout": {
+      "bytes": 327,
+      "sha256": "5208949c650c740df1e8c2475b46a9554d34200e40861468777dc3a9e9c909dc"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-initial.stderr": {
+      "bytes": 1152,
+      "sha256": "e2630838604096579a4acd7792af5cb9486a62dd9399a65507a8e82030e082bb"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/unit-initial.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-input-v4.json": {
+      "bytes": 3756,
+      "sha256": "1c5f0d97d0e32615eacd9e102850df2b4772ac96c0b5f8251d2e921268281535"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-budget.stdout": {
+      "bytes": 364,
+      "sha256": "bfc4056840449929691d174d3003bf4a2a079a4c42534047262e6e0f927decc9"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-budget.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-budget-result.json": {
+      "bytes": 491,
+      "sha256": "e5339da2b8f6cc22e50ebcdf2744e05ffcc5fc627e7e9236c4f9785b16599a4b"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/driver-input-v5.json": {
+      "bytes": 3745,
+      "sha256": "dd1c6a22a61a3edf5f2e09db784c711a2c16a636770da29ab28dd0fa63565cc6"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/composition-preparation.stdout": {
+      "bytes": 364,
+      "sha256": "6a5bbd148fb6c4ab58dd48486277a00bf93796d482244b41a90cf09698a27a92"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/composition-preparation.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/composition-preparation-result.json": {
+      "bytes": 471,
+      "sha256": "6dabd6aa1e5d59f77675381924f041612b99855d737d493f6ddf7618dbd2c4c1"
+    }
+  },
+  "priorManifests": {
+    "docs/evidence/wpf-mature-02/diagnostics/manifest.json": {
+      "bytes": 6582,
+      "sha256": "0659f27766ea518deea3718fe4b87225e0e4616b9add09b005bd88d39aa45867"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/manifest-v2.json": {
+      "bytes": 7183,
+      "sha256": "73c0cb9785d4f61ba7324b0602a0c8484f21205d163a4f38f9aa6b7c7558d4dd"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/manifest-v3.json": {
+      "bytes": 13161,
+      "sha256": "f55a02fb3ae3987aa6d5ff5b528a42acc7da8a39cdc30cda41019352cb34d8f1"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/manifest-v4.json": {
+      "bytes": 14513,
+      "sha256": "b19383cf80521ef061de133f29031a481a84083f76db551f2821fb9afffa76f6"
+    }
+  },
+  "checks": {
+    "R06distinct": 19,
+    "R06passed": 19,
+    "R06rerunForDriver": false,
+    "driverDistinct": 10,
+    "driverPassed": 10,
+    "allActualChildSpawns": 0,
+    "R06StrictNoEmitExit": 0,
+    "sameTreeC1StrictNoEmitExit": 0,
+    "driverNodeCheckExit": 0,
+    "realDiagnosticBatchRuns": 0,
+    "reservedRealChildBudget": false,
+    "overlapHistory": "18 R06 then 19 final; 5 driver then 9 with signatures; only 19+9 distinct, never sum overlapping passes. Initial driver fixture FD cleanup warning fixed by tracking live owned fd; final 9 stderr empty. Final driver10 adds final fsync budget case with deterministic monotonic clock. R06 remains19 distinct; old driver9 overlaps.",
+    "finalPersistenceBudgetCase": "file marked before-result-persistence; final CLI elapsed after durable result; simulated fsync pushes final over60s and withinBudget=false",
+    "compositionDelta": {
+      "selected": 6,
+      "passed": 6,
+      "failed": 0,
+      "actualChildSpawns": 0,
+      "listenerStarts": 0,
+      "source": "original composition public function with only root bookkeeping changed; realpath/lstat/chmod fail on either created root"
+    },
+    "inheritedChecks": "R0619/source077 APPROVED and C1 strict unchanged; driver10 at4e1 retained, not rerun for this composition delta. Driver/test only input selector v4\u2192v5 changed."
+  },
+  "runtimeInput": "docs/evidence/wpf-mature-02/diagnostics/driver-input-v5.json",
+  "cleanup": "private root creation and sink registration inside finally coverage, private allowlist classification and known-inode cleanup before end/withinBudget; unknown retains and cleanupComplete false File receipt labels elapsedBasis=before-result-persistence; safe CLI adds finalElapsedMs/withinBudget after durable result, no recursive receipt.",
+  "thirdAttempt": "NOT_RUN; no driver entry to reset clock or launch a third",
+  "reviewHistory": {
+    "target": "4e1c989c0503cc73206d4e3de615e57b881d452e",
+    "reviewer": "architecture_read/gpt-6-astra",
+    "acceptedByMikaAt": "2026-10-06 10:10:29 UTC",
+    "verdict": "CHANGES_REQUESTED",
+    "P1": 0,
+    "P2": 1,
+    "finding": "mkdtemp root not registered until realpath/lstat completed; current makeRoot records original path before either may fail"
+  },
+  "verifiedUnchangedForDelta": {
+    "experiments/codex-app-server-conformance/isolation/default-deny.sb": {
+      "bytes": 6252,
+      "sha256": "b050b371c0739f8081a26fd3e4df27487075fdd6b0adee0107da05b12e1ef779"
+    },
+    "experiments/codex-app-server-conformance/isolation/canary-preload.mjs": {
+      "bytes": 3457,
+      "sha256": "d197b240be265f2606b0f6b9d00efd30993fc3de31c5ec0bd46daeb59a183e30"
+    },
+    "apps/runner/src/codex/fixtures/peer.mjs": {
+      "bytes": 3728,
+      "sha256": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf"
+    },
+    "apps/runner/src/codex/index.ts": {
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    "apps/runner/src/codex/options.ts": {
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    "apps/runner/src/codex/types.ts": {
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    "apps/runner/src/codex/stderr-capture.ts": {
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    "apps/runner/src/codex/stderr-capture.test.ts": {
+      "bytes": 10273,
+      "sha256": "b3dae983e3486ae08c359b7560e01894fc742f64eff5891df6e73f0c9471a575"
+    }
+  }
+}

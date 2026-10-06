@@ -50,7 +50,7 @@ beforeEach(() => {
   hook.base = real.mkdtempSync(path.join(os.tmpdir(), 'flow-diag-prep-test-'));
   real.mkdirSync(path.join(hook.base, 'evidence'), { mode: 0o700 });
   hook.point = ''; hook.fired = false; hook.privateRoot = ''; hook.fds = []; hook.factoryCalls = 0; hook.stderr = 'Operation not permitted'; hook.elapsed = 0; hook.resultFd = -1;
-  real.writeFileSync(path.join(hook.base, 'evidence/driver-input-v4.json'), JSON.stringify({ maxChildren: 3, totalMs: 60000,
+  real.writeFileSync(path.join(hook.base, 'evidence/driver-input-v5.json'), JSON.stringify({ maxChildren: 3, totalMs: 60000,
     thirdAttempt: 'NOT_RUN', files: {}, externalInputs: {}, node: real.realpathSync(process.execPath),
     nodeSha256: createHash('sha256').update(real.readFileSync(process.execPath)).digest('hex'), controlStderrSha256: 'intentionally-different' }));
 });

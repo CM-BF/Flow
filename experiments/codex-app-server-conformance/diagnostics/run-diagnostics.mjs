@@ -114,7 +114,7 @@ function cleanupPrivate(directory, rootIdentity, cwdRecord, owned) {
 
 /** No retry or third-attempt hook. Later invocation cannot reuse the consumed wx batch or clock. */
 export async function runDiagnosticBatch() {
-  const inputFile = path.join(evidence, 'driver-input-v4.json');
+  const inputFile = path.join(evidence, 'driver-input-v5.json');
   const input = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
   if (input.maxChildren !== 3 || input.totalMs !== 60000 || input.thirdAttempt !== 'NOT_RUN') throw safeError();
   for (const [relative, expected] of Object.entries(input.files)) {

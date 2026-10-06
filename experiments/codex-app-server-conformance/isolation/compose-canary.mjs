@@ -58,11 +58,16 @@ export async function runSyntheticCanary(createCodexTransport, { r06Target, peer
   }
   const roots = [];
   function makeRoot(prefix) {
-    const directory = fs.realpathSync(fs.mkdtempSync(prefix));
-    const stat = fs.lstatSync(directory);
-    roots.push({ directory, ino: stat.ino, dev: stat.dev });
-    fs.chmodSync(directory, 0o700);
-    return directory;
+    const createdDirectory = fs.mkdtempSync(prefix);
+    const root = { createdDirectory, directory: createdDirectory, ino: null, dev: null, prepared: false };
+    roots.push(root); // Creation owns a path even before canonicalization or identity can succeed.
+    root.directory = fs.realpathSync(createdDirectory);
+    const stat = fs.lstatSync(root.directory);
+    assert.ok(stat.isDirectory() && !stat.isSymbolicLink());
+    root.ino = stat.ino; root.dev = stat.dev;
+    fs.chmodSync(root.directory, 0o700);
+    root.prepared = true;
+    return root.directory;
   }
   const runId = randomBytes(16).toString('hex');
   let control;
@@ -131,11 +136,12 @@ export async function runSyntheticCanary(createCodexTransport, { r06Target, peer
     const listenerClosed = listener ? await listener.close() : true;
     result.listenerClosed = listenerClosed;
     result.passed &&= childClosed && listenerClosed;
-    result.retainedRoots = roots.map(root => root.directory);
+    result.retainedRoots = roots.map(root => root.createdDirectory);
     if (childClosed && listenerClosed) {
       // Only roots created by this invocation; no port/PID scan or other-service cleanup.
       try {
         for (const root of roots) {
+          assert.ok(root.prepared && root.ino !== null && root.dev !== null, 'Root preparation or identity unknown');
           const stat = fs.lstatSync(root.directory);
           assert.ok(stat.isDirectory() && !stat.isSymbolicLink() && stat.ino === root.ino && stat.dev === root.dev);
         }
