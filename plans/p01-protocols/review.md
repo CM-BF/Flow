@@ -1,6 +1,6 @@
 # P01 独立review
 
-状态：NOT_STARTED。
+状态：APPROVED。
 
 - Review target commit：`fb14d351b46da69b17e48e8815006fc320e765e1`（SDK首段；完整P01-06未完成）。
 - Base：`e845eb069c594989117fadf380335650efef27a2`；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-adapters`；branch `codex/protocol-adapters`；head/dirty审查时实际核验。
@@ -17,4 +17,10 @@
 - 验收条件：使用固定官方SDK独立对端；中心+bridge重启仍复用显式命令；messageId不保证去重；观察断线不取消，cancel pending不伪装停止；verification独立；必需ListTasks与Tasks不支持边界准确。
 - 已执行与未执行：详见证据报告；未跑跨机TLS、负载、全库、产品浏览器、真实模型或云。
 
-独立检查未执行；findings未评估；无approval。作者检查不替代独立审查。修复与复审记录待实际发生。
+## 独立审查结论（SDK首段）
+
+2026-10-06 02:28 UTC，reviewer Execution Lead / gpt-6-astra ultra；target `fb14d351b46da69b17e48e8815006fc320e765e1`。APPROVED，无本slice blocking。
+
+实际读取7个源码模块、能力矩阵和官方互操作测试；核对auth同origin/重定向、byte+timeout、cancel/unknown、持久入站Flow映射。独立运行a2a-bridge 6 + mcp-client 3 + a2a-client 2：11/11通过（4.55s）。未独立重跑其余6项、全库、跨机TLS、产品浏览器、真实模型或云。作者17项原始证据保持不变。
+
+批准只覆盖SDK首段，不覆盖完整P01。外部durable binding、中心elicitation、budget和Tasks扩展继续open；P01-06为下一实现子段。无要求修复项；后续修改须绑定新target，不把本approval扩大到未实现能力。
