@@ -76,3 +76,7 @@ Historical source-only candidate: 044ab84db42606fb1757903258078e3dfbab9545
 审查者先核 owner、worktree/head/dirty、固定输入和技能，再只读检查 task ID 来自可见观察、单 intent 的原 body/key、ACK 校验、未知/拒绝/资源释放、旧 create/send/queue journal 兼容和 Ctrl-C 不取消。当前无执行许可时只给源码结论，不能把用例存在当通过。实际 PG/PTY/App 和 provider 边界分别记录；新问题交原 owner 修复。
 
 Findings 未评估；结论未审查。0 本片运行检查，NOT_RUN。
+
+## 2026-10-06 17:57 UTC 主线接收与后继边界
+
+[main receipt](../../docs/evidence/tui01f/main-8d84-receipt.json)核七源对ec30/工作树零差；受控集成b549为main8d84祖先，原作者提交不是祖先。独审结论不变；03在两行为原证据与单独已审cleanup1/1范围内交付。原整suite exit1、旧tmp KEEP、未重跑事实保留。04只形成文档方案，真实App/PTY交替尚未实施或运行，不继承RELEASE03不同tuple批准。

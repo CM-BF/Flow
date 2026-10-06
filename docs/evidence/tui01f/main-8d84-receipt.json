@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-06T17:57:16.289243+00:00",
+  "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "observedOriginMain": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "authorTarget": "ec30bb6246ac95e5843c7166dee7118b684fd089",
+  "integrationCommit": "b54973237af88b64eef1b039560fc875dbd41688",
+  "integrationIsAncestor": true,
+  "originalTargetIsAncestor": false,
+  "identityBasis": "Controlled integration copied reviewed blobs; author commit is not an ancestor. All seven paths are byte-identical.",
+  "sources": [
+    {
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 22259,
+      "sha256": "9d645418386eb5b206f438074ce39ec0fbcbab56f814908cb9d145034c61d380",
+      "exact": true
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-cleanup.ts",
+      "bytes": 4435,
+      "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7",
+      "exact": true
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-cleanup.test.ts",
+      "bytes": 5044,
+      "sha256": "864417833cebe03eb5e71ebb41deec12ef97a8d0704937ea150eba930fdb7726",
+      "exact": true
+    },
+    {
+      "path": "apps/tui/src/task-controls/cleanup-journey.test.ts",
+      "bytes": 6083,
+      "sha256": "0def7b25c74f7f4aa55f785c4f011ed1283887ca178fb216c0c52403b41ce9bf",
+      "exact": true
+    },
+    {
+      "path": "apps/tui/src/task-controls/journey.test.ts",
+      "bytes": 4182,
+      "sha256": "91cf664a55a281989b0e240448e2b1d4694e059c09fca00b14e4e7d0c63d4153",
+      "exact": true
+    },
+    {
+      "path": "apps/tui/test-fixtures/cancel_driver.py",
+      "bytes": 4898,
+      "sha256": "aec992928bb8bf93feb237444a78d63372c35441a2bc600ea3f1716ad2f85b6f",
+      "exact": true
+    },
+    {
+      "path": "apps/tui/src/journey.test.ts",
+      "bytes": 10818,
+      "sha256": "c11a94780a2c7fe0d5affb112bb6cdf802e7dddc581981c0850ddb64da1f890a",
+      "exact": true
+    }
+  ],
+  "receipt": "docs/evidence/i02/tui01f-closeout-integration.json",
+  "checks": {
+    "ownerNewTests": 0,
+    "integrationRootTypes": "Lead recorded noEmit exit0 / 9.09s; not rerun by owner",
+    "originalJourney": "2 behavior cases passed, whole-suite exit1 retained",
+    "independentCleanup": "1/1 suite exit0 independently approved; not a rerun of original journey",
+    "oldPrivateTmp": "KEEP: no recorded initial inode"
+  },
+  "todo03": "delivered based on independently accepted behavior and separate cleanup evidence",
+  "todo04": "open: actual TUI/Web alternating journey not run"
+}

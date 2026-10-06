@@ -12,7 +12,7 @@
 
 - [x] TUI01F-01：固定源码 Interface、取消意图与终端入口，保留旧规则。
 - [x] TUI01F-02：新增公开 controller 定向行为用例，明确实际执行状态。
-- [ ] TUI01F-03：资源/依赖具备后，真实 HTTP 与专用 PG 丢 ACK/恢复旅程及实际 PTY 验证。
+- [x] TUI01F-03：资源/依赖具备后，真实 HTTP 与专用 PG 丢 ACK/恢复旅程及实际 PTY 验证。
 - [ ] TUI01F-04：实际 App ↔ TUI 同会话交替，CAS 拒绝保草稿与观察接续；独立 review/main 收口。
 
 最初阶段只授权 source/合同/用例准备；后续已获得文末所列独立运行窗口。仍禁止安装/复制依赖/full build/未授权PG/browser/provider；不借 moving main 运行，也不把 NOT_RUN 写成 red/green。A-E 已有检查作为历史输入，不重复全集。源码用例覆盖缺端口/错误目标/回执身份/原 key 重报/退出/旧 journal；03/04 待 fresh 资源窗口。有限实际 source-only 闭包见 design-input.json，runner/center 未物化，不偷用最新树。
@@ -44,3 +44,5 @@
 2026-10-06 17:43 UTC：独立cleanup-only actual1/1、源f4批准/新证据待审。历史2行为suite exit1不改、旧tmp KEEP；03暂保持开放直到独审收口，04未实现。另原claim v2增旧TUI journey.test.ts用于新profile union直接消费者兼容，仅focused types0，无旧旅程重跑。
 
 2026-10-06 17:48 UTC：两test-only增量获独立APPROVED，legacy profile兼容与单PG收尾分开绑定；保持原whole-suite exit1/旧tmpKEEP，不称旧suite重跑通过。待main接收收口，完整04实际App交替仍open。本轮仅metadata，无新增运行。
+
+2026-10-06 17:57 UTC：03已审组合经受控集成进入main8d84；原两行为suite exit1未被改写，独立cleanup-only1/1足够闭合已定位收尾边界，旧tmp仍KEEP。04仍open，仅形成[一条真实双界面候选](../../docs/evidence/tui01f/web-handoff-preparation.md)，无产品/driver新增、无运行授权。
