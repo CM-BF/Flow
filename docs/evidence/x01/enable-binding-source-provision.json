@@ -1,0 +1,62 @@
+{
+  "observedAt": "2026-10-06T23:11:41.658354+00:00",
+  "state": "SOURCE_ONLY_COMPLETE",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+  "branch": "codex/plugin-enable-binding",
+  "sourceBase": "60ca1942411634843fda14e158f138191b832d8b",
+  "head": "60ca1942411634843fda14e158f138191b832d8b",
+  "sourceDeliveryCommit": "067920b54a6106ea9b9c942025e0f2fcfc78f5f4",
+  "sourceRequestSha256": "6a7bd014a689beb95bce47aa44c08dbc005edcc1f1eb0203ccc17b19f4529e39",
+  "ownerMetadataCommit": "c77802e6556aedab63d0f45af4d76bbf38096d70",
+  "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+  "claimVersion": 8,
+  "claimCommittedAt": "2026-10-06T23:10:09.716Z",
+  "claimFreshReadAt": "2026-10-06T23:10:48.962Z",
+  "mainFiles": 384,
+  "ownerMetadataFiles": 160,
+  "totalFiles": 545,
+  "payloadBytes": 2999381,
+  "materializedNowFiles": 543,
+  "materializedNowPayloadBytes": 2967078,
+  "officialSqlCount": 30,
+  "allFileHashesVerified": true,
+  "mainProductDiffPaths": [],
+  "metadataModifiedCount": 5,
+  "metadataUntrackedCount": 3,
+  "metadataDiffPaths": [
+    "docs/evidence/x01/enable-binding-preparation.md",
+    "docs/evidence/x01/host-gates-integration-ready.md",
+    "plans/x01-plugin-management/plan.md",
+    "plans/x01-plugin-management/review.md",
+    "plans/x01-plugin-management/status.md"
+  ],
+  "metadataUntrackedPaths": [
+    "docs/evidence/x01/enable-binding-provision.md",
+    "docs/evidence/x01/enable-binding-source-request.json",
+    "docs/evidence/x01/host-gates-main-acceptance.md"
+  ],
+  "availableBeforeBytes": 1095585792,
+  "availableAfterBytes": 1091035136,
+  "diskMeasurementScope": "whole-volume sampled availability, not payload allocation or attributable net recovery",
+  "protectedBefore": {
+    "mainHead": "d721cf28123b45dab5b4e531281b312956e1bc28",
+    "mainIndexSha256": "1511d815531016ca2bedad45b89c40c86a49aa96d80fd58fe051e77a58f52607",
+    "sharedConfigSha256": "90844cada9aa67281a14fa1c9df5bad9af7934ba7d0694c51400add0c02566c8",
+    "oldOwnerHead": "c3a4c1a2a75284c379cdfaaa92797216cfcbfae3",
+    "oldOwnerIndexSha256": "579b4a752156280cb11a9b10a7131ddcddce7c487b3315abe0a0ed04055e4fae"
+  },
+  "protectedAfter": {
+    "mainHead": "d721cf28123b45dab5b4e531281b312956e1bc28",
+    "mainIndexSha256": "1511d815531016ca2bedad45b89c40c86a49aa96d80fd58fe051e77a58f52607",
+    "sharedConfigSha256": "90844cada9aa67281a14fa1c9df5bad9af7934ba7d0694c51400add0c02566c8",
+    "oldOwnerHead": "c3a4c1a2a75284c379cdfaaa92797216cfcbfae3",
+    "oldOwnerIndexSha256": "579b4a752156280cb11a9b10a7131ddcddce7c487b3315abe0a0ed04055e4fae"
+  },
+  "protectedUnchanged": true,
+  "sparseSha256": "cd9ac2ff1813fd457bc741809edc45a100f4583fa81eb0006810de8a482b67a0",
+  "dependencyCopyBytes": 0,
+  "installBuildImportPgBrowserProviderCalls": 0,
+  "earlierAttempt": "A preliminary heredoc had an IndentationError and executed no statements; no target mutation occurred.",
+  "operatorStoppedWriting": true,
+  "next": "Owner may adopt receipts and update sole canonical status, then implement only current v8 scope. No test or dependency preparation authorization inferred."
+}
