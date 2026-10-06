@@ -1,0 +1,110 @@
+{
+  "packages": {
+    "harness-claude-code": {
+      "name": "@ai-sdk/harness-claude-code",
+      "version": "1.0.143",
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/vercel/ai",
+        "directory": "packages/harness-claude-code"
+      }
+    },
+    "harness": {
+      "name": "@ai-sdk/harness",
+      "version": "1.0.139",
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/vercel/ai",
+        "directory": "packages/harness"
+      }
+    }
+  },
+  "files": [
+    {
+      "package": "harness-claude-code",
+      "path": "src/claude-code-subscription.ts",
+      "sha256": "7db83b5f26820a0b6919d8ee1367c473da21e6666c90166169eaca6482e21a27",
+      "upstreamSource": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/claude-code-subscription.ts",
+      "copiedWithoutChanges": true
+    },
+    {
+      "package": "harness-claude-code",
+      "path": "src/claude-code-auth.ts",
+      "sha256": "47d1b99808bb529525023bdc27ed5bc02ae4b617d09fed523184c9aefee9af90",
+      "upstreamSource": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/claude-code-auth.ts",
+      "copiedWithoutChanges": true
+    },
+    {
+      "package": "harness-claude-code",
+      "path": "LICENSE",
+      "sha256": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529",
+      "upstreamSource": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/LICENSE",
+      "copiedWithoutChanges": true
+    },
+    {
+      "package": "harness",
+      "path": "src/utils/oauth-access-token.ts",
+      "sha256": "bae57ef94b09a7c33f1be04c3930b133fa807af3e4418d9d42886592d5ad1b1b",
+      "upstreamSource": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/oauth-access-token.ts",
+      "copiedWithoutChanges": true
+    },
+    {
+      "package": "harness",
+      "path": "src/utils/native-subscription/jwt.ts",
+      "sha256": "87037f2fe886b044f88e839cb31592c25c611e455ee439949c78e5b35c3ee13a",
+      "upstreamSource": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/native-subscription/jwt.ts",
+      "copiedWithoutChanges": true
+    },
+    {
+      "package": "harness",
+      "path": "src/utils/native-subscription/should-resolve-native.ts",
+      "sha256": "379289c1f59a00d03d976383a5673519a5225f72257d719b790aadd474b6e092",
+      "upstreamSource": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/native-subscription/should-resolve-native.ts",
+      "copiedWithoutChanges": true
+    },
+    {
+      "package": "harness",
+      "path": "src/utils/authentication-environment.ts",
+      "sha256": "128d93fc195b8cf31e5e4b403734624100d8f03dfbca677338f427b51664c73c",
+      "upstreamSource": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/authentication-environment.ts",
+      "copiedWithoutChanges": true
+    },
+    {
+      "package": "harness",
+      "path": "src/utils/ai-gateway-auth.ts",
+      "sha256": "d43b856a4683fbc28b7728df3db2a05309b8a4155044aa61c9777f3c8d7662fc",
+      "upstreamSource": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/ai-gateway-auth.ts",
+      "copiedWithoutChanges": true
+    },
+    {
+      "package": "harness",
+      "path": "src/utils/os.ts",
+      "sha256": "28aba57de68ede0522dace4e636684c5f87c704696c72f17458de67a14bccb66",
+      "upstreamSource": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/src/utils/os.ts",
+      "copiedWithoutChanges": true
+    },
+    {
+      "package": "harness",
+      "path": "LICENSE",
+      "sha256": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529",
+      "upstreamSource": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness/LICENSE",
+      "copiedWithoutChanges": true
+    }
+  ],
+  "staticOnly": [
+    {
+      "package": "harness-claude-code",
+      "path": "src/claude-code-harness.ts",
+      "sha256": "229fe42ec87625b8a639ec99a8bcf57eaa98d6d74dc93e0cbc0b149f73d61faf",
+      "upstreamSource": "/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-claude-code/src/claude-code-harness.ts",
+      "executed": false,
+      "callSiteLines": [
+        839,
+        870,
+        872
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "startedAt": "2026-10-06T03:09:29.503Z",
+  "finishedAt": "2026-10-06T03:09:29.717Z",
+  "node": "v24.20.0",
+  "upstreamCommit": "7a30305503c600bc46ea2a94a6750eac5cede278",
+  "realModels": 0,
+  "cloudCalls": 0,
+  "syntheticOnly": true,
+  "code": 0,
+  "signal": null,
+  "timedOut": false,
+  "stderr": "",
+  "result": "passed",
+  "messages": [
+    {
+      "observation": {
+        "unicode": {
+          "expected": "中文🙂",
+          "received": "���文���",
+          "matches": false,
+          "stdoutChunkBytes": [
+            64,
+            7,
+            6
+          ]
+        },
+        "longLine": {
+          "submittedPayloadCharacters": 2097152,
+          "beforeNewline": {
+            "frames": 0,
+            "problems": []
+          },
+          "afterNewline": {
+            "frames": 1,
+            "problems": [],
+            "recoveredCharacters": 2097152
+          }
+        },
+        "pendingExit": {
+          "count": 2,
+          "rejected": 2,
+          "elapsedMs": 24.59537499999999,
+          "exitCode": 7,
+          "exitSignal": null,
+          "processClosed": true,
+          "capturedStderrCharacters": 8192,
+          "capturedStderrBytes": 8192,
+          "oldPrefixRetained": false,
+          "syntheticSecretRetained": true
+        },
+        "stopAfterExitResolved": true,
+        "warningCount": 0
+      }
+    }
+  ]
+}
