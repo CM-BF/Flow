@@ -1,0 +1,112 @@
+{
+  "window": "s01-idle-claim-cost-once",
+  "verdict": "PASS_PENDING_INDEPENDENT_RESULT_REVIEW",
+  "implementation": "fd24a1f4d89839c867ed9184ef2c28680c5922cd",
+  "executionHead": "1bd2a0660b84fc4a7602e74a42682264881fb689",
+  "fixedProductionRef": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "input": {
+    "path": "docs/evidence/s01/idle-claim-cost/fixed-input-v3.json",
+    "sha256": "529325d02033c8431539296aef4c5dd0b59a3e5f79dafeee7a45fa267e059639",
+    "files": 81,
+    "bytesIncludingManifest": 427009
+  },
+  "preparationApproval": {
+    "reviewer": "Mika / gpt-6-astra",
+    "at": "2026-10-06 19:10:45 UTC",
+    "verdict": "APPROVED",
+    "sourceReview": "architecture_read 2026-10-06 19:04:43 UTC; test-only version followup no new finding"
+  },
+  "raw": [
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/run/case-receipt.json",
+      "bytes": 24879,
+      "sha256": "649963ee80738a150d57bddc2ed33e2897f28e6dc9f5e0e7934b864eb1d85fe9"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/run/cli.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/run/cli.stdout.json",
+      "bytes": 1350,
+      "sha256": "b7690aabec724d19b70c69872ab4ec74089b511c43beec3aa27a1f9c162fe368"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/run/console.log",
+      "bytes": 427,
+      "sha256": "23596e446a583889752f70b1553596ac07a9b0ab8a72e839b25c99ebf7fcba8c"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/run/external-exit.json",
+      "bytes": 627,
+      "sha256": "30e64fc66fbfdd7b4912f3998e87618410b7e2843eba5cfc572b067073f298eb"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/run/outer-result.json",
+      "bytes": 1240,
+      "sha256": "a628406a56c2c65d0c0cffa260585ab48e1e1fb78ad1891998bd4a265d0a49ce"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/run/owned-root.json",
+      "bytes": 112,
+      "sha256": "7e946c5bb949758c5245f590afc039e9791e3ca68e77a05ec08027122ac691a9"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/run/reservation.json",
+      "bytes": 151,
+      "sha256": "3442b78b6f43ff353b79a3676760161ea955ac8257addf6f73970b36e7e6e63f"
+    }
+  ],
+  "toolCompletion": {
+    "nodeExitCode": 0,
+    "nodeWholeWallMs": 6641.1841249791905,
+    "postExternalReceiptWriteWallMs": 6641.648040967993,
+    "toolExitCode": 0,
+    "toolFinishedAt": "2026-10-06T19:12:07.873058+00:00",
+    "meaning": "Node start through final CLI/process exit; post-write/tool completion independently observed. Review/Git work is outside execution clock but manual artifact bytes remain within reserved cap."
+  },
+  "observed": {
+    "runtimeInstances": 1,
+    "configuredCapacity": 1,
+    "activeAttempts": 0,
+    "adapterStarts": 0,
+    "emptyHttpClaims": 12,
+    "statuses": {
+      "200": 12
+    },
+    "initialReadENOENT": 1,
+    "atomicRename": 24,
+    "fileSync": 24,
+    "directorySync": 24,
+    "writeInputBytes": 1512,
+    "observerSamples": 193,
+    "durablePhases": 24,
+    "stopToLastAcceptNullSyncMs": 12.431791999999405,
+    "stopToRuntimeClosedMs": 12.74829200000022
+  },
+  "cleanup": {
+    "finalJournal": "EMPTY",
+    "runtimeClosed": true,
+    "serverClosed": true,
+    "openSockets": 0,
+    "fileHandles": 0,
+    "childCloseObserved": true,
+    "groupGone": true,
+    "streamsEnded": true,
+    "ownRootAbsent": true,
+    "retainedRoots": []
+  },
+  "budget": {
+    "chargedBytes": 1774593,
+    "limitBytes": 2097152,
+    "inputBytes": 427009,
+    "peakOwnBytesSampled": 1081344,
+    "journalReserveBytes": 4096,
+    "rawReserveBytes": 262144,
+    "automaticRawFilesBytes": 28786,
+    "manualLedger": "archive-ledger-v3.json",
+    "ownPeakBetweenSamples": "UNKNOWN"
+  },
+  "scope": "Actual public runRunner with real loopback HTTP and journal fs calls; no tasks/attempts/PG/provider/native. Node Promise elapsed includes scheduling/observer overhead, not physical I/O or fsync durability latency. No 100-runner extrapolation, power/wear/SLO claim; no configuration change."
+}

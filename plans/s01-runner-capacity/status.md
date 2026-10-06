@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:09:20 UTC / idle 固定main8d84只读输入；历史集成aae |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:12:48 UTC / idle 固定main8d84只读输入；历史集成aae |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,18 +10,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | idle固定main8d84；当前准备source fd24a1f4d89839c867ed9184ef2c28680c5922cd（4da7源审后仅补fixture version）；旧0de832/380666保留。未合入新main |
-| 工作树dirty状态 | source fd24冻结，本次仅检查证据与metadata；历史A/B/128 raw未修改 |
+| 工作树dirty状态 | source fd24冻结，本次仅单次结果与metadata；历史A/B/128 raw未修改 |
 | 工作分支状态 | in-progress |
-| 检查状态 | idle 9fake/9通过、pure strict0；version修后runtime strict0、2syntax0，原runtime2保留；actual NOT_OPEN |
+| 检查状态 | 准备9fake、pure/runtime strict0及2syntax0；唯一actual12空claim完成、预算/清理通过，待结果独审；原runtime2保留 |
 | 已集成main状态 / HEAD | 新A/B未main；历史mixed26+c259已mainaae，范围见历史main-acceptance |
 | 实现目标 | source4da7三P2全CLOSED；fd24仅inert fixture version修复，9fake+两局部strict+syntax准备检查完成 |
 | 实现范围 | claim508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE，mixed、两个A/B evidence、idle-claim-cost evidence、原plan共5 literal；无产品写权 |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 准备源三P2关闭，9fake通过；修后runtime strict及2syntax通过，全部自有检查资源清理；实际测量未启动 |
-| 下一可用交付 | 交clean执行候选与完整检查证据；仅在root唯一OPEN后运行1runtime/至多12空claim探针 |
-| 当前阻塞 | 实现/准备检查NONE；actual窗口NOT_OPEN；A/B仍NOT_OPEN |
+| 当前产出 | 唯一idle实际窗口已完成：12空claim/24rename/48sync，journal EMPTY/所有资源收束，结果待独审 |
+| 下一可用交付 | 固定真实raw/计量/清理结果并交原reviewer；不重跑、不改durability或poll |
+| 当前阻塞 | 独立结果review PENDING；actual窗口CONSUMED（无剩余许可）；A/B仍NOT_OPEN |
 | 需用户决定 | NONE |
 | Review | architecture_read 19:04:43对4da7 SOURCE_APPROVED/三P2全CLOSED；原CHANGES_REQUESTED历史保留；fixture类型问题已修且定向通过，不等于actual批准 |
 
@@ -226,3 +226,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 19:07:07 UTC：root唯一准备检查窗完成2.360s，9fake(6+3)/pure strict0；runtime strict exit2 TS2741仅缺fixture version，依失败停止未执行syntax。stdout+stderr613B，freshfree1512800256B；3个自有工具进程均exit/close/groupGone/stdio完成，自有根原dev/ino核后删除absent，sampled peak78208B、retained[]。证据见source-review-v2.json及validation；0actual runtime/PG/provider，未重跑/未改source。
 
 2026-10-06 19:09:20 UTC：root授权后fixed fd24仅为inert fixture补version:1，沿mirror真实接口；不改behavior/断言、0adapter执行。定向窗19:08:55.329→56.875，runtime strict0+execute/config syntax0，总1.546s/raw0B，自有工具均正常close/groupGone/stdio，temp原identity确认后删除、retained[]。原9fake/pure不重跑、runtime2原raw保留。当前81 input427009B，v3按fd24解释、旧v3/源审manifest按ec61固定Git解释；唯一archive24路径、2MiB/15s/256KiB预留不变。仅待actual门禁，未运行真实runtime/PG/provider。
+
+2026-10-06 19:12:48 UTC：root19:10:45完整准备APPROVED后唯一actual执行19:12:01.231→07.873（全外壳6.642s/exit0）。1runtime/cap1/active0、12空claim200、24rename+48sync、193samples/24durable phase，初始ENOENT1保留，normalstop后最终EMPTY。runtime/server/socket/handle/进程组/stdio全关闭，ownroot absent/retained[]；charge1774593B/2MiB、sampledpeak1081344B，采样间峰值UNKNOWN。窗口CONSUMED无重试，结果manifest/ready待独审；只记录API调用而非物理I/O/100runner/SLO。
