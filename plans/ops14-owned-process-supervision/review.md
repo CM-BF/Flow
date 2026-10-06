@@ -1,6 +1,6 @@
 # OPS14 独立 review
 
-状态：NOT_STARTED
+状态：APPROVED；限定源码（APPROVED_SOURCE_LIMITED），最新两例 NOT_RUN，不是完整运行批准
 Review target commit：3097730ee1abbb054c09ae2ed14c998ebde3ef49
 Base：c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05
 Scope：tools/owned-process-supervision
@@ -10,3 +10,9 @@ Scope：tools/owned-process-supervision
 作者已执行：12 different 受控检查分轮（首 10/8、诊断 2/0、后 12/11、定向 1/1）及纯语法检查；详见证据。独立 reviewer 未执行；实际消费者迁移、PG / provider / 个人服务均未执行。无独审结论，空模板不表示通过。
 
 追加限制：newChildSession 必须正 TERM grace，childPidOnly 仍可为零。独立 reviewer 源码预读指出 EPERM 直接测试需显式正 grace，已原断言保留调整。2 例最小选择待资源，原 21:33:44 gate NOT_RUN，不声明当前新增例通过。
+
+## 唯一独立审查
+
+Reviewer：assignment_review / gpt-6-astra，2026-10-06 21:35:48 UTC。完整原 3 源与最终 2 文件增量已读，原 26 / 最终 30 bindings 全同，无剩余 P1/P2；0 reviewer 测试 / PG / provider / 项目写入。[原报告](../../docs/evidence/ops14/independent-source-review.json)与[绑定](../../docs/evidence/ops14/independent-source-review-bindings.json)原样保存。
+
+原 12 different 分轮证据保留；group grace 新反例与受影响 EPERM 用例因 fresh gate 未运行，不能报 13 passed / 2 passed。两真实包装器迁移继续未授权且未实施。只有追加原两例实际通过与必要独立核对后，才可请求模块完整接收。
