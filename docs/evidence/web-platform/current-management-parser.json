@@ -32,8 +32,8 @@
   "owner": "d01_owner（执行管理者）/ gpt-6-astra ultra",
   "branch": "codex/web-platform-management",
   "branchState": "in-progress；按轮验收，持续目标未宣称完成",
-  "updatedAt": "2026-10-06T08:50:00.000Z",
-  "updatedRecord": "2026-10-06 08:50 UTC / d7e接收READ；CONTEXTI与STEER正式并行",
+  "updatedAt": "2026-10-06T08:55:00.000Z",
+  "updatedRecord": "2026-10-06 08:55 UTC / main b1c2 clean；两层任务关联缺口已登记",
   "todos": [
     {
       "id": "WPF-001-01",
@@ -226,6 +226,12 @@
       "state": "in-progress",
       "owner": "w01_owner",
       "evidence": "CONTEXTI01 d7e/55fev1二十scope已开工，首ea1b/parser0；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)"
+    },
+    {
+      "id": "WPF-001-33",
+      "state": "in-progress",
+      "owner": "d01_owner",
+      "evidence": "WPF-DPERF02有界批量Git证明，root已批准四scope方案，尚未take；[提案](../../docs/evidence/web-platform/dperf02-proposal.json)"
     }
   ],
   "errors": [],
@@ -237,8 +243,8 @@
     "record": "PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批"
   },
   "reviewRecord": "[review.md](review.md)，本次固定发布APPROVED a5e500136438b197305339cbe0a5e10a196a4317；root2026-10-06 07:59 UTC；历史c075仅见归档，不覆盖本次",
-  "mainRecord": "管理独核main/origin32c371d389a913f8dd71c3bd8b98dd0697411256 clean；CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已main7106、六源码相同，66695c收口后b485 v2释放；READ527/2f858已正式main d7e，cd26404收口后c832 v2释放，CONTEXTI55fe v1正式接权。ExecutionLead最新回执个人center/runner32c accepting v9、SVC02关闭、用户实际请求完成/operator0query；本管理未服务验证、无新增query授权。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批",
-  "next": "以下为本次当前分配；原a5/33bd发布内容保留07:56截止时点；当前plan/status管理增量逐TODO对应，后继不继承原发布审查。旧观察仍见[07:49历史账本](../../docs/evidence/web-platform/current-owner-observation-0749.json)，不得沿旧权续写。\n| 当前工作 | 唯一来源、范围与下一步 |\n| WPF-001 | d01_owner / web-platform-management，632a7149 v2，管理两目录；当前必要事件集中收口 |\n| WPF-CONTEXTI01 | w01_owner / web-context-integration，55fe7c81 v1，固定d7e二十scope；首ea1b已建立，实施中 |\n| WPF-STEER01 | workspace_panels_owner / web-steering-control，2bae5026 v1，固定PUBLIC_READY ca4八新scope；首a3bf已建立，实施中 |\n| D05FIT01 | d01_owner / dashboard-architecture-first-fit，5dc3360e v1四scope已冻结；0ac7获root批准/final4e24 clean pushed，等main |",
+  "mainRecord": "当前main/origin b1c2e39837c2208e6fc2c59a80e16797f26448b5 clean（本管理08:54实核）；D05FIT target尚非祖先且两路径不同，保留claim待接收；历史32c接收CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已main7106、六源码相同，66695c收口后b485 v2释放；READ527/2f858已正式main d7e，cd26404收口后c832 v2释放，CONTEXTI55fe v1正式接权。ExecutionLead最新回执个人center/runner32c accepting v9、SVC02关闭、用户实际请求完成/operator0query；本管理未服务验证、无新增query授权。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批",
+  "next": "以下为本次当前分配；原a5/33bd发布内容保留07:56截止时点；当前plan/status管理增量逐TODO对应，后继不继承原发布审查。旧观察仍见[07:49历史账本](../../docs/evidence/web-platform/current-owner-observation-0749.json)，不得沿旧权续写。\n| 当前工作 | 唯一来源、范围与下一步 |\n| WPF-001 | d01_owner / web-platform-management，632a7149 v2，管理两目录；当前必要事件集中收口 |\n| WPF-CONTEXTI01 | w01_owner / web-context-integration，55fe7c81 v1，固定d7e二十scope；首ea1b已建立，实施中 |\n| WPF-STEER01 | workspace_panels_owner / web-steering-control，2bae5026 v1，固定PUBLIC_READY ca4八新scope；首a3bf已建立，实施中 |\n| WPF-DPERF02 | d01_owner，四scope方案已批准，待独立树/fresh take；详见候选证据 |\n| D05FIT01 | d01_owner / dashboard-architecture-first-fit，5dc3360e v1四scope已冻结；0ac7获root批准/final4e24 clean pushed，等main |",
   "risks": "",
   "decisions": ""
 }

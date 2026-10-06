@@ -11,7 +11,13 @@
 | Worktree / branch | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` / `codex/web-platform-management` |
 | 固定基线 | `d444608ab6c796c731e44e51a892868bf39bec2a`；2026-10-06 02:07 UTC 核验 main clean 后创建，不追逐 main 后续 HEAD |
 | 独占写入 | `plans/web-platform/**`、`docs/evidence/web-platform/**`；不写 W01、其他 owner、共享契约或 main |
-| 父目标 | [FLOW-001](../flow-001-architecture/plan.md)、[完整验收矩阵](../flow-001-architecture/full-plan-matrix.md)；W01为历史起点；当前实现按下方每片唯一owner/status与D04 scope推进 |
+| 项目目标追溯（非第三层task） | [FLOW-001](../flow-001-architecture/plan.md)、[完整验收矩阵](../flow-001-architecture/full-plan-matrix.md)；W01为历史起点；当前实现按下方每片唯一owner/status与D04 scope推进 |
+
+## 当前两层任务关系与通信
+
+WPF-001 是既有 Web 大task的完整需求/验收账本；本组实际片段直接归 WPF-001，不把 FLOW-001 项目追溯再作为task父层。当前活跃sub-task的唯一status填写 `所属大task` 的WPF-001稳定ID与本权威plan链接、`co-lead` 为 Web /root（执行管理 d01_owner）。仅合法owner在安全点补当前源，不机械改历史。GO定用户结果/优先级/边界/依赖/完整验收，co-lead自主子片/人员/审查/提交推送与受控集成；本项目main仍由ExecutionLead独占集成。
+
+最新用户“各lead防overlap、take在dashboard标清楚”由root重申，沿U08逐字原话与REQ37，不伪造新原话。普通ready/review/merge/source/claim只status→dashboard；co-lead→GO每个完整大task仅需其裁决的独立blocker一次与全部验收Done一次，覆盖旧宽泛例外。内部worker通信及co-lead直接依赖协调保留。
 
 ## 用户原话与来源轮次
 
@@ -169,6 +175,7 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 - [ ] **WPF-001-30** D05FIT01四scope首次适配：0ac7已审/final4e24 pushed，等main；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md)。
 - [ ] **WPF-001-31** WPF-STEER01沿REQ44独立控制模块：ca4正式输入，2baev1八scope已开工；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)。
 - [ ] **WPF-001-32** WPF-CONTEXTI01沿REQ42实际知识UI：d7e完整base，55fev1二十scope已开工；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。
+- [ ] **WPF-001-33** WPF-DPERF02批量Git树证明：已批准独立四scope，保留2MiB/5s和缺失/unknown语义；[有界方案](../../docs/evidence/web-platform/dperf02-proposal.json)，新take后实现。
 
 ## 验收、风险与持续方式
 

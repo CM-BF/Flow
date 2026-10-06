@@ -91,3 +91,11 @@ D05FIT01固定0ac7a127f06d534f6514a98331f533e42993378a，final4e24cf666b73eb9d3b
 新协作规则覆盖前文旧降噪流程：默认唯一status→dashboard。普通进展/完成/review/merge/metadata/claim不再逐条私信、不多路转发或确认套确认；只有跨lead接口/范围/资源裁决、紧急用户影响、看板不能解除的真实阻塞才一次短消息+canonical。登记/集成精确target正常push并在本权威当前队列可见，由ExecutionLead看板领取；已有收到无需ACK。若确有新source登记缺失令Lead不可见，才一次指出。原take/fresh版本/独审/主线独占不变。
 
 DPERF02下一独立有界只读方案见[四scope候选](dperf02-proposal.json)：不改旧DPERF01，不取4320压力样本；固定d7e proof当前每scope一次ls-tree。建议合批先走原2MiB上限，仅overflow/E2BIG按scope二分串行回退，单路径超限仍unknown而非missing，完整mode/type/OID/path及requireEveryPath保留；最多128叶/255次尝试、原每叶2MiB输出边界不变，不无界增buffer/并发/跨snapshotcache。现08:49:33.447Z live四scope无冲突、编号未占用，未建新树/take/写实现。后续需真实临时Git边界测试，再声明调用数变化；不能把root旧13entry probe当正式实现验收。
+
+## 2026-10-06 08:55 UTC 两层规则集中收口
+
+main b1c2 clean已读取根AGENTS/plans/OPS最终规则；新严格blocker+Done预算覆盖08:50较宽例外，非普通进度通知许可。WPF-001为现有大task，当前CONTEXTI/STEER及新DPERF直接挂此稳定ID与co-lead；已告两合法owner安全点更新，旧已释放记录不批改。原U08用户逐字保留，新重申注明root来源。
+
+[root唯一08:53采样摘要](two-level-observation.json)为101源/15 activewriter（非agent数）、0overlap；CONTEXTI/STEER仅claim可见未注册进度。当前main解析器/UI缺所属大task/co-lead关联，D05FIT证据路径映射不符，登记现有dashboard backlog并由原owner修复，不抢registry/UI scope、不称已显示。管理没有重复API。D05FIT未被本轮main接收，祖先检查非0且两实现路径不同，原claim保留；不重产品测试。
+
+DPERF02方案已root批准，按当前实际已发布main b1c2核范围后独立树/fresh take；保留原bounded设计，不跟踪moving main。技能复用本地find-skills、codebase-design、clean-code，批量实现隐藏在现tree seam，不新增公共API或第三种状态源。

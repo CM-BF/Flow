@@ -1,0 +1,25 @@
+{
+  "source": "root read-only GET /api/snapshot; manager did not refetch",
+  "observedAt": "2026-10-06T08:53:11.559Z",
+  "sources": 101,
+  "ledger": "available",
+  "activeWriterClaims": 15,
+  "claimMeaning": "not concurrent agents",
+  "conflicts": [],
+  "sourceHeads": {
+    "D05FIT01": "4e24cf666b73eb9d3b4cd82a5fadc97e5887a0c5",
+    "WPF-001": "4f990938c8f12f27f2eb2ad29ba537efd02364ed"
+  },
+  "clean": true,
+  "issues": [],
+  "unregisteredAssignments": [
+    "WPF-CONTEXTI01",
+    "WPF-STEER01"
+  ],
+  "backlog": [
+    "Existing dashboard owner to register current ContextI/Steer source; claim-only visibility not progress card",
+    "main b1c2 status.mjs/public app.js no parent/co-lead parsing; fields in source do not imply rendered association",
+    "D05FIT registry evidenceDir docs/evidence/d05fit01 differs actual docs/evidence/d05-first-fit; registry owner correction"
+  ],
+  "parentMapping": "WPF-001 canonical Web bigtask; FLOW-001 project provenance only"
+}
