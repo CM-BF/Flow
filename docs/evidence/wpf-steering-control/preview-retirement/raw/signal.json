@@ -1,0 +1,45 @@
+{
+  "state": "SIGTERM_SENT_NOT_YET_EXIT_CONFIRMED",
+  "pid": 46425,
+  "scope": "Exact owned Node PID only",
+  "identity": {
+    "args": [
+      "ps",
+      "-p",
+      "46425",
+      "-o",
+      "pid=,ppid=,pgid=,lstart=,user=,command="
+    ],
+    "exitCode": 0,
+    "stdout": "46425 46236 45304 Tue Oct  6 01:54:43 2026     citrine /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/conversation-steering.fixture.ts --steering-preview\n",
+    "stderr": ""
+  },
+  "cwd": {
+    "args": [
+      "lsof",
+      "-a",
+      "-p",
+      "46425",
+      "-d",
+      "cwd",
+      "-Fn"
+    ],
+    "exitCode": 0,
+    "stdout": "p46425\nfcwd\nn/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control\n",
+    "stderr": ""
+  },
+  "port": {
+    "args": [
+      "lsof",
+      "-nP",
+      "-iTCP:63251",
+      "-sTCP:LISTEN",
+      "-t"
+    ],
+    "exitCode": 0,
+    "stdout": "46425\n",
+    "stderr": ""
+  },
+  "at": "2026-10-06T22:48:20.695201+00:00",
+  "sentAt": "2026-10-06T22:48:20.695816+00:00"
+}

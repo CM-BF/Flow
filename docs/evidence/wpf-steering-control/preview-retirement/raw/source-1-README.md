@@ -1,13 +1,5 @@
 # WPF-STEER01 handoff
 
-**当前预览：已退役。** 原 `http://127.0.0.1:63251/` 于 2026-10-06 22:48:20.695816 UTC 仅向即时核实的原 Node PID `46425` 发送 SIGTERM；原 session `13237` 实际退出 `143`，随后精确 PID、原 PGID 和本服务三端口均无残留。`143` 不证明异步 close handler 每条语句均已完成。
-
-[实际退役回执](preview-retirement/retirement-receipt.json) · [root 限定证据审查](preview-retirement/root-retirement-review.json) · [本树原始身份/退出记录](preview-retirement/raw/preflight.json)。本次只更新生命周期元数据；未重启、删除依赖/cache 或重跑产品检查。恢复需另获授权并核依赖/资源，以下旧启动命令不代表当前已验证可运行。
-
-## 历史交付与原预览说明
-
-以下原默认保留、URL、启动方式、检查和功能范围完整保留为历史；当前运行事实以上述退役记录为准。
-
 Implementation `b2cbbca5f823e122ec4e234e16fb7ef45a063af9`; base `ca4c3f723d2f786601e7cc9bd0363d756d974810`; branch `codex/web-steering-control`. Independent control and UI for task-bound steering, independently APPROVED by root on 2026-10-06 after 09:07:34 UTC (limited to this module). [Validation](validation.md), [interface](interface.md), [quality](quality.md), [claim](take-receipt.json). Unique [plan](../../../plans/wpf-steering-control/plan.md), [status](../../../plans/wpf-steering-control/status.md), [review](../../../plans/wpf-steering-control/review.md).
 
 Retained preview: http://127.0.0.1:63251/ (session 13237, owner workspace_panels_owner). Independent public HTTP fixture; 0 real models/DB. It is not the product App or personal center. Existing previews stay running.

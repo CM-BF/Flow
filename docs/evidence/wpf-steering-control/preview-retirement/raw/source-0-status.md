@@ -1,10 +1,8 @@
 # WPF-STEER01 状态
 
-**当前预览：已退役。** 原 `http://127.0.0.1:63251/` 于 2026-10-06 22:48:20.695816 UTC 仅向即时核实的原 Node PID `46425` 发送 SIGTERM；原 session `13237` 实际退出 `143`，随后精确 PID、原 PGID 和本服务三端口均无残留。`143` 不证明异步 close handler 每条语句均已完成。 [回执](../../docs/evidence/wpf-steering-control/preview-retirement/retirement-receipt.json)，[限定审查](../../docs/evidence/wpf-steering-control/preview-retirement/root-retirement-review.json)。旧默认保留说明只属历史，不是新的启动承诺。
-
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 22:52:18 UTC / 历史 main 核验 2026-10-06 09:11:49 UTC / 77c420cf9ee5de0291ea93014b6ea11aead6fab5 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:11:49 UTC / 77c420cf9ee5de0291ea93014b6ea11aead6fab5 |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -25,7 +23,7 @@
 | 实现目标 | b2cbbca5f823e122ec4e234e16fb7ef45a063af9 |
 | 实现范围 | apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversation-steering/steering.css, apps/web/test/conversation-steering.browser.ts, apps/web/test/conversation-steering.fixture.ts, apps/web/test/conversation-steering.test.ts |
 | Review | [review.md](review.md)，APPROVED b2cbbca5f823e122ec4e234e16fb7ef45a063af9 |
-| D04 claim（原产品历史） | 2bae5026-8490-4880-8f43-74bd1b9bb863 v1 active，2026-10-06T08:45:01.297Z COMMITTED |
+| D04 claim | 2bae5026-8490-4880-8f43-74bd1b9bb863 v1 active，2026-10-06T08:45:01.297Z COMMITTED |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -42,11 +40,3 @@
 09:08:06 UTC fresh D04 ledger available：原 claim v1 active、8 scopes/owner/branch 一致（[摘录](../../docs/evidence/wpf-steering-control/final-live-claim.json)）。独审完成后的唯一变化为本任务metadata；main接收与实际聚合部署未据此推定。
 
 2026-10-06 09:11:49 UTC：固定main/origin clean、target祖先和六source hash已独立核实；准确记录只含本模块。个人static/b1c/v12未变，preview63251保留。提交/push后全8scope停止写入，按fresh version原子release，回执交执行管理保存；释放后不追写本canonical。
-
-## 本次生命周期元数据收口（2026-10-06 22:52:18 UTC）
-
-本次新 metadata claim `40ec6625-2a14-4033-bc26-0c223e1f7677` v1，仅覆盖原status、own README和preview-retirement目录；原产品released写权未恢复。本人live观察 `2026-10-06T22:50:37.846481+00:00` 与owner/branch/三scope一致。[新take原件](../../docs/evidence/wpf-steering-control/preview-retirement/metadata-take-receipt.json)。本次正常commit/push后这三scope全部停写，manager另行fresh CAS release，释放后不追写。
-
-固定原HEAD `01842a87f768bd28ce7370681ff02d7b834765f7` 下的源码、原启动命令与可取得session增量log已归档；不是完整启动日志重建。原功能TODO、已审实现目标、原检查和主线事实不扩大。本次无产品/parser/HTTP/PG/Chrome/模型检查，无free采样、缓存/依赖删除或服务重启；其他明确保留服务未操作。root只对三精确preview退役证据作限定接受，不是产品新approval。生命周期事实交管理更新canonical，未另采dashboard。
-
-上述原交付段内“保留预览”等措辞均为此前时点的历史规则；当前本服务已退役。未来重放必须经批准并重新核依赖/资源，不能借已NOT_RUNTIME_READY的web-workspace-cache依赖。
