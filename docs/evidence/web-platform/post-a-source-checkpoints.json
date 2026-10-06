@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-06T15:37:55.768548+00:00",
+  "release03": {
+    "implementation": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+    "metadata": "d83701f81d9e0ee4d6d2c000f749ba9f7ac8e83c",
+    "observedClean": true,
+    "sourceOnly": true,
+    "review": "NOT_STARTED; root local source review pending",
+    "interface": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/backend-input-interface.md",
+    "gate": "backend {registered absolute realpath,exact40hex head,exact40hex tree}; fixed362 diff exactly approved store bytes; actual factory imported from supplied path; no arbitrary moving source",
+    "newRuntime": 0,
+    "remainingRuntimeMs": 176126,
+    "actualTuple": "PENDING_LEAD",
+    "Bmode": "No independent B-only yet; proposal review separate; do not run all under B-only label"
+  },
+  "recovery01": {
+    "implementation": "02d5a49aa2f17261d7dfcc9590f433c84b10defe",
+    "metadata": "4b2bc663e33de9d231ce795b6363e57172f87c9e",
+    "localEqualsLsRemote": true,
+    "observedClean": true,
+    "delta": "Owner reports2production+2tests; root delta review pending, no manager product approval",
+    "claim": "6ff v4 original21",
+    "formalReview": "NOT_STARTED",
+    "directCasesPrepared": 24,
+    "newTestsExecuted": 0,
+    "priorDirect": "Only4ba20/20 controlledIDB/mockfetch2.540s proven",
+    "typesRemainingSeconds": 7.186,
+    "directRemainingSeconds": 27.46,
+    "runner": "Must rebind exact new checkpoint/hash/config and fresh authorized resource window before run"
+  }
+}

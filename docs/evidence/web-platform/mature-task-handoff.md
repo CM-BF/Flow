@@ -18,6 +18,10 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 ## 当前优先队列（当前安全点；以下较早时点只作历史）
 
+**已释放旧树≤4只读候选，交Lead最终核定后操作**：[清单/范围与限制](released-sparse-candidates-intake.json) / [原固定blob与进程/依赖观察](released-sparse-candidates/report.json)。web-release-type-fix、dashboard-human-summary、dashboard-git-snapshot、web-workspace-cache均delivered/main、clean、15:34:17 fresh ledger released/无active；单次lsof/ps与8,215常规package链接未见消费者。仅固定origin/main22d5相同blob的非自身历史evidence副本候选，保source/tests/rules/plans/D04/完整own raw/所有fixtures/deps及source-runtime引用目录。全虚拟store/任意外部脚本未穷尽，Lead如发现unknown即KEEP；逻辑39.51/41.68/42.08/39.71MB不能当实际可回收。管理0sparse/删除/df/产品运行，ATTACHI/CONTEXTI明确KEEP。
+
+**新源码安全点，均未新增行为实跑**：[owner输入与边界](post-a-source-checkpoints.json)。Recovery02d5/final4b2bc clean已push，原21内composer接管P2窄修供root审，当前24direct准备、browser NOT_RUN，正式NOT_STARTED；旧20/20证据不扩张。RELEASE dbaa/finald837 clean提供严格backend path/head/tree私有输入，root源码审待结论，实际immutable tuple/deps仍待Lead；不改旧两红或3,874ms预算，无独立B-only模式/无新run gate。
+
 **同段只读审查已归档**：[724 worker P2与12固定hash](recovery01-724-worker-review-intake.json)确认Files ready不能代官方composer接管，原panels21范围修源，22direct/browser未运行；root724 RB1–3仅source addressed。连接页[十固定源第二意见](connection-plugin-2498-second-opinion/report.md)归REQ22/23/WPF-001-05：app主题owner、有效lease navigation、精确disposer、disable/revoke/dispose分开；handler后只有activation-current，原W01报告字节保留且当前候选已纠正。无新claim、产品写权或运行窗口。
 
 **Lead最新15:31:45资源回执**：F01 O14一次准入available1,098,022,912B低于1,107,296,256B，0PG/0test并立即交回窗口；不是本组新采样或新A准入。严格362+cde三行组合仍source-only准备，tuple未定，本组不占空窗/不轮询。W01原负证据final **676f677d58230c8d9982cbcddfd72136ab671cfe** normalpush/local=ls-remote/clean，两脚本仍432b；[最小重绑方案](release03-backend-rebind/report.md)在原四scope内，不改断言。现仅history/all两mode，all会重跑A，后续不能冒独立B-only；必须明确同固定成功A的phase方案。累计3,874ms冻结。
@@ -543,3 +547,5 @@ Root跨片约束及panels八点修订已合入[唯一接口候选](connection-re
 
 
 连接页preconnect/reauth插件真实覆盖新增固定f13双源证据，已并入原REQ22/23/WPF-001-05及[覆盖后继](conversation-plugin-coverage-research.md)；标记不冒实际贡献入口，不扩大Recovery21或阻当前源码，0运行。
+
+原REQ45/MATURE06-05：[GO官方dictation adapter研究](voice-official-adapter-go-research.json)归同层语音后继，优先现composer能力和单入口，真实转写/草稿代际/中文MIME/清理必须验；仅来源转述，无mic/provider/服务/claim，低于Recovery/发布。

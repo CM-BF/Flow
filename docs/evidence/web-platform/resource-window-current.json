@@ -23,10 +23,23 @@
     "historyStopBytes": 1090519040,
     "resourceLimitMeaning": "Admission margin and sampled stop, not PG/WAL/OS peak guarantee or hard quota",
     "freshAdmission": "release03-a-second-admission.json",
-    "actualRawReview": "release03-a-actual-362-review-root.json"
+    "actualRawReview": "release03-a-actual-362-review-root.json",
+    "nextSourceCandidate": {
+      "implementation": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+      "metadata": "d83701f81d9e0ee4d6d2c000f749ba9f7ac8e83c",
+      "observedClean": true,
+      "sourceOnly": true,
+      "review": "NOT_STARTED; root local source review pending",
+      "interface": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/backend-input-interface.md",
+      "gate": "backend {registered absolute realpath,exact40hex head,exact40hex tree}; fixed362 diff exactly approved store bytes; actual factory imported from supplied path; no arbitrary moving source",
+      "newRuntime": 0,
+      "remainingRuntimeMs": 176126,
+      "actualTuple": "PENDING_LEAD",
+      "Bmode": "No independent B-only yet; proposal review separate; do not run all under B-only label"
+    }
   },
   "recoveryDirect": {
-    "state": "First4ba20/20 completed; second22direct/browser NOT_RUN. Source-only P2 repair continues; new run requires fresh authorized window and rebound manifest.",
+    "state": "First4ba20/20 completed; 02d5 owner composer-handoff source fix pending root delta review,24cases/browser NOT_RUN; new manifest/window required",
     "existingBudget": "One fixed test/onefork,30s total incl>=5s cleanup each,own/tmp8MiB/log2MiB,start>=1GiB+32MiB/stop<=1GiB+16MiB",
     "startConditions": [
       "New material shared-window/resource notice",
@@ -66,7 +79,22 @@
       "businessAndDirectTestBase": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
       "preflightRebindRequired": true,
       "record": "arc-recovery-source-intake.json",
-      "review": "recovery01-724-supervisor-review-root.json"
+      "review": "recovery01-724-supervisor-review-root.json",
+      "nextSourceFix": {
+        "implementation": "02d5a49aa2f17261d7dfcc9590f433c84b10defe",
+        "metadata": "4b2bc663e33de9d231ce795b6363e57172f87c9e",
+        "localEqualsLsRemote": true,
+        "observedClean": true,
+        "delta": "Owner reports2production+2tests; root delta review pending, no manager product approval",
+        "claim": "6ff v4 original21",
+        "formalReview": "NOT_STARTED",
+        "directCasesPrepared": 24,
+        "newTestsExecuted": 0,
+        "priorDirect": "Only4ba20/20 controlledIDB/mockfetch2.540s proven",
+        "typesRemainingSeconds": 7.186,
+        "directRemainingSeconds": 27.46,
+        "runner": "Must rebind exact new checkpoint/hash/config and fresh authorized resource window before run"
+      }
     }
   },
   "groupWindowOwnership": {

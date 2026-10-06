@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:32 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:38 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,7 +17,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | RELEASE03 fixed362实际HTTP两项history失败，3.874秒/清理完成/窗口归还；Recovery724源码审查与P2接管修复继续，22direct/browser未跑 |
+| 当前产出 | RELEASE03 fixed362实际两history红/清理完成/窗口归还，原raw封存；Recovery02d5原范围P2修源已固定待窄审，24direct/browser未跑；四棵released旧树只读候选交Lead |
 | 下一可用交付 | Lead提供immutable362+已审三行修复新HEAD/tree后，按剩余176.126秒及fresh条件先A再B；DPERF04候选不抢发布优先级 |
 | 当前阻塞 | ACTIVE: backend362两项真实history不兼容阻止发布，待原backend owner固定修复组合及复验；Recovery新增行为/真实IDB与浏览器仍待验证；轻源码正常，个人版本未切 |
 | 需用户决定 | NONE |

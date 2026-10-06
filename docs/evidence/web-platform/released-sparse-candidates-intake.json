@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-06T15:37:55.768548+00:00",
+  "state": "MAXIMUM_FOUR_PRELIMINARY_CANDIDATES_FOR_LEAD_FINAL_SAFETY_CHECK",
+  "authority": "GO authorization relayed by root; Lead sole Git operator only. This report is not permission to bypass consumer uncertainty or execute a manager sparse mutation.",
+  "archives": [
+    {
+      "path": "released-sparse-candidates/report.json",
+      "bytes": 58331,
+      "sha256": "11a74ad995bd017330e3123eadd9fdcd9cdcbd27c856d81835ecae0f3445c5f5"
+    },
+    {
+      "path": "released-sparse-candidates/web-workspace-cache-eligible.json",
+      "bytes": 341574,
+      "sha256": "bea2573c85b8ba085c154534fd09676cc1b5d817eaebe795e74cf311465eef49"
+    },
+    {
+      "path": "released-sparse-candidates/dashboard-human-summary-eligible.json",
+      "bytes": 357231,
+      "sha256": "b7e2ecfbde1fc58f7e6be8d500bc74a50e540842d2f14c9d82a9957e25f7cb4e"
+    },
+    {
+      "path": "released-sparse-candidates/web-release-type-fix-eligible.json",
+      "bytes": 330819,
+      "sha256": "2523960552ed8ce55b6864a50b0c0a96b064bf8a6636e4bdcf1078fa11de261c"
+    },
+    {
+      "path": "released-sparse-candidates/dashboard-git-snapshot-eligible.json",
+      "bytes": 390346,
+      "sha256": "800c55c2ea4b23b736e1d3582eea36753e04de4aed0274ff7d0faaf59c0d7a4a"
+    }
+  ],
+  "checks": {
+    "releasedDeliveredClean": 4,
+    "activeClaims": 0,
+    "matchingProcessConsumersObserved": 0,
+    "directExternalDependencyLinksObserved": 0,
+    "directPackageSymlinksInspected": 8215
+  },
+  "limits": {
+    "worktrees": 196,
+    "symlinksInspected": 8215,
+    "errors": [],
+    "scope": "Only direct package/namespace links in registered root/apps/packages node_modules, without target traversal; physical virtual-store internals and arbitrary external scripts not exhaustively searched. A broader whole-tree walk was stopped after roughly60s without project writes; no absence conclusion is drawn from that interrupted walk. All dependencies/source/fixtures remain preserved, and Lead must recheck actual owner/process/operation closure before any sparse operation."
+  },
+  "preserve": [
+    "all source/tests/rules/plans/D04",
+    "all fixture paths",
+    "all node_modules/stores and ignored/untracked content",
+    "entire docs/evidence/wpf-release02",
+    "all source/test referenced evidence top directories",
+    "all evidence absent/different from fixed origin/main blob"
+  ],
+  "noQualifiedIfUnknown": "Any active or uncertain external consumer/fixture closure found by final owner check =>KEEP; do not use clean/released as substitute for consumer check.",
+  "excluded": [
+    "web-attachment-production:Recovery/RELEASE third-party dependencies borrowed",
+    "web-context-integration:two known live fixtures"
+  ],
+  "operation": {
+    "sparse": 0,
+    "deletion": 0,
+    "freeSamples": 0,
+    "productRuntime": 0,
+    "newClaim": 0
+  },
+  "logicalNotPhysical": "Candidate bytes only compare eligible materialized regular historical evidence with fixed origin/main blob. No predicted actual free-space gain; all docs/evidence own/runtime-referenced directories and nonmatching blobs retained."
+}

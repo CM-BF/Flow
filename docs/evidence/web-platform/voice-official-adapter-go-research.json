@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-06T15:38:26.769631+00:00",
+  "mapping": [
+    "WPF-REQ-45",
+    "WPF-MATURE-06-05"
+  ],
+  "source": "GO read-only research relayed by root; manager did not independently run code or microphone",
+  "reportedInputs": [
+    "Local ai-elements skill and SpeechInput reference read by GO",
+    "Main thread.aui.tsx:502 already capability Dictate/Stop; ConversationThread config currently attachments adapter",
+    "Installed assistant-ui react0.15.23 exports DictationAdapter and WebSpeechDictationAdapter per GO source inspection"
+  ],
+  "candidate": "Prefer official composer dictation adapter, preserve one microphone UI. SpeechInput onAudioRecorded requires an actual transcription backend; button/disabled rendering is not completed speech behavior.",
+  "acceptance": [
+    "Start/stop/transcription are separate states; result only to current authorized pane editable draft, explicit Send/Queue",
+    "Cancel/pane switch/close/replaced draft invalidate late results, release mic subscriptions and resources",
+    "Chinese transcription and actual MIME handling, actionable failure preserves text",
+    "Any center provider uses existing auth/cancel/limits; no provider key in browser",
+    "SpeechRecognition may use remote processing, selected mode must be explicit"
+  ],
+  "sources": [
+    "https://www.assistant-ui.com/docs/guides/dictation",
+    "https://elements.ai-sdk.dev/components/speech-input",
+    "https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition"
+  ],
+  "state": "READ_ONLY_FOLLOWUP_NOT_IMPLEMENTED",
+  "priority": "Below Recovery and release compatibility",
+  "operation": {
+    "micAccess": 0,
+    "paidCalls": 0,
+    "newService": 0,
+    "productTests": 0,
+    "claim": 0,
+    "productWrites": 0
+  }
+}

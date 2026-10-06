@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:32 UTC |
+| 最近更新 | 2026-10-06 15:38 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 4ba受控direct20/20保原证据；724 supervisor RB1–3源码闭合，worker新增恢复附件到官方composer接管P2由原owner修源，未运行 |
-| 下一可用交付 | 固定原范围P2修复后，以新manifest与fresh窗口核第二22direct/真实App完整材料恢复；源码审查不代行为通过 |
+| 当前产出 | 4ba受控direct20/20保原证据；724 supervisor源码闭合，02d5恢复附件到官方composer接管P2窄修已固定待root审，当前24case/browser未跑 |
+| 下一可用交付 | 固定原范围P2修复后，以新manifest与fresh窗口核当前24direct/真实App完整材料恢复；源码审查不代行为通过 |
 | 当前阻塞 | ACTIVE: 2498定向行为与真实IDB/HTTP/browser待资源及中心三语义门槛；轻源码可继续，当前无测试窗口 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -31,7 +31,7 @@
 | WPF-MATURE-06-02 | in-progress | Web co-lead | admission仅快照非许可，POST重验、原key unknown、receiptRevision更新、received不冒模型遵从；模块和App接线分别验收。 |
 | WPF-MATURE-06-03 | in-progress | Web co-lead | 成功回复默认入口收敛，error/unknown/decision常显；390须区分侧栏开/关场景，自然状态/Details按需绑定普通hi、stream/tool、queue等待、断线unknown四旅程；ACTIVITYREAD仅展开活动区，queue/stream/react与全组合仍开放；正文规则不冒工程Verified，产物版本/source未绑定须限定或unknown，关联ENG-001后继；[细目](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。 |
 | WPF-MATURE-06-04 | in-progress | Web co-lead | 下一完整旅程优先：有效期刷新/重开同中心会话、草稿及未决原identity；离线/认证过期/拒绝可行动提示，重认证不自动重投，logout≠cancel；真实HTTP+流、多tab/中心/撤销/重启/lostACK，auth与发送恢复独立Module。中心native_center_owner035119fd v1九scope已COMMITTED；panels RECOVERY01已新21scope COMMITTED并正式派工；个人服务不动/0provider，完整验收见plan。 |
-| WPF-MATURE-06-05 | pending | Web co-lead | 后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿，无自动模型调用。 |
+| WPF-MATURE-06-05 | pending | Web co-lead | 后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿；[GO官方adapter候选](../../docs/evidence/web-platform/voice-official-adapter-go-research.json)仅只读后继，无mic/自动模型调用。 |
 | WPF-MATURE-06-06 | pending | Web co-lead | 实际App fixture覆盖失败/恢复/双pane；明确预算后单次真实provider观察，至少两次正文增长才称增量，没有partial如实记录不补query。 |
 
 ## 依赖与领取

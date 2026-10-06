@@ -91,3 +91,5 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 原06-04持久化与性能边界的[primary-doc研究](../../docs/evidence/web-platform/recovery01-idb-primary-research.json)区分strict durability hint、单request成功、transaction complete及StorageManager.persist权限：继续以严格事务complete作为发送屏障，不为性能默改relaxed，也不自动弹持久权限。未来先测慢存储pending writes/flush延迟，再判断安全合并；真实browser的durability/abort仍须实测，受控event-port不证明物理持久性。无新增slot/claim/安装/本轮产品执行。
 
 2026-10-06 15:32 原06-04/RECOVERY01窄审：root724 supervisor的RB1–3仅SOURCE_ADDRESSED；[独立worker源审](../../docs/evidence/web-platform/recovery01-724-worker-review-intake.json)新增P2恢复附件ready未保证官方composer接管，交原21唯一writer修复并保真实有序refs断言。非运行复现，正式review仍NOT_STARTED，第二22direct与browser未跑，无新增测试窗口。
+
+2026-10-06 原REQ45/06-05后继补充：[GO官方适配器只读研究](../../docs/evidence/web-platform/voice-official-adapter-go-research.json)。优先现官方composer DictationAdapter与已有Dictate/Stop能力，不再做第二mic入口；SpeechInput回调需要实际转写后端，按钮/disabled不是完成。录音/转写分状态，结果只进入当前pane可编辑稿，用户明确Send/Queue；取消/切pane/关闭/替换稿后迟到失效、清理mic订阅、中文/MIME与文本退路必须真验。SpeechRecognition可能远端处理，模式明确；中心provider复用认证/取消/限额，不给浏览器key。仅归GO已核，管理未调用mic/服务/产品，低于恢复与兼容，不新增task/claim。

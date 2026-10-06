@@ -1,0 +1,1623 @@
+{
+  "at": "2026-10-06T15:36:39.787347+00:00",
+  "method": "Read-only existing approved reversible sparse policy; no sparse config mutation, no file deletion or space sample",
+  "maximum": 4,
+  "mainBlobComparison": "22d5ca67159b35bb794b2711cf6df0cb905b92e8",
+  "ledgerObservedAt": "2026-10-06T15:34:17.105Z",
+  "processObservation": {
+    "lsofExit": 0,
+    "lsofStderr": "",
+    "psExit": 0,
+    "snapshotOnly": true
+  },
+  "externalReferenceObservation": {
+    "worktrees": 196,
+    "symlinksInspected": 8215,
+    "errors": [],
+    "scope": "Only direct package/namespace links in registered root/apps/packages node_modules, without target traversal; physical virtual-store internals and arbitrary external scripts not exhaustively searched. A broader whole-tree walk was stopped after roughly60s without project writes; no absence conclusion is drawn from that interrupted walk. All dependencies/source/fixtures remain preserved, and Lead must recheck actual owner/process/operation closure before any sparse operation."
+  },
+  "candidates": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix",
+      "branch": "codex/web-release-type-fix",
+      "head": "fed5bcdaf84c9d985ce64759c7e1dd82de8da65a",
+      "clean": true,
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix/plans/wpf-release02-tuple-types/status.md",
+      "canonicalSha256": "28b8d2c22c02c456ea583645087bf7f2a2c9f2be57f06346cc18be19cc41c751",
+      "delivered": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/test/web-release-compatibility.fixture.ts",
+            "docs/evidence/wpf-release02",
+            "plans/wpf-release02-tuple-types"
+          ],
+          "state": "released",
+          "branch": "codex/web-release-type-fix",
+          "origin": "new",
+          "taskId": "WPF-RELEASE02",
+          "worker": "w01_owner",
+          "claimId": "03323bce-4e6b-4115-90f1-ec5db5d98a1e",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix",
+          "createdAt": "2026-10-06T11:07:28.265Z",
+          "updatedAt": "2026-10-06T11:20:14.755Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "activeClaims": [],
+      "processConsumers": [],
+      "externalSymlinkConsumers": [],
+      "qualifiedForLeadFinalCheck": true,
+      "qualificationBoundary": "Preliminary candidate from delivered/released/clean, no observed live process or direct dependency link; sole Git operator must resolve any remaining external-consumer uncertainty before execution",
+      "decision": "CANDIDATE_FOR_LEAD_REVERSIBLE_SPARSE_ONLY",
+      "preserve": [
+        "all source/tests/rules/plans/D04",
+        "all fixture paths",
+        "all node_modules/stores and ignored/untracked content",
+        "entire docs/evidence/wpf-release02",
+        "all source/test referenced evidence top directories",
+        "all evidence absent/different from fixed origin/main blob"
+      ],
+      "runtimeEvidenceDirectories": [
+        "chat04",
+        "d02",
+        "d03",
+        "d04",
+        "d05-first-fit",
+        "d08",
+        "f01",
+        "i01",
+        "k01",
+        "k02",
+        "k03",
+        "o09",
+        "r02",
+        "tui01a",
+        "w01",
+        "web-platform",
+        "wpf-activity-i01",
+        "wpf-activity-readability",
+        "wpf-activity01",
+        "wpf-chat-readability",
+        "wpf-chat01",
+        "wpf-chat06-stream-integration",
+        "wpf-context-i01",
+        "wpf-context01",
+        "wpf-i01",
+        "wpf-m02",
+        "wpf-p01",
+        "wpf-perf02",
+        "wpf-profile-integration",
+        "wpf-profileux",
+        "wpf-queue01",
+        "wpf-release01",
+        "wpf-release02",
+        "wpf-renderer-i01",
+        "wpf-renderer01",
+        "wpf-steer-i01",
+        "wpf-steering-control",
+        "wpf-visual01",
+        "wpf-x03",
+        "x03"
+      ],
+      "runtimeReferences": [
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/web-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/native-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/native-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/playwright.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "chat04",
+          "sourceFile": "apps/server/src/conversation-queue/queue.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "chat04",
+          "sourceFile": "apps/server/src/conversation-queue/queue.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "tui01a",
+          "sourceFile": "apps/tui/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity01",
+          "sourceFile": "apps/web/test/conversation-activity.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-queue01",
+          "sourceFile": "apps/web/test/conversation-queue.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-perf02",
+          "sourceFile": "apps/web/test/workspace-window.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-renderer-i01",
+          "sourceFile": "apps/web/test/data-renderer-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity-readability",
+          "sourceFile": "apps/web/test/conversation-activity-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-visual01",
+          "sourceFile": "apps/web/test/visual-shell.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-steering-control",
+          "sourceFile": "apps/web/test/conversation-steering.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-context-i01",
+          "sourceFile": "apps/web/test/conversation-context-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-release01",
+          "sourceFile": "apps/web/test/web-release-compatibility.fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-perf02",
+          "sourceFile": "apps/web/test/performance-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/test/journey.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/context-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-observers-browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-renderer01",
+          "sourceFile": "apps/web/test/data-renderers.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-steer-i01",
+          "sourceFile": "apps/web/test/conversation-steering-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-x03",
+          "sourceFile": "apps/web/test/plugin-management-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat-readability",
+          "sourceFile": "apps/web/test/conversation-readability.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "x03",
+          "sourceFile": "apps/web/test/plugin-management/browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat06-stream-integration",
+          "sourceFile": "apps/web/test/conversation-stream-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity-i01",
+          "sourceFile": "apps/web/src/conversation-activity/native/tool.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-context01",
+          "sourceFile": "apps/web/test/conversation-context.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat01",
+          "sourceFile": "apps/web/test/conversation.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d03",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/src/components/workspace/ai-elements/terminal.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/context.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-real-center.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-profile-integration",
+          "sourceFile": "apps/web/test/execution-profile-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-i01",
+          "sourceFile": "apps/web/test/plugin-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/src/components/workspace/ai-elements/file-tree.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "d03",
+          "sourceFile": "apps/execution-dashboard/test/browser-check.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-profileux",
+          "sourceFile": "apps/web/test/execution-profiles.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "web-platform",
+          "sourceFile": "apps/execution-dashboard/test/human-proof.test.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/test/progress-smoke.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "o09",
+          "sourceFile": "apps/server/src/goal-native-executions/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "d05-first-fit",
+          "sourceFile": "apps/execution-dashboard/test/architecture-viewport.browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/migrate-assignments.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/migrate-assignments.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/package-fetch-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "d08",
+          "sourceFile": "apps/execution-dashboard/test/task-links.browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/goal-context-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "r02",
+          "sourceFile": "apps/runner/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/knowledge.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "r02",
+          "sourceFile": "apps/runner/probes/native.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/run-consumers.mjs"
+        }
+      ],
+      "eligibleHistoricalCopies": {
+        "files": 2025,
+        "logicalBytes": 39509502,
+        "meaning": "logical fixed/main-identical historical evidence copies only, not recoverable physical space"
+      },
+      "eligibleManifest": "web-release-type-fix-eligible.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary",
+      "branch": "codex/dashboard-human-summary",
+      "head": "2daf0706902d1611a6da4dc4a7ea674186720a1e",
+      "clean": true,
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary/plans/wpf-dashboard-summary/status.md",
+      "canonicalSha256": "e7048a8b1241734ce558609926009ba602f77bdebacd279dfdf45fb4dda21b46",
+      "delivered": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/public/app.js",
+            "apps/execution-dashboard/src/human.mjs",
+            "apps/execution-dashboard/test/human-summary.test.mjs",
+            "apps/execution-dashboard/test/task-links.browser.mjs",
+            "docs/evidence/wpf-dashboard-summary",
+            "plans/wpf-dashboard-summary"
+          ],
+          "state": "released",
+          "branch": "codex/dashboard-human-summary",
+          "origin": "new",
+          "taskId": "WPF-DASHSUM01",
+          "worker": "w01_owner",
+          "claimId": "fe63511a-8d99-4b0b-be09-a1efd971dd3d",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary",
+          "createdAt": "2026-10-06T11:43:40.838Z",
+          "updatedAt": "2026-10-06T11:58:33.433Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "activeClaims": [],
+      "processConsumers": [],
+      "externalSymlinkConsumers": [],
+      "qualifiedForLeadFinalCheck": true,
+      "qualificationBoundary": "Preliminary candidate from delivered/released/clean, no observed live process or direct dependency link; sole Git operator must resolve any remaining external-consumer uncertainty before execution",
+      "decision": "CANDIDATE_FOR_LEAD_REVERSIBLE_SPARSE_ONLY",
+      "preserve": [
+        "all source/tests/rules/plans/D04",
+        "all fixture paths",
+        "all node_modules/stores and ignored/untracked content",
+        "entire docs/evidence/wpf-dashboard-summary",
+        "all source/test referenced evidence top directories",
+        "all evidence absent/different from fixed origin/main blob"
+      ],
+      "runtimeEvidenceDirectories": [
+        "chat04",
+        "d02",
+        "d03",
+        "d04",
+        "d05-first-fit",
+        "f01",
+        "i01",
+        "k01",
+        "k02",
+        "k03",
+        "o09",
+        "r02",
+        "tui01a",
+        "tui01c",
+        "w01",
+        "web-platform",
+        "wpf-activity-i01",
+        "wpf-activity-readability",
+        "wpf-activity01",
+        "wpf-attach01",
+        "wpf-chat-readability",
+        "wpf-chat01",
+        "wpf-chat06-stream-integration",
+        "wpf-context-i01",
+        "wpf-context01",
+        "wpf-dashboard-summary",
+        "wpf-i01",
+        "wpf-m02",
+        "wpf-p01",
+        "wpf-perf02",
+        "wpf-profile-integration",
+        "wpf-profileux",
+        "wpf-queue01",
+        "wpf-release01",
+        "wpf-renderer-i01",
+        "wpf-renderer01",
+        "wpf-steer-i01",
+        "wpf-steering-control",
+        "wpf-visual01",
+        "wpf-x03",
+        "x03"
+      ],
+      "runtimeReferences": [
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/web-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/native-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/native-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "chat04",
+          "sourceFile": "apps/server/src/conversation-queue/queue.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "chat04",
+          "sourceFile": "apps/server/src/conversation-queue/queue.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "o09",
+          "sourceFile": "apps/server/src/goal-native-executions/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/context-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "r02",
+          "sourceFile": "apps/runner/probes/native.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "r02",
+          "sourceFile": "apps/runner/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/context.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/attachment-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/knowledge.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-attach01",
+          "sourceFile": "apps/server/src/attachments/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/package-fetch-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/goal-context-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/run-consumers.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/playwright.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity-i01",
+          "sourceFile": "apps/web/src/conversation-activity/native/tool.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/src/components/workspace/ai-elements/terminal.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/src/components/workspace/ai-elements/file-tree.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d03",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-steering-control",
+          "sourceFile": "apps/web/test/conversation-steering.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "d03",
+          "sourceFile": "apps/execution-dashboard/test/browser-check.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-dashboard-summary",
+          "sourceFile": "apps/execution-dashboard/test/task-links.browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "tui01a",
+          "sourceFile": "apps/tui/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "tui01c",
+          "sourceFile": "apps/tui/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-context-i01",
+          "sourceFile": "apps/web/test/conversation-context-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "web-platform",
+          "sourceFile": "apps/execution-dashboard/test/human-proof.test.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity01",
+          "sourceFile": "apps/web/test/conversation-activity.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "d05-first-fit",
+          "sourceFile": "apps/execution-dashboard/test/architecture-viewport.browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-queue01",
+          "sourceFile": "apps/web/test/conversation-queue.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-perf02",
+          "sourceFile": "apps/web/test/workspace-window.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/migrate-assignments.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/migrate-assignments.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-observers-browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/test/progress-smoke.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-renderer-i01",
+          "sourceFile": "apps/web/test/data-renderer-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-visual01",
+          "sourceFile": "apps/web/test/visual-shell.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity-readability",
+          "sourceFile": "apps/web/test/conversation-activity-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-perf02",
+          "sourceFile": "apps/web/test/performance-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-renderer01",
+          "sourceFile": "apps/web/test/data-renderers.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-release01",
+          "sourceFile": "apps/web/test/web-release-compatibility.fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-steer-i01",
+          "sourceFile": "apps/web/test/conversation-steering-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat-readability",
+          "sourceFile": "apps/web/test/conversation-readability.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/test/journey.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat01",
+          "sourceFile": "apps/web/test/conversation.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-real-center.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat06-stream-integration",
+          "sourceFile": "apps/web/test/conversation-stream-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-profileux",
+          "sourceFile": "apps/web/test/execution-profiles.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-profile-integration",
+          "sourceFile": "apps/web/test/execution-profile-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-context01",
+          "sourceFile": "apps/web/test/conversation-context.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-x03",
+          "sourceFile": "apps/web/test/plugin-management-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-i01",
+          "sourceFile": "apps/web/test/plugin-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "x03",
+          "sourceFile": "apps/web/test/plugin-management/browser.ts"
+        }
+      ],
+      "eligibleHistoricalCopies": {
+        "files": 2183,
+        "logicalBytes": 41677066,
+        "meaning": "logical fixed/main-identical historical evidence copies only, not recoverable physical space"
+      },
+      "eligibleManifest": "dashboard-human-summary-eligible.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot",
+      "branch": "codex/dashboard-git-snapshot",
+      "head": "7cc5f1cc9270ee067c8ad5924b948c45dde87e80",
+      "clean": true,
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/plans/wpf-dperf03/status.md",
+      "canonicalSha256": "fb6aa8f2f79cb98314fca6dfff45dbd3a37fb93b437f2f4a6d8124780bd0d724",
+      "delivered": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/src/aggregate.mjs",
+            "apps/execution-dashboard/src/git-snapshot.mjs",
+            "apps/execution-dashboard/src/proof.mjs",
+            "apps/execution-dashboard/test/git-snapshot.test.mjs",
+            "apps/execution-dashboard/test/proof-snapshot.test.mjs",
+            "docs/evidence/wpf-dperf03",
+            "plans/wpf-dperf03"
+          ],
+          "state": "released",
+          "branch": "codex/dashboard-git-snapshot",
+          "origin": "new",
+          "taskId": "WPF-DPERF03",
+          "worker": "workspace_panels_owner",
+          "claimId": "db0b7d25-9e70-477d-a75e-f8bfb0878578",
+          "version": 3,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot",
+          "createdAt": "2026-10-06T12:08:09.454Z",
+          "updatedAt": "2026-10-06T12:26:50.034Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "activeClaims": [],
+      "processConsumers": [],
+      "externalSymlinkConsumers": [],
+      "qualifiedForLeadFinalCheck": true,
+      "qualificationBoundary": "Preliminary candidate from delivered/released/clean, no observed live process or direct dependency link; sole Git operator must resolve any remaining external-consumer uncertainty before execution",
+      "decision": "CANDIDATE_FOR_LEAD_REVERSIBLE_SPARSE_ONLY",
+      "preserve": [
+        "all source/tests/rules/plans/D04",
+        "all fixture paths",
+        "all node_modules/stores and ignored/untracked content",
+        "entire docs/evidence/wpf-dperf03",
+        "all source/test referenced evidence top directories",
+        "all evidence absent/different from fixed origin/main blob"
+      ],
+      "runtimeEvidenceDirectories": [
+        "chat04",
+        "d02",
+        "d03",
+        "d04",
+        "d05-first-fit",
+        "f01",
+        "i01",
+        "k01",
+        "k02",
+        "k03",
+        "o09",
+        "r02",
+        "tui01a",
+        "tui01c",
+        "w01",
+        "web-platform",
+        "wpf-activity-i01",
+        "wpf-activity-readability",
+        "wpf-activity01",
+        "wpf-attach-i01",
+        "wpf-attach01",
+        "wpf-chat-readability",
+        "wpf-chat01",
+        "wpf-chat06-stream-integration",
+        "wpf-context-i01",
+        "wpf-context01",
+        "wpf-dashboard-summary",
+        "wpf-dperf03",
+        "wpf-i01",
+        "wpf-m02",
+        "wpf-p01",
+        "wpf-perf02",
+        "wpf-profile-integration",
+        "wpf-profileux",
+        "wpf-queue01",
+        "wpf-release01",
+        "wpf-renderer-i01",
+        "wpf-renderer01",
+        "wpf-steer-i01",
+        "wpf-steering-control",
+        "wpf-visual01",
+        "wpf-workspace-cache",
+        "wpf-x03",
+        "x03"
+      ],
+      "runtimeReferences": [
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/web-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/native-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/native-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d03",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d03",
+          "sourceFile": "apps/execution-dashboard/test/browser-check.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d05-first-fit",
+          "sourceFile": "apps/execution-dashboard/test/architecture-viewport.browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/migrate-assignments.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/migrate-assignments.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/attachment-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "web-platform",
+          "sourceFile": "apps/execution-dashboard/test/human-proof.test.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/context-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-dashboard-summary",
+          "sourceFile": "apps/execution-dashboard/test/task-links.browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/test/progress-smoke.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/playwright.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "chat04",
+          "sourceFile": "apps/server/src/conversation-queue/queue.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "chat04",
+          "sourceFile": "apps/server/src/conversation-queue/queue.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-dperf03",
+          "sourceFile": "apps/execution-dashboard/test/git-snapshot.test.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/package-fetch-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/goal-context-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity01",
+          "sourceFile": "apps/web/test/conversation-activity.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-queue01",
+          "sourceFile": "apps/web/test/conversation-queue.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-renderer-i01",
+          "sourceFile": "apps/web/test/data-renderer-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-visual01",
+          "sourceFile": "apps/web/test/visual-shell.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/src/components/workspace/ai-elements/terminal.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-perf02",
+          "sourceFile": "apps/web/test/performance-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity-readability",
+          "sourceFile": "apps/web/test/conversation-activity-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/test/journey.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/src/components/workspace/ai-elements/file-tree.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-release01",
+          "sourceFile": "apps/web/test/web-release-compatibility.fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-steering-control",
+          "sourceFile": "apps/web/test/conversation-steering.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-perf02",
+          "sourceFile": "apps/web/test/workspace-window.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat-readability",
+          "sourceFile": "apps/web/test/conversation-readability.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-context-i01",
+          "sourceFile": "apps/web/test/conversation-context-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-renderer01",
+          "sourceFile": "apps/web/test/data-renderers.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-observers-browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat01",
+          "sourceFile": "apps/web/test/conversation.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "x03",
+          "sourceFile": "apps/web/test/plugin-management/browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-steer-i01",
+          "sourceFile": "apps/web/test/conversation-steering-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-i01",
+          "sourceFile": "apps/web/test/plugin-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-real-center.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-attach-i01",
+          "sourceFile": "apps/web/test/attachment-input.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-profileux",
+          "sourceFile": "apps/web/test/execution-profiles.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat06-stream-integration",
+          "sourceFile": "apps/web/test/conversation-stream-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-profile-integration",
+          "sourceFile": "apps/web/test/execution-profile-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-context01",
+          "sourceFile": "apps/web/test/conversation-context.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-x03",
+          "sourceFile": "apps/web/test/plugin-management-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-workspace-cache",
+          "sourceFile": "apps/web/test/workspace-retention.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/context.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity-i01",
+          "sourceFile": "apps/web/src/conversation-activity/native/tool.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "tui01a",
+          "sourceFile": "apps/tui/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "tui01c",
+          "sourceFile": "apps/tui/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "o09",
+          "sourceFile": "apps/server/src/goal-native-executions/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/knowledge.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-attach01",
+          "sourceFile": "apps/server/src/attachments/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/run-consumers.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "r02",
+          "sourceFile": "apps/runner/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "r02",
+          "sourceFile": "apps/runner/probes/native.ts"
+        }
+      ],
+      "eligibleHistoricalCopies": {
+        "files": 2384,
+        "logicalBytes": 42080157,
+        "meaning": "logical fixed/main-identical historical evidence copies only, not recoverable physical space"
+      },
+      "eligibleManifest": "dashboard-git-snapshot-eligible.json"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+      "branch": "codex/web-workspace-cache",
+      "head": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+      "clean": true,
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/plans/wpf-workspace-cache/status.md",
+      "canonicalSha256": "5d2c06d40d5c22276b76b280a28a3b3010997d297b699d6c85ad579644e0779a",
+      "delivered": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/conversations/queue/ConversationQueue.tsx",
+            "apps/web/src/conversations/queue/projection.ts",
+            "apps/web/src/conversations/read-cache.ts",
+            "apps/web/src/data-renderers/flow-reply-detail.tsx",
+            "apps/web/src/plugin-integration/session.ts",
+            "apps/web/src/workspace-retention.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/conversation-queue.test.ts",
+            "apps/web/test/plugin-integration.test.ts",
+            "apps/web/test/workspace-retention.browser.ts",
+            "apps/web/test/workspace-retention.fixture.ts",
+            "apps/web/test/workspace-retention.test.ts",
+            "docs/evidence/wpf-workspace-cache",
+            "plans/wpf-workspace-cache"
+          ],
+          "state": "released",
+          "branch": "codex/web-workspace-cache",
+          "origin": "new",
+          "taskId": "WPF-WORKSPACECACHE01",
+          "worker": "workspace_panels_owner",
+          "claimId": "883321bc-933f-4da0-8f86-f200c02620cf",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+          "createdAt": "2026-10-06T11:33:51.839Z",
+          "updatedAt": "2026-10-06T11:58:33.589Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "activeClaims": [],
+      "processConsumers": [],
+      "externalSymlinkConsumers": [],
+      "qualifiedForLeadFinalCheck": true,
+      "qualificationBoundary": "Preliminary candidate from delivered/released/clean, no observed live process or direct dependency link; sole Git operator must resolve any remaining external-consumer uncertainty before execution",
+      "decision": "CANDIDATE_FOR_LEAD_REVERSIBLE_SPARSE_ONLY",
+      "preserve": [
+        "all source/tests/rules/plans/D04",
+        "all fixture paths",
+        "all node_modules/stores and ignored/untracked content",
+        "entire docs/evidence/wpf-workspace-cache",
+        "all source/test referenced evidence top directories",
+        "all evidence absent/different from fixed origin/main blob"
+      ],
+      "runtimeEvidenceDirectories": [
+        "chat04",
+        "d02",
+        "d03",
+        "d04",
+        "d05-first-fit",
+        "d08",
+        "f01",
+        "i01",
+        "k01",
+        "k02",
+        "k03",
+        "o09",
+        "r02",
+        "tui01a",
+        "tui01c",
+        "w01",
+        "web-platform",
+        "wpf-activity-i01",
+        "wpf-activity-readability",
+        "wpf-activity01",
+        "wpf-attach01",
+        "wpf-chat-readability",
+        "wpf-chat01",
+        "wpf-chat06-stream-integration",
+        "wpf-context-i01",
+        "wpf-context01",
+        "wpf-i01",
+        "wpf-m02",
+        "wpf-p01",
+        "wpf-perf02",
+        "wpf-profile-integration",
+        "wpf-profileux",
+        "wpf-queue01",
+        "wpf-release01",
+        "wpf-renderer-i01",
+        "wpf-renderer01",
+        "wpf-steer-i01",
+        "wpf-steering-control",
+        "wpf-visual01",
+        "wpf-workspace-cache",
+        "wpf-x03",
+        "x03"
+      ],
+      "runtimeReferences": [
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/web-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/native-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "i01",
+          "sourceFile": "scripts/native-system-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/context-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "chat04",
+          "sourceFile": "apps/server/src/conversation-queue/queue.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "chat04",
+          "sourceFile": "apps/server/src/conversation-queue/queue.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/attachment-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/playwright.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/package-fetch-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-steering-control",
+          "sourceFile": "apps/web/test/conversation-steering.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "f01",
+          "sourceFile": "packages/client/src/goal-context-production.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-context-i01",
+          "sourceFile": "apps/web/test/conversation-context-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity01",
+          "sourceFile": "apps/web/test/conversation-activity.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-i01",
+          "sourceFile": "apps/web/test/plugin-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-perf02",
+          "sourceFile": "apps/web/test/performance-probe.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-queue01",
+          "sourceFile": "apps/web/test/conversation-queue.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-observers-browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-profileux",
+          "sourceFile": "apps/web/test/execution-profiles.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-release01",
+          "sourceFile": "apps/web/test/web-release-compatibility.fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity-readability",
+          "sourceFile": "apps/web/test/conversation-activity-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat-readability",
+          "sourceFile": "apps/web/test/conversation-readability.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-renderer-i01",
+          "sourceFile": "apps/web/test/data-renderer-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-real-center.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-perf02",
+          "sourceFile": "apps/web/test/workspace-window.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-steer-i01",
+          "sourceFile": "apps/web/test/conversation-steering-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat01",
+          "sourceFile": "apps/web/test/conversation.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-profile-integration",
+          "sourceFile": "apps/web/test/execution-profile-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-m02",
+          "sourceFile": "apps/web/test/workspace-browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-p01",
+          "sourceFile": "apps/web/test/plugin-host.config.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-activity-i01",
+          "sourceFile": "apps/web/src/conversation-activity/native/tool.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-visual01",
+          "sourceFile": "apps/web/test/visual-shell.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/test/journey.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-workspace-cache",
+          "sourceFile": "apps/web/test/workspace-retention.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-context01",
+          "sourceFile": "apps/web/test/conversation-context.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k02",
+          "sourceFile": "apps/server/src/conversation-context/context.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-renderer01",
+          "sourceFile": "apps/web/test/data-renderers.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-chat06-stream-integration",
+          "sourceFile": "apps/web/test/conversation-stream-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-x03",
+          "sourceFile": "apps/web/test/plugin-management-integration.browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "x03",
+          "sourceFile": "apps/web/test/plugin-management/browser.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/src/components/workspace/ai-elements/terminal.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "w01",
+          "sourceFile": "apps/web/src/components/workspace/ai-elements/file-tree.tsx"
+        },
+        {
+          "referencedEvidenceDirectory": "tui01a",
+          "sourceFile": "apps/tui/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "tui01c",
+          "sourceFile": "apps/tui/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "o09",
+          "sourceFile": "apps/server/src/goal-native-executions/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "r02",
+          "sourceFile": "apps/runner/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "r02",
+          "sourceFile": "apps/runner/probes/native.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k01",
+          "sourceFile": "apps/server/src/knowledge/knowledge.test.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "k03",
+          "sourceFile": "apps/server/src/goal-context/run-consumers.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d03",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/README.md"
+        },
+        {
+          "referencedEvidenceDirectory": "wpf-attach01",
+          "sourceFile": "apps/server/src/attachments/fixture.ts"
+        },
+        {
+          "referencedEvidenceDirectory": "d03",
+          "sourceFile": "apps/execution-dashboard/test/browser-check.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d08",
+          "sourceFile": "apps/execution-dashboard/test/task-links.browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d05-first-fit",
+          "sourceFile": "apps/execution-dashboard/test/architecture-viewport.browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "web-platform",
+          "sourceFile": "apps/execution-dashboard/test/human-proof.test.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d02",
+          "sourceFile": "apps/execution-dashboard/test/progress-smoke.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/coordination-browser.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/migrate-assignments.mjs"
+        },
+        {
+          "referencedEvidenceDirectory": "d04",
+          "sourceFile": "apps/execution-dashboard/test/migrate-assignments.mjs"
+        }
+      ],
+      "eligibleHistoricalCopies": {
+        "files": 2089,
+        "logicalBytes": 39707634,
+        "meaning": "logical fixed/main-identical historical evidence copies only, not recoverable physical space"
+      },
+      "eligibleManifest": "web-workspace-cache-eligible.json"
+    }
+  ],
+  "excludedKnownConsumers": [
+    "web-attachment-production:Recovery/RELEASE third-party dependencies borrowed",
+    "web-context-integration:two known live fixtures"
+  ],
+  "authority": "Lead sole Git operator must recheck fixedHEAD/clean/processes/blob set and preserve closure before reversible sparse; manager performs zero dematerialization, no promised reclaimed bytes",
+  "runtime": {
+    "productImports": 0,
+    "tests": 0,
+    "newDB": 0,
+    "Chrome": 0,
+    "build": 0,
+    "install": 0,
+    "freeSamples": 0,
+    "cleanup": 0
+  }
+}
