@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import { idSchema } from './tasks.js';
+import { conversationContextSelectionSchema, type ConversationContextReference } from './conversation-context.js';
 import { executionProfileReferenceSchema } from './execution-profiles.js';
 import type { Detail, TaskSummary } from './tasks.js';
 import type { AssistantSettings } from './assistant.js';
@@ -14,6 +16,7 @@ export const conversationCreationSchema = z.strictObject({
   title: z.string().trim().min(1).max(180),
   harness: z.literal('claude').default('claude'),
   executionProfile: executionProfileReferenceSchema.optional(),
+  projectId: idSchema.optional(),
   requested: conversationSettingsSchema.default({ model: 'runner-default', thinking: 'disabled', tools: 'configured-readonly' }),
 });
 export type ConversationCreation = z.infer<typeof conversationCreationSchema>;
@@ -21,6 +24,7 @@ export const conversationTurnSchema = z.strictObject({
   expectedRevision: z.number().int().min(0).max(2_147_483_646),
   text: z.string().min(1).max(16_000).refine(value => value.trim().length > 0),
   mode: z.enum(['follow-up', 'queue', 'steer']).default('follow-up'),
+  knowledge: conversationContextSelectionSchema.optional(),
 });
 export type ConversationTurnAdmission = z.infer<typeof conversationTurnSchema>;
 export const conversationTurnQuerySchema = z.strictObject({
@@ -33,6 +37,7 @@ export const conversationListQuerySchema = z.strictObject({
 });
 
 export interface ConversationCapabilities {
+  knowledgeContext?: boolean;
   followUp: true;
   /** Capability varies by center version; older centers may not expose durable queues. */
   queue: boolean;
@@ -108,6 +113,7 @@ export type ConversationAssistantReply = {
   reason: 'execution-pending' | 'execution-not-succeeded' | 'unknown-adapter' | 'missing-session' | 'missing-result' | 'ambiguous-result' | 'invalid-result';
 };
 export interface ConversationTurn {
+  context?: ConversationContextReference;
   id: string;
   conversationId: string;
   number: number;
