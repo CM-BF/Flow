@@ -28,3 +28,7 @@
 ## Findings / 作者回应 / 复审
 
 Mika与architecture_read正式固定审均0 P1/P2；无待修finding。完整来源/时间/范围见独审receipt。未复跑检查；批准不覆盖export/consumer/admission/SDK/resume。后继source需新target与独审。
+
+## main接收与后继范围
+
+首leaf source4e7/metadata b342已接main22d5ca67159b35bb794b2711cf6df0cb905b92e8，owner两源比对一致，不重测。后继optional turnSettings真实接线尚未实现/未独审，不继承此批准。

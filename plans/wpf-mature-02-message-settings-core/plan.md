@@ -29,11 +29,11 @@ effort 必填 discriminated union：level+固定 SDK 五值，或 not-requested�
 - [x] **M02CORE-02** 实现两文件 leaf 和五组行为测试源码，固定提交；实现不等于已验证。
 - [x] **M02CORE-03** 资源满足后执行本文件 Vitest/局部 strict：5/5 与 exit0，见 checks.json。
 - [x] **M02CORE-04** 独立固定 target review，修复 findings。
-- [ ] **M02CORE-05** Lead 受控接收/main 核对；仍有已派后继时保留原合法scope。
+- [x] **M02CORE-05** Lead 受控接收/main 核对；仍有已派后继时保留原合法scope。
 - [ ] **M02CORE-06** 收敛中心/queue到既有Claude adapter的实际消息设置纵向片；先只读设计及精确scope请求，合法amend后才实现。
 
 ## 验收
 
 五组直接行为：完整请求/非法与显式 omission；canonical 顺序与不同 effort/speed；缺证据/空策略/非笛卡尔组合；profile 三元身份与 32 条/重复边界；ACK 缺失/篡改与固定请求精确匹配。legacy 文件不改，不能把未跑测试写成 red/green。初始空间不足时未运行。2026-10-06 15:28:41 UTC 两项运行前 fresh 均达到 1GiB+32MiB，使用已授权固定依赖闭包完成单文件5/5与局部strict0；没有PG/build/install/target。
 
-Owner 维护 [status](status.md) 和 [review](review.md)。当前纯契约验证与独审通过，main 未接收；后继接线尚在设计；原大task其他验收继续开放。
+Owner 维护 [status](status.md) 和 [review](review.md)。当前纯契约验证与独审通过并已main22d5；后继接线尚在设计，见next-slice-handoff.md；原大task其他验收继续开放。
