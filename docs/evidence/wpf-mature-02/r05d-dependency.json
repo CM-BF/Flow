@@ -1,0 +1,38 @@
+{
+  "currentMainReadOnlyReference": "41315b033deb0b1953484359b686c0b228997367",
+  "catalogSourcePathsUnchangedFrom": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "catalogSourceCount": 17,
+  "mismatches": [],
+  "r05dApprovedImplementation": "178ef49e568147849e63e08b3f7211ee5df823d3",
+  "r05dSources": [
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa",
+      "equalsApprovedImplementation": true
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 7311,
+      "sha256": "337f7ee2af4dfc9d60f3f82c38f573dbab4f828d3ab1cba40b48247da347c190",
+      "equalsApprovedImplementation": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "bytes": 757,
+      "sha256": "e3e32c49f81f665c90093c50c59913756f74a2ea4bfc261dbdc2afd06dfc3aef",
+      "equalsApprovedImplementation": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+      "bytes": 2135,
+      "sha256": "4e4cc90057bc5f700f1485578d7b71f78f9034b87c26f6a7c65218c28374fbd6",
+      "equalsApprovedImplementation": true
+    }
+  ],
+  "mainIntegrationReceipt": "docs/evidence/i02/launch-web-release-integration.json",
+  "limitations": [
+    "read-only Git blob comparison; no merge or new process",
+    "trusted factory required; no default/production launch or provider evidence"
+  ]
+}

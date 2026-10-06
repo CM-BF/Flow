@@ -1,8 +1,14 @@
 # Current sealed diagnostic result review
 
-State: NOT_STARTED. Result target d35c59682133d77d8581f3c3bce89a4ab3416b26. Source7297986 was independently APPROVED by architecture_read/gpt-6-astra at2026-10-06 10:13:38 UTC: P2 resolved,0remainingP1/P2;78 manifest entries+8 unchanged bindings and input18/external4 matched Git/WT/hashes. Mika authorized exactly one independent window; it has been consumed and sealed.
+State: APPROVED (honest diagnostic result only; canary FAILED). Result target d35c59682133d77d8581f3c3bce89a4ab3416b26. Source7297986 was independently APPROVED by architecture_read/gpt-6-astra at2026-10-06 10:13:38 UTC: P2 resolved,0remainingP1/P2;78 manifest entries+8 unchanged bindings and input18/external4 matched Git/WT/hashes. Mika authorized exactly one independent window; it has been consumed and sealed.
 
 [Run manifest](../../docs/evidence/wpf-mature-02/diagnostics/run-manifest.json) / [report](../../docs/evidence/wpf-mature-02/diagnostics/run-report.md). Read-only audit of one reservation,2 factory calls, exact control digest, canary failed/SIGABRT/empty parent pipe, null/unknown preservation, all private cleanup, final CLI elapsed after persistence. Do not rerun, open a new batch, inspect raw private diagnostic history or infer isolation fromCLI0.
+
+Mika/gpt-6-astra独立结果复审，2026-10-06 10:17 UTC：APPROVED，仅诊断采集与清理事实。10 safe raw逐SHA/bytes=target Git=WT；input-v5/manifest-v5吻合，运行以来source未变。2factory、282.794417ms、control40bytes精确hash、canary SIGABRT/父管道0bytes/原因unknown；三个精确owned root独立核不存在。CLI0不表示隔离通过；reviewer未重跑工程检查或启动子进程。第三NOT_RUN，不恢复预算。
+
+补充独审：architecture_read/gpt-6-astra，2026-10-06 10:22 UTC，APPROVED faithful FAIL evidence only，无P1/P2。10 safe raw/input/source manifest与复制profile/preload/peer匹配target Git/WT/hash/bytes；control40B/code7、canary SIGABRT/0B/unknown、CLI282.794417ms、cleanup与三个精确根不存在均吻合，未重跑。
+
+已审生产R06五源与实验薄consumer可独立交付，见[集成收据](../../docs/evidence/wpf-mature-02/integration-readiness.md)。claim v2保留，实际main集成由Lead协调；catalog设计属于后继，不扩大本approval。
 
 # WPF-MATURE-02 composition根登记修复复审
 

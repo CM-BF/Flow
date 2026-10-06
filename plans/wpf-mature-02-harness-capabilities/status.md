@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:17:08 UTC / 2026-10-06 10:00:37 UTC（固定main） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:23:47 UTC / 2026-10-06 10:23:47 UTC（只读main41315b，未合入本树） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控mainf181 / d35c59682133d77d8581f3c3bce89a4ab3416b26（运行结果；metadata HEAD由Git核） |
-| 工作树dirty状态 | 一次运行safe raw/manifest已提交；metadata提交后由Git核clean |
+| 工作树dirty状态 | 0ddb2a4ffb8e434af7ec2dc1902ee6b413a48ec3 clean时核；本次仅metadata更新，提交后由Git核clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
-| 已集成main状态 / HEAD | 当前R06可选sink/driver未集成；生产C1/投影输入已在受控mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
+| 已集成main状态 / HEAD | R06五源/薄consumer仍待Lead集成；只读main41315b含R05D四源，尚无optional sink；本树仅受控mainf181 |
 | 实现目标 | d35c59682133d77d8581f3c3bce89a4ab3416b26 |
 | 实现范围 | R06已领取精确5文件；experiments/codex-app-server-conformance/diagnostics；本task计划/证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 诊断捕获与自有资源清理已验证；隔离样本仍异常退出，实际启动原因未知。 |
-| 下一可用交付 | 独审本次封存结果；并行交付已审共享模块，开展有界只读启动原因研究。 |
+| 当前产出 | 已审共享模块可独立集成；诊断结果已接收，隔离样本仍异常退出，原因未知。 |
+| 下一可用交付 | 集成已审共享模块；提交可展示原生配置及明确会话限制的目录设计。 |
 | 当前阻塞 | ACTIVE: 原profile canary仍SIGABRT且无有效七项报告，实际Codex目录验证停止；父管道空stderr不能定位原因。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：7297986源码APPROVED；当前一次运行结果d35c596待只读复审 |
+| Review | [review.md](review.md)：7297986源码APPROVED；d35c596诚实诊断结果APPROVED（Mika10:17、architecture_read10:22 UTC），canary仍FAILED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | R06新增默认关闭的trusted-host私有sink，原process owner不变；R05C同树直接消费者strict通过。共享架构更新待集成target/owner Mika/ExecutionLead。 |
 
@@ -32,8 +32,8 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-02-01 | completed | chatui01_owner | [领取回执](../../docs/evidence/wpf-mature-02/take-receipt.json)，固定基线/计划/来源登记 |
 | WPF-MATURE-02-02 | completed | chatui01_owner | [manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)，27/27本地行为检查；status_read独审APPROVED；未集成 |
-| WPF-MATURE-02-03 | blocked | chatui01_owner | 唯一新batch已封存：2child、控制成功、原profile SIGABRT/空stderr，cleanup完成；实际catalog仍blocked，source只读研究继续 |
-| WPF-MATURE-02-04 | in-progress | chatui01_owner | 已接入独审通过的生产投影，薄入口27/27且独审APPROVED，待集成；共享能力全链路尚未完成 |
+| WPF-MATURE-02-03 | blocked | chatui01_owner | 唯一新batch已封存：2child、控制成功、原profile SIGABRT/空stderr，cleanup完成；实际catalog仍blocked，不再启动child；04目录设计可独立推进 |
+| WPF-MATURE-02-04 | in-progress | chatui01_owner | 已接入独审通过的生产投影，薄入口27/27且独审APPROVED，待集成；[原生配置目录设计](../../docs/evidence/wpf-mature-02/native-catalog-seam.md)已列最小合同/精确路径，尚未实施，共享能力全链路尚未完成 |
 | WPF-MATURE-02-05 | pending | d01（Web子任务owner） | 按本大task接口独立交付，尚未获得本task跨端验收证据 |
 | WPF-MATURE-02-06 | pending | chatui01_owner | 真实续接/账号/取消恢复未验收 |
 | WPF-MATURE-02-07 | in-progress | chatui01_owner | 纯语义固定target已独审通过，待集成；后继隔离片另审 |
@@ -83,3 +83,9 @@ WPF-MATURE-02-03新增独立诊断阶段：最多3次自有合成子进程，总
 ## 唯一新诊断窗口已完成并封存
 
 [运行报告](../../docs/evidence/wpf-mature-02/diagnostics/run-report.md)：10:14:37.579Z起，2factory、第三NOT_RUN，控制40bytes精确，canary SIGABRT/exitCode=null、父stderr收到0bytes。282.794417ms含最终持久化；子进程/listener/三个记录根已关闭或清除。CLI0仅采集/清理成功，隔离仍失败。parent空管道不证明子进程没有错误文字或能写stderr。当前STOPPED，不恢复旧clock/新batch，不重试。旧HOLD/NOT_RUN为历史准备时点，只有本段描述该唯一新运行事实。
+
+## 已审片段独立交付与目录后继
+
+[集成收据](../../docs/evidence/wpf-mature-02/integration-readiness.md)精确区分R06五源0778847、薄入口38516be与失败诊断结果d35c596的approval范围；不复制全局进度，v2写权继续保留。固定f181的versioned native catalog设计属于02-04：复用已发布配置、保留legacy Claude-only和原digest，Codex只configured/not-probed且conversation显式unsupported。无源码amend、工程测试或新child。
+
+只读main41315b相关17目录blob=f181，R05D四源=已审178ef49e；显式配置/可信factory已main，不代表真实启动。目录设计已吸收独立约束，可先实现合同/域reader，client挂载受现writer占用由Lead协调；不是02整task blocker。fd后继候选见interface，当前只读、无额外child/新预算。

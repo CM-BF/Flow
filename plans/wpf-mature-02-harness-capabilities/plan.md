@@ -59,3 +59,7 @@ Lead后继边界：C1只pinned Codex普通任务/typed final，不承诺conversa
 WPF-MATURE-02-03实施进展：合法writer v2追加精确R06五文件；五源seam已独审，诊断driver修复target7297986fbc879bb5040879daf97c7d5bb8b657ac待审，19+10零child检查与同树C1 strict通过。真实窗口最多3/60秒尚未消费，由Mika与S01窗口串行安排；当前driver第三次固定NOT_RUN，私有分类和清理均计入窗口。
 
 WPF-MATURE-02-03唯一新诊断batch已在Mika窗口中执行并封存：控制样本捕获成功、原profile仍SIGABRT/父stderr空，清理与282.794417ms预算完成；实际原因/目录仍blocked。预算不重置，无第三次，后继仅有界只读源码研究，不阻塞已审共享模块交付。
+
+## WPF-MATURE-02-04 versioned 配置目录独立片段
+
+按[固定f181最小设计](../../docs/evidence/wpf-mature-02/native-catalog-seam.md)推进原生已配置profile的新reader与显式conversation unsupported；不等待真实目录探针。建议精确header+新DTO/新client method，legacy Claude-only、配置canonical bytes与admission保持。共享Lead分配contracts/server领域/F01 client精确路径后实施；不新建第三层task、不开provider、不扩大本owner原claim。直接验收覆盖strict合同、旧读者隔离、SQL-before-limit分页、坏数据/撤销、安全client协议失败与Codex会话拒绝。当前仅设计，不把它记为02完整能力已交付。

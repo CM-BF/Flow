@@ -157,3 +157,19 @@ S01P02协调入口：[部分交回receipt](/Users/citrine/Projects/AgentHarness/
 ## 唯一诊断batch封存（当前运行事实）
 
 [运行报告](diagnostics/run-report.md)/[run manifest](diagnostics/run-manifest.json)：source7297986经原reviewer10:13:38 APPROVED，Mika独占窗口后一次执行2child，final282.794417ms、cleanupComplete。控制40bytes精确；原profile canary SIGABRT且父stderr管道0bytes，原因unknown、七项未通过。CLI0仅诊断采集/清理完成，实际catalog仍blocked；不证明sandbox能写stderr或没有错误文字。第三NOT_RUN、预算已消费，不恢复clock/新batch。R06/已审C1交付可独立推进，后续仅有界只读源码研究。
+
+## 已审生产与实验片段的独立集成入口（2026-10-06 10:20:00 UTC）
+
+[唯一集成收据](integration-readiness.md)列明R06五源0778847及薄consumer38516be可独立受控集成；其source在当前树仍与各自已审target逐字一致。Mika10:17 UTC接收d35c596的诚实诊断结果，canary仍FAILED/unknown，CLI0仅capture+cleanup。无新child、第三NOT_RUN、旧clock不重置。该收据仅本owner交付输入，main最终事实由Lead维护。
+
+## 02-04 ready 后继：versioned native configured catalog
+
+[最小新合同/reader/精确路径与直接验收设计](native-catalog-seam.md)，输入固定main f181，建议同/api/execution-profiles以精确native-v1独立协商、新page+新client method；旧Claude-only reader与配置digest不变。Codex仅runner-configured/not-probed，conversation明确unsupported，不能当普通聊天选择。现register函数已挂载，无需抢F01 server index或新migration；合同/领域reader/F01 client路径由Lead分别分配。只读设计，不amend源码，不启动child；R05D真实启动与actual catalog证据仍未证明。
+
+R05D接入依赖：已只读核[main41315b四源接收](r05d-dependency.json)等于已审178ef49e。D0只接受显式小配置文件并要求trusted factory注入，无默认production factory/实际app-server启动；未来factory只消费本task后续固定独审的launch recipe与允许边界。目录17来源与f181逐字相同，仍configured/not-probed。**main41315b尚无R06 optional privateStderr五源**，0778847与薄consumer38516be继续排Lead独立集成队列，不能由R05D已main推断它们已main。
+
+目录第一片可独立交合同codec+领域reader/routes/局部tests；client index目前TUI01B writer，F01持其他共享index，只留正式method交接，不复制HTTP。architecture_read只读五条约束已纳入设计，尚无源码amend。
+
+03后继只读候选：[pre-JS fd/平台初始化/JS三层判别接口](pre-js-fd-hypothesis.md)。固定源码说明pipe可能AF_UNIX、早期fstat/fcntl可在JS前失败，但现场fd/errno未知，不据此扩大任何grant；自有native helper候选需另审source/recipe/运行窗口，当前0额外child/无新预算。
+
+共享集成短请求（正文仍只在04维护）：请Lead安全点先接收其已审六源，并为后继store分配迁移号及共享events/runner union接线；权威入口为[04 center-store-request](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/center-store-request.md)与[04 integration-readiness](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/integration-readiness.md)。本处只路由接收请求，不复制04进度或代分配迁移号。

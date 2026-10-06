@@ -1,0 +1,91 @@
+{
+  "purpose": "read-only design inputs; not an implementation/test manifest",
+  "sourceCommit": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "sources": [
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 5543,
+      "sha256": "6587cee21f105353943da96d57982768984bfbd54ad83ca94dd4a6ad9843ab19"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.test.ts",
+      "bytes": 2823,
+      "sha256": "63e3cfb96521dab7c90c5b43c0a325d2d97832e7ef09943ae654edbb536629ea"
+    },
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "bytes": 1134,
+      "sha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 5897,
+      "sha256": "72e9ceb34213cc5ba95162bc1f1b3eac926d9349c83d4f54b29a8d0bd7bcd3b2"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 973,
+      "sha256": "ba5564f67f0fec48a841ffdf840cc80e0327e73c1c8268a3e16919c094be6b11"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 8317,
+      "sha256": "7eff3d457e78b89fcb1bb6afd90ddb25b8c818d4a6061cf3beacee00797fdf06"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "bytes": 2280,
+      "sha256": "b654cf998bc4364ff4985e0133024be7eb5ae1999845345baa08d2de4fbf1f49"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/execution-profiles.test.ts",
+      "bytes": 16452,
+      "sha256": "c2d45d9aac20223374dae16dcd1fc3f43226b1a4d1672884ab8807b00dbda158"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "bytes": 3786,
+      "sha256": "82a0b1293cb3a464945f106a8e3a4bf16a9541542659174e12cd5102ffefa34d"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "bytes": 3967,
+      "sha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 2808,
+      "sha256": "5f0a2476593b82d8014bc80ca44a7906d1259d19000e8546dc948712ee1ee581"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12863,
+      "sha256": "552a44e1bd1c0469f43945667c925d9234af9b37eee5e224665fc35ab65dfdb0"
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "bytes": 1064,
+      "sha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "bytes": 851,
+      "sha256": "03575f0f86fdb1b15ceb9298fac13add895b5f92b5a80165ba2e13019639205a"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 38126,
+      "sha256": "28ac0941db1306a4276ae4217d4d680c937012c6090878c05d79cc501da6441b"
+    },
+    {
+      "path": "packages/client/src/execution-profiles.test.ts",
+      "bytes": 5679,
+      "sha256": "3d3a28aa0cadae83e108a288fe99464be5f69372dc1a614a7a1e2d92bbab8a26"
+    },
+    {
+      "path": "packages/client/src/native-profile-publication.test.ts",
+      "bytes": 3443,
+      "sha256": "bb4a5d3a8ba0355be49653ffc4a965c3569a5c9aa80f8f7ecb92c95328b9028a"
+    }
+  ]
+}
