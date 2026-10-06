@@ -176,13 +176,15 @@ async function run() {
     const displayedVerification = second.page.getByLabel('Verification passed content');
     await expect(displayedVerification).toContainText(artifact.artifactVersion!);
     await expect(displayedVerification).toContainText(JSON.parse(verification.content).inputDigest);
-    await expect(displayedVerification).toContainText('"result": "passed"');
+    assert.equal(JSON.parse(await displayedVerification.innerText()).result, 'passed');
     assert.equal(detailRequests.length, 2);
     await screenshots(second.page, 'artifact');
     await second.page.setViewportSize({ width: 390, height: 844 });
     assert.equal(await second.page.locator('body').evaluate(element => element.scrollWidth), 390);
     await second.page.screenshot({ path: join(output, 'artifact-dark-narrow.png'), fullPage: true });
-    evidence.detailRequestsBeforeExpansion = 0; evidence.detailRequestsAfterExpansion = detailRequests.length;
+    evidence.detailRequestsBeforeExpansion = 0;
+    evidence.detailRequestsAfterArtifactExpansion = 1;
+    evidence.detailRequestsAfterArtifactAndVerificationExpansion = detailRequests.length;
     event('fresh browser verified same task and versioned evidence', { taskId: id, attemptId: delivered.attempt!.id, artifactVersion: artifact.artifactVersion });
     await second.page.setViewportSize({ width: 1440, height: 1050 });
     const cancelId = await submit(second.page, 'slow');
