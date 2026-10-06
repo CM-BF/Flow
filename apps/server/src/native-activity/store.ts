@@ -27,7 +27,9 @@ export async function saveNativeActivity(client: PoolClient, task: TaskRecord, a
   if (data.activityId !== sha256(JSON.stringify([data.nativeSessionId,data.sourceMessageId,data.blockIndex,data.kind]))) fail('activity_identity','Activity ID does not match its source.');
   if (data.body && !data.body.truncated && sha256(data.body.content) !== data.body.sha256) fail('activity_digest','Activity body digest does not match.');
   const payloadDigest = sha256(canonical(data));
-  const prior = (await client.query<{attempt_id:string;payload_digest:string}>('SELECT attempt_id,payload_digest FROM flow.native_activities WHERE id=$1',[data.activityId])).rows[0];
+  const prior = (await client.query<{attempt_id:string;payload_digest:string}>(`SELECT attempt_id,payload_digest FROM flow.native_activities
+    WHERE id=$1 OR (native_session_id=$2 AND header->>'sourceMessageId'=$3 AND (header->>'blockIndex')::integer=$4)`,
+    [data.activityId,data.nativeSessionId,data.sourceMessageId,data.blockIndex])).rows[0];
   if (prior) {
     if (prior.attempt_id !== attempt.id || prior.payload_digest !== payloadDigest) fail('activity_conflict','Native source was reused by another attempt or with changed content.');
     return null; // SDK re-emission with a fresh transport envelope is still one observation.

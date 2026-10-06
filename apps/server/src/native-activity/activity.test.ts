@@ -48,6 +48,13 @@ function result(a:Attempt,toolId:string,sequence:number,extra={}){
 }
 const post=(a:Attempt,events:unknown[],status=200)=>request('/api/runner/events',{...a.ownership,events},a.token,status);
 const page=(a:Attempt)=>request(`/api/tasks/${a.taskId}/native-activities`);
+it('migrates an existing center idempotently without changing accepted tasks',async()=>{
+  const task=await request('/api/tasks',{title:'Preserved pre-activity task',prompt:'No execution',harness:'fixture'},undefined,202);
+  await migrateNativeActivities(pool);await migrateNativeActivities(pool);
+  expect((await request(`/api/tasks/${task.task.id}`)).status).toBe('queued');
+  expect((await request(`/api/tasks/${task.task.id}/native-activities`)).activities).toEqual([]);
+  expect((await pool.query('SELECT version FROM flow.migrations WHERE version=20')).rows).toHaveLength(1);
+});
 it('persists typed light references and lazily reads bounded content through owner HTTP',async()=>{
   const a=await attempt();const events=block(a,[{type:'text',text:'SECRET_TEXT'},{type:'thinking',thinking:'SECRET_THINKING',signature:'NEVER_STORE'},{type:'tool_use',id:'read1',name:'Read',input:{path:'SECRET_INPUT'}}]);
   await post(a,[a.session,...events]);const list=await page(a);expect(list.activities).toHaveLength(3);
@@ -71,6 +78,8 @@ it('deduplicates original transport and repeated native frames, rejects changed 
   await post(a,batch);expect(await post(a,batch)).toMatchObject({accepted:0,lastSequence:2});
   await post(a,[{...event,id:randomUUID(),sequence:3}]);expect((await page(a)).activities).toHaveLength(1);
   await post(a,[{...event,id:randomUUID(),sequence:4,body:null}],409);
+  const changedKind={...event,id:randomUUID(),sequence:4,kind:'thinking'};
+  await post(a,[{...changedKind,activityId:sha256(JSON.stringify([a.sessionId,event.sourceMessageId,event.blockIndex,'thinking']))}],409);
   const port=Number(new URL(base).port);await stop();await start(port);
   expect((await page(a)).activities).toHaveLength(1);expect(await post(a,batch)).toMatchObject({accepted:0,lastSequence:3});
 });

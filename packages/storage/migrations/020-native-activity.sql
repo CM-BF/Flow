@@ -16,4 +16,5 @@ CREATE TABLE flow.native_activities (
   created_at timestamptz NOT NULL DEFAULT clock_timestamp()
 );
 CREATE INDEX native_activities_task ON flow.native_activities(task_id, ordinal);
+CREATE UNIQUE INDEX native_activities_source ON flow.native_activities(native_session_id, (header->>'sourceMessageId'), ((header->>'blockIndex')::integer));
 CREATE INDEX native_activities_tool ON flow.native_activities(attempt_id, tool_use_id, ordinal DESC) WHERE tool_use_id IS NOT NULL;
