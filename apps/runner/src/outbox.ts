@@ -17,7 +17,9 @@ export class EventOutbox {
   private failure: unknown;
   private readonly file: string;
 
-  constructor(directory: string, private ownership: Ownership, private report: Report) {
+  constructor(directory: string, private ownership: Ownership, private report: Report, initialSequence = 0) {
+    if (!Number.isSafeInteger(initialSequence) || initialSequence < 0) throw new Error('Initial event sequence must be a nonnegative safe integer.');
+    this.sequence = initialSequence;
     this.file = join(directory, 'pending-events.json');
   }
 
