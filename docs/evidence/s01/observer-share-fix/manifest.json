@@ -1,0 +1,119 @@
+{
+  "implementationTarget": "c259e8e53cd53830fe1bc78ce3c8dae7b34d5540",
+  "base": "fe8747c9875f4a116d57cd0da4617f751f3beaef",
+  "productionBase": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
+  "state": "PENDING_INDEPENDENT_REVIEW",
+  "recordedAt": "2026-10-06 12:42:56 UTC",
+  "source": [
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.ts",
+      "bytes": 5337,
+      "sha256": "68ea05ed95178c5973c097ebfaca9481a755f625874be253b45f02832467353e"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.test.ts",
+      "bytes": 5311,
+      "sha256": "2831b5e5eedecf3c583b7b1c97623a1264f9746de08c6d24ead0a41ce7e4c529"
+    }
+  ],
+  "readonly": [
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 11992,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/tsconfig.json",
+      "bytes": 258,
+      "sha256": "2f7bfc694006d11811592ae4ef4bc57d50300ce2c89c32c12a190fa305272c52"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/vitest.config.ts",
+      "bytes": 190,
+      "sha256": "06ad6c5354ad53e6b729a5d444e1c890a3481633f2b5470d8dace817c09e7801"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/s01/observer-share-fix/checks-receipt.json",
+      "bytes": 1771,
+      "sha256": "3d4487f608bf27c794da9da3d2d9ab2292bc7c7fea0bb966b4ac84ff188bafba"
+    },
+    {
+      "path": "docs/evidence/s01/observer-share-fix/green.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/observer-share-fix/green.stdout",
+      "bytes": 326,
+      "sha256": "3601a16145fc12f4ae503f12873bd899360e7e77abd04c048063e62931f9154d"
+    },
+    {
+      "path": "docs/evidence/s01/observer-share-fix/red-receipt.json",
+      "bytes": 873,
+      "sha256": "6e6629460dafa22c16c3bf67dfe8d0f3181a0ae31444a45ad70dc82dc2c2d301"
+    },
+    {
+      "path": "docs/evidence/s01/observer-share-fix/red.stderr",
+      "bytes": 994,
+      "sha256": "b89e6b40a949fd96e6bb467fc6292737dd83123c707cabbc29ab8c7d7768c2ef"
+    },
+    {
+      "path": "docs/evidence/s01/observer-share-fix/red.stdout",
+      "bytes": 791,
+      "sha256": "abfc51a3086a41b78993ab7bff1c151c1e4bddc773a0d46f5ca62ebff7451e97"
+    },
+    {
+      "path": "docs/evidence/s01/observer-share-fix/strict.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/observer-share-fix/strict.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "support": [
+    {
+      "path": "docs/evidence/s01/observer-share-fix/README.md",
+      "bytes": 1598,
+      "sha256": "75774508e67602ec9a9242b4062a690636c90f5656a264e5850f099bb683f51c"
+    },
+    {
+      "path": "docs/evidence/s01/observer-share-fix/historical-binding-check.json",
+      "bytes": 384,
+      "sha256": "2eeb85a4b340c7cda133b97e0a8116f74c3114d08e64728bf31b4b89f6e2af79"
+    }
+  ],
+  "checks": {
+    "pureDistinct": 4,
+    "newDistinct": 1,
+    "existingDirectDistinct": 3,
+    "strictExit": 0,
+    "initialRed": {
+      "selected": 4,
+      "passed": 3,
+      "failed": 1
+    },
+    "realPgHttpRunnerProviderCapacityCalls": 0
+  },
+  "history": {
+    "fixedResult": "64911a3c88488dfdebaa3a678bad659211e29209",
+    "fixedGitBindings": 70,
+    "currentExpectedDrift": [
+      "experiments/runner-capacity/mixed/observe-pg.ts",
+      "experiments/runner-capacity/mixed/observe-pg.test.ts"
+    ],
+    "rawSupportPreparationDrift": [],
+    "shareElapsedRemains": "UNKNOWN",
+    "reruns": 0
+  },
+  "scope": "Exact private observer FOR SHARE classification only; no product/pool/lock changes"
+}
