@@ -131,7 +131,7 @@
     "rootAuthorization": "Recovery only conditional direct one-file test, fixedcheckpoint; <=30s including>=5s cleanup each, logs2MiB/tmp8MiB, onefork, start>=1GiB+32MiB/stop<=1GiB+16MiB, sandbox own tmp/evidence and read-only dependencies",
     "managerCoordination": "No group PG/Chrome/build; RELEASE links completed and stopped, sourceonly; notified panels to freshadmit; no actual test result yet",
     "limits": "MockIDB not browser; no new runtime permit for RELEASE",
-    "currentOverride": "resource-window-current.json: baselinecompletedandstopped;ReleaseA-onlynextaftergates,targetedRecoverymustnotparallel"
+    "currentOverride": "resource-window-current.json: no heldgroupruntimewindow afterAresourcefailure;secondtargeted requiresnewfreshevidence"
   },
   "currentFixedCheckpoint": {
     "commit": "4ba79ddbb9368dab8c75fca72fbd2425526f242f",
@@ -166,5 +166,14 @@
     "minSampledFreeBytes": 1109147648,
     "limits": "controlled IDB event port/mock public fetch;not realIDB/browser/HTTP;R4-1notcovered",
     "ownerStopped": "All test processes stopped per owner/root; remainingbudget requires newfixedtargetandfreshwindow"
+  },
+  "nextFixedDelta": {
+    "commit": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
+    "rootSourceReview": "recovery01-source-review-2498-root.json",
+    "sourceConclusion": "R4-1/R4-2sourceclosureAPPROVED0blocking,notbehaviororfullfeatureapproval",
+    "testSource": "22casesnotrun;first4ba20/20remainsbaseline",
+    "remainingDirectSeconds": 27.46,
+    "typesOwnerReport": "latestnoEmit0,cumulative52.814/60,remaining7.186",
+    "runtime": "NOT_RUN;Aspacefailed,groupwindowreturnedtotheLead"
   }
 }

@@ -1,10 +1,10 @@
 {
-  "recordedAt": "2026-10-06T15:03:05.137272+00:00",
+  "recordedAt": "2026-10-06T15:08:27.448892+00:00",
   "source": "Root relay of new Lead inbound; no direct outbound, no personal/4320 sample",
-  "state": "RECOVERY_DIRECT_CLOSED_RELEASE_AWAITING_FIXED_DELTA_AND_FRESH_ADMISSION",
+  "state": "WINDOW_RETURNED_TO_LEAD_A_NOT_RUN_RESOURCE",
   "release03": {
     "claim": "bfb209ae v3 original4",
-    "state": "A-only resourcegate delta beingfixed/reviewed;sourceonly,0PG/Chrome",
+    "state": "NOT_RUN_RESOURCE_ADMISSION_FAILED",
     "source": "362af3bac77541e5a60979326bcf4d4b8c947915",
     "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
     "futureBudget": "<=180s total including20s cleanup,1PG+1Chrome,8MiB evidence",
@@ -15,13 +15,24 @@
       "Recoverydirectwindowclosed"
     ],
     "startTime": null,
-    "candidate": "997d731a98c837ccfce61712d2c7318ae13fb3d2",
-    "metadata": "900fc59ae46cc0c05c563da2d82710393963fe87",
-    "order": "Recovery direct closed;RELEASE A-only next afterfixedreview/types/freshadmission;Recoverytargetednotparallel",
-    "aOnly": "First exact362 attachment-only andmixed HTTP reportEvents/contextHistory, preserve bothraw andcleanup;anyred =>B/ChromeNOT_RUN,noallgreenSVCimport; A green withBunadmitted remainssealed, noautocontinue"
+    "candidate": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+    "metadata": "46395a526ae597958cf3ba801af39e1dbb65d70e",
+    "order": "No activegroupPGwindow;returnedtoLead",
+    "aOnly": "First exact362 attachment-only andmixed HTTP reportEvents/contextHistory, preserve bothraw andcleanup;anyred =>B/ChromeNOT_RUN,noallgreenSVCimport; A green withBunadmitted remainssealed, noautocontinue",
+    "review": "Root432bsourceguardAPPROVED0blocking;notruntimeapproval",
+    "admission": {
+      "archive": "release03-a-admission-not-run.json",
+      "freeBytes": 1058885632,
+      "minimumFreeBytes": 1107296256,
+      "gateCreated": false,
+      "claim": "bfb v3 original4,nooverlap",
+      "fixedSourceMatches": 2,
+      "readOnlyDependencyMatches": 17,
+      "previousRuntimeMs": 0
+    }
   },
   "recoveryDirect": {
-    "state": "4ba20/20baselinecomplete,alltestprocessesstopped;R4-1sourcefixongoing,newtargetedrunrequiresfreshturn",
+    "state": "First4ba20/20completed;second249894prepared/source-deltaapproved,NOT_RUN;spacebelowitsstarttoo",
     "existingBudget": "One fixed test/onefork,30s total incl>=5s cleanup each,own/tmp8MiB/log2MiB,start>=1GiB+32MiB/stop<=1GiB+16MiB",
     "startConditions": [
       "CompleteboundedRELEASE997d readonlyreview",
@@ -51,7 +62,9 @@
       "limits": "controlled IDB event port/mock public fetch;not realIDB/browser/HTTP;R4-1notcovered",
       "ownerStopped": "All test processes stopped per owner/root; remainingbudget requires newfixedtargetandfreshwindow"
     },
-    "resultArchive": "recovery01-direct-prepared-4ba/direct-first.json"
+    "resultArchive": "recovery01-direct-prepared-4ba/direct-first.json",
+    "nextCheckpoint": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
+    "remainingSeconds": 27.46
   },
   "leadWindow": {
     "source": "f01-plugin-window-cleanup-1457.json",
@@ -63,14 +76,16 @@
   },
   "registry": "main d679444c4bed52bbd53d38f4944f914b30fbbd92 fixedregistry matches bothcanonical;Lead actual4320 14:51:18 has161sources/live/parser0/humancomplete;manager noUI/API",
   "limits": [
-    "SOURCE_READY is not runtime",
-    "ActualX01closed is not adequatefree-spaceproof",
-    "Original180s/8MiB/oneDB budgetnotreset",
-    "No inventedETA/personalAPI/4320requery"
+    "Thisenvironmentadmission failureisnotbackendhistoryproductred",
+    "No A outcomes/historywire/cleanup run exists becauseprocessneverstarted",
+    "No SVCgreenreport,B/ChromeNOT_RUN",
+    "Free-spacewholehostreadingnotattributedtoanyteam",
+    "No immediatefreshpoll/newdependencies/PG/build/cleanup"
   ],
   "groupWindowOwnership": {
-    "state": "HELD_FOR_RELEASE_A_ONLY_NOT_RETURNED_TO_LEAD",
-    "meaning": "Recoverydirectcompletionendsinternaltestsegment only;LeadPG/Chromewindowstillassignedtothisgroup",
-    "release": "AfterAcleanup or explicitdecisionnottoexecute, recordcanonicalreturn;iffreshspaceinsufficient immediatelyNOT_RUNandreturn,notidlehold"
+    "state": "RETURNED_TO_LEAD",
+    "at": "2026-10-06T15:08:27.448892+00:00",
+    "reason": "FreshA-onlyfreebelowthreshold;no gate,noPG/Chrome/no runtime;notidleholding",
+    "next": "A orRecoverytargeted require new materialwindow/resourcefactsandfreshadmission,notbusy polling"
   }
 }

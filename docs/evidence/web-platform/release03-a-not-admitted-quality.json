@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-06T15:08:59.521493+00:00",
+  "scope": "632a7149v3 managementonly",
+  "rawArchives": [
+    {
+      "source": "/tmp/d01-release03-a-admission.json",
+      "archive": "release03-a-admission-not-run.json",
+      "bytes": 2529,
+      "sha256": "c57bc372b9104315cf9f703289f1e40cdb6ce8004b268c86ae39ab8ebb865d8a"
+    },
+    {
+      "source": "/tmp/root-release03-432b-delta-review.json",
+      "archive": "release03-source-review-432b-root.json",
+      "bytes": 2230,
+      "sha256": "d5ff20bb0303f1da1174255dde8d091ff05bcc475377aac1a0cf1ccec3f6b18a"
+    },
+    {
+      "source": "/tmp/root-recovery-2498-delta-review.json",
+      "archive": "recovery01-source-review-2498-root.json",
+      "bytes": 2089,
+      "sha256": "67d1360c6b58fa7308f2b554f91d22f7a32cf7f8488ecaf20835130d3b543eb6"
+    }
+  ],
+  "actualMethod": "Localclean-code factualstate review: approvedsource vs runtimeadmission vs productoutcome;nooverlap andimmediatereturnoffailedwindow",
+  "admissionSummary": {
+    "admitted": false,
+    "gateCreated": false,
+    "runtimeMs": 0,
+    "freeBytes": 1058885632,
+    "minimumFreeBytes": 1107296256,
+    "windowReturned": true
+  },
+  "checks": {
+    "parser": [
+      {
+        "path": "web-platform-management/plans/web-platform/status.md",
+        "id": "WPF-001",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 36
+      },
+      {
+        "path": "web-platform-management/plans/wpf-mature-01-visual/status.md",
+        "id": "WPF-MATURE-01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 5
+      },
+      {
+        "path": "web-platform-management/plans/wpf-mature-06-chat/status.md",
+        "id": "WPF-MATURE-06",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "path": "web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+        "id": "WPF-RECOVERY01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "path": "web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
+        "id": "WPF-RELEASE03",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 3
+      }
+    ],
+    "rawArchiveHashMismatches": 0,
+    "addedMarkdownLinks": 10,
+    "missingLinks": 0,
+    "managementScopeViolations": 0,
+    "diffCheck": 0,
+    "productTests": 0
+  },
+  "noOperations": [
+    "No productrun",
+    "No PG/Chrome",
+    "No cleanupofanytree",
+    "No retrydf/4320/personals"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "target": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
+  "base": "4ba79ddbb9368dab8c75fca72fbd2425526f242f",
+  "reviewer": "root independent read-only source delta review",
+  "at": "2026-10-06T15:07:12.304669+00:00",
+  "files": [
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "3be8d4ddc82c78bc514e35b3dbe09038f421426d147c73d7444411fb4c5a641e",
+      "bytes": 23230,
+      "currentMatches": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "7ed1315d60ad16ac0bf8b5222bf5b9247194d62267207e25c29fd45f6479bf7a",
+      "bytes": 27878,
+      "currentMatches": true
+    }
+  ],
+  "dirty": "",
+  "diffCheck": 0,
+  "conclusion": "APPROVED source delta for targeted direct verification after RELEASE A-only window; feature/browser/final review remains incomplete",
+  "blockingFindings": [],
+  "sourceFixes": [
+    {
+      "id": "R4-1",
+      "result": "DraftState is bound to a captured namespace. The successful commit version updates that same still-owned state even when public authority temporarily returns null; subsequent current-generation checks still reject old send. Added null-namespace revoke/commit/reauth/explicit retry case."
+    },
+    {
+      "id": "R4-2",
+      "result": "A handoff retains its original commandId. Terminal restore clears only that matching blocker after original host identity reconciliation and current-generation verification; a deferred next draft is enqueued, not discarded. Transfer version bookkeeping occurs after committed preparation even if later authorization check fails. Added host-mismatch-preserves-protection then terminal-success/preserved-next-draft case."
+    }
+  ],
+  "execution": "No product execution by this review. Original4ba baseline20/20 pass is not new2498 case evidence. The22-case result remains pending.",
+  "remaining": [
+    "Real browser IDB/reopen/multi-tab/full App auth-loss behavior remains unverified.",
+    "Center session final3 semantic gates unchanged.",
+    "Final independent feature review remains separate from this source checkpoint."
+  ]
+}

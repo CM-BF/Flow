@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:03 UTC |
+| 最近更新 | 2026-10-06 15:08 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 4ba受控direct20/20通过、2.540秒及清理完成；保存版本R4-1仍待修复，真实浏览器未验 |
-| 下一可用交付 | 先修复认证换代不续发、未保存稿保护和终态对账，再验证刷新与显式原key恢复 |
-| 当前阻塞 | ACTIVE: 固定源码预审问题仍待修和行为验证；真实IDB/HTTP/browser待独立资源及中心三语义门槛，轻源码和限额noEmit继续 |
+| 当前产出 | 4ba受控direct20/20、2.540秒清理完成；2498保存版本和同key终态修正已审，22case行为尚未跑 |
+| 下一可用交付 | 在新资源和窗口准入后验证2498两项修正，再推进真实刷新与显式原key恢复 |
+| 当前阻塞 | ACTIVE: 2498定向行为与真实IDB/HTTP/browser待资源及中心三语义门槛；轻源码可继续，当前无测试窗口 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |
@@ -55,4 +55,4 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 最新两轮依赖/类型诊断及原始红日志见[窗口记录](../../docs/evidence/web-platform/recovery01-dependency-window.json)；全部依赖写停后v4恢复原21scope。第二types0只属于82d78阶段源码；[八项独立早期finding及来源](../../docs/evidence/web-platform/recovery01-foundation-review-intake.json)待原owner修复，未形成feature终审。当前资源决定见[分时记录](../../docs/evidence/web-platform/resource-admission-1405.json)，不重复采样或将整体目标标阻塞。
 
 
-最新固定源码安全点4ba、类型累计40.603/60s（余19.397）与原f13部分复核历史见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)。20direct受控基线已20/20，R4-1未覆盖、真实IDB/browser未验，正式review仍NOT_STARTED；d679已登记，Lead14:51:18实际161来源，两项live/parser0/人读完整，非管理页面复采。
+最新固定源码安全点4ba、后继2498类型累计52.814/60s（余7.186）与原f13部分复核历史见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)。20direct受控基线已20/20，R4-1未覆盖、真实IDB/browser未验，正式review仍NOT_STARTED；d679已登记，Lead14:51:18实际161来源，两项live/parser0/人读完整，非管理页面复采。

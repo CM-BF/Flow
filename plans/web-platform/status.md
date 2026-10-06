@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:03 UTC / Recovery固定预审与发布验证领取 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:08 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | Recovery受控direct20/20、保存版本R4-1仍待修；发布A-only入口待最终审查与准入，看板后继树已备但未占writer |
-| 下一可用交付 | 修复恢复授权与终态对账；发布验证先准备准确依赖与轻量脚本，准入后核固定后台与产物 |
-| 当前阻塞 | ACTIVE: Recovery预审两P1及终态对账等问题待修和行为验证；发布PG/Chrome仍待依赖资源准入，后台362历史缺口保留；当前源码可继续 |
+| 当前产出 | Recovery2498源码修正已审、定向行为待验；RELEASE A-only源码已审但fresh空间未准入，总窗口已交回Lead |
+| 下一可用交付 | 新资源与窗口事实到位后，执行剩余恢复定向检查及固定362附件历史A-only，不重新准备产物 |
+| 当前阻塞 | ACTIVE: Recovery2498新增行为与真实浏览器仍待验证；RELEASE free1,058,885,632B低于1,107,296,256B未运行，后台362历史缺口保留；轻源码可继续 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |

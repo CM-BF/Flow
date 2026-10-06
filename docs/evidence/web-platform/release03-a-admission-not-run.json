@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-06T15:07:01.838089+00:00",
+  "admitted": false,
+  "freeBytes": 1058885632,
+  "minimumFreeBytes": 1107296256,
+  "stopBytes": 1090519040,
+  "claimObservedAt": "2026-10-06T15:07:01.612Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-current-preview.browser.ts",
+      "apps/web/test/web-current-preview.fixture.ts",
+      "docs/evidence/wpf-release03",
+      "plans/wpf-release03-current-preview"
+    ],
+    "state": "active",
+    "branch": "codex/web-current-preview-compatibility",
+    "origin": "new",
+    "taskId": "WPF-RELEASE03",
+    "worker": "w01_owner",
+    "claimId": "bfb209ae-4c74-49cd-8140-f6d4bd3b0f92",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+    "createdAt": "2026-10-06T14:37:56.939Z",
+    "updatedAt": "2026-10-06T14:47:08.816Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "fixedSource": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+  "head": "46395a526ae597958cf3ba801af39e1dbb65d70e",
+  "sourceHashes": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "sha256": "e56b952b92854bbb9a208ee7a87e763bf3d2b29e05f6e0b58614d5f968d3e18f"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "sha256": "ef6ae3609533d4188ef02897fe0c0399c7f2248cca05846219ea5ecc1afd6fee"
+    }
+  ],
+  "dependenciesVerifiedReadOnly": [
+    "node_modules/tsx",
+    "node_modules/typescript",
+    "node_modules/@types/node",
+    "node_modules/pg",
+    "node_modules/@types/pg",
+    "node_modules/@playwright/test",
+    "node_modules/@fastify/cors",
+    "node_modules/fastify",
+    "node_modules/npm-package-arg",
+    "node_modules/pacote",
+    "node_modules/pg-boss",
+    "node_modules/ssri",
+    "node_modules/zod",
+    "node_modules/@types/npm-package-arg",
+    "node_modules/@types/pacote",
+    "node_modules/@types/ssri",
+    "node_modules/@flow/contracts"
+  ],
+  "previousRuntimeMs": 0,
+  "allowedRuntimeMs": 60000,
+  "cleanupReserveMs": 20000,
+  "totalBudgetMs": 180000,
+  "retainedEvidenceLimit": 8388608,
+  "groupWindow": "LeadF01actualclosed,holdsnoPG/Chromeuntilourreturn;Recoverydirect2.54sclosed/allprocessesstopped;Recovery2498sourceonly,no paralleltest",
+  "review": "/tmp/root-release03-432b-delta-review.json",
+  "noPermission": [
+    "No Chrome/phaseB",
+    "No SVC green receipt fromA-only",
+    "No personal services/model/install/build"
+  ],
+  "gatePath": null
+}

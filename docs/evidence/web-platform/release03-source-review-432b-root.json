@@ -1,0 +1,39 @@
+{
+  "target": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+  "deltaBase": "997d731a98c837ccfce61712d2c7318ae13fb3d2",
+  "reviewer": "root independent read-only source review",
+  "at": "2026-10-06T15:06:08.401448+00:00",
+  "head": "46395a526ae597958cf3ba801af39e1dbb65d70e",
+  "dirty": "",
+  "files": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 17862,
+      "sha256": "e56b952b92854bbb9a208ee7a87e763bf3d2b29e05f6e0b58614d5f968d3e18f",
+      "currentMatches": true
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 34649,
+      "sha256": "ef6ae3609533d4188ef02897fe0c0399c7f2248cca05846219ea5ecc1afd6fee",
+      "currentMatches": true
+    }
+  ],
+  "protectedDiffEmpty": true,
+  "diffCheck": 0,
+  "conclusion": "APPROVED for one history-only attempt conditional on manager fresh claim/source/dependency/resource gate; not actual runtime, compatibility, or publication approval",
+  "blockingFindings": [],
+  "reviewed": [
+    "history max60s including20s cleanup; total180s unchanged; history start1GiB+32MiB/stop1GiB+16MiB, all128/64 unchanged",
+    "resource monitor begins before imports/CREATE; awaited checkpoints prevent further startup after stop/deadline/resource-monitor failure",
+    "CREATE/marker outcome remains explicit; absent/unconfirmed marker does not authorize DROP; exactownedPGIDs only",
+    "original997d independent source approval preserved: both A outcomes retained; A failure or history mode prevents Chrome/Playwright phase and full SVC attestation",
+    "fixture abort boundaries and2s Git timeout are scoped changes; no backend/contracts/rootlock/tool modifications"
+  ],
+  "limitations": [
+    "32MiB is admission margin based on prior12,360,727B singleDB observation plus bounded evidence, not a hard PostgreSQL/WAL/OS peak proof. Monitor is sampled, and shared free-space observations are not solely attributable to this run.",
+    "997d static strict noEmit passed1.839676s; no repeated typecheck for this source-only guard delta.",
+    "Actual cleanup must be independently read from final records; budget.complete is not cleanup success.",
+    "No actual PG/HTTP/Chrome/build/provider execution by this review."
+  ]
+}
