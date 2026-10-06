@@ -1,15 +1,23 @@
 # WPF-RELEASE01 review
 
-**状态：NOT_STARTED**
+**状态：APPROVED**
 
 Review target commit：7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b
 
 Base：8d8ab520a9d43c7b9dafb22911416ee799ebf665
 
-范围：两个测试脚本及原始证据，非个人发布批准。
+独立 reviewer：/root（gpt-6-astra / ultra），2026-10-06 10:46:30 UTC；本记录由owner原样归因转录。范围：两个测试脚本及其固定兼容证据；不是个人发布批准或全部产品兼容。
 
-只读审查任务：核真实旧/新Web产物与固定后台，检查零provider、身份隔离与清理；确认read/send/recover/negotiation来自实际页面和HTTP原字节，尤其原key与body、旧页面协商，不用合成miniWeb替代；检查SVC报告hash绑定及失败不签发。作者检查/独立检查分别记录。当前未执行独审，P0–P3 findings尚未评估。
+## 独立实际检查
 
-作者固定证据：[README](../../docs/evidence/wpf-release01/README.md)、[source-manifest](../../docs/evidence/wpf-release01/source-manifest.json)。最终检查为两个真实页面旅程，非全库/全部产品功能。
+完整阅读2脚本与SVC verify接口。Node24定向tsc exit0，原始[日志](../../docs/evidence/wpf-release01/independent-typecheck.log)。独立[raw/artifact审计](../../docs/evidence/wpf-release01/independent-audit.json)exit0：2source=target=run hash，8checks/report原字节hash，旧新各24wire、2POST同key/body/turn、真实协商/legacy；两manifest各10files由保留artifact verify重验，loaded10/5逐字匹配，sourceTree/lockDigest与gitobject一致，自有checkout确已移除，protected diff0。目视new light/dark390，侧栏覆盖限制与作者说明一致。
+
+0 blocking；没有需修P0–P3 findings。早期非正式检查提出cleanup、console门禁、format2要求均已在固定实现纳入，未把它们伪作某个正式拒绝target。
+
+## 作者检查与未验证
+
+作者真实浏览器两旅程及局部tsc/cleanup见[README](../../docs/evidence/wpf-release01/README.md)和[source-manifest](../../docs/evidence/wpf-release01/source-manifest.json)。root未重跑浏览器/PG：DB删除以作者cleanup为据，未独立查库。没有全故障注入、真实模型、个人发布或全产品兼容结论。390侧栏打开截图不是完整窄屏UX验收。
+
+发布条件：严格固定new format2 releaseId `8d8ab520a9d43c7b9dafb22911416ee7` 和已测完整descriptor/manifest相同；不能仅相同source SHA复用。源码后续改变须重新定target。此次metadata提交不改变获审两源码。
 
 入口：[plan](plan.md)、[status](status.md)、[quality](../../docs/evidence/wpf-release01/quality.md)。

@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-06T10:46:05.225Z",
+  "reviewer": "root",
+  "target": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b",
+  "metadataHead": "859992e477853a22dfc774131777082af9e8c854",
+  "node": "v24.20.0",
+  "sources": 2,
+  "checks": [
+    {
+      "label": "old",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "compatibilityId": "d4afbf557c00e53088edb6442b2fff1bc995c6d02e93b105ec450f5f9f9a8d5c",
+      "wireRecords": 24,
+      "turnPosts": 2,
+      "loadedAssets": 10,
+      "manifestFiles": 10
+    },
+    {
+      "label": "new",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "compatibilityId": "bc02d897a957d100bddb564aa18b9cae3849b5290f6c230f0630832f9dac0c06",
+      "wireRecords": 24,
+      "turnPosts": 2,
+      "loadedAssets": 5,
+      "manifestFiles": 10
+    }
+  ],
+  "cleanupEvidence": {
+    "parent": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-release01-jTtQSm",
+    "databaseName": "flow_release_d411acf2190844fa9e0fdeef",
+    "startedAt": "2026-10-06T10:38:26.664Z",
+    "providerQueries": 0,
+    "databaseRemoved": true,
+    "finishedAt": "2026-10-06T10:39:13.011Z",
+    "failures": [],
+    "retained": "Private verified artifacts only; no token/config persisted"
+  },
+  "sourceDiffCheck": "",
+  "browserRerun": false,
+  "notes": "Read-only independent source/raw/retained-artifact audit; author browser journeys not rerun."
+}

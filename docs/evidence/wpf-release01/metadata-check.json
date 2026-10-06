@@ -1,15 +1,15 @@
 {
-  "checkedAt": "2026-10-06T10:42:01.187Z",
+  "checkedAt": "2026-10-06T10:47:25.891Z",
   "errors": [],
   "human": {
     "delivery": {
-      "state": "review",
+      "state": "integration",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 1,
     "output": "新旧页面的发送、原请求恢复和兼容记录已验证",
-    "next": "独立审查后交付可复现的发布证据",
+    "next": "主线按已验证产物接收发布证据",
     "blocker": {
       "state": "none",
       "text": ""
@@ -27,8 +27,8 @@
     "record": "PASSED 7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b；两脚本定向TypeScript0；真实旧/新产品浏览器两旅程及四类SVC记录/哈希验证通过，清理成功"
   },
   "review": {
-    "state": "not_started",
-    "record": "NOT_STARTED**",
+    "state": "approved",
+    "record": "APPROVED**",
     "target": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b"
   },
   "todos": [
@@ -48,7 +48,7 @@
       "id": "RELEASE01-03",
       "state": "in-progress",
       "owner": "w01_owner",
-      "evidence": "固定target待独审；未集成/未发布个人服务"
+      "evidence": "root固定target独审通过；仍待主线接收/个人发布"
     }
   ],
   "taskLinks": {
