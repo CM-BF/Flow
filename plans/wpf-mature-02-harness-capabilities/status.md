@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:26:27 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:31:06 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -24,7 +24,7 @@
 | 下一可用交付 | 交付本次失败测量独审，以及缺失普通文件stdio对照的有界设计；既有已审R06与薄入口仍可独立集成。 |
 | 当前阻塞 | ACTIVE: 受限profile目标异常退出且无报告，原因仍未知；本次窗口已消费，真实Codex目录仍缺隔离验证。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：当前v2候选851fd8c7 APPROVED（Mika，2026-10-06 11:20:49 UTC，0P1/P2）；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
+| Review | [review.md](review.md)：结果6b397a58 faithful incomplete/FAIL APPROVED（architecture_read，11:30:14 UTC，0P1/P2）；当前v2候选851fd8c7 APPROVED（Mika，2026-10-06 11:20:49 UTC，0P1/P2）；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 目录Module新增versioned reader/严格DTO，既有挂载与存储不变；R06历史private sink已审，process owner不变。最终target架构更新待Mika/ExecutionLead集成。 |
 
@@ -128,4 +128,4 @@ GO批准、Mika串行派工 `go-c-fd-v2-851fd8c7-once`，见[运行授权](../..
 
 ## v2窗口最终事实（当前）
 
-[结果](../../docs/evidence/wpf-mature-02/fd-canary-v2/run-report.md)：执行c44189e4，1编译/2目标；控制stdio三个socket且fstat/fcntl成功，profile SIGABRT/report=null，第三NOT_RUN。CLI1、1427.775042ms，measurement=false、cleanup/accounting=true，原始编译流0600本地保留仅归档hash。窗口已消费，无后继运行授权；结果待独审，不改变851源码批准，也不代表隔离成功。
+[结果](../../docs/evidence/wpf-mature-02/fd-canary-v2/run-report.md)：执行c44189e4，1编译/2目标；控制stdio三个socket且fstat/fcntl成功，profile SIGABRT/report=null，第三NOT_RUN。CLI1、1427.775042ms，measurement=false、cleanup/accounting=true，原始编译流0600本地保留仅归档hash。窗口已消费，无后继运行授权；结果已获上述限定独审，不改变851源码批准，也不代表隔离成功。

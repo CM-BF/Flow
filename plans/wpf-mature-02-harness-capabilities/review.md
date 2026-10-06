@@ -1,6 +1,6 @@
 # Current C fd v2 result review
 
-State: NOT_STARTED. [Once-only run](../../docs/evidence/wpf-mature-02/fd-canary-v2/run-report.md): compile1/target2; control socket metadata succeeds, profile target SIGABRT/no report, third NOT_RUN. Measurement false, cleanup/accounting true, CLI1. Fixed result target supplied from Git; no further execution. Prior 851 source approval remains scoped.
+State: APPROVED faithful incomplete/FAIL, architecture_read/gpt-6-astra,2026-10-06 11:30:14 UTC,0P1/P2; target6b397a584e5b221c63153f843014d31c4118d011. [Run](../../docs/evidence/wpf-mature-02/fd-canary-v2/run-report.md): 13bindings exact; archive6b snapshot130152B/total425695B. Compile1/targets2,profile SIGABRT/no report,third NOT_RUN; measurement false,cleanup/accounting true,CLI1. Raw0600/hash only; no rerun. No isolation/causal approval or proof of all archival work≤60s. Later metadata does not claim old archive hashes are current.
 
 # Current C fd logging/lexer v2 review
 
