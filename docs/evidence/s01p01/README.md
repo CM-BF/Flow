@@ -1,6 +1,6 @@
 # S01P01：单 runner 的有限并发与保守领取恢复
 
-固定实现 `0bf71a3453299b900bdaea1869076dd4e17a404f`，base `9c6fa9b100f04916f43b04280f05f497b28eeb0f`。本片修改 runtime/journal 及两个专用测试；不修改中心、outbox、AttemptControl、SDK、CLI/config。`RunnerOptions.maxConcurrentAttempts` 默认1，显式整数1..16；CLI配置接线由其owner负责，不能把这片当CLI选项已上线。
+固定实现 `d655a3315bf8d967f4c822969e1a0b72952dc493`，base `9c6fa9b100f04916f43b04280f05f497b28eeb0f`。本片修改 runtime/journal 及两个专用测试；不修改中心、outbox、AttemptControl、SDK、CLI/config。`RunnerOptions.maxConcurrentAttempts` 默认1，显式整数1..16；CLI配置接线由其owner负责，不能把这片当CLI选项已上线。
 
 一个领取/恢复循环管理有限attempt Map。每个attempt复用原独立控制器、outbox、decision及steering。中心registered capacity/session排他仍权威。普通失败/取消只结束对应slot；401凭据错误或403 `wrong_role`、全局abort、EventStorageError停止领取，收束所有已起slot及未决API。goal scope等403保持局部授权失败。
 
@@ -34,6 +34,8 @@ Node24.20.0 / pnpm9.15.4 / Vitest4.0.18，固定本WT `@flow/*` paths，只复�
 - Mika预审P2：FIFO读及tmp写会阻塞。journal-fifo-red两子进程均在2秒上限被SIGTERM回收，随后O_NONBLOCK/fstat、短读循环、tmp独占创建，8项全绿。
 - Mika预审P2：不能把goal权限403当host认证错误。现401/403 wrong_role才停止host，scope拒绝局部处理；双slot与吞错路径测试通过。
 
-原日志均冻结。`source-history.json`保存所有历史product/test采样哈希的逐字复核快照；从git/明确变更重建的版本仅在hash完全一致后入档。最终 `manifest.json` 区分source、readonly消费者、原raw和历史版本，不把旧测试源码当当前版本。
+原日志均冻结。`source-history.json`保存所有历史product/test采样哈希的逐字复核快照；从git/明确变更重建的版本仅在hash完全一致后入档。当前 `manifest-final.json`（原`manifest.json`保留0bf71a3） 区分source、readonly消费者、原raw和历史版本，不把旧测试源码当当前版本。
 
 这些是功能与恢复证据，不是吞吐/SLO/provider容量；没有运行S01/P01性能矩阵。原session/中心uncertain责任不变，unknown guard的保守可用性损失与单目录单runtime假设保留。Mika独立技术review及Goal Owner范围接收、main集成另记；当前不是main能力声明。
+
+Mika正式review的测试可移植性P2：FIFO测试移除本机loader/证据tsconfig绝对路径，默认从当前项目依赖解析tsx并用正常配置；本机复用安装仅check.mjs传入显式测试环境覆盖。原root package已声明tsx4.23.15。journal-portable8/8、types-portable0绑定新7文件，runtime/journal产品源码对0bf71a3逐字不变；未追加PG/不同用例，也未声称此未安装依赖的WT已运行默认解析分支。
