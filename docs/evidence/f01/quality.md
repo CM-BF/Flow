@@ -160,3 +160,11 @@ GO review caught the original legacy34 C02 fixture reusing fixedflow_c02, resett
 初4用例1绿3红：旧012与018fixture调用最新claim缺后继表/列，新test误写client方法名；修两旧fixture仅种各自时代真实attempt，原command/迁移/replay/额度/旧版本时间断言保留，取得F01v14精确scope。次3用例旧2绿，新用例对JSON嵌套CRLF错误按raw匹配；保留green文件名的实际失败。修为精确JSON编码匹配后只重跑新1绿1609ms，4different各有绿，非一次4/4。noEmit独立exit0；最终string-only断言无类型变化，finalstdout也空。clean-code检查：3行生产挂载、既有领域不改；资源与stage输入写明，不通过提前迁移伪造历史。
 
 证据编码说明：Git已有core.autocrlf=input把失败diff中的1处CRLF规范为LF；readable green.txt保持Git文本，原始2674 bytes完整base64保存在goal-context-production-green-raw.json（包含原hash），不删除/改写失败事实。manifest分别绑定两份。
+
+## 2026-10-06 06:52 UTC X05 production / CLI
+
+固定3691d1b目标6源码，领域9ebb逐文件零diff。023先scheduler/worker；无host默认无下载routes/worker；本机FLOW_PACKAGE_FETCH_CONFIG绝对regular/owned0600/≤64KiB，拒symlink/FIFO/未知字段，URL/根策略继续由X04/X05核验。显式host初始化成功后持久worker接管，preClose先停worker再close pool；失败启动不遗留锁/连接。公开CLI五动作沿稳定key/schema/公共client，202不冒称成功。
+
+真实production factory/PG/loopback+CLI 3项与配置纯模块2项共5/5、2.80s，typecheck独立exit0。固定随机库before[]/createdtrue/connections[]/remaining[]；下载成功重启幂等且tarball1GET，取消下载/重启/local reconcile仍1GET。验证压缩bytes不等install/load，runtimeStatus仍unavailable。未触个人服务/真实npm/模型。
+
+本段clean-code复核：声明配置深模块只读文件，业务策略复用已有host，worker生命周期收在server入口，CLI不复制状态机；无新依赖。保留X05协作取消与FS清理非硬时限、SIGKILLstaging无GC边界。manifest见package-fetch-production-manifest.json，待独立只读review。

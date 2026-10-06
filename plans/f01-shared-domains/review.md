@@ -1,10 +1,10 @@
 # F01 共享接线审查
 
-**当前增量状态：APPROVED（K03生产挂载/旧迁移fixture）**
+**当前增量状态：NOT_STARTED（X05可选生产挂载/配置/CLI）**
 
-Review target commit：44bd8bc8e8e30ec49f86b6828f4947bf2c47d148
+Review target commit：3691d1b3dffa5eb33546ff3b84f45fa88401a9d5
 
-Scope：apps/server/src/index.ts、apps/server/src/goal-tool-runs/migration.test.ts、apps/server/src/goal-graph-runs/native-migration.test.ts、packages/client/src/goal-context-production.test.ts。manifest：docs/evidence/f01/goal-context-production-manifest.json。
+Scope：apps/server/src/index.ts、apps/server/src/main.ts、apps/server/src/package-fetch-configuration.ts、apps/server/src/package-fetch-configuration.test.ts、apps/cli/src/index.ts、packages/client/src/package-fetch-production.test.ts。manifest：docs/evidence/f01/package-fetch-production-manifest.json。
 
 ## K01薄client独立批准
 Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。

@@ -1,0 +1,68 @@
+{
+  "target": "3691d1b3dffa5eb33546ff3b84f45fa88401a9d5",
+  "recordedAt": "2026-10-06T06:52:30.520434+00:00",
+  "sources": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12011,
+      "sha256": "f70633626f721d2676076861cdf8cd19166cf7701470048ef1bb12ff60906030"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "bytes": 1813,
+      "sha256": "37b10746c14807ec99196ce2e408a5f99525744890264442166b37a4e41f49d4"
+    },
+    {
+      "path": "apps/server/src/package-fetch-configuration.ts",
+      "bytes": 2952,
+      "sha256": "96f5531faf224ea751a1b55ef3b0e0a2ac7e11c79c41de23dda639cfd789139d"
+    },
+    {
+      "path": "apps/server/src/package-fetch-configuration.test.ts",
+      "bytes": 2054,
+      "sha256": "60e6ac2df214a5d3bb14927e571af421b1073c22a9f966c45eb322e4562522a0"
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 20456,
+      "sha256": "09253845f16a889f5e8906811af24be144ee54e162be8a8414c5941b93fd7a35"
+    },
+    {
+      "path": "packages/client/src/package-fetch-production.test.ts",
+      "bytes": 8529,
+      "sha256": "5231e5dbab811353c86a21591f887dc7a596adf196f4fbf271ce3dadde742d95"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/package-fetch-production-first.txt",
+      "bytes": 543,
+      "sha256": "784e1cedc3f539c9cac62702dcf9182c72d78f76640f4301cf9bcc79ab1e22a5"
+    },
+    {
+      "path": "docs/evidence/f01/package-fetch-production-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/f01/package-fetch-production-facts.json",
+      "bytes": 602,
+      "sha256": "acbb3b0295ba6a82d4e07d47f45fb7457cfa10d809e5c92f849e851c0419f151"
+    }
+  ],
+  "domain": "9ebb3bdd781b3667f0c164405e9a17387ce89d76",
+  "domainDiff": [],
+  "checks": {
+    "selected": 5,
+    "passed": 5,
+    "failed": 0,
+    "typecheckExit": 0,
+    "providerQueries": 0
+  },
+  "limits": [
+    "compressed verified artifact only",
+    "host opt-in only",
+    "no default personal config or service reload",
+    "cooperative worker shutdown inherits X05 limits"
+  ]
+}
