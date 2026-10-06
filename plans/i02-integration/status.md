@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:04:18 UTC / mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:13:06 UTC / mainc34033234e0f313e89b0982eb233f268b5f2172e |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -115,3 +115,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 历史手工管理时间标签 09:54（非执行观测；实际118源快照为09:51:58.837Z）：接收SVC04唯一计划、TUI共享ACK后继、F01/main回执与FLOW当前事实，118来源登记通过；[本批receipt](../../docs/evidence/i02/release-ack-planning-integration.json)。本批只文档与registry，不重跑产品测试、不变个人服务。
 
 2026-10-06T09:58:56.844754+00:00：本批[固定集成回执](../../docs/evidence/i02/native-tui-integration.json)记录59源同获审target一致、4文件50直接检查及root/Web类型检查通过。TUI两项P2已由原owner修复并获Mika独审；离线固定锁安装41复用、0下载、未运行安装脚本。未重跑领域/PTY/浏览器验收，未调用provider或修改个人服务。
+
+2026-10-06 10:13:06 UTC：工程/附件唯一计划与共享026交接、S01配置范围归还、125源候选组成纯metadata批。4个相关source解析/人读字段完整；产品目录无改，不重复工程测试。实际123源旧回执保留，125实际部署另记；个人b1c/v12不动。见[本批记录](../../docs/evidence/i02/attachment-engineering-metadata.json)。
