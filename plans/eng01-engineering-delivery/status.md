@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:27:04 UTC / main8d8ab520a9d43c7b9dafb22911416ee799ebf665 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:51:29 UTC / mainc450c2da |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -13,26 +13,26 @@
 | 工作树dirty状态 | 本次仅父计划与实际子片状态对齐，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | 本管理批无工程测试；ENG01A E0受信收据关联与完成门禁已限定独审；真实Git/checker E1实施中 |
-| 已集成main状态 / HEAD | 父计划已main8d8；ENG01A分支已有受信收据/目标runner/完成门禁，尚未集成，真实工作区纵向E1仍在实施 |
+| 检查状态 | ENG01A E0/E1独审通过并main；集成点新S01停止语义下3个直接PG旅程和root类型通过，本管理批不重测 |
+| 已集成main状态 / HEAD | ENG01A 040fdede227fe22504972ea7a053c23f14a30f52 已在c5bab40受控接收；当前mainc450c2da。ENG01B专用profile与持久setup正在独立实现 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/eng01-engineering-delivery, docs/evidence/eng01 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 工程任务的检查收据与交付身份核对已完成局部审查，真实工作区修改和检查正在接通。 |
-| 下一可用交付 | 在受管工作区真实修改合成代码，运行受信检查并读回固定差异与日志。 |
+| 当前产出 | 合成工程任务已能在受管工作区实际修改代码、运行受信检查并保存固定差异；未知结果保持原事实。 |
+| 下一可用交付 | 明确选择并恢复专用工程执行配置，再准备合格原生模型的有界工程验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 | Claim | 2c8bf375-8247-458b-8891-2dc2b4a289cd v1，仅plan/evidence |
-| 架构影响 | ENG01A新增workspace/checker/receipt小Interface；中心仅验收据关联，宿主与持久执行机制复用，尚未main |
+| 架构影响 | ENG01A workspace/checker/receipt已main；ENG01B独立profile用途与持久setup扩展，继续复用单一runtime |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | ENG001-01 | completed | Execution Lead | plan / research / source-observation / claim receipt |
-| ENG001-02 | in-progress | native_center_owner / Execution Lead独审 | [ENG01A Interface](../../../engineering-workspace-pipeline/docs/evidence/eng01a/interface.md)；E0 909b45e已限定批准，E1资源生命周期与实际检查待完成 |
-| ENG001-03 | in-progress | native_center_owner | [ENG01A唯一status](../../../engineering-workspace-pipeline/plans/eng01a-workspace-pipeline/status.md)；独立claim v2，真实Git/checker与PG组合实施；0provider |
-| ENG001-04 | pending | 待派工 | 显式工程profile与恢复/资源门禁未实施 |
+| ENG001-02 | in-progress | native_center_owner | ENG01A工作区/检查合同已main；[ENG01B执行配置](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)补用途/pin/恢复门禁 |
+| ENG001-03 | completed | native_center_owner / 独立runner_owner review | ENG01A E0+E1固定040已mainc5；真实Git/checker/PG、unknown重启/丢ACK恢复；fixture非native |
+| ENG001-04 | in-progress | native_center_owner | [ENG01B](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)，独立claim/不可变用途profile与恢复setup；旧runtime保持 |
 | ENG001-05 | pending | 独立operator/reviewer | 无新provider许可或执行 |
 | ENG001-06 | pending | Web/TUI owner | 交付读取与接受待公开合同 |
 | ENG001-07 | pending | adapter owner | 第二harness扩展未实现 |
