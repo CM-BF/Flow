@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-06T18:58:58.026397+00:00",
+  "state": "WINDOW_RETURNED_AFTER_SETTINGS_BROWSER_FAILED_CLEANED",
+  "source": "W01 completion receipt plus manager read actualparent/worker/budget",
+  "run": "settings-20261006-185753-21f4e5",
+  "sourceHead": "f80052b26f5f3c6057a6a056fa6875f984fd700b",
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "startedAt": "2026-10-06T18:58:11.147902+00:00",
+  "finishedAt": "2026-10-06T18:58:16.323Z",
+  "elapsedMs": 5197,
+  "cumulativeMs": 5197,
+  "remainingMs": 54803,
+  "result": "FAILED_OWNED_CHROME_PRE_CDP",
+  "behaviorChecks": 0,
+  "screenshots": 0,
+  "failure": "Error: Owned Chrome exited before CDP readiness\n    at <anonymous> (/private/tmp/message-settings-browser-candidate/worker.mjs:81:25)",
+  "cleanup": {
+    "parentGroup": 87564,
+    "groupAbsent": true,
+    "chromePid": 87566,
+    "chromeExited": true,
+    "fixtureClosed": true,
+    "scratchAbsent": true,
+    "errors": []
+  },
+  "PG": 0,
+  "provider": 0,
+  "retryAuthorized": false,
+  "nextHolder": "LeadR01 exclusive90swork+20cleanup realApp→af51",
+  "raw": "/private/tmp/message-settings-browser-candidate",
+  "rawHashes": {
+    "result.json": "01652e6439fefb5bd49486176fb8d7ac162f2ec5cdb865d9272dae5f2e72f513",
+    "browser-budget.json": "1b9c19465742cb36c2a993260b1e457580d216c543dc7d624d19c82ae6fe2af7",
+    "raw/settings-20261006-185753-21f4e5/browser-results.json": "0c4a3cff32de8b35e064195c89e179b6368a3b8c899624f44a30ce05a9bdd28e"
+  },
+  "limit": "Failure before behavior; no productbehavior diagnosis. Source-only causalreview may follow; remainingbudget is not runpermission.",
+  "leadAcceptedAt": "2026-10-06T18:58:58Z",
+  "chromeActualExitCode": "NOT_CAPTURED; chromeExited boolean only, parentexit1 notChromeexit",
+  "subsequentLeadEvent": "R01 later2.927s af51 clientaliasfailure/0Chrome/cleanedreturned; no currentsharedholder; notSettingssamecause"
+}

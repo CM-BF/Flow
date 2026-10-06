@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-06T19:01:59.769423+00:00",
+  "source": "Root readonly primary-source research relayed; manager did not run Chrome or probe paths",
+  "state": "STRONG_ENVIRONMENT_HYPOTHESIS_NOT_UNIQUE_CAUSE_PROOF",
+  "run": "settings-20261006-185753-21f4e5",
+  "observed": "OriginalChrome stderr says Failed to create socket directory atprocess_singleton_posix.cc1043; separateCrashpad/settings.dat write-denied logs. Originalworker persisted chromeExited only.",
+  "primaryCorroboration": [
+    "CurrentChromium source puts this message atCreateUniqueTempDir failure before socketbind.",
+    "macOSGetTempDir first checksMAC_CHROMIUM_TMPDIR, otherwiseNSTemporaryDirectory. Parent setsTMPDIR/TMP/TEMP but notMAC_CHROMIUM_TMPDIR; readonlysandbox onlyallows own scratch/output writes."
+  ],
+  "urls": [
+    "https://github.com/chromium/chromium/blob/main/base/files/file_util_apple.mm",
+    "https://chromium.googlesource.com/chromium/src/+/refs/heads/main/chrome/browser/process_singleton_posix.cc"
+  ],
+  "versionBoundary": "InstalledChrome154 exacttag notavailable inroottool; currentprimary corroboration only.",
+  "unknown": [
+    "ActualChrome exit code/signal notcaptured",
+    "Originalnative sockettemp path and errno unknown",
+    "WhetherR01 uses sameenvironment is not inferred",
+    "Crashpad rejection notassumed samecause asProcessSingletonfailure"
+  ],
+  "constraints": "No retry/probe, no personalLibrary/profile inspection or write, no broad systemtmp write allowance, no sandbox disable. Originalownerreadonly argv/env review pending; originalraw staysunchanged."
+}

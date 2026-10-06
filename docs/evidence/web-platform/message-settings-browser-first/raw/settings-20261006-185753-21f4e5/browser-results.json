@@ -1,0 +1,29 @@
+{
+  "sourceHead": "f80052b26f5f3c6057a6a056fa6875f984fd700b",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "11083f2ba938e4ca6919792224c6280682b3972ccc38480ec7311687074f546f"
+  },
+  "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "startedAt": "2026-10-06T18:58:11.147Z",
+  "workerPid": 87564,
+  "parentPid": 87541,
+  "chromePid": 87566,
+  "chromeProcessGroup": "inherited-worker",
+  "checks": [],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "failed",
+  "pg": 0,
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "chromeExited": true,
+  "failure": "Error: Owned Chrome exited before CDP readiness\n    at <anonymous> (/private/tmp/message-settings-browser-candidate/worker.mjs:81:25)",
+  "finishedAt": "2026-10-06T18:58:16.323Z",
+  "observedElapsedMs": 5176,
+  "profileCleanupOwner": "external-parent-after-process-group-absence"
+}

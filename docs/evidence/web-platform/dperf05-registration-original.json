@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-06T18:55:51.175Z",
+  "count": 173,
+  "task": {
+    "id": "WPF-DPERF05",
+    "title": "看板更新时间兼容",
+    "role": "工程协作",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
+    "branch": "codex/dashboard-status-timestamps",
+    "planDir": "plans/wpf-dperf05-status-timestamps",
+    "evidenceDir": "docs/evidence/wpf-dperf05"
+  },
+  "canonical": "edd4e6b15d799a535debb778a7c03984aaaca322",
+  "claim": "9a876001-611c-4f79-819f-2284c04d8f61",
+  "claimVersion": 1,
+  "rawSha256": "ca374be216ade2efcd1aa8e1cb7e1539d7c522f190365d206ac522d33519ba74",
+  "parse": {
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 2,
+      "output": "已确认更新时间格式修复范围，正在实现严格 UTC 解析。",
+      "next": "支持高精度 UTC，坏时间不会中断任务状态读取。",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": null,
+      "scopes": [
+        "apps/execution-dashboard/src/status.mjs",
+        "apps/execution-dashboard/test/status-timestamps.test.mjs"
+      ],
+      "errors": [
+        "实现目标需完整 SHA"
+      ]
+    },
+    "taskId": "WPF-DPERF05",
+    "owner": "workspace_panels_owner / gpt-6-astra Ultra",
+    "branch": "codex/dashboard-status-timestamps",
+    "branchState": "in-progress / source-only",
+    "updatedAt": "2026-10-06T18:54:27.000Z",
+    "updatedRecord": "2026-10-06 18:54:27 UTC",
+    "todos": [
+      {
+        "id": "DPERF05-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[claim](../../docs/evidence/wpf-dperf05/claim-observation.json)、[设计](../../docs/evidence/wpf-dperf05/approved-design.json)"
+      },
+      {
+        "id": "DPERF05-02",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "私有 parser / 纯测试实现中"
+      },
+      {
+        "id": "DPERF05-03",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "定向检查 NOT_RUN"
+      },
+      {
+        "id": "DPERF05-04",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "独审/main 未开始"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "ec5da343880879154e2392f52eaa915d5b08aa77",
+    "declaredDirty": "初始 clean；本段新增本片 canonical/evidence 待提交",
+    "checks": {
+      "state": "not_run",
+      "target": null,
+      "record": "NOT_RUN — 尚无产品运行准入"
+    },
+    "reviewRecord": "NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED；base 仅输入，不代表本片完成",
+    "next": "固定 parser/test 源及 manifest，送独审；获单独运行 gate 才执行纯测试。",
+    "risks": "原 aggregate 老化策略、全真实源、部署均未测。GO 两个实际 UTC 示例待管理给原字面值；不读他人移动 status 填造来源。",
+    "decisions": "NONE。"
+  },
+  "newEngineeringTests": 0,
+  "providerQueries": 0,
+  "liveObserved": false
+}

@@ -1,6 +1,6 @@
 {
   "at": "2026-10-06T18:53:15.161090+00:00",
-  "state": "COMMITTED_SOURCE_READY_IMPLEMENTING",
+  "state": "REGISTERED_C8D_SOURCE_APPROVED_PREPARING_PURE_CHECK",
   "taskCandidate": "WPF-DPERF05",
   "parent": "D01",
   "title": "看板 UTC 时间格式兼容",
@@ -68,7 +68,7 @@
     "Chrome": false,
     "install": false
   },
-  "next": "Owner continues source-only; originalLead registers uniqueownerstatus fromSOURCE_READY; fixedsource andreview before pureparsergate",
+  "next": "Owner preparesboundedpureNode15s/5cleanup supervisor; rootdeltareview thenmanagerfreshclaim/free singleusegate. No currentruntime.",
   "managerProductRuns": 0,
   "managerPageSamples": 0,
   "managerFreeSamples": 0,
@@ -133,5 +133,9 @@
     "reportedAllocatedKiB": 108,
     "managerProvisionOperations": 0
   },
-  "sourceReady": "dperf05-source-ready.json"
+  "sourceReady": "dperf05-source-ready.json",
+  "registration": "dperf05-registration-intake.json",
+  "candidate": "dperf05-c8d-candidate-owner.json",
+  "sourceReview": "dperf05-c8d-root-source-review.json",
+  "metadata": "7311ac51113c27a8ddd0e368338dbb0f9e1037fd"
 }

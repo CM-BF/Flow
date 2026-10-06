@@ -1,0 +1,32 @@
+{
+  "observedAt": "2026-10-06T19:03:13.101Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/catalog.ts",
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/test/message-settings.browser.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "docs/evidence/wpf-message-settings",
+      "plans/wpf-message-settings"
+    ],
+    "state": "active",
+    "branch": "codex/web-message-settings",
+    "origin": "new",
+    "taskId": "WPF-MESSAGESETTINGS01",
+    "worker": "w01_owner",
+    "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings",
+    "createdAt": "2026-10-06T18:07:51.094Z",
+    "updatedAt": "2026-10-06T18:07:51.094Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlaps": [],
+  "authorization": "source/tmp only browser environment/scanner narrowrepair; no runtimegate and original5197spent remains"
+}

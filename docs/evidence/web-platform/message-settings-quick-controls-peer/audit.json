@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-06T18:57:28.748429+00:00",
+  "state": "READ_ONLY_DESIGN_REVIEW_NOT_RUN",
+  "fixedSource": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+  "sources": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+      "fixedVerified": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "fixedVerified": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "fixedVerified": true
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "fixedVerified": true
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 11558,
+      "sha256": "11083f2ba938e4ca6919792224c6280682b3972ccc38480ec7311687074f546f",
+      "fixedVerified": true
+    }
+  ],
+  "researchSha256": "211462993053a0d77c4cdfe25dc86440b4bd30a167b8fccbad2be3abe4ea89cc",
+  "reportSha256": "cf5ddf4f030a8c1c58fcf5634fe4744c34efe93565713188c1650c676c7ad7a6",
+  "findings": 3,
+  "runtime": "NOT_RUN",
+  "projectWrites": false
+}

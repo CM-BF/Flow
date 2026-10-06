@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-06T19:01:54.282846+00:00",
+  "state": "CHANGES_REQUESTED_SOURCE_ONLY_NOT_RUN",
+  "target": "676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1",
+  "base": "ec5da343880879154e2392f52eaa915d5b08aa77",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 6411,
+      "sha256": "ebaa4728caab27fa62471e042720117e881781022a01b79df9487d1ac4208c94"
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "bytes": 5328,
+      "sha256": "d32393ad07a993144161107461dfd7feb4837558c690731ab8fae08550670676"
+    }
+  ],
+  "finding": {
+    "priority": "P2",
+    "file": "apps/execution-dashboard/src/status.mjs",
+    "line": 14,
+    "title": "First digit-dash search can promote a main-sync timestamp or reject a valid annotated update",
+    "cases": [
+      {
+        "input": "更新时间待确认；main 同步 2026-10-07T01:00Z",
+        "required": "updatedAt null with existing parseerror",
+        "sourceReason": "Only digit-dash prefix is in main-sync, so it is parsed as the primary update."
+      },
+      {
+        "input": "更新 2026/13/06 16:10 UTC；main 同步 2026-10-07T01:00Z",
+        "required": "updatedAt null, not later main timestamp",
+        "sourceReason": "Malformed primary timestamp has no digit-dash prefix, so search skips it."
+      },
+      {
+        "input": "任务 WPF-DPERF05-01 更新于 2026-10-06T16:10Z",
+        "required": "Valid actual primary update remains compatible with explanatory prefix",
+        "sourceReason": "Task identifier05- is mistaken for the date start, so the real valid update is rejected."
+      }
+    ],
+    "requested": "Within originaltwofiles, define primary-update versus main-sync boundary before candidate extraction and avoid treating task-number prefixes as dates. Add focused combined-record cases; preserve legal explanation/backtick formats and strict calendar/zone behavior. Do not change aggregate aging policy or otherowner statuses."
+  },
+  "otherwiseReviewed": [
+    "UTC/Z/+00:00, deliberate fractional millisecond truncation, finite check before ISO",
+    "Strict calendar roundtrip avoids rollover, earlyyears via setUTCFullYear,24:00 only zero remainder",
+    "Same parseStatus interface/error ownership, updatedRecord preserved, no thirdparty imports or aggregate fixture",
+    "56 declared Node testcases remain NOT_RUN; source assertions are not passing evidence"
+  ],
+  "methods": "Local clean-code input semantics/error review against acceptedrootdesign; fixedgit sourceonly, no imports/Node/HTTP/PG/Chrome test. Writtenonly/tmp."
+}
