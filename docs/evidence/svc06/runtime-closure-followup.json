@@ -1,0 +1,205 @@
+{
+  "observedAt": "2026-10-06T14:41:47.973535+00:00",
+  "mode": "source reading and metadata only; no install/build/cache scan/PG/provider",
+  "ownerHead": "ad6d39f8c25ec1ffce493db71b3c8d49cb3394a0",
+  "approvedImplementation": "6d276baee6d3fbf14eb4b638a9ad773ffcec988d",
+  "latestReviewedDelivery": "ad6d39f8c25ec1ffce493db71b3c8d49cb3394a0",
+  "claim": {
+    "id": "3346a60d-0b50-4c73-bf22-9b258f8b1381",
+    "version": 4,
+    "state": "active",
+    "lead": "astra_ultra_execution_lead",
+    "worker": "assignment_review",
+    "observedVia": "http://127.0.0.1:4320/api/snapshot",
+    "snapshotAt": "2026-10-06T14:38:18.917Z",
+    "writeThisSegment": [
+      "plans/svc06-backend-release",
+      "docs/evidence/svc06"
+    ]
+  },
+  "fixedLockSha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+  "goReadOnlyInput": {
+    "attribution": "GO read-only input relayed by Execution Lead; original new report path unavailable; numbers not independently recomputed in this segment",
+    "workspaceImporters": 5,
+    "extraRootRuntime": "tsx@4.23.15",
+    "selectedSnapshots": 256,
+    "totalSnapshots": 683,
+    "selectedCachedIndexes": 256,
+    "allCachedIndexes": 581,
+    "missing": 0,
+    "unsupported": 0,
+    "cacheMissing": 0,
+    "retainedContentLogicalBytes": 321929020,
+    "excludedContentReportedBytes": 186269334,
+    "caveat": "contains shared duplicates; not a disjoint partition, physical peak, allocation guarantee or successful install"
+  },
+  "directlyConfirmed": {
+    "workspaceRuntimeRoots": [
+      "apps/server",
+      "apps/runner",
+      "packages/contracts",
+      "packages/client",
+      "packages/protocols"
+    ],
+    "rootTsxKind": "devDependency",
+    "rootTsxVersion": "4.23.15",
+    "pnpmVersion": "9.15.4",
+    "sdkVersion": "0.3.290",
+    "sdkPeerContextsMustRemain": true,
+    "sdkOptionalNativeDarwinArm64Required": true,
+    "migrationsAreRelativeResources": true,
+    "currentBuilderInstallsWholeWorkspace": true
+  },
+  "space": {
+    "availableBytes": 1179770880,
+    "minimumFullPreparationBytes": 2684354560,
+    "sharedFinishReserveBytes": 1073741824,
+    "unchangedGate": true,
+    "admittedFullPreparation": false,
+    "reservation": false,
+    "peakNotMeasured": true
+  },
+  "sourceBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/pnpm-workspace.yaml",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/apps/server/package.json",
+      "bytes": 509,
+      "sha256": "ed0aa11b4107898d54166a5d340b88396dd972433ba90bc259048db1af8ac0d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/apps/runner/package.json",
+      "bytes": 423,
+      "sha256": "98933c9182d8c380f53d323ad0b289c1fd945b916f751babc64588092d749063"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/packages/client/package.json",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/packages/protocols/package.json",
+      "bytes": 366,
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4853,
+      "sha256": "aac76a3003e14218b6084256d977158bf38a4794f5b58712f4b37fcf07d105ab"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 994,
+      "sha256": "331d79f85335f53b8f8d48bcd30bfcbf3e2d95e75c9cd2a165d0b2d0f0ac689e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/host.mjs",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/apps/server/src/context-transparency/migration.ts",
+      "bytes": 781,
+      "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/apps/runner/src/claude.ts",
+      "bytes": 22057,
+      "sha256": "4e4676f7a81ac97cfa05de6d398e1ca96e4e0b69d9968507ba9c4de1de9b4a2b"
+    }
+  ],
+  "toolBindings": [
+    {
+      "path": "/opt/homebrew/lib/node_modules/pnpm/package.json",
+      "bytes": 6033,
+      "sha256": "3b20ec7bebaa078d5ae4ab09651b80434a9f1d6446065ad53779ecafdc7f9936"
+    },
+    {
+      "path": "/opt/homebrew/lib/node_modules/pnpm/dist/pnpm.cjs",
+      "bytes": 8880437,
+      "sha256": "4c319da726786d5535aef95fa78ec5e24f1079382da878a35fa5dd044a7bab96"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+      "bytes": 2546,
+      "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "bytes": 1230597,
+      "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2"
+    }
+  ],
+  "priorEvidence": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/seed-closure-observation.json",
+      "bytes": 6351917,
+      "sha256": "7c4ff1857c8caec888107874756919d15e6c251e25b6b59349518316beb122c9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/seed-closure-plan.json",
+      "bytes": 1519,
+      "sha256": "39a39d7351418b582239a6d4acae1d4ae9d777406835e4b1b0058cd4b8b97079"
+    }
+  ],
+  "sourceReading": {
+    "pnpmCliFiltering": "dist/pnpm.cjs:222844-222875 filter-prod follows prod workspace graph; selector alone is not dependency-class exclusion",
+    "pnpmInclude": "dist/pnpm.cjs:187225-187245 install include.dependencies/devDependencies/optionalDependencies are separate switches",
+    "pnpmEngineAndGraph": "dist/pnpm.cjs:139034-139165,145361-145362 selectedProjects then engine+optional traversal; peer-qualified snapshot identity must be retained",
+    "pnpmFrozen": "dist/pnpm.cjs:184758-184796 and145972-146035 validate selected manifests including dependency class; root tsx cannot silently move without matching build lock",
+    "pnpmCafs": "dist/pnpm.cjs:76628-76643 executable mode uses separate content path; index/content selection cannot be package-name-only",
+    "sdkResolver": "sdk.mjs function dq resolves platform optional package /claude through SDK-local createRequire; no native binary started"
+  },
+  "notExecuted": [
+    "new cache graph enumeration or content hashing",
+    "dependency installation or package scripts",
+    "clone/copy/build/test/PG",
+    "SDK import/query/startup/auth/native binary",
+    "personal service operations"
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ]
+}

@@ -40,3 +40,9 @@ SVC05 fixed362受控更新于12:41:29 closed，v15 accepting，保留会话/两W
 实施 Interface 与资源界限：[interface.md](../../docs/evidence/svc06/interface.md)。artifact bootstrap 只接已有独立 Web pointer 且全部 retained 的固定后台兼容报告已验证；旧 legacy 未显式选择 artifact 不改变。Python/clonefile 仅构建期；Node和非system dylib固定身份为宿主前置。源码范围遵守9literal claim。
 
 当前可审切片固定 `6d276baee6d3fbf14eb4b638a9ad773ffcec988d`，实际范围与 8 个分轮行为观察见 [README](../../docs/evidence/svc06/README.md)。SVC06-03/04 不因小片已有代码而完成：完整 fixed artifact/运行/开发依赖隔离性仍未验。narrowed seed 只读统计不自动降低 ≥2.5 GiB 的完整构建门槛；恢复条件由本 co-lead 按实际资源协调，不扩大删除路径。
+
+## 运行依赖最小后继（2026-10-06 14:41 UTC）
+
+[固定闭包方案](../../docs/evidence/svc06/runtime-closure-followup.md)仅改变后继私有构建策略：原锁来源保持，安装视图显式纳入根tsx，选择五workspace生产/可选与peer闭包，私有窄seed由固定pnpm生成内部布局。实际产品未修改；GO只读256/683统计不当安装正例/physical峰值。
+
+已审6d276保护小片可由Lead独立接收ad6d39f，不必等待fullartifact；SVC06-03完整独立运行与SVC06-04正例仍open。资源≥2.5GiB且共享收尾≥1GiB不变，下一实际验证先小fixture再一次真实离线产物/随机PG入口，未经新资源准入不启动。
