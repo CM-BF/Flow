@@ -1,6 +1,6 @@
 # P02 独立review
 
-状态：**CHANGES_REQUESTED（两项P2已修复，待复审）**。当前review target commit：**f942e5a5cbf138993dd7521792dd071a172c17e1**。生产入口旧target：e2955d4bc33c458b6dbdd10f380f834557ba98fa。Base：72278b22ae81f551dc13d68da2fb45f2ef182038。
+状态：**APPROVED（Goal Owner独立复审，两项P2关闭）**。当前review target commit：**f942e5a5cbf138993dd7521792dd071a172c17e1**。生产入口旧target：e2955d4bc33c458b6dbdd10f380f834557ba98fa。Base：72278b22ae81f551dc13d68da2fb45f2ef182038。
 
 Worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch；branch codex/protocol-dispatch。Lead共享9db3ce入口已pick为05a1308；本target包含实际入口检查，不再依靠手工注册备用逻辑。
 
@@ -8,7 +8,7 @@ Worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch�
 
 已执行：作者typecheck；公开HTTP中心3项、独立runner进程10项，联合13/13（17.85s）。其中1项真实server/main从空schema启动、真实CLI注册/提交/查询、真实runner/main出站/产物/验证，SIGTERM exit0；其他9项专用入口支持短租约故障注入。中心命令ACK无限挂起回归先红后绿，12项历史证据保留。见[report](../../docs/evidence/p02/report.md)、[最终原始JSON](../../docs/evidence/p02/production-checks.json)、[源码hash](../../docs/evidence/p02/production-manifest.json)。
 
-未执行：独立review、真实模型、公网对端、完整A2A/MCP conformance、MCP持久elicitation/Tasks、通用全程预算。取消夹具通过官方SDK handler subclass返回尚在working的Task，属于防御性故障场景，不宣称该对端行为证明完整规范兼容。
+未执行：独立review者重跑测试、真实模型、公网对端、完整A2A/MCP conformance、MCP持久elicitation/Tasks、通用全程预算。取消夹具通过官方SDK handler subclass返回尚在working的Task，属于防御性故障场景，不宣称该对端行为证明完整规范兼容。
 
 ## 可复制审查任务
 
@@ -21,4 +21,10 @@ Worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch�
 
 修复后5项实际main故障均exit1、0heartbeat、0remote send；受影响runtime15/15（20.64s）+typecheck，包含原生产入口smoke。不重复未改中心3项；13项基线原始证据保留。[当前JSON](../../docs/evidence/p02/initialization-checks.json)、[当前源码hash](../../docs/evidence/p02/initialization-manifest.json)。
 
-结论：作者修复完成，独立复审尚未执行，无APPROVED。请复审f942e5a，不能沿用旧target作为批准。
+## 正式独立复审结论
+
+2026-10-06，Execution Lead转达Goal Owner独立**APPROVED**，固定target f942e5a5cbf138993dd7521792dd071a172c17e1；metadata ce790c1e1c14403af01f60e3b2b6e0d77d68d817核验clean。基线核心与12项测试已审；本次核对own-ref/null-prototype/remoteUrl、目录成功后构造lease、存储失败明确停机及5项真实main失败断言，以上P2关闭。
+
+已执行：只读源码delta、保存的5/5故障检查、runtime15/15、typecheck和manifest。未执行：此次独立审查未重跑测试。作者先前的真实PG/官方SDK peer/独立进程证据保留，不将转达批准写成新测试运行。
+
+批准范围仅Task-based A2A片段及明确main挂载；不含MCP持久交互、同runner多进程、公网模型或通用预算。剩余P01-06仍open。claim待Lead集成，APPROVED不等于已合main。
