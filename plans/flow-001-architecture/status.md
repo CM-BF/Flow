@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:27:04 UTC / main8d8ab520a9d43c7b9dafb22911416ee799ebf665 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:00:27 UTC / mainc450c2da7e6185b88db9f46e0299ee504ee6f3e8 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,11 +12,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | 8d8ab520a9d43c7b9dafb22911416ee799ebf665；已含TUI01A、R05C/C1、R05D配置D0、SVC04工具与D06固定f181图。真实Codex启动与实际新Web/旧后台兼容仍待验；个人backend/static保持b1c2e398、accepting v12。10:22:38.966Z实际看板126源/账本available；S01P03新canonical下一批登记。 |
+| 已集成main状态 / HEAD | c450c2da7e6185b88db9f46e0299ee504ee6f3e8；已含共享发送ACK、ENG01A受管Git/受信检查fixture通路、native目录协议和真实Web兼容证据。个人backend仍b1c2e398、accepting v12；Web已独立发布固定8d8ab520/artifact caa1e938/release v2，旧资源保留，center/runner原进程不变。10:49:58.895Z实际看板131源；132源登记为当前待发布批。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 终端与网页正在共用发送确认规则；工程工作区通路正在接通，网页独立发布工具已进入主线。 |
-| 下一可用交付 | 独立更新网页，并交付可实际改代码、运行受信检查和回看差异的工程通路。 |
+| 当前产出 | 新版网页已独立发布，后台执行不中断；受管工程工作区与检查证据通路已进入主线，终端与网页正复用相同发送规则。 |
+| 下一可用交付 | 接通工程执行配置与终端逐段正文；随后用一个连续入口串起计划、执行、验证与交付。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -94,3 +94,9 @@ main3773db5已推送clean；G01/P02/F01/WPF-M02分别获独立审查，必要组
 2026-10-06 09:45 UTC：新增已授权SVC04 Web独立发布后继，复用当前固定artifact并保留正在执行的后台任务与旧tab惰性资源；具体实现由原runner_owner在TUI修复安全点独立领取。视觉片已main不等个人服务已更新，不为纯前端发布复用全后台drain假称独立。
 
 2026-10-06 10:27:04 UTC：本批只对齐已审主线与实际运行版本。TUI01B共享ACK与跨客户端409读恢复由runner_owner独立实施；ENG01A E0收据关联/完成门禁限定批准，E1真实Git/checker纵向实施；SVC04的合成兼容与58项真实构建JS请求不替代个人新Web/旧b1c后台的兼容证据。完整工程、真实Codex与新Web发布保持open；不新增provider或重复产品检查。
+
+## 2026-10-06 11:00:27 UTC 当前交付与连续目标路径
+
+SVC04真实Web-only发布已完成，固定报告与脱敏操作事实见[发布回执](../../docs/evidence/svc04/personal-release.md)。这是新旧资产和后台保持的发布验收，不新增模型/用户页面操作。ENG01A E0/E1已审main；ENG01B工程配置与TUI01C共用流/活动模块正在安全交付点收口。
+
+之后优先推进原O01-05与M02/REQ-01、REQ-22的连续目标闭环，不新增重复大task：由Execution Lead协调中心命令/持久因果事实与CLI/headless/TUI公开旅程，Web并行消费。下一片先固定现有goal/proposal/execute/verification/decision之间的有界关联和统一交付读模型；原有入口/逐任务手动操作不算自动闭环。完整验收、接口责任与依赖见[计划的连续目标路径](plan.md#continuous-goal-delivery)，零模型协议旅程与实际native语义分开，不复用已封存预算。
