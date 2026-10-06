@@ -46,3 +46,5 @@
 2026-10-06 17:48 UTC：两test-only增量获独立APPROVED，legacy profile兼容与单PG收尾分开绑定；保持原whole-suite exit1/旧tmpKEEP，不称旧suite重跑通过。待main接收收口，完整04实际App交替仍open。本轮仅metadata，无新增运行。
 
 2026-10-06 17:57 UTC：03已审组合经受控集成进入main8d84；原两行为suite exit1未被改写，独立cleanup-only1/1足够闭合已定位收尾边界，旧tmp仍KEEP。04仍open，仅形成[一条真实双界面候选](../../docs/evidence/tui01f/web-handoff-preparation.md)，无产品/driver新增、无运行授权。
+
+2026-10-06 20:06:45 UTC：原04明确获实施授权，由native_center_owner合法接收v4；按[固定Interface](../../docs/evidence/tui01f/web-handoff/interface.md)实现测试driver。源码/便宜纯检查可推进；完整PG/Chrome旅程等待另行窗口，0provider。旧默认recipe与所有历史证据保持。

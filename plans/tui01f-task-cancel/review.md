@@ -1,3 +1,7 @@
+# 当前 TUI01F-04 实现
+
+状态：NOT_STARTED。04新driver尚未固定源码/运行，不能继承03批准；实际限定Interface见[此处](../../docs/evidence/tui01f/web-handoff/interface.md)。原03独审与main记录原样保留如下。
+
 # 当前两项窄增量批准
 
 Review target commit: ec30bb6246ac95e5843c7166dee7118b684fd089
