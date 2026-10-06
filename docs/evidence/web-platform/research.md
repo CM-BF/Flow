@@ -517,3 +517,11 @@ Root本段实际官方资料核对来源：[assistant-ui导航](https://www.assi
 [真实queue-live截图](/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/queue-live/second-reply-dark-narrow.png)由root人工目视，区别此前queue-live-preflight synthetic。管理只读manifest/checks，实际确认observedAt06:04:30.199828Z、web3d4985fca060155435b159e0467815bf8e88b8b8、centerRunnerfb906cb42391971a8b315dbd813f7633927d7265、caller0695bae99a20acd639b02826bf092c64040a21a1与CLOSED2/2，checks PASSED_TWO_QUERY_QUEUE_AND_VISIBLE_MEMORY、结束06:02:28.394Z；不重新测试。
 
 Root目视真实两轮中文回复，底部同时0 waiting loaded、两处Execution details、Requested runner-default/locked/Read-only/Thinking off/Unpinned legacy、禁用Thinking/Tools/Steer和长footer，配置说明约占底部三分之一。这是定性截图观察，非输入延迟/完整产品复验，不撤销功能通过。既有U11后继按真实聊天与折叠详情链优先，再单一外层execution disclosure；保留model/access/queue主要项、可达技术语义、unsupported/unknown明确，用同390×844与键盘验证。完整归属/hash见[观察证据](queue-live-ux-observation.json)。
+
+CHAT05后继输入边界补充（Lead→root，经GO接收）：超过64KiB仅存prefix及完整原文digest，超限原文不能追回；truncated JSON必须明确截断并回退为文本，JSON parse失败不是provider失败，不扩blob存储。此typed native活动限制与当前generic ACTIVITY的MAX_DETAIL_BYTES1MiB契约独立，不混用验收或声称可取回未存原文。
+
+活动实施中root只读发现awaitSignal在已abort早退时可能未消费原promise rejection且reader已先执行，已交唯一owner修正/局部验证。记录为moving实现中的质量反馈，不是固定candidate独审失败，也未收到修复证据前不记已关闭；不改变当前scope或扩大产品测试。
+
+## X01/RS08后继npm renderer互操作约束（root只读研究）
+
+Root核本地frontend/codebase-design、固定747 trusted renderer/P01 hostApi1，并实际读[React invalid hook call](https://react.dev/warnings/invalid-hook-call-warning)与[npm peerDependencies](https://docs.npmjs.com/cli/v11/configuring-npm/package-json/#peerdependencies)：未来第三方npm renderer进入同一React树时，hostApiMajor=1不涵盖React/aui模块实例兼容；组件与renderer需要解析同一React模块。peerDependencies可声明宿主版本范围，但声明不证明打包后单实例。后继真实X01 Web包接入需固定host-shared React/ReactDOM/aui上下文模块，核peer范围并做同树useState/useAuiState装卸smoke；独立iframe/独立root可以有自己React，不能粗暴禁止整页多副本。当前747仅build-time trusted模块，无新loader/依赖，这不是当前finding、不影响既有approval，不新增授权系统或任务，排在聊天关键路径之后。
