@@ -77,7 +77,7 @@ identity包含harness/requested/resolvedModel/profile reference/input digest/mat
 
 ## 第二片：固定SDK summary纯Adapter
 
-仅新增`apps/runner/src/context-observations/claude-summary.ts`及`.test.ts`，使用claim v3，不修改第一片合同。固定target `PENDING_ADAPTER_TARGET`；[Interface/来源/边界与行为证据](claude-summary.md)。输入是host已经取得的0.3.290 SDKControlGetContextUsageResponse camelCase响应，明确summary literal，输出既有ContextObservation。model identity来自host冻结配置；未知resolved保留unknown，精确不符拒绝。只映射estimated totalTokens与策略rawMaxTokens，hard capacity和压缩发生未知。按kind汇总的匿名分类不是工具/技能或材料身份，稳定ID且有界，不复制名称、路径或正文。零SDK调用、零生产挂载，采样生命周期仍待后继。
+仅新增`apps/runner/src/context-observations/claude-summary.ts`及`.test.ts`，使用claim v3，不修改第一片合同。固定target `e81f2009153436cacf791aa7c8de492875906586`；[Interface/来源/边界与行为证据](claude-summary.md)。输入是host已经取得的0.3.290 SDKControlGetContextUsageResponse camelCase响应，明确summary literal，输出既有ContextObservation。model identity来自host冻结配置；未知resolved保留unknown，精确不符拒绝。只映射estimated totalTokens与策略rawMaxTokens，hard capacity和压缩发生未知。按kind汇总的匿名分类不是工具/技能或材料身份，稳定ID且有界，不复制名称、路径或正文。零SDK调用、零生产挂载，采样生命周期仍待后继。
 
 ## 后继中心接线待协调（未实施）
 

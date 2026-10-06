@@ -1,6 +1,6 @@
 # Claude summary 纯适配器证据
 
-本片固定实现target：`PENDING_ADAPTER_TARGET`，独立review：NOT_STARTED。已审首片879c989的4源码逐文件diff为空；新实现仅`apps/runner/src/context-observations/claude-summary.ts`及`.test.ts`，claim v3 [COMMITTED receipt](sdk-amend-receipt.json)。本页记录静态来源与局部行为，不是采集/持久化事实。
+本片固定实现target：`e81f2009153436cacf791aa7c8de492875906586`，独立review：NOT_STARTED。已审首片879c989的4源码逐文件diff为空；新实现仅`apps/runner/src/context-observations/claude-summary.ts`及`.test.ts`，claim v3 [COMMITTED receipt](sdk-amend-receipt.json)。本页记录静态来源与局部行为，不是采集/持久化事实。
 
 小Interface为`mapClaudeContextSummary({identity, observationId, observedAt, evidenceRef, requestDetail: 'summary', response}) → ContextObservation`。host负责采样来源、冻结身份、receipt权限；adapter仅规范化数值，中心pure projection仍唯一负责freshness和remaining算术。无Query实例、计数API、时间采样、计时器、auth或持久状态，SDK仅`import type`，运行时不加载它。没有改先前公有schema。
 
