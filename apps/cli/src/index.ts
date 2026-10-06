@@ -1,7 +1,7 @@
-import { pluginRegistrationSchema, pluginCommandSchema, MAX_PLUGIN_REQUEST_BYTES } from '@flow/contracts';
+import { knowledgeCreateSchema, knowledgePublishSchema, knowledgeResolveSchema, KNOWLEDGE_LIMITS, pluginRegistrationSchema, pluginCommandSchema, MAX_PLUGIN_REQUEST_BYTES } from '@flow/contracts';
 import { parseArgs } from 'node:util';
 import { randomUUID } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
+import { JsonInputError, readJsonInput } from './json-input.js';
 import { FlowClient, FlowApiError } from '@flow/client';
 import { watchTask, taskLine } from './watch.js';
 import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, projectCreationSchema, projectCommandSchema, goalCreationSchema, goalCommandSchema, type TaskSubmission } from '@flow/contracts';
@@ -32,7 +32,7 @@ export async function runCli(args: string[], io: CliIO = defaultIO, env: NodeJS.
   } catch (error) {
     io.err(error instanceof Error ? error.message : 'Command failed.');
     if (error instanceof FlowApiError) return error.status === 409 ? 3 : 4;
-    if (error instanceof UsageError || (error instanceof Error && error.name === 'ZodError') || (typeof error === 'object' && error && 'code' in error && String(error.code).startsWith('ERR_PARSE_ARGS'))) return 2;
+    if (error instanceof UsageError || error instanceof JsonInputError || (error instanceof Error && error.name === 'ZodError') || (typeof error === 'object' && error && 'code' in error && String(error.code).startsWith('ERR_PARSE_ARGS'))) return 2;
     return 4;
   }
 }
@@ -93,6 +93,7 @@ async function executeCommand(context: CommandContext): Promise<number> {
       print(await client.events(required(id, 'task ID'), after));
       return 0;
     }
+    case 'knowledge': return knowledgeCommand(context);
     case 'plugin': return pluginCommand(context);
     case 'goal': return goalCommand(context);
     case 'project': return projectCommand(context);
@@ -102,6 +103,35 @@ async function executeCommand(context: CommandContext): Promise<number> {
   }
 }
 
+
+async function knowledgeCommand({ client, values, positionals, io, signal }: CommandContext): Promise<number> {
+  const projectId = required(values.project, '--project');
+  const sourceId = () => required(positionals[2], 'source ID');
+  let result: unknown;
+  switch (positionals[1]) {
+    case 'list': result = await client.knowledgeSources(projectId, { ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) }, signal); break;
+    case 'show': result = await client.knowledgeSource(projectId, sourceId(), signal); break;
+    case 'version': result = await client.knowledgeVersion(projectId, sourceId(), positiveNumber(required(values.version, '--version'), 'version'), signal); break;
+    case 'search': result = await client.searchKnowledge(projectId, { q: required(positionals.slice(2).join(' '), 'query'), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) }, signal); break;
+    case 'resolve': {
+      const input = knowledgeResolveSchema.parse(await readJsonInput(required(values.input, '--input JSON-file'), 4096));
+      result = await client.resolveKnowledge(projectId, input.citation, signal); break;
+    }
+    case 'create':
+    case 'publish': {
+      // Raw text may require six JSON bytes per UTF-8 byte; schema enforces the separate raw-text limit.
+      const input = await readJsonInput(required(values.input, '--input JSON-file'), KNOWLEDGE_LIMITS.textBytes * 6 + 4096);
+      const key = required(values.key, '--key (stable command identifier)');
+      result = positionals[1] === 'create'
+        ? await client.createKnowledgeSource(projectId, knowledgeCreateSchema.parse(input), key, signal)
+        : await client.publishKnowledgeVersion(projectId, sourceId(), knowledgePublishSchema.parse(input), key, signal);
+      break;
+    }
+    default: throw new UsageError('Use knowledge create|list|show|publish|version|search|resolve with --project.');
+  }
+  io.out(JSON.stringify(result));
+  return 0;
+}
 
 async function pluginCommand({ client, values, positionals, io, signal }: CommandContext): Promise<number> {
   const action = positionals[1];
@@ -115,10 +145,7 @@ async function pluginCommand({ client, values, positionals, io, signal }: Comman
     case 'operation': result = await client.pluginOperation(required(positionals[2], 'plugin ID'), required(positionals[3], 'operation ID'), signal); break;
     case 'register':
     case 'change': {
-      const raw = await readFile(required(values.input, '--input JSON-file'), 'utf8');
-      if (Buffer.byteLength(raw) > MAX_PLUGIN_REQUEST_BYTES) throw new UsageError('Plugin input must not exceed 32 KiB.');
-      let input: unknown;
-      try { input = JSON.parse(raw); } catch { throw new UsageError('--input must contain valid JSON.'); }
+      const input = await readJsonInput(required(values.input, '--input JSON-file'), MAX_PLUGIN_REQUEST_BYTES);
       const key = required(values.key, '--key (stable command identifier)');
       result = action === 'register'
         ? await client.registerPlugin(pluginRegistrationSchema.parse(input), key, signal)
@@ -140,10 +167,7 @@ async function goalCommand({ client, values, positionals, io, signal }: CommandC
     case 'history': result = await client.goalExecutions(required(positionals[2], 'goal ID'), { nodeId: required(values.node, '--node'), ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) }, signal); break;
     case 'create':
     case 'change': {
-      const raw = await readFile(required(values.input, '--input JSON-file'), 'utf8');
-      if (Buffer.byteLength(raw) > 131_072) throw new UsageError('Goal input must not exceed 128 KiB.');
-      let input: unknown;
-      try { input = JSON.parse(raw); } catch { throw new UsageError('--input must contain valid JSON.'); }
+      const input = await readJsonInput(required(values.input, '--input JSON-file'), 131_072);
       const key = required(values.key, '--key (stable command identifier)');
       result = action === 'create'
         ? await client.createGoal(goalCreationSchema.parse(input), key, signal)
@@ -165,10 +189,7 @@ async function projectCommand({ client, values, positionals, io, signal }: Comma
     case 'show': result = await client.project(required(positionals[2], 'project ID'), values.revision ? positiveNumber(values.revision, 'revision') : undefined, signal); break;
     case 'create': result = await client.createProject(projectCreationSchema.parse({ title: required(values.title, '--title') }), required(values.key, '--key (stable command identifier)'), signal); break;
     case 'change': {
-      const raw = await readFile(required(values.input, '--input JSON-file'), 'utf8');
-      if (Buffer.byteLength(raw) > 131_072) throw new UsageError('Project input must not exceed 128 KiB.');
-      let input: unknown;
-      try { input = JSON.parse(raw); } catch { throw new UsageError('--input must contain valid JSON.'); }
+      const input = await readJsonInput(required(values.input, '--input JSON-file'), 131_072);
       result = await client.changeProject(required(positionals[2], 'project ID'), projectCommandSchema.parse(input), required(values.key, '--key (stable command identifier)'), signal);
       break;
     }
@@ -183,10 +204,7 @@ async function reconciliationCommand({ client, values, positionals, io }: Comman
   const taskId = required(positionals[2], 'task ID');
   if (action === 'show') { io.out(JSON.stringify(await client.reconciliation(taskId, values.after === undefined ? 0 : cursorNumber(values.after)))); return 0; }
   if (!['observe', 'resolve', 'retry'].includes(action ?? '')) throw new UsageError('Use reconcile show|observe|resolve|retry <task-id>.');
-  const raw = await readFile(required(values.input, '--input JSON-file'), 'utf8');
-  if (Buffer.byteLength(raw) > 131_072) throw new UsageError('Reconciliation input must not exceed 128 KiB.');
-  let input: unknown;
-  try { input = JSON.parse(raw); } catch { throw new UsageError('--input must contain valid JSON.'); }
+  const input = await readJsonInput(required(values.input, '--input JSON-file'), 131_072);
   const key = required(values.key, '--key (stable command identifier)');
   const result = action === 'observe'
     ? await client.recordReconciliation(taskId, reconciliationObservationSchema.parse(input), key)
@@ -248,6 +266,13 @@ Commands:
   watch <task-id> [--timeout milliseconds]
   decision <task-id> approve|reject --decision <decision-id>
   cancel <task-id>
+  knowledge create --project project-id --input JSON-file --key stable-key
+  knowledge list --project project-id [--after source-id] [--limit count]
+  knowledge show <source-id> --project project-id
+  knowledge publish <source-id> --project project-id --input JSON-file --key stable-key
+  knowledge version <source-id> --project project-id --version number
+  knowledge search "query" --project project-id [--limit count]
+  knowledge resolve --project project-id --input citation-wrapper-JSON-file
   plugin register --input JSON-file --key stable-key
   plugin list [--project project-id] [--after cursor] [--limit count]
   plugin show <plugin-id> [--revision number]
