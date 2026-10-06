@@ -27,6 +27,8 @@ Web owner d01按本大task对接model/thinking/fast/access与账号/实际状态
 
 **R05C复用交接：** [final投影提升回执](final-projection-handoff.md)。固定0d0524c算法只读提升至其已领取生产目录；本实验冻结，生产模块独审后改薄入口并复验直接消费者，禁止长期双实现。
 
+共享client输入：[native profile client独立review回执](native-profile-client-review.md)，固定095bdb8仅批准薄client接口，不复制F01进度，也不证明实际access:none。
+
 共享挂载输入：[Mika R05-B server mount只读review回执](r05b-mount-review.md)，仅固定import/await两行，不是领域/provider批准或main进度。
 
 ## R05-B固定consumer答复（0.154.0，2026-10-06 09:11:04 UTC）

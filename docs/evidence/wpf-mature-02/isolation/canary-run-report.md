@@ -11,3 +11,8 @@ Cleanup: own listener closed=true; retainedRoots=[]; a read-only follow-up confi
 [Run manifest](canary-run-manifest.json) binds complete [actual inputs](canary-actual-input.json), [reservation](canary-once-reservation.json), [result](canary-result.json), and driver stdout/stderr. The original [static manifest](manifest.json) and static README remain immutable historical preparation artifacts; they are not the current runtime result. Original semantic six files/one raw/29 schema remain unchanged; 27 semantic and 31 R06 tests were not rerun.
 
 The once permit is consumed. Work stops at this evidence: no automatic retry, no additional profile grant and no real app-server authorization. Any follow-up needs a separately reviewed concrete change/path; the failing run does not establish which bootstrap permission would be necessary or safe.
+
+
+## 受限诊断候选匹配补充（Mika提供的只读事实）
+
+一次限定候选诊断报告的只读匹配结果为 `pathMatch=false`、`launchInWindow=false`、`captureInWindow=false`。未读取该诊断内容，因此不能将其归因于本次canary；SIGABRT具体原因仍为unknown。本owner仅记录Mika提供的结果，不追加诊断探测、不重复运行、不修改profile grant。
