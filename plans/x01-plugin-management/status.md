@@ -2,12 +2,12 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 13:23:01 UTC |
+| 最近更新时间 | 2026-10-06 13:34:44 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [amend6ddedc73 v2](../../docs/evidence/x01/leaf-amend-receipt.json)，ACTIVE，八leaf与原两metadata目录 |
+| Claim | [amend6ddedc73 v4](../../docs/evidence/x01/leaf-handback-receipt.json)，ACTIVE；仅中心7文件+正式029与两metadata，旧8leaf已交回 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
@@ -16,14 +16,14 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED bf33781450d2a5036e026ace03c1682e4d7f0f17；65distinct=51材料+14真实loader、严格局部noEmit0，66own根删除；原12red保留，0PG/SDK/provider |
 | Review | APPROVED bf33781450d2a5036e026ace03c1682e4d7f0f17；Mika/gpt-6-astra，2026-10-06 13:17:47 UTC，原唯一P2 CLOSED，0剩余P1/P2 |
-| 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；完整npm生命周期未实现 |
+| 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；bf3378八leaf+f635三依赖已main2f16e30a，完整npm生命周期未实现 |
 | 实现目标 | bf33781450d2a5036e026ace03c1682e4d7f0f17 |
 | 实现范围 | packages/plugin-runtime/package.json, packages/plugin-runtime/src/package-store.ts, packages/plugin-runtime/src/package-store.test.ts, apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts, fixtures/plugins/text-tool/package.json, fixtures/plugins/text-tool/index.mjs, fixtures/plugins/text-tool/flow-plugin.json |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 自有真实插件包可经有界静态安装并实际加载执行；独审已通过，准备接入主线 |
-| 下一可用交付 | 本片集成后接入公开中心安装命令；完整启用、任务绑定和停用行为沿原计划继续 |
+| 当前产出 | 静态材料与真实加载首片已审；开始公开中心安装与历史读回 |
+| 下一可用交付 | 公开安装命令、精确读回与未知状态恢复；完整任务绑定后继继续 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -32,7 +32,7 @@
 | X01-01 | completed | runner_owner | [完整计划](plan.md)、[事实/质量记录](../../docs/evidence/x01/README.md) |
 | X01-02 | in-progress | Execution Lead（公共入口） | X02 registry/public client/CLI合同已冻结入main；完整安装生命周期合同仍未完 |
 | X01-03 | in-progress | Lead派发中心writer | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
-| X01-04 | in-progress | architecture_read | 静态材料/真实loader首leaf待独审；中心资格/绑定、版本pin与回收仍待接入 |
+| X01-04 | in-progress | architecture_read | 静态材料/真实loader首leaf已独审；中心资格/绑定、版本pin与回收仍待接入 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；完整Web/TUI/CLI生命周期未完 |
 | X01-07 | in-progress | architecture_read | 自有真实text-tool已通过局部实际import/invoke；真实runner任务产物/public管理链未接入 |
@@ -42,7 +42,7 @@
 
 ## 当前事实与边界
 
-当前静态安装材料与trusted self-owned真实loader已实现，原53局部检查通过；独审1P2已修复并获本leaf批准，尚未main集成。Web只读入口已完成；trusted host不等第三方隔离或完整public管理链。本片0PG、SDK/provider。
+当前静态安装材料与trusted self-owned真实loader已实现，原53局部检查通过；独审1P2已修复并获本leaf批准，已main2f16e30a。Web只读入口已完成；trusted host不等第三方隔离或完整public管理链。本片0PG、SDK/provider。
 
 当前无用户行动或身份阻塞。候选来源/版本已由Goal Owner提供，见[候选输入](candidate-inputs.md)；用户所指身份尚未亲自确认，但不阻止已授权CTX01固定core实验。不从名字猜项目，也不重复询问已授权生命周期方向。后续产品实现必须另明确 worktree/owner/scope，本计划不授予跨模块写权。
 
@@ -81,3 +81,7 @@
 2026-10-06 13:20:51 UTC：仅metadata形成[中心安装/读回下一片请求](../../docs/evidence/x01/center-installation-seam-request.md)，固定main a3e670b的15输入；复用X02 revision/command与X05成功精确attempt、leaf唯一prepare/read，不新scheduler或中心包执行。7新source literal和唯一DDL待Lead分配，028已被WPF-CONNECTION01占用，未amend/写产品/测试。完整disable旧pin、版本/ref/三端/隔离要求保持；leaf仍integration。
 
 2026-10-06 13:23:01 UTC：按Mika只读反馈收紧中心设计：start只启动确切未开始accepted；同key重放与reconcile不执行prepare，preparing持久ACK须先于本operation任何FS写；锁丢失须收束own FS且未知仍挡同store后继写入。migration.ts仅复用唯一正式SQL/既有迁移锁，若已有同职责入口则不申请该文件。只改设计metadata，已审leaf源码/raw/manifest不动，未领新scope/编号或运行检查。
+
+2026-10-06 13:33:24 UTC：Lead正式分配029-plugin-material-installs.sql；[v3原子amend](../../docs/evidence/x01/center-amend-receipt.json)已提交。旧8leaf停止产品写入、待正式main回执交回；本片沿845294419固定合同，先DTO后实际专库验证，未开始PG/源码checks。继续用本地find-skills、codebase-design/clean-code固定基线；brainstorming设计已授权，不重复索权。磁盘可用1,759,400KiB，保留1GiB，无新安装。
+
+2026-10-06 13:34:44 UTC：收到正式MAIN_RECEIPT，独核[11源接收](../../docs/evidence/x01/leaf-main-acceptance.json)固定Git=main2f16Git=主树=本树；Lead实际server/runner public import/roottypes0，未重跑65。原8leaf已停止写入并[v4交回](../../docs/evidence/x01/leaf-handback-receipt.json)，本owner不能恢复该写权；029实施继续。完整X01未完成。
