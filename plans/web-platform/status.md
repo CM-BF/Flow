@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:47 UTC / 架构与排队操作已被主线接收；可信内容展示模块唯一源已交登记 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:49 UTC / 两已审片待主线回执；上下文兼容范围已核，等待受控输入 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `df6724c222f6fe3e5be850989512729173ebbec5`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `7817d916ce5e50d705b8273d6825d3f2734f49a8`（本次管理停点前实核） |
 | 工作树dirty状态 | 本次仅管理范围的交付、正式领取回执与计划文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 聊天执行选项和紧凑摘要已合入；新版架构图和排队操作均通过审查，等待集成 |
-| 下一可用交付 | 集成消息队列与架构图，再验证按需内容展示 |
+| 下一可用交付 | 集成消息队列，兼容项目引用；验证按需内容展示 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -62,6 +62,8 @@
 | 跨Lead | Mika负责CHAT04持久队列/暂停/继续，ExecutionLead负责公共API/集成/4320；域ae9与client83f7已在698成套独审集成。完整queue UI已从14c61新树正式受领13scope，PROFILEI01已release、旧CHAT官方Thread停写后CAS至v5，禁止跨树双写 |
 
 ## 当前发布门槛与解除（局部依赖，不是整个goal受阻）
+
+K02薄reader仅准备：固定736公开类型已核，后台queue/retry未完成、整体未批准；下一步等MainLead给含已审QUEUE和受控schema的准确base/shared输入，再由原panels接两身份边界与四直接test。当前QUEUE相关paths仍b4eav1占用且已停写，未amend/新take；不以未审整K02树作Web基线、无context按钮。renderer8794v1独立八scope继续，无相交。
 
 历史CHAT04 queue=true消费不兼容已通过QUEUE00最小boolean reader修复并与后台/client在main698成套独审集成；旧false仍兼容。它不等完整队列操作UI。实际App配置接线已在main14c61；完整queue UI以13scope正式受领，含必要官方Thread局部键盘接缝，其他能力尚未完成。实际SVC升级仍其owner负责，本队不以main可用冒称用户常驻构建已升级。
 
@@ -168,3 +170,5 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 05:44 RENDERER01正式受领：[原take](../../docs/evidence/web-platform/renderer01-take-receipt.json) 87948975-fa99-49b6-a84c-3ca126aaeb92 v1，固定fb906，web-data-renderers/codex/web-data-renderers；manager独立HEAD/branch/clean及05:44:02.397Z freshledger通过后原子take。八scope不含App/QUEUE/P01/shared，w01已followup实施，首canonical未回前仅领取可见不称进度卡注册。MainLead已RECEIVED D06与QUEUE309/496，等待组合集成精确SHA，所有旧产品scope保留回修权不提前release。
 
 05:47 RENDERER唯一来源已交root登记：web-data-renderers中的plans/wpf-renderer01-data-renderers/status.md，首d298/规范修正2e25d807cf88c55d0c0bb6897642a118e40c07e7 clean，实际parser errors=[]/4TODO/checksnot_run/reviewnot_started/human完整，targetUNKNOWN，stageimplementation。尚未得到registry部署通知，不宣称服务卡已出现；不重复API轮询。
+
+05:49 U11下一优先级：QUEUE/K02兼容后在同聊天显示真实已持久tool/thinking折叠活动行（id/title/status），鉴权展开才正文；provider无thinking不伪造。真正partial另需native event持久链，调快poll/打字动画不是实现。本段只核固定输入/范围及状态一致性，0产品测试/模型/新领取。

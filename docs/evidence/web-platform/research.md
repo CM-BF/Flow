@@ -469,3 +469,13 @@ composer精确安装源码补充：core0.3.22 `runtime/interfaces/composer-runti
 必要验收：旧缺字段plain发送/queue字节保持且0detail；capability缺省false、合法bool读入/非法类型拒绝；project有无/同值/错值/意外新增/漏值在CREATE ACK、snapshot/page一致校验，错ACK为unknown且不续发；context元数据在页/详情保留但不映user/assistant正文；原key/body/pin/project重试与新draft分离、unknown后401不清、跨连接同ID隔离。未来knowledge发送另需typed input透传+深冻结citation/locator，不重取最新版或换key；薄reader不声称已支持引用发送，也不为digest预取冻结正文。panels本次0写/测试/模型，复用本地find-skills/codebase-design/clean-code，设计只在已有身份边界集中校验，无第二DTO/client/状态源。
 
 本段 O07执行配置接口风险预告（root固定源码只读，非Web实现）：Lead给native graph内部access字面量`goal-graph-tools`，完整源target `f95c8eb9e8fc7d29d788fe22a6fd8b7dff098be5`；root核固定fb906 selection.ts的ChatAccess/isChatAccess及configuredSelection仍严格只允许none/configured-readonly。新增内部字面量或unknown目录项可见但不可选，不能因共享合同增加自动开放普通chat。O07尚未独审/无Web入口，本次无修改测试模型；后继K02 receipt薄reader必须保留该allowlist，不扩新Webscope。
+
+## K02固定736实装合同与薄reader范围核对
+
+管理与panels均严格git show `7368497ade6b80725e024d86541b87c971389476` / basefb906，未消费owner现场dirty。`conversations.ts:19,27,40,116`已含projectId:idSchema.optional、turn.knowledge、capabilities.knowledgeContext?、turn.context?；`conversation-queue.ts:11,28`含enqueue.knowledge与item.context。context selection最多4、禁止exact重复但无min，[]合法；idSchema是1..128字符而非UUID。server state无project时省略、不发null。此版本interface明确详情/发送/claim首片已实装，queue/retry仍实施，旧1eef的501边界仅历史，不据该片声称整体批准。
+
+原八scope候选不扩：生产conversations/projection.ts、execution-profiles/selection.ts，tests conversation-projection.test.ts、execution-profiles.test.ts、conversation-outbox.test.ts、conversation-queue.test.ts，以及自己的plan/evidence目录。固定309 projection creationFields:46–48及selection receipt实际值:81–89都显式遗漏未来project；新schema后只修一侧会错拒合法值，两侧都漏会漏验绑定改变，因此按正式presence/identity一起修改。outbox parse+spread已保留scalar，无需改生产outbox。保留none/configured-readonly聊天allowlist，不被O07内部模式扩权。
+
+必要回归：project有无与GET/page一致；P→Q、有→无、无→有、null/empty拒；合法CREATE ACK才继续唯一turn，wrong/missing/unexpected project保持unknown/0turn；原key/payload/pin/project重试、新draft分离；cap缺失false、有效bool可读但不开放UI，非bool拒；有无context metadata原样保留且不进user/assistant正文、不自动context GET。旧plain enqueue/turn请求无knowledge字段。knowledge写入与引用选择/深冻citation属于后继，薄reader不声称支持引用发送、不预取冻结正文重算digest。
+
+原panels仅只读查scope/固定源码/设计，0文件写/测试/模型/新tree。主Lead正在协调准确受控base/shared输入；QUEUE main receipt与旧路径停写/CAS移权在新take之前，不能用历史无冲突观察或同owner身份跨树写。
