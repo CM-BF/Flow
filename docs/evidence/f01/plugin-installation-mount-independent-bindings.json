@@ -1,0 +1,309 @@
+{
+  "observedAt": "2026-10-06T15:00:59.983438+00:00",
+  "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+  "delivery": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+  "head": "8103990627ff7778531c14091fec1e17a970d036",
+  "dirty": "",
+  "manifestSha256": "eafa7f60a01172c2b9ddc8732105a2170d097ec0f2f063259d814eb0ab4b287d",
+  "entries": [
+    {
+      "kind": "sources",
+      "path": "apps/cli/README.md",
+      "revision": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "bytes": 6150,
+      "sha256": "5c3c4c0ca35a20fa9ccaa3f6ead347cdb9d7e9618179827b2a14c96b7c8b1d76",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/cli/src/index.ts",
+      "revision": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "bytes": 22540,
+      "sha256": "48751b0f0f8f83a7d679b9b414d7663061a808dc5bc555779b27632f5d6a04ec",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/cli/src/plugin-installations.test.ts",
+      "revision": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "bytes": 4477,
+      "sha256": "d0d6404bab3bbbed83a2981841b61379afd165c738897753e0b40dd5288fc7c8",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/server/src/index.ts",
+      "revision": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "bytes": 13801,
+      "sha256": "6df36211fe717f5e8934120e44a8732d5f59a32a04c69eaed89338c3d6268b1c",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/server/src/main.ts",
+      "revision": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "bytes": 2964,
+      "sha256": "8da31946307ac1da338df9ab0ee640e4df2ba534fc04918113b3cbecdd1ef9b9",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/server/src/package-fetch-configuration.ts",
+      "revision": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "bytes": 2138,
+      "sha256": "ee4a913e2e9dd03d152966f5c58d87b67c59702135ad705aa39e02437c3212d1",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/server/src/plugin-installation-configuration.test.ts",
+      "revision": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "bytes": 2892,
+      "sha256": "cb7658dd613a2212e3e42cfc3b9b475953b221b616d60483f2c0e014d54767b4",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/server/src/plugin-installation-configuration.ts",
+      "revision": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "bytes": 1127,
+      "sha256": "bbbde194876e327867f32724998d8408c1b0ce788ae5462cdfb6578a05ab571e",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/server/src/private-json-configuration.ts",
+      "revision": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "bytes": 1256,
+      "sha256": "d28371844178889916ff09df8e7d204d8d5a8306c740e3c21cba812c6cedfb2b",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "sources",
+      "path": "packages/client/src/plugin-installations-production.test.ts",
+      "revision": "5e121041cf628817b27cbb64f00317d5d62ad1e2",
+      "bytes": 9390,
+      "sha256": "2c491ce8d680a3f61ae03a3ef2264bc39e99e02e13cd71e6b3d05a4f201512d0",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-cli-green.exit",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-cli-green.txt",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 317,
+      "sha256": "03de1003beaae08fac7d31fcdcb23f650ce699b7ea4bafd493c648e3728ed760",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-cli-red.exit",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-cli-red.txt",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 1188,
+      "sha256": "31ac4b3c9c52954489f0c5273d68a309dd01a325f784ece84aa76d04a38e434f",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-config-green.exit",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-config-green.txt",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 404,
+      "sha256": "3f6cef6773eed26e0afb4631e4f33f34af4f1709e04ac4fd108df95547d9007c",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-config-red.exit",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-config-red.txt",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 1156,
+      "sha256": "2272a5ca9e812a9e06ff2646201e396b787be0ef83c21c48d44703d732c61b03",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-mount-types.exit",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-mount-types.txt",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-production-facts.json",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 569,
+      "sha256": "bcc89c6e30afc7dbaff5ad1720df8fcba0332113b7d7e69a0de3c84b193390b3",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-production-first.exit",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/f01/plugin-installation-production-first.txt",
+      "revision": "38ae2c0f91dca684850a459a94cda83ba4b28d64",
+      "bytes": 460,
+      "sha256": "7b0c74560ddf255f00755b952dda334db760212712be748cdb4a397aff6eb614",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "domainInputs",
+      "path": "apps/server/src/plugin-installations/commands.ts",
+      "revision": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 11568,
+      "sha256": "829bef240c694be86f8f9fef0808d81586a2f624607ed41d238065bde3bcee89",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "domainInputs",
+      "path": "apps/server/src/plugin-installations/routes.ts",
+      "revision": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 6527,
+      "sha256": "8931b177ace5ff0ecff7a14d799c629979e33f63b5cfc3d4bb88c72355c2269c",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "domainInputs",
+      "path": "apps/server/src/plugin-installations/migration.ts",
+      "revision": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 760,
+      "sha256": "894abb00a1cd3375e87ef4f05c3607bb7315867a16c1c042989b04eaf26a73c6",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "domainInputs",
+      "path": "apps/server/src/plugin-installations/store.ts",
+      "revision": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2459,
+      "sha256": "0856920e72facb705bd2a7e1d038d7ea2a9f10633f4a1f98902b09322f7e786a",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "domainInputs",
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "revision": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    },
+    {
+      "kind": "domainInputs",
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "revision": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 4435,
+      "sha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea",
+      "fixedMatches": true,
+      "workingMatches": true,
+      "atTargetMatches": true
+    }
+  ],
+  "mismatches": [],
+  "count": 29,
+  "completionObservation": {
+    "at": "2026-10-06T15:03:04.515371+00:00",
+    "head": "b4a751403853d36e604d58e2800fb5433cc8d2e8",
+    "dirty": [],
+    "reviewedPathsMismatches": [],
+    "note": "Concurrent author O14 work is outside this fixed review scope; no reviewed product or evidence drift."
+  }
+}

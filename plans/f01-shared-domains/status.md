@@ -15,11 +15,11 @@
 | 工作分支状态 | completed |
 | 检查状态 | PASSED 5e121041cf628817b27cbb64f00317d5d62ad1e2；配置4（旧consumer2）+CLI HTTP1+生产PG/HTTP1分轮绿，root strict0，0provider |
 | 已集成main状态 / HEAD | COST领域、薄client、生产读口与CLI0550已进入main59ef2134；个人runtime362/v15未更新 |
-| Review | NOT_STARTED 5e121041cf628817b27cbb64f00317d5d62ad1e2；薄client67fd已Mika独审APPROVED |
+| Review | APPROVED 5e121041cf628817b27cbb64f00317d5d62ad1e2；assignment_review；薄client67fd由Mika批准 |
 | 实现目标 | 5e121041cf628817b27cbb64f00317d5d62ad1e2 |
 | 实现范围 | apps/cli/README.md, apps/cli/src/index.ts, apps/cli/src/plugin-installations.test.ts, apps/server/src/index.ts, apps/server/src/main.ts, apps/server/src/package-fetch-configuration.ts, apps/server/src/plugin-installation-configuration.test.ts, apps/server/src/plugin-installation-configuration.ts, apps/server/src/private-json-configuration.ts, packages/client/src/plugin-installations-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 静态插件安装已通过真实中心与终端验证；重启后原请求能恢复同一回执。 |
 | 下一可用交付 | 完成独立审查并发布默认关闭的安装入口；目标持续推进继续接现有后台扫描。 |
@@ -202,3 +202,5 @@
 2026-10-06T14:59:45.048714+00:00：F01-41薄client67fd获status_read/Mika独审，[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。生产固定5e121等待独审，[manifest](../../docs/evidence/f01/plugin-installation-mount-manifest.json)绑定10源、6领域输入、分轮证据与专库正常清理。静态installed不等于启用或可调用。
 
 | F01-42 | in-progress | Lead | 已审O14模块已mainaf976；薄client固定deef（HTTP1/1、types0）待独审；生产挂载/自动scan尚未修改，待插件共享index审结 |
+
+2026-10-06T15:04:21.640726+00:00：X01生产接线5e121独审APPROVED，限定结果与原始资源事实已绑定；现在受控接收。O14 deef薄client另待审，未借本批准；scan产品修改尚未开始。
