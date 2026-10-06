@@ -16,5 +16,9 @@
   "restoreCondition": "operator explicitly closed; no pending launch; review checkpoint then restore main",
   "maxDrainSeconds": 900,
   "provider": 0,
-  "priorWindows": "2030/2040 failed before materials; no prior personal mutation to replay"
+  "priorWindows": "2030/2040 failed before materials; no prior personal mutation to replay",
+  "closedAt": "2026-10-06T21:19:22.700644+00:00",
+  "sourceRestored": "421b2e89f10225bd37d1928ef2b627c6a375b76a",
+  "outcome": "STOP_BEFORE_MATERIALS",
+  "operatorFacts": "01 readonly observed exit0/613ms; 02 preflight exit1/57ms only retained false; steps03 onwards never called. No import, drain, stop, retirement, resume or publish. No pending launch; owner reads saved evidence only."
 }
