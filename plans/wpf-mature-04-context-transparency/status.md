@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:11:16 UTC / 固定main2f4a5789已受控同步，未追最新main |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:13:24 UTC / 固定main2f4a已同步；当前main 362af3bac77541e5a60979326bcf4d4b8c947915 clean只读观察，未追随 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -10,21 +10,21 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
-| 工作基线 / HEAD | producer固定main2f4a5789 / merge HEAD 844fa14bfbf32f5392e48e104b5440a9cb5b9b13；14输入等main、18旧源不变 |
-| 工作树dirty状态 | 4源实现与自有证据已完成，准备固定source target；旧18源逐字不变，writer v8修复期保留 |
+| 工作基线 / HEAD | 844fa14bfbf32f5392e48e104b5440a9cb5b9b13 / 实现target eccb1ba6d9f3bf95cca4f50693dde8e32707ed40；本轮后续metadata另提交 |
+| 工作树dirty状态 | source/raw已固定并停写；仅本轮manifest/status/review metadata待提交，writer v8修复期保留 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | PASSED producer121/121不同（19read+27adapter+31Claude+11stream+33runtime），局部root严格noEmit0；首次120/121旧fixture超时及定向1/1记录保留，原因unknown |
-| 已集成main状态 / HEAD | 已集成main与origin/main bf067e328bc1dc63cde39acf4b637cfb055e467a clean；879/9ac/c173组合18叶源逐字一致，原target非main祖先，按固定blob集成核验；[唯一接收收据](../../docs/evidence/wpf-mature-04/main-acceptance.json)引用Lead生产接线与root types0，未重测；部署未知 |
-| 实现目标 | 尚未固定producer实现target；设计37f1385b78e79179f15162e1c90a4706d30aa1ab已审 |
+| 本片段交付阶段 | review |
+| 检查状态 | PASSED eccb1ba6d9f3bf95cca4f50693dde8e32707ed40：121/121不同（19read+27adapter+31Claude+11stream+33runtime），局部root严格noEmit0；首次120/121旧fixture超时及定向1/1记录保留，原因unknown |
+| 已集成main状态 / HEAD | 本producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40未集成main；历史18叶源已集成main与origin/main bf067e328bc1dc63cde39acf4b637cfb055e467a clean；879/9ac/c173组合18叶源逐字一致，原target非main祖先，按固定blob集成核验；[唯一接收收据](../../docs/evidence/wpf-mature-04/main-acceptance.json)引用Lead生产接线与root types0，未重测；部署未知 |
+| 实现目标 | eccb1ba6d9f3bf95cca4f50693dde8e32707ed40 |
 | 实现范围 | apps/runner/src/claude.ts, apps/runner/src/context-observations/claude-summary-read.ts, apps/runner/src/context-observations/claude-summary-read.test.ts, apps/runner/src/claude-context-observation.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 一次summary历史采样与原runtime/outbox/journal接线已局部验证，正在固定独审目标 |
-| 下一可用交付 | 独立review后供Lead受控集成；真实SDK可用性/current/cut仍未知 |
+| 当前产出 | 普通Claude history producer已固定，121/121与strict0，待独立审查 |
+| 下一可用交付 | 独审后交Lead集成；只读核Web历史消费者接入，current/cut仍未知 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED producer实现未固定；设计37f已由Mika批准，历史c173/9ac审批仅对应原目标 |
+| Review | NOT_STARTED eccb1ba6d9f3bf95cca4f50693dde8e32707ed40：chatui01_owner/gpt-6-astra独立只读review待执行，历史approval不转移 |
 | Claim | [COMMITTED amend v8](../../docs/evidence/wpf-mature-04/producer-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v8 ACTIVE；仅4个新producer精确源码与2metadata目录，原18源未恢复写权 |
 | 架构影响 | 本片仅普通Claude result读取和EOF后历史事件；中心继续原reportEvents/027/owner GET。pending control未知复用原settlement和journal，不新增状态机；current/remaining仍未知 |
 
@@ -96,3 +96,5 @@
 2026-10-06 12:07:45 UTC：scope[] integration正常合入Root指定已审main2f4a5789，结果844fa14，14输入与main一致、18已交付源未变，integration已release、writer v8保留。新4源先真实public adapter red（summary缺失）再实现；首次配置root错误0tests另存，不冒红绿证据。新read边界复用c173与公共payload校验，跨kind溢出unavailable，pending unknown不受close异常覆盖；仅fake Query，尚无真实SDK/provider/PG。
 
 2026-10-06 12:11:16 UTC：producer四源完成，最终121不同通过与局部strict0。首次完整组合120/121失败为旧fixture首例3秒超时，单项1/1及随后相同五路径121/121通过，原断言/超时/源码未为失败调整，原因unknown、全部raw保留。46新行为含public runRunner真实loopback/journal未知重启阻挡；0PG/真实SDK/provider。源码停写准备固定独审，旧18源/批准不变，main尚无新producer。
+
+2026-10-06 12:13:24 UTC：实现冻结 `eccb1ba6d9f3bf95cca4f50693dde8e32707ed40`，4source/14raw/9support/31readonly均在target，随后唯一[producer manifest](../../docs/evidence/wpf-mature-04/producer-manifest.json)绑定。121不同+strict0，首轮失败完整保留；旧18源和9ac/c173绑定raw/support逐字不变。当前main未含本producer，不以branch检查声称main能力；交chatui01_owner独审。

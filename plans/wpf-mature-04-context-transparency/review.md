@@ -1,8 +1,8 @@
 # WPF-MATURE-04 当前普通 Claude producer 审查
 
-状态：NOT_STARTED（实现固定中；历史批准不转移）
+状态：NOT_STARTED（producer eccb1ba6d9f3bf95cca4f50693dde8e32707ed40；历史批准不转移）
 
-- Review target commit：以随后 producer-manifest.json 的 target 为准；base 844fa14bfbf32f5392e48e104b5440a9cb5b9b13（受控 main2f4a 合入）。
+- Review target commit：eccb1ba6d9f3bf95cca4f50693dde8e32707ed40；[唯一manifest](../../docs/evidence/wpf-mature-04/producer-manifest.json)，4source/14raw/9support/31readonly均绑定该target；base 844fa14bfbf32f5392e48e104b5440a9cb5b9b13（受控 main2f4a 合入）。
 - 范围：claude.ts，claude-summary-read.ts/.test.ts，claude-context-observation.test.ts；仅4源，writer d3a9be2b v8保留。
 - 检查：121/121不同=19read+27public adapter+31原Claude+11原stream+33原runtime；root局部strict0。原首次120/121旧fixture超时raw、单项1/1与首次0tests配置失误均保留；各轮不累计。
 - 独审重点：同Query/session/root成功结果只读summary一次；候选正常EOF后发布，后续冲突/model改变丢弃；pre-abort零请求，pending超时/abort经finally仍unknown；明确reject/invalid仅unavailable，跨kind溢出/unknown host完整校验；session/ownership/emit不能被吞；真实journal连续ACK/unknown无completed与重启阻挡。
