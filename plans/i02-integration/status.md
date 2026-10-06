@@ -175,3 +175,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 14:46 UTC：受控接收SVC06 6d276限定已审保护小片及185e元数据；14source+40raw逐字一致，12直接input中9相同，3个已审主线差异逐项记录。未重跑原legacy检查或构建，原证据不冒当前全产物成功。完整构建/独立启动/个人切换均未获此批准，2.5GiB门槛保留。见[本批接收](../../docs/evidence/i02/svc06-bounded-integration.json)。个人runtime362/v15和Web8d8/v2不变。
 
 2026-10-06T14:56:54.347164+00:00：O14持久推进模块独审通过并受控接收，14源码与b808固定target逐字一致；尚未挂载030/自动scan，旧中心读口由原域的缺表兼容保留，不能宣称生产已自动推进。SVC06仅接收保护片收口，完整固定产物仍待资源条件。161源登记已真实发布。见[固定比较](../../docs/evidence/i02/goal-progression-module-integration.json)。
+
+2026-10-06T15:01:26.795368+00:00：X01宿主load/invoke两阶段即时授权检查已按Mika独审固定e682接收，两源码与target逐字相同，原main基线相同。复用21局部与strict原证据，不把本地callback批准说成中心grant/runtime纵向已接。见[接收](../../docs/evidence/i02/plugin-host-gates-integration.json)。
