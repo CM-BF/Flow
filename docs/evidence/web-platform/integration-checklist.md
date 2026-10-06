@@ -1,10 +1,10 @@
 # Web 平台跨 owner 集成清单
 
-2026-10-06 03:18 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
+2026-10-06 03:44 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
 
-## Dashboard已确认唯一来源
+## Dashboard来源登记与核验
 
-root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段完整，PERF claim匹配；管理者03:17:14.324Z专项确认30源包含旧8c57登记的17原ID。每项事实仅来自其planDir/status.md，JSON与网页只派生；管理nested四个转交stub不注册第二源。
+root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段完整，PERF claim匹配；管理者03:17:14.324Z专项确认30源包含旧8c57登记的17原ID。每项事实仅来自其planDir/status.md，JSON与网页只派生；管理nested现六个转交stub不注册第二源；下表前五项已实采，新增两项已交Lead待其注册批次，不能合称全部已聚合。
 
 | Task | Worktree | Branch | planDir | evidenceDir |
 | --- | --- | --- | --- | --- |
@@ -13,6 +13,8 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | WPF-P01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host | codex/web-plugin-host | plans/wpf-p01-plugin-host | docs/evidence/wpf-p01 |
 | WPF-I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration | codex/web-plugin-integration | plans/wpf-i01-plugin-integration | docs/evidence/wpf-i01 |
 | WPF-PERF01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance | codex/web-performance | plans/wpf-perf01-web-performance | docs/evidence/wpf-perf01 |
+| WPF-PERF02（待注册核验） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window | codex/web-activity-window | plans/wpf-perf02-activity-window | docs/evidence/wpf-perf02 |
+| WPF-CHAT01（待注册核验） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations | codex/web-conversations | plans/wpf-chat01-conversations | docs/evidence/wpf-chat01 |
 
 WPF-D01仅协作，无第二dashboard实现；五源已经实际聚合，未知/未验证项仍来自各owner。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
 
@@ -66,14 +68,14 @@ WPF-M02早期草案曾在管理树`plans/web-platform/unified-workspace/status.m
 
 已只读核验独立tree与三件套，管理nested草案已转移交stub。登记条目：id `WPF-P01`、title `可信Web插件host`、role `工作线`、worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host`、branch `codex/web-plugin-host`、planDir `plans/wpf-p01-plugin-host`、evidenceDir `docs/evidence/wpf-p01`。初始化108f完整main+已审W01 a22ae38，merge0673653ac6b2da8259bc8ca40d9ae723da2ce875；typed接口v1已与消费owner冻结；整体最终实现6ce3ba0 / metadata2910ebc获root APPROVED，PH-R1～4关闭。WPF-I01已经D04v1受领独立新树实际挂载，hostowner保留plugins回修职责，不改App或旧Thread/workspace目录。
 
-D03已聚合表中五个平级owner源；旧nested四个移交入口不登记。管理者不代写各ownerstatus，字段已分别通知唯一owner补全。
+D03此前已实证聚合五个平级owner源；新增CHAT/PERF02待主线registry批次后单次核验，现六个nested移交入口不登记。管理者不代写各ownerstatus，字段已分别通知唯一owner补全。
 
 
 ## X01父范围保持开放
 
-主线FLOW-001 full-plan-matrix REQ-11/12/13仍将npm插件install/enable/disable/upgrade/remove、版本配置/能力作用域、trusted/isolated第三方执行、tool/renderer/verifier、CLI等价与未知UI fallback列为X01全栈范围；当前未完成，主线队列在D03/G01之后。WPF-P01只关闭可信Web host子验收，不能关闭用户完整plugin系统/所有组件可插拔需求。
+主线FLOW-001 full-plan-matrix REQ-11/12/13仍将npm插件install/enable/disable/upgrade/remove、版本配置/能力作用域、trusted/isolated第三方执行、tool/renderer/verifier、CLI等价与未知UI fallback列为X01全栈范围；全栈范围仍未完成；当前X01 canonical已建立，Mika开始X02中心registry首片段，不能继续把下一owner标为全未指定。WPF-P01只关闭可信Web host子验收，不能关闭用户完整plugin系统/所有组件可插拔需求。
 
-接收协调owner为原Execution Lead；下一全栈实施owner由其在D03/G01后有ready槽位、Web host接口/证据可消费且公共权限/隔离输入明确时正式登记。我方已发送ready子项与BR-01接口需求，不擅自占其owner或添加新agent。主线登记后把具体计划/owner/输入SHA补入交接；当前标未指定，不能说全系统已开工或完成。
+接收协调owner为原Execution Lead；X01唯一canonical在plugin-management-plan，X02模块由Mika队唯一owner负责，公共client/export/CLI由ExecutionLead提供。当前Web继续CHAT优先，不抢X02后端或未领取管理UI；未来稳定公共入口后独立claim消费，不宣称全系统完成。
 
 
 ## D04领取迁移：2026-10-06 02:41 UTC实观登记回报
@@ -192,3 +194,10 @@ CHAT合同4c2408e4db3595879f6471cb5fffccadec975b3d和public export/client84117ca
 回程路由：Execution Lead ID01a10ea1-f0bb-7622-ad26-db889c131055为另一主task子agent，app工具不能直投；发送至原GoalOwner01a10e15-b908-7a72-b8c0-222a26bf93ff，以“收件人：Execution Lead”标明，由其原样桥接，无额外审批。Mika独立task01a10f3f-4ef0-7ca2-8e66-f1947fa4b295可直联，负责B01后台、下一X02；本队不重复其scope。B01正式性能窗口03:35:16～31已结束（root转报）；Web此段仅功能浏览器，同机正式矩阵下一次先协调。
 
 CHAT唯一canonical实际建立：/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations，branch codex/web-conversations，planDir plans/wpf-chat01-conversations，evidenceDir docs/evidence/wpf-chat01；首docs c72e02ba55dc4a5b3eddf1cf2a241e33403a0d16 clean / blockerNONE / targetUNKNOWN。已发ExecutionLead登记，旧conversation-core三件套转stub。PERF02与CHAT注册请求已送，不冒称已观测状态卡。
+
+
+## X02中心registry后继输入（03:44，root只读研究）
+
+固定4054c67cb8a58eaed167df2a82a2d51249afccdc，plugin-registry树的packages/contracts/src/plugins.ts及docs/evidence/x02/interface.md。首片段支持注册、config/grants、精确version选择与operations；runtimeStatus始终unavailable，digest/license为operator声明。configure全替换、select-version清config/grants，Web未来不能显示已安装/已启用/完整rollback成功。请求32KiB、响应64KiB、page40；historical revision与current pointer分开，默认grants空。此为compat调查，不是X02 approval。
+
+REQ40归属不变：Mika写中心模块，ExecutionLead写共享client/export/CLI；待其固定消费入口后Web另领取，不打断CHAT。I01本地可信Settings不等于中心持久插件管理。

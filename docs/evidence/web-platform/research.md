@@ -269,3 +269,18 @@ root03:31:52.249Z实际4320为34源，I01/PERF01已正确approved，PERF02仍unr
 测量窗口协调由root统一回程：Mika B01先20秒SELECT/EXPLAIN候选、硬上限120秒，结束明确回root后PERF02才开始预计约8分钟smoke与1/16/128矩阵；owner收到等待指令，功能/代码照常。Mika不能app直投本v2子agent，以root作回程，不重复探测/新建任务；同机窗口排队不改变生产功能授权。
 
 03:39管理clean-code停点：当前body中旧“shared冲突/无writer/准备暂停”不能仅靠末尾补事实，已直接更正到a3b受控输入解除、PERF02与CHAT实际claim/canonical；两个准备目录转stub防第二事实源。CHAT c72与PERF02 c779已交ExecutionLead注册，后续一次实采再写完成。固定4c/841的接口研究与queue/draft风险保持同一证据；没有改产品或重复模型/语音调用。
+
+
+## RS26 两条并行交付与后继插件输入（03:44 UTC）
+
+PERF02候选a87f64f48a3b7e8d03429ab0673c210076a2df0d、metadatae07c34c5f98657b390e8fdc44bb2d85f9360a56d，管理者独立scope审核：相对cc334六个实现/测试文件及自有计划证据全在八scope；App/TaskThread/共享包/rootmanifest/lock与feedprojection零diff，meta实现零diff，6Markdown18链接/TODO检查零错。作者13局部/typecheck/8productionbrowser通过、1040条完整hash/maxMounted16；03:40:14.216Z root确认Mika实验结束后正式窗口开始，loadavg6.20/7.88/8.36，先smokePASS再一次1/16/128矩阵。此处是检查来源与进行中事实，不先宣称优化效果或approval；管理者不并发重跑重型测量。
+
+两新canonical已经完整SHA/唯一worktree/planDir交主线登记；03:40:34 PERF owner实际4320仍无PERF02卡，root要求等registry批次后单次核验，无高频重复催促。领取账本可见和进度来源已聚合必须分开。
+
+root只读X02固定4054c67cb8a58eaed167df2a82a2d51249afccdc的packages/contracts/src/plugins.ts与docs/evidence/x02/interface.md：registry首片段有register/config/grants/exact-version/operations，runtime始终unavailable，digest/license仅operator声明；configure全替换、select-version清config/grants；32KiB请求/64KiB响应/page40，历史revision与current pointer分开、默认grants空。作为REQ40后继接口研究，不能将中心记录误显示npm安装/启用/完整rollback完成。Mika写模块，ExecutionLead写公共入口，Web待稳定输入另claim；不扩大当前CHAT或P01/I01 approval。
+
+root转主线中心2d3bb61b35318f999c9f0f336bb3f443418bb5dc已独审APPROVED（14真实PG HTTP与tsc），publicclient841已批准、main ac4e34d。管理者将此交CHAT唯一owner作provenance，保留现a3b9共享受控输入；两次真实模型聊天验收只由主Lead在三端独审后的固定main执行，本队不重复调用。capfalse仍明确禁用，中心通过不等于Web或完整CHAT需求通过。
+
+本段clean-code：管理current正文曾留I01/PERF旧claim和“接口待交/空槽后派发”等历史语句；本次直接更新正文而非仅追加，明确六stub/七来源中两项待注册、独立scope与review边界。03:43:21.506Z CLI实核管理v2 active；无产品改动、无全库测试，首c075review不自动覆盖后续增补。
+
+root 03:44 UTC再次核官方测量语义（时间采用工具03:44:48，纠正消息最初取整03:46）：[PerformanceEventTiming](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEventTiming) duration按8ms量化、最低阈值16ms，wheel不在事件范围；本探针wheel→scroll→rAF单独自采，不称EventTiming或INP。[LongTask](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongTaskTiming)仅>=50ms，0样本不等于零延迟。[performance.memory](https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory)非标准且已弃用；本报告实际采用CDP JSHeapUsedSize但没有强制GC，也不能推断retained heap或无泄漏。已将解释交PERF唯一owner，原始1/16仅root只读复核，正式结论待128和固定报告。没有新增功能或测试。

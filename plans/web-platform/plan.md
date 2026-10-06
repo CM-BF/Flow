@@ -96,10 +96,12 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | --- | --- | --- |
 | W01已审交付 | w01_owner / m1-web / codex/m1-web | 实现冻结；claim v2仅plans/w01-web，SSE后发现已由M02闭合 |
 | panels组件已交付 | workspace_panels_owner / web-workspace-panels / codex/web-workspace-panels | 已审输入46a1dbd、metadata16d518；不作为当前App writer |
-| WPF-M02已审工作入口 | workspace_panels_owner / web-unified-workspace / codex/web-unified-workspace | claim v2剩余projection/workspace-feed/对应tests及自身plan/evidence；App、TaskThread、WorkspacePanels已明确转出，不恢复写 |
+| WPF-M02已审工作入口 | workspace_panels_owner / web-unified-workspace / codex/web-unified-workspace | claim v3：projection、workspace-feed剩余四literal模块与对应tests/自身plan/evidence；Overview/css已正式转PERF02，App/TaskThread/WorkspacePanels此前转I01，不恢复父范围 |
 | WPF-P01已审可信host | w01_owner / web-plugin-host / codex/web-plugin-host | claim v1：plugins、三plugin-host test/config、自身plan/evidence；保留修复责任，不写App |
-| WPF-I01主App挂载 | workspace_panels_owner / web-plugin-integration / codex/web-plugin-integration | claim b6666c29 v1精确11scope，接管3已转出文件及plugin-integration/官方Thread/themes窄接缝；排除plugins |
-| WPF-PERF01测量 | w01_owner / web-performance / codex/web-performance | claim4553f315 v1仅2 benchmark脚本+plan/evidence；无生产/rootlock范围 |
+| WPF-I01主App挂载 | workspace_panels_owner / web-plugin-integration / codex/web-plugin-integration | 实现92a已审；claim b6666c29 v2移出App/官方Thread/session/react给CHAT，保留其余literal修复范围；排除plugins |
+| WPF-PERF01测量 | w01_owner / web-performance / codex/web-performance | claim4553f315 v2保留fixture脚本+plan/evidence，probe已正式转PERF02；无生产/rootlock范围 |
+| WPF-CHAT01持续对话 | workspace_panels_owner / web-conversations / codex/web-conversations | claim08259c1d v1精确16scope，公共输入由Lead受控给出，不改shared/后端 |
+| WPF-PERF02有界窗口 | w01_owner / web-activity-window / codex/web-activity-window | claimd36cd583 v1精确8scope；不改App、会话、projection与共享接口 |
 | WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | claim632a7149 v2，仅plans/web-platform与docs/evidence/web-platform；不代写其他owner事实 |
 
 冻结 `WorkspacePanels` 接口（在panels owner的 `types.ts` 权威定义）：
@@ -141,10 +143,10 @@ type WorkspacePanelsProps = {
 | 跨团队协作 | WPF-D01需求+管理来源登记 | 主线D03实施；我方提交清单并只读确认注册，不占我方实现槽 |
 | 已集成 | [WPF-M02统一工作总览](unified-workspace/plan.md) | d47整体APPROVED，metadata c526；main3773已含实现，owner转I01 |
 | 已审输入 | WPF-P01插件host | 整体6ce APPROVED、PH-R1～4关闭，最终2910ebc交I01；不覆盖主App |
-| 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584 clean；owner停止实现，保留claim至正式CHAT移交 |
-| 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadata36d802 clean；未做生产优化 |
-| 当前最高优先 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 固定4c240首合同已读；Web08259c1d v1受领，主线public client入口待交；先canonical/独立outbox，不造私有API |
-| 合同等待期间并行 | WPF-PERF02 | 原Lead明确恢复，03:30新d36v1八scope/独立tree受领；不碰App/后端，CHAT合同ready立即优先 |
+| 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584交付；I01v2四文件已正式转CHAT，剩余保留回修范围 |
+| 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadatacc334；未做生产优化，probe已受控转PERF02 |
+| 当前最高优先 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 固定4c240+共享受控a3b9已就绪；Web08259c1d v1受领并正式实施，canonical c72e02；中心2d3bb61已独审，不等于Web/模型验收 |
+| 独立并行测量 | WPF-PERF02 | 新d36v1八scope独立实施候选a87f64f；03:40正式三规模矩阵，尚待结果/review；不碰App/后端，CHAT持续优先 |
 
 ## TODO
 
@@ -152,7 +154,7 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-02** 明确owner/独占范围/接口/依赖，建立无编号冲突的后续plan/status/review。
 - [x] **WPF-001-03** 接收官方Thread与panels独立提交，完成W01集成、回归与独立review闭环。
 - [x] **WPF-001-04** 向主线D03交付管理来源登记清单并只读验证；02:38:47.600Z新版22源中3个WPF源完整无issues（仅登记验证，不表示实现完成）。
-- [ ] **WPF-001-05** 空槽后派发WPF-P01，与X01/M02对齐完整插件系统而非只做UI插槽。
+- [ ] **WPF-001-05** 已审P01/I01前置继续与X01/X02衔接完整插件管理，保留中心生命周期/权限/隔离/CLI与后续Web消费验收。
 - [ ] **WPF-001-06** 建立WPF-PERF01生产基线及下一有证据优化轮，继续按用户新要求更新追溯。
 - [x] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
 - [x] **WPF-001-08** 收取两owner精确literal范围并交主线单点登记，验证D04领取/转交/冲突展示，避免多lead重复派工。
@@ -196,10 +198,12 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 
 - 2026-10-06 03:23 UTC：只读核主线X01 canonical888308d clean和D05 canonical dirty实施中，REQ39/40补真实路径；不代其给approval或重复产品实现。
 
-下一准备轮：[WPF-PERF02有界Activity](performance-optimization/plan.md)，依据PERF三规模实际数据；仅管理计划，待明确停写、逐文件amend/take、稳定输入与独立owner转交。不扩PERF四scope，不改I01 App。
+当前独立轮：[WPF-PERF02有界Activity](performance-optimization/plan.md)，依据PERF三规模实际数据，已完成停写、逐文件amend/take与canonical转交；候选a87f64f正式测量中。原准备暂停和后续授权恢复时序保留，不改CHAT App。
 
 - 2026-10-06 03:25 UTC：U11准确摘要及REQ41～45已完整持久化；真实持续对话优先。PERF02只有准备93889c3，无新tree/amend/take/生产写入；原probe停写意向保留但claim仍v1。I01继续现有交付收尾，49922原fixture不暗换。
 
 - 2026-10-06 03:32 UTC：原Goal Owner明确U11已固定/合同未ready时允许八scope PERF02并行；实际03:30两次CAS amend后新take d36v1，旧M02 v3/PERF01 v2。I01独立APPROVED92a，b584 clean且实现停写，候选CHAT前端待合同/正式交接。新增Mika队2活跃，主线4+本队最多4总10；其B01后台snapshot/events/feed字节/长历史性能和下一X02插件中心工作不由本队重复。
 
 - 2026-10-06 03:35 UTC：CHAT首合同4c240已固定、后台未全部ready；真实对话作为默认首页/可编辑composer，Work overview仅rail。I01 v2移App/官方Thread/两个消息身份桥接文件→CHAT新08259c1d v1/16literal范围已正式受领，canonical初始化中。首capqueue/steer/liveAssistantText/per-turn controls=false，后继REQ41～45不因此关闭；正文只adapter-final来源、requested/effective分开。
+
+- 2026-10-06 03:44 UTC：刷新当前claim/队列/已交付事实；X02固定4054中心registry只读兼容研究进入REQ40依赖。root转中心2d3bb61独审通过及主线main ac4e34d，真实模型最终验收归主Lead，Web不重复调用或提前宣布通过。
