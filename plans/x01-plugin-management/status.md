@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 13:20:51 UTC |
+| 最近更新时间 | 2026-10-06 13:23:01 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -79,3 +79,5 @@
 2026-10-06 13:18:54 UTC：接收Mika于13:17:47 UTC对bf337814的APPROVED，原唯一P2已关闭。只更新[正式集成输入](../../docs/evidence/x01/leaf-integration-ready.md)/review/quality，原manifest/raw/support不改，不重复65或strict；v2保留至main正式回执。后继中心合同/唯一DDL仅metadata设计，未领产品scope；028已被其他任务领取。
 
 2026-10-06 13:20:51 UTC：仅metadata形成[中心安装/读回下一片请求](../../docs/evidence/x01/center-installation-seam-request.md)，固定main a3e670b的15输入；复用X02 revision/command与X05成功精确attempt、leaf唯一prepare/read，不新scheduler或中心包执行。7新source literal和唯一DDL待Lead分配，028已被WPF-CONNECTION01占用，未amend/写产品/测试。完整disable旧pin、版本/ref/三端/隔离要求保持；leaf仍integration。
+
+2026-10-06 13:23:01 UTC：按Mika只读反馈收紧中心设计：start只启动确切未开始accepted；同key重放与reconcile不执行prepare，preparing持久ACK须先于本operation任何FS写；锁丢失须收束own FS且未知仍挡同store后继写入。migration.ts仅复用唯一正式SQL/既有迁移锁，若已有同职责入口则不申请该文件。只改设计metadata，已审leaf源码/raw/manifest不动，未领新scope/编号或运行检查。
