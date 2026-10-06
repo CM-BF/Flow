@@ -1,6 +1,6 @@
 # X05 持久包下载操作
 
-创建/更新：2026-10-06；in-progress；父[X01](../x01-plugin-management/plan.md)。唯一owner assignment_review / gpt-6-astra。GO已批准A方案：持久fetch→明确版本/artifact关系，0模型。
+创建/更新：2026-10-06；completed；父[X01](../x01-plugin-management/plan.md)。唯一owner assignment_review / gpt-6-astra。GO已批准A方案：持久fetch→明确版本/artifact关系，0模型。
 
 只owner稳定key受理，PG先commit，网络TX外。复用X02固定version/声明SHA256与现command幂等helper，不改变同步不可变plugin_operations。新023保存下载operation、最多3attempts和有界audit；X04提供host-only预分配artifactId，完整receipt原子发布。PG/final ACK丢失按已知ID重核恢复；没有目标的在途任务转interrupted，不盲重下。显式retry创建新attempt/temp，reconcile只读现artifact，均持久审计。
 
@@ -10,6 +10,8 @@ center本机私有root+storeId，registryRef白名单由host配置，URL/digest�
 - [x] X05-02 持久受理、查询、retry/reconcile及审计。
 - [x] X05-03 本机worker、known-ID原子发布/重启恢复。
 - [x] X05-04 真实PG/HTTP+独立进程+loopback窗口、旧X04消费者与clean-code。
-- [ ] X05-05 固定证据、独立review、共享挂载/CLI与main接收。
+- [x] X05-05 固定证据、独立review、共享挂载/CLI与main接收。
 
 未实现时保持未知，不把artifact_verified关系叫已安装插件。后继只读研究候选：官方npm精确版本endpoint与abbreviated整packument的字节/身份/完整性比较；本次仍沿X04整packument1MiB，不追加网络实验。
+
+07:04 UTC：Lead回执main/origin ba908a2d84a05b336d74fbaccd7a36d3d254c501已接领域9ebb/447807及共享生产3691，作者核实现祖先/本scope零diff。个人runtime fb906未刷新；仅压缩下载持久操作片段完成，X01解包/安装/加载/启用仍后继。
