@@ -1,10 +1,12 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { FlowApiError, type FlowClient } from "@flow/client";
-import type { ConversationSnapshot, ConversationTurn } from "@flow/contracts";
+import type { ConversationCreation, ConversationSnapshot, ConversationTurn } from "@flow/contracts";
 import { ConversationProjection, replyDetailKey } from "../src/conversations/projection";
 
 const at = "2026-10-06T03:40:00Z";
 const capabilities = { followUp: true, queue: false, steer: false, liveAssistantText: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false } as const;
+const pin = { id: "10000000-0000-4000-8000-000000000001", runnerId: "10000000-0000-4000-8000-000000000002", configDigest: "a".repeat(64) };
+const configuredCreation: ConversationCreation = { title: "hi", harness: "claude", executionProfile: pin, requested: { model: "configured-model", thinking: "disabled", tools: "none" } };
 function turn(number = 1, text = "hi"): ConversationTurn {
   return { id: `turn-${number}`, conversationId: "chat", number, createdAt: at, user: { role: "user", text },
     task: { id: `task-${number}`, title: "hi", harness: "claude", status: "running", verificationStatus: "pending", createdAt: at, updatedAt: at },
@@ -58,7 +60,7 @@ describe("public conversation projection", () => {
     expect(projection.getSnapshot()).toMatchObject({ outbox: null, snapshot: { capabilities: { queue }, conversation: { revision: 1 } } });
     expect(client.createConversation).toHaveBeenCalledTimes(1);
     expect(client.submitConversationTurn.mock.calls[0]?.[1]).toEqual({ expectedRevision: 0, text: "hi", mode: "follow-up" });
-    set(wireSnapshot(queue, reply(turn()))); await projection.refresh();
+    set({ ...wireSnapshot(queue, reply(turn())), conversation: { ...projection.getSnapshot().snapshot!.conversation, revision: 1 } }); await projection.refresh();
     expect(projection.sendDisabledReason()).toBeNull();
     await projection.send("next");
     expect(client.submitConversationTurn.mock.calls[1]?.[1]).toEqual({ expectedRevision: 1, text: "next", mode: "follow-up" });
@@ -77,6 +79,56 @@ describe("public conversation projection", () => {
     await projection.refresh();
     expect(projection.getSnapshot().snapshot).toBeNull();
     expect(projection.getSnapshot().error).toContain("capabilities are not supported");
+  });
+  it.each(["missing", "id", "runnerId", "configDigest"] as const)("keeps a %s pin mismatch in a CREATE receipt unknown and does not submit a turn", async field => {
+    const { projection, client } = setup(snapshot(), null);
+    const wrong = { ...pin, ...(field !== "missing" ? { [field]: field === "configDigest" ? "b".repeat(64) : "10000000-0000-4000-8000-000000000099" } : {}) };
+    client.createConversation.mockResolvedValueOnce({ conversation: { ...snapshot().conversation, ...configuredCreation, executionProfile: field === "missing" ? undefined : wrong }, capabilities, replayed: false });
+    await projection.send("hi", configuredCreation);
+    const pending = projection.getSnapshot().outbox!;
+    expect(pending).toMatchObject({ state: "unknown", conversationId: null, creation: configuredCreation });
+    expect(projection.getSnapshot().snapshot).toBeNull(); expect(client.submitConversationTurn).not.toHaveBeenCalled();
+    await projection.retry();
+    expect(client.createConversation.mock.calls[1]?.slice(0, 2)).toEqual(client.createConversation.mock.calls[0]?.slice(0, 2));
+    expect(projection.getSnapshot().outbox).toBeNull();
+    expect(projection.getSnapshot().snapshot?.conversation.executionProfile).toEqual(pin);
+  });
+  it("rejects an unexpected CREATE pin for an explicit legacy conversation", async () => {
+    const { projection, client } = setup(snapshot(), null);
+    client.createConversation.mockImplementationOnce(async input => ({ conversation: { ...snapshot().conversation, ...input, executionProfile: pin }, capabilities, replayed: false }));
+    await projection.send("hi");
+    expect(projection.getSnapshot().outbox?.state).toBe("unknown");
+    expect(client.submitConversationTurn).not.toHaveBeenCalled();
+  });
+  it("keeps the acknowledged creation locked after a rejected first turn and never creates with the later selection", async () => {
+    const { projection, client } = setup(snapshot(), null);
+    client.submitConversationTurn.mockRejectedValueOnce(new FlowApiError(409, "conflict", "Refresh"));
+    await projection.send("hi", configuredCreation);
+    expect(projection.getSnapshot().snapshot?.conversation.executionProfile).toEqual(pin);
+    expect(projection.getSnapshot().outbox?.state).toBe("rejected");
+    await projection.send("new text", { ...configuredCreation, executionProfile: { ...pin, configDigest: "b".repeat(64) } });
+    expect(client.createConversation).toHaveBeenCalledTimes(1);
+    expect(projection.getSnapshot().snapshot?.conversation.executionProfile).toEqual(pin);
+  });
+  it("checks pinned creation on later GET pages and turn receipts without overwriting accepted configuration", async () => {
+    const { projection, client, set } = setup(snapshot(), null); await projection.send("hi", configuredCreation);
+    const original = projection.getSnapshot().snapshot!.conversation;
+    set({ ...snapshot(reply(turn())), conversation: { ...original, executionProfile: { ...pin, configDigest: "b".repeat(64) } } });
+    await projection.refresh();
+    expect(projection.getSnapshot().error).toContain("frozen creation configuration");
+    expect(projection.getSnapshot().snapshot?.conversation.executionProfile).toEqual(pin);
+    set({ ...snapshot(reply(turn())), conversation: original }); await projection.refresh();
+    client.submitConversationTurn.mockResolvedValueOnce({ conversation: { ...original, revision: 2, executionProfile: undefined }, turn: turn(2, "next"), replayed: false });
+    await projection.send("next");
+    expect(projection.getSnapshot().outbox?.state).toBe("unknown");
+    expect(projection.getSnapshot().snapshot?.conversation.executionProfile).toEqual(pin);
+  });
+  it("retains legacy unpinned configuration on an existing conversation", async () => {
+    const { projection, client } = setup(snapshot(reply(turn()))); await projection.refresh();
+    await projection.send("next", configuredCreation);
+    expect(client.createConversation).not.toHaveBeenCalled();
+    expect(projection.getSnapshot().snapshot?.conversation.executionProfile).toBeUndefined();
+    expect(client.submitConversationTurn.mock.calls[0]?.[1]).toEqual({ expectedRevision: 1, text: "next", mode: "follow-up" });
   });
   it("refreshes a same-revision asynchronous reply and reads its exact version only on demand", async () => {
     const { projection, client, set } = setup(snapshot(turn())); await projection.refresh();

@@ -2,12 +2,14 @@ import { FlowApiError, type FlowClient } from "@flow/client";
 import {
   TERMINAL_STATUSES,
   conversationCreationSchema,
+  type ConversationCreation,
   type ConversationSnapshot,
   type ConversationSummary,
   type ConversationTurn,
   type Detail,
 } from "@flow/contracts";
 import { ConversationOutbox, type OutboxEntry } from "./outbox";
+import { assertCreationReceiptMatches } from "../execution-profiles/selection";
 
 type ConversationPort = Pick<FlowClient, "createConversation" | "conversation" | "conversationTurns" | "submitConversationTurn" | "conversationDetail">;
 type DetailState = { loading?: boolean; data?: Detail; error?: string };
@@ -36,8 +38,12 @@ export function replyDetailKey(conversationId: string, turn: ConversationTurn): 
 function assertSummary(value: ConversationSummary, expectedId?: string) {
   if (!value || typeof value.id !== "string" || !value.id || (expectedId && value.id !== expectedId)
     || !Number.isInteger(value.revision) || value.revision < 0 || !Number.isFinite(Date.parse(value.createdAt))
-    || !Number.isFinite(Date.parse(value.updatedAt)) || !conversationCreationSchema.safeParse({ title: value.title, harness: value.harness, requested: value.requested }).success)
+    || !Number.isFinite(Date.parse(value.updatedAt)) || !conversationCreationSchema.safeParse(creationFields(value)).success)
     throw Error("The center returned an invalid conversation identity. Its receipt is not confirmed.");
+}
+function creationFields(value: ConversationCreation): ConversationCreation {
+  return { title: value.title, harness: value.harness, requested: value.requested,
+    ...(value.executionProfile === undefined ? {} : { executionProfile: value.executionProfile }) };
 }
 function assertTurn(value: ConversationTurn, conversationId: string) {
   if (!value || typeof value.id !== "string" || !value.id || value.conversationId !== conversationId
@@ -77,6 +83,7 @@ export class ConversationProjection {
   private readonly turnVersions = new Map<string, number>();
   private readSequence = 0;
   private snapshotSequence = 0;
+  private creation: ConversationCreation | null = null;
 
   constructor(private readonly client: ConversationPort, private id: string | null = null, private readonly pollMs = 2000) {
     this.state = { snapshot: null, turns: [], nextCursor: null, loading: Boolean(id), loadingMore: false,
@@ -88,6 +95,9 @@ export class ConversationProjection {
   private update(patch: Partial<ConversationState>) {
     if (this.lifetime.signal.aborted) return;
     this.state = { ...this.state, ...patch }; this.listeners.forEach(listener => listener());
+  }
+  private validateCreation(summary: ConversationSummary) {
+    if (this.creation) assertCreationReceiptMatches(this.creation, summary);
   }
 
   setVisible(visible: boolean) {
@@ -131,8 +141,10 @@ export class ConversationProjection {
         ]);
         if (signal.aborted || this.id !== id) return;
         assertSummary(snapshot.conversation, id); assertCapabilities(snapshot);
+        this.validateCreation(snapshot.conversation);
         if (snapshot.lastTurn) assertTurn(snapshot.lastTurn, id);
-        if (page) { assertSummary(page.conversation, id); page.turns.forEach(turn => assertTurn(turn, id)); }
+        if (page) { assertSummary(page.conversation, id); this.validateCreation(page.conversation); assertCreationReceiptMatches(creationFields(snapshot.conversation), page.conversation); page.turns.forEach(turn => assertTurn(turn, id)); }
+        this.creation ??= conversationCreationSchema.parse(creationFields(snapshot.conversation));
         const turns = this.mergeTurns([...(page?.turns ?? []), ...(snapshot.lastTurn ? [snapshot.lastTurn] : [])], sequence);
         this.update({ snapshot: this.reconcileSnapshot(snapshot, turns, sequence), turns, nextCursor: this.historyCursor(turns, page && initial ? page.nextCursor : this.state.nextCursor), loading: false, error: null, connection: "live" });
       } catch (error) {
@@ -156,6 +168,7 @@ export class ConversationProjection {
       const page = await this.client.conversationTurns(this.id, { after, limit: 20 }, signal);
       if (signal.aborted) return;
       assertSummary(page.conversation, this.id); page.turns.forEach(turn => assertTurn(turn, this.id!));
+      this.validateCreation(page.conversation);
       const turns = this.mergeTurns(page.turns, sequence);
       this.update({ turns, snapshot: this.state.snapshot ? this.reconcileSnapshot(this.state.snapshot, turns, this.snapshotSequence) : null, nextCursor: this.historyCursor(turns, page.nextCursor), error: null });
     } catch (error) {
@@ -199,12 +212,12 @@ export class ConversationProjection {
     return null;
   }
 
-  async send(text: string): Promise<string | undefined> {
+  async send(text: string, creation?: ConversationCreation): Promise<string | undefined> {
     const reason = this.sendDisabledReason();
     if (reason) throw Error(reason);
     const entry = this.outbox.begin({
       conversationId: this.id, expectedRevision: this.state.snapshot?.conversation.revision ?? 0, text,
-      ...(!this.id ? { creation: { title: text.trim().split("\n")[0]!.slice(0, 180), harness: "claude" as const,
+      ...(!this.id ? { creation: creation ?? { title: text.trim().split("\n")[0]!.slice(0, 180), harness: "claude" as const,
         requested: { model: "runner-default", thinking: "disabled" as const, tools: "configured-readonly" as const } } } : {}),
     });
     return this.dispatch(entry);
@@ -222,8 +235,9 @@ export class ConversationProjection {
         const created = await this.client.createConversation(entry.creation!, entry.creationKey, signal);
         if (this.lifetime.signal.aborted) return;
         assertSummary(created.conversation); assertCapabilities(created);
-        if (typeof created.replayed !== "boolean" || created.conversation.title !== entry.creation!.title || created.conversation.harness !== entry.creation!.harness
-          || (["model", "thinking", "tools"] as const).some(key => created.conversation.requested[key] !== entry.creation!.requested[key])) throw Error("The creation receipt does not match the frozen request.");
+        if (typeof created.replayed !== "boolean") throw Error("The creation receipt is not confirmed.");
+        assertCreationReceiptMatches(entry.creation!, created.conversation);
+        this.creation = entry.creation!;
         id = created.conversation.id;
         this.id = id; this.outbox.bindConversation(entry.id, id);
         this.update({ snapshot: { conversation: created.conversation, capabilities: created.capabilities, nativeSession: null, lastTurn: null } });
@@ -231,6 +245,7 @@ export class ConversationProjection {
       const accepted = await this.client.submitConversationTurn(id, entry.request, entry.turnKey, signal);
       if (this.lifetime.signal.aborted) return;
       assertSummary(accepted.conversation, id); assertTurn(accepted.turn, id);
+      this.validateCreation(accepted.conversation);
       if (typeof accepted.replayed !== "boolean" || accepted.conversation.revision < entry.request.expectedRevision + 1
         || accepted.turn.number !== entry.request.expectedRevision + 1 || accepted.turn.user.text !== entry.request.text)
         throw Error("The turn receipt does not match the frozen message. Retry with its original request identity.");
