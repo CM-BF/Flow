@@ -1,0 +1,432 @@
+{
+  "gitVersion": "git version 2.50.1 (Apple Git-155)",
+  "configBefore": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = true\n\tprecomposeunicode = true\n[user]\n\tname = Flow toy\n\temail = toy@example.invalid\n",
+  "configAfter": "[core]\n\trepositoryformatversion = 0\n\tfilemode = true\n\tbare = false\n\tlogallrefupdates = true\n\tignorecase = true\n\tprecomposeunicode = true\n[user]\n\tname = Flow toy\n\temail = toy@example.invalid\n[extensions]\n\tworktreeConfig = true\n",
+  "configOrigins": {
+    "main": "file:.git/config\tcore.bare false\nfile:.git/config\textensions.worktreeconfig true\n",
+    "prior": "file:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/config\tcore.bare false\nfile:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/config\textensions.worktreeconfig true\n",
+    "new": "file:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/config\tcore.bare false\nfile:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/config\textensions.worktreeconfig true\nfile:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/worktrees/new/config.worktree\tcore.sparsecheckout true\nfile:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/worktrees/new/config.worktree\tcore.sparsecheckoutcone false\n"
+  },
+  "patterns": "/*\n!/docs/*\n/docs/evidence/\n!/docs/evidence/*\n/docs/evidence/o14/\n!/plans/*\n/plans/o14-goal-progression/\n",
+  "trackedFlags": "H AGENTS.md\nH apps/server/src/index.ts\nH docs/evidence/o14/seed.md\nS docs/evidence/old/raw.txt\nH packages/contracts/src/a.ts\nH plans/o14-goal-progression/plan.md\nS plans/old/status.md\n",
+  "excludedRead": "toy docs/evidence/old/raw.txt\n",
+  "mainUnchanged": true,
+  "existingWorktreeUnchanged": true,
+  "newSparseStatus": "",
+  "fullSourcePresent": true,
+  "onlyOwnRecordsPresent": true,
+  "observedAt": "2026-10-06T14:10:06.682467+00:00",
+  "maxAllocatedKiB": 364,
+  "root": "/tmp/flow-o14-sparse-toy-_13wl7ph",
+  "failure": null,
+  "logs": [
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "init",
+        "-b",
+        "main"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "Initialized empty Git repository in /private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/\n",
+      "stderr": "",
+      "allocatedKiB": 80
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "config",
+        "user.name",
+        "Flow toy"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "allocatedKiB": 80
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "config",
+        "user.email",
+        "toy@example.invalid"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "allocatedKiB": 80
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "add",
+        "."
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "allocatedKiB": 140
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "commit",
+        "-m",
+        "toy base"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "[main (root-commit) 1ddee56] toy base\n 7 files changed, 7 insertions(+)\n create mode 100644 AGENTS.md\n create mode 100644 apps/server/src/index.ts\n create mode 100644 docs/evidence/o14/seed.md\n create mode 100644 docs/evidence/old/raw.txt\n create mode 100644 packages/contracts/src/a.ts\n create mode 100644 plans/o14-goal-progression/plan.md\n create mode 100644 plans/old/status.md\n",
+      "stderr": "",
+      "allocatedKiB": 216
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "worktree",
+        "add",
+        "-b",
+        "codex/prior",
+        "/tmp/flow-o14-sparse-toy-_13wl7ph/prior",
+        "HEAD"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "HEAD is now at 1ddee56 toy base\n",
+      "stderr": "Preparing worktree (new branch 'codex/prior')\n",
+      "allocatedKiB": 280
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "1ddee56584761ae56a603f4975af0a331cee7f74\n",
+      "stderr": "",
+      "allocatedKiB": 280
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": " M AGENTS.md\n",
+      "stderr": "",
+      "allocatedKiB": 280
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/prior",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "1ddee56584761ae56a603f4975af0a331cee7f74\n",
+      "stderr": "",
+      "allocatedKiB": 280
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/prior",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "allocatedKiB": 280
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "worktree",
+        "add",
+        "--no-checkout",
+        "-b",
+        "codex/new",
+        "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+        "HEAD"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Preparing worktree (new branch 'codex/new')\n",
+      "allocatedKiB": 308
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+      "argv": [
+        "git",
+        "sparse-checkout",
+        "set",
+        "--no-cone",
+        "--stdin"
+      ],
+      "stdin": "/*\n!/docs/*\n/docs/evidence/\n!/docs/evidence/*\n/docs/evidence/o14/\n!/plans/*\n/plans/o14-goal-progression/\n",
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "allocatedKiB": 316
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+      "argv": [
+        "git",
+        "read-tree",
+        "-mu",
+        "HEAD"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "allocatedKiB": 340
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "1ddee56584761ae56a603f4975af0a331cee7f74\n",
+      "stderr": "",
+      "allocatedKiB": 340
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "allocatedKiB": 340
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "config",
+        "--show-origin",
+        "--get-regexp",
+        "^(extensions\\.worktreeconfig|core\\.(bare|worktree|sparsecheckout|sparsecheckoutcone))$"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "file:.git/config\tcore.bare false\nfile:.git/config\textensions.worktreeconfig true\n",
+      "stderr": "",
+      "allocatedKiB": 340
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/prior",
+      "argv": [
+        "git",
+        "config",
+        "--show-origin",
+        "--get-regexp",
+        "^(extensions\\.worktreeconfig|core\\.(bare|worktree|sparsecheckout|sparsecheckoutcone))$"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "file:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/config\tcore.bare false\nfile:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/config\textensions.worktreeconfig true\n",
+      "stderr": "",
+      "allocatedKiB": 340
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+      "argv": [
+        "git",
+        "config",
+        "--show-origin",
+        "--get-regexp",
+        "^(extensions\\.worktreeconfig|core\\.(bare|worktree|sparsecheckout|sparsecheckoutcone))$"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "file:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/config\tcore.bare false\nfile:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/config\textensions.worktreeconfig true\nfile:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/worktrees/new/config.worktree\tcore.sparsecheckout true\nfile:/private/tmp/flow-o14-sparse-toy-_13wl7ph/main/.git/worktrees/new/config.worktree\tcore.sparsecheckoutcone false\n",
+      "stderr": "",
+      "allocatedKiB": 340
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+      "argv": [
+        "git",
+        "ls-files",
+        "-t"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "H AGENTS.md\nH apps/server/src/index.ts\nH docs/evidence/o14/seed.md\nS docs/evidence/old/raw.txt\nH packages/contracts/src/a.ts\nH plans/o14-goal-progression/plan.md\nS plans/old/status.md\n",
+      "stderr": "",
+      "allocatedKiB": 340
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+      "argv": [
+        "git",
+        "show",
+        "HEAD:docs/evidence/old/raw.txt"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "toy docs/evidence/old/raw.txt\n",
+      "stderr": "",
+      "allocatedKiB": 340
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+      "argv": [
+        "git",
+        "add",
+        "plans/o14-goal-progression/plan.md"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "allocatedKiB": 344
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+      "argv": [
+        "git",
+        "commit",
+        "-m",
+        "toy own plan"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "[codex/new 07bd96b] toy own plan\n 1 file changed, 1 insertion(+), 1 deletion(-)\n",
+      "stderr": "",
+      "allocatedKiB": 364
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "1ddee56584761ae56a603f4975af0a331cee7f74\n",
+      "stderr": "",
+      "allocatedKiB": 364
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": " M AGENTS.md\n",
+      "stderr": "",
+      "allocatedKiB": 364
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/prior",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "1ddee56584761ae56a603f4975af0a331cee7f74\n",
+      "stderr": "",
+      "allocatedKiB": 364
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/prior",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "allocatedKiB": 364
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "07bd96bcaf4da8aad3421c8f66ac0ef6f5300a6a\n",
+      "stderr": "",
+      "allocatedKiB": 364
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/new",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "allocatedKiB": 364
+    },
+    {
+      "cwd": "/tmp/flow-o14-sparse-toy-_13wl7ph/main",
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "stdin": null,
+      "exit": 0,
+      "stdout": "git version 2.50.1 (Apple Git-155)\n",
+      "stderr": "",
+      "allocatedKiB": 364
+    }
+  ],
+  "priorFailures": "/tmp/flow-o14-sparse-toy-failed.json",
+  "flowMutation": "none",
+  "limits": [
+    "Shared extensions.worktreeConfig is enabled by set. Only sparse flags are worktree-local.",
+    "read-tree -mu HEAD needed for fresh no-checkout index. Run only on verified brand-new empty worktree, never an existing dirty tree.",
+    "Toy has no custom core.worktree/shared sparse configuration. Git owner must inspect actual Flow before activation.",
+    "No install/Flow checkout/PG/provider; no physical reclaim claim."
+  ],
+  "toyRemoved": true
+}

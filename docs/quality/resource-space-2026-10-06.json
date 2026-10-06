@@ -70,6 +70,15 @@
         "web-context-integration active installation unchanged"
       ],
       "timeCorrection": "Earlier A2A label14:13 was management typo, not measurement timestamp; authoritative observation is this recorded time and GO14:07:34 fact."
+    },
+    {
+      "observedAt": "2026-10-06T14:18:00.009252+00:00",
+      "availableBytes": 1198407680,
+      "sparseOperation": "browser-connection-session",
+      "observedFreeDeltaBytes": 20066304,
+      "attribution": "single-operation before/after on shared volume; no exclusive physical attribution",
+      "decision": "still below SVC06 2.5GiB; bounded source/metadata permitted; next ended tree evaluated independently",
+      "evidence": "sparse-worktree-2026-10-06/browser-session-result.json"
     }
   ]
 }
