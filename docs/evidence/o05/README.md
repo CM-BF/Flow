@@ -31,3 +31,5 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm typecheck
 ```
 
 新module不执行任务、不修改既有节点/GoalInput，不等于自然语言拆图或完整目标交付。后继独立graph权限可以owner一次预授予有界范围，不要求每步人工批准；不能将旧allowedNodeIds解释为图写权。native语义预算“1query/4turns/SDK$.20/90s”仍为待批准提案；需O04+O05固定main独审/config前置，合成goal+专属PG/tmp，失败不补次、不挪封存预算。当前0调用。
+
+2026-10-06T05:18:55Z Mika独立只读APPROVED `1f211995daae06b23cf98400199ef4d3cd3995b0` / clean `ba1a670e452e08a01321a806967fa04db37bd591`；7source/7output及原manifest `63e16bfbd31d677c47f07ff8947fd2bc930cc56d8fdd39dc4ef14cc14bd3a7f7`已核，原10项G01断言未改；作者16/16+tsc与回滚/ACK/CAS/旧grant/清理原证据正确，无blocking，Mika未重跑。源码冻结，本片段stage integration，main挂载/接收另由Lead记录；预算未授权执行边界不变。
