@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-06T21:35:48.900912+00:00",
+  "reviewer": "assignment_review / gpt-6-astra; independent from OPS14 author native_center_owner",
+  "verdict": "APPROVED_SOURCE_LIMITED",
+  "target": "3097730ee1abbb054c09ae2ed14c998ebde3ef49",
+  "cleanDelivery": "8f2f0334a8667d2f31d7baaf72f6c85098fe4262",
+  "originalTarget": "0d9503ad9115f5537a2025a33d1f78239f4fb409",
+  "scope": "New owned-process-supervision module, full3-file original source/interface, 2-file positive group grace/direct-test delta; original SVC05H/SVC07 wrappers remain unchanged",
+  "sourceReview": "Complete implementation and tests read; no remaining P1/P2 source finding",
+  "manifestSha256": "aaa150bda4fc455ef22fee2d762556f35c76f7cabded5f9041b75a0ac5aac6a6",
+  "priorManifestSha256": "518594c5cd2be0f69174a602ce6f24348b14bf2ffb6897b174e41a576e231846",
+  "bindingEvidence": {
+    "path": "/tmp/flow-ops14-independent-review-bindings.json",
+    "sha256": "ea27cfc821cc355a2e1ca429def3e4fb2712226becf8661769d1bd99e523faa3",
+    "originalFixed": 26,
+    "finalFixedAndCurrent": 30,
+    "mismatches": 0
+  },
+  "findings": [],
+  "closedDuringReview": [
+    {
+      "id": "OPS14-GROUP-GRACE",
+      "origin": "author/Lead pre-review finding",
+      "problem": "newChildSession formerly permitted zero TERM grace contrary to contract",
+      "fix": "finite positive TERM grace validated before Popen for groups; childPidOnly still permits zero",
+      "status": "SOURCE_CLOSED; new runtime assertion NOT_RUN"
+    },
+    {
+      "id": "OPS14-DIRECT-EPERM-CASE",
+      "origin": "this reviewer",
+      "problem": "new positive-grace validation made legacy unknown-group test default term0 reject before testing EPERM",
+      "fix": "same existing assertions retained with explicit .03 grace in3097730",
+      "status": "SOURCE_CLOSED; adjusted direct case NOT_RUN"
+    }
+  ],
+  "examined": [
+    "Only newly spawned unreaped child PID used in childPidOnly; never killpg in this mode, detached stand-in preservation shown by retained evidence",
+    "waitid WNOWAIT retains ownership for all group signals; reap is final signal phase, later state observation is read-only",
+    "Group observation and signal EPERM mark unknown and permanently prohibit signal escalation; explicit later present/absent does not erase earlier failure",
+    "All child stdout/stderr pipe operations nonblocking, combined retained cap<=1MiB; observed excess bounded by current8192B read; output cap triggers stop",
+    "Deadline and stop independent of caller persistence; child held-pipe and final output cases preserve EOF unknown rather than assume child exit implies stream closure",
+    "Primary work failure remains first; separate bounded secondary failures for cleanup; raw exception/argv/env not included in failure text",
+    "Total elapsed excludes post-return durable reporting; kernel spawn/scheduling not claimed hard-real-time",
+    "No external cleanup callbacks, DB/network/provider initiation, arbitrary external PID admission or alternate deployment state machine"
+  ],
+  "validationEvidence": {
+    "reviewerTests": 0,
+    "reviewerPG": 0,
+    "reviewerProvider": 0,
+    "reviewerProjectWrites": 0,
+    "originalRounds": "tests-first10/8 exit1; diagnostic2/0 overlapping; tests-second12/11 exit1; signal-final1/1 exit0.12 distinct historic passing checks, not one12/12 run",
+    "latest2": "NOT_RUN: fresh1,032,241,152B below1,077,936,128B gate, no child; request exactly new no-spawn plus adjusted EPERM",
+    "resourceEvidence": "Existing controlled children stop/reap checks and retained ResourceWarning/failure history read; no whole-machine absence/peak claim"
+  },
+  "acceptanceBoundary": [
+    "Source/module approval only; final changed-policy2case execution remains an explicit validation gap and may be completed when Lead resource gate permits. Do not report13passed or final2passed.",
+    "Actual SVC05H/SVC07 wrapper migrations are not included; require coordinated scopes, new fixed consumers and their bounded direct checks.",
+    "Only initial owned group; detached escaped descendants not contained.",
+    "Unknown child/group may remain; caller must retain external resources and original evidence, no auto retry.",
+    "No personal service/probe/PG/browser/model execution by reviewer."
+  ],
+  "suggestedNext": "Keep final source frozen; when authorized resource gate permits run only policy-request two cases, then append raw/hash review. Do not repeat historic12."
+}

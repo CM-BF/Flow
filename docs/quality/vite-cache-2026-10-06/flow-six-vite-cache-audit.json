@@ -1,0 +1,914 @@
+{
+  "at": "2026-10-06T21:43:43.471204+00:00",
+  "reviewer": "assignment_review",
+  "scope": "Only six exact apps/web/node_modules/.vite candidates",
+  "ledger": {
+    "path": "/tmp/flow-six-vite-cache-ledger.json",
+    "sha256": "137231f3006152f1668caf0c3fdbd9dddcce01110f899a0b0487a484c6932d31"
+  },
+  "processEvidence": {
+    "path": "/tmp/flow-six-vite-cache-processes.json",
+    "sha256": "02ff778076166c2dd51f3c01d8942d76c85c91c711adcf83f6b97b70ab3043ec"
+  },
+  "items": [
+    {
+      "tree": "web-conversation-activity",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity",
+      "head": "8cc13eaa9c2aa29f77f841637d9891b67fd1264f",
+      "clean": true,
+      "claims": [
+        {
+          "id": "51f962ee-7e6f-4806-a9f9-df3838dc27f5",
+          "state": "released",
+          "version": 2,
+          "owner": "workspace_panels_owner"
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md",
+          "sha256": "56905873f4599d94fbed4b70eb95f9cc2b71bdedd77eec9b0d1728695f42180f",
+          "deliveredDeclared": true,
+          "retainedPreviewPort": 53851,
+          "retainedPreviewMention": true
+        }
+      ],
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/apps/web/node_modules/.vite",
+      "pathIdentity": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity",
+          "dev": 16777234,
+          "ino": 118465681,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/apps",
+          "dev": 16777234,
+          "ino": 118465696,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/apps/web",
+          "dev": 16777234,
+          "ino": 118465903,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 118504098,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 118537247,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "allPathComponentsRealDirectories": true,
+      "rootDevIno": [
+        16777234,
+        118537247
+      ],
+      "trackedCacheFiles": [],
+      "verdict": "KEEP_ACTIVE_RETAINED_PREVIEW",
+      "reason": "Fresh known preview listener and exact worktree process/open-file consumer; release of writer claim does not retire preview",
+      "previewListeners": [
+        {
+          "pid": "31365",
+          "command": "node",
+          "port": 53851
+        }
+      ],
+      "processes": [
+        {
+          "tree": "web-conversation-activity",
+          "pid": "15811",
+          "ppid": "15634",
+          "command": "/opt/homebrew/Ce"
+        },
+        {
+          "tree": "web-conversation-activity",
+          "pid": "31365",
+          "ppid": "31281",
+          "command": "/opt/homebrew/Ce"
+        }
+      ],
+      "openFileCount": 19,
+      "cacheOpenFileCount": 0,
+      "fileNlinkAndByteAudit": "NOT_RUN: failed active-consumer gate; do not walk/race live cache or claim cleanup eligibility",
+      "logicalCandidateBytes": 0,
+      "physicalReclaim": "NOT_ESTIMATED",
+      "untouched": "all cache bytes, genuine packages and every other node_modules entry unchanged"
+    },
+    {
+      "tree": "web-conversations",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+      "head": "eb2fc99f6fa0652d98045a9bd84ffe32c978ac8f",
+      "clean": true,
+      "claims": [
+        {
+          "id": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+          "state": "released",
+          "version": 7,
+          "owner": "workspace_panels_owner"
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/status.md",
+          "sha256": "ec7783579a96e00a323f5b61b6ec88defa8187ed40af84e6e3ad8cdc5bf325b9",
+          "deliveredDeclared": true,
+          "retainedPreviewPort": 63743,
+          "retainedPreviewMention": true
+        }
+      ],
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/apps/web/node_modules/.vite",
+      "pathIdentity": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+          "dev": 16777234,
+          "ino": 117429951,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/apps",
+          "dev": 16777234,
+          "ino": 117429966,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/apps/web",
+          "dev": 16777234,
+          "ino": 117430038,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 117528239,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 117543190,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "allPathComponentsRealDirectories": true,
+      "rootDevIno": [
+        16777234,
+        117543190
+      ],
+      "trackedCacheFiles": [],
+      "verdict": "KEEP_ACTIVE_RETAINED_PREVIEW",
+      "reason": "Fresh known preview listener and exact worktree process/open-file consumer; release of writer claim does not retire preview",
+      "previewListeners": [
+        {
+          "pid": "60286",
+          "command": "node",
+          "port": 63743
+        }
+      ],
+      "processes": [
+        {
+          "tree": "web-conversations",
+          "pid": "60286",
+          "ppid": "60280",
+          "command": "/opt/homebrew/Ce"
+        },
+        {
+          "tree": "web-conversations",
+          "pid": "60287",
+          "ppid": "60286",
+          "command": "/Users/citrine/P"
+        }
+      ],
+      "openFileCount": 21,
+      "cacheOpenFileCount": 0,
+      "fileNlinkAndByteAudit": "NOT_RUN: failed active-consumer gate; do not walk/race live cache or claim cleanup eligibility",
+      "logicalCandidateBytes": 0,
+      "physicalReclaim": "NOT_ESTIMATED",
+      "untouched": "all cache bytes, genuine packages and every other node_modules entry unchanged"
+    },
+    {
+      "tree": "web-conversation-queue",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue",
+      "head": "6ca7803c9ea0032a64e534824f35214ed0cd8a6a",
+      "clean": true,
+      "claims": [
+        {
+          "id": "b4ea85d0-ad87-4903-9a59-73281ad17752",
+          "state": "released",
+          "version": 2,
+          "owner": "workspace_panels_owner"
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/plans/wpf-queue01-ui/status.md",
+          "sha256": "417721015a1a5b73ac42324405274f9e1850ab3c984fa2e808da011312b098f9",
+          "deliveredDeclared": true,
+          "retainedPreviewPort": 58071,
+          "retainedPreviewMention": true
+        }
+      ],
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/apps/web/node_modules/.vite",
+      "pathIdentity": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue",
+          "dev": 16777234,
+          "ino": 118173783,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/apps",
+          "dev": 16777234,
+          "ino": 118173798,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/apps/web",
+          "dev": 16777234,
+          "ino": 118173977,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 118205076,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 118244115,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "allPathComponentsRealDirectories": true,
+      "rootDevIno": [
+        16777234,
+        118244115
+      ],
+      "trackedCacheFiles": [],
+      "verdict": "KEEP_ACTIVE_RETAINED_PREVIEW",
+      "reason": "Fresh known preview listener and exact worktree process/open-file consumer; release of writer claim does not retire preview",
+      "previewListeners": [
+        {
+          "pid": "23120",
+          "command": "node",
+          "port": 58071
+        }
+      ],
+      "processes": [
+        {
+          "tree": "web-conversation-queue",
+          "pid": "23120",
+          "ppid": "21990",
+          "command": "/opt/homebrew/Ce"
+        },
+        {
+          "tree": "web-conversation-queue",
+          "pid": "23331",
+          "ppid": "23120",
+          "command": "/Users/citrine/P"
+        }
+      ],
+      "openFileCount": 21,
+      "cacheOpenFileCount": 0,
+      "fileNlinkAndByteAudit": "NOT_RUN: failed active-consumer gate; do not walk/race live cache or claim cleanup eligibility",
+      "logicalCandidateBytes": 0,
+      "physicalReclaim": "NOT_ESTIMATED",
+      "untouched": "all cache bytes, genuine packages and every other node_modules entry unchanged"
+    },
+    {
+      "tree": "web-conversation-stream-integration",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration",
+      "head": "8ca0684c48f5eb760561e4f227f041e6c8182a97",
+      "clean": true,
+      "claims": [
+        {
+          "id": "a7293487-e9ef-46ef-9f9f-4b119bf0740f",
+          "state": "released",
+          "version": 2,
+          "owner": "workspace_panels_owner"
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/plans/wpf-chat06-stream-integration/status.md",
+          "sha256": "42149d34b362b68e69663bb778589ff0c2ce0acd38ff5b3df431204a9574cf95",
+          "deliveredDeclared": true,
+          "retainedPreviewPort": 65339,
+          "retainedPreviewMention": true
+        }
+      ],
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/node_modules/.vite",
+      "pathIdentity": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration",
+          "dev": 16777234,
+          "ino": 119160631,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps",
+          "dev": 16777234,
+          "ino": 119160646,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web",
+          "dev": 16777234,
+          "ino": 119160930,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 119199285,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 119242177,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "allPathComponentsRealDirectories": true,
+      "rootDevIno": [
+        16777234,
+        119242177
+      ],
+      "trackedCacheFiles": [],
+      "verdict": "KEEP_ACTIVE_RETAINED_PREVIEW",
+      "reason": "Fresh known preview listener and exact worktree process/open-file consumer; release of writer claim does not retire preview",
+      "previewListeners": [
+        {
+          "pid": "764",
+          "command": "node",
+          "port": 65339
+        }
+      ],
+      "processes": [
+        {
+          "tree": "web-conversation-stream-integration",
+          "pid": "764",
+          "ppid": "509",
+          "command": "/opt/homebrew/Ce"
+        }
+      ],
+      "openFileCount": 19,
+      "cacheOpenFileCount": 0,
+      "fileNlinkAndByteAudit": "NOT_RUN: failed active-consumer gate; do not walk/race live cache or claim cleanup eligibility",
+      "logicalCandidateBytes": 0,
+      "physicalReclaim": "NOT_ESTIMATED",
+      "untouched": "all cache bytes, genuine packages and every other node_modules entry unchanged"
+    },
+    {
+      "tree": "web-data-renderers",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers",
+      "head": "4ddcac4f7d0c3c81a758259270bab02596e8ea99",
+      "clean": true,
+      "claims": [
+        {
+          "id": "87948975-fa99-49b6-a84c-3ca126aaeb92",
+          "state": "released",
+          "version": 2,
+          "owner": "w01_owner"
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/plans/wpf-renderer01-data-renderers/status.md",
+          "sha256": "75104a233f17cd05ed39d2136503fe61ca1d9ead5794c8156e943a3f026ca9fd",
+          "deliveredDeclared": true,
+          "retainedPreviewPort": 49415,
+          "retainedPreviewMention": true
+        }
+      ],
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/apps/web/node_modules/.vite",
+      "pathIdentity": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers",
+          "dev": 16777234,
+          "ino": 118334277,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/apps",
+          "dev": 16777234,
+          "ino": 118334292,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/apps/web",
+          "dev": 16777234,
+          "ino": 118334491,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 118365770,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 118370082,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "allPathComponentsRealDirectories": true,
+      "rootDevIno": [
+        16777234,
+        118370082
+      ],
+      "trackedCacheFiles": [],
+      "verdict": "KEEP_ACTIVE_RETAINED_PREVIEW",
+      "reason": "Fresh known preview listener and exact worktree process/open-file consumer; release of writer claim does not retire preview",
+      "previewListeners": [
+        {
+          "pid": "69787",
+          "command": "node",
+          "port": 49415
+        }
+      ],
+      "processes": [
+        {
+          "tree": "web-data-renderers",
+          "pid": "69787",
+          "ppid": "69781",
+          "command": "/opt/homebrew/Ce"
+        }
+      ],
+      "openFileCount": 19,
+      "cacheOpenFileCount": 0,
+      "fileNlinkAndByteAudit": "NOT_RUN: failed active-consumer gate; do not walk/race live cache or claim cleanup eligibility",
+      "logicalCandidateBytes": 0,
+      "physicalReclaim": "NOT_ESTIMATED",
+      "untouched": "all cache bytes, genuine packages and every other node_modules entry unchanged"
+    },
+    {
+      "tree": "web-data-renderer-integration",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration",
+      "head": "9da5add318df9cf08d50fb5262f9ceb6bfae29e9",
+      "clean": true,
+      "claims": [
+        {
+          "id": "ff62150f-30ec-4ee5-9ea5-19e589125cfc",
+          "state": "released",
+          "version": 2,
+          "owner": "w01_owner"
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/plans/wpf-renderer-i01-integration/status.md",
+          "sha256": "d9a6a5f69431b49ee035743c88ce6c32de52ec4b830e8f22870039ffc1bf1e55",
+          "deliveredDeclared": true,
+          "retainedPreviewPort": 60956,
+          "retainedPreviewMention": true
+        }
+      ],
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/apps/web/node_modules/.vite",
+      "pathIdentity": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration",
+          "dev": 16777234,
+          "ino": 118595666,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/apps",
+          "dev": 16777234,
+          "ino": 118595681,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/apps/web",
+          "dev": 16777234,
+          "ino": 118595912,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 118666637,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 118761222,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "allPathComponentsRealDirectories": true,
+      "rootDevIno": [
+        16777234,
+        118761222
+      ],
+      "trackedCacheFiles": [],
+      "verdict": "KEEP_ACTIVE_RETAINED_PREVIEW",
+      "reason": "Fresh known preview listener and exact worktree process/open-file consumer; release of writer claim does not retire preview",
+      "previewListeners": [
+        {
+          "pid": "13600",
+          "command": "node",
+          "port": 60956
+        }
+      ],
+      "processes": [
+        {
+          "tree": "web-data-renderer-integration",
+          "pid": "13600",
+          "ppid": "13594",
+          "command": "/opt/homebrew/Ce"
+        }
+      ],
+      "openFileCount": 19,
+      "cacheOpenFileCount": 0,
+      "fileNlinkAndByteAudit": "NOT_RUN: failed active-consumer gate; do not walk/race live cache or claim cleanup eligibility",
+      "logicalCandidateBytes": 0,
+      "physicalReclaim": "NOT_ESTIMATED",
+      "untouched": "all cache bytes, genuine packages and every other node_modules entry unchanged"
+    }
+  ],
+  "eligibleCount": 0,
+  "mutations": 0,
+  "tests": 0,
+  "PG": 0,
+  "privateDataRead": false,
+  "limitations": [
+    "All six have actual active retained preview consumers, so KEEP regardless of regenerate capability.",
+    "No cache body/sourcemap/token/private source contents read; only path metadata/status/kernel process/openfile inventory.",
+    "No external reverse symlink scan was necessary after definite consumer found; no absence claim.",
+    "No files removed, stopped, rebuilt, imported, or modified. Only Lead may decide later ownership/preview retirement before fresh cache cleanup audit."
+  ]
+}

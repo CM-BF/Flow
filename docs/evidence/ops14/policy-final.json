@@ -1,0 +1,24 @@
+{
+  "startedAt": "2026-10-06T21:33:44.970195+00:00",
+  "freeBeforeBytes": 1032241152,
+  "minimumFreeBytes": 1077936128,
+  "selectedExpected": 2,
+  "unselected": 11,
+  "newDistinctCases": 1,
+  "PG": 0,
+  "browser": 0,
+  "providerCalls": 0,
+  "sources": [
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "sha256": "eee3e06564bbc2ec5389af225d0f14bde58a8b7c907e083693e1489715f13575",
+      "bytes": 11993
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "sha256": "791c192088b0aea13973bb90daad3afbde973a8f31a544a04d97f993aaee5a17",
+      "bytes": 10756
+    }
+  ],
+  "state": "NOT_RUN"
+}

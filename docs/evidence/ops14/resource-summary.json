@@ -1,0 +1,15 @@
+{
+  "stage": "local stdlib process checks only",
+  "providerCalls": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "privateTemporaryFilesCreatedByTests": 0,
+  "bytecodeDisabled": true,
+  "testCleanup": "Each owned stand-in is reaped / absent-checked in its test. Unknown fault injection cases deliberately return live own child, then test finally stops only that child. Original ResourceWarning remains in raw. No user service exists in tests.",
+  "rawLogicalBytes": 76127,
+  "limitations": [
+    "No continuous filesystem/process sampler: no claim of measured whole-machine peak or whole-machine absence.",
+    "Diagnostic two-case red did not separately persist fresh free; raw tool exit and limitation retained.",
+    "No production wrappers migrated or real long-duration budget validation."
+  ]
+}
