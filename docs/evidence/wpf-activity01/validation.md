@@ -19,6 +19,6 @@
 
 只读通用task timeline，不是typedtool/thinking/partial，也不写assistant正文。展开前events/detail0，展开列表一次、引用二次读取缓存；source只说明已读状态，显示host真实TaskSummary且验证独立。events公共client没有signal：隐藏停止新读并丢弃旧响应，不能称底层HTTP取消；conversationDetail使用真实signal，URL按host绑定conversation/turn。详情限制公共1MiB，不改成CHAT05 64KiB；分页仅视图处理。
 
-没有真实center/DB/model、没有App/Thread接入验收；不改变旧预览。独立review [尚未开始](../../../plans/wpf-activity01/review.md)，main未集成。App接入需后继唯一Thread owner的always-visible message footer与单一折叠入口；现hideWhenRunning ActionBar不适用。
+没有真实center/DB/model、没有App/Thread接入验收；不改变旧预览。独立review [已APPROVED](../../../plans/wpf-activity01/review.md)，main未集成。root06:17:33独立22 direct与CUA限定旅程通过，未重跑作者7+7/typecheck/build。App接入需后继唯一Thread owner的always-visible message footer与单一折叠入口；现hideWhenRunning ActionBar不适用。
 
 完整base→metadata diffcheck exit2仅原始direct/first-direct/typecheck末尾空行与red工具引用源码的行尾空格/末尾空行；保留raw，不清洗。固定实现与排除raw日志的source/docs diffcheck0。

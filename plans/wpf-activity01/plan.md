@@ -1,6 +1,6 @@
 # WPF-ACTIVITY01：按需执行活动模块
 
-创建/更新：2026-10-06；状态 in-progress；owner workspace_panels_owner / gpt-6-astra ultra。U11 / REQ43 已批准的首片，独立模块先交付，真实App接线由后继唯一Thread owner另领。
+创建/更新：2026-10-06；状态 completed；owner workspace_panels_owner / gpt-6-astra ultra。U11 / REQ43 已批准的首片，独立模块先交付，真实App接线由后继唯一Thread owner另领。
 
 目标：从真实turn.task显示执行/验证状态，展开后读通用timeline，点击引用再读详情。single host拥有connection/view/conversation/turn/task身份与权限。没有CHAT05 typed client输入，不能按title推工具/思考/partial，也不能把活动text当assistant final。
 
@@ -13,6 +13,6 @@
 - [x] WPF-ACTIVITY01-01：领取、技能和固定接口设计。
 - [x] WPF-ACTIVITY01-02：独立读取/缓存/身份生命周期与直接行为测试。
 - [x] WPF-ACTIVITY01-03：通用活动视图、独立HTTPfixture、键盘/双主题390/边界验证。
-- [ ] WPF-ACTIVITY01-04：clean-code、固定目标独立review、聚合与交Lead；main集成单列。
+- [x] WPF-ACTIVITY01-04：clean-code、固定目标独立review、聚合与交Lead；main集成单列。
 
 后继：唯一Thread writer在运行中也可见的message footer接入；现ActionBar hideWhenRunning/autohide不适用。pending turn仅真实user消息→turn，单一折叠入口避免重复Execution details，默认常用profile/queue与技术footer收拢留主组合；CHAT05后按明确Reference.activity接 typed，不猜测。不把独立fixture当App已上线。

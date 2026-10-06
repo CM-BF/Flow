@@ -1,16 +1,16 @@
 {
-  "observedAt": "2026-10-06T06:16:16.670Z",
+  "observedAt": "2026-10-06T06:18:12.759Z",
   "note": "Local actual dashboard parser; no additional HTTP snapshot",
   "status": {
     "human": {
       "delivery": {
-        "state": "review",
+        "state": "integration",
         "source": "explicit"
       },
       "phase": "M2",
       "priority": 1,
       "output": "可按需查看执行活动与详情，长记录按页显示",
-      "next": "完成独立审查，再把活动模块交给聊天页面接入",
+      "next": "集成已审活动模块，再接入聊天界面",
       "blocker": {
         "state": "none",
         "text": ""
@@ -38,8 +38,8 @@
     "owner": "workspace_panels_owner / gpt-6-astra ultra",
     "branch": "codex/web-conversation-activity",
     "branchState": "COMPLETED",
-    "updatedAt": "2026-10-06T06:15:00.000Z",
-    "updatedRecord": "2026-10-06 06:15 UTC / 固定3d4985fca060155435b159e0467815bf8e88b8b8",
+    "updatedAt": "2026-10-06T06:18:00.000Z",
+    "updatedRecord": "2026-10-06 06:18 UTC / 固定3d4985fca060155435b159e0467815bf8e88b8b8",
     "todos": [
       {
         "id": "WPF-ACTIVITY01-01",
@@ -61,9 +61,9 @@
       },
       {
         "id": "WPF-ACTIVITY01-04",
-        "state": "pending",
+        "state": "completed",
         "owner": "workspace_panels_owner",
-        "evidence": "已固定target待独立review，source已交manager登记，未实采聚合"
+        "evidence": "root06:17:33独立APPROVED；06:14唯一合采已确认过渡来源，当前字段由本地parser核；交Lead，main未集成"
       }
     ],
     "errors": [],
@@ -74,10 +74,15 @@
       "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
       "record": "PASSED 61b9349af390c137cc4cfeabd38bad058ec69cb5；22 direct、typecheck、dev7/prod7与独立fixture build；[验证](../../docs/evidence/wpf-activity01/validation.md)"
     },
-    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "reviewRecord": "[review.md](review.md)，APPROVED 61b9349af390c137cc4cfeabd38bad058ec69cb5",
     "mainRecord": "NOT_INTEGRATED",
     "next": "",
     "risks": "",
     "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5"
   }
 }
