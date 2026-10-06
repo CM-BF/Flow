@@ -2,21 +2,21 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:13:00 UTC / 2026-10-06 06:13:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:20:00 UTC / 2026-10-06 06:20:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main3d4985fca060155435b159e0467815bf8e88b8b8；当前固定接线549f6b3e54f902d7b75ebe6d17f293a2085e7a6c，metadata9bfa00e |
+| 工作基线 / HEAD | main3d4985fca060155435b159e0467815bf8e88b8b8；当前固定接线549f6b3e54f902d7b75ebe6d17f293a2085e7a6c；C02隔离修复d6406f906829b875d062e875dbd5aca613500e16 |
 | 工作树dirty状态 | 固定实现，当前仅metadata更新 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
-| 已集成main状态 / HEAD | 823fea9bd8bc868243398d58725b4076528a7ffc 已推送；本轮仅73-source登记先上线，018/019组合待独审接收。个人center/runner仍fb906cb |
-| Review | 当前549f6b3由Root独立只读审查中；历史O06/QUEUE各自批准保留于review.md |
+| 已集成main状态 / HEAD | 823fea9bd8bc868243398d58725b4076528a7ffc 已推送；本轮仅73-source登记先上线，018/019组合已获独立批准待main接收。个人center/runner仍fb906cb |
+| Review | Root独立APPROVED 549f6b3 + d6406f9；历史O06/QUEUE各自批准保留于review.md |
 | 实现目标 | 549f6b3e54f902d7b75ebe6d17f293a2085e7a6c |
 | 实现范围 | apps/server/src/index.ts, packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/conversation-context.test.ts, packages/client/src/context-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 真实运行中排队与同会话回复已验证，关闭测试浏览器后后台继续、重开正文可见 |
 | 下一可用交付 | 接入版本化知识引用与原生目标拆分工具；两次聊天验收额度已封存 |
@@ -61,8 +61,6 @@
 | F01-12 | completed | Lead | SVC02领域/四client/015016生产已独审并main fb906；真实部署见SVC02 |
 | F01-13 | completed | Lead | K01领域、七client、CLI与015生产已独审并main fb906 |
 
-| F01-14 | in-progress | Lead | O06八薄client通过HTTP1/1/typecheck，待独审及017生产挂载 |
-| F01-15 | pending | Lead | 新真实Web排队两query仅提案，待固定Web/运行前置与GO具体许可；旧预算封存 |
 
 2026-10-06 05:46 UTC：O06生产target bf03a7c241d8f1c1d9d0bfa1ee7f9be49e090c00，9/9真实PG/HTTP与noEmit通过；薄client79e06与该2文件挂载分别待独审，不提前声称原生query。
 
@@ -72,3 +70,7 @@
 | F01-15 | completed | Lead | [真实queue旅程](../../docs/evidence/f01/queue-live/README.md)，GO独立读事实/目视接受；2/2已封存 |
 
 2026-10-06 06:13 UTC F01-16 in-progress/review：固定549f6b3，018生产context与O07/019受控组合、公共owner detail client；真实PG/HTTP新3+直接4=7，旧34与Web116独立运行，typecheck通过。根独立review待收；本地组合HEAD84f3472尚未main，实际个人服务fb906不改。X04依赖9cde241独立只读审查中，未声称包管理已投产。
+
+| F01-16 | in-progress | Lead | Root已独立批准549共享接线+d640隔离修复；7项新/直接consumer、旧34（历史C02归属未知）、隔离12及Web116分别保存；待main接收 |
+
+2026-10-06 06:20 UTC：Root限定复审APPROVED，C02资源隔离P2关闭。旧34日志保留，其中旧C02运行前资源归属NOT_PROVEN；新随机库完整create/drop事实与12/12、tsc可核。X04依赖9cde获runner_owner独立只读批准。仅本次审查/metadata变化，无产品重测。

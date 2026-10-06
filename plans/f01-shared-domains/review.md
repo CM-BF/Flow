@@ -1,10 +1,10 @@
 # F01 共享接线审查
 
-**当前增量状态：APPROVED（Mika独立只读，c03主体+59219修复）**
+**当前增量状态：APPROVED（Root独立只读，549共享接线+d640隔离修复）**
 
-Review target commit：59219dbf693964555c075685cf961aa1f9509cf0
+Review target commit：549f6b3e54f902d7b75ebe6d17f293a2085e7a6c
 
-Scope：apps/server/src/index.ts、apps/cli/src/index.ts、json-input.ts、knowledge.test.ts、README.md。manifest与真实检查见docs/evidence/f01/knowledge-maintenance-manifest.json；领域各自独审不重复覆盖。
+Scope：apps/server/src/index.ts、packages/client/src/index.ts、packages/contracts/src/index.ts、packages/client/src/conversation-context.test.ts、packages/client/src/context-production.test.ts；额外C02测试隔离修复d6406f906829b875d062e875dbd5aca613500e16单独绑定。manifest见docs/evidence/f01/context-mount-manifest.json及context-c02-isolation-manifest.json。
 
 ## K01薄client独立批准
 Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。
@@ -96,3 +96,7 @@ Review target commit：549f6b3e54f902d7b75ebe6d17f293a2085e7a6c
 runner_owner只读APPROVED9cde2414078201802db03c00888175aa776651a7，范围server manifest/lock importer/new closure/安装输出；既有锁全不变、6根91新增来源与本地metadata核，无脚本/global依赖。未重跑产品/安装，X04消费者另验。
 
 GO发现P2：原C02 legacy fixture固定库归属未证实。F01v13取得精确test scope，随机专库+拒已有库+正常DROP修复；仅12原行为与tsc复跑通过，context-c02-isolation-manifest.json绑定delta。历史34输出保留且资源限制明确，等待GO限定复审，不更改5生产接线源。
+
+## 2026-10-06 06:20 UTC 最终独立增量复审
+
+Root独立只读APPROVED：549f6b3e54f902d7b75ebe6d17f293a2085e7a6c + d6406f906829b875d062e875dbd5aca613500e16。固定5源码/8raw与接线target一致；隔离修复1源码/3raw hash与bytes全匹配，12原test bodies未改。随机库创建确认后reset、拒已有、正常DROP，实际before[]/createdtrue/connections[]/remaining[]支持12/12+tsc。P2关闭；旧34日志内C02 ownership NOT_PROVEN如实保留。新7/7生产/直接consumer、Web116/116与types同源证据保持；Root未重跑。批准不扩展真实native规划、完整知识选择UI或renderer主App挂载。
