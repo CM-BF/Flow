@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-06T11:34:20.550718+00:00",
+  "base": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
+  "turnBodyEqualAfterInputRename": true,
+  "renames": [
+    "context.task.prompt -> input.prompt",
+    "context. -> input."
+  ],
+  "normalizedBodySha256": "fcf1dd9d24015028e16da054b1982958b6b2e964c26b155fcc137ce9378dc559",
+  "normalizedBodyBytes": 3968,
+  "adapterEventBlockEqual": true,
+  "adapterEventBlockSha256": "c6b5c266d38a6e4e445eb9c30d7b7b6f7ba742e357a9e654e8f3397732517ded",
+  "ownershipReceiverPreserved": "Adapter passes () => context.assertOwnership(), preserving original method receiver.",
+  "limitations": "Static body comparison, not proof of real provider behavior."
+}

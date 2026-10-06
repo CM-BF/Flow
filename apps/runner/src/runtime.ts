@@ -196,6 +196,11 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
       return answer;
     },
   };
+  Object.defineProperty(context, 'executionIdentity', {
+    value: Object.freeze({ taskId: assignment.task.id, attemptId: assignment.attempt.id,
+      ownerVersion: assignment.attempt.ownerVersion, runnerId: assignment.attempt.runnerId }),
+    enumerable: true,
+  });
   const adapter = adapters.find(adapter => adapter.name === assignment.task.harness);
   let outcome: 'succeeded' | 'failed' | 'cancelled' = 'succeeded';
   let nativeSettlement: NativeExecutionSettlement = 'settled';
