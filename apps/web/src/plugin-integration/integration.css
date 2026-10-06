@@ -1,0 +1,38 @@
+.flow-plugin-slot { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px; min-width: 0; }
+.flow-plugin-slot:empty { display: none; }
+.flow-plugin-slot button, .flow-plugin-workspace article button, .flow-plugin-settings button:not([data-slot]) { border: 0; border-radius: 5px; background: transparent; color: var(--muted-foreground); padding: 4px 6px; font-size: 11px; }
+.flow-plugin-slot button:hover, .flow-plugin-workspace article button:hover { background: var(--accent); color: var(--foreground); }
+.flow-plugin-slot [role=alert] { display: block; color: var(--destructive); font-size: 11px; max-width: min(280px, 80vw); overflow-wrap: anywhere; }
+.flow-plugin-rail { position: relative; }
+.flow-plugin-popover { position: absolute; left: 40px; bottom: 0; width: 190px; padding: 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--popover); color: var(--popover-foreground); box-shadow: 0 8px 32px #0002; z-index: 30; }
+.flow-plugin-popover > .flow-plugin-slot { display: flex; flex-direction: column; align-items: stretch; }
+.flow-plugin-popover .plugin-action-menu [role=menu] { top: auto; bottom: 100%; }
+.flow-chat-row { display: flex; height: 34px; min-height: 34px; border-radius: 5px; align-items: center; }
+.flow-chat-row:hover, .flow-chat-row.selected { background: var(--accent); }
+.flow-chat-row > button { min-width: 0; flex: 1; height: 34px; display: flex; align-items: center; gap: 8px; border: 0; background: transparent; padding: 0 9px; text-align: left; font-size: 12px; }
+.flow-chat-row > button > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.flow-chat-row .flow-plugin-slot { flex: none; }
+.flow-chat-row .flow-plugin-slot > button { font-size: 0; width: 24px; height: 28px; padding: 0; }
+.flow-chat-row .flow-plugin-slot > button::after { content: ''; display: block; width: 13px; height: 13px; margin: auto; background: currentColor; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 13L13 3M3 3h10v10' fill='none' stroke='black' stroke-width='1.6'/%3E%3C/svg%3E") center / contain no-repeat; }
+.flow-chat-row .flow-plugin-slot [role=alert] { position: absolute; left: 48px; z-index: 40; padding: 8px; background: var(--popover); border: 1px solid var(--border); }
+.flow-message-extensions { font-size: 11px; }
+.flow-plugin-settings { max-height: 88dvh; overflow: auto; }
+.flow-plugin-settings ul { display: grid; gap: 10px; padding: 0; list-style: none; }
+.flow-plugin-settings li { display: flex; align-items: center; gap: 8px; justify-content: space-between; font-size: 12px; }
+.flow-plugin-settings small { display: block; color: var(--muted-foreground); }
+.flow-plugin-workspace, .flow-plugin-workspace > section { height: 100%; min-height: 0; display: flex; flex-direction: column; }
+.flow-plugin-workspace-bar { display: flex; align-items: center; flex-wrap: wrap; gap: 2px; flex: none; border-bottom: 1px solid var(--border); min-height: 32px; }
+.flow-plugin-workspace-bar > [role=tablist] { display: flex; align-items: center; flex: 1 1 180px; min-width: 140px; overflow-x: auto; }
+.flow-plugin-workspace-bar > button, .flow-plugin-workspace-bar > [role=tablist] > button { flex-shrink: 0; border: 0; background: transparent; color: var(--muted-foreground); padding: 7px 9px; font-size: 11px; white-space: nowrap; }
+.flow-plugin-workspace-bar > [role=tablist] > [aria-selected=true] { color: var(--foreground); box-shadow: inset 0 -2px var(--primary); }
+.flow-plugin-workspace > section > [role=tabpanel] { flex: 1; min-height: 0; overflow: auto; }
+.flow-plugin-workspace .flow-workspace { height: 100%; }
+.flow-plugin-workspace div:has(> .flow-workspace) { height: 100%; min-height: 0; }
+.flow-plugin-workspace .flow-workspace-artifact-meta dd { overflow-wrap: anywhere; }
+.flow-plugin-workspace > section > [role=tabpanel] > div { height: 100%; }
+.flow-plugin-workspace article:not(.flow-workspace-detail) { padding: 16px; }
+.flow-plugin-workspace article h3 { font-size: 14px; font-weight: 600; }
+.flow-plugin-workspace article p { font-size: 12px; line-height: 1.6; }
+.flow-workspace-plugin-chrome { display: flex; align-items: center; justify-content: space-between; padding-inline: 8px; }
+.flow-workspace-plugin-chrome:has(.flow-plugin-slot:empty):not(:has(button)) { display: none; }
+@media(max-width:800px) { .flow-plugin-settings { max-width: calc(100vw - 24px); } }

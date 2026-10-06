@@ -27,3 +27,11 @@
 共享schema与模块实现保持唯一，client薄传输/命令稳定key、PG迁移4→5顺序和身份hook核对通过；受控合并冲突只选原owner完整文档与已审共享文件，未借integration新写领域实现。C02/M02摘要由其唯一owner交付记录接收。未增加层、broker或付费调用。
 
 不声称自然语言goal编排、MCP持久input-required、多runner并行、真实PTY/fs、npm插件隔离或100agents容量完成。M1已封存的5次真实模型预算未新增。统一Web完成的是确定性多任务交互场景，语义解释与目标到计划仍由O01/E01继续。
+
+## 2026-10-06 03:41 UTC 第二接收批次
+
+main/origin已于本记录前实际推送4e817611b669579f6194d27a09031ae30cefa2a6：O01 a4e1348/metadata6bb领域+F01消费者2b754（Root只读批准）；R03 9c59740/metadata7808126（Mika独立48/48及source/证据hash复核）；WPF-P01 6ce/I01 92a/metadata b584（外部Root独立24项/CUA）。D05 cad1251与X01 c217文档早一批edee已推送；4320实际切换并由Root用户页面验收。
+
+集成只做必要差异与兼容性检查：Web源码相对b584零diff，frozen offline install/typecheck/build通过（两个>500kB chunk警告保留）；O01源码/任务受理/migration/goal-tools相对6bb零diff；组合root typecheck及真实PG目标CLI1/1 1.07s通过。原始stdout见web-host-*.txt/goals-lease-*.txt。不重复R03 54或Mika48、O01 11、外部24/9browser/3PG旅程，0模型。初步O01 merge因早期cherry历史出现add/add全部取owner完整6bb，无手工改领域逻辑；raw stdout空白保留，不以原证据whitespace改写结果。
+
+CHAT薄client841获Root源码/保存5项输出只读批准，仅传输/export；中心和真实回复尚在CHAT01/02，main接收接口不意味着聊天系统已完成。两轮native预算提案已条件批准，三端独审+实际main/配置固定后才运行，当前0调用。三队与39来源登记为metadata，仅注册校验/路径检查，不重跑产品全套。架构图仍固定3773，O01/I01/R03结构已主线的刷新由D05 owner维护待办。

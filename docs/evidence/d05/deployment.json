@@ -1,0 +1,77 @@
+{
+  "observedAt": "2026-10-06T03:30:07.764Z",
+  "main": "edee6b1c5d74c2ee46ec98bab2844579db6a00c4",
+  "url": "http://127.0.0.1:4320/#architecture",
+  "serviceSession": 56845,
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 6319
+    },
+    {
+      "path": "/architecture.js",
+      "status": 200,
+      "bytes": 6712
+    },
+    {
+      "path": "/architecture-data.js",
+      "status": 200,
+      "bytes": 19469
+    },
+    {
+      "path": "/architecture.css",
+      "status": 200,
+      "bytes": 4082
+    }
+  ],
+  "sources": 34,
+  "records": [
+    {
+      "id": "X01",
+      "mode": "live",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/status.md",
+      "main": {
+        "record": "本计划尚未集成；观察基线 main 3773db5d014a6d38d09553acd0a5fe8df900b7c4；不声称完整插件管理存在",
+        "recordedHead": "3773db5d014a6d38d09553acd0a5fe8df900b7c4",
+        "target": null,
+        "mainHead": "edee6b1c5d74c2ee46ec98bab2844579db6a00c4",
+        "scopes": [
+          "UNKNOWN（本轮仅文档",
+          "后续 writer 需另领取）"
+        ],
+        "observedAt": "2026-10-06T03:30:06.084Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "unknown",
+        "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+      }
+    },
+    {
+      "id": "D05",
+      "mode": "live",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/status.md",
+      "main": {
+        "record": "未记录 main 集成事实。",
+        "recordedHead": null,
+        "target": "cad1251fdbe8f8b527a78c60cf45adce68e4f534",
+        "mainHead": "edee6b1c5d74c2ee46ec98bab2844579db6a00c4",
+        "scopes": [
+          "apps/execution-dashboard/public/architecture.js",
+          "apps/execution-dashboard/public/architecture-data.js",
+          "apps/execution-dashboard/public/architecture.css",
+          "apps/execution-dashboard/public/index.html",
+          "apps/execution-dashboard/src/server.mjs"
+        ],
+        "observedAt": "2026-10-06T03:30:06.084Z",
+        "current": true,
+        "historicalIntegrated": true,
+        "method": "ancestor",
+        "scopeEqual": true,
+        "dirtyScopePaths": [],
+        "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+      }
+    }
+  ],
+  "productPreview": "http://127.0.0.1:49922/ remains simulated and retained"
+}

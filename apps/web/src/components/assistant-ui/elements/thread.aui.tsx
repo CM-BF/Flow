@@ -83,6 +83,8 @@ export type ThreadGroupPart = MessagePrimitive.GroupedParts.GroupPart;
  * tool group; without it they render like any other tool call.
  */
 export type ThreadComponents = {
+  MessageActions?: ComponentType | undefined;
+  ComposerActions?: ComponentType | undefined;
   AssistantMessage?: ComponentType | undefined;
   Welcome?: ComponentType | undefined;
   ToolFallback?: ToolCallMessagePartComponent | undefined;
@@ -360,6 +362,7 @@ const SpokenMessage: FC = () => {
 };
 
 const SpokenActionBar: FC = () => {
+  const { MessageActions } = useContext(ThreadComponentsContext);
   return (
     <ActionBarPrimitive.Root
       hideWhenRunning
@@ -376,6 +379,7 @@ const SpokenActionBar: FC = () => {
           </AuiIf>
         </TooltipIconButton>
       </ActionBarPrimitive.Copy>
+    {MessageActions && <MessageActions />}
     </ActionBarPrimitive.Root>
   );
 };
@@ -455,7 +459,6 @@ const Composer: FC<{ autoFocus: boolean }> = ({ autoFocus }) => {
             autoFocus={autoFocus}
             enterKeyHint="send"
             aria-label="Message input"
-            data-extension-slot="chat.composer.actions"
           />
           <ComposerAction />
         </div>
@@ -465,8 +468,10 @@ const Composer: FC<{ autoFocus: boolean }> = ({ autoFocus }) => {
 };
 
 const ComposerAction: FC = () => {
+  const { ComposerActions } = useContext(ThreadComponentsContext);
   return (
     <div className="aui-composer-action-wrapper relative flex items-center justify-end">
+      {ComposerActions && <ComposerActions />}
       <AuiIf condition={(s) => s.thread.capabilities.attachments}>
         <ComposerAddAttachment />
       </AuiIf>
@@ -667,6 +672,7 @@ const AssistantMessage: FC = () => {
 };
 
 const AssistantActionBar: FC = () => {
+  const { MessageActions } = useContext(ThreadComponentsContext);
   return (
     <ActionBarPrimitive.Root
       hideWhenRunning
@@ -731,6 +737,7 @@ const AssistantActionBar: FC = () => {
           </ActionBarPrimitive.ExportMarkdown>
         </ActionBarMorePrimitive.Content>
       </ActionBarMorePrimitive.Root>
+    {MessageActions && <MessageActions />}
     </ActionBarPrimitive.Root>
   );
 };
@@ -776,6 +783,7 @@ const UserMessage: FC = () => {
 };
 
 const UserActionBar: FC = () => {
+  const { MessageActions } = useContext(ThreadComponentsContext);
   return (
     <ActionBarPrimitive.Root
       hideWhenRunning
@@ -789,6 +797,7 @@ const UserActionBar: FC = () => {
           </TooltipIconButton>
         </ActionBarPrimitive.Edit>
       </AuiIf>
+    {MessageActions && <MessageActions />}
     </ActionBarPrimitive.Root>
   );
 };

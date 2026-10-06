@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown
+
+stdout | apps/server/src/shutdown/main.test.ts > allows an in-flight command to finish normally within grace without losing its ACK
+{"case":"SIGINT","elapsedMs":145,"result":{"code":0,"signal":null},"output":""}
+
+ ✓ apps/server/src/shutdown/main.test.ts (8 tests | 7 skipped) 981ms
+   ✓ allows an in-flight command to finish normally within grace without losing its ACK  873ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 7 skipped (8)
+   Start at  21:04:11
+   Duration  1.31s (transform 136ms, setup 0ms, import 255ms, tests 981ms, environment 0ms)
+

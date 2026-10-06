@@ -1,0 +1,6 @@
+# 开发期真实失败与处理
+
+- 首次全workspace offline no-lockfile安装因runner transitive express-rate-limit tarball未缓存失败；改为web+直接client/contracts+root，随后web已有真实center测试type-import需要server，把server纳入直接测试依赖安装成功。无下载、无tracked lock/manifest变化，本树workspace符号链接均指本树packages。
+- 首次窗口完整性测试实际1040条齐全，但测试在初始40条已交付后修改fixture原对象，期望包含已发送旧记录的追加文本，与不可变cursor语义矛盾。保留此失败说明，改为只在未交付的新记录中注入变高正文，再复跑；不是删除正文hash断言。
+- 第二次浏览器已通过完整性/Tab/独立焦点/缓冲/窄屏/追尾，prepend断言错误地要求“首个可见row”不变；在viewport顶端原header下有48px空余时，前插记录可自然占据旧row之前的空间，正确不变量是原reading ID的像素offset。测试改为定位原ID比较offset，仍严格2px，不删除锚点断言。
+- Header锚点复核曾把整个ReactNode加入layout effect依赖，任意Overview重渲染都会强制restore，导致自动化从尾部跳头时旧anchor可能抢先恢复。移除不稳定ReactNode依赖，改对实际header尺寸使用同一个ResizeObserver；键盘测试等待首个公开DOM cursor完成更新后再focus。此为实现修复，不将失败当通过。

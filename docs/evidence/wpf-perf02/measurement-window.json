@@ -1,0 +1,16 @@
+{
+  "startedAt": "2026-10-06T03:40:14.216143+00:00",
+  "implementationTarget": "a87f64f48a3b7e8d03429ab0673c210076a2df0d",
+  "head": "e07c34c5f98657b390e8fdc44bb2d85f9360a56d",
+  "loadAverage": "{ 6.20 7.88 8.36 }",
+  "coordination": "Root confirmed B01 SELECT/EXPLAIN finished 03:39:23.876Z; no concurrent benchmark planned. Other agents may perform light functionality PG/read-only work; machine not fully isolated.",
+  "runs": [
+    "smoke",
+    "window 1,16,128 once"
+  ],
+  "runCompletedAt": "2026-10-06T03:45:25.937Z",
+  "cleanupAndExitObservedAt": "2026-10-06T03:45:29.848182+00:00",
+  "exitCode": 0,
+  "failures": [],
+  "endingLoadAverage": "{ 4.39 6.25 7.52 }"
+}

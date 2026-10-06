@@ -1,0 +1,487 @@
+{
+  "taskCount": 1,
+  "liveEntries": 240,
+  "initialVisibleEntries": 40,
+  "url": "http://127.0.0.1:55560",
+  "checks": [
+    "Detail requests 0 before expansion, 1 on first expansion, 1 after cached reopen",
+    "1 retained chat(s): one visible stream; overview zero; no cancel"
+  ],
+  "status": "failed",
+  "connectionFormReadyAutomationMs": 78.92512500000021,
+  "workspaceReadyAutomationMs": 90.46391700000004,
+  "navigation": [
+    {
+      "name": "http://127.0.0.1:55560/",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 48.89999997615814,
+      "navigationId": 7270,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "http/1.1",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 0.2999999523162842,
+      "domainLookupStart": 0.2999999523162842,
+      "domainLookupEnd": 0.2999999523162842,
+      "connectStart": 0.2999999523162842,
+      "secureConnectionStart": 0,
+      "connectEnd": 0.2999999523162842,
+      "requestStart": 1.2000000476837158,
+      "responseStart": 2.399999976158142,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 2.399999976158142,
+      "responseEnd": 2.5,
+      "transferSize": 1005,
+      "encodedBodySize": 705,
+      "decodedBodySize": 705,
+      "responseStatus": 200,
+      "serverTiming": [],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 12,
+      "domContentLoadedEventStart": 48.700000047683716,
+      "domContentLoadedEventEnd": 48.700000047683716,
+      "domComplete": 48.89999997615814,
+      "loadEventStart": 48.89999997615814,
+      "loadEventEnd": 48.89999997615814,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "low"
+      }
+    }
+  ],
+  "error": "page.waitForFunction: Timeout 10000ms exceeded.\n    at interactions (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/apps/web/test/performance-probe.ts:85:16)\n    at async runScenario (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/apps/web/test/performance-probe.ts:199:7)\n    at async main (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/apps/web/test/performance-probe.ts:255:13)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/apps/web/test/performance-probe.ts:262:1)",
+  "timing": {
+    "phase": "delivery-100",
+    "phases": [
+      {
+        "name": "delivery-100",
+        "at": 765.1000000238419
+      }
+    ],
+    "longTasks": [],
+    "events": [
+      {
+        "name": "beforeinput",
+        "startTime": 126.60000002384186,
+        "duration": 16,
+        "inputDelay": 0.6000000238418579,
+        "processing": 0.2999999523162842,
+        "interactionId": 0
+      },
+      {
+        "name": "keydown",
+        "startTime": 878.7000000476837,
+        "duration": 16,
+        "inputDelay": 1,
+        "processing": 10.399999976158142,
+        "interactionId": 2100
+      },
+      {
+        "name": "keydown",
+        "startTime": 1103.3999999761581,
+        "duration": 16,
+        "inputDelay": 0.20000004768371582,
+        "processing": 0.10000002384185791,
+        "interactionId": 2149
+      },
+      {
+        "name": "keypress",
+        "startTime": 1103.3999999761581,
+        "duration": 16,
+        "inputDelay": 0.30000007152557373,
+        "processing": 3,
+        "interactionId": 2149
+      },
+      {
+        "name": "beforeinput",
+        "startTime": 1103.7000000476837,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0.09999990463256836,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 1103.8999999761581,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 2.600000023841858,
+        "interactionId": 0
+      },
+      {
+        "name": "keyup",
+        "startTime": 1107,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 0,
+        "interactionId": 2149
+      }
+    ],
+    "keys": [
+      {
+        "at": 844.8999999761581,
+        "handlerAt": 847.7000000476837,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 852
+      },
+      {
+        "at": 878.7000000476837,
+        "handlerAt": 879.7999999523163,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 890.3999999761581
+      },
+      {
+        "at": 917.7999999523163,
+        "handlerAt": 918,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 921.2999999523163
+      },
+      {
+        "at": 948.7000000476837,
+        "handlerAt": 948.8999999761581,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 952.2000000476837
+      },
+      {
+        "at": 979.3999999761581,
+        "handlerAt": 979.6000000238419,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 983.2999999523163
+      },
+      {
+        "at": 1010.5,
+        "handlerAt": 1010.7999999523163,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1015
+      },
+      {
+        "at": 1042.2000000476837,
+        "handlerAt": 1042.3999999761581,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1052.2000000476837
+      },
+      {
+        "at": 1072.2000000476837,
+        "handlerAt": 1072.2999999523163,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1076.1000000238419
+      },
+      {
+        "at": 1103.3999999761581,
+        "handlerAt": 1103.6000000238419,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1118.7000000476837
+      },
+      {
+        "at": 1133.7999999523163,
+        "handlerAt": 1134,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1137.1000000238419
+      },
+      {
+        "at": 1164.7999999523163,
+        "handlerAt": 1165,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1167.7999999523163
+      },
+      {
+        "at": 1195.1000000238419,
+        "handlerAt": 1195.2000000476837,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1198.7000000476837
+      }
+    ],
+    "wheels": [
+      {
+        "at": 1274,
+        "handlerAt": 1302.1000000238419,
+        "trusted": true,
+        "from": 19549
+      }
+    ],
+    "supported": [
+      "element",
+      "event",
+      "first-input",
+      "interaction-contentful-paint",
+      "largest-contentful-paint",
+      "layout-shift",
+      "long-animation-frame",
+      "longtask",
+      "mark",
+      "measure",
+      "navigation",
+      "paint",
+      "resource",
+      "soft-navigation",
+      "visibility-state"
+    ],
+    "nextWheelFrom": 19549
+  },
+  "at": "2026-10-06T03:13:32.122Z",
+  "stages": [],
+  "checkpoints": [
+    {
+      "name": "initial",
+      "at": 761.3999999761581,
+      "domElements": 711,
+      "renderedRecords": 40,
+      "scrollTop": 5110,
+      "scrollHeight": 5828,
+      "following": "Following latest activity",
+      "memoryAPI": {
+        "userAgentSpecific": false,
+        "legacyMemory": true,
+        "crossOriginIsolated": false
+      },
+      "renderCount": null,
+      "renderCountReason": "Ordinary production build has no React profiling instrumentation",
+      "cdp": {
+        "Documents": 4,
+        "Nodes": 1876,
+        "LayoutCount": 57,
+        "RecalcStyleCount": 101,
+        "LayoutDuration": 0.023836,
+        "RecalcStyleDuration": 0.017162,
+        "ScriptDuration": 0.146981,
+        "TaskDuration": 0.338968,
+        "JSHeapUsedSize": 17243684,
+        "JSHeapTotalSize": 31784960
+      },
+      "heapCaveat": "No forced GC; JS heap sample, not retained-object count or a leak proof"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/",
+      "type": "document"
+    },
+    {
+      "path": "/assets/index-Qq2fU1v6.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/assistant-ui-zkRmV749.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/assistant-ui-CcdakA0V.css",
+      "type": "stylesheet"
+    },
+    {
+      "path": "/assets/index-C3CTlol8.css",
+      "type": "stylesheet"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-001",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-001/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/details/perf-001-artifact",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/task-index",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    }
+  ],
+  "workspaceResponses": [
+    {
+      "at": 3016.642708,
+      "after": null,
+      "before": null,
+      "count": 40,
+      "nextCursor": 41,
+      "watermark": 41
+    },
+    {
+      "at": 3632.622291,
+      "after": 41,
+      "before": null,
+      "count": 40,
+      "nextCursor": 81,
+      "watermark": 141
+    },
+    {
+      "at": 3647.874916,
+      "after": 81,
+      "before": null,
+      "count": 40,
+      "nextCursor": 121,
+      "watermark": 141
+    },
+    {
+      "at": 3655.316541,
+      "after": 121,
+      "before": null,
+      "count": 20,
+      "nextCursor": 141,
+      "watermark": 141
+    },
+    {
+      "at": 6160.407333,
+      "after": 141,
+      "before": null,
+      "count": 0,
+      "nextCursor": 141,
+      "watermark": 141
+    },
+    {
+      "at": 8663.1985,
+      "after": 141,
+      "before": null,
+      "count": 0,
+      "nextCursor": 141,
+      "watermark": 141
+    },
+    {
+      "at": 11165.087125,
+      "after": 141,
+      "before": null,
+      "count": 0,
+      "nextCursor": 141,
+      "watermark": 141
+    },
+    {
+      "at": 13667.871125,
+      "after": 141,
+      "before": null,
+      "count": 0,
+      "nextCursor": 141,
+      "watermark": 141
+    }
+  ],
+  "pageErrors": [
+    "__name is not defined"
+  ],
+  "apiRequests": [
+    {
+      "method": "GET",
+      "path": "/api/workspace"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-001"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-001/stream?after=41"
+    },
+    {
+      "method": "GET",
+      "path": "/api/details/perf-001-artifact"
+    },
+    {
+      "method": "GET",
+      "path": "/api/task-index?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=41"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=81"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=121"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=141"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=141"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=141"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=141"
+    }
+  ],
+  "memoryLimit": "measureUserAgentSpecificMemory support recorded, not called without isolation; no forced GC; separate projection counts are not this App heap",
+  "p95": null,
+  "p95Reason": "One scenario run per scale; threshold-filtered Event Timing is not an unbiased latency distribution",
+  "renderCount": null
+}

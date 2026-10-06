@@ -1,4 +1,4 @@
-import { useEffect, useId, useLayoutEffect, useRef, useState, type KeyboardEvent } from "react";
+import { createContext, useContext, type ReactNode, useEffect, useId, useLayoutEffect, useRef, useState, type KeyboardEvent } from "react";
 import { FileIcon, FolderTreeIcon, TerminalIcon, XIcon } from "lucide-react";
 import type { Reference } from "@flow/contracts";
 import { WorkspaceFiles, WorkspaceDetail, WorkspaceTerminal } from "./panels";
@@ -6,6 +6,8 @@ import type { WorkspacePanelsProps, WorkspaceTabId } from "./types";
 import "./workspace.css";
 
 export type { WorkspacePanelsProps, WorkspaceTabId } from "./types";
+
+export const WorkspaceChromeContext = createContext<{ header?: ReactNode; actions?: ReactNode; artifact?: ReactNode }>({});
 
 interface WorkspaceLayout {
   tab: WorkspaceTabId;
@@ -31,6 +33,7 @@ function TaskWorkspace({
   task, details, onLoadDetail, connection, activeTab: controlledTab,
   onActiveTabChange, onClose, className = "", layout,
 }: WorkspacePanelsProps & { layout: WorkspaceLayout }) {
+  const chrome = useContext(WorkspaceChromeContext);
   const prefix = useId();
   const tabsRef = useRef<HTMLDivElement>(null);
   const focusAfterOpen = useRef<WorkspaceTabId | null>(null);
@@ -130,6 +133,7 @@ function TaskWorkspace({
 
   return (
     <aside className={`flow-workspace ${className}`} aria-label="Task workspace">
+      <div className="flow-workspace-plugin-chrome">{chrome.header}{chrome.actions}</div>
       <div className="flow-workspace-tabs-row" data-extension-slot="workspace.header">
         <div className="flow-workspace-tabs" data-extension-slot="workspace.tabs" role="tablist" aria-label="Workspace panels" ref={tabsRef}>
           {tabs.map((tab) => {
@@ -163,8 +167,8 @@ function TaskWorkspace({
               selectedPath={layout.selectedPath} onSelectedPathChange={(path) => { layout.selectedPath = path; }} />
           : visibleTab === "terminal" ? <WorkspaceTerminal task={task} connection={connection}
               defaultFollow={layout.follow} onFollowChange={(follow) => { layout.follow = follow; }} />
-          : activeReference ? <WorkspaceDetail key={activeReference.id} reference={activeReference}
-              state={details[activeReference.id]} onLoad={onLoadDetail} verification={task.verificationStatus} />
+          : activeReference ? <><div className="flow-workspace-plugin-chrome">{chrome.artifact}</div><WorkspaceDetail key={activeReference.id} reference={activeReference}
+              state={details[activeReference.id]} onLoad={onLoadDetail} verification={task.verificationStatus} /></>
           : <p className="flow-workspace-empty">This reference is no longer in the task snapshot.</p>}
       </section>
     </aside>

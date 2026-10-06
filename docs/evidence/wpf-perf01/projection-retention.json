@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-06T03:18:45.682Z",
+  "scope": "Isolated Node public projection + actual HTTP fixture. NOT browser App heap or UI timing.",
+  "samples": [
+    {
+      "batch": 1,
+      "refreshWallMs": 5.144375000000082,
+      "entries": 140,
+      "buffered": 0,
+      "deliveredCursor": 268,
+      "watermark": 268
+    },
+    {
+      "batch": 10,
+      "refreshWallMs": 5.752541000000065,
+      "entries": 1040,
+      "buffered": 0,
+      "deliveredCursor": 1168,
+      "watermark": 1168
+    },
+    {
+      "batch": 50,
+      "refreshWallMs": 6.792917000000216,
+      "entries": 5040,
+      "buffered": 0,
+      "deliveredCursor": 5168,
+      "watermark": 5168
+    },
+    {
+      "batch": 100,
+      "refreshWallMs": 8.470542000000023,
+      "entries": 5040,
+      "buffered": 5000,
+      "deliveredCursor": 10168,
+      "watermark": 10168
+    }
+  ],
+  "afterReveal": {
+    "entries": 10040,
+    "buffered": 0
+  },
+  "requests": 301
+}

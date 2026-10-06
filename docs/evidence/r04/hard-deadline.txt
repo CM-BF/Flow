@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/center-shutdown
+
+stdout | apps/server/src/shutdown/main.test.ts > exits nonzero at the final production deadline when scheduler SQL cannot finish
+{"case":"SIGTERM","elapsedMs":20009,"result":{"code":1,"signal":null},"output":"Center shutdown: cleanup deadline exceeded; forced process exit, unacknowledged outcomes unknown.\n"}
+
+ ✓ apps/server/src/shutdown/main.test.ts (9 tests | 8 skipped) 21609ms
+   ✓ exits nonzero at the final production deadline when scheduler SQL cannot finish  21484ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 8 skipped (9)
+   Start at  21:04:33
+   Duration  21.93s (transform 135ms, setup 0ms, import 252ms, tests 21.61s, environment 0ms)
+
