@@ -1,28 +1,7 @@
-# WPF-PERF02 准备状态
+# WPF-PERF02 已移交入口
 
-| 字段 | 记录 |
-| --- | --- |
-| 最近更新 | 2026-10-06 03:24 UTC |
-| Plan | [plan.md](plan.md) |
-| 单一status owner / model | d01_owner（准备管理）；未来w01_owner尚未受领 / gpt-6-astra ultra |
-| Worktree / Branch | web-platform-management / codex/web-platform-management；仅准备文档 |
-| 阶段 | M2 |
-| 优先级 | 3 |
-| 当前产出 | PERF实测支持下一轮有界Activity候选；已正式受领d36v1八scope，独立web-activity-window树；canonical初始化中 |
-| 下一可用交付 | owner平级canonical三件套与首窗口实现 |
-| 当前阻塞 | NONE |
-| 需用户决定 | NONE |
-| 实现目标 | UNKNOWN |
-| 实现范围 | UNKNOWN |
-| 检查状态 | NOT_RUN（实现）；准备文档另核 |
-| Review | [review.md](review.md)，NOT_STARTED |
-| main集成状态 | 未实施/未集成 |
+此目录不再维护独立进度/实现/审查；唯一status在 [status.md](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/plans/wpf-perf02-activity-window/status.md)。
 
-| TODO ID | 状态 | Owner | 证据/依赖 |
-| --- | --- | --- | --- |
-| WPF-PERF02-01 | in-progress | d01_owner | 03:30 M02v3/PERF01v2移出后d36v1 take committed；新tree cc334 clean、owner已唤醒正式派发，待canonical转交 |
-| WPF-PERF02-02 | pending | 待受领owner | 新writer仅8scope；实现尚无固定候选 |
-| WPF-PERF02-03 | pending | 待受领owner | 未实施，不能继承PERF01数据作为优化通过 |
-| WPF-PERF02-04 | pending | 独立reviewer/Lead | 无target，不宣称approval/main |
+Owner：w01_owner / gpt-6-astra ultra。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window`，branch `codex/web-activity-window`；base `cc33403cd9b357fcd85484b7bc6952dc1220d689`，首canonical文档 `c779f86f1bb34ad8143bf35b8b9ca43c9e226758`。D04新claim `d36cd583-7c96-44c3-b92c-1cd0f208cc4e` v1于03:30:35.629Z受领八范围，进度和后续review只以canonical为准。03:25曾暂缓且无事务，主线明确允许CHAT合同等待时并行后才正式移交；此历史不授权重用旧claim。
 
-本准备源不单独注册dashboard；正式独立owner建立canonical后本目录转stub，唯一进度源随显式移交。I01与原M02剩余scope保持各自唯一writer。
+父[WPF-001](../plan.md)持续追溯需求和跨owner边界；不要将本stub重复注册dashboard source。

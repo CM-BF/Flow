@@ -181,3 +181,12 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/workspace-p
 U10“plugin管理写进计划里”由原Goal Owner逐字转交。主线负责X01 canonical全产品计划，Web管理页/CLI同公共center命令、持久版本/配置/权限/作用域、npm安装启停升级回滚移除、活跃执行版本绑定和信任隔离均属父范围；[X01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/plan.md)已只读核验，文档888308d clean / 产品未实施 / review NOT_STARTED。P01/I01仅可信Web前置，不以本地Settings替代，当前claim不扩大。
 
 已审提交的完整SHA、分支clean状态、恢复方式、检查边界、双主题图和三件套入口汇总于[03:20固定交付快照](delivery-snapshot.md)；它是提交级索引，不是第二进度源。
+
+
+## 03:37 新canonical登记与共享输入
+
+PERF02唯一source已实际建立并交Execution Lead登记：worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window`，branch `codex/web-activity-window`，planDir `plans/wpf-perf02-activity-window`，evidenceDir `docs/evidence/wpf-perf02`，首文档c779f86f1bb34ad8143bf35b8b9ca43c9e226758；当前scope内实现dirty、targetUNKNOWN。新claimd36v1 take已可见，尚未新实采source状态卡。旧管理performance-optimization三件套已转stub。
+
+CHAT合同4c2408e4db3595879f6471cb5fffccadec975b3d和public export/client84117ca1c7446ee2e2b50f0526f3460dd42a2869由Lead明确指定依序消费。owner首笔cherry-pick成功bac6a6efe6fa4866bac4d777ee61b703a0e2c7e3，第二笔client/index与contracts/index冲突；保留原现场，不abort/reset，不越scope自行编辑共享。当前ACTIVE阻塞责任ExecutionLead，解除条件=固定兼容输入或其受控解决。owner可继续自有plan/纯outbox，不能用私有HTTP client解阻或虚称API可编译。
+
+回程路由：Execution Lead ID01a10ea1-f0bb-7622-ad26-db889c131055为另一主task子agent，app工具不能直投；发送至原GoalOwner01a10e15-b908-7a72-b8c0-222a26bf93ff，以“收件人：Execution Lead”标明，由其原样桥接，无额外审批。Mika独立task01a10f3f-4ef0-7ca2-8e66-f1947fa4b295可直联，负责B01后台、下一X02；本队不重复其scope。B01正式性能窗口03:35:16～31已结束（root转报）；Web此段仅功能浏览器，同机正式矩阵下一次先协调。

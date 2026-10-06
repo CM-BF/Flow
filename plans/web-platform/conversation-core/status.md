@@ -10,7 +10,7 @@
 | 优先级 | 1 |
 | 当前产出 | U11完整能力与分阶段验收已落盘；首合同4c240已固定；Web08259c1d v1正式受领16范围 |
 | 下一可用交付 | owner平级canonical与public client固定入口；最小持续对话实现 |
-| 当前阻塞 | NONE |
+| 当前阻塞 | ACTIVE: client/export84117ca共享index与当前base冲突，Execution Lead提供固定兼容输入/受控解法后解除 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | UNKNOWN |

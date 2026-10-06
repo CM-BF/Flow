@@ -13,8 +13,8 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 真实对话接口缺口已明确；I01整体获审；PERF02八范围已正式受领并行 |
-| 下一可用交付 | CHAT最小共享合同与独立Web接入；PERF02 canonical状态卡与窗口候选 |
-| 当前阻塞 | NONE |
+| 下一可用交付 | CHAT最小共享合同与独立Web接入；PERF02状态卡登记与窗口候选 |
+| 当前阻塞 | ACTIVE: CHAT共享client/export输入在两个index冲突，Execution Lead负责固定兼容输入/受控解决；本scope计划和PERF02继续 |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/integration-checklist.md,docs/evidence/web-platform/research.md |
@@ -25,7 +25,7 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-001-01 | completed | d01_owner | U00～U11及WPF-REQ-01～45已落[plan](plan.md) |
-| WPF-001-02 | completed | d01_owner | 7个子计划齐三件套；P01/M02/I01/PERF已转独立唯一owner，dashboard协作与PERF02/CHAT01准备仍在管理树 |
+| WPF-001-02 | completed | d01_owner | 7个子计划齐三件套；P01/M02/I01/PERF01/PERF02已转独立唯一owner；dashboard协作与CHAT准备尚在管理树 |
 | WPF-001-03 | completed | d01_owner | W01 cb4整体APPROVED；SSE后发现由M02 d47修复并独立复验，03:17实核两实现均在main3773及origin/main |
 | WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
 | WPF-001-05 | in-progress | d01_owner | P01完整6ce整体APPROVED、PH-R1～4关闭；最终metadata2910ebc clean，I01开始实际主App消费；完整X01父范围仍开放；I01实际App挂载另计划 |
@@ -72,6 +72,8 @@ U10 / REQ40已落父plan：主线独立X01维护全产品插件管理计划，�
 
 当前最高优先：[真实持续对话WPF-CHAT01](conversation-core/plan.md)。共享中心/runner由原Lead分配唯一owner；固定接口研究和首合同4c240已读，I01 owner已通过新claim08259c1d v1独立受领Web，public client方法待共享owner固定，不被PERF02压后。49922依旧固定fixture且保留用户tab，不能用其固定英文记录宣称自然模型回应。
 
-03:31:52.249Z root实际4320为34源，I01 b584与PERF01 cc334均clean且approved/proof unchanged；PERF02 d36v1仅出现在unregisteredAssignments，canonical待owner初始化交Lead登记。不能将take可见等同task状态卡已聚合。最新队伍安排：主线4、本队最多4、Mika2，总10；不新增agent，claims数不是并发数。Mika独占B01后台投影/feed字节与长历史性能，后续X02中心插件合同/PGregistry由主线协调，本队不写后端。
+03:31:52.249Z root实际4320为34源，I01 b584与PERF01 cc334均clean且approved/proof unchanged；PERF02 d36v1仅出现在unregisteredAssignments，该采样时canonical待初始化；随后c779文档已核并交Lead，尚未重新实采新状态卡。不能将take可见等同task状态卡已聚合。最新队伍安排：主线4、本队最多4、Mika2，总10；不新增agent，claims数不是并发数。Mika独占B01后台投影/feed字节与长历史性能，后续X02中心插件合同/PGregistry由主线协调，本队不写后端。
 
 03:35正式CHAT领取：I01v2先移App/官方Thread与plugin-integration/session+react，旧父scope展开保留另外3文件；新08259c1d v1/16scope于03:35:00.744Z committed，web-conversations/codex/web-conversations baseb584 clean。receipts与新owner派发已存；只是take，尚未冒称新增状态卡已聚合。首合同能力false明确展示，真实对话默认首页、任务/工具telemetry下钻，公共client由主线单写不私造。
+
+CHAT共享输入当前冲突：4c成功bac6a6，84117ca在两个共享index冲突，owner按规则保留现场并回Execution Lead；scope内plan/纯outbox继续，不能私造client。PERF02 c779 canonical已实际存在，旧准备三件套转stub，注册请求已按“收件人：Execution Lead”路由。

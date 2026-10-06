@@ -1,7 +1,7 @@
-# WPF-PERF02 审查入口
+# WPF-PERF02 已移交入口
 
-**NOT_STARTED**。Target UNKNOWN；本目录仅管理准备，未实施，不继承PERF01测量review或M02产品approval。
+此目录不再维护独立进度/实现/审查；唯一review在 [review.md](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window/plans/wpf-perf02-activity-window/review.md)。
 
-正式review先核独立worktree/branch/current claim/完整target/base/dirty及逐文件范围；检查数据完整性、窗口焦点与锚点、公开API/全部历史可读、前后测量方法与限制、无越权I01/共享写入。按实际局部测试和浏览器证据审阅，逐finding记录severity/修复SHA/复验；原始失败保留，不把单次自动化壁钟当真实用户p95。
+Owner：w01_owner / gpt-6-astra ultra。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window`，branch `codex/web-activity-window`；base `cc33403cd9b357fcd85484b7bc6952dc1220d689`，首canonical文档 `c779f86f1bb34ad8143bf35b8b9ca43c9e226758`。D04新claim `d36cd583-7c96-44c3-b92c-1cd0f208cc4e` v1于03:30:35.629Z受领八范围，进度和后续review只以canonical为准。03:25曾暂缓且无事务，主线明确允许CHAT合同等待时并行后才正式移交；此历史不授权重用旧claim。
 
-[计划](plan.md) · [状态](status.md)。准备文档review与未来实现review均须绑定实际SHA，未执行保持NOT_STARTED。
+父[WPF-001](../plan.md)持续追溯需求和跨owner边界；不要将本stub重复注册dashboard source。
