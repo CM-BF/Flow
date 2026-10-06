@@ -13,3 +13,5 @@ Base: 53ce2ec2c95b489aa7a2a2eaa49849821af00c16
 作者验证：65 distinct通过=64直接消费者+1 runtime unknown并发；32 runtime未选。身份初红2保留，最终2重复仅消除并发顺序假设，非额外检查。root types0。原raw与manifest见[证据](../../docs/evidence/eng01d/README.md)。0provider，0PG，不重跑工程50。review应读取固定源/原raw，不重复无关测试。
 
 Findings/结论：APPROVED，无P1/P2。独立review完整读取5源delta、身份测试与提取体，核60 manifest条目fixed/current/base mismatches=[]、原65 distinct/32未选/2重叠/初红和types0；reviewer未重跑。回执[见此](../../docs/evidence/eng01d/independent-review.json)。本片不关闭真实native写入、模型资格、后代进程停止或可信checker隔离，host-applied calculator不能替代真实native工程验收。
+
+Main receipt：d02faf300cfad7bba5ffa4b47f06b54ac68e822b 已由Execution Lead受控接收；本owner核5源target/main/working逐字相同。无重测，真实native工程后继仍开放。

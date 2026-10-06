@@ -1,0 +1,36 @@
+{
+  "time": "2026-10-06T11:45:05.963Z",
+  "sourceCount": 140,
+  "registered": {
+    "id": "ENG01E",
+    "title": "工程源码与检查报告边界",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-checker",
+    "branch": "codex/engineering-native-checker",
+    "planDir": "plans/eng01e-trusted-calculator-checker",
+    "evidenceDir": "docs/evidence/eng01e"
+  },
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "正在把受限源码检查与可信断言结果从模型输出中分离",
+    "next": "拒绝伪造结果并绑定完整内容集的calculator检查模块",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "tests": "registry/parser only; no product tests or architecture rerun",
+  "deployment": "pending this normal integration batch"
+}
