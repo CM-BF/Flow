@@ -4,7 +4,8 @@
 
 ## Target 与验收
 
-- Base：`5bdb7fa293ebd0d13515fe367f004687927f1897`；target：`f226c42dba577053f64a14dcf213180bf150f66d`（实现与原始证据；随后metadata只更新交付事实）。
+- Base：`5bdb7fa293ebd0d13515fe367f004687927f1897`。
+- Review target commit：`f226c42dba577053f64a14dcf213180bf150f66d`（实现与原始证据；随后metadata只更新交付事实）。
 - Worktree：`/Users/citrine/Projects/AgentHarness/Flow-worktrees/performance-probes`；branch：`codex/performance-probes`；交付HEAD：`9fcdc8ef32a224a8ead0c20b8ae0009954fba3a8`；本次记录前工作树clean。
 - 范围：两个vanilla toy、原始JSON、统计脚本、截图与测量限制；排除产品代码、真实模型、云与容量承诺。
 - 关键检查：功能一致性、预算、≥20有效重复、p50/p95、真实DOM计数、计时范围与数据传输定义。
