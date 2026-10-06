@@ -1,6 +1,6 @@
 # WPF-MATURE-02 Claude与Codex能力贯通
 
-状态：in-progress。创建：2026-10-06 09:01:08 UTC；更新：2026-10-06 15:16:38 UTC。阶段M2。单一owner chatui01_owner / gpt-6-astra；co-lead mika。
+状态：in-progress。创建：2026-10-06 09:01:08 UTC；更新：2026-10-06 15:43:16 UTC。阶段M2。单一owner chatui01_owner / gpt-6-astra；co-lead mika。
 
 ## 完整目标
 
@@ -28,7 +28,7 @@ Claude与Codex可被发现、选择和运行；model/thinking/fast/access从中�
 - [ ] WPF-MATURE-02-08：按完整跨端验收矩阵验收；不以目录或fixture替代真正模型运行。
 
 - [ ] WPF-MATURE-02-09：同harness空闲会话支持下一条设置变更；CAS/unknown ACK/恢复可追溯，历史/当前/入队配置冻结，跨harness路径明确，新选择使04测量失效。
-- [ ] WPF-MATURE-02-10：Claude产品core：兼容共享契约、中心CAS/幂等冻结message settings、既有Claude query传递；status_read/mika待独立source-only WT与精确scope领取，固定SDK注入与真实中心验收。
+- [ ] WPF-MATURE-02-10：Claude产品core：兼容共享契约、中心CAS/幂等冻结message settings、既有Claude query传递；status_read/mika独立core首leaf已main，下一片按其精确接线请求完成现profile/中心/adapter，固定SDK注入与真实中心验收。
 - [ ] WPF-MATURE-02-11：共享consumer：同中心版本化DTO贯通client/interaction/Web/TUI下一草稿设置与历史snapshot；独立WT/owner/精确scope由Lead协调，未知ACK保原intent。
 
 ## 依赖与交接
@@ -97,4 +97,4 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary是三角色�
 
 ## 当前执行优先级与两层交接
 
-GO明确优先Claude逐消息设置，按TODO-10产品core→TODO-11共享consumer两个直接子任务推进，沿TODO-04/05/09验收。具体独立WT、sibling管理路径、共享writer/migration与四路径可移交请求见[唯一handoff](../../docs/evidence/wpf-mature-02/claude-message-settings-handoff.md)。本parent管理owner保留，子任务未take前不写；OpenSSL ca6a checkpoint保持PENDING_RESOURCE，不继续扩诊断。完整Codex能力及真实用户验收不删减。
+GO明确优先Claude逐消息设置，按TODO-10产品core→TODO-11共享consumer两个直接子任务推进，沿TODO-04/05/09验收。具体独立WT、sibling管理路径、共享writer/migration与四路径可移交请求见[唯一handoff](../../docs/evidence/wpf-mature-02/claude-message-settings-handoff.md)。本parent管理owner保留；四profile路径已明确停写并原子交回，child仍须fresh amend现有claim后接收。首leaf已main22d5，下一片精确source-only闭包/共享F01接线/唯一migration请求以[child handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)为权威，不复制子TODO。OpenSSL ca6a checkpoint保持PENDING_RESOURCE，不继续扩诊断。完整Codex能力及真实用户验收不删减。

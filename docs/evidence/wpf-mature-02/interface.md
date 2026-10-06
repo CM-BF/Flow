@@ -4,12 +4,13 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- **Claude core首leaf已正式APPROVED，请Lead登记并正常main接收**：[当前固定输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/review-ready.md) / [唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/plans/wpf-mature-02-message-settings-core/status.md)。source4e7b7f968a2160a60989b3b6343506ae8fb5ef6a、validation8c56f15c5a70afd4e33031876244f70d1284d957、delivery78c73677438efec7455fc68b44109fa7da9ce5f5；Mika15:31:09 / architecture_read15:31:25 APPROVED，0P1/P2，5/5+strict0，仅plain contract leaf/无export挂载。owner status_read/core WT/branch、claim c652bc61 v1；最终integration入口待原owner回报替换，不重复审测。
+- **Claude core下一片：请按[唯一精确接线请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)协调source-only只读闭包、共享F01薄接线和唯一migration编号。** 本轮读取child固定`abbd8a9525fde44ecdfdbda99ab960d2a5df52c0`；owner status_read/mika，沿同一core直接子任务，现Claude v2 optional turnSettings→中心冻结→既有adapter实际消费。031已O15，不猜编号；child进度只在[其status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/plans/wpf-mature-02-message-settings-core/status.md)。
+- **四条profile路径已交回**：[COMMITTED回执](claude-core-profile-handback-receipt.json) / [停写记录](claude-core-profile-stopped-writing.json)。2026-10-06 15:43:03.052 UTC原claim原子amend为v6，仅保留本父docs/实验/plan；core现已原子amend至c652bc61 v2（15:44:19.351 UTC），含四路径与context store，见[接收receipt](/tmp/flow-core-next-scope-amend-receipt.json)；父owner不恢复写入。保留main已有templateVersion2→unknown三行修复，不改SVC旧362固定候选。其余独立源可先行，context直接消费者仍须纳入最终纵向验收。
+- **共享consumer需直接适配**：请Web/d01按同合同扩展`packages/interaction/src/queue-control/index.ts`、`apps/web/src/conversations/queue/projection.ts`及直接tests，现codec会拒绝新`message-settings-unsupported` blocked整页；不由core越权修改。新reader精确选择值为`X-Flow-Execution-Profile: flow.claude-turn-settings.v1`，F01共享接线与migration仍未领取。
+- 首leaf已进入main`22d5ca67159b35bb794b2711cf6df0cb905b92e8`，见[正式接收收据](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/claude-message-settings-intake.json)；仅plain contract，无export/产品挂载，不再重复派集成。Lead报告后续`9bdb`仅registry；2026-10-06 15:38:16 UTC的4320实际快照有164来源、CORE live/issues=[]；本owner未重新采集。完整02仍in-progress。[父级职责/交接边界](claude-message-settings-handoff.md)。
+- [F01 goal progression薄client正式APPROVED](goal-progression-client-review.md)：deef0e48，仅薄transport，供Lead受控接收；[plugin installation薄client正式APPROVED](plugin-installation-client-review.md)沿既有收据，不重复审。
 
-- **优先Claude逐消息设置**：[唯一core→consumer交接请求](claude-message-settings-handoff.md)。status_read/mika的产品core仍进行中；下一片是现profile/中心/adapter直接consumer，owner正在准备next-slice-handoff，后继R05/F01 v40/RECOVERY01 v4兼容接线和唯一SQL编号仍逐片协调。02四个execution-profile路径不先amend。
-- [F01 goal progression薄client正式APPROVED](goal-progression-client-review.md)：deef0e48，仅薄transport，供Lead受控接收；[plugin installation薄client正式APPROVED](plugin-installation-client-review.md)沿同一既有收据，不重复审。
-
-OpenSSL ca6a候选已只读[SOURCE_REVIEW/PENDING_VALIDATION](node-owned-openssl/source-review.json)，0执行，保持PENDING_RESOURCE/NOT_OPEN，不继续扩诊断，不阻Claude独立产品线。已完成诊断/跨task审查及历史路由保持原证据与Git ca6a7a15；本页仅保留最新可行动请求，进度仍由各owner唯一status维护。
+OpenSSL ca6a候选仅[SOURCE_REVIEW/PENDING_VALIDATION](node-owned-openssl/source-review.json)，0执行，保持PENDING_RESOURCE/NOT_OPEN，不扩诊断，不阻Claude产品线。旧诊断/跨task证据与封存快照不变；当前共享metadata属于新的产品交接阶段。
 
 ## 首片可独立实现
 
@@ -93,7 +94,7 @@ Codex没有这里可直接套用的Claude SDK maxBudgetUsd/maxTurns效果声明�
 
 WPF-MATURE-02-09：同harness空闲会话对实际支持的model/effort/fast提供“下一条生效”的设置修改；不能将整会话永久Locked。运行中修改只有实际能力支持时开放。跨Claude/Codex不宣称旧native session可互通，须明确续聊兼容或新会话路径。
 
-R05共享owner需区分可变 `nextTurnSettingsRevision` 与不可变 `profileSnapshot`；这些名字是合同需求候选，不是已落地字段。提交采用expected revision/CAS，持久记录请求选择、ACK状态与实际执行回执。未知ACK不可盲重试/回填成功；刷新/恢复后从持久事实恢复。历史turn、正在运行turn和已持久入队项各自持有入队/创建时冻结的snapshot identity，后续设置修改不能覆盖它们。目录能力降级/换model后的unsupported/unknown显式呈现。
+当前Claude方案由页首child请求维护：draft只在客户端，不建中心next-settings/settingsRevision；profile reference/configDigest标识可信配置，完整messageSettings沿既有body幂等digest与CAS冻结。历史、运行中及入队snapshot互不改写；未知ACK保留原intent，能力降级/续接语义未知明确拒绝。早期nextTurnSettingsRevision候选已被此方案替代。
 
 每次新选择使WPF-MATURE-04 context measurement失效；与04 architecture_read直接对接settings identity和失效关联。Web d01消费正式合同，当前实验不删除锁、不改公共contracts/UI、不改变现存profile hash。
 
@@ -106,7 +107,7 @@ R06默认encoded JSON frame上限1MiB（含envelope/转义、不含newline）；
 
 ### 与04的settings identity对齐（architecture_read只读输入）
 
-候选共享identity包含harness、requested/resolvedModel、immutable profile configDigest、executionInputDigest、materialRevisionDigest、historyEpoch。draft subject用draftId + next-turn settingsRevision；queued subject用queueItemId + 自身冻结settingsRevision；attempt subject用taskId/attemptId/ownerVersion/nativeSessionId及自身冻结profile。每次有效的新选择都变更settingsRevision（即使model同名、但effort/fast改变），令draft context观测失效，不重写queue/attempt identity。R05 owner负责正式字段和CAS/持久snapshot语义；02/04实验只消费，不能擅改共享profile hash。
+早期02/04 settingsRevision候选已由当前Claude请求方案替代：复用profile reference/configDigest与持久task/queue完整messageSettings，不另建中心可变revision。草稿选择变化须使相关context观测失效；历史requestedModel取已冻结task设置，旧无snapshot沿旧profile。具体接线/身份合同以页首child next-slice-handoff为唯一当前来源，context直接消费者需在最终纵向验收交付。
 
 ## 阻断性接线边界：access none尚无执行证据
 
