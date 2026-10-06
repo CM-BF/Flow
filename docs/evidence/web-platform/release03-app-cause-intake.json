@@ -23,5 +23,7 @@
   "scopeObservedAt": "2026-10-06T17:19:30.292Z",
   "dispatch": "followup W01 on frozen6411, original4; fixed delta review required before any runtime",
   "peerDesign": "release03-afterheaders-bodyloss-peer-design.md",
-  "peerObservation": "InstalledPlaywright response.finished may not settle for requestfailed; use same Request response headers then requestfailed+failure.errorText, preserve unknown UI and exactly one preRetry POST. Read-only source inference,0runtime."
+  "peerObservation": "InstalledPlaywright response.finished may not settle for requestfailed; use same Request response headers then requestfailed+failure.errorText, preserve unknown UI and exactly one preRetry POST. Read-only source inference,0runtime.",
+  "peerObservationRootConfirmed": true,
+  "boundedObservation": "Deadline/abort and listener cleanup required; response.finished is not the body-loss oracle"
 }

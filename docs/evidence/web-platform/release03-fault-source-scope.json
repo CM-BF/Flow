@@ -32,5 +32,11 @@
   "budgetUnchanged": {
     "usedMs": 39935,
     "remainingMs": 140065
+  },
+  "observationConstraint": {
+    "source": "Root independently confirmed installedcoreBundle60037/62357/36375 and archivedpeer design;0runtime",
+    "forbiddenOracle": "response.finished on requestfailed may never settle",
+    "required": "Same Request response headers -> requestfailed/failure.errorText with bounded deadline/abort and owned listener cleanup; unknown UI plus exactly one preRetry wirePOST",
+    "evidence": "release03-afterheaders-bodyloss-peer-design.md"
   }
 }
