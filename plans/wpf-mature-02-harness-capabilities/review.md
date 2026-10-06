@@ -1,6 +1,6 @@
 # Current C fd v3 result review
 
-State: NOT_STARTED. [Run](../../docs/evidence/wpf-mature-02/fd-canary-v3/run-report.md): compile1/targets2; socket control reports, profile-regular SIGABRT/no child report despite parent regular-fd verification. Measurement false, cleanup/accounting/machine inventory true, CLI1. File stdio streams=null, not empty-pipe evidence. Fixed result target supplied byGit; no further runtime authorization.
+State: APPROVED faithful FAIL; architecture_read/gpt-6-astra, 2026-10-06 11:45:46 UTC, 0 P1/P2; Mika accepted. Target `d8038d3ab4b8e58fbe30a19e7135f457eb4cd958`. [Run](../../docs/evidence/wpf-mature-02/fd-canary-v3/run-report.md): 12 result bindings, 31 fixed inputs and 79 old evidence entries match Git/WT/hash/bytes. Fixed d803 archive 123508/131072B; total439216B; receipt+CLI14963/32768B. Parent regular fd identity is not a child observation; profile SIGABRT/no report, file stdio streams=null, zero capture is not evidence of no output. Measurement false, cleanup/accounting true, CLI1. Raw only stat/hash/0600 checked, never read or committed; no tests/child rerun. Automatic evidence is inside runtime clock; manual archive outside time and inside byte budget. No isolation, causal or further-window approval. Later metadata accounting does not alter the d803 snapshot.
 
 # Current C fd v3 combination review
 

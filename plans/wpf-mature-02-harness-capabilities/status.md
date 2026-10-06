@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:43:38 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:48:27 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 3636614f3850d7eb9ca63a42c01ea0d95df19db2（v3源码；候选packet与metadata HEAD由Git核） |
-| 工作树dirty状态 | 3636614f源码提交后仅新v3 input/manifest与自身metadata；交审前提交并核clean。v2执行HEAD仍c44189e4 |
+| 工作树dirty状态 | d8038d3ab4b8e58fbe30a19e7135f457eb4cd958结果提交后clean；本次仅正式结果独审metadata，最终HEAD由Git核。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 检查状态 | C_FD_V3_WINDOW_STOPPED（1编译/2目标，control已报告/profile-regular SIGABRT无报告；measurement=false、cleanup/accounting=true、CLI1）； C_FD_V3_LOCAL_PASS（28通过/16未选，9新+19直接；Node24惰性import/3语法0，新增实际compile/target0）； C_FD_V2_WINDOW_STOPPED（1编译/2目标，control已报告/profile SIGABRT/第三NOT_RUN；measurement=false、cleanup/accounting=true、CLI1）；C_FD_V2_LOCAL_PASS（26/26受影响项，9未选；Node24惰性import/3语法通过，历史检查时新增实际运行0）；C_FD_WINDOW_STOPPED（1编译exit0/0目标，cleanup=true，measurement=false/accounting=unknown，CLI1）；C_HOST_LOCAL_PASS（20 distinct零目标检查，分18+1+1，Node24惰性import/5语法通过）；CATALOG_LOCAL_PASS（33 distinct/strict0，分次证据）；DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源/薄consumer仍待Lead集成；不代表个人服务部署 |
 | 实现目标 | 3636614f3850d7eb9ca63a42c01ea0d95df19db2 |
 | 实现范围 | fd-canary/host.mjs、execute-reviewed.mjs、host.test.ts；自身fd-canary-v3证据；C/profile/schema/command/report/R06冻结 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 原生配置目录已交付；普通文件stdio对照已执行，父进程确认文件身份，但受限目标仍异常退出且无报告。清理和证据持久化完成，失败结果等待独审。 |
-| 下一可用交付 | 交付本次普通文件对照的独立结果审查；既有已审R06与薄入口可独立集成。 |
+| 当前产出 | 原生配置目录已交付；普通文件stdio对照已执行，父进程确认文件身份，但受限目标仍异常退出且无报告。清理和证据持久化完成，独审确认失败结果记录准确；未证明隔离成功。 |
+| 下一可用交付 | 本次失败结果已交付；既有已审R06与薄入口可独立集成。 |
 | 当前阻塞 | ACTIVE: socket与普通文件对照的受限目标均异常退出且无报告，原因仍未知；窗口已消费，真实Codex目录仍缺隔离验证。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：v3组合a10b4fae APPROVED（architecture_read，2026-10-06 11:38:34 UTC，0P1/P2）；结果6b397a58 faithful incomplete/FAIL APPROVED（architecture_read，11:30:14 UTC，0P1/P2）；当前v2候选851fd8c7 APPROVED（Mika，2026-10-06 11:20:49 UTC，0P1/P2）；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
+| Review | [review.md](review.md)：v3结果d8038d3a faithful FAIL APPROVED（architecture_read，2026-10-06 11:45:46 UTC，0P1/P2）；v3组合a10b4fae APPROVED（architecture_read，2026-10-06 11:38:34 UTC，0P1/P2）；结果6b397a58 faithful incomplete/FAIL APPROVED（architecture_read，11:30:14 UTC，0P1/P2）；当前v2候选851fd8c7 APPROVED（Mika，2026-10-06 11:20:49 UTC，0P1/P2）；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 目录Module新增versioned reader/严格DTO，既有挂载与存储不变；R06历史private sink已审，process owner不变。最终target架构更新待Mika/ExecutionLead集成。 |
 
@@ -140,4 +140,4 @@ GO批准、Mika串行派工 `go-c-fd-v2-851fd8c7-once`，见[运行授权](../..
 
 ## v3本次运行最终事实
 
-[结果](../../docs/evidence/wpf-mature-02/fd-canary-v3/run-report.md)：执行65bf4503，开始11:43:23.079Z，一编译/两目标；控制socket成功，父核三个regular fd后profile目标SIGABRT无报告。file stdio streams=null，不把0capture说成无输出。997.3055ms、CLI1；measurement=false、机器清单/结果已持久、cleanup/accounting=true、无保留root。B01已通知可解除串行等待。当前结果待独审，实际运行许可已消费。
+[结果](../../docs/evidence/wpf-mature-02/fd-canary-v3/run-report.md)：执行65bf4503，开始11:43:23.079Z，一编译/两目标；控制socket成功，父核三个regular fd后profile目标SIGABRT无报告。file stdio streams=null，不把0capture说成无输出。997.3055ms、CLI1；measurement=false、机器清单/结果已持久、cleanup/accounting=true、无保留root。B01已通知可解除串行等待。结果d8038d3ab4b8e58fbe30a19e7135f457eb4cd958已获architecture_read/gpt-6-astra于2026-10-06 11:45:46 UTC限定faithful FAIL APPROVED，Mika接收，0P1/P2；未重跑。实际许可已消费，停止fd变体；后继固定上游只读研究由architecture_read负责，本owner尚不实施。归档123508B是d803历史快照，当前metadata尾部另计。

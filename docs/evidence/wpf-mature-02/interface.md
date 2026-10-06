@@ -4,7 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
-- [Codex诊断v3结果：regular-file对照仍SIGABRT](fd-canary-v3/run-report.md)：获批唯一窗口已消费，1compile/2目标，父regular身份已核但子报告缺失；measurement未完成，清理/机器证据/计量完成，待独立结果审查。无剩余运行授权。
+- [Codex诊断v3结果：regular-file对照仍SIGABRT](fd-canary-v3/run-report.md)：获批唯一窗口已消费，1compile/2目标，父regular身份已核但子报告缺失；measurement未完成，清理/机器证据/计量完成；architecture_read于11:45:46 UTC限定faithful FAIL APPROVED（d8038d3a），无隔离或因果结论。无剩余运行授权。
 - [B01轻投影权威来源/registry变更请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/authority-request.md)。请Lead按权威请求切换登记；不复制进度。
 
 - [Codex诊断v2最终结果：控制socket已测，profile SIGABRT](fd-canary-v2/run-report.md)：获批唯一窗口已消费，1编译/2目标，第三NOT_RUN；测量未完成、清理/输出计量完成，architecture_read于11:30:14 UTC限定faithful incomplete/FAIL APPROVED，无剩余运行许可。
