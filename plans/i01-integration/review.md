@@ -1,50 +1,39 @@
 # I01 独立审查记录
 
-**状态：SCOPED_APPROVE，限固定提交的4个确定性集成场景；完整M1未审查完成。**
+**状态：NOT_STARTED — 最终Web集成target待本次独立review；下列历史scope已分别通过，不自动覆盖新实现。**
 
 ## Target 与 scope
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Review target commit：待审查者核验并填写完整SHA；禁止笼统复用旧通过状态。
-- Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
-- 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
-- Reviewer / model / harness / 时间：待填写。
+- Review target commit：由reviewer核验本次交付完整SHA填写；真实Web运行source `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`。
+- Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-integration`，branch `codex/m1-integration`。
+- 最终范围：948e6bc动态端口、W01/D01实现到交付metadata差异、根lock合入、`scripts/web-system-probe.ts`及其真实证据、[M1系统报告](../../docs/evidence/i01/m1-system.md)。既有W01/D01各自APPROVED实现不重复全套复审；重点核对组合是否改变公共契约与行为。
 
-## 可直接复制的审查任务说明
+## 可复制审查任务
 
-```text
-请对 I01 做独立只读review。先读仓库AGENTS.md、plans/AGENTS.md、plans/i01-integration/plan.md和status.md；执行技能发现并读取相关本地技能。先确认实际仓库、worktree、branch、dirty状态、base/head完整SHA，审查结论必须绑定具体head commit；若输入与实际不符先记录差异，不沿用历史通过结论。逐项核对plan TODO、验收criteria、关键实现和证据，运行已授权且隔离的相关检查，明确哪些未执行以及原因。对问题给出severity、文件/行、复现场景、影响、blocking/nonblocking与建议；默认不改实现，把修复交回owner。在本review.md被明确指定为你唯一写入范围且你的模型>=Sol时才可写审查记录，否则把报告回传owner。Claude Code或其他外部agent可只读审查；任何直接修复Flow文件仍须满足Sol以上模型与独立worktree规则。最后列结论、限制和需复审内容，不把空模板当approval。
-```
+请先读AGENTS、plans规则、本plan/status，执行find-skills并实际应用相关本地技能。核对实际base/head/dirty，结论只属于完整target SHA。审查主旅程：真实Web202到PG、整Chrome进程exit、浏览器关闭时runner/CLI继续、同task/attempt、全新浏览器产物version与flow.text验证、独立取消且无产物；核对rawJSON、来源hash、截图与报告边界。可用新临时证据目录重跑确定性旅程，不覆盖已提交原始证据、不调用模型、不动4320dashboard；默认只读实现，修复回owner。记录severity/blocking/位置/复现、已执行和未执行检查，不能删断言/接受缺失截图掩盖失败。空模板不是approval。
 
-## 独立review步骤
+## 已完成历史独立检查
 
-1. 核验target/base/head、工作树与指令，确认评审范围。
-2. 读plan/status、diff与关键调用路径；核对TODO和分支/main事实。
-3. 从公开Interface检查正常、错误、恢复与权限行为；独立复核证据，不信自述完成。
-4. 记录检查命令/环境/结果以及未执行检查和原因。
-5. 提交findings；owner修复后核对新commit再复审。
+| Target | Reviewer | 实际范围和结论 |
+| --- | --- | --- |
+| 5bdb7fa293ebd0d13515fe367f004687927f1897 | assignment_review / Astra | 最初4个真实PG/runner/CLI场景，独立4/4通过，无blocking；要求补真实SSE重连与更新status |
+| c08506b5f2f5fb0441063704271d6278c69bbf14 | runner_owner / Astra | 第5个真实SSE断线场景及native probe只读；发现cleanup边界P2 |
+| 6434fba78bba5097376555a66114462f5432ca25 | runner_owner / Astra | cleanup P2修复关闭；独立typecheck通过、I01 5/5、总检83/84，唯一C01端口冲突 |
+| 6434fba78bba5097376555a66114462f5432ca25 | Goal Owner派独立架构review | 无阻断M1项；三P2关于harness/usage集中、runner有效并发1、observer读量，后续计划处理；未运行测试 |
 
-## 检查与证据
+## Findings 与修复
 
-| 检查 | 执行状态 | 环境/commit | 结果与证据链接 |
-| --- | --- | --- | --- |
-| 待填写 | 未执行 | 未核验 | 无；模板不表示检查通过 |
+| ID | Severity | Blocking | 问题 | Owner回应/修复 | 复审 |
+| --- | --- | --- | --- | --- | --- |
+| I01-H1 | P2 | 已解决 | 最初缺真实SSE重连与旧status | 564febf新增真实HTTP代理断线重连，更新状态 | runner_owner复核通过 |
+| I01-H2 | P2 | 已解决 | native probe setup/cleanup失败可能泄漏进程 | 6434fba setup纳入finally、各清理独立deadline | runner_owner只读复审关闭；没重跑模型 |
+| I01-H3 | P2 | 待最终复核 | C01固定4320和dashboard冲突 | 948e6bc动态端口；受影响1/1及全检93/93通过 | 最终review核对差异 |
 
-## Findings
+## 当前未执行与限制
 
-| ID | Severity | Blocking | 文件/行与复现 | 影响/建议 | Owner回应 | 修复commit | 复审结果 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 待审查 | 未评估 | 未评估 | 无结论 | 无结论 | 待回应 | 无 | 未复审 |
+最终Web整合独立review尚未完成；main未集成。原始native预算5/5，禁止新增调用。恢复/跨机/掉电/容量限制见系统报告；flow.text/v1本次只证明明确非空/contains规则，不等同任意任务语义正确。最终浅色full-page capture出现屏外content-visibility遗漏，采用同实现首次有效浅色截图和最终深色窄屏，保持记录透明。
 
-## 结论与限制
+## 作者回应 / 最终复审
 
-结论：未审查。Blocking findings：未评估。Nonblocking findings：未评估。未执行范围：全部。不得据此声称通过。
-
-## 作者回应与复审
-
-Owner记录每项接受/解释、修复commit和检查证据；reviewer在新head上逐项复审并注明已解决/仍存在。新提交不自动继承旧approval。
-
-
-## 已完成独立复核
-
-Reviewer assignment_review / gpt-6-astra，只读，target `5bdb7fa293ebd0d13515fe367f004687927f1897`，worktree起止clean。独立运行4/4真实PostgreSQL/TCP/runner与CLI进程场景通过，diffcheck通过，未发现blocking代码finding。两项文档P2：原I01-02“重连”缺实际中心断线重连场景；status旧HEAD/dirty/待修复叙述需更新。Owner已修正状态并新增真实网络断线场景（5/5通过），新增部分尚待补充复核。原review不覆盖Web/模型/DB硬故障/跨机/容量。
+待独立reviewer给出具体target、检查与结论后由owner如实落盘。
