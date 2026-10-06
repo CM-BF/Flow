@@ -84,7 +84,9 @@ owner status_read / gpt-6-astra，co-lead mika，所属 FLOW-001、M2。完整�
 
 原mixed FAIL/partial-A结果已独审封存；P03修复已集成main0cee。GO新授权一次独立同负载窗口，当前先准备，不复用原reservation、task IDs、raw目录或retained journal。该阶段沿S01既有TODO，不建立第三层任务。
 
-- [ ] 固定[新输入/资源合同](../../docs/evidence/s01/mixed-after-drain-preparation/README.md)和最小run identity适配，绑定P03已审源码与独立输出。
-- [ ] 新输入纯检查/strict与独立固定target review；旧14检查不得冒充新增实测。
-- [ ] Mika点名唯一windowId/cleanHEAD后，执行一次32tasks A1×16→B4×4；失败停且B可NOT_RUN，60秒含清理/64MiB不放宽。
+- [x] 固定[新输入/资源合同](../../docs/evidence/s01/mixed-after-drain-preparation/README.md)和最小run identity适配，绑定P03已审源码与独立输出。
+- [x] 新输入纯检查/strict与独立固定target review；旧14检查不得冒充新增实测。
+- [x] Mika点名唯一windowId/cleanHEAD后，执行一次32tasks A1×16→B4×4；失败停且B可NOT_RUN，60秒含清理/64MiB不放宽。
 - [ ] 如实封存本次结果/资源/unknown、独审和主线接收；不对旧journal作自动恢复。
+
+2026-10-06 after-drain实际窗口已完成：两组门禁PASS、资源清理完成，1次heartbeat错误原因unknown保留，实际结果独审/main接收仍开放。原FAIL不能改为PASS；本次仅固定fixture混合负载证明，无>100实际执行或SLO。

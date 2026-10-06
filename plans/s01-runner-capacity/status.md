@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:44:15 UTC；固定新版base main0cee7556 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:51:09 UTC；实际窗口固定base main0cee7556 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[架构主计划](/Users/citrine/Projects/AgentHarness/Flow/plans/flow-001-architecture/plan.md)） |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | 新base main0cee7556；受控merge86297277；新实现51541b0cad73dcad32c7374dc87d631f0b9a8432；原634/121/6a596保持历史固定 |
-| 工作树dirty状态 | 新实现51541b0c clean；其后仅manifest/status/review metadata，源码与检查已冻结 |
+| 工作基线 / HEAD | 新实现51541b0cad73dcad32c7374dc87d631f0b9a8432；实际执行5ea1b26f23fd7f24d1b89199a10b553dcab7fc18；新结果待固定。原634/121/6a596历史保留 |
+| 工作树dirty状态 | 指定执行HEAD5ea1b26f clean；当前仅新增after-drain结果及本任务metadata，源码和旧raw冻结 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 新run identity纯10通过、strict0；旧14未重跑。此前真实窗口FAIL/A16/B未跑；本次实际窗口尚未运行 |
+| 检查状态 | 新唯一窗口PASS：32真实attempt，A/B各12成功4取消、1027事件ACK、5journal清空；19.272秒/完整字节计量，无本次遗留；结果待独审 |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | 实现目标 | 51541b0cad73dcad32c7374dc87d631f0b9a8432 |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 停止修复后的独立混合验证输入已实现，通过局部检查，待固定审查 |
-| 下一可用交付 | 固定输入和独立输出合同经审查后，等待唯一执行窗口 |
+| 当前产出 | 停止修复后的两组混合验证均通过，资源已清理；原失败证据完整保留 |
+| 下一可用交付 | 新窗口原始结果独立审查和主线接收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | 准备634 APPROVED；本次FAIL结果6a5961a独审APPROVED（仅如实失败交付），[review.md](review.md)，不沿用准备批准 |
+| Review | 原634与6a596已审；新准备51541b0c于2026-10-06 10:45:57 UTC经Mika APPROVED；实际PASS结果待固定独审 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -149,3 +149,5 @@ Mika在准备独审后批准唯一window `mika-s01-mixed-20261006-100634`，执�
 2026-10-06T10:44:15.659Z：Mika批准最窄run identity适配，driver/main小diff与新identity/test完成；10不同纯检查+strict0，原14不重跑，0实际窗口。130旧文件当前仍逐字一致，仅两份driver输入源码按新target适配，旧固定634/121/6a596可重现。新manifest将绑定21实验source、新raw及固定main/client/P03输入；source/raw固定后交Mika独审，不沿用旧准备批准。
 
 2026-10-06T10:45:02.650Z：新窗口实现target `51541b0cad73dcad32c7374dc87d631f0b9a8432` 已固定，[manifest](../../docs/evidence/s01/mixed-after-drain-preparation/manifest.json)绑定21source/21readonly/8raw/9support（SHA 32965654f0e3960302ec66ed9492ec20ba00abaa2a2ffa19f27fe50ced305b11）。readonly逐字=固定main0cee，P03两源=a677；旧17实验源未改、2源输入适配+2新源，原raw/manifest冻结。源码/检查不再改动，提交后交Mika正式独审；没有已授权windowId、没有新真实调用。
+
+2026-10-06T10:51:09.061Z：Mika点名唯一新窗口mika-s01-after-drain-20261006-104557，执行前fresh claim8e4660a6 v3 active/HEAD5ea clean；仅一次已完成，CLI exit0。32真实task/attempt，两组各12成功4取消；1027事件逐项seq/digest/fence/accepted绑定，5journal全null/[]。耗时19271.849875ms含清理/最后证据写入，完整计量36092931B；两个自有child自然0、唯一新DB dropped、新workdir removed、无本次retained。保留1次A settlement heartbeat错误：无status/错误类/attemptId，原因unknown，不能写零HTTP错误。实际正常adapter重叠最小6000.02025/6000.055792ms；timer标记略早单独记录。见[报告](../../docs/evidence/s01/mixed-after-drain-run/report.md)和[归档预算](../../docs/evidence/s01/mixed-after-drain-run/archive-budget.json)。旧FAIL/raw/FKye9L不动，无重跑/补跑，C串行占用已交还Mika。结果待独审，不作>100执行/SLO或严格speedup。
