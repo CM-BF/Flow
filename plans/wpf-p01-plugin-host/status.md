@@ -15,12 +15,12 @@
 | 单一status owner / model | w01_owner / 派发gpt-6-astra ultra；运行时无独立型号查询接口 |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host` |
 | Branch | `codex/web-plugin-host` |
-| 工作基线 / HEAD | `c8900a6fdbca20e683fda6fc808c135f0569c116` / `c8900a6fdbca20e683fda6fc808c135f0569c116` |
-| 工作树dirty状态 | 实现已提交；当前仅自身计划/证据metadata待提交，根manifest/lock无差异 |
+| 工作基线 / HEAD | `c8900a6fdbca20e683fda6fc808c135f0569c116` / 最近实采metadata `27a12ec17eac0bd68fe7c4ff043f51de60254f36` |
+| 工作树dirty状态 | CLEAN；27a12ec实采clean，根manifest/lock无差异；后续仅文档更新 |
 | 工作分支状态 | in-progress；实现完成，整体review/M02接入待完成 |
-| 检查状态 | PASSED；target d81075c：14模块tests、8 browser tests、Web typecheck、fixture生产build；不代表M02主App验收 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；输入main `108fddbd8261963f3d49088873b5a611b70a5dbf`，WPF-P01未实现/集成 |
-| Review | [review.md](review.md)，整体NOT_STARTED target d81075c；五模块3d81210 APPROVED，PH-R1/R2 CLOSED |
+| 检查状态 | PASSED；target d81075c1220fc0305bf698d84823caa4877c2d89：14模块tests、8 browser tests、Web typecheck、fixture生产build；不代表M02主App验收 |
+| 已集成main状态 / HEAD | NOT_INTEGRATED；输入main `8c57f2f97345167207fa0d2590e9ad6310c922d4`，WPF-P01实现完成但未集成 |
+| Review | [review.md](review.md)，整体NOT_STARTED target d81075c1220fc0305bf698d84823caa4877c2d89；五模块3d81210 APPROVED，PH-R1/R2 CLOSED |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -48,3 +48,5 @@
 ## Dashboard同步
 
 唯一status已转移至本平级计划目录；通知管理者将nested草案转交入口并请Lead/D03登记task→此worktree。管理者转述root于02:38:47.600Z实采：D03已登记22源，P01 human.complete=true、missing/issues为空；后续更新仍以本唯一事实源为准。
+
+02:50:58.898Z owner只读复核4320：来源本树、HEAD27a12ec、dirty=false、human.complete=true、status.errors/implementation.errors/issues均空，implementationProof=unchanged；checks原短SHA显示unknown，本次更正为完整targetSHA。无服务停止/重启或其他owner文件写入。
