@@ -1,0 +1,160 @@
+{
+  "at": "2026-10-06T20:09:50.477946+00:00",
+  "verdict": "FAILED_ATTEMPT_AND_CLEANUP_ACCEPTED_SCOPED_WITH_HARNESS_FIX_REQUIRED",
+  "reviewer": "root / independent evidence review, no rerun",
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "runtimeHead": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+  "run": "settings-b4-20261006-200629-5a13ef",
+  "reviewMeaning": "Accept retained actual failed-attempt/cleanup evidence. No completed UI scenario, screenshots, feature PASS or center integration.",
+  "facts": {
+    "parentMs": 6861,
+    "workerObservedMs": 6730,
+    "cumulativeMs": 20609,
+    "remainingArithmeticMs": 39391,
+    "cleanupReserveMs": 15000,
+    "checks": [],
+    "screenshots": 0,
+    "pageErrors": [],
+    "cdpConnectedAt": "2026-10-06T20:07:06.100Z",
+    "fixtureClosed": true,
+    "contextClosed": true,
+    "workerPgid": 11051,
+    "chromePgid": 6481,
+    "chromeExit": {
+      "code": 0,
+      "signal": null,
+      "observedAt": "2026-10-06T20:07:07.006047+00:00",
+      "beforeCdpPort": false
+    },
+    "chromeClose": {
+      "code": 0,
+      "signal": null,
+      "observedAt": "2026-10-06T20:07:07.026132+00:00",
+      "beforeCdpPort": false,
+      "meaning": "Parent observed direct-child exit plus both captured pipe EOFs; not a Node close event"
+    },
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
+    },
+    "streams": {
+      "chrome.stdout": {
+        "receivedBytes": 0,
+        "keptBytes": 0,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      },
+      "chrome.stderr": {
+        "receivedBytes": 4620,
+        "keptBytes": 4620,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      },
+      "worker": {
+        "receivedBytes": 52,
+        "keptBytes": 52,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      }
+    },
+    "pg": 0,
+    "provider": "0 per fixed synthetic-catalog scenario and owner report; no provider endpoint invoked",
+    "minimumObservedFreeBytes": 1354358784,
+    "peakObservedScratchLogicalBytes": 18517568,
+    "peakObservedScratchAllocatedBytes": 12849152,
+    "parentRetainedBytes": 741839,
+    "indexedOriginalFiles": 10,
+    "indexedOriginalBytes": 115305,
+    "accountingMeaning": "The10 indexed115305 bytes are a subset of the retained741839 parent BASE plus previous evidence accounting. Resource samples are observations, not exclusive physical-allocation guarantees."
+  },
+  "findings": [
+    {
+      "id": "MSGSET-B4-LOCATOR",
+      "priority": "P2",
+      "file": "apps/web/test/message-settings.browser.ts",
+      "line": 81,
+      "title": "Address the intended settings fieldset by its accessible name",
+      "evidence": "Actual Playwright strict-mode failure lists four group elements: current-choice details, the fieldset with legend 完整消息设置组合, and two option details. The unqualified dialog.getByRole(group) is not unique. Fixed ExecutionProfilePicker.tsx127–137 already gives the fieldset the correct unique legend.",
+      "impact": "First scenario aborts after selecting the standard radio, before completing any grouped check or recording screenshots. This attempt reached CDP/fixture UI and did not repeat the prior startup failure.",
+      "requestedFix": "Keep the original no-Adapter assertion, bind the exact accessible group name 完整消息设置组合 and assert uniqueness/presence. Do not use first() or remove/weaken the assertion, and do not change production ARIA to accommodate a test locator. Audit nearby selectors statically for the same ambiguity; keep unchanged behavior and other five sources fixed.",
+      "validation": "Fixed delta source review and a later individually admitted run with carried20609 spent budget. No automatic retry from this report."
+    }
+  ],
+  "failure": "Error: expect(locator).not.toContainText(expected) failed\n\nLocator: getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group')\nExpected substring: not \"Adapter\"\nError: strict mode violation: getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group') resolved to 4 elements:\n    1) <details class=\"ep-identities\">…</details> aka getByText('选择身份配置 10000000-0000-4000-')\n    2) <fieldset class=\"ep-options\">…</fieldset> aka getByRole('group', { name: '完整消息设置组合' })\n    3) <details>…</details> aka locator('label').filter({ hasText: 'model-' }).getByRole('group')\n    4) <details>…</details> aka locator('span').filter({ hasText: 'fast-model' }).getByRole('group')\n\nCall log:\n  - Expect \"not toContainText\" getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group') with timeout 5000ms\n  - waiting for getByRole('dialog', { name: '下一条消息设置', exact: true }).getByRole('group')\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toContainText (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at Module.checkMessageSettingsPicker (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/test/message-settings.browser.ts:81:49)\n    at async <anonymous> (/private/tmp/msgset-b4/worker.mjs:76:18)",
+  "verified": {
+    "rawIndexFiles": 10,
+    "rawIndexHashes": true,
+    "exactRuntimeSources": 6,
+    "gateBindingRunnerBoundaryMatch": true,
+    "previousB2FilesUnchanged": 16,
+    "originalCumulativeBudgetPreserved": true,
+    "terminalSamples": [
+      "after-both-groups-reaped-before-scratch-removal",
+      "after-result-and-budget-write"
+    ],
+    "rootNewRuntime": false,
+    "rootProjectWrites": false,
+    "rootPersonalServiceOrFreeSpaceProbe": false
+  },
+  "boundaryInterpretation": "GO-accepted native Chrome sibling kept its native sandbox, owned paths and parent PGID cleanup; current actual launch/CDP succeeded. This supports usefulness of the changed launch boundary but is not proof that nested sandbox was the unique cause of all older failures, nor a claim of equivalent custom outer OS write/egress confinement.",
+  "followup": "Manager already returned the shared window. Owner seals original evidence first, then fresh originala5/8 scope may receive the minimal source repair. New budget39391ms is arithmetic only; next run needs current fixed bindings, claim/resources and Lead window. Historical37/direct and types retain original scope; full App/Send/Queue/Recovery integration remains open.",
+  "files": [
+    {
+      "path": "/private/tmp/msgset-b4/result.json",
+      "bytes": 63306,
+      "sha256": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c"
+    },
+    {
+      "path": "/private/tmp/msgset-b4/browser-budget.json",
+      "bytes": 199,
+      "sha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373"
+    },
+    {
+      "path": "/private/tmp/msgset-b4/consumed-gate.json",
+      "bytes": 1804,
+      "sha256": "fb5f475c3a31f9de4bee787611ee1931dec220f48c640b57eef0fcab8af6d3bb"
+    },
+    {
+      "path": "/private/tmp/msgset-b4/child-gate.json",
+      "bytes": 2339,
+      "sha256": "04af1e249e328190815786f22abf697b2d8ae5f42dd1b37570f2afb2479856e6"
+    },
+    {
+      "path": "/private/tmp/msgset-b4/worker.log",
+      "bytes": 52,
+      "sha256": "b5aff1399470c4d26e32116587ddda544ff821a16a636d49da65d1b8fe8fb5eb"
+    },
+    {
+      "path": "/private/tmp/msgset-b4/binding.json",
+      "bytes": 34163,
+      "sha256": "6328a4846d4966c3e0a022788bfd8f5b726cff1744acf458130b382dd8ec425f"
+    },
+    {
+      "path": "/private/tmp/msgset-b4/manifest.json",
+      "bytes": 3251,
+      "sha256": "4fb95bb3522f12080f00cbaaf203615213cd4f41f3999256874871e2bf34dda5"
+    },
+    {
+      "path": "/private/tmp/msgset-b4/raw/settings-b4-20261006-200629-5a13ef/browser-results.json",
+      "bytes": 3316,
+      "sha256": "9084635eb5ba4757f16b9347c219ee024ae877bc50e13245e2bdd9c068341e09"
+    },
+    {
+      "path": "/private/tmp/msgset-b4/raw/settings-b4-20261006-200629-5a13ef/chrome.log",
+      "bytes": 4620,
+      "sha256": "f815fd0e35f5665a8ec67ff287515f0bd0e9895147401ecad0e205b16b90df1c"
+    },
+    {
+      "path": "/private/tmp/msgset-b4/raw/settings-b4-20261006-200629-5a13ef/owned-chrome.json",
+      "bytes": 2255,
+      "sha256": "2feedda831ef9ce95085a55b0f407efa178399df2bde7dde1b579e2ba9a6a014"
+    }
+  ],
+  "cleanCode": "Reused local find-skills/clean-code/webapp-testing methods: concrete semantic locator, preserve negative assertion and exact evidence, no broad product or launcher refactor."
+}

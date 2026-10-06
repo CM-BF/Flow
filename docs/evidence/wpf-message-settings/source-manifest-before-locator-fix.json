@@ -1,7 +1,7 @@
 {
-  "at": "2026-10-06 20:11:18 UTC",
+  "at": "2026-10-06 19:10:12 UTC",
   "base": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
-  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
   "files": [
     {
       "path": "apps/web/src/execution-profiles/catalog.ts",
@@ -30,8 +30,8 @@
     },
     {
       "path": "apps/web/test/message-settings.browser.ts",
-      "bytes": 11807,
-      "sha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c"
+      "bytes": 11628,
+      "sha256": "9b851ff0a28efb497fa396847d3d2c008f32f7c291ec9ee9fc69f93b803f4254"
     }
   ],
   "protectedPaths": [
@@ -53,6 +53,6 @@
   ],
   "protectedDiff": [],
   "readonlyCreationParameterPreserved": "configuredSelection(input: Immutable<DirectoryProfile>)",
-  "runtimeChecks": "Current locator-only delta NOT_RUN. Historical f3 strict noEmit/direct37 PASS and parent count FAIL preserved. Original1cd/18ede b4 reached fixture then first group locator strict failure; checks0, cumulative20609/60000ms. New source review/binding/gate required; no automatic rerun.",
-  "previousImplementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014"
+  "runtimeChecks": "Original f3 strict noEmit/direct37 PASS with parent count FAIL preserved. Current1cd b2 startup FAILED; b4/actual18ede reached fixture then first locator strict-mode FAILED (4 groups),0 completedchecks. Browser cumulative20609/60000ms; no fullfeature approval.",
+  "previousImplementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2"
 }

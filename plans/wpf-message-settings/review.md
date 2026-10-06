@@ -2,7 +2,7 @@
 
 **状态：UNKNOWN — 完整片段的运行验收尚未完成。**
 
-Review target commit：1cd5cd41e47c8c101d9bb1acfdca1e870769c014。新目标仅browser fixture扫描一行；root已完成b2限定源码准备审查，后续b2初始化失败保留；本次b4已到达fixture但首定位器strict失败，0完成checks，完整feature仍UNKNOWN。Base：8d84d529a0756116bd0fc8bad969d61a6c26248e。
+Review target commit：270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67。新目标仅browser的named group/count/visible窄修，待固定源码复审、NOT_RUN。原1cd的b2初始化失败和b4真实fixture首定位器失败原样保留；root已接受b4失败与清理并要求该P2修复，完整feature仍UNKNOWN。Base：8d84d529a0756116bd0fc8bad969d61a6c26248e。
 历史f3限定源码结论：**APPROVED_SOURCE_SCOPED_NOT_RUN**，不自动批准上述新目标。Root 于 2026-10-06T18:25:38.301159Z 完成 f3a6 复审，源码无 blocking。该结论为18:25源码审查时点；后续 strict noEmit/direct37 的限定证据已独立接受，后续浏览器入口首次执行在CDP前失败、0界面断言，不构成完整功能或 main/deployment approval。
 
 ## 已执行的源码审查与历史
@@ -37,6 +37,10 @@ Root 于18:48:17 UTC给出[APPROVED_BROWSER_PREPARATION_SOURCE_SCOPED_NOT_RUN](.
 
 2026-10-06 19:19:59 UTC：已原样归档[Root b2准备限定批准](../../docs/evidence/wpf-message-settings/root-browser-b2-preparation-review.json)，不冒行为批准。第二次实际[raw与观察](../../docs/evidence/wpf-message-settings/browser-second-observation.json)绑定1cd/b41c，8551ms、累计13748、Chrome实际SIGTRAP且CDP初始化未完成，0界面断言；完整清理已确认。该b2运行后已获[Root限定证据核验](../../docs/evidence/wpf-message-settings/root-browser-b2-runtime-review.json)，只接受失败尝试与清理事实，不将source approval/noEmit/direct37升级完整功能批准；首次失败和原budget均保留。
 
-## 2026-10-06 20:09:02 UTC b4真实fixture首定位器失败（待独立证据核验）
+## 2026-10-06 20:09:02 UTC b4真实fixture首定位器失败（已限定证据核验）
 
 [原件/哈希索引](../../docs/evidence/wpf-message-settings/browser-third-observation.json)绑定同1cd/18ede。本次native边界已有精确接受，成功CDP连接/展示picker；browser.ts:81的group locator匹配4处而strict失败，checks=[]，未改断言/自动重试。父6861ms、累计20609/余39391，两个独立owned PGID与scratch清理完整。仅报告原事实，不自批整体；本轮不重跑types/direct37，完整feature UNKNOWN/main NOT_INTEGRATED。
+
+## 2026-10-06 20:11:18 UTC 当前locator修复复审入口
+
+只读 `270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67` 相对1cd的browser单点delta及[来源审计](../../docs/evidence/wpf-message-settings/browser-locator-fix-source.json)：named fieldset group恰1且visible，Adapter否定断言与其余行为原样，其他五源/19原件不变。[Root b4证据审](../../docs/evidence/wpf-message-settings/root-browser-b4-runtime-review.json)是实际失败与清理接受，不是本新delta批准。请勿运行旧consumedgate；预算20609/39391保持，新源码未运行。

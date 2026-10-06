@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS01：逐条消息设置选择控件
 
-状态：in-progress；创建：2026-10-06 18:11:03 UTC；最近更新：2026-10-06 20:09:02 UTC。直接父：[WPF-MATURE-02 / TODO-11](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)。本片为既有需求的受控选择控件，不另建大任务。
+状态：in-progress；创建：2026-10-06 18:11:03 UTC；最近更新：2026-10-06 20:11:18 UTC。直接父：[WPF-MATURE-02 / TODO-11](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)。本片为既有需求的受控选择控件，不另建大任务。
 
 ## 目标与范围
 
