@@ -1,11 +1,11 @@
 # I01 独立审查记录
 
-**状态：NOT_STARTED — 最终Web集成target待本次独立review；下列历史scope已分别通过，不自动覆盖新实现。**
+**状态：APPROVED — 仅针对最终review target da7ce435e03e7abad1227353e473a35a6e9b1349 的M1范围；后续metadata不自动扩大审查。**
 
 ## Target 与 scope
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Review target commit：由reviewer核验本次交付完整SHA填写；真实Web运行source `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`。
+- Review target commit：`da7ce435e03e7abad1227353e473a35a6e9b1349`；真实Web运行source `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`。
 - Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-integration`，branch `codex/m1-integration`。
 - 最终范围：948e6bc动态端口、W01/D01实现到交付metadata差异、根lock合入、`scripts/web-system-probe.ts`及其真实证据、[M1系统报告](../../docs/evidence/i01/m1-system.md)。既有W01/D01各自APPROVED实现不重复全套复审；重点核对组合是否改变公共契约与行为。
 
@@ -28,12 +28,16 @@
 | --- | --- | --- | --- | --- | --- |
 | I01-H1 | P2 | 已解决 | 最初缺真实SSE重连与旧status | 564febf新增真实HTTP代理断线重连，更新状态 | runner_owner复核通过 |
 | I01-H2 | P2 | 已解决 | native probe setup/cleanup失败可能泄漏进程 | 6434fba setup纳入finally、各清理独立deadline | runner_owner只读复审关闭；没重跑模型 |
-| I01-H3 | P2 | 待最终复核 | C01固定4320和dashboard冲突 | 948e6bc动态端口；受影响1/1及全检93/93通过 | 最终review核对差异 |
+| I01-H3 | P2 | 已解决 | C01固定4320和dashboard冲突 | 948e6bc动态端口；受影响1/1及全检93/93通过 | assignment_review独立核对通过 |
 
 ## 当前未执行与限制
 
-最终Web整合独立review尚未完成；main未集成。原始native预算5/5，禁止新增调用。恢复/跨机/掉电/容量限制见系统报告；flow.text/v1本次只证明明确非空/contains规则，不等同任意任务语义正确。最终浅色full-page capture出现屏外content-visibility遗漏，采用同实现首次有效浅色截图和最终深色窄屏，保持记录透明。
+最终Web整合独立review已通过；此记录落盘时main未集成。原始native预算5/5，禁止新增调用。恢复/跨机/掉电/容量限制见系统报告；flow.text/v1本次只证明明确非空/contains规则，不等同任意任务语义正确。最终浅色full-page capture出现屏外content-visibility遗漏，采用同实现首次有效浅色截图和最终深色窄屏，保持记录透明。
 
 ## 作者回应 / 最终复审
 
-待独立reviewer给出具体target、检查与结论后由owner如实落盘。
+assignment_review / gpt-6-astra 于2026-10-06 01:43 UTC给出APPROVE，起止target da7ce435 clean。独立确定性真实Web旅程10.27秒通过，原native JSON hash保留；W01/D01实现与已审版本无差异，公共core仅动态测试端口改变，锁patch反向dry-run通过。实际滚动查看浅色产物/verification并截图，确认屏内正常显示；导航前监听0详情、两次展开后2，弥补原probe过晚挂监听的非阻塞P3。未重新跑93全套或build（复核已有输出），未新增模型/跨机/容量/掉电测试。
+
+完整独立[审查报告](../../docs/evidence/i01/independent-final/review.md)、[真实复跑](../../docs/evidence/i01/independent-final/checks.json)、[滚动与请求核对](../../docs/evidence/i01/independent-final/scroll-check.json)。P3仍列为后续probe强化：listener移到导航前；本次独立补充证据已验证当前产品行为，不阻断M1。
+
+Owner接受结论，原始记录原样归档；未改产品代码或重复模型调用。

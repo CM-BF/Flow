@@ -2,17 +2,17 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 01:42 UTC / 2026-10-06 01:34 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 01:44 UTC / 2026-10-06 01:34 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-integration` |
 | Branch | `codex/m1-integration` |
 | 工作基线 / 本记录核验时HEAD | `647d57b4dfe84cfc242875ae010ac2d491ee80c8` / `f09bddae19da73fe7eb475e00a484f100748a551` |
 | 工作树dirty状态 | 本次Web证据/状态metadata待提交；实时Git由dashboard读取 |
-| 工作分支状态 | in-progress；C01/R01/L01/R02/W01/D01/LAB01交付已接收合入，真实Web闭环已通过，等待差异独立review |
+| 工作分支状态 | in-progress；C01/R01/L01/R02/W01/D01/LAB01交付已接收合入，真实Web闭环已通过，最终独立review已通过，准备main集成 |
 | 检查状态 | PASSED；`586840f`整合总检查typecheck及93/93，Web生产build通过；`de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`真实Web旅程通过，最终typecheck再通过；检查target须按证据分别核对 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；`0763d4653264b09ddd355c292fc8bd88dfc3c584`，应用尚未合入main |
-| Review | [review.md](review.md)；已有5个确定性场景及native cleanup独立复核；真实Web整合待review |
+| Review | [review.md](review.md)；已有5个确定性场景及native cleanup独立复核；APPROVED target da7ce435，独立真实Web重跑与请求/滚动检查通过 |
 
 ## TODO状态
 
@@ -33,11 +33,11 @@
 
 ## 阻塞 / 风险 / 未验证
 
-端口冲突已解除，当前无需要用户决定的阻塞。完整Web真实中心旅程和总检查已完成；最终差异独立review及main集成尚未完成。不证明DB硬故障/掉电、跨机、真实模型容量。运行中中心失联会保守中断adapter，uncertain保留占用且没有受审计核对恢复入口，见[恢复边界](../../docs/architecture/recovery-boundaries.md)。原生插件/技能仍加载，不能声称OS隔离或资源全部关闭。
+端口冲突已解除，当前无需要用户决定的阻塞。完整Web真实中心旅程和总检查已完成；最终差异独立review已通过，main集成正在执行。不证明DB硬故障/掉电、跨机、真实模型容量。运行中中心失联会保守中断adapter，uncertain保留占用且没有受审计核对恢复入口，见[恢复边界](../../docs/architecture/recovery-boundaries.md)。原生插件/技能仍加载，不能声称OS隔离或资源全部关闭。
 
 ## 下一步与handoff
 
-完成最终固定commit的差异独立review，然后按授权合入main。最终旅程task b8a001b0-5229-43e0-b704-9dbb66846916 / attempt a73af9f9-4fe2-48d0-b178-391c097f3d82；证据绑定de7d948。M1是持久执行基础，M2再验收统一跨任务决策/解释入口，不能据M1宣称最终心流体验实现。
+APPROVED da7ce435，按授权合入main；独立证据已归档。最终旅程task b8a001b0-5229-43e0-b704-9dbb66846916 / attempt a73af9f9-4fe2-48d0-b178-391c097f3d82；证据绑定de7d948。M1是持久执行基础，M2再验收统一跨任务决策/解释入口，不能据M1宣称最终心流体验实现。
 
 ## 需要用户决定
 
