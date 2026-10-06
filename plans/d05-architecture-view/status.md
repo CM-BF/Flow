@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:54 UTC / mainb4ab57c6 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:52 UTC / mainb4ab57c6 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -148,4 +148,4 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 
 2026-10-06 17:27 UTC：固定mainc843登记仅换载自有4320，单次HTTP200实际168来源，CHAT06P03 live/current/issues=[]、人读完整；[实采](../../docs/evidence/d05/chat06p03-live-receipt.json)。本次10,786ms聚合只作观察，不称SLO；个人服务/原tabs/固定架构均不变，0产品测试。
 
-2026-10-06 17:54 UTC：WPF-PROFILEC02独立树/合法4scope/唯一status已存在，登记第169来源，父MATURE02。只核registry与该source parser，不重跑工程或架构；实际服务尚未重载，不提前称169已可见。
+2026-10-06 17:52 UTC：WPF-PROFILEC02独立树/合法4scope/唯一status已存在，登记第169来源，父MATURE02。只核registry与该source parser，不重跑工程或架构；实际服务尚未重载，不提前称169已可见。
