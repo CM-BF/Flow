@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 14:46:08 UTC |
+| 最近更新时间 | 2026-10-06 14:48:21 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -15,15 +15,15 @@
 | 工作树 dirty 状态 | host两源/raw固定e6827d8a30fd103e34966a5d7298570545865057；metadata独立，聚合读取实际clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | host 21/21（14旧+7新）/strict局部0；真实TLA撤权1red保留，23own roots已清理；0PG/provider |
-| Review | NOT_STARTED e6827d8a30fd103e34966a5d7298570545865057（host双gate）；历史center/leaf APPROVED已main |
+| Review | APPROVED e6827d8a30fd103e34966a5d7298570545865057；Mika/gpt-6-astra 2026-10-06 14:47:23 UTC，0P1/P2 |
 | 已集成 main 状态 / HEAD | center a578八源已main56d90e8c36d48e6c23a796283f3b89d0d08e7294，默认factory/client/CLI未声称挂载；leaf bf3378+依赖f635已main2f16 |
 | 实现目标 | e6827d8a30fd103e34966a5d7298570545865057 |
 | 实现范围 | apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 异步加载期间撤权后阻止工具调用的改动已固定，局部验证通过，等待独立审查 |
-| 下一可用交付 | 独审通过后将双阶段当前权限核验接入主线 |
+| 当前产出 | 包加载与执行前分别核验当前权限的改动已独审通过，准备进入主线 |
+| 下一可用交付 | 将双阶段权限核验接入主线；中心实时授权和任务绑定仍是独立后继 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -103,3 +103,5 @@
 2026-10-06 14:44:50 UTC：真实TLA撤权red已固定46f40f736098f7072d548fc41165834fc4ad143d；本地host最小双gate实现后一次21/21/strict0，见[检查](../../docs/evidence/x01/host-gates-checks.json)/[质量](../../docs/evidence/x01/host-gates-quality.md)。两个授权phase共用冻结binding，拒绝/ACK未知保持原异常；0PG/provider/安装/新实际runner。独审尚未开始，新main未接。
 
 2026-10-06 14:46:08 UTC：host实现e6827d8a30fd103e34966a5d7298570545865057已冻结，[37项交审packet](../../docs/evidence/x01/host-gates-review-ready.md)准备独立review。当前21/strict通过不等于main能力；无新增检查，保留v5修复期。
+
+2026-10-06 14:48:21 UTC：接收Mika14:47:23对e6827d8a30fd103e34966a5d7298570545865057独立APPROVED；[稳定集成输入](../../docs/evidence/x01/host-gates-integration-ready.md)列两host源码、固定manifest/21与strict证据，0P1/P2。原源码/raw/support/manifest逐字保持、未重测；v5保留至正式main接收。完整X01原TODO未减少，中心live grant/runtime retained仍后继。

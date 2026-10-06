@@ -1,0 +1,45 @@
+{
+  "implementation": "e6827d8a30fd103e34966a5d7298570545865057",
+  "sourceBase": "8e520b7274a6d4112e91318c6eb5ba1758bf7c1c",
+  "reviewPacket": "0146ae16028b1e45912ecc67e2db7bbc8bee1e62",
+  "review": "host-gates-independent-review.json",
+  "reviewState": "APPROVED",
+  "manifest": "host-gates-manifest.json",
+  "manifestSha256": "04f863c9c6d26a402f595d456056f32741e0b57eb13bd63aa5acae4d937f4f2f",
+  "sources": [
+    {
+      "kind": "source",
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 6177,
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f"
+    },
+    {
+      "kind": "source",
+      "path": "apps/runner/src/plugins/host.test.ts",
+      "bytes": 16489,
+      "sha256": "b290c966c55d3c169416bd81f7e2529dd75d24436c061657dca6f29106baddcd"
+    }
+  ],
+  "localValidationConfig": "docs/evidence/x01/host-gates-tsconfig.json",
+  "validation": {
+    "hostSelected": 21,
+    "hostPassed": 21,
+    "old": 14,
+    "new": 7,
+    "strictNoEmitExit": 0,
+    "redTarget": "46f40f736098f7072d548fc41165834fc4ad143d",
+    "redFailed": 1,
+    "PG": 0,
+    "provider": 0
+  },
+  "dependency": "existing approved @flow/plugin-runtime package material reader; no dependency/schema changes",
+  "integrationInstructions": "Apply the two reviewed source blobs/delta under a fresh integration claim; compare current main host baseline before merge. No shared runtime/DTO/DB changes. This local callback requires load and invoke live checks, not an already-connected center endpoint.",
+  "mainState": "NOT_YET_RECEIVED",
+  "writerClaim": {
+    "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 5,
+    "state": "active",
+    "sourceWritingStopped": true
+  },
+  "recordedAt": "2026-10-06 14:48:21 UTC"
+}

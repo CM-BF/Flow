@@ -1,0 +1,24 @@
+{
+  "state": "APPROVED",
+  "reviewer": "Mika / gpt-6-astra",
+  "reviewedAt": "2026-10-06 14:47:23 UTC",
+  "target": "e6827d8a30fd103e34966a5d7298570545865057",
+  "packet": "0146ae16028b1e45912ecc67e2db7bbc8bee1e62",
+  "manifestSha256": "04f863c9c6d26a402f595d456056f32741e0b57eb13bd63aa5acae4d937f4f2f",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "verified": "37 Git/WT/hash/bytes bindings; 18 readonly equal base; full 2-source delta; real TLA red1; final single21=old14+new7; strict root options0; 23 exact own roots absent",
+  "reviewerExecutedTests": false,
+  "reviewerPG": 0,
+  "reviewerProvider": 0,
+  "scope": "local trusted self-owned host load/invoke current authorization gates",
+  "excluded": [
+    "center live grant endpoint",
+    "runtime retained wiring",
+    "persistent recovery",
+    "public vertical"
+  ],
+  "recordedAt": "2026-10-06 14:48:21 UTC"
+}
