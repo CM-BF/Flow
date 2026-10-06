@@ -1,6 +1,9 @@
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
 import { once } from 'node:events';
 import { spawn } from 'node:child_process';
+import { mkdtemp, writeFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
 import type { AddressInfo } from 'node:net';
 import { expect, it } from 'vitest';
 import { runCli } from './index.js';
@@ -138,4 +141,45 @@ it('does not swallow SIGINT while an ordinary CLI command waits for HTTP', async
       expect(await exited).toEqual([null, 'SIGINT']);
     } finally { child.kill('SIGKILL'); }
   });
+});
+
+it('reads cross-task activity and decisions without fetching folded details', async () => {
+  const requests: string[] = [];
+  await withCenter((request, response) => {
+    requests.push(request.url!);
+    response.writeHead(200, { 'content-type': 'application/json' });
+    response.end(JSON.stringify({ entries: [{ task: { id: 'task-2', title: 'Second task' }, entry: { kind: 'reference', reference: { id: 'artifact-2', title: 'Delivery' } } }], attention: [{ id: 'task-1', title: 'First task', pendingDecision: { id: 'decision-1', prompt: 'Approve release?' } }], tasksTruncated: false, attentionTruncated: false, projectionPending: false }));
+  }, async env => {
+    const output: string[] = [];
+    expect(await runCli(['workspace', '--after', '0', '--limit', '20'], { out: text => output.push(text), err() {} }, env)).toBe(0);
+    expect(output.join()).toContain('Second task: [Delivery] artifact-2');
+    expect(output.join()).toContain('Approve release? [decision decision-1]');
+  });
+  expect(requests).toEqual(['/api/workspace?after=0&limit=20']);
+});
+
+it('validates a recovery file and sends only an explicit safe retry using its stable key', async () => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'flow-cli-recovery-'));
+  const filename = path.join(directory, 'retry.json');
+  let received: unknown;
+  const input = { attemptId: 'old', ownerVersion: 3, resolutionId: 'audit-1', safety: { strategy: 'revised-work', prompt: 'Inspect existing delivery, do not repeat the external write.', evidence: { explanation: 'The write succeeded before its acknowledgement was lost.', references: [] } } };
+  try {
+    await writeFile(filename, JSON.stringify(input));
+    await withCenter(async (request, response) => {
+      expect(request.url).toBe('/api/tasks/task-1/reconciliation/retry');
+      expect(request.headers['idempotency-key']).toBe('safe-retry');
+      let body = '';
+      for await (const chunk of request) body += chunk;
+      received = JSON.parse(body);
+      response.writeHead(202, { 'content-type': 'application/json' });
+      response.end('{"task":{"id":"task-new"}}');
+    }, async env => {
+      const output: string[] = [];
+      expect(await runCli(['reconcile', 'retry', 'task-1', '--input', filename, '--key', 'safe-retry'], { out: text => output.push(text), err() {} }, env)).toBe(0);
+      expect(JSON.parse(output[0]!).task.id).toBe('task-new');
+      await writeFile(filename, JSON.stringify({ attemptId: 'old', ownerVersion: 3, resolutionId: 'audit-1' }));
+      expect(await runCli(['reconcile', 'retry', 'task-1', '--input', filename, '--key', 'unsafe'], { out() {}, err() {} }, env)).toBe(2);
+    });
+    expect(received).toEqual(input);
+  } finally { await rm(directory, { recursive: true, force: true }); }
 });

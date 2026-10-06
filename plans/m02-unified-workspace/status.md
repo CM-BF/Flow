@@ -2,23 +2,29 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:00 UTC / 2026-10-06 02:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 02:17 UTC / 2026-10-06 02:07 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-workspace` |
 | Branch | `codex/m2-workspace` |
 | 工作基线 / HEAD | `e845eb069c594989117fadf380335650efef27a2` / 启动时同基线 |
-| 工作树dirty状态 | 本次计划和契约工作段待提交 |
-| 工作分支状态 | in-progress |
+| 工作树dirty状态 | 公共工作入口/CLI首段待提交，实际HEAD另由Git记录 |
+| 工作分支状态 | in-progress；公共查询/CLI可交接口，产品Web整改由外部分队推进 |
 | 检查状态 | PASSED 公共 contracts/client 8/8；全库 typecheck 通过；中心行为由 C02 验证，未称系统恢复已完成 |
 | 已集成main状态 / HEAD | M02 尚未集成；main 观察值 `e845eb069c594989117fadf380335650efef27a2`，已有 M1 |
+| 阶段 | M2 |
+| 优先级 | 1 |
+| 当前产出 | 已能统一读取跨任务工作记录和待决策，正在接入产品界面 |
+| 下一可用交付 | 同一入口处理不同任务决策并查看证据 |
+| 当前阻塞 | NONE |
+| 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| M02-T01 | in-progress | Execution Lead | 公共 schema/client 首批完成，8/8 接口检查与 typecheck 通过；等待中心实现联调 |
-| M02-T02 | pending | Execution Lead | 未完成 |
-| M02-T03 | pending | Execution Lead | 未完成 |
+| M02-T01 | completed | Execution Lead | 公共 schema/client 首批完成，8/8 接口检查与 typecheck 通过；等待中心实现联调 |
+| M02-T02 | completed | Execution Lead | [公共接口](../../docs/architecture/m2-workspace.md)，5/5专用PG检查通过 |
+| M02-T03 | in-progress | Lead / 外部W01 | CLI已实现；Web owner等稳定接口交接 |
 | M02-T04 | pending | Execution Lead | 未执行 |
 | M02-T05 | pending | Execution Lead | 未执行 |
 
@@ -40,4 +46,6 @@
 
 ## Dashboard 同步
 
-本 status 是唯一手填事实源。新任务等待 Lead 登记聚合来源，不能把未注册显示成未开工。
+本 status 是唯一手填事实源。2026-10-06 02:07 UTC已在4320真实网页/API核验17源，新C02/P01/M02 live且0issues；无须手改生成JSON。
+
+2026-10-06 02:17 UTC：workspace 5/5专用flow_m02 PG检查（3.32s），CLI14+client3（1.26s），共享schema3，typecheck通过。真实测试边界见接口说明；没有UI/模型调用。C02独立review由Lead完成并滚动D03；P01等本提交queryTasks以解除必需ListTasks能力缺口。

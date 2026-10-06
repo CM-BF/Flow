@@ -1,5 +1,6 @@
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
 import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
+import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
 
 export class FlowApiError extends Error {
   constructor(public readonly status: number, public readonly code: string, message: string) {
@@ -27,6 +28,19 @@ export class FlowClient {
     const query = new URLSearchParams({ limit: String(options.limit ?? 40) });
     if (options.before) query.set('before', options.before);
     return this.request(`/api/tasks?${query}`);
+  }
+
+  workspace(options: WorkspaceQuery = {}, signal?: AbortSignal): Promise<WorkspacePage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'before', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/workspace${query.size ? `?${query}` : ''}`, { signal });
+  }
+
+  queryTasks(options: TaskIndexQuery = {}, signal?: AbortSignal): Promise<TaskIndexPage> {
+    const query = new URLSearchParams();
+    for (const name of ['limit', 'cursor', 'contextId', 'updatedAfter'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    if (options.statuses) query.set('statuses', options.statuses.join(','));
+    return this.request(`/api/task-index${query.size ? `?${query}` : ''}`, { signal });
   }
 
   show(id: string, signal?: AbortSignal): Promise<TaskSnapshot> { return this.request(`/api/tasks/${encodeURIComponent(id)}`, { signal }); }

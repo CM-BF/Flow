@@ -1,8 +1,9 @@
 import { parseArgs } from 'node:util';
 import { randomUUID } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
 import { FlowClient, FlowApiError } from '@flow/client';
 import { watchTask, taskLine } from './watch.js';
-import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, type TaskSubmission } from '@flow/contracts';
+import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, type TaskSubmission } from '@flow/contracts';
 
 export interface CliIO { out(text: string): void; err(text: string): void }
 const defaultIO: CliIO = { out: text => process.stdout.write(`${text}\n`), err: text => process.stderr.write(`${text}\n`) };
@@ -15,6 +16,7 @@ const options = {
   decision: { type: 'string' }, expect: { type: 'string' }, timeout: { type: 'string' },
   name: { type: 'string' }, capacity: { type: 'string' }, after: { type: 'string' },
   resume: { type: 'string' }, 'delay-ms': { type: 'string' },
+  before: { type: 'string' }, limit: { type: 'string' }, input: { type: 'string' },
 } as const;
 type Flags = ReturnType<typeof parseCliArgs>['values'];
 function parseCliArgs(args: string[]) { return parseArgs({ args, options, allowPositionals: true }); }
@@ -51,6 +53,17 @@ async function executeCommand(context: CommandContext): Promise<number> {
       print(result, result.tasks.map(taskLine).join('\n') || 'No tasks yet.');
       return 0;
     }
+    case 'workspace': {
+      const result = await client.workspace({
+        ...(values.after !== undefined ? { after: cursorNumber(values.after) } : {}),
+        ...(values.before !== undefined ? { before: positiveNumber(values.before, 'before') } : {}),
+        ...(values.limit !== undefined ? { limit: positiveNumber(values.limit, 'limit') } : {}),
+      }, context.signal);
+      const activity = result.entries.map(item => `${item.task.title}: ${item.entry.kind === 'text' ? item.entry.text : `[${item.entry.reference.title}] ${item.entry.reference.id}`}`).join('\n');
+      const attention = result.attention.map(task => `${task.title} (${task.id}): ${task.pendingDecision ? `${task.pendingDecision.prompt} [decision ${task.pendingDecision.id}]` : 'Execution is uncertain; inspect reconciliation before taking further action.'}`).join('\n');
+      print(result, `${activity || 'No recorded activity.'}\n${attention ? `\nNeeds your attention:\n${attention}` : '\nNo pending decisions.'}${result.tasksTruncated || result.attentionTruncated ? '\nThe task summary is bounded; use list for remaining tasks.' : ''}${result.projectionPending ? '\nMore saved activity is being projected; refresh to continue.' : ''}`);
+      return 0;
+    }
     case 'show': {
       const task = await client.show(required(id, 'task ID'));
       print(task, `${taskLine(task)}\n${task.entries.map(entry => entry.kind === 'text' ? entry.text : `[${entry.reference.title}] ${entry.reference.id}`).join('\n')}${task.pendingDecision ? `\nDecision ${task.pendingDecision.id}: ${task.pendingDecision.prompt}` : ''}`);
@@ -79,8 +92,34 @@ async function executeCommand(context: CommandContext): Promise<number> {
       return 0;
     }
     case 'runner': return runnerCommand(context);
+    case 'reconcile': return reconciliationCommand(context);
     default: throw new UsageError(`Unknown command: ${command}. Use --help.`);
   }
+}
+
+async function reconciliationCommand({ client, values, positionals, io }: CommandContext): Promise<number> {
+  const action = positionals[1];
+  const taskId = required(positionals[2], 'task ID');
+  if (action === 'show') { io.out(JSON.stringify(await client.reconciliation(taskId, values.after === undefined ? 0 : cursorNumber(values.after)))); return 0; }
+  if (!['observe', 'resolve', 'retry'].includes(action ?? '')) throw new UsageError('Use reconcile show|observe|resolve|retry <task-id>.');
+  const raw = await readFile(required(values.input, '--input JSON-file'), 'utf8');
+  if (Buffer.byteLength(raw) > 131_072) throw new UsageError('Reconciliation input must not exceed 128 KiB.');
+  let input: unknown;
+  try { input = JSON.parse(raw); } catch { throw new UsageError('--input must contain valid JSON.'); }
+  const key = required(values.key, '--key (stable command identifier)');
+  const result = action === 'observe'
+    ? await client.recordReconciliation(taskId, reconciliationObservationSchema.parse(input), key)
+    : action === 'resolve'
+      ? await client.resolveReconciliation(taskId, reconciliationResolutionSchema.parse(input), key)
+      : await client.retryReconciledTask(taskId, reconciliationRetrySchema.parse(input), key);
+  io.out(JSON.stringify(result));
+  return 0;
+}
+
+function cursorNumber(value: string): number {
+  const number = Number(value);
+  if (!Number.isSafeInteger(number) || number < 0) throw new UsageError('Cursor must be a nonnegative safe integer.');
+  return number;
 }
 
 async function runnerCommand({ client, values, positionals, io }: CommandContext): Promise<number> {
@@ -122,12 +161,15 @@ const HELP = `Flow — durable work, from your terminal
 Commands:
   submit "prompt" [--title title] [--harness fixture|claude] [--key key]
   list
+  workspace [--after cursor | --before cursor] [--limit count]
   show <task-id>
   watch <task-id> [--timeout milliseconds]
   decision <task-id> approve|reject --decision <decision-id>
   cancel <task-id>
   detail <reference-id>
   events <task-id> [--after cursor]
+  reconcile show <task-id> [--after audit-cursor]
+  reconcile observe|resolve|retry <task-id> --input JSON-file --key stable-key
   runner register --name name [--harness fixture|claude] [--capacity 1]
   runner revoke <runner-id>
 
