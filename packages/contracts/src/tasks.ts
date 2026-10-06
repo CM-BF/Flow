@@ -10,7 +10,10 @@ export const MAX_PAGE_SIZE = 100;
 export const MAX_DETAIL_BYTES = 1_048_576;
 export const MAX_BATCH_BYTES = 2_097_152;
 export const idSchema = z.string().min(1).max(128);
-export const referenceSchema = z.strictObject({ id: idSchema, title: z.string().min(1).max(180) });
+export const referenceSchema = z.strictObject({
+  id: idSchema, title: z.string().min(1).max(180),
+  activity: z.strictObject({ kind: z.literal('native-activity'), activityId: idSchema }).optional(),
+});
 export const verificationRuleSchema = z.discriminatedUnion('kind', [
   z.strictObject({ kind: z.literal('nonempty') }),
   z.strictObject({ kind: z.literal('contains'), expected: z.string().min(1).max(500) }),
