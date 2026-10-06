@@ -1,0 +1,1288 @@
+{
+  "at": "2026-10-06T19:03:29.378987+00:00",
+  "mode": "static import/re-export literal traversal only, not TypeScript evaluation",
+  "fixedBackend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "entries": [
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/execution-profiles.ts",
+    "apps/runner/src/verifier.ts"
+  ],
+  "files": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/verifier.ts",
+      "relative": "apps/runner/src/verifier.ts",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/execution-profiles.ts",
+      "relative": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/claude.ts",
+      "relative": "apps/runner/src/native-harness/claude.ts",
+      "bytes": 3286,
+      "sha256": "fc4626777e2d3215a10280c3047cd0b6384e0c43ada39496273461b22bb7d135"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/descriptor.ts",
+      "relative": "apps/runner/src/native-harness/descriptor.ts",
+      "bytes": 1064,
+      "sha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/claude.ts",
+      "relative": "apps/runner/src/claude.ts",
+      "bytes": 19269,
+      "sha256": "3659f874a9ac06963cedb426068fdd481227e861abb9be19c22a68f4844a4439"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-activity/index.ts",
+      "relative": "apps/runner/src/native-activity/index.ts",
+      "bytes": 4127,
+      "sha256": "247967f51d31bb5e6b76cca83ef143f9efe86981520c6e178b1ff9a1505f925e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/native-activity.ts",
+      "relative": "packages/contracts/src/native-activity.ts",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/tasks.ts",
+      "relative": "packages/contracts/src/tasks.ts",
+      "bytes": 5369,
+      "sha256": "6e30e7fc7c3f6852911d42b58c2db3960868f13f6d80b11b0e9abd3ee0e393be"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/harnesses.ts",
+      "relative": "packages/contracts/src/harnesses.ts",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/execution-profiles.ts",
+      "relative": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 9174,
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/protocol-task.ts",
+      "relative": "packages/contracts/src/protocol-task.ts",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/engineering.ts",
+      "relative": "packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/engineering-profile.ts",
+      "relative": "packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/assistant-stream/index.ts",
+      "relative": "apps/runner/src/assistant-stream/index.ts",
+      "bytes": 3795,
+      "sha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/assistant-stream.ts",
+      "relative": "packages/contracts/src/assistant-stream.ts",
+      "bytes": 4993,
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/assistant-stream/accumulator.ts",
+      "relative": "apps/runner/src/assistant-stream/accumulator.ts",
+      "bytes": 9939,
+      "sha256": "774b8905671370d8e70558a741d8f1e0fe8e7ab0ec9946489e3641f8a7a69792"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/active-steering/host.ts",
+      "relative": "apps/runner/src/active-steering/host.ts",
+      "bytes": 7143,
+      "sha256": "72f6d236f3b295e32f9d63365f7976017b0305faa254cb89ae1a06abeac66923"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/active-steering/state.ts",
+      "relative": "apps/runner/src/active-steering/state.ts",
+      "bytes": 2511,
+      "sha256": "6b03718a65845f191744918ea4910fac7301da83667d0e95867a47dac5d92e08"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/active-steering.ts",
+      "relative": "packages/contracts/src/active-steering.ts",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/active-steering/input.ts",
+      "relative": "apps/runner/src/active-steering/input.ts",
+      "bytes": 1460,
+      "sha256": "ef3adcdfc2ec84984fa9fb6fc0d84fbf80ca23f14ce2406919e5bf5919b48c02"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/index.ts",
+      "relative": "packages/client/src/index.ts",
+      "bytes": 44108,
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/conversation-acknowledgement.ts",
+      "relative": "packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 11246,
+      "sha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/index.ts",
+      "relative": "packages/contracts/src/index.ts",
+      "bytes": 1227,
+      "sha256": "15b003d0132513cd8ac65471c4d88d066ca3219601e906a9c1bab4e1ed58d63f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-tool-runs.ts",
+      "relative": "packages/contracts/src/goal-tool-runs.ts",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/runner.ts",
+      "relative": "packages/contracts/src/runner.ts",
+      "bytes": 7140,
+      "sha256": "cdb2af7c7db16252b09e15cbd872b4f3edd29b19ccfbac197362bc5d59751447"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/assistant.ts",
+      "relative": "packages/contracts/src/assistant.ts",
+      "bytes": 4054,
+      "sha256": "a43b555855966d79f1f80d4e350d4f9b4bd1264e809e07f96f934a55ee5327c3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/context-observation-event.ts",
+      "relative": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goals.ts",
+      "relative": "packages/contracts/src/goals.ts",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/projects.ts",
+      "relative": "packages/contracts/src/projects.ts",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-context.ts",
+      "relative": "packages/contracts/src/goal-context.ts",
+      "bytes": 1443,
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/knowledge.ts",
+      "relative": "packages/contracts/src/knowledge.ts",
+      "bytes": 4414,
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-graph-runs.ts",
+      "relative": "packages/contracts/src/goal-graph-runs.ts",
+      "bytes": 5200,
+      "sha256": "d1bff3839b05af2ca348b95cc70f96017bdb746d6729b6456e2fcbf9ca7008b4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-graph-proposals.ts",
+      "relative": "packages/contracts/src/goal-graph-proposals.ts",
+      "bytes": 2888,
+      "sha256": "b6da9b983a2a69d7c444e90212f6079f37f59e9a3d654af773e6b0685b88b15c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/protocol-dispatch.ts",
+      "relative": "packages/contracts/src/protocol-dispatch.ts",
+      "bytes": 2063,
+      "sha256": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/fixtures.ts",
+      "relative": "packages/contracts/src/fixtures.ts",
+      "bytes": 1211,
+      "sha256": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/conversation-context.ts",
+      "relative": "packages/contracts/src/conversation-context.ts",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/attachments.ts",
+      "relative": "packages/contracts/src/attachments.ts",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/plugin-package-fetches.ts",
+      "relative": "packages/contracts/src/plugin-package-fetches.ts",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/conversation-queue.ts",
+      "relative": "packages/contracts/src/conversation-queue.ts",
+      "bytes": 3951,
+      "sha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-delivery.ts",
+      "relative": "packages/contracts/src/goal-delivery.ts",
+      "bytes": 4968,
+      "sha256": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/runner-maintenance.ts",
+      "relative": "packages/contracts/src/runner-maintenance.ts",
+      "bytes": 1600,
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/conversations.ts",
+      "relative": "packages/contracts/src/conversations.ts",
+      "bytes": 6138,
+      "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/plugins.ts",
+      "relative": "packages/contracts/src/plugins.ts",
+      "bytes": 4885,
+      "sha256": "c9bae366a4fa69a28e103c559ef51ea3ad21a99597ad69adc776c62723fd7747"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/workspace.ts",
+      "relative": "packages/contracts/src/workspace.ts",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/reconciliation.ts",
+      "relative": "packages/contracts/src/reconciliation.ts",
+      "bytes": 2903,
+      "sha256": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/context-observation-history.ts",
+      "relative": "packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/context-transparency.ts",
+      "relative": "packages/contracts/src/context-transparency.ts",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-native-executions.ts",
+      "relative": "packages/contracts/src/goal-native-executions.ts",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tool-bridge/policy.ts",
+      "relative": "apps/runner/src/goal-tool-bridge/policy.ts",
+      "bytes": 3283,
+      "sha256": "de9813a38e32b434a758901a32f199850df14153fed925f1e9a9cb2361f3272c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-graph-tools/mcp.ts",
+      "relative": "apps/runner/src/goal-graph-tools/mcp.ts",
+      "bytes": 2307,
+      "sha256": "df1b2c75c4042bee4ea01179f51af452465ec8b01707a3cdf41946a1b6338298"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools-mcp/result.ts",
+      "relative": "apps/runner/src/goal-tools-mcp/result.ts",
+      "bytes": 1425,
+      "sha256": "8d3e748884a5d4992f9d97df8e9ad1cc5ceb90e42c7b63c2254bf5d0428501ed"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools/index.ts",
+      "relative": "apps/runner/src/goal-tools/index.ts",
+      "bytes": 2085,
+      "sha256": "1def37a4dcc48150687305ed15994ab2d49ce4a5f7e518b9ab992d9acc1b09ce"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools-mcp/index.ts",
+      "relative": "apps/runner/src/goal-tools-mcp/index.ts",
+      "bytes": 1973,
+      "sha256": "ea7e09187645327f83ece4963a6ca3e7cfd56001c371ea65826e797285cf2af8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools-mcp/read.ts",
+      "relative": "apps/runner/src/goal-tools-mcp/read.ts",
+      "bytes": 4353,
+      "sha256": "fe3deb991e871c34871114b1774d6aec3d6bf97d344fd39be2cd7250322c1471"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/runtime.ts",
+      "relative": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/admission-journal.ts",
+      "relative": "apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/outbox.ts",
+      "relative": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/active-steering/proposal.ts",
+      "relative": "apps/runner/src/active-steering/proposal.ts",
+      "bytes": 3388,
+      "sha256": "45a8502e8d07c861210976de19ec90c6361f26d1a63994007a4fcaf10199da02"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/fixture.ts",
+      "relative": "apps/runner/src/fixture.ts",
+      "bytes": 2615,
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/attempt-control.ts",
+      "relative": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-graph-tools/bind.ts",
+      "relative": "apps/runner/src/goal-graph-tools/bind.ts",
+      "bytes": 1572,
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tool-bridge/authority.ts",
+      "relative": "apps/runner/src/goal-tool-bridge/authority.ts",
+      "bytes": 1281,
+      "sha256": "5f005fdd53eaf8974498bb20e42af558e0381897e78e7ca0162e781c8d357d5e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/settlement.ts",
+      "relative": "apps/runner/src/native-harness/settlement.ts",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tool-bridge/index.ts",
+      "relative": "apps/runner/src/goal-tool-bridge/index.ts",
+      "bytes": 2175,
+      "sha256": "77f540e0d82bc3519daac4f2faaf36f0ee97e3a9fc8c14d86cc37cbb402e5c6a"
+    }
+  ],
+  "edges": [
+    {
+      "from": "apps/runner/src/execution-profiles.ts",
+      "specifier": "@flow/client",
+      "to": "packages/client/src/index.ts"
+    },
+    {
+      "from": "apps/runner/src/execution-profiles.ts",
+      "specifier": "./verifier.js",
+      "to": "apps/runner/src/verifier.ts"
+    },
+    {
+      "from": "apps/runner/src/execution-profiles.ts",
+      "specifier": "../../../packages/contracts/src/execution-profiles.js",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "apps/runner/src/execution-profiles.ts",
+      "specifier": "./native-harness/claude.js",
+      "to": "apps/runner/src/native-harness/claude.ts"
+    },
+    {
+      "from": "apps/runner/src/native-harness/claude.ts",
+      "specifier": "../../../../packages/contracts/src/execution-profiles.js",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "apps/runner/src/native-harness/claude.ts",
+      "specifier": "../verifier.js",
+      "to": "apps/runner/src/verifier.ts"
+    },
+    {
+      "from": "apps/runner/src/native-harness/claude.ts",
+      "specifier": "../claude.js",
+      "to": "apps/runner/src/claude.ts"
+    },
+    {
+      "from": "apps/runner/src/native-harness/claude.ts",
+      "specifier": "./descriptor.js",
+      "to": "apps/runner/src/native-harness/descriptor.ts"
+    },
+    {
+      "from": "apps/runner/src/claude.ts",
+      "specifier": "@flow/contracts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "apps/runner/src/claude.ts",
+      "specifier": "../../../packages/contracts/src/assistant.js",
+      "to": "packages/contracts/src/assistant.ts"
+    },
+    {
+      "from": "apps/runner/src/claude.ts",
+      "specifier": "./goal-tool-bridge/policy.js",
+      "to": "apps/runner/src/goal-tool-bridge/policy.ts"
+    },
+    {
+      "from": "apps/runner/src/claude.ts",
+      "specifier": "./active-steering/host.js",
+      "to": "apps/runner/src/active-steering/host.ts"
+    },
+    {
+      "from": "apps/runner/src/claude.ts",
+      "specifier": "./verifier.js",
+      "to": "apps/runner/src/verifier.ts"
+    },
+    {
+      "from": "apps/runner/src/claude.ts",
+      "specifier": "./assistant-stream/index.js",
+      "to": "apps/runner/src/assistant-stream/index.ts"
+    },
+    {
+      "from": "apps/runner/src/claude.ts",
+      "specifier": "./native-activity/index.js",
+      "to": "apps/runner/src/native-activity/index.ts"
+    },
+    {
+      "from": "apps/runner/src/native-activity/index.ts",
+      "specifier": "../../../../packages/contracts/src/native-activity.js",
+      "to": "packages/contracts/src/native-activity.ts"
+    },
+    {
+      "from": "packages/contracts/src/native-activity.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/tasks.ts",
+      "specifier": "./engineering.js",
+      "to": "packages/contracts/src/engineering.ts"
+    },
+    {
+      "from": "packages/contracts/src/tasks.ts",
+      "specifier": "./protocol-task.js",
+      "to": "packages/contracts/src/protocol-task.ts"
+    },
+    {
+      "from": "packages/contracts/src/tasks.ts",
+      "specifier": "./execution-profiles.js",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/tasks.ts",
+      "specifier": "./harnesses.js",
+      "to": "packages/contracts/src/harnesses.ts"
+    },
+    {
+      "from": "packages/contracts/src/engineering.ts",
+      "specifier": "./engineering-profile.js",
+      "to": "packages/contracts/src/engineering-profile.ts"
+    },
+    {
+      "from": "packages/contracts/src/engineering.ts",
+      "specifier": "./execution-profiles.js",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/engineering-profile.ts",
+      "specifier": "./execution-profiles.js",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "apps/runner/src/assistant-stream/index.ts",
+      "specifier": "./accumulator.js",
+      "to": "apps/runner/src/assistant-stream/accumulator.ts"
+    },
+    {
+      "from": "apps/runner/src/assistant-stream/index.ts",
+      "specifier": "../../../../packages/contracts/src/assistant-stream.js",
+      "to": "packages/contracts/src/assistant-stream.ts"
+    },
+    {
+      "from": "packages/contracts/src/assistant-stream.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "apps/runner/src/assistant-stream/accumulator.ts",
+      "specifier": "../../../../packages/contracts/src/assistant-stream.js",
+      "to": "packages/contracts/src/assistant-stream.ts"
+    },
+    {
+      "from": "apps/runner/src/active-steering/host.ts",
+      "specifier": "@flow/client",
+      "to": "packages/client/src/index.ts"
+    },
+    {
+      "from": "apps/runner/src/active-steering/host.ts",
+      "specifier": "../verifier.js",
+      "to": "apps/runner/src/verifier.ts"
+    },
+    {
+      "from": "apps/runner/src/active-steering/host.ts",
+      "specifier": "./input.js",
+      "to": "apps/runner/src/active-steering/input.ts"
+    },
+    {
+      "from": "apps/runner/src/active-steering/host.ts",
+      "specifier": "./state.js",
+      "to": "apps/runner/src/active-steering/state.ts"
+    },
+    {
+      "from": "apps/runner/src/active-steering/state.ts",
+      "specifier": "../verifier.js",
+      "to": "apps/runner/src/verifier.ts"
+    },
+    {
+      "from": "apps/runner/src/active-steering/state.ts",
+      "specifier": "../../../../packages/contracts/src/active-steering.js",
+      "to": "packages/contracts/src/active-steering.ts"
+    },
+    {
+      "from": "packages/contracts/src/active-steering.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "specifier": "@flow/contracts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "specifier": "./conversation-acknowledgement.js",
+      "to": "packages/client/src/conversation-acknowledgement.ts"
+    },
+    {
+      "from": "packages/client/src/conversation-acknowledgement.ts",
+      "specifier": "@flow/contracts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./context-transparency.js",
+      "to": "packages/contracts/src/context-transparency.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./attachments.js",
+      "to": "packages/contracts/src/attachments.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./goal-native-executions.js",
+      "to": "packages/contracts/src/goal-native-executions.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./context-observation-history.js",
+      "to": "packages/contracts/src/context-observation-history.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./native-activity.js",
+      "to": "packages/contracts/src/native-activity.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./reconciliation.js",
+      "to": "packages/contracts/src/reconciliation.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./projects.js",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./workspace.js",
+      "to": "packages/contracts/src/workspace.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./plugins.js",
+      "to": "packages/contracts/src/plugins.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./assistant-stream.js",
+      "to": "packages/contracts/src/assistant-stream.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./conversations.js",
+      "to": "packages/contracts/src/conversations.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./runner-maintenance.js",
+      "to": "packages/contracts/src/runner-maintenance.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./assistant.js",
+      "to": "packages/contracts/src/assistant.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./goal-context.js",
+      "to": "packages/contracts/src/goal-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./goal-delivery.js",
+      "to": "packages/contracts/src/goal-delivery.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./conversation-queue.js",
+      "to": "packages/contracts/src/conversation-queue.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./plugin-package-fetches.js",
+      "to": "packages/contracts/src/plugin-package-fetches.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./goal-graph-proposals.js",
+      "to": "packages/contracts/src/goal-graph-proposals.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./context-observation-event.js",
+      "to": "packages/contracts/src/context-observation-event.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./runner.js",
+      "to": "packages/contracts/src/runner.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./conversation-context.js",
+      "to": "packages/contracts/src/conversation-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./harnesses.js",
+      "to": "packages/contracts/src/harnesses.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./goals.js",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./fixtures.js",
+      "to": "packages/contracts/src/fixtures.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./knowledge.js",
+      "to": "packages/contracts/src/knowledge.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./engineering-profile.js",
+      "to": "packages/contracts/src/engineering-profile.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./protocol-dispatch.js",
+      "to": "packages/contracts/src/protocol-dispatch.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./goal-graph-runs.js",
+      "to": "packages/contracts/src/goal-graph-runs.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./active-steering.js",
+      "to": "packages/contracts/src/active-steering.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./execution-profiles.js",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "specifier": "./goal-tool-runs.js",
+      "to": "packages/contracts/src/goal-tool-runs.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-tool-runs.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-tool-runs.ts",
+      "specifier": "./goals.js",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-tool-runs.ts",
+      "specifier": "./execution-profiles.js",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-tool-runs.ts",
+      "specifier": "./runner.js",
+      "to": "packages/contracts/src/runner.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "specifier": "./engineering.js",
+      "to": "packages/contracts/src/engineering.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "specifier": "./assistant-stream.js",
+      "to": "packages/contracts/src/assistant-stream.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "specifier": "./active-steering.js",
+      "to": "packages/contracts/src/active-steering.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "specifier": "./context-observation-event.js",
+      "to": "packages/contracts/src/context-observation-event.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "specifier": "./assistant.js",
+      "to": "packages/contracts/src/assistant.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "specifier": "./native-activity.js",
+      "to": "packages/contracts/src/native-activity.ts"
+    },
+    {
+      "from": "packages/contracts/src/assistant.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goals.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goals.ts",
+      "specifier": "./goal-context.js",
+      "to": "packages/contracts/src/goal-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/goals.ts",
+      "specifier": "./projects.js",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/projects.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-context.ts",
+      "specifier": "./knowledge.js",
+      "to": "packages/contracts/src/knowledge.ts"
+    },
+    {
+      "from": "packages/contracts/src/knowledge.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-runs.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-runs.ts",
+      "specifier": "./projects.js",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-runs.ts",
+      "specifier": "./goal-graph-proposals.js",
+      "to": "packages/contracts/src/goal-graph-proposals.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-runs.ts",
+      "specifier": "./execution-profiles.js",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-runs.ts",
+      "specifier": "./runner.js",
+      "to": "packages/contracts/src/runner.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-proposals.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-proposals.ts",
+      "specifier": "./projects.js",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/protocol-dispatch.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/protocol-dispatch.ts",
+      "specifier": "./protocol-task.js",
+      "to": "packages/contracts/src/protocol-task.ts"
+    },
+    {
+      "from": "packages/contracts/src/protocol-dispatch.ts",
+      "specifier": "./runner.js",
+      "to": "packages/contracts/src/runner.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-context.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-context.ts",
+      "specifier": "./knowledge.js",
+      "to": "packages/contracts/src/knowledge.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-context.ts",
+      "specifier": "./attachments.js",
+      "to": "packages/contracts/src/attachments.ts"
+    },
+    {
+      "from": "packages/contracts/src/attachments.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-queue.ts",
+      "specifier": "./conversation-context.js",
+      "to": "packages/contracts/src/conversation-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-queue.ts",
+      "specifier": "./attachments.js",
+      "to": "packages/contracts/src/attachments.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-queue.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-delivery.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-delivery.ts",
+      "specifier": "./projects.js",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner-maintenance.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversations.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversations.ts",
+      "specifier": "./attachments.js",
+      "to": "packages/contracts/src/attachments.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversations.ts",
+      "specifier": "./execution-profiles.js",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversations.ts",
+      "specifier": "./conversation-context.js",
+      "to": "packages/contracts/src/conversation-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugins.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/reconciliation.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-observation-history.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-observation-history.ts",
+      "specifier": "./knowledge.js",
+      "to": "packages/contracts/src/knowledge.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-observation-history.ts",
+      "specifier": "./context-transparency.js",
+      "to": "packages/contracts/src/context-transparency.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-transparency.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-transparency.ts",
+      "specifier": "./knowledge.js",
+      "to": "packages/contracts/src/knowledge.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-transparency.ts",
+      "specifier": "./execution-profiles.js",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-transparency.ts",
+      "specifier": "./harnesses.js",
+      "to": "packages/contracts/src/harnesses.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-native-executions.ts",
+      "specifier": "./projects.js",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-native-executions.ts",
+      "specifier": "./goals.js",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-native-executions.ts",
+      "specifier": "./tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-native-executions.ts",
+      "specifier": "./execution-profiles.js",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tool-bridge/policy.ts",
+      "specifier": "../goal-tools-mcp/index.js",
+      "to": "apps/runner/src/goal-tools-mcp/index.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tool-bridge/policy.ts",
+      "specifier": "../goal-graph-tools/mcp.js",
+      "to": "apps/runner/src/goal-graph-tools/mcp.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-graph-tools/mcp.ts",
+      "specifier": "../../../../packages/contracts/src/tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-graph-tools/mcp.ts",
+      "specifier": "../../../../packages/contracts/src/goal-graph-runs.js",
+      "to": "packages/contracts/src/goal-graph-runs.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-graph-tools/mcp.ts",
+      "specifier": "../goal-tools-mcp/result.js",
+      "to": "apps/runner/src/goal-tools-mcp/result.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tools-mcp/result.ts",
+      "specifier": "@flow/client",
+      "to": "packages/client/src/index.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tools-mcp/result.ts",
+      "specifier": "../goal-tools/index.js",
+      "to": "apps/runner/src/goal-tools/index.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tools/index.ts",
+      "specifier": "../../../../packages/contracts/src/goals.js",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tools-mcp/index.ts",
+      "specifier": "./result.js",
+      "to": "apps/runner/src/goal-tools-mcp/result.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tools-mcp/index.ts",
+      "specifier": "../goal-tools/index.js",
+      "to": "apps/runner/src/goal-tools/index.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tools-mcp/index.ts",
+      "specifier": "../../../../packages/contracts/src/goals.js",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tools-mcp/index.ts",
+      "specifier": "./read.js",
+      "to": "apps/runner/src/goal-tools-mcp/read.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tools-mcp/read.ts",
+      "specifier": "../../../../packages/contracts/src/tasks.js",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tools-mcp/read.ts",
+      "specifier": "./result.js",
+      "to": "apps/runner/src/goal-tools-mcp/result.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tools-mcp/read.ts",
+      "specifier": "../goal-tools/index.js",
+      "to": "apps/runner/src/goal-tools/index.ts"
+    },
+    {
+      "from": "apps/runner/src/runtime.ts",
+      "specifier": "./goal-tool-bridge/index.js",
+      "to": "apps/runner/src/goal-tool-bridge/index.ts"
+    },
+    {
+      "from": "apps/runner/src/runtime.ts",
+      "specifier": "@flow/client",
+      "to": "packages/client/src/index.ts"
+    },
+    {
+      "from": "apps/runner/src/runtime.ts",
+      "specifier": "./native-harness/settlement.js",
+      "to": "apps/runner/src/native-harness/settlement.ts"
+    },
+    {
+      "from": "apps/runner/src/runtime.ts",
+      "specifier": "./outbox.js",
+      "to": "apps/runner/src/outbox.ts"
+    },
+    {
+      "from": "apps/runner/src/runtime.ts",
+      "specifier": "./goal-graph-tools/bind.js",
+      "to": "apps/runner/src/goal-graph-tools/bind.ts"
+    },
+    {
+      "from": "apps/runner/src/runtime.ts",
+      "specifier": "./attempt-control.js",
+      "to": "apps/runner/src/attempt-control.ts"
+    },
+    {
+      "from": "apps/runner/src/runtime.ts",
+      "specifier": "./verifier.js",
+      "to": "apps/runner/src/verifier.ts"
+    },
+    {
+      "from": "apps/runner/src/runtime.ts",
+      "specifier": "./active-steering/proposal.js",
+      "to": "apps/runner/src/active-steering/proposal.ts"
+    },
+    {
+      "from": "apps/runner/src/runtime.ts",
+      "specifier": "./fixture.js",
+      "to": "apps/runner/src/fixture.ts"
+    },
+    {
+      "from": "apps/runner/src/runtime.ts",
+      "specifier": "./admission-journal.js",
+      "to": "apps/runner/src/admission-journal.ts"
+    },
+    {
+      "from": "apps/runner/src/admission-journal.ts",
+      "specifier": "./outbox.js",
+      "to": "apps/runner/src/outbox.ts"
+    },
+    {
+      "from": "apps/runner/src/outbox.ts",
+      "specifier": "../../../packages/contracts/src/runner.js",
+      "to": "packages/contracts/src/runner.ts"
+    },
+    {
+      "from": "apps/runner/src/outbox.ts",
+      "specifier": "@flow/contracts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "apps/runner/src/outbox.ts",
+      "specifier": "@flow/client",
+      "to": "packages/client/src/index.ts"
+    },
+    {
+      "from": "apps/runner/src/outbox.ts",
+      "specifier": "./active-steering/proposal.js",
+      "to": "apps/runner/src/active-steering/proposal.ts"
+    },
+    {
+      "from": "apps/runner/src/active-steering/proposal.ts",
+      "specifier": "@flow/contracts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "apps/runner/src/active-steering/proposal.ts",
+      "specifier": "../../../../packages/contracts/src/runner.js",
+      "to": "packages/contracts/src/runner.ts"
+    },
+    {
+      "from": "apps/runner/src/fixture.ts",
+      "specifier": "./verifier.js",
+      "to": "apps/runner/src/verifier.ts"
+    },
+    {
+      "from": "apps/runner/src/attempt-control.ts",
+      "specifier": "@flow/client",
+      "to": "packages/client/src/index.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-graph-tools/bind.ts",
+      "specifier": "../../../../packages/contracts/src/goal-graph-runs.js",
+      "to": "packages/contracts/src/goal-graph-runs.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-graph-tools/bind.ts",
+      "specifier": "../goal-tool-bridge/authority.js",
+      "to": "apps/runner/src/goal-tool-bridge/authority.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tool-bridge/index.ts",
+      "specifier": "./authority.js",
+      "to": "apps/runner/src/goal-tool-bridge/authority.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tool-bridge/index.ts",
+      "specifier": "../goal-tools/index.js",
+      "to": "apps/runner/src/goal-tools/index.ts"
+    },
+    {
+      "from": "apps/runner/src/goal-tool-bridge/index.ts",
+      "specifier": "../../../../packages/contracts/src/goal-tool-runs.js",
+      "to": "packages/contracts/src/goal-tool-runs.ts"
+    }
+  ],
+  "bareImports": {
+    "@flow/client": [
+      "apps/runner/src/execution-profiles.ts",
+      "apps/runner/src/active-steering/host.ts",
+      "apps/runner/src/goal-tools-mcp/result.ts",
+      "apps/runner/src/runtime.ts",
+      "apps/runner/src/outbox.ts",
+      "apps/runner/src/attempt-control.ts"
+    ],
+    "@flow/contracts": [
+      "apps/runner/src/claude.ts",
+      "packages/client/src/index.ts",
+      "packages/client/src/conversation-acknowledgement.ts",
+      "apps/runner/src/outbox.ts",
+      "apps/runner/src/active-steering/proposal.ts"
+    ],
+    "@anthropic-ai/claude-agent-sdk": [
+      "apps/runner/src/claude.ts",
+      "apps/runner/src/goal-graph-tools/mcp.ts",
+      "apps/runner/src/goal-tools-mcp/index.ts"
+    ],
+    "zod": [
+      "packages/contracts/src/native-activity.ts",
+      "packages/contracts/src/tasks.ts",
+      "packages/contracts/src/harnesses.ts",
+      "packages/contracts/src/execution-profiles.ts",
+      "packages/contracts/src/protocol-task.ts",
+      "packages/contracts/src/engineering.ts",
+      "packages/contracts/src/engineering-profile.ts",
+      "packages/contracts/src/assistant-stream.ts",
+      "packages/contracts/src/active-steering.ts",
+      "packages/contracts/src/goal-tool-runs.ts",
+      "packages/contracts/src/runner.ts",
+      "packages/contracts/src/assistant.ts",
+      "packages/contracts/src/context-observation-event.ts",
+      "packages/contracts/src/goals.ts",
+      "packages/contracts/src/projects.ts",
+      "packages/contracts/src/goal-context.ts",
+      "packages/contracts/src/knowledge.ts",
+      "packages/contracts/src/goal-graph-runs.ts",
+      "packages/contracts/src/goal-graph-proposals.ts",
+      "packages/contracts/src/protocol-dispatch.ts",
+      "packages/contracts/src/conversation-context.ts",
+      "packages/contracts/src/attachments.ts",
+      "packages/contracts/src/plugin-package-fetches.ts",
+      "packages/contracts/src/conversation-queue.ts",
+      "packages/contracts/src/goal-delivery.ts",
+      "packages/contracts/src/runner-maintenance.ts",
+      "packages/contracts/src/conversations.ts",
+      "packages/contracts/src/plugins.ts",
+      "packages/contracts/src/workspace.ts",
+      "packages/contracts/src/reconciliation.ts",
+      "packages/contracts/src/context-observation-history.ts",
+      "packages/contracts/src/context-transparency.ts",
+      "packages/contracts/src/goal-native-executions.ts",
+      "apps/runner/src/goal-graph-tools/mcp.ts",
+      "apps/runner/src/goal-tools-mcp/read.ts",
+      "apps/runner/src/admission-journal.ts"
+    ]
+  },
+  "missingRelative": [],
+  "limitations": [
+    "Type-only import declarations are omitted; mixed imports conservatively retained.",
+    "Nonliteral runtime imports would require explicit inspection; none observed in these module entry declarations.",
+    "Third-party module internals remain existing pinned installations; no query/startup called."
+  ],
+  "expectedAdditionalAliases": [
+    "@flow/client own fixed packages/client",
+    "@anthropic-ai/claude-agent-sdk existing0.3.290 donor required via execution-profiles re-export native-harness/claude→claude.ts"
+  ]
+}

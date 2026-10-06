@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:58 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:06 UTC |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -15,13 +15,13 @@
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 两份保留网页的检查准备已通过独立审查；实际页面兼容结果仍待隔离运行。 |
-| 下一可用交付 | 当前Web检查归还资源后，执行一次两份保留网页的真实检查；尚无通过报告。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 第一次隔离检查在页面启动前发现后台runner依赖缺件，现场已完整清理；旧页面兼容性尚未证明。 |
+| 下一可用交付 | 固定最小依赖补链并先做零数据库装配，再由Lead安排新的页面检查窗口。 |
+| 当前阻塞 | ACTIVE: 固定后台runner入口缺client别名及SDK链接；补链许可与装配待完成。 |
 | 需用户决定 | NONE |
 | 实现目标 | 25b70880619037ddd2ad84ba2790ad23267dc5f9 |
 | 实现范围 | experiments/personal-current-release/browser.mjs, experiments/personal-current-release/fixture.mjs, experiments/personal-current-release/inventory.mjs, experiments/personal-current-release/transport.mjs |
-| 检查状态 | NOT_RUN target 25b70880619037ddd2ad84ba2790ad23267dc5f9；仅静态字节/路径/resolve与whitespace核验；运行未授权 |
+| 检查状态 | FAILED target 25b70880619037ddd2ad84ba2790ad23267dc5f9；一次exit1/0App；cleanup完整，原raw永久保留 |
 | Review | APPROVED_SOURCE_PREPARATION_ONLY target 25b70880619037ddd2ad84ba2790ad23267dc5f9；[review.md](review.md) |
 | 已集成main状态 / HEAD | 本片尚未集成，四旧脚本来自已审dc8；不代表新tuple通过 |
 | Claim | ccb8ac1a-7657-492e-98d3-fdbfd9b7a051 v1；四源+本plan/evidence共六literal |
@@ -31,7 +31,7 @@
 | --- | --- | --- | --- |
 | SVC05R01-01 | completed | assignment_review | [claim](../../docs/evidence/svc05-retained-web-compatibility/claim.json)、[baseline](../../docs/evidence/svc05-retained-web-compatibility/baseline.json) |
 | SVC05R01-02 | completed | assignment_review | [Interface](../../docs/evidence/svc05-retained-web-compatibility/interface.md) |
-| SVC05R01-03 | pending | assignment_review | NOT_RUN，未获运行窗口 |
+| SVC05R01-03 | in-progress | assignment_review | [首次失败/cleanup](../../docs/evidence/svc05-retained-web-compatibility/first-run-manifest.json)；未自动重试 |
 | SVC05R01-04 | pending | Execution Lead独审 / owner | 尚无新报告 |
 
 Lead已报告本片在172源实际看板live；当前唯一status供下一次聚合，不改生成数据。

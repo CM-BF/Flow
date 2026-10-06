@@ -13,3 +13,7 @@
 Execution Lead / gpt-6-astra 独立结论 APPROVED_SOURCE_PREPARATION_ONLY；target `25b70880619037ddd2ad84ba2790ad23267dc5f9`，delivery `9b79ee0cf502e200c38b220361627d40976298b4`。完整四源及552 bindings核对，无P1/P2，reviewer0测试/PG/provider。[原回执](../../docs/evidence/svc05-retained-web-compatibility/preparation-independent-review.json)，SHA256 1a5b959fd10ad378c0e6e426361fc9df981a4858356c84d512a7e3a9fc3d2c6f。
 
 只准备批准，尚无两App真实兼容结论。既有原source方法不替代本轮行为；共享Web窗口未归还前不运行。原manifest及NOT_RUN原观察保留，不重写为passed。
+
+## 19:06 UTC 首次运行待事实复核
+
+source25b未变；一次exit1，0App，缺@flow/client导致runtime导入失败。完整checkpoint和普通cleanup成立，原错误/raw/准备批准保留。运行兼容NOT_PROVEN；[first-run-manifest](../../docs/evidence/svc05-retained-web-compatibility/first-run-manifest.json)不修改为passed。后继依赖delta是新准备，不自动授予重试。

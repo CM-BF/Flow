@@ -17,3 +17,11 @@
 已做静态读/绑定与 whitespace 检查，未做 syntax/types/模块 import/HTTP/PG/Chrome/provider。源报告格式化曾在已写 backend binding 后对数组误用 `.keys()` 退出；原因和原样事实记 [entry-readiness.json](entry-readiness.json)，与产品运行无关。旧 SVC05、旧362报告及 d629 已审事实均不改写。
 
 最近检查：2026-10-06 18:55 UTC；[quality.json](quality.json)。独审待 Lead，运行必须等其新串行窗口。
+
+## 19:06 UTC 唯一运行失败与窗口归还
+
+原许可 `svc05r01-retained-af51-20261006-1859` 已消耗；一次 exit1/2.927s，0 App。真实 af51 工厂及公开 runner/profile注册后，导入 runtime 时缺 `@flow/client`，Chrome尚未启动。不是Web早退的共同原因，不重试/改源。原 `runnerStopped=true` 只是未启动runtime的close路径值，不虚称真实runner已运行。
+
+[原manifest](first-run-manifest.json)、[分析](first-run-analysis.json)：worker20247全组absent、63896监听absent；完整checkpoint后marker/devino相同、5.54ms连接观察零、普通DROP remaining[]、自有tmp删除。全程0provider/个人操作，源码25b不变。兼容报告未生成，03/04仍open。
+
+最窄后继：[runtime-dependency-delta/proposal.json](runtime-dependency-delta/proposal.json)。实际三个入口静态递归64文件/164边，bare仅client/contracts/SDK/zod；缺 own af51 `@flow/client` alias及执行profile重导出所需固定SDK。当前只read/resolve/hash，未补链/安装/模块import。须先获依赖delta许可与0PG装配再排新真实窗口，不能把本次失败改绿。
