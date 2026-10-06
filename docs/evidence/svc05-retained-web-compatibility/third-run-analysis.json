@@ -1,0 +1,219 @@
+{
+  "at": "2026-10-06 19:54 UTC",
+  "state": "TWO_RETAINED_APPS_PASSED_PENDING_INDEPENDENT_REVIEW",
+  "source": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+  "sourceDigest": "ae8b53e021b9dc6c473069e3ca189db31b6acd3dafba8633024a4cc18b0c16b3",
+  "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "approvalId": "svc05r01-retained-af51-20261006-1952",
+  "result": {
+    "exitCode": 0,
+    "appsSelected": 2,
+    "appsPassed": 2,
+    "browserVersion": "154.0.8037.98",
+    "actualDOM": true,
+    "providerQueries": 0,
+    "personalActions": 0,
+    "centerClosed": true,
+    "runnerStopped": true,
+    "closeErrors": []
+  },
+  "budget": {
+    "authorizedWorkMs": 72188,
+    "cleanupMs": 20000,
+    "originalWorkEnvelopeMs": 90000,
+    "priorConservativeDebitMs": 17812,
+    "thisFullSupervisorMsIncludingCleanup": 15794,
+    "newConservativeDebitMs": 33606,
+    "remainingCandidateMsNotPermission": 56394,
+    "initialNodeStartupOutsideSupervisorTimer": "not separately timed; no claim full process latency equals supervisor interval",
+    "rawChecksRepeated": false
+  },
+  "reports": [
+    {
+      "label": "retained-0",
+      "compatibilityId": "adc587ad334da4136bdc5d364daa933f8b8865f6344ae8b1e04983a423d5d68d",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      }
+    },
+    {
+      "label": "retained-1",
+      "compatibilityId": "e87ffda1ee15c14c6458849c388c5f217675af4053cb1b64bd052214cee2af0e",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      }
+    }
+  ],
+  "perApp": [
+    {
+      "label": "retained-0",
+      "observations": {
+        "read": {
+          "ownerAuthenticated": true,
+          "conversationBound": true,
+          "taskBound": true
+        },
+        "send": {
+          "acceptedTurnBound": true,
+          "requestedProfilePreserved": true
+        },
+        "recover": {
+          "sameKey": true,
+          "sameBody": true,
+          "sameTurn": true
+        },
+        "negotiation": {
+          "legacyReadable": true,
+          "streamHeaderHandled": true,
+          "profileHeaderHandled": true
+        }
+      },
+      "postCount": 2,
+      "sameTask": true,
+      "draftPreservedBeforeReload": true,
+      "pageErrors": [],
+      "faultObservation": {
+        "path": "/api/conversations/c74d4af8-f138-44d9-88fe-99af6d6b4d66/turns",
+        "key": "c5dce57d-5738-4fa1-9b47-24a30e93b8cb:turn",
+        "bodySha256": "317de8ce253c94de1dc477d3efa12a73373fe4ed30400fadbeccf7f9934e7193",
+        "events": [
+          "request",
+          "response-headers",
+          "requestfailed"
+        ],
+        "status": 202,
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "content-length": "1222",
+          "connection": "close",
+          "transfer-encoding": ""
+        },
+        "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+        "finished": false
+      },
+      "assetCount": 10
+    },
+    {
+      "label": "retained-1",
+      "observations": {
+        "read": {
+          "ownerAuthenticated": true,
+          "conversationBound": true,
+          "taskBound": true
+        },
+        "send": {
+          "acceptedTurnBound": true,
+          "requestedProfilePreserved": true
+        },
+        "recover": {
+          "sameKey": true,
+          "sameBody": true,
+          "sameTurn": true
+        },
+        "negotiation": {
+          "legacyReadable": true,
+          "streamHeaderHandled": true,
+          "profileHeaderHandled": true
+        }
+      },
+      "postCount": 2,
+      "sameTask": true,
+      "draftPreservedBeforeReload": true,
+      "pageErrors": [],
+      "faultObservation": {
+        "path": "/api/conversations/e9e43516-9481-44a7-9fbb-8604c3f16d5d/turns",
+        "key": "b7abc6a1-ed76-4248-a21b-d307804f702a:turn",
+        "bodySha256": "14a4a365bb0cded08e68ffbc8b0866accf22347465443eba454d035465dea9d3",
+        "events": [
+          "request",
+          "response-headers",
+          "requestfailed"
+        ],
+        "status": 202,
+        "headers": {
+          "content-type": "application/json; charset=utf-8",
+          "content-length": "1222",
+          "connection": "close",
+          "transfer-encoding": ""
+        },
+        "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+        "finished": false
+      },
+      "assetCount": 10
+    }
+  ],
+  "cleanup": {
+    "databaseName": "flow_svc05r01_ec23d0bcb5244e26863a",
+    "marker": "5cef69dd-586c-4e0e-bdb0-ce2fd58c365d",
+    "groupsAbsent": true,
+    "removedDatabase": true,
+    "removedTemp": true,
+    "errors": [],
+    "connections": {
+      "outcome": "zero",
+      "observations": [
+        {
+          "at": "2026-10-06T19:53:08.501Z",
+          "elapsedMs": 7.200791000001118,
+          "rows": []
+        }
+      ]
+    },
+    "directoryMatched": true,
+    "remaining": []
+  },
+  "groups": [
+    {
+      "pid": 83813,
+      "state": "absent",
+      "actions": [
+        "SIGTERM"
+      ]
+    },
+    {
+      "pid": 81573,
+      "state": "absent",
+      "actions": []
+    }
+  ],
+  "ports": [
+    {
+      "port": 51829,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 51814,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 51841,
+      "state": "absent",
+      "errorCode": "1"
+    },
+    {
+      "port": 51871,
+      "state": "absent",
+      "errorCode": "1"
+    }
+  ],
+  "metrics": {
+    "minimumFree": 1382043648,
+    "peakRaw": 219283,
+    "peakTemp": 8890073
+  },
+  "checkpoint": true,
+  "chromeExitCode": "NOT_OBSERVED by original fixed report; group absence is not exit0",
+  "limits": [
+    "Actual two fixed retained Apps and actual public af51 factory/PG with deterministic fixture runner; zero provider, not native-model or new d629 revalidation.",
+    "Current sampled/raw/tmp bytes are observations, not OS quotas; PG/WAL outside private-temp bytes.",
+    "Original two failed journeys/raw remain unchanged. No claim their page failure cause was proven by current success.",
+    "Compatibility imports/verification occurred only under own run directory; reports have not been imported to personal installation.",
+    "Personal362/v15+caa1/v2 unchanged by this isolated run; publish is separate authorization."
+  ]
+}

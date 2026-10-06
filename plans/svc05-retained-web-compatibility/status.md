@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:27 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:54 UTC |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -15,8 +15,8 @@
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 采样竞态与错误保留修复已通过小型检查；旧页面真实兼容仍待新的受控验证。 |
-| 下一可用交付 | 独审本次检查证据后，在独立窗口完成两份旧页面兼容检查。 |
+| 当前产出 | 两份保留页面已通过新后台的实际读写与中断恢复兼容检查，自有资源已清理；结果待独立审查。 |
+| 下一可用交付 | 独审并交付两份精确兼容报告，供后续受管发布使用。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16 |
@@ -31,7 +31,11 @@
 | --- | --- | --- | --- |
 | SVC05R01-01 | completed | assignment_review | [claim](../../docs/evidence/svc05-retained-web-compatibility/claim.json)、[baseline](../../docs/evidence/svc05-retained-web-compatibility/baseline.json) |
 | SVC05R01-02 | completed | assignment_review | [Interface](../../docs/evidence/svc05-retained-web-compatibility/interface.md) |
-| SVC05R01-03 | in-progress | assignment_review | [首次失败/cleanup](../../docs/evidence/svc05-retained-web-compatibility/first-run-manifest.json)；[补链装配](../../docs/evidence/svc05-retained-web-compatibility/runtime-dependency-delta/import-result.json)；[第二次失败](../../docs/evidence/svc05-retained-web-compatibility/second-run-manifest.json)；窗口已归还，无自动重试 |
-| SVC05R01-04 | pending | Execution Lead独审 / owner | 尚无新报告 |
+| SVC05R01-03 | completed | assignment_review | [首次失败/cleanup](../../docs/evidence/svc05-retained-web-compatibility/first-run-manifest.json)；[补链装配](../../docs/evidence/svc05-retained-web-compatibility/runtime-dependency-delta/import-result.json)；[第二次失败](../../docs/evidence/svc05-retained-web-compatibility/second-run-manifest.json)；窗口已归还，无自动重试 |
+| SVC05R01-04 | in-progress | Execution Lead独审 / owner | [本次2App结果](../../docs/evidence/svc05-retained-web-compatibility/third-run-manifest.json)，待独立结果核验 |
 
 Lead已报告本片在172源实际看板live；当前唯一status供下一次聚合，不改生成数据。
+
+2026-10-06 19:52 UTC：Lead SINGLE_RUN_GO 1952，固定b41/af51，两App一次；剩余工作72188ms+20s清理，累计旧17812ms不重置。原四入口import仅核原证据，未重跑；当前准入source/dependency/artifact固定匹配，个人服务/用户tab/模型不动。
+
+2026-10-06 19:54 UTC：1952单次窗口两App/2通过、全supervisor15794ms/exit0，累计保守33606ms；原两red保持。checkpoint→有限零连接→正常DROP/tmp清理全成立、两group与四port absent，holder已归还。实际兼容报告adc587…(461a)、e87ffd…(caa1)均绑定af51，尚未个人import/publish。详见third-run-README/manifest；无新native或个人操作。

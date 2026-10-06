@@ -35,3 +35,7 @@ Lead对a3ad296d独立APPROVED_DEPENDENCY_VIEW_DELTA，94绑定、67固定backend
 独立reviewer native_center_owner 对b41ae1a7/a602结论APPROVED_SOURCE_NOT_RUN，无P1/P2、11bindings一致，原回执 [independent-source-review](../../docs/evidence/svc05-retained-web-compatibility/sampling-delta/independent-source-review.json) 保留限定。随后Lead授权的一次9纯case均通过，361.654ms/exit0/909B，PGID53235自然退出absent，checkpoint后同inode tmp删除；0PG/Chrome/provider。该新raw交Lead补核，作者不将source-only批准伪扩为真实兼容验收。
 
 [verification-manifest](../../docs/evidence/svc05-retained-web-compatibility/sampling-delta/verification-manifest.json) 与 [runtime-prepared](../../docs/evidence/svc05-retained-web-compatibility/sampling-delta/runtime-prepared.json) 固定新sourceDigest；原两次失败与空间前置失败不变。源码停写，新实际两App窗口未授权。
+
+## 1952真实两App结果待独立审查
+
+2026-10-06 19:54 UTC：固定b41四源、af51外部后台/原依赖，617当前绑定无差，复用原四入口import证据不重跑。一次2App实际浏览器结果passed，supervisor15794ms/累计保守33606ms，原失败保留；清理checkpoint/marker/devino/connection/group/ports全有原始证据。仅作者结果，待Lead独立核验third-run-manifest.json；0provider/个人操作。
