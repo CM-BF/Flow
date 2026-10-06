@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [Node唯一窗口结果](node-rootliteral/run-report.md)：无profile控制通过、rootliteral SIGABRT；第三NOT_RUN，清理/计量完成，结果待审。当前无剩余运行许可。
+
 - F01依赖f63502e26d44f33a86a01e98761b22aefbd5fa60已获Mika12:56:50–12:57 UTC限定APPROVED（manifest/lock接线，非插件启用）；请F01在自身证据记review。后继与[X01 leaf Interface](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/leaf-interface.md)成套接收。
 
 - [X01固定leaf Interface及依赖输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/leaf-interface.md)：5346bd838f96b01015f26a265c31859c82cd6023；Mika12:52:50 UTC批准准备manifest/Interface（非叶实现完成）。请F01接server/runner workspace:*与lock importer/受控offline依赖，不改个人Flow node_modules；原owner继续leaf实现。
@@ -15,7 +17,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 - X01 [精确scope请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/scope-request.md)与[安装依赖补充](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/installation-dependency-addendum.md)：显式workspace/tar依赖方向已审；需Lead协调4 manifests/lock唯一writer与最小leaf scope，公共vertical仍需host/task/event/DDL输入。
 - [S01P05 events.ts移交与登记请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence/docs/evidence/s01p05/interface.md)：由当前合法owner按账本停写/原子amend协调，不复制任务状态。
 
-- [Node rootliteral三槽设计](node-rootliteral/design.md)：设计ff927712已审；source d17ad56ad47ec065cea107ba4ab15fc7afd56b0e已固定，组合1f32735e已独审APPROVED；0新目标/0编译，实际窗口NOT_OPEN。旧C结果/尾部以e47历史快照封存，本阶段另记。
+- [Node rootliteral三槽设计](node-rootliteral/design.md)：设计ff927712已审；source d17ad56ad47ec065cea107ba4ab15fc7afd56b0e已固定，组合1f32735e已独审APPROVED；实际2目标/0编译，唯一窗口已消费。旧C结果/尾部以e47历史快照封存，本阶段另记。
 - [ENG01G host资格/全writer撤销最小输入](native-engineering-authority-inputs.md)：固定557397e9接口；C、未来Node与真实Codex证据分层，生产authority仍不可签发。
 - [04附件上下文修复：已独审待main](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/attachment-integration-ready.md)；进度只在[04权威status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md)，固定实现4f87934f。
 
@@ -139,7 +141,7 @@ Mika转交status_read对固定Codex0.154.0 schema及官方current文档的只读
 
 ## 已封存诊断与可独立交付
 
-旧隔离/诊断/C各窗口已经消费，结论及来源以页首固定结果链接和[review索引](../../../plans/wpf-mature-02-harness-capabilities/review.md)为准；早期实现过程全文保留Git ff927712。本页不把旧HOLD/候选许可当当前运行许可，不修改旧raw/manifest。R06五源已main362接收且停写交回；[独立集成输入](integration-readiness.md)中的历史待接收字段按其固定时点解释。当前Node组合尚待独审/实际门禁，真实Codex资格/访问约束/全writer撤销继续unknown。
+旧隔离/诊断/C各窗口已经消费，结论及来源以页首固定结果链接和[review索引](../../../plans/wpf-mature-02-harness-capabilities/review.md)为准；早期实现过程全文保留Git ff927712。本页不把旧HOLD/候选许可当当前运行许可，不修改旧raw/manifest。R06五源已main362接收且停写交回；[独立集成输入](integration-readiness.md)中的历史待接收字段按其固定时点解释。当前Node结果待独审，真实Codex资格/访问约束/全writer撤销继续unknown。
 
 ## 原生配置目录与共享接线
 

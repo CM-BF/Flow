@@ -1,0 +1,221 @@
+{
+  "startedAt": "2026-10-06T13:04:02.666Z",
+  "targets": [
+    "EXPECTED",
+    "FAILED",
+    "NOT_RUN"
+  ],
+  "factoryCalls": 2,
+  "compileCalls": 0,
+  "codexStarts": 0,
+  "providerCalls": 0,
+  "stages": [
+    {
+      "stage": "node-control",
+      "close": {
+        "reason": "DISCONNECTED",
+        "child": "confirmed-exited",
+        "exitCode": 7,
+        "signal": null,
+        "remoteEffects": "unknown",
+        "stderrCapture": {
+          "observedBytes": 40,
+          "writtenBytes": 40,
+          "truncated": false,
+          "observerFailed": false,
+          "streamEnded": true,
+          "childCloseObserved": true,
+          "incomplete": false
+        }
+      },
+      "capture": {
+        "file": "/private/tmp/flow-wpf02-private-H9i1Ql/attempt-1.stderr",
+        "identity": {
+          "ino": 122566342,
+          "dev": 16777234,
+          "directory": false,
+          "regular": true,
+          "symlink": false
+        },
+        "flush": true,
+        "close": true,
+        "bytes": 40,
+        "sha256": "ca5c7bbdd4599b7cb7154d4895952561b9f7e94d48d84dba22c898910af1130c",
+        "classification": "expected-control",
+        "removed": false,
+        "retained": true
+      },
+      "observation": {
+        "passed": true,
+        "reason": "fixed-control-exit-only",
+        "retainedRoots": [],
+        "close": {
+          "reason": "DISCONNECTED",
+          "child": "confirmed-exited",
+          "exitCode": 7,
+          "signal": null,
+          "remoteEffects": "unknown",
+          "stderrCapture": {
+            "observedBytes": 40,
+            "writtenBytes": 40,
+            "truncated": false,
+            "observerFailed": false,
+            "streamEnded": true,
+            "childCloseObserved": true,
+            "incomplete": false
+          }
+        },
+        "protocol": {
+          "ignoredResponses": 0,
+          "inboundFrames": 0
+        },
+        "stdoutBoundConfirmed": true,
+        "listener": {
+          "created": false,
+          "bound": false,
+          "port": null,
+          "healthy": null,
+          "accepted": 0,
+          "closed": true
+        },
+        "listenerClosed": true
+      },
+      "passed": true
+    },
+    {
+      "stage": "node-profile-control",
+      "close": {
+        "reason": "DISCONNECTED",
+        "child": "confirmed-exited",
+        "exitCode": null,
+        "signal": "SIGABRT",
+        "remoteEffects": "unknown",
+        "stderrCapture": {
+          "observedBytes": 261,
+          "writtenBytes": 261,
+          "truncated": false,
+          "observerFailed": false,
+          "streamEnded": true,
+          "childCloseObserved": true,
+          "incomplete": false
+        }
+      },
+      "capture": {
+        "file": "/private/tmp/flow-wpf02-private-H9i1Ql/attempt-2.stderr",
+        "identity": {
+          "ino": 122566361,
+          "dev": 16777234,
+          "directory": false,
+          "regular": true,
+          "symlink": false
+        },
+        "flush": true,
+        "close": true,
+        "bytes": 261,
+        "sha256": "e7f44b0f20dd47e2e8b09ffe0116c1e5c59ce39c1d57318ea8dc7e003d928e2b",
+        "classification": "loader-error-text",
+        "removed": false,
+        "retained": true
+      },
+      "observation": {
+        "passed": false,
+        "reason": "fixed-control-exit-only",
+        "retainedRoots": [],
+        "close": {
+          "reason": "DISCONNECTED",
+          "child": "confirmed-exited",
+          "exitCode": null,
+          "signal": "SIGABRT",
+          "remoteEffects": "unknown",
+          "stderrCapture": {
+            "observedBytes": 261,
+            "writtenBytes": 261,
+            "truncated": false,
+            "observerFailed": false,
+            "streamEnded": true,
+            "childCloseObserved": true,
+            "incomplete": false
+          }
+        },
+        "protocol": {
+          "ignoredResponses": 0,
+          "inboundFrames": 0
+        },
+        "stdoutBoundConfirmed": true,
+        "listener": {
+          "created": false,
+          "bound": false,
+          "port": null,
+          "healthy": null,
+          "accepted": 0,
+          "closed": true
+        },
+        "listenerClosed": true
+      },
+      "passed": false
+    }
+  ],
+  "cleanupComplete": true,
+  "outputAccountingComplete": true,
+  "stopReason": "stage-failed-or-unknown",
+  "privateArtifacts": [
+    {
+      "file": "/private/tmp/flow-wpf02-private-H9i1Ql/attempt-1.stderr",
+      "identity": {
+        "ino": 122566342,
+        "dev": 16777234,
+        "directory": false,
+        "regular": true,
+        "symlink": false
+      },
+      "flush": true,
+      "close": true,
+      "bytes": 40,
+      "sha256": "ca5c7bbdd4599b7cb7154d4895952561b9f7e94d48d84dba22c898910af1130c",
+      "classification": "expected-control",
+      "removed": true,
+      "retained": false
+    },
+    {
+      "file": "/private/tmp/flow-wpf02-private-H9i1Ql/attempt-2.stderr",
+      "identity": {
+        "ino": 122566361,
+        "dev": 16777234,
+        "directory": false,
+        "regular": true,
+        "symlink": false
+      },
+      "flush": true,
+      "close": true,
+      "bytes": 261,
+      "sha256": "e7f44b0f20dd47e2e8b09ffe0116c1e5c59ce39c1d57318ea8dc7e003d928e2b",
+      "classification": "loader-error-text",
+      "removed": true,
+      "retained": false
+    }
+  ],
+  "privateCleanup": {
+    "privateRootRemoved": true,
+    "retained": []
+  },
+  "stdoutBoundsConfirmed": true,
+  "measurementComplete": false,
+  "requiresHostExit": false,
+  "endedAt": "2026-10-06T13:04:03.357Z",
+  "elapsedMs": 690.612291,
+  "elapsedBasis": "before-inventory-and-result-persistence",
+  "inventoryPersisted": true,
+  "output": {
+    "prepared": 178504,
+    "captured": 301,
+    "diskCopies": 28825,
+    "stdoutSourceUpperBound": 0,
+    "receipts": 7220,
+    "measuredBytes": 214850,
+    "archiveReserveBytes": 131072,
+    "receiptReserveBytes": 32768,
+    "limit": 2097152,
+    "reservedBytes": 371470
+  },
+  "withinBudgetBeforePersistence": true
+}

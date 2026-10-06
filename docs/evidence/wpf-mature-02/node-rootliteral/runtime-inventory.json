@@ -1,0 +1,139 @@
+{
+  "inventories": [
+    {
+      "stage": "node-control",
+      "complete": true,
+      "bytes": 14262,
+      "files": [
+        {
+          "path": "/private/tmp/flow-wpf02-allow-3uD3ln/control/canary-preload.mjs",
+          "bytes": 3457,
+          "sha256": "d197b240be265f2606b0f6b9d00efd30993fc3de31c5ec0bd46daeb59a183e30",
+          "symlink": false
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-allow-3uD3ln/control/config.json",
+          "bytes": 215,
+          "sha256": "809ea0510783c593df65db335b76f96f889c30e8f5d82bfa454b121315573b50",
+          "symlink": false
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-allow-3uD3ln/control/default-deny.sb",
+          "bytes": 6401,
+          "sha256": "f563a084a8223bb088626f0f1e580ffcabd09ccde6772c7a78f6e9cd22a17c5b",
+          "symlink": false
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-allow-3uD3ln/control/immediate-exit.mjs",
+          "bytes": 379,
+          "sha256": "6dc50ded369eab65ca2080685646ae8771978a3d572997307bb92087b9558785",
+          "symlink": false
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-allow-3uD3ln/control/peer.mjs",
+          "bytes": 3728,
+          "sha256": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf",
+          "symlink": false
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-allow-3uD3ln/state/escape-link",
+          "bytes": 53,
+          "sha256": "4d07be67fbac4c456c8ea7b51b071f832314404b090d2b01cd97c7bde828a1d8",
+          "symlink": true
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-deny-TqkeGy/denied-marker.txt",
+          "bytes": 29,
+          "sha256": "421d825a01453c2388078d82ed393d67b420580601425b8fef1085ccf2ff0b8f",
+          "symlink": false
+        }
+      ]
+    },
+    {
+      "stage": "node-profile-control",
+      "complete": true,
+      "bytes": 14262,
+      "files": [
+        {
+          "path": "/private/tmp/flow-wpf02-allow-Wjb5wU/control/canary-preload.mjs",
+          "bytes": 3457,
+          "sha256": "d197b240be265f2606b0f6b9d00efd30993fc3de31c5ec0bd46daeb59a183e30",
+          "symlink": false
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-allow-Wjb5wU/control/config.json",
+          "bytes": 215,
+          "sha256": "004cca081178fcc539a700cbf13033ede77c98530bbcf093cd092769fa8b81b9",
+          "symlink": false
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-allow-Wjb5wU/control/default-deny.sb",
+          "bytes": 6401,
+          "sha256": "f563a084a8223bb088626f0f1e580ffcabd09ccde6772c7a78f6e9cd22a17c5b",
+          "symlink": false
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-allow-Wjb5wU/control/immediate-exit.mjs",
+          "bytes": 379,
+          "sha256": "6dc50ded369eab65ca2080685646ae8771978a3d572997307bb92087b9558785",
+          "symlink": false
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-allow-Wjb5wU/control/peer.mjs",
+          "bytes": 3728,
+          "sha256": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf",
+          "symlink": false
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-allow-Wjb5wU/state/escape-link",
+          "bytes": 53,
+          "sha256": "117dc0ce1f978663fc1f30241c21625c990ba89e335fa69cd74f24b0954d7ca0",
+          "symlink": true
+        },
+        {
+          "path": "/private/tmp/flow-wpf02-deny-nkJs3D/denied-marker.txt",
+          "bytes": 29,
+          "sha256": "421d825a01453c2388078d82ed393d67b420580601425b8fef1085ccf2ff0b8f",
+          "symlink": false
+        }
+      ]
+    }
+  ],
+  "privateArtifacts": [
+    {
+      "file": "/private/tmp/flow-wpf02-private-H9i1Ql/attempt-1.stderr",
+      "identity": {
+        "ino": 122566342,
+        "dev": 16777234,
+        "directory": false,
+        "regular": true,
+        "symlink": false
+      },
+      "flush": true,
+      "close": true,
+      "bytes": 40,
+      "sha256": "ca5c7bbdd4599b7cb7154d4895952561b9f7e94d48d84dba22c898910af1130c",
+      "classification": "expected-control",
+      "removed": true,
+      "retained": false
+    },
+    {
+      "file": "/private/tmp/flow-wpf02-private-H9i1Ql/attempt-2.stderr",
+      "identity": {
+        "ino": 122566361,
+        "dev": 16777234,
+        "directory": false,
+        "regular": true,
+        "symlink": false
+      },
+      "flush": true,
+      "close": true,
+      "bytes": 261,
+      "sha256": "e7f44b0f20dd47e2e8b09ffe0116c1e5c59ce39c1d57318ea8dc7e003d928e2b",
+      "classification": "loader-error-text",
+      "removed": true,
+      "retained": false
+    }
+  ],
+  "stdoutBasis": "fixed-source 0/0/182 upper bounds; not an independent wire byte counter"
+}

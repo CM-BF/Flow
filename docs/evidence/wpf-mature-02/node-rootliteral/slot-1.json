@@ -1,0 +1,35 @@
+{
+  "number": 1,
+  "stage": "node-control",
+  "at": "2026-10-06T13:04:03.098Z",
+  "elapsedMs": 432.131125,
+  "copies": [
+    {
+      "name": "canary-preload.mjs",
+      "bytes": 3457,
+      "sha256": "d197b240be265f2606b0f6b9d00efd30993fc3de31c5ec0bd46daeb59a183e30"
+    },
+    {
+      "name": "config.json",
+      "bytes": 215,
+      "sha256": "809ea0510783c593df65db335b76f96f889c30e8f5d82bfa454b121315573b50"
+    },
+    {
+      "name": "default-deny.sb",
+      "bytes": 6401,
+      "sha256": "f563a084a8223bb088626f0f1e580ffcabd09ccde6772c7a78f6e9cd22a17c5b"
+    },
+    {
+      "name": "immediate-exit.mjs",
+      "bytes": 379,
+      "sha256": "6dc50ded369eab65ca2080685646ae8771978a3d572997307bb92087b9558785"
+    },
+    {
+      "name": "peer.mjs",
+      "bytes": 3728,
+      "sha256": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf"
+    }
+  ],
+  "commandSha256": "d923c1105b60df5f2f869c77e6e8d59c225a745dd01ccad7fcb615902d9ed575",
+  "stdoutSourceUpperBound": 0
+}

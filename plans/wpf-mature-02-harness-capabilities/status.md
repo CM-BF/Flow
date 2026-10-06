@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:02:16 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:04:03 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / e47df6a78e3ed627a726dae805f84903a33e0a9d（已审C收口；本次Node设计metadata HEAD由Git核） |
-| 工作树dirty状态 | 源码与组合已固定获审；本次仅approval metadata，提交后核clean，运行NOT_OPEN。 |
+| 工作树dirty状态 | 源码冻结；唯一Node窗口已消费，当前仅结果归档与metadata，提交后核clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | 最终55/55原纯检查+清理delta6/6（2新，51未选）（39新+16直接旧）与Node24 native惰性import0；0实际目标/listener/compile/PG/provider。中间语法失败原样保留，固定source/完整manifest正在收口。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
-| 实现目标 | source d17ad56a / combo1f32735e629873196971ea509b767ddf0436949e APPROVED；实际NOT_OPEN |
+| 实现目标 | source d17ad56a / combo1f32735e629873196971ea509b767ddf0436949e APPROVED；唯一窗口已消费 |
 | 实现范围 | 新node-rootliteral实验；diagnostics/run-diagnostics.mjs导出/计量私有helper；isolation/compose-canary.mjs固定场景/资源清理接缝；本计划与证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Node三步实现与输入预算已独审通过，尚未启动真实目标。 |
-| 下一可用交付 | 等待Mika点名固定执行HEAD的唯一运行门禁。 |
+| 当前产出 | Node无profile控制通过；受限控制失败，后续七项未运行；已清理并封存。 |
+| 下一可用交付 | 固定本次失败结果与完整资源/计量证据，交独立审查。 |
 | 当前阻塞 | ACTIVE: Node/Codex完整隔离、真实模型资格与全部writer停止仍未验证；C成功不能替代。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：Mika于12:37:56 UTC批准ff927712设计；宿主固定loader窄适配获准。Mika13:01:37 UTC批准1f327组合；实际窗口NOT_OPEN。 |
+| Review | [review.md](review.md)：Mika于12:37:56 UTC批准ff927712设计；宿主固定loader窄适配获准。Mika13:01:37 UTC批准1f327准备；本次[结果](../../docs/evidence/wpf-mature-02/node-rootliteral/run-report.md)待审。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | Node复用已交回R06唯一进程owner、旧owned canary与私有sink；新增仅实验接缝，未改变生产Interface/运行生命周期。ENG当前仅资格/撤销输入建议，无新公共合同。 |
 
@@ -58,4 +58,4 @@
 
 ## 当前Node准备阶段
 
-[设计与实现合同](../../docs/evidence/wpf-mature-02/node-rootliteral/design.md)及[只读来源](../../docs/evidence/wpf-mature-02/node-rootliteral/source-check.md)。设计ff927712已审，组合1f327已独审通过；claim v5 fresh ACTIVE七scope。58 distinct纯检查（55原+2清理+1outer预算，非全量重跑）/native惰性加载通过，不等于实际Node隔离。宿主使用固定Node24 transform与六模块resolver；目标env不继承loader。控制close.reason必须DISCONNECTED，canary必须CLOSED，协议异常/额外输出使stdoutBoundConfirmed=false。外层time+UTC与内部时点分开；无新actual OPEN。旧C归档仍是e47等历史快照，新工作不冒称其hash或运行时间仍当前。
+[设计与实现合同](../../docs/evidence/wpf-mature-02/node-rootliteral/design.md)及[只读来源](../../docs/evidence/wpf-mature-02/node-rootliteral/source-check.md)。设计ff927712已审，组合1f327已独审通过；claim v5 fresh ACTIVE七scope。58 distinct纯检查（55原+2清理+1outer预算，非全量重跑）/native惰性加载通过，不等于实际Node隔离。宿主使用固定Node24 transform与六模块resolver；目标env不继承loader。控制close.reason必须DISCONNECTED，canary必须CLOSED，协议异常/额外输出使stdoutBoundConfirmed=false。外层time+UTC与内部时点分开；当前无剩余actual授权。旧C归档仍是e47等历史快照，新工作不冒称其hash或运行时间仍当前。
