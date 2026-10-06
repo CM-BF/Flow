@@ -1,0 +1,60 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web
+
+ ✓ test/conversation-outbox.test.ts (18 tests) 8ms
+ ✓ test/conversation-context-receipts.test.ts (10 tests) 8ms
+ ✓ test/plugin-host.test.ts (20 tests) 11ms
+ ✓ test/conversation-queue.test.ts (28 tests) 146ms
+ ✓ test/conversation-projection.test.ts (89 tests) 266ms
+ ❯ test/conversation-messages.test.ts (9 tests | 1 failed) 74ms
+     ✓ shows fixed attachment metadata without copying body into the message or invalidating unchanged turns 4ms
+     ✓ reuses message objects after a real unchanged projection refresh while keeping a fresh ordered array 2ms
+     ✓ updates same-revision pending replies and corrected final text without replacing another turn 1ms
+     ✓ does not key reuse by text or revision when a truncated reply's source changes 1ms
+     × preserves loaded message identities when a middle history gap is filled 4ms
+     ✓ isolates same-ID turns from another connection and exposes only accepted message content 2ms
+     ✓ preserves dates and excludes pending/unavailable telemetry, without mutating inputs 0ms
+     ✓ allows actual core tail auto-status updates and preserves a draft through refreshes 58ms
+     ✓ keeps changed task facts and replacement adapter callbacks effective 1ms
+ ✓ test/attachment-integration.test.ts (12 tests) 132ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/conversation-messages.test.ts > immutable conversation message projection > preserves loaded message identities when a middle history gap is filled
+AssertionError: expected [ Array(21) ] to deeply equal [ Array(25) ]
+
+- Expected
++ Received
+
+@@ -17,11 +17,7 @@
+    16,
+    17,
+    18,
+    19,
+    20,
+-   21,
+-   22,
+-   23,
+-   24,
+    25,
+  ]
+
+ ❯ test/conversation-messages.test.ts:77:47
+     75|       await fixture.projection.refresh(); const before = new Map(conve…
+     76|       await fixture.projection.loadMore(); const loaded = fixture.proj…
+     77|       expect(loaded.map(turn => turn.number)).toEqual(turns.map(turn =…
+       |                                               ^
+     78|       for (const message of after) if (before.has(message.id)) expect(…
+     79|       expect(after.map(message => message.id)).toEqual(turns.flatMap(t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 6 passed (7)
+      Tests  1 failed | 185 passed (186)
+   Start at  05:23:16
+   Duration  1.34s (transform 1.63s, setup 0ms, import 3.46s, tests 646ms, environment 0ms)
+
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run test/attachment-integration.test.ts test/conversation-projection.test.ts test/conversation-queue.test.ts test/conversation-outbox.test.ts test/conversation-context-receipts.test.ts test/conversation-messages.test.ts test/plugin-host.test.ts

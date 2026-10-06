@@ -1,0 +1,70 @@
+✖ confirmed parent and child use one headline slot while other directions fill both top threes (2.498625ms)
+✖ child blockers and decisions stay independently visible without changing parent priority or facts (0.429583ms)
+✔ a planning parent never suppresses an active child (6.808292ms)
+✔ a delivered parent never suppresses an active child (0.115959ms)
+✔ a parent with incomplete human facts does not borrow its child summary (0.12175ms)
+✔ an unknown relation with a registered target remains separate (0.0955ms)
+✔ stale, missing and cyclic parent sources cannot group children (0.574709ms)
+✔ legacy names and undeclared relationships preserve prior priority ordering (0.089375ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 56.826791
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/human-summary.test.mjs:15:1
+✖ confirmed parent and child use one headline slot while other directions fill both top threes (2.498625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   'ENG01D',
+      'ENG-001',
+      'Q01',
+  -   'R01'
+    ]
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary/apps/execution-dashboard/test/human-summary.test.mjs:18:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.start (node:internal/test_runner/test:1257:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'ENG01D', 'ENG-001', 'Q01' ],
+    expected: [ 'ENG-001', 'Q01', 'R01' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at apps/execution-dashboard/test/human-summary.test.mjs:23:1
+✖ child blockers and decisions stay independently visible without changing parent priority or facts (0.429583ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   'S01',
+      'A01',
+      'A02',
+  -   'A03'
+    ]
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-human-summary/apps/execution-dashboard/test/human-summary.test.mjs:27:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'S01', 'A01', 'A02' ],
+    expected: [ 'A01', 'A02', 'A03' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+ ✓ apps/server/src/context-transparency/attachment-history.test.ts (4 tests | 2 skipped) 2246ms
+   ✓ records attachment-only v2 through reportEvents, completes and reads history without claiming known empty materials  563ms
+   ✓ keeps mixed v2 inventory explicitly unknown while retaining both frozen inputs  534ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed | 2 skipped (4)
+   Start at  06:06:05
+   Duration  3.41s (transform 478ms, setup 0ms, import 1.08s, tests 2.25s, environment 0ms)
+

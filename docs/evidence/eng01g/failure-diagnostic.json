@@ -1,0 +1,14 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "apps/runner/src/engineering/native-writer.test.ts",
+    "-t",
+    "maps a native settled failure"
+  ],
+  "startedAt": "2026-10-06T12:20:17.460447+00:00",
+  "exitCode": 1,
+  "kind": "self-owned synthetic peer fixed close fields only"
+}

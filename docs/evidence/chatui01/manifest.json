@@ -1,0 +1,36 @@
+{
+  "kind": "CHATUI01 zero-model preparation",
+  "productCommit": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5",
+  "canonicalRun": "docs/evidence/chatui01/run-2026-10-06T08-46-06.332Z-8c1e338d",
+  "sourceFiles": {
+    "experiments/stream-ui-acceptance/prepare-runtime.mjs": "339e7b812b670a7c5c4e6cbd9dd81966b0c8714cf1429bcb1d50711b8c7969c1",
+    "experiments/stream-ui-acceptance/fixture.mjs": "e60fc42b7d64728d919ca0e5772ae333bf6f2cfe96b949d76472c5706fb27e24",
+    "experiments/stream-ui-acceptance/evidence.mjs": "18e636eda29dc70644f69405c55c8e8a96a14250a456618050405ae9e8887962",
+    "experiments/stream-ui-acceptance/preflight.mjs": "26f12a62839201d54b2c7d00d6bb330c33ce681485d833357ed5df25523d424e",
+    "experiments/stream-ui-acceptance/journey.mjs": "cf987752367428f3694d0f66e8a76fdbf6ad0c4c6c5525c4073b09a93991333a",
+    "experiments/stream-ui-acceptance/evidence.test.mjs": "1a6a75501431241b8d6655a22337143a3da7f47f0e81cc2269a218dd06958a55"
+  },
+  "rawFiles": {
+    "docs/evidence/chatui01/unit-checks-final.txt": "79129c1204e459baf53b2bf4930e9a520ce5135ea8c8627620cb416c89d672ca",
+    "docs/evidence/chatui01/run-2026-10-06T08-46-06.332Z-8c1e338d/checks.json": "afa3c24e35fce1e53122fa7b09462fa267b2d31f7cc0cf088d140cf09a0219de",
+    "docs/evidence/chatui01/run-2026-10-06T08-46-06.332Z-8c1e338d/reservation.json": "8504095e89143e58311272153b1889e71efd0fabdfdf8af133884e8fc5342850",
+    "docs/evidence/chatui01/run-2026-10-06T08-46-06.332Z-8c1e338d/final-dark-narrow.png": "739112f947e491e350ae0009ba0857cbe79097e7f91e6b7a78da5574f71b579e",
+    "docs/evidence/chatui01/run-2026-10-06T08-46-06.332Z-8c1e338d/final-light.png": "08a1267f659f736a7a3954e872afabf4fd82c4733ce61e4e903cc25bfba6a1d2"
+  },
+  "checks": {
+    "unitSelected": 6,
+    "unitPassed": 6,
+    "browserJourneysSelected": 1,
+    "browserJourneysPassed": 1,
+    "sdkQueries": 0,
+    "realCenter": false
+  },
+  "independentReview": "NOT_STARTED",
+  "live": "NOT_AUTHORIZED; entry not implemented",
+  "implementationTarget": "3c9952583fa6b3413f76bdcb8a8c33b52c984fb1",
+  "sourceTargetVerification": {
+    "at": "2026-10-06T08:48:00Z",
+    "files": 6,
+    "allMatch": true
+  }
+}

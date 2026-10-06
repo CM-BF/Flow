@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-10-06 12:34:48 UTC",
+  "runtimeFinalMeasuredBytes": 88323950,
+  "runtimeIncludesArchiveReserveBytes": 1048576,
+  "runtimeIncludesCliReserveBytes": 32768,
+  "currentDirectoryBytes": 29845799,
+  "postRunFilesBytesSoFar": 26255,
+  "reservedFinalMetadataBytes": 262144,
+  "postRunFilesUpperBoundBytes": 288399,
+  "archiveReserveSufficient": true,
+  "conservativeTotalWithWholeArchiveRepeatedBytes": 118431893,
+  "limitBytes": 268435456,
+  "withinLimit": true,
+  "meaning": "Runtime already counts original five artifacts and reserves. This upper bound deliberately counts whole archive once again plus 256KiB for remaining small manifest/metadata. Manual Git/review time is outside execution clock; archive bytes are bounded. No omitted observation final write."
+}

@@ -1,0 +1,57 @@
+{
+  "observedAt": "2026-10-06T13:19:31.453782+00:00",
+  "mainInput": "a3e670b906c1b65d586b7730ca19da83109f1dcc",
+  "sourceComparison": "event-capacity-source-comparison.json",
+  "s01Inputs": {
+    "full": "6de928d8092ba8c22ac2222ac7c16af3660be48a",
+    "observer": "c259e8e53cd53830fe1bc78ce3c8dae7b34d5540",
+    "historicalResult": "64911a3c88488dfdebaa3a678bad659211e29209"
+  },
+  "p05Input": "6336cd00b05843fb33093cf7c3157a4de9ea1815",
+  "directReadonlyDrift": [
+    "apps/server/src/runners.ts",
+    "apps/server/src/evidence.ts",
+    "packages/contracts/src/runner.ts"
+  ],
+  "driftAssessment": "Current main adds independently accepted native engineering purpose/admission and verification union; no changed persistEventState signature. Preserve these current files, exercise public report/finalize consumers and current root types. No production source rollback.",
+  "checks": {
+    "pg": {
+      "exit": 0,
+      "selected": 4,
+      "passed": 4,
+      "unselected": 5,
+      "total": 9,
+      "durationMs": 2640,
+      "taskCount": 4,
+      "connectionsClosed": true,
+      "databaseAbsent": true,
+      "adminClosed": true
+    },
+    "rootTypesExit": 0,
+    "mixedCurrentTypesExit": 0,
+    "newCapacityRuns": 0,
+    "providerQueries": 0
+  },
+  "raw": [
+    {
+      "path": "docs/evidence/i02/event-state-current-integration.txt",
+      "bytes": 580,
+      "sha256": "4fbc2f0e9099f41e20fd0630827015cff878e6e8b3d0dadb6d9f599a26115d9d"
+    },
+    {
+      "path": "docs/evidence/i02/event-state-root-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/mixed-current-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "limits": [
+    "Original fixed S01 results and old FOR SHARE elapsed UNKNOWN remain unchanged.",
+    "Four current-main PG consumers are integration checks, not rerun of the original nine or new performance measurement.",
+    "Experimental source inclusion does not open a load window. Personal runtime remains362/v15, Web8d8/v2."
+  ]
+}

@@ -1,0 +1,73 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer
+
+stdout | apps/runner/src/engineering/native-writer.test.ts > maps a native settled failure only after the separately injected whole-write revocation
+OWNED_PEER_CLOSE {
+  reason: 'CLOSED',
+  child: 'confirmed-exited',
+  exitCode: null,
+  signal: 'SIGTERM',
+  remoteEffects: 'unknown'
+} {
+  state: 'closed',
+  pid: 99683,
+  pendingRequests: 0,
+  unansweredRequests: 0,
+  serverRequests: 0,
+  inboundBytes: 0,
+  inboundFrames: 0,
+  peakInboundBytes: 0,
+  outboundBytes: 0,
+  outboundFrames: 0,
+  peakOutboundBytes: 223,
+  stderrBytes: 0,
+  ignoredResponses: 0
+}
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts (19 tests | 1 failed | 18 skipped) 192ms
+   ↓ refuses missing authority, missing assignment and unknown models before any transport can exist
+   ↓ composes the native-file consumer with the same full host snapshot and independent checker after injected revocation
+   ↓ cannot convert a completed final and child exit into stopped when revocation is unknown
+   ↓ cannot convert a completed final and child exit into stopped when revocation is wrong
+   ↓ cannot convert a completed final and child exit into stopped when revocation is throw
+   ↓ preserves wrong-model as unknown even with an injected revoked receipt
+   ↓ preserves wrong-thread as unknown even with an injected revoked receipt
+   ↓ preserves command as unknown even with an injected revoked receipt
+   ↓ preserves terminal-tool as unknown even with an injected revoked receipt
+   ↓ preserves changed as unknown even with an injected revoked receipt
+   ↓ preserves incomplete as unknown even with an injected revoked receipt
+   ↓ preserves reroute as unknown even with an injected revoked receipt
+   ↓ preserves eof as unknown even with an injected revoked receipt
+   ↓ preserves hang as unknown even with an injected revoked receipt
+   ↓ closes an ambiguous open-fails authority without creating a transport
+   ↓ closes an ambiguous bad-grant authority without creating a transport
+   × maps a native settled failure only after the separately injected whole-write revocation 192ms
+   ↓ does not promote pre-dispatch ownership loss or cancellation
+   ↓ bounds an unresponsive authority without claiming its pending work stopped
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/engineering/native-writer.test.ts > maps a native settled failure only after the separately injected whole-write revocation
+AssertionError: expected { …(2) } to deeply equal { …(3) }
+
+- Expected
++ Received
+
+  {
+    "leaseId": "0c84d920-e28d-440a-8128-dabecccd27c8",
+-   "outcome": "failed",
+-   "settlement": "stopped",
++   "settlement": "unknown",
+  }
+
+ ❯ apps/runner/src/engineering/native-writer.test.ts:113:195
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 18 skipped (19)
+   Start at  05:20:18
+   Duration  1.65s (transform 716ms, setup 0ms, import 1.33s, tests 192ms, environment 0ms)
+

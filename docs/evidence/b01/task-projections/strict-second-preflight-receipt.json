@@ -1,0 +1,46 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "docs/evidence/b01/task-projections/tsconfig.json"
+  ],
+  "startedAt": "2026-10-06T11:43:23.821976+00:00",
+  "finishedAt": "2026-10-06T11:43:26.268265+00:00",
+  "elapsedMs": 2445.8460409659892,
+  "exitCode": 0,
+  "scope": "4 direct roots and imports; root strict/ES2023/noUnchecked/skipLibCheck inherited unchanged, not root-wide",
+  "files": [
+    {
+      "path": "apps/server/src/queries.ts",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "apps/server/src/task-read-projection.ts",
+      "bytes": 821,
+      "sha256": "7194976171df9af15552a23d33958c3141178b311f686adc95cb435c30be04b4"
+    },
+    {
+      "path": "apps/server/src/task-read-projection.test.ts",
+      "bytes": 10506,
+      "sha256": "ef612124ac46ad382ace492118a652a8051b1193939adaa3302047f348680bd0"
+    },
+    {
+      "path": "experiments/bounded-reads/task-projections/fixture.ts",
+      "bytes": 7936,
+      "sha256": "bf6e69cb37664f4e725ca61df59d7c9d5a62f510bd19c0ba8a2081513e025252"
+    },
+    {
+      "path": "docs/evidence/b01/task-projections/tsconfig.json",
+      "bytes": 326,
+      "sha256": "f030ade7f07cf96b468e9689275e899fbe1e7fa121f0e015f1d4697196dabff6"
+    }
+  ]
+}

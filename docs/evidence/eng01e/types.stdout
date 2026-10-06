@@ -1,0 +1,6 @@
+
+> flow@ typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-checker
+> tsc --noEmit
+
+apps/runner/src/engineering/calculator-checker.test.ts(48,24): error TS2322: Type 'string' is not assignable to type '`${string}-${string}-${string}-${string}-${string}`'.
+ ELIFECYCLE  Command failed with exit code 2.

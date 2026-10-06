@@ -1,0 +1,124 @@
+{
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)",
+        "id": "WPF-MATURE-03",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "聊天附件发送、故障恢复和长文件名窄屏操作已验证",
+      "next": "接入主线并验证历史上下文中的附件材料",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.fixture.ts",
+        "apps/web/test/attachment-integration.test.ts",
+        "apps/web/test/conversation-context-receipts.test.ts",
+        "apps/web/test/conversation-messages.test.ts",
+        "apps/web/test/conversation-outbox.test.ts",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-queue.test.ts",
+        "apps/web/test/plugin-host.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-ATTACHI02",
+    "owner": "w01_owner / gpt-6-astra / ultra",
+    "branch": "codex/web-attachment-production",
+    "branchState": "in-progress / approved / waiting-main",
+    "updatedAt": "2026-10-06T13:02:00.000Z",
+    "updatedRecord": "2026-10-06 13:02 UTC",
+    "todos": [
+      {
+        "id": "ATTACHI02-01",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[启动证据](../../docs/evidence/wpf-attach-i02/README.md)"
+      },
+      {
+        "id": "ATTACHI02-02",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "真实P01和官方core消费者已验证；App组合仍在核验"
+      },
+      {
+        "id": "ATTACHI02-03",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[实际App与HTTP证据](../../docs/evidence/wpf-attach-i02/README.md)，10+1旅程；最后mixed delta直接官方core验证"
+      },
+      {
+        "id": "ATTACHI02-04",
+        "state": "pending",
+        "owner": "w01_owner",
+        "evidence": "固定 9eec51b72c6432b5b41df52f5b8fa783eb45e65b，分支实现/检查/独审完成；main接收及history组合待完成"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "base 1c4968354dabce1e6748f3301a2e6eecd33e77d4；完整实现 9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+    "declaredDirty": "实现已固定；本记录提交前仅 own evidence/plans metadata 待提交，提交后 clean/remote 以最终回执核验",
+    "checks": {
+      "state": "passed",
+      "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+      "record": "PASSED 9eec51b72c6432b5b41df52f5b8fa783eb45e65b；长名actual App2项/浅深390/cleanup、Webtypes0；此前191独审和10+1旅程各按原target保留"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED 9eec51b72c6432b5b41df52f5b8fa783eb45e65b；P2 CLOSED，旧f82历史保留",
+    "mainRecord": "NOT_INTEGRATED；本片已独审APPROVED，待主线接收及history组合验收，个人服务未操作",
+    "next": "固定 9eec51b72c6432b5b41df52f5b8fa783eb45e65b 已独立APPROVED，24声明source与[manifest](../../docs/evidence/wpf-attach-i02/source-manifest.json)一致，v3/26scope保留待主线接收；产品停止写入。19轮含所有失败及独立build保守290.133/600秒、0provider；全部专库最终清空，首长名轮为人工恢复清理，不假称正常自动cleanup。原10+1完整行为与最后2项长名复验按各自target，原日志不覆盖。\n**必须后继组合验证：当前main context-history producer × attachment-only合法材料。** 本树较早factory的HTTP通过不能替代它，由合法owner/Execution Lead接收时处理。**持久Send/Queue未知收据恢复仍待MATURE06-04**，ready草稿reload与跨tab journal原子性不在本片完成范围。未操作个人服务，也不自行dashboard采样。",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b"
+  }
+}

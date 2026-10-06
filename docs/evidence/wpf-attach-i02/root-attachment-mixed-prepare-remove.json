@@ -1,0 +1,49 @@
+{
+  "observedAt": "2026-10-06T12:42:58.143Z",
+  "purpose": "Pure-memory actual core + private binding; mixed complete/requires-action prepare rejection, explicit chip removal without text edit or recapture",
+  "beforeHashes": {
+    "apps/web/src/plugin-integration/attachments.tsx": "0a98348b8a78d7493f6846fac0179e895402a9c615d4f3d182d481e3eb8ca211",
+    "apps/web/src/attachments/adapter.ts": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3"
+  },
+  "afterHashes": {
+    "apps/web/src/plugin-integration/attachments.tsx": "0a98348b8a78d7493f6846fac0179e895402a9c615d4f3d182d481e3eb8ca211",
+    "apps/web/src/attachments/adapter.ts": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3"
+  },
+  "restored": {
+    "text": "original text",
+    "chips": [
+      {
+        "id": "6b28354b-50df-4bd1-8140-8fd8215ccb0e",
+        "status": "complete"
+      },
+      {
+        "id": "fb249e79-c86c-46df-977d-ebfd60c519a8",
+        "status": "incomplete"
+      }
+    ],
+    "inputItems": [
+      "6b28354b-50df-4bd1-8140-8fd8215ccb0e",
+      "fb249e79-c86c-46df-977d-ebfd60c519a8"
+    ],
+    "held": "failed"
+  },
+  "removedId": "6b28354b-50df-4bd1-8140-8fd8215ccb0e",
+  "afterRemove": {
+    "text": "original text",
+    "chips": [
+      {
+        "id": "fb249e79-c86c-46df-977d-ebfd60c519a8",
+        "status": "incomplete"
+      }
+    ],
+    "inputItems": [
+      "6b28354b-50df-4bd1-8140-8fd8215ccb0e",
+      "fb249e79-c86c-46df-977d-ebfd60c519a8"
+    ],
+    "held": "failed"
+  },
+  "onNewCalls": 0,
+  "projectWrites": 0,
+  "networkCalls": 0,
+  "providerCalls": 0
+}

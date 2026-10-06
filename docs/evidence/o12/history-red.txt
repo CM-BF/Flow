@@ -1,0 +1,43 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller
+
+ ❯ apps/server/src/goal-delivery/history.test.ts (2 tests | 2 failed) 1674ms
+   × pages immutable explanation references beyond 50 while sibling activity leaves the fixed page and body stable 419ms
+   × bounds history requests and rejects cross-goal, malformed, missing and unauthorized references 84ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-delivery/history.test.ts > pages immutable explanation references beyond 50 while sibling activity leaves the fixed page and body stable
+AssertionError: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ apps/server/src/goal-delivery/history.test.ts:9:90
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/server/src/goal-delivery/history.test.ts > bounds history requests and rejects cross-goal, malformed, missing and unauthorized references
+AssertionError: expected 400 to be 404 // Object.is equality
+
+- Expected
++ Received
+
+- 404
++ 400
+
+ ❯ apps/server/src/goal-delivery/history.test.ts:35:75
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  04:56:22
+   Duration  4.42s (transform 1.80s, setup 0ms, import 2.62s, tests 1.67s, environment 0ms)
+

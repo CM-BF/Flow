@@ -1,0 +1,110 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Migration changed old migrations
++ actual - expected
+... Skipped lines
+
+  [
+    {
+      applied_at: '2026-10-06T12:21:18.80349+00:00',
+      version: 1
+    },
+...
+    {
++     applied_at: '2026-10-06T12:21:25.064911+00:00',
++     version: 25
++   },
++   {
++     applied_at: '2026-10-06T12:21:25.185909+00:00',
++     version: 26
++   },
++   {
++     applied_at: '2026-10-06T12:21:25.271229+00:00',
++     version: 27
++   },
++   {
+      applied_at: '2026-10-06T12:21:18.831162+00:00',
+      version: 3
+    },
+    {
+      applied_at: '2026-10-06T12:21:18.992564+00:00',
+...
+    },
+-   {
+-     applied_at: '2026-10-06T12:21:19.299447+00:00',
+-     version: 7
+-   },
+-   {
+-     applied_at: '2026-10-06T12:21:19.428143+00:00',
+-     version: 8
+-   },
+-   {
+-     applied_at: '2026-10-06T12:21:19.583135+00:00',
+-     version: 9
+-   }
+  ]
+
+    at createFixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/experiments/personal-current-release/fixture.mjs:102:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/experiments/personal-current-release/browser.mjs:11:17 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [
+    { version: 1, applied_at: '2026-10-06T12:21:18.80349+00:00' },
+    { version: 10, applied_at: '2026-10-06T12:21:19.605651+00:00' },
+    { version: 11, applied_at: '2026-10-06T12:21:19.6622+00:00' },
+    { version: 12, applied_at: '2026-10-06T12:21:19.809202+00:00' },
+    { version: 13, applied_at: '2026-10-06T12:21:19.81657+00:00' },
+    { version: 14, applied_at: '2026-10-06T12:21:19.920722+00:00' },
+    { version: 15, applied_at: '2026-10-06T12:21:20.146839+00:00' },
+    { version: 16, applied_at: '2026-10-06T12:21:20.195029+00:00' },
+    { version: 17, applied_at: '2026-10-06T12:21:20.476108+00:00' },
+    { version: 18, applied_at: '2026-10-06T12:21:20.303531+00:00' },
+    { version: 19, applied_at: '2026-10-06T12:21:20.480312+00:00' },
+    { version: 2, applied_at: '2026-10-06T12:21:18.822098+00:00' },
+    { version: 20, applied_at: '2026-10-06T12:21:20.546078+00:00' },
+    { version: 21, applied_at: '2026-10-06T12:21:20.951421+00:00' },
+    { version: 22, applied_at: '2026-10-06T12:21:21.109038+00:00' },
+    { version: 23, applied_at: '2026-10-06T12:21:21.218126+00:00' },
+    { version: 24, applied_at: '2026-10-06T12:21:21.262152+00:00' },
+    { version: 25, applied_at: '2026-10-06T12:21:25.064911+00:00' },
+    { version: 26, applied_at: '2026-10-06T12:21:25.185909+00:00' },
+    { version: 27, applied_at: '2026-10-06T12:21:25.271229+00:00' },
+    { version: 3, applied_at: '2026-10-06T12:21:18.831162+00:00' },
+    { version: 4, applied_at: '2026-10-06T12:21:18.992564+00:00' },
+    { version: 5, applied_at: '2026-10-06T12:21:19.039544+00:00' },
+    { version: 6, applied_at: '2026-10-06T12:21:19.26633+00:00' }
+  ],
+  expected: [
+    { version: 1, applied_at: '2026-10-06T12:21:18.80349+00:00' },
+    { version: 10, applied_at: '2026-10-06T12:21:19.605651+00:00' },
+    { version: 11, applied_at: '2026-10-06T12:21:19.6622+00:00' },
+    { version: 12, applied_at: '2026-10-06T12:21:19.809202+00:00' },
+    { version: 13, applied_at: '2026-10-06T12:21:19.81657+00:00' },
+    { version: 14, applied_at: '2026-10-06T12:21:19.920722+00:00' },
+    { version: 15, applied_at: '2026-10-06T12:21:20.146839+00:00' },
+    { version: 16, applied_at: '2026-10-06T12:21:20.195029+00:00' },
+    { version: 17, applied_at: '2026-10-06T12:21:20.476108+00:00' },
+    { version: 18, applied_at: '2026-10-06T12:21:20.303531+00:00' },
+    { version: 19, applied_at: '2026-10-06T12:21:20.480312+00:00' },
+    { version: 2, applied_at: '2026-10-06T12:21:18.822098+00:00' },
+    { version: 20, applied_at: '2026-10-06T12:21:20.546078+00:00' },
+    { version: 21, applied_at: '2026-10-06T12:21:20.951421+00:00' },
+    { version: 22, applied_at: '2026-10-06T12:21:21.109038+00:00' },
+    { version: 23, applied_at: '2026-10-06T12:21:21.218126+00:00' },
+    { version: 24, applied_at: '2026-10-06T12:21:21.262152+00:00' },
+    { version: 3, applied_at: '2026-10-06T12:21:18.831162+00:00' },
+    { version: 4, applied_at: '2026-10-06T12:21:18.992564+00:00' },
+    { version: 5, applied_at: '2026-10-06T12:21:19.039544+00:00' },
+    { version: 6, applied_at: '2026-10-06T12:21:19.26633+00:00' },
+    { version: 7, applied_at: '2026-10-06T12:21:19.299447+00:00' },
+    { version: 8, applied_at: '2026-10-06T12:21:19.428143+00:00' },
+    { version: 9, applied_at: '2026-10-06T12:21:19.583135+00:00' }
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.20.0

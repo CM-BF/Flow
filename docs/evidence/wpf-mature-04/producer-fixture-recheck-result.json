@@ -1,0 +1,16 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "--config",
+    "/tmp/flow-wpf04-producer-vitest.mjs",
+    "apps/runner/src/runner.test.ts",
+    "-t",
+    "runs a claimed fixture to a fixed artifact, verification and one completion"
+  ],
+  "exitCode": 0,
+  "elapsedSeconds": 0.9904348850250244,
+  "purpose": "Unchanged legacy first fixture diagnostic; not new distinct coverage"
+}

@@ -1,0 +1,17 @@
+{
+  "recordedAt": "2026-10-06T11:41:00Z",
+  "sourceTarget": "a9bde37e3b596adbf5e97c47c7efae09a4682ecd",
+  "node": "24.20.0",
+  "pnpm": "9.15.4",
+  "vitest": "4.0.18",
+  "runs": [
+    { "selection": ["apps/server/src/goal-delivery/delivery.test.ts"], "passed": 7, "selected": 7, "exitCode": 0, "seconds": 13.92, "stdout": "checks-final.txt" },
+    { "selection": ["apps/server/src/goals/goals.test.ts", "apps/server/src/goal-context/context.test.ts", "apps/server/src/goal-native-executions/admission.test.ts"], "passed": 25, "selected": 25, "exitCode": 0, "seconds": 23.70, "stdout": "consumers.txt" },
+    { "command": "pnpm exec tsc --noEmit", "exitCode": 0, "stdout": "typecheck-final.txt", "emptyStdoutIsExpected": true }
+  ],
+  "distinctBehaviorChecks": 32,
+  "providerCalls": 0,
+  "personalServiceOperations": 0,
+  "productionFactoryMount": false,
+  "independentReview": "NOT_STARTED"
+}

@@ -1,0 +1,61 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-seams
+
+ ❯ apps/runner/src/execution-identity.test.ts (2 tests | 2 failed) 98ms
+   × binds immutable real identities to two simultaneous attempts without changing outbox ownership 67ms
+   × keeps identity as observation only when the original ownership port reports a lost lease 30ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/execution-identity.test.ts > binds immutable real identities to two simultaneous attempts without changing outbox ownership
+AssertionError: expected undefined to deeply equal { taskId: 'center-task-0', …(3) }
+
+- Expected: 
+{
+  "attemptId": "center-attempt-0",
+  "ownerVersion": 7,
+  "runnerId": "center-runner",
+  "taskId": "center-task-0",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/execution-identity.test.ts:57:39
+     55|   for (let index = 0; index < 2; index++) {
+     56|     const context = api.contexts[index]!, assignment = api.assignments…
+     57|     expect(context.executionIdentity).toEqual({ taskId: assignment.tas…
+       |                                       ^
+     58|     expect(Object.isFrozen(context.executionIdentity)).toBe(true);
+     59|     expect(Reflect.set(context.executionIdentity!, 'ownerVersion', 999…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/runner/src/execution-identity.test.ts > keeps identity as observation only when the original ownership port reports a lost lease
+AssertionError: expected undefined to match object { attemptId: 'center-attempt-0', …(1) }
+
+- Expected: 
+{
+  "attemptId": "center-attempt-0",
+  "ownerVersion": 7,
+}
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/execution-identity.test.ts:76:20
+     74|   const api = await host(1); await eventually(() => api.contexts.lengt…
+     75|   const context = api.contexts[0]!, identity = context.executionIdenti…
+     76|   expect(identity).toMatchObject({ attemptId: api.assignments[0]!.atte…
+       |                    ^
+     77|   api.stopped.add(identity!.attemptId);
+     78|   await expect(context.assertOwnership()).rejects.toMatchObject({ reas…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  04:31:27
+   Duration  423ms (transform 131ms, setup 0ms, import 238ms, tests 98ms, environment 0ms)
+

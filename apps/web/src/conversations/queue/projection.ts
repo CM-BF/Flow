@@ -1,5 +1,7 @@
+import { freezeMaterialRequest } from "../../conversation-context/receipts";
+import { ReadCache, bodyBytes } from "../read-cache";
 import { freezeContextSelection, type FrozenCitation } from "../../conversation-context/selection";
-import { TERMINAL_STATUSES, type ConversationQueuePage, type ConversationQueueItemDetail } from "@flow/contracts";
+import { TERMINAL_STATUSES, type AttachmentReference, type ConversationQueuePage, type ConversationQueueItemDetail } from "@flow/contracts";
 import { QueueCommands, assertCurrentTurn, assertQueueItem, queueError, validRevision, type QueuePort, type QueueReceipt } from "./commands";
 
 export interface QueueState {
@@ -12,6 +14,7 @@ export interface QueueState {
   receipts: readonly QueueReceipt[];
   details: Readonly<Record<string, { data?: ConversationQueueItemDetail; loading?: boolean; error?: string }>>;
 }
+type QueueDetailState = QueueState["details"][string];
 const blockReasons = [null, "queue-paused", "previous-turn-active", "previous-turn-failed", "previous-turn-cancelled", "previous-turn-uncertain", "native-session-unavailable", "native-session-busy", "execution-profile-unavailable"];
 function assertPage(page: ConversationQueuePage, id: string, after: number) {
   if (!page || page.conversationId !== id || !validRevision(page.queueRevision) || typeof page.paused !== "boolean" || !blockReasons.includes(page.blocked) || !Array.isArray(page.items) || page.items.length > 20 || (page.nextCursor !== null && (!validRevision(page.nextCursor) || page.nextCursor <= after))) throw Error("Invalid queue page. Refresh before acting.");
@@ -26,6 +29,9 @@ export class ConversationQueueProjection {
   readonly commands: QueueCommands | null;
   private state: QueueState = { available: false, page: null, loading: false, stale: false, online: true, error: null, receipts: [], details: {} };
   private id: string | null = null;
+  private attachmentProject: string | null = null;
+  private attachmentSupported = false;
+  configureAttachments(projectId: string | null, supported: boolean) { this.attachmentProject = projectId; this.attachmentSupported = supported; }
   private knowledgeProject: string | null = null;
   private knowledgeSupported = false;
   private visible = false;
@@ -36,6 +42,8 @@ export class ConversationQueueProjection {
   private timer: ReturnType<typeof setTimeout> | undefined;
   private flight: Promise<boolean> | undefined;
   private readonly detailFlights = new Map<string, Promise<void>>();
+  private reads = new AbortController();
+  private readonly bodies = new ReadCache<QueueDetailState>(value => value.data?.item.text, { entries: 4, bytes: 64 * 1024 });
   private readonly listeners = new Set<() => void>();
   constructor(private readonly port: QueuePort | null, private readonly pollMs = 2000, private readonly timeoutMs = 15_000) {
     this.commands = port ? new QueueCommands(port, async () => {
@@ -55,8 +63,8 @@ export class ConversationQueueProjection {
     if (available && this.visible && this.state.online) void this.refresh();
   }
   configureKnowledge(projectId: string | null, supported: boolean) { this.knowledgeProject = projectId; this.knowledgeSupported = supported; }
-  setVisible(visible: boolean) { if (visible === this.visible) return; this.visible = visible; this.invalidate(); if (visible) void this.refresh(); }
-  setOnline(online: boolean) { if (online === this.state.online) return; this.invalidate(); this.update({ online, stale: Boolean(this.state.page) }); if (online && this.visible) void this.refresh(); }
+  setVisible(visible: boolean) { if (visible === this.visible) return; this.visible = visible; if (!visible) this.invalidateReads(false); this.invalidate(); if (visible) void this.refresh(); }
+  setOnline(online: boolean) { if (online === this.state.online) return; if (!online) this.invalidateReads(false); this.invalidate(); this.update({ online, stale: Boolean(this.state.page) }); if (online && this.visible) void this.refresh(); }
   private invalidate() { this.generation++; this.observation.abort(); this.observation = new AbortController(); clearTimeout(this.timer); this.flight = undefined; this.update({ loading: false }); }
   private schedule() { clearTimeout(this.timer); if (this.visible && this.state.available && this.state.online && !this.lifetime.signal.aborted) this.timer = setTimeout(() => { void this.refresh(); }, this.pollMs); }
   refresh(force = false): Promise<boolean> {
@@ -100,7 +108,17 @@ export class ConversationQueueProjection {
     return null;
   }
   private ready(slot: string) { const reason = this.actionDisabledReason(slot); if (reason) throw Error(reason); return this.state.page!; }
-  async enqueue(text: string, knowledge?: readonly FrozenCitation[]) { const page = this.ready("enqueue"); if (knowledge?.length) { if (!this.knowledgeProject || !this.knowledgeSupported) throw Error("Knowledge requires a supported fixed conversation project."); freezeContextSelection(knowledge, this.knowledgeProject); } await this.commands!.execute({ kind: "enqueue", conversationId: this.id!, input: { expectedQueueRevision: page.queueRevision, text, ...(knowledge === undefined ? {} : { knowledge }) } }); }
+  async enqueue(text: string, knowledge?: readonly FrozenCitation[], attachments?: readonly AttachmentReference[]) {
+    const page = this.ready("enqueue");
+    if (knowledge?.length) {
+      if (!this.knowledgeProject || !this.knowledgeSupported) throw Error("Knowledge requires a supported fixed conversation project.");
+      freezeContextSelection(knowledge, this.knowledgeProject);
+    }
+    if (attachments?.length && (!this.attachmentProject || !this.attachmentSupported)) throw Error("Files require a supported fixed conversation project.");
+    freezeMaterialRequest({ knowledge, attachments }, this.attachmentProject ?? this.knowledgeProject ?? undefined);
+    await this.commands!.execute({ kind: "enqueue", conversationId: this.id!, input: { expectedQueueRevision: page.queueRevision, text,
+      ...(knowledge === undefined ? {} : { knowledge }), ...(attachments?.length ? { attachments } : {}) } });
+  }
   async pause() { const page = this.ready("control"); await this.commands!.execute({ kind: "pause", conversationId: this.id!, input: { expectedQueueRevision: page.queueRevision } }); }
   async resume() {
     this.ready("control"); if (!(await this.refresh(true))) return;
@@ -114,20 +132,35 @@ export class ConversationQueueProjection {
     await this.commands!.execute({ kind: "cancel-task", conversationId: this.id!, taskId: expectedTaskId });
   }
   async retry(key: string) { if (!this.state.online) return; await this.commands?.retry(key); }
+  private invalidateReads(clear: boolean) {
+    this.reads.abort(); this.reads = new AbortController(); this.detailFlights.clear();
+    this.update({ details: clear ? this.bodies.clear() : this.bodies.retain(value => !!value.data) });
+  }
+  clearReadCache() { this.invalidateReads(true); }
   loadDetail(itemId: string): Promise<void> {
-    if (!this.port || !this.id || !this.state.available || !this.state.online || this.lifetime.signal.aborted || this.state.details[itemId]?.data) return Promise.resolve();
+    if (!this.port || !this.id || !this.state.available || !this.state.online || !this.visible || this.lifetime.signal.aborted) return Promise.resolve();
+    if (this.state.details[itemId]?.data) { this.update({ details: this.bodies.touch(itemId) }); return Promise.resolve(); }
     const existing = this.detailFlights.get(itemId); if (existing) return existing;
-    const id = this.id, signal = AbortSignal.any([this.lifetime.signal, AbortSignal.timeout(this.timeoutMs)]);
-    this.update({ details: { ...this.state.details, [itemId]: { loading: true } } });
-    const flight = this.port.conversationQueueItem(id, itemId, signal).then(data => {
-      if (this.lifetime.signal.aborted) return;
+    const publish = (value: QueueDetailState) => this.update({ details: this.bodies.put(itemId, value) });
+    if (this.detailFlights.size) { publish({ error: "Another message is loading. Retry after it finishes." }); return Promise.resolve(); }
+    const reads = this.reads, current = () => reads === this.reads && !reads.signal.aborted && !this.lifetime.signal.aborted;
+    const id = this.id, signal = AbortSignal.any([this.lifetime.signal, reads.signal, AbortSignal.timeout(this.timeoutMs)]);
+    publish({ loading: true });
+    const flight = Promise.resolve().then(() => {
+      if (!current()) throw Error("Message read ended.");
+      return this.port!.conversationQueueItem(id, itemId, signal);
+    }).then(data => {
+      if (!current()) return;
       if (signal.aborted) throw signal.reason;
-      if (data.conversationId !== id || typeof data.item?.text !== "string") throw Error("Queue detail identity is invalid.");
+      bodyBytes(data?.item?.text, 16_000);
+      if (data.conversationId !== id) throw Error("Queue detail identity is invalid.");
       assertQueueItem(data.item, id, itemId);
       if (!data.item.text.startsWith(data.item.preview)) throw Error("Queue text does not match its preview.");
-      this.update({ details: { ...this.state.details, [itemId]: { data } } });
-    }).catch(error => { if (!this.lifetime.signal.aborted) this.update({ details: { ...this.state.details, [itemId]: { error: queueError(error) } } }); }).finally(() => { this.detailFlights.delete(itemId); });
+      publish({ data });
+    }).catch(error => { if (current()) publish({ error: queueError(error) }); })
+      .finally(() => { if (this.detailFlights.get(itemId) === flight) this.detailFlights.delete(itemId); });
     this.detailFlights.set(itemId, flight); return flight;
   }
-  dispose() { this.invalidate(); this.commands?.dispose(); this.lifetime.abort(); this.listeners.clear(); this.detailFlights.clear(); }
+
+  dispose() { this.clearReadCache(); this.reads.abort(); this.invalidate(); this.state = { ...this.state, page: null, details: {} }; this.commands?.dispose(); this.lifetime.abort(); this.listeners.clear(); this.detailFlights.clear(); }
 }

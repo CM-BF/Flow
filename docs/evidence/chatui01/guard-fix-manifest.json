@@ -1,0 +1,45 @@
+{
+  "kind": "CHATUI01 independent-review P2 fix",
+  "implementationTarget": "f80fb6606fbcba942fc8741f56b2f2c6f285f2df",
+  "priorTarget": "3c9952583fa6b3413f76bdcb8a8c33b52c984fb1",
+  "priorManifest": "docs/evidence/chatui01/manifest.json",
+  "canonicalRun": "docs/evidence/chatui01/run-2026-10-06T08-51-11.833Z-0552c8b9",
+  "sourceFiles": {
+    "experiments/stream-ui-acceptance/prepare-runtime.mjs": "339e7b812b670a7c5c4e6cbd9dd81966b0c8714cf1429bcb1d50711b8c7969c1",
+    "experiments/stream-ui-acceptance/fixture.mjs": "e60fc42b7d64728d919ca0e5772ae333bf6f2cfe96b949d76472c5706fb27e24",
+    "experiments/stream-ui-acceptance/evidence.mjs": "91f28a1f54be7909e53743a89730671e1d24fbe8f26429aea6961f3ed173168d",
+    "experiments/stream-ui-acceptance/preflight.mjs": "26f12a62839201d54b2c7d00d6bb330c33ce681485d833357ed5df25523d424e",
+    "experiments/stream-ui-acceptance/journey.mjs": "cf987752367428f3694d0f66e8a76fdbf6ad0c4c6c5525c4073b09a93991333a",
+    "experiments/stream-ui-acceptance/guard-network.test.mjs": "4954eeea132bb13b91d87f861da94497c956077900554f1ca9fe76c6f3b45450",
+    "experiments/stream-ui-acceptance/evidence.test.mjs": "cff46c8dd8c8cdebed6f6293dcc13b22c8415db6d8fc5f76bbc3c9cdfa6a6d1c"
+  },
+  "rawFiles": {
+    "docs/evidence/chatui01/run-2026-10-06T08-51-11.833Z-0552c8b9/checks.json": "45e84295c3e3dd7174114f12da965a3e3ef8d613fa67f48910f6d5955b7054e6",
+    "docs/evidence/chatui01/run-2026-10-06T08-51-11.833Z-0552c8b9/reservation.json": "b0d32e09fd88256ee6d32dcf8a71639c448d9fa089ca5ffef2c374fcc581902a",
+    "docs/evidence/chatui01/run-2026-10-06T08-51-11.833Z-0552c8b9/final-dark-narrow.png": "d19245bdccfb8d669f903526f2a5562144b9c627c21c7ead04fa0a9a6b49e424",
+    "docs/evidence/chatui01/run-2026-10-06T08-51-11.833Z-0552c8b9/final-light.png": "d499c0b5daf63a92bbae765ee092ddc55b6638f5ff3940636261aaa0dc3cc2f8",
+    "docs/evidence/chatui01/guard-fix-checks.txt": "a6e5d723c71160f2369ba5ac2b867f87a2139a65e9ccedd673d5c865d58a15d4",
+    "docs/evidence/chatui01/guard-network-red.txt": "6fea47147fa88a2251312ad61081d1b13bdef3b593e4fc3c1ba04b3ac1df3d60"
+  },
+  "reproduction": {
+    "implementationTarget": "3c9952583fa6b3413f76bdcb8a8c33b52c984fb1",
+    "testSource": "experiments/stream-ui-acceptance/guard-network.test.mjs",
+    "testSourceSha256": "4954eeea132bb13b91d87f861da94497c956077900554f1ca9fe76c6f3b45450",
+    "selected": 5,
+    "failed": 5,
+    "raw": "docs/evidence/chatui01/guard-network-red.txt"
+  },
+  "checks": {
+    "unitAndNetworkSelected": 9,
+    "unitAndNetworkPassed": 9,
+    "actualNetworkCases": 5,
+    "browserJourneysSelected": 1,
+    "browserJourneysPassed": 1,
+    "sdkQueries": 0,
+    "realCenter": false
+  },
+  "productCommit": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5",
+  "productSourceChanges": false,
+  "independentReview": "DELTA_PENDING",
+  "live": "NOT_AUTHORIZED; entry not implemented"
+}

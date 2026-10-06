@@ -1,0 +1,46 @@
+{
+  "sampleGeneratedAt": "2026-10-06T12:03:17.633Z",
+  "sourceCount": 144,
+  "mainAtSample": {
+    "available": true,
+    "branch": "main",
+    "head": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T12:03:19.732Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "taskId": "B01",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T11:58:50.033Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/plans/b01-bounded-reads/status.md",
+    "syncedAt": "2026-10-06T12:03:17.633Z",
+    "stale": false,
+    "ageHours": 0.0743425
+  },
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "三个轻读入口均已实现并获独立批准，原响应与分页行为保持",
+    "next": "已审轻读实现交由Lead接收主线",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "parseErrors": [
+    "重复 TODO ID"
+  ],
+  "limits": "Historical actual sample after authority migration; owner subsequently repaired duplicate TODO IDs. No new sampling."
+}

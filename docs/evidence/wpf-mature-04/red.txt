@@ -1,0 +1,33 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency
+
+ ❯ apps/server/src/context-transparency/projection.test.ts (0 test)
+ ❯ packages/contracts/src/context-transparency.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/context-transparency/projection.test.ts [ apps/server/src/context-transparency/projection.test.ts ]
+Error: Cannot find module './projection.js' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/server/src/context-transparency/projection.test.ts'
+ ❯ apps/server/src/context-transparency/projection.test.ts:3:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import type { ContextIdentity, ContextMeasurement, ContextObservation …
+      3| import { projectContextSnapshot } from './projection.js';
+       | ^
+      4| 
+      5| const digest = 'a'.repeat(64);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/contracts/src/context-transparency.test.ts [ packages/contracts/src/context-transparency.test.ts ]
+Error: Cannot find module './context-transparency.js' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/contracts/src/context-transparency.test.ts'
+ ❯ packages/contracts/src/context-transparency.test.ts:2:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  no tests
+   Start at  02:06:43
+   Duration  397ms (transform 93ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

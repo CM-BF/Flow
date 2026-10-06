@@ -1,0 +1,19 @@
+{
+  "requests": [
+    {
+      "key": "e9a29b90-9204-4245-bce4-f2ccf4aa34d4",
+      "body": "{\"kind\":\"define-input\",\"nodeId\":\"4ad7aae0-41a4-46b8-b1a9-04aa32412dd1\",\"expectedInputVersion\":1,\"input\":{\"goal\":\"PRIVATE_MATERIAL replacement\",\"constraints\":\"No provider\",\"acceptance\":\"nonempty\",\"verification\":{\"kind\":\"nonempty\"}},\"reason\":\"Explicit owner update\"}"
+    },
+    {
+      "key": "e9a29b90-9204-4245-bce4-f2ccf4aa34d4",
+      "body": "{\"kind\":\"define-input\",\"nodeId\":\"4ad7aae0-41a4-46b8-b1a9-04aa32412dd1\",\"expectedInputVersion\":1,\"input\":{\"goal\":\"PRIVATE_MATERIAL replacement\",\"constraints\":\"No provider\",\"acceptance\":\"nonempty\",\"verification\":{\"kind\":\"nonempty\"}},\"reason\":\"Explicit owner update\"}"
+    }
+  ],
+  "originalIntentRestored": true,
+  "automaticResend": false,
+  "replayed": true,
+  "restarts": [
+    "terminal controller/private file",
+    "center"
+  ]
+}

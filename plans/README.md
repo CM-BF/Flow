@@ -1,6 +1,6 @@
 # Flow 计划索引
 
-当前滚动入口见 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md) 与各 owner status。2026-10-06 09:53 UTC固定main253035已审含新视觉外壳、知识聊天接线、Codex有界通信与中心来源规则；原生Codex执行仍在R05C实施。TUI首片进行，ENG-001工程交付排其后、COST-001再后。个人center/runner仍b1c2、accepting v12，Web固定静态产物，不能把main更新称用户运行已更新。下文旧日期批次仅历史观察。
+当前滚动入口见 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md) 与各 owner status。2026-10-06 12:44:20 UTC：主线aeb已接O12、ENG01G和SVC05准备；个人后台现固定362/v15 accepting，Web仍8d8/caa1/v2。终端目标控制TUI01D、工程原生用途ENG01H并行；固定后台产物SVC06已排后继。主线提交、固定运行版本和真实模型验收分别记录，下文旧日期批次仅历史观察。
 
 本目录记录 Flow 的设计方向、技术验证和后续实施安排。使用和维护规则见 [AGENTS.md](AGENTS.md)。
 
@@ -138,3 +138,23 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 - SVC04：FLOW-001下的[网页独立发布与回退](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/plans/svc04-web-release/plan.md)，唯一权威 `web-artifact-release`；先专用fixture证明后台持续、旧资源与失败保旧，个人服务不在本轮切换。
 
 新增唯一来源：S01P02并发入口（runner-concurrency-entry）、D08两层任务关系（dashboard-task-links）、WPF-ACTIVITYREAD01活动阅读（web-activity-readability）、WPF-STEIRI01补充指令接线（web-steering-integration）。各独审范围与main接收分别以唯一status为准；本批不切换个人服务。
+
+## 2026-10-06 11:32:44 UTC 连续目标与原生工程接缝
+
+| 子task | 唯一父任务 | 权威计划 | 状态 |
+| --- | --- | --- | --- |
+| O11 | FLOW-001（O01/M02追溯） | [目标交付读口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model/plans/o11-goal-delivery-read-model/plan.md) | implementation；稳定材料与实时执行分离 |
+| ENG01D | ENG-001 | [真实身份与原生turn接缝](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-seams/plans/eng01d-native-writer-seams/plan.md) | implementation；不扩旧权限 |
+
+- TUI01D：TUI-001下的[终端目标与控制旅程](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-goal-session/plans/tui01d-goal-session/plan.md)。独立goal呈现复用已发布共享controller，公开headless与实际PTY分层验收；Web独立，不互为全线串行前置。
+
+- ENG01H：[原生工程用途与检查收据](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract/plans/eng01h-native-engineering-contract/plan.md)，ENG-001下唯一中心合同片；不把配置声明当原生资格。
+- SVC06：[固定后台发布产物](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/plans/svc06-backend-release/plan.md)，FLOW-001/REQ-19后继，开发checkout与运行依赖解耦；当前仅plan/evidence，不抢终端/原生实现。
+
+## 2026-10-06 13:10 UTC 连接与运行边界
+
+- WPF-CONNECTION01：[刷新后恢复中心连接](/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/plans/wpf-connection-session/plan.md)，直接归WPF-MATURE-06；native_center_owner实施中心会话、统一HTTP/流鉴权，028已唯一领取。Web恢复后继独立。
+- S01P05：[事件状态写入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence/plans/s01p05-event-state/plan.md)，FLOW-001下原S01并发后继，原events范围已交唯一owner。
+- ENG01I：[受信原生宿主编排](/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/plans/eng01i-native-engineering-host/plan.md)，ENG-001下已固定准备合同，当前planning且原claim释放；资格事实齐备再fresh take，不表示产品实施。
+
+SVC06已由assignment_review接收原唯一树与九scope实施固定后台产物；原条目“仅plan/evidence”是历史观察。个人backend仍362/v15 accepting，Web8d8/v2，不随本次源码与看板登记切换。

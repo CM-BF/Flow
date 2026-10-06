@@ -1,3 +1,5 @@
+import { ConversationAttachments, createAttachmentPlugin, type AttachmentClient } from "./attachments";
+import type { RecoveryStorage } from "../attachments/recovery";
 import { SteeringWorkspace, createSteeringPlugin, type SteeringIdentity, type SteeringPorts } from "./steering";
 import { ConversationKnowledge, createKnowledgePlugin, KNOWLEDGE_OWNER, KNOWLEDGE_PANEL, type KnowledgeReaders, type KnowledgeIdentity } from "./knowledge";
 import type { ConversationProjection } from "../conversations/projection";
@@ -39,6 +41,8 @@ export interface AppActions {
   knowledge?: KnowledgeReaders;
   stream?: StreamReaders;
   steering?: SteeringPorts;
+  attachments?: { client: AttachmentClient; storage: RecoveryStorage;
+    allowed(viewKey: string, projection: ConversationProjection, projectId: string, mode: "read" | "upload"): boolean };
   ownsMessage?(taskId: string, messageId: string, role: "user" | "assistant"): boolean;
   openTask(id: string): void;
   openWorkspace(id: string, tab: WorkspaceTabId): void;
@@ -60,6 +64,7 @@ export class AppPluginSession {
   readonly steering: SteeringWorkspace;
   readonly streamBudget = new StreamConnectionBudget();
   readonly dataRenderers: ReturnType<typeof createDataRendererRegistry>;
+  private readonly attachmentBindings = new Map<string, { binding: ConversationAttachments; stop(): void }>();
   private readonly knowledgeBindings = new Map<string, ConversationKnowledge>();
   private readonly lifetime = new AbortController();
   get signal() { return this.lifetime.signal; }
@@ -119,6 +124,7 @@ export class AppPluginSession {
     this.host.register(createTaskActionsPlugin());
     this.host.register(createActivityPlugin());
     this.host.register(createAssistantStreamPlugin());
+    this.host.register(createAttachmentPlugin(viewId => [...this.attachmentBindings.values()].find(({ binding }) => { const context = binding.context(); return context.kind === "composer" && context.viewId === viewId; })?.binding));
     this.host.register(createKnowledgePlugin(viewId => {
       const binding = [...this.knowledgeBindings.values()].find(item => { const context = item.context(); return context.kind === "composer" && context.viewId === viewId; });
       if (!binding) throw Error("Knowledge is not available in this composer.");
@@ -126,7 +132,7 @@ export class AppPluginSession {
     }));
   }
 
-  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.steering.sync(); } }
+  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.steering.sync(); this.attachmentBindings.forEach(({ binding }) => binding.sync()); } }
   publishNavigation(next: NavigationSnapshot, context: ResourceContext) {
     if (this.closed) return;
     this.context = context;
@@ -149,7 +155,33 @@ export class AppPluginSession {
   private authorizeResource(capability: Capability, context: ResourceContext) {
     if (this.closed || !this.validContext(context)) return false;
     if (capability === "task.steering.read" || capability === "task.steering.write") return this.steering.authorize(context, capability === "task.steering.read" ? "read" : "write");
+    if (capability === "attachment.read" || capability === "attachment.upload") {
+      if (context.kind !== "composer") return false;
+      const knowledge = [...this.knowledgeBindings.values()].find(item => { const resource = item.context(); return resource.kind === "composer" && resource.viewId === context.viewId; });
+      const projectId = knowledge?.projection.getSnapshot().snapshot?.conversation.projectId;
+      return !!knowledge && !!projectId && this.actions.attachments?.allowed(knowledge.viewKey, knowledge.projection, projectId, capability === "attachment.read" ? "read" : "upload") === true;
+    }
     return true;
+  }
+  attachmentBinding(viewKey: string, projection: ConversationProjection): ConversationAttachments | null {
+    const existing = this.attachmentBindings.get(viewKey); if (existing) return existing.binding;
+    const projectId = projection.getSnapshot().snapshot?.conversation.projectId;
+    if (this.closed || !projectId || !this.actions.attachments) return null;
+    const knowledge = this.knowledgeBinding(viewKey, projection);
+    const binding = new ConversationAttachments({ connectionId: this.id, viewKey, projectId }, {
+      host: this.host, client: this.actions.attachments.client, signal: this.signal, storage: this.actions.attachments.storage,
+      current: () => {
+        const state = projection.getSnapshot(), context = knowledge.context();
+        if (this.closed || context.kind !== "composer" || state.snapshot?.conversation.projectId !== projectId) return null;
+        return { viewId: context.viewId, conversationId: state.snapshot.conversation.id, projectId, visible: knowledge.getSnapshot().visible,
+          online: state.connection === "live", attachmentContext: state.snapshot.capabilities.attachmentContext === true,
+          canRead: this.actions.attachments?.allowed(viewKey, projection, projectId, "read") === true,
+          canUpload: this.actions.attachments?.allowed(viewKey, projection, projectId, "upload") === true };
+      },
+    });
+    const stopProjection = projection.subscribe(() => binding.sync()), stopKnowledge = knowledge.subscribe(() => binding.sync());
+    this.attachmentBindings.set(viewKey, { binding, stop: () => { stopProjection(); stopKnowledge(); binding.dispose(); } });
+    return binding;
   }
   steeringAllowed(identity: SteeringIdentity, mode: "read" | "write") { return !this.closed && identity.connectionScope === this.id && this.actions.steering?.allowed(identity, mode) === true; }
   steeringAdmission(identity: SteeringIdentity, options: { attemptId?: string }, signal: AbortSignal) { if (!this.steeringAllowed(identity, "read")) throw Error("Steering read denied."); return this.actions.steering!.admission(identity, options, signal); }
@@ -159,6 +191,26 @@ export class AppPluginSession {
     let binding = this.knowledgeBindings.get(viewKey);
     if (!binding) { binding = new ConversationKnowledge(viewKey, projection, this); this.knowledgeBindings.set(viewKey, binding); }
     return binding;
+  }
+  hasProtectedAttachments() { return [...this.attachmentBindings.values()].some(({ binding }) => binding.protection().length > 0); }
+  /** Observe existing bindings only; this must not allocate a controller while closing. */
+  getViewProtection(viewKey: string): readonly string[] {
+    if (this.closed) return ["Connection state unavailable"];
+    const binding = this.knowledgeBindings.get(viewKey), state = binding?.getSnapshot();
+    return [
+      ...(this.attachmentBindings.get(viewKey)?.binding.protection() ?? []),
+      ...(state?.controller?.getSnapshot().selected.length ? ["Selected knowledge"] : []),
+      ...(state?.projectId && !binding?.locked() ? ["Project selection"] : []),
+      ...(this.steering.getSnapshot().some(entry => entry.identity.viewKey === viewKey) ? ["Steering draft or receipt"] : []),
+    ];
+  }
+  /** App is the sole final-release authority. Protected bindings are never silently discarded. */
+  releaseView(viewKey: string) {
+    if (this.getViewProtection(viewKey).length) throw Error("This view still owns local material.");
+    const binding = this.knowledgeBindings.get(viewKey);
+    this.knowledgeBindings.delete(viewKey); binding?.dispose();
+    this.attachmentBindings.get(viewKey)?.stop(); this.attachmentBindings.delete(viewKey);
+    this.steering.closeView(viewKey);
   }
   canReadKnowledge(identity: KnowledgeIdentity, context: ResourceContext, knowledge: boolean) {
     const binding = this.knowledgeBindings.get(identity.viewKey);
@@ -253,6 +305,7 @@ export class AppPluginSession {
     this.closed = true;
     this.lifetime.abort();
     this.steering.dispose();
+    this.attachmentBindings.forEach(value => value.stop()); this.attachmentBindings.clear();
     this.knowledgeBindings.forEach(binding => binding.dispose()); this.knowledgeBindings.clear();
     this.dataRenderers.dispose();
     // Clear the old connection's custom palette synchronously, before a new connection can render.

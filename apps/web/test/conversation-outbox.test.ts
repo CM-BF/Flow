@@ -139,3 +139,31 @@ describe("conversation admission outbox", () => {
     outbox.fail(first.id, "Unknown", false); const unknown = outbox.getSnapshot(); outbox.dismiss(first.id); expect(outbox.getSnapshot()).toBe(unknown);
   });
 });
+
+
+describe("attachment material admission", () => {
+  const ref = (n = 1) => ({ kind: "upload" as const, projectId: "project-a", resourceId: `20000000-0000-4000-8000-${String(n).padStart(12, "0")}`, version: 1 as const, contentDigest: "d".repeat(64) });
+  it("detaches ordered attachment references at local handoff and preserves unknown request identity", () => {
+    const box = setup(), attachments = [ref(2), ref(1)];
+    const first = box.begin({ ...input, attachments });
+    attachments[0]!.contentDigest = "f".repeat(64); attachments.reverse(); attachments.length = 0;
+    expect(first.request.attachments).toEqual([ref(2), ref(1)]);
+    expect(Object.isFrozen(first.request.attachments)).toBe(true);
+    expect(Object.isFrozen(first.request.attachments?.[0])).toBe(true);
+    box.fail(first.id, "bad 200", false);
+    expect(box.retry(first.id)?.request).toBe(first.request);
+    expect(box.getSnapshot()?.turnKey).toBe(first.turnKey);
+  });
+  it("rejects absent or wrong new conversation project and mixed material projects before allocating identity", () => {
+    let keys = 0; const box = new ConversationOutbox(() => String(++keys));
+    for (const settings of [creation, { ...creation, projectId: "project-b" }])
+      expect(() => box.begin({ ...input, conversationId: null, creation: settings, attachments: [ref()] })).toThrow("project");
+    expect(() => box.begin({ ...input, attachments: [ref(), { ...ref(2), projectId: "project-b" }] })).toThrow("project");
+    expect(keys).toBe(0); expect(box.getSnapshot()).toBeNull();
+  });
+  it("preserves omitted and explicitly empty attachments", () => {
+    const box = setup(), first = box.begin({ ...input, attachments: [] });
+    expect(first.request.attachments).toEqual([]); expect(Object.isFrozen(first.request.attachments)).toBe(true);
+    box.accept(first.id); expect(box.begin(input).request).not.toHaveProperty("attachments");
+  });
+});

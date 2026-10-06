@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+ ❯ experiments/runner-capacity/mixed/observe-pg.test.ts (4 tests | 1 failed) 7ms
+   ✓ promise connect/query preserve promise identity, receiver, value and original rejection object 2ms
+   ✓ callback connect and query forward this, callback receiver/arguments, release and exact return once 0ms
+   ✓ callback error and synchronous throw preserve object identity; observer failure never changes behavior 0ms
+   × classifies the fixed P04 shared fence query through the observed client without broadening nearby SQL 4ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  05:41:41
+   Duration  135ms (transform 30ms, setup 0ms, import 37ms, tests 7ms, environment 0ms)
+

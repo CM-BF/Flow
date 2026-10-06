@@ -1,0 +1,16 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency
+
+ ✓ apps/runner/src/claude-context-observation.test.ts (27 tests) 1183ms
+   ✓ retains an unsettled summary in the real journal and blocks restart despite a throwing close  1054ms
+ ✓ apps/runner/src/claude.test.ts (31 tests) 495ms
+ ✓ apps/runner/src/assistant-stream/stream.test.ts (11 tests) 442ms
+ ✓ apps/runner/src/runner.test.ts (33 tests) 2883ms
+   ✓ starts from environment configuration and stops cleanly on SIGTERM  627ms
+ ✓ apps/runner/src/context-observations/claude-summary-read.test.ts (19 tests) 10ms
+
+ Test Files  5 passed (5)
+      Tests  121 passed (121)
+   Start at  05:11:10
+   Duration  6.13s (transform 236ms, setup 0ms, import 703ms, tests 5.01s, environment 0ms)
+

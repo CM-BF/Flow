@@ -1,0 +1,41 @@
+# 历史上下文样本：一页实施与共享输入请求
+
+**唯一迁移已分配并领取：`packages/storage/migrations/027-context-observation-history.sql`，owner architecture_read，v5 COMMITTED 2026-10-06 11:03:13 UTC；026属ATTACH01，本片不依赖026。局部入口 `migrateContextObservationHistory(pool)` 位于 `apps/server/src/context-transparency/migration.ts`；Lead接线只需在既有migrate链调用此入口。正式DDL和9项真实PG行为检查已完成，50/50本片局部检查与严格noEmit0；待固定target独审，未全局挂载。** 2026-10-06 10:28 UTC，GO 已授权推进历史持久化和公开读回；04 claim v4 已于10:29:24.897 UTC原子追加八文件；既有实现已扩展唯一027及真实PG验证。固定 main `8d8ab520a9d43c7b9dafb22911416ee799ebf665` clean，已受控合入本分支108d427，六个已审源码尚未 main；879/3ab 两片批准、检查及逐文件 hash 见 [integration-readiness.json](integration-readiness.json)。进度唯一源为 [status](../../../plans/wpf-mature-04-context-transparency/status.md)。不等待 Codex；本片 current/remaining 恒为 unknown，完整 CT-02/CT-06 仍未达成。
+
+**小 Interface / 状态归属。** `record(tx, task, attempt, event)` 仅在既有 `reportEvents → ownedAttempt → applyEvent` 的事务、runner→task→attempt 锁及 fence 后调用；不另开事务、sequence 或 runner POST。`readLatestHistory(tx, task)` 由中心选择 task.current_attempt_id 并核 task/attempt 归属，按原始 event_sequence 降序返回最多一条有限历史样本；GET `/api/tasks/:id/context/history` 沿既有 owner 鉴权，不接受 reporter 的 expected/current identity。DTO 明示 history-only，current/remaining unknown；事件序号只作历史排序，不能用 sample.sequence===attempt.last_sequence 宣称 current（artifact/final/verification/completed 仍推进序号，完成后不再接受新 sample）。
+
+**唯一 DDL 请求。** `context_observations` 需要 task/attempt 外键、`(attempt_id, observation_id)` 唯一、完整 canonical wire/hash、有限 sample JSON、原始 event_sequence、host observedAt、DB clock_timestamp() receivedAt、按 task/attempt/sequence 降序索引及 detail reference。相同 canonical 重报复用首次序号/时间/ref；异内容 409。Envelope replay 仍由 runner_events 管。正式027新增attempt/task与detail/task/attempt复合外键及支撑唯一索引，样本append-only、有限JSON/文本检查；局部入口复用同一flow-migrations事务锁与version27记录。真实PG验证使用唯一文件，不依赖026。
+
+**窄 source 与身份。** 仅允许 `claude / claude-sdk-0.3.290-v2 / claude-sdk-context / 0.3.290 / summary / sdk-summary-estimate / estimate / claude-context-summary-0.3.290`。hardCapacity unknown、compression not-observed。wire 只有 source 常量、observationId/observedAt/nativeSessionId、host resolvedModel nullable、used/compactionWindow nullable 安全整数、最多四种唯一匿名 categories；不接收完整 identity、材料 refs、evidenceRef、正文、path 或 session 账单。请求体 ≤65536 bytes，SDK 原始类别 ≤32 的聚合属于 runner，而非中心。空 resolvedModel 必须 unknown 数值/空类别；未知或越界拒绝，不截断冒充 full。
+
+中心复用 `sessionEvidence(tx,task)`（conversations/replies.ts），要求恰好一个合法 session detail，sourceTask/sourceAttempt/runner 与锁定行相符、activeTaskId=task.id、nativeSessionId=attempt.native_session_id 非空、adapterVersion 精确 v2。`requireExecutionProfile(tx,task.submission.executionProfile)` 核未撤销 reference/digest、runner、Claude/v2，requestedModel 来自配置；首片仅显式普通 purpose profile，legacy/goal-tools/graph-tools 不猜默认授权。`recordSession` 负责已有 native session 归属；host resolvedModel 只是固定 source 报告，不是中心独立 provider 验证。
+
+**metadata refs。** ordinary task 没有 K02 时 input/material digest 与 historyEpoch 为 null，材料未知；历史可存，不能声称已消费 input。会话从 DB task.conversation_input_id 调 `contextReference`（conversation-context/store.ts）读按序精确 citation/byteLength/freeze metadata，复用 executionInputDigest；材料 revision 用版本化 ordered refs canonical，不改名使用含正文 contextDigest。授权沿 freezeContext→resolveCitationsInTransaction 的 project/version/digest/locator，reporter 不能追加。Goal 的 `goalExecutionReferences` 只有 digest/count/bytes，没有精确 refs，首片材料仍 unknown，不调用全文 goalContextDetail。`saveDetail` 在原事务生成真实 metadata detail/ref，中心注入 ContextObservation；读回联查 details.id/task_id/attempt_id 归属。canonical 比较不含中心生成 ref/receivedAt，既有 ACK 不要求 runner 事先持有 ref。
+
+| 本轮精确文件 / 后继接线 | owner 与交付 |
+| --- | --- |
+| `packages/contracts/src/context-observation-event.ts` + `.test.ts` | architecture_read：固定来源的有限 wire，不改既有 runner union |
+| `packages/contracts/src/context-observation-history.ts` + `.test.ts` | architecture_read：历史 DTO、显式 current/remaining unknown |
+| `apps/server/src/context-transparency/store.ts` + `.test.ts` | architecture_read：同事务 record/readLatestHistory；027及真实PG已验证，待最终独审 |
+| `apps/server/src/context-transparency/routes.ts` + `.test.ts` | architecture_read：局部 owner GET 和公开 HTTP 行为，不改全局 mount |
+| `packages/storage/migrations/027-context-observation-history.sql`、`apps/server/src/context-transparency/migration.ts` | architecture_read已领取v5；Lead挂载migrateContextObservationHistory(pool) |
+| `packages/contracts/src/runner.ts`、`apps/server/src/events.ts` | ENG01A writer：union/applyEvent 调 record，沿既有 fence/事务 |
+| `packages/contracts/src/index.ts`、`apps/server/src/index.ts` | F01 writer：导出/挂载局部 routes，中心既有 auth 不复制 |
+| `packages/client/src/index.ts` | TUI01B writer；typed reader 接线由 Lead 协调 |
+| runner summary 采样/emit 与纯值抽取 | 后继 runner owner；不在本片调用 SDK/provider |
+
+**避免复制归一化。** 等真实 wire producer 领取后，runner 抽一个 `normalizeClaudeSummary(response, expectedResolvedModel)` 纯 Module，唯一负责 camelCase 数值检查、≤32 原始类别→四种匿名类别、溢出及模型匹配。已审 `mapClaudeContextSummary` 与 wire producer 共用该实现；须先追加精确 scope/验证消费者，不能用假 ref 调 mapper。中心仅验证窄 wire、不解析 SDK、不重新聚合，而是注入 DB identity/真实 detail ref。当前六源码冻结，不借历史批准重构。
+
+**验收 / 后继限制。** 本片验证 schema 拒绝隐私与溢出、完整 canonical 幂等、真实 DB 事务/归属/首次时间、owner HTTP 权限/404/空历史及 bounded response；未挂载前不称生产端到端。current 后继需可信 consumed input/history/result/steering cut；accepted steering 立即失效，同一 result 收尾事件不应永久破坏 post-turn current。没有该证据时未知，不造通用 FSM。采集、压缩、配置切换、freshness 与真实 provider 仍分别待实施验证。结构沿 [AGENTS modular-design](../../../AGENTS.md#modular-design)，本地技能用于单一事务归属、真实引用和字节边界。
+
+## Producer/current cut 有界核对（2026-10-06T10:39:52.653248+00:00；只读结论，非实施）
+
+fresh v4 ACTIVE、HEAD `75e47cbaf63ce7733663c3558423c796e226e03a` clean 后仅补本段；a735 的8源/raw与旧6源全部冻结。以下依据本分支受控8d8代码和本地SDK0.3.290固定类型；0 SDK/provider调用、0测试。唯一DDL一旦分配即恢复历史PG片，不用本研究替代ready实施。
+
+- **普通完成路径的最小候选点：** `claude.ts:121–137` 当前先等迭代结束，再usage→artifact/verification→assistant-final，finally `controller.abort/stream.close`；`ClaudeQuery`目前仅暴露迭代与close。后继应优先验证“同一Query收到并核验成功root result后、继续迭代/关闭前”的一次显式 `getContextUsage({detail:'summary'})`，不要在runtime completed后另开Query。`sdk.d.ts:3031–3038/3949`只承诺last-response usage+local estimate，没有 result UUID、已消费输入digest或steering revision；结果后控制调用是否仍可用、coalescer/read-ahead与控制响应的次序均 **unknown**，类型存在不等于可采样实证。默认/full会token-count，仍禁止。
+- **普通路径现有持久证据：** `assistantEvent`（claude.ts:280–284）把成功 `final.uuid/session_id` 写入 `sourceMessageId/nativeSessionId`，contentDigest/实际detail由中心assistant store保存；`context.emit` 经runtime outbox→report ACK（runtime.ts:165–183）。这可作未来host报告sample与result的关联锚点，不能单凭当前sample的身份宣称SDK测量覆盖该result。K02 executionInputDigest只来自冻结输入；ordinary无冻结digest、材料快照没有公开metadata cut时继续unknown。a735窄wire尚无resultId/cut字段，不借文档假定已具备。session累计modelUsage不作为context。
+- **steering可复用的强证据：** `host.ts:40–51`先持久化根帧observed-consumed receipt和steering-result；`state.ts:10–32`绑定root UUID、consumedUserMessageUuids、queuedTurnCount和contentDigest。`host.ts:55–64`串行读取mailbox并要求latest成功、queue=0、input.pending=0、所有命令已覆盖；中心`active-steering/finalization.ts:49–65`再核revision、结果history、覆盖UUID及精确final后同事务seal。最小未来采样接缝在这条串行finalize的已检查区间，sample关联同result/revision；最终CAS不提交或采样期间有新输入，则只留历史/unknown。received ACK只证明持久接收（host.ts:90–94之后才push），不能替代observed-consumed或最终覆盖证明。
+- **有限失效条件：** 中心`commands.ts:28–33`接受新steer即递增revision，立即令未覆盖的current候选失效，不等SDK回报。新的root输出/工具消费、其他SDK输入、新attempt/nativeSession、冻结profile/input/material digest变化、未知消费/丢ACK/采样失败均保守unknown；next-turn settings变化只影响draft/下一输入，不改写已运行/queued的冻结历史身份。相同已覆盖result的artifact/verification/assistant-final/completed只属收尾持久化，不能用 `sample.event_sequence===attempt.last_sequence` 判current，也不另造通用FSM。
+- **复用责任：** 后继runner单一纯normalize Module负责SDK字段/数值/四类聚合，旧mapper与producer共同消费；统一匿名category IDs（旧mapper为`claude-summary-*`、当前历史投影为`sdk-*`，接线前须明确兼容并验证，不能从均合法推断相同）。中心只注入DB身份/真实ref、核既有result/receipt/seal与新输入失效。summary无原生cut、硬容量、压缩证明，因此历史首片current/remaining/hardCapacity仍unknown、compression not-observed。
+
+**Lead最薄接线输入（本片待最终独审）：** 在现有迁移链导入并调用 `migrateContextObservationHistory(pool)`；它沿同一advisory事务锁，仅读取正式027并登记version=27，无026依赖。现有runner union接 `contextObservationEventSchema`，`applyEvent` 的context-observation分支在既有ownedAttempt事务中调用 `record(client, task, attempt, event)`；现有owner-auth之后注册 `registerContextHistoryRoutes(app,pool)`；typed client GET按 `contextHistoryResponseSchema` 解码即可，不传expected/current identity。9项真实PG涵盖首迁移保留旧证据、精确replay/首时间/ref、unique-seq冲突无孤儿detail、整体回滚、归属FK/immutable/字节约束、source/session拒绝、K02 freezeContext→exact bytes refs及pool重连读回。全局鉴权/route/event挂载仍由Lead实际集成验证，不能从本片50局部通过推断。

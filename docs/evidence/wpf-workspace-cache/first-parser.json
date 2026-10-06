@@ -1,0 +1,109 @@
+{
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md)",
+      "id": "WPF-MATURE-05",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root",
+      "value": "Web /root"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "已明确关闭聊天时保留草稿和收据的规则",
+    "next": "关闭干净聊天释放引用，并限制已读正文缓存",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": null,
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "apps/web/src/conversations/queue/projection.ts",
+      "apps/web/src/conversations/read-cache.ts",
+      "apps/web/src/data-renderers/flow-reply-detail.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/workspace-retention.ts",
+      "apps/web/test/conversation-projection.test.ts",
+      "apps/web/test/conversation-queue.test.ts",
+      "apps/web/test/plugin-integration.test.ts",
+      "apps/web/test/workspace-retention.browser.ts",
+      "apps/web/test/workspace-retention.fixture.ts",
+      "apps/web/test/workspace-retention.test.ts"
+    ],
+    "errors": [
+      "实现目标需完整 SHA"
+    ]
+  },
+  "taskId": "WPF-WORKSPACECACHE01",
+  "owner": "workspace_panels_owner / gpt-6-astra ultra",
+  "branch": "codex/web-workspace-cache",
+  "branchState": "in-progress / implementation",
+  "updatedAt": "2026-10-06T11:35:14.000Z",
+  "updatedRecord": "2026-10-06 11:35:14 UTC",
+  "todos": [
+    {
+      "id": "WPF-WORKSPACECACHE01-01",
+      "state": "in-progress",
+      "owner": "workspace_panels_owner",
+      "evidence": "[Interface](../../docs/evidence/wpf-workspace-cache/interface.md)"
+    },
+    {
+      "id": "WPF-WORKSPACECACHE01-02",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "实际consumer未修改"
+    },
+    {
+      "id": "WPF-WORKSPACECACHE01-03",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "尚未验证"
+    },
+    {
+      "id": "WPF-WORKSPACECACHE01-04",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "独审与main接收待实施后"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "fd1322f9c0c1d085d5e343e39f6216b20d26c264 / 当前Git聚合",
+  "declaredDirty": "开始前clean；当前仅首canonical",
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN；尚未产品验证"
+  },
+  "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+  "mainRecord": "NOT_INTEGRATED",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

@@ -1,0 +1,51 @@
+{
+  "recordedAt": "2026-10-06 12:42:31 UTC",
+  "test": {
+    "command": "/opt/homebrew/opt/node@24/bin/node node_modules/vitest/vitest.mjs run experiments/runner-capacity/mixed/observe-pg.test.ts --config experiments/runner-capacity/mixed/vitest.config.ts --no-cache",
+    "exitCode": 0,
+    "files": 1,
+    "selected": 4,
+    "passed": 4,
+    "newDistinct": 1,
+    "existingDirect": 3
+  },
+  "strict": {
+    "command": "/opt/homebrew/opt/node@24/bin/node node_modules/typescript/bin/tsc -p experiments/runner-capacity/mixed/tsconfig.json --noEmit",
+    "exitCode": 0,
+    "rootBaseline": "ES2023/strict/noUnchecked inherited; no config change"
+  },
+  "binding": [
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.ts",
+      "bytes": 5337,
+      "sha256": "68ea05ed95178c5973c097ebfaca9481a755f625874be253b45f02832467353e"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.test.ts",
+      "bytes": 5311,
+      "sha256": "2831b5e5eedecf3c583b7b1c97623a1264f9746de08c6d24ead0a41ce7e4c529"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 11992,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/tsconfig.json",
+      "bytes": 258,
+      "sha256": "2f7bfc694006d11811592ae4ef4bc57d50300ce2c89c32c12a190fa305272c52"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/vitest.config.ts",
+      "bytes": 190,
+      "sha256": "06ad6c5354ad53e6b729a5d444e1c890a3481633f2b5470d8dace817c09e7801"
+    }
+  ],
+  "pgHttpRunnerProviderCalls": 0,
+  "capacityWindows": 0
+}

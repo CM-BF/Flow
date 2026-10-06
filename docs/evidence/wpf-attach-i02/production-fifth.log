@@ -1,0 +1,15 @@
+PASS explicit project preparation preserves the text and performs zero turns
+PASS P01 Files entry loads only explicit metadata; Enter preview is lazy and cached
+PASS real Send v2 bad-200 becomes unknown; retry preserves key/body and next draft
+locator.setInputFiles: Timeout 8000ms exceeded.
+Call log:
+[2m  - waiting for locator('input[type="file"]').first()[22m
+
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:65:7)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:34:109)
+    at async work (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:63:5)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:119:7)
+Center shutdown: HTTP drain deadline reached; remaining connections closed, unacknowledged outcomes unknown.
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx test/attachment-integration.browser.ts production-fifth

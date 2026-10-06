@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller
+
+ ✓ packages/interaction/src/goal/lifecycle.test.ts (8 tests) 15ms
+ ✓ apps/server/src/goal-delivery/session.test.ts (4 tests) 2744ms
+   ✓ observes decision and fixed artifact separately, while disconnect leaves the execution running and cancel only requests stopping  974ms
+
+ Test Files  2 passed (2)
+      Tests  12 passed (12)
+   Start at  05:04:22
+   Duration  6.62s (transform 1.79s, setup 0ms, import 3.51s, tests 2.76s, environment 0ms)
+

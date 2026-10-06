@@ -1,0 +1,40 @@
+{
+  "kind": "tool-transcript-excerpt",
+  "provenance": "Manual faithful transcription of this worker conversation tool results; this is not compiler stdout or a rerun.",
+  "start": {
+    "tool": "tools.exec_command",
+    "arguments": {
+      "cmd": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsc --noEmit > docs/evidence/o12/typecheck-delivery.txt 2>&1",
+      "workdir": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 1000
+    },
+    "response": {
+      "chunk_id": "88f2f9",
+      "wall_time_seconds": 1.001053584,
+      "session_id": 23878,
+      "original_token_count": 0,
+      "output": ""
+    }
+  },
+  "completion": {
+    "tool": "tools.write_stdin",
+    "arguments": {
+      "session_id": 23878,
+      "chars": "",
+      "yield_time_ms": 1000,
+      "max_output_tokens": 1000
+    },
+    "response": {
+      "chunk_id": "464809",
+      "wall_time_seconds": 1.1208e-05,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  },
+  "outputFile": "docs/evidence/o12/typecheck-delivery.txt",
+  "outputBytes": 0,
+  "sourceContext": "After test-only sibling-activity strengthening and before commit 60e495b5ea55e1cee12ae2a9deccb03afc7102f4; implementation was 9d1590fc0e4a3a3477a560120570d125813628f9.",
+  "newExecution": false
+}

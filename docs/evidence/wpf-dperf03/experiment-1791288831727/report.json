@@ -1,0 +1,125 @@
+{
+  "recordedAt": "2026-10-06T12:13:51.728Z",
+  "sourceCommit": "2a52b8ae5250781c712b71117ccd5321a6b4103d",
+  "cases": [
+    {
+      "name": "eight-repositories",
+      "elapsedMs": 116.34254099999998,
+      "gitStarts": 32,
+      "tracePeakIntervals": 4,
+      "unclosedIntervals": 0
+    },
+    {
+      "name": "four-main-proofs",
+      "elapsedMs": 85.16162499999996,
+      "gitStarts": 23,
+      "tracePeakIntervals": 4,
+      "unclosedIntervals": 0,
+      "proofs": [
+        {
+          "record": "未记录 main 集成事实。",
+          "recordedHead": null,
+          "target": "f1e975db65b8f406ee07759e8c3214b33037d801",
+          "mainHead": "f1e975db65b8f406ee07759e8c3214b33037d801",
+          "scopes": [
+            "sample.txt"
+          ],
+          "observedAt": "2026-10-06T00:00:00Z",
+          "current": true,
+          "historicalIntegrated": true,
+          "method": "ancestor",
+          "scopeEqual": true,
+          "dirtyScopePaths": [],
+          "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+        },
+        {
+          "record": "未记录 main 集成事实。",
+          "recordedHead": null,
+          "target": "f1e975db65b8f406ee07759e8c3214b33037d801",
+          "mainHead": "f1e975db65b8f406ee07759e8c3214b33037d801",
+          "scopes": [
+            "sample.txt"
+          ],
+          "observedAt": "2026-10-06T00:00:00Z",
+          "current": true,
+          "historicalIntegrated": true,
+          "method": "ancestor",
+          "scopeEqual": true,
+          "dirtyScopePaths": [],
+          "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+        },
+        {
+          "record": "未记录 main 集成事实。",
+          "recordedHead": null,
+          "target": "f1e975db65b8f406ee07759e8c3214b33037d801",
+          "mainHead": "f1e975db65b8f406ee07759e8c3214b33037d801",
+          "scopes": [
+            "sample.txt"
+          ],
+          "observedAt": "2026-10-06T00:00:00Z",
+          "current": true,
+          "historicalIntegrated": true,
+          "method": "ancestor",
+          "scopeEqual": true,
+          "dirtyScopePaths": [],
+          "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+        },
+        {
+          "record": "未记录 main 集成事实。",
+          "recordedHead": null,
+          "target": "f1e975db65b8f406ee07759e8c3214b33037d801",
+          "mainHead": "f1e975db65b8f406ee07759e8c3214b33037d801",
+          "scopes": [
+            "sample.txt"
+          ],
+          "observedAt": "2026-10-06T00:00:00Z",
+          "current": true,
+          "historicalIntegrated": true,
+          "method": "ancestor",
+          "scopeEqual": true,
+          "dirtyScopePaths": [],
+          "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+        }
+      ]
+    },
+    {
+      "name": "freshness-and-isolation",
+      "elapsedMs": 113.05954099999997,
+      "gitStarts": 12,
+      "tracePeakIntervals": 2,
+      "unclosedIntervals": 0
+    },
+    {
+      "name": "queued-head-movement",
+      "elapsedMs": 87.97645799999998,
+      "gitStarts": 6,
+      "tracePeakIntervals": 2,
+      "unclosedIntervals": 0
+    },
+    {
+      "name": "aggregate-frozen-fallback",
+      "elapsedMs": 45.301083999999946,
+      "gitStarts": 9,
+      "tracePeakIntervals": 3,
+      "unclosedIntervals": 0
+    }
+  ],
+  "failure": {
+    "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ '2d90634e5b3cf8435d80266b1d05dc298b4d9339\\n'\n- '2d90634e5b3cf8435d80266b1d05dc298b4d9339'\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ '2d90634e5b3cf8435d80266b1d05dc298b4d9339\\n'\n- '2d90634e5b3cf8435d80266b1d05dc298b4d9339'\n\n    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/apps/execution-dashboard/test/git-snapshot.test.mjs:236:44\n    at async trace (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/apps/execution-dashboard/test/git-snapshot.test.mjs:175:19)\n    at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/apps/execution-dashboard/test/git-snapshot.test.mjs:232:23)\n    at async Test.run (node:internal/test_runner/test:1404:7)\n    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)"
+  },
+  "cleanup": {
+    "state": "fulfilled",
+    "removedOwnedRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/dperf03-git-yr1peE",
+    "elapsedMs": 12.89587500000016
+  },
+  "sources": {
+    "apps/execution-dashboard/src/aggregate.mjs": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+    "apps/execution-dashboard/src/proof.mjs": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+    "apps/execution-dashboard/src/git-snapshot.mjs": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+    "apps/execution-dashboard/test/git-snapshot.test.mjs": "b841336c0edee6aad9391dcceaa03f5973f19b4a5b2a58a0dc9844e793c14af9"
+  },
+  "elapsedMs": 1020.65975,
+  "cumulativeMs": 1020.65975,
+  "scope": "Owned tiny temporary repositories; Trace2 start/exit intervals are not OS census, CPU, production latency or atomic Git observations"
+}

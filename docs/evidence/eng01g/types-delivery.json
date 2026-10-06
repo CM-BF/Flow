@@ -1,0 +1,21 @@
+{
+  "command": [
+    "pnpm",
+    "typecheck"
+  ],
+  "startedAt": "2026-10-06T12:22:56.892469+00:00",
+  "finishedAt": "2026-10-06T12:23:09.609005+00:00",
+  "exitCode": 0,
+  "sources": [
+    {
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "bytes": 5521,
+      "sha256": "08039226f4e75cf5c54ab54ed0dacfb55410303abbc93bb0f8354a4eaaacd270"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.test.ts",
+      "bytes": 12453,
+      "sha256": "be1cf98bfcfc16e64ac7f8dc5d9a46a6c855a364b7b75383d9256e5b8729cc30"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+✔ budget: default four actual jobs, FIFO handoff, raw stdout and caller args retained (2.500125ms)
+✔ budget: synchronous spawn, timeout and size failures preserve error and release the only permit (0.350334ms)
+✔ budget: rejects invalid concurrency without starting a job (0.101292ms)
+✔ main: one immutable observation per directory/captured head; terminal HEAD check follows both reads (0.583458ms)
+✔ main: failure is shared as unknown, not an empty dirty list, but next snapshot retries (0.7615ms)
+✔ main: queued HEAD change rejects current proof while preserving historical ancestry (0.195ms)
+✔ proof: captured owner head, exact NUL paths, outside-code unknown and metadata remain distinct (1.095875ms)
+✔ tree: MAXBUFFER/E2BIG fallback remains serial within shared budget and discards partial stdout (0.91425ms)
+✔ tree: singleton size error and ordinary failure remain unknown without retries (0.26375ms)
+✔ aggregate: observations, frozen git show, owner/review and main proofs all share one execution budget (4.260542ms)
+✔ structured summaries never mine historical risks or no-decision prose (320.588583ms)
+✔ active work is bounded and priority ordered; completed history is separate (255.756042ms)
+✔ metadata-only changes retain exact implementation approval, including dirty docs (547.112292ms)
+✔ tracked changes, additions, deletions and untracked implementation invalidate approval (1460.326417ms)
+✔ new code outside a narrow scope is unknown, not metadata approval (1468.200375ms)
+✔ missing/unsafe/nonexistent scopes and absent target never turn green (986.752917ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-GaF4Sy/T01
+ * branch            bd173211a83263126290fda62bf9ae3b67be3cf2 -> FETCH_HEAD
+✔ main ancestry survives unrelated main metadata commits without owner status rewrites (694.40225ms)
+✔ scope-tree integration requires existing target and no omitted new implementation (658.497917ms)
+✔ registry sources have unique valid identities and bounded canonical Web platform paths (0.682459ms)
+✔ executable files under docs are not silently treated as metadata (702.36825ms)
+✔ top three never hide other active work, while historical missing summaries stay in history (7.798583ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-Ftw5Ip/T01
+ * branch            ed73bbd3d0bad53fd2908135d4a920d1fc118e5d -> FETCH_HEAD
+✔ historical main ancestry cannot approve later implementation changes, deletions or dirty paths (1511.839291ms)
+✔ global phase comes only from the explicit short phase source (253.424167ms)
+✔ one matching task target starts one comparison; a second snapshot performs fresh reads (638.56375ms)
+ℹ {"phase":"same-target","gitStarts":25,"targetComparisons":1}
+✔ different review target is still independently compared and can invalidate approval (507.539625ms)
+✔ dirty edits, deletion, and restoration are fresh in subsequent same-process snapshots (1994.604125ms)
+✔ missing target, missing scope and missing review remain unknown, never cached green (2037.171083ms)
+✔ 128 literal declarations use one tree read without changing public proof or next-snapshot freshness (1599.660208ms)
+✔ overlapping directories and duplicate declarations preserve full NUL records including unusual descendant names (1661.8215ms)
+✔ missing individual scope is unknown even when another scope or similarly named directory returns entries (469.869583ms)
+✔ main deletion is a changed tree, not a missing source or green proof (287.186709ms)
+✔ different repositories or commits cannot reuse a successful tree (286.832292ms)
+✔ combined stdout overflow falls back serially and retains scopes that fit the original per-scope limit (593.719167ms)
+✔ one scope larger than maxBuffer remains unknown without retry or relabeling as missing (544.781584ms)
+✔ bad target fails without tree retries, and invalid declarations retain validation semantics (111.865458ms)
+✔ argument overflow splits the batch but an oversized literal remains unknown (285.172542ms)
+✔ ordinary Git failure and timeout stay unknown without splitting or retry (5528.8895ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 25741.907042

@@ -1,0 +1,120 @@
+{
+  "recordedAt": "2026-10-06 12:55:54 UTC",
+  "sourceTarget": "916e59f69cea6f5eef4fe8cd80dc1f735c5b705b",
+  "main": "280289008a5a3779e4e5e6453181b96062ed9514",
+  "ownerVerifiedSourceCount": 13,
+  "sourceComparison": "target/main/current exact bytes",
+  "sources": [
+    {
+      "role": "source",
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "bytes": 4272,
+      "sha256": "89ff8005b4817b1ae231e999abc9e43e62202dd815d4962ec11e07c9d4b59f43"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/engineering/index.ts",
+      "bytes": 2469,
+      "sha256": "32540a49df91dd2aef4e12c7c4c525aba215b2bf17a3331a02617b8088850574"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/engineering/native-profile.ts",
+      "bytes": 3712,
+      "sha256": "ec6360e5df4870fd2f9eb4eb8f6a23f9b9916ef4b3e4c6e0e8be5b4bca874569"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/engineering/native-verification.ts",
+      "bytes": 4211,
+      "sha256": "8ee043fffa72fe441dab970cfc4fa9ea97733cf8fcacfe33d57c921f65d24bc2"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/engineering/native.test.ts",
+      "bytes": 21597,
+      "sha256": "3cbfc51d4fcaa1f1bf2cb5dd16d5b2c1e7fbcee3fe83e812e674dbaadad1bc1f"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/engineering/profile.ts",
+      "bytes": 3810,
+      "sha256": "e5a8ec78d2f5dc89236ab9baa64084dce8eaa3036d0c7e74d6cf36812ca85dfc"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/engineering/verification.ts",
+      "bytes": 4249,
+      "sha256": "70546ca36bf70a83a8584c638a8f273180cc9b30490726ad5cb4bb853254c7cc"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/evidence.ts",
+      "bytes": 4145,
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/execution-profiles/publication.ts",
+      "bytes": 4786,
+      "sha256": "2ef28420bed9500f6c06a72922fcf52fe72c6f9c8e53048a0fc8dbb20f03d184"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/runners.ts",
+      "bytes": 12580,
+      "sha256": "1e8f72cf66427d9f57a7ed8d66d2ab566713aa0ee492317351801fa77a4474c3"
+    },
+    {
+      "role": "source",
+      "path": "packages/contracts/src/engineering-native.ts",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "role": "source",
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7285,
+      "sha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465"
+    },
+    {
+      "role": "source",
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 5574,
+      "sha256": "6d7765c8e8c295c4da1b6aca845348604917108d5b359b20bd601d1053e3d884"
+    }
+  ],
+  "mainIntegration": {
+    "recordedAt": "2026-10-06T12:54:57.136259+00:00",
+    "mainBefore": "3609d8dabd3713e37d877af4f96d2daa2bd96e57",
+    "approvedInputs": {
+      "ENG01H": "916e59f69cea6f5eef4fe8cd80dc1f735c5b705b",
+      "F01": "79b569a14d14c218874781e2d05ae6e42e234ce2",
+      "TUI01D": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    "fixedSourceComparison": "engineering-terminal-source-comparison.json",
+    "sourceMatches": 28,
+    "validation": {
+      "rootNoEmitExitCode": 0,
+      "raw": "engineering-terminal-combination-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "toolCompletionChunk": "f82eb7"
+    },
+    "productReruns": 0,
+    "providerCalls": 0,
+    "limits": [
+      "Native engineering declaration and receipt linkage only; production authority remains absent",
+      "TUI explicit goal terminal/headless/PTY; Web cross-client journey remains open",
+      "No personal backend, Web or dependency change"
+    ]
+  },
+  "sourceReceipt": "docs/evidence/i02/engineering-terminal-integration.json at 280289008a5a3779e4e5e6453181b96062ed9514",
+  "ownerProductReruns": 0,
+  "providerCalls": 0,
+  "limits": [
+    "Center declared purpose/pin/claim/receipt linkage only. Actual host authority/model qualification/full writer stop and native engineering acceptance remain open.",
+    "F01 thin client/export and TUI changes are independently approved controlled inputs; owner does not claim all protected paths stay at old base after those integrations.",
+    "Original fixed manifest/raw evidence unchanged."
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+      "id": "ENG-001",
+      "location": "../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "工程写入组合已通过局部验证和独立审查",
+    "next": "集成受限文件写入组合与未知结果保护",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+    "scopes": [
+      "apps/runner/src/engineering/native-policy.test.ts",
+      "apps/runner/src/engineering/native-policy.ts",
+      "apps/runner/src/engineering/native-writer.test.ts",
+      "apps/runner/src/engineering/native-writer.ts",
+      "apps/runner/src/native-harness.test.ts",
+      "apps/runner/src/native-harness/codex/evidence.ts",
+      "apps/runner/src/native-harness/codex/exchange.test.ts",
+      "apps/runner/src/native-harness/codex/exchange.ts",
+      "apps/runner/src/native-harness/codex/turn.ts",
+      "docs/evidence/eng01g",
+      "plans/eng01g-native-writer"
+    ],
+    "errors": []
+  },
+  "taskId": "ENG01G",
+  "owner": "native_center_owner / gpt-6-astra",
+  "branch": "codex/engineering-native-writer",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-06T12:27:33.000Z",
+  "updatedRecord": "2026-10-06 12:27:33 UTC",
+  "todos": [
+    {
+      "id": "ENG01G-01",
+      "state": "completed",
+      "owner": "native_center_owner",
+      "evidence": "claim与Interface"
+    },
+    {
+      "id": "ENG01G-02",
+      "state": "completed",
+      "owner": "native_center_owner",
+      "evidence": "单消息pump与工程策略"
+    },
+    {
+      "id": "ENG01G-03",
+      "state": "completed",
+      "owner": "native_center_owner",
+      "evidence": "105 distinct分轮、原red与types/资源清理证据"
+    },
+    {
+      "id": "ENG01G-04",
+      "state": "pending",
+      "owner": "native_center_owner",
+      "evidence": "独审APPROVED；main未完成"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+  "declaredDirty": "本metadata提交后clean",
+  "checks": {
+    "state": "passed",
+    "target": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+    "record": "PASSED 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d；105 distinct分轮，types0；[manifest](../../docs/evidence/eng01g/fixed-manifest.json)"
+  },
+  "reviewRecord": "[review.md](review.md)，APPROVED 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+  "mainRecord": "ENG01G未集成；base含已审ENG01F",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

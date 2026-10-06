@@ -1,0 +1,55 @@
+{
+  "before": "b0c2c2c0",
+  "target": "7cbda706632c85fc5da12a371b282419c933ab9a",
+  "result": "daf66fc50b60d5b0616ad44bc4a1fb30c2d5d29a",
+  "sourceDiffToFixedMain": [],
+  "conflicts": [
+    "plans/wpf-mature-04-context-transparency/status.md",
+    "plans/wpf-mature-04-context-transparency/review.md"
+  ],
+  "resolution": "Mika explicitly authorized current metadata owner to retain newer main acceptance/handback records; main versions were older copies of the same history. No third path manually changed.",
+  "take": {
+    "requestId": "wpf04-attachment-integration-20261006-1226",
+    "action": "take",
+    "committedAt": "2026-10-06T12:25:00.768Z",
+    "claim": {
+      "claimId": "7fff57f1-a2c7-48b3-9e11-7fdf2210ef42",
+      "version": 1,
+      "taskId": "WPF-MATURE-04",
+      "lead": "mika",
+      "worker": "architecture_read",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+      "branch": "codex/context-transparency",
+      "scope": [],
+      "role": "integration",
+      "state": "active",
+      "next": null,
+      "origin": "new",
+      "observedAt": null,
+      "updatedAt": "2026-10-06T12:25:00.768Z",
+      "createdAt": "2026-10-06T12:25:00.768Z"
+    }
+  },
+  "release": {
+    "requestId": "wpf04-attachment-integration-release-20261006-1227",
+    "action": "release",
+    "committedAt": "2026-10-06T12:25:35.513Z",
+    "claim": {
+      "lead": "mika",
+      "next": null,
+      "role": "integration",
+      "scope": [],
+      "state": "released",
+      "branch": "codex/context-transparency",
+      "origin": "new",
+      "taskId": "WPF-MATURE-04",
+      "worker": "architecture_read",
+      "claimId": "7fff57f1-a2c7-48b3-9e11-7fdf2210ef42",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+      "createdAt": "2026-10-06T12:25:00.768Z",
+      "updatedAt": "2026-10-06T12:25:35.513Z",
+      "observedAt": null
+    }
+  }
+}

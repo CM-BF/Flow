@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-06T12:19:35.100Z",
+  "backend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "parent": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-vnJV9I",
+  "databaseName": "flow_svc05_f58c0eafd3f74222844510ca",
+  "providerQueries": 0,
+  "personalActions": 0,
+  "results": [],
+  "failure": "Error: WEB_RELEASE_NAMESPACE_INVALID\n    at fail (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/tools/personal-preview/web-artifact.mjs:13:37)\n    at prepareWebArtifact (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/tools/personal-preview/web-artifact.mjs:76:69)\n    at createFixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/experiments/personal-current-release/fixture.mjs:90:28)\n    at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/experiments/personal-current-release/browser.mjs:11:17",
+  "inventory": {
+    "observedAt": "2026-10-06T12:19:35.153Z",
+    "artifacts": [
+      {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5"
+      },
+      {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      }
+    ]
+  },
+  "cleanup": {
+    "failures": [],
+    "closedOwnedResources": true,
+    "phase": "before-destructive-cleanup"
+  }
+}

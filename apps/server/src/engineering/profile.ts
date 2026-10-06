@@ -1,3 +1,4 @@
+import { assertNativeEngineeringProfile } from './native-profile.js';
 import type { Pool, PoolClient } from 'pg';
 import type { TaskSubmission } from '@flow/contracts';
 import { engineeringProfileConfigurationSchema, engineeringProfileConfigurationJson, engineeringProfileSchema, type EngineeringProfileConfiguration, type EngineeringProfile, type EngineeringProfilePublished, type EngineeringProfilePage } from '../../../../packages/contracts/src/engineering-profile.js';
@@ -27,6 +28,7 @@ export async function listEngineeringProfiles(pool: Pool, after: string | undefi
 }
 /** Called inside ordinary task acceptance and again before claim. A target ID alone is not engineering admission. */
 export async function assertEngineeringProfile(client: PoolClient, task: TaskSubmission): Promise<void> {
+  if (task.engineering?.protocol === 'flow.engineering.v2') { await assertNativeEngineeringProfile(client, task); return; }
   const intent = engineeringIntentSchema.parse(task.engineering);
   if (task.harness !== 'fixture' || !intent.profile || task.executionProfile || task.resumeSessionId || task.fixture || task.protocol || task.verification) throw new HttpError(409, 'engineering_profile_required', 'Engineering tasks require their explicit purpose profile.');
   const profile = profileView(await requirePublishedProfile(client, intent.profile));

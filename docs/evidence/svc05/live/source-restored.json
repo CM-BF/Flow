@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-06T12:42:33.700896+00:00",
+  "observed": {
+    "head": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+    "branch": "main",
+    "dirty": false
+  },
+  "actor": "Execution Lead",
+  "runtimeSource": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "runtimeVersion": 15,
+  "note": "Checkout restore only; Lead confirms no install/node_modules change. No new service query after window close; JS modules already loaded and Web artifacts immutable. Future service restart must explicitly fix its source again."
+}

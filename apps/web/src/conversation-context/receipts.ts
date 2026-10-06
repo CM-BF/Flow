@@ -1,20 +1,37 @@
 import { assertConversationContextMatches } from "@flow/client";
+import { attachmentSelectionSchema, type AttachmentReference } from "@flow/contracts";
 import { freezeContextSelection, type FrozenCitation } from "./selection";
 
-type KnowledgeInput = { knowledge?: readonly FrozenCitation[] };
+type MaterialInput = {
+  knowledge?: readonly FrozenCitation[];
+  attachments?: readonly Readonly<AttachmentReference>[];
+};
 
-/** Parse the request first. This then detaches references without changing its wire shape. */
-export function freezeKnowledgeRequest<T extends object>(request: T & KnowledgeInput, projectId?: string): Readonly<T> {
-  if (request.knowledge === undefined) return Object.freeze({ ...request });
-  // A first citation establishes internal consistency, not the conversation's authorization.
-  const refs = freezeContextSelection(request.knowledge, projectId ?? request.knowledge[0]?.projectId ?? "");
-  const knowledge = [...refs];
-  Object.freeze(knowledge);
-  return Object.freeze({ ...request, knowledge });
+/** Detach both material lists at local receipt publication. Body byte budgets need
+ * authorized descriptors (checked by the input) and remain center-authoritative. */
+export function freezeMaterialRequest<T extends object>(request: T & MaterialInput, projectId?: string): Readonly<T> {
+  const project = projectId ?? request.knowledge?.[0]?.projectId ?? request.attachments?.[0]?.projectId ?? "";
+  const knowledge = request.knowledge === undefined ? undefined : freezeContextSelection(request.knowledge, project);
+  const attachments = request.attachments === undefined ? undefined : attachmentSelectionSchema.parse(request.attachments);
+  if (attachments?.some(ref => ref.projectId !== project)) throw Error("Attachments must belong to the conversation project.");
+  if ((knowledge?.length ?? 0) + (attachments?.length ?? 0) > 4) throw Error("Knowledge and attachments together allow at most four references.");
+  if (attachments) { attachments.forEach(Object.freeze); Object.freeze(attachments); }
+  const detachedKnowledge = knowledge === undefined ? undefined : Object.freeze([...knowledge]);
+  return Object.freeze({ ...request,
+    ...(detachedKnowledge === undefined ? {} : { knowledge: detachedKnowledge }),
+    ...(attachments === undefined ? {} : { attachments }),
+  });
 }
 
-/** Preserve the Web diagnostic; shared client owns every receipt validation rule. */
-export function assertContextReceiptMatches(knowledge: readonly FrozenCitation[] | undefined, context: unknown): void {
-  try { assertConversationContextMatches(knowledge, context); }
-  catch (cause) { throw new Error("The context receipt does not match the frozen knowledge. Retry its original request.", { cause }); }
+/** Existing knowledge consumers share the same material boundary. */
+export const freezeKnowledgeRequest = freezeMaterialRequest;
+
+/** The public decoder is the sole v1/v2 acknowledgement authority. */
+export function assertContextReceiptMatches(
+  knowledge: readonly FrozenCitation[] | undefined,
+  context: unknown,
+  attachments?: Parameters<typeof assertConversationContextMatches>[2],
+): void {
+  try { assertConversationContextMatches(knowledge, context, attachments); }
+  catch (cause) { throw Error("The context receipt does not match the frozen materials. Retry its original request.", { cause }); }
 }

@@ -1,0 +1,3 @@
+# B01 权威来源迁移请求
+
+2026-10-06 11:35:43 UTC。Mika已授权继承B01完成史，原owner已停写、原claim827ff1f2 v3于04:03:11.804Z RELEASED；新claim190bd45e-ffc6-4248-aca9-0ebd282c26b0 v1于11:34:16.232Z COMMITTED。请Lead将既有B01登记迁到唯一owner status_read / gpt-6-astra、co-lead mika，worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections`、branch `codex/task-read-projections`、planDir `plans/b01-bounded-reads`。大task [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md)。原B01实现/测量/已main历史继承不重写；新片固定base `fd1322f9c0c1d085d5e343e39f6216b20d26c264`。当前等待Lead登记/聚合，不将旧tree陈旧status覆盖新owner，不创建手填聚合JSON。

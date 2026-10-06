@@ -1,0 +1,456 @@
+{
+  "target": "f82a3a7436f123ab741fd5ce845eb39cb752da3b",
+  "base": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
+  "generatedAt": "2026-10-06T12:46:05.878690+00:00",
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d"
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "sha256": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c"
+    },
+    {
+      "path": "apps/web/src/conversations/messages.ts",
+      "sha256": "49d07c4eb6b8dd9293749cc7d71fa869579e7db977ead51c00256adf6e046350"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "sha256": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "ecec5a76bb0c0e89c4ac3b5cd4f4d56345299d737e15ca86088f244228fcd56b"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879"
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831"
+    },
+    {
+      "path": "apps/web/test/attachment-integration.browser.ts",
+      "sha256": "ac20a54fc38a3d173cd028d210833e65d60fb54ed8558af190818b072a316dbe"
+    },
+    {
+      "path": "apps/web/test/attachment-integration.fixture.ts",
+      "sha256": "340c839bf921febd23bde195276691701f94419fad66adfc6d7a87d5da51857f"
+    },
+    {
+      "path": "apps/web/test/attachment-integration.test.ts",
+      "sha256": "2bad9ac6f6c633298f4eaa8185aa3b0f47c2a9c0bd71bc9b784d7d5de5a9e386"
+    },
+    {
+      "path": "apps/web/test/conversation-context-receipts.test.ts",
+      "sha256": "7c67d0dc0f17ff4cb8bfa3068839a79b026657ce8aede802840d333bc38fdcc0"
+    },
+    {
+      "path": "apps/web/test/conversation-messages.test.ts",
+      "sha256": "301ed1d649592ce420414af12d5c5f28b4be4ba2a360a608fee01ce2a6bacc13"
+    },
+    {
+      "path": "apps/web/test/conversation-outbox.test.ts",
+      "sha256": "cc416bd25c913aa8eb9ade159b3c78a28712d9902b35c5bef4b4089a345b8b15"
+    },
+    {
+      "path": "apps/web/test/conversation-projection.test.ts",
+      "sha256": "5954973704d6eca8ebfd5d21c9dfdb46e18111e52390259e49fd2fec0a4278bf"
+    },
+    {
+      "path": "apps/web/test/conversation-queue.test.ts",
+      "sha256": "667a35e9a765968f8abc0a4e86610f93b86696c2e86b7eed0e5d23a616f9d5bb"
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "sha256": "92767f0fa52c4c4232a579c3f8d979d6ed0b74104932f08166a0412b4833d2dd"
+    }
+  ],
+  "protectedPaths": [
+    "apps/web/src/attachments",
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+    "packages",
+    "package.json",
+    "pnpm-lock.yaml",
+    "apps/web/package.json"
+  ],
+  "protectedDiffEmpty": true,
+  "outsideChanges": [],
+  "reports": [
+    {
+      "path": "production-complete-browser.json",
+      "sha256": "340e2abe5b630a040ac7b8d7cc15151615b20935de096a191c019201c3cd9ad4",
+      "checks": 10,
+      "failure": true,
+      "wallMs": 17229,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-complete-cleanup.json"
+    },
+    {
+      "path": "production-eighth-browser.json",
+      "sha256": "b2084c20f282ad58fe7b4db6c7b367add6370539957dc0d5ea79e4e0c2213349",
+      "checks": 8,
+      "failure": true,
+      "wallMs": 15638,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.fixture.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-eighth-cleanup.json"
+    },
+    {
+      "path": "production-eleventh-browser.json",
+      "sha256": "f8442d4d9532cf4896166fd4ad4bb0cee706ff8bc9719693ab765f77444e2fb6",
+      "checks": 9,
+      "failure": true,
+      "wallMs": 11264,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-eleventh-cleanup.json"
+    },
+    {
+      "path": "production-fifth-browser.json",
+      "sha256": "c566befee8a250f50e0e1906a951194e09e72d7f2ea803b5cd6542bab0b68adb",
+      "checks": 3,
+      "failure": true,
+      "wallMs": 17732,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/react.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.fixture.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-fifth-cleanup.json"
+    },
+    {
+      "path": "production-final-browser.json",
+      "sha256": "a537e113d1787e06e563f416a8b68b44a38352e22014f397bbd4e7348951a93b",
+      "checks": 2,
+      "failure": true,
+      "wallMs": 14722,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-final-cleanup.json"
+    },
+    {
+      "path": "production-first-browser.json",
+      "sha256": "2c74f34ff068ccac916a82f4e1bc04a65d4a7926aac4ea1e1d01a94fe3a75afa",
+      "checks": 0,
+      "failure": true,
+      "wallMs": 15258,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.fixture.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-first-cleanup.json"
+    },
+    {
+      "path": "production-fourth-browser.json",
+      "sha256": "12189d5a8937bfde0a5a105a7a74e071cded56339c24918603d91e40b009c006",
+      "checks": 2,
+      "failure": true,
+      "wallMs": 14050,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/react.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.fixture.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-fourth-cleanup.json"
+    },
+    {
+      "path": "production-ninth-browser.json",
+      "sha256": "43cb0da9c99a15604f30250fbfd7fd55afa296e9842b08a07fd50f8980e9da75",
+      "checks": 8,
+      "failure": true,
+      "wallMs": 19073,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-ninth-cleanup.json"
+    },
+    {
+      "path": "production-plain-browser.json",
+      "sha256": "2dbc87ea1c761ccbdd4db2f04e5dfc3f5425ff0dd759d254902ab58e7472c45e",
+      "checks": 1,
+      "failure": false,
+      "wallMs": 8943,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-plain-cleanup.json"
+    },
+    {
+      "path": "production-second-browser.json",
+      "sha256": "30db26fe4f50c6697286dbc054d33e9ade73c1855a53d0cd8169c3de6421ba6f",
+      "checks": 1,
+      "failure": true,
+      "wallMs": 7179,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.fixture.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-second-cleanup.json"
+    },
+    {
+      "path": "production-seventh-browser.json",
+      "sha256": "1f335f0f9cc4ece17ba8cf4ada91a1ca5d8bc0d57e456b0db310eedf70629e9a",
+      "checks": 6,
+      "failure": true,
+      "wallMs": 18027,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.fixture.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-seventh-cleanup.json"
+    },
+    {
+      "path": "production-sixth-browser.json",
+      "sha256": "9215b9e7195c78c6b921834c9b0d231f4a7e957215a32795b9560607c91d1029",
+      "checks": 4,
+      "failure": true,
+      "wallMs": 13906,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.fixture.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-sixth-cleanup.json"
+    },
+    {
+      "path": "production-tenth-browser.json",
+      "sha256": "cfa1a39d73a2250697754a270482aa59b24069ecaf88d2273cc5572e8aa1f5f6",
+      "checks": 9,
+      "failure": true,
+      "wallMs": 19108,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-tenth-cleanup.json"
+    },
+    {
+      "path": "production-third-browser.json",
+      "sha256": "f4e1327276c1d7451908816c0a0159d5f327ed394c723c19fae046b246827a69",
+      "checks": 2,
+      "failure": true,
+      "wallMs": 13496,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/react.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.fixture.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-third-cleanup.json"
+    },
+    {
+      "path": "production-twelfth-browser.json",
+      "sha256": "4924f94e1f3b61cdf258ced0745838f2b0c34f97e64a43515e1751509ae2d1a4",
+      "checks": 9,
+      "failure": true,
+      "wallMs": 11556,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.test.ts"
+      ],
+      "cleanup": "production-twelfth-cleanup.json"
+    }
+  ],
+  "finalActualChecks": {
+    "production-complete-browser.json": 10,
+    "production-plain-browser.json": 1
+  },
+  "note": "production-complete is partial, not a fully passed run. Last plain case was pressed before load; focused retry waits for real loaded/enabled UI. Final mixed prepare/remove delta is official-core tested, not browser rerun.",
+  "wireAudit": {
+    "turn": {
+      "key": "c7c60061-bd6c-4a9b-ba16-3e5d3eb808f4:turn",
+      "bodySha256": "fb03d8319f2f3ac217e35c1873e63ae539ea7d4e7e3fa742575220f3ea2f4567",
+      "postCount": 2
+    },
+    "queue": {
+      "key": "2f502105-f433-40b8-ad98-77f39e2070c6",
+      "bodySha256": "0c43a5ea87d1e2ed9da2ead89ca2fda3a3302c004a2977ef82fc0e645a06910a",
+      "postCount": 2
+    },
+    "upload": {
+      "key": "c61352ed-f14b-4bfc-aa20-14e56f09dd4c",
+      "bodySha256": "ea22249127c573885654f77e66ef7c204961b22ed500753884e265438c1dd088",
+      "postCount": 1,
+      "lookupSameScopeAndKey": true,
+      "lookupStatus": 200
+    }
+  },
+  "budget": {
+    "browserRounds": 15,
+    "browserWallMs": 217181,
+    "candidateBuildMs": 1181,
+    "totalMs": 218362,
+    "limitMs": 600000,
+    "providerQueries": 0,
+    "remainingDatabases": 0
+  },
+  "candidateArtifact": [
+    {
+      "path": "assets/PluginManagement-A83k3W8t.js",
+      "bytes": 9854,
+      "sha256": "f6a718118ea8959a74b65825ff773fceb0c98e07a927fc9cb30c31ecfb771ad1"
+    },
+    {
+      "path": "assets/PluginManagement-Dok11XwQ.css",
+      "bytes": 2843,
+      "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9"
+    },
+    {
+      "path": "assets/assistant-ui-C7NurJFc.js",
+      "bytes": 667364,
+      "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e"
+    },
+    {
+      "path": "assets/assistant-ui-CcdakA0V.css",
+      "bytes": 966,
+      "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+    },
+    {
+      "path": "assets/index-B8uQTtuq.js",
+      "bytes": 790506,
+      "sha256": "62c9f140529de0163d6238e76b92a78f8a575c42c899bf9e454c7a30adfc46eb"
+    },
+    {
+      "path": "assets/index-DAuvZKJK.css",
+      "bytes": 112060,
+      "sha256": "67fd21360bae464e6c415be44ef85e66a2983654fbb5a4fafd873fbea2558f5d"
+    },
+    {
+      "path": "assets/rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+    },
+    {
+      "path": "assets/theme-BCFtbXFd.js",
+      "bytes": 806,
+      "sha256": "30b0856bc4751fafccdea923cbac68bb5775fc2702b3b9229faf03e4f11bc634"
+    },
+    {
+      "path": "assets/workspace-CpAHQeGd.js",
+      "bytes": 1906,
+      "sha256": "3c2612d37a9f0c04f610ad8fb19b76f713e58cf78823ca0906d53a085ebd58f7"
+    },
+    {
+      "path": "index.html",
+      "bytes": 705,
+      "sha256": "888dd237657e1d242010c3d767ebab8402a8cf1b6ee46466603624af5b0e07a9"
+    }
+  ]
+}

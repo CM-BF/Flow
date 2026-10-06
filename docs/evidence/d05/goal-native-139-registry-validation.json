@@ -1,0 +1,69 @@
+{
+  "observedAt": "2026-10-06T11:32:18.827Z",
+  "count": 139,
+  "idsUnique": true,
+  "sources": [
+    {
+      "id": "O11",
+      "title": "目标计划与交付统一读取",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-delivery-read-model",
+      "branch": "codex/goal-delivery-read-model",
+      "planDir": "plans/o11-goal-delivery-read-model",
+      "evidenceDir": "docs/evidence/o11",
+      "head": "042e7e99189c04a3184edf3efe22ed0fa6235b33",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已确定按版本读取输入与轻量刷新执行进度的接口",
+        "next": "其他节点有新进展时，已读材料无需重新加载",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "ENG01D",
+      "title": "原生工程身份与执行接缝",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-seams",
+      "branch": "codex/engineering-native-seams",
+      "planDir": "plans/eng01d-native-writer-seams",
+      "evidenceDir": "docs/evidence/eng01d",
+      "head": "6843a268d2dc3cba0f43737dd143cef760d843e6",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "正在提供不可变的真实执行身份，并复用现有单回合生命周期",
+        "next": "可独立审查的身份和单回合接缝",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    }
+  ]
+}

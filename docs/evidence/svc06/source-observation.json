@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-06 12:43:33 UTC",
+  "base": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+  "input": "SVC05 live source-window/dependency-install/receipt",
+  "observation": "config.repository cwd + TS source entry couples backend runtime release to development checkout; observed missing dependency link before drain, no mixed-version incident",
+  "skills": {
+    "local": [
+      "find-skills",
+      "codebase-design",
+      "clean-code"
+    ],
+    "applied": "Single artifact lifecycle owner, small verify/launch seams, reuse current operation and resource authority, no new framework"
+  },
+  "productChanges": 0,
+  "providerQueries": 0
+}

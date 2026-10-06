@@ -1,0 +1,134 @@
+{
+  "observedAt": "2026-10-06T11:57:13.623568+00:00",
+  "fixedSourceCommit": "52ebd2b1efe5ecbfab9d3c59b1da2ed1580dd52f",
+  "mainHead": "017adc276a888a218bed3ef9963bc4dabbc6cec2",
+  "originMain": "017adc276a888a218bed3ef9963bc4dabbc6cec2",
+  "mainDirty": false,
+  "ownerHead": "ad23328e1871723c4b6d4464f86ede41b157b1cc",
+  "ownerDirty": false,
+  "scope": "read-only design inputs; no execution or SDK invocation",
+  "sources": [
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 19269,
+      "sha256": "3659f874a9ac06963cedb426068fdd481227e861abb9be19c22a68f4844a4439",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "apps/runner/src/claude.test.ts",
+      "bytes": 28030,
+      "sha256": "15ff8ce5bda76108a849f24d49858a96ee92fa15b4da1227afc24a14425bb113",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/index.ts",
+      "bytes": 3795,
+      "sha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-values.ts",
+      "bytes": 2575,
+      "sha256": "5e97397133b44e7712aa0f0151b96ed25c069b7f13dc5df15ed7fc5c4e1c381c",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "bytes": 3286,
+      "sha256": "fc4626777e2d3215a10280c3047cd0b6384e0c43ada39496273461b22bb7d135",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7140,
+      "sha256": "cdb2af7c7db16252b09e15cbd872b4f3edd29b19ccfbac197362bc5d59751447",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8678,
+      "sha256": "4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 10963,
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7",
+      "unchangedFromIntegratedBf067": true
+    },
+    {
+      "path": "apps/server/src/sessions.ts",
+      "bytes": 1593,
+      "sha256": "901eefd23c4a1e33e2639149c7335e64bd63ecb0aaed3fb61e69e920ce9d847a",
+      "unchangedFromIntegratedBf067": true
+    }
+  ],
+  "sdkTypeInput": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts",
+    "version": "0.3.290",
+    "bytes": 530284,
+    "sha256": "193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541",
+    "lines": {
+      "summaryMethod": "3027-3038",
+      "close": "3235-3243",
+      "summaryResponse": "3949 onward",
+      "transportExit": "9800-9810"
+    }
+  },
+  "claimObservation": {
+    "observedAt": "2026-10-06T11:53:55.468Z",
+    "ownerClaim": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
+    "ownerVersion": 7,
+    "retainedScope": [
+      "docs/evidence/wpf-mature-04",
+      "plans/wpf-mature-04-context-transparency"
+    ],
+    "candidateSourceActiveWriters": [],
+    "sharedRunnerUnionAndEvents": {
+      "claim": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+      "version": 31,
+      "owner": "astra_ultra_execution_lead",
+      "observedAt": "2026-10-06T11:53:44.058Z"
+    }
+  },
+  "proposedWriteScope": [
+    "apps/runner/src/claude.ts",
+    "apps/runner/src/context-observations/claude-summary-read.ts",
+    "apps/runner/src/context-observations/claude-summary-read.test.ts",
+    "apps/runner/src/claude-context-observation.test.ts"
+  ],
+  "implementationApproved": false,
+  "testsRun": 0,
+  "providerCalls": 0,
+  "accepted18LeafSourcesUnchangedAtObservedMain": true
+}

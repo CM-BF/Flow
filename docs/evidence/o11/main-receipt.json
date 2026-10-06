@@ -1,0 +1,81 @@
+{
+  "kind": "flow-o11-main-receipt-v1",
+  "observedAt": "2026-10-06T11:48:23.669401+00:00",
+  "main": "bf067e328bc1dc63cde39acf4b637cfb055e467a",
+  "integrationCommit": "5902c66a8c0b38b93200a4c083dd2325045a07e3",
+  "approvedSource": "a9bde37e3b596adbf5e97c47c7efae09a4682ecd",
+  "sourceIsAncestor": true,
+  "sourceComparisons": [
+    {
+      "path": "packages/contracts/src/goal-delivery.ts",
+      "bytes": 3894,
+      "sha256": "ef737292af0d1f22eb6f5d412feb94f098b8a648ec198f5b1d6d2f35c55df81f",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "apps/server/src/goals/state.ts",
+      "bytes": 11115,
+      "sha256": "8a475b0419ee1991f4d20d9bac2ea73ddc39f40be874b6399521b9d9ce7f61ff",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "apps/server/src/goal-context/freshness.ts",
+      "bytes": 1195,
+      "sha256": "d9ea198ab18f1e13a52c933ffb1210a74b703476371370799145705e198dfcf1",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/delivery.test.ts",
+      "bytes": 20009,
+      "sha256": "ae400bbf3e96b3794b51bbe27d3bbf4d9001a7c496abf9eed63895379a75e276",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/details.ts",
+      "bytes": 2910,
+      "sha256": "079688da3c4095bb32e9004c6ab5e1361c22ed5dc6e6e340549f1472497a37f3",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/index.ts",
+      "bytes": 1852,
+      "sha256": "45f155e4db54f9affd2934330d4611dfe84869df29ec529ea252e535ec1be6b4",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/metadata.ts",
+      "bytes": 4992,
+      "sha256": "afa2812cc6c6eb4e70be02a995053c68b22be1c73a3a4431a6cb6fbe97b68144",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/plan.ts",
+      "bytes": 2535,
+      "sha256": "17fe7d6fd1b49209b6fe81611ad55b0b8e564b4fcdbdba468507c6de2cbd9bbd",
+      "approvedEqualsMainEqualsOwner": true
+    },
+    {
+      "path": "apps/server/src/goal-delivery/state.ts",
+      "bytes": 3382,
+      "sha256": "cac91bc48664944dbdc3521999207f34346da2e98f2c936ec7da455bfb024976",
+      "approvedEqualsMainEqualsOwner": true
+    }
+  ],
+  "originalManifestSha256": "0cce56e1fa760da6b696d74643d773fa15ed38b90a23a32f8f2543c295b7211e",
+  "claimObserved": {
+    "id": "20249a5f-9051-4839-8571-2262aa2135e7",
+    "version": 2,
+    "state": "active"
+  },
+  "releaseBoundary": "All implementation writing stopped. Metadata stops after this commit/push, then release all scopes; actual release receipt remains in coordination ledger.",
+  "deliveredScope": "Approved owner read/domain module",
+  "notDeliveredHere": [
+    "public factory mount",
+    "shared client/export",
+    "Web/MCP consumer",
+    "complete continuous-goal acceptance"
+  ],
+  "newEngineeringTests": 0,
+  "providerCalls": 0,
+  "serviceOperations": 0
+}

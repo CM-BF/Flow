@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:21:28 UTC / main648e331c58043cf7ee307300521ab1c628cb2ee1 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T13:13:50.383099+00:00 / 13:08:38.883Z实采maincde6646，154来源已部署 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已显示132项实际进度；工程写入与附件等五项新进展已登记，等待本批发布。 |
+| 当前产出 | 154个唯一来源已显示，刷新恢复连接和事件优化可查，原生工程准备与实施分开。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -73,3 +73,37 @@
 2026-10-06 11:00:58.883Z：实际4320重载132唯一来源，main4285182a clean；ACK01/ENG01B/TUI01C/SVC04人读字段完整、source live、errors/issues空。仅替换核PID18687的本看板服务，个人61227/61228未动；[实际快照摘要](../../docs/evidence/d05/proof-132-registry-live.json)。
 
 2026-10-06 11:21:28 UTC：登记ENG01C、S01P04、WPF-ATTACHI01、WPF-RELEASE02和WPF-WORKSPACEPERF01至137个唯一来源。三件套/证据目录实际存在，状态解析、人读字段与唯一父任务/co-lead通过；见[登记回执](../../docs/evidence/d05/engineering-attachment-137-registry-validation.json)。部署前仍以132实采为准；只维护登记，不改固定架构图、不跑产品或模型。
+
+2026-10-06T11:22:38.886Z实际137来源发布，main a3195c12；本批5项source live、人读完整、errors/issues空。原4320自有PID50668正常停止后新session5633，固定架构与个人服务不变；见[实采回执](../../docs/evidence/d05/engineering-attachment-137-registry-live.json)。
+
+2026-10-06 11:32:44 UTC：139个唯一source已校验；新O11/ENG01D三件套、parser、人读/父任务关联均完整，正式看板部署待本批main接收。[登记核验](../../docs/evidence/d05/goal-native-139-registry-validation.json)。固定架构图不变，无产品重测。
+
+2026-10-06T11:35:26.328928+00:00：4320实际139来源已采，O11/ENG01D live、issues=[]；唯一新session55840替换已核main目录的旧4320进程，个人服务/其他预览未动。[实际回执](../../docs/evidence/d05/goal-native-139-registry-live.json)。
+
+2026-10-06T11:45:06.000446+00:00：ENG01E唯一source存在且parser无错误、人读字段完整；140来源候选见[登记记录](../../docs/evidence/d05/engineering-checker-140-registry.json)，保留架构固定f181快照，不重跑产品/架构检查。
+
+2026-10-06T11:49:00.745135+00:00：4320实际140来源已部署，ENG01E live/current、人读完整、issues=[]，见[实际回执](../../docs/evidence/d05/engineering-checker-140-live.json)。仅替换已核main目录的自有59884进程；架构固定快照和个人服务保持。
+
+2026-10-06T11:56:33.581142+00:00：O12/ENG01F及两Web已审片的canonical三件套、父任务、人读字段已核，144来源候选，见[登记](../../docs/evidence/d05/goal-checker-web-144-registry.json)。网页摘要源码由Web独立批准后在I02接收，本登记不修改human/app/图。
+
+2026-10-06T12:01:29.371218+00:00：归档11:58:20.880Z实际144来源回执；原B01已正式交回，新claim190bd45e v2唯一owner status_read，因此保持原ID迁移至task-read-projections。旧bounded-read-performance只读历史，不双登记；本次只做唯一性/解析/链接核验。详见[144来源实采](../../docs/evidence/d05/goal-checker-web-144-live.json)。
+
+2026-10-06 12:17:23 UTC：新增ENG01G/SVC05真实canonical，146唯一源/三件套与人读字段检查通过；[登记](../../docs/evidence/d05/native-release-146-registry.json)。B01迁移后12:03真实source/human样本按正确字段保存[回执](../../docs/evidence/d05/b01-authority-live.json)，旧重复TODO是该历史样本事实，不改原采样。架构保持固定f181。
+
+2026-10-06 12:21:00 UTC：归档12:19:38.055Z实际146源[回执](../../docs/evidence/d05/native-release-146-live.json)，新工程/发布source live。SVC05父任务链接尾缀导致关系unknown已交原owner修正，不替renderer猜测；普通人读字段完整。新增ATTACHI02首canonical至147源候选，当前正在接实际App而非已完成。固定架构仍f181，个人服务/用户tab未动。
+
+2026-10-06 12:22:56 UTC：12:22:18.854Z实际147源[回执](../../docs/evidence/d05/attachment-binding-147-live.json)已核；新三项source live、errors/issues空、父任务关联正确。SVC05原owner已修正父链接，不回写先前unknown样本。新DPERF03只领取待首canonical，下一正常批再登记；本次未操作个人服务或刷新用户tab。
+
+2026-10-06 12:28:29 UTC：[148源真实快照](../../docs/evidence/d05/snapshot-sharing-148-live.json)记录12:24:33.364Z实际main/clean、领取来源全部已登记，DPERF03获审实现已main。仅替换自有4320，个人服务/标签不动；架构固定快照不重审。
+
+2026-10-06 12:37:14 UTC：[149真实快照](../../docs/evidence/d05/tui-goal-149-live.json)于12:35:18.813Z登记齐全。自有4320现由固定I02 aeb树运行；个人更新窗口中原Flow暂时detached362，main/origin ref仍aeb，反映真实工作目录而非分支回退。窗口未结束前不推进main；其他独立worktree正常。
+
+2026-10-06 12:40:25 UTC：ENG01H 原生工程用途与检查收据已独立领取；候选150源唯一、真实三件套/人读字段/解析通过，见[登记](../../docs/evidence/d05/native-contract-150-registry.json)。个人后台固定更新尚在窗口内，main和看板保持149实采；此登记不提前发布、不重跑工程测试。
+
+2026-10-06 12:44:20 UTC：[151源候选](../../docs/evidence/d05/fixed-release-151-registry.json)中ENG01H实施、SVC06计划均有唯一父任务/完整三件套。SVC05已关闭窗口，原开发树恢复main aeb，实际后台362/v15与Web8d8/v2区分。当前看板仍149源实采；固定架构不变，不为metadata重跑产品。
+
+2026-10-06 12:46:32 UTC 实采151来源：[发布后看板](../../docs/evidence/d05/release-close-151-live.json)。main3609 clean；架构固定f181未改。本次仅保存实际快照，不重复restart或工程测试。
+
+2026-10-06 13:10 UTC：新增ConnectionSession、事件状态优化、ENG01I准备三个真实唯一source，共154；三件套/parent与解析局部核对，未运行全量proof或产品测试。SVC06原source直接owner移交，无重复登记。D06获审固定aeb架构由I02接收，本次不改图或自动追moving main。
+
+2026-10-06T13:13:50.383099+00:00：归档13:08:38.883Z既有154来源实际快照，maincde6646 clean，新连接恢复/事件优化/原生工程准备三项live且issues为空；见[实际回执](../../docs/evidence/d05/connection-event-154-live.json)。原自有看板进程正常换载为session98309，固定架构aeb数据已部署；未刷新用户原tab，个人runtime362/v15和Web8d8/v2不变。归档不重新运行产品/架构检查。

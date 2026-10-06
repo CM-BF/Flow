@@ -1,0 +1,19 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-calculator-receipt
+
+ ✓ apps/runner/src/engineering/calculator-capture.test.ts (11 tests) 4232ms
+   ✓ captures actual managed Git changes and retains the owned lease after recorded evidence  671ms
+   ✓ records valid wrong arithmetic as failed without executing the source  620ms
+   ✓ retains complete extra-untracked evidence and rejects the unsupported recipe  414ms
+   ✓ retains complete deleted evidence and rejects the unsupported recipe  369ms
+   ✓ retains complete executable evidence and rejects the unsupported recipe  379ms
+   ✓ retains complete oversized evidence and rejects the unsupported recipe  359ms
+   ✓ returns unknown when an additional file appears during the after snapshot  386ms
+   ✓ binds identity from an actual claimed host attempt without treating check evidence as execution settlement  435ms
+ ✓ apps/runner/src/engineering/calculator-receipt.test.ts (9 tests) 18ms
+
+ Test Files  2 passed (2)
+      Tests  20 passed (20)
+   Start at  04:59:14
+   Duration  4.86s (transform 223ms, setup 0ms, import 402ms, tests 4.25s, environment 0ms)
+

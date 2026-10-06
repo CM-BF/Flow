@@ -1,0 +1,269 @@
+{
+  "observedAt": "2026-10-06T12:48:33.979805+00:00",
+  "target": "f82a3a7436f123ab741fd5ce845eb39cb752da3b",
+  "base": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
+  "claimId": "0b7fc000-2096-4075-95c1-f6c5a347d584",
+  "claimVersion": 2,
+  "applicationFiles": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "sha256": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/conversations/messages.ts",
+      "sha256": "49d07c4eb6b8dd9293749cc7d71fa869579e7db977ead51c00256adf6e046350",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "sha256": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "ecec5a76bb0c0e89c4ac3b5cd4f4d56345299d737e15ca86088f244228fcd56b",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/test/attachment-integration.browser.ts",
+      "sha256": "ac20a54fc38a3d173cd028d210833e65d60fb54ed8558af190818b072a316dbe",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/test/attachment-integration.fixture.ts",
+      "sha256": "340c839bf921febd23bde195276691701f94419fad66adfc6d7a87d5da51857f",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/test/attachment-integration.test.ts",
+      "sha256": "2bad9ac6f6c633298f4eaa8185aa3b0f47c2a9c0bd71bc9b784d7d5de5a9e386",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/test/conversation-context-receipts.test.ts",
+      "sha256": "7c67d0dc0f17ff4cb8bfa3068839a79b026657ce8aede802840d333bc38fdcc0",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/test/conversation-messages.test.ts",
+      "sha256": "301ed1d649592ce420414af12d5c5f28b4be4ba2a360a608fee01ce2a6bacc13",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/test/conversation-outbox.test.ts",
+      "sha256": "cc416bd25c913aa8eb9ade159b3c78a28712d9902b35c5bef4b4089a345b8b15",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/test/conversation-projection.test.ts",
+      "sha256": "5954973704d6eca8ebfd5d21c9dfdb46e18111e52390259e49fd2fec0a4278bf",
+      "workingMatchesTarget": true,
+      "claimed": true
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "sha256": "92767f0fa52c4c4232a579c3f8d979d6ed0b74104932f08166a0412b4833d2dd",
+      "workingMatchesTarget": true,
+      "claimed": true
+    }
+  ],
+  "protectedDependencies": [
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "0c6eb70bd3ce9bff108e67c3a0bdf3e7142dcdab1b16371654f6e78e89f20576",
+      "unchangedFromBase": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/web/src/attachments/adapter.ts",
+      "sha256": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3",
+      "unchangedFromBase": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/web/src/attachments/recovery.ts",
+      "sha256": "932e2376cea18464b9283b7ed162df2de0ba60a64e988eb74201fdf88b938c0f",
+      "unchangedFromBase": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/web/src/attachments/AttachmentPicker.tsx",
+      "sha256": "d9a196ae46bb7f95764d1762ddd9940a30325825e5c0950727e70382eb8d3a25",
+      "unchangedFromBase": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/web/src/attachments/attachments.css",
+      "sha256": "81b78eed67579a8d5122927590cf6b4ad678cad50c9d2694f8af8f4decd27333",
+      "unchangedFromBase": true,
+      "workingMatchesTarget": true
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+      "unchangedFromBase": true,
+      "workingMatchesTarget": true
+    }
+  ],
+  "authorCleanupReports": [
+    {
+      "file": "production-complete-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-eighth-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-eleventh-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-fifth-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-final-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-first-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-fourth-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-ninth-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-plain-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-second-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-seventh-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-sixth-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-tenth-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-third-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    },
+    {
+      "file": "production-twelfth-cleanup.json",
+      "remaining": [],
+      "errors": [],
+      "providerQueries": 0
+    }
+  ],
+  "meaning": "Source/hash/scope and read-only original cleanup audit, no independent PG or browser rerun; root review not yet finalized",
+  "allChangedPaths": 42,
+  "outsideClaim": [],
+  "sharedPackagesAndRootDepsDiffEmpty": true
+}

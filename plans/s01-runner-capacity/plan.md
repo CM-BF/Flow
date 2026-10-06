@@ -1,6 +1,6 @@
 # S01 确定性 Runner 容量验证
 
-创建/更新：2026-10-06 08:11 UTC。状态 in-progress；owner Mika / gpt-6-astra。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；已审主线基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
+创建/更新：2026-10-06 12:08:19 UTC。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；已审主线基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
 
 目标：在真实中心、PostgreSQL、独立 runner 进程及持久 outbox 上，区分持久会话数、中心声明容量、实际执行并发与本次确定性工具负载。先找出最小容量缺口，不把观察者、数据库行数或模拟模型当真实 provider 容量。父要求见 [FLOW-001](../flow-001-architecture/plan.md) 与 [FLOW-002](../flow-002-provider-harness/plan.md)。
 
@@ -68,3 +68,38 @@ GO/Lead已授权首个保守并行执行片段，由 s01p01_owner / gpt-6-astra 
 首片默认1、显式整数1..16；仅启动或本地active=0时运行既有全目录恢复，任何active存在都不重放其outbox。未知claim或缺completion ACK的持久绑定保守阻断新领取；已知其它attempt继续。收到assignment后先可靠保存绑定再清in-flight意图，不存在“清意图后、开始执行前”丢失占用的空窗。仅confirmed-final不能删除绑定。无新claim回执API/迁移，main/config接线仍由CHAT09/F01后继负责。
 
 S01-06转in-progress，表示独立后继已开工，不表示并发功能已验收。实验预算累计44 tasks/38 attempts、20.925025秒不变；W1/W2不重跑，capacity1/16暂缓，ACK/browser原验收继续开放。后继功能测试使用专库/动态端口及0模型确定性adapter，独立于原测量预算；实际并发、故障隔离、同session互斥、重启未知claim分别取证。Mika负责只读独审，ExecutionLead负责全局索引/聚合登记和已审片段集成。
+
+## S01-04 / S01-05 后继混合负载阶段（2026-10-06 09:46 UTC）
+
+owner status_read / gpt-6-astra，co-lead mika，所属 FLOW-001、M2。完整旧TODO及原预算证据保留；本节是既有S01的后继细项，不建立第三层任务。
+
+- [ ] 固定[混合负载合同](../../experiments/runner-capacity/mixed/README.md)、真实runtime/outbox driver与实验私有PG观测seam。
+- [ ] 纯观测透传/预算行为tests及strict noEmit；固定源码commit后独立review。
+- [ ] 由Mika明确安排一次真实窗口后运行2×16、1×16/4×4，实际16重叠、事件/心跳/轻读/取消直接取证。
+- [ ] 独审结果及清理、main接收；任何失败/unknown原样记录，不扩大额度或补跑。
+
+新阶段32固定tasks、总上限40，60秒含清理，传输加证据64MiB；0provider。受控main4391基线，无产品pool/锁/schema改动；旧累计44tasks/38attempts/20.925025秒不变。当前仅driver实施获批，真实负载尚未运行。
+
+## S01-04 / S01-05 停止修复后独立窗口（2026-10-06）
+
+原mixed FAIL/partial-A结果已独审封存；P03修复已集成main0cee。GO新授权一次独立同负载窗口，当前先准备，不复用原reservation、task IDs、raw目录或retained journal。该阶段沿S01既有TODO，不建立第三层任务。
+
+- [x] 固定[新输入/资源合同](../../docs/evidence/s01/mixed-after-drain-preparation/README.md)和最小run identity适配，绑定P03已审源码与独立输出。
+- [x] 新输入纯检查/strict与独立固定target review；旧14检查不得冒充新增实测。
+- [x] Mika点名唯一windowId/cleanHEAD后，执行一次32tasks A1×16→B4×4；失败停且B可NOT_RUN，60秒含清理/64MiB不放宽。
+- [ ] 如实封存本次结果/资源/unknown、独审和主线接收；不对旧journal作自动恢复。
+
+2026-10-06 after-drain实际窗口已完成：两组门禁PASS、资源清理完成，1次heartbeat错误原因unknown保留，实际结果独审/main接收仍开放。原FAIL不能改为PASS；本次仅固定fixture混合负载证明，无>100实际执行或SLO。
+
+## S01-04 / S01-05 / S01-06：REQ-18 128实际fixture执行后继
+
+GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika开门禁；一个8×16 case，最多128独立task/attempt与持久fixture session，180秒含启动/证据/cleanup，256MiB；无warmup/预演/补数/SDK/provider。固定设计见[Interface](../../docs/evidence/s01/mixed-128-preparation/interface.md)。
+
+- [x] 固定main1c496835输入、profile与128身份/持续行为/预算/资源验收；41纯checks/strict0，source6de928d。
+- [x] 独立review固定准备实现：Mika 2026-10-06 12:29:56 UTC APPROVED 6de928d；实际窗口仍待明确OPEN。
+- [x] Mika点名70c92414后唯一128实际window完成，CLI0/14.64s/清理完成；0额外capacity调用，结果待独审。
+- [x] 本次全量session/attempt/event ACK/fence/unknown与资源证据封存独审：Mika 2026-10-06 12:37:14 UTC APPROVED 64911a3c；REQ-18真实模型/完整故障/部署边界继续开放。
+
+## S01-06 长驻wait后继登记（2026-10-06 13:00:30 UTC）
+
+固定main280289 runtime.ts:55–59每轮race订阅全部active promises；结合TC39规范推断长驻pending订阅随tick积累。详见[有界登记与验收](../../docs/evidence/s01/long-lived-wait/README.md)。现6秒128已审证据不证明小时驻留有界，无heap/RSS实测结论。S01-06继续in-progress；后继需fresh产品scope+独立WT，由Mika协调owner，少量pending/有限虚拟ticks红绿验证订阅/唤醒、及时补槽及shutdown/unknown-claim/recovery-drain不变。此轮只metadata，0测试/负载，不触旧raw。

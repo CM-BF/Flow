@@ -1,0 +1,250 @@
+{
+  "target": "4f87934f585b8241faa7cdb76b79a202fd353b6f",
+  "recordedAt": "2026-10-06 12:29:04 UTC",
+  "base": "daf66fc50b60d5b0616ad44bc4a1fb30c2d5d29a",
+  "fixedMainInput": "7cbda706632c85fc5da12a371b282419c933ab9a",
+  "bindings": {
+    "source": [
+      {
+        "path": "apps/server/src/context-transparency/store.ts",
+        "bytes": 11267,
+        "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245"
+      },
+      {
+        "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+        "bytes": 12618,
+        "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b"
+      }
+    ],
+    "raw": [
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-red.txt",
+        "bytes": 1619,
+        "sha256": "cef3b842fbbbfcee9ade5dc9f0ae81fbe5c3892166519a9784f89017860f4628"
+      },
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-red-cleanup.json",
+        "bytes": 293,
+        "sha256": "4855f589ff6e03aba4e8a94974ce7d90a0d7349ad860148e56730beccf174c90"
+      },
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-green.txt",
+        "bytes": 784,
+        "sha256": "409839edb68874590d06d9d63218815680e3876bb927f7153bb994fffff3b22b"
+      },
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-green-cleanup.json",
+        "bytes": 293,
+        "sha256": "61fc1a65edf045154ce4bed825a996ca1a07bb135a0eb9bd51cbca15c26bb915"
+      },
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-direct.txt",
+        "bytes": 432,
+        "sha256": "589ffd4cd6c9f090d69258e73a6aa799c1976ce399dfc259a07ef3f3ea011e23"
+      },
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-typecheck-first.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-effective-tsconfig.json",
+        "bytes": 9239,
+        "sha256": "0fae2b8484dfd675cf7645d28b503bcb45f1947652b381c961cb376b91f45f0a"
+      }
+    ],
+    "support": [
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-amend-receipt.json",
+        "bytes": 728,
+        "sha256": "05c9fcc3f864b6e9378c80bba3a3f577cb054848a4050dda07c873dd313de657"
+      },
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-checks.json",
+        "bytes": 2574,
+        "sha256": "2eaf65da2ec572505f918e92c41201cecb0c7b27d9b57cb0c1d3cdce43051949"
+      },
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-correction.md",
+        "bytes": 2090,
+        "sha256": "44177eb8ac7f3b869161572786d596cf82e9c74f8daa572e4a9cd7aa7da1efc2"
+      },
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-integration-receipt.json",
+        "bytes": 1955,
+        "sha256": "a71425e58541c84366ff6cc38b6562f6dd9473c99f8a54d323564da0ff97cc13"
+      },
+      {
+        "path": "docs/evidence/wpf-mature-04/attachment-validation-config.json",
+        "bytes": 9960,
+        "sha256": "77be2c7dcda4c8c67973e99b382e0be5d7a82335937e2a44abbc56029d246091"
+      }
+    ],
+    "readonly": [
+      {
+        "path": "packages/contracts/src/context-observation-history.ts",
+        "bytes": 3520,
+        "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+      },
+      {
+        "path": "packages/contracts/src/context-observation-history.test.ts",
+        "bytes": 4754,
+        "sha256": "3a4cc602ed8a1b0f1b52b34bbbbf26b9725495309704b88a60b3eab8e975e41b"
+      },
+      {
+        "path": "packages/contracts/src/context-observation-event.ts",
+        "bytes": 2828,
+        "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+      },
+      {
+        "path": "packages/contracts/src/conversation-context.ts",
+        "bytes": 9794,
+        "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+      },
+      {
+        "path": "packages/contracts/src/attachments.ts",
+        "bytes": 8422,
+        "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+      },
+      {
+        "path": "packages/contracts/src/conversations.ts",
+        "bytes": 6138,
+        "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705"
+      },
+      {
+        "path": "packages/contracts/src/runner.ts",
+        "bytes": 7140,
+        "sha256": "cdb2af7c7db16252b09e15cbd872b4f3edd29b19ccfbac197362bc5d59751447"
+      },
+      {
+        "path": "packages/contracts/src/index.ts",
+        "bytes": 1227,
+        "sha256": "15b003d0132513cd8ac65471c4d88d066ca3219601e906a9c1bab4e1ed58d63f"
+      },
+      {
+        "path": "packages/client/src/index.ts",
+        "bytes": 44108,
+        "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd"
+      },
+      {
+        "path": "apps/server/src/index.ts",
+        "bytes": 13507,
+        "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+      },
+      {
+        "path": "apps/server/src/database.ts",
+        "bytes": 6424,
+        "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+      },
+      {
+        "path": "apps/server/src/events.ts",
+        "bytes": 8678,
+        "sha256": "4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853"
+      },
+      {
+        "path": "apps/server/src/runners.ts",
+        "bytes": 11992,
+        "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+      },
+      {
+        "path": "apps/server/src/evidence.ts",
+        "bytes": 4095,
+        "sha256": "30124654e78c5db1075f306046d8f7a5e1e72e835531e2a87fc1cfb17587bb20"
+      },
+      {
+        "path": "apps/server/src/tasks.ts",
+        "bytes": 6621,
+        "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+      },
+      {
+        "path": "apps/server/src/conversation-context/store.ts",
+        "bytes": 14160,
+        "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6"
+      },
+      {
+        "path": "apps/server/src/attachments/index.ts",
+        "bytes": 5023,
+        "sha256": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516"
+      },
+      {
+        "path": "apps/server/src/conversations/commands.ts",
+        "bytes": 3805,
+        "sha256": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8"
+      },
+      {
+        "path": "apps/server/src/conversations/admission.ts",
+        "bytes": 3967,
+        "sha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb"
+      },
+      {
+        "path": "apps/server/src/conversations/replies.ts",
+        "bytes": 8294,
+        "sha256": "0d8638a7432a34e69b736b50f0307f2f2b7a75eca8dc2f1fa0522355e2def43c"
+      },
+      {
+        "path": "apps/server/src/context-transparency/migration.ts",
+        "bytes": 781,
+        "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c"
+      },
+      {
+        "path": "apps/server/src/context-transparency/routes.ts",
+        "bytes": 996,
+        "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01"
+      },
+      {
+        "path": "apps/server/src/context-transparency/store.test.ts",
+        "bytes": 25516,
+        "sha256": "d4c9d024f2e92f1e2af3b0414adb12bbf44ce0c876d671ff33439de6f067b7a0"
+      },
+      {
+        "path": "packages/storage/migrations/026-attachment-resources.sql",
+        "bytes": 2994,
+        "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+      },
+      {
+        "path": "packages/storage/migrations/027-context-observation-history.sql",
+        "bytes": 1891,
+        "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241"
+      },
+      {
+        "path": "tsconfig.json",
+        "bytes": 614,
+        "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+      },
+      {
+        "path": "apps/server/src/attachments/storage.ts",
+        "bytes": 11534,
+        "sha256": "7e62dee9b16a164b250b6d7d0331319fb5f4ea8c7493e91c8b8e25a133c70560"
+      }
+    ]
+  },
+  "counts": {
+    "source": 2,
+    "raw": 7,
+    "support": 5,
+    "readonly": 27
+  },
+  "readonlyEqualBase": true,
+  "producerFourEqualApprovedTarget": "eccb1ba6d9f3bf95cca4f50693dde8e32707ed40",
+  "redStoreInput": {
+    "commit": "daf66fc50b60d5b0616ad44bc4a1fb30c2d5d29a",
+    "path": "apps/server/src/context-transparency/store.ts"
+  },
+  "tests": {
+    "passedDistinct": 21,
+    "newPgHttp": 4,
+    "directSchemaStore": 17,
+    "existingPgNotRun": 9,
+    "redFailed": 1,
+    "redUnselected": 3,
+    "strictExit": 0
+  },
+  "boundFilesAllInTarget": true,
+  "reviewStatus": "NOT_STARTED",
+  "limits": [
+    "history-only",
+    "attachment material representation remains unknown",
+    "no real SDK/provider",
+    "no migration or shared source modification"
+  ]
+}

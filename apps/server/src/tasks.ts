@@ -1,3 +1,4 @@
+import { TASK_SUMMARY_COLUMNS, toTaskSummary, type TaskSummaryRow } from './task-read-projection.js';
 import { legacyTimelineEntries } from './assistant-stream-compatibility/index.js';
 import { assertTaskExecutionProfile } from './execution-profiles/store.js';
 import { randomUUID } from 'node:crypto';
@@ -13,8 +14,8 @@ export interface TaskRecord {
   pending_decision: DecisionRequest | null; usage: UsageTotals; latest_artifact_id: string | null; latest_artifact_version: string | null;
 }
 export function summary(task: TaskRecord): TaskSummary {
-  return { id: task.id, title: task.submission.title, harness: task.submission.harness, status: task.status,
-    verificationStatus: task.verification_status, createdAt: task.created_at.toISOString(), updatedAt: task.updated_at.toISOString() };
+  return toTaskSummary({ id: task.id, title: task.submission.title, harness: task.submission.harness, status: task.status,
+    verification_status: task.verification_status, created_at: task.created_at, updated_at: task.updated_at });
 }
 export async function loadTask(client: PoolClient, id: string, lock = false): Promise<TaskRecord> {
   const result = await client.query<TaskRecord>(`SELECT * FROM flow.tasks WHERE id=$1${lock ? ' FOR UPDATE' : ''}`, [id]);
@@ -76,8 +77,8 @@ export async function list(pool: Pool, limit: number, before?: string): Promise<
     try { cursor = JSON.parse(Buffer.from(before, 'base64url').toString()); } catch { throw new HttpError(400, 'invalid_cursor', 'Invalid task cursor.'); }
     if (!cursor || typeof cursor.id !== 'string' || !cursor.id || cursor.id.length > 200 || typeof cursor.date !== 'string' || !Number.isFinite(Date.parse(cursor.date)) || new Date(cursor.date).toISOString() !== cursor.date) throw new HttpError(400, 'invalid_cursor', 'Invalid task cursor.');
   }
-  const result = await pool.query<TaskRecord>('SELECT * FROM flow.tasks WHERE ($1::timestamptz IS NULL OR (created_at,id)<($1::timestamptz,$2)) ORDER BY created_at DESC,id DESC LIMIT $3', [cursor?.date ?? null, cursor?.id ?? null, limit + 1]);
+  const result = await pool.query<TaskSummaryRow>(`SELECT ${TASK_SUMMARY_COLUMNS} FROM flow.tasks WHERE ($1::timestamptz IS NULL OR (created_at,id)<($1::timestamptz,$2)) ORDER BY created_at DESC,id DESC LIMIT $3`, [cursor?.date ?? null, cursor?.id ?? null, limit + 1]);
   const rows = result.rows.slice(0, limit);
   const last = rows.at(-1);
-  return { tasks: rows.map(summary), nextCursor: result.rows.length > limit && last ? Buffer.from(JSON.stringify({ date: last.created_at.toISOString(), id: last.id })).toString('base64url') : null };
+  return { tasks: rows.map(toTaskSummary), nextCursor: result.rows.length > limit && last ? Buffer.from(JSON.stringify({ date: last.created_at.toISOString(), id: last.id })).toString('base64url') : null };
 }

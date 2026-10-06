@@ -1,0 +1,54 @@
+{
+  "before": "9468d443a8b72e11dedf8c6ad6b54149107ef44e",
+  "target": "2f4a5789ee13937914fa2c25161c8d5ed1071550",
+  "result": "844fa14bfbf32f5392e48e104b5440a9cb5b9b13",
+  "conflicts": false,
+  "implementationEdits": false,
+  "sourceInputs14MatchFixedMain": true,
+  "priorApprovedLeafSources18Unchanged": true,
+  "dirtyAfterMerge": false,
+  "takeReceipt": {
+    "requestId": "wpf04-producer-main-integration-20261006-1204",
+    "action": "take",
+    "committedAt": "2026-10-06T12:02:08.062Z",
+    "claim": {
+      "claimId": "ffe69d76-0e1c-4221-bfd3-d1c22d301d96",
+      "version": 1,
+      "taskId": "WPF-MATURE-04",
+      "lead": "mika",
+      "worker": "architecture_read",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+      "branch": "codex/context-transparency",
+      "scope": [],
+      "role": "integration",
+      "state": "active",
+      "next": null,
+      "origin": "new",
+      "observedAt": null,
+      "updatedAt": "2026-10-06T12:02:08.062Z",
+      "createdAt": "2026-10-06T12:02:08.062Z"
+    }
+  },
+  "releaseReceipt": {
+    "requestId": "wpf04-producer-main-integration-release-20261006-1204",
+    "action": "release",
+    "committedAt": "2026-10-06T12:02:23.611Z",
+    "claim": {
+      "lead": "mika",
+      "next": null,
+      "role": "integration",
+      "scope": [],
+      "state": "released",
+      "branch": "codex/context-transparency",
+      "origin": "new",
+      "taskId": "WPF-MATURE-04",
+      "worker": "architecture_read",
+      "claimId": "ffe69d76-0e1c-4221-bfd3-d1c22d301d96",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+      "createdAt": "2026-10-06T12:02:08.062Z",
+      "updatedAt": "2026-10-06T12:02:23.611Z",
+      "observedAt": null
+    }
+  }
+}

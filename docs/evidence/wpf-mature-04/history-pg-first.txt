@@ -1,0 +1,16 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency
+
+ ✓ apps/server/src/context-transparency/routes.test.ts (6 tests) 143ms
+stdout | apps/server/src/context-transparency/store.test.ts > PostgreSQL history
+WPF04_DATABASE_FACTS {"database":"flow_wpf04_190382d0cebe433d80830066ff765de1","startedAt":"2026-10-06T11:05:23.821Z","created":true,"dropped":true,"prerequisites":[{"version":1},{"version":2},{"version":4},{"version":6},{"version":7},{"version":10},{"version":11},{"version":15},{"version":18},{"version":21}],"connectionsBeforeDrop":0,"remaining":[],"endedAt":"2026-10-06T11:05:24.748Z"}
+
+ ✓ apps/server/src/context-transparency/store.test.ts (19 tests) 916ms
+ ✓ packages/contracts/src/context-observation-history.test.ts (6 tests) 8ms
+ ✓ packages/contracts/src/context-observation-event.test.ts (18 tests) 6ms
+
+ Test Files  4 passed (4)
+      Tests  49 passed (49)
+   Start at  04:05:21
+   Duration  3.14s (transform 792ms, setup 0ms, import 1.54s, tests 1.07s, environment 0ms)
+

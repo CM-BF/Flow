@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract
+
+ ✓ apps/runner/src/engineering/integration.test.ts (6 tests | 3 skipped) 3549ms
+   ✓ executes a real synthetic Git repair and fixed Node checker through existing host/outbox to public PG artifact readback  1240ms
+   ✓ retains an injected unknown write and project lease across host restart without replaying writes  456ms
+   ✓ replays a lost artifact acknowledgement without fabricating the verification or reexecuting engineering  712ms
+
+ Test Files  1 passed (1)
+      Tests  3 passed | 3 skipped (6)
+   Start at  05:43:12
+   Duration  4.53s (transform 455ms, setup 0ms, import 897ms, tests 3.55s, environment 0ms)
+

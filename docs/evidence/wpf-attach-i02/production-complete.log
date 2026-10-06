@@ -1,0 +1,33 @@
+PASS explicit project preparation preserves the text and performs zero turns
+PASS P01 Files entry loads only explicit metadata; Enter preview is lazy and cached
+PASS real Send v2 bad-200 becomes unknown; retry preserves key/body and next draft
+PASS official upload adapter and Queue Enter use a frozen v2 receipt, never cancel the task
+PASS offline before submit prevents receipt/POST and preserves original uploaded material
+PASS disable/enable and native hidden retain materials without automatic reads; protected close is retained
+PASS 390 light/dark keyboard and metadata-only retained material
+PASS unknown upload survives browser reload; sixth public receipt lookup recovers without a new POST or automatic attachment
+PASS @file uses the same plugin panel; official drag input uploads and explicit chip removal preserves recovery
+PASS storage failure cannot tear down text-only conversations; empty attachment field stays omitted
+Error: expect(locator).toHaveValue(expected) failed
+
+Locator:  getByRole('textbox', { name: 'Message input', exact: true }).visible()
+Expected: ""
+Received: "Plain legacy send"
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveValue" getByRole('textbox', { name: 'Message input', exact: true }).visible() with timeout 5000ms
+  - waiting for getByRole('textbox', { name: 'Message input', exact: true }).visible()
+    14 × locator resolved to <textarea rows="1" name="input" enterkeyhint="send" aria-label="Message input" placeholder="Message Flow…" class="aui-composer-input caret-primary placeholder:text-muted-foreground/60 max-h-48 min-h-10 w-full resize-none bg-transparent px-2.5 py-1 text-base leading-6 outline-none">Plain legacy send</textarea>
+       - unexpected value "Plain legacy send"
+
+    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)
+    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)
+    at Object.toHaveValue (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:171:100)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:43:109)
+    at async work (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:168:5)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:179:7)
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: tsx test/attachment-integration.browser.ts production-complete

@@ -1,0 +1,25 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-goal-session
+
+ ❯ apps/tui/src/goal/journey.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/tui/src/goal/journey.test.ts [ apps/tui/src/goal/journey.test.ts ]
+Error: Cannot find module '../../../../server/src/goal-delivery/test-support.js' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-goal-session/apps/tui/src/goal/journey.test.ts'
+ ❯ apps/tui/src/goal/journey.test.ts:11:1
+      9| import { createGoalTerminal } from './terminal.js';
+     10| import { openGoalIntentStore } from './store.js';
+     11| import { publicGoalFixture, goalInput, save } from '../../../../server…
+       | ^
+     12| const f = publicGoalFixture('tui01d');
+     13| const connectionId = 'e'.repeat(64);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  05:35:04
+   Duration  407ms (transform 190ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

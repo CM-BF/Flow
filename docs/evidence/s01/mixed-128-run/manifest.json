@@ -1,0 +1,471 @@
+{
+  "resultTarget": "64911a3c88488dfdebaa3a678bad659211e29209",
+  "implementationTarget": "6de928d8092ba8c22ac2222ac7c16af3660be48a",
+  "executionHead": "70c92414d3f0fc90b256e857acf64ba3dba35b30",
+  "productionBase": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
+  "runIdentity": "after-light-reads-128-v1",
+  "windowId": "s01-128-after-light-reads-once",
+  "recordedAt": "2026-10-06 12:36:00 UTC",
+  "reviewState": "PENDING_FIXED_RESULT_REVIEW",
+  "runVerdict": "PASS",
+  "source": [
+    {
+      "path": "experiments/runner-capacity/mixed/README.md",
+      "bytes": 4953,
+      "sha256": "d61b4826b630b897146724b88f4a594a145e5c3cae2444df69ec2a6b7f4408c9"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/channel.ts",
+      "bytes": 1675,
+      "sha256": "f99b9c46fb03ab785aa45d2df1d1c1ed9dda8a29751cfbf5345249d67c135830"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/child.ts",
+      "bytes": 12569,
+      "sha256": "64d8bc3f18d064c4190acd9d0cf6efa7e3c5e5db9cafbab9ebefe934ec48b7ef"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/contract.test.ts",
+      "bytes": 1405,
+      "sha256": "ff67bea350f4232d0df3e95d165e72e930300990f29625dc9ff69ffb61cd8ff0"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/contract.ts",
+      "bytes": 4286,
+      "sha256": "dff6dbe46e5ba15a93179a9b79ffb8c6f6e5ea403bd35a24e69f341e9c83ddb5"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/deadline.test.ts",
+      "bytes": 1281,
+      "sha256": "ca202a4e14121cb3a3967bc61d286a5b3395e0c24fd7169a021181bcd861524e"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/deadline.ts",
+      "bytes": 1098,
+      "sha256": "3431dd41074b0ae2613bfff00c38da3c3e78fdcb2b5d5a367751f9f2ca47d76a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/driver.ts",
+      "bytes": 30390,
+      "sha256": "06292e2d904a66c9b1b61b0ff19e37d091df67553a521b3d24fb7c1dcf698f57"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/evidence-bounds.test.ts",
+      "bytes": 2594,
+      "sha256": "e2e56f25b8e72c33958e06ec1cf3a40518bd84c5de4c7d9109c59eab8aeff371"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/main.ts",
+      "bytes": 1061,
+      "sha256": "3b5b3ffec08e17c0a9a598f5623c926055d53cffe99655cbfecd1d38f2242691"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observation-archive.ts",
+      "bytes": 1045,
+      "sha256": "dde8c42d673dc04d1747d418ad9b792398e25bcb325916a0e6c6a05c13dea44d"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.test.ts",
+      "bytes": 4031,
+      "sha256": "dd24a6404eb68da7afd519bfe48daa068e9374c47aa915023b82cf0f00db4bb5"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.ts",
+      "bytes": 5328,
+      "sha256": "f0e84b4271ac0fc2f14fd3266cf4a5264b2254eab5b234db856273b9fa56e6aa"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/process.ts",
+      "bytes": 2762,
+      "sha256": "87e1e2d959546d48409205b94e7d68926cd34614a5e6c13dfb5e24f7e06b4419"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/profile.test.ts",
+      "bytes": 3413,
+      "sha256": "e597852b271d03a54c1d9da7f6dd03f58fff1dc0b9127213c0d9ab5d192d983a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/proof.test.ts",
+      "bytes": 2061,
+      "sha256": "45974063cf5feb9be4ff8e8feda611d9455bea0f92008f0ae4fb7961029494f2"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/proof.ts",
+      "bytes": 12294,
+      "sha256": "40a1ca8a2a61867bd837a9cf1ffb5c9d75d56640320a58a2c62ee85154f5cdba"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/request-error.ts",
+      "bytes": 755,
+      "sha256": "5ec7a45c2c9f819e04f303f064183d813a7b3b2bc0c2d58659a2d4d287f650f2"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/run-identity.test.ts",
+      "bytes": 2712,
+      "sha256": "7bc02d9d47f5e32546d9ce10df521c54b312856adb7d6164434c11af345eea15"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/run-identity.ts",
+      "bytes": 4265,
+      "sha256": "d72047c731193540801187bf214945b74c2e080466df6c80260aafbee0f1ff04"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/runtime-dependencies.json",
+      "bytes": 1150,
+      "sha256": "24deb4832a1c4cde186b959f4b255b26022c11b70a9b00ed0e2ee7097a564462"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/stream-bytes.test.ts",
+      "bytes": 1789,
+      "sha256": "015221f67762c06cf484aef9bce39bed2c4a1ec285781be4278be7fe2c689122"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/stream-bytes.ts",
+      "bytes": 1830,
+      "sha256": "6b88d05a975bf91bdec9eedb42b2a4f0c47b7c2149831a9bbb0a11c118fade2b"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/sustained-proof.test.ts",
+      "bytes": 7501,
+      "sha256": "8dc9e60be5d036ead4dc584711d3dcccfadfc6c79bceefc31493d53819fd9b98"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/tsconfig.json",
+      "bytes": 258,
+      "sha256": "2f7bfc694006d11811592ae4ef4bc57d50300ce2c89c32c12a190fa305272c52"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/vitest.config.ts",
+      "bytes": 190,
+      "sha256": "06ad6c5354ad53e6b729a5d444e1c890a3481633f2b5470d8dace817c09e7801"
+    }
+  ],
+  "readonly": [
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "path": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+    },
+    {
+      "path": "apps/runner/src/fixture.ts",
+      "bytes": 2615,
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "path": "apps/runner/src/runtime-shutdown.test.ts",
+      "bytes": 13720,
+      "sha256": "09670094e39e2a3b2da6286c763d161e5b359231d472e655b2d44fe4c1a8c42d"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "bytes": 5368,
+      "sha256": "e8987ea10d90c16c61dbaf043b5ed32192ce184f4fd7a20a84659b653e22d7f5"
+    },
+    {
+      "path": "apps/server/src/commands.ts",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8678,
+      "sha256": "4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+    },
+    {
+      "path": "apps/server/src/queries.ts",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4"
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "bytes": 11658,
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 11992,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    },
+    {
+      "path": "apps/server/src/scheduler.ts",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+    },
+    {
+      "path": "apps/server/src/sessions.ts",
+      "bytes": 1593,
+      "sha256": "901eefd23c4a1e33e2639149c7335e64bd63ecb0aaed3fb61e69e920ce9d847a"
+    },
+    {
+      "path": "apps/server/src/task-read-projection.ts",
+      "bytes": 821,
+      "sha256": "7194976171df9af15552a23d33958c3141178b311f686adc95cb435c30be04b4"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "experiments/runner-capacity/evidence.ts",
+      "bytes": 6610,
+      "sha256": "14b14ddb3f64eb551f3e0f7cfa1009c10d066e66bc0310fae40a82ae18c02042"
+    },
+    {
+      "path": "experiments/runner-capacity/http.ts",
+      "bytes": 621,
+      "sha256": "e8a1f9917b3dfba337b72e1f3b64ce0ca7263772a09744c2cd21be4f25ee7eb1"
+    },
+    {
+      "path": "experiments/runner-capacity/processes.ts",
+      "bytes": 3570,
+      "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 11246,
+      "sha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 44108,
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1227,
+      "sha256": "15b003d0132513cd8ac65471c4d88d066ca3219601e906a9c1bab4e1ed58d63f"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7140,
+      "sha256": "cdb2af7c7db16252b09e15cbd872b4f3edd29b19ccfbac197362bc5d59751447"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/s01/mixed-128-run/result.json",
+      "bytes": 968795,
+      "sha256": "bd4a01513ac9ba8240f20c44c802a8c55955e4c313cded191be70a66b3be2e30"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/observations.json",
+      "bytes": 28841267,
+      "sha256": "59a07f26e3047dc8169868cdbb9f50c0ec732211a4bd39fd8f775c99c7f92f51"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/reservation.json",
+      "bytes": 6434,
+      "sha256": "dd3355a1005fadb50cd2698a4b99756231dc81bdba3286f6cfbd26814923f55b"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/owned-resources.json",
+      "bytes": 358,
+      "sha256": "7a483512aaa7921e03d9e7b0668beae34a06f14c0b91c7329300ce3043f2e7fe"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/journals.json",
+      "bytes": 2690,
+      "sha256": "56aeb634e421a84b3c840194b6014de1a935f5f023da1b6e001f5193e17d680e"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/cli.stdout",
+      "bytes": 251,
+      "sha256": "249f8f4175650796872110eb3785d4871bb75112a1369da4580d00b1e6e6c3ff"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/cli-time.stderr",
+      "bytes": 30,
+      "sha256": "146882ca364d4de94a55b11ab61bd3e5ea24f3d7e389a468daedd64d47ef7ef2"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/start.json",
+      "bytes": 710,
+      "sha256": "076ce94b67e9af8e1d157f9a0e3db3feb77293a58dd1fa203764b6675ec9eb66"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/exit.json",
+      "bytes": 63,
+      "sha256": "2a27ab4a5c87a9c76acb9218ce6c002d629c198fc910ba8ca9582527d3aa9c0c"
+    }
+  ],
+  "support": [
+    {
+      "path": "docs/evidence/s01/mixed-128-run/analysis.json",
+      "bytes": 7112,
+      "sha256": "120397616601533987ae4bc0a9b32a750771f1bd9c25a470614067b73ccc57d2"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/analyze.py",
+      "bytes": 11012,
+      "sha256": "92c3db4dda62a1e7172ae1dd9c9174bc2fb279d7bf249fc66cbb34fc00d5b272"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/archive-budget.json",
+      "bytes": 785,
+      "sha256": "7a092ac72e1ac28633ac8649cfce10198e0ff1b784a8502237cc2fae8c8226b2"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/execution-approval.json",
+      "bytes": 441,
+      "sha256": "7b74b967a3f13f9c0ec5a093dd894d3d6f55a9041a9de377ef085e51fbf894b2"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/raw-freeze.json",
+      "bytes": 1002,
+      "sha256": "32545b1c948f0226cfdddafb14085f30279b755bcc109310e77462656554210f"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-run/report.md",
+      "bytes": 5670,
+      "sha256": "54e1dff9c6b9e9d338c25d2d4396a949196b5bb9f4d6fff58e5d0b371fec0de3"
+    }
+  ],
+  "preparation": [
+    {
+      "path": "docs/evidence/s01/mixed-128-preparation/manifest.json",
+      "bytes": 26833,
+      "sha256": "30264126da6460d25fda946944062efa78779f3ac164f3aa064020fe66181f35"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-128-preparation/independent-review.json",
+      "bytes": 1633,
+      "sha256": "79dd341ba115759f1f56c2cf0b24f8d284b83421ca04d1478adb62efae8c59fa"
+    }
+  ],
+  "runtime": {
+    "node": "v24.20.0",
+    "pg": "8.23.1",
+    "pgBoss": "12.37.0",
+    "bossResolvesSamePg": true,
+    "files": [
+      {
+        "path": "node_modules/pg/package.json",
+        "bytes": 1668,
+        "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+      },
+      {
+        "path": "node_modules/pg/lib/client.js",
+        "bytes": 25715,
+        "sha256": "ad6aa93c26b0bf26db1f2ebe74216212790a04c41af5585c63760f9fa8322a32"
+      },
+      {
+        "path": "node_modules/pg/lib/connection.js",
+        "bytes": 6399,
+        "sha256": "f93e914bf408657f2301393489da561a5a464e9c30f4f51b681b18a21a5f1c84"
+      },
+      {
+        "path": "node_modules/pg/lib/stream.js",
+        "bytes": 2132,
+        "sha256": "0bd4001775301604ddf7c94152e05f6f30a9354876717bdae2ab636d00eb12ba"
+      },
+      {
+        "path": "node_modules/pg-boss/package.json",
+        "bytes": 4103,
+        "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0"
+      },
+      {
+        "path": "node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+        "bytes": 14460,
+        "sha256": "6f304776edaabde2954cbf8c4366fa6d9512bfba0e408e78cc56b3c46c69d058"
+      }
+    ]
+  },
+  "history": {
+    "target": "7f424ebd8ac752ec77604164bb906afe6ea36db2",
+    "files": 172,
+    "fixedGitVerified": true,
+    "currentDeclaredSourceOrOwnerMetadataDrift": [
+      "experiments/runner-capacity/mixed/channel.ts",
+      "experiments/runner-capacity/mixed/child.ts",
+      "experiments/runner-capacity/mixed/contract.ts",
+      "experiments/runner-capacity/mixed/driver.ts",
+      "experiments/runner-capacity/mixed/main.ts",
+      "experiments/runner-capacity/mixed/observe-pg.ts",
+      "experiments/runner-capacity/mixed/process.ts",
+      "experiments/runner-capacity/mixed/proof.ts",
+      "experiments/runner-capacity/mixed/run-identity.test.ts",
+      "experiments/runner-capacity/mixed/run-identity.ts",
+      "plans/s01-runner-capacity/plan.md",
+      "plans/s01-runner-capacity/review.md",
+      "plans/s01-runner-capacity/status.md"
+    ],
+    "frozenRawSupportManifestMismatches": [],
+    "retainedOldJournalReadOrMutated": false
+  },
+  "checks": {
+    "preparationPureDistinct": 41,
+    "preparationStrictExit": 0,
+    "additionalActualCalls": 1,
+    "actualTasksAttemptsSessions": {
+      "tasks": 128,
+      "attempts": 128,
+      "sessions": 128
+    },
+    "actualProviderSdkCalls": 0,
+    "noRerun": true
+  },
+  "outcome": {
+    "cliExit": 0,
+    "outerRealSeconds": 14.64,
+    "outerUtcStart": "2026-10-06T12:31:13.682022Z",
+    "outerUtcClose": "2026-10-06T12:31:28.419308Z",
+    "finalMeasuredBytes": 88323950,
+    "archiveConservativeBoundBytes": 118431893,
+    "limitBytes": 268435456,
+    "byteAccountingComplete": true,
+    "journalsResolved": 8,
+    "childrenNaturalExit0": 2,
+    "databaseAbsent": true,
+    "workdirRemoved": true,
+    "retained": []
+  },
+  "knownLimitations": [
+    "FOR SHARE exact SELECT classifier mismatch leaves its row query elapsed UNKNOWN; no recovery from other category, no remeasurement",
+    "Window-end timer slightly early; actual adapter-end intervals establish >=6s",
+    "Event-ACK vs emit-return clocks are separately reported",
+    "DB proof is sampled instants and conservative query separation, not uninterrupted lease/lock proof",
+    "Pool acquisition/transaction/query elapsed are not pure lock wait; no strict speedup or SLO",
+    "One runner process hosts eight runtimes; fixture session is not native agent/conversation",
+    "Outer time includes import/exit; inner driver timing alone is incomplete"
+  ],
+  "reportClarification": {
+    "originalResultTarget": "c7a8ad1d333ef8d148a21e8bb2ca627274a04fbb",
+    "change": "Light reads allow max2 concurrent requests; DB observer is single-flight. No raw/source/check rerun."
+  }
+}

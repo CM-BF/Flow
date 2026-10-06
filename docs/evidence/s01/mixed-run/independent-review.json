@@ -1,0 +1,36 @@
+{
+  "resultTarget": "6a5961a0d815113bba7cea149bc08ca07fdd128a",
+  "verdict": "APPROVED",
+  "approvalScope": "Truthful failed-window evidence only; runVerdict remains FAIL. Not approval of A/B contract or capacity SLO.",
+  "reviewer": "architecture_read",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-06T10:15:58Z",
+  "reviewMode": "independent read-only; no tests, workload, PG or HTTP run",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "manifestSha256": "23684260f3fae8d9937f92308c78a0a375621bedfbef6f346ed99076064eb367",
+  "checkedBindings": {
+    "source": 19,
+    "readonly": 16,
+    "raw": 8,
+    "support": 7,
+    "legacy": 78,
+    "allMatchTargetAndWorktree": true
+  },
+  "checkedEvidence": [
+    "16 unique live/fenced gate and actual adapters overlapping for first 3s",
+    "6002.126375ms window; 12 succeeded, 4 cancelled; 533 continuous DB events bound to fenced ACK id/sequence/digest",
+    "last completed ACK 148.7775ms after window end",
+    "A-window metrics reproduced under fixed parent receive phase convention",
+    "actual retained 80B journal equals archived SHA/value; inFlight remains unknown",
+    "CLI 10673.1145ms / 18660992B; two children normal exit0, owned DB dropped, workdir retained",
+    "B not run, provider0; archival conservative bound25625526B below64MiB"
+  ],
+  "limitations": [
+    "No UUID-to-HTTP request identity or exact send/stop/abort timestamp; no inference of assignment:null.",
+    "No topology comparison, pure lock duration, provider capacity or SLO conclusion.",
+    "Normal graceful stop drain is a separately assigned successor."
+  ]
+}

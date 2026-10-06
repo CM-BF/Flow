@@ -1,0 +1,22 @@
+{
+  "approvalId": "go-svc05-current-release-once",
+  "authority": "Goal Owner window relayed by Execution Lead to assigned operator",
+  "operator": "assignment_review",
+  "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "authorized": [
+    "fresh identity/source/dependencies/whole DB gates",
+    "import fixed reviewed compatibility for every retained artifact",
+    "existing bootstrap drain then active0 hold/refresh",
+    "save preservation checkpoint then one explicit resume if all gates hold"
+  ],
+  "limits": {
+    "drainToFinishMs": 900000,
+    "operatorProviderQueries": 0,
+    "userTabReloads": 0,
+    "changeProfileAuthPorts": false,
+    "forceKill": false,
+    "automaticRollback": false
+  },
+  "sourceOperationOwner": "Execution Lead; detached original configured repository while main/origin refs remain aeb764e5; restore only after resume/evidence",
+  "currently": "pre-drain dependency missing; no service changes"
+}

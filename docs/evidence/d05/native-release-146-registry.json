@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-06T12:17:23.639Z",
+  "sourceCount": 146,
+  "records": [
+    {
+      "task": {
+        "id": "SVC05",
+        "title": "新版个人预览兼容准备",
+        "role": "工作线",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release",
+        "branch": "codex/personal-current-release",
+        "planDir": "plans/svc05-current-release",
+        "evidenceDir": "docs/evidence/svc05"
+      },
+      "errors": [],
+      "humanComplete": true,
+      "implementationErrors": [
+        "实现目标需完整 SHA"
+      ]
+    },
+    {
+      "task": {
+        "id": "ENG01G",
+        "title": "原生工程写入组合",
+        "role": "工作线",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer",
+        "branch": "codex/engineering-native-writer",
+        "planDir": "plans/eng01g-native-writer",
+        "evidenceDir": "docs/evidence/eng01g"
+      },
+      "errors": [],
+      "humanComplete": true,
+      "implementationErrors": [
+        "实现目标需完整 SHA"
+      ]
+    }
+  ],
+  "checks": "Registry identity/paths and actual canonical parser only; no product or architecture test"
+}

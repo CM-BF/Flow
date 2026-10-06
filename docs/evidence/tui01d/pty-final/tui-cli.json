@@ -1,0 +1,306 @@
+{
+  "headless": [
+    {
+      "result": {
+        "ok": true,
+        "code": "OBSERVED",
+        "message": "Recorded center state; bodies require explicit expansion."
+      },
+      "snapshot": {
+        "goal": {
+          "connected": true,
+          "initialized": true,
+          "plan": {
+            "view": "plan",
+            "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+            "projectId": "85757ebd-a14a-4aed-b3de-895cb20236b4",
+            "projectRevision": 3,
+            "planRef": "d48bba9f096ebc2278668db74d3b05513e93876168a4a0841c79cd191b61d2a6",
+            "goalRef": {
+              "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7"
+            },
+            "totalNodes": 2,
+            "nodes": [
+              {
+                "id": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                "title": "A",
+                "version": 1,
+                "parentId": null,
+                "dependsOn": [],
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                  "version": 1
+                }
+              },
+              {
+                "id": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                "title": "B",
+                "version": 1,
+                "parentId": null,
+                "dependsOn": [],
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                  "version": 1
+                }
+              }
+            ],
+            "nextCursor": null
+          },
+          "state": {
+            "view": "state",
+            "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+            "projectId": "85757ebd-a14a-4aed-b3de-895cb20236b4",
+            "observedAt": "2026-10-06T12:44:41.581Z",
+            "nodes": [
+              {
+                "nodeId": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                  "version": 1
+                },
+                "knowledgeCurrent": true,
+                "dependenciesReady": true,
+                "execution": null,
+                "accepted": null,
+                "deliveryCurrent": false,
+                "reason": "not-accepted"
+              },
+              {
+                "nodeId": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                  "version": 1
+                },
+                "knowledgeCurrent": true,
+                "dependenciesReady": true,
+                "execution": null,
+                "accepted": null,
+                "deliveryCurrent": false,
+                "reason": "not-accepted"
+              }
+            ]
+          },
+          "history": null,
+          "body": null,
+          "intent": null,
+          "commandState": "idle",
+          "lastOutcome": null
+        },
+        "draft": "",
+        "notice": "Recorded center state; bodies require explicit expansion.",
+        "closed": false,
+        "panel": "state",
+        "page": 1
+      }
+    },
+    {
+      "result": {
+        "ok": true,
+        "code": "DRAFT",
+        "message": "Local draft only — no task or command sent."
+      },
+      "snapshot": {
+        "goal": {
+          "connected": true,
+          "initialized": true,
+          "plan": {
+            "view": "plan",
+            "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+            "projectId": "85757ebd-a14a-4aed-b3de-895cb20236b4",
+            "projectRevision": 3,
+            "planRef": "d48bba9f096ebc2278668db74d3b05513e93876168a4a0841c79cd191b61d2a6",
+            "goalRef": {
+              "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7"
+            },
+            "totalNodes": 2,
+            "nodes": [
+              {
+                "id": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                "title": "A",
+                "version": 1,
+                "parentId": null,
+                "dependsOn": [],
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                  "version": 1
+                }
+              },
+              {
+                "id": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                "title": "B",
+                "version": 1,
+                "parentId": null,
+                "dependsOn": [],
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                  "version": 1
+                }
+              }
+            ],
+            "nextCursor": null
+          },
+          "state": {
+            "view": "state",
+            "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+            "projectId": "85757ebd-a14a-4aed-b3de-895cb20236b4",
+            "observedAt": "2026-10-06T12:44:41.581Z",
+            "nodes": [
+              {
+                "nodeId": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                  "version": 1
+                },
+                "knowledgeCurrent": true,
+                "dependenciesReady": true,
+                "execution": null,
+                "accepted": null,
+                "deliveryCurrent": false,
+                "reason": "not-accepted"
+              },
+              {
+                "nodeId": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                  "version": 1
+                },
+                "knowledgeCurrent": true,
+                "dependenciesReady": true,
+                "execution": null,
+                "accepted": null,
+                "deliveryCurrent": false,
+                "reason": "not-accepted"
+              }
+            ]
+          },
+          "history": null,
+          "body": null,
+          "intent": null,
+          "commandState": "idle",
+          "lastOutcome": null
+        },
+        "draft": "中文🙂\nlocal only",
+        "notice": "Local draft only — no task or command sent.",
+        "closed": false,
+        "panel": "state",
+        "page": 1
+      }
+    },
+    {
+      "result": {
+        "ok": true,
+        "code": "QUIT",
+        "message": "Observation closed. Center work continues."
+      },
+      "snapshot": {
+        "goal": {
+          "connected": false,
+          "initialized": true,
+          "plan": {
+            "view": "plan",
+            "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+            "projectId": "85757ebd-a14a-4aed-b3de-895cb20236b4",
+            "projectRevision": 3,
+            "planRef": "d48bba9f096ebc2278668db74d3b05513e93876168a4a0841c79cd191b61d2a6",
+            "goalRef": {
+              "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7"
+            },
+            "totalNodes": 2,
+            "nodes": [
+              {
+                "id": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                "title": "A",
+                "version": 1,
+                "parentId": null,
+                "dependsOn": [],
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                  "version": 1
+                }
+              },
+              {
+                "id": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                "title": "B",
+                "version": 1,
+                "parentId": null,
+                "dependsOn": [],
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                  "version": 1
+                }
+              }
+            ],
+            "nextCursor": null
+          },
+          "state": {
+            "view": "state",
+            "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+            "projectId": "85757ebd-a14a-4aed-b3de-895cb20236b4",
+            "observedAt": "2026-10-06T12:44:41.581Z",
+            "nodes": [
+              {
+                "nodeId": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "71726d43-704d-41a2-862e-270b3c18a1a7",
+                  "version": 1
+                },
+                "knowledgeCurrent": true,
+                "dependenciesReady": true,
+                "execution": null,
+                "accepted": null,
+                "deliveryCurrent": false,
+                "reason": "not-accepted"
+              },
+              {
+                "nodeId": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                "inputRef": {
+                  "goalId": "bf3e2981-da7c-4a5c-8d09-cf54e0b81cc7",
+                  "nodeId": "a163b2da-aa76-4e88-a328-f3649cef8884",
+                  "version": 1
+                },
+                "knowledgeCurrent": true,
+                "dependenciesReady": true,
+                "execution": null,
+                "accepted": null,
+                "deliveryCurrent": false,
+                "reason": "not-accepted"
+              }
+            ]
+          },
+          "history": null,
+          "body": null,
+          "intent": null,
+          "commandState": "idle",
+          "lastOutcome": null
+        },
+        "draft": "中文🙂\nlocal only",
+        "notice": "Observation closed. Center work continues.",
+        "closed": true,
+        "panel": "state",
+        "page": 1
+      }
+    }
+  ],
+  "pty": {
+    "exitCode": 0,
+    "narrow": true,
+    "draftOnly": true,
+    "rawModeRestored": true,
+    "observedCjk": true,
+    "multiline": true,
+    "resizeColumns": 52,
+    "transcriptBytes": 12762
+  },
+  "postedCommands": 0
+}

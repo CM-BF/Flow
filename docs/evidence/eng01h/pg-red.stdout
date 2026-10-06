@@ -1,0 +1,61 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract
+
+ ❯ apps/server/src/engineering/native.test.ts (28 tests | 1 failed | 27 skipped) 1733ms
+   × publishes immutable native purpose separately without claiming host qualification 22ms
+   ↓ paginates only native engineering declarations and keeps all old catalogs unchanged
+   ↓ rejects mismatched target at admission
+   ↓ rejects mismatched project at admission
+   ↓ rejects mismatched base at admission
+   ↓ rejects mismatched checker at admission
+   ↓ rejects mismatched digest at admission
+   ↓ rejects mixed ordinary, fixture, conversation and planner purposes
+   ↓ filters historical malformed and ordinary tasks before claim and routes a valid pin once
+   ↓ saves an exact current receipt, reads it publicly, and replays the same lost-ACK batch without a second completion
+   ↓ rolls back a succeeded batch without a verified native receipt
+   ↓ rejects wrong attempt evidence and preserves batch sequence
+   ↓ rejects wrong task evidence and preserves batch sequence
+   ↓ rejects wrong owner evidence and preserves batch sequence
+   ↓ rejects wrong runner evidence and preserves batch sequence
+   ↓ rejects wrong lease evidence and preserves batch sequence
+   ↓ rejects wrong pin evidence and preserves batch sequence
+   ↓ rejects wrong qualification evidence and preserves batch sequence
+   ↓ rejects wrong model evidence and preserves batch sequence
+   ↓ rejects wrong base evidence and preserves batch sequence
+   ↓ rejects wrong snapshot evidence and preserves batch sequence
+   ↓ rejects wrong diff evidence and preserves batch sequence
+   ↓ rejects wrong source evidence and preserves batch sequence
+   ↓ rejects wrong result evidence and preserves batch sequence
+   ↓ rejects wrong artifact evidence and preserves batch sequence
+   ↓ rejects wrong verifier evidence and preserves batch sequence
+   ↓ records a failed host check but refuses success and leaves the exact batch replayable
+   ↓ rechecks revocation before claim and rejects another harness publication
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/engineering/native.test.ts > publishes immutable native purpose separately without claiming host qualification
+AssertionError: expected 403 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 403
+
+ ❯ configured apps/server/src/engineering/native.test.ts:49:140
+     47| async function configured() {
+     48|   const registration = await owner.registerRunner({ name: 'Synthetic n…
+     49|   const response = await request('/api/runner/native-engineering-profi…
+       |                                                                                                                                            ^
+     50|   const { profile } = nativeEngineeringProfilePublishedSchema.parse(re…
+     51|   const intent: NativeEngineeringIntent = { protocol: 'flow.engineerin…
+ ❯ apps/server/src/engineering/native.test.ts:79:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 27 skipped (28)
+   Start at  05:39:32
+   Duration  2.72s (transform 420ms, setup 0ms, import 906ms, tests 1.73s, environment 0ms)
+

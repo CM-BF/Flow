@@ -1,0 +1,21 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller
+
+ ✓ apps/server/src/goal-delivery/delivery.test.ts (7 tests) 10556ms
+   ✓ keeps input and plan page identity stable through unrelated live activity without repeating materials  601ms
+   ✓ rejects related plan changes while retaining exact historical inputs and rejecting obsolete writes  503ms
+   ✓ tracks exact dependency delivery replacement and preserves state across a center restart  2207ms
+   ✓ reports expired execution as uncertain and never infers a verified or accepted delivery  2969ms
+   ✓ bounds owner reads and rejects malformed, duplicate, cross-goal references and wrong credentials  910ms
+   ✓ reads the existing 200-node maximum in bounded pages without silently truncating the plan  2208ms
+ ✓ packages/interaction/src/goal/lifecycle.test.ts (7 tests) 15ms
+ ✓ apps/server/src/goal-delivery/session.test.ts (4 tests) 2459ms
+   ✓ observes decision and fixed artifact separately, while disconnect leaves the execution running and cancel only requests stopping  975ms
+ ✓ apps/server/src/goal-delivery/history.test.ts (2 tests) 2456ms
+   ✓ pages immutable explanation references beyond 50 while sibling activity leaves the fixed page and body stable  621ms
+
+ Test Files  4 passed (4)
+      Tests  20 passed (20)
+   Start at  05:02:15
+   Duration  17.87s (transform 697ms, setup 0ms, import 2.05s, tests 15.49s, environment 0ms)
+

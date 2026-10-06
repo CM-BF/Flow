@@ -39,7 +39,7 @@ Flow项目写入只允许确认>=Sol的模型，优先本机可确认gpt-6-astra
 ## 稳定TODO
 
 - [x] **ENG001-01** 建立唯一生产目标、当前源码缺口、职责和优先级；此项不是产品交付。
-- [ ] **ENG001-02** 固定工程受理/profile、工作区租用与监督检查的小合同，确认可复用接缝、模型门槛及精确scope。
+- [x] **ENG001-02** 固定工程受理/profile、工作区租用与监督检查的小合同，确认可复用接缝、模型门槛及精确scope。
 - [x] **ENG001-03** 0模型真实PG+Git/worktree+检查命令+产物的纵向片，公开headless/TUI可复跑验收。
 - [ ] **ENG001-04** 固定版本的工程执行profile/adapter和恢复、取消、unknown、日志/资源边界；只读旧链回归。
 - [ ] **ENG001-05** 首真实合格native工程旅程：具体一次预算、预检、实际源码改动、监督检查和独立语义验收。
@@ -73,3 +73,35 @@ ENG01B固定a750及已审shared client/mount现已main2e71，123不同局部证�
 [ENG01C](../../../engineering-writer-settlement/plans/eng01c-writer-settlement/plan.md)当前只提取内部 writer 的 stopped/unknown 生命周期，复用原 workspace/checker，旧固定 fixture 的 JSON、hash 和行为保持。独立执行身份必须来自宿主真实 assignment：现 HarnessContext 没有 taskId/attemptId，后继需明确 readonly 身份 Interface 及 contracts/runtime 直接消费者 scope；本片不得从目录推断或生成替代身份。
 
 现 checker 在断言进程 import 被测源码并读取同进程 stdout JSON，resources 仅观察直接子进程 close；固定受信 fixture 的既有证据成立，但不能扩成不受信 native 代码的检查真实性或全体写入已停。native 前须选择并验证最小方案：执行前明确可审的源码限制，或隔离被测执行并由宿主独占断言、报告与完整停止判定。定向验收覆盖伪造 JSON/提前退出和残留写入；基线 hash、事后 diff 不能单独代替来源与停止证明。按独立子scope渐进处理，不把通用 OS 沙箱工程当所有工作的前置。
+
+## ENG01D 已实施的下一接缝（11:32:04）
+
+[唯一子计划](../../../engineering-native-seams/plans/eng01d-native-writer-seams/plan.md)在ENG01C已main53ce后，以真实assignment冻结身份及一个Codex ordinary turn生命周期提取解决两个已识别依赖；不复制SDK循环，不从目录生成执行身份。旧profile/hash/readonly和S01多个attempt语义保持。host-applied有限代码仅可作明确中间验证候选，不自动替代用户要求的native工程写改。完整停止、受信检查及实际>=Sol模型来源仍需后继定向证明。
+
+## 当前原生前置接收与下一步（2026-10-06 11:51:15 UTC）
+
+ENG01D真实assignment身份与普通Codex turn复用已main。ENG01E独立有限源码语言与host断言模块已独审：只处理一份完整ASCII/2KiB calculator文件、保留完整index/worktree绑定，不import/eval，不接收stdout断言。其Interface只验证调用方提供的集合，真实文件来源和native writer全体停止仍须宿主证明。下一有界片由原worker只读设计完整snapshot→checker→独立版本收据，保留旧fixture v1；之后才接一个显式工程native writer/profile，SDK循环复用且合格模型/预算另定。此顺序与O11公共目标读口并行，不等待完整Web。
+
+## 当前可复用基线与原生写入组合（2026-10-06T12:13:55.672556+00:00）
+
+ENG01D/E/F均已受控main；E只解释完整受限源码，不执行被测JS；F负责受管工作区完整内容集前后绑定与独立flow.calculator-workspace-check.v1收据，writerSettlement明确not-attested。工程fixture profile不自动变native；既有正文/v1校验不扩权。
+
+下一子片ENG01G由native_center_owner在独立engineering-native-writer树领取：ordinary与工程复用一个Codex receive/close pump，受限fileChange策略及EngineeringWriter为两个真实消费者，不复制agent loop。身份来自宿主assignment。缺真实写权限/模型资格/完整撤销依据在transport之前拒绝，注入authority仅证明组合，不证明OS/native已停。file-only为首片有限策略，不是所有工程能力永禁终端的永久规则；后继可以明确受控shell边界，仍须真实停止后检查。Mika持有原生诊断，无重复实验/新增provider许可。真实部署准备独立SVC05，不把已main当个人预览已更新。
+
+参考原生接口输入的权威位置：claude-codex-capabilities/docs/evidence/wpf-mature-02/native-engineering-boundaries.md。实际本机原生能力、>=Sol与真实工程语义验证仍属04/05，不能用mock/关闭的cap结束大task。
+
+## ENG01G接收后的实际接通（2026-10-06 12:29:32 UTC）
+
+ENG01G已main557397；唯一receive/close pump、finite file策略、真实assignment和authority生命周期的0模型组合已独审。它未注册生产authority，不能把小模块通过当原生写入已交付。原ENG001-04下一项为显式versioned工程purpose/profile与可信host授权接入，保持fixture/readonly旧canonical和恢复语义；与Mika唯一Codex诊断共享qualification/settlement事实，不另开重复probe。权限来源缺失仍拒绝执行，但中心合同、入参绑定与公开受理可独立准备。实际>=Sol模型来源、真实所有writer撤销、固定检查及独立actor接受属于05，不用注入revoked标记替代。
+
+## 当前实施接缝（2026-10-06 12:40:26 UTC）
+
+[ENG01H](../../../engineering-native-contract/plans/eng01h-native-engineering-contract/status.md) 承接ENG001-04，唯一writer native_center_owner；15个已领取literal见其权威status，不在父计划复制另一份范围账本。它新增有限原生engineering v2用途、独立profile catalog与受信runner检查收据关联，旧fixture v1和普通只读canonical不变。真实host授权、所有writer撤销证明、>=Sol真实执行与独立actor接受仍归05/06，不以这个0模型中心片完成替代。
+
+## ENG01H接收与宿主编排（2026-10-06 12:59 UTC）
+
+中心v2用途/独立catalog/固定pin及native收据关联已main280289，旧fixture和readonly保持。下一ENG01I在独立树组合G writer→停止/同authority撤销事实→F完整snapshot检查→A receipt→原outbox；不另造loop或资格签发。真实Node/Codex强制权限、>=Sol/no-fallback与全部writer撤销仍消费Mika固定预检，缺失不启用个人服务；本模块先0provider证明组合与未知恢复，真实验收05仍开放。
+
+## 13:03 UTC 当前顺序
+
+ENG01I [唯一准备合同](../../../engineering-native-host/plans/eng01i-native-engineering-host/plan.md)已固定为docs-only候选并释放旧claim，尚无adapter产品改动。Mika唯一原生资格核验仍进行；取得可用的固定authority/模型/停止依据后重新领取该宿主组合。当前空出的worker先交付MATURE06可恢复连接，SVC06固定后台产物另位并行；不取消ENG原真实写改与独立接受目标，也不以空closed capability当完成。

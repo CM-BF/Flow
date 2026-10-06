@@ -23,8 +23,14 @@ export async function lockRunner(client: PoolClient, id: string): Promise<Runner
   if (!runner || runner.revoked) throw new HttpError(401, 'runner_revoked', 'Runner credential is unavailable.');
   return runner;
 }
+/** Existing-attempt reads share this fence; these paths must not upgrade the runner lock or insert attempts. */
+async function lockRunnerForAttempt(client: PoolClient, id: string): Promise<void> {
+  const result = await client.query<Pick<RunnerRecord, 'id' | 'revoked'>>('SELECT id,revoked FROM flow.runners WHERE id=$1 FOR SHARE', [id]);
+  const runner = result.rows[0];
+  if (!runner || runner.revoked) throw new HttpError(401, 'runner_revoked', 'Runner credential is unavailable.');
+}
 export async function ownedAttempt(client: PoolClient, runnerId: string, ownership: Ownership) {
-  await lockRunner(client, runnerId);
+  await lockRunnerForAttempt(client, runnerId);
   const result = await client.query<AttemptRecord>('SELECT * FROM flow.attempts WHERE id=$1', [ownership.attemptId]);
   const found = result.rows[0];
   if (!found || found.runner_id !== runnerId) throw new HttpError(403, 'attempt_forbidden', 'This attempt belongs to another runner.');
@@ -49,9 +55,13 @@ export async function claim(pool: Pool, runnerId: string, leaseMs: number): Prom
       SELECT t.id FROM flow.tasks t LEFT JOIN flow.execution_profiles rp ON rp.runner_id=$2 LEFT JOIN flow.sessions s ON s.id=t.submission->>'resumeSessionId' AND s.harness=t.submission->>'harness'
       WHERE t.status='queued' AND t.dispatch_ready AND t.submission->>'harness'=ANY($1)
       AND (t.submission->'executionProfile' IS NULL OR t.submission->'executionProfile'->>'runnerId'=$2)
-      AND ((t.submission->'engineering' IS NULL AND COALESCE(rp.configuration->>'purpose','')<>'engineering-fixture') OR
-        (t.submission->'engineering'->>'targetRunnerId'=$2 AND rp.configuration->>'protocol'='flow.engineering-profile.v1'
-          AND rp.configuration->>'purpose'='engineering-fixture' AND rp.configuration->>'harness'='fixture'
+      AND ((t.submission->'engineering' IS NULL AND COALESCE(rp.configuration->>'purpose','') NOT IN ('engineering-fixture','engineering-native')) OR
+        (t.submission->'engineering'->>'targetRunnerId'=$2
+          AND ((t.submission->'engineering'->>'protocol'='flow.engineering.v1' AND rp.configuration->>'protocol'='flow.engineering-profile.v1'
+            AND rp.configuration->>'purpose'='engineering-fixture' AND rp.configuration->>'harness'='fixture' AND t.submission->>'harness'='fixture')
+          OR (t.submission->'engineering'->>'protocol'='flow.engineering.v2' AND rp.configuration->>'protocol'='flow.engineering-profile.v2'
+            AND rp.configuration->>'purpose'='engineering-native' AND rp.configuration->>'harness'='codex' AND t.submission->>'harness'='codex'
+            AND rp.configuration->>'adapterVersion'='engineering-codex-1'))
           AND t.submission->'engineering'->'profile'->>'id'=rp.id
           AND t.submission->'engineering'->'profile'->>'runnerId'=$2
           AND t.submission->'engineering'->'profile'->>'configDigest'=rp.config_digest
@@ -68,8 +78,8 @@ export async function claim(pool: Pool, runnerId: string, leaseMs: number): Prom
       ORDER BY t.created_at,t.id FOR UPDATE OF t SKIP LOCKED LIMIT 1`, [runner.harnesses, runnerId]);
     if (!result.rows[0]) return { assignment: null, remainingLeaseMs: 0 };
     const task = await loadTask(client, result.rows[0].id);
-    if (task.submission.engineering && (task.submission.harness !== 'fixture' || task.submission.engineering.targetRunnerId !== runnerId)) {
-      throw new HttpError(409, 'engineering_runner_mismatch', 'The engineering intent does not belong to this fixture runner.');
+    if (task.submission.engineering && (task.submission.harness !== (task.submission.engineering.protocol === 'flow.engineering.v1' ? 'fixture' : 'codex') || task.submission.engineering.targetRunnerId !== runnerId)) {
+      throw new HttpError(409, 'engineering_runner_mismatch', 'The engineering intent does not belong to this purpose runner.');
     }
     const goalRun = (await client.query<{ id: string; version: 1; mode: string }>('SELECT id,version,mode FROM flow.goal_tool_runs WHERE task_id=$1', [task.id])).rows[0];
     const graphRun = (await client.query<{ id: string; version: 1; mode: string }>('SELECT id,version,mode FROM flow.goal_graph_runs WHERE task_id=$1', [task.id])).rows[0];

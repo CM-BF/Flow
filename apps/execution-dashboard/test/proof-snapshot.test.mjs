@@ -39,7 +39,9 @@ async function tracedSnapshot(f, name) {
   return { snapshot, starts };
 }
 function comparisons(starts, worktree) {
-  return starts.filter(argv => argv[1] === '-C' && argv[2] === worktree && argv[3] === 'diff' && argv[7] !== 'HEAD');
+  return starts.filter(argv => argv.length === 10 && argv[1] === '-C' && argv[2] === worktree
+    && argv.slice(3, 7).join(' ') === 'diff --name-only -z --no-renames'
+    && /^[a-f0-9]{40}$/.test(argv[7]) && /^[a-f0-9]{40}$/.test(argv[8]) && argv[9] === '--');
 }
 function semantics(task) {
   return {

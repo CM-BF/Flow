@@ -1,0 +1,72 @@
+{
+  "base": "http://127.0.0.1:58373/",
+  "browser": "154.0.8037.98",
+  "passed": true,
+  "at": "2026-10-06T12:46:45.312Z",
+  "sourceCommit": "95d8664ca16c38cffc65774e9784bc83a43791ec",
+  "sourceDirty": [
+    "M apps/execution-dashboard/public/architecture-data.js",
+    " M apps/execution-dashboard/test/architecture.test.mjs",
+    "?? docs/evidence/d06/snapshot-aeb/browser-check.mjs",
+    "?? docs/evidence/d06/snapshot-aeb/browser.log",
+    "?? docs/evidence/d06/snapshot-aeb/node-final.log",
+    "?? docs/evidence/d06/snapshot-aeb/node-first.log",
+    "?? docs/evidence/d06/snapshot-aeb/preview.mjs",
+    "?? docs/evidence/d06/snapshot-aeb/source-audit.json",
+    "?? docs/evidence/d06/snapshot-aeb/source-audit.mjs",
+    "?? docs/evidence/d06/snapshot-aeb/source-first.log"
+  ],
+  "sourceHashes": {
+    "apps/execution-dashboard/public/architecture-data.js": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+    "apps/execution-dashboard/test/architecture.test.mjs": "1cccd582ff3a53c7f1e7583fa810f2c03e366bec19963eb8bd62c4f5e0af2c98",
+    "docs/evidence/d06/snapshot-aeb/browser-check.mjs": "bbaf8bac952ad7152dd9c915d1f859f66f4ef18beff21f2c3052f9ca806a4ce1",
+    "docs/evidence/d06/snapshot-aeb/preview.mjs": "3e4389f4c8237fc97f003e0ab9b7da16de433569aa6a7db4140f33ed85294963",
+    "docs/evidence/d06/snapshot-aeb/source-audit.mjs": "9778ced323329503a7803e29ea75af8dc88dbe5964585a8f25f54ad70909bd37"
+  },
+  "requests": [
+    "/api/snapshot"
+  ],
+  "observations": [
+    {
+      "view": "runtime",
+      "nodes": 11,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/aeb764e5d2c2ec043ae8673cde2724f5330db2ab/apps/runner/src/protocol-dispatch/index.ts"
+    },
+    {
+      "view": "modules",
+      "nodes": 34,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/aeb764e5d2c2ec043ae8673cde2724f5330db2ab/plans/x01-plugin-management/plan.md"
+    },
+    {
+      "view": "data",
+      "nodes": 19,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/aeb764e5d2c2ec043ae8673cde2724f5330db2ab/packages/storage/migrations/027-context-observation-history.sql"
+    },
+    {
+      "view": "states",
+      "nodes": 12,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/aeb764e5d2c2ec043ae8673cde2724f5330db2ab/apps/server/src/evidence.ts"
+    },
+    {
+      "view": "dependencies",
+      "nodes": 7,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/aeb764e5d2c2ec043ae8673cde2724f5330db2ab/plans/flow-002-provider-harness/plan.md"
+    }
+  ],
+  "pageErrors": [],
+  "narrowWidth": 390,
+  "reducedMotion": "reduce",
+  "elapsedMs": 9034.4225,
+  "cleanupMs": 83.19191599999976,
+  "cleanup": [
+    "fulfilled",
+    "fulfilled"
+  ],
+  "scope": "actual local static renderer / synthetic empty snapshot; no registry, ledger, product DB, provider or personal service",
+  "evidenceBytesBeforeReport": 1514396
+}

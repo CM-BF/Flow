@@ -1,0 +1,16 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/runner-read-fence.test.ts > different attempts share the runner fence for ownership, heartbeat and event commit
+Error: Different attempt is serialized behind the held runner credential fence.
+ ❯ expectIndependent apps/server/src/runner-read-fence.test.ts:131:13
+    129|     const state = await blockers(waiter);
+    130|     if (state?.wait_event_type === 'Lock' && state.blockers.includes(h…
+    131|       throw new Error('Different attempt is serialized behind the held…
+       |             ^
+    132|     }
+    133|     if (!finished) await delay(10);
+ ❯ apps/server/src/runner-read-fence.test.ts:174:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

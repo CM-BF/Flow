@@ -1,0 +1,571 @@
+{
+  "startedAt": "2026-10-06T12:38:39.617Z",
+  "endedAt": "2026-10-06T12:38:58.725Z",
+  "wallMs": 19108,
+  "priorBudgetMs": 134259,
+  "cumulativeBudgetMs": 153367,
+  "checks": [
+    "explicit project preparation preserves the text and performs zero turns",
+    "P01 Files entry loads only explicit metadata; Enter preview is lazy and cached",
+    "real Send v2 bad-200 becomes unknown; retry preserves key/body and next draft",
+    "official upload adapter and Queue Enter use a frozen v2 receipt, never cancel the task",
+    "offline before submit prevents receipt/POST and preserves original uploaded material",
+    "disable/enable and native hidden retain materials without automatic reads; protected close is retained",
+    "390 light/dark keyboard and metadata-only retained material",
+    "unknown upload survives browser reload; sixth public receipt lookup recovers without a new POST or automatic attachment",
+    "@file uses the same plugin panel; official drag input uploads and explicit chip removal preserves recovery"
+  ],
+  "errors": [],
+  "failure": "locator.click: Timeout 8000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('navigation', { name: 'Conversations', exact: true }).getByRole('button', { name: 'Other project chat', exact: true })\u001b[22m\n\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:150:82)\n    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:37:109)\n    at async work (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:146:5)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:165:7)",
+  "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
+  "workingSourceHashes": {
+    "apps/web/src/App.tsx": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+    "apps/web/src/conversation-context/receipts.ts": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072",
+    "apps/web/src/conversations/ConversationThread.tsx": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c",
+    "apps/web/src/conversations/messages.ts": "49d07c4eb6b8dd9293749cc7d71fa869579e7db977ead51c00256adf6e046350",
+    "apps/web/src/conversations/outbox.ts": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085",
+    "apps/web/src/conversations/projection.ts": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db",
+    "apps/web/src/conversations/queue/commands.ts": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523",
+    "apps/web/src/conversations/queue/projection.ts": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65",
+    "apps/web/src/plugin-integration/attachments.tsx": "0a98348b8a78d7493f6846fac0179e895402a9c615d4f3d182d481e3eb8ca211",
+    "apps/web/src/plugin-integration/react.tsx": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+    "apps/web/src/plugin-integration/session.ts": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38",
+    "apps/web/src/plugins/types.ts": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+    "apps/web/src/plugins/validation.ts": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831",
+    "apps/web/test/attachment-integration.browser.ts": "955b092ea63f36cf403c445700a55e919d0c07ad26719e9e51a768c7aef99fc5",
+    "apps/web/test/attachment-integration.fixture.ts": "340c839bf921febd23bde195276691701f94419fad66adfc6d7a87d5da51857f",
+    "apps/web/test/attachment-integration.test.ts": "b1743d24280ee63a60f5145308e158cf95a657da7f53ed8c4fa7e24be8b3ee8e",
+    "apps/web/test/conversation-context-receipts.test.ts": "7c67d0dc0f17ff4cb8bfa3068839a79b026657ce8aede802840d333bc38fdcc0",
+    "apps/web/test/conversation-messages.test.ts": "301ed1d649592ce420414af12d5c5f28b4be4ba2a360a608fee01ce2a6bacc13",
+    "apps/web/test/conversation-outbox.test.ts": "cc416bd25c913aa8eb9ade159b3c78a28712d9902b35c5bef4b4089a345b8b15",
+    "apps/web/test/conversation-projection.test.ts": "5954973704d6eca8ebfd5d21c9dfdb46e18111e52390259e49fd2fec0a4278bf",
+    "apps/web/test/conversation-queue.test.ts": "667a35e9a765968f8abc0a4e86610f93b86696c2e86b7eed0e5d23a616f9d5bb",
+    "apps/web/test/plugin-host.test.ts": "92767f0fa52c4c4232a579c3f8d979d6ed0b74104932f08166a0412b4833d2dd"
+  },
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations",
+      "key": "94bd3274-9d54-4c5e-bbc1-7f2b8fbb8876:create",
+      "body": "{\"title\":\"Attachment production conversation\",\"harness\":\"claude\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"requested\":{\"model\":\"runner-default\",\"thinking\":\"disabled\",\"tools\":\"configured-readonly\"}}",
+      "status": 201,
+      "response": "{\"conversation\":{\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"id\":\"90e27aeb-7415-4e2e-8933-65e33e5cf807\",\"title\":\"Attachment production conversation\",\"harness\":\"claude\",\"requested\":{\"model\":\"runner-default\",\"tools\":\"configured-readonly\",\"thinking\":\"disabled\"},\"revision\":0,\"createdAt\":\"2026-10-06T12:38:46.865Z\",\"updatedAt\":\"2026-10-06T12:38:46.865Z\"},\"capabilities\":{\"attachmentContext\":false,\"knowledgeContext\":true,\"followUp\":true,\"queue\":true,\"steer\":false,\"liveAssistantText\":false,\"perTurnModel\":false,\"perTurnThinking\":false,\"perTurnTools\":false},\"replayed\":false}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/596888c1-4b35-44df-bfab-871001fafba2/attachments/capabilities",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"protocol\":\"text-v1\",\"recoveryScopeId\":\"8d58486c-8a7e-4178-ab6a-28e732a708d2\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"requiresProject\":true,\"mediaTypes\":[\"text/plain\"],\"extensions\":[\".txt\"],\"maxFileBytes\":8192,\"maxCombinedReferences\":4,\"maxCombinedBytes\":8192,\"order\":\"knowledge-then-attachments\",\"unboundTtlSeconds\":86400,\"resourcesPerProject\":128,\"retainedBytesPerProject\":1048576}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/596888c1-4b35-44df-bfab-871001fafba2/attachments?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"resources\":[{\"reference\":{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"d8dd5583-a9eb-4e50-96af-5087a30ee889\",\"version\":1,\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"},\"name\":\"existing.txt\",\"mediaType\":\"text/plain\",\"byteLength\":53,\"createdAt\":\"2026-10-06T12:38:40.517Z\",\"expiresAt\":\"2026-10-07T12:38:40.517Z\",\"state\":\"ready\",\"retained\":false}],\"nextCursor\":null}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/596888c1-4b35-44df-bfab-871001fafba2/attachments/d8dd5583-a9eb-4e50-96af-5087a30ee889/versions/1/content?digest=7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"reference\":{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"d8dd5583-a9eb-4e50-96af-5087a30ee889\",\"version\":1,\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"},\"name\":\"existing.txt\",\"mediaType\":\"text/plain\",\"byteLength\":53,\"text\":\"<script>not executed</script>\\nFixed text 中文🙂\\r\\n\"}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/turns",
+      "key": "5018b773-df95-4be1-b891-529d60c702bf:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Send fixed attachment\",\"mode\":\"follow-up\",\"knowledge\":[],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"d8dd5583-a9eb-4e50-96af-5087a30ee889\",\"version\":1,\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"}]}",
+      "status": 202,
+      "response": "{}",
+      "fault": "bad accepted turn acknowledgement"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/turns",
+      "key": "5018b773-df95-4be1-b891-529d60c702bf:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Send fixed attachment\",\"mode\":\"follow-up\",\"knowledge\":[],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"d8dd5583-a9eb-4e50-96af-5087a30ee889\",\"version\":1,\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"}]}",
+      "status": 202,
+      "response": "{\"turn\":{\"id\":\"54eb8fd9-2ec0-4210-8a00-122633401131\",\"task\":{\"id\":\"f1fbadc3-c68a-4dbe-9841-7dbec2a53872\",\"title\":\"Attachment production conversation\",\"status\":\"queued\",\"harness\":\"claude\",\"createdAt\":\"2026-10-06T12:38:47.193Z\",\"updatedAt\":\"2026-10-06T12:38:47.193Z\",\"verificationStatus\":\"pending\"},\"user\":{\"role\":\"user\",\"text\":\"Send fixed attachment\"},\"number\":1,\"context\":{\"id\":\"3a742417-992c-4cab-8f59-cf0671c41deb\",\"order\":\"knowledge-then-attachments\",\"sources\":[],\"attachments\":[{\"name\":\"existing.txt\",\"mediaType\":\"text/plain\",\"reference\":{\"kind\":\"upload\",\"version\":1,\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"d8dd5583-a9eb-4e50-96af-5087a30ee889\",\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"},\"byteLength\":53}],\"contextDigest\":\"f6bb7b90a6e0a50b6a0c5421cd6d32e3dc54fa272318e468bb28ea9775b2b285\",\"templateVersion\":2,\"executionInputId\":\"2610ddc2-21d3-4bcc-a410-230b9dfa3fc0\",\"executionInputDigest\":\"6230a049143d7c9bdafc4139abac0758984f0c5bca2c808e36aa1904af7bea88\"},\"assistant\":{\"state\":\"pending\",\"reason\":\"execution-pending\"},\"createdAt\":\"2026-10-06T12:38:47.199Z\",\"effective\":{\"model\":null,\"tools\":\"unknown\",\"source\":null,\"thinking\":\"unknown\"},\"telemetry\":{\"kind\":\"execution\",\"title\":\"Execution details\",\"taskId\":\"f1fbadc3-c68a-4dbe-9841-7dbec2a53872\"},\"conversationId\":\"90e27aeb-7415-4e2e-8933-65e33e5cf807\"},\"conversation\":{\"id\":\"90e27aeb-7415-4e2e-8933-65e33e5cf807\",\"title\":\"Attachment production conversation\",\"harness\":\"claude\",\"revision\":1,\"createdAt\":\"2026-10-06T12:38:46.865Z\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"requested\":{\"model\":\"runner-default\",\"tools\":\"configured-readonly\",\"thinking\":\"disabled\"},\"updatedAt\":\"2026-10-06T12:38:47.199Z\"},\"replayed\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/f1fbadc3-c68a-4dbe-9841-7dbec2a53872",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/f1fbadc3-c68a-4dbe-9841-7dbec2a53872/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/596888c1-4b35-44df-bfab-871001fafba2/attachments",
+      "key": "a7af824e-de16-4302-a4e0-2325a5623056",
+      "body": "{\"recoveryScopeId\":\"8d58486c-8a7e-4178-ab6a-28e732a708d2\",\"name\":\"upload.txt\",\"mediaType\":\"text/plain\",\"text\":\"Upload exact text 中文\\r\\n\",\"byteLength\":26,\"contentDigest\":\"79367c159929897b898066ae827e725eebfd29b2727559b9a5a82a63f7485f55\"}",
+      "status": 201,
+      "response": "{\"uploadKey\":\"a7af824e-de16-4302-a4e0-2325a5623056\",\"recoveryScopeId\":\"8d58486c-8a7e-4178-ab6a-28e732a708d2\",\"requestDigest\":\"47f146c513cb7bc0042be6d07ffcfa4609f8aadb779974d857180d3ba2fdf56f\",\"resource\":{\"reference\":{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"6e8d4431-8e91-4836-a4f8-0e8266c726dc\",\"version\":1,\"contentDigest\":\"79367c159929897b898066ae827e725eebfd29b2727559b9a5a82a63f7485f55\"},\"name\":\"upload.txt\",\"mediaType\":\"text/plain\",\"byteLength\":26,\"createdAt\":\"2026-10-06T12:38:47.330Z\",\"expiresAt\":\"2026-10-07T12:38:47.330Z\",\"state\":\"ready\",\"retained\":false},\"replayed\":false}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue",
+      "key": "7097fbfd-b436-448f-bb7e-5e152e38d846",
+      "body": "{\"expectedQueueRevision\":0,\"knowledge\":[],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"6e8d4431-8e91-4836-a4f8-0e8266c726dc\",\"version\":1,\"contentDigest\":\"79367c159929897b898066ae827e725eebfd29b2727559b9a5a82a63f7485f55\"}],\"text\":\"Queue the uploaded file\"}",
+      "status": 202,
+      "response": "{}",
+      "fault": "bad accepted queue acknowledgement"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue",
+      "key": "7097fbfd-b436-448f-bb7e-5e152e38d846",
+      "body": "{\"expectedQueueRevision\":0,\"knowledge\":[],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"6e8d4431-8e91-4836-a4f8-0e8266c726dc\",\"version\":1,\"contentDigest\":\"79367c159929897b898066ae827e725eebfd29b2727559b9a5a82a63f7485f55\"}],\"text\":\"Queue the uploaded file\"}",
+      "status": 202,
+      "response": "{\"item\":{\"id\":\"f3e41833-09f3-4ec4-a155-24af8a915839\",\"state\":\"waiting\",\"context\":{\"id\":\"609a10d9-e774-41f9-9bea-954e4eb09103\",\"order\":\"knowledge-then-attachments\",\"sources\":[],\"attachments\":[{\"name\":\"upload.txt\",\"mediaType\":\"text/plain\",\"reference\":{\"kind\":\"upload\",\"version\":1,\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"6e8d4431-8e91-4836-a4f8-0e8266c726dc\",\"contentDigest\":\"79367c159929897b898066ae827e725eebfd29b2727559b9a5a82a63f7485f55\"},\"byteLength\":26}],\"contextDigest\":\"a5cb99615887d4eefe98fdc272481884f1a7461220d350bc19bae32d28da0df9\",\"templateVersion\":2,\"executionInputId\":\"1935f0ec-fdb3-46f2-bc47-4abdb11e3906\",\"executionInputDigest\":\"082f413878b5c3d1bb8d21c3b63eb8ea3dd4f77575169ea820d6a28757e69df0\"},\"preview\":\"Queue the uploaded file\",\"promoted\":null,\"sequence\":1,\"createdAt\":\"2026-10-06T12:38:47.465Z\",\"truncated\":false,\"updatedAt\":\"2026-10-06T12:38:47.465Z\",\"conversationId\":\"90e27aeb-7415-4e2e-8933-65e33e5cf807\"},\"queueRevision\":1,\"conversationId\":\"90e27aeb-7415-4e2e-8933-65e33e5cf807\",\"replayed\":true}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/596888c1-4b35-44df-bfab-871001fafba2/attachments",
+      "key": "2ed59ab3-03b4-4848-8856-7657aa439217",
+      "body": "{\"recoveryScopeId\":\"8d58486c-8a7e-4178-ab6a-28e732a708d2\",\"name\":\"rollback.txt\",\"mediaType\":\"text/plain\",\"text\":\"rollback material\",\"byteLength\":17,\"contentDigest\":\"bde32625e21a028ba9afdfd66155d58f800426a94efdf179773c6ba0f850c750\"}",
+      "status": 201,
+      "response": "{\"uploadKey\":\"2ed59ab3-03b4-4848-8856-7657aa439217\",\"recoveryScopeId\":\"8d58486c-8a7e-4178-ab6a-28e732a708d2\",\"requestDigest\":\"cd6632a9b64e2801003f0b62fb2b1d5738c4661cfe9a7b9e3c0b25bd9cb8ffb6\",\"resource\":{\"reference\":{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"7781a01d-539d-4692-8cf0-1dfa115cb7c5\",\"version\":1,\"contentDigest\":\"bde32625e21a028ba9afdfd66155d58f800426a94efdf179773c6ba0f850c750\"},\"name\":\"rollback.txt\",\"mediaType\":\"text/plain\",\"byteLength\":17,\"createdAt\":\"2026-10-06T12:38:47.646Z\",\"expiresAt\":\"2026-10-07T12:38:47.646Z\",\"state\":\"ready\",\"retained\":false},\"replayed\":false}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/f1fbadc3-c68a-4dbe-9841-7dbec2a53872/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/718772b9-f8bf-4504-801b-1c2bb24d8e1b/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/718772b9-f8bf-4504-801b-1c2bb24d8e1b",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/718772b9-f8bf-4504-801b-1c2bb24d8e1b/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/f1fbadc3-c68a-4dbe-9841-7dbec2a53872/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/f1fbadc3-c68a-4dbe-9841-7dbec2a53872/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/596888c1-4b35-44df-bfab-871001fafba2/attachments/capabilities",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"protocol\":\"text-v1\",\"recoveryScopeId\":\"8d58486c-8a7e-4178-ab6a-28e732a708d2\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"requiresProject\":true,\"mediaTypes\":[\"text/plain\"],\"extensions\":[\".txt\"],\"maxFileBytes\":8192,\"maxCombinedReferences\":4,\"maxCombinedBytes\":8192,\"order\":\"knowledge-then-attachments\",\"unboundTtlSeconds\":86400,\"resourcesPerProject\":128,\"retainedBytesPerProject\":1048576}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/596888c1-4b35-44df-bfab-871001fafba2/attachments",
+      "key": "344bf308-497d-4719-ab9e-e9d63be841a0",
+      "body": "{\"recoveryScopeId\":\"8d58486c-8a7e-4178-ab6a-28e732a708d2\",\"name\":\"lost.txt\",\"mediaType\":\"text/plain\",\"text\":\"Exact original unknown upload\",\"byteLength\":29,\"contentDigest\":\"018787d31cb19f0a291b957d2192ebd6d20f184980b5b9f78b58293dcb1aa5e1\"}",
+      "status": 201,
+      "response": "{}",
+      "fault": "bad accepted upload acknowledgement"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/f1fbadc3-c68a-4dbe-9841-7dbec2a53872",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/f1fbadc3-c68a-4dbe-9841-7dbec2a53872/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/596888c1-4b35-44df-bfab-871001fafba2/attachments/capabilities",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"protocol\":\"text-v1\",\"recoveryScopeId\":\"8d58486c-8a7e-4178-ab6a-28e732a708d2\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"requiresProject\":true,\"mediaTypes\":[\"text/plain\"],\"extensions\":[\".txt\"],\"maxFileBytes\":8192,\"maxCombinedReferences\":4,\"maxCombinedBytes\":8192,\"order\":\"knowledge-then-attachments\",\"unboundTtlSeconds\":86400,\"resourcesPerProject\":128,\"retainedBytesPerProject\":1048576}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/596888c1-4b35-44df-bfab-871001fafba2/attachments/upload-receipt?scope=8d58486c-8a7e-4178-ab6a-28e732a708d2&key=344bf308-497d-4719-ab9e-e9d63be841a0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"receipt\":{\"resource\":{\"name\":\"lost.txt\",\"state\":\"ready\",\"retained\":false,\"createdAt\":\"2026-10-06T12:38:48.566Z\",\"expiresAt\":\"2026-10-07T12:38:48.566Z\",\"mediaType\":\"text/plain\",\"reference\":{\"kind\":\"upload\",\"version\":1,\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"f63be532-33d1-4715-98f7-138c2cd666b6\",\"contentDigest\":\"018787d31cb19f0a291b957d2192ebd6d20f184980b5b9f78b58293dcb1aa5e1\"},\"byteLength\":29},\"uploadKey\":\"344bf308-497d-4719-ab9e-e9d63be841a0\",\"requestDigest\":\"f1d788c2142d80877da7ddf5c08216f24610e809338094ad4fef3be143a51ff4\",\"recoveryScopeId\":\"8d58486c-8a7e-4178-ab6a-28e732a708d2\"},\"current\":{\"state\":\"ready\",\"retained\":false}}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/596888c1-4b35-44df-bfab-871001fafba2/attachments?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "response": "{\"resources\":[{\"reference\":{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"6e8d4431-8e91-4836-a4f8-0e8266c726dc\",\"version\":1,\"contentDigest\":\"79367c159929897b898066ae827e725eebfd29b2727559b9a5a82a63f7485f55\"},\"name\":\"upload.txt\",\"mediaType\":\"text/plain\",\"byteLength\":26,\"createdAt\":\"2026-10-06T12:38:47.330Z\",\"expiresAt\":\"2026-10-07T12:38:47.330Z\",\"state\":\"ready\",\"retained\":true},{\"reference\":{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"7781a01d-539d-4692-8cf0-1dfa115cb7c5\",\"version\":1,\"contentDigest\":\"bde32625e21a028ba9afdfd66155d58f800426a94efdf179773c6ba0f850c750\"},\"name\":\"rollback.txt\",\"mediaType\":\"text/plain\",\"byteLength\":17,\"createdAt\":\"2026-10-06T12:38:47.646Z\",\"expiresAt\":\"2026-10-07T12:38:47.646Z\",\"state\":\"ready\",\"retained\":false},{\"reference\":{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"d8dd5583-a9eb-4e50-96af-5087a30ee889\",\"version\":1,\"contentDigest\":\"7ea7667ba324fe844c26f0a1dddcc4139b8168759c1f94b6845d6852436cf074\"},\"name\":\"existing.txt\",\"mediaType\":\"text/plain\",\"byteLength\":53,\"createdAt\":\"2026-10-06T12:38:40.517Z\",\"expiresAt\":\"2026-10-07T12:38:40.517Z\",\"state\":\"ready\",\"retained\":true},{\"reference\":{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"f63be532-33d1-4715-98f7-138c2cd666b6\",\"version\":1,\"contentDigest\":\"018787d31cb19f0a291b957d2192ebd6d20f184980b5b9f78b58293dcb1aa5e1\"},\"name\":\"lost.txt\",\"mediaType\":\"text/plain\",\"byteLength\":29,\"createdAt\":\"2026-10-06T12:38:48.566Z\",\"expiresAt\":\"2026-10-07T12:38:48.566Z\",\"state\":\"ready\",\"retained\":false}],\"nextCursor\":null}"
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/596888c1-4b35-44df-bfab-871001fafba2/attachments",
+      "key": "116cf416-22ea-4321-a712-901a674b4158",
+      "body": "{\"recoveryScopeId\":\"8d58486c-8a7e-4178-ab6a-28e732a708d2\",\"name\":\"drag.txt\",\"mediaType\":\"text/plain\",\"text\":\"Drag exact text\",\"byteLength\":15,\"contentDigest\":\"2d9f518e11bfefcae1845370deb2233973e9d04b02592f969757c8a08953ea5f\"}",
+      "status": 201,
+      "response": "{\"uploadKey\":\"116cf416-22ea-4321-a712-901a674b4158\",\"recoveryScopeId\":\"8d58486c-8a7e-4178-ab6a-28e732a708d2\",\"requestDigest\":\"8fa2dccbe9d460ad14178617d87df188c2e56eaa1a1771cff34a39025386e262\",\"resource\":{\"reference\":{\"kind\":\"upload\",\"projectId\":\"596888c1-4b35-44df-bfab-871001fafba2\",\"resourceId\":\"0522cb4e-6df5-42e4-8745-8632b795dad0\",\"version\":1,\"contentDigest\":\"2d9f518e11bfefcae1845370deb2233973e9d04b02592f969757c8a08953ea5f\"},\"name\":\"drag.txt\",\"mediaType\":\"text/plain\",\"byteLength\":15,\"createdAt\":\"2026-10-06T12:38:49.120Z\",\"expiresAt\":\"2026-10-07T12:38:49.120Z\",\"state\":\"ready\",\"retained\":false},\"replayed\":false}"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/f1fbadc3-c68a-4dbe-9841-7dbec2a53872",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/f1fbadc3-c68a-4dbe-9841-7dbec2a53872/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=1",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=1",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=1",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807",
+      "key": null,
+      "body": "",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/90e27aeb-7415-4e2e-8933-65e33e5cf807/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200
+    }
+  ],
+  "providerQueries": 0
+}

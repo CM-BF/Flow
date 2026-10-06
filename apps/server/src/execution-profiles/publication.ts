@@ -1,12 +1,15 @@
+import { nativeEngineeringProfileConfigurationJson, nativeEngineeringProfileConfigurationSchema, type NativeEngineeringProfileConfiguration } from '../../../../packages/contracts/src/engineering-native.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import { nativeExecutionProfileConfigurationJson, nativeExecutionProfileConfigurationSchema, type NativeExecutionProfileConfiguration, type ExecutionProfileReference } from '../../../../packages/contracts/src/execution-profiles.js';
 import { engineeringProfileConfigurationJson, engineeringProfileConfigurationSchema, type EngineeringProfileConfiguration } from '../../../../packages/contracts/src/engineering-profile.js';
 import { HttpError, sha256, transaction } from '../database.js';
 
-type RecognizedConfiguration = NativeExecutionProfileConfiguration | EngineeringProfileConfiguration;
+type RecognizedConfiguration = NativeExecutionProfileConfiguration | EngineeringProfileConfiguration | NativeEngineeringProfileConfiguration;
 export interface PublishedProfileRow<Configuration = RecognizedConfiguration> { id: string; runner_id: string; config_digest: string; configuration: Configuration; created_at: Date }
 function recognizedConfiguration(value: unknown): RecognizedConfiguration {
+  const nativeEngineering = nativeEngineeringProfileConfigurationSchema.safeParse(value);
+  if (nativeEngineering.success) return nativeEngineering.data;
   const engineering = engineeringProfileConfigurationSchema.safeParse(value);
   if (engineering.success) return engineering.data;
   const native = nativeExecutionProfileConfigurationSchema.safeParse(value);
@@ -14,6 +17,7 @@ function recognizedConfiguration(value: unknown): RecognizedConfiguration {
   throw new HttpError(409, 'execution_profile_unavailable', 'The stored execution profile is not recognized.');
 }
 function configurationJson(value: RecognizedConfiguration): string {
+  if ('protocol' in value && value.protocol === 'flow.engineering-profile.v2') return nativeEngineeringProfileConfigurationJson(value);
   return value.harness === 'fixture' ? engineeringProfileConfigurationJson(value) : nativeExecutionProfileConfigurationJson(value);
 }
 /** One fixed table, one runner identity and one immutable configuration. Callers provide a recognized domain codec, not a table/registry name. */

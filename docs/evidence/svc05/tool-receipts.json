@@ -1,0 +1,32 @@
+{
+  "description": "Original tool exit observations; this is not stdout manufactured after execution.",
+  "run5": {
+    "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx experiments/personal-current-release/browser.mjs docs/evidence/svc05/run-5 > docs/evidence/svc05/run-5.stdout.txt 2>&1",
+    "execSessionId": 8510,
+    "completionChunk": "35c64a",
+    "exitCode": 0
+  },
+  "syntaxAndDiff": {
+    "command": "Node24 --check for inventory/transport/fixture/browser; git diff --check",
+    "completionChunk": "59e27b",
+    "exitCode": 0
+  },
+  "previousRuns": {
+    "run1": {
+      "exitCode": 1,
+      "chunk": "24469b"
+    },
+    "run2": {
+      "exitCode": 1,
+      "chunk": "ef6177"
+    },
+    "run3": {
+      "exitCode": 1,
+      "chunk": "fb70e3"
+    },
+    "run4": {
+      "exitCode": 1,
+      "chunk": "7e8e17"
+    }
+  }
+}

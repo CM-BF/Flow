@@ -1,0 +1,37 @@
+{
+  "task": "SVC05",
+  "target": "dc8e25f141a1f52964056df823b988a5fe24cbea",
+  "delivery": "11d7b04e2094f7f048da50cc1d09d20e199fa90f",
+  "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "observedAt": "2026-10-06T12:33:26.740138+00:00",
+  "sourceComparison": [
+    {
+      "path": "experiments/personal-current-release/browser.mjs",
+      "bytes": 8993,
+      "sha256": "8b7b6745821fc5dac0461e5f301b6891ba35d34f90d31cabb62b242db2060ac1"
+    },
+    {
+      "path": "experiments/personal-current-release/fixture.mjs",
+      "bytes": 18017,
+      "sha256": "8f7973b1e1a4a39369737133020ba946110f3ed22fc806a3c0f7fc010f68a1fb"
+    },
+    {
+      "path": "experiments/personal-current-release/inventory.mjs",
+      "bytes": 3141,
+      "sha256": "7b303b906207ad1e4b2e5203041a7cfacdb3f93af41af41e1d427a1f88225138"
+    },
+    {
+      "path": "experiments/personal-current-release/transport.mjs",
+      "bytes": 3432,
+      "sha256": "fdfcea03e71fe0ab63ebb4239aa2c4324f30cf9df14be917c834e61a6269b1e3"
+    }
+  ],
+  "review": "docs/evidence/svc05/independent-review.json",
+  "manifestSha256": "45ec85bab3efa5543641b08d2c6b070883f55345c6afc17b40ef022bdf28ee61",
+  "reviewAccepted": true,
+  "implementationReruns": 0,
+  "integrationRationale": "Experimental scripts explicitly fixed to362. No production files/dependencies changed. Reuse independent83-binding audit, actual production factory and3App compatibility journeys. Parser checked below; do not rerun network/PG/browser.",
+  "personalServiceActions": 0,
+  "providerCalls": 0,
+  "limits": "Isolated synthetic data preparation only; actual personal rollout requires fresh facts and explicit controlled window. Does not prove ATTACHI02 or provider."
+}

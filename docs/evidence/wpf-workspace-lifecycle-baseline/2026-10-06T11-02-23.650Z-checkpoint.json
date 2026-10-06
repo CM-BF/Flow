@@ -1,0 +1,4570 @@
+{
+  "sourceCommit": "313fdee5d3f40b7c7648b68460cf64bdc0a53098",
+  "sourceDirty": "M apps/web/test/workspace-lifecycle.browser.ts\n M apps/web/test/workspace-lifecycle.fixture.ts\n M docs/evidence/wpf-workspace-lifecycle-baseline/quality.md\n M plans/wpf-workspace-lifecycle-baseline/status.md\n?? docs/evidence/wpf-workspace-lifecycle-baseline/experiment-repaired.log\n?? docs/evidence/wpf-workspace-lifecycle-baseline/experiment.log\n?? docs/evidence/wpf-workspace-lifecycle-baseline/types-repaired.log",
+  "sourceHashes": {
+    "apps/web/test/workspace-lifecycle.fixture.ts": "44becc897d2fca5288da15b222d69b9094a3f84c31a7001914c22437f6ff3a0d",
+    "apps/web/test/workspace-lifecycle.browser.ts": "29400ad8913900212dd40cbfa19687c4bdb43dfcfc18a4b9508b247d71d022b5"
+  },
+  "startedAt": "2026-10-06T11:02:23.650Z",
+  "at": "2026-10-06T11:02:57.886Z",
+  "budgetMs": 45000,
+  "checks": [
+    "8/16/32 cumulative actual conversation panes; hidden reads pause",
+    "two split panes remain independently visible and observed",
+    "closed clean panes remove DOM, stop reads; reopen history requests are recorded",
+    "closed protected draft and knowledge restore without eager body",
+    "closed unknown Send restores original key/body and independent new draft",
+    "closed unknown Queue restores original key/body without cancellation",
+    "late reply detail after closing is observed separately from DOM removal",
+    "late hidden read is isolated; overview stops per-pane reads"
+  ],
+  "failures": [
+    {
+      "name": "stable viewport evidence and draft survives theme change",
+      "error": "TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('navigation', { name: 'Conversations', exact: true }).getByRole('button', { name: 'Conversation 3', exact: true })\u001b[22m\n"
+    }
+  ],
+  "samples": [
+    {
+      "label": "opened-8",
+      "at": 1791284551011,
+      "elapsedMs": 7361,
+      "totalNodes": 1202,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "scrollWidth": 1280
+      },
+      "panes": [
+        {
+          "id": "panel-draft-010d7d76-ffa9-40e8-b3cb-a98b753c4143",
+          "hidden": true,
+          "visible": false,
+          "nodes": 44
+        },
+        {
+          "id": "panel-conversation:chat-1",
+          "hidden": true,
+          "visible": false,
+          "nodes": 89
+        },
+        {
+          "id": "panel-conversation:chat-2",
+          "hidden": true,
+          "visible": false,
+          "nodes": 79
+        },
+        {
+          "id": "panel-conversation:chat-3",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-4",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-5",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-6",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-7",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-8",
+          "hidden": false,
+          "visible": true,
+          "nodes": 78
+        }
+      ],
+      "composers": 9,
+      "activeSse": 1,
+      "readCount": 45
+    },
+    {
+      "label": "opened-16",
+      "at": 1791284554161,
+      "elapsedMs": 10511,
+      "totalNodes": 1962,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "scrollWidth": 1280
+      },
+      "panes": [
+        {
+          "id": "panel-draft-010d7d76-ffa9-40e8-b3cb-a98b753c4143",
+          "hidden": true,
+          "visible": false,
+          "nodes": 44
+        },
+        {
+          "id": "panel-conversation:chat-1",
+          "hidden": true,
+          "visible": false,
+          "nodes": 89
+        },
+        {
+          "id": "panel-conversation:chat-2",
+          "hidden": true,
+          "visible": false,
+          "nodes": 79
+        },
+        {
+          "id": "panel-conversation:chat-3",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-4",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-5",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-6",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-7",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-8",
+          "hidden": true,
+          "visible": false,
+          "nodes": 78
+        },
+        {
+          "id": "panel-conversation:chat-9",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-10",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-11",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-12",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-13",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-14",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-15",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-16",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        }
+      ],
+      "composers": 17,
+      "activeSse": 1,
+      "readCount": 87
+    },
+    {
+      "label": "opened-32",
+      "at": 1791284558813,
+      "elapsedMs": 15163,
+      "totalNodes": 3482,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "scrollWidth": 1280
+      },
+      "panes": [
+        {
+          "id": "panel-draft-010d7d76-ffa9-40e8-b3cb-a98b753c4143",
+          "hidden": true,
+          "visible": false,
+          "nodes": 44
+        },
+        {
+          "id": "panel-conversation:chat-1",
+          "hidden": true,
+          "visible": false,
+          "nodes": 89
+        },
+        {
+          "id": "panel-conversation:chat-2",
+          "hidden": true,
+          "visible": false,
+          "nodes": 79
+        },
+        {
+          "id": "panel-conversation:chat-3",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-4",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-5",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-6",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-7",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-8",
+          "hidden": true,
+          "visible": false,
+          "nodes": 78
+        },
+        {
+          "id": "panel-conversation:chat-9",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-10",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-11",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-12",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-13",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-14",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-15",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-16",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-17",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-18",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-19",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-20",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-21",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-22",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-23",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-24",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-25",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-26",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-27",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-28",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-29",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-30",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-31",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-32",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        }
+      ],
+      "composers": 33,
+      "activeSse": 1,
+      "readCount": 171
+    },
+    {
+      "label": "split-two",
+      "at": 1791284561572,
+      "elapsedMs": 17922,
+      "totalNodes": 3485,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "scrollWidth": 1280
+      },
+      "panes": [
+        {
+          "id": "panel-draft-010d7d76-ffa9-40e8-b3cb-a98b753c4143",
+          "hidden": true,
+          "visible": false,
+          "nodes": 44
+        },
+        {
+          "id": "panel-conversation:chat-1",
+          "hidden": true,
+          "visible": false,
+          "nodes": 89
+        },
+        {
+          "id": "panel-conversation:chat-2",
+          "hidden": true,
+          "visible": false,
+          "nodes": 79
+        },
+        {
+          "id": "panel-conversation:chat-3",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-4",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-5",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-6",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-7",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-8",
+          "hidden": true,
+          "visible": false,
+          "nodes": 78
+        },
+        {
+          "id": "panel-conversation:chat-9",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-10",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-11",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-12",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-13",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-14",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-15",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-16",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-17",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-18",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-19",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-20",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-21",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-22",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-23",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-24",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-25",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-26",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-27",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-28",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-29",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-30",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-31",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-32",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        }
+      ],
+      "composers": 33,
+      "activeSse": 2,
+      "readCount": 177
+    },
+    {
+      "label": "closed-clean",
+      "at": 1791284564378,
+      "elapsedMs": 20728,
+      "totalNodes": 3200,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "scrollWidth": 1280
+      },
+      "panes": [
+        {
+          "id": "panel-draft-010d7d76-ffa9-40e8-b3cb-a98b753c4143",
+          "hidden": true,
+          "visible": false,
+          "nodes": 44
+        },
+        {
+          "id": "panel-conversation:chat-1",
+          "hidden": true,
+          "visible": false,
+          "nodes": 89
+        },
+        {
+          "id": "panel-conversation:chat-2",
+          "hidden": true,
+          "visible": false,
+          "nodes": 79
+        },
+        {
+          "id": "panel-conversation:chat-3",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-4",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-5",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-6",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-7",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-8",
+          "hidden": true,
+          "visible": false,
+          "nodes": 78
+        },
+        {
+          "id": "panel-conversation:chat-9",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-10",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-11",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-12",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-13",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-14",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-15",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-16",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-17",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-18",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-19",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-20",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-21",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-22",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-23",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-24",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-25",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-26",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-27",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-31",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-32",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        }
+      ],
+      "composers": 30,
+      "activeSse": 2,
+      "readCount": 185
+    },
+    {
+      "label": "reopened-clean",
+      "at": 1791284566794,
+      "elapsedMs": 23144,
+      "totalNodes": 3295,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "scrollWidth": 1280
+      },
+      "panes": [
+        {
+          "id": "panel-draft-010d7d76-ffa9-40e8-b3cb-a98b753c4143",
+          "hidden": true,
+          "visible": false,
+          "nodes": 44
+        },
+        {
+          "id": "panel-conversation:chat-1",
+          "hidden": true,
+          "visible": false,
+          "nodes": 89
+        },
+        {
+          "id": "panel-conversation:chat-2",
+          "hidden": true,
+          "visible": false,
+          "nodes": 79
+        },
+        {
+          "id": "panel-conversation:chat-3",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-4",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-5",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-6",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-7",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-8",
+          "hidden": true,
+          "visible": false,
+          "nodes": 78
+        },
+        {
+          "id": "panel-conversation:chat-9",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-10",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-11",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-12",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-13",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-14",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-15",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-16",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-17",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-18",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-19",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-20",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-21",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-22",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-23",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-24",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-25",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-26",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-27",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-31",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-30",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-32",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        }
+      ],
+      "composers": 31,
+      "activeSse": 2,
+      "readCount": 195
+    },
+    {
+      "label": "reopened-protected-selection",
+      "at": 1791284567496,
+      "elapsedMs": 23846,
+      "totalNodes": 3296,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "scrollWidth": 1280
+      },
+      "panes": [
+        {
+          "id": "panel-draft-010d7d76-ffa9-40e8-b3cb-a98b753c4143",
+          "hidden": true,
+          "visible": false,
+          "nodes": 44
+        },
+        {
+          "id": "panel-conversation:chat-1",
+          "hidden": true,
+          "visible": false,
+          "nodes": 89
+        },
+        {
+          "id": "panel-conversation:chat-2",
+          "hidden": true,
+          "visible": false,
+          "nodes": 79
+        },
+        {
+          "id": "panel-conversation:chat-4",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-5",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-6",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-7",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-8",
+          "hidden": true,
+          "visible": false,
+          "nodes": 78
+        },
+        {
+          "id": "panel-conversation:chat-9",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-10",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-11",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-12",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-13",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-14",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-15",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-16",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-17",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-18",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-19",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-20",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-21",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-22",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-23",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-24",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-25",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-26",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-27",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-31",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-30",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-3",
+          "hidden": false,
+          "visible": true,
+          "nodes": 89
+        },
+        {
+          "id": "panel-conversation:chat-32",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        }
+      ],
+      "composers": 31,
+      "activeSse": 2,
+      "readCount": 206
+    },
+    {
+      "label": "reopened-detail-cache-observation",
+      "at": 1791284570926,
+      "elapsedMs": 27276,
+      "totalNodes": 3322,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "scrollWidth": 1280
+      },
+      "panes": [
+        {
+          "id": "panel-draft-010d7d76-ffa9-40e8-b3cb-a98b753c4143",
+          "hidden": true,
+          "visible": false,
+          "nodes": 44
+        },
+        {
+          "id": "panel-conversation:chat-2",
+          "hidden": true,
+          "visible": false,
+          "nodes": 79
+        },
+        {
+          "id": "panel-conversation:chat-6",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-7",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-8",
+          "hidden": true,
+          "visible": false,
+          "nodes": 78
+        },
+        {
+          "id": "panel-conversation:chat-9",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-10",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-11",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-12",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-13",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-14",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-15",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-16",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-17",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-18",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-19",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-20",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-21",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-22",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-23",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-24",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-25",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-26",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-27",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-31",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-30",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-3",
+          "hidden": true,
+          "visible": false,
+          "nodes": 89
+        },
+        {
+          "id": "panel-conversation:chat-4",
+          "hidden": true,
+          "visible": false,
+          "nodes": 103
+        },
+        {
+          "id": "panel-conversation:chat-5",
+          "hidden": true,
+          "visible": false,
+          "nodes": 94
+        },
+        {
+          "id": "panel-conversation:chat-1",
+          "hidden": false,
+          "visible": true,
+          "nodes": 94
+        },
+        {
+          "id": "panel-conversation:chat-32",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        }
+      ],
+      "composers": 31,
+      "activeSse": 2,
+      "readCount": 256
+    },
+    {
+      "label": "returned-from-overview",
+      "at": 1791284574881,
+      "elapsedMs": 31231,
+      "totalNodes": 3182,
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "scrollWidth": 1280
+      },
+      "panes": [
+        {
+          "id": "panel-draft-010d7d76-ffa9-40e8-b3cb-a98b753c4143",
+          "hidden": true,
+          "visible": false,
+          "nodes": 44
+        },
+        {
+          "id": "panel-conversation:chat-2",
+          "hidden": true,
+          "visible": false,
+          "nodes": 79
+        },
+        {
+          "id": "panel-conversation:chat-6",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-7",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-8",
+          "hidden": true,
+          "visible": false,
+          "nodes": 78
+        },
+        {
+          "id": "panel-conversation:chat-9",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-10",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-11",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-12",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-13",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-14",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-15",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-16",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-17",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-18",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-19",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-20",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-21",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-22",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-23",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-24",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-25",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-26",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-27",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-31",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-30",
+          "hidden": true,
+          "visible": false,
+          "nodes": 88
+        },
+        {
+          "id": "panel-conversation:chat-3",
+          "hidden": true,
+          "visible": false,
+          "nodes": 89
+        },
+        {
+          "id": "panel-conversation:chat-4",
+          "hidden": true,
+          "visible": false,
+          "nodes": 103
+        },
+        {
+          "id": "panel-conversation:chat-5",
+          "hidden": true,
+          "visible": false,
+          "nodes": 94
+        },
+        {
+          "id": "panel-conversation:chat-1",
+          "hidden": true,
+          "visible": false,
+          "nodes": 89
+        },
+        {
+          "id": "panel-conversation:chat-32",
+          "hidden": false,
+          "visible": true,
+          "nodes": 88
+        }
+      ],
+      "composers": 31,
+      "activeSse": 2,
+      "readCount": 271
+    }
+  ],
+  "lifecycle": [
+    {
+      "label": "opened-8",
+      "at": 1791284551012,
+      "end": 1791284553215,
+      "allowed": [
+        8
+      ],
+      "workspaceReads": [
+        45
+      ],
+      "taskIndexReads": [],
+      "reads": [
+        45,
+        46
+      ],
+      "late": [],
+      "unexpected": []
+    },
+    {
+      "label": "opened-16",
+      "at": 1791284554161,
+      "end": 1791284556364,
+      "allowed": [
+        16
+      ],
+      "workspaceReads": [
+        87
+      ],
+      "taskIndexReads": [],
+      "reads": [
+        87,
+        88,
+        89
+      ],
+      "late": [],
+      "unexpected": []
+    },
+    {
+      "label": "opened-32",
+      "at": 1791284558813,
+      "end": 1791284561015,
+      "allowed": [
+        32
+      ],
+      "workspaceReads": [
+        171
+      ],
+      "taskIndexReads": [],
+      "reads": [
+        171,
+        172,
+        173
+      ],
+      "late": [],
+      "unexpected": []
+    },
+    {
+      "label": "split-two",
+      "at": 1791284561575,
+      "end": 1791284563780,
+      "allowed": [
+        31,
+        32
+      ],
+      "workspaceReads": [
+        177
+      ],
+      "taskIndexReads": [],
+      "reads": [
+        177,
+        178,
+        179,
+        180,
+        181
+      ],
+      "late": [],
+      "unexpected": []
+    },
+    {
+      "label": "closed-clean",
+      "at": 1791284564380,
+      "end": 1791284566583,
+      "allowed": [
+        31,
+        32
+      ],
+      "workspaceReads": [
+        187
+      ],
+      "taskIndexReads": [],
+      "reads": [
+        185,
+        186,
+        187,
+        188,
+        189
+      ],
+      "late": [],
+      "unexpected": []
+    },
+    {
+      "label": "reopen-history",
+      "at": 1791284566583,
+      "reads": [
+        {
+          "id": 190,
+          "path": "/api/tasks/chat-30-task-1/stream?after=2"
+        },
+        {
+          "id": 191,
+          "path": "/api/conversations/chat-30/queue?after=0&limit=20"
+        },
+        {
+          "id": 192,
+          "path": "/api/conversations/chat-30"
+        },
+        {
+          "id": 193,
+          "path": "/api/conversations/chat-32"
+        },
+        {
+          "id": 194,
+          "path": "/api/conversations/chat-32/queue?after=0&limit=20"
+        }
+      ]
+    },
+    {
+      "label": "send-identity",
+      "first": {
+        "method": "POST",
+        "path": "/api/conversations/chat-4/turns",
+        "key": "91601d36-ea82-48e7-829d-a1173e6e2d97:turn",
+        "body": "{\"expectedRevision\":1,\"text\":\"Protected uncertain Send\",\"mode\":\"follow-up\",\"knowledge\":[]}"
+      },
+      "retry": {
+        "method": "POST",
+        "path": "/api/conversations/chat-4/turns",
+        "key": "91601d36-ea82-48e7-829d-a1173e6e2d97:turn",
+        "body": "{\"expectedRevision\":1,\"text\":\"Protected uncertain Send\",\"mode\":\"follow-up\",\"knowledge\":[]}"
+      }
+    },
+    {
+      "label": "queue-identity",
+      "first": {
+        "method": "POST",
+        "path": "/api/conversations/chat-5/queue",
+        "key": "e689ce1a-fb54-456c-8f9a-7d26c4b4e209",
+        "body": "{\"expectedQueueRevision\":1,\"knowledge\":[],\"text\":\"Protected uncertain Queue\"}"
+      },
+      "retry": {
+        "method": "POST",
+        "path": "/api/conversations/chat-5/queue",
+        "key": "e689ce1a-fb54-456c-8f9a-7d26c4b4e209",
+        "body": "{\"expectedQueueRevision\":1,\"knowledge\":[],\"text\":\"Protected uncertain Queue\"}"
+      }
+    },
+    {
+      "label": "closed-late-detail",
+      "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+      "afterClose": 1,
+      "afterReopen": 1,
+      "observations": [
+        {
+          "id": 247,
+          "method": "GET",
+          "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+          "startedAt": 1791284569396,
+          "delayed": true,
+          "handledAt": 1791284570298,
+          "finishedAt": 1791284570298,
+          "closedAt": 1791284570298
+        }
+      ]
+    },
+    {
+      "label": "late-hidden",
+      "observation": {
+        "id": 258,
+        "method": "GET",
+        "path": "/api/conversations/chat-6",
+        "startedAt": 1791284571005,
+        "delayed": true,
+        "closedAt": 1791284571140,
+        "handledAt": 1791284571907,
+        "cancelledBeforeHandling": true
+      }
+    },
+    {
+      "label": "overview-hidden",
+      "at": 1791284572434,
+      "end": 1791284574635,
+      "allowed": [],
+      "workspaceReads": [
+        264
+      ],
+      "taskIndexReads": [],
+      "reads": [
+        264
+      ],
+      "late": [],
+      "unexpected": []
+    }
+  ],
+  "reads": [
+    {
+      "id": 0,
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "startedAt": 1791284550066,
+      "delayed": false,
+      "handledAt": 1791284550066,
+      "finishedAt": 1791284550068,
+      "closedAt": 1791284550068
+    },
+    {
+      "id": 1,
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "startedAt": 1791284550069,
+      "delayed": false,
+      "handledAt": 1791284550069,
+      "finishedAt": 1791284550070,
+      "closedAt": 1791284550070
+    },
+    {
+      "id": 2,
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "startedAt": 1791284550070,
+      "delayed": false,
+      "handledAt": 1791284550070,
+      "finishedAt": 1791284550070,
+      "closedAt": 1791284550070
+    },
+    {
+      "id": 3,
+      "method": "GET",
+      "path": "/api/workspace",
+      "startedAt": 1791284550112,
+      "delayed": false,
+      "handledAt": 1791284550112,
+      "finishedAt": 1791284550113,
+      "closedAt": 1791284550113
+    },
+    {
+      "id": 4,
+      "method": "GET",
+      "path": "/api/conversations/chat-1",
+      "startedAt": 1791284550235,
+      "delayed": false,
+      "handledAt": 1791284550235,
+      "finishedAt": 1791284550235,
+      "closedAt": 1791284550235
+    },
+    {
+      "id": 5,
+      "method": "GET",
+      "path": "/api/conversations/chat-1/turns?after=0&limit=20",
+      "startedAt": 1791284550235,
+      "delayed": false,
+      "handledAt": 1791284550235,
+      "finishedAt": 1791284550235,
+      "closedAt": 1791284550235
+    },
+    {
+      "id": 6,
+      "method": "GET",
+      "path": "/api/conversations/chat-1/queue?after=0&limit=20",
+      "startedAt": 1791284550268,
+      "delayed": false,
+      "handledAt": 1791284550268,
+      "finishedAt": 1791284550268,
+      "closedAt": 1791284550268
+    },
+    {
+      "id": 7,
+      "method": "GET",
+      "path": "/api/tasks/chat-1-task-1",
+      "startedAt": 1791284550276,
+      "delayed": false,
+      "handledAt": 1791284550276,
+      "finishedAt": 1791284550276,
+      "closedAt": 1791284550276
+    },
+    {
+      "id": 8,
+      "method": "GET",
+      "path": "/api/tasks/chat-1-task-1/stream?after=2",
+      "startedAt": 1791284550323,
+      "delayed": false,
+      "handledAt": 1791284550323,
+      "closedAt": 1791284550398
+    },
+    {
+      "id": 9,
+      "method": "GET",
+      "path": "/api/conversations/chat-2",
+      "startedAt": 1791284550392,
+      "delayed": false,
+      "handledAt": 1791284550392,
+      "finishedAt": 1791284550393,
+      "closedAt": 1791284550393
+    },
+    {
+      "id": 10,
+      "method": "GET",
+      "path": "/api/conversations/chat-2/turns?after=0&limit=20",
+      "startedAt": 1791284550393,
+      "delayed": false,
+      "handledAt": 1791284550393,
+      "finishedAt": 1791284550394,
+      "closedAt": 1791284550394
+    },
+    {
+      "id": 11,
+      "method": "GET",
+      "path": "/api/conversations/chat-2/queue?after=0&limit=20",
+      "startedAt": 1791284550399,
+      "delayed": false,
+      "handledAt": 1791284550399,
+      "finishedAt": 1791284550399,
+      "closedAt": 1791284550399
+    },
+    {
+      "id": 12,
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1",
+      "startedAt": 1791284550402,
+      "delayed": false,
+      "handledAt": 1791284550402,
+      "finishedAt": 1791284550402,
+      "closedAt": 1791284550402
+    },
+    {
+      "id": 13,
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/assistant-stream?limit=100",
+      "startedAt": 1791284550406,
+      "delayed": false,
+      "handledAt": 1791284550406,
+      "finishedAt": 1791284550408,
+      "closedAt": 1791284550408
+    },
+    {
+      "id": 14,
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/stream?after=2",
+      "startedAt": 1791284550413,
+      "delayed": false,
+      "handledAt": 1791284550413,
+      "closedAt": 1791284550478
+    },
+    {
+      "id": 15,
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/assistant-stream/patches?attemptId=chat-2-task-1-attempt&after=0&limit=8",
+      "startedAt": 1791284550423,
+      "delayed": false,
+      "handledAt": 1791284550423,
+      "finishedAt": 1791284550424,
+      "closedAt": 1791284550424
+    },
+    {
+      "id": 16,
+      "method": "GET",
+      "path": "/api/conversations/chat-3",
+      "startedAt": 1791284550474,
+      "delayed": false,
+      "handledAt": 1791284550474,
+      "finishedAt": 1791284550474,
+      "closedAt": 1791284550474
+    },
+    {
+      "id": 17,
+      "method": "GET",
+      "path": "/api/conversations/chat-3/turns?after=0&limit=20",
+      "startedAt": 1791284550474,
+      "delayed": false,
+      "handledAt": 1791284550474,
+      "finishedAt": 1791284550474,
+      "closedAt": 1791284550474
+    },
+    {
+      "id": 18,
+      "method": "GET",
+      "path": "/api/conversations/chat-3/queue?after=0&limit=20",
+      "startedAt": 1791284550479,
+      "delayed": false,
+      "handledAt": 1791284550479,
+      "finishedAt": 1791284550479,
+      "closedAt": 1791284550479
+    },
+    {
+      "id": 19,
+      "method": "GET",
+      "path": "/api/tasks/chat-3-task-1",
+      "startedAt": 1791284550482,
+      "delayed": false,
+      "handledAt": 1791284550482,
+      "finishedAt": 1791284550482,
+      "closedAt": 1791284550482
+    },
+    {
+      "id": 20,
+      "method": "GET",
+      "path": "/api/tasks/chat-3-task-1/stream?after=2",
+      "startedAt": 1791284550490,
+      "delayed": false,
+      "handledAt": 1791284550490,
+      "closedAt": 1791284550583
+    },
+    {
+      "id": 21,
+      "method": "GET",
+      "path": "/api/conversations/chat-4",
+      "startedAt": 1791284550574,
+      "delayed": false,
+      "handledAt": 1791284550574,
+      "finishedAt": 1791284550574,
+      "closedAt": 1791284550574
+    },
+    {
+      "id": 22,
+      "method": "GET",
+      "path": "/api/conversations/chat-4/turns?after=0&limit=20",
+      "startedAt": 1791284550574,
+      "delayed": false,
+      "handledAt": 1791284550574,
+      "finishedAt": 1791284550575,
+      "closedAt": 1791284550575
+    },
+    {
+      "id": 23,
+      "method": "GET",
+      "path": "/api/conversations/chat-4/queue?after=0&limit=20",
+      "startedAt": 1791284550584,
+      "delayed": false,
+      "handledAt": 1791284550584,
+      "finishedAt": 1791284550584,
+      "closedAt": 1791284550584
+    },
+    {
+      "id": 24,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-1",
+      "startedAt": 1791284550590,
+      "delayed": false,
+      "handledAt": 1791284550590,
+      "finishedAt": 1791284550590,
+      "closedAt": 1791284550590
+    },
+    {
+      "id": 25,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-1/stream?after=2",
+      "startedAt": 1791284550606,
+      "delayed": false,
+      "handledAt": 1791284550606,
+      "closedAt": 1791284550705
+    },
+    {
+      "id": 26,
+      "method": "GET",
+      "path": "/api/conversations/chat-5",
+      "startedAt": 1791284550700,
+      "delayed": false,
+      "handledAt": 1791284550700,
+      "finishedAt": 1791284550701,
+      "closedAt": 1791284550701
+    },
+    {
+      "id": 27,
+      "method": "GET",
+      "path": "/api/conversations/chat-5/turns?after=0&limit=20",
+      "startedAt": 1791284550701,
+      "delayed": false,
+      "handledAt": 1791284550701,
+      "finishedAt": 1791284550701,
+      "closedAt": 1791284550701
+    },
+    {
+      "id": 28,
+      "method": "GET",
+      "path": "/api/conversations/chat-5/queue?after=0&limit=20",
+      "startedAt": 1791284550706,
+      "delayed": false,
+      "handledAt": 1791284550706,
+      "finishedAt": 1791284550706,
+      "closedAt": 1791284550706
+    },
+    {
+      "id": 29,
+      "method": "GET",
+      "path": "/api/tasks/chat-5-task-1",
+      "startedAt": 1791284550709,
+      "delayed": false,
+      "handledAt": 1791284550709,
+      "finishedAt": 1791284550709,
+      "closedAt": 1791284550709
+    },
+    {
+      "id": 30,
+      "method": "GET",
+      "path": "/api/tasks/chat-5-task-1/stream?after=2",
+      "startedAt": 1791284550717,
+      "delayed": false,
+      "handledAt": 1791284550717,
+      "closedAt": 1791284550781
+    },
+    {
+      "id": 31,
+      "method": "GET",
+      "path": "/api/conversations/chat-6",
+      "startedAt": 1791284550777,
+      "delayed": false,
+      "handledAt": 1791284550777,
+      "finishedAt": 1791284550777,
+      "closedAt": 1791284550777
+    },
+    {
+      "id": 32,
+      "method": "GET",
+      "path": "/api/conversations/chat-6/turns?after=0&limit=20",
+      "startedAt": 1791284550777,
+      "delayed": false,
+      "handledAt": 1791284550777,
+      "finishedAt": 1791284550777,
+      "closedAt": 1791284550777
+    },
+    {
+      "id": 33,
+      "method": "GET",
+      "path": "/api/conversations/chat-6/queue?after=0&limit=20",
+      "startedAt": 1791284550782,
+      "delayed": false,
+      "handledAt": 1791284550782,
+      "finishedAt": 1791284550782,
+      "closedAt": 1791284550782
+    },
+    {
+      "id": 34,
+      "method": "GET",
+      "path": "/api/tasks/chat-6-task-1",
+      "startedAt": 1791284550784,
+      "delayed": false,
+      "handledAt": 1791284550784,
+      "finishedAt": 1791284550785,
+      "closedAt": 1791284550785
+    },
+    {
+      "id": 35,
+      "method": "GET",
+      "path": "/api/tasks/chat-6-task-1/stream?after=2",
+      "startedAt": 1791284550792,
+      "delayed": false,
+      "handledAt": 1791284550792,
+      "closedAt": 1791284550866
+    },
+    {
+      "id": 36,
+      "method": "GET",
+      "path": "/api/conversations/chat-7",
+      "startedAt": 1791284550861,
+      "delayed": false,
+      "handledAt": 1791284550861,
+      "finishedAt": 1791284550862,
+      "closedAt": 1791284550862
+    },
+    {
+      "id": 37,
+      "method": "GET",
+      "path": "/api/conversations/chat-7/turns?after=0&limit=20",
+      "startedAt": 1791284550862,
+      "delayed": false,
+      "handledAt": 1791284550862,
+      "finishedAt": 1791284550862,
+      "closedAt": 1791284550862
+    },
+    {
+      "id": 38,
+      "method": "GET",
+      "path": "/api/conversations/chat-7/queue?after=0&limit=20",
+      "startedAt": 1791284550867,
+      "delayed": false,
+      "handledAt": 1791284550867,
+      "finishedAt": 1791284550867,
+      "closedAt": 1791284550867
+    },
+    {
+      "id": 39,
+      "method": "GET",
+      "path": "/api/tasks/chat-7-task-1",
+      "startedAt": 1791284550870,
+      "delayed": false,
+      "handledAt": 1791284550870,
+      "finishedAt": 1791284550870,
+      "closedAt": 1791284550870
+    },
+    {
+      "id": 40,
+      "method": "GET",
+      "path": "/api/tasks/chat-7-task-1/stream?after=2",
+      "startedAt": 1791284550876,
+      "delayed": false,
+      "handledAt": 1791284550876,
+      "closedAt": 1791284550950
+    },
+    {
+      "id": 41,
+      "method": "GET",
+      "path": "/api/conversations/chat-8",
+      "startedAt": 1791284550946,
+      "delayed": false,
+      "handledAt": 1791284550946,
+      "finishedAt": 1791284550946,
+      "closedAt": 1791284550946
+    },
+    {
+      "id": 42,
+      "method": "GET",
+      "path": "/api/conversations/chat-8/turns?after=0&limit=20",
+      "startedAt": 1791284550946,
+      "delayed": false,
+      "handledAt": 1791284550946,
+      "finishedAt": 1791284550946,
+      "closedAt": 1791284550946
+    },
+    {
+      "id": 43,
+      "method": "GET",
+      "path": "/api/tasks/chat-8-task-1",
+      "startedAt": 1791284550954,
+      "delayed": false,
+      "handledAt": 1791284550954,
+      "finishedAt": 1791284550954,
+      "closedAt": 1791284550954
+    },
+    {
+      "id": 44,
+      "method": "GET",
+      "path": "/api/tasks/chat-8-task-1/stream?after=2",
+      "startedAt": 1791284550959,
+      "delayed": false,
+      "handledAt": 1791284550959,
+      "closedAt": 1791284553297
+    },
+    {
+      "id": 45,
+      "method": "GET",
+      "path": "/api/workspace?after=222",
+      "startedAt": 1791284552654,
+      "delayed": false,
+      "handledAt": 1791284552654,
+      "finishedAt": 1791284552654,
+      "closedAt": 1791284552654
+    },
+    {
+      "id": 46,
+      "method": "GET",
+      "path": "/api/conversations/chat-8",
+      "startedAt": 1791284552962,
+      "delayed": false,
+      "handledAt": 1791284552962,
+      "finishedAt": 1791284552963,
+      "closedAt": 1791284552963
+    },
+    {
+      "id": 47,
+      "method": "GET",
+      "path": "/api/conversations/chat-9",
+      "startedAt": 1791284553288,
+      "delayed": false,
+      "handledAt": 1791284553288,
+      "finishedAt": 1791284553288,
+      "closedAt": 1791284553288
+    },
+    {
+      "id": 48,
+      "method": "GET",
+      "path": "/api/conversations/chat-9/turns?after=0&limit=20",
+      "startedAt": 1791284553288,
+      "delayed": false,
+      "handledAt": 1791284553288,
+      "finishedAt": 1791284553289,
+      "closedAt": 1791284553289
+    },
+    {
+      "id": 49,
+      "method": "GET",
+      "path": "/api/conversations/chat-9/queue?after=0&limit=20",
+      "startedAt": 1791284553298,
+      "delayed": false,
+      "handledAt": 1791284553298,
+      "finishedAt": 1791284553298,
+      "closedAt": 1791284553298
+    },
+    {
+      "id": 50,
+      "method": "GET",
+      "path": "/api/tasks/chat-9-task-1",
+      "startedAt": 1791284553303,
+      "delayed": false,
+      "handledAt": 1791284553303,
+      "finishedAt": 1791284553303,
+      "closedAt": 1791284553303
+    },
+    {
+      "id": 51,
+      "method": "GET",
+      "path": "/api/tasks/chat-9-task-1/stream?after=2",
+      "startedAt": 1791284553321,
+      "delayed": false,
+      "handledAt": 1791284553321,
+      "closedAt": 1791284553417
+    },
+    {
+      "id": 52,
+      "method": "GET",
+      "path": "/api/conversations/chat-10",
+      "startedAt": 1791284553412,
+      "delayed": false,
+      "handledAt": 1791284553412,
+      "finishedAt": 1791284553413,
+      "closedAt": 1791284553413
+    },
+    {
+      "id": 53,
+      "method": "GET",
+      "path": "/api/conversations/chat-10/turns?after=0&limit=20",
+      "startedAt": 1791284553413,
+      "delayed": false,
+      "handledAt": 1791284553413,
+      "finishedAt": 1791284553413,
+      "closedAt": 1791284553413
+    },
+    {
+      "id": 54,
+      "method": "GET",
+      "path": "/api/conversations/chat-10/queue?after=0&limit=20",
+      "startedAt": 1791284553418,
+      "delayed": false,
+      "handledAt": 1791284553418,
+      "finishedAt": 1791284553418,
+      "closedAt": 1791284553418
+    },
+    {
+      "id": 55,
+      "method": "GET",
+      "path": "/api/tasks/chat-10-task-1",
+      "startedAt": 1791284553420,
+      "delayed": false,
+      "handledAt": 1791284553420,
+      "finishedAt": 1791284553420,
+      "closedAt": 1791284553420
+    },
+    {
+      "id": 56,
+      "method": "GET",
+      "path": "/api/tasks/chat-10-task-1/stream?after=2",
+      "startedAt": 1791284553429,
+      "delayed": false,
+      "handledAt": 1791284553429,
+      "closedAt": 1791284553522
+    },
+    {
+      "id": 57,
+      "method": "GET",
+      "path": "/api/conversations/chat-11",
+      "startedAt": 1791284553515,
+      "delayed": false,
+      "handledAt": 1791284553515,
+      "finishedAt": 1791284553515,
+      "closedAt": 1791284553515
+    },
+    {
+      "id": 58,
+      "method": "GET",
+      "path": "/api/conversations/chat-11/turns?after=0&limit=20",
+      "startedAt": 1791284553516,
+      "delayed": false,
+      "handledAt": 1791284553516,
+      "finishedAt": 1791284553516,
+      "closedAt": 1791284553516
+    },
+    {
+      "id": 59,
+      "method": "GET",
+      "path": "/api/conversations/chat-11/queue?after=0&limit=20",
+      "startedAt": 1791284553524,
+      "delayed": false,
+      "handledAt": 1791284553524,
+      "finishedAt": 1791284553524,
+      "closedAt": 1791284553524
+    },
+    {
+      "id": 60,
+      "method": "GET",
+      "path": "/api/tasks/chat-11-task-1",
+      "startedAt": 1791284553527,
+      "delayed": false,
+      "handledAt": 1791284553527,
+      "finishedAt": 1791284553527,
+      "closedAt": 1791284553527
+    },
+    {
+      "id": 61,
+      "method": "GET",
+      "path": "/api/tasks/chat-11-task-1/stream?after=2",
+      "startedAt": 1791284553536,
+      "delayed": false,
+      "handledAt": 1791284553536,
+      "closedAt": 1791284553620
+    },
+    {
+      "id": 62,
+      "method": "GET",
+      "path": "/api/conversations/chat-12",
+      "startedAt": 1791284553616,
+      "delayed": false,
+      "handledAt": 1791284553616,
+      "finishedAt": 1791284553616,
+      "closedAt": 1791284553616
+    },
+    {
+      "id": 63,
+      "method": "GET",
+      "path": "/api/conversations/chat-12/turns?after=0&limit=20",
+      "startedAt": 1791284553616,
+      "delayed": false,
+      "handledAt": 1791284553616,
+      "finishedAt": 1791284553616,
+      "closedAt": 1791284553616
+    },
+    {
+      "id": 64,
+      "method": "GET",
+      "path": "/api/conversations/chat-12/queue?after=0&limit=20",
+      "startedAt": 1791284553621,
+      "delayed": false,
+      "handledAt": 1791284553621,
+      "finishedAt": 1791284553621,
+      "closedAt": 1791284553621
+    },
+    {
+      "id": 65,
+      "method": "GET",
+      "path": "/api/tasks/chat-12-task-1",
+      "startedAt": 1791284553624,
+      "delayed": false,
+      "handledAt": 1791284553624,
+      "finishedAt": 1791284553624,
+      "closedAt": 1791284553624
+    },
+    {
+      "id": 66,
+      "method": "GET",
+      "path": "/api/tasks/chat-12-task-1/stream?after=2",
+      "startedAt": 1791284553632,
+      "delayed": false,
+      "handledAt": 1791284553632,
+      "closedAt": 1791284553762
+    },
+    {
+      "id": 67,
+      "method": "GET",
+      "path": "/api/conversations/chat-13",
+      "startedAt": 1791284553753,
+      "delayed": false,
+      "handledAt": 1791284553753,
+      "finishedAt": 1791284553754,
+      "closedAt": 1791284553754
+    },
+    {
+      "id": 68,
+      "method": "GET",
+      "path": "/api/conversations/chat-13/turns?after=0&limit=20",
+      "startedAt": 1791284553754,
+      "delayed": false,
+      "handledAt": 1791284553754,
+      "finishedAt": 1791284553754,
+      "closedAt": 1791284553754
+    },
+    {
+      "id": 69,
+      "method": "GET",
+      "path": "/api/conversations/chat-13/queue?after=0&limit=20",
+      "startedAt": 1791284553764,
+      "delayed": false,
+      "handledAt": 1791284553764,
+      "finishedAt": 1791284553764,
+      "closedAt": 1791284553764
+    },
+    {
+      "id": 70,
+      "method": "GET",
+      "path": "/api/tasks/chat-13-task-1",
+      "startedAt": 1791284553768,
+      "delayed": false,
+      "handledAt": 1791284553768,
+      "finishedAt": 1791284553769,
+      "closedAt": 1791284553769
+    },
+    {
+      "id": 71,
+      "method": "GET",
+      "path": "/api/tasks/chat-13-task-1/stream?after=2",
+      "startedAt": 1791284553783,
+      "delayed": false,
+      "handledAt": 1791284553783,
+      "closedAt": 1791284553888
+    },
+    {
+      "id": 72,
+      "method": "GET",
+      "path": "/api/conversations/chat-14",
+      "startedAt": 1791284553884,
+      "delayed": false,
+      "handledAt": 1791284553884,
+      "finishedAt": 1791284553884,
+      "closedAt": 1791284553884
+    },
+    {
+      "id": 73,
+      "method": "GET",
+      "path": "/api/conversations/chat-14/turns?after=0&limit=20",
+      "startedAt": 1791284553884,
+      "delayed": false,
+      "handledAt": 1791284553884,
+      "finishedAt": 1791284553884,
+      "closedAt": 1791284553884
+    },
+    {
+      "id": 74,
+      "method": "GET",
+      "path": "/api/conversations/chat-14/queue?after=0&limit=20",
+      "startedAt": 1791284553889,
+      "delayed": false,
+      "handledAt": 1791284553889,
+      "finishedAt": 1791284553889,
+      "closedAt": 1791284553889
+    },
+    {
+      "id": 75,
+      "method": "GET",
+      "path": "/api/tasks/chat-14-task-1",
+      "startedAt": 1791284553891,
+      "delayed": false,
+      "handledAt": 1791284553891,
+      "finishedAt": 1791284553892,
+      "closedAt": 1791284553892
+    },
+    {
+      "id": 76,
+      "method": "GET",
+      "path": "/api/tasks/chat-14-task-1/stream?after=2",
+      "startedAt": 1791284553899,
+      "delayed": false,
+      "handledAt": 1791284553899,
+      "closedAt": 1791284553989
+    },
+    {
+      "id": 77,
+      "method": "GET",
+      "path": "/api/conversations/chat-15",
+      "startedAt": 1791284553984,
+      "delayed": false,
+      "handledAt": 1791284553984,
+      "finishedAt": 1791284553984,
+      "closedAt": 1791284553984
+    },
+    {
+      "id": 78,
+      "method": "GET",
+      "path": "/api/conversations/chat-15/turns?after=0&limit=20",
+      "startedAt": 1791284553985,
+      "delayed": false,
+      "handledAt": 1791284553985,
+      "finishedAt": 1791284553985,
+      "closedAt": 1791284553985
+    },
+    {
+      "id": 79,
+      "method": "GET",
+      "path": "/api/conversations/chat-15/queue?after=0&limit=20",
+      "startedAt": 1791284553991,
+      "delayed": false,
+      "handledAt": 1791284553991,
+      "finishedAt": 1791284553991,
+      "closedAt": 1791284553991
+    },
+    {
+      "id": 80,
+      "method": "GET",
+      "path": "/api/tasks/chat-15-task-1",
+      "startedAt": 1791284553993,
+      "delayed": false,
+      "handledAt": 1791284553993,
+      "finishedAt": 1791284553993,
+      "closedAt": 1791284553993
+    },
+    {
+      "id": 81,
+      "method": "GET",
+      "path": "/api/tasks/chat-15-task-1/stream?after=2",
+      "startedAt": 1791284554001,
+      "delayed": false,
+      "handledAt": 1791284554001,
+      "closedAt": 1791284554090
+    },
+    {
+      "id": 82,
+      "method": "GET",
+      "path": "/api/conversations/chat-16",
+      "startedAt": 1791284554086,
+      "delayed": false,
+      "handledAt": 1791284554086,
+      "finishedAt": 1791284554086,
+      "closedAt": 1791284554086
+    },
+    {
+      "id": 83,
+      "method": "GET",
+      "path": "/api/conversations/chat-16/turns?after=0&limit=20",
+      "startedAt": 1791284554086,
+      "delayed": false,
+      "handledAt": 1791284554086,
+      "finishedAt": 1791284554086,
+      "closedAt": 1791284554086
+    },
+    {
+      "id": 84,
+      "method": "GET",
+      "path": "/api/conversations/chat-16/queue?after=0&limit=20",
+      "startedAt": 1791284554092,
+      "delayed": false,
+      "handledAt": 1791284554092,
+      "finishedAt": 1791284554092,
+      "closedAt": 1791284554092
+    },
+    {
+      "id": 85,
+      "method": "GET",
+      "path": "/api/tasks/chat-16-task-1",
+      "startedAt": 1791284554095,
+      "delayed": false,
+      "handledAt": 1791284554095,
+      "finishedAt": 1791284554095,
+      "closedAt": 1791284554095
+    },
+    {
+      "id": 86,
+      "method": "GET",
+      "path": "/api/tasks/chat-16-task-1/stream?after=2",
+      "startedAt": 1791284554102,
+      "delayed": false,
+      "handledAt": 1791284554102,
+      "closedAt": 1791284556475
+    },
+    {
+      "id": 87,
+      "method": "GET",
+      "path": "/api/workspace?after=222",
+      "startedAt": 1791284555157,
+      "delayed": false,
+      "handledAt": 1791284555157,
+      "finishedAt": 1791284555158,
+      "closedAt": 1791284555158
+    },
+    {
+      "id": 88,
+      "method": "GET",
+      "path": "/api/conversations/chat-16",
+      "startedAt": 1791284556103,
+      "delayed": false,
+      "handledAt": 1791284556103,
+      "finishedAt": 1791284556103,
+      "closedAt": 1791284556103
+    },
+    {
+      "id": 89,
+      "method": "GET",
+      "path": "/api/conversations/chat-16/queue?after=0&limit=20",
+      "startedAt": 1791284556107,
+      "delayed": false,
+      "handledAt": 1791284556107,
+      "finishedAt": 1791284556108,
+      "closedAt": 1791284556108
+    },
+    {
+      "id": 90,
+      "method": "GET",
+      "path": "/api/conversations/chat-17",
+      "startedAt": 1791284556466,
+      "delayed": false,
+      "handledAt": 1791284556466,
+      "finishedAt": 1791284556466,
+      "closedAt": 1791284556466
+    },
+    {
+      "id": 91,
+      "method": "GET",
+      "path": "/api/conversations/chat-17/turns?after=0&limit=20",
+      "startedAt": 1791284556467,
+      "delayed": false,
+      "handledAt": 1791284556467,
+      "finishedAt": 1791284556467,
+      "closedAt": 1791284556467
+    },
+    {
+      "id": 92,
+      "method": "GET",
+      "path": "/api/conversations/chat-17/queue?after=0&limit=20",
+      "startedAt": 1791284556476,
+      "delayed": false,
+      "handledAt": 1791284556476,
+      "finishedAt": 1791284556477,
+      "closedAt": 1791284556477
+    },
+    {
+      "id": 93,
+      "method": "GET",
+      "path": "/api/tasks/chat-17-task-1",
+      "startedAt": 1791284556481,
+      "delayed": false,
+      "handledAt": 1791284556481,
+      "finishedAt": 1791284556481,
+      "closedAt": 1791284556481
+    },
+    {
+      "id": 94,
+      "method": "GET",
+      "path": "/api/tasks/chat-17-task-1/stream?after=2",
+      "startedAt": 1791284556494,
+      "delayed": false,
+      "handledAt": 1791284556494,
+      "closedAt": 1791284556609
+    },
+    {
+      "id": 95,
+      "method": "GET",
+      "path": "/api/conversations/chat-18",
+      "startedAt": 1791284556604,
+      "delayed": false,
+      "handledAt": 1791284556604,
+      "finishedAt": 1791284556604,
+      "closedAt": 1791284556604
+    },
+    {
+      "id": 96,
+      "method": "GET",
+      "path": "/api/conversations/chat-18/turns?after=0&limit=20",
+      "startedAt": 1791284556604,
+      "delayed": false,
+      "handledAt": 1791284556604,
+      "finishedAt": 1791284556605,
+      "closedAt": 1791284556605
+    },
+    {
+      "id": 97,
+      "method": "GET",
+      "path": "/api/conversations/chat-18/queue?after=0&limit=20",
+      "startedAt": 1791284556610,
+      "delayed": false,
+      "handledAt": 1791284556610,
+      "finishedAt": 1791284556610,
+      "closedAt": 1791284556610
+    },
+    {
+      "id": 98,
+      "method": "GET",
+      "path": "/api/tasks/chat-18-task-1",
+      "startedAt": 1791284556612,
+      "delayed": false,
+      "handledAt": 1791284556612,
+      "finishedAt": 1791284556612,
+      "closedAt": 1791284556612
+    },
+    {
+      "id": 99,
+      "method": "GET",
+      "path": "/api/tasks/chat-18-task-1/stream?after=2",
+      "startedAt": 1791284556618,
+      "delayed": false,
+      "handledAt": 1791284556618,
+      "closedAt": 1791284556726
+    },
+    {
+      "id": 100,
+      "method": "GET",
+      "path": "/api/conversations/chat-19",
+      "startedAt": 1791284556721,
+      "delayed": false,
+      "handledAt": 1791284556721,
+      "finishedAt": 1791284556721,
+      "closedAt": 1791284556721
+    },
+    {
+      "id": 101,
+      "method": "GET",
+      "path": "/api/conversations/chat-19/turns?after=0&limit=20",
+      "startedAt": 1791284556721,
+      "delayed": false,
+      "handledAt": 1791284556721,
+      "finishedAt": 1791284556722,
+      "closedAt": 1791284556722
+    },
+    {
+      "id": 102,
+      "method": "GET",
+      "path": "/api/conversations/chat-19/queue?after=0&limit=20",
+      "startedAt": 1791284556729,
+      "delayed": false,
+      "handledAt": 1791284556729,
+      "finishedAt": 1791284556729,
+      "closedAt": 1791284556729
+    },
+    {
+      "id": 103,
+      "method": "GET",
+      "path": "/api/tasks/chat-19-task-1",
+      "startedAt": 1791284556731,
+      "delayed": false,
+      "handledAt": 1791284556731,
+      "finishedAt": 1791284556731,
+      "closedAt": 1791284556731
+    },
+    {
+      "id": 104,
+      "method": "GET",
+      "path": "/api/tasks/chat-19-task-1/stream?after=2",
+      "startedAt": 1791284556740,
+      "delayed": false,
+      "handledAt": 1791284556740,
+      "closedAt": 1791284556845
+    },
+    {
+      "id": 105,
+      "method": "GET",
+      "path": "/api/conversations/chat-20",
+      "startedAt": 1791284556839,
+      "delayed": false,
+      "handledAt": 1791284556839,
+      "finishedAt": 1791284556839,
+      "closedAt": 1791284556839
+    },
+    {
+      "id": 106,
+      "method": "GET",
+      "path": "/api/conversations/chat-20/turns?after=0&limit=20",
+      "startedAt": 1791284556839,
+      "delayed": false,
+      "handledAt": 1791284556839,
+      "finishedAt": 1791284556840,
+      "closedAt": 1791284556840
+    },
+    {
+      "id": 107,
+      "method": "GET",
+      "path": "/api/conversations/chat-20/queue?after=0&limit=20",
+      "startedAt": 1791284556845,
+      "delayed": false,
+      "handledAt": 1791284556845,
+      "finishedAt": 1791284556845,
+      "closedAt": 1791284556845
+    },
+    {
+      "id": 108,
+      "method": "GET",
+      "path": "/api/tasks/chat-20-task-1",
+      "startedAt": 1791284556848,
+      "delayed": false,
+      "handledAt": 1791284556848,
+      "finishedAt": 1791284556848,
+      "closedAt": 1791284556848
+    },
+    {
+      "id": 109,
+      "method": "GET",
+      "path": "/api/tasks/chat-20-task-1/stream?after=2",
+      "startedAt": 1791284556854,
+      "delayed": false,
+      "handledAt": 1791284556854,
+      "closedAt": 1791284556962
+    },
+    {
+      "id": 110,
+      "method": "GET",
+      "path": "/api/conversations/chat-21",
+      "startedAt": 1791284556957,
+      "delayed": false,
+      "handledAt": 1791284556957,
+      "finishedAt": 1791284556957,
+      "closedAt": 1791284556957
+    },
+    {
+      "id": 111,
+      "method": "GET",
+      "path": "/api/conversations/chat-21/turns?after=0&limit=20",
+      "startedAt": 1791284556957,
+      "delayed": false,
+      "handledAt": 1791284556957,
+      "finishedAt": 1791284556957,
+      "closedAt": 1791284556957
+    },
+    {
+      "id": 112,
+      "method": "GET",
+      "path": "/api/conversations/chat-21/queue?after=0&limit=20",
+      "startedAt": 1791284556965,
+      "delayed": false,
+      "handledAt": 1791284556965,
+      "finishedAt": 1791284556965,
+      "closedAt": 1791284556965
+    },
+    {
+      "id": 113,
+      "method": "GET",
+      "path": "/api/tasks/chat-21-task-1",
+      "startedAt": 1791284556967,
+      "delayed": false,
+      "handledAt": 1791284556967,
+      "finishedAt": 1791284556967,
+      "closedAt": 1791284556967
+    },
+    {
+      "id": 114,
+      "method": "GET",
+      "path": "/api/tasks/chat-21-task-1/stream?after=2",
+      "startedAt": 1791284556973,
+      "delayed": false,
+      "handledAt": 1791284556973,
+      "closedAt": 1791284557083
+    },
+    {
+      "id": 115,
+      "method": "GET",
+      "path": "/api/conversations/chat-22",
+      "startedAt": 1791284557077,
+      "delayed": false,
+      "handledAt": 1791284557078,
+      "finishedAt": 1791284557078,
+      "closedAt": 1791284557078
+    },
+    {
+      "id": 116,
+      "method": "GET",
+      "path": "/api/conversations/chat-22/turns?after=0&limit=20",
+      "startedAt": 1791284557078,
+      "delayed": false,
+      "handledAt": 1791284557078,
+      "finishedAt": 1791284557078,
+      "closedAt": 1791284557078
+    },
+    {
+      "id": 117,
+      "method": "GET",
+      "path": "/api/conversations/chat-22/queue?after=0&limit=20",
+      "startedAt": 1791284557084,
+      "delayed": false,
+      "handledAt": 1791284557084,
+      "finishedAt": 1791284557084,
+      "closedAt": 1791284557084
+    },
+    {
+      "id": 118,
+      "method": "GET",
+      "path": "/api/tasks/chat-22-task-1",
+      "startedAt": 1791284557086,
+      "delayed": false,
+      "handledAt": 1791284557086,
+      "finishedAt": 1791284557087,
+      "closedAt": 1791284557087
+    },
+    {
+      "id": 119,
+      "method": "GET",
+      "path": "/api/tasks/chat-22-task-1/stream?after=2",
+      "startedAt": 1791284557092,
+      "delayed": false,
+      "handledAt": 1791284557092,
+      "closedAt": 1791284557198
+    },
+    {
+      "id": 120,
+      "method": "GET",
+      "path": "/api/conversations/chat-23",
+      "startedAt": 1791284557193,
+      "delayed": false,
+      "handledAt": 1791284557193,
+      "finishedAt": 1791284557193,
+      "closedAt": 1791284557193
+    },
+    {
+      "id": 121,
+      "method": "GET",
+      "path": "/api/conversations/chat-23/turns?after=0&limit=20",
+      "startedAt": 1791284557193,
+      "delayed": false,
+      "handledAt": 1791284557193,
+      "finishedAt": 1791284557193,
+      "closedAt": 1791284557193
+    },
+    {
+      "id": 122,
+      "method": "GET",
+      "path": "/api/conversations/chat-23/queue?after=0&limit=20",
+      "startedAt": 1791284557201,
+      "delayed": false,
+      "handledAt": 1791284557201,
+      "finishedAt": 1791284557201,
+      "closedAt": 1791284557201
+    },
+    {
+      "id": 123,
+      "method": "GET",
+      "path": "/api/tasks/chat-23-task-1",
+      "startedAt": 1791284557203,
+      "delayed": false,
+      "handledAt": 1791284557203,
+      "finishedAt": 1791284557203,
+      "closedAt": 1791284557203
+    },
+    {
+      "id": 124,
+      "method": "GET",
+      "path": "/api/tasks/chat-23-task-1/stream?after=2",
+      "startedAt": 1791284557209,
+      "delayed": false,
+      "handledAt": 1791284557209,
+      "closedAt": 1791284557333
+    },
+    {
+      "id": 125,
+      "method": "GET",
+      "path": "/api/conversations/chat-24",
+      "startedAt": 1791284557327,
+      "delayed": false,
+      "handledAt": 1791284557327,
+      "finishedAt": 1791284557327,
+      "closedAt": 1791284557327
+    },
+    {
+      "id": 126,
+      "method": "GET",
+      "path": "/api/conversations/chat-24/turns?after=0&limit=20",
+      "startedAt": 1791284557328,
+      "delayed": false,
+      "handledAt": 1791284557328,
+      "finishedAt": 1791284557328,
+      "closedAt": 1791284557328
+    },
+    {
+      "id": 127,
+      "method": "GET",
+      "path": "/api/conversations/chat-24/queue?after=0&limit=20",
+      "startedAt": 1791284557334,
+      "delayed": false,
+      "handledAt": 1791284557334,
+      "finishedAt": 1791284557334,
+      "closedAt": 1791284557334
+    },
+    {
+      "id": 128,
+      "method": "GET",
+      "path": "/api/tasks/chat-24-task-1",
+      "startedAt": 1791284557336,
+      "delayed": false,
+      "handledAt": 1791284557336,
+      "finishedAt": 1791284557336,
+      "closedAt": 1791284557336
+    },
+    {
+      "id": 129,
+      "method": "GET",
+      "path": "/api/tasks/chat-24-task-1/stream?after=2",
+      "startedAt": 1791284557349,
+      "delayed": false,
+      "handledAt": 1791284557349,
+      "closedAt": 1791284557563
+    },
+    {
+      "id": 130,
+      "method": "GET",
+      "path": "/api/conversations/chat-25",
+      "startedAt": 1791284557557,
+      "delayed": false,
+      "handledAt": 1791284557557,
+      "finishedAt": 1791284557558,
+      "closedAt": 1791284557558
+    },
+    {
+      "id": 131,
+      "method": "GET",
+      "path": "/api/conversations/chat-25/turns?after=0&limit=20",
+      "startedAt": 1791284557558,
+      "delayed": false,
+      "handledAt": 1791284557558,
+      "finishedAt": 1791284557558,
+      "closedAt": 1791284557558
+    },
+    {
+      "id": 132,
+      "method": "GET",
+      "path": "/api/conversations/chat-25/queue?after=0&limit=20",
+      "startedAt": 1791284557564,
+      "delayed": false,
+      "handledAt": 1791284557564,
+      "finishedAt": 1791284557564,
+      "closedAt": 1791284557564
+    },
+    {
+      "id": 133,
+      "method": "GET",
+      "path": "/api/tasks/chat-25-task-1",
+      "startedAt": 1791284557566,
+      "delayed": false,
+      "handledAt": 1791284557566,
+      "finishedAt": 1791284557566,
+      "closedAt": 1791284557566
+    },
+    {
+      "id": 134,
+      "method": "GET",
+      "path": "/api/tasks/chat-25-task-1/stream?after=2",
+      "startedAt": 1791284557573,
+      "delayed": false,
+      "handledAt": 1791284557573,
+      "closedAt": 1791284557717
+    },
+    {
+      "id": 135,
+      "method": "GET",
+      "path": "/api/workspace?after=222",
+      "startedAt": 1791284557660,
+      "delayed": false,
+      "handledAt": 1791284557660,
+      "finishedAt": 1791284557660,
+      "closedAt": 1791284557660
+    },
+    {
+      "id": 136,
+      "method": "GET",
+      "path": "/api/conversations/chat-26",
+      "startedAt": 1791284557712,
+      "delayed": false,
+      "handledAt": 1791284557712,
+      "finishedAt": 1791284557712,
+      "closedAt": 1791284557712
+    },
+    {
+      "id": 137,
+      "method": "GET",
+      "path": "/api/conversations/chat-26/turns?after=0&limit=20",
+      "startedAt": 1791284557713,
+      "delayed": false,
+      "handledAt": 1791284557713,
+      "finishedAt": 1791284557713,
+      "closedAt": 1791284557713
+    },
+    {
+      "id": 138,
+      "method": "GET",
+      "path": "/api/conversations/chat-26/queue?after=0&limit=20",
+      "startedAt": 1791284557718,
+      "delayed": false,
+      "handledAt": 1791284557718,
+      "finishedAt": 1791284557719,
+      "closedAt": 1791284557719
+    },
+    {
+      "id": 139,
+      "method": "GET",
+      "path": "/api/tasks/chat-26-task-1",
+      "startedAt": 1791284557721,
+      "delayed": false,
+      "handledAt": 1791284557721,
+      "finishedAt": 1791284557721,
+      "closedAt": 1791284557721
+    },
+    {
+      "id": 140,
+      "method": "GET",
+      "path": "/api/tasks/chat-26-task-1/stream?after=2",
+      "startedAt": 1791284557733,
+      "delayed": false,
+      "handledAt": 1791284557733,
+      "closedAt": 1791284557852
+    },
+    {
+      "id": 141,
+      "method": "GET",
+      "path": "/api/conversations/chat-27",
+      "startedAt": 1791284557847,
+      "delayed": false,
+      "handledAt": 1791284557847,
+      "finishedAt": 1791284557847,
+      "closedAt": 1791284557847
+    },
+    {
+      "id": 142,
+      "method": "GET",
+      "path": "/api/conversations/chat-27/turns?after=0&limit=20",
+      "startedAt": 1791284557847,
+      "delayed": false,
+      "handledAt": 1791284557847,
+      "finishedAt": 1791284557847,
+      "closedAt": 1791284557847
+    },
+    {
+      "id": 143,
+      "method": "GET",
+      "path": "/api/conversations/chat-27/queue?after=0&limit=20",
+      "startedAt": 1791284557853,
+      "delayed": false,
+      "handledAt": 1791284557853,
+      "finishedAt": 1791284557853,
+      "closedAt": 1791284557853
+    },
+    {
+      "id": 144,
+      "method": "GET",
+      "path": "/api/tasks/chat-27-task-1",
+      "startedAt": 1791284557856,
+      "delayed": false,
+      "handledAt": 1791284557856,
+      "finishedAt": 1791284557856,
+      "closedAt": 1791284557856
+    },
+    {
+      "id": 145,
+      "method": "GET",
+      "path": "/api/tasks/chat-27-task-1/stream?after=2",
+      "startedAt": 1791284557864,
+      "delayed": false,
+      "handledAt": 1791284557864,
+      "closedAt": 1791284558003
+    },
+    {
+      "id": 146,
+      "method": "GET",
+      "path": "/api/conversations/chat-28",
+      "startedAt": 1791284557998,
+      "delayed": false,
+      "handledAt": 1791284557998,
+      "finishedAt": 1791284557998,
+      "closedAt": 1791284557998
+    },
+    {
+      "id": 147,
+      "method": "GET",
+      "path": "/api/conversations/chat-28/turns?after=0&limit=20",
+      "startedAt": 1791284557998,
+      "delayed": false,
+      "handledAt": 1791284557998,
+      "finishedAt": 1791284557998,
+      "closedAt": 1791284557998
+    },
+    {
+      "id": 148,
+      "method": "GET",
+      "path": "/api/conversations/chat-28/queue?after=0&limit=20",
+      "startedAt": 1791284558004,
+      "delayed": false,
+      "handledAt": 1791284558004,
+      "finishedAt": 1791284558004,
+      "closedAt": 1791284558004
+    },
+    {
+      "id": 149,
+      "method": "GET",
+      "path": "/api/tasks/chat-28-task-1",
+      "startedAt": 1791284558006,
+      "delayed": false,
+      "handledAt": 1791284558006,
+      "finishedAt": 1791284558006,
+      "closedAt": 1791284558006
+    },
+    {
+      "id": 150,
+      "method": "GET",
+      "path": "/api/tasks/chat-28-task-1/stream?after=2",
+      "startedAt": 1791284558015,
+      "delayed": false,
+      "handledAt": 1791284558015,
+      "closedAt": 1791284558141
+    },
+    {
+      "id": 151,
+      "method": "GET",
+      "path": "/api/conversations/chat-29",
+      "startedAt": 1791284558136,
+      "delayed": false,
+      "handledAt": 1791284558136,
+      "finishedAt": 1791284558136,
+      "closedAt": 1791284558136
+    },
+    {
+      "id": 152,
+      "method": "GET",
+      "path": "/api/conversations/chat-29/turns?after=0&limit=20",
+      "startedAt": 1791284558136,
+      "delayed": false,
+      "handledAt": 1791284558136,
+      "finishedAt": 1791284558136,
+      "closedAt": 1791284558136
+    },
+    {
+      "id": 153,
+      "method": "GET",
+      "path": "/api/conversations/chat-29/queue?after=0&limit=20",
+      "startedAt": 1791284558142,
+      "delayed": false,
+      "handledAt": 1791284558142,
+      "finishedAt": 1791284558142,
+      "closedAt": 1791284558142
+    },
+    {
+      "id": 154,
+      "method": "GET",
+      "path": "/api/tasks/chat-29-task-1",
+      "startedAt": 1791284558145,
+      "delayed": false,
+      "handledAt": 1791284558145,
+      "finishedAt": 1791284558145,
+      "closedAt": 1791284558145
+    },
+    {
+      "id": 155,
+      "method": "GET",
+      "path": "/api/tasks/chat-29-task-1/stream?after=2",
+      "startedAt": 1791284558152,
+      "delayed": false,
+      "handledAt": 1791284558152,
+      "closedAt": 1791284558299
+    },
+    {
+      "id": 156,
+      "method": "GET",
+      "path": "/api/conversations/chat-30",
+      "startedAt": 1791284558292,
+      "delayed": false,
+      "handledAt": 1791284558292,
+      "finishedAt": 1791284558292,
+      "closedAt": 1791284558292
+    },
+    {
+      "id": 157,
+      "method": "GET",
+      "path": "/api/conversations/chat-30/turns?after=0&limit=20",
+      "startedAt": 1791284558293,
+      "delayed": false,
+      "handledAt": 1791284558293,
+      "finishedAt": 1791284558293,
+      "closedAt": 1791284558293
+    },
+    {
+      "id": 158,
+      "method": "GET",
+      "path": "/api/conversations/chat-30/queue?after=0&limit=20",
+      "startedAt": 1791284558301,
+      "delayed": false,
+      "handledAt": 1791284558301,
+      "finishedAt": 1791284558301,
+      "closedAt": 1791284558301
+    },
+    {
+      "id": 159,
+      "method": "GET",
+      "path": "/api/tasks/chat-30-task-1",
+      "startedAt": 1791284558304,
+      "delayed": false,
+      "handledAt": 1791284558304,
+      "finishedAt": 1791284558304,
+      "closedAt": 1791284558304
+    },
+    {
+      "id": 160,
+      "method": "GET",
+      "path": "/api/tasks/chat-30-task-1/stream?after=2",
+      "startedAt": 1791284558313,
+      "delayed": false,
+      "handledAt": 1791284558313,
+      "closedAt": 1791284558541
+    },
+    {
+      "id": 161,
+      "method": "GET",
+      "path": "/api/conversations/chat-31",
+      "startedAt": 1791284558535,
+      "delayed": false,
+      "handledAt": 1791284558535,
+      "finishedAt": 1791284558536,
+      "closedAt": 1791284558536
+    },
+    {
+      "id": 162,
+      "method": "GET",
+      "path": "/api/conversations/chat-31/turns?after=0&limit=20",
+      "startedAt": 1791284558536,
+      "delayed": false,
+      "handledAt": 1791284558536,
+      "finishedAt": 1791284558536,
+      "closedAt": 1791284558536
+    },
+    {
+      "id": 163,
+      "method": "GET",
+      "path": "/api/conversations/chat-31/queue?after=0&limit=20",
+      "startedAt": 1791284558542,
+      "delayed": false,
+      "handledAt": 1791284558542,
+      "finishedAt": 1791284558543,
+      "closedAt": 1791284558543
+    },
+    {
+      "id": 164,
+      "method": "GET",
+      "path": "/api/tasks/chat-31-task-1",
+      "startedAt": 1791284558545,
+      "delayed": false,
+      "handledAt": 1791284558545,
+      "finishedAt": 1791284558545,
+      "closedAt": 1791284558545
+    },
+    {
+      "id": 165,
+      "method": "GET",
+      "path": "/api/tasks/chat-31-task-1/stream?after=2",
+      "startedAt": 1791284558551,
+      "delayed": false,
+      "handledAt": 1791284558551,
+      "closedAt": 1791284558710
+    },
+    {
+      "id": 166,
+      "method": "GET",
+      "path": "/api/conversations/chat-32",
+      "startedAt": 1791284558704,
+      "delayed": false,
+      "handledAt": 1791284558704,
+      "finishedAt": 1791284558704,
+      "closedAt": 1791284558704
+    },
+    {
+      "id": 167,
+      "method": "GET",
+      "path": "/api/conversations/chat-32/turns?after=0&limit=20",
+      "startedAt": 1791284558704,
+      "delayed": false,
+      "handledAt": 1791284558704,
+      "finishedAt": 1791284558704,
+      "closedAt": 1791284558704
+    },
+    {
+      "id": 168,
+      "method": "GET",
+      "path": "/api/conversations/chat-32/queue?after=0&limit=20",
+      "startedAt": 1791284558711,
+      "delayed": false,
+      "handledAt": 1791284558711,
+      "finishedAt": 1791284558711,
+      "closedAt": 1791284558711
+    },
+    {
+      "id": 169,
+      "method": "GET",
+      "path": "/api/tasks/chat-32-task-1",
+      "startedAt": 1791284558713,
+      "delayed": false,
+      "handledAt": 1791284558713,
+      "finishedAt": 1791284558713,
+      "closedAt": 1791284558713
+    },
+    {
+      "id": 170,
+      "method": "GET",
+      "path": "/api/tasks/chat-32-task-1/stream?after=2",
+      "startedAt": 1791284558720,
+      "delayed": false,
+      "handledAt": 1791284558720,
+      "closedAt": 1791284572432
+    },
+    {
+      "id": 171,
+      "method": "GET",
+      "path": "/api/workspace?after=222",
+      "startedAt": 1791284560165,
+      "delayed": false,
+      "handledAt": 1791284560165,
+      "finishedAt": 1791284560165,
+      "closedAt": 1791284560165
+    },
+    {
+      "id": 172,
+      "method": "GET",
+      "path": "/api/conversations/chat-32",
+      "startedAt": 1791284560719,
+      "delayed": false,
+      "handledAt": 1791284560719,
+      "finishedAt": 1791284560719,
+      "closedAt": 1791284560719
+    },
+    {
+      "id": 173,
+      "method": "GET",
+      "path": "/api/conversations/chat-32/queue?after=0&limit=20",
+      "startedAt": 1791284560719,
+      "delayed": false,
+      "handledAt": 1791284560719,
+      "finishedAt": 1791284560719,
+      "closedAt": 1791284560719
+    },
+    {
+      "id": 174,
+      "method": "GET",
+      "path": "/api/tasks/chat-31-task-1/stream?after=2",
+      "startedAt": 1791284561360,
+      "delayed": false,
+      "handledAt": 1791284561360,
+      "closedAt": 1791284566710
+    },
+    {
+      "id": 175,
+      "method": "GET",
+      "path": "/api/conversations/chat-31/queue?after=0&limit=20",
+      "startedAt": 1791284561361,
+      "delayed": false,
+      "handledAt": 1791284561361,
+      "finishedAt": 1791284561361,
+      "closedAt": 1791284561361
+    },
+    {
+      "id": 176,
+      "method": "GET",
+      "path": "/api/conversations/chat-31",
+      "startedAt": 1791284561361,
+      "delayed": false,
+      "handledAt": 1791284561361,
+      "finishedAt": 1791284561361,
+      "closedAt": 1791284561361
+    },
+    {
+      "id": 177,
+      "method": "GET",
+      "path": "/api/workspace?after=222",
+      "startedAt": 1791284562675,
+      "delayed": false,
+      "handledAt": 1791284562675,
+      "finishedAt": 1791284562676,
+      "closedAt": 1791284562676
+    },
+    {
+      "id": 178,
+      "method": "GET",
+      "path": "/api/conversations/chat-32",
+      "startedAt": 1791284562736,
+      "delayed": false,
+      "handledAt": 1791284562736,
+      "finishedAt": 1791284562736,
+      "closedAt": 1791284562736
+    },
+    {
+      "id": 179,
+      "method": "GET",
+      "path": "/api/conversations/chat-32/queue?after=0&limit=20",
+      "startedAt": 1791284562736,
+      "delayed": false,
+      "handledAt": 1791284562736,
+      "finishedAt": 1791284562736,
+      "closedAt": 1791284562736
+    },
+    {
+      "id": 180,
+      "method": "GET",
+      "path": "/api/conversations/chat-31/queue?after=0&limit=20",
+      "startedAt": 1791284563375,
+      "delayed": false,
+      "handledAt": 1791284563375,
+      "finishedAt": 1791284563375,
+      "closedAt": 1791284563375
+    },
+    {
+      "id": 181,
+      "method": "GET",
+      "path": "/api/conversations/chat-31",
+      "startedAt": 1791284563385,
+      "delayed": false,
+      "handledAt": 1791284563385,
+      "finishedAt": 1791284563385,
+      "closedAt": 1791284563385
+    },
+    {
+      "id": 182,
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "startedAt": 1791284563816,
+      "delayed": false,
+      "handledAt": 1791284563816,
+      "finishedAt": 1791284563817,
+      "closedAt": 1791284563817
+    },
+    {
+      "id": 183,
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "startedAt": 1791284564096,
+      "delayed": false,
+      "handledAt": 1791284564096,
+      "finishedAt": 1791284564096,
+      "closedAt": 1791284564096
+    },
+    {
+      "id": 184,
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "startedAt": 1791284564246,
+      "delayed": false,
+      "handledAt": 1791284564246,
+      "finishedAt": 1791284564247,
+      "closedAt": 1791284564247
+    },
+    {
+      "id": 185,
+      "method": "GET",
+      "path": "/api/conversations/chat-32",
+      "startedAt": 1791284564744,
+      "delayed": false,
+      "handledAt": 1791284564744,
+      "finishedAt": 1791284564744,
+      "closedAt": 1791284564744
+    },
+    {
+      "id": 186,
+      "method": "GET",
+      "path": "/api/conversations/chat-32/queue?after=0&limit=20",
+      "startedAt": 1791284564745,
+      "delayed": false,
+      "handledAt": 1791284564745,
+      "finishedAt": 1791284564745,
+      "closedAt": 1791284564745
+    },
+    {
+      "id": 187,
+      "method": "GET",
+      "path": "/api/workspace?after=222",
+      "startedAt": 1791284565183,
+      "delayed": false,
+      "handledAt": 1791284565183,
+      "finishedAt": 1791284565183,
+      "closedAt": 1791284565183
+    },
+    {
+      "id": 188,
+      "method": "GET",
+      "path": "/api/conversations/chat-31/queue?after=0&limit=20",
+      "startedAt": 1791284565386,
+      "delayed": false,
+      "handledAt": 1791284565386,
+      "finishedAt": 1791284565386,
+      "closedAt": 1791284565386
+    },
+    {
+      "id": 189,
+      "method": "GET",
+      "path": "/api/conversations/chat-31",
+      "startedAt": 1791284565394,
+      "delayed": false,
+      "handledAt": 1791284565394,
+      "finishedAt": 1791284565394,
+      "closedAt": 1791284565394
+    },
+    {
+      "id": 190,
+      "method": "GET",
+      "path": "/api/tasks/chat-30-task-1/stream?after=2",
+      "startedAt": 1791284566701,
+      "delayed": false,
+      "handledAt": 1791284566701,
+      "closedAt": 1791284566876
+    },
+    {
+      "id": 191,
+      "method": "GET",
+      "path": "/api/conversations/chat-30/queue?after=0&limit=20",
+      "startedAt": 1791284566702,
+      "delayed": false,
+      "handledAt": 1791284566702,
+      "finishedAt": 1791284566702,
+      "closedAt": 1791284566702
+    },
+    {
+      "id": 192,
+      "method": "GET",
+      "path": "/api/conversations/chat-30",
+      "startedAt": 1791284566702,
+      "delayed": false,
+      "handledAt": 1791284566702,
+      "finishedAt": 1791284566702,
+      "closedAt": 1791284566702
+    },
+    {
+      "id": 193,
+      "method": "GET",
+      "path": "/api/conversations/chat-32",
+      "startedAt": 1791284566755,
+      "delayed": false,
+      "handledAt": 1791284566755,
+      "finishedAt": 1791284566755,
+      "closedAt": 1791284566755
+    },
+    {
+      "id": 194,
+      "method": "GET",
+      "path": "/api/conversations/chat-32/queue?after=0&limit=20",
+      "startedAt": 1791284566756,
+      "delayed": false,
+      "handledAt": 1791284566756,
+      "finishedAt": 1791284566756,
+      "closedAt": 1791284566756
+    },
+    {
+      "id": 195,
+      "method": "GET",
+      "path": "/api/tasks/chat-3-task-1/stream?after=2",
+      "startedAt": 1791284566871,
+      "delayed": false,
+      "handledAt": 1791284566871,
+      "closedAt": 1791284567193
+    },
+    {
+      "id": 196,
+      "method": "GET",
+      "path": "/api/conversations/chat-3/queue?after=0&limit=20",
+      "startedAt": 1791284566871,
+      "delayed": false,
+      "handledAt": 1791284566871,
+      "finishedAt": 1791284566871,
+      "closedAt": 1791284566871
+    },
+    {
+      "id": 197,
+      "method": "GET",
+      "path": "/api/conversations/chat-3",
+      "startedAt": 1791284566871,
+      "delayed": false,
+      "handledAt": 1791284566871,
+      "finishedAt": 1791284566872,
+      "closedAt": 1791284566872
+    },
+    {
+      "id": 198,
+      "method": "GET",
+      "path": "/api/projects/project-01/knowledge/search?q=Fixed&limit=20",
+      "startedAt": 1791284567030,
+      "delayed": false,
+      "handledAt": 1791284567030,
+      "finishedAt": 1791284567031,
+      "closedAt": 1791284567031
+    },
+    {
+      "id": 199,
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "startedAt": 1791284567146,
+      "delayed": false,
+      "handledAt": 1791284567146,
+      "finishedAt": 1791284567146,
+      "closedAt": 1791284567146
+    },
+    {
+      "id": 200,
+      "method": "GET",
+      "path": "/api/tasks/chat-30-task-1/stream?after=2",
+      "startedAt": 1791284567188,
+      "delayed": false,
+      "handledAt": 1791284567188,
+      "closedAt": 1791284567415
+    },
+    {
+      "id": 201,
+      "method": "GET",
+      "path": "/api/conversations/chat-30/queue?after=0&limit=20",
+      "startedAt": 1791284567188,
+      "delayed": false,
+      "handledAt": 1791284567188,
+      "finishedAt": 1791284567188,
+      "closedAt": 1791284567188
+    },
+    {
+      "id": 202,
+      "method": "GET",
+      "path": "/api/conversations/chat-30",
+      "startedAt": 1791284567188,
+      "delayed": false,
+      "handledAt": 1791284567188,
+      "finishedAt": 1791284567188,
+      "closedAt": 1791284567188
+    },
+    {
+      "id": 203,
+      "method": "GET",
+      "path": "/api/tasks/chat-3-task-1/stream?after=2",
+      "startedAt": 1791284567406,
+      "delayed": false,
+      "handledAt": 1791284567406,
+      "closedAt": 1791284567577
+    },
+    {
+      "id": 204,
+      "method": "GET",
+      "path": "/api/conversations/chat-3/queue?after=0&limit=20",
+      "startedAt": 1791284567406,
+      "delayed": false,
+      "handledAt": 1791284567406,
+      "finishedAt": 1791284567406,
+      "closedAt": 1791284567406
+    },
+    {
+      "id": 205,
+      "method": "GET",
+      "path": "/api/conversations/chat-3",
+      "startedAt": 1791284567406,
+      "delayed": false,
+      "handledAt": 1791284567406,
+      "finishedAt": 1791284567406,
+      "closedAt": 1791284567406
+    },
+    {
+      "id": 206,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-1/stream?after=2",
+      "startedAt": 1791284567571,
+      "delayed": false,
+      "handledAt": 1791284567571,
+      "closedAt": 1791284567833
+    },
+    {
+      "id": 207,
+      "method": "GET",
+      "path": "/api/conversations/chat-4/queue?after=0&limit=20",
+      "startedAt": 1791284567572,
+      "delayed": false,
+      "handledAt": 1791284567572,
+      "finishedAt": 1791284567572,
+      "closedAt": 1791284567572
+    },
+    {
+      "id": 208,
+      "method": "GET",
+      "path": "/api/conversations/chat-4",
+      "startedAt": 1791284567572,
+      "delayed": false,
+      "handledAt": 1791284567572,
+      "finishedAt": 1791284567572,
+      "closedAt": 1791284567572
+    },
+    {
+      "id": 209,
+      "method": "POST",
+      "path": "/api/conversations/chat-4/turns",
+      "startedAt": 1791284567643,
+      "delayed": false,
+      "handledAt": 1791284567643,
+      "closedAt": 1791284567644
+    },
+    {
+      "id": 210,
+      "method": "GET",
+      "path": "/api/workspace?after=222",
+      "startedAt": 1791284567688,
+      "delayed": false,
+      "handledAt": 1791284567688,
+      "finishedAt": 1791284567689,
+      "closedAt": 1791284567689
+    },
+    {
+      "id": 211,
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "startedAt": 1791284567783,
+      "delayed": false,
+      "handledAt": 1791284567783,
+      "finishedAt": 1791284567784,
+      "closedAt": 1791284567784
+    },
+    {
+      "id": 212,
+      "method": "GET",
+      "path": "/api/tasks/chat-3-task-1/stream?after=2",
+      "startedAt": 1791284567827,
+      "delayed": false,
+      "handledAt": 1791284567827,
+      "closedAt": 1791284568046
+    },
+    {
+      "id": 213,
+      "method": "GET",
+      "path": "/api/conversations/chat-3/queue?after=0&limit=20",
+      "startedAt": 1791284567828,
+      "delayed": false,
+      "handledAt": 1791284567828,
+      "finishedAt": 1791284567828,
+      "closedAt": 1791284567828
+    },
+    {
+      "id": 214,
+      "method": "GET",
+      "path": "/api/conversations/chat-3",
+      "startedAt": 1791284567828,
+      "delayed": false,
+      "handledAt": 1791284567828,
+      "finishedAt": 1791284567828,
+      "closedAt": 1791284567828
+    },
+    {
+      "id": 215,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-1/stream?after=2",
+      "startedAt": 1791284568037,
+      "delayed": false,
+      "handledAt": 1791284568037,
+      "closedAt": 1791284568143
+    },
+    {
+      "id": 216,
+      "method": "GET",
+      "path": "/api/conversations/chat-4/queue?after=0&limit=20",
+      "startedAt": 1791284568037,
+      "delayed": false,
+      "handledAt": 1791284568037,
+      "finishedAt": 1791284568037,
+      "closedAt": 1791284568037
+    },
+    {
+      "id": 217,
+      "method": "GET",
+      "path": "/api/conversations/chat-4",
+      "startedAt": 1791284568037,
+      "delayed": false,
+      "handledAt": 1791284568037,
+      "finishedAt": 1791284568037,
+      "closedAt": 1791284568037
+    },
+    {
+      "id": 218,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-2",
+      "startedAt": 1791284568096,
+      "delayed": false,
+      "handledAt": 1791284568096,
+      "finishedAt": 1791284568096,
+      "closedAt": 1791284568096
+    },
+    {
+      "id": 219,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-2/assistant-stream?limit=100",
+      "startedAt": 1791284568140,
+      "delayed": false,
+      "handledAt": 1791284568140,
+      "finishedAt": 1791284568141,
+      "closedAt": 1791284568141
+    },
+    {
+      "id": 220,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-2/stream?after=1",
+      "startedAt": 1791284568151,
+      "delayed": false,
+      "handledAt": 1791284568151,
+      "closedAt": 1791284568576
+    },
+    {
+      "id": 221,
+      "method": "POST",
+      "path": "/api/conversations/chat-4/turns",
+      "startedAt": 1791284568346,
+      "delayed": false,
+      "handledAt": 1791284568346,
+      "finishedAt": 1791284568346,
+      "closedAt": 1791284568346
+    },
+    {
+      "id": 222,
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "startedAt": 1791284568365,
+      "delayed": false,
+      "handledAt": 1791284568365,
+      "finishedAt": 1791284568365,
+      "closedAt": 1791284568365
+    },
+    {
+      "id": 223,
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "startedAt": 1791284568365,
+      "delayed": false,
+      "handledAt": 1791284568365,
+      "finishedAt": 1791284568365,
+      "closedAt": 1791284568365
+    },
+    {
+      "id": 224,
+      "method": "GET",
+      "path": "/api/tasks/chat-5-task-1/stream?after=2",
+      "startedAt": 1791284568569,
+      "delayed": false,
+      "handledAt": 1791284568570,
+      "closedAt": 1791284568842
+    },
+    {
+      "id": 225,
+      "method": "GET",
+      "path": "/api/conversations/chat-5/queue?after=0&limit=20",
+      "startedAt": 1791284568570,
+      "delayed": false,
+      "handledAt": 1791284568570,
+      "finishedAt": 1791284568570,
+      "closedAt": 1791284568570
+    },
+    {
+      "id": 226,
+      "method": "GET",
+      "path": "/api/conversations/chat-5",
+      "startedAt": 1791284568570,
+      "delayed": false,
+      "handledAt": 1791284568570,
+      "finishedAt": 1791284568570,
+      "closedAt": 1791284568570
+    },
+    {
+      "id": 227,
+      "method": "POST",
+      "path": "/api/conversations/chat-5/queue",
+      "startedAt": 1791284568674,
+      "delayed": false,
+      "handledAt": 1791284568674,
+      "closedAt": 1791284568675
+    },
+    {
+      "id": 228,
+      "method": "GET",
+      "path": "/api/conversations/chat-5/queue?after=0&limit=20",
+      "startedAt": 1791284568693,
+      "delayed": false,
+      "handledAt": 1791284568693,
+      "finishedAt": 1791284568693,
+      "closedAt": 1791284568693
+    },
+    {
+      "id": 229,
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "startedAt": 1791284568745,
+      "delayed": false,
+      "handledAt": 1791284568745,
+      "finishedAt": 1791284568745,
+      "closedAt": 1791284568745
+    },
+    {
+      "id": 230,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-2/stream?after=1",
+      "startedAt": 1791284568833,
+      "delayed": false,
+      "handledAt": 1791284568833,
+      "closedAt": 1791284569066
+    },
+    {
+      "id": 231,
+      "method": "GET",
+      "path": "/api/conversations/chat-4/queue?after=0&limit=20",
+      "startedAt": 1791284568833,
+      "delayed": false,
+      "handledAt": 1791284568833,
+      "finishedAt": 1791284568833,
+      "closedAt": 1791284568833
+    },
+    {
+      "id": 232,
+      "method": "GET",
+      "path": "/api/conversations/chat-4",
+      "startedAt": 1791284568834,
+      "delayed": false,
+      "handledAt": 1791284568834,
+      "finishedAt": 1791284568834,
+      "closedAt": 1791284568834
+    },
+    {
+      "id": 233,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-2/assistant-stream?limit=100",
+      "startedAt": 1791284568836,
+      "delayed": false,
+      "handledAt": 1791284568836,
+      "finishedAt": 1791284568838,
+      "closedAt": 1791284568838
+    },
+    {
+      "id": 234,
+      "method": "GET",
+      "path": "/api/conversations/chat-32",
+      "startedAt": 1791284568843,
+      "delayed": false,
+      "handledAt": 1791284568843,
+      "finishedAt": 1791284568844,
+      "closedAt": 1791284568844
+    },
+    {
+      "id": 235,
+      "method": "GET",
+      "path": "/api/conversations/chat-32/queue?after=0&limit=20",
+      "startedAt": 1791284568844,
+      "delayed": false,
+      "handledAt": 1791284568844,
+      "finishedAt": 1791284568844,
+      "closedAt": 1791284568844
+    },
+    {
+      "id": 236,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-2/assistant-stream/patches?attemptId=chat-4-task-2-attempt&after=0&limit=8",
+      "startedAt": 1791284568970,
+      "delayed": false,
+      "handledAt": 1791284568970,
+      "finishedAt": 1791284568971,
+      "closedAt": 1791284568971
+    },
+    {
+      "id": 237,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-2/assistant-stream?limit=100",
+      "startedAt": 1791284568986,
+      "delayed": false,
+      "handledAt": 1791284568986,
+      "finishedAt": 1791284568987,
+      "closedAt": 1791284568987
+    },
+    {
+      "id": 238,
+      "method": "GET",
+      "path": "/api/tasks/chat-4-task-2/assistant-stream/patches?attemptId=chat-4-task-2-attempt&after=6&limit=8",
+      "startedAt": 1791284568989,
+      "delayed": false,
+      "handledAt": 1791284568989,
+      "finishedAt": 1791284568991,
+      "closedAt": 1791284568991
+    },
+    {
+      "id": 239,
+      "method": "GET",
+      "path": "/api/tasks/chat-5-task-1/stream?after=2",
+      "startedAt": 1791284569056,
+      "delayed": false,
+      "handledAt": 1791284569056,
+      "closedAt": 1791284569233
+    },
+    {
+      "id": 240,
+      "method": "GET",
+      "path": "/api/conversations/chat-5/queue?after=0&limit=20",
+      "startedAt": 1791284569056,
+      "delayed": false,
+      "handledAt": 1791284569056,
+      "finishedAt": 1791284569056,
+      "closedAt": 1791284569056
+    },
+    {
+      "id": 241,
+      "method": "GET",
+      "path": "/api/conversations/chat-5",
+      "startedAt": 1791284569056,
+      "delayed": false,
+      "handledAt": 1791284569056,
+      "finishedAt": 1791284569057,
+      "closedAt": 1791284569057
+    },
+    {
+      "id": 242,
+      "method": "POST",
+      "path": "/api/conversations/chat-5/queue",
+      "startedAt": 1791284569148,
+      "delayed": false,
+      "handledAt": 1791284569148,
+      "finishedAt": 1791284569148,
+      "closedAt": 1791284569148
+    },
+    {
+      "id": 243,
+      "method": "GET",
+      "path": "/api/conversations/chat-5/queue?after=0&limit=20",
+      "startedAt": 1791284569160,
+      "delayed": false,
+      "handledAt": 1791284569160,
+      "finishedAt": 1791284569161,
+      "closedAt": 1791284569161
+    },
+    {
+      "id": 244,
+      "method": "GET",
+      "path": "/api/tasks/chat-1-task-1/stream?after=2",
+      "startedAt": 1791284569221,
+      "delayed": false,
+      "handledAt": 1791284569221,
+      "closedAt": 1791284569480
+    },
+    {
+      "id": 245,
+      "method": "GET",
+      "path": "/api/conversations/chat-1/queue?after=0&limit=20",
+      "startedAt": 1791284569221,
+      "delayed": false,
+      "handledAt": 1791284569221,
+      "finishedAt": 1791284569221,
+      "closedAt": 1791284569221
+    },
+    {
+      "id": 246,
+      "method": "GET",
+      "path": "/api/conversations/chat-1",
+      "startedAt": 1791284569221,
+      "delayed": false,
+      "handledAt": 1791284569221,
+      "finishedAt": 1791284569222,
+      "closedAt": 1791284569222
+    },
+    {
+      "id": 247,
+      "method": "GET",
+      "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+      "startedAt": 1791284569396,
+      "delayed": true,
+      "handledAt": 1791284570298,
+      "finishedAt": 1791284570298,
+      "closedAt": 1791284570298
+    },
+    {
+      "id": 248,
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "startedAt": 1791284569429,
+      "delayed": false,
+      "handledAt": 1791284569429,
+      "finishedAt": 1791284569429,
+      "closedAt": 1791284569429
+    },
+    {
+      "id": 249,
+      "method": "GET",
+      "path": "/api/tasks/chat-5-task-1/stream?after=2",
+      "startedAt": 1791284569474,
+      "delayed": false,
+      "handledAt": 1791284569474,
+      "closedAt": 1791284570809
+    },
+    {
+      "id": 250,
+      "method": "GET",
+      "path": "/api/conversations/chat-5/queue?after=0&limit=20",
+      "startedAt": 1791284569474,
+      "delayed": false,
+      "handledAt": 1791284569474,
+      "finishedAt": 1791284569474,
+      "closedAt": 1791284569474
+    },
+    {
+      "id": 251,
+      "method": "GET",
+      "path": "/api/conversations/chat-5",
+      "startedAt": 1791284569474,
+      "delayed": false,
+      "handledAt": 1791284569474,
+      "finishedAt": 1791284569475,
+      "closedAt": 1791284569475
+    },
+    {
+      "id": 252,
+      "method": "GET",
+      "path": "/api/workspace?after=223",
+      "startedAt": 1791284570194,
+      "delayed": false,
+      "handledAt": 1791284570194,
+      "finishedAt": 1791284570195,
+      "closedAt": 1791284570195
+    },
+    {
+      "id": 253,
+      "method": "GET",
+      "path": "/api/tasks/chat-1-task-1/stream?after=2",
+      "startedAt": 1791284570798,
+      "delayed": false,
+      "handledAt": 1791284570798,
+      "closedAt": 1791284571012
+    },
+    {
+      "id": 254,
+      "method": "GET",
+      "path": "/api/conversations/chat-1/queue?after=0&limit=20",
+      "startedAt": 1791284570798,
+      "delayed": false,
+      "handledAt": 1791284570798,
+      "finishedAt": 1791284570798,
+      "closedAt": 1791284570798
+    },
+    {
+      "id": 255,
+      "method": "GET",
+      "path": "/api/conversations/chat-1",
+      "startedAt": 1791284570798,
+      "delayed": false,
+      "handledAt": 1791284570798,
+      "finishedAt": 1791284570798,
+      "closedAt": 1791284570798
+    },
+    {
+      "id": 256,
+      "method": "GET",
+      "path": "/api/tasks/chat-6-task-1/stream?after=2",
+      "startedAt": 1791284571005,
+      "delayed": false,
+      "handledAt": 1791284571005,
+      "closedAt": 1791284571140
+    },
+    {
+      "id": 257,
+      "method": "GET",
+      "path": "/api/conversations/chat-6/queue?after=0&limit=20",
+      "startedAt": 1791284571005,
+      "delayed": false,
+      "handledAt": 1791284571005,
+      "finishedAt": 1791284571005,
+      "closedAt": 1791284571005
+    },
+    {
+      "id": 258,
+      "method": "GET",
+      "path": "/api/conversations/chat-6",
+      "startedAt": 1791284571005,
+      "delayed": true,
+      "closedAt": 1791284571140,
+      "handledAt": 1791284571907,
+      "cancelledBeforeHandling": true
+    },
+    {
+      "id": 259,
+      "method": "GET",
+      "path": "/api/conversations/chat-32",
+      "startedAt": 1791284571013,
+      "delayed": false,
+      "handledAt": 1791284571013,
+      "finishedAt": 1791284571013,
+      "closedAt": 1791284571013
+    },
+    {
+      "id": 260,
+      "method": "GET",
+      "path": "/api/conversations/chat-32/queue?after=0&limit=20",
+      "startedAt": 1791284571013,
+      "delayed": false,
+      "handledAt": 1791284571013,
+      "finishedAt": 1791284571013,
+      "closedAt": 1791284571013
+    },
+    {
+      "id": 261,
+      "method": "GET",
+      "path": "/api/tasks/chat-7-task-1/stream?after=2",
+      "startedAt": 1791284571134,
+      "delayed": false,
+      "handledAt": 1791284571134,
+      "closedAt": 1791284572432
+    },
+    {
+      "id": 262,
+      "method": "GET",
+      "path": "/api/conversations/chat-7/queue?after=0&limit=20",
+      "startedAt": 1791284571134,
+      "delayed": false,
+      "handledAt": 1791284571134,
+      "finishedAt": 1791284571134,
+      "closedAt": 1791284571134
+    },
+    {
+      "id": 263,
+      "method": "GET",
+      "path": "/api/conversations/chat-7",
+      "startedAt": 1791284571134,
+      "delayed": false,
+      "handledAt": 1791284571134,
+      "finishedAt": 1791284571134,
+      "closedAt": 1791284571134
+    },
+    {
+      "id": 264,
+      "method": "GET",
+      "path": "/api/workspace?after=223",
+      "startedAt": 1791284572698,
+      "delayed": false,
+      "handledAt": 1791284572698,
+      "finishedAt": 1791284572698,
+      "closedAt": 1791284572698
+    },
+    {
+      "id": 265,
+      "method": "GET",
+      "path": "/api/tasks/chat-7-task-1/stream?after=2",
+      "startedAt": 1791284574781,
+      "delayed": false,
+      "handledAt": 1791284574781
+    },
+    {
+      "id": 266,
+      "method": "GET",
+      "path": "/api/conversations/chat-7/queue?after=0&limit=20",
+      "startedAt": 1791284574782,
+      "delayed": false,
+      "handledAt": 1791284574782,
+      "finishedAt": 1791284574782,
+      "closedAt": 1791284574782
+    },
+    {
+      "id": 267,
+      "method": "GET",
+      "path": "/api/conversations/chat-7",
+      "startedAt": 1791284574782,
+      "delayed": false,
+      "handledAt": 1791284574782,
+      "finishedAt": 1791284574783,
+      "closedAt": 1791284574783
+    },
+    {
+      "id": 268,
+      "method": "GET",
+      "path": "/api/tasks/chat-32-task-1/stream?after=2",
+      "startedAt": 1791284574783,
+      "delayed": false,
+      "handledAt": 1791284574783
+    },
+    {
+      "id": 269,
+      "method": "GET",
+      "path": "/api/conversations/chat-32/queue?after=0&limit=20",
+      "startedAt": 1791284574783,
+      "delayed": false,
+      "handledAt": 1791284574783,
+      "finishedAt": 1791284574783,
+      "closedAt": 1791284574783
+    },
+    {
+      "id": 270,
+      "method": "GET",
+      "path": "/api/conversations/chat-32",
+      "startedAt": 1791284574783,
+      "delayed": false,
+      "handledAt": 1791284574783,
+      "finishedAt": 1791284574783,
+      "closedAt": 1791284574783
+    },
+    {
+      "id": 271,
+      "method": "GET",
+      "path": "/api/workspace?after=223",
+      "startedAt": 1791284575201,
+      "delayed": false,
+      "handledAt": 1791284575201,
+      "finishedAt": 1791284575202,
+      "closedAt": 1791284575202
+    },
+    {
+      "id": 272,
+      "method": "GET",
+      "path": "/api/conversations/chat-7/queue?after=0&limit=20",
+      "startedAt": 1791284576844,
+      "delayed": false,
+      "handledAt": 1791284576844,
+      "finishedAt": 1791284576845,
+      "closedAt": 1791284576845
+    },
+    {
+      "id": 273,
+      "method": "GET",
+      "path": "/api/conversations/chat-7",
+      "startedAt": 1791284576853,
+      "delayed": false,
+      "handledAt": 1791284576853,
+      "finishedAt": 1791284576854,
+      "closedAt": 1791284576854
+    },
+    {
+      "id": 274,
+      "method": "GET",
+      "path": "/api/conversations/chat-32/queue?after=0&limit=20",
+      "startedAt": 1791284576854,
+      "delayed": false,
+      "handledAt": 1791284576854,
+      "finishedAt": 1791284576854,
+      "closedAt": 1791284576854
+    },
+    {
+      "id": 275,
+      "method": "GET",
+      "path": "/api/conversations/chat-32",
+      "startedAt": 1791284576859,
+      "delayed": false,
+      "handledAt": 1791284576859,
+      "finishedAt": 1791284576859,
+      "closedAt": 1791284576859
+    },
+    {
+      "id": 276,
+      "method": "GET",
+      "path": "/api/workspace?after=223",
+      "startedAt": 1791284577706,
+      "delayed": false,
+      "handledAt": 1791284577706,
+      "finishedAt": 1791284577706,
+      "closedAt": 1791284577706
+    }
+  ]
+}

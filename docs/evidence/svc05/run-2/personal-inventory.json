@@ -1,0 +1,189 @@
+{
+  "observedAt": "2026-10-06T12:20:09.540Z",
+  "targetBackend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "currentBackend": {
+    "head": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+    "dirty": false
+  },
+  "maintenance": {
+    "phase": "resumed",
+    "resumeVersion": 11
+  },
+  "web": {
+    "releaseVersion": 2,
+    "current": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+    "backendHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+    "updatedAt": "2026-10-06T10:54:44.580Z"
+  },
+  "processes": {
+    "center": {
+      "pid": 71483,
+      "group": 71483,
+      "startedAt": "Tue Oct  6 01:55:05 2026"
+    },
+    "runner": {
+      "pid": 73368,
+      "group": 73368,
+      "startedAt": "Tue Oct  6 01:55:06 2026"
+    },
+    "web": {
+      "pid": 25909,
+      "group": 25909,
+      "startedAt": "Tue Oct  6 03:54:33 2026"
+    }
+  },
+  "artifacts": [
+    {
+      "descriptor": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5"
+      },
+      "directory": "/Users/citrine/.flow-personal/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "manifest": {
+        "format": 1,
+        "policy": "flow-static-web-v1",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "sourceTree": "6ea87fdad7247f577fa2ffb014f84afe428a4abb",
+        "lockDigest": "cac4ee68595237001f83b47f71bc4c7e735aefe1ae7e03e412758a0c0f6ed08c",
+        "toolchain": {
+          "node": "24.20.0",
+          "vite": "8.3.2"
+        },
+        "files": [
+          {
+            "path": "assets/PluginManagement-CD55oqRe.js",
+            "bytes": 9854,
+            "sha256": "3c62514146458f0d2f64beadec5f837a3f87b70ce0309a9f9f6363372b1bc447"
+          },
+          {
+            "path": "assets/PluginManagement-Dok11XwQ.css",
+            "bytes": 2843,
+            "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9"
+          },
+          {
+            "path": "assets/assistant-ui-BW1JBgq4.js",
+            "bytes": 658870,
+            "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39"
+          },
+          {
+            "path": "assets/assistant-ui-CcdakA0V.css",
+            "bytes": 966,
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "assets/index-5W26Yecv.css",
+            "bytes": 102548,
+            "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71"
+          },
+          {
+            "path": "assets/index-DuzR10it.js",
+            "bytes": 663320,
+            "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555"
+          },
+          {
+            "path": "assets/rolldown-runtime-qXqUbbKo.js",
+            "bytes": 773,
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "assets/theme-BPrUys_Y.js",
+            "bytes": 806,
+            "sha256": "d6e70e89790687f7a6f8d916e734d17ae4dda95e549b5ede1061da1c27fac3d5"
+          },
+          {
+            "path": "assets/workspace-J4kYnKpb.js",
+            "bytes": 1906,
+            "sha256": "712d138a75e5cf0132837e304c75bd767aa5276230a1af2b5ddcc28f0f01827a"
+          },
+          {
+            "path": "index.html",
+            "bytes": 705,
+            "sha256": "712427f3cb1e1c06cbb7c666da07065d931f36e1bca4896f243df7563dd79943"
+          }
+        ],
+        "totalBytes": 1442591
+      },
+      "verifiedFiles": 10,
+      "verifiedBytes": 1442591
+    },
+    {
+      "descriptor": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "directory": "/Users/citrine/.flow-personal/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "manifest": {
+        "format": 2,
+        "policy": "flow-static-web-v2",
+        "releaseId": "8d8ab520a9d43c7b9dafb22911416ee7",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "sourceTree": "8360984c214829d831d0773057233c07a56dd7cc",
+        "lockDigest": "621490272149c9e9468c6ebec407f0eff3b508b7ca1e5b285573f101bb8a062d",
+        "toolchain": {
+          "node": "24.20.0",
+          "vite": "8.3.2"
+        },
+        "files": [
+          {
+            "path": "assets/PluginManagement-BD6v6BfC.js",
+            "bytes": 9854,
+            "sha256": "3c8931413324efc58684a6c7b595add63b604cbb22d9705210b8be80795b7cee"
+          },
+          {
+            "path": "assets/PluginManagement-Dok11XwQ.css",
+            "bytes": 2843,
+            "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9"
+          },
+          {
+            "path": "assets/assistant-ui-BpywiqNX.js",
+            "bytes": 659481,
+            "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365"
+          },
+          {
+            "path": "assets/assistant-ui-CcdakA0V.css",
+            "bytes": 966,
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "assets/index-4FtYFUKm.css",
+            "bytes": 109664,
+            "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f"
+          },
+          {
+            "path": "assets/index-C4nOJxn3.js",
+            "bytes": 720515,
+            "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495"
+          },
+          {
+            "path": "assets/rolldown-runtime-qXqUbbKo.js",
+            "bytes": 773,
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "assets/theme-B8jpdv70.js",
+            "bytes": 806,
+            "sha256": "55b244704cb6099ef5a3cc281178b4ffcc3bd58645b0e33bee47497551768263"
+          },
+          {
+            "path": "assets/workspace-CftlvkTQ.js",
+            "bytes": 1906,
+            "sha256": "aed68bf4b3e8a9bb0d3dafcddeb5730f065c35f2d1b3a2a7875e4d4b57cc9374"
+          },
+          {
+            "path": "index.html",
+            "bytes": 950,
+            "sha256": "cde7d9fd4622e6d4bb83b71004709e7fcbf4831f1b1146ce8690b763c3715fe0"
+          }
+        ],
+        "totalBytes": 1507758
+      },
+      "verifiedFiles": 10,
+      "verifiedBytes": 1507758
+    }
+  ],
+  "personalActions": 0,
+  "providerQueries": 0,
+  "limits": "File observations only; no fresh process/DB/maintenance HTTP health claim. No personal config or tokens read."
+}

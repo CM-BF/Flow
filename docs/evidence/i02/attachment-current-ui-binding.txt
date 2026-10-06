@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+ ❯ apps/web/test/attachment-integration.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/attachment-integration.test.ts [ apps/web/test/attachment-integration.test.ts ]
+Error: ENOSPC: no space left on device, rename '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/8HD1rbQtwXWW09vkcQRXl/ssr/.tmp-1791291892352-whah90rfc1r' -> '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/8HD1rbQtwXWW09vkcQRXl/ssr/949add773c3f3b7a71d3d2ce70a2cad2fc374a14'
+ ❯ apps/web/src/attachments/controller.ts:10:1
+      8| import { idSchema } from '@flow/contracts';
+      9| import { citationBytes, freezeContextSelection, type FrozenCitation } …
+     10| import { checkReceipt, freezeMetadata, recoveryUploadMatches, type Rec…
+       | ^
+     11| 
+     12| export const INPUT_LIMITS = Object.freeze({ timeoutMs: 15000, bodyRead…
+ ❯ apps/web/src/plugin-integration/attachments.tsx:5:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  06:04:51
+   Duration  1.04s (transform 191ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

@@ -1,0 +1,28 @@
+{
+  "vitestConfig": "export default {\n  \"root\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency\",\n  \"cacheDir\": \"/tmp/wpf-mature-04-vite-cache\",\n  \"resolve\": {\n    \"alias\": {\n      \"zod\": \"/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod/index.js\"\n    }\n  },\n  \"test\": {\n    \"include\": [\n      \"packages/contracts/src/context-transparency.test.ts\",\n      \"apps/server/src/context-transparency/projection.test.ts\"\n    ],\n    \"fileParallelism\": false\n  }\n};\n",
+  "tsconfig": {
+    "extends": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/tsconfig.json",
+    "compilerOptions": {
+      "typeRoots": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"
+      ],
+      "paths": {
+        "zod": [
+          "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/zod/index.d.ts"
+        ],
+        "vitest": [
+          "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/dist/index.d.ts"
+        ]
+      },
+      "incremental": false,
+      "noEmit": true
+    },
+    "include": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/contracts/src/context-transparency.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/packages/contracts/src/context-transparency.test.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/server/src/context-transparency/projection.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/apps/server/src/context-transparency/projection.test.ts"
+    ],
+    "exclude": []
+  }
+}

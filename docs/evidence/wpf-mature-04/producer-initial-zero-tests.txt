@@ -1,0 +1,9 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow
+
+No test files found, exiting with code 1
+
+filter: apps/runner/src/claude-context-observation.test.ts
+include: apps/runner/src/claude-context-observation.test.ts, apps/runner/src/context-observations/claude-summary-read.test.ts, apps/runner/src/claude.test.ts, apps/runner/src/assistant-stream/stream.test.ts, apps/runner/src/runner.test.ts
+exclude:  **/node_modules/**, **/.git/**
+

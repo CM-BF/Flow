@@ -1,0 +1,203 @@
+{
+  "observedAt": "2026-10-06T11:50:59.396001+00:00",
+  "owner": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+    "branch": "codex/context-transparency",
+    "headBeforeMetadata": "0c44bed7861b9363e0299081f146ccc05fe225ac",
+    "dirtyBeforeMetadata": false
+  },
+  "main": {
+    "head": "bf067e328bc1dc63cde39acf4b637cfb055e467a",
+    "originMain": "bf067e328bc1dc63cde39acf4b637cfb055e467a",
+    "dirty": false
+  },
+  "leadIntegrationReceipt": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/context-goal-integration.json",
+    "gitCommit": "bf067e328bc1dc63cde39acf4b637cfb055e467a",
+    "bytes": 10173,
+    "sha256": "ab651086b16ebf6687ef509388ac8be613c362f36bd3a5bcb2adaded5cb87aaf",
+    "reportedBindings": 36,
+    "rootTypecheckExitReported": 0,
+    "source": "existing Lead receipt; no checks rerun by owner"
+  },
+  "sources": [
+    {
+      "target": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+      "path": "packages/contracts/src/context-transparency.ts",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577",
+      "presentAtMainBaseline": false,
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+      "path": "packages/contracts/src/context-transparency.test.ts",
+      "bytes": 3252,
+      "sha256": "112a8abb79fef71e203799c87038c0e29bd39c9bd9174e26b58dcbcd7c53b9f6",
+      "presentAtMainBaseline": false,
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+      "path": "apps/server/src/context-transparency/projection.ts",
+      "bytes": 5685,
+      "sha256": "6c995109a44c41f37c7f860d103d5e588e020d22b18d545ba2bef661ee345850",
+      "presentAtMainBaseline": false,
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+      "path": "apps/server/src/context-transparency/projection.test.ts",
+      "bytes": 10582,
+      "sha256": "3db78fca155f9d031c7881ffc11c1c543686d903f3d09cc736912c91e675c2c9",
+      "presentAtMainBaseline": false,
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "c1733a0c4a2ce389489a8bc11ea3b68ef5693d34",
+      "path": "apps/runner/src/context-observations/claude-summary.ts",
+      "bytes": 2905,
+      "sha256": "4637f84caeb8bef5e002fe2c2e98b306813e0462d24a670d441e44fc6da21ae5",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "c1733a0c4a2ce389489a8bc11ea3b68ef5693d34",
+      "path": "apps/runner/src/context-observations/claude-summary.test.ts",
+      "bytes": 13246,
+      "sha256": "fa71594307d87e7c8e53d204dcd7448391993cbac2e33a80161466552a58d040",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+      "path": "apps/server/src/context-transparency/migration.ts",
+      "bytes": 781,
+      "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+      "path": "apps/server/src/context-transparency/routes.test.ts",
+      "bytes": 3356,
+      "sha256": "157e7c40c29f36688455775e7a4da63e8df5077f6ff71d2315cf3ee1f2924348",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+      "path": "apps/server/src/context-transparency/routes.ts",
+      "bytes": 996,
+      "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+      "path": "apps/server/src/context-transparency/store.test.ts",
+      "bytes": 25516,
+      "sha256": "d4c9d024f2e92f1e2af3b0414adb12bbf44ce0c876d671ff33439de6f067b7a0",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 10963,
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+      "path": "packages/contracts/src/context-observation-event.test.ts",
+      "bytes": 3159,
+      "sha256": "cdfebdaa523e1eaaf11d8ff969f118729536a57fbd4139e62f49730bc0b779e5",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+      "path": "packages/contracts/src/context-observation-history.test.ts",
+      "bytes": 4754,
+      "sha256": "3a4cc602ed8a1b0f1b52b34bbbbf26b9725495309704b88a60b3eab8e975e41b",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+      "path": "packages/storage/migrations/027-context-observation-history.sql",
+      "bytes": 1891,
+      "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "c1733a0c4a2ce389489a8bc11ea3b68ef5693d34",
+      "path": "apps/runner/src/context-observations/claude-summary-values.ts",
+      "bytes": 2575,
+      "sha256": "5e97397133b44e7712aa0f0151b96ed25c069b7f13dc5df15ed7fc5c4e1c381c",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    },
+    {
+      "target": "c1733a0c4a2ce389489a8bc11ea3b68ef5693d34",
+      "path": "apps/runner/src/context-observations/claude-summary-values.test.ts",
+      "bytes": 6270,
+      "sha256": "b7492fc438723f2ca6543250c0da3fedaa12856af7d2af835030e869235ce216",
+      "approvedTargetEqualsMainGitEqualsMainWorkingTreeEqualsOwnerWorkingTree": true
+    }
+  ],
+  "matchedLeafSources": 18,
+  "mismatches": [],
+  "priorApprovedTargets": [
+    {
+      "target": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+      "isAncestorOfMain": false
+    },
+    {
+      "target": "9ac549dddd12b6bb186bf34116c4c72fe9889cfc",
+      "isAncestorOfMain": false
+    },
+    {
+      "target": "c1733a0c4a2ce389489a8bc11ea3b68ef5693d34",
+      "isAncestorOfMain": false
+    }
+  ],
+  "writingStopped": {
+    "all18LeafSources": true,
+    "effectiveBeforeScopeHandback": true
+  },
+  "checksRunThisUpdate": "read-only Git/byte/hash/metadata checks only; no tests, typecheck, PG, SDK, provider or services",
+  "limits": [
+    "SDK summary producer/current/remaining/consumed cut/Web remain successor work",
+    "Main integration is not deployment or real provider evidence",
+    "No authority to resume writing handed-back sources"
+  ],
+  "method": {
+    "skills": "existing local find-skills/codebase-design/clean-code (sickn33 bdacd76) applied; no installation",
+    "review": "metadata ownership, exact approved source bindings, honest history/current boundary and no duplicate status authority"
+  },
+  "localAuditNote": "First read-only receipt script had a Python parse error before execution; corrected script performed all checks. This is not an engineering test.",
+  "sourceScopeHandback": {
+    "receipt": "docs/evidence/wpf-mature-04/source-handback-receipt.json",
+    "claimId": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
+    "version": 7,
+    "committedAt": "2026-10-06T11:51:04.737Z",
+    "removedLeafSourceCount": 18,
+    "retainedScope": [
+      "docs/evidence/wpf-mature-04",
+      "plans/wpf-mature-04-context-transparency"
+    ]
+  },
+  "metadataValidation": {
+    "parseStatus": "delivered/M2/co-lead mika; 6 stable TODO states unchanged; implementation errors=[]; top-level errors=[]",
+    "links": "all status relative links resolve",
+    "diffCheck": "passed",
+    "liveDashboardRefresh": "not sampled in this update"
+  }
+}
