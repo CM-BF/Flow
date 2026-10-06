@@ -7,8 +7,9 @@
 | 单一status owner / model | w01_owner / 已派发 gpt-6-astra ultra（运行系统身份 GPT-6） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window |
 | Branch | codex/web-activity-window |
+| 工作分支状态 | in-progress；实现与作者验证完成，等待独立review |
 | Base | cc33403cd9b357fcd85484b7bc6952dc1220d689 |
-| Head / dirty | cc33403cd9b357fcd85484b7bc6952dc1220d689；实现已提交，当前仅证据metadata变更，实际Git另核 |
+| Head / dirty | 最近已核d891195688d849e7623cd2805b3f64cfd07b959d clean；本次仅metadata补字段，最终HEAD由Git/dashboard读取 |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 三规模正式生产矩阵完成，全部历史hash一致；末DOM200/802/1077；报告/限制已固定，等待正式独立review |
@@ -26,6 +27,6 @@
 | WPF-PERF02-01 | completed | w01_owner | [回执](../../docs/evidence/wpf-perf02/take-receipt.json)，原claims已先移scope |
 | WPF-PERF02-02 | completed | w01_owner | branch实现 a87f64f48a3b7e8d03429ab0673c210076a2df0d；尚待独立review |
 | WPF-PERF02-03 | completed | w01_owner | [结果](../../docs/evidence/wpf-perf02/results.md)，8browser/13tests/smoke/三矩阵通过 |
-| WPF-PERF02-04 | pending | reviewer/Lead | 无新target，不继承历史审查 |
+| WPF-PERF02-04 | in-progress | reviewer/Lead | 固定target a87f64f，等待正式结论；不继承历史审查 |
 
 架构影响：Activity渲染内部深模块，公共HTTP/中心/DB/依赖不变；最终target交Lead登记。Dashboard：唯一source已交管理者登记，聚合闭环待核。边界：普通production synthetic fixture并非真实用户INP/模型容量，projection数据驻留本批不变。
