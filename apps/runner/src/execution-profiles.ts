@@ -12,7 +12,7 @@ export function describeExecutionProfile(options: ClaudeAdapterOptions, adapter:
   const files = options.allowRead === false ? [] : [...options.materialFiles];
   return executionProfileConfigurationSchema.parse({
     harness: adapter.name, adapterVersion: adapter.version, model: options.model ?? 'sonnet',
-    thinking: 'disabled', permissionMode: 'dontAsk', access: files.length ? 'configured-readonly' : 'none',
+    thinking: 'disabled', permissionMode: 'dontAsk', access: options.goalTools ? 'goal-tools' : files.length ? 'configured-readonly' : 'none',
     requireReadApproval: options.requireReadApproval ?? false, materialScopeDigest: textDigest(JSON.stringify(files)),
     limits: { maxTurns: options.maxTurns ?? 4, maxBudgetUsd: options.maxBudgetUsd ?? 1, timeoutMs: options.timeoutMs ?? 90_000 },
   });
@@ -44,6 +44,7 @@ export function guardExecutionProfile(adapter: HarnessAdapter, reference: Execut
     name: adapter.name, version: adapter.version,
     async run(context) {
       const selected = context.task.executionProfile;
+      if (local.access === 'goal-tools' && (!selected || !context.goalTools) || local.access !== 'goal-tools' && context.goalTools) throw new Error('The configured goal tool purpose does not match this assignment.');
       if (selected && (context.task.harness !== local.harness || selected.id !== expected.id
         || selected.runnerId !== expected.runnerId || selected.configDigest !== expected.configDigest)) {
         throw new Error('The task execution profile does not match this runner configuration.');

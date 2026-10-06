@@ -1,3 +1,4 @@
+import type { GoalToolCapability, GoalToolRunReference } from './goal-tool-runs.js';
 import { z } from 'zod';
 import { assistantFinalDataSchema } from './assistant.js';
 import { harnessSchema, idSchema, MAX_DETAIL_BYTES, MAX_BATCH_BYTES, type DecisionAnswer, type TaskSubmission, type AttemptView, type HarnessName } from './tasks.js';
@@ -11,7 +12,7 @@ export type RegisterRunner = z.input<typeof registerRunnerSchema>;
 export interface RunnerRegistration { runnerId: string; token: string }
 export const ownershipSchema = z.strictObject({ attemptId: idSchema, ownerVersion: z.number().int().positive() });
 export type Ownership = z.infer<typeof ownershipSchema>;
-export interface ClaimedTask { attempt: AttemptView; task: TaskSubmission & { id: string } }
+export interface ClaimedTask { attempt: AttemptView; task: TaskSubmission & { id: string }; goalToolRun?: GoalToolRunReference }
 export interface ClaimResponse {
   assignment: ClaimedTask | null;
   /** Milliseconds granted at center lease creation, before response transport; 0 without an assignment.
@@ -51,6 +52,7 @@ export interface EventAcknowledgement { accepted: number; lastSequence: number }
 
 export interface HarnessContext {
   task: TaskSubmission;
+  goalTools?: GoalToolCapability;
   workingDirectory: string;
   signal: AbortSignal;
   assertOwnership(): Promise<void>;

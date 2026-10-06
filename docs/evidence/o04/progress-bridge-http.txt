@@ -1,0 +1,45 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution
+
+ ❯ apps/runner/src/goal-tool-bridge/integration.test.ts (2 tests | 2 failed) 13190ms
+   × runs real runner -> SDK MCP -> HTTP/PG commands and persists only the actual final result 6090ms
+   × cancels an active bridged query and records no final/artifact from its late synthetic result 6470ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/goal-tool-bridge/integration.test.ts > runs real runner -> SDK MCP -> HTTP/PG commands and persists only the actual final result
+TypeError: owner.task is not a function
+ ❯ apps/runner/src/goal-tool-bridge/integration.test.ts:76:115
+     74|   })(), { close() { closed = true; } });
+     75|   const run = await planned(query); nodeId = run.nodeId; const promise…
+     76|   await expect.poll(async () => (await owner.task(run.accepted.task.id…
+       |                                                                                                                   ^
+     77|   run.stop.abort(); await promise;
+     78|   expect(queryCalls).toBe(1); expect(closed).toBe(true);
+
+Caused by: Error: Matcher did not succeed in time.
+ ❯ apps/runner/src/goal-tool-bridge/integration.test.ts:76:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/runner/src/goal-tool-bridge/integration.test.ts > cancels an active bridged query and records no final/artifact from its late synthetic result
+TypeError: owner.task is not a function
+ ❯ apps/runner/src/goal-tool-bridge/integration.test.ts:94:115
+     92|   })(), { close() { closed = true; } });
+     93|   const run = await planned(query); const promise = run.start(); await…
+     94|   await expect.poll(async () => (await owner.task(run.accepted.task.id…
+       |                                                                                                                   ^
+     95|   run.stop.abort(); await promise; expect(closed).toBe(true);
+     96|   expect((await owner.assistantMessages(run.accepted.task.id)).message…
+
+Caused by: Error: Matcher did not succeed in time.
+ ❯ apps/runner/src/goal-tool-bridge/integration.test.ts:94:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  21:51:30
+   Duration  13.74s (transform 234ms, setup 0ms, import 470ms, tests 13.19s, environment 0ms)
+

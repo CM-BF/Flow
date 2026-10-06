@@ -12,10 +12,14 @@ export const executionProfileConfigurationSchema = z.strictObject({
   model: modelValue,
   thinking: z.literal('disabled'),
   permissionMode: z.literal('dontAsk'),
-  access: z.enum(['none', 'configured-readonly']),
+  access: z.enum(['none', 'configured-readonly', 'goal-tools']),
   requireReadApproval: z.boolean(),
   materialScopeDigest: digest,
   limits: z.strictObject({ maxTurns: z.number().int().min(1).max(4), maxBudgetUsd: z.number().positive().max(1), timeoutMs: z.number().int().min(1).max(90_000) }),
+}).superRefine((profile, context) => {
+  if (profile.access === 'goal-tools' && (profile.requireReadApproval || profile.materialScopeDigest !== '4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945')) {
+    context.addIssue({ code: 'custom', message: 'Goal tools require an empty material scope and no read approval policy.' });
+  }
 });
 export type ExecutionProfileConfiguration = z.infer<typeof executionProfileConfigurationSchema>;
 export const executionProfilePublicationSchema = z.strictObject({ configuration: executionProfileConfigurationSchema });

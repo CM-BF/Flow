@@ -35,16 +35,21 @@ export async function listProfiles(pool: Pool, after: string | undefined, limit:
   }, true);
 }
 
-export async function requireExecutionProfile(client: PoolClient, reference: ExecutionProfileReference): Promise<ExecutionProfile> {
+export async function requireExecutionProfile(client: PoolClient, reference: ExecutionProfileReference, purpose: 'ordinary' | 'goal-tools' = 'ordinary'): Promise<ExecutionProfile> {
   const row = (await client.query<ProfileRow & { revoked: boolean }>('SELECT p.*,r.revoked FROM flow.execution_profiles p JOIN flow.runners r ON r.id=p.runner_id WHERE p.id=$1', [reference.id])).rows[0];
   if (!row || row.revoked || row.runner_id !== reference.runnerId || row.config_digest !== reference.configDigest) {
     throw new HttpError(409, 'execution_profile_unavailable', 'Refresh the configured profile selection before submitting work.');
   }
+  const goalTools = row.configuration.access === 'goal-tools';
+  if ((purpose === 'goal-tools') !== goalTools) throw new HttpError(409, purpose === 'goal-tools' ? 'native_goal_tools_unavailable' : 'goal_profile_requires_grant', 'This execution profile is not authorized for this task purpose.');
   return profileView(row);
 }
-export async function assertTaskExecutionProfile(client: PoolClient, task: TaskSubmission): Promise<void> {
-  if (!task.executionProfile) return;
-  const profile = await requireExecutionProfile(client, task.executionProfile);
+export async function assertTaskExecutionProfile(client: PoolClient, task: TaskSubmission, purpose: 'ordinary' | 'goal-tools' = 'ordinary'): Promise<void> {
+  if (!task.executionProfile) {
+    if (purpose === 'goal-tools') throw new HttpError(409, 'goal_profile_required', 'Native goal tools require an explicit execution profile.');
+    return;
+  }
+  const profile = await requireExecutionProfile(client, task.executionProfile, purpose);
   if (task.harness !== profile.configuration.harness) throw new HttpError(409, 'profile_harness_mismatch', 'The selected profile does not support this task harness.');
   if (task.resumeSessionId) {
     const session = (await client.query<{ runner_id: string }>('SELECT runner_id FROM flow.sessions WHERE id=$1 AND harness=$2', [task.resumeSessionId, task.harness])).rows[0];
