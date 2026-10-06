@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-06T10:15:22.741Z",
+  "base": "http://127.0.0.1:49510/",
+  "sourceCommit": "a8c6d60418478edc7ae1c9f209fbe3df63495e02",
+  "sourceDirty": [
+    "M apps/execution-dashboard/public/architecture-data.js",
+    " M apps/execution-dashboard/test/architecture.test.mjs",
+    " M plans/d06-architecture-refresh/plan.md",
+    " M plans/d06-architecture-refresh/status.md",
+    "?? docs/evidence/d06/runtime/browser-check.mjs",
+    "?? docs/evidence/d06/runtime/browser-checks.json",
+    "?? docs/evidence/d06/runtime/data-dark-narrow.png",
+    "?? docs/evidence/d06/runtime/data-dark.png",
+    "?? docs/evidence/d06/runtime/data-light-narrow.png",
+    "?? docs/evidence/d06/runtime/direct.log",
+    "?? docs/evidence/d06/runtime/final-browser.log",
+    "?? docs/evidence/d06/runtime/final-direct.log",
+    "?? docs/evidence/d06/runtime/final-source-audit.log",
+    "?? docs/evidence/d06/runtime/first-browser-checks.json",
+    "?? docs/evidence/d06/runtime/first-browser.log",
+    "?? docs/evidence/d06/runtime/first-direct.log",
+    "?? docs/evidence/d06/runtime/first-source-audit.log",
+    "?? docs/evidence/d06/runtime/install.log",
+    "?? docs/evidence/d06/runtime/modules-light.png",
+    "?? docs/evidence/d06/runtime/preview.mjs",
+    "?? docs/evidence/d06/runtime/runtime-light.png",
+    "?? docs/evidence/d06/runtime/source-audit.json",
+    "?? docs/evidence/d06/runtime/source-audit.log",
+    "?? docs/evidence/d06/runtime/source-audit.mjs",
+    "?? docs/evidence/d06/runtime/states-dark.png",
+    "?? docs/evidence/d06/runtime/states-light.png"
+  ],
+  "sourceHashes": {
+    "apps/execution-dashboard/public/architecture-data.js": "e4691622cb695b3062056854d386ffdb5fe0bf1577292889a2064bbcf0382503",
+    "apps/execution-dashboard/test/architecture.test.mjs": "709fb6593dea36a90f4ff8b8ee9870ae7829ecd6b8656e0e52a291209cf3f599",
+    "docs/evidence/d06/runtime/browser-check.mjs": "9709c468d44d1fe8e637b73d853f1224a0a5fc2868f932e678140df35d04aabf",
+    "docs/evidence/d06/runtime/preview.mjs": "4ed4303abf13cb719db8f1a30ced5666fab1ba636fae09473951fc8830736e02",
+    "docs/evidence/d06/runtime/source-audit.mjs": "e11e138c8ef2844725b378b50328adb9544c6cf4e621dde9351e26a287b33d83"
+  },
+  "requests": [
+    "/api/snapshot"
+  ],
+  "browser": "154.0.8037.98",
+  "passed": true,
+  "observations": [
+    {
+      "view": "runtime",
+      "nodes": 11,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/f181d84b5fb3652d62e2a181acff442d42b3e066/apps/runner/src/protocol-dispatch/index.ts"
+    },
+    {
+      "view": "modules",
+      "nodes": 32,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/f181d84b5fb3652d62e2a181acff442d42b3e066/plans/x01-plugin-management/plan.md"
+    },
+    {
+      "view": "data",
+      "nodes": 17,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/f181d84b5fb3652d62e2a181acff442d42b3e066/apps/execution-dashboard/src/coordination/ledger.mjs"
+    },
+    {
+      "view": "states",
+      "nodes": 12,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/f181d84b5fb3652d62e2a181acff442d42b3e066/apps/server/src/evidence.ts"
+    },
+    {
+      "view": "dependencies",
+      "nodes": 7,
+      "keyboardSelect": true,
+      "source": "https://github.com/CM-BF/Flow/blob/f181d84b5fb3652d62e2a181acff442d42b3e066/plans/flow-002-provider-harness/plan.md"
+    }
+  ],
+  "pageErrors": [],
+  "narrowWidth": 390,
+  "reducedMotion": "reduce",
+  "scope": "dynamic local architecture preview; no model or database mutation"
+}

@@ -1,0 +1,68 @@
+{
+  "recordedAt": "2026-10-06 10:17:15 UTC",
+  "implementationTarget": "2c3160f42784ee814d968a953d557251c81a243d",
+  "sourceBase": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "browserObservedAt": "2026-10-06T10:17:13.749Z",
+  "originalSourceCommit": "1dcbc7c2db619e8b723f6847002f986458b52943",
+  "originalSourceDirty": [
+    "M apps/execution-dashboard/public/architecture-data.js",
+    " M docs/evidence/d06/runtime/quality.md",
+    " M plans/d06-architecture-refresh/plan.md",
+    " M plans/d06-architecture-refresh/review.md",
+    " M plans/d06-architecture-refresh/status.md",
+    "?? docs/evidence/d06/runtime/README.md",
+    "?? docs/evidence/d06/runtime/browser-checks.json",
+    "?? docs/evidence/d06/runtime/checks.json",
+    "?? docs/evidence/d06/runtime/data-dark-narrow.png",
+    "?? docs/evidence/d06/runtime/data-dark.png",
+    "?? docs/evidence/d06/runtime/data-light-narrow.png",
+    "?? docs/evidence/d06/runtime/direct.log",
+    "?? docs/evidence/d06/runtime/final-browser.log",
+    "?? docs/evidence/d06/runtime/final-direct.log",
+    "?? docs/evidence/d06/runtime/final-source-audit.log",
+    "?? docs/evidence/d06/runtime/first-browser-checks.json",
+    "?? docs/evidence/d06/runtime/first-browser.log",
+    "?? docs/evidence/d06/runtime/first-direct.log",
+    "?? docs/evidence/d06/runtime/first-source-audit.log",
+    "?? docs/evidence/d06/runtime/install.log",
+    "?? docs/evidence/d06/runtime/modules-bottom-light.png",
+    "?? docs/evidence/d06/runtime/modules-light.png",
+    "?? docs/evidence/d06/runtime/pre-wording-browser-checks.json",
+    "?? docs/evidence/d06/runtime/pre-wording-direct.log",
+    "?? docs/evidence/d06/runtime/runtime-light.png",
+    "?? docs/evidence/d06/runtime/source-audit.json",
+    "?? docs/evidence/d06/runtime/source-audit.log",
+    "?? docs/evidence/d06/runtime/source-binding.json",
+    "?? docs/evidence/d06/runtime/states-dark.png",
+    "?? docs/evidence/d06/runtime/states-light.png",
+    "?? docs/evidence/d06/runtime/validation.md"
+  ],
+  "hashes": {
+    "apps/execution-dashboard/public/architecture-data.js": {
+      "testedSha256": "08c610090eabc3428a8e8584c4dc4d7e79a0062eecd4f3e7488f4b9d8821faf1",
+      "targetSha256": "08c610090eabc3428a8e8584c4dc4d7e79a0062eecd4f3e7488f4b9d8821faf1",
+      "currentSha256": "08c610090eabc3428a8e8584c4dc4d7e79a0062eecd4f3e7488f4b9d8821faf1"
+    },
+    "apps/execution-dashboard/test/architecture.test.mjs": {
+      "testedSha256": "709fb6593dea36a90f4ff8b8ee9870ae7829ecd6b8656e0e52a291209cf3f599",
+      "targetSha256": "709fb6593dea36a90f4ff8b8ee9870ae7829ecd6b8656e0e52a291209cf3f599",
+      "currentSha256": "709fb6593dea36a90f4ff8b8ee9870ae7829ecd6b8656e0e52a291209cf3f599"
+    },
+    "docs/evidence/d06/runtime/browser-check.mjs": {
+      "testedSha256": "9709c468d44d1fe8e637b73d853f1224a0a5fc2868f932e678140df35d04aabf",
+      "targetSha256": "9709c468d44d1fe8e637b73d853f1224a0a5fc2868f932e678140df35d04aabf",
+      "currentSha256": "9709c468d44d1fe8e637b73d853f1224a0a5fc2868f932e678140df35d04aabf"
+    },
+    "docs/evidence/d06/runtime/preview.mjs": {
+      "testedSha256": "4ed4303abf13cb719db8f1a30ced5666fab1ba636fae09473951fc8830736e02",
+      "targetSha256": "4ed4303abf13cb719db8f1a30ced5666fab1ba636fae09473951fc8830736e02",
+      "currentSha256": "4ed4303abf13cb719db8f1a30ced5666fab1ba636fae09473951fc8830736e02"
+    },
+    "docs/evidence/d06/runtime/source-audit.mjs": {
+      "testedSha256": "e11e138c8ef2844725b378b50328adb9544c6cf4e621dde9351e26a287b33d83",
+      "targetSha256": "e11e138c8ef2844725b378b50328adb9544c6cf4e621dde9351e26a287b33d83",
+      "currentSha256": "e11e138c8ef2844725b378b50328adb9544c6cf4e621dde9351e26a287b33d83"
+    }
+  },
+  "limits": "Post-run binding only: original report HEAD/dirty are preserved. No deployed product, provider, live dashboard or product DB was exercised."
+}

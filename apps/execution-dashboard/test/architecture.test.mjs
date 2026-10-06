@@ -37,14 +37,14 @@ test('architecture static assets stay within existing read-only loopback server 
 });
 
 test('fixed snapshot separates integrated Web and center capabilities from later UI work',()=>{
-  assert.equal(baseline.commit,'9c6fa9b100f04916f43b04280f05f497b28eeb0f');
+  assert.equal(baseline.commit,'f181d84b5fb3652d62e2a181acff442d42b3e066');
   assert.match(baseline.verifiedAt, /^2026-10-06T\d{2}:\d{2}:\d{2}Z$/);
   const source=file=>execFileSync('git',['show',`${baseline.commit}:${file}`],{encoding:'utf8'});
   const server=source('apps/server/src/index.ts');
   for(const route of ['registerGoalRoutes','registerConversationRoutes','registerPluginRoutes','registerAssistantRoutes','registerExecutionProfileRoutes','registerConversationQueueRoutes','registerGoalToolRunRoutes','registerGoalGraphProposalRoutes','registerKnowledgeRoutes','registerConversationContextRoutes','registerGoalGraphRunRoutes','registerNativeActivityRoutes','registerAssistantStreamRoutes','registerActiveSteeringRoutes']) assert.ok(server.includes(`${route}(app,`), route);
   assert.ok(server.includes('registerShutdown(app,'));
   const modules=views.find(view=>view.id==='modules');
-  for(const id of ['goals','conversations','plugins','host','profiles','queue','proposals','knowledge','context','graphruns','graphnative','packages','fetches','renderers','activity','stream','steering','nativecontrol']) assert.equal(modules.nodes.find(node=>node.id===id).kind,'flow');
+  for(const id of ['goals','conversations','plugins','host','profiles','queue','proposals','knowledge','context','graphruns','graphnative','packages','fetches','renderers','activity','stream','steering','nativecontrol','tui','interaction','nativehost','codexadapter']) assert.equal(modules.nodes.find(node=>node.id===id).kind,'flow');
   for(const id of ['nextweb','nextbackend']) assert.equal(modules.nodes.find(node=>node.id===id).kind,'planned');
   assert.match(source('apps/web/src/App.tsx'),/ConversationThread/);
   assert.match(source('apps/web/src/plugin-integration/react.tsx'),/import\("\.\.\/plugin-management\/PluginManagement"\)/);
@@ -72,14 +72,23 @@ test('integrated queue and graph proposal descriptions preserve explicit admissi
   assert.match(source('apps/server/src/goal-graph-proposals/index.ts'),/014-goal-graph-proposals.sql/);
 });
 
-test('transport optimization and shutdown do not imply parallel execution or safe cancellation',()=>{
+test('native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation',()=>{
   const source=file=>execFileSync('git',['show',`${baseline.commit}:${file}`],{encoding:'utf8'});
   const protocol=source('apps/runner/src/protocol-dispatch/index.ts');
   assert.match(protocol,/returnImmediately: true, historyLength: 0/);
   assert.match(protocol,/peer.snapshot\(\{ id: state.intent.remoteTaskId!, historyLength: 0 \}/);
   assert.match(protocol,/unsupported interaction or reconciliation/);
   assert.match(protocol,/client.protocolUncertain/);
-  assert.match(source('apps/runner/src/runtime.ts'),/await execute\(assignment/);
+  const runtime=source('apps/runner/src/runtime.ts');
+  assert.match(runtime,/const completion = execute\(assignment/);
+  assert.match(runtime,/const active = new Map/);
+  assert.match(runtime,/active.size >= \(options.maxConcurrentAttempts \?\? 1\)/);
+  assert.match(runtime,/journal.unresolved\(new Set\(active.keys\(\)\)\)/);
+  assert.ok(runtime.indexOf('await journal.begin()') < runtime.indexOf('await client.claim('));
+  const config=source('apps/runner/src/concurrency-configuration.ts');
+  assert.match(config,/raw === undefined \? 1/); assert.match(config,/limit > 16/);
+  assert.match(config,/mode === 'a2a' && limit !== 1/);
+  assert.match(source('apps/runner/src/main.ts'),/FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS/);
   assert.match(source('apps/server/src/shutdown/index.ts'),/unacknowledged outcomes unknown/);
 });
 
@@ -116,7 +125,7 @@ test('current PG content and assistant provenance never become an implemented bl
 });
 
 
-test('knowledge and context are exact PG references, not automatically selected Web material',()=>{
+test('Web knowledge is explicit project selection and frozen citations, not automatic file material',()=>{
   const source=file=>execFileSync('git',['show',`${baseline.commit}:${file}`],{encoding:'utf8'});
   const search=source('apps/server/src/knowledge/search.ts');
   assert.match(search,/v.version=s.current_version/); assert.match(search,/WHERE s.project_id=\$1/);
@@ -127,7 +136,14 @@ test('knowledge and context are exact PG references, not automatically selected 
   assert.match(context,/WHERE id=\$1 AND conversation_id=\$2/);
   assert.match(source('apps/web/src/conversations/projection.ts'),/projectId: value.projectId/);
   const thread=source('apps/web/src/conversations/ConversationThread.tsx');
-  assert.doesNotMatch(thread,/knowledgeSearch|knowledgeResolve|conversationContext\(/);
+  assert.match(thread,/<KnowledgeComposer/); assert.match(thread,/knowledge.capture\(\)/);
+  assert.match(thread,/projection.queue.enqueue\(text, capture.knowledge\)/);
+  assert.match(thread,/projection.send\(text, creation, capture.knowledge\)/);
+  assert.match(thread,/projection.prepare\(creation\)/);
+  const binding=source('apps/web/src/plugin-integration/knowledge.tsx');
+  assert.match(binding,/controller\?\.freeze\(\)/);
+  assert.match(binding,/selected/);
+  assert.match(source('apps/web/src/conversation-context/receipts.ts'),/assertContextReceiptMatches/);
   const data=views.find(view=>view.id==='data');
   for(const id of ['knowledge','context']) assert.equal(data.nodes.find(node=>node.id===id).kind,'flow');
 });
@@ -159,12 +175,12 @@ test('package download is opt-in durable work and does not install or execute pl
   assert.match(modules.nodes.find(node=>node.id==='fetches').description,/仅显式packageFetchHost/);
 });
 
-test('typed activities and renderer are mounted, while stream App integration is still later work',()=>{
+test('typed activity, renderer, streaming and steering are mounted in the same official Thread',()=>{
   const source=file=>execFileSync('git',['show',`${baseline.commit}:${file}`],{encoding:'utf8'});
   const thread=source('apps/web/src/conversations/ConversationThread.tsx');
   assert.match(thread,/<ConversationDataRenderers/);assert.match(thread,/<ConversationActivities/);
-  assert.match(thread,/Replies appear when complete/);
-  assert.doesNotMatch(thread,/streamConversationMessages|ConversationStreams/);
+  assert.match(thread,/<ConversationStreams/); assert.match(thread,/<ConversationSteering/);
+  assert.match(thread,/messageRepository: streamState.repository/);
   assert.match(source('apps/web/src/conversation-stream/messages.ts'),/streamConversationMessages/);
   const activity=source('packages/contracts/src/native-activity.ts');
   assert.match(activity,/65_536/);assert.match(activity,/truncated body is only a UTF-8 prefix/);
@@ -172,7 +188,7 @@ test('typed activities and renderer are mounted, while stream App integration is
   assert.match(source('apps/server/src/native-activity/store.ts'),/unresolved && ended\?'unknown'/);
   const modules=views.find(view=>view.id==='modules');
   assert.match(modules.nodes.find(node=>node.id==='activity').description,/input-ready不当作running/);
-  assert.match(modules.nodes.find(node=>node.id==='stream').subtitle,/模块待App接线/);
+  assert.match(modules.nodes.find(node=>node.id==='stream').subtitle,/官方Thread已接/);
   assert.match(modules.nodes.find(node=>node.id==='renderers').subtitle,/App详情已接/);
 });
 
@@ -193,18 +209,48 @@ test('assistant patches have explicit negotiation and durable settlement, not a 
   for(const migration of ['020-native-activity.sql','022-assistant-stream.sql','023-plugin-package-fetches.sql','024-active-steering.sql'])assert.ok(source('packages/storage/migrations/'+migration).length);
 });
 
-test('durable steering and native host remain explicitly disabled by ordinary production entrypoints',()=>{
+test('steering UI is mounted but defaults off and requires explicit trusted center and runner configuration',()=>{
   const source=file=>execFileSync('git',['show',`${baseline.commit}:${file}`],{encoding:'utf8'});
   assert.match(source('apps/server/src/index.ts'),/acceptCommands: options.activeSteering === true/);
-  assert.doesNotMatch(source('apps/server/src/main.ts'),/activeSteering:/);
+  assert.match(source('apps/server/src/main.ts'),/parseActiveSteeringConfiguration\(process.env.FLOW_ACTIVE_STEERING\)/);
+  assert.match(source('apps/server/src/active-steering-configuration.ts'),/raw === undefined \|\| raw === '0'/);
   assert.match(source('apps/runner/src/runtime.ts'),/if \(options.activeSteering && adapter.name === 'claude'\)/);
-  assert.doesNotMatch(source('apps/runner/src/main.ts'),/activeSteering:/);
+  assert.match(source('apps/runner/src/main.ts'),/activeSteering: loaded.activeSteering/);
+  assert.match(source('apps/runner/src/configuration.ts'),/activeSteering: false/);
+  assert.match(source('apps/runner/src/configuration.ts'),/configured.descriptor.ports.steering === 'flow.active-steering.v1'/);
   assert.match(source('apps/runner/src/claude.ts'),/if \(context.steering\) steering = new NativeSteeringHost/);
   const contract=source('packages/contracts/src/active-steering.ts');
   assert.match(contract,/type SteeringStatus = 'accepted' \| 'received' \| 'observed-consumed' \| 'rejected' \| 'unknown'/);
   assert.match(contract,/never independent proof of model compliance/);
-  assert.match(source('apps/web/src/conversations/ConversationThread.tsx'),/Steering is not available in this Web version/);
+  assert.match(source('apps/web/src/conversations/ConversationThread.tsx'),/<ConversationSteering/);
+  assert.match(source('apps/web/src/plugin-integration/steering.tsx'),/steeringAdmission/);
   const modules=views.find(view=>view.id==='modules');
   assert.match(modules.nodes.find(node=>node.id==='steering').locality,/不证明模型遵循/);
-  assert.match(modules.nodes.find(node=>node.id==='nativecontrol').description,/默认main\/configuration不打开/);
+  assert.match(modules.nodes.find(node=>node.id==='nativecontrol').description,/默认无配置关闭/);
+});
+
+
+test('TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter',()=>{
+  const source=file=>execFileSync('git',['show',`${baseline.commit}:${file}`],{encoding:'utf8'});
+  assert.match(source('apps/tui/src/main.tsx'),/createInteractionController/);
+  assert.match(source('apps/tui/src/main.tsx'),/FlowClient/);
+  assert.match(source('packages/interaction/src/controller.ts'),/recover/);
+  const codex=source('apps/runner/src/native-harness/codex/index.ts');
+  assert.match(codex,/createTransport: CodexTransportFactory/);
+  assert.match(codex,/describeNativeHarness/);
+  assert.match(source('apps/runner/src/configuration.ts'),/configureClaudeHarness/);
+  assert.doesNotMatch(source('apps/runner/src/configuration.ts'),/configureCodexHarness/);
+  const modules=views.find(view=>view.id==='modules');
+  assert.match(modules.nodes.find(node=>node.id==='codexadapter').locality,/真实auth\/provider验收仍后继/);
+  assert.match(modules.nodes.find(node=>node.id==='nextweb').description,/没有持久上传/);
+  assert.throws(()=>execFileSync('git',['cat-file','-e',`${baseline.commit}:tools/personal-preview/web-release.mjs`],{stdio:'pipe'}));
+});
+
+test('task verification summary is not a per-artifact engineering approval or a deployment receipt',()=>{
+  const source=execFileSync('git',['show',`${baseline.commit}:apps/server/src/evidence.ts`],{encoding:'utf8'});
+  assert.match(source,/artifactVersion/); assert.match(source,/inputDigest/); assert.match(source,/nonempty/);
+  const runtime=views.find(view=>view.id==='runtime');
+  assert.match(runtime.nodes.find(node=>node.id==='verifier').description,/最新版本更新task汇总/);
+  assert.match(runtime.nodes.find(node=>node.id==='center').locality,/须分别查服务owner回执/);
+  assert.ok(!JSON.stringify(views).includes('个人center/runner b54'));
 });
