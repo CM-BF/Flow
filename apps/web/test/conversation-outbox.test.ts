@@ -55,6 +55,11 @@ describe("conversation admission outbox", () => {
     outbox.accept(first.id); outbox.fail(first.id, "Late response", false); outbox.bindConversation(first.id, "other");
     expect(outbox.getSnapshot()).toBeNull(); expect(outbox.retry(first.id)).toBeNull(); expect(() => outbox.begin(input)).toThrow("closed");
   });
+  it("preserves earlier receipt uncertainty when a later retry is definitely rejected", () => {
+    const outbox = setup(); const first = outbox.begin(input); outbox.fail(first.id, "Lost", false); outbox.retry(first.id);
+    outbox.fail(first.id, "Retry forbidden", true); expect(outbox.getSnapshot()).toMatchObject({ state: "unknown", everUnknown: true });
+    outbox.dismiss(first.id); expect(outbox.getSnapshot()).not.toBeNull();
+  });
   it("validates before replacing an existing rejection and publishes stable snapshots", () => {
     const outbox = setup(); const first = outbox.begin(input); outbox.fail(first.id, "Rejected", true);
     const snapshot = outbox.getSnapshot(); let notices = 0; const unsubscribe = outbox.subscribe(() => notices++);

@@ -10,28 +10,29 @@ import type { AppPluginSession } from "./session";
 import "./integration.css";
 
 const SessionContext = createContext<AppPluginSession | null>(null);
-const ThreadScope = createContext<{ viewId: string; taskId: string | null }>({ viewId: "", taskId: null });
+const ThreadScope = createContext<{ viewId: string; taskId: string | null; editableComposer?: boolean; messageTask?: (id: string) => string | null }>({ viewId: "", taskId: null });
 const globalContext: ResourceContext = { kind: "global" };
 export function PluginProvider({ session, children }: { session: AppPluginSession; children: ReactNode }) {
   return <SessionContext.Provider key={session.id} value={session}>{children}</SessionContext.Provider>;
 }
-export function PluginThreadScope({ viewId, taskId, children }: { viewId: string; taskId: string | null; children: ReactNode }) {
-  return <ThreadScope.Provider value={{ viewId, taskId }}>{children}</ThreadScope.Provider>;
+export function PluginThreadScope({ viewId, taskId, messageTask, editableComposer, children }: { viewId: string; taskId: string | null; editableComposer?: boolean; messageTask?: (id: string) => string | null; children: ReactNode }) {
+  return <ThreadScope.Provider value={{ viewId, taskId, messageTask, editableComposer }}>{children}</ThreadScope.Provider>;
 }
 export function AppSlot({ slot, context = globalContext, className = "" }: { slot: SlotId; context?: ResourceContext; className?: string }) {
   const session = useContext(SessionContext);
   return session ? <ExtensionSlot host={session.host} slot={slot} context={context} className={`flow-plugin-slot ${className}`} /> : null;
 }
 export function MessageActions() {
-  const { taskId } = useContext(ThreadScope);
+  const scope = useContext(ThreadScope);
   const messageId = useAuiState(state => state.message.id);
   const role = useAuiState(state => state.message.role);
+  const taskId = scope.messageTask ? scope.messageTask(messageId) : scope.taskId;
   if (!taskId || (role !== "user" && role !== "assistant")) return null;
   return <AppSlot slot="chat.message.actions" context={{ kind: "message", taskId, messageId, role }} className="flow-message-extensions" />;
 }
 export function ComposerActions() {
-  const { viewId, taskId } = useContext(ThreadScope);
-  return <AppSlot slot="chat.composer.actions" context={{ kind: "composer", viewId, isDraft: !taskId && viewId.startsWith("draft-") }} />;
+  const { viewId, taskId, editableComposer } = useContext(ThreadScope);
+  return <AppSlot slot="chat.composer.actions" context={{ kind: "composer", viewId, isDraft: editableComposer ?? (!taskId && viewId.startsWith("draft-")) }} />;
 }
 
 /** The rail stays 48px wide; text-based contributed actions live in an accessible popover. */

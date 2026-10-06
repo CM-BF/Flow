@@ -20,6 +20,7 @@ export interface OutboxEntry {
   readonly request: Readonly<ConversationTurnAdmission>;
   readonly state: "sending" | "unknown" | "rejected";
   readonly error: string | null;
+  readonly everUnknown: boolean;
 }
 
 /** A receipt owns its frozen input. It never owns or restores the next draft. */
@@ -49,7 +50,7 @@ export class ConversationOutbox {
       id, conversationId: input.conversationId,
       creationKey: `${id}:create`, turnKey: `${id}:turn`,
       creation: creation ? Object.freeze({ ...creation, requested: Object.freeze({ ...creation.requested }) }) : null,
-      request, state: "sending", error: null,
+      request, state: "sending", error: null, everUnknown: false,
     });
     return this.entry!;
   }
@@ -70,7 +71,8 @@ export class ConversationOutbox {
 
   fail(id: string, error: string, definitelyRejected: boolean) {
     if (!this.matches(id)) return;
-    this.publish({ ...this.entry!, state: definitelyRejected ? "rejected" : "unknown", error });
+    const unknown = this.entry!.everUnknown || !definitelyRejected;
+    this.publish({ ...this.entry!, state: unknown ? "unknown" : "rejected", error, everUnknown: unknown });
   }
 
   accept(id: string) { if (this.matches(id)) this.publish(null); }
