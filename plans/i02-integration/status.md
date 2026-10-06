@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:57:39 UTC / input maind679444c |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:23:26 UTC / input main70cc4e85 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | maind679444c；O14模块14源逐字一致，root类型组合通过；SVC06和D05已审metadata收口 |
+| 工作基线 / HEAD | main70cc；SVC06纯依赖计划与O14薄client固定九源零差，生产推进接线尚未接收 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
-| 检查状态 | 生产公共读口1/1 PG/HTTP、strict0已有原证据，集成十源零diff；无新provider/重复领域测量 |
-| 已集成main状态 / HEAD | O13/S01P06已main5db，TUI收口与首资源回执已mainec509；本批COST十源已审接收；个人runtime362/v15与Web8d8/v2不变 |
+| 检查状态 | 九源逐字同各自已审target；保留原7个纯检查与HTTP1/typecheck；无新增PG/provider或全库测试 |
+| 已集成main状态 / HEAD | 插件生产入口已main7810；本批SVC06纯计划/O14薄client接收，实际162来源；个人runtime362/v15和Web8d8/v2未变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 目标持续推进模块已接收；插件安装的生产入口正在验证，固定后台产物仍待资源条件。 |
-| 下一可用交付 | 已授权目标节点持续推进，以及各端直接查看用量说明。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 插件安装公共入口已交付；已接收后台依赖选择模块和目标推进的共享命令接口。 |
+| 下一可用交付 | 空间达标后完成网页兼容和中心自动推进的真实验证。 |
+| 当前阻塞 | ACTIVE: 磁盘余量不足局部数据库验证，大型构建继续关闭。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -181,3 +181,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T15:05:33.405554+00:00：X01五薄client/029默认关闭factory/私有配置/CLI均独审并受控接收，13源分别对固定67fd/5e121全相同；无领域复制或自动启用插件。canonical F01两metadata冲突按原owner acbd恢复，O14薄client仍未审未并入。见[成套接收](../../docs/evidence/i02/plugin-installation-production-integration.json)。
 
 2026-10-06T15:16:19.175003+00:00：接收O15唯一来源与四树可逆资源记录；162来源候选，个人服务保持362/v15与Web8d8/v2。无产品/模型重跑；[批次回执](../../docs/evidence/i02/o15-resource-registry-integration.json)。
+
+本批[九源接收绑定](../../docs/evidence/i02/closure-progression-client-integration.json)明确各自批准范围；新Claude设置leaf仅source provision，owner须fresh take，未冒实施完成。

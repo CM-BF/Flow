@@ -1,0 +1,68 @@
+{
+  "target": "deef0e484d37974171e42eee0f547ef3423ea9a6",
+  "observedAt": "2026-10-06T15:02:25.681055+00:00",
+  "sources": [
+    {
+      "path": "packages/client/src/goal-progression.test.ts",
+      "bytes": 3592,
+      "sha256": "dffe82961b0b05a0a7f81a0cad54269942b1219c20af23d690185e145521cdf8"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 51680,
+      "sha256": "297f77f7a05c0eda2fd588b63915a70034de260fefe6d17d87cc1d3dc069f75f"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1424,
+      "sha256": "ea7f16163aaf5e07b27e420143bfea85ff1b149b31fbb303579c1656fad0af94"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/goal-progression-client-green.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-client-green.txt",
+      "bytes": 320,
+      "sha256": "d5f35af9b26a97fecbbc1f67c922a78d06e9efb00a8d7cc386da0c48a6c90df6"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-client-red.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-client-red.txt",
+      "bytes": 1242,
+      "sha256": "0d5cc57808a31c78cc95d245aefde308d630fe2e62d8c5696637a65f8d80d70d"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-client-types.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-client-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "domainInput": {
+    "path": "packages/contracts/src/goal-progression.ts",
+    "bytes": 2915,
+    "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10",
+    "target": "b8081a8fba7468337f668670a67206005bc0a73f"
+  },
+  "scope": "three owner methods and public export; no factory or domain change",
+  "checks": {
+    "httpPassed": 1,
+    "httpMs": 29,
+    "redRetained": true,
+    "typesExit": 0,
+    "PG": 0,
+    "provider": 0
+  }
+}

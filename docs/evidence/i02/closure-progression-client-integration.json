@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-06T15:23:26.503311+00:00",
+  "base": "70cc4e852365e974cefde30bfad75c7d233985c6",
+  "sources": [
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "target": "87dc292ae2dc8c1357f074ec7bddd41de20108d8",
+      "bytes": 9549,
+      "sha256": "66b132566e6f34e942f5dbd11ffd04241a8608c81b453fba60b9b635c28a9067"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "target": "87dc292ae2dc8c1357f074ec7bddd41de20108d8",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "target": "87dc292ae2dc8c1357f074ec7bddd41de20108d8",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+      "target": "87dc292ae2dc8c1357f074ec7bddd41de20108d8",
+      "bytes": 7646,
+      "sha256": "e40fd401bb7e307dde9ba957a8c56c1c4b21d9f135d8e33ecec0705f4dadcc8f"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.test.mjs",
+      "target": "87dc292ae2dc8c1357f074ec7bddd41de20108d8",
+      "bytes": 2790,
+      "sha256": "cf863600d4e1e5a70c876854ddef07471838452b24fe6d386d2cde6d87385f1c"
+    },
+    {
+      "path": "docs/evidence/svc06/closure-observe.mjs",
+      "target": "87dc292ae2dc8c1357f074ec7bddd41de20108d8",
+      "bytes": 2518,
+      "sha256": "d0123fb73c5aae9a71ca8a7fcc9a10e0acbc28a479954a2b348149c283762a47"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "target": "deef0e484d37974171e42eee0f547ef3423ea9a6",
+      "bytes": 51680,
+      "sha256": "297f77f7a05c0eda2fd588b63915a70034de260fefe6d17d87cc1d3dc069f75f"
+    },
+    {
+      "path": "packages/client/src/goal-progression.test.ts",
+      "target": "deef0e484d37974171e42eee0f547ef3423ea9a6",
+      "bytes": 3592,
+      "sha256": "dffe82961b0b05a0a7f81a0cad54269942b1219c20af23d690185e145521cdf8"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "target": "deef0e484d37974171e42eee0f547ef3423ea9a6",
+      "bytes": 1424,
+      "sha256": "ea7f16163aaf5e07b27e420143bfea85ff1b149b31fbb303579c1656fad0af94"
+    }
+  ],
+  "review": [
+    "svc06 closure-independent-review.json",
+    "f01 goal-progression-client-independent-review.md"
+  ],
+  "limits": [
+    "SVC06 pure planning only, no parser/build wiring or artifact readiness.",
+    "O14 thin client only; production migration/scan/CLI and PG remain unintegrated."
+  ],
+  "validation": "Nine exact fixed-source comparisons; no code conflict or new behavior; original direct checks retained, no rerun.",
+  "runtime": "personal362 accepting15/Web8d8v2 unchanged",
+  "providerCalls": 0
+}
