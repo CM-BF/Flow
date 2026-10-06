@@ -22,4 +22,4 @@ Node24.20.0 / pnpm9.15.4 / Vitest4.0.18；固定依赖离线安装且ignore-scri
 - 版本/operation列表和安装列表有界，但分页不是跨请求冻结快照；版本及安装按ID，operations按afterRevision。mutation replay返回原snapshot；当前状态另GET。
 - trigger保护正常SQL操作的不可变历史，不声称DB超级用户无法改schema。
 
-待独立review与主Lead共享接线/集成。架构变化由D05/主Lead基于最终已审并集成target登记，不能在main图显示分支实现已上线。
+Root独立只读review已APPROVED target3d0cfc898b9e9bba1d0985d33b2eb263c2fc26ee；唯一bootstrap重复路由finding已修复，作者追加17/17（1.26s）见[输出](review-bootstrap-checks.txt)。Root核读证据而未复跑；typecheck仍绑定核心d3b0004。待主Lead共享接线/集成。架构变化由D05/主Lead基于最终已审并集成target登记，不能在main图显示分支实现已上线。
