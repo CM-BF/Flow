@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-06T16:25:08.373523+00:00",
+  "baseDocuments": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+  "beforeHead": "5f0fc08bfa84f35ec5728f0dfbee639619496027",
+  "scope": [
+    "README.md",
+    "apps/runner/README.md",
+    "docs/architecture/recovery-boundaries.md"
+  ],
+  "sourceReviewSha256": "17bb9d2423cafd9a98ff1c6cfd87a98c4a7ca68ced8fe214ab0aecaf3ff9a9db",
+  "changes": "Correct local vs registered concurrency and specialized hosts; historical probe budgets; current reconciliation commands and TUI entry",
+  "productSourceChanges": 0,
+  "tests": 0,
+  "PG": 0,
+  "provider": 0,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4979,
+      "sha256": "1a543f165bd548c0c07ba826ccc0cb1762dc2e5bf0df1a97483ddb676600c392"
+    },
+    {
+      "path": "apps/runner/README.md",
+      "bytes": 4243,
+      "sha256": "dc85fcfea1afd8fa907cc4b4183ded52d750baf21916c94e8df2955aa97b893f"
+    },
+    {
+      "path": "docs/architecture/recovery-boundaries.md",
+      "bytes": 3588,
+      "sha256": "c0f3949fae23380a8b2c847a2222b6143f07c0525a041f3d3b815f71dbba9a39"
+    }
+  ]
+}
