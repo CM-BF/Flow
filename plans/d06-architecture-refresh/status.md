@@ -2,35 +2,36 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 UTC | 2026-10-06 08:16:47 UTC |
+| 最近更新时间 UTC | 2026-10-06 10:08:46 UTC |
 | Plan | [plan.md](plan.md) |
+| 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
+| co-lead | Web /root |
 | 单一status owner / model | d01_owner / gpt-6-astra ultra |
-| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-stream |
-| Branch | codex/dashboard-architecture-stream |
-| 工作基线 / HEAD | 9c6fa9b100f04916f43b04280f05f497b28eeb0f / 2c857bdc83e4769c5099de2f37f4a7f2140e834b（实现；后续metadata由Git聚合） |
-| 工作树dirty状态 | 五实现路径已冻结，当前仅本轮metadata待提交；交付HEAD/clean以Git回执为准 |
+| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime |
+| Branch | codex/dashboard-architecture-runtime |
+| 工作基线 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066；当前HEAD/dirty由Git聚合 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 检查状态 | PASSED 2c857bdc83e4769c5099de2f37f4a7f2140e834b；13 Node、56来源/80固定行、五图Chrome浅深390/键盘；[验证](../../docs/evidence/d06/stream/validation.md) |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；本轮固定9c6源码数据已完成，已获独审，等待Lead接收；后续主线移动不改变该快照 |
-| 实现目标 | 2c857bdc83e4769c5099de2f37f4a7f2140e834b |
-| 实现范围 | apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/test/architecture.test.mjs, docs/evidence/d06/stream/source-audit.mjs, docs/evidence/d06/stream/browser-check.mjs, docs/evidence/d06/stream/preview.mjs |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 架构图已通过独立审查，工具活动、逐段正文和后台任务边界清晰 |
-| 下一可用交付 | 把已审架构快照交主线接收并部署 |
+| 当前产出 | 固定架构刷新已领取，正在核对已接聊天、终端与执行器职责 |
+| 下一可用交付 | 提供源码可追溯的五图，明确实现、部署与待实现能力 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED 2c857bdc83e4769c5099de2f37f4a7f2140e834b；root 2026-10-06 08:16:16 UTC |
-| D04 claim | e06a216c-886f-47bd-92cf-b17a0412c062 v1 active，四scope，08:04:22.868Z COMMITTED |
+| 实现目标 | UNKNOWN |
+| 实现范围 | apps/execution-dashboard/public/architecture-data.js,apps/execution-dashboard/test/architecture.test.mjs |
+| 检查状态 | NOT_RUN；未固定实现 |
+| 已集成main状态 / HEAD | NOT_INTEGRATED；source base f181已main，本轮图尚未交付 |
+| Review | [review.md](review.md)，NOT_STARTED |
+| D04 claim | 84fd3e7d-6ee1-4a0a-b73c-57294499e9e4 v1 active，四literal |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| D06-01 | completed | d01_owner | 树/receipt/历史已核；Lead正式fc113回执确认D06唯一source迁移，非本队API采样 |
-| D06-02 | completed | d01_owner | 56节点来源/80固定行，活动/stream/steering/X05界限已更新 |
-| D06-03 | completed | d01_owner | 13 Node + source audit + 五图Chrome/浅深390/键盘通过；已目视两图；原首次locator失败保留 |
-| D06-04 | in-progress | d01_owner | fixed 2c857bdc83e4769c5099de2f37f4a7f2140e834b root08:16:16 APPROVED；main接收/释放未完成 |
+| D06-01 | completed | d01_owner | fixed f181独立树clean，fresh claim4scope，旧e06a v2 released与原样历史；source迁移待Lead |
+| D06-02 | in-progress | d01_owner | 固定源码审阅，未声称数据已更新 |
+| D06-03 | pending | d01_owner | 局部Node/source/browser待实施后跑 |
+| D06-04 | pending | d01_owner | target未固定，review未开始/main未接收 |
 
-此为D06唯一新canonical；旧dashboard-architecture-context不再写。Lead正式fc113回执确认新source迁移/92来源服务重载；本队未重复API采样，不能由此声称本轮图数据已发布。源码基线不追moving main；个人center/runner b54/v6仅Lead回执，未由本片验证。无产品DB、模型、registry或4320重启；旧58394/58207/55247不动。
+本轮唯一source拟迁本树，仍原D06 ID；旧stream树只读，主线旧副本不覆盖当前源。四scope以[receipt](../../docs/evidence/d06/runtime/take-receipt.json)为准。个人产物由服务owner提供receipt，本图不取真实服务或租约，不称main等于个人页面。
 
-架构影响：仅更新固定策展数据，不改变产品模块或renderer Interface。[原receipt](../../docs/evidence/d06/stream/take-receipt.json)、[历史](../../docs/evidence/d06/stream/history.md)、[质量](../../docs/evidence/d06/stream/quality.md)。
+架构影响：仅固定策展内容，无renderer Interface改变；[方法](../../docs/evidence/d06/runtime/quality.md)。
