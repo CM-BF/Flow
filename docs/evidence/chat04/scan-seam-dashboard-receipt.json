@@ -1,0 +1,94 @@
+{
+  "generatedAt": "2026-10-06T04:55:48.334Z",
+  "taskId": "CHAT04",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T04:55:48.163Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue/plans/chat04-conversation-queue/status.md",
+    "syncedAt": "2026-10-06T04:55:48.334Z",
+    "stale": false,
+    "ageHours": 9.277777777777778e-05
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/conversation-queue",
+    "head": "b69f6c512392a017aae838e8c3b80bd12ceb7c1e",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T04:55:48.755Z"
+  },
+  "current": true,
+  "issues": [],
+  "review": "approved",
+  "checks": {
+    "state": "passed",
+    "target": "fac202e32cc4c223e2e6abc64c67d11d39e439b0",
+    "record": "PASSED fac202e32cc4c223e2e6abc64c67d11d39e439b0；32 queue/noEmit重新通过，原22consumer证据保留"
+  },
+  "implementationProof": {
+    "target": "fac202e32cc4c223e2e6abc64c67d11d39e439b0",
+    "head": "b69f6c512392a017aae838e8c3b80bd12ceb7c1e",
+    "scopes": [
+      "apps/server/src/conversation-queue",
+      "apps/server/src/conversations/commands.ts",
+      "apps/server/src/conversations/admission.ts",
+      "apps/server/src/conversations/state.ts",
+      "packages/contracts/src/conversations.ts",
+      "packages/contracts/src/conversation-queue.ts",
+      "packages/storage/migrations/011-conversation-queue.sql",
+      "docs/evidence/chat04/run-consumer.mjs"
+    ],
+    "observedAt": "2026-10-06T04:55:48.815Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/chat04/README.md",
+      "docs/evidence/chat04/checks.json",
+      "docs/evidence/chat04/latest-cleanup.json",
+      "docs/evidence/chat04/latest-resource.json",
+      "docs/evidence/chat04/quality.md",
+      "docs/evidence/chat04/scan-seam-queue-result.json",
+      "docs/evidence/chat04/scan-seam-queue.log",
+      "docs/evidence/chat04/scan-seam-typecheck-result.json",
+      "docs/evidence/chat04/scan-seam-typecheck.log",
+      "docs/evidence/chat04/v2-approved-checks.json",
+      "docs/evidence/chat04/v2-approved-latest-cleanup.json",
+      "docs/evidence/chat04/v2-approved-latest-resource.json",
+      "plans/chat04-conversation-queue/review.md",
+      "plans/chat04-conversation-queue/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "assignments": [
+    {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/server/src/conversation-queue",
+        "apps/server/src/conversations/admission.ts",
+        "apps/server/src/conversations/commands.ts",
+        "apps/server/src/conversations/state.ts",
+        "docs/evidence/chat04",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/storage/migrations/011-conversation-queue.sql",
+        "plans/chat04-conversation-queue"
+      ],
+      "state": "active",
+      "branch": "codex/conversation-queue",
+      "origin": "new",
+      "taskId": "CHAT04",
+      "worker": "b01_bounded_reads",
+      "claimId": "3be53dee-08c2-4c88-85ee-a29781842223",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue",
+      "createdAt": "2026-10-06T04:21:00.329Z",
+      "updatedAt": "2026-10-06T04:21:00.329Z",
+      "observedAt": null,
+      "needsVerification": false,
+      "matchesSource": true
+    }
+  ]
+}
