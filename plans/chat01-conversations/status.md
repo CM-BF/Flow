@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 03:48 UTC |
+| 最近更新时间 | 2026-10-06 03:49 UTC |
 | 单一 status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center |
 | Branch | codex/conversation-center |
 | 工作基线 / HEAD | 6bb380b900f17bfbf808a95e7d9c0313c4991922；合同4c2408e4db3595879f6471cb5fffccadec975b3d；历史首片段2d3bb61b35318f999c9f0f336bb3f443418bb5dc；当前typed实现d0f4f5d8abc8995b22a43879880e090bfb898024 |
 | 工作树 dirty 状态 | 源码target提交后clean；本次仅metadata收尾 |
-| 工作分支状态 | delivered（typed消费delta待独立review） |
+| 工作分支状态 | delivered（typed消费delta独立APPROVED，待集成） |
 | 检查状态 | PASSED；typed delta 22/22真实PG/HTTP（16.51s）+全库typecheck；target d0f4f5d8abc8995b22a43879880e090bfb898024 |
-| Review | NOT_STARTED（typed delta）；历史首片段2d3bb61b35318f999c9f0f336bb3f443418bb5dc已由Goal Owner只读APPROVED，未重跑 |
+| Review | APPROVED；Goal Owner / gpt-6-astra，typed target d0f4f5d8abc8995b22a43879880e090bfb898024；核8新增行为及22/22+typecheck原证据，无重跑 |
 | 已集成 main 状态 / HEAD | 本任务未集成；输入base尚非main能力 |
 | 实现目标 | d0f4f5d8abc8995b22a43879880e090bfb898024 |
 | 实现范围 | packages/contracts/src/conversations.ts, apps/server/src/conversations/, packages/storage/migrations/007-conversations.sql |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 已接入有明确来源的最终回复，保留实际配置与未知值 |
-| 下一可用交付 | typed消费delta独立复审与生产/Web集成 |
+| 下一可用交付 | 生产/Web集成与另行授权的真实聊天验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 

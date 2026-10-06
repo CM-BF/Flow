@@ -1,6 +1,6 @@
 # CHAT01 持久对话中心首片段
 
-状态：completed（typed消费delta交付，待独立复审）；创建2026-10-06。Owner runner_owner / gpt-6-astra。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center`，branch `codex/conversation-center`，base6bb380b900f17bfbf808a95e7d9c0313c4991922。
+状态：completed（typed消费delta已独立APPROVED，待集成）；创建2026-10-06。Owner runner_owner / gpt-6-astra。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-center`，branch `codex/conversation-center`，base6bb380b900f17bfbf808a95e7d9c0313c4991922。
 
 目标：普通聊天直接进入持久conversation/有序turn→独立durable task，不等待O01 goal编排。conversation ID与native session ID分开；复用acceptTask事务和已有runner session affinity/互斥/fencing。首片段仅已完成上一轮之后的follow-up，忙/uncertain409；queue/steer明确unsupported，不能偷换为内存队列/取消。
 
