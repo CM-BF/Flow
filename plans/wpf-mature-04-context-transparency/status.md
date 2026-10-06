@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T11:08:57.479785+00:00 / main 2e71fabc218df28f6ccb78a927432ae1101c17c5 clean；未将分支验证当main功能 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:09:53 UTC / main 2e71fabc218df28f6ccb78a927432ae1101c17c5 clean；未将分支验证当main功能 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -14,7 +14,7 @@
 | 工作树dirty状态 | 实现9ac549dd已固定；本轮仅自有交审metadata，10源及原始证据停写等待独审 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASS 9ac549dddd12b6bb186bf34116c4c72fe9889cfc：50/50（41既有+9真实PG）、root严格noEmit0；真实专库已DROP；全局鉴权/挂载NOT_RUN，见[证据](../../docs/evidence/wpf-mature-04/history-pg-checks.json) |
+| 检查状态 | PASSED 9ac549dddd12b6bb186bf34116c4c72fe9889cfc：50/50（41既有+9真实PG）、root严格noEmit0；真实专库已DROP；全局鉴权/挂载NOT_RUN，见[证据](../../docs/evidence/wpf-mature-04/history-pg-checks.json) |
 | 已集成main状态 / HEAD | 未集成：本次核main 2e71fabc218df28f6ccb78a927432ae1101c17c5 clean，879/3ab/9ac均非祖先；[固定集成输入](../../docs/evidence/wpf-mature-04/integration-readiness.json) |
 | 实现目标 | 9ac549dddd12b6bb186bf34116c4c72fe9889cfc |
 | 实现范围 | apps/server/src/context-transparency/migration.ts, apps/server/src/context-transparency/routes.test.ts, apps/server/src/context-transparency/routes.ts, apps/server/src/context-transparency/store.test.ts, apps/server/src/context-transparency/store.ts, packages/contracts/src/context-observation-event.test.ts, packages/contracts/src/context-observation-event.ts, packages/contracts/src/context-observation-history.test.ts, packages/contracts/src/context-observation-history.ts, packages/storage/migrations/027-context-observation-history.sql |
@@ -72,3 +72,5 @@
 2026-10-06 11:03:13 UTC：Execution Lead正式分配027-context-observation-history.sql，026仍属ATTACH01。fresh bdea351a clean、原v4后原子追加SQL及局部migration.ts为v5；[收据](../../docs/evidence/wpf-mature-04/history-ddl-amend-receipt.json)。仅正式DDL供真实随机专库验证，未改全局mount/事件/client；旧6与历史raw保持固定。
 
 2026-10-06T11:08:57.479785+00:00：实现固定9ac549dddd12b6bb186bf34116c4c72fe9889cfc，50/50（9真实PG+既有41，前49轮重叠不累计）、strict noEmit0；两次随机专库均0连接后DROP，未用026，未启动server/scheduler/runner/provider。原两轮strict解析错误保留且仅以实际源码声明/已安装类型路径解决。10source/8raw/4support/6旧已审source逐字绑定[manifest](../../docs/evidence/wpf-mature-04/history-pg-manifest.json)；所有source/raw停写待独审。main观测与target祖先事实见manifest，不以本分支通过宣称main已上线。
+
+2026-10-06 11:09:53 UTC：fresh v5 ACTIVE/8251d597 clean后只修dashboard枚举与UTC格式：检查使用PASSED，时间使用显式UTC。只读parseStatus确认target9ac、10literal、review阶段/NOT_STARTED，无source/raw改动或工程重测。正式027入口/薄接线已固定于target内canonical请求。
