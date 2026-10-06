@@ -1,0 +1,42 @@
+{
+  "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7",
+  "metadata": "63b7a302e3630075b2472904805ff3fe07eb9989",
+  "source": [
+    {
+      "path": "apps/web/src/conversation-stream/patches.ts",
+      "bytes": 13510,
+      "sha256": "8868cc08faa2ac17f48e3c8cafc8d07521cccd635f05632647e571c60281addc",
+      "matches": true
+    },
+    {
+      "path": "apps/web/src/conversation-stream/projection.ts",
+      "bytes": 10816,
+      "sha256": "336c8f81eff737c9d62f744305252e3868f02f63ea7d316014a1188305d4fa9f",
+      "matches": true
+    },
+    {
+      "path": "apps/web/src/conversation-stream/messages.ts",
+      "bytes": 6555,
+      "sha256": "624b1a82a70bd2e7cedc53a35a21be0f0bbcb45e39092ebbb4d9fb92aeef1903",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/conversation-stream.test.ts",
+      "bytes": 16842,
+      "sha256": "a3ef6fb569a02e655b1ed187b8a28a6e6a7eea5f7f521cfd8aca467ec7be1cda",
+      "matches": true
+    },
+    {
+      "path": "apps/web/test/conversation-stream-projection.test.ts",
+      "bytes": 17622,
+      "sha256": "6ed3910fd9e22339009eca8593fbb2418d5189f93c74dbdbf444d5f8331f5265",
+      "matches": true
+    }
+  ],
+  "productIntegration": "candidate only; main frozen b54 for SVC02 window",
+  "newChecksRun": 0,
+  "limits": [
+    "module only; no App/HTTP/browser/provider claim",
+    "existing Web independent 54 checks reused"
+  ]
+}
