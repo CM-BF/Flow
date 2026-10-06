@@ -5,7 +5,7 @@ import { randomUUID } from 'node:crypto';
 import { JsonInputError, readJsonInput } from './json-input.js';
 import { FlowClient, FlowApiError } from '@flow/client';
 import { watchTask, taskLine } from './watch.js';
-import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, projectCreationSchema, projectCommandSchema, goalCreationSchema, goalCommandSchema, type TaskSubmission } from '@flow/contracts';
+import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, projectCreationSchema, projectCommandSchema, goalCreationSchema, goalCommandSchema, goalNativeExecutionSchema, type TaskSubmission } from '@flow/contracts';
 
 export interface CliIO { out(text: string): void; err(text: string): void }
 const defaultIO: CliIO = { out: text => process.stdout.write(`${text}\n`), err: text => process.stderr.write(`${text}\n`) };
@@ -175,6 +175,13 @@ async function goalCommand({ client, values, positionals, io, signal }: CommandC
   const action = positionals[1];
   let result: unknown;
   switch (action) {
+    case 'execute-native': {
+      const goalId = required(positionals[2], 'goal ID');
+      const key = required(values.key, '--key (stable command identifier)');
+      const input = goalNativeExecutionSchema.parse(await readJsonInput(required(values.input, '--input JSON-file'), 131_072));
+      result = await client.executeGoalNative(goalId, input, key, signal);
+      break;
+    }
     case 'show': result = await client.readGoal(required(positionals[2], 'goal ID'), signal); break;
     case 'input': result = await client.readGoalInput(required(positionals[2], 'goal ID'), required(values.node, '--node'), values.version ? positiveNumber(values.version, 'version') : undefined, signal); break;
     case 'history': result = await client.goalExecutions(required(positionals[2], 'goal ID'), { nodeId: required(values.node, '--node'), ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) }, signal); break;
@@ -187,7 +194,7 @@ async function goalCommand({ client, values, positionals, io, signal }: CommandC
         : await client.commandGoal(required(positionals[2], 'goal ID'), goalCommandSchema.parse(input), key, signal);
       break;
     }
-    default: throw new UsageError('Use goal create|show|input|history|change.');
+    default: throw new UsageError('Use goal create|show|input|history|change|execute-native.');
   }
   io.out(JSON.stringify(result));
   return 0;
@@ -298,6 +305,7 @@ Commands:
   goal input <goal-id> --node node-id [--version number]
   goal history <goal-id> --node node-id [--after execution-id] [--limit number]
   goal change <goal-id> --input JSON-file --key stable-key
+  goal execute-native <goal-id> --input JSON-file --key stable-key
   project workspaces|list
   project create --title title --key stable-key
   project show <project-id> [--revision number]
