@@ -10,18 +10,18 @@
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-checker |
 | Branch | codex/engineering-native-checker |
-| 工作基线 / HEAD | 2c6df4754f4fea75fbb2e1e750cad89524b1f5fa / 首Interface后由Git固定 |
+| 工作基线 / HEAD | 2c6df4754f4fea75fbb2e1e750cad89524b1f5fa / 30dd8242cccaca3123a23ee3667a601120e8ee17；后续仅review metadata |
 | 工作树dirty状态 | 本metadata提交后clean |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 实现目标 | UNKNOWN |
+| 工作分支状态 | review |
+| 本片段交付阶段 | review |
+| 实现目标 | 30dd8242cccaca3123a23ee3667a601120e8ee17 |
 | 实现范围 | apps/runner/src/engineering/calculator-source.ts, apps/runner/src/engineering/calculator-source.test.ts, apps/runner/src/engineering/calculator-checker.ts, apps/runner/src/engineering/calculator-checker.test.ts, plans/eng01e-trusted-calculator-checker, docs/evidence/eng01e |
-| 检查状态 | 最终68 distinct通过/root types0；target待本次源码提交固定 |
+| 检查状态 | PASSED 30dd8242cccaca3123a23ee3667a601120e8ee17；68 distinct/root types0，初红与33未选保留，见[README](../../docs/evidence/eng01e/README.md) |
 | 已集成main状态 / HEAD | ENG01E未集成；base已含已审ENG01D |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 受限语法与完整内容绑定的可信检查已完成局部验证 |
-| 下一可用交付 | 拒绝伪造结果并绑定完整内容集的calculator检查模块 |
+| 下一可用交付 | 可独立审查的可信检查模块；源码已停止写入 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
