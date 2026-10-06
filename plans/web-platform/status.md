@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 03:18 UTC / 本地main及origin/main实核3773db5 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 03:25 UTC / 本地main及origin/main实核3773db5 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `94bf0e1841b35dde12ea2ba860c3410b3c57b3fc`（本次提交前实核；旧review仍绑定c075bb5） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `93889c39b3e7ce92fc892c5ff2680cb50a624d01`（本次提交前实核；旧review仍绑定c075bb5） |
 | 工作树dirty状态 | 仅本管理范围的计划/来源验证/预览交接文档pending，不自指未来提交 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
-| 优先级 | 2 |
-| 当前产出 | 40条需求追溯；M02与P01整体独立APPROVED；I01正式受领实施，PERF已领独立测量范围 |
-| 下一可用交付 | I01固定主App挂载候选与局部验收；PERF三规模矩阵结果与方法review |
+| 优先级 | 1 |
+| 当前产出 | 45条需求追溯；真实持续对话计划优先，PERF测量已审/PERF02暂缓，I01收尾 |
+| 下一可用交付 | 真实会话能力/持久queue-steer共享接口与唯一owner安排；I01固定候选 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -24,18 +24,19 @@
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| WPF-001-01 | completed | d01_owner | U00～U10及WPF-REQ-01～40已落[plan](plan.md) |
-| WPF-001-02 | completed | d01_owner | 6个子计划齐三件套；P01/M02/I01/PERF转独立唯一owner，仅dashboard协作准备留管理树 |
+| WPF-001-01 | completed | d01_owner | U00～U11及WPF-REQ-01～45已落[plan](plan.md) |
+| WPF-001-02 | completed | d01_owner | 7个子计划齐三件套；P01/M02/I01/PERF转独立唯一owner，仅dashboard协作准备留管理树 |
 | WPF-001-03 | completed | d01_owner | W01 cb4整体APPROVED；SSE后发现由M02 d47修复并独立复验，03:17实核两实现均在main3773及origin/main |
 | WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
 | WPF-001-05 | in-progress | d01_owner | P01完整6ce整体APPROVED、PH-R1～4关闭；最终metadata2910ebc clean，I01开始实际主App消费；完整X01父范围仍开放；I01实际App挂载另计划 |
-| WPF-001-06 | in-progress | d01_owner | PERF独立新树c526 clean已核；claim4553f315 v1 committed，owner正式开始测量/权威文档；无生产优化结论 |
+| WPF-001-06 | in-progress | d01_owner | PERF01 benchmark3d47 APPROVED、最终metadata36d802 clean；PERF02仅准备且因真实对话优先暂缓，无amend/take或生产优化 |
 | WPF-001-07 | completed | d01_owner | M02 d47 / metadata c526 clean，owner20局部/9总览/6观察/4真实PG组及root限定独立APPROVED；03:17 ancestor核main3773已含d47，非以approval推定 |
 | WPF-001-08 | completed | d01_owner | D04部署且root实际领取详情验证；M02v2移出三文件→I01v1 committed receipt已读/存证，正确应用用户领取展示与唯一写者规则 |
+| WPF-001-09 | in-progress | d01_owner | U11/REQ41～45及WPF-CHAT01分阶段三件套已落；只读接口调查先行，真实实现待主线接缝与独立claim |
 
 ## 当前管理工作
 
-root持续只读研究与独立验收；管理者仅写此管理树。workspace_panels_owner已结束M02/P01交叉审查，正式实施I01主App挂载；w01_owner结束P01交付，转PERF测量。两者独立树/claim/路径，无重复writer。本队4个agent；sources/claims数不代表活跃agent数。
+root持续只读研究与独立验收；管理者仅写此管理树。workspace_panels_owner已结束M02/P01交叉审查，正式实施I01主App挂载；w01_owner已完成PERF测量，先做真实持续对话接口只读调查。两者独立树/claim/路径，无重复writer。本队4个agent；sources/claims数不代表活跃agent数。
 
 ## 当前集成队列（只读交接记录，状态权威仍各owner）
 
@@ -51,7 +52,7 @@ SSE修复d47已获root整体独立APPROVED：20tests/typecheck、8chat/Approve/d
 
 ## 下一步与handoff
 
-已收M02c526与P01最终2910ebc，I01在已领v1范围正式实施；P01原owner转PERF准备，仅独立measurement/evidence scope。新tree仅完整已审输入初始化，主App桥接模块隐藏连接生命周期，保留官方Thread和SSE观察预算。性能后续以固定负载证据选瓶颈，不假设新增框架会改善。
+已收M02c526与P01最终2910ebc，I01在已领v1范围收尾；原P01/PERF owner先只读调查真实会话接口，PERF02停止后续派发。新tree仅完整已审输入初始化，主App桥接模块隐藏连接生命周期，保留官方Thread和SSE观察预算。性能后续以固定负载证据选瓶颈，不假设新增框架会改善。
 
 ## Dashboard同步
 
@@ -67,4 +68,6 @@ U09/REQ38～39已逐字落plan：原Goal Owner已打开并保留已审M02 49922�
 
 U10 / REQ40已落父plan：主线独立X01维护全产品插件管理计划，已只读关联[X01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/plan.md)，文档target888308d、产品未实现；本地Settings启停只是可信Web host能力，不代表中心持久生命周期、CLI或第三方隔离完成。
 
-下一准备轮WPF-PERF02已建[plan/status/review](performance-optimization/plan.md)，只管理准备。原M02停写确认/精确测试路径/正式PERF review与主线协调未齐前不领取写入。
+下一准备轮WPF-PERF02已建[plan/status/review](performance-optimization/plan.md)，只管理准备。03:25优先级切换已暂缓；没有新tree、amend/take或生产修改；原M02/probe停写确认不等于范围转交。
+
+当前最高优先：[真实持续对话WPF-CHAT01](conversation-core/plan.md)。共享中心/runner由原Lead分配唯一owner；本队先研究现有接口再独立领取Web消费，不抢I01 App。49922依旧固定fixture且保留用户tab，不能用其固定英文记录宣称自然模型回应。

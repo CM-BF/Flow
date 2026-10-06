@@ -28,6 +28,7 @@
 | U08 多lead领取协调（原话） | “和你在一起工作的还有其他agent leads，一定要管理好执行dashboard，你们才不会overlap工作。take 工作最好也在dashboard上标清楚” | 主线D04维护唯一PG领取账本，多Lead按真实actor原子领取/显式转交；进度仍各status唯一，不凭旧源或缺失源当空闲 |
 | U09 产品预览与架构tab（原Goal Owner逐字转交，经root传达） | “把产品Web UI打开留着可随时看，且工程dashboard增架构tab” | 原Goal Owner最终选择已审M02的49922并已打开保留用户tab，明确HTTP fixture；原owner保留服务，55049仅I01开发验证，不另起重复服务。工程dashboard架构tab由主线已承接，我方不改其代码 |
 | U10 插件管理入计划（原Goal Owner逐字转交，经root传达） | “plugin管理写进计划里” | 主线维护独立X01全产品插件管理canonical计划；我方链接追溯并继续P01/I01前置，不重复建立X01或扩大已领生产范围 |
+| U11 真实持续对话优先（原Goal Owner反馈经root转交，准确摘要，未提供完整逐字原话） | 用户在49922输入hi后只看到固定英文center/runner/result和Field notes/Verification卡片，要求真实Codex式持续对话；需要模型、thinking/effort、access权限、context、files、语音、发送、消息气泡、queue、steering、tool calls及可展示thinking；正文优先而详情按需 | 真实聊天核心优先于PERF02与工作台装饰；I01既有收尾继续，49922原tab/fixture服务保持且明确演示性质；真实中心能力与契约由主线唯一owner提供，不用新task伪装追问/steering |
 
 U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射严格以完整 handoff 的 task→唯一 owner worktree 登记为准；临时样本覆盖状态变化、缺失、空 review、转义与路径限制，真实工作树只读核验，二者证据明确分开。U02 原文保留拼写，实施含义为官方 AI Elements Terminal/FileTree，不伪造PTY或任意文件系统。
 
@@ -81,6 +82,11 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-38 | U09 产品Web打开并保留，可随时查看 | 原Goal Owner选已审M02 49922；原owner保留服务 | 已审M02 http://127.0.0.1:49922/用户tab已打开并保留，明确fixture及恢复方式；I01 55049仅开发验证，不能声称稳定main或真实中心服务已起 |
 | WPF-REQ-39 | U09 工程dashboard新增架构tab | 主线dashboard唯一owner / 原Lead承接 | 架构tab作为dashboard入口可访问；具体实现/来源/验收由其唯一[D05计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)记录，当前未固定目标，我方仅协作追踪，不跨写dashboard |
 | WPF-REQ-40 | U10 plugin管理写进计划里 | 主线X01唯一canonical owner；我方父计划关联 | 主线计划包含Web管理页和CLI公共center命令、持久版本/配置/权限/作用域、npm install/enable/disable/upgrade/rollback/remove、活跃执行版本绑定、可信/隔离边界；实际[X01计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/plan.md)已建立，文档888308d/产品未实施。P01/I01本地Settings不冒充完整插件管理 |
+| WPF-REQ-41 | U11 真实持续对话优先与明确演示边界 | WPF-CHAT01准备；主线center/runner；Web待独立claim | hi自然回应、同conversation追问、断线重连；49922不暗换/重启，固定fixture不冒充模型输出；PERF02暂无amend/take/实施 |
+| WPF-REQ-42 | U11 模型/effort/access/context/files与发送 | 主线capability catalog契约；Web真实消费 | 控件只展示中心支持的模型/能力和授权范围；unsupported明确，权限不由前端自授；context/files使用授权资源与版本，不能凭显示路径假接文件 |
+| WPF-REQ-43 | U11 消息气泡与正文优先、tool/thinking懒详情 | Web renderer与中心投影owner | 用户/assistant正文为主；tool及provider可展示thinking初始仅id/title/状态，初始响应/SSE没有大payload；鉴权展开前0detail，首次1/重复缓存，provider无thinking则不伪造 |
+| WPF-REQ-44 | U11 queue和steering | 主线持久commands/runner；Web有权触发与渲染 | queue持久、明确顺序/取消与重连；steering仅对运行中同会话/执行，记录受理与实际生效边界，不用提交新task冒充，不把HTTP超时当取消 |
+| WPF-REQ-45 | U11 语音录音/转写与失败恢复 | 主线能力接口；Web受控交互 | 录音与转写分开、明确开始/停止/失败，失败保留文本输入；本轮不偷接付费语音服务，未支持明确，凭据不放浏览器/插件 |
 
 ## 当前 owner 与接口冻结
 
@@ -133,10 +139,12 @@ type WorkspacePanelsProps = {
 | 已审交付 | W01 Thread/shell/splitmerge及panels | root整体APPROVED cb4a392，owner正式review metadata收尾；组件46a1dbd通过 |
 | 当前管理 | WPF-001需求账本/研究/接口/来源登记清单 | 执行管理者维护；root只读核对完整性 |
 | 跨团队协作 | WPF-D01需求+管理来源登记 | 主线D03实施；我方提交清单并只读确认注册，不占我方实现槽 |
-| 已审待集成 | [WPF-M02统一工作总览](unified-workspace/plan.md) | d47整体APPROVED，metadata c526；交Lead集成，owner转I01 |
+| 已集成 | [WPF-M02统一工作总览](unified-workspace/plan.md) | d47整体APPROVED，metadata c526；main3773已含实现，owner转I01 |
 | 已审输入 | WPF-P01插件host | 整体6ce APPROVED、PH-R1～4关闭，最终2910ebc交I01；不覆盖主App |
 | 当前实施 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 两输入已审，D04v1受领，独立新tree bridge/slots实施 |
-| 当前测量 | WPF-PERF01 | 原P01 owner，新tree固定M02 c526，D04四scope v1；仅benchmark/evidence，先测后申请优化 |
+| 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadata36d802 clean；未做生产优化 |
+| 当前最高优先 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 主线先明确共享接口/唯一owner，Web独立claim后实现；原P01/PERF owner先只读调查，不抢I01 App |
+| 暂缓准备 | WPF-PERF02 | 仅准备计划；未建新树、未amend/take、未实施，真实对话优先 |
 
 ## TODO
 
@@ -148,6 +156,7 @@ type WorkspacePanelsProps = {
 - [ ] **WPF-001-06** 建立WPF-PERF01生产基线及下一有证据优化轮，继续按用户新要求更新追溯。
 - [x] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
 - [x] **WPF-001-08** 收取两owner精确literal范围并交主线单点登记，验证D04领取/转交/冲突展示，避免多lead重复派工。
+- [ ] **WPF-001-09** 优先推进U11真实持续对话：冻结center能力/会话/queue-steer接缝，分阶段独立派工并真实验收。
 
 ## 验收、风险与持续方式
 
@@ -188,3 +197,5 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 - 2026-10-06 03:23 UTC：只读核主线X01 canonical888308d clean和D05 canonical dirty实施中，REQ39/40补真实路径；不代其给approval或重复产品实现。
 
 下一准备轮：[WPF-PERF02有界Activity](performance-optimization/plan.md)，依据PERF三规模实际数据；仅管理计划，待明确停写、逐文件amend/take、稳定输入与独立owner转交。不扩PERF四scope，不改I01 App。
+
+- 2026-10-06 03:25 UTC：U11准确摘要及REQ41～45已完整持久化；真实持续对话优先。PERF02只有准备93889c3，无新tree/amend/take/生产写入；原probe停写意向保留但claim仍v1。I01继续现有交付收尾，49922原fixture不暗换。

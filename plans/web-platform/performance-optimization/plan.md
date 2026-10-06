@@ -1,6 +1,6 @@
 # WPF-PERF02 Activity 列表有界渲染准备
 
-2026-10-06；本文件是管理准备计划。唯一准备owner d01_owner / gpt-6-astra ultra，未来实施拟w01_owner，尚未领取新writer范围。父[WPF-001](../plan.md)，依赖[PERF01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/plans/wpf-perf01-web-performance/plan.md)。正式派发时移交独立tree/branch与平级canonical三件套，本目录转stub。
+2026-10-06；03:25优先级变更：真实持续对话优先，本准备暂缓，尚无新tree/amend/take/生产写入。本文件是管理准备计划。唯一准备owner d01_owner / gpt-6-astra ultra，未来实施拟w01_owner，尚未领取新writer范围。父[WPF-001](../plan.md)，依赖[PERF01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/plans/wpf-perf01-web-performance/plan.md)。正式派发时移交独立tree/branch与平级canonical三件套，本目录转stub。
 
 ## 问题与证据边界
 

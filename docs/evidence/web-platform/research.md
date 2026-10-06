@@ -239,3 +239,10 @@ U10原话由原Goal Owner逐字转交：“plugin管理写进计划里”。父p
 03:23管理者主动只读实核主线X01：tree plugin-management-plan、branch codex/plugin-management-plan、HEAD888308dce1d8061ab66ce93c10c023ec66d6eb58 clean，canonical plans/x01-plugin-management；读完整目标/版本/授权/CAS/生命周期/隔离/CLI及P01/I01前置关系，文档target有但产品UNKNOWN、独立review未开始，不替主线审定。D05 canonical为dashboard-architecture/plans/d05-architecture-view，Execution Lead唯一owner、base3773、dirty实施/targetUNKNOWN。父REQ39/40与WPF-D01已补实际路径。
 
 PERF01正式benchmark review：root APPROVED target3d47cdd4eae959119f154a0d06964cf65006f8c9，basec526，固定证据adc2595bbc34986353514d374afeb0eca0188ee2 clean。独立源码/窄分页修复/报告审阅与三成功raw SHA/count/min/median/max/DOM/API重算，资产bytes/gzip/hash+HTML相同、双图核验；未独立重跑browser/typecheck，作者结果归作者。不覆盖生产优化或I01。PERF02准备三件套/8精确scope已报主线；旧M02明确停写三生产接缝，PERF原owner待metadata后停写probe，正式amend/take尚未发生。
+
+
+## RS24 用户持续对话优先与真实能力分阶段（03:25 UTC）
+
+原Goal Owner经root反馈用户在49922输入hi只见固定英文center/runner/result和Field notes/Verification卡片，要求真实Codex式持续对话。由于没有完整逐字原话，父U11明确“准确摘要”，REQ41～45与WPF-CHAT01三件套逐项保存模型/effort/access/context/files/语音/发送/气泡/queue/steering/tool与可展示thinking、正文优先/详情轻引用边界。初始响应与SSE不送大payload，展开鉴权按需，provider没提供不伪造；queue持久顺序取消，steer真实确认生效，不用newtask假冒。语音录音/转写分开，失败回文字，无暗接付费服务。
+
+立即执行优先变更：PERF02保留准备93889c3，尚未创建树、amend/take或生产写入；w01_owner已确认暂停。PERF01最终metadata36d80219e4565783e371fd3cd6c29adc4d1398cc clean，原claim4553v1仍4scope；此前probe停写声明保留历史，不授予另一owner。原M02停写意向也未改v2范围。I01当前收尾照常，新增workspace.tabs合法button/menu挂载反馈由其owner局部修复，尚无固定candidate。49922保持原tab/服务，不暗换。新对话先只读接口调查与主线共享owner协同，独立scope/receipt后再实现。
