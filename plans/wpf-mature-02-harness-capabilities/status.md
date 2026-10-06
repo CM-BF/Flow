@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:06:52 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:08:49 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -20,11 +20,11 @@
 | 实现范围 | experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs, experiments/codex-app-server-conformance/fd-canary/host.test.ts, experiments/codex-app-server-conformance/sandbox67 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已准备只增加Sandbox容器查询权限的对照候选，局部验证和独审通过；唯一运行窗口已授权，提交记录并核门禁后执行一次。 |
-| 下一可用交付 | 执行已审、已授权的单项Sandbox syscall 67对照并保存实际结果。既有已审R06与薄入口可独立集成。 |
+| 当前产出 | 单项Sandbox容器查询权限对照已运行：控制项成功，受限目标仍异常退出且无子报告。清理与计量完成，失败结果等待独审。 |
+| 下一可用交付 | 交付这次单项权限对照的独立结果审查；不追加试跑。既有已审R06与薄入口可独立集成。 |
 | 当前阻塞 | ACTIVE: socket与普通文件对照的受限目标均异常退出且无报告，原因仍未知；窗口已消费，真实Codex目录仍缺隔离验证。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：sandbox67组合4dec9500 APPROVED（status_read，2026-10-06 12:05:24 UTC，0P1/P2）；v3结果d8038d3a faithful FAIL APPROVED（architecture_read，2026-10-06 11:45:46 UTC，0P1/P2）；v3组合a10b4fae APPROVED（architecture_read，2026-10-06 11:38:34 UTC，0P1/P2）；结果6b397a58 faithful incomplete/FAIL APPROVED（architecture_read，11:30:14 UTC，0P1/P2）；当前v2候选851fd8c7 APPROVED（Mika，2026-10-06 11:20:49 UTC，0P1/P2）；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
+| Review | [review.md](review.md)：sandbox67结果NOT_STARTED；sandbox67组合4dec9500 APPROVED（status_read，2026-10-06 12:05:24 UTC，0P1/P2）；v3结果d8038d3a faithful FAIL APPROVED（architecture_read，2026-10-06 11:45:46 UTC，0P1/P2）；v3组合a10b4fae APPROVED（architecture_read，2026-10-06 11:38:34 UTC，0P1/P2）；结果6b397a58 faithful incomplete/FAIL APPROVED（architecture_read，11:30:14 UTC，0P1/P2）；当前v2候选851fd8c7 APPROVED（Mika，2026-10-06 11:20:49 UTC，0P1/P2）；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 目录Module新增versioned reader/严格DTO，既有挂载与存储不变；R06历史private sink已审，process owner不变。最终target架构更新待Mika/ExecutionLead集成。 |
 
@@ -159,3 +159,7 @@ Sandbox67局部检查：16通过/31未选，3新固定选择/profile/regular接�
 ## Sandbox67唯一窗口已授权（本metadata尚未运行）
 
 [授权收据](../../docs/evidence/wpf-mature-02/sandbox67/run-authorization.json)绑定go-c-sandbox67-once；status_read于12:05:24 UTC批准4dec/sourcef960，Mika核门禁后开放。fresh12:06:13.828Z v4 ACTIVE/4dec clean；本metadata提交后再次核所有固定输入/外部及八路径，再按唯一CLI执行一次。旧窗口不重跑，S01实际负载等待本次结束。
+
+## Sandbox67本次运行最终事实
+
+[结果](../../docs/evidence/wpf-mature-02/sandbox67/run-report.md)：执行5df7b43e，1编译/2目标，控制socket完整报告、新profile regular SIGABRT/report=null；父regular身份不替子观测。CLI1、794.116208ms，measurement=false、cleanup/descriptors/accounting=true，无保留root。S01已通知可解除串行等待，许可消费完；结果交独审，不推断原因或新增grant。原profile/原始证据保持历史target。

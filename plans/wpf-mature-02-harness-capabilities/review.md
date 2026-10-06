@@ -1,3 +1,7 @@
+# Current Sandbox67 result review
+
+State: NOT_STARTED. [Run](../../docs/evidence/wpf-mature-02/sandbox67/run-report.md): one compile/two C targets; control reported, syscall67 profile SIGABRT/no child report. Measurement false, cleanup/accounting true, CLI1. Source approval remains scoped; no remaining runtime authorization. Fixed result target supplied by Git.
+
 # Current Sandbox syscall67 preparation review
 
 State: APPROVED preparation, status_read/gpt-6-astra, 2026-10-06 12:05:24 UTC; 0 P1/P2. Combination `4dec9500f86ef49495faa499aaf2ef336877de19`, source `f960a1dcc0dccf86c670a00edb2956d8763f9142`. [Recipe](../../docs/evidence/wpf-mature-02/sandbox67/README.md), [input](../../docs/evidence/wpf-mature-02/sandbox67/driver-input.json), [manifest](../../docs/evidence/wpf-mature-02/sandbox67/manifest.json). Independently checked 26 repo/6 external,14 source,25 prepared115530B,archive107167B,9 frozen core and38+41+37 history bindings; eight outputs absent. Fixed selection/one exact67 grant/C same hash/unchanged host;16 fake checks, inert import0,3 syntax0; reviewer reran nothing. Quality's earlier “8 core” counted the subset without config; manifest's full frozen set is9. No isolation/causal approval. Mika has now opened GO's unique go-c-sandbox67-once after this review; owner must commit metadata, verify fresh gate and call the fixed entry once.

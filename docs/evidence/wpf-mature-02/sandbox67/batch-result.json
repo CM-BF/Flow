@@ -1,0 +1,295 @@
+{
+  "startedAt": "2026-10-06T12:07:13.069Z",
+  "compileReservations": 1,
+  "compileCalls": 1,
+  "targetReservations": 2,
+  "targetStartsObserved": 2,
+  "stages": [
+    {
+      "kind": "compile",
+      "pid": 48399,
+      "reason": "completed",
+      "closeObserved": true,
+      "groupGone": true,
+      "code": 0,
+      "signal": null,
+      "streams": {
+        "stdout": {
+          "observedBytes": 0,
+          "writtenBytes": 0,
+          "truncated": false,
+          "observerFailed": false,
+          "streamEnded": true,
+          "childCloseObserved": true,
+          "incomplete": false
+        },
+        "stderr": {
+          "observedBytes": 11679,
+          "writtenBytes": 11679,
+          "truncated": false,
+          "observerFailed": false,
+          "streamEnded": true,
+          "childCloseObserved": true,
+          "incomplete": false
+        }
+      },
+      "stdoutBytes": 0,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrBytes": 11679,
+      "stderrSha256": "0e981863166c6f6ace0c6440f68f860314371714160d54482434314983129a62"
+    },
+    {
+      "kind": "target-1",
+      "pid": 48424,
+      "reason": "completed",
+      "closeObserved": true,
+      "groupGone": true,
+      "code": 0,
+      "signal": null,
+      "streams": {
+        "stdout": {
+          "observedBytes": 0,
+          "writtenBytes": 0,
+          "truncated": false,
+          "observerFailed": false,
+          "streamEnded": true,
+          "childCloseObserved": true,
+          "incomplete": false
+        },
+        "stderr": {
+          "observedBytes": 0,
+          "writtenBytes": 0,
+          "truncated": false,
+          "observerFailed": false,
+          "streamEnded": true,
+          "childCloseObserved": true,
+          "incomplete": false
+        }
+      },
+      "stdoutBytes": 0,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "target-2",
+      "pid": 48445,
+      "reason": "completed",
+      "closeObserved": true,
+      "groupGone": true,
+      "code": null,
+      "signal": "SIGABRT",
+      "streams": null,
+      "stdoutBytes": 0,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "targets": [
+    {
+      "state": "reported",
+      "report": [
+        {
+          "record": "start",
+          "protocol": "flow.fd-canary.v1",
+          "nonce": "c1da66936222fe6264666526ba289489",
+          "pid": 48424
+        },
+        {
+          "record": "fd",
+          "fd": 0,
+          "fstat": {
+            "ok": true,
+            "result": 0,
+            "errno": null,
+            "errnoNumber": 0,
+            "kind": "socket"
+          },
+          "fcntl": {
+            "ok": true,
+            "result": 2,
+            "errno": null,
+            "errnoNumber": 0,
+            "access": "read-write",
+            "nonblocking": false
+          }
+        },
+        {
+          "record": "fd",
+          "fd": 1,
+          "fstat": {
+            "ok": true,
+            "result": 0,
+            "errno": null,
+            "errnoNumber": 0,
+            "kind": "socket"
+          },
+          "fcntl": {
+            "ok": true,
+            "result": 2,
+            "errno": null,
+            "errnoNumber": 0,
+            "access": "read-write",
+            "nonblocking": false
+          }
+        },
+        {
+          "record": "fd",
+          "fd": 2,
+          "fstat": {
+            "ok": true,
+            "result": 0,
+            "errno": null,
+            "errnoNumber": 0,
+            "kind": "socket"
+          },
+          "fcntl": {
+            "ok": true,
+            "result": 2,
+            "errno": null,
+            "errnoNumber": 0,
+            "access": "read-write",
+            "nonblocking": false
+          }
+        },
+        {
+          "record": "complete",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "state": "closed",
+      "reason": "completed",
+      "report": null
+    }
+  ],
+  "targetCases": [
+    "control-socket",
+    "profile-regular"
+  ],
+  "compilerInventoryPersisted": true,
+  "compilerOutputAccounting": "visible-owned-files-and-verbose-outputs",
+  "cleanupComplete": true,
+  "retainedRoots": [],
+  "compilerOutputFiles": [
+    {
+      "stream": "stderr",
+      "file": "compiler.stderr",
+      "capturedBytes": 11679,
+      "capturedSha256": "0e981863166c6f6ace0c6440f68f860314371714160d54482434314983129a62",
+      "created": true,
+      "persisted": true,
+      "closed": true,
+      "verifiedBytes": 11679,
+      "verifiedSha256": "0e981863166c6f6ace0c6440f68f860314371714160d54482434314983129a62",
+      "mode": "0600",
+      "dev": 16777234,
+      "ino": 121711821
+    },
+    {
+      "stream": "stdout",
+      "file": "compiler.stdout",
+      "capturedBytes": 0,
+      "capturedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "created": true,
+      "persisted": true,
+      "closed": true,
+      "verifiedBytes": 0,
+      "verifiedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0600",
+      "dev": 16777234,
+      "ino": 121711822
+    }
+  ],
+  "compilerCommands": [
+    {
+      "executable": "/Library/Developer/CommandLineTools/usr/bin/clang",
+      "role": "frontend",
+      "output": "fd-canary.i",
+      "pid": null,
+      "evidence": "compiler-verbose-command"
+    },
+    {
+      "executable": "/Library/Developer/CommandLineTools/usr/bin/clang",
+      "role": "frontend",
+      "output": "fd-canary.bc",
+      "pid": null,
+      "evidence": "compiler-verbose-command"
+    },
+    {
+      "executable": "/Library/Developer/CommandLineTools/usr/bin/clang",
+      "role": "frontend",
+      "output": "fd-canary.s",
+      "pid": null,
+      "evidence": "compiler-verbose-command"
+    },
+    {
+      "executable": "/Library/Developer/CommandLineTools/usr/bin/clang",
+      "role": "assembler",
+      "output": "fd-canary.o",
+      "pid": null,
+      "evidence": "compiler-verbose-command"
+    },
+    {
+      "executable": "/Library/Developer/CommandLineTools/usr/bin/ld",
+      "role": "linker",
+      "output": "fd-canary",
+      "pid": null,
+      "evidence": "compiler-verbose-command"
+    }
+  ],
+  "binary": {
+    "bytes": 34104,
+    "sha256": "df05abb0da7bd6adaabe4dc43e00dd2d23b5d407fb788ccaaace9175f79069c9"
+  },
+  "parentRegularStdio": [
+    {
+      "fd": 0,
+      "kind": "regular",
+      "dev": 16777234,
+      "ino": 121711854,
+      "mode": "0600",
+      "evidence": "parent-fstat-and-owned-path-identity"
+    },
+    {
+      "fd": 1,
+      "kind": "regular",
+      "dev": 16777234,
+      "ino": 121711857,
+      "mode": "0600",
+      "evidence": "parent-fstat-and-owned-path-identity"
+    },
+    {
+      "fd": 2,
+      "kind": "regular",
+      "dev": 16777234,
+      "ino": 121711858,
+      "mode": "0600",
+      "evidence": "parent-fstat-and-owned-path-identity"
+    }
+  ],
+  "measurementComplete": false,
+  "failure": "stage-preparation-execution-or-report-unavailable",
+  "failureStage": "target-2-health",
+  "failureCheck": "unclassified",
+  "descriptorsClosed": true,
+  "rootCreationUnknown": false,
+  "outputAccountingComplete": true,
+  "elapsedMs": 785.954291,
+  "elapsedBasis": "before-result-persistence",
+  "output": {
+    "preparedEvidenceBytes": 115530,
+    "archiveReserveBytes": 131072,
+    "receiptReserveBytes": 32768,
+    "captured": 11679,
+    "receipts": 1536,
+    "artifacts": 166512,
+    "measuredBytes": 295257,
+    "reservedUpperBound": 457561,
+    "withinMeasuredBudget": true,
+    "limit": 2097152
+  },
+  "withinBudget": true
+}
