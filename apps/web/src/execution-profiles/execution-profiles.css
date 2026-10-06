@@ -16,8 +16,16 @@
 .ep-option summary { cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }
 .ep-notice, .ep-error { margin: 0; padding: .5rem .7rem; border-left: 2px solid var(--border); line-height: 1.5; }
 .ep-error { border-color: var(--destructive); }
-.ep-locked { max-width: 40rem; }
-.ep-locked > p { margin: .5rem 0; }
+.ep-locked { max-width: 40rem; line-height: 1.5; }
+.ep-locked-heading { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: .75rem; }
+.ep-locked-heading strong { min-width: 0; overflow-wrap: anywhere; font-weight: 600; }
+.ep-locked-heading > span, .ep-locked-summary { color: var(--muted-foreground); font-size: .8rem; }
+.ep-locked-summary { margin: .15rem 0; }
+.ep-locked-details { font-size: .8rem; }
+.ep-locked-details > summary { cursor: pointer; border-radius: .2rem; }
+.ep-locked-details > summary:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+.ep-locked-details > summary > span { margin-left: .5rem; color: var(--muted-foreground); }
+.ep-locked-details > p { margin: .5rem 0; }
 .ep-locked dl { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: .4rem .8rem; margin: .75rem 0; }
 .ep-locked dt { color: var(--muted-foreground); }
 .ep-locked dd { margin: 0; overflow-wrap: anywhere; }
