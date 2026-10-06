@@ -26,13 +26,15 @@ After exporting the example variables with your private `FLOW_TOKEN`, start the 
 
 Submit with `pnpm cli submit "Prepare a result" --scenario decision --key my-request`, then inspect the returned ID using `pnpm cli show TASK_ID` or `watch TASK_ID`. Answer the displayed decision with `pnpm cli decision TASK_ID approve --decision DECISION_ID`. Closing watch leaves the task running; use `cancel TASK_ID` to request a stop. Full commands and exit semantics are in [CLI usage](apps/cli/README.md).
 
-Fixture is the default deterministic harness. Do not label fixture output as a native model result. Native configuration is documented in [Runner usage](apps/runner/README.md); the current runner executes one attempt at a time, even if its registration advertises a higher capacity. Product Web setup is in [Web usage](apps/web/README.md). Never run two development Compose projects on the same port; reuse the already-running local instance when present. The test suites intentionally rebuild only their isolated `flow_c01` and `flow_i01` schemas.
+Fixture is the default deterministic harness. Do not label fixture output as a native model result. Native configuration and local concurrency are documented in [Runner usage](apps/runner/README.md). Ordinary fixture/Claude runners accept integer `FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS` values from `1` to `16`, defaulting to `1`; A2A and dedicated engineering hosts remain limited to `1`. The center separately enforces registered capacity. These configured ceilings are not measured throughput guarantees. Product Web setup is in [Web usage](apps/web/README.md).
+
+Terminal conversation and goal commands are documented in [TUI usage](apps/tui/README.md); start with `pnpm --filter @flow/tui start --help`. Never run two development Compose projects on the same port; reuse the already-running local instance when present. The test suites intentionally rebuild only their isolated `flow_c01` and `flow_i01` schemas.
 
  All changes follow the root [AGENTS.md](AGENTS.md): Sol-or-higher writers, feature worktrees, stack-specific skill discovery and recurring clean-code checks.
 
 ## Web and execution dashboard
 
-With the center and a registered runner running, use `FLOW_CENTER_URL=http://127.0.0.1:4310 pnpm web`, open the printed local URL, leave Center URL blank for the same-origin proxy, and enter your owner token. Choose Contract fixture to try a deterministic decision task without spending model calls. Native Claude requires the explicit runner materials configuration; this round’s evidence budget is exhausted, so do not rerun native probes.
+With the center and a registered runner running, use `FLOW_CENTER_URL=http://127.0.0.1:4310 pnpm web`, open the printed local URL, leave Center URL blank for the same-origin proxy, and enter your owner token. Choose Contract fixture to try a deterministic decision task without spending model calls. Native Claude requires the explicit runner materials configuration. The historical R02/I01 probe window is closed; any new real-provider validation needs its own explicit budget and evidence record.
 
 Run `node apps/execution-dashboard/src/server.mjs` for the engineering execution dashboard (default loopback4320). Its task registry reads authoritative owner worktrees and is separate from the product Web. See [dashboard setup and custom registry](apps/execution-dashboard/README.md). Both interfaces have complete light/dark themes.
 

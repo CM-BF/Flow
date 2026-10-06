@@ -206,3 +206,5 @@
 2026-10-06T15:04:21.640726+00:00：X01生产接线5e121独审APPROVED，限定结果与原始资源事实已绑定；现在受控接收。O14 deef薄client另待审，未借本批准；scan产品修改尚未开始。
 
 2026-10-06 16:01 UTC：消息设置032已分配并由Mika唯一writer原子领取v3；[固定账本观察](../../docs/evidence/f01/claude-message-settings-migration-assignment.json)。031仍为O15，030既有；本次只关闭DDL归属依赖，不表示生产挂载/PG已验，也不修改个人数据库。
+
+2026-10-06T16:25:08.373523+00:00：v41短单写范围修正根/runner使用文档及恢复边界；输入main65659028，只更新并发模式/独立注册capacity/历史probe授权与现reconcile公开命令，补TUI入口。17项只读源码/文档绑定见[runtime-documentation-source-review.json](../../docs/evidence/f01/runtime-documentation-source-review.json)，无产品行为/工程测试/模型调用。原O14 PG仍NOT_RUN，不因文档交付提前批准。
