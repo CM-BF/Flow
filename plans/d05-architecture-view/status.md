@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:22:00 UTC / mainf3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:21:00 UTC / mainf3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -90,4 +90,4 @@
 
 2026-10-06 12:17:23 UTC：新增ENG01G/SVC05真实canonical，146唯一源/三件套与人读字段检查通过；[登记](../../docs/evidence/d05/native-release-146-registry.json)。B01迁移后12:03真实source/human样本按正确字段保存[回执](../../docs/evidence/d05/b01-authority-live.json)，旧重复TODO是该历史样本事实，不改原采样。架构保持固定f181。
 
-2026-10-06 12:22:00 UTC：归档12:19:38.055Z实际146源[回执](../../docs/evidence/d05/native-release-146-live.json)，新工程/发布source live。SVC05父任务链接尾缀导致关系unknown已交原owner修正，不替renderer猜测；普通人读字段完整。新增ATTACHI02首canonical至147源候选，当前正在接实际App而非已完成。固定架构仍f181，个人服务/用户tab未动。
+2026-10-06 12:21:00 UTC：归档12:19:38.055Z实际146源[回执](../../docs/evidence/d05/native-release-146-live.json)，新工程/发布source live。SVC05父任务链接尾缀导致关系unknown已交原owner修正，不替renderer猜测；普通人读字段完整。新增ATTACHI02首canonical至147源候选，当前正在接实际App而非已完成。固定架构仍f181，个人服务/用户tab未动。
