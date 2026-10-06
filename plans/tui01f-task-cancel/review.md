@@ -1,3 +1,5 @@
+独立后续consumer source `9d81b77f0ce0c67ae347a3d1309acbfa5ae650e5` 单独NOT_STARTED/NOT_RUN，仅新增cleanup-journey.test.ts；不包含在45709c的10项局部检查或focused types中。
+
 # TUI01F test-only cleanup repair
 
 Review target commit: 45709c982df080af5a71ecbd66760a76ab65cf94

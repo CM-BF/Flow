@@ -19,7 +19,7 @@
 | 实现范围 | apps/tui/src/task-controls/fixture.ts, apps/tui/src/task-controls/fixture-cleanup.ts, apps/tui/src/task-controls/fixture-cleanup.test.ts, apps/tui/src/task-controls/journey.test.ts, apps/tui/test-fixtures/cancel_driver.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 取消和回执恢复两项真实终端行为已验证；收尾保护已补齐并通过定向检查，正待独立核对。 |
+| 当前产出 | 两项真实终端行为已验证；收尾保护通过定向检查，独立数据库清理用例已备好，均待相应审查。 |
 | 下一可用交付 | 完成收尾修复审查，按必要范围验证数据库收尾；浏览器交替仍待后继。 |
 | 当前阻塞 | ACTIVE: 原旅程整组失败保留；修后真实数据库收尾未运行，旧临时目录因缺初始身份继续保留。 |
 | 需用户决定 | NONE |
@@ -55,3 +55,5 @@
 2026-10-06 17:24 UTC：开始原claim内test-only cleanup修复。复用本地find-skills/clean-code/codebase-design/tdd，观察连接与不可逆清理两处私有seam；不改生产生命周期/原两行为，不把pool.end当远端零连接屏障。原suite exit1及缺初始inode的private tmp KEEP保留。
 
 2026-10-06 17:29 UTC：收尾修复固定45709c982df080af5a71ecbd66760a76ab65cf94，1红→10新定向绿及focused types0。原9产品、两个行为用例/PTY脚本、17:14全部原始证据逐字不改。[局部修复及限制](../../docs/evidence/tui01f/cleanup-local/README.md)，等待独审；无新增PG/PTY/provider。
+
+2026-10-06 17:32 UTC：独立cleanup-only消费者源码9d81b77f0ce0c67ae347a3d1309acbfa5ae650e5准备完成，1case/0task/0runtime/0PTY。只源码；新文件未import/typecheck/PG执行，既有10/10不覆盖它。[唯一后续入口与资源门槛](../../docs/evidence/tui01f/cleanup-local/pg-consumer-preparation.md)，等待运行窗口；本次不勾03/04。
