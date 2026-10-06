@@ -1,0 +1,116 @@
+.plugin-fixture {
+  max-width: 1120px;
+  margin: 32px auto;
+  padding: 0 24px;
+  color: var(--foreground);
+  font-size: 14px;
+}
+.plugin-fixture h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.plugin-fixture h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 12px 0;
+}
+.plugin-fixture p {
+  margin: 8px 0;
+  color: var(--muted-foreground);
+}
+.fixture-toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+.plugin-fixture button {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin: 3px;
+  background: var(--background);
+  color: var(--foreground);
+}
+.plugin-fixture button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+.plugin-fixture button[aria-selected="true"],
+.plugin-fixture button[aria-pressed="true"] {
+  background: var(--secondary);
+  font-weight: 600;
+}
+.fixture-grid {
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+  gap: 24px;
+  margin: 20px 0;
+}
+.fixture-chat {
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+}
+.fixture-chat-area {
+  min-width: 0;
+}
+.fixture-chat-area textarea {
+  width: 100%;
+  height: 76px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--background);
+  color: var(--foreground);
+}
+.plugin-fixture [role="tabpanel"] {
+  min-height: 280px;
+  border: 1px solid var(--border);
+  margin-top: 8px;
+  padding: 12px;
+}
+.plugin-fixture .workspace-panels {
+  width: 100%;
+  min-height: 260px;
+}
+.plugin-fixture pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  padding: 8px;
+}
+.plugin-fixture label {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.plugin-fixture [role="alert"] {
+  padding: 8px;
+  color: var(--destructive);
+}
+@media (max-width: 650px) {
+  .plugin-fixture {
+    margin: 12px auto;
+    padding: 0 12px;
+  }
+  .fixture-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .fixture-toolbar {
+    gap: 6px;
+  }
+  .plugin-fixture aside {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .plugin-fixture * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
