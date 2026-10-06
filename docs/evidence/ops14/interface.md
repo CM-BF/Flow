@@ -13,3 +13,7 @@
 实现细节约束：使用 POSIX waitid(WNOWAIT) 保留自己 leader 的 PID，所有 group 信号在 reap 前完成，reap 后绝不再 signal。Darwin 对只有 zombie 的 group 可能返回 EPERM；保留该 unknown 观察且永久停止信号升级，只有 reap 自己已确认退出的 child 后再次只读观察到 ESRCH 才记录当前 absent。未知不会被当 absent；过去的观察保存在报告。成功只代表本接口范围，caller 仍核业务结果。停止后在同一剩余 cleanup 期限内读管道，EOF 未到明确为不完整，不因正常 child exit 取消期限。
 
 报告中的 ownedState 是最后一次所有权范围观察；signal EPERM 保持 signal=unknown 且禁止升级，如果随后只读观察明确仍存在，ownedState=present（不会改写成 absent 或掩盖 signal failure）。
+
+## Capture 后继（原309基础之上的独立增量）
+
+Launch 新增有限字段 `capture: Capture = Capture.SEPARATE`，旧4项构造默认不变。MERGED 只通过 Popen stderr=STDOUT 建立同一 OS pipe，Report.capture='merged'、stdout为合并bytes、stderr为空bytes、eof只含实际stdout；不拼接两个事后buffer，也不推测并发语义先后。SEPARATE 保原两pipe/两bytes。相同总cap、失败/停止状态与deadline逻辑不变，只有实际存在的pipe进入selector。
