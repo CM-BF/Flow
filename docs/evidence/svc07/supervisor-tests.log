@@ -1,0 +1,37 @@
+test_complete_combined_output_and_exit (__main__.SupervisionTests.test_complete_combined_output_and_exit) ... ok
+test_deadline_kills_a_child_ignoring_termination (__main__.SupervisionTests.test_deadline_kills_a_child_ignoring_termination) ... ok
+test_leader_exit_with_descendant_is_not_success (__main__.SupervisionTests.test_leader_exit_with_descendant_is_not_success) ... ok
+test_output_overflow_is_bounded_and_unknown (__main__.SupervisionTests.test_output_overflow_is_bounded_and_unknown) ... ERROR
+
+======================================================================
+ERROR: test_output_overflow_is_bounded_and_unknown (__main__.SupervisionTests.test_output_overflow_is_bounded_and_unknown)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/execute-pg-once.py", line 85, in supervise
+    while group_exists(process.pid) and time.monotonic() < end:
+          ~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/execute-pg-once.py", line 35, in group_exists
+    os.killpg(pid, 0)
+    ~~~~~~~~~^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/execute-pg-once.test.py", line 33, in test_output_overflow_is_bounded_and_unknown
+    result, raw, _ = self.run_child("import os,time; os.write(1,b'x'*100000); time.sleep(5)", limit=128)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/execute-pg-once.test.py", line 22, in run_child
+    result = module.supervise([sys.executable, '-c', code], dict(module.os.environ), log, start + duration, limit)
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/execute-pg-once.py", line 102, in supervise
+    if group_exists(process.pid):
+       ~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/execute-pg-once.py", line 35, in group_exists
+    os.killpg(pid, 0)
+    ~~~~~~~~~^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.877s
+
+FAILED (errors=1)
