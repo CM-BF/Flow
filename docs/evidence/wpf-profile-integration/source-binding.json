@@ -1,0 +1,46 @@
+{
+  "observedAt": "2026-10-06T05:11:14.437247+00:00",
+  "implementation": "2e4c5fe7d795e397ab1b1e492605562a847c5fb0",
+  "base": "698ffcd94ae073b23bcc67f6665fb19f707a93e4",
+  "reports": [
+    {
+      "report": "browser-results.json",
+      "sourceCommitAtRun": "9fefee445567ee8d6e1f7b5a2a11d2378c79c23c",
+      "startedAt": "2026-10-06T05:09:23.403Z",
+      "endedAt": "2026-10-06T05:09:44.753Z",
+      "checks": 9,
+      "pageErrors": [],
+      "failure": null,
+      "sourceHashesMatchFixedImplementation": {
+        "apps/web/src/App.tsx": true,
+        "apps/web/src/conversations/ConversationThread.tsx": true,
+        "apps/web/src/conversations/projection.ts": true,
+        "apps/web/src/conversations/outbox.ts": true,
+        "apps/web/test/conversation-projection.test.ts": true,
+        "apps/web/test/conversation-outbox.test.ts": true,
+        "apps/web/test/execution-profile-integration.fixture.ts": true,
+        "apps/web/test/execution-profile-integration.browser.ts": true
+      }
+    },
+    {
+      "report": "production-browser-results.json",
+      "sourceCommitAtRun": "9fefee445567ee8d6e1f7b5a2a11d2378c79c23c",
+      "startedAt": "2026-10-06T05:09:50.581Z",
+      "endedAt": "2026-10-06T05:10:11.147Z",
+      "checks": 9,
+      "pageErrors": [],
+      "failure": null,
+      "sourceHashesMatchFixedImplementation": {
+        "apps/web/src/App.tsx": true,
+        "apps/web/src/conversations/ConversationThread.tsx": true,
+        "apps/web/src/conversations/projection.ts": true,
+        "apps/web/src/conversations/outbox.ts": true,
+        "apps/web/test/conversation-projection.test.ts": true,
+        "apps/web/test/conversation-outbox.test.ts": true,
+        "apps/web/test/execution-profile-integration.fixture.ts": true,
+        "apps/web/test/execution-profile-integration.browser.ts": true
+      }
+    }
+  ],
+  "note": "Reports ran on 9fef metadata HEAD plus implementation working changes. All eight source SHA256 values match fixed 2e4 implementation; no claim that tests ran after this commit."
+}

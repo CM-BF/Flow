@@ -1,6 +1,6 @@
 # WPF-PROFILEI01 — 聊天执行选项接线
 
-创建/更新：2026-10-06 05:00 UTC。状态：in-progress。唯一owner：workspace_panels_owner / gpt-6-astra ultra。
+创建：2026-10-06 05:00 UTC；更新：05:12 UTC。状态：completed（分支交付；main集成另记）。唯一owner：workspace_panels_owner / gpt-6-astra ultra。
 
 目标：在已审官方Thread的新会话composer实际使用PROFILE01选择器，让用户选择整份已发布执行配置；CREATE提交即锁，原key/pin/requested在未知回执恢复中不变，下一草稿独立。保持Arc紧凑侧栏/左右面板/现主题与插件入口，不做自由模型/effort/thinking/access组合，不实现队列UI。
 
@@ -13,8 +13,10 @@ onNew校验完成后freezeConversationCreation→outbox再次schema.parse后深�
 ## TODO
 
 - [x] WPF-PROFILEI01-01 固定输入/claim/技能/唯一三件套。
-- [ ] WPF-PROFILEI01-02 App与官方Thread接入已审选择器，冻结请求/原键恢复/ACK身份验证。
-- [ ] WPF-PROFILEI01-03 模块直接回归与真实App HTTP fixture局部旅程、双主题390/键盘/连接隔离。
-- [ ] WPF-PROFILEI01-04 固定实现、独立review、看板聚合与Lead交付；main集成另记。
+- [x] WPF-PROFILEI01-02 App与官方Thread接入已审选择器，冻结请求/原键恢复/ACK身份验证。
+- [x] WPF-PROFILEI01-03 模块直接回归与真实App HTTP fixture局部旅程、双主题390/键盘/连接隔离。
+- [x] WPF-PROFILEI01-04 固定实现、独立review、看板聚合与Lead交付；main集成另记。
+
+已固定实现2e4c5fe7d795e397ab1b1e492605562a847c5fb0，root于05:11:08 UTC独立APPROVED；[验证](../../docs/evidence/wpf-profile-integration/validation.md)。目录/selection模块固定4f不改，锁定块紧凑化由独立PROFILEUX01后继负责；不可将后继moving代码混入本target。
 
 验收含双runner相同model仍区分、完整分页/stale和目录消失不改选择、unknown绕目录原键恢复、CREATE成功turn失败不解锁、错pin无turn、legacy无pin、切pane草稿/焦点、center同ID隔离、goal-tools/unknown禁选、0额外模型/DB。尽早给独立fixture预览，旧49922/55049/63743/59473/D06/SVC不动。每工作段clean-code，metadata不触发全库重测。

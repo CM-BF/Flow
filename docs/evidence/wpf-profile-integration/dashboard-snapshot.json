@@ -1,0 +1,315 @@
+{
+  "generatedAt": "2026-10-06T05:12:10.423Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "6b4b89f397b35d7e769846df457e76bb29f4a265",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T05:12:10.859Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "task": {
+    "id": "WPF-PROFILEI01",
+    "title": "聊天执行选项接入",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+    "branch": "codex/web-profile-integration",
+    "planDir": "plans/wpf-profile-integration",
+    "evidenceDir": "docs/evidence/wpf-profile-integration",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T05:12:02.944Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/plans/wpf-profile-integration/status.md",
+      "syncedAt": "2026-10-06T05:12:10.423Z",
+      "stale": false,
+      "ageHours": 0.002895277777777778
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/web-profile-integration",
+      "head": "2e4c5fe7d795e397ab1b1e492605562a847c5fb0",
+      "dirty": true,
+      "changedFiles": 25,
+      "observedAt": "2026-10-06T05:12:10.858Z"
+    },
+    "status": {
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "新聊天可选执行配置，创建后锁定，未知回执可按原配置恢复；独立审查通过",
+        "next": "集成执行配置选择，再把排队操作接入聊天",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "2e4c5fe7d795e397ab1b1e492605562a847c5fb0",
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/outbox.ts",
+          "apps/web/test/conversation-outbox.test.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/execution-profile-integration.fixture.ts",
+          "apps/web/test/execution-profile-integration.browser.ts"
+        ],
+        "errors": []
+      },
+      "taskId": "WPF-PROFILEI01",
+      "owner": "workspace_panels_owner / gpt-6-astra ultra",
+      "branch": "codex/web-profile-integration",
+      "branchState": "COMPLETED",
+      "updatedAt": "2026-10-06T05:12:00.000Z",
+      "updatedRecord": "2026-10-06 05:12 UTC / 固定输入698ffcd94ae073b23bcc67f6665fb19f707a93e4",
+      "todos": [
+        {
+          "id": "WPF-PROFILEI01-01",
+          "state": "completed",
+          "owner": "workspace_panels_owner",
+          "evidence": "固定698、liveclaim、[技能](../../docs/evidence/wpf-profile-integration/quality.md)"
+        },
+        {
+          "id": "WPF-PROFILEI01-02",
+          "state": "completed",
+          "owner": "workspace_panels_owner",
+          "evidence": "固定2e4；App/Thread已接picker，deep freeze、CREATE/pin身份已实现"
+        },
+        {
+          "id": "WPF-PROFILEI01-03",
+          "state": "completed",
+          "owner": "workspace_panels_owner",
+          "evidence": "[验证](../../docs/evidence/wpf-profile-integration/validation.md)，60direct/18 browser/typecheck/build"
+        },
+        {
+          "id": "WPF-PROFILEI01-04",
+          "state": "in-progress",
+          "owner": "workspace_panels_owner",
+          "evidence": "root固定2e4 APPROVED；看板单次实采/交付收口中"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "698ffcd94ae073b23bcc67f6665fb19f707a93e4 / 实现2e4c5fe7d795e397ab1b1e492605562a847c5fb0；metadata HEAD由Git聚合",
+      "declaredDirty": "实现已冻结，仅自身metadata收口；提交后实际dirty由Git聚合",
+      "checks": {
+        "state": "passed",
+        "target": "2e4c5fe7d795e397ab1b1e492605562a847c5fb0",
+        "record": "PASSED 2e4c5fe7d795e397ab1b1e492605562a847c5fb0；作者60direct/9dev/9production/typecheck/build；root独立44direct"
+      },
+      "reviewRecord": "[review.md](review.md)，APPROVED；root/Astra Ultra，05:11:08 UTC",
+      "mainRecord": "NOT_INTEGRATED；main698仅已审模块/公共输入，不含本接线",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED**",
+      "target": "2e4c5fe7d795e397ab1b1e492605562a847c5fb0",
+      "proof": {
+        "target": "2e4c5fe7d795e397ab1b1e492605562a847c5fb0",
+        "head": "2e4c5fe7d795e397ab1b1e492605562a847c5fb0",
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/outbox.ts",
+          "apps/web/test/conversation-outbox.test.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/execution-profile-integration.fixture.ts",
+          "apps/web/test/execution-profile-integration.browser.ts"
+        ],
+        "observedAt": "2026-10-06T05:12:10.922Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/wpf-profile-integration/quality.md",
+          "plans/wpf-profile-integration/plan.md",
+          "plans/wpf-profile-integration/review.md",
+          "plans/wpf-profile-integration/status.md",
+          "docs/evidence/wpf-profile-integration/README.md",
+          "docs/evidence/wpf-profile-integration/browser-dialog-timing-failure.json",
+          "docs/evidence/wpf-profile-integration/browser-failure.png",
+          "docs/evidence/wpf-profile-integration/browser-initial-failure.json",
+          "docs/evidence/wpf-profile-integration/browser-results.json",
+          "docs/evidence/wpf-profile-integration/browser-stale-fixture-failure.json",
+          "docs/evidence/wpf-profile-integration/browser.log",
+          "docs/evidence/wpf-profile-integration/build.log",
+          "docs/evidence/wpf-profile-integration/direct-tests-initial-failure.log",
+          "docs/evidence/wpf-profile-integration/direct-tests.log",
+          "docs/evidence/wpf-profile-integration/install.log",
+          "docs/evidence/wpf-profile-integration/production-browser-results.json",
+          "docs/evidence/wpf-profile-integration/production-browser.log",
+          "docs/evidence/wpf-profile-integration/profile-dark-390.png",
+          "docs/evidence/wpf-profile-integration/profile-dark.png",
+          "docs/evidence/wpf-profile-integration/profile-light-390.png",
+          "docs/evidence/wpf-profile-integration/profile-light.png",
+          "docs/evidence/wpf-profile-integration/profile-locked-dark-390.png",
+          "docs/evidence/wpf-profile-integration/source-binding.json",
+          "docs/evidence/wpf-profile-integration/typecheck.log",
+          "docs/evidence/wpf-profile-integration/validation.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "declarationProof": "unchanged"
+    },
+    "implementationProof": {
+      "target": "2e4c5fe7d795e397ab1b1e492605562a847c5fb0",
+      "head": "2e4c5fe7d795e397ab1b1e492605562a847c5fb0",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/test/conversation-outbox.test.ts",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/execution-profile-integration.fixture.ts",
+        "apps/web/test/execution-profile-integration.browser.ts"
+      ],
+      "observedAt": "2026-10-06T05:12:10.922Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/wpf-profile-integration/quality.md",
+        "plans/wpf-profile-integration/plan.md",
+        "plans/wpf-profile-integration/review.md",
+        "plans/wpf-profile-integration/status.md",
+        "docs/evidence/wpf-profile-integration/README.md",
+        "docs/evidence/wpf-profile-integration/browser-dialog-timing-failure.json",
+        "docs/evidence/wpf-profile-integration/browser-failure.png",
+        "docs/evidence/wpf-profile-integration/browser-initial-failure.json",
+        "docs/evidence/wpf-profile-integration/browser-results.json",
+        "docs/evidence/wpf-profile-integration/browser-stale-fixture-failure.json",
+        "docs/evidence/wpf-profile-integration/browser.log",
+        "docs/evidence/wpf-profile-integration/build.log",
+        "docs/evidence/wpf-profile-integration/direct-tests-initial-failure.log",
+        "docs/evidence/wpf-profile-integration/direct-tests.log",
+        "docs/evidence/wpf-profile-integration/install.log",
+        "docs/evidence/wpf-profile-integration/production-browser-results.json",
+        "docs/evidence/wpf-profile-integration/production-browser.log",
+        "docs/evidence/wpf-profile-integration/profile-dark-390.png",
+        "docs/evidence/wpf-profile-integration/profile-dark.png",
+        "docs/evidence/wpf-profile-integration/profile-light-390.png",
+        "docs/evidence/wpf-profile-integration/profile-light.png",
+        "docs/evidence/wpf-profile-integration/profile-locked-dark-390.png",
+        "docs/evidence/wpf-profile-integration/source-binding.json",
+        "docs/evidence/wpf-profile-integration/typecheck.log",
+        "docs/evidence/wpf-profile-integration/validation.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "documents": [
+      {
+        "path": "plans/wpf-profile-integration/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/wpf-profile-integration/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/wpf-profile-integration/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/wpf-profile-integration/take-receipt.json",
+        "title": "正式receipt",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-profile-integration/validation.md",
+        "title": "验证",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-profile-integration/quality.md",
+        "title": "技能",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-profile-integration/README.md",
+        "title": "启动恢复",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 3,
+      "total": 4
+    },
+    "main": {
+      "record": "NOT_INTEGRATED；main698仅已审模块/公共输入，不含本接线",
+      "recordedHead": null,
+      "target": "2e4c5fe7d795e397ab1b1e492605562a847c5fb0",
+      "mainHead": "6b4b89f397b35d7e769846df457e76bb29f4a265",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/test/conversation-outbox.test.ts",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/execution-profile-integration.fixture.ts",
+        "apps/web/test/execution-profile-integration.browser.ts"
+      ],
+      "observedAt": "2026-10-06T05:12:10.859Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main 声明范围与目标不同，或存在未提交变化"
+    },
+    "assignments": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/outbox.ts",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/test/conversation-outbox.test.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/execution-profile-integration.browser.ts",
+          "apps/web/test/execution-profile-integration.fixture.ts",
+          "docs/evidence/wpf-profile-integration",
+          "plans/wpf-profile-integration"
+        ],
+        "state": "active",
+        "branch": "codex/web-profile-integration",
+        "origin": "new",
+        "taskId": "WPF-PROFILEI01",
+        "worker": "workspace_panels_owner",
+        "claimId": "7f1daa29-78e0-463e-ab88-99e295e9e648",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+        "createdAt": "2026-10-06T04:59:25.825Z",
+        "updatedAt": "2026-10-06T04:59:25.825Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  },
+  "scope": "One read from deployed 4320 /api/snapshot; this task only, original snapshot contained 60 tasks."
+}
