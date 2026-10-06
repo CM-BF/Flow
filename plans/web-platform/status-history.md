@@ -412,4 +412,3 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 | 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
 | 已验真实持续聊天 | 既有CHAT/QUEUE与GO两query | GO/Lead固定真实两query2/2已验收封存；running入队、继续、浏览器退出与精确第二回复通过。本队只消费固定证据，不重跑模型；steer、语音、完整context等未完成项保持原REQ |
 | 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 用户总预算Root4/Web4/Mika4=12；本树root+现三成员=4，不新增agent。唯一status→dashboard，普通事件不逐条私信；跨lead裁决或看板无法解决的真实阻塞才一次短消息 |
-
