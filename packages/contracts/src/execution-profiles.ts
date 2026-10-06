@@ -78,3 +78,53 @@ export interface CodexExecutionProfile extends Omit<ExecutionProfile, 'configura
 }
 export type NativeExecutionProfile = ExecutionProfile | CodexExecutionProfile;
 export interface NativeExecutionProfilePublished { profile: NativeExecutionProfile; replayed: boolean }
+
+/** Opt-in read protocol. This catalog reports configured intent, never provider readiness. */
+export const NATIVE_EXECUTION_PROFILE_VERSION = 'native-v1';
+export const NATIVE_EXECUTION_PROFILE_CATALOG_PROTOCOL = 'flow.native-execution-profile-catalog.v1';
+const catalogCommon = {
+  reference: executionProfileReferenceSchema,
+  source: z.literal('runner-configured'),
+  availability: z.literal('not-probed'),
+  model: z.strictObject({ value: modelValue, resolvedModel: z.null(), displayName: modelValue,
+    description: z.string().max(512), providerCapabilities: z.literal('unknown') }),
+  createdAt: z.iso.datetime({ offset: true }),
+};
+const catalogProfileSchema = z.union([
+  z.strictObject({ ...catalogCommon, configuration: executionProfileConfigurationSchema,
+    controls: z.strictObject({ model: z.literal('select-configured-profile'), thinking: z.literal('fixed-disabled'),
+      effort: z.literal('unsupported'), access: z.literal('configured-policy'), queue: z.literal(false), steer: z.literal(false) }) }),
+  z.strictObject({ ...catalogCommon, configuration: codexExecutionProfileConfigurationSchema,
+    controls: z.strictObject({ model: z.literal('select-configured-profile'), thinking: z.literal('unsupported'),
+      effort: z.literal('configured-request'), serviceTier: z.literal('configured-request'), access: z.literal('requested-none'),
+      queue: z.literal(false), steer: z.literal(false) }) }),
+]);
+const catalogConversationSchema = z.discriminatedUnion('state', [
+  z.strictObject({ state: z.literal('existing-claude-contract'), capabilitySource: z.literal('conversation-response') }),
+  // Unsupported covers creation and every conversation operation; no capability is implied by omission.
+  z.strictObject({ state: z.literal('unsupported'), reason: z.enum(['codex-conversation-unimplemented', 'profile-purpose-not-supported']) }),
+]);
+export const nativeExecutionProfileCatalogEntrySchema = z.strictObject({ profile: catalogProfileSchema, conversation: catalogConversationSchema })
+  .superRefine(({ profile, conversation }, context) => {
+    const configuration = profile.configuration;
+    const reason = configuration.harness === 'codex' ? 'codex-conversation-unimplemented'
+      : configuration.access === 'goal-tools' || configuration.access === 'goal-graph-tools' ? 'profile-purpose-not-supported' : null;
+    if (reason ? conversation.state !== 'unsupported' || conversation.reason !== reason : conversation.state !== 'existing-claude-contract') {
+      context.addIssue({ code: 'custom', path: ['conversation'], message: 'Conversation compatibility must match the configured profile.' });
+    }
+    if (profile.model.value !== configuration.model) {
+      context.addIssue({ code: 'custom', path: ['profile', 'model'], message: 'Catalog model must match configured intent.' });
+    }
+  });
+export type NativeExecutionProfileCatalogEntry = z.infer<typeof nativeExecutionProfileCatalogEntrySchema>;
+export const nativeExecutionProfileCatalogPageSchema = z.strictObject({
+  protocol: z.literal(NATIVE_EXECUTION_PROFILE_CATALOG_PROTOCOL),
+  profiles: z.array(nativeExecutionProfileCatalogEntrySchema).max(100),
+  nextCursor: executionProfileReferenceSchema.shape.id.nullable(),
+}).superRefine((page, context) => {
+  const ids = page.profiles.map(entry => entry.profile.reference.id);
+  if (new Set(ids).size !== ids.length || page.nextCursor !== null && page.nextCursor !== ids.at(-1)) {
+    context.addIssue({ code: 'custom', message: 'Invalid catalog page identity or cursor.' });
+  }
+});
+export type NativeExecutionProfileCatalogPage = z.infer<typeof nativeExecutionProfileCatalogPageSchema>;
