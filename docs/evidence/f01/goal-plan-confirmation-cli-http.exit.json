@@ -1,0 +1,27 @@
+{
+  "startedAt": "2026-10-06T18:03:44.911008+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/cli/src/goal-plan-confirmation.test.ts",
+    "--maxWorkers=1",
+    "--no-cache"
+  ],
+  "freeBytesBefore": 1716523008,
+  "sourceHashes": {
+    "apps/cli/src/index.ts": "59213e5987492581bde26dd4040bc5729b747d6614e418532884e1c334824449",
+    "apps/cli/src/goal-plan-confirmation.test.ts": "df168d192fa4bdb3fd1271ed2f8838571906fb5e95e98abbf07a615a2f2cbd22",
+    "apps/cli/README.md": "51394b9498562eb51185cbdeb45448d55ea33319537dd15690cd0e2c4bf363a3"
+  },
+  "headBefore": "bb7bdd5e1a4c344a4ae5e2664bc6ac3c68e61691",
+  "testsRerun": "only new CLI HTTP case; no old domain/PG tests",
+  "productPG": 0,
+  "provider": 0,
+  "exitCode": 0,
+  "stopReason": null,
+  "durationSeconds": 0.7669530840357766,
+  "stdout": "goal-plan-confirmation-cli-http.stdout.txt",
+  "stdoutBytes": 319,
+  "stdoutSha256": "8969b7c5dc32be3acd459522907a0f9392fc47ee45843286e5e79a9761030ea3"
+}

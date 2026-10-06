@@ -52,6 +52,10 @@ These routes are disabled until the center host sets `FLOW_PLUGIN_INSTALL_CONFIG
 
 `goal progression GOAL PROGRESSION` reads the durable state and reason for waiting or stopping. `goal revoke-progress GOAL PROGRESSION --input FILE --key KEY` accepts `{ "reason": "..." }` and stops later admissions; it does not cancel already admitted tasks. Mutations require the original stable key/body for recovery and do not retry a conflict. Mechanical verification within this authorization remains distinct from independent owner acceptance.
 
+`goal plan confirm-inputs PROPOSAL_ID --input FILE --key KEY` confirms one saved complete-input proposal through the same public owner interface. The strict UTF-8 JSON file is limited to 65536 bytes and uses `flow.goal-plan-confirmation.v1`: exact `proposalDigest`, current `expectedProjectRevision`, per-key registered `executionProfile` and `externalDependencies`, finite `maxAdmissions`, `intermediatePolicy`, absolute `expiresAt`, and `reason`. Review the proposal's actual inputs and material references first; titles are not execution inputs. This command does not generate a plan or grant model permissions.
+
+The required stable key and unchanged file recover the original confirmation after an unknown response. Conflicts exit 3 without retry; invalid input exits 2 and transport cancellation/failure exits 4. Exiting the client or cancelling its HTTP request does not cancel admitted tasks. The center's existing progression lifecycle continues eligible work; a confirmation receipt is neither task completion nor semantic acceptance.
+
 ## Claude message settings
 
 `conversation profiles --after UUID --limit N --json` reads the explicit `flow.claude-turn-settings.v1` catalog of complete configured choices. Configured choices do not establish account entitlement or observed execution. Legacy profile readers retain their existing protocols.

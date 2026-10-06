@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:50 UTC / mainb4ab57c6 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:06 UTC / main0e4c7b0f |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | 规则与入口核对方法已main0c242483；本次记录两条精确构建缓存清理与串行验证窗口 |
-| 工作树dirty状态 | 仅本次资源事实和运行约束记录 |
+| 工作基线 / 本记录核验时HEAD | 资源 next4c 2/4 到准备线后停止；本次串行验证已清理，共享source-only新路径移交Web |
+| 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main0c242483已接收当前规则、运行文档与167来源；后续资源事实仍由本唯一status维护。 |
+| 已集成main状态 / HEAD | main0e4c7b0f已接逐消息配置、终端收尾、RELEASE03工具证据和完整目标输入接线；个人runtime362/v15保持 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 逐消息设置、终端收尾与目标规划的局部验证均已通过独审；资源已恢复到网页单次验证的准备余量。 |
-| 下一可用交付 | 接收逐消息设置的两处旧类型兼容修复，并完成新版网页的实际兼容验证。 |
-| 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；小验证按现场余量准入，已失败的准备记录保留。 |
+| 当前产出 | 逐消息设置、终端控制与完整目标输入接线已进入主线；新版网页的发送和恢复兼容验证已通过。 |
+| 下一可用交付 | Web消息设置界面独立开工；补齐保留旧页面的后台兼容证明，准备实际发布。 |
+| 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；个人发布等两组旧页面兼容证明，小验证由两lead串行安排。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -205,3 +205,7 @@ F01-032-PRODUCTION-20261006-1732：固定0ee2494e两源及ea276/6d114批准输�
 [四候选恢复批](../../docs/quality/resource-space-2026-10-06/next4c-resumed/README.md)最终2/4；另外两棵在17:49达到准备线后未操作。所有保留hash/保护树不变，未触donor/依赖/个人服务。PG/Chrome唯一窗口已给Web B1750，仍fresh原gate及140,065ms累计剩余；TUI/O15无在跑资源。本轮main与个人runtime均未因这些验证自动更新。
 
 Donor审计口径更正：此前4条可执行文本引用中，harness-comparison snapshots及claude-harness归档3条是逐字历史来源（各README明确非运行入口），context-pi-hook/run.mjs才是条件重跑入口。原历史文件不改，donor仍KEEP；不能凭字符串引用数量称4个活跃运行消费者，也不能据此删除依赖。
+
+2026-10-06 18:06 UTC：F01 O15 单次 PG 1/1 exit0（5.652s）已正常删除自有DB/目录、process group absent，窗口归还 Web 用于原 Recovery 固定旅程；未启动新模型。RELEASE03 原 A/B 已独审并main，个人服务未操作。原 next4c 剩余两树未动，大构建门槛不因当前约1.7GB观察解除。
+
+Web消息设置349精确tracked输入（逻辑约2.97MB）已将唯一新路径 `web-message-settings` / `codex/web-message-settings` 的 source-only provision 一次移交 Web manager，自固定已合并8d84准备、上限4MiB，无安装/构建/运行，不改共享Git config或已有worktree；原563仅历史输入。本Lead不同时操作此新路径，后续由Web fresh八literal take及权威status记实际完成。小源码准备不套PG余量门槛。

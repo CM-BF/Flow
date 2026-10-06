@@ -1,4 +1,5 @@
 import { goalProgressionAuthorizationSchema, goalProgressionRevocationSchema, GOAL_PROGRESSION_MAX_BYTES } from '@flow/contracts';
+import { goalPlanConfirmationSchema, GOAL_PLAN_CONFIRMATION_MAX_BYTES } from '@flow/contracts';
 import { packageFetchRequestSchema, packageFetchCommandSchema, PACKAGE_FETCH_LIMITS } from '@flow/contracts';
 import { pluginInstallRequestSchema, pluginInstallCommandSchema, PLUGIN_INSTALL_LIMITS } from '@flow/contracts';
 import { knowledgeCreateSchema, knowledgePublishSchema, knowledgeResolveSchema, KNOWLEDGE_LIMITS, pluginRegistrationSchema, pluginCommandSchema, MAX_PLUGIN_REQUEST_BYTES } from '@flow/contracts';
@@ -219,6 +220,13 @@ async function goalCommand({ client, values, positionals, io, signal }: CommandC
   const action = positionals[1];
   let result: unknown;
   switch (action) {
+    case 'plan': {
+      if (positionals[2] !== 'confirm-inputs' || positionals.length !== 4) throw new UsageError('Use goal plan confirm-inputs <proposal-id> --input JSON-file --key stable-key.');
+      const key = required(values.key, '--key (stable command identifier)');
+      const input = goalPlanConfirmationSchema.parse(await readJsonInput(required(values.input, '--input JSON-file'), GOAL_PLAN_CONFIRMATION_MAX_BYTES));
+      result = await client.confirmGoalPlan(required(positionals[3], 'proposal ID'), input, key, signal);
+      break;
+    }
     case 'progression': result = await client.goalProgression(required(positionals[2], 'goal ID'), required(positionals[3], 'progression ID'), signal); break;
     case 'authorize-progress':
     case 'revoke-progress': {
@@ -249,7 +257,7 @@ async function goalCommand({ client, values, positionals, io, signal }: CommandC
         : await client.commandGoal(required(positionals[2], 'goal ID'), goalCommandSchema.parse(input), key, signal);
       break;
     }
-    default: throw new UsageError('Use goal create|show|input|history|change|execute-native|authorize-progress|progression|revoke-progress.');
+    default: throw new UsageError('Use goal create|show|input|history|change|execute-native|authorize-progress|progression|revoke-progress|plan confirm-inputs.');
   }
   io.out(JSON.stringify(result));
   return 0;
@@ -369,6 +377,7 @@ Commands:
   goal authorize-progress <goal-id> --input JSON-file --key stable-key
   goal progression <goal-id> <progression-id>
   goal revoke-progress <goal-id> <progression-id> --input JSON-file --key stable-key
+  goal plan confirm-inputs <proposal-id> --input JSON-file --key stable-key
   project workspaces|list
   project create --title title --key stable-key
   project show <project-id> [--revision number]

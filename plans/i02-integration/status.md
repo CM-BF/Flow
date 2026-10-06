@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:04 UTC / main8fc76397 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:09 UTC / main0e4c7b0f |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main8fc76397；受控接收 O15 13 个领域源码和 F01 4 个生产/消费者源码 |
+| 工作基线 / HEAD | main0e4c7b0f；本批只接已审计划确认CLI三源与权威收口记录 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | completed |
-| 检查状态 | 17源对各唯一已审target精确一致；领域13分轮、生产1/1原证据复用；本次root noEmit exit0 9.342s，未重复PG/provider |
-| 已集成main状态 / HEAD | 上一批main8fc76397已含RELEASE03证据；本批O15候选待fast-forward。个人runtime362/v15与Web8d8/v2不变 |
+| 检查状态 | CLI固定ccfa独审APPROVED，原HTTP1/1/types0复用；root CLI组合types0。hashP03组合类型红保留并退回owner，未进入本批产品 |
+| 已集成main状态 / HEAD | main0e4c7b0f含完整输入确认及后台推进；CLI候选待发布。个人runtime362/v15与Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 完整计划输入经确认后可由中心持续推进依赖任务，重开后保留进度；真实模型语义验收仍开放。 |
-| 下一可用交付 | 发布已核组合；个人新版网页准备补齐保留旧页面的兼容依据。 |
+| 当前产出 | 完整计划输入确认可通过命令行操作；中心推进与已保存回执继续复用同一公开接口。 |
+| 下一可用交付 | 发布CLI小片；等待流式校验归档类型修复和个人网页兼容准备。 |
 | 当前阻塞 | ACTIVE: 固定后端大型构建仍缺空间；个人更新等待保留网页组合证据。 |
 | 需用户决定 | NONE |
 
@@ -215,3 +215,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 17:57 UTC：接收RELEASE03 ef458两fixture及ee6d固定独审/raw，26源/结果bindings逐字核实；原A两项复用+B真实三场景通过，累计50,809/180,000ms、余129,191ms；实际root noEmit0(9.08s)，不重跑App/PG。批准仅af51后台+d629产物组合，不把本main或当前个人362/8d8当这组已运行版本。原operator正在核全部保留artifact的兼容依据，未drain/发布/刷新用户tab。
 
 2026-10-06 18:04 UTC：O15 e0领域由 assignment 唯一独审，F01 7f生产接线由 Lead 窄审，17个新增/变更源码精确受控接收。组合root noEmit exit0（9.342s）；不重跑已审13领域或1生产PG。原ACK已收后重开与真实lostACK范围分开，0provider，不自动语义接受。见 [固定输入](../../docs/evidence/i02/o15-confirmation-integration.json)。
+
+2026-10-06 18:09 UTC / main0e4c7b0f：CLI三源ccfa原HTTP1/types绿、Lead独审通过；CHAT06P03两源+42Git/5dependency固定核对后，实际组合类型检查暴露baseline docs路径无法解析SDK，原红保留，暂退下2产品源及未发布本次副本，不覆盖Mika原5项批准。CLI独立检查后先发布，hash修复只由原owner处理，不拖无关交付。

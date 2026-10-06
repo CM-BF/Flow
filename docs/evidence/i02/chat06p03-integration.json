@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-06T18:05:36.119565+00:00",
+  "baseline": "0e4c7b0f69937f5b7a0c6dee3029ccc27f904364",
+  "implementation": "4c6676caf545aea1939a9b676b419cf702eed19c",
+  "metadata": "1b285cdf037891dc547a00c6384e6b95f9f24181",
+  "review": "docs/evidence/chat06p03/independent-review.json",
+  "reviewAccepted": "Mika unique independent APPROVED; no second full review",
+  "gitBindings": 42,
+  "thirdPartyBindings": 5,
+  "bindingErrors": [],
+  "productSources": [
+    {
+      "role": "source",
+      "path": "apps/runner/src/assistant-stream/accumulator.ts",
+      "ref": "4c6676caf545aea1939a9b676b419cf702eed19c",
+      "bytes": 10069,
+      "sha256": "d81c8c0c2b975f257b0efb934fc3279633f73ef3a41c68f5634580b311c6a4fc"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/assistant-stream/accumulator-incremental.test.ts",
+      "ref": "4c6676caf545aea1939a9b676b419cf702eed19c",
+      "bytes": 10511,
+      "sha256": "a7c87fcbf7ec9bfb0acd39794f01d50fd12d882f014c5774e2eaba6a1777e645"
+    }
+  ],
+  "preservedDirectInputs": [
+    "apps/runner/src/assistant-stream/index.ts",
+    "packages/contracts/src/assistant-stream.ts",
+    "packages/contracts/src/harnesses.ts",
+    "packages/contracts/src/protocol-task.ts",
+    "packages/contracts/src/engineering.ts",
+    "packages/contracts/src/engineering-native.ts",
+    "packages/contracts/src/engineering-profile.ts",
+    "package.json",
+    "pnpm-lock.yaml",
+    "tsconfig.json",
+    "apps/runner/package.json",
+    "packages/contracts/package.json",
+    "vitest.config.ts"
+  ],
+  "changedReadonlyInputs": [
+    "packages/contracts/src/tasks.ts",
+    "packages/contracts/src/execution-profiles.ts"
+  ],
+  "changedInputAssessment": "Only approved Claude message-settings optional task field and explicit profile catalog/control union; accumulator/coalescer/types/stream DTO inputs unchanged. Preserve new contracts, verify combined types.",
+  "checksReused": {
+    "redSelected": 1,
+    "redExpectedFailures": 1,
+    "redNotSelected": 4,
+    "greenSelected": 5,
+    "greenPassed": 5,
+    "distinctPassed": 5,
+    "strictExitCode": 0,
+    "productionUpperLimit": "NOT_SELECTED; reduced-limit fixture only"
+  },
+  "integrationChecks": {
+    "rootTypesExit": 2,
+    "raw": "cli-prefix-root-types.txt",
+    "result": "CHANGES_REQUESTED integration-only evidence-baseline resolution",
+    "productFinding": false,
+    "action": "All uncommitted hash source/owned records removed from this batch; authoritative fixed inputs retained in owner tree/Git. CLI continues independently."
+  },
+  "limitation": "Incremental hashing evidence does not prove CPU/throughput or real-provider benefit."
+}
