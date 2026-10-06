@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:08:49 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:10:43 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -13,18 +13,18 @@
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 3636614f3850d7eb9ca63a42c01ea0d95df19db2（v3源码；候选packet与metadata HEAD由Git核） |
 | 工作树dirty状态 | f960a1dcc0dccf86c670a00edb2956d8763f9142源码提交后仅新固定input/manifest与自身metadata；交审packet提交后核clean。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 检查状态 | C_FD_V3_WINDOW_STOPPED（1编译/2目标，control已报告/profile-regular SIGABRT无报告；measurement=false、cleanup/accounting=true、CLI1）； C_FD_V3_LOCAL_PASS（28通过/16未选，9新+19直接；Node24惰性import/3语法0，新增实际compile/target0）； C_FD_V2_WINDOW_STOPPED（1编译/2目标，control已报告/profile SIGABRT/第三NOT_RUN；measurement=false、cleanup/accounting=true、CLI1）；C_FD_V2_LOCAL_PASS（26/26受影响项，9未选；Node24惰性import/3语法通过，历史检查时新增实际运行0）；C_FD_WINDOW_STOPPED（1编译exit0/0目标，cleanup=true，measurement=false/accounting=unknown，CLI1）；C_HOST_LOCAL_PASS（20 distinct零目标检查，分18+1+1，Node24惰性import/5语法通过）；CATALOG_LOCAL_PASS（33 distinct/strict0，分次证据）；DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源/薄consumer仍待Lead集成；不代表个人服务部署 |
 | 实现目标 | f960a1dcc0dccf86c670a00edb2956d8763f9142 |
 | 实现范围 | experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs, experiments/codex-app-server-conformance/fd-canary/host.test.ts, experiments/codex-app-server-conformance/sandbox67 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 单项Sandbox容器查询权限对照已运行：控制项成功，受限目标仍异常退出且无子报告。清理与计量完成，失败结果等待独审。 |
-| 下一可用交付 | 交付这次单项权限对照的独立结果审查；不追加试跑。既有已审R06与薄入口可独立集成。 |
+| 当前产出 | 单项Sandbox容器查询权限对照已运行：控制项成功，受限目标仍异常退出且无子报告。清理与计量完成，独审已确认失败证据准确；隔离能力仍未证实。 |
+| 下一可用交付 | 本次失败结果已交付；停止诊断，等待04 producer固定目标做只读审查。既有已审R06与薄入口可独立集成。 |
 | 当前阻塞 | ACTIVE: socket与普通文件对照的受限目标均异常退出且无报告，原因仍未知；窗口已消费，真实Codex目录仍缺隔离验证。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：sandbox67结果NOT_STARTED；sandbox67组合4dec9500 APPROVED（status_read，2026-10-06 12:05:24 UTC，0P1/P2）；v3结果d8038d3a faithful FAIL APPROVED（architecture_read，2026-10-06 11:45:46 UTC，0P1/P2）；v3组合a10b4fae APPROVED（architecture_read，2026-10-06 11:38:34 UTC，0P1/P2）；结果6b397a58 faithful incomplete/FAIL APPROVED（architecture_read，11:30:14 UTC，0P1/P2）；当前v2候选851fd8c7 APPROVED（Mika，2026-10-06 11:20:49 UTC，0P1/P2）；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
+| Review | [review.md](review.md)：sandbox67结果b2a77cf3 faithful FAIL APPROVED（Mika，2026-10-06 12:10:08 UTC，0P1/P2）；sandbox67组合4dec9500 APPROVED（status_read，2026-10-06 12:05:24 UTC，0P1/P2）；v3结果d8038d3a faithful FAIL APPROVED（architecture_read，2026-10-06 11:45:46 UTC，0P1/P2）；v3组合a10b4fae APPROVED（architecture_read，2026-10-06 11:38:34 UTC，0P1/P2）；结果6b397a58 faithful incomplete/FAIL APPROVED（architecture_read，11:30:14 UTC，0P1/P2）；当前v2候选851fd8c7 APPROVED（Mika，2026-10-06 11:20:49 UTC，0P1/P2）；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 目录Module新增versioned reader/严格DTO，既有挂载与存储不变；R06历史private sink已审，process owner不变。最终target架构更新待Mika/ExecutionLead集成。 |
 
@@ -162,4 +162,4 @@ Sandbox67局部检查：16通过/31未选，3新固定选择/profile/regular接�
 
 ## Sandbox67本次运行最终事实
 
-[结果](../../docs/evidence/wpf-mature-02/sandbox67/run-report.md)：执行5df7b43e，1编译/2目标，控制socket完整报告、新profile regular SIGABRT/report=null；父regular身份不替子观测。CLI1、794.116208ms，measurement=false、cleanup/descriptors/accounting=true，无保留root。S01已通知可解除串行等待，许可消费完；结果交独审，不推断原因或新增grant。原profile/原始证据保持历史target。
+[结果](../../docs/evidence/wpf-mature-02/sandbox67/run-report.md)：执行5df7b43e，1编译/2目标，控制socket完整报告、新profile regular SIGABRT/report=null；父regular身份不替子观测。CLI1、794.116208ms，measurement=false、cleanup/descriptors/accounting=true，无保留root。S01已通知可解除串行等待，许可消费完；结果b2a77cf3已获Mika于12:10:08 UTC忠实FAIL独审接收，不推断原因或新增grant。原profile/raw/runmanifest/archive冻结，当前review尾部另计。
