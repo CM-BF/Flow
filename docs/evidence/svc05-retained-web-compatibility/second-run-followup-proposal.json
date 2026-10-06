@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-06T19:15:14.859890+00:00",
+  "state": "PROPOSAL_ONLY_NO_PRODUCT_WRITES_NO_RUN",
+  "fixedFailingSource": "25b70880619037ddd2ad84ba2790ad23267dc5f9",
+  "facts": [
+    {
+      "file": "experiments/personal-current-release/fixture.mjs",
+      "lines": "21-30",
+      "problem": "directory list and lstat cross a runner atomic rename; ENOENT aborts sample and entire browser check"
+    },
+    {
+      "file": "experiments/personal-current-release/browser.mjs",
+      "lines": "102,104",
+      "problem": "finally closePreview can replace original thrown exception in worker report, though separate retained-0-failure file preserves it"
+    }
+  ],
+  "minimalCandidate": [
+    "Give diskBytes a small bounded fresh resample only for a vanished enumerated child within the same owned root. Record incomplete sample/ENOENT and retry count; preserve all other errors/root identity mismatch as unknown. Never declare transient partial total exact or skip an absent root. Keep cumulative file count/time/output bounds, no symlink following and final pre-cleanup sample.",
+    "Keep actualApp failure and closePreview failure as separate ordered fields or AggregateError; preserve failure.json and wire. No selector weakening or automatic page retry."
+  ],
+  "localValidationCandidate": "Pure tiny-files/controlled IO tests for enumerate\u2192rename\u2192stable next sample, persistent churn\u2192unknown, missing root, permission error, count bound and original+close failures. No PG/browser/provider; new actual journey requires separate permission.",
+  "ownership": "Within original fixture/browser scripts and own evidence; no af51 product changes",
+  "diagnosticLimits": "Preview errors after signal are not by themselves a browser product defect; full compatibility remains unproven. No extra probes."
+}

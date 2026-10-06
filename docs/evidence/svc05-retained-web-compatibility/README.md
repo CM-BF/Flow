@@ -1,6 +1,6 @@
 # SVC05R01 固定准备
 
-两份保留网页对 af51 后台的真实兼容旅程源码已独审；**首次运行在页面启动前因依赖缺件失败，补链后装配已通过，仍没有兼容通过报告**。目标是补齐发布必需的旧页面读取、发送、原 key 显式恢复和能力协商。此次不复跑 d629 的 A/B，不接触个人安装。
+两份保留网页对 af51 后台的真实兼容旅程源码已独审；**首次运行在页面启动前因依赖缺件失败，补链后装配已通过；第二次在资源采样竞态后失败，仍没有兼容通过报告**。目标是补齐发布必需的旧页面读取、发送、原 key 显式恢复和能力协商。此次不复跑 d629 的 A/B，不接触个人安装。
 
 - 源码目标：`25b70880619037ddd2ad84ba2790ad23267dc5f9`；四源/sourceDigest：[prepared.json](prepared.json)。运行时再次核四源、外部 af51 全部 487 固定文件与两个产物。
 - 来源：`ec5da343880879154e2392f52eaa915d5b08aa77` 上四原脚本与 dc8 逐字同。使用已审 `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7` 的 ACK 后头部截断方法；不在请求未受理时伪造丢 ACK。
@@ -31,3 +31,11 @@
 Lead批准的两条 ignored alias 已建立：`@flow/client`只指同一af51源码，SDK0.3.290指I02已固定第三方包；无安装/正式manifest修改/移动主线源码别名。[link-receipt](runtime-dependency-delta/link-receipt.json)保留精确路径和hash。
 
 一次导入实际 runtime、execution-profiles、verifier 及 server index，四个公开export均为function；不调用它们。Node24/tsx4.23.15、`TSX_DISABLE_CACHE=1`，exit0，1002ms，stdout701B/stderr0、临时新增0B；PGID87258自然退出、全组absent、checkpoint后同devino tmp删除。无PG/HTTP/Chrome/provider。本次只证明模块装配，不替代两App行为，也不覆盖query-time平台资源。[result](runtime-dependency-delta/import-result.json)、[delta manifest](runtime-dependency-delta/manifest.json)。
+
+## 2026-10-06 19:15 UTC 第二次实际检查封存
+
+新许可1913仅执行一次：exit1，14.885s，Chrome154已启动，0完整App。资源采样读取runner正在原子改名的 `admission.json.tmp` 得到ENOENT，触发stopWork；独立页面failure另记Retry后正文未出现。完整wire保留两次202及相同key/body/task/turn的局部事实，不代替后续可见正文/legacy等未完成断言。各异常无独立时间，不能强推因果顺序。[分析](second-run-analysis.json)、[原manifest](second-run-manifest.json)。
+
+完整checkpoint后worker46178/Chrome49046全组absent，三监听消失；专库marker/目录devino相同，5.09ms连接零，普通DROP remaining[]/tmp清理。原chrome输出3847B完整保存；退出code未观测，不称exit0。minfree1,473,245,184B、peaktemp8,890,074B，均在观测阈值内。累计保守扣两次整个supervisor时间17,812ms；候选剩余72,188ms并非新许可。兼容NOT_PROVEN，0provider/个人操作，无重试。
+
+[最小后继提案](second-run-followup-proposal.json)仅改验收器采样/异常保留，尚无源码变更或新增检查授权。

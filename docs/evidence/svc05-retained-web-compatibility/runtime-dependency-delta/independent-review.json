@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-06T19:11:55.987015+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "a3ad296df9fdcc9330490084353f5cc91bbcf8e2",
+  "source": "25b70880619037ddd2ad84ba2790ad23267dc5f9",
+  "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "manifestSha256": "469542723f7962db03e07859498559292ca280eb7dd6cf61d09176bcd8bf43e9",
+  "conclusion": "APPROVED_DEPENDENCY_VIEW_DELTA",
+  "verified": {
+    "allBindings": 94,
+    "backendFixedGitBindings": 67,
+    "errors": []
+  },
+  "scope": [
+    "Only two ignored aliases: same af51 @flow/client and existing pinned SDK0.3.290 package/peer entries",
+    "Full import-only script, durable reservation/checkpoint and source-only input binding",
+    "Actual four exports: runRunner, describeExecutionProfile, verifyText, createServer; none invoked"
+  ],
+  "evidence": {
+    "imports": 4,
+    "exitCode": 0,
+    "elapsedMs": 1002,
+    "stdoutBytes": 701,
+    "stderrBytes": 0,
+    "temporaryPeakBytes": 0,
+    "processGroup": "absent",
+    "sameInodeTempRemoved": true,
+    "newReviewerTests": 0,
+    "provider": 0
+  },
+  "priorFailure": {
+    "delivery": "5f477a528207b10d52cc63f8eadcc589460cc555",
+    "elapsedMs": 2927,
+    "pageReports": 0,
+    "reason": "af51 outbox missing @flow/client",
+    "cleanup": "normal owned DB drop; PGID/ports/temp absent",
+    "preserved": true
+  },
+  "limitations": [
+    "Two actual retained App compatibility remains unproven.",
+    "No personal deployment permission or provider calls.",
+    "Original four-source and af51 product bytes unchanged; original red evidence unchanged."
+  ]
+}
