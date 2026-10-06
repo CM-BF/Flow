@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:32:46 UTC / mainfd1322f9c0c1d085d5e343e39f6216b20d26c264 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:55:24 UTC / main52ebd2b1efe5ecbfab9d3c59b1da2ed1580dd52f |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,11 +12,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | c450c2da7e6185b88db9f46e0299ee504ee6f3e8；已含共享发送ACK、ENG01A受管Git/受信检查fixture通路、native目录协议和真实Web兼容证据。个人backend仍b1c2e398、accepting v12；Web已独立发布固定8d8ab520/artifact caa1e938/release v2，旧资源保留，center/runner原进程不变。10:49:58.895Z实际看板131源；132源登记为当前待发布批。 |
+| 已集成main状态 / HEAD | 52ebd2b1 已含O11统一目标公共读口、027上下文历史和ENG01D/E身份/可信检查模块；个人backend b1c2e398 accepting v12、独立Web8d8ab520/artifact caa1e938 release v2保持。实际看板140源，后继登记按真实canonical批发布。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 工程配置、终端逐段正文与附件公共入口已进主线；个人网页独立发布版本与后台执行保持稳定。 |
-| 下一可用交付 | 并行实现目标统一读口和原生工程身份接缝，再串起计划、执行、验证与交付。 |
+| 当前产出 | 目标计划与执行状态可通过公共接口分别读取；工程检查证据与模型输出保持分离，已审功能持续接入主线。 |
+| 下一可用交付 | 并行交付连续目标会话与原生工程检查接线，保留历史解释和未知执行事实。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -104,3 +104,5 @@ SVC04真实Web-only发布已完成，固定报告与脱敏操作事实见[发布
 2026-10-06 11:15：连续目标统一读口新增GO只读研究输入，见plan同名小节；稳定材料分页与实时活动分离仍是待实现验收，不冒称已测token收益。工程ENG01B已审main2e71，TUI01C唯一P2已闭合、待组合接收；真实native工程仍沿ENG001-04/05/06继续，非fixture完成即大目标Done。无新模型/工程测试。
 
 2026-10-06 11:32:46 UTC 当前主线核对：fd132已含ENG01B/C、TUI01C及附件026公共接口；个人backend b1c/Web8d8保持。原连续目标路径已由[O11](../../../goal-delivery-read-model/plans/o11-goal-delivery-read-model/status.md)独立实施，与[ENG01D](../../../engineering-native-seams/plans/eng01d-native-writer-seams/status.md)并行。139来源登记随本批；不以小读口或fixture工程代表完整自然语言交付。
+
+2026-10-06 11:55:24 UTC：O11模块与F01公共接线已独审/main52eb，稳定计划、实时状态与显式正文分层。O12接续同一目标会话控制器及固定解释历史，不另造大task；ENG01D/E已main，ENG01F将完整host snapshot绑定到新检查证据，原生writer/接受验收仍开放。普通进度沿各唯一status，不重复已审测试或provider。
