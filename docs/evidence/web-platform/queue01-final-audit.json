@@ -1,0 +1,145 @@
+{
+  "timePrecision": "clock tool observation after the preceding completed read-only audit; not an invented exact test time",
+  "metadata": "496db69b7a4973fc9d773aaef5389ef62cd1eef7",
+  "implementation": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+  "base": "14c61b4062f8040ba6c7239860929366e5bd3fc1",
+  "branch": "codex/web-conversation-queue",
+  "clean": true,
+  "changedPaths": 41,
+  "claimScopeCount": 13,
+  "outsideScope": [],
+  "implementationFiles": 11,
+  "implementationDiff": [],
+  "protectedDiff": [],
+  "markdown": 6,
+  "localLinks": 36,
+  "brokenLinks": [],
+  "todos": {
+    "completed": 4,
+    "pending": [
+      "WPF-QUEUE01-F01"
+    ]
+  },
+  "browserReportHashes": {
+    "development": {
+      "count": 11,
+      "mismatches": []
+    },
+    "production": {
+      "count": 11,
+      "mismatches": []
+    }
+  },
+  "fullDiffcheckRawExceptions": [
+    "build.log:21 trailing whitespace",
+    "direct-tests.log:11 blank EOF",
+    "typecheck.log:4 blank EOF"
+  ],
+  "dashboardSource": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/docs/evidence/wpf-queue01/dashboard-excerpt.json",
+  "dashboard": {
+    "generatedAt": "2026-10-06T05:41:16.755Z",
+    "sourceCount": 65,
+    "gitAtObservation": {
+      "available": true,
+      "branch": "codex/web-conversation-queue",
+      "head": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+      "dirty": true,
+      "changedFiles": 27,
+      "observedAt": "2026-10-06T05:41:18.198Z"
+    },
+    "reviewState": "approved",
+    "reviewTarget": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+    "implementationProof": "unchanged",
+    "reviewProof": "unchanged",
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "聊天执行中可继续排队，等待消息可查看、暂停继续或单独取消",
+      "next": "集成已通过审查的聊天排队操作",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "issues": [],
+    "assignments": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/queue/ConversationQueue.tsx",
+          "apps/web/src/conversations/queue/commands.ts",
+          "apps/web/src/conversations/queue/projection.ts",
+          "apps/web/src/conversations/queue/queue-elements.tsx",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation-queue.browser.ts",
+          "apps/web/test/conversation-queue.fixture.ts",
+          "apps/web/test/conversation-queue.test.ts",
+          "docs/evidence/wpf-queue01",
+          "plans/wpf-queue01-ui"
+        ],
+        "state": "active",
+        "branch": "codex/web-conversation-queue",
+        "origin": "new",
+        "taskId": "WPF-QUEUE01",
+        "worker": "workspace_panels_owner",
+        "claimId": "b4ea85d0-ad87-4903-9a59-73281ad17752",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue",
+        "createdAt": "2026-10-06T05:19:31.947Z",
+        "updatedAt": "2026-10-06T05:19:31.947Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ],
+    "main": {
+      "record": "NOT_INTEGRATED；main14c61只有公共queue能力，无本Web控制",
+      "recordedHead": null,
+      "target": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+      "mainHead": "fb906cb42391971a8b315dbd813f7633927d7265",
+      "scopes": [
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/conversations/queue/queue-elements.tsx",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-queue.test.ts",
+        "apps/web/test/conversation-queue.fixture.ts",
+        "apps/web/test/conversation-queue.browser.ts"
+      ],
+      "observedAt": "2026-10-06T05:41:18.198Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main 声明范围与目标不同，或存在未提交变化"
+    }
+  },
+  "notRun": [
+    "product tests",
+    "browser",
+    "real center",
+    "model",
+    "new dashboard fetch"
+  ],
+  "managerRecordedAt": "2026-10-06T05:43:24Z"
+}

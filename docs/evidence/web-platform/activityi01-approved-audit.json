@@ -1,0 +1,221 @@
+{
+  "observedAt": "2026-10-06T07:19:58.715Z",
+  "head": "c9e76ef5c3f797432a0f6c09fe3950473d922592",
+  "target": "ba341d77672ba8456197d64d54193aee79719e46",
+  "base": "86a36eaeffbf09f0a3772c3d1509c17dc0a76f92",
+  "dirty": false,
+  "claimId": "122210f6-eaac-4cc7-840d-3bd7db1626d9",
+  "claimVersion": 1,
+  "scope": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+    "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+    "apps/web/src/conversation-activity/native/projection.ts",
+    "apps/web/src/conversation-activity/native/tool.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/plugin-integration/activity.tsx",
+    "apps/web/src/plugin-integration/react.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/test/conversation-activity-integration.browser.ts",
+    "apps/web/test/conversation-activity-integration.test.ts",
+    "apps/web/test/native-activity.test.ts",
+    "apps/web/test/plugin-host.test.ts",
+    "docs/evidence/wpf-activity-i01",
+    "plans/wpf-activity-i01-integration"
+  ],
+  "controlledDependency": "889f433ef6972e4feee95aa878f0dbaf7da30448",
+  "dependencyCommit": "07da10c37f50b5e787e21bbd45ceeda1fe539766",
+  "dependencyHashes": [
+    {
+      "path": "apps/web/src/conversation-activity/projection.ts",
+      "expected": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b",
+      "actual": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b"
+    },
+    {
+      "path": "apps/web/test/conversation-activity.test.ts",
+      "expected": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff",
+      "actual": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff"
+    }
+  ],
+  "declaredHashes": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "7bf7e58d9a44469588594a02336f4e8fb860df56a707dbf8e7b80d19d38b4226"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14"
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+      "sha256": "1a17117598fbaed84438ff636f0f1a75a9db6033472c35ed674e2c47a2e2e9fd"
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/projection.ts",
+      "sha256": "55eafaa0aa50a2531667b105801635042ae4391490b36a131c4d5de175af7830"
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/tool.tsx",
+      "sha256": "a30d60afd113f471bf594db5162758e5a64d9ef1185bb4ceece46d8a46db61ff"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "5b25dbe1f12c7b7f4f4b2f18b2b285889720dafc8a3a99922ff3642a0e93208d"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/activity.tsx",
+      "sha256": "8ad48a26e40bc4462221329fdfe9f1d922af3b21f7dfeaf664e1dd21ddfe6ed2"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "9751ec0b3d8560624a938cbeac7b0982cdd7a28126c57ceac09efe5de59adb05"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "df68b2c0b49228d08c35ebc772b43fd6925a5a0b7e584a6deaf2dd09d79c21fe"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "sha256": "4f8c093f916ea5a3a2b9608f171bad6c1bd5e1441b1d62eecd0a55708f5faeed"
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "sha256": "a489ca5a350f1427265bb929c15516c6094062c848377745737fb4e664efa9ed"
+    },
+    {
+      "path": "apps/web/test/conversation-activity-integration.browser.ts",
+      "sha256": "b60cab56e3e2cad5828e10cd31132ec6e2fdd75ecaf59d4b17ef566b2e0de184"
+    },
+    {
+      "path": "apps/web/test/conversation-activity-integration.test.ts",
+      "sha256": "589c7e6d40433fe200706b24f0163d8e2fd4c5a42d3682c8863d74d04e2574ab"
+    },
+    {
+      "path": "apps/web/test/native-activity.test.ts",
+      "sha256": "8fe55fcaf4182b17abceb4faaf48bf5848a1f9641c8ca203ede1790b2d524f1c"
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "sha256": "8192ae0a9228d91005d20e3600c8a1fc1ecb8743f2a558e46c13bc1d7d7e6523"
+    },
+    {
+      "path": "apps/web/src/conversation-activity/projection.ts",
+      "sha256": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b"
+    },
+    {
+      "path": "apps/web/test/conversation-activity.test.ts",
+      "sha256": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff"
+    }
+  ],
+  "outside": [],
+  "parserErrors": [],
+  "checks": {
+    "state": "passed",
+    "target": "ba341d77672ba8456197d64d54193aee79719e46",
+    "record": "PASSED ba341d77672ba8456197d64d54193aee79719e46；本次60相关/typecheck/build/dev与prod离线各1；原e930的74/dev11/prod10保留"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "ba341d77672ba8456197d64d54193aee79719e46"
+  },
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "聊天工具与思考活动已通过审查，支持按需展开和离线恢复",
+    "next": "将已验证的聊天活动界面接入主线",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "ACTIVITYI01-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "native9tests及真实页面验证"
+    },
+    {
+      "id": "ACTIVITYI01-02",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "P01三类贡献与绑定read ports实际工作"
+    },
+    {
+      "id": "ACTIVITYI01-03",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "旧e930完整74/dev11/prod10；ba341相关60/离线专项与typecheck/build通过"
+    },
+    {
+      "id": "ACTIVITYI01-04",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "固定ba341独审已通过；待Lead主线接收"
+    }
+  ],
+  "proof": {
+    "target": "ba341d77672ba8456197d64d54193aee79719e46",
+    "head": "c9e76ef5c3f797432a0f6c09fe3950473d922592",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+      "apps/web/src/conversation-activity/native/projection.ts",
+      "apps/web/src/conversation-activity/native/tool.tsx",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/plugin-integration/activity.tsx",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugins/types.ts",
+      "apps/web/src/plugins/validation.ts",
+      "apps/web/test/conversation-activity-integration.browser.ts",
+      "apps/web/test/conversation-activity-integration.test.ts",
+      "apps/web/test/native-activity.test.ts",
+      "apps/web/test/plugin-host.test.ts",
+      "apps/web/src/conversation-activity/projection.ts",
+      "apps/web/test/conversation-activity.test.ts"
+    ],
+    "observedAt": "2026-10-06T07:19:58.421Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-activity-i01/README.md",
+      "docs/evidence/wpf-activity-i01/browser-offline.log",
+      "docs/evidence/wpf-activity-i01/browser-production-offline.log",
+      "docs/evidence/wpf-activity-i01/development-offline-browser.json",
+      "docs/evidence/wpf-activity-i01/interface.md",
+      "docs/evidence/wpf-activity-i01/offline-green.log",
+      "docs/evidence/wpf-activity-i01/offline-red.log",
+      "docs/evidence/wpf-activity-i01/production-offline-browser.json",
+      "docs/evidence/wpf-activity-i01/quality.md",
+      "docs/evidence/wpf-activity-i01/revision-build.log",
+      "docs/evidence/wpf-activity-i01/revision-source-manifest.json",
+      "docs/evidence/wpf-activity-i01/revision-tests.log",
+      "docs/evidence/wpf-activity-i01/revision-typecheck.log",
+      "docs/evidence/wpf-activity-i01/revision.md",
+      "plans/wpf-activity-i01-integration/plan.md",
+      "plans/wpf-activity-i01-integration/review.md",
+      "plans/wpf-activity-i01-integration/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "validation": "Management read-only Git/hash/status/docs check; root independent approval transcribed, not a manager product rerun. Prior e930 evidence and ba341 fixes remain distinct.",
+  "markdownFiles": 7,
+  "localLinks": 44,
+  "brokenLinks": []
+}

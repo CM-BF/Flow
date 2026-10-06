@@ -1,0 +1,43 @@
+{
+  "observedAt": "2026-10-06T07:23:42.442Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+      "apps/web/src/conversation-activity/native/projection.ts",
+      "apps/web/src/conversation-activity/native/tool.tsx",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/plugin-integration/activity.tsx",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugins/types.ts",
+      "apps/web/src/plugins/validation.ts",
+      "apps/web/test/conversation-activity-integration.browser.ts",
+      "apps/web/test/conversation-activity-integration.test.ts",
+      "apps/web/test/native-activity.test.ts",
+      "apps/web/test/plugin-host.test.ts",
+      "docs/evidence/wpf-activity-i01",
+      "plans/wpf-activity-i01-integration"
+    ],
+    "state": "active",
+    "branch": "codex/web-conversation-activity-integration",
+    "origin": "new",
+    "taskId": "WPF-ACTIVITYI01",
+    "worker": "w01_owner",
+    "claimId": "122210f6-eaac-4cc7-840d-3bd7db1626d9",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity-integration",
+    "createdAt": "2026-10-06T06:53:53.518Z",
+    "updatedAt": "2026-10-06T06:53:53.518Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "finalHead": "9aa35096c9a3501f09bb9e40ed77721ba0074896",
+  "dirty": false,
+  "stoppedWriting": "Owner explicit all17scope stopped; manager authorized release, no owner retry",
+  "mainProof": "activityi01-main-observation.json"
+}

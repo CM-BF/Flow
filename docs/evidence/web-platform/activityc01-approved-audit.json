@@ -1,0 +1,130 @@
+{
+  "observedAt": "2026-10-06T07:07:32.197Z",
+  "head": "ce0608ec873beabcbec38779fdace600fea6cf4c",
+  "dirty": "",
+  "target": "889f433ef6972e4feee95aa878f0dbaf7da30448",
+  "scope": [
+    "apps/web/src/conversation-activity/projection.ts",
+    "apps/web/test/conversation-activity.test.ts",
+    "docs/evidence/wpf-activity-cursor-compatibility",
+    "plans/wpf-activity-cursor-compatibility"
+  ],
+  "outside": [],
+  "parserErrors": [],
+  "checks": {
+    "state": "passed",
+    "target": "889f433ef6972e4feee95aa878f0dbaf7da30448",
+    "record": "PASSED 889f433ef6972e4feee95aa878f0dbaf7da30448；44 direct + Web typecheck；[验证](../../docs/evidence/wpf-activity-cursor-compatibility/validation.md)"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "889f433ef6972e4feee95aa878f0dbaf7da30448"
+  },
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "活动列表已能越过过滤记录继续读取，分页护栏检查通过",
+    "next": "集成已审活动列表兼容修复",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "WPF-ACTIVITYC01-01",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[输入来源](../../docs/evidence/wpf-activity-cursor-compatibility/input-provenance.json)、[领取](../../docs/evidence/wpf-activity-cursor-compatibility/take-receipt.json)、[质量](../../docs/evidence/wpf-activity-cursor-compatibility/quality.md)"
+    },
+    {
+      "id": "WPF-ACTIVITYC01-02",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "固定两处校验修正，原身份/重复/边界护栏保留"
+    },
+    {
+      "id": "WPF-ACTIVITYC01-03",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "44 direct + Web typecheck；红测/测试脚手架失误与最终绿测分开保留"
+    },
+    {
+      "id": "WPF-ACTIVITYC01-04",
+      "state": "in-progress",
+      "owner": "workspace_panels_owner",
+      "evidence": "root固定target独立APPROVED、44 direct复审；已交manager，唯一source已请求登记，实际部署/聚合待回执"
+    }
+  ],
+  "proof": {
+    "target": "889f433ef6972e4feee95aa878f0dbaf7da30448",
+    "head": "ce0608ec873beabcbec38779fdace600fea6cf4c",
+    "scopes": [
+      "apps/web/src/conversation-activity/projection.ts",
+      "apps/web/test/conversation-activity.test.ts"
+    ],
+    "observedAt": "2026-10-06T07:07:32.064Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-activity-cursor-compatibility/README.md",
+      "docs/evidence/wpf-activity-cursor-compatibility/checks.json",
+      "docs/evidence/wpf-activity-cursor-compatibility/first-green-direct.log",
+      "docs/evidence/wpf-activity-cursor-compatibility/green-direct.log",
+      "docs/evidence/wpf-activity-cursor-compatibility/install.log",
+      "docs/evidence/wpf-activity-cursor-compatibility/parser-check.json",
+      "docs/evidence/wpf-activity-cursor-compatibility/quality.md",
+      "docs/evidence/wpf-activity-cursor-compatibility/red-direct.log",
+      "docs/evidence/wpf-activity-cursor-compatibility/typecheck.log",
+      "docs/evidence/wpf-activity-cursor-compatibility/validation.md",
+      "plans/wpf-activity-cursor-compatibility/plan.md",
+      "plans/wpf-activity-cursor-compatibility/review.md",
+      "plans/wpf-activity-cursor-compatibility/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "hashes": [
+    {
+      "path": "apps/web/src/conversation-activity/projection.ts",
+      "run": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b",
+      "target": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b",
+      "current": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b"
+    },
+    {
+      "path": "apps/web/test/conversation-activity.test.ts",
+      "run": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff",
+      "target": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff",
+      "current": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff"
+    }
+  ],
+  "authorSource": "1e49fe4fb387dde5f787e52199b9ed0eb5f483f9",
+  "authorDirty": [
+    " M apps/web/src/conversation-activity/projection.ts",
+    " M apps/web/test/conversation-activity.test.ts",
+    " M docs/evidence/wpf-activity-cursor-compatibility/quality.md",
+    " M plans/wpf-activity-cursor-compatibility/status.md",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/README.md",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/first-green-direct.log",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/green-direct.log",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/install.log",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/red-direct.log",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/typecheck.log"
+  ],
+  "markdownFiles": 6,
+  "localLinks": 28,
+  "brokenLinks": [],
+  "sourceDeployment": "No new dashboard sample; awaiting formal deployment result",
+  "managerValidation": "Local metadata/Git/hash/link checks only; no product rerun"
+}

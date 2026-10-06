@@ -1,0 +1,68 @@
+{
+  "observedAt": "2026-10-06T07:49:40.831067+00:00",
+  "ledgerObservedAt": "2026-10-06T07:49:40.639Z",
+  "features": [
+    {
+      "taskId": "WPF-CHAT06S01",
+      "finalHead": "f367320219436a1b2aab6823954a7e163c6dd14e",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/conversation-stream/messages.ts",
+          "apps/web/src/conversation-stream/patches.ts",
+          "apps/web/src/conversation-stream/projection.ts",
+          "apps/web/test/conversation-stream-projection.test.ts",
+          "apps/web/test/conversation-stream.test.ts",
+          "docs/evidence/wpf-chat06-stream",
+          "plans/wpf-chat06-stream"
+        ],
+        "state": "active",
+        "branch": "codex/web-conversation-stream",
+        "origin": "new",
+        "taskId": "WPF-CHAT06S01",
+        "worker": "workspace_panels_owner",
+        "claimId": "d94ae4bb-0ac1-4a38-b983-e0e1e482b398",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream",
+        "createdAt": "2026-10-06T07:10:10.763Z",
+        "updatedAt": "2026-10-06T07:10:10.763Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      "sourceDiffEmpty": true,
+      "ownerStoppedWritingConfirmed": true
+    },
+    {
+      "taskId": "WPF-PERF03",
+      "finalHead": "9cea63212b13c624fde53981721aee116d0caeed",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/conversations/messages.ts",
+          "apps/web/test/conversation-message-reuse.probe.ts",
+          "apps/web/test/conversation-messages.test.ts",
+          "docs/evidence/wpf-perf03",
+          "plans/wpf-perf03-message-reuse"
+        ],
+        "state": "active",
+        "branch": "codex/web-message-reuse",
+        "origin": "new",
+        "taskId": "WPF-PERF03",
+        "worker": "w01_owner",
+        "claimId": "2ec58c2c-811d-4f24-a14b-cf1a3e89cdb3",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+        "createdAt": "2026-10-06T07:22:56.375Z",
+        "updatedAt": "2026-10-06T07:22:56.375Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      "sourceDiffEmpty": true,
+      "ownerStoppedWritingConfirmed": true
+    }
+  ]
+}

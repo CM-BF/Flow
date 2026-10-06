@@ -1,0 +1,129 @@
+{
+  "target": "84242ca1d214f9a9ff369b07c13657918862f226",
+  "base": "b5844442699733558a152c12392ea78f26c393a4",
+  "liveClaimObservedAt": "2026-10-06T04:03:36.519Z",
+  "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+  "claimVersion": 1,
+  "claimState": "active",
+  "perCommit": [
+    {
+      "commit": "bac6a6efe6fa4866bac4d777ee61b703a0e2c7e3",
+      "kind": "authorized-shared-input",
+      "paths": [
+        "docs/architecture/chat01-conversations.md",
+        "docs/evidence/chat01/README.md",
+        "packages/contracts/src/conversations.ts",
+        "plans/chat01-conversations/plan.md",
+        "plans/chat01-conversations/review.md",
+        "plans/chat01-conversations/status.md"
+      ]
+    },
+    {
+      "commit": "a3b9cfaaa4be4ea8b34e6135107b0401f121fbd0",
+      "kind": "authorized-shared-input",
+      "paths": [
+        "packages/client/src/conversations.test.ts",
+        "packages/client/src/index.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "commit": "c72e02ba55dc4a5b3eddf1cf2a241e33403a0d16",
+      "kind": "feature-implementation-or-metadata",
+      "paths": [
+        "docs/evidence/wpf-chat01/i01-amend-receipt.json",
+        "docs/evidence/wpf-chat01/inputs.md",
+        "docs/evidence/wpf-chat01/quality.md",
+        "docs/evidence/wpf-chat01/take-receipt.json",
+        "docs/evidence/wpf-chat01/web-chat-transport-manifest.json",
+        "docs/evidence/wpf-chat01/web-chat-transport.patch",
+        "plans/wpf-chat01-conversations/plan.md",
+        "plans/wpf-chat01-conversations/review.md",
+        "plans/wpf-chat01-conversations/status.md"
+      ]
+    },
+    {
+      "commit": "0d4e050057b9204ea761541d7847b9932331a519",
+      "kind": "feature-implementation-or-metadata",
+      "paths": [
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/test/conversation-outbox.test.ts"
+      ]
+    },
+    {
+      "commit": "746364ea2581b8c563a09b07560de5e0b63bcab8",
+      "kind": "authorized-shared-input",
+      "paths": [
+        "packages/contracts/src/assistant.ts",
+        "packages/contracts/src/conversations.ts"
+      ]
+    },
+    {
+      "commit": "84242ca1d214f9a9ff369b07c13657918862f226",
+      "kind": "feature-implementation-or-metadata",
+      "paths": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/conversations/ConversationList.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/conversations.css",
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/test/conversation-outbox.test.ts",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation.browser.ts",
+        "apps/web/test/conversation.fixture.ts"
+      ]
+    }
+  ],
+  "outsideFeatureScope": [],
+  "protectedDiff": [],
+  "manifestAfterHashes": [
+    {
+      "path": "packages/client/src/index.ts",
+      "manifest": "web-chat-transport-manifest.json",
+      "expected": "2f0d0bf66e3fa846a316c787cd34da7aa880d38eaaabd09af07fc33a433c83e6",
+      "actual": "2f0d0bf66e3fa846a316c787cd34da7aa880d38eaaabd09af07fc33a433c83e6",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "manifest": "web-chat-transport-manifest.json",
+      "expected": "02e16d7efd3359e87c1696f31ff17d5409320c247a56bf5e778822bc807dff50",
+      "actual": "02e16d7efd3359e87c1696f31ff17d5409320c247a56bf5e778822bc807dff50",
+      "matches": true
+    },
+    {
+      "path": "packages/client/src/conversations.test.ts",
+      "manifest": "web-chat-transport-manifest.json",
+      "expected": "c65d9d976bfc3cd5035d20daac5438ce2f35850722630b77d870395538dbd44c",
+      "actual": "c65d9d976bfc3cd5035d20daac5438ce2f35850722630b77d870395538dbd44c",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "manifest": "web-chat-typed-contract-manifest.json",
+      "expected": "f4b240880d097873e8b0113907d4849b667ea4e792d93813d6d8dbdd9a3d4191",
+      "actual": "f4b240880d097873e8b0113907d4849b667ea4e792d93813d6d8dbdd9a3d4191",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "manifest": "web-chat-typed-contract-manifest.json",
+      "expected": "81689c6eb2559b301f9e82767148e799bfd142776708ea0ddb9c50e93dcf894f",
+      "actual": "81689c6eb2559b301f9e82767148e799bfd142776708ea0ddb9c50e93dcf894f",
+      "matches": true
+    }
+  ],
+  "initialContractCherryPickMatchesSource": true,
+  "note": "Shared inputs were separately authorized by Lead and applied verbatim; their presence does not grant the Web owner shared implementation ownership. This audit does not approve product behavior.",
+  "diffCheck": {
+    "fullExitCode": 2,
+    "rawEvidenceIssue": "docs/evidence/wpf-chat01/web-chat-transport.patch:36 trailing context-space; retained verbatim",
+    "sourceAndDocsExcludingRawPatchesExitCode": 0
+  },
+  "workingImplementationDiffFromTarget": []
+}

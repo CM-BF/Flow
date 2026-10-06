@@ -1,0 +1,63 @@
+{
+  "observedAt": "2026-10-06T07:48:03.251876+00:00",
+  "acceptedMain": "6426b44cd32d10216141af13ecfa83b8879025fb",
+  "git": {
+    "head": "6426b44cd32d10216141af13ecfa83b8879025fb",
+    "main": "6426b44cd32d10216141af13ecfa83b8879025fb",
+    "originMain": "6426b44cd32d10216141af13ecfa83b8879025fb",
+    "dirty": ""
+  },
+  "hashes": [
+    {
+      "path": "apps/web/src/conversation-stream/patches.ts",
+      "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7",
+      "targetSha256": "8868cc08faa2ac17f48e3c8cafc8d07521cccd635f05632647e571c60281addc",
+      "mainSha256": "8868cc08faa2ac17f48e3c8cafc8d07521cccd635f05632647e571c60281addc"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/projection.ts",
+      "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7",
+      "targetSha256": "336c8f81eff737c9d62f744305252e3868f02f63ea7d316014a1188305d4fa9f",
+      "mainSha256": "336c8f81eff737c9d62f744305252e3868f02f63ea7d316014a1188305d4fa9f"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/messages.ts",
+      "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7",
+      "targetSha256": "624b1a82a70bd2e7cedc53a35a21be0f0bbcb45e39092ebbb4d9fb92aeef1903",
+      "mainSha256": "624b1a82a70bd2e7cedc53a35a21be0f0bbcb45e39092ebbb4d9fb92aeef1903"
+    },
+    {
+      "path": "apps/web/test/conversation-stream.test.ts",
+      "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7",
+      "targetSha256": "a3ef6fb569a02e655b1ed187b8a28a6e6a7eea5f7f521cfd8aca467ec7be1cda",
+      "mainSha256": "a3ef6fb569a02e655b1ed187b8a28a6e6a7eea5f7f521cfd8aca467ec7be1cda"
+    },
+    {
+      "path": "apps/web/test/conversation-stream-projection.test.ts",
+      "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7",
+      "targetSha256": "6ed3910fd9e22339009eca8593fbb2418d5189f93c74dbdbf444d5f8331f5265",
+      "mainSha256": "6ed3910fd9e22339009eca8593fbb2418d5189f93c74dbdbf444d5f8331f5265"
+    },
+    {
+      "path": "apps/web/src/conversations/messages.ts",
+      "target": "f909d32f5fcff5b0ac6408dc96e8630bfeffae4e",
+      "targetSha256": "c4b11d2ff54f80cc4986f25753e7dbc0a325b92b9e910b0d2f7060418e023b1e",
+      "mainSha256": "c4b11d2ff54f80cc4986f25753e7dbc0a325b92b9e910b0d2f7060418e023b1e"
+    },
+    {
+      "path": "apps/web/test/conversation-messages.test.ts",
+      "target": "f909d32f5fcff5b0ac6408dc96e8630bfeffae4e",
+      "targetSha256": "2d05762327a42ab8da5d66cd60437ca786235b34cd0a353195beee027bf82f4d",
+      "mainSha256": "2d05762327a42ab8da5d66cd60437ca786235b34cd0a353195beee027bf82f4d"
+    },
+    {
+      "path": "apps/web/test/conversation-message-reuse.probe.ts",
+      "target": "f909d32f5fcff5b0ac6408dc96e8630bfeffae4e",
+      "targetSha256": "71bfb113f66743993a0d1c8924927e6c36116c848c972b2d33036f68160cb2ec",
+      "mainSha256": "71bfb113f66743993a0d1c8924927e6c36116c848c972b2d33036f68160cb2ec"
+    }
+  ],
+  "activityAncestor": true,
+  "leadChecks": "62/62 combined + Web types from Lead; management did not rerun.",
+  "runtime": "ExecutionLead MAIN_RECEIPT: SVC CLOSED, personal center/runner b54 accepting v6, original61227/61228/data retained; no new provider. Not manager runtime verification."
+}

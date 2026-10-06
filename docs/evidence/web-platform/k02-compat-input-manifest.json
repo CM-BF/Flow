@@ -1,0 +1,23 @@
+{
+  "base": "3d4985fca060155435b159e0467815bf8e88b8b8",
+  "source": "7368497ade6b80725e024d86541b87c971389476",
+  "authorization": "Interface-only consumer preparation; K02 domain not approved/not main; no shared exports/client/backend included",
+  "patchSha256": "9e7c8f62042c5d68380eb82f58b22110d328b0f2ec7c3831c72102b8188e23bb",
+  "files": [
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "before": "e67860c24b542a5cac3864f7596daf87a223c1736438336c884e5909213ff7f5",
+      "after": "02e2afd8b31827051ecfe84801ae4bd1210ccf9e11ec79b16bed2ae313cbad33"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "before": "79897d7bfeb91eeb079de751d411a2c628cca55af5576c8f2ffe45b19642e5e7",
+      "after": "d7f61fd2c7a68a0efc376112d62ad9d97f911ce94ee9aec75137cc1eb8f9707e"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "before": null,
+      "after": "2ead672628cb411a54ab51345f384a301ff407eb2a30cf604b120b47d68ebdb5"
+    }
+  ]
+}

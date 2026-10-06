@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-10-06T06:45:03.962Z",
+  "base": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-stream-compatibility",
+  "branch": "codex/web-stream-compatibility",
+  "head": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+  "dirty": false,
+  "scope": [
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/test/conversation-projection.test.ts",
+    "plans/wpf-chat06-compatibility",
+    "docs/evidence/wpf-chat06-compatibility"
+  ],
+  "activeConflicts": [],
+  "sharedInput": {
+    "commit": "86fc3af54eb500d24416121b4f36e701ea9fd3c4",
+    "parent": "c846d6870c6d1cd829b4ef2df13d751407ba5d3f",
+    "files": [
+      "packages/contracts/src/conversations.ts"
+    ],
+    "beforeSHA256": "02e2afd8b31827051ecfe84801ae4bd1210ccf9e11ec79b16bed2ae313cbad33",
+    "afterSHA256": "da470a55f82f16dc649f105263f97af5aaa6f68779a4c9435583c203fec453cb",
+    "method": "Only this single-file commit may be cherry-picked; no F01 or domain branch merge"
+  }
+}

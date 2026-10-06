@@ -1,0 +1,161 @@
+{
+  "observedAt": "2026-10-06T07:27:55.992Z",
+  "head": "63b7a302e3630075b2472904805ff3fe07eb9989",
+  "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7",
+  "base": "fa9a8288341d4f2bd8160e03fe9173dafa2de1a6",
+  "dirty": false,
+  "scope": [
+    "apps/web/src/conversation-stream/messages.ts",
+    "apps/web/src/conversation-stream/patches.ts",
+    "apps/web/src/conversation-stream/projection.ts",
+    "apps/web/test/conversation-stream-projection.test.ts",
+    "apps/web/test/conversation-stream.test.ts",
+    "docs/evidence/wpf-chat06-stream",
+    "plans/wpf-chat06-stream"
+  ],
+  "claimId": "d94ae4bb-0ac1-4a38-b983-e0e1e482b398",
+  "version": 1,
+  "outside": [],
+  "parserErrors": [],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "增量正文模块已通过独立审查，等待集成",
+    "next": "集成增量正文模块，随后接入聊天",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": {
+    "state": "passed",
+    "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7",
+    "record": "PASSED 3ac11cba14ce8baac3b3a769c19827f6343ca4a7; 作者54 direct / Web tsc；root独立54，作者证据见[验证](../../docs/evidence/wpf-chat06-stream/validation.md)"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7"
+  },
+  "todos": [
+    {
+      "id": "WPF-CHAT06S01-01",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[输入](../../docs/evidence/wpf-chat06-stream/input-provenance.json)、[接口](../../docs/evidence/wpf-chat06-stream/interface.md)、[质量](../../docs/evidence/wpf-chat06-stream/quality.md)"
+    },
+    {
+      "id": "WPF-CHAT06S01-02",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[直接检查与来源绑定](../../docs/evidence/wpf-chat06-stream/checks.json)，身份/UTF8/不可变patch/预算通过"
+    },
+    {
+      "id": "WPF-CHAT06S01-03",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[验证](../../docs/evidence/wpf-chat06-stream/validation.md)，代际/drain/final竞态/显式消息状态通过"
+    },
+    {
+      "id": "WPF-CHAT06S01-04",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[独审通过](review.md)与[交付](../../docs/evidence/wpf-chat06-stream/README.md)；Lead 07:16:38已实采聚合入口，非本次target采样"
+    }
+  ],
+  "proof": {
+    "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7",
+    "head": "63b7a302e3630075b2472904805ff3fe07eb9989",
+    "scopes": [
+      "apps/web/src/conversation-stream/patches.ts",
+      "apps/web/src/conversation-stream/projection.ts",
+      "apps/web/src/conversation-stream/messages.ts",
+      "apps/web/test/conversation-stream.test.ts",
+      "apps/web/test/conversation-stream-projection.test.ts"
+    ],
+    "observedAt": "2026-10-06T07:27:55.879Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-chat06-stream/README.md",
+      "docs/evidence/wpf-chat06-stream/boundary-direct.log",
+      "docs/evidence/wpf-chat06-stream/checks.json",
+      "docs/evidence/wpf-chat06-stream/direct.log",
+      "docs/evidence/wpf-chat06-stream/final-direct.log",
+      "docs/evidence/wpf-chat06-stream/final-seam-red.log",
+      "docs/evidence/wpf-chat06-stream/final-typecheck.log",
+      "docs/evidence/wpf-chat06-stream/first-direct.log",
+      "docs/evidence/wpf-chat06-stream/first-typecheck.log",
+      "docs/evidence/wpf-chat06-stream/install.log",
+      "docs/evidence/wpf-chat06-stream/integrity-green.log",
+      "docs/evidence/wpf-chat06-stream/integrity-red.log",
+      "docs/evidence/wpf-chat06-stream/interface.md",
+      "docs/evidence/wpf-chat06-stream/parser.json",
+      "docs/evidence/wpf-chat06-stream/quality.md",
+      "docs/evidence/wpf-chat06-stream/second-direct.log",
+      "docs/evidence/wpf-chat06-stream/second-typecheck.log",
+      "docs/evidence/wpf-chat06-stream/source-binding.json",
+      "docs/evidence/wpf-chat06-stream/typecheck.log",
+      "docs/evidence/wpf-chat06-stream/validation.md",
+      "plans/wpf-chat06-stream/plan.md",
+      "plans/wpf-chat06-stream/review.md",
+      "plans/wpf-chat06-stream/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "hashes": [
+    {
+      "path": "apps/web/src/conversation-stream/patches.ts",
+      "run": "8868cc08faa2ac17f48e3c8cafc8d07521cccd635f05632647e571c60281addc",
+      "target": "8868cc08faa2ac17f48e3c8cafc8d07521cccd635f05632647e571c60281addc",
+      "current": "8868cc08faa2ac17f48e3c8cafc8d07521cccd635f05632647e571c60281addc"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/projection.ts",
+      "run": "336c8f81eff737c9d62f744305252e3868f02f63ea7d316014a1188305d4fa9f",
+      "target": "336c8f81eff737c9d62f744305252e3868f02f63ea7d316014a1188305d4fa9f",
+      "current": "336c8f81eff737c9d62f744305252e3868f02f63ea7d316014a1188305d4fa9f"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/messages.ts",
+      "run": "624b1a82a70bd2e7cedc53a35a21be0f0bbcb45e39092ebbb4d9fb92aeef1903",
+      "target": "624b1a82a70bd2e7cedc53a35a21be0f0bbcb45e39092ebbb4d9fb92aeef1903",
+      "current": "624b1a82a70bd2e7cedc53a35a21be0f0bbcb45e39092ebbb4d9fb92aeef1903"
+    },
+    {
+      "path": "apps/web/test/conversation-stream.test.ts",
+      "run": "a3ef6fb569a02e655b1ed187b8a28a6e6a7eea5f7f521cfd8aca467ec7be1cda",
+      "target": "a3ef6fb569a02e655b1ed187b8a28a6e6a7eea5f7f521cfd8aca467ec7be1cda",
+      "current": "a3ef6fb569a02e655b1ed187b8a28a6e6a7eea5f7f521cfd8aca467ec7be1cda"
+    },
+    {
+      "path": "apps/web/test/conversation-stream-projection.test.ts",
+      "run": "6ed3910fd9e22339009eca8593fbb2418d5189f93c74dbdbf444d5f8331f5265",
+      "target": "6ed3910fd9e22339009eca8593fbb2418d5189f93c74dbdbf444d5f8331f5265",
+      "current": "6ed3910fd9e22339009eca8593fbb2418d5189f93c74dbdbf444d5f8331f5265"
+    }
+  ],
+  "authorSourceCommit": "ed187d6ef99e0d4ba1479ebce42f27714ff219c7",
+  "authorSourceDirty": true,
+  "authorRecordedAt": "2026-10-06T07:25:25.130882+00:00",
+  "authorLimits": [
+    "mock ports/public FlowClient with mocked fetch; no HTTP server",
+    "no App/Thread integration",
+    "no browser/build/DB/model/provider verification"
+  ],
+  "method": "Management read-only source/hash/status/proof audit, no module tests/HTTP/browser/DB/model rerun.",
+  "markdownFiles": 7,
+  "localLinks": 42,
+  "brokenLinks": []
+}

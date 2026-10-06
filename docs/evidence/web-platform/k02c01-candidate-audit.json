@@ -1,0 +1,83 @@
+{
+  "observedAt": "2026-10-06T05:58:09.089130+00:00",
+  "task": "WPF-K02C01",
+  "metadataObserved": "f9cf4733b8481d92aa67a7a42584e89d8af816ff",
+  "implementation": "7633937c322090bbd6d526f378df464f2a7436ed",
+  "base": "3d4985fca060155435b159e0467815bf8e88b8b8",
+  "branch": "codex/web-context-compatibility",
+  "dirty": [],
+  "ledgerObservedAt": "2026-10-06T05:57:40.230Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/test/conversation-outbox.test.ts",
+      "apps/web/test/conversation-projection.test.ts",
+      "apps/web/test/conversation-queue.test.ts",
+      "apps/web/test/execution-profiles.test.ts",
+      "docs/evidence/wpf-k02-compatibility",
+      "plans/wpf-k02-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/web-context-compatibility",
+    "origin": "new",
+    "taskId": "WPF-K02C01",
+    "worker": "workspace_panels_owner",
+    "claimId": "5ab6863c-1e0b-4690-8097-9f95b26421f7",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility",
+    "createdAt": "2026-10-06T05:52:04.217Z",
+    "updatedAt": "2026-10-06T05:52:04.217Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "changedPaths": 25,
+  "controlledInputPaths": [
+    "packages/contracts/src/conversations.ts",
+    "packages/contracts/src/conversation-queue.ts",
+    "packages/contracts/src/conversation-context.ts"
+  ],
+  "outsideScope": [],
+  "sourceHashes": [
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    },
+    {
+      "path": "apps/web/test/conversation-outbox.test.ts",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    },
+    {
+      "path": "apps/web/test/conversation-projection.test.ts",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    },
+    {
+      "path": "apps/web/test/conversation-queue.test.ts",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    },
+    {
+      "path": "apps/web/test/execution-profiles.test.ts",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    }
+  ],
+  "markdown": 6,
+  "localLinks": 25,
+  "brokenLinks": [],
+  "implementationDiffcheckExit": 0,
+  "fullDiffcheckExit": 2,
+  "rawDiffcheck": "docs/evidence/wpf-k02-compatibility/green-direct.log:13: new blank line at EOF.\ndocs/evidence/wpf-k02-compatibility/k02-web-contract.patch:48: trailing whitespace.\n+ \ndocs/evidence/wpf-k02-compatibility/k02-web-contract.patch:95: trailing whitespace.\n+ \ndocs/evidence/wpf-k02-compatibility/red-direct.log:102: trailing whitespace.\n+- Expected: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:105: trailing whitespace.\n++ Received: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:147: trailing whitespace.\n+- Expected: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:150: trailing whitespace.\n++ Received: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:192: trailing whitespace.\n+- Expected: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:195: trailing whitespace.\n++ Received: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:239: trailing whitespace.\n+- Expected: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:242: trailing whitespace.\n++ Received: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:286: trailing whitespace.\n+- Expected: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:289: trailing whitespace.\n++ Received: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:360: trailing whitespace.\n+- Expected: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:363: trailing whitespace.\n++ Received: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:405: trailing whitespace.\n+- Expected: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:408: trailing whitespace.\n++ Received: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:450: trailing whitespace.\n+- Expected: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:453: trailing whitespace.\n++ Received: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:495: trailing whitespace.\n+- Expected: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:498: trailing whitespace.\n++ Received: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:507: trailing whitespace.\n+    129| \ndocs/evidence/wpf-k02-compatibility/red-direct.log:514: trailing whitespace.\n+- Expected: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:517: trailing whitespace.\n++ Received: \ndocs/evidence/wpf-k02-compatibility/red-direct.log:540: trailing whitespace.\n+    135| \ndocs/evidence/wpf-k02-compatibility/red-direct.log:549: new blank line at EOF.\ndocs/evidence/wpf-k02-compatibility/typecheck.log:4: new blank line at EOF.\n",
+  "boundary": "Management scope/docs/hash audit only; no product tests, browser, service/API sampling or model call; independent behavior review belongs to root."
+}
