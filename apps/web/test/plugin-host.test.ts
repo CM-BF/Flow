@@ -534,3 +534,38 @@ it("isolates synchronous and asynchronous subscription failures while continuing
   await host.dispose();
   expect(navigation.size).toBe(0);
 });
+
+it("atomically rejects unknown and prototype slots and activation events", () => {
+  for (const invalid of [
+    "unknown.slot",
+    "toString",
+    "constructor",
+    "__proto__",
+  ]) {
+    const { host } = setup();
+    const original = manifest();
+    expect(() =>
+      host.register(
+        definition(undefined, {
+          contributions: [
+            {
+              ...original.contributions[0]!,
+              slot: invalid,
+            } as (typeof original.contributions)[number],
+          ],
+        }),
+      ),
+    ).toThrow("slot");
+    expect(host.list()).toEqual([]);
+    expect(() =>
+      host.register(
+        definition(undefined, {
+          activationEvents: [`view:${invalid}` as "view:workspace.tabs"],
+        }),
+      ),
+    ).toThrow("activation event");
+    expect(host.list()).toEqual([]);
+    expect(() => host.register(definition())).not.toThrow();
+    expect(host.list()).toHaveLength(1);
+  }
+});

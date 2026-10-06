@@ -397,7 +397,10 @@ export class PluginHost {
   ): Promise<void> {
     try {
       this.current(entry, session);
-      assert(command in bridgeCapabilities, "Unknown host command");
+      assert(
+        Object.hasOwn(bridgeCapabilities, command),
+        "Unknown host command",
+      );
       this.authorize(entry, bridgeCapabilities[command], resource);
       const safe = immutable(structuredClone(args));
       this.validateBridge(command, safe, resource);

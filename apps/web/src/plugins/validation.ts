@@ -132,7 +132,7 @@ export function validateContext(value: ResourceContext): ResourceContext {
 export function validateSlot(slot: SlotId, context: ResourceContext) {
   validateContext(context);
   assert(
-    slots[slot]?.includes(context.kind),
+    Object.hasOwn(slots, slot) && slots[slot].includes(context.kind),
     `Context ${context.kind} is not valid for ${slot}`,
   );
 }
@@ -239,7 +239,7 @@ export function validateManifest(input: PluginManifest): PluginManifest {
       continue;
     }
     assert(
-      contribution.slot in slots && text(contribution.title),
+      Object.hasOwn(slots, contribution.slot) && text(contribution.title),
       "Invalid contribution slot/title",
     );
     if (contribution.kind === "panel") {
@@ -266,7 +266,7 @@ export function validateManifest(input: PluginManifest): PluginManifest {
       typeof event === "string" &&
         (event.startsWith("command:")
           ? manifest.commands.some((command) => command.id === event.slice(8))
-          : event.startsWith("view:") && event.slice(5) in slots),
+          : event.startsWith("view:") && Object.hasOwn(slots, event.slice(5))),
       "Invalid activation event",
     );
   return immutable(manifest);
