@@ -27,3 +27,5 @@ Only after independent driver review and a new explicit shared resource window: 
 90s work +60s cleanup, independently supervised total150s; start ≥1 GiB+128 MiB/live1 GiB, combined stage evidence ≤4 MiB and private runtime ≤16 MiB. Chrome profile and PG/WAL are separately observed, not hidden inside those limits. One own database/center/runner, one owned Chrome group and one owned PTY group. Checkpoint precedes destructive cleanup, unknown stops the work and preserves resources; no force/retry. These are bounds/candidates, not measured successful runtime consumption.
 
 This packet cannot prove real UI locators, actual cross-client 409 draft preservation, cancel settlement, browser/PTY teardown, or zero remaining live resources. Those require the single actual journey. Existing03 failures, later standalone cleanup acceptance and retained unknown-inode tmp stay unchanged. Full TUI-001 remains open.
+
+2026-10-06 20:26:45 UTC：准备阶段已独立APPROVED，见[原始回执](independent-preparation-review.json)，SHA `42c0908d1645309b3542c55d4afb776813c2603f81282a878d70dd6905414c5b`。原source/manifest/raw不变；实际旅程仍NOT_RUN，本记录不生成运行许可。
