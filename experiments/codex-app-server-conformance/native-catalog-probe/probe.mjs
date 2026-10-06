@@ -202,8 +202,10 @@ export async function runNativeCatalogProbe({ factory, native, policyBytes, evid
     const inputComplete = result.targetCalls === 0 || Boolean(report && !report.incomplete && !report.truncated
       && !report.observerFailed && report.streamEnded && report.childCloseObserved
       && report.writtenBytes === stderr.length && report.observedBytes === stderr.length);
+    // A closed target may have left a symlink in control; verify its complete tree before host writes.
+    const closedTreeConfirmed = result.processCleanupComplete && inspect();
     // Keep a root-local original before a private archival copy, so copy failure cannot discard the only complete bytes.
-    if (result.processCleanupComplete && roots[0]?.prepared && activeRootsUnchanged()) {
+    if (closedTreeConfirmed && roots[0]?.prepared && activeRootsUnchanged()) {
       try { writeFile(path.join(roots[0].path, 'control', 'stderr.raw'), stderr, 'stderrDiskBytes'); originalStderrSaved = true; }
       catch { fail('STDERR_ORIGINAL_PERSIST_UNKNOWN'); }
     }

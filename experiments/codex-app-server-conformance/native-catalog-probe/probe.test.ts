@@ -209,6 +209,25 @@ describe('native catalog caller without any real child or listener', () => {
     expect(activeOpens).toBe(0); expect(closedOpens).toBeGreaterThan(0);
     expect(result.status).toBe('CATALOG_OBSERVED'); expect(result.finalInventory).toBe('observed-after-close');
   });
+  it('review delta does not write an original through a control symlink left after close', async () => {
+    const fixture = setup(); const outside = path.join(fixture.base, 'outside-control'); fs.mkdirSync(outside);
+    const originalFactory = fixture.input.factory;
+    fixture.input.factory = vi.fn((config: any) => {
+      const transport = originalFactory(config);
+      const control = path.dirname(config.spawn.args[config.spawn.args.indexOf('-f') + 1]);
+      return { ...transport, close: async () => {
+        const report = await transport.close();
+        fs.renameSync(control, `${control}-original`); fs.symlinkSync(outside, control);
+        return report;
+      } };
+    });
+    const result = await fixture.run();
+    expect(result.processCleanupComplete).toBe(true); expect(result.outputAccountingComplete).toBe(false);
+    expect(result.retainedRoots).toHaveLength(2); expect(result.rootCleanupComplete).toBe(false);
+    expect(fs.existsSync(path.join(outside, 'stderr.raw'))).toBe(false);
+    expect(result.retainedRoots.every((root: any) => !root.originalStderrSaved)).toBe(true);
+    expect(result.retainedDiagnosticArtifact.complete).toBe(true); expect(prepareDelivery(result, 110).passes).toBe(false);
+  });
   it('review delta reads entries incrementally and treats directory close failure as incomplete', () => {
     const base = fixtureRoot('/private/tmp/flow-native-probe-dir-'); const file = path.join(base, 'template'); fs.writeFileSync(file, '');
     const stat = fs.lstatSync(base), leaf = fs.lstatSync(file); const roots = [{ path: base, identity: { dev: stat.dev, ino: stat.ino } }];
