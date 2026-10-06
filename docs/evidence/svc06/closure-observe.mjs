@@ -1,0 +1,20 @@
+// Read-only selection observation; system Psych is a test parser, not the production build parser.
+import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
+import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { runtimeDependencyPlan } from '../../../tools/personal-preview/backend-release/dependency-plan.mjs';
+const before = await readFile('pnpm-lock.yaml');
+assert.equal(createHash('sha256').update(before).digest('hex'), '0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e');
+const ruby = spawnSync('/usr/bin/ruby', ['--disable-gems', '-rpsych', '-rjson', '-e', 'puts JSON.generate({parser: {ruby: RUBY_VERSION, psych: Psych::VERSION}, lock: Psych.safe_load(File.read("pnpm-lock.yaml"), [], [], false)})'], { cwd: process.cwd(), env: { PATH: '/usr/bin:/bin' }, encoding: 'utf8', timeout: 5000, maxBuffer: 4 * 1024 ** 2 });
+if (ruby.status !== 0) throw new Error(`Read-only parser failed: ${ruby.status}`);
+const { parser, lock } = JSON.parse(ruby.stdout), manifests = {};
+for (const id of Object.keys(lock.importers)) manifests[id] = JSON.parse(await readFile(`${id}/package.json`, 'utf8'));
+const bytes = await readFile('pnpm-lock.yaml');
+assert.deepEqual(bytes, before);
+const plan = runtimeDependencyPlan({ lock, manifests, host: { os: process.platform, cpu: process.arch, libc: null }, pnpmVersion: '9.15.4' });
+assert.deepEqual(plan.importers, ['.', 'apps/runner', 'apps/server', 'packages/client', 'packages/contracts', 'packages/protocols']);
+assert.ok(plan.snapshots.includes('tsx@4.23.15'));
+assert.ok(plan.snapshots.includes('@anthropic-ai/claude-agent-sdk-darwin-arm64@0.3.290'));
+assert.equal(plan.snapshots.some(key => key.startsWith('react@') || key.startsWith('vitest@') || key.startsWith('vite@')), false);
+console.log(JSON.stringify({ observedAt: new Date().toISOString(), parser, lockBytes: bytes.length, lockSha256: createHash('sha256').update(bytes).digest('hex'), policy: plan.policy, host: plan.host, importers: plan.importers, snapshotCount: plan.snapshots.length, totalSnapshots: Object.keys(lock.snapshots).length, packageCount: plan.packages.length, skippedOptionalSnapshots: plan.skippedOptionalSnapshots, snapshots: plan.snapshots, sourceSemanticDigest: plan.sourceSemanticDigest, installationSemanticDigest: plan.installationSemanticDigest, installArguments: plan.installArguments, productionParserConfigured: false, installed: false, cacheRead: false, physicalSavingsMeasured: false }, null, 2));
