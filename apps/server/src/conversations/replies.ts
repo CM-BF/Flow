@@ -88,6 +88,6 @@ export async function assistantProjection(client: PoolClient, task: TaskRecord) 
   const session = await sessionEvidence(client, task);
   const typed = session?.knownAdapter ? await readBoundTypedFinal(client, task, session) : null;
   const effective: ConversationEffectiveSettings = typed && typed !== 'invalid' ? { ...typed.settings.effective,
-    runnerRequested: typed.settings.requested, source: { kind: 'assistant-final', messageId: typed.id, taskId: task.id, attemptId: typed.attemptId, detailId: typed.detail.id } } : session?.effective ?? unknownSettings;
+    ...('messageSettings' in typed.settings ? { messageSettings: typed.settings.messageSettings } : { runnerRequested: typed.settings.requested }), source: { kind: 'assistant-final', messageId: typed.id, taskId: task.id, attemptId: typed.attemptId, detailId: typed.detail.id } } : session?.effective ?? unknownSettings;
   return { assistant: await finalReply(client, task, session, typed), effective };
 }

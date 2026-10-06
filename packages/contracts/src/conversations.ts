@@ -1,10 +1,11 @@
 import { z } from 'zod';
+import { claudeTurnSettingsSchema, type ClaudeTurnSettings } from './claude-turn-settings.js';
 import { attachmentSelectionSchema } from './attachments.js';
 import { idSchema } from './tasks.js';
 import { conversationContextSelectionSchema, type ConversationContextReference } from './conversation-context.js';
 import { executionProfileReferenceSchema } from './execution-profiles.js';
 import type { Detail, TaskSummary } from './tasks.js';
-import type { AssistantSettings } from './assistant.js';
+import type { AssistantSettings, ClaudeMessageSettingsFinal } from './assistant.js';
 
 /** Requested controls are validated against the selected adapter before admission. */
 export const conversationSettingsSchema = z.strictObject({
@@ -27,6 +28,7 @@ export const conversationTurnSchema = z.strictObject({
   mode: z.enum(['follow-up', 'queue', 'steer']).default('follow-up'),
   knowledge: conversationContextSelectionSchema.optional(),
   attachments: attachmentSelectionSchema.optional(),
+  messageSettings: claudeTurnSettingsSchema.optional(),
 });
 export type ConversationTurnAdmission = z.infer<typeof conversationTurnSchema>;
 export const conversationTurnQuerySchema = z.strictObject({
@@ -39,6 +41,8 @@ export const conversationListQuerySchema = z.strictObject({
 });
 
 export interface ConversationCapabilities {
+  /** Configured policy only; old literal capability flags remain unchanged. */
+  messageSettings?: { protocol: ClaudeTurnSettings['protocol']; profile: ClaudeTurnSettings['profile']; choices: 'execution-profile' };
   knowledgeContext?: boolean;
   /** Missing/false forbids attachment admission. Read the project limits before uploading. */
   attachmentContext?: boolean;
@@ -74,6 +78,7 @@ export interface ConversationEffectiveSettings {
   permissionMode?: string | null;
   /** Adapter request is evidence, separate from the user's conversation.requested controls. */
   runnerRequested?: AssistantSettings['requested'];
+  messageSettings?: ClaudeMessageSettingsFinal;
   source: { kind: 'recorded-adapter-session'; adapterVersion: string; taskId: string; attemptId: string; detailId: string } |
     { kind: 'assistant-final'; messageId: string; taskId: string; attemptId: string; detailId: string } | null;
 }
@@ -119,6 +124,7 @@ export type ConversationAssistantReply = {
   reason: 'execution-pending' | 'execution-not-succeeded' | 'unknown-adapter' | 'missing-session' | 'missing-result' | 'ambiguous-result' | 'invalid-result';
 };
 export interface ConversationTurn {
+  messageSettings?: ClaudeTurnSettings;
   context?: ConversationContextReference;
   id: string;
   conversationId: string;

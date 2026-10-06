@@ -1,10 +1,11 @@
+import { CLAUDE_TURN_SETTINGS_PROTOCOL } from '../../../../packages/contracts/src/claude-turn-settings.js';
 import { readFile } from 'node:fs/promises';
 import type { FastifyInstance } from 'fastify';
 import type { Pool } from 'pg';
 import { nativeExecutionProfilePublicationSchema, executionProfileReferenceSchema, EXECUTION_PROFILE_HEADER, EXECUTION_PROFILE_STEERING_VERSION, NATIVE_EXECUTION_PROFILE_VERSION } from '../../../../packages/contracts/src/execution-profiles.js';
 import { HttpError, transaction } from '../database.js';
 import { integerQuery } from '../queries.js';
-import { listProfiles, listNativeProfiles, publishProfile } from './store.js';
+import { listProfiles, listNativeProfiles, listClaudeMessageSettingsProfiles, publishProfile } from './store.js';
 
 export async function migrateExecutionProfiles(pool: Pool): Promise<void> {
   await transaction(pool, async client => {
@@ -26,6 +27,9 @@ export function registerExecutionProfileRoutes(app: FastifyInstance, pool: Pool)
     if (after !== undefined && !executionProfileReferenceSchema.shape.id.safeParse(after).success) throw new HttpError(400, 'profile_cursor', 'Invalid execution profile cursor.');
     const header = EXECUTION_PROFILE_HEADER.toLowerCase();
     const occurrences = request.raw.rawHeaders.filter((_, index) => index % 2 === 0 && request.raw.rawHeaders[index]!.toLowerCase() === header).length;
+    if (occurrences === 1 && request.headers[header] === CLAUDE_TURN_SETTINGS_PROTOCOL) {
+      return listClaudeMessageSettingsProfiles(pool, after, integerQuery(limit, 20, 100, 1));
+    }
     if (occurrences === 1 && request.headers[header] === NATIVE_EXECUTION_PROFILE_VERSION) {
       return listNativeProfiles(pool, after, integerQuery(limit, 20, 100, 1));
     }

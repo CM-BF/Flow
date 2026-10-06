@@ -1,3 +1,4 @@
+import { assertQueuedMessageSettings } from '../execution-profiles/store.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool } from 'pg';
 import { CONVERSATION_QUEUE_MAX_PENDING, type ConversationQueueAccepted, type ConversationQueueCancelled, type ConversationQueueEnqueue, type ConversationQueueCancel } from '../../../../packages/contracts/src/conversation-queue.js';
@@ -13,9 +14,13 @@ export async function enqueue(pool: Pool, conversationId: string, input: Convers
     requireQueueRevision(conversation.queue_revision, input.expectedQueueRevision);
     const pending = (await client.query('SELECT id FROM flow.conversation_queue WHERE conversation_id=$1 AND state=\'waiting\' LIMIT $2', [conversationId, CONVERSATION_QUEUE_MAX_PENDING])).rowCount!;
     if (pending >= CONVERSATION_QUEUE_MAX_PENDING) throw new HttpError(409, 'conversation_queue_full', 'Cancel a waiting item before adding more.');
+    // No future native session is guessed at enqueue time; promotion rechecks the frozen request.
+    await assertQueuedMessageSettings(client, { title: conversation.title, prompt: input.text, harness: 'claude',
+      ...(conversation.execution_profile ? { executionProfile: conversation.execution_profile } : {}),
+      ...(input.messageSettings ? { messageSettings: input.messageSettings } : {}) });
     const inputId = await freezeContext(client, conversationId, conversation.project_id, input.text, input.knowledge, input.attachments);
     const queueRevision = await advanceQueueRevision(client, conversationId);
-    const row = (await client.query<QueueRow>('INSERT INTO flow.conversation_queue(id,conversation_id,sequence,user_text,conversation_input_id) VALUES($1,$2,$3,$4,$5) RETURNING *', [randomUUID(), conversationId, queueRevision, input.text, inputId])).rows[0]!;
+    const row = (await client.query<QueueRow>('INSERT INTO flow.conversation_queue(id,conversation_id,sequence,user_text,conversation_input_id,message_settings) VALUES($1,$2,$3,$4,$5,$6) RETURNING *', [randomUUID(), conversationId, queueRevision, input.text, inputId, input.messageSettings ?? null])).rows[0]!;
     return { conversationId, queueRevision, item: await contextualItemView(client, row) };
   });
   return { ...result.value, replayed: result.replayed };
