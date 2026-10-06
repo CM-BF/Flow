@@ -15,11 +15,11 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | 3不同新生产旅程分轮通过；旧queue3通过、root types0；原失败保留，0provider |
 | 已集成main状态 / HEAD | ENG01H + native工程薄client已main280289；X01依赖待与leaf独立批准后接收 |
-| Review | NOT_STARTED：生产接线；领域582f APPROVED、薄client5be由Mika独审中 |
+| Review | APPROVED：native_center_owner固定9406生产接线；领域582f已审、薄client5be由Mika独审中 |
 | 实现目标 | 9406ca5f2aa5a88dbc028d64e09f48f438bd627e |
 | 实现范围 | apps/server/src/index.ts, apps/server/src/main.ts, packages/client/src/browser-session-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 连接会话已接入真实中心启动入口，重新连接可保留身份，退出连接不取消后台任务。 |
 | 下一可用交付 | 完成生产接线独审并交给网页恢复功能使用；个人入口保持当前版本。 |

@@ -273,3 +273,7 @@ NOT_STARTED；仅3source、2HTTP与types，领域916e另已独审；不复跑PG/
 Review target commit: 79b569a14d14c218874781e2d05ae6e42e234ce2
 
 APPROVED — assignment_review独立只读3source/3raw/1input同源，无P1/P2；不重跑。限定薄传输，见[回执](../../docs/evidence/f01/native-engineering-client-review.json)。
+
+## Browser connection production mount
+
+2026-10-06 13:35 UTC，native_center_owner独立只读APPROVED固定9406ca5f2aa5a88dbc028d64e09f48f438bd627e。完整3file delta/测试和25 bindings核验（3source+10输入+12raw），无P1/P2，0reviewer tests/provider；本人此前域仅作固定input hash，未自审。[正式回执](../../docs/evidence/f01/browser-session-production-independent-review.json)。新3distinct分轮2+1、旧queue3/types0、4DB正常清理；Node jar非实际浏览器、remoteTLS/proxy未验，个人服务未动。
