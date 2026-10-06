@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:51:42 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:54:48 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 3636614f3850d7eb9ca63a42c01ea0d95df19db2（v3源码；候选packet与metadata HEAD由Git核） |
-| 工作树dirty状态 | be36cf360d64b6eeeaa8e86b1e806514e6f7b7dc正式结果metadata提交后clean；本次仅新只读研究交接文档，最终HEAD由Git核。 |
+| 工作树dirty状态 | e63e900ba7087102ee065313d76fc8fad32e6f6b只读研究提交后clean；本次仅native工程边界与共享输入路由文档，最终HEAD由Git核。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | delivered |
 | 检查状态 | C_FD_V3_WINDOW_STOPPED（1编译/2目标，control已报告/profile-regular SIGABRT无报告；measurement=false、cleanup/accounting=true、CLI1）； C_FD_V3_LOCAL_PASS（28通过/16未选，9新+19直接；Node24惰性import/3语法0，新增实际compile/target0）； C_FD_V2_WINDOW_STOPPED（1编译/2目标，control已报告/profile SIGABRT/第三NOT_RUN；measurement=false、cleanup/accounting=true、CLI1）；C_FD_V2_LOCAL_PASS（26/26受影响项，9未选；Node24惰性import/3语法通过，历史检查时新增实际运行0）；C_FD_WINDOW_STOPPED（1编译exit0/0目标，cleanup=true，measurement=false/accounting=unknown，CLI1）；C_HOST_LOCAL_PASS（20 distinct零目标检查，分18+1+1，Node24惰性import/5语法通过）；CATALOG_LOCAL_PASS（33 distinct/strict0，分次证据）；DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
@@ -145,3 +145,7 @@ GO批准、Mika串行派工 `go-c-fd-v2-851fd8c7-once`，见[运行授权](../..
 ## v3封存后的只读策略输入
 
 [固定0.154 bootstrap研究](../../docs/evidence/wpf-mature-02/bootstrap-policy-readonly.md)接收architecture_read于11:49:19 UTC的只读结论：版本到本机binary链未知，三项policy/采集差异均不证明失败原因。等待GO在有界自有PID拒绝证据与单项明确grant对照之间选择；尚无新实现/运行授权。B01已审首片仅从canonical链接路由，进度仍由B01维护。本阶段不修改d803/be36历史归档或计入旧runtime时长。
+
+## Native工程共享接线输入
+
+[固定边界说明](../../docs/evidence/wpf-mature-02/native-engineering-boundaries.md)已交付：file-only强制、≥Sol实际身份和全部writer停止均不可由目录/请求或直属child退出推定。可复用现有单turn pump、native终态与工程unknown保留机制；生产owner另证准入与停止范围。此缺口不阻已授权零模型fixture/checker/snapshot；本轮只读，无新增runtime或源码修改。04接收仅在canonical链接权威receipt。

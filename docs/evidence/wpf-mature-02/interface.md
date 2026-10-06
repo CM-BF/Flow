@@ -4,6 +4,9 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [Native工程file-only / ≥Sol身份 / 全writer停止边界](native-engineering-boundaries.md)：固定main52eb与0.154/R06输入；缺证阻native promote，不阻零模型fixture/checker/snapshot。
+- [04 main接收权威回执](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/main-acceptance.json)。仅路由，状态由04维护。
+
 - [固定0.154 bootstrap只读事实与两条待选边界](bootstrap-policy-readonly.md)：等待GO策略/证据边界选择；源码差异不证明必要性或SIGABRT因果，不实现或运行新候选。
 - [B01已审首片集成输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/integration-ready.md)。请Lead按权威输入独立接收，不等待第三reader；原authority请求保留。
 
