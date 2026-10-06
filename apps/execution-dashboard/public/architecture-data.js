@@ -98,7 +98,7 @@ export const views = [
     edges:[edge('api','timeline','读 / 写'),edge('api','task','事务'),edge('boss','task','唤醒'),edge('timeline','artifact','引用'),edge('timeline','assistant','回复引用'),edge('task','extensions','关联'),edge('dashboard','status','本地只读'),edge('dashboard','ledger','独立 PG')],
   },
   {
-    id:'states',title:'任务状态机',rules:['有效attempt的 running / waiting / cancel_requested，收到completed.outcome后均可进入succeeded / failed / cancelled。','running / waiting / cancel_requested 因lease过期或revoke进入uncertain；发送未知也可进入uncertain。C02审计终结后安全retry是另一queued task，旧task不复活。','approve/reject都回传回答，waiting→running；queued未领取直接取消，执行中取消只是cancel_requested。','新产物使verification回到pending；独立检查后passed或failed。'],summary:'执行状态与正文规则分开。规则通过不等工程验收；取消请求和远端ACK不等停止，未知副作用须受审计核对。',width:1120,height:940,
+    id:'states',title:'任务状态机',rules:['有效attempt的 running / waiting / cancel_requested，收到completed.outcome后均可进入succeeded / failed / cancelled。','running / waiting / cancel_requested 因lease过期或revoke进入uncertain；发送未知也可进入uncertain。C02审计终结后安全retry是另一queued task，旧task不复活。','approve/reject都回传回答，waiting→running；queued未领取直接取消，执行中取消只是cancel_requested。','新产物使verification回到pending；中心正文规则检查后passed或failed。'],summary:'执行状态与正文规则分开。规则通过不等工程验收；取消请求和远端ACK不等停止，未知副作用须受审计核对。',width:1120,height:940,
     groups:[group('中心持久 Task.status',12,18,1093,710),group('独立维度 · 正文规则 verificationStatus',12,755,1093,175)],
     nodes:[
       node('queued','queued','已持久受理',35,100,'apps/server/src/tasks.ts','受理和稳定key在中心事务完成。','submit → command transaction。','浏览器关闭不影响queued任务。'),
