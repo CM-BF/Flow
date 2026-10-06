@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-06T22:54:29.173282+00:00",
+  "recordedAt": "2026-10-06T22:56:47.707181+00:00",
   "state": "NO_WEB_HEAVY_HOLDER_THREE_OWNED_PREVIEWS_RETIRED",
   "groupWindowOwnership": "No Web PG/Chrome holder, reservation or gate. Three exact owned preview fixtures retired with actual exit143 and absent groups/listeners; only Lead may later check exact cache candidates. Workspace-cache dependency retirement is complete and NOT_RUNTIME_READY.",
   "release03": {
@@ -1042,7 +1042,9 @@
     "cacheOperationsByWeb": 0,
     "report": "ops-nine-vite-cache/report.md",
     "managerConfirmation": "ops-nine-vite-cache/two-cache-manager-confirmation.json",
-    "cleanupIntake": "ops-nine-vite-cache/lead-two-cache-cleanup-intake.json"
+    "cleanupIntake": "ops-nine-vite-cache/lead-two-cache-cleanup-intake.json",
+    "historicalPhaseOnly": true,
+    "laterThreePreviewRetirement": "ops-three-fixture-retirement/manager-confirmation.json"
   },
   "currentOpsFixtureRetirement": {
     "dispatch": "ops-two-fixture-retirement/dispatch.json",
@@ -1245,7 +1247,8 @@
         "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
         "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY"
       }
-    ]
+    ],
+    "rootMetadataReview": "ops-three-fixture-retirement/root-metadata-closeout-intake.json"
   },
   "quickControlsBrowserPreparation": {
     "state": "APPROVED_SCOPED_STATIC_BROWSER_PREPARATION_NOT_RUN",

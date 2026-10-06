@@ -1,6 +1,6 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-06T22:54:29.173282+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+更新：2026-10-06T22:56:47.707181+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
 
 ## 共享窗口
 
@@ -8,11 +8,11 @@
 
 [Lead workspace-cache 依赖回收已完成](ops-three-fixture-retirement/lead-workspace-cache-postcheck.json)，该树 **NOT_RUNTIME_READY / 禁止借用**，恢复须另行批准。后置 1,079,889,920 B 仍不足共享门槛，仅入站历史事实；本组无新 PG/Chrome 运行、预约或 gate。原[依赖有界确认](ops-workspace-cache-dependency-consumers/manager-confirmation.json)保留为操作前证据。
 
-**Lead 当前所需唯一回执：[Git/config 操作权已归还 + 两预览退役/释放](ops-two-fixture-retirement/lead-handoff-current.json)。** Root 一次精确建树授权已结束；W01 的源码 claim 不保留 Git/config 委派权。
+**此前已交接回执：[Git/config 操作权已归还 + 两预览退役/释放](ops-two-fixture-retirement/lead-handoff-current.json)。** Root 一次精确建树授权已结束；W01 的源码 claim 不保留 Git/config 委派权。
 [原退役 receipt](ops-two-fixture-retirement/owner-raw/retirement-receipt.json) · [ACTIVITY CAS RELEASED](ops-two-fixture-retirement/activity-retirement-release-receipt.json) · [CHAT CAS RELEASED](ops-two-fixture-retirement/chat-retirement-release-receipt.json) · [本组冻结消费者确认](ops-two-fixture-retirement/root-known-consumers.json)。**最新 Lead fresh 审计：ACTIVITY `.vite` 仍被 PID15811 / 51452–51454 消费，STRICT KEEP；只 CHAT 保留精确缓存候选。** 仅旧53851已退役，不得停止51454或扩大服务操作。CHAT仍须 Lead 最终 fresh 核查；不重停、不扩依赖目录。
 
 **Web 无重运行、预约或 gate；Mika SVC07 为下一实际运行请求，C02 排后，均不冒已启动。** 快速设置 [fe6源码与c1精确准备均已获限定批准](message-settings02-c1-prepared/report.md)，owner已静态封存38bf双端clean；全部新检查仍未运行，准入请求不等于grant或窗口。[Lead 22:12:19 已观察179来源实际加载](message-settings-quick-controls-provision/registration-request.json)，owner 解析已 errors=[] / 5 TODO，本组未复采。
-[九树最新结果](ops-nine-vite-cache/report.md)：七棵保留长期预览继续 KEEP；[两 exact cache 有界确认](ops-nine-vite-cache/two-cache-manager-confirmation.json)已由 Lead 消费并[完成回收](ops-nine-vite-cache/lead-two-cache-cleanup-intake.json)。仅 workspace-cache/lifecycle-baseline 的 `.vite`，其 source/true deps/siblings 保持。
+[九树原轮历史结果](ops-nine-vite-cache/report.md)：当时七棵保留预览均 KEEP；其中本轮三项的实际退役及释放已由页首新回执更新，其余保留边界不变。[两 exact cache 有界确认](ops-nine-vite-cache/two-cache-manager-confirmation.json)已由 Lead 消费并[完成回收](ops-nine-vite-cache/lead-two-cache-cleanup-intake.json)。该轮仅 workspace-cache/lifecycle-baseline 的 `.vite`，当时 source/true deps/siblings 保持；后来的 workspace-cache 依赖操作另见页首原件。
 [Fresh D04](ops-nine-vite-cache/fresh-ledger.json)核九树原 claim 均 released，但这不等于预览退役或缓存没有消费者。[owner 原文与机器决策](ops-nine-vite-cache/request.json)已齐，[root 当前准备声明](ops-nine-vite-cache/root-known-consumers.json)无直接命中不替代退役；Lead 新目录／内核原件已归档：两处当时无kernel consumer；只有 Lead 最终 fresh 检查并操作，未知路径仍 KEEP。
 [两缓存 root 正式合证](ops-nine-vite-cache/root-two-cache-confirmation.json)与历史确认均保留；当时 Lead 报 free 1,182,425,088 B仍不足原门槛；这是历史回收时点，最新依赖回收后观察见页首，本组不重采/不启动。
 [两模拟预览已实际退役](ops-two-fixture-retirement/owner-raw/retirement-receipt.json)：原 owner 顺序仅 SIGTERM PID31365/60286；原工具session均exit143，owned组/监听已空，不冒全部async handler完成。原53851/63743入口现在仅历史；49922/55049及所有KEEP入口未动。原 owner 已顺序收口两份唯一 status，临时精确 metadata claims 均已 fresh CAS 释放；[生命周期与限定独审](ops-two-fixture-retirement/dispatch.json)不复活旧产品写权。
