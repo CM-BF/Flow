@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:11 UTC；W1/W2 main事实仍为已核6426，独立后继S01P01已开工 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:21 UTC；父计划后继链接及原W1/W2证据已核main32c371 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
@@ -11,7 +11,7 @@
 | 工作树dirty状态 | 固定结果0dac4b92747db5a3c8ed2dc25301e7cbecc2e8bf clean，后继仅独审/状态/报告说明metadata |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 2ab：11纯统计/预算/参数tests，noEmit0；W2实跑12tasks/12attempts且正常清理，结果0dac独审APPROVED |
-| 已集成main状态 / HEAD | W1/W2已集成main/origin6426b44cd32d10216141af13ecfa83b8879025fb，W2交接5504三scope零diff；slot提案未集成 |
+| 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01产品实现仍独立待验收 |
 | 实现目标 | 2ab7967f2eb808fecd1205f7552a119eee8e0b36 |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
@@ -93,3 +93,5 @@ W1证明本机四个独立fixture runner可同时执行该固定负载，没有S
 2026-10-06 07:56 UTC main聚合核验：单次snapshot显示S01权威834ffb6 clean/source live/stale=false、delivered/approved/unchanged/current、issues=[]；main当前84fdece仍ancestor包含已审2ab且scopeEqual=true，见[w2-main-dashboard.json](../../docs/evidence/s01/w2-main-dashboard.json)。后继slot提案仍独立metadata，不能冒称生产实现；不再重复聚合或运行。
 
 2026-10-06 08:11 UTC 后继已开工：GO/Lead授权S01P01保守并发核心，worker独立WT `runner-attempt-pool` / branch `codex/runner-attempt-pool`、base9c6、现场155494b clean，canonical plan/status/review已就绪。fresh账本08:10:53 available，S01原claim v1 ACTIVE、原三scope不变，S01P01独立claim599454b1 v1 ACTIVE、六scope无重叠。S01-06保持未完成并转in-progress；实际进度只读后继status，不复制其TODO。已桥接Lead登记权威聚合源及全局索引，等待新源聚合展示；本S01沿用07:56已核聚合事实。W1/W2冻结证据、累计预算及原ACK/browser未验收范围不变，0新增运行/模型。架构影响只登记后继runtime调度与持久恢复边界待Lead按实现target更新，本树仍无产品变化。
+
+2026-10-06 08:21 UTC 父计划main接收：Lead明确接收c86cab，owner独立核其为main32c371祖先且原三scope零diff，见[后继链接接收回执](../../docs/evidence/s01/successor-main-receipt.json)。Lead报告registry95已登记S01P01、部署紧随；本人没有再采同一dashboard或重测。本claim v1 ACTIVE/三scope与唯一owner未变。此main事实只覆盖父计划及原实验，不覆盖S01P01尚待固定的实现/独审。
