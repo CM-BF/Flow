@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:09:09 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:17:01 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core |
 | Branch | codex/claude-message-settings-core |
-| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 最新PG execution HEADf8cfc7f0b5e99ae5cc1181218e07ccb10dc57a53；source ea276572c3c99fb8400808a93efc69ce530d55a4不变；metadata提交以实际Git HEAD为准 |
-| 工作树dirty状态 | source ea276不变；本次仅封存8PG通过/清理raw与固定纵向交审metadata |
+| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 已审packet23016bbb5a56ccc6b12729c4d6ec365819207eba；source ea276572c3c99fb8400808a93efc69ce530d55a4冻结；本次批准metadata HEAD以实际Git为准 |
+| 工作树dirty状态 | 批准前HEAD23016 clean；本次仅正式review receipt/status/review三项metadata，source/raw/manifest冻结 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED：29 distinct分次（16合同+5注入+8PG）、两focused strict0；旧beforeAll失败/资源NOT_RUN保留，真实SDK/provider未运行 |
-| 已集成main状态 / HEAD | 首leaf已main 22d5ca67159b35bb794b2711cf6df0cb905b92e8；下一纵向已在本branch实施，未main |
-| 实现目标 | 纵向source ea276572c3c99fb8400808a93efc69ce530d55a4，生产checkpoint92f；已局部验证/未main；首leaf4e7历史已main |
+| 已集成main状态 / HEAD | 首leaf已main 22d5ca67159b35bb794b2711cf6df0cb905b92e8；当前34文件纵向NOT_INTEGRATED，待Lead受控接收 |
+| 实现目标 | 纵向source ea276572c3c99fb8400808a93efc69ce530d55a4，生产checkpoint92f；独审APPROVED/NOT_INTEGRATED；首leaf4e7历史已main |
 | 实现范围 | v3 39 literal：contracts、center/queue、Claude adapter、final/context/retry、032与定向tests；F01/client/Web/TUI共享入口另owner |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 消息设置纵向接线已通过合同、注入执行与专库持久化检查，待固定组合独审 |
-| 下一可用交付 | 独立审查固定纵向实现及29项证据，随后由Lead接收并完成共享消费者 |
-| 当前阻塞 | ACTIVE: 本片固定组合待独审；F01 production mount/client与Web/TUI共享接线待协作。验证资源阻塞已解除 |
+| 当前产出 | 34文件纵向与29项分次检查正式独审APPROVED，0剩余P1/P2；源码停止修改，保留claim供必要修复 |
+| 下一可用交付 | Lead受控接收ea276源码与23016证据；F01 production factory/export/client及用户consumer由对应owner继续 |
+| 当前阻塞 | NONE（本CORE片实现、验证、独审）；待Lead集成，F01 production mount/client与Web/TUI接线不在本次批准内 |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED（当前纵向完整组合）；既有SOURCE_REVIEW无剩余P1/P2，29项与两strict0已封存，不继承首leaf批准 |
+| Review | APPROVED — Mika/root gpt-6-astra，2026-10-06 17:13:34 UTC，target ea276572c3c99fb8400808a93efc69ce530d55a4；0 P1/P2；[receipt](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-independent-review.json) |
 | Claim | c652bc61-f8a9-4848-a709-978adbb425ed v3 ACTIVE/39 literal；[amend receipt](../../docs/evidence/wpf-mature-02-message-settings-core/next-slice-v3-amend-receipt.json) |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -33,7 +33,7 @@
 | M02CORE-03 | completed | status_read | 5 selected / 5 passed；局部strict0；[checks](../../docs/evidence/wpf-mature-02-message-settings-core/checks.json) |
 | M02CORE-04 | completed | status_read | Mika15:31:09 / architecture_read15:31:25 UTC APPROVED，原packet不改 |
 | M02CORE-05 | completed | status_read | Lead main22d5已接两源/packet；owner逐字核两源；同core后继保留writer |
-| M02CORE-06 | in-progress | status_read | 39 literal完整caller已实施；[局部验证](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-local-validation-manifest.json)为21 distinct及两项strict0，PG已8/8，完整独审/共享消费仍待验 |
+| M02CORE-06 | in-progress | status_read | 39 literal完整caller已实施；29 distinct分次及两strict0，Mika固定纵向APPROVED；当前NOT_INTEGRATED，F01/用户consumer及完整02验收仍开放 |
 
 ## 阻塞 / 风险 / 未验证
 
@@ -41,13 +41,13 @@
 
 ## Dashboard / 架构影响与下一步
 
-本 status 是唯一手填事实源。Lead回报2026-10-06 15:38:16 UTC的4320实际快照共164来源，CORE live/issues=[]；这是Lead提供的聚合事实，本worker没有重采。首leaf已main，本branch正在实现纵向消费但未验证/集成；架构图待 Lead 在接线片固定后统一登记，不改共享 registry/架构源。
+本 status 是唯一手填事实源。Lead回报2026-10-06 15:38:16 UTC的4320实际快照共164来源，CORE live/issues=[]；这是Lead提供的聚合事实，本worker没有重采。首leaf已main，当前纵向已验证/独审APPROVED但NOT_INTEGRATED；此处未新增live采样，不改共享registry/架构源。
 
-source/raw/config 固定；[manifest与交审入口](../../docs/evidence/wpf-mature-02-message-settings-core/review-ready.md)供独立只读审查。真实检查仅纯 contract，并未开放中心/adapter/UI；不把5/5升级为模型能力证据。自有cache2文件/1,357,827逻辑B已清，未动共享依赖或旧资源。没有新增用户决定。父计划索引由 Lead/parent owner 更新，本 owner 不改父 status。
+当前source/raw/manifest固定；[正式批准receipt](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-independent-review.json)与[交付manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-delivery-manifest.json)供Lead受控接收。29项分次验证覆盖本CORE，真实SDK/provider与UI仍未验证。以下cache事实为历史首leaf检查：自有cache2文件/1,357,827逻辑B已清，未动共享依赖或旧资源。没有新增用户决定。父计划索引由 Lead/parent owner 更新，本 owner 不改父 status。
 
 ## 首leaf main收口 / 下一片
 
-Lead [main receipt](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/claude-message-settings-intake.json)绑定main22d5与source4e7/metadata b342；owner独核两源Git逐字一致，未merge/retest。claim已v3共39 literal；下一纵向contracts/center/queue/adapter/final/context/retry及032已开始实施，未运行后继检查。Lead报告已登记并见实际聚合，来源时刻见上节。
+Lead [main receipt](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/claude-message-settings-intake.json)绑定main22d5与source4e7/metadata b342；owner独核两源Git逐字一致，未merge/retest。claim已v3共39 literal；当前纵向已完成29项分次检查与正式独审，保留writer供修复，待Lead main回执。Lead报告已登记并见实际聚合，来源时刻见上节。
 
 ## 历史纵向contract checkpoint（当时未验证）
 
@@ -55,7 +55,7 @@ Lead [main receipt](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/
 
 2026-10-06 15:53:33 UTC：按parent有界授权，把model一致性收在新schema分支，补两反例并移除helper重复判断；新test仍6组，0执行。先前授权期间创建的2helper共5176B原现场保留（本次移除重复判断后略减），尚未接caller/未验证/不独立交付。Lead扩源receipt为NOT_RUN_INSUFFICIENT_SPACE，19既有源0物化；无Git sparse/config修改。仅已可见contracts的3测试入口静态相对import闭包28文件全可见，外部仅node:crypto/Vitest/zod；未来可沿旧dependency-only alias/strict继承，未生成第二测试计划/未运行。
 
-## 当前纵向实施 / 解阻事实
+## 历史纵向实施 / 解阻事实
 
 2026-10-06 16:06:20 UTC：Lead `/tmp/flow-claude-message-settings-source-expansion.json` 为 READY_SOURCE_ONLY（15:54:46），21个existing源180224B名义分配，HEAD5239不变；15:57 correction恢复own plan/evidence/leaf可见性并保留dirty源。先前NOT_RUN_INSUFFICIENT_SPACE为历史，不再是实现阻塞。
 
@@ -85,3 +85,5 @@ Root静态发现prepared PG config的`.js`引用在native loader下不存在；�
 2026-10-06 16:58:48 UTC CORE-PG-RETRY-20261006-1658唯一fresh预核NOT_RUN：free1,192,939,520B<1,207,959,552B，差15,020,032B。claim v3、HEAD26e、236source/input/config和两份外部receipt hash全符，前次库/process/cache清理已确立。0新Vitest/PG/HTTP/DB/child/provider，立即交回窗口；不降线、不循环df等涨、不自动第三次。Lead4SQL恢复与assignment175源/28SQL/10第三方入口静态齐备已归档，均不证明初始化通过。见[资源NOT_RUN](../../docs/evidence/wpf-mature-02-message-settings-core/pg-retry-resource-not-run.json)；旧失败raw/manifest保持原字节。
 
 2026-10-06 17:09:09 UTC CORE-PG-RETRY-20261006-1707明确独立窗口完成：fresh1,257,181,184B≥floor；8selected/8passed/0skip/exit0，14tasks11attempts116HTTP、sourceea不变。专库flow_message_settings_e768fe5964df4d76b685195129f171ad app/boss/pool/admin关闭、conn0/普通DROP后absent/errors=[]，worker/cache/temp清理，窗口已归还。29 distinct=16合同+5注入+8PG分次；原失败及1658资源NOT_RUN原样。见[完整固定交审入口](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-review-ready.md)与[manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-delivery-manifest.json)。本片未正式APPROVED/未main，F01 production32/client/UI另验。
+
+2026-10-06 17:13:34 UTC：Mika/root正式只读APPROVED source ea276572c3c99fb8400808a93efc69ce530d55a4（34文件，生产92f），packet23016及273bindings全部核符，0剩余P1/P2。29 distinct与两strict0、8PG全部原始证据/清理成立；architecture_read辅助49绑定无新增finding，不是第二正式批准。仅本CORE范围，F01 factory/export/client、自动调度端到端、UI、实际SDK/provider/资格与完整02未验。source/raw/manifest停止修改；本次只收录[正式receipt](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-independent-review.json)，stage integration / NOT_INTEGRATED，claim v3继续保留，0重测。

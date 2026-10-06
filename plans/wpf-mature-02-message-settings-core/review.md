@@ -1,12 +1,12 @@
 # WPF-MATURE-02-CORE 独立审查
 
-**NOT_STARTED — 当前完整纵向组合；原首leaf独审为下列历史，不自动继承。**
+**APPROVED — Mika/root gpt-6-astra，2026-10-06 17:13:34 UTC；当前CORE纵向34文件，0剩余P1/P2。NOT_INTEGRATED。**
 
-## 当前纵向固定交审
+## 当前纵向正式独审
 
 Review target commit: ea276572c3c99fb8400808a93efc69ce530d55a4
 
-生产checkpoint92f，ea为两test修复；完整34source/readonly/config与所有原raw绑定见[交付manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-delivery-manifest.json)。已有SOURCE_REVIEW静态无剩余P1/P2；现29 distinct=16合同+5注入+8真实专库，contract/focused strict各0。最新8PG全部执行、14tasks11attempts116HTTP，清理conn0/absent。首PG beforeAll失败与第二窗口resource NOT_RUN原样，不能抹为通过。正式组合独审尚未收讫；F01 production mount/client/Web/TUI与真实provider未覆盖，完整准则见[review-ready](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-review-ready.md)。
+生产checkpoint92f，ea为两test修复；完整34source/readonly/config与所有原raw绑定见[交付manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-delivery-manifest.json)。已有SOURCE_REVIEW静态无剩余P1/P2；现29 distinct=16合同+5注入+8真实专库，contract/focused strict各0。最新8PG全部执行、14tasks11attempts116HTTP，清理conn0/absent。首PG beforeAll失败与第二窗口resource NOT_RUN原样，不能抹为通过。Mika/root已正式APPROVED，独核packet23016bbb5a56ccc6b12729c4d6ec365819207eba的273bindings与34source Git/WT/hash/bytes全部一致；manifest SHA a49256788e82098ebedaef02af92b7997ae80f995791a21af8964a3bdbc9fa09。architecture_read辅助核49bindings无新增finding，不是第二正式批准；reviewer未重跑。原.extend/cleanup finding关闭。完整[正式receipt](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-independent-review.json)记录边界：F01 production factory/export/client、自动调度端到端、Web/TUI、真实SDK/provider及账号资格未覆盖，不代表完整02完成。源码/raw/manifest冻结，保留claim v3供必要修复，等待Lead受控main接收。
 
 ## 历史首leaf APPROVED（仅4e7）
 
@@ -41,7 +41,7 @@ Mika与architecture_read正式固定审均0 P1/P2；无待修finding。完整来
 
 首leaf source4e7/metadata b342已接main22d5ca67159b35bb794b2711cf6df0cb905b92e8，owner两源比对一致，不重测。后继optional turnSettings纵向已于独立source checkpoint实施；仍不继承首leaf批准，当前范围见下节。
 
-## 下一纵向 SOURCE_REVIEW（运行未开放）
+## 历史纵向 SOURCE_REVIEW（当时运行未开放）
 
 - Review target commit: 92f768e3517a64235629858f50cdc3926d099b2d
 - 修复 target: ea276572c3c99fb8400808a93efc69ce530d55a4（仅新test hook80s与自备分页前提）。
