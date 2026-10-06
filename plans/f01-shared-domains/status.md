@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:34:00 UTC / main3c8a3ad4 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:59:10 UTC / 本轮未追moving main，原main事实保留 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
-| 单一status owner / model | Execution Lead / gpt-6-astra ultra |
+| 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | O14已审模块af976；生产候选73aabff4fac96c0439817bdc72358c1385371e8d |
-| 工作树dirty状态 | 产品候选已固定；本次原始证据和metadata提交后clean |
+| 工作基线 / HEAD | 受控移交 HEAD c67d6973d5b9f516fcb3000538939d1046b39367；O14生产候选73aabff4fac96c0439817bdc72358c1385371e8d保持 |
+| 工作树dirty状态 | 接收时clean；本次仅owner交接/证据预检metadata，产品未改 |
 | 工作分支状态 | in-progress |
-| 检查状态 | CLI HTTP1红→1绿33ms，根types最终0；production PG NOT_RUN，资源门槛未达。 |
+| 检查状态 | NOT_RUN 当前O14生产PG；旧CLI HTTP1红→1绿与root types0原证据保留，不重跑 |
 | 已集成main状态 / HEAD | X01静态安装已审进入7810cbf1；O14领域与薄client已mainfb9，当前生产候选73aab未集成。个人runtime362/v15未更新。 |
 | Review | NOT_STARTED 当前O14生产候选；薄deef由status_read独审APPROVED，Mika接收。X015e121/67fd原独审已接收main。 |
 | 实现目标 | 73aabff4fac96c0439817bdc72358c1385371e8d |
@@ -21,9 +21,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 静态插件安装入口已进入主线；目标的自动推进接线和终端命令已形成候选。 |
-| 下一可用交付 | 完成真实中心恢复与停机验证，让已授权的依赖任务自动继续。 |
-| 当前阻塞 | ACTIVE: 磁盘未达到数据库验证增量与收尾余量；源码和轻量检查继续。 |
+| 当前产出 | 自动推进的生产接线候选已移交，正在核对运行前依赖和清理边界。 |
+| 下一可用交付 | 专用数据库窗口中验证客户端退出后依赖任务继续、重启恢复与安全关闭。 |
+| 当前阻塞 | ACTIVE: 等待现有专库实验清理完成并排入独占验证窗口；可继续只读依赖预检。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -201,7 +201,7 @@
 
 2026-10-06T14:59:45.048714+00:00：F01-41薄client67fd获status_read/Mika独审，[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。生产固定5e121等待独审，[manifest](../../docs/evidence/f01/plugin-installation-mount-manifest.json)绑定10源、6领域输入、分轮证据与专库正常清理。静态installed不等于启用或可调用。
 
-| F01-42 | in-progress | Lead | 已审O14模块已mainaf976；薄client固定deef（HTTP1/1、types0）已独审；生产候选aea5536已写；CLI1/1、types0，真实PG受资源门槛阻塞，未集成 |
+| F01-42 | in-progress | native_center_owner | 已审O14模块已mainaf976；薄client固定deef（HTTP1/1、types0）已独审；生产候选aea5536已写；CLI1/1、types0，真实PG受资源门槛阻塞，未集成 |
 
 2026-10-06T15:04:21.640726+00:00：X01生产接线5e121独审APPROVED，限定结果与原始资源事实已绑定；现在受控接收。O14 deef薄client另待审，未借本批准；scan产品修改尚未开始。
 
@@ -222,3 +222,13 @@ Web A-only 实际结束并正常清理后，fresh free1,098,022,912B低于1GiB+3
 2026-10-06T16:30:00.517966+00:00：三份runtime使用文档已main 74bc72f0d32daebc8f89a75528f3d72002b3a29e，固定hash逐字相同；唯一共享claim v42已移出README、runnerREADME与recovery-boundaries三literal，明确停止这些路径写入。[范围交回](../../docs/evidence/f01/runtime-documentation-scope-release.json)。O14生产PG未运行边界不变。
 
 2026-10-06T16:40:25.953182+00:00：F01 v43已正式停止并移出六个public client/ACK/export literal和apps/cli目录；独立MATURE02C01 worker随后take11精确路径，接逐消息设置consumer，不等O14 PG。旧73a的CLI两源/一专测通过固定blob保留为受控输入，不扩大其批准。后续本owner只接032实际factory/PG与原O14生产检查，不能恢复已交权入口写入；[原子移交](../../docs/evidence/f01/message-settings-consumer-scope-handoff.json)。
+
+## 2026-10-06 16:59:10 UTC F01共享生产收尾交接
+
+原owner ExecutionLead全树停止写后handoff v44；本owner fresh核账本并accept v45，committedAt 2026-10-06T16:58:29.499Z。唯一claim 8470e7d2-662a-4dbe-9b0e-12ef82aac90e active，59 literal原scope保留。[handoff](../../docs/evidence/f01/native-owner-handoff-receipt.json) / [accept](../../docs/evidence/f01/native-owner-accept-receipt.json)。
+
+本次实施授权严格限于已有O14生产index/test的source+动态资源预检与一次排定PG窗口；之后仅在CORE正式独审通过后接032 migration与最薄真实FlowClient生产直接consumer。尚未领取新test路径，未改客户端/CLI或5个CORE非owned合同，不以59scope扩大实现。C01另一树保持固定563/独审通过/待集成。CORE资格、SDK和生产消息设置未验边界独立。
+
+O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/provider/browser/个人服务操作。现只写合法计划/证据。032新增挂载与新测试需独立固定delta并独审，任何scope新增先amend。
+
+2026-10-06 17:00:42 UTC 静态预检完成：[固定记录](../../docs/evidence/f01/goal-progression-handoff-preflight.json)核208源/28外部SQL（含动态tuple数组）/19包声明，missing=[]，工作区依赖均指本树，73a五源逐字保持。无测试/import/安装/产品PG。当前仅等待独占窗口；固定8 MiB的C01检查限制不冒充本片数据库额度，O14继续按其1 GiB+32 MiB源门槛与Lead窗口。

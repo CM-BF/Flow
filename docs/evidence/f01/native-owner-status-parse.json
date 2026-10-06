@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-06T17:00:42.561Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "自动推进的生产接线候选已移交，正在核对运行前依赖和清理边界。",
+    "next": "专用数据库窗口中验证客户端退出后依赖任务继续、重启恢复与安全关闭。",
+    "blocker": {
+      "state": "active",
+      "text": "等待现有专库实验清理完成并排入独占验证窗口；可继续只读依赖预检。"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "owner": "native_center_owner / gpt-6-astra",
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED；当前正式产品审查待实际PG证据",
+    "target": "73aabff4fac96c0439817bdc72358c1385371e8d"
+  }
+}

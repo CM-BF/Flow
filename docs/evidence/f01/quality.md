@@ -246,3 +246,5 @@ CHAT10 startup独立APPROVED：assignment_review完整只读2d699两file/2source
 ## 2026-10-06T13:16:16.945431+00:00 Browser-session transport
 
 Fixed 5be830e2614d45dbaa023e98923fc74f470b37ec; 3 new HTTP/SSE +51 direct existing checks, initial3red retained, final54/54 and root types0. One transport seam shares existing Bearer and explicit Cookie mode; CSRF port remains Web state, no second identity/auth state machine. Schema errors/lost ACK remain unknown/no retry, explicit connect does not retain token. Browser CORS/jar/PG policy remain domain/Web acceptance. Sources/raw/contract bound in browser-session-client-manifest.json.
+
+2026-10-06 16:59:10 UTC：F01共享生产收尾移交native_center_owner，采用已读本地find-skills/codebase-design/clean-code方法；本段先静态预检已有真实factory consumer、唯一scan生命周期/关闭顺序、动态SQL/配置/包入口/fixture闭包，不只TSimport。保留旧错误与未运行事实，不额外安装/创建第二loop。产品暂零改，PG等待明确窗口。
