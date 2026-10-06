@@ -1,6 +1,6 @@
 # CHAT08 native active steering — 0 provider delivery
 
-Review target: `d4e7445fca4fbc261cbf33101fca4d9407879315`. Product implementation: `f78a15c69f3f365a37c9f317249858d8e279503d`. The final target adds only a fixture setup compatibility change. Base: `42c1cc85cfbf9fa3ca3fdcbee57dc02394bff6d7`. Author/sole writer: runner_owner / gpt-6-astra. No independent approval is asserted by this evidence.
+Review target: `d4e7445fca4fbc261cbf33101fca4d9407879315`. Product implementation: `f78a15c69f3f365a37c9f317249858d8e279503d`. The final target adds only a fixture setup compatibility change. Base: `42c1cc85cfbf9fa3ca3fdcbee57dc02394bff6d7`. Author/sole writer: runner_owner / gpt-6-astra. Independent read-only review by Execution Lead / gpt-6-astra approved this target; the [formal review](../../../plans/chat08-native-active-steering/review.md) records its exact scope. No checks were rerun for that review.
 
 A single existing Claude query can now receive additional, durable instructions through an async input source. The runtime opt-in is `runRunner({ activeSteering: true, ... })`; the default is unchanged. The pending command is acknowledged through the normal durable event outbox before its UUID is inserted once into native input. A root assistant/partial/result echo records observed consumption; only a successful result's UUID coverage can make a final candidate eligible. Neither receipt means that the model obeyed the instruction.
 
