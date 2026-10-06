@@ -1,6 +1,6 @@
 # WPF-CHAT01 首批交付入口
 
-最终已审实现：`7cbabb737f26b108275e80f1b6cd0425699f3c18`（原842独立REQUEST_CHANGES后修复；CHAT-R1/R2 CLOSED）；完整Web审查基线：`b5844442699733558a152c12392ea78f26c393a4`。不能把中途输入746当作全部实现基线，早期`0d4e050057b9204ea761541d7847b9932331a519`的outbox属于本feature，须完整审查。`bac6a6e`（合同4c）、`a3b9cfa`（841精确compat）、`746364e`（a780+2e精确typed合同）是Lead授权的固定共享输入；详见[provenance](inputs.md)。本owner未合main。Root已整体限定APPROVED；完整metadata HEAD由Git交接给Lead，生产实现停止修改。
+最终已审实现：`7cbabb737f26b108275e80f1b6cd0425699f3c18`（原842独立REQUEST_CHANGES后修复；CHAT-R1/R2 CLOSED）；完整Web审查基线：`b5844442699733558a152c12392ea78f26c393a4`。不能把中途输入746当作全部实现基线，早期`0d4e050057b9204ea761541d7847b9932331a519`的outbox属于本feature，须完整审查。`bac6a6e`（合同4c）、`a3b9cfa`（841精确compat）、`746364e`（a780+2e精确typed合同）是Lead授权的固定共享输入；详见[provenance](inputs.md)。本owner未合main。Root已整体限定APPROVED；2026-10-06 04:20 UTC实核MainLead已将最终交付集成origin/main `dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8`，metadata3319122为祖先，14实现/测试路径零diff，见[集成观察](main-integration-observation.json)。生产实现停止修改。
 
 - [计划](../../../plans/wpf-chat01-conversations/plan.md)、[唯一status](../../../plans/wpf-chat01-conversations/status.md)、[独立review](../../../plans/wpf-chat01-conversations/review.md)
 - [验证与复用边界](validation.md)、[技能与clean-code](quality.md)
@@ -18,7 +18,7 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversatio
 
 ## MainLead 真实中心验收入口
 
-本轮Web作者**0次模型调用**。真实两次query由MainLead在固定集成main执行；其中心、runner和认证预算不由本fixture替代。Lead报告真实入口main `8f1481df880cf5077e1ddb9a8f302fe700a7ece8` 已包含批准CHAT01/CHAT02/公共输入，尚不含本Web候选。共享合同与746字节一致；不要为消费Web重新手改公共源。
+本轮Web作者**0次模型调用**。真实两次query由MainLead在固定集成main执行；其中心、runner和认证预算不由本fixture替代。历史输入main `8f1481df880cf5077e1ddb9a8f302fe700a7ece8` 包含批准CHAT01/CHAT02/公共输入；04:20 UTC实核后续origin/main `dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8` 已包含本Web交付，14实现/测试路径一致。真实两次query结果仍待Lead证据，Git集成不等于模型验收。不要为消费Web重新手改公共源。
 
 在集成后的Web工作目录，用Lead实际分配的中心URL替换下面4317示例（4317只是Vite现有默认，不声称本轮有服务在那里）：
 

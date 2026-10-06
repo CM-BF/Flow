@@ -1,0 +1,33 @@
+{
+  "observedAt": "2026-10-06T04:20:57.292852Z",
+  "branch": "codex/web-conversations",
+  "headBeforeMetadata": "3319122ea2d225e96f587a86a0f5ff97a3191b0b",
+  "implementationTarget": "7cbabb737f26b108275e80f1b6cd0425699f3c18",
+  "main": "dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8",
+  "originMain": "dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8",
+  "metadataIsMainAncestor": true,
+  "implementationPaths": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+    "apps/web/src/conversations/ConversationList.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/conversations.css",
+    "apps/web/src/conversations/messages.ts",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/plugin-integration/react.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/test/conversation-outbox.test.ts",
+    "apps/web/test/conversation-projection.test.ts",
+    "apps/web/test/conversation.browser.ts",
+    "apps/web/test/conversation.fixture.ts"
+  ],
+  "changedImplementationPaths": [],
+  "claim": {
+    "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+    "version": 1,
+    "state": "active",
+    "source": "D04 CLI list read at 2026-10-06 04:20 UTC"
+  },
+  "validationScope": "Read-only Git ancestry/path comparison and canonical documentation only. No product tests, service restart, model calls, or merge by this owner. MainLead real two-query acceptance not observed."
+}
