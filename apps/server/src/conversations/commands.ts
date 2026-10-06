@@ -28,10 +28,11 @@ export async function admitTurn(pool: Pool, boss: PgBoss, conversationId: string
     const conversation = await loadConversation(client, conversationId, true);
     if (input.mode !== 'follow-up') throw new HttpError(409, 'conversation_mode_unsupported', 'Use the dedicated queue command; steering is not available.');
     if (input.expectedRevision !== conversation.revision) throw new HttpError(409, 'conversation_revision_conflict', 'Refresh the conversation before sending another turn.');
+    if (conversation.queue_paused) throw new HttpError(409, 'conversation_queue_paused', 'Resume this conversation queue before sending a follow-up.');
     if ((await client.query("SELECT 1 FROM flow.conversation_queue WHERE conversation_id=$1 AND state='waiting' LIMIT 1", [conversationId])).rowCount) {
       throw new HttpError(409, 'conversation_queue_pending', 'Waiting queue items must be processed or cancelled before a follow-up.');
     }
-    return acceptConversationTurn(client, boss, conversation, await prepareTurnAdmission(client, conversation, input.text, false));
+    return acceptConversationTurn(client, boss, conversation, await prepareTurnAdmission(client, conversation, input.text, 'follow-up'));
   });
   return { ...result.value, replayed: result.replayed };
 }

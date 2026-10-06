@@ -41,3 +41,7 @@ export async function currentTurn(client: PoolClient, conversationId: string, lo
   const item = (await client.query<{ id: string }>('SELECT id FROM flow.conversation_queue WHERE turn_id=$1', [turn.id])).rows[0];
   return { taskId: task.id, taskStatus: task.status, turnId: turn.id, turnNumber: turn.number, queueItemId: item?.id ?? null };
 }
+
+export async function firstWaiting(client: PoolClient, conversationId: string): Promise<QueueRow | undefined> {
+  return (await client.query<QueueRow>("SELECT * FROM flow.conversation_queue WHERE conversation_id=$1 AND state='waiting' ORDER BY sequence LIMIT 1", [conversationId])).rows[0];
+}

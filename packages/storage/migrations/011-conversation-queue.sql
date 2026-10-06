@@ -1,3 +1,4 @@
+ALTER TABLE flow.conversations ADD COLUMN queue_paused boolean NOT NULL DEFAULT false;
 ALTER TABLE flow.conversations ADD COLUMN queue_revision integer NOT NULL DEFAULT 0 CHECK(queue_revision>=0);
 ALTER TABLE flow.conversations ADD COLUMN queue_checked_at timestamptz NOT NULL DEFAULT '-infinity';
 CREATE TABLE flow.conversation_queue (

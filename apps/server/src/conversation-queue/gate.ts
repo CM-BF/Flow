@@ -11,7 +11,7 @@ const reasons: Record<string, ConversationQueueBlockReason> = {
   execution_profile_unavailable: 'execution-profile-unavailable', profile_session_mismatch: 'execution-profile-unavailable', profile_harness_mismatch: 'execution-profile-unavailable',
 };
 export async function prepareQueueAdmission(client: PoolClient, conversation: ConversationRow, text: string, lock: boolean) {
-  try { return { input: await prepareTurnAdmission(client, conversation, text, true, lock), blocked: null }; }
+  try { return { input: await prepareTurnAdmission(client, conversation, text, 'automatic-queue', lock), blocked: null }; }
   catch (error) {
     const blocked = error instanceof HttpError ? reasons[error.code] : undefined;
     if (!blocked) throw error;

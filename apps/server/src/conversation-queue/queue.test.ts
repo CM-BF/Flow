@@ -24,7 +24,7 @@ async function start() {
   await migrateConversationQueue(pool);
   if (!server.hasRoute({ method: 'POST', url: '/api/conversations/:id/queue' })) registerConversationQueueRoutes(server, pool, boss);
   server.addHook('onSend', async (request, reply, payload) => {
-    if (request.headers['x-chat04-drop-ack'] === 'yes' && reply.statusCode === 202) reply.raw.destroy();
+    if (request.headers['x-chat04-drop-ack'] === 'yes' && [200, 202].includes(reply.statusCode)) reply.raw.destroy();
     return payload;
   });
   baseUrl = await server.listen({ host: '127.0.0.1', port: 0 });
@@ -256,4 +256,146 @@ it('recovers an actually dropped HTTP ACK using the same key after promotion', a
   const replay = (await request(path, input, key)).body;
   expect(replay).toMatchObject({ replayed: true, queueRevision: 1, item: { id: current.items[0].id, state: 'waiting' } });
   expect((await request(`${path}/${current.items[0].id}`)).body).toMatchObject({ queueRevision: 2, item: { state: 'promoted', promoted: { turnNumber: 1 } } });
+});
+it('persists pause before cancelling and never auto-promotes after a late successful completion or restart', async () => {
+  const c = await conversation();
+  const first = (await request(`/api/conversations/${c.id}/turns`, { expectedRevision: 0, text: 'Running before stop' })).body;
+  const fixture = await executionFixture(first.turn.task.id, 'running');
+  await pool.query('UPDATE flow.attempts SET completed_at=NULL WHERE id=$1', [fixture.attemptId]);
+  const waiting = await enqueueItem(c.id, 0, 'Must not start after Stop');
+  const path = `/api/conversations/${c.id}/queue`;
+  const paused = await request(`${path}/pause`, { expectedQueueRevision: 1 });
+  expect(paused.status).toBe(200);
+  expect(paused.body).toMatchObject({ paused: true, queueRevision: 2, currentTurn: { taskId: first.turn.task.id, taskStatus: 'running', queueItemId: null } });
+  expect((await request(`/api/tasks/${first.turn.task.id}/cancel`, {})).body.status).toBe('cancel_requested');
+  const completed = await fetch(`${baseUrl}/api/runner/events`, { method: 'POST', headers: { authorization: `Bearer ${fixture.runner.token}`, 'content-type': 'application/json' }, body: JSON.stringify({ attemptId: fixture.attemptId, ownerVersion: 1, events: [{ id: randomUUID(), sequence: 1, type: 'completed', outcome: 'succeeded' }] }) });
+  expect(completed.status).toBe(200);
+  await server!.close(); await start();
+  expect(await promoteReady(pool, boss, c.id)).toEqual({ outcome: 'blocked', conversationId: c.id, reason: 'queue-paused' });
+  expect((await request(path)).body).toMatchObject({ paused: true, blocked: 'queue-paused', queueRevision: 2, currentTurn: { taskStatus: 'succeeded' }, items: [{ id: waiting.item.id, state: 'waiting' }] });
+  expect((await request(`/api/conversations/${c.id}/turns`)).body.turns).toHaveLength(1);
+});
+it.each(['failed', 'cancelled'])('explicitly resumes %s once atomically and does not authorize later automatic continuation', async status => {
+  const c = await conversation(); const path = `/api/conversations/${c.id}/queue`;
+  const previous = (await request(`/api/conversations/${c.id}/turns`, { expectedRevision: 0, text: 'Previous failed/cancelled' })).body.turn;
+  await executionFixture(previous.task.id, status);
+  const first = await enqueueItem(c.id, 0, 'Explicit continuation');
+  const second = await enqueueItem(c.id, 1, 'Still requires success');
+  expect((await request(`${path}/pause`, { expectedQueueRevision: 2 })).body.queueRevision).toBe(3);
+  const input = { expectedQueueRevision: 3, expectedTaskId: previous.task.id };
+  const responses = await Promise.all([request(`${path}/resume`, input), request(`${path}/resume`, input)]);
+  expect(responses.map(result => result.status).sort()).toEqual([202, 409]);
+  const resumed = responses.find(result => result.status === 202)!.body;
+  expect(resumed).toMatchObject({ paused: false, queueRevision: 4, promoted: { id: first.item.id, state: 'promoted' }, currentTurn: { turnNumber: 2, taskStatus: 'queued', queueItemId: first.item.id } });
+  await executionFixture(resumed.currentTurn.taskId, 'failed');
+  expect(await promoteReady(pool, boss, c.id)).toMatchObject({ outcome: 'blocked', reason: 'previous-turn-failed' });
+  expect((await request(path)).body.items[0].id).toBe(second.item.id);
+});
+it('keeps an empty queue paused, preserves pause during enqueue/cancel, and explicitly restores an empty composer', async () => {
+  const c = await conversation(); const path = `/api/conversations/${c.id}/queue`;
+  expect((await request(`${path}/pause`, { expectedQueueRevision: 0 })).body).toMatchObject({ paused: true, queueRevision: 1, currentTurn: null });
+  expect((await request(path)).body).toMatchObject({ paused: true, blocked: 'queue-paused', items: [], currentTurn: null });
+  expect((await request(`/api/conversations/${c.id}/turns`, { expectedRevision: 0, text: 'Cannot bypass pause' })).body.error.code).toBe('conversation_queue_paused');
+  expect((await request(`${path}/pause`, { expectedQueueRevision: 0 })).status).toBe(409);
+  expect((await request(`${path}/pause`, { expectedQueueRevision: 1 })).body.queueRevision).toBe(1);
+  const item = await enqueueItem(c.id, 1, 'Waiting while paused');
+  expect((await request(`${path}/${item.item.id}`)).body.paused).toBe(true);
+  expect((await request(`${path}/${item.item.id}/cancel`, { expectedQueueRevision: 2 })).body.queueRevision).toBe(3);
+  expect((await request(path)).body).toMatchObject({ paused: true, blocked: 'queue-paused', items: [] });
+  expect((await request(`${path}/resume`, { expectedQueueRevision: 3, expectedTaskId: null })).body).toMatchObject({ paused: false, queueRevision: 4, promoted: null, currentTurn: null });
+  expect((await request(`/api/conversations/${c.id}/turns`, { expectedRevision: 0, text: 'Explicit message after resume' })).status).toBe(202);
+});
+it('returns 409 when promotion wins pause CAS and distinguishes lost pause/resume ACKs from current facts', async () => {
+  const c = await conversation(); const path = `/api/conversations/${c.id}/queue`;
+  await enqueueItem(c.id, 0, 'Promoted before pause');
+  const promoted = await promoteReady(pool, boss, c.id);
+  expect(promoted.outcome).toBe('promoted');
+  expect((await request(`${path}/pause`, { expectedQueueRevision: 1 })).status).toBe(409);
+  expect((await request(path)).body.paused).toBe(false);
+  const pauseKey = randomUUID(); const pauseInput = { expectedQueueRevision: 2 };
+  const lostAck = (command: string, body: unknown, key: string) => fetch(`${baseUrl}${path}/${command}`, { method: 'POST', headers: { authorization: `Bearer ${ownerToken}`, 'content-type': 'application/json', 'idempotency-key': key, 'x-chat04-drop-ack': 'yes' }, body: JSON.stringify(body), signal: AbortSignal.timeout(5000) });
+  await expect(lostAck('pause', pauseInput, pauseKey)).rejects.toThrow();
+  const paused = (await request(`${path}/pause`, pauseInput, pauseKey)).body;
+  expect(paused).toMatchObject({ paused: true, replayed: true, queueRevision: 3, currentTurn: { taskStatus: 'queued', turnNumber: 1 } });
+  expect(paused.currentTurn.queueItemId).not.toBeNull();
+  await executionFixture(paused.currentTurn.taskId, 'succeeded');
+  const waiting = await enqueueItem(c.id, 3, 'Explicitly continued after paused success');
+  const resumeKey = randomUUID(); const resumeInput = { expectedQueueRevision: 4, expectedTaskId: paused.currentTurn.taskId };
+  await expect(lostAck('resume', resumeInput, resumeKey)).rejects.toThrow();
+  const resumed = (await request(`${path}/resume`, resumeInput, resumeKey)).body;
+  expect(resumed).toMatchObject({ replayed: true, paused: false, queueRevision: 5, promoted: { id: waiting.item.id }, currentTurn: { queueItemId: waiting.item.id, turnNumber: 2 } });
+  expect((await request(`${path}/pause`, pauseInput, pauseKey)).body).toEqual(paused);
+  expect((await request(path)).body).toMatchObject({ paused: false, queueRevision: 5, currentTurn: resumed.currentTurn });
+  expect((await request(`/api/conversations/${c.id}/turns`)).body.turns).toHaveLength(2);
+});
+it('allows empty failed queue unpause without preauthorizing future automatic work and rejects stale task identity', async () => {
+  const c = await conversation(); const path = `/api/conversations/${c.id}/queue`;
+  const first = (await request(`/api/conversations/${c.id}/turns`, { expectedRevision: 0, text: 'Failed previous turn' })).body.turn;
+  await executionFixture(first.task.id, 'failed');
+  await request(`${path}/pause`, { expectedQueueRevision: 0 });
+  const before = (await request(path)).body;
+  expect((await request(`${path}/resume`, { expectedQueueRevision: 1, expectedTaskId: randomUUID() })).body.error.code).toBe('conversation_queue_task_conflict');
+  expect((await request(`${path}/resume`, { expectedQueueRevision: 0, expectedTaskId: first.task.id })).body.error.code).toBe('conversation_queue_revision_conflict');
+  expect((await request(path)).body).toEqual(before);
+  expect((await request(`${path}/resume`, { expectedQueueRevision: 1, expectedTaskId: first.task.id })).body).toMatchObject({ paused: false, promoted: null, queueRevision: 2 });
+  await enqueueItem(c.id, 2, 'Not an authorization for auto continuation');
+  expect(await promoteReady(pool, boss, c.id)).toMatchObject({ outcome: 'blocked', reason: 'previous-turn-failed' });
+});
+it.each([
+  ['uncertain', 'known', 'none'], ['running', 'known', 'none'], ['waiting', 'known', 'none'], ['cancel_requested', 'known', 'none'],
+  ['succeeded', 'missing', 'none'], ['succeeded', 'unknown', 'none'], ['succeeded', 'known', 'revoked'],
+  ['succeeded', 'known', 'busy'], ['failed', 'known', 'invalid-pin'],
+] as const)('refuses resume from %s/%s/%s and preserves durable pause and queue', async (status, adapter, condition) => {
+  const c = await conversation(); const path = `/api/conversations/${c.id}/queue`;
+  const previous = (await request(`/api/conversations/${c.id}/turns`, { expectedRevision: 0, text: 'Resume guard fixture' })).body.turn;
+  const fixture = await executionFixture(previous.task.id, status, adapter);
+  if (condition === 'revoked') expect((await request(`/api/runners/${fixture.runner.runnerId}/revoke`, {})).status).toBe(200);
+  if (condition === 'busy') await pool.query('UPDATE flow.sessions SET active_task_id=$2 WHERE id=$1', [fixture.sessionId, previous.task.id]);
+  if (condition === 'invalid-pin') await pool.query('UPDATE flow.conversations SET execution_profile=$2 WHERE id=$1', [c.id, { id: randomUUID(), runnerId: fixture.runner.runnerId, configDigest: 'f'.repeat(64) }]);
+  const item = await enqueueItem(c.id, 0, 'Preserved waiting item');
+  await request(`${path}/pause`, { expectedQueueRevision: 1 });
+  const rejected = await request(`${path}/resume`, { expectedQueueRevision: 2, expectedTaskId: previous.task.id });
+  expect(rejected.status).toBe(409);
+  expect((await request(path)).body).toMatchObject({ paused: true, queueRevision: 2, blocked: 'queue-paused', items: [{ id: item.item.id, state: 'waiting' }] });
+  expect((await request(`/api/conversations/${c.id}/turns`)).body.turns).toHaveLength(1);
+});
+it('rolls back pause clearing together with task, wake and turn when explicit resume cannot persist the promoted item', async () => {
+  const c = await conversation(); const path = `/api/conversations/${c.id}/queue`;
+  const item = await enqueueItem(c.id, 0, 'Resume rollback fixture');
+  await request(`${path}/pause`, { expectedQueueRevision: 1 });
+  await pool.query(`CREATE FUNCTION flow.chat04_reject_resume() RETURNS trigger LANGUAGE plpgsql AS $$
+    BEGIN IF NEW.user_text='Resume rollback fixture' AND NEW.state='promoted' THEN RAISE EXCEPTION 'Controlled resume failure'; END IF; RETURN NEW; END $$;
+    CREATE TRIGGER chat04_reject_resume BEFORE UPDATE ON flow.conversation_queue FOR EACH ROW EXECUTE FUNCTION flow.chat04_reject_resume()`);
+  try {
+    const before = Number((await pool.query('SELECT count(*) FROM flow.tasks')).rows[0].count);
+    expect((await request(`${path}/resume`, { expectedQueueRevision: 2, expectedTaskId: null })).status).toBe(500);
+    expect((await request(`${path}/${item.item.id}`)).body).toMatchObject({ paused: true, queueRevision: 2, item: { state: 'waiting', promoted: null }, currentTurn: null });
+    expect((await request(`/api/conversations/${c.id}/turns`)).body.turns).toEqual([]);
+    expect(Number((await pool.query('SELECT count(*) FROM flow.tasks')).rows[0].count)).toBe(before);
+    expect(Number((await pool.query("SELECT count(*) FROM pgboss.job j WHERE name='flow-wake' AND NOT EXISTS (SELECT 1 FROM flow.tasks t WHERE t.id=j.data->>'taskId')")).rows[0].count)).toBe(0);
+  } finally { await pool.query('DROP TRIGGER chat04_reject_resume ON flow.conversation_queue; DROP FUNCTION flow.chat04_reject_resume()'); }
+  expect((await request(`${path}/resume`, { expectedQueueRevision: 2, expectedTaskId: null })).body).toMatchObject({ paused: false, queueRevision: 3, promoted: { id: item.item.id }, currentTurn: { turnNumber: 1 } });
+});
+it('serializes concurrent pause, real completion and promotion without admitting any turn after the winning pause ACK', async () => {
+  for (let index = 0; index < 4; index += 1) {
+    const c = await conversation(); const path = `/api/conversations/${c.id}/queue`;
+    const turn = (await request(`/api/conversations/${c.id}/turns`, { expectedRevision: 0, text: 'Concurrent previous' })).body.turn;
+    const fixture = await executionFixture(turn.task.id, 'running');
+    await pool.query('UPDATE flow.attempts SET completed_at=NULL WHERE id=$1', [fixture.attemptId]);
+    await enqueueItem(c.id, 0, 'Concurrent next');
+    const [pauseResult, completed] = await Promise.all([
+      request(`${path}/pause`, { expectedQueueRevision: 1 }),
+      fetch(`${baseUrl}/api/runner/events`, { method: 'POST', headers: { authorization: `Bearer ${fixture.runner.token}`, 'content-type': 'application/json' }, body: JSON.stringify({ attemptId: fixture.attemptId, ownerVersion: 1, events: [{ id: randomUUID(), sequence: 1, type: 'completed', outcome: 'succeeded' }] }) }),
+      promoteReady(pool, boss, c.id),
+    ]);
+    expect(completed.status).toBe(200);
+    if (pauseResult.status === 409) {
+      const current = (await request(path)).body;
+      const retried = await request(`${path}/pause`, { expectedQueueRevision: current.queueRevision });
+      expect(retried.status).toBe(200); expect(retried.body.currentTurn).toEqual(current.currentTurn);
+    } else expect(pauseResult.status).toBe(200);
+    const before = (await request(`/api/conversations/${c.id}/turns`)).body.turns.length;
+    expect(await promoteReady(pool, boss, c.id)).toMatchObject({ outcome: 'blocked', reason: 'queue-paused' });
+    expect((await request(`/api/conversations/${c.id}/turns`)).body.turns).toHaveLength(before);
+  }
 });

@@ -10,7 +10,8 @@ import { sessionEvidence } from './replies.js';
 import { conversationView, lastTurn, loadConversation, turnView, type ConversationRow, type TurnRow } from './state.js';
 
 /** Caller owns the conversation lock for admission; reads use a repeatable read snapshot. */
-export async function prepareTurnAdmission(client: PoolClient, conversation: ConversationRow, text: string, automatic: boolean, lock = true): Promise<TaskSubmission> {
+export async function prepareTurnAdmission(client: PoolClient, conversation: ConversationRow, text: string, mode: 'follow-up' | 'automatic-queue' | 'explicit-queue', lock = true): Promise<TaskSubmission> {
+  const automatic = mode === 'automatic-queue';
   if (conversation.revision >= 2_147_483_646) throw new HttpError(409, 'conversation_revision_exhausted', 'Conversation turn limit reached.');
   const previous = await lastTurn(client, conversation.id);
   let resumeSessionId: string | undefined;
@@ -24,6 +25,10 @@ export async function prepareTurnAdmission(client: PoolClient, conversation: Con
     }
     const session = await sessionEvidence(client, task);
     if (!session?.knownAdapter) throw new HttpError(409, 'conversation_resume_unavailable', 'The previous turn has no supported native session. Start a separate conversation.');
+    // Runner writers acquire runner then task; never acquire a runner row lock here after task.
+    if (mode !== 'follow-up' && !(await client.query('SELECT 1 FROM flow.runners WHERE id=$1 AND NOT revoked', [session.identity.runnerId])).rowCount) {
+      throw new HttpError(409, 'conversation_resume_unavailable', 'The recorded session runner is no longer available.');
+    }
     if (session.activeTaskId) throw new HttpError(409, automatic ? 'conversation_session_busy' : 'conversation_busy', 'The native session is still occupied.');
     resumeSessionId = session.identity.nativeSessionId;
   }

@@ -1,24 +1,25 @@
-import type { Pool } from 'pg';
+import type { Pool, PoolClient } from 'pg';
+import type { TaskSubmission } from '@flow/contracts';
 import type { PgBoss } from 'pg-boss';
 import type { ConversationQueueAccepted, ConversationQueueBlockReason } from '../../../../packages/contracts/src/conversation-queue.js';
 import { HttpError, transaction } from '../database.js';
-import { loadConversation } from '../conversations/state.js';
+import { loadConversation, type ConversationRow } from '../conversations/state.js';
 import { acceptConversationTurn } from '../conversations/admission.js';
 import { prepareQueueAdmission } from './gate.js';
-import { advanceQueueRevision, itemView, requireQueueRevision, type QueueRow } from './store.js';
+import { advanceQueueRevision, itemView, requireQueueRevision, firstWaiting, type QueueRow } from './store.js';
 export type QueuePromotion = { outcome: 'promoted'; receipt: Omit<ConversationQueueAccepted, 'replayed'> } | { outcome: 'blocked'; conversationId: string; reason: ConversationQueueBlockReason } | { outcome: 'empty'; conversationId: string };
 export interface QueueScanResult { inspected: number; promoted: number; blocked: number; errors: { conversationId: string; code: 'promotion_failed' }[] }
 /** One FIFO item at most; conversation then task lock; all acceptance writes share one transaction. */
 export async function promoteReady(pool: Pool, boss: PgBoss, conversationId: string): Promise<QueuePromotion> {
   return transaction(pool, async client => {
     const conversation = await loadConversation(client, conversationId, true);
-    const first = (await client.query<QueueRow>("SELECT * FROM flow.conversation_queue WHERE conversation_id=$1 AND state='waiting' ORDER BY sequence LIMIT 1", [conversationId])).rows[0];
+    if (conversation.queue_paused) return { outcome: 'blocked', conversationId, reason: 'queue-paused' };
+    const first = await firstWaiting(client, conversationId);
     if (!first) return { outcome: 'empty', conversationId };
     const admission = await prepareQueueAdmission(client, conversation, first.user_text, true);
     if (!admission.input) return { outcome: 'blocked', conversationId, reason: admission.blocked! };
     requireQueueRevision(conversation.queue_revision, conversation.queue_revision);
-    const accepted = await acceptConversationTurn(client, boss, conversation, admission.input);
-    const row = (await client.query<QueueRow>("UPDATE flow.conversation_queue SET state='promoted',task_id=$2,turn_id=$3,turn_number=$4,updated_at=clock_timestamp() WHERE id=$1 RETURNING *", [first.id, accepted.turn.task.id, accepted.turn.id, accepted.turn.number])).rows[0]!;
+    const row = await promoteItem(client, boss, conversation, first, admission.input);
     return { outcome: 'promoted', receipt: { conversationId, queueRevision: await advanceQueueRevision(client, conversationId), item: itemView(row) } };
   });
 }
@@ -39,4 +40,10 @@ export async function scanConversationQueue(pool: Pool, boss: PgBoss, limit = 20
     } catch { result.errors.push({ conversationId: id, code: 'promotion_failed' }); }
   }
   return result;
+}
+
+/** Internal acceptance seam shared by automatic promotion and explicit resume. Caller owns the conversation lock. */
+export async function promoteItem(client: PoolClient, boss: PgBoss, conversation: ConversationRow, item: QueueRow, input: TaskSubmission): Promise<QueueRow> {
+  const accepted = await acceptConversationTurn(client, boss, conversation, input);
+  return (await client.query<QueueRow>("UPDATE flow.conversation_queue SET state='promoted',task_id=$2,turn_id=$3,turn_number=$4,updated_at=clock_timestamp() WHERE id=$1 RETURNING *", [item.id, accepted.turn.task.id, accepted.turn.id, accepted.turn.number])).rows[0]!;
 }
