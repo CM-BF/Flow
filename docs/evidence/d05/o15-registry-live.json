@@ -1,0 +1,69 @@
+{
+  "generatedAt": "2026-10-06T15:19:18.967Z",
+  "main": "70cc4e852365e974cefde30bfad75c7d233985c6",
+  "endpoint": "http://127.0.0.1:4320/api/snapshot",
+  "sourceCount": 162,
+  "rows": [
+    {
+      "id": "O15",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T15:13:44.783Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/plans/o15-goal-input-confirmation/status.md",
+        "syncedAt": "2026-10-06T15:19:18.967Z",
+        "stale": false,
+        "ageHours": 0.09721305555555555
+      },
+      "head": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "dirty": false,
+      "phase": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "humanComplete": true,
+      "parserErrors": [],
+      "issues": []
+    },
+    {
+      "id": "WPF-RECOVERY01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T15:18:43.833Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+        "syncedAt": "2026-10-06T15:19:18.967Z",
+        "stale": false,
+        "ageHours": 0.038601944444444446
+      },
+      "head": "d1a388876864c2f03b95f47dd405a9e4c281682d",
+      "dirty": false,
+      "phase": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "humanComplete": true,
+      "parserErrors": [],
+      "issues": []
+    },
+    {
+      "id": "WPF-RELEASE03",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T15:08:11.832Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
+        "syncedAt": "2026-10-06T15:19:18.967Z",
+        "stale": false,
+        "ageHours": 0.19582416666666666
+      },
+      "head": "e212c2de2289a3d3bc3bc173b75050fb4d214270",
+      "dirty": false,
+      "phase": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "humanComplete": true,
+      "parserErrors": [],
+      "issues": []
+    }
+  ],
+  "architecture": "Unchanged fixed snapshot; no personal services or user tabs touched."
+}

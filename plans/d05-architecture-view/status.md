@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T15:15:31.548316+00:00 / main7810cbf1 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:21:14 UTC / main70cc4e85 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -123,3 +123,5 @@
 2026-10-06T14:56:30.979103+00:00：实际4320于2026-10-06T14:51:18.920Z显示161唯一来源；RECOVERY01/RELEASE03均live、status parser无错、人读完整、父任务关联明确。实现target尚未固定仍unknown，不冒批准；[实际回执](../../docs/evidence/d05/recovery-release03-live.json)。架构固定aeb、个人服务与原tab保持，无产品测试。
 
 2026-10-06T15:15:31.548316+00:00：O15首canonical已存在，唯一source登记至162，parser无错误、人读完整；[登记核验](../../docs/evidence/d05/o15-registry-validation.json)。RECOVERY01/RELEASE03已在161实采可见，DPERF04尚无canonical故未冒记。O15产品仍实施，PG未运行，登记不代表交付；本批不改固定架构/产品/个人入口。
+
+2026-10-06 15:21:14 UTC：实际4320返回162来源，O15/RECOVERY01/RELEASE03全部live、parser0、人读完整、issues=[]。见[实际回执](../../docs/evidence/d05/o15-registry-live.json)。只替换自有看板进程，固定架构与个人服务/页面不变；未运行产品测试。
