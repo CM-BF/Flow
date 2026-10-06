@@ -1,8 +1,8 @@
 # WPF-MESSAGESETTINGS01 独立审查
 
-**状态：UNKNOWN — b5浏览器已实际通过，固定运行证据独立复核与主线接收待完成。**
+**状态：APPROVED — 限受控Picker源码与fixture浏览器证据，主线接收尚待。**
 
-Review target commit：270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67。新目标仅browser的named group/count/visible窄修，已获[Root限定源码复审](../../docs/evidence/wpf-message-settings/root-270c-locator-source-review.json) **APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN**，0blocking、P2 SOURCE_ADDRESSED；本次b5已复验通过，原件等待独立证据审。原1cd的b2初始化失败和b4真实fixture首定位器失败原样保留；root已接受b4失败与清理并要求该P2修复，完整feature仍UNKNOWN。Base：8d84d529a0756116bd0fc8bad969d61a6c26248e。
+Review target commit：270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67。新目标仅browser的named group/count/visible窄修，已获[Root限定源码复审](../../docs/evidence/wpf-message-settings/root-270c-locator-source-review.json) **APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN**，0blocking、P2 SOURCE_ADDRESSED；本次b5已复验通过且获[Root限定证据批准](../../docs/evidence/wpf-message-settings/root-browser-b5-runtime-review.json)，0blocking。原1cd的b2初始化失败和b4真实fixture首定位器失败原样保留；root已接受b4失败与清理并确认P2已source addressed；当前leaf范围APPROVED，真实App接线/成熟快速选择及MATURE02整体不在该批准内。Base：8d84d529a0756116bd0fc8bad969d61a6c26248e。
 历史f3限定源码结论：**APPROVED_SOURCE_SCOPED_NOT_RUN**，不自动批准上述新目标。Root 于 2026-10-06T18:25:38.301159Z 完成 f3a6 复审，源码无 blocking。该结论为18:25源码审查时点；后续 strict noEmit/direct37 的限定证据已独立接受，后续浏览器入口首次执行在CDP前失败、0界面断言，不构成完整功能或 main/deployment approval。
 
 ## 已执行的源码审查与历史
@@ -15,7 +15,7 @@ Root 转述 peer 对 catalog/selection/direct 源码未发现 blocking；此不�
 
 ## 审查入口
 
-[计划](plan.md)、[状态](status.md)、[当前六源绑定](../../docs/evidence/wpf-message-settings/source-manifest.json)、[初版绑定](../../docs/evidence/wpf-message-settings/source-manifest-initial.json)、[Interface](../../docs/evidence/wpf-message-settings/interface.md)。核公共 tuple/capability、旧目录兼容、取消代际、受控选择和 details 关闭焦点回调。当前目标仅named group/count/visible窄修已限定批准，原f3类型/direct检查已完成；b2准备/历史b4失败各自保留；最新b5实际4/4通过等待独立证据核验。真实App/Send/Queue/Recovery后继。
+[计划](plan.md)、[状态](status.md)、[当前六源绑定](../../docs/evidence/wpf-message-settings/source-manifest.json)、[初版绑定](../../docs/evidence/wpf-message-settings/source-manifest-initial.json)、[Interface](../../docs/evidence/wpf-message-settings/interface.md)。核公共 tuple/capability、旧目录兼容、取消代际、受控选择和 details 关闭焦点回调。当前目标仅named group/count/visible窄修已限定批准，原f3类型/direct检查已完成；b2准备/历史b4失败各自保留；最新b5实际4/4与两390截图已获Root独立证据批准。真实App/Send/Queue/Recovery后继。
 
 ## 已执行的运行证据独立核验
 
@@ -55,8 +55,14 @@ Root于20:12:51.320495 UTC独立核固定270c的三行locator差异、六源hash
 
 [当前精确boundary](../../docs/evidence/wpf-message-settings/browser-b5-repaired-native-boundary-acceptance.json)由root依既有GO授权记录，parent ea3c / worker71a643；[当前候选与pins](../../docs/evidence/wpf-message-settings/browser-b5-preparation-archive.json)仅准备归档，PREPARED/no gate。Root的AST/源pins核验按其报告归因，owner未运行新parser/产品。实际第三次b4仍FAIL/0完成checks，累计20609、余39391；新b5未运行，完整feature顶层UNKNOWN、主线与实际host接线未完成。
 
-## 2026-10-06 20:47:23 UTC 当前b5实际证据复核入口（待独立结论）
+## 2026-10-06 20:47:23 UTC b5实际证据复核入口（历史交审时点）
 
 只读[原件/索引](../../docs/evidence/wpf-message-settings/browser-fourth-observation.json)：impl270c/实际0925，parent8267ms/PASS/实际exit0，worker4/4checks、两张390浅深截图、pageErrors[]，双owned组与scratch清理完成。累计28876/余31124，旧三次失败与noEmit/direct37/父countFAIL各自保留。完整native精确边界接受与gate在原件中，绝不由通过结果补造许可。
 
 作者只封存事实、未自批；本次controlled组件+synthetic HTTP目录不覆盖生产App/Send/Queue/Recovery/provider。源码准备批准与运行证据批准分开，当前独立运行证据审PENDING；本片完整review顶层UNKNOWN/main未集成。
+
+## 2026-10-06 20:50:09 UTC 当前独立结论与严格范围
+
+Root固定证据审[APPROVED_SCOPED_CONTROLLED_PICKER_BROWSER_EVIDENCE](../../docs/evidence/wpf-message-settings/root-browser-b5-runtime-review.json)，20:48:11.224265 UTC，0blocking；target270c、actual0925、ea3c/71a643绑定。6源/gate与consumed/取消gate隔离、4checks/两390截图、实际exit与双group/EOF0drop、28876累计均独立核验。Root仅复读原件与目视保存截图，未重跑browser/types/direct。
+
+该结论支持受控组合选择leaf的行为/清理证据，不支持生产App发送、排队、Recovery或真实provider，也不代表成熟快速模型/力度/速度选择、大目录体验、全MATURE02或主线/个人预览已经完成。旧初始化与strict定位器失败、父20vs37countFAIL和原raw保持原判，不用新成功改写历史。当前唯一待接收步骤为本leaf主线集成，后继UI/host范围另行管理。

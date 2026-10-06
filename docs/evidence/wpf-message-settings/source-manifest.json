@@ -53,7 +53,7 @@
   ],
   "protectedDiff": [],
   "readonlyCreationParameterPreserved": "configuredSelection(input: Immutable<DirectoryProfile>)",
-  "runtimeChecks": "270c/actual0925 one permitted b5 browser run: parentPASS/exit0, 4checks/two390screenshots, pageErrors[], complete dual-group/scratch cleanup; 8267ms, cumulative28876/60000. Independent runtime evidence review pending. Historical f3 types/direct37PASS and parent countFAIL preserved; old1cd first/b2/b4 browserFAIL preserved.",
+  "runtimeChecks": "270c/actual0925 one permitted b5 browser run: parentPASS/exit0, 4checks/two390screenshots, pageErrors[], complete dual-group/scratch cleanup; 8267ms, cumulative28876/60000. Root APPROVED_SCOPED_CONTROLLED_PICKER_BROWSER_EVIDENCE, 0blocking; report root-browser-b5-runtime-review.json. Historical f3 types/direct37PASS and parent countFAIL preserved; old1cd first/b2/b4 browserFAIL preserved.",
   "previousImplementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
   "scopedSourceReview": {
     "verdict": "APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN",
@@ -78,7 +78,8 @@
     "checks": 4,
     "parentExitCode": 0,
     "outcome": "PASS",
-    "independentEvidenceReview": "PENDING",
-    "scope": "Independent controlled component + synthetic HTTP catalog; no App/send/queue/recovery/provider integration."
+    "independentEvidenceReview": "APPROVED_SCOPED_CONTROLLED_PICKER_BROWSER_EVIDENCE",
+    "scope": "Independent controlled component + synthetic HTTP catalog; no App/send/queue/recovery/provider integration.",
+    "reviewReport": "root-browser-b5-runtime-review.json"
   }
 }
