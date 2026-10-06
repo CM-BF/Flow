@@ -1,0 +1,37 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/task-read-projection.test.ts",
+    "--testNamePattern",
+    "event reads keep public output"
+  ],
+  "startedAt": "2026-10-06T11:38:01.791914+00:00",
+  "finishedAt": "2026-10-06T11:38:06.378662+00:00",
+  "elapsedMs": 4586.309375008568,
+  "exitCode": 1,
+  "base": "fd1322f9c0c1d085d5e343e39f6216b20d26c264",
+  "files": [
+    {
+      "path": "apps/server/src/queries.ts",
+      "bytes": 2225,
+      "sha256": "e7a69ecfb1508d08b04338dd42e4bb0439057b1d45db5fe6ea531567eb36b042"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6497,
+      "sha256": "c83f04c42ec26e69147baf929a18b53f49faf560602df4322cefccd67c40c7fc"
+    },
+    {
+      "path": "apps/server/src/task-read-projection.test.ts",
+      "bytes": 1881,
+      "sha256": "8a889d45ea8ea23888876064d7d388daf78d69316bd3d16d170263cecc6c0025"
+    },
+    {
+      "path": "experiments/bounded-reads/task-projections/fixture.ts",
+      "bytes": 7334,
+      "sha256": "804d5125afc09598e1933059282673ab3eeb6da36e0f999dc7a7307d9e447499"
+    }
+  ]
+}

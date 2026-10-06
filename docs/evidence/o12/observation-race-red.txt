@@ -1,0 +1,55 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller
+
+ ❯ packages/interaction/src/goal/lifecycle.test.ts (7 tests | 1 failed | 6 skipped) 7ms
+   ↓ bounds real reads to two active and four queued; disconnect prevents queued dispatch and late body commits
+   ↓ does not send after disconnect interrupts persistence and recovers only through a new explicit call
+   ↓ retains ambiguous receipts through auth/CAS rejection and retries the identical intent only on explicit recovery
+   ↓ keeps an acknowledged remote command recoverable when clearing local storage fails and isolates listener errors
+   ↓ rejects the wrong stored namespace and oversized intent before any mutation
+   ↓ rejects malformed or cross-goal reads without replacing the previously expanded immutable body
+   × does not let an earlier observation repopulate state after a related plan change 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/goal/lifecycle.test.ts > does not let an earlier observation repopulate state after a related plan change
+AssertionError: expected { view: 'state', …(4) } to be null
+
+- Expected: 
+null
+
++ Received: 
+{
+  "goalId": "goal-a",
+  "nodes": [
+    {
+      "accepted": null,
+      "deliveryCurrent": false,
+      "dependenciesReady": true,
+      "execution": null,
+      "inputRef": {
+        "goalId": "goal-a",
+        "nodeId": "node-a",
+        "version": 1,
+      },
+      "knowledgeCurrent": true,
+      "nodeId": "node-a",
+      "reason": "not-accepted",
+    },
+  ],
+  "observedAt": "2026-10-06T00:00:00Z",
+  "projectId": "project-a",
+  "view": "state",
+}
+
+ ❯ packages/interaction/src/goal/lifecycle.test.ts:81:30
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 skipped (7)
+   Start at  05:02:05
+   Duration  332ms (transform 144ms, setup 0ms, import 238ms, tests 7ms, environment 0ms)
+

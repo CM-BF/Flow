@@ -1,0 +1,35 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "apps/runner/src/engineering/calculator-receipt.test.ts",
+    "apps/runner/src/engineering/calculator-capture.test.ts"
+  ],
+  "startedAt": "2026-10-06T11:59:12.778070+00:00",
+  "finishedAt": "2026-10-06T11:59:19.077185+00:00",
+  "exitCode": 0,
+  "sources": [
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "bytes": 3858,
+      "sha256": "b646267790c9c3f362c77845aac1b0cab8977ce51dc19759d19aba020700db54"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.test.ts",
+      "bytes": 4094,
+      "sha256": "0b4c9853c2b2377d84b37cc39cd706ac2ceda2a82cbeaaaebdecce54f3f57860"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-capture.ts",
+      "bytes": 2845,
+      "sha256": "96ce194d26920292d7f1da37b8b4930e7999fa5b91ac78ad45f98bd35fffec4b"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-capture.test.ts",
+      "bytes": 9048,
+      "sha256": "14b67f5952e03037d108d0ef48d012fa3a24bb9c1db483ac9284b2866131a44b"
+    }
+  ]
+}

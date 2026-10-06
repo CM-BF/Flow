@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T11:57:48.011301+00:00 / main017adc276a888a218bed3ef9963bc4dabbc6cec2 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:21:23 UTC / main f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 本批已审S01P04授权读取锁与O12薄取消传输；144源登记 |
-| 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
+| 工作基线 / HEAD | eb95fba已含工程完整快照收据；本批目标会话公共入口/可选诊断/工作区原始基线 |
+| 工作树dirty状态 | 仅本次管理收口；产品已提交并main |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | 31固定源码/原始证据绑定与root types0；11不同S01局部检查及1HTTP原证据复用，0provider |
-| 已集成main状态 / HEAD | 017adc27已接O11公共读口、ENG01E和Web缓存/父子摘要；本批小修待fast-forward。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
+| 检查状态 | 上下文生产接线58绑定/31依赖一致、root types0；复用121不同独审，首次超时保留；0provider |
+| 已集成main状态 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 已推送、当前源码与固定target一致。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 目标公共读取、可信检查和网页回收已进主线；执行器并发读取修复正在收口。 |
-| 下一可用交付 | 接收执行器读取修复与新子任务登记，继续目标会话和真实工程路径。 |
+| 当前产出 | 目标会话、工程快照与附件模块已进主线；已审上下文历史观察正在接收。 |
+| 下一可用交付 | 本批已交付；个人预览发布与终端后继在独立任务推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -135,3 +135,11 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T11:55:41.949116+00:00：接收Web独审DASHSUM01 c1de与WORKSPACECACHE01 4ec；18源码与固定target/manifest一致，main接收前源码等于各base，无手工冲突。Web类型0；原22/133独审与浏览器证据复用，未重跑。个人静态Web/后台不随main变化。[接收比较](../../docs/evidence/i02/web-cache-dashboard-summary-source-comparison.json)。
 
 2026-10-06T11:57:48.011301+00:00：S01P04生产e184+必需94b消费者修复按原独审接收；private FOR SHARE仅替换既有attempt的凭据读取，保留ENG claim/公开lockRunner强锁。31source/raw固定hash，root types0，无重跑容量或PG。O12 thin transport ec6两源exact，四新canonical登记144来源。[回执](../../docs/evidence/i02/runner-read-fence-source-comparison.json)。
+
+2026-10-06T12:02:14.623280+00:00：附件模块4c4与B01 c96/7d69三片固定源码/原始输出45项核验，18source无差、修改路径原main与作者base一致；root/Web类型各0。复用独审行为证据，不重跑PG/浏览器/容量或provider。来源见[接收比较](../../docs/evidence/i02/attachment-task-read-source-comparison.json)。
+
+2026-10-06 12:05:17 UTC：ENG01F仅4个新增私有源，固定1b3c独审，37直接旧依赖在owner基线无变；实际集成root types0。前后完整快照与not-attested收据不证明native写入已停，不发旧v1成功。见[接收证据](../../docs/evidence/i02/engineering-calculator-receipt-comparison.json)。
+
+2026-10-06T12:11:20.571694+00:00：接收O12 60e495与公共 ./goal 导出adb91；仅tasks.ts直接依赖已随B01变更，实际生产factory选2过2/4未选、随机两库清理；包入口和root/Web types0。其余21不同领域证据复用。R06仅077已审五源，不接诊断driver；工作区1711原8过1失败partial原样归档，不称全绿。见[目标入口](../../docs/evidence/i02/goal-session-integration.json)、[限定诊断与观测](../../docs/evidence/i02/native-sink-workspace-comparison.json)。
+
+2026-10-06 12:21:23 UTC：按eccb固定4源接收普通Claude历史观察；58绑定与31直接输入无差，现claude基准完全一致，root类型检查0，无重复121/PG/provider。原首fixture超时和fake Query限制保留。[接收证据](../../docs/evidence/i02/context-producer-integration.json)。部署仍个人b1c，不把main当runtime。

@@ -7,9 +7,12 @@ import { readDecision, readGoal, readInput } from './details.js';
 import { readPlanMetadata } from './metadata.js';
 import { planPage } from './plan.js';
 import { readState } from './state.js';
+import { explanationPage, readExplanation } from './explanations.js';
 
 export function readGoalDelivery(pool: Pool, goalId: string, query: ReturnType<typeof goalDeliveryQuerySchema.parse>): Promise<GoalDeliveryRead> {
   return transaction(pool, async client => {
+    if (query.view === 'explanations') return explanationPage(client, goalId, query.limit, query.after);
+    if (query.view === 'explanation') return readExplanation(client, goalId, query.version);
     if (query.view === 'goal') return readGoal(client, goalId);
     if (query.view === 'input') return readInput(client, goalId, query.nodeId, query.version);
     if (query.view === 'decision') return readDecision(client, goalId, query.nodeId, query.taskId, query.decisionId);

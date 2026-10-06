@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-06T12:20:54.913Z",
+  "sourceCount": 147,
+  "task": {
+    "id": "WPF-ATTACHI02",
+    "title": "附件随聊天可靠发送",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+    "branch": "codex/web-attachment-production",
+    "planDir": "plans/wpf-attach-i02-production-binding",
+    "evidenceDir": "docs/evidence/wpf-attach-i02"
+  },
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "发送和排队已保留固定附件材料，正在接入聊天界面",
+    "next": "在聊天中添加附件并保留安全的重试和草稿",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": "Registry uniqueness, canonical triplet/evidence path and parser only; no product tests",
+  "initialInvocation": "Missing taskId argument rejected by parser; corrected invocation with registered ID. No source defect."
+}

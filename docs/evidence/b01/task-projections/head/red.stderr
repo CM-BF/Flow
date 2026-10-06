@@ -1,0 +1,33 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/assistant-stream/task-head.test.ts > reads an unclaimed task without decoding its legal public prompt
+AssertionError: expected [ 'conversation_input_id', …(15) ] to deeply equal [ Array(3) ]
+
+- Expected
++ Received
+
+  [
++   "conversation_input_id",
++   "created_at",
+    "current_attempt_id",
++   "cursor",
++   "dispatch_ready",
++   "goal_input_id",
++   "id",
++   "latest_artifact_id",
++   "latest_artifact_version",
++   "owner_version",
++   "pending_decision",
+    "status",
++   "submission",
+    "updated_at",
++   "usage",
++   "verification_status",
+  ]
+
+ ❯ apps/server/src/assistant-stream/task-head.test.ts:21:42
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

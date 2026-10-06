@@ -39,7 +39,7 @@ Flow项目写入只允许确认>=Sol的模型，优先本机可确认gpt-6-astra
 ## 稳定TODO
 
 - [x] **ENG001-01** 建立唯一生产目标、当前源码缺口、职责和优先级；此项不是产品交付。
-- [ ] **ENG001-02** 固定工程受理/profile、工作区租用与监督检查的小合同，确认可复用接缝、模型门槛及精确scope。
+- [x] **ENG001-02** 固定工程受理/profile、工作区租用与监督检查的小合同，确认可复用接缝、模型门槛及精确scope。
 - [x] **ENG001-03** 0模型真实PG+Git/worktree+检查命令+产物的纵向片，公开headless/TUI可复跑验收。
 - [ ] **ENG001-04** 固定版本的工程执行profile/adapter和恢复、取消、unknown、日志/资源边界；只读旧链回归。
 - [ ] **ENG001-05** 首真实合格native工程旅程：具体一次预算、预检、实际源码改动、监督检查和独立语义验收。
@@ -81,3 +81,11 @@ ENG01B固定a750及已审shared client/mount现已main2e71，123不同局部证�
 ## 当前原生前置接收与下一步（2026-10-06 11:51:15 UTC）
 
 ENG01D真实assignment身份与普通Codex turn复用已main。ENG01E独立有限源码语言与host断言模块已独审：只处理一份完整ASCII/2KiB calculator文件、保留完整index/worktree绑定，不import/eval，不接收stdout断言。其Interface只验证调用方提供的集合，真实文件来源和native writer全体停止仍须宿主证明。下一有界片由原worker只读设计完整snapshot→checker→独立版本收据，保留旧fixture v1；之后才接一个显式工程native writer/profile，SDK循环复用且合格模型/预算另定。此顺序与O11公共目标读口并行，不等待完整Web。
+
+## 当前可复用基线与原生写入组合（2026-10-06T12:13:55.672556+00:00）
+
+ENG01D/E/F均已受控main；E只解释完整受限源码，不执行被测JS；F负责受管工作区完整内容集前后绑定与独立flow.calculator-workspace-check.v1收据，writerSettlement明确not-attested。工程fixture profile不自动变native；既有正文/v1校验不扩权。
+
+下一子片ENG01G由native_center_owner在独立engineering-native-writer树领取：ordinary与工程复用一个Codex receive/close pump，受限fileChange策略及EngineeringWriter为两个真实消费者，不复制agent loop。身份来自宿主assignment。缺真实写权限/模型资格/完整撤销依据在transport之前拒绝，注入authority仅证明组合，不证明OS/native已停。file-only为首片有限策略，不是所有工程能力永禁终端的永久规则；后继可以明确受控shell边界，仍须真实停止后检查。Mika持有原生诊断，无重复实验/新增provider许可。真实部署准备独立SVC05，不把已main当个人预览已更新。
+
+参考原生接口输入的权威位置：claude-codex-capabilities/docs/evidence/wpf-mature-02/native-engineering-boundaries.md。实际本机原生能力、>=Sol与真实工程语义验证仍属04/05，不能用mock/关闭的cap结束大task。

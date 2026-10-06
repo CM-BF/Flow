@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:32:44 UTC / mainfd1322f9c0c1d085d5e343e39f6216b20d26c264 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:21:00 UTC / mainf3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 140项实际进度可查看；目标会话、工程收据和两项网页改进已登记，随本批更新。 |
+| 当前产出 | 146项进度已实际展示；附件聊天接线的权威来源已登记，随下一批加载。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -85,3 +85,9 @@
 2026-10-06T11:49:00.745135+00:00：4320实际140来源已部署，ENG01E live/current、人读完整、issues=[]，见[实际回执](../../docs/evidence/d05/engineering-checker-140-live.json)。仅替换已核main目录的自有59884进程；架构固定快照和个人服务保持。
 
 2026-10-06T11:56:33.581142+00:00：O12/ENG01F及两Web已审片的canonical三件套、父任务、人读字段已核，144来源候选，见[登记](../../docs/evidence/d05/goal-checker-web-144-registry.json)。网页摘要源码由Web独立批准后在I02接收，本登记不修改human/app/图。
+
+2026-10-06T12:01:29.371218+00:00：归档11:58:20.880Z实际144来源回执；原B01已正式交回，新claim190bd45e v2唯一owner status_read，因此保持原ID迁移至task-read-projections。旧bounded-read-performance只读历史，不双登记；本次只做唯一性/解析/链接核验。详见[144来源实采](../../docs/evidence/d05/goal-checker-web-144-live.json)。
+
+2026-10-06 12:17:23 UTC：新增ENG01G/SVC05真实canonical，146唯一源/三件套与人读字段检查通过；[登记](../../docs/evidence/d05/native-release-146-registry.json)。B01迁移后12:03真实source/human样本按正确字段保存[回执](../../docs/evidence/d05/b01-authority-live.json)，旧重复TODO是该历史样本事实，不改原采样。架构保持固定f181。
+
+2026-10-06 12:21:00 UTC：归档12:19:38.055Z实际146源[回执](../../docs/evidence/d05/native-release-146-live.json)，新工程/发布source live。SVC05父任务链接尾缀导致关系unknown已交原owner修正，不替renderer猜测；普通人读字段完整。新增ATTACHI02首canonical至147源候选，当前正在接实际App而非已完成。固定架构仍f181，个人服务/用户tab未动。

@@ -6,7 +6,8 @@
   "exports": {
     ".": "./src/index.ts",
     "./stream": "./src/stream/index.ts",
-    "./activity": "./src/activity/index.ts"
+    "./activity": "./src/activity/index.ts",
+    "./goal": "./src/goal/index.ts"
   },
   "dependencies": {
     "@flow/client": "workspace:*",

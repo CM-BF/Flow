@@ -5,6 +5,9 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['WPF-ATTACHI02', '附件随聊天可靠发送', '工作线', 'web-attachment-production', 'wpf-attach-i02-production-binding'],
+  ['SVC05', '新版个人预览兼容准备', '工作线', 'personal-current-release', 'svc05-current-release'],
+  ['ENG01G', '原生工程写入组合', '工作线', 'engineering-native-writer', 'eng01g-native-writer'],
   ['O12', '持续目标会话与解释历史', '工作线', 'goal-session-controller', 'o12-goal-session'],
   ['ENG01F', '工程快照与可信检查收据', '工作线', 'engineering-calculator-receipt', 'eng01f-calculator-receipt'],
   ['WPF-DASHSUM01', '看板目标摘要与详情', '工程协作', 'dashboard-human-summary', 'wpf-dashboard-summary'],
@@ -107,7 +110,7 @@ const assignments = [
   ['WPF-I01', 'Web 插件集成', '工作线', 'web-plugin-integration', 'wpf-i01-plugin-integration'],
   ['X01', '插件管理计划', '工作线', 'plugin-management-plan', 'x01-plugin-management'],
   ['R03', '远端Runner租约可靠性', '工作线', 'runner-reliability', 'r03-runner-reliability'],
-  ['B01', '分层读取性能与界限', '技术验证', 'bounded-read-performance', 'b01-bounded-reads'],
+  ['B01', '分层读取性能与界限', '技术验证', 'task-read-projections', 'b01-bounded-reads'],
   ['X02', '插件中心登记与命令', '工作线', 'plugin-registry', 'x02-plugin-registry'],
   ['WPF-PERF02', '活动窗口与阅读稳定', '工作线', 'web-activity-window', 'wpf-perf02-activity-window'],
   ['CHAT02', '真实助手正文事件', '工作线', 'conversation-native-events', 'chat02-native-messages'],
@@ -161,7 +164,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'WPF-DASHSUM01': 'wpf-dashboard-summary', 'WPF-WORKSPACECACHE01': 'wpf-workspace-cache', 'WPF-ATTACHI01': 'wpf-attach-i01', 'WPF-RELEASE02': 'wpf-release02', 'WPF-WORKSPACEPERF01': 'wpf-workspace-lifecycle-baseline', 'WPF-ACK01': 'wpf-ack01', 'WPF-DPERF02': 'wpf-dashboard-proof-batching', 'WPF-ACTIVITYREAD01': 'wpf-activity-readability', 'WPF-STEIRI01': 'wpf-steer-i01', 'ENG-001': 'eng01', 'TUI-001': 'tui01', 'COST-001': 'cost01', 'WPF-MATURE-01': 'web-platform', 'WPF-MATURE-02': 'wpf-mature-02', 'WPF-MATURE-03': 'web-platform', 'WPF-MATURE-04': 'wpf-mature-04', 'WPF-MATURE-05': 'web-platform', 'WPF-MATURE-06': 'web-platform', 'WPF-CONTEXTI01': 'wpf-context-i01', 'WPF-STEER01': 'wpf-steering-control', 'WPF-VISUAL01': 'wpf-visual01', 'D05FIT01': 'd05fit01', 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'WPF-ATTACHI02': 'wpf-attach-i02', 'WPF-DASHSUM01': 'wpf-dashboard-summary', 'WPF-WORKSPACECACHE01': 'wpf-workspace-cache', 'WPF-ATTACHI01': 'wpf-attach-i01', 'WPF-RELEASE02': 'wpf-release02', 'WPF-WORKSPACEPERF01': 'wpf-workspace-lifecycle-baseline', 'WPF-ACK01': 'wpf-ack01', 'WPF-DPERF02': 'wpf-dashboard-proof-batching', 'WPF-ACTIVITYREAD01': 'wpf-activity-readability', 'WPF-STEIRI01': 'wpf-steer-i01', 'ENG-001': 'eng01', 'TUI-001': 'tui01', 'COST-001': 'cost01', 'WPF-MATURE-01': 'web-platform', 'WPF-MATURE-02': 'wpf-mature-02', 'WPF-MATURE-03': 'web-platform', 'WPF-MATURE-04': 'wpf-mature-04', 'WPF-MATURE-05': 'web-platform', 'WPF-MATURE-06': 'web-platform', 'WPF-CONTEXTI01': 'wpf-context-i01', 'WPF-STEER01': 'wpf-steering-control', 'WPF-VISUAL01': 'wpf-visual01', 'D05FIT01': 'd05fit01', 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };

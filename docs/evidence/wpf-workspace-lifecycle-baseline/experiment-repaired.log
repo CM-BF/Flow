@@ -1,0 +1,25 @@
+PASS 8/16/32 cumulative actual conversation panes; hidden reads pause
+PASS two split panes remain independently visible and observed
+PASS closed clean panes remove DOM, stop reads; reopen history requests are recorded
+PASS closed protected draft and knowledge restore without eager body
+4:02:47 AM [vite] http proxy error: /api/conversations/chat-4/turns
+Error: socket hang up
+    at Socket.socketOnEnd (node:_http_client:790:25)
+    at Socket.emit (node:events:526:24)
+    at endReadableNT (node:internal/streams/readable:1757:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+PASS closed unknown Send restores original key/body and independent new draft
+4:02:48 AM [vite] http proxy error: /api/conversations/chat-5/queue
+Error: socket hang up
+    at Socket.socketOnEnd (node:_http_client:790:25)
+    at Socket.emit (node:events:526:24)
+    at endReadableNT (node:internal/streams/readable:1757:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+PASS closed unknown Queue restores original key/body without cancellation
+PASS late reply detail after closing is observed separately from DOM removal
+PASS late hidden read is isolated; overview stops per-pane reads
+FAIL stable viewport evidence and draft survives theme change TimeoutError: locator.click: Timeout 3000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('navigation', { name: 'Conversations', exact: true }).getByRole('button', { name: 'Conversation 3', exact: true })[22m
+
+{"status":"partial","checks":8,"failures":[{"name":"stable viewport evidence and draft survives theme change","error":"TimeoutError: locator.click: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('navigation', { name: 'Conversations', exact: true }).getByRole('button', { name: 'Conversation 3', exact: true })\u001b[22m\n"}],"errors":[],"elapsedMs":34322,"cleanupComplete":true,"evidenceBytes":364009}
