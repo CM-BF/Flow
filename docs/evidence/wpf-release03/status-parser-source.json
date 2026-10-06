@@ -26,11 +26,11 @@
     },
     "phase": "M2",
     "priority": 1,
-    "output": "验证脚本已收窄后台检查资源需求，等待固定差异审查",
+    "output": "兼容检查脚本已审查，因磁盘余量不足尚未运行",
     "next": "给出新前端与现有后台的真实兼容结果",
     "blocker": {
       "state": "active",
-      "text": "脚本待独立审查与实际运行资源准入，尚无兼容结果"
+      "text": "当前磁盘余量未达到安全启动门槛，真实兼容检查未运行"
     },
     "decision": {
       "state": "none",
@@ -51,14 +51,14 @@
   "owner": "w01_owner / gpt-6-astra / ultra",
   "branch": "codex/web-current-preview-compatibility",
   "branchState": "in-progress",
-  "updatedAt": "2026-10-06T15:03:06.000Z",
-  "updatedRecord": "2026-10-06 15:03:06 UTC",
+  "updatedAt": "2026-10-06T15:07:34.000Z",
+  "updatedRecord": "2026-10-06 15:07:34 UTC",
   "todos": [
     {
       "id": "RELEASE03-01",
-      "state": "in-progress",
+      "state": "completed",
       "owner": "w01_owner",
-      "evidence": "[take](../../docs/evidence/wpf-release03/take-receipt.json)、[live](../../docs/evidence/wpf-release03/live-claim.json)"
+      "evidence": "[固定源码审查](../../docs/evidence/wpf-release03/source-review-432b.json)、[manifest](../../docs/evidence/wpf-release03/source-manifest.json)"
     },
     {
       "id": "RELEASE03-02",
@@ -70,19 +70,19 @@
       "id": "RELEASE03-03",
       "state": "pending",
       "owner": "w01_owner",
-      "evidence": "尚未固定实现/独审/交主线"
+      "evidence": "432b源码已固定/条件独审；完整兼容验收与主线交付待运行"
     }
   ],
   "errors": [],
-  "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / 432b09ae1b552a68cc4720b369e42ed80bc942c9",
-  "declaredDirty": "实现432b已固定；本次仅metadata待提交，提交后clean另核；0业务/重复noEmit",
+  "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / 46395a526ae597958cf3ba801af39e1dbb65d70e（本次metadata提交前已核）",
+  "declaredDirty": "15:07核HEAD46395为clean；随后仅记录源码批准与资源未准入，最终提交回执另核，不将此编辑时点当提交后dirty",
   "checks": {
     "state": "not_run",
     "target": null,
     "record": "NOT_RUN（实际兼容矩阵）；定向strict noEmit PASSED，见证据"
   },
-  "reviewRecord": "[review.md](review.md)，NOT_STARTED",
-  "mainRecord": "NOT_INTEGRATED；本片尚未送固定实现独审",
+  "reviewRecord": "[review.md](review.md)，完整兼容审查NOT_STARTED；432b源码条件APPROVED",
+  "mainRecord": "NOT_INTEGRATED；432b仅源码条件批准，实际兼容尚未运行",
   "next": "",
   "risks": "",
   "decisions": ""

@@ -1,6 +1,6 @@
 # WPF-RELEASE03 当前前端发布兼容验证
 
-状态：in-progress。创建/更新：2026-10-06 14:40:27 UTC。直接父任务 WPF-MATURE-01；owner w01_owner / gpt-6-astra / ultra。遵循[模块与性能规则](../../AGENTS.md#modular-design)。
+状态：in-progress。创建：2026-10-06 14:40:27 UTC；更新：2026-10-06 15:07:34 UTC。直接父任务 WPF-MATURE-01；owner w01_owner / gpt-6-astra / ultra。遵循[模块与性能规则](../../AGENTS.md#modular-design)。
 
 ## 目标与固定输入
 
@@ -15,7 +15,7 @@
 
 ## TODO
 
-- [ ] RELEASE03-01 固定输入、领取与依赖/生命周期边界可审；完成两脚本源码。
+- [x] RELEASE03-01 固定输入、领取与依赖/生命周期边界可审；完成两脚本源码。
 - [ ] RELEASE03-02 取得资源及依赖授权后，执行有界真实兼容矩阵并保留失败/清理事实。
 - [ ] RELEASE03-03 固定候选、独立审查、正常交接；真实发布仍由原 operator 决定。
 

@@ -19,3 +19,7 @@
 ## 2026-10-06 15:03:06 UTC A-only资源delta clean-code
 
 用mode定义两对明确门槛，统一checkpoint复用原stop状态，防止导入/建库/marker/worker/Chrome关键await后继续工作。无新framework或后台任务。source可证明A不build/不Chrome、证据上限与门槛；不能证明PG/WAL/OS并发物理瞬时峰值，12,360,727B仅Lead同factory数据库观察。250ms监视与fresh checks为尽早失败条件，不冒硬配额。原资源/清理语义不放宽，只有确认marker能DROP，未知保留。0重复noEmit/PG/Chrome。
+
+## 2026-10-06 15:07:34 UTC 元数据安全点
+
+复用已读clean-code方法，只更新本task计划/状态/审查与原样证据：源码条件批准与未执行兼容分开；记录真实free拒绝、无gate/0运行/窗口交还，不把等待当产品失败，不虚报通过。两源码保持432b，未扩scope/安装/重跑noEmit/PG/Chrome。原JSON逐字复制，最终检查限定metadata链接/parser/差异，提交后clean另核。

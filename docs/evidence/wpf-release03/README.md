@@ -1,6 +1,6 @@
 # RELEASE03 固定组合验证（源码准备）
 
-当前完成固定源码草案与 17 个精确依赖链接，并按后继裁决增加先运行 A 两项历史的独立入口。已执行一次定向strict noEmit（1.84秒/exit0）；没有执行产品运行、PG、Chrome、build 或兼容旅程，不能作为发布通过证据。独审 NOT_STARTED。
+当前完成固定源码草案与 17 个精确依赖链接，并按后继裁决增加先运行 A 两项历史的独立入口。已执行一次定向strict noEmit（1.84秒/exit0）；没有执行产品运行、PG、Chrome、build 或兼容旅程，不能作为发布通过证据。432b源码独立条件APPROVED，完整兼容审查NOT_STARTED；15:07管理fresh资源门槛未通过，未生成gate。
 
 ## 固定输入
 
@@ -27,3 +27,7 @@
 最新调度首先采用mode=history：A两项逐项保留raw后清理，B明确NOT_RUN；任何A失败即使mode=all也禁止请求Chrome。A全绿但mode=history仍封存停止，不能自动续跑B。任何 history、App、来源、asset、非预期console/network、预算或cleanup失败均阻止完整 SVC report/import。原始history结果和App独立事实仍分别保留。四observations从wire/DOM结果计算；报告工具本身不证明业务兼容。只有全部检查和cleanup成功后，在自有目录生成并验证原SVC格式，绝不写个人发布指针或升级个人服务。history未修即使App通过仍不得发布。
 
 注册runner的临时token在wire持久化前删除（原响应hash保留），Authorization不记录；临时owner/runner token只在进程内与自有待删除Chrome profile中使用。报告不引用用户凭据、个人目录或用户tab。
+
+## 本次未运行事实
+
+[source-review-432b](source-review-432b.json)为root只读源码批准，不是运行/发布批准。[history-admission-not-run](history-admission-not-run.json)为manager15:07:01Z原样观察：free1,058,885,632B<start1,107,296,256B，claim/source/17links通过但gate=null。没有启动PG/HTTP/Chrome，业务累计0；不重采重试，窗口交回Lead，等待未来明确fresh准入。
