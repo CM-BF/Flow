@@ -9,3 +9,5 @@
 2026-10-06 18:31:15 UTC：query观测局部复核发现冲突final被caller捕获后可再次finish取得旧成功；定向red证明后加持久失败标记，局部1/1通过，未重复前7/另2。frame/Read/modelUsage/denials明确界限，原SDK loop未复制；host allow与实际匹配Read结果、机械与语义结论分开。native worker/公开PG组合仍待实现。
 
 2026-10-06 18:38:41 UTC：沿codebase-design/clean-code复核phase query仅装饰原adapter唯一迭代，禁止resume/额外tools和budget漂移；close-before-iterate不启动，durable槽先于native入口，三个纯检查通过。worker/资源均新候选尚未运行；不以纯检查代表PG/原生通过。
+
+2026-10-06 18:48:40 UTC：重新检查资源与职责。parent只持owner观察权限，worker只持runner token；两阶段复用原loop。decision cleanup曾有先删除再保存业务结果的窗口，经Lead只读指出已改为durable decision先于destroy，2纯故障例覆盖。live临时目录限定8MiB/2048条/12层，native未知保留，不把PID退出当group已停。当前为候选代码，PG未验证。

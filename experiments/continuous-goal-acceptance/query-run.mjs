@@ -36,7 +36,7 @@ export function createObservedQuery({ mode, phase, reservation, getBinding, nati
     report.queries.push(row); recordHostDecisions(input, row);
     const observed = createQueryObservation(phase);
     let original, closed = false;
-    return Object.assign((async function* () {
+    const stream = Object.assign((async function* () {
       try {
         input.options.abortController.signal.throwIfAborted(); requireValue(!closed);
         if (mode === 'native') {
@@ -54,5 +54,11 @@ export function createObservedQuery({ mode, phase, reservation, getBinding, nati
         input.options.abortController.abort(); throw error;
       } finally { row.observation ??= observed.snapshot(); }
     })(), { close() { closed = true; row.closed = true; original?.close(); } });
+    if (mode === 'native') stream.getContextUsage = async options => {
+      // Preserve the original adapter's single bounded summary read; this is not a model query.
+      requireValue(!closed && original && typeof original.getContextUsage === 'function');
+      return original.getContextUsage(options);
+    };
+    return stream;
   };
 }

@@ -47,8 +47,8 @@ test('native entry is durably reserved before its injected stand-in and cannot b
       approvedAt: new Date(now - 1000).toISOString(), expiresAt: new Date(now + 60000).toISOString(), authorizationReference: 'Synthetic unit test only, never a real permit' }, { identity, phase: 'plan' });
     const reservation = await reservePhase(root, permit), report = { nativeQueryCalls: 0 }; let calls = 0;
     const make = () => createObservedQuery({ mode: 'native', phase: 'plan', reservation, report, getBinding: () => binding,
-      nativeQuery() { calls++; return frames(); } });
-    const stream = make()(input('native')); await drain(stream); stream.close();
+      nativeQuery() { calls++; const original = frames(); original.getContextUsage = async options => { assert.deepEqual(options, { detail: 'summary' }); return { control: 'summary-stand-in' }; }; return original; } });
+    const stream = make()(input('native')); await drain(stream); assert.deepEqual(await stream.getContextUsage({ detail: 'summary' }), { control: 'summary-stand-in' }); stream.close();
     assert.equal(calls, 1); assert.equal(report.nativeQueryCalls, 1); assert.equal(report.queries[0].reservation.assignment.attemptId, 'attempt');
     const restarted = make()(input('native')); await assert.rejects(drain(restarted), { code: 'EEXIST' }); restarted.close(); assert.equal(calls, 1);
   } finally { await rm(root, { recursive: true }); }

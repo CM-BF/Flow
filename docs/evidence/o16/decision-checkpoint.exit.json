@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-06T18:45:37.140693+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--test",
+    "experiments/continuous-goal-acceptance/decision-checkpoint.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 1.101387207978405,
+  "freeBeforeBytes": 1568882688,
+  "stdoutBytes": 330,
+  "stdoutSha256": "93d2ad3fff9322d80ae4865df20a804b6f8f760f23e80a1e5f9ababad03cd7d3",
+  "providerCalls": 0,
+  "pg": 0
+}

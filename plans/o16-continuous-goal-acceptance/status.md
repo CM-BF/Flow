@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:38:41 UTC |
+| 最近更新 | 2026-10-06 18:48:40 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,10 +11,10 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974 |
-| HEAD | 本提交固定query入口/worker/resource候选；实际public driver仍待实现 |
+| HEAD | 本提交固定完整staged driver候选；尚未实际PG/独审 |
 | Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1 active；三literal，18:16:25.736 UTC取得 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 纯检查13不同通过（permit5+assignment2+policy3+query入口3）；最初missing-module红保留，4+5分轮重叠不累计；0SDK/PG/provider |
+| 检查状态 | 纯检查19不同通过（permit5+assignment2+policy3+query入口3+合同2+records2+decision2）；最初missing-module红保留，4+5分轮重叠不累计；0SDK/PG/provider |
 | Review | NOT_STARTED |
 | 实现目标 | 62511c4b47132ca7b3065b62818eb47ff7dfdfb9 |
 | 实现范围 | experiments/continuous-goal-acceptance |
@@ -22,17 +22,17 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 已完成有限许可和调用槽恢复的局部检查，正在组合公开目标旅程。 |
-| 下一可用交付 | 可核对调用预算、确认边界和中心自动推进的独立验收入口。 |
+| 当前产出 | 已完成分阶段旅程入口与局部检查，正在准备独立审查和零模型公开旅程。 |
+| 下一可用交付 | 获串行资源窗口后验证公开规划、确认、自动推进与独立接受的完整连接。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | O16-01 | completed | native_center_owner | [claim](../../docs/evidence/o16/claim.json)、[Interface](../../docs/evidence/o16/interface.md) |
-| O16-02 | in-progress | native_center_owner | phase/assignment/query入口共13不同检查通过；worker与资源候选已写未运行，公开旅程继续 |
-| O16-03 | in-progress | native_center_owner | worker绑定IPC及checkpoint候选已实现；完整driver尚未运行 |
-| O16-04 | pending | native_center_owner | 纯检查可推进；PG需Lead串行窗口 |
+| O16-02 | in-progress | native_center_owner | phase/assignment/query入口及合同/持久记录共19不同检查；无SDK query/auth；新candidate尚未独审 |
+| O16-03 | in-progress | native_center_owner | public staged driver已实现、模块装配0通过；真实PG旅程NOT_RUN，proposal/decision同一中心公开口 |
+| O16-04 | pending | native_center_owner | 19不同纯检查分轮通过；真实SDK MCP仅tools/list、不query；装配red后0；PG需Lead串行窗口 |
 | O16-05 | pending | native_center_owner | manifest/独审待固定 |
 | O16-06 | pending | native_center_owner | 新模型预算未授，旧O08/O10封存；不影响零query准备 |
 

@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-06T18:42:51.225132+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--test",
+    "experiments/continuous-goal-acceptance/contract.test.mjs"
+  ],
+  "exitCode": 1,
+  "seconds": 0.7215140830958262,
+  "freeBeforeBytes": 1582751744,
+  "stdoutBytes": 1476,
+  "stdoutSha256": "5c7205fe1bc4481b4a02d1e7c16e25d47657a4dbb18015f9f504bb07a74192fa",
+  "providerCalls": 0,
+  "pg": 0
+}

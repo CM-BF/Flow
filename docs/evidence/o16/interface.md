@@ -15,3 +15,11 @@ Resource reservation file/parent directory are durable before CREATE. Database r
 Candidate only: planner sonnet4turn/$0.20/90s; each child sonnet3turn/$0.10/60s. <=3 SDK entries total, not underlying HTTP-call or hard billing caps. Fresh actual phase-specific permit and GO authorization are required later. The second phase binds the real proposal; the experiment never considers the first permit an approval of unknown future content.
 
 Assignment binding: the planner matches the immutable admitted task/run and configured profile; each child is matched against bounded owner public progression + goal-delivery projections and its actual executionIdentity. The private parent host alone performs these reads and returns a slot over a finite local IPC request; SDK input receives no owner credential. The original context.assertOwnership fence runs before/after that observation and before SDK entry. Child slot order is the owner-confirmed dependency order, never claim order. Public dependenciesReady reflects semantic acceptance and is not reused as O14 mechanical admission authority.
+
+## 2026-10-06 18:48:40 UTC 实际候选入口
+
+候选 source 提供 `plan(run, mode, permitPath)`、`confirm(run, actualBody)`、`children(run, separatePermitPath)`、`decide(run, independentDecision)`；`rehearse(run)`只组合显式合成查询/确认/接受。实际 CLI 与资源说明见 [实验 README](../../../experiments/continuous-goal-acceptance/README.md)。planner/children共用原SDK adapter与runRunner，原runtime拥有claim/lease/journal/outbox；child身份由parent公开progression/delivery只读查询绑定本次不可变assignment，owner token不发往worker。
+
+决定的实际current/history/接受结果先耐久保存，再允许normal DROP/rm；纯故障注入2例已证checkpoint失败仍关闭center并保留资源。所有暂停阶段关闭owned进程组与center，保留随机marker DB和dev/ino目录供有限人工审阅；未知不自动重新创建run或消费新槽。三个query槽只是候选，真实预算仍未授权。
+
+19不同纯/有限MCP检查、driver模块装配通过；不是类型全集、PG旅程或真实模型结论。首合同测试误把既有configured-readonly写为readonly导致1红，已定向1绿；源码身份首次将workspace依赖误当installedVersion导致装配1红，已绑定固定BASE package version后0，均保原输出。
