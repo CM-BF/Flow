@@ -10,18 +10,18 @@
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-seams |
 | Branch | codex/engineering-native-seams |
-| 工作基线 / HEAD | 53ce2ec2c95b489aa7a2a2eaa49849821af00c16 / 6843a268d2dc3cba0f43737dd143cef760d843e6；本次实现提交由Git固定 |
+| 工作基线 / HEAD | 53ce2ec2c95b489aa7a2a2eaa49849821af00c16 / 855e5675245f7774b8ce927ab8b2ffdb6133bddf；后续仅审查metadata |
 | 工作树dirty状态 | 本metadata提交后clean |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 实现目标 | UNKNOWN |
+| 工作分支状态 | review |
+| 本片段交付阶段 | review |
+| 实现目标 | 855e5675245f7774b8ce927ab8b2ffdb6133bddf |
 | 实现范围 | packages/contracts/src/runner.ts, apps/runner/src/runtime.ts, apps/runner/src/execution-identity.test.ts, apps/runner/src/native-harness/codex/adapter.ts, apps/runner/src/native-harness/codex/turn.ts, apps/runner/src/native-harness.test.ts, plans/eng01d-native-writer-seams, docs/evidence/eng01d |
 | 检查状态 | 65 distinct通过；32未选；root types0；原raw见[README](../../docs/evidence/eng01d/README.md) |
 | 已集成main状态 / HEAD | ENG01D未集成；base53ce已有已审ENG01C |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 已固定真实执行身份并提取现单回合生命周期；局部检查通过 |
-| 下一可用交付 | 可独立审查的身份和单回合接缝 |
+| 下一可用交付 | 等待独立审查后集成；源码已停写 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -35,4 +35,4 @@
 | ENG01D-03 | completed | native_center_owner | 62个原直接消费者、1个unknown并发、类型0/逐字提取核对 |
 | ENG01D-04 | pending | native_center_owner | 独审/main未完成 |
 
-0provider/0native/app-server；不改变个人服务。未新增文件写入或模型许可，真实native工程仍需停止/受信检查/资格边界。唯一status待Lead登记聚合。
+0provider/0native/app-server；不改变个人服务。未新增文件写入或模型许可，真实native工程仍需停止/受信检查/资格边界。唯一status已交Lead登记聚合；本次交付由Lead核dashboard来源。
