@@ -1,0 +1,34 @@
+{
+  "recordedAt": "2026-10-06T07:00:47Z",
+  "authority": "ExecutionLead C03 INPUT_FIXED via root; root selected exact accepted Web base",
+  "webBase": "86a36eaeffbf09f0a3772c3d1509c17dc0a76f92",
+  "serverImplementation": "77f0b152a2be32806b17cc7f8a57d33afc2043b3",
+  "testDelta": "d9a162738c5c3b3531fc7f5da3a5c0ea1e846e67",
+  "canonical": "309be08696b75d5d186ee325cf40d427e22e9b6a",
+  "sources": [
+    {
+      "commit": "309be08696b75d5d186ee325cf40d427e22e9b6a",
+      "path": "docs/evidence/chat06c02/interface.md",
+      "sha256": "8c65b6e710ff3105b4bfedb6275680501ecf62959f068171538dfb40fd955eb4"
+    },
+    {
+      "commit": "309be08696b75d5d186ee325cf40d427e22e9b6a",
+      "path": "apps/server/src/assistant-stream-compatibility/compatibility.test.ts",
+      "sha256": "2466d4e82cb4ef891f896beb2ed563666047005e749d91fa96c3b41cefd70b48"
+    }
+  ],
+  "semantics": {
+    "cursor": "raw scan cursor, not last returned visible entry",
+    "nonReset": "nextCursor >= after; nextCursor <= watermark; hasMore iff nextCursor < watermark; returned entries strictly increasing and <= nextCursor, task identity checked",
+    "reset": "Only after > watermark; nextCursor=0, entries=[], hasMore=false",
+    "emptyFilteredPage": "May advance raw cursor and have hasMore true or false; durable raw entries preserved"
+  },
+  "fixtures": "Construct contract fixtures corresponding to the fixed successful real HTTP/SSE assertions; clearly not historical captured HTTP bodies. Run actual Web reader against these fixtures. No C02/DB/model rerun to copy JSON.",
+  "fixedCases": [
+    "after1 limit2 -> [] next3 watermark5 hasMoretrue; after3 reaches ordinary cursor5",
+    "35 stream SSE entries -> empty page next33, reconnect ordinary cursor37",
+    "visible entries followed by filtered tail; empty terminal page reaches watermark",
+    "reset after > watermark; malformed identities/order/cursor/hasMore/reset rejected"
+  ],
+  "sharedApply": "None. Do not merge/pick server or shared branches."
+}

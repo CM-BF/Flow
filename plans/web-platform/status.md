@@ -47,6 +47,7 @@
 | WPF-001-20 | completed | d01_owner | RendererI固定8014cf9be49391157fb54eeb857a41ee1d6af68c/root06:40:07Z APPROVED，final2a420ffe6a27860156057368a18e94e73957e395 clean；九scope/七实现、7md39links/parser与本地proof unchanged，已在accepted86a36完整main实核祖先/七scope相同，原owner最终9da5add318df9cf08d50fb5262f9ceb6bfae29e9 clean，ff621v2已06:49:15.261Z released；06:36原样采样不倒填批准 |
 | WPF-001-21 | in-progress | d01_owner | C01 ca26v1四scope/basea26，固定8c562/root独立104后APPROVED；finalee294c1473693b83babd0a935597b431d6223346 clean，6md29links/parser/checks/review/proof unchanged最终核，已一次交Lead待main；0opt-in/stream |
 | WPF-001-22 | in-progress | d01_owner | ActivityI新86a独立树/17scope fresh无重叠，122210f6-eaac-4cc7-840d-3bd7db1626d9 v1于06:53:53.518Z committed；owner w01首canonical4c18839c212bee19fa0d83d28b4e0f5fbab67be9 clean/parser0/4TODO，已一次SOURCE_READY交Lead；不把领取当部署 |
+| WPF-001-23 | in-progress | d01_owner | WPF-ACTIVITYC01 / panels / web-activity-cursor-compatibility，base86a，5896b272 v1四scope07:01:00.918Z committed；固定C02语义齐，contract fixture非历史rawcapture，首canonical待登记 |
 
 ## 当前唯一owner、claim与下一步
 
@@ -256,3 +257,5 @@ GO后续补足80源部署观察：其06:54:36Z实际GET4320/api/snapshot见C01 h
 06:57 ActivityI首canonical4c18839c212bee19fa0d83d28b4e0f5fbab67be9 clean由管理实际核17scope内、4TODO/parser0/human完整、implementation/NOT_RUN/NOT_STARTED，见[首源审计](../../docs/evidence/web-platform/activityi01-canonical-audit.json)。已一次SOURCE_READY直GO桥Lead，后续等部署回执才必要唯一采样；owner继续typed活动与P01 footer实现，不等登记。
 
 06:59 后继优先：旧generic活动reader的filtered-page兼容先于完整stream模块。Lead已固定raw scan cursor可跨过滤尾/空页，完整四scope与C02保存真实HTTP样本/准确base仍等原owner手交；manager已唯一桥请求，fresh51f released/旧projection-test无重叠。未新take/写，无全局实现阻塞；ActivityI12221继续现17scope，C01冻结待main。完整stream七scope只研究waiting-input，88a薄client候选只读，不抢Thread/App或公共合同。
+
+07:01 WPF-ACTIVITYC01正式受领见[fixed input](../../docs/evidence/web-platform/activityc01-fixed-input.json)、[preflight](../../docs/evidence/web-platform/activityc01-preflight.json)、[take](../../docs/evidence/web-platform/activityc01-take-receipt.json)。Lead/root输入完整，raw-scan cursor空页推进与reset边界明确；固定HTTP/SSE断言可做有来源fixture，不再以不存在rawcapture阻塞。旧61b projection/test对86a与07b零差，四scopefresh无交叉，5896v1 committed后panels才实施，未pick任何shared/server。当前ActivityI17scope并行独立，C01已审冻结待main；完整stream仍下一片waiting-turn非已take。

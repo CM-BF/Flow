@@ -179,6 +179,8 @@ type WorkspacePanelsProps = {
 - [ ] **WPF-001-21** WPF-CHAT06C01：四scope独立a26树消费86fc单文件输入，仅兼容liveAssistantText缺省/boolean，身份与原回执/queue保持；不opt-in或启用增量正文，固定验证后独审/集成。
 - [ ] **WPF-001-22** WPF-ACTIVITYI01：同一U11/REQ43活动接线在固定86a独立树领取17scope，消费已main CHAT05真实typed工具/思考与generic fallback，P01统一message footer button/menu/panel、按需有界详情与生命周期；保留C01/61b/shared只读，完整CHAT06正文另片。
 
+- [ ] **WPF-001-23** WPF-ACTIVITYC01：独立86a树四scope兼容C02过滤页raw-scan游标，固定已过HTTP断言映射的contract fixture经真实61b reader验证，严格身份/排序/上界/reset/hasMore不放宽；独审后交Lead解锁发布，不混完整stream消费者。
+
 ## 验收、风险与持续方式
 
 每轮只在其可验证条件满足时完成；持续总目标保持活动，新增用户要求/研究发现追加到本计划、排队并由明确owner实施。禁止为了持续工作堆无依据复杂度，也不能因“本批完成”就把无限优化声明完成。
@@ -335,3 +337,5 @@ GO管理审计规则：active claim按实际开发/持续管理、冻结待审/�
 06:54 再次遵循用户U12“take工作在dashboard标清、跨lead防overlap”：每个新片先向现D04原子账本登记唯一owner/Lead、分支/工作树与精确literal范围，再交唯一canonical给Lead注册；已领取但来源未部署如实展示，不能把receipt当完整进度卡，不另写平行账本。ActivityI17scope fresh06:53:53.277Z无交叉（特别不含C01的conversations/projection.ts），122210f6 v1已committed。后继source部署收到后由manager唯一采样；其它Lead协调沿既有GO桥接及四类实质变化，不重复派工。
 
 06:59 GO关键路径调整仍归U11/REQ43：panels优先兼容旧61b活动reader的C02 filtered-page raw-scan cursor，先于新stream消费者模块。Lead已固定公开语义允许无returned entries仍扫描推进、hasMore基于watermark；保留task身份/entry递增且<=nextCursor/nextCursor<=watermark/reset/after护栏。唯一管理已桥请求C02 owner固定实现与真实HTTP样本/准确base，来源未齐不猜协议/不先写；旧51f released、当前ActivityI17scope不含旧reader。新片只production projection+直接test+自有plan/evidence，精确命名待提案。
+
+07:01 上条等待输入已解除：Lead固定C02 77f0/d9a/309be语义并接受contract fixture（非raw capture），root精确base86a；WPF-ACTIVITYC01四scope新树preflight/freshledger无冲突，5896b272 v1 committed后panels实施，source首交后登记。完整stream七scope下一ready输入已由Lead给ba908a2d84a05b336d74fbaccd7a36d3d254c501 + 5ff assistant-stream.ts精确文件 + 已审88a四filecommit；本片固定交付后再新tree/take，不让同owner同时两片写入。任何共享冲突交Lead，不整merge。
