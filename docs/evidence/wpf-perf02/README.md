@@ -1,7 +1,8 @@
 # PERF02 Activity 窗口候选证据
 
-实现 `a87f64f48a3b7e8d03429ab0673c210076a2df0d`；base `cc33403cd9b357fcd85484b7bc6952dc1220d689`。当前作者功能通过，独立审查 NOT_STARTED，正式矩阵等待协调窗口。
+实现 `a87f64f48a3b7e8d03429ab0673c210076a2df0d`；base `cc33403cd9b357fcd85484b7bc6952dc1220d689`。作者13 tests/typecheck、8功能browser与smoke+3正式矩阵全部通过；独立审查尚待正式结论。
 
+- [性能结果与全部限制](results.md)、[原始汇总](summary.json)、[协调窗口](measurement-window.json)。
 - [浏览器](window-browser.json)：8组实际普通production功能行为，Chrome154，动态HTTP fixture，无模型调用。
 - [完整性](window-integrity.json)：1040变高记录逐窗口全量id/cursor/body hash，maxMounted16。
 - [浅色390](window-light-narrow.png)、[深色390](window-dark-narrow.png)、[深色桌面](window-dark-desktop.png)。

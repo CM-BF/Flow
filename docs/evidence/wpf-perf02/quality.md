@@ -24,3 +24,9 @@
 安装最终仅web+server测试直接依赖+root offline no-lockfile，0下载，rootlock/manifests差异0，本树client/contracts链接均指本树。未声称缓存/驻留非线性；height map/prefix仍随已加载记录增长，projection未改。screen reader/Firefox/Safari未测。
 
 正式计时先等待root协调B01/EXPLAIN结束；功能browser不是正式性能样本。probe方法改动：只改新输出目录/准许的3生产路径guard；原DOM全量断言替换为公开total/lastcursor+挂载上界；新增完整DOM历史遍历单独phase，保留前置详情0→1→cache、8chat观察和原键盘/wheel/phase采样。计时后的完整性hash不混入旧timing数组。
+
+## 2026-10-06 03:47 UTC 测量/交付前 clean-code
+
+六实现文件对固定a87差异0。复核没有第二测量引擎：正式probe直接导入同一browser完整性函数，测量时不改实现；producer/阈值/timeout保留，raw/旧PERF01均不覆盖。实际修复与限制见results/development-failures。三场普通production一次均通过，每场10040完整历史/最大16mounted、96trustedkey/32wheel、detail1/cancel0/error0。完整遍历在timing快照后单列，HTTP总数随遍历时长增长不冒充同阶段回归。脚本退出0后finally关闭浏览器/fixture/临时build，03:45:29通知root释放窗口。
+
+结构余项：height/prefix/projection仍线性，当前窗口内文本不截断，极端单条巨文与百万历史未测试；不擅自扩claim优化这些问题。原文件范围/根锁/共享合同diff0，checks不替代独立review。root已返回独立13tests及原始expected重建复核，正式结论尚待固定报告。
