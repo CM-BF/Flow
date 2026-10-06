@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:49 UTC；原限定片main83f事实不变，03静态增量已限定独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:02 UTC；原限定片main83f事实不变，03静态入口文件已核 |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -19,9 +19,9 @@
 | 实现范围 | apps/tui/src/task-controls/fixture.ts, apps/tui/src/task-controls/journey.test.ts, apps/tui/test-fixtures/cancel_driver.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 显式取消控制已在主线；验收准备通过局部类型检查与独立审查，运行依赖缺件已列清，真实终端旅程尚未运行。 |
+| 当前产出 | 显式取消控制已在主线；依赖链接和入口文件已核对到位，真实终端取消与恢复旅程尚未运行。 |
 | 下一可用交付 | 资源窗口允许后，实测中心回执恢复、终端取消及退出续跑。 |
-| 当前阻塞 | ACTIVE: 真实HTTP/PG/PTY旅程尚无运行窗口；Web A→B优先，运行依赖视图仍需另核。 |
+| 当前阻塞 | ACTIVE: 真实HTTP/PG/PTY旅程等待串行资源窗口；文件已到位，实际运行与资源峰值尚未验证。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED 40508f18432ffc20eadd638b208841a364c72bea（限定源/类型准备，原回执SCOPED_APPROVED）；实际03 NOT_RUN |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v1 |
@@ -31,7 +31,7 @@
 | --- | --- | --- | --- |
 | TUI01F-01 | completed | assignment_review | [Interface](../../docs/evidence/tui01f/interface.md) |
 | TUI01F-02 | completed | assignment_review | [局部36 distinct与focused types](../../docs/evidence/tui01f/validation.md) |
-| TUI01F-03 | in-progress | assignment_review | [最小源码/脚本闭包已列](../../docs/evidence/tui01f/followup-acceptance.md)，运行窗口待定 |
+| TUI01F-03 | in-progress | assignment_review | [唯一运行入口与文件级核对](../../docs/evidence/tui01f/journey-runtime-entry.md)，实际2场景NOT_RUN |
 | TUI01F-04 | pending | Execution Lead 协调 Web / owner | 实际双界面旅程未执行 |
 
 唯一 status 已交 Lead 登记；本轮未重新采样看板。不写第二进度源。SVC05H01 树保持 af51 全冻结，独立任务不交叉修改。
@@ -45,3 +45,5 @@
 2026-10-06 16:45 UTC：新增focused类型检查首次exit2/唯一TS2339→宿主executionIdentity修复→exit0，两轮约2.18s/2.16s，0 tests/PG/PTY/provider。[固定原始与资源](../../docs/evidence/tui01f/journey-static-validation.md)。9保护源及23输入逐字未变；本次不执行实际03，不扩大旧源审批准。
 
 2026-10-06 16:49 UTC：归档Execution Lead限定静态批准，source40508f与原raw/manifest不变。[运行依赖只读提议](../../docs/evidence/tui01f/journey-runtime-dependency-view-proposal.json)列9个第三方links+1个own alias缺件、既有donor公开entry与直接依赖存在、28SQL固定hash；没有创建link/import/安装，不能视作runtime ready。实际03/04继续等待Web A→B后的串行窗口。
+
+2026-10-06 17:02 UTC：原样归档Lead运行依赖视图回执，218本地源/27实际SQL、14第三方公开入口/4 own aliases、PTY脚本/配置逐文件核对无确定缺件；未import或运行。已固定[唯一2场景入口及上限](../../docs/evidence/tui01f/journey-runtime-entry.md)。03/04仍open；现存source40508f及旧批准/raw均不改。

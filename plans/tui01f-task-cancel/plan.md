@@ -34,3 +34,5 @@
 2026-10-06 16:45 UTC：TUI01F-03已执行有界focused类型检查，修正fixture宿主身份字段；实际两场景PG/PTY仍NOT_RUN，保留03 in-progress/04 pending。见[类型检查证据](../../docs/evidence/tui01f/journey-static-validation.md)。
 
 2026-10-06 16:49 UTC：静态增量40508f已SCOPED_APPROVED；真实03/04不因源码/类型通过完成。仅列运行依赖视图提议，交Lead按后续窗口建立，未安装或运行。
+
+2026-10-06 17:02 UTC：运行links由Lead完成，固定实际factory/PTY入口文件已核齐；本轮只metadata，后续唯一命令/2选择及unknown保留边界见[journey-runtime-entry](../../docs/evidence/tui01f/journey-runtime-entry.md)。03/04尚未执行/完成；等待另定串行窗口，原建议32MiB不冒实测峰值。
