@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:15 UTC / main2e71fabc |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:22 UTC / main648e331c |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -14,7 +14,7 @@
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | ENG01A E0/E1独审通过并main；集成点新S01停止语义下3个直接PG旅程和root类型通过，本管理批不重测 |
-| 已集成main状态 / HEAD | ENG01A 040fdede227fe22504972ea7a053c23f14a30f52 已在c5bab40受控接收；当前main2e71fabc已接ENG01B a750及3a12/1c081已审接线；既有RELEASE fixture tuple导致组合root types失败正在独立窄修 |
+| 已集成main状态 / HEAD | ENG01A 040fdede227fe22504972ea7a053c23f14a30f52 已在c5bab40受控接收；当前main648e331c已接ENG01B a750及3a12/1c081已审接线；RELEASE fixture tuple独立修复并完成组合root types exit0 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/eng01-engineering-delivery, docs/evidence/eng01 |
 | 阶段 | M2 |
@@ -32,7 +32,7 @@
 | ENG001-01 | completed | Execution Lead | plan / research / source-observation / claim receipt |
 | ENG001-02 | in-progress | native_center_owner | ENG01A工作区/检查合同已main；[ENG01B执行配置](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)补用途/pin/恢复门禁 |
 | ENG001-03 | completed | native_center_owner / 独立runner_owner review | ENG01A E0+E1固定040已mainc5；真实Git/checker/PG、unknown重启/丢ACK恢复；fixture非native |
-| ENG001-04 | in-progress | native_center_owner | [ENG01B](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)，独立claim/不可变用途profile与恢复setup；旧runtime保持 |
+| ENG001-04 | in-progress | native_center_owner | ENG01B已main并释放；[ENG01C](../../../engineering-writer-settlement/plans/eng01c-writer-settlement/status.md)实施内部writer停止/unknown小接口，原生身份与受信检查仍后继 |
 | ENG001-05 | pending | 独立operator/reviewer | 无新provider许可或执行 |
 | ENG001-06 | pending | Web/TUI owner | 交付读取与接受待公开合同 |
 | ENG001-07 | pending | adapter owner | 第二harness扩展未实现 |
@@ -47,3 +47,5 @@
 2026-10-06 10:27:04 UTC：唯一生产子片为[ENG01A](../../../engineering-workspace-pipeline/plans/eng01a-workspace-pipeline/plan.md)。E0固定909b45e的8源码/17证据同源核验和源码独审通过，只涵盖受信工程收据、目标runner授权和完成门禁；10不同PG检查来自首轮9项通过与修复测试构造后的定向1项，非单轮10/10。E1真实Git/监督检查正在实施，不能把中心关联通过写成已执行工程检查或完整native交付。父计划不复制子片状态权威，不另跑测试。
 
 11:15 当前ENG01B领域与公共挂载已独审并main，fixture用途不扩为native。原ENG001-04/05/06进入后继准备，唯一worker先给native writer小接口/精确scope，Mika Codex诊断不重复；同FLOW统一读口按可用scope并行。无新provider授权，不等完整UI才做0模型准备。
+
+11:22：ENG01B canonical b0ae9ad已核main648的20源码零差并释放v3；runners.ts正式交S01P04，不被native准备预占。ENG01C已在独立树/claim v2实施8literal范围。真实执行身份与不受被测源码控制的检查报告/完整停止判定是native前置，见plan新增边界；未授权provider调用。

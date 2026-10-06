@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:57:38 UTC / mainc450c2da |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:23 UTC / main648e331c |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | mainc450c2da / 已审native目录client与实际Web发布证据 |
+| 工作基线 / HEAD | main648e331c / 工程配置、终端回复与发布类型修复已审组合 |
 | 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | native两source固定hash一致；SVC实际16证据hash核；5主线保护路径零差；132注册解析通过，不重复工程测试 |
-| 已集成main状态 / HEAD | 工程核心/原生目录及固定Web兼容证据已main；本批native薄client待fast-forward。实际个人Web8d8/caa1已发布v2，backend仍b1c/accepting v12 |
+| 检查状态 | 前批TUI29输入与ENG20来源固定一致，组合root types exit0；本批137登记解析通过，纯metadata不重跑产品 |
+| 已集成main状态 / HEAD | 工程配置与终端逐段回复已main648e331c，组合root types exit0；本批仅137来源登记与canonical收口。实际个人Web8d8/caa1已发布v2，backend仍b1c/accepting v12 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 新版网页已独立发布，后台原进程与任务保持；旧页面资源仍可读取。 |
-| 下一可用交付 | 工程配置完整启动入口与终端逐段正文，共用协议各自独立验证。 |
+| 下一可用交付 | 附件公共入口与工程writer停止边界，各自独立验证后发布。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -121,3 +121,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T10:18:50.449758+00:00：已审R05D配置与SVC04独立网页发布组合接收，18项逐文件相同、root类型检查exit0；不重跑已核72/15与原浏览器/PG。首次类型命令退出码包装失败保留，后一次独立记录exit0。个人服务不动。见[固定组合](../../docs/evidence/i02/launch-web-release-integration.json)。
 
 2026-10-06T10:22:16.377582+00:00：固定架构图2c316（源码基线f181）五执行源hash精确相同、renderer/CSS保持；126来源含TUI01B与唯一D06新树。原独审15/浏览器证据复用，不重跑。其他仅明确文档与领取交接，见[本批记录](../../docs/evidence/i02/shared-ack-architecture-integration.json)。
+
+2026-10-06 11:23 UTC：TUI01C焦点修复与ENG01B已审产品在main648，唯一owner均按receipt停写释放；runners交S01P04。137个真实来源登记及canonical收口见[批次清单](../../docs/evidence/i02/registry-137-closeout.json)。ENG01C仅writer生命周期，真实native身份/受信检查后继明确；本批不调用provider、不改变个人服务或架构固定图。

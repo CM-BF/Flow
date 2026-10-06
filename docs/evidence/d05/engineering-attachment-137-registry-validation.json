@@ -1,0 +1,168 @@
+{
+  "observedAt": "2026-10-06T11:21:28.313Z",
+  "kind": "registry-validation-only",
+  "count": 137,
+  "idsUnique": true,
+  "sources": [
+    {
+      "id": "ENG01C",
+      "title": "工程写入停止与检查边界",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-writer-settlement",
+      "branch": "codex/engineering-writer-settlement",
+      "planDir": "plans/eng01c-writer-settlement",
+      "evidenceDir": "docs/evidence/eng01c",
+      "head": "00390bbad56bc2d04eb782ffb9b9f54c1114cc43",
+      "errors": [],
+      "humanComplete": true,
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+          "id": "ENG-001",
+          "location": "../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      }
+    },
+    {
+      "id": "S01P04",
+      "title": "执行器读取与领取隔离",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence",
+      "branch": "codex/runner-read-fence",
+      "planDir": "plans/s01p04-runner-read-fence",
+      "evidenceDir": "docs/evidence/s01p04",
+      "head": "7f72deef98535bc0a74d0527762d5c9c90cfb10b",
+      "errors": [],
+      "humanComplete": true,
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md)",
+          "id": "FLOW-001",
+          "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "mika",
+          "value": "mika"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      }
+    },
+    {
+      "id": "WPF-ATTACHI01",
+      "title": "附件选择与上传恢复",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview",
+      "branch": "codex/web-attachment-input-preview",
+      "planDir": "plans/wpf-attach-i01-input-preview",
+      "evidenceDir": "docs/evidence/wpf-attach-i01",
+      "head": "d6e6eba1b9e51979c9e53994a0967076b808e2f7",
+      "errors": [],
+      "humanComplete": true,
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)",
+          "id": "WPF-MATURE-03",
+          "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      }
+    },
+    {
+      "id": "WPF-RELEASE02",
+      "title": "网页发布检查类型修正",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-type-fix",
+      "branch": "codex/web-release-type-fix",
+      "planDir": "plans/wpf-release02-tuple-types",
+      "evidenceDir": "docs/evidence/wpf-release02",
+      "head": "fed5bcdaf84c9d985ce64759c7e1dd82de8da65a",
+      "errors": [],
+      "humanComplete": true,
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+          "id": "WPF-MATURE-01",
+          "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      }
+    },
+    {
+      "id": "WPF-WORKSPACEPERF01",
+      "title": "双面板打开与切换测量",
+      "role": "技术验证",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline",
+      "branch": "codex/web-workspace-lifecycle-baseline",
+      "planDir": "plans/wpf-workspace-lifecycle-baseline",
+      "evidenceDir": "docs/evidence/wpf-workspace-lifecycle-baseline",
+      "head": "628156e199ee335ffadd22e28247f16a8887d82f",
+      "errors": [],
+      "humanComplete": true,
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md)",
+          "id": "WPF-MATURE-05",
+          "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Web /root",
+          "value": "Web /root"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      }
+    }
+  ]
+}
