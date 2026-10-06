@@ -2,7 +2,9 @@
 
 状态：NOT_STARTED
 
-待固定实现target与manifest。8个leaf，材料39+loader14=53distinct，严格局部noEmit0，54自有临时根确认删除。仅模块行为，不含center public vertical / PG / provider / runtime refs / 多版本回收。旧方向审批保留如下，不移用。
+Review target commit：2d20e35ca0019854e102cf051252675eb3f16da6
+
+[固定manifest](../../docs/evidence/x01/leaf-manifest.json)。8个leaf，材料39+loader14=53distinct，严格局部noEmit0，54自有临时根确认删除。仅模块行为，不含center public vertical / PG / provider / runtime refs / 多版本回收。旧方向审批保留如下，不移用。
 
 ---
 

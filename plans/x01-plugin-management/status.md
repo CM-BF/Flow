@@ -11,13 +11,13 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
-| 工作基线 / HEAD | c837853829f0344634df78ed7195ee7255f6b832；受控合入固定已审main7cbda706，无冲突/apps/packages零diff；后续仅设计metadata |
-| 工作树 dirty 状态 | 设计已固定；后续仅review/status/readiness metadata，实际clean由Git聚合 |
+| 工作基线 / HEAD | 受控main7cb→c837；F01依赖三blob→1c93c102；当前实现2d20e35c，后续仅交审metadata |
+| 工作树 dirty 状态 | 8leaf/source/raw已固定2d20e35c；仅packet/status metadata，实际clean由Git聚合 |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN 固定target交审绑定待写；实际本模块53/53与严格局部noEmit0已完成，证据leaf-checks.json；0PG/SDK/provider |
-| Review | NOT_STARTED 当前leaf；设计与依赖方向的历史APPROVED不移用 |
+| 检查状态 | PASSED 2d20e35ca0019854e102cf051252675eb3f16da6；53distinct与严格局部noEmit0，54own根删除；0PG/SDK/provider |
+| Review | NOT_STARTED 2d20e35ca0019854e102cf051252675eb3f16da6；设计与依赖历史审批不移用 |
 | 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；完整npm生命周期未实现 |
-| 实现目标 | 3bd1add6ef7e868765b4508e88286bd62f49edd7（仅Interface设计；无产品实现） |
+| 实现目标 | 2d20e35ca0019854e102cf051252675eb3f16da6（静态材料/真实loader leaf） |
 | 实现范围 | packages/plugin-runtime/package.json, packages/plugin-runtime/src/package-store.ts, packages/plugin-runtime/src/package-store.test.ts, apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts, fixtures/plugins/text-tool/package.json, fixtures/plugins/text-tool/index.mjs, fixtures/plugins/text-tool/flow-plugin.json |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
@@ -69,3 +69,5 @@
 2026-10-06 12:57:16 UTC：固定首tracer checkpoint以接收已审F01 f635依赖三blob。prepare/read和host为明确NOT_IMPLEMENTED stub，首真实fixture测试尚未运行；不把0tests或导入失败当red。该checkpoint不是实现交付/approval。
 
 2026-10-06 13:08:15 UTC：本树正式依赖已准备，最终53distinct/strict0与54own根清理证据固定中；见[leaf-checks](../../docs/evidence/x01/leaf-checks.json)。测试首red/中间失败均保留，fixture/header/Vitest边界修正不伪称产品回归通过。当前只有模块层真实包执行，不是完整publicvertical或native runner负载。ESM稳定URL/旧namespace不可卸载边界已写入Interface/quality，原完整升级/remove/unknown/renderer/verifier/context TODO保持。
+
+固定实现 `2d20e35ca0019854e102cf051252675eb3f16da6` 已停止源码写入，待Mika独审；[leaf-manifest](../../docs/evidence/x01/leaf-manifest.json)绑定8source、直接输入、全部阶段raw和本地tar固定运行来源。main未接本leaf；v2保留修复期。
