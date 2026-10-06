@@ -2,20 +2,20 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:33:40 UTC |
+| 最近更新时间 | 2026-10-06 16:38:55 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail |
 | Branch | codex/dashboard-summary-detail |
-| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / 6c18b81a11eece9c07dd047d28da099a0b6bbb24 |
+| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / b0e937d53a664b3398d36a080cef1a2d4225b6f3 |
 | 工作树dirty状态 | 七源码固定已提交；本记录为metadata安全点，提交后双端clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN 6c18b81a11eece9c07dd047d28da099a0b6bbb24 |
+| 检查状态 | NOT_RUN b0e937d53a664b3398d36a080cef1a2d4225b6f3 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | 6c18b81a11eece9c07dd047d28da099a0b6bbb24 |
+| 实现目标 | b0e937d53a664b3398d36a080cef1a2d4225b6f3 |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -50,3 +50,9 @@
 4fac独立源码审查为CHANGES_REQUESTED，原报告归档于[review](review.md)。后继实现固定 `6c18b81a11eece9c07dd047d28da099a0b6bbb24`，仅app/browser两文件差异；5个其余实现/测试源与15保护路径未改。领取事实用原文字节；背景同步保留详情/文档DOM、焦点、选区、阅读锚点，旧核验明确标旧，来源变化后仅显式刷新替换；专测等待准确旧响应投递及正文结算。新增同来源/来源变化自动同步回归与原scope特殊字符断言。
 
 所有运行仍NOT_RUN，不把修复声明当已关闭finding。Node拟30秒外部父runner监督，真实临时loopback HTTP、0外网/PG，1临时根内2 repo；原25秒test timeout不是资源监督。browser后置独立门槛，timer已扣启动前耗时；未执行任何Node/browser/类型检查或空间采样。RELEASE A/B仍冻结。
+
+## 2026-10-06 16:38:55 UTC 未登记领取读态修复
+
+root固定6c18源复核认可scope原文/绝对deadline修正，发现未登记claim列表仍全量重建的同类P2。本轮固定 `b0e937d53a664b3398d36a080cef1a2d4225b6f3`，仅app/browser两源后继差异。按claimId保原DOM与展开/焦点/选区，显示指纹不成为账本；新version/content到达不替换正在阅读的范围，明确旧观察并提供显式更新。unknown或从当前列表消失也不伪称released；关闭并离开旧详情后可丢弃其阅读节点。加入100 scope完整选择、自动同步、版本变化/显式更新/unknown/消失回归。
+
+仍0产品import/测试/浏览器/PG/free；原Node30秒预算全未用。6c18及4fac来源manifest保留，当前七源见唯一manifest，独审待新delta复核。

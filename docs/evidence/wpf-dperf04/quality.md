@@ -15,3 +15,7 @@
 依据root与workspace_panels_owner固定4fac报告处理三P2。app复用sameSource比较和retainDetail通知，避免重建/恢复焦点的补丁；旧观察与当前summary分开，assignment raw事实不走展示清洗；显式导航/refresh仍沿openTask唯一入口。browser只新增四个精确response ID的投递/正文结算小接缝，无网络框架，失败有可等待结果；保原否定断言并增加真实DOM节点/选区/焦点/阅读锚点、来源改变和原scope字符串检查。deadline以绝对started计算，准备耗时不获额外时间。
 
 静态git diff --check通过；5个未变源和15保护路径0diff，Node/browser/语法/类型/产品import全部0运行。review保留CHANGES_REQUESTED待后继复审；没有依据源修复提前关闭动态风险。当前新target见manifest，后置Node需父runner实际PGID/loopback与cleanup监督；此段没有运行空间采样。
+
+## 2026-10-06 16:38:55 UTC 领取阅读补修 clean-code
+
+新增create/update/renderClaimReading三个小职责，当前事实只读snapshot；DOM原事实指纹仅为避免重复替换。未变化行不move、不replace；变更与unknown显式标旧，用户更新后焦点回summary。关闭/离开旧观察才移除，不把缺记录解释成释放。保持原reader、PG权威、三server模块不动；专测新增100项完整scope选区与原节点/焦点、显式更新与unknown/缺失路径。源diffcheck0，所有行为NOT_RUN；资源准入与当前候选复审未完成。
