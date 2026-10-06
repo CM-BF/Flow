@@ -17,7 +17,7 @@
 - [x] **L01-01** 薄client上的submit/list/show/detail/events与注册
 - [x] **L01-02** watch重连、决策与取消、稳定退出语义
 - [x] **L01-03** JSON输出、使用说明与公开CLI测试
-- [ ] **L01-04** clean-code、独立review与提交交付
+- [x] **L01-04** clean-code、独立review与提交交付
 
 ## 验证和交付
 
