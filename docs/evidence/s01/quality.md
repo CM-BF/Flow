@@ -35,3 +35,6 @@
 2026-10-06 07:51 UTC 方案review修正：核真实FlowClient.claim、server空body route及ClaimResponse，确认无请求身份回执；将模糊“恢复协议”替换为现有保守unknown停admission与后继窄接口的明确边界。lease expiry/本地Map/不同task均不当原claim恢复证据；无代码/契约/DB变更，不运行工程测试，继续复用固定clean-code与codebase-design。
 
 2026-10-06 07:55 UTC 只读review补记：worker对fc5351提案未见P1/P2，发现实施时持久化顺序需前置；owner只改原plan一段以覆盖crash-before-unknown记录，保持proposal/现有能力分离。无代码或测试变更。
+
+
+2026-10-06 09:01 UTC 安全收口：沿用本地find-skills、clean-code与codebase-design（用户固定sickn33来源bdacd76）。本段仅S01状态/质量两文档，复核当前与历史命名、唯一owner、父级归属、已集成与运行事实、失败/预算保存。修正当前表格仍称S01P01待验收的过期描述，补独立大task指针且不复制TODO；原实验/原始证据和预算不变。无工程测试，检查status解析、diff范围与链接。未解决项是入口参数与ACK/browser验收，不以新任务优先级删除它们。

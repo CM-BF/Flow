@@ -2,8 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:51 UTC；父实验main事实保留，S01P01后继已核main d7e1e64 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:01 UTC；父实验main事实保留，S01P01集成d7e1e64已核，最新main9d6bd45 |
 | Plan | [plan.md](plan.md) |
+| 所属大task | FLOW-001（[架构主计划](/Users/citrine/Projects/AgentHarness/Flow/plans/flow-001-architecture/plan.md)） |
+| co-lead | mika |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
@@ -11,14 +13,14 @@
 | 工作树dirty状态 | 固定结果0dac4b92747db5a3c8ed2dc25301e7cbecc2e8bf clean，后继仅独审/状态/报告说明metadata |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 2ab：11纯统计/预算/参数tests，noEmit0；W2实跑12tasks/12attempts且正常清理，结果0dac独审APPROVED |
-| 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01产品实现仍独立待验收 |
+| 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | 实现目标 | 2ab7967f2eb808fecd1205f7552a119eee8e0b36 |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 4 |
 | 当前产出 | 串行瓶颈的实验已交付；并发核心及兼容修复已进入主线 |
-| 下一可用交付 | 本实验片段已交付；后继将接通启动并发参数，再补丢回执和关闭浏览器的验收 |
+| 下一可用交付 | 本实验片段已交付；后继入口参数与恢复验收保留，当前优先接通Claude/Codex能力和上下文透明度 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，W2准备2ab与结果0dac均APPROVED；W1已批准并集成 |
@@ -101,3 +103,11 @@ W1证明本机四个独立fixture runner可同时执行该固定负载，没有S
 Root已确认S01P02最小入口方向：省略并发参数为1，显式整数1..16；注册容量独立，A2A显式非1须明确拒绝，无效输入在网络之前拒绝。独立树/claim与主线精确基线由Lead协调，尚未领取或实施，不由方案冒称已开工。ACK2仍要求真实loopback代理的到中心前/提交后丢响应边界；browser2必须关闭独有浏览器进程。旧child的lastClaim单变量不能用于新pool并发计量，后继需稳定attempt映射；历史结果不改写。fresh账本08:43:40 available确认本claim v1 ACTIVE且三scope不变。本次仅父状态/质量metadata，等待既有聚合器展示，不重复dashboard采样或工程测试。
 
 2026-10-06 08:51 UTC 后继主线与资源交接：S01P01固定48b73544已进入main/origin d7e1e64e7792f4d1ad4933db042f10f266ad0cca，Lead完整root noEmit0；Mika只读核7source与固定target相等。原owner停写后受runtime thread limit影响无法唤醒，Root指定Mika管理接收；按Lead正式handoff v2→accept v3→status单文件amend v4完成最终metadata，1c438be2d152a7b6b3b2f5a6883852dd4b2d7a7d clean/已push，08:49:27 claim v5 RELEASED，无产品/测试/raw修改。父实验原预算不变，启动入口和个人服务部署未由核心接收推断。08:50:11 fresh账本确认main.ts/configuration.ts已由R05 claim3f2622a4 v1占用，S01P02只读候选等待跨lead范围安排，未take或开工；已发一次接口/范围协调，不抢写。父claim08:50:56复核仍v1 ACTIVE。进度以唯一status供dashboard聚合，不为普通metadata重复发消息或测试。
+
+## 2026-10-06 09:01 UTC 安全停点与后继归属
+
+S01P01独立owner管理收口已完成：唯一分支HEAD `1c438be2d152a7b6b3b2f5a6883852dd4b2d7a7d` 已push/clean；其claim于08:49:27.075Z正式release v5，原树停止写入。父S01自己的3scope仍由本owner合法保留，冻结实验与已用44 tasks/38 attempts、20.925025秒不变；没有新负载/工程测试/provider调用。
+
+GO新大task的用户目标优先：WPF-MATURE-02唯一source为 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/status.md`，owner chatui01_owner；WPF-MATURE-04为 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md`，owner architecture_read；co-lead均mika。两项是独立大task，S01不是其父级，不在本文件复制其TODO或进度。
+
+S01P02仍未take/实现；所需main入口由R05 owner持有，后继应通过独立配置module及其main接线合同协调，不争夺路径。ACK/browser各2的窗口和方法仍保持未执行。此停点只更新合法owner的事实与大task关联，main集成不等于个人服务或provider并发验收。
