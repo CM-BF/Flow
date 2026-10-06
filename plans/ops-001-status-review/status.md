@@ -20,7 +20,7 @@
 | 优先级 | 5 |
 | 当前产出 | 个人后台与新版网页已更新，原数据和旧网页资源保留；正在回收已结束工作的可恢复副本，恢复后续验证余量。 |
 | 下一可用交付 | 恢复足够磁盘余量后验证事务连接修复，再接终端与网页双端接续；监督模块已进主线，首个实际恢复包装器正在独审。 |
-| 当前阻塞 | ACTIVE: 最新结束观察约1.18GB可用，仍低于共享HTTP/浏览器验证门槛；完整后台固定产物仍需2.5GiB。个人发布旧intent已解除，其他检查按真实增量单独准入。 |
+| 当前阻塞 | ACTIVE: 最新结束观察约1.156GB可用，仍低于共享HTTP/浏览器验证门槛；完整后台固定产物仍需2.5GiB。个人发布旧intent已解除，其他检查按真实增量单独准入。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -319,3 +319,5 @@ MESSAGESETTINGS02 仅该新树的 Git/source-only 权限已明确委托 Web mana
 OPS14 两个实际wrapper通过精确4482字节源码供给后由唯一owner实施；[供给](../../docs/quality/ops14-wrapper-source-provision.json)与[两literal sparse包括](../../docs/quality/ops14-wrapper-sparse-includes.json)保持源码/hash、共享及其他树配置。初次add误用不支持的--no-cone在解析阶段exit129，按help修正为继承已存在non-cone模式，未覆写产品。首consumer固定12c60，原2直接检查通过，独立审查中；没有实际恢复服务/PG/Chrome或模型调用。
 
 资源下一有界只读候选为workspace-cache真实依赖恢复完整性；未授权删除依赖，既有cache许可不扩大。唯一监督模块的SVC07真实consumer仍是下一版本，当前已审待运行候选不变。
+
+2026-10-06 22:11 UTC：已独审chat单缓存operator仅目标/审计文件名收窄，fresh全部身份/ledger/consumer/文件hash后实际COMPLETE，60文件/17,530,080逻辑字节；卷观察1,138,155,520→1,155,792,896（+17,637,376B，非独占APFS归因）。[结果](../../docs/quality/vite-cache-2026-10-06/retired-two/web-conversations-cleanup.json)与[独审](../../docs/quality/vite-cache-2026-10-06/retired-two/independent-operator-review.json)。Activity缓存因其他预览消费者仍KEEP；无真实依赖/源码/证据删除，无服务操作。距离1,207,959,552共享线仍缺52,166,656B，此结束值不作未来准入。workspace-cache的精确依赖恢复审计继续，仅已有本地固定来源，未删除或安装。

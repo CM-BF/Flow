@@ -1,0 +1,146 @@
+{
+  "reviewer": "assignment_review",
+  "reviewedAt": "2026-10-06T22:06:51.375880+00:00",
+  "verdict": "OPERATOR_APPROVED_EXECUTION_REQUIRES_EXACT_MANAGER_CONFIRMATION_AND_FRESH_GATES",
+  "findings": [],
+  "operator": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-two/cleanup-chat.py",
+    "bytes": 6338,
+    "sha256": "ef018683e44d17cbd514be8790dafde87b9ce9902abbd2b320ef69dbeb985979"
+  },
+  "previousApprovedOperator": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/cleanup-two.py",
+    "bytes": 6385,
+    "sha256": "613ce810e0dde080f3269649dc1d9e9b8b77cc50fd2ad4b3e13266f6cfa11710"
+  },
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/cleanup-two.py",
+      "bytes": 6385,
+      "sha256": "613ce810e0dde080f3269649dc1d9e9b8b77cc50fd2ad4b3e13266f6cfa11710"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-two/cleanup-chat.py",
+      "bytes": 6338,
+      "sha256": "ef018683e44d17cbd514be8790dafde87b9ce9902abbd2b320ef69dbeb985979"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-two/audit.json",
+      "bytes": 42178,
+      "sha256": "51d98aeb58e7d62c46678b3e6fc2cb3f4c82321996864dca30c23d12e58648cb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-two/intake.json",
+      "bytes": 1031,
+      "sha256": "a73c4af9e527a26c57dfcc020b1008be7c3cea88c484405112981892fcea0358"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-two/owner-retirement-receipt.json",
+      "bytes": 3269,
+      "sha256": "7173fbaf15bf5d86977375c8f47ef76b6664b4462ccf9a232ccc518df81fab52"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-two/manager-confirmation.json",
+      "bytes": 563,
+      "sha256": "d352e9dc6603f67cad98302b78974cc72c8cd37478a71f786dedf3d2b46ed95d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-two/web-lead-handoff-current.json",
+      "bytes": 3102,
+      "sha256": "b3bef8a187f2088d65d4d767a97f06e9f25471355004a3b997884b1c0df49f6a"
+    }
+  ],
+  "bindingMode": "Read-only current file hashes; retired-two records are uncommitted preparation in authority worktree, not represented as a clean fixed delivery.",
+  "delta": {
+    "exactReplacementMatch": true,
+    "logicalChanges": [
+      "NAMES is the one-element tuple web-conversations",
+      "audit filename and recorded audit digest now use audit.json"
+    ],
+    "allOtherBytesUnchanged": true
+  },
+  "candidate": {
+    "tree": "web-conversations",
+    "headFromSavedAudit": "c057d9a9326e6cb57b235bbf4a33463fe989c9c0",
+    "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/apps/web/node_modules/.vite",
+    "rootDevIno": [
+      16777234,
+      117543190
+    ],
+    "files": 60,
+    "logicalBytes": 17530080,
+    "uniqueRelativePaths": 60,
+    "allPathsDirectDepsLeaves": true,
+    "allRegularNlink1FromSavedAudit": true,
+    "fileListSha256": "8954269e9a1e36f9729e9a8a4b3b0600d4e147cd65cede1d63b89598f06f8a2f",
+    "claimsFromSavedAudit": [
+      {
+        "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+        "version": 7,
+        "state": "released"
+      },
+      {
+        "claimId": "da159c3d-c518-41d7-a94b-6919e9180fcf",
+        "version": 2,
+        "state": "released"
+      }
+    ]
+  },
+  "preservedGuards": [
+    "Exact fixed worktree and .vite path; saved HEAD, clean worktree and untracked cache assertion.",
+    "Fresh available coordination ledger; any non-released claim rejects. Fresh bounded lsof must show no output/error and process command snapshot must not reference worktree.",
+    "All saved parent and cache directory dev/ino plus lstat directory type; symlink parents reject. Exact leaf set, 60 files and bounded aggregate size.",
+    "Each file must be regular, nlink1, exact dev/ino/size and SHA before action. Parent/file identity rechecked immediately before exact unlink. No recursive directory deletion.",
+    "Real dependency siblings recorded before and compared after; original HEAD and clean status rechecked. No service signals.",
+    "Exact manager-confirmation.json must exist and name this candidate before any mutation. It is hashed into the durable intent.",
+    "Fresh free-space threshold can return NOT_RUN_PREPARE_MARGIN_REACHED; logical file bytes are not promised physical reclaim.",
+    "Exclusive intent file is flushed/fsynced and its parent directory fsynced before first unlink. Existing result or intent prevents reuse.",
+    "Partial mutation records UNKNOWN_PARTIAL_KEEP and preserves original primary error. Space-observation failure is separate and cannot replace primary failure or imply restored margin.",
+    "Exclusive result persistence failure emits UNKNOWN_RESULT_PERSISTENCE and preserves primary failure; no automatic retry."
+  ],
+  "managerConfirmation": {
+    "wasInitiallyMissing": true,
+    "nowPresent": true,
+    "handoffHashMatches": true,
+    "ownerRetirementHashMatches": true,
+    "chatHeadMatches": true,
+    "eligibleExactCaches": [
+      "web-conversations"
+    ],
+    "strictKeep": [
+      "web-conversation-activity"
+    ],
+    "meaning": "Current archived manager handoff permits only Lead final-fresh exact chat cache candidacy. It does not replace actual execution-time guards or authorize broader cache/dependency/service changes."
+  },
+  "strictKeep": {
+    "tree": "web-conversation-activity",
+    "verdict": "KEEP_ACTIVE_CONSUMER",
+    "observedConsumerPid": 15811,
+    "observedPorts": [
+      51452,
+      51453,
+      51454
+    ],
+    "excludedFromNames": true,
+    "action": "KEEP; separate active consumer was not retired by the old53851 retirement."
+  },
+  "evidenceLimits": [
+    "Retirement receipts preserve original exit143 and bounded absent observations, not exit0 or proof all asynchronous cleanup completed.",
+    "No fresh process, ledger, filesystem-body or free-space sampling was performed by this reviewer. Saved audit claims remain point-in-time facts.",
+    "No deletion, imports, tests, PG or personal-service action was executed. This is operator review, not a cleanup result.",
+    "All source/tests/rules/plans/raw evidence/real package dependencies and other node_modules content remain outside the allowed deletion list."
+  ],
+  "skills": {
+    "findSkills": "Existing local skills selected; no installation/search needed.",
+    "cleanCode": "Full delta/interface, single exact operation, error and persistence ordering reviewed.",
+    "codebaseDesign": "Reused already-reviewed operator behavior; no additional cleanup framework."
+  },
+  "activity": {
+    "projectMutations": 0,
+    "operatorExecuted": false,
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "cleanup": 0
+  }
+}
