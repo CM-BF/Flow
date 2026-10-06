@@ -1,0 +1,139 @@
+{
+  "at": "2026-10-06T20:12:18.345Z",
+  "runtimeWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+  "servingMain": "ce41c1d8",
+  "count": 174,
+  "snapshotSha256": "6660aa6e9c495bcd6aba86259556d9910a9be1301d092095661b070a709d2ecd",
+  "selected": [
+    {
+      "id": "SVC07",
+      "mode": "live",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "事务连接失效的保护修复已通过定向验证和独立审查",
+        "next": "完成隔离的真实连接与直接消费者验证，再将修复纳入主线",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "SVC05R01",
+      "mode": "live",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "两份保留页面已通过新后台的实际读写与中断恢复兼容检查，自有资源已清理；独立审查已通过，尚未个人发布。",
+        "next": "本片段已交付；个人后台和网页发布由SVC05H独立操作窗口推进。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "TUI-001",
+      "mode": "live",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "终端显式取消、原请求恢复和退出不取消后台任务已通过真实中心与终端验证并进入主线。",
+        "next": "由同组worker接续同一会话的真实终端→网页→终端旅程；网页呈现与后台合同继续独立交付。",
+        "blocker": {
+          "state": "unknown",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [
+          "当前阻塞"
+        ],
+        "complete": false
+      }
+    },
+    {
+      "id": "OPS-001",
+      "mode": "live",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 5,
+        "output": "原中心与网页保持可用；两份旧网页通过候选后台兼容检查，三项后端实施已获得所需源码。",
+        "next": "准备固定兼容版本的个人更新；共享验证按已审就绪顺序交接，后台实现并行继续。",
+        "blocker": {
+          "state": "active",
+          "text": "完整目标旅程及后续发布仍有各自验收；磁盘逐次准入，大构建原门槛保持。源码准备不再阻塞三项后端实现。"
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "I02",
+      "mode": "live",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "两份保留网页与候选后台的兼容证据已独审通过，三项后端实施源码准备完成。",
+        "next": "本批已交付；个人固定版本更新准备与终端、网页接续driver并行继续。",
+        "blocker": {
+          "state": "unknown",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [
+          "当前阻塞"
+        ],
+        "complete": false
+      }
+    }
+  ],
+  "followup": "TUI/I02 NONE with explanatory suffix was conservatively unknown; owner changed exact field to NONE after this observation; no engine change/retest."
+}

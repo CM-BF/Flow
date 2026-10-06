@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:09 UTC / main1126ada4 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:16 UTC / maince41c1d8 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -13,14 +13,14 @@
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
-| 已集成main状态 / HEAD | main/origin aca6e892一致且clean，173源19:49实际聚合；个人中心已同版本恢复，source362/v15、Web8d8/v2保持 |
+| 已集成main状态 / HEAD | main/origin ce41c1d8一致且clean，174源20:12实际聚合；R01结果已接收，个人中心source362/v15、Web8d8/v2保持 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 两份保留网页与候选后台的兼容证据已独审通过，三项后端实施源码准备完成。 |
 | 下一可用交付 | 本批已交付；个人固定版本更新准备与终端、网页接续driver并行继续。 |
-| 当前阻塞 | NONE；个人中心恢复窗口已关闭，未完成的实际页面兼容/完整目标旅程在各权威任务继续。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -239,3 +239,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T20:01:59.305499+00:00：两份保留实际App与af51的固定tuple已独立只读批准，53绑定和原始丢ACK恢复wire相符；[受控接收](../../docs/evidence/i02/retained-web-result-integration.json)仅证据/状态，不重新运行工程或模型。三新worktree源码供给事实同批接收，实施须各owner fresh take。个人runtime仍362/v15与Web8d8/v2，未导入报告或部署新版。
 
 2026-10-06 20:09 UTC：R01固定证据与OPS源码准备已main1126；原owner按内容接收收口并release。TUI父摘要按已有真实HTTP/PTY和17:57main证据纠正，完整双端仍open；已正式交接native_center_owner继续04。af51/d629[发布方案独审](../../docs/evidence/i02/af51-d629-release-plan-review.json)限定通过4记录/41固定输入；实际执行入口的小差异和fresh窗口仍需核对，不冒已上线，无新测试/provider。
+
+2026-10-06 20:16 UTC：174来源已在稳定I02工作树实际服务，见[聚合回执](../../docs/evidence/i02/dashboard-174-source-receipt.json)。TUI父状态已承接F-03真实取消/PTY证据并明确F-04在实施；仅修正严格NONE字段，无产品测试/个人服务动作。SVC07源码已独审，真实消费者验证由Mika排入共享窗口。
