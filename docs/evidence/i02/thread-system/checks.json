@@ -1,0 +1,50 @@
+{
+  "startedAt": "2026-10-06T02:31:41.602Z",
+  "status": "failed",
+  "paidModelCalls": 0,
+  "database": "flow_web_i01",
+  "node": "v24.20.0",
+  "events": [
+    {
+      "name": "center ready",
+      "at": "2026-10-06T02:31:42.388Z",
+      "url": "http://127.0.0.1:63002",
+      "pid": 80007
+    },
+    {
+      "name": "whole browser opened",
+      "at": "2026-10-06T02:31:43.824Z",
+      "pid": 80008
+    }
+  ],
+  "cli": [],
+  "browsers": [
+    {
+      "pid": 80008,
+      "openedAt": "2026-10-06T02:31:43.824Z",
+      "closedAt": "",
+      "exitCode": null,
+      "signalCode": null
+    }
+  ],
+  "pageErrors": [],
+  "webUrl": "http://127.0.0.1:63003/",
+  "centerUrl": "http://127.0.0.1:63002",
+  "probePid": 79634,
+  "error": "locator.selectOption: Error: strict mode violation: getByLabel('Execution backend') resolved to 2 elements:\n    1) <select aria-label=\"Execution backend\">…</select> aka getByLabel('Execution backend').first()\n    2) <select aria-label=\"Execution backend\">…</select> aka getByRole('region', { name: 'New chat' }).getByLabel('Execution backend')\n\nCall log:\n\u001b[2m  - waiting for getByLabel('Execution backend')\u001b[22m\n\n    at submit (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/scripts/web-system-probe.ts:97:48)\n    at async run (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/scripts/web-system-probe.ts:132:16)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/scripts/web-system-probe.ts:22:3)",
+  "cleanupErrors": [],
+  "finishedAt": "2026-10-06T02:31:44.013Z",
+  "sourceHead": "72278b22ae81f551dc13d68da2fb45f2ef182038",
+  "sourceHashes": {
+    "scripts/web-system-probe.ts": "9e07c6385669746e634c42bd0c29a1e2028e1fff9fa83127132fe7b75667c7ec",
+    "apps/web/src/App.tsx": "a42b961278eb0d573c4ef15e3e6848ccf9428e76ae1702a638629d082a469b6c",
+    "apps/web/src/projection.ts": "a7ded9d76ae19fddf181f0fa8dcef1ffd4243d72fcfc33769951087efacf91ec",
+    "apps/server/src/index.ts": "db45a5cf70e91e5f8abab9bc0415489e073a686f55a2dc955ee1cd01dc39ac26",
+    "apps/runner/src/fixture.ts": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+  },
+  "limits": [
+    "Real PostgreSQL, center, Web and independent runner/CLI/browser processes; deterministic adapter only",
+    "Queued center restart, not transparent recovery of an active native query",
+    "No new native model calls, cross-host validation, database power loss or capacity/SLO claim"
+  ]
+}

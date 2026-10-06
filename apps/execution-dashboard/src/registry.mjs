@@ -24,6 +24,8 @@ const assignments = [
   ['P01', '协议互操作', '工作线', 'protocol-adapters', 'p01-protocols'],
   ['D03', '进度的人类视图', '工作线', 'dashboard-human-view', 'd03-dashboard-human'],
   ['WPF-001', 'Web 平台持续执行', '工程协作', 'web-platform-management', 'web-platform'],
+  ['WPF-M02', 'Web统一工作入口', '工作线', 'web-unified-workspace', 'wpf-m02-web-workspace'],
+  ['WPF-P01', 'Web插件宿主', '工作线', 'web-plugin-host', 'wpf-p01-plugin-host'],
   ['M02', '统一工作入口', '工作线', 'm2-workspace', 'm02-unified-workspace'],
 ];
 

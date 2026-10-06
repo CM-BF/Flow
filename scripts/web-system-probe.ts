@@ -68,7 +68,7 @@ async function run() {
     const page = await browser.newPage({ viewport: { width: 1440, height: 1050 } });
     page.on('pageerror', error => (evidence.pageErrors as string[]).push(error.message));
     await page.goto(url);
-    await expect(page.getByRole('heading', { name: 'Connect your workspace' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Connect to Flow' })).toBeVisible();
     await page.getByLabel('Owner token').fill(token);
     await page.getByRole('button', { name: 'Connect workspace' }).click();
     const record = { pid: server.process().pid, openedAt: new Date().toISOString(), closedAt: '', exitCode: null as number | null, signalCode: null as NodeJS.Signals | null };
@@ -87,21 +87,22 @@ async function run() {
   };
   const screenshots = async (page: Page, state: string) => {
     for (const theme of ['light', 'dark']) {
-      await page.getByLabel('Color theme').selectOption(theme);
+      if (await page.locator('html').getAttribute('data-theme') !== theme) await page.getByRole('button', { name: `Use ${theme} theme` }).click();
       await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
       await page.screenshot({ path: join(output, `${state}-${theme}.png`), fullPage: true });
     }
   };
   const submit = async (page: Page, scenario: string) => {
-    await page.getByRole('button', { name: 'New task', exact: true }).click();
-    await page.getByLabel('Execution backend').selectOption('fixture');
-    await page.getByLabel('Fixture scenario').selectOption(scenario);
+    await page.locator('.flow-workspace-bar button[aria-label="New chat"]').click();
+    const pane = page.locator('.flow-tab-body:not([hidden])');
+    await pane.getByLabel('Execution backend').selectOption('fixture');
+    await pane.getByLabel('Fixture scenario').selectOption(scenario);
     const accepted = page.waitForResponse(response => response.request().method() === 'POST' && new URL(response.url()).pathname === '/api/tasks');
-    await page.getByRole('button', { name: 'Create task', exact: true }).click();
+    await pane.getByRole('button', { name: 'Create task', exact: true }).click();
     const response = await accepted;
     assert.equal(response.status(), 202);
     const body = await response.json();
-    await expect(page.locator('.identifier')).toHaveText(body.task.id);
+    await expect(page).toHaveURL(new RegExp(`#task=${body.task.id}$`));
     event('Web durably accepted', { taskId: body.task.id, httpStatus: response.status(), harness: body.task.harness });
     return body.task.id as string;
   };
@@ -130,7 +131,7 @@ async function run() {
     let client = new FlowClient({ baseUrl, token });
     const first = await openBrowser(webUrl);
     const id = await submit(first.page, 'decision');
-    await expect(first.page.locator('.task-header .status-queued')).toBeVisible();
+    await expect(first.page.locator('.flow-status.status-queued')).toBeVisible();
     await screenshots(first.page, 'queued');
     await first.close();
     // Restart while still queued: this tests persisted acceptance without promising active SDK recovery.
@@ -163,23 +164,26 @@ async function run() {
     const second = await openBrowser(`${webUrl}#task=${id}`);
     const detailRequests: string[] = [];
     second.page.on('request', request => { if (request.url().includes('/api/details/')) detailRequests.push(request.url()); });
-    await expect(second.page.locator('.identifier')).toHaveText(id);
-    await expect(second.page.locator('.task-header .status-succeeded')).toBeVisible();
+    await expect(second.page).toHaveURL(new RegExp(`#task=${id}$`));
+    await expect(second.page.locator('.flow-status.status-succeeded')).toBeVisible();
     await expect(second.page.locator('.verification-passed')).toBeVisible();
     assert.equal(detailRequests.length, 0);
     await screenshots(second.page, 'reconnected-completed');
     await second.page.getByRole('button', { name: /Fixture result/ }).click();
-    await expect(second.page.getByLabel('Fixture result content')).toHaveText(artifact.content.trim());
-    await expect(second.page.locator('.version code')).toHaveText(artifact.artifactVersion!);
+    await expect(second.page.locator('.flow-workspace-detail-content:visible')).toHaveText(artifact.content.trim());
+    await expect(second.page.locator('.flow-workspace-artifact-meta:visible dd').first()).toHaveText(artifact.artifactVersion!);
     assert.equal(detailRequests.length, 1);
     await second.page.getByRole('button', { name: /Verification passed/ }).click();
-    const displayedVerification = second.page.getByLabel('Verification passed content');
+    const displayedVerification = second.page.locator('.flow-workspace-detail-content:visible');
     await expect(displayedVerification).toContainText(artifact.artifactVersion!);
     await expect(displayedVerification).toContainText(JSON.parse(verification.content).inputDigest);
     assert.equal(JSON.parse(await displayedVerification.innerText()).result, 'passed');
     assert.equal(detailRequests.length, 2);
     await screenshots(second.page, 'artifact');
     await second.page.setViewportSize({ width: 390, height: 844 });
+    await second.page.getByRole('button', { name: 'Hide chat list' }).click();
+    await expect(second.page.locator('.flow-sidebar')).toHaveCount(0);
+    await expect(displayedVerification).toBeVisible();
     assert.equal(await second.page.locator('body').evaluate(element => element.scrollWidth), 390);
     await second.page.screenshot({ path: join(output, 'artifact-dark-narrow.png'), fullPage: true });
     evidence.detailRequestsBeforeExpansion = 0;
@@ -198,7 +202,7 @@ async function run() {
     const cancelledDetails = await Promise.all(cancelled.entries.filter(entry => entry.kind === 'reference').map(entry => client.detail(entry.reference.id)));
     assert.equal(cancelledDetails.filter(detail => detail.kind === 'artifact').length, 0);
     const third = await openBrowser(`${webUrl}#task=${cancelId}`);
-    await expect(third.page.locator('.task-header .status-cancelled')).toBeVisible();
+    await expect(third.page.locator('.flow-status.status-cancelled')).toBeVisible();
     await screenshots(third.page, 'cancelled');
     await third.close();
     evidence.cancellation = { taskId: cancelId, attemptId: cancelled.attempt!.id, status: cancelled.status, artifacts: 0 };
