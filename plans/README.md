@@ -84,7 +84,7 @@ M1最终独立APPROVED target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真�
 
 新增唯一source O01：`Flow-worktrees/goal-orchestration/plans/o01-goal-orchestration/`；WPF-PERF01：`Flow-worktrees/web-performance/plans/wpf-perf01-web-performance/`。二者已收到committed claim；各Lead可对无冲突ready scope自助take，进度仍只维护owner status。registry共30来源，数量为本次登记事实而非每份plan均已完成。
 
-[D05架构视图](d05-architecture-view/plan.md) 已独立审查，等待4320切换；五视图依据固定main3773db5，独立status/review与领取记录。产品预览49922明确为已审M02 HTTP fixture，不称main生产服务。
+[D05架构视图](d05-architecture-view/plan.md) 已独立审查、集成并部署4320；五视图依据固定main3773db5，独立status/review与领取记录。产品预览49922明确为已审M02 HTTP fixture，不称main生产服务。
 
 [X01完整插件管理计划](x01-plugin-management/plan.md) 已按c21731c独立文档审查通过；[status](x01-plugin-management/status.md) / [review](x01-plugin-management/review.md)。产品生命周期、npm宿主与隔离仍待实施，Web trusted host不等于完整插件管理。
 
