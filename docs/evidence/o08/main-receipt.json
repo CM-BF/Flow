@@ -1,0 +1,41 @@
+{
+  "observedAt": "2026-10-06T07:22:47.831097+00:00",
+  "acceptedMain": "253b8ad38fd869297e7d9948a26c1d310fef5c6c",
+  "originConfirmedBy": "Execution Lead MAIN_ACCEPTED receipt",
+  "ancestors": {
+    "7403b56b98070848c189c2d36663cb89846977be": true,
+    "75ff3a5c566839c732c3ad11577d801972c3b345": true,
+    "acaa2ab8394dc69e66a471e9e7d1a93d588baf78": true
+  },
+  "sourceScope": "experiments/native-graph-acceptance/",
+  "sourceDiff": [],
+  "sealedFiles": {
+    "docs/evidence/o08/native-20261006-071420.json": {
+      "bytes": 32735,
+      "sha256": "af00249d20bf2715460e33f4596fd0faf7a9cb9b8b31a05fb975f1aa1098ee5a",
+      "mainEqualsOwner": true
+    },
+    "docs/evidence/o08/native-manifest.json": {
+      "bytes": 5273,
+      "sha256": "ebb7e8e07c9b67139b3d6f2e77d66f3a8c4a5ce5cbfce97ad84b01b59a401a37",
+      "mainEqualsOwner": true
+    },
+    "docs/evidence/o08/native-analysis.json": {
+      "bytes": 2707,
+      "sha256": "343cbc0ad6855ed987677245038d5f306aae7ec52d4ac536800c67449b87c06b",
+      "mainEqualsOwner": true
+    },
+    "docs/evidence/o08/native-permit-20261006-071420.json": {
+      "bytes": 755,
+      "sha256": "a88b36061e9312afc003cf4e6378f06905a8e571ae868dcd76ff0b53eefe98f7",
+      "mainEqualsOwner": true
+    }
+  },
+  "checksRerun": false,
+  "newQueries": 0,
+  "claimBeforeRelease": {
+    "id": "1303ae5c-a76a-46cd-bd77-a5abbc5f34e4",
+    "version": 1
+  },
+  "remaining": "O08-06 low-priority oracle follow-up; no new authorization"
+}
