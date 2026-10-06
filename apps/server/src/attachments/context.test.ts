@@ -10,10 +10,18 @@ import { parseAttachmentContextReceipt } from '../../../../packages/contracts/sr
 import { runRunner } from '../../../runner/src/runtime.js';
 import { expireLeases } from '../runners.js';
 import { promoteReady } from '../conversation-queue/promotion.js';
-import { cleanupExpiredAttachments } from './storage.js';
+import { attachmentCapabilities, cleanupExpiredAttachments } from './storage.js';
 import { startAttachmentFixture } from './fixture.js';
+import { createProject } from '../projects/commands.js';
+import { createConversation, admitTurn } from '../conversations/commands.js';
+import { conversationSnapshot } from '../conversations/queries.js';
+import { createSource } from '../knowledge/storage.js';
+import { enqueue } from '../conversation-queue/commands.js';
+import { contextDetail } from '../conversation-context/store.js';
+import { conversationCreationSchema, conversationTurnSchema } from '../../../../packages/contracts/src/conversations.js';
+import { conversationQueueEnqueueSchema } from '../../../../packages/contracts/src/conversation-queue.js';
 let f: Awaited<ReturnType<typeof startAttachmentFixture>>;
-beforeAll(async () => { f = await startAttachmentFixture('context-runtime', false); });
+beforeAll(async () => { f = await startAttachmentFixture('context-runtime'); });
 afterAll(async () => { await f?.close(); });
 async function conversation(projectId?: string) {
   const response = await f.http('/api/conversations', { title: 'Attachment context', ...(projectId ? { projectId } : {}) });
@@ -32,20 +40,59 @@ async function stopPending() {
 }
 
 test('before 026 plain/knowledge remain v1; migration preserves saved receipts and enables project GET only', async () => {
-  const projectId = await f.project(); const id = await conversation(projectId); const citation = await knowledge(projectId);
-  expect((await f.http(`/api/conversations/${id}`)).body.capabilities.attachmentContext).toBe(false);
-  expect((await f.http(`/api/projects/${projectId}/attachments/capabilities`)).status).toBe(409);
-  const body = { expectedQueueRevision: 0, text: 'legacy source', knowledge: [citation] }; const key = randomUUID();
-  const old = await f.http(`/api/conversations/${id}/queue`, body, { key }); expect(old.status).toBe(202); expect(old.body.item.context.templateVersion).toBe(1); expect(old.body.item.context).not.toHaveProperty('attachments');
-  const detail = await f.http(`/api/conversations/${id}/contexts/${old.body.item.context.id}`); expect(detail.body).not.toHaveProperty('templateVersion'); expect(detail.body.sources[0].text).toBe('knowledge-first');
-  const legacySendId = await conversation(projectId); const sendKey = randomUUID(); const sendInput = { expectedRevision: 0, text: 'legacy send', knowledge: [citation] };
-  const legacySend = await f.http(`/api/conversations/${legacySendId}/turns`, sendInput, { key: sendKey }); expect(legacySend.status).toBe(202); expect(legacySend.body.turn.context.templateVersion).toBe(1);
-  await f.install(); await f.install(); // migration is repeatable without regenerating the namespace
-  expect((await f.http(`/api/conversations/${legacySendId}/turns`, sendInput, { key: sendKey })).body).toEqual({ ...legacySend.body, replayed: true });
-  expect((await f.http(`/api/conversations/${id}`)).body.capabilities.attachmentContext).toBe(true);
-  expect((await f.http(`/api/conversations/${id}/queue`, body, { key })).body).toEqual({ ...old.body, replayed: true });
-  const empty = await f.http(`/api/conversations/${id}/queue`, { expectedQueueRevision: 1, text: 'empty attachments', knowledge: [citation], attachments: [] }); expect(empty.body.item.context.templateVersion).toBe(1);
-  const plain = await conversation(); const sent = await f.http(`/api/conversations/${plain}/turns`, { expectedRevision: 0, text: 'original', attachments: [] }); expect(sent.status).toBe(202); expect(sent.body.turn).not.toHaveProperty('context');
+  const upgrade = await startAttachmentFixture('upgrade', false);
+  try {
+    // Before any current createServer call: real pre-026 PG and existing domain operations, not HTTP.
+    const versions = async () => (await upgrade.pool.query('SELECT version FROM flow.migrations ORDER BY version')).rows.map(row => row.version);
+    const beforeVersions = await versions(); expect(beforeVersions).toEqual(Array.from({ length: 25 }, (_, index) => index + 1));
+    expect((await upgrade.pool.query("SELECT to_regclass('flow.attachment_namespace') AS namespace,to_regclass('flow.attachment_resources') AS resources")).rows[0]).toEqual({ namespace: null, resources: null });
+    const projectId = (await createProject(upgrade.pool, { workspaceId: 'personal', title: 'Pre-026 persisted project' }, randomUUID())).snapshot.project.id;
+    const create = async (project?: string) => createConversation(upgrade.pool, conversationCreationSchema.parse({ title: 'Pre-026 conversation', ...(project ? { projectId: project } : {}) }), randomUUID());
+    const id = (await create(projectId)).conversation.id;
+    const source = await createSource(upgrade.pool, projectId, { expectedVersion: 0, title: 'Known', text: 'knowledge-first' }, randomUUID());
+    const citation = { projectId, sourceId: source.source.id, version: 1, contentDigest: source.version.contentDigest, locator: { kind: 'utf8-bytes' as const, start: 0, end: Buffer.byteLength('knowledge-first') } };
+    const beforeSnapshot = await conversationSnapshot(upgrade.pool, id);
+    expect(beforeSnapshot.capabilities.attachmentContext).toBe(false);
+    await expect(attachmentCapabilities(upgrade.pool, projectId)).rejects.toMatchObject({ status: 409, code: 'attachment_unavailable' });
+    const body = { expectedQueueRevision: 0, text: 'legacy source', knowledge: [citation] }; const key = randomUUID();
+    const old = await enqueue(upgrade.pool, id, conversationQueueEnqueueSchema.parse(body), key);
+    expect(old.item.context?.templateVersion).toBe(1); expect(old.item.context).not.toHaveProperty('attachments');
+    const detail = await contextDetail(upgrade.pool, id, old.item.context!.id);
+    expect(detail).not.toHaveProperty('templateVersion'); expect(detail.sources[0]?.text).toBe('knowledge-first');
+    const legacySendId = (await create(projectId)).conversation.id; const sendKey = randomUUID(); const sendInput = { expectedRevision: 0, text: 'legacy send', knowledge: [citation] };
+    const legacySend = await admitTurn(upgrade.pool, upgrade.boss, legacySendId, conversationTurnSchema.parse(sendInput), sendKey);
+    expect(legacySend.turn.context?.templateVersion).toBe(1);
+    const plainId = (await create()).conversation.id, plainKey = randomUUID();
+    const plainInput = { expectedRevision: 0, text: 'legacy plain' };
+    const legacyPlain = await admitTurn(upgrade.pool, upgrade.boss, plainId, conversationTurnSchema.parse(plainInput), plainKey);
+    expect(legacyPlain.turn).not.toHaveProperty('context');
+    const readOriginalRows = async () => ({
+      receipts: (await upgrade.pool.query('SELECT operation,key,digest,response FROM flow.commands WHERE key=ANY($1) ORDER BY operation,key', [[key, sendKey, plainKey]])).rows,
+      contexts: (await upgrade.pool.query("SELECT to_jsonb(c)-'attachments' AS original FROM flow.conversation_contexts c ORDER BY id")).rows,
+      inputs: (await upgrade.pool.query('SELECT * FROM flow.conversation_execution_inputs ORDER BY id')).rows,
+    });
+    const before = await readOriginalRows(); expect(before.receipts).toHaveLength(3); expect(before.contexts).toHaveLength(2); expect(before.inputs).toHaveLength(2);
+    // First current factory startup occurs only after the old rows and receipts exist.
+    await upgrade.install();
+    const namespace = (await upgrade.pool.query('SELECT recovery_scope_id FROM flow.attachment_namespace')).rows;
+    expect(namespace).toHaveLength(1); expect(await versions()).toEqual([...beforeVersions, 26]);
+    await upgrade.install(); await upgrade.restart();
+    expect((await upgrade.pool.query('SELECT recovery_scope_id FROM flow.attachment_namespace')).rows).toEqual(namespace);
+    const after = await readOriginalRows();
+    expect(await versions()).toEqual([...beforeVersions, 26]); expect(after).toEqual(before);
+    const replaySend = await upgrade.http(`/api/conversations/${legacySendId}/turns`, sendInput, { key: sendKey });
+    expect(replaySend.status).toBe(202); expect(replaySend.body).toEqual({ ...legacySend, replayed: true });
+    const replayPlain = await upgrade.http(`/api/conversations/${plainId}/turns`, plainInput, { key: plainKey });
+    expect(replayPlain.status).toBe(202); expect(replayPlain.body).toEqual({ ...legacyPlain, replayed: true });
+    expect((await upgrade.http(`/api/conversations/${id}`)).body.capabilities.attachmentContext).toBe(true);
+    const replayQueue = await upgrade.http(`/api/conversations/${id}/queue`, body, { key });
+    expect(replayQueue.status).toBe(202); expect(replayQueue.body).toEqual({ ...old, replayed: true });
+    expect((await upgrade.http(`/api/conversations/${id}/contexts/${old.item.context!.id}`)).body).toEqual(detail);
+    const empty = await upgrade.http(`/api/conversations/${id}/queue`, { expectedQueueRevision: 1, text: 'empty attachments', knowledge: [citation], attachments: [] }); expect(empty.body.item.context.templateVersion).toBe(1);
+    const plain = await upgrade.http('/api/conversations', { title: 'Plain' }); expect(plain.status).toBe(201);
+    const sent = await upgrade.http(`/api/conversations/${plain.body.conversation.id}/turns`, { expectedRevision: 0, text: 'original', attachments: [] }); expect(sent.status).toBe(202); expect(sent.body.turn).not.toHaveProperty('context');
+    await upgrade.writeEvidence('upgrade-assertions.json', { beforeTransport: 'direct PG/domain; no HTTP server', afterTransport: 'full createServer HTTP with separately recorded legacy mount fallback', beforeVersions, afterVersions: await versions(), beforeCapability: beforeSnapshot.capabilities.attachmentContext, unavailableStatus: 409, before, after, namespace, sendReplay: replaySend.body, plainReplay: replayPlain.body, queueReplay: replayQueue.body });
+  } finally { await upgrade.close(); }
 });
 
 test('frozen ordered upload refs extend metadata without leaking body and preserve knowledge-first input order', async () => {

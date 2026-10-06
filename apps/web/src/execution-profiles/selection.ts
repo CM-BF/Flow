@@ -1,3 +1,4 @@
+import { assertConversationCreationMatches } from "@flow/client";
 import {
   conversationCreationSchema,
   executionProfileConfigurationSchema,
@@ -79,13 +80,6 @@ export function freezeConversationCreation(title: string, selection: ProfileSele
 
 /** Optional project and profile identities must match, including their presence. */
 export function assertCreationReceiptMatches(expected: ConversationCreation, received: ConversationSummary): void {
-  const input = conversationCreationSchema.parse(expected);
-  const actual = conversationCreationSchema.parse({
-    title: received.title, harness: received.harness, requested: received.requested,
-    ...(received.projectId === undefined ? {} : { projectId: received.projectId }),
-    ...(received.executionProfile === undefined ? {} : { executionProfile: received.executionProfile }),
-  });
-  if (received.harness !== input.harness || received.title !== input.title ||
-    received.requested?.model !== input.requested.model || received.requested?.thinking !== input.requested.thinking || received.requested?.tools !== input.requested.tools ||
-    JSON.stringify(input) !== JSON.stringify(actual)) throw new Error("Conversation receipt does not match the frozen creation configuration");
+  try { assertConversationCreationMatches(expected, received); }
+  catch (cause) { throw new Error("Conversation receipt does not match the frozen creation configuration", { cause }); }
 }

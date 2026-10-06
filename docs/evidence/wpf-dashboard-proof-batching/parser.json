@@ -1,0 +1,103 @@
+{
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)",
+        "id": "D01",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root",
+        "value": "Web /root"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 3,
+      "output": "已减少范围证明的重复Git读取，并在临时来源验证完整结果与错误处理",
+      "next": "待主线接入工程看板；实际部署速度仍待后续观察",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "902c9b5d35e1795d564c077034dc78cf1a36b6a0",
+      "scopes": [
+        "apps/execution-dashboard/src/proof.mjs",
+        "apps/execution-dashboard/test/proof-tree-batch.test.mjs",
+        "docs/evidence/wpf-dashboard-proof-batching/measure.mjs"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-DPERF02",
+    "owner": "d01_owner / gpt-6-astra ultra",
+    "branch": "codex/dashboard-proof-batching",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T10:41:48.000Z",
+    "updatedRecord": "2026-10-06 10:41:48 UTC",
+    "todos": [
+      {
+        "id": "WPF-DPERF02-01",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "[take](../../docs/evidence/wpf-dashboard-proof-batching/take-receipt.json)；base/branch/clean实核"
+      },
+      {
+        "id": "WPF-DPERF02-02",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "[baseline](../../docs/evidence/wpf-dashboard-proof-batching/baseline.json)、[after](../../docs/evidence/wpf-dashboard-proof-batching/after.json)；34.897秒含清理/16.08MB trace"
+      },
+      {
+        "id": "WPF-DPERF02-03",
+        "state": "completed",
+        "owner": "d01_owner",
+        "evidence": "[fixed binding](../../docs/evidence/wpf-dashboard-proof-batching/source-binding.json)、27direct"
+      },
+      {
+        "id": "WPF-DPERF02-04",
+        "state": "in-progress",
+        "owner": "d01_owner",
+        "evidence": "root 10:41:14 UTC APPROVED；main未集成，claim保留"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "41315b033deb0b1953484359b686c0b228997367；实现902c9b5d35e1795d564c077034dc78cf1a36b6a0，交付metadata HEAD由Git观察",
+    "declaredDirty": "实现已提交；本轮仅自有证据/审查metadata，提交后以Git实际回执为准",
+    "checks": {
+      "state": "passed",
+      "target": "902c9b5d35e1795d564c077034dc78cf1a36b6a0",
+      "record": "PASSED 902c9b5d35e1795d564c077034dc78cf1a36b6a0；27 direct，0skip；[checks](../../docs/evidence/wpf-dashboard-proof-batching/checks.json)"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED 902c9b5d35e1795d564c077034dc78cf1a36b6a0",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "产品与实验脚本冻结，root已独立27/27并APPROVED；作者仅写自有审批metadata。Lead已说明本批正常登记，未收到本片实际部署观察，不自行API采样。旧暂停状态已被恢复授权替代，不把无效等待当当前阻塞。",
+    "risks": "[证据入口](../../docs/evidence/wpf-dashboard-proof-batching/README.md)。真实aggregate Interface，仅临时仓库/两worktree，assignmentState因无协调DB明确unknown。baseline/after合成commit不同且结构相同。峰值并发非全部降低；时延各一个样本，未验证真实4320、产品DB、provider或浏览器体验。没有架构接口变动，仅原证明模块内部读取策略。",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "902c9b5d35e1795d564c077034dc78cf1a36b6a0"
+  }
+}

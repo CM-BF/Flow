@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:27:04 UTC / main8d8ab520a9d43c7b9dafb22911416ee799ebf665 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:21:28 UTC / main648e331c58043cf7ee307300521ab1c628cb2ee1 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已显示126项实际进度，共用发送确认与最新固定架构快照可见。 |
+| 当前产出 | 看板已显示132项实际进度；工程写入与附件等五项新进展已登记，等待本批发布。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -65,3 +65,11 @@
 2026-10-06T10:22:38.966Z实际126源回执见[shared-ack-runtime-registry-live.json](../../docs/evidence/d05/shared-ack-runtime-registry-live.json)，main8d8 clean、账本available；新S01P03当时仅claim尚未登记。当前补其真实canonical为127源候选；只验证唯一性/三件套/解析，未把未来部署写成已发生，不重跑架构或产品。
 
 2026-10-06 10:38:41 UTC：已保存10:30:43实际127源回执（main0b0，S01P03时间/人读字段已纠正），本批候选129源登记WPF-RELEASE01真实网页兼容与WPF-DPERF02核验复用，当前main parser两者errors=[]/human完整；固定f181架构资源不改，0产品测试/模型/个人操作。见[登记](../../docs/evidence/d05/web-release-registry-validation.json)与[原实际回执](../../docs/evidence/d05/graceful-stop-registry-live.json)。
+
+新增 ENG01B/TUI01C 至131个唯一来源，登记与解析验证见 engineering-tui-registry-validation.json；129实际历史快照已归档 engineering-129-registry-live.json。固定架构仍由D06维护，本批不改图、不把新登记当产品完成。
+
+10:49:58.895Z实际131来源、ENG01B/TUI01C/DPERF02 current=true且errors/issues空，见proof-131-registry-live.json。新增Web共享ACK来源待下一正常132来源换载，不为metadata重复架构或产品检查。
+
+2026-10-06 11:00:58.883Z：实际4320重载132唯一来源，main4285182a clean；ACK01/ENG01B/TUI01C/SVC04人读字段完整、source live、errors/issues空。仅替换核PID18687的本看板服务，个人61227/61228未动；[实际快照摘要](../../docs/evidence/d05/proof-132-registry-live.json)。
+
+2026-10-06 11:21:28 UTC：登记ENG01C、S01P04、WPF-ATTACHI01、WPF-RELEASE02和WPF-WORKSPACEPERF01至137个唯一来源。三件套/证据目录实际存在，状态解析、人读字段与唯一父任务/co-lead通过；见[登记回执](../../docs/evidence/d05/engineering-attachment-137-registry-validation.json)。部署前仍以132实采为准；只维护登记，不改固定架构图、不跑产品或模型。

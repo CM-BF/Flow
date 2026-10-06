@@ -77,7 +77,9 @@ it('retains the project when an injected checker child cannot be confirmed stopp
   const runnerId = randomUUID(), original = resources.runCommand; let retainedWorkspace: Awaited<ReturnType<typeof project.acquire>> | undefined;
   vi.spyOn(resources, 'runCommand').mockImplementation(async command => command.executable === process.execPath
     ? { exitCode: null, signal: null, timedOut: true, outputTruncated: false, childExited: false, elapsedMs: 1000, stdout: '', stderr: '' } : original(command));
-  const adapter = createEngineeringFixtureAdapter(runnerId, [{ project, checker, execute: async workspace => { retainedWorkspace = workspace; } }]);
+  const acquire = project.acquire;
+  vi.spyOn(project, 'acquire').mockImplementation(async () => { retainedWorkspace = await acquire(); return retainedWorkspace; });
+  const adapter = createEngineeringFixtureAdapter(runnerId, [{ project, checker, execute: async workspace => ({ leaseId: workspace.leaseId, settlement: 'stopped', outcome: 'completed' }) }]);
   await expect(adapter.run({ task: { title: 'Unknown child', prompt: 'Controlled injection', harness: 'fixture', engineering: { protocol: 'flow.engineering.v1', targetRunnerId: runnerId, projectId: project.id, baseCommit: project.baseCommit, checker: checker.selection } }, workingDirectory: directory,
     signal: new AbortController().signal, assertOwnership: async () => {}, waitForDecision: async () => 'reject', emit: async () => { throw new Error('Unknown child cannot publish passed evidence.'); } })).rejects.toMatchObject({ settlement: 'unknown' });
   await expect(project.acquire()).rejects.toThrow('already leased'); await expect(checker.dispose()).rejects.toThrow('unresolved');
@@ -108,7 +110,7 @@ async function execute(source = baseline, result = { sum: 7, difference: 3 }) {
   const directory = await root(), project = await createSyntheticProject(directory, 'fixture', { 'result.json': '{"sum":0,"difference":0}\n' });
   const checker = await createTrustedChecker(directory, 'math', source, ['sum', 'difference']);
   const runnerId = randomUUID(), events: RunnerEventData[] = [];
-  const adapter = createEngineeringFixtureAdapter(runnerId, [{ project, checker, execute: async workspace => { await writeFile(join(workspace.directory, 'result.json'), JSON.stringify(result)); } }]);
+  const adapter = createEngineeringFixtureAdapter(runnerId, [{ project, checker, execute: async workspace => { await writeFile(join(workspace.directory, 'result.json'), JSON.stringify(result)); return { leaseId: workspace.leaseId, settlement: 'stopped', outcome: 'completed' }; } }]);
   const context: HarnessContext = { task: { title: 'Fixture engineering', prompt: 'Use trusted fixture', harness: 'fixture', engineering: { protocol: 'flow.engineering.v1', targetRunnerId: runnerId, projectId: project.id, baseCommit: project.baseCommit, checker: checker.selection } }, workingDirectory: directory,
     signal: new AbortController().signal, assertOwnership: async () => {}, waitForDecision: async () => 'reject', emit: async event => { events.push(event); } };
   let error: unknown; try { await adapter.run(context); } catch (caught) { error = caught; }

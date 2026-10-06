@@ -1,0 +1,256 @@
+{
+  "reviewer": "Execution Lead / gpt-6-astra ultra",
+  "observedAt": "2026-10-06T11:23:30.571706+00:00",
+  "result": "APPROVED",
+  "target": "1fd70c28ac60878e132c9f28a00e381ec6fcc533",
+  "delivery": "285db37e61e8c0afe2038d1d699bbb16cd40b492",
+  "manifestSha256": "f06ef1e1f354c9e59bbb499b691472c635a0813f88c45dd3cd6a9d9479417657",
+  "rows": [
+    {
+      "path": "apps/runner/src/engineering/writer.ts",
+      "role": "source",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/writer.test.ts",
+      "role": "source",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "role": "source",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "role": "source",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/integration.test.ts",
+      "role": "source",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.test.ts",
+      "role": "source",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.test.ts",
+      "role": "validation",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/checker.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/resources.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/engineering/identity.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/attempt-control.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/engineering/profile.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/engineering/verification.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/server/src/execution-profiles/publication.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "package.json",
+      "role": "protected",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/README.md",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/claim-amend.json",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/claim.json",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/install.json",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/install.stdout",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/interface.md",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/local.json",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/local.stdout",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/pg-resources.json",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/pg.json",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/pg.stdout",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/quality.json",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/types-final.json",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/types-final.stdout",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/types.json",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/types.stdout",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/writer-red.json",
+      "role": "evidence",
+      "matches": true
+    },
+    {
+      "path": "docs/evidence/eng01c/writer-red.stdout",
+      "role": "evidence",
+      "matches": true
+    }
+  ],
+  "testsRunByReviewer": 0,
+  "providerCalls": 0,
+  "findings": [],
+  "scope": "6 implementation/direct-test sources; writer result normalization, adapter lifecycle, trusted fixed writer and direct recovery consumers",
+  "evidence": "16 writer + 18 workspace + 10 setup + 6 actual PG distinct=50; initial 15 red/1 green and type red preserved, final noEmit0; DB removed",
+  "limits": [
+    "No real task/attempt input introduced",
+    "typed stopped is trusted writer assertion, not generic OS settlement proof",
+    "Native checker stdout spoofing/background settlement still future gate",
+    "Old 123 not rerun"
+  ]
+}

@@ -1,7 +1,8 @@
 import { afterEach, expect, test, vi } from 'vitest';
 import { FlowApiError } from '@flow/client';
 import { randomUUID } from 'node:crypto';
-import type { ConversationCreated, ConversationCreation, ConversationSnapshot, ConversationSummary } from '@flow/contracts';
+import type { ConversationCreated, ConversationCreation, ConversationSnapshot, ConversationSummary, ConversationTurn } from '@flow/contracts';
+import type { ObservationClient } from './observation/index.js';
 import { createInteractionController, parseInput, completeInput, terminalText, type Intent, type InteractionClient, type InteractionController, type IntentStore } from './index.js';
 const id = randomUUID();
 const conversation: ConversationSummary = { id, title: 'Saved conversation', harness: 'claude', requested: { model: 'runner-default', thinking: 'disabled', tools: 'configured-readonly' }, revision: 0, createdAt: '2026-01-01', updatedAt: '2026-01-01' };
@@ -125,4 +126,59 @@ test('a failed explicit observation recovery becomes disconnected instead of a s
   await controller.initialize(); await controller.execute({ type: 'open', id }); fail = true;
   expect((await controller.execute({ type: 'recover' })).ok).toBe(false);
   expect(controller.snapshot().connected).toBe(false);
+});
+
+test.each([false, true])('confirmed new conversation resets the old focused turn (lost ACK: %s)', async lostAck => {
+  const first = { ...conversation, revision: 3 };
+  let second = { ...conversation, id: randomUUID(), title: 'Second conversation' };
+  const turn = (owner: ConversationSummary, number: number, text: string): ConversationTurn => {
+    const taskId = randomUUID();
+    return { id: randomUUID(), conversationId: owner.id, number, createdAt: owner.createdAt,
+      user: { role: 'user', text }, task: { id: taskId, title: owner.title, harness: 'claude', status: 'running',
+        verificationStatus: 'pending', createdAt: owner.createdAt, updatedAt: owner.updatedAt },
+      assistant: { state: 'pending', reason: 'execution-pending' }, effective: { model: null, thinking: 'unknown', tools: null, source: null },
+      telemetry: { kind: 'execution', taskId, title: 'Execution' } };
+  };
+  const firstTurns = [1, 2, 3].map(number => turn(first, number, 'Earlier message'));
+  const secondTurns: ConversationTurn[] = [];
+  const requests: { input: ConversationCreation; key: string }[] = [];
+  const activityTasks: string[] = [];
+  let saved: Intent | null = null;
+  const client: InteractionClient = {
+    conversations: async () => ({ conversations: [first], nextCursor: null }), executionProfiles: async () => ({ profiles: [], nextCursor: null }),
+    conversation: async id => ({ ...snapshot, conversation: id === first.id ? first : second,
+      lastTurn: (id === first.id ? firstTurns : secondTurns).at(-1) ?? null }),
+    conversationTurns: async id => ({ conversation: id === first.id ? first : second, turns: id === first.id ? firstTurns : secondTurns, nextCursor: null }),
+    createConversation: async (input, key) => {
+      requests.push({ input, key });
+      if (lostAck && requests.length === 1) throw Error('Accepted create; acknowledgement lost');
+      return { ...created, conversation: second, replayed: lostAck };
+    },
+    submitConversationTurn: async (id, input) => {
+      expect(id).toBe(second.id); expect(input.expectedRevision).toBe(0);
+      second = { ...second, revision: 1 }; const accepted = turn(second, 1, input.text); secondTurns.push(accepted);
+      return { conversation: second, turn: accepted, replayed: false };
+    },
+  };
+  const noBody = async (): Promise<never> => { throw Error('Unexpected detail or stream request'); };
+  const observe: ObservationClient = { assistantStream: noBody, assistantStreamPatches: noBody, nativeActivity: noBody, conversationDetail: noBody,
+    nativeActivities: async taskId => { activityTasks.push(taskId); return { activities: [], nextCursor: null }; } };
+  const controller = createInteractionController({ client, observe, connectionId: 'test-connection', pollMs: 60_000,
+    intents: { load: async () => null, save: async value => { saved = value; }, clear: async () => { saved = null; } } });
+  controllers.push(controller); await controller.initialize();
+  expect((await controller.input('/open ' + first.id)).ok).toBe(true);
+  expect((await controller.input('/turn 3')).ok).toBe(true);
+  expect(controller.snapshot().observation?.turnId).toBe(firstTurns[2]!.id);
+  const creating = await controller.input('/new Second conversation');
+  if (lostAck) {
+    expect(creating.code).toBe('UNKNOWN'); expect(saved).not.toBeNull();
+    expect(controller.snapshot().selected?.id).toBe(first.id);
+    expect(controller.snapshot().observation?.turnId).toBe(firstTurns[2]!.id);
+    expect((await controller.input('/recover')).code).toBe('ACCEPTED'); expect(requests[1]).toEqual(requests[0]);
+  } else expect(creating.code).toBe('ACCEPTED');
+  expect(saved).toBeNull(); expect(controller.snapshot().observation).toBeNull();
+  expect((await controller.input('First message in second conversation')).code).toBe('ACCEPTED');
+  expect(controller.snapshot().observation).toMatchObject({ turnId: secondTurns[0]!.id, number: 1 });
+  expect((await controller.input('/activity')).ok).toBe(true);
+  expect(activityTasks).toEqual([secondTurns[0]!.task.id]);
 });

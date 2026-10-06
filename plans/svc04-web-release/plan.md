@@ -8,7 +8,7 @@
 - [x] SVC04-02 固定release命名空间、完整文件集、版本指针/CAS/同operation锁、路径与保留预算。
 - [x] SVC04-03 真实静态HTTP旧/新资源、同源auth/SSE；Web-only初始化与发布/回退、后台任务持续。
 - [x] SVC04-04 局部边界检查/固定证据/独立review/main。
-- [ ] SVC04-05 已审生产部署与真实旧页面验证（后续窗口，不在本片自动执行）。
+- [x] SVC04-05 已审生产部署与真实旧页面验证（后续窗口，不在本片自动执行）。
 
 设计见[Interface](../../docs/evidence/svc04/interface.md)。保留满额拒绝；无TTL自动删除。兼容绑定实际已加载backend source与明确公共API合同输入，不用main祖先/health代替；未知拒绝。首次旧Web升级到发布协议需只替换Web进程一次，可能短暂观察断连，任何启动失败保留旧artifact/source事实并报告Web unknown，center/runner不停止。后续原子指针发布/回退无需进程重启。
 

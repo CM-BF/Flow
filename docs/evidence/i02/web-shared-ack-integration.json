@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-06T11:01:53.400489+00:00",
+  "target": "2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d",
+  "sources": [
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "f55dbd8ea75148164e5cc52303338793f2012eb4381b34e62ccd773e72a311fd",
+      "bytes": 22051
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "9a56ba34efd52c0d542802da1e48dd168c1ad36abae9554b926386abe7ea2d82",
+      "bytes": 5057
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "sha256": "24262572d8c7901eb417c7b8573a0b161e0f978d842935e4a2eeb1631b2f5cd9",
+      "bytes": 1225
+    },
+    {
+      "path": "apps/web/test/conversation-projection.test.ts",
+      "sha256": "1059b891b1963f1a01ef04f469253bd5afd95aed1d701454cffd36be9d31d39e",
+      "bytes": 45811
+    },
+    {
+      "path": "apps/web/test/conversation-ack-http.test.ts",
+      "sha256": "5af8034b8e5241aa37d9d8949f6dff519239a54223128fa5af0283d9d7cf5596",
+      "bytes": 12728
+    }
+  ],
+  "sharedDecoder": {
+    "target": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+    "path": "packages/client/src/conversation-acknowledgement.ts",
+    "unchanged": true,
+    "bytes": 10480,
+    "sha256": "3f76cfde9b61ea049da7575c905d91588ea9d8a400c5bcc0336036998c0020d5"
+  },
+  "review": "Web root independent APPROVED; 150 original direct/HTTP checks and author types reused, no duplicated tests",
+  "providerCalls": 0,
+  "personalServicesChanged": false,
+  "correction": {
+    "at": "2026-10-06T11:02:21.838318+00:00",
+    "previousPath": "packages/client/src/conversation-receipts.ts",
+    "reason": "Previous empty git diff for a nonexistent path did not prove binding; corrected to actual shared decoder and compared fixed blob bytes."
+  }
+}

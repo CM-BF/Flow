@@ -1,0 +1,13 @@
+# ENG01C 最小内部 Interface
+
+已批准A子片，0provider；固定648e331c。工程adapter独占 acquire、snapshot、checker、receipt、release；runtime继续独占assignment/claim/lease/journal/outbox/terminal。
+
+`EngineeringWriter.execute(input) -> Promise<EngineeringWriteResult>`：input为host给定的directory、leaseId、baseCommit、prompt、signal及assertOwnership。没有snapshot/release/emit/checker路径或任意argv/env。result必须显式绑定同一leaseId，且为stopped+completed、stopped+failed或unknown；无结果、畸形、错lease或任何抛错均unknown。仅可信固定writer能在自己已等待全部受控文件操作后返回stopped；普通Promise结束、信号abort、NativeExecutionError('settled')甚至异常message均不是此seam的证明。
+
+宿主只在调用writer之前把state设为unknown，收到匹配的显式stopped才解除。completed+stopped进入既有检查；failed+stopped以现settled失败结束，不运行checker；unknown不检查、不释放且走现NativeExecutionError unknown。取消只请求停止：writer未被调用的预检可settled，writer已调用则必须等明确结果，不能Promise.race取消来伪造资源已停。旧fixture回调改显式返回；没有void兼容层。JSON/profile/hash与public receipt v1零改。
+
+A不新增taskId/attemptId：当前HarnessContext无真实assignment身份，绝不从目录/UUID猜测。A仅绑定workspace leaseId和host提供的ownership断言。未来native B/C必须另提最小host只读身份seam及contracts/runtime直接消费者scope，本片不先改共享运行合同。
+
+native前另一个必闭缺口：现checker在同一断言进程import待测源码并信stdout JSON，模型源码可先打印合格checks再exit，外置0400 baseline/hash与事后diff不能防止此伪证；resources直接child close也不能证明后台写入已停止。现受信fixture批准不改变。后继选择需单独固定：有限源语法/行为约束+执行前独立审核，或隔离被测执行并由host独占断言/报告且覆盖完整停止。定向验收必须包含伪合格stdout+提前exit、改写baseline/父目录、后台持续写入、停止ACK未结束等；未关闭前不允许真实native写改或声称native安全，不在A造通用sandbox。
+
+局部验收：严格结果/错lease/异常/取消矩阵；成功或已停失败的资源释放；unknown后仍写入的注入不会触发checker或release；原Git/checker直接消费者保持；真实PG的generic-error/unknown→reservation/journal保留→重启零重复写入。仅必要路径，不重跑原123。

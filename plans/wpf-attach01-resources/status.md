@@ -2,34 +2,60 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 10:08:41 UTC |
+| 最近更新 | 2026-10-06 11:24:07 UTC |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | 所属大task | [WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md) |
 | co-lead | Web /root |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 附件固定引用和恢复规则已确定，正在建立可共用的文本附件合同 |
-| 下一可用交付 | 交付可验证的小合同，让上传与聊天输入使用同一份附件身份 |
+| 当前产出 | 附件运行模块及正式接线所需的测试适配均已独立审查通过 |
+| 下一可用交付 | 将已审模块与公共客户端、正式中心入口组合验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources |
 | Branch | codex/attachment-resources |
 | 工作基线 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066 / 当前Git聚合 |
-| 工作树dirty状态 | 首canonical新增；尚无合同实现 |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN；当前仅claim与规则核验 |
+| 工作树dirty状态 | 两测试源已固定1f0c196；仅自身metadata收口，最终Git为准 |
+| 工作分支状态 | in-progress / approved / waiting-main |
+| 本片段交付阶段 | integration |
+| 检查状态 | PASSED 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9；仅6受影响PG/HTTP case、严格types、4DB清零；正式自动factory分支未验，旧8701/78另保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | UNKNOWN |
-| 实现范围 | packages/contracts/src/attachments.ts, packages/contracts/src/conversation-context.ts, packages/contracts/src/attachments.test.ts |
-| Review | [review.md](review.md)，NOT_STARTED |
-| D04 claim | ef617d78-eb39-484e-898e-5f057fca50d4 v1 active，2026-10-06T10:06:48.197Z COMMITTED；五scope |
+| 实现目标 | 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9 |
+| 实现范围 | apps/server/src/attachments/fixture.ts, apps/server/src/attachments/context.test.ts |
+| Review | [review.md](review.md)，1f0两文件fixture增量APPROVED；8701 runtime及phase1历史APPROVED另保留 |
+| D04 claim | ef617d78-eb39-484e-898e-5f057fca50d4 v2 active，2026-10-06T10:28:42.374Z COMMITTED；十八scope |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| WPF-ATTACH01-01 | in-progress | workspace_panels_owner | [Interface](../../docs/evidence/wpf-attach01/interface.md)、[take](../../docs/evidence/wpf-attach01/take-receipt.json) |
-| WPF-ATTACH01-02 | pending | workspace_panels_owner | 后继运行域须exact amend，当前无路由/DB实现 |
-| WPF-ATTACH01-03 | pending | workspace_panels_owner | 后继PG/HTTP验收，当前无真实中心/provider证据 |
-| WPF-ATTACH01-04 | pending | workspace_panels_owner | 固定review与main接收尚未开始 |
+| WPF-ATTACH01-01 | completed | workspace_panels_owner | [Interface](../../docs/evidence/wpf-attach01/interface.md)、[take](../../docs/evidence/wpf-attach01/take-receipt.json) |
+| WPF-ATTACH01-02 | completed | workspace_panels_owner | 运行域实现与作者验证已固定；[原回执](../../docs/evidence/wpf-attach01/runtime-amend-receipt.json) |
+| WPF-ATTACH01-03 | completed | workspace_panels_owner | 29项隔离PGHTTP含实际runner/fake adapter；[运行验证](../../docs/evidence/wpf-attach01/runtime-validation.md)，无provider |
+| WPF-ATTACH01-04 | pending | workspace_panels_owner | phase1及运行域独审均通过；main接收仍pending |
 
-架构影响：phase1新增typed附件合同与context v2可选分支，旧v1wire不变；未修改生产mount或capability。后继新增资源与context原子绑定会登记架构更新。唯一source交管理集中登记，未声称dashboard已部署。既有所有预览与个人服务保持不动。
+架构影响：新增attachment resources/namespace/bindings与026、项目锁后pin/GC、context v2及private execution输入编排；旧v1不变、CREATE稳定false而GET能力动态。共享mount/client未改；固定架构快照待主线接收后登记target8701a6，owner由管理协调，不越scope写图。唯一source交管理集中登记，未声称dashboard已部署。既有所有预览与个人服务保持不动。
+
+## Handoff
+
+固定phase1实现 6bc2918cf35a652e241e6378c3b6297cac179adb，base f181d84b5fb3652d62e2a181acff442d42b3e066。三源与14个只读依赖hash见[final-checks](../../docs/evidence/wpf-attach01/resource-checks.json)，真实检查源为52317c4+dirty，非事后SHA执行。49项包含真实旧Web投影/queue/client + mock fetch；不是HTTPserver/浏览器/PG或provider验收。
+
+Root兼容裁决：仅请求非空attachments→v2；无附件/[]或原v1 replay永远v1；新client向旧center纯文字必须完全省略attachments。旧loaded Web可读正文/队列但不展示附件；不加Accept/header或GET阻断。runtime与新Web共享decoder仍后继接入。F01已移出conversations.ts、026已预留并在runtime v2精确amend内；indices/client/mount仍不写。
+
+2026-10-06 10:26 UTC：root独立限定APPROVED上述target，独立49/49；类型检查仍作者证据。小合同交管理集中公开输入队列；目前未收到main接收。此为当时phase1边界；10:28 runtime v2已正式amend，后继结果另绑target。
+
+## Runtime安全段
+
+2026-10-06 10:29:57 UTC：原子amend v2已live核18scope。小合同phase1 target6bc2918/metadata339086已独审并交公共队列；当前runtime是新实现段，不能继承49/49/APPROVED。F01/TUI01B indices/client/mount/shareddecoder不写；无provider，后续PG用唯一DB和动态端口，不运行会写旧evidence的测试fixture。
+
+10:39 runtime实质进展：隔离PG+动态HTTP已验证26项，原始失败与修正见quality；继续事务中断和完整局部矩阵。真实provider/个人服务均0调用。
+
+10:46固定runtime交付：target 8701a6cf547248e70aa5758f05da1d7d314ae9c0；[candidate](../../docs/evidence/wpf-attach01/runtime-candidate.json)、[checks](../../docs/evidence/wpf-attach01/runtime-checks.json)、[README复跑](../../docs/evidence/wpf-attach01/README.md)。当时独审NOT_STARTED/main未集成（后续正式结论如下）。当前实现源冻结，仅metadata；原始77/78-first与首失败日志不改，不能混成最终执行事实。
+
+10:49:15 UTC root正式限定APPROVED target8701a6；独立78/78、3自有DB清零，16源码/19只读依赖与两个phase1合同字节核实。独审原[日志](../../docs/evidence/wpf-attach01/root-runtime-direct.log)与[审计](../../docs/evidence/wpf-attach01/root-runtime-audit.json)原样归档；types为作者证据。当前只metadata交付，全部产品源码停止写入、claim保留待main。公共client/decoder/mount、真实App上传与provider均未验，不代表MATURE03整体完成。
+
+## 自动factory测试兼容安全段
+
+仅已领fixture.ts/context.test.ts后继；原8701/78日志不改。live ef617 v2 active核实。真正预026独立库先逐项旧migration与领域操作，再首次完整factory+HTTP；普通和child排空插件注册后严格检查六route，部分挂载失败，完全未挂载才fixture fallback。当前本树server/index仍f181旧factory，自动生产mount未消费/未验。0provider/个人服务，六个受影响case与严格types，独立输出目录，详后继validation。
+
+固定fixture兼容增量 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9 / base 1d236cbe2299117e3b63887fda3d1c0e140f56b0，只2专测；[验证](../../docs/evidence/wpf-attach01/fixture-compat-validation.md) / [manifest](../../docs/evidence/wpf-attach01/fixture-compat-candidate.json)。6case与4DB清零实际通过；自动factory仍待Lead固定组合，当前观察全部为明确fallback。原runtime8701全16源除这两个测试外不变。
+
+2026-10-06T11:24:06.499649+00:00：root独立APPROVED1f0两文件增量，2选中case/27未选、4DB清零；作者6case/严格types另记。新[累计16源清单](../../docs/evidence/wpf-attach01/runtime-with-fixture-candidate.json)供主线组合，旧runtime-candidate/raw日志不变。当前全部源码冻结，仅metadata归档/正常push；ef617 v2保持active直到正式main receipt。

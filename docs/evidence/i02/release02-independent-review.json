@@ -1,0 +1,60 @@
+{
+  "reviewedAt": "2026-10-06T11:15:04.781616+00:00",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "target": "560cbd2b6a5dc43bc18458d1335ced73b0e9254d",
+  "delivery": "0bca82da6208b108c7e073d748d2a157821bba72",
+  "result": "APPROVED",
+  "findings": [],
+  "scope": "single readonly tuple assertion; exact removal reproduces parent bytes, fixed source/targets/loop side effects unchanged; strict/noUnchecked root typecheck original0 read",
+  "reviewerRuns": {
+    "tests": 0,
+    "provider": 0
+  },
+  "source": {
+    "path": "apps/web/test/web-release-compatibility.fixture.ts",
+    "bytes": 16058,
+    "sha256": "4d37bd07dc4c312d7509fbf367bb07b3d3065a7f0cea7709c7b6ba3ea2c6c355"
+  },
+  "evidence": [
+    {
+      "path": "docs/evidence/wpf-release02/README.md",
+      "bytes": 655,
+      "sha256": "032be5471751f333a0f189e5d435caeb2cf5e88eb7326d2c1706535346f2c1ed"
+    },
+    {
+      "path": "docs/evidence/wpf-release02/claim-receipt.json",
+      "bytes": 668,
+      "sha256": "29be46ccf9f7e96d9275cf7b786f92cb860e4267960d48d4f9906eb58546cca1"
+    },
+    {
+      "path": "docs/evidence/wpf-release02/install.log",
+      "bytes": 658,
+      "sha256": "0fa81369488b5bb3305eb8b45ed048aa3c42abd7d47c8a39cb7831ca7b33538e"
+    },
+    {
+      "path": "docs/evidence/wpf-release02/integration-failure.stdout",
+      "bytes": 559,
+      "sha256": "1faad9dbfeb787faadde9cdeeea83d5a1935d865ffa260ad4104bd28d142883d"
+    },
+    {
+      "path": "docs/evidence/wpf-release02/quality.md",
+      "bytes": 687,
+      "sha256": "c94efd8365e0858634035626f8fbd4c35d7e6289f51143d42304a4e3b8b5bfc3"
+    },
+    {
+      "path": "docs/evidence/wpf-release02/root-typecheck.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-release02/runtime-equivalence.json",
+      "bytes": 160,
+      "sha256": "3442068f5d707dda033a86df2819e63f296619c2738361b21bf4d42ae3d0265e"
+    },
+    {
+      "path": "docs/evidence/wpf-release02/source-manifest.json",
+      "bytes": 590,
+      "sha256": "ce52ecbf0ac165004d5d4c93e2001959f7ff3ba79fdc854b611538bba7792723"
+    }
+  ]
+}

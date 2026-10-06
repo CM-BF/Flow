@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+ ✓ apps/server/src/attachments/context.test.ts (19 tests | 17 skipped) 7133ms
+   ✓ before 026 plain/knowledge remain v1; migration preserves saved receipts and enables project GET only  3140ms
+ ✓ apps/server/src/attachments/attachments.test.ts (10 tests | 6 skipped) 3663ms
+   ✓ committed upload survives a real fixture center SIGKILL and same-key HTTP replay  2466ms
+
+ Test Files  2 passed (2)
+      Tests  6 passed | 23 skipped (29)
+   Start at  04:29:36
+   Duration  14.62s (transform 1.83s, setup 0ms, import 3.52s, tests 10.80s, environment 0ms)
+

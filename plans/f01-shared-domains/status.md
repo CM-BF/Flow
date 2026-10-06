@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:30 UTC / main53ce2ec2 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:33:11 UTC / mainfd1322f9 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -15,14 +15,14 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | 附件ACK47、薄client1HTTP分别独审；生产1PG及2清理回归=3/3、types0，P2独立复审关闭，0provider |
 | 已集成main状态 / HEAD | 原生配置薄client095、共享ACK dc7f和工程核心040均已有独立review并main；个人backend/static仍b1c2e398 accepting v12。 |
-| Review | 附件ACK/native_center_owner与六薄client/Mika APPROVED；69eb+f04生产接线/清理获Mika独审APPROVED；实际factory六case组合待验 |
+| Review | 附件ACK/native_center_owner与六薄client/Mika APPROVED；69eb+f04生产接线/清理获Mika独审APPROVED；实际factory六case组合通过并mainfd132 |
 | 实现目标 | f04cb29633ca678b35aa423e02a16953add0cfba |
 | 实现范围 | packages/client/src/attachment-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 附件公共上传与读取接线已通过独立审查，正在核对旧数据升级与重启兼容。 |
-| 下一可用交付 | 附件上传、固定引用与公开读取接线，供终端和Web共同消费。 |
+| 当前产出 | 附件上传、固定引用、回执恢复与公开读取已进入主线，实际factory升级与重启已验证。 |
+| 下一可用交付 | 上下文历史与目标交付读口的公共接线准备；已审附件片段完成。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -159,3 +159,5 @@
 11:27：Mika附件六薄client独审APPROVED已归档；生产69eb的唯一P2是失败清理，修复固定f04cb29633ca678b35aa423e02a16953add0cfba，2失败分支原red保留、3/3及types0。新facts单独保存，不覆盖旧成功证据；生产3行/领域无改。Web pre026 fixture增量1f0已独审，待正式factory下有限组合验证。
 
 2026-10-06 11:30 UTC：Mika增量只读APPROVED f04，原69eb挂载保持；1source/8raw核同、清理P2关闭、未重测。下一I02仅实际factory与已审fixture1f0组合六case，不重跑78领域。原审查字节归档 [独审](../../docs/evidence/f01/attachment-production-independent-review.md)，个人服务不变。
+
+2026-10-06T11:33:11.623489+00:00：已审附件23source与原main精确匹配，I02实际factory六例/四专库/类型检查通过。[main回执](../../docs/evidence/f01/attachment-main-receipt.json)。受控main同步只选既有已审product，冲突均取固定main；不改变已审source或再跑产品。

@@ -1,0 +1,75 @@
+{
+  "checkedAt": "2026-10-06T10:40:40Z",
+  "implementationTarget": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b",
+  "base": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+  "sources": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "sha256": "565d2b7e1b9dfe0a8bbff35b290cc3e7cdef6cd7f05117c08b0248d917c3db0f"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "sha256": "a143860d233be3824284e9360a3574a159b2c5e7e6821e6ec6368d4731317fbc"
+    }
+  ],
+  "runStartedAt": "2026-10-06T10:38:26.664Z",
+  "runFinishedAt": "2026-10-06T10:39:13.011Z",
+  "browserResultsSha256": "db5be1e46c5114fb3463b75365c8641709598d8aad55c182be298c1ec69d0fe7",
+  "releaseId": "8d8ab520a9d43c7b9dafb22911416ee7",
+  "reports": [
+    {
+      "label": "old",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "compatibilityId": "d4afbf557c00e53088edb6442b2fff1bc995c6d02e93b105ec450f5f9f9a8d5c",
+      "manifestFormat": 1,
+      "reportSha256": "d4afbf557c00e53088edb6442b2fff1bc995c6d02e93b105ec450f5f9f9a8d5c",
+      "checks": {
+        "read": "ab41b55148714fac4aa06650854d07bb52ac8fe279eb4cb2e4a082401bb21970",
+        "send": "e83d7f6576b8324bd9d2d7f9b935ba10bf095ced421b8312a8da4bbcc644226b",
+        "recover": "3263fab1c4fc87fbb9d72fd65616feba1d454eb819280332d25585a79ed6b17f",
+        "negotiation": "01480431830dbf75e318f5cadc0a3962d62907a6771171667581e57e803f9d1a"
+      },
+      "actualWireRecords": 24,
+      "turnPostCount": 2,
+      "sameKeyBodyTurn": true,
+      "loadedAssetEntries": 10,
+      "pageErrors": [],
+      "expectedConsoleErrors": 3
+    },
+    {
+      "label": "new",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "compatibilityId": "bc02d897a957d100bddb564aa18b9cae3849b5290f6c230f0630832f9dac0c06",
+      "manifestFormat": 2,
+      "reportSha256": "bc02d897a957d100bddb564aa18b9cae3849b5290f6c230f0630832f9dac0c06",
+      "checks": {
+        "read": "f721cbdcd185e75ec41ed0d9ac0e14ba0c9662bcd39ab8ddc0e201e25257d9b5",
+        "send": "0f536afcb0eda6d469a4b7083750742aa6a49db928a71a5524b5f8561d5b6ab0",
+        "recover": "7ab8159fcb20a4f830f6ecd3b62f684d0cc47e11da05637ea8f7d6135d6e4e0d",
+        "negotiation": "c9b95c869a802eb68d772f5778a437f9b995ad93b8c527f68d2a7c3f934bbc8a"
+      },
+      "actualWireRecords": 24,
+      "turnPostCount": 2,
+      "sameKeyBodyTurn": true,
+      "loadedAssetEntries": 5,
+      "pageErrors": [],
+      "expectedConsoleErrors": 3
+    }
+  ],
+  "protectedPathsUnchanged": [
+    "apps/web/src",
+    "packages",
+    "tools/personal-preview",
+    "package.json",
+    "pnpm-lock.yaml"
+  ],
+  "sourceDiffCheckExit": 0
+}

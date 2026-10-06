@@ -1,0 +1,24 @@
+node:internal/fs/cp/cp:306
+    throw new ERR_FS_CP_EEXIST({
+          ^
+
+SystemError [ERR_FS_CP_EEXIST]: Target already exists: cp returned EEXIST (/Users/citrine/.flow-personal/web-artifacts/.stage-svc04-approved already exists) /Users/citrine/.flow-personal/web-artifacts/.stage-svc04-approved
+    at onDir (node:internal/fs/cp/cp:306:11)
+    at getStatsForCopy (node:internal/fs/cp/cp:199:12)
+    at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/docs/evidence/svc04/personal-stage.mjs:27:55
+    at async locked (file:///Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/preview.mjs:162:16)
+    at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/docs/evidence/svc04/personal-stage.mjs:12:14 {
+  code: 'ERR_FS_CP_EEXIST',
+  info: {
+    message: '/Users/citrine/.flow-personal/web-artifacts/.stage-svc04-approved already exists',
+    path: '/Users/citrine/.flow-personal/web-artifacts/.stage-svc04-approved',
+    syscall: 'cp',
+    errno: 17,
+    code: 'EEXIST'
+  },
+  errno: [Getter/Setter],
+  syscall: [Getter/Setter],
+  path: [Getter/Setter]
+}
+
+Node.js v24.20.0

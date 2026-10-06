@@ -1,0 +1,23 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-writer-settlement
+
+ ✓ apps/runner/src/engineering/workspace.test.ts (18 tests) 5960ms
+   ✓ captures staged, unstaged, ignored untracked, deleted and executable modes in one immutable content set  654ms
+   ✓ retains the project when an injected checker child cannot be confirmed stopped  434ms
+   ✓ requires real fixed checker cases and publishes a digest of the same content set  719ms
+   ✓ refuses engineering success for wrong-result  741ms
+   ✓ refuses engineering success for nonempty-log  394ms
+   ✓ refuses engineering success for missing-case  396ms
+   ✓ refuses engineering success for mutated-workspace  473ms
+   ✓ refuses engineering success for mutated-baseline  416ms
+ ✓ apps/runner/src/engineering/setup.test.ts (10 tests) 2735ms
+   ✓ publishes only after a matching task pin and executes the fixed recipe from restored storage  901ms
+   ✓ preserves incomplete or replaced storage rather than recreating a repository  431ms
+   ✓ loads in a fresh Node process while retaining an active project lease and preventing new writes  1141ms
+ ✓ apps/runner/src/engineering/writer.test.ts (16 tests) 15ms
+
+ Test Files  3 passed (3)
+      Tests  44 passed (44)
+   Start at  04:20:31
+   Duration  9.27s (transform 76ms, setup 0ms, import 268ms, tests 8.71s, environment 0ms)
+

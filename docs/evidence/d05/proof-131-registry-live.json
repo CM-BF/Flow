@@ -1,0 +1,94 @@
+{
+  "generatedAt": "2026-10-06T10:49:58.895Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "da04127fd0c033135d20657742979845e1b80a63",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T10:50:00.550Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "sources": 131,
+  "selected": [
+    {
+      "id": "ENG01B",
+      "current": true,
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "正在把工程通路接成明确配置的专用宿主，避免错误目标领取工程任务",
+        "next": "可固定选择并恢复的工程配置，继续使用受信合成项目",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "TUI01C",
+      "current": true,
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已确定终端正文逐段显示与活动按需展开的实现方式",
+        "next": "可看到回复逐段增长并展开工具活动的终端",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "WPF-DPERF02",
+      "current": true,
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 3,
+        "output": "已减少范围证明的重复Git读取，并在临时来源验证完整结果与错误处理",
+        "next": "待主线接入工程看板；实际部署速度仍待后续观察",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    }
+  ],
+  "scope": "Actual snapshot after owned4320 restart; no personal service or browser tab operation"
+}

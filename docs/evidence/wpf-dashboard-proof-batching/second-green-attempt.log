@@ -1,0 +1,57 @@
+✔ structured summaries never mine historical risks or no-decision prose (1540.009708ms)
+✔ active work is bounded and priority ordered; completed history is separate (777.721834ms)
+✔ metadata-only changes retain exact implementation approval, including dirty docs (1268.430167ms)
+✔ tracked changes, additions, deletions and untracked implementation invalidate approval (1683.940917ms)
+✔ new code outside a narrow scope is unknown, not metadata approval (892.97225ms)
+✔ missing/unsafe/nonexistent scopes and absent target never turn green (1555.490583ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-ryEP9Z/T01
+ * branch            3a22a1253f472a775b1d46adf2206e1756fccf7b -> FETCH_HEAD
+✔ main ancestry survives unrelated main metadata commits without owner status rewrites (1575.907333ms)
+✔ scope-tree integration requires existing target and no omitted new implementation (2059.658625ms)
+✔ registry sources have unique valid identities and bounded canonical Web platform paths (1.143375ms)
+✔ executable files under docs are not silently treated as metadata (1175.743334ms)
+✔ top three never hide other active work, while historical missing summaries stay in history (8.017958ms)
+From /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-d01-test-42lRuj/T01
+ * branch            7a34ee05c0176ca8e3d4b478d00bd13dac4b10d7 -> FETCH_HEAD
+✔ historical main ancestry cannot approve later implementation changes, deletions or dirty paths (1639.611625ms)
+✔ global phase comes only from the explicit short phase source (559.42975ms)
+✔ one matching task target starts one comparison; a second snapshot performs fresh reads (2387.214959ms)
+ℹ {"phase":"same-target","gitStarts":24,"targetComparisons":1}
+✔ different review target is still independently compared and can invalidate approval (1152.333833ms)
+✔ dirty edits, deletion, and restoration are fresh in subsequent same-process snapshots (2041.388042ms)
+✔ missing target, missing scope and missing review remain unknown, never cached green (1727.416291ms)
+✔ 128 literal declarations use one tree read without changing public proof or next-snapshot freshness (2285.283833ms)
+✔ overlapping directories and duplicate declarations preserve full NUL records including unusual descendant names (942.311208ms)
+✔ missing individual scope is unknown even when another scope or similarly named directory returns entries (390.053917ms)
+✔ main deletion is a changed tree, not a missing source or green proof (675.899833ms)
+✔ different repositories or commits cannot reuse a successful tree (760.195667ms)
+✔ combined stdout overflow falls back serially and retains scopes that fit the original per-scope limit (1433.167333ms)
+✔ one scope larger than maxBuffer remains unknown without retry or relabeling as missing (1475.218834ms)
+✔ bad target fails without tree retries, and invalid declarations retain validation semantics (312.95025ms)
+✔ argument overflow splits the batch but an oversized literal remains unknown (698.069792ms)
+✖ ordinary Git failure and timeout stay unknown without splitting or retry (502.008709ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 26
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14955.887666
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/proof-tree-batch.test.mjs:170:1
+✖ ordinary Git failure and timeout stay unknown without splitting or retry (502.008709ms)
+  Error: ENOENT: no such file or directory, open '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-proof-batch-FxUTNz/attempts-failure.txt'
+      at async open (node:internal/fs/promises:1345:25)
+      at async readFile (node:internal/fs/promises:1996:14)
+      at async controlledGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/apps/execution-dashboard/test/proof-tree-batch.test.mjs:166:68)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/apps/execution-dashboard/test/proof-tree-batch.test.mjs:173:21)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-proof-batch-FxUTNz/attempts-failure.txt'
+  }

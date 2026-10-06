@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-06T10:46:17.699978+00:00",
+  "reason": "Dashboard metadata allowlist recognizes log but not jsonl; only archive names changed, original raw bytes and experiment/source target unchanged. Measurement script still writes original jsonl names; no rerun.",
+  "files": [
+    {
+      "originalName": "after-128.trace.jsonl",
+      "archiveName": "after-128.trace.jsonl.log",
+      "bytes": 3835960,
+      "sha256": "49a45ee987a15ee065148a6bdfc9e3a8ba709068d69e862b5ef29a07072dfdd1"
+    },
+    {
+      "originalName": "after-16.trace.jsonl",
+      "archiveName": "after-16.trace.jsonl.log",
+      "bytes": 503736,
+      "sha256": "2fa1710447aac76ac7e18b4cce4534fa946ff144f64506ef39da84a195932a0f"
+    },
+    {
+      "originalName": "after-64.trace.jsonl",
+      "archiveName": "after-64.trace.jsonl.log",
+      "bytes": 1931832,
+      "sha256": "1e9915f8e950796192ca4b687a1f2d94e9d47103e4a62535eb5e92372ea82672"
+    },
+    {
+      "originalName": "baseline-128.trace.jsonl",
+      "archiveName": "baseline-128.trace.jsonl.log",
+      "bytes": 6013496,
+      "sha256": "c9c084badad2abcf7b91b4328e015df27cd3a2d6d6396e996932dd7d79223c78"
+    },
+    {
+      "originalName": "baseline-16.trace.jsonl",
+      "archiveName": "baseline-16.trace.jsonl.log",
+      "bytes": 775928,
+      "sha256": "b8ecdcad3ecdfac02dc0c1809c4c24c8e971a10d390bcebf2a62ebb37a359ec9"
+    },
+    {
+      "originalName": "baseline-64.trace.jsonl",
+      "archiveName": "baseline-64.trace.jsonl.log",
+      "bytes": 3020600,
+      "sha256": "414cbcfa8d62b279b35247fea4043514a8b963d285d6b7b186918c041b5dff72"
+    }
+  ]
+}

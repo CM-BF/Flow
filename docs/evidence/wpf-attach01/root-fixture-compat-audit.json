@@ -1,0 +1,55 @@
+{
+  "target": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+  "previousRuntime": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+  "head": "1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9",
+  "changedSources": [
+    "apps/server/src/attachments/fixture.ts",
+    "apps/server/src/attachments/context.test.ts"
+  ],
+  "sourceMismatch": [],
+  "untouchedRuntimeSourceCount": 14,
+  "otherRuntimeMismatch": [],
+  "readonlyMismatch": [],
+  "diffCheck": 2,
+  "sourceScope": [
+    "apps/server/src/attachments/context.test.ts",
+    "apps/server/src/attachments/fixture.ts"
+  ],
+  "reviewDeltaBase": "1d236cbe2299117e3b63887fda3d1c0e140f56b0",
+  "fixtureDeltaDiffCheck": 0,
+  "wholeHistoryDiffCheckNote": "Exit 2 only from unchanged historical captured raw logs added after old runtime implementation; exact raw bytes preserved.",
+  "independentTests": {
+    "passed": 2,
+    "deselected": 27,
+    "durationSeconds": 9.23,
+    "log": "/tmp/root-attach-fixture-review-1f0c.log",
+    "evidence": "/tmp/root-attach-fixture-review-1f0c",
+    "actualFactory": "legacy fallback, production automatic 026/mount not tested"
+  },
+  "cleanup": [
+    {
+      "file": "/tmp/root-attach-fixture-review-1f0c/context-runtime-cleanup.json",
+      "remaining": [],
+      "connections": 0,
+      "errors": []
+    },
+    {
+      "file": "/tmp/root-attach-fixture-review-1f0c/crash-center-cleanup.json",
+      "remaining": [],
+      "connections": 0,
+      "errors": []
+    },
+    {
+      "file": "/tmp/root-attach-fixture-review-1f0c/resources-cleanup.json",
+      "remaining": [],
+      "connections": 0,
+      "errors": []
+    },
+    {
+      "file": "/tmp/root-attach-fixture-review-1f0c/upgrade-cleanup.json",
+      "remaining": [],
+      "connections": 0,
+      "errors": []
+    }
+  ]
+}

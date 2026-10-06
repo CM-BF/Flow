@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:39:09 UTC / main0cee7556befa1988e60bae94b510240122c34b88 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:32 UTC / main53ce2ec2 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 0cee7556befa1988e60bae94b510240122c34b88 / 已审ENG01A E0+E1与129来源候选 |
+| 工作基线 / HEAD | main53ce2ec2 / 附件领域、共享回执及生产入口已审组合 |
 | 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | 14工程源码固定hash一致；新S01停止语义下3个直接PG旅程通过，2未选；根类型检查通过，10主线保护文件零差 |
-| 已集成main状态 / HEAD | 终端确认/执行器停止0cee已推送；本批工程通路与129源即将fast-forward。个人backend/static仍b1c2e398、accepting v12。 |
+| 检查状态 | 附件23固定source一致；实际factory六例通过（23未选），四专库清零，root types0，0provider |
+| 已集成main状态 / HEAD | 工程配置与终端逐段回复已main648e331c，组合root types exit0；本批仅137来源登记与canonical收口。实际个人Web8d8/caa1已发布v2，backend仍b1c/accepting v12 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 受管工程工作区可以保存真实文件修改、固定检查结果，并在未知结果或确认丢失后保持原执行事实。 |
-| 下一可用交付 | 工程执行配置和启动恢复入口；真实网页新旧版本兼容验证继续。 |
+| 当前产出 | 附件上传、固定引用与公共读取已完成正式入口组合验证，旧数据和丢失回执可恢复。 |
+| 下一可用交付 | 目标交付统一读口与真实工程执行接缝并行推进；当前个人服务保持不变。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -121,3 +121,7 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T10:18:50.449758+00:00：已审R05D配置与SVC04独立网页发布组合接收，18项逐文件相同、root类型检查exit0；不重跑已核72/15与原浏览器/PG。首次类型命令退出码包装失败保留，后一次独立记录exit0。个人服务不动。见[固定组合](../../docs/evidence/i02/launch-web-release-integration.json)。
 
 2026-10-06T10:22:16.377582+00:00：固定架构图2c316（源码基线f181）五执行源hash精确相同、renderer/CSS保持；126来源含TUI01B与唯一D06新树。原独审15/浏览器证据复用，不重跑。其他仅明确文档与领取交接，见[本批记录](../../docs/evidence/i02/shared-ack-architecture-integration.json)。
+
+2026-10-06 11:23 UTC：TUI01C焦点修复与ENG01B已审产品在main648，唯一owner均按receipt停写释放；runners交S01P04。137个真实来源登记及canonical收口见[批次清单](../../docs/evidence/i02/registry-137-closeout.json)。ENG01C仅writer生命周期，真实native身份/受信检查后继明确；本批不调用provider、不改变个人服务或架构固定图。
+
+2026-10-06 11:32 UTC：附件23源码均与固定独审target逐字相同；生产factory在8次启动/重启均自动026+六routes，fallback全false。六选中HTTP/PG case通过、23未选，四专库正常清理；root types0。[组合证据](../../docs/evidence/i02/attachment-integration.json)。ENG01C已main53ce，个人服务未更新。

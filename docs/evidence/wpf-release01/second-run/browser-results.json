@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-06T10:34:27.486Z",
+  "backend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "oldWeb": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "newWeb": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+  "sources": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "sha256": "6597985c9fde3ca0e64baf5a4f8e47b51b338bed0761c9a3edcd38b2dcd85289"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "sha256": "fb673430d86a760715ed552b8241d572f10a4fa45226659ff1aaacd6e04a35dd"
+    }
+  ],
+  "results": [],
+  "failure": "locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('navigation', { name: 'Conversations', exact: true }).getByRole('button', { name: 'Release old durable message', exact: true })\u001b[22m\n\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/apps/web/test/web-release-compatibility.browser.ts:74:66)",
+  "passed": false
+}

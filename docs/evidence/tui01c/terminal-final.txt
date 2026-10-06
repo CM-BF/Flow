@@ -1,0 +1,16 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity
+
+stdout | apps/tui/src/stream-pty.test.ts > real PTY shows two verified prefixes, lazy/redacted tool bodies and sanitized text; exit leaves center work running
+TUI01C PTY {"exitCode":0,"bytes":17217,"elapsedMs":2987,"visibleCheckpoints":["Ctrl-C disconnect and quit","/open 9d2a966b-ff6e-4d34-ad68-f22c1996ae58","Saved conversation opened.","Assistant: First","First 中文🙂 second","/activity","Activity · turn 1","/detail 2","No public body is available.","/detail 1","Truncated public fragment","\\u001b]52;c;UNTRUSTED\\u0007","/back","Back to assistant text."],"rawModeRestored":true,"untrustedOscExecuted":false}
+
+ ✓ apps/tui/src/stream-pty.test.ts (1 test) 4011ms
+   ✓ real PTY shows two verified prefixes, lazy/redacted tool bodies and sanitized text; exit leaves center work running  4011ms
+ ✓ apps/tui/src/terminal.test.ts (4 tests) 166ms
+ ✓ packages/interaction/src/controller.test.ts (13 tests) 12ms
+
+ Test Files  3 passed (3)
+      Tests  18 passed (18)
+   Start at  03:58:02
+   Duration  5.24s (transform 324ms, setup 0ms, import 755ms, tests 4.19s, environment 0ms)
+

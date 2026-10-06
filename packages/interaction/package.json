@@ -3,7 +3,11 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "exports": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./stream": "./src/stream/index.ts",
+    "./activity": "./src/activity/index.ts"
+  },
   "dependencies": {
     "@flow/client": "workspace:*",
     "@flow/contracts": "workspace:*",

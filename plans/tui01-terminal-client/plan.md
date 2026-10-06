@@ -62,3 +62,5 @@
 MATURE02/04提供能力与上下文来源，MATURE03提供文件生命周期，MATURE06共享queue/steer合同；TUI基础片不等全部大task完成，也不抢Web App/Thread。R06/ R05B继续并行，不因TUI新目标停止已ready交付。个人61227/61228与现用户任务不受本计划操作。架构图后继标注TUI→共享交互→FlowClient→center，当前只是planned。
 
 研究与来源：[research.md](../../docs/evidence/tui01/research.md)、[provenance](../../docs/evidence/tui01/research-provenance.json)、[包版本候选](../../docs/evidence/tui01/package-candidates.json)。
+
+当前唯一子片：TUI01B已交付共享ACK与冲突恢复；Web WPF-ACK01接其真实第二消费者，TUI001-09暂不关闭。TUI01C承担TUI001-03，以共享浏览器安全协议/中立正文段落复用既有Web规则，不复制终端状态机或迁移Web host。
