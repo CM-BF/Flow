@@ -1,0 +1,22 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/runner-capacity/mixed/profile.test.ts > private SQL observation distinguishes the new SHARE fence without changing returned promises
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ experiments/runner-capacity/mixed/profile.test.ts:43:62
+     41|   const observe=observePg(proto,x=>records.push(x));
+     42|   try { await proto.connect(); expect(client.query('SELECT * FROM flow…
+     43|     expect(records.some(x=>x.category==='runner-row-share')).toBe(true…
+       |                                                              ^
+     44|   } finally { observe.restore(); }
+     45| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

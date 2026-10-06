@@ -1,5 +1,6 @@
 import { fork } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
 import { CONTRACT, deferred, type RunContract } from './contract.js';
 import type { OwnedProcess } from '../processes.js';
 import type { RecordValue } from './channel.js';
@@ -7,7 +8,7 @@ export type Observation = RecordValue & { receivedMs: number; pid: number };
 export async function launch(config: Record<string, unknown>, owned: OwnedProcess[], receive: (value: Observation) => void, charge: (kind: string, bytes: number) => void, timeoutMs: number, contract: RunContract = CONTRACT): Promise<OwnedProcess> {
   const child = fork(fileURLToPath(new URL('./child.ts', import.meta.url)), [], {
     execPath: process.execPath, execArgv: ['--import', 'tsx'],
-    env: { PATH: process.env.PATH, TSX_TSCONFIG_PATH: fileURLToPath(new URL('./tsconfig.json', import.meta.url)) },
+    env: { PATH: process.env.PATH, TSX_TSCONFIG_PATH: typeof config.sourceDirectory === 'string' ? join(config.sourceDirectory, 'tsconfig.json') : fileURLToPath(new URL('./tsconfig.json', import.meta.url)) },
     stdio: ['ignore', 'ignore', 'pipe', 'ipc'],
   });
   const ready = deferred<Record<string, unknown>>(); void ready.promise.catch(() => {});

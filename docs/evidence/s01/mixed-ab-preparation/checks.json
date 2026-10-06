@@ -1,0 +1,28 @@
+{
+  "recordedAt": "2026-10-06 13:58:44 UTC",
+  "actualCalls": {
+    "comparison": 0,
+    "postgres": 0,
+    "httpRunner": 0,
+    "provider": 0,
+    "sdk": 0
+  },
+  "distinctCurrentPassing": 61,
+  "newDistinct": 19,
+  "legacyDistinct": 42,
+  "composition": "59 selected:58 passed +1 stale SQL fixture failed; narrow final13 selected=9budget(includes2new)+4profile(all passed). Union61, not one61/61 batch.",
+  "initialRed": "6 selected5 passed1 failed: actual Budget observer hooks absent yielded outertasks0 after128 submits",
+  "initialFakeFailure": "28 selected27 passed1 failed: macOS /var vs /private/var canonical path; corrected test expected realpath",
+  "legacyFixtureFix": "profile.test exact P04 query only; samePromise/classification assertions retained, observer remains fixedc259",
+  "strict": {
+    "exitCode": 0,
+    "scope": "mixed tsconfig root strict ES2023/noUnchecked; no A/B production imports executed"
+  },
+  "limitations": [
+    "No actual export of fixed production roots, targets or workload",
+    "No A/B performance/speedup/SLO verdict",
+    "Current shared disk does not satisfy actual preflight; window NOT_OPEN",
+    "Pending OS operations remain unknown; deadline is not cancellation",
+    "Physical process clock/exit and CLI delivery must be external-receipted at future actual run"
+  ]
+}

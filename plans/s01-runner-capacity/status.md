@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:26:07 UTC / aae1eb1054d75e78273e7c91ed048aeac80195da |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:53:00 UTC / 历史aae1eb1054d75e78273e7c91ed048aeac80195da |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | 固定main1c输入；observer implementation c259e8e53cd53830fe1bc78ce3c8dae7b34d5540；历史128 source6de/execution70c/result64911各自冻结 |
-| 工作树dirty状态 | 源码/raw冻结；本次main收口metadata提交后clean，随后全部范围停写 |
-| 工作分支状态 | completed |
-| 检查状态 | PASSED：observer后继4/4 fake direct+局部strict0；128历史结果APPROVED保持，不新增实际调用 |
-| 已集成main状态 / HEAD | 本片已集成 main/origin aae1eb1054d75e78273e7c91ed048aeac80195da；own source逐字核符，接收方检查见main-acceptance |
-| 实现目标 | c259e8e53cd53830fe1bc78ce3c8dae7b34d5540 |
-| 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
+| 工作基线 / HEAD | A/B固定生产A=a3e670b906c1b65d586b7730ca19da83109f1dcc、B=aae1eb1054d75e78273e7c91ed048aeac80195da；本树起点7279cb54，新source尚未固定 |
+| 工作树dirty状态 | 新A/B preparation在新claim四范围内实施；历史raw冻结 |
+| 工作分支状态 | in-progress |
+| 检查状态 | IN_PROGRESS：新A/B 61distinct pure/fake最终覆盖、局部strict0；目标待固定/独审，0actual |
+| 已集成main状态 / HEAD | 新A/B未main；历史mixed26+c259已mainaae，范围见历史main-acceptance |
+| 实现目标 | 新A/B待固定；旧c259不覆盖新编排 |
+| 实现范围 | 新claim仅mixed目录、mixed-ab-preparation、mixed-ab-run、原plan目录；无产品写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 本片已进入主线；等待资源有界后继由独立S01P06推进 |
-| 下一可用交付 | 本片段已交付；未启动的A/B须fresh领取与独立窗口 |
-| 当前阻塞 | NONE |
+| 当前产出 | A/B固定输入与总预算Interface；当前实际窗口NOT_OPEN |
+| 下一可用交付 | 共用mixed的A/B薄编排、pure/fake checks、固定target独审 |
+| 当前阻塞 | 实现NONE；实际执行RESOURCE_PENDING/NOT_OPEN |
 | 需用户决定 | NONE |
-| Review | APPROVED：observer c259e8e53cd53830fe1bc78ce3c8dae7b34d5540，architecture_read/Astra，2026-10-06 12:45:30 UTC，0P1/P2；Mika接收 |
+| Review | PENDING：新A/B尚未固定独审；历史c259与64911 APPROVED仅其固定范围 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -193,3 +193,9 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 13:17:06 UTC：资源安全点仅核本人P05/S01两个WT的非symlink Vitest .vite/.vite-temp缓存，结束后移除4小root、2文件共1039逻辑B/8192已分配文件B；这是删除文件分配量，不是整盘可用空间净增断言。[receipt](../../docs/evidence/s01/long-lived-wait/resource-cleanup.json)。未遍历/删除symlink目标或.pnpm、任何raw/journal（FKye9L未触）、他人WT/个人数据。longwait已向Mika只读回报fresh scope无active覆盖及最小track-once/wait/close候选、32虚拟ticks计数反例与直接消费者，未领取/修改产品或启动任何新检查。
 
 2026-10-06 13:26:07 UTC：独立核本片26个source/config=固定源Git=mainGit=mainWT=ownerWT；[main接收](../../docs/evidence/s01/main-acceptance.json)。接收方4项PG/4tasks与root/mixed types0是集成检查，owner0重测/新容量。旧64911共享锁耗时UNKNOWN不回填，原完整计划未验收项保持开放。确认全部原scope停止写入；release请求 `155244f0-ded5-49dc-9947-3c3498bd30fb` 尚未发送，提交/push后执行，实际回执仅协调账本及项目外保存，释放后不回写。架构范围未扩；clean-code metadata一致性/固定source核验完成。
+
+## 2026-10-06 13:43:00 UTC A/B preparation重新领取
+
+原writer已release；新claim `508f9c85-a27c-4382-bfe9-caca43be4b0e` v1于13:42:24.119Z COMMITTED，fresh HEAD7279cb54 clean、四scope无冲突。[Interface](../../docs/evidence/s01/mixed-ab-preparation/interface.md)固定A3e/Baae与300s/512MiB统一账本；原已main26源/observer与64911结果仍是历史已交付。本阶段只pure/fake准备，0新真实运行，NOT_OPEN；当前Review不沿用旧结果批准。唯一status继续供既有S01 registry读取，未新查live聚合。
+
+2026-10-06 13:58:44 UTC：A/B薄编排准备完成；[checks](../../docs/evidence/s01/mixed-ab-preparation/checks.json)保留red/全部失败，61distinct=19new+42direct，最终覆盖来自59首次选择与13定向修复，非单批61/61。Root预读15s及绝对side期限已修，尚待fixedtarget独审。0actual/固定输入未导出，磁盘RESOURCE_PENDING不作实现阻塞；旧raw/source历史仍按fixedGit。

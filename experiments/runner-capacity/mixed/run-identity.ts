@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { CONTRACT, LARGE_CONTRACT, type RunContract } from './contract.js';
+import { COMPARISON, sideContract, type Side } from './ab-budget.js';
 
 type SourceBinding = Readonly<{ path: string; bytes: number; sha256: string }>;
 type RunIdentity = Readonly<{ id: string; base: string; output: string; preparation: string; contract: RunContract; requiredSources: readonly SourceBinding[] }>;
@@ -91,6 +92,13 @@ export function selectRunIdentity(name = 'legacy-v1'): RunIdentity {
   if (name === 'legacy-v1') return legacy;
   if (name === 'after-drain-v1') return afterDrain;
   if (name === 'after-light-reads-128-v1') return afterLightReads;
+  if (name === 'event-state-A-v1' || name === 'event-state-B-v1') {
+    const side: Side = name === 'event-state-A-v1' ? 'A' : 'B';
+    return Object.freeze({ id: name, base: COMPARISON.revisions[side], contract: sideContract(side),
+      output: COMPARISON.output + '/' + side, preparation: COMPARISON.preparation,
+      requiredSources: Object.freeze([{ path: 'apps/server/src/events.ts', bytes: side === 'A' ? 8678 : 8529,
+        sha256: side === 'A' ? '4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853' : '270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02' }]) });
+  }
   throw new Error('Unreviewed mixed-run identity.');
 }
 

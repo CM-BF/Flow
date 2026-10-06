@@ -103,3 +103,7 @@ GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika�
 ## S01-06 长驻wait后继登记（2026-10-06 13:00:30 UTC）
 
 固定main280289 runtime.ts:55–59每轮race订阅全部active promises；结合TC39规范推断长驻pending订阅随tick积累。详见[有界登记与验收](../../docs/evidence/s01/long-lived-wait/README.md)。现6秒128已审证据不证明小时驻留有界，无heap/RSS实测结论。S01-06继续in-progress；后继需fresh产品scope+独立WT，由Mika协调owner，少量pending/有限虚拟ticks红绿验证订阅/唤醒、及时补槽及shutdown/unknown-claim/recovery-drain不变。此轮只metadata，0测试/负载，不触旧raw。
+
+## S01-04 / S01-05 A/B准备（2026-10-06 13:43 UTC）
+
+沿既有TODO实施固定A3e/Baae、共同observerc259、单一300s/512MiB总账本，详见[Interface](../../docs/evidence/s01/mixed-ab-preparation/interface.md)。只授权准备与pure/fake验证；实际窗口NOT_OPEN。产品唯一events差异，旧raw冻结；原未验收ACK/browser/native/SLO边界不变。

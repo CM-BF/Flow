@@ -1,4 +1,5 @@
 import pg from 'pg';
+import { productionModule } from './ab-input.js';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { createHash } from 'node:crypto';
 import { CONTRACT, deferred, type RunContract } from './contract.js';
@@ -14,6 +15,7 @@ type Registration = { runnerId: string; token: string; directory: string; slots:
 type CaseInput = { kind: 'case'; caseId: string; baseUrl: string; taskIds: string[]; runners: Registration[] };
 type Claim = { taskId: string; attemptId: string; ownerVersion: number; runnerId: string };
 let contract: RunContract = CONTRACT;
+let sourceDirectory: string | undefined;
 let stoppedAtMs: number | null = null;
 const shutdown = new AbortController();
 const reporter = childReporter(() => shutdown.abort(), () => contract);
@@ -43,7 +45,7 @@ async function center(config: { databaseUrl: string; ownerToken: string }) {
   let app: Awaited<ReturnType<typeof import('../../../apps/server/src/index.js')['createServer']>> | undefined;
   try {
     // All createServer loading occurs after observation installation, in this owned process only.
-    const { createServer } = await import('../../../apps/server/src/index.js');
+    const { createServer } = await import(productionModule(sourceDirectory, 'apps/server/src/index.js')) as typeof import('../../../apps/server/src/index.js');
     app = await createServer({ databaseUrl: config.databaseUrl, ownerToken: config.ownerToken, leaseMs: contract.leaseMs });
     app.server.on('connection', socket => streams.add(socket));
     const baseUrl = await app.listen({ host: '127.0.0.1', port: 0 });
@@ -56,8 +58,8 @@ async function center(config: { databaseUrl: string; ownerToken: string }) {
   }
 }
 async function runCase(input: CaseInput) {
-  const { runRunner } = await import('../../../apps/runner/src/runtime.js');
-  const { createFixtureAdapter } = await import('../../../apps/runner/src/fixture.js');
+  const { runRunner } = await import(productionModule(sourceDirectory, 'apps/runner/src/runtime.js')) as typeof import('../../../apps/runner/src/runtime.js');
+  const { createFixtureAdapter } = await import(productionModule(sourceDirectory, 'apps/runner/src/fixture.js')) as typeof import('../../../apps/runner/src/fixture.js');
   caseControl = new AbortController(); measure = deferred<number>(); currentCase = input.caseId;
   const signal = AbortSignal.any([shutdown.signal, caseControl.signal]); stoppedAtMs = null;
   const claims = new Map<string, Claim>(); const allowed = new Set(input.taskIds);
@@ -162,9 +164,10 @@ async function runner() {
   await abortable(new Promise<void>(() => {}), shutdown.signal).catch(() => {});
   caseControl?.abort(); await casePromise;
 }
-process.once('message', async (config: { role: string; databaseUrl: string; ownerToken: string; runIdentity?: string }) => {
+process.once('message', async (config: { role: string; databaseUrl: string; ownerToken: string; runIdentity?: string; sourceDirectory?: string }) => {
   if (!['center', 'runner'].includes(config.role)) return;
   contract = selectRunIdentity(config.runIdentity).contract;
+  sourceDirectory = config.sourceDirectory;
   const memoryTimer = contract.persistentSessions ? setInterval(() => send({ ...memoryObservation(), role: config.role }), contract.memoryIntervalMs) : undefined;
   try { if (config.role === 'center') await center(config); else await runner(); }
   catch { send({ kind: 'failure', code: 'child_failed' }); process.exitCode = 1; }

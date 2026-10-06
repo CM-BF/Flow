@@ -1,0 +1,16 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+ ❯ experiments/runner-capacity/mixed/ab-budget.test.ts (6 tests | 1 failed) 5ms
+   ✓ fixed sides share the128 workload and reserve30seconds for cleanup 1ms
+   ✓ real-time shared charges reserve common inputs before allowing another240MiB side 0ms
+   ✓ failed or unknown A never opens B even if no tasks are visible 0ms
+   ✓ B admission requires150seconds remaining and cannot reset or retry a consumed side 0ms
+   × submission and measurement hooks cannot hide task orbyte usage from the shared ledger 3ms
+   ✓ common input overflow, softstop and side elapsed limits do not silently clamp 0ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  06:47:10
+   Duration  133ms (transform 29ms, setup 0ms, import 36ms, tests 5ms, environment 0ms)
+

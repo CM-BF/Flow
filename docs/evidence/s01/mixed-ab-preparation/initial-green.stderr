@@ -1,0 +1,19 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/runner-capacity/mixed/ab-input.test.ts > declared workspace dependencies resolve within their own export while external pg retains its prototype
+AssertionError: expected '/private/var/folders/f1/2xjyyqkn5plc1…' to be '/var/folders/f1/2xjyyqkn5plc19fx4nt4t…' // Object.is equality
+
+Expected: "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ab-input-test-EAji12/A/packages/contracts"
+Received: "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ab-input-test-EAji12/A/packages/contracts"
+
+ ❯ experiments/runner-capacity/mixed/ab-input.test.ts:29:83
+     27|    {path:'packages/contracts/package.json',oid:'test',bytes:Buffer.fro…
+     28|   await materializeInput(repo,target,input,{remainingMs:10000,work(){}…
+     29|   expect(await realpath(join(target,'apps/server/node_modules/@flow/co…
+       |                                                                                   ^
+     30|   expect(JSON.parse(await readFile(join(target,'apps/server/node_modul…
+     31|  }finally{await rm(root,{recursive:true,force:true});}
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

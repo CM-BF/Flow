@@ -39,7 +39,7 @@ test('private SQL observation distinguishes the new SHARE fence without changing
   const records: PgObservation[]=[]; const result=Promise.resolve({rows:[]});
   const client={query:(_sql: string)=>result}; const proto={connect:()=>Promise.resolve(client)};
   const observe=observePg(proto,x=>records.push(x));
-  try { await proto.connect(); expect(client.query('SELECT * FROM flow.runners WHERE id=$1 FOR SHARE')).toBe(result); await result;
+  try { await proto.connect(); expect(client.query('SELECT id,revoked FROM flow.runners WHERE id=$1 FOR SHARE')).toBe(result); await result;
     expect(records.some(x=>x.category==='runner-row-share')).toBe(true);
   } finally { observe.restore(); }
 });

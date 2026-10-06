@@ -1,0 +1,22 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/runner-capacity/mixed/ab-budget.test.ts > submission and measurement hooks cannot hide task orbyte usage from the shared ledger
+AssertionError: expected +0 to be 128 // Object.is equality
+
+- Expected
++ Received
+
+- 128
++ 0
+
+ ❯ experiments/runner-capacity/mixed/ab-budget.test.ts:34:64
+     32|   const inner = new Budget(0, () => 0, sideContract('A'), {
+     33|     charge: (kind, bytes) => budget.chargeSide(kind, bytes), work: () …
+     34|   for (let i=0;i<128;i++) inner.submit(); expect(budget.tasks).toBe(12…
+       |                                                                ^
+     35|   expect(() => inner.submit()).toThrow('mixed_task_budget_exhausted');…
+     36|   expect(budget.usedBytes).toBe(COMPARISON.finalReserveBytes+17);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

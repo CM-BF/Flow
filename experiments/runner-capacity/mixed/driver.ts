@@ -10,7 +10,8 @@ import { beforeDeadline } from './deadline.js';
 import { StreamBytes } from './stream-bytes.js';
 import { ObservationArchive } from './observation-archive.js';
 import { memoryObservation } from './channel.js';
-import { Budget } from './contract.js';
+import { Budget, type BudgetObserver } from './contract.js';
+import { COMPARISON } from './ab-budget.js';
 import { selectRunIdentity, verifyRunSources } from './run-identity.js';
 import { launch, transmit, type Observation } from './process.js';
 import { stopProcess, type OwnedProcess } from '../processes.js';
@@ -18,23 +19,26 @@ import { boundedText } from '../http.js';
 import { directoryBytes } from '../evidence.js';
 
 import { validGate, completionAcks, validateWindow, validateFinal, validatePersistentSessions, validateWindowSamples, type Row, type CaseResult } from './proof.js';
-export async function runMixed(windowId: string, target: string, identity?: string) {
-  const startedMs = performance.now();
+export async function runMixed(windowId: string, target: string, identity?: string, comparison?: { sourceDirectory: string; accounting: BudgetObserver; startedMs: number; deadlineMs: number }) {
+  const startedMs = comparison?.startedMs ?? performance.now();
+  const deadlineAt = (offset: number) => Math.min(startedMs + offset, comparison?.deadlineMs ?? Infinity);
   const run = selectRunIdentity(identity);
   const contract = { ...run.contract, base: run.base };
   assert(/^[a-zA-Z0-9-]{8,100}$/.test(windowId), 'A separately authorized window ID is required.');
-  if (contract.persistentSessions) assert.equal(windowId, 's01-128-after-light-reads-once', 'Unexpected128 window identity.');
+  const comparing = run.id === 'event-state-A-v1' || run.id === 'event-state-B-v1';
+  assert.equal(Boolean(comparison), comparing, 'Comparison inputs require the fixed outer entry.');
+  if (contract.persistentSessions) assert.equal(windowId, comparing ? COMPARISON.windowId : 's01-128-after-light-reads-once', 'Unexpected128 window identity.');
   assert(/^[a-f0-9]{40}$/.test(target), 'Fixed reviewed source target is required.');
-  const git = (...args: string[]) => execFileSync('git', args, { encoding: 'utf8' }).trim();
+  const git = (...args: string[]) => execFileSync('git', args, { encoding: 'utf8', ...(comparison ? { timeout: Math.max(1, Math.min(5000, comparison.deadlineMs - performance.now())), maxBuffer: 1024 * 1024 } : {}) }).trim();
   assert.equal(git('rev-parse', 'HEAD'), target, 'Source HEAD differs from reviewed target.');
   assert.equal(git('status', '--porcelain', '--untracked-files=no'), '', 'Tracked source is dirty.');
-  git('merge-base', '--is-ancestor', run.base, target);
-  await verifyRunSources(run, path => readFile(path));
+  if (!comparing) git('merge-base', '--is-ancestor', run.base, target);
+  await verifyRunSources(run, path => readFile(comparison ? join(comparison.sourceDirectory, path) : path));
   const bindings = JSON.parse(await readFile(new URL('./runtime-dependencies.json', import.meta.url), 'utf8')) as { node: string; files: { path: string; bytes: number; sha256: string }[] };
   assert.equal(process.version, bindings.node, 'Runtime version differs from the frozen dependency binding.');
   for (const binding of bindings.files) { const bytes = await readFile(binding.path); assert.equal(bytes.length, binding.bytes); assert.equal(createHash('sha256').update(bytes).digest('hex'), binding.sha256); }
   assert.equal(await realpath(join(dirname(await realpath('node_modules/pg-boss')), 'pg')), await realpath('node_modules/pg'), 'Scheduler pg must share the observed Pool prototype.');
-  const budget = new Budget(startedMs, performance.now.bind(performance), contract);
+  const budget = new Budget(startedMs, performance.now.bind(performance), contract, comparison?.accounting);
   const output = resolve(run.output);
   await mkdir(output); // One fixed directory reserves this stage. Existing/unknown runs cannot be retried.
   const databaseName = 'flow_s01_mixed_' + process.pid + '_' + randomUUID().replaceAll('-', '');
@@ -48,6 +52,7 @@ export async function runMixed(windowId: string, target: string, identity?: stri
   const halt = new AbortController(); let phase = 'setup';
   let admin: Pool | undefined, observer: Pool | undefined, center: OwnedProcess | undefined, runner: OwnedProcess | undefined;
   let databaseFinal: Row | undefined;
+  let resourcesClosed = false;
   let baseUrl = '', workdir = '', creationRequested = false, creationAcknowledged = false; let observerLoop: Promise<void> | undefined;
   let observationStop = false; let observedCase: CaseResult | undefined; let latestRows: Row[] = []; let latestSnapshotStart = 0;
   const streams = new StreamBytes(8);
@@ -68,7 +73,7 @@ export async function runMixed(windowId: string, target: string, identity?: stri
     const text = prepaidBytes === undefined ? JSON.stringify(value, null, 2) : JSON.stringify(value);
     if (prepaidBytes === undefined) budget.charge('evidence', Buffer.byteLength(text));
     else assert.equal(Buffer.byteLength(text), prepaidBytes, 'observation_reservation_mismatch');
-    if (performance.now() >= startedMs + contract.cleanup.result) throw new Error('evidence_deadline');
+    if (performance.now() >= deadlineAt(contract.cleanup.result)) throw new Error('evidence_deadline');
     await writeFile(join(output, name), text, { flag: 'wx', mode: 0o600 });
   }
   async function query(pool: Pool, sql: string, parameters: unknown[] = [], cleanupQuery = false) {
@@ -131,10 +136,10 @@ export async function runMixed(windowId: string, target: string, identity?: stri
     const databaseUrl = url.href;
     url.searchParams.set('application_name', 'flow-s01-mixed-observer'); observer = new Pool({ ...options, connectionString: url.href }); observer.on('connect', client => streams.addPgClient(client)); observer.on('error', () => fail('observer_connection_failed'));
     workdir = await mkdtemp(join(tmpdir(), 'flow-s01-mixed-'));
-    center = await launch({ role: 'center', databaseUrl, ownerToken: token, runIdentity: run.id }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract);
+    center = await launch({ role: 'center', databaseUrl, ownerToken: token, runIdentity: run.id, sourceDirectory: comparison?.sourceDirectory }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract);
     baseUrl = String(center.ready.baseUrl);
     assert(/^http:\/\/127\.0\.0\.1:\d+$/.test(baseUrl), 'Unexpected center endpoint.');
-    runner = await launch({ role: 'runner', runIdentity: run.id }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract);
+    runner = await launch({ role: 'runner', runIdentity: run.id, sourceDirectory: comparison?.sourceDirectory }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract);
     const pgVersion = (await query(observer, 'SHOW server_version')).rows[0].server_version;
     await evidence('owned-resources.json', { databaseName, workdir, processes: owned.map(p => ({ role: p.role, pid: p.pid })), baseUrl, pgVersion });
     observerLoop = (async () => {
@@ -241,7 +246,7 @@ export async function runMixed(windowId: string, target: string, identity?: stri
     fail(code); if (cases.length) cases.at(-1)!.failure = code;
   } finally {
     clearTimeout(timer); clearInterval(memoryTimer); phase = 'cleanup'; observationStop = true; halt.abort();
-    const childDeadline = Math.min(performance.now() + (contract.persistentSessions ? 12000 : 6000), startedMs + contract.cleanup.child);
+    const childDeadline = Math.min(performance.now() + (contract.persistentSessions ? 12000 : 6000), deadlineAt(contract.cleanup.child));
     const stopped = await Promise.all(owned.map(async process => {
       const receipt = await beforeDeadline(childDeadline, () => stopProcess(process, childDeadline));
       if (receipt.state === 'settled') {
@@ -254,7 +259,7 @@ export async function runMixed(windowId: string, target: string, identity?: stri
       fail('child_cleanup_unknown'); return false;
     }));
     const allChildrenClosed = stopped.every(Boolean);
-    const drained = await beforeDeadline(startedMs + contract.cleanup.drain, async () => {
+    const drained = await beforeDeadline(deadlineAt(contract.cleanup.drain), async () => {
       await Promise.allSettled([...requests]); await observerLoop;
       if (contract.persistentSessions && allChildrenClosed && observer) {
         databaseFinal = (await query(observer, `SELECT jsonb_build_object(
@@ -266,26 +271,26 @@ export async function runMixed(windowId: string, target: string, identity?: stri
       }
     });
     if (drained.state !== 'settled') { cleanup.push({ observerOrHttpRetained: true, reason: drained.reason }); fail('observation_drain_unknown'); }
-    const observerClosed = await beforeDeadline(startedMs + contract.cleanup.observer, async () => { await observer?.end(); });
+    const observerClosed = await beforeDeadline(deadlineAt(contract.cleanup.observer), async () => { await observer?.end(); });
     if (observerClosed.state !== 'settled') { streams.destroyOwned(); cleanup.push({ observerRetained: true }); fail('observer_close_unknown'); }
     if (creationRequested && admin) {
       if (!creationAcknowledged) cleanup.push({ databaseName, creationUnknown: true });
       if (!allChildrenClosed || observerClosed.state !== 'settled' || drained.state !== 'settled') {
         cleanup.push({ databaseName, retained: true, reason: 'owned_connections_not_confirmed_closed' }); fail('database_retained');
       } else {
-        const exists = await beforeDeadline(startedMs + contract.cleanup.exists, () => query(admin!, 'SELECT 1 FROM pg_database WHERE datname=$1', [databaseName], true));
+        const exists = await beforeDeadline(deadlineAt(contract.cleanup.exists), () => query(admin!, 'SELECT 1 FROM pg_database WHERE datname=$1', [databaseName], true));
         if (exists.state !== 'settled') { cleanup.push({ databaseName, retained: true, creationUnknown: !creationAcknowledged }); fail('database_existence_unknown'); }
         else if (!exists.value.rowCount) cleanup.push({ databaseName, absentAtCheck: true, creationUnknown: !creationAcknowledged });
         else {
-          const connections = await beforeDeadline(startedMs + contract.cleanup.connections, () => query(admin!, 'SELECT pid FROM pg_stat_activity WHERE datname=$1', [databaseName], true));
+          const connections = await beforeDeadline(deadlineAt(contract.cleanup.connections), () => query(admin!, 'SELECT pid FROM pg_stat_activity WHERE datname=$1', [databaseName], true));
           if (connections.state !== 'settled' || connections.value.rows.length) {
             cleanup.push({ databaseName, retained: true, reason: 'database_connections_or_query_unknown' }); fail('database_connections_retained');
           } else {
-            const dropped = await beforeDeadline(startedMs + contract.cleanup.drop, () => query(admin!, 'DROP DATABASE "' + databaseName + '"', [], true));
+            const dropped = await beforeDeadline(deadlineAt(contract.cleanup.drop), () => query(admin!, 'DROP DATABASE "' + databaseName + '"', [], true));
             cleanup.push({ databaseName, dropped: dropped.state === 'settled', retained: dropped.state !== 'settled' });
             if (dropped.state !== 'settled') fail('database_drop_unknown');
             else if (contract.persistentSessions) {
-              const absent = await beforeDeadline(startedMs + contract.cleanup.absent, () => query(admin!, 'SELECT 1 FROM pg_database WHERE datname=$1', [databaseName], true));
+              const absent = await beforeDeadline(deadlineAt(contract.cleanup.absent), () => query(admin!, 'SELECT 1 FROM pg_database WHERE datname=$1', [databaseName], true));
               const confirmed = absent.state === 'settled' && absent.value.rowCount === 0;
               cleanup.push({ databaseName, absentConfirmed: confirmed }); if (!confirmed) fail('database_absence_unknown');
             }
@@ -293,15 +298,15 @@ export async function runMixed(windowId: string, target: string, identity?: stri
         }
       }
     }
-    const adminClosed = await beforeDeadline(startedMs + contract.cleanup.admin, async () => { await admin?.end(); });
+    const adminClosed = await beforeDeadline(deadlineAt(contract.cleanup.admin), async () => { await admin?.end(); });
     if (adminClosed.state !== 'settled') { streams.destroyOwned(); cleanup.push({ adminRetained: true }); fail('admin_close_unknown'); }
     const finalStreams = streams.sample(); charge('driver-pg-node-streams', finalStreams.delta); if (!finalStreams.complete) fail('driver_stream_accounting_unknown');
     if (workdir) {
-      const archived = await beforeDeadline(startedMs + contract.cleanup.journal, async () => {
+      const archived = await beforeDeadline(deadlineAt(contract.cleanup.journal), async () => {
         const retained = await journals(workdir, contract.journalFiles);
-        if (performance.now() >= startedMs + contract.cleanup.journal) throw new Error('journal_archive_deadline');
+        if (performance.now() >= deadlineAt(contract.cleanup.journal)) throw new Error('journal_archive_deadline');
         await evidence('journals.json', retained);
-        if (performance.now() >= startedMs + contract.cleanup.journal) throw new Error('journal_removal_deadline');
+        if (performance.now() >= deadlineAt(contract.cleanup.journal)) throw new Error('journal_removal_deadline');
         if (retained.some(file => file.unresolved) || !allChildrenClosed) { cleanup.push({ workdir, retained: true }); fail('admission_or_outbox_retained'); }
         else { await rm(workdir, { recursive: true }); cleanup.push({ workdir, removed: true }); }
       });
@@ -313,10 +318,10 @@ export async function runMixed(windowId: string, target: string, identity?: stri
     }
     if (!observations.some(value => value.kind === 'stream-bytes' && Number(value.streams) > 0)) fail('center_stream_accounting_missing');
     if (!cases.every(value => value.settledByDeadline) || cases.length !== contract.cases.length) fail('configured_cases_not_completed');
-    if (performance.now() - startedMs > contract.totalMs) fail('total_time_exceeded');
-    const observationsWritten = await beforeDeadline(startedMs + contract.cleanup.observations, () => evidence('observations.json', observations, archive.prepaidBytes));
+    if (performance.now() > deadlineAt(contract.totalMs)) fail('total_time_exceeded');
+    const observationsWritten = await beforeDeadline(deadlineAt(contract.cleanup.observations), () => evidence('observations.json', observations, archive.prepaidBytes));
     if (observationsWritten.state !== 'settled') fail('observation_evidence_unknown');
-    const resultWritten = await beforeDeadline(startedMs + contract.cleanup.result, () => evidence('result.json', { windowId, target, runIdentity: run.id, contract, cases, databaseFinal, errors, cleanup, background,
+    const resultWritten = await beforeDeadline(deadlineAt(contract.cleanup.result), () => evidence('result.json', { windowId, target, runIdentity: run.id, contract, cases, databaseFinal, errors, cleanup, background,
       elapsedMs: performance.now() - startedMs, elapsedBasis: 'through result serialization; final CLI receipt includes final file write',
       byteAccountingComplete: finalStreams.complete && adminClosed.state === 'settled' && observerClosed.state === 'settled' && drained.state === 'settled' && observations.some(value => value.kind === 'center-settled') && !errors.some(code => code.includes('stream') || code.includes('child_cleanup') || code.includes('observation')),
       measuredBytesBeforeResult: budget.usedBytes, byteCategoriesBeforeResult: budget.categories,
@@ -325,8 +330,13 @@ export async function runMixed(windowId: string, target: string, identity?: stri
       success: errors.length === 0, providerCalls: 0 }));
     if (resultWritten.state !== 'settled') fail('result_evidence_unknown');
   }
-  if (performance.now() - startedMs > contract.totalMs) fail('total_time_exceeded_after_evidence_write');
-  return { output, success: errors.length === 0, errors, finalElapsedMs: performance.now() - startedMs, finalMeasuredBytes: budget.usedBytes };
+  resourcesClosed = owned.length === 2 && cleanup.filter(row => typeof row.pid === 'number').length === 2
+    && cleanup.filter(row => typeof row.pid === 'number').every(row => row.exited === true)
+    && cleanup.some(row => row.databaseName === databaseName && row.absentConfirmed === true)
+    && cleanup.some(row => row.workdir === workdir && row.removed === true)
+    && !cleanup.some(row => row.retained || row.observerRetained || row.adminRetained || row.observerOrHttpRetained);
+  if (performance.now() > deadlineAt(contract.totalMs)) fail('total_time_exceeded_after_evidence_write');
+  return { output, success: errors.length === 0, errors, resourcesClosed, tasksSentOrUnknown: budget.tasks, finalElapsedMs: performance.now() - startedMs, finalMeasuredBytes: budget.usedBytes };
 }
 async function journals(root: string, maxFiles = 300): Promise<Row[]> {
   const found: Row[] = []; let files = 0;

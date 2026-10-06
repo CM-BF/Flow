@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+ ✓ experiments/runner-capacity/mixed/ab-budget.test.ts (6 tests) 3ms
+ ❯ experiments/runner-capacity/mixed/ab-input.test.ts (4 tests | 1 failed) 11ms
+   ✓ fixed input comparison rejects any second production difference 3ms
+   ✓ input paths cannot replace Git orinstalled dependencies 1ms
+   ✓ the actual child import selector uses the frozen root and leaves legacy resolution unchanged 0ms
+   × declared workspace dependencies resolve within their own export while external pg retains its prototype 7ms
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts (10 tests) 57ms
+ ✓ experiments/runner-capacity/mixed/ab-sequence.test.ts (5 tests) 2ms
+ ✓ experiments/runner-capacity/mixed/contract.test.ts (3 tests) 2ms
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  1 failed | 27 passed (28)
+   Start at  06:50:10
+   Duration  516ms (transform 49ms, setup 0ms, import 82ms, tests 74ms, environment 0ms)
+
