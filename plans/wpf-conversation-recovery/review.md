@@ -49,3 +49,7 @@ Source checkpoint `ec91d1113898e70f380f9bb503f3b5ceff9467b2`，相对1b8只有�
 ## 2026-10-06T17:43:28.863916+00:00 — 768 P2修正待独立复审
 
 [Root原文](../../docs/evidence/wpf-conversation-recovery/768-root-source-review.json)及[peer原文](../../docs/evidence/wpf-conversation-recovery/768-peer-review/report.md)原样保留：768仅一项P2，turn.taskId不存在可使undefined等于undefined。作者固定 `667889058d3decc0abc9f635a37fd0f05f2c090c`，只browser改用公共schema/decoder及非空嵌套身份断言，[manifest](../../docs/evidence/wpf-conversation-recovery/ack-identity-checkpoint.json)核18源不变。作者标SOURCE_ADDRESSED待review；没有types/direct/browser运行，没有全feature批准。1s观察policy不冒pool acquire/hard settlement上限。
+
+## 2026-10-06T17:45:10.279831+00:00 — Root限定源码APPROVED
+
+独立reviewer root；时间 `2026-10-06T17:44:07.363712+00:00`；target `667889058d3decc0abc9f635a37fd0f05f2c090c`，observedmetadata0926。结论 **APPROVED_SOURCE_SCOPED / 0 blocking**，关闭RECOVERY-768-P2-TASK-IDENTITY。[逐字原报告](../../docs/evidence/wpf-conversation-recovery/667-root-ack-identity-review.json)核19hash，确认worker公共schema/decoder与非空turn/task身份、18源等768。批准仅768+667 harness源码；0types/import/tests/HTTP/PG/Chrome/free，不替代真实浏览器。旧1b8受控27PASS仍原绑定；完整feature review NOT_STARTED/targetUNKNOWN，主线未接。

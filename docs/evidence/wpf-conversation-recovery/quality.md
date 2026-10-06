@@ -99,3 +99,7 @@ P1源码修复：所有submit在官方send/同步localreceipt前检查Input完�
 Root/peer同一真实P2：JSON.parse的any掩盖public结构中没有taskId。修复复用现公共decoder返回的typed ACK，原wire先经conversationTurnSchema，非空turn.id和嵌套task.id同原回执；不复制ACK逻辑、不用cast绕类型。Worker内动态导入保parent built-ins-only；源码diffcheck0，18源保持768、4个只读public入口hash等base。技能沿已读本地版本，只有静态复核，无安装/运行。名称实核本树是conversationTurnSchema，并未发明conversationTurnAdmissionSchema。
 
 保留原报告和错误历史；1s零连接观察是policy而非pool acquisition硬上限，代码post-await拒迟到零、parent hard截止保持未完成证据。当前P2修复未测，direct/type/browser余量未用；完整feature未审。
+
+## 2026-10-06T17:45:10.279831+00:00 — 667源码批准metadata安全点
+
+复用本地clean-code方法，按独立报告核公共接口/错误所有权/有限budget与限制，19源hash仍等固定667。Root明确APPROVED_SOURCE_SCOPED0blocking、P2关闭；此次只原样归档和状态更新，无源码变化/新结构发现。保旧27与新harness证据分离，完整feature未审，原raw和1s观察policy说明不变；0产品import/运行/采样。原报告SHA256 `ec6aa4c6452c6ee0698b05bb03a34b30c70d30499a95662e28707297c589ea45`。

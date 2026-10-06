@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06T17:43:28.863916+00:00 |
+| 最近更新 | 2026-10-06T17:45:10.279831+00:00 |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 768 ACK task身份P2已源码修正，公共decoder校验原请求与嵌套task.id；固定候选待窄审/尚未运行 |
+| 当前产出 | 667 ACK身份/768两harness获APPROVED_SOURCE_SCOPED；旧1b8 direct27已过，新harness仍0运行 |
 | 下一可用交付 | 刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复 |
 | 当前阻塞 | ACTIVE: 真实浏览器与完整构建仍等待运行资源和中心会话语义核验；本段定向检查已完成 |
 | 需用户决定 | NONE |
@@ -135,3 +135,7 @@ Root于16:23:29.859009Z对本次原raw/source绑定独立核验，限定[证据�
 ## 2026-10-06T17:43:28.863916+00:00 — ACK身份修复固定源码安全点
 
 固定 `667889058d3decc0abc9f635a37fd0f05f2c090c`；[19源manifest](../../docs/evidence/wpf-conversation-recovery/ack-identity-checkpoint.json)仅browser变化、18源=768。现公共 `conversationTurnSchema` 校验原wire，`decodeConversationTurnAccepted` 对两真实ACK核原conversation/request，明确非空 `turn.id`/`turn.task.id` 后等原身份；worker-only导入，无新公开协议/DTO/HTTP。768唯一P2源码addressed待独立复核，NOT_RUN；旧raw/1b8 direct27保留。1s零连接是观察policy，不含pool acquire的硬上限；迟到零仍拒且parent hard stop记录未完成。0types/import/test/HTTP/PG/Chrome/free，预算不变；完整feature仍NOT_STARTED/targetUNKNOWN。
+
+## 2026-10-06T17:45:10.279831+00:00 — 667限定源码独审收口
+
+Root于 `2026-10-06T17:44:07.363712+00:00` 对固定 `667889058d3decc0abc9f635a37fd0f05f2c090c` 结论APPROVED_SOURCE_SCOPED，0blocking，RECOVERY-768-P2-TASK-IDENTITY关闭；[原报告](../../docs/evidence/wpf-conversation-recovery/667-root-ack-identity-review.json)原样归档。仅768+667两harness源审：公共decoder、真实嵌套身份、parent built-ins-only及原body-loss/ownedcleanup边界。不是完整feature批准或新运行；旧1b8 direct27/新667 source分开，当前types/真实IDB/App/HTTP/PG/Chrome仍NOT_RUN，CREATE/Queue/Steer等旅程继续PENDING，完整target UNKNOWN/review NOT_STARTED。19源hash不变，仅metadata正常push；0运行/资源采样，预算未消费。

@@ -58,3 +58,7 @@ RECOVERY01-05保留真实body-loss：完整中心ACK先验证并记录，再送�
 ### 2026-10-06T17:43:28.863916+00:00 — 768语义断言修复
 
 Root/peer唯一P2按公共decoder修复，固定 `667889058d3decc0abc9f635a37fd0f05f2c090c`。要求ACK真实task身份为 `turn.task.id`；不再比较不存在的两个taskId。原请求通过现有conversationTurnSchema，公共decoder消费attachments/knowledge与原conversation，禁止另造codec；导入只worker。无新journey或预算。另明确DB1s为观察policy，非连接获取硬上限；原parent绝对清理截止不变。源码修复不是运行通过。
+
+### 2026-10-06T17:45:10.279831+00:00 — 限定源码审批
+
+固定667 ACK identity及768 harness源审由root批准，0blocking；[review](review.md)保原文。此结论不完成RECOVERY01-05真实旅程或RECOVERY01-06完整独审/main。原27受控检查与新browser未运行保持分开，源码继续冻结。

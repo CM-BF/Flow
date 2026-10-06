@@ -1,0 +1,181 @@
+{
+  "reviewer": "root independent read-only",
+  "at": "2026-10-06T17:44:07.363712+00:00",
+  "verdict": "APPROVED_SOURCE_SCOPED",
+  "target": "667889058d3decc0abc9f635a37fd0f05f2c090c",
+  "metadataObserved": "0926eefa334eeedc75bf923f4d1911ebf6c75548",
+  "branch": "codex/web-conversation-recovery",
+  "dirty": "",
+  "resolvedFindings": [
+    "RECOVERY-768-P2-TASK-IDENTITY"
+  ],
+  "blockingFindings": [],
+  "delta": "Only browser changes among19 sources;18 equal768. Worker-only dynamic public imports preserve parent built-ins-only gate. Real first request parsed with conversationTurnSchema; both ACKs use existing public decodeConversationTurnAccepted against exact conversation/input. Nonempty real turn.id and turn.task.id equality replaces missing taskId. Decoder also validates task and telemetry identity.",
+  "unchanged": [
+    "Exact body/key/ref/order and one-before/exact2-after explicit Retry",
+    "Same Request headers-to-failure framing proof and unknown/reload UI",
+    "Owned DB bounded observations, marker and ordinary DROP",
+    "Parent budget, protected product/direct sources and historical raw"
+  ],
+  "sourceAudit": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+      "bytes": 69114,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+      "bytes": 24536,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "bytes": 8274,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "01216d648c226549c9a8b79410c597669dfec5f0c42c38cde43233f6b774c0c1",
+      "bytes": 16866,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "bytes": 5953,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "bytes": 24040,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "bytes": 24416,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "bytes": 8729,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "bytes": 28678,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "bytes": 16768,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "664d61c88a923ed8f3ee14558c6aa17bf6531fec409195ea1cc16c8ca1ead6dd",
+      "bytes": 22780,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+      "bytes": 13875,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "22adeb1f431e23f4e95cfd53804e301159c1e409df9a2f853a24636f6845852c",
+      "bytes": 24555,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "07f26356643439cc5a08d3a9eb7c938f6d01bdc1b98d5818340cf40310fde6d4",
+      "bytes": 22175,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "3be8d4ddc82c78bc514e35b3dbe09038f421426d147c73d7444411fb4c5a641e",
+      "bytes": 23230,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "bytes": 21485,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "5b6e7dd60143d25cb7c184b329f1db42353661577336caa52e483b71063ea484",
+      "bytes": 42095,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": false
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "07ea7818a90f6d659c87ba5c770474df902918b1234f2708d5777ede3a210922",
+      "bytes": 23578,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "d58903f9ad64054bf233cea28f18574d19bb85af19bcae18a6415e6b7bf3f9b9",
+      "bytes": 39888,
+      "manifestMatches": true,
+      "worktreeMatches": true,
+      "same768": true
+    }
+  ],
+  "limits": [
+    "No imports/types/tests/HTTP/PG/Chrome/free samples; new source has0runtime.",
+    "Full feature review NOT_STARTED/targetUNKNOWN; SOURCE_SCOPED is only this768+667 harness delta.",
+    "CREATE/Queue/Steer journeys, auth/IDB/browser and center semantic limitations remain pending;1b8 direct27 remains historical.",
+    "1s PG observation is a policy deadline, not hard acquisition settlement; parent hardstop remains authoritative."
+  ],
+  "cleanCode": "Reused existing public codec rather than untyped duplicate validator; narrowed correction fixes the real Interface shape, preserves ownership and lifecycle, no new abstraction."
+}
