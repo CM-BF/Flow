@@ -1,6 +1,10 @@
 # REQ15 独立审查
 
-当前状态：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN**。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
+状态：APPROVED（仅5dd PG准备源码；不含运行）
+
+Review target commit: 5ddddd6a7991243b5c42e223b11df879f0fa9498
+
+历史说明：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN**。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
 
 ## Target / scope / 验收
 

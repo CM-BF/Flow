@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 23:39:37 UTC；main未集成，真实PG准备包源码独审已通过，0新检查 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 23:42:48 UTC；main未集成，仅修review/check状态展示格式，0新检查 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,12 +11,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
 | 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品/局部验证d209eb7275777d50f214fd73f66d6b3c1520c459；本次PG准备源码HEAD 5ddddd6a7991243b5c42e223b11df879f0fa9498 |
-| 工作树dirty状态 | 归档前HEAD47c3bdda46cf8e72089a549f8abafb4af73e9f61 clean；本次仅status/review/质量归档，95输入逐字冻结 |
+| 工作树dirty状态 | 修正前HEAD57e134b50a7abf90b1c03d48fc60c7d25f4f9a46 clean；本次仅status/review展示元数据，95输入逐字冻结 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 实现目标 | d209eb7275777d50f214fd73f66d6b3c1520c459 |
 | 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts |
-| 检查状态 | 局部source+fake26/26+strict-v2已独立APPROVED d209；PG准备source独审APPROVED；新types/collect/PG均NOT_RUN，HTTP NOT_RUN |
+| 检查状态 | NOT_RUN 新PG准备包types/collect/PG；HTTP未运行。历史d209局部source+fake26/26+strict-v2已独立APPROVED，PG准备source另获APPROVED；不扩大历史运行证据 |
 | 已集成main状态 / HEAD | 未集成；实现3cd7a6e8已固定，未在main验证 |
 | 阶段 | M2 |
 | 优先级 | 2 |
@@ -71,3 +71,5 @@
 2026-10-06 23:35:34 UTC固定交付：PG准备target `5ddddd6a7991243b5c42e223b11df879f0fa9498` clean，manifest `df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e`（95文件429768B，74个静态import源）；9依赖realpath/package hash、8 driver source hash与旧supervisor SHA静态核一致，6项实际输出absent。原8产品/测试与d209无diff，0新imports/types/collect/tests/PG。root于23:35:31.024Z在Lead恢复既有OrbStack/PG后fresh核ledger available、09b83400 v1 ACTIVE及10scope/owner/WT/branch不变；owner未重复探针。free1055133696B为Lead观察，仍不足检查；Lead仍持个人恢复窗口。本段交回source独审，保持安全停写，不新take/amend、不抢SVC07优先窗口。
 
 2026-10-06 23:39:37 UTC审查归档：chatui01_owner于23:38:54UTC完成fixture/SQL/observer/两case独审，APPROVED/0 P1/P2；Mika/root补审Python封套、身份清理、失败保留及输出预算无P1/P2。绑定5ddddd6a7991243b5c42e223b11df879f0fa9498，结论PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN。root独核95文件429768B Git=WT=hash、261相对import edges无缺失、四官方SQL及9deps/8driver/supervisor原字节匹配、6运行输出absent、apps/packages相对d209零diff。owner在23:39:37.392Z fresh ledger available，09b83400 v1 ACTIVE及10scope/身份不变，未take/amend。此次只改status/review/质量记录；所有source/support/manifest及旧raw冻结，SVC07首次HTTP仍优先，0types/collect/tests/PG/OPS14迁移。无额外实现ready项，完成归档后保claim停写等窗口。
+
+2026-10-06 23:42:48 UTC展示修正：root实际读取4320快照2026-10-06T23:41:52.953Z（182任务），REQ15唯一live/current/nonstale，权威WT正确、HEAD57e134b5 clean、issues[]，确认可正常聚合。旧review首行把当前批准与历史NOT_STARTED放在同一行，聚合器误显示not_started/target:null；检查字段无标准前缀显示unknown。本次仅将首行固定为APPROVED及独立完整Review target commit，将完整历史说明另段保留；检查字段以NOT_RUN新types/collect/PG开头，旧d209/26/strict事实保留。不修改parser/生成JSON，不改变review结论或固定inputs。owner于23:42:48.246Z fresh ledger available、原v1 ACTIVE/10scope/身份未变；后续展示由root定向读回确认，不把本次编辑当已观察结果。
