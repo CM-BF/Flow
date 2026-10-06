@@ -61,3 +61,9 @@ main8f1481现场核实已含X02/CHAT共享接线，原095/37ab独立approval仍�
 复用本地find-skills/webapp-testing/clean-code，明确ready locator而非networkidle。真实2query固定dd1b/de9源码，原检查弱UI断言及pending截图原样保留；补focused visible second assistant exact text，仅重放保存响应，不再付费。首次主题定位失败和侧栏遮挡截图保留，04:28重放显式关闭侧栏后桌面/390px深色已目视正文可读，0POST/pageErrors空。报告区分SDK请求空扩展数组与init实际3plugins/3skills、归一化modelUsage与原始wire、累计估算与未知增量；无需为metadata重跑产品套件。manifest更新覆盖所有证据。
 
 Root新增独立APPROVED dac8c3910eee1828e7081a3d33e19a89a056f4d4：仅runner package/lock importer，zod4.6.5对应O02生产import、MCP1.32.1仅dev peer；未改resolved块或SDK版本。O02固定8/8+tsc支持使用，无重跑，不与Mika94f客户端审查混同。
+
+## O03事务内复用seam 2026-10-06 04:33 UTC
+
+固定dbb57268889b82efb74c330bbf268b13f01b6402：只提取tasks.commandInTransaction与goals.applyGoalCommand，原pool事务方法复用它们。调用方必须在同事务完整授权后进入，含replay路径；本helper本身不构成新授权。F01 claim v8按CHAT03单文件停写/amend后接入tasks.ts；O01旧goals claim已released。
+
+原goal公开HTTP/PG9/9通过，13.86s（原专库若存在失败关闭，实际创建/清理）；仅直接消费者，没有全库或模型。首次tsc因该WT尚未链接新增O02依赖失败，原o03-shared-seams-typecheck.txt保留；frozen offline install无锁变化，最终o03-shared-seams-typecheck-final.txt通过。clean-code检查只将原行为放在小Interface后，不新造domain mutation/通用workflow；O03独立授权/锁竞争测试归其owner。
