@@ -5,3 +5,5 @@
 实际应用：IO 深模块隐藏原子文件细节，goal controller 保持状态唯一所有者；语法/renderer 分离；公开行为红绿，依赖边界和错误/释放检查。设计已由 Lead 授权，无新增普通审批。交付前复核命名、重复、错误、资源释放和性能界限。
 
 12:36 UTC：IO行为提取和2新公开syntax/store检查 + 13旧直接消费者通过。PG新test导入路径错误导致0选择，保留原失败并修路径待跑。源码WIP，主入口构造异常的日志释放仍须复核，不宣称完成。为SVC05窗口安全停写，无长运行进程。
+
+2026-10-06 12:49 UTC：交付前实际重读clean-code/codebase-design。复核12个源码/说明文件：私有IO只承载文件生命周期，旧codec/文件名不改；goal表示层只保存草稿/页/通知，公开session仍拥有intent与CAS。发现并修正decision展开extra字段、初始化失败finally释放、渲染subscriber异常不能打断session、缓存正文明确历史性；PTY测试焦点与输出背压问题已修，未删业务断言。最终21/21+types0。无新依赖/权限/调度器；性能只报实际响应正文bytes/count。当前保留限制：显式refresh、无浏览器或provider、非OS crash、完整父目标仍open。
