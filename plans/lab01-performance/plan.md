@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 | --- | --- |
-| 计划编号 / 状态 | LAB01 / in-progress |
+| 计划编号 / 状态 | LAB01 / completed（分支交付，独立review待执行） |
 | 创建 / 更新 | 2026-10-06 / 2026-10-06 |
 | Owner / model | assignment_review / gpt-6-astra |
 | Worktree / branch | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/performance-probes` / `codex/performance-probes` |
@@ -15,7 +15,7 @@
 - [x] **LAB01-01** 创建两个最小样例并验证详情展开、逻辑事件与最终状态正确
 - [x] **LAB01-02** 每项少量预热、至少20次有效重复；记录原始参数、环境和p50/p95
 - [x] **LAB01-03** desktop/narrow及浅深色截图，实际查看并核验功能
-- [ ] **LAB01-04** clean-code、测量边界、复跑说明与提交交付，等待独立review
+- [x] **LAB01-04** clean-code、测量边界、复跑说明与提交交付，等待独立review
 
 ## 测量方案和预算
 
