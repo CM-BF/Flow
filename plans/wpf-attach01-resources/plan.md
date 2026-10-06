@@ -14,3 +14,5 @@
 冻结Interface见[interface](../../docs/evidence/wpf-attach01/interface.md)。首片project-bound UTF-8 text/plain .txt；最大8192原bytes，无截断；knowledge[]后attachments[]固定总序，合计4项/8192bytes。空attachments完全旧template1；非空附件template2严格分型。0模型；phase1仅schema/直接消费者；runtime已使用独立PG数据库/动态HTTP与原始证据，0浏览器/模型。
 
 skills与定段质量见[quality](../../docs/evidence/wpf-attach01/quality.md)。uploaded ready、草稿ownership、受理pin、审计retention严格分开；lookup404非未接受证明；namespace不是凭据或principal。完整MATURE03仍保留App输入/跨窗口/真实模型与后继类型验收。
+
+2026-10-06 后继直接消费者维护：在原18scope内只调整附件fixture和context专测，独立预026库先保真实旧行/收据，随后首次完整factory；普通/child全套route检测避免重复安装。原四个稳定TODO不增编号；本段归WPF-ATTACH01-04集成维护，旧78及runtime批准永久保留。生产factory/shared修改仍由其owner负责。

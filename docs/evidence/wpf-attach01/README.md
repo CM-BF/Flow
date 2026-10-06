@@ -19,3 +19,7 @@ F01需接入的窄入口：`migrateAttachments(pool)`放在projects/context及�
 CREATE回执始终稳定attachmentContext:false；项目固定的GET snapshot在026已装时提供true，project capabilities给出限额/namespace。只非空attachments进入template2；无附件/[]和原v1 key重放保持v1。新client→旧center纯文字省略attachments字段。旧loaded Web显示正文但不展示附件。合同含两类有序轻引用，执行编排知识先、附件后；公共metadata无正文，授权内容按需，runner只经既有private claim得到完整冻结prompt。
 
 保留限制：首片仅UTF-8 `.txt`/`text/plain`，每文件/总材料8192bytes、总引用4；不支持runner文件/PDF/image。24h后禁止新引用，retained仅保旧执行/审计，不延长期限。已绑定材料不回收，全局command journal无GC；不声称全部DB存储有界。浏览器上传恢复/Send-Queue跨reload未知回执和真实App接线均后继；0provider/模型/个人中心操作。PG/HTTP为隔离实测，不代表已部署用户中心。
+
+## 后继测试适配（不修改运行模块）
+
+固定增量 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9，两个fixture/专测；[新验证与精确复跑](fixture-compat-validation.md)/[manifest](fixture-compat-candidate.json)。原8701/78批准保留，新段独审另绑target。当前factory未自动装026/owner routes，只验证了明确fallback；生产组合由共享owner带固定输入验证。

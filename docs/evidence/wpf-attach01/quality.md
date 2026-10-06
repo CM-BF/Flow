@@ -35,3 +35,5 @@ Root授权phase1测试单点随runtime转换：原old strict center拒[]断言�
 保留原始失败与数据：26早轮通过、76+unhandled非整轮通过、77通过、78-first直接过但types2，最终78/types0。未反复全库；四显式路径覆盖本module+既有收据直接消费者，runner generic adapter没有provider调用。当前metadata收口与parser/link核，源码冻结待独审；F01实际mount/client、App附件输入/持久恢复仍后继，不冒称已上线。
 
 2026-10-06 10:50:41 UTC runtime独审交付clean-code安全点：root10:49:15UTC独立APPROVED8701，全读14运行增量与冻结合同；独立78/78、3DB清零、16源/19只读依赖/两phase1字节核实。职责/锁序/rollback/metadata界限/UTF8/锁后expiry/原key重放/runner prompt无blocking。本人本段只归档原独审日志和准确状态；未改产品、未重复测试/启动服务。phase1与作者最终执行记录不改；公共接线、Web上传、provider仍明确后继。局部文档检查只核链接、parser、TODO和目标一致，源码保持固定。
+
+2026-10-06T11:21:02.251672+00:00 factory兼容定段/交付clean-code：本地find-skills/codebase-design/clean-code沿固定来源实读复用，无安装。两个已有测试文件内复用原迁移/领域函数与生产factory，不复制认证/新增public测试能力开关；旧schema显式前向构造，安装前后入口如实区分。六route检查在async plugin排空后执行，部分注册失败，不把单route当整套。预升级独立DB避免test顺序依赖，所有owned清理错误继续记录。实际6选中case通过/23未选，严格types0，4DB清零；无新产品源变更，旧8701/78证据不改。后续自动factory分支缺实际输入，明确pending，不拿fallback结果当上线。实现target 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9，原执行1d236+dirty哈希绑定。

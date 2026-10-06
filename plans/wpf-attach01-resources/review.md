@@ -1,8 +1,12 @@
 # WPF-ATTACH01 Review
 
-**状态：APPROVED**（仅固定runtime target范围）
+**状态：NOT_STARTED**（当前fixture兼容增量；历史runtime批准不变）
 
-Review target commit：8701a6cf547248e70aa5758f05da1d7d314ae9c0
+Review target commit：1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9
+
+## 当前fixture兼容增量审查入口
+
+Base 1d236cbe2299117e3b63887fda3d1c0e140f56b0 → target 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9，仅fixture.ts/context.test.ts两文件；当前NOT_STARTED。完整生产实现8701及其APPROVED历史不撤销、不继承为新fixture批准。读[新validation](../../docs/evidence/wpf-attach01/fixture-compat-validation.md)/[hash manifest](../../docs/evidence/wpf-attach01/fixture-compat-candidate.json)，核预026实际未启动current factory、原行与v1receipt、六route部分注册fail closed、child与普通统一入口及cleanup；独立用/tmp输出运行六case，勿写原作者报告。自动factory分支未实测，仅Lead新输入后可确认。
 
 ## Runtime审查入口
 

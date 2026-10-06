@@ -2,27 +2,27 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 10:50:41 UTC |
+| 最近更新 | 2026-10-06 11:21:06 UTC |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | 所属大task | [WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md) |
 | co-lead | Web /root |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 文本附件的中心保存、恢复和固定材料执行已通过独立审查 |
-| 下一可用交付 | 将已审附件模块接入公共客户端与正式中心，再接聊天上传 |
+| 当前产出 | 已保留真实旧库升级与原收据检查，测试入口可避免重复注册附件路由 |
+| 下一可用交付 | 独立审查测试适配，再与正式中心自动安装入口组合验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources |
 | Branch | codex/attachment-resources |
 | 工作基线 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066 / 当前Git聚合 |
-| 工作树dirty状态 | 实现已固定8701a6；本次仅metadata收口，提交后clean，实际Git聚合为准 |
+| 工作树dirty状态 | 两测试源已固定1f0c196；仅自身metadata收口，最终Git为准 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 检查状态 | PASSED 8701a6cf547248e70aa5758f05da1d7d314ae9c0；78直接检查（29PGHTTP+49合同/legacy），根types0，3DB清零；原执行339086+dirty见runtime-checks |
+| 本片段交付阶段 | review |
+| 检查状态 | PASSED 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9；仅6受影响PG/HTTP case、严格types、4DB清零；正式自动factory分支未验，旧8701/78另保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | 8701a6cf547248e70aa5758f05da1d7d314ae9c0 |
-| 实现范围 | apps/server/src/attachments/attachments.test.ts, apps/server/src/attachments/context.test.ts, apps/server/src/attachments/fixture.ts, apps/server/src/attachments/index.ts, apps/server/src/attachments/storage.ts, apps/server/src/conversation-context/store.ts, apps/server/src/conversation-queue/commands.ts, apps/server/src/conversations/commands.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/state.ts, packages/contracts/src/attachments.test.ts, packages/contracts/src/attachments.ts, packages/contracts/src/conversation-context.ts, packages/contracts/src/conversation-queue.ts, packages/contracts/src/conversations.ts, packages/storage/migrations/026-attachment-resources.sql |
-| Review | [review.md](review.md)，runtime固定target APPROVED，root 10:49:15 UTC；phase1 APPROVED另保留 |
+| 实现目标 | 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9 |
+| 实现范围 | apps/server/src/attachments/fixture.ts, apps/server/src/attachments/context.test.ts |
+| Review | [review.md](review.md)，当前fixture增量NOT_STARTED；8701 runtime及phase1历史APPROVED另保留 |
 | D04 claim | ef617d78-eb39-484e-898e-5f057fca50d4 v2 active，2026-10-06T10:28:42.374Z COMMITTED；十八scope |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -51,3 +51,9 @@ Root兼容裁决：仅请求非空attachments→v2；无附件/[]或原v1 replay
 10:46固定runtime交付：target 8701a6cf547248e70aa5758f05da1d7d314ae9c0；[candidate](../../docs/evidence/wpf-attach01/runtime-candidate.json)、[checks](../../docs/evidence/wpf-attach01/runtime-checks.json)、[README复跑](../../docs/evidence/wpf-attach01/README.md)。当时独审NOT_STARTED/main未集成（后续正式结论如下）。当前实现源冻结，仅metadata；原始77/78-first与首失败日志不改，不能混成最终执行事实。
 
 10:49:15 UTC root正式限定APPROVED target8701a6；独立78/78、3自有DB清零，16源码/19只读依赖与两个phase1合同字节核实。独审原[日志](../../docs/evidence/wpf-attach01/root-runtime-direct.log)与[审计](../../docs/evidence/wpf-attach01/root-runtime-audit.json)原样归档；types为作者证据。当前只metadata交付，全部产品源码停止写入、claim保留待main。公共client/decoder/mount、真实App上传与provider均未验，不代表MATURE03整体完成。
+
+## 自动factory测试兼容安全段
+
+仅已领fixture.ts/context.test.ts后继；原8701/78日志不改。live ef617 v2 active核实。真正预026独立库先逐项旧migration与领域操作，再首次完整factory+HTTP；普通和child排空插件注册后严格检查六route，部分挂载失败，完全未挂载才fixture fallback。当前本树server/index仍f181旧factory，自动生产mount未消费/未验。0provider/个人服务，六个受影响case与严格types，独立输出目录，详后继validation。
+
+固定fixture兼容增量 1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9 / base 1d236cbe2299117e3b63887fda3d1c0e140f56b0，只2专测；[验证](../../docs/evidence/wpf-attach01/fixture-compat-validation.md) / [manifest](../../docs/evidence/wpf-attach01/fixture-compat-candidate.json)。6case与4DB清零实际通过；自动factory仍待Lead固定组合，当前观察全部为明确fallback。原runtime8701全16源除这两个测试外不变。
