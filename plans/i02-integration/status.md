@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:30:21 UTC / main8d8ab520a9d43c7b9dafb22911416ee799ebf665 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:36:28 UTC / main0b0d5fe7af9c0f40861ec6d2847f7383bcd76739 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 8d8ab520a9d43c7b9dafb22911416ee799ebf665 / 本批管理与登记，产品基线不变 |
-| 工作树dirty状态 | 已审实现保持原样，本批仅管理记录与来源登记 |
+| 工作基线 / HEAD | 0b0d5fe7af9c0f40861ec6d2847f7383bcd76739 / 已审TUI01B与S01P03组合候选 |
+| 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | 仅registry唯一性/三件套/解析与文档差异检查；本批无产品测试或provider |
-| 已集成main状态 / HEAD | 8d8ab520已推送且实际126源；本批127源候选与工程/终端当前事实待紧接fast-forward。个人backend/static仍b1c2e398、accepting v12。 |
+| 检查状态 | 组合根类型检查通过；11源码固定hash一致，6主线保护文件零差；不重跑原70/62项 |
+| 已集成main状态 / HEAD | 前批0b0d5fe已推送、实际127源已核；本批终端确认和执行器停止修复紧接发布。个人backend/static仍b1c2e398、accepting v12。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | Codex显式启动配置和网页独立发布工具已完成审查，原页面资源可在发布和回退后继续读取。 |
-| 下一可用交付 | 共享会话确认与工程通路并行实施；个人网页发布仍待实际组合兼容验收。 |
+| 当前产出 | 终端发送遇到版本冲突会保留草稿并继续读取；执行器停止时会核清正在领取的结果。 |
+| 下一可用交付 | 工程通路已通过独立审查，准备接收；网页真实发布组合仍在验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
