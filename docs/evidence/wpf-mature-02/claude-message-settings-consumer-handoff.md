@@ -4,13 +4,13 @@
 
 ## Lead现在可派工
 
-请立即由F01合法owner接以下client/CLI小片，Web/d01与TUI01F合法owner并行接各自consumer；**不等CORE的PG或整个UI验证完成**。若现owner不能接，先明确停止精确路径写入，再用当前version原子amend移除，由本组独立WT的新consumer owner fresh take/amend成功后开工。不能绕过F01公共入口、占用中的recovery/controller或复制HTTP/FSM。source先固定交审；工程检查按各自资源门禁，PG/SDK/provider当前不由此页开放。
+Lead已将F01公共路径交回并由native_center_owner在独立claude-message-settings-client树领取MATURE02C01 v1/11literal（F01 v43）；固定controlled8e9b3523沿本接口开工。Web/d01与TUI01F合法owner并行接各自consumer；**不等CORE的PG或整个UI验证完成**。若现owner不能接，先明确停止精确路径写入，再用当前version原子amend移除，由本组独立WT的新consumer owner fresh take/amend成功后开工。不能绕过F01公共入口、占用中的recovery/controller或复制HTTP/FSM。source先固定交审；工程检查按各自资源门禁，PG/SDK/provider当前不由此页开放。
 
 CORE源码恢复已解阻：Mika本轮报告Lead已恢复并独核155缺源hash零错误；[CORE精确source closure](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-source-closure.json)：固定92f768采样227文件、155不可见/673771逻辑B、4KiB名义1,003,520B。恢复由Lead唯一operator执行，本owner未改sparse；17已安装依赖只复用第三方，@flow指向CORE本WT。Lead回执`/tmp/flow-claude-vertical-source-materialized.json`说明155source补齐；ba2→c33d并发仅9metadata，源ea未变。恢复不当验证通过。032已[正式分配](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/f01/claude-message-settings-migration-assignment.json)，这里只证明号/领取，F01 actual factory挂载仍是单独接线。
 
 ## 固定合同与现场
 
-公有输入固定为CORE `ea276572c3c99fb8400808a93efc69ce530d55a4`：`claude-turn-settings.ts`、`execution-profiles.ts`、`conversations.ts`、`conversation-queue.ts`、`assistant.ts`。首leaf已main22d5；后继source未因leaf批准自动通过。Mika核16:21:52 contracts-only三文件16/16、16:25:51合同focused strict exit0；16:26:31注入现Claude adapter单文件5/5 exit0。0真实query/native/PG/provider；整related-closure focused strict另由child进行，本页不提前给结论。完整core合同/范围见[下一片handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)。
+公有输入固定为CORE `ea276572c3c99fb8400808a93efc69ce530d55a4`：`claude-turn-settings.ts`、`execution-profiles.ts`、`conversations.ts`、`conversation-queue.ts`、`assistant.ts`。首leaf已main22d5；后继source未因leaf批准自动通过。Mika核16:21:52 contracts-only三文件16/16、16:25:51合同focused strict exit0；16:26:31注入现Claude adapter单文件5/5 exit0。0真实query/native/PG/provider；related-closure focused strict也已exit0，合计21 distinct与两strict0；Mika已核manifest及输入252项零差异。真实PG仍未运行，见[专库槽位请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-pg-slot-request.md)。完整core合同/范围见[下一片handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)。
 
 本owner16:24:10.888 UTC fresh账本：父0dd97484 v6只docs/实验/plan。F01 v40、TUI01F v1、RECOVERY01 v4仍ACTIVE。F01 `5f0fc08bfa84f35ec5728f0dfbee639619496027` clean，权威[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/plans/f01-shared-domains/status.md)仍O14实施/资源等待；不能因另一个产品片已交付而抢公共源。architecture_read 16:21:56.939快照：Web `0eef4cda8813afe336df8dc88256da28e206c0d4` dirty仅6个direct-second evidence；TUI `26e21690c7d100b7115bef07aae7b55ab44529c6` dirty为fixture/journey/cancel_driver，虽slice delivered仍未release。其只读地图基线main65659028；改写前必须再次fresh核，不覆盖这些dirty。
 
@@ -44,7 +44,7 @@ decodeConversationQueueAccepted(raw: unknown, conversationId: string,
 
 send的现decoder保留conversation/turn/task/文本/revision/context全部检查，再对`turn.messageSettings`调用`assertClaudeTurnSettingsMatch(input.messageSettings, actual)`。仅在请求明确带设置时要求它存在；错、缺、非法、profile任一三元或组合不符，映射既有`UnknownConversationAcknowledgementError`，不得透传raw正文。新能力是optional `capabilities.messageSettings`，校验protocol、profile三元与`choices:'execution-profile'`并保留，不把旧`perTurnModel/perTurnThinking/perTurnTools=false`改true。creation锁只锁原profile，不授权绕过messageSettings资格。
 
-新入队decoder用于opt-in分支：校验返回conversationId和item.conversationId等于请求id、UUID item.id、finite整数queueRevision为原expectedQueueRevision+1、item.sequence等于该receipt revision、`state:'waiting'`/`promoted:null`、时间/replayed与bounded preview形状，再精确匹配`item.messageSettings`。初始ACK与幂等重放都是不可变enqueue receipt；不能拿后续GET当前promoted状态替它判定。完整文本不在ACK内，preview只做≤512 UTF-8字节/请求前缀与truncated一致性，不冒称全文receipt；正文身份仍由原冻结body/key及中心digest绑定。后续当前详情另走既有read方法，不新增“确认后自动重发”。
+新入队decoder用于opt-in分支：校验返回conversationId和item.conversationId等于请求id、UUID item.id、finite整数queueRevision为原expectedQueueRevision+1、item.sequence等于该receipt revision、`state:'waiting'`/`promoted:null`、时间/replayed与bounded preview形状，再精确匹配`item.messageSettings`。初始ACK与幂等重放都是不可变enqueue receipt；不能拿后续GET当前promoted状态替它判定。完整文本不在ACK内，preview必须等于原frozen text按CORE itemView规则所得的最长≤512 UTF-8字节完整Unicode code point前缀，truncated与实际截短一致（不是任意startsWith），不冒称全文receipt；正文身份仍由原冻结body/key及中心digest绑定。后续当前详情另走既有read方法，不新增“确认后自动重发”。
 
 ### requested / observed读回
 
@@ -82,7 +82,7 @@ TUI沿同IntentStore.save→dispatch→ACK→clear/recover，draft存完整snaps
 
 ## 直接验收与交付边界
 
-F01最小：新reader精确header/翻页/旧200拒绝，旧reader不变；send/enqueue异步嵌套变更后body和matcher仍A；200缺/非法/不同snapshot（含三元）→unknown且不retry；enqueue replay不可变ACK；observed absent/null/alias保真；CLI新3命令路由、bounded输入、required key、409/abort/unknown出口，旧submit固定body保留。已有HTTP fixtures即可，不需要PG/模型才能开始源码。
+F01最小：新reader精确header/翻页/旧200拒绝，旧reader不变；send/enqueue异步嵌套变更后body和matcher仍A；200缺/非法/不同snapshot（含三元）→unknown且不retry；enqueue replay不可变ACK及多字节字符跨512字节边界反例；observed absent/null/alias保真；CLI新3命令路由、bounded输入、required key、409/abort/unknown出口，旧submit固定body保留。已有HTTP fixtures即可，不需要PG/模型才能开始源码。
 
 Web直接tests：`apps/web/test/execution-profiles.test.ts`、`conversation-outbox.test.ts`、`conversation-projection.test.ts`、`conversation-queue.test.ts`、`conversation-recovery.test.ts`及既有recovery fixture/browser必要段。TUI：`packages/interaction/src/controller.test.ts`、`queue-control/controller.test.ts`、`apps/tui/src/recovery.test.ts`、`journey.test.ts`、`queue-controls/journey.test.ts`。测试路径也须合法owner/claim，不因列在本页自动授权。
 

@@ -1,5 +1,20 @@
 # Lead资源候选：有界只读核对
 
+## 当前候选更新：16:36只读复核
+
+以下四个候选来自status_read 16:36:02 fresh现场与Mika 16:36:36.638Z账本复核；均clean、已main、命中claims均released且无active/handoff。**P05/P06较新优先，但四者是否已被历史操作只由soleLead核，不能称全新四树。** 不扫描反向引用、不执行收起；本次0WT回收。
+
+| 优先候选WT | fixed HEAD / released writer | 必须保留canonical与raw |
+| --- | --- | --- |
+| event-state-persistence | 74af1a55985f0ab114b56d626a9694b9078b90f2 / 4eb31983-3bd8-415e-9898-143e28c727ef v3（13:26:22.473Z）；integration759596ae v2也released | plans/s01p05-event-state/status.md及其plan/review；docs/evidence/s01p05 |
+| runner-wait-bounds | aa3d23532f358958b3ce36665cf2b003c4003076 / f1fa2bdb-a669-4c6f-8ff7-d5efa694c21f v2（14:07:19.852Z） | plans/s01p06-runner-wait/status.md及其plan/review；docs/evidence/s01p06 |
+| runner-graceful-stop | 3a1e908b257bced2abdad329d7a429414f34a2e8 / a3e307fc-a7cc-40d3-a28c-4ec3482b985a v2（10:38:53.882Z） | plans/s01-graceful-stop/status.md及其plan/review；docs/evidence/s01p03 |
+| runner-read-fence | 064183b984f0dd7bc6818ef84e68dbc9e4fc5de7 / cb7db4a9-cb89-4589-b2f3-d30b75549ab9 v4（12:00:01.946Z）；integrationcb92a7b2 v2也released | plans/s01p04-runner-read-fence/status.md及其plan/review；docs/evidence/s01p04 |
+
+均当前sparse unset/no spec/skip0，仅当前full view事实。status_read当前CORE不依这些树，S01 A/B消费固定Git；已知node_modules向外指main安装，反向消费者未全扫。复跑必须恢复各自manifest源码/fixture闭包，不因released删除raw/ignored证据。**X01 ACTIVE明确KEEP，不列当前四候选；02与CORE KEEP。** 下方16:07是历史快照，不用本轮HEAD或资源数覆盖它。
+
+## 历史16:07快照（不代表当前可收起决定）
+
 2026-10-06 16:07:03 UTC。本owner仅核三个既有完成树；X01用Mika转交的独立核验。没有全盘/进程扫描、运行检查、删除、稀疏化或Git配置写入；实际回收0B。只供Lead唯一Git operator fresh判定KEEP或可逆收起，不是本owner执行授权。
 
 **KEEP：** `claude-codex-capabilities`（父claim0dd v6 ACTIVE，诊断候选/完整02/canonical仍开放）及 `claude-message-settings-core`（产品实施/共享依赖）必须保留；不触活跃依赖或旧raw。

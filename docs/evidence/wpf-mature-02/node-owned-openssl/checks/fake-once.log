@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities
+
+ ✓ experiments/codex-app-server-conformance/node-owned-openssl/probe.test.ts > one fixed owned config argument uses exact comment-only content without environment or profile changes 68ms
+ ✓ experiments/codex-app-server-conformance/node-owned-openssl/probe.test.ts > old failure-text recipe remains without the config argument or control file 40ms
+ ✓ experiments/codex-app-server-conformance/node-owned-openssl/probe.test.ts > owned config preparation failure consumes no target and cannot pass or fall back 22ms
+ ✓ experiments/codex-app-server-conformance/node-owned-openssl/probe.test.ts > a completed failing target preserves text and cleanup but is not the expected exit7 control 43ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  09:36:02
+   Duration  306ms (transform 46ms, setup 0ms, import 62ms, tests 173ms, environment 0ms)
+

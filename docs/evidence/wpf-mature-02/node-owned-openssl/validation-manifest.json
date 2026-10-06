@@ -1,0 +1,64 @@
+{
+  "kind": "owned-openssl-fake-validation",
+  "sourceTarget": "ca6a7a15f76d333f20caf0690ed85b76e29d2c54",
+  "checkedAt": "2026-10-06T16:36:40.131158+00:00",
+  "sources": [
+    {
+      "path": "experiments/codex-app-server-conformance/node-loader-cause/host.mjs",
+      "bytes": 13587,
+      "sha256": "26cf3ef7e727740b951fb98f4199ffce5edcc49ac296ddf23e4e532e12cd28a4"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-owned-openssl/execute-reviewed.mjs",
+      "bytes": 3652,
+      "sha256": "4354babb435247541186b21c89240ffc7e954e3d3f3e5b576e7983200bf9a762"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-owned-openssl/execute-window.sh",
+      "bytes": 2976,
+      "sha256": "cd3c488b8424c9b78876d45957bca0cb9f92502f85f1d319dadad4de74a3be4b"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-owned-openssl/openssl.cnf",
+      "bytes": 34,
+      "sha256": "cd2fd78dd4b73f0a698f29f48bf60900b10f5b38e53ec7dd5987e4135638e839"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-owned-openssl/probe.test.ts",
+      "bytes": 4548,
+      "sha256": "66a542bde12782cf3b3b75302c4996fd2b4a2dcd65bc978e5fac905c746bf681"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-owned-openssl/vitest.config.mjs",
+      "bytes": 404,
+      "sha256": "e2b3d88ded930044e06f35be4c870ca3b4f74d580eab9edd3bd0203493423875"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/checks/fake-preflight.json",
+      "bytes": 2475,
+      "sha256": "14b21f7133bc3c82a5c5d83e4816c96b02211ac4bbfd7401d1d93c71728b4fe1"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/checks/fake-once.log",
+      "bytes": 956,
+      "sha256": "b8995d1a8fbf74f8abf39421d01ca6d19b165078139ccfc17a77b8c047178b90"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-owned-openssl/checks/fake-result.json",
+      "bytes": 926,
+      "sha256": "053e59791727da3f0cac98a2eb817d16131da0470a9c631062a9ffd2236a58fb"
+    }
+  ],
+  "checks": {
+    "selected": 4,
+    "passed": 4,
+    "exitCode": 0,
+    "realDiagnosticTargets": 0,
+    "listeners": 0,
+    "pg": 0,
+    "provider": 0
+  },
+  "not": "No runtime driver-input/prepared bundle or actual-window approval; previous sealed evidence unchanged"
+}
