@@ -1,3 +1,4 @@
+import { z } from 'zod';
 import { expect, it } from 'vitest';
 import { taskSubmissionSchema } from './tasks.js';
 import { conversationTurnSchema } from './conversations.js';
@@ -5,7 +6,7 @@ import { conversationQueueEnqueueSchema } from './conversation-queue.js';
 import { assistantFinalDataSchema, assistantSettingsSchema } from './assistant.js';
 import { runnerEventSchema } from './runner.js';
 import { CLAUDE_TURN_SETTINGS_PROTOCOL } from './claude-turn-settings.js';
-import { executionProfileConfigurationSchema, executionProfileConfigurationJson, claudeMessageSettingsCatalogPageSchema, nativeExecutionProfileCatalogEntrySchema } from './execution-profiles.js';
+import { executionProfileConfigurationSchema, executionProfileConfigurationJson, claudeMessageSettingsCatalogPageSchema, nativeExecutionProfileCatalogEntrySchema, type ExecutionProfilePublished } from './execution-profiles.js';
 
 const reference = { id: '00000000-0000-4000-8000-000000000001', runnerId: '00000000-0000-4000-8000-000000000002', configDigest: 'a'.repeat(64) };
 const choice = { model: 'sonnet', thinking: 'adaptive' as const, effort: { kind: 'level' as const, value: 'high' as const }, speed: 'standard' as const };
@@ -32,6 +33,8 @@ it('advertises configured tuples without legacy fixed controls or provider readi
     createdAt: '2026-10-06T00:00:00.000Z' }, conversation: { state: 'existing-claude-contract', capabilitySource: 'conversation-response' } };
   const page = { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profiles: [entry], nextCursor: reference.id };
   expect(claudeMessageSettingsCatalogPageSchema.parse(page)).toEqual(page);
+  const publication: ExecutionProfilePublished = { profile: claudeMessageSettingsCatalogPageSchema.parse(page).profiles[0]!.profile, replayed: false };
+  expect(publication.profile.controls).toHaveProperty('messageSettings');
   expect(nativeExecutionProfileCatalogEntrySchema.safeParse(entry).success).toBe(false);
   for (const patch of [{ availability: 'available' }, { controls: { ...entry.profile.controls, thinking: 'fixed-disabled' } }, { configuration: legacy }]) {
     expect(claudeMessageSettingsCatalogPageSchema.safeParse({ ...page, profiles: [{ ...entry, profile: { ...entry.profile, ...patch } }] }).success).toBe(false);
@@ -59,7 +62,8 @@ it('keeps message snapshots optional for legacy bodies and explicit for new send
   expect(conversationQueueEnqueueSchema.parse(enqueue)).toEqual(enqueue);
   expect(conversationTurnSchema.parse({ ...send, messageSettings: snapshot }).messageSettings).toEqual(snapshot);
   expect(conversationQueueEnqueueSchema.parse({ ...enqueue, messageSettings: snapshot }).messageSettings).toEqual(snapshot);
-  expect(conversationTurnSchema.safeParse({ ...send, mode: 'steer', messageSettings: snapshot }).success).toBe(false);
+  // The base remains extendable by interaction; command admission rejects unsupported modes.
+  expect(conversationTurnSchema.extend({ mode: z.literal('follow-up') }).parse({ ...send, mode: 'follow-up', messageSettings: snapshot }).messageSettings).toEqual(snapshot);
   expect(conversationQueueEnqueueSchema.safeParse({ ...enqueue, messageSettings: { ...snapshot, requested: { model: 'sonnet' } } }).success).toBe(false);
 });
 

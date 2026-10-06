@@ -29,8 +29,6 @@ export const conversationTurnSchema = z.strictObject({
   knowledge: conversationContextSelectionSchema.optional(),
   attachments: attachmentSelectionSchema.optional(),
   messageSettings: claudeTurnSettingsSchema.optional(),
-}).superRefine((turn, context) => {
-  if (turn.messageSettings && turn.mode === 'steer') context.addIssue({ code: 'custom', message: 'Message settings cannot be combined with active steering.' });
 });
 export type ConversationTurnAdmission = z.infer<typeof conversationTurnSchema>;
 export const conversationTurnQuerySchema = z.strictObject({

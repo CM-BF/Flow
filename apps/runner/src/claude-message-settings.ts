@@ -3,7 +3,7 @@ import { claudeTurnSettingsSchema, type ClaudeTurnSettings } from '../../../pack
 import { claudeAssistantSettingsSchema, claudeMessageSettingsFinalSchema, type AssistantSettings, type ClaudeAssistantSettings, type ClaudeMessageSettingsFinal } from '../../../packages/contracts/src/assistant.js';
 
 /** Only these request controls are replaced; the caller retains permissions, environment and lifecycle. */
-export function claudeMessageOptions(value: ClaudeTurnSettings, resumeSessionId?: string): Pick<Options, 'model' | 'thinking' | 'effort' | 'settings'> {
+export function claudeMessageOptions(value: ClaudeTurnSettings, resumeSessionId?: string): Pick<Options, 'model' | 'thinking' | 'effort'> & { settings: { fastMode: boolean; fastModePerSessionOptIn: true } } {
   const { requested } = claudeTurnSettingsSchema.parse(value);
   if (resumeSessionId && requested.effort.kind === 'not-requested') throw new Error('A resumed Claude message requires an explicit effort level.');
   return {

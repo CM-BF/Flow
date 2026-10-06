@@ -24,3 +24,7 @@
 2026-10-06 15:47:08 UTC合同源码安全点：既有5契约源+1新直接行为test草稿，旧leaf两源不改。保留旧AssistantSettings类型与outer strict final，仅settings层union；配置optional缺键不默认填入；整profile引用/目的与已知resume检查属于公共TaskSubmission，不只conversation。新controls不宣称fixed-disabled或资格探测。6组test先写后接线，因运行门禁未开放不声称red/green，未跑类型或任意工程检查。后继server/runner source仍等待Lead闭包。
 
 2026-10-06 15:53:33 UTC小源码收口：new final model一致性归唯一schema权威，helper只复用，legacy不受新refinement影响。两明确反例覆盖矛盾model和无观察却声称effective model，正例同步绑定；未运行不称通过。两个pure helper仅候接既有caller，不复制host/FSM；先前授权创建事实保留。原leaf SHA未变；0tests/tsc/PG/目标/安装；其余caller仍受Lead磁盘gate阻塞，不导出tmp绕过。
+
+2026-10-06 16:06:20 UTC纵向安全点：复用既有CAS/command事务与assertTaskExecutionProfile，不新增配置状态机；continuation判断局部提取供空队列unpause复用。工作中审查已修两兼容点：移除base conversationTurn新增refinement以保留Zod extend；legacy unavailable pin入队不升级为硬拒绝，known opt-in缺snapshot仍拒绝。publication输出明确union，SDK settings仅合并有限控制字段保留原安全策略。新专库fixture只自有DB/动态HTTP、create-request先记、unknown保留；测试源码未运行，0checks/PG/provider。新DDL交独立静态预审，正式source review待固定。
+
+2026-10-06 16:12:49 UTC source checkpoint自审：两working-review兼容修复保持唯一校验权威；SQL migration由architecture_read16:07静态预审无新阻断（非PG/正式approval）。测试用真实public route与注入既有adapter，未制造第二host；fixture明确旧migration升级顺序、不改immutable profile trigger，corrupt sentinel只自有INSERT再revoke。状态保留0检查，精确closure与外部owner接线边界已列。git diff --check仅格式检查，不当工程检查通过。

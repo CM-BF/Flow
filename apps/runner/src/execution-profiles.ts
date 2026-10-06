@@ -1,3 +1,4 @@
+import { checkClaudeTurnSettingsAllowed } from '../../../packages/contracts/src/claude-turn-settings.js';
 import type { HarnessAdapter } from '@flow/contracts';
 import { FlowClient } from '@flow/client';
 import {
@@ -53,6 +54,12 @@ export function guardExecutionProfile(adapter: HarnessAdapter, reference: Execut
       if (selected && Boolean(local.harness === 'claude' && local.activeSteering) !== Boolean(context.steering)) {
         throw new Error('The active steering port does not match the pinned execution configuration.');
       }
+      if (local.harness === 'claude' && local.turnSettings) {
+        const settings = context.task.messageSettings;
+        if (!selected || !settings || context.steering || context.goalTools || context.goalGraphTools || context.task.fixture || context.task.protocol || context.task.engineering
+          || checkClaudeTurnSettingsAllowed(settings, { profile: expected, choices: local.turnSettings.choices }).decision !== 'allowed'
+          || context.task.resumeSessionId && settings.requested.effort.kind === 'not-requested') throw new Error('The task message settings cannot be executed by this configured runner.');
+      } else if (context.task.messageSettings) throw new Error('This configured runner does not accept message settings.');
       context.signal.throwIfAborted();
       await context.assertOwnership();
       // Legacy unpinned work never inherits a newly configured interactive control port.

@@ -56,7 +56,8 @@ export interface ExecutionProfile {
   controls: { model: 'select-configured-profile'; thinking: 'fixed-disabled'; effort: 'unsupported'; access: 'configured-policy'; queue: false; steer: false };
   createdAt: string;
 }
-export interface ExecutionProfilePublished { profile: ExecutionProfile; replayed: boolean }
+/** Publication accepts both Claude configurations; the controls must reflect the selected branch. */
+export interface ExecutionProfilePublished { profile: ExecutionProfile | ClaudeMessageSettingsExecutionProfile; replayed: boolean }
 export interface ExecutionProfilePage { profiles: ExecutionProfile[]; nextCursor: string | null }
 
 export const CODEX_ADAPTER_VERSION = 'codex-app-server-0.154.0-v1';
