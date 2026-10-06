@@ -81,6 +81,25 @@ it('opt-in queue preview is UTF-8 bounded and never substitutes for a full-text 
   expect(() => decodeConversationQueueAccepted(receipt, receipt.conversationId, input)).toThrow(UnknownConversationAcknowledgementError);
 });
 
+it('opt-in queue rejects a shorter valid prefix of an over-limit request', () => {
+  const { input, receipt } = queuedSettings(); input.text = '🙂'.repeat(130);
+  receipt.item.truncated = true;
+  for (const preview of ['🙂', '🙂'.repeat(127)]) {
+    receipt.item.preview = preview;
+    expect(() => decodeConversationQueueAccepted(receipt, receipt.conversationId, input)).toThrow(UnknownConversationAcknowledgementError);
+  }
+});
+
+it('opt-in queue accepts only the longest complete code-point prefix at the byte boundary', () => {
+  const { input, receipt } = queuedSettings(); receipt.item.truncated = true;
+  for (const preview of ['a'.repeat(509), 'a'.repeat(508) + '界', 'a'.repeat(508) + '🙂']) {
+    input.text = preview + '🙂tail'; receipt.item.preview = preview;
+    expect(decodeConversationQueueAccepted(receipt, receipt.conversationId, input)).toBe(receipt);
+  }
+  input.text = 'a'.repeat(509) + '🙂tail'; receipt.item.preview = input.text.slice(0, 510);
+  expect(() => decodeConversationQueueAccepted(receipt, receipt.conversationId, input)).toThrow(UnknownConversationAcknowledgementError);
+});
+
 it('opt-in queue malformed JSON stays unknown while abort and HTTP conflict keep their existing errors', async () => {
   const { input, receipt } = queuedSettings(); let calls = 0;
   const server = createServer((request, response) => {

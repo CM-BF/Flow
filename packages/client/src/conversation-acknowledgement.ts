@@ -180,10 +180,14 @@ export function decodeConversationQueueAccepted(raw: unknown, conversationId: st
     && integer(result.queueRevision, 1) && result.queueRevision === parsed.data.expectedQueueRevision + 1);
   requireValue(uuid(item.id) && item.conversationId === conversationId && item.sequence === result.queueRevision
     && item.state === 'waiting' && item.promoted === null && timestamp(item.createdAt) && timestamp(item.updatedAt));
-  requireValue(text(item.preview, CONVERSATION_QUEUE_PREVIEW_BYTES)
-    && new TextEncoder().encode(item.preview as string).length <= CONVERSATION_QUEUE_PREVIEW_BYTES
-    && parsed.data.text.startsWith(item.preview as string) && item.truncated === (item.preview !== parsed.data.text));
-  if (new TextEncoder().encode(parsed.data.text).length <= CONVERSATION_QUEUE_PREVIEW_BYTES) requireValue(item.preview === parsed.data.text);
+  let expectedPreview = ''; let previewBytes = 0;
+  const encoder = new TextEncoder();
+  for (const character of parsed.data.text) {
+    previewBytes += encoder.encode(character).length;
+    if (previewBytes > CONVERSATION_QUEUE_PREVIEW_BYTES) break;
+    expectedPreview += character;
+  }
+  requireValue(item.preview === expectedPreview && item.truncated === (expectedPreview !== parsed.data.text));
   messageSettings(item.messageSettings, parsed.data.messageSettings);
   return raw as ConversationQueueAccepted;
 }
