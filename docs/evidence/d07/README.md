@@ -11,3 +11,5 @@ browser.json为Chrome154实际浏览器：先读取候选真实owner来源56条�
 兼容：无新字段只标source=legacy，标准in-progress/blocked仍作为实施候选；completed/delivered仅legacy作者历史，不给review/main虚假approval。其他自由文案不猜；活跃owner应补显式review/integration。非法显式字段unknown不fallback。已集成target后来范围变化不重开该片段，原main/proof详情照常保留。真实阻塞先于优先级，再稳定ID排序，下一交付最多3条。
 
 合并前clean-code：单纯派生函数，不复制状态或引入缓存；阶段枚举5项、原接口仅增加可选解析字段。没有新依赖/权限/数据库/模块边界，固定架构图无需修改。
+
+组合接收补项：DPERF外部批准5cd7f00仅同一任务快照的相同target复用，未跨snapshot缓存。D07原子amend v2取得human-proof.test.mjs范围，6d08c30把固定28来源计数改为validateRegistry+ID唯一性，保留I02/WPF/D03路径断言。四个局部文件实际31/31，8.84s，原外部26项中固定计数失败保留在其证据，未删测试/跳过；本test-only delta待Root复审。
