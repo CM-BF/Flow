@@ -13,3 +13,5 @@ X04 五点设计已接受后置：只 registry name@exact semver + expected SHA5
 2026-10-06 06:09:28 UTC 交付前 clean-code：固定SDK mapper/已有 outbox/报告事务/懒读职责分离；SDK匿名帧不造ID、同源块改变kind也不能重复登记；工具terminal吸收迟到progress，取消未完成仍unknown；父链和session严格归属。直接消费者最初66/67失败已保留，修mapper匿名输入兼容，不改原验收断言。最终8文件85/85、tsc、diff检查通过。数据迁移无删除、参数化SQL、详情独立摘要读；没有新增依赖、工具权限、loop、服务操作或模型调用。Root预读截断边界已写正文/合同注释/后继CHAT05-06；剩余为明确范围限制，独立review尚未开始。
 
 2026-10-06 06:14:29 UTC Review P2修复：接受原migration case只验证no-op的发现；新增独立旧schema专库/真实持久task+attempt+detail，明确首次020前无v20与表，升级后全文行保持、活动空、再次幂等。只跑新增1/1+noEmit，原85与原始输出保留，不改产品实现或共享文件。clean-code核生命周期finally、自有随机DB、迁移入口与可观测断言；没有新模型、依赖或服务操作。
+
+2026-10-06 06:20:06 UTC 正式复审收口：fresh ledger核CHAT05 claim v3仍属本owner；仅更新review/status/README，转录Mika对216333f的APPROVED，P2关闭。clean-code检查本段文档职责、目标与证据归属，保留57d产品/2163新升级测试的区分；原始输出与manifest不改，无产品测试、模型、服务操作。提交后停止范围写入，保留claim等待正式交接。
