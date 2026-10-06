@@ -47,3 +47,5 @@
 core/runtime三个JS与tarball内容逐字hash一致，安装脚本未执行，生产rootlock/deps不变。小host封套与测量runner职责分开；失败保留结构化输出，无自动刷新/模型/第三方host。仅自己的随机checkpoint目录被finally删除。clean-code交付复核发现readme必须区分core库已有ref/store与宿主自制fork/version gate，已明确；未将存储放大隐藏在可见context缩小数字之后。无剩余实现阻塞，review尚未开始。
 
 交付diffcheck：本地文件/脚本检查通过；逐字保留的上游LICENSE自带末尾空行，完整diffcheck仅报告该原文格式警告，未为消除警告改许可原文/hash。排除此单个vendored LICENSE后的diffcheck通过。core dist文件被根忽略规则覆盖，已明确force-add这三个已核hash的固定vendor依赖，未改根ignore或lock。
+
+2026-10-06 04:46:01 UTC 实现固定`f58fdf36b073e2a98a683c8f40442dbb64ee7eec`，后续本提交仅计划/证据metadata。独立review未开始；原始measurements/source hash不改。
