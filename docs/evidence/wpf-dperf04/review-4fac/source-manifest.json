@@ -1,7 +1,7 @@
 {
-  "implementationTarget": "6c18b81a11eece9c07dd047d28da099a0b6bbb24",
+  "implementationTarget": "4facd052c25e63ea300f72ea46c03c51fb983980",
   "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
-  "recordedAt": "2026-10-06 16:33:40 UTC",
+  "recordedAt": "2026-10-06 16:24:08 UTC",
   "files": [
     {
       "path": "apps/execution-dashboard/src/read-model.mjs",
@@ -20,8 +20,8 @@
     },
     {
       "path": "apps/execution-dashboard/public/app.js",
-      "bytes": 30868,
-      "sha256": "282226b050274ab87467e8673f395bb48b215cde817b04ffc402d1824f58bbf1"
+      "bytes": 28617,
+      "sha256": "688998b3d8376fc9f68d8fc0e33c795a3463710a9e3fda66ae4ca1807e01f3b2"
     },
     {
       "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
@@ -30,8 +30,8 @@
     },
     {
       "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
-      "bytes": 29132,
-      "sha256": "1b081a8d168f132c0a89867e88ee342f4a49e1000452d004a7f1b1e1c8eb6025"
+      "bytes": 22781,
+      "sha256": "2220e2e48a117ade0c72aead0189103b8bd6514be377e867050048200e0d20f6"
     },
     {
       "path": "apps/execution-dashboard/test/task-links.browser.mjs",
@@ -73,6 +73,5 @@
     "humanOutputChars": 240,
     "completedProofCache": false,
     "ledgerAuthority": "Original dynamically imported PG ledger; synthetic observer is test-only and grants no writer scope"
-  },
-  "revision": "Three fixed-4fac P2 source repairs, pending independent delta review; runtime NOT_RUN"
+  }
 }

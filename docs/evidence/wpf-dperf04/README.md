@@ -1,6 +1,6 @@
 # DPERF04 源码候选
 
-固定target `4facd052c25e63ea300f72ea46c03c51fb983980`，base `c837b5dccaea429b0112d1c7e0c752c41334204a`；七实现/测试源见[manifest](source-manifest.json)。当前仅源码完成，Node/browser **NOT_RUN**，独审 **NOT_STARTED**，main/真实4320未接。唯一事实源[status](../../../plans/wpf-dperf04-summary-detail/status.md)。
+当前修复target `6c18b81a11eece9c07dd047d28da099a0b6bbb24`，base `c837b5dccaea429b0112d1c7e0c752c41334204a`；七实现/测试源见[manifest](source-manifest.json)。当前仅源码完成，Node/browser **NOT_RUN**，原4fac独审 **CHANGES_REQUESTED**，当前修复待复审，main/真实4320未接。唯一事实源[status](../../../plans/wpf-dperf04-summary-detail/status.md)。
 
 三个新只读入口 `/api/summary`、`/api/task?task=<registered ID>`、`/api/assignments`；旧snapshot与文档接口保持。声明/现场proof/领取观察分别标识与时间，详情只核指定任务+main，无完成proof跨轮缓存；未登记claim可键盘展开exactscope。
 

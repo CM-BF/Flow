@@ -59,7 +59,7 @@ available且真正无claims才显示“尚无领取登记”；pending/failure�
 
 - 服务器分别合并 pendingSummary、pendingAssignments、按registered ID的pendingDetail；只保存进行中Promise，finally清除，失败也清。一个HTTP客户端断开不可取消被另一客户端共享的任务；响应前核socket状态即可。不能把Promise在完成后常驻变无失效proof缓存。每次detail仍有新Git context，不能跨轮复用mainChanges脏树结果。
 - 首页先显示summary，再独立补assignment；刷新按钮与20s可见timer共用single-flight，不让慢PG阻塞summary显示。隐藏页不发定时刷新；已有请求返回是否显示由同代际规则决定，不能偷偷重开timer任务。
-- 三类请求各有 epoch；选中task/来源identity/关闭dialog/新manualrefresh均能令相应旧结果失效。summary A迟到不能回滚B；失败保原summary和原completedAt，同时显式失败时间，不更新“已同步”戳。assignment失败不能替换summary为错误页，assignment成功也不能刷新proof时间。
+- 三类请求各有 epoch；选中task/来源identity/关闭dialog令相应旧结果失效。摘要刷新使已有proof标旧，不重建正在阅读的详情/文档；来源未变的在途结果仅可成为旧观察，来源变化时终止旧在途读取并保留已读内容，显式刷新详情才换表面。summary A迟到不能回滚B；失败保原summary和原completedAt，同时显式失败时间，不更新“已同步”戳。assignment失败不能替换summary为错误页，assignment成功也不能刷新proof时间。
 - detail受 `selectedTaskId + selectionEpoch + sourceKey + summaryDigest` 联合门禁，A→B→A也拒第一次A；摘要刷新导致digest变化时旧详情标旧/要求刷新，不把它写回summary。详情与文档必须在每个await后门禁成功及失败路径。
 - document另有generation（包含task、doc path、selected epoch）。旧同task plan响应/旧image load/旧error不能覆盖新review；关dialog abort+递增epoch。所有文件仍从注册document端点读取。
 - 复用原Modal、parent/child Enter和Escape焦点恢复。收起区域可以延迟构DOM，但summary仍含全部分类/数量；未知关系即使targetId存在也只“登记资料”下钻。子blocker/decision不折进父，长owner/claim scopes在详情，保短“领取状态未知”入口。
@@ -95,3 +95,9 @@ Browser资源门槛未批准：单合成server+1Chrome/无PG、累计60s含15cle
 ## 已应用方法与未实施边界
 
 沿本地find-skills优先已有版本，实际读codebase-design/clean-code，路径与hash在sources.json；不安装。Interface收敛为三个读模型入口，状态读取共享、proof沿原Module、唯一PG权威不复制；明确失败和观察时间，避免用通用缓存掩盖成本。此为原九scope候选的实施消歧，非独审通过、非take或运行许可。RELEASE03优先级仍高，资源恢复时须安全停点转回正式派发。
+
+## 4fac审查后的阅读与专测修复
+
+领取scope/身份使用原始textContent，不经过Markdown清洗。自动摘要同步不关闭文档，不恢复同名但新建的节点：原正文、选区、焦点与阅读位置保留，旧详情/领取记录有明确观察时间和旧记录提示，显式刷新详情才更新。当前登记消失时保旧阅读并禁止刷新，关闭仍可用。文档旧入口不能跨sourceKey/digest/mode读取新来源。
+
+迟到专测只在对应route.fulfill成功、实际fetch响应与消费正文已结算后断言；不消费错误正文的assignment路径另排空该错误响应，失败即非覆盖，不吞为成功。20秒生产callback由fixture显式触发以验证自动同步，不等待墙钟20秒。此为测试刺激，无生产隐藏hook。所有新行为仍NOT_RUN。
