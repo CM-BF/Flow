@@ -145,3 +145,5 @@ REQ-01/22：O12持续目标公共controller及固定解释历史已main，TUI01D
 2026-10-06 17:17 UTC矩阵增量只对齐已审COST01A/O14和SVC06模块事实；依据各唯一status和I02固定source comparison，未新增工程测试、模型或个人部署。逐消息设置与TUI当前运行/审查边界以各owner唯一status为准，后续结果不覆盖历史失败。
 
 2026-10-06 18:09 UTC 更新：Claude逐消息设置CORE/client/CLI已main8d84，实际Web控件独立领取准备；TUI取消03行为与独立cleanup已main（原whole-suite失败不改写）。RELEASE03固定af51+d629 A历史/B实际App发送及unknown ACK恢复已唯一独审，个人保留旧页面的af51组合尚待补，不因此改旧runtime事实。O15完整输入确认公共接线已main0e4c，真实自然语言组合验收和独立接受仍open。
+
+2026-10-06 20:56 UTC / REQ-19局部接收：main ca683820仅当前接收快照，不重核本矩阵全部历史。三份保留/候选Web与af51后台组合均已有固定兼容证据；原个人362/v15和caa1/v2未变。2040唯一只读step01发现旧v1 admission的非空inFlight，原hash与未知结果保留。GO已批准一次精确、持久备份/先行审计/同runner维护屏障/整组停止/全零未决条件下的退役方案，当前仅实现/独审，默认idle及原claim语义不变；不会以未来S01P07追认旧UUID。F04真实Web↔TUI旅程已获得独立窗口，未提前宣布通过。
