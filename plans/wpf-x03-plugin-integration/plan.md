@@ -11,8 +11,8 @@
 ## TODO
 
 - [x] **WPF-X03I01-01** 固定输入、独立tree、receipt与唯一canonical，发现本地技能并记录。
-- [ ] **WPF-X03I01-02** 实际App settings懒挂载，bound reader/session隔离及CSS兼容。
-- [ ] **WPF-X03I01-03** 独立HTTP fixture通过真实App验证零预取/显式详情/关闭重连迟到隔离/焦点/本地启停分离/双主题390/原Thread草稿，必要生产冒烟。
+- [x] **WPF-X03I01-02** 实际App settings懒挂载，bound reader/session隔离及CSS兼容。
+- [x] **WPF-X03I01-03** 独立HTTP fixture通过真实App验证零预取/显式详情/关闭重连迟到隔离/焦点/本地启停分离/双主题390/原Thread草稿，必要生产冒烟。
 - [ ] **WPF-X03I01-04** 固定实现commit、独立review、dashboard聚合与MainLead交付；main集成单独记录。
 
 ## 验收与风险
