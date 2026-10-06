@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:56 UTC / DPERF与RELEASE已main；ATTACH runtime已审待接；ACK已main待收口；ATTACHI/WORKSPACEPERF fresh受领 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:12 UTC / ACK已main并释放；ATTACHI实施、WORKSPACEPERF partial已审；RELEASE02待独审 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -83,7 +83,7 @@
 | RELEASE02 → MATURE01 | web-release-type-fix / 03323bce v1三scope | fixed560c/final0bca已pushclean，根严格types0/转译JS相同；等runner_owner独审，0浏览器/PG/个人发布 |
 | ATTACHI01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md)，94b84c59 v1十一scope | base8701已审DTO/typed ports/官方Threadfixture；六client/HTTP/App仍pending，首canonical d6e6eba clean/parser0已owner建立 |
 | WORKSPACEPERF01 → MATURE05 | c815bc00 v1四scope / web-workspace-lifecycle-baseline | fixed1711/final628156已独审partial基线待main；8完成/1失败、累计79.322s，0生产优化 |
-| ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v1七scope | 2fa8/4e4e已独审150、main e4c82五源同；owner收口后release；v2公共扩展仍待准确输入 |
+| ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v2 released七scope | 2fa8已main e4c82；owner8301991 normalpush/clean后全停写释放；v2公共扩展仍待准确输入 |
 | DPERF02 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md)，1cb4 v2 released四scope停写 | 已main da041，close8e9最终normalpush成功；两次失败/先release偏差已归档，无重测 |
 
 ## 当前依赖与登记队列

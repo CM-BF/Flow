@@ -108,6 +108,9 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-ATTACH01 → MATURE03 | workspace_panels_owner / attachment-resources / codex/attachment-resources | ef617d78 v2十八scope；phase1 6bc/339已独审小输入，runtime8701/final1d236已root78独审并push，待main及公共桥接；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)。F01/client/rootmount不领 |
 | WPF-RELEASE01 → MATURE01 | w01_owner / web-release-compatibility / codex/web-release-compatibility | 20a6529a v2 released；main c450、owner41276 normalpush/clean后四scope全停写；新Web8d8/旧Web与backend b1c固定真实构建，最终format2报告必须匹配同releaseId/descriptor；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md) |
 | WPF-DPERF02 → D01 | d01_owner / dashboard-proof-batching / codex/dashboard-proof-batching | 1cb4 v2已释放；902c/aa715已main da041，close8e9现local=remote/clean；push两次失败与先release偏差另归档；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md) |
+| WPF-ATTACHI01 → MATURE03 | w01_owner / web-attachment-input-preview / codex/web-attachment-input-preview | 94b84c59 v1十一新scope；已审DTO8701+typed ports，真实HTTP/App接线pending |
+| WPF-RELEASE02 → MATURE01 | w01_owner / web-release-type-fix / codex/web-release-type-fix | 03323bce v1三scope；fixed560c/final0bca已push，等runner_owner窄审；ATTACHI安全点串行修复 |
+| WPF-WORKSPACEPERF01 → MATURE05 | workspace_panels_owner / web-workspace-lifecycle-baseline / codex同名 | c815 v1四scope；fixed1711/final628156 partial基线已审待main，下一最小cache片仅只读方案 |
 | WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v3，仅两管理目录+四Web大task目录；追溯/集中依赖，不构成第三执行层 |
 
 D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVITYREAD/STEIRI已mainf181并原scope全部released；VISUAL已main4391、35e5 v3 released。旧树只读，后继不沿旧权写入。
