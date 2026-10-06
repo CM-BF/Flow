@@ -1,6 +1,6 @@
 # D05FIT01 交付证据
 
-固定实现 `0ac7a127f06d534f6514a98331f533e42993378a`，基线`7106a35447bf43026ad7b5ad7c25dc530fd0c4f5`；两实现文件，四literal领取范围。唯一[status](../../../plans/d05-first-fit/status.md)与[review](../../../plans/d05-first-fit/review.md)。当前等待root固定独审，未main。
+固定实现 `0ac7a127f06d534f6514a98331f533e42993378a`，基线`7106a35447bf43026ad7b5ad7c25dc530fd0c4f5`；两实现文件，四literal领取范围。唯一[status](../../../plans/d05-first-fit/status.md)与[review](../../../plans/d05-first-fit/review.md)。root2026-10-06 08:46:46 UTC已限定APPROVED；当前未main，范围与独立CUA见review。
 
 [源码绑定](source-binding.json)将两SHA256与[最终浏览器报告](second-green.json)逐字核同；报告保留运行时3f797d7+dirty，不回填为target。首次1280x720自动71%，可同屏看到Runner；390仍42%并局部滚动，无整页横溢。手动模式分别按五视图保留，Fit可恢复响应宽度，刷新进度不改zoom。
 
