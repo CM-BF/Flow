@@ -1,5 +1,5 @@
 import { createHash, randomUUID } from 'node:crypto';
-import { mkdtemp, mkdir, open, rm } from 'node:fs/promises';
+import { lstat, mkdtemp, mkdir, open, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { isAbsolute, join, resolve } from 'node:path';
 import { spawn } from 'node:child_process';
@@ -12,6 +12,7 @@ import { openIntentStore } from '../intent-store.js';
 import { createServer } from '../../../server/src/index.js';
 import { runRunner } from '../../../runner/src/runtime.js';
 import { verifyText } from '../../../runner/src/verifier.js';
+import { cleanupAfterCheckpoint, observeConnections, type DirectoryIdentity } from './fixture-cleanup.js';
 
 const pause = (ms: number) => new Promise<void>(done => setTimeout(done, ms));
 async function bounded<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
@@ -58,6 +59,7 @@ export class CancelJourney {
   private runner?: Promise<void>;
   private created = false;
   private directory?: string;
+  private directoryIdentity?: DirectoryIdentity;
   private upstream = '';
   private proxyUrl = '';
   private dropTarget?: string;
@@ -84,7 +86,8 @@ export class CancelJourney {
   async start() {
     await mkdir(this.evidenceDirectory, { mode: 0o700 }); // Never reuse/overwrite a previous run.
     this.directory = await mkdtemp(join(tmpdir(), 'flow-tui01f-'));
-    this.record('resources', { database: this.database, directory: this.directory, ownerPid: process.pid });
+    this.directoryIdentity = await this.readDirectoryIdentity();
+    this.record('resources', { database: this.database, directory: this.directory, directoryIdentity: this.directoryIdentity, ownerPid: process.pid });
     await this.save('reservation.json', this.facts);
     this.admin = new Pool({ connectionString: this.adminUrl, max: 1, connectionTimeoutMillis: 2000, query_timeout: 3000 });
     await this.admin.query(`CREATE DATABASE "${this.database}"`); this.created = true;
@@ -261,6 +264,11 @@ export class CancelJourney {
       if (!group.stopped || failure) throw Error('PTY cleanup/protocol unknown');
     }
   }
+  private async readDirectoryIdentity(): Promise<DirectoryIdentity> {
+    if (!this.directory) throw Error('Private directory was not created');
+    const info = await lstat(this.directory);
+    return { dev: info.dev, ino: info.ino, directory: info.isDirectory(), symbolicLink: info.isSymbolicLink() };
+  }
   async close() {
     if (!this.facts.lostAck || !this.facts.ptyExit || this.tasks.length !== 3 || this.requests.length !== 3) this.failed('incomplete-three-turn-journey');
     const cleanup: Record<string, unknown> = { database: this.database, directory: this.directory ?? null, irreversibleCleanup: false };
@@ -286,25 +294,27 @@ export class CancelJourney {
     });
     await attempt('centerStopped', async () => { await bounded(this.app?.close() ?? Promise.resolve(), 5000, 'Center shutdown unknown'); return true; });
     if (this.created) await attempt('connections', async () => {
-      const connections = (await this.admin!.query('SELECT pid,state FROM pg_stat_activity WHERE datname=$1', [this.database])).rows;
-      if (connections.length) throw Error('Database still has consumers'); return connections;
+      const observation = await observeConnections(async () => (await this.admin!.query(
+        'SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid LIMIT 33', [this.database])).rows);
+      if (observation.state !== 'empty') this.failed(`connections-${observation.state}`);
+      return observation;
     });
-    let checkpoint = false;
-    try { await this.save('checkpoint.json', { at: new Date().toISOString(), facts: this.facts, requests: this.requests, failures: this.failures, cleanup }); checkpoint = true; }
-    catch { this.failed('checkpoint-not-confirmed'); }
     // Unknown shutdown, failed evidence persistence or test failure retains both DB and tmp.
-    if (checkpoint && !this.failures.length) {
-      await attempt('databaseRemoved', async () => {
+    const retained = await cleanupAfterCheckpoint({
+      checkpoint: () => this.save('checkpoint.json', { at: new Date().toISOString(), facts: this.facts, requests: this.requests, failures: this.failures, cleanup }),
+      removeDatabase: async () => {
         if (this.created) await this.admin!.query(`DROP DATABASE "${this.database}"`);
         const remaining = this.admin ? (await this.admin.query('SELECT datname FROM pg_database WHERE datname=$1', [this.database])).rows : [];
-        if (remaining.length) throw Error('Private database remains'); return true;
-      });
-      if (!this.failures.length) await attempt('temporaryRemoved', async () => { if (this.directory) await rm(this.directory, { recursive: true, force: false }); return true; });
-      cleanup.irreversibleCleanup = cleanup.databaseRemoved === true && cleanup.temporaryRemoved === true;
-    }
+        if (remaining.length) throw Error('Private database remains');
+      },
+      readDirectory: () => this.readDirectoryIdentity(),
+      removeDirectory: () => rm(this.directory!, { recursive: true, force: false }),
+    }, !this.failures.length, this.directoryIdentity);
+    this.failures.push(...retained.failures); Object.assign(cleanup, retained);
+    cleanup.irreversibleCleanup = retained.databaseRemoved && retained.temporaryRemoved;
     await attempt('adminClosed', async () => { await this.admin?.end(); return true; });
-    if (checkpoint) await this.save('result.json', { at: new Date().toISOString(), facts: this.facts, requests: this.requests, failures: this.failures,
+    if (retained.checkpointConfirmed) await this.save('result.json', { at: new Date().toISOString(), facts: this.facts, requests: this.requests, failures: this.failures,
       cleanup, outcome: this.failures.length ? 'failed-or-unknown-retained' : 'passed', checkpoint: 'checkpoint.json' });
-    if (!checkpoint || this.failures.length) throw Error(`TUI01F evidence/cleanup incomplete; retain ${this.database} and private tmp; inspect explicit evidence directory`);
+    if (!retained.checkpointConfirmed || this.failures.length) throw Error(`TUI01F evidence/cleanup incomplete; inspect explicit evidence before cleanup of ${this.database} or private tmp`);
   }
 }
