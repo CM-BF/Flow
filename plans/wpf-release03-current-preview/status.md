@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 15:53:47 UTC |
+| 最近更新时间 | 2026-10-06 15:55:47 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
@@ -19,11 +19,11 @@
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 详情响应校验已修正，等待独立复核 |
+| 当前产出 | 修复后的验证脚本已复核，等待实际组合检查 |
 | 下一可用交付 | 后台最小修复后继续未完成的真实前端验证 |
-| 当前阻塞 | ACTIVE: 原后台检查失败；修复组合已固定，验证脚本修正待复核与新准入 |
+| 当前阻塞 | ACTIVE: 原后台检查失败；修复组合及验证源码已固定，等待本次实际检查准入 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，269103d修复待审，原1a7源码REQUEST_CHANGES/P1；完整兼容NOT_STARTED；旧432b源码条件APPROVED |
+| Review | [review.md](review.md)，269103d源码条件APPROVED，1a7 P1源修已闭合；完整兼容NOT_STARTED；旧432b源码条件APPROVED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -80,3 +80,7 @@ root已只读独立核10份raw共80,470B，见[原样结果审计](../../docs/ev
 ## 2026-10-06 15:53:47 UTC 详情合同窄修
 
 root对1a7源码指出P1：把GET详情当执行输入reference解析，会拒绝合法响应。固定修复269103d44f153f13a2f35fadb08bf11d4f62e48d只改fixture，改为真实detail身份/有序冻结metadata/正文校验；不伪造execution字段、不改旧raw或原history预期。新history契约hash已更新，因此后续A/B必须绑定本次修复后的region。见[窄修审计](../../docs/evidence/wpf-release03/detail-contract-fix.json)。新types/PG/Chrome均NOT_RUN，累计仍3,874ms/余176,126ms，无gate。
+
+## 2026-10-06 15:55:47 UTC 后继源码独审通过／等待单次A2
+
+root在15:55:02Z固定269103d独立源码复审APPROVED/0blocking，原1a7 P1报告原样保留，source-addressed。两源current/fixed相同，browser未变；独立peer只读browser结论另归档。见[root原报告](../../docs/evidence/wpf-release03/source-review-2691-root.json)、[原P1](../../docs/evidence/wpf-release03/source-review-1a7-root.json)。这是源码准入条件，不是新后台HTTP或完整兼容通过；新A/B未执行，累计仍3874ms。先固定本metadata HEAD再供manager新准入，本人不交错改源或自动启动。

@@ -41,3 +41,7 @@ Base：362af3bac77541e5a60979326bcf4d4b8c947915
 ## 2026-10-06 15:53:47 UTC 1a7源码P1与新修复
 
 root固定1a7源码结论REQUEST_CHANGES：GET ContextDetail不含executionInputId/executionInputDigest，不能调用reference响应schema。此为源级必然拒绝，不是新A运行失败。修复target 269103d44f153f13a2f35fadb08bf11d4f62e48d：只有fixture详情校验改动，公共合同与原history断言保持；新target独审NOT_STARTED，不能把旧源码批准扩为本轮批准。[作者窄修审计](../../docs/evidence/wpf-release03/detail-contract-fix.json)。未重新types/PG/Chrome。
+
+## 2026-10-06 15:55:47 UTC 269103d源码限定APPROVED
+
+root独立SOURCE review于2026-10-06T15:55:02.202190Z通过，0blocking；[完整原报告](../../docs/evidence/wpf-release03/source-review-2691-root.json)。RELEASE1A7-P1 source-addressed；原[REQUEST_CHANGES报告](../../docs/evidence/wpf-release03/source-review-1a7-root.json)不覆盖。两固定源=current，history region59cde31c，旧raw未变；peer未变browser证据范围亦无新增blocking。未运行新types/HTTP/PG/Chrome；完整feature审查仍NOT_STARTED。manager freshgate未到，不把源码批准当allowRun。

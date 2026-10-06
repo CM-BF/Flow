@@ -39,3 +39,7 @@
 ## 2026-10-06 15:53:47 UTC detail DTO清码安全点
 
 继续复用已读本地clean-code/codebase-design：reference和detail是不同公开合同，不以同名上下文概念共用不适用解析器。仅fixture删除错误schema调用/导入，使用已验证reference核真实detail身份、有序metadata、UTF8正文与whole-file摘要；没有新增通用decoder/服务修改。原history语义不降级，当前版本观察不与冻结观察混淆。原十raw全hash不变，保护路径零差、源码diffcheck0；只有文本/hash检查，未运行代码/import/types/PG/Chrome。新target待独审。
+
+## 2026-10-06 15:55:47 UTC 独审归档安全点
+
+仅原样复制root两份report并更新当前源码批准事实；保留旧P1/旧362两项失败。产品两源继续固定269103d，wholefeature未验，不误用SOURCE批准授权运行。先normal metadata提交/push/核clean，再告manager实际HEAD，避免准入期间元数据竞态；0产品检查/PG/Chrome/资源查询。

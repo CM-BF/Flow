@@ -1,0 +1,142 @@
+{
+  "at": "2026-10-06T15:50:50.123848+00:00",
+  "reviewer": "root independent fixed-source review",
+  "target": "1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098",
+  "base": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+  "observedHead": "a92cb7fd5531973ae33501e38f38f23f568077d7",
+  "dirty": "",
+  "decision": "CHANGES_REQUESTED_P1_DETAIL_CONTRACT_MISMATCH; NO_RUNTIME_ADMISSION",
+  "sources": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 26829,
+      "sha256": "6ae1fcdd23bbf6643047d05a0e6bdf8442667119c583a39141b55df5edc2308e",
+      "currentMatches": true
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 43464,
+      "sha256": "f741966746e4222380288c93f92e6fbec092ff042633717752b785cc69943ffa",
+      "currentMatches": true
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+      "currentMatches": true
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020",
+      "currentMatches": true
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577",
+      "currentMatches": true
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126",
+      "currentMatches": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 44108,
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd",
+      "currentMatches": true
+    }
+  ],
+  "historyContractSha256": "612f03112126a305785bfce31e51843de05c380724fb2226739b40fe0a37dbe8",
+  "oldRaw": [
+    {
+      "name": "budget.json",
+      "bytes": 130,
+      "sha256": "bcb5a5c00c8dd5f1aeaf1a20027a95f45c544e9183e989ff08e887142b4536a9"
+    },
+    {
+      "name": "cleanup.json",
+      "bytes": 333,
+      "sha256": "4aa56df066f005d55c9c3ddf6ad35aebdda095bae96f5f7364a5e300ee260f8a"
+    },
+    {
+      "name": "database-owner.json",
+      "bytes": 169,
+      "sha256": "48854241d7bc4235916c04ac8b4cae5473dbcd6f089c145b95622a65afa79dae"
+    },
+    {
+      "name": "history.json",
+      "bytes": 10667,
+      "sha256": "ec0acc6f40709c56a5e0251fbac50daf7d3e6a1d159b1f96fc82166d2cb9c9ef"
+    },
+    {
+      "name": "outcome.json",
+      "bytes": 299,
+      "sha256": "9d1f8d2484123c39c0384eb7f53ea63c407c243fcc325740fadcc27be6556f60"
+    },
+    {
+      "name": "process.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "sources.json",
+      "bytes": 1779,
+      "sha256": "116fde366ebd9c15211b334ed6c552a996f92e332c8116015f8505914ea47ae1"
+    },
+    {
+      "name": "supervisor.json",
+      "bytes": 12802,
+      "sha256": "4848a7019a7a5818e0e0e5afb5312c19437d3964208753b2a74e2e0735bd78f8"
+    },
+    {
+      "name": "wire.json",
+      "bytes": 42857,
+      "sha256": "518256c57ea810d85bf633f938ca1744007ebda0be596aeb7d70bd3cda49bb82"
+    },
+    {
+      "name": "worker.json",
+      "bytes": 11434,
+      "sha256": "1f2070ccf37da760b1ca567dd314f2765738a7b31681ddc07fe18b6cc1ab22b0"
+    }
+  ],
+  "reviewed": [
+    "Backend: exact b298 sole-parent362 and ancestor, two cde-identical source hashes; only external admission metadata closure; path regex/unique paths, fixed tree 100644 blobs and current realpath/file bytes; no broad docs/tests allowance. Final af51 independent thirteen-path closure is separately pinned by manager from root intake.",
+    "History contract single literal region contains runner/material fixtures, reusable actual wire fact assertions and live cases. Intended live assertions demand template2 one attachment, attachment-only zero knowledge/mixed one knowledge, accepted1 sequence2, latest unknown metadata-unavailable/null material digest/same execution digest and no private text; wire hashes/identities/detail contents checked.",
+    "B provenance: fresh trusted gate exact ten-file hashes and lengths; canonical no-symlink directories/files, bounded fd reads with same size/time checks; exact entries reject scratch/hard-stop; contract/protocol/backend/factory/artifact/source head binding; actual history assertions reused rather than relying on passed flag.",
+    "B provenance: actual cleanup and unique worker exit0, DB created/marker/removal and complete budget cross-checked; only two full non-overlapping case wire ranges; outcome.passed and supervisor full-result flag correctly not required for A-only.",
+    "App-only receives supervisor validated proof, uses a new owned DB/process lifecycle, does not rerun history; original actualApp body unchanged. SVC import remains successfulApp plus verifiedA plus cleanup/error-free. Mode history cannot launch Chrome.",
+    "All runs including retained original failure counted; independent previousRuntimeMs checked; existing 180000ms/8MiB/20s cleanup and mode-specific start/stop margins unchanged; both fixed source files current and protected paths exact362.",
+    "Ten original failed-A files are byte-identical to dbaa checkpoint; original3874ms and failures preserved."
+  ],
+  "conditions": [
+    "P1 must be fixed and independently re-reviewed before any runtime gate. No approval has been dispatched for this target.",
+    "Before A runtime, manager fresh D04 claim/no-overlap and fixed hashes/dependency/source identity, exact final af51 tuple+thirteen metadata, one resource/window admission; Lead conditional authority stands. No run triggered by this review.",
+    "A sources.head records actual runtime metadata HEAD (currently a92cb7fd5531973ae33501e38f38f23f568077d7), distinct from reviewed implementation 1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098. Later B must pin actual raw head and exact ten raw hashes after independent actual-A review, not expected implementation HEAD.",
+    "Before B: successful new A raw independently reviewed, same frozen backend/artifact/contract/relevant protocol; fresh stricter B resource gate and cumulative budget, not a blanket continuation. Old failedA never reusable.",
+    "Trust boundary is the independently authored local gate and frozen owner trees; not an adversarial OS filesystem or cryptographic approval system. Source/metadata owner must remain frozen through execution.",
+    "Actual artifact verification and backend import still occur in existing worker lifecycle; manager retains preflight independent artifact/dependency proof. No transitive package execution guarantee inferred from manifest checks."
+  ],
+  "unverified": [
+    "New1a7 strict types and negative direct loader checks not run; original997d type result is historical only.",
+    "Newbackend actual A and B NOT_RUN; source approval cannot mark feature review or compatibility green.",
+    "Physical resource peak cannot be bounded by250ms polling; existing stop/start margins retained.",
+    "No personal-service/prod invocation, no PG/Chrome/provider/model imports or runtime by reviewer."
+  ],
+  "cleanCode": "One fact assertion authority and exact external proof boundary; narrow original-two-source implementation, no duplicate backend or history execution logic. Keep validation status separate from source approval.",
+  "findings": [
+    {
+      "id": "RELEASE1A7-P1",
+      "priority": "P1",
+      "title": "Reference schema rejects valid lazy context detail and makes repaired history A fail",
+      "location": "apps/web/test/web-current-preview.fixture.ts:298",
+      "trigger": "assertHistoryFacts calls conversationContextResponseSchema.parse(detail) on actual GET /api/conversations/:id/contexts/:contextId body. The named schema is a context-reference consumer and its referenceBase requires executionInputId and executionInputDigest. ConversationContextDetail type (conversation-context.ts:38-53) omits those. Both retained actual detail responses have neither field. Candidate af51 changes only context history store and its test, not lazy detail shape.",
+      "impact": "A reaches successful history then rejects valid detail for missing reference fields; both cases can never pass on the approved backend. The new shared reuse helper also rejects any valid A evidence. Source-inferred deterministic mismatch backed by old real response shape, not a new actual runtime failure.",
+      "required": "Use the actual existing detail contract to validate body identity/order/ref/body correspondence; do not augment raw with invented execution IDs or modify shared contracts. Keep exact required history unknown-material/null-digest/execution-digest assertions. Minimum original-scope fix, new fixed SHA and history-contract hash before A.",
+      "evidence": "Old raw wire.json SHA 518256c57ea810d85bf633f938ca1744007ebda0be596aeb7d70bd3cda49bb82 contains two GET detail bodies with id,conversationId,projectId,contextDigest,createdAt,templateVersion,order,attachments,sources only. Reference schema at conversation-context.ts:62-64,96-102 requires the two missing fields."
+    }
+  ]
+}

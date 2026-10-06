@@ -1,6 +1,6 @@
 # RELEASE03 fixed backend + A/B admission
 
-Current source target `269103d44f153f13a2f35fadb08bf11d4f62e48d`; both scripts are frozen for independent SOURCE review. Newtarget imports/types/PG/Chrome **NOT_RUN**. Original362 failedA raw remains byte-identical: [result](history-result-152729.json), tenfiles80,470B,3,874ms consumed/176,126ms remaining. There is no current execution gate.
+Current source target `269103d44f153f13a2f35fadb08bf11d4f62e48d`; both scripts are frozen after root independent SOURCE approval (15:55:02Z; source only). Newtarget imports/types/PG/Chrome **NOT_RUN**. Original362 failedA raw remains byte-identical: [result](history-result-152729.json), tenfiles80,470B,3,874ms consumed/176,126ms remaining. There is no current execution gate.
 
 ## Backend input
 
