@@ -16,7 +16,7 @@ function NativeBody({ projection, row }: { projection: NativeActivityProjection;
   return <>
     {detail?.loading && <p role="status">Loading activity content…</p>}
     {detail?.error && <p role="alert">{detail.error}</p>}
-    {!body && !detail?.loading && <Button size="sm" variant="outline" onClick={() => void projection.loadBody(row.id)}>Retry activity content</Button>}
+    {!detail?.data && !detail?.loading && <Button size="sm" variant="outline" disabled={!state.active} onClick={() => void projection.loadBody(row.id)}>Retry activity content</Button>}
     {body && <><p className="text-xs text-muted-foreground">{body.truncated ? `Truncated UTF-8 prefix · original ${body.originalBytes} bytes. Omitted bytes are not available.` : `${body.originalBytes} bytes · ${body.mediaType}`}</p>
       <pre tabIndex={0} aria-label="Native activity content" className="max-h-72 overflow-auto whitespace-pre-wrap break-words text-xs">{text}</pre>
       <details className="text-xs"><summary>Source identity</summary><dl className="break-all"><dt>Attempt</dt><dd>{row.attemptId}</dd><dt>Source</dt><dd>{row.source} · {row.sourceMessageId}</dd><dt>Original content SHA-256 (not prefix verification)</dt><dd>{body.sha256}</dd></dl></details></>}

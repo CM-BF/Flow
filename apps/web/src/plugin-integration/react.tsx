@@ -51,7 +51,7 @@ export function ConversationActivities({ viewId, projection, visible, children }
   const bindings = useMemo(() => createConversationActivityBindings(session, viewId, projection), [session, viewId, projection]);
   const state = useSyncExternalStore(projection.subscribe, projection.getSnapshot);
   useLayoutEffect(() => { bindings.setVisible(visible); return () => bindings.setVisible(false); }, [bindings, visible]);
-  useLayoutEffect(() => { bindings.sync(); }, [bindings, state.turns]);
+  useLayoutEffect(() => { bindings.sync(); }, [bindings, state.turns, state.connection]);
   useEffect(() => { const close = () => bindings.dispose(); session.signal.addEventListener("abort", close, { once: true }); return () => { session.signal.removeEventListener("abort", close); bindings.setVisible(false); }; }, [session, bindings]);
   return <ActivityBindingsContext.Provider value={bindings}>{children}</ActivityBindingsContext.Provider>;
 }

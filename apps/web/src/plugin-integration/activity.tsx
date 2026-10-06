@@ -30,7 +30,7 @@ export function createConversationActivityBindings(session: AppPluginSession, vi
   const entries = new Map<string, BoundActivity & { sync(turn: ConversationTurn): void }>();
   const current = (identity: ActivityIdentity) => {
     const snapshot = projection.getSnapshot();
-    return visible && !session.signal.aborted && snapshot.snapshot?.conversation.id === identity.conversationId
+    return visible && snapshot.connection === "live" && !session.signal.aborted && snapshot.snapshot?.conversation.id === identity.conversationId
       && snapshot.turns.some(turn => turn.id === identity.turnId && turn.task.id === identity.taskId && userMessageId(turn) === identity.messageId)
       && session.canReadActivity(identity);
   };
@@ -51,11 +51,19 @@ export function createConversationActivityBindings(session: AppPluginSession, vi
       readDetail: (id, signal) => read(() => session.readActivity("detail", identity, id, signal)),
     });
     let open = false, mode: "native" | "events" = "native";
-    const setActive = () => { const active = open && current(identity); native.setActive(active && mode === "native"); generic.setActive(active && mode === "events"); };
+    const setActive = () => {
+      const online = projection.getSnapshot().connection === "live";
+      const active = open && current(identity);
+      // Deactivate before restoring online: setOnline(true) may refresh an active generic reader.
+      native.setActive(active && mode === "native");
+      if (!active || mode !== "events") generic.setActive(false);
+      generic.setOnline(online);
+      generic.setActive(active && mode === "events");
+    };
     const entry = { identity, native, generic,
       setDisplay(next: boolean, selected: "native" | "events") { open = next; mode = selected; setActive(); },
       sync(next: ConversationTurn) {
-        native.updateTask(next.task); generic.updateTask(next.task); setActive();
+        setActive(); native.updateTask(next.task); generic.updateTask(next.task);
         const state = generic.getSnapshot();
         // Generic refresh consumes the next event page: never auto-drain unfinished history.
         if (state.active && state.stale && !state.hasMore && !state.loading && !state.error) void generic.refresh();
@@ -85,7 +93,7 @@ function BoundActivityPanel({ entry }: { entry: BoundActivity }) {
   return <details open={open} onToggle={event => setOpen(event.currentTarget.open)} className="w-full min-w-0 rounded-md border px-3 py-2 text-left text-sm" data-conversation-activity={entry.identity.turnId}>
     <summary className="cursor-pointer">Activity · {state.task.status.replaceAll("_", " ")}</summary>
     {open && <div className="mt-3 space-y-3"><fieldset className="flex flex-wrap gap-3" aria-label="Activity source"><label><input type="radio" name={`activity-${entry.identity.viewId}-${entry.identity.turnId}`} checked={mode === "native"} onChange={() => setMode("native")} /> Tools and thinking</label><label><input type="radio" name={`activity-${entry.identity.viewId}-${entry.identity.turnId}`} checked={mode === "events"} onChange={() => setMode("events")} /> Task events</label></fieldset>
-      <div hidden={mode !== "native"}><NativeActivity projection={entry.native} /></div><div hidden={mode !== "events"}><ConversationActivity projection={entry.generic} /></div></div>}
+      {!entry.generic.getSnapshot().online && <p role="status">Activity reading is paused while this view is offline or reconnecting. Loaded content stays available.</p>}<div hidden={mode !== "native"}><NativeActivity projection={entry.native} /></div><div hidden={mode !== "events"}><ConversationActivity projection={entry.generic} /></div></div>}
   </details>;
 }
 export function createActivityPlugin(): PluginDefinition {

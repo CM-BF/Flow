@@ -50,4 +50,17 @@ describe("conversation activity host bridge",()=>{
   const s=await setup();await s.session.host.activate(ACTIVITY_OWNER);s.bindings[0]!.setVisible(true);const e=s.bind(0);e.setDisplay(true,"events");await e.generic.refresh();expect(s.reads).toEqual([`events:${e.identity.taskId}`]);expect(e.generic.getSnapshot().entries.length).toBeGreaterThan(0);
   expect(s.session.host.checkView(ACTIVITY_PANEL,{kind:"global"}).ok).toBe(false);
  });
+ it("offline with unchanged turns blocks native/events/body and reconnect restores an open view",async()=>{
+  const s=await setup();await s.session.host.activate(ACTIVITY_OWNER);s.bindings[0]!.setVisible(true);const e=s.bind(0),turns=s.projections[0]!.getSnapshot().turns;
+  s.projections[0]!.setOnline(false);expect(s.projections[0]!.getSnapshot().turns).toBe(turns);s.bindings[0]!.sync();e.setDisplay(true,"native");await tick();expect(s.reads).toEqual([]);expect(e.native.getSnapshot().active).toBe(false);
+  e.setDisplay(true,"events");await tick();expect(s.reads).toEqual([]);expect(e.generic.getSnapshot().online).toBe(false);
+  e.setDisplay(true,"native");s.projections[0]!.setOnline(true);await s.projections[0]!.refresh();s.bindings[0]!.sync();await tick();expect(s.reads).toEqual([`native:${e.identity.taskId}`]);
+  await e.native.loadBody(s.headers.get(e.identity.taskId)!.id);const before=s.reads.length;s.projections[0]!.setOnline(false);s.bindings[0]!.sync();await e.native.loadBody(s.headers.get(e.identity.taskId)!.id);expect(s.reads).toHaveLength(before);s.bindings[0]!.setVisible(false);s.projections[0]!.setOnline(true);await s.projections[0]!.refresh();s.bindings[0]!.sync();await tick();expect(s.reads).toHaveLength(before);
+ });
+ it("going offline aborts a body signal and drops its late result without losing settled cache",async()=>{
+  const s=await setup();await s.session.host.activate(ACTIVITY_OWNER);s.bindings[0]!.setVisible(true);const e=s.bind(0);e.setDisplay(true,"native");await tick();
+  let signal!:AbortSignal,resolve!:(value:Awaited<ReturnType<ActivityReaders["nativeBody"]>>)=>void;s.activity.nativeBody=(_i,_id,received)=>{signal=received;return new Promise(r=>{resolve=r;});};const pending=e.native.loadBody(s.headers.get(e.identity.taskId)!.id);await tick();
+  const turns=s.projections[0]!.getSnapshot().turns;s.projections[0]!.setOnline(false);expect(s.projections[0]!.getSnapshot().turns).toBe(turns);s.bindings[0]!.sync();expect(signal.aborted).toBe(true);resolve({...s.headers.get(e.identity.taskId)!,body:null});await pending;expect(e.native.getSnapshot().bodies[s.headers.get(e.identity.taskId)!.id]).toEqual({loading:false});
+ });
+
 });
