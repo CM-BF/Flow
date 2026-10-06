@@ -10,7 +10,7 @@
 | 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；实现 53c8713cb8e6a3c9b7d869c896656dad4e7a086d；metadata后继单列 |
 | 工作树dirty状态 | 仅独审与证据metadata待提交，review target65d7a57目录停写 |
 | 工作分支状态 | delivered |
-| 检查状态 | PASSED 53c8713cb8e6a3c9b7d869c896656dad4e7a086d：修复复核4任务/24事件一致/4工具/3进程exit0、DB与outbox清空；noEmit0。原首轮4任务FAILED永久保留 |
+| 检查状态 | PASSED 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a；执行源同53c8713：修复复核4任务/24事件一致/4工具/3进程exit0、DB与outbox清空；noEmit0。原首轮4任务FAILED永久保留 |
 | 已集成main状态 / HEAD | 未集成；最近核验main115b0dbdfa02db5483f9e9699852682ce699633c |
 | 实现目标 | 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a |
 | 实现范围 | experiments/runner-capacity |

@@ -1,0 +1,222 @@
+{
+  "generatedAt": "2026-10-06T06:44:38.766Z",
+  "task": {
+    "id": "S01",
+    "title": "\u5b9e\u9645\u6267\u884c\u5bb9\u91cf\u9a8c\u8bc1",
+    "role": "\u6280\u672f\u9a8c\u8bc1",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+    "branch": "codex/runner-capacity-probe",
+    "planDir": "plans/s01-runner-capacity",
+    "evidenceDir": "docs/evidence/s01",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T06:44:37.017Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/plans/s01-runner-capacity/status.md",
+      "syncedAt": "2026-10-06T06:44:38.766Z",
+      "stale": false,
+      "ageHours": 0.010768333333333333
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/runner-capacity-probe",
+      "head": "a72b453b67a86e1f196abdfad7b7189ff25e3fdf",
+      "dirty": false,
+      "changedFiles": 0,
+      "observedAt": "2026-10-06T06:44:39.349Z"
+    },
+    "status": {
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 4,
+        "output": "\u56db\u4efb\u52a1\u529f\u80fd\u9a8c\u8bc1\u7247\u6bb5\u5df2\u72ec\u7acb\u5ba1\u67e5\u901a\u8fc7\uff0c\u539f\u5931\u8d25\u4e0e\u4fee\u590d\u7ed3\u679c\u5747\u53ef\u8ffd\u6eaf",
+        "next": "\u51c6\u5907\u6b63\u5f0f\u5e76\u53d1\u6d4b\u91cf\u5165\u53e3\u5e76\u534f\u8c03\u8fd0\u884c\u7a97\u53e3\uff1b\u8be5\u540e\u7ee7\u5c1a\u672a\u5b9e\u73b0",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a",
+        "scopes": [
+          "experiments/runner-capacity"
+        ],
+        "errors": []
+      },
+      "taskId": "S01",
+      "owner": "mika / gpt-6-astra",
+      "branch": "codex/runner-capacity-probe",
+      "branchState": "delivered",
+      "updatedAt": "2026-10-06T06:44:00.000Z",
+      "updatedRecord": "2026-10-06 06:44 UTC\uff1b\u767b\u8bb0main a26a\uff0c\u4ea7\u54c1\u57fa\u7ebf115b",
+      "todos": [
+        {
+          "id": "S01-01",
+          "state": "completed",
+          "owner": "mika",
+          "evidence": "[research](../../docs/evidence/s01/research.md)\uff1a\u6743\u5a01\u6765\u6e90/head/dirty\u6838\u9a8c\u53ca\u5dee\u8ddd"
+        },
+        {
+          "id": "S01-02",
+          "state": "completed",
+          "owner": "mika",
+          "evidence": "[\u5408\u540c](../../experiments/runner-capacity/README.md)\u3001[\u53c2\u6570](../../experiments/runner-capacity/contract.json)"
+        },
+        {
+          "id": "S01-03",
+          "state": "in-progress",
+          "owner": "mika",
+          "evidence": "[smoke-manifest](../../docs/evidence/s01/smoke-manifest.json)\uff1a\u56db\u4efb\u52a1\u4fee\u590d\u590d\u6838\u901a\u8fc7\uff1b\u6b63\u5f0f\u8ba1\u91cf\u5165\u53e3\u4ecd\u5f85\u5b8c\u6210"
+        },
+        {
+          "id": "S01-04",
+          "state": "pending",
+          "owner": "mika / Lead",
+          "evidence": "\u6b63\u5f0f\u8ba1\u65f6\u5f85\u534f\u8c03Web\u5171\u4eab\u4e3b\u673a\u7a97\u53e3"
+        },
+        {
+          "id": "S01-05",
+          "state": "in-progress",
+          "owner": "\u72ec\u7acbreviewer",
+          "evidence": "\u65b9\u6cd5\u5df2\u63a5\u53d7\uff0c53c8713\u529f\u80fd\u5b9e\u73b0\u7247\u6bb5\u4e0e\u7ed3\u679c\u72ec\u5ba1\u4e2d\uff1bmain\u672a\u96c6\u6210"
+        },
+        {
+          "id": "S01-06",
+          "state": "pending",
+          "owner": "\u540e\u7ee7owner",
+          "evidence": "\u771f\u5b9eprovider\u4e0e\u66f4\u5927\u5e76\u53d1\u672a\u5305\u542b"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "base 115b0dbdfa02db5483f9e9699852682ce699633c\uff1b\u5b9e\u73b0 53c8713cb8e6a3c9b7d869c896656dad4e7a086d\uff1bmetadata\u540e\u7ee7\u5355\u5217",
+      "declaredDirty": "\u4ec5\u72ec\u5ba1\u4e0e\u8bc1\u636emetadata\u5f85\u63d0\u4ea4\uff0creview target65d7a57\u76ee\u5f55\u505c\u5199",
+      "checks": {
+        "state": "passed",
+        "target": "53c8713cb8e6a3c9b7d869c896656dad4e7a086d",
+        "record": "PASSED 53c8713cb8e6a3c9b7d869c896656dad4e7a086d\uff1a\u4fee\u590d\u590d\u68384\u4efb\u52a1/24\u4e8b\u4ef6\u4e00\u81f4/4\u5de5\u5177/3\u8fdb\u7a0bexit0\u3001DB\u4e0eoutbox\u6e05\u7a7a\uff1bnoEmit0\u3002\u539f\u9996\u8f6e4\u4efb\u52a1FAILED\u6c38\u4e45\u4fdd\u7559"
+      },
+      "reviewRecord": "[review.md](review.md)\uff0cAPPROVED 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a\uff1a\u4ec5\u5408\u540c+\u56db\u4efb\u52a1smoke\uff1b\u6b63\u5f0f\u5bb9\u91cf/\u6545\u969c/browser\u672a\u8986\u76d6",
+      "mainRecord": "\u672a\u96c6\u6210\uff1b\u6700\u8fd1\u6838\u9a8cmain115b0dbdfa02db5483f9e9699852682ce699633c",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "unknown",
+      "record": "[review.md](review.md)\uff0cAPPROVED 65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a\uff1a\u4ec5\u5408\u540c+\u56db\u4efb\u52a1smoke\uff1b\u6b63\u5f0f\u5bb9\u91cf/\u6545\u969c/browser\u672a\u8986\u76d6",
+      "target": null
+    },
+    "implementationProof": {
+      "target": "65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a",
+      "head": "a72b453b67a86e1f196abdfad7b7189ff25e3fdf",
+      "scopes": [
+        "experiments/runner-capacity"
+      ],
+      "observedAt": "2026-10-06T06:44:39.371Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/s01/independent-review.json",
+        "docs/evidence/s01/quality.md",
+        "docs/evidence/s01/smoke-manifest.json",
+        "plans/s01-runner-capacity/review.md",
+        "plans/s01-runner-capacity/status.md"
+      ],
+      "reason": "\u58f0\u660e\u8303\u56f4\u672a\u53d8\uff1b\u5176\u4f59\u53d8\u5316\u4ec5\u4e3a\u5df2\u8bc6\u522b\u7684\u6587\u6863\u6216\u8bc1\u636e metadata"
+    },
+    "documents": [
+      {
+        "path": "plans/s01-runner-capacity/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/s01-runner-capacity/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/s01-runner-capacity/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/s01/research.md",
+        "title": "research",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/s01/smoke-manifest.json",
+        "title": "smoke-manifest",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/s01/claim-receipt.json",
+        "title": "\u56de\u6267",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/s01/independent-review.json",
+        "title": "\u72ec\u5ba1\u56de\u6267",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 2,
+      "total": 6
+    },
+    "main": {
+      "record": "\u672a\u96c6\u6210\uff1b\u6700\u8fd1\u6838\u9a8cmain115b0dbdfa02db5483f9e9699852682ce699633c",
+      "recordedHead": "115b0dbdfa02db5483f9e9699852682ce699633c",
+      "target": "65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a",
+      "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "scopes": [
+        "experiments/runner-capacity"
+      ],
+      "observedAt": "2026-10-06T06:44:39.349Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main \u58f0\u660e\u8303\u56f4\u4e0e\u76ee\u6807\u4e0d\u540c\uff0c\u6216\u5b58\u5728\u672a\u63d0\u4ea4\u53d8\u5316"
+    },
+    "assignments": [
+      {
+        "lead": "mika",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "docs/evidence/s01",
+          "experiments/runner-capacity",
+          "plans/s01-runner-capacity"
+        ],
+        "state": "active",
+        "branch": "codex/runner-capacity-probe",
+        "origin": "new",
+        "taskId": "S01",
+        "worker": "mika",
+        "claimId": "8e4660a6-625f-4ada-8558-20c19b9e23e0",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+        "createdAt": "2026-10-06T06:22:33.774Z",
+        "updatedAt": "2026-10-06T06:22:33.774Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  }
+}

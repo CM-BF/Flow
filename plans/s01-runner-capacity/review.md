@@ -1,6 +1,9 @@
 # S01 独立审查
 
-状态 **APPROVED**；仅固定target65d7a57的合同方法和四任务功能smoke片段。正式容量/超领/故障/浏览器后继未覆盖。
+状态：APPROVED
+Review target commit：65d7a57f807a5fdcbf379ec2b8d19b4f2d9bc90a
+
+批准边界：仅固定target65d7a57的合同方法和四任务功能smoke片段。正式容量/超领/故障/浏览器后继未覆盖。
 
 范围：首先只审实验合同与来源研究；实现入口与正式结果尚未产生。基线 `115b0dbdfa02db5483f9e9699852682ce699633c`；target `a553f3f71db29243b698f4bb953408f28a1529b9`，范围 `experiments/runner-capacity,docs/evidence/s01/research.md`。不沿用其他任务approval。唯一owner Mika，review者只读，将修复要求交回owner。
 
