@@ -187,3 +187,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 12:46:21 UTC：observer固定c259e8e53cd53830fe1bc78ce3c8dae7b34d5540获architecture_read/Astra精确12:45:30 UTC APPROVED，0P1/P2；Mika接收。[接收入口](../../docs/evidence/s01/observer-share-fix/integration-ready.md)与独审/质量回执已封存，原4/4/strict0不重跑。批准仅实验分类修复，不等于新capacity/生产变更通过；历史64911 raw与UNKNOWN保持。
 
 2026-10-06 13:00:30 UTC：fresh本writer8e4660a6 v3 ACTIVE三scope、HEAD1ca035 clean后登记S01-06长驻wait缺口，证据见[README](../../docs/evidence/s01/long-lived-wait/README.md)与source-observation。只读fixedmain280289及官方TC39，不改本树实验source/旧raw，不改runtime；0测试/PG/容量。后继独立WT/产品scope与owner尚待Mika派工。dashboard依本唯一status聚合，不手填进度JSON。P05独立source6336cd00已9/9+strict0交审，未因此声称本S01增加新实际验证。
+
+2026-10-06 13:13:52 UTC：为Lead解阻新增[mixed完整26源接收入口](../../docs/evidence/s01/mixed-integration/README.md)：6de完整26固定源仅overlay c259两observer，Git/WT逐项核；27历史readonly在固定当前main cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd 有4项漂移，接收点必须再核，不覆盖生产依赖。未复制/改raw，0测试/PG/capacity。P05正式审批metadata已固定7d97f737，main待接收。
