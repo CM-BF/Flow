@@ -9,6 +9,55 @@ import type { Pool } from "pg";
 
 export const root = fileURLToPath(new URL("../../../", import.meta.url));
 export const evidence = root + "docs/evidence/wpf-conversation-recovery/";
+type ObservedRecoveryRecord = { id: string; kind: string; phase?: string; version: number; owner: { viewKey: string; routeId: string };
+  data?: { text?: string; intent?: string; attachments?: unknown[] }; frozen?: unknown };
+/** Also serialized by page.evaluate: no captured imports, constants or helpers. Never creates schema. */
+export function observeRecoveryRecords(options: { name: string; version: number; timeoutMs: number }, factory: IDBFactory = globalThis.indexedDB):
+  Promise<{ state: "pending" | "ready"; records: ObservedRecoveryRecord[] }> {
+  return new Promise((resolve, reject) => {
+    if (!Number.isInteger(options.timeoutMs) || options.timeoutMs < 1 || options.timeoutMs > 2000) { reject(Error("Invalid journal observation deadline.")); return; }
+    let settled = false, missing = false, database: IDBDatabase | undefined, transaction: IDBTransaction | undefined;
+    // Object methods avoid transpiler-generated outer function-name helpers in the serialized body.
+    const completion = {
+      close() { database?.close(); database = undefined; },
+      finish(error?: Error, records: ObservedRecoveryRecord[] = []) {
+        if (settled) return; settled = true; clearTimeout(timer);
+        if (error) { try { transaction?.abort(); } catch { /* It may already have completed. */ } }
+        completion.close();
+        if (error) reject(error); else resolve({ state: missing ? "pending" : "ready", records });
+      },
+    };
+    const timer = setTimeout(() => completion.finish(Error("Journal observation timed out.")), options.timeoutMs);
+    try {
+      const request = factory.open(options.name, options.version);
+      request.onupgradeneeded = event => {
+        database = request.result;
+        try {
+          if (!request.transaction) throw Error("Missing journal upgrade transaction.");
+          request.transaction.abort(); missing = event.oldVersion === 0;
+          completion.finish(missing ? undefined : Error("Existing test journal has an unexpected schema version."));
+          // Abort even when this event arrives after a timeout or blocked error.
+        } catch { completion.finish(Error("Cannot abort unexpected journal upgrade.")); }
+        finally { completion.close(); }
+      };
+      request.onerror = event => { event.preventDefault(); completion.finish(Error("Cannot read existing test journal.")); };
+      request.onblocked = () => completion.finish(Error("Journal observation is blocked."));
+      request.onsuccess = () => {
+        database = request.result;
+        if (settled) { completion.close(); return; }
+        try {
+          if (!database.objectStoreNames.contains("records") || !database.objectStoreNames.contains("manifest")) throw Error("Existing test journal is malformed: required stores are missing.");
+          transaction = database.transaction("records", "readonly");
+          const read = transaction.objectStore("records").getAll();
+          transaction.oncomplete = () => completion.finish(undefined, read.result);
+          transaction.onabort = () => completion.finish(Error("Test readonly transaction aborted."));
+          transaction.onerror = () => completion.finish(Error("Test readonly transaction failed."));
+        } catch { completion.finish(Error("Existing test journal cannot be read: invalid schema or transaction.")); }
+      };
+    } catch { completion.finish(Error("Cannot open existing test journal.")); }
+  });
+}
+
 export interface RecoveryWire {
   method: string; path: string; key: string | null; body: string; status: number; cookie: boolean; bearer: boolean; csrf: boolean;
   responseBody?: string; responseSha256?: string;

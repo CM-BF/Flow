@@ -198,17 +198,13 @@ async function supervisor() {
   }
 }
 
-async function records(page: Page): Promise<{ id: string; kind: string; phase?: string; version: number; owner: { viewKey: string; routeId: string }; data?: { text?: string; intent?: string; attachments?: unknown[] }; frozen?: unknown }[]> {
-  return page.evaluate(() => new Promise((resolve, reject) => {
-    const request = indexedDB.open("flow.conversation-recovery.v1", 1);
-    request.onerror = () => reject(Error("Cannot read test journal."));
-    request.onsuccess = () => { const database = request.result, transaction = database.transaction("records", "readonly"), get = transaction.objectStore("records").getAll(); transaction.oncomplete = () => { const result = get.result; database.close(); resolve(result); }; transaction.onabort = () => { database.close(); reject(Error("Test readonly transaction aborted.")); }; };
-  }));
-}
-
 async function worker(init: Init) {
   const { chromium, expect } = await import("@playwright/test");
-  const { startRecoveryFixture } = await import("./conversation-recovery.fixture");
+  const { startRecoveryFixture, observeRecoveryRecords } = await import("./conversation-recovery.fixture");
+  const records = async (page: Page) => {
+    const result = await page.evaluate(observeRecoveryRecords, { name: "flow.conversation-recovery.v1", version: 1, timeoutMs: 1000 });
+    return result.records; // Missing/pending remains empty for the existing strict draft poll; malformed rejects.
+  };
   const { decodeConversationTurnAccepted } = await import("@flow/client");
   const { conversationTurnSchema } = await import("@flow/contracts");
   const checks: string[] = [], pageErrors: string[] = [], cleanupErrors: string[] = [];

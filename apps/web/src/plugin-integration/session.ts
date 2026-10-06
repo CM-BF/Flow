@@ -140,9 +140,10 @@ export class AppPluginSession {
       if (!binding) throw Error("Knowledge is not available in this composer.");
       binding.open();
     }));
+    this.recovery.sync();
   }
 
-  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.steering.sync(); this.attachmentBindings.forEach(({ binding }) => binding.sync()); } }
+  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.recovery.sync(); this.steering.sync(); this.attachmentBindings.forEach(({ binding }) => binding.sync()); } }
   publishNavigation(next: NavigationSnapshot, context: ResourceContext) {
     if (this.closed) return;
     this.context = context;

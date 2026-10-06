@@ -14,7 +14,8 @@ import type { CompleteAttachment, ComposerRuntime } from "@assistant-ui/react";
 import type { AttachmentCapabilities, AttachmentMetadata } from "@flow/contracts";
 import { ConversationAttachments, createAttachmentPlugin, ATTACHMENT_OWNER, type AttachmentClient, type AttachmentView } from "../src/plugin-integration/attachments";
 import { PluginHost } from "../src/plugins/host";
-import type { HostPort } from "../src/plugins/types";
+import type { HostPort, PluginDefinition } from "../src/plugins/types";
+import { observeRecoveryRecords } from "./conversation-recovery.fixture";
 
 const uuid = (n: number) => `10000000-0000-4000-8000-${String(n).padStart(12, "0")}`;
 const ns: RecoveryNamespace = { baseUrl: "https://center.example/proxy", centerId: uuid(1), ownerPrincipalId: uuid(2) };
@@ -79,6 +80,123 @@ async function workspace(value: ConversationRecoveryJournal) {
   cleanup.push(() => session.dispose()); await session.host.activate(RECOVERY_OWNER);
   return { workspace: session.recovery, restore, setDraft: (next: Json) => { data = next; }, revoke: () => { authorized = false; generation++; }, reauthenticate: () => { authorized = true; generation++; }, switchCenter: () => { identity = { ...ns, centerId: uuid(20) }; generation++; } };
 }
+
+/** Actual session startup and host states; no explicit Saved drafts command/activation. */
+function lifecycle(options: { authorized?: boolean; configured?: boolean; gate?: Promise<void> } = {}) {
+  const { port, journal: store } = journal();
+  let authorized = options.authorized ?? true, configured = options.configured ?? true, identity = ns, generation = 1, data = draft("initial material");
+  const recovery: NonNullable<AppActions["recovery"]> = { journal: store, namespace: () => authorized ? identity : null,
+    authorized: () => authorized, generation: () => generation, owner: () => owner, draft: () => data, restore: async () => {}, retry: async () => {} };
+  const original = PluginHost.prototype.register;
+  const registration = vi.spyOn(PluginHost.prototype, "register").mockImplementation(function(this: PluginHost, definition: PluginDefinition) {
+    return original.call(this, definition.manifest.id === RECOVERY_OWNER && options.gate
+      ? { ...definition, load: async signal => { await options.gate; return definition.load(signal); } } : definition);
+  });
+  let session: AppPluginSession;
+  try { session = new AppPluginSession(actions(configured ? recovery : undefined), themes[0]!); }
+  finally { registration.mockRestore(); }
+  cleanup.push(() => session.dispose());
+  const update = () => session.updateActions(actions(configured ? recovery : undefined));
+  return { port, store, session, update, state: () => session.host.list().find(item => item.id === RECOVERY_OWNER)?.state,
+    edit: (text: string) => { data = draft(text); session.recovery.changed(owner.viewKey); },
+    auth: (next: boolean) => { authorized = next; generation++; update(); },
+    configure: () => { configured = true; update(); },
+    switchCenter: () => { identity = { ...ns, centerId: uuid(20) }; generation++; update(); } };
+}
+
+describe("default Recovery lifecycle (actual private session and host, controlled IDB)", () => {
+  it("checkpoints a normal edit without opening Saved drafts or explicitly activating the host", async () => {
+    const gate = deferred<void>(), f = lifecycle({ gate: gate.promise });
+    f.edit("complete original material"); expect(f.session.recovery.protection(owner.viewKey)).not.toEqual([]);
+    expect(f.port.writes).toEqual([]); gate.resolve();
+    await vi.waitFor(() => expect(f.state()).toBe("active")); await f.session.recovery.flush();
+    expect(await f.store.list(ns)).toMatchObject([{ data: draft("complete original material") }]);
+    expect(f.session.recovery.getSnapshot().open).toBe(false);
+    const writes = f.port.writes.length; f.update(); f.update(); await f.session.recovery.flush(); expect(f.port.writes).toHaveLength(writes);
+  });
+  it("requires both configuration and authorization before default activation", async () => {
+    const f = lifecycle({ configured: false, authorized: false }); f.edit("not authorized");
+    f.configure(); expect(f.state()).toBe("registered"); expect(f.port.writes).toEqual([]);
+    f.auth(true); await vi.waitFor(() => expect(f.state()).toBe("active")); f.edit("authorized draft"); await f.session.recovery.flush();
+    expect(await f.store.list(ns)).toMatchObject([{ data: draft("authorized draft") }]);
+  });
+  it("does not write after pending activation loses auth, then replays on same-namespace reauth while already active", async () => {
+    const gate = deferred<void>(), f = lifecycle({ gate: gate.promise }); f.edit("retained original");
+    f.auth(false); gate.resolve(); await vi.waitFor(() => expect(f.state()).toBe("active")); expect(f.port.writes).toEqual([]);
+    expect(f.session.recovery.sendReason()).not.toBeNull(); f.auth(true); await f.session.recovery.flush();
+    expect(await f.store.list(ns)).toMatchObject([{ data: draft("retained original") }]);
+  });
+  it("never moves an activation-pending draft to a different namespace and closes on dispose", async () => {
+    const gate = deferred<void>(), f = lifecycle({ gate: gate.promise }); f.edit("A only"); f.switchCenter();
+    gate.resolve(); await vi.waitFor(() => expect(f.state()).toBe("active")); expect(f.port.writes).toEqual([]);
+    f.edit("still the protected A view"); expect(f.port.writes).toEqual([]); expect(f.session.recovery.protection(owner.viewKey)).not.toEqual([]);
+    const stopped = deferred<void>(), g = lifecycle({ gate: stopped.promise }); g.edit("disposed draft"); await g.session.dispose();
+    stopped.resolve(); await Promise.resolve(); await Promise.resolve(); expect(g.port.writes).toEqual([]);
+  });
+  it("does not automatically restart disabled or failed entries on actions or edits", async () => {
+    const f = lifecycle(); await vi.waitFor(() => expect(f.state()).toBe("active"));
+    await f.session.host.deactivate(RECOVERY_OWNER); f.edit("disabled original"); f.update(); f.auth(false); f.auth(true);
+    expect(f.state()).toBe("disabled"); expect(f.port.writes).toEqual([]);
+    await f.session.host.activate(RECOVERY_OWNER); await f.session.recovery.flush();
+    expect(await f.store.list(ns)).toMatchObject([{ data: draft("disabled original") }]);
+    const gate = deferred<void>(), g = lifecycle({ gate: gate.promise }); gate.reject(Error("Activation unavailable"));
+    await vi.waitFor(() => expect(g.state()).toBe("failed")); g.edit("failed original"); g.update(); g.auth(false); g.auth(true);
+    expect(g.state()).toBe("failed"); expect(g.port.writes).toEqual([]);
+  });
+});
+
+function observationPort() {
+  const read = { result: [{ id: "saved", kind: "draft", version: 1, owner }] };
+  const transaction = { oncomplete: null as (() => void) | null, onabort: null as (() => void) | null, onerror: null as (() => void) | null,
+    abort: vi.fn(), objectStore: vi.fn(() => ({ getAll: () => read })) };
+  const database = { close: vi.fn(), objectStoreNames: { contains: vi.fn(() => true) }, transaction: vi.fn(() => transaction) };
+  const upgrade = { abort: vi.fn() };
+  const request = { result: database, transaction: upgrade, onsuccess: null as (() => void) | null, onblocked: null as (() => void) | null,
+    onerror: null as ((event: { preventDefault(): void }) => void) | null, onupgradeneeded: null as ((event: { oldVersion: number }) => void) | null };
+  const factory = { open: vi.fn(() => request) } as unknown as IDBFactory;
+  return { read, transaction, database, request, upgrade, factory,
+    observe: (timeoutMs = 1000) => observeRecoveryRecords({ name: "flow.conversation-recovery.v1", version: 1, timeoutMs }, factory) };
+}
+
+describe("same serialized journal observer (controlled opening events, no schema mutation)", () => {
+  it("aborts a missing-database upgrade and returns pending without reading or creating stores", async () => {
+    const f = observationPort(), pending = f.observe(); f.request.onupgradeneeded?.({ oldVersion: 0 });
+    await expect(pending).resolves.toEqual({ state: "pending", records: [] });
+    expect(f.upgrade.abort).toHaveBeenCalledTimes(1); expect(f.database.transaction).not.toHaveBeenCalled(); expect(f.database.close).toHaveBeenCalledTimes(1);
+    const preventDefault = vi.fn(); f.request.onerror?.({ preventDefault }); expect(preventDefault).toHaveBeenCalledTimes(1);
+  });
+  it("rejects an existing incompatible version and missing stores without repairing either", async () => {
+    const f = observationPort(), pending = f.observe(), rejected = expect(pending).rejects.toThrow("schema version");
+    f.request.onupgradeneeded?.({ oldVersion: 1 }); await rejected; expect(f.upgrade.abort).toHaveBeenCalledTimes(1);
+    const g = observationPort(); g.database.objectStoreNames.contains.mockReturnValue(false);
+    const malformed = g.observe(), failed = expect(malformed).rejects.toThrow("invalid schema"); g.request.onsuccess?.(); await failed;
+    expect(g.database.transaction).not.toHaveBeenCalled(); expect(g.database.close).toHaveBeenCalledTimes(1);
+  });
+  it.each(["transaction", "store"] as const)("settles and closes a synchronous %s failure", stage => {
+    const f = observationPort();
+    if (stage === "transaction") f.database.transaction.mockImplementation(() => { throw Error("bad transaction"); });
+    else f.transaction.objectStore.mockImplementation(() => { throw Error("missing store"); });
+    const pending = f.observe(), rejected = expect(pending).rejects.toThrow("invalid schema or transaction");
+    f.request.onsuccess?.(); expect(f.database.close).toHaveBeenCalledTimes(1); return rejected;
+  });
+  it("waits for read transaction completion and rejects an abort instead of hanging", async () => {
+    const f = observationPort(); let settled = false; const pending = f.observe().then(value => { settled = true; return value; });
+    f.request.onsuccess?.(); await Promise.resolve(); expect(settled).toBe(false); f.transaction.oncomplete?.();
+    await expect(pending).resolves.toEqual({ state: "ready", records: f.read.result }); expect(f.database.close).toHaveBeenCalledTimes(1);
+    const g = observationPort(), aborted = g.observe(), rejected = expect(aborted).rejects.toThrow("aborted");
+    g.request.onsuccess?.(); g.transaction.onabort?.(); await rejected; expect(g.database.close).toHaveBeenCalledTimes(1);
+  });
+  it("rejects blocked or timed-out opens and closes late success or aborts late creation", async () => {
+    const f = observationPort(), blocked = f.observe(), rejected = expect(blocked).rejects.toThrow("blocked");
+    f.request.onblocked?.(); await rejected; f.request.onsuccess?.(); expect(f.database.close).toHaveBeenCalledTimes(1); expect(f.database.transaction).not.toHaveBeenCalled();
+    vi.useFakeTimers();
+    try {
+      const g = observationPort(), timed = g.observe(10), expired = expect(timed).rejects.toThrow("timed out");
+      await vi.advanceTimersByTimeAsync(10); await expired; g.request.onupgradeneeded?.({ oldVersion: 0 });
+      expect(g.upgrade.abort).toHaveBeenCalledTimes(1); expect(g.database.close).toHaveBeenCalledTimes(1); expect(g.database.transaction).not.toHaveBeenCalled();
+    } finally { vi.useRealTimers(); }
+  });
+});
 
 /** Real input/private binding with authorized metadata ports; the composer is a
  * controlled public-state port, not evidence that React or browser IDB ran. */

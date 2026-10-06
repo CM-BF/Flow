@@ -78,13 +78,42 @@ export class RecoveryWorkspace {
   private readonly restoring = new Set<string>();
   private readonly blockedCommands = new Map<string, Set<string>>();
   private readonly unsubscribeHost: () => void;
+  private started = false;
+  private synchronized?: string;
   constructor(private readonly session: AppPluginSession, private readonly host: () => RecoveryHost | undefined) {
-    let enabled = this.uiAllowed();
-    this.unsubscribeHost = session.host.subscribe(() => {
-      const next = this.uiAllowed(); if (next === enabled) return; enabled = next;
-      if (!next) this.publish({ open: false, records: [] });
-      else for (const key of this.drafts.keys()) { this.draft(key).lastData = undefined; this.changed(key); }
-    });
+    this.unsubscribeHost = session.host.subscribe(() => { if (this.started) this.sync(); });
+  }
+  /** Session actions and host transitions share this entry; edits never enable a plugin. */
+  sync() {
+    if (this.closed || this.session.signal.aborted) return;
+    this.started = true;
+    const host = this.host(), namespace = host?.namespace();
+    const plugin = this.session.host.list().find(value => value.id === RECOVERY_OWNER);
+    if (!host?.authorized() || !namespace || plugin?.state !== "active") {
+      this.synchronized = undefined;
+      if (this.state.open || this.state.records.length) this.publish({ open: false, records: [] });
+      if (host?.authorized() && namespace && plugin?.state === "registered") {
+        const key = namespaceKey(namespace), generation = host.generation();
+        void this.session.host.activate(RECOVERY_OWNER).then(result => {
+          const current = this.host(), now = current?.namespace();
+          if (!result.ok && !this.closed && current?.authorized() && now && current.generation() === generation && namespaceKey(now) === key)
+            this.publish({ error: result.error });
+        }).catch(error => {
+          const current = this.host(), now = current?.namespace();
+          if (!this.closed && current?.authorized() && now && current.generation() === generation && namespaceKey(now) === key)
+            this.publish({ error: message(error) });
+        });
+      }
+      return;
+    }
+    // Read the current authority again on activation/reauth, never a captured old draft.
+    const key = namespaceKey(namespace), identity = JSON.stringify([key, host.generation()]);
+    if (this.synchronized === identity) return;
+    this.synchronized = identity;
+    for (const [viewKey, state] of this.drafts) {
+      if (state.namespace !== key) continue;
+      state.lastData = undefined; this.changed(viewKey);
+    }
   }
   getSnapshot = () => this.state;
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; };
@@ -140,11 +169,16 @@ export class RecoveryWorkspace {
   changed(viewKey: string) {
     if (this.closed || this.restoring.has(viewKey) || !this.host()?.authorized()) return;
     try {
-      const data = this.host()!.draft(viewKey), state = this.draft(viewKey);
+      const host = this.host()!, namespace = host.namespace();
+      if (!namespace) return;
+      const data = host.draft(viewKey), state = this.draft(viewKey, namespaceKey(namespace));
       const encoded = JSON.stringify([this.host()!.owner(viewKey), data]); if (state.lastData === encoded) return; state.lastData = encoded;
       if (state.handoff) { state.deferred = data; return; }
       void this.enqueue(viewKey, data).catch(() => {});
-    } catch (error) { this.publish({ error: message(error) }); }
+    } catch (error) {
+      const state = this.drafts.get(viewKey); if (state) state.error = message(error);
+      this.publish({ error: message(error) });
+    }
   }
   /** Called before official composer.send can publish its transient empty draft. */
   beginHandoff(viewKey: string, domain: CommandRecord["domain"] = "outbox", taskId?: string) {
