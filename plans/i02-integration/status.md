@@ -13,13 +13,13 @@
 | 工作树dirty状态 | 固定实现零差；本批证据随后提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
 | 检查状态 | PASSED；18项固定源码/保护输入完全一致，root类型检查exit0；复用原局部行为与浏览器证据，0provider |
-| 已集成main状态 / HEAD | 前批c9c0842已推送；本批已审候选待紧接fast-forward。个人backend/static仍b1c2、accepting v12。 |
+| 已集成main状态 / HEAD | 前批41315b0已推送；126源与固定架构图候选待紧接fast-forward。个人backend/static仍b1c2、accepting v12。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | Codex显式启动配置和网页独立发布工具已完成审查，原页面资源可在发布和回退后继续读取。 |
-| 下一可用交付 | 发布固定组合后，核对个人网页与后台的实际兼容组合；工程通路继续并行。 |
+| 下一可用交付 | 共享会话确认与工程通路并行实施；个人网页发布仍待实际组合兼容验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -119,3 +119,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 10:13:06 UTC：工程/附件唯一计划与共享026交接、S01配置范围归还、125源候选组成纯metadata批。4个相关source解析/人读字段完整；产品目录无改，不重复工程测试。实际123源旧回执保留，125实际部署另记；个人b1c/v12不动。见[本批记录](../../docs/evidence/i02/attachment-engineering-metadata.json)。
 
 2026-10-06T10:18:50.449758+00:00：已审R05D配置与SVC04独立网页发布组合接收，18项逐文件相同、root类型检查exit0；不重跑已核72/15与原浏览器/PG。首次类型命令退出码包装失败保留，后一次独立记录exit0。个人服务不动。见[固定组合](../../docs/evidence/i02/launch-web-release-integration.json)。
+
+2026-10-06T10:22:16.377582+00:00：固定架构图2c316（源码基线f181）五执行源hash精确相同、renderer/CSS保持；126来源含TUI01B与唯一D06新树。原独审15/浏览器证据复用，不重跑。其他仅明确文档与领取交接，见[本批记录](../../docs/evidence/i02/shared-ack-architecture-integration.json)。
