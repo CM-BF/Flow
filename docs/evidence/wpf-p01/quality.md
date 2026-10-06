@@ -21,3 +21,7 @@
 职责复核：validation负责输入声明，host封装registry/generation/authority/disposal，React binding负责渲染和局部错误，builtin仅桥接既有真实功能。没有DOM扫描、后端状态写入或重复协议。没有新增生产依赖/改公共契约，根lock完整patch后恢复。仍未解决/未验：M02主App接入与真实中心、未知第三方JS隔离、产品性能预算；这些是明确handoff边界。
 
 参考root持续研究与本owner核读的官方文档：[React ErrorBoundary](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary)、[VS Code extension anatomy](https://code.visualstudio.com/api/get-started/extension-anatomy)。显式loader重试再次调用load，不用失败React.lazy Promise假retry；插件普通event/async错误靠host命令和归属订阅边界处理。
+
+## 2026-10-06 02:54 UTC — review修复clean-code
+
+PH-R3暴露实际漏项：sample Notes state保存error却没渲染；此前意图补充的文本替换没有命中JSX，而只测ExtensionSlot按钮无法覆盖面板调用。修复后直接读JSX，增加面板本地alert、真实失败/成功重试路径；root CUA独立关闭该finding。另自查renderer props.context原先仍是App原对象，改validateContext不可变副本并实际browser断言frozen=true（bind闭包此前已捕获不可变副本）。修复e534191通过typecheck、9浏览器、生产build/静态冒烟；14模块实现无变化，复用已独立通过结果。验证失败路径绑定实际UI动作，避免仅测试内部成功路径。根lock未重新改写，追加metadata不重跑全库。

@@ -93,12 +93,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 634,
+                  "duration": 615,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-06T02:48:46.227Z",
+                  "startTime": "2026-10-06T02:53:37.998Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -127,12 +127,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 499,
+                  "duration": 452,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-06T02:48:47.265Z",
+                  "startTime": "2026-10-06T02:53:39.011Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -161,12 +161,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 640,
+                  "duration": 691,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-06T02:48:47.769Z",
+                  "startTime": "2026-10-06T02:53:39.469Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -195,12 +195,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 594,
+                  "duration": 604,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-06T02:48:48.415Z",
+                  "startTime": "2026-10-06T02:53:40.167Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -229,12 +229,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 488,
+                  "duration": 474,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-06T02:48:49.016Z",
+                  "startTime": "2026-10-06T02:53:40.777Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -244,7 +244,7 @@
           ],
           "id": "92e925a51b31efaccda2-73664d5f1d57fc8bb86d",
           "file": "plugin-host.browser.ts",
-          "line": 110,
+          "line": 111,
           "column": 1
         },
         {
@@ -263,12 +263,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 453,
+                  "duration": 426,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-06T02:48:49.510Z",
+                  "startTime": "2026-10-06T02:53:41.256Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -278,7 +278,7 @@
           ],
           "id": "92e925a51b31efaccda2-4d6ab18a4f84df3bc394",
           "file": "plugin-host.browser.ts",
-          "line": 123,
+          "line": 124,
           "column": 1
         },
         {
@@ -297,12 +297,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 743,
+                  "duration": 711,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-06T02:48:49.968Z",
+                  "startTime": "2026-10-06T02:53:41.686Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -312,7 +312,7 @@
           ],
           "id": "92e925a51b31efaccda2-1433c64aab573b1cc5b9",
           "file": "plugin-host.browser.ts",
-          "line": 145,
+          "line": 146,
           "column": 1
         },
         {
@@ -331,12 +331,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 482,
+                  "duration": 467,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-06T02:48:50.715Z",
+                  "startTime": "2026-10-06T02:53:42.402Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -346,7 +346,41 @@
           ],
           "id": "92e925a51b31efaccda2-12f78c879261f444b32a",
           "file": "plugin-host.browser.ts",
-          "line": 176,
+          "line": 177,
+          "column": 1
+        },
+        {
+          "title": "sample panel bridge failure is visible locally and retry clears it",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 592,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-06T02:53:42.874Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "92e925a51b31efaccda2-4011c0fa2ba71ea02257",
+          "file": "plugin-host.browser.ts",
+          "line": 199,
           "column": 1
         }
       ]
@@ -354,9 +388,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-06T02:48:45.927Z",
-    "duration": 5387.28,
-    "expected": 8,
+    "startTime": "2026-10-06T02:53:37.674Z",
+    "duration": 5897.286,
+    "expected": 9,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

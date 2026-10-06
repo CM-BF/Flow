@@ -2,15 +2,15 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:51 UTC / 输入main8c57已受控合入 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 02:54 UTC / 输入main8c57已受控合入 |
 | Plan | [plan.md](plan.md) |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 完整host/React slots/真实WorkspacePanels与theme builtin/sample；14模块+8browser通过 |
+| 当前产出 | 完整host/React slots/真实WorkspacePanels与theme builtin/sample；14模块+9browser通过 |
 | 下一可用交付 | 整体独立review后交M02唯一owner明确cherry-pick与App验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 实现目标 | d81075c1220fc0305bf698d84823caa4877c2d89 |
+| 实现目标 | e5341915ebbffd9a667f68f7d1ca9c45c14c7c52 |
 | 实现范围 | apps/web/src/plugins, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-host.browser.ts, apps/web/test/plugin-host.config.ts |
 | 单一status owner / model | w01_owner / 派发gpt-6-astra ultra；运行时无独立型号查询接口 |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host` |
@@ -18,15 +18,15 @@
 | 工作基线 / HEAD | `c8900a6fdbca20e683fda6fc808c135f0569c116` / 最近实采metadata `27a12ec17eac0bd68fe7c4ff043f51de60254f36` |
 | 工作树dirty状态 | CLEAN；27a12ec实采clean，根manifest/lock无差异；后续仅文档更新 |
 | 工作分支状态 | in-progress；实现完成，整体review/M02接入待完成 |
-| 检查状态 | PASSED；target d81075c1220fc0305bf698d84823caa4877c2d89：14模块tests、8 browser tests、Web typecheck、fixture生产build；不代表M02主App验收 |
+| 检查状态 | PASSED；target e5341915ebbffd9a667f68f7d1ca9c45c14c7c52：14模块tests、9 browser tests、Web typecheck、fixture生产build；不代表M02主App验收 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；输入main `8c57f2f97345167207fa0d2590e9ad6310c922d4`，WPF-P01实现完成但未集成 |
-| Review | [review.md](review.md)，整体NOT_STARTED target d81075c1220fc0305bf698d84823caa4877c2d89；五模块3d81210 APPROVED，PH-R1/R2 CLOSED |
+| Review | [review.md](review.md)，整体CHANGES_REQUESTED历史结论 / 所有finding已CLOSED待最终结论，target e5341915ebbffd9a667f68f7d1ca9c45c14c7c52；五模块3d81210 APPROVED，PH-R1/R2/R3 CLOSED |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-P01-01 | completed | w01_owner | [冻结接口](../../docs/evidence/wpf-p01/interface.md)；M02确认ports/精确上下文/bridge契约 |
-| WPF-P01-02 | completed | w01_owner | d81075c完整模块和真实builtin/sample；[验证](../../docs/evidence/wpf-p01/validation.md) |
-| WPF-P01-03 | completed | w01_owner | 14模块+8browser/typecheck/build；scope限定fixture |
+| WPF-P01-02 | completed | w01_owner | e534191完整模块和真实builtin/sample；[验证](../../docs/evidence/wpf-p01/validation.md) |
+| WPF-P01-03 | completed | w01_owner | 14模块+9browser/typecheck/build；scope限定fixture |
 | WPF-P01-04 | in-progress | w01_owner | 模块3d81210 APPROVED；整体review/M02接入待完成 |
 
 ## 已完成与证据
@@ -39,7 +39,7 @@
 
 ## 下一步与handoff
 
-预览http://127.0.0.1:5190/src/plugins/fixture/index.html；[启动/证据/四个实现提交](../../docs/evidence/wpf-p01/validation.md)。root审整体候选d81075c，修复如有finding；M02 owner明确cherry-pick并验收后才能称全feature完成。
+预览http://127.0.0.1:5190/src/plugins/fixture/index.html；[启动/证据/四个实现提交](../../docs/evidence/wpf-p01/validation.md)。root审修复整体候选e534191，PH-R3已独立复验CLOSED；M02 owner明确cherry-pick并验收后才能称全feature完成。
 
 ## 需要用户决定
 
