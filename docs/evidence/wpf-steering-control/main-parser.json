@@ -1,0 +1,93 @@
+{
+  "observedAt": "2026-10-06T09:11:49.962Z",
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "delivered",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "独立补充指令控件已集成主线，未知回执与新草稿分别保留",
+      "next": "本片段已交付；真实聊天接线和跨刷新恢复另行实施",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "b2cbbca5f823e122ec4e234e16fb7ef45a063af9",
+      "scopes": [
+        "apps/web/src/conversation-steering/SteeringControl.tsx",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversation-steering/steering.css",
+        "apps/web/test/conversation-steering.browser.ts",
+        "apps/web/test/conversation-steering.fixture.ts",
+        "apps/web/test/conversation-steering.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-STEER01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/web-steering-control",
+    "branchState": "delivered",
+    "updatedAt": "2026-10-06T09:11:49.000Z",
+    "updatedRecord": "2026-10-06 09:11:49 UTC / 77c420cf9ee5de0291ea93014b6ea11aead6fab5",
+    "todos": [
+      {
+        "id": "WPF-STEER01-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[receipt](../../docs/evidence/wpf-steering-control/take-receipt.json)、[quality](../../docs/evidence/wpf-steering-control/quality.md)"
+      },
+      {
+        "id": "WPF-STEER01-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Interface](../../docs/evidence/wpf-steering-control/interface.md)、[33 direct](../../docs/evidence/wpf-steering-control/direct.log)"
+      },
+      {
+        "id": "WPF-STEER01-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Validation](../../docs/evidence/wpf-steering-control/validation.md)，dev8/prod8、双主题390"
+      },
+      {
+        "id": "WPF-STEER01-04",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[固定target独审](review.md)、[main接收/登记观察](../../docs/evidence/wpf-steering-control/main-observation.json)"
+      },
+      {
+        "id": "WPF-STEER01-05",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "后继App接线/跨reload回执恢复，另领范围"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "ca4c3f723d2f786601e7cc9bd0363d756d974810 / 当前HEAD由Git聚合",
+    "declaredDirty": "六源码与已审target/main相同；仅主线收口metadata，提交后全部8scope停止写入",
+    "checks": {
+      "state": "passed",
+      "target": "b2cbbca5f823e122ec4e234e16fb7ef45a063af9",
+      "record": "PASSED b2cbbca5f823e122ec4e234e16fb7ef45a063af9；33 direct / Web tsc / dev8 / prod8，[来源绑定](../../docs/evidence/wpf-steering-control/checks.json)"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED b2cbbca5f823e122ec4e234e16fb7ef45a063af9",
+    "mainRecord": "INTEGRATED 77c420cf9ee5de0291ea93014b6ea11aead6fab5；[现场Git/source核验](../../docs/evidence/wpf-steering-control/main-observation.json)",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "b2cbbca5f823e122ec4e234e16fb7ef45a063af9"
+  }
+}

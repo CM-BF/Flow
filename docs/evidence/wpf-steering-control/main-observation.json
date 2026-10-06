@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-10-06 09:11:49 UTC",
+  "main": "77c420cf9ee5de0291ea93014b6ea11aead6fab5",
+  "originMain": "77c420cf9ee5de0291ea93014b6ea11aead6fab5",
+  "mainClean": true,
+  "target": "b2cbbca5f823e122ec4e234e16fb7ef45a063af9",
+  "targetAncestor": true,
+  "sourceFiles": {
+    "apps/web/src/conversation-steering/SteeringControl.tsx": "ad001378fe9528e8e5741c94e64e840ab09dc6236289a0eb723922ed674e15e9",
+    "apps/web/src/conversation-steering/control.ts": "be419bae85345d5d12d83f4a9fa3067c4ec479ca001dbda86fa4b3360dcbddc2",
+    "apps/web/src/conversation-steering/steering.css": "1ff9acd487e6d53681e32301d8c098df8a46d6669e095b7330ab41111045e154",
+    "apps/web/test/conversation-steering.browser.ts": "6631a807ad989d725e24450e6d9fc1155722456a63bebd9e9f6c27ae41d486d1",
+    "apps/web/test/conversation-steering.fixture.ts": "7a231d9c723650d05c22124914b6e31abcd25ba566ba309729cf21fd635b95ae",
+    "apps/web/test/conversation-steering.test.ts": "6c277dfb07d5335bbb3738cf8d5e78a9caee1e5339ca7f662ae58b96e89c3d1f"
+  },
+  "leadEvidence": "docs/evidence/i02/steering-module-integration.json",
+  "leadChecks": "Combined Web typecheck exit0; lead evidence, not owner rerun",
+  "deploymentObservation": {
+    "source": "Execution Lead observation relayed by root",
+    "at": "2026-10-06T09:09:25Z",
+    "sourceCount": 111,
+    "taskCurrent": true,
+    "issues": [],
+    "scope": "registration only; parent relation parsing/display is D08, not delivered by registration"
+  },
+  "ownerActivity": "Git/source/doc checks only; no product retest/API/model/preview actions"
+}

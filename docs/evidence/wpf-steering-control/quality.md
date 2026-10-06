@@ -20,3 +20,5 @@ HTTP段：Chrome在fixture直接destroy响应时透明重试相同POST并获得�
 2026-10-06 09:00:20 UTC 交付clean-code：逐读control/UI/HTTPfixture，合并ACK与分页共有的身份和receiptRevision规则，避免两套校验；controller负责事实/生命周期，UI只render和trigger，未扩通用框架。33 direct与dev8/prod8和Web tsc全部通过；目视production light1280/dark390。实现target `b2cbbca5f823e122ec4e234e16fb7ef45a063af9`，后续只metadata。详细失败归因与未完成App/跨reload边界见validation/README，不把局部成功当大task Done。
 
 2026-10-06 09:08 UTC：root 独立审读 controller/UI/CSS/tests/interface，33 direct+独立CUA通过，无blocking finding。owner只转录review/status/handoff，未改六源码，不重复测试。清码的两真实红测修复与原夹具错误归因继续保留；review覆盖模块边界而非App、持久恢复或真实provider。fresh ledger v1仍active，等待管理集成队列，不自行release。
+
+2026-10-06 09:11:49 UTC 主线收口clean-code轻核：六源码hash=target=main，未改实现/未重复产品检查；仅metadata归因、链接和状态一致性。独立模块与App/持久恢复、main与个人服务、source登记与父关联UI分别记录。全scope停止后原子release，不批改他人source。

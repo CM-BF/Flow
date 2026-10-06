@@ -12,4 +12,4 @@ Root 独立 Vitest 33/33，exit 0，Start 2026-10-06 02:02:26 -07:00（09:02:26 
 
 Root 自建 CUA 临时63251页实际验证：显式打开；Enter受理且旧draft清空；pending禁止新送；另一draft隐藏再打开保留；深色可读；offline保收据禁新送；revoke隐藏；center B不继承A状态；console errors=[]。查看作者390 light图。临时页已关闭，预览没有停止。
 
-保留界限：独立模块尚未 App/P01 接线；original-key recovery 仅页内内存，跨 reload/替换 connection 的持久恢复是后继；没有真实 center/provider/runner/model/DB 验证；main 尚未接收。当前 claim 继续保留 review/integration 占用，源码冻结。完整作者证据及原始失败见 [validation](../../docs/evidence/wpf-steering-control/validation.md)，不可将模块批准表述为 WPF-MATURE-06 整体 Done。
+保留界限：独立模块尚未 App/P01 接线；original-key recovery 仅页内内存，跨 reload/替换 connection 的持久恢复是后继；没有真实 center/provider/runner/model/DB 验证；审查时 main 尚未接收；后续已收到 77c420cf9ee5de0291ea93014b6ea11aead6fab5 主线接收，详见 status/main-observation。批准范围不变，源码冻结，收口后停写release。完整作者证据及原始失败见 [validation](../../docs/evidence/wpf-steering-control/validation.md)，不可将模块批准表述为 WPF-MATURE-06 整体 Done。
