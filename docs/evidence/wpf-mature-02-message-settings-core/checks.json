@@ -1,0 +1,53 @@
+{
+  "sourceTarget": "4e7b7f968a2160a60989b3b6343506ae8fb5ef6a",
+  "requiredFreeBytes": 1107296256,
+  "checks": [
+    {
+      "check": "vitest",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/wpf-mature-02-message-settings-core/vitest.config.ts"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+      "freeBeforeBytes": 1118162944,
+      "startedAt": "2026-10-06T15:28:41.885559+00:00",
+      "state": "RAN",
+      "exit": 0,
+      "elapsedMs": 522.4365420872346,
+      "outputBytes": 333
+    },
+    {
+      "check": "strict",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/wpf-mature-02-message-settings-core/tsconfig.json"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+      "freeBeforeBytes": 1118031872,
+      "startedAt": "2026-10-06T15:28:42.409111+00:00",
+      "state": "RAN",
+      "exit": 0,
+      "elapsedMs": 644.7985830018297,
+      "outputBytes": 0
+    }
+  ],
+  "freeAfterBytes": 1116594176,
+  "configs": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/vitest.config.ts",
+      "sha256": "14ed3c6e4d5d4356f1f2ed5c0ab7d097261a8f33867e93a97ab62d70138e991b",
+      "bytes": 552
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/tsconfig.json",
+      "sha256": "8ee4bc0bdb2f90c383efeedc7b99555d1d538117988af70948b4efd0ce7fb32e",
+      "bytes": 541
+    }
+  ]
+}

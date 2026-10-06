@@ -12,3 +12,5 @@
 已读自审：32 个整组合有限查找，无笛卡尔拼接；所有字段显式，无旧值/default补全；canonical UTF8 与 raw HTTP 不混称。缺可信来源返回 unknown，空可信 choices 返回 unsupported；profile-mismatch 独立。ACK matcher 只返回解析副本或固定错误，未添加重试。effort not-requested 可以表示 model-only 请求，但不授权 bridge 忽略未知 resume 继承。
 
 验证限制：resource HOLD，测试与 strict 均 NOT_RUN；不得由自审推行为已通过。首 checkpoint 后独审也不能自动继承工程通过。没有运行 target/SDK/provider/PG 或修改 parent/其他树。
+
+2026-10-06 15:28:59 UTC 交付安全点复核：原两源无修改。唯一validation配置补既有Vitest包alias，避免root产品源替代本树。5/5纯行为检查（6ms）、局部strict0原始输出保留；初始NOT_RUN为历史，不伪造red。逐项资源门禁通过；无遗留cache/child/PG/provider。命名、单职责、错误分类/未知、固定组合与canonical行为已复核；待独立review，未main。

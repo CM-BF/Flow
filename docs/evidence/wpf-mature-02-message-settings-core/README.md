@@ -12,9 +12,9 @@ not-requested 仅描述未发送 effort 请求，不承诺 native session 清除
 
 ## 检查与资源
 
-工程检查全部 NOT_RUN：0 Vitest、0 types、0 PG、0 provider/SDK、0 target。五个测试定义不是五个通过。没有伪造 baseline red；先写了测试与 source 初稿，真实行为验证待资源解除。
+初始 source checkpoint 4e7b7f968a2160a60989b3b6343506ae8fb5ef6a 写测试与实现后尚未验证；没有伪造 baseline red。资源准入满足后实际 Vitest5/5（6ms）与局部strict0，见 checks.json/原始log及exit。0 PG、0 provider/SDK、0 target；检查没有扩大产品范围。
 
-fresh df 1,043,349,504B < 1GiB；执行门槛至少 1GiB+32MiB = 1,107,296,256B。依赖未安装，也没有 node_modules symlink。建议未来 evidence 内显式 Vitest 配置仅 alias 固定 zod，test root 始终本 WT；局部 tsconfig 继承现 strict/ES2023/noUnchecked 基线。执行前仍须 root 确认闭包与资源，不自动启动。
+fresh df 1,043,349,504B < 1GiB；执行门槛至少 1GiB+32MiB = 1,107,296,256B。依赖未安装，也没有 node_modules symlink。evidence 内显式 Vitest 配置仅 alias 固定 zod/Vitest 包，test root 始终本 WT；局部 tsconfig 继承现 strict/ES2023/noUnchecked 基线，只include两源。配置方式获 root 批准，两项执行前fresh分别达到1,118,162,944 / 1,118,031,872B；自有cache已清。
 
 只读定位现有依赖：main `node_modules/.pnpm/zod@4.6.5/node_modules/zod`；Vitest 4.0.18、TypeScript 5.9.3、@types/node 24.19.1 均已有。不会把 root 产品源码 alias 为本树被测对象，不改共享 git/sparse/lock 或安装。
 

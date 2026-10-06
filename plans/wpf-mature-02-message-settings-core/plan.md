@@ -26,13 +26,13 @@ effort 必填 discriminated union：level+固定 SDK 五值，或 not-requested�
 ## TODO
 
 - [x] **M02CORE-01** 只读固定设计、合法独立树与原子四 scope receipt；证据见 [README](../../docs/evidence/wpf-mature-02-message-settings-core/README.md)。
-- [ ] **M02CORE-02** 实现两文件 leaf 和五组行为测试源码，固定提交；实现不等于已验证。
-- [ ] **M02CORE-03** 资源满足后执行本文件 Vitest/局部 strict，记录实际数量；当前 NOT_RUN。
+- [x] **M02CORE-02** 实现两文件 leaf 和五组行为测试源码，固定提交；实现不等于已验证。
+- [x] **M02CORE-03** 资源满足后执行本文件 Vitest/局部 strict：5/5 与 exit0，见 checks.json。
 - [ ] **M02CORE-04** 独立固定 target review，修复 findings。
 - [ ] **M02CORE-05** Lead 受控接收/main 核对与 writer 正式交回。
 
 ## 验收
 
-五组直接行为：完整请求/非法与显式 omission；canonical 顺序与不同 effort/speed；缺证据/空策略/非笛卡尔组合；profile 三元身份与 32 条/重复边界；ACK 缺失/篡改与固定请求精确匹配。legacy 文件不改，不能把未跑测试写成 red/green。当前共享空间低于 1GiB，禁止 Vitest/类型/PG/build/install/target；验证解除条件为 fresh 可用空间至少 1GiB+32MiB、依赖闭包获确认。
+五组直接行为：完整请求/非法与显式 omission；canonical 顺序与不同 effort/speed；缺证据/空策略/非笛卡尔组合；profile 三元身份与 32 条/重复边界；ACK 缺失/篡改与固定请求精确匹配。legacy 文件不改，不能把未跑测试写成 red/green。初始空间不足时未运行。2026-10-06 15:28:41 UTC 两项运行前 fresh 均达到 1GiB+32MiB，使用已授权固定依赖闭包完成单文件5/5与局部strict0；没有PG/build/install/target。
 
-Owner 维护 [status](status.md) 和 [review](review.md)。当前仅纯源码 checkpoint，独审尚未开始、main 未接收；原大task其他验收继续开放。
+Owner 维护 [status](status.md) 和 [review](review.md)。当前纯契约验证通过，独审尚未开始、main 未接收；原大task其他验收继续开放。
