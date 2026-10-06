@@ -73,3 +73,6 @@ Root新增独立APPROVED dac8c3910eee1828e7081a3d33e19a89a056f4d4：仅runner pa
 固定26ddd8de9fde0d67e6e42bd81a583facc993a31a，仅claude.ts/test；原CHAT02 owner停写/amend后F01v9接收。固定SDK0.3.290 sdk.d.ts1645–1662明确env替换而非合并，未设置时继承宿主。新增明确系统/本机provider认证允许清单，排除Flow token、数据库凭据和无关环境；保留HOME/PATH与本机SDK合法认证入口，不读取或打印真实凭据。没有改模型、工具政策、native session或profile声明能力。
 
 先公开adapter新用例红（options.env缺失），原sdk-environment-red.txt保留；修复后完整此模块26/26，403ms，typecheck通过。注入query仅观察options，并启动真实Node子进程传精确env验证合成marker隔离/合法provider变量保留、宿主环境未变、事件不泄漏。没有真实SDK/query/provider实验，因此不宣称实际登录可用性；启动器角色隔离另由SVC715ec独审。
+
+## CHAT04薄client / 2026-10-06 04:45 UTC
+沿find-skills本地codebase-design/clean-code既定范围；复用单一HTTP request，不自动retry/改key/pause或取消其他task。消费Mika固定ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 schema，六方法保留queueRevision、expectedTaskId、AbortSignal、receipt replay；readonly GET与command分明。测试先[red](queue-client-red.txt)（方法未实现）后[green](queue-client-green.txt)2/2（队列及原对话HTTP），[typecheck](queue-client-typecheck.txt)exit0。仅client接线，不替代54领域用例/生产扫描/Web队列UI/真实模型证明。每个方法短且只转送事实，无新state副本。

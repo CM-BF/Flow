@@ -1,0 +1,34 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue
+
+ ❯ apps/server/src/conversation-queue/queue.test.ts (2 tests | 1 failed) 709ms
+   ✓ persists an immutable enqueue receipt through ACK loss and exposes current cancellation with independent revision 76ms
+   × promotes an empty conversation once, forbids follow-up bypass, and preserves the original ACK after restart 30ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/conversation-queue/queue.test.ts > promotes an empty conversation once, forbids follow-up bypass, and preserves the original ACK after restart
+AssertionError: expected 202 to be 409 // Object.is equality
+
+- Expected
++ Received
+
+- 409
++ 202
+
+ ❯ apps/server/src/conversation-queue/queue.test.ts:88:25
+     86|   const accepted = (await request(path, input, key)).body;
+     87|   const bypass = await request(`/api/conversations/${c.id}/turns`, { e…
+     88|   expect(bypass.status).toBe(409);
+       |                         ^
+     89|   expect(bypass.body.error.code).toBe('conversation_queue_pending');
+     90|   const outcomes = await Promise.all([promoteReady(pool, boss, c.id), …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  21:24:53
+   Duration  1.07s (transform 164ms, setup 0ms, import 291ms, tests 709ms, environment 0ms)
+

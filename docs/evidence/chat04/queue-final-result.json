@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/conversation-queue/queue.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner"
+  ],
+  "startedAt": "2026-10-06T04:29:07.177222+00:00",
+  "endedAt": "2026-10-06T04:29:09.993186+00:00",
+  "exitCode": 0
+}

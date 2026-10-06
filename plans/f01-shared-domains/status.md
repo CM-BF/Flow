@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:29 UTC / 2026-10-06 04:27 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:45 UTC / 2026-10-06 04:43 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
@@ -17,8 +17,8 @@
 | 实现范围 | packages/client/src/index.ts, apps/cli/src/index.ts, apps/cli/src/plugins.test.ts, apps/server/src/index.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已完成两次真实短对话与原生记忆恢复；第二轮可见正文补证为零模型重放 |
-| 下一可用交付 | 完成SDK环境隔离审查并接收SVC常驻入口；原聊天预算已封存 |
+| 当前产出 | 真实预览61228已0消息启动；CHAT04客户端局部2/2、生产挂载准备 |
+| 下一可用交付 | 持久队列六个公共方法、生产串行恢复扫描与兼容Web成套接收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -43,3 +43,8 @@
 2026-10-06 04:11 UTC：新增profile client HTTP1/1(366ms)与typecheck原始记录见quality；不把旧095审批继承到94f。两次真实聊天验收0调用，等待Web固定clean交付。
 
 两次真实query预算已封存，main dd1b三端已审集成。证据与弱断言纠正见[真实执行报告](../../docs/evidence/f01/chat-live/README.md)，原PASSED日志保留但不是完整第二轮live可见正文approval。recorded replay为另一次0模型界面检查。
+
+| F01-09 | in-progress | Lead | 最终ae9d队列合同，六个薄client方法；[2/2真实HTTP局部检查](../../docs/evidence/f01/queue-client-green.txt)，typecheck通过；生产扫描尚未挂载，Web兼容reader待接收 |
+| F01-10 | in-progress | Lead | O03模块94e已Root独审并进入main80e3；共享挂载/client待实现 |
+
+04:45 UTC：F01 claim8470e7d2 v10已停止并交回claude.ts/claude.test.ts/tasks.ts供O04新树领取；[receipt](../../docs/evidence/f01/o04-scope-amend-receipt.json)。SDK env26ddd/共享事务dbb已Root批准并main；2query报告cc73已限定批准，第二轮live UI仍NOT_PROVEN，预算封存。

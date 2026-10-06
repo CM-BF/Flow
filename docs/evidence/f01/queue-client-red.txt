@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/conversation-queue.test.ts (1 test | 1 failed) 6ms
+   × preserves queue command identity, independent revisions and pause/resume semantics without retries 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/conversation-queue.test.ts > preserves queue command identity, independent revisions and pause/resume semantics without retries
+TypeError: client.enqueueConversationTurn is not a function
+ ❯ packages/client/src/conversation-queue.test.ts:22:25
+     20|   const client = new FlowClient({ baseUrl: `http://127.0.0.1:${(server…
+     21|   try {
+     22|     expect(await client.enqueueConversationTurn('conversation/1', { ex…
+       |                         ^
+     23|     await client.conversationQueue('conversation/1', { after: 0, limit…
+     24|     await client.conversationQueueItem('conversation/1', 'item/2');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  21:43:51
+   Duration  131ms (transform 27ms, setup 0ms, import 43ms, tests 6ms, environment 0ms)
+

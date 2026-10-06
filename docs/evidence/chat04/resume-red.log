@@ -1,0 +1,50 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue
+
+ ❯ apps/server/src/conversation-queue/queue.test.ts (18 tests | 2 failed | 16 skipped) 1289ms
+   ↓ persists an immutable enqueue receipt through ACK loss and exposes current cancellation with independent revision
+   ↓ promotes an empty conversation once, forbids follow-up bypass, and preserves the original ACK after restart
+   ↓ serializes two client CAS writes, preserves FIFO after cancellation, and resumes the previous known session
+   ↓ freezes waiting intent after failed with known evidence
+   ↓ freezes waiting intent after cancelled with known evidence
+   ↓ freezes waiting intent after uncertain with known evidence
+   ↓ freezes waiting intent after running with known evidence
+   ↓ freezes waiting intent after succeeded with missing evidence
+   ↓ freezes waiting intent after succeeded with unknown evidence
+   ↓ freezes unavailable profile pins and busy sessions without losing waiting intent
+   ↓ cancellation and promotion agree on a single outcome under the conversation lock
+   ↓ restarts pending work and permits only one promotion across two center instances
+   ↓ rolls back task, wake and turn when item update fails and scan still reaches other ready conversations
+   ↓ bounds UTF-8 previews and pending count, pages only waiting items, and confines item reads to their conversation
+   ↓ recovers an actually dropped HTTP ACK using the same key after promotion
+   ↓ persists pause before cancelling and never auto-promotes after a late successful completion or restart
+   × explicitly resumes failed once atomically and does not authorize later automatic continuation 87ms
+   × explicitly resumes cancelled once atomically and does not authorize later automatic continuation 42ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/conversation-queue/queue.test.ts > explicitly resumes failed once atomically and does not authorize later automatic continuation
+ FAIL  apps/server/src/conversation-queue/queue.test.ts > explicitly resumes cancelled once atomically and does not authorize later automatic continuation
+AssertionError: expected [ 500, 500 ] to deeply equal [ 202, 409 ]
+
+- Expected
++ Received
+
+  [
+-   202,
+-   409,
++   500,
++   500,
+  ]
+
+ ❯ apps/server/src/conversation-queue/queue.test.ts:287:57
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 16 skipped (18)
+   Start at  21:36:00
+   Duration  1.77s (transform 217ms, setup 0ms, import 384ms, tests 1.29s, environment 0ms)
+
