@@ -1,0 +1,261 @@
+{
+  "recordedAt": "2026-10-06 09:58:49 UTC",
+  "mainObserved": "187d97648dd2d4edf45641720f8ba771ea9f25fa",
+  "mainOriginEqual": true,
+  "mainClean": true,
+  "ledgerObservedAt": "2026-10-06T09:51:27.662Z",
+  "ledgerStatus": "available",
+  "ledgerUse": "Existing 09:51 snapshot initial screening only; not fresh assignment or permission",
+  "parent": "WPF-MATURE-03",
+  "status": "two read-only proposals; root contract decision pending; no trees/takes/writes",
+  "backend": {
+    "candidateId": "WPF-ATTACH01",
+    "owner": "workspace_panels_owner",
+    "worktreeSuggestion": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+    "branchSuggestion": "codex/attachment-resources",
+    "scopeCandidates": [
+      "packages/contracts/src/attachments.ts",
+      "packages/contracts/src/conversation-context.ts",
+      "packages/contracts/src/conversations.ts",
+      "packages/contracts/src/conversation-queue.ts",
+      "apps/server/src/attachments/index.ts",
+      "apps/server/src/attachments/storage.ts",
+      "apps/server/src/attachments/fixture.ts",
+      "apps/server/src/attachments/attachments.test.ts",
+      "apps/server/src/attachments/context.test.ts",
+      "apps/server/src/conversation-context/store.ts",
+      "apps/server/src/conversations/commands.ts",
+      "apps/server/src/conversations/state.ts",
+      "apps/server/src/conversation-queue/commands.ts",
+      "plans/wpf-attach01-resources",
+      "docs/evidence/wpf-attach01"
+    ],
+    "newMigration": "exact number/path requires Execution Lead reservation, then fresh claim; never edit018"
+  },
+  "web": {
+    "candidateId": "WPF-ATTACHI01",
+    "owner": "w01_owner",
+    "scopeCandidates": [
+      "apps/web/src/conversation-attachments/adapter.ts",
+      "apps/web/src/conversation-attachments/Attachment.tsx",
+      "apps/web/src/conversation-attachments/FilePicker.tsx",
+      "apps/web/src/conversation-attachments/receipts.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/messages.ts",
+      "apps/web/src/conversations/queue/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugins/types.ts",
+      "apps/web/src/plugins/validation.ts",
+      "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "apps/web/src/components/assistant-ui/elements/attachment.aui.tsx",
+      "apps/web/test/conversation-attachments.test.ts",
+      "apps/web/test/conversation-attachment-integration.test.ts",
+      "apps/web/test/conversation-attachment-integration.fixture.ts",
+      "apps/web/test/conversation-attachment-integration.browser.ts",
+      "plans/wpf-attach-i01-input-preview",
+      "docs/evidence/wpf-attach-i01"
+    ],
+    "namingCorrection": "Web plan/evidence separated from backend; no second WPF-ATTACH01 or overlapping docs/evidence/wpf-attach01",
+    "baseRequirement": "actual fixed main containing STEIRI plus approved public attachment input"
+  },
+  "sharedExportsOwner": "F01 / astra_ultra_execution_lead / claim8470e7d2 v22 per observed ledger",
+  "sharedExportPaths": [
+    "packages/contracts/src/index.ts",
+    "packages/client/src/index.ts",
+    "packages/client/src/attachments.test.ts",
+    "apps/server/src/index.ts"
+  ],
+  "scopeMatches": {
+    "apps/server/src/attachments/attachments.test.ts": [],
+    "apps/server/src/attachments/context.test.ts": [],
+    "apps/server/src/attachments/fixture.ts": [],
+    "apps/server/src/attachments/index.ts": [],
+    "apps/server/src/attachments/storage.ts": [],
+    "apps/server/src/conversation-context/store.ts": [],
+    "apps/server/src/conversation-queue/commands.ts": [],
+    "apps/server/src/conversations/commands.ts": [],
+    "apps/server/src/conversations/state.ts": [],
+    "apps/server/src/index.ts": [
+      {
+        "taskId": "F01",
+        "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+        "version": 22,
+        "worker": "astra_ultra_execution_lead",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "matchingScopes": [
+          "apps/server/src/index.ts"
+        ]
+      }
+    ],
+    "apps/web/src/App.tsx": [
+      {
+        "taskId": "WPF-STEIRI01",
+        "claimId": "bc0ded75-3f9f-496b-abce-22b3af4f277a",
+        "version": 1,
+        "worker": "w01_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration",
+        "matchingScopes": [
+          "apps/web/src/App.tsx"
+        ]
+      }
+    ],
+    "apps/web/src/components/assistant-ui/elements/attachment.aui.tsx": [],
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx": [],
+    "apps/web/src/conversation-attachments/Attachment.tsx": [],
+    "apps/web/src/conversation-attachments/FilePicker.tsx": [],
+    "apps/web/src/conversation-attachments/adapter.ts": [],
+    "apps/web/src/conversation-attachments/receipts.ts": [],
+    "apps/web/src/conversations/ConversationThread.tsx": [
+      {
+        "taskId": "WPF-STEIRI01",
+        "claimId": "bc0ded75-3f9f-496b-abce-22b3af4f277a",
+        "version": 1,
+        "worker": "w01_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration",
+        "matchingScopes": [
+          "apps/web/src/conversations/ConversationThread.tsx"
+        ]
+      }
+    ],
+    "apps/web/src/conversations/messages.ts": [],
+    "apps/web/src/conversations/outbox.ts": [],
+    "apps/web/src/conversations/projection.ts": [],
+    "apps/web/src/conversations/queue/commands.ts": [],
+    "apps/web/src/conversations/queue/projection.ts": [],
+    "apps/web/src/plugin-integration/attachments.tsx": [],
+    "apps/web/src/plugin-integration/session.ts": [
+      {
+        "taskId": "WPF-STEIRI01",
+        "claimId": "bc0ded75-3f9f-496b-abce-22b3af4f277a",
+        "version": 1,
+        "worker": "w01_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration",
+        "matchingScopes": [
+          "apps/web/src/plugin-integration/session.ts"
+        ]
+      }
+    ],
+    "apps/web/src/plugins/types.ts": [
+      {
+        "taskId": "WPF-STEIRI01",
+        "claimId": "bc0ded75-3f9f-496b-abce-22b3af4f277a",
+        "version": 1,
+        "worker": "w01_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration",
+        "matchingScopes": [
+          "apps/web/src/plugins/types.ts"
+        ]
+      }
+    ],
+    "apps/web/src/plugins/validation.ts": [
+      {
+        "taskId": "WPF-STEIRI01",
+        "claimId": "bc0ded75-3f9f-496b-abce-22b3af4f277a",
+        "version": 1,
+        "worker": "w01_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration",
+        "matchingScopes": [
+          "apps/web/src/plugins/validation.ts"
+        ]
+      }
+    ],
+    "apps/web/test/conversation-attachment-integration.browser.ts": [],
+    "apps/web/test/conversation-attachment-integration.fixture.ts": [],
+    "apps/web/test/conversation-attachment-integration.test.ts": [],
+    "apps/web/test/conversation-attachments.test.ts": [],
+    "docs/evidence/wpf-attach-i01": [],
+    "docs/evidence/wpf-attach01": [],
+    "packages/client/src/attachments.test.ts": [
+      {
+        "taskId": "F01",
+        "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+        "version": 22,
+        "worker": "astra_ultra_execution_lead",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "matchingScopes": [
+          "packages/client"
+        ]
+      }
+    ],
+    "packages/client/src/index.ts": [
+      {
+        "taskId": "F01",
+        "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+        "version": 22,
+        "worker": "astra_ultra_execution_lead",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "matchingScopes": [
+          "packages/client"
+        ]
+      }
+    ],
+    "packages/contracts/src/attachments.ts": [],
+    "packages/contracts/src/conversation-context.ts": [],
+    "packages/contracts/src/conversation-queue.ts": [],
+    "packages/contracts/src/conversations.ts": [
+      {
+        "taskId": "F01",
+        "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+        "version": 22,
+        "worker": "astra_ultra_execution_lead",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "matchingScopes": [
+          "packages/contracts/src/conversations.ts"
+        ]
+      }
+    ],
+    "packages/contracts/src/index.ts": [
+      {
+        "taskId": "F01",
+        "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+        "version": 22,
+        "worker": "astra_ultra_execution_lead",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "matchingScopes": [
+          "packages/contracts/src/index.ts"
+        ]
+      }
+    ],
+    "packages/storage/migrations": [],
+    "plans/wpf-attach-i01-input-preview": [],
+    "plans/wpf-attach01-resources": []
+  },
+  "migrationObservation": {
+    "directory": "packages/storage/migrations",
+    "latestPresent": "025-native-harness-sources.sql",
+    "source": "main187d native-harness-migration.ts registers version25 under existing migration advisory lock; apps/server/src/index.ts owns production ordering",
+    "limitation": "No new number reserved; lack of active migration scope at09:51 is not number allocation or permission; actual migrations list may move"
+  },
+  "requiredCoordination": [
+    "F01 retains contracts/index, packages/client whole directory and server/index; attachment owner cannot write these exports/transport/mount",
+    "backend proposed contracts/conversations.ts overlaps F01v22: choose F01 controlled narrow delta or explicit stop+CAS handoff before take; no copied shared branch",
+    "Web projection proposed overlaps planned F01/TUI ACK migration in time, although free at09:51; choose one call-site owner/window and frozen input, no two writers",
+    "STEIRI App/Thread/session/types/validation occupancy requires formal main-close/release before Web take; other paths still fresh-check",
+    "both candidate scopes have independent plan/evidence; root contract freeze before product writes"
+  ],
+  "contractProposalOnly": {
+    "firstType": "project-bound strict UTF-8 .txt/text/plain <=8192bytes",
+    "reference": "{kind:upload,projectId,resourceId,version,contentDigest}, metadata separate",
+    "ordering": "legacy knowledge[] retained; attachments[] independently ordered; compile knowledge then attachments, not arbitrary interleaving",
+    "jointBudget": "<=4 refs and8192 raw bytes; current total compiled input limits still apply; reject not truncate",
+    "freeze": "first Send/Queue transaction pins exact bytes/version/order; replay must preserve original frozen identity",
+    "retentionProposedNotApproved": "unbound24h/128items/1MiB perproject; bounded expired cleanup; used never reclaimed via draft delete",
+    "tests": "real PG/HTTP and actual runner assignment prompt through fake HarnessAdapter, no provider"
+  },
+  "existingFrontendSeams": {
+    "thread": "AttachmentDropzone:467, ComposerAttachments:472, capability-gated ComposerAddAttachment:497-498, UserMessageAttachments:789",
+    "currentGap": "real upload/immutable refs/Send-Queue-ACK integration absent; do not duplicate existing controls",
+    "fixedInstalled": "@assistant-ui/react0.15.23 / core0.3.22, no upgrade"
+  },
+  "noActions": [
+    "no new feature worktree",
+    "no claim/take/migration reservation",
+    "no product tests/API/model/DB changes",
+    "no generic cross-lead request sent before contract freeze"
+  ]
+}

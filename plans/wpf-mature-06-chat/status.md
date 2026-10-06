@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | STEIRI01固定5cf独立APPROVED，ACTIVITYREAD固定f2bc获root独审；两片已push/冻结待main，完整聊天仍开放 |
-| 下一可用交付 | Lead从集中队列受控接收STEIRI01与ACTIVITYREAD；语音、跨reload恢复及queue/stream自然呈现仍开放 |
+| 当前产出 | 聊天中的补充指令与活动简化已通过独立审查，等待主线接收；完整聊天验收仍开放 |
+| 下一可用交付 | 接收补充指令与活动简化片段；语音、跨重启恢复及其余聊天自然呈现仍待完成 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |

@@ -120,3 +120,9 @@ ExecutionLead新入站（root转达，本段收到）：已从唯一status实际
 F01/TUI共享receipt进一步边界：context/receipts.ts的freezeKnowledgeRequest供outbox/queue，assertContextReceiptMatches供projection/queue；profile.selection的assertCreationReceiptMatches也用于snapshot/history，不能删整文件或放宽读取策略。固定F01 target+出口协调后，先projection.ts调用点/独立consumer HTTP专测+自己plan/evidence；若公开context tuple guard需薄转接再精确amend receipts.ts并保freeze/queue，selection暂不改。验收null/malformed/wrong conversation、turn/text/revision/context顺序版本digest/profile/projectpresence→unknown原key/body，late epoch拒旧结果、旧replayed admission不回滚snapshot/known turn。四路径09:51:27无有效writer，只是时点观察；fresh take不以STEIRI App写权作无关阻塞，附件未来修改也另领取，187d文档不是F01固定产品输入。
 
 MATURE01既有主题扩展TODO的18literal只读proposal见[固定候选](theme-extension-proposal.json)，直接父MATURE01，未take/建树/实施；附件P1优先。单一typed token catalogue、受控root alias及requested/effective生命周期复用现P01；四内置成功不冒完整插件材质/插件reload完成。
+
+## 2026-10-06 09:59:05 UTC 附件共享出口与后继架构维护准备
+
+双方只读附件方案已收，[集中依赖JSON](attachment-shared-dependencies.json)列完整15/23 literal、已核固定main187d和09:51账本初筛。唯一后端候选WPF-ATTACH01；独立Web候选WPF-ATTACHI01，后者plan/evidence已换独立路径，避免两worker同task/同evidence。root尚未冻结合同，未建树/take/选迁移号。F01 v22明确占contracts/index、packages/client整目录、server/index，且后端提案内contracts/conversations.ts也冲突：请Lead选择其受控薄输入或正式scope交权，不能两边同时改。现迁移源码最高025只说明固定main内容，不预占下一编号。Web projection与F01/TUI共享ACK迁移需先固定接口和唯一调用点writer窗口；现free时点不代表预留。无明确Mika额外消费接口前不发送泛需求，02/04沿既有消费分工。
+
+GO经root请求原D06固定架构刷新已登记为后继维护：等本批D08/ACTIVITYREAD/STEIRI准确组合main安全点，由d01_owner用独立新树/窄fresh claim维护原D06唯一source；不新大task或抢产品worker。仅curated architecture-data.js、原D06自身plan/evidence与必要data直接test，renderer/五图交互不改。内容按固定源核Web/TUI/CLI→public client→center→runner host/adapter、PG轻投影/lazy detail、并发/unknown claim、stream/final/steering实际边界、Flow与SDK职责；TUI/Codexadapter/SVC04/附件未在target的标planned，源码/发布artifact/个人backend分别记录。runtime configurable concurrency不等入口configured或provider capacity。当前旧图9c6仅历史固定snapshot，未更新不伪装current；现在先附件/共享准备，不新take或重复产品/API采样。

@@ -16,7 +16,7 @@
 
 CONTEXT01选择模块736ef和CONTEXT02深冻/ACK guard5e821已main；K01/K02提供不可变版本citation、cap及project身份。CONTEXTI01固定d0e/009e已root独审并正式main df29，owner fe2b收口后55fe v2释放。已有实际App知识UI及Send/Queue HTTP fixture证据，未代替真实provider或本地上传。
 
-尚缺：附件按钮/drag/@file入口、预览删除、允许类型/大小/权限、可追溯固定版本送入model context；本地上传与runner文件不能用知识模块冒充。
+现官方Thread已包含附件按钮、AttachmentDropzone、列表/预览删除等控件，按钮由attachments capability门控；当前缺的是持久资源adapter、@file授权目录以及固定材料Send/Queue/ACK/runner输入接线，不能重复造一套控件。类型/大小/权限与固定版本送入model context仍须实现；本地上传与runner文件不能用知识模块冒充。
 
 当前子任务唯一来源：[CONTEXTI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。该子任务直接归本大task，WPF管理只做来源追溯。
 
@@ -35,7 +35,7 @@ CONTEXT01选择模块736ef和CONTEXT02深冻/ACK guard5e821已main；K01/K02提�
 
 ## 已安装附件接缝研究
 
-root只读实际react0.15.23/core0.3.22：external-store-adapter.ts已有adapters.attachments，composer有addAttachment(File或CreateAttachment)/removeAttachment及submission.attachments冻结。无需预设升级SDK；[官方附件文档](https://www.assistant-ui.com/docs/guides/attachments)最新安装示例^0.15.25不是本项目升级授权。现版adapter接中心固定轻引用，UI选择/图片预览不证明上传或模型输入；不直接采用base64/PDFplaceholder例子，无个人文件上传或模型调用。
+root只读实际react0.15.23/core0.3.22：external-store-adapter.ts已有adapters.attachments，composer有addAttachment(File或CreateAttachment)/removeAttachment及submission.attachments冻结。无需预设升级SDK；[官方附件文档](https://www.assistant-ui.com/docs/guides/attachments)网站安装示例是移动信息，不作为本轮固定事实；当前本地react0.15.23/core0.3.22不升级。现版adapter接中心固定轻引用，UI选择/图片预览不证明上传或模型输入；不直接采用base64/PDFplaceholder例子，无个人文件上传或模型调用。
 
 ### 完整附件生命周期依赖（09:09 UTC GO审计）
 
@@ -50,3 +50,5 @@ Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资�
 ### 已安装adapter与提交语义（root只读研究）
 
 installed core0.3.22已有attachment add/send/remove接口；当前Thread.onNew仅消费text，忽略message.attachments，因此新输入必须显式映射授权不可变refs，paperclip/预览不等于已发送。现core remove仅对尚未complete的attachment调用adapter.remove，center/outbox负责保留与in-use回收，不能依赖删草稿回调。官方[附件指南](https://www.assistant-ui.com/docs/guides/attachments)与[custom adapter](https://www.assistant-ui.com/docs/integrations/attachments/custom-adapter)仅作为方法来源，当前网站推荐版本不构成本项目SDK升级授权。本段无上传、provider或实际附件输入验收。
+
+当前两案和共享单写边界见[附件依赖清单](../../docs/evidence/web-platform/attachment-shared-dependencies.json)。后端WPF-ATTACH01与Web WPF-ATTACHI01均仅候选：15与23 literal待root合同固定复核；F01仍持contracts/conversations.ts及共享出口，迁移号待其精确预留。Web调用点与TUI共享ACK迁移须一个owner/有序窗口，不能因09:51无writer就预领。首.txt限制、TTL/配额与template2均是proposal，不写为已批准公共合同。
