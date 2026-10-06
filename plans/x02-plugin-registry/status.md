@@ -33,7 +33,7 @@
 
 ## 证据与同步
 
-[质量方法](../../docs/evidence/x02/quality.md)。领取回执见[claim](../../docs/evidence/x02/claim.json)。已通知Goal Owner让主Lead登记registry/索引；等待实际聚合核验，不手改生成JSON。
+[质量方法](../../docs/evidence/x02/quality.md)。领取回执见[claim](../../docs/evidence/x02/claim.json)。4320已实采到X02 live canonical source、正确branch与issues=[]；[实际聚合回执](../../docs/evidence/x02/dashboard-receipt.json)保留时间/HEAD，Goal Owner另于03:44:23.746Z确认39源。没有把聚合可见当独立review或main集成。
 
 首片段证据：[red](../../docs/evidence/x02/registration-red.txt)、[green 1/1](../../docs/evidence/x02/registration-green.txt)、[typecheck](../../docs/evidence/x02/contract-typecheck.txt)。这不是完整registry或独立review通过。
 
