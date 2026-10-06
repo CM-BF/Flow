@@ -12,7 +12,7 @@
 
 - [x] P03-01 显式history选择、默认snapshot/observe保留、官方SDK真实HTTP wire/大历史bytes证据。
 - [x] P03-02 Runner send/GetTask选择0，status/artifacts/digest/uncertain/recovery行为保留；直接consumer运行于唯一临时DB。
-- [ ] P03-03 固定commit、独立review与owner修复、dashboard聚合核验。
+- [x] P03-03 固定commit、独立review与owner修复、dashboard聚合核验。
 - [ ] P03-04 Execution Lead接收main，记录实际集成事实。
 
 范围：领取的六个精确源码/测试文件与本plan/evidence目录。两片TDD分别先失败行为再最小实现；保持旧断言。生产协议范围是A2A1.0 JSONRPC，不扩展到旧0.3/新transport。真实official handler in-memory store是测试fixture，不代表Flow持久能力或上游执行容量。
