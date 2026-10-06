@@ -1,0 +1,69 @@
+import { randomUUID } from 'node:crypto';
+import type { Pool, PoolClient } from 'pg';
+import type { PgBoss } from 'pg-boss';
+import type { GoalGraphAudit, GoalGraphAuditPage, GoalGraphRun, GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRunRevoked, GoalGraphScope } from '../../../../packages/contracts/src/goal-graph-runs.js';
+import { HttpError, transaction } from '../database.js';
+import { acceptTask, command } from '../tasks.js';
+import { goalContext } from '../goal-graph-proposals/store.js';
+import { readProject } from '../projects/storage.js';
+import { revokeAuthority, type AuthorityStore } from '../goal-run-authority/runner-project-fence.js';
+
+export interface GraphRunRow {
+  id: string; version: 1; goal_id: string; task_id: string; mode: 'fixture'; used_commands: number;
+  scope: GoalGraphScope & { projectId: string; goalDigest: string };
+  created_at: Date; revoked_at: Date | null; revocation_reason: string | null;
+}
+export async function runRow(client: PoolClient, id: string, lock = false) {
+  const row = (await client.query<GraphRunRow>(`SELECT * FROM flow.goal_graph_runs WHERE id=$1${lock ? ' FOR UPDATE' : ''}`, [id])).rows[0];
+  if (!row) throw new HttpError(404, 'goal_graph_run_not_found', 'Graph run not found.');
+  return row;
+}
+export const graphAuthorityStore: AuthorityStore<GraphRunRow> = {
+  code: 'goal_graph',
+  async find(client, attemptId) { return (await client.query<{ id: string; goal_id: string; runner_id: string }>('SELECT g.id,g.goal_id,a.runner_id FROM flow.goal_graph_runs g JOIN flow.attempts a ON a.task_id=g.task_id WHERE a.id=$1', [attemptId])).rows[0]; },
+  lock: (client, id) => runRow(client, id, true),
+  async revoke(client, id, reason) { return (await client.query<GraphRunRow>('UPDATE flow.goal_graph_runs SET revoked_at=clock_timestamp(),revocation_reason=$2 WHERE id=$1 RETURNING *', [id, reason])).rows[0]!; },
+};
+export async function counts(client: PoolClient, id: string) {
+  const row = (await client.query<{ proposals: number; applications: number }>("SELECT count(*) FILTER (WHERE kind='propose')::int AS proposals,count(*) FILTER (WHERE kind='apply')::int AS applications FROM flow.goal_graph_calls WHERE run_id=$1", [id])).rows[0]!;
+  return row;
+}
+export async function runView(client: PoolClient, row: GraphRunRow): Promise<GoalGraphRun> {
+  const { projectId, goalDigest, ...scope } = row.scope;
+  const used = await counts(client, row.id);
+  return { id: row.id, version: row.version, goalId: row.goal_id, projectId, goalDigest, taskId: row.task_id, scope, mode: row.mode,
+    usedCommands: row.used_commands, usedProposals: used.proposals, usedApplications: used.applications,
+    createdAt: row.created_at.toISOString(), revokedAt: row.revoked_at?.toISOString() ?? null, revocationReason: row.revocation_reason };
+}
+export async function admit(pool: Pool, boss: PgBoss, goalId: string, input: GoalGraphRunAdmission, key: string): Promise<GoalGraphRunAccepted> {
+  if (input.execution.harness !== 'fixture') throw new HttpError(409, 'native_graph_tools_unavailable', 'Native graph tools require their dedicated execution bridge.');
+  const result = await command(pool, `goal-graph-run:create:${goalId}`, key, input, async client => {
+    const context = await goalContext(client, goalId, true);
+    if (context.project.revision !== input.scope.baseRevision) throw new HttpError(409, 'stale_project_revision', 'The grant must name the current project revision.');
+    const graph = await readProject(client, context.project.id, input.scope.baseRevision);
+    for (const ref of input.scope.allowedExistingNodes) {
+      if (!graph.graph.nodes.some(node => node.id === ref.nodeId && node.version === ref.expectedVersion)) throw new HttpError(409, 'goal_graph_scope', 'An allowed existing reference is not in the base graph.');
+    }
+    const task = await acceptTask(client, boss, { title: 'Goal graph run', prompt: input.prompt, harness: 'fixture', fixture: { scenario: 'success' } });
+    const row = (await client.query<GraphRunRow>('INSERT INTO flow.goal_graph_runs(id,goal_id,task_id,version,scope,mode) VALUES($1,$2,$3,1,$4,\'fixture\') RETURNING *', [randomUUID(), goalId, task.id, { ...input.scope, projectId: context.project.id, goalDigest: context.goalDigest }])).rows[0]!;
+    return { run: await runView(client, row), task };
+  });
+  return { ...result.value, replayed: result.replayed };
+}
+export function getRun(pool: Pool, id: string) { return transaction(pool, async client => runView(client, await runRow(client, id)), true); }
+export async function revoke(pool: Pool, id: string, reason: string, key: string): Promise<GoalGraphRunRevoked> {
+  const result = await command(pool, `goal-graph-run:revoke:${id}`, key, { reason }, async client => {
+    const changed = await revokeAuthority(client, graphAuthorityStore, id, reason);
+    return { run: await runView(client, changed.row), changed: changed.changed };
+  });
+  return { ...result.value, replayed: result.replayed };
+}
+export function audit(pool: Pool, id: string, after: number, limit: number): Promise<GoalGraphAuditPage> {
+  return transaction(pool, async client => {
+    const run = await runView(client, await runRow(client, id));
+    const rows = (await client.query<{ sequence: number; runner_id: string; attempt_id: string; owner_version: number; command_key: string; digest: string; kind: GoalGraphAudit['kind']; proposal_id: string; proposal_digest: string; applied_revision: number | null; created_at: Date }>('SELECT * FROM flow.goal_graph_calls WHERE run_id=$1 AND sequence>$2 ORDER BY sequence LIMIT $3', [id, after, limit + 1])).rows;
+    const calls = rows.slice(0, limit).map(row => ({ sequence: row.sequence, runnerId: row.runner_id, attemptId: row.attempt_id, ownerVersion: row.owner_version, key: row.command_key, digest: row.digest,
+      kind: row.kind, proposalId: row.proposal_id, proposalDigest: row.proposal_digest, appliedRevision: row.applied_revision, createdAt: row.created_at.toISOString() }));
+    return { run, calls, nextCursor: rows.length > limit ? calls.at(-1)!.sequence : null };
+  }, true);
+}

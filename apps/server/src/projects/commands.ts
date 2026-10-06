@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
-import type { ProjectCreation, ProjectCommand, ProjectMutationResult, ProjectNode } from '../../../../packages/contracts/src/projects.js';
+import type { ProjectCreation, ProjectCommand, ProjectMutationResult, ProjectNode, ProjectActor } from '../../../../packages/contracts/src/projects.js';
 import { command } from '../tasks.js';
 import { HttpError } from '../database.js';
 import { applyGraphChange } from './graph.js';
@@ -22,7 +22,7 @@ export async function changeProject(pool: Pool, id: string, input: ProjectComman
 }
 
 /** Caller owns authorization and transaction; all original G01 mutation rules remain here. */
-export async function applyProjectCommand(client: PoolClient, id: string, input: ProjectCommand): Promise<Omit<ProjectMutationResult, 'replayed'>> {
+export async function applyProjectCommand(client: PoolClient, id: string, input: ProjectCommand, actor: ProjectActor = { kind: 'owner' }): Promise<Omit<ProjectMutationResult, 'replayed'>> {
   const project = await loadProject(client, id, true);
   if (project.revision !== input.expectedRevision) throw new HttpError(409, 'stale_project_revision', 'Reload the current project revision.');
   if (project.revision === 2_147_483_647) throw new HttpError(409, 'project_revision_exhausted', 'The project revision limit is reached.');
@@ -30,7 +30,7 @@ export async function applyProjectCommand(client: PoolClient, id: string, input:
   const changed = applyGraphChange(current.graph.nodes, input.change);
   await updateBindings(client, id, current.graph.nodes, changed.nodes);
   const revision = project.revision + 1;
-  await client.query("INSERT INTO flow.project_revisions(project_id,revision,reason,actor,nodes) VALUES($1,$2,$3,'owner',$4)", [id, revision, input.reason, JSON.stringify(changed.nodes)]);
+  await client.query("INSERT INTO flow.project_revisions(project_id,revision,reason,actor,nodes) VALUES($1,$2,$3,$4,$5)", [id, revision, input.reason, actor.kind === 'owner' ? 'owner' : JSON.stringify(actor), JSON.stringify(changed.nodes)]);
   await client.query('UPDATE flow.projects SET revision=$2,updated_at=clock_timestamp() WHERE id=$1', [id, revision]);
   return { snapshot: await readProject(client, id), changedNodeId: changed.changedNodeId };
 }
