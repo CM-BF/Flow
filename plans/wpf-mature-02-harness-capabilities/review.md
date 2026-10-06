@@ -1,6 +1,6 @@
 # WPF-MATURE-02 review
 
-当前优先Claude逐消息设置：CORE契约/注入adapter已做局部验证；publicclient/CLI由MATURE02C01合法owner接线，完整产品vertical仍未验收。
+当前优先Claude逐消息设置：CORE ea276/packet23016bbb已获Mika17:13:34限定APPROVED（29distinct分次、两strict0），不包含共享factory/consumer/provider/UI；C01补充P2仍由指定reviewer处理。新[native-catalog-probe设计](../../docs/evidence/wpf-mature-02/native-catalog-probe/README.md)待审，0目标/测试，NOT_OPEN。
 
 当前owned-openssl source ca6a7a15f76d333f20caf0690ed85b76e29d2c54：architecture_read15:24:36 SOURCE_REVIEW/PENDING_VALIDATION无P1/P2；后续四fake于16:36一次4/4通过，Mika已核固定证据。组合c46f2e0566ff06190ff51242cc1f8225285b12bd现获architecture_read/gpt-6-astra 16:45:31 UTC PREPARATION_APPROVED，Mika独核接收，0P1/P2；[正式收据](../../docs/evidence/wpf-mature-02/node-owned-openssl/preparation-review.json)。仅packet/NOT_OPEN，本段0入口/新检查/目标。未来OPEN须独立核13输出，不能把wx或absentOutputs字段当完整preflight。
 

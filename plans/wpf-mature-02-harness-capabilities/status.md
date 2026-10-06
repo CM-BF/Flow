@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:08:25 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:16:00 UTC / 2026-10-06 16:07:03 UTC（032 assignment只证明号/领取；本轮未核main部署） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,25 +10,25 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 78ace7263b9305b97f33b955a98967d2aedd5e49（本轮资源依赖/正式review路由基线；ca6a源码与prepared不变） |
-| 工作树dirty状态 | 本轮仅B01/P03资源依赖、Lead窗口报告及C01正式review路由/父状态；已有诊断accounting保留固定快照，执行前再核增量；0产品/诊断源码、旧raw/input/prepared改动，提交后clean。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；本轮83adeeddf2f9d3f6555afdaa91649306bab9ffa1为native设计/父接口基线；旧ca6 packet/source冻结 |
+| 工作树dirty状态 | 本轮新native-catalog-probe设计/输入与父管理更新；R06、policy、旧source/raw/input/prepared不改，提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | OpenSSL ca6a四fake一次4/4 exit0（[验证清单](../../docs/evidence/wpf-mature-02/node-owned-openssl/validation-manifest.json)），0诊断目标/listener/PG/provider；cache同inode清理。Mika核CORE21 distinct+两strict0；CORE一次PG于16:52:30.822关闭，beforeAll失败/0passed/8skipped，未到断言；已独立封存；4SQL恢复后16:58:48.196新窗资源预检NOT_RUN/0新测试PGchild，已归还；0provider/0retry。真实OpenSSL NOT_OPEN。 |
+| 当前检查 | 本片native probe尚0检查/目标，NOT_OPEN；OpenSSL四fake4/4及准备批准仍仅原packet。Mika17:13:34正式接收CORE sourceea276/packet23016bbb，29distinct分次16+5+8、两strict0；本owner不重跑，provider/UI未验。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；core首leaf main22d5ca67159b35bb794b2711cf6df0cb905b92e8已接收；不代表个人服务部署 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude产品core首契约已main；当前接入现profile、中心事务、队列与已有adapter。child next-slice-handoff维护唯一精确合同/闭包；本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude逐消息设置的契约与注入执行器检查已通过；公共客户端已通过正式独审，后续矛盾回执反馈仍待处理；数据库与界面验收尚未完成。 |
-| 下一可用交付 | 让合法owner并行接通目录、发送和排队快照，保护修改后的草稿，并在Web/TUI保留真实执行设置。 |
-| 当前阻塞 | ACTIVE: 中心缺件已恢复，但新的专库窗口因空间不足未启动并归还；等资源和新明确槽位。客户端原片已正式批准，补充矛盾回执反馈待指定reviewer处理；生产挂载与Web/TUI尚未完成。 |
+| 当前产出 | Claude逐消息设置的中心、队列与注入执行器已通过限定独审和专库检查；客户端原片已审，补充矛盾回执反馈仍待处理。真实Codex目录观察已开始独立准备。 |
+| 下一可用交付 | 由合法owner完成共享挂载与客户端修正，接通Web/TUI冻结设置；并固定真实Codex一次目录探针供独审。 |
+| 当前阻塞 | ACTIVE: 生产挂载与Web/TUI尚未完成，C01补充回执校验待指定reviewer处置；真实Codex探针仅准备、实际窗口未开放。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | core首plain-contract leaf已APPROVED且main22d5接收；后继center/adapter未沿用该批准。OpenSSL ca6原SOURCE_REVIEW保留，现四fake通过；[准备包批准](../../docs/evidence/wpf-mature-02/node-owned-openssl/preparation-review.json)绑定c46f2e05，architecture_read16:45:31/Mika接收，0P1/P2仅packet；实际NOT_OPEN，本段0入口/目标/监听/检查执行。 |
+| Review | CORE sourceea276/packet23016bbb获Mika17:13:34限定APPROVED；全产品仍未验收。native-catalog-probe新设计待审，无源码/运行批准；owned-openssl c46 packet准备APPROVED仍NOT_OPEN。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
-| 架构影响 | 后继沿现Claude v2 optional turnSettings、中心既有事务及task/queue冻结snapshot接入；不新增中心可变settingsRevision。child与Lead负责固定实现后同步架构基线；当前本树仅管理变化。 |
+| 架构影响 | native薄caller复用R06唯一stdio/process owner及同一policy，不改生产接口；单页目录不作账号/实际模型或writer停止证明。Claude架构接线由CORE/共享consumer与Lead同步。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -95,3 +95,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收�
 16:09:16只读研究输入：GO轮询/续租成本线索已[固定归档并路由原S01/REQ15、CHAT08](../../docs/evidence/wpf-mature-02/research-inputs.md)，静态推算非容量事实，0测试/PG/provider/压测。CORE仍优先，未创建新任务或改外部状态。
 
 16:14:52只读观察core92f768e3517a64235629858f50cdc3926d099b2d，三个validation config未跟踪；canonical已置顶227/155精确闭包准入和保留全部scope/dirty要求。Mika核binding事实与source review分开，当前0工程检查/PG/native、NOT_OPEN；完整TODO不变。
+
+17:16安全点：沿TODO-03固定[native最小设计](../../docs/evidence/wpf-mature-02/native-catalog-probe/README.md)，0目标/检查，当前与已封存Node候选分开。R06/loader/policy只读；fresh v6三scope，已应用本地find-skills/openai-docs/brainstorming/clean-code。CORE正式批准及CHAT06P03已领取只作canonical路由，子状态由原owner维护。

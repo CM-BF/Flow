@@ -1,0 +1,145 @@
+{
+  "kind": "design-inputs-only",
+  "observedAt": "2026-10-06T17:14:00Z",
+  "sourceHead": "83adeeddf2f9d3f6555afdaa91649306bab9ffa1",
+  "claim": {
+    "claimId": "0dd97484-f0ce-4738-8075-505bd5e2541a",
+    "version": 6
+  },
+  "runtimeAuthorization": "NOT_OPEN",
+  "repositoryInputs": [
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    {
+      "path": "apps/runner/src/codex/framing.ts",
+      "bytes": 3554,
+      "sha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d"
+    },
+    {
+      "path": "apps/runner/src/codex/writer.ts",
+      "bytes": 3117,
+      "sha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-rootliteral/loader.mjs",
+      "bytes": 952,
+      "sha256": "b912406702f7654e153db59b0a674dacab43f75b4b23cf246eb819f3ba7b0488"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/catalog.mjs",
+      "bytes": 3787,
+      "sha256": "325748922248b5baba3ade65cf707e0bf527ecbe5598be4b3fd541c8ec79e5e9"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-failure-text/private-text.mjs",
+      "bytes": 3424,
+      "sha256": "475551428f8f3829de71fff552c38b00d0b3a68a51dbc3c59c4ad838aeeddfce"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-runtime-metadata/candidate.sb",
+      "bytes": 16762,
+      "sha256": "37023e6516aa4ef6552a720b7d08d27aadb48fc7947d36b414ebd5c329391213"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/isolation/bootstrap-inspection.json",
+      "bytes": 19917,
+      "sha256": "98cd28ee66084d5562c3cfed8e143e246118e68884d2eaf1713ddd11a66d18a1"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/schema/ts/InitializeParams.ts",
+      "bytes": 378,
+      "sha256": "bfc13b4fc9e37f629ee67b42d6e7f342ba38668ff528e738a911de5ebcfd545f"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/schema/ts/InitializeResponse.ts",
+      "bytes": 622,
+      "sha256": "4feabcb66d4bf01869d2780beaec1838d41b30213cdf57de175298aed01f5379"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/schema/ts/v2/ModelListParams.ts",
+      "bytes": 490,
+      "sha256": "9749040f93232fee23f044d307fd69eb08fea77eb6c56b1d04593d7533dd7bf4"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/schema/ts/v2/ModelListResponse.ts",
+      "bytes": 405,
+      "sha256": "5969afbe718e9a6270fe1e4f58315d7dbffe2e2275973b9c93e5abb2e8daa675"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/schema/ts/v2/Model.ts",
+      "bytes": 1385,
+      "sha256": "ff56f09e9b9f301f1c6ecc565e2bcf6355c6ea66880f3ac963b7754e74cbe0a3"
+    }
+  ],
+  "externalInputs": [
+    {
+      "role": "native",
+      "path": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+      "bytes": 222655232,
+      "sha256": "4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc"
+    },
+    {
+      "role": "host-node",
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "role": "sandbox-exec",
+      "path": "/usr/bin/sandbox-exec",
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a"
+    },
+    {
+      "role": "os-metadata",
+      "path": "/System/Library/CoreServices/SystemVersion.plist",
+      "bytes": 603,
+      "sha256": "6151cb883e5b48d43a33d4d41956405a1cd502e0c8622319388d943e2cb804a1"
+    }
+  ],
+  "archivedProvenance": {
+    "path": "/tmp/flow-e02-schema.6svf7w/local-provenance.json",
+    "bytes": 913,
+    "sha256": "73d9eaba6bdad6604650f6e2eddb28720d143c2bc6daf928b8793747b114bf5f",
+    "helpStdoutArchived": false
+  },
+  "upstreamArgv": {
+    "commit": "6b9826e3aa83b1a5947db50f4332cb9c65f1b340",
+    "path": "codex-rs/cli/src/main.rs",
+    "bytes": 184508,
+    "sha256": "f0e8acde897400a65fd7904b15cf54088b0981a44126b05cb2a95b5700b2ab6b",
+    "sections": [
+      "551-574",
+      "4766-4771"
+    ],
+    "url": "https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/cli/src/main.rs#L551",
+    "binaryReproducibleBuildProven": false
+  },
+  "archivedNotificationInput": {
+    "path": "/tmp/flow-e02-schema.6svf7w/ts/ServerNotification.ts",
+    "bytes": 14952,
+    "sha256": "dfd31c72d1319f069fcdf124bcae6368f15aa0dd0033350bf15519d3e3556d54",
+    "allowlist": [
+      "configWarning",
+      "deprecationNotice"
+    ]
+  }
+}

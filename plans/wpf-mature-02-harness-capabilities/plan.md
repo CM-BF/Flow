@@ -1,6 +1,6 @@
 # WPF-MATURE-02 Claude与Codex能力贯通
 
-状态：in-progress。创建：2026-10-06 09:01:08 UTC；更新：2026-10-06 16:26:23 UTC。阶段M2。单一owner chatui01_owner / gpt-6-astra；co-lead mika。
+状态：in-progress。创建：2026-10-06 09:01:08 UTC；更新：2026-10-06 17:16:00 UTC。阶段M2。单一owner chatui01_owner / gpt-6-astra；co-lead mika。
 
 ## 完整目标
 
@@ -98,3 +98,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary是三角色�
 ## 当前执行优先级与两层交接
 
 GO明确优先Claude逐消息设置，按TODO-10产品core→TODO-11共享consumer两个直接子任务推进，沿TODO-04/05/09验收。具体独立WT、sibling管理路径、共享writer/migration与四路径可移交请求见[唯一handoff](../../docs/evidence/wpf-mature-02/claude-message-settings-handoff.md)。本parent管理owner保留；四profile路径已明确停写并原子交回，child仍须fresh amend现有claim后接收。首leaf已main22d5，下一片精确source-only闭包/共享F01接线/唯一migration请求以[child handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)为权威，不复制子TODO。OpenSSL ca6a checkpoint保持PENDING_RESOURCE，不继续扩诊断。完整Codex能力及真实用户验收不删减。
+
+2026-10-06 17:16：TODO-03进入[真实native目录一次观察设计](../../docs/evidence/wpf-mature-02/native-catalog-probe/README.md)，GO授权准备，复用R06与原policy、最多1目标/45s/0turn；实际NOT_OPEN。ClaudeCORE已获限定批准，共享consumer/UI与完整能力验收继续推进，不以目录替代资格。
