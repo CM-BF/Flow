@@ -22,6 +22,16 @@ export function TerminalScreen({ controller }: { controller: InteractionControll
     <Text bold>Flow · {state.connected ? 'connected' : 'not observing'}{state.busy ? ' · working' : ''}</Text>
     <Text dimColor>{state.selected ? `${visible(state.selected.title, 80)}  ${state.selected.id}` : 'Select /conversations or /new. /help lists commands.'}</Text>
     {state.pending && <Text color="yellow">{state.pending.status === 'unknown' ? 'Acknowledgement unknown — saved original request. Use /recover.' : 'Submitting immutable request…'}</Text>}
+    {state.view === 'queue' && <Box flexDirection="column">
+      <Text bold>Queue · {state.queue?.paused ? 'paused' : 'not paused'} · revision {state.queue?.queueRevision ?? 'unknown'}</Text>
+      <Text dimColor>Pause stops later promotion, not current work. Resume may start the next item.</Text>
+      {state.queue?.currentTurn && <Text>Current task: {visible(state.queue.currentTurn.taskId, 128)} · {state.queue.currentTurn.taskStatus}</Text>}
+      {state.queue?.blocked && <Text color="yellow">Queue gate: {state.queue.blocked}</Text>}
+      {!state.queue && <Text color="yellow">No current queue observation. Use /queue.</Text>}
+      {state.queue?.items.slice(0, Math.max(1, Math.min(20, rows - 11))).map(item => <Text key={item.id}>{item.sequence}. {item.state} · {visible(item.preview, 120)}{item.truncated ? ' [preview]' : ''}</Text>)}
+      {state.queue && state.queue.items.length > Math.max(1, rows - 11) && <Text dimColor>Resize to show the rest of this page.</Text>}
+      {state.queue?.nextCursor !== null && state.queue?.nextCursor !== undefined && <Text dimColor>More: /queue next</Text>}
+    </Box>}
     {state.view === 'conversation' && (!observed || observed.panel === 'body') && turns.map(turn => <Box key={turn.id} flexDirection="column" marginTop={1}>
       <Text>You: {visible(turn.userText, 350)}</Text>
       {observed?.segments.length ? textWindow!.segments.map(segment => <Box key={segment.id} flexDirection="column">

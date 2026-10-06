@@ -1,12 +1,15 @@
 import { z } from 'zod';
 import type { FlowClient } from '@flow/client';
-import { conversationCreationSchema, conversationTurnSchema } from '@flow/contracts';
+import { conversationCreationSchema, conversationTurnSchema, type ConversationQueuePage } from '@flow/contracts';
+import { queuePauseIntentSchema, queueResumeIntentSchema } from './queue-control/index.js';
 import type { TurnObservationView } from './observation/index.js';
 import type { Command } from './commands.js';
 const identity = { version: z.literal(1), connectionId: z.string().min(1).max(160), key: z.uuid() };
 export const intentSchema = z.discriminatedUnion('kind', [
   z.strictObject({ ...identity, kind: z.literal('create'), input: conversationCreationSchema }),
   z.strictObject({ ...identity, kind: z.literal('send'), conversationId: z.uuid(), input: conversationTurnSchema.extend({ mode: z.literal('follow-up') }) }),
+  queuePauseIntentSchema,
+  queueResumeIntentSchema,
 ]);
 export type Intent = z.infer<typeof intentSchema>;
 export interface IntentStore { load(): Promise<Intent | null>; save(intent: Intent): Promise<void>; clear(): Promise<void> }
@@ -17,9 +20,10 @@ export interface TurnView {
   effectiveModel: string | null;
 }
 export interface InteractionSnapshot {
-  view: 'conversation' | 'conversations' | 'profiles' | 'help';
+  view: 'conversation' | 'conversations' | 'profiles' | 'help' | 'queue';
   connected: boolean; busy: boolean; closed: boolean; draft: string; notice: string;
   observation: TurnObservationView | null;
+  queue: ConversationQueuePage | null;
   selected: { id: string; title: string; revision: number; requestedModel: string } | null;
   turns: TurnView[];
   conversations: { id: string; title: string }[]; conversationCursor: string | null;
