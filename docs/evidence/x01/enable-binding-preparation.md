@@ -12,6 +12,12 @@
 
 锁顺序维持 runner → task → attempt（`runners.ts:20–40`）；新调用随后锁 registration。若任务受理需锁 host runner，应先 runner 再 registration；configure/disable 不再反向锁 runner/task。沿旧 FOR SHARE fence，不做 SHARE→UPDATE 升级。执行未知明确复用现 retained admission/journal 和停止新 claim 路径，不另建 plugin 执行 FSM。取消只停止观察；lease 到期、disable、删除文件或 ESM cache 操作都不是包结束/卸载证明。
 
+**交 Lead 决策的最小字段（候选，不是新公有合同）**：
+- authenticated runner 的 host 发布仅 `{storeId: bounded64, hostApiMajor: 1, harness: 'fixture'}`；runnerId 取凭据，中心时间取 DB。owner enable 明确选择该 runner/store；center 已安装材料来自原 operator digest allowlist，runner 执行前仍核自己的 allowlist/实际 receipt。该 tuple 对本次 runner 资格固定，冲突配置不静默覆盖；需要换 store 先协调旧 refs/新资格，不新增通用能力平台。发布记录不是 loaded 或实时 availability。
+- enable 请求 `{expectedRevision, materialInstallOperationId, targetRunnerId, storeId, reason}`；disable `{expectedRevision, reason}`。registrationId 来自路由，已安装版本/material/hostApi 从中心029与X02取值；新 binding 只接受当前一致资格，不能接 caller 自报 expected/current 材料证明。
+- task binding 下发 `{schemaVersion:1, bindingId, invocationId, taskId, registrationId, registrationRevision, versionId, materialInstallOperationId, targetRunnerId, storeId, materialId, treeDigest, hostApiMajor:1, artifact:{artifactId,name,version,bytes,sha256,integrity}, configuration, inputDigest}`；无路径/entrypoint URL/token，attemptId/ownerVersion 仍来自原 claim envelope，configuration 固定原 typed 值并拒本首宿主不支持类型。
+- grant gate 请求仅原 ownership + `{bindingId, invocationId, phase:'load'|'invoke'}`；中心反查 task/material/host/input，读取当前 tool grant，返回同身份的有限 phase receipt。第二 gate 必须独立核当前权限，即使同身份第一 gate 已成功；ACK未知不执行对应动作，恢复只读历史，不根据已受理自动重执行。执行/来源回报仍走原 event 序列，确切事件字段在共享 union owner 处冻结。
+
 ## 精确路径候选与依赖（不是领取）
 
 | 下一片责任 | 精确 literal 候选 / 共享输入 |
@@ -21,7 +27,7 @@
 | 旧 leaf 的实际权限 gate 扩展，须重新领取 | `apps/runner/src/plugins/host.ts`, `apps/runner/src/plugins/host.test.ts`：明确两阶段 gate，真实异步 import 期间收紧 grant 后零 invoke、第二 gate ACK 未知零 invoke、首次未知恢复不执行。两源已交回且不在当前 v4，必须 fresh scope 追加成功后才改；原 leaf approval 不覆盖新语义 |
 | F01 导出/共用客户端/默认 mount | `packages/contracts/src/index.ts`, `packages/client/src/index.ts`, `apps/server/src/index.ts`；CLI 具体接线由 Lead 同合同安排，Web/TUI 消费这套客户端，不各造 HTTP |
 
-13:56:33 UTC 账本快照：F01 v35 持三个 index；S01P06 v1 持 runtime/runtime-capacity.test.ts；上表其余被抽查 shared 路径无 active writer，**空闲不等授权**。14:06 后 Lead 正式通知 P06 已 main5db，本次实际核该固定 main clean，原 15 接缝仅 runtime 改变，直接 helper 已纳入输入；原 owner 停写/交回 receipt 尚待，不擅自 take。当前 X01 v4 仍只持中心 8 源与两 metadata。runtime 接线须待真实 release receipt，再 fresh 领取。中心 main 接收、Lead 冻结 host 资格、公共 binding/receipt 字段与唯一 SQL 后，按最终最小职责原子 amend。
+13:56:33 UTC 账本是历史快照。Lead 已正式确认 P06 main5db；实际核固定 main clean，原 15 接缝仅 runtime 改变，直接 helper 已纳输入。原 owner release receipt 为 COMMITTED `2026-10-06T14:07:19.852Z` / `f1fa2bdb…v2 released`，本次又读回账本确认；这只解除旧占用，不授 X01 写权。当前 X01 v4 仍只持中心 8 源与两 metadata。须 Lead 冻结 host/公共 binding/receipt 与唯一新 SQL，然后 fresh 领取；029保留为已审材料安装，O14的030待Lead安排，不占用或猜新号。
 
 ## 验证及完整目标
 

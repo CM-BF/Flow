@@ -203,5 +203,14 @@
     "apps/runner/src/runtime.ts"
   ],
   "additionalDirectInput": "apps/runner/src/attempt-wakeup.ts",
-  "p06Handoff": "MAIN_RECEIPT reported by Lead/root for5db; owner source handback receipt still pending at this design update; no new writer claim."
+  "p06Handoff": "Main5db accepted; former writer v2 release COMMITTED, independently read back; no X01 source authorization.",
+  "p06ReleaseInput": {
+    "claimId": "f1fa2bdb-a669-4c6f-8ff7-d5efa694c21f",
+    "version": 2,
+    "state": "released",
+    "committedAt": "2026-10-06T14:07:19.852Z",
+    "receiptSha256": "c8fdf71826c9a20026837c22e6c83fcc1069946e9f599a7051789eb6b3ff9856"
+  },
+  "latestClaimCheckAt": "2026-10-06T14:09:00.650Z",
+  "nextSourceClaimTaken": false
 }

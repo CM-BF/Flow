@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 14:07:30 UTC |
+| 最近更新时间 | 2026-10-06 14:09:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -95,3 +95,5 @@
 2026-10-06 13:58:30 UTC：fresh ada576 clean/v4 ACTIVE，仅形成[下一启用与任务绑定接缝](../../docs/evidence/x01/enable-binding-preparation.md)，15输入固定main d4a2e0a。重点保留单revision、disable只拒新binding、真实unknown复用retained/journal/停止新claim；runtime等待P06正式main与原owner交回，未take共享范围。中心a578仍已审待main，不把设计当实现；0新工程测试/PG/SDK/provider。新DDL/host资格/共享字段由Lead协调，完整原TODO不减。
 
 2026-10-06 14:07:30 UTC：按Mika设计门禁补充 import完成→invoke前再次实时tool grant核验，两gate共用binding/invocation身份，任何授权ACK未知不执行/不重放包；旧host两源须fresh重新领取，不沿用v4。新binding资格必须与X02当前revision/version/config/material/host一致，旧enabled指针不能绕过。接收P06 main5db事实后重绑16只读输入，仅runtime改变并纳AttemptWakeup；原owner handback仍待。当前仅metadata，中心a578/100bindings保持，0工程测试。
+
+2026-10-06 14:09:00 UTC：后继接缝补有限host发布、enable/disable、冻结binding及load/invoke gate的最小字段候选，供Lead冻结；仍未定义第二执行FSM或领取新产品。P06正式main5db/v2释放收据已读回，旧占用解除不授本owner权限。029与100固定证据不动，O14 030不占。当前磁盘资源HOLD，仅小metadata，无新PG/build/install或清理。
