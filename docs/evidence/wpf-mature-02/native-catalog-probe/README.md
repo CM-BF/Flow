@@ -13,7 +13,7 @@
 ## 一次协议与资源生命周期
 
 1. 单时钟从入口固定输入 hash 之前开始，先以 wx 预约。mkdtemp 成功立即登记原路径/未知 identity，随后核真实路径、inode、0700；只有确认的自有目录可清。创建空 `state/{home,codex,tmp,cwd}` 与只读 control；不复制个人配置或读取账户。七个且仅七个 env：PATH=/usr/bin:/bin、HOME=own/home、CODEX_HOME=own/codex、TMPDIR=own/tmp、LANG=C、LC_ALL=C、TZ=UTC。
-2. 全局 10s 前最多一次 R06 factory。固定 clientInfo，capabilities=null；自动 initialize→initialized 完成才 ready。frame=128KiB，inbound/outbound queue=256KiB、各最多8帧，pendingRequests=2、serverRequests=1；initialize/request 各最多10s并受全局截止约束。宿主1进程与最多1个 native 目标分别记账；sandbox-exec exec 属同一目标链，不调用 Node synthetic/编译器。
+2. 全局 10s 前最多一次 R06 factory。固定 clientInfo，capabilities=null；自动 initialize→initialized 完成才 ready。frame=128KiB，inbound/outbound queue=256KiB、各最多8帧，pendingRequests=1、serverRequests=1；initialize/request 各最多10s并受全局截止约束。宿主1进程与最多1个 native 目标分别记账；sandbox-exec exec 属同一目标链，不调用 Node synthetic/编译器。
 3. 从 factory 后只有一个 receive loop。最多8通知、累计 JSON 编码值≤128KiB；公开仅总数/固定分类，不归档通知参数或远端错误正文。任何 server-request、未知通知方法或超界立即调用同一 close，绝不 respond、dispatch、授权或查询 auth。初始通知允许表仅 `configWarning`、`deprecationNotice`；其正文不输出。正常 ready 后最多一次 `model/list`，精确 params `{cursor:null,limit:20,includeHidden:false}`；不发 thread/turn/account 请求。
 4. 单页结果序列化≤128KiB、data≤20；复用 `catalog.mjs` 的完整字段校验，catch 只记有限错误码，不透传 AssertionError。nextCursor 非 null 仅记 partial，不分页。catalog、requested、account/actual 分开，accountAvailability/actualModel/effort/tier 一律 unknown。通过目录不签发 NativeWriteAuthority 或 >=Sol 实际模型资格。
 5. 无论 ready/request 的结果如何，finally 都 await R06 close。这是 controlled close，不能写自然 EOF。记录 reason、confirmed-exited、exit/signal、childCloseObserved、streamEnded 各自事实；stderr 完整还需 !incomplete/!truncated/!observerFailed。直属 child 关闭不是全进程 writer fence；R06 无 process-group 观察，不伪填 groupGone。unconfirmed 保留全部已知根、退出宿主且明确目标 settlement unknown；不另起 supervisor 或重试。
@@ -24,14 +24,18 @@
 
 私有 stderr sink 同步收最多8KiB，复用 `retainPrivateText` wx/noFollow/0600/partial write/flush/close/identity；完整条件不满足仍保存已有 prefix 并标 incomplete。失败的私有副本身份不能被最终 receipt 失败抹掉，副本独立于目标根保留，独审后另做同 inode 删除。仅允许 owner/reviewer 有界诊断，公开不含原文、环境或私人路径。局部 `.gitignore` 精确排除本片私有 stderr/outer 文件，不碰 shared Git。
 
-`raw≤1MiB` 是本片**实际留存材料**上限：prepared≤256KiB、单页材料≤128KiB、通知只计数、stderr captured+磁盘≤16KiB、receipt/CLI≤32KiB、outer capture+副本≤8KiB、人工 archive≤128KiB，剩余留作有限 overhead；最终逐项实算，prepared/archive互斥，删除不冲减已计写入。R06 不提供累计 stdout wire 字节；frame/queue 仅峰值限制，报告 `stdoutWireBytes=null`，绝不声称整个 wire 输出≤1MiB。
+`raw≤1MiB` 是本片**实际留存材料**上限：prepared≤256KiB、单页材料≤128KiB、通知只计数、stderr captured+根原件+私有副本≤24KiB、receipt/CLI≤32KiB、outer capture+副本≤8KiB、人工 archive≤128KiB，剩余留作有限 overhead；最终逐项实算，prepared/archive互斥，删除不冲减已计写入。R06 不提供累计 stdout wire 字节；frame/queue 仅峰值限制，报告 `stdoutWireBytes=null`，绝不声称整个 wire 输出≤1MiB。
 
-ownTMP 上限8MiB同时检查 logical 和 allocated（blocks×512），覆盖整个 own allow root 的 state；每250ms及各阶段/关闭后做有界 nofollow inventory（最多512项、深度8，symlink/未知类型/inode改变即 unknown 停止）。超界立即 close；轮询不是硬磁盘配额、未观察的写删峰值未知。清理前必须 childCloseObserved、streamEnded 且 confirmed-exited、宿主 sink FD closed、根同 inode；任何资源 identity/inventory/close 未知保留精确已知路径，retained 完整性单列，不输出目录内容。自动扫描只触本次两个随机 own roots。
+ownTMP 上限8MiB同时检查 logical 和 allocated（blocks×512），覆盖两个本次 roots 的全部内容（含目录/control/profile/state）；每250ms及各阶段/关闭后做有界 nofollow inventory（最多512项、深度8，symlink/未知类型/inode改变即 unknown 停止）。超界立即 close；轮询不是硬磁盘配额、未观察的写删峰值未知。清理前必须 childCloseObserved、streamEnded 且 confirmed-exited、宿主 sink FD closed、根同 inode；任何资源 identity/inventory/close 未知保留精确已知路径，retained 完整性单列，不输出目录内容。自动扫描只触本次两个随机 own roots。nested目录枚举前后及递归完成时复核dev/ino与非symlink；这仍不是面对并发恶意替换者的race-proof文件系统隔离，未观察竞争保持限制。
 
 ## 精确实现范围与零目标验证
 
-新实验目录仅 `probe.mjs`（消费/own roots/有限记录）、`execute-reviewed.mjs`（指纹/预约/固定参数/CLI）、`execute-window.sh`（既有 time+UTC 方式）、`probe.test.ts`；新 evidence 保存设计/inputs/固定 packet/局部 ignore。不改 R06/loader/catalog/policy/private-text 和其他任务源码。复用其现接口，不串接多个旧 runner。
+新实验目录仅 `probe.mjs`（消费/own roots/有限记录）、`execute-reviewed.mjs`（指纹/预约/固定参数/CLI）、`execute-window.sh`（既有 time+UTC 方式）、`probe.test.ts`与其单文件Vitest config；新 evidence 保存设计/inputs/固定 packet/局部 ignore。不改 R06/loader/catalog/policy/private-text 和其他任务源码。复用其现接口，不串接多个旧 runner。
 
 必要 fake 覆盖：exact argv/env/一次握手与一次请求、partial 不分页、server-request/未知通知立即 close、bad page/timeout 最终 close、child/stream unknown 保根、mkdtemp后身份失败、stderr partial+最终persist失败仍保 identity、inventory 超界/未知停止。fake transport 不调用 R06 factory，0子进程/监听；惰性 import 另核 0factory。执行小检查前向 Mika 给出单文件/1worker/native configLoader、raw≤16KiB/cache≤32MiB与 fresh≥1GiB+32MiB门槛；不与 CORE/他队实际窗口争用，尚未执行。
 
 方法：本地 find-skills / openai-docs / brainstorming / clean-code（既定 sickn33 bdacd76 方法基线，不安装）；固定来源优先于当前 docs，未知保持未知。clean-code 检查单一进程 owner、固定 recipe、错误不泄露/不丢资源、没有第二 FSM；本设计不是 source approval 或运行 receipt。
+
+设计7e9bd5b2已获Mika/root 17:17:20 UTC只读APPROVED，16repo+4external+2archived无差异；实现只纳pendingRequests=1与双root全量计量收紧。此处实现仍未验证/未独审，实际NOT_OPEN。固定窗口字面go-native-catalog-probe-once。caller不发turn/auth/login/推理请求；native自身外网尝试/账单未经观察保持unknown，不由deny配置推0。
+
+源码checkpoint包含薄caller/entry/outer与12项fake用例，检查PENDING；末次result部分写失败返回safe result与该descriptor身份，CLI另判post-persistence字节/时间。fingerprint直接复用原node-rootliteral inert entry的具名函数（它仅静态加载原loader；旧host动态执行分支不会进入），不复制transport或拉入旧canarydriver。

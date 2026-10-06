@@ -73,3 +73,5 @@ architecture_read给出同固定main的public coalescer最小源闭包10项共48
 旧stream.test.ts9946B的11项因runnerEventSchema扩成25源，不能称10源闭包可跑完整旧suite。其中🙂×300000为单delta1,200,000B，超过此次总frame窗口，保留断言且本窗NOT_SELECTED。新专测可在同一较小contract limit下对双实现核truncation phase/prefix语义，但不称生产1MiB限额实测。主样本建议128KiB正文及同长full assistant，baseline/candidate分别计注入量，约512KiB加envelope；其余边界共享余量。执行前与逐frame均计量，一次窗口上界不按两实现各重置。真实量测透传原Hash.update/Buffer.byteLength方法，计数器自身计量不混入；只称seal重复前缀扫描减少，不声称append/utf8Prefix整体线性或未经测量的CPU收益。
 
 该闭包是供Lead核定的最小source-only请求，当前未provision/领取/运行；不能因provision复制全库。原Node owned-openssl input/prepared26及旧archive快照不改；本研究文书不作为诊断prepared，只有当前共享metadata快照按诊断archive单计。方法沿已读find-skills/clean-code：保持一个accumulator职责、同public Interface和有界直接验证，不新建哈希框架。
+
+S01低优先idle后继由原owner在固定7fd60892e2c4e8d5e6a7ea88d205d1c07a5a9859仅更新[原S01-06计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/plans/s01-runner-capacity/plan.md)。固定4df三blob的每空轮2replace/4sync为静态事实、0实测；旧S01 runtime=bdbad且无attempt-wakeup，未来先受控固定输入。原claim不含idle evidence，未新建实验或amend；Native/CHAT优先，0run/PG/provider。
