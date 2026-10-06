@@ -1,0 +1,12 @@
+{
+  "state": "NOT_AUTHORIZED_TO_EXECUTE_YET",
+  "command": "node24 --import tsx experiments/runner-capacity/mixed/main.ts <Mika-windowId> <exact-clean-executionHEAD> after-drain-v1",
+  "envPolicy": "Only source /tmp/flow-coordination.env and export FLOW_S01_ADMIN_URL from existing FLOW_COORDINATION_DATABASE_URL; do not print values or source historical launch scripts",
+  "requiredMain": "0cee7556befa1988e60bae94b510240122c34b88",
+  "requiredSource": "a677f2b8a22aa5ecdcc1be3709cd73a090f34702",
+  "windowId": null,
+  "attemptsAllowed": 1,
+  "retry": false,
+  "actualOutput": "docs/evidence/s01/mixed-after-drain-run",
+  "failurePolicy": "Preserve original failure and any reservation/unknown journal; do not retry or fill B"
+}

@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T13:16:42.301120+00:00 / maincde6646已推送；只归档看板与资源事实 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T13:19:31.453782+00:00 / maina3e670b；事件状态与实验固定输入接收 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 前main280289；本批附件App、历史兼容与固定aeb架构，31源精确比对 |
+| 工作基线 / HEAD | maina3e670b；P05固定6336，两种public caller保持；mixed全26源+2覆盖 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
-| 检查状态 | 31源同获审target；当前组合PG2（2未选）+官方UI绑定17/root与Web types0；首次ENOSPC导入前0tests保留，不重跑原矩阵 |
-| 已集成main状态 / HEAD | cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd已包含附件App、历史兼容和固定aeb图；个人backend362/v15、Web8d8/v2保持 |
+| 检查状态 | 30个固定源/config逐hash相等；当前PG4选中/5未选通过，root与mixed类型0；不重跑容量 |
+| 已集成main状态 / HEAD | 附件/历史/固定aeb图已maincde；本片已审P05/mixed待本次fast-forward，个人runtime362/v15不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 附件可随消息发送和排队，当前历史记录兼容组合通过；固定架构快照已更新。 |
-| 下一可用交付 | 本批已交付；连接恢复与固定后台发布继续独立实施。 |
+| 当前产出 | 减少事件状态的重复数据库写入；容量实验完整源码与原结果可追溯。 |
+| 下一可用交付 | 本批完成主线接收；连接恢复和固定后台发布继续。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -155,3 +155,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 13:11 UTC：本批31固定source无改写，attachment-only/mixed真实production HTTP/PG2与官方core绑定17通过，root/Web类型0；磁盘临时不足仅导致两次导入前0tests，原失败保留，自有stage清理后仅重跑未执行局部。没有重复191/浏览器/provider或个人服务操作。详细[受控组合](../../docs/evidence/i02/attachment-current-integration.json)。154来源只做登记/解析，D06仍固定aeb。
 
 2026-10-06T13:16:42.301120+00:00：154来源实际部署回执与OPS磁盘预算本批归档。前文13:11为早期手填批标签，运行时间以13:08:38.883Z原snapshot及commit时间为准；没有在归档时重测产品或变更个人服务。
+
+2026-10-06T13:19:31.453782+00:00：P05 Mika接受独审APPROVED6336，S01完整准备6de/结果64911/observer c259分别已有独立批准。本次精确source组合与4个当前public PG消费者/root+mixed types0见[event-capacity-integration](../../docs/evidence/i02/event-capacity-integration.json)。原容量raw与UNKNOWN口径不改，无新provider/容量窗口/个人服务操作。

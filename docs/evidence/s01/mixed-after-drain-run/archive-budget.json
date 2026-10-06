@@ -1,0 +1,83 @@
+{
+  "recordedAt": "2026-10-06T10:51:09.061Z",
+  "measuredDuringRunBytes": 36092931,
+  "newStageLogicalBytesBeforeMetadata": 13330757,
+  "extraMetadataReserveBytes": 65536,
+  "conservativeArchiveUpperBoundBytes": 49489224,
+  "totalLimitBytes": 67108864,
+  "withinLimit": true,
+  "basis": "Final driver measurement already includes original evidence/IPC/owned Node streams. Add the entire current new-stage directory again as a conservative archival/transfer allowance, plus 64KiB for this receipt, manifest, review and status closure. Old frozen stage files are not retransmitted by this allowance. This is not an OS network-counter claim.",
+  "files": [
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/analysis.json",
+      "bytes": 26495,
+      "sha256": "69cdebcbac25088fd2f1b58e683e9269036ba5cc63460be708beccc2104a0e4a"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/cli-receipt.json",
+      "bytes": 404,
+      "sha256": "bbd70d8193c2d341dc234b07384387a4a99364626e1b4d845a56f06d52b200b3"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/cli.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/cli.stdout.txt",
+      "bytes": 214,
+      "sha256": "1ff65c5954840f5e322891c670211c3cba05a12a438038986c1950202fd7b7f7"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/history-check.json",
+      "bytes": 424,
+      "sha256": "812584b04bf23fa4ead1fa55702ed41e1109de90ea1cdce7d71d87b5034603dd"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/journals.json",
+      "bytes": 1664,
+      "sha256": "1711320119fde9b5c6f8704324ec316a6ce6e2419dac604510a468df9a09b9c1"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/observations.json",
+      "bytes": 12984758,
+      "sha256": "bfc7c4592d8b887076f519c70dd6453596c3a81136a4dcf25cae16e141faf6f2"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/owned-resources.json",
+      "bytes": 360,
+      "sha256": "6e32acaf7250a024c74c8c175b34a0cc92ec4bf91447167d2f18ebf5c5450bd5"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/quality.md",
+      "bytes": 1065,
+      "sha256": "b4aaaaf147908e4c38e2a501f4c764043fcf93588083968ea8055c7fb4fa1844"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/raw-freeze.json",
+      "bytes": 1920,
+      "sha256": "2e92194e7675ee18b214e0ad7cd767e69f5a0f8179936b8934f1a66a1d8149e2"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/report.md",
+      "bytes": 3713,
+      "sha256": "4162e2763d63041a00d58e572d9926ec27092e4c9357537743a2974aa5ef4d38"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/reservation.json",
+      "bytes": 4953,
+      "sha256": "c2136807b3f7a2ea1b6ed094ec28ff6e23eb16bf92b0b50cc6f3f7633df09d8e"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/result.json",
+      "bytes": 304057,
+      "sha256": "ab8ce66695b3ec25b10f2a5cc913ea2a8ed50644138667b140dd73ec98f6302f"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/window-authorization.json",
+      "bytes": 730,
+      "sha256": "fe2f2777ce12e0ad8fababb4ffdfa3f3652262982649d5712198e550fd242eee"
+    }
+  ],
+  "remainingToLimitBytes": 17619640
+}

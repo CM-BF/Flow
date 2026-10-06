@@ -1,0 +1,60 @@
+{
+  "basis": "Receipt archived from the single tools.exec_command process exit and exact stdout; this document is metadata, not another execution.",
+  "windowId": "mika-s01-mixed-20261006-100634",
+  "executionHead": "12154f16f6a5e480bc3de64f96d1019102d56c0d",
+  "sourceImplementation": "634926238f749fb1547a5973b521bc6dc5498574",
+  "exitCode": 1,
+  "stdout": {
+    "path": "docs/evidence/s01/mixed-run/cli.stdout.txt",
+    "bytes": 294,
+    "sha256": "1df730d35513f8d8178e310b6e21d4547bdf149373c50b33425d9793c10db720"
+  },
+  "stderr": {
+    "path": "docs/evidence/s01/mixed-run/cli.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "final": {
+    "output": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-run",
+    "success": false,
+    "errors": [
+      "case_admission_or_outbox_retained",
+      "admission_or_outbox_retained",
+      "both_cases_not_completed"
+    ],
+    "finalElapsedMs": 10673.1145,
+    "finalMeasuredBytes": 18660992
+  },
+  "runSuccess": false,
+  "byteAccountingComplete": true,
+  "resourceSummary": [
+    {
+      "pid": 39879,
+      "role": "runner",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "pid": 39843,
+      "role": "center",
+      "exited": true,
+      "forced": false,
+      "ipcFailed": false,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "databaseName": "flow_s01_mixed_39779_f8dba4e33bbd445ebe27114c00627cd6",
+      "dropped": true,
+      "retained": false
+    },
+    {
+      "workdir": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-mixed-FKye9L",
+      "retained": true
+    }
+  ],
+  "noRetry": true
+}

@@ -1,0 +1,53 @@
+{
+  "recordedAt": "2026-10-06T12:56:56.833682+00:00",
+  "base": "3609d8dabd3713e37d877af4f96d2daa2bd96e57",
+  "verdict": "EXPECTED_RED",
+  "selected": 1,
+  "passed": 0,
+  "failed": 1,
+  "unselected": 8,
+  "failure": "actual PG task writes 3; required 1",
+  "cleanup": {
+    "databaseName": "flow_s01p05_8ee63e9fe9ac437d8d4efcb2085fb596",
+    "postgresVersionNumber": "160013",
+    "taskCount": 1,
+    "connectionsClosed": true,
+    "databaseAbsent": true,
+    "adminClosed": true
+  },
+  "command": "Node24 vitest4.0.18 run --config docs/evidence/s01p05/vitest.config.ts apps/server/src/event-state.test.ts -t persists one task UPDATE per accepted batch with all materialized values and attempt first",
+  "actualCapacityRuns": 0,
+  "providerCalls": 0,
+  "files": [
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8678,
+      "sha256": "4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853"
+    },
+    {
+      "path": "apps/server/src/event-state.test.ts",
+      "bytes": 23695,
+      "sha256": "1b9737a37932fdf8837e26e953caeb9c6f6d790436700fa2a76731d77b0f50c9"
+    },
+    {
+      "path": "docs/evidence/s01p05/vitest.config.ts",
+      "bytes": 380,
+      "sha256": "a07b065884613ea9f926f1e55771d8bf4f5799ee6c6d519749eee975874e3e01"
+    },
+    {
+      "path": "docs/evidence/s01p05/tsconfig.json",
+      "bytes": 940,
+      "sha256": "908d6571d2bdda410727c050af36315c772ef6f4b460a567fead9f8241981510"
+    },
+    {
+      "path": "docs/evidence/s01p05/red.log",
+      "bytes": 2320,
+      "sha256": "1e415dda63e9712ee8b727f148399c536deb15bf973a3f20684bd517760528d5"
+    },
+    {
+      "path": "docs/evidence/s01p05/red.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    }
+  ]
+}

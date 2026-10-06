@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+ ✓ experiments/runner-capacity/mixed/sustained-proof.test.ts (6 tests) 29ms
+ ✓ experiments/runner-capacity/mixed/observe-pg.test.ts (3 tests) 3ms
+ ✓ experiments/runner-capacity/mixed/profile.test.ts (4 tests) 3ms
+ ✓ experiments/runner-capacity/mixed/run-identity.test.ts (10 tests) 65ms
+ ✓ experiments/runner-capacity/mixed/evidence-bounds.test.ts (4 tests) 2ms
+ ✓ experiments/runner-capacity/mixed/proof.test.ts (2 tests) 1ms
+ ✓ experiments/runner-capacity/mixed/stream-bytes.test.ts (3 tests) 2ms
+ ✓ experiments/runner-capacity/mixed/contract.test.ts (3 tests) 2ms
+ ✓ experiments/runner-capacity/mixed/deadline.test.ts (3 tests) 3ms
+
+ Test Files  9 passed (9)
+      Tests  38 passed (38)
+   Start at  05:20:38
+   Duration  1.01s (transform 93ms, setup 0ms, import 156ms, tests 110ms, environment 1ms)
+

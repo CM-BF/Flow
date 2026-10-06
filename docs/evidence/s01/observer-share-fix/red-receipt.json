@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-06T12:41:41.421003+00:00",
+  "exitCode": 1,
+  "actualSelection": 4,
+  "expectedPass": 3,
+  "expectedFail": 1,
+  "command": "Node24 vitest run experiments/runner-capacity/mixed/observe-pg.test.ts --config experiments/runner-capacity/mixed/vitest.config.ts --no-cache",
+  "source": [
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.ts",
+      "bytes": 5328,
+      "sha256": "f0e84b4271ac0fc2f14fd3266cf4a5264b2254eab5b234db856273b9fa56e6aa"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.test.ts",
+      "bytes": 5311,
+      "sha256": "2831b5e5eedecf3c583b7b1c97623a1264f9746de08c6d24ead0a41ce7e4c529"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 11992,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    }
+  ],
+  "actualCapacityCalls": 0
+}

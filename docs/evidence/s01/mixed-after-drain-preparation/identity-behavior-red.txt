@@ -1,0 +1,36 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+ ↓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > keeps the original default reservation and production base
+ × experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > selects only the fixed post-drain base and independent output 2ms
+   → Unreviewed mixed-run identity.
+ ↓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects an unreviewed identity ""
+ ↓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects an unreviewed identity "../mixed-run"
+ ↓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects an unreviewed identity "constructor"
+ ↓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects an unreviewed identity "after-drain-v2"
+ ↓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > accepts the two exact already-reviewed P03 source inputs without starting a runtime
+ ↓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects modified production bytes even when their length is unchanged
+ ↓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > rejects a missing required shutdown source
+ ↓ experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > does not add the later source requirement to the original identity
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/runner-capacity/mixed/run-identity.test.ts > separately authorized mixed-run identity > selects only the fixed post-drain base and independent output
+Error: Unreviewed mixed-run identity.
+ ❯ selectRunIdentity experiments/runner-capacity/mixed/run-identity.ts:12:9
+     10| export function selectRunIdentity(name = 'legacy-v1'): RunIdentity {
+     11|   if (name === 'legacy-v1') return legacy;
+     12|   throw new Error('Unreviewed mixed-run identity.');
+       |         ^
+     13| }
+     14| 
+ ❯ experiments/runner-capacity/mixed/run-identity.test.ts:12:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 skipped (10)
+   Start at  03:43:10
+   Duration  212ms (transform 32ms, setup 0ms, import 46ms, tests 3ms, environment 0ms)
+

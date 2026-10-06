@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+stdout | apps/server/src/event-state.test.ts
+{"kind":"s01p05-cleanup","databaseName":"flow_s01p05_c7e576ac1c6e4e89abf634b8f10eb6c4","postgresVersionNumber":"160013","taskCount":4,"connectionsClosed":true,"databaseAbsent":true,"adminClosed":true}
+
+ ✓ apps/server/src/event-state.test.ts (9 tests | 5 skipped) 1622ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed | 5 skipped (9)
+   Start at  06:18:57
+   Duration  2.64s (transform 426ms, setup 0ms, import 929ms, tests 1.62s, environment 0ms)
+

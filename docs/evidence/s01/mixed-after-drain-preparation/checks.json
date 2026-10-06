@@ -1,0 +1,65 @@
+{
+  "recordedAt": "2026-10-06T10:44:15.659Z",
+  "newChecks": {
+    "identity": {
+      "selected": 10,
+      "passed": 10,
+      "exitCode": 0,
+      "log": "identity-green.txt"
+    },
+    "strict": {
+      "exitCode": 0,
+      "log": "typecheck.txt",
+      "scope": "existing mixed/tsconfig.json extends root unchanged"
+    }
+  },
+  "red": {
+    "initialMissingModule": {
+      "tests": 0,
+      "exitCode": 1,
+      "log": "identity-red.txt",
+      "behavioralEvidence": false
+    },
+    "newMappingAbsent": {
+      "selected": 1,
+      "failed": 1,
+      "skipped": 9,
+      "exitCode": 1,
+      "log": "identity-behavior-red.txt"
+    }
+  },
+  "historicalChecks": {
+    "originalPreparation": 14,
+    "rerun": false,
+    "notAddedToNewCount": true
+  },
+  "frozenHistory": {
+    "priorFiles": 132,
+    "unchanged": 130,
+    "reviewedAdaptationCandidates": [
+      "experiments/runner-capacity/mixed/driver.ts",
+      "experiments/runner-capacity/mixed/main.ts"
+    ],
+    "oldRawManifestSupportUnchanged": true,
+    "oldSourceReproducibleAt": "634926238f749fb1547a5973b521bc6dc5498574"
+  },
+  "runtimeDependencies": {
+    "files": 6,
+    "allMatchFrozenBindings": true
+  },
+  "outputAlreadyExists": false,
+  "runtimeCalls": {
+    "newWindow": 0,
+    "pg": 0,
+    "http": 0,
+    "provider": 0,
+    "nativeSdk": 0
+  },
+  "notRun": [
+    "actual mixed window",
+    "old14 pure behavior checks",
+    "real driver preflight/import",
+    "old journal recovery",
+    "personal services or tabs"
+  ]
+}

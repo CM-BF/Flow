@@ -1,0 +1,50 @@
+{
+  "recordedAt": "2026-10-06T10:48:47.850Z",
+  "windowId": "mika-s01-after-drain-20261006-104557",
+  "executionHead": "5ea1b26f23fd7f24d1b89199a10b553dcab7fc18",
+  "sourceImplementation": "51541b0cad73dcad32c7374dc87d631f0b9a8432",
+  "runCount": 1,
+  "files": [
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/reservation.json",
+      "bytes": 4953,
+      "sha256": "c2136807b3f7a2ea1b6ed094ec28ff6e23eb16bf92b0b50cc6f3f7633df09d8e"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/owned-resources.json",
+      "bytes": 360,
+      "sha256": "6e32acaf7250a024c74c8c175b34a0cc92ec4bf91447167d2f18ebf5c5450bd5"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/journals.json",
+      "bytes": 1664,
+      "sha256": "1711320119fde9b5c6f8704324ec316a6ce6e2419dac604510a468df9a09b9c1"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/observations.json",
+      "bytes": 12984758,
+      "sha256": "bfc7c4592d8b887076f519c70dd6453596c3a81136a4dcf25cae16e141faf6f2"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/result.json",
+      "bytes": 304057,
+      "sha256": "ab8ce66695b3ec25b10f2a5cc913ea2a8ed50644138667b140dd73ec98f6302f"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/cli.stdout.txt",
+      "bytes": 214,
+      "sha256": "1ff65c5954840f5e322891c670211c3cba05a12a438038986c1950202fd7b7f7"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/cli.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-after-drain-run/cli-receipt.json",
+      "bytes": 404,
+      "sha256": "bbd70d8193c2d341dc234b07384387a4a99364626e1b4d845a56f06d52b200b3"
+    }
+  ],
+  "policy": "Raw bytes frozen immediately after sole authorized execution. Later analysis/review is separate metadata; no rerun."
+}

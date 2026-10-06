@@ -1,0 +1,30 @@
+{
+  "target": "634926238f749fb1547a5973b521bc6dc5498574",
+  "reviewer": "architecture_read",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-06T10:05:50Z",
+  "verdict": "APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "observedHead": "8b7d72bc66899e902c38bc9dc3ce38c35719e89f",
+  "dirty": false,
+  "manifestSha256": "4ded12de735d64edc4dda6675f73468adbf5a33f95ea2e902871a13162a8a5a7",
+  "bindingChecks": {
+    "source": 19,
+    "raw": 16,
+    "readonly": 16,
+    "runtime": 6,
+    "legacy": 78,
+    "allMatched": true
+  },
+  "checks": "14 distinct pure tests/5 files and strict noEmit0 existing raw evidence; reviewer did not execute tests",
+  "limitations": [
+    "Preparation approval only; no real workload",
+    "A then B fixed order and shared center/runner child retain warmup/background confounding",
+    "Phase uses parent IPC arrival, not synchronized cross-process timestamps",
+    "Node stream bytes exclude TCP retransmission and network-interface framing",
+    "No sampled Lock does not prove no lock waiting",
+    "Promise deadline does not cancel already issued OS operations; unknown resources retained",
+    "Actual window requires Mika instruction; no automatic reruns"
+  ]
+}

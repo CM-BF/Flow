@@ -1,0 +1,44 @@
+{
+  "state": "APPROVED",
+  "reviewer": "Mika / gpt-6-astra",
+  "reviewedAt": "2026-10-06 12:37:14 UTC",
+  "resultTarget": "64911a3c88488dfdebaa3a678bad659211e29209",
+  "reviewPacket": "88e68136172300c103e677237ad2615c32c5153a",
+  "manifestSha256": "3c66deb37fbcc3163093cb70857b651c6275346be5b82788d825fb90ae92328e",
+  "scope": "One fixed 128 fixture execution, persistent sessions, ACKs, cleanup and faithful observation; not native SDK capacity/SLO or entire Flow completion",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "verified": {
+    "bindings": 70,
+    "sourceEqualsApprovedAndExecution": true,
+    "readonlyMatchesFixedMain": 27,
+    "fixtureTaskAttemptSessionEach": 128,
+    "runtimes": 8,
+    "runnerOsProcesses": 1,
+    "windowEmitAckCount": 1536,
+    "persistedAndAcceptedEvents": 2304,
+    "sampledOwnershipCount": 30,
+    "conservativeSampleSeparationMs": 5780.707208,
+    "earliestAdapterEndAfterStartMs": 6001.085916,
+    "resolvedJournals": 8,
+    "runnerHttp200": 3784,
+    "recordedHttpErrors": 0,
+    "outerRealSeconds": 14.64,
+    "cliExit": 0,
+    "cleanupComplete": true,
+    "retained": [],
+    "reviewerRealCalls": 0
+  },
+  "knownMeasurementLimitation": "FOR SHARE classifier does not match fixed SELECT id,revoked query; its elapsed is UNKNOWN. This approval does not endorse that classification. Fix must have a separate source target and must not rewrite or remeasure this run.",
+  "reviewBudgetCrosscheck": {
+    "runtimeBytes": 88323950,
+    "archiveAtReviewBytes": 29863377,
+    "additionalReserveBytes": 262144,
+    "conservativeTotalBytes": 118449471,
+    "limitBytes": 268435456,
+    "priorArchiveBudgetRemainsHistoricalSnapshot": true
+  },
+  "noNewExecutionAuthorization": true
+}

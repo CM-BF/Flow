@@ -19,3 +19,7 @@ Lead必要整合10项、生产入口选择1项、Web20项、root/Web typecheck�
 ## 2026-10-06T09:58:56.844754+00:00 已审片段组合
 
 [固定输入与本地验证](../../docs/evidence/i02/native-tui-integration.json)保留各唯一独审结论及59个源码精确绑定。本次无手工产品冲突修复；必要直接消费者50/50与root/Web类型检查通过。clean-code安全点核职责、pin/unknown边界、S01入口及Web组合：原独审源不变，无新发现；Codex实际启动与个人发布保持后继，未将注入或fixture结果冒充原生调用。
+
+## 2026-10-06T13:19:31.453782+00:00 P05与S01受控接收
+
+P05源6336由chatui01_owner独审/Mika接受，S01完整源6de、固定结果64911与observer c259按各自固定review边界接收。本次30源/config与target逐hash相符；当前main工程类型新增保留，4public PG消费者/root及实验types0。集成事实见event-capacity-integration，不声称reviewer重跑或新容量结论。

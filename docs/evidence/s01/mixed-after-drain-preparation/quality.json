@@ -1,0 +1,49 @@
+{
+  "recordedAt": "2026-10-06T10:42:12.735Z",
+  "owner": "status_read",
+  "model": "gpt-6-astra",
+  "classification": "bounded existing driver input adaptation",
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "name": "brainstorming",
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    },
+    {
+      "name": "codebase-design",
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "name": "tdd",
+      "path": "/Users/citrine/.agents/skills/tdd/SKILL.md",
+      "sha256": "93ea419b76e9caaf26153b828e984f7c3fb136f4caa67b14af95f32ea965a1cc"
+    }
+  ],
+  "application": [
+    "Use a closed run identity at the existing driver Interface; do not duplicate driver or create another scheduler",
+    "Keep source/base/output and reservation ownership explicit; unknown remains fail-closed",
+    "Only new pure input/preflight seam tests; old 14 checks remain historical, no new workload",
+    "Historical source target vs new manifest clearly separated; no mutation of archived raw or retained journal"
+  ],
+  "state": "IMPLEMENTED_PENDING_FIXED_REVIEW",
+  "windowExecuted": false,
+  "reviewedAt": "2026-10-06T10:44:15.659Z",
+  "findings": [
+    "Only driver/main existing inputs changed; workload, cleanup, timing, process, proof and observations unchanged",
+    "Closed identity rejects unreviewed names; required source mismatch fails before reservation or resources",
+    "Old 132 hashes retain exact history; only two declared source adaptations differ in current WT",
+    "No duplicate driver, new product API, scheduler, state machine or resource hooks",
+    "10 different pure tests and strict0; initial0tests and 1 behavioral red kept; no window call"
+  ]
+}

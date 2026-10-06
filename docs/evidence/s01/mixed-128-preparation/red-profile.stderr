@@ -1,0 +1,64 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/runner-capacity/mixed/profile.test.ts > the single approved128 profile binds main, one8x16 case and independent reservation
+Error: Unreviewed mixed-run identity.
+ ❯ selectRunIdentity experiments/runner-capacity/mixed/run-identity.ts:21:9
+     19|   if (name === 'legacy-v1') return legacy;
+     20|   if (name === 'after-drain-v1') return afterDrain;
+     21|   throw new Error('Unreviewed mixed-run identity.');
+       |         ^
+     22| }
+     23| 
+ ❯ identity experiments/runner-capacity/mixed/profile.test.ts:7:24
+ ❯ experiments/runner-capacity/mixed/profile.test.ts:9:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  experiments/runner-capacity/mixed/profile.test.ts > 128 budget has no129th submission and preserves30seconds for cleanup
+Error: Unreviewed mixed-run identity.
+ ❯ selectRunIdentity experiments/runner-capacity/mixed/run-identity.ts:21:9
+     19|   if (name === 'legacy-v1') return legacy;
+     20|   if (name === 'after-drain-v1') return afterDrain;
+     21|   throw new Error('Unreviewed mixed-run identity.');
+       |         ^
+     22| }
+     23| 
+ ❯ identity experiments/runner-capacity/mixed/profile.test.ts:7:24
+ ❯ experiments/runner-capacity/mixed/profile.test.ts:17:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  experiments/runner-capacity/mixed/profile.test.ts > the128 gate needs128 distinct persisted sessions and exact ownership, never repeated observations
+Error: Unreviewed mixed-run identity.
+ ❯ selectRunIdentity experiments/runner-capacity/mixed/run-identity.ts:21:9
+     19|   if (name === 'legacy-v1') return legacy;
+     20|   if (name === 'after-drain-v1') return afterDrain;
+     21|   throw new Error('Unreviewed mixed-run identity.');
+       |         ^
+     22| }
+     23| 
+ ❯ identity experiments/runner-capacity/mixed/profile.test.ts:7:24
+ ❯ experiments/runner-capacity/mixed/profile.test.ts:25:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  experiments/runner-capacity/mixed/profile.test.ts > private SQL observation distinguishes the new SHARE fence without changing returned promises
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ experiments/runner-capacity/mixed/profile.test.ts:43:62
+     41|   const observe=observePg(proto,x=>records.push(x));
+     42|   try { await proto.connect(); expect(client.query('SELECT * FROM flow…
+     43|     expect(records.some(x=>x.category==='runner-row-share')).toBe(true…
+       |                                                              ^
+     44|   } finally { observe.restore(); }
+     45| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
