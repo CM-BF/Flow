@@ -1,0 +1,44 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/codex-app-server-conformance/node-rootliteral/composition.test.ts > listener close rejection returns exact retained roots instead of losing the resource receipt
+Error: FAKE_CLOSE_FAILURE
+ ❯ EventEmitter.server.close experiments/codex-app-server-conformance/node-rootliteral/composition.test.ts:13:108
+     11|   };
+     12|   server.address = () => ({ port: 43210 });
+     13|   server.close = (done: () => void) => { hook.listenerCloses++; if (ho…
+       |                                                                                                            ^
+     14|   return server;
+     15| } } }));
+ ❯ experiments/codex-app-server-conformance/isolation/compose-canary.mjs:40:14
+ ❯ Object.close experiments/codex-app-server-conformance/isolation/compose-canary.mjs:34:18
+ ❯ Module.runSyntheticCanary experiments/codex-app-server-conformance/isolation/compose-canary.mjs:202:54
+ ❯ experiments/codex-app-server-conformance/node-rootliteral/composition.test.ts:89:49
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  experiments/codex-app-server-conformance/node-rootliteral/host.test.ts > composition rejection before factory retains private root and cleanup/stdout remain unknown
+AssertionError: expected { …(24) } to match object { cleanupComplete: false, …(2) }
+(33 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "cleanupComplete": false,
++   "cleanupComplete": true,
+    "outputAccountingComplete": false,
+-   "stdoutBoundsConfirmed": false,
++   "stdoutBoundsConfirmed": true,
+  }
+
+ ❯ experiments/codex-app-server-conformance/node-rootliteral/host.test.ts:123:18
+    121|     { createTransport: factory, compose: async () => { throw Error('FA…
+    122|   expect(hook.calls).toBe(0);
+    123|   expect(result).toMatchObject({ cleanupComplete: false, outputAccount…
+       |                  ^
+    124|   expect(result.privateCleanup.retained).toEqual(hook.privateRoots);
+    125|   expect(hook.privateRoots.every(p => fs.existsSync(p))).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

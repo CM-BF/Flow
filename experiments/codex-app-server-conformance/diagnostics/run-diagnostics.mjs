@@ -43,7 +43,7 @@ function classify(bytes, expectedControlHash) {
   if (bytes.includes(Buffer.from('FATAL ERROR:'))) return 'node-fatal-error-text';
   return 'unknown';
 }
-function makePrivateSink(directory, number, owned, expectedControlHash) {
+function makePrivateSink(directory, number, owned, expectedControlHash, accounting = {}) {
   const file = path.join(directory, `attempt-${number}.stderr`);
   const fd = fs.openSync(file, fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_WRONLY | fs.constants.O_NOFOLLOW, 0o600);
   const record = { file, fd, identity: null, flush: false, close: false, bytes: null, sha256: null,
@@ -54,11 +54,13 @@ function makePrivateSink(directory, number, owned, expectedControlHash) {
   return {
     record,
     option: { maxBytes: 65536, write(bytes) {
+      accounting.observe?.(bytes.byteLength);
       let offset = 0;
       while (offset < bytes.byteLength) {
         const count = fs.writeSync(fd, bytes, offset, bytes.byteLength - offset);
         if (count <= 0) throw safeError();
         offset += count;
+        accounting.persist?.(count); // Actual successful partial writes count even if a later write fails.
       }
     } },
     finish() { finalizeFile(record, expectedControlHash); return publicArtifact(record); },
@@ -217,3 +219,6 @@ export async function runDiagnosticBatch() {
   }
   return result;
 }
+
+// Shared owned-file lifecycle; importing or exporting these helpers starts no probe.
+export { durableCreate, identity, sameIdentity, safeClose, makePrivateSink, finalizeFile, publicArtifact, captureComplete, cleanupPrivate };

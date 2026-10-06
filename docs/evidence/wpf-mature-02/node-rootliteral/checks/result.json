@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-06 12:49:35 UTC",
+  "command": "/opt/homebrew/opt/node@24/bin/node /Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs run --config experiments/codex-app-server-conformance/node-rootliteral/vitest.config.mjs",
+  "final": {
+    "exitCode": 0,
+    "selected": 55,
+    "passed": 55,
+    "skipped": 0,
+    "newDistinct": 39,
+    "existingDirect": 16,
+    "toolChunk": "0faf09"
+  },
+  "nativeImport": {
+    "exitCode": 0,
+    "factoryCalls": 0,
+    "listeners": 0,
+    "toolChunk": "c84f64",
+    "runtime": "Node24 native transform-types; no tsx/esbuild service"
+  },
+  "history": {
+    "first": {
+      "exitCode": 0,
+      "passed": 39,
+      "meaning": "intermediate overlap, not added to final55"
+    },
+    "composition": {
+      "exitCode": 1,
+      "existingPassed": 6,
+      "newSuiteSelected": 0,
+      "reason": "test-only extra closing brace; retained, not pass"
+    }
+  },
+  "actualTargets": 0,
+  "actualListeners": 0,
+  "provider": 0,
+  "clang": 0
+}

@@ -1,0 +1,41 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities
+
+ ❯ experiments/codex-app-server-conformance/node-rootliteral/host.test.ts (13 tests | 1 failed | 12 skipped) 29ms
+   ↓ fixture constant is the approved complete forty-byte payload
+   ↓ three stages reserve once, clean actual private files, count stream and disk separately
+   ↓ extra-stderr stops after one consumed target
+   ↓ capture-incomplete stops after one consumed target
+   ↓ inventory-unknown stops after one consumed target
+   ↓ protocol-close stops after one consumed target
+   ↓ unknown child close retains both composition and private roots without claiming cleanup
+   ↓ remaining cleanup margin stops second slot despite a passing first control
+   ↓ output/CLI gate rejects late completion, receipt overflow and unpersisted evidence
+   ↓ shared budget counts consumed bytes even when an observer then exceeds the cap
+   ↓ partial private write counts captured bytes and only actual disk writes, then closes safely
+   ↓ late final fsync is included in internal completion rather than preserving an earlier pass
+   × composition rejection before factory retains private root and cleanup/stdout remain unknown 28ms
+ ↓ experiments/codex-app-server-conformance/diagnostics/driver-preparation.test.ts (10 tests | 10 skipped)
+ ❯ experiments/codex-app-server-conformance/node-rootliteral/composition.test.ts (14 tests | 1 failed | 13 skipped) 7ms
+   ↓ node-control keeps same flags/output script and creates no listener
+   ↓ node-profile-control keeps same flags/output script and creates no listener
+   ↓ canary alone creates one owned listener and returns seven bound observations with inventory
+   ↓ listen rejection remains owned, closes before cleanup, never reaches factory
+   ↓ denial-unknown never passes the seven-check/RPC gate
+   ↓ wrong-ready never passes the seven-check/RPC gate
+   ↓ extra-response never passes the seven-check/RPC gate
+   ↓ node-control cannot infer a stdout bound from an empty inbox after protocol failure
+   ↓ node-profile-control cannot infer a stdout bound from an empty inbox after protocol failure
+   ↓ node-canary cannot infer a stdout bound from an empty inbox after protocol failure
+   ↓ factory-throw retains all owned roots and marks inventory unknown
+   ↓ unknown-close retains all owned roots and marks inventory unknown
+   ↓ arbitrary scenario never creates a root or invokes factory
+   × listener close rejection returns exact retained roots instead of losing the resource receipt 6ms
+ ↓ experiments/codex-app-server-conformance/diagnostics/composition-preparation.test.ts (6 tests | 6 skipped)
+ ↓ experiments/codex-app-server-conformance/node-rootliteral/loader.test.ts (14 tests | 14 skipped)
+
+ Test Files  2 failed | 3 skipped (5)
+      Tests  2 failed | 55 skipped (57)
+   Start at  05:54:10
+   Duration  430ms (transform 66ms, setup 0ms, import 123ms, tests 36ms, environment 0ms)
+
