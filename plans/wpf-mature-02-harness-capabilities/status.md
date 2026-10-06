@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:09:16 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:14:52 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,8 +10,8 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 93b4d9331a04d9d220743b324b513fec37bf3d38（本轮父metadata基线；ca6a实验源码checkpoint不变） |
-| 工作树dirty状态 | 本轮仅父status/canonical及research-inputs文档；0产品源码改动，提交后clean。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / dfc75a6509fd30b3cb5f0c50f7964be0c7fad783（本轮父metadata基线；ca6a实验源码checkpoint不变） |
+| 工作树dirty状态 | 本轮仅父status/canonical的CORE闭包准入路由；0产品源码改动，提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
@@ -21,9 +21,9 @@
 | 实现目标 / 范围 | Claude产品core首契约已main；当前接入现profile、中心事务、队列与已有adapter。child next-slice-handoff维护唯一精确合同/闭包；本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude逐消息设置的共用契约已进入主线；正在推进中心和执行器接线，界面尚未开放逐消息选择。 |
+| 当前产出 | Claude逐消息设置的共用契约已进入主线；中心和执行器接线已进入验证准备，界面尚未开放逐消息选择。 |
 | 下一可用交付 | 让每条消息的设置在提交、排队与Claude执行中保持一致，再由Web/TUI共享消费。 |
-| 当前阻塞 | ACTIVE: 下一片需完成独立树源码补齐及现有界面owner的共享接线协调；涉及真实中心的验证仍需资源门禁。其余独立源码准备可继续。 |
+| 当前阻塞 | ACTIVE: 验证前需Lead恢复精确缺失源码并满足资源准入；共享client/界面与迁移挂载仍由现owner接线。源码固定不代表验证通过。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
 | Review | core首plain-contract leaf已APPROVED且main22d5接收；后继center/adapter未沿用该批准。OpenSSL ca6仅SOURCE_REVIEW/PENDING_VALIDATION、NOT_OPEN。 |
@@ -91,3 +91,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收�
 16:07:03资源管理：本父fresh v6 ACTIVE、2f29 clean；只读核三个已交付released树，另转述X01 active条件候选，见[resource-candidates](../../docs/evidence/wpf-mature-02/resource-candidates.md)。Lead唯一Git operator决定KEEP/可逆收起，02与CORE KEEP；0回收/稀疏/运行检查。032正式assignment main e807已读，号/领取不替代DDL执行；完整02仍in-progress。
 
 16:09:16只读研究输入：GO轮询/续租成本线索已[固定归档并路由原S01/REQ15、CHAT08](../../docs/evidence/wpf-mature-02/research-inputs.md)，静态推算非容量事实，0测试/PG/provider/压测。CORE仍优先，未创建新任务或改外部状态。
+
+16:14:52只读观察core92f768e3517a64235629858f50cdc3926d099b2d，三个validation config未跟踪；canonical已置顶227/155精确闭包准入和保留全部scope/dirty要求。Mika核binding事实与source review分开，当前0工程检查/PG/native、NOT_OPEN；完整TODO不变。
