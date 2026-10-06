@@ -67,3 +67,9 @@ Root新增独立APPROVED dac8c3910eee1828e7081a3d33e19a89a056f4d4：仅runner pa
 固定dbb57268889b82efb74c330bbf268b13f01b6402：只提取tasks.commandInTransaction与goals.applyGoalCommand，原pool事务方法复用它们。调用方必须在同事务完整授权后进入，含replay路径；本helper本身不构成新授权。F01 claim v8按CHAT03单文件停写/amend后接入tasks.ts；O01旧goals claim已released。
 
 原goal公开HTTP/PG9/9通过，13.86s（原专库若存在失败关闭，实际创建/清理）；仅直接消费者，没有全库或模型。首次tsc因该WT尚未链接新增O02依赖失败，原o03-shared-seams-typecheck.txt保留；frozen offline install无锁变化，最终o03-shared-seams-typecheck-final.txt通过。clean-code检查只将原行为放在小Interface后，不新造domain mutation/通用workflow；O03独立授权/锁竞争测试归其owner。
+
+## Native SDK环境隔离 2026-10-06 04:34 UTC
+
+固定26ddd8de9fde0d67e6e42bd81a583facc993a31a，仅claude.ts/test；原CHAT02 owner停写/amend后F01v9接收。固定SDK0.3.290 sdk.d.ts1645–1662明确env替换而非合并，未设置时继承宿主。新增明确系统/本机provider认证允许清单，排除Flow token、数据库凭据和无关环境；保留HOME/PATH与本机SDK合法认证入口，不读取或打印真实凭据。没有改模型、工具政策、native session或profile声明能力。
+
+先公开adapter新用例红（options.env缺失），原sdk-environment-red.txt保留；修复后完整此模块26/26，403ms，typecheck通过。注入query仅观察options，并启动真实Node子进程传精确env验证合成marker隔离/合法provider变量保留、宿主环境未变、事件不泄漏。没有真实SDK/query/provider实验，因此不宣称实际登录可用性；启动器角色隔离另由SVC715ec独审。
