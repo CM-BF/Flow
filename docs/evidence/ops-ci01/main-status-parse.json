@@ -1,0 +1,28 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "delivered",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "已审远程验证模板已进入主线；准备片已交付，尚未启用或远程运行。",
+    "next": "本片段已交付",
+    "blocker": {
+      "state": "active",
+      "text": "REMOTE_NOT_ENABLED；远程验证尚未启用，需用户决定是否执行已审启用步骤。"
+    },
+    "decision": {
+      "state": "active",
+      "text": "是否将已审模板原样启用为 .github/workflows/bounded-check.yml 并手动运行一次；由 Goal Owner 唯一提出。"
+    },
+    "missing": [],
+    "complete": true
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED；限定 APPROVED_DOCS_CANDIDATE_ONLY，reviewer Execution Lead",
+    "target": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9"
+  }
+}

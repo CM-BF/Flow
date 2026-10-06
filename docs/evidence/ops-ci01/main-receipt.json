@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06 23:04:27 UTC",
+  "parentReceipt": "Execution Lead: main/origin clean and equal at controlled receipt",
+  "main": "decab94f20bc5345cb74fe82eb9b93b6e135c333",
+  "target": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9",
+  "integratedDelivery": "9f596ebb1720c40b01b3cbfcbd74d0e63a591e3b",
+  "deliveryAncestorOfMain": true,
+  "sourceComparisons": [
+    {
+      "path": "docs/ci/README.md",
+      "bytes": 7293,
+      "sha256": "334dccbf62a82e4f6bfcbcc06bc6ec055bffdce490a94d12c45248fac7e3cbf7",
+      "fixedTargetMatchesMainAndWorkingTree": true
+    },
+    {
+      "path": "docs/ci/check-workflow.yml",
+      "bytes": 7030,
+      "sha256": "d4cab9cfd16ab461629a1b8de12ca88589de289beae9dfdd4161d27869bde46f",
+      "fixedTargetMatchesMainAndWorkingTree": true
+    }
+  ],
+  "newTests": 0,
+  "remoteWorkflow": "NOT_ENABLED/NOT_RUN",
+  "userActivationOpen": true
+}
