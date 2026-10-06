@@ -1,0 +1,33 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/conversation-context/context.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner"
+  ],
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/conversation-context/index.ts",
+      "sha256": "7ae39a02095c01da1be2049004c1093bc886d2e3b77e8309d160fe6d8f29afb6"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "sha256": "2ead672628cb411a54ab51345f384a301ff407eb2a30cf604b120b47d68ebdb5"
+    },
+    {
+      "path": "packages/storage/migrations/018-conversation-context.sql",
+      "sha256": "0b7f436ce040798d960f9c63aaf5c9ac672d2821871a759c95d9c62d3d1246ce"
+    },
+    {
+      "path": "docs/evidence/k02/check.mjs",
+      "sha256": "5f725bc041dd0eb2535de89a5088fefbd13136a7eb57c047fbb96ae11180c24d"
+    }
+  ],
+  "startedAt": "2026-10-06T05:45:22.216Z",
+  "endedAt": "2026-10-06T05:45:24.563Z",
+  "exitCode": 0,
+  "signal": null
+}

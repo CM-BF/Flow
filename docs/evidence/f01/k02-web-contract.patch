@@ -1,0 +1,108 @@
+diff --git a/packages/contracts/src/conversation-context.ts b/packages/contracts/src/conversation-context.ts
+new file mode 100644
+index 0000000..ebbd3ca
+--- /dev/null
++++ b/packages/contracts/src/conversation-context.ts
+@@ -0,0 +1,33 @@
++import { z } from 'zod';
++import { knowledgeCitationSchema, type KnowledgeCitation } from './knowledge.js';
++
++export const CONVERSATION_CONTEXT_LIMITS = { references: 4, rawBytes: 8192, executionCodeUnits: 16000, executionBytes: 49152, detailResponseBytes: 65536 } as const;
++export const conversationContextSelectionSchema = z.array(knowledgeCitationSchema).max(CONVERSATION_CONTEXT_LIMITS.references).refine(refs => {
++  const keys = refs.map(ref => JSON.stringify([ref.projectId,ref.sourceId,ref.version,ref.contentDigest,ref.locator.start,ref.locator.end]));
++  return new Set(keys).size === keys.length;
++}, 'Duplicate exact citations are not allowed.');
++export interface ConversationContextSource {
++  citation: KnowledgeCitation;
++  byteLength: number;
++  currentVersionAtFreeze: number;
++  isCurrentAtFreeze: boolean;
++}
++/** Public metadata only. Digests cover distinct authorities; neither contains frozen source text. */
++export interface ConversationContextReference {
++  id: string;
++  contextDigest: string;
++  executionInputId: string;
++  executionInputDigest: string;
++  templateVersion: 1;
++  sources: ConversationContextSource[];
++}
++/** Runner-only metadata accompanies the private assignment.task.prompt execution input. */
++export type ConversationContextExecutionReference = Pick<ConversationContextReference, 'id' | 'contextDigest' | 'executionInputId' | 'executionInputDigest'>;
++export interface ConversationContextDetail {
++  id: string;
++  conversationId: string;
++  projectId: string;
++  contextDigest: string;
++  createdAt: string;
++  sources: (ConversationContextSource & { text: string; currentVersion: number; isCurrent: boolean })[];
++}
+diff --git a/packages/contracts/src/conversation-queue.ts b/packages/contracts/src/conversation-queue.ts
+index 2b88c5b..45cb812 100644
+--- a/packages/contracts/src/conversation-queue.ts
++++ b/packages/contracts/src/conversation-queue.ts
+@@ -1,4 +1,5 @@
+ import { z } from 'zod';
++import { conversationContextSelectionSchema, type ConversationContextReference } from './conversation-context.js';
+ import { idSchema, type TaskSummary } from './tasks.js';
+ 
+ export const CONVERSATION_QUEUE_MAX_PENDING = 100;
+@@ -7,6 +8,7 @@ export const CONVERSATION_QUEUE_PREVIEW_BYTES = 512;
+ const revision = z.number().int().min(0).max(2_147_483_646);
+ export const conversationQueueEnqueueSchema = z.strictObject({
+   expectedQueueRevision: revision,
++  knowledge: conversationContextSelectionSchema.optional(),
+   text: z.string().min(1).max(CONVERSATION_QUEUE_TEXT_BYTES).refine(text => text.trim().length > 0 && new TextEncoder().encode(text).length <= CONVERSATION_QUEUE_TEXT_BYTES),
+ });
+ export const conversationQueueCancelSchema = z.strictObject({ expectedQueueRevision: revision });
+@@ -23,6 +25,7 @@ export type ConversationQueueResume = z.infer<typeof conversationQueueResumeSche
+ export interface ConversationQueueCurrentTurn { taskId: string; taskStatus: TaskSummary['status']; turnId: string; turnNumber: number; queueItemId: string | null }
+ export type ConversationQueueBlockReason = 'queue-paused' | 'previous-turn-active' | 'previous-turn-failed' | 'previous-turn-cancelled' | 'previous-turn-uncertain' | 'native-session-unavailable' | 'native-session-busy' | 'execution-profile-unavailable';
+ export interface ConversationQueueItem {
++  context?: ConversationContextReference;
+   id: string;
+   conversationId: string;
+   sequence: number;
+diff --git a/packages/contracts/src/conversations.ts b/packages/contracts/src/conversations.ts
+index a8d4d52..6c0eec7 100644
+--- a/packages/contracts/src/conversations.ts
++++ b/packages/contracts/src/conversations.ts
+@@ -1,4 +1,6 @@
+ import { z } from 'zod';
++import { idSchema } from './tasks.js';
++import { conversationContextSelectionSchema, type ConversationContextReference } from './conversation-context.js';
+ import { executionProfileReferenceSchema } from './execution-profiles.js';
+ import type { Detail, TaskSummary } from './tasks.js';
+ import type { AssistantSettings } from './assistant.js';
+@@ -14,6 +16,7 @@ export const conversationCreationSchema = z.strictObject({
+   title: z.string().trim().min(1).max(180),
+   harness: z.literal('claude').default('claude'),
+   executionProfile: executionProfileReferenceSchema.optional(),
++  projectId: idSchema.optional(),
+   requested: conversationSettingsSchema.default({ model: 'runner-default', thinking: 'disabled', tools: 'configured-readonly' }),
+ });
+ export type ConversationCreation = z.infer<typeof conversationCreationSchema>;
+@@ -21,6 +24,7 @@ export const conversationTurnSchema = z.strictObject({
+   expectedRevision: z.number().int().min(0).max(2_147_483_646),
+   text: z.string().min(1).max(16_000).refine(value => value.trim().length > 0),
+   mode: z.enum(['follow-up', 'queue', 'steer']).default('follow-up'),
++  knowledge: conversationContextSelectionSchema.optional(),
+ });
+ export type ConversationTurnAdmission = z.infer<typeof conversationTurnSchema>;
+ export const conversationTurnQuerySchema = z.strictObject({
+@@ -33,6 +37,7 @@ export const conversationListQuerySchema = z.strictObject({
+ });
+ 
+ export interface ConversationCapabilities {
++  knowledgeContext?: boolean;
+   followUp: true;
+   /** Capability varies by center version; older centers may not expose durable queues. */
+   queue: boolean;
+@@ -108,6 +113,7 @@ export type ConversationAssistantReply = {
+   reason: 'execution-pending' | 'execution-not-succeeded' | 'unknown-adapter' | 'missing-session' | 'missing-result' | 'ambiguous-result' | 'invalid-result';
+ };
+ export interface ConversationTurn {
++  context?: ConversationContextReference;
+   id: string;
+   conversationId: string;
+   number: number;

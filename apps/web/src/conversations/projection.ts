@@ -10,6 +10,8 @@ import {
 } from "@flow/contracts";
 import { ConversationOutbox, type OutboxEntry } from "./outbox";
 import { assertCreationReceiptMatches } from "../execution-profiles/selection";
+import { queuePort } from "./queue/commands";
+import { ConversationQueueProjection } from "./queue/projection";
 
 type ConversationPort = Pick<FlowClient, "createConversation" | "conversation" | "conversationTurns" | "submitConversationTurn" | "conversationDetail">;
 type DetailState = { loading?: boolean; data?: Detail; error?: string };
@@ -43,6 +45,7 @@ function assertSummary(value: ConversationSummary, expectedId?: string) {
 }
 function creationFields(value: ConversationCreation): ConversationCreation {
   return { title: value.title, harness: value.harness, requested: value.requested,
+    ...(value.projectId === undefined ? {} : { projectId: value.projectId }),
     ...(value.executionProfile === undefined ? {} : { executionProfile: value.executionProfile }) };
 }
 function assertTurn(value: ConversationTurn, conversationId: string) {
@@ -64,6 +67,7 @@ function assertTurn(value: ConversationTurn, conversationId: string) {
 function assertCapabilities(snapshot: Pick<ConversationSnapshot, "capabilities">) {
   const value = snapshot.capabilities;
   if (!value || value.followUp !== true || typeof value.queue !== "boolean"
+    || (value.knowledgeContext !== undefined && typeof value.knowledgeContext !== "boolean")
     || [value.steer, value.liveAssistantText, value.perTurnModel, value.perTurnThinking, value.perTurnTools].some(value => value !== false))
     throw Error("This connection's conversation capabilities are not supported by this Web version.");
 }
@@ -71,6 +75,7 @@ function assertCapabilities(snapshot: Pick<ConversationSnapshot, "capabilities">
 /** Conversation facts remain at the center; polling and receipt lifetimes are independent. */
 export class ConversationProjection {
   readonly outbox = new ConversationOutbox();
+  readonly queue: ConversationQueueProjection;
   private state: ConversationState;
   private readonly listeners = new Set<() => void>();
   private readonly lifetime = new AbortController();
@@ -86,6 +91,7 @@ export class ConversationProjection {
   private creation: ConversationCreation | null = null;
 
   constructor(private readonly client: ConversationPort, private id: string | null = null, private readonly pollMs = 2000) {
+    this.queue = new ConversationQueueProjection(queuePort(client), pollMs);
     this.state = { snapshot: null, turns: [], nextCursor: null, loading: Boolean(id), loadingMore: false,
       connection: id ? "connecting" : "live", error: null, outbox: null, details: {} };
     this.outbox.subscribe(() => this.update({ outbox: this.outbox.getSnapshot() }));
@@ -94,7 +100,9 @@ export class ConversationProjection {
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; };
   private update(patch: Partial<ConversationState>) {
     if (this.lifetime.signal.aborted) return;
-    this.state = { ...this.state, ...patch }; this.listeners.forEach(listener => listener());
+    this.state = { ...this.state, ...patch };
+    this.queue.configure(this.id, this.state.snapshot?.capabilities.queue === true);
+    this.listeners.forEach(listener => listener());
   }
   private validateCreation(summary: ConversationSummary) {
     if (this.creation) assertCreationReceiptMatches(this.creation, summary);
@@ -103,11 +111,13 @@ export class ConversationProjection {
   setVisible(visible: boolean) {
     if (this.visible === visible) return;
     this.visible = visible;
+    this.queue.setVisible(visible);
     this.pauseObservation();
     if (visible && this.online) void this.refresh();
   }
   setOnline(online: boolean) {
     this.online = online;
+    this.queue.setOnline(online);
     this.pauseObservation();
     if (!online) this.update({ connection: "disconnected" });
     else if (this.visible) void this.refresh();
@@ -203,12 +213,17 @@ export class ConversationProjection {
     return { ...snapshot, lastTurn: turns.at(-1) ?? snapshot.lastTurn };
   }
 
-  sendDisabledReason(): string | null {
+  sendDisabledReason(intent: "follow-up" | "queue" = "follow-up"): string | null {
     if (!this.online) return "Reconnect before sending. You can keep writing your next message.";
     if (this.state.loading || (this.id && !this.state.snapshot)) return "Wait for this conversation to load.";
     if (this.state.outbox && this.state.outbox.state !== "rejected") return "The previous message receipt is unresolved. Check or retry it first.";
+    if (this.queue.commands?.unresolved("enqueue")) return "The queued message receipt is unresolved. Check or retry it first.";
+    if (intent === "queue") return this.queue.actionDisabledReason("enqueue");
+    const queue = this.queue.getSnapshot();
+    if (queue.available && (!queue.page || queue.stale)) return "Wait for the current queue before sending a new turn.";
+    if (queue.available && (queue.page?.paused || queue.page?.items.length)) return "The queue is paused or has waiting messages. Choose Queue next, or continue the queue.";
     const task = this.state.snapshot?.lastTurn?.task;
-    if (task && !TERMINAL_STATUSES.includes(task.status)) return `This turn is ${task.status.replaceAll("_", " ")}. You can keep writing; queue and steering are not available in this Web version.`;
+    if (task && !TERMINAL_STATUSES.includes(task.status)) return queue.available ? "This turn is active. Choose Queue next to save the next message at the center." : `This turn is ${task.status.replaceAll("_", " ")}. You can keep writing; queue and steering are not available in this Web version.`;
     return null;
   }
 
@@ -296,6 +311,7 @@ export class ConversationProjection {
   }
 
   dispose() {
+    this.queue.dispose();
     this.lifetime.abort(); this.pauseObservation(); this.outbox.dispose(); this.detailFlights.clear(); this.listeners.clear();
   }
 }

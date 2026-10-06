@@ -1,8 +1,13 @@
+import type { GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRun, GoalGraphRunRevoked, GoalGraphAuditPage, GoalGraphReadCall, GoalGraphReadPage, GoalGraphDetailCall, GoalGraphDetailResult, GoalGraphCommandCall, GoalGraphCommandResult } from '@flow/contracts';
+import type { KnowledgeCreation, KnowledgePublication, KnowledgeAccepted, KnowledgeSourceList, KnowledgeVersionSnapshot, KnowledgeCitation, KnowledgeResolved, KnowledgeSearchResult } from '@flow/contracts';
+import type { RunnerMaintenanceView, RunnerMaintenanceHistory, RunnerMaintenanceCommand, RunnerMaintenanceResult } from '@flow/contracts';
+import type { GoalGraphProposalInput, GoalGraphProposalApply, GoalGraphProposalCreated, GoalGraphProposalPage, GoalGraphProposal, GoalGraphProposalApplied } from '@flow/contracts';
 import type { ExecutionProfilePublication, ExecutionProfilePublished, ExecutionProfilePage } from '@flow/contracts';
 import type { GoalToolRunAdmission, GoalToolRunAccepted, GoalToolRun, GoalToolRunRevoked, GoalToolAuditPage, GoalToolRunReference, GoalToolInputCall, GoalToolCommandCall, GoalToolSnapshotResult, GoalToolInputResult, GoalToolCommandResult } from '@flow/contracts';
 import type { ConversationQueueEnqueue, ConversationQueueCancel, ConversationQueuePause, ConversationQueueResume, ConversationQueueAccepted, ConversationQueueCancelled, ConversationQueuePaused, ConversationQueueResumed, ConversationQueuePage, ConversationQueueItemDetail } from '@flow/contracts';
 import type { PluginRegistration, PluginCommand, PluginMutationResult, PluginSnapshot, PluginList, PluginVersions, PluginOperations, PluginOperation } from '@flow/contracts';
 import type { ConversationCreation, ConversationCreated, ConversationList, ConversationSnapshot, ConversationTurnAdmission, ConversationTurnAccepted, ConversationTurnPage } from '@flow/contracts';
+import type { ConversationContextDetail } from '@flow/contracts';
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
 import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
 import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
@@ -28,6 +33,48 @@ export class FlowClient {
   constructor(options: ClientOptions) {
     this.baseUrl = options.baseUrl.replace(/\/$/, '');
     this.token = options.token;
+  }
+
+  runnerMaintenance(runnerId: string, signal?: AbortSignal): Promise<RunnerMaintenanceView> {
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance`, { signal });
+  }
+  runnerMaintenanceHistory(runnerId: string, options: { after?: string } = {}, signal?: AbortSignal): Promise<RunnerMaintenanceHistory> {
+    const query = new URLSearchParams();
+    if (options.after) query.set('after', options.after);
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance/history${query.size ? `?${query}` : ''}`, { signal });
+  }
+  drainRunner(runnerId: string, input: RunnerMaintenanceCommand, key: string, signal?: AbortSignal): Promise<RunnerMaintenanceResult> {
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance/drain`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  resumeRunner(runnerId: string, input: RunnerMaintenanceCommand, key: string, signal?: AbortSignal): Promise<RunnerMaintenanceResult> {
+    return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance/resume`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+
+  createKnowledgeSource(projectId: string, input: KnowledgeCreation, key: string, signal?: AbortSignal): Promise<KnowledgeAccepted> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/sources`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  knowledgeSources(projectId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<KnowledgeSourceList> {
+    const query = new URLSearchParams();
+    if (options.after) query.set('after', options.after);
+    if (options.limit !== undefined) query.set('limit', String(options.limit));
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/sources${query.size ? `?${query}` : ''}`, { signal });
+  }
+  knowledgeSource(projectId: string, sourceId: string, signal?: AbortSignal): Promise<KnowledgeVersionSnapshot> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/sources/${encodeURIComponent(sourceId)}`, { signal });
+  }
+  publishKnowledgeVersion(projectId: string, sourceId: string, input: KnowledgePublication, key: string, signal?: AbortSignal): Promise<KnowledgeAccepted> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/sources/${encodeURIComponent(sourceId)}/versions`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  knowledgeVersion(projectId: string, sourceId: string, version: number, signal?: AbortSignal): Promise<KnowledgeVersionSnapshot> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/sources/${encodeURIComponent(sourceId)}/versions/${version}`, { signal });
+  }
+  searchKnowledge(projectId: string, input: { q: string; limit?: number }, signal?: AbortSignal): Promise<KnowledgeSearchResult> {
+    const query = new URLSearchParams({ q: input.q });
+    if (input.limit !== undefined) query.set('limit', String(input.limit));
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/search?${query}`, { signal });
+  }
+  resolveKnowledge(projectId: string, citation: KnowledgeCitation, signal?: AbortSignal): Promise<KnowledgeResolved> {
+    return this.request(`/api/projects/${encodeURIComponent(projectId)}/knowledge/resolve`, { method: 'POST', body: JSON.stringify({ citation }), signal });
   }
 
   submit(input: TaskSubmission, key: string): Promise<AcceptedTask> {
@@ -78,6 +125,48 @@ export class FlowClient {
     const query = new URLSearchParams({ nodeId: options.nodeId });
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/goals/${encodeURIComponent(id)}/executions?${query}`, { signal });
+  }
+
+  createGoalGraphProposal(goalId: string, input: GoalGraphProposalInput, key: string, signal?: AbortSignal): Promise<GoalGraphProposalCreated> {
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/graph-proposals`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  goalGraphProposals(goalId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<GoalGraphProposalPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/graph-proposals${query.size ? `?${query}` : ''}`, { signal });
+  }
+  goalGraphProposal(id: string, signal?: AbortSignal): Promise<GoalGraphProposal> {
+    return this.request(`/api/goal-graph-proposals/${encodeURIComponent(id)}`, { signal });
+  }
+  applyGoalGraphProposal(id: string, input: GoalGraphProposalApply, key: string, signal?: AbortSignal): Promise<GoalGraphProposalApplied> {
+    return this.request(`/api/goal-graph-proposals/${encodeURIComponent(id)}/apply`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+
+  admitGoalGraphRun(goalId: string, input: GoalGraphRunAdmission, key: string, signal?: AbortSignal): Promise<GoalGraphRunAccepted> {
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/graph-runs`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  goalGraphRun(id: string, signal?: AbortSignal): Promise<GoalGraphRun> {
+    return this.request(`/api/goal-graph-runs/${encodeURIComponent(id)}`, { signal });
+  }
+  revokeGoalGraphRun(id: string, input: { reason: string }, key: string, signal?: AbortSignal): Promise<GoalGraphRunRevoked> {
+    return this.request(`/api/goal-graph-runs/${encodeURIComponent(id)}/revoke`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  goalGraphRunCalls(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<GoalGraphAuditPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/goal-graph-runs/${encodeURIComponent(id)}/calls${query.size ? `?${query}` : ''}`, { signal });
+  }
+  goalGraphGrant(input: Ownership, signal?: AbortSignal): Promise<GoalGraphRun> {
+    return this.request('/api/runner/goal-graph/grant', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  goalGraphRead(input: GoalGraphReadCall, signal?: AbortSignal): Promise<GoalGraphReadPage> {
+    return this.request('/api/runner/goal-graph/read', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  goalGraphDetail(input: GoalGraphDetailCall, signal?: AbortSignal): Promise<GoalGraphDetailResult> {
+    return this.request('/api/runner/goal-graph/proposal', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  goalGraphCommand(input: GoalGraphCommandCall, key: string, signal?: AbortSignal): Promise<GoalGraphCommandResult> {
+    return this.request('/api/runner/goal-graph/command', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   admitGoalToolRun(goalId: string, input: GoalToolRunAdmission, key: string, signal?: AbortSignal): Promise<GoalToolRunAccepted> {
@@ -165,6 +254,9 @@ export class FlowClient {
   }
   conversationDetail(id: string, turnId: string, detailId: string, signal?: AbortSignal): Promise<Detail> {
     return this.request(`/api/conversations/${encodeURIComponent(id)}/turns/${encodeURIComponent(turnId)}/details/${encodeURIComponent(detailId)}`, { signal });
+  }
+  conversationContext(id: string, contextId: string, signal?: AbortSignal): Promise<ConversationContextDetail> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/contexts/${encodeURIComponent(contextId)}`, { signal });
   }
 
   enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {

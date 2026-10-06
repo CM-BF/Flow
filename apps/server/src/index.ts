@@ -1,5 +1,10 @@
+import { migrateGoalGraphRuns, registerGoalGraphRunRoutes } from './goal-graph-runs/index.js';
+import { migrateKnowledge, registerKnowledgeRoutes } from './knowledge/index.js';
+import { migrateRunnerMaintenance, registerRunnerMaintenanceRoutes } from './runner-maintenance/index.js';
+import { migrateGoalGraphProposals, registerGoalGraphProposalRoutes } from './goal-graph-proposals/index.js';
 import { migrateExecutionProfiles, registerExecutionProfileRoutes } from './execution-profiles/index.js';
 import { migrateConversationQueue, registerConversationQueueRoutes, scanConversationQueue } from './conversation-queue/index.js';
+import { migrateConversationContext, registerConversationContextRoutes } from './conversation-context/index.js';
 import { migrateGoalToolRuns, registerGoalToolRunRoutes } from './goal-tool-runs/index.js';
 import { registerShutdown } from './shutdown/index.js';
 import { migratePlugins, registerPluginRoutes } from './plugins/index.js';
@@ -51,6 +56,11 @@ export async function createServer(options: ServerOptions) {
     await migrateExecutionProfiles(pool);
     await migrateConversationQueue(pool);
     await migrateGoalToolRuns(pool);
+    await migrateGoalGraphProposals(pool);
+    await migrateKnowledge(pool);
+    await migrateRunnerMaintenance(pool);
+    await migrateConversationContext(pool);
+    await migrateGoalGraphRuns(pool);
   } catch (error) { await pool.end(); throw error; }
   const boss = await startScheduler(options.databaseUrl, pool).catch(async error => { await pool.end(); throw error; });
   let pendingSweep: Promise<void> | undefined;
@@ -110,7 +120,12 @@ export async function createServer(options: ServerOptions) {
   registerAssistantRoutes(app, pool);
   registerExecutionProfileRoutes(app, pool);
   registerConversationQueueRoutes(app, pool, boss);
+  registerConversationContextRoutes(app, pool);
   registerGoalToolRunRoutes(app, pool, boss);
+  registerGoalGraphProposalRoutes(app, pool);
+  registerKnowledgeRoutes(app, pool);
+  registerRunnerMaintenanceRoutes(app, pool);
+  registerGoalGraphRunRoutes(app, pool, boss);
   registerStreams(app, pool);
   app.post('/api/runners', async request => {
     const input = registerRunnerSchema.safeParse(request.body);

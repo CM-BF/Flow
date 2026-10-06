@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-06T05:55:59.866Z",
+  "checks": [
+    "Official Thread + two isolated AssistantRuntimeProviders + StrictMode register one wrapper each; registration and P01 activation do not fetch details",
+    "Keyboard explicit expansion reads once through FlowClient + real ConversationProjection digest/cache; collapse/reopen reuses cache",
+    "Real React Activity hide/restore cleans/re-registers only this provider, retains draft + full detail state, and makes zero new detail requests",
+    "P01 disable falls back to the existing host-authorized detail path; cached A and independent B remain readable without extra privileges",
+    "Throwing trusted renderer is isolated by a local boundary; standard readable fallback and P01 deactivate/reactivate recovery work",
+    "Unknown name/version, invalid schema and wrong turn preserve original text but receive no read capability or request",
+    "Closing/remounting one provider does not unregister the other; remount does not prefetch",
+    "Light and dark/390px/reduced motion preserve readable official Thread, focus and bounded horizontal width; theme does not fetch",
+    "New connection gets a new host/provider/port lifetime and empty UI cache; explicit HTTP failure and retry show local error then recover",
+    "Delayed actual detail HTTP response after connection disposal cannot fill the new same-ID conversation/pane or inject a stale error"
+  ],
+  "pageErrors": [],
+  "detailRequests": [
+    {
+      "method": "GET",
+      "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/chat-2/turns/chat-2-turn-2/details/chat-2-task-2-reply",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+      "key": "",
+      "body": ""
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/chat-2/turns/chat-2-turn-2/details/chat-2-task-2-reply",
+      "key": "",
+      "body": ""
+    }
+  ],
+  "scope": "Dev HTTP fixture; actual public FlowClient/ConversationProjection and official Thread; no real center/model"
+}

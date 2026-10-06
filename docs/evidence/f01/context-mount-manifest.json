@@ -1,0 +1,111 @@
+{
+  "target": "549f6b3e54f902d7b75ebe6d17f293a2085e7a6c",
+  "combinedHead": "84f3472556ed2bfacb31472326cc60bd4df9b642",
+  "scope": "018 mount and thin client; O07 domain c224 and K02 a6 separately approved",
+  "checks": [
+    {
+      "name": "red: missing route/migration/client",
+      "selected": 3,
+      "passed": 0,
+      "exit": 1
+    },
+    {
+      "name": "new3 + production direct4",
+      "selected": 7,
+      "passed": 7,
+      "exit": 0
+    },
+    {
+      "name": "legacy conversation22/reconciliation12",
+      "selected": 34,
+      "passed": 34,
+      "exit": 0
+    },
+    {
+      "name": "Web compatibility/module combination",
+      "selected": 116,
+      "passed": 116,
+      "exit": 0
+    }
+  ],
+  "files": [
+    {
+      "path": "apps/server/src/index.ts",
+      "kind": "source",
+      "sha256": "400b4a6ce1f8644cc527dbf57526d44bea9d18dff194e69f5b835d605a393822",
+      "bytes": 11040
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "kind": "source",
+      "sha256": "7945a60c85f2a32c950aee2c25c0eeb60fa813dd346ac8d524385a5b217ffc69",
+      "bytes": 732
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "kind": "source",
+      "sha256": "37500b3663e6e545f43f294aeb75e7935101f0ba2c66bd5707364137cab7f5fc",
+      "bytes": 29715
+    },
+    {
+      "path": "packages/client/src/conversation-context.test.ts",
+      "kind": "source",
+      "sha256": "288ad89df9266a41a85aeea400486dd9394db5613bbdc9d579941ee51d882f61",
+      "bytes": 1704
+    },
+    {
+      "path": "packages/client/src/context-production.test.ts",
+      "kind": "source",
+      "sha256": "69bdb99458ad6e4575dd9be4a307deaf9a2a2334a0c705753a65b177f32e8ca7",
+      "bytes": 7362
+    },
+    {
+      "path": "docs/evidence/f01/context-mount-red.txt",
+      "kind": "output",
+      "sha256": "0b24c4a7048cea5b61762efdac4dad7acf52f2d9a76995b20052c7e554809e2b",
+      "bytes": 3121
+    },
+    {
+      "path": "docs/evidence/f01/context-production-red-facts.json",
+      "kind": "output",
+      "sha256": "fe7f1357220dfe33ac1206c1a03d73bb37cf4d771a01b235990bdefc35cb4ba1",
+      "bytes": 196
+    },
+    {
+      "path": "docs/evidence/f01/context-mount-green.txt",
+      "kind": "output",
+      "sha256": "6d02a05601ccf7ff4b4f9b94ef4b21a2f62926d7ce3e8e39a131e7756f8e1d17",
+      "bytes": 1113
+    },
+    {
+      "path": "docs/evidence/f01/context-production-facts.json",
+      "kind": "output",
+      "sha256": "69ab1df3c54e9426e01dc9093932993b6e49d3d6aca96f2a4f7afc1d3049bd15",
+      "bytes": 811
+    },
+    {
+      "path": "docs/evidence/f01/context-mount-typecheck.txt",
+      "kind": "output",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/f01/context-legacy-consumers.txt",
+      "kind": "output",
+      "sha256": "4017d2c88ec95af0579ae10c050d86922eede4009577494c4fe8d244191f7b12",
+      "bytes": 3670
+    },
+    {
+      "path": "docs/evidence/f01/context-web-combination-checks.txt",
+      "kind": "output",
+      "sha256": "90b7960e1d63f44dd95cafa3b001cdb6d1b32bdadf3a616cb6ff2ed1a6a3ff87",
+      "bytes": 570
+    },
+    {
+      "path": "docs/evidence/f01/context-web-combination-typecheck.txt",
+      "kind": "output",
+      "sha256": "2cf16ebdde5b1dfcb069a8ca0c202654d48660896762712ea5641e3e5f511dc5",
+      "bytes": 144
+    }
+  ]
+}

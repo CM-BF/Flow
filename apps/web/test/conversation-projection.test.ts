@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { FlowApiError, type FlowClient } from "@flow/client";
 import type { ConversationCreation, ConversationSnapshot, ConversationTurn } from "@flow/contracts";
 import { ConversationProjection, replyDetailKey } from "../src/conversations/projection";
+import { conversationMessages } from "../src/conversations/messages";
 
 const at = "2026-10-06T03:40:00Z";
 const capabilities = { followUp: true, queue: false, steer: false, liveAssistantText: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false } as const;
@@ -28,7 +29,7 @@ function wireSnapshot(queue: unknown, lastTurn: ConversationTurn | null = null):
 function deferred<T>() { let resolve!: (value: T) => void; let reject!: (error: unknown) => void; const promise = new Promise<T>((yes, no) => { resolve = yes; reject = no; }); return { promise, resolve, reject }; }
 const projections: ConversationProjection[] = [];
 afterEach(() => { projections.splice(0).forEach(projection => projection.dispose()); });
-function setup(initial = snapshot(), id: string | null = "chat") {
+function setup(initial = snapshot(), id: string | null = "chat", withQueue = false) {
   let current = initial;
   const client = {
     conversation: vi.fn<FlowClient["conversation"]>(async () => current),
@@ -37,12 +38,108 @@ function setup(initial = snapshot(), id: string | null = "chat") {
     submitConversationTurn: vi.fn<FlowClient["submitConversationTurn"]>(async (_id, input) => ({ conversation: { ...current.conversation, revision: input.expectedRevision + 1 }, turn: turn(input.expectedRevision + 1, input.text), replayed: false })),
     conversationDetail: vi.fn<FlowClient["conversationDetail"]>(async () => ({ id: "detail", title: "Full reply", kind: "artifact" as const, content: "Complete reply", mediaType: "text/plain", artifactVersion: "v1" })),
   };
+  const queueApi = {
+    conversationQueue: vi.fn<FlowClient["conversationQueue"]>(async () => ({ conversationId: "chat", queueRevision: 1, paused: false, currentTurn: null, items: [], nextCursor: null, blocked: null })),
+    conversationQueueItem: vi.fn(), enqueueConversationTurn: vi.fn(), cancelConversationQueueItem: vi.fn(), pauseConversationQueue: vi.fn(), resumeConversationQueue: vi.fn(), cancel: vi.fn(),
+  };
+  if (withQueue) Object.assign(client, queueApi);
   const projection = new ConversationProjection(client, id, 100_000);
   projections.push(projection);
-  return { projection, client, set: (next: ConversationSnapshot) => { current = next; } };
+  return { projection, client, queueApi, set: (next: ConversationSnapshot) => { current = next; } };
 }
 
 describe("public conversation projection", () => {
+  it.each([undefined, "project-a"])("retains project %s and rejects changed GET identity without replacing known facts", async projectId => {
+    const initial = snapshot(reply(turn())); initial.conversation = { ...initial.conversation, ...(projectId === undefined ? {} : { projectId }) };
+    const { projection, set } = setup(initial); await projection.refresh();
+    expect(projection.getSnapshot().error).toBeNull(); expect(projection.getSnapshot().snapshot?.conversation).toEqual(initial.conversation);
+    for (const changed of projectId === undefined ? ["project-a"] : [undefined, "project-b"]) {
+      set({ ...initial, conversation: { ...initial.conversation, projectId: changed } }); await projection.refresh();
+      expect(projection.getSnapshot().error).toContain("frozen creation configuration");
+      expect(projection.getSnapshot().snapshot?.conversation).toEqual(initial.conversation);
+    }
+  });
+  it.each([["project-a", "project-b"], ["project-a", undefined], [undefined, "project-a"]])("rejects snapshot/page project mismatch %s / %s", async (projectId, pageProjectId) => {
+    const initial = snapshot(); initial.conversation.projectId = projectId;
+    const { projection, client } = setup(initial);
+    client.conversationTurns.mockResolvedValueOnce({ conversation: { ...initial.conversation, projectId: pageProjectId }, turns: [], nextCursor: null });
+    await projection.refresh(); expect(projection.getSnapshot().snapshot).toBeNull(); expect(projection.getSnapshot().error).toContain("frozen creation configuration");
+  });
+  it.each([undefined, "project-a"])("accepts matching project %s CREATE and first turn receipts", async projectId => {
+    const creation: ConversationCreation = { ...configuredCreation, ...(projectId === undefined ? {} : { projectId }) };
+    const { projection, client } = setup(snapshot(), null); await projection.send("hi", creation);
+    expect(projection.getSnapshot().outbox).toBeNull(); expect(projection.getSnapshot().snapshot?.conversation.projectId).toBe(projectId);
+    expect(client.submitConversationTurn).toHaveBeenCalledTimes(1);
+    expect(client.submitConversationTurn.mock.calls[0]![1]).not.toHaveProperty("knowledge");
+  });
+  it("keeps known project identity when a later history page or turn receipt omits it", async () => {
+    const initial = snapshot(reply(turn())); initial.conversation.projectId = "project-a";
+    const { projection, client } = setup(initial);
+    client.conversationTurns.mockResolvedValueOnce({ conversation: initial.conversation, turns: [initial.lastTurn!], nextCursor: 1 });
+    await projection.refresh(); const known = projection.getSnapshot().snapshot;
+    const unbound = { ...initial.conversation, projectId: undefined };
+    client.conversationTurns.mockResolvedValueOnce({ conversation: unbound, turns: [reply(turn(2))], nextCursor: null });
+    await projection.loadMore();
+    expect(projection.getSnapshot().error).toContain("frozen creation configuration");
+    expect(projection.getSnapshot().turns).toHaveLength(1); expect(projection.getSnapshot().snapshot).toBe(known);
+    client.submitConversationTurn.mockResolvedValueOnce({ conversation: { ...unbound, revision: 2 }, turn: turn(2, "next"), replayed: false });
+    await projection.send("next");
+    expect(projection.getSnapshot().outbox?.state).toBe("unknown");
+    expect(projection.getSnapshot().snapshot?.conversation.projectId).toBe("project-a");
+    await projection.retry();
+    expect(client.submitConversationTurn.mock.calls[1]!.slice(0,3)).toEqual(client.submitConversationTurn.mock.calls[0]!.slice(0,3));
+    expect(projection.getSnapshot().outbox).toBeNull();
+  });
+  it.each([["project-a", undefined], ["project-a", "project-b"], [undefined, "project-a"]])("keeps mismatched project CREATE %s / %s unknown and retries the original identity", async (expectedProject, receivedProject) => {
+    const creation: ConversationCreation = { ...configuredCreation, ...(expectedProject === undefined ? {} : { projectId: expectedProject }) };
+    const { projection, client } = setup(snapshot(), null);
+    client.createConversation.mockResolvedValueOnce({ conversation: { ...snapshot().conversation, ...creation, projectId: receivedProject }, capabilities, replayed: false });
+    await projection.send("hi", creation);
+    expect(projection.getSnapshot().outbox).toMatchObject({ state: "unknown", conversationId: null, creation });
+    expect(client.submitConversationTurn).not.toHaveBeenCalled(); expect(projection.getSnapshot().snapshot).toBeNull();
+    await projection.retry();
+    expect(client.createConversation.mock.calls[1]!.slice(0,2)).toEqual(client.createConversation.mock.calls[0]!.slice(0,2));
+    expect(projection.getSnapshot().outbox).toBeNull(); expect(client.submitConversationTurn).toHaveBeenCalledTimes(1);
+  });
+  it.each([undefined, false, true])("accepts optional knowledgeContext=%s without fetching context or reply details", async knowledgeContext => {
+    const initial = snapshot(reply(turn())); initial.capabilities = { ...capabilities, ...(knowledgeContext === undefined ? {} : { knowledgeContext }) };
+    const { projection, client } = setup(initial); await projection.refresh();
+    expect(projection.getSnapshot()).toMatchObject({ connection: "live", error: null });
+    expect(projection.getSnapshot().snapshot?.capabilities.knowledgeContext).toBe(knowledgeContext);
+    expect(client.conversationDetail).not.toHaveBeenCalled();
+  });
+  it.each([null, "true", 1])("rejects malformed knowledgeContext=%s instead of inferring support", async knowledgeContext => {
+    const initial = { ...snapshot(), capabilities: { ...capabilities, knowledgeContext } } as unknown as ConversationSnapshot;
+    const { projection } = setup(initial); await projection.refresh();
+    expect(projection.getSnapshot().snapshot).toBeNull(); expect(projection.getSnapshot().error).toContain("capabilities are not supported");
+  });
+  it("retains context metadata in snapshots and history while only actual user/assistant text becomes messages", async () => {
+    const context: NonNullable<ConversationTurn["context"]> = { id: "context-only", contextDigest: "a".repeat(64), executionInputId: "private-input-id", executionInputDigest: "b".repeat(64), templateVersion: 1,
+      sources: [{ citation: { projectId: "project-a", sourceId: "10000000-0000-4000-8000-000000000010", version: 1, contentDigest: "c".repeat(64), locator: { kind: "utf8-bytes", start: 0, end: 5 } }, byteLength: 5, currentVersionAtFreeze: 1, isCurrentAtFreeze: true }] };
+    const first = { ...reply(turn()), context }, last = { ...reply(turn(2)), context };
+    const { projection, client } = setup(snapshot(last));
+    client.conversationTurns.mockResolvedValueOnce({ conversation: snapshot(last).conversation, turns: [first, last], nextCursor: null });
+    await projection.refresh();
+    expect(projection.getSnapshot().turns.map(value => value.context)).toEqual([context, context]);
+    expect(projection.getSnapshot().snapshot?.lastTurn?.context).toEqual(context);
+    expect(conversationMessages(projection.getSnapshot().turns)).toEqual(conversationMessages([reply(turn()), reply(turn(2))]));
+    expect(client.conversationDetail).not.toHaveBeenCalled();
+    expect(client.conversation).toHaveBeenCalledTimes(1); expect(client.conversationTurns).toHaveBeenCalledTimes(1);
+  });
+  it("uses explicit queue intent while preserving active execution and the visible observer lifecycle", async () => {
+    const { projection, queueApi, client } = setup(wireSnapshot(true, turn()), "chat", true);
+    projection.setVisible(true); await projection.refresh(); await projection.queue.refresh();
+    expect(projection.sendDisabledReason()).toContain("Choose Queue next"); expect(projection.sendDisabledReason("queue")).toBeNull();
+    expect(client.submitConversationTurn).not.toHaveBeenCalled(); expect(projection.getSnapshot().snapshot?.lastTurn?.task.status).toBe("running");
+    projection.setOnline(false); expect(projection.sendDisabledReason("queue")).toContain("Reconnect"); projection.setVisible(false);
+    const reads = queueApi.conversationQueue.mock.calls.length; projection.setOnline(true); expect(queueApi.conversationQueue).toHaveBeenCalledTimes(reads);
+    projection.setVisible(true); await projection.queue.refresh(); expect(queueApi.conversationQueue.mock.calls.length).toBeGreaterThan(reads);
+  });
+  it("does not activate queue methods for a false capability even when the public client supports them", async () => {
+    const { projection, queueApi } = setup(wireSnapshot(false), "chat", true); projection.setVisible(true); await projection.refresh();
+    await projection.queue.refresh(); expect(queueApi.conversationQueue).not.toHaveBeenCalled(); expect(projection.sendDisabledReason("queue")).toContain("unavailable");
+    expect(projection.sendDisabledReason()).toBeNull();
+  });
   it.each([false, true])("reads queue=%s while keeping active-turn sending unavailable in this Web version", async queue => {
     const { projection, client } = setup(wireSnapshot(queue, turn()));
     await projection.refresh();

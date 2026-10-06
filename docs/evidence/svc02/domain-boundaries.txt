@@ -1,0 +1,53 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh
+
+ ❯ apps/server/src/runner-maintenance/maintenance.test.ts (6 tests | 2 failed) 1155ms
+   ✓ durably stops new claims, replays the same drain receipt, and resumes only explicitly 180ms
+   × fences the exact legacy claim transaction and rolls back its already-written session reservation 48ms
+   ✓ keeps heartbeats and final event retransmission working while draining, then denies HTTP release of maintenance 51ms
+   × does not treat an uncertain attempt or expired lease as safe to stop 34ms
+   ✓ enforces roles, command identity, immutable audit and stale versions without consuming rejected keys 30ms
+   ✓ serializes an in-flight legacy claim before drain and refuses hold until that real attempt finishes 48ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/runner-maintenance/maintenance.test.ts > fences the exact legacy claim transaction and rolls back its already-written session reservation
+AssertionError: expected undefined to match object { …(2) }
+
+- Expected: 
+{
+  "id": "4f76d732-c5e9-45d8-bf8b-c8be5ef479e3",
+  "status": "queued",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/server/src/runner-maintenance/maintenance.test.ts:73:16
+     71|   await expect(legacyClaim(pool, identity.runnerId, 10_000)).rejects.t…
+     72|   const task = (await request(`/api/tasks/${taskId}`)).body.task;
+     73|   expect(task).toMatchObject({ id: taskId, status: 'queued' });
+       |                ^
+     74|   expect((await pool.query('SELECT active_task_id FROM flow.sessions W…
+     75|   expect((await pool.query('SELECT id FROM flow.attempts WHERE task_id…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/server/src/runner-maintenance/maintenance.test.ts > does not treat an uncertain attempt or expired lease as safe to stop
+TypeError: Cannot read properties of undefined (reading 'status')
+ ❯ apps/server/src/runner-maintenance/maintenance.test.ts:104:60
+    102|   expect((await request(`/api/runners/${identity.runnerId}/maintenance…
+    103|   await expect(commandRunnerMaintenance(pool, identity.runnerId, 'hold…
+    104|   expect((await request(`/api/tasks/${taskId}`)).body.task.status).toB…
+       |                                                            ^
+    105| });
+    106| it('enforces roles, command identity, immutable audit and stale versio…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 4 passed (6)
+   Start at  22:17:36
+   Duration  1.91s (transform 469ms, setup 0ms, import 662ms, tests 1.16s, environment 0ms)
+

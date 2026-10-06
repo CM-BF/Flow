@@ -1,0 +1,113 @@
+{
+  "recordedAt": "2026-10-06T05:14:58Z",
+  "implementationTarget": "1f211995daae06b23cf98400199ef4d3cd3995b0",
+  "base": "da8d73a984118e0a5c406bd04dbfbc5d5c9c148f",
+  "claimId": "954db8ab-2113-4c86-9c14-3ef07229d96e",
+  "claimVersion": 1,
+  "checks": {
+    "newModule": 6,
+    "g01DirectConsumer": 10,
+    "total": 16,
+    "passed": 16,
+    "seconds": 8.25,
+    "typecheck": "PASSED",
+    "modelCalls": 0,
+    "o04ChecksRerun": 0
+  },
+  "sources": [
+    {
+      "path": "apps/server/src/goal-graph-proposals/graph.ts",
+      "bytes": 1989,
+      "sha256": "a7e1019cdc47d321402b1d07b402093b0bef0cd26f83629083b0db32e532d5c8"
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/index.ts",
+      "bytes": 2430,
+      "sha256": "a8a6fea7f7436df17ca6bc59d902aec7d068af2bbec99c14fac676a928aa966b"
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/proposals.test.ts",
+      "bytes": 16687,
+      "sha256": "f72efe1548fc8a12f925e8c83a9979cb0a7bc4680a1c12fb7dd7e623296f6836"
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/store.ts",
+      "bytes": 8071,
+      "sha256": "b1d86790576870eb39c454b23b1ffd61c3673b17230ffe676e80c283ff65e3aa"
+    },
+    {
+      "path": "apps/server/src/projects/commands.ts",
+      "bytes": 4073,
+      "sha256": "9135f93d38b705b5a7b97d0d08a25f938b7eb1f848ff05aca83ea680d8c4a972"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "bytes": 2838,
+      "sha256": "e794ffc9bcbf5fd130c5229cc0312d8366cce7b6e517b4784b15a6a134ee3521"
+    },
+    {
+      "path": "packages/storage/migrations/014-goal-graph-proposals.sql",
+      "bytes": 1802,
+      "sha256": "af0509e67b7902f190fc2668e8396a40fa7edddc8f263aea723961153b2d20ba"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/o05/checks-progress.txt",
+      "bytes": 597,
+      "sha256": "bf040d32cf54f77add900c37db2f0c0a24df3f8dd6a43f5aeb7db7dea85683f2"
+    },
+    {
+      "path": "docs/evidence/o05/claim-receipt.json",
+      "bytes": 790,
+      "sha256": "9b4c20be3e2f62802d108e9603469e32d4e0b2ea9cc9ccd97781cd9721ceeb1d"
+    },
+    {
+      "path": "docs/evidence/o05/green-proposal.txt",
+      "bytes": 333,
+      "sha256": "b40e7f6116a0e0f5faaee7aebb424fe4a8041cae835ff83c1194861f66e4e082"
+    },
+    {
+      "path": "docs/evidence/o05/install.txt",
+      "bytes": 597,
+      "sha256": "f568982e546b628d86d98603cdb18567ea69fcb2463069ba48246357401c575c"
+    },
+    {
+      "path": "docs/evidence/o05/red-proposal.txt",
+      "bytes": 1442,
+      "sha256": "98ba43276ba8fcacc6bbafb8a47920f568d716867d88b89df1934ba1aaf1a2c9"
+    },
+    {
+      "path": "docs/evidence/o05/results.json",
+      "bytes": 6913,
+      "sha256": "f21ad122aa92bb917f5f664d758df08009ee531cb1fc2f7814c67eb7212432ee"
+    },
+    {
+      "path": "docs/evidence/o05/typecheck-progress.txt",
+      "bytes": 108,
+      "sha256": "c4a2cb4773591e354b5f83328573298c7ac658ed96e0035db6530b8890c90c99"
+    }
+  ],
+  "limits": [
+    "Owner-only proposal persistence and apply; no runner graph capability",
+    "No native query/model/NL/child execution",
+    "Module explicitly mounted in test; shared production mount pending",
+    "Each G01 intermediate revision is saved, but all changes and receipt commit in one transaction",
+    "Proposal source is authenticated owner submission, not a claim about original text authorship",
+    "No Web/CLI/client/rootlock edits"
+  ],
+  "independentReview": {
+    "recordedAt": "2026-10-06T05:18:55Z",
+    "reviewer": "Mika",
+    "status": "APPROVED",
+    "target": "1f211995daae06b23cf98400199ef4d3cd3995b0",
+    "evidenceHead": "ba1a670e452e08a01321a806967fa04db37bd591",
+    "originalManifestSha256": "63e16bfbd31d677c47f07ff8947fd2bc930cc56d8fdd39dc4ef14cc14bd3a7f7",
+    "verifiedSources": 7,
+    "verifiedOutputs": 7,
+    "originalG01AssertionsUnchanged": true,
+    "reranTests": false,
+    "findings": [],
+    "mainIntegration": "pending"
+  }
+}

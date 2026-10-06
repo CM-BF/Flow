@@ -1,0 +1,19 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ✓ apps/server/src/goal-graph-runs/runs.test.ts (8 tests) 9930ms
+   ✓ applies an authorized diamond with real actor and recovers lost ACK after restart despite its own revision change  1168ms
+   ✓ pages immutable base nodes with exact versions and explicit staleness, rejecting cross-grant cursors  992ms
+   ✓ enforces grant identity, existing references, quotas and proposal binding without extending node grants  2554ms
+   ✓ keeps graph commands and audits atomic through a mid-apply database failure and immutable history  606ms
+   ✓ revalidates cached success against concurrent revoke after locking the project  379ms
+   ✓ revalidates cached success against concurrent cancel after locking the project  537ms
+   ✓ serializes competing CAS applies and enforces proposal-only scope and current lease  2619ms
+ ✓ packages/client/src/graph-run-production.test.ts (1 test) 987ms
+   ✓ mounts bounded graph grants under the production role boundary and preserves admission across restart  986ms
+
+ Test Files  2 passed (2)
+      Tests  9 passed (9)
+   Start at  22:45:14
+   Duration  11.95s (transform 530ms, setup 0ms, import 875ms, tests 10.92s, environment 0ms)
+

@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { conversationContextSelectionSchema, type ConversationContextReference } from './conversation-context.js';
 import { idSchema, type TaskSummary } from './tasks.js';
 
 export const CONVERSATION_QUEUE_MAX_PENDING = 100;
@@ -7,6 +8,7 @@ export const CONVERSATION_QUEUE_PREVIEW_BYTES = 512;
 const revision = z.number().int().min(0).max(2_147_483_646);
 export const conversationQueueEnqueueSchema = z.strictObject({
   expectedQueueRevision: revision,
+  knowledge: conversationContextSelectionSchema.optional(),
   text: z.string().min(1).max(CONVERSATION_QUEUE_TEXT_BYTES).refine(text => text.trim().length > 0 && new TextEncoder().encode(text).length <= CONVERSATION_QUEUE_TEXT_BYTES),
 });
 export const conversationQueueCancelSchema = z.strictObject({ expectedQueueRevision: revision });
@@ -23,6 +25,7 @@ export type ConversationQueueResume = z.infer<typeof conversationQueueResumeSche
 export interface ConversationQueueCurrentTurn { taskId: string; taskStatus: TaskSummary['status']; turnId: string; turnNumber: number; queueItemId: string | null }
 export type ConversationQueueBlockReason = 'queue-paused' | 'previous-turn-active' | 'previous-turn-failed' | 'previous-turn-cancelled' | 'previous-turn-uncertain' | 'native-session-unavailable' | 'native-session-busy' | 'execution-profile-unavailable';
 export interface ConversationQueueItem {
+  context?: ConversationContextReference;
   id: string;
   conversationId: string;
   sequence: number;

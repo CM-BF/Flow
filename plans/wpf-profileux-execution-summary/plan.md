@@ -1,6 +1,6 @@
 # WPF-PROFILEUX01 聊天锁定配置摘要
 
-状态：completed（branch），main集成待接收。创建2026-10-06 05:11 UTC；更新05:15 UTC。唯一owner w01_owner，派发gpt-6-astra ultra；独立branch codex/web-execution-profile-summary，固定base 698ffcd94ae073b23bcc67f6665fb19f707a93e4。
+状态：completed，main已接收。创建2026-10-06 05:11 UTC；更新05:15 UTC。唯一owner w01_owner，派发gpt-6-astra ultra；独立branch codex/web-execution-profile-summary，固定base 698ffcd94ae073b23bcc67f6665fb19f707a93e4。
 
 ## 目标与已批准方案
 

@@ -1,0 +1,411 @@
+{
+  "observedAt": "2026-10-06T06:21:32.360684+00:00",
+  "candidate": "364b87ab6ccf5fa5f713df6ff71472675be138ca",
+  "components": [
+    {
+      "component": "K02",
+      "manifest": "docs/evidence/k02/manifest.json",
+      "checked": [
+        {
+          "path": "apps/server/src/conversation-context/context.test.ts",
+          "matches": true,
+          "actualSha256": "75cd16917334c53ffb0addd182b8750681b09eb924f62cb1ebe87bb269947cee"
+        },
+        {
+          "path": "apps/server/src/conversation-context/fixture.ts",
+          "matches": true,
+          "actualSha256": "676db9f5764142637a3a55bdeb840856cd53564413ece4bd77cbd610096f1df1"
+        },
+        {
+          "path": "apps/server/src/conversation-context/index.ts",
+          "matches": true,
+          "actualSha256": "7ae39a02095c01da1be2049004c1093bc886d2e3b77e8309d160fe6d8f29afb6"
+        },
+        {
+          "path": "apps/server/src/conversation-context/store.ts",
+          "matches": true,
+          "actualSha256": "53375cfac10d497a2dedf4c0001d5473525ef8b4b2f16dff39021498b3b26bae"
+        },
+        {
+          "path": "apps/server/src/conversation-queue/commands.ts",
+          "matches": true,
+          "actualSha256": "fcf8babd8cc63c47e689ab112d019a1d215a4a3557dc3a9f10e0617dca0497f0"
+        },
+        {
+          "path": "apps/server/src/conversation-queue/controls.ts",
+          "matches": true,
+          "actualSha256": "79def0b3ced448deeb0a4bcaf1923484695bcd9f28cd463225a003a00657365e"
+        },
+        {
+          "path": "apps/server/src/conversation-queue/promotion.ts",
+          "matches": true,
+          "actualSha256": "54ad1ef9aba63ea437f6c4ebbec589fe82b0b60b15ad0c153778e1f8e2f95e2f"
+        },
+        {
+          "path": "apps/server/src/conversation-queue/queries.ts",
+          "matches": true,
+          "actualSha256": "a8c6ca373a085439728ff871f8cdb3f143051ebdaeebdb9c505decaa97552475"
+        },
+        {
+          "path": "apps/server/src/conversation-queue/store.ts",
+          "matches": true,
+          "actualSha256": "3885d55dc32b052412809f1592a534c0b91bcb887899aed26ce6fa755e106990"
+        },
+        {
+          "path": "apps/server/src/conversations/admission.ts",
+          "matches": true,
+          "actualSha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb"
+        },
+        {
+          "path": "apps/server/src/conversations/commands.ts",
+          "matches": true,
+          "actualSha256": "e74f5706f8c405f368a9a4c92315ada1a0e0003e10e38189db9e3b5ac6c08da4"
+        },
+        {
+          "path": "apps/server/src/conversations/state.ts",
+          "matches": true,
+          "actualSha256": "5f0a2476593b82d8014bc80ca44a7906d1259d19000e8546dc948712ee1ee581"
+        },
+        {
+          "path": "apps/server/src/knowledge/storage.ts",
+          "matches": true,
+          "actualSha256": "72d2cc8663a9d077367e4ce04cf1fdb7a17ed7966ae1f380e12905212abccd21"
+        },
+        {
+          "path": "apps/server/src/reconciliation.ts",
+          "matches": true,
+          "actualSha256": "0a7685acc70a95291b542e97f66390552e55e352a01b6d136b924d2066e746e8"
+        },
+        {
+          "path": "apps/server/src/runners.ts",
+          "matches": false,
+          "actualSha256": "efa20d991d6534f81b2f83f5d0ec6990745f4dd798573baec66215e27157f04d"
+        },
+        {
+          "path": "docs/evidence/k02/check.mjs",
+          "matches": true,
+          "actualSha256": "6758d8a02d592a8672441e7a99f7a5a0e74df6ef23bf902cac2080ef141c590e"
+        },
+        {
+          "path": "packages/contracts/src/conversation-context.ts",
+          "matches": true,
+          "actualSha256": "2ead672628cb411a54ab51345f384a301ff407eb2a30cf604b120b47d68ebdb5"
+        },
+        {
+          "path": "packages/contracts/src/conversation-queue.ts",
+          "matches": true,
+          "actualSha256": "d7f61fd2c7a68a0efc376112d62ad9d97f911ce94ee9aec75137cc1eb8f9707e"
+        },
+        {
+          "path": "packages/contracts/src/conversations.ts",
+          "matches": true,
+          "actualSha256": "02e2afd8b31827051ecfe84801ae4bd1210ccf9e11ec79b16bed2ae313cbad33"
+        },
+        {
+          "path": "packages/contracts/src/runner.ts",
+          "matches": false,
+          "actualSha256": "d653e6bc95cbeb722fe48a570341ba6c33e08701bead0d3416c51064e5c04b8c"
+        },
+        {
+          "path": "packages/storage/migrations/018-conversation-context.sql",
+          "matches": true,
+          "actualSha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3"
+        }
+      ]
+    },
+    {
+      "component": "O07",
+      "manifest": "docs/evidence/o07/manifest.json",
+      "checked": [
+        {
+          "path": "apps/runner/src/claude.ts",
+          "matches": true,
+          "actualSha256": "96553fab5d43698efe03b21dd107185053e1358293d44f6d95b7962717f7fbc8"
+        },
+        {
+          "path": "apps/runner/src/configuration.ts",
+          "matches": true,
+          "actualSha256": "98792e0f4f3db72e9cc3604a3abcbf36fb0e410b9324e65b9cc0a6199bc1c621"
+        },
+        {
+          "path": "apps/runner/src/execution-profiles.ts",
+          "matches": true,
+          "actualSha256": "34fb24c09bf4181156b0767cb2d708c3714c190009742b8ec23db35d557c6f2d"
+        },
+        {
+          "path": "apps/runner/src/goal-graph-tools/bind.ts",
+          "matches": true,
+          "actualSha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c"
+        },
+        {
+          "path": "apps/runner/src/goal-graph-tools/integration.test.ts",
+          "matches": true,
+          "actualSha256": "5603c6ffcaaf806829eccdb03bff042865a81df0fa48f4814c07c30068323071"
+        },
+        {
+          "path": "apps/runner/src/goal-graph-tools/mcp.test.ts",
+          "matches": true,
+          "actualSha256": "7083b8432715667f54aca2d128dbf84accd744f2d9b2c333d3fa6747b54bc998"
+        },
+        {
+          "path": "apps/runner/src/goal-graph-tools/mcp.ts",
+          "matches": true,
+          "actualSha256": "df1b2c75c4042bee4ea01179f51af452465ec8b01707a3cdf41946a1b6338298"
+        },
+        {
+          "path": "apps/runner/src/goal-graph-tools/policy.test.ts",
+          "matches": true,
+          "actualSha256": "b7555ecda6b3f447b38013df88adb8247d0c7b7b54ad173c2927c3463213b2f2"
+        },
+        {
+          "path": "apps/runner/src/goal-graph-tools/sdk.test.ts",
+          "matches": true,
+          "actualSha256": "937373bbcca8723ed4bc36bf7b0840d949978ba585b1d5b2f4962d726966a210"
+        },
+        {
+          "path": "apps/runner/src/goal-graph-tools/test-peer.ts",
+          "matches": true,
+          "actualSha256": "d89d9a6658bfc10d3efee929ea9e0cef794a31cd9eed9799278969472d6ad0fb"
+        },
+        {
+          "path": "apps/runner/src/goal-tool-bridge/authority.ts",
+          "matches": true,
+          "actualSha256": "5f005fdd53eaf8974498bb20e42af558e0381897e78e7ca0162e781c8d357d5e"
+        },
+        {
+          "path": "apps/runner/src/goal-tool-bridge/index.ts",
+          "matches": true,
+          "actualSha256": "77f540e0d82bc3519daac4f2faaf36f0ee97e3a9fc8c14d86cc37cbb402e5c6a"
+        },
+        {
+          "path": "apps/runner/src/goal-tool-bridge/policy.ts",
+          "matches": true,
+          "actualSha256": "de9813a38e32b434a758901a32f199850df14153fed925f1e9a9cb2361f3272c"
+        },
+        {
+          "path": "apps/runner/src/runtime.ts",
+          "matches": true,
+          "actualSha256": "ccf233d49014af0c68672330c6e015a3a0891d1a8691352f91c6bc7adee59e85"
+        },
+        {
+          "path": "apps/server/src/execution-profiles/store.ts",
+          "matches": true,
+          "actualSha256": "20ef1992334639b79648bdf2a892478438e4fe9f2e3ec629380e0a3308a7a33e"
+        },
+        {
+          "path": "apps/server/src/goal-graph-runs/index.ts",
+          "matches": true,
+          "actualSha256": "6e6d5f1e0cfec52e69069de9176a49b5689a2fcef67c1f41fb0ea4dc8efe9c77"
+        },
+        {
+          "path": "apps/server/src/goal-graph-runs/migration.test.ts",
+          "matches": true,
+          "actualSha256": "c527620b2966f1d7a1fb78f0486bf2e8574b64aa1907ff5f741b882b0555150f"
+        },
+        {
+          "path": "apps/server/src/goal-graph-runs/native-migration.test.ts",
+          "matches": true,
+          "actualSha256": "e27afc7faa43242e513584663207765df435f6632a96b6de46747626f6a8df89"
+        },
+        {
+          "path": "apps/server/src/goal-graph-runs/native.test.ts",
+          "matches": true,
+          "actualSha256": "00df78e4b2e7c32b0569ff5aa9045b2332fcc92983e91b556f4a3111390a859b"
+        },
+        {
+          "path": "apps/server/src/goal-graph-runs/store.ts",
+          "matches": true,
+          "actualSha256": "4bb176a415d3a87523ac72d34819c92de1459839131783816f494ca106ff35c0"
+        },
+        {
+          "path": "apps/server/src/runners.ts",
+          "matches": true,
+          "actualSha256": "efa20d991d6534f81b2f83f5d0ec6990745f4dd798573baec66215e27157f04d"
+        },
+        {
+          "path": "apps/server/src/tasks.ts",
+          "matches": true,
+          "actualSha256": "459e0636a1823f15581c1c54c6bab22bc1faaa539ab451b190d082be0117ab40"
+        },
+        {
+          "path": "packages/contracts/src/execution-profiles.ts",
+          "matches": true,
+          "actualSha256": "0821d221bad2fd69047f9ed9c7fe71549bc36fafac56d330fcb908925ebe1f35"
+        },
+        {
+          "path": "packages/contracts/src/goal-graph-runs.ts",
+          "matches": true,
+          "actualSha256": "d1bff3839b05af2ca348b95cc70f96017bdb746d6729b6456e2fcbf9ca7008b4"
+        },
+        {
+          "path": "packages/contracts/src/runner.ts",
+          "matches": true,
+          "actualSha256": "d653e6bc95cbeb722fe48a570341ba6c33e08701bead0d3416c51064e5c04b8c"
+        },
+        {
+          "path": "packages/storage/migrations/019-goal-graph-native-mode.sql",
+          "matches": true,
+          "actualSha256": "df159d8dd0fb329899a2d755ae9deeb4a92817f87fc8014f74080932d18c5218"
+        }
+      ]
+    },
+    {
+      "component": "Web K02",
+      "manifest": "docs/evidence/wpf-k02-compatibility/source-binding.json",
+      "checked": [
+        {
+          "path": "apps/web/src/conversations/projection.ts",
+          "matches": true,
+          "actualSha256": "7242783c516311dec0793a6a659a181b5b76c8e1259c732649d5a77379ceb2c2"
+        },
+        {
+          "path": "apps/web/src/execution-profiles/selection.ts",
+          "matches": true,
+          "actualSha256": "577676a1357e6da20c613f6ed49301ebb954b0982e8b5db972067a2b7c21e004"
+        },
+        {
+          "path": "apps/web/test/conversation-outbox.test.ts",
+          "matches": true,
+          "actualSha256": "a9021f6347c24ce19ff1d21a4ee36c2d816f988db374e58f1c185a85c7629d02"
+        },
+        {
+          "path": "apps/web/test/conversation-projection.test.ts",
+          "matches": true,
+          "actualSha256": "c6bddc0c79b3fda9bfb7e1da0b9f31447dabf819c4230893aa978e04620d4d51"
+        },
+        {
+          "path": "apps/web/test/conversation-queue.test.ts",
+          "matches": true,
+          "actualSha256": "295ce9219ffa1012c315d479d5cb990b2cdfcb56342041f20d63d81a14e4b8a4"
+        },
+        {
+          "path": "apps/web/test/execution-profiles.test.ts",
+          "matches": true,
+          "actualSha256": "03ee026277f3f52373d328a516ca3722ec4e5c95cc5c68d5a766f6bfc180350d"
+        }
+      ]
+    },
+    {
+      "component": "X04",
+      "manifest": "docs/evidence/x04/manifest.json",
+      "checked": [
+        {
+          "path": "packages/contracts/src/package-artifacts.ts",
+          "matches": true,
+          "actualSha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056"
+        },
+        {
+          "path": "apps/server/src/package-artifacts/artifacts.test.ts",
+          "matches": true,
+          "actualSha256": "74a1b6605f3b6739a038360c65fbd5126b6ba992061ed70f271c7ff6927bef3a"
+        },
+        {
+          "path": "apps/server/src/package-artifacts/errors.ts",
+          "matches": true,
+          "actualSha256": "be3220467a00447b49c750220a241121a58e3316641cfdbb75fd2b4fdf0264b2"
+        },
+        {
+          "path": "apps/server/src/package-artifacts/index.ts",
+          "matches": true,
+          "actualSha256": "6335931d2999c3a6581452e0a8e831a969518dd2adcab972b91870cdd0d9ed61"
+        },
+        {
+          "path": "apps/server/src/package-artifacts/input.ts",
+          "matches": true,
+          "actualSha256": "4e07ac7a31b9abe6ceb3508968eed5ab9948963d411223615d6231846e5bbb61"
+        },
+        {
+          "path": "apps/server/src/package-artifacts/registry.test.ts",
+          "matches": true,
+          "actualSha256": "f0cd9c5be9ae82d2d0a1c7d2bf93bddece00f09dac796ae553ca5b2e7c9e7abe"
+        },
+        {
+          "path": "apps/server/src/package-artifacts/source.ts",
+          "matches": true,
+          "actualSha256": "7a21055545d84ea3bcc2f18fa5d78489404dcc06f7a3f3be1af7413db848dd2d"
+        },
+        {
+          "path": "apps/server/src/package-artifacts/storage.ts",
+          "matches": true,
+          "actualSha256": "827ea2d17247d027e14673848ed7d744c6142a27811e72413cdabb23cb1b30c2"
+        }
+      ]
+    },
+    {
+      "component": "Renderer",
+      "manifest": "docs/evidence/wpf-renderer01/source-binding.json",
+      "checked": [
+        {
+          "path": "apps/web/src/data-renderers/registry.ts",
+          "matches": true,
+          "actualSha256": "cdd1f19e355a9023e677cff7a9c1a1e28ee0ced49c7818002ebb60fffcc31e53"
+        },
+        {
+          "path": "apps/web/src/data-renderers/react.tsx",
+          "matches": true,
+          "actualSha256": "b460e901cd5f2904b1402a17792edf95138004c9e8748c077620dd1797c0c807"
+        },
+        {
+          "path": "apps/web/src/data-renderers/flow-reply-detail.tsx",
+          "matches": true,
+          "actualSha256": "9f2db83abb675beb05a95e5c230557538a9d59cc0f36227092719987e3a63323"
+        },
+        {
+          "path": "apps/web/test/data-renderers.test.ts",
+          "matches": true,
+          "actualSha256": "a78a780a55aa6c37a7fdb2e4d481b2a641be990348834c768189aa9942bbb296"
+        },
+        {
+          "path": "apps/web/test/data-renderers.browser.ts",
+          "matches": true,
+          "actualSha256": "152ddb9c777ac74c20440e258a7c1206c35aaed2fc135d40287ad023aafc0696"
+        },
+        {
+          "path": "apps/web/test/data-renderers.fixture.tsx",
+          "matches": true,
+          "actualSha256": "5fcfd32fc63878755627eb94fecaba50649f618b55ba58926680a1a54a6920c2"
+        }
+      ]
+    },
+    {
+      "component": "F01",
+      "manifest": "docs/evidence/f01/context-mount-manifest.json",
+      "checked": [
+        {
+          "path": "apps/server/src/index.ts",
+          "matches": true,
+          "actualSha256": "400b4a6ce1f8644cc527dbf57526d44bea9d18dff194e69f5b835d605a393822"
+        },
+        {
+          "path": "packages/contracts/src/index.ts",
+          "matches": true,
+          "actualSha256": "7945a60c85f2a32c950aee2c25c0eeb60fa813dd346ac8d524385a5b217ffc69"
+        },
+        {
+          "path": "packages/client/src/index.ts",
+          "matches": true,
+          "actualSha256": "37500b3663e6e545f43f294aeb75e7935101f0ba2c66bd5707364137cab7f5fc"
+        },
+        {
+          "path": "packages/client/src/conversation-context.test.ts",
+          "matches": true,
+          "actualSha256": "288ad89df9266a41a85aeea400486dd9394db5613bbdc9d579941ee51d882f61"
+        },
+        {
+          "path": "packages/client/src/context-production.test.ts",
+          "matches": true,
+          "actualSha256": "69bdb99458ad6e4575dd9be4a307deaf9a2a2334a0c705753a65b177f32e8ca7"
+        }
+      ]
+    }
+  ],
+  "intentionalOverlays": [
+    {
+      "paths": [
+        "apps/server/src/runners.ts",
+        "packages/contracts/src/runner.ts"
+      ],
+      "reason": "O07 c224 approved native graph additions preserve K02 private execution context seam. Exact match to O07 sources; shared production consumer verifies K02 context plus full O06/O07 inputs."
+    }
+  ]
+}

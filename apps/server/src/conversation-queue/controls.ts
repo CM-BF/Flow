@@ -5,7 +5,7 @@ import { prepareTurnAdmission } from '../conversations/admission.js';
 import { promoteItem } from './promotion.js';
 import { command } from '../tasks.js';
 import { loadConversation } from '../conversations/state.js';
-import { advanceQueueRevision, currentTurn, requireQueueRevision, firstWaiting, itemView } from './store.js';
+import { advanceQueueRevision, currentTurn, requireQueueRevision, firstWaiting, contextualItemView } from './store.js';
 import type { ConversationQueuePause, ConversationQueuePaused, ConversationQueueResume, ConversationQueueResumed } from '../../../../packages/contracts/src/conversation-queue.js';
 export async function pause(pool: Pool, conversationId: string, input: ConversationQueuePause, key: string): Promise<ConversationQueuePaused> {
   const result = await command(pool, 'conversation.queue.pause', key, { conversationId, ...input }, async client => {
@@ -29,7 +29,7 @@ export async function resume(pool: Pool, boss: PgBoss, conversationId: string, i
     if ((turn?.taskId ?? null) !== input.expectedTaskId) throw new HttpError(409, 'conversation_queue_task_conflict', 'The latest task changed. Refresh before continuing.');
     const first = await firstWaiting(client, conversationId);
     const admission = await prepareTurnAdmission(client, conversation, first?.user_text ?? '', 'explicit-queue');
-    const promoted = first ? itemView(await promoteItem(client, boss, conversation, first, admission)) : null;
+    const promoted = first ? await contextualItemView(client, await promoteItem(client, boss, conversation, first, admission)) : null;
     await client.query('UPDATE flow.conversations SET queue_paused=false WHERE id=$1', [conversationId]);
     const queueRevision = await advanceQueueRevision(client, conversationId);
     return { conversationId, queueRevision, paused: false as const, currentTurn: await currentTurn(client, conversationId), promoted };

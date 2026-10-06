@@ -1,3 +1,4 @@
+import { revokeAuthority, type AuthorityStore } from '../goal-run-authority/runner-project-fence.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
@@ -16,6 +17,12 @@ export async function runRow(client: PoolClient, id: string, lock = false): Prom
   if (!row) throw new HttpError(404, 'goal_tool_run_not_found', 'Goal tool run not found.');
   return row;
 }
+export const nodeAuthorityStore: AuthorityStore<RunRow> = {
+  code: 'goal_tool',
+  async find(client, attemptId) { return (await client.query<{ id: string; goal_id: string; runner_id: string }>('SELECT g.id,g.goal_id,a.runner_id FROM flow.goal_tool_runs g JOIN flow.attempts a ON a.task_id=g.task_id WHERE a.id=$1', [attemptId])).rows[0]; },
+  lock: (client, id) => runRow(client, id, true),
+  async revoke(client, id, reason) { return (await client.query<RunRow>('UPDATE flow.goal_tool_runs SET revoked_at=clock_timestamp(),revocation_reason=$2 WHERE id=$1 RETURNING *', [id, reason])).rows[0]!; },
+};
 export async function admit(pool: Pool, boss: PgBoss, goalId: string, input: GoalToolRunAdmission, key: string): Promise<GoalToolRunAccepted> {
   const accepted = await command(pool, `goal-tool-run:create:${goalId}`, key, input, async client => {
     const state = await loadState(client, goalId, true);
@@ -34,10 +41,8 @@ export async function admit(pool: Pool, boss: PgBoss, goalId: string, input: Goa
 export async function getRun(pool: Pool, id: string) { return transaction(pool, async client => runView(await runRow(client, id)), true); }
 export async function revoke(pool: Pool, id: string, reason: string, key: string): Promise<GoalToolRunRevoked> {
   const changed = await command(pool, `goal-tool-run:revoke:${id}`, key, { reason }, async client => {
-    const existing = await runRow(client, id, true);
-    if (existing.revoked_at) return { run: runView(existing), changed: false };
-    const row = (await client.query<RunRow>('UPDATE flow.goal_tool_runs SET revoked_at=clock_timestamp(),revocation_reason=$2 WHERE id=$1 RETURNING *', [id, reason])).rows[0]!;
-    return { run: runView(row), changed: true };
+    const result = await revokeAuthority(client, nodeAuthorityStore, id, reason);
+    return { run: runView(result.row), changed: result.changed };
   });
   return { ...changed.value, replayed: changed.replayed };
 }

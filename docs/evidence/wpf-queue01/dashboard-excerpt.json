@@ -1,0 +1,332 @@
+{
+  "generatedAt": "2026-10-06T05:41:16.755Z",
+  "sourceCount": 65,
+  "assignmentState": "available",
+  "task": {
+    "id": "WPF-QUEUE01",
+    "title": "聊天待发送消息",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue",
+    "branch": "codex/web-conversation-queue",
+    "planDir": "plans/wpf-queue01-ui",
+    "evidenceDir": "docs/evidence/wpf-queue01",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T05:41:16.723Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue/plans/wpf-queue01-ui/status.md",
+      "syncedAt": "2026-10-06T05:41:16.755Z",
+      "stale": false,
+      "ageHours": 0.021320833333333334
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/web-conversation-queue",
+      "head": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+      "dirty": true,
+      "changedFiles": 27,
+      "observedAt": "2026-10-06T05:41:18.198Z"
+    },
+    "status": {
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "聊天执行中可继续排队，等待消息可查看、暂停继续或单独取消",
+        "next": "集成已通过审查的聊天排队操作",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+        "scopes": [
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/queue/ConversationQueue.tsx",
+          "apps/web/src/conversations/queue/commands.ts",
+          "apps/web/src/conversations/queue/projection.ts",
+          "apps/web/src/conversations/queue/queue-elements.tsx",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation-queue.test.ts",
+          "apps/web/test/conversation-queue.fixture.ts",
+          "apps/web/test/conversation-queue.browser.ts"
+        ],
+        "errors": []
+      },
+      "taskId": "WPF-QUEUE01",
+      "owner": "workspace_panels_owner / gpt-6-astra ultra",
+      "branch": "codex/web-conversation-queue",
+      "branchState": "COMPLETED",
+      "updatedAt": "2026-10-06T05:40:00.000Z",
+      "updatedRecord": "2026-10-06 05:40 UTC / 固定main14c61b4062f8040ba6c7239860929366e5bd3fc1",
+      "todos": [
+        {
+          "id": "WPF-QUEUE01-01",
+          "state": "completed",
+          "owner": "workspace_panels_owner",
+          "evidence": "固定输入、正式领取、[技能](../../docs/evidence/wpf-queue01/quality.md)"
+        },
+        {
+          "id": "WPF-QUEUE01-02",
+          "state": "completed",
+          "owner": "workspace_panels_owner",
+          "evidence": "独立commands/read projection，51局部检查，见验证"
+        },
+        {
+          "id": "WPF-QUEUE01-03",
+          "state": "completed",
+          "owner": "workspace_panels_owner",
+          "evidence": "官方Thread/AI Elements Queue，11开发+11生产App旅程、双主题390px"
+        },
+        {
+          "id": "WPF-QUEUE01-04",
+          "state": "completed",
+          "owner": "workspace_panels_owner",
+          "evidence": "root05:40:36固定target APPROVED；交Lead集成，main仍未集成，F01独立pending"
+        },
+        {
+          "id": "WPF-QUEUE01-F01",
+          "state": "pending",
+          "owner": "待Lead另领owner",
+          "evidence": "跨reload/换连接原key恢复尚未实现；稳定无凭据namespace与journal后继，不凭同文GET猜受理"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "14c61b4062f8040ba6c7239860929366e5bd3fc1 / metadata HEAD由Git聚合",
+      "declaredDirty": "实现已固定，当前仅本任务metadata/evidence收口；实际dirty由Git聚合",
+      "checks": {
+        "state": "passed",
+        "target": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+        "record": "PASSED 309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c；51 direct、typecheck/build、dev11/prod11 HTTP fixture；[验证](../../docs/evidence/wpf-queue01/validation.md)"
+      },
+      "reviewRecord": "[review.md](review.md)，APPROVED 309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+      "mainRecord": "NOT_INTEGRATED；main14c61只有公共queue能力，无本Web控制",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED**",
+      "target": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+      "proof": {
+        "target": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+        "head": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+        "scopes": [
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/queue/ConversationQueue.tsx",
+          "apps/web/src/conversations/queue/commands.ts",
+          "apps/web/src/conversations/queue/projection.ts",
+          "apps/web/src/conversations/queue/queue-elements.tsx",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation-queue.test.ts",
+          "apps/web/test/conversation-queue.fixture.ts",
+          "apps/web/test/conversation-queue.browser.ts"
+        ],
+        "observedAt": "2026-10-06T05:41:18.223Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/wpf-queue01/install.log",
+          "docs/evidence/wpf-queue01/quality.md",
+          "plans/wpf-queue01-ui/plan.md",
+          "plans/wpf-queue01-ui/review.md",
+          "plans/wpf-queue01-ui/status.md",
+          "docs/evidence/wpf-queue01/README.md",
+          "docs/evidence/wpf-queue01/browser-before-composer-seam.json",
+          "docs/evidence/wpf-queue01/browser-failure.png",
+          "docs/evidence/wpf-queue01/browser-results.json",
+          "docs/evidence/wpf-queue01/browser.log",
+          "docs/evidence/wpf-queue01/build.log",
+          "docs/evidence/wpf-queue01/direct-tests.log",
+          "docs/evidence/wpf-queue01/live-claim.json",
+          "docs/evidence/wpf-queue01/production-before-await-receipt.json",
+          "docs/evidence/wpf-queue01/production-browser-failure.png",
+          "docs/evidence/wpf-queue01/production-browser-results.json",
+          "docs/evidence/wpf-queue01/production-browser.log",
+          "docs/evidence/wpf-queue01/queue-LICENSE.txt",
+          "docs/evidence/wpf-queue01/queue-dark-390.png",
+          "docs/evidence/wpf-queue01/queue-dark.png",
+          "docs/evidence/wpf-queue01/queue-light-390.png",
+          "docs/evidence/wpf-queue01/queue-light.png",
+          "docs/evidence/wpf-queue01/queue-source.json",
+          "docs/evidence/wpf-queue01/queue-upstream.tsx.txt",
+          "docs/evidence/wpf-queue01/source-binding.json",
+          "docs/evidence/wpf-queue01/typecheck.log",
+          "docs/evidence/wpf-queue01/validation.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "declarationProof": "unchanged"
+    },
+    "implementationProof": {
+      "target": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+      "head": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+      "scopes": [
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/conversations/queue/queue-elements.tsx",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-queue.test.ts",
+        "apps/web/test/conversation-queue.fixture.ts",
+        "apps/web/test/conversation-queue.browser.ts"
+      ],
+      "observedAt": "2026-10-06T05:41:18.223Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/wpf-queue01/install.log",
+        "docs/evidence/wpf-queue01/quality.md",
+        "plans/wpf-queue01-ui/plan.md",
+        "plans/wpf-queue01-ui/review.md",
+        "plans/wpf-queue01-ui/status.md",
+        "docs/evidence/wpf-queue01/README.md",
+        "docs/evidence/wpf-queue01/browser-before-composer-seam.json",
+        "docs/evidence/wpf-queue01/browser-failure.png",
+        "docs/evidence/wpf-queue01/browser-results.json",
+        "docs/evidence/wpf-queue01/browser.log",
+        "docs/evidence/wpf-queue01/build.log",
+        "docs/evidence/wpf-queue01/direct-tests.log",
+        "docs/evidence/wpf-queue01/live-claim.json",
+        "docs/evidence/wpf-queue01/production-before-await-receipt.json",
+        "docs/evidence/wpf-queue01/production-browser-failure.png",
+        "docs/evidence/wpf-queue01/production-browser-results.json",
+        "docs/evidence/wpf-queue01/production-browser.log",
+        "docs/evidence/wpf-queue01/queue-LICENSE.txt",
+        "docs/evidence/wpf-queue01/queue-dark-390.png",
+        "docs/evidence/wpf-queue01/queue-dark.png",
+        "docs/evidence/wpf-queue01/queue-light-390.png",
+        "docs/evidence/wpf-queue01/queue-light.png",
+        "docs/evidence/wpf-queue01/queue-source.json",
+        "docs/evidence/wpf-queue01/queue-upstream.tsx.txt",
+        "docs/evidence/wpf-queue01/source-binding.json",
+        "docs/evidence/wpf-queue01/typecheck.log",
+        "docs/evidence/wpf-queue01/validation.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "documents": [
+      {
+        "path": "plans/wpf-queue01-ui/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/wpf-queue01-ui/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/wpf-queue01-ui/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/wpf-queue01/take-receipt.json",
+        "title": "take receipt",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-queue01/validation.md",
+        "title": "验证",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-queue01/quality.md",
+        "title": "技能",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/wpf-queue01/README.md",
+        "title": "README",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 4,
+      "total": 5
+    },
+    "main": {
+      "record": "NOT_INTEGRATED；main14c61只有公共queue能力，无本Web控制",
+      "recordedHead": null,
+      "target": "309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432c",
+      "mainHead": "fb906cb42391971a8b315dbd813f7633927d7265",
+      "scopes": [
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/conversations/queue/queue-elements.tsx",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-queue.test.ts",
+        "apps/web/test/conversation-queue.fixture.ts",
+        "apps/web/test/conversation-queue.browser.ts"
+      ],
+      "observedAt": "2026-10-06T05:41:18.198Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main 声明范围与目标不同，或存在未提交变化"
+    },
+    "assignments": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/queue/ConversationQueue.tsx",
+          "apps/web/src/conversations/queue/commands.ts",
+          "apps/web/src/conversations/queue/projection.ts",
+          "apps/web/src/conversations/queue/queue-elements.tsx",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/conversation-queue.browser.ts",
+          "apps/web/test/conversation-queue.fixture.ts",
+          "apps/web/test/conversation-queue.test.ts",
+          "docs/evidence/wpf-queue01",
+          "plans/wpf-queue01-ui"
+        ],
+        "state": "active",
+        "branch": "codex/web-conversation-queue",
+        "origin": "new",
+        "taskId": "WPF-QUEUE01",
+        "worker": "workspace_panels_owner",
+        "claimId": "b4ea85d0-ad87-4903-9a59-73281ad17752",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue",
+        "createdAt": "2026-10-06T05:19:31.947Z",
+        "updatedAt": "2026-10-06T05:19:31.947Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  }
+}

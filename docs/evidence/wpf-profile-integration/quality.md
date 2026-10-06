@@ -9,3 +9,5 @@
 05:04 UTC 段落复核：schema.parse会复制对象，outbox在parse后重新冻结requested与executionProfile；统一creationFields只提取不可变创建字段，receipt校验不把完整summary当strict creation。首次直接检查暴露后者的17个失败，已修接口调用，保留[原始失败](direct-tests-initial-failure.log)；并非放宽schema或删断言。修后34 projection + 10 outbox + 16直接依赖module全部通过。App只持有每连接catalog和稳定view key选择；网络/幂等逻辑仍在projection/outbox。下一段以实际App HTTP fixture验证UI门禁和生命周期，不调用模型。
 
 05:12 UTC 交付clean-code：固定2e4只4生产+4专测文件，App目录reader稳定且私有，connection卸载dispose；selection按稳定view key保留，不能借created id改变用户选项。冻结outbox与读目录故障分离，错误pin在bind前失败；后续页和turnACK也核原creation。fixture复用既有公共HTTP模拟，注入只在两个新专测文件，无产品调试分支。60direct/9dev/9prod/typecheck/build通过，source hash绑定固定commit；独立root44direct及源码审APPROVED。Browser脚本的侧栏遮挡/旧stale未刷新/Dialog卸载时序失败已纠正成真实用户操作，不强制click/绕过disabled。无新抽象或依赖；原始日志警告保留。未解体验项为模块锁定块过长，已交有独立claim的PROFILEUX01，不越范围手改。
+
+05:18 UTC集成收口clean-code：只读核main14c61的ancestor/8path一致、claim当前v1 active。仅更新metadata/delivered，无源码、测试、模型或服务变化。文档检查后全部10scope停写并release，不在失去claim后修改旧树。

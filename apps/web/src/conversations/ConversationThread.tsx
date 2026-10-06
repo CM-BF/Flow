@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { AssistantRuntimeProvider, makeAssistantDataUI, MessageNotSentError, useExternalStoreRuntime } from "@assistant-ui/react";
-import { TERMINAL_STATUSES, conversationTurnSchema, type ConversationTurn, type ConversationSnapshot, type ConversationCreation } from "@flow/contracts";
+import { TERMINAL_STATUSES, conversationTurnSchema, conversationQueueEnqueueSchema, type ConversationTurn, type ConversationSnapshot, type ConversationCreation } from "@flow/contracts";
 import { Thread } from "../components/assistant-ui/elements/thread.aui";
 import { ComposerActions, MessageActions, PluginThreadScope } from "../plugin-integration/react";
 import { fixtureMode, type DraftState } from "../TaskThread";
@@ -9,6 +9,7 @@ import { ConversationProjection, replyDetailKey } from "./projection";
 import { ExecutionProfilePicker } from "../execution-profiles/ExecutionProfilePicker";
 import type { ExecutionProfileCatalog } from "../execution-profiles/catalog";
 import { freezeConversationCreation, type ProfileSelection } from "../execution-profiles/selection";
+import { ConversationQueue } from "./queue/ConversationQueue";
 import "./conversations.css";
 
 const ReplyContext = createContext<ConversationProjection | null>(null);
@@ -44,6 +45,8 @@ export function ConversationThread({ viewId, projection, drafts, profiles, profi
 }) {
   const state = useSyncExternalStore(projection.subscribe, projection.getSnapshot);
   const profileCatalog = useSyncExternalStore(profiles.subscribe, profiles.getSnapshot);
+  const queue = useSyncExternalStore(projection.queue.subscribe, projection.queue.getSnapshot);
+  const [intent, setIntent] = useState<"follow-up" | "queue">("follow-up");
   const [sendError, setSendError] = useState<string | null>(null);
   const messages = useMemo(() => conversationMessages(state.turns), [state.turns]);
   const lockedProfile = state.snapshot ? { creation: state.snapshot.conversation, reason: "created" as const }
@@ -54,15 +57,20 @@ export function ConversationThread({ viewId, projection, drafts, profiles, profi
     return !catalog.loaded || catalog.stale || !catalog.profiles.some(profile => profile.reference.id === ref.id && profile.reference.runnerId === ref.runnerId && profile.reference.configDigest === ref.configDigest)
       ? "Refresh or load more profiles to confirm this selection before creating a conversation. Your draft stays here." : null;
   };
-  const reason = projection.sendDisabledReason() ?? profileReason();
+  const reason = projection.sendDisabledReason(intent) ?? profileReason();
   const last = state.snapshot?.lastTurn;
   useEffect(() => { if (last) onCurrentTask(last.task.id); }, [last?.task.id]);
   const runtime = useExternalStoreRuntime({ messages, convertMessage: message => message,
     isRunning: Boolean(last && !TERMINAL_STATUSES.includes(last.task.status)), isLoading: state.loading || Boolean(state.error && !state.snapshot), isSendDisabled: Boolean(reason),
     onNew: async message => {
-      const blocked = projection.sendDisabledReason() ?? profileReason();
+      const blocked = projection.sendDisabledReason(intent) ?? profileReason();
       if (blocked) throw new MessageNotSentError(blocked);
       const text = message.content.filter(part => part.type === "text").map(part => part.text).join("\n");
+      if (intent === "queue") {
+        const valid = conversationQueueEnqueueSchema.safeParse({ expectedQueueRevision: queue.page?.queueRevision, text });
+        if (!valid.success) { const error = "Use a non-empty message up to 16,000 UTF-8 bytes for the queue. This message was not sent."; setSendError(error); throw new MessageNotSentError(error); }
+        setSendError(null); await projection.queue.enqueue(text); return;
+      }
       const valid = conversationTurnSchema.safeParse({ text, expectedRevision: state.snapshot?.conversation.revision ?? 0, mode: "follow-up" });
       if (!valid.success) { const error = "Use 1–16,000 characters. This message was not sent."; setSendError(error); throw new MessageNotSentError(error); }
       let creation: ConversationCreation | undefined;
@@ -83,11 +91,17 @@ export function ConversationThread({ viewId, projection, drafts, profiles, profi
   }, [runtime, viewId, drafts]);
   return <PluginThreadScope editableComposer viewId={viewId} taskId={last?.task.id ?? null} messageTask={id => messageTask(state.turns, id)}><ReplyContext.Provider value={projection}><AssistantRuntimeProvider runtime={runtime}>
     <ReplyDetail />
-    <Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel="Send message"
+    <Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
+      composerSubmit={intent === "queue" ? () => { if (!projection.sendDisabledReason("queue")) runtime.thread.composer.send({ startRun: false }); } : undefined}
+      composerInputOnKeyDown={event => {
+        if (event.defaultPrevented || event.nativeEvent.isComposing || event.keyCode === 229 || event.key !== "Enter") return;
+        if ((event.ctrlKey || event.metaKey) && event.shiftKey) { event.preventDefault(); setSendError("Steering is not supported. Choose Queue next to save a message without interrupting execution."); return; }
+        if (intent === "queue" && last && !TERMINAL_STATUSES.includes(last.task.status) && !event.shiftKey && !event.ctrlKey && !event.metaKey && !event.altKey) { event.preventDefault(); if (!projection.sendDisabledReason(intent)) event.currentTarget.form?.requestSubmit(); }
+      }}
       beforeMessages={<>{state.error && <p className="flow-conversation-alert" role="alert">{state.error} <button className="flow-link" onClick={() => void projection.refresh()}>Retry conversation</button></p>}{state.nextCursor !== null && <p className="flow-conversation-notice">Some turns are not loaded. <button className="flow-link" disabled={state.loadingMore} onClick={() => void projection.loadMore()}>{state.loadingMore ? "Loading…" : "Load more turns"}</button></p>}</>}
-      afterMessages={<>{last?.assistant.state === "pending" && <p className="flow-conversation-notice" role="status">Reply pending. You can keep writing below.</p>}{last?.assistant.state === "unavailable" && <p className="flow-conversation-notice" role="status">Reply unavailable · {last.assistant.reason.replaceAll("-", " ")}</p>}{state.turns.length > 0 && <details className="flow-conversation-execution"><summary>Execution details · {state.turns.length} {state.turns.length === 1 ? "turn" : "turns"}</summary>{state.turns.map(turn => <TurnStatus key={turn.id} turn={turn} requested={state.snapshot?.conversation.requested} onInspect={onInspect} onOpenTask={onOpenTask} />)}</details>}{state.outbox && <section className="flow-conversation-receipt" aria-label="Message receipt"><strong>{state.outbox.state === "sending" ? "Sending message…" : state.outbox.state === "unknown" ? "Receipt unknown" : "Message rejected"}</strong><pre>{state.outbox.request.text}</pre><p>{state.outbox.error ?? "Waiting for durable acceptance."}</p>{state.outbox.state === "unknown" && <><p>The center may have accepted this message. Retry keeps the same request identity; your new draft stays separate.</p><button className="flow-link" onClick={async () => { const id = await projection.retry(); if (id) onAccepted(id); }}>Retry same message</button></>}{state.outbox.state === "rejected" && <button className="flow-link" onClick={() => projection.outbox.dismiss(state.outbox!.id)}>Dismiss rejected receipt</button>}</section>}</>}
-      composerHeader={<>{!lockedProfile && !viewId.startsWith("draft-") ? <p role="status">Loading conversation configuration…</p> : <ExecutionProfilePicker catalog={profileCatalog} selection={profileSelection} onSelect={onProfileSelection} onRefresh={() => { void profiles.refresh(); }} onLoadMore={() => { void profiles.loadMore(); }} locked={lockedProfile} />}<div className="flow-conversation-controls" aria-label="Conversation capabilities"><button disabled title="Per-turn thinking controls are unavailable">Thinking</button><button disabled title="Per-turn tool controls are unavailable">Tools</button><button disabled title="Queue controls are not available in this Web version">Queue</button><button disabled title="Steering is not available in this Web version">Steer</button></div></>}
-      footer={<div className="flow-conversation-footer">{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}<p role="status">{reason ?? (state.snapshot ? "Continue this conversation." : "Your message starts a new conversation.")}</p><span>Replies appear when complete. Queue, steering and per-turn controls are not available in this Web version.</span></div>}
+      afterMessages={<><ConversationQueue projection={projection.queue} />{last?.assistant.state === "pending" && <p className="flow-conversation-notice" role="status">Reply pending. You can keep writing below.</p>}{last?.assistant.state === "unavailable" && <p className="flow-conversation-notice" role="status">Reply unavailable · {last.assistant.reason.replaceAll("-", " ")}</p>}{state.turns.length > 0 && <details className="flow-conversation-execution"><summary>Execution details · {state.turns.length} {state.turns.length === 1 ? "turn" : "turns"}</summary>{state.turns.map(turn => <TurnStatus key={turn.id} turn={turn} requested={state.snapshot?.conversation.requested} onInspect={onInspect} onOpenTask={onOpenTask} />)}</details>}{state.outbox && <section className="flow-conversation-receipt" aria-label="Message receipt"><strong>{state.outbox.state === "sending" ? "Sending message…" : state.outbox.state === "unknown" ? "Receipt unknown" : "Message rejected"}</strong><pre>{state.outbox.request.text}</pre><p>{state.outbox.error ?? "Waiting for durable acceptance."}</p>{state.outbox.state === "unknown" && <><p>The center may have accepted this message. Retry keeps the same request identity; your new draft stays separate.</p><button className="flow-link" onClick={async () => { const id = await projection.retry(); if (id) onAccepted(id); }}>Retry same message</button></>}{state.outbox.state === "rejected" && <button className="flow-link" onClick={() => projection.outbox.dismiss(state.outbox!.id)}>Dismiss rejected receipt</button>}</section>}</>}
+      composerHeader={<>{!lockedProfile && !viewId.startsWith("draft-") ? <p role="status">Loading conversation configuration…</p> : <ExecutionProfilePicker catalog={profileCatalog} selection={profileSelection} onSelect={onProfileSelection} onRefresh={() => { void profiles.refresh(); }} onLoadMore={() => { void profiles.loadMore(); }} locked={lockedProfile} />}<div className="flow-conversation-controls" aria-label="Conversation capabilities"><button disabled title="Per-turn thinking controls are unavailable">Thinking</button><button disabled title="Per-turn tool controls are unavailable">Tools</button><fieldset className="flex items-center gap-2" aria-label="Message delivery"><label><input type="radio" name={`delivery-${viewId}`} checked={intent === "follow-up"} onChange={() => setIntent("follow-up")} /> Send now</label><label><input type="radio" name={`delivery-${viewId}`} checked={intent === "queue"} disabled={!queue.available} onChange={() => setIntent("queue")} /> Queue next</label></fieldset><button disabled title="Steering is not available in this Web version">Steer</button></div></>}
+      footer={<div className="flow-conversation-footer">{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}<p role="status">{reason ?? (state.snapshot ? "Continue this conversation." : "Your message starts a new conversation.")}</p><span>Replies appear when complete. Steering and per-turn controls are unavailable. Queue next uses durable center acceptance; unresolved receipts are local to this page.</span></div>}
     />
   </AssistantRuntimeProvider></ReplyContext.Provider></PluginThreadScope>;
 }

@@ -2,23 +2,23 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 05:11:55 UTC |
+| 最近更新时间 | 2026-10-06 05:17:56 UTC |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-pi-hook-probe |
 | Branch | codex/context-pi-hook-probe |
 | 工作基线 / HEAD | base e802854f346a81749efdef3f36737b16141b98ef；固定实现8abe014f61df5ed7e1548e30d53538e7c4580c4c |
 | 工作树dirty状态 | 固定实现已提交；本次仅target/review metadata；raw不覆写 |
-| 工作分支状态 | reviewed |
-| 本片段交付阶段 | integration |
+| 工作分支状态 | integrated |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 8abe014f61df5ed7e1548e30d53538e7c4580c4c：factory 7组观察完成；default加载失败如实保留，未知版本接受是采用缺口；无模型 |
 | Review | APPROVED 8abe014f61df5ed7e1548e30d53538e7c4580c4c：Root独立只读方法审查；未重跑 |
-| 已集成main状态 / HEAD | 未集成；实验已实现并获独立方法批准，等待Lead接收 |
+| 已集成main状态 / HEAD | 已集成并推送main14c61b4062f8040ba6c7239860929366e5bd3fc1；实现祖先与实验范围零diff已核 |
 | 实现目标 | 8abe014f61df5ed7e1548e30d53538e7c4580c4c |
 | 实现范围 | experiments/context-pi-hook/ |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 对话隔离与原文恢复的实验结果已通过独立审查，安全接入限制已明确 |
-| 下一可用交付 | 接收已审实验记录；正式采用前仍需解决资源隔离与旧记录保护 |
+| 下一可用交付 | 本片段已交付；正式采用前仍需解决资源隔离与旧记录保护 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 架构影响 | 仅实验，不修改生产上下文流程 |
@@ -39,3 +39,5 @@
 2026-10-06 05:11:55 UTC Root独立方法/限定观察APPROVED，审查起点clean9084095f182fc5dbfe4df6077a2afaf2a4b83386；源码target8abe不变。6组断言+1组stock行为观察，不是7项安全成功。默认资源扫描不兼容、未来schema仅warn且写回1为正式采用前门禁。保留全部失败/raw，等待main receipt再release。X01旧文档claim已释放，采用条件由Lead协调其合法owner登记；本片证据已明确，不越权改X01。
 
 2026-10-06 05:12:28 UTC dashboard实际聚合4/4、review approved、implementation unchanged、无issues；[批准回执](../../docs/evidence/ctx02/dashboard-review-receipt.json)。
+
+2026-10-06 05:17:56 UTC Lead交main receipt14c61b4062f8040ba6c7239860929366e5bd3fc1，owner只读核target祖先与实验范围零diff；仅集成实验记录，生产能力未扩大，未重跑。当前完成最终metadata后停止写入并release v1；不追后续main metadata。

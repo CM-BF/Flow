@@ -1,0 +1,38 @@
+{
+  "state": "available",
+  "observedAt": "2026-10-06T05:40:44.479Z",
+  "claims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/conversations/queue/queue-elements.tsx",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-queue.browser.ts",
+        "apps/web/test/conversation-queue.fixture.ts",
+        "apps/web/test/conversation-queue.test.ts",
+        "docs/evidence/wpf-queue01",
+        "plans/wpf-queue01-ui"
+      ],
+      "state": "active",
+      "branch": "codex/web-conversation-queue",
+      "origin": "new",
+      "taskId": "WPF-QUEUE01",
+      "worker": "workspace_panels_owner",
+      "claimId": "b4ea85d0-ad87-4903-9a59-73281ad17752",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue",
+      "createdAt": "2026-10-06T05:19:31.947Z",
+      "updatedAt": "2026-10-06T05:19:31.947Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ]
+}

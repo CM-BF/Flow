@@ -1,0 +1,44 @@
+{
+  "target": "c03cc5884a6ed71bad390b3a3ffa2b9e7e297e27",
+  "scope": "K01 CLI, shared bounded input and 015/016 production mounting; no domain edits",
+  "sources": {
+    "apps/server/src/index.ts": {
+      "bytes": 10655,
+      "sha256": "9bb903aad750fe0cb2ab3fadbcbcee83992bd412c6831546278ca70bae0618c1"
+    },
+    "apps/cli/src/index.ts": {
+      "bytes": 19086,
+      "sha256": "827bf523bbe02aad146d8aac20e8153854f56a73045b4e98e9912519d61f09ac"
+    },
+    "apps/cli/src/json-input.ts": {
+      "bytes": 1163,
+      "sha256": "737831bd6849f2c6df8996a8e2f4584cff64a3132c08f2b2814bcb152daa8aa5"
+    },
+    "apps/cli/src/knowledge.test.ts": {
+      "bytes": 5030,
+      "sha256": "8e2b6667d5f51e91101a1f0319a079defd43734505a909793fd35f2d316750c7"
+    },
+    "apps/cli/README.md": {
+      "bytes": 3359,
+      "sha256": "17d9d9e7ffe84ac0f05134940cb544341b7a40aa87d95fdfd1b2c979aff449ad"
+    }
+  },
+  "outputs": {
+    "docs/evidence/f01/knowledge-cli-red.txt": {
+      "bytes": 1290,
+      "sha256": "8df4d4a7f9b524771e6ae2e1b340e195c8959b40cd5520a5f64dadd9f006a28b"
+    },
+    "docs/evidence/f01/knowledge-cli-green.txt": {
+      "bytes": 1947,
+      "sha256": "3c1e3dbf8a342914631d222d4954eb41e31ca8cd8e37629fea1f5b0d77b0d4a3"
+    },
+    "docs/evidence/f01/knowledge-maintenance-mount-final.txt": {
+      "bytes": 805,
+      "sha256": "8f03647b454191a1807209e9fcd0a131c85b5444b15afa6fcdecbb70422bf6dd"
+    },
+    "docs/evidence/f01/knowledge-maintenance-typecheck.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

@@ -111,7 +111,10 @@ it('upgrades populated 012 fixture authority to 013 without changing its audit, 
   // Production startup runs the migrations again and serves the migrated records over HTTP.
   app = await createServer({ databaseUrl, ownerToken: 'upgrade-owner', leaseMs: 60_000 });
   url = await app.listen({ host: '127.0.0.1', port: 0 });
-  expect(await versions()).toEqual(afterVersions);
+  const productionVersions = await versions();
+  expect(productionVersions.filter(row => row.version <= 13)).toEqual(afterVersions);
+  expect(new Set(productionVersions.map(row => row.version)).size).toBe(productionVersions.length);
+  facts.productionVersions = productionVersions;
   const view = await request(`/api/goal-tool-runs/${fixture.accepted.run.id}`);
   expect(view.status).toBe(200); expect(view.body).toEqual({ ...fixture.accepted.run, usedCommands: 1 });
   const replay = await request('/api/runner/goal-tools/command', fixture.input, fixture.runner.token, 'saved-command');

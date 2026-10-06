@@ -1,3 +1,4 @@
+import { executionInputForTask } from './conversation-context/store.js';
 import { assertTaskExecutionProfile } from './execution-profiles/store.js';
 import { randomBytes, randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
@@ -5,7 +6,7 @@ import type { AttemptView, ClaimResponse, Ownership, RegisterRunner, RunnerRegis
 import { HttpError, sha256, transaction } from './database.js';
 import { loadTask } from './tasks.js';
 
-export interface RunnerRecord { id: string; harnesses: string[]; capacity: number; revoked: boolean }
+export interface RunnerRecord { id: string; harnesses: string[]; capacity: number; revoked: boolean; maintenance_state?: 'accepting' | 'draining' | 'maintenance' }
 export interface AttemptRecord {
   id: string; task_id: string; runner_id: string; owner_version: number; lease_expires_at: Date;
   last_heartbeat_at: Date | null; last_event_at: Date | null;
@@ -40,6 +41,7 @@ export async function registerRunner(pool: Pool, input: RegisterRunner): Promise
 export async function claim(pool: Pool, runnerId: string, leaseMs: number): Promise<ClaimResponse> {
   return transaction(pool, async client => {
     const runner = await lockRunner(client, runnerId);
+    if (runner.maintenance_state && runner.maintenance_state !== 'accepting') return { assignment: null, remainingLeaseMs: 0 };
     const busy = await client.query<{ count: number }>("SELECT count(*)::integer AS count FROM flow.attempts WHERE runner_id=$1 AND completed_at IS NULL", [runnerId]);
     if (busy.rows[0]!.count >= runner.capacity) return { assignment: null, remainingLeaseMs: 0 };
     const result = await client.query<{ id: string }>(`
@@ -49,12 +51,17 @@ export async function claim(pool: Pool, runnerId: string, leaseMs: number): Prom
       AND (COALESCE(rp.configuration->>'access','none')<>'goal-tools' OR
         (t.submission->'executionProfile'->>'runnerId'=$2 AND EXISTS
           (SELECT 1 FROM flow.goal_tool_runs g WHERE g.task_id=t.id AND g.mode='claude' AND g.revoked_at IS NULL)))
+      AND (COALESCE(rp.configuration->>'access','none')<>'goal-graph-tools' OR
+        (t.submission->'executionProfile'->>'runnerId'=$2 AND EXISTS
+          (SELECT 1 FROM flow.goal_graph_runs g WHERE g.task_id=t.id AND g.mode='claude' AND g.revoked_at IS NULL)))
       AND (t.submission->>'resumeSessionId' IS NULL OR (s.runner_id=$2 AND s.active_task_id IS NULL))
       ORDER BY t.created_at,t.id FOR UPDATE OF t SKIP LOCKED LIMIT 1`, [runner.harnesses, runnerId]);
     if (!result.rows[0]) return { assignment: null, remainingLeaseMs: 0 };
     const task = await loadTask(client, result.rows[0].id);
     const goalRun = (await client.query<{ id: string; version: 1; mode: string }>('SELECT id,version,mode FROM flow.goal_tool_runs WHERE task_id=$1', [task.id])).rows[0];
-    await assertTaskExecutionProfile(client, task.submission, goalRun?.mode === 'claude' ? 'goal-tools' : 'ordinary');
+    const graphRun = (await client.query<{ id: string; version: 1; mode: string }>('SELECT id,version,mode FROM flow.goal_graph_runs WHERE task_id=$1', [task.id])).rows[0];
+    if (goalRun && graphRun) throw new HttpError(409, 'planner_authority_conflict', 'A planner task cannot have two tool authorities.');
+    await assertTaskExecutionProfile(client, task.submission, graphRun?.mode === 'claude' ? 'goal-graph-tools' : goalRun?.mode === 'claude' ? 'goal-tools' : 'ordinary');
     if (task.submission.resumeSessionId) {
       const session = await client.query('UPDATE flow.sessions SET active_task_id=$3 WHERE id=$1 AND harness=$2 AND runner_id=$4 AND active_task_id IS NULL RETURNING id', [task.submission.resumeSessionId, task.submission.harness, task.id, runnerId]);
       if (!session.rowCount) return { assignment: null, remainingLeaseMs: 0 };
@@ -62,7 +69,8 @@ export async function claim(pool: Pool, runnerId: string, leaseMs: number): Prom
     const id = randomUUID();
     const inserted = await client.query<AttemptRecord>("INSERT INTO flow.attempts(id,task_id,runner_id,owner_version,lease_expires_at) VALUES($1,$2,$3,$4,clock_timestamp()+$5 * interval '1 millisecond') RETURNING *", [id, task.id, runnerId, task.owner_version + 1, leaseMs]);
     await client.query("UPDATE flow.tasks SET status='running',current_attempt_id=$2,owner_version=owner_version+1,updated_at=clock_timestamp() WHERE id=$1", [task.id, id]);
-    return { assignment: { attempt: attemptView(inserted.rows[0]!), task: { ...task.submission, id: task.id }, ...(goalRun?.mode === 'claude' ? { goalToolRun: { id: goalRun.id, version: goalRun.version } } : {}) }, remainingLeaseMs: leaseMs };
+    const executionInput = await executionInputForTask(client, task.id, task.submission.prompt);
+    return { assignment: { ...(executionInput ? { conversationContext: executionInput.context } : {}), attempt: attemptView(inserted.rows[0]!), task: { ...task.submission, id: task.id, ...(executionInput ? { prompt: executionInput.prompt } : {}) }, ...(goalRun?.mode === 'claude' ? { goalToolRun: { id: goalRun.id, version: goalRun.version } } : {}), ...(graphRun?.mode === 'claude' ? { goalGraphRun: { id: graphRun.id, version: graphRun.version } } : {}) }, remainingLeaseMs: leaseMs };
   });
 }
 export async function heartbeat(pool: Pool, runnerId: string, ownership: Ownership, leaseMs: number): Promise<HeartbeatResponse> {

@@ -1,5 +1,7 @@
 # Flow 计划索引
 
+当前滚动入口见 [完整验收矩阵](flow-001-architecture/full-plan-matrix.md) 与各 owner status；下文按日期保留的批次记录是历史观察，不代表当前运行状态。2026-10-06 05:29 UTC：main `eb14991a` 已含 O05、O04、知识读取优化、聊天配置接入；K01/SVC02 已审并在共享入口集成，O06 与聊天队列 UI 正在实施。常驻中心/runner 仍为历史 `75a33`，尚未执行安全刷新。
+
 本目录记录 Flow 的设计方向、技术验证和后续实施安排。使用和维护规则见 [AGENTS.md](AGENTS.md)。
 
 ## 当前计划
@@ -93,3 +95,7 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 2026-10-06 04:43 UTC：新增独立来源 [CTX01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-kernel-probe/plans/ctx01-context-kernel/plan.md)（实验owner树 context-kernel-probe，main未收正文时看dashboard只读源）与 [WPF-PROFILE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/plans/wpf-profile01-execution-profiles/plan.md)（web-execution-profiles）；领取已确认，登记不代表完成。
 
 2026-10-06 05:17 UTC：新增唯一来源 K01（项目知识原文与检索）、WPF-PROFILEUX01（聊天配置摘要优化）、SVC02（真实预览安全更新）；各自已领取且三件套存在。权威目录分别为 `Flow-worktrees/knowledge-source-store/plans/k01-knowledge-sources`、`web-execution-profile-summary/plans/wpf-profileux-execution-summary`、`preview-refresh/plans/svc02-preview-refresh`；当前均实施中。登记不代表当前常驻中心已更新。
+
+2026-10-06 05:29 UTC：O06 唯一来源为 `Flow-worktrees/goal-graph-runs/plans/o06-goal-graph-runs`；WPF-QUEUE01 为 `web-conversation-queue/plans/wpf-queue01-ui`。D06 沿原 task/plan/evidence 迁移权威工作树至 `dashboard-architecture-current`，旧 `dashboard-architecture-refresh` 只读保留历史；当前基线固定 `eb14991a`，本轮未批准/未集成。registry 总计65来源，数量不是完成率。
+
+2026-10-06 05:45 UTC：K02 聊天固定知识引用与 O07 原生目标拆分工具已各自领取独立范围，唯一工作源已登记。K02权威工作树 `conversation-context`、计划 `plans/k02-conversation-context`；O07权威工作树 `native-graph-tools`、计划 `plans/o07-native-graph-tools`。两领域未实现批准，不将接口/stub当功能。SVC02真实预览已升级fb906cb/v3接受，后续main前进不等于再次部署。

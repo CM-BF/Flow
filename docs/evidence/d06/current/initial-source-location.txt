@@ -1,0 +1,76 @@
+✔ curated architecture cites existing files at its fixed source commit and valid graph nodes (759.471667ms)
+✔ architecture static assets stay within existing read-only loopback server policy (32.998042ms)
+✖ fixed snapshot separates integrated Web and center capabilities from later UI work (83.322167ms)
+✔ integrated queue and graph proposal descriptions preserve explicit admission and application (67.838791ms)
+✔ transport optimization and shutdown do not imply parallel execution or safe cancellation (41.264459ms)
+✔ state graph covers every active completed outcome and uncertain route without reviving the old task (0.218417ms)
+✔ current PG content and assistant provenance never become an implemented blob edge (13.3695ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1077.268583
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/architecture.test.mjs:39:1
+✖ fixed snapshot separates integrated Web and center capabilities from later UI work (83.322167ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /flow\.conversation_turns/. Input:
+  
+  "import { requireExecutionProfile } from '../execution-profiles/store.js';\n" +
+    "import { randomUUID } from 'node:crypto';\n" +
+    "import type { Pool } from 'pg';\n" +
+    "import type { PgBoss } from 'pg-boss';\n" +
+    "import type { ConversationCreated, ConversationCreation, ConversationTurnAccepted, ConversationTurnAdmission } from '../../../../packages/contracts/src/conversations.js';\n" +
+    "import { HttpError } from '../database.js';\n" +
+    "import { command } from '../tasks.js';\n" +
+    "import { acceptConversationTurn, prepareTurnAdmission } from './admission.js';\n" +
+    "import { capabilities, conversationView, loadConversation } from './state.js';\n" +
+    '\n' +
+    'export async function createConversation(pool: Pool, input: ConversationCreation, key: string): Promise<ConversationCreated> {\n' +
+    "  const result = await command(pool, 'conversation.create', key, input, async client => {\n" +
+    '    const profile = input.executionProfile ? await requireExecutionProfile(client, input.executionProfile) : undefined;\n' +
+    "    const requestedModelSupported = input.requested.model === 'runner-default' || input.requested.model === profile?.configuration.model;\n" +
+    "    const requestedToolsSupported = input.requested.tools === 'configured-readonly' || profile?.configuration.access === 'none';\n" +
+    "    if (!requestedModelSupported || input.requested.thinking !== 'disabled' || !requestedToolsSupported) {\n" +
+    "      throw new HttpError(409, 'conversation_settings_unsupported', 'The selected configuration cannot fulfill these requested controls.');\n" +
+    '    }\n' +
+    '    const id = randomUUID();\n' +
+    "    if (profile) await client.query('INSERT INTO flow.conversations(id,title,harness,requested,execution_profile) VALUES($1,$2,$3,$4,$5)', [id, input.title, input.harness, input.requested, profile.reference]);\n" +
+    "    else await client.query('INSERT INTO flow.conversations(id,title,harness,requested) VALUES($1,$2,$3,$4)', [id, input.title, input.harness, input.requested]);\n" +
+    '    return { conversation: conversationView(await loadConversation(client, id)), capabilities };\n' +
+    '  });\n' +
+    '  return { ...result.value, replayed: result.replayed };\n' +
+    '}\n' +
+    'export async function admitTurn(pool: Pool, boss: PgBoss, conversationId: string, input: ConversationTurnAdmission, key: string): Promise<ConversationTurnAccepted> {\n' +
+    "  const result = await command(pool, 'conversation.turn', key, { conversationId, ...input }, async client => {\n" +
+    '    const conversation = await loadConversation(client, conversationId, true);\n' +
+    "    if (input.mode !== 'follow-up') throw new HttpError(409, 'conversation_mode_unsupported', 'Use the dedicated queue command; steering is not available.');\n" +
+    "    if (input.expectedRevision !== conversation.revision) throw new HttpError(409, 'conversation_revision_conflict', 'Refresh the conversation before sending another turn.');\n" +
+    "    if (conversation.queue_paused) throw new HttpError(409, 'conversation_queue_paused', 'Resume this conversation queue before sending a follow-up.');\n" +
+    `    if ((await client.query("SELECT 1 FROM flow.conversation_queue WHERE conversation_id=$1 AND state='waiting' LIMIT 1", [conversationId])).rowCount) {\n` +
+    "      throw new HttpError(409, 'conversation_queue_pending', 'Waiting queue items must be processed or cancelled before a follow-up.');\n" +
+    '    }\n' +
+    "    return acceptConversationTurn(client, boss, conversation, await prepareTurnAdmission(client, conversation, input.text, 'follow-up'));\n" +
+    '  });\n' +
+    '  return { ...result.value, replayed: result.replayed };\n' +
+    '}\n'
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current/apps/execution-dashboard/test/architecture.test.mjs:53:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+      at Test.postRun (node:internal/test_runner/test:1537:19)
+      at Test.run (node:internal/test_runner/test:1462:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: `import { requireExecutionProfile } from '../execution-profiles/store.js';\nimport { randomUUID } from 'node:crypto';\nimport type { Pool } from 'pg';\nimport type { PgBoss } from 'pg-boss';\nimport type { ConversationCreated, ConversationCreation, ConversationTurnAccepted, ConversationTurnAdmission } from '../../../../packages/contracts/src/conversations.js';\nimport { HttpError } from '../database.js';\nimport { command } from '../tasks.js';\nimport { acceptConversationTurn, prepareTurnAdmission } from './admission.js';\nimport { capabilities, conversationView, loadConversation } from './state.js';\n\nexport async function createConversation(pool: Pool, input: ConversationCreation, key: string): Promise<ConversationCreated> {\n  const result = await command(pool, 'conversation.create', key, input, async client => {\n    const profile = input.executionProfile ? await requireExecutionProfile(client, input.executionProfile) : undefined;\n    const requestedModelSupported = input.requested.model === 'runner-default' || input.requested.model === profile?.configuration.model;\n    const requestedToolsSupported = input.requested.tools === 'configured-readonly' || profile?.configuration.access === 'none';\n    if (!requestedModelSupported || input.requested.thinking !== 'disabled' || !requestedToolsSupported) {\n      throw new HttpError(409, 'conversation_settings_unsupported', 'The selected configuration cannot fulfill these requested controls.');\n    }\n    const id = randomUUID();\n    if (profile) await client.query('INSERT INTO flow.conversations(id,title,harness,requested,execution_profile) VALUES($1,$2,$3,$4,$5)', [id, input.title, input.harness, input.requested, profile.reference]);\n    else await client.query('INSERT INTO flow.conversations(id,title,harness,requested) VALUES($1,$2,$3,$4)', [id, input.title, input.harness, input.requested]);\n    return { conversation: conversationView(await loadConversation(client, id)), capabilities };\n  });\n  return { ...result.value, replayed: result.replayed };\n}\nexport async function admitTurn(pool: Pool, boss: PgBoss, conversationId: string, input: ConversationTurnAdmission, key: string): Promise<ConversationTurnAccepted> {\n  const result = await command(pool, 'conversation.turn', key, { conversationId, ...input }, async client => {\n    const conversation = await loadConversation(client, conversationId, true);\n    if (input.mode !== 'follow-up') throw new HttpError(409, 'conversation_mode_unsupported', 'Use the dedicated queue command; steering is not available.');\n    if (input.expectedRevision !== conversation.revision) throw new HttpError(409, 'conversation_revision_conflict', 'Refresh the conversation before sending another turn.');\n    if (conversation.queue_paused) throw new HttpError(409, 'conversation_queue_paused', 'Resume this conversation queue before sending a follow-up.');\n    if ((await client.query("SELECT 1 FROM flow.conversation_queue WHERE conversation_id=$1 AND state='waiting' LIMIT 1", [conversationId])).rowCount) {\n      throw new HttpError(409, 'conversation_queue_pending', 'Waiting queue items must be processed or cancelled before a follow-up.');\n    }\n    return acceptConversationTurn(client, boss, conversation, await prepareTurnAdmission(client, conversation, input.text, 'follow-up'));\n  });\n  return { ...result.value, replayed: result.replayed };\n}\n`,
+    expected: /flow\.conversation_turns/,
+    operator: 'match',
+    diff: 'simple'
+  }

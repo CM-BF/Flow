@@ -16,6 +16,6 @@ root独立CUA访问模块预览54239：legacy创建摘要显式Unpinned legacy d
 
 ## 结论与边界
 
-限定APPROVED，无blocking。原生details纯展示，不改状态/权限/冻结；pending仍不可改配置，目录同model多runner辨识与unsupported禁用源保持。作者9组PASS/errors[]及56.16px常规/128.08px长model为模块fixture测量；root未独立重跑browser/typecheck，不宣称整App几何、真实center或模型已验。App组合及main集成交Lead局部验收；后继实现不继承此批准。
+限定APPROVED，无blocking。原生details纯展示，不改状态/权限/冻结；pending仍不可改配置，目录同model多runner辨识与unsupported禁用源保持。作者9组PASS/errors[]及56.16px常规/128.08px长model为模块fixture测量；root未独立重跑browser/typecheck，不宣称整App几何、真实center或模型已验。05:17 main集成已核（见status），App组合具体检查由Lead负责；后继实现不继承此批准。
 
 [交付报告](../../docs/evidence/wpf-profileux/README.md) / [quality](../../docs/evidence/wpf-profileux/quality.md)。
