@@ -1,0 +1,243 @@
+{
+  "at": "2026-10-06T17:15:43.578Z",
+  "facts": {
+    "providerCalls": 0,
+    "fixtureOnly": true,
+    "resources": {
+      "database": "flow_tui01f_44a622c76d68",
+      "directory": "/tmp/flow-tui01f-03-20261006-1714/temporary/flow-tui01f-2SAkN5",
+      "ownerPid": 74704
+    },
+    "runnerId": "b11e386c-961f-46df-a2ec-f0efc03ca54a",
+    "origins": {
+      "center": "http://127.0.0.1:51615",
+      "proxy": "http://127.0.0.1:51617",
+      "conversationId": "9c1931d6-1530-4061-ad98-8dcdbb5aae56"
+    },
+    "turnA": {
+      "id": "5ecb51c2-2187-4c5f-aaac-d326ba9e46f4",
+      "taskId": "8cbc10ec-b9fd-46eb-a730-92440b0817da",
+      "number": 1
+    },
+    "turnB": {
+      "id": "25986cc0-1d4b-4848-a8e7-c608314ca6d4",
+      "taskId": "5453bd16-e5b1-4a8f-a430-0203160f4186",
+      "number": 2
+    },
+    "lostAck": {
+      "original": {
+        "version": 1,
+        "connectionId": "1c31e8be35f610d04f28d002e842c87a480c22c8f589247e54bfc1607529369d",
+        "key": "9fd44422-3ea1-4b9e-9dd0-4553d5d67f46",
+        "kind": "task-cancel",
+        "conversationId": "9c1931d6-1530-4061-ad98-8dcdbb5aae56",
+        "turnId": "5ecb51c2-2187-4c5f-aaac-d326ba9e46f4",
+        "taskId": "8cbc10ec-b9fd-46eb-a730-92440b0817da",
+        "input": {}
+      },
+      "resumedTaskId": "5453bd16-e5b1-4a8f-a430-0203160f4186",
+      "requests": [
+        {
+          "path": "/api/tasks/8cbc10ec-b9fd-46eb-a730-92440b0817da/cancel",
+          "key": "9fd44422-3ea1-4b9e-9dd0-4553d5d67f46",
+          "body": "{}",
+          "upstreamStatus": 200,
+          "taskId": "8cbc10ec-b9fd-46eb-a730-92440b0817da",
+          "dropped": true
+        },
+        {
+          "path": "/api/tasks/8cbc10ec-b9fd-46eb-a730-92440b0817da/cancel",
+          "key": "9fd44422-3ea1-4b9e-9dd0-4553d5d67f46",
+          "body": "{}",
+          "upstreamStatus": 200,
+          "taskId": "8cbc10ec-b9fd-46eb-a730-92440b0817da",
+          "dropped": false
+        }
+      ],
+      "journalCleared": true,
+      "reopeningSentNothing": true
+    },
+    "turnC": {
+      "id": "c54146d7-5ae2-4278-b909-e752957501b9",
+      "taskId": "24e44af6-e4af-45f3-9e02-89aa5099044c",
+      "number": 3
+    },
+    "ptyGroup": {
+      "pgid": 75767,
+      "stopped": true,
+      "signals": []
+    },
+    "ptyGroupFinal": {
+      "pgid": 75767,
+      "stopped": true,
+      "signals": []
+    },
+    "ptyCapture": {
+      "file": "pty.json",
+      "bytes": 21208,
+      "sha256": "3f5769a69f755ea79f682e67797a0b0071d693107313fac45cd6e1f02863d66e"
+    },
+    "ptyExit": {
+      "pty": {
+        "exitCode": 0,
+        "tuiPid": 75874,
+        "pgid": 75767,
+        "rawModeRestored": true,
+        "resized": [
+          60,
+          20
+        ],
+        "unsentCjkMultilineDraft": true,
+        "checkpoints": [
+          "Ctrl-C disconnect and quit",
+          "/open 9c1931d6-1530-4061-ad98-8dcdbb5aae56",
+          "Saved conversation opened.",
+          "Message or /command",
+          "Task: 5453bd16-e5b1-4a8f-a430-0203160f4186",
+          "/cancel 5453bd16-e5b1-4a8f-a430-0203160f4186",
+          "Cancellation acknowledged for the saved task.",
+          "Message or /command",
+          " · cancelled",
+          "/open 9c1931d6-1530-4061-ad98-8dcdbb5aae56",
+          "Saved conversation opened.",
+          "Message or /command",
+          "Task: 24e44af6-e4af-45f3-9e02-89aa5099044c",
+          "running",
+          "保留中文🙂",
+          "second draft",
+          "保留中文🙂",
+          "second draft"
+        ],
+        "transcriptBytes": 16992,
+        "transcript": "\u001b[?2026h\u001b[?25l\u001b[1mFlow · not observing\u001b[22m\r\n\u001b[2mSelect /conversations or /new. /help lists commands.\u001b[22m\r\n\u001b[2mUse /help or /conversations.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m\u001b[2mMessage or /command\u001b[22m                                                                            │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · not observing\u001b[22m\r\n\u001b[2mSelect /conversations or /new. /help lists commands.\u001b[22m\r\n\u001b[2mUse /help or /conversations.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m/open 9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[7m \u001b[27m                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · not observing · working\u001b[22m\r\n\u001b[2mSelect /conversations or /new. /help lists commands.\u001b[22m\r\n\u001b[2mUse /help or /conversations.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m/open 9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[7m \u001b[27m                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F synthetic A/B/C  9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[22m\r\nTask: 5453bd16-e5b1-4a8f-a430-0203160f4186 · running · /cancel task-id\r\n\r\nYou: TUI01F synthetic B; no model\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m\u001b[2m\u001b[7m \u001b[27mMessage or /command\u001b[22m                                                                           │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F synthetic A/B/C  9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[22m\r\nTask: 5453bd16-e5b1-4a8f-a430-0203160f4186 · running · /cancel task-id\r\n\r\nYou: TUI01F synthetic B; no model\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m/cancel 5453bd16-e5b1-4a8f-a430-0203160f4186\u001b[7m \u001b[27m                                                  │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected · working\u001b[22m\r\n\u001b[2mTUI01F synthetic A/B/C  9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[22m\r\nTask: 5453bd16-e5b1-4a8f-a430-0203160f4186 · running · /cancel task-id\r\n\r\nYou: TUI01F synthetic B; no model\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m/cancel 5453bd16-e5b1-4a8f-a430-0203160f4186\u001b[7m \u001b[27m                                                  │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F synthetic A/B/C  9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[22m\r\nTask: 5453bd16-e5b1-4a8f-a430-0203160f4186 · cancel_requested · /cancel task-id\r\n\r\nYou: TUI01F synthetic B; no model\r\nAssistant: [pending; task cancel_requested]\r\n\u001b[2mcancel_requested · model unknown\u001b[22m\r\n\u001b[2mCancellation acknowledged for the saved task. Observe its current state; acknowledgement does not \u001b[22m\r\n\u001b[2mprove it stopped.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m\u001b[2m\u001b[7m \u001b[27mMessage or /command\u001b[22m                                                                           │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F synthetic A/B/C  9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[22m\r\nTask: 5453bd16-e5b1-4a8f-a430-0203160f4186 · cancelled · /cancel task-id\r\n\r\nYou: TUI01F synthetic B; no model\r\nAssistant: [unavailable; task cancelled]\r\n\u001b[2mcancelled · model unknown\u001b[22m\r\n\u001b[2mCancellation acknowledged for the saved task. Observe its current state; acknowledgement does not \u001b[22m\r\n\u001b[2mprove it stopped.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m\u001b[2m\u001b[7m \u001b[27mMessage or /command\u001b[22m                                                                           │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F synthetic A/B/C  9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[22m\r\nTask: 5453bd16-e5b1-4a8f-a430-0203160f4186 · cancelled · /cancel task-id\r\n\r\nYou: TUI01F synthetic B; no model\r\nAssistant: [unavailable; task cancelled]\r\n\u001b[2mcancelled · model unknown\u001b[22m\r\n\u001b[2mCancellation acknowledged for the saved task. Observe its current state; acknowledgement does not \u001b[22m\r\n\u001b[2mprove it stopped.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m/open 9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[7m \u001b[27m                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F synthetic A/B/C  9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[22m\r\nTask: 24e44af6-e4af-45f3-9e02-89aa5099044c · running · /cancel task-id\r\n\r\nYou: TUI01F synthetic C; no model\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m\u001b[2m\u001b[7m \u001b[27mMessage or /command\u001b[22m                                                                           │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F synthetic A/B/C  9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[22m\r\nTask: 24e44af6-e4af-45f3-9e02-89aa5099044c · running · /cancel task-id\r\n\r\nYou: TUI01F synthetic C; no model\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m保留中文🙂\u001b[7m \u001b[27m                                                                                    │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F synthetic A/B/C  9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[22m\r\nTask: 24e44af6-e4af-45f3-9e02-89aa5099044c · running · /cancel task-id\r\n\r\nYou: TUI01F synthetic C; no model\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m保留中文🙂                                                                                     │\r\n│   second draft\u001b[7m \u001b[27m                                                                                  │\r\n└──────────────────────────────────────────────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C disconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[?2026h\u001b[1mFlow · connected\u001b[22m\r\n\u001b[2mTUI01F synthetic A/B/C  9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[22m\r\nTask: 24e44af6-e4af-45f3-9e02-89aa5099044c · running ·\r\n/cancel task-id\r\n\r\nYou: TUI01F synthetic C; no model\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mSaved conversation opened.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m保留中文🙂                                             │\r\n│   second draft\u001b[7m \u001b[27m                                          │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?2026h\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\u001b[1mFlow · not observing\u001b[22m\r\n\u001b[2mTUI01F synthetic A/B/C  9c1931d6-1530-4061-ad98-8dcdbb5aae56\u001b[22m\r\nTask: 24e44af6-e4af-45f3-9e02-89aa5099044c · running ·\r\n/cancel task-id\r\n\r\nYou: TUI01F synthetic C; no model\r\nAssistant: [pending; task running]\r\n\u001b[2mrunning · model unknown\u001b[22m\r\n\u001b[2mDisconnected; center work continues.\u001b[22m\r\n┌──────────────────────────────────────────────────────────┐\r\n│ \u001b[32m› \u001b[39m保留中文🙂                                             │\r\n│   second draft\u001b[7m \u001b[27m                                          │\r\n└──────────────────────────────────────────────────────────┘\r\n\u001b[2mEnter send · Ctrl-J newline · Tab complete · Ctrl-C \u001b[22m\r\n\u001b[2mdisconnect and quit\u001b[22m\r\n\u001b[?2026l\u001b[?25h\u001b[?25h\u001b[?25h"
+      },
+      "statuses": [
+        "cancelled",
+        "cancelled",
+        "succeeded"
+      ],
+      "noCPost": true,
+      "onlyThreeTurns": true,
+      "cWasRunningAfterExit": true
+    }
+  },
+  "requests": [
+    {
+      "path": "/api/tasks/8cbc10ec-b9fd-46eb-a730-92440b0817da/cancel",
+      "key": "9fd44422-3ea1-4b9e-9dd0-4553d5d67f46",
+      "body": "{}",
+      "upstreamStatus": 200,
+      "taskId": "8cbc10ec-b9fd-46eb-a730-92440b0817da",
+      "dropped": true
+    },
+    {
+      "path": "/api/tasks/8cbc10ec-b9fd-46eb-a730-92440b0817da/cancel",
+      "key": "9fd44422-3ea1-4b9e-9dd0-4553d5d67f46",
+      "body": "{}",
+      "upstreamStatus": 200,
+      "taskId": "8cbc10ec-b9fd-46eb-a730-92440b0817da",
+      "dropped": false
+    },
+    {
+      "path": "/api/tasks/5453bd16-e5b1-4a8f-a430-0203160f4186/cancel",
+      "key": "06471e5a-cdbe-45be-80cf-f1dffabc9762",
+      "body": "{}",
+      "upstreamStatus": 200,
+      "taskId": "5453bd16-e5b1-4a8f-a430-0203160f4186",
+      "dropped": false
+    }
+  ],
+  "failures": [
+    "connections"
+  ],
+  "cleanup": {
+    "database": "flow_tui01f_44a622c76d68",
+    "directory": "/tmp/flow-tui01f-03-20261006-1714/temporary/flow-tui01f-2SAkN5",
+    "irreversibleCleanup": false,
+    "groups": [
+      {
+        "pgid": 75767,
+        "stopped": true,
+        "signals": []
+      }
+    ],
+    "allTasks": {
+      "totalSize": 3,
+      "tasks": [
+        {
+          "id": "24e44af6-e4af-45f3-9e02-89aa5099044c",
+          "title": "TUI01F synthetic A/B/C",
+          "harness": "claude",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "createdAt": "2026-10-06T17:15:42.673Z",
+          "updatedAt": "2026-10-06T17:15:43.501Z"
+        },
+        {
+          "id": "5453bd16-e5b1-4a8f-a430-0203160f4186",
+          "title": "TUI01F synthetic A/B/C",
+          "harness": "claude",
+          "status": "cancelled",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-06T17:15:39.438Z",
+          "updatedAt": "2026-10-06T17:15:41.641Z"
+        },
+        {
+          "id": "8cbc10ec-b9fd-46eb-a730-92440b0817da",
+          "title": "TUI01F synthetic A/B/C",
+          "harness": "claude",
+          "status": "cancelled",
+          "verificationStatus": "pending",
+          "createdAt": "2026-10-06T17:15:38.675Z",
+          "updatedAt": "2026-10-06T17:15:39.397Z"
+        }
+      ],
+      "nextCursor": null
+    },
+    "tasks": [
+      {
+        "id": "8cbc10ec-b9fd-46eb-a730-92440b0817da",
+        "status": "cancelled",
+        "verificationStatus": "pending",
+        "attempt": {
+          "id": "3dcfae59-7e44-4bf9-babe-8265d8199820",
+          "runnerId": "b11e386c-961f-46df-a2ec-f0efc03ca54a",
+          "ownerVersion": 1,
+          "leaseExpiresAt": "2026-10-06T17:15:49.381Z",
+          "nativeSessionId": "ac277142-1cee-42cb-a59a-4bb27c112c1a"
+        }
+      },
+      {
+        "id": "5453bd16-e5b1-4a8f-a430-0203160f4186",
+        "status": "cancelled",
+        "verificationStatus": "pending",
+        "attempt": {
+          "id": "32459d82-a483-4989-a450-1b63abd2f358",
+          "runnerId": "b11e386c-961f-46df-a2ec-f0efc03ca54a",
+          "ownerVersion": 1,
+          "leaseExpiresAt": "2026-10-06T17:15:51.629Z",
+          "nativeSessionId": "ac277142-1cee-42cb-a59a-4bb27c112c1a"
+        }
+      },
+      {
+        "id": "24e44af6-e4af-45f3-9e02-89aa5099044c",
+        "status": "succeeded",
+        "verificationStatus": "passed",
+        "attempt": {
+          "id": "7ae7ce43-4d1c-4bfc-8413-b35b55dfbc2c",
+          "runnerId": "b11e386c-961f-46df-a2ec-f0efc03ca54a",
+          "ownerVersion": 1,
+          "leaseExpiresAt": "2026-10-06T17:15:53.467Z",
+          "nativeSessionId": "ac277142-1cee-42cb-a59a-4bb27c112c1a"
+        }
+      }
+    ],
+    "runnerStopped": true,
+    "proxyStopped": true,
+    "centerStopped": true,
+    "connections": "unknown",
+    "adminClosed": true
+  },
+  "outcome": "failed-or-unknown-retained",
+  "checkpoint": "checkpoint.json"
+}

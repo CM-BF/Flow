@@ -1,6 +1,54 @@
+# 当前两项窄增量批准
+
+Review target commit: ec30bb6246ac95e5843c7166dee7118b684fd089
+
+APPROVED。Execution Lead独立全文读旧profile消费者5增1删，核10manifest/207固定project/713compiler输入与focused类型原始exit0；同次批准独立cleanup-only source f4f9c47c8c36d7c05614ac477f7af3bb49a31680（helper45709c已审）、241固定/current绑定与真实单case1/1 suite0。未重跑、无P1/P2。
+
+[原始独审回执](../../docs/evidence/tui01f/final-two-delta-independent-review.json) / [独立绑定](../../docs/evidence/tui01f/final-two-delta-review-bindings.json)。批准按两组范围，不扩为全TUI/native/App验收；原2行为whole-suite exit1和旧tmpKEEP仍原样，新PG收尾不回填历史。主线仍以接收receipt为准，当前integration-ready。
+
+以下为历史提交时观察与此前分段审查：
+
+# 新单项收尾证据与旧 profile 消费者（待独审）
+
+Submitted test-only target: ec30bb6246ac95e5843c7166dee7118b684fd089
+
+本提交仅原TUI fixture profile联合类型兼容，focused noEmit0；[原始与固定输入](../../docs/evidence/tui01f/legacy-profile-compatibility/README.md)。NOT_STARTED，不自动继承旧产品批准。
+
+Execution Lead已独立APPROVED source f4f9c47c8c36d7c05614ac477f7af3bb49a31680（237绑定、focused types0，reviewer0重跑）。[source回执](../../docs/evidence/tui01f/cleanup-1740/source-review.json)。其后唯一cleanup-only实际1/1 exit0，新的[运行证据](../../docs/evidence/tui01f/cleanup-1740/README.md)待独立读核；原2行为suite exit1不回填，04仍open。
+
+历史17:36观察：独立cleanup-only consumer source `f4f9c47c8c36d7c05614ac477f7af3bb49a31680`，当时新增focused types0、PG NOT_RUN/尚未获运行许可。它不包含在下列45709c独立批准中。
+
+# TUI01F test-only cleanup repair
+
+Historical review target commit: 45709c982df080af5a71ecbd66760a76ab65cf94
+
+APPROVED。Execution Lead独立全文读3源/10用例/原red-green-types-resource，71fixed/current SHA/bytes逐项一致，无P1/P2，未重跑。批准限10纯检查+focused类型，不含新cleanup-only PG case；原suite exit1保留。[独立批准转录](../../docs/evidence/tui01f/cleanup-local/independent-review.json) / [原始binding](../../docs/evidence/tui01f/cleanup-local/independent-review-bindings.json)。
+
+# TUI01F-03 限定静态准备批准
+
+Historical review target commit: 40508f18432ffc20eadd638b208841a364c72bea
+
+SCOPED_APPROVED。Execution Lead / gpt-6-astra 于2026-10-06T16:46:48.254Z独立只读核2增量/3旅程/9保护/23输入、710 compiler inputs与5raw；未发现P1/P2，未重跑。批准仅宿主identity缺失拒绝及focused类型配置，不表示PG/HTTP/PTY/browser旅程通过。[原回执](../../docs/evidence/tui01f/independent-static-delta-review.json)，SHA67acee23da8bcaf5e1ae5d1272edda2ac4c8031657d1a75378a17879b7a91d3e。
+
+03首次实际旅程为2行为passed但suite exit1（cleanup connections unknown），[原证据](../../docs/evidence/tui01f/journey-1714/README.md)待独立审查；04仍open。Lead已创建精确links；本owner已完成[入口文件级核对](../../docs/evidence/tui01f/journey-runtime-entry.md)，没有import/运行。该文件级观察不扩展上述独审批准。旧da673源审和下列历史作者待审文字均保留原时点。
+
+# TUI01F-03 静态修复提交时观察（历史）
+
+Historical submitted target: 40508f18432ffc20eadd638b208841a364c72bea
+
+NOT_STARTED（本增量独立审查待安排）。fixture改为宿主executionIdentity并缺失拒绝，focused配置仅公开类型映射；作者首次1类型诊断→focused noEmit0，不运行旅程。原独立source-precheck保持绑定da673，不能自动扩为新增量批准。[增量与原始记录](../../docs/evidence/tui01f/journey-static-validation.md)。原9产品逐字未变，03/04仍open。
+
+# 当前 TUI01F-03 源码预检
+
+Historical source-precheck target: da673b81c4390c2e811d1582d68a9899180d55d2
+
+SOURCE_PRECHECK_NO_P1_P2。native_center_owner 完整读3文件及生命周期直接依赖，36绑定无差，未发现P1/P2；未运行tests/types/HTTP/PG/PTY/provider。此结论仅源审，不能替代实际旅程运行。请核中心受理后丢ACK、原key恢复/第二client身份、组停止/未知保留、checkpoint先于不可恢复清理与后继callback取消。固定manifest见[绑定](../../docs/evidence/tui01f/journey-source-manifest.json)，运行状态全部NOT_RUN。原9源已审已main，以下历史批准不扩大到本次新文件。
+
+[独立源审原回执](../../docs/evidence/tui01f/independent-journey-source-review.json) / [绑定](../../docs/evidence/tui01f/independent-journey-source-bindings.json)。实际运行前仍需资源/依赖准入；timeout只限制等待，不证明任意in-process operation已停止，unknown保留DB/tmp；PTY仅ICANON/ECHO恢复断言，非全部termios结构；synthetic session不证明native/A2A停止或真实App接续。
+
 # TUI01F review 当前绑定
 
-Review target commit: a1f82f36a5e63f859ecdcdbd1da3575724e82101
+Historical approved target: a1f82f36a5e63f859ecdcdbd1da3575724e82101
 
 APPROVED（限定 controller+Ink静态接线片），target `a1f82f36a5e63f859ecdcdbd1da3575724e82101`。reviewer native_center_owner，完整TUI验收不在范围。
 

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:23 UTC / main4df08fb3 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:52 UTC / mainb4ab57c6 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -16,9 +16,9 @@
 | 已集成main状态 / HEAD | 目标推进生产/CLI五源已main bd14f984并推送，4df08fb3含资源与交接记录；167来源不变。个人runtime362/v15与Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 中心持续推进明确授权的固定节点输入已进入主线；生产接线与独立审查证据已接收。 |
+| 当前产出 | 逐消息配置与终端收尾已完成独立审查，正在接收两个旧读取方的类型兼容修复。 |
 | 下一可用交付 | 逐消息设置已审组合待两处旧读取方类型兼容修复；网页与终端验证继续。 |
 | 当前阻塞 | ACTIVE: 大型构建仍缺空间；局部验证依现场余量串行运行。 |
 | 需用户决定 | NONE |
@@ -203,3 +203,9 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 完整自然语言规划与模型批量输入仍属O15后继；本片只推进owner明确授权、输入完整的固定版本节点，机械验证不替代独立接受。个人服务与Web指针不因main接收改变。资源精确两cache清理达到准备线，CORE8/8已清理归还，WebB获得下一条件窗口；当前source/operator结果各自在唯一status维护。
 
 2026-10-06 17:37 UTC：逐消息设置45源与三份独立批准固定输入逐字一致，188保护runtime/config对组合前main无差；生产1/1和原领域/客户端证据复用。实际root noEmit发现旧Web深只读profile形参与TUI旧fixture发布union两处直接消费者类型问题（共4诊断），保留原输出，修复交各合法owner；未main、不重跑PG/领域。见[固定组合](../../docs/evidence/i02/message-settings-integration.json)。个人服务不变。
+
+### 2026-10-06 17:52 UTC 逐消息设置与终端收口候选
+
+固定4015含CORE ea276、C01 6d114、F01 0ee两源：45项逐字同已审target，188运行保护源未改。原root noEmit exit2保留，只定位Web深readonly/TUI旧profile两处直接消费者。TUI ec30 test-only窄修已独审并接收，Web PROFILEC02正在合法独立范围收口；完整组合绿前main仍b4ab。
+
+同时接收TUI原真实两行为证据（整suiteexit1不改）、457有限连接观察10项、f4cleanup-only1项及逐字源7项；独立review绑定251manifest条目、207固定project/713compiler输入，未重新跑这些检查。原不明初始inode目录KEEP，真实Web交替仍open。见[tui01f收口](../../docs/evidence/i02/tui01f-closeout-integration.json)。OPS next4c最终2/4，余两树因现场已过准备线而未操作；Web B1750独占PG/Chrome窗口，个人服务不变。

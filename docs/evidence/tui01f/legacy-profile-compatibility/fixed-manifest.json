@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-06T17:42:38.874516+00:00",
+  "sourceTarget": "ec30bb6246ac95e5843c7166dee7118b684fd089",
+  "integrationTarget": "4015c667f1e2b833755b2fda6ed205fb951ec576",
+  "entries": [
+    {
+      "path": "apps/tui/src/journey.test.ts",
+      "bytes": 10818,
+      "sha256": "c11a94780a2c7fe0d5affb112bb6cdf802e7dddc581981c0850ddb64da1f890a"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/legacy-profile-compatibility/README.md",
+      "bytes": 2149,
+      "sha256": "f93c9c00bc315fe0778fbdc74fb64408d86097b4905760b7bdee271beefd9d1b"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/legacy-profile-compatibility/check-types.mjs",
+      "bytes": 2098,
+      "sha256": "b54b86cf532d037116969809a51222b5aa528b16a75753398a64e1d419b8a285"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/legacy-profile-compatibility/claim-amend.json",
+      "bytes": 962,
+      "sha256": "3c2f65ced108d24029e2fe9a8b3698b4750d5ff693f4cab7fcd814481fc62362"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/legacy-profile-compatibility/compiler-inputs.json",
+      "bytes": 425619,
+      "sha256": "ccc798de5a53a945370c9e7da1314b40d5dcf2703ef48e8b0f5d8eede26cf010"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/legacy-profile-compatibility/input-bindings.json",
+      "bytes": 36505,
+      "sha256": "0c55cb4741e760b3e26b71d8bc22981da953edc000e1f409c6a44ff40c3f8da8"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/legacy-profile-compatibility/integration-red.txt",
+      "bytes": 11789,
+      "sha256": "5f527ad4c053005795d582e46e441d980c13be07d3a4fdbbb35d84f1be197174"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/legacy-profile-compatibility/tsconfig.json",
+      "bytes": 327,
+      "sha256": "56d9d21ef5d08e138bc62ec1ed4102d6eb20508085d842372e60e934eb72f62f"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/legacy-profile-compatibility/types-process.json",
+      "bytes": 532,
+      "sha256": "1e6f6501ddb0ebd0f95223828e0557c98709c2802ff3038b037e4a14f62cedd3"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/tui01f/legacy-profile-compatibility/types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "one test file only; focused noEmit0 read-only compiler overlay; original I02 root red preserved, Web errors not fixed by this slice",
+  "testsRun": 0,
+  "providerCalls": 0
+}

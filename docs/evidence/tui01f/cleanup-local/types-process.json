@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/tui01f/cleanup-local/tsconfig.json",
+    "--pretty",
+    "false"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 2.2969310409389436,
+  "pid": 47734,
+  "processGroup": "absent",
+  "freeBeforeBytes": 1198739456,
+  "rawBytes": 0,
+  "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scope": "focused fixture cleanup and direct type closure, not root noEmit"
+}

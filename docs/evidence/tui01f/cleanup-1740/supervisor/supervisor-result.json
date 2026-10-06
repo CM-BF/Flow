@@ -1,0 +1,145 @@
+{
+  "endedAt": "2026-10-06T17:40:21.491883+00:00",
+  "elapsedSeconds": 3.781,
+  "source": "f4f9c47c8c36d7c05614ac477f7af3bb49a31680",
+  "exitCode": 0,
+  "stopReason": null,
+  "groups": [
+    {
+      "pgid": 33373,
+      "present": false
+    }
+  ],
+  "observedProcesses": [
+    {
+      "pid": 33373,
+      "ppid": 33368,
+      "pgid": 33373
+    },
+    {
+      "pid": 33375,
+      "ppid": 33373,
+      "pgid": 33373
+    },
+    {
+      "pid": 33376,
+      "ppid": 33373,
+      "pgid": 33373
+    }
+  ],
+  "stopActions": [],
+  "samples": [
+    {
+      "seconds": 0.0,
+      "rawBytes": 0,
+      "tempBytes": 0,
+      "freeBytes": 1168424960
+    },
+    {
+      "seconds": 1.15,
+      "rawBytes": 84,
+      "tempBytes": 2236913,
+      "freeBytes": 1165766656
+    },
+    {
+      "seconds": 2.32,
+      "rawBytes": 562,
+      "tempBytes": 2409637,
+      "freeBytes": 1161695232
+    },
+    {
+      "seconds": 3.48,
+      "rawBytes": 3034,
+      "tempBytes": 0,
+      "freeBytes": 1150078976
+    }
+  ],
+  "maxObservedRawBytes": 3034,
+  "maxObservedTemporaryBytes": 2409637,
+  "minSampledFreeBytes": 1150078976,
+  "freeAfter": 1150050304,
+  "cacheGrowthBytes": 0,
+  "fixtureResult": {
+    "facts": {
+      "database": "flow_tui01f_cleanup_f99c0992c7af",
+      "ownerPid": 33376,
+      "provider": 0,
+      "tasks": 0,
+      "runtimes": 0,
+      "PTY": 0,
+      "directory": "/tmp/flow-tui01f-cleanup-20261006-1740/temporary/flow-tui01f-cleanup-PUIZrS",
+      "originalIdentity": {
+        "dev": 16777234,
+        "ino": 123104210,
+        "directory": true,
+        "symbolicLink": false
+      },
+      "marker": {
+        "operationId": "27512e65-1bf7-463a-bbea-ce820393a529",
+        "database": "flow_tui01f_cleanup_f99c0992c7af"
+      },
+      "databaseIdentity": {
+        "oid": 1164130,
+        "datname": "flow_tui01f_cleanup_f99c0992c7af",
+        "datdba": 10
+      },
+      "origin": "http://127.0.0.1:54619",
+      "centerClosed": true,
+      "connections": {
+        "state": "empty",
+        "observations": [
+          {
+            "elapsedMs": 1.7782079999997222,
+            "rows": []
+          }
+        ]
+      },
+      "adminClosed": true
+    },
+    "cleanup": {
+      "checkpointConfirmed": true,
+      "databaseRemoved": true,
+      "temporaryRemoved": true,
+      "directoryObservation": {
+        "dev": 16777234,
+        "ino": 123104210,
+        "directory": true,
+        "symbolicLink": false
+      },
+      "failures": []
+    },
+    "errors": [],
+    "outcome": "passed"
+  },
+  "files": [
+    {
+      "path": "/tmp/flow-tui01f-cleanup-20261006-1740/stdout.txt",
+      "bytes": 428,
+      "sha256": "82112dcfea1565f22febf0169443202b7b247ef8222ed12591d0024439a70dce"
+    },
+    {
+      "path": "/tmp/flow-tui01f-cleanup-20261006-1740/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/tmp/flow-tui01f-cleanup-evidence-20261006-1740/checkpoint.json",
+      "bytes": 906,
+      "sha256": "91d77b15ba9ec90a04693ce563fb4a0e0194c424d920c4c32bf38289e704d748"
+    },
+    {
+      "path": "/tmp/flow-tui01f-cleanup-evidence-20261006-1740/result.json",
+      "bytes": 1222,
+      "sha256": "01294ce8f486cd2e2a9c1f49acb4dc7bc4bd8a7fa24a1df56c5c5caeff13c568"
+    },
+    {
+      "path": "/tmp/flow-tui01f-cleanup-evidence-20261006-1740/reservation.json",
+      "bytes": 478,
+      "sha256": "d91375f142f44428d54aed8dab8f8d7fb68084baf17cfb6467db83bc73e4fac9"
+    }
+  ],
+  "providerCalls": 0,
+  "runCount": 1,
+  "cleanupPolicy": "No supervisor DROP/rm. Fixture checkpoint gated cleanup only; retained wrapper/raw/cache for evidence.",
+  "state": "PASS_CANDIDATE"
+}

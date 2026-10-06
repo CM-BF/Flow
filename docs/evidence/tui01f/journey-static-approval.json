@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-06 16:49 UTC",
+  "target": "40508f18432ffc20eadd638b208841a364c72bea",
+  "decision": "SCOPED_APPROVED",
+  "review": {
+    "path": "docs/evidence/tui01f/independent-static-delta-review.json",
+    "sha256": "67acee23da8bcaf5e1ae5d1272edda2ac4c8031657d1a75378a17879b7a91d3e"
+  },
+  "runtimeProposal": {
+    "path": "docs/evidence/tui01f/journey-runtime-dependency-view-proposal.json",
+    "sha256": "208877400a5bb025930c321578c3ffcdce9283bf6c6a474da0ca931dfe36d0de"
+  },
+  "originalManifestUnchanged": true,
+  "newTests": 0,
+  "runtimeJourney": "NOT_RUN",
+  "skillsApplication": "Reused local find-skills/clean-code/codebase-design; separated dependency path evidence, actual loading and behavior; kept authority in host Interface and stopped product writes."
+}

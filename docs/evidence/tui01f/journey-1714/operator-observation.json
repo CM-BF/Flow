@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-06T17:18:04.006Z",
+  "database": "flow_tui01f_44a622c76d68",
+  "groups": [
+    {
+      "pgid": 73722,
+      "present": false
+    },
+    {
+      "pgid": 75767,
+      "present": false
+    }
+  ],
+  "snapshot": {
+    "observed_at": "2026-10-06T17:18:04.006Z",
+    "observer": "flow",
+    "database": {
+      "oid": "1160475",
+      "name": "flow_tui01f_44a622c76d68",
+      "owner": "flow",
+      "allowConnections": true
+    },
+    "connections": []
+  },
+  "taskIds": [
+    "8cbc10ec-b9fd-46eb-a730-92440b0817da",
+    "5453bd16-e5b1-4a8f-a430-0203160f4186",
+    "24e44af6-e4af-45f3-9e02-89aa5099044c"
+  ],
+  "runnerId": "b11e386c-961f-46df-a2ec-f0efc03ca54a",
+  "directory": {
+    "path": "/tmp/flow-tui01f-03-20261006-1714/temporary/flow-tui01f-2SAkN5",
+    "realpath": "/private/tmp/flow-tui01f-03-20261006-1714/temporary/flow-tui01f-2SAkN5",
+    "dev": 16777234,
+    "ino": 123096289,
+    "isDirectory": true,
+    "isSymlink": false,
+    "originalInodeRecorded": false
+  },
+  "rawCommit": "7dd07e90fd72624c382bf6219dc9789c80e40c22",
+  "queryCount": 1,
+  "actions": {
+    "drop": 0,
+    "rm": 0,
+    "terminate": 0
+  },
+  "limitation": "Original fixture saved path and ownerPid, not initial inode or connection rows/error. Current zero cannot retrospectively explain first unknown."
+}

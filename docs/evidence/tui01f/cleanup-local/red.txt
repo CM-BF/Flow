@@ -1,0 +1,45 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel
+
+ ❯ apps/tui/src/task-controls/fixture-cleanup.test.ts (1 test | 1 failed) 5ms
+   × observes a closing connection until zero and preserves the original pid/state 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/tui/src/task-controls/fixture-cleanup.test.ts > observes a closing connection until zero and preserves the original pid/state
+AssertionError: expected { state: 'busy', …(1) } to deeply equal { state: 'empty', …(1) }
+
+- Expected
++ Received
+
+@@ -7,12 +7,8 @@
+            "pid": 42,
+            "state": "idle",
+          },
+        ],
+      },
+-     {
+-       "elapsedMs": 50,
+-       "rows": [],
+-     },
+    ],
+-   "state": "empty",
++   "state": "busy",
+  }
+
+ ❯ apps/tui/src/task-controls/fixture-cleanup.test.ts:9:18
+      7|     now: () => elapsed, wait: async ms => { elapsed += ms; },
+      8|   });
+      9|   expect(result).toEqual({ state: 'empty', observations: [
+       |                  ^
+     10|     { elapsedMs: 0, rows: [{ pid: 42, state: 'idle' }] }, { elapsedMs:…
+     11|   ] });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  10:24:23
+   Duration  110ms (transform 10ms, setup 0ms, import 16ms, tests 5ms, environment 0ms)
+

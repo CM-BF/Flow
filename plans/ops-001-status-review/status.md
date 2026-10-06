@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:21 UTC / main4df08fb3 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:50 UTC / mainb4ab57c6 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -18,8 +18,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 两条已结束实验的构建缓存已清理，数据库服务保留；现场余量已恢复到本轮准备线。 |
-| 下一可用交付 | 已通过领域验收的逐消息设置进入生产组合；终端行为证据已保存，收尾检查和网页兼容继续修复。 |
+| 当前产出 | 逐消息设置、终端收尾与目标规划的局部验证均已通过独审；资源已恢复到网页单次验证的准备余量。 |
+| 下一可用交付 | 接收逐消息设置的两处旧类型兼容修复，并完成新版网页的实际兼容验证。 |
 | 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；小验证按现场余量准入，已失败的准备记录保留。 |
 | 需用户决定 | NONE |
 
@@ -191,3 +191,17 @@ TUI01F-03-20261006-1714一次窗口给原assignment_review：固定40508f三源/
 2026-10-06 17:21 UTC：TUI01F一次窗口已归还。原两行为case通过，但afterAll连接核验unknown使整suite exit1；17:18独立操作者一次核原DB零连接、归属一致及两PGID不存在，再正常DROP，remaining=[]，无FORCE/任务重试。初始tmp inode未保存，约3MB内private tmp继续KEEP；不从后续零连接推定原失败原因，不重写原raw。唯一证据位于tui-task-cancel/docs/evidence/tui01f/journey-1714（af0ef5de）。当前无本轮自有PG/Chrome/PTY进程，下一运行仍fresh验原门槛。
 
 CORE固定ea276/packet23016已由Mika17:13独立APPROVED，29项分轮证据无需重跑；F01唯一owner消费固定输入与032生产入口，client C01补充两项矛盾回执由原owner和原reviewer收口。Web B累计39,935ms/余140,065ms保持，先诊断固定失败再排受影响运行；O15已完成206源码/28动态SQL/18包入口/10配置静态核对但PG尚未准入。静态完整不冒称运行通过。CLAIM账本17:21核本OPS与I02合法范围仍active。
+
+## 2026-10-06 17:36 UTC 串行窗口交接
+
+F01-032-PRODUCTION-20261006-1732：固定0ee2494e两源及ea276/6d114批准输入，实际生产factory单例1/1、3.00s、0provider/runtime；fresh1,196,900,352B、最低1,174,093,824B，606B原始输出、cache增量0。随机专库正常关闭后观察连接为空、checkpoint保存、正常DROP/remaining[]，自有进程组已退出。固定manifest独立窄审后才进入主线，不据绿日志跳过来源审核。
+
+下一唯一PG/Chrome窗口交Web RELEASE03-B-20261006-1736：ef458两脚本已独立审查，复用原A事实，只运行B，累计39,935/180,000ms、余140,065ms；fresh仍须原1GiB+128MiB，旧余量不构成准入。TUIcleanup-only与O15明确等待归还，不并跑。TUI457纯清理delta的71固定/current绑定已核、10项与focused types0获限定批准；原两行为通过/整suite exit1和未知inode目录KEEP不变，新单例尚未运行。
+
+## 2026-10-06 17:50 UTC 资源与收口
+
+1736网页窗口fresh不足，NOT_RUN/预算未消耗。随后TUIcleanup1740单例1/1、O15六PG6/6分别串行完成并正常清理；独审固定证据，不重跑此前已过行为。逐消息设置4015组合root类型检查发现Web深readonly与TUI旧profile两处直接消费者问题，分别由合法owner窄修；TUI ec30已独审，Web PROFILEC02在独立树实施，不能把组合red称全绿。
+
+[四候选恢复批](../../docs/quality/resource-space-2026-10-06/next4c-resumed/README.md)最终2/4；另外两棵在17:49达到准备线后未操作。所有保留hash/保护树不变，未触donor/依赖/个人服务。PG/Chrome唯一窗口已给Web B1750，仍fresh原gate及140,065ms累计剩余；TUI/O15无在跑资源。本轮main与个人runtime均未因这些验证自动更新。
+
+Donor审计口径更正：此前4条可执行文本引用中，harness-comparison snapshots及claude-harness归档3条是逐字历史来源（各README明确非运行入口），context-pi-hook/run.mjs才是条件重跑入口。原历史文件不改，donor仍KEEP；不能凭字符串引用数量称4个活跃运行消费者，也不能据此删除依赖。

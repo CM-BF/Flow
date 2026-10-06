@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-06T17:49:29.553380+00:00",
+  "state": "STOP_PREPARATION_MARGIN_REACHED",
+  "freeBytes": 1748021248,
+  "stopAt": 1241513984,
+  "operated": [
+    "native-activity",
+    "protocol-dispatch"
+  ],
+  "remainingKept": [
+    "task-read-projections",
+    "protocol-payload"
+  ],
+  "reason": "Fresh pre-mutation gate reached preparation target; final apply returned before sparse mutation; do not continue batch.",
+  "mikaStatement": "/tmp/flow-mika-next4c-consumers.json",
+  "noAdditionalProductTest": true,
+  "providerCalls": 0,
+  "remainingFacts": [
+    {
+      "tree": "task-read-projections",
+      "sparse": false,
+      "clean": true,
+      "head": "429a2dbd3be92093f10aec938b8edc470e15680d"
+    },
+    {
+      "tree": "protocol-payload",
+      "sparse": false,
+      "clean": true,
+      "head": "06cddb84f3f33c5e3f602e43a0ca4c7765a55ff1"
+    }
+  ]
+}

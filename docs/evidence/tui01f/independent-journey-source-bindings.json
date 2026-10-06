@@ -1,0 +1,297 @@
+{
+  "at": "2026-10-06T16:29:16.303395+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "target": "da673b81c4390c2e811d1582d68a9899180d55d2",
+  "head": "112462d240dc0f93992154f5a4f5b62f953c9135",
+  "status": "",
+  "manifestSha256": "fff22d066a4583f15afad650722b1bdcb0f19ba31ad5894e5e7f84d4230567f4",
+  "bindings": [
+    {
+      "group": "sources",
+      "path": "apps/tui/src/task-controls/fixture.ts",
+      "bytes": 21497,
+      "sha256": "7ef74fe4cf5af4c022c1be107f589dce43751a12f325276c3a1575f8ae7edb74",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "sources",
+      "path": "apps/tui/src/task-controls/journey.test.ts",
+      "bytes": 4182,
+      "sha256": "91cf664a55a281989b0e240448e2b1d4694e059c09fca00b14e4e7d0c63d4153",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "sources",
+      "path": "apps/tui/test-fixtures/cancel_driver.py",
+      "bytes": 4898,
+      "sha256": "aec992928bb8bf93feb237444a78d63372c35441a2bc600ea3f1716ad2f85b6f",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4161,
+      "sha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/tui/src/screen.tsx",
+      "bytes": 7341,
+      "sha256": "59794da3bc2e93346f9f8d87663e2dcf284a77f867db9dbd3cf7530c2d14618a",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/tui/src/intent-store.ts",
+      "bytes": 659,
+      "sha256": "33555b4ff95d4a7b79990fce57fba1c865d7ffbaa5eab37b36c22c886ebba3b7",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/tui/src/private-journal.ts",
+      "bytes": 3195,
+      "sha256": "beb8e8374811998d4b55997fe90a50857115fc89220b8b841b56075f005e2bf2",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 22678,
+      "sha256": "2214199346f91f0fb91230e1dc694f704a664362682ff054399cdbc16141fa0b",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "packages/interaction/src/types.ts",
+      "bytes": 2645,
+      "sha256": "3cfcb54ddd03737a6aaa6e471c6ed67b32b30f0fa93cf2efb9f53ce8902ced4b",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "packages/interaction/src/task-control/index.ts",
+      "bytes": 1122,
+      "sha256": "9186c28eaf3d4efcb74aa3925b193dd8d6feaccbadb3fef9a6b6f9dc00f5eeeb",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "packages/client/src/index.ts",
+      "bytes": 51680,
+      "sha256": "297f77f7a05c0eda2fd588b63915a70034de260fefe6d17d87cc1d3dc069f75f",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 5574,
+      "sha256": "6d7765c8e8c295c4da1b6aca845348604917108d5b359b20bd601d1053e3d884",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7285,
+      "sha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "packages/contracts/src/workspace.ts",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/runner/src/verifier.ts",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/server/src/index.ts",
+      "bytes": 13801,
+      "sha256": "6df36211fe717f5e8934120e44a8732d5f59a32a04c69eaed89338c3d6268b1c",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/server/src/commands.ts",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/server/src/conversations/admission.ts",
+      "bytes": 3967,
+      "sha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/server/src/conversations/replies.ts",
+      "bytes": 8294,
+      "sha256": "0d8638a7432a34e69b736b50f0307f2f2b7a75eca8dc2f1fa0522355e2def43c",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/server/src/events.ts",
+      "bytes": 8529,
+      "sha256": "270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "apps/server/src/shutdown/index.ts",
+      "bytes": 1327,
+      "sha256": "26b5afc5018f1a63a69d10c5bc451602d11df87f17183a32f87f1cbf7396de10",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "pnpm-lock.yaml",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "directInputs",
+      "path": "vitest.config.ts",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1",
+      "fixed": "da673b81c4390c2e811d1582d68a9899180d55d2",
+      "matches": true
+    },
+    {
+      "group": "protectedApprovedSources",
+      "path": "packages/interaction/src/task-control/index.ts",
+      "bytes": 1122,
+      "sha256": "9186c28eaf3d4efcb74aa3925b193dd8d6feaccbadb3fef9a6b6f9dc00f5eeeb",
+      "fixed": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "matches": true
+    },
+    {
+      "group": "protectedApprovedSources",
+      "path": "packages/interaction/src/task-control/controller.test.ts",
+      "bytes": 13386,
+      "sha256": "a7f5cf3af02be395dcc50c302b8bcf7280bef9d3dfbb7648ac24ba9a739178e5",
+      "fixed": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "matches": true
+    },
+    {
+      "group": "protectedApprovedSources",
+      "path": "packages/interaction/src/types.ts",
+      "bytes": 2645,
+      "sha256": "3cfcb54ddd03737a6aaa6e471c6ed67b32b30f0fa93cf2efb9f53ce8902ced4b",
+      "fixed": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "matches": true
+    },
+    {
+      "group": "protectedApprovedSources",
+      "path": "packages/interaction/src/commands.ts",
+      "bytes": 6131,
+      "sha256": "dff891136914fca2774faf199f3181fe3667c4055d7dab6a2c5e5ac30983e0e8",
+      "fixed": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "matches": true
+    },
+    {
+      "group": "protectedApprovedSources",
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 22678,
+      "sha256": "2214199346f91f0fb91230e1dc694f704a664362682ff054399cdbc16141fa0b",
+      "fixed": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "matches": true
+    },
+    {
+      "group": "protectedApprovedSources",
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4161,
+      "sha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892",
+      "fixed": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "matches": true
+    },
+    {
+      "group": "protectedApprovedSources",
+      "path": "apps/tui/src/screen.tsx",
+      "bytes": 7341,
+      "sha256": "59794da3bc2e93346f9f8d87663e2dcf284a77f867db9dbd3cf7530c2d14618a",
+      "fixed": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "matches": true
+    },
+    {
+      "group": "protectedApprovedSources",
+      "path": "apps/tui/src/task-controls/consumer.test.ts",
+      "bytes": 2249,
+      "sha256": "4d697e10b2b88c311cbaf949c6809e919f16376a21df4a0632d4c773204157cf",
+      "fixed": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "matches": true
+    },
+    {
+      "group": "protectedApprovedSources",
+      "path": "apps/tui/README.md",
+      "bytes": 10768,
+      "sha256": "d8cde961719bed44c34e622c6db2b640f033b33109c40942ca3d2540dbc144f3",
+      "fixed": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+      "matches": true
+    },
+    {
+      "group": "materialization",
+      "path": "docs/evidence/tui01f/followup-source-materialized.json",
+      "matches": true
+    }
+  ],
+  "mismatches": [],
+  "targetDelta": "A\tapps/tui/src/task-controls/fixture.ts\nA\tapps/tui/src/task-controls/journey.test.ts\nA\tapps/tui/test-fixtures/cancel_driver.py\nA\tdocs/evidence/tui01f/followup-source-materialized.json\nM\tplans/tui01f-task-cancel/plan.md\nM\tplans/tui01f-task-cancel/status.md\n"
+}

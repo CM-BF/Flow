@@ -1,0 +1,40 @@
+{
+  "recordedAt": "2026-10-06T17:48:05.681887+00:00",
+  "owner": "Mika / root",
+  "model": "gpt-6-astra",
+  "kind": "bounded-known-consumer-statement",
+  "basis": "Existing 17:05 bounded owner audit in docs/evidence/wpf-mature-02/resource-candidates.md plus current explicitly planned CORE, native catalog, CHAT06P03 and S01 idle source inputs. Root re-read the two exact HEAD/clean states this turn; no new tree traversal, process scan, test or sparse operation.",
+  "scopeLimit": "Only this group known current and already planned consumers. Unregistered or other external absolute-path consumers remain unknown; sole Execution Lead owns final keep set and fresh ledger/process/reference checks.",
+  "worktrees": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections",
+      "head": "429a2dbd3be92093f10aec938b8edc470e15680d",
+      "rootObservedClean": true,
+      "noAdditionalKnownUnrecordedHistoricalEvidenceConsumers": true,
+      "keepOtherTaskEvidence": [
+        "docs/evidence/b03/baseline-reference.json",
+        "docs/evidence/d04/migration-inputs.json",
+        "docs/evidence/s01/smoke-first/result.json",
+        "docs/evidence/s01/smoke-repair/result.json",
+        "docs/evidence/s01/w1-protocol-gate/result.json",
+        "docs/evidence/s01/w1-four-processes/result.json"
+      ],
+      "note": "Known I02 comparison reference points to main/docs/evidence/i02/attachment-task-read-source-comparison.json, not this worktree historical I02 copy. Preserve own raw and all source/tests/rules/plans/dependencies/executable fixture inputs."
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-payload",
+      "head": "06cddb84f3f33c5e3f602e43a0ca4c7765a55ff1",
+      "rootObservedClean": true,
+      "noAdditionalKnownUnrecordedHistoricalEvidenceConsumers": true,
+      "keepOtherTaskEvidence": [
+        "docs/evidence/w01/workspace-panels"
+      ],
+      "keepSourceFixture": [
+        "packages/protocols/test/fixtures/mcp-2026.json"
+      ],
+      "note": "Keep the full workspace-panels preview/typecheck/browser config and HTML/CSS/TSX closure, not just its receipts. External loadProtocolEndpoints absolute manifests remain unknown unless separately registered. Preserve own raw and all source/tests/rules/plans/dependencies."
+    }
+  ],
+  "additionalUnwrittenConsumerPaths": [],
+  "actionTaken": "Statement only; no worktree mutation, sparse/config change, deletion or recovery claim."
+}
