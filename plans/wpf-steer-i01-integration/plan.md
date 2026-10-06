@@ -6,7 +6,7 @@
 
 复用已审 STEER01 控件，不改其 control/UI/CSS。仅显式打开运行任务的消息页脚入口才分配私有 controller / 读取；普通 Send / Queue 保持独立。P01 唯一生命周期与 read/write capability 复核，三条 bound ports 前后核 connection / stable view / conversation / turn / task，attempt/owner/revision 由中心 admission 确定。write command 只调用私有原始 HTTP port，不递归回 control。
 
-稳定已访问 surface 在可移动聊天 groups 外保存控件内部 draft；hidden/offline/revoke 暂停观察并使旧代际无效，不取消中心任务。session 最多八个已访问绑定，不自动淘汰 unknown；控件原八 receipt / 四 attempt / 每 attempt64 command 界限不变。仅显式刷新既有页，无 per-message timer。关闭 view / 换 connection 的未决提示须明确本页原 key 恢复将丢失，确认才销毁；reload 恢复不在本片。
+稳定已访问 surface 在可移动聊天 groups 外保存控件内部 draft；hidden/offline/revoke 暂停观察并使旧代际无效，不取消中心任务。session 最多八个已访问绑定，不自动淘汰 unknown；控件原八 receipt / 四 attempt / 每 attempt64 command 界限不变。显式打开/Refresh 读取既有页，保留控件原提交或失败后的单次有界刷新，无 per-message timer。关闭 view / 换 connection 的未决提示须明确本页原 key 恢复将丢失，确认才销毁；reload 恢复不在本片。
 
 ## TODO
 

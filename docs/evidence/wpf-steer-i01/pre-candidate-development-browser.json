@@ -1,0 +1,313 @@
+{
+  "at": "2026-10-06T09:40:32.341Z",
+  "sourceCommit": "82d2c98e407684b945467e1ce6b992dba6b4603c",
+  "hashes": {
+    "apps/web/src/App.tsx": "9de8d08db9a3ab1f8649cbca354929cb60fbfb803d02781b7929ecbc0bfc42d1",
+    "apps/web/src/conversations/ConversationThread.tsx": "38669bba0b3697b48e180ee6119474cbeeda6ce9aa0f2a9bb1fc2148a5efd433",
+    "apps/web/src/plugin-integration/react.tsx": "eebfb3472c356f0e9514ec2984f4c12b624722263735b23f7d3b8b2feb9869b4",
+    "apps/web/src/plugin-integration/session.ts": "30546e32c496a85e93503f25c2b3634fdefe25115b38cdc311a965ae3bfd9ef2",
+    "apps/web/src/plugin-integration/steering.tsx": "b7c180fe00e97272aa48e7fd0e0b76e28234f4483b01bfd796518d4ff94f87c9",
+    "apps/web/src/plugins/types.ts": "8b122b79c5ffad718995943430bf6d2a621bbd6471b3536eac57c0a224ce294b",
+    "apps/web/src/plugins/validation.ts": "773d721cf913d1f8f7efc5f8aba045c0df2514091280f6184e683dfcfc9704fb",
+    "apps/web/test/conversation-steering-integration.browser.ts": "d98e4e12da1a89df8e066567524730d6f9784f0faf1c3eaf8f8e507c162d6904",
+    "apps/web/test/conversation-steering-integration.fixture.ts": "aa406044d781da809d9705ba347d486663a864b34cda4b08e7fa61bbd9b9699c",
+    "apps/web/test/conversation-steering-integration.test.ts": "4c790b50111483b2e5411d6fade6465458558faf60ac3bd0174a205e6b7ef598",
+    "apps/web/test/plugin-host.test.ts": "62197d2e224d715af7ec045d2b1f2fcbbc2c412353af07769614ad84bfa191f8"
+  },
+  "production": false,
+  "checks": [
+    "real P01 entry is explicit and current-task bound; registration reads zero",
+    "same mounted draft survives Hide, native hidden, split/merge and independent B task",
+    "Enter sends a separate original-key command; unknown retry and late new draft remain independent",
+    "accepted-unresolved close protection; explicit observation resolves without claiming model compliance",
+    "plugin disable/enable retains local draft and never auto-resubmits or reads on restoration",
+    "offline invalidates in-flight ACK without clearing original receipt or new draft",
+    "390 light/dark reduced-motion keyboard control remains usable and original composer remains separate",
+    "change-connection warns before losing page-local recovery and same IDs start empty",
+    "server unavailable remains unavailable despite plugin activation; normal Queue and Send are unchanged"
+  ],
+  "errors": [],
+  "failure": null,
+  "calls": [
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-3-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-3-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-3-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-3-task-1/steering?attemptId=chat-3-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "POST",
+      "path": "/api/tasks/chat-2-task-1/steering",
+      "body": "{\"attemptId\":\"chat-2-task-1-attempt\",\"ownerVersion\":1,\"expectedRevision\":0,\"text\":\"Old steering text\"}",
+      "key": "f1fbeb8e-b249-493d-8ece-bfda5d8b0c76"
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "POST",
+      "path": "/api/tasks/chat-2-task-1/steering",
+      "body": "{\"attemptId\":\"chat-2-task-1-attempt\",\"ownerVersion\":1,\"expectedRevision\":0,\"text\":\"Old steering text\"}",
+      "key": "f1fbeb8e-b249-493d-8ece-bfda5d8b0c76"
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "POST",
+      "path": "/api/tasks/chat-2-task-1/steering",
+      "body": "{\"attemptId\":\"chat-2-task-1-attempt\",\"ownerVersion\":1,\"expectedRevision\":1,\"text\":\"Held steering\"}",
+      "key": "87068eb7-9bb1-44ab-aebf-8c7f9893da5e"
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "POST",
+      "path": "/api/tasks/chat-2-task-1/steering",
+      "body": "{\"attemptId\":\"chat-2-task-1-attempt\",\"ownerVersion\":1,\"expectedRevision\":1,\"text\":\"Held steering\"}",
+      "key": "87068eb7-9bb1-44ab-aebf-8c7f9893da5e"
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 0,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 1,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 1,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering?attemptId=chat-2-task-1-attempt&after=0&limit=20",
+      "body": "",
+      "key": ""
+    },
+    {
+      "center": 1,
+      "taskId": "chat-2-task-1",
+      "method": "GET",
+      "path": "/api/tasks/chat-2-task-1/steering/admission",
+      "body": "",
+      "key": ""
+    }
+  ]
+}
