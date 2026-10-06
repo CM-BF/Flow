@@ -18,16 +18,62 @@ export async function save(path, value) {
   const folder = await open(dirname(path), 'r'); try { await folder.sync(); } finally { await folder.close(); }
 }
 export async function freeBytes(path) { const value = await statfs(path); return value.bavail * value.bsize; }
-export async function diskBytes(path, maxFiles = 10000) {
-  let bytes = 0, files = 0;
-  async function visit(directory) {
-    for (const name of await readdir(directory)) {
-      const p = join(directory, name), st = await lstat(p); if (++files > maxFiles) throw Error('Observed file-count limit');
-      // Chrome creates socket/lock symlinks; never follow them.
-      if (st.isDirectory() && !st.isSymbolicLink()) await visit(p); else bytes += st.size;
+export async function diskBytes(path, maxFiles = 10000, io = { readdir, lstat }) {
+  const deadline = performance.now() + 250, vanishedEntries = [];
+  let observedEntries = 0;
+  const unknown = reason => Object.assign(Error('Disk observation unknown: ' + reason), { code: 'DISK_OBSERVATION_UNKNOWN', vanishedEntries: [...vanishedEntries], observedEntries });
+  const read = async operation => {
+    const remaining = deadline - performance.now(); if (remaining <= 0) throw unknown('deadline');
+    let timer;
+    try {
+      const result = await Promise.race([operation(), new Promise((_, reject) => { timer = setTimeout(() => reject(unknown('deadline')), remaining); })]);
+      if (performance.now() >= deadline) throw unknown('late response');
+      return result;
+    } finally { clearTimeout(timer); }
+  };
+  const root = await read(() => io.lstat(path));
+  const sameDirectory = (actual, expected) => actual.isDirectory() && !actual.isSymbolicLink() && actual.dev === expected.dev && actual.ino === expected.ino;
+  if (!sameDirectory(root, root)) throw unknown('root is not an owned directory');
+  const retry = Symbol('enumerated child vanished');
+  for (let retries = 0; retries <= 2; retries++) {
+    if (!sameDirectory(await read(() => io.lstat(path)), root)) throw unknown('root identity changed');
+    let bytes = 0, files = 0;
+    const visit = async (directory, identity) => {
+      const names = await read(() => io.readdir(directory));
+      if (!sameDirectory(await read(() => io.lstat(directory)), identity)) throw unknown('directory identity changed');
+      for (const name of names) {
+        if (typeof name !== 'string' || !name || name === '.' || name === '..' || name.includes('/') || name.includes('\0')) throw unknown('entry outside directory');
+        if (++observedEntries > maxFiles) throw unknown('file-count limit');
+        const child = join(directory, name); let entry;
+        try { entry = await read(() => io.lstat(child)); }
+        catch (error) {
+          // Only a child just returned by this listing may trigger a fresh sample.
+          if (error.code !== 'ENOENT') throw error;
+          vanishedEntries.push(child); throw retry;
+        }
+        files++;
+        // A leaf link contributes its own metadata bytes; its target is never visited.
+        if (entry.isDirectory() && !entry.isSymbolicLink()) await visit(child, entry); else bytes += entry.size;
+      }
+      if (!sameDirectory(await read(() => io.lstat(directory)), identity)) throw unknown('directory identity changed');
+    };
+    try { await visit(path, root); }
+    catch (error) {
+      if (error !== retry) throw error;
+      if (!sameDirectory(await read(() => io.lstat(path)), root)) throw unknown('root identity changed after child vanished');
+      if (retries === 2) throw unknown('persistent child churn');
+      continue;
     }
+    if (!sameDirectory(await read(() => io.lstat(path)), root)) throw unknown('root identity changed at completion');
+    return { bytes, files, retries, observedEntries, vanishedEntries, nonAtomic: true };
   }
-  await visit(path); return { bytes, files };
+}
+/** Keep the original page/work failure separate from an additional close failure. */
+export async function runPreviewWithCleanup(work, close) {
+  let value, workError, cleanupError;
+  try { value = await work(); } catch (error) { workError = error; }
+  try { await close(); } catch (error) { cleanupError = error; }
+  return { value, workError, cleanupError };
 }
 export async function allocateResources() {
   const parent = await realpath(await mkdtemp(join(tmpdir(), 'flow-svc05r01-'))), st = await lstat(parent);

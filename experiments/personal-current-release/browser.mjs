@@ -7,7 +7,7 @@ import { fork, spawn, execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { randomUUID } from 'node:crypto';
 import { BACKEND, BACKEND_ROOT, RETAINED, inventory, backendIdentity, boundedFile, sha } from './inventory.mjs';
-import { createFixture, save, allocateResources, initializeDatabase, cleanupResources, freeBytes, diskBytes, cleanError } from './fixture.mjs';
+import { createFixture, save, allocateResources, initializeDatabase, cleanupResources, freeBytes, diskBytes, cleanError, runPreviewWithCleanup } from './fixture.mjs';
 import { until } from './transport.mjs';
 const entry = fileURLToPath(import.meta.url), repository = resolve(dirname(entry), '../..');
 const evidenceRoot = join(repository, 'docs/evidence/svc05-retained-web-compatibility/runs');
@@ -99,7 +99,14 @@ async function worker() {
     fixture = await createFixture(init.owned, init.token, signal, report);
     const endpoint = new Promise((resolve, reject) => { process.on('message', value => { if (value.kind === 'chrome-ready') resolve(value.endpoint); }); signal.addEventListener('abort', () => reject(signal.reason), { once: true }); });
     process.send({ kind: 'chrome' }); const { chromium } = await import('@playwright/test'); browser = await chromium.connectOverCDP(await endpoint, { timeout: 8000 }); report.browserVersion = browser.version();
-    for (const item of init.inventory.artifacts) { signal.throwIfAborted(); const preview = await fixture.openPreview(item); report.previewPorts ??= []; report.previewPorts.push(preview.port); try { report.results.push(await actualApp(fixture, browser, preview, signal, init.directory)); } finally { await fixture.closePreview(); } }
+    for (const item of init.inventory.artifacts) {
+      signal.throwIfAborted(); const preview = await fixture.openPreview(item); report.previewPorts ??= []; report.previewPorts.push(preview.port);
+      const completed = await runPreviewWithCleanup(() => actualApp(fixture, browser, preview, signal, init.directory), () => fixture.closePreview());
+      if (completed.cleanupError) { report.previewCleanupErrors ??= []; report.previewCleanupErrors.push(fixture.redact(completed.cleanupError)); }
+      if (completed.workError) throw completed.workError;
+      if (completed.cleanupError) throw completed.cleanupError;
+      report.results.push(completed.value);
+    }
     assert.equal(report.results.length, 2); assert.equal(new Set(report.results.map(x => x.taskId)).size, 2); assert.equal(new Set(report.results.map(x => x.conversationId)).size, 2); report.passed = true;
   } catch (e) { report.errors.push(fixture ? fixture.redact(e) : cleanError(e, [init.token])); }
   finally {
