@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:23:15 UTC / mainec50957f |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:26:01 UTC / mainec50957f |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -104,3 +104,5 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 本次卷可用量前后增加20,066,304B，总1,198,407,680B；共享卷观察不保证独占归因，不按du或逻辑字节夸回收。此前到本操作前的余量变化归因未知。仍未达SVC06 2.5GiB门槛；下一树逐个fresh核归属/消费者/fixture后决定，不动活跃依赖、个人服务或权威原证据。技能：已读本地find-skills；采用已验证Git2.50.1原生机制，无安装/新框架/PG实验/provider。
 
 2026-10-06 14:22 UTC：第二棵 tui-queue-controls released树也已逐项保留4572文件并收起2514个同main blob历史副本；原node_modules（COST的第三方依赖来源）未变、无运行中的openfile消费者、其他7树HEAD/status/index不变。卷前后+43,560,960B、总1,226,006,528B，[回执](../../docs/quality/sparse-worktree-2026-10-06/tui-queue-result.json)。O14新稀疏树保留全部代码/tests/rules/plans，仅自evidence，du12,568KiB、卷前后减少14,811,136B，[创建回执](../../docs/quality/sparse-worktree-2026-10-06/o14-new-worktree.json)；未安装依赖。COST一次直接PG验证在1GiB+96MiB门槛后通过并正常DROP，完成可用1,189,822,464B；无模型/个人服务变更。全构建、安装与A/B仍关闭，SVC06仍不足2.5GiB；未把首片稀疏收益解释为全部空间解阻。
+
+2026-10-06 14:26 UTC：第三棵 O13 已正式release且无openfile，初次收起3542副本后审查发现根规则链接的d04必须完整保留；即时通过sparse规则恢复22个d04文件并逐固定blob核，Git仍clean，最终3520其他历史副本收起。原始前后回执与[规则闭包更正](../../docs/quality/sparse-worktree-2026-10-06/o13-rule-correction.json)分别保留，不掩盖中间缺口。新O14也按需补d04只读材料。最终可用1,258,967,040B，SVC06仍未解阻；本次到三棵授权自有旧树为止，不继续猜删未知资源或活动树。全部原始任务证据/生产源码/依赖保留，历史副本仍在固定Git与main同blob，可逆恢复。
