@@ -307,3 +307,5 @@ OPS14固定3097730的两项局部补验经fresh小额准入后2/2、11未选、5
 2026-10-06 21:50 UTC：沿新明确资源授权，已请原Web服务owner先核53851/63743两已交付0模型fixture的用途/保留/消费者，再保存身份与启动日志后决定正常退役。个人端口、4320与49922/55049/61108/55616不动；本Lead当前未停止任何preview。另两处无本地消费者的cache仍待外部使用确认，未执行清理。规则见本plan临时预览生命周期；不把历史delivered或tab数量当无人使用证明。
 
 2026-10-06 21:52 UTC：三棵已结束树的216项非自有历史副本可逆收起完成，全部保留tracked/hash及其他树配置相同，[summary](../../docs/quality/sparse-worktree-2026-10-06/web-three-next/summary.json)。独立审核且经原owner外部消费者确认的两处Vite cache实际清理120文件，真实dependencies与源码保留，[summary](../../docs/quality/vite-cache-2026-10-06/summary.json)；最后观察1,182,425,088B，尚差共享重验证门槛25,534,464B。原cleanup脚本P2仅空间采样异常覆盖，未执行前修复并独审关闭；两个实际操作都COMPLETE。原readability配置UNKNOWN与旧失败不变，没有个人服务/预览停止、模型或产品测试。
+
+2026-10-06 21:58 UTC：assignment_review 独立核本批21份固定记录、2cache实际仅剩原empty dirs、120删除项与3tree216副本均一致；未复采空间/进程/个人服务，[结果审查](../../docs/quality/vite-cache-2026-10-06/results-independent-review.json)。当前临时preview退役由原Webowner执行，Lead不抢操作。MESSAGESETTINGS02单一新树已明确委派Web管理者source-only Git操作（fixed c8e352、约3MB、原4MiB上限），其完成后归还；main与其它配置不在该委派范围，不等PG。
