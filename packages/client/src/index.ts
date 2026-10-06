@@ -3,6 +3,8 @@ import type { ReconciliationObservation, ReconciliationResolution, Reconciliatio
 import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
 import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
 
+import type { GoalCreation, CreatedGoal, GoalSnapshot, GoalCommand, GoalCommandResult, GoalDefinition, GoalExecutionPage } from '@flow/contracts';
+
 import type { WorkspaceList, ProjectCreation, ProjectCommand, ProjectList, ProjectSnapshot, ProjectMutationResult } from '@flow/contracts';
 
 export class FlowApiError extends Error {
@@ -53,6 +55,24 @@ export class FlowClient {
   }
   changeProject(id: string, input: ProjectCommand, key: string, signal?: AbortSignal): Promise<ProjectMutationResult> {
     return this.request(`/api/projects/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+
+  createGoal(input: GoalCreation, key: string, signal?: AbortSignal): Promise<CreatedGoal> {
+    return this.request('/api/goals', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  readGoal(id: string, signal?: AbortSignal): Promise<GoalSnapshot> {
+    return this.request(`/api/goals/${encodeURIComponent(id)}`, { signal });
+  }
+  commandGoal(id: string, input: GoalCommand, key: string, signal?: AbortSignal): Promise<GoalCommandResult> {
+    return this.request(`/api/goals/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  readGoalInput(id: string, nodeId: string, version?: number, signal?: AbortSignal): Promise<GoalDefinition> {
+    return this.request(`/api/goals/${encodeURIComponent(id)}/inputs/${encodeURIComponent(nodeId)}${version === undefined ? '' : `?version=${version}`}`, { signal });
+  }
+  goalExecutions(id: string, options: { nodeId: string; after?: string; limit?: number }, signal?: AbortSignal): Promise<GoalExecutionPage> {
+    const query = new URLSearchParams({ nodeId: options.nodeId });
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/goals/${encodeURIComponent(id)}/executions?${query}`, { signal });
   }
 
   queryTasks(options: TaskIndexQuery = {}, signal?: AbortSignal): Promise<TaskIndexPage> {
