@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 13:52:17 UTC |
+| 最近更新时间 | 2026-10-06 13:58:30 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -23,7 +23,7 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 公开中心静态安装与历史读回已独审通过，准备接入默认中心 |
-| 下一可用交付 | 接入默认中心和共用客户端；下一启用及任务绑定先核现有公共接口 |
+| 下一可用交付 | 接入默认中心和共用客户端；启用与真实工具任务绑定方案已具备明确接线候选 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -42,13 +42,13 @@
 
 ## 当前事实与边界
 
-当前静态安装材料与trusted self-owned真实loader已实现，原53局部检查通过；独审1P2已修复并获本leaf批准，已main2f16e30a。Web只读入口已完成；trusted host不等第三方隔离或完整public管理链。本片0PG、SDK/provider。
+静态材料与trusted self-owned真实loader已main2f16e30a，修后65局部检查/独审成立。当前中心材料片a578已独审通过，14不同检查含11真实PG/HTTP，尚待正式main接收；SDK/provider为0。Web只读入口已完成，trusted host不等第三方隔离或完整public管理链。
 
 当前无用户行动或身份阻塞。候选来源/版本已由Goal Owner提供，见[候选输入](candidate-inputs.md)；用户所指身份尚未亲自确认，但不阻止已授权CTX01固定core实验。不从名字猜项目，也不重复询问已授权生命周期方向。后续产品实现必须另明确 worktree/owner/scope，本计划不授予跨模块写权。
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；尚未亲自核验 dashboard 聚合，不称已展示。旧D04 claim04c5de3f v2已released；当前新owner6ddedc73 v2八leaf与两metadata范围，旧观察不表示当前写权。真实事实/检查/文档target随本scope metadata单独更新。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；当前6ddedc73 v4持中心8源与两metadata，旧8leaf已交回。真实事实/检查/文档target随本scope metadata单独更新。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -91,3 +91,5 @@
 当前中心固定实现`a578bfd977f5f8f8376cee613307f7011d8778a7`，[100项manifest](../../docs/evidence/x01/center-manifest.json)（SHA `cfd29ad0abf3c8bc229d9de9bfb040309e032f6e4319a86e9e9dda482bcbcaf8`），8产品/测试/DDL、33只读输入；源码/raw已冻结待review。`center-review-ready-*`是当前14/14及strict0证据；历史重复不累计。
 
 2026-10-06 13:51:12 UTC：Mika接收chatui01_owner独立APPROVED，正式[审查收据](../../docs/evidence/x01/center-independent-review.json)与[稳定集成输入](../../docs/evidence/x01/center-integration-ready.md)已记录；8source/原raw/support/manifest不改，v4保留修复期。默认mount/client/CLI与完整enable/task绑定仍后继，不冒称整X01完成。仅metadata，无14/65重测。
+
+2026-10-06 13:58:30 UTC：fresh ada576 clean/v4 ACTIVE，仅形成[下一启用与任务绑定接缝](../../docs/evidence/x01/enable-binding-preparation.md)，15输入固定main d4a2e0a。重点保留单revision、disable只拒新binding、真实unknown复用retained/journal/停止新claim；runtime等待P06正式main与原owner交回，未take共享范围。中心a578仍已审待main，不把设计当实现；0新工程测试/PG/SDK/provider。新DDL/host资格/共享字段由Lead协调，完整原TODO不减。

@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "kind": "readonly-next-slice-inputs",
+  "observedAt": "2026-10-06T13:57:10Z",
+  "mainCommit": "d4a2e0a7f255a2c68b99c7aafbc006c7bc3b3b50",
+  "mainWorktreeClean": true,
+  "ownerHeadBeforeMetadata": "ada576021317625cca40d60fcd8e547ab4afdbd2",
+  "ownerClaim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/server/src/plugin-installations/commands.ts",
+      "apps/server/src/plugin-installations/installations.test.ts",
+      "apps/server/src/plugin-installations/migration.ts",
+      "apps/server/src/plugin-installations/routes.ts",
+      "apps/server/src/plugin-installations/store.ts",
+      "docs/evidence/x01",
+      "packages/contracts/src/plugin-installations.test.ts",
+      "packages/contracts/src/plugin-installations.ts",
+      "packages/storage/migrations/029-plugin-material-installs.sql",
+      "plans/x01-plugin-management"
+    ],
+    "state": "active",
+    "branch": "codex/plugin-management-plan",
+    "origin": "new",
+    "taskId": "X01",
+    "worker": "architecture_read",
+    "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 4,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan",
+    "createdAt": "2026-10-06T12:31:22.156Z",
+    "updatedAt": "2026-10-06T13:34:44.601Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "fixedMainInputs": [
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "bytes": 4885,
+      "sha256": "c9bae366a4fa69a28e103c559ef51ea3ad21a99597ad69adc776c62723fd7747"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 5574,
+      "sha256": "6d7765c8e8c295c4da1b6aca845348604917108d5b359b20bd601d1053e3d884"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7285,
+      "sha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465"
+    },
+    {
+      "path": "apps/server/src/plugins/commands.ts",
+      "bytes": 6407,
+      "sha256": "8fd234467020340543e61084a2e807d8148ac244a6dd6d30e18d6cd81d8867f5"
+    },
+    {
+      "path": "apps/server/src/plugins/storage.ts",
+      "bytes": 3153,
+      "sha256": "4da0052096f77cfa83a6b7b3b7373eb2cde435d3ab4269235a954c196a557abd"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 12580,
+      "sha256": "1e8f72cf66427d9f57a7ed8d66d2ab566713aa0ee492317351801fa77a4474c3"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8529,
+      "sha256": "270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "bytes": 4145,
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+    },
+    {
+      "path": "apps/runner/src/fixture.ts",
+      "bytes": 2615,
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 5834,
+      "sha256": "e0e8f276fdc217f889ca9dc2464f9abca0b32a210a84e9fdaf48f99a2c58445c"
+    },
+    {
+      "path": "apps/runner/src/verifier.ts",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    }
+  ],
+  "centerInput": {
+    "implementation": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+    "integrationReady": "center-integration-ready.json",
+    "mainReceiptReceived": false
+  },
+  "ledgerObservedAt": "2026-10-06T13:56:33.069Z",
+  "sharedOwnershipSnapshot": [
+    {
+      "path": "packages/contracts/src/index.ts",
+      "activeWriters": [
+        {
+          "taskId": "F01",
+          "worker": "astra_ultra_execution_lead",
+          "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+          "version": 35
+        }
+      ],
+      "unclaimedIsAuthorization": false
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "activeWriters": [
+        {
+          "taskId": "F01",
+          "worker": "astra_ultra_execution_lead",
+          "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+          "version": 35
+        }
+      ],
+      "unclaimedIsAuthorization": false
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "activeWriters": [
+        {
+          "taskId": "F01",
+          "worker": "astra_ultra_execution_lead",
+          "claimId": "8470e7d2-662a-4dbe-9b0e-12ef82aac90e",
+          "version": 35
+        }
+      ],
+      "unclaimedIsAuthorization": false
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "activeWriters": [
+        {
+          "taskId": "S01P06",
+          "worker": "status_read",
+          "claimId": "f1fa2bdb-a669-4c6f-8ff7-d5efa694c21f",
+          "version": 1
+        }
+      ],
+      "unclaimedIsAuthorization": false
+    },
+    {
+      "path": "apps/server/src/plugins/commands.ts",
+      "activeWriters": [],
+      "unclaimedIsAuthorization": false
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "activeWriters": [],
+      "unclaimedIsAuthorization": false
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "activeWriters": [],
+      "unclaimedIsAuthorization": false
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "activeWriters": [],
+      "unclaimedIsAuthorization": false
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "activeWriters": [],
+      "unclaimedIsAuthorization": false
+    }
+  ],
+  "validation": "Read-only fixed Git/source/hash inspection; no engineering tests, provider, SDK, PG test database, child or new source claim."
+}
