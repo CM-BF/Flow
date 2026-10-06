@@ -170,3 +170,5 @@ Paseo 的模型认证主要依赖用户已有 CLI 登录；其 server/auth 是 d
 - 2026-10-05：迁移至独立plan/status/review目录；FLOW-002-T06薄契约草案由F00提交542f70b/3995ec1提供，未将其外推为真实harness恢复或生产选型完成。
 
 协作记录：[status.md](status.md) · [review.md](review.md)。状态按实际提交和证据更新，review模板不是通过结论。
+
+2026-10-06 07:18 UTC维护：本片当前摘要与实际main对齐，历史实验/TODO证据保留；详见唯一status。无新产品或模型验证。

@@ -2,16 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 01:42 UTC / 2026-10-06 01:42 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:18 UTC / 30b97cbf3665c4ef7a314a6a8b59394ae68781af |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
-| 工作树dirty状态 | 本次规则/汇总metadata待提交 |
+| 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
 | 工作分支状态 | 依下方TODO；M1系统旅程、最终独立review及main集成已完成 |
-| 已集成main状态 / HEAD | `14fea3d9b3f831aa35b8c80bf5c465a7039ad609`；2026-10-06 01:46 UTC确认本机与origin/main已集成M1；此SHA是观察值，后续metadata不让既有实现失效 |
+| 已集成main状态 / HEAD | 30b97cbf3665c4ef7a314a6a8b59394ae68781af；三件套、原子领取、独立审查和三队短交接约定已在使用。 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
+
+| 阶段 | M2 |
+| 本片段交付阶段 | delivered |
+| 优先级 | 5 |
+| 当前产出 | 每项工作已有唯一进度来源，领取、交接与独立审查可从看板追溯。 |
+| 下一可用交付 | 本片段已交付；后续按真实协作问题维护规则。 |
+| 当前阻塞 | NONE |
+| 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
 
@@ -58,3 +66,5 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 ### 2026-10-06 04:30 UTC
 
 OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留canonical status/evidence。全矩阵更新核实main4e0289f与实际4320的47源，不重跑产品测试；保留原始验收和未完成项。
+
+2026-10-06 07:18 UTC：仅补当前人读摘要；OPS-001-01～07既有完成证据与模板独立核对范围保留，不重新宣布整项目通过。三队当前4/4/2，旧单队cap错误仍是历史观察。无产品测试。
