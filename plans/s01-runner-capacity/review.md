@@ -73,3 +73,12 @@ DB/public行集清理后未留存，只认可固定程序完整断言通过，�
 作者预审修复：cleanup共用58秒尾部不足→分阶段截止/并行children；CREATE提交丢ACK→发送前creationRequested+最后自有DB核查。14纯tests、strict0；实际接线/清理/容量未知。独立结论待回填，空段不作approval。
 
 2026-10-06 10:05:50 UTC，architecture_read / gpt-6-astra独立只读APPROVED上述634 target，0 P1/P2；19source/16raw/16readonly、6runtime、78legacy全匹配。见[独审回执](../../docs/evidence/s01/mixed-preparation/independent-review.json)。Mika另独核hash与原始14/14/strict0。只批准准备实现，实际容量/取消/清理尚无实测；固定A→B顺序、共享进程/暖机/背景与IPC相位混杂，不作纯锁因果或SLO结论。未补跑。
+
+
+## S01 mixed 唯一窗口结果独审（2026-10-06 10:15 UTC）
+
+状态 pending；固定结果target由 `docs/evidence/s01/mixed-run/manifest.json` 绑定。实现634保持APPROVED，执行12154仅运行一次；本次runVerdict=FAIL不可被review批准改成PASS。独立reviewer architecture_read已领取只读复核；owner status_read/gpt-6-astra。
+
+复制步骤：核manifest对应固定target/source/raw/CLI与当前WT字节；六份原始driver文件与raw-freeze完全一致；19 mixed source保持634=execution12154=WT，78legacy保持98098354。核16个live/fenced gate和adapter区间、每attempt心跳/533event digest/终ACK、4取消阶段、12成功与verification；确认末尾claim无确定响应、inFlight保留/assignments[]、不启动B/不补跑。核最终10.6731145秒与18,660,992B（归档增量另有保守上界）、两child正常退出、自有DB DROP及唯一retained journal。A-window统计只作分层观测，median/nearest-rank定义固定，B absent，无纯锁时长或容量SLO推断。
+
+原14纯unit/strict0仅准备证据。只读saved raw/source，无新工程测试、HTTP、PG、runner或provider；具体问题交owner修报告，不允许重跑取好结果或清未知。结果批准仅证明如实失败交付可接收。

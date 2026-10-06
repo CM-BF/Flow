@@ -2,36 +2,36 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:03 UTC；后继固定 main 4391bbf9f1785212d098ef6aa1c01a0320a003d3 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:15 UTC；后继固定 main 4391bbf9f1785212d098ef6aa1c01a0320a003d3，mixed尚未main接收 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[架构主计划](/Users/citrine/Projects/AgentHarness/Flow/plans/flow-001-architecture/plan.md)） |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | 后继 base 4391bbf9f1785212d098ef6aa1c01a0320a003d3；受控合入 HEAD 7511f5592daa6a86076fabb53d7a6fd6e8226d4b；旧 W1/W2 基线与 target 不变 |
-| 工作树dirty状态 | 实现634926238已固定clean；后继仅本manifest/status/review metadata，旧实验源码/raw零diff |
+| 工作基线 / HEAD | base main4391；mixed实现634926238f749fb1547a5973b521bc6dc5498574；实际执行12154f16f6a5e480bc3de64f96d1019102d56c0d；结果target由mixed-run/manifest.json绑定 |
+| 工作树dirty状态 | 执行前12154 clean；当前仅新增mixed-run结果及本任务status/review，driver与旧实验source/raw零diff；结果封存提交后核clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 新混合driver：14个纯unit通过、strict noEmit0；未运行真实PG/HTTP/runner负载。旧W1/W2检查限定历史target |
+| 检查状态 | 唯一真实窗口FAIL：A组16实际attempt、12成功/4取消，B未启动；保留未知claim。原准备14纯unit/strict0独立，不是本次实测数 |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
-| 实现目标 | mixed准备 target 634926238f749fb1547a5973b521bc6dc5498574；旧W2 target 2ab7967f2eb808fecd1205f7552a119eee8e0b36保持历史绑定 |
-| 实现范围 | experiments/runner-capacity/mixed；新准备证据及本任务plan/status，无产品修改 |
+| 实现目标 | mixed准备634926238f749fb1547a5973b521bc6dc5498574；实际执行12154；结果target见结果manifest。旧W2 target2ab7967保持历史绑定 |
+| 实现范围 | experiments/runner-capacity/mixed冻结；mixed-run结果与本任务metadata，无产品修改 |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 十六路混合负载入口已通过独立审查，等待受控测量；尚无新容量实测结果 |
-| 下一可用交付 | 在co-lead安排的唯一窗口取证，区分实际在途、取消收束和数据库等待 |
-| 当前阻塞 | 准备实现已审；实际运行等待co-lead明确窗口条件，当前不运行 |
+| 当前产出 | 唯一窗口如实FAIL及A组有效观测已封存；16真实attempt重叠，正常停止留下未知claim且B未启动 |
+| 下一可用交付 | architecture_read独审固定结果；正常停止drain后继由Mika另派S01P03独立scope，不在本树实施或补跑 |
+| 当前阻塞 | 完整两组合同未通过；原未知claim journal保留。结果等待独审，后继无新窗口授权 |
 | 需用户决定 | NONE |
-| Review | mixed准备634已独审APPROVED；[review.md](review.md)及独审回执仅批准准备实现，实际窗口未运行 |
+| Review | 准备634 APPROVED；本次FAIL结果独审pending，[review.md](review.md)，不沿用准备批准 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | S01-01 | completed | mika | [research](../../docs/evidence/s01/research.md)：权威来源/head/dirty核验及差距 |
 | S01-02 | completed | mika | [合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json) |
 | S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
-| S01-04 | in-progress | mika / Lead | W1四进程16任务和W2单进程声明4/12任务已运行并清理；可选capacity1/16继续暂缓，ACK/browser各2未运行 |
-| S01-05 | in-progress | 独立reviewer / Lead | W1/W2结果均独审APPROVED并main6426；完整S01后继ACK/browser仍开放 |
+| S01-04 | in-progress | status_read / mika | 旧W1/W2冻结；mixed唯一窗口A16实测部分有效、整体FAIL/B未启动，无补跑。ACK/browser仍未执行 |
+| S01-05 | in-progress | architecture_read / Lead | W1/W2结果历史APPROVED；mixed固定结果等待独审，不能把FAIL变PASS |
 | S01-06 | in-progress | 后继独立owner / Mika / Lead | [独立后继status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/status.md)：核心已独审并集成main d7e1e64，根检查通过；启动参数及真实provider另计 |
 
 ## 历史权限、优先级与事实边界（当前接收见末节）
@@ -129,3 +129,13 @@ status_read / gpt-6-astra 接收 S01 唯一 owner，co-lead mika，所属 FLOW-0
 2026-10-06 10:04 UTC：mixed准备实现固定 `634926238f749fb1547a5973b521bc6dc5498574`，5文件14纯tests/strict noEmit0绑定当前source；[manifest](../../docs/evidence/s01/mixed-preparation/manifest.json)固定source/raw/readonly字节，当前待architecture_read及Mika独审。未执行真实窗口，状态来源等待现有dashboard聚合；不重复工程验证。
 
 2026-10-06T10:06:36.107948+00:00：mixed准备634获architecture_read独立APPROVED，无P1/P2；Mika独核51项hash/bytes及14/14/strict0一致。只记录metadata，不重测，writer claim v3保留。实际0新增负载/task/attempt/provider，未消费新窗口；下一步必须Mika给唯一windowId及精确execution HEAD。源634冻结，后续metadata不改变其source/raw绑定。
+
+## 2026-10-06 10:15 UTC mixed 唯一窗口结果封存
+
+Mika在准备独审后批准唯一window `mika-s01-mixed-20261006-100634`，执行HEAD在运行前明确修正为clean12154；只执行一次。实际PG/HTTP/fixture runner/outbox运行10,673.1145ms含清理，最终CLI计18,660,992B完整计量、exit1、provider0。固定32任务reservation，实际16个task/attempt；A有16个live/fenced gate与真实adapter重叠、533事件digest/ACK、12 succeeded/4 cancelled、windowComplete/settledByDeadline true，但stop后admission.inFlight保留，整体FAIL，B未启动。原14纯unit/strict0仅准备证据，不是本次实测通过数。
+
+两个自有child正常exit0，自有DB确认无连接后DROP；唯一保留FKye9L工作目录中的未知journal，未删除、未重放。最后claim只有aborted:true错误记录，无确定HTTP响应；raw没有requestId或独立send/stop时刻，不把空assignments或16个已完成DB行冒充assignment:null。根已接收清理与失败事实。无重跑、不补B、不改driver门禁、不消费预留余任务。
+
+[结果报告](../../docs/evidence/s01/mixed-run/report.md)、[最终CLI回执](../../docs/evidence/s01/mixed-run/cli-receipt.json)、[原始冻结hash](../../docs/evidence/s01/mixed-run/raw-freeze.json)、[逐attempt与A窗口分析](../../docs/evidence/s01/mixed-run/analysis.json)。只读复核A中心pool acquisition/transaction/runner-row层级与60样本中31次Lock或blocker正证据，B缺失不能比较拓扑、推纯锁时间或SLO。旧78文件/44tasks/38attempts/20.925025秒完全不变。
+
+本地clean-code结果封存检查完成，质量记录在mixed-run/quality.md。结果待architecture_read独立只读审定，main未接收mixed；唯一status供既有dashboard聚合，待新状态展示，不另写聚合JSON。Mika将另派正常停止领取并有界排空claim的S01P03独立WT/scope，尚未开工，原S01保留writer claim v3做结果收口。

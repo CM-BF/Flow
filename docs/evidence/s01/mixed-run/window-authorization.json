@@ -1,0 +1,51 @@
+{
+  "basis": "Owner transcription of Mika parent messages, not a coordination CLI receipt.",
+  "windowId": "mika-s01-mixed-20261006-100634",
+  "authorizedBy": "mika (/root)",
+  "sourceImplementation": "634926238f749fb1547a5973b521bc6dc5498574",
+  "independentPreparationApproval": "architecture_read, 2026-10-06T10:05:50Z",
+  "initialExecutionHead": "8b7d72bc66899e902c38bc9dc3ce38c35719e89f",
+  "amendedBeforeAnyRunTo": "12154f16f6a5e480bc3de64f96d1019102d56c0d",
+  "amendmentReason": "Only preparation approval/status/review metadata changed; root verified clean12154 and explicitly amended the same unstarted window.",
+  "controlledEnvironment": "source /tmp/flow-coordination.env; export FLOW_S01_ADMIN_URL=\"$FLOW_COORDINATION_DATABASE_URL\". Existing approved localhost:55432 mapping; values never printed. Historical launcher was not executed.",
+  "command": "TSX_TSCONFIG_PATH=experiments/runner-capacity/mixed/tsconfig.json /opt/homebrew/opt/node@24/bin/node --import tsx experiments/runner-capacity/mixed/main.ts mika-s01-mixed-20261006-100634 12154f16f6a5e480bc3de64f96d1019102d56c0d",
+  "runStartedAt": "2026-10-06T10:08:27.888Z",
+  "contract": {
+    "version": 1,
+    "base": "4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+    "tasks": 32,
+    "maximumTasks": 40,
+    "totalMs": 60000,
+    "workMs": 45000,
+    "caseMs": 6000,
+    "cancelMs": 3000,
+    "eventsPerSecond": 5,
+    "messageBytes": 256,
+    "heartbeatMs": 1000,
+    "pollMs": 500,
+    "requestMs": 1500,
+    "leaseMs": 10000,
+    "readIntervalMs": 100,
+    "maxReads": 2,
+    "observationMs": 100,
+    "softBytes": 50331648,
+    "totalBytes": 67108864,
+    "responseBytes": 262144,
+    "ipcPendingBytes": 1048576,
+    "maxRecords": 60000,
+    "cases": [
+      {
+        "id": "one-by-sixteen",
+        "runners": 1,
+        "slots": 16
+      },
+      {
+        "id": "four-by-four",
+        "runners": 4,
+        "slots": 4
+      }
+    ]
+  },
+  "actualInvocations": 1,
+  "afterRunInstruction": "Preserve FAIL and unknown journal; no retry, no B completion, no driver changes. Seal raw and analyze saved evidence only."
+}
