@@ -1,0 +1,433 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-06T01:41:15.111Z",
+  "modelQueries": 0,
+  "baseCommit": "6434fba78bba5097376555a66114462f5432ca25",
+  "sourceCommit": "2fad2bc5cb6d1f720631fd56e557f193c44ebf7f",
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "darwin",
+    "release": "25.6.0",
+    "loadAverageStart": [
+      4.3046875,
+      6.888671875,
+      10.4873046875
+    ]
+  },
+  "limits": {
+    "deadlineMs": 75000,
+    "totalBudgetMs": 120000,
+    "maxBytes": 67108864
+  },
+  "design": {
+    "order": [
+      1,
+      16,
+      128,
+      128,
+      16,
+      1,
+      16,
+      1,
+      128
+    ],
+    "windowMs": 2000,
+    "sourceMessages": 64,
+    "sharedObservedTask": true,
+    "queryMetric": "pg Client.query submissions in the flow_lab02 database, including center scheduler/heartbeat/control work; not completed SQL or server CPU time",
+    "poolWait": "not measured",
+    "percentileMethod": "nearest rank for heartbeat (24 samples/count); control uses three raw values/range only",
+    "bytesMetric": "decoded SSE JSON plus update framing, excluding HTTP/TCP headers; separately measured total database size"
+  },
+  "phases": [
+    {
+      "observers": 1,
+      "round": 1,
+      "warmupMs": 567.1315830000001,
+      "windowMs": 2002.3785829999997,
+      "queries": {
+        "total": 136,
+        "readOnlyTransactionStarts": 8,
+        "timelineReads": 8,
+        "select": 78,
+        "begin": 19,
+        "commit": 19,
+        "other": 20
+      },
+      "heartbeatMs": [
+        25.120499999999993,
+        23.567415999999866,
+        14.040584000000308,
+        23.59704099999999,
+        24.770292000000154,
+        20.899625000000015,
+        22.080832999999984,
+        23.9375
+      ],
+      "cancelMs": 24.932458000000224,
+      "verifiedObservers": 1,
+      "watermark": 64,
+      "entriesDigest": "50f214b357d5085119569be3adf61d59b42f04a8c61a26c99c734edd4ee85724"
+    },
+    {
+      "observers": 16,
+      "round": 1,
+      "warmupMs": 581.7146249999996,
+      "windowMs": 2002.980125,
+      "queries": {
+        "total": 620,
+        "readOnlyTransactionStarts": 128,
+        "timelineReads": 128,
+        "select": 319,
+        "begin": 139,
+        "commit": 139,
+        "other": 23
+      },
+      "heartbeatMs": [
+        21.803459000000657,
+        12.78058300000066,
+        11.737041999999747,
+        16.322790999999597,
+        13.05279100000007,
+        14.763832999999977,
+        18.82012500000019,
+        14.65283400000044
+      ],
+      "cancelMs": 17.5459579999997,
+      "verifiedObservers": 16,
+      "watermark": 64,
+      "entriesDigest": "50f214b357d5085119569be3adf61d59b42f04a8c61a26c99c734edd4ee85724"
+    },
+    {
+      "observers": 128,
+      "round": 1,
+      "warmupMs": 622.4013329999998,
+      "windowMs": 2001.9145829999998,
+      "queries": {
+        "total": 4200,
+        "readOnlyTransactionStarts": 1024,
+        "timelineReads": 1024,
+        "select": 2110,
+        "begin": 1035,
+        "commit": 1035,
+        "other": 20
+      },
+      "heartbeatMs": [
+        9.290790999999444,
+        7.5095830000000205,
+        8.088042000001224,
+        11.258625000000393,
+        8.503167000000758,
+        8.382916999998997,
+        7.59283300000061,
+        8.90099999999984
+      ],
+      "cancelMs": 13.079334000000017,
+      "verifiedObservers": 128,
+      "watermark": 64,
+      "entriesDigest": "50f214b357d5085119569be3adf61d59b42f04a8c61a26c99c734edd4ee85724"
+    },
+    {
+      "observers": 128,
+      "round": 2,
+      "warmupMs": 595.2841669999998,
+      "windowMs": 2000.6790409999994,
+      "queries": {
+        "total": 4204,
+        "readOnlyTransactionStarts": 1024,
+        "timelineReads": 1024,
+        "select": 2111,
+        "begin": 1035,
+        "commit": 1035,
+        "other": 23
+      },
+      "heartbeatMs": [
+        8.728041000000303,
+        9.789208000000144,
+        7.990334000000075,
+        7.405416999999943,
+        8.455249999999069,
+        8.126416999999492,
+        12.315207999999984,
+        7.612417000000278
+      ],
+      "cancelMs": 9.279125000000931,
+      "verifiedObservers": 128,
+      "watermark": 64,
+      "entriesDigest": "50f214b357d5085119569be3adf61d59b42f04a8c61a26c99c734edd4ee85724"
+    },
+    {
+      "observers": 16,
+      "round": 2,
+      "warmupMs": 570.7680830000008,
+      "windowMs": 2002.1759999999995,
+      "queries": {
+        "total": 616,
+        "readOnlyTransactionStarts": 128,
+        "timelineReads": 128,
+        "select": 318,
+        "begin": 139,
+        "commit": 139,
+        "other": 20
+      },
+      "heartbeatMs": [
+        22.013417000000118,
+        18.550250000000233,
+        14.283582999998544,
+        15.671415999999226,
+        16.06787499999882,
+        16.73491599999943,
+        18.808250000000044,
+        19.707249999999476
+      ],
+      "cancelMs": 21.00537500000064,
+      "verifiedObservers": 16,
+      "watermark": 64,
+      "entriesDigest": "50f214b357d5085119569be3adf61d59b42f04a8c61a26c99c734edd4ee85724"
+    },
+    {
+      "observers": 1,
+      "round": 2,
+      "warmupMs": 557.4420420000006,
+      "windowMs": 2001.3954999999987,
+      "queries": {
+        "total": 140,
+        "readOnlyTransactionStarts": 8,
+        "timelineReads": 8,
+        "select": 79,
+        "begin": 19,
+        "commit": 19,
+        "other": 23
+      },
+      "heartbeatMs": [
+        11.04779100000087,
+        19.087624999998297,
+        21.024457999999868,
+        22.200957999997627,
+        22.411208000001352,
+        19.654874999996537,
+        19.196749999999156,
+        13.48804200000086
+      ],
+      "cancelMs": 28.023042000000714,
+      "verifiedObservers": 1,
+      "watermark": 64,
+      "entriesDigest": "50f214b357d5085119569be3adf61d59b42f04a8c61a26c99c734edd4ee85724"
+    },
+    {
+      "observers": 16,
+      "round": 3,
+      "warmupMs": 591.510542,
+      "windowMs": 2001.0005839999976,
+      "queries": {
+        "total": 616,
+        "readOnlyTransactionStarts": 128,
+        "timelineReads": 128,
+        "select": 318,
+        "begin": 139,
+        "commit": 139,
+        "other": 20
+      },
+      "heartbeatMs": [
+        11.414457999999286,
+        17.363500000003114,
+        11.92120900000009,
+        16.94525000000067,
+        12.802458000001934,
+        16.337625000000116,
+        16.843917000001966,
+        19.799083999998402
+      ],
+      "cancelMs": 17.630708000000595,
+      "verifiedObservers": 16,
+      "watermark": 64,
+      "entriesDigest": "50f214b357d5085119569be3adf61d59b42f04a8c61a26c99c734edd4ee85724"
+    },
+    {
+      "observers": 1,
+      "round": 3,
+      "warmupMs": 559.2821660000009,
+      "windowMs": 2001.2011249999996,
+      "queries": {
+        "total": 136,
+        "readOnlyTransactionStarts": 8,
+        "timelineReads": 8,
+        "select": 78,
+        "begin": 19,
+        "commit": 19,
+        "other": 20
+      },
+      "heartbeatMs": [
+        22.110208000001876,
+        17.514416999998502,
+        16.65808399999878,
+        18.876208000001498,
+        20.4464169999992,
+        25.12079200000153,
+        11.469166999999288,
+        26.13575000000128
+      ],
+      "cancelMs": 19.790375000000495,
+      "verifiedObservers": 1,
+      "watermark": 64,
+      "entriesDigest": "50f214b357d5085119569be3adf61d59b42f04a8c61a26c99c734edd4ee85724"
+    },
+    {
+      "observers": 128,
+      "round": 3,
+      "warmupMs": 620.5425419999992,
+      "windowMs": 2000.7204579999998,
+      "queries": {
+        "total": 4201,
+        "readOnlyTransactionStarts": 1024,
+        "timelineReads": 1024,
+        "select": 2110,
+        "begin": 1035,
+        "commit": 1035,
+        "other": 21
+      },
+      "heartbeatMs": [
+        8.373791999998502,
+        9.040082999999868,
+        7.615249999998923,
+        13.428416999999172,
+        9.401915999998891,
+        8.670708000001468,
+        8.461459000001923,
+        8.456833000000188
+      ],
+      "cancelMs": 15.446250000000873,
+      "verifiedObservers": 128,
+      "watermark": 64,
+      "entriesDigest": "50f214b357d5085119569be3adf61d59b42f04a8c61a26c99c734edd4ee85724"
+    }
+  ],
+  "cleanupErrors": [],
+  "postgresVersion": "16.13",
+  "port": 55416,
+  "taskId": "2c402632-de60-4018-a443-b24879e22f01",
+  "entriesDigest": "50f214b357d5085119569be3adf61d59b42f04a8c61a26c99c734edd4ee85724",
+  "baselineWatermark": 64,
+  "finalCorrectness": {
+    "status": "running",
+    "watermark": 64,
+    "entriesDigest": "50f214b357d5085119569be3adf61d59b42f04a8c61a26c99c734edd4ee85724",
+    "observersVerified": 435,
+    "assertions": "SSE exact entry equality/order/no duplicate or missing cursor; all observers stayed open through measurement; final snapshot and event page equal initial baseline"
+  },
+  "databaseBytes": 9069071,
+  "summary": [
+    {
+      "observers": 1,
+      "heartbeatMs": {
+        "n": 24,
+        "min": 11.04779100000087,
+        "p50": 20.899625000000015,
+        "p95": 25.12079200000153,
+        "max": 26.13575000000128
+      },
+      "cancelMs": {
+        "samples": [
+          24.932458000000224,
+          28.023042000000714,
+          19.790375000000495
+        ],
+        "min": 19.790375000000495,
+        "max": 28.023042000000714
+      },
+      "readTransactionStartsPerSecond": {
+        "n": 3,
+        "min": 3.9952484849364778,
+        "p50": 3.9972109460623875,
+        "p95": 3.997599191835354,
+        "max": 3.997599191835354
+      },
+      "submittedQueriesPerSecond": {
+        "n": 3,
+        "min": 67.91922424392013,
+        "p50": 67.95918626120101,
+        "p95": 69.95119155609179,
+        "max": 69.95119155609179
+      }
+    },
+    {
+      "observers": 16,
+      "heartbeatMs": {
+        "n": 24,
+        "min": 11.414457999999286,
+        "p50": 16.322790999999597,
+        "p95": 21.803459000000657,
+        "max": 22.013417000000118
+      },
+      "cancelMs": {
+        "samples": [
+          17.5459579999997,
+          21.00537500000064,
+          17.630708000000595
+        ],
+        "min": 17.5459579999997,
+        "max": 21.00537500000064
+      },
+      "readTransactionStartsPerSecond": {
+        "n": 3,
+        "min": 63.9047778868999,
+        "p50": 63.930443677279136,
+        "p95": 63.967997322683516,
+        "max": 63.967997322683516
+      },
+      "submittedQueriesPerSecond": {
+        "n": 3,
+        "min": 307.6652601969058,
+        "p50": 307.8459871154144,
+        "p95": 309.53876788967136,
+        "max": 309.53876788967136
+      }
+    },
+    {
+      "observers": 128,
+      "heartbeatMs": {
+        "n": 24,
+        "min": 7.405416999999943,
+        "p50": 8.456833000000188,
+        "p95": 12.315207999999984,
+        "max": 13.428416999999172
+      },
+      "cancelMs": {
+        "samples": [
+          13.079334000000017,
+          9.279125000000931,
+          15.446250000000873
+        ],
+        "min": 9.279125000000931,
+        "max": 15.446250000000873
+      },
+      "readTransactionStartsPerSecond": {
+        "n": 3,
+        "min": 511.5103355036603,
+        "p50": 511.81562916772054,
+        "p95": 511.8262245043434,
+        "max": 511.8262245043434
+      },
+      "submittedQueriesPerSecond": {
+        "n": 3,
+        "min": 2097.9916104642316,
+        "p50": 2099.743611458588,
+        "p95": 2101.286570133066,
+        "max": 2101.286570133066
+      }
+    }
+  ],
+  "cleanup": {
+    "createdDatabase": true,
+    "errors": [],
+    "databaseDropped": true
+  },
+  "payloadBytes": 5024685,
+  "elapsedMs": 30023.550709,
+  "finishedAt": "2026-10-06T01:41:45.135Z",
+  "loadAverageEnd": [
+    4.7138671875,
+    6.72607421875,
+    10.30224609375
+  ]
+}
