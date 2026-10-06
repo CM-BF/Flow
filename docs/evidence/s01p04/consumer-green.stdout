@@ -1,0 +1,17 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence
+
+stdout | apps/server/src/active-steering/steering.test.ts > holds the same task lock across seal and final commit, rejecting a waiting command
+STEERING_TEST_LOCK {"holder":156359,"waiter":156347,"blockers":[156359],"taskId":"44457c4e-3efd-44c0-9fc7-01265aa4b579","attemptId":"b5c6a5a8-a751-4e73-82ef-6fdc625b7e5a","relation":"flow.tasks"}
+
+stdout | apps/server/src/active-steering/steering.test.ts
+STEERING_TEST_CLEANUP {"database":"flow_chat07_ba470e0a738e4f3e9d0fafb9ba6d67fb","connections":0,"databaseAbsent":true}
+
+ ✓ apps/server/src/active-steering/steering.test.ts (16 tests | 15 skipped) 2503ms
+   ✓ holds the same task lock across seal and final commit, rejecting a waiting command  507ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 15 skipped (16)
+   Start at  04:27:18
+   Duration  4.31s (transform 999ms, setup 0ms, import 1.71s, tests 2.50s, environment 0ms)
+

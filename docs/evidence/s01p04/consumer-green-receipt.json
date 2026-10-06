@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/active-steering/steering.test.ts",
+    "--testNamePattern",
+    "holds the same task lock across seal and final commit, rejecting a waiting command"
+  ],
+  "startedAt": "2026-10-06T11:27:17.829273+00:00",
+  "finishedAt": "2026-10-06T11:27:22.386816+00:00",
+  "elapsedMs": 4557.4050839059055,
+  "exitCode": 0,
+  "source": {
+    "path": "apps/server/src/active-steering/steering.test.ts",
+    "bytes": 24237,
+    "sha256": "ecc7e4ac6bfec4797ef4ab8c8e907dd38ff4d3f4edf4e8b19c3e7f54ebdc3e9d"
+  },
+  "providerCalls": 0,
+  "capacityWindows": 0
+}

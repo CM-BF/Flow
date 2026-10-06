@@ -1,0 +1,58 @@
+apps/runner/src/active-steering/host.ts(1,30): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.
+apps/runner/src/active-steering/host.ts(3,51): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+apps/runner/src/active-steering/host.ts(78,44): error TS18046: 'error' is of type 'unknown'.
+apps/runner/src/active-steering/host.ts(78,68): error TS18046: 'error' is of type 'unknown'.
+apps/runner/src/active-steering/input.ts(1,37): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+apps/runner/src/active-steering/state.ts(1,51): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+apps/runner/src/assistant-stream/accumulator.ts(2,33): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+apps/runner/src/assistant-stream/accumulator.ts(28,98): error TS7006: Parameter 'block' implicitly has an 'any' type.
+apps/runner/src/assistant-stream/accumulator.ts(28,134): error TS7006: Parameter 'block' implicitly has an 'any' type.
+apps/runner/src/assistant-stream/accumulator.ts(29,30): error TS7006: Parameter 'id' implicitly has an 'any' type.
+apps/runner/src/assistant-stream/accumulator.ts(67,26): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+apps/runner/src/assistant-stream/accumulator.ts(124,45): error TS7006: Parameter 'part' implicitly has an 'any' type.
+apps/runner/src/assistant-stream/index.ts(1,33): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+apps/runner/src/claude.ts(6,120): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+apps/runner/src/claude.ts(74,58): error TS2345: Argument of type '(AsyncIterable<SDKMessage> & { close(): void; }) | undefined' is not assignable to parameter of type 'AsyncIterable<SDKMessage>'.
+  Type 'undefined' is not assignable to type 'AsyncIterable<SDKMessage>'.
+apps/runner/src/claude.ts(93,51): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+apps/runner/src/claude.ts(104,80): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+apps/runner/src/claude.ts(178,41): error TS7006: Parameter 'input' implicitly has an 'any' type.
+apps/runner/src/claude.ts(200,17): error TS7019: Rest parameter 'args' implicitly has an 'any[]' type.
+apps/runner/src/claude.ts(239,11): error TS18046: 'sample' is of type 'unknown'.
+apps/runner/src/claude.ts(239,31): error TS18046: 'sample' is of type 'unknown'.
+apps/runner/src/claude.ts(239,52): error TS18046: 'sample' is of type 'unknown'.
+apps/runner/src/claude.ts(239,81): error TS18046: 'sample' is of type 'unknown'.
+apps/runner/src/claude.ts(239,114): error TS18046: 'sample' is of type 'unknown'.
+apps/runner/src/claude.ts(240,28): error TS18046: 'sample' is of type 'unknown'.
+apps/runner/src/claude.ts(240,68): error TS18046: 'sample' is of type 'unknown'.
+apps/runner/src/claude.ts(248,36): error TS18046: 'sample' is of type 'unknown'.
+apps/runner/src/claude.ts(248,94): error TS18046: 'sample' is of type 'unknown'.
+apps/runner/src/claude.ts(249,40): error TS18046: 'sample' is of type 'unknown'.
+apps/runner/src/claude.ts(249,111): error TS18046: 'sample' is of type 'unknown'.
+apps/runner/src/claude.ts(260,24): error TS7006: Parameter 'name' implicitly has an 'any' type.
+apps/runner/src/claude.ts(260,70): error TS7006: Parameter 'plugin' implicitly has an 'any' type.
+apps/runner/src/claude.ts(261,25): error TS7006: Parameter 'name' implicitly has an 'any' type.
+apps/runner/src/claude.ts(261,76): error TS7006: Parameter 'server' implicitly has an 'any' type.
+apps/runner/src/execution-profiles.ts(2,28): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.
+apps/runner/src/goal-graph-tools/mcp.ts(1,42): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+apps/runner/src/goal-graph-tools/mcp.ts(14,356): error TS7031: Binding element 'request' implicitly has an 'any' type.
+apps/runner/src/goal-graph-tools/mcp.ts(18,433): error TS7031: Binding element 'command' implicitly has an 'any' type.
+apps/runner/src/goal-graph-tools/mcp.ts(18,442): error TS7031: Binding element 'idempotencyKey' implicitly has an 'any' type.
+apps/runner/src/goal-tool-bridge/policy.ts(1,67): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+apps/runner/src/goal-tool-bridge/policy.ts(20,36): error TS7006: Parameter 'input' implicitly has an 'any' type.
+apps/runner/src/goal-tools-mcp/index.ts(1,42): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+apps/runner/src/goal-tools-mcp/index.ts(13,351): error TS7031: Binding element 'request' implicitly has an 'any' type.
+apps/runner/src/goal-tools-mcp/index.ts(16,293): error TS7006: Parameter 'args' implicitly has an 'any' type.
+apps/runner/src/goal-tools-mcp/result.ts(1,30): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.
+apps/runner/src/goal-tools-mcp/result.ts(20,80): error TS18046: 'error' is of type 'unknown'.
+apps/runner/src/goal-tools-mcp/result.ts(21,64): error TS18046: 'error' is of type 'unknown'.
+apps/runner/src/native-activity/index.ts(2,33): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+apps/server/src/active-steering/steering.test.ts(222,78): error TS2769: No overload matches this call.
+  Overload 1 of 7, '(queryConfig: QueryConfig<any[]>): Promise<QueryResult<{ pid: number; blockers: number[]; }>>', gave the following error.
+    Object literal may only specify known properties, and 'query_timeout' does not exist in type 'QueryConfig<any[]>'.
+  Overload 2 of 7, '(queryTextOrConfig: string | QueryConfig<any[]>, values?: any[] | undefined): Promise<QueryResult<{ pid: number; blockers: number[]; }>>', gave the following error.
+    Object literal may only specify known properties, and 'query_timeout' does not exist in type 'QueryConfig<any[]>'.
+apps/server/src/active-steering/steering.test.ts(223,11): error TS2339: Property 'rows' does not exist on type '{ pid: number; blockers: number[]; }'.

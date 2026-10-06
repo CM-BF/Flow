@@ -8,10 +8,10 @@ import { ownedAttempt } from '../runners.js';
 import { saveAssistantFinal } from '../assistant/store.js';
 import { sealForFinal, migrateActiveSteering, registerActiveSteeringRoutes } from './index.js';
 const database = `flow_chat07_${randomUUID().replaceAll('-', '')}`;
-const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1 });
+const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1, connectionTimeoutMillis: 1500, query_timeout: 1500 });
 const databaseUrl = `postgresql://flow:flow-local-only@127.0.0.1:55432/${database}`;
-const pool = new Pool({ connectionString: databaseUrl, max: 4 });
-let app: Awaited<ReturnType<typeof createServer>>, base = '', created = false;
+const pool = new Pool({ connectionString: databaseUrl, max: 4, connectionTimeoutMillis: 1500, query_timeout: 4000 });
+let app: Awaited<ReturnType<typeof createServer>>, base = '', creationRequested = false;
 async function start(port = 0, acceptCommands = true) {
   app = await createServer({ databaseUrl, ownerToken: 'chat07-owner', automaticQueueScan: false, leaseMs: 300_000, activeSteering: acceptCommands });
   await migrateActiveSteering(pool);
@@ -27,8 +27,25 @@ async function start(port = 0, acceptCommands = true) {
   base = await app.listen({ host: '127.0.0.1', port });
 }
 async function stop() { if (app) { app.server.closeAllConnections(); await app.close(); } }
-beforeAll(async () => { await admin.query(`CREATE DATABASE ${database}`); created = true; await start(); });
-afterAll(async () => { try { await stop(); } finally { await pool.end(); try { if (created) await admin.query(`DROP DATABASE ${database}`); } finally { await admin.end(); } } });
+beforeAll(async () => { creationRequested = true; await admin.query(`CREATE DATABASE ${database}`); await start(); });
+afterAll(async () => {
+  try { await stop(); }
+  finally {
+    await pool.end();
+    try {
+      if (creationRequested) {
+        const present = (await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [database])).rowCount;
+        const connections = (await admin.query<{ count: number }>('SELECT count(*)::int count FROM pg_stat_activity WHERE datname=$1', [database])).rows[0]!.count;
+        expect(connections).toBe(0);
+        if (present) await admin.query(`DROP DATABASE ${database}`);
+        const absent = !(await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [database])).rowCount;
+        console.info('STEERING_TEST_CLEANUP', JSON.stringify({ database, connections, databaseAbsent: absent }));
+        expect(absent).toBe(true);
+      }
+    } catch (error) { console.info('STEERING_TEST_CLEANUP_UNKNOWN', JSON.stringify({ database })); throw error; }
+    finally { await admin.end(); }
+  }
+});
 async function request(path: string, body?: unknown, token = 'chat07-owner', status = 200, key = randomUUID()) {
   const response = await fetch(`${base}${path}`, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json', 'idempotency-key': key }, body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(5000) });
   if (body === undefined && response.ok && path.includes('/steering')) expect(response.headers.get('cache-control')).toBe('no-store');
@@ -190,22 +207,36 @@ it('races command admission against final sealing in two real HTTP transactions'
   const state = await request(`/api/tasks/${a.taskId}/steering`);
   expect(Number(state.sealed) + state.commands.length).toBe(1);
 });
-it('holds the same runner lock across seal and final commit, rejecting a waiting command', async () => {
+it('holds the same task lock across seal and final commit, rejecting a waiting command', async () => {
   const a = await attempt(), seal = finalInput(a), client = await pool.connect();
+  let pending: Promise<unknown> | undefined;
   try {
     await client.query('BEGIN'); await sealForFinal(client, a.runnerId, seal);
-    const pending = send(a, 'arrives during final', 0, randomUUID(), 409);
-    let waiting = false;
+    const holder = (await client.query<{ pid: number }>('SELECT pg_backend_pid() AS pid')).rows[0]!.pid;
+    pending = send(a, 'arrives during final', 0, randomUUID(), 409);
+    void pending.catch(() => {}); // The awaited assertion below owns the failure; avoid an early unhandled rejection.
+    let waiting: { pid: number; blockers: number[] } | undefined;
     for (let i = 0; i < 100; i++) {
-      waiting = !!(await pool.query("SELECT 1 FROM pg_stat_activity WHERE datname=current_database() AND wait_event_type='Lock' AND query LIKE 'SELECT%flow.runners%FOR UPDATE%'" )).rowCount;
+      waiting = (await pool.query<{ pid: number; blockers: number[] }>({
+        text: "SELECT pid,pg_blocking_pids(pid) AS blockers FROM pg_stat_activity WHERE datname=current_database() AND wait_event_type='Lock' AND query=$1 AND $2=ANY(pg_blocking_pids(pid))",
+        values: ['SELECT * FROM flow.tasks WHERE id=$1 FOR UPDATE', holder],
+      })).rows[0];
       if (waiting) break;
       await new Promise(resolve => setTimeout(resolve, 10));
     }
-    expect(waiting).toBe(true);
+    expect(waiting).toBeDefined();
+    expect(waiting!.pid).not.toBe(holder);
+    expect(waiting!.blockers).toContain(holder);
+    console.info('STEERING_TEST_LOCK', JSON.stringify({ holder, waiter: waiting!.pid, blockers: waiting!.blockers, taskId: a.taskId, attemptId: a.ownership.attemptId, relation: 'flow.tasks' }));
     const { task, attempt: owned } = await ownedAttempt(client, a.runnerId, seal);
     await saveAssistantFinal(client, task, owned, finalEvent(a.nativeSessionId, seal.final.sourceMessageId, 'Canonical reply'));
     await client.query('COMMIT'); await pending;
-  } finally { await client.query('ROLLBACK'); client.release(); }
+    const state = await request(`/api/tasks/${a.taskId}/steering`);
+    expect(state.sealed).toBe(true); expect(state.commands).toEqual([]);
+  } finally {
+    try { await client.query('ROLLBACK'); }
+    finally { client.release(); if (pending) await pending.catch(() => {}); }
+  }
 });
 it('preserves receipts and immutable audit across center restart and keeps default intake disabled', async () => {
   const a = await attempt(), key = randomUUID(), accepted = await send(a, 'survives restart', 0, key);
