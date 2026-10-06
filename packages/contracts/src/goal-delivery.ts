@@ -1,8 +1,9 @@
 import { z } from 'zod';
 import { idSchema, type TaskStatus, type VerificationStatus } from './tasks.js';
+import { MAX_PROJECT_NODES } from './projects.js';
 import type { GoalArtifactBinding, GoalDefinition, GoalView } from './goals.js';
 
-export const GOAL_DELIVERY_MAX_NODES = 200;
+export const GOAL_DELIVERY_MAX_NODES = MAX_PROJECT_NODES;
 export const GOAL_DELIVERY_PAGE_SIZE = 50;
 const version = z.coerce.number().int().min(1).max(2_147_483_647);
 const nodeIds = z.preprocess(value => typeof value === 'string' ? [value] : value,
@@ -33,7 +34,7 @@ export interface GoalDeliveryPlan {
 }
 export interface GoalDecisionReference { goalId: string; nodeId: string; taskId: string; decisionId: string }
 export interface GoalDeliveryExecution {
-  id: string; inputRef: GoalInputReference; inputCurrent: boolean; dependencies: GoalArtifactBinding[];
+  id: string; inputRef: GoalInputReference; inputCurrent: boolean; dependencyCount: number;
   task: { id: string; status: TaskStatus; verificationStatus: VerificationStatus; updatedAt: string; attemptId: string | null; ownerVersion: number };
   pendingDecision: GoalDecisionReference | null;
   /** Exact candidate, not proof of acceptance or semantic correctness. */
