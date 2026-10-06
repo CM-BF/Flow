@@ -42,6 +42,7 @@ export interface AttachmentInput {
   browse(query?: string, after?: string): Promise<void>;
   upload(file: File, id?: string, retry?: RecoveryIdentity): Promise<AttachmentItem>;
   select(resource: AttachmentMetadata): string; remove(id: string): void;
+  prepareRestore(values: readonly AttachmentItem[]): () => void;
   restore(values: readonly AttachmentItem[]): void;
   preview(reference: AttachmentReference): Promise<void>;
   recover(key: string): Promise<void>; forgetRecovery(key: string): void;
@@ -193,7 +194,7 @@ export function createAttachmentInput(options: {
       } finally { if (flights.get('upload') === controller) flights.delete('upload'); }
       return items.get(id) ?? immutableItem({ id, name: file.name, state: 'error', error: 'Attachment was removed or the view closed.' });
     },
-    restore(values) {
+    prepareRestore(values) {
       if (closed || items.size || values.length > 4) throw Error('Keep the current attachment draft before restoring another.');
       const restored = values.map(item => {
         if (!item || !idSchema.safeParse(item.id).success || !attachmentNameSchema.safeParse(item.name).success) throw Error('Invalid saved attachment identity.');
@@ -202,8 +203,9 @@ export function createAttachmentInput(options: {
         return immutableItem({ id: item.id, name: item.name, state: item.state === 'unknown' || item.state === 'uploading' ? 'unknown' as const : 'error' as const, ...(metadata ? { metadata } : {}), ...(item.uploadKey ? { uploadKey: item.uploadKey } : {}), error: metadata ? 'Restored file is unverified. Refresh the authorized directory to confirm this exact version before a new message.' : 'The original local file is not stored. Explicitly recover the upload or reselect the original file; nothing was uploaded automatically.' });
       });
       if (new Set(restored.map(item => item.id)).size !== restored.length) throw Error('Duplicate saved attachment item.');
-      restored.forEach(item => items.set(item.id, item)); publish();
+      return () => { restored.forEach(item => items.set(item.id, item)); publish(); };
     },
+    restore(values) { this.prepareRestore(values)(); },
     select(resource) {
       requireRead(); if (!capabilities) throw Error('Read this project directory before selecting an attachment.');
       const knownResource = known(resource.reference);

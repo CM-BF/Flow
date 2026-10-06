@@ -15,6 +15,12 @@ import { ConversationRecoveryJournal, RecoveryError, recoveryValue, namespaceKey
 export const RECOVERY_OWNER = "flow.conversation-recovery";
 export const RECOVERY_PANEL = "flow.conversation-recovery.entry";
 const RECOVERY_OPEN = "flow.conversation-recovery.open";
+/** One private view operation; the App must check it after reads and before mutation. */
+export interface RecoveryRestoreLease {
+  check(): void;
+  bindView(): void;
+  apply(change: () => void): void;
+}
 export interface RecoveryHost {
   journal: ConversationRecoveryJournal;
   namespace(): RecoveryNamespace | null;
@@ -22,7 +28,7 @@ export interface RecoveryHost {
   generation(): number;
   owner(viewKey: string): RecoveryOwner | null;
   draft(viewKey: string): Json;
-  restore(record: RecoveryRecord): Promise<void>;
+  restore(record: RecoveryRecord, lease: RecoveryRestoreLease): Promise<void>;
   retry(record: CommandRecord): Promise<void>;
 }
 export interface CompleteDraft {
@@ -62,6 +68,18 @@ export function readRecoveryDraft(value: Json): CompleteDraft {
   });
   return { steering, text: data.text, intent: data.intent as CompleteDraft["intent"], profile, projectId, projectTitle, knowledge, attachments };
 }
+/** The real App and controlled tests use this same awaited-read / synchronous-apply seam. */
+export async function restoreConversationDraft(record: DraftRecord, lease: RecoveryRestoreLease, target: {
+  refresh(): Promise<void>;
+  prepare(saved: CompleteDraft): () => void;
+}) {
+  const saved = readRecoveryDraft(record.data);
+  lease.bindView(); lease.check();
+  await target.refresh();
+  lease.check();
+  lease.apply(() => { const commit = target.prepare(saved); commit(); });
+}
+interface RestoreState { changed: boolean; invalidated: boolean; applying: boolean; signature: string | null }
 interface DraftState {
   namespace?: string; lastData?: string; version: number; serial: number; savedSerial: number; chain: Promise<void>; error?: string;
   handoff?: { data: Json; serial: number; domain: CommandRecord["domain"]; taskId?: string; commandId?: string }; deferred?: Json;
@@ -75,7 +93,7 @@ export class RecoveryWorkspace {
   private readonly drafts = new Map<string, DraftState>();
   private readonly listeners = new Set<() => void>();
   private closed = false;
-  private readonly restoring = new Set<string>();
+  private readonly restoring = new Map<string, RestoreState>();
   private readonly blockedCommands = new Map<string, Set<string>>();
   private readonly unsubscribeHost: () => void;
   private started = false;
@@ -119,7 +137,7 @@ export class RecoveryWorkspace {
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; };
   private publish(patch: Partial<RecoverySnapshot>) { if (!this.closed) { this.state = Object.freeze({ ...this.state, ...patch }); this.listeners.forEach(listener => listener()); } }
   configured() { return !!this.host(); }
-  protection(viewKey: string): readonly string[] { const state = this.drafts.get(viewKey); return this.blockedCommands.get(viewKey)?.size || (state && (state.handoff || state.error || state.serial !== state.savedSerial)) ? ["Draft or command checkpoint pending"] : []; }
+  protection(viewKey: string): readonly string[] { const state = this.drafts.get(viewKey); return this.restoring.has(viewKey) || this.blockedCommands.get(viewKey)?.size || (state && (state.handoff || state.error || state.serial !== state.savedSerial)) ? ["Draft or command checkpoint pending"] : []; }
   sendReason(): string | null {
     if (!this.configured()) return null;
     try { this.current(); return null; } catch (error) { return message(error); }
@@ -167,7 +185,18 @@ export class RecoveryWorkspace {
     return flight;
   }
   changed(viewKey: string) {
-    if (this.closed || this.restoring.has(viewKey) || !this.host()?.authorized()) return;
+    if (this.closed) return;
+    const restoring = this.restoring.get(viewKey);
+    if (restoring) {
+      // Never discard edits while a read is pending. During the one synchronous
+      // apply, coalesce owner notifications instead of checkpointing partial material.
+      if (!restoring.applying) {
+        try { if (this.draftIdentity(viewKey) !== restoring.signature) restoring.changed = restoring.invalidated = true; }
+        catch { restoring.changed = restoring.invalidated = true; }
+      }
+      return;
+    }
+    if (!this.host()?.authorized()) return;
     try {
       const host = this.host()!, namespace = host.namespace();
       if (!namespace) return;
@@ -182,6 +211,7 @@ export class RecoveryWorkspace {
   }
   /** Called before official composer.send can publish its transient empty draft. */
   beginHandoff(viewKey: string, domain: CommandRecord["domain"] = "outbox", taskId?: string) {
+    if (this.restoring.has(viewKey)) throw Error("Wait for this view's restore to settle before sending. Your draft is kept.");
     const { host } = this.current(), state = this.draft(viewKey);
     if (state.handoff) throw Error("This draft already has a preparing handoff.");
     const data = host.draft(viewKey);
@@ -278,14 +308,44 @@ export class RecoveryWorkspace {
   }
   async restore(record: RecoveryRecord, retry = false) {
     if (!this.uiAllowed()) return;
+    const viewKey = record.owner.viewKey;
+    if (this.restoring.has(viewKey)) { this.publish({ error: "This view already has a restore in progress. Keep edits or wait for it to settle." }); return; }
+    let restore: RestoreState | undefined, capturedNamespace: string | undefined;
     try {
       const { host, namespace } = this.current(), generation = host.generation();
+      if (record.kind === "draft" && this.drafts.get(viewKey)?.handoff) throw Error("Keep the current preparing receipt before restoring another draft.");
+      capturedNamespace = namespaceKey(namespace);
+      restore = { changed: false, invalidated: false, applying: false, signature: this.draftIdentity(viewKey) };
+      this.restoring.set(viewKey, restore);
+      const pending = restore;
+      const lease: RecoveryRestoreLease = {
+        check: () => {
+          const now = this.current();
+          if (this.restoring.get(viewKey) !== pending || now.host.generation() !== generation || namespaceKey(now.namespace) !== capturedNamespace)
+            throw Error("This restore belongs to an older connection.");
+          if (record.kind === "draft" && (pending.invalidated || this.draftIdentity(viewKey) !== pending.signature)) {
+            pending.changed = pending.invalidated = true;
+            throw Error("This complete draft changed while recovery was loading. Your current draft is kept; restore separately.");
+          }
+        },
+        bindView: () => {
+          // A saved view may not exist before the App allocates it. Bind once,
+          // before refresh; an already observed view can never be rebound.
+          if (pending.signature === null && !pending.invalidated) pending.signature = this.draftIdentity(viewKey);
+          lease.check();
+        },
+        apply: change => { lease.check(); pending.applying = true; try { change(); pending.changed = true; } finally { pending.applying = false; } },
+      };
+      await this.drafts.get(viewKey)?.chain;
       const live = (await host.journal.list(namespace)).find(item => item.id === record.id && item.version === record.version);
+      // Remember the known record version even when authorization expires while
+      // listing; a retained edit must later save against this version, not zero.
+      if (live?.kind === "draft") this.draft(live.owner.viewKey, live.namespace).version = live.version;
       const now = this.current();
       if (!live || !this.uiAllowed() || now.host.generation() !== generation || namespaceKey(now.namespace) !== namespaceKey(namespace)) throw Error("This recovery record changed. Refresh before acting.");
-      if (live.kind === "draft") this.draft(live.owner.viewKey, live.namespace).version = live.version;
-      this.restoring.add(live.owner.viewKey);
-      try { await host.restore(live); } finally { this.restoring.delete(live.owner.viewKey); }
+      lease.check();
+      await host.restore(live, lease);
+      if (live.kind === "draft") pending.changed = true;
       const after = this.current(); if (after.host.generation() !== generation || namespaceKey(after.namespace) !== namespaceKey(namespace)) throw Error("This restore belongs to an older connection.");
       if (live.kind === "command" && ["accepted", "rejected"].includes(live.phase)) {
         // The original controller has now matched the entire saved identity and reconciled it.
@@ -297,6 +357,31 @@ export class RecoveryWorkspace {
       if (retry) { if (live.kind !== "command") throw Error("Only an original command can be retried."); await host.retry(live); }
       await this.refresh();
     } catch (error) { this.publish({ error: message(error) }); }
+    finally {
+      if (restore && this.restoring.get(viewKey) === restore) {
+        this.restoring.delete(viewKey);
+        if (restore.changed) {
+          const state = this.draft(viewKey, capturedNamespace); state.lastData = undefined;
+          state.error = "The current draft still needs its checkpoint.";
+          const host = this.host(), namespace = host?.namespace();
+          if (host?.authorized() && namespace && namespaceKey(namespace) === capturedNamespace) this.changed(viewKey);
+          // Otherwise the same-namespace reauthentication sync will save it.
+        }
+      }
+    }
+  }
+  private draftIdentity(viewKey: string): string | null {
+    const host = this.host(), owner = host?.owner(viewKey);
+    if (!host || !owner) return null;
+    const data = host.draft(viewKey);
+    // Existing conversation projects are immutable center identity, not a draft
+    // selection. Their initial display metadata may arrive during refresh; App
+    // verifies the project against the saved envelope before applying anything.
+    // New-chat project choices and every ordered material reference remain part
+    // of the editable fingerprint.
+    const editable = owner.routeId.startsWith("conversation:") && data && typeof data === "object" && !Array.isArray(data)
+      ? { ...data, projectId: null, projectTitle: null } : data;
+    return JSON.stringify([{ viewKey: owner.viewKey, routeId: owner.routeId }, editable]);
   }
   async dismiss(record: RecoveryRecord) {
     if (!this.uiAllowed() || !window.confirm("Remove this saved local record? This does not cancel work at the center.")) return;
@@ -310,7 +395,7 @@ export class RecoveryWorkspace {
   adoptDraft(record: DraftRecord) { this.draft(record.owner.viewKey, record.namespace).version = record.version; }
   release(viewKey: string) { if (this.protection(viewKey).length) throw Error("This view still has an incomplete recovery checkpoint."); this.drafts.delete(viewKey); this.blockedCommands.delete(viewKey); }
   async flush() { await Promise.all([...this.drafts.values()].map(state => state.chain)); if ([...this.drafts.keys()].some(key => this.protection(key).length) || [...this.blockedCommands.values()].some(ids => ids.size)) throw Error("Some drafts are still only in this page. Keep it open or explicitly preserve that text before leaving."); }
-  dispose() { this.closed = true; this.unsubscribeHost(); this.listeners.clear(); this.drafts.clear(); this.blockedCommands.clear(); }
+  dispose() { this.closed = true; this.unsubscribeHost(); this.listeners.clear(); this.drafts.clear(); this.restoring.clear(); this.blockedCommands.clear(); }
 }
 export function createRecoveryPlugin(workspace: RecoveryWorkspace): PluginDefinition {
   return { manifest: { id: RECOVERY_OWNER, version: "1.0.0", hostApi: 1, capabilities: ["ui.navigate"], activationEvents: ["view:sidebar.footer", `command:${RECOVERY_OPEN}`],

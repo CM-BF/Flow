@@ -110,20 +110,35 @@ export class SteeringWorkspace {
   drafts(viewKey: string): CompleteDraft["steering"] { return [...this.entries.values()].filter(entry => entry.identity.viewKey === viewKey && entry.draft).map(entry => ({ taskId: entry.identity.taskId, turnId: entry.identity.turnId, messageId: entry.identity.messageId, text: entry.draft })); }
   setDraft(id: string, text: string) { const entry = this.entries.get(id); if (!entry || entry.draft === text) return; entry.draft = text; this.publish(); this.session.recovery.changed(entry.identity.viewKey); }
   configureRecovery() { if (this.session.recovery.configured()) for (const entry of this.entries.values()) entry.raw.configureRecovery(this.session.recovery.commandPort(entry.identity.viewKey)); }
-  private restoredEntry(viewKey: string, taskId: string, turnId?: string, messageId?: string) {
+  private restoredIdentity(viewKey: string, taskId: string, turnId?: string, messageId?: string) {
     const state = this.views.get(viewKey)?.projection.getSnapshot(), turn = state?.turns.find(item => item.task.id === taskId);
     if (!turn || (turnId && turn.id !== turnId) || (messageId && userMessageId(turn) !== messageId)) throw Error("Load the original turn before restoring its steering material.");
     const identity = this.identity(viewKey, userMessageId(turn)); if (!identity || !this.session.steeringAllowed(identity, "read")) throw Error("This turn is not authorized for recovery.");
+    return identity;
+  }
+  private restoredEntry(viewKey: string, taskId: string, turnId?: string, messageId?: string) {
+    const identity = this.restoredIdentity(viewKey, taskId, turnId, messageId);
     const id = JSON.stringify(identity); let entry = this.entries.get(id);
     if (!entry) { if (this.entries.size >= MAX_STEERING_BINDINGS) throw Error("Resolve an existing steering view before restoring another."); entry = this.createEntry(id, identity); this.entries.set(id, entry); }
     return entry;
   }
-  restoreDrafts(viewKey: string, drafts: CompleteDraft["steering"]) {
-    const values = drafts.map(draft => ({ draft, entry: this.restoredEntry(viewKey, draft.taskId, draft.turnId, draft.messageId) }));
-    if (values.some(({ entry }) => entry.draft)) throw Error("Keep the current steering draft before restoring another.");
-    for (const { entry, draft } of values) entry.draft = draft.text;
-    this.publish();
+  prepareRestoreDrafts(viewKey: string, drafts: CompleteDraft["steering"]) {
+    const values = drafts.map(draft => {
+      const identity = this.restoredIdentity(viewKey, draft.taskId, draft.turnId, draft.messageId), id = JSON.stringify(identity);
+      return { draft, identity, id, entry: this.entries.get(id) };
+    });
+    if (new Set(values.map(value => value.id)).size !== values.length) throw Error("Duplicate saved steering draft.");
+    if (values.some(({ entry }) => entry?.draft)) throw Error("Keep the current steering draft before restoring another.");
+    if (this.entries.size + values.filter(value => !value.entry).length > MAX_STEERING_BINDINGS) throw Error("Resolve an existing steering view before restoring another.");
+    return () => {
+      for (const value of values) {
+        const entry = value.entry ?? this.createEntry(value.id, value.identity);
+        this.entries.set(value.id, entry); entry.draft = value.draft.text;
+      }
+      this.publish();
+    };
   }
+  restoreDrafts(viewKey: string, drafts: CompleteDraft["steering"]) { this.prepareRestoreDrafts(viewKey, drafts)(); }
   restoreReceipt(viewKey: string, record: CommandRecord) {
     const value = record.frozen; if (!value || typeof value !== "object" || Array.isArray(value) || !("taskId" in value) || typeof value.taskId !== "string") throw Error("Invalid steering target.");
     const entry = this.restoredEntry(viewKey, value.taskId);

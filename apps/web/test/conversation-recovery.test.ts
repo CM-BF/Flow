@@ -3,7 +3,7 @@ import { FlowClient } from "@flow/client";
 import type { BrowserSessionReady, ConversationSnapshot } from "@flow/contracts";
 import { ConnectionSession, type SessionClientFactory } from "../src/connection/session";
 import { ConversationRecoveryJournal, RecoveryError, namespaceKey, recoveryAddress, recoveryValue, type CommandRecord, type Json, type RecoveryNamespace, type RecoveryRecord } from "../src/recovery/journal";
-import { RecoveryWorkspace, RECOVERY_OWNER, readRecoveryDraft } from "../src/recovery/binding";
+import { RecoveryWorkspace, RECOVERY_OWNER, readRecoveryDraft, restoreConversationDraft, type CompleteDraft } from "../src/recovery/binding";
 import { AppPluginSession, type AppActions } from "../src/plugin-integration/session";
 import { QueueCommands } from "../src/conversations/queue/commands";
 import { ConversationOutbox, frozenOutbox, restoreOutbox } from "../src/conversations/outbox";
@@ -80,6 +80,118 @@ async function workspace(value: ConversationRecoveryJournal) {
   cleanup.push(() => session.dispose()); await session.host.activate(RECOVERY_OWNER);
   return { workspace: session.recovery, restore, setDraft: (next: Json) => { data = next; }, revoke: () => { authorized = false; generation++; }, reauthenticate: () => { authorized = true; generation++; }, switchCenter: () => { identity = { ...ns, centerId: uuid(20) }; generation++; } };
 }
+
+
+/** Real App owner seam + actual projection.refresh and private session/lease.
+ * Only HTTP results and editor setters are controlled; host.restore is not mocked. */
+async function restoringOwner(savedChange: Partial<CompleteDraft> = {}, routeId = owner.routeId) {
+  const { journal: store } = journal(), read = deferred<ConversationSnapshot>();
+  const snapshot: ConversationSnapshot = { conversation: { title: "Existing", harness: "claude", requested: { model: "runner-default", thinking: "disabled", tools: "configured-readonly" }, projectId: "project",
+    id: "chat", revision: 0, createdAt: "2026-10-06T00:00:00Z", updatedAt: "2026-10-06T00:00:00Z" }, nativeSession: null, lastTurn: null,
+    capabilities: { followUp: true, queue: false, steer: false, liveAssistantText: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false } };
+  const post = vi.fn(async () => { throw Error("Restore never posts"); });
+  const client = { conversation: vi.fn(async () => snapshot), conversationTurns: vi.fn(async () => ({ conversation: snapshot.conversation, turns: [], nextCursor: null })), createConversation: post, submitConversationTurn: post, conversationDetail: post };
+  const projection = new ConversationProjection(client, "chat"); cleanup.push(() => projection.dispose());
+  await projection.refresh(); client.conversation.mockImplementation(() => read.promise);
+  const owned = { ...owner, routeId, projectId: "project" };
+  let data = recoveryValue({ ...(draft("") as Record<string, Json>), projectId: "project", projectTitle: "Project" });
+  const saved = await store.saveDraft(ns, owned, recoveryValue({ ...(draft("saved old text") as Record<string, Json>), projectId: "project", projectTitle: "Project", ...savedChange }), 0);
+  let authorized = true, generation = 1, applications = 0;
+  const recovery: NonNullable<AppActions["recovery"]> = { journal: store, namespace: () => authorized ? ns : null, authorized: () => authorized, generation: () => generation,
+    owner: () => routeId.startsWith("draft-") ? { ...owned, projectId: String((data as Record<string, Json>).projectId) } : owned, draft: () => data,
+    restore: async (record, lease) => {
+      if (record.kind !== "draft") throw Error("Draft expected");
+      return restoreConversationDraft(record, lease, {
+        refresh: () => projection.refresh(),
+        prepare: restored => {
+          // Actual steering owner preflight, as used before App editor/material writes.
+          session.steering.configure(owner.viewKey, owned.routeId, projection, true);
+          const steering = session.steering.prepareRestoreDrafts(owner.viewKey, restored.steering);
+          return () => { steering(); data = recoveryValue(restored); applications++; session.recovery.changed(owner.viewKey); };
+        },
+      });
+    }, retry: async () => { throw Error("Restore must not retry"); } };
+  const session = new AppPluginSession(actions(recovery), themes[0]!); cleanup.push(() => session.dispose());
+  await session.host.activate(RECOVERY_OWNER);
+  return { store, saved, session, post, read, client, snapshot, data: () => data, applications: () => applications,
+    edit: (patch: Record<string, Json>) => { data = recoveryValue({ ...(data as Record<string, Json>), ...patch }); session.recovery.changed(owner.viewKey); },
+    auth: (value: boolean) => { authorized = value; generation++; session.updateActions(actions(recovery)); } };
+}
+
+const changedProfile: Json = { kind: "configured", profile: {
+  reference: { id: uuid(50), runnerId: uuid(51), configDigest: "a".repeat(64) },
+  configuration: { harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: "configured-alias", thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false, materialScopeDigest: "b".repeat(64), limits: { maxTurns: 4, maxBudgetUsd: 1, timeoutMs: 90000 } },
+  source: "runner-configured", availability: "not-probed", model: { value: "configured-alias", resolvedModel: null, displayName: "Configured alias", description: "Fixture declaration", providerCapabilities: "unknown" },
+  controls: { model: "select-configured-profile", thinking: "fixed-disabled", effort: "unsupported", access: "configured-policy", queue: false, steer: false }, createdAt: "2026-10-06T04:00:00Z",
+} };
+describe("App restore owner seam with deferred real projection refresh", () => {
+  it.each([
+    ["text", { text: "newer text" }],
+    ["intent only", { intent: "queue" }],
+    ["profile only", { profile: changedProfile }],
+    ["knowledge", { knowledge: [{ title: "Source", citation: { projectId: "project", sourceId: uuid(52), version: 1, contentDigest: "a".repeat(64), locator: { kind: "utf8-bytes", start: 0, end: 3 } } }] }],
+    ["attachment", { attachments: [{ id: uuid(53), name: "new.txt", state: "unknown", uploadKey: uuid(54) }] }],
+    ["steering", { steering: [{ taskId: "task", turnId: "turn", messageId: "message", text: "new instruction" }] }],
+  ] satisfies [string, Record<string, Json>][])( "keeps and checkpoints %s edited after Restore started, with zero POST", async (_label, patch) => {
+    const f = await restoringOwner(), pending = f.session.recovery.restore(f.saved);
+    await vi.waitFor(() => expect(f.client.conversation).toHaveBeenCalledTimes(2));
+    f.session.recovery.close(); f.edit(patch); const newer = f.data();
+    expect(f.session.recovery.protection(owner.viewKey)).not.toEqual([]);
+    f.read.resolve(f.snapshot); await pending;
+    expect(f.applications()).toBe(0); expect(f.data()).toEqual(newer); expect(f.session.recovery.getSnapshot().error).toContain("complete draft changed");
+    await f.session.recovery.flush();
+    // Normal current-draft CAS updates the one stable slot; Restore itself never deletes it or forks its identity.
+    expect(await f.store.list(ns)).toMatchObject([{ id: f.saved.id, owner: f.saved.owner, version: f.saved.version + 1, data: newer }]);
+    expect(f.post).not.toHaveBeenCalled();
+  });
+  it("keeps a new-chat project edit made while the original record is being read", async () => {
+    const f = await restoringOwner({}, "draft-original"), listing = deferred<RecoveryRecord[]>(), started = deferred<void>();
+    const list = f.store.list.bind(f.store);
+    vi.spyOn(f.store, "list").mockImplementationOnce(() => { started.resolve(); return listing.promise; });
+    const pending = f.session.recovery.restore(f.saved); await started.promise;
+    f.edit({ projectId: "other-project", projectTitle: "Other" }); listing.resolve([f.saved]); await pending; await f.session.recovery.flush();
+    expect(f.applications()).toBe(0); expect(f.data()).toMatchObject({ projectId: "other-project", projectTitle: "Other" });
+    expect(await list(ns)).toMatchObject([{ data: f.data() }]); expect(f.post).not.toHaveBeenCalled();
+  });
+  it("detects edit then revert by the lease even when the final full value equals the initial draft", async () => {
+    const f = await restoringOwner(), original = f.data(), pending = f.session.recovery.restore(f.saved);
+    await vi.waitFor(() => expect(f.client.conversation).toHaveBeenCalledTimes(2));
+    f.edit({ intent: "queue" }); f.edit({ intent: "follow-up" }); f.read.resolve(f.snapshot); await pending; await f.session.recovery.flush();
+    expect(f.data()).toEqual(original); expect(f.applications()).toBe(0); expect(f.post).not.toHaveBeenCalled();
+  });
+  it("applies an unchanged full draft once despite benign initialization notifications", async () => {
+    const f = await restoringOwner(), pending = f.session.recovery.restore(f.saved);
+    await vi.waitFor(() => expect(f.client.conversation).toHaveBeenCalledTimes(2));
+    f.session.recovery.changed(owner.viewKey); f.read.resolve(f.snapshot); await pending; await f.session.recovery.flush();
+    expect(f.data()).toEqual(f.saved.data); expect(f.applications()).toBe(1); expect(f.post).not.toHaveBeenCalled();
+    expect(f.session.recovery.protection(owner.viewKey)).toEqual([]);
+  });
+  it("rejects a second same-view Restore and a new send handoff while the first read is pending", async () => {
+    const f = await restoringOwner(), first = f.session.recovery.restore(f.saved);
+    await vi.waitFor(() => expect(f.client.conversation).toHaveBeenCalledTimes(2));
+    await f.session.recovery.restore(f.saved);
+    expect(f.session.recovery.getSnapshot().error).toContain("already has a restore");
+    expect(() => f.session.recovery.beginHandoff(owner.viewKey)).toThrow("Wait for this view");
+    f.read.resolve(f.snapshot); await first; await f.session.recovery.flush();
+    expect(f.client.conversation).toHaveBeenCalledTimes(2); expect(f.applications()).toBe(1); expect(f.post).not.toHaveBeenCalled();
+  });
+  it("retains changes across public namespace=null and checkpoints on same-namespace reauthentication", async () => {
+    const f = await restoringOwner(), pending = f.session.recovery.restore(f.saved);
+    await vi.waitFor(() => expect(f.client.conversation).toHaveBeenCalledTimes(2));
+    f.auth(false); f.edit({ text: "retained offline", intent: "queue" }); f.read.resolve(f.snapshot); await pending;
+    expect(f.applications()).toBe(0); expect(f.session.recovery.protection(owner.viewKey)).not.toEqual([]);
+    expect(await f.store.list(ns)).toMatchObject([{ version: f.saved.version, data: f.saved.data }]);
+    f.auth(true); await f.session.recovery.flush();
+    expect(await f.store.list(ns)).toMatchObject([{ version: f.saved.version + 1, data: f.data() }]); expect(f.post).not.toHaveBeenCalled();
+  });
+  it("preflights the actual steering owner before applying any restored editor field", async () => {
+    const f = await restoringOwner({ steering: [{ taskId: "missing", turnId: "turn", messageId: "message", text: "saved steering" }] });
+    const original = f.data(), pending = f.session.recovery.restore(f.saved);
+    await vi.waitFor(() => expect(f.client.conversation).toHaveBeenCalledTimes(2)); f.read.resolve(f.snapshot); await pending;
+    expect(f.session.recovery.getSnapshot().error).toContain("original turn"); expect(f.data()).toEqual(original); expect(f.applications()).toBe(0);
+    expect(await f.store.list(ns)).toMatchObject([{ version: f.saved.version, data: f.saved.data }]); expect(f.post).not.toHaveBeenCalled();
+  });
+});
 
 /** Actual session startup and host states; no explicit Saved drafts command/activation. */
 function lifecycle(options: { authorized?: boolean; configured?: boolean; gate?: Promise<void> } = {}) {
@@ -372,7 +484,7 @@ describe("recovery storage barriers (controlled IDB event port)", () => {
     const other = store.bind(ns, () => owner, () => true); await other.prepare({ ...command, expectedVersion: 1 }); await other.dispatch(command.id); await other.checkpoint(command.id, { phase: "accepted", data: { conversationId: "chat", queueRevision: 1 } });
     const terminal = (await store.list(ns)).find(record => record.id === command.id)!;
     restore.mockRejectedValueOnce(Error("Original identity did not match")); await binding.restore(terminal); expect(binding.protection(owner.viewKey)).not.toEqual([]);
-    await binding.restore(terminal); await binding.flush(); expect(restore).toHaveBeenLastCalledWith(terminal); expect(binding.protection(owner.viewKey)).toEqual([]);
+    await binding.restore(terminal); await binding.flush(); expect(restore).toHaveBeenLastCalledWith(terminal, expect.objectContaining({ check: expect.any(Function), apply: expect.any(Function) })); expect(binding.protection(owner.viewKey)).toEqual([]);
     expect((await store.list(ns)).find(record => record.kind === "draft")).toMatchObject({ data: draft("independent next draft") });
     expect((await store.list(ns)).find(record => record.id === command.id)).toMatchObject({ phase: "accepted", version: 3 });
   });

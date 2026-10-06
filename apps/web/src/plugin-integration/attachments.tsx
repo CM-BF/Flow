@@ -227,10 +227,12 @@ export class ConversationAttachments {
     };
     this.unbind.add(release); return release;
   }
-  restoreDraft(items: readonly AttachmentItem[]) {
+  prepareRestoreDraft(items: readonly AttachmentItem[]) {
     if (!this.input || this.state.submission) throw Error("This view cannot replace its current material handoff.");
-    this.input.restore(items); this.sync();
+    const commit = this.input.prepareRestore(items);
+    return () => { commit(); this.sync(); };
   }
+  restoreDraft(items: readonly AttachmentItem[]) { this.prepareRestoreDraft(items)(); }
   capture(input: Omit<Parameters<AttachmentInput["capture"]>[0], "conversationProjectId" | "attachmentContext">, previous: LocalReceipt | null): AttachmentSubmission {
     if (!this.input) throw Error(this.state.error ?? "Attachment input is unavailable.");
     if (this.state.submission?.state === "preparing") throw Error("A material submission is already preparing.");

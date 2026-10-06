@@ -29,6 +29,7 @@ export interface ContextSelection {
   setReadiness(value: ContextReadiness): void;
   search(query: string): Promise<void>;
   add(citation: FrozenCitation): void;
+  prepareRestore(values: readonly SelectedContext[]): () => void;
   restore(values: readonly SelectedContext[]): void;
   remove(citation: FrozenCitation): void;
   expand(citation: FrozenCitation, options?: { refresh?: boolean }): Promise<void>;
@@ -168,13 +169,16 @@ export function createContextSelection(options: { binding: ContextBinding; readi
           : "Knowledge search failed. Your previous results and selection are kept. Retry the search." });
       } finally { if (searchRequest === controller) searchRequest = undefined; }
     },
-    restore(values) {
+    prepareRestore(values) {
       if (disposed || snapshot.selected.length) throw Error("Keep the current selection before restoring another draft.");
       const refs = freezeContextSelection(values.map(value => value.citation), binding.projectId);
       const selected = refs.map((citation, index) => Object.freeze({ title: knowledgeCreateSchema.shape.title.parse(values[index]?.title), citation }));
-      for (const item of selected) unverified.add(citationKey(item.citation));
-      publish({ selected: Object.freeze(selected), selectedBytes: refs.reduce((sum, ref) => sum + citationBytes(ref), 0), error: selected.length ? "Restored references are unverified. Search or explicitly read each reference before a new message." : null });
+      return () => {
+        for (const item of selected) unverified.add(citationKey(item.citation));
+        publish({ selected: Object.freeze(selected), selectedBytes: refs.reduce((sum, ref) => sum + citationBytes(ref), 0), error: selected.length ? "Restored references are unverified. Search or explicitly read each reference before a new message." : null });
+      };
     },
+    restore(values) { this.prepareRestore(values)(); },
     add(ref) {
       requireReady();
       const item = known(freezeCitation(ref, binding.projectId));

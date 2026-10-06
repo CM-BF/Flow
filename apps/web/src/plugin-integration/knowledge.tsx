@@ -30,13 +30,18 @@ export class ConversationKnowledge {
   private closed = false;
   private viewId = "";
   private restoredProject = false;
-  restore(projectId: string | null, projectTitle: string | null, selected: readonly SelectedContext[]) {
+  prepareRestore(projectId: string | null, projectTitle: string | null, selected: readonly SelectedContext[]) {
     const locked = this.locked();
     if (locked && locked.projectId !== (projectId ?? undefined)) throw Error("Saved materials belong to another conversation project.");
     if (!locked && this.state.projectId && this.state.projectId !== projectId) throw Error("The current project selection must be kept separately.");
-    this.update({ projectId, projectTitle, error: null }); this.restoredProject = !locked && !!projectId; this.sync();
-    if (selected.length) { if (!this.state.controller) throw Error("Load the original project conversation before restoring knowledge."); this.state.controller.restore(selected); }
+    if (selected.length && !this.state.controller) throw Error("Load the original project conversation before restoring knowledge.");
+    const commit = this.state.controller?.prepareRestore(selected);
+    return () => {
+      this.update({ projectId, projectTitle, error: null }); this.restoredProject = !locked && !!projectId; this.sync();
+      commit?.();
+    };
   }
+  restore(projectId: string | null, projectTitle: string | null, selected: readonly SelectedContext[]) { this.prepareRestore(projectId, projectTitle, selected)(); }
   private unsubscribers: (() => void)[];
   constructor(readonly viewKey: string, readonly projection: ConversationProjection, private readonly session: AppPluginSession) {
     this.projects = new ConversationProjects((after, signal) => this.session.readKnowledgeProjects(this.identity(), this.context(), after, signal));

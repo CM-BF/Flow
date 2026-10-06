@@ -1,6 +1,6 @@
 import { ConnectionSession } from "./connection/session";
 import { ConversationRecoveryJournal, recoveryAddress, namespaceKey, recoveryValue, type RecoveryNamespace, type RecoveryRecord, type CommandRecord } from "./recovery/journal";
-import { RecoverySurface, readRecoveryDraft, type RecoveryHost } from "./recovery/binding";
+import { RecoverySurface, readRecoveryDraft, restoreConversationDraft, type RecoveryHost } from "./recovery/binding";
 import { canOpenConversation, retentionReasons, MAX_RESIDENT_CONVERSATIONS } from "./workspace-retention";
 import { SteeringSurfaces, type SteeringIdentity } from "./plugin-integration/steering";
 import {
@@ -662,10 +662,10 @@ function Workspace({
       return recoveryValue({ text: drafts.get(entry[0])?.text ?? "", intent: entry[1].intent ?? "follow-up", profile: profileRef.current[key] ?? defaultProfileSelection,
         ...material, attachments: material.attachments.map(item => ({ id: item.id, name: item.name, state: item.state, metadata: item.metadata, uploadKey: item.uploadKey })), steering: session.steering.drafts(key) });
     },
-    restore: async record => {
+    restore: async (record, lease) => {
       if (!authorizedRef.current || !session || record.namespace !== namespaceKey(recovery.namespace)) throw Error("Authorize this exact center and owner before restoring.");
       const generation = recovery.session.getSnapshot().generation;
-      const current = () => { if (!authorizedRef.current || !recovery.session.authorized(recovery.namespace) || generation !== recovery.session.getSnapshot().generation || session.signal.aborted) throw Error("Recovery belongs to an older authenticated connection."); };
+      const current = () => { lease.check(); if (!authorizedRef.current || !recovery.session.authorized(recovery.namespace) || generation !== recovery.session.getSnapshot().generation || session.signal.aborted) throw Error("Recovery belongs to an older authenticated connection."); };
       const saved = record.kind === "draft" ? readRecoveryDraft(record.data) : null;
       const object = (value: unknown): Record<string, unknown> => { if (!value || typeof value !== "object" || Array.isArray(value)) throw Error("Invalid saved command identity."); return value as Record<string, unknown>; };
       let route = record.owner.routeId;
@@ -677,7 +677,13 @@ function Workspace({
       }
       if (!route.startsWith("draft-") && !route.startsWith("conversation:")) throw Error("Saved material has no valid conversation route.");
       let existing = viewEntry(record.owner.viewKey);
-      if (existing && record.kind === "draft" && (drafts.get(existing[0])?.text || session.recoveryMaterials(record.owner.viewKey).knowledge.length || session.recoveryMaterials(record.owner.viewKey).attachments.length)) throw Error("Keep the current draft separately before restoring this one.");
+      if (existing && saved) {
+        const material = session.recoveryMaterials(record.owner.viewKey);
+        if (drafts.get(existing[0])?.text || material.knowledge.length || material.attachments.length || session.steering.drafts(record.owner.viewKey).length ||
+          (existing[1].intent ?? "follow-up") !== "follow-up" || JSON.stringify(profileRef.current[existing[1].key] ?? defaultProfileSelection) !== JSON.stringify(defaultProfileSelection) ||
+          (!existing[1].conversation?.getSnapshot().snapshot && material.projectId))
+          throw Error("Keep the complete current draft separately before restoring this one.");
+      }
       const placeholder = !existing ? views.get(route) : undefined;
       if (placeholder && placeholder.key !== record.owner.viewKey) {
         if (protectedReasons(route, placeholder).length) throw Error("Keep the current local material before restoring another saved identity in this conversation.");
@@ -687,6 +693,36 @@ function Workspace({
       const view = existing?.[1] ?? ensureView(route, record.owner.viewKey); if (!view?.conversation) throw Error("Free an empty chat before restoring.");
       const projection = view.conversation;
       projection.configureRecovery(session.recovery.commandPort(view.key));
+      if (record.kind === "draft") {
+        return restoreConversationDraft(record, lease, {
+          refresh: async () => {
+            if (route.startsWith("conversation:")) {
+              await projection.refresh(); current();
+              if (projection.getSnapshot().snapshot?.conversation.id !== route.slice(13)) throw Error("The center did not confirm this conversation.");
+              if ((projection.getSnapshot().snapshot?.conversation.projectId ?? null) !== (record.owner.projectId ?? null)) throw Error("The original conversation project does not match this saved record.");
+            }
+          },
+          prepare: restored => {
+            if ((restored.projectId ?? undefined) !== record.owner.projectId) throw Error("Saved project metadata does not match its envelope.");
+            const targetRoute = existing?.[0] ?? route;
+            session.steering.configure(view.key, targetRoute, projection, true);
+            const knowledge = session.knowledgeBinding(view.key, projection); knowledge.configure(targetRoute, true);
+            // All owners validate before the first selected material or editor field changes.
+            const commitKnowledge = knowledge.prepareRestore(restored.projectId, restored.projectTitle, restored.knowledge);
+            const attachments = restored.attachments.length ? session.attachmentBinding(view.key, projection) : null;
+            if (restored.attachments.length && !attachments) throw Error("Original attachment metadata cannot be restored in this project view.");
+            const commitAttachments = attachments?.prepareRestoreDraft(restored.attachments);
+            const commitSteering = session.steering.prepareRestoreDrafts(view.key, restored.steering);
+            return () => {
+              commitSteering(); commitKnowledge(); commitAttachments?.();
+              drafts.set(targetRoute, { harness: "claude", scenario: "success", text: restored.text });
+              profileRef.current = { ...profileRef.current, [view.key]: restored.profile }; setProfileSelections(profileRef.current);
+              view.intent = restored.intent; view.restoredVersion = (view.restoredVersion ?? 0) + 1;
+              select(targetRoute); setGroups(previous => [...previous]);
+            };
+          },
+        });
+      }
       if (record.kind === "command" && record.domain === "outbox") {
         if (record.phase === "accepted") { const id = await projection.reconcileReceipt(record); current(); if (existing) accepted(existing[0], id); existing = viewEntry(record.owner.viewKey); }
         else projection.restoreReceipt(record);
@@ -697,16 +733,7 @@ function Workspace({
       current(); select(existing?.[0] ?? route);
       session.steering.configure(view.key, existing?.[0] ?? route, projection, true);
       const knowledge = session.knowledgeBinding(view.key, projection); knowledge.configure(existing?.[0] ?? route, true);
-      if (saved) {
-        if ((saved.projectId ?? undefined) !== record.owner.projectId) throw Error("Saved project metadata does not match its envelope.");
-        knowledge.restore(saved.projectId, saved.projectTitle, saved.knowledge);
-        if (saved.attachments.length) { const binding = session.attachmentBinding(view.key, projection); if (!binding?.input) throw Error("Original attachment metadata cannot be restored in this project view."); binding.restoreDraft(saved.attachments); }
-        drafts.set(existing?.[0] ?? route, { harness: "claude", scenario: "success", text: saved.text });
-        profileRef.current = { ...profileRef.current, [view.key]: saved.profile }; setProfileSelections(profileRef.current);
-        view.intent = saved.intent; view.restoredVersion = (view.restoredVersion ?? 0) + 1;
-        session.steering.restoreDrafts(view.key, saved.steering);
-        setGroups(previous => [...previous]);
-      } else if (record.kind === "command" && record.domain === "queue") {
+      if (record.kind === "command" && record.domain === "queue") {
         const commands = projection.queue.commands; if (!commands) throw Error("Queue commands are unavailable in this center.");
         commands.restore(record);
       } else if (record.kind === "command" && record.domain === "steering") session.steering.restoreReceipt(view.key, record);
