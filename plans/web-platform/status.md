@@ -32,7 +32,8 @@
 | WPF-001-06 | completed | d01_owner | 有限两轮基线3d47与窗口a87均限定APPROVED，04:01:56实际dashboard main8f1481d ancestor/current/scopeEqual全真；后继性能机会按新证据另排，未宣称完整性能目标完成 |
 | WPF-001-07 | completed | d01_owner | M02 d47 / metadata c526 clean，owner20局部/9总览/6观察/4真实PG组及root限定独立APPROVED；03:17 ancestor核main3773已含d47，非以approval推定 |
 | WPF-001-08 | completed | d01_owner | D04部署且root实际领取详情验证；M02v2移出三文件→I01v1 committed receipt已读/存证，正确应用用户领取展示与唯一写者规则 |
-| WPF-001-09 | in-progress | d01_owner | U11/REQ41～45已落，首合同4c240固定；Web新08259c1d v1正式受领16scope，public client受控输入a3b9已就绪，canonical c72e02已提交并请求登记 |
+| WPF-001-09 | in-progress | d01_owner | CHAT7cb首批已独审，最终331后083记录main dd1b已含；真实两query仍Lead待验收，queue/steer后继open |
+| WPF-001-10 | pending | d01_owner | X03已审模块待准确main输入；旧三路径CAS已移出，新WPF-X03I01未建树/未take |
 
 ## 当前管理工作
 
@@ -98,3 +99,5 @@ D06准备：原D05 claim3a6240d0-f861-41fd-b245-3546b2e2dbf3已04:09:05.366Z ame
 D06 claim f6196ecc-b1e4-4ae2-9bd5-a2c36a6570bc v1（04:13:12.526Z）已先核原D05v2释放。独立tree/branch dashboard-architecture-refresh，唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/status.md)，首canonical35e97863cfa0b184d39b4db2a3c54364b14d92bd已由root报Lead登记。实现d5a87b8、来源P3修正ef42277ff55d1cbb76ea707836481a9788619033已root整体限定APPROVED；作者5局部tests+五视图Chrome/六双主题窄屏图，原w01独立固定d5源码5/5通过；最终metadata b4c2ab1ffab02956cb0b36a18d963e7e74bdb9a8 clean，04:20实采D06尚未注册，不宣称已聚合/集成。独立55247图预览不替换4320。
 
 X03 Mika固定895c8999d22fb3d911de2d46969e37b40051fdea模块已获其root独审APPROVED，12checks与分页键盘焦点红→修通过；最终metadata/main等待。实际App挂载尚未受领，scope候选与composer/CHAT04研究进入research，不先动现App。queue/steer分别open，既有disabled保持。
+
+04:22 X03实际App挂载接缝交接：旧CHAT owner确认083 clean全部产品停写，I01 integration.css也明确停写。已核actor external_web_d01_owner/workspace_panels_owner后CAS，原[CHAT v2 receipt](../../docs/evidence/web-platform/chat-x03-amend-receipt.json)与[I01 v3 receipt](../../docs/evidence/web-platform/i01-x03-amend-receipt.json)存证；新WPF-X03I01等待固定base才能建WT/take，尚未写实现。现旧claim版本以此为准，历史段v1/v2不覆盖当前。

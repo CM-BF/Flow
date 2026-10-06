@@ -160,6 +160,7 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
 - [x] **WPF-001-08** 收取两owner精确literal范围并交主线单点登记，验证D04领取/转交/冲突展示，避免多lead重复派工。
 - [ ] **WPF-001-09** 优先推进U11真实持续对话：冻结center能力/会话/queue-steer接缝，分阶段独立派工并真实验收。
+- [ ] **WPF-001-10** WPF-X03I01：消费Mika已审X03模块，在真实App设置挂载只读插件管理；固定main输入、新独立tree/七scope receipt后实施并独审。
 
 ## 验收、风险与持续方式
 
@@ -222,3 +223,5 @@ M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不�
 U11后继queue与steer仍分别开放：Mika准备CHAT04中心持久queue，具体TS合同与scope由ExecutionLead固定；enqueue与队列取消独立queueRevision、原key ACK恢复、仅succeeded自动提升，失败/取消/uncertain或未知session冻结，不通过停止当前任务偷偷启动下一项。恢复/继续与steering首段不启用。SDK有streamInput/interrupt不等当前adapter已支持。Web等中心独审后独立消费，不提前启用disabled控件。此为跨lead已授权方向，非已有实现或新增用户原话。
 
 CHAT04 Web接缝研究补充：assistant-ui实装queue adapter会接管普通tail发送，运行中默认steer，且Interface同时暴露move/edit/remove；不能以dummy回调伪造未支持能力。未来queue-only显式入口或严格adapter需合同冻结后独立验收，durable ACK/unknown与库草稿/队列items分离。此为工程研究约束，不是新实现或主计划完成。
+
+04:22 WPF-X03I01正式排队：MainLead授权真实两query期间固定main，结束后合X03/D06给含CHAT+X03准确base。worker=workspace_panels_owner，tree/branch拟web-plugin-management-integration/codex/web-plugin-management-integration；当前未创建、不从moving ref启动。owner完成CHAT主线metadata083978b318ede4bb1cabb5050f8d211b17bb9055 clean并明确三旧文件停写。管理04:21:43 live核身份/版本，04:22:08.820Z CHAT v1→v2移App/react，04:22:12.797Z I01 v2→v3移integration.css，原其余范围完整保留。新take待准确base/真实tree，任何冲突停协调，不能旧树恢复或新claim前写。七scope：App.tsx、plugin-integration/react.tsx、integration.css，两专用plugin-management-integration fixture/browser测试、plans/wpf-x03-plugin-integration、docs/evidence/wpf-x03。不改Mika模块/共享API，折叠展开才读registry，连接epoch/键盘回焦点/registry与本地extension区分必须验证。
