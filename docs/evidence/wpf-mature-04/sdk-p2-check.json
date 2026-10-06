@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-06 09:26:01 UTC",
+  "sourceCommit": "PENDING_P2_TARGET",
+  "baseMetadataCommit": "42ab81ea67b5db7a5135802e7e3df6642533ca1f",
+  "fixesReviewTarget": "e81f2009153436cacf791aa7c8de492875906586",
+  "reviewFinding": "P2: Query summary cannot cover pending draft/queued input",
+  "priorApprovedTarget": "879c989a594a8f4f266b9a78a885e311c52eca0d",
+  "priorFourSourceFilesUnchanged": true,
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.ts",
+      "sha256": "d90528270ae6bd2b24313d34dba274007e5a6963a824314dd8ff33817b6fc691"
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary.test.ts",
+      "sha256": "de4b895b52fa77f55dc66df4ee401ab9063b706b8a1e5856c190cda31ce0a48b"
+    }
+  ],
+  "configuration": "sdk-validation-config.json (unchanged)",
+  "environment": {
+    "node": "24.20.0",
+    "pnpm": "9.15.4",
+    "vitest": "4.0.18"
+  },
+  "testFilesSelected": 2,
+  "testFilesPassed": 2,
+  "testsSelected": 49,
+  "testsPassed": 49,
+  "testsFailed": 0,
+  "testsSkipped": 0,
+  "adapterTests": 26,
+  "directProjectionTests": 23,
+  "testExit": 0,
+  "strictNoEmitExit": 0,
+  "providerCalls": 0,
+  "sdkRuntimeImports": 0,
+  "credentialReads": 0,
+  "personalServicesStarted": 0,
+  "installations": 0
+}

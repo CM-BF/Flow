@@ -95,3 +95,5 @@ GO/用户已授权该方向及规划实施。首片规划已固定，mika随后�
 2026-10-06 09:09 UTC：纯投影/schema的2文件30个行为检查及继承root严格配置的局部noEmit通过。追加下一条设置revision与queued/attempt冻结语义；修正derived准确度不可升级估算、SDK autocompact reading不可冒充model hard limit。未挂载生产，完整任务不完成。
 
 2026-10-06 09:17 UTC：mika批准追加`apps/runner/src/context-observations/claude-summary.ts`及`.test.ts`，claim v3原子amend已COMMITTED。只适配固定SDK0.3.290的camelCase summary响应，不调用Query、full、token-count或模型。host提供冻结identity与有界证据；model不符拒绝；unknown保持；rawMaxTokens仅策略窗口。分类只读kind/tokens，最多32输入行并拒绝非法/溢出，不解析名字、路径或正文；经已审公共投影验证。本小片不覆盖采集/持久化/压缩事实，-04仍开放。
+
+2026-10-06 09:26 UTC：e81f200第二片被独立预审判1P2：Query summary无法证明pending draft/queued输入覆盖。最小修复只允许带nativeSessionId的attempt，host仍负责已消费input/history cut，draft/queued估算是后继独立来源；本片26+23=49/49与strict noEmit0。第一片879 approval不受影响，原46历史不算修后结果；新target复审待完成。

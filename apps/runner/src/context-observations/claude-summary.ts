@@ -27,11 +27,14 @@ function summarizeCategories(rows: SDKControlGetContextUsageResponse['categories
 }
 
 /** Convert an already obtained 0.3.290 summary response, without SDK runtime imports or IO.
- * The host owns request provenance, frozen identity and receipt authority. No Query calls,
+ * Only a session-bound attempt can describe the Query's already consumed context; pending
+ * draft/queued inputs need a separate estimator. The authenticated host must bind the consumed
+ * input/history cut, request provenance, frozen identity and receipt authority. No Query calls,
  * billing fallback, capacity inference, content extraction or compaction-event inference. */
 export function mapClaudeContextSummary(input: ClaudeContextSummaryInput): ContextObservation {
   const host = hostSchema.parse({ identity: input.identity, observationId: input.observationId, observedAt: input.observedAt, evidenceRef: input.evidenceRef, requestDetail: input.requestDetail });
   if (host.identity.harness !== 'claude') throw new Error('Claude context requires a Claude host identity.');
+  if (host.identity.subject.kind !== 'attempt' || !host.identity.subject.nativeSessionId) throw new Error('Claude summary requires an attempt with a native session; pending inputs are not measured.');
   const response = input.response;
   const model = contextIdentitySchema.shape.resolvedModel.unwrap().parse(response.model);
   if (host.identity.resolvedModel !== null && model !== host.identity.resolvedModel) throw new Error('Claude context model does not match the host resolved model.');

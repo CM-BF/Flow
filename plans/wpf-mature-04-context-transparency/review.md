@@ -1,19 +1,37 @@
 # WPF-MATURE-04 独立审查记录
 
-状态：NOT_STARTED（当前Claude summary纯Adapter；第一片879保持APPROVED）
+状态：NOT_STARTED（P2修复待复审；旧e81f200为CHANGES_REQUESTED，879保持APPROVED）
+
+## 当前修复target
+
+- Target：PENDING_P2_TARGET；base：42ab81ea67b5db7a5135802e7e3df6642533ca1f；同branch/worktree与v3 claim。
+- 修复scope仅claude-summary.ts/.test.ts两文件，先前已审4源码不变。仅允许带nativeSessionId的attempt；draft/queued/null session拒绝，pending估算留后继独立来源。authenticated host仍负责已消费input/history cut，未加状态机。
+- 修后26 Adapter + 23直接projection = 49/49、root局部strict noEmit0；[新manifest](../../docs/evidence/wpf-mature-04/sdk-p2-check.json)及原始日志在同目录；旧46不计修后证据。
+- 当前独立reviewer/结论：NOT_STARTED；待确认P2修复，不以作者验证当批准。
+
+```text
+只读复审PENDING_P2_TARGET，base42ab81ea67b5db7a5135802e7e3df6642533ca1f。核branch/head/dirty和新2源码hash，确认旧879四源码不变。核e81f200的P2：SDK Query summary不得覆盖pending draft/queued；修复仅接受subject.kind=attempt且nativeSessionId非空，host消费cut仍外部可信前置。检查默认attempt、三项拒绝、detachment/身份失效及保留的privacy/双窗口/数值边界，结合新49/49与strict noEmit原始证据。禁止provider/Query/auth/安装/个人服务；如需重跑仅同2显式测试路径。不扩范围，给绑定target的P2复审结论与未检查项。
+```
+
+作者回应：已按P2完成最小修复并等待独立复审；下列旧结论原样保留，不因新作者检查自行升级。
+
+# 第二片历史review：e81f200
+
+状态：CHANGES_REQUESTED（e81f200 Claude summary纯Adapter；第一片879保持APPROVED）
 
 ## 当前target与只读交审
 
 - Target：e81f2009153436cacf791aa7c8de492875906586；base：278dba39c80dc38397afbcefee0eca72a85c9cd8；branch codex/context-transparency，权威worktree不变。
 - 当前源码scope仅apps/runner/src/context-observations/claude-summary.ts、apps/runner/src/context-observations/claude-summary.test.ts；先前已审4文件diff为空。
 - 作者检查：23 Adapter + 23直接projection = 46/46，2显式文件，局部root严格noEmit0；证据见[纯Adapter](../../docs/evidence/wpf-mature-04/claude-summary.md)。合成SDK形状帧，不含真实provider、采集、持久化或Web。
-- 独立reviewer/结论：尚未执行，NOT_STARTED；作者自查不代替独审。severity/blocking findings：尚无独立结论。
+- 独立reviewer/结论：status_read / gpt-6-astra；root Mika于2026-10-06 09:25:10 UTC核两源码Git SHA、现场与预审一致后接收，CHANGES_REQUESTED，1 P2 / 0 P1。
+- P2：claude-summary.ts原hostSchema接受draft/queued，estimate无条件full，测试为未发送输入生成current/remaining。getContextUsage只报告Query已消费上下文，响应不证明pending输入被覆盖；该问题阻止本target批准。其余来源/双窗口/边界/privacy预审无P1/P2。
 
 ```text
 只读review WPF-MATURE-04第二片 target e81f2009153436cacf791aa7c8de492875906586，base278dba39c80dc38397afbcefee0eca72a85c9cd8。先核branch/head/dirty、v3 scope及2新文件hash，确认已审879的4源码不变。读取固定SDK0.3.290证据，核camelCase响应、type-only import、summary-only gate、host冻结身份/resolved mismatch、估算准确度与双窗口、稳定匿名分类/32行边界/安全整数、拒绝缺失或partial截断、无path/name/billing读取，以及Adapter→现公共projection的失效/派生语义。依据46/46和strict noEmit原始记录；如复跑只用显式局部路径。禁止Query/provider/auth/安装/个人服务与共享文件写入。返回绑定target的severity/行号/blocking/结论与未检查项，修复归owner。此片不包含SDK实际采集、中心防自证/持久化/权限/Web完整交付。
 ```
 
-作者回应/修复：等待独立review；已审第一片记录如下保留。
+作者回应/修复：接受P2；仅允许subject.kind=attempt且nativeSessionId非空，draft/queued交后继host-estimator。默认测试输入改为attempt，添加三类拒绝与detachment/身份失效。仅修2个Adapter源码，旧879的4文件不动；修复target与新的局部检查待固定，不用旧46/46冒充修复证据。已审第一片记录如下保留。
 
 # 第一片：已完成独立审查
 

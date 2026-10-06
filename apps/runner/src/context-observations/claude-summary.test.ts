@@ -7,7 +7,7 @@ import { mapClaudeContextSummary, type ClaudeContextSummaryInput } from './claud
 const time = '2026-10-06T09:20:00.000Z';
 const digest = 'a'.repeat(64);
 const identity = (): ContextIdentity => ({
-  subject: { kind: 'draft', draftId: 'draft-1', settingsRevision: 'settings-1' }, harness: 'claude',
+  subject: { kind: 'attempt', taskId: 'task-1', attemptId: 'attempt-1', ownerVersion: 1, nativeSessionId: 'native-1' }, harness: 'claude',
   requestedModel: 'alias', resolvedModel: 'model-v1', profile: null,
   executionInputDigest: digest, materialRevisionDigest: digest, historyEpoch: 'epoch-1',
 });
@@ -79,22 +79,28 @@ describe('Claude summary response through the public context projection', () => 
   });
   it.each(['requestedModel', 'resolvedModel', 'executionInputDigest', 'materialRevisionDigest', 'historyEpoch', 'subject'] as const)('invalidates changed %s in the public consumer', field => {
     const value = input(); const current = identity();
-    if (field === 'subject') current.subject = { kind: 'draft', draftId: 'draft-1', settingsRevision: 'settings-2' };
+    if (field === 'subject') current.subject = { kind: 'attempt', taskId: 'task-1', attemptId: 'attempt-1', ownerVersion: 2, nativeSessionId: 'native-1' };
     else current[field] = field.includes('Digest') ? 'b'.repeat(64) : 'changed';
     const result = project(value, current);
     expect(result.freshness.reason).toBe('identity-changed');
     expect(result.used.value).toBeNull();
     expect(result.windows.compactionPolicy.overflow.state).toBe('unknown');
   });
-  it('preserves queued and attempt identities and detaches results from mutable host inputs', () => {
-    const value = input(); value.identity.subject = { kind: 'queued', queueItemId: 'queue-1', settingsRevision: 'settings-1' };
-    const queued = mapClaudeContextSummary(value);
-    value.identity.subject.settingsRevision = 'settings-2';
+  it.each(['draft', 'queued', 'missing-session'] as const)('rejects %s rather than treating a previous Query summary as pending input coverage', subject => {
+    const value = input();
+    if (subject === 'draft') value.identity.subject = { kind: 'draft', draftId: 'draft-1', settingsRevision: 'settings-1' };
+    else if (subject === 'queued') value.identity.subject = { kind: 'queued', queueItemId: 'queue-1', settingsRevision: 'settings-1' };
+    else value.identity.subject = { kind: 'attempt', taskId: 'task-1', attemptId: 'attempt-1', ownerVersion: 1, nativeSessionId: null };
+    expect(() => project(value)).toThrow('attempt with a native session');
+  });
+  it('detaches the attempt identity and evidence from mutable host inputs', () => {
+    const value = input();
+    const sample = mapClaudeContextSummary(value);
+    value.identity.subject = { kind: 'attempt', taskId: 'task-1', attemptId: 'attempt-1', ownerVersion: 2, nativeSessionId: 'native-2' };
     value.evidenceRef.title = 'changed';
-    expect(queued.identity.subject).toEqual({ kind: 'queued', queueItemId: 'queue-1', settingsRevision: 'settings-1' });
-    expect(queued.used).toMatchObject({ evidenceRef: { title: 'SDK summary receipt' } });
-    value.identity.subject = { kind: 'attempt', taskId: 'task-1', attemptId: 'attempt-1', ownerVersion: 1, nativeSessionId: 'native-1' };
-    expect(project(value).freshness.state).toBe('current');
+    expect(sample.identity.subject).toEqual({ kind: 'attempt', taskId: 'task-1', attemptId: 'attempt-1', ownerVersion: 1, nativeSessionId: 'native-1' });
+    expect(sample.used).toMatchObject({ evidenceRef: { title: 'SDK summary receipt' } });
+    expect(projectContextSnapshot({ identity: value.identity, asOf: time, materials: [], observation: sample }).freshness.reason).toBe('identity-changed');
   });
   it('expires old or future observations instead of showing a safe remainder', () => {
     for (const [asOf, reason] of [['2026-10-06T09:20:31.000Z', 'expired'], ['2026-10-06T09:19:59.000Z', 'future-observation']]) {
