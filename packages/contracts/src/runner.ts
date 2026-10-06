@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { steeringReceiptSchema, steeringResultSchema, steeringFinalizationMetadataSchema, type ActiveSteeringPort } from './active-steering.js';
 import { assistantStreamDataSchema, assistantStreamMarkerSchema } from './assistant-stream.js';
 import { claudeAssistantFinalDataSchema, codexAssistantFinalDataSchema } from './assistant.js';
+import { contextObservationEventSchema } from './context-observation-event.js';
 import { nativeActivityDataSchema } from './native-activity.js';
 import { engineeringVerificationDataSchema } from './engineering.js';
 import { harnessSchema, idSchema, MAX_DETAIL_BYTES, MAX_BATCH_BYTES, type DecisionAnswer, type TaskSubmission, type AttemptView, type HarnessName } from './tasks.js';
@@ -46,6 +47,7 @@ export const runnerEventSchema = z.discriminatedUnion('type', [
   assistantStreamDataSchema.safeExtend(envelope),
   assistantStreamMarkerSchema.extend(envelope),
   nativeActivityDataSchema.safeExtend(envelope),
+  contextObservationEventSchema,
   z.strictObject({ ...envelope, type: z.literal('message'), text: z.string().min(1).max(4000) }),
   z.strictObject({ ...envelope, type: z.literal('detail'), title, content, mediaType: z.string().max(120) }),
   z.strictObject({ ...envelope, type: z.literal('decision'), decisionId: idSchema, prompt: z.string().min(1).max(2000) }),

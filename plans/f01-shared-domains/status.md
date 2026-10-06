@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:33:11 UTC / mainfd1322f9 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T11:43:05.952768+00:00 / main2c6df475 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 工程配置已main；当前附件生产接线与清理增量固定 |
-| 工作树dirty状态 | 源码固定；独立复审结论已记录，metadata提交后clean |
+| 工作基线 / HEAD | 上下文历史生产接线 e6abc4dde828686661c6b416a17de95b497c9734 |
+| 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 附件ACK47、薄client1HTTP分别独审；生产1PG及2清理回归=3/3、types0，P2独立复审关闭，0provider |
+| 检查状态 | 薄client1HTTP独审通过；生产实际HTTP/PG1红→1绿与root types0，专用库正常清理；0provider |
 | 已集成main状态 / HEAD | 原生配置薄client095、共享ACK dc7f和工程核心040均已有独立review并main；个人backend/static仍b1c2e398 accepting v12。 |
-| Review | 附件ACK/native_center_owner与六薄client/Mika APPROVED；69eb+f04生产接线/清理获Mika独审APPROVED；实际factory六case组合通过并mainfd132 |
-| 实现目标 | f04cb29633ca678b35aa423e02a16953add0cfba |
-| 实现范围 | packages/client/src/attachment-production.test.ts |
+| Review | 薄client7bbfa/native_center、生产e6abc/assignment独立APPROVED；待受控main接收 |
+| 实现目标 | e6abc4dde828686661c6b416a17de95b497c9734 |
+| 实现范围 | apps/server/src/events.ts, apps/server/src/index.ts, packages/contracts/src/runner.ts, packages/client/src/context-history-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 附件上传、固定引用、回执恢复与公开读取已进入主线，实际factory升级与重启已验证。 |
-| 下一可用交付 | 上下文历史与目标交付读口的公共接线准备；已审附件片段完成。 |
+| 当前产出 | 中心可持久保存绑定当前执行身份的上下文观测，并提供授权历史读取与重启恢复。 |
+| 下一可用交付 | 完成上下文生产接线独审；并行接入已审目标交付统一读口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -161,3 +161,5 @@
 2026-10-06 11:30 UTC：Mika增量只读APPROVED f04，原69eb挂载保持；1source/8raw核同、清理P2关闭、未重测。下一I02仅实际factory与已审fixture1f0组合六case，不重跑78领域。原审查字节归档 [独审](../../docs/evidence/f01/attachment-production-independent-review.md)，个人服务不变。
 
 2026-10-06T11:33:11.623489+00:00：已审附件23source与原main精确匹配，I02实际factory六例/四专库/类型检查通过。[main回执](../../docs/evidence/f01/attachment-main-receipt.json)。受控main同步只选既有已审product，冲突均取固定main；不改变已审source或再跑产品。
+
+2026-10-06T11:38:45.202495+00:00：F01-28共享ACK、29附件生产、31工程用途均已在主线接收。本次薄client五源限定与初红/初types失败、offline修复和最终绿见 [manifest](../../docs/evidence/f01/context-history-client-manifest.json)；尚未生产挂载。复核clean-code：复用request/严格领域schema，身份匹配独立于显示策略，未新增重试/缓存。

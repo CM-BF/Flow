@@ -1,6 +1,7 @@
 import { decodeConversationCreated, decodeConversationTurnAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
 import { EXECUTION_PROFILE_HEADER, NATIVE_EXECUTION_PROFILE_VERSION, nativeExecutionProfileCatalogPageSchema, type NativeExecutionProfileCatalogPage } from '@flow/contracts';
 import { engineeringProfilePageSchema, engineeringProfilePublishedSchema, type EngineeringProfileConfiguration, type EngineeringProfilePage, type EngineeringProfilePublished } from '@flow/contracts';
+import { contextHistoryResponseSchema, type ContextHistoryResponse } from '@flow/contracts';
 export { decodeConversationCreated, decodeConversationTurnAccepted, assertConversationCreationMatches, assertConversationContextMatches, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
 import type { SteeringAdmission, SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage, SteeringMailbox, SteeringFinalizationInput, SteeringFinalizationResult, SteeringProposalLookup, SteeringProposalStatus } from '@flow/contracts';
 import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
@@ -49,6 +50,13 @@ export class FlowClient {
     this.baseUrl = options.baseUrl.replace(/\/$/, '');
     this.token = options.token;
     this.assistantStreamProtocol = options.assistantStreamProtocol;
+  }
+
+  async contextHistory(taskId: string, signal?: AbortSignal): Promise<ContextHistoryResponse> {
+    const raw = await this.request<unknown>(`/api/tasks/${encodeURIComponent(taskId)}/context/history`, { signal });
+    const history = contextHistoryResponseSchema.parse(raw);
+    if (history.taskId !== taskId) throw new Error('Context history task identity mismatch');
+    return history;
   }
 
   assistantStream(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<AssistantStreamPage> {

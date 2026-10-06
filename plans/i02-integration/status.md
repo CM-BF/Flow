@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T11:39:07.083587+00:00 / main9db6708f |
+| 最近更新 / 最近main同步核验 | 2026-10-06T11:45:30.818273+00:00 / main2c6df475 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 139来源主线9db6708f；本批接收工程身份与Codex回合接缝 |
+| 工作基线 / HEAD | 本批已审上下文历史生产与目标交付读领域 |
 | 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | ENG01D固定五源逐字相同，原65不同局部检查及types复用；无新行为冲突/模型 |
+| 检查状态 | 36固定源码逐字相同，组合root types0；局部PG/HTTP原证据复用，0provider |
 | 已集成main状态 / HEAD | 附件fd132与139来源9db已发布；本批工程接缝待fast-forward。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 宿主向适配器提供不可变执行身份，现有普通Codex回合逻辑已提取为可复用接口。 |
-| 下一可用交付 | 真实工程写入与受信检查边界、目标交付统一读口并行推进。 |
+| 当前产出 | 上下文历史可经正式中心读取；统一目标计划与执行状态读领域已审接收。 |
+| 下一可用交付 | 目标交付公共客户端与正式入口；真实工程受信检查并行推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -127,3 +127,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 11:32 UTC：附件23源码均与固定独审target逐字相同；生产factory在8次启动/重启均自动026+六routes，fallback全false。六选中HTTP/PG case通过、23未选，四专库正常清理；root types0。[组合证据](../../docs/evidence/i02/attachment-integration.json)。ENG01C已main53ce，个人服务未更新。
 
 2026-10-06T11:39:07.083587+00:00：[ENG01D固定接收](../../docs/evidence/i02/engineering-native-seams-integration.json)五源零差异；只恢复唯一owner元数据冲突，无产品手改；复用已审直接消费者证据，0provider。
+
+2026-10-06T11:45:30.818273+00:00：[上下文历史与目标读取固定组合](../../docs/evidence/i02/context-goal-integration.json)源码hash全符，root types0；只修唯一F01状态的metadata冲突。个人部署不变。
