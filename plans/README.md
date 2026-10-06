@@ -106,3 +106,5 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 - CHAT06P01：流式正文存储成本测量；唯一source `assistant-stream-cost-probe/plans/chat06-stream-cost`，方法准备，真实测量待协调窗口。
 
 - WPF-PERF03：聊天消息复用；唯一source `web-message-reuse/plans/wpf-perf03-message-reuse`，不变消息转换优化实施，不声称浏览器延迟收益。
+
+- WPF-CONTEXT01：聊天知识引用选择；唯一 source `web-knowledge-selection/plans/wpf-context01-knowledge-selection`。独立选择模块已领取，实际 Send/Queue 接线仍后继；登记不代表功能完成。
