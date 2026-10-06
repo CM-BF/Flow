@@ -1,0 +1,85 @@
+{
+  "recordedAt": "2026-10-06T11:36:40.828Z",
+  "sourceHead": "9db6708fa5072915d3354d27becd847dbbf8f6cb",
+  "source": "apps/execution-dashboard/src/proof.mjs",
+  "sourceSha256": "0ff14488a80ba10624e7c5ab5e8dd961f2ff4e994d0faf42ef768c9509d563d9",
+  "scope": "Four concurrent integrationProof calls for separate synthetic task declarations sharing one tiny temporary main repository and implementation scope; no real registry, server, or coordination DB",
+  "tasks": 4,
+  "gitStarts": 28,
+  "mainDirtyDiffStarts": 4,
+  "mainUntrackedStarts": 4,
+  "tracePeakIntervals": 4,
+  "unclosedIntervals": 0,
+  "allCurrent": true,
+  "allAncestor": true,
+  "results": [
+    {
+      "record": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "recordedHead": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "target": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "mainHead": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "scopes": [
+        "sample.txt"
+      ],
+      "observedAt": "2026-10-06T11:36:41.206Z",
+      "current": true,
+      "historicalIntegrated": true,
+      "method": "ancestor",
+      "scopeEqual": true,
+      "dirtyScopePaths": [],
+      "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+    },
+    {
+      "record": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "recordedHead": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "target": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "mainHead": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "scopes": [
+        "sample.txt"
+      ],
+      "observedAt": "2026-10-06T11:36:41.206Z",
+      "current": true,
+      "historicalIntegrated": true,
+      "method": "ancestor",
+      "scopeEqual": true,
+      "dirtyScopePaths": [],
+      "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+    },
+    {
+      "record": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "recordedHead": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "target": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "mainHead": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "scopes": [
+        "sample.txt"
+      ],
+      "observedAt": "2026-10-06T11:36:41.206Z",
+      "current": true,
+      "historicalIntegrated": true,
+      "method": "ancestor",
+      "scopeEqual": true,
+      "dirtyScopePaths": [],
+      "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+    },
+    {
+      "record": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "recordedHead": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "target": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "mainHead": "e6a95677e502e29abca696f64b3cfdedbecbc1da",
+      "scopes": [
+        "sample.txt"
+      ],
+      "observedAt": "2026-10-06T11:36:41.206Z",
+      "current": true,
+      "historicalIntegrated": true,
+      "method": "ancestor",
+      "scopeEqual": true,
+      "dirtyScopePaths": [],
+      "reason": "目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论"
+    }
+  ],
+  "cleanup": {
+    "removedTemporaryRepositories": 1,
+    "onlyOwnedPaths": true
+  }
+}

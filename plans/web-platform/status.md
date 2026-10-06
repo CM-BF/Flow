@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:34 UTC / ATTACH公共桥接fd1322接收；ef617已释放，CACHE883321已领取16scope |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:38 UTC / ATTACH公共桥接fd1322接收；ef617已释放，CACHE883321已领取16scope |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -66,7 +66,7 @@
 
 | WPF-001-35 | pending | d01_owner | RS13固定产物去重/初始依赖图/延后chat及静态host cache-encoding冷暖与回滚验收已落plan；未take/实施，ACK/附件/发布优先，0个人服务/模型。 |
 
-| WPF-001-36 | pending | d01_owner | D01/DPERF fanout后继已登记，静态532构造非实测峰值；CACHE/附件后临时样本先量再定，未take/测试，不重做原02或压4320。 |
+| WPF-001-36 | pending | d01_owner | D01/DPERF fanout后继已登记，静态532构造非实测峰值；root两组隔离小样本已归档，含4task/28starts重复main读量；CACHE/附件后正式范围再定，未take，不重做原02或压4320。 |
 
 ## 当前唯一来源、写权与下一步
 
@@ -85,7 +85,7 @@
 | RELEASE02 → MATURE01 | web-release-type-fix / 03323bce v2 released三scope | fixed560c已Lead独审并main648e；ownerfed5 normalpush双端clean/parser0后全停写，03323 v2已release；0浏览器/PG/个人发布 |
 | ATTACHI01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md)，94b84c59 v1十一scope | fixed4c4d/final4a9已root独审17、normalpushclean/9源同；仅DTO/typed ports/官方Threadfixture；公共桥接已fd main，模块/实际App仍待接，94b84保留等main |
 | WORKSPACEPERF01 → MATURE05 | c815bc00 v1四scope / web-workspace-lifecycle-baseline | fixed1711/final628156已独审partial基线待main；8完成/1失败、累计79.322s，0生产优化 |
-| WORKSPACECACHE01 → MATURE05 | web-workspace-cache / 883321bc v1十六scope | fixedfd1322新树，root结构批准且fresh COMMITTED；首canonical待owner。六路径短窗口后交ATTACHI02，不冒整体cache/Arc完成 |
+| WORKSPACECACHE01 → MATURE05 | web-workspace-cache / 883321bc v1十六scope | fixedfd1322新树，root结构批准且fresh COMMITTED；首canonical44b4已建立并实施。六路径短窗口后交ATTACHI02，不冒整体cache/Arc完成 |
 | ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v2 released七scope | 2fa8已main e4c82；owner8301991 normalpush/clean后全停写释放；v2公共扩展已fd1322接收，生产附件consumer另片 |
 | DPERF02 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md)，1cb4 v2 released四scope停写 | 已main da041，close8e9最终normalpush成功；两次失败/先release偏差已归档，无重测 |
 

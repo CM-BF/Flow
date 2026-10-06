@@ -1,0 +1,26 @@
+import { mkdtemp, writeFile, readFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { createHash } from 'node:crypto';
+const exec = promisify(execFile), root = await mkdtemp(path.join(tmpdir(), 'flow-dashboard-proof-fanout-'));
+const repo = path.join(root, 'repo'), project = '/Users/citrine/Projects/AgentHarness/Flow', source = path.join(project, 'apps/execution-dashboard/src/proof.mjs');
+const env = { ...process.env, GIT_CONFIG_GLOBAL:'/dev/null', GIT_CONFIG_SYSTEM:'/dev/null', GIT_OPTIONAL_LOCKS:'0' };
+delete env.GIT_TRACE2_EVENT; delete env.FLOW_COORDINATION_DATABASE_URL; delete env.FLOW_COORDINATION_REPO;
+const git = args => exec('git', ['-C', repo, ...args], {env,timeout:5000,maxBuffer:1048576});
+const report = {recordedAt:new Date().toISOString(), sourceHead:(await exec('git',['-C',project,'rev-parse','HEAD'])).stdout.trim(), source:'apps/execution-dashboard/src/proof.mjs', sourceSha256:createHash('sha256').update(await readFile(source)).digest('hex'), scope:'Four concurrent integrationProof calls for separate synthetic task declarations sharing one tiny temporary main repository and implementation scope; no real registry, server, or coordination DB'};
+try {
+ await exec('git',['init','-q','-b','main',repo],{env,timeout:5000});
+ await writeFile(path.join(repo,'sample.txt'),'original\n'); await git(['add','sample.txt']);
+ await git(['-c','user.name=Fixture','-c','user.email=fixture@example.invalid','-c','core.hooksPath=/dev/null','commit','-q','--no-gpg-sign','-m','temporary sample']);
+ const target=(await git(['rev-parse','HEAD'])).stdout.trim(), trace=path.join(root,'trace.jsonl');
+ const code=`import { integrationProof } from ${JSON.stringify(new URL('file://'+source).href)}; const [directory,target]=process.argv.slice(1); const main={available:true,branch:'main',head:target,observedAt:new Date().toISOString()}; const tasks=Array.from({length:4},(_,i)=>({id:'S'+i,worktree:directory,status:{implementation:{target,scopes:['sample.txt'],errors:[]},mainRecord:target},implementationProof:{state:'unchanged'}})); console.log(JSON.stringify(await Promise.all(tasks.map(task=>integrationProof(task,directory,main)))));`;
+ const output=await exec(process.execPath,['--input-type=module','-e',code,repo,target],{env:{...env,GIT_TRACE2_EVENT:trace},timeout:15000,maxBuffer:1048576});
+ const values=JSON.parse(output.stdout),events=(await readFile(trace,'utf8')).trim().split('\n').map(JSON.parse), starts=events.filter(x=>x.event==='start');
+ const commands=starts.map(x=>x.argv.slice(3)), active=new Set(); let peak=0;
+ for(const x of events.filter(e=>['start','exit'].includes(e.event)).sort((a,b)=>a.time.localeCompare(b.time))){if(x.event==='start')active.add(x.sid);else active.delete(x.sid);peak=Math.max(peak,active.size);}
+ Object.assign(report,{tasks:4,gitStarts:starts.length,mainDirtyDiffStarts:commands.filter(a=>a[0]==='diff'&&a.includes('HEAD')).length,mainUntrackedStarts:commands.filter(a=>a[0]==='ls-files').length,tracePeakIntervals:peak,unclosedIntervals:active.size,allCurrent:values.every(v=>v.current),allAncestor:values.every(v=>v.method==='ancestor'),results:values});
+ await writeFile(path.join(root,'proofs.json'),JSON.stringify(values,null,2)+'\n');
+} catch(error){report.failure=String(error.stack||error);process.exitCode=1;}
+finally {await rm(repo,{recursive:true,force:true});report.cleanup={removedTemporaryRepositories:1,onlyOwnedPaths:true};await writeFile(path.join(root,'report.json'),JSON.stringify(report,null,2)+'\n');const{results,...small}=report;console.log(JSON.stringify({directory:root,...small},null,2));}

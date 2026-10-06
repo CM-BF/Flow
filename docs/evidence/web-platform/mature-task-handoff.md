@@ -8,7 +8,7 @@ ATTACH owner最终 **c6989b894aa4e9103472279e697d129b28cce5ff** normal push、lo
 
 **ATTACHI01仍请Lead按原固定清单接收**：4c4de124b24a85b9e2a13e097b29c80b1e84d11a / final4a9b167888cd9dab3490886d039fc50e7fb39083 / [9-source manifest](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/docs/evidence/wpf-attach-i01/source-manifest.json)。本次23源不含该模块；不得将fd公共桥接当UI模块或生产App已上线。94b84 v1保留待模块main；正常受控接收不需重审或自行复制到其他树。
 
-**WPF-WORKSPACECACHE01已正式领取**：panels，独立 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache` / `codex/web-workspace-cache`，固定fd1322（实核对53ce整个apps/web零diff、HEAD/branch/clean）。Root结构批准16literal后fresh无冲突，**883321bc-933f-4da0-8f86-f200c02620cf v1 COMMITTED 11:33:51.839Z**，[receipt](workspacecache01-take-receipt.json)。唯一source待owner首提交于该树`plans/wpf-workspace-cache/status.md`，直接父MATURE05/co-lead Web/root；普通登记由Lead读本队列，尚不冒称进度卡已部署。
+**WPF-WORKSPACECACHE01已正式领取**：panels，独立 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache` / `codex/web-workspace-cache`，固定fd1322（实核对53ce整个apps/web零diff、HEAD/branch/clean）。Root结构批准16literal后fresh无冲突，**883321bc-933f-4da0-8f86-f200c02620cf v1 COMMITTED 11:33:51.839Z**，[receipt](workspacecache01-take-receipt.json)。首canonical **44b4f79e40234da7c124ead37145f0bbac7f99b8** 已实际建立，唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/plans/wpf-workspace-cache/status.md)实施中，直接父MATURE05/co-lead Web/root；普通登记由Lead读本队列，尚不冒称进度卡已部署。
 
 双方[批准方案与精确范围](workspace-cache-attachment-binding-proposals.json)：CACHE先短窗口，ATTACHI02完整24literal已结构批准但未take，需模块4c正式组合base后先独立实际consumer；六共用路径含App/session/两projection及两专测，全部待CACHE停写+合法交权后fresh amend。保护pending composer submission/capture，即使当前items已移除；仅未提交profile/project选择保护。32conversation含initial/open/protected、closed-clean0，reply2/2MiB+queue4/64KiB是UTF8正文预算，非heap/全workspace保证。
 
@@ -305,8 +305,10 @@ panels完成ATTACH最终metadata后，只读准备MATURE05-05真实App开关/闭
 
 ## CACHE与附件生产绑定：两份精确只读方案已到
 
-[完整候选/Interface/容量/验收/精确literal](workspace-cache-attachment-binding-proposals.json)：CACHE proposed WPF-WORKSPACECACHE01直接父MATURE05，panels，16范围；attachment production直接父MATURE03，w01，24范围（新ID待结构审/管理确认）。两者**确切相交六个literal**：四生产App/session/两projection，加conversation-projection.test.ts、conversation-queue.test.ts两专测。已排先ready CACHE小Interface结构审查，再fresh精确take；附件实际App绑定后续单writer窗口，不预领宽scope。32conversation view/closed-clean0、reply2/2MiB与queue4/64KiB是CACHE提议预算非已实现；保护全部未dismiss材料、unknown、稿件，session release不销命令authority；实际消费者与90s/8MiB定向验证同片交付。附件绑定需准确整套公共输入和4c主线，不能把本记录当授写。
+[完整候选/Interface/容量/验收/精确literal](workspace-cache-attachment-binding-proposals.json)：CACHE已批准并领取的WPF-WORKSPACECACHE01直接父MATURE05，panels，16范围；attachment production直接父MATURE03，w01，ATTACHI02最终24范围（root结构已批，首12已批但待模块main组合base后take）。两者**确切相交六个literal**：四生产App/session/两projection，加conversation-projection.test.ts、conversation-queue.test.ts两专测。CACHE已883321v1正式实施；附件实际App绑定后续单writer窗口，不预领宽scope。32conversation view/closed-clean0、reply2/2MiB与queue4/64KiB是CACHE提议预算非已实现；保护全部未dismiss材料、unknown、稿件，session release不销命令authority；实际消费者与90s/8MiB定向验证同片交付。附件绑定需准确整套公共输入和4c主线，不能把本记录当授写。
 
 ATTACHI02首阶段12literal（同一生产UI任务、尚未take）：详[精确方案](workspace-cache-attachment-binding-proposals.json)，现有Outbox/Queue与真实PluginHost是实际消费者，无Session stub/cast；余12含CACHE六条及Thread/react/messages/浏览器挂载留后续amend。完整dev/prod累计≤10分钟含每轮至少20秒清理、每轮单随机库/1Chromium、证据≤16MiB；超预算如实停，不冒完整App/HTTP已完成。仍待4c模块正式main准确组合base。
 
 Root已批准ATTACHI02首12literal及最终24完整消费者验收，仍须4c正式main组合base后fresh take；测试每轮先定回归目的、记累计耗时，不因失败无限重跑。CACHE六重叠后合法交权再amend。
+
+DPERF后继root最终隔离4task调用样本已[原字节归档](dashboard-proof-fanout-research/source-binding.json)：28starts/main dirty及untracked各4/Trace2区间峰4，非生产snapshot峰值/CPU；本轮不再测。后续只在模块正式main或新固定候选等实质事件推进，不无变化轮询。
