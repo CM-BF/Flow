@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 17:18 UTC |
+| 最近更新 | 2026-10-06 17:28 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 固定1b8/实际0eef受控27/27 PASS、累计4.574秒；后继ec91仅nativeHTTP fixture修正，02398push/clean并获限定源码批准，18其余源未变 |
-| 下一可用交付 | 确定性丢ACK fixture接缝与三center语义收口后再真实IDB/HTTP/App/browser验收；ec91无新运行，原direct余25.426秒不自动续跑 |
+| 下一可用交付 | 原21已派两harness修确定性丢ACK与短有界ownedDB清理，固定独审后再协调真实IDB/HTTP/App/browser；三center语义仍待收口；ec91无新运行，原direct余25.426秒不自动续跑 |
 | 当前阻塞 | ACTIVE: 受控direct不代真实IDB/App及中心语义验收，完整feature review仍未完成；原27不覆盖新fixture运行 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
