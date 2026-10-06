@@ -1,6 +1,6 @@
 # S01 确定性 Runner 容量验证
 
-创建/更新：2026-10-06 07:20 UTC。状态 in-progress；owner Mika / gpt-6-astra。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；已审主线基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
+创建/更新：2026-10-06 08:11 UTC。状态 in-progress；owner Mika / gpt-6-astra。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；已审主线基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
 
 目标：在真实中心、PostgreSQL、独立 runner 进程及持久 outbox 上，区分持久会话数、中心声明容量、实际执行并发与本次确定性工具负载。先找出最小容量缺口，不把观察者、数据库行数或模拟模型当真实 provider 容量。父要求见 [FLOW-001](../flow-001-architecture/plan.md) 与 [FLOW-002](../flow-002-provider-harness/plan.md)。
 
@@ -60,3 +60,11 @@ S01-01/02 是文档片段，不代表压测已运行。实验交付须包含固�
 真正的自动恢复需要一个窄claim回执能力：客户端在发送前持久化稳定requestId；同runner+requestId的重试/查询必须返回同一次已提交的assignment及权属/剩余租约，或明确的未分配/已失效/仍未知状态，不能领取另一个task冒充恢复。中心必须在领取事务中原子绑定requestId与结果，重试冲突/重复键/身份变更要明确拒绝；已过期或uncertain不得通过查回执静默重新执行。接口形状和最小存储方式由后继owner评审，可优先评估既有领取记录的窄扩展，不预设新表/服务或通用调度框架。
 
 此接口属于产品契约与资源行为的新实现范围，未在本S01只读提案中领取或实现。若首交付仅接受保守停admission，可先不引入该接口；若要求丢失claim回执后自动继续，则它是显式前置依赖，必须有“中心已提交/响应丢失/按相同requestId恢复且仅一个attempt”的行为证据。GO认可提案方向不等于该接口存在或产品实现批准。
+
+### S01P01 已授权后继（2026-10-06 08:11 UTC）
+
+GO/Lead已授权首个保守并行执行片段，由 s01p01_owner / gpt-6-astra 在独立工作树负责；权威 [S01P01 plan](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/plan.md) 与 [status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/status.md) 记录实施进度。branch `codex/runner-attempt-pool`，base `9c6fa9b100f04916f43b04280f05f497b28eeb0f`；08:11观察 HEAD `155494b0f797004e5d3299cf26312118dd6664af` clean，仅准备metadata。claim `599454b1-52d2-4f22-8fc2-f68fb7ac6973` v1 ACTIVE、08:07:56.393Z COMMITTED；六个literal scope见该任务claim回执。上述07:46 CHAT08仍占用的观察是历史事实；当前runtime已释放并在固定base领取，不再构成实现阻塞。
+
+首片默认1、显式整数1..16；仅启动或本地active=0时运行既有全目录恢复，任何active存在都不重放其outbox。未知claim或缺completion ACK的持久绑定保守阻断新领取；已知其它attempt继续。收到assignment后先可靠保存绑定再清in-flight意图，不存在“清意图后、开始执行前”丢失占用的空窗。仅confirmed-final不能删除绑定。无新claim回执API/迁移，main/config接线仍由CHAT09/F01后继负责。
+
+S01-06转in-progress，表示独立后继已开工，不表示并发功能已验收。实验预算累计44 tasks/38 attempts、20.925025秒不变；W1/W2不重跑，capacity1/16暂缓，ACK/browser原验收继续开放。后继功能测试使用专库/动态端口及0模型确定性adapter，独立于原测量预算；实际并发、故障隔离、同session互斥、重启未知claim分别取证。Mika负责只读独审，ExecutionLead负责全局索引/聚合登记和已审片段集成。

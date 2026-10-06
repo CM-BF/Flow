@@ -1,5 +1,7 @@
 # S01 工作段质量记录
 
+2026-10-06 08:11 UTC 后继登记安全停点：沿用已记录find-skills本地发现与固定clean-code来源bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5，无新stack/安装。核名称、单一owner、scope与历史/当前事实边界；父plan只链接S01P01唯一status，不复制子任务进度。新片startup/quiescent-only恢复及assignment持久交接明确，真实并发/重启/故障隔离仍等待证据，不由计划当通过。此次仅metadata，检查父TODO/status一致性、跨worktree链接和diff，不运行产品测试；W2raw/manifest不改，旧验收和预算保留。全局索引/聚合登记由ExecutionLead负责。
+
 2026-10-06 06:38 UTC，Mika / gpt-6-astra；本次范围 experiments/runner-capacity 与对应状态。沿用research.md的find-skills结果与固定clean-code来源，应用本地clean-code/codebase-design检查命名、职责、接口、错误收尾、重复和必要复杂度。实验仅复用公开runtime，不改生产。独立worker提出ACK/outbox、IPC失败回收、共同截止、HTTP流上限，均已纳入草稿；重复的限界读取抽为http.ts，进程生命周期留processes.ts，具体场景留smoke.ts。首typecheck暴露不存在的task.id已修复，第二次noEmit0；无零测试通过声明，首次smoke仍待运行。没有容量或provider结论。
 
 2026-10-06 06:41 UTC 修复段：首轮动态SQL揭示静态schema核对漏项，改为首次claim不可变lease计算，查询只引用database.ts实际字段。worker独审确认初始租期来源，时间量化边界保守处理。每个工作SQL共用deadline并预留最长query timeout，最终字节预算计DB+临时文件+既有证据+最终JSON。4th typecheck noEmit0，原smoke-first SHA256 b364ee15b5767bb066d59147ce9cf7064a288ea854dda703b5a62f395f69c8a4 保留。一次预算重分配已写合同/status，复核若再失败不自动重跑。
