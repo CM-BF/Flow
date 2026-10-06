@@ -53,4 +53,4 @@ Event Timing threshold-filtered样本分别189/200/201个，inputDelay中位均�
 
 [1task浅色](baseline-1-light.png)、[1task深色](baseline-1-dark.png)、[16task浅色](baseline-16-light.png)、[16task深色](baseline-16-dark.png)、[128task浅色](retry128-128-light.png)、[128task深色](retry128-128-dark.png)。owner已目视1task浅色与16task深色；本轮固定desktop，不冒充窄屏/屏读/Safari/Firefox新验收。
 
-检查：最终target3d47 Web typecheck通过，2组局部fixture/projection有效性通过；生产smoke与三个完整负载有效（出处见上）。Root独立只读代码与重算raw通过，未并行重跑以免干扰；正式结论待绑定本报告返回。
+检查：最终target3d47 Web typecheck通过，2组局部fixture/projection有效性通过；生产smoke与三个完整负载有效（出处见上）。Root独立APPROVED target3d47与报告adc2595，读代码并重算raw、核build hash与浅深图；未独立重跑browser/typecheck，避免干扰。批准只覆盖benchmark。

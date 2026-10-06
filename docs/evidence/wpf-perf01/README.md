@@ -37,4 +37,4 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/performance
 - [技能与clean-code](quality.md)、[claim回执](coordination-receipt.json)。
 - 初始采样器失败保留 `sampling-wheel-first-failure.json` / `sampling-serialization-failure.json` / `sampling-locator-failure.json` 和对应截图。它们是已修测试采样问题，不能混入App性能结果或删去失败事实。
 
-最终代码与raw已获root只读核对，正式review待完整报告返回；所有未来生产优化另领范围，不在这次脚本中改进数字。
+最终代码3d47与报告adc2595已获root独立APPROVED；所有未来生产优化另领范围，不在这次脚本中改进数字。

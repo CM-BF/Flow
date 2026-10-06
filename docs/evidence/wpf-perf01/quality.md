@@ -23,3 +23,5 @@
 03:18 UTC 完整矩阵：1/16task均完成全部10000新增；128在负载前Task index分页循环遇到harness竞态（读取旧visible按钮后再click等待已disabled、随后移除的按钮），15s失败原样保留baseline-128.json与截图。修复等待每页实际card数增加再下一页；新增严格受控tasks子集与plain label供局部重跑，避免覆盖原证据。新target只改probe，生产build与工作负载不变；128重跑单独retry128前缀，不掩盖首矩阵失败。
 
 03:20:41 UTC 交付前clean-code：代码仍固定3d47，无生产/根manifest/lock变更；1/16保留c40来源，128局部重跑生产assets/HTML字节与hash一致。所有成功场景96可信key/32实际wheel、10040行、pageErrors0；辅助fixture/projection报告来自最后3d47运行。表格明确中间采样/综合壁钟、阈值过滤EventTiming、未强制GC与Profiler不可用，未将数字当性能SLA。Root只读复算同值；保留128首harness失败及三类smoke诊断，未删断言或放宽固定超时。服务/浏览器/temp已finally清理，截图目视浅/深可读。结构复核保持fixture/probe两个职责文件，没有加状态库/插件/生产补丁。无未解决代码finding；正式review待报告回传。
+
+2026-10-06 03:24 UTC 正式review收口：root APPROVED implementation3d47/reportadc2595；实际检查源与未重跑项已逐项转录review，不扩到生产优化。最终metadata只改计划/证据，未重新跑工程套件。当前停止performance-probe.ts写入，待D04管理移交，新PERF02需独立tree/receipt且新证据目录，旧raw保持不覆盖。
