@@ -35,7 +35,7 @@
 | OPS14-02 | completed | native_center_owner | [12 个不同局部检查分轮证据](../../docs/evidence/ops14/README.md) |
 | OPS14-03 | in-progress | native_center_owner | 唯一源码独审通过；模块与新增两例独立审查通过，main 尚未接收 |
 | OPS14-04 | pending | native_center_owner | 两旧包装器 freeze；[精确后继提案](../../docs/evidence/ops14/consumer-migration-proposal.md)，待双方 owner 正式移交 |
+| OPS14-05 | in-progress | native_center_owner | Capture 增量 [3/3 原输出](../../docs/evidence/ops14/capture-tests.stdout)，待唯一独审与 main 接收 |
 
 本片不证明 OS 沙箱、任意后代完整停止、个人服务恢复或 PG 清理。生产调用方未接入时不称 OPS14 完成。
 
-| OPS14-05 | in-progress | native_center_owner | Capture 增量 [3/3 原输出](../../docs/evidence/ops14/capture-tests.stdout)，待唯一独审与 main 接收 |
