@@ -2,11 +2,11 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近 main 同步核验 | 2026-10-06 01:36 UTC / 2026-10-06 01:36 UTC |
+| 最近更新 / 最近 main 同步核验 | 2026-10-06 01:40 UTC / 2026-10-06 01:40 UTC |
 | 单一 status owner / model | assignment_review / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/performance-probes` |
 | Branch | `codex/performance-probes` |
-| 工作基线 / HEAD | base `5bdb7fa293ebd0d13515fe367f004687927f1897`；当前metadata `0cf96179a8538bb5da1aace952e008304102dd9e`；实现/证据 `f226c42dba577053f64a14dcf213180bf150f66d` |
+| 工作基线 / HEAD | base `5bdb7fa293ebd0d13515fe367f004687927f1897`；本次更新前metadata `5d55db1328fecf4c06863b8905e8189ecbf6eae6`；实现/证据 `f226c42dba577053f64a14dcf213180bf150f66d` |
 | 工作树 dirty 状态 | 核验时clean，本次仅规范status/review字段，不改变测量源码/JSON/截图 |
 | 工作分支状态 | completed（branch）；两个vanilla样例、80正式样本+8预热、四张截图与报告完成；固定实现独立方法review APPROVED |
 | 检查状态 | PASSED `f226c42dba577053f64a14dcf213180bf150f66d`；样本正确性/摘要/分位数重算、语法、链接、截图检查通过，后续metadata不声称重跑 |
@@ -30,4 +30,4 @@ find-skills本地优先，实际读用codebase-design、clean-code、frontend-de
 
 ## 下一步 / handoff / dashboard
 
-Execution Lead已批准固定实现及既有证据，独立重算统计/hash并查看2张图，无重跑benchmark。等待lead集成安排；不合并main。全局索引由lead维护。本status是本任务唯一手填进度源，等待D01按此权威worktree聚合，尚未核验dashboard展示。
+Execution Lead已批准固定实现及既有证据，独立重算统计/hash并查看2张图，无重跑benchmark。等待lead集成安排；不合并main。全局索引由lead维护。本status是本任务唯一手填进度源，D02于2026-10-06 01:39:57 UTC通过独立动态端口实际聚合此权威worktree：live/current、4/4、无解析issues，HTTP status正文与文件摘要一致。review仍按既有metadata/实现SHA差异显示outdated，未放宽审批语义。4320旧实例尚待Lead部署，未声称旧页面已刷新。
