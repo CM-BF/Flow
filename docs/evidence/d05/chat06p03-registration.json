@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-06T17:25:06.819Z",
+  "sourceCount": 168,
+  "task": {
+    "id": "CHAT06P03",
+    "title": "减少流式正文重复哈希",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-runner-hash",
+    "branch": "codex/assistant-stream-runner-hash",
+    "planDir": "plans/chat06-runner-prefix-hash",
+    "evidenceDir": "docs/evidence/chat06p03"
+  },
+  "firstCanonical": "2a333f0175c48f4c743c0582035561b54fc0b6ce",
+  "claim": "e8c06a73-522d-43a8-bbfa-7ba97aed154c v1",
+  "parserErrors": [],
+  "parent": "FLOW-001",
+  "coLead": "mika",
+  "humanComplete": true,
+  "checks": "Registry ID uniqueness, actual plan/status/review and parser only; no aggregate/product tests.",
+  "deployment": "PENDING_NORMAL_BATCH"
+}
