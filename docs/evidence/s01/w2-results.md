@@ -1,4 +1,4 @@
-# S01 W2 声明容量对照结果（待独立结果审查）
+# S01 W2 声明容量对照结果（独立审查通过）
 
 本机1个runner注册capacity4，固定12个fixture任务的保守attempt峰值下/上界均为1；adapter/tool IPC观察峰值均1。该负载下仍串行执行，与固定生产base115b中runRunner逐次await execute的源码一致。四slot是中心允许的上限，本次不能把它当单进程已经实现的执行并发。
 
@@ -18,11 +18,15 @@
 
 nearest-rank，n12的p99等于最大样本；不能作稳定tail/SLO。snapshot/events/workspace/conversations的load读取n分别12/11/11/11，activeObserved分别10/8/9/10；这是最近SQL的running观察，不保证请求全程active。首次与后续分开，后续n11/10/10/10，p95分别9.199/6.559/18.899/8.472ms。setup/verification不计入这些读延迟。
 
-center 65次采样：HTTP在途最大1、TCP4、SSE0，RSS最大141099008B。PG 46次采样，center+scheduler合并最大6、observer1；不拆分实际pool用量，pool等待未测。105次本人setup/load/verification查询共206.570ms，不混作纯load查询成本。存储计量12724444B，包含最终结果，低于64MiB。
+center 65次采样：HTTP在途最大1、TCP4、SSE0，RSS最大141099008B。PG 46次采样，center+scheduler合并最大6、observer1；不拆分实际pool用量，pool等待未测。首次PG采样另有1条application_name为空的连接（pid100861），归属unknown，不猜为center/scheduler或autovacuum。105次本人setup/load/verification查询共206.570ms，不混作纯load查询成本。存储计量12724444B，包含最终结果，低于64MiB。
+
+停止阶段另观察到1次claim HTTP failure，receivedAt7680.339ms，在最后terminal观察7662.348ms之后、runner closed7680.347ms之前；不能概括为所有HTTP无失败。72个事件提交的ACK均已核对。W2全部12项dispatch都有lastFalse→firstTrue边界，未沿用W1左端未知描述。
+
+独立reviewer于07:40:32Z核对固定结果0dac，无P1/P2、未运行测试/服务/PG；[结果独审回执](w2-result-independent-review.json)更新结论，原manifest的pending状态作为冻结历史保持原样。
 
 ## 已确认差异与后继
 
-W1四个capacity1进程观察峰值4；W2一个capacity4进程观察峰值1。它们回答配置与执行方式的差异，**12与16任务整阶段时长不作加速比**，也不单凭这两点证明scheduler、DB或模型就是瓶颈。独立结果审查完成前不扩大结论。
+W1四个capacity1进程观察峰值4；W2一个capacity4进程观察峰值1。它们回答配置与执行方式的差异，**12与16任务整阶段时长不作加速比**，也不单凭这两点证明scheduler、DB或模型就是瓶颈。独立结果审查已限定APPROVED固定0dac；没有扩大到真实provider或产品容量结论。
 
 累计44tasks/38actual attempts/38budget-charged attempts，stage用时20.925025秒，原64/64/180秒/64MiB不变；capacity1/16暂缓，ACK2/browser2仍开放。GO允许先在原S01计划内做0调用只读有界slot方案，涉及runtime/outbox时须与CHAT08 owner协调，不抢共享源码；不先写通用调度框架。
 
