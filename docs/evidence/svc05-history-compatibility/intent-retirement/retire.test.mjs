@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile, readFile, lstat, rm, readdir, rename } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, readFile, lstat, rm, readdir, rename, open } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { randomUUID } from 'node:crypto';
@@ -29,8 +29,13 @@ async function fixture(run) {
     async function scan(path) { for (const name of await readdir(path)) { const p = join(path, name), st = await lstat(p); if (st.isDirectory()) await scan(p); else rows.push({ path: p.slice(root.length + 1), bytes: st.size, sha256: sha(await readFile(p)) }); } }
     await scan(root); const bytes = rows.reduce((n, row) => n + row.bytes, 0); peakBytes = Math.max(peakBytes, bytes);
     assert.ok(bytes < 1024 * 1024);
-    // Evidence is emitted before the only irreversible cleanup of this synthetic root.
-    console.log(JSON.stringify({ kind: 'synthetic-checkpoint', root, dev: request.rootIdentity.dev, ino: request.rootIdentity.ino, rows, bytes }));
+    const checkpoint = { kind: 'synthetic-checkpoint', root, dev: request.rootIdentity.dev, ino: request.rootIdentity.ino, rows, bytes };
+    if (process.env.FLOW_RETIREMENT_CHECKPOINT_DIR) {
+      const file = await open(join(process.env.FLOW_RETIREMENT_CHECKPOINT_DIR, request.retirementId + '.json'), 'wx', 0o600);
+      try { await file.writeFile(JSON.stringify(checkpoint) + '\n'); await file.sync(); } finally { await file.close(); }
+      const parent = await open(process.env.FLOW_RETIREMENT_CHECKPOINT_DIR, 'r'); try { await parent.sync(); } finally { await parent.close(); }
+    }
+    console.log(JSON.stringify(checkpoint));
     const st = await lstat(root); assert.deepEqual(identity(st), request.rootIdentity); await rm(root, { recursive: true });
     console.log(JSON.stringify({ kind: 'synthetic-cleanup', root, removed: await lstat(root).then(() => false, e => e.code === 'ENOENT'), peakBytes }));
   }
