@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-06T15:56:12.533Z",
+  "sourceCount": 165,
+  "task": {
+    "id": "TUI01F",
+    "title": "终端显式取消与双端接续",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+    "branch": "codex/tui-task-cancel",
+    "planDir": "plans/tui01f-task-cancel",
+    "evidenceDir": "docs/evidence/tui01f"
+  },
+  "parserErrors": [],
+  "humanComplete": true,
+  "phase": {
+    "state": "review",
+    "source": "explicit"
+  },
+  "canonical": "d65886faf82c7df3c74c5b19fc27f02643b4d9f9",
+  "checks": "Registry uniqueness/actual status and links only; no aggregate/products/tests/PG/provider.",
+  "deployment": "PENDING_NEXT_SAFE_RELOAD"
+}
