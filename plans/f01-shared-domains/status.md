@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:40:38 UTC / main2f16e30a |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:46:03 UTC / mainf10ccc16 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 已审领域582f + client5be；生产固定9406ca5f2aa5a88dbc028d64e09f48f438bd627e |
+| 工作基线 / HEAD | main84005a26与固定O13接口b4f28b；薄client 98e5b2012ffb57b357adcfa7ce68b25608ed631c |
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED d6d5089c680f862e34a8e4d25f8f65d03057e70e；新red1后3/3 HTTP/SSE、types0；生产3分轮与旧queue3历史有效 |
+| 检查状态 | PASSED 98e5b2012ffb57b357adcfa7ce68b25608ed631c；真实HTTP新1+旧1/types0，0PG/provider |
 | 已集成main状态 / HEAD | 浏览器会话领域/client/生产接线13固定源已main84005a26并推送；个人runtime362/v15不变 |
-| Review | APPROVED d6d5089c680f862e34a8e4d25f8f65d03057e70e；Mika接收status_read增量独审，P2 CLOSED；生产9406由native_center_owner独审APPROVED |
-| 实现目标 | d6d5089c680f862e34a8e4d25f8f65d03057e70e |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/browser-session.test.ts |
+| Review | NOT_STARTED — O13单方法client待独立只读；Connection三项原批准/主线事实保留 |
+| 实现目标 | 98e5b2012ffb57b357adcfa7ce68b25608ed631c |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/goal-graph-runs.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 登录恢复公开接口已进入主线，现有个人服务保持。 |
-| 下一可用交付 | 接连续目标旅程的规划运行列表；网页组消费已发布的登录接口。 |
+| 当前产出 | 登录恢复接口已发布；连续目标入口的规划列表接口已完成局部验证。 |
+| 下一可用交付 | 审定规划列表接口，与连续目标旅程的领域实现配套接收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -173,12 +173,14 @@
 
 2026-10-06T12:14:43.577454+00:00：package export adb91已由assignment_review限定只读APPROVED（1行导出/旧3入口和deps不变），60e495领域由native_center_owner独审。main362逐源一致、实际Web声明依赖的public import成功；初次CLI无interaction依赖导致import失败原样保留，不扩CLI依赖来伪装测试。完整NL/TUI UI仍后继。
 
-| F01-35 | in-progress | Lead | [原生工程薄传输](../../docs/evidence/f01/native-engineering-client-manifest.json)；2HTTP/types0待独审 |
+| F01-35 | completed | Lead | [原生工程薄传输](../../docs/evidence/f01/native-engineering-client-manifest.json)；2HTTP/types0待独审 |
 
 2026-10-06 12:52 UTC：F01 v33已交回events.ts给S01P05；[原子回执](../../docs/evidence/f01/s01p05-events-handback.json)。server/runner manifest与lock仍本owner短单写窗口处理X01正式workspace依赖，不阻其他源码领取。
 
 | F01-36 | completed | Lead | [插件安装模块依赖](../../docs/evidence/f01/plugin-runtime-dependency-manifest.json)；只3共享路径和正式workspace输入，待独审 |
 
-| F01-37 | in-progress | Lead | 固定领域DTO31824d8；claim v34新增client直接检查；不操作个人服务。 |
+| F01-37 | completed | Lead | 13固定源已main84005a26；三独审与当前组合检查通过，个人服务未动。 |
 
 2026-10-06 13:36:51 UTC：X01 leaf与F01依赖已main2f16e30a，F01-36完成。029-plugin-material-installs.sql正式预留X01架构owner，028会话不冲突；共享mount/export仍本owner。
+
+| F01-38 | in-progress | Lead | [薄client固定manifest](../../docs/evidence/f01/goal-run-list-client-manifest.json)，新1/旧1真实HTTP与types0；独审待接收。 |

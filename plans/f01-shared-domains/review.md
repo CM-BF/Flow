@@ -283,3 +283,9 @@ APPROVED — assignment_review独立只读3source/3raw/1input同源，无P1/P2�
 Review target commit: d6d5089c680f862e34a8e4d25f8f65d03057e70e
 
 APPROVED — status_read/gpt-6-astra 2026-10-06 13:38:04 UTC独立只读，Mika13:38:16接收；2source/3raw固定hash、两行修复核验，原5be P2 CLOSED，无P1/P2。Bearer显式omit、cookie/connect仍include；原1red→3green与types0复用，0新增PG/provider/reviewer测试。[完整收据](../../docs/evidence/f01/browser-session-client-independent-review.md)。生产9406原批准继续限定三源；其历史manifest保留5be输入，不追溯改写。
+
+## O13 goal planning light list transport
+
+Review target commit: 98e5b2012ffb57b357adcfa7ce68b25608ed631c
+
+NOT_STARTED — 2source/3raw/固定O13 DTO，限定单方法传输，不重审旧graph授权或未完成领域。见[manifest](../../docs/evidence/f01/goal-run-list-client-manifest.json)。

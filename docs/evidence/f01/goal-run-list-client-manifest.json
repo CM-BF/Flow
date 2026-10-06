@@ -1,0 +1,65 @@
+{
+  "target": "98e5b2012ffb57b357adcfa7ce68b25608ed631c",
+  "observedAt": "2026-10-06 13:46:03 UTC",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 48283,
+      "sha256": "ce63ac3f233ff82d2cc9ab77c71b5b01f452cd0bd3e0a87b0bb625933f095f62"
+    },
+    {
+      "path": "packages/client/src/goal-graph-runs.test.ts",
+      "bytes": 6732,
+      "sha256": "781772b70dca8ae19adc00bc3be0d3b263273c1d0eeb4d922c26a8e22e36fd72"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/goal-run-list-client-red.txt",
+      "bytes": 1382,
+      "sha256": "65d36c5c5b02a54ac2afd48bec96c9b9208db8e051b0d75067412cb178eae425"
+    },
+    {
+      "path": "docs/evidence/f01/goal-run-list-client-green.txt",
+      "bytes": 320,
+      "sha256": "ce9ed0b4115195ec04843bc8b8f8dc89f0c5f4c6400d4e4d0eab5584226c5147"
+    },
+    {
+      "path": "docs/evidence/f01/goal-run-list-client-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "readonlyInput": {
+    "target": "b4f28b9486905c4bee2c468aa39f194e881f0df2",
+    "path": "packages/contracts/src/goal-graph-runs.ts",
+    "bytes": 5853,
+    "sha256": "2219151efc4b1daa1f76c40a2ca770c9dd587b4844914bfe7c92923ffd9f8160"
+  },
+  "checks": {
+    "red": {
+      "exit": 1,
+      "selected": 1,
+      "unselected": 1
+    },
+    "green": {
+      "exit": 0,
+      "passed": 2,
+      "new": 1,
+      "existing": 1,
+      "durationMs": 51
+    },
+    "types": {
+      "exit": 0,
+      "toolChunk": "f8939e"
+    },
+    "pgRuns": 0,
+    "providerQueries": 0
+  },
+  "review": "NOT_STARTED",
+  "limits": [
+    "thin transport only; O13 domain and composed native journey not approved here",
+    "typed page passes through; observation controller owns receipt validation and display",
+    "source contract fixed for preparation, not independently approved as complete domain"
+  ]
+}
