@@ -11,18 +11,19 @@ import { build } from "vite";
 import { FlowClient } from "@flow/client";
 import { WorkspaceFeedProjection } from "../src/workspace-feed/projection";
 import { createPerformanceFixture, FIXTURE_TOKEN, TEXT_LENGTH } from "./performance-fixture";
+import { verifyAllRecords } from "./workspace-window.browser";
 
 const root = fileURLToPath(new URL("../../..", import.meta.url));
-const output = join(root, "docs/evidence/wpf-perf01");
+const output = join(root, "docs/evidence/wpf-perf02");
 const appRoot = join(root, "apps/web");
-const BASE = "c526c1c889437ee39155d669921577995195c74e";
+const BASE = "cc33403cd9b357fcd85484b7bc6952dc1220d689";
 const smoke = process.argv.includes("--smoke");
 const selfTestOnly = process.argv.includes("--self-test");
 const selectedTasks = process.argv.find(argument => argument.startsWith("--tasks="))?.slice(8);
 const taskCounts = selectedTasks ? selectedTasks.split(",").map(Number) : smoke ? [1] : [1, 16, 128];
 assert(taskCounts.length > 0 && new Set(taskCounts).size === taskCounts.length && taskCounts.every(count => [1, 16, 128].includes(count)), "--tasks must be a unique subset of 1,16,128");
 assert(!smoke || (taskCounts.length === 1 && taskCounts[0] === 1), "Smoke uses one task");
-const label = process.argv.find(argument => argument.startsWith("--label="))?.slice(8) ?? (smoke ? "smoke" : "baseline");
+const label = process.argv.find(argument => argument.startsWith("--label="))?.slice(8) ?? (smoke ? "smoke" : "window");
 assert(/^[a-z0-9-]+$/.test(label), "--label must be a plain filename prefix");
 const milestones = smoke ? [100, 240] : [100, 1000, 5000, 10000];
 const pause = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
@@ -67,7 +68,7 @@ const phase = (page: Page, name: string) => page.evaluate(name => { window.__flo
 async function measure(page: Page, cdp: CDPSession, name: string) {
   const timing = await page.evaluate(() => {
     const feed = document.querySelector<HTMLElement>(".wf-feed");
-    return { at: performance.now(), domElements: document.querySelectorAll("*").length, renderedRecords: document.querySelectorAll(".wf-records > li").length, scrollTop: feed?.scrollTop, scrollHeight: feed?.scrollHeight, following: document.querySelector(".wf-feed-footer")?.textContent, memoryAPI: { userAgentSpecific: "measureUserAgentSpecificMemory" in performance, legacyMemory: "memory" in performance, crossOriginIsolated }, renderCount: null, renderCountReason: "Ordinary production build has no React profiling instrumentation" };
+    return { at: performance.now(), domElements: document.querySelectorAll("*").length, renderedRecords: document.querySelectorAll(".wf-records > [data-entry-id]").length, loadedRecords: Number(document.querySelector<HTMLElement>(".wf-records")?.dataset.totalRecords), scrollTop: feed?.scrollTop, scrollHeight: feed?.scrollHeight, following: document.querySelector(".wf-feed-footer")?.textContent, memoryAPI: { userAgentSpecific: "measureUserAgentSpecificMemory" in performance, legacyMemory: "memory" in performance, crossOriginIsolated }, renderCount: null, renderCountReason: "Ordinary production build has no React profiling instrumentation" };
   });
   const response = await cdp.send("Performance.getMetrics");
   const metrics = Object.fromEntries(response.metrics.filter(item => ["JSHeapUsedSize", "JSHeapTotalSize", "Nodes", "Documents", "LayoutCount", "RecalcStyleCount", "TaskDuration", "ScriptDuration", "LayoutDuration", "RecalcStyleDuration"].includes(item.name)).map(item => [item.name, item.value]));
@@ -183,7 +184,7 @@ async function runScenario(browser: Browser, dist: string, count: number) {
     result.connectionFormReadyAutomationMs = performance.now() - navigationStart;
     await page.getByLabel("Owner token").fill(FIXTURE_TOKEN);
     const connectStart = performance.now(); await page.getByRole("button", { name: "Connect workspace" }).click();
-    await expect(page.locator(".wf-records > li")).toHaveCount(40);
+    await expect(page.locator(".wf-records")).toHaveAttribute("data-total-records", "40");
     result.workspaceReadyAutomationMs = performance.now() - connectStart;
     result.navigation = await page.evaluate(() => performance.getEntriesByType("navigation").map(entry => entry.toJSON()));
     const checks = await behaviorChecks(page, fixture); result.checks = checks;
@@ -209,10 +210,12 @@ async function runScenario(browser: Browser, dist: string, count: number) {
       await expect.poll(() => fixture.workspaceResponses.some(response => response.nextCursor === targetCursor), { timeout: 180_000, intervals: [100, 250, 500] }).toBe(true);
       checkpoints.push(await measure(page, cdp, `before-reveal-${target}`));
       const revealStart = performance.now(); await follow(page);
-      await expect(page.locator(".wf-records > li")).toHaveCount(40 + target, { timeout: 60_000 });
+      await expect(page.locator(".wf-records")).toHaveAttribute("data-total-records", String(40 + target), { timeout: 60_000 });
+      await expect(page.locator(".wf-records")).toHaveAttribute("data-last-cursor", String(targetCursor));
+      assert(await page.locator(".wf-records > [data-entry-id]").count() < 60);
       await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
       checkpoints.push(await measure(page, cdp, `revealed-${target}`));
-      stages.push({ targetLiveEntries: target, startCursor, targetCursor, deliveryAndInteractionWallMs: performance.now() - started, revealAutomationMs: performance.now() - revealStart, totalDOMRecords: 40 + target });
+      stages.push({ targetLiveEntries: target, startCursor, targetCursor, deliveryAndInteractionWallMs: performance.now() - started, revealAutomationMs: performance.now() - revealStart, totalLoadedRecords: 40 + target, mountedDOMRecords: await page.locator(".wf-records > [data-entry-id]").count() });
       await phase(page, `settled-${target}`); await interactions(page); await follow(page);
       previous = target;
       process.stdout.write(`PERF tasks=${count} live=${target} records=${40 + target}\n`);
@@ -230,6 +233,13 @@ async function runScenario(browser: Browser, dist: string, count: number) {
     assert(timing.keys.length >= milestones.length * 24 && timing.keys.every(sample => sample.trusted));
     assert(timing.wheels.length >= milestones.length * 8 && timing.wheels.every(sample => sample.trusted && sample.to !== sample.from && sample.rafAt !== undefined));
     result.timing = timing;
+    // Full DOM traversal has its own phase; it is not part of the baseline timing sample above.
+    await phase(page, "integrity-traversal");
+    const expected = Array.from({ length: 40 + milestones.at(-1)! }, (_, index) => {
+      const number = index + 1, cursor = count + number, taskId = fixture.ids[index % count]!;
+      return { id: `perf-record-${cursor}`, cursor, text: `Record ${number} for ${taskId}. `.padEnd(TEXT_LENGTH, "x") };
+    });
+    result.integrity = await verifyAllRecords(page, expected);
   } catch (error) {
     result.status = "failed"; result.error = error instanceof Error ? error.stack : String(error);
     result.timing = await page.evaluate(() => window.__flowPerf).catch(() => null);
@@ -246,8 +256,9 @@ async function runScenario(browser: Browser, dist: string, count: number) {
 async function main() {
   await validityChecks();
   if (selfTestOnly) { process.stdout.write("PASS 2 fixture/projection validity groups\n"); return; }
-  const productionDiff = git("diff", BASE, "--", "apps/web/src", "apps/web/package.json", "apps/web/vite.config.ts", "packages/client", "packages/contracts");
-  assert.equal(productionDiff, "", "Performance baseline must not modify production or shared code");
+  const changed = git("diff", "--name-only", BASE, "--", "apps/web/src", "apps/web/package.json", "apps/web/vite.config.ts", "packages/client", "packages/contracts", "package.json", "pnpm-lock.yaml").split("\n").filter(Boolean);
+  const allowed = ["apps/web/src/workspace-feed/ActivityWindow.tsx", "apps/web/src/workspace-feed/WorkspaceOverview.tsx", "apps/web/src/workspace-feed/workspace-feed.css"];
+  assert(changed.every(path => allowed.includes(path)), "Only the claimed Activity display files may change production");
   const temporary = await mkdtemp(join(tmpdir(), "flow-perf-")); const dist = join(temporary, "dist");
   let browser: Browser | undefined;
   try {
