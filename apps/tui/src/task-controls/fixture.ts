@@ -9,7 +9,7 @@ import { FlowClient } from '@flow/client';
 import { createInteractionController } from '@flow/interaction';
 import type { HarnessAdapter, TaskSummary } from '@flow/contracts';
 import { openIntentStore } from '../intent-store.js';
-import { createServer } from '../../../server/src/index.js';
+import type { createServer } from '../../../server/src/index.js';
 import { runRunner } from '../../../runner/src/runtime.js';
 import { verifyText } from '../../../runner/src/verifier.js';
 import { cleanupAfterCheckpoint, observeConnections, type DirectoryIdentity } from './fixture-cleanup.js';
@@ -37,6 +37,12 @@ async function stopGroup(pgid: number) {
 }
 type CancelRequest = { path: string; key: string; body: string; upstreamStatus: number; taskId: string; dropped: boolean };
 type OwnedGroup = { pgid: number; stop: () => Promise<Awaited<ReturnType<typeof stopGroup>>> };
+type Center = Pick<Awaited<ReturnType<typeof createServer>>, 'listen' | 'close'>;
+type HandoffRecipe = {
+  kind: 'web-handoff';
+  createCenter: (options: { databaseUrl: string; ownerToken: string; automaticQueueScan: false }) => Promise<Center>;
+  beforeCleanup: () => Promise<unknown>;
+};
 
 /** Test-only lifetime: one private center/runtime, explicit fixture barriers, two cancellation commands. */
 export class CancelJourney {
@@ -53,8 +59,9 @@ export class CancelJourney {
   private readonly terminals = new Set<() => Promise<void>>();
   private readonly groups: OwnedGroup[] = [];
   private readonly failures: string[] = [];
+  private readonly handoffMarker = randomUUID();
   private admin?: Pool;
-  private app?: Awaited<ReturnType<typeof createServer>>;
+  private app?: Center;
   private proxy?: ReturnType<typeof createHttpServer>;
   private runner?: Promise<void>;
   private created = false;
@@ -66,7 +73,7 @@ export class CancelJourney {
   client!: FlowClient;
   conversationId = '';
 
-  constructor(readonly evidenceDirectory: string) {
+  constructor(readonly evidenceDirectory: string, private readonly recipe?: HandoffRecipe) {
     if (!isAbsolute(evidenceDirectory) || resolve(evidenceDirectory) === resolve('.') || resolve(evidenceDirectory) === tmpdir()) throw Error('Fresh explicit evidence directory required');
     const database = new URL(this.adminUrl);
     if (!['127.0.0.1', 'localhost', '[::1]'].includes(database.hostname) || database.pathname !== '/postgres') throw Error('Only local admin database is allowed');
@@ -88,11 +95,21 @@ export class CancelJourney {
     this.directory = await mkdtemp(join(tmpdir(), 'flow-tui01f-'));
     this.directoryIdentity = await this.readDirectoryIdentity();
     this.record('resources', { database: this.database, directory: this.directory, directoryIdentity: this.directoryIdentity, ownerPid: process.pid });
+    if (this.recipe) this.record('handoffOwnership', { database: this.database, marker: this.handoffMarker });
     await this.save('reservation.json', this.facts);
     this.admin = new Pool({ connectionString: this.adminUrl, max: 1, connectionTimeoutMillis: 2000, query_timeout: 3000 });
     await this.admin.query(`CREATE DATABASE "${this.database}"`); this.created = true;
     const database = new URL(this.adminUrl); database.pathname = `/${this.database}`;
-    this.app = await createServer({ databaseUrl: database.href, ownerToken: this.token, automaticQueueScan: false });
+    if (this.recipe) {
+      await this.save('handoff-database-reservation.json', this.facts.handoffOwnership);
+      const marker = new Pool({ connectionString: database.href, max: 1, connectionTimeoutMillis: 2000, query_timeout: 3000 });
+      try {
+        await marker.query('CREATE TABLE public.tui01f_handoff_owner(marker uuid PRIMARY KEY)');
+        await marker.query('INSERT INTO public.tui01f_handoff_owner VALUES($1)', [this.handoffMarker]);
+      } finally { await marker.end(); }
+    }
+    const factory = this.recipe?.createCenter ?? (await import('../../../server/src/index.js')).createServer;
+    this.app = await factory({ databaseUrl: database.href, ownerToken: this.token, automaticQueueScan: false });
     this.upstream = await this.app.listen({ host: '127.0.0.1', port: 0 });
     this.client = new FlowClient({ baseUrl: this.upstream, token: this.token });
     const registration = await this.client.registerRunner({ name: 'TUI01F synthetic session; no SDK', harnesses: ['claude'], capacity: 1 });
@@ -102,7 +119,7 @@ export class CancelJourney {
     // Attach immediately; final cleanup still observes any rejection and fails closed.
     void this.runner.catch(() => { this.failed('runner-rejected'); });
     await this.startProxy();
-    const accepted = await this.client.createConversation({ title: 'TUI01F synthetic A/B/C', harness: 'claude',
+    const accepted = await this.client.createConversation({ title: this.recipe ? 'TUI01F shared Web and terminal' : 'TUI01F synthetic A/B/C', harness: 'claude',
       requested: { model: 'runner-default', thinking: 'disabled', tools: 'configured-readonly' } }, randomUUID());
     this.conversationId = accepted.conversation.id;
     this.record('origins', { center: this.upstream, proxy: this.proxyUrl, conversationId: this.conversationId });
@@ -113,7 +130,8 @@ export class CancelJourney {
       if (!id) throw Error('Fixture requires the runner-assigned task identity');
       this.activeAdapters.add(id);
       try {
-        await context.emit({ type: 'session', nativeSessionId: context.task.resumeSessionId ?? randomUUID(),
+        const nativeSessionId = context.task.resumeSessionId ?? randomUUID();
+        await context.emit({ type: 'session', nativeSessionId,
           adapterVersion: 'claude-sdk-0.3.290-v1', resources: ['fixture:no SDK/provider'] });
         this.sessions.add(id);
         await new Promise<void>((done, reject) => {
@@ -124,6 +142,13 @@ export class CancelJourney {
         });
         await context.assertOwnership();
         const content = 'Synthetic fixture completed after observer exit.', artifactId = randomUUID();
+        if (this.recipe) {
+          const sourceMessageId = randomUUID();
+          await context.emit({ type: 'assistant-final', nativeSessionId, sourceMessageId, source: 'claude.sdk.result', content,
+            messageId: createHash('sha256').update(JSON.stringify([nativeSessionId, sourceMessageId])).digest('hex'),
+            settings: { requested: { model: 'runner-default', permissionMode: 'dontAsk', thinking: 'disabled' },
+              effective: { model: null, permissionMode: null, thinking: 'unknown', tools: null } } });
+        }
         await context.emit({ type: 'artifact', artifactId, title: 'Fixture text', mediaType: 'text/plain', content,
           version: createHash('sha256').update(content).digest('hex') });
         await context.emit(verifyText(artifactId, content, context.task.verification));
@@ -159,6 +184,39 @@ export class CancelJourney {
   }
   release(id: string) {
     const release = this.barriers.get(id); if (!release) throw Error('Missing fixture barrier'); release();
+  }
+  /** Test-only observer connection; never persist the synthetic bearer outside the private runtime. */
+  handoffConnection() {
+    if (!this.recipe || !this.upstream || !this.conversationId) throw Error('Handoff fixture is not ready');
+    return Object.freeze({ origin: this.upstream, token: this.token, conversationId: this.conversationId });
+  }
+  handoffRuntimePath(kind: 'chrome' | 'pty-journal') {
+    if (!this.recipe || !this.directory || !['chrome', 'pty-journal'].includes(kind)) throw Error('Handoff runtime is not ready');
+    return join(this.directory, kind);
+  }
+  registerHandoffGroup(pgid: number) {
+    if (!this.recipe || !Number.isSafeInteger(pgid) || pgid <= 1 || this.groups.length >= 2 || this.groups.some(group => group.pgid === pgid)) throw Error('Unexpected handoff process');
+    let stopping: Promise<Awaited<ReturnType<typeof stopGroup>>> | undefined;
+    const owned = { pgid, stop: () => stopping ??= stopGroup(pgid) }; this.groups.push(owned);
+    return owned;
+  }
+  async observeHandoffTurn(taskId: string) {
+    if (!this.recipe || this.tasks.length >= 2 || this.tasks.includes(taskId)) throw Error('Two distinct handoff turns only');
+    const snapshot = await this.client.conversation(this.conversationId, AbortSignal.timeout(1500));
+    if (snapshot.lastTurn?.task.id !== taskId || snapshot.lastTurn.number !== this.tasks.length + 1) throw Error('Handoff turn identity mismatch');
+    this.tasks.push(taskId);
+    await this.waitTask(taskId, 'running');
+    const until = performance.now() + 5000;
+    while (!this.sessions.has(taskId) && performance.now() < until) await pause(20);
+    if (!this.sessions.has(taskId)) throw Error('Fixture session was not persisted');
+    return snapshot.lastTurn;
+  }
+  async completeHandoff(facts: { conflict: boolean; draftPreserved: boolean; singleCancel: boolean; recoveredB: boolean; exitWithoutCancel: boolean; visibleFinal: boolean }) {
+    if (!this.recipe || this.tasks.length !== 2 || Object.values(facts).some(value => value !== true)) throw Error('Incomplete handoff');
+    await this.waitTask(this.tasks[0]!, 'cancelled');
+    const last = await this.waitTask(this.tasks[1]!, 'succeeded');
+    if (last.verificationStatus !== 'passed') throw Error('Fixture verification failed');
+    this.record('handoff', facts);
   }
   dropFirstAckFor(id: string) {
     if (this.dropTarget || this.requests.length || id !== this.tasks[0]) throw Error('ACK drop can only be armed once for A');
@@ -270,7 +328,9 @@ export class CancelJourney {
     return { dev: info.dev, ino: info.ino, directory: info.isDirectory(), symbolicLink: info.isSymbolicLink() };
   }
   async close() {
-    if (!this.facts.lostAck || !this.facts.ptyExit || this.tasks.length !== 3 || this.requests.length !== 3) this.failed('incomplete-three-turn-journey');
+    if (this.recipe) {
+      if (!this.facts.handoff || this.tasks.length !== 2 || this.requests.length !== 0) this.failed('incomplete-two-turn-handoff');
+    } else if (!this.facts.lostAck || !this.facts.ptyExit || this.tasks.length !== 3 || this.requests.length !== 3) this.failed('incomplete-three-turn-journey');
     const cleanup: Record<string, unknown> = { database: this.database, directory: this.directory ?? null, irreversibleCleanup: false };
     const attempt = async (label: string, operation: () => Promise<unknown>) => {
       try { cleanup[label] = await operation(); } catch { cleanup[label] = 'unknown'; this.failed(label); }
@@ -293,12 +353,22 @@ export class CancelJourney {
       return true;
     });
     await attempt('centerStopped', async () => { await bounded(this.app?.close() ?? Promise.resolve(), 5000, 'Center shutdown unknown'); return true; });
+    if (this.created && this.recipe) await attempt('databaseOwnership', async () => {
+      const database = new URL(this.adminUrl); database.pathname = `/${this.database}`;
+      const marker = new Pool({ connectionString: database.href, max: 1, connectionTimeoutMillis: 2000, query_timeout: 3000 });
+      try {
+        const rows = (await marker.query('SELECT marker FROM public.tui01f_handoff_owner LIMIT 2')).rows;
+        if (rows.length !== 1 || rows[0].marker !== this.handoffMarker) throw Error('Handoff database ownership unknown');
+        return { markerMatches: true };
+      } finally { await marker.end(); }
+    });
     if (this.created) await attempt('connections', async () => {
       const observation = await observeConnections(async () => (await this.admin!.query(
         'SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid LIMIT 33', [this.database])).rows);
       if (observation.state !== 'empty') this.failed(`connections-${observation.state}`);
       return observation;
     });
+    if (this.recipe) await attempt('finalHandoffResourceBounds', this.recipe.beforeCleanup);
     // Unknown shutdown, failed evidence persistence or test failure retains both DB and tmp.
     const retained = await cleanupAfterCheckpoint({
       checkpoint: () => this.save('checkpoint.json', { at: new Date().toISOString(), facts: this.facts, requests: this.requests, failures: this.failures, cleanup }),
