@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:03:49 UTC / mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:14:00 UTC / mainc34033234e0f313e89b0982eb233f268b5f2172e |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已显示任务归属和122项实际进度，Codex启动配置后继已登记。 |
+| 当前产出 | 看板已显示123项实际进度，工程交付与附件资源两条工作线正在加入。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -55,3 +55,5 @@
 2026-10-06 09:55 UTC：SVC04实际118源发布见[receipt](../../docs/evidence/d05/svc04-registry-live.json)，生成时间以其中09:51:58.837Z为准；前文手填09:53是管理批标签，不作运行采样时间。另补4个已有canonical来源至122；D08含新关系展示实现须独立受控接收，登记本身不代替产品批准。
 
 本次122源部署与领取配置修正见[实际回执](../../docs/evidence/d05/native-tui-registry-live.json)；首次遗漏环境导致unknown保留，10:00:58.896Z账本available。临时独立浏览器核122与父任务按钮后已关闭，未改用户tab。R05D首canonical后登记123源候选，metadata不重跑架构/产品测试。
+
+2026-10-06 10:14 UTC：123源实际回执见[native-launch-registry-live.json](../../docs/evidence/d05/native-launch-registry-live.json)，原R05D人读缺项保留为当时事实、由owner修正。新增ENG01A与WPF-ATTACH01两个真实canonical至125源候选；仅解析、链接和唯一性核对，不重跑架构或产品。
