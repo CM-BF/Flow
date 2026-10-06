@@ -156,3 +156,5 @@ RELEASE03 A3附件场景通过、mixed资源中断、B未启动；累计7,983/18
 2026-10-06T16:45:42.321628+00:00：next12b累计12/12到限停止；16:44:51实际可用1,243,852,800B达到本次1GiB+160MiB准备线，网页组获原固定tuple/累计预算下A→B顺序机会，必须现场再核原门槛。所有12树clean、全部保留文件hash/同main blob/7保护树与配置不变，依赖及自有原始证据未动。过程中共享卷先降后升，差值只作观察，不能归因本操作。最终封存free 1238319104B；O14/O15/TUI/CORE PG不并跑，纯类型/HTTP小检查保各自预算，SVC06大型构建仍2.5GiB门槛。无本队新PG/产品测试/provider或个人服务变更；[完整批次](../../docs/quality/sparse-worktree-2026-10-06/next12b/summary.json)。
 
 2026-10-06T16:50:07.903872+00:00：串行PG窗口次序固定为Web RELEASE03 A→B及实际清理归还 → MATURE02 CORE既有8组专库 → O14/O15/TUI。CORE仅其固定slot请求的fresh1GiB+128MiB、120s工作+80s清理、0provider；没有当前开跑许可，不借16:44余量。两lead直接交窗口，普通小源码/类型/HTTP按原小预算继续；完整SVC门槛不变。
+
+2026-10-06T16:51:27.830936+00:00：Web16:47:43.636已实际归还：两A完整通过，B普通发送后Files同名定位失败，未生成兼容报告；专库removed、两个自有进程exit0/errors[]。下一CORE8组已交Mika，只凭其fresh原gate准入，O14/O15/TUI及Web后继B不并跑。原20,309ms累计/159,691ms剩余保持。[窗口交接](../../docs/quality/sparse-worktree-2026-10-06/next12b/web-core-window-handoff.json)。
