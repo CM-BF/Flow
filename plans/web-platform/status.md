@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:14 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:16 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -19,7 +19,7 @@
 | 优先级 | 1 |
 | 当前产出 | Recovery2498浏览器预检四项归原验收并由唯一owner修源；DPERF04接口收敛；RELEASE A-only已审未运行，窗口仍归Lead |
 | 下一可用交付 | 新资源与窗口事实到位后，执行剩余恢复定向检查及固定362附件历史A-only，不重新准备产物 |
-| 当前阻塞 | ACTIVE: Recovery2498新增行为与真实浏览器仍待验证；RELEASE free1,058,885,632B低于1,107,296,256B未运行，后台362历史缺口保留；轻源码可继续 |
+| 当前阻塞 | ACTIVE: Recovery2498新增行为与真实浏览器仍待验证；Lead15:15实际available1,086,668,800B仍低于1,107,296,256B，RELEASE未运行，后台362历史缺口保留；轻源码可继续 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |

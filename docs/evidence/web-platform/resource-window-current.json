@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-06T15:14:21.657004+00:00",
+  "recordedAt": "2026-10-06T15:16:59.612857+00:00",
   "source": "Root relay of new Lead inbound; no direct outbound, no personal/4320 sample",
   "state": "WINDOW_RETURNED_TO_LEAD_A_NOT_RUN_RESOURCE",
   "release03": {
@@ -107,10 +107,30 @@
   },
   "leadPreparationNotice": {
     "source": "New Lead inbound via root; not independently sampled",
-    "action": "Lead evaluating up to four released engineering worktrees with approved reversible sparse method and per-tree space observations",
-    "completionReceived": false,
+    "action": "Four released engineering worktrees processed; raw receipt received",
+    "completionReceived": true,
     "windowReturnedToThisGroup": false,
     "personalUnchanged": true,
-    "next": "Wait for actual cleanup/window return notice, then exactly one fresh claim/source/dependencies/space gate; do not poll now"
+    "next": "Both actual Lead observations remain below start. Wait for a new material resource/window event, no local polling or retry."
+  },
+  "latestLeadResourceResult": {
+    "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/sparse-worktree-2026-10-06/engineering-four-summary.json",
+    "archive": "resource-engineering-four-lead-summary.json",
+    "sha256": "f711567f80dd7d77ea50f5457241e75ae74791cc0c2fb47dd8e03d42906245f4",
+    "bytes": 2554,
+    "leadInbound": {
+      "at": "2026-10-06T15:14:27Z",
+      "availableBytes": 1087401984,
+      "meaning": "Final operation freeAfter, as relayed by root"
+    },
+    "rawSummaryObservation": {
+      "at": "2026-10-06T15:15:18.606951+00:00",
+      "availableBytes": 1086668800
+    },
+    "requiredStartBytes": 1107296256,
+    "bothBelowStart": true,
+    "sourceBoundary": "Read Lead canonical file, not a local free-space resample; all-volume differences cannot be attributed exclusively to this operation or any team. Logical dematerialized bytes are not available space.",
+    "action": "Four authorized released own trees only, retained hashes unchanged. No broader cleanup by this group. Lead O14/O15 PG NOT_RUN per inbound.",
+    "window": "Still Lead; no retry/poll/lowered gate; Recovery source-only harness and W01 bounded read-only preauth plugin proposal remain source work, not runtime admission."
   }
 }

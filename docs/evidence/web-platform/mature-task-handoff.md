@@ -1,6 +1,8 @@
 # 成熟聊天大task来源与登记队列
 
-**当前资源交接：A-only 精确准入门槛，尚未重新占窗口。** Lead正按已审可逆方法逐树处理最多四棵已释放工程树；尚无清理完成/窗口交回本组的实际回执，本组不轮询空间。history启动须 **1,107,296,256B（1GiB+32MiB）**，运行停止阈值 **1,090,519,040B（1GiB+16MiB）**；依据Lead前次单库12,360,727B加有界保留证据8MiB，**0Chrome/build、TSX cache关闭**。PG/WAL/OS实际峰未知，不称硬quota。单次60秒含20秒清理、累计180秒仍使用0；432b两源只读审查通过，1.839676秒noEmit仅绑定前版997d。**只有Lead新实际清理/窗口回执后才一次fresh gate；目前仍0A/PG/Chrome，无history red或部署请求依据。** [唯一当前资源记录](resource-window-current.json)。
+**当前资源交接：Lead四棵已释放工程树可逆稀疏已完成，窗口仍归Lead。** [原始summary](resource-engineering-four-lead-summary.json)保留两时点：入站15:14:27最后一树freeAfter **1,087,401,984B**；文件15:15:18.606951Z总观察available **1,086,668,800B**。两者均低于history/Recovery启动 **1,107,296,256B（1GiB+32MiB）**，不复采/重试/降低gate；Lead O14/O15 PG同样NOT_RUN。仅四棵获准树，源码/自身证据/fixture/依赖保留、retained hashes不变；逻辑去物化量不当free，全卷变化不归因单队。
+
+history运行停止阈值仍 **1,090,519,040B（1GiB+16MiB）**；依据前次单DB12,360,727B加有界保留证据8MiB，0Chrome/build、TSX cache关闭，不是PG/WAL/OS峰值或硬quota。单次60秒含20秒清理、累计180秒已用0；432b源审通过，1.839676秒types仅绑定997d。**目前仍0A/PG/Chrome，无history red或部署请求依据**。panels只修原21 harness源码，w01只读preauth P01方案；不因源码活动收回运行窗口。[唯一资源记录](resource-window-current.json)。
 
 ## SVC05 窗口已正式关闭；D06 原源继续（本段取代窗口暂冻状态）
 
