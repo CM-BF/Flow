@@ -1,0 +1,161 @@
+{
+  "at": "2026-10-06T22:06:56.916087+00:00",
+  "sourceTarget": "12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2",
+  "delivery": "bdca481cd042ffe46ab95b7220d90f4795c01da2",
+  "review": "/tmp/flow-ops14-svc05h-independent-review.json",
+  "reviewSha256": "8239432e569a7240ac2bea14a0b655903172d06922e50bf307e898477ccb33d2",
+  "integrationBase": "8dcd3c9d6918268e0c406a970d82972abd246b06",
+  "preimageMatchesBaseline": "78fb37704d708e3b3b6ea4f1810947f012666196",
+  "fixedBindings": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+      "role": "source",
+      "commit": "12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2",
+      "bytes": 2740,
+      "sha256": "4a775b680fc5b358490c744af66311d8d1ba1169216cac0eeed1b23741a2fcda"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+      "role": "historical-input",
+      "commit": "78fb37704d708e3b3b6ea4f1810947f012666196",
+      "bytes": 2328,
+      "sha256": "cb9e20c2db02fdb590c3ac1195f96453d65b832822143f65497e89d101e44299"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervision_test.py",
+      "role": "source",
+      "commit": "12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2",
+      "bytes": 3002,
+      "sha256": "86174d6d8994d06e57622b160ea56e3c43bc74c96ec6bdfaa98e087d5984d265"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervision_test.py",
+      "role": "historical-input",
+      "commit": "78fb37704d708e3b3b6ea4f1810947f012666196",
+      "bytes": 2154,
+      "sha256": "0e4ff39a790ce469401ced881e135b8dec78040e9b8b384c8a20c89e18778c44"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "role": "approved-shared-module",
+      "commit": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "role": "approved-shared-module",
+      "commit": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+      "bytes": 12306,
+      "sha256": "494635e4ed3e24e89f565f7d53a74b807565a1020a4c4d7d93a18b60d7451f8d"
+    },
+    {
+      "path": "tools/owned-process-supervision/README.md",
+      "role": "approved-shared-module",
+      "commit": "afd01a0387f8cc9d9797109be1fdead74606a4af",
+      "bytes": 2553,
+      "sha256": "16c33816012e3551ce17ebf760e019b872689b0ee463f469e897fa37197b29f2"
+    },
+    {
+      "path": "AGENTS.md",
+      "role": "protected-rule",
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "bytes": 17226,
+      "sha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "role": "protected-rule",
+      "commit": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+      "bytes": 15077,
+      "sha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/operator.mjs",
+      "role": "protected-operator-git-only",
+      "commit": "78fb37704d708e3b3b6ea4f1810947f012666196",
+      "bytes": 8729,
+      "sha256": "2a5eee0c10604aa4df2a4fc9ee0bdf0da86f14ea154247ddeb9bff3fd960bff0"
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-amend-receipt.json",
+      "role": "evidence",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "bytes": 815,
+      "sha256": "8a6fd5be78fa933f7d5f424d56471db1eef60ad3c3e34a10d735c45a654a2b43"
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-amend-request.json",
+      "role": "evidence",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "bytes": 466,
+      "sha256": "0fa6f63ab5b07cfd4869f6882817495f9ad003aa3b7cb004e8b0a08f27335f03"
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-checks.md",
+      "role": "evidence",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "bytes": 1144,
+      "sha256": "f4592cbea24cba6de8cc1b0ac41e1e10d0014a4dc7dbd54043797c23a2d53fe3"
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-interface.md",
+      "role": "evidence",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "bytes": 1754,
+      "sha256": "ed1d54e888309c92f220e75cf422da648b118841c97227aa0d550764c1ddf3a0"
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-prior-release-receipt.json",
+      "role": "evidence",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "bytes": 682,
+      "sha256": "c0b17b20fef48b8121241493948da1cb5d1cbbe950b465575a2e5358f9732336"
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-source-provision.json",
+      "role": "evidence",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "bytes": 1082,
+      "sha256": "35e6515326f10689a8a00b513bebea07e2553db84fd024c23767a9a142cb6352"
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-status-parse.json",
+      "role": "evidence",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "bytes": 3733,
+      "sha256": "125ebe00e6029e4f128a78808c8fa937c4491907936c27e73b6df018e1e8343d"
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-tests.json",
+      "role": "evidence",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "bytes": 1793,
+      "sha256": "e291b7912f8c208a1fb1d21a30c8971b91e1b7ca51cc62129093f04cbc197825"
+    },
+    {
+      "path": "docs/evidence/ops14/svc05h-tests.stdout",
+      "role": "evidence",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "bytes": 1137,
+      "sha256": "e04ba449ce54097fd5c58be64d5a217dbb55ca568e3ba65bd9651d5e8103d32f"
+    },
+    {
+      "path": "docs/evidence/ops14/independent-capture-review.json",
+      "role": "evidence",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "bytes": 2681,
+      "sha256": "e53112000042c78094d40f14ed7165487b8e67c6e10dcd01d291305738d1f70f"
+    },
+    {
+      "path": "docs/evidence/ops14/independent-capture-review-bindings.json",
+      "role": "evidence",
+      "commit": "25ada9545c7ac0c630df737c85565ef0c110de7d",
+      "bytes": 18074,
+      "sha256": "3b4d3cb3ad2a48edb123c716a2d7da2b507184b9adc326219f8cfde3d5b2a19c"
+    }
+  ],
+  "actualValidation": "Original2/2 directconsumer410ms; no rerun",
+  "limits": "Only future SVC05H wrapper; no actual recovery/license reuse. SVC07 consumer remains successor.",
+  "reviewArchived": "docs/evidence/ops14/independent-svc05h-review.json"
+}

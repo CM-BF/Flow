@@ -1,0 +1,1070 @@
+{
+  "at": "2026-10-06T22:03:19.465870+00:00",
+  "scope": [
+    "web-conversation-activity",
+    "web-conversations"
+  ],
+  "ledger": {
+    "path": "/tmp/flow-retired-two-vite-cache-ledger.json",
+    "sha256": "98ecbe9d9d0d40e03d076c432a06306c0da4b2c8c43d602cdba09fa363eaa847"
+  },
+  "kernelSnapshot": {
+    "lsofExit": 0,
+    "psExit": 0,
+    "tcpExit": 0,
+    "scope": "one bounded kernel metadata read filtered only exact2worktree roots; no request to preview ports"
+  },
+  "items": [
+    {
+      "tree": "web-conversation-activity",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/apps/web/node_modules/.vite",
+      "head": {
+        "exit": 0,
+        "value": "7564a032e586c303b6bd0a4a98774ea7fff277f4",
+        "error": ""
+      },
+      "status": {
+        "exit": 0,
+        "value": "",
+        "error": ""
+      },
+      "claims": [
+        {
+          "taskId": "WPF-ACTIVITY01",
+          "claimId": "51f962ee-7e6f-4806-a9f9-df3838dc27f5",
+          "version": 2,
+          "state": "released",
+          "worker": "workspace_panels_owner",
+          "scope": [
+            "apps/web/src/conversation-activity/ConversationActivity.tsx",
+            "apps/web/src/conversation-activity/activity.css",
+            "apps/web/src/conversation-activity/projection.ts",
+            "apps/web/test/conversation-activity.browser.ts",
+            "apps/web/test/conversation-activity.fixture.ts",
+            "apps/web/test/conversation-activity.test.ts",
+            "docs/evidence/wpf-activity01",
+            "plans/wpf-activity01"
+          ]
+        },
+        {
+          "taskId": "WPF-ACTIVITY01",
+          "claimId": "707b1c6c-1032-42ec-a876-9476d40bc181",
+          "version": 2,
+          "state": "released",
+          "worker": "workspace_panels_owner",
+          "scope": [
+            "docs/evidence/wpf-activity01/README.md",
+            "docs/evidence/wpf-activity01/preview-retirement",
+            "plans/wpf-activity01/status.md"
+          ]
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md",
+          "sha256": "145d939f925aa71398b76de8d2a6ce828549501cec8c34397dede27910cb4ee3",
+          "deliveredDeclared": true,
+          "completedLegacy": false,
+          "previewMentions": [
+            "当前独立模拟预览 `http://127.0.0.1:53851/` 已于 2026-10-06 21:54 UTC 按 Lead/GO 新授权退役；历史 URL 和启动方法保留作追溯，不表示仍在运行。[退役原件与边界](../../docs/evidence/wpf-activity01/preview-retirement/README.md)。",
+            "| D04当前metadata claim | 707b1c6c-1032-42ec-a876-9476d40bc181 / v1 active；21:56:34.337Z新take，owner本人live核；仅status/README/preview-retirement。正常提交推送clean后全三scope停写，由管理fresh release |",
+            "独立预览 http://127.0.0.1:53851/ ，service owner workspace_panels_owner / session46011；HTTP fixture，0模型/真实DB，非App已接线。以当前固定源启，后续只metadata；启动法见[交付](../../docs/evidence/wpf-activity01/README.md)。同模块首版52883已确认自身PID/cwd后关闭重启，所有旧产品/工程预览未改。",
+            "2026-10-06T06:28:42Z 集成停点：main/origin精确acfd、主树clean、target祖先及六源码零diff已独立核。不重跑产品检查，不将模块集成说成App接通或真实CHAT05运行验证；53851/session46011及旧服务保持。",
+            "2026-10-06T21:54:20.866804Z 仅向重新确证的 Node PID31365 发 SIGTERM；session46011 实际 exit143。PGID30394、父链和53849/53850/53851监听随后均未见残留；exit143不能证明每个异步关闭handler完成。固定8cc13e源与工作树均前后不变、clean。Root对当前冻结输入未发现声明依赖冲突，见[有界consumer核验](../../docs/evidence/wpf-activity01/preview-retirement/root-two-preview-known-consumer-check.json)。未改用户tab或任何KEEP服务，未删除cache/deps，未新跑产品检查、parser、HTTP/PG/模型。Dashboard由管理读本status，未在本轮复采。"
+          ]
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md",
+          "sha256": "145d939f925aa71398b76de8d2a6ce828549501cec8c34397dede27910cb4ee3",
+          "deliveredDeclared": true,
+          "completedLegacy": false,
+          "previewMentions": [
+            "当前独立模拟预览 `http://127.0.0.1:53851/` 已于 2026-10-06 21:54 UTC 按 Lead/GO 新授权退役；历史 URL 和启动方法保留作追溯，不表示仍在运行。[退役原件与边界](../../docs/evidence/wpf-activity01/preview-retirement/README.md)。",
+            "| D04当前metadata claim | 707b1c6c-1032-42ec-a876-9476d40bc181 / v1 active；21:56:34.337Z新take，owner本人live核；仅status/README/preview-retirement。正常提交推送clean后全三scope停写，由管理fresh release |",
+            "独立预览 http://127.0.0.1:53851/ ，service owner workspace_panels_owner / session46011；HTTP fixture，0模型/真实DB，非App已接线。以当前固定源启，后续只metadata；启动法见[交付](../../docs/evidence/wpf-activity01/README.md)。同模块首版52883已确认自身PID/cwd后关闭重启，所有旧产品/工程预览未改。",
+            "2026-10-06T06:28:42Z 集成停点：main/origin精确acfd、主树clean、target祖先及六源码零diff已独立核。不重跑产品检查，不将模块集成说成App接通或真实CHAT05运行验证；53851/session46011及旧服务保持。",
+            "2026-10-06T21:54:20.866804Z 仅向重新确证的 Node PID31365 发 SIGTERM；session46011 实际 exit143。PGID30394、父链和53849/53850/53851监听随后均未见残留；exit143不能证明每个异步关闭handler完成。固定8cc13e源与工作树均前后不变、clean。Root对当前冻结输入未发现声明依赖冲突，见[有界consumer核验](../../docs/evidence/wpf-activity01/preview-retirement/root-two-preview-known-consumer-check.json)。未改用户tab或任何KEEP服务，未删除cache/deps，未新跑产品检查、parser、HTTP/PG/模型。Dashboard由管理读本status，未在本轮复采。"
+          ]
+        }
+      ],
+      "metadataErrors": [],
+      "pathComponents": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity",
+          "dev": 16777234,
+          "ino": 118465681,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/apps",
+          "dev": 16777234,
+          "ino": 118465696,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/apps/web",
+          "dev": 16777234,
+          "ino": 118465903,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 118504098,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 118537247,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "identityError": null,
+      "rootDevIno": [
+        16777234,
+        118537247
+      ],
+      "processes": [
+        {
+          "tree": "web-conversation-activity",
+          "pid": "15811",
+          "ppid": "15634",
+          "command": "/opt/homebrew/Ce"
+        }
+      ],
+      "openFiles": [],
+      "listeners": [
+        {
+          "pid": "15811",
+          "command": "node",
+          "port": 51452
+        },
+        {
+          "pid": "15811",
+          "command": "node",
+          "port": 51453
+        },
+        {
+          "pid": "15811",
+          "command": "node",
+          "port": 51454
+        }
+      ],
+      "verdict": "KEEP_ACTIVE_CONSUMER",
+      "reason": "Exact worktree process/open-file or listener",
+      "fileAudit": "NOT_RUN if prior gate failed",
+      "externalConsumerStatus": "Web manager independent confirmation pending; no claim of global absence"
+    },
+    {
+      "tree": "web-conversations",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/apps/web/node_modules/.vite",
+      "head": {
+        "exit": 0,
+        "value": "c057d9a9326e6cb57b235bbf4a33463fe989c9c0",
+        "error": ""
+      },
+      "status": {
+        "exit": 0,
+        "value": "",
+        "error": ""
+      },
+      "claims": [
+        {
+          "taskId": "WPF-CHAT01",
+          "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+          "version": 7,
+          "state": "released",
+          "worker": "workspace_panels_owner",
+          "scope": [
+            "apps/web/src/conversations/ConversationList.tsx",
+            "apps/web/src/conversations/conversations.css",
+            "apps/web/src/conversations/messages.ts",
+            "apps/web/test/conversation.browser.ts",
+            "apps/web/test/conversation.fixture.ts",
+            "docs/evidence/wpf-chat01",
+            "plans/wpf-chat01-conversations"
+          ]
+        },
+        {
+          "taskId": "WPF-CHAT01",
+          "claimId": "da159c3d-c518-41d7-a94b-6919e9180fcf",
+          "version": 2,
+          "state": "released",
+          "worker": "workspace_panels_owner",
+          "scope": [
+            "docs/evidence/wpf-chat01/README.md",
+            "docs/evidence/wpf-chat01/preview-retirement",
+            "plans/wpf-chat01-conversations/status.md"
+          ]
+        }
+      ],
+      "canonical": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/status.md",
+          "sha256": "40c3fb31720d34b901b380dd1fd5209306e1178f93e1d287be55b8f746579613",
+          "deliveredDeclared": true,
+          "completedLegacy": false,
+          "previewMentions": [
+            "当前模拟预览 `http://127.0.0.1:63743/` 已于 2026-10-06 21:54 UTC 按 Lead/GO 新授权退役；历史 URL 和启动方法保留作追溯，不表示仍在运行。[退役原件与边界](../../docs/evidence/wpf-chat01/preview-retirement/README.md)。",
+            "| 实现范围 | apps/web/src/App.tsx, apps/web/src/components/assistant-ui/elements/thread.aui.tsx, apps/web/src/conversations/ConversationList.tsx, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/conversations.css, apps/web/src/conversations/messages.ts, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/plugin-integration/react.tsx, apps/web/src/plugin-integration/session.ts, apps/web/test/conversation-outbox.test.ts, apps/web/test/conversation-projection.test.ts, apps/web/test/conversation.browser.ts, apps/web/test/conversation.fixture.ts |",
+            "| D04当前metadata claim | da159c3d-c518-41d7-a94b-6919e9180fcf / v1 active；21:56:34.593Z新take，owner本人live核；仅status/README/preview-retirement。正常提交推送clean后全三scope停写，由管理fresh release |",
+            "新CHAT预览 http://127.0.0.1:63743/，session14932，owner本agent，HTTP fixture模拟无模型，movingtree开发候选；启动 `PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversation.fixture.ts --preview` 动态端口。旧M02 http://127.0.0.1:49922/ session17885 与I01 http://127.0.0.1:55049/ session79831继续保留；不暗换用户tab，不在旧树恢复已移交代码。04:04:44 UTC实采4320 42sources：本卡current=true/human.complete=true/issues=[]，checks passed与review not_started都绑定842，implementationProof unchanged，claim v1 active matchesSource=true；main8f not-contained。采样时metadata dirty，证据见[摘录](../../docs/evidence/wpf-chat01/dashboard-observation.json)。",
+            "2026-10-06T21:54:41.744356Z 仅向重新确证的 Node PID60286 发 SIGTERM；session14932 实际 exit143。PGID60270、父链及其esbuild子进程和63742/63743监听随后均未见残留；exit143不能证明每个异步关闭handler完成。固定eb2fc99源与工作树均前后不变、clean。Root对当前冻结输入未发现声明依赖冲突，见[有界consumer核验](../../docs/evidence/wpf-chat01/preview-retirement/root-two-preview-known-consumer-check.json)。未改用户tab或任何KEEP服务，未删除cache/deps，未新跑产品检查、parser、HTTP/PG/模型。Dashboard由管理读本status，未在本轮复采。"
+          ]
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/status.md",
+          "sha256": "40c3fb31720d34b901b380dd1fd5209306e1178f93e1d287be55b8f746579613",
+          "deliveredDeclared": true,
+          "completedLegacy": false,
+          "previewMentions": [
+            "当前模拟预览 `http://127.0.0.1:63743/` 已于 2026-10-06 21:54 UTC 按 Lead/GO 新授权退役；历史 URL 和启动方法保留作追溯，不表示仍在运行。[退役原件与边界](../../docs/evidence/wpf-chat01/preview-retirement/README.md)。",
+            "| 实现范围 | apps/web/src/App.tsx, apps/web/src/components/assistant-ui/elements/thread.aui.tsx, apps/web/src/conversations/ConversationList.tsx, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/conversations.css, apps/web/src/conversations/messages.ts, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/plugin-integration/react.tsx, apps/web/src/plugin-integration/session.ts, apps/web/test/conversation-outbox.test.ts, apps/web/test/conversation-projection.test.ts, apps/web/test/conversation.browser.ts, apps/web/test/conversation.fixture.ts |",
+            "| D04当前metadata claim | da159c3d-c518-41d7-a94b-6919e9180fcf / v1 active；21:56:34.593Z新take，owner本人live核；仅status/README/preview-retirement。正常提交推送clean后全三scope停写，由管理fresh release |",
+            "新CHAT预览 http://127.0.0.1:63743/，session14932，owner本agent，HTTP fixture模拟无模型，movingtree开发候选；启动 `PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversation.fixture.ts --preview` 动态端口。旧M02 http://127.0.0.1:49922/ session17885 与I01 http://127.0.0.1:55049/ session79831继续保留；不暗换用户tab，不在旧树恢复已移交代码。04:04:44 UTC实采4320 42sources：本卡current=true/human.complete=true/issues=[]，checks passed与review not_started都绑定842，implementationProof unchanged，claim v1 active matchesSource=true；main8f not-contained。采样时metadata dirty，证据见[摘录](../../docs/evidence/wpf-chat01/dashboard-observation.json)。",
+            "2026-10-06T21:54:41.744356Z 仅向重新确证的 Node PID60286 发 SIGTERM；session14932 实际 exit143。PGID60270、父链及其esbuild子进程和63742/63743监听随后均未见残留；exit143不能证明每个异步关闭handler完成。固定eb2fc99源与工作树均前后不变、clean。Root对当前冻结输入未发现声明依赖冲突，见[有界consumer核验](../../docs/evidence/wpf-chat01/preview-retirement/root-two-preview-known-consumer-check.json)。未改用户tab或任何KEEP服务，未删除cache/deps，未新跑产品检查、parser、HTTP/PG/模型。Dashboard由管理读本status，未在本轮复采。"
+          ]
+        }
+      ],
+      "metadataErrors": [],
+      "pathComponents": [
+        {
+          "path": "/Users",
+          "dev": 16777234,
+          "ino": 16805,
+          "uid": 0,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine",
+          "dev": 16777234,
+          "ino": 273828,
+          "uid": 501,
+          "mode": 488,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects",
+          "dev": 16777234,
+          "ino": 435567,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness",
+          "dev": 16777234,
+          "ino": 110171953,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+          "dev": 16777234,
+          "ino": 116241915,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+          "dev": 16777234,
+          "ino": 117429951,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/apps",
+          "dev": 16777234,
+          "ino": 117429966,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/apps/web",
+          "dev": 16777234,
+          "ino": 117430038,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/apps/web/node_modules",
+          "dev": 16777234,
+          "ino": 117528239,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/apps/web/node_modules/.vite",
+          "dev": 16777234,
+          "ino": 117543190,
+          "uid": 501,
+          "mode": 493,
+          "directory": true,
+          "symlink": false
+        }
+      ],
+      "identityError": null,
+      "rootDevIno": [
+        16777234,
+        117543190
+      ],
+      "processes": [],
+      "openFiles": [],
+      "listeners": [],
+      "verdict": "ELIGIBLE_LOCAL_PENDING_EXTERNAL_CHECK",
+      "reason": "Released claim; clean delivered canonical; no kernel consumer observed at intake; exact cache is ignored, real directory and bounded regular nlink1 files stable during hashing. Final operator must fresh-check identity and receive Web manager external/preview retirement confirmation.",
+      "fileAudit": {
+        "status": "PASSED_LOCAL_READ_ONLY",
+        "limit": {
+          "files": 10000,
+          "logicalBytesPerCache": 536870912,
+          "totalWallSeconds": 20
+        },
+        "rootBefore": [
+          16777234,
+          117543190,
+          16877,
+          501,
+          3,
+          96,
+          1791258698250362041,
+          1791258698250362041
+        ],
+        "rootAfter": [
+          16777234,
+          117543190,
+          16877,
+          501,
+          3,
+          96,
+          1791258698250362041,
+          1791258698250362041
+        ],
+        "directories": [
+          {
+            "path": ".",
+            "dev": 16777234,
+            "ino": 117543190,
+            "uid": 501,
+            "mode": 493
+          },
+          {
+            "path": "deps",
+            "dev": 16777234,
+            "ino": 117543191,
+            "uid": 501,
+            "mode": 493
+          }
+        ],
+        "files": [
+          {
+            "path": "deps/@assistant-ui_react-markdown.js",
+            "dev": 16777234,
+            "ino": 117543195,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 468947,
+            "sha256": "fb767bf3fa9e2179c88c6852e0c277a7c7ad938f436fcbd6c4df63d1426b8a00"
+          },
+          {
+            "path": "deps/@assistant-ui_react-markdown.js.map",
+            "dev": 16777234,
+            "ino": 117543227,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 798000,
+            "sha256": "28dfb24b8e96717cd494b74f369daf261be2d43a21d8eb70bd0e2dcd81d4748d"
+          },
+          {
+            "path": "deps/@assistant-ui_react.js",
+            "dev": 16777234,
+            "ino": 117543196,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9314,
+            "sha256": "7b53598b1beb90fe228ef4af7d2ad17f352e797038570d6810cfe6230418b2ec"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js",
+            "dev": 16777234,
+            "ino": 117543197,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 6414,
+            "sha256": "39010ebc05001319dac5d6e980ad3654a5f568fbd6841e185b7b6f4be866689b"
+          },
+          {
+            "path": "deps/@radix-ui_react-avatar.js.map",
+            "dev": 16777234,
+            "ino": 117543228,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9678,
+            "sha256": "80692c445f462a6a9222751b50edf3d459dd756fa67a61f5e0998eda8a00122e"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js",
+            "dev": 16777234,
+            "ino": 117543198,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 6169,
+            "sha256": "e70d4407e09ad03548ad0a9cf15d38e5d35e2c6cbe9459477af273c5af27f282"
+          },
+          {
+            "path": "deps/@radix-ui_react-collapsible.js.map",
+            "dev": 16777234,
+            "ino": 117543229,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9306,
+            "sha256": "4a3dd255a865249068a08f8ddfe7b272c7a2d5bda00edc565355c3298e6801ce"
+          },
+          {
+            "path": "deps/@radix-ui_react-dialog.js",
+            "dev": 16777234,
+            "ino": 117543199,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 604,
+            "sha256": "a2a8310bf20d4e65e7ae1e6db703cf0053669a9e188aabb90d8d986491bc71a7"
+          },
+          {
+            "path": "deps/@radix-ui_react-slot.js",
+            "dev": 16777234,
+            "ino": 117543200,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 174,
+            "sha256": "ebb6d40561dc9bb1e59b435116d56ece0adb581cfd36199c9f8f0105547c972d"
+          },
+          {
+            "path": "deps/@radix-ui_react-tooltip.js",
+            "dev": 16777234,
+            "ino": 117543201,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 459,
+            "sha256": "d221c27c64f05974728ce02d3c07a0e08cae2ec858e1a3035075e1cef759b9f5"
+          },
+          {
+            "path": "deps/_metadata.json",
+            "dev": 16777234,
+            "ino": 117543253,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 7094,
+            "sha256": "18f882ad6613175e8f02194479fffc5eaabce7a3c4e95578c63e3cd568444314"
+          },
+          {
+            "path": "deps/ansi-to-react.js",
+            "dev": 16777234,
+            "ino": 117543202,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 46242,
+            "sha256": "3fd9abb98537d6aabef27e83a134b1929393a4c0129d78afd8001a3cf1de1ab6"
+          },
+          {
+            "path": "deps/ansi-to-react.js.map",
+            "dev": 16777234,
+            "ino": 117543230,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 84631,
+            "sha256": "74ccc31ea9ad47bff4f7f36b76e48f3cb16b00aa0da403f92d906c876e987905"
+          },
+          {
+            "path": "deps/class-variance-authority.js",
+            "dev": 16777234,
+            "ino": 117543203,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2714,
+            "sha256": "08017aaa068389a314c1a6bbf1551c24b229e87719bcb0b52043fe0c5b413121"
+          },
+          {
+            "path": "deps/class-variance-authority.js.map",
+            "dev": 16777234,
+            "ino": 117543231,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 4677,
+            "sha256": "6861124690d80cc4dfa2aa50c188f6d6f660917efae65268a807143adae90222"
+          },
+          {
+            "path": "deps/clsx.js",
+            "dev": 16777234,
+            "ino": 117543204,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 595,
+            "sha256": "c31b97899bb8f5b4e521c21f2432b92a9b25f55a3b594c120a06d9a1c4117ea9"
+          },
+          {
+            "path": "deps/clsx.js.map",
+            "dev": 16777234,
+            "ino": 117543232,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1075,
+            "sha256": "19332de7b6d898c3e260f47d1a3a74c0b3c2a05fc896cfd6fe467723dafcb7cb"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js",
+            "dev": 16777234,
+            "ino": 117543216,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 93688,
+            "sha256": "7cf60edaef1dabed87527126a577dee85c9bbd59cfd936038c8a9febc64d9a39"
+          },
+          {
+            "path": "deps/dist-B5gm6s0g.js.map",
+            "dev": 16777234,
+            "ino": 117543233,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 183124,
+            "sha256": "f2c7877f8da9a62596ad562419b21fd7916af9bb4221429e5103e14f3c3316b9"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js",
+            "dev": 16777234,
+            "ino": 117543217,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 14748,
+            "sha256": "005fd2de37f5f053725e079d66e0214c84b7cf083379da084690e969ea5a747b"
+          },
+          {
+            "path": "deps/dist-Bi61o8Lr.js.map",
+            "dev": 16777234,
+            "ino": 117543234,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 24099,
+            "sha256": "7232ef8a5a0a54b0a13fbd5b188a74be05464b0d67c3467126a5e83227b15b86"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js",
+            "dev": 16777234,
+            "ino": 117543218,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 14264,
+            "sha256": "4783eae030c2c505cbf9015a382ba029126a207120ceff0cae7d5e8ca1368a9a"
+          },
+          {
+            "path": "deps/dist-Bn70cTPd.js.map",
+            "dev": 16777234,
+            "ino": 117543235,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 25310,
+            "sha256": "3d60c7065639c78a136a2e4839e15cd9a62118580dceb26eb7e9b96dfad8074d"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js",
+            "dev": 16777234,
+            "ino": 117543219,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 412622,
+            "sha256": "c6a7acd250aeedd18289ec03e88f423f3966b59c8c07a5fd0c1986277206c1c8"
+          },
+          {
+            "path": "deps/dist-C3N-Ct1J.js.map",
+            "dev": 16777234,
+            "ino": 117543236,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 709972,
+            "sha256": "02951023e58f25317269ce01094d5cc2220c77f03f977ae5a022f1ffdf908231"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js",
+            "dev": 16777234,
+            "ino": 117543220,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1526101,
+            "sha256": "bf398660489c7539f23e72d0992a128554ded25e89c927d354588015f587f725"
+          },
+          {
+            "path": "deps/dist-CiStAUgt.js.map",
+            "dev": 16777234,
+            "ino": 117543237,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2780351,
+            "sha256": "f7f9a1c997b6446947c64a19913458d90108ae6776b6e7cbb880999af1fed5be"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js",
+            "dev": 16777234,
+            "ino": 117543221,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 7626,
+            "sha256": "9d19f826619b8b8be37d88e3ff03924bedd5f99d6c96fb6d5c9fafa58ba1526c"
+          },
+          {
+            "path": "deps/dist-CqeHhft1.js.map",
+            "dev": 16777234,
+            "ino": 117543238,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 12853,
+            "sha256": "d38323a7a6bc3e19e08a7fb12d7ed2dd5a076a007c5ec6e642dd73defc793da0"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js",
+            "dev": 16777234,
+            "ino": 117543222,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 804,
+            "sha256": "8f976b86072d44d7f261f8471c4f549d348df585b8d512b601a843ab64cbcd04"
+          },
+          {
+            "path": "deps/dist-CzOOcz4Y.js.map",
+            "dev": 16777234,
+            "ino": 117543239,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1120,
+            "sha256": "7e030290f2cf57ac238caff7419a8bfd503ec330086cbfcf854bce9d0ba88e7f"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js",
+            "dev": 16777234,
+            "ino": 117543223,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 55964,
+            "sha256": "67b35eef69defbdb9a0f9bd69697cee3b18ffe34c4046dc3a40f362cda0f1384"
+          },
+          {
+            "path": "deps/dist-Drny1FMJ.js.map",
+            "dev": 16777234,
+            "ino": 117543240,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 118739,
+            "sha256": "bfe525cd64451f97a8b21a8b63114f84de2675f2132924fe75259df3610214ef"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js",
+            "dev": 16777234,
+            "ino": 117543224,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 6273,
+            "sha256": "96b5a7b9db00cd271abc8e2f0a9b1efa2790692d2ffcea9cf28e5b23b31deddf"
+          },
+          {
+            "path": "deps/dist-h3r5bnFV.js.map",
+            "dev": 16777234,
+            "ino": 117543241,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 9914,
+            "sha256": "d4ea13fe39938f4b5f872ca08b94f34b150b1ea698580dd3d40e77844cc779ef"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js",
+            "dev": 16777234,
+            "ino": 117543225,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 56615,
+            "sha256": "3a4bfdcd6cac53addc62e0dc8962a3a3b6b1b99eadbc3c6906b581531b71661a"
+          },
+          {
+            "path": "deps/lib-kC2pkWbw.js.map",
+            "dev": 16777234,
+            "ino": 117543242,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 98742,
+            "sha256": "96ef758f7cbc572e26fd95a46d6f3f2ae27da5b0afc63dfae5c4a240fe923c8a"
+          },
+          {
+            "path": "deps/lucide-react.js",
+            "dev": 16777234,
+            "ino": 117543205,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1719283,
+            "sha256": "1547ecdb40c94570d6b73f70a31de2204f846c9df144c66395db695fb4c6a3f7"
+          },
+          {
+            "path": "deps/lucide-react.js.map",
+            "dev": 16777234,
+            "ino": 117543243,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2854745,
+            "sha256": "3fb5cb8638b44cfc5df664e4d097fbcca4466e29be454fcd449c802d7fd1c452"
+          },
+          {
+            "path": "deps/package.json",
+            "dev": 16777234,
+            "ino": 117543192,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 23,
+            "sha256": "3ca9d4afd21425087cf31893b8f9f63c81b0b8408db5e343ca76e5f8aa26ab9a"
+          },
+          {
+            "path": "deps/radix-ui.js",
+            "dev": 16777234,
+            "ino": 117543206,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2104,
+            "sha256": "d7027c9f08f1588e267dc90a61caff8c5156ff3fb658962798ae933ef8b89e4d"
+          },
+          {
+            "path": "deps/react-dom.js",
+            "dev": 16777234,
+            "ino": 117543207,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 15245,
+            "sha256": "54f2a6b71b624d7a8341d5b0d021dd1348fd5710a4b1307bab38640488e7facf"
+          },
+          {
+            "path": "deps/react-dom.js.map",
+            "dev": 16777234,
+            "ino": 117543244,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 26923,
+            "sha256": "9031ac49df911a8da2dd8dc6f342d4bdcbddef11f741d97088736a7bd7e59813"
+          },
+          {
+            "path": "deps/react-dom_client.js",
+            "dev": 16777234,
+            "ino": 117543208,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 912111,
+            "sha256": "962c56bd7d9d1f9bf1419d28bcc25fc4a0e6a0de90f5608289c97a2b44191156"
+          },
+          {
+            "path": "deps/react-dom_client.js.map",
+            "dev": 16777234,
+            "ino": 117543245,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1665355,
+            "sha256": "b2dc38d86cda5d8bb3cae71c04df540a013e65492a101bb214e567e8e721ee4d"
+          },
+          {
+            "path": "deps/react.js",
+            "dev": 16777234,
+            "ino": 117543209,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 39849,
+            "sha256": "92bd6ec455992c9d183d598f9a6a59f86a80277261109dbff0a5fb96c939ce20"
+          },
+          {
+            "path": "deps/react.js.map",
+            "dev": 16777234,
+            "ino": 117543246,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 71699,
+            "sha256": "0a3081c32940053ba3fdac41ce22610c83f41dd97e9943c63fb24dbb0c611638"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js",
+            "dev": 16777234,
+            "ino": 117543210,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 10872,
+            "sha256": "2996f5d71562345aa5e4601fd788e8956487a2b576944b25b4c0c1ad30cfc995"
+          },
+          {
+            "path": "deps/react_jsx-dev-runtime.js.map",
+            "dev": 16777234,
+            "ino": 117543247,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 18721,
+            "sha256": "60a0a4f29f6b3fca4cd45713e5223af8e045a7bc94b26798957562214c76da6c"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js",
+            "dev": 16777234,
+            "ino": 117543211,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 11400,
+            "sha256": "e39fe6b60bbabfc6c3b41d7504e2586bcef5354ac982f1d7037e2d2442acfdd5"
+          },
+          {
+            "path": "deps/react_jsx-runtime.js.map",
+            "dev": 16777234,
+            "ino": 117543248,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 19609,
+            "sha256": "7d6993eb601101d8dd96809b62cefa68689196b04d303485560b8462f285c80f"
+          },
+          {
+            "path": "deps/remark-gfm.js",
+            "dev": 16777234,
+            "ino": 117543212,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 137174,
+            "sha256": "4e30ae01c87ab752d965975769ffeafd71f6ed6aa14e7aea30828ae94daf3998"
+          },
+          {
+            "path": "deps/remark-gfm.js.map",
+            "dev": 16777234,
+            "ino": 117543249,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 242262,
+            "sha256": "1a51f5f57f5a516f49265a4a80347a1d9cb5d6fc0b18bd44508e7cf16bf40c12"
+          },
+          {
+            "path": "deps/rolldown-runtime-CoDluQUr.js",
+            "dev": 16777234,
+            "ino": 117543226,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1608,
+            "sha256": "907183563e7b3bfa427aefa9a0368ddc4928d8cfbc20fa7f5ae3208fe91621fc"
+          },
+          {
+            "path": "deps/tailwind-merge.js",
+            "dev": 16777234,
+            "ino": 117543213,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 92171,
+            "sha256": "fed9020e9e18f2552bc60b748e9d4fd1cd0368329210ad8655c35e9cb7e8c4b4"
+          },
+          {
+            "path": "deps/tailwind-merge.js.map",
+            "dev": 16777234,
+            "ino": 117543250,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 147342,
+            "sha256": "305eb162970dfccad6517d08bbad34d48a9bb254ce4952e0a41a2a5ec3ec19a4"
+          },
+          {
+            "path": "deps/zod.js",
+            "dev": 16777234,
+            "ino": 117543214,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 654186,
+            "sha256": "a1925d9c874283ff66714552ee1d0c1c2983384d9869d2fed0b4734335e204e6"
+          },
+          {
+            "path": "deps/zod.js.map",
+            "dev": 16777234,
+            "ino": 117543251,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 1272523,
+            "sha256": "cc748c60f55462fbaf7bcde16dcf8eaafdf6e026ac9e32ddbbe927d9ac783b88"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js",
+            "dev": 16777234,
+            "ino": 117543215,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 2122,
+            "sha256": "3ec4b4559a34d1ae08d6dc29f34dce84567e5b70d4d4e58d6e393b6423ae196c"
+          },
+          {
+            "path": "deps/zustand_react_shallow.js.map",
+            "dev": 16777234,
+            "ino": 117543252,
+            "uid": 501,
+            "nlink": 1,
+            "mode": 420,
+            "bytes": 3731,
+            "sha256": "f0e762b51474cca99d9ab532cbb6ae69bb1bf92eb8836a41ce99b8ee92ed4869"
+          }
+        ],
+        "fileCount": 60,
+        "logicalBytes": 17530080,
+        "allocatedBlocksBytes": 17645568,
+        "tracked": {
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        "ignored": {
+          "exit": 0,
+          "stdout": ".gitignore:2:node_modules/\tapps/web/node_modules/.vite\n",
+          "stderr": ""
+        },
+        "spaceMeaning": "Logical bytes and st_blocks are observations, not a guarantee of physical reclaim; shared filesystem extents and ongoing use are not proved absent."
+      },
+      "externalConsumerStatus": "Web manager independent confirmation pending; no claim of global absence"
+    }
+  ],
+  "mutations": 0,
+  "tests": 0,
+  "PG": 0,
+  "provider": 0,
+  "fileAuditCompletedAt": "2026-10-06T22:03:27.605938+00:00",
+  "fileAuditWallSeconds": 0.056,
+  "preservation": "All source/tests/rules/plans/raw evidence, real packages and every other node_modules path remain untouched. Active caches not scanned. No deletion/stop/installation/import/test/product DB query.",
+  "limitations": [
+    "Kernel consumer observations are bounded point-in-time snapshots, not proof that no future/external consumer exists.",
+    "Web manager external-consumer confirmation remains separate and required before deletion.",
+    "Lead is sole operator; this report authorizes no mutation."
+  ]
+}

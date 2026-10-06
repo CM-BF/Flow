@@ -4,7 +4,7 @@
 创建 / 更新：2026-10-06
 所属大task：[OPS-001](../../../plan-status-review/plans/ops-001-status-review/plan.md)；co-lead：Execution Lead。
 
-目标是供两个现有 Python 外层 operator 共用启动、有限输出、期限与停止报告，减少阻塞日志导致监督失效的接缝。遵循[唯一设计规则](../../AGENTS.md#modular-design)及[权威方向](../../../plan-status-review/docs/quality/operator-supervision-next.md)。本片不迁移正在冻结的 SVC05H / SVC07 包装器，不改变 O16 / F04，不操作个人服务。
+目标是供两个现有 Python 外层 operator 共用启动、有限输出、期限与停止报告，减少阻塞日志导致监督失效的接缝。遵循[唯一设计规则](../../AGENTS.md#modular-design)及[权威方向](../../../plan-status-review/docs/quality/operator-supervision-next.md)。SVC05H 两个包装器文件已合法移交，当前迁移其薄调用层；SVC07 冻结候选仍不改。不改变 O16 / F04，不操作个人服务。
 
 - [x] OPS14-01 固定 claim 与小 Interface。
 - [x] OPS14-02 标准库实现及两种原调用形状的受控故障验证。

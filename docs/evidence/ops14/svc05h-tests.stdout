@@ -1,0 +1,8 @@
+test_blocked_write_does_not_block_deadline_or_kill_detached_child (__main__.SupervisionTest.test_blocked_write_does_not_block_deadline_or_kill_detached_child) ... ok
+test_normal_return (__main__.SupervisionTest.test_normal_return) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.348s
+
+OK
+{"blockedWriteProof": {"operatorPid": 90000, "operatorExit": -9, "deadlineExceeded": true, "operatorStopped": true, "outcome": "unknown", "elapsedMs": 317, "stdout": "90011\n", "stderr": "", "serviceSignals": 0, "supervision": {"ownership": "childPidOnly", "capture": "separate", "firstFailure": {"phase": "work", "code": "DEADLINE_EXCEEDED", "type": "SupervisionFailure", "errno": null, "message": "deadline exceeded"}, "secondaryFailures": [{"phase": "work", "code": "CHILD_EXIT_NONZERO", "type": "SupervisionFailure", "errno": null, "message": "child exit nonzero"}], "ownedState": "absent", "eof": {"stdout": true, "stderr": true}, "observedBytes": 6, "retainedBytes": 6, "signals": [{"signal": "SIGKILL", "state": "sent", "errno": null}]}}, "standInPid": 90011, "standInCleanup": "group-absent"}

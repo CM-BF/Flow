@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:45 UTC / main2af8639d（个人窗口已关闭） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 22:05 UTC / main8dcd3c9d（个人窗口已关闭） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin2af8639d已接个人发布完整独审证据；实际backend af51 accepting v18、Web d629 v3，与源码main分开。 |
+| 已集成main状态 / HEAD | main/origin8dcd3c9d已接个人发布与监督模块限定独审证据；实际backend af51 accepting v18、Web d629 v3，与源码main分开。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
 | 当前产出 | 个人后台与新版网页已更新，原数据和旧网页资源保留；正在回收已结束工作的可恢复副本，恢复后续验证余量。 |
-| 下一可用交付 | 恢复足够磁盘余量后验证事务连接修复，再接终端与网页双端接续；进程监督模块已审待主线接收。 |
-| 当前阻塞 | ACTIVE: 最新结束观察约1.18GB可用，仍低于共享HTTP/浏览器验证门槛；完整后台固定产物仍需2.5GiB。个人发布旧intent已解除，其他检查按真实增量单独准入。 |
+| 下一可用交付 | 恢复足够磁盘余量后验证事务连接修复，再接终端与网页双端接续；监督模块已进主线，首个实际恢复包装器正在独审。 |
+| 当前阻塞 | ACTIVE: 最新结束观察约1.156GB可用，仍低于共享HTTP/浏览器验证门槛；完整后台固定产物仍需2.5GiB。个人发布旧intent已解除，其他检查按真实增量单独准入。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -309,3 +309,15 @@ OPS14固定3097730的两项局部补验经fresh小额准入后2/2、11未选、5
 2026-10-06 21:52 UTC：三棵已结束树的216项非自有历史副本可逆收起完成，全部保留tracked/hash及其他树配置相同，[summary](../../docs/quality/sparse-worktree-2026-10-06/web-three-next/summary.json)。独立审核且经原owner外部消费者确认的两处Vite cache实际清理120文件，真实dependencies与源码保留，[summary](../../docs/quality/vite-cache-2026-10-06/summary.json)；最后观察1,182,425,088B，尚差共享重验证门槛25,534,464B。原cleanup脚本P2仅空间采样异常覆盖，未执行前修复并独审关闭；两个实际操作都COMPLETE。原readability配置UNKNOWN与旧失败不变，没有个人服务/预览停止、模型或产品测试。
 
 2026-10-06 21:58 UTC：assignment_review 独立核本批21份固定记录、2cache实际仅剩原empty dirs、120删除项与3tree216副本均一致；未复采空间/进程/个人服务，[结果审查](../../docs/quality/vite-cache-2026-10-06/results-independent-review.json)。当前临时preview退役由原Webowner执行，Lead不抢操作。MESSAGESETTINGS02单一新树已明确委派Web管理者source-only Git操作（fixed c8e352、约3MB、原4MiB上限），其完成后归还；main与其它配置不在该委派范围，不等PG。
+
+## 2026-10-06 22:05 UTC 源码供给与临时预览收口
+
+MESSAGESETTINGS02 仅该新树的 Git/source-only 权限已明确委托 Web manager，并于21:59:29完成352文件/3,019,669逻辑字节，固定c8e2e9e、共享配置与main保持后正式归还；[实际回执](../../docs/quality/message-settings-quick-controls-provision.json)。无依赖复制/安装/测试。owner已fresh领取，可独立实施，不等待PG/Chrome。
+
+两旧自有fixture53851/63743由原owner仅发一次精确PID SIGTERM，原session均exit143、所属进程/端口观察已退场；不伪称exit0或完整异步清理。保留[原始退役回执](../../docs/quality/vite-cache-2026-10-06/retired-two/owner-retirement-receipt.json)。fresh缓存核对发现ActivityI PID15811/51454仍读activity树，因此该缓存KEEP；chat的60个17,530,080逻辑字节缓存文件仅本地资格成立，等待manager确认与窄审，不动真实依赖。
+
+OPS14 两个实际wrapper通过精确4482字节源码供给后由唯一owner实施；[供给](../../docs/quality/ops14-wrapper-source-provision.json)与[两literal sparse包括](../../docs/quality/ops14-wrapper-sparse-includes.json)保持源码/hash、共享及其他树配置。初次add误用不支持的--no-cone在解析阶段exit129，按help修正为继承已存在non-cone模式，未覆写产品。首consumer固定12c60，原2直接检查通过，独立审查中；没有实际恢复服务/PG/Chrome或模型调用。
+
+资源下一有界只读候选为workspace-cache真实依赖恢复完整性；未授权删除依赖，既有cache许可不扩大。唯一监督模块的SVC07真实consumer仍是下一版本，当前已审待运行候选不变。
+
+2026-10-06 22:07:12 UTC：已独审chat单缓存operator仅目标/审计文件名收窄，fresh全部身份/ledger/consumer/文件hash后实际COMPLETE，60文件/17,530,080逻辑字节；卷观察1,138,155,520→1,155,792,896（+17,637,376B，非独占APFS归因）。[结果](../../docs/quality/vite-cache-2026-10-06/retired-two/web-conversations-cleanup.json)与[独审](../../docs/quality/vite-cache-2026-10-06/retired-two/independent-operator-review.json)。Activity缓存因其他预览消费者仍KEEP；无真实依赖/源码/证据删除，无服务操作。距离1,207,959,552共享线仍缺52,166,656B，此结束值不作未来准入。workspace-cache的精确依赖恢复审计继续，仅已有本地固定来源，未删除或安装。

@@ -1,0 +1,77 @@
+{
+  "recordedAt": "2026-10-06T21:55:20.409117+00:00",
+  "status": "RETIRED_SCOPED",
+  "authorization": "Explicit Lead/GO retirement conveyed by root/d01_owner; overrides these two legacy default-retain README instructions only. Claims remain released; no owner project writes.",
+  "services": [
+    {
+      "service": "activity",
+      "signalAt": "2026-10-06T21:54:20.866804+00:00",
+      "onlySignaledPid": 31365,
+      "signal": "SIGTERM",
+      "originalToolSession": 46011,
+      "actualSessionExit": 143,
+      "allObservedOwnedPidsGroupsAndListenersAbsent": true,
+      "afterAt": "2026-10-06T21:54:21.136755+00:00",
+      "evidence": [
+        "activity-stop.json",
+        "activity-original-session-exit.json"
+      ]
+    },
+    {
+      "service": "chat",
+      "signalAt": "2026-10-06T21:54:41.744356+00:00",
+      "onlySignaledPid": 60286,
+      "signal": "SIGTERM",
+      "originalToolSession": 14932,
+      "actualSessionExit": 143,
+      "allObservedOwnedPidsGroupsAndListenersAbsent": true,
+      "afterAt": "2026-10-06T21:54:42.012094+00:00",
+      "evidence": [
+        "chat-stop.json",
+        "chat-original-session-exit.json"
+      ]
+    }
+  ],
+  "permanentKeepUntouched": [
+    4320,
+    61227,
+    61228,
+    49922,
+    55049,
+    61108,
+    55616
+  ],
+  "signalScope": "Two exact Node PIDs only; no group signal, SIGKILL, broad node kill, service restart, browser/tab mutation, cache/dependency removal or free sampling.",
+  "exitLimit": "Both original tool sessions returned 143 after SIGTERM. Do not report exit0 or infer that every async handler completed. Target listeners, exact parent chains and groups independently observed absent.",
+  "consumerLimit": "Root fixed-manifest review found no declared current frozen consumer conflict. Not a global absence guarantee. Current per-PID TCP preflight contained only listed fixture ports.",
+  "postGit": [
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity",
+      "head": "8cc13eaa9c2aa29f77f841637d9891b67fd1264f",
+      "branch": "codex/web-conversation-activity",
+      "dirty": "",
+      "sourceSha256": "9e23dd168a78430cbde3b448a6ecb9e2f95dbb84ada0d27eb514aa2d9152cb04",
+      "equalsBefore": true
+    },
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+      "head": "eb2fc99f6fa0652d98045a9bd84ffe32c978ac8f",
+      "branch": "codex/web-conversations",
+      "dirty": "",
+      "sourceSha256": "c5639b75d81d884ca122b53533f0b6dec6a816b37d3f12f22ed93e55099fe3a6",
+      "equalsBefore": true
+    }
+  ],
+  "otherWork": "No HTTP/API requests, tests, PG or provider calls. Recovery candidate unchanged.",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "cleanCodeApplication": "Read-only shutdown review: explicit one-service responsibility, exact identity assertion before each signal, bounded wait, preserve nonzero exit facts and raw errors; no new shutdown framework or feature source change."
+}

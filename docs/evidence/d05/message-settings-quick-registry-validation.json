@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-06T22:09:16.746Z",
+  "sourceCount": 179,
+  "unique": true,
+  "task": {
+    "id": "WPF-MESSAGESETTINGS02",
+    "title": "聊天快速设置控件",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+    "branch": "codex/web-message-settings-quick-controls",
+    "planDir": "plans/wpf-message-settings-quick-controls",
+    "evidenceDir": "docs/evidence/wpf-message-settings-quick-controls"
+  },
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+        "id": "WPF-MATURE-02",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "已确定快速设置与草稿身份保护接口，开始实现受控选择",
+      "next": "可明确应用合法组合的模型、思考力度与速度控件",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": null,
+      "scopes": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/test/message-settings.test.ts",
+        "apps/web/test/message-settings.fixture.tsx",
+        "apps/web/test/message-settings.browser.ts"
+      ],
+      "errors": [
+        "实现目标需完整 SHA"
+      ]
+    },
+    "taskId": "WPF-MESSAGESETTINGS02",
+    "owner": "",
+    "branch": "codex/web-message-settings-quick-controls",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T22:03:41.000Z",
+    "updatedRecord": "2026-10-06 22:03:41 UTC",
+    "todos": [],
+    "errors": [
+      "缺少单一 owner 字段",
+      "缺少 TODO 状态表"
+    ],
+    "declaredHead": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05（首 metadata 前观察）",
+    "declaredDirty": "",
+    "checks": {
+      "state": "unknown",
+      "target": null,
+      "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
+    },
+    "reviewRecord": "NOT_STARTED",
+    "mainRecord": "",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "source": "b8034817412d3131e3fb65fa82763df9deab2f6f",
+  "validation": "Registry and canonical metadata only; no product tests; implementation dirty belongs solely to owner"
+}

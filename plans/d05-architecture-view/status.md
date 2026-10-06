@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 个人预览已更新；看板新增进程监督、会话连续性与批量读取三个来源，状态继续读取各自负责人。 |
+| 当前产出 | 个人预览已更新；看板登记聊天快速设置的实际实施来源，状态继续读取各自负责人。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -175,3 +175,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 ## 2026-10-06 21:29 来源登记
 
 新增 OPS14、MATURE02C02、REQ15，178个唯一来源及三件套/证据目录存在已核；[必要解析检查](../../docs/evidence/d05/ops14-codex-req15-registry-validation.json)。REQ15解析正常，另外两源metadata格式缺项已交原owner修正，不替其推断完成。仅登记维护，固定架构快照不改；个人服务窗口已关闭，main接收与4320加载回执随后记录。
+
+2026-10-06T22:09:27.889120+00:00: 新增唯一 WPF-MESSAGESETTINGS02 至179 sources，固定首canonical b8034817、worktree/source三件套存在，registry合法/唯一；[必要解析记录](../../docs/evidence/d05/message-settings-quick-registry-validation.json)保留初次owner/TODO列名两项error，已交原owner仅metadata修正。human完整；来源登记不等产品完成，不修改architecture固定图或个人服务。
