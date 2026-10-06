@@ -137,3 +137,8 @@ C02 fixture与生产组合694c3fdbd6ef4affa66140f13a039156f27023e0（test5f + pr
 
 ## Steering薄client独立批准
 assignment_review独立只读APPROVED 1b16d23de5b00f897fe9bd0fa07879c84d78e936，现场clean1e6965e。完整3source与server strict schema/request错误链已读；5methods路径/query白名单/原文/key/CAS/receiptId与状态原样传递，无重试。3source/3raw固定current bytes/hash全符，manifest c7f6ccf389078c93fb65e9bb7589732a34206a0eb3dd0aa0dd6d090f8a5226de；作者1红→1绿33ms+tsc原证据有效，reviewer未重跑/0query/0修改，无P1/P2。仅transport/export，不覆盖生产mount/实际送达/模型遵从，不重复2137115领域审查。
+
+## CHAT08 finalization薄client待审
+Review target commit: 3d81141324041c2c67680edbb686996cefaf8b4b
+Review status: NOT_STARTED
+只覆盖packages/client/src/index.ts与steering-finalization.test.ts；固定领域合同998e2fd是早期输入，不表示领域批准。manifest见docs/evidence/f01/steering-finalization-client-manifest.json。

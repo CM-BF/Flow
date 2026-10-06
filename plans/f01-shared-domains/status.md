@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:14 UTC / 2026-10-06 07:09 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:29 UTC / 2026-10-06 07:27 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；本轮steering client 1b16d23de5b00f897fe9bd0fa07879c84d78e936 |
+| 工作基线 / HEAD | main b54de1dbb08e3ccc7d33a27295a318f2799e76ae；本轮CHAT08薄client 3d81141324041c2c67680edbb686996cefaf8b4b |
 | 工作树dirty状态 | 实现已提交；当前仅证据与状态整理 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED；本轮薄client实际HTTP1/1与类型检查；领域16项复用原独立审查 |
-| 已集成main状态 / HEAD | fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 已推送；流式协议与两类旧页面兼容已成套接收。个人center/runner仍fb906cb；实际流式聊天页面待Web后继。 |
-| Review | APPROVED；assignment_review只读核本轮steering薄client，历史批准保留 |
-| 实现目标 | 1b16d23de5b00f897fe9bd0fa07879c84d78e936 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/active-steering.test.ts, packages/contracts/src/index.ts |
+| 检查状态 | PASSED；CHAT08薄client实际HTTP1/1与类型检查；没有领域或provider新结论 |
+| 已集成main状态 / HEAD | b54de1dbb08e3ccc7d33a27295a318f2799e76ae 已含CHAT07领域/薄client和ActivityI主界面；个人center/runner仍fb906cb，SVC02正准备固定253b更新。CHAT08薄client未集成。 |
+| Review | NOT_STARTED；CHAT08薄client待独审；1b16历史批准保留 |
+| 实现目标 | 3d81141324041c2c67680edbb686996cefaf8b4b |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/steering-finalization.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 逐段回复读取和旧页面兼容已经交付；补充指令的公共接收与查询接口已完成。 |
-| 下一可用交付 | 核验补充指令的公共接口，为实际模型消费准备接线。 |
+| 当前产出 | 聊天活动和逐段回复的公共读取已交付；执行中补充指令正在接通原生对话。 |
+| 下一可用交付 | 完成补充指令与最终答复竞争时的确认接口，避免消息被遗漏或重复发送。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
