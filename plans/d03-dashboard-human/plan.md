@@ -1,6 +1,6 @@
 # D03 工程进度的人类视图
 
-创建 / 更新：2026-10-06。状态：in-progress。Owner：runner_owner / gpt-6-astra。
+创建 / 更新：2026-10-06。状态：completed。Owner：runner_owner / gpt-6-astra。
 
 目标：首屏说明当前阶段、正在推进的最多三件事、下一可用交付与真实用户决定；工程证据保留在详情。唯一事实源仍是各 owner status，不推测历史段落、不调用模型。
 
@@ -25,8 +25,10 @@ Flow / 项目进度                         主题 / 刷新
 ## TODO 与验收
 
 - [x] D03-01 确认规则/技能/字段与独占范围，登记方案。
-- [ ] D03-02 结构化摘要与审查/集成 proof，覆盖 missing/dirty/untracked/metadata/main ancestor。
-- [ ] D03-03 紧凑人类视图及完整证据下钻，登记 19 个唯一源。
-- [ ] D03-04 node tests + 真实浏览器四视图/键盘/溢出/追溯，clean-code 与交付证据。
+- [x] D03-02 结构化摘要与审查/集成 proof，覆盖 missing/dirty/untracked/metadata/main ancestor。
+- [x] D03-03 紧凑人类视图及完整证据下钻，登记 20 个唯一源。
+- [x] D03-04 node tests + 真实浏览器四视图/键盘/溢出/追溯，clean-code 与交付证据。
 
 范围：apps/execution-dashboard、此计划三文件、docs/evidence/d03。动态端口，不触碰 4320 服务。0 模型/云。全局模板和其他 owner status 由 Lead 管理。
+
+2026-10-06 02:26 UTC：完成实现与范围内检查；独立 review 已通过，绑定 260d53cb3d414b5bb87113ebb4e4c5df92127d4d。追加实际 I02 来源为第 20 源，原 19 源保留。检查与截图边界见 status，不将 branch 完成当部署。

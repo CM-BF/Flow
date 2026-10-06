@@ -1,14 +1,14 @@
 {
   "outcome": "passed",
-  "at": "2026-10-06T02:24:35.569Z",
-  "sourceHead": "d444608ab6c796c731e44e51a892868bf39bec2a",
+  "at": "2026-10-06T02:30:14.508Z",
+  "sourceHead": "260d53cb3d414b5bb87113ebb4e4c5df92127d4d",
   "sourceDirty": true,
   "checks": [
-    "实际 19 权威源；当前工作最多 3 项；完成历史和摘要缺口默认收起",
+    "top3 以外活动任务可展开，历史缺摘要不计当前缺口；实际 20 权威源；当前工作最多 3 项；完成历史和摘要缺口默认收起",
     "1440px / 390px 浅深主题；页面无横向溢出，四张实际源截图",
     "主题持久化；窄屏键盘 Enter 打开、读取权威 status、Esc 关闭并恢复焦点；详情不溢出",
     "首次读取失败明确提示，手动刷新恢复",
-    "隔离真实 HTTP/Git 样本：NONE 不算决定，ACTIVE 才是阻塞，UNKNOWN 不算阻塞，REQUIRED 决定；历史折叠、缺字段待补；metadata 保留审查、未跟踪实现变更要求复审、main 祖先证明",
+    "隔离真实 HTTP/Git 样本：NONE 不算决定，ACTIVE 才是阻塞，UNKNOWN 不算阻塞，REQUIRED 决定；历史折叠、缺字段待补；metadata 保留审查、未跟踪实现变更要求复审、main 祖先+范围证明、后继实现变化不继承绿色",
     "HTML/script 在摘要和原始资料中作为文本，不执行"
   ],
   "screenshots": [
@@ -20,29 +20,22 @@
   ],
   "errors": [],
   "browser": "154.0.8037.98",
-  "livePort": 61975,
+  "livePort": 62784,
   "liveSources": [
     {
       "id": "FLOW-001",
-      "head": "d444608ab6c796c731e44e51a892868bf39bec2a",
-      "dirty": false,
+      "head": "dd1adfc73c5407f99ccfe775577654d4093f715a",
+      "dirty": true,
       "current": true,
-      "missing": [
-        "阶段",
-        "当前产出",
-        "下一可用交付",
-        "优先级",
-        "当前阻塞",
-        "需用户决定"
-      ],
+      "missing": [],
       "reviewTarget": null,
       "review": "not_started",
       "mainMethod": "unknown"
     },
     {
       "id": "FLOW-002",
-      "head": "d444608ab6c796c731e44e51a892868bf39bec2a",
-      "dirty": false,
+      "head": "dd1adfc73c5407f99ccfe775577654d4093f715a",
+      "dirty": true,
       "current": true,
       "missing": [
         "阶段",
@@ -58,8 +51,8 @@
     },
     {
       "id": "FLOW-003",
-      "head": "d444608ab6c796c731e44e51a892868bf39bec2a",
-      "dirty": false,
+      "head": "dd1adfc73c5407f99ccfe775577654d4093f715a",
+      "dirty": true,
       "current": true,
       "missing": [
         "阶段",
@@ -75,8 +68,8 @@
     },
     {
       "id": "OPS-001",
-      "head": "d444608ab6c796c731e44e51a892868bf39bec2a",
-      "dirty": false,
+      "head": "dd1adfc73c5407f99ccfe775577654d4093f715a",
+      "dirty": true,
       "current": true,
       "missing": [
         "阶段",
@@ -160,8 +153,8 @@
     },
     {
       "id": "W01",
-      "head": "cb4a39211e264538704ba9d474eeb08fc4b2759c",
-      "dirty": true,
+      "head": "a22ae38bbb3a445a405c445834f7bd06add242de",
+      "dirty": false,
       "current": true,
       "missing": [
         "阶段",
@@ -172,7 +165,7 @@
         "需用户决定"
       ],
       "reviewTarget": "cb4a39211e264538704ba9d474eeb08fc4b2759c",
-      "review": "not_started",
+      "review": "unknown",
       "mainMethod": "unknown"
     },
     {
@@ -190,6 +183,16 @@
       ],
       "reviewTarget": "9c236c5f86b197c3e262a6b197f21ba2371ab9b0",
       "review": "unknown",
+      "mainMethod": "unknown"
+    },
+    {
+      "id": "I02",
+      "head": "43a391e0915cdf1bdb4f227334d9d4298286a865",
+      "dirty": true,
+      "current": true,
+      "missing": [],
+      "reviewTarget": null,
+      "review": "not_started",
       "mainMethod": "unknown"
     },
     {
@@ -268,38 +271,31 @@
       "missing": [],
       "reviewTarget": "97ab1e5bd169cda7ed7bf0bbdeddcda1414833f8",
       "review": "approved",
-      "mainMethod": "ancestor"
+      "mainMethod": "ancestor-changed"
     },
     {
       "id": "P01",
-      "head": "b558e6f4a1d21a809f36a0a7a637bbad28606ff8",
-      "dirty": true,
+      "head": "7394ad2587b7dc1a33476656b865ed451cebe263",
+      "dirty": false,
       "current": true,
-      "missing": [
-        "阶段",
-        "当前产出",
-        "下一可用交付",
-        "优先级",
-        "当前阻塞",
-        "需用户决定"
-      ],
-      "reviewTarget": null,
-      "review": "not_started",
-      "mainMethod": "unknown"
+      "missing": [],
+      "reviewTarget": "fb14d351b46da69b17e48e8815006fc320e765e1",
+      "review": "approved",
+      "mainMethod": "not-contained"
     },
     {
       "id": "D03",
-      "head": "d444608ab6c796c731e44e51a892868bf39bec2a",
+      "head": "260d53cb3d414b5bb87113ebb4e4c5df92127d4d",
       "dirty": true,
       "current": true,
       "missing": [],
-      "reviewTarget": "d444608ab6c796c731e44e51a892868bf39bec2a",
+      "reviewTarget": "30d7b56c3b9967a4590c3b12567e292d5367b40a",
       "review": "not_started",
       "mainMethod": "unknown"
     },
     {
       "id": "WPF-001",
-      "head": "dfb497e239d9f2c155b93d63d3621eb370b1194a",
+      "head": "83b4ae35c486369f3f2287bd0d20429cfdfa6d6f",
       "dirty": false,
       "current": true,
       "missing": [
@@ -322,7 +318,7 @@
       "missing": [],
       "reviewTarget": null,
       "review": "unknown",
-      "mainMethod": "unknown"
+      "mainMethod": "ancestor-changed"
     }
   ]
 }
