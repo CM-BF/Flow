@@ -13,15 +13,15 @@
 | 工作树dirty状态 | 本次仅共享检查证据和metadata待固定 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED：新native publication HTTP1 + 旧profile2，共3/3；根noEmit exit0，原红保留；0provider |
-| 已集成main状态 / HEAD | 025与严格来源领域已审main3418；native publication client已独审待本批接收。个人服务仍b1c/v12，无运行变更。 |
+| 已集成main状态 / HEAD | 025与严格来源领域已审main3418；native publication client已独审进入main253035e11ab18ba33095c018949f856442021d49。个人服务仍b1c/v12，无运行变更。 |
 | Review | 当前client由status_read独立APPROVED095，经Mika接收；025独审5365已main。 |
 | 实现目标 | 095bdb849a4ba688be7c2b55d90021b9d15e4b53 |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/native-profile-publication.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | Codex中心规则已接入，通用执行配置发布接口已审可供执行器使用。 |
-| 下一可用交付 | 由原生执行器消费固定配置并完成普通任务验证。 |
+| 下一可用交付 | 本片段已交付；原生执行器在独立任务继续接通。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -130,3 +130,5 @@
 2026-10-06 09:33 UTC：F01-26的025两行挂载已由Mika独立只读APPROVED5365、与R05B组合main3418；原始回执见r05b-mount-review.md。TUI临时锁文件写权已归还F01 v22，原TUI package/lock尚未当作已实现终端交付。
 
 2026-10-06 09:38:11 UTC独审回执已归档：[native profile client](../../docs/evidence/f01/native-profile-client-review.md)。2源码3raw与固定target匹配，独审未重跑测试；批准仅薄传输，不是原生执行授权。
+
+2026-10-06 09:44 UTC：client095固定两源与main253035e11ab18ba33095c018949f856442021d49逐字一致并已push；独立Codex adapter据此接线，未启个人provider。见[main回执](../../docs/evidence/f01/native-profile-main-receipt.json)。
