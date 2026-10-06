@@ -17,4 +17,6 @@
 | CHAT08-05 | 固定target/证据/独立review与shared接线 | runner_owner / Lead | 04 |
 | CHAT08-06 | 实际provider/原生UI验收后才启用cap | 后继owner待派 | 已审纵向和独立预算 |
 
-精确scope以claim13literal为准；025仅预留，若确需新增表先amend后写。shared client/export/mount/lock归Lead，不越界；不大拆runtime或重写agent loop。find-skills本地优先codebase-design/clean-code/tdd/brainstorming已读，本次Interface/HTTP/SDK注入seam已获GO批准。
+精确scope以claim v2的14 literal为准（额外获准assistant-stream/index.ts仅结果帧前flush）；025仅预留，若确需新增表先amend后写。shared client/export/mount/lock归Lead，不越界；不大拆runtime或重写agent loop。find-skills本地优先codebase-design/clean-code/tdd/brainstorming已读，本次Interface/HTTP/SDK注入seam已获GO批准。
+
+2026-10-06 07:49:36 UTC 首纵向片段已交付固定d4e7445fca4fbc261cbf33101fca4d9407879315，产品f78a15c69f3f365a37c9f317249858d8e279503d；实际证据与剩余边界见唯一status/README。025无需新表未使用；公开cap仍false。shared工厂约定activeSteering可选且默认false，真实挂载由Lead接线后另验。
