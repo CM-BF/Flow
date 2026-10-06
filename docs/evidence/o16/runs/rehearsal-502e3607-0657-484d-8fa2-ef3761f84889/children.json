@@ -1,0 +1,540 @@
+{
+  "stage": "children",
+  "outcome": "artifacts-awaiting-independent-review",
+  "workerStopped": true,
+  "nativeQueryCalls": 0,
+  "workerPid": 46979,
+  "resourceSamples": 6,
+  "minimumFreeBytes": 1465823232,
+  "peakOwnedBytes": 27329,
+  "publicCompletion": {
+    "id": "9f16b27b-4403-40e5-ac79-78b1b9be8a55",
+    "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+    "projectId": "8646ad30-f636-4485-a854-83fa3a61512a",
+    "authorization": {
+      "nodes": [
+        {
+          "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+          "nodeVersion": 1,
+          "inputVersion": 1,
+          "executionProfile": {
+            "id": "9a316236-2df0-49b2-8f90-5b776fc8cad1",
+            "runnerId": "62cb144c-e15c-4cc3-9883-e3a7a3da9178",
+            "configDigest": "cdd4a7ec824a6e5bec8903d4259db24ffa5b2d525f734e13cb41d4aecedab042"
+          },
+          "previousExecutionId": null,
+          "externalDependencies": []
+        },
+        {
+          "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+          "nodeVersion": 2,
+          "inputVersion": 1,
+          "executionProfile": {
+            "id": "9a316236-2df0-49b2-8f90-5b776fc8cad1",
+            "runnerId": "62cb144c-e15c-4cc3-9883-e3a7a3da9178",
+            "configDigest": "cdd4a7ec824a6e5bec8903d4259db24ffa5b2d525f734e13cb41d4aecedab042"
+          },
+          "previousExecutionId": null,
+          "externalDependencies": []
+        }
+      ],
+      "reason": "Synthetic test actor confirms only zero-query wiring, not native planning quality.",
+      "protocol": "flow.goal-progression.v1",
+      "expiresAt": "2026-10-06T20:15:24.253Z",
+      "maxAdmissions": 2,
+      "projectRevision": 4,
+      "intermediatePolicy": "verified-artifact-within-this-authorization"
+    },
+    "authorizationDigest": "beca4ea62bb44b0692405d39ca0e19b4c6d01a0265cf4e9bea68d3d705909e5b",
+    "createdAt": "2026-10-06T19:15:24.859Z",
+    "revokedAt": null,
+    "state": "finished",
+    "cause": null,
+    "admissions": 2,
+    "acceptance": "separate-owner-decision",
+    "nodes": [
+      {
+        "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+        "inputVersion": 1,
+        "executionId": "8cde1878-1907-47a2-ac7a-fdf360b248ba",
+        "artifact": {
+          "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+          "executionId": "8cde1878-1907-47a2-ac7a-fdf360b248ba",
+          "taskId": "75a3fb6c-36eb-4f97-bbda-01ceb5425bfb",
+          "artifactId": "068ba894-8597-48a6-8774-52845743d9ea",
+          "artifactVersion": "6563bdbe33bec6984ea1b054dd3b09c1754163084d3725bcb56d062007bbf010",
+          "detailId": "c722b7ac-91ee-4355-9b2b-a3815a227281"
+        },
+        "task": {
+          "id": "75a3fb6c-36eb-4f97-bbda-01ceb5425bfb",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "decisionId": null
+        }
+      },
+      {
+        "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+        "inputVersion": 1,
+        "executionId": "85b57026-a2e4-42a6-90ec-56c4e1f98312",
+        "artifact": {
+          "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+          "executionId": "85b57026-a2e4-42a6-90ec-56c4e1f98312",
+          "taskId": "2cd509b8-0fc8-4e26-9503-0ef17d331198",
+          "artifactId": "0fd09289-6841-4fd8-ae1d-c591fcefe6af",
+          "artifactVersion": "c06066c70ee36815eca6f4facb25e9c957a21d38db07bc006002b7ca3f0e1489",
+          "detailId": "42fb9795-91ba-4914-861a-dc64c40479f5"
+        },
+        "task": {
+          "id": "2cd509b8-0fc8-4e26-9503-0ef17d331198",
+          "status": "succeeded",
+          "verificationStatus": "passed",
+          "decisionId": null
+        }
+      }
+    ]
+  },
+  "workerProcessGroup": {
+    "pgid": 46979,
+    "state": "stopped"
+  },
+  "worker": {
+    "phase": "children",
+    "mode": "rehearsal",
+    "pid": 46979,
+    "sourceDigest": "af58df30aba1deb4760fafb631d1402ae240788b8e1a973ea122df906ca480eb",
+    "nativeQueryCalls": 0,
+    "queries": [
+      {
+        "binding": {
+          "slot": "child-1",
+          "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+          "executionId": "8cde1878-1907-47a2-ac7a-fdf360b248ba",
+          "assignment": {
+            "taskId": "75a3fb6c-36eb-4f97-bbda-01ceb5425bfb",
+            "attemptId": "da7c5727-9888-4334-be0e-7c40e761245e",
+            "ownerVersion": 1,
+            "runnerId": "62cb144c-e15c-4cc3-9883-e3a7a3da9178"
+          }
+        },
+        "requested": {
+          "model": "synthetic-no-query",
+          "maxTurns": 3,
+          "maxBudgetUsd": 0.1,
+          "permissionMode": "dontAsk",
+          "tools": [
+            "Read"
+          ],
+          "allowedTools": [
+            "Read"
+          ],
+          "settings": {
+            "enabledPlugins": {},
+            "autoMemoryEnabled": false,
+            "syncClaudeAiPlugins": false,
+            "syncClaudeAiSkills": false,
+            "disableBundledSkills": true,
+            "disableSkillShellExecution": true,
+            "claudeMdExcludes": [
+              "**"
+            ]
+          },
+          "resume": null
+        },
+        "entry": "injected-result-observed",
+        "closed": true,
+        "observation": {
+          "phase": "children",
+          "effective": {
+            "model": "claude-sonnet-5-5",
+            "permissionMode": "dontAsk",
+            "tools": [
+              "Read"
+            ],
+            "plugins": [
+              "cc-plugin-agents-md",
+              "cc-plugin-telemetry",
+              "cc-plugin-plugin-authoring"
+            ],
+            "skills": [
+              "design",
+              "doctor",
+              "plugin-authoring"
+            ],
+            "mcpServers": [],
+            "runtimeVersion": "2.1.290",
+            "nativeSessionId": "o16-rehearsal-child-1",
+            "kind": "sdk-init-declaration"
+          },
+          "reads": [
+            {
+              "id": "77b73f2e-4782-4ea8-bac7-a71d324e7e93",
+              "state": "reported-success",
+              "contentDigest": "8de2b80dd83557aa67de70ea5d3509211c8b40f84fba405c1f006f9fd4c36ab0",
+              "containsFixedMaterial": true
+            }
+          ],
+          "result": {
+            "subtype": "success",
+            "isError": false,
+            "nativeSessionId": "o16-rehearsal-child-1",
+            "sourceMessageId": "87ca5610-78f1-4afe-8efa-ec2a8cdedb1b",
+            "numTurns": 2,
+            "sdkEstimatedCostUsd": 0,
+            "modelUsage": {}
+          },
+          "permissionDenials": [],
+          "toolExecutionEvidence": "matching-read-result-required",
+          "semanticAcceptance": "not-evaluated",
+          "frames": 4,
+          "failure": null
+        },
+        "hostToolDecisions": [
+          {
+            "toolName": "Read",
+            "source": null,
+            "server": null,
+            "toolUseId": "77b73f2e-4782-4ea8-bac7-a71d324e7e93",
+            "decision": "allowed",
+            "execution": "not-observed"
+          }
+        ]
+      },
+      {
+        "binding": {
+          "slot": "child-2",
+          "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+          "executionId": "85b57026-a2e4-42a6-90ec-56c4e1f98312",
+          "assignment": {
+            "taskId": "2cd509b8-0fc8-4e26-9503-0ef17d331198",
+            "attemptId": "acb84749-58fb-4b6f-9035-1c8844363064",
+            "ownerVersion": 1,
+            "runnerId": "62cb144c-e15c-4cc3-9883-e3a7a3da9178"
+          }
+        },
+        "requested": {
+          "model": "synthetic-no-query",
+          "maxTurns": 3,
+          "maxBudgetUsd": 0.1,
+          "permissionMode": "dontAsk",
+          "tools": [
+            "Read"
+          ],
+          "allowedTools": [
+            "Read"
+          ],
+          "settings": {
+            "enabledPlugins": {},
+            "autoMemoryEnabled": false,
+            "syncClaudeAiPlugins": false,
+            "syncClaudeAiSkills": false,
+            "disableBundledSkills": true,
+            "disableSkillShellExecution": true,
+            "claudeMdExcludes": [
+              "**"
+            ]
+          },
+          "resume": null
+        },
+        "entry": "injected-result-observed",
+        "closed": true,
+        "observation": {
+          "phase": "children",
+          "effective": {
+            "model": "claude-sonnet-5-5",
+            "permissionMode": "dontAsk",
+            "tools": [
+              "Read"
+            ],
+            "plugins": [
+              "cc-plugin-agents-md",
+              "cc-plugin-telemetry",
+              "cc-plugin-plugin-authoring"
+            ],
+            "skills": [
+              "design",
+              "doctor",
+              "plugin-authoring"
+            ],
+            "mcpServers": [],
+            "runtimeVersion": "2.1.290",
+            "nativeSessionId": "o16-rehearsal-child-2",
+            "kind": "sdk-init-declaration"
+          },
+          "reads": [
+            {
+              "id": "38aa81e8-fdd9-4789-9aeb-af498d16bc96",
+              "state": "reported-success",
+              "contentDigest": "8de2b80dd83557aa67de70ea5d3509211c8b40f84fba405c1f006f9fd4c36ab0",
+              "containsFixedMaterial": true
+            }
+          ],
+          "result": {
+            "subtype": "success",
+            "isError": false,
+            "nativeSessionId": "o16-rehearsal-child-2",
+            "sourceMessageId": "a94b45f1-dace-4343-a660-1d2714e2152d",
+            "numTurns": 2,
+            "sdkEstimatedCostUsd": 0,
+            "modelUsage": {}
+          },
+          "permissionDenials": [],
+          "toolExecutionEvidence": "matching-read-result-required",
+          "semanticAcceptance": "not-evaluated",
+          "frames": 4,
+          "failure": null
+        },
+        "hostToolDecisions": [
+          {
+            "toolName": "Read",
+            "source": null,
+            "server": null,
+            "toolUseId": "38aa81e8-fdd9-4789-9aeb-af498d16bc96",
+            "decision": "allowed",
+            "execution": "not-observed"
+          }
+        ]
+      }
+    ],
+    "notices": [],
+    "outcome": "runtime-returned"
+  },
+  "mode": "rehearsal",
+  "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+  "artifacts": [
+    {
+      "binding": {
+        "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+        "executionId": "8cde1878-1907-47a2-ac7a-fdf360b248ba",
+        "taskId": "75a3fb6c-36eb-4f97-bbda-01ceb5425bfb",
+        "artifactId": "068ba894-8597-48a6-8774-52845743d9ea",
+        "artifactVersion": "6563bdbe33bec6984ea1b054dd3b09c1754163084d3725bcb56d062007bbf010",
+        "detailId": "c722b7ac-91ee-4355-9b2b-a3815a227281"
+      },
+      "executionId": "8cde1878-1907-47a2-ac7a-fdf360b248ba",
+      "content": "纸鸢0.1新增草稿预览能力，目前处于内部测试，尚未正式发布。"
+    },
+    {
+      "binding": {
+        "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+        "executionId": "85b57026-a2e4-42a6-90ec-56c4e1f98312",
+        "taskId": "2cd509b8-0fc8-4e26-9503-0ef17d331198",
+        "artifactId": "0fd09289-6841-4fd8-ae1d-c591fcefe6af",
+        "artifactVersion": "c06066c70ee36815eca6f4facb25e9c957a21d38db07bc006002b7ca3f0e1489",
+        "detailId": "42fb9795-91ba-4914-861a-dc64c40479f5"
+      },
+      "executionId": "85b57026-a2e4-42a6-90ec-56c4e1f98312",
+      "content": "纸鸢0.1加入草稿预览功能。当前版本仍在内部测试，尚未正式发布。"
+    }
+  ],
+  "current": {
+    "view": "state",
+    "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+    "projectId": "8646ad30-f636-4485-a854-83fa3a61512a",
+    "observedAt": "2026-10-06T19:15:28.128Z",
+    "nodes": [
+      {
+        "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+        "inputRef": {
+          "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+          "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+          "version": 1
+        },
+        "knowledgeCurrent": true,
+        "dependenciesReady": true,
+        "execution": {
+          "id": "8cde1878-1907-47a2-ac7a-fdf360b248ba",
+          "inputRef": {
+            "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+            "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+            "version": 1
+          },
+          "inputCurrent": true,
+          "dependencyCount": 0,
+          "task": {
+            "id": "75a3fb6c-36eb-4f97-bbda-01ceb5425bfb",
+            "status": "succeeded",
+            "verificationStatus": "passed",
+            "updatedAt": "2026-10-06T19:15:26.401Z",
+            "attemptId": "da7c5727-9888-4334-be0e-7c40e761245e",
+            "ownerVersion": 1
+          },
+          "pendingDecision": null,
+          "artifact": {
+            "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+            "executionId": "8cde1878-1907-47a2-ac7a-fdf360b248ba",
+            "taskId": "75a3fb6c-36eb-4f97-bbda-01ceb5425bfb",
+            "artifactId": "068ba894-8597-48a6-8774-52845743d9ea",
+            "artifactVersion": "6563bdbe33bec6984ea1b054dd3b09c1754163084d3725bcb56d062007bbf010",
+            "detailId": "c722b7ac-91ee-4355-9b2b-a3815a227281"
+          }
+        },
+        "accepted": null,
+        "deliveryCurrent": false,
+        "reason": "not-accepted"
+      },
+      {
+        "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+        "inputRef": {
+          "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+          "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+          "version": 1
+        },
+        "knowledgeCurrent": true,
+        "dependenciesReady": false,
+        "execution": {
+          "id": "85b57026-a2e4-42a6-90ec-56c4e1f98312",
+          "inputRef": {
+            "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+            "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+            "version": 1
+          },
+          "inputCurrent": true,
+          "dependencyCount": 1,
+          "task": {
+            "id": "2cd509b8-0fc8-4e26-9503-0ef17d331198",
+            "status": "succeeded",
+            "verificationStatus": "passed",
+            "updatedAt": "2026-10-06T19:15:28.052Z",
+            "attemptId": "acb84749-58fb-4b6f-9035-1c8844363064",
+            "ownerVersion": 1
+          },
+          "pendingDecision": null,
+          "artifact": {
+            "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+            "executionId": "85b57026-a2e4-42a6-90ec-56c4e1f98312",
+            "taskId": "2cd509b8-0fc8-4e26-9503-0ef17d331198",
+            "artifactId": "0fd09289-6841-4fd8-ae1d-c591fcefe6af",
+            "artifactVersion": "c06066c70ee36815eca6f4facb25e9c957a21d38db07bc006002b7ca3f0e1489",
+            "detailId": "42fb9795-91ba-4914-861a-dc64c40479f5"
+          }
+        },
+        "accepted": null,
+        "deliveryCurrent": false,
+        "reason": "not-accepted"
+      }
+    ]
+  },
+  "history": {
+    "view": "explanations",
+    "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+    "throughVersion": 5,
+    "items": [
+      {
+        "reference": {
+          "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+          "version": 1
+        },
+        "kind": "created",
+        "source": {
+          "projectRevision": 1
+        },
+        "createdAt": "2026-10-06T19:15:23.006Z"
+      },
+      {
+        "reference": {
+          "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+          "version": 2
+        },
+        "kind": "define-input",
+        "source": {
+          "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+          "inputVersion": 1,
+          "projectRevision": 4
+        },
+        "createdAt": "2026-10-06T19:15:24.847Z"
+      },
+      {
+        "reference": {
+          "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+          "version": 3
+        },
+        "kind": "define-input",
+        "source": {
+          "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+          "inputVersion": 1,
+          "projectRevision": 4
+        },
+        "createdAt": "2026-10-06T19:15:24.852Z"
+      },
+      {
+        "reference": {
+          "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+          "version": 4
+        },
+        "kind": "execute",
+        "source": {
+          "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+          "executionId": "8cde1878-1907-47a2-ac7a-fdf360b248ba",
+          "inputVersion": 1,
+          "projectRevision": 4
+        },
+        "createdAt": "2026-10-06T19:15:25.335Z"
+      },
+      {
+        "reference": {
+          "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+          "version": 5
+        },
+        "kind": "execute",
+        "source": {
+          "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+          "executionId": "85b57026-a2e4-42a6-90ec-56c4e1f98312",
+          "inputVersion": 1,
+          "projectRevision": 4
+        },
+        "createdAt": "2026-10-06T19:15:27.328Z"
+      }
+    ],
+    "nextCursor": null
+  },
+  "semanticAcceptance": "not-evaluated",
+  "clientExitDidNotCancel": true,
+  "resources": {
+    "kind": "flow.o16.private-resources.v1",
+    "database": "flow_o16_94a0d9c24f4a43dea21e4e61bca97519",
+    "marker": "4627eb09-116a-46e0-8b2c-3787cde68400",
+    "sourceDigest": "af58df30aba1deb4760fafb631d1402ae240788b8e1a973ea122df906ca480eb",
+    "startedAt": "2026-10-06T19:15:21.152Z",
+    "gate": {
+      "freeBytes": 1490124800,
+      "requiredBytes": 1207959552
+    },
+    "creationRequested": true,
+    "created": true,
+    "marked": true,
+    "phase": "paused-owned-resources",
+    "directory": {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-o16-2VQUkh",
+      "dev": 16777234,
+      "ino": 123145257
+    },
+    "databaseBytes": 13294615,
+    "serverClosed": true,
+    "workersStopped": true,
+    "workerProcess": {
+      "pgid": 46979,
+      "groupLeader": true,
+      "state": "stopped"
+    },
+    "workerProcesses": [
+      {
+        "pgid": 44722,
+        "groupLeader": true,
+        "state": "stopped"
+      },
+      {
+        "pgid": 46979,
+        "groupLeader": true,
+        "state": "stopped"
+      }
+    ],
+    "connectionObservations": [
+      {
+        "elapsedMs": 1,
+        "rows": []
+      }
+    ],
+    "errors": [],
+    "endedAt": "2026-10-06T19:15:28.177Z"
+  }
+}

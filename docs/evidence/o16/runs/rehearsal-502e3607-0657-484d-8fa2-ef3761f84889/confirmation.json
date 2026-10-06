@@ -1,0 +1,98 @@
+{
+  "stage": "confirm",
+  "outcome": "confirmed-awaiting-separate-children-permit",
+  "nativeQueryCalls": 0,
+  "mode": "rehearsal",
+  "actualConfirmation": {
+    "proposalId": "f85173d4-9b4e-43e9-bf76-8bde8c80854e",
+    "proposalDigest": "dff284fd5a7247c969b183a562e1431232da59284b67861f52c34a865fb27342",
+    "confirmationDigest": "82f328e70207b30603db25babe9a808a905646e478016dd3849a3c61453aec61",
+    "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+    "projectId": "8646ad30-f636-4485-a854-83fa3a61512a",
+    "graph": {
+      "proposalId": "f85173d4-9b4e-43e9-bf76-8bde8c80854e",
+      "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+      "projectId": "8646ad30-f636-4485-a854-83fa3a61512a",
+      "proposalDigest": "dff284fd5a7247c969b183a562e1431232da59284b67861f52c34a865fb27342",
+      "fromRevision": 1,
+      "toRevision": 4,
+      "nodeIds": {
+        "draft": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+        "final": "6af82796-9172-4320-8e0b-27e655b360cb"
+      },
+      "actor": {
+        "kind": "owner"
+      },
+      "appliedAt": "2026-10-06T19:15:24.842Z"
+    },
+    "inputs": [
+      {
+        "key": "draft",
+        "nodeId": "af481083-f3d7-4ed0-bd04-5d25d381b3d1",
+        "inputVersion": 1
+      },
+      {
+        "key": "final",
+        "nodeId": "6af82796-9172-4320-8e0b-27e655b360cb",
+        "inputVersion": 1
+      }
+    ],
+    "progressionId": "9f16b27b-4403-40e5-ac79-78b1b9be8a55",
+    "authorizationDigest": "beca4ea62bb44b0692405d39ca0e19b4c6d01a0265cf4e9bea68d3d705909e5b",
+    "confirmedAt": "2026-10-06T19:15:24.864Z"
+  },
+  "confirmationBinding": {
+    "goalId": "b5ae4973-9d4c-4091-b42e-fff8f37e88d3",
+    "proposalId": "f85173d4-9b4e-43e9-bf76-8bde8c80854e",
+    "proposalDigest": "dff284fd5a7247c969b183a562e1431232da59284b67861f52c34a865fb27342",
+    "confirmationDigest": "82f328e70207b30603db25babe9a808a905646e478016dd3849a3c61453aec61",
+    "progressionId": "9f16b27b-4403-40e5-ac79-78b1b9be8a55"
+  },
+  "originalKey": "1f7edecf-cbf6-4263-8bcb-21bd9f25dcb7",
+  "replayed": false,
+  "admissions": 0,
+  "semanticAcceptance": "not-evaluated",
+  "resources": {
+    "kind": "flow.o16.private-resources.v1",
+    "database": "flow_o16_94a0d9c24f4a43dea21e4e61bca97519",
+    "marker": "4627eb09-116a-46e0-8b2c-3787cde68400",
+    "sourceDigest": "af58df30aba1deb4760fafb631d1402ae240788b8e1a973ea122df906ca480eb",
+    "startedAt": "2026-10-06T19:15:21.152Z",
+    "gate": {
+      "freeBytes": 1490124800,
+      "requiredBytes": 1207959552
+    },
+    "creationRequested": true,
+    "created": true,
+    "marked": true,
+    "phase": "paused-owned-resources",
+    "directory": {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-o16-2VQUkh",
+      "dev": 16777234,
+      "ino": 123145257
+    },
+    "databaseBytes": 13024279,
+    "serverClosed": true,
+    "workersStopped": true,
+    "workerProcess": {
+      "pgid": 44722,
+      "groupLeader": true,
+      "state": "stopped"
+    },
+    "workerProcesses": [
+      {
+        "pgid": 44722,
+        "groupLeader": true,
+        "state": "stopped"
+      }
+    ],
+    "connectionObservations": [
+      {
+        "elapsedMs": 2,
+        "rows": []
+      }
+    ],
+    "errors": [],
+    "endedAt": "2026-10-06T19:15:24.880Z"
+  }
+}
