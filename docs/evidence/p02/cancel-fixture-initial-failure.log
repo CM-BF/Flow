@@ -1,0 +1,36 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch
+
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts (7 tests | 1 failed) 8381ms
+   ✓ bound remote Task survives runner and center restart, then imports one version and independently verifies it  1400ms
+   ✓ a crash after the durable send permit but before its ACK does not dispatch or replay  1145ms
+   ✓ a crash after remote acceptance but before its ACK preserves an uncertain outcome and never resends  1313ms
+   ✓ a crash after binding commits but before its ACK recovers by GetTask without another SendMessage  1255ms
+   × cancel acceptance remains pending across restart until the remote Task actually stops 974ms
+   ✓ replays a persisted artifact ACK gap without duplicating its version and completes independent verification  1275ms
+   ✓ remote execution success does not conceal an independently failed text verifier  1017ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/protocol-dispatch/runtime.test.ts > cancel acceptance remains pending across restart until the remote Task actually stops
+AssertionError: expected 'cancelled' to be 'cancel_requested' // Object.is equality
+
+Expected: "cancel_requested"
+Received: "cancelled"
+
+ ❯ apps/runner/src/protocol-dispatch/runtime.test.ts:132:42
+    130|   await client.cancel(id);
+    131|   await expect.poll(() => peer.counts.cancels).toBe(1);
+    132|   expect((await client.show(id)).status).toBe('cancel_requested');
+       |                                          ^
+    133|   await stop(child);
+    134|   await launch(token);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  19:46:34
+   Duration  8.80s (transform 126ms, setup 0ms, import 329ms, tests 8.38s, environment 0ms)
+

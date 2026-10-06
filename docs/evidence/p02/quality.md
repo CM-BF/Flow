@@ -20,3 +20,5 @@ typecheck通过；首HTTP/PG 3/3通过（3.27s，专用flow_p02），覆盖中�
 新增测试从独立Node子进程调用公开runProtocolRunner，对端采用@a2a-js/sdk1.3.0官方JsonRpcTransportHandler/DefaultRequestHandler/InMemoryTaskStore。对端内存只属测试夹具，Flow权威持久状态在真实flow_p02。初次取消测试失败1项：SDK默认handler在bus关闭后立即写canceled。改为通过SDK公开handler subclass构造返回working Task的防御性取消ACK夹具，不改产品语义、不降低断言，后续8/8通过。该异常对端响应不作为完整协议conformance证明。官方规范3.1.5重新实际读取：https://a2a-protocol.org/latest/specification/#315-cancel-task （2026-10-06），描述尝试取消并返回更新Task，Flow仍独立GET核对终态。
 
 单项typecheck暴露测试引用未声明fastify依赖、cancel少commandID、receipt索引可空；以最小ObservedRequest测试类型/显式UUID/空值检查修复，未新增依赖。尚未执行产品main入口（Lead挂载后再验），MCP持久elicitation/Tasks扩展/通用全程预算仍未完成；不将P02最小A2A闭环当P01全部完成。
+
+02:51 UTC：最终联合11/11（13.45s）+typecheck通过，源码target572d6a095421074b2affe961cb78d82fd9e504ee，原始JSON与逐文件hash固定于manifest；证据整理未修改被测源码。main尚未挂载P02。
