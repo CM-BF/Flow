@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 22:59:39 UTC |
+| 最近更新时间 | 2026-10-06 23:09:13 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -24,7 +24,7 @@
 | 优先级 | 1 |
 | 当前产出 | 静态安装及加载、执行前两次权限核验已交付；正在准备公开启用与冻结工具任务的独立实现片 |
 | 下一可用交付 | 先交领域合同、持久绑定与窄宿主模块，再接真实runner产物链；原完整插件管理验收保持 |
-| 当前阻塞 | ACTIVE: 等待Lead按固定源码供给新工作树、完成唯一owner移交与分配迁移号；当前只写原metadata，产品未开工 |
+| 当前阻塞 | ACTIVE: 新树已最小创建、034已分配；本旧树全部范围停写，正在按账本原子移交，等待完整源码供给后由新唯一owner继续 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -119,3 +119,5 @@
 2026-10-06 22:53:00 UTC：已收敛[一次源码供给/唯一权威移交请求](../../docs/evidence/x01/enable-binding-provision.md)，候选14源码literal及待Lead分配的唯一SQL。补齐008审计kind、旧五操作直接读回与Web两个label consumer；first slice无生产mount，明确claim能力协商/旧strict decoder/fixture fallback门槛。Root选semver7.8.5/ISC compare方向，初始请求不含上游包源或依赖复制；实际bundle及真实runner仍未验。当前仍原树metadata唯一authority，0新产品修改/工程运行。
 
 2026-10-06 22:59:39 UTC：fresh HEAD68db2d60 clean、6ddedc73 v5 ACTIVE原四scope。Lead指出固定main60ca两个迁移入口以file数组读取012/013/017/019，前包未纳这四官方SQL；撤回68db的source-complete结论，仅在本metadata追加精确四Git输入并重算总量。14候选/base/0依赖复制不变，未产品写/执行工程检查。另记录browser固定旧X03输出须在新树合法领取后改自有排他namespace；本轮不改该源码、不运行浏览器。
+
+2026-10-06 23:09:13 UTC：本旧权威树最终交接记录。fresh 067920b5 clean、6ddedc73 v5 ACTIVE四scope；新树 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding` / `codex/plugin-enable-binding` 为固定main60ca、clean，仅两规则文件32,303B。Root/Lead的 `/tmp/flow-x01-minimal-tree-067920b5.json`（SHA19030bc4eab6145e7c0c5fa1c087649bb6820abdc29c191e66eb63d4896f91c6）与正式唯一 `packages/storage/migrations/034-plugin-runtime.sql` 授权已到；033不触。此status单文件提交/push完成即明确停止旧四scope全部写入（含两metadata），随后按当前version handoff → accept → amend，原claim不release/re-take。收据留/tmp；未COMMITTED前不宣称移交完成，旧树之后不回写。已固定067请求/c778输入、14literal/base/545文件不改。新树本段也不写任何文件、index/sparse/config或产品，等sole source operator补齐已审清单再继续；唯一status由新树接续，旧副本只冻结此说明。0新检查、安装、import、PG/provider。
