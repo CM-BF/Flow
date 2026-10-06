@@ -1,6 +1,6 @@
 # WPF-MATURE-02 review
 
-当前runtime-metadata结果：1目标code1、第二槽NOT_RUN，measurement FAIL但清理/完整计量确认；[结果](../../docs/evidence/wpf-mature-02/node-runtime-metadata/run-report.md)待固定target忠实性独审。窗口已消费，无后继授权。准备审批仅原范围。
+当前runtime-metadata结果：1目标code1、第二槽NOT_RUN，measurement FAIL但清理/完整计量确认；[结果](../../docs/evidence/wpf-mature-02/node-runtime-metadata/run-report.md)固定8b1c8798已获architecture_read/gpt-6-astra 14:38:13与Mika/gpt-6-astra 14:38:28 UTC RESULT_FIDELITY_APPROVED，0P1/P2；[收据](../../docs/evidence/wpf-mature-02/node-runtime-metadata/result-review.json)。仅faithful FAIL，窗口已消费，无后继授权。准备审批仅原范围。
 
 运行库元数据新片：Mika14:03对2ac固定设计APPROVED；[实现与定向证据](../../docs/evidence/wpf-mature-02/node-runtime-metadata/implementation.md)记录42 distinct纯检查、原生惰性import与7语法检查，96ba功能独审architecture_read14:24 CHANGES_REQUESTED（唯一1P2：组合末次persist丢safe结果）；修复26148841已获architecture_read/gpt-6-astra 2026-10-06 14:26:01 UTC功能APPROVED，原P2 CLOSED/0剩余；最终组合e3183758已获architecture_read14:27:58与Mika14:28:15准备APPROVED，0P1/P2；[正式收据](../../docs/evidence/wpf-mature-02/node-runtime-metadata/preparation-review.json)，实际NOT_OPEN。设计通过不替代源码检查；旧cause9605封存审批仍成立。
 
