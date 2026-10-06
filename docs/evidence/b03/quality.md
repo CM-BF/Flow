@@ -9,3 +9,5 @@ PG16官方依据：https://www.postgresql.org/docs/16/functions-binarystring.htm
 2026-10-06 05:04:22 UTC：after/交付自查：9实现文件与固定target字节一致；43行为/126HTTP字段一致，自有库均清理；raw只含SQL模板/数值无正文/凭据。decoded JSON、Node→PG hash迁移、短正文92B开销及latency波动明确，禁止速度/CPU臆测。不重测metadata。内部preview接口影响由Lead同步固定架构。
 
 2026-10-06 05:05:47 UTC：Root独审APPROVED target9b2156d，9实现28证据hash/6baseline源码/43用例/126重算/5库清理已核，无blocking，未重跑；只批准有界preview，不扩CPU/PGwire/legacy/N+1结论。当前status新增本片段交付阶段integration，main接收后再delivered。保留已审manifest历史字节（内部NOT_STARTED是生成时记录）；当前批准以review/status为准。
+
+2026-10-06 05:11:00 UTC：主线接收收尾仅metadata。固定main da8d73a含9b2156祖先，完整9实现文件hash匹配/零diff；未重跑。修复status B03-02/03陈旧“未执行”证据；交付阶段delivered，下一可用交付“本片段已交付”，部署事实仍分开。提交后停写，由Rootrelease。
