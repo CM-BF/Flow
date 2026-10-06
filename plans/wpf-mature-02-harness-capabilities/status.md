@@ -9,8 +9,8 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / 首metadata待提交 |
-| 工作树dirty状态 | 首计划与来源登记待提交，仅3个claim scope |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / c6a687a8865969ac337c7df9ed6648deb5f9362d（启动metadata；当前HEAD由Git核） |
+| 工作树dirty状态 | 仅3scope内实验consumer开发中；接口/固定schema文档独立交付 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | NOT_RUN |
@@ -30,7 +30,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-02-01 | completed | chatui01_owner | [领取回执](../../docs/evidence/wpf-mature-02/take-receipt.json)，固定基线/计划/来源登记 |
 | WPF-MATURE-02-02 | in-progress | chatui01_owner | 正在绑定Codex0.154.0默认stable schema与有界consumer |
-| WPF-MATURE-02-03 | pending | chatui01_owner | 真实app-server隔离方案先交Mika审；未启动 |
+| WPF-MATURE-02-03 | pending | chatui01_owner | 真实进程文件/Keychain/外连隔离尚未证明；未启动，fixture独立继续 |
 | WPF-MATURE-02-04 | pending | chatui01_owner | 等R05共享合同与路径交接；当前可继续独立实验 |
 | WPF-MATURE-02-05 | pending | d01（Web子任务owner） | 按本大task接口独立交付，尚未获得本task跨端验收证据 |
 | WPF-MATURE-02-06 | pending | chatui01_owner | 真实续接/账号/取消恢复未验收 |
@@ -39,7 +39,7 @@
 
 ## 跨lead接口与handoff
 
-唯一接口请求：[interface](../../docs/evidence/wpf-mature-02/interface.md)。R05共享host/main/config/contracts仍由ExecutionLead/assignment_review维护；Web d01挂本bigplan。当前本owner仅3个独占实验/计划/证据scope，不以方案扩写公共源码。
+唯一接口请求：[interface](../../docs/evidence/wpf-mature-02/interface.md)。R05共享host/main/config/contracts及生产transport/adapter apps/runner/src/codex由ExecutionLead/assignment_review及其runner worker维护；本owner仅固定schema/模型事实与实验conformance，Web d01挂本bigplan。当前本owner仅3个独占实验/计划/证据scope，不以方案扩写公共源码。
 
 ## Dashboard同步与限制
 

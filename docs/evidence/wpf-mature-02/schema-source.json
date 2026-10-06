@@ -1023,5 +1023,30 @@
     "ts/v2/WorkspaceMessageType.ts": "911d504dbaa56989ee1f6de538d479ab72930db71ddf9b2807a8f2539887ab06",
     "ts/v2/WriteStatus.ts": "7b0285ae8fbb239002d76ddd79e5b2249a12544377750ccd0aea32cf53a5f7a3",
     "ts/v2/index.ts": "47e981d46d45046b874c9c791a172c634383829f81605eaddeb77d3176abd12a"
+  },
+  "generatedFileCount": 1016,
+  "archiveMetadataFileCount": 3,
+  "originalManifestVerified": true,
+  "originalManifestSha256": "1f5e3f224266c31f3e885341fca395c2b3d35e8b722f8b067c44864f9261f78f",
+  "provenance": {
+    "version": "0.154.0",
+    "licenseDeclared": "Apache-2.0",
+    "hashes": {
+      "/opt/homebrew/lib/node_modules/@openai/codex/bin/codex.js": "61b0194f3bb6534439c8d26a3ed57d0805f84b884588b761795323eeb92fcf70",
+      "/opt/homebrew/lib/node_modules/@openai/codex/package.json": "18c49eba7183828e84f3f9f387a915da8c918be452f9746b0a6685c82486cd97",
+      "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex": "4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc"
+    },
+    "operations": [
+      "--version",
+      "app-server --help",
+      "app-server generate-json-schema --help",
+      "app-server generate-ts --help",
+      "app-server generate-json-schema --out <isolated-temp>/json",
+      "app-server generate-ts --out <isolated-temp>/ts"
+    ],
+    "modelCalls": 0,
+    "appServerLaunched": false,
+    "authOrCatalogRequests": 0,
+    "projectWrites": 0
   }
 }

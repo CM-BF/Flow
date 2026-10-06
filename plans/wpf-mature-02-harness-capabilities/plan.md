@@ -35,6 +35,10 @@ Claude与Codex可被发现、选择和运行；model/thinking/fast/access从中�
 
 当前只许local schema/确定性本地fixture。真实app-server启动先给Mika审隔离方案：专用空state directory、无个人凭据/配置、禁止网络、限定 initialize/initialized/model/list、总时限/输出上限/子进程清理，无用户服务影响。不得turn/start真实provider、auth/login、升级/安装或付费query。Pi不是Codex前置。
 
+## 模块职责与设计规则
+
+统一遵循[仓库modular-design](/Users/citrine/Projects/AgentHarness/Flow/AGENTS.md#modular-design)，不复制独立规则。目录归一Module隐藏raw catalogue语义；RPC Module只管bounded framing/关联/顺序/释放；普通final Module只管同thread/turn/item完成证据，不管任务调度/权限/进程。生产transport/adapter由ExecutionLead的runner worker实现；R05 owner负责中心profile/policy/session/final，Web d01消费正式合同。本实验不持有上述状态。
+
 ## 验证与架构
 
 Node24/pnpm9.15.4固定；优先Node行为测试，源码/fixture绑定schema哈希，0测试不算通过。当前实验不改产品Interface/FSM/数据库；后继生产合同/依赖接线会影响架构，target/owner由Mika/ExecutionLead登记，不能把planned画成main事实。
