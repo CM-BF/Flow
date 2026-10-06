@@ -32,3 +32,5 @@
 ## R4-1 与首轮行为
 
 4ba固定20/20 direct PASS（受控IDB事件端口/public-client mock fetch），runner实际2.540秒、cleanup fulfilled；此轮不包含R4-1时序。随后binding DraftState显式绑定namespace，将commit得到的CAS version记录于该旧view状态，即使publicnamespace暂null；仍经current gate拒绝旧send，恢复授权只有用户明确操作可重试。新case控制auth=false/namespace=null→commit→同namespace reauth→旧port仍拒→新明确retry成功。跨namespace不借用版本；这项当前仅源码+types0，后继direct待fresh窗口。
+
+补充terminal binding残留：关联handoff.commandId，commit转移后版本归零不恢复授权；host成功匹配同key terminal后、current代际核准才清该ID blocker/endHandoff，并持久保存deferred下一稿。错误身份Restore不清保护。新增binding级case未执行，不能引用原20case绿。

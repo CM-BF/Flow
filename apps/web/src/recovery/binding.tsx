@@ -64,7 +64,7 @@ export function readRecoveryDraft(value: Json): CompleteDraft {
 }
 interface DraftState {
   namespace?: string; lastData?: string; version: number; serial: number; savedSerial: number; chain: Promise<void>; error?: string;
-  handoff?: { data: Json; serial: number; domain: CommandRecord["domain"]; taskId?: string }; deferred?: Json;
+  handoff?: { data: Json; serial: number; domain: CommandRecord["domain"]; taskId?: string; commandId?: string }; deferred?: Json;
 }
 interface RecoverySnapshot { open: boolean; records: readonly RecoveryRecord[]; loading: boolean; error?: string; saving: number }
 const message = (error: unknown) => error instanceof Error ? error.message : "Recovery could not complete.";
@@ -198,16 +198,24 @@ export class RecoveryWorkspace {
           const frozen = command.frozen && typeof command.frozen === "object" && !Array.isArray(command.frozen) ? command.frozen : {};
           const queue = "command" in frozen && frozen.command && typeof frozen.command === "object" && !Array.isArray(frozen.command) ? frozen.command : {};
           const handoff = pending?.domain === command.domain && (command.domain !== "queue" || ("kind" in queue && queue.kind === "enqueue")) && (command.domain !== "steering" || ("taskId" in frozen && frozen.taskId === pending.taskId)) ? pending : undefined;
-          if (handoff) { await state.chain; check(); }
+          if (handoff) {
+            if (handoff.commandId && handoff.commandId !== command.id) throw new RecoveryError("conflict", "This source draft already belongs to another original receipt.");
+            handoff.commandId = command.id;
+            await state.chain; check();
+          }
           if (state.error && handoff) { check(); await this.enqueue(viewKey, handoff.data); await state.chain; check(); }
           if (handoff && state.error) throw new RecoveryError("commit", state.error);
           if (handoff && state.handoff !== handoff) throw new RecoveryError("conflict", "The preparing draft changed before durable handoff.");
           transfer = handoff && command.domain !== "steering" ? { id: `draft:${viewKey}`, version: state.version } : undefined;
           // Display metadata is retained with the command, but its text already lives in frozen.input/request.
           const display = handoff?.data && typeof handoff.data === "object" && !Array.isArray(handoff.data) ? recoveryValue({ ...handoff.data, text: undefined, steering: undefined }) : undefined;
-          check(); await commandPort.prepare({ ...command, ...(display ? { display } : {}) }); check();
+          check(); await commandPort.prepare({ ...command, ...(display ? { display } : {}) });
+          // The source draft was transferred in this committed transaction even if authorization
+          // changes before the continuation. Keep its version bookkeeping, never resume HTTP.
+          if (transfer) state.version = 0;
+          check();
           this.blockedCommands.get(viewKey)?.delete(command.id);
-          if (handoff) { if (transfer) state.version = 0; state.savedSerial = state.serial; this.endHandoff(viewKey); }
+          if (handoff) { state.savedSerial = state.serial; this.endHandoff(viewKey); }
         } catch (error) {
           const blocked = this.blockedCommands.get(viewKey) ?? new Set<string>(); blocked.add(command.id); this.blockedCommands.set(viewKey, blocked);
           // A transient composer-empty notification must not overwrite a successfully saved source draft when prepare fails.
@@ -245,6 +253,13 @@ export class RecoveryWorkspace {
       this.restoring.add(live.owner.viewKey);
       try { await host.restore(live); } finally { this.restoring.delete(live.owner.viewKey); }
       const after = this.current(); if (after.host.generation() !== generation || namespaceKey(after.namespace) !== namespaceKey(namespace)) throw Error("This restore belongs to an older connection.");
+      if (live.kind === "command" && ["accepted", "rejected"].includes(live.phase)) {
+        // The original controller has now matched the entire saved identity and reconciled it.
+        // Clear only this receipt's local blocker; persist, rather than discard, a deferred next draft.
+        this.blockedCommands.get(live.owner.viewKey)?.delete(live.id);
+        const state = this.drafts.get(live.owner.viewKey);
+        if (state?.handoff?.commandId === live.id) { state.error = undefined; state.savedSerial = state.serial; this.endHandoff(live.owner.viewKey); }
+      }
       if (retry) { if (live.kind !== "command") throw Error("Only an original command can be retried."); await host.retry(live); }
       await this.refresh();
     } catch (error) { this.publish({ error: message(error) }); }

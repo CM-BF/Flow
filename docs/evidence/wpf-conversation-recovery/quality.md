@@ -33,3 +33,7 @@ w01独立三项（原文及hash留early-peer-report.txt/source-manifest）：A a
 ## 2026-10-06 15:03 UTC — R4-1 与单文件检查
 
 Root固定4ba报告原样归档。首direct20/20，2.540秒、tmp9227B、清理无错误，全部mockIDB/mockfetch，不是真HTTP或浏览器。修复只在binding私有DraftState持有namespace/version，不从已撤权public identity判断成功commit是否发生；这只是CAS bookkeeping，不恢复授权/自动HTTP。新增精准auth-null用例，原跨中心/代际断言保留。完整Web noEmit6.059秒/0，累计46.662/60，余13.338；第二行为检查尚未执行。保原source-only review与原raw，不倒填首20case包含新修复。
+
+## 2026-10-06 15:05 UTC — 同键终态binding清理
+
+核root提醒成立：host终态对账成功后blockedCommands/handoff仍可能残留。修复仅已通过host完整identity匹配且namespace/generation仍current的terminal ID；handoff显式关联原commandId，不全量清保护。prepare事务真正commit后即记录source draft已transfer（version0），authgate仍拒旧HTTP；终态Restore保留并写deferred下一稿，失败identity不解保护。新增binding层受控case而非只outbox单测。完整Webtypes6.152s/exit0；累计52.814/60。行为仍待第二fresh窗口。

@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { FlowClient } from "@flow/client";
 import type { BrowserSessionReady, ConversationSnapshot } from "@flow/contracts";
 import { ConnectionSession, type SessionClientFactory } from "../src/connection/session";
-import { ConversationRecoveryJournal, RecoveryError, namespaceKey, recoveryAddress, recoveryValue, type CommandRecord, type Json, type RecoveryNamespace } from "../src/recovery/journal";
+import { ConversationRecoveryJournal, RecoveryError, namespaceKey, recoveryAddress, recoveryValue, type CommandRecord, type Json, type RecoveryNamespace, type RecoveryRecord } from "../src/recovery/journal";
 import { RecoveryWorkspace, RECOVERY_OWNER, readRecoveryDraft } from "../src/recovery/binding";
 import { AppPluginSession, type AppActions } from "../src/plugin-integration/session";
 import { QueueCommands } from "../src/conversations/queue/commands";
@@ -69,9 +69,10 @@ function actions(recovery: AppActions["recovery"]): AppActions {
 }
 async function workspace(value: ConversationRecoveryJournal) {
   let data = draft("original"), identity = ns, generation = 1, authorized = true;
-  const session = new AppPluginSession(actions({ journal: value, namespace: () => authorized ? identity : null, authorized: () => authorized, generation: () => generation, owner: () => owner, draft: () => data, restore: async () => {}, retry: async () => {} }), themes[0]!);
+  const restore = vi.fn(async (_record: RecoveryRecord) => {});
+  const session = new AppPluginSession(actions({ journal: value, namespace: () => authorized ? identity : null, authorized: () => authorized, generation: () => generation, owner: () => owner, draft: () => data, restore, retry: async () => {} }), themes[0]!);
   cleanup.push(() => session.dispose()); await session.host.activate(RECOVERY_OWNER);
-  return { workspace: session.recovery, setDraft: (next: Json) => { data = next; }, revoke: () => { authorized = false; generation++; }, reauthenticate: () => { authorized = true; generation++; }, switchCenter: () => { identity = { ...ns, centerId: uuid(20) }; generation++; } };
+  return { workspace: session.recovery, restore, setDraft: (next: Json) => { data = next; }, revoke: () => { authorized = false; generation++; }, reauthenticate: () => { authorized = true; generation++; }, switchCenter: () => { identity = { ...ns, centerId: uuid(20) }; generation++; } };
 }
 
 describe("recovery storage barriers (controlled IDB event port)", () => {
@@ -139,6 +140,21 @@ describe("recovery storage barriers (controlled IDB event port)", () => {
     const store = new ConversationRecoveryJournal(factory); cleanup.push(() => store.close());
     await expect(store.list(ns)).rejects.toThrow("blocking"); expect(await store.list(ns)).toEqual([]);
     old.onsuccess?.(); expect(close).toHaveBeenCalledTimes(1); expect(await store.list(ns)).toEqual([]); expect(calls).toBe(2);
+  });
+  it("clears only a reconciled terminal handoff blocker and persists the deferred next draft", async () => {
+    const { port, journal: store } = journal(), { workspace: binding, setDraft, revoke, reauthenticate, restore } = await workspace(store);
+    binding.beginHandoff(owner.viewKey, "queue"); await binding.flush().catch(() => {});
+    port.holdNextCommit = true;
+    const preparing = binding.commandPort(owner.viewKey).prepare(command);
+    const stopped = expect(preparing).rejects.toThrow(/authorize|Authentication|older connection/);
+    await vi.waitFor(() => expect(port.releases).toHaveLength(1)); revoke(); port.releases.shift()!(); await stopped;
+    reauthenticate(); setDraft(draft("independent next draft")); binding.changed(owner.viewKey);
+    const other = store.bind(ns, () => owner, () => true); await other.prepare({ ...command, expectedVersion: 1 }); await other.dispatch(command.id); await other.checkpoint(command.id, { phase: "accepted", data: { conversationId: "chat", queueRevision: 1 } });
+    const terminal = (await store.list(ns)).find(record => record.id === command.id)!;
+    restore.mockRejectedValueOnce(Error("Original identity did not match")); await binding.restore(terminal); expect(binding.protection(owner.viewKey)).not.toEqual([]);
+    await binding.restore(terminal); await binding.flush(); expect(restore).toHaveBeenLastCalledWith(terminal); expect(binding.protection(owner.viewKey)).toEqual([]);
+    expect((await store.list(ns)).find(record => record.kind === "draft")).toMatchObject({ data: draft("independent next draft") });
+    expect((await store.list(ns)).find(record => record.id === command.id)).toMatchObject({ phase: "accepted", version: 3 });
   });
   it("prevents a different command replacing the unresolved slot and retains full cancel-task target", async () => {
     const { journal: store } = journal(), bound = store.bind(ns, () => owner, () => true);
