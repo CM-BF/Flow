@@ -99,6 +99,13 @@
       "finalSparseFiles": 3520,
       "evidence": "sparse-worktree-2026-10-06/o13-rule-correction.json",
       "decision": "stop after three authorized ended trees; only bounded incremental checks; full SVC06 still below2.5GiB"
+    },
+    {
+      "observedAt": "2026-10-06T15:15:18.606951+00:00",
+      "availableBytes": 1086668800,
+      "sparseOperation": "four-ended-engineering-trees",
+      "evidence": "sparse-worktree-2026-10-06/engineering-four-summary.json",
+      "decision": "Still insufficient for 1GiB + 32MiB PG window; SVC06 full gate unchanged. No additional candidate authorized by this batch."
     }
   ]
 }

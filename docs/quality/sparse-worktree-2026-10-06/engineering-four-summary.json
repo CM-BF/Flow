@@ -1,0 +1,65 @@
+{
+  "observedAt": "2026-10-06T15:15:18.606951+00:00",
+  "availableBytes": 1086668800,
+  "operations": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer",
+      "head": "bb794bdcba12b6ded459c7b5ee35a9090df81036",
+      "candidateCount": 1481,
+      "logicalDematerializedBytes": 9915672,
+      "freeBeforeBytes": 1027297280,
+      "freeAfterBytes": 1041117184,
+      "observedVolumeDeltaBytes": 13819904,
+      "clean": true,
+      "allRetainedHashesUnchanged": true
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract",
+      "head": "2fe22ac8dbcf513e7ca896bb5d871e0fb0365447",
+      "candidateCount": 1504,
+      "logicalDematerializedBytes": 10016940,
+      "freeBeforeBytes": 1040461824,
+      "freeAfterBytes": 1054715904,
+      "observedVolumeDeltaBytes": 14254080,
+      "clean": true,
+      "allRetainedHashesUnchanged": true
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-calculator-receipt",
+      "head": "82c91b1646f20cf567a48883f7d78f38cde51c78",
+      "candidateCount": 1309,
+      "logicalDematerializedBytes": 8739606,
+      "freeBeforeBytes": 1053327360,
+      "freeAfterBytes": 1065426944,
+      "observedVolumeDeltaBytes": 12099584,
+      "clean": true,
+      "allRetainedHashesUnchanged": true
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-seams",
+      "head": "a2ead554bd512197c6f1acd1b6090364e133aca6",
+      "candidateCount": 1240,
+      "logicalDematerializedBytes": 8613941,
+      "freeBeforeBytes": 1065365504,
+      "freeAfterBytes": 1087401984,
+      "observedVolumeDeltaBytes": 22036480,
+      "clean": true,
+      "allRetainedHashesUnchanged": true
+    }
+  ],
+  "result": "Four authorized released own trees processed; no others changed. Narrow PG/build gates remain closed.",
+  "reserveBytes": 1073741824,
+  "svcFullGateBytes": 2684354560,
+  "failureNotes": [
+    "Initial operator read used metadata tree without pg dependency: failed before reading ledger; retried from existing main dependency installation.",
+    "Initial protected-index path was relative and rejected before sparse mutation; fixed to resolve within each worktree.",
+    "Fourth branch lacked upstream config; exact existing origin branch hash was verified instead. No branch/config changes."
+  ],
+  "skills": [
+    "local find-skills",
+    "local codebase-design",
+    "local clean-code"
+  ],
+  "tests": 0,
+  "providerCalls": 0
+}
