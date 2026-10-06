@@ -1,11 +1,13 @@
 # WPF-DPERF03 独立 review
 
-**状态：NOT_STARTED**
+**状态：APPROVED**
 Review target commit：5609ea719ec400a803bb6036429312b7a212c90f
 Base：eb95fba43b0305db0dd40dfe85ccc0d58eb9a6ea。
+Reviewer：root / gpt-6-astra ultra；正式结论时间：2026-10-06 12:18:07 UTC。
+Blocking findings：0。
 
-只读审查五个实现/直接测试文件与Interface；先核实际HEAD/dirty、固定source manifest。检查全部Git入口同预算、child许可释放、MAXBUFFER/E2BIG fallback、capturedHead/末核、失败unknown、跨snapshotfresh，以及原独立调用兼容。核有界实验来源/累计预算和限制；不操作4320/真实registry/PG/provider。修复交唯一owner，不由review者写代码。
+Root全文审查五变更源、相关旧测试、Interface、质量与两次实验原始失败/成功记录。独立Node24显式四路径37/37 PASS，0skip，总26713.567417ms；删除协调DB与DPERF实验环境变量，无PG/HTTP/实际registry/4320，未重跑opt-in实验。见[原始日志](../../docs/evidence/wpf-dperf03/root-direct-tests.log)与[原样审计](../../docs/evidence/wpf-dperf03/root-audit.json)。
 
-独立结果、severity/blocking findings及作者回应尚无；空模板不是批准。作者检查后另列validation，main集成单列。
+五源manifest/checks/current/fixed全同，十三只读依赖等base、scopeoutside为空、source diffcheck0，审查时fd949d3dbfe7c59e678b6470b9496229217d3605 clean。Root直接解析成功four-main-proofs raw Trace2：23starts = cat-file8 + ls-tree8 + merge-base4 + dirty1 + untracked1 + HEAD1，峰4、未闭区间0；两个临时root已不存在。首次失败实验的专测源码hash不同，不能把首次完整矩阵绑定最终SHA。
 
-作者结果：37直接消费者PASS、临时Git修正后1PASS；首脚本trim失误/两次累计预算原样保留，见[验证](../../docs/evidence/wpf-dperf03/validation.md)与[manifest](../../docs/evidence/wpf-dperf03/candidate.json)。独立review未开始。运行原消费者不设置FLOW_DPERF_EXPERIMENT；如单独复现实验需新/tmp证据目录与独立批准预算，不能覆盖作者日志。
+小Interface、child close后许可释放、串行bisect、失败unknown缓存与下一snapshotfresh符合约定，无阻塞发现。限制：每context并发上限不等全进程，查询非atomic，未测CPU/SLO；current观察并非同瞬间，A→B→A等不覆盖。作者真实运行源2a52+dirty保留，不倒填执行HEAD。[作者验证](../../docs/evidence/wpf-dperf03/validation.md)和[固定manifest](../../docs/evidence/wpf-dperf03/candidate.json)独立归因。main集成和部署尚未确认，claim保留至正式接收。

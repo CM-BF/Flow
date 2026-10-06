@@ -18,8 +18,8 @@
 - [x] **WPF-DPERF03-03** 直接行为/消费者回归与有界临时Git实验、原日志和hash
 - [ ] **WPF-DPERF03-04** 固定实现独审、提交交接与main事实收口
 
-实验累计≤45秒，含≥10秒预留清理，raw≤8MiB；35秒停止新样本，失败安全点评估剩余，超限partial不续跑。临时Git只自有目录，不读真实registry、不访问API/产品PG/provider；领取账本read另列。必要原消费者回归单列，不重做既有benchmark。原研究1/4/8repo启动4/16/32、四proof28starts为输入事实，不是本轮实测或CPU/SLO。新增HEAD核对后四proof预计23starts，只是算术待验。所有检查按实际来源记录，不能为数量造绿。
+实验累计≤45秒，含≥10秒预留清理，raw≤8MiB；35秒停止新样本，失败安全点评估剩余，超限partial不续跑。临时Git只自有目录，不读真实registry、不访问API/产品PG/provider；领取账本read另列。必要原消费者回归单列，不重做既有benchmark。原研究1/4/8repo启动4/16/32、四proof28starts为输入事实，不是本轮实测或CPU/SLO。新增HEAD核对后四proof最初预计23starts；本轮实际23，来源和限制见validation。所有检查按实际来源记录，不能为数量造绿。
 
 风险：排队延长观察窗口；HEAD末核不能检测A→B→A或工作区各查询间变化。并发4是资源政策，不等全进程/全实例上限。索引/registry与架构图由Lead统一更新；本片不越权写。
 
-12:14:24.927Z 原子amend至7scope：[回执](../../docs/evidence/wpf-dperf03/amend-receipt.json)。新增现proof-snapshot.test只更正committed命令计数识别，原4行为完整保留。固定实现 5609ea719ec400a803bb6036429312b7a212c90f；结果见[validation](../../docs/evidence/wpf-dperf03/validation.md)，待独审/main。
+12:14:24.927Z 原子amend至7scope：[回执](../../docs/evidence/wpf-dperf03/amend-receipt.json)。新增现proof-snapshot.test只更正committed命令计数识别，原4行为完整保留。固定实现 5609ea719ec400a803bb6036429312b7a212c90f；结果见[validation](../../docs/evidence/wpf-dperf03/validation.md)，root 12:18:07 UTC独审APPROVED，main待接收。
