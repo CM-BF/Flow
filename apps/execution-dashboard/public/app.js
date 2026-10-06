@@ -34,6 +34,11 @@ function compactTask(task, subtitle) {
   title.append(element('span', task.id, 'task-code'), element('h3', task.title));
   text.append(title);
   if (subtitle) text.append(element('p', subtitle));
+  const allocation = element('p', undefined, 'allocation');
+  if (task.assignments === null) allocation.textContent = '领取状态未知';
+  else if (!task.assignments?.length) allocation.textContent = '尚无领取登记；接手前须核对';
+  else allocation.textContent = task.assignments.map(claim => `${claim.role === 'review' ? '只读审查' : claim.role === 'integration' ? '受控集成' : claim.state === 'handoff_pending' ? '交接待接收' : '已领取'} · ${claim.lead} / ${claim.worker}${claim.needsVerification ? ' · 待核对（仍占用）' : ''}${claim.matchesSource ? '' : ' · 进度来源待对齐'}`).join('；');
+  text.append(allocation);
   row.append(text, taskButton(task));
   return row;
 }
@@ -108,6 +113,13 @@ function openTask(id) {
     ['登记分支', task.branch], ['现场 Git', `${task.git.branch ?? '未知'}\n${task.git.head ?? 'HEAD 未知'}\n${task.git.dirty === null ? 'dirty 未知' : task.git.dirty ? `dirty；${task.git.changedFiles} 项变化` : 'clean'}`],
     ['owner 声明 HEAD', task.status.declaredHead], ['owner 声明 dirty', task.status.declaredDirty],
   ]) addFact(facts, label, value);
+  content.append(element('h3', '领取与写入范围'));
+  if (task.assignments === null) content.append(element('p', '领取状态未知；协调数据库不可用，禁止据此新接手。', 'notice warning'));
+  for (const claim of task.assignments ?? []) {
+    const assignment = element('dl', undefined, 'detail-facts');
+    for (const [label, value] of [['领取 ID / version', `${claim.claimId} / ${claim.version}`], ['Lead / Worker', `${claim.lead} / ${claim.worker}`], ['状态 / role', `${claim.state} / ${claim.role}`], ['Branch / worktree', `${claim.branch}\n${claim.worktree}`], ['精确 scope', claim.scope.join('\n') || '无实现写权限'], ['来源', claim.origin === 'migration' ? `现有合法派工迁移；观察 ${timestamp(claim.observedAt)}` : '原子领取'], ['更新 / 核对', `${timestamp(claim.updatedAt)}${claim.needsVerification ? '；记录陈旧但仍占用，禁止抢占' : ''}`], ['接收方', claim.next ? `${claim.next.lead} / ${claim.next.worker}\n${claim.next.worktree}` : '无']]) addFact(assignment, label, value);
+    content.append(assignment);
+  }
   content.append(facts, element('h3', '计划、状态与证据'));
   const documents = element('div', undefined, 'documents');
   for (const doc of task.documents) { const button = element('button', doc.title); button.type = 'button'; button.addEventListener('click', () => openDocument(task, doc)); documents.append(button); }

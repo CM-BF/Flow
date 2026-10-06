@@ -14,14 +14,14 @@ export function parseHuman(field) {
   const blocker = signal(field(/^当前阻塞$/), 'ACTIVE');
   const decision = signal(field(/^需用户决定$/), 'REQUIRED');
   const missing = [];
-  for (const [label, value] of [['阶段', phase], ['当前产出', output], ['下一可用交付', next]]) if (!value || value === 'UNKNOWN' || value.length > 240) missing.push(label);
+  for (const [label, value] of [['阶段', phase], ['当前产出', output], ['下一可用交付', next]]) if (!value || value === 'UNKNOWN' || value.length > (label === '阶段' ? 24 : 240)) missing.push(label);
   if (!/^[1-9]$/.test(priorityRecord)) missing.push('优先级');
   if (blocker.state === 'unknown') missing.push('当前阻塞');
   if (decision.state === 'unknown') missing.push('需用户决定');
-  return { phase: phase === 'UNKNOWN' ? '' : phase, priority: /^[1-9]$/.test(priorityRecord) ? Number(priorityRecord) : 9, output: output === 'UNKNOWN' ? '' : output, next: next === 'UNKNOWN' ? '' : next, blocker, decision, missing, complete: missing.length === 0 };
+  return { phase: phase === 'UNKNOWN' || phase.length > 24 ? '' : phase, priority: /^[1-9]$/.test(priorityRecord) ? Number(priorityRecord) : 9, output: output === 'UNKNOWN' ? '' : output, next: next === 'UNKNOWN' ? '' : next, blocker, decision, missing, complete: missing.length === 0 };
 }
 
-export function humanOverview(tasks) {
+export function humanOverview(tasks, phaseSourceId = 'FLOW-001') {
   const completed = task => /^completed(?:$|[（(;；\s])/.test(task.status.branchState ?? '');
   const activeState = task => /^(?:in-progress|blocked)(?:$|[（(;；\s])/.test(task.status.branchState ?? '');
   const priorityOrder = (a, b) => (a.status.human?.priority ?? 9) - (b.status.human?.priority ?? 9) || a.id.localeCompare(b.id);
@@ -31,7 +31,8 @@ export function humanOverview(tasks) {
   const featuredIds = new Set(featured.map(task => task.id));
   const otherActive = tasks.filter(task => task.current && activeState(task) && !featuredIds.has(task.id)).sort(priorityOrder);
   return {
-    phase: [...new Set(known.filter(task => !completed(task)).map(task => task.status.human.phase))].join(' / ') || null,
+    phase: tasks.find(task => task.id === phaseSourceId && task.current)?.status.human?.phase || null,
+    phaseSourceId,
     activeIds: featured.map(task => task.id),
     otherActiveIds: otherActive.map(task => task.id),
     deliveryIds: known.filter(task => !completed(task) || !task.main.current).slice(0, 3).map(task => task.id),

@@ -57,3 +57,12 @@
 - feature 尽早交付稳定小接口与可独立验收片段。大型变更按真实职责模块化、插件化或隔离；阻塞显式区分实现、等待共享接口、验证和独立 review，先改善实际最大耗时。
 - 固定 Node24 / pnpm9.15.4 / Vitest4.0.18，优先显式测试路径，记录实际选择/通过数，零测试不算通过。server、runner、contracts、client 当前没有包级 test/typecheck scripts，不得用不存在的 filter script 当证据。
 - 本模块变化测本模块与直接消费者；公共契约、动态 SQL、migration、资源行为要显式纳入影响范围，不能只依 import 图。必要跨模块检查在实际集成点执行，metadata 或无新风险不反复全库测试。保持真实 review，不删断言、跳失败或接受新截图替代修复。命令映射见 docs/quality/local-validation.md。
+
+## 多 Lead 领取与交接
+
+- 新 take 前使用执行 dashboard 的协调账本核对任务、lead/worker、worktree/branch 与精确可写 scope；通过 PostgreSQL 原子 CLI 取得 commit 后 receipt（claimId/version/身份/路径/时间）才能写。稳定 requestId 重试必须同 payload；未知结果先核对，不能把读取失败当空闲。
+- 进度仍只写唯一 owner status，领取账本不复制 TODO/check/review。review role 只读、不占 writer 范围；writer 的同 task、同 worktree、父子 literal scope 不得同时领取。目录路径按段比较，禁止 glob、../、.git 或 symlink 范围。
+- scope 追加用当前 version 的原子 amend，冲突保留旧占用；不能先 release 再 take 产生空窗。交付后在 review/修复期保留占用，明确停止写入后才 release/handoff；handoff_pending 保留范围，接收方 accept 新 version 后开工，原 owner 不再修改。陈旧记录只提示核对，绝不超时自动抢占。
+- 既有授权开工者保留 migration 标记与原观察时间。账本是同机合作约束，不声称 OS 强隔离。受控 integration 仅应用已审提交；手工冲突修复/新实现须与原 owner 协调路径，不能借 integration 绕过 scope。
+- status 的“阶段”为最长24字的共同里程碑（当前 M2），任务步骤放“当前产出/下一可用交付”。页面总标题只取明确全局 FLOW-001 来源，缺失/过期显示未知，不拼接各任务自由段落。
+- 使用与恢复边界见 [D04说明](docs/evidence/d04/README.md)。

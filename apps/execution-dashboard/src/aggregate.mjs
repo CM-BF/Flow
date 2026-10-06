@@ -1,4 +1,5 @@
 import { compareImplementation, integrationProof } from './proof.mjs';
+import { assignmentSnapshot } from './coordination/ledger.mjs';
 import { humanOverview } from './human.mjs';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
@@ -70,11 +71,12 @@ async function aggregateTask(task, registry, observations, now) {
 export async function aggregate(registry, now = Date.now()) {
   const directories = [...new Set([registry.mainWorktree, ...registry.tasks.map(task => task.worktree)])];
   const observations = new Map(directories.map(directory => [directory, observeGit(directory)]));
-  const [tasks, main] = await Promise.all([
-    Promise.all(registry.tasks.map(task => aggregateTask(task, registry, observations, now))), observations.get(registry.mainWorktree),
+  const [tasks, main, assignments] = await Promise.all([
+    Promise.all(registry.tasks.map(task => aggregateTask(task, registry, observations, now))), observations.get(registry.mainWorktree), assignmentSnapshot(undefined, now),
   ]);
   await Promise.all(tasks.map(async task => { task.main = await integrationProof(task, registry.mainWorktree, main); }));
+  for (const task of tasks) task.assignments = assignments.state === 'available' ? assignments.claims.filter(claim => claim.taskId === task.id && claim.state !== 'released').map(claim => ({ ...claim, matchesSource: claim.worktree === task.worktree && claim.branch === task.branch })) : null;
   const milestoneSource = tasks.find(task => task.id === 'FLOW-003');
-  return { generatedAt: new Date(now).toISOString(), staleAfterHours: registry.staleAfterHours, main: { ...main, worktree: registry.mainWorktree }, tasks, overview: humanOverview(tasks),
+  return { generatedAt: new Date(now).toISOString(), staleAfterHours: registry.staleAfterHours, main: { ...main, worktree: registry.mainWorktree }, tasks, assignments, overview: humanOverview(tasks, registry.phaseSourceId),
     milestones: milestoneSource ? { taskId: milestoneSource.id, current: milestoneSource.current, todos: milestoneSource.status.todos } : { taskId: null, current: false, todos: [] } };
 }

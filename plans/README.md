@@ -77,3 +77,7 @@ M1最终独立APPROVED target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真�
 上表新feature正文在其权威worktree，集成后补本仓库相对链接；不复制未合入副本制造第二状态源。
 
 [Web平台管理 WPF-001](web-platform/plan.md) 已接收至3493088文档快照，权威外部owner后续变化按实际commit接收；其子项不与主线P01/D03重复派发。M02后端与CLI已进入main8c57f2f；真实统一Web入口由外部WPF-M02独占实现。I02集成状态见[plan](i02-integration/plan.md)/[status](i02-integration/status.md)/[review](i02-integration/review.md)。
+
+## 当前协调片段
+
+[D04 多 Lead 领取](d04-coordination/plan.md) 为 in-progress；[status](d04-coordination/status.md) / [review](d04-coordination/review.md)。G01 首图命令实现已交付并获独立源码审查，P02 持久出站进程验收推进；其共享 client/CLI/生产入口由 F01 集成。D04 账本仅分配，26来源的 status 仍是唯一进度事实源。

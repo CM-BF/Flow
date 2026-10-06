@@ -112,8 +112,8 @@ test('scope-tree integration requires existing target and no omitted new impleme
   result = first(await aggregate(f.registry, now)); assert.equal(result.main.current, false);
 });
 
-test('20 distinct registry sources include D03, I02 and bounded Web platform source', () => {
-  const registry = defaultRegistry(); assert.equal(registry.tasks.length, 20);
+test('26 distinct registry sources include D03, I02 and bounded Web platform source', () => {
+  const registry = defaultRegistry(); assert.equal(registry.tasks.length, 26);
   assert.equal(registry.tasks.find(task => task.id === 'I02').planDir, 'plans/i02-integration');
   const source = registry.tasks.find(task => task.id === 'WPF-001');
   assert.equal(source.planDir, 'plans/web-platform'); assert.equal(source.evidenceDir, 'docs/evidence/web-platform');
@@ -165,4 +165,15 @@ test('historical main ancestry cannot approve later implementation changes, dele
   result = first(await aggregate(f.registry, now)); assert.equal(result.main.current, false);
   await rm(path.join(f.registry.mainWorktree, 'apps/demo/new.js'));
   result = first(await aggregate(f.registry, now)); assert.equal(result.main.current, true);
+});
+
+ test('global phase comes only from the explicit short phase source', async context => {
+  const f = await fixture(context);
+  await f.writeStatus(f.tasks[0], { human });
+  await f.writeStatus(f.tasks[1], { human: { ...human, 阶段: 'implementation and local validation' } });
+  const snapshot = await aggregate(f.registry, now);
+  assert.equal(snapshot.overview.phase, 'M2');
+  assert.ok(snapshot.tasks[1].status.human.missing.includes('阶段'));
+  await f.writeStatus(f.tasks[0], { human: { ...human, 阶段: 'x'.repeat(25) } });
+  assert.equal((await aggregate(f.registry, now)).overview.phase, null);
 });

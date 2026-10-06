@@ -23,7 +23,7 @@ try {
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
   const page = await context.newPage(); page.on('pageerror', error => report.errors.push(error.message));
   await page.goto(`http://127.0.0.1:${report.livePort}`); await ready(page);
-  assert.equal(await page.locator('#source-count').textContent(), '20');
+  assert.equal(await page.locator('#source-count').textContent(), String(defaultRegistry().tasks.length));
   assert.equal(await page.locator('#history-section').getAttribute('open'), null);
   assert.equal(await page.locator('#unknown-section').getAttribute('open'), null);
   assert.ok(await page.locator('#active-work .task-row').count() <= 3);
@@ -34,7 +34,7 @@ try {
     assert.equal(await page.locator('#other-activity-items .task-row').count(), live.overview.otherActiveIds.length);
     await page.locator('#other-activity > summary').click();
   }
-  report.checks.push('top3 以外活动任务可展开，历史缺摘要不计当前缺口；实际 20 权威源；当前工作最多 3 项；完成历史和摘要缺口默认收起');
+  report.checks.push('top3 以外活动任务可展开，历史缺摘要不计当前缺口；实际登记权威源；当前工作最多 3 项；完成历史和摘要缺口默认收起');
   for (const size of [{ label: 'desktop', width: 1440, height: 1000 }, { label: 'narrow', width: 390, height: 844 }]) {
     await page.setViewportSize({ width: size.width, height: size.height });
     for (const theme of ['light', 'dark']) {

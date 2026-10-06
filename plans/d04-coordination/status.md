@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 更新时间 | 2026-10-06T02:43:31.089188+00:00 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 02:48:01 UTC / 2026-10-06 02:30 UTC |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination |
 | Branch | codex/dashboard-coordination |
@@ -19,11 +19,11 @@
 
 ## TODO 状态
 
-| TODO ID | 状态 | 证据 |
-| --- | --- | --- |
-| D04-01 | in-progress | [plan](plan.md) |
-| D04-02 | pending | 未执行 |
-| D04-03 | pending | 未执行 |
-| D04-04 | in-progress | [过渡登记](../../docs/evidence/d04/transitional-assignment.md) |
+| TODO ID | 状态 | Owner | 证据 |
+| --- | --- | --- | --- |
+| D04-01 | completed | Execution Lead | [plan](plan.md) |
+| D04-02 | in-progress | Execution Lead | 未执行 |
+| D04-03 | in-progress | Execution Lead | 未执行 |
+| D04-04 | in-progress | Execution Lead | [过渡登记](../../docs/evidence/d04/transitional-assignment.md) |
 
-检查尚未执行，review NOT_STARTED。未集成 main；进度仅此文件维护。下一步实现账本公开接口和双 process 行为测试。
+Node/真实PG局部25/25通过；黑洞连接与浏览器待验证，review NOT_STARTED。未集成 main；进度仅此文件维护。下一步实现账本公开接口和双 process 行为测试。
