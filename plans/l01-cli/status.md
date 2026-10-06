@@ -2,13 +2,13 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 00:57 UTC / 2026-10-06 00:57 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 01:09 UTC / 2026-10-06 01:09 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-cli` |
 | Branch | `codex/m1-cli` |
-| 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `3995ec16ce2cbcb4d5f5e99333b86575233fd89c`（仅表示同步时观察值） |
-| 工作树dirty状态 | 有未提交修改 |
+| 工作基线 / 本记录核验时HEAD | `eacee76fa7f1b6cc46b06b57ae68458637be4a26` / `28d1e9a64c8bf6c7858f0163ef8628434cba70e8`（仅表示同步时观察值） |
+| 工作树dirty状态 | 实现已提交；本记录为后续metadata提交 |
 | 工作分支状态 | 依下方TODO；未提交工作不等于已交付 |
 | 已集成main状态 / HEAD | `0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -17,10 +17,10 @@
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| L01-01 | in-progress | Execution Lead | 未完成，无通过结论 |
-| L01-02 | pending | Execution Lead | 未完成，无通过结论 |
-| L01-03 | pending | Execution Lead | 未完成，无通过结论 |
-| L01-04 | pending | Execution Lead | 未完成，无通过结论 |
+| L01-01 | completed | Execution Lead | [CLI evidence](../../apps/cli/EVIDENCE.md)，11 CLI HTTP tests + 4 shared tests/typecheck passed；待独立review |
+| L01-02 | completed | Execution Lead | [CLI evidence](../../apps/cli/EVIDENCE.md)，11 CLI HTTP tests + 4 shared tests/typecheck passed；待独立review |
+| L01-03 | completed | Execution Lead | [CLI evidence](../../apps/cli/EVIDENCE.md)，11 CLI HTTP tests + 4 shared tests/typecheck passed；待独立review |
+| L01-04 | in-progress | Execution Lead | 未完成，无通过结论 |
 
 ## 已完成证据与检查
 
@@ -36,3 +36,9 @@
 ## 下一步与handoff
 
 Owner在合并此文档基线后立即核验实际branch/head并接管本status；此初始化记录不替代owner后续更新。启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。
+
+## 当前工作段 / dashboard 同步
+
+命令、JSON、幂等键、watch超时与重连已实现；11条CLI HTTP测试与4条公共测试、typecheck通过，实现提交 `28d1e9a64c8bf6c7858f0163ef8628434cba70e8`，独立review未完成。此 status 是唯一手填进度源，等待 D01 聚合展示。
+
+2026-10-06 01:14 UTC review修复：原target647d57b无blocking，普通命令中断P2已修复；新增真实process回归，16/16 + typecheck通过。main未集成；下一步复审新commit。
