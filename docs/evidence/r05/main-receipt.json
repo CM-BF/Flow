@@ -1,0 +1,83 @@
+{
+  "observedAt": "2026-10-06T09:01:00Z",
+  "implementation": "47e6943080a0d4713190c51dd5ffb234b8efd915",
+  "acceptedMain": "9d6bd45abdf5149bc44f1e9dc534454e7403f7d7",
+  "sourceComparison": [
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "bytes": 938,
+      "sha256": "7ddaa80ce468c1efe0094f6c37f8fc64113ab46f0b5c5ba0745021bc5a14ad40",
+      "mainExact": true,
+      "workingExact": true
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 2149,
+      "sha256": "605f99ae2d898468a86a5dc3512b42a2582b30dc4f487d1f36f028bd0a804de2",
+      "mainExact": true,
+      "workingExact": true
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 3535,
+      "sha256": "c0b1fd4ae2bcbebdd0c1e1d4f3e46af8def2697e38da89f62d360c21b3926729",
+      "mainExact": true,
+      "workingExact": true
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 1663,
+      "sha256": "a97cb1217313d54f40c2c910bf55069ca4a983f07b5a6a269c4f74f90795b9fc",
+      "mainExact": true,
+      "workingExact": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "bytes": 3286,
+      "sha256": "fc4626777e2d3215a10280c3047cd0b6384e0c43ada39496273461b22bb7d135",
+      "mainExact": true,
+      "workingExact": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "bytes": 980,
+      "sha256": "8446fe7583d100ad2bdb694cb1ca74e1df9c0c4b4b38f70b4d58c97968cb197a",
+      "mainExact": true,
+      "workingExact": true
+    },
+    {
+      "path": "apps/runner/src/native-harness.test.ts",
+      "bytes": 3470,
+      "sha256": "6d0e715e34bdc8aa1783617a7fff29ba2e60fa0c0b83ff93d4383397c58c4efb",
+      "mainExact": true,
+      "workingExact": true
+    }
+  ],
+  "leadReceipt": "docs/evidence/i02/native-harness-fit-integration.json at acceptedMain",
+  "checks": "Local blob equality only. Lead integration root noEmit exit0 preserved; not rerun here.",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/r05",
+      "plans/r05-native-harness-host"
+    ],
+    "state": "active",
+    "branch": "codex/native-harness-host",
+    "origin": "new",
+    "taskId": "R05",
+    "worker": "assignment_review",
+    "claimId": "3f2622a4-0a55-4122-8522-7f4ed388d875",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host",
+    "createdAt": "2026-10-06T08:48:03.046Z",
+    "updatedAt": "2026-10-06T09:00:44.889Z",
+    "observedAt": null
+  },
+  "limitations": [
+    "A behavior-preserving extraction only",
+    "No second harness/terminal/provider completion",
+    "Main source acceptance is not personal runtime deployment"
+  ]
+}
