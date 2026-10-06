@@ -66,3 +66,12 @@ Panels现有Arc只读Interface已收敛，[候选18literal/唯一layout/稳定�
 [root原始双源审计](connection-plugin-surface-f13.json)固定f13de5c13e3983b94e16ae857ddc7b01cbba7a26，管理git show核两hash一致。Connection只有data-extension-slot=settings.sections标记；实际AppPluginSession/Provider位于Workspace内，外部Connection不受其包裹，AppSlot无SessionContext返回null。因此不能用已登录settings或Recovery入口证明此页面可贡献按钮。此为REQ22/23、WPF-001-05原覆盖后继，非当前Recovery21的新阻塞或完整review结论。
 
 后继由原plugin co-lead协调唯一host生命周期和最小私有授权Interface：真实preconnect/reauth页面通过既有P01模型显示一次审定贡献，无须每加button修改Connection；明确未认证前可用能力，贡献context不得暴露owner token/CSRF/cookie/raw client。禁用/卸载移除DOM并撤回callback，连接换代不能复活旧中心动作；保错误/unsupported/offline、键盘及双主题行为。未指定新公开slot、第二hostauthority或第三层task；未实现、0UI/browser/plugin执行，不扩Recovery写权。
+
+
+### 连接页候选接线收敛（固定2498，未实施/未领取）
+
+[W01原报告](connection-plugin-2498/report.md)、[十产品源及固定需求清单](connection-plugin-2498/sources.json)、[管理hash与原TODO映射](connection-plugin-2498-intake.json)延续REQ22/23、WPF-001-05，仍是建议。候选把现有唯一P01 host所有权移到认证外层，AppPluginSession以精确业务registration/lease借用；复用现settings.sections与Appearance的真实ExtensionSlot/PluginView，不新增公开slot、第二registry或假session。
+
+preauth仅审定打包builtin与本地主题，不提前加载全部Workspace业务。Connect贡献无参请求宿主私有form submit，Enter同入口；token/CSRF/cookie/client/journal不进入公开context/args/config。postauth必须经实际session/namespace/generation及retained guard才建立业务lease，撤权先于异步动作；重认证页面保留旧Workspace稿件/材料/capture/unknown但不保网络权限。停用/卸载撤贡献与旧callback，旧lease清理不能dispose唯一host或新session项；同global context不代表同授权代次。同realm builtin不冒X01第三方隔离。
+
+待决范围为六产品路径加两新专测，完整精确fixture/plan/evidence与公开API能否支持尚需原plugin co-lead协调；见原报告，不能据此take。App/session当前仍Recovery独占，当前21不扩大。真实preauth/reauth按钮与Appearance panel、禁用卸载、凭据隔离、保稿/跨身份旧callback、390双主题与键盘均待验；仅标记DOM或新增slot计数不算完成。无新增第三层task、claim、产品执行或资源采样。

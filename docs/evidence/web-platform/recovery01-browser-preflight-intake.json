@@ -131,5 +131,28 @@
       "fixedHashMatches": true
     }
   ],
-  "instruction": "Solepanelsoriginal21 source-onlyfixture/browser/records,0imports/runtime/install/extratypes;existingtotalwindowreturnedtoLead"
+  "instruction": "Solepanelsoriginal21 source-onlyfixture/browser/records,0imports/runtime/install/extratypes;existingtotalwindowreturnedtoLead",
+  "latestSupervisorSourceReview": {
+    "source": "recovery01-724-supervisor-review-root.json",
+    "sourcePath": "/tmp/root-recovery-724-supervisor-review.json",
+    "sha256": "58c7f7013e1c10dff86c02c8771bb6e38511b6782e5a52c035544ebed67be666",
+    "bytes": 3630,
+    "target": "724424237962ed8563db08f5ea8597ee6e7eb11d",
+    "sourceChecks": [
+      {
+        "path": "apps/web/test/conversation-recovery.browser.ts",
+        "fixedHashMatches": true,
+        "currentMatches": true
+      },
+      {
+        "path": "apps/web/test/conversation-recovery.fixture.ts",
+        "fixedHashMatches": true,
+        "currentMatches": true
+      }
+    ],
+    "result": "RB1/RB2/RB3 SOURCE_ADDRESSED; narrow source delta APPROVED/0blocking",
+    "pending": "RB4 worker actual-App assertions independent review; 22direct and browser NOT_RUN; formal feature NOT_STARTED",
+    "runtime": 0,
+    "window": "No new run or resource reservation"
+  }
 }

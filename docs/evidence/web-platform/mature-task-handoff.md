@@ -16,11 +16,13 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 ## 当前优先队列（当前安全点；以下较早时点只作历史）
 
+**REQ22/23连接页P01方案已归档，未领取/实施**：[W01 fixed2498原报告](connection-plugin-2498/report.md) / [十产品hash与固定ead94需求核验](connection-plugin-2498-intake.json)。候选把现有唯一host所有权移到认证外层，AppPluginSession精确借用业务lease，复用settings.sections与Appearance；preauth仅审定builtin，Connect无参请求宿主form，token/CSRF/client始终私有；postauth依session/namespace/generation及retained guard授权/同步撤权，保稿不保旧网络权限。六产品+两专测仅待决范围，原plugin co-lead后继协调，不扩Recovery21/不新增第三层task或claim。Recovery724的RB1–3源码窄审已闭合，worker实际App断言另审，22direct/browser未运行；资源窗口仍归Lead，0空间/服务采样。
+
 **唯一当前运行窗口：已交回Lead，A-only未准入/未运行**：[fresh准入原记录](release03-a-admission-not-run.json) / [当前窗口](resource-window-current.json)。Root **432b09ae1b552a68cc4720b369e42ed80bc942c9** 小审APPROVED后，管理一次fresh核bfb v3原四scope/无overlap、HEAD46395clean、两固定源码hash及17只读依赖均通过；但free **1,058,885,632B < 1,107,296,256B（1GiB+32MiB）**，也低于1GiB。**未创建gate、0A/PG/Chrome、业务累计仍0/180秒；立即交回Lead总PG/Chrome窗口，不空占。** 此为环境准入不足，不是history产品red或已清理过数据库；没有本次A raw/wire/DB可验，B/Chrome NOT_RUN、无SVC绿报告。W01及panels均已明确不运行、不复用旧空间；后继新实质资源/窗口事实再fresh，不忙轮询。共享卷数值不归因任一队。
 
 前一Lead F01窗口[原清理事实](f01-plugin-window-cleanup-1457.json)与本组Recovery2.540秒direct清理都保历史。新RELEASE A-onlysource32/16MiB gate已[root限定批准](release03-source-review-432b-root.json)，[panels同432b独立delta复核](release03-source-review-432b-peer/report.md)亦为限定源码APPROVED/0blocking；多份源审不替代一次实跑或资源准入。原60秒含20秒清理/累计180秒/8MiB不重置；准入失败不构成运行或发布许可。
 
-**Recovery harness新固定点，仍无运行许可**：[管理来源核](arc-recovery-source-intake.json)确认target **724424237962ed8563db08f5ea8597ee6e7eb11d**、metadata **d1a388876864c2f03b95f47dd405a9e4c281682d** 双端clean，两harness固定/current同；16生产源与直接22case相对2498零diff。[原owner预算/覆盖矩阵](recovery01-browser-harness-7244.md)为prepared/NOT_RUN，RB1–3源码待root窄审，RB4知识/profile/Steer及CREATE/Queue/第二中心等仍明确pending。types7.186s/direct27.460s余额不变；旧2498 preflight必须在未来获准窗口重绑新HEAD/两hash，不能原样启动。0imports/runtime/install/额外types/资源采样。
+**Recovery harness新固定点，仍无运行许可**：[管理来源核](arc-recovery-source-intake.json)确认target **724424237962ed8563db08f5ea8597ee6e7eb11d**、metadata **d1a388876864c2f03b95f47dd405a9e4c281682d** 双端clean，两harness固定/current同；16生产源与直接22case相对2498零diff。[原owner预算/覆盖矩阵](recovery01-browser-harness-7244.md)为prepared/NOT_RUN，RB1–3已获[root限定源码批准](recovery01-724-supervisor-review-root.json)，RB4知识/profile/Steer及CREATE/Queue/第二中心等仍明确pending。types7.186s/direct27.460s余额不变；旧2498 preflight必须在未来获准窗口重绑新HEAD/两hash，不能原样启动。0imports/runtime/install/额外types/资源采样。
 
 **Arc × Recovery同层研究已入原05-01/02/03/05**：[八固定源报告](workspace-arc-recovery-2498-interface.json)保open-layout稳定keyed父级、closed-protected不等永久DOM、stable view.key/私有alias、身份后结构恢复、3pane完整读取预算与真实P01 typed context。未执行、不领取、不占Recovery写权，实际App焦点/滚动/材料/原receipt仍必须验。
 

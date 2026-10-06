@@ -1,0 +1,59 @@
+{
+  "recordedAt": "2026-10-06T15:23:23.926261+00:00",
+  "reviewer": "root independent read-only review",
+  "fixedTarget": "724424237962ed8563db08f5ea8597ee6e7eb11d",
+  "base": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
+  "headObserved": "d1a388876864c2f03b95f47dd405a9e4c281682d",
+  "dirtyObserved": "",
+  "scope": "RB1-RB3 supervisor/database/scratch preparation only; independent worker actual-App review is separate and pending",
+  "sources": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "f84280696572d4c7ad4e075f35b152f3f3283ad9cf398a33588a6b76d8d9d1e7",
+      "bytes": 33753,
+      "currentMatches": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "e69d8170427f19b7c183aae6e78fd21de0d11677dfdfeb1f1247667fb06edab8",
+      "bytes": 13496,
+      "currentMatches": true
+    }
+  ],
+  "productionAndDirectTestChangedPaths": [],
+  "decision": "APPROVED_SOURCE_DELTA_RB1_RB2_RB3; NOT_RUN_RUNTIME; NOT_FULL_FEATURE_REVIEW",
+  "blockingFindings": [],
+  "findings": [
+    {
+      "id": "RB1",
+      "state": "SOURCE_ADDRESSED",
+      "evidence": "browser.ts:67-105,114-145,151-196: monotonic work/hard deadlines plus cleanup reserve, detached worker/Chrome process groups recorded before startup waits; pending child startup remains under parent ownership. Hard stop preserves incomplete budget/DB/scratch facts and nonzero exit. Close steps are bounded by parent hard stop, not an orphaned promise timeout."
+    },
+    {
+      "id": "RB2",
+      "state": "SOURCE_ADDRESSED",
+      "evidence": "fixture.ts:22-83: attempted/confirmed/markerWritten durable facts; unknown CREATE ACK explicitly adds cleanup error; DROP only after confirmed creation, matching marker, zero connections. Remaining database, nonzero connections or failed observation reports error. No FORCE or unrelated termination."
+    },
+    {
+      "id": "RB3",
+      "state": "SOURCE_ADDRESSED",
+      "evidence": "browser.ts:20-31,54-65,93-105,118-124,168-194: recursively count retained evidence, reject evidence symlinks, unique tmp scratch for Chrome/Vite, <=64MiB admitted scratch bound, 250ms free/evidence/scratch samples before business imports. Final process/DB/scratch/evidence observations retained."
+    }
+  ],
+  "limits": [
+    "No module imports, typechecking, test execution, PG/HTTP/browser, builds, dependency changes, personal service calls or free-space observations performed by this review.",
+    "Sampled free-space/scratch monitoring is not a hard physical quota and cannot prove PG/WAL/OS peak allocation. Hard deadline cannot imply cleanup succeeded; incomplete facts block automatic rerun.",
+    "Fixed724 has no production/direct-test changes relative2498. Actual20/20 is only4ba; later22 direct cases remain NOT_RUN.",
+    "RB4 actual-App worker assertions still independently under review; material/page-only subset preparation cannot cover full knowledge/profile/steering, CREATE+turn, Queue/Steer, second center or outstanding central-session semantics.",
+    "Fresh matching claim/admission/resource/window and final fixed hashes are still required for any future run. No resource window is reserved by this report.",
+    "Formal feature review remains NOT_STARTED; approval is the narrow harness source delta only."
+  ],
+  "method": {
+    "skillsReused": [
+      "find-skills",
+      "clean-code fixed sickn33 bdacd76",
+      "codebase-design"
+    ],
+    "cleanCode": "Checked ownership-before-await, explicit cleanup/error separation, exact resource ownership, bounded evidence and no duplicate business authority; no project edits."
+  }
+}

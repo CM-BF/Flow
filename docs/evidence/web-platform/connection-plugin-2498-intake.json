@@ -1,0 +1,208 @@
+{
+  "at": "2026-10-06T15:23:17.952993+00:00",
+  "state": "READ_ONLY_CANDIDATE_ARCHIVED_NOT_IMPLEMENTED_OR_CLAIMED",
+  "mapping": {
+    "requirements": [
+      "WPF-REQ-22",
+      "WPF-REQ-23"
+    ],
+    "existingTodo": "WPF-001-05",
+    "newTaskLayer": false
+  },
+  "archives": [
+    {
+      "source": "/tmp/w01-connection-plugin-2498/report.md",
+      "archive": "connection-plugin-2498/report.md",
+      "bytes": 13562,
+      "sha256": "9dceb3c0f9a05c72a4992c06dff1b1aa77af618675db84685d6ea6957f615fe9"
+    },
+    {
+      "source": "/tmp/w01-connection-plugin-2498/sources.json",
+      "archive": "connection-plugin-2498/sources.json",
+      "bytes": 5173,
+      "sha256": "eaf754334dcf714362838ea0d1497f64bccd1b1b86450d974219bfd8b03043e9"
+    }
+  ],
+  "fixedProductSource": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
+  "fixedProductChecks": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "fixedHashMatches": true,
+      "bytes": 69114
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "fixedHashMatches": true,
+      "bytes": 23725
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "fixedHashMatches": true,
+      "bytes": 24555
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "fixedHashMatches": true,
+      "bytes": 6794
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "fixedHashMatches": true,
+      "bytes": 21387
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "fixedHashMatches": true,
+      "bytes": 8788
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "fixedHashMatches": true,
+      "bytes": 12209
+    },
+    {
+      "path": "apps/web/src/plugins/builtins.ts",
+      "fixedHashMatches": true,
+      "bytes": 2770
+    },
+    {
+      "path": "apps/web/src/plugins/builtins/theme.tsx",
+      "fixedHashMatches": true,
+      "bytes": 1299
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "fixedHashMatches": true,
+      "bytes": 8274
+    }
+  ],
+  "planningChecks": [
+    {
+      "path": "plans/web-platform/plan.md",
+      "fixedSource": "ead94de736093c91d0cc9b1d56e33b76ea36eec9",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "docs/evidence/web-platform/conversation-plugin-coverage-research.md",
+      "fixedSource": "ead94de736093c91d0cc9b1d56e33b76ea36eec9",
+      "fixedHashMatches": true
+    }
+  ],
+  "facts": "Fixed2498 Connection remains outside Workspace-owned P01 provider; data-extension-slot is only a marker. Existing settings.sections and Appearance already exist.",
+  "proposal": {
+    "singleHost": "Move ownership of the existing sole P01 host to authenticated/unauthenticated application lifetime; AppPluginSession borrows it through precise disposable business registrations. No second host or registry.",
+    "preauth": "Only reviewed bundled builtin definitions and local appearance; not all Workspace plugins or center-loaded packages. Trust cannot come from self-declared plugin ID.",
+    "privateActions": "Connect contribution requests host-owned form submit with no arguments; token, CSRF, cookie, FlowClient and journal stay private. Button and Enter share the existing ConnectionSession action.",
+    "postauth": "Bind business lease only after authoritative session/namespace/generation checks and retained guard; invalidate lease synchronously before async transitions. Existing private domain authorization remains authoritative.",
+    "retained": "Reauthentication view can coexist with retained Workspace state; revoke reads/writes without discarding draft/materials/pending capture/unknown receipt. Explicit discard keeps original confirmation.",
+    "renderer": "Use real ExtensionSlot and PluginView consumers for existing settings.sections/Appearance; DOM marker or fake AppPluginSession is insufficient.",
+    "disable": "Deactivate/unregister must remove contribution and old callbacks; precise old lease cleanup must not dispose shared host or new registrations. Do not silently reactivate disabled entries.",
+    "trustBoundary": "Same-realm trusted builtin model does not establish arbitrary third-party code isolation."
+  },
+  "candidateScopeOnly": {
+    "product": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/src/plugin-integration/extension-lifetime.ts",
+      "apps/web/src/plugin-integration/connection-extensions.tsx",
+      "apps/web/src/plugins/builtins.ts"
+    ],
+    "tests": [
+      "apps/web/test/connection-plugin-integration.test.ts",
+      "apps/web/test/connection-plugin-integration.browser.ts"
+    ],
+    "planEvidence": "Not selected; original plugin co-lead must define complete exact execution scope and fixture needs before a later fresh claim",
+    "scopeCount": 8,
+    "notAuthorized": "These six product plus two test paths are a proposal, not a complete approved take. App/session remain Recovery exclusive; no changes to public slots/types/validation/host or contracts are licensed."
+  },
+  "pendingAcceptance": [
+    "Real preauth/reauth App button/menu/panel with contribution provenance and Appearance consumer",
+    "Disable/unload/late callback and same-global-context lease changes",
+    "Credential isolation and original one-POST lost-connect-ACK behavior",
+    "Retained draft, knowledge, attachment, capture, receipt and split identity across reauth",
+    "Actual390 both themes, focus/keyboard and unsupported/offline/actionable errors"
+  ],
+  "currentExecutionBoundary": {
+    "recoveryHarness": "724424237962ed8563db08f5ea8597ee6e7eb11d RB1–RB3 source delta approved; actual-App worker review pending; no browser or second22direct run",
+    "window": "Lead retains PG/Chrome window",
+    "newClaims": 0,
+    "productWrites": 0,
+    "productImports": 0,
+    "runtime": 0,
+    "freeSpaceSamples": 0,
+    "personalServices": 0
+  },
+  "skills": "Local find-skills/codebase-design/clean-code methods reused; source hashes in original report. Review separates ownership, private authorization, renderer contribution and retained-state lifecycle. No installation.",
+  "validation": {
+    "at": "2026-10-06T15:24:16.229034+00:00",
+    "parser": [
+      {
+        "path": "web-platform-management/plans/web-platform/status.md",
+        "id": "WPF-001",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 36
+      },
+      {
+        "path": "web-platform-management/plans/wpf-mature-01-visual/status.md",
+        "id": "WPF-MATURE-01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 5
+      },
+      {
+        "path": "web-platform-management/plans/wpf-mature-06-chat/status.md",
+        "id": "WPF-MATURE-06",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "path": "web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+        "id": "WPF-RECOVERY01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "path": "web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
+        "id": "WPF-RELEASE03",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 3
+      }
+    ],
+    "changedPaths": 12,
+    "outsideClaim": [],
+    "newMarkdownLinks": 15,
+    "brokenLinks": [],
+    "rawArchivesByteEqual": 3,
+    "cleanCode": "Candidate ownership, private credentials, authority lease and retained UI are separate. No second status source, auth host, task layer, scope reservation or product approval; original raw report unchanged.",
+    "productChecks": 0,
+    "resourcePolls": 0
+  },
+  "relatedSourceReview": {
+    "source": "recovery01-724-supervisor-review-root.json",
+    "sourcePath": "/tmp/root-recovery-724-supervisor-review.json",
+    "sha256": "58c7f7013e1c10dff86c02c8771bb6e38511b6782e5a52c035544ebed67be666",
+    "bytes": 3630,
+    "target": "724424237962ed8563db08f5ea8597ee6e7eb11d",
+    "sourceChecks": [
+      {
+        "path": "apps/web/test/conversation-recovery.browser.ts",
+        "fixedHashMatches": true,
+        "currentMatches": true
+      },
+      {
+        "path": "apps/web/test/conversation-recovery.fixture.ts",
+        "fixedHashMatches": true,
+        "currentMatches": true
+      }
+    ],
+    "result": "RB1/RB2/RB3 SOURCE_ADDRESSED; narrow source delta APPROVED/0blocking",
+    "pending": "RB4 worker actual-App assertions independent review; 22direct and browser NOT_RUN; formal feature NOT_STARTED",
+    "runtime": 0,
+    "window": "No new run or resource reservation"
+  }
+}

@@ -69,13 +69,36 @@
     "protectedProductionAndDirectTestVs2498": "No apps/packages differences except the two harness files; 16 production sources and direct test unchanged",
     "recordArchive": "recovery01-browser-harness-7244.md",
     "recordSha256": "3d14077d6ff4052979ac605e5492752b13b56289ba7407b7a359951b96869999",
-    "review": "Awaiting root fixed narrow review; not product APPROVED or runtime admission",
+    "review": "Root724 RB1/RB2/RB3 source delta APPROVED/0blocking; worker actual-App assertions independently pending. No runtime admission or full feature approval.",
     "runtime": 0,
     "typesRemainingSeconds": 7.186,
     "directRemainingSeconds": 27.46,
     "caseCountSource": 22,
     "caseExecution": "Second 22-case source NOT_RUN; earlier 4ba20/20 evidence unchanged",
-    "futureRun": "Old2498 direct preflight must be rebound to new HEAD and changed harness hashes in a newly authorized window. Prepared scratch/threshold requirements are not manager-approved runtime margins."
+    "futureRun": "Old2498 direct preflight must be rebound to new HEAD and changed harness hashes in a newly authorized window. Prepared scratch/threshold requirements are not manager-approved runtime margins.",
+    "sourceReview": {
+      "source": "recovery01-724-supervisor-review-root.json",
+      "sourcePath": "/tmp/root-recovery-724-supervisor-review.json",
+      "sha256": "58c7f7013e1c10dff86c02c8771bb6e38511b6782e5a52c035544ebed67be666",
+      "bytes": 3630,
+      "target": "724424237962ed8563db08f5ea8597ee6e7eb11d",
+      "sourceChecks": [
+        {
+          "path": "apps/web/test/conversation-recovery.browser.ts",
+          "fixedHashMatches": true,
+          "currentMatches": true
+        },
+        {
+          "path": "apps/web/test/conversation-recovery.fixture.ts",
+          "fixedHashMatches": true,
+          "currentMatches": true
+        }
+      ],
+      "result": "RB1/RB2/RB3 SOURCE_ADDRESSED; narrow source delta APPROVED/0blocking",
+      "pending": "RB4 worker actual-App assertions independent review; 22direct and browser NOT_RUN; formal feature NOT_STARTED",
+      "runtime": 0,
+      "window": "No new run or resource reservation"
+    }
   },
   "window": "Still Lead, no free-space sample or claim change",
   "skills": "Local find-skills/codebase-design/clean-code reused for stable resource ownership, reference-only layout and source-versus-runtime boundaries",

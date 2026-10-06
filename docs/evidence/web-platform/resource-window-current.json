@@ -85,10 +85,11 @@
     "sourceOnlyHarnessCheckpoint": {
       "target": "724424237962ed8563db08f5ea8597ee6e7eb11d",
       "metadata": "d1a388876864c2f03b95f47dd405a9e4c281682d",
-      "state": "Prepared NOT_RUN, awaiting fixed narrow source review",
+      "state": "Root RB1–RB3 source delta approved; actual-App worker review pending, runtime NOT_RUN",
       "businessAndDirectTestBase": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
       "preflightRebindRequired": true,
-      "record": "arc-recovery-source-intake.json"
+      "record": "arc-recovery-source-intake.json",
+      "review": "recovery01-724-supervisor-review-root.json"
     }
   },
   "leadWindow": {
