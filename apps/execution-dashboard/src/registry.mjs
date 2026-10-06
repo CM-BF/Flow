@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['O14', '授权后持续推进依赖任务', '工作线', 'goal-persistent-progression', 'o14-goal-progression'],
   ['COST01A', '有来源的执行用量说明', '工作线', 'cost-usage-readout', 'cost01a-usage-readout'],
   ['S01P06', '执行等待与资源释放', '工作线', 'runner-wait-bounds', 's01p06-runner-wait'],
   ['O13', '从目标到计划与文本交付', '工作线', 'continuous-goal-journey', 'o13-continuous-goal-journey'],
