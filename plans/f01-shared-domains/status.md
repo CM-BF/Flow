@@ -12,14 +12,14 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED c587436c12324b5c121957643d51173cfc66009e；真实生产2/2与final typecheck0；0provider |
 | 已集成main状态 / HEAD | 9c6fa9b100f04916f43b04280f05f497b28eeb0f 已含 CHAT08 默认关闭接线；个人center/runner仍b54、维护v6 accepting。O09领域/client/生产接线等待本批接收。 |
-| Review | NOT_STARTED；仅O09生产增量待独审。领域7ddd获ExecutionLead独审、薄client1bd获Mika独审；历史CHAT08批准保留。 |
+| Review | APPROVED；O09领域7ddd获ExecutionLead独审、thin client1bd获Mika独审、production c587获Root独审。 |
 | 实现目标 | c587436c12324b5c121957643d51173cfc66009e |
 | 实现范围 | apps/server/src/index.ts, apps/server/src/goal-native-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 已接通由用户指定只读执行配置的单个文本子任务，并保留单独的业务验收步骤。 |
-| 下一可用交付 | 完成中心入口审查后发布；真实模型执行另按固定场景核验。 |
+| 下一可用交付 | 发布已审的只读原生子任务入口；真实模型执行另按固定场景核验。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
