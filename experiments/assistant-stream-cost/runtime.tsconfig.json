@@ -1,0 +1,40 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@flow/contracts": [
+        "../../packages/contracts/src/index.ts"
+      ],
+      "pg": [
+        "../../../../Flow/node_modules/pg/esm/index.mjs"
+      ],
+      "pg-boss": [
+        "../../../../Flow/node_modules/pg-boss/dist/index.js"
+      ],
+      "fastify": [
+        "../../../../Flow/apps/server/node_modules/fastify/fastify.js"
+      ],
+      "@fastify/cors": [
+        "../../../../Flow/apps/server/node_modules/@fastify/cors/index.js"
+      ],
+      "zod": [
+        "../../../../Flow/packages/contracts/node_modules/zod/index.js"
+      ],
+      "npm-package-arg": [
+        "../../../m2-shared-foundation/apps/server/node_modules/npm-package-arg/lib/npa.js"
+      ],
+      "pacote": [
+        "../../../m2-shared-foundation/apps/server/node_modules/pacote/lib/index.js"
+      ],
+      "ssri": [
+        "../../../m2-shared-foundation/apps/server/node_modules/ssri/lib/index.js"
+      ],
+      "vitest": [
+        "../../../../Flow/node_modules/vitest"
+      ]
+    }
+  },
+  "include": [
+    "./*.ts"
+  ]
+}

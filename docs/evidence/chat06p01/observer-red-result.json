@@ -1,0 +1,52 @@
+{
+  "kind": "observer",
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "experiments/assistant-stream-cost/observer.test.ts",
+    "--config",
+    "experiments/assistant-stream-cost/vitest.config.mjs",
+    "--configLoader",
+    "runner"
+  ],
+  "startedAt": "2026-10-06T07:27:16.465Z",
+  "completedAt": "2026-10-06T07:27:16.789Z",
+  "elapsedMs": 323.42254199999996,
+  "exitCode": 1,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "experiments/assistant-stream-cost/check.mjs",
+      "sha256": "007a046772de28162ee030936831abfc8a8fecddd8de5cd9fc723f25683c0b3a"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/observer.test.ts",
+      "sha256": "c92a2271d3da0ebb7a88464f7f0dea5fdc23d0a42a30d84553517fd280b08a1d"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/observer.ts",
+      "sha256": "ed10b9aab9084f31ca5043c0589d6f00b1b33d0f8517ef68b05351124dc23b8a"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/tsconfig.json",
+      "sha256": "14772fdfc9462db079110808939112a960bea8365bb4cfc4774af4a06e5cb0ab"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/vitest.config.mjs",
+      "sha256": "64b7f5fc39fc49222bfc629913ba72057e6c70acdda67cc787b1b09c8f663ce4"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.test.ts",
+      "sha256": "9d6850907da7757fd4eb08752f2990303369a1ae40ee8d032307f48a3931239a"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.ts",
+      "sha256": "f23f3919a7c7d7e11e4ba4a05bc527be91bed6dee1dc765b288828855ab97421"
+    }
+  ],
+  "log": "docs/evidence/chat06p01/observer-red.log",
+  "logSha256": "436c0894fada980e86bb205584996e765b0281f010672be581dd5c298ba85fa0",
+  "scope": "pure checks only; no PG/server/task/model workload"
+}

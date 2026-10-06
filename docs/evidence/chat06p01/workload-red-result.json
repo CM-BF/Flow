@@ -1,0 +1,25 @@
+{
+  "label": "workload-red",
+  "exitCode": 1,
+  "completedAt": "2026-10-06T07:20:44.821581+00:00",
+  "command": "/opt/homebrew/opt/node@24/bin/node /Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs run experiments/assistant-stream-cost/workload.test.ts --config experiments/assistant-stream-cost/vitest.config.mjs --configLoader runner",
+  "sourceFiles": [
+    {
+      "path": "experiments/assistant-stream-cost/workload.ts",
+      "sha256": "adc5c4d0c33f51bb0f118da73520a770662b8cda3e89c4bc770482df996f5bda"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.test.ts",
+      "sha256": "1c393c6de415dd9c5ff1046b562b19866aebbad96fdc48c0f427adce04d1b7b5"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/vitest.config.mjs",
+      "sha256": "04944930f349442fb7a0040a1eb83f86791c80b33745b90d38de96fb51cd9015"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/tsconfig.json",
+      "sha256": "1a2d15b14dd21e64125d3ded8ede74b02f2017b90baa9a6ec7e9299e63e31e1a"
+    }
+  ],
+  "scope": "pure test only; no PG, server, tasks or load"
+}
