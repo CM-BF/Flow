@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 23:22 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 23:53 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线。 |
-| 下一可用交付 | 完成草稿辨识与回焦、看板摘要详情的页面验证；快速设置本地检查准备已获限定批准，可移植检查源码候选已获限定静态独审；实际验证等待正式准入，真实消息接线另按交权接续。 |
-| 当前阻塞 | ACTIVE: 草稿、看板和快速设置的实际验证仍待资源与正式准入；Lead 后续空间观察低于原门槛，本组无运行或预约，Mika SVC07 / C02 队列不变。现有远程 CI 候选尚不覆盖这些 Web 验收；对应消费要求已归原 TODO11。workspace-cache 依赖已回收、不可直接运行；指定用户服务保持。真实发送/排队/恢复设置全旅程仍开放。 |
+| 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；原五图的新主线快照已完成源码更新和限定独审，等待必要验证。 |
+| 下一可用交付 | 完成草稿辨识与回焦、看板摘要详情和架构新快照的必要验证；快速设置本地检查准备已获限定批准，可移植检查源码候选已获限定静态独审；实际验证等待正式准入，真实消息接线另按交权接续。 |
+| 当前阻塞 | ACTIVE: 草稿、看板（含新架构快照）和快速设置的实际验证仍待资源与正式准入；Lead 后续空间观察低于原门槛，本组无运行或预约，Mika SVC07 / C02 队列不变。现有远程 CI 候选尚不覆盖这些 Web 验收；对应消费要求已归原 TODO11。workspace-cache 依赖已回收、不可直接运行；指定用户服务保持。真实发送/排队/恢复设置全旅程仍开放。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -73,6 +73,8 @@
 [远程 CI 消费边界](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)已归原 TODO11：没有触发 CI 或新增 writer，QuickControls 类型/direct/浏览器仍未运行，原 owner status 保持唯一功能事实源。
 
 [portable候选交付](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)与[REQ17/CHAT06测量接口](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)沿现有验收推进，未新增运行或claim；性能全部未测量。
+
+[D06原树源码后继](../../docs/evidence/web-platform/architecture-snapshot-0da-intake/report.md)已实际领取adf9539d v1四范围，原owner唯一status记录5124限定source-only批准/新检查NOT_RUN；管理索引不冒main或页面完成。
 
 ## 当前唯一来源、写权与下一步
 

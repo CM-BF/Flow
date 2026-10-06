@@ -1,12 +1,16 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-06T23:22:51.244642+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+更新：2026-10-06T23:53:02.712681+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+
+## 本轮源码交接
+
+[D06 原五图后继已在原树领取并固定](architecture-snapshot-0da-intake/report.md)：原owner d01_owner、adf9539d v1四范围；两源5124、owner9fb9双端clean。固定0da事实获root/peer限定source-only批准，新22direct/页面均未运行；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md)仍是功能权威，无新运行窗口。
 
 ## 共享窗口
 
 **OPS 新终态：[Lead 三处 exact `.vite` 已处理完成](ops-three-fixture-retirement/lead-cache-results/report.md)。** 每树60生成文件，三监督exit0/双EOF/自有进程absent；原预览退役与生命周期释放[原件仍保留](ops-three-fixture-retirement/manager-confirmation.json)。[Lead 后续入站](ops-ci01-web-consumer-intake/lead-incoming.json)报告 1,069,273,088 B，仍低于原小检查与 PG/Chrome 门槛；采样时点未提供，非本组重采，没有新分配或追加候选许可。
 
-[当前 fresh D04 有界核验](ops-ci01-web-consumer-intake/coordination-observation.json)保持原管理与独立 owner 范围，无交集或新领取；三临时 lifecycle claim 已释放的[原回执](ops-three-fixture-retirement/manager-confirmation.json)保留。Recovery/QuickControls/DPERF04 源码冻结等待必要验证，领取不等于运行占用。
+[23:51 fresh D04 有界核验](architecture-snapshot-0da-intake/fresh-claim-observation.json)确认原管理632a v3与新D06原范围adf9539d v1有效且无交集；原独立owner范围未扩；三临时 lifecycle claim 已释放的[原回执](ops-three-fixture-retirement/manager-confirmation.json)保留。Recovery/QuickControls/DPERF04 源码冻结等待必要验证，领取不等于运行占用。
 
 [Lead workspace-cache 依赖回收已完成](ops-three-fixture-retirement/lead-workspace-cache-postcheck.json)，该树 **NOT_RUNTIME_READY / 禁止借用**，恢复须另行批准。其当时后置 1,079,889,920 B 为历史事实，后续三缓存观察见页首；本组无新 PG/Chrome 运行、预约或 gate。原[依赖有界确认](ops-workspace-cache-dependency-consumers/manager-confirmation.json)保留为操作前证据。
 
@@ -39,6 +43,7 @@
 | 逐消息设置控件 | w01_owner；web-message-settings；codex/web-message-settings | a5b0c231 v2 RELEASED / 原8 scopes；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/plans/wpf-message-settings/status.md) |
 | 快速消息设置 | w01_owner；web-message-settings-quick-controls；codex/web-message-settings-quick-controls | 839e466f v1 COMMITTED / 6 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md) · [原子receipt](message-settings-quick-controls-provision/take-receipt.json) |
 | 看板摘要与详情 | w01_owner；dashboard-summary-detail；codex/dashboard-summary-detail | b554ddb6 v1 / 9 scopes；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md) |
+| 固定架构快照D06 | d01_owner；dashboard-architecture-runtime；codex/dashboard-architecture-runtime | adf9539d v1 COMMITTED / 原4 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md) · [receipt](architecture-snapshot-0da-intake/take-receipt.json) |
 | 旧 ACTIVITY 预览生命周期记录 | workspace_panels_owner；web-conversation-activity；codex/web-conversation-activity | 707b1c6c v2 RELEASED / 3 metadata scopes；[原status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md) · [释放receipt](ops-two-fixture-retirement/activity-retirement-release-receipt.json) |
 | 旧 CHAT 预览生命周期记录 | workspace_panels_owner；web-conversations；codex/web-conversations | da159c3d v2 RELEASED / 3 metadata scopes；[原status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/status.md) · [释放receipt](ops-two-fixture-retirement/chat-retirement-release-receipt.json) |
 | 三项原 owner 预览生命周期记录 | workspace_panels_owner；plugin-management / profile / steering 三原树 | 741c80b3 / d9f7ff54 / 40ec6625 各 v2 RELEASED / 各3 metadata scopes；[精确唯一status/HEAD/回执](ops-three-fixture-retirement/manager-confirmation.json) |
@@ -85,7 +90,7 @@ P01 认证外层 host 的[限定差异研究](recovery-connection-p01-4d330-delt
 [键盘与读屏验收细化](message-settings-quick-controls-acceptance/keyboard-root-review.json)保当前编辑生命周期/合法焦点；[生产插件接线研究](message-settings-quick-controls-acceptance/plugin-host-research.json)归原 REQ22/23、MATURE02-11/001-05，保激活租期与唯一 C/session，等待后继交权，不扩当前六scope。
 [领取历史显示后继](dashboard-claim-presentation/root-review.json)归 U08/U12/REQ37 与原 D04-03/D01-02/03：区分曾释放/从未领取，不改变账本或当前45f8候选，不占其预算。
 [REQ17/CHAT06 测量接口](req17-chat06-measurement-interface/report.md)已归原REQ17/21/MATURE06-03：复用真实Thread/stream，digest、parse、commit、composer延迟与显示追平分别验收，全部指标未运行；共享/renderer精确插桩仍归原owner，不改协议/依赖或引新框架。
-MATURE01/05/06 视觉与 D06 固定架构快照沿已有计划，不扩当前 source 范围。
+MATURE01/05/06视觉继续原计划；D06既有后继已由原owner在原四范围领取，见页首固定源码交接，不改变其他owner范围。
 
 ## 历史入口
 

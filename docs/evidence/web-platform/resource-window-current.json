@@ -416,7 +416,7 @@
     "sampleTimeUnknown": true,
     "newGrant": false,
     "webHolder": null,
-    "next": "Preserve SVC07/C02 queue. Existing Web source/preparation remains sealed, checks NOT_RUN. OPS-CI01 consumer research does not grant or replace pending Web validation; no further same-kind cache candidates."
+    "next": "Preserve SVC07/C02 queue and no new runtime grant. Existing D06 source-only follow-up is now fixed/reviewed under original four-scope claim; all new runtime checks remain NOT_RUN. No further cache candidates or resource sampling."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1340,5 +1340,12 @@
     "mapping": "Existing REQ17/21/MATURE06-03/CHAT06",
     "state": "READ_ONLY_INTERFACE_ALL_METRICS_NOT_RUN",
     "newTaskClaimGateOrReservation": false
+  },
+  "latestSourceOnlyProgress": {
+    "at": "2026-10-06T23:53:02.712681+00:00",
+    "evidence": "architecture-snapshot-0da-intake/intake.json",
+    "runtimeGrant": false,
+    "holder": null,
+    "reservation": false
   }
 }

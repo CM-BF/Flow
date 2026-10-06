@@ -1,0 +1,56 @@
+{
+  "observedAt": "2026-10-06T23:53:02.712681+00:00",
+  "taskId": "D06",
+  "source": "GO/root explicit existing D01/D06 successor instruction; original owner implementation and independent scoped source approvals",
+  "owner": "d01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+  "branch": "codex/dashboard-architecture-runtime",
+  "claim": {
+    "claimId": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+    "version": 1,
+    "taskId": "D06",
+    "lead": "external_web_d01_owner",
+    "worker": "d01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+    "branch": "codex/dashboard-architecture-runtime",
+    "scope": [
+      "apps/execution-dashboard/public/architecture-data.js",
+      "apps/execution-dashboard/test/architecture.test.mjs",
+      "docs/evidence/d06",
+      "plans/d06-architecture-refresh"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-06T23:36:04.842Z",
+    "createdAt": "2026-10-06T23:36:04.842Z"
+  },
+  "branchBase": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+  "fixedMain": "0da869f7bad98771177472539b5a192365c15117",
+  "sourceTarget": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "ownerMetadata": "9fb9ad57ec4a5deb71ac107e0b4bd2d7d0dd55ce",
+  "ownerGitObservation": {
+    "localEqualsLsRemote": true,
+    "workingTreeClean": true,
+    "twoSourcesEqualTarget": true,
+    "performedBy": "manager / original D06 owner; Git read only"
+  },
+  "sourceReview": "APPROVED_SOURCE_ONLY_VALIDATION_PENDING",
+  "reviewFiles": [
+    "root-source-review.json",
+    "backend-peer-review.md"
+  ],
+  "uniqueStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md",
+  "actualChecks": "New 22 direct cases and browser checks NOT_RUN",
+  "integration": "NOT_INTEGRATED; no feature/main/deployment approval",
+  "sourceRegistration": "Existing D06 registry pointer remains original dashboard-architecture-runtime/plans/d06-architecture-refresh; no new source/task or live dashboard observation",
+  "scopeChanged": false,
+  "newRuntimeGrant": false,
+  "newReservation": false,
+  "sourceSupply": "Reused original tree and branch; no new provision/reset/dependencies/shared Git config",
+  "coordination": "First read ECONNREFUSED, one authorized bounded retry succeeded; atomic take at23:36:04.842Z; fresh23:51:19.563Z confirms D06 v1 and manager v3 active with no overlap",
+  "closedBlocker": "D04 availability recovered before take; historical failure is not current blocking state",
+  "next": "Necessary validation admission and original Lead integration after actual results; source files currently frozen. Functional progress remains in owner status."
+}
