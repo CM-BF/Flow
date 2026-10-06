@@ -6,7 +6,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 - **REQ-15会话页批量读取：请求Lead sole provision准备树。** 原global REQ15后继，拟owner architecture_read/Astra，`/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch` / `codex/conversation-turn-page-batch`；固定main `22a0806bc2465e11096949618113833f31766b19`，19:09:42只读核5入口相对ec5无diff、B02/B03 v2已释放、拟范围无active writer。精确10literal：`apps/server/src/conversations/queries.ts`、`apps/server/src/conversations/state.ts`、`apps/server/src/conversations/replies.ts`、`apps/server/src/conversations/turn-read.ts`、`apps/server/src/conversations/turn-page-batch.test.ts`、`apps/server/src/assistant/store.ts`、`apps/server/src/assistant/index.ts`、`apps/server/src/assistant/final-preview-batch.test.ts`、`docs/evidence/req15-turn-page-batch`、`plans/req15-conversation-turn-page-batch`。S01 actual安全点后准备；take前0写。首片同PoolClient批量final+turnViews≤50接turnPage，保RR/冻结settings-context/invalid-legacy/PG全UTF8hash；不领tasks/contracts/client/migration/contextwrite。仅路由provision，不改旧B02/B03或建立第二status。
 
-- **下一目录观察只准备计量与安全通知收据修正。** [最小后继接口](native-catalog-observation/interface.md)：链接仅lstat自身、不follow；固定control写父身份；公开method识别不扩大原两项允许表。旧5e6cf失败双审73a194封存，根与私有原件KEEP；新源码待独审/7组反例未运行，actual NOT_OPEN且等待S01安全点。
+- **下一目录观察只准备计量与安全通知收据修正。** [最小后继接口](native-catalog-observation/interface.md)：链接仅lstat自身、不follow；固定control写父身份；公开method识别不扩大原两项允许表。旧5e6cf失败双审73a194封存，根与私有原件KEEP；源码独审通过、7组反例与sh0；组合待审/actual NOT_OPEN。S01已到安全点，本后继0PG/Chrome不占R01串行槽；REQ15真实PG验收另排。
 
 - **系统配置窗口已消费：初始化成功，但目录与完整计量未完成。** [固定失败结果](native-system-config/run-report.md)：1native ready=true/1次model-list，未知通知触发受控关闭；完整stdio、两个own根因清单不完整KEEP，私有诊断KEEP。无目录/模型资格，完整预算UNKNOWN，不重试；[结果已双审限定接收](native-system-config/result-review.json)，保留整体失败/未知。
 
