@@ -1,0 +1,11 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds
+
+ × apps/runner/src/attempt-wakeup.test.ts > keeps completion subscriptions bounded over 32 polling ticks with two pending attempts 12ms
+   → expected [ 32, 32 ] to deeply equal [ 1, 1 ]
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  06:23:34
+   Duration  171ms (transform 32ms, setup 0ms, import 42ms, tests 12ms, environment 0ms)
+
