@@ -142,3 +142,19 @@ owner随后报告6项专项通过：HTTP1 8chat、2split、2pagehidden恢复、�
 范围追加已解除：管理者实际读取原Lead提交c2de313ce5a6f036f07bbfb28d52a7e1a2cc1b9f的docs/evidence/d04/transitional-assignment.md，登记时间2026-10-06T02:43:31.089188Z，明确WPF-M02追加WorkspacePanels.tsx且与P01无交集，允许原owner局部修复/提交。已通知owner解除该文件冻结。此为过渡协调登记，不是PostgreSQL receipt、不是OS强隔离；正式账本迁移后核对origin=migration，不伪造更早许可。
 
 2026-10-06 02:44 UTC管理clean-code安全停点：范围为需求账本、scope移交、状态与研究证据。检查单一来源/命名/当前与历史事实分离、边界清晰度、无重复实现和无多余全库测试；修正了旧nested仍称权威、当前等待注册过时、阶段长句与范围过宽；将当前3个源、两个只读stub、D04分配账本与status进度各自唯一写入责任明确。用户新原话逐条持久化，待实现/owner检查/独立review分层，不把测试报告当整体approval。未解决：SSE待稳定target独立复验、P01模块/UI分段review、D04正式receipt迁移。
+
+
+## RS18 固定候选审查与后续独立挂载（02:50 UTC）
+
+root独立模块review target2dad8cac7586c294a7c559b31161b201f791199e为REQUEST_CHANGES：PH-R1 P2订阅listener抛错逃逸宿主、阻止后续listener且无诊断；PH-R2 P2以in校验slot接受toString与view:constructor原型键。唯一P01 owner修复后target3d8121006fea24b6b9f25457eb363a10110781ad获scoped APPROVED，root独立14模块tests通过，PH-R1/R2关闭；不覆盖ReactUI。此前嵌套OperationResult在2dad已修，桥Promise<void>抛错/public单层收敛。整包d81075c1220fc0305bf698d84823caa4877c2d89的React/builtins/fixture由完成M02的owner只读审，修改仍P01唯一owner。
+
+管理者只读M02 base35f0bb9df3f57b858c39b13fab940137c747d1f1→targetd47c602f3bab1fe97a9be70fd37780c2918bcfbc：38文件全在D04精确claim含c2de313追加，rootmanifest/lock/workspace config/packages/server无diff；metadata0a9e85f仅validation/status/review且tree clean。三件套3本地链接存在，TODO01～03完成/04进行中一致；JSON9/6/4组pageErrors空，依赖link指本树client/contracts。完整diffcheck因raw unified patch空上下文160处与原始焦点文本1空格退出2；排除两个原始证据后source/docs为0，metadata diff为0，不伪称完整通过。发现checks非PASSED前缀、review非标准target标记、plan旧广scope与status待汇总过期，交唯一owner修metadata。
+
+root同期20测试/typecheck通过，在49922 HTTP fixture独立复验旧6chat→第7失败场景已可8chat Live，detail与Approve正常；这只是fixture复验进展，最终整体结论尚未给出，不能冒称独立再跑真实中心。owner真实PG4组/10协议runner任务报告仍独立标识。
+
+后续WPF-I01由root同意独立tree/branch，先D04精确scope与相交文件移交，再复用M02 owner挂载；P01继续唯一写plugins。其实现不是扩大M02已审范围。主plan新增第五子计划三件套，准备源以后移交stub，避免第二进度源。
+
+02:50管理clean-code停点沿已发现本地find-skills/clean-code方法检查命名、单一来源、错误/状态表述、无重复协议和无必要测试：修正当前status的旧preview/旧HEAD/等待来源注册、集成清单过时未知接口；维护历史approval与当前候选分开。仅管理文档写入，没有代写实现或无关全库测试。待办为M02整体结论、P01 UI审查和D04下一段领取。
+
+
+02:52 UTC更新：root正式APPROVED M02 targetd47c602f3bab1fe97a9be70fd37780c2918bcfbc，SSE P2关闭；独立20tests/typecheck，8chat+Approve/detail/splitmerge、390px活动tab可见和darkoverview，审完投影/views/index/App/SSE。未独立重跑真实PG；作者10协议任务证据已读。管理者已向原Goal Owner直接发送WPF-I01精确11项scope/新tree/branch/owner依赖，要求先M02释放App/TaskThread/WorkspacePanels再账本转交，P01整包仍在审，不提前开写；此前RS18“review中”保留当时观察。

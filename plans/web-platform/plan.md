@@ -113,7 +113,7 @@ type WorkspacePanelsProps = {
 - split/merge只组织tabGroup，不合并消息。root建议的Arc“合并为分屏项目/拆回独立tab”作为语义研究，本轮实际动作以用户“split、merge回一个tab组”为准。
 - FileTree/Terminal保留官方源及必要可访问性/主题修订；新功能还没有PTY或任意文件读取API。不能从UI能力推断后端能力。
 - [WPF-P01](plugin-system/plan.md)正式编号避免与现有P01协议计划冲突。root早期“P01插件”只是临时代称。X01仍为全栈插件总范围/总owner；Web host是其实现子项。
-- [WPF-D01](dashboard-followup/plan.md)仅为协作需求与来源登记；原Lead D03独占dashboard紧凑中性视觉和高层语义全部实现，我方不另派owner、不启动第二实现，不控制其17源4320服务。
+- [WPF-D01](dashboard-followup/plan.md)仅为协作需求与来源登记；原Lead D03独占dashboard紧凑中性视觉和高层语义全部实现，我方不另派owner、不启动第二实现，不控制其4320服务（02:38已实观22来源）。
 - [WPF-PERF01](performance-cycle/plan.md)采用生产基线/规模与请求/交互证据，禁止用单个bundle阈值或synthetic规模宣称真实模型容量。
 
 ## 当前执行队列
@@ -125,8 +125,9 @@ type WorkspacePanelsProps = {
 | 已审交付 | W01 Thread/shell/splitmerge及panels | root整体APPROVED cb4a392，owner正式review metadata收尾；组件46a1dbd通过 |
 | 当前管理 | WPF-001需求账本/研究/接口/来源登记清单 | 执行管理者维护；root只读核对完整性 |
 | 跨团队协作 | WPF-D01需求+管理来源登记 | 主线D03实施；我方提交清单并只读确认注册，不占我方实现槽 |
-| 下一ready实现 | [WPF-M02统一工作总览](unified-workspace/plan.md) | 已正式派发原panels owner；新树web-unified-workspace，从W01 cb4a392与完整M02 e888862输入准备，后端由Lead维护 |
-| 当前独立准备 | WPF-P01插件host | 已复用W01 owner，新树web-plugin-host；仅plugins模块/adapter/fixture，M02 owner主App挂载，两者先冻结typed接口 |
+| 独立审查 | [WPF-M02统一工作总览](unified-workspace/plan.md) | 固定实现d47c602，完整输入含main8c57；root整体复验，owner只做metadata |
+| 独立审查 | WPF-P01插件host | typed接口冻结；模块3d812 scoped APPROVED，整包d81075 React/builtins另审；不覆盖主App |
+| 下一独立集成 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 两输入审定+D04交接后复用M02 owner，新tree/branch；不继续扩大M02已审范围 |
 | 性能轮 | WPF-PERF01 | 当前W01 owner先记录新build基线；测量/优化owner空出后排队，每次一个有证据瓶颈 |
 
 ## TODO
@@ -169,3 +170,5 @@ D04由原Execution Lead唯一承接并复用dashboard，我方不写D03/D04或�
 M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不写App、TaskThread或既有workspace。稳定host提交后通过明确handoff/cherry-pick交M02挂载，需要改host则回原唯一owner或登记转交。不同worktree不意味着允许同一功能逻辑重复实施。dashboard本身是只读视图；主线D04新增PostgreSQL工程协调独立schema/DB与CLI take/list/release/handoff，实现事务task/父子路径冲突核验、version与双方handoff、receipt后开写且不自动过期抢占。既有M02/P01合法实施继续并迁移登记；展示冲突时保留依赖集成关系，不以不同worktree掩盖重复实现。
 
 - 2026-10-06 02:41 UTC：两owner精确literal范围已收齐并回报原Goal Owner/Lead，登记时间不倒填；迁移输入见integration-checklist，D04 receipt与展示尚待交付。
+
+- 2026-10-06 02:50 UTC：M02 d47固定候选进入独立review，P01模块PH-R1/R2修到3d812获scoped approval；新增WPF-I01独立主App挂载三件套，root同意新树与精确claim，既有两owner不扩写未登记路径。
