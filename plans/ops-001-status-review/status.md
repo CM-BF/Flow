@@ -75,4 +75,4 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 
 2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
 
-| OPS-001-09 | completed | Execution Lead | 用户最新职责与dashboard默认通道已落根AGENTS和OPS；一次同步外部两Lead，后续不逐条回传普通进度。仅文档检查。 |
+| OPS-001-09 | completed | Execution Lead | 根AGENTS与plans/AGENTS已在main648c1cc的a7db989交付；OPS当前规则在本权威树；一次同步外部两Lead，后续不逐条回传普通进度。仅文档检查。 |
