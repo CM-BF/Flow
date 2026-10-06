@@ -1,0 +1,129 @@
+{
+  "service": "chat",
+  "signal": "SIGTERM",
+  "targetPid": 60286,
+  "before": [
+    {
+      "argv": [
+        "ps",
+        "-p",
+        "60286",
+        "-o",
+        "pid=,ppid=,pgid=,lstart=,command="
+      ],
+      "exit": 0,
+      "stdout": "60286 60280 60270 Mon Oct  5 20:51:36 2026     /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/conversation.fixture.ts --preview\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsof",
+        "-nP",
+        "-a",
+        "-p",
+        "60286",
+        "-d",
+        "cwd",
+        "-Fpcn"
+      ],
+      "exit": 0,
+      "stdout": "p60286\ncnode\nfcwd\nn/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsof",
+        "-nP",
+        "-a",
+        "-p",
+        "60286",
+        "-iTCP:63743",
+        "-sTCP:LISTEN",
+        "-Fpcn"
+      ],
+      "exit": 0,
+      "stdout": "p60286\ncnode\nf35\nn127.0.0.1:63743\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "ps",
+        "-p",
+        "60287",
+        "-o",
+        "pid=,ppid=,pgid=,lstart=,stat=,command="
+      ],
+      "exit": 0,
+      "stdout": "60287 60286 60270 Mon Oct  5 20:51:36 2026     S    /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild --service=0.28.2 --ping\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsof",
+        "-nP",
+        "-a",
+        "-p",
+        "60287",
+        "-d",
+        "cwd",
+        "-Fpcn"
+      ],
+      "exit": 0,
+      "stdout": "p60287\ncesbuild\nfcwd\nn/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations\n",
+      "stderr": ""
+    }
+  ],
+  "signalAt": "2026-10-06T21:54:41.744356+00:00",
+  "sent": true,
+  "waitSeconds": 0.2670387920225039,
+  "afterAt": "2026-10-06T21:54:42.012094+00:00",
+  "groupAfter": {
+    "argv": [
+      "/usr/bin/pgrep",
+      "-g",
+      "60270"
+    ],
+    "exit": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "chainAfter": {
+    "argv": [
+      "ps",
+      "-p",
+      "60286,60280,60270,60287",
+      "-o",
+      "pid=,ppid=,pgid=,stat=,command="
+    ],
+    "exit": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "portsAfter": [
+    {
+      "argv": [
+        "lsof",
+        "-nP",
+        "-iTCP:63742",
+        "-sTCP:LISTEN",
+        "-Fpcn"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "lsof",
+        "-nP",
+        "-iTCP:63743",
+        "-sTCP:LISTEN",
+        "-Fpcn"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "allObservedAbsent": true
+}

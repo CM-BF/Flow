@@ -1,0 +1,139 @@
+[
+  {
+    "name": "activity",
+    "observedAt": "2026-10-06T21:54:02.458146+00:00",
+    "pid": 31365,
+    "ppid": 31281,
+    "pgid": 30394,
+    "ports": [
+      53849,
+      53850,
+      53851
+    ],
+    "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity",
+    "source": "apps/web/test/conversation-activity.fixture.ts",
+    "sourceSha256": "9e23dd168a78430cbde3b448a6ecb9e2f95dbb84ada0d27eb514aa2d9152cb04",
+    "fixedEqualsCurrent": true,
+    "commands": [
+      {
+        "argv": [
+          "ps",
+          "-p",
+          "31365,31281,30394",
+          "-o",
+          "pid=,ppid=,pgid=,lstart=,stat=,command="
+        ],
+        "exit": 0,
+        "stdout": "30394 46117 30394 Mon Oct  5 23:14:10 2026     Ss+  node /opt/homebrew/bin/pnpm exec tsx apps/web/test/conversation-activity.fixture.ts --activity-preview\n31281 30394 30394 Mon Oct  5 23:14:10 2026     S+   node ./node_modules/.bin/../tsx/dist/cli.mjs apps/web/test/conversation-activity.fixture.ts --activity-preview\n31365 31281 30394 Mon Oct  5 23:14:10 2026     S+   /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/conversation-activity.fixture.ts --activity-preview\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "lsof",
+          "-nP",
+          "-a",
+          "-p",
+          "31365",
+          "-d",
+          "cwd",
+          "-Fpcn"
+        ],
+        "exit": 0,
+        "stdout": "p31365\ncnode\nfcwd\nn/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "lsof",
+          "-nP",
+          "-a",
+          "-p",
+          "31365",
+          "-iTCP",
+          "-Fpcn"
+        ],
+        "exit": 0,
+        "stdout": "p31365\ncnode\nf19\nn127.0.0.1:53849\nf20\nn127.0.0.1:53850\nf21\nn127.0.0.1:53851\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/pgrep",
+          "-g",
+          "30394"
+        ],
+        "exit": 0,
+        "stdout": "30394\n31281\n31365\n",
+        "stderr": ""
+      }
+    ]
+  },
+  {
+    "name": "chat",
+    "observedAt": "2026-10-06T21:54:02.614421+00:00",
+    "pid": 60286,
+    "ppid": 60280,
+    "pgid": 60270,
+    "ports": [
+      63742,
+      63743
+    ],
+    "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+    "source": "apps/web/test/conversation.fixture.ts",
+    "sourceSha256": "c5639b75d81d884ca122b53533f0b6dec6a816b37d3f12f22ed93e55099fe3a6",
+    "fixedEqualsCurrent": true,
+    "commands": [
+      {
+        "argv": [
+          "ps",
+          "-p",
+          "60286,60280,60270",
+          "-o",
+          "pid=,ppid=,pgid=,lstart=,stat=,command="
+        ],
+        "exit": 0,
+        "stdout": "60270 46117 60270 Mon Oct  5 20:51:36 2026     Ss   node /opt/homebrew/bin/pnpm exec tsx apps/web/test/conversation.fixture.ts --preview\n60280 60270 60270 Mon Oct  5 20:51:36 2026     S    node ./node_modules/.bin/../tsx/dist/cli.mjs apps/web/test/conversation.fixture.ts --preview\n60286 60280 60270 Mon Oct  5 20:51:36 2026     S    /opt/homebrew/Cellar/node@24/24.20.0/bin/node --require /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs --import file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs apps/web/test/conversation.fixture.ts --preview\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "lsof",
+          "-nP",
+          "-a",
+          "-p",
+          "60286",
+          "-d",
+          "cwd",
+          "-Fpcn"
+        ],
+        "exit": 0,
+        "stdout": "p60286\ncnode\nfcwd\nn/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "lsof",
+          "-nP",
+          "-a",
+          "-p",
+          "60286",
+          "-iTCP",
+          "-Fpcn"
+        ],
+        "exit": 0,
+        "stdout": "p60286\ncnode\nf31\nn127.0.0.1:63742\nf35\nn127.0.0.1:63743\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/pgrep",
+          "-g",
+          "60270"
+        ],
+        "exit": 0,
+        "stdout": "60270\n60280\n60286\n60287\n",
+        "stderr": ""
+      }
+    ]
+  }
+]

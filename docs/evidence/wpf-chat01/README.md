@@ -1,12 +1,20 @@
 # WPF-CHAT01 首批交付入口
 
+## 当前预览状态：已退役
+
+`http://127.0.0.1:63743/` / session14932 已按 Lead/GO 本次明确授权退役。2026-10-06T21:54:41.744356Z 仅向确证 PID60286 发 SIGTERM；原session实际 exit143，随后原父链/PGID60270及esbuild子进程和63742/63743监听均无残留。未把exit143写成exit0，也不冒称每个异步handler完成。[原始回执与consumer边界](preview-retirement/README.md)。
+
+以下原 URL、启动命令、检查与“保留/不要停止”均是历史记录；63743旧默认保留已被此次授权覆盖。命令仅作来源追溯，本次未重启服务。明确KEEP的49922/55049及其他KEEP服务、用户页面未操作。
+
+## 历史首批交付
+
 最终已审实现：`7cbabb737f26b108275e80f1b6cd0425699f3c18`（原842独立REQUEST_CHANGES后修复；CHAT-R1/R2 CLOSED）；完整Web审查基线：`b5844442699733558a152c12392ea78f26c393a4`。不能把中途输入746当作全部实现基线，早期`0d4e050057b9204ea761541d7847b9932331a519`的outbox属于本feature，须完整审查。`bac6a6e`（合同4c）、`a3b9cfa`（841精确compat）、`746364e`（a780+2e精确typed合同）是Lead授权的固定共享输入；详见[provenance](inputs.md)。本owner未合main。Root已整体限定APPROVED；2026-10-06 04:20 UTC实核MainLead已将最终交付集成origin/main `dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8`，metadata3319122为祖先，14实现/测试路径零diff，见[集成观察](main-integration-observation.json)。生产实现停止修改。
 
 - [计划](../../../plans/wpf-chat01-conversations/plan.md)、[唯一status](../../../plans/wpf-chat01-conversations/status.md)、[独立review](../../../plans/wpf-chat01-conversations/review.md)
 - [验证与复用边界](validation.md)、[技能与clean-code](quality.md)
 - [浅色桌面](conversation-light.png)、[深色桌面](conversation-dark.png)、[浅色390px](conversation-light-390.png)、[深色390px](conversation-dark-390.png)、[配置来源分层](conversation-settings.png)
 
-## 保留的预览
+## 历史保留的预览（63743现已退役）
 
 http://127.0.0.1:63743/，owner workspace_panels_owner，exec session14932。**HTTP fixture模拟、无真实中心/SDK/模型**，页面有fixture标记；固定代码提交后服务继续读取同一源码，用户/Goal Owner可见tab保持。不要暗换成真实模型或停止它。恢复命令在本worktree运行，端口动态分配，以stdout为准：
 
