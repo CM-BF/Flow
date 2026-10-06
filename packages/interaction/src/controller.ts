@@ -72,6 +72,10 @@ export function createInteractionController(options: { client: InteractionClient
       const conversation = acknowledgedConversation(pending, response);
       await intents.clear(); intent = null;
       if (!current(version)) { patch({ pending: null }); return result(true, 'ACCEPTED', 'Center accepted the request; observation remains stopped.'); }
+      if (state.selected?.id !== conversation.id) {
+        focused = null; loadedTurns = []; streamCapability = false; observation?.dispose();
+        patch({ observation: null, turns: [] });
+      }
       const selected = state.selected?.id === conversation.id && state.selected.revision > conversation.revision ? state.selected : selection(conversation);
       patch({ pending: null, view: 'conversation', selected, connected: true,
         ...(pending.kind === 'send' && state.draft === pending.input.text ? { draft: '' } : {}) });
