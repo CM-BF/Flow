@@ -1,0 +1,69 @@
+{
+  "checkedAt": "2026-10-06T10:50:12Z",
+  "target": "2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d",
+  "base": "0cee7556befa1988e60bae94b510240122c34b88",
+  "sharedImplementation": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
+  "sources": [
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "f55dbd8ea75148164e5cc52303338793f2012eb4381b34e62ccd773e72a311fd"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "9a56ba34efd52c0d542802da1e48dd168c1ad36abae9554b926386abe7ea2d82"
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "sha256": "24262572d8c7901eb417c7b8573a0b161e0f978d842935e4a2eeb1631b2f5cd9"
+    },
+    {
+      "path": "apps/web/test/conversation-projection.test.ts",
+      "sha256": "1059b891b1963f1a01ef04f469253bd5afd95aed1d701454cffd36be9d31d39e"
+    },
+    {
+      "path": "apps/web/test/conversation-ack-http.test.ts",
+      "sha256": "5af8034b8e5241aa37d9d8949f6dff519239a54223128fa5af0283d9d7cf5596"
+    }
+  ],
+  "checks": [
+    {
+      "log": "direct-first.log",
+      "tests": 137,
+      "files": 4,
+      "startedAt": "2026-10-06T10:48:16Z",
+      "totalMs": 390,
+      "scope": "projection/profile/context receipt/queue；此次后production及既有test未再改动"
+    },
+    {
+      "log": "http-final.log",
+      "tests": 13,
+      "files": 1,
+      "startedAt": "2026-10-06T10:49:46Z",
+      "totalMs": 429,
+      "scope": "真实loopbackHTTP+FlowClient+projection，最终字节"
+    },
+    {
+      "log": "typecheck-final.log",
+      "exitCode": 0,
+      "scope": "pnpm --filter @flow/web typecheck"
+    }
+  ],
+  "protectedPathsUnchanged": [
+    "packages",
+    "tools",
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/queue",
+    "apps/web/src/conversation-stream",
+    "apps/web/src/conversation-activity",
+    "apps/web/src/conversation-context/selection.ts",
+    "apps/web/package.json",
+    "package.json",
+    "pnpm-lock.yaml"
+  ],
+  "sourceDiffCheckExit": 0,
+  "providerCalls": 0,
+  "databaseCalls": 0,
+  "browserRuns": 0
+}
