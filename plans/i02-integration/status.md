@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:40 UTC / 接收前main80ba95ad70cdf724251be4d88130b6bac56d3606 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:54 UTC / 接收前main253035e11ab18ba33095c018949f856442021d49 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead |
@@ -13,12 +13,12 @@
 | 工作树dirty状态 | 固定源码比对及root/Web类型检查通过；本次记录随后提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
 | 检查状态 | PASSED；视觉7源/C0 3源与普通终文投影2源均与独审target逐字一致，root/Web类型检查exit0；117源实际可见，0provider |
-| 已集成main状态 / HEAD | main80ba95已含R05B中心接线与ENG计划；本批视觉/C0待本次fast-forward发布。个人backend/static仍b1c、accepting v12，不随main更新。 |
+| 已集成main状态 / HEAD | main80ba95已含R05B中心接线与ENG计划；视觉/C0及native profile publication client已审main253035；本批仅后继计划与来源登记。个人backend/static仍b1c、accepting v12，不随main更新。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 新的视觉主题与未知执行保护已审接收；终端基础会话片段进入审查。 |
+| 当前产出 | 新的视觉主题、未知执行保护和执行配置发布接口已进入主线；终端修复正在增量复审。 |
 | 下一可用交付 | 接通Codex普通任务及可发送、恢复会话的终端首片。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -111,3 +111,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 同批普通终文投影提升6313c885另获Execution Lead限定独审：算法与Mika原0d0524来源逐字相同，15项原断言仅换import后的原始输出已核。当前无adapter连接，不将投影completed等同Flow任务完成；未来adapter必须归一可能含原文的AssertionError。
 
 2026-10-06 09:43 UTC：通用native profile薄client095已由status_read独审、Mika接收；本批两源码对target/manifest完全一致，原3/3 HTTP和类型检查复用，无重复PG/模型。见[独审接收](../../docs/evidence/i02/native-profile-client-integration.json)。此接口只透明发布，配置存在不等于工具授权或原生运行完成。
+
+2026-10-06 09:54 UTC：接收SVC04唯一计划、TUI共享ACK后继、F01/main回执与FLOW当前事实，118来源登记通过；[本批receipt](../../docs/evidence/i02/release-ack-planning-integration.json)。本批只文档与registry，不重跑产品测试、不变个人服务。
