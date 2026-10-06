@@ -122,3 +122,5 @@ status 顶部同一 metadata 表中添加以下字段，不另建状态文件：
 ## 多 Lead 领取
 
 [D04 运行指引](../../docs/evidence/d04/README.md)说明专用PG数据库、环境变量、CLI回执、迁移、scope和交接。网页为只读入口，CLI必须与网页配置同一协调数据库；DB失效不允许根据空列表接手。
+
+产品导航并列个人真实预览61228（首次仍需本人连接认证；空Center URL走已配置同源proxy）与旧模拟49922，不带token、不自动认证/发消息。常驻启动sourceAtStart是启动记录；Web采用Vite dev，当前页面可随已集成源码HMR，不能视为整个会话冻结版本。center/runner是否升级以实际进程重启记录为准。
