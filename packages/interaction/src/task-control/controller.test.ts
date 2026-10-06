@@ -4,6 +4,7 @@ import { FlowApiError } from '@flow/client';
 import type { ConversationSnapshot, ConversationTurn, TaskSummary } from '@flow/contracts';
 import { completeInput, createInteractionController, intentSchema, parseInput, type Intent, type InteractionClient, type InteractionController } from '../index.js';
 import type { QueueControlPort } from '../queue-control/index.js';
+import type { ObservationClient } from '../observation/index.js';
 import type { TaskControlPort } from './index.js';
 
 const controllers: InteractionController[] = [];
@@ -39,11 +40,12 @@ function fixture(withPort = true) {
     resumeConversationQueue: async () => { throw Error('Unexpected resume'); },
   };
   const intents = { load: async () => saved, save: async (value: Intent) => { saved = structuredClone(value); }, clear: async () => { saved = null; } };
-  const create = () => {
-    const controller = createInteractionController({ client, queue, taskControl: withPort ? port : undefined, connectionId: 'task-test', pollMs: 60_000, intents });
+  const create = (observe?: ObservationClient) => {
+    const controller = createInteractionController({ client, queue, observe, taskControl: withPort ? port : undefined, connectionId: 'task-test', pollMs: 60_000, intents });
     controllers.push(controller); return controller;
   };
   return { id, taskId, turnId, task, turn, snapshot, client, port, requests, intents, create, controller: create(), saved: () => saved,
+    setTurns: (values: ConversationTurn[]) => { turns = values; snapshot.lastTurn = values.at(-1) ?? null; },
     replaceTurn: (next: ConversationTurn) => { turns = [next]; snapshot.lastTurn = next; snapshot.conversation.revision++; } };
 }
 async function open(f: ReturnType<typeof fixture>) { await f.controller.initialize(); expect((await f.controller.input(`/open ${f.id}`)).code).toBe('OPENED'); }
@@ -69,6 +71,28 @@ test('the current queue task uses the same durable empty-body intent without pau
   expect(request.signal).toBeInstanceOf(AbortSignal); expect(f.saved()).toBeNull();
   expect(f.controller.snapshot()).toMatchObject({ draft: '  keep\n中文🙂  ', turns: [{ taskId: f.taskId, status: 'cancel_requested' }] });
   expect(f.controller.snapshot().queue?.paused).toBe(false);
+});
+
+test('the real observation controller binds cancellation to a focused older turn instead of the latest task', async () => {
+  const f = fixture(), newerTaskId = randomUUID();
+  const newer = { ...f.turn, id: randomUUID(), number: 2, task: { ...f.task, id: newerTaskId },
+    telemetry: { kind: 'execution' as const, taskId: newerTaskId, title: 'New execution' } };
+  f.setTurns([f.turn, newer]); const activityTasks: string[] = []; let bodyReads = 0;
+  const noBody = async (): Promise<never> => { bodyReads++; throw Error('Unexpected stream or detail request'); };
+  const observe: ObservationClient = { assistantStream: noBody, assistantStreamPatches: noBody, nativeActivity: noBody, conversationDetail: noBody,
+    nativeActivities: async taskId => { activityTasks.push(taskId); return { activities: [], nextCursor: null }; } };
+  const controller = f.create(observe); await controller.initialize(); await controller.input(`/open ${f.id}`);
+  expect(controller.snapshot().observation?.turnId).toBe(newer.id);
+  expect((await controller.input(`/cancel ${f.taskId}`)).code).toBe('TASK_NOT_DISPLAYED');
+  expect((await controller.input('/turn 1')).code).toBe('TURN');
+  expect((await controller.input('/activity')).code).toBe('ACTIVITY');
+  expect(controller.snapshot().observation).toMatchObject({ turnId: f.turnId, panel: 'activity' });
+  expect((await controller.input(`/cancel ${newerTaskId}`)).code).toBe('TASK_NOT_DISPLAYED');
+  expect((await controller.input(`/cancel ${f.taskId}`)).code).toBe('ACCEPTED');
+  expect(f.requests).toHaveLength(1); expect(f.requests[0]?.saved).toMatchObject({ taskId: f.taskId, turnId: f.turnId });
+  expect(controller.snapshot().observation?.turnId).toBe(f.turnId);
+  expect(controller.snapshot().turns).toMatchObject([{ taskId: f.taskId, status: 'cancel_requested' }, { taskId: newerTaskId, status: 'running' }]);
+  expect(activityTasks).toEqual([f.taskId]); expect(bodyReads).toBe(0);
 });
 
 test('lost ACK survives a new controller and retries only the original task/key after another client changes the latest turn', async () => {
