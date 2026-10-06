@@ -1,5 +1,9 @@
 # 成熟聊天大task来源与登记队列
 
+## MATURE05 下一ready优先级已更新
+
+GO最新裁决覆盖先前Arc先行：1711 partial已足够；panels下一只读准备最小可回收view/正文cache有界与观察生命周期，protected draft/attachment/unknown不可丢，区分DOM/异步读/JS引用，复用原controllers。反复开关/满额保护/late detail+history/重开身份是直接验收；不补全基线截图或分位数，不并大改feed/layout。Arc组合完整目标保后继。仅proposal，未新take，App按ATTACHI后继需求有序小窗口，不预占宽scope。
+
 ## RELEASE02 严格类型检查窄修（合法新scope）
 
 Lead/root已纠正准确定位：root `noUncheckedIndexedAccess` 将 fixture 构建矩阵的 `[label,target]` 推为 `string | undefined`，127/134两错误；不是env/token，也不是ENG领域失败。[原始输入](release02-root-types-input.log)/[三scope修复方案](release02-tuple-types-proposal.json)。w01在ATTACHI安全点用新web-release-type-fix/base2e71，[03323bce v1 COMMITTED](release02-take-receipt.json)11:07:28.265Z三scope已fresh领取并followup派发，只加readonly typed tuple或narrow；不改版本/旅程，不重跑123/八browser/个人发布。旧RELEASE claim已释放不复用；旧定向tsc通过只代表当时选项，保留证据，根严格检查另列。固定目标由Lead runner_owner独立窄审。

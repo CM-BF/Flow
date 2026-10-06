@@ -44,6 +44,8 @@
 
 规模验收补充（GO/root固定0b0源码观察，未browser复现）：大量反复开关后DOM/读缓存/订阅有明确上限，草稿/附件选择/unknown receipt不丢；关视图不cancel、重开恢复固定会话。visible/hidden/closed-clean/closed-protected生命周期和受保护满额拒新开见[既有研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，关联MATURE06-04；不把stream/activity已有预算当整个workspace已有限，不新增大task或提前占App。
 
-### 下一ready产品片排程（root授权方向）
+### 下一ready产品片排程（GO最新优先级，覆盖先前Arc先行）
 
-WORKSPACEPERF01固定partial基线独审后，panels同一槽只读提出Arc组合tab/pane可实施方案，沿01/02/03：A与B同顶层tab、swap/merge/比例、独立焦点/滚动/草稿。先核最新main、workspace-state/App/View及未来ATTACHI App窗口，小Interface+精确scope+真实App预算；不预占App。可先独立模块，但本feature交付必须有实际consumer，不造孤立framework。任意有界pane数组、首验2/3+开放，复用唯一P01真实conversation/view身份，unknown/draft受保护、close不cancel。性能基线约束纳入，不强求同片修全部缓存；未实现部分显式开放。
+WORKSPACEPERF01固定partial基线已足够，不再补齐所有截图/分位数。下一生产片优先05的最小cache回收/观察生命周期：可回收view与正文缓存有界，protected draft/attachment/unknown不丢，区分关闭DOM、异步读取与JS引用；复用原controllers和唯一mutation authority，不造第二workspace状态源。panels先只读固定当前main，提出小Interface、精确scope及容量/选择策略；反复开关、保护满额、late detail/history与重开原身份为直接验收，原8项沿用、新差异重测。
+
+不同时大改feed/layout，不预占宽App范围；与ATTACHI后继App接线按精确有序窗口交权。Arc组合目标01/02/03完整保留为随后产品片：A与B同顶层tab、swap/merge/比例、独立焦点/滚动/草稿，任意有界pane数组、首验2/3+开放；复用唯一P01真实conversation/view身份。当前仅只读proposal，未take新生产范围，不能沿基线四scope修改产品。

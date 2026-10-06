@@ -15,7 +15,7 @@
 | 本片段交付阶段 | planning |
 | 优先级 | 2 |
 | 当前产出 | 已有split/merge与workspace-state基础；尚未完成一个顶层tab内A与B组合的完整验收。 |
-| 下一可用交付 | WORKSPACEPERF01 fixed1711 partial基线已独审批准，panels转真实A与B组合tab方案/精准App窗口；完整实现仍开放 |
+| 下一可用交付 | WORKSPACEPERF01 fixed1711 partial基线足够；GO最新优先最小cache回收/观察生命周期，panels只读精确方案；Arc组合随后、不并改feed/layout |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -48,3 +48,5 @@ WORKSPACEPERF01：panels，base c450，c815bc00 v1四scope，[receipt](../../doc
 GO/root固定c450的Overview/feed发现已落[原研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)与TODO05；WORKSPACEPERF只在原预算未冻结时补请求分类，否则后继，不扩90s/8MiB、不改生产。
 
 WORKSPACEPERF01 [限定审查来源](../../docs/evidence/web-platform/workspaceperf01-partial-review-observation.json)：8完成/1末尾locator失败，checks保FAILED/partial；累计79.322s含清理低于90s，没第三轮。root严格定向types0、2源/180依赖核，不重跑browser。没有完整性能/heap/真实优化结论，05仍pending。
+
+最新排程覆盖先前Arc先行：05最小回收先行，protected draft/附件/unknown保护、关闭DOM/读flight/JS引用分开；容量满额/late detail+history/重开原身份直接验收。新生产scope仍未take，ATTACHI App窗口有序协调，原四scope只基线。
