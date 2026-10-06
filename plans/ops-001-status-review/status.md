@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:56 UTC / main77132408 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:10:54 UTC / main22a0806b |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -223,3 +223,5 @@ Web消息设置349精确tracked输入（逻辑约2.97MB）已将唯一新路径 
 文档时间校正：上一管理提交手填的18:57/19:03为误标，实际时钟18:56:41已核，本次改为18:56；Git提交时间与原始运行回执仍为权威，未改任何运行事实。
 
 2026-10-06 18:59 UTC：Web MessageSettings 18:58:58明确归还；一次浏览器5176ms、Chrome在CDP准备前退出，0行为检查，cleanup组/fixture/tmp已确认，无重试。R01 25b/9b79准备独审4源+552绑定通过，已转唯一一次af51＋两保留App隔离窗口（90s工作/20s清理，原fresh/live资源界、0provider/个人操作）；由assignment_review先fresh后执行，未知止步不换参数。O16仅监督源码修复，不并行PG。准备队列与实际运行holder分开。
+
+2026-10-06 19:10:54 UTC：R01首次隔离运行2927ms/exit1，0页面报告，固定af51 runner缺@flow/client；marker匹配、自有DB正常DROP、进程组/端口/tmp清理已核，19:01:13窗口归还。原红封存，不冒充页面兼容失败。仅补own固定client与已装SDK两ignored links，四个实际center/runner入口的import-only exit0/1002ms、0PG/Chrome/provider，等待固定增量证据独审。O16监督准备已审：独立watchdog三项通过，实际PG尚未授权。共享重运行窗口无holder，Web修复就绪可按ready-first请求，不为准备项预占。

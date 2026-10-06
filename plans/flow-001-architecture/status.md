@@ -140,3 +140,5 @@ SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB�
 2026-10-06 18:38 UTC：SVC05H固定362工具一次bootstrap exit0/922ms，新owned Web group23534，旧65219消失；中心/runner原组、配置、pointercaa1/v2、retained资产/报告及已观察DB元数据保持，0query/无tab reload。独立读取17固定输入和52实际绑定，隔离socket实验另证capacity拒绝但未复现个人残留。主线与runtime继续区分；新af51+d629发布仍待两旧页面实际兼容。见[恢复记录](../../docs/evidence/i02/svc05h-web-recovery-independent-review.json)。
 
 2026-10-06T18:43:03.221Z：恢复记录已main888c，dashboard实采172source；SVC05R01旧保留网页对af51的兼容脚本与O16连续目标旅程独立实施。个人运行仍362/v15、caa1/v2，新版发布尚未发生。
+
+2026-10-06 19:10:54 UTC：FLOW-001-T04-SCAN-01 proposed；单会话/项目行锁下无关推进与整轮关闭时限纳入REQ15后继。GO固定22a源码观察保留为未复现风险，未领取产品scope、未运行PG/负载；兼容发布/消息设置仍优先。
