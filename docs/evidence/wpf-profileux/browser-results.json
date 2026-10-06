@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-06T05:12:56.731Z",
+  "url": "http://127.0.0.1:54054",
+  "checks": [
+    "Failed later page retains choices and retry successfully fetches that page; Actual FlowClient HTTP pages: 20 then 1; identical model labels preserve distinct runner/profile declarations; goal-tools/unknown stay visible and disabled; keyboard skips disabled entries",
+    "Escape returns focus to trigger and changing selection preserves unsent draft; no send endpoint exists",
+    "401 keeps previous pages/selection visible, marks stale and prevents new configured selection; explicit refresh recovers",
+    "Dark 390px/reduced-motion dialog has no horizontal overflow; pending receipt locks exact frozen creation before any summary",
+    "New connection has new catalog and explicit default; created lock reports selected access without claiming effective settings",
+    "Created compact summary preserves full pin/digest behind native disclosure; Enter/Space retain focus and emit zero HTTP, selection or draft changes; actual remains explicitly unknown",
+    "Legacy created conversation stays visibly unpinned; details reveal the exact legacy request without inventing a profile",
+    "Pending receipt cannot change profile; collapsing and expanding keeps the exact original reference and live unsent draft",
+    "Long declared model wraps at 390px without clipping or horizontal overflow; loaded duplicate display names retain separate full runner/profile labels"
+  ],
+  "errors": [],
+  "geometry": [
+    {
+      "label": "created-dark-390",
+      "width": 348,
+      "height": 56.15625
+    },
+    {
+      "label": "created-dark-1280",
+      "width": 560,
+      "height": 56.15625
+    },
+    {
+      "label": "created-light-1280",
+      "width": 560,
+      "height": 56.15625
+    },
+    {
+      "label": "pending-light-1280",
+      "width": 560,
+      "height": 56.15625
+    },
+    {
+      "label": "pending-dark-390",
+      "width": 348,
+      "height": 56.15625
+    },
+    {
+      "label": "long-model-light-390",
+      "width": 348,
+      "height": 128.078125
+    }
+  ],
+  "requests": [
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?after=10000000-0000-4000-8000-000000000020&limit=20",
+    "/connection-1/api/execution-profiles?after=10000000-0000-4000-8000-000000000020&limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-2/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?after=10000000-0000-4000-8000-000000000020&limit=20"
+  ],
+  "browser": "154.0.8037.98",
+  "fixtureOnly": true
+}
