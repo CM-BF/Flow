@@ -11,3 +11,5 @@
 本地TaskThread.tsx85–121此前把task.entries作为assistant并禁用已受理composer，只适用于旧单任务路径；新的ConversationThread独立替换持续聊天路径，不改旧任务truth。TaskProjection保留任务观察与detail职责；App连接scope、两pane预算、草稿归属复用，conversation消息的插件上下文按turn.task.id映射。
 
 03:38 UTC 共享owner受控解法（替代完整main merge）：按指令仅abort正在冲突的841，HEAD仍bac6；7份自有docs逐字SHA256比对保留。实际读取Lead的[manifest](web-chat-transport-manifest.json)和[patch](web-chat-transport.patch)，核所有3文件before hash，git apply --check/原样apply，再核3文件after hash全部相同。独立输入提交a3b9cfaaa4be4ea8b34e6135107b0401f121fbd0，commit注明841来源和bac6适配base。没有手动改共享内容，不合无关main/goals/server/rootlock。公共接口依赖解除，真实中心与模型验收仍待其ready。
+
+03:54 UTC typed合同受控输入：Lead F01 881edabff8761b04e5b5edd5e8dc0bdf94a726f1提供[manifest](web-chat-typed-contract-manifest.json)与[原始patch](web-chat-typed-contract.patch)，patch SHA256 a506697f64f8eb8e2b8c25a27e320be0b8dfc01183a897f076b03860877ccf8d与两文件before/after全部核合，原样git apply后独立commit746364e；conversations.ts来源a780，assistant.ts来源2e109850。未改export/client/共享实现。typed detail按UTF-8正文SHA256校验；tools是init可用工具集合，非已执行调用，thinking unknown不推断。
