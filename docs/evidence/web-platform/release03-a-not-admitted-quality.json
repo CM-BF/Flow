@@ -19,6 +19,18 @@
       "archive": "recovery01-source-review-2498-root.json",
       "bytes": 2089,
       "sha256": "67d1360c6b58fa7308f2b554f91d22f7a32cf7f8488ecaf20835130d3b543eb6"
+    },
+    {
+      "source": "/tmp/release03-independent-432b/report.md",
+      "archive": "release03-source-review-432b-peer/report.md",
+      "bytes": 1448,
+      "sha256": "a6ec8edfd49ab4c64aac4c983a1a374440741a250083481c19b0d6952a72ba57"
+    },
+    {
+      "source": "/tmp/release03-independent-432b/audit.json",
+      "archive": "release03-source-review-432b-peer/audit.json",
+      "bytes": 843,
+      "sha256": "1270c0e351fec8041e4450d91cca061d4e6fb6c82669c2478f018a151864506a"
     }
   ],
   "actualMethod": "Localclean-code factualstate review: approvedsource vs runtimeadmission vs productoutcome;nooverlap andimmediatereturnoffailedwindow",
@@ -69,11 +81,12 @@
       }
     ],
     "rawArchiveHashMismatches": 0,
-    "addedMarkdownLinks": 10,
+    "addedMarkdownLinks": 11,
     "missingLinks": 0,
     "managementScopeViolations": 0,
     "diffCheck": 0,
-    "productTests": 0
+    "productTests": 0,
+    "peer432b": "Additional independent source-only APPROVED/0blocking; samefixedtarget, not execution evidence or resource override"
   },
   "noOperations": [
     "No productrun",

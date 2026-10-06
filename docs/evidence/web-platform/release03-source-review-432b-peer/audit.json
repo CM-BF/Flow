@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T15:06:43.052139+00:00",
+  "target": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+  "previousReviewedTarget": "997d731a98c837ccfce61712d2c7318ae13fb3d2",
+  "head": "46395a526ae597958cf3ba801af39e1dbb65d70e",
+  "dirty": "",
+  "sources": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "sha256": "e56b952b92854bbb9a208ee7a87e763bf3d2b29e05f6e0b58614d5f968d3e18f",
+      "bytes": 17862,
+      "matchesCurrent": true
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "sha256": "ef6ae3609533d4188ef02897fe0c0399c7f2248cca05846219ea5ecc1afd6fee",
+      "bytes": 34649,
+      "matchesCurrent": true
+    }
+  ],
+  "diffCheck": 0,
+  "conclusion": "APPROVED: resource-gate source delta only; no runtime or release approval",
+  "blockingFindings": [],
+  "execution": "NONE"
+}

@@ -14,7 +14,7 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 **唯一当前运行窗口：已交回Lead，A-only未准入/未运行**：[fresh准入原记录](release03-a-admission-not-run.json) / [当前窗口](resource-window-current.json)。Root **432b09ae1b552a68cc4720b369e42ed80bc942c9** 小审APPROVED后，管理一次fresh核bfb v3原四scope/无overlap、HEAD46395clean、两固定源码hash及17只读依赖均通过；但free **1,058,885,632B < 1,107,296,256B（1GiB+32MiB）**，也低于1GiB。**未创建gate、0A/PG/Chrome、业务累计仍0/180秒；立即交回Lead总PG/Chrome窗口，不空占。** 此为环境准入不足，不是history产品red或已清理过数据库；没有本次A raw/wire/DB可验，B/Chrome NOT_RUN、无SVC绿报告。W01及panels均已明确不运行、不复用旧空间；后继新实质资源/窗口事实再fresh，不忙轮询。共享卷数值不归因任一队。
 
-前一Lead F01窗口[原清理事实](f01-plugin-window-cleanup-1457.json)与本组Recovery2.540秒direct清理都保历史。新RELEASE A-onlysource32/16MiB gate已[root限定批准](release03-source-review-432b-root.json)，原60秒含20秒清理/累计180秒/8MiB不重置；准入失败不构成运行或发布许可。
+前一Lead F01窗口[原清理事实](f01-plugin-window-cleanup-1457.json)与本组Recovery2.540秒direct清理都保历史。新RELEASE A-onlysource32/16MiB gate已[root限定批准](release03-source-review-432b-root.json)，[panels同432b独立delta复核](release03-source-review-432b-peer/report.md)亦为限定源码APPROVED/0blocking；多份源审不替代一次实跑或资源准入。原60秒含20秒清理/累计180秒/8MiB不重置；准入失败不构成运行或发布许可。
 
 **登记已闭合，页面事实按Lead归因**：[fixed d679 registry双来源核](registry-d679-recovery-release03-observation.json)确认RECOVERY01与RELEASE03指向原owner各自canonical。Lead实际4320于14:51:18为161来源，两项live/parser0/人读完整；管理只读Git registry，没有GET/刷新/页面复采，不再写等待首次登记。
 
