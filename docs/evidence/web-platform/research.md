@@ -73,3 +73,12 @@ panels owner固定e888862只读调查：history.before响应nextCursor不得覆�
 
 
 WPF-P01接缝调查已持久化到[plugin-seams.md](plugin-seams.md)：位置→command→context/capability→disable清理，明确当前标记语义差异、同realm第三方无隔离保证和WPF-NAV-01后续统一导航。研究没有在旧panels树开展新实现，管理文档唯一owner落盘。
+
+
+## RS12 Host错误隔离（root研究#9）与准确主线基线
+
+React[ErrorBoundary](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary)不捕普通event handler/异步callback异常，host activation/command需要显式catch及plugin归属诊断；有Boundary不等于完整错误隔离。[VS Code Extension anatomy](https://code.visualstudio.com/api/get-started/extension-anatomy)区分static contribution/activation/API，支持manifest先登记、首次使用加载、退出清理。最小矩阵：并发execute一次activate、disable迟到不复活、激活失败全回滚、dispose一项抛错仍清其余、异步command无unhandledrejection、render故障局部可恢复、禁用后旧command/context拒绝；注册失败原子，无半套按钮。
+
+主线现已提供受控main/origin `108fddbd8261963f3d49088873b5a611b70a5dbf`（完整C02+M02，W01改版未在其中）。两新owner已收到：未建树从108f起显式合W01已审输入；已建树/改动不reset，受控merge并记录。共享代码/lock冲突交Lead。主线另查>200新task投影accepted/output因果顺序风险，局部PG修复不改API；待补丁SHA同步，不阻塞前端独立树。真实中心10task UI仍需我方执行。
+
+W01整体root独立review APPROVED targetcb4a39211e264538704ba9d474eeb08fc4b2759c：独立typecheck/10HTTP、官方sourcehash与结构、shell/projection/生命周期审读，CUA新任务queued→waiting→Approve后pane/sidebar同步，读owner10browser/3导航复验/production smoke且抽图；没有假称独立重跑全browser。范围不含真实中心/PTY/fs、reload草稿布局持久化和性能承诺。已令owner转录正式metadata，后续改版另审。

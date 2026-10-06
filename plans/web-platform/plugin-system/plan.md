@@ -21,7 +21,7 @@
 
 订阅/异步生命周期补充：useSyncExternalStore保持同一未变snapshot和稳定subscribe；按slot/command窄订阅，流式token不重绘全host。lazy activation与loading/error boundary局限插件panel；并发activate和disable期间迟到resolve不能重新注册，disable只释放本地观察，不能默认取消已受理中心任务。验证真实listener/observer清理。
 
-工作假设：先支持受信任内置Web扩展，第三方隔离边界交X01设计；未验证第三方模块安全执行，不宣称完成。实现owner尚待空槽派发，当前管理者只维护计划，不重复写W01。
+工作假设：先支持受信任内置Web扩展，第三方隔离边界交X01设计；未验证第三方模块安全执行，不宣称完成。已复用W01 owner派发新树web-plugin-host/codex/web-plugin-host；当前管理草案在新owner建立平级plans/wpf-p01-plugin-host唯一源后转交入口。host模块与fixture独立，主App由M02 owner挂载；不在旧m1-web树开发新feature。
 
 ## TODO
 
