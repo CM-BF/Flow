@@ -66,7 +66,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${id === 'WPF-001' ? 'web-platform' : id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };
