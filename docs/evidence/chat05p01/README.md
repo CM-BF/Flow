@@ -20,3 +20,5 @@ PG源码候选为`apps/server/src/native-activity-body/{fixture,body.test}.ts`�
 `types-run-03` focused tsc 实际exit2/2433ms：新增partial SDK夹具声明与默认UUID推断；`40af6d90`窄修。`types-run-04` fresh1,080,119,296B低于1,082,130,432B，NOT_RUN、没有compiler。原失败输出不改。
 
 `pg-static-resource-closure.json`只读核209本地源、31个实际URL资源（含033、012/013、017/019动态数组）、3个workspace公开导出manifest，missing=[]；最初observer误假设plugin-runtime index，按真实package export纠正。第三方manifest/link见两轮dependency proposals/receipts；此存在性核不等运行导入或PG通过。
+
+恢复准入轮：`types-run-05`与`pure-run-03`同次fresh1076162560B均未达各自原门槛，0child/NOT_RUN，不算测试选择或通过。source仍40af，唯一独立源审由native_center_owner进行。

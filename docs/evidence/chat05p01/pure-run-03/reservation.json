@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-06T22:47:11.509082+00:00",
+  "head": "5a8e9d84cd0b0373053f968c5c89491a2d93eff1",
+  "sourceTarget": "40af6d9071c621707971fd983a85dd9145f065fd",
+  "freshFreeBytes": 1076162560,
+  "required": 1090519040,
+  "status": "NOT_RUN",
+  "reason": "fresh-space-gate",
+  "scope": "Only planned10:4 new local+4 old outbox+2 injected adapter, no PG fixtures.",
+  "commandNotStarted": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/chat05p01/pure-check.config.mjs",
+    "apps/runner/src/native-activity-body/body.test.ts",
+    "apps/runner/src/native-activity-body/adapter.test.ts",
+    "apps/runner/src/outbox.test.ts",
+    "apps/server/src/native-activity-body/codec.test.ts",
+    "-t",
+    "makes a steering final|never overtakes|enforces body|refuses a corrupted|uses only the optional|flushes the durable prefix|a definitive conflict|a lost response|absence after timeout"
+  ],
+  "selected": null,
+  "spawnedChildren": 0,
+  "PG": 0,
+  "provider": 0,
+  "runImports": 0,
+  "temporaryDirectoryCreated": false
+}
