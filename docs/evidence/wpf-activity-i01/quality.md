@@ -25,3 +25,9 @@
 scope复核：15自有源+2已批准依赖，与17scope领取和受控输入一致；protected/rootlock无差异。本树依赖link正确。最终74局部、tsc/build、dev11/prod10全通过；两最终browser17source hash与commit全符。原工具/fixture失败均已解释保留，没有跳过或降低断言；当前独立review仍NOT_STARTED。目录、页面、身份/完整字节/截断的Interface已给可执行交接，未将fixture视为真实provider。
 
 本轮无额外生产优化：bundle大chunk警告、全历史缓存、真实provider/其他浏览器/屏读列未验证。每工作段均做清码停点，未创建后台timer。
+
+## 2026-10-06 07:15 UTC review修复停点
+
+root确认离线连接未接reader生命周期。修复采用已存在connection字段独立同步，不修改会话projection、不增加timer/第二状态源。把active与online顺序写清：generic先deactivate再setOnline(true)，避免换source/hidden恢复时提前触发刷新；current在任何read前后仍复核live与身份。新增同turns引用回归直接捕获原bug，两actualApp专项从浏览器request事件验证0尝试。success-null与failure分别展示，修正无效Retry。Interface现明确受控C03与只显示原文digest，无验证冒称。
+
+修复五文件diffcheck0；60相关和dev/prod离线专项通过，未重跑不受影响的P01/完整视觉。原失败/首候选记录不覆盖，新hash另存。无新增未处理作者finding；正式R1关闭须root复审。

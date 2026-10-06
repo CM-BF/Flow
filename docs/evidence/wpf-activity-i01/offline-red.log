@@ -1,0 +1,50 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity-integration
+
+ ❯ apps/web/test/conversation-activity-integration.test.ts (7 tests | 2 failed) 99ms
+     ✓ registers genuine button/menu/panel without any reads and expands lazily 39ms
+     ✓ allows both split panes while global navigation focuses only one 11ms
+     ✓ native hide is zero-read, resume retains cache, and collapsed updates do not poll 13ms
+     ✓ disable, close and session disposal reject existing ports and late responses 10ms
+     ✓ task events stay separate from native routes and only expand the selected source 8ms
+     × offline with unchanged turns blocks native/events/body and reconnect restores an open view 10ms
+     × going offline aborts a body signal and drops its late result without losing settled cache 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-activity-integration.test.ts > conversation activity host bridge > offline with unchanged turns blocks native/events/body and reconnect restores an open view
+AssertionError: expected [ 'native:chat-1-task-1' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "native:chat-1-task-1",
++ ]
+
+ ❯ apps/web/test/conversation-activity-integration.test.ts:55:175
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/web/test/conversation-activity-integration.test.ts > conversation activity host bridge > going offline aborts a body signal and drops its late result without losing settled cache
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ apps/web/test/conversation-activity-integration.test.ts:63:191
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 5 passed (7)
+   Start at  00:12:01
+   Duration  1.49s (transform 583ms, setup 0ms, import 1.30s, tests 99ms, environment 0ms)
+

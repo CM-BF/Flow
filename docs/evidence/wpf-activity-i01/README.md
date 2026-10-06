@@ -1,6 +1,6 @@
 # WPF-ACTIVITYI01 聊天活动交付候选
 
-固定实现：`e93070cc08339325cd299105f5805ca871a07ea8`；基线：`86a36eaeffbf09f0a3772c3d1509c17dc0a76f92`。分支 `codex/web-conversation-activity-integration`。root独立review已REQUEST_CHANGES：ACTIVITYI-R1 P2 offline reader缺口，修复中，主线未接收。
+当前固定实现：`ba341d77672ba8456197d64d54193aee79719e46`；首候选：`e93070cc08339325cd299105f5805ca871a07ea8`；基线：`86a36eaeffbf09f0a3772c3d1509c17dc0a76f92`。分支 `codex/web-conversation-activity-integration`。root独立review对原e930提出ACTIVITYI-R1 P2；ba341已修复并通过针对性检查，待复审，主线未接收。见[修复检查](revision.md)。
 
 聊天每轮用户消息下方现在有一直可见的活动入口。展开Tools and thinking读取最多20条轻记录，Tool/Reasoning逐条展开才读正文；Task events走既有通用阅读器。工具input-ready与running/unknown分别显示，思考只来自真实provider类型记录，不造时长。P01 footer实际含按钮、菜单、面板；更换中心、关闭或隐藏pane使旧读取失效，两可见split不互相依赖焦点。
 
@@ -8,11 +8,11 @@
 
 自有15实现/测试路径及2受控依赖路径见[source-manifest.json](source-manifest.json)。C03原目标889f433ef6972e4feee95aa878f0dbaf7da30448仅两文件cherry-pick为07da10c37f50b5e787e21bbd45ceeda1fe539766；两before/after SHA256逐项核准，未修改其实现，也未复制其文档。见[cursor-dependency.json](cursor-dependency.json)。这项输入不扩大本owner写权。
 
-17文件当前字节、固定实现commit和两最终browser报告hash全相同。开发报告运行于依赖HEAD07da+未提交实现，后来e930提交了相同字节；production报告明确运行于e930。没有将早期失败报告倒填为最终结果。
+首候选e930的17文件与两完整browser报告hash相同；当前ba341的17文件与两离线专项报告hash相同。开发报告运行于依赖HEAD07da+未提交实现，后来e930提交了相同字节；production报告明确运行于e930。没有将早期失败报告倒填为最终结果。
 
 ## 启动 / 预览
 
-当前保留production HTTPfixture：<http://127.0.0.1:51454>。连接页Center URL留空，Owner token为公开合成fixture值 `flow-fixture-only`；备用中心51452/51453。0真实模型/产品DB，已有其他preview未停止。
+当前保留production HTTPfixture（reload加载ba341修复build）：<http://127.0.0.1:51454>。连接页Center URL留空，Owner token为公开合成fixture值 `flow-fixture-only`；备用中心51452/51453。0真实模型/产品DB，已有其他preview未停止。
 
 从本worktree启动：
 
