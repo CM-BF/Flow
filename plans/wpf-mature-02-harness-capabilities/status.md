@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T18:31:59.756891+00:00 / main8d84接收事实由Lead报告，部署未核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T18:36:52Z / main8d84接收事实由Lead报告，部署未核 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -15,7 +15,7 @@
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | compat一次1clang+2C：A三读取−1/errno1；B唯一compat许可后三项16384/errno0；全部关闭/清理与限定计量完成，结果已18:33:28忠实性接收。原12未重跑、0native重试。 |
+| 当前检查 | 新native单项许可source fdd7经18:36:15源码审无P1/P2，inert/sh两项0、0target；固定包准备中，实际未OPEN。旧C对照正差异已审封存。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；CORE/C01/F01已由main8d84d529接收，唯一组合回执见canonical；不代表个人服务部署或完整跨端验收 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude产品core首契约已main；当前接入现profile、中心事务、队列与已有adapter。child next-slice-handoff维护唯一精确合同/闭包；本树只父管理，四profile路径已停写交回。 |
