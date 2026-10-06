@@ -19,7 +19,7 @@
 
 比较方案：纯readline负担最小但多行、CJK、resize/editor容易自造复杂实现；直接套assistant-ui LocalRuntime会把本地历史和abort变成错误权威；选择Ink + 受控TextInput/必要primitives作为首实现候选，中心投影由明确controller拥有。必须先核固定包实际exports与依赖图；若需要assistant-ui runtime，只能外部store接缝，不使用默认local history、默认cancelRun或自动generateTitle。
 
-固定候选：Ink8.0.0 + React/types19.3.0（沿现Web同版）+ react-ink0.0.46（与现core0.3.22相容候选）+ ink-testing-library4.0.0。0.0.48/core^0.3.24保留比较，不为TUI强升Web。各版本MIT/Node/peer与SRI已记录；尚未安装/实测。正式package与lock由唯一依赖owner受控接入，禁止依赖全局安装路径或latest脚手架。
+固定选择：Ink8.0.0 + React/types19.3.0（沿现Web同版）+ react-ink0.0.46 + ink-testing-library4.0.0。TUI01A已在依赖提交1cec921核对实际core仍0.3.22，既有Web importer/packages/snapshots零变；新增包SRI/许可/engine及离线缺项、registry下载来源保留在其dependency-provenance.json。安装关闭生命周期脚本；兼容行为仍待实际终端验收，不以依赖解析成功代替。0.0.48保留比较，禁止依赖全局安装路径或latest脚手架。
 
 ## 首个端到端子片 TUI01A
 
