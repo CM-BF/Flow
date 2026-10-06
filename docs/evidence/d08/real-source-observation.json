@@ -1,0 +1,178 @@
+{
+  "observedAt": "2026-10-06T09:21:29.595Z",
+  "method": "Read-only subset of registered authoritative worktrees through the new local aggregator; not 4320/deployment or full-source observation",
+  "records": [
+    {
+      "id": "WPF-MATURE-02",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T09:16:37.269Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/status.md",
+        "syncedAt": "2026-10-06T09:21:29.595Z",
+        "stale": false,
+        "ageHours": 0.08127638888888888
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/claude-codex-capabilities",
+        "head": "1aead2e3b92f3855623424d25a4b8ba306ecca55",
+        "dirty": true,
+        "changedFiles": 2,
+        "observedAt": "2026-10-06T09:21:29.675Z"
+      },
+      "current": true,
+      "links": {
+        "kind": "big",
+        "coLead": {
+          "state": "known",
+          "record": "mika",
+          "value": "mika"
+        },
+        "parent": {
+          "state": "none",
+          "record": "",
+          "reason": "已显式声明为大task，无所属父任务"
+        }
+      },
+      "statusSha256": "3f6848b90c0795d4af1d7f01b745bb11c667fa6e47a76b0b882bf1e1508be33d"
+    },
+    {
+      "id": "WPF-MATURE-04",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T09:19:49.217Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md",
+        "syncedAt": "2026-10-06T09:21:29.595Z",
+        "stale": false,
+        "ageHours": 0.1048875
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/context-transparency",
+        "head": "278dba39c80dc38397afbcefee0eca72a85c9cd8",
+        "dirty": true,
+        "changedFiles": 7,
+        "observedAt": "2026-10-06T09:21:29.679Z"
+      },
+      "current": true,
+      "links": {
+        "kind": "big",
+        "coLead": {
+          "state": "known",
+          "record": "mika",
+          "value": "mika"
+        },
+        "parent": {
+          "state": "none",
+          "record": "",
+          "reason": "已显式声明为大task，无所属父任务"
+        }
+      },
+      "statusSha256": "866d21e6511565646a8ab863972758a1b60a0cb953fc3a53cec420a2d963a29f"
+    },
+    {
+      "id": "WPF-MATURE-06",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T09:17:49.642Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/status.md",
+        "syncedAt": "2026-10-06T09:21:29.595Z",
+        "stale": false,
+        "ageHours": 0.0248875
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-platform-management",
+        "head": "8b895e3103d23894062cdd2e6b8994fc36e4a183",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T09:21:29.664Z"
+      },
+      "current": true,
+      "links": {
+        "kind": "big",
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "parent": {
+          "state": "none",
+          "record": "",
+          "reason": "已显式声明为大task，无所属父任务"
+        }
+      },
+      "statusSha256": "e89c9954e01d5f07f806aad21e153bb8168a7d6b7cbc80d94be707096236284a"
+    },
+    {
+      "id": "WPF-STEER01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T09:11:49.921Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md",
+        "syncedAt": "2026-10-06T09:21:29.595Z",
+        "stale": false,
+        "ageHours": 0.1612763888888889
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-steering-control",
+        "head": "01842a87f768bd28ce7370681ff02d7b834765f7",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T09:21:29.680Z"
+      },
+      "current": true,
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)",
+          "reason": "",
+          "targetId": "WPF-MATURE-06",
+          "title": "完整聊天可靠性"
+        }
+      },
+      "statusSha256": "3c4d31bb8120fc47448c15c5bf4e7a309a294db57e2cd19c11a247ac67175b00"
+    },
+    {
+      "id": "D01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T01:26:38.596Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/status.md",
+        "syncedAt": "2026-10-06T09:21:29.595Z",
+        "stale": false,
+        "ageHours": 7.941554166666666
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/execution-dashboard",
+        "head": "6783562696cd268274398a02ebd3dff41aed2ce0",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T09:21:29.666Z"
+      },
+      "current": true,
+      "links": {
+        "kind": "unknown",
+        "coLead": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        },
+        "parent": {
+          "state": "unknown",
+          "record": "",
+          "reason": "旧记录未声明层级"
+        }
+      },
+      "statusSha256": "16ace0aacf77a84b7ccd82459b6320a8c3f2ba3010eb9ef991fe9637968a88e2"
+    }
+  ]
+}

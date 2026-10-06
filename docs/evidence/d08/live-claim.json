@@ -1,0 +1,32 @@
+{
+  "state": "available",
+  "observedAt": "2026-10-06T09:13:46.380Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/public/styles.css",
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/src/task-links.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs",
+      "apps/execution-dashboard/test/task-links.test.mjs",
+      "docs/evidence/d08",
+      "plans/d08-task-links"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-task-links",
+    "origin": "new",
+    "taskId": "D08",
+    "worker": "workspace_panels_owner",
+    "claimId": "49510580-00ea-469f-a2a2-a86d3de75a03",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links",
+    "createdAt": "2026-10-06T09:13:22.477Z",
+    "updatedAt": "2026-10-06T09:13:22.477Z",
+    "observedAt": null,
+    "needsVerification": false
+  }
+}
