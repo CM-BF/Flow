@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 14:09:00 UTC |
+| 最近更新时间 | 2026-10-06 14:42:20 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [amend6ddedc73 v4](../../docs/evidence/x01/leaf-handback-receipt.json)，ACTIVE；仅中心7文件+正式029与两metadata，旧8leaf已交回 |
+| Claim | [host gates v5](../../docs/evidence/x01/host-gates-amend-receipt.json)，ACTIVE；仅host两源+两metadata，8center已交回 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
-| 工作基线 / HEAD | 受控main7cb→c837，F01三依赖→1c93c102；当前中心固定a578bfd977f5f8f8376cee613307f7011d8778a7，旧leaf固定bf3378已main2f16 |
-| 工作树 dirty 状态 | 中心8源/raw固定a578bfd977f5f8f8376cee613307f7011d8778a7；后继仅metadata，实际clean由Git聚合 |
+| 工作基线 / HEAD | host基线8e520b7274a6d4112e91318c6eb5ba1758bf7c1c；中心固定a578已main56d90；旧leaf已main2f16 |
+| 工作树 dirty 状态 | 本地host双gate实施中；center源码/raw冻结且写权已交回 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 当前中心14/14（11真实PG/HTTP+3DTO）、strict局部0；6轮专库0连接后DROP且own根删除，49制包child自然0；首8fixture失败保留，不累计重复 |
-| Review | APPROVED a578bfd977f5f8f8376cee613307f7011d8778a7；chatui01_owner/gpt-6-astra 13:50:35 UTC，Mika 13:51:12接收，0P1/P2 |
-| 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；bf3378八leaf+f635三依赖已main2f16e30a，完整npm生命周期未实现 |
-| 实现目标 | a578bfd977f5f8f8376cee613307f7011d8778a7 |
-| 实现范围 | packages/contracts/src/plugin-installations.ts, packages/contracts/src/plugin-installations.test.ts, apps/server/src/plugin-installations/store.ts, apps/server/src/plugin-installations/commands.ts, apps/server/src/plugin-installations/routes.ts, apps/server/src/plugin-installations/migration.ts, apps/server/src/plugin-installations/installations.test.ts, packages/storage/migrations/029-plugin-material-installs.sql |
-| 本片段交付阶段 | integration |
+| 检查状态 | 新host双gate NOT_RUN；历史center14distinct/strict0与leaf65保持，不移用 |
+| Review | NOT_STARTED 当前host双gate；历史center a578与leaf bf3378 APPROVED已main |
+| 已集成 main 状态 / HEAD | center a578八源已main56d90e8c36d48e6c23a796283f3b89d0d08e7294，默认factory/client/CLI未声称挂载；leaf bf3378+依赖f635已main2f16 |
+| 实现目标 | UNKNOWN（host双gate待固定） |
+| 实现范围 | apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 公开中心静态安装与历史读回已独审通过，准备接入默认中心 |
-| 下一可用交付 | 接入默认中心和共用客户端；启用与真实工具任务绑定方案已具备明确接线候选 |
+| 当前产出 | 中心静态安装模块已进入主线；正在补齐包加载后再次执行前的当前权限核验 |
+| 下一可用交付 | 包异步加载期间撤权后，阻止后续工具调用 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -42,7 +42,7 @@
 
 ## 当前事实与边界
 
-静态材料与trusted self-owned真实loader已main2f16e30a，修后65局部检查/独审成立。当前中心材料片a578已独审通过，14不同检查含11真实PG/HTTP，尚待正式main接收；SDK/provider为0。Web只读入口已完成，trusted host不等第三方隔离或完整public管理链。
+静态材料与trusted self-owned真实loader已main2f16e30a，修后65局部检查/独审成立。中心材料片a578已独审并正式main56d90接收，14不同检查含11真实PG/HTTP；SDK/provider为0。Web只读入口已完成，trusted host不等第三方隔离或完整public管理链。
 
 当前无用户行动或身份阻塞。候选来源/版本已由Goal Owner提供，见[候选输入](candidate-inputs.md)；用户所指身份尚未亲自确认，但不阻止已授权CTX01固定core实验。不从名字猜项目，也不重复询问已授权生命周期方向。后续产品实现必须另明确 worktree/owner/scope，本计划不授予跨模块写权。
 
@@ -97,3 +97,5 @@
 2026-10-06 14:07:30 UTC：按Mika设计门禁补充 import完成→invoke前再次实时tool grant核验，两gate共用binding/invocation身份，任何授权ACK未知不执行/不重放包；旧host两源须fresh重新领取，不沿用v4。新binding资格必须与X02当前revision/version/config/material/host一致，旧enabled指针不能绕过。接收P06 main5db事实后重绑16只读输入，仅runtime改变并纳AttemptWakeup；原owner handback仍待。当前仅metadata，中心a578/100bindings保持，0工程测试。
 
 2026-10-06 14:09:00 UTC：后继接缝补有限host发布、enable/disable、冻结binding及load/invoke gate的最小字段候选，供Lead冻结；仍未定义第二执行FSM或领取新产品。P06正式main5db/v2释放收据已读回，旧占用解除不授本owner权限。029与100固定证据不动，O14 030不占。当前磁盘资源HOLD，仅小metadata，无新PG/build/install或清理。
+
+2026-10-06 14:42:20 UTC：正式MAIN_RECEIPT已核[center接收](../../docs/evidence/x01/center-main-acceptance.json)，8source逐fixed/main/owner/hash一致，0重测14/65。停写8center后v4→v5原子移出并追加host两源；[本地Interface](../../docs/evidence/x01/host-gates-interface.md)已获Mika设计核定，现仅局部双gate实现。Data1,157,612KiB≥1GiB+32MiB；不占runtime/公共DTO/DB/SQL。新host授权时序架构影响待固定后交Lead，原10TODO不减。

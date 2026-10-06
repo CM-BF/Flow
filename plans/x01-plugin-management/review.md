@@ -1,3 +1,13 @@
+# X01 当前host双阶段权限核验
+
+状态：NOT_STARTED
+
+Review target commit：UNKNOWN（待固定）
+
+范围：apps/runner/src/plugins/host.ts、host.test.ts；base8e520b7；[Interface](../../docs/evidence/x01/host-gates-interface.md)。设计已核定，产品实施与独审尚未完成。只读review固定target、真实TLA/授权未知/ownership/abort行为和原14直接消费者；不运行测试或改owner树。不把历史center/leaf批准移到新host。中心a578已正式main56d90接收，详[回执](../../docs/evidence/x01/center-main-acceptance.json)。
+
+---
+
 # X01 当前中心静态安装 / 公开读回独立审查
 
 状态：APPROVED

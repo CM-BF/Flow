@@ -1,0 +1,68 @@
+{
+  "observedAt": "2026-10-06 14:42:20 UTC",
+  "main": "56d90e8c36d48e6c23a796283f3b89d0d08e7294",
+  "implementation": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+  "sources": [
+    {
+      "kind": "source",
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394"
+    },
+    {
+      "kind": "source",
+      "path": "packages/contracts/src/plugin-installations.test.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 1576,
+      "sha256": "7838934889e6309e7893203c3ed8e66e8e0ae4ec3110c403860e3260bd905057"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/commands.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 11568,
+      "sha256": "829bef240c694be86f8f9fef0808d81586a2f624607ed41d238065bde3bcee89"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/store.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2459,
+      "sha256": "0856920e72facb705bd2a7e1d038d7ea2a9f10633f4a1f98902b09322f7e786a"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/routes.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 6527,
+      "sha256": "8931b177ace5ff0ecff7a14d799c629979e33f63b5cfc3d4bb88c72355c2269c"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/migration.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 760,
+      "sha256": "894abb00a1cd3375e87ef4f05c3607bb7315867a16c1c042989b04eaf26a73c6"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/installations.test.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 26150,
+      "sha256": "a5de0d126c01d5c19678dba8ecc76f9b46311b729df82f10f5151cc262ebbfb8"
+    },
+    {
+      "kind": "source",
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 4435,
+      "sha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea"
+    }
+  ],
+  "comparison": "implementation Git = fixed main Git = main WT = owner WT / bytes / SHA256, errors[]",
+  "stoppedWriting": true,
+  "handbackReceipt": "host-gates-amend-receipt.json",
+  "integrationValidation": "Lead root strict noEmit0; original14 distinct reused, no PG rerun",
+  "limits": "center module+029 accepted; default factory/client/CLI not claimed mounted"
+}
