@@ -21,9 +21,12 @@
 .flow-plugin-history-controls { margin-top: 18px; }
 .flow-plugin-facts { display: grid; grid-template-columns: minmax(105px, 1fr) minmax(0, 3fr); gap: 6px 16px; margin: 8px 0; font-size: 12px; line-height: 1.5; }
 .flow-plugin-facts > div { display: contents; }
-.flow-plugin-facts dt { color: var(--muted-foreground); }
+.flow-plugin-facts dt { overflow-wrap: anywhere; color: var(--muted-foreground); }
 .flow-plugin-facts dd { margin: 0; overflow-wrap: anywhere; }
 .flow-plugin-history > li { padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 12px; }
 .flow-plugin-local { border-top: 1px solid var(--border); padding-top: 24px; margin-top: 28px; }
 .flow-plugin-error { color: var(--destructive); overflow-wrap: anywhere; font-size: 12px; }
 @media (max-width: 520px) { .flow-plugin-detail { padding: 12px; } .flow-plugin-management .flow-plugin-row { align-items: flex-start; } .flow-plugin-facts { grid-template-columns: minmax(90px, 1fr) minmax(0, 1.8fr); gap: 6px 10px; } }
+
+.flow-plugin-history strong { overflow-wrap: anywhere; }
+.flow-plugin-management button[aria-disabled="true"] { opacity: .6; cursor: default; }

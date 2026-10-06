@@ -29,7 +29,7 @@ function ManagementSession({ registry, runtime, scope, scopeLabel }: PluginManag
     <section aria-label="Center registry" className="flow-registry">
       <header><h2>Center registry</h2><p>{projectId ? `Project registrations${scopeLabel ? ` · ${scopeLabel}` : ''}` : 'Personal workspace registrations'}</p></header>
       <p className="flow-plugin-note">Registered packages, public configuration and grants for this scope. Package code has not been verified or loaded by this center.</p>
-      <RegistryPage key={after ?? 'first'} registry={registry} projectId={projectId} after={after} onPage={setAfter} />
+      <RegistryPage registry={registry} projectId={projectId} after={after} onPage={setAfter} />
     </section>
     <LocalPlugins runtime={runtime} />
   </section>;
@@ -38,10 +38,10 @@ function ReadNotice({ failed, retry, label }: { failed: boolean; retry(): void; 
   return failed ? <div role="alert"><p>Could not load {label} from this center.</p><button type="button" onClick={retry}>Retry {label}</button></div>
     : <p role="status">Loading {label}…</p>;
 }
-function Paging({ next, after, label, onPage }: { next: string | null; after?: string; label: string; onPage(after?: string): void }) {
+function Paging({ next, after, label, busy, onPage }: { next: string | null; after?: string; label: string; busy: boolean; onPage(after?: string): void }) {
   return <nav className="flow-plugin-paging" aria-label={`${label} pages`}>
-    {after ? <button type="button" onClick={() => onPage()}>First {label} page</button> : null}
-    {next ? <button type="button" onClick={() => onPage(next)}>Next {label} page</button> : null}
+    <button type="button" aria-disabled={!after || busy} onClick={() => { if (after && !busy) onPage(); }}>First {label} page</button>
+    <button type="button" aria-disabled={!next || busy} onClick={() => { if (next && !busy) onPage(next); }}>Next {label} page</button>
   </nav>;
 }
 function RegistryPage({ registry, projectId, after, onPage }: { registry: PluginRegistryReader; projectId: string | null; after?: string; onPage(after?: string): void }) {
@@ -51,15 +51,16 @@ function RegistryPage({ registry, projectId, after, onPage }: { registry: Plugin
   const detailId = useId();
   if (!read.data) return <ReadNotice {...read} label="registry" />;
   return <>
-    <div className="flow-plugin-list-heading"><span>{read.data.installations.length} registrations on this page</span><button type="button" onClick={read.retry}>Refresh registry</button></div>
+    {read.failed ? <ReadNotice {...read} label="registry" /> : read.pending ? <p role="status">Updating registry…</p> : null}
+    <div className="flow-plugin-list-heading"><span>{read.data.installations.length} registrations on this page</span><button type="button" aria-disabled={read.pending} onClick={() => { if (!read.pending) read.retry(); }}>Refresh registry</button></div>
     {read.data.installations.length ? <ul className="flow-plugin-rows">{read.data.installations.map(item => <li key={item.id}>
-      <button type="button" className="flow-plugin-row" aria-label={`View ${item.packageName}`} aria-expanded={selected === item.id} aria-controls={selected === item.id ? detailId : undefined}
-        onClick={() => setSelected(current => current === item.id ? undefined : item.id)}>
+      <button type="button" className="flow-plugin-row" aria-label={`View ${item.packageName}`} aria-disabled={read.pending || read.failed} aria-expanded={selected === item.id} aria-controls={selected === item.id ? detailId : undefined}
+        onClick={() => { if (!read.pending && !read.failed) setSelected(current => current === item.id ? undefined : item.id); }}>
         <span><strong>{item.packageName}</strong><small>Revision {item.revision}</small></span><span className="flow-plugin-status">Registered · runtime unavailable</span>
       </button>
       {selected === item.id ? <div id={detailId}><PluginDetails key={item.id} registry={registry} id={item.id} /></div> : null}
     </li>)}</ul> : <p>No plugins registered in this scope.</p>}
-    <Paging next={read.data.nextCursor} after={after} label="registry" onPage={onPage} />
+    <Paging next={read.data.nextCursor} after={after} label="registry" busy={read.pending || read.failed} onPage={cursor => { setSelected(undefined); onPage(cursor); }} />
   </>;
 }
 function PluginDetails({ registry, id }: { registry: PluginRegistryReader; id: string }) {
@@ -69,7 +70,7 @@ function PluginDetails({ registry, id }: { registry: PluginRegistryReader; id: s
   const read = useRead(load);
   const versionsId = useId(); const operationsId = useId();
   return <section className="flow-plugin-detail" aria-label="Registration details">
-    {read.data ? <><Snapshot value={read.data} /><button type="button" onClick={read.retry}>Refresh registration</button></> : <ReadNotice {...read} label="registration" />}
+    {read.data ? <>{read.failed ? <ReadNotice {...read} label="registration" /> : read.pending ? <p role="status">Updating registration…</p> : null}<Snapshot value={read.data} /><button type="button" aria-disabled={read.pending} onClick={() => { if (!read.pending) read.retry(); }}>Refresh registration</button></> : <ReadNotice {...read} label="registration" />}
     <div className="flow-plugin-history-controls">
       <button type="button" aria-expanded={versions} aria-controls={versionsId} onClick={() => showVersions(value => !value)}>{versions ? 'Hide versions' : 'Show versions'}</button>
       <button type="button" aria-expanded={operations} aria-controls={operationsId} onClick={() => showOperations(value => !value)}>{operations ? 'Hide audit history' : 'Show audit history'}</button>
@@ -101,28 +102,28 @@ function Version({ value }: { value: PluginVersion }) {
 }
 function Versions({ registry, id }: { registry: PluginRegistryReader; id: string }) {
   const [after, onPage] = useState<string>();
-  return <VersionPage key={after ?? 'first'} registry={registry} id={id} after={after} onPage={onPage} />;
+  return <VersionPage registry={registry} id={id} after={after} onPage={onPage} />;
 }
 function VersionPage({ registry, id, after, onPage }: { registry: PluginRegistryReader; id: string; after?: string; onPage(after?: string): void }) {
   const load = useCallback((signal: AbortSignal) => registry.pluginVersions(id, { after, limit: PAGE_SIZE }, signal), [registry, id, after]);
   const read = useRead(load);
   if (!read.data) return <ReadNotice {...read} label="versions" />;
-  return <><h4>Declared versions</h4>{read.data.versions.length ? <ul className="flow-plugin-history">{read.data.versions.map(value => <Version key={value.id} value={value} />)}</ul> : <p>No versions recorded.</p>}
-    <Paging label="versions" after={after} next={read.data.nextCursor} onPage={onPage} /></>;
+  return <>{read.failed ? <ReadNotice {...read} label="versions" /> : read.pending ? <p role="status">Updating versions…</p> : null}<h4>Declared versions</h4>{read.data.versions.length ? <ul className="flow-plugin-history">{read.data.versions.map(value => <Version key={value.id} value={value} />)}</ul> : <p>No versions recorded.</p>}
+    <Paging label="versions" after={after} next={read.data.nextCursor} busy={read.pending || read.failed} onPage={onPage} /></>;
 }
 function Operations({ registry, id }: { registry: PluginRegistryReader; id: string }) {
   const [after, onPage] = useState<string>();
-  return <OperationPage key={after ?? 'first'} registry={registry} id={id} after={after} onPage={onPage} />;
+  return <OperationPage registry={registry} id={id} after={after} onPage={onPage} />;
 }
 function OperationPage({ registry, id, after, onPage }: { registry: PluginRegistryReader; id: string; after?: string; onPage(after?: string): void }) {
   const load = useCallback((signal: AbortSignal) => registry.pluginOperations(id, { after, limit: PAGE_SIZE }, signal), [registry, id, after]);
   const read = useRead(load);
   if (!read.data) return <ReadNotice {...read} label="audit history" />;
   const titles = { register: 'Registration', configure: 'Configuration changed', 'set-grants': 'Grants changed', 'register-version': 'Version declared', 'select-version': 'Version selected' };
-  return <><h4>Revision audit</h4>{read.data.operations.length ? <ol className="flow-plugin-history">{read.data.operations.map(item => <li key={item.id}>
+  return <>{read.failed ? <ReadNotice {...read} label="audit history" /> : read.pending ? <p role="status">Updating audit history…</p> : null}<h4>Revision audit</h4>{read.data.operations.length ? <ol className="flow-plugin-history">{read.data.operations.map(item => <li key={item.id}>
     <strong>{titles[item.kind]}</strong><p>Revision {item.beforeRevision ?? '—'} → {item.afterRevision} · {item.actor} · {item.status}</p>
     <time dateTime={item.createdAt}>{new Date(item.createdAt).toLocaleString()}</time>
-  </li>)}</ol> : <p>No operations recorded.</p>}<Paging label="audit" after={after} next={read.data.nextCursor} onPage={onPage} /></>;
+  </li>)}</ol> : <p>No operations recorded.</p>}<Paging label="audit" after={after} next={read.data.nextCursor} busy={read.pending || read.failed} onPage={onPage} /></>;
 }
 function LocalPlugins({ runtime }: { runtime: LocalPluginSource }) {
   const items = useSyncExternalStore(runtime.subscribe, runtime.list, runtime.list);
