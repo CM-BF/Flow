@@ -2,24 +2,24 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:57:40 UTC |
+| 最近更新 | 2026-10-06 18:58:16 UTC |
 | 单一 status owner | workspace_panels_owner / gpt-6-astra Ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已完成高精度 UTC 与坏时间隔离的源码及专测，待固定审查。 |
+| 当前产出 | 高精度 UTC 与坏时间隔离的源码和专测已固定，等待独立审查。 |
 | 下一可用交付 | 支持高精度 UTC，坏时间不会中断任务状态读取。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps |
 | branch | codex/dashboard-status-timestamps |
 | 工作基线 | ec5da343880879154e2392f52eaa915d5b08aa77 |
-| HEAD | ec5da343880879154e2392f52eaa915d5b08aa77（首 canonical 提交前观察） |
-| 工作树 dirty 状态 | 首 canonical edd4e6b15d799a535debb778a7c03984aaaca322 clean；本段两源/证据变更待固定 |
-| 工作分支状态 | in-progress / source-only |
-| 实现目标 | UNKNOWN |
+| HEAD | 676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1（固定实现；随后仅自身 metadata 收口） |
+| 工作树 dirty 状态 | 固定实现后两源码已冻结；当前只本片 metadata 收口，最终 clean 由 Git 交接回执核 |
+| 工作分支状态 | in-progress / awaiting-source-review |
+| 实现目标 | 676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1 |
 | 实现范围 | apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 检查状态 | NOT_RUN — 尚无产品运行准入 |
 | review | NOT_STARTED |
@@ -39,7 +39,7 @@
 
 ## 下一步 / handoff
 
-固定 parser/test 源及 manifest，送独审；获单独运行 gate 才执行纯测试。
+固定实现 676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1 与 [candidate](../../docs/evidence/wpf-dperf05/candidate.json) 已备；源冻结，独审和获单独运行 gate 后的纯检查仍待执行。
 
 ## 风险 / 未验证
 

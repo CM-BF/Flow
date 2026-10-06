@@ -2,7 +2,7 @@
 
 状态：NOT_STARTED
 
-Review target commit：UNKNOWN
+Review target commit：676b9c541f5cf0f8e3e82cf4a9f0ccf24ea571a1
 Base：ec5da343880879154e2392f52eaa915d5b08aa77
 Scope：apps/execution-dashboard/src/status.mjs、apps/execution-dashboard/test/status-timestamps.test.mjs。
 
@@ -13,3 +13,5 @@ Scope：apps/execution-dashboard/src/status.mjs、apps/execution-dashboard/test/
 ## 检查与结论
 
 NOT_RUN；无 findings 表示尚未审查，不表示通过。真实 aggregate/部署/main 不在当前证据内。
+
+作者固定输入：[candidate](../../docs/evidence/wpf-dperf05/candidate.json)。56 静态 case 不代表已运行。源 diffcheck0/四 scope外0；实际 parser/Node check、aggregate、PG/HTTP/Chrome、部署均未执行。
