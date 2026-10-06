@@ -9,3 +9,5 @@ Owner `POST /api/goals/:id/native-executions`，Bearer owner，Idempotency-Key�
 400严格schema/key，401凭据，409未知/撤销或不匹配profile、非configured-readonly普通purpose、输入/依赖/前次执行不满足。现owner认证未给runner新特权；旧GoalToolPort.execute继续fixture，native accept-delivery在runner grant路径403。profile声明不是provider可用证明；真实SDK调用费用未授权。
 
 复用同TX execute深模块/acceptTask/K03：只有当前定义+精确已接受依赖+前次succeeded/failed/cancelled可新授权，uncertain拒绝；profile固定到task。机械flow.text独立核对不等业务语义接受；owner原accept-delivery+reason是显式声明，不新造自动语义验收器。
+
+合同固定d5d32ec173fd2139d8a732235440c0995a4019f7；完整module固定7ddd763a2e2274c040dea7e114dcf6d6da226cf6，Interface无变。已提交owner receipt可在profile后来撤销后返回，不形成新受理；新key及claim按当前权限/profile核验。没有新迁移。
