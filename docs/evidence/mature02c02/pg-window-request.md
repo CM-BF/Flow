@@ -18,4 +18,4 @@
 
 最终文件仅before-final-receipt阶段快照，stdout独立delivery报告写ACK与末时钟，真实工具退出另由调用方记录。4096项/depth8的自有临时目录仅进程组/stdio结束并receipt确认后完整采样；不能冒称活动写删峰值或硬磁盘配额。
 
-准备批准精确绑定与范围见 [review](../../../../plans/wpf-mature-02-codex-continuity/review.md)。实际仍需固定执行HEAD、v2领取、资源门槛、全新namespace与共享窗口；本次批准metadata不改变既定输入或执行源。
+准备批准精确绑定与范围见 [review](../../../plans/wpf-mature-02-codex-continuity/review.md)。实际仍需固定执行HEAD、v2领取、资源门槛、全新namespace与共享窗口；本次批准metadata不改变既定输入或执行源。
