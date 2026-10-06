@@ -1,4 +1,7 @@
 import { z } from 'zod';
+import { harnessSchema, type HarnessName } from './harnesses.js';
+import { protocolTaskSchema } from './protocol-task.js';
+export { harnessSchema, type HarnessName } from './harnesses.js';
 
 export const PROTOCOL_VERSION = 1;
 export const WORKSPACE_ID = 'personal';
@@ -6,7 +9,6 @@ export const MAX_PAGE_SIZE = 100;
 export const MAX_DETAIL_BYTES = 1_048_576;
 export const MAX_BATCH_BYTES = 2_097_152;
 export const idSchema = z.string().min(1).max(128);
-export const harnessSchema = z.enum(['fixture', 'claude']);
 export const referenceSchema = z.strictObject({ id: idSchema, title: z.string().min(1).max(180) });
 export const verificationRuleSchema = z.discriminatedUnion('kind', [
   z.strictObject({ kind: z.literal('nonempty') }),
@@ -17,6 +19,7 @@ export const taskSubmissionSchema = z.strictObject({
   title: z.string().trim().min(1).max(180),
   prompt: z.string().min(1).max(16_000),
   harness: harnessSchema,
+  protocol: protocolTaskSchema.optional(),
   fixture: z.strictObject({
     scenario: z.enum(['success', 'decision', 'failure', 'verification-failure', 'slow', 'large']),
     delayMs: z.number().int().min(0).max(30_000).optional(),
@@ -24,9 +27,12 @@ export const taskSubmissionSchema = z.strictObject({
   }).optional(),
   verification: verificationRuleSchema.optional(),
   resumeSessionId: idSchema.optional(),
+}).superRefine((task, context) => {
+  if (task.harness === 'a2a') {
+    if (!task.protocol || task.resumeSessionId || task.fixture) context.addIssue({ code: 'custom', message: 'A2A tasks require an endpoint reference and cannot reuse native sessions or fixture options.' });
+  } else if (task.protocol) context.addIssue({ code: 'custom', message: 'Protocol endpoint configuration is only valid for A2A tasks.' });
 });
 export type TaskSubmission = z.infer<typeof taskSubmissionSchema>;
-export type HarnessName = z.infer<typeof harnessSchema>;
 export type Reference = z.infer<typeof referenceSchema>;
 export type VerificationRule = z.infer<typeof verificationRuleSchema>;
 export type TaskStatus = 'queued' | 'running' | 'waiting' | 'cancel_requested' | 'succeeded' | 'failed' | 'cancelled' | 'uncertain';

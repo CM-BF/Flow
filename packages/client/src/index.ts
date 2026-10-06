@@ -1,5 +1,6 @@
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
 import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
+import type { ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
 import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
 
 export class FlowApiError extends Error {
@@ -82,6 +83,24 @@ export class FlowClient {
   claim(signal?: AbortSignal): Promise<ClaimResponse> { return this.request('/api/runner/claim', { method: 'POST', body: '{}', signal }); }
   heartbeat(ownership: Ownership, signal?: AbortSignal): Promise<HeartbeatResponse> { return this.request('/api/runner/heartbeat', { method: 'POST', body: JSON.stringify(ownership), signal }); }
   report(batch: EventBatch, signal?: AbortSignal): Promise<EventAcknowledgement> { return this.request('/api/runner/events', { method: 'POST', body: JSON.stringify(batch), signal }); }
+
+  protocolPrepare(input: Ownership, signal?: AbortSignal): Promise<ProtocolState> {
+    return this.request('/api/runner/protocol/prepare', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  protocolBegin(input: ProtocolCommand, signal?: AbortSignal): Promise<ProtocolDispatchPermit> {
+    return this.request('/api/runner/protocol/begin', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  protocolBind(input: ProtocolBind, signal?: AbortSignal): Promise<ProtocolState> {
+    return this.request('/api/runner/protocol/bind', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  protocolUncertain(input: ProtocolUncertain, signal?: AbortSignal): Promise<ProtocolState> {
+    return this.request('/api/runner/protocol/uncertain', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  protocolStartCancel(input: ProtocolCommand, signal?: AbortSignal): Promise<ProtocolDispatchPermit> {
+    return this.request('/api/runner/protocol/cancel-start', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  protocolRecover(signal?: AbortSignal): Promise<ProtocolRecoverResponse> { return this.request('/api/runner/protocol/recover', { method: 'POST', body: '{}', signal }); }
+  protocolState(taskId: string, signal?: AbortSignal): Promise<ProtocolState | null> { return this.request(`/api/tasks/${encodeURIComponent(taskId)}/protocol`, { signal }); }
 
   async *watch(id: string, after = 0, signal?: AbortSignal): AsyncGenerator<EventPage> {
     const response = await fetch(`${this.baseUrl}/api/tasks/${encodeURIComponent(id)}/stream?after=${after}`, { headers: { Authorization: `Bearer ${this.token}`, Accept: 'text/event-stream' }, signal });
