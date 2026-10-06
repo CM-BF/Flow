@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:49:32 UTC / main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:57:38 UTC / mainc450c2da |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 21e0a56c4b2b65a04a1e8d510a9d132e77c3894b / 已审看板内部读取优化与131来源候选 |
+| 工作基线 / HEAD | mainc450c2da / 已审native目录client与实际Web发布证据 |
 | 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | 3固定源码hash一致；main原proof/aggregate输入未变；131来源解析通过。复用独立27项行为检查，未重复性能实验。 |
-| 已集成main状态 / HEAD | 工程核心与原生配置目录已main21e；本批看板读取优化与131来源待fast-forward。个人backend/static仍b1c2e398 accepting v12。 |
+| 检查状态 | native两source固定hash一致；SVC实际16证据hash核；5主线保护路径零差；132注册解析通过，不重复工程测试 |
+| 已集成main状态 / HEAD | 工程核心/原生目录及固定Web兼容证据已main；本批native薄client待fast-forward。实际个人Web8d8/caa1已发布v2，backend仍b1c/accepting v12 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 工程核心与原生配置目录已进入主线，看板正在接入减少重复源码读取的改进。 |
-| 下一可用交付 | 固定工程执行配置和终端逐段正文；真实网页发布兼容审查继续。 |
+| 当前产出 | 新版网页已独立发布，后台原进程与任务保持；旧页面资源仍可读取。 |
+| 下一可用交付 | 工程配置完整启动入口与终端逐段正文，共用协议各自独立验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
