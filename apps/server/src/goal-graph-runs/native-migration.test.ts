@@ -1,3 +1,4 @@
+import { migrateConversationContext } from '../conversation-context/index.js';
 import { randomUUID } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import { Pool } from 'pg';
@@ -41,6 +42,7 @@ beforeAll(async () => {
     await client.query(await readFile(new URL('../../../../packages/storage/migrations/017-goal-graph-runs.sql', import.meta.url), 'utf8'));
     await client.query('INSERT INTO flow.migrations(version) VALUES(17)');
   });
+  await migrateConversationContext(pool);
   boss = await startScheduler(databaseUrl, pool);
 });
 afterAll(async () => {
@@ -57,8 +59,8 @@ async function request(path: string, body?: unknown, token = 'o07-upgrade-owner'
   const response = await fetch(url + path, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json', 'idempotency-key': key }, body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(5000) });
   return { status: response.status, body: await response.json() };
 }
-it('preserves populated 017 graph authority and audit across 019, repeated migration and native admission', async () => {
-  const beforeVersions = await versions(); expect(beforeVersions.map(row => row.version)).toEqual(Array.from({ length: 17 }, (_, index) => index + 1));
+it('preserves populated 017 graph authority with 018 claim input schema and audit across 019, repeated migration and native admission', async () => {
+  const beforeVersions = await versions(); expect(beforeVersions.map(row => row.version)).toEqual(Array.from({ length: 18 }, (_, index) => index + 1));
   const constraint = (await pool.query("SELECT pg_get_constraintdef(oid) AS definition FROM pg_constraint WHERE conrelid='flow.goal_graph_runs'::regclass AND conname='goal_graph_runs_mode_check'")).rows[0].definition;
   expect(constraint).not.toContain('claude');
   const project = (await createProject(pool, { workspaceId: 'personal', title: '017 graph' }, 'project')).snapshot.project;
@@ -72,7 +74,7 @@ it('preserves populated 017 graph authority and audit across 019, repeated migra
   const proposed = await runnerCommand(pool, runner.runnerId, call, 'saved');
   const before = await records(admitted.run.id); expect(before.grant.used_commands).toBe(1); expect(before.calls).toHaveLength(1);
   await migrateGoalGraphRuns(pool);
-  const afterVersions = await versions(); expect(afterVersions.filter(row => row.version <= 17)).toEqual(beforeVersions); expect(afterVersions.at(-1).version).toBe(19);
+  const afterVersions = await versions(); expect(afterVersions.filter(row => row.version <= 18)).toEqual(beforeVersions); expect(afterVersions.at(-1).version).toBe(19);
   expect(await records(admitted.run.id)).toEqual(before);
   await migrateGoalGraphRuns(pool); expect(await versions()).toEqual(afterVersions); expect(await records(admitted.run.id)).toEqual(before);
   app = await createServer({ databaseUrl, ownerToken: 'o07-upgrade-owner', leaseMs: 60_000 });

@@ -1,3 +1,4 @@
+import { migrateConversationContext } from '../conversation-context/index.js';
 import { randomUUID, createHash } from 'node:crypto';
 import { Pool } from 'pg';
 import { PgBoss } from 'pg-boss';
@@ -12,7 +13,7 @@ let pool: Pool; let boss: PgBoss; let app: Awaited<ReturnType<typeof createServe
 beforeAll(async () => {
   await admin.query(`CREATE DATABASE ${name}`); pool = new Pool({ connectionString: databaseUrl });
   boss = new PgBoss({ connectionString: databaseUrl }); await boss.start();
-  app = await createServer({ databaseUrl, ownerToken: 'o07-owner' }); await migrateGoalGraphRuns(pool);
+  app = await createServer({ databaseUrl, ownerToken: 'o07-owner', automaticQueueScan: false }); await migrateConversationContext(pool); await migrateGoalGraphRuns(pool);
   if (!app.hasRoute({ method: 'POST', url: '/api/runner/goal-graph/grant' })) registerGoalGraphRunRoutes(app, pool, boss);
   url = await app.listen({ host: '127.0.0.1', port: 0 });
 });
@@ -56,4 +57,26 @@ it('fails closed for absent, node-only and ordinary profiles without creating gr
     expect((await request(`/api/goals/${context.id}/graph-runs`, { scope, prompt: 'No authority', execution })).status).toBe(409);
   }
   expect((await pool.query('SELECT count(*)::int AS n FROM flow.goal_graph_runs')).rows[0].n).toBe(baseline);
+});
+
+it('claims only the same runner profile and skips unbound or revoked graph tasks', async () => {
+  const context = await goal();
+  const runner = (await request('/api/runners', { name: 'Graph authorized runner', harnesses: ['claude'], capacity: 1 })).body;
+  const selected = (await request('/api/runner/execution-profile', { configuration: configuration('goal-graph-tools') }, runner.token)).body.profile.reference;
+  const other = (await request('/api/runners', { name: 'Different graph runner', harnesses: ['claude'], capacity: 1 })).body;
+  expect((await request('/api/runner/execution-profile', { configuration: configuration('goal-graph-tools') }, other.token)).status).toBe(200);
+  const ordinary = await request('/api/tasks', { title: 'Unbound', prompt: 'Must not run on graph profile', harness: 'claude' }); expect(ordinary.status).toBe(202);
+  const input = { scope, prompt: 'Only this grant', execution: { harness: 'claude', executionProfile: selected } };
+  const revoked = (await request(`/api/goals/${context.id}/graph-runs`, input)).body;
+  expect((await request(`/api/goal-graph-runs/${revoked.run.id}/revoke`, { reason: 'Before claim' })).status).toBe(200);
+  const admitted = await request(`/api/goals/${context.id}/graph-runs`, input); expect(admitted.status).toBe(201);
+  expect((await request('/api/runner/claim', {}, other.token)).body.assignment).toBeNull();
+  let assignment: any;
+  await expect.poll(async () => { const response = await request('/api/runner/claim', {}, runner.token); expect(response.status).toBe(200); assignment = response.body.assignment; return assignment; }, { timeout: 5000, interval: 20 }).not.toBeNull();
+  expect(assignment.task.id).toBe(admitted.body.task.id); expect(assignment.goalGraphRun).toEqual({ id: admitted.body.run.id, version: 1 }); expect(assignment).not.toHaveProperty('goalToolRun'); expect(assignment).not.toHaveProperty('conversationContext');
+  const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
+  expect((await request('/api/runner/goal-graph/grant', ownership, runner.token)).body.id).toBe(admitted.body.run.id);
+  expect((await request('/api/runner/goal-tools/grant', ownership, runner.token)).status).toBe(403);
+  expect((await request('/api/runner/goal-graph/grant', ownership, other.token)).status).toBe(403);
+  expect((await request(`/api/tasks/${ordinary.body.task.id}`)).body.status).toBe('queued');
 });
