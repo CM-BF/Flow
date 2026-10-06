@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:53:52 UTC / O14 main bd14f984e3927df139815597c4c3171af84ec4b7 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:55:19 UTC / settings main 8d84d529a0756116bd0fc8bad969d61a6c26248e |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -15,7 +15,7 @@
 | 工作树dirty状态 | 四新源固定；本次仅source preflight/status证据，提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新shared focusedtypes0；214源/30SQL/19packages实际入口无缺件；新PG NOT_RUN。旧032/O15已审检查不重跑 |
-| 已集成main状态 / HEAD | O14五源已main bd14f984e3927df139815597c4c3171af84ec4b7；032/C01本组合尚未main，个人服务不变 |
+| 已集成main状态 / HEAD | O14已main bd14；settings45源已main 8d84d529a0756116bd0fc8bad969d61a6c26248e exact。当前O15共享接线尚未main，个人服务不变 |
 | Review | 新O15共享接线待独立源前检/真实PG；032 0ee独审APPROVED保持，见review.md |
 | 实现目标 | 7f59daa552aa0618776468ec54b6ed4c5a6990cb |
 | 实现范围 | apps/server/src/index.ts, packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/goal-plan-confirmation-production.test.ts |
@@ -238,7 +238,7 @@ O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/
 
 2026-10-06 17:09:20 UTC：O14唯一独审APPROVED原样归档，source73a不变，等待main精确接收。F01 fresh无冲突后已原子amend v46（17:08:13.061Z），新增唯一 packages/client/src/claude-message-settings-production.test.ts，60literal；[回执](../../docs/evidence/f01/claude-message-settings-production-scope-amend.json)。032当前只准备设计/闭包，不应用未审CORE或启动PG；O14源继续冻结，C01目录不动。
 
-| F01-43 | in-progress | native_center_owner | [032生产Interface](../../docs/evidence/f01/claude-message-settings-production-interface.md)，新专测固定5ce，NOT_RUN；待C01补充批准/受控输入/独占窗口。 |
+| F01-43 | completed | native_center_owner | 0ee唯一独审APPROVED；[45源main精确回执](../../docs/evidence/f01/claude-message-settings-production-main-receipt.json)，本段delivered |
 
 2026-10-06 17:14:15 UTC：O14本片delivered，五源对main逐hash相同，[main receipt](../../docs/evidence/f01/goal-progression-production-main-receipt.json)，0重测。当前source准备转032消费者，只新增一个测试文件，未修改已冻结O14 factory/其他source；不将历史批准继承到新片。架构影响为迁移前置依赖，正式target固定后由ExecutionLead同步；现无第二鉴权/scan/runtime。
 

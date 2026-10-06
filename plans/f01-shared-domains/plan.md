@@ -89,6 +89,6 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 
 F01当前owner改为native_center_owner，co-lead仍ExecutionLead。沿F01-42先做既有O14生产验证，现成73a源码不重写；032后继仅在领域APPROVED后接最薄迁移/factory与一个真实client consumer，不新增任务或transport/FSM。新test路径先amend。59literal claim只表示协调占用，不构成重写授权。验证窗口/磁盘准入由Lead串行安排，0provider。
 
-- [ ] **F01-43** CORE消息设置正式独审后接032前置迁移与真实FlowClient生产直接consumer，旧目录/回执边界不变；实际PG窗口另排，0provider。
+- [x] **F01-43** CORE消息设置正式独审后接032前置迁移与真实FlowClient生产直接consumer，旧目录/回执边界不变；实际PG窗口另排，0provider。
 
 - [ ] **F01-44** 复用已审O15模块，补031生产迁移/owner路由、薄确认client/export及真实factory自动依赖推进直接旅程；旧settings/O14生命周期保持，0provider。
