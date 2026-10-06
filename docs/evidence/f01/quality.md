@@ -113,3 +113,6 @@ Mika审c03发现P2：open只读FIFO会在fstat前等待；多个短读的subarra
 
 ## O06公共client / 2026-10-06 05:43 UTC
 固定79e06efdda45f04e713838086de2400f75949710，8个薄方法复用单request，owner/runner凭据分别由调用实例提供，不fallback、不暗重试。精确保留scope/baseRevision/expectedVersion、grant/fence、proposal digest、实际actor与replayed回执，after=0和AbortSignal。HTTP1/1（34ms；suite157ms）与noEmit通过；缺方法red及测试将expectedVersion误写version的首类型失败保留。领域未改、0PG/模型。沿已读find-skills/codebase-design/clean-code，接口保持只传输，不重复权威状态。manifest绑定3源5输出。K01/SVC02接线已获Mika独审并main fb906cb；真实预览已在独立SVC02窗口升级同SHA/v3接受，非本HTTP测试证明。
+
+## O06生产挂载 / 2026-10-06 05:46 UTC
+固定bf03a7c241d8f1c1d9d0bfa1ee7f9be49e090c00，017 await位于scheduler前，8route注册在原owner/runner鉴权后；缺路由实证red保留。公共client新PG用例明确hasRoute存在，不用test helper补挂；受理/角色拒绝/native409/restart同key/审计/撤销通过，O06原8用例直接使用已挂生产入口合计9/9（11.95s）与noEmit通过，专库正常清理。未重跑其他25旧领域，无模型/预览进程变化。clean-code复核仅3行生产接线和真实consumer，保持领域/原生能力边界。

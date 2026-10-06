@@ -63,3 +63,5 @@
 
 | F01-14 | in-progress | Lead | O06八薄client通过HTTP1/1/typecheck，待独审及017生产挂载 |
 | F01-15 | pending | Lead | 新真实Web排队两query仅提案，待固定Web/运行前置与GO具体许可；旧预算封存 |
+
+2026-10-06 05:46 UTC：O06生产target bf03a7c241d8f1c1d9d0bfa1ee7f9be49e090c00，9/9真实PG/HTTP与noEmit通过；薄client79e06与该2文件挂载分别待独审，不提前声称原生query。

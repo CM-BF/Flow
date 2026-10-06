@@ -1,0 +1,35 @@
+{
+  "target": "bf03a7c241d8f1c1d9d0bfa1ee7f9be49e090c00",
+  "scope": [
+    "apps/server/src/index.ts",
+    "packages/client/src/graph-run-production.test.ts"
+  ],
+  "checks": "9/9 real PG/HTTP production + noEmit; initial missing-route assertion preserved; no models",
+  "files": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 10835,
+      "sha256": "25a1b6b38d9d26dddda8091d17d73f6164af7e7c1992df744b6841d9c9387362"
+    },
+    {
+      "path": "packages/client/src/graph-run-production.test.ts",
+      "bytes": 2811,
+      "sha256": "b2fc9aa0850fb5ed6eff4adb4d9a66bedfdd8d10356d29ff43bab455f59aefeb"
+    },
+    {
+      "path": "docs/evidence/f01/graph-run-production-red.txt",
+      "bytes": 1376,
+      "sha256": "6684b84b8f3304642ba478cf85791bbec232f4ab40424414fd8a153a2d4cff46"
+    },
+    {
+      "path": "docs/evidence/f01/graph-run-production-green.txt",
+      "bytes": 1271,
+      "sha256": "0f0a32af2999155d8aab7988d4672caa92157bdaf3ca407d8a10e2af33ac21fb"
+    },
+    {
+      "path": "docs/evidence/f01/graph-run-production-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
