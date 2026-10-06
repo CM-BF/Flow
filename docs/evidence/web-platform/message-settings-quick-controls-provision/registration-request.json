@@ -1,6 +1,6 @@
 {
   "at": "2026-10-06T22:06:10.296655+00:00",
-  "state": "FIRST_CANONICAL_TRIO_ALREADY_PRESENT_READY_FOR_LEAD_REGISTRATION",
+  "state": "LEAD_REGISTRY179_CANDIDATE_REGISTERED_NO_PAGE_OBSERVATION",
   "taskId": "WPF-MESSAGESETTINGS02",
   "owner": "w01_owner",
   "coLead": "Web /root (manager d01_owner)",
@@ -25,5 +25,15 @@
   "stateAuthority": "Owner status only; D04 atomic claim only. This request is not proof of registry/main/4320 publication.",
   "operator": "Original Execution Lead only; no outgoing thread tool used",
   "trioVerifiedFromFixedGit": "plan.md/status.md/review.md committed and pushed at b8034817412d3131e3fb65fa82763df9deab2f6f; status fixed blob read by manager; no wait for product implementation target.",
-  "leadIntake": "Lead has accepted canonical Git return and says normalregistry will consume the first trio; exact trio is already present at paths above. No actual registry or page receipt received."
+  "leadIntake": "Lead incoming: b803 source registered in new179 registry candidate. No actual deployed registry/page observation received. Owner metadata names require normal safe-point correction; source implementation continues.",
+  "parserFeedback": {
+    "source": "Lead incoming via root",
+    "humanComplete": true,
+    "unparsedTodoCount": 5,
+    "safePointCorrections": [
+      "Owner -> 单一status owner / model",
+      "TODO header ID -> TODO ID"
+    ],
+    "ownerAlreadyNotifiedByRoot": true
+  }
 }

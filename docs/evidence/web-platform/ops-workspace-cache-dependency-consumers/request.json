@@ -1,0 +1,139 @@
+{
+  "at": "2026-10-06T22:11:00.583044+00:00",
+  "state": "BOUNDED_USE_AND_FROZEN_CONSUMERS_CONFIRMED_RESTORATION_REVIEW_PENDING",
+  "candidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+  "head": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+  "branch": "codex/web-workspace-cache",
+  "cleanObserved": true,
+  "scope": "Only this delivered/released tree dependency payload; prior apps/web/.vite confirmation does not cover dependencies.",
+  "originalOwner": "workspace_panels_owner",
+  "freshClaim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "apps/web/src/conversations/queue/projection.ts",
+      "apps/web/src/conversations/read-cache.ts",
+      "apps/web/src/data-renderers/flow-reply-detail.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/workspace-retention.ts",
+      "apps/web/test/conversation-projection.test.ts",
+      "apps/web/test/conversation-queue.test.ts",
+      "apps/web/test/plugin-integration.test.ts",
+      "apps/web/test/workspace-retention.browser.ts",
+      "apps/web/test/workspace-retention.fixture.ts",
+      "apps/web/test/workspace-retention.test.ts",
+      "docs/evidence/wpf-workspace-cache",
+      "plans/wpf-workspace-cache"
+    ],
+    "state": "released",
+    "branch": "codex/web-workspace-cache",
+    "origin": "new",
+    "taskId": "WPF-WORKSPACECACHE01",
+    "worker": "workspace_panels_owner",
+    "claimId": "883321bc-933f-4da0-8f86-f200c02620cf",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache",
+    "createdAt": "2026-10-06T11:33:51.839Z",
+    "updatedAt": "2026-10-06T11:58:33.589Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "freshEvidence": "fresh-ledger.json",
+  "leadAudit": {
+    "path": "lead-dependency-audit.json",
+    "sha256": "a2e51361f131b320aae45f7cfc592a8a2268e7a91f6d66e7b4aef890618ae695",
+    "bytes": 20592,
+    "actualVerdict": "KEEP_DEPENDENCY_ROOT_PENDING_LAYOUT_AND_CONSUMER_CLOSURE",
+    "cleanupAuthorized": false
+  },
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/plans/wpf-workspace-cache/status.md",
+      "bytes": 3621,
+      "sha256": "5d2c06d40d5c22276b76b280a28a3b3010997d297b699d6c85ad579644e0779a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/docs/evidence/wpf-workspace-cache/README.md",
+      "bytes": 3032,
+      "sha256": "7cb0b74c62d2672930125ac5bd0e0c45e22287df8703e38c30d110dc6db94da4"
+    }
+  ],
+  "contentAvailabilityAsReported": {
+    "packageCount": 581,
+    "CASMatchedPayloadFiles": 29606,
+    "generatedLayoutKeep": 72,
+    "rootVite": "KEEP, separate from prior apps/web cache",
+    "proofNotRecovery": "SHA512 local CAS matches do not prove a complete runnable restored installation."
+  },
+  "declaredOwnUse": "Original README has no constant newpreview, own experiments cleaned; explicit replay scripts resolve local installed packages. Old budget ended and no implicit replay authorized.",
+  "reviewAssignment": {
+    "originalOwner": "Completed: original-owner-context.md; no known retained/unfinished/scheduled or self-created donor purpose; unknown other consumers KEEP.",
+    "root": "Completed: root-frozen-dependency-review.json; 66 exact recorded dependency entries realpath/SHA verified, no hits.",
+    "manager": "Fresh883321bc v2 released and10ca clean; originalowner six fixed source/document hashes match. No dependenttree write or payload scan."
+  },
+  "knownExternalAuditBoundary": {
+    "kernel": {
+      "at": "2026-10-06T22:04:02.326888+00:00",
+      "lsof": {
+        "exit": 0,
+        "hits": [],
+        "stderrBytes": 0
+      },
+      "ps": {
+        "exit": 0,
+        "hits": [],
+        "notes": "command text omitted; inspector may appear"
+      }
+    },
+    "fourRoots": {
+      "roots": [
+        "/Users/citrine/Projects/AgentHarness/Flow",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management"
+      ],
+      "counts": [
+        2229,
+        2280,
+        2233,
+        0
+      ],
+      "linksIntoCandidate": [],
+      "method": "os.walk no follow symlinks; only four explicitly allowed roots, .git excluded"
+    },
+    "noGlobalConclusion": true
+  },
+  "mandatoryKeep": [
+    "All source/test/rules/plans/own evidence/Git and package manifests/lockfiles",
+    "Exact generated bin wrappers and installed-layout metadata pending preservation/reconstruction plan; 26 do not match bounded donor paths after root substitution",
+    "Local pnpm CAS and indexes used by the proof; they were read, not changed",
+    "Any dependency directory with an unconfirmed external/frozen consumer",
+    "Root node_modules/.vite/vitest result file399B: separate unreviewed cache, not covered by prior apps/web cache permission."
+  ],
+  "replayRule": "Any future replay requires an independently reviewed and approved restore-before-run method and fresh runtime admission. Do not claim current full node_modules remains usable after any payload operation.",
+  "unknowns": [
+    "No full dependency restoration or package manager execution performed; package content availability is verified, install replay is NOT_RUN.",
+    "Generated pnpm shims contain root/peer-layout-specific paths; fixed lock alone does not recover these exact bytes. 44 normalized matches, 26 unmatched need exact retention or further narrow proof.",
+    "No global no-consumer claim: only allowed root/I02/F01/Web-management filesystem and named evidence inputs checked; no other 196 trees, HOME scan, or dynamic code imports.",
+    "Prior cache release/owner confirmation does not itself retire node_modules; authoritative dependency-specific owner/frozen-input confirmation remains needed before any separate cleanup decision.",
+    "Current native platform is Darwin arm64; pending esbuild build preserved as installed, no rebuild or cross-platform readiness inferred.",
+    "Logical 508636624 bytes / allocated blocks 593920000 are not measured reclaimable volume bytes (APFS cloning/dedupe possible)."
+  ],
+  "prohibitedHere": [
+    "stop",
+    "delete",
+    "restore",
+    "install",
+    "import",
+    "runtime",
+    "free/proc/port/cache sampling",
+    "dependency/symlink expansion scan",
+    "source/evidence/layout change"
+  ],
+  "soleOperationDecision": "Original Execution Lead after separate recovery-method review and exact final identity/consumer checks.",
+  "confirmation": "manager-confirmation.json"
+}

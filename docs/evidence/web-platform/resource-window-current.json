@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-06T22:06:10.296655+00:00",
+  "recordedAt": "2026-10-06T22:11:57.394106+00:00",
   "state": "NO_WEB_HEAVY_HOLDER_GIT_AUTHORITY_RETURNED_MIKA_SVC07_NEXT_READY",
   "groupWindowOwnership": "No Web active heavy runtime, reservation or gate. Root exact Git provision completed and authority returned to original Lead. Mika incoming reports no holder/reservation; SVC07 requested first, C02 after fresh shared handoff, neither actual launch inferred.",
   "release03": {
@@ -1116,5 +1116,16 @@
     },
     "REQ15": "Waiting Lead two SQL inputs /2681B; no entry",
     "webStarts": 0
+  },
+  "opsWorkspaceCacheDependencies": {
+    "state": "BOUNDED_USE_AND_FROZEN_CONSUMERS_CONFIRMED_RESTORATION_REVIEW_PENDING",
+    "request": "ops-workspace-cache-dependency-consumers/request.json",
+    "operationAuthorizedByThisRecord": false,
+    "owner": "workspace_panels_owner",
+    "oldClaim": "883321bc v2 RELEASED",
+    "cacheConfirmationDoesNotApply": true,
+    "noWebRuntimeOrSamples": true,
+    "confirmation": "ops-workspace-cache-dependency-consumers/manager-confirmation.json",
+    "rootReview": "ops-workspace-cache-dependency-consumers/root-frozen-dependency-review.json"
   }
 }

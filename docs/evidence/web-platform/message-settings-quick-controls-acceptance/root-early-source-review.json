@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-06T22:09:51.630714+00:00",
+  "reviewer": "root",
+  "kind": "EARLY_FIXED_COPY_STATIC_REVIEW_NOT_IMPLEMENTATION_APPROVAL",
+  "snapshot": {
+    "path": "/private/tmp/message-settings02-component-early.tsx",
+    "bytes": 24764,
+    "sha256": "7eb525827e18723d1bdcc7d544145906e95cd0d189a71627d92d51ef53da2e3b"
+  },
+  "findings": [
+    {
+      "id": "MSGQUICK-EARLY-R1",
+      "priority": 2,
+      "lines": "160-161,220-225",
+      "title": "Unexpected host write failures are reported as definitely not applied",
+      "trace": [
+        "beginMessageSettingsEdit.apply revokes the opening and invokes onChange.",
+        "A host write may mutate C and then throw; commitMessageSettingsChange does not roll back or guarantee nonthrowing post-write notification.",
+        "The broad catch returns unavailable; UI asserts 未应用选择 even though C may have changed."
+      ],
+      "request": "Separate known pre-write validation failure from an unexpected host callback/write exception. Report an unconfirmed outcome truthfully and inspect current controlled value; never silently retry the same opening. Add one mutate-then-throw host regression, not only throw-before-write."
+    },
+    {
+      "id": "MSGQUICK-EARLY-R2",
+      "priority": 2,
+      "lines": "276 (compare stage/filter220-233)",
+      "title": "Retained details navigation from an earlier opening can revoke the new opening",
+      "trace": [
+        "Injected details renderer retains navigate callback from opening1.",
+        "Close opening1 and open2.",
+        "Calling retained callback unconditionally invokes revoke against activeOpening2, clears its candidate and schedules old action via dialog.navigate."
+      ],
+      "request": "Bind details navigation to the captured opening and require it still be active and current before revoking or navigating. A retained callback after cancel/reopen must neither cancel the new session nor navigate. Keep legitimate explicit details close/focus handoff."
+    }
+  ],
+  "positiveObservations": [
+    "Required opaque symbol and live synchronous host read/capture/write seam are explicit.",
+    "Apply revokes opening before host invocation, preventing repeat/reentrant commits.",
+    "Stage/filter callbacks guard current opening identity.",
+    "Choice projection is limited to currently authorized profile, avoiding old all-profile flatMap.",
+    "New UI separates applied C from local pending candidate and does not infer a tuple from independent axes."
+  ],
+  "peerReview": "Panels separately identified same-visible-pane ownership-change suppressReturnFocus behavior; its fixed-copy report is independent.",
+  "scopeAndLimits": [
+    "Snapshot is early, owner code continues; final target and manifest must be re-reviewed.",
+    "No imports, typecheck, direct tests, browser or service/resource sampling.",
+    "No product project writes by root."
+  ],
+  "cleanCode": {
+    "scope": "callback authority, explicit outcome semantics, single draft owner, narrow projection, liveness cleanup",
+    "appliedSkills": [
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md"
+    ],
+    "result": "Two concrete behavior findings, sent directly to soleowner; avoid broad new framework or public capability changes."
+  }
+}
