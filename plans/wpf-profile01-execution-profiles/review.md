@@ -29,3 +29,7 @@ a28c78cc3a1ac8557f7fd95afa074c4971128246 / 同base获04:48:10限定批准，独�
 审批仅普通聊天执行配置独立模块和隔离fixture，不含App挂载、实际消费O04共享域、真实center/runner/provider/模型、Safari/Firefox/屏读、任意每turn effort/thinking/queue/steer切换。目录中的不支持声明不是可提交Selection，中心准入仍再验ref。后继正式App接入另claim验证outbox再次parse后的ref深冻、unknown原key/body重试、pin核对后绑定、connection/draft安全。实际界面与原始证据见[报告](../../docs/evidence/wpf-profile01/README.md)，导出/消费语义见[interface](../../docs/evidence/wpf-profile01/interface.md)。
 
 后续metadata不自动扩展审查范围；任何实现变化须新target复审。
+
+## 集成事实（不改变审查目标）
+
+04:58:45 UTC owner只读实核main/origin/main698ffcd94ae073b23bcc67f6665fb19f707a93e4 clean；4f ancestor exit0、7声明路径内容相同。模块已纳入主线，App串接另片。纯metadata核验，无产品重测。
