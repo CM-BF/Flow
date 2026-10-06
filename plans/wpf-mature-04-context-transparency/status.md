@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:25:14 UTC / main53ce2ec2 clean；记录纯归一化独审批准 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:31:11 UTC / main53ce2ec2；补ENG01D后继接线路由，仅metadata |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -84,3 +84,5 @@
 2026-10-06 11:20:53 UTC：纯归一化片4源实现，58不同=8helper+27mapper+23直接projection，strict0；旧26断言逐字保留，首次strict fixture缺apiUsage记录未删。9ac domain10源及固定集成输入不变；新mapper待独审，旧3ab批准不转移。保持v6修复期；无采集/SDK/provider/global接线。
 
 2026-10-06 11:25:14 UTC：记录status_read于11:24:10 UTC对c1733a0c的独立APPROVED，0 P1/P2；24bindings与58不同/strict0已核，无重测。[独审收据](../../docs/evidence/wpf-mature-04/normalize-independent-review.json)与[固定集成入口](../../docs/evidence/wpf-mature-04/normalize-integration-ready.md)仅绑定本片。9ac原输入保持不变，main接收/部署未确认；v6保持修复期，源码/raw冻结，未开producer。
+
+2026-10-06 11:31:11 UTC：fresh v6/HEAD b0e7032d clean后仅补[当前共享接线输入](../../docs/evidence/wpf-mature-04/handoff-current.md)：ENG01D已领取runner.ts/runtime.ts，04不写；最小union直接消费已有contextObservationEventSchema，保留原字节/身份与事务约束。Lead待共享接口冻结后合法amend，F01可先接027/owner GET。原9ac绑定请求、c173四源/raw/manifest均不改，未新开producer/测试；阶段仍integration。
