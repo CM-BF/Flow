@@ -22,22 +22,30 @@ root再次只读installed core0.3.22 composer：342–350先detach；469–472�
 
 clean-code安全停点：分别保留固定已审内容、后续事实metadata和各唯一owner canonical；main接收、服务运行、看板登记、fixture浏览器范围不相互替代。新claim先fresh/read→原子take→owner首canonical，不借释放前写权。
 
-后继readability（root/GO明确同意、仍未take）：现Thread宿主slots足够，不改官方Thread/App/Runtime。空queue压缩时，error/stale/blocked/unknown可行动摘要在折叠后仍须可见；稳定profile/协议/重复execution内容可达，创建前选择profile入口和真实权限差异保留。root已读[W3C Disclosure](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/)；Enter/Space、expanded/焦点复验，固定1280×720与390 fixture前后实际量高度，不能凭空规定收益百分比。待CHAT06I main/release后panels精确scope，CONTEXT02八scope无交叉。
+历史提案时点的readability（后续已按c832正式take，当前状态以父status为准）：现Thread宿主slots足够，不改官方Thread/App/Runtime。空queue压缩时，error/stale/blocked/unknown可行动摘要在折叠后仍须可见；稳定profile/协议/重复execution内容可达，创建前选择profile入口和真实权限差异保留。root已读[W3C Disclosure](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/)；Enter/Space、expanded/焦点复验，固定1280×720与390 fixture前后实际量高度，不能凭空规定收益百分比。待CHAT06I main/release后panels精确scope，CONTEXT02八scope无交叉。
 
 ## 对外交接降噪规则（GO经root明确重申）
 
 同一交付的完整REVIEW_READY由本管理者一次发GO转ExecutionLead；root没有新decision/blocker时不重复SHA、claim和验证矩阵。后续消息只写taskID、实际变化、canonical路径和需动作，旧证据用链接。原take/capability/验证要求不变；没有新部署回执不重复API，没有实现变化不重复产品测试。新source登记、blocking接口、固定review-ready和main接收仍是可行动里程碑。
 
-CHAT-READABILITY下一片只读范围已由panels提出并交root：七产品/专测路径加自有plan/evidence共九literal，见[精确候选](readability-proposal.json)。等CHAT06I正式main/全停写release后才定新base、独立树与fresh take；现在未建树/领取/实现。CONTEXT02候选5e821已交root独立代码审，管理等待owner最终metadata后只做scope/parser/docs，不以测试通过替代审查。
+历史提案时点：CHAT-READABILITY只读范围由panels提出并交root：七产品/专测路径加自有plan/evidence共九literal，见[精确候选](readability-proposal.json)。等CHAT06I正式main/全停写release后才定新base、独立树与fresh take；现在未建树/领取/实现。CONTEXT02候选5e821已交root独立代码审，管理等待owner最终metadata后只做scope/parser/docs，不以测试通过替代审查。
 
 D05既有后继观察（GO实际CUA，非本队复验）：4320已上线9c6固定图/五视图；1280×720初入默认100%时右侧runner被局部画布横裁，现“适配”71%能同屏可读。未来renderer安全窗口考虑首次适配可用宽度，之后尊重用户zoom，不因刷新重置。非blocking，不扩已收口D06、不新task，readability优先。
 
 ExecutionLead后继实质回执：CONTEXT02已入I02候选（六source精确/Web组合types，未重142），因SVC零query升级准备main仍32c，未正式main前保留b485，不提前release。Lead报告95sources已实采，管理只引用该来源/无精确采样时刻，不fetch。
 
-既有U11 steer后继：GO批准CHAT10独立后台task-bound只读admission与可信host开关；DTO未冻结，只记录sender独立模块候选，旧attemptAvailable不改义，GET不授权。个人steer仍off，无新query许可；不抢App/Thread/CTX，不把计划视为已有UI。
+历史初次U11 steer预告：GO批准CHAT10独立后台task-bound只读admission与可信host开关；当时DTO未冻结（后文3b157a为后续接口冻结），只记录sender独立模块候选，旧attemptAvailable不改义，GET不授权。个人steer仍off，无新query许可；不抢App/Thread/CTX，不把计划视为已有UI。
 
 REQ42未来实际App只读20scope方案及八组旅程已归[候选](context-app-integration-proposal.json)：显式project分页、真正create-only receipt、P01唯一知识面板、Send/Queue冻结与有序ACK、双split/隐藏/连接隔离。等readability和CONTEXT02同时main及原owner释放后一个UI片接通，不再拆纯模块；当前未新take/建树/测试。
 
 CHAT10接口准备（仅root读取，非本队实现/批准）：fixed3b157a3e21166eb06473c1deb6b9f0eded1169e3，steering-admission-readiness/docs/evidence/chat10/interface.md及contracts active-steering。admission GET ready给task/attempt/ownerVersion/revision，unavailable有界reason+nullable，no-store快照不预留/POST重验；旧attemptAvailable/capability不改、默认off。F01薄client待就绪，sender未派写。固定32c目录需要steering-v1显式协商才有声明，当前Web目录未opt-in/controls.steer false，不能据声明或旧attemptAvailable直接开启。优先readability+CONTEXT实际UI。
 
 REQ43 clean-code细化（GO/root已交panels）：可在当前已领ConversationThread同文件把长JSX执行摘要/receipt/composer配置收为最小具名显示组件，业务仍归projection；App不动，不造框架/新slot。若合理新增文件，先原claim当前version CAS amend成功再写；同文件不新增门禁，不为行数改已冻目标。
+
+## 单次真实stream观察建议（仍未授权执行）
+
+ExecutionLead请求root给F01唯一driver准备单次真实stream UI observer与预算候选；root已经通过GO一次回复Lead，收件人明确。GO尚未授权真实query，个人服务升级仍只有zero-query计划。这里仅保存该只读研究，管理/root没有driver、凭据、服务或模型操作，不能由建议推定已获预算。
+
+研究以固定main32c的conversation-stream-integration.browser.ts、App tab属性、plugin-integration/react/session、conversation-stream/messages及contracts/assistant-stream为源码依据：选中tab的aria-controls解析对应visible pane，定位Message input；观察[data-stream-status]与aui_assistant-message-root/content。flow.assistant-stream在当前真实user anchor自动激活并经窄task.assistant-stream.read授权；Disable按钮仅表示enabled，不能证明当前readiness。
+
+一次候选旅程只有在至少两次实际draft正文增长时才报告增量；final必须按typed source、settlement replace/retain与水位判定，不能强制清掉全部draft（合法retain需保留）。当前pane的Previous/Next应为0，下一条未发送draft必须保留。只被动捕获公开响应白名单，不自动读取details/全文。如果provider无partial，或截断无法结算，如实记录限制，绝不为补证再发query。真实执行需GO另给具体候选及单次预算，F01保持唯一driver。

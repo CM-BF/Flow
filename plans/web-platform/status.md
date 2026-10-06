@@ -4,25 +4,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:16:04 UTC / Lead fc113接收后管理183文档/7源码固定比较通过 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:27:42 UTC / 固定main32c接收与旧claim释放已核；readability实施中 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `9fc332c7ec754958a2cb358c4c01bf27eed0159e`（本次metadata前实核clean；交付HEAD以Git回执为准） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `7c2700fb61cb044d967c64e21ef6f1bbda0a9fb3`（本次metadata前实核clean；交付HEAD以Git回执为准） |
 | 工作树dirty状态 | 本次仅管理证据、主线接收与新模块领取记录；提交后以实际Git为准 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 完整需求文档与知识选择组件已进入主线，增量聊天修复已通过独审 |
-| 下一可用交付 | 交付增量正文接线，并验证知识引用回执 |
+| 当前产出 | 增量聊天与架构快照已进入主线，聊天可读性正在实施 |
+| 下一可用交付 | 交付更紧凑的聊天界面，并完成知识引用回执主线收口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
-| 已集成main状态 / HEAD | 管理独核main/origin6426b44cd32d10216141af13ecfa83b8879025fb clean；ActivityI ba341祖先，S01 3ac/PERF03 f909及各final祖先、8源码相同。两旧claim已v2释放。ExecutionLead回执个人center/runner b54 accepting v6、61227/61228原端口与数据保留，0新增provider；本管理未服务验证。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
+| 已集成main状态 / HEAD | 管理独核main/origin32c371d389a913f8dd71c3bd8b98dd0697411256 clean；CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已审且在I02候选，尚待正式main；readability c832v1实施。ExecutionLead回执个人center/runner b54 accepting v6、61227/61228原端口与数据保留，0新增provider；本管理未服务验证。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
 | Review | [review.md](review.md)，本次固定发布APPROVED a5e500136438b197305339cbe0a5e10a196a4317；root2026-10-06 07:59 UTC；历史c075仅见归档，不覆盖本次 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
