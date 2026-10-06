@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:04:03 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:08:21 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,10 +10,10 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / e47df6a78e3ed627a726dae805f84903a33e0a9d（已审C收口；本次Node设计metadata HEAD由Git核） |
-| 工作树dirty状态 | 源码冻结；唯一Node窗口已消费，当前仅结果归档与metadata，提交后核clean。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / e0ccfe061119be131d06c1d8c5cabf9f8b0cdbdd（结果限定；本次收口HEAD由Git核） |
+| 工作树dirty状态 | 源码/raw冻结；结果限定已独审，收口仅metadata，提交后核clean。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 检查状态 | 准备58 distinct分次通过；唯一运行2目标：EXPECTED/FAILED/NOT_RUN，0listener/compile/Codex/provider。cleanup确认；整体输出计量UNKNOWN，见结果限定。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
 | 实现目标 | source d17ad56a / combo1f32735e629873196971ea509b767ddf0436949e APPROVED；唯一窗口已消费 |
@@ -21,10 +21,10 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | Node受限控制失败、后继未运行；清理确认，整体输出计量仍未知。 |
-| 下一可用交付 | 交付忠实失败与计量未知的固定结果，等待独立接收。 |
+| 下一可用交付 | 本片段已交付；后继仅准备加载失败观察方案。 |
 | 当前阻塞 | ACTIVE: Node/Codex完整隔离、真实模型资格与全部writer停止仍未验证；C成功不能替代。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：Mika于12:37:56 UTC批准ff927712设计；宿主固定loader窄适配获准。Mika13:01:37 UTC批准1f327准备；本次[结果](../../docs/evidence/wpf-mature-02/node-rootliteral/run-report.md)待审。 |
+| Review | [review.md](review.md)：Mika13:08:21 UTC已限定APPROVED；FAIL/整体输出UNKNOWN，未重跑。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | Node复用已交回R06唯一进程owner、旧owned canary与私有sink；新增仅实验接缝，未改变生产Interface/运行生命周期。ENG当前仅资格/撤销输入建议，无新公共合同。 |
 

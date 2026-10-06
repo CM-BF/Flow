@@ -1,6 +1,6 @@
 # WPF-MATURE-02 review
 
-Node组合 APPROVED：Mika/gpt-6-astra，2026-10-06 13:01:37 UTC，0P1/P2；source d17ad56ad47ec065cea107ba4ab15fc7afd56b0e / combo1f32735e629873196971ea509b767ddf0436949e。18runtime/66prepared178504B/29external、9readonly与173旧Git均核；58distinct分次证据、清理P2修复/native0已审。仅批准准备；唯一窗口现已消费，结果[faithful FAIL/整体计量UNKNOWN待审](../../docs/evidence/wpf-mature-02/node-rootliteral/result-limits.md)，不得沿准备approval冒称测量通过。原manifest的4metadata绑定1f快照，当前审批增量另计，不改prepared/runtime/input/旧raw。
+Node结果限定 APPROVED：Mika/gpt-6-astra，2026-10-06 13:08:21 UTC，0未解决P1/P2；raw e7e2311b68c0a98e357499fc6990266c4ef9658d + 限定e0ccfe061119be131d06c1d8c5cabf9f8b0cdbdd。measurement FAIL、有效全runtime accounting UNKNOWN；[结果限定](../../docs/evidence/wpf-mature-02/node-rootliteral/result-limits.md)优先。独审核18结果/18runtime/66prepared与已知字节、原流hash，未重跑；五项Path.exists=false表示根不存在，旧receipt字段名不改变该事实。准备1f327/source d17由Mika13:01:37批准，58distinct；无新运行授权，旧raw/manifest不改。
 
 本文件收敛重复过程叙述为固定target索引，不撤销或扩大历史审批。完整原文保留Git ff927712ae8560a26febf01279b44c2fc12a1666 的同一路径；各raw/manifest均按其原target解释，未改旧证据。所有下列历史窗口已消费，不产生当前运行授权；各reviewer均为gpt-6-astra，未重跑作者检查。
 
