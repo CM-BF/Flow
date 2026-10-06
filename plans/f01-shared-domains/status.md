@@ -132,3 +132,5 @@
 2026-10-06 09:38:11 UTC独审回执已归档：[native profile client](../../docs/evidence/f01/native-profile-client-review.md)。2源码3raw与固定target匹配，独审未重跑测试；批准仅薄传输，不是原生执行授权。
 
 2026-10-06 09:44 UTC：client095固定两源与main253035e11ab18ba33095c018949f856442021d49逐字一致并已push；独立Codex adapter据此接线，未启个人provider。见[main回执](../../docs/evidence/f01/native-profile-main-receipt.json)。
+
+| F01-28 | pending | Lead / Web / TUI owner | [TUI001-09唯一后继](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client/docs/evidence/tui01/shared-ack-design.md)；首片修复先审，实际共享抽取待scope交接，尚无新产品实现 |
