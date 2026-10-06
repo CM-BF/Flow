@@ -2,15 +2,16 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:43 UTC / main4391bbf9f1785212d098ef6aa1c01a0320a003d3 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:10:00 UTC / mainc34033234e0f313e89b0982eb233f268b5f2172e |
 | Plan | [plan.md](plan.md) |
-| 所属大task | FLOW-001（[范围](../flow-001-architecture/plan.md)） |
+| 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
+| 任务层级 | 子task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
 | 工作基线 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295 / client095bdb849a4ba688be7c2b55d90021b9d15e4b53 |
-| 工作树dirty状态 | 本次仅共享检查证据和metadata待固定 |
+| 工作树dirty状态 | 本次仅共享范围交接和计划记录；提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED：新native publication HTTP1 + 旧profile2，共3/3；根noEmit exit0，原红保留；0provider |
 | 已集成main状态 / HEAD | 025与严格来源领域已审main3418；native publication client已独审进入main253035e11ab18ba33095c018949f856442021d49。个人服务仍b1c/v12，无运行变更。 |
@@ -20,8 +21,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | Codex中心规则已接入，通用执行配置发布接口已审可供执行器使用。 |
-| 下一可用交付 | 本片段已交付；原生执行器在独立任务继续接通。 |
+| 当前产出 | 原生执行配置接口已交付，附件领域可独立开工所需的共享文件已交回。 |
+| 下一可用交付 | 已交付片段保持可用；后继接入附件接口并统一会话回执校验。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -134,3 +135,7 @@
 2026-10-06 09:44 UTC：client095固定两源与main253035e11ab18ba33095c018949f856442021d49逐字一致并已push；独立Codex adapter据此接线，未启个人provider。见[main回执](../../docs/evidence/f01/native-profile-main-receipt.json)。
 
 | F01-28 | pending | Lead / Web / TUI owner | [TUI001-09唯一后继](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client/docs/evidence/tui01/shared-ack-design.md)；首片修复先审，实际共享抽取待scope交接，尚无新产品实现 |
+
+| F01-29 | pending | Lead / Web resource owner | [附件交接与026预留](../../docs/evidence/f01/attachment-handoff.json)；领域及公共接线尚未完成 |
+
+2026-10-06 10:10 UTC：F01 v23 正式移出 `packages/contracts/src/conversations.ts`，原 owner 已停写，Web 须 fresh amend/take 才写；026 已预留给 WPF-ATTACH01。公共出口、client 与生产挂载仍由 F01 唯一维护。此为范围与计划记录，未运行工程测试、未改变个人服务。
