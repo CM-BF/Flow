@@ -2,14 +2,14 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 07:46 UTC |
+| 最近更新时间 | 2026-10-06 08:25 UTC |
 | 单一status owner / model | assignment_review / gpt-6-astra；原实现作者runner_owner |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh |
 | Branch | codex/preview-refresh |
-| 工作基线 / HEAD | 本次操作基线253b8ad38fd869297e7d9948a26c1d310fef5c6c；原实现9aa790552cb8847d6feb8c8f90c870407a54e572已完成；63bd到253b受控ff |
+| 工作基线 / HEAD | 本次准备基线32c371d389a913f8dd71c3bd8b98dd0697411256；旧debcec受控ff；原实现9aa已完成 |
 | 工作树dirty状态 | 工具源码冻结；本次操作与证据收口提交后clean |
-| 工作分支状态 | completed；原实现与本次b54更新/显式恢复均完成 |
-| 本片段交付阶段 | delivered |
+| 工作分支状态 | in-progress；原实现/b54部署已完成，新32c更新仅准备 |
+| 本片段交付阶段 | review |
 | 检查状态 | PASSED 9aa790552cb8847d6feb8c8f90c870407a54e572：9 PG/HTTP + 12 host/直接消费者；host源d122到target仅缩进，tsc通过 |
 | Review | APPROVED 9aa790552cb8847d6feb8c8f90c870407a54e572：Root独立只读，未重跑 |
 | 已集成main状态 / HEAD | 原维护实现9aa已集成；实际安装于07:45:26核sourceAtStart b54de1dbb08e3ccc7d33a27295a318f2799e76ae；显式恢复accepting v6，此为时点观察不追逐后继metadata |
@@ -17,9 +17,9 @@
 | 实现范围 | packages/contracts/src/runner-maintenance.ts, apps/server/src/runner-maintenance/, apps/server/src/runners.ts, packages/storage/migrations/016-runner-maintenance.sql, tools/personal-preview/ |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | b54已更新并经GO显式恢复接收，v6；三服务就绪，原任务/队列保留 |
-| 下一可用交付 | 本次部署窗口已关闭；后继任务由Lead另行派工 |
-| 当前阻塞 | NONE |
+| 当前产出 | 现有服务继续接收，下一版更新方案与只读状态已准备 |
+| 下一可用交付 | 新窗口获准后更新服务，核对保留事实并等待明确恢复接收 |
+| 当前阻塞 | ACTIVE: 本次维护和恢复窗口尚未授权，现有服务保持运行 |
 | 需用户决定 | NONE |
 | 架构影响 | 新持久runner维护状态与尝试领取门禁；待Lead同步固定架构视图 |
 
@@ -32,6 +32,10 @@
 | SVC02-05 | completed | assignment_review | [新方案](../../docs/evidence/svc02/refresh-b54-proposal.md)、[固定源码证明](../../docs/evidence/svc02/refresh-b54-manifest.json)；b54产品等价253b，07:28全库只读事实 |
 | SVC02-06 | completed | assignment_review | 依赖由Lead离线固定锁补齐后，07:39 bootstrap→hold→refresh b54；[回执](../../docs/evidence/svc02/refresh-b54-refresh.json)，维护暂停v5；[固定保留说明](../../docs/evidence/svc02/refresh-b54-result.md)与[manifest](../../docs/evidence/svc02/refresh-b54-deployment-manifest.json)已完成 |
 | SVC02-07 | completed | assignment_review | GO RESUME_GO SVC02-b54-resume-0745；一次fresh/一次resume，07:45:23 accepting v6；[恢复证据](../../docs/evidence/svc02/refresh-b54-resume-result.md)，窗口CLOSED |
+
+| SVC02-08 | completed | assignment_review | [32c方案](../../docs/evidence/svc02/refresh-32-proposal.md)、[只读事实](../../docs/evidence/svc02/refresh-32-readonly-facts.json)；fresh claim/固定源/依赖核对，0服务写入 |
+| SVC02-09 | pending | assignment_review | 等待新GO窗口，drain→hold→refresh32c及数据保留验证；未执行 |
+| SVC02-10 | pending | assignment_review | 新版maintenance回执后另等GO明确resume；未执行 |
 
 06:53 UTC fresh核claim e8a8767c-4387-4c03-93a6-02153bb491c4 v2仍归本owner；无当前修复，源码/服务操作已停止，本次metadata提交后release，外部实际回执为 `/tmp/flow-svc02-release-receipt.json`。未来配置/部署需新take和明确维护窗口；[初始receipt](../../docs/evidence/svc02/claim.json)、[移交领取入口receipt](../../docs/evidence/svc02/claim-amend-runners-receipt.json)。05:36:59Z显式停写并原子移出 apps/server/src/runners.ts，后继K02由Lead协调领取；其余6scope此前为部署证据与回修保留，现本片交付后释放。历史实现范围仍按已审target追溯，不表示未来写权。截至05:37仅只读；05:38经Root窗口批准，由本owner唯一执行bootstrap/refresh，现保持maintenance；0新query。
 
@@ -72,3 +76,5 @@
 2026-10-06 07:46 UTC：显式恢复已完成，短回执已交Root/Lead，窗口CLOSED。一次前置/一次resume/一次后置，0主动任务/模型/tab。首次checker误要求accepting仍持operation造成false，按原store清NULL语义使用同份sample解释，未重试服务动作；初始false保留。当前claim暂留交付metadata，工具继续停写。
 
 2026-10-06 07:49 UTC：Lead MAIN_RECEIPT main/origin84fdecebbb4939e43710fb17e48884cc49d1d030已含c28收口记录；本地核c28祖先、tools零diff。runtime保持已有b54/v6时点回执，不为metadata刷新；无新服务/DB/模型检查。全部本claim范围停止写入，此metadata提交后fresh原子release d582v1，实际receipt位于/tmp/flow-svc02-b54-release-receipt.json。
+
+2026-10-06 08:25 UTC：原d582已released，新claim a5c0fc33-356c-434b-8508-67796d21d414 v1已fresh take，debcec受控ff至固定32c。一次只读全库/正式身份/进程与依赖核对完成；现runtime仍b54/v6，2 succeeded/0未完、queue仅promoted。无drain/stop/query/tab，新窗口未授权。原实现completed与既有approval不变；本次方案独立待审。

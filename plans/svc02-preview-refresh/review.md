@@ -24,3 +24,7 @@ Review target commit：9aa790552cb8847d6feb8c8f90c870407a54e572。现场clean129
 ## 新维护窗口准备（2026-10-06 07:33 UTC）
 
 原工具APPROVED9aa保持；本次assignment_review只准备b54更新，产品对253b、维护工具/领域对9aa零差异，证据绑定[manifest](../../docs/evidence/svc02/refresh-b54-manifest.json)。固定源码/原始快照/单runner边界见[方案](../../docs/evidence/svc02/refresh-b54-proposal.md)。本次操作窗口和resume均NOT_GRANTED，不以工具原批准代替部署许可；未重跑产品测试或调用provider。
+
+## 2026-10-06 08:25 UTC 新32c维护方案
+
+原实现9aa及历史部署批准保持。本次仅[新方案](../../docs/evidence/svc02/refresh-32-proposal.md)/固定只读事实，等待GO新窗口；NOT_STARTED是本次操作方案评估，不撤销原工具批准。不由作者自审工具或声称获新resume许可。
