@@ -29,3 +29,9 @@ R3：fixture 增加明确的 profile21 会话授权，使用现 HTTP 分页和�
 [c1 packet root P2](../../docs/evidence/wpf-message-settings-quick-controls/root-c1-packet-terminal-review.json)、[peer](../../docs/evidence/wpf-message-settings-quick-controls/peer-c1-terminal-review.md)针对终态合同，不重开产品源码。作者按允许的早完成边界方案修复：明确 cooperative handler restoration 后不保证逐文件/stdout/exit 原子性；磁盘 PASS 只是候选，必须外层实际exit0、唯一完整terminal-seal stdout、匹配binding/result/budget/step hashes、两child退出0与完整清理才能接收。旧packet完整保留；新runner待独立复审，无gate。
 
 精确packet为 `/private/tmp/msgquick-checks-c1`，binding 在此metadata最终固定后再重绑HEAD；源码/config与外部输入hash见其manifest。默认PREPARED，types/direct/browser全NOT_RUN。源审不冒MATURE02或真实App接线完成。
+
+## 当前静态准备批准与后置浏览器
+
+[root c1 final](../../docs/evidence/wpf-message-settings-quick-controls/root-c1-final-preparation-review.json)批准终态修复，仅静态准备；c1实际types/direct26仍NOT_RUN。四源不变。独立浏览器 `/private/tmp/msgquick-b1` 复用方法、全新任务/claim/0累计绑定，真实CSS+6组场景+2PNG，nativeChromeBoundaryApproval 与 typesDirectEvidence 均 null，PREPARED/无gate。须先c1真实exit+seal/结果被接收，再新Chrome边界与fresh准入；旧Settings01四项PASS/预算/边界不继承。
+
+[浏览器准备](../../docs/evidence/wpf-message-settings-quick-controls/browser-preparation/report.md)、[固定消费者闭包](../../docs/evidence/wpf-message-settings-quick-controls/root-browser-consumer-scope.json)。此轮档案存declared inputs；TMP actualHEAD在本metadata固定后统一重绑，不由档案预授运行。

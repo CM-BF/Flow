@@ -31,3 +31,9 @@ manager fresh22:30:23 原六scope与clean已核；只改browser这一背景保�
 ## Source approval / terminal contract 2026-10-06 22:36:57 UTC
 
 manager22:35:11 fresh本人窄核原六scope。Root原件确认fe6四源APPROVED_SCOPED_SOURCE_ONLY、R3/locator闭合，保初7615纠正。产品四源完全不动。c1终态P2按报告的早完成边界选项最小修复：旧packet原件备份before-terminal-review；新runner `61b25b0ec7798b675ab11a3b88a4b943945f0aeb8ff5deb978f0abc7d63ec7b0` 加terminal contract与sealed hashes，不声称through-exit原子性；必须外层真实exit0+完整stdout+sealed结果/预算+两step退出0方接受。该合同待复审，不是假定通过。复用本地clean-code检查错误保真、责任边界、最小差异；未执行prepared源码/语法/产品import/types/direct/browser/信号实验/free。精确候选最后绑定由提交后TMP操作完成。
+
+## Browser packet 静态安全点 2026-10-06 22:46:47 UTC
+
+本人核manager22:41:30 fresh原六claim/唯一owner。复用既有本地find-skills/clean-code/webapp-testing方法：保产品四源fe6，single-use独立TMP包，scope不新增。按root14直接源闭包绑定真实CSS/React/Tailwind/Vite/PW/@flow源码；六组expected check strings逐字取固定源，不缩为旧4；仅两实际light/dark390PNG，不冒生产App或性能。旧b5仅方法参考，不借claim/oldcarry/通过结果/Chrome边界。
+
+检查监督职责、错误保真和生命周期：Node sandbox与nativeChrome sibling边界明确分离，两个ownedPGID、实际exit/EOF、资源末次观察、nonENOENT失败、外层真实exit+唯一sealed stdout接收；预算仍仅原候选60s/15cleanup/64MiB/8MiB。typesDirectEvidence与nativeChromeBoundaryApproval保持null，先c1实际通过再独立准入。未运行prepared文件/语法/产品import/types/direct/browser/HTTP/PG/Chrome/free。新packet最终metadataHEAD只在本正常提交后TMP重绑；c1原包不动，未来fresh准入由manager协调HEAD重绑。

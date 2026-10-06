@@ -6,4 +6,6 @@
 
 旧 Settings01 37 direct/4 browser 没有继承。真实 App/Send/Queue/Recovery/P01 宿主仍后继，MATURE02/TODO11 未完成。
 
-检查包终态P2仅影响准备合同；已按明确早完成边界+外层真实exit/匹配seal方案修复，待复审。全部运行仍NOT_RUN；own/tmp最终HEAD绑定在本metadata提交后进行，不再反复改项目metadata。
+检查包终态P2仅影响准备合同；已按明确早完成边界+外层真实exit/匹配seal方案修复，并获root限定静态批准。全部运行仍NOT_RUN；own/tmp最终HEAD绑定在本metadata提交后进行，不再反复改项目metadata。
+
+新增独立browser准备包待审，见browser-preparation；真实CSS/六组场景/双组清理全部为源码准备，当前browser仍NOT_RUN。c1实际检查先行，无任何新gate或运行授权。

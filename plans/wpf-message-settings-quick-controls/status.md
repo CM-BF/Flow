@@ -5,11 +5,11 @@
 | 任务 ID | WPF-MESSAGESETTINGS02 |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新时间 | 2026-10-06 22:36:57 UTC |
+| 最近更新时间 | 2026-10-06 22:46:47 UTC |
 | 单一status owner / model | w01_owner / gpt-6-astra |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 快速设置四源已通过限定源码审查；小检查包终态合同已修，待复审 |
+| 当前产出 | 四源和 types/direct 检查包已获限定静态批准；独立浏览器准备包待审 |
 | 下一可用交付 | 经验证的模型、思考力度与速度快速选择 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -23,7 +23,7 @@
 | 实现目标 | fe6ece131c489c79cf531a184e4cf51209f9c4a0 |
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/test/message-settings.test.ts, apps/web/test/message-settings.fixture.tsx, apps/web/test/message-settings.browser.ts |
 | 检查 | NOT_RUN（source-only；旧37/4不继承） |
-| Review | UNKNOWN（四源 fe6 获 APPROVED_SCOPED_SOURCE_ONLY，R3/locator已闭合；packet终态修复待复审，完整行为未验） |
+| Review | UNKNOWN（fe6四源/c1准备限定批准；浏览器packet待审，所有实际行为检查未运行） |
 | Main | 本片未集成；基线含原受控组件 |
 | Claim | 839e466f-1a3f-4e92-94e1-ece390c32fbf v1 active；本人 live 已核 |
 | Dashboard | Lead 22:12:19 179-source 观察 current/live；本人未采样页面；本次 actual parseStatus errors=[] / 5 TODO |
@@ -35,7 +35,7 @@
 | MSGQUICK-01 | completed | w01_owner | [receipt](../../docs/evidence/wpf-message-settings-quick-controls/take-receipt.json)、[技能](../../docs/evidence/wpf-message-settings-quick-controls/quality.md) |
 | MSGQUICK-02 | completed | w01_owner | 当前授权 tuple + 私有候选 + 同步宿主 CAS |
 | MSGQUICK-03 | completed | w01_owner | 四源固定；validation-proposal（未运行） |
-| MSGQUICK-04 | pending | w01_owner | 四源限定源码批准；精确 types/direct packet 终态修复待审，检查未准入 |
+| MSGQUICK-04 | pending | w01_owner | 四源与c1静态准备批准；browser packet待审；所有检查未准入 |
 | MSGQUICK-05 | pending | w01_owner | 主线独立接收；真实 App/Queue/Recovery 后继不在此范围 |
 
 ## 边界与架构影响
