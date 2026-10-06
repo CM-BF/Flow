@@ -1,6 +1,6 @@
 # O03 目标工具中心授权
 
-状态：completed（中心授权工程片段已交付；独立 review 待评估）；创建/更新：2026-10-06。父产品目标 U11/O01；本任务是 O02 后继中心授权工程片段。
+状态：completed（中心授权工程片段已交付；Root 独立 review 已 APPROVED，生产接收另验）；创建/更新：2026-10-06。父产品目标 U11/O01；本任务是 O02 后继中心授权工程片段。
 
 Owner 创建独立 planner task 与不可变 grant，runner 使用当前 attempt 的 fenced HTTP 接口访问固定 goal；不把 owner credential 交 runner/model/plugin。所有命令包括 replay 必须同事务重新授权。自然语言/query 挂载、自动拆图仍未实现；首片 fixture 可验证真实事务，所有 Claude/native admission 明确拒绝，直到新的显式 profile seam 可用。
 

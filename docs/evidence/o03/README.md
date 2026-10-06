@@ -1,6 +1,6 @@
 # O03 中心工具授权：作者检查
 
-固定实现 `94e012ac44095ab3d4aca54df7951d0971f69dfa`；base `4e0289f29ffa48c6c49003837d4520f57c22b6b0`。独立审查尚未开始。0 模型、0 云调用。
+固定实现 `94e012ac44095ab3d4aca54df7951d0971f69dfa`；base `4e0289f29ffa48c6c49003837d4520f57c22b6b0`。Root 独立只读审查 APPROVED，0 findings；未重跑作者检查，见 [正式审查](independent-review.json)。0 模型、0 云调用。
 
 本模块把 owner 创建的固定 goal/node/command 范围持久绑定到新建 planner task。Runner 使用当前有效 attempt 的已有凭据；grant 只是非秘密引用，不能单独授权。每次读取、命令及缓存重放均在同事务核验 runner、task、attempt、租期、grant 与撤销状态。复用既有 goal mutation 和 command helper，命令、审计、额度一起提交。撤销工具权限不等于停止 runner。
 
