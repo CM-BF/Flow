@@ -1,6 +1,6 @@
 # TUI01E 独立审查
 
-NOT_STARTED，target d4478653918144377696ce83ace128fcf4213961，base aae1eb1054d75e78273e7c91ed048aeac80195da。
+当前：CHANGES_REQUESTED 的 P2 修复待独立增量复审；target 22f0e2c2b702112aa1a5d1b36874b56165cd267e，base aae1eb1054d75e78273e7c91ed048aeac80195da。原审查 target d4478653918144377696ce83ace128fcf4213961 的发现及检查边界保留下文。
 
 只读核固定commit/claim范围、单一durable intent、原create/send兼容、队列receipt身份与unknown、当前版本冻结、CAS拒绝保草稿不重投、观察继续与退出不cancel。核新公开client/PG/PTY原始证据和资源清理；不把两个headless当实际Web，也不把fixture当provider。修复交owner，结论绑定SHA；作者不自签批准。
 
