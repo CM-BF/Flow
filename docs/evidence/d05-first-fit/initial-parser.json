@@ -1,0 +1,77 @@
+{
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "架构图首次适配已领取，正在实现保持手动缩放的行为",
+    "next": "首次打开可读全图，手动缩放后保持选择",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": null,
+    "scopes": [
+      "apps/execution-dashboard/public/architecture.js",
+      "apps/execution-dashboard/test/architecture-viewport.browser.mjs"
+    ],
+    "errors": [
+      "实现目标需完整 SHA"
+    ]
+  },
+  "taskId": "D05FIT01",
+  "owner": "d01_owner / gpt-6-astra ultra",
+  "branch": "codex/dashboard-architecture-first-fit",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-06T08:42:00.000Z",
+  "updatedRecord": "2026-10-06 08:42 UTC / 固定main7106已核",
+  "todos": [
+    {
+      "id": "D05FIT01-01",
+      "state": "completed",
+      "owner": "d01_owner",
+      "evidence": "[plan](plan.md)、receipt与[quality](../../docs/evidence/d05-first-fit/quality.md)"
+    },
+    {
+      "id": "D05FIT01-02",
+      "state": "in-progress",
+      "owner": "d01_owner",
+      "evidence": "尚未固定候选"
+    },
+    {
+      "id": "D05FIT01-03",
+      "state": "pending",
+      "owner": "d01_owner",
+      "evidence": "尚未验证"
+    },
+    {
+      "id": "D05FIT01-04",
+      "state": "pending",
+      "owner": "d01_owner / root / Lead",
+      "evidence": "独审/main未完成"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 / 当前HEAD由Git聚合",
+  "declaredDirty": "首canonical待提交，实际Git为准",
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN"
+  },
+  "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+  "mainRecord": "NOT_INTEGRATED",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}
