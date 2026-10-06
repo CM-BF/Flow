@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 13:34:44 UTC |
+| 最近更新时间 | 2026-10-06 13:48:53 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -14,16 +14,16 @@
 | 工作基线 / HEAD | 受控main7cb→c837；F01依赖三blob→1c93c102；固定实现bf33781450d2a5036e026ace03c1682e4d7f0f17，其后仅交审metadata |
 | 工作树 dirty 状态 | 本片两改动源/新raw已固定bf337814；其余原41绑定不变；实际clean由Git聚合 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED bf33781450d2a5036e026ace03c1682e4d7f0f17；65distinct=51材料+14真实loader、严格局部noEmit0，66own根删除；原12red保留，0PG/SDK/provider |
-| Review | APPROVED bf33781450d2a5036e026ace03c1682e4d7f0f17；Mika/gpt-6-astra，2026-10-06 13:17:47 UTC，原唯一P2 CLOSED，0剩余P1/P2 |
+| 检查状态 | 当前中心14/14（11真实PG/HTTP+3DTO）、strict局部0；6轮专库0连接后DROP且own根删除，49制包child自然0；首8fixture失败保留，不累计重复 |
+| Review | NOT_STARTED 当前中心安装片未固定；历史leaf bf337814 APPROVED并已main，详见后文 |
 | 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；bf3378八leaf+f635三依赖已main2f16e30a，完整npm生命周期未实现 |
-| 实现目标 | bf33781450d2a5036e026ace03c1682e4d7f0f17 |
-| 实现范围 | packages/plugin-runtime/package.json, packages/plugin-runtime/src/package-store.ts, packages/plugin-runtime/src/package-store.test.ts, apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts, fixtures/plugins/text-tool/package.json, fixtures/plugins/text-tool/index.mjs, fixtures/plugins/text-tool/flow-plugin.json |
-| 本片段交付阶段 | implementation |
+| 实现目标 | 未固定（当前中心片）；DTO checkpoint cb20a75dddc0bddc724b88d66437444b397391f9 |
+| 实现范围 | packages/contracts/src/plugin-installations.ts, packages/contracts/src/plugin-installations.test.ts, apps/server/src/plugin-installations/store.ts, apps/server/src/plugin-installations/commands.ts, apps/server/src/plugin-installations/routes.ts, apps/server/src/plugin-installations/migration.ts, apps/server/src/plugin-installations/installations.test.ts, packages/storage/migrations/029-plugin-material-installs.sql |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 静态材料与真实加载首片已审；开始公开中心安装与历史读回 |
-| 下一可用交付 | 公开安装命令、精确读回与未知状态恢复；完整任务绑定后继继续 |
+| 当前产出 | 公开中心静态安装与历史读回已实现并通过局部真实验证，等待独审 |
+| 下一可用交付 | 独审后接入默认中心和共用客户端；完整启用及任务绑定沿原计划继续 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -31,7 +31,7 @@
 | --- | --- | --- | --- |
 | X01-01 | completed | runner_owner | [完整计划](plan.md)、[事实/质量记录](../../docs/evidence/x01/README.md) |
 | X01-02 | in-progress | Execution Lead（公共入口） | X02 registry/public client/CLI合同已冻结入main；完整安装生命周期合同仍未完 |
-| X01-03 | in-progress | Lead派发中心writer | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
+| X01-03 | in-progress | architecture_read | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
 | X01-04 | in-progress | architecture_read | 静态材料/真实loader首leaf已独审；中心资格/绑定、版本pin与回收仍待接入 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；完整Web/TUI/CLI生命周期未完 |
@@ -85,3 +85,5 @@
 2026-10-06 13:33:24 UTC：Lead正式分配029-plugin-material-installs.sql；[v3原子amend](../../docs/evidence/x01/center-amend-receipt.json)已提交。旧8leaf停止产品写入、待正式main回执交回；本片沿845294419固定合同，先DTO后实际专库验证，未开始PG/源码checks。继续用本地find-skills、codebase-design/clean-code固定基线；brainstorming设计已授权，不重复索权。磁盘可用1,759,400KiB，保留1GiB，无新安装。
 
 2026-10-06 13:34:44 UTC：收到正式MAIN_RECEIPT，独核[11源接收](../../docs/evidence/x01/leaf-main-acceptance.json)固定Git=main2f16Git=主树=本树；Lead实际server/runner public import/roottypes0，未重跑65。原8leaf已停止写入并[v4交回](../../docs/evidence/x01/leaf-handback-receipt.json)，本owner不能恢复该写权；029实施继续。完整X01未完成。
+
+2026-10-06 13:48:53 UTC：中心安装片源码检查完成，[Interface](../../docs/evidence/x01/center-interface.md)、[checks](../../docs/evidence/x01/center-checks.json)、[资源](../../docs/evidence/x01/center-resources.json)、[质量/架构影响](../../docs/evidence/x01/center-quality.md)。仅新增中心7源/正式029，旧8leaf已main且写权已交回。模块状态/DB→FS时序有结构影响，集成后dashboard架构基线由Lead更新；本树不改全局图。当前中心独审NOT_STARTED，生产默认mount/client/CLI未接；旧leaf APPROVED不覆盖本片。

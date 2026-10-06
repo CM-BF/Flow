@@ -38,3 +38,7 @@
 ## 2026-10-06 04:39:30 UTC canonical事实刷新
 
 重新读claim active v1、唯一树clean a87b9f。已核main75a33包含a87b9f且本计划/证据范围零diff；读取该main中X02/X03状态，registry与CLI、只读模块分别已交，主App挂载另在WPF-X03I01。候选输入由Goal Owner经Lead固定转交，记在plan附件，未安装/未测、不视为用户已亲自确认，CTX01不被身份阻塞。clean-code检查文案与TODO边界，X01-03/09不勾大验收；仅文档链接/diff检查，不跑产品tests。提交后停写release文档claim。
+
+## 中心静态安装片
+
+[Interface与F01薄接线](center-interface.md)、[唯一029请求/授权](center-installation-seam-request.md)、[检查原始证据索引](center-checks.json)、[资源](center-resources.json)、[固定只读输入](center-readonly-inputs.json)、[质量](center-quality.md)。当前进度与review只看[唯一status](../../../plans/x01-plugin-management/status.md)。

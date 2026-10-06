@@ -1,0 +1,74 @@
+{
+  "observedAt": "2026-10-06T13:48:53.138458+00:00",
+  "availableBytes": 1418588160,
+  "requiredSharedReserveBytes": 1073741824,
+  "newInstallCalls": 0,
+  "cleanupReceipts": [
+    {
+      "path": "docs/evidence/x01/center-final-cleanup.json",
+      "database": "flow_x01_install_5e28c1812bca4292af63fb4e42b04ecd",
+      "root": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-install-qibSGB",
+      "rootAbsentNow": true,
+      "connectionsBeforeDrop": 0,
+      "databaseAbsentAfterDrop": true,
+      "packChildren": 12,
+      "allPackChildrenClosedZero": true
+    },
+    {
+      "path": "docs/evidence/x01/center-final-http-cleanup.json",
+      "database": "flow_x01_install_bb29c971559344538c7379339165c209",
+      "root": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-install-DZFdNk",
+      "rootAbsentNow": true,
+      "connectionsBeforeDrop": 0,
+      "databaseAbsentAfterDrop": true,
+      "packChildren": 13,
+      "allPackChildrenClosedZero": true
+    },
+    {
+      "path": "docs/evidence/x01/center-http-bound-cleanup.json",
+      "database": "flow_x01_install_6a8c06117f454d9fb6d7e25088eb634c",
+      "root": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-install-D11siN",
+      "rootAbsentNow": true,
+      "connectionsBeforeDrop": 0,
+      "databaseAbsentAfterDrop": true,
+      "packChildren": 1,
+      "allPackChildrenClosedZero": true
+    },
+    {
+      "path": "docs/evidence/x01/center-pg-initial-cleanup.json",
+      "database": "flow_x01_install_8e4a61f8064a474eb34bc8b36cf54132",
+      "root": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-install-Q2kz0U",
+      "rootAbsentNow": true,
+      "connectionsBeforeDrop": 0,
+      "databaseAbsentAfterDrop": true,
+      "packChildren": 0,
+      "allPackChildrenClosedZero": true
+    },
+    {
+      "path": "docs/evidence/x01/center-pg-pack-cleanup.json",
+      "database": "flow_x01_install_76c996850e3f4b798226e7d68cc9c28b",
+      "root": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-install-Ue8M3u",
+      "rootAbsentNow": true,
+      "connectionsBeforeDrop": 0,
+      "databaseAbsentAfterDrop": true,
+      "packChildren": 10,
+      "allPackChildrenClosedZero": true
+    },
+    {
+      "path": "docs/evidence/x01/center-review-ready-cleanup.json",
+      "database": "flow_x01_install_ff963aad40f24a2eb9da8adee5f2ef43",
+      "root": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-install-prXITP",
+      "rootAbsentNow": true,
+      "connectionsBeforeDrop": 0,
+      "databaseAbsentAfterDrop": true,
+      "packChildren": 13,
+      "allPackChildrenClosedZero": true
+    }
+  ],
+  "fixtureTool": {
+    "path": "/usr/bin/tar",
+    "bytes": 274448,
+    "sha256": "f96200d5be4a3f99cdbc88892a2e26f14d501d354c72b224472462cc67fa271d"
+  },
+  "scope": "exact owned roots only; no OS process scan or foreign-directory cleanup"
+}

@@ -1,0 +1,69 @@
+{
+  "recordedAt": "2026-10-06T13:48:53.138458+00:00",
+  "node": "v24.20.0",
+  "vitest": "4.0.18",
+  "selected": 14,
+  "passed": 14,
+  "distinct": 14,
+  "composition": {
+    "contracts": 3,
+    "realPGAndHTTP": 11
+  },
+  "finalTests": "center-review-ready-tests.stdout",
+  "finalExit": 0,
+  "strict": {
+    "config": "center-tsconfig.json",
+    "stdout": "center-review-ready-typecheck.stdout",
+    "exit": 0,
+    "rootOptionsInherited": true,
+    "rootWide": false
+  },
+  "history": [
+    {
+      "name": "center-contract-red",
+      "selected": 1,
+      "failed": 1,
+      "scope": "temporary rejection schema tracer; not a prior product regression"
+    },
+    {
+      "name": "center-contract-green",
+      "passed": 3,
+      "overlapsFinal": true
+    },
+    {
+      "name": "center-pg-initial",
+      "selected": 8,
+      "failed": 8,
+      "cause": "pacote directory fixture requires tree/Arborist; before product assertions; no new dependency added"
+    },
+    {
+      "name": "center-pg-pack",
+      "passed": 8,
+      "overlapsFinal": true
+    },
+    {
+      "name": "center-final",
+      "passed": 13,
+      "overlapsFinal": true
+    },
+    {
+      "name": "center-final-http",
+      "passed": 14,
+      "overlapsFinal": true
+    },
+    {
+      "name": "center-http-bound",
+      "passed": 1,
+      "unselected": 10,
+      "overlapsFinal": true
+    }
+  ],
+  "notRun": [
+    "old leaf65 rerun",
+    "full suite",
+    "real provider/SDK",
+    "real runner/plugin task",
+    "default server mount/client/CLI delivery",
+    "cross-process automatic lifecycle proof"
+  ]
+}
