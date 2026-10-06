@@ -1,0 +1,120 @@
+{
+  "kind": "preparation-only",
+  "fixedTarget": "cd13e01e871adaaf7dee1cc6676f7a52145e316f",
+  "base": "c450c2da7e6185b88db9f46e0299ee504ee6f3e8",
+  "checkedAt": "2026-10-06T11:04:43.282Z",
+  "runtimeTests": "NOT_RUN",
+  "testsDefined": 9,
+  "localStrictExitCode": 0,
+  "sourceOwnership": "runners.ts unchanged and not owned; only test/plan/evidence scope",
+  "entries": [
+    {
+      "kind": "source",
+      "path": "apps/server/src/runner-read-fence.test.ts",
+      "bytes": 19384,
+      "sha256": "c56f97388e73bb3166d17044e879d07a6a01b9b5f6eee254469c68dbdfbdd592"
+    },
+    {
+      "kind": "source",
+      "path": "docs/evidence/s01p04/tsconfig.json",
+      "bytes": 237,
+      "sha256": "0c8b27a98fee1477e735ebcd5d2e3a89a81ff04a28ed44af565cbc4b925835cf"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/strict-initial.txt",
+      "bytes": 622,
+      "sha256": "b8973f68d22854e55add685bd3ef54e01664d9e09a7a48b344f37b8241000d5e"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/s01p04/strict-preparation.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p04/interface.md",
+      "bytes": 6530,
+      "sha256": "e8876e4ccc54b738885da028060be9f78c46441d904d7a025486a28e0e1be6b1"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p04/preparation-checks.json",
+      "bytes": 1142,
+      "sha256": "de0c55351ebab5b1b6fe3ea263e940d4c5f93824a9115e6160842fe1e02e72d0"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p04/quality.md",
+      "bytes": 1365,
+      "sha256": "c2682a2137c822e8b8fee5d5131f9a21709840ce4cdcccd5dc8f2b04cd0cff01"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/s01p04/skills.json",
+      "bytes": 2091,
+      "sha256": "a3628f828c9d8d38e5296d01d64e17e9fffab20ae8c8a6c769f38fa71fa2951a"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/runners.ts",
+      "bytes": 10746,
+      "sha256": "6c15482d13913270affe5f062576f16844aab79c9f4305aa7a6dbe5f6ef3197c"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/events.ts",
+      "bytes": 8481,
+      "sha256": "2144b8745e878c373bbe1bba7254fc0bd7dcc7b3563ad6bb78b6f6ac4f6da559"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/index.ts",
+      "bytes": 12863,
+      "sha256": "552a44e1bd1c0469f43945667c925d9234af9b37eee5e224665fc35ab65dfdb0"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/protocol-dispatch/store.ts",
+      "bytes": 9611,
+      "sha256": "d573ddaa69e36fddaec45f14305fb1a5432bd8889c992991925e757eb224d560"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/goal-run-authority/runner-project-fence.ts",
+      "bytes": 2890,
+      "sha256": "19ea493544b92cdd43dff1f8538b49afdbf4f27990fefae938b993ef757de965"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/storage/migrations/016-runner-maintenance.sql",
+      "bytes": 1796,
+      "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc"
+    },
+    {
+      "kind": "readonly",
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "kind": "readonly",
+      "path": "pnpm-lock.yaml",
+      "bytes": 278664,
+      "sha256": "621490272149c9e9468c6ebec407f0eff3b508b7ca1e5b285573f101bb8a062d"
+    }
+  ]
+}

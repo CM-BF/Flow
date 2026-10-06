@@ -9,8 +9,8 @@
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence |
 | Branch | codex/runner-read-fence |
-| 工作基线 / HEAD | base c450c2da7e6185b88db9f46e0299ee504ee6f3e8；metadata HEAD f2c2137197169839c88dd5a29f6a60a6cb5b9068；新测试/证据待固定 |
-| 工作树dirty状态 | 仅自有新增测试与准备证据dirty；runners.ts未改 |
+| 工作基线 / HEAD | base c450c2da7e6185b88db9f46e0299ee504ee6f3e8；preparation target cd13e01e871adaaf7dee1cc6676f7a52145e316f（非生产实现） |
+| 工作树dirty状态 | preparation已固定；当前仅manifest/status metadata；runners.ts未改 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 局部strict 0；初次类型失败保留；9项新PG测试尚NOT_RUN，0 PG连接 |
 | 已集成main状态 / HEAD | 本片尚未实现/集成；观察main c450c2da7e6185b88db9f46e0299ee504ee6f3e8 |
@@ -38,3 +38,5 @@
 [skills](../../docs/evidence/s01p04/skills.json)记录本地技能及方法；结构影响预计为ownedAttempt runner授权锁从独占到共享，public Interface/事务状态 owner不变。实现fixed target后由Lead登记工程架构baseline更新；当前planned，不冒充main。
 
 本status是唯一手填事实源，source登记及页面聚合待Lead；不写registry/聚合JSON。原S01 PASS结果339与旧FAIL/journal已冻结，本片不重跑其容量窗口，不将S01挂为第三层父任务。
+
+准备固定target `cd13e01e871adaaf7dee1cc6676f7a52145e316f`，18项[preparation manifest](../../docs/evidence/s01p04/preparation-manifest.json)绑定2 source/config、2 raw、4 support、10 readonly。本地strict通过不表示PG交错通过；9项真实检查仍NOT_RUN。
