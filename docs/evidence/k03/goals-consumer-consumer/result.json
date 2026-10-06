@@ -1,0 +1,26 @@
+{
+  "originalPath": "apps/server/src/goals/goals.test.ts",
+  "originalSha256": "6115b135a281f2f6b7cf736c40a578e766a255c4697561162965d28b519bd345",
+  "originalBodiesSha256": "583d781364e2769964b00a557319c10bdf15177f4aedd674e69f23009e99bfb6",
+  "generatedBodiesSha256": "583d781364e2769964b00a557319c10bdf15177f4aedd674e69f23009e99bfb6",
+  "generatedSha256": "46c933ab404a748904cdc83d371b786cf7d916fd7ac05652a2c7de5b46fa019b",
+  "generatedPath": "apps/server/src/goal-context/generated-goals.test.ts",
+  "startedAt": "2026-10-06T06:26:34.816Z",
+  "explicitChanges": [
+    "Own isolated database/resource cleanup header",
+    "Manual migration 021 before HTTP listen; production mount not claimed",
+    "Relative imports rebased; original test bodies unchanged"
+  ],
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/goal-context/generated-goals.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner"
+  ],
+  "endedAt": "2026-10-06T06:26:49.722Z",
+  "exitCode": 0,
+  "signal": null
+}
