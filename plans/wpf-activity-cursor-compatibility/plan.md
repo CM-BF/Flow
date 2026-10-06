@@ -10,8 +10,8 @@
 
 TODO：
 - [x] WPF-ACTIVITYC01-01 核固定来源、领取、技能与唯一事实源。
-- [ ] WPF-ACTIVITYC01-02 修复扫描游标验证，保留完整护栏。
-- [ ] WPF-ACTIVITYC01-03 用实际 reader 验证 contract fixture、旧页和坏页，保存红绿证据。
+- [x] WPF-ACTIVITYC01-02 修复扫描游标验证，保留完整护栏。
+- [x] WPF-ACTIVITYC01-03 用实际 reader 验证 contract fixture、旧页和坏页，保存红绿证据。
 - [ ] WPF-ACTIVITYC01-04 固定提交、独立审查、dashboard/Lead交接。
 
 测试跨同一公开 ActivityPort seam 运行真实 ConversationActivityProjection。正向 fixture 对应 C02 已通过的真实 HTTP 断言，但本次为 mock port 重放，不是历史 raw capture、不冒充真实 HTTP/DB 联调。加空扫描页、尾过滤、终末空页、33→37恢复，反向验证身份、顺序、范围、重叠冲突与 reset；保留原生命周期/0详情检查。0模型/DB，不启动服务，不重跑无关 browser/build。架构影响仅修正既有分页不变量，无新模块/API。

@@ -1,0 +1,239 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-cursor-compatibility
+
+ ❯ apps/web/test/conversation-activity.test.ts (44 tests | 10 failed) 45ms
+     ✓ does not start a reader after its loading subscriber already hid the view 2ms
+     ✓ consumes a reader rejection that arrives after synchronous lifetime invalidation 3ms
+     ✓ rejects malformed reference identity 123 1ms
+     ✓ rejects malformed reference identity rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr 0ms
+     ✓ rejects a response exceeding the public page bound 0ms
+     ✓ reset aborts a pending detail and cannot revive it when the new history reuses its reference ID 12ms
+     ✓ keeps construction/hidden views at zero reads and deduplicates the first explicit expansion 6ms
+     ✓ loads a known reference once, caches it, and refuses arbitrary IDs 3ms
+     ✓ uses host TaskSummary updates and never replaces a newer host with an older events task 0ms
+     ✓ rejects a wrong task page without accepting its references 0ms
+     ✓ paginates explicitly, deduplicates identical overlapping entries, and stops at the watermark 0ms
+     ✓ rejects invalid/nonadvancing cursor facts {"nextCursor":0,"watermark":2,"hasMore":true} without looping 0ms
+     ✓ rejects invalid/nonadvancing cursor facts {"nextCursor":1,"watermark":0} without looping 0ms
+     ✓ rejects invalid/nonadvancing cursor facts {"nextCursor":-1} without looping 0ms
+     ✓ rejects invalid/nonadvancing cursor facts {"nextCursor":99} without looping 0ms
+     ✓ reset clears old references/details then rebuilds once from zero 0ms
+     ✓ rejects repeated reset at zero instead of looping 0ms
+     ✓ preserves previous entries after errors, distinguishes unknown from empty, and retries explicitly 0ms
+     ✓ hiding suppresses late events and cancels detail signals; reopening never auto-loads details 0ms
+     ✓ offline/online reads resume from the known cursor without cancelling execution 0ms
+     ✓ a disposed connection cannot return details into a same-ID new connection 0ms
+     ✓ validates returned detail identity/bytes and supports the public 1 MiB limit rather than 64 KiB 2ms
+     × crosses the HTTP hidden-only page after 1 → 3 and reaches ordinary cursor 5 4ms
+     × resumes from the SSE hidden-only raw cursor 33 and reaches ordinary cursor 37 1ms
+     × accepts a visible page with a filtered tail and a final empty scanned page 0ms
+     × accepts an entirely filtered terminal page and refreshes at the same exhausted cursor 1ms
+     × deduplicates known overlaps while advancing beyond the last returned entry 1ms
+     ✓ rejects malformed filtered page {"entries":[{"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}},{"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}}],"nextCursor":3,"watermark":3} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[{"id":"event-2","cursor":2,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-2","title":"Reference 2"}},{"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}}],"nextCursor":3,"watermark":3} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[{"id":"event-4","cursor":4,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-4","title":"Reference 4"}}],"nextCursor":3,"watermark":3} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[],"nextCursor":4,"watermark":3} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[],"nextCursor":0,"watermark":3,"hasMore":true} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[],"nextCursor":2,"watermark":3,"hasMore":false} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[],"nextCursor":3,"watermark":3,"hasMore":true} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[],"nextCursor":3,"watermark":3,"task":{"id":"other","title":"A task","harness":"claude","status":"running","verificationStatus":"pending","createdAt":"2026-10-06T06:00:00Z","updatedAt":"2026-10-06T06:00:00Z"}} without retry loops 0ms
+     ✓ rejects a scan cursor moving behind after without replacing previous state 0ms
+     × retains previous entries when overlapping identities conflict {"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"different","title":"Changed payload"}} 0ms
+     × retains previous entries when overlapping identities conflict {"id":"different-event","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}} 0ms
+     × refuses to backfill an unknown entry behind an already scanned filtered cursor 0ms
+     × rejects reset when after 1 is not beyond watermark 1 1ms
+     × rejects reset when after 1 is not beyond watermark 2 0ms
+     ✓ rejects malformed reset even when after exceeds watermark {"entries":[{"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}}]} 0ms
+     ✓ rejects malformed reset even when after exceeds watermark {"nextCursor":1} 0ms
+     ✓ rejects malformed reset even when after exceeds watermark {"hasMore":true} 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > crosses the HTTP hidden-only page after 1 → 3 and reaches ordinary cursor 5
+AssertionError: expected { scope: { …(5) }, …(13) } to match object { cursor: 3, watermark: 5, …(2) }
+(22 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "cursor": 3,
+-   "error": null,
++   "cursor": 1,
++   "error": "Activity cursor does not match the returned entries.",
+    "hasMore": true,
+    "watermark": 5,
+  }
+
+ ❯ apps/web/test/conversation-activity.test.ts:138:44
+    136|       .mockResolvedValueOnce(page([{ id: "ordinary-5", cursor: 5, crea…
+    137|     await open(value); await value.projection.loadMore();
+    138|     expect(value.projection.getSnapshot()).toMatchObject({ cursor: 3, …
+       |                                            ^
+    139|     expect(value.projection.getSnapshot().entries).toEqual([entry(1)]);
+    140|     await value.projection.loadMore(); await value.projection.loadMore…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > resumes from the SSE hidden-only raw cursor 33 and reaches ordinary cursor 37
+AssertionError: expected [ +0, 1, 1 ] to deeply equal [ +0, 1, 33 ]
+
+- Expected
++ Received
+
+  [
+    0,
+    1,
+-   33,
++   1,
+  ]
+
+ ❯ apps/web/test/conversation-activity.test.ts:154:70
+    152|     await value.projection.refresh(); expect(value.port.readEvents).to…
+    153|     value.projection.setOnline(true); await value.projection.refresh();
+    154|     expect(value.port.readEvents.mock.calls.map(([after]) => after)).t…
+       |                                                                      ^
+    155|     expect(value.projection.getSnapshot().entries.map(item => item.cur…
+    156|     expect(value.projection.getSnapshot()).toMatchObject({ cursor: 37,…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > accepts a visible page with a filtered tail and a final empty scanned page
+AssertionError: expected { scope: { …(5) }, …(13) } to match object { cursor: 3, error: null }
+(24 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "cursor": 3,
+-   "error": null,
++   "cursor": 0,
++   "error": "Activity cursor does not match the returned entries.",
+  }
+
+ ❯ apps/web/test/conversation-activity.test.ts:163:63
+    161|     value.port.readEvents.mockResolvedValueOnce(page([entry(1)], { nex…
+    162|       .mockResolvedValueOnce(page([], { nextCursor: 5, watermark: 5 })…
+    163|     await open(value); expect(value.projection.getSnapshot()).toMatchO…
+       |                                                               ^
+    164|     await value.projection.loadMore(); await value.projection.loadMore…
+    165|     expect(value.projection.getSnapshot()).toMatchObject({ cursor: 5, …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > accepts an entirely filtered terminal page and refreshes at the same exhausted cursor
+AssertionError: expected { scope: { …(5) }, …(13) } to match object { loaded: true, entries: [], …(3) }
+(21 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "cursor": 3,
++   "cursor": 0,
+    "entries": [],
+-   "error": null,
++   "error": "Activity cursor does not match the returned entries.",
+    "hasMore": false,
+-   "loaded": true,
++   "loaded": false,
+  }
+
+ ❯ apps/web/test/conversation-activity.test.ts:172:44
+    170|     const value = setup(); value.port.readEvents.mockResolvedValue(pag…
+    171|     await open(value); await value.projection.loadMore(); await value.…
+    172|     expect(value.projection.getSnapshot()).toMatchObject({ loaded: tru…
+       |                                            ^
+    173|     expect(value.port.readEvents.mock.calls.map(([after]) => after)).t…
+    174|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > deduplicates known overlaps while advancing beyond the last returned entry
+AssertionError: expected { scope: { …(5) }, …(13) } to match object { entries: [ { …(5) } ], …(2) }
+(23 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "cursor": 3,
++   "cursor": 1,
+    "entries": [
+      {
+        "createdAt": "2026-10-06T06:00:00Z",
+        "cursor": 1,
+        "id": "event-1",
+@@ -10,7 +10,7 @@
+          "id": "detail-1",
+          "title": "Reference 1",
+        },
+      },
+    ],
+-   "error": null,
++   "error": "Activity cursor does not match the returned entries.",
+  }
+
+ ❯ apps/web/test/conversation-activity.test.ts:178:44
+    176|     const value = setup(); await open(value);
+    177|     value.port.readEvents.mockResolvedValueOnce(page([entry(1)], { nex…
+    178|     expect(value.projection.getSnapshot()).toMatchObject({ entries: [e…
+       |                                            ^
+    179|   });
+    180|   it.each([
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > retains previous entries when overlapping identities conflict {"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"different","title":"Changed payload"}}
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > retains previous entries when overlapping identities conflict {"id":"different-event","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}}
+TypeError: entries.at is not a function
+ ❯ page apps/web/test/conversation-activity.test.ts:9:138
+
+ ❯ apps/web/test/conversation-activity.test.ts:206:49
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > refuses to backfill an unknown entry behind an already scanned filtered cursor
+AssertionError: expected { scope: { …(5) }, …(13) } to match object { entries: [], cursor: 3 }
+(24 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "cursor": 3,
++   "cursor": 0,
+    "entries": [],
+  }
+
+ ❯ apps/web/test/conversation-activity.test.ts:213:44
+    211|     const value = setup(); value.port.readEvents.mockResolvedValueOnce…
+    212|     value.port.readEvents.mockResolvedValueOnce(page([entry(2)], { nex…
+    213|     expect(value.projection.getSnapshot()).toMatchObject({ entries: []…
+       |                                            ^
+    214|     expect(value.projection.getSnapshot().error).toContain("conflicts"…
+    215|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/10]⎯
+
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > rejects reset when after 1 is not beyond watermark 1
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > rejects reset when after 1 is not beyond watermark 2
+AssertionError: the given combination of arguments (null and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ apps/web/test/conversation-activity.test.ts:220:50
+    218|     value.port.readEvents.mockResolvedValueOnce(page([], { reset: true…
+    219|     expect(value.projection.getSnapshot()).toMatchObject({ cursor: 1, …
+    220|     expect(value.projection.getSnapshot().error).toContain("reset"); e…
+       |                                                  ^
+    221|   });
+    222|   it.each([
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/10]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 failed | 34 passed (44)
+   Start at  00:02:40
+   Duration  564ms (transform 248ms, setup 0ms, import 382ms, tests 45ms, environment 0ms)
+

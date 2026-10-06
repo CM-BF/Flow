@@ -1,0 +1,82 @@
+{
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "活动列表已能越过过滤记录继续读取，分页护栏检查通过",
+      "next": "集成已审活动列表兼容修复",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "889f433ef6972e4feee95aa878f0dbaf7da30448",
+      "scopes": [
+        "apps/web/src/conversation-activity/projection.ts",
+        "apps/web/test/conversation-activity.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-ACTIVITYC01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/web-activity-cursor-compatibility",
+    "branchState": "COMPLETED",
+    "updatedAt": "2026-10-06T07:06:00.000Z",
+    "updatedRecord": "2026-10-06 07:06 UTC / 固定86a36eaeffbf09f0a3772c3d1509c17dc0a76f92",
+    "todos": [
+      {
+        "id": "WPF-ACTIVITYC01-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[输入来源](../../docs/evidence/wpf-activity-cursor-compatibility/input-provenance.json)、[领取](../../docs/evidence/wpf-activity-cursor-compatibility/take-receipt.json)、[质量](../../docs/evidence/wpf-activity-cursor-compatibility/quality.md)"
+      },
+      {
+        "id": "WPF-ACTIVITYC01-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "固定两处校验修正，原身份/重复/边界护栏保留"
+      },
+      {
+        "id": "WPF-ACTIVITYC01-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "44 direct + Web typecheck；红测/测试脚手架失误与最终绿测分开保留"
+      },
+      {
+        "id": "WPF-ACTIVITYC01-04",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "root固定target独立APPROVED、44 direct复审；已交manager，唯一source已请求登记，实际部署/聚合待回执"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "86a36eaeffbf09f0a3772c3d1509c17dc0a76f92 / 实际HEAD由Git聚合",
+    "declaredDirty": "两文件实现已固定；当前仅本任务metadata收口",
+    "checks": {
+      "state": "passed",
+      "target": "889f433ef6972e4feee95aa878f0dbaf7da30448",
+      "record": "PASSED 889f433ef6972e4feee95aa878f0dbaf7da30448；44 direct + Web typecheck；[验证](../../docs/evidence/wpf-activity-cursor-compatibility/validation.md)"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED 889f433ef6972e4feee95aa878f0dbaf7da30448",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "889f433ef6972e4feee95aa878f0dbaf7da30448"
+  }
+}
