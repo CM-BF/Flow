@@ -64,11 +64,11 @@ export async function heartbeat(pool: Pool, runnerId: string, ownership: Ownersh
     const live = (await client.query<{ live: boolean }>('SELECT $1::timestamptz>clock_timestamp() AS live', [attempt.lease_expires_at])).rows[0]!.live;
     if (!live || attempt.completed_at || task.status === 'uncertain') {
       if (!attempt.completed_at) await client.query("UPDATE flow.tasks SET status='uncertain',updated_at=clock_timestamp() WHERE id=$1 AND status<>'uncertain'", [task.id]);
-      return { action: 'stop', leaseExpiresAt: attempt.lease_expires_at.toISOString(), decision: null };
+      return { action: 'stop', leaseExpiresAt: attempt.lease_expires_at.toISOString(), remainingLeaseMs: 0, decision: null };
     }
     const updated = await client.query<AttemptRecord>("UPDATE flow.attempts SET last_heartbeat_at=clock_timestamp(),lease_expires_at=clock_timestamp()+$2 * interval '1 millisecond' WHERE id=$1 RETURNING *", [attempt.id, leaseMs]);
     const answer = task.pending_decision ? undefined : (await client.query<{ id: string; answer: DecisionAnswer['answer'] }>('SELECT id,answer FROM flow.decisions WHERE task_id=$1 AND answer IS NOT NULL ORDER BY answered_at DESC LIMIT 1', [task.id])).rows[0];
-    return { action: task.status === 'cancel_requested' ? 'cancel' : 'continue', leaseExpiresAt: updated.rows[0]!.lease_expires_at.toISOString(), decision: answer ? { decisionId: answer.id, answer: answer.answer } : null };
+    return { action: task.status === 'cancel_requested' ? 'cancel' : 'continue', leaseExpiresAt: updated.rows[0]!.lease_expires_at.toISOString(), remainingLeaseMs: leaseMs, decision: answer ? { decisionId: answer.id, answer: answer.answer } : null };
   });
 }
 export async function revoke(pool: Pool, runnerId: string): Promise<{ revoked: true }> {

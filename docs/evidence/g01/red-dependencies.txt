@@ -1,0 +1,38 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/project-graph
+
+ ❯ apps/server/src/projects/projects.test.ts (3 tests | 1 failed) 1050ms
+   ✓ persists personal workspace and a queryable empty project without submitting execution tasks 53ms
+   ✓ adds an unbound versioned node, retains old graph and replays one durable command result 24ms
+   × serializes opposite dependency proposals per project while another project keeps progressing 102ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/projects/projects.test.ts > serializes opposite dependency proposals per project while another project keeps progressing
+AssertionError: expected [ 400, 400 ] to deeply equal [ 200, 409 ]
+
+- Expected
++ Received
+
+  [
+-   200,
+-   409,
++   400,
++   400,
+  ]
+
+ ❯ apps/server/src/projects/projects.test.ts:108:63
+    106|     await blocker.query('COMMIT');
+    107|     const responses = await Promise.all(proposals);
+    108|     expect(responses.map(response => response.status).sort()).toEqual(…
+       |                                                               ^
+    109|     const winner: ProjectSnapshot = responses.find(response => respons…
+    110|     expect(winner.project.revision).toBe(b.snapshot.project.revision +…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  19:40:14
+   Duration  1.35s (transform 103ms, setup 0ms, import 221ms, tests 1.05s, environment 0ms)

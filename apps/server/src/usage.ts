@@ -1,5 +1,5 @@
 import type { PoolClient } from 'pg';
-import type { RunnerEvent, UsageTotals } from '@flow/contracts';
+import { isAuthoritativeUsageAllowed, type RunnerEvent, type UsageTotals } from '@flow/contracts';
 import { canonical, HttpError, sha256 } from './database.js';
 import type { AttemptRecord } from './runners.js';
 import type { TaskRecord } from './tasks.js';
@@ -9,8 +9,7 @@ type Sample = Omit<UsageEvent, 'id' | 'sequence'>;
 interface StoredSample { digest: string; sample: Sample; sample_id: string }
 function isAuthoritative(task: TaskRecord, sample: Sample): boolean {
   if (sample.accounting !== 'authoritative') return false;
-  const supported = sample.scope === 'session' && (task.submission.harness === 'fixture'
-    ? sample.source === 'fixture' : sample.source === 'claude.modelUsage' && Boolean(sample.model));
+  const supported = isAuthoritativeUsageAllowed(task.submission.harness, sample);
   if (!supported) throw new HttpError(400, 'unsupported_usage_source', 'This source cannot contribute authoritative usage.');
   return true;
 }

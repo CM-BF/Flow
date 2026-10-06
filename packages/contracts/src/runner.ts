@@ -1,9 +1,9 @@
 import { z } from 'zod';
-import { harnessSchema, idSchema, MAX_DETAIL_BYTES, MAX_BATCH_BYTES, type DecisionAnswer, type TaskSubmission, type AttemptView } from './tasks.js';
+import { harnessSchema, idSchema, MAX_DETAIL_BYTES, MAX_BATCH_BYTES, type DecisionAnswer, type TaskSubmission, type AttemptView, type HarnessName } from './tasks.js';
 
 export const registerRunnerSchema = z.strictObject({
   name: z.string().min(1).max(120),
-  harnesses: z.array(harnessSchema).min(1).max(2),
+  harnesses: z.array(harnessSchema).min(1).max(harnessSchema.options.length).refine(names => new Set(names).size === names.length, 'Harness names must be unique'),
   capacity: z.number().int().min(1).max(16).default(1),
 });
 export type RegisterRunner = z.input<typeof registerRunnerSchema>;
@@ -15,6 +15,7 @@ export interface ClaimResponse { assignment: ClaimedTask | null }
 export interface HeartbeatResponse {
   action: 'continue' | 'cancel' | 'stop';
   leaseExpiresAt: string;
+  remainingLeaseMs: number;
   decision: DecisionAnswer | null;
 }
 
@@ -50,7 +51,7 @@ export interface HarnessContext {
 }
 
 export interface HarnessAdapter {
-  name: 'fixture' | 'claude';
+  name: HarnessName;
   version: string;
   run(context: HarnessContext): Promise<void>;
 }

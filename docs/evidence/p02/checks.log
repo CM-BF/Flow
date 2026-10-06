@@ -1,0 +1,23 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch
+
+ ✓ apps/runner/src/protocol-dispatch/runtime.test.ts (8 tests) 10165ms
+   ✓ bound remote Task survives runner and center restart, then imports one version and independently verifies it  1399ms
+   ✓ a crash after the durable send permit but before its ACK does not dispatch or replay  1136ms
+   ✓ a crash after remote acceptance but before its ACK preserves an uncertain outcome and never resends  1173ms
+   ✓ a crash after binding commits but before its ACK recovers by GetTask without another SendMessage  1244ms
+   ✓ cancel acceptance remains pending across restart until the remote Task actually stops  1325ms
+   ✓ replays a persisted artifact ACK gap without duplicating its version and completes independent verification  1303ms
+   ✓ remote execution success does not conceal an independently failed text verifier  990ms
+   ✓ heartbeat loss stops remote observation and an expired attempt cannot be revived or dispatched again  1595ms
+ ✓ apps/server/src/protocol-dispatch/dispatch.test.ts (3 tests) 2741ms
+   ✓ one durable dispatch permit and binding survive center restart without another send permission  1006ms
+   ✓ recovery of a sending intent without remote ID becomes uncertain and never grants another send  868ms
+   ✓ binding and cancellation remain fenced; expiry cannot be revived by recovery  867ms
+
+ Test Files  2 passed (2)
+      Tests  11 passed (11)
+   Start at  19:48:59
+   Duration  13.45s (transform 118ms, setup 0ms, import 376ms, tests 12.91s, environment 0ms)
+
+JSON report written to /tmp/flow-p02-tests-final.json

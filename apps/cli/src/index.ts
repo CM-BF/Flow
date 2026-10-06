@@ -3,7 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { FlowClient, FlowApiError } from '@flow/client';
 import { watchTask, taskLine } from './watch.js';
-import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, type TaskSubmission } from '@flow/contracts';
+import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, projectCreationSchema, projectCommandSchema, type TaskSubmission } from '@flow/contracts';
 
 export interface CliIO { out(text: string): void; err(text: string): void }
 const defaultIO: CliIO = { out: text => process.stdout.write(`${text}\n`), err: text => process.stderr.write(`${text}\n`) };
@@ -12,11 +12,11 @@ export class UsageError extends Error {}
 const options = {
   help: { type: 'boolean', short: 'h' }, json: { type: 'boolean' },
   url: { type: 'string' }, title: { type: 'string' }, prompt: { type: 'string' },
-  harness: { type: 'string' }, scenario: { type: 'string' }, key: { type: 'string' },
+  harness: { type: 'string' }, endpoint: { type: 'string' }, scenario: { type: 'string' }, key: { type: 'string' },
   decision: { type: 'string' }, expect: { type: 'string' }, timeout: { type: 'string' },
   name: { type: 'string' }, capacity: { type: 'string' }, after: { type: 'string' },
   resume: { type: 'string' }, 'delay-ms': { type: 'string' },
-  before: { type: 'string' }, limit: { type: 'string' }, input: { type: 'string' },
+  revision: { type: 'string' }, before: { type: 'string' }, limit: { type: 'string' }, input: { type: 'string' },
 } as const;
 type Flags = ReturnType<typeof parseCliArgs>['values'];
 function parseCliArgs(args: string[]) { return parseArgs({ args, options, allowPositionals: true }); }
@@ -80,6 +80,7 @@ async function executeCommand(context: CommandContext): Promise<number> {
       print(result, taskLine(result));
       return 0;
     }
+    case 'protocol': { print(await client.protocolState(required(id, 'task ID'), context.signal)); return 0; }
     case 'detail': {
       const result = await client.detail(required(id, 'reference ID'));
       print(result, `${result.title}\n${result.content}`);
@@ -91,10 +92,34 @@ async function executeCommand(context: CommandContext): Promise<number> {
       print(await client.events(required(id, 'task ID'), after));
       return 0;
     }
+    case 'project': return projectCommand(context);
     case 'runner': return runnerCommand(context);
     case 'reconcile': return reconciliationCommand(context);
     default: throw new UsageError(`Unknown command: ${command}. Use --help.`);
   }
+}
+
+
+async function projectCommand({ client, values, positionals, io, signal }: CommandContext): Promise<number> {
+  const action = positionals[1];
+  let result: unknown;
+  switch (action) {
+    case 'workspaces': result = await client.workspaces(signal); break;
+    case 'list': result = await client.projects({ ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) }, signal); break;
+    case 'show': result = await client.project(required(positionals[2], 'project ID'), values.revision ? positiveNumber(values.revision, 'revision') : undefined, signal); break;
+    case 'create': result = await client.createProject(projectCreationSchema.parse({ title: required(values.title, '--title') }), required(values.key, '--key (stable command identifier)'), signal); break;
+    case 'change': {
+      const raw = await readFile(required(values.input, '--input JSON-file'), 'utf8');
+      if (Buffer.byteLength(raw) > 131_072) throw new UsageError('Project input must not exceed 128 KiB.');
+      let input: unknown;
+      try { input = JSON.parse(raw); } catch { throw new UsageError('--input must contain valid JSON.'); }
+      result = await client.changeProject(required(positionals[2], 'project ID'), projectCommandSchema.parse(input), required(values.key, '--key (stable command identifier)'), signal);
+      break;
+    }
+    default: throw new UsageError('Use project workspaces|list|show|create|change.');
+  }
+  io.out(JSON.stringify(result));
+  return 0;
 }
 
 async function reconciliationCommand({ client, values, positionals, io }: CommandContext): Promise<number> {
@@ -152,6 +177,7 @@ function submission(values: Flags, words: string[]): TaskSubmission {
     title: values.title ?? prompt.slice(0, 100), prompt, harness: values.harness ?? 'fixture',
     ...(values.scenario ? { fixture: { scenario: values.scenario, ...(values['delay-ms'] ? { delayMs: Number(values['delay-ms']) } : {}) } } : {}),
     ...(values.expect ? { verification: { kind: 'contains', expected: values.expect } } : {}),
+    ...(values.endpoint ? { protocol: { endpointRef: values.endpoint } } : {}),
     ...(values.resume ? { resumeSessionId: values.resume } : {}),
   });
 }
@@ -159,22 +185,28 @@ function submission(values: Flags, words: string[]): TaskSubmission {
 const HELP = `Flow — durable work, from your terminal
 
 Commands:
-  submit "prompt" [--title title] [--harness fixture|claude] [--key key]
+  submit "prompt" [--title title] [--harness fixture|claude|a2a] [--key key]
   list
   workspace [--after cursor | --before cursor] [--limit count]
   show <task-id>
   watch <task-id> [--timeout milliseconds]
   decision <task-id> approve|reject --decision <decision-id>
   cancel <task-id>
+  project workspaces|list
+  project create --title title --key stable-key
+  project show <project-id> [--revision number]
+  project change <project-id> --input JSON-file --key stable-key
+  protocol <task-id>
   detail <reference-id>
   events <task-id> [--after cursor]
   reconcile show <task-id> [--after audit-cursor]
   reconcile observe|resolve|retry <task-id> --input JSON-file --key stable-key
-  runner register --name name [--harness fixture|claude] [--capacity 1]
+  runner register --name name [--harness fixture|claude|a2a] [--capacity 1]
   runner revoke <runner-id>
 
 Options: --json emits machine-readable output; --url overrides FLOW_URL.
 Submit: --scenario success|decision|failure|verification-failure|slow|large
+        --endpoint configured-ref (required for a2a)
         --delay-ms milliseconds --expect text --resume native-session-id
 Authentication: FLOW_TOKEN. Center: FLOW_URL (default http://127.0.0.1:4310).
 Leaving watch only stops observation. Use cancel to request execution to stop.`;

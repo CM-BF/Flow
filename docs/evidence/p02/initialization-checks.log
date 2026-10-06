@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch
+
+ ✓ apps/runner/src/protocol-dispatch/runtime.test.ts (15 tests) 20306ms
+   ✓ bound remote Task survives runner and center restart, then imports one version and independently verifies it  1372ms
+   ✓ a crash after the durable send permit but before its ACK does not dispatch or replay  1193ms
+   ✓ a crash after remote acceptance but before its ACK preserves an uncertain outcome and never resends  1407ms
+   ✓ a crash after binding commits but before its ACK recovers by GetTask without another SendMessage  1235ms
+   ✓ cancel acceptance remains pending across restart until the remote Task actually stops  1369ms
+   ✓ replays a persisted artifact ACK gap without duplicating its version and completes independent verification  1362ms
+   ✓ remote execution success does not conceal an independently failed text verifier  1056ms
+   ✓ heartbeat loss stops remote observation and an expired attempt cannot be revived or dispatched again  1624ms
+   ✓ a lost center dispatch ACK times out even while heartbeats remain healthy, without remote replay  1941ms
+   ✓ production server, runner and CLI entry points dispatch and inspect one verified remote task  2406ms
+   ✓ an unwritable attempt directory stops the production runner without leaked heartbeat timers or a remote send  1239ms
+   ✓ invalid local endpoint missing-ref exits without dispatch or continuing heartbeats  1175ms
+   ✓ invalid local endpoint constructor exits without dispatch or continuing heartbeats  1160ms
+   ✓ invalid local endpoint toString exits without dispatch or continuing heartbeats  1159ms
+   ✓ invalid local endpoint bad-url exits without dispatch or continuing heartbeats  605ms
+
+ Test Files  1 passed (1)
+      Tests  15 passed (15)
+   Start at  19:58:55
+   Duration  20.64s (transform 112ms, setup 0ms, import 253ms, tests 20.31s, environment 0ms)
+
+JSON report written to /tmp/flow-p02-initialization-checks.json

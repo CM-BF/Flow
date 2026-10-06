@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-10-06T02:50:14.418889+00:00",
+  "sourceTarget": "572d6a095421074b2affe961cb78d82fd9e504ee",
+  "base": "72278b22ae81f551dc13d68da2fb45f2ef182038",
+  "node": "v24.20.0",
+  "platform": "Darwin arm64",
+  "officialPeerSdk": "@a2a-js/sdk@1.3.0",
+  "protocol": "A2A 1.0 JSONRPC",
+  "database": "flow_p02, PostgreSQL on 127.0.0.1:55432",
+  "testCounts": {
+    "centerHttp": 3,
+    "runnerProcess": 8,
+    "passed": 11
+  },
+  "modelCalls": 0,
+  "cloudCalls": 0,
+  "entryPoint": "apps/runner/src/protocol-dispatch/test-process.ts invokes public runProtocolRunner; product main mounting not yet tested",
+  "sourceSha256": {
+    "apps/runner/src/outbox.ts": "8116119e7249575111951ba8abc21b1933f3c45d86455d32e8febf27f1404db3",
+    "apps/runner/src/protocol-dispatch/configuration.ts": "4dc71454e1940eba85f20559435fe2dadd0090a1acea7a7d1cdeb2d0262f592d",
+    "apps/runner/src/protocol-dispatch/index.ts": "086bcb8918c77b316d611cfdeeef0e9cfc09fabf4a68342d00c87a19b7676001",
+    "apps/runner/src/protocol-dispatch/lease.ts": "46fb96c669563739e389694e718a4a50441ae82c0a5f48e385909c653dfc88bd",
+    "apps/runner/src/protocol-dispatch/materials.ts": "bd1da1e99f3956585a16a9bd6b59757bff1ecca9a09354f9f0004f9994c9a963",
+    "apps/runner/src/protocol-dispatch/official-peer.ts": "b6520e7d5030798f6b8ba8fd8321922163c66cb654fc3bd00c7cec9826efa783",
+    "apps/runner/src/protocol-dispatch/runtime.test.ts": "e5718b271ef3a38decdc1ef2e9b4198be9ec8e5b378da0464602ce65cb6b49ff",
+    "apps/runner/src/protocol-dispatch/test-process.ts": "67e2eedb41456efd6e8a6e5fcf71ea78d1260bb86866ded36b16b87e8d86ef18",
+    "apps/server/src/protocol-dispatch/dispatch.test.ts": "166b8724742d54ea86ee064fd91d04a3c42c65f0f4b0bae6e0f9ea8a4c6ff432",
+    "apps/server/src/protocol-dispatch/index.ts": "d69e32c3783c040a917315a6e98380ba71a6b684a5aaf29bf2e1add6020635c7",
+    "apps/server/src/protocol-dispatch/store.ts": "d573ddaa69e36fddaec45f14305fb1a5432bd8889c992991925e757eb224d560",
+    "apps/server/src/runners.ts": "45f004668785a5b316781fcc4abdab7599d6f93639a8636e610c843d1e731b1b",
+    "packages/client/src/index.ts": "bda68c8b82eb63a15d47abd332747d404157aa9e5ea9963a80e3d81a47c0ed72",
+    "packages/contracts/src/protocol-dispatch.ts": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea",
+    "packages/contracts/src/protocol-task.ts": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20",
+    "packages/storage/migrations/005-protocol-dispatch.sql": "85fd7b66d5110119a3282a74b6946f6ae37bf4eb9361340de2a72e6f6a57872f",
+    "pnpm-lock.yaml": "1b6003d239697a251788db016662083bc60babf50f1286ca0c640c3d42b15878"
+  },
+  "evidenceSha256": {
+    "cancel-fixture-initial-failure.log": "b93f07f3839d73b9e6181c221793c55e4d9d95a827abd5aa4be93d38a9a4a1df",
+    "center-initial-red.log": "a220024d199145ae2a634e33addca82a89112ce857fd674bc8cc07f77c37a903",
+    "checks.log": "57357d38e935912a93aa53c866f424253f6d75ed057f84210fcdf5714f54c33e",
+    "typecheck.log": "c1f68dca945a2ce7a31bb1bc24b7ac68d4a831d03628c63cc64388999ae715a4",
+    "checks.json": "04b765832a9e924bcc1a61593e6eb6283d0e2fda1ae808c964a95df4c0fcc03f"
+  }
+}

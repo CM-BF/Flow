@@ -1,6 +1,9 @@
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
 import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
+import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
 import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
+
+import type { WorkspaceList, ProjectCreation, ProjectCommand, ProjectList, ProjectSnapshot, ProjectMutationResult } from '@flow/contracts';
 
 export class FlowApiError extends Error {
   constructor(public readonly status: number, public readonly code: string, message: string) {
@@ -34,6 +37,22 @@ export class FlowClient {
     const query = new URLSearchParams();
     for (const name of ['after', 'before', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/workspace${query.size ? `?${query}` : ''}`, { signal });
+  }
+
+  workspaces(signal?: AbortSignal): Promise<WorkspaceList> { return this.request('/api/workspaces', { signal }); }
+  projects(options: { workspaceId?: string; after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<ProjectList> {
+    const query = new URLSearchParams();
+    for (const name of ['workspaceId', 'after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/projects${query.size ? `?${query}` : ''}`, { signal });
+  }
+  createProject(input: ProjectCreation, key: string, signal?: AbortSignal): Promise<ProjectMutationResult> {
+    return this.request('/api/projects', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  project(id: string, revision?: number, signal?: AbortSignal): Promise<ProjectSnapshot> {
+    return this.request(`/api/projects/${encodeURIComponent(id)}${revision === undefined ? '' : `?revision=${revision}`}`, { signal });
+  }
+  changeProject(id: string, input: ProjectCommand, key: string, signal?: AbortSignal): Promise<ProjectMutationResult> {
+    return this.request(`/api/projects/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   queryTasks(options: TaskIndexQuery = {}, signal?: AbortSignal): Promise<TaskIndexPage> {
@@ -82,6 +101,24 @@ export class FlowClient {
   claim(signal?: AbortSignal): Promise<ClaimResponse> { return this.request('/api/runner/claim', { method: 'POST', body: '{}', signal }); }
   heartbeat(ownership: Ownership, signal?: AbortSignal): Promise<HeartbeatResponse> { return this.request('/api/runner/heartbeat', { method: 'POST', body: JSON.stringify(ownership), signal }); }
   report(batch: EventBatch, signal?: AbortSignal): Promise<EventAcknowledgement> { return this.request('/api/runner/events', { method: 'POST', body: JSON.stringify(batch), signal }); }
+
+  protocolPrepare(input: ProtocolPrepare, signal?: AbortSignal): Promise<ProtocolState> {
+    return this.request('/api/runner/protocol/prepare', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  protocolBegin(input: ProtocolCommand, signal?: AbortSignal): Promise<ProtocolDispatchPermit> {
+    return this.request('/api/runner/protocol/begin', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  protocolBind(input: ProtocolBind, signal?: AbortSignal): Promise<ProtocolState> {
+    return this.request('/api/runner/protocol/bind', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  protocolUncertain(input: ProtocolUncertain, signal?: AbortSignal): Promise<ProtocolState> {
+    return this.request('/api/runner/protocol/uncertain', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  protocolStartCancel(input: ProtocolCommand, signal?: AbortSignal): Promise<ProtocolDispatchPermit> {
+    return this.request('/api/runner/protocol/cancel-start', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  protocolRecover(signal?: AbortSignal): Promise<ProtocolRecoverResponse> { return this.request('/api/runner/protocol/recover', { method: 'POST', body: '{}', signal }); }
+  protocolState(taskId: string, signal?: AbortSignal): Promise<ProtocolState | null> { return this.request(`/api/tasks/${encodeURIComponent(taskId)}/protocol`, { signal }); }
 
   async *watch(id: string, after = 0, signal?: AbortSignal): AsyncGenerator<EventPage> {
     const response = await fetch(`${this.baseUrl}/api/tasks/${encodeURIComponent(id)}/stream?after=${after}`, { headers: { Authorization: `Bearer ${this.token}`, Accept: 'text/event-stream' }, signal });

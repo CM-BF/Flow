@@ -68,3 +68,39 @@ it('reads an SSE update when CRLF separators span network chunks', async () => {
     await new Promise<void>(resolve => server.close(() => resolve()));
   }
 });
+
+it('carries protocol ownership and command correlation without retrying an uncertain response', async () => {
+  const requests: { path: string; body: unknown }[] = [];
+  const server = createServer(async (request, response) => {
+    expect(request.headers.authorization).toBe('Bearer runner-secret');
+    let body = '';
+    for await (const chunk of request) body += chunk;
+    requests.push({ path: request.url!, body: body ? JSON.parse(body) : null });
+    response.writeHead(request.url?.endsWith('/begin') ? 409 : 200, { 'Content-Type': 'application/json' });
+    response.end(JSON.stringify(request.url?.endsWith('/begin') ? { error: { code: 'dispatch_uncertain', message: 'Reconcile dispatch.' } } : {}));
+  }).listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  const client = new FlowClient({ baseUrl: `http://127.0.0.1:${(server.address() as AddressInfo).port}`, token: 'runner-secret' });
+  const ownership = { attemptId: 'attempt-1', ownerVersion: 2 };
+  const command = { ...ownership, commandId: 'command-1' };
+  try {
+    await client.protocolPrepare({ ...ownership, endpointDigest: 'a'.repeat(64) });
+    await expect(client.protocolBegin(command)).rejects.toMatchObject({ code: 'dispatch_uncertain', status: 409 });
+    await client.protocolBind({ ...command, remoteTaskId: 'remote-1' });
+    await client.protocolUncertain({ ...command, reason: 'send-result-unknown' });
+    await client.protocolStartCancel(command);
+    await client.protocolRecover();
+    await client.protocolState('task/1');
+    expect(requests).toEqual([
+      { path: '/api/runner/protocol/prepare', body: { ...ownership, endpointDigest: 'a'.repeat(64) } },
+      { path: '/api/runner/protocol/begin', body: command },
+      { path: '/api/runner/protocol/bind', body: { ...command, remoteTaskId: 'remote-1' } },
+      { path: '/api/runner/protocol/uncertain', body: { ...command, reason: 'send-result-unknown' } },
+      { path: '/api/runner/protocol/cancel-start', body: command },
+      { path: '/api/runner/protocol/recover', body: {} },
+      { path: '/api/tasks/task%2F1/protocol', body: null },
+    ]);
+    await expect(client.protocolRecover(AbortSignal.abort())).rejects.toThrow();
+    expect(requests).toHaveLength(7);
+  } finally { await new Promise<void>(resolve => server.close(() => resolve())); }
+});

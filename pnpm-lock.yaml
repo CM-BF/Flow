@@ -50,6 +50,9 @@ importers:
 
   apps/runner:
     dependencies:
+      '@a2a-js/sdk':
+        specifier: 1.3.0
+        version: 1.3.0(express@5.2.1)(pg@8.23.1)
       '@anthropic-ai/claude-agent-sdk':
         specifier: 0.3.290
         version: 0.3.290(@anthropic-ai/sdk@0.131.0(zod@4.6.5))(@modelcontextprotocol/sdk@1.32.1(zod@4.6.5))(zod@4.6.5)
@@ -59,6 +62,9 @@ importers:
       '@flow/contracts':
         specifier: workspace:*
         version: link:../../packages/contracts
+      '@flow/protocols':
+        specifier: workspace:*
+        version: link:../../packages/protocols
 
   apps/server:
     dependencies:
