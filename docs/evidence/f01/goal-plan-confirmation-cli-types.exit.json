@@ -1,0 +1,27 @@
+{
+  "startedAt": "2026-10-06T18:03:48.512012+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/f01/goal-plan-confirmation-cli-tsconfig.json",
+    "--pretty",
+    "false"
+  ],
+  "freeBytesBefore": 1716850688,
+  "sourceHashes": {
+    "apps/cli/src/index.ts": "59213e5987492581bde26dd4040bc5729b747d6614e418532884e1c334824449",
+    "apps/cli/src/goal-plan-confirmation.test.ts": "df168d192fa4bdb3fd1271ed2f8838571906fb5e95e98abbf07a615a2f2cbd22",
+    "apps/cli/README.md": "51394b9498562eb51185cbdeb45448d55ea33319537dd15690cd0e2c4bf363a3"
+  },
+  "headBefore": "bb7bdd5e1a4c344a4ae5e2664bc6ac3c68e61691",
+  "testsRerun": "focused types only; no tests",
+  "productPG": 0,
+  "provider": 0,
+  "exitCode": 0,
+  "stopReason": null,
+  "durationSeconds": 1.0766089159296826,
+  "stdout": "goal-plan-confirmation-cli-types.stdout.txt",
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

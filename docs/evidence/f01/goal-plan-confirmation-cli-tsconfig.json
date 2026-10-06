@@ -1,0 +1,11 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false
+  },
+  "include": [
+    "../../../apps/cli/src/goal-plan-confirmation.test.ts"
+  ],
+  "exclude": []
+}
