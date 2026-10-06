@@ -19,12 +19,12 @@ export function parseImplementation(target, record) {
   return { target: fullSha.test(target) ? target : null, scopes: [...new Set(scopes)], errors };
 }
 
-async function tree(directory, target, scopes) {
+async function tree(directory, target, scopes, requireEveryPath = true) {
   if ((await git(directory, 'cat-file', '-t', target)).trim() !== 'commit') throw new Error('目标不是 commit');
   const entries = [];
   for (const scope of scopes) {
     const files = pathsFrom(await git(directory, 'ls-tree', '-r', '-z', '--full-tree', target, '--', `:(literal)${scope}`));
-    if (!files.length) throw new Error(`目标中不存在实现路径：${scope}`);
+    if (!files.length && requireEveryPath) throw new Error(`目标中不存在实现路径：${scope}`);
     entries.push(...files);
   }
   return [...new Set(entries)].sort().join('\0');
@@ -50,16 +50,34 @@ export async function compareImplementation(directory, target, head, implementat
 
 export async function integrationProof(task, mainDirectory, main) {
   const declaration = task.status.implementation;
-  const result = { record: task.status.mainRecord || '未记录 main 集成事实。', recordedHead: task.status.mainRecord?.match(/[a-f0-9]{40}/)?.[0] ?? null, target: declaration?.target ?? null, mainHead: main.head, observedAt: main.observedAt, current: false, method: 'unknown' };
-  if (!main.available || main.branch !== 'main' || !declaration?.target || declaration.errors.length) return { ...result, reason: '实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成' };
+  const result = {
+    record: task.status.mainRecord || '未记录 main 集成事实。',
+    recordedHead: task.status.mainRecord?.match(/[a-f0-9]{40}/)?.[0] ?? null,
+    target: declaration?.target ?? null, mainHead: main.head, scopes: declaration?.scopes ?? [],
+    observedAt: main.observedAt, current: false, historicalIntegrated: false, method: 'unknown',
+  };
+  if (!main.available || main.branch !== 'main' || !declaration?.target || declaration.errors.length) {
+    return { ...result, reason: '实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成' };
+  }
   try {
     const sourceTree = await tree(task.worktree, declaration.target, declaration.scopes);
     try {
       await git(mainDirectory, 'merge-base', '--is-ancestor', declaration.target, main.head);
-      return { ...result, current: true, method: 'ancestor', reason: '实现目标是现场 main HEAD 的祖先；不要求 owner 重写每次 main metadata HEAD' };
-    } catch { /* Squashed/copy integrations need exact declared scope evidence. */ }
-    if (task.implementationProof?.state !== 'unchanged') return { ...result, reason: '无法以祖先关系证明，且 owner 实现范围存在变化或未知' };
-    const mainTree = await tree(mainDirectory, main.head, declaration.scopes);
-    return { ...result, current: sourceTree === mainTree, method: sourceTree === mainTree ? 'scope-tree' : 'not-contained', reason: sourceTree === mainTree ? '目标与 main 的声明范围 Git 树相同；范围以外不作保证' : 'main 尚未包含目标，声明范围树也不同' };
+      result.historicalIntegrated = true;
+    } catch { /* Non-ancestor integrations still require exact scope evidence. */ }
+    if (!result.historicalIntegrated && task.implementationProof?.state !== 'unchanged') {
+      return { ...result, reason: '无法以祖先关系证明，且 owner 实现范围存在变化或未知' };
+    }
+    const [mainTree, dirty, untracked] = await Promise.all([
+      tree(mainDirectory, main.head, declaration.scopes, false),
+      git(mainDirectory, 'diff', '--name-only', '-z', '--no-renames', 'HEAD', '--'),
+      git(mainDirectory, 'ls-files', '--others', '--exclude-standard', '-z'),
+    ]);
+    const dirtyScopePaths = [...new Set([...pathsFrom(dirty), ...pathsFrom(untracked)])].filter(file => covers(declaration.scopes, file));
+    const scopeEqual = sourceTree === mainTree;
+    if (!scopeEqual || dirtyScopePaths.length) {
+      return { ...result, scopeEqual, dirtyScopePaths, method: result.historicalIntegrated ? 'ancestor-changed' : 'not-contained', reason: result.historicalIntegrated ? '历史已合入；当前声明范围已有变化或未提交内容，需核验后继实现，不判断新实现失效' : 'main 声明范围与目标不同，或存在未提交变化' };
+    }
+    return { ...result, current: true, scopeEqual, dirtyScopePaths, method: result.historicalIntegrated ? 'ancestor' : 'scope-tree', reason: result.historicalIntegrated ? '目标已合入，现场声明范围树仍相同；无关 main metadata 更新不影响此结论' : '目标与 main 的声明范围 Git 树相同；范围以外不作保证' };
   } catch (error) { return { ...result, reason: error.message.split('\n')[0] }; }
 }

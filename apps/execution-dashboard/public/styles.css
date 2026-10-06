@@ -588,3 +588,13 @@ pre {
     scroll-behavior:auto!important;
   }
 }
+
+.other-activity {
+  margin-top: 14px;
+  font-size: 12px;
+}
+.other-activity > summary {
+  cursor: pointer;
+  color: var(--muted);
+  min-height: 28px;
+}

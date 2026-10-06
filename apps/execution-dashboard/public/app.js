@@ -18,7 +18,11 @@ function plain(value = '') { return value.replace(/!?\[([^\]]+)\]\([^)]*\)/g, '$
 function timestamp(value) { return value ? new Date(value).toLocaleString('zh-CN', { hour12: false }) : '未记录'; }
 function stateBadge(value) { const states = { completed: ['已完成', 'good'], pending: ['待开始', ''], 'in-progress': ['进行中', 'active'], blocked: ['阻塞', 'bad'] }; const key = value?.match(/^[a-z-]+/)?.[0]; return badge(...(states[key] ?? ['未知', 'warning'])); }
 function reviewBadge(task) { if (!task.current) return badge('待同步', 'warning'); const states = { approved: ['已审范围未变', 'good'], not_started: ['待审查', ''], changes_requested: ['需修复', 'bad'], outdated: ['待复审', 'warning'], unknown: ['未知', 'warning'] }; return badge(...(states[task.review.state] ?? states.unknown)); }
-function mainBadge(task) { return task.main.current ? badge(task.main.method === 'ancestor' ? '实现已合入' : '范围与 main 相同', 'good') : badge('集成待核实'); }
+function mainBadge(task) {
+  if (!task.current) return badge('来源待核实');
+  if (task.main.current) return badge(task.main.method === 'ancestor' ? '已合入，范围未变' : '范围与 main 相同', 'good');
+  return badge(task.main.historicalIntegrated ? '曾合入，当前待核验' : '集成待核实');
+}
 let snapshot;
 let selectedTask;
 let documentRequest;
@@ -57,10 +61,13 @@ function render() {
   $('#phase-note').textContent = view.phase ? '每项进展都能打开原始记录。' : '负责人补充阶段摘要后显示；现有计划仍可查看。';
   const active = tasksFor(view.activeIds);
   $('#active-work').replaceChildren(...(active.length ? active.map(task => compactTask(task, task.status.human.output)) : [element('p', '暂无已明确记录的进行中事项。', 'empty-state')]));
+  $('#other-activity').hidden = !view.otherActiveIds.length;
+  $('#other-activity-count').textContent = view.otherActiveIds.length;
+  $('#other-activity-items').replaceChildren(...tasksFor(view.otherActiveIds).map(task => compactTask(task, task.status.human?.complete ? task.status.human.output : `摘要待补；已记录 ${task.progress.completed ?? '?'} / ${task.progress.total ?? '?'} 项完成`)));
   $('#next-deliveries').replaceChildren(...(view.deliveryIds.length ? tasksFor(view.deliveryIds).map(task => compactTask(task, task.status.human.next)) : [element('p', '下一交付摘要待负责人补充。', 'empty-state')]));
   renderSignal('#decisions', view.decisionIds, 'decision', '已明确的记录中，没有需要你决定的事项。');
   renderSignal('#blockers', view.blockerIds, 'blocker', '已明确的记录中，暂无当前阻塞。');
-  $('#decision-note').textContent = view.unknownIds.length ? `${view.unknownIds.length} 项记录的摘要或来源仍待补齐，详见下方。` : '全部登记来源已提供当前摘要。';
+  $('#decision-note').textContent = view.unknownIds.length ? `${view.unknownIds.length} 项未完成记录的摘要或来源仍待补齐，详见下方。` : '未完成记录已提供当前摘要；历史记录见下方。';
   $('#unknown-count').textContent = view.unknownIds.length;
   $('#unknown-items').replaceChildren(...tasksFor(view.unknownIds).map(task => compactTask(task, task.current ? `摘要待补：${task.status.human?.missing.join('、') || '字段待核对'}` : '来源待同步，当前情况未知')));
   $('#history-count').textContent = view.historyIds.length;

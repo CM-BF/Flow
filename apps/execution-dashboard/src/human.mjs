@@ -22,17 +22,22 @@ export function parseHuman(field) {
 }
 
 export function humanOverview(tasks) {
-  const known = tasks.filter(task => task.current && task.status.human?.complete);
   const completed = task => /^completed(?:$|[（(;；\s])/.test(task.status.branchState ?? '');
-  const sorted = [...known].sort((a, b) => a.status.human.priority - b.status.human.priority || a.id.localeCompare(b.id));
-  const active = sorted.filter(task => /^in-progress(?:$|[（(;；\s])/.test(task.status.branchState ?? ''));
+  const activeState = task => /^(?:in-progress|blocked)(?:$|[（(;；\s])/.test(task.status.branchState ?? '');
+  const priorityOrder = (a, b) => (a.status.human?.priority ?? 9) - (b.status.human?.priority ?? 9) || a.id.localeCompare(b.id);
+  const known = tasks.filter(task => task.current && task.status.human?.complete).sort(priorityOrder);
+  const active = known.filter(task => /^in-progress(?:$|[（(;；\s])/.test(task.status.branchState ?? ''));
+  const featured = active.slice(0, 3);
+  const featuredIds = new Set(featured.map(task => task.id));
+  const otherActive = tasks.filter(task => task.current && activeState(task) && !featuredIds.has(task.id)).sort(priorityOrder);
   return {
-    phase: [...new Set(sorted.filter(task => !completed(task)).map(task => task.status.human.phase))].join(' / ') || null,
-    activeIds: active.slice(0, 3).map(task => task.id),
-    deliveryIds: sorted.filter(task => !completed(task) || !task.main.current).slice(0, 3).map(task => task.id),
+    phase: [...new Set(known.filter(task => !completed(task)).map(task => task.status.human.phase))].join(' / ') || null,
+    activeIds: featured.map(task => task.id),
+    otherActiveIds: otherActive.map(task => task.id),
+    deliveryIds: known.filter(task => !completed(task) || !task.main.current).slice(0, 3).map(task => task.id),
     blockerIds: tasks.filter(task => task.current && task.status.human?.blocker.state === 'active').map(task => task.id),
     decisionIds: tasks.filter(task => task.current && task.status.human?.decision.state === 'active').map(task => task.id),
-    unknownIds: tasks.filter(task => !task.current || !task.status.human?.complete).map(task => task.id),
+    unknownIds: tasks.filter(task => !completed(task) && (!task.current || !task.status.human?.complete)).map(task => task.id),
     historyIds: tasks.filter(completed).map(task => task.id),
   };
 }

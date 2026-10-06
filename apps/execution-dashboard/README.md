@@ -59,7 +59,7 @@ node --input-type=module -e "import {defaultRegistry} from './apps/execution-das
 node apps/execution-dashboard/src/server.mjs --config /tmp/flow-dashboard-registry.json
 ```
 
-main 的 HEAD / branch / dirty 单独只读观察。实现目标是现场 main HEAD 的祖先时显示“实现已合入”；没有祖先关系时，只能用经过核验的声明范围树相同证明“范围与 main 相同”。不要求每次无关 main metadata 更新后重写所有 owner 状态；owner 的历史 main 记录仍在详情保留。只读 Git 设置 `GIT_OPTIONAL_LOCKS=0`，不刷新其他 owner index。
+main 的 HEAD / branch / dirty 单独只读观察。实现目标是现场 main HEAD 的祖先且声明范围树仍相同、无该范围 dirty 时显示“已合入，范围未变”；后继修改/删除/未提交实现显示“曾合入，当前待核验”；没有祖先关系时，只能用经过核验的声明范围树相同证明“范围与 main 相同”。不要求每次无关 main metadata 更新后重写所有 owner 状态；owner 的历史 main 记录仍在详情保留。只读 Git 设置 `GIT_OPTIONAL_LOCKS=0`，不刷新其他 owner index。
 
 ## 事实与未知
 
@@ -117,4 +117,4 @@ status 顶部同一 metadata 表中添加以下字段，不另建状态文件：
 
 缺失、UNKNOWN、无效字段显示摘要待补；不会提取“阻塞 / 风险 / 未验证”段落拼成当前阻塞。`无`、`无新增事项`兼容为 NONE；ACTIVE/REQUIRED 后也不能仅写无。某项摘要不完整时，仍能单独展示有效明确的 ACTIVE/REQUIRED，但未知本身不会变成阻塞/决定。来源不新鲜时不采信其当前事项。
 
-实现范围不允许绝对路径、..、.git、反斜杠、glob 或 pathspec magic。每条范围必须存在于实现目标。新增未跟踪代码在范围外也会阻止 metadata-only 推断。范围树证明仅覆盖声明范围；祖先证明表示提交已入历史，不承诺后续 main 没有修改。详情保留 proof 方法、完整目标、现场 SHA、范围、变化文件及观察时间。WPF-001 按父计划固定范围登记，不扩展为任意资料读取；既有计划子目录内直接引用资料可下钻。
+实现范围不允许绝对路径、..、.git、反斜杠、glob 或 pathspec magic。每条范围必须存在于实现目标。新增未跟踪代码在范围外也会阻止 metadata-only 推断。范围树证明仅覆盖声明范围；historicalIntegrated 仅表示提交已入历史；current 还要求当前声明范围树相同（含新增/删除）且该范围无未提交变化。后继变化不表示新实现失效，只表示该目标无法证明当前范围。详情保留 proof 方法、完整目标、现场 SHA、范围、变化文件及观察时间。WPF-001 按父计划固定范围登记，不扩展为任意资料读取；既有计划子目录内直接引用资料可下钻。

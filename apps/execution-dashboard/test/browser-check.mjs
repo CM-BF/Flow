@@ -29,7 +29,12 @@ try {
   assert.ok(await page.locator('#active-work .task-row').count() <= 3);
   const live = await (await page.request.get(`http://127.0.0.1:${report.livePort}/api/snapshot`)).json();
   report.liveSources = live.tasks.map(task => ({ id: task.id, head: task.git.head, dirty: task.git.dirty, current: task.current, missing: task.status.human?.missing, reviewTarget: task.review.target, review: task.review.state, mainMethod: task.main.method }));
-  report.checks.push('实际 20 权威源；当前工作最多 3 项；完成历史和摘要缺口默认收起');
+  if (live.overview.otherActiveIds.length) {
+    await page.locator('#other-activity > summary').click();
+    assert.equal(await page.locator('#other-activity-items .task-row').count(), live.overview.otherActiveIds.length);
+    await page.locator('#other-activity > summary').click();
+  }
+  report.checks.push('top3 以外活动任务可展开，历史缺摘要不计当前缺口；实际 20 权威源；当前工作最多 3 项；完成历史和摘要缺口默认收起');
   for (const size of [{ label: 'desktop', width: 1440, height: 1000 }, { label: 'narrow', width: 390, height: 844 }]) {
     await page.setViewportSize({ width: size.width, height: size.height });
     for (const theme of ['light', 'dark']) {
@@ -76,25 +81,30 @@ try {
   await sample.goto(f.url); await ready(sample);
   assert.equal(await sample.locator('#decisions .task-row').count(), 0);
   assert.match(await sample.locator('#blockers').innerText(), /等待隔离环境测试文件/);
-  assert.equal(await sample.locator('#unknown-count').textContent(), '1');
+  assert.equal(await sample.locator('#unknown-count').textContent(), '0');
   assert.equal(await sample.locator('#history-count').textContent(), '1');
   assert.doesNotMatch(await sample.locator('body').innerText(), /DO_NOT_SHOW_ENGINEERING_TEXT|历史已解除|cap=1/);
   await sample.locator('#all-plans > summary').click();
   assert.equal(await sample.getByText('已审范围未变', { exact: true }).count(), 1);
-  assert.equal(await sample.getByText('实现已合入', { exact: true }).count(), 1);
+  assert.equal(await sample.getByText('已合入，范围未变', { exact: true }).count(), 1);
   await sample.locator('#all-plans > summary').click();
   const sampleShot = 'fixture-current-blocker.png'; await sample.screenshot({ path: path.join(output, sampleShot), fullPage: true }); report.screenshots.push(sampleShot);
-  await sample.locator('#unknown-section > summary').click(); assert.match(await sample.locator('#unknown-items').innerText(), /摘要待补/);
   await sample.locator('#history-section > summary').click(); assert.match(await sample.locator('#history-items').innerText(), /任务 T02/);
   await f.writeStatus(task, { ...options, human: { ...human, 当前阻塞: 'UNKNOWN', 需用户决定: 'REQUIRED: 选择用于交付的区域' } });
-  await refresh(sample); assert.equal(await sample.locator('#blockers .task-row').count(), 0); assert.match(await sample.locator('#decisions').innerText(), /选择用于交付的区域/);
+  await refresh(sample); assert.equal(await sample.locator('#unknown-count').textContent(), '1');
+  await sample.locator('#unknown-section > summary').click(); assert.match(await sample.locator('#unknown-items').innerText(), /摘要待补/);
+  assert.equal(await sample.locator('#blockers .task-row').count(), 0); assert.match(await sample.locator('#decisions').innerText(), /选择用于交付的区域/);
   await f.writeStatus(task, options); commit(task); await refresh(sample); await sample.locator('#all-plans > summary').click();
   assert.equal(await sample.getByText('已审范围未变', { exact: true }).count(), 1);
   await writeFile(path.join(task.worktree, 'apps/demo/new.js'), 'new untracked implementation'); await refresh(sample);
   assert.equal(await sample.getByText('待复审', { exact: true }).count(), 1);
   await rm(path.join(task.worktree, 'apps/demo/new.js')); await refresh(sample);
   assert.equal(await sample.getByText('已审范围未变', { exact: true }).count(), 1);
-  report.checks.push('隔离真实 HTTP/Git 样本：NONE 不算决定，ACTIVE 才是阻塞，UNKNOWN 不算阻塞，REQUIRED 决定；历史折叠、缺字段待补；metadata 保留审查、未跟踪实现变更要求复审、main 祖先证明');
+  await writeFile(path.join(f.registry.mainWorktree, 'apps/demo/main.js'), 'changed successor implementation');
+  commit({ worktree: f.registry.mainWorktree }); await refresh(sample);
+  assert.equal(await sample.getByText('曾合入，当前待核验', { exact: true }).count(), 1);
+  assert.equal(await sample.getByText('已合入，范围未变', { exact: true }).count(), 0);
+  report.checks.push('隔离真实 HTTP/Git 样本：NONE 不算决定，ACTIVE 才是阻塞，UNKNOWN 不算阻塞，REQUIRED 决定；历史折叠、缺字段待补；metadata 保留审查、未跟踪实现变更要求复审、main 祖先+范围证明、后继实现变化不继承绿色');
   const injected = '<img src=x onerror="window.pwned=true"><script>window.pwned=true</script>';
   await f.writeStatus(task, { ...options, human: { ...human, 当前产出: injected }, owner: injected }); await refresh(sample);
   assert.match(await sample.locator('#active-work').innerText(), /<script>/); assert.equal(await sample.locator('img[src="x"]').count(), 0);

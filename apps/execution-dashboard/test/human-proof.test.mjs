@@ -127,3 +127,42 @@ test('executable files under docs are not silently treated as metadata', async c
   assert.equal(result.review.state, 'unknown');
   assert.deepEqual(result.review.proof.outsideChanges, ['docs/new-script.mjs']);
 });
+
+test('top three never hide other active work, while historical missing summaries stay in history', async () => {
+  const { humanOverview } = await import('../src/human.mjs');
+  const { parseStatus } = await import('../src/status.mjs');
+  const { status } = await import('./fixture.mjs');
+  const tasks = Array.from({ length: 6 }, (_, i) => {
+    const task = { id: `T0${i + 1}`, branch: `codex/t0${i + 1}` };
+    return { ...task, current: true, main: { current: false }, status: parseStatus(status(task, { ...(i < 4 ? { human } : {}), branchState: i === 5 ? 'completed' : 'in-progress' }), task.id) };
+  });
+  const overview = humanOverview(tasks);
+  assert.deepEqual(overview.activeIds, ['T01', 'T02', 'T03']);
+  assert.deepEqual(overview.otherActiveIds, ['T04', 'T05']);
+  assert.deepEqual(overview.unknownIds, ['T05']);
+  assert.deepEqual(overview.historyIds, ['T06']);
+});
+
+test('historical main ancestry cannot approve later implementation changes, deletions or dirty paths', async context => {
+  const f = await implementationFixture(context); commit(f.task);
+  git(f.registry.mainWorktree, 'fetch', f.task.worktree, f.target);
+  git(f.registry.mainWorktree, '-c', 'user.name=Test', '-c', 'user.email=test@example.invalid', 'merge', '--allow-unrelated-histories', '--no-edit', 'FETCH_HEAD');
+  const mainFile = path.join(f.registry.mainWorktree, 'apps/demo/main.js');
+  await writeFile(mainFile, 'export const value = 2;\n');
+  let result = first(await aggregate(f.registry, now));
+  assert.equal(result.main.current, false); assert.equal(result.main.historicalIntegrated, true);
+  assert.deepEqual(result.main.dirtyScopePaths, ['apps/demo/main.js']);
+  commit({ worktree: f.registry.mainWorktree });
+  result = first(await aggregate(f.registry, now));
+  assert.equal(result.main.current, false); assert.equal(result.main.method, 'ancestor-changed');
+  assert.equal(result.main.scopeEqual, false);
+  await rm(mainFile); commit({ worktree: f.registry.mainWorktree });
+  result = first(await aggregate(f.registry, now));
+  assert.equal(result.main.current, false); assert.equal(result.main.historicalIntegrated, true);
+  assert.equal(result.main.method, 'ancestor-changed');
+  await writeFile(mainFile, 'export const value = 1;\n'); commit({ worktree: f.registry.mainWorktree });
+  await writeFile(path.join(f.registry.mainWorktree, 'apps/demo/new.js'), 'untracked addition');
+  result = first(await aggregate(f.registry, now)); assert.equal(result.main.current, false);
+  await rm(path.join(f.registry.mainWorktree, 'apps/demo/new.js'));
+  result = first(await aggregate(f.registry, now)); assert.equal(result.main.current, true);
+});
