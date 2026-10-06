@@ -1,0 +1,79 @@
+{
+  "observedAt": "2026-10-06T07:46:41.533283+00:00",
+  "target": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+  "operator": "assignment_review",
+  "authorization": "GO RESUME_GO SVC02-b54-resume-0745 via Execution Lead",
+  "priorPausedEvidenceCommit": "b19e4b7787f96c6aad4bced26649417d73d534ec",
+  "priorManifest": {
+    "path": "docs/evidence/svc02/refresh-b54-deployment-manifest.json",
+    "bytes": 9613,
+    "sha256": "8304ee5718ab2ae3ae83f96de1c76b4b086928d24b719966cacf4636e6461841"
+  },
+  "sources": [
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 8113,
+      "sha256": "edc5a1f67fe6cbbbff1e7e2d85e5a9b01e886be0de08594a52ea89897e06e899"
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/evidence/svc02/refresh-b54-before-resume-facts.json",
+      "bytes": 15097,
+      "sha256": "3699cae3d5de9791f93b4f5d7ef86a10b2633da076556c20fbf33fc5fbc616eb"
+    },
+    {
+      "path": "docs/evidence/svc02/refresh-b54-resume-prechecks.json",
+      "bytes": 533,
+      "sha256": "023cc07de4a780b336471ed020c36434f77f1cdb4e6b656359e3bd26ca7b6cdb"
+    },
+    {
+      "path": "docs/evidence/svc02/refresh-b54-resume.json",
+      "bytes": 254,
+      "sha256": "e58b79039d3e839a3608e2393499d8d9cc75d1d761a22bed87ecbe3e5443ab7a"
+    },
+    {
+      "path": "docs/evidence/svc02/refresh-b54-resume.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc02/refresh-b54-after-resume-facts.json",
+      "bytes": 15056,
+      "sha256": "5f76dc4e5df869182a07bb2762e80049204ecb4a65c859d51d306568eca08b1e"
+    },
+    {
+      "path": "docs/evidence/svc02/refresh-b54-resume-checks-initial.json",
+      "bytes": 724,
+      "sha256": "e3bef028739995103f47a5dbb05cb28945e170390b8dbc5db3f8d80cdd4ccf17"
+    },
+    {
+      "path": "docs/evidence/svc02/refresh-b54-resume-checks.json",
+      "bytes": 1053,
+      "sha256": "17c373d2f8617f80e7e00b4f29da52133ac7cdd7b65d0f897ff8592c16c83d50"
+    },
+    {
+      "path": "docs/evidence/svc02/refresh-b54-resume-result.md",
+      "bytes": 1981,
+      "sha256": "be52b219d9054390f9a140cdca4b83fd7ab9cbec5c17414be5e2853307901d92"
+    }
+  ],
+  "resumeExitCode": 0,
+  "resumeWallTimeSeconds": 0.147260292,
+  "resumeCount": 1,
+  "finalMaintenanceState": "accepting",
+  "finalMaintenanceVersion": 6,
+  "operationId": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1",
+  "currentOperationIdCleared": true,
+  "operatorSubmittedTasks": 0,
+  "providerQueries": 0,
+  "userTabsTouched": false,
+  "engineeringTestsRerun": false,
+  "window": "CLOSED",
+  "firstCheckerFailurePreserved": true
+}

@@ -2,23 +2,23 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 06:53:51 UTC |
-| 单一status owner / model | runner_owner / gpt-6-astra |
+| 最近更新时间 | 2026-10-06 07:46 UTC |
+| 单一status owner / model | assignment_review / gpt-6-astra；原实现作者runner_owner |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh |
 | Branch | codex/preview-refresh |
-| 工作基线 / HEAD | base6b4b89f397b35d7e769846df457e76bb29f4a265；固定实现9aa790552cb8847d6feb8c8f90c870407a54e572 |
-| 工作树dirty状态 | 实现冻结不变；本次仅主线接收/运行交接事实与释放metadata |
-| 工作分支状态 | completed |
+| 工作基线 / HEAD | 本次操作基线253b8ad38fd869297e7d9948a26c1d310fef5c6c；原实现9aa790552cb8847d6feb8c8f90c870407a54e572已完成；63bd到253b受控ff |
+| 工作树dirty状态 | 工具源码冻结；本次操作与证据收口提交后clean |
+| 工作分支状态 | completed；原实现与本次b54更新/显式恢复均完成 |
 | 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 9aa790552cb8847d6feb8c8f90c870407a54e572：9 PG/HTTP + 12 host/直接消费者；host源d122到target仅缩进，tsc通过 |
 | Review | APPROVED 9aa790552cb8847d6feb8c8f90c870407a54e572：Root独立只读，未重跑 |
-| 已集成main状态 / HEAD | 已集成fb906cb（05:36观察）；本次核main/origin 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a，9aa为祖先且本owner保留范围零diff；运行安装仍fb906cb accepting，后续已验收2个成功任务（Lead本次交接事实，非新探测） |
+| 已集成main状态 / HEAD | 原维护实现9aa已集成；实际安装于07:45:26核sourceAtStart b54de1dbb08e3ccc7d33a27295a318f2799e76ae；显式恢复accepting v6，此为时点观察不追逐后继metadata |
 | 实现目标 | 9aa790552cb8847d6feb8c8f90c870407a54e572 |
 | 实现范围 | packages/contracts/src/runner-maintenance.ts, apps/server/src/runner-maintenance/, apps/server/src/runners.ts, packages/storage/migrations/016-runner-maintenance.sql, tools/personal-preview/ |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 常驻预览已安全更新并恢复接收任务，原访问地址和数据保留 |
-| 下一可用交付 | 本片段已交付；后续更新按新的维护窗口执行 |
+| 当前产出 | b54已更新并经GO显式恢复接收，v6；三服务就绪，原任务/队列保留 |
+| 下一可用交付 | 本次部署窗口已关闭；后继任务由Lead另行派工 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 架构影响 | 新持久runner维护状态与尝试领取门禁；待Lead同步固定架构视图 |
@@ -29,6 +29,9 @@
 | SVC02-02 | completed | runner_owner | bootstrap/refresh/resume真实自有服务；无第二中心bootstrap |
 | SVC02-03 | completed | runner_owner | 9+12、tsc、完整失败保留与自有资源清理 |
 | SVC02-04 | completed | Lead / runner_owner | Root分步批准窗口与恢复；fb906cb bootstrap/refresh/resume完成，v3 accepting，原始回执已固定 |
+| SVC02-05 | completed | assignment_review | [新方案](../../docs/evidence/svc02/refresh-b54-proposal.md)、[固定源码证明](../../docs/evidence/svc02/refresh-b54-manifest.json)；b54产品等价253b，07:28全库只读事实 |
+| SVC02-06 | completed | assignment_review | 依赖由Lead离线固定锁补齐后，07:39 bootstrap→hold→refresh b54；[回执](../../docs/evidence/svc02/refresh-b54-refresh.json)，维护暂停v5；[固定保留说明](../../docs/evidence/svc02/refresh-b54-result.md)与[manifest](../../docs/evidence/svc02/refresh-b54-deployment-manifest.json)已完成 |
+| SVC02-07 | completed | assignment_review | GO RESUME_GO SVC02-b54-resume-0745；一次fresh/一次resume，07:45:23 accepting v6；[恢复证据](../../docs/evidence/svc02/refresh-b54-resume-result.md)，窗口CLOSED |
 
 06:53 UTC fresh核claim e8a8767c-4387-4c03-93a6-02153bb491c4 v2仍归本owner；无当前修复，源码/服务操作已停止，本次metadata提交后release，外部实际回执为 `/tmp/flow-svc02-release-receipt.json`。未来配置/部署需新take和明确维护窗口；[初始receipt](../../docs/evidence/svc02/claim.json)、[移交领取入口receipt](../../docs/evidence/svc02/claim-amend-runners-receipt.json)。05:36:59Z显式停写并原子移出 apps/server/src/runners.ts，后继K02由Lead协调领取；其余6scope此前为部署证据与回修保留，现本片交付后释放。历史实现范围仍按已审target追溯，不表示未来写权。截至05:37仅只读；05:38经Root窗口批准，由本owner唯一执行bootstrap/refresh，现保持maintenance；0新query。
 
@@ -55,3 +58,15 @@
 ## 本次停止持有
 
 2026-10-06 06:53:51 UTC：核main/origin 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a含9aa，runner-maintenance领域/合同/016/tools保留范围对已审实现零diff。runners.ts早已交回，后继修改不套本次旧批准。Lead确认实际安装仍fb906cb accepting，2个任务已独立验收成功；这是交接事实，本次没有请求服务/DB状态、refresh或模型。历史05:40零任务保留原时间，不改写原始回执。clean-code仅核当前/历史措辞与链接；无新测试。
+
+2026-10-06 07:27 UTC：Lead派工仅准备；新claim d582c0ca-4812-45da-978b-2ad91b403140 v1已原子take，唯一owner改为assignment_review。3literal范围为tools/personal-preview（源码只读/操作协调）、本plan目录、svc02证据目录。原实现与旧部署均保持completed；本次是新窗口准备，0停止/0query/不刷新用户tabs。
+
+2026-10-06 07:33 UTC：本次候选b54已由Lead冻结；作者仅核一次固定源码等价/同源hash，未再采样DB。07:28事实为2 succeeded、全库未完attempt0、唯一受管runner accepting v3、queue仅promoted、配置/marker/三组/监听身份匹配；完整脱敏原始事实保存。初次SQL42703 unknown保留，不把修正查询称产品修复。新窗口和resume均NOT_GRANTED，现态快照不是停止许可；已知单部署依据不升级为理论隐藏部署的新确认。
+
+2026-10-06 07:37 UTC：GO窗口经Lead EXECUTE/QUIET_RELEASE已于07:36解除测量占用；实际main b54 clean。07:37:12首预检发现三个runtime依赖不可解析，明确停止在任何新DB采样/bootstrap/drain/stop之前；0query。tw-animate-css已安装但只有CSS导出条件，非缺包，不混入三个运行依赖。未安装或借global/其他feature树。
+
+2026-10-06 07:43 UTC：已按GO窗口完成更新，实际source b54、maintenance v5、同operation 22adf2ed-3ae1-4e51-8247-3f14776ac8f1，全库未完/uncertain 0。依赖阻塞已由Lead固定锁离线安装解决，原失败保留。三自有进程/健康/监听/私有配置与native目录核对通过；五表全行摘要不变，四表整行摘要差异由018/021五种新增nullable列引起，新增值全NULL。固定旧字段摘要相同，仅queue_checked_at采样前已排除；无原文前值副本，不声称其逐值相等。正在固化详细表/列/ID与manifest；未resume、0模型、不刷新tabs。
+
+2026-10-06 07:45 UTC：固定部署证据收口，23 source/21 evidence 的 bytes/SHA256 已绑定b54；实际main clean、工具未改。固定018/021新增列解释与全保留ID集合均已列明，原失败/原完整行hash差异保留。GO认为现有摘要证据精度足够；本owner未再采样或补造原值。等待GO显式resume，当前仅drain→hold，不恢复派发。
+
+2026-10-06 07:46 UTC：显式恢复已完成，短回执已交Root/Lead，窗口CLOSED。一次前置/一次resume/一次后置，0主动任务/模型/tab。首次checker误要求accepting仍持operation造成false，按原store清NULL语义使用同份sample解释，未重试服务动作；初始false保留。当前claim暂留交付metadata，工具继续停写。

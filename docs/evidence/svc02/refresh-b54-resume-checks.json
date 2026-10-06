@@ -1,0 +1,28 @@
+{
+  "observedAt": "2026-10-06T07:45:26.418Z",
+  "authorization": "GO RESUME_GO SVC02-b54-resume-0745 via Execution Lead",
+  "target": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+  "operationId": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1",
+  "checks": {
+    "observed": true,
+    "source": true,
+    "sameOwnedReady": true,
+    "listeners": true,
+    "healthy": true,
+    "fullUnfinishedZero": true,
+    "tasksUnchanged": true,
+    "queueUnchanged": true,
+    "rowDigestsUnchanged": true,
+    "identity": true,
+    "acceptingV6": true,
+    "configStillExpected": true,
+    "localOperationCompleted": true
+  },
+  "passed": true,
+  "resumeCount": 1,
+  "operatorTaskSubmissions": 0,
+  "operatorProviderQueries": 0,
+  "userTabsTouched": false,
+  "window": "CLOSED",
+  "initialValidationCorrection": "Initial checker incorrectly required the active operation ID after accepting. Fixed b54 store.ts:51-55 intentionally clears current operation to null on accepting; audit retains input operation. No service retry or new sample; original false result retained."
+}
