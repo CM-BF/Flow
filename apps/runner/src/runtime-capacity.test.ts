@@ -23,6 +23,11 @@ async function eventually(condition: () => boolean | Promise<boolean>) {
 function held(context: HarnessContext): Promise<void> {
   return new Promise(resolve => { if (context.signal.aborted) resolve(); else context.signal.addEventListener('abort', () => resolve(), { once: true }); });
 }
+function deferred() {
+  let resolve!: () => void;
+  const promise = new Promise<void>(complete => { resolve = complete; });
+  return { promise, resolve };
+}
 async function peer(total = 8, capacity = 16) {
   const workingDirectory = await mkdtemp(join(tmpdir(), 'flow-runtime-pool-'));
   const batches: EventBatch[] = [], notices: RunnerNotice[] = [];
@@ -81,7 +86,7 @@ async function peer(total = 8, capacity = 16) {
 function adapter(run: HarnessAdapter['run']): HarnessAdapter { return { name: 'fixture', version: '1', run }; }
 
 it('defaults to one slot and explicitly overlaps four attempts without exceeding the local limit', async () => {
-  const serial = await peer(); const release = Promise.withResolvers<void>(); let active = 0, peak = 0;
+  const serial = await peer(); const release = deferred(); let active = 0, peak = 0;
   const run = async (context: HarnessContext) => { active++; peak = Math.max(peak, active); try { await Promise.race([release.promise, held(context)]); } finally { active--; } };
   const first = serial.start(adapter(run)); await eventually(() => active === 1); await sleep(50); expect(serial.assigned).toBe(1); first.shutdown.abort(); await first.promise;
   const parallel = await peer(); const second = parallel.start(adapter(run), { maxConcurrentAttempts: 4 });
@@ -90,7 +95,7 @@ it('defaults to one slot and explicitly overlaps four attempts without exceeding
 });
 
 it('honors a lower center capacity and isolates one adapter failure from other slots', async () => {
-  const api = await peer(4, 2); const release = Promise.withResolvers<void>(); let started = 0, survivors = 0;
+  const api = await peer(4, 2); const release = deferred(); let started = 0, survivors = 0;
   api.start(adapter(async context => { started++; if (context.task.prompt === '1') throw new Error('Only this adapter failed.'); survivors++; try { await Promise.race([release.promise, held(context)]); } finally { survivors--; } }), { maxConcurrentAttempts: 4 });
   try { await eventually(() => api.outcomes.get('attempt-1') === 'failed' && survivors === 2); } catch (error) { throw new Error(JSON.stringify({ assigned: api.assigned, claims: api.claims, outcomes: [...api.outcomes], survivors, notices: api.notices }), { cause: error }); }
   expect(started).toBe(3); expect(api.peak).toBe(2); release.resolve(); await eventually(() => api.outcomes.size === 4);
@@ -129,7 +134,7 @@ it('stops every slot on event storage failure even if the adapter catches the re
 });
 
 it('persists an unknown claim, lets a known slot finish, and refuses another claim after restart', async () => {
-  const api = await peer(); const release = Promise.withResolvers<void>(); let entered = 0;
+  const api = await peer(); const release = deferred(); let entered = 0;
   api.claim((index, response) => { if (index === 2) { response.destroy(); return true; } return false; });
   const first = api.start(adapter(async context => { entered++; await Promise.race([release.promise, held(context)]); }), { maxConcurrentAttempts: 4 });
   await eventually(() => api.claims === 2); release.resolve(); await eventually(() => api.outcomes.size === 1);
@@ -145,7 +150,7 @@ it('does not send a claim when its durable intent cannot be saved', async () => 
 });
 
 it('never replays an active outbox while another slot is being admitted', async () => {
-  const api = await peer(2); const reported = Promise.withResolvers<void>(); let firstResponse: ServerResponse | undefined;
+  const api = await peer(2); const reported = deferred(); let firstResponse: ServerResponse | undefined;
   api.report((batch, response) => { if (batch.attemptId === 'attempt-1' && batch.events[0]?.type === 'message') { firstResponse = response; reported.resolve(); return true; } return false; });
   const running = api.start(adapter(async context => { if (context.task.prompt === '1') await context.emit({ type: 'message', text: 'held ACK' }); await held(context); }), { maxConcurrentAttempts: 2, requestTimeoutMs: 1000 });
   await reported.promise; await eventually(() => api.assigned === 2); await sleep(50);
@@ -210,7 +215,7 @@ async function realCenter(capacity: number) {
 it.each([1, 4])('real PG/HTTP enforces registered capacity %s with a local four-slot pool', async capacity => {
   const api = await realCenter(capacity); const ids: string[] = [];
   for (let i = 0; i < capacity + 1; i++) ids.push(await api.submit(`capacity-${i}`));
-  let active = 0, peak = 0; const release = Promise.withResolvers<void>();
+  let active = 0, peak = 0; const release = deferred();
   const execution = api.start(adapter(async context => {
     active++; peak = Math.max(peak, active);
     try { await Promise.race([release.promise, held(context)]); context.signal.throwIfAborted(); await context.assertOwnership(); }
@@ -231,7 +236,7 @@ it('real PG/HTTP preserves native-session exclusion across overlapping local slo
     { id: randomUUID(), sequence: 2, type: 'completed', outcome: 'succeeded' },
   ] });
   await api.submit('same-session-a', session); await api.submit('same-session-b', session);
-  let active = 0, peak = 0, entered = 0; const release = Promise.withResolvers<void>();
+  let active = 0, peak = 0, entered = 0; const release = deferred();
   const execution = api.start(adapter(async context => {
     expect(context.task.resumeSessionId).toBe(session); entered++; active++; peak = Math.max(peak, active);
     try { await Promise.race([release.promise, held(context)]); context.signal.throwIfAborted(); }
@@ -245,7 +250,7 @@ it('real PG/HTTP preserves native-session exclusion across overlapping local slo
 
 it('real PG/HTTP keeps draining and uncertain occupancy authoritative while other slots settle', async () => {
   const api = await realCenter(2); const first = await api.submit('expires'); const second = await api.submit('finishes'); const queued = await api.submit('retained queued');
-  let entered = 0; const finish = Promise.withResolvers<void>();
+  let entered = 0; const finish = deferred();
   const execution = api.start(adapter(async context => {
     entered++; if (context.task.prompt === 'expires') await held(context);
     else await Promise.race([finish.promise, held(context)]);
@@ -324,7 +329,7 @@ it('settles all slots when a goal tool consumer catches its own authorization re
 });
 
 it('keeps a goal permission denial local while a second known attempt continues', async () => {
-  const api = await peer(2); let entered = 0, localDenial = false, secondAborted = false; const release = Promise.withResolvers<void>();
+  const api = await peer(2); let entered = 0, localDenial = false, secondAborted = false; const release = deferred();
   api.assignment(value => ({ ...value, goalToolRun: { id: 'grant-test', version: 1 }, task: { ...value.task, harness: 'claude', executionProfile: { id: randomUUID(), runnerId: value.attempt.runnerId, configDigest: '0'.repeat(64) } } }));
   api.route((path, response, body) => {
     if (path.endsWith('/grant')) { response.end(JSON.stringify({ id: 'grant-test', version: 1, taskId: String(body.attemptId).replace('attempt-', 'task-'), mode: 'claude', revokedAt: null, goalId: 'goal-test',
