@@ -1,0 +1,157 @@
+{
+  "observedAt": "2026-10-06T15:21:48.894Z",
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+        "id": "FLOW-001",
+        "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Execution Lead",
+        "value": "Execution Lead"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "完整提案的显式权限与一次确认事务已固定；纯检查通过，数据库验证仍待资源窗口。",
+      "next": "用户可一次审阅并确认完整输入，由中心按已授权依赖推进。",
+      "blocker": {
+        "state": "active",
+        "text": "本机磁盘低于保留线，数据库验收等待Lead与Web协调窗口；源码工作可继续。"
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+      "scopes": [
+        "packages/contracts/src/goal-graph-proposals.ts",
+        "packages/contracts/src/goal-plan-confirmation.ts",
+        "packages/contracts/src/goal-graph-runs.ts",
+        "apps/server/src/goal-plan-confirmation/index.ts",
+        "apps/server/src/goal-plan-confirmation/store.ts",
+        "apps/server/src/goal-plan-confirmation/confirmation.test.ts",
+        "apps/server/src/goal-plan-confirmation/fixture.ts",
+        "apps/server/src/goal-progression/store.ts",
+        "apps/server/src/goal-progression/progression.test.ts",
+        "apps/server/src/goal-graph-proposals/proposals.test.ts",
+        "apps/server/src/goal-graph-runs/store.ts",
+        "apps/server/src/goal-graph-runs/runner.ts",
+        "apps/server/src/goal-graph-runs/runs.test.ts",
+        "apps/runner/src/goal-graph-tools/mcp.ts",
+        "apps/runner/src/goal-graph-tools/mcp.test.ts",
+        "packages/storage/migrations/031-goal-plan-confirmations.sql"
+      ],
+      "errors": []
+    },
+    "taskId": "O15",
+    "owner": "native_center_owner / gpt-6-astra",
+    "branch": "codex/goal-input-confirmation",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T15:21:36.000Z",
+    "updatedRecord": "2026-10-06 15:21:36 UTC",
+    "todos": [
+      {
+        "id": "O15-01",
+        "state": "completed",
+        "owner": "native_center_owner",
+        "evidence": "首合同b214d582；[Interface](../../docs/evidence/o15/interface.md)"
+      },
+      {
+        "id": "O15-02",
+        "state": "in-progress",
+        "owner": "native_center_owner",
+        "evidence": "权限与single-TX组合候选已写，等待真PG验证"
+      },
+      {
+        "id": "O15-03",
+        "state": "pending",
+        "owner": "native_center_owner",
+        "evidence": "PG窗口待Lead/Web协调，源码与纯检查可独立继续"
+      },
+      {
+        "id": "O15-04",
+        "state": "pending",
+        "owner": "Execution Lead",
+        "evidence": "固定后独审/main"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458 / 9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2（固定实现候选；PG待验）",
+    "declaredDirty": "固定产品候选已提交推送；本次仅状态元数据更新",
+    "checks": {
+      "state": "not_run",
+      "target": null,
+      "record": "NOT_RUN：PG验收未执行；SDK6+schema1不同检查通过、权限首red保留，domain及测试类型修复后roottypes0"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "未集成；固定base af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED",
+    "target": "af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458"
+  },
+  "comparison": {
+    "target": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+    "head": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
+    "scopes": [
+      "packages/contracts/src/goal-graph-proposals.ts",
+      "packages/contracts/src/goal-plan-confirmation.ts",
+      "packages/contracts/src/goal-graph-runs.ts",
+      "apps/server/src/goal-plan-confirmation/index.ts",
+      "apps/server/src/goal-plan-confirmation/store.ts",
+      "apps/server/src/goal-plan-confirmation/confirmation.test.ts",
+      "apps/server/src/goal-plan-confirmation/fixture.ts",
+      "apps/server/src/goal-progression/store.ts",
+      "apps/server/src/goal-progression/progression.test.ts",
+      "apps/server/src/goal-graph-proposals/proposals.test.ts",
+      "apps/server/src/goal-graph-runs/store.ts",
+      "apps/server/src/goal-graph-runs/runner.ts",
+      "apps/server/src/goal-graph-runs/runs.test.ts",
+      "apps/runner/src/goal-graph-tools/mcp.ts",
+      "apps/runner/src/goal-graph-tools/mcp.test.ts",
+      "packages/storage/migrations/031-goal-plan-confirmations.sql"
+    ],
+    "observedAt": "2026-10-06T15:21:48.828Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "plans/o15-goal-input-confirmation/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "firstMetadataCheck": {
+    "result": "failed assertion in ad hoc checker",
+    "cause": "Accessed nonexistent human.deliveryStage instead of actual human.delivery.state. Parser and product unchanged.",
+    "toolChunk": "55f2c1",
+    "processExit": 1
+  },
+  "correctedMetadataCheck": {
+    "result": "passed",
+    "processExit": 0
+  }
+}

@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:13:29 UTC |
+| 最近更新 | 2026-10-06 15:21:36 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation |
 | Branch | codex/goal-input-confirmation |
-| 工作基线 / HEAD | af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458 / b214d582ce83490d6c92b8e1d4ce632190e5a3ab（首DTO；领域候选见工作树） |
-| 工作树dirty状态 | 权限/事务组合与局部测试已写；验证窗口待安排 |
+| 工作基线 / HEAD | af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458 / 9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2（固定实现候选；PG待验） |
+| 工作树dirty状态 | 固定产品候选已提交推送；本次仅状态元数据更新 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 实现目标 | 尚未固定完整产品 |
+| 实现目标 | 9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2 |
 | 实现范围 | packages/contracts/src/goal-graph-proposals.ts, packages/contracts/src/goal-plan-confirmation.ts, packages/contracts/src/goal-graph-runs.ts, apps/server/src/goal-plan-confirmation/index.ts, apps/server/src/goal-plan-confirmation/store.ts, apps/server/src/goal-plan-confirmation/confirmation.test.ts, apps/server/src/goal-plan-confirmation/fixture.ts, apps/server/src/goal-progression/store.ts, apps/server/src/goal-progression/progression.test.ts, apps/server/src/goal-graph-proposals/proposals.test.ts, apps/server/src/goal-graph-runs/store.ts, apps/server/src/goal-graph-runs/runner.ts, apps/server/src/goal-graph-runs/runs.test.ts, apps/runner/src/goal-graph-tools/mcp.ts, apps/runner/src/goal-graph-tools/mcp.test.ts, packages/storage/migrations/031-goal-plan-confirmations.sql |
 | 检查状态 | NOT_RUN：PG验收未执行；SDK6+schema1不同检查通过、权限首red保留，domain及测试类型修复后roottypes0 |
 | 已集成main状态 / HEAD | 未集成；固定base af9768c78e6e3ee9f7d10c6c238c8e0a99ea9458 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 完整提案的显式权限与一次确认事务已实现；纯检查通过，正在准备数据库边界验证。 |
+| 当前产出 | 完整提案的显式权限与一次确认事务已固定；纯检查通过，数据库验证仍待资源窗口。 |
 | 下一可用交付 | 用户可一次审阅并确认完整输入，由中心按已授权依赖推进。 |
 | 当前阻塞 | ACTIVE: 本机磁盘低于保留线，数据库验收等待Lead与Web协调窗口；源码工作可继续。 |
 | 需用户决定 | NONE |
