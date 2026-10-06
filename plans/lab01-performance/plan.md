@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 | --- | --- |
-| 计划编号 / 状态 | LAB01 / completed（分支交付，独立review待执行） |
+| 计划编号 / 状态 | LAB01 / completed（分支交付，固定实现独立review通过） |
 | 创建 / 更新 | 2026-10-06 / 2026-10-06 |
 | Owner / model | assignment_review / gpt-6-astra |
 | Worktree / branch | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/performance-probes` / `codex/performance-probes` |
@@ -31,6 +31,6 @@ B：128个模拟agent接收同一有限事件序列。逐事件更新DOM，对�
 
 ## 验收与限制
 
-先验证一致性才接受性能数字，记录机器/浏览器/计时器精度/当前并行噪声和原始数据。仅报告p50/p95，不报p99。结果待[review](review.md)独立复核；[status](status.md)是唯一手填进度源，main状态单列。
+先验证一致性才接受性能数字，记录机器/浏览器/计时器精度/当前并行噪声和原始数据。仅报告p50/p95，不报p99。结果已由Execution Lead按[review](review.md)固定实现独立复核；[status](status.md)是唯一手填进度源，main状态单列。
 
 2026-10-06实质记录：全部88个含预热样本有效、四图已查看；[结果报告](../../docs/evidence/lab01/README.md)显示本负载无长任务瓶颈，DOM批量写入减少但帧等待增加完成时间。不增加事件量；CLI额外smoke未做。实测机器为M3 Max，不冒称M1结果。
