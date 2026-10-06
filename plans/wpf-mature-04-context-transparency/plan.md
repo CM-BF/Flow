@@ -51,7 +51,7 @@ GO/用户已授权该方向及规划实施。首片规划已固定，mika随后�
 ## 稳定 TODO 与阶段交付
 
 - [x] **WPF-MATURE-04-01** 固定权威计划、原子 claim、源码/依赖差距和全部用户验收；首片文档自查、commit/push，独立 review 保持 NOT_STARTED。
-- [ ] **WPF-MATURE-04-02** 确定上下文测量公有合同和精确 writable scope；独立实现 schema/纯投影，覆盖 unknown、不可比、材料版本、模型变化及超限。
+- [x] **WPF-MATURE-04-02** 确定上下文测量公有合同和精确 writable scope；独立实现 schema/纯投影，覆盖 unknown、不可比、材料版本、模型变化及超限；879c989a594a8f4f266b9a78a885e311c52eca0d，30/30与局部strict noEmit，待独立review。
 - [ ] **WPF-MATURE-04-03** 实现受 ownership 保护的中心观测持久化与 owner 读取；提供去重/重放/过期/重启/权限证据，保留已有 usage 与全文隔离。
 - [ ] **WPF-MATURE-04-04** 接入受支持 harness 的实际容量/当前窗口/压缩来源与估算方法；unsupported 明确 unknown，唯一压缩 owner 与结果/原文 refs 可追溯。
 - [ ] **WPF-MATURE-04-05** d01 管理的 Web 插件消费中心 Interface，覆盖草稿/执行/换模型/材料变化、过期、超限、双主题/窄屏及按需详情；不重复传全文。

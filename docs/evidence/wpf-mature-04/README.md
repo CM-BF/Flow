@@ -24,3 +24,5 @@ pnpm exec tsc --noEmit -p /tmp/wpf-mature-04-tsconfig.json
 行为覆盖：unknown/zero、SDK estimate来源、billing source拒绝、数值/证据约束、derived准确度；两窗口分离、partial/不可比/过期/未来/身份变化失效、next-turn settingsRevision与队列/attempt冻结、harness隔离、精确bytes但tokens未知、重复/损坏receipt拒绝、deferred/free/buffer不重算、压缩缺失不猜测、引用/全文边界及响应上限。单个正常snapshot序列化被断言低于65536bytes，未进行生产吞吐或模型精度benchmark。
 
 文件SHA256与实际selected/pass记录见[implementation-check.json](implementation-check.json)；来源/版本见[source baseline](source-baseline.md)、[SDK hashes](sdk-source-hashes.json)；claim v2见[amend](amend-receipt.json)。独立review由mika接收固定commit后执行，目前NOT_STARTED。
+
+固定实现target：`879c989a594a8f4f266b9a78a885e311c52eca0d`。交付完整diff的空白检查对Vitest原始txt输出报告了结尾空行及一条源摘录尾空白；这些原始输出原样保留。代码/Markdown/JSON排除txt后的diff检查另核，不把原始日志空白警告写成全部diff通过，也不删改失败日志。
