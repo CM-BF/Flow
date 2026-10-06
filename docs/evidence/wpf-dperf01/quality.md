@@ -14,4 +14,8 @@
 
 实际发现并处理：基线同目标比较两次，Trace2计29次Git启动；最小复用后一次比较、24次启动。新增4项行为全通过，涵盖异目标、下一次快照、dirty/deletion/restoration/untracked、missing target/scope/review与恢复。相关26项中的旧registry-count断言失败（54≠28）属于固定输入且范围外，保留原始失败并交管理，不删测试或扩claim。
 
-生产范围仍只有aggregate.mjs；proof/registry/human/rootmanifest/rootlock均基线diff0。未解项：独立审查及主线集成待完成；本次计数不能代表真实看板壁钟性能，未做真实服务性能测量。连续实施不足30分钟，没有到期安全停点遗漏。
+生产范围仍只有aggregate.mjs；proof/registry/human/rootmanifest/rootlock均基线diff0。当时未解项：独立审查及主线集成待完成（独审现已完成，见下段）；本次计数不能代表真实看板壁钟性能，未做真实服务性能测量。连续实施不足30分钟，没有到期安全停点遗漏。
+
+## 2026-10-06 05:09 UTC 独立审查闭环
+
+root正式批准固定实现5cd7f00dbe091785b2b7be9cb2b03d33f2af8c52，无blocking；另行4项Node24测试PASS与Trace2 24/1。审查后无实现修复需要，最终clean-code检查保持最小分支与行为测试，不扩cache/测量框架。作者26项关联结果25通过/1既有失败保持原状；独立审查没有把该失败删除或改判。此停点仅文档，不重复产品/性能检查。集成待Lead，保留领取权以便具体review修复。
