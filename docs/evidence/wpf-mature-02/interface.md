@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [附件生产挂载CHANGES_REQUESTED反馈](attachment-production-review.md)：固定69eb2476仅新test资源生命周期1 P2；独立于下方已APPROVED薄client，修复交原owner。
+
 - [C诊断v2最小日志/解析候选](fd-canary-v2/README.md)：固定851fd8c7，26/26局部受影响检查通过/9未选，0新增compiler/target，等待独审及后继新预算。旧6d窗口保持FAIL/0target并已封存。
 
 - [附件薄client APPROVED回执](attachment-client-review.md)：实现ab1bcb与metadata bea11 raw分别绑定，Lead可读取该唯一review收据。
