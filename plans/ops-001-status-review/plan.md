@@ -22,3 +22,5 @@
 ## 验证和交付
 
 通过公共Interface验证可观察行为，模型模拟和真实模型证据分开记录。检查和证据必须附对应commit；未经验证不勾选。Owner在启动、实质进展、阻塞、交付和review修复后更新[status.md](status.md)，交付后由独立reviewer按[review.md](review.md)只读审查，修复交回owner。分支通过不代表已经集成main。
+
+- [x] **OPS-001-05** 用户完整目标滚动规则、22项原要求验收追溯与C02/P01/M02来源登记；2026-10-06新增，工程检查见status。

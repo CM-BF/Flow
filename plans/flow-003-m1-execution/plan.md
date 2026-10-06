@@ -234,3 +234,5 @@ W01与D01由用户外部分队完成：W01 b04df958（批准实现866c20e），D
 M1是持久执行基础，当前Web为薄任务观察/决策页，不能当最终“一个地方线性交流、跨任务解释与决策”已实现。M2优先统一跨任务入口，任务页作为下钻；固定多任务验收记录切换次数、重复问题、人介入时间。
 
 独立架构健康review（6434fba，无阻断M1项）与后续P2见[工程质量台账](../../docs/quality/architecture-health-2026-10-06.md)。harness/usage来源集中在接Pi前；runner当前有效并发1，在S01前再实现有界并发；observer读量先诊断，不凭推算优化。dashboard metadata/review与main观察SHA管理噪声留受控后续项，不为凑全绿反复刷新所有owner文件。
+
+2026-10-06 02:05 UTC：用户明确完成整个计划，本plan的M1完成状态保留，后续批次由 [完整验收矩阵](../flow-001-architecture/full-plan-matrix.md)持续追踪。C02/P01/M02实际开工；每项完成后进入验收/集成和下一ready工作，不再以“至M1”为授权终点。

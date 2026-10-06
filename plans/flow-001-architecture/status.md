@@ -19,8 +19,8 @@
 | --- | --- | --- | --- |
 | FLOW-001-T01 | completed | Execution Lead | 本文或既有已归档证据；见下方边界 |
 | FLOW-001-T02 | completed | Execution Lead | [M1系统旅程](../../docs/evidence/i01/m1-system.md)与独立review已通过，main14fea3d已集成 |
-| FLOW-001-T03 | pending | Execution Lead | 未完成，无通过结论 |
-| FLOW-001-T04 | pending | Execution Lead | 未完成，无通过结论 |
+| FLOW-001-T03 | in-progress | Execution Lead | 完整范围见[验收矩阵](full-plan-matrix.md)，尚未完成 |
+| FLOW-001-T04 | pending | Execution Lead | 完整范围见[验收矩阵](full-plan-matrix.md)，尚未完成 |
 
 ## 已完成证据与检查
 
@@ -44,3 +44,7 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 ## 结构质量与后续入口
 
 [架构健康台账](../../docs/quality/architecture-health-2026-10-06.md)记录三个工程P2和dashboard管理噪声；无阻断M1项。M2优先统一跨任务解释/决策入口，当前Web任务页只作下钻基础。
+
+## 2026-10-06 02:05 UTC 完整目标恢复执行
+
+main/origin/main已核验e845eb069c594989117fadf380335650efef27a2 clean，M1完成不是全目标完成。C02 runner_owner、P01 assignment_review已从此基线实际启动；Lead M02公共基础0046db3通过8/8接口检查。新任务在独立worktree更新自己的status；[完整验收矩阵](full-plan-matrix.md)覆盖21项原要求/证据缺口/滚动依赖。当前执行两worker已满载，无新增用户决定。后续所有原要求保持未验证标记，新的真实模型实验预算另行明确。
