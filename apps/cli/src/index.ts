@@ -12,7 +12,7 @@ export class UsageError extends Error {}
 const options = {
   help: { type: 'boolean', short: 'h' }, json: { type: 'boolean' },
   url: { type: 'string' }, title: { type: 'string' }, prompt: { type: 'string' },
-  harness: { type: 'string' }, scenario: { type: 'string' }, key: { type: 'string' },
+  harness: { type: 'string' }, endpoint: { type: 'string' }, scenario: { type: 'string' }, key: { type: 'string' },
   decision: { type: 'string' }, expect: { type: 'string' }, timeout: { type: 'string' },
   name: { type: 'string' }, capacity: { type: 'string' }, after: { type: 'string' },
   resume: { type: 'string' }, 'delay-ms': { type: 'string' },
@@ -80,6 +80,7 @@ async function executeCommand(context: CommandContext): Promise<number> {
       print(result, taskLine(result));
       return 0;
     }
+    case 'protocol': { print(await client.protocolState(required(id, 'task ID'), context.signal)); return 0; }
     case 'detail': {
       const result = await client.detail(required(id, 'reference ID'));
       print(result, `${result.title}\n${result.content}`);
@@ -152,6 +153,7 @@ function submission(values: Flags, words: string[]): TaskSubmission {
     title: values.title ?? prompt.slice(0, 100), prompt, harness: values.harness ?? 'fixture',
     ...(values.scenario ? { fixture: { scenario: values.scenario, ...(values['delay-ms'] ? { delayMs: Number(values['delay-ms']) } : {}) } } : {}),
     ...(values.expect ? { verification: { kind: 'contains', expected: values.expect } } : {}),
+    ...(values.endpoint ? { protocol: { endpointRef: values.endpoint } } : {}),
     ...(values.resume ? { resumeSessionId: values.resume } : {}),
   });
 }
@@ -159,22 +161,24 @@ function submission(values: Flags, words: string[]): TaskSubmission {
 const HELP = `Flow — durable work, from your terminal
 
 Commands:
-  submit "prompt" [--title title] [--harness fixture|claude] [--key key]
+  submit "prompt" [--title title] [--harness fixture|claude|a2a] [--key key]
   list
   workspace [--after cursor | --before cursor] [--limit count]
   show <task-id>
   watch <task-id> [--timeout milliseconds]
   decision <task-id> approve|reject --decision <decision-id>
   cancel <task-id>
+  protocol <task-id>
   detail <reference-id>
   events <task-id> [--after cursor]
   reconcile show <task-id> [--after audit-cursor]
   reconcile observe|resolve|retry <task-id> --input JSON-file --key stable-key
-  runner register --name name [--harness fixture|claude] [--capacity 1]
+  runner register --name name [--harness fixture|claude|a2a] [--capacity 1]
   runner revoke <runner-id>
 
 Options: --json emits machine-readable output; --url overrides FLOW_URL.
 Submit: --scenario success|decision|failure|verification-failure|slow|large
+        --endpoint configured-ref (required for a2a)
         --delay-ms milliseconds --expect text --resume native-session-id
 Authentication: FLOW_TOKEN. Center: FLOW_URL (default http://127.0.0.1:4310).
 Leaving watch only stops observation. Use cancel to request execution to stop.`;
