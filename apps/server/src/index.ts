@@ -1,4 +1,7 @@
 import { registerUsageReadoutRoutes } from './usage-readout/index.js';
+import { migratePluginInstallations } from './plugin-installations/migration.js';
+import { registerPluginInstallationRoutes } from './plugin-installations/routes.js';
+import type { PluginInstallHost } from './plugin-installations/commands.js';
 import { createBrowserSessionAuthentication, migrateBrowserSessions, registerBrowserSessionRoutes, type BrowserSessionAuthentication, type BrowserSessionOptions } from './browser-session/index.js';
 import { migrateContextObservationHistory } from './context-transparency/migration.js';
 import { registerContextHistoryRoutes } from './context-transparency/routes.js';
@@ -49,6 +52,8 @@ declare module 'fastify' { interface FastifyRequest { runnerId: string | null } 
 export interface ServerOptions {
   databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string; shutdownGraceMs?: number;
   automaticQueueScan?: boolean; packageFetchHost?: PackageFetchHost;
+  /** Explicit host policy for static material installation; absent keeps these routes disabled. */
+  pluginInstallHost?: PluginInstallHost;
   /** Explicit browser trust policy; absent keeps credentialed browser sessions disabled. */
   browserSession?: BrowserSessionOptions;
   /** Trusted host opt-in for controlled integrations; the production CLI leaves intake disabled. */
@@ -91,6 +96,7 @@ export async function createServer(options: ServerOptions) {
     await migrateAttachments(pool);
     await migrateContextObservationHistory(pool);
     await migrateBrowserSessions(pool);
+    await migratePluginInstallations(pool);
     authentication = await createBrowserSessionAuthentication(pool, options);
     const corsOptions = authentication.corsOptions ?? (options.allowedOrigin ? { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] } : undefined);
     if (corsOptions) await app.register(cors, corsOptions);
@@ -152,6 +158,7 @@ export async function createServer(options: ServerOptions) {
   registerConversationRoutes(app, pool, boss, { assistantStreamReadable: true });
   registerPluginRoutes(app, pool);
   if (options.packageFetchHost) registerPackageFetchRoutes(app, pool, options.packageFetchHost);
+  if (options.pluginInstallHost) registerPluginInstallationRoutes(app, pool, options.pluginInstallHost);
   registerAssistantRoutes(app, pool);
   registerNativeActivityRoutes(app, pool);
   registerGoalContextRoutes(app, pool);

@@ -1,4 +1,5 @@
 import { readPackageFetchConfiguration } from './package-fetch-configuration.js';
+import { readPluginInstallationConfiguration } from './plugin-installation-configuration.js';
 import { parseActiveSteeringConfiguration } from './active-steering-configuration.js';
 import { createServer, type ServerOptions } from './index.js';
 
@@ -8,6 +9,7 @@ if (!databaseUrl || !ownerToken) throw new Error('DATABASE_URL and FLOW_TOKEN ar
 const port = Number(process.env.FLOW_PORT ?? 4310);
 if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('FLOW_PORT must be a valid port.');
 const packageFetchHost = await readPackageFetchConfiguration(process.env.FLOW_PACKAGE_FETCH_CONFIG);
+const pluginInstallHost = await readPluginInstallationConfiguration(process.env.FLOW_PLUGIN_INSTALL_CONFIG);
 const activeSteering = parseActiveSteeringConfiguration(process.env.FLOW_ACTIVE_STEERING);
 // This is trusted host configuration, never a request parameter. Semantic validation lives in the auth module.
 const rawBrowserSession = process.env.FLOW_BROWSER_SESSION_JSON;
@@ -17,7 +19,7 @@ if (rawBrowserSession !== undefined) {
   try { browserSession = JSON.parse(rawBrowserSession) as ServerOptions['browserSession']; }
   catch { throw new Error('FLOW_BROWSER_SESSION_JSON must contain valid JSON.'); }
 }
-const app = await createServer({ databaseUrl, ownerToken, activeSteering, ...(browserSession !== undefined ? { browserSession } : {}), ...(packageFetchHost ? { packageFetchHost } : {}), ...(process.env.FLOW_ORIGIN ? { allowedOrigin: process.env.FLOW_ORIGIN } : {}) });
+const app = await createServer({ databaseUrl, ownerToken, activeSteering, ...(browserSession !== undefined ? { browserSession } : {}), ...(packageFetchHost ? { packageFetchHost } : {}), ...(pluginInstallHost ? { pluginInstallHost } : {}), ...(process.env.FLOW_ORIGIN ? { allowedOrigin: process.env.FLOW_ORIGIN } : {}) });
 let closing = false;
 const stop = () => {
   if (closing) return;

@@ -37,3 +37,11 @@ Input is read with a byte bound before parsing. Knowledge text is at most 262144
 The required stable key recovers the same receipt after a lost response; a conflict exits 3 without retry. Receipt/queued means admission only. Mechanical verification and explicit owner acceptance remain separate; this command does not certify meaning or enable engineering writes. Existing `goal change` fixture execution is unchanged. No model is called by CLI help or input validation.
 
 `pnpm cli usage TASK_ID` reads the same owner-authorized source/cache/coverage summary as the shared client. It keeps unknown quantities as `null`, retains the unchanged legacy summary, and labels SDK estimates separately from provider billing. This read-only command starts no task or model; historical producer version, phase attribution and coverage may remain unverified.
+
+## Static plugin material
+
+`plugin install PLUGIN VERSION --input FILE --key KEY` accepts an exact registered revision and successful fetch operation/attempt (`expectedRevision`, `fetchOperationId`, `fetchAttemptId`, `reason`). The required stable key recovers its original acceptance receipt; it does not report current completion. Read current state with `plugin install-show OP`, list with `plugin installs PLUGIN`, and page audit with `plugin install-history OP`; lists accept `--after` and `--limit`.
+
+`plugin install-change OP --input FILE --key KEY` accepts `{ "action": "start" | "reconcile", "reason": "..." }`. All mutation files are bounded to 4096 bytes and strictly validated. Conflicts exit 3 without retry; unknown transport outcomes keep the original key/body. Static `installed` means verified local material only, not enabled, loaded, callable or isolated. Reconciliation without proven execution settlement remains unknown.
+
+These routes are disabled until the center host sets `FLOW_PLUGIN_INSTALL_CONFIG` to an owned 0600 regular JSON file. It contains only `artifactStore: {root, storeId}` and `materialStore: {root, storeId, allowedDigests}`; roots must be canonical absolute paths and at most 512 permitted SHA-256 digests are accepted. This private configuration is capped at 65536 bytes, cannot inject credentials, URLs or a lifecycle callback, and is never a public command argument. Existing personal preview configuration is unchanged.
