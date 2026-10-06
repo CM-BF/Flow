@@ -113,6 +113,13 @@
       "action": "Seven qualified same-team ended worktrees dematerialized only committed same-main historical copies; eighth planning excluded.",
       "evidence": "sparse-worktree-2026-10-06/next-eight-summary.json",
       "decision": "Web RELEASE03 A-only first, >=1GiB+32MiB fresh gate and original monitor; O14/O15 PG wait cleanup. SVC06 full 2.5GiB remains blocked. No lowered reserve."
+    },
+    {
+      "observedAt": "2026-10-06T15:31:45.463984+00:00",
+      "availableBytes": 1098022912,
+      "startGateBytes": 1107296256,
+      "action": "After Web A-only normal cleanup, F01 O14 fresh admission denied before test/DB; no attempted PG.",
+      "decision": "No lowered reserve; old RELEASE03 actual failure retained, minimal362+approved fix candidate only source/dependency-link prepared. Webmanager next tuple A/B requires its own exact source review and fresh reserve."
     }
   ]
 }
