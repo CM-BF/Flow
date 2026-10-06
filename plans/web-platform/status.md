@@ -61,7 +61,7 @@
 | WPF-001-30 | completed | d01_owner | D05FIT01 0ac7已main9d6，两源码相同；最终0e52826 pushed/clean，四scope停写且5dc v2释放；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) |
 | WPF-001-31 | completed | workspace_panels_owner | STEER01 b2模块已main77c，01842收口后2bae v2释放；App与跨reload恢复属MATURE06后继。 |
 | WPF-001-32 | completed | w01_owner | CONTEXTI 已正式main df29；fe2b收口/55fe v2释放，唯一source见当前表。 |
-| WPF-001-33 | pending | d01_owner | 附件/已审发布与D06后，临时Git Trace2 16/64/128量化工作量再选优化；总≤60s含清理/≤32MiB证据，保fresh与unknown；未take。 |
+| WPF-001-33 | pending | d01_owner | 附件/已审发布与D06后，临时Git Trace2 16/64/128量化工作量再选优化；总≤60s含清理/≤32MiB证据，保fresh与unknown；已take1cb4 v1，仅canonical，发布P1优先暂缓实验。 |
 | WPF-001-34 | in-progress | d01_owner | 六计划已登记111源（Lead09:09:25观察）；D08父关联已main f181待正式部署/实际页面核验，整体可见性验收未完成。 |
 
 ## 当前唯一来源、写权与下一步
@@ -76,7 +76,7 @@
 | D08 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links/plans/d08-task-links/status.md)，原panels，49510580 v2 released | 已main f181；605957 push/clean后9scope停写释放；4320部署与实际六计划验收仍待 |
 | STEER01 → MATURE06 | [模块source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) | 已main77c，2bae v2 released；原树只读；实际App接线现属STEIRI01独立13scope，原模块不再写 |
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
-| DPERF02 | [有界提案](../../docs/evidence/web-platform/dperf02-proposal.json) | 未建树/未take，附件P1优先排队；四scope不含aggregate，不以D08占用作阻塞 |
+| DPERF02 | [有界提案](../../docs/evidence/web-platform/dperf02-proposal.json) | 独立dashboard-proof-batching/1cb4 v1已take；仅canonical，真实Web发布P1优先暂缓；四scope不含aggregate |
 
 ## 当前依赖与登记队列
 
