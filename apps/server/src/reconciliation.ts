@@ -6,6 +6,7 @@ import type { Ownership, ReconciliationAudit, ReconciliationObservation, Reconci
 import { HttpError, transaction } from './database.js';
 import { command, loadTask, summary, wake, type TaskRecord } from './tasks.js';
 import { attemptView, type AttemptRecord } from './runners.js';
+import { copyRecoveryInput } from './conversation-context/store.js';
 import { appendTimeline } from './timeline.js';
 
 interface AuditRow {
@@ -123,6 +124,7 @@ export async function retryReconciled(pool: Pool, boss: PgBoss, taskId: string, 
     const auditId = randomUUID();
     const submission = recoverySubmission(task, resolutionAudit, input, auditId);
     await client.query('INSERT INTO flow.tasks(id,submission) VALUES($1,$2)', [newTaskId, JSON.stringify(submission)]);
+    await copyRecoveryInput(client, task.id, newTaskId, task.submission.prompt, submission.prompt);
     const audit = await appendAudit(client, task, { id: auditId, action: 'retry', request: input, before: state(task), after: { ...state(task), retryTaskId: newTaskId } });
     const provenance: RetryProvenance = { taskId, attemptId: attempt.id, resolutionId: resolution.id, auditId: audit.id };
     await client.query('INSERT INTO flow.reconciliation_retries(task_id,source_task_id,source_attempt_id,resolution_id,retry_audit_id) VALUES($1,$2,$3,$4,$5)', [newTaskId, taskId, attempt.id, resolution.id, audit.id]);

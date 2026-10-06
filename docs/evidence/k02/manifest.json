@@ -1,0 +1,755 @@
+{
+  "taskId": "K02",
+  "base": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "implementationCommit": "a6c9b09a8a4d4020a497341d3fb6deed16b08d02",
+  "createdAt": "2026-10-06 05:56:35 UTC",
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/conversation-context/context.test.ts",
+      "sha256": "75cd16917334c53ffb0addd182b8750681b09eb924f62cb1ebe87bb269947cee",
+      "bytes": 33804
+    },
+    {
+      "path": "apps/server/src/conversation-context/fixture.ts",
+      "sha256": "676db9f5764142637a3a55bdeb840856cd53564413ece4bd77cbd610096f1df1",
+      "bytes": 5265
+    },
+    {
+      "path": "apps/server/src/conversation-context/index.ts",
+      "sha256": "7ae39a02095c01da1be2049004c1093bc886d2e3b77e8309d160fe6d8f29afb6",
+      "bytes": 1573
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "sha256": "53375cfac10d497a2dedf4c0001d5473525ef8b4b2f16dff39021498b3b26bae",
+      "bytes": 10849
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "sha256": "fcf8babd8cc63c47e689ab112d019a1d215a4a3557dc3a9f10e0617dca0497f0",
+      "bytes": 3223
+    },
+    {
+      "path": "apps/server/src/conversation-queue/controls.ts",
+      "sha256": "79def0b3ced448deeb0a4bcaf1923484695bcd9f28cd463225a003a00657365e",
+      "bytes": 2933
+    },
+    {
+      "path": "apps/server/src/conversation-queue/promotion.ts",
+      "sha256": "54ad1ef9aba63ea437f6c4ebbec589fe82b0b60b15ad0c153778e1f8e2f95e2f",
+      "bytes": 4242
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "sha256": "a8c6ca373a085439728ff871f8cdb3f143051ebdaeebdb9c505decaa97552475",
+      "bytes": 2387
+    },
+    {
+      "path": "apps/server/src/conversation-queue/store.ts",
+      "sha256": "3885d55dc32b052412809f1592a534c0b91bcb887899aed26ce6fa755e106990",
+      "bytes": 3681
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "sha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb",
+      "bytes": 3967
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "sha256": "e74f5706f8c405f368a9a4c92315ada1a0e0003e10e38189db9e3b5ac6c08da4",
+      "bytes": 3596
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "sha256": "5f0a2476593b82d8014bc80ca44a7906d1259d19000e8546dc948712ee1ee581",
+      "bytes": 2808
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "sha256": "72d2cc8663a9d077367e4ce04cf1fdb7a17ed7966ae1f380e12905212abccd21",
+      "bytes": 10068
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "sha256": "0a7685acc70a95291b542e97f66390552e55e352a01b6d136b924d2066e746e8",
+      "bytes": 11489
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "a7987afc1157ca4c91786b2d1331fb5b1caee576a2949d452042516e2908e6ff",
+      "bytes": 9396
+    },
+    {
+      "path": "docs/evidence/k02/check.mjs",
+      "sha256": "6758d8a02d592a8672441e7a99f7a5a0e74df6ef23bf902cac2080ef141c590e",
+      "bytes": 1588
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "sha256": "2ead672628cb411a54ab51345f384a301ff407eb2a30cf604b120b47d68ebdb5",
+      "bytes": 1640
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "sha256": "d7f61fd2c7a68a0efc376112d62ad9d97f911ce94ee9aec75137cc1eb8f9707e",
+      "bytes": 3836
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "sha256": "02e2afd8b31827051ecfe84801ae4bd1210ccf9e11ec79b16bed2ae313cbad33",
+      "bytes": 5706
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "sha256": "0130db7ba54b4c3899a45caa6056d3696bec14fadc28a254691f38df2870bbf8",
+      "bytes": 5292
+    },
+    {
+      "path": "packages/storage/migrations/018-conversation-context.sql",
+      "sha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3",
+      "bytes": 3497
+    }
+  ],
+  "readOnlyInputs": [
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "9bb903aad750fe0cb2ab3fadbcbcee83992bd412c6831546278ca70bae0618c1",
+      "bytes": 10655
+    },
+    {
+      "path": "apps/server/src/conversations/conversations.test.ts",
+      "sha256": "43546004f5eafb7b275206fd1bd1cb83744b4c9aa1006913b49e71f776dbaaa4",
+      "bytes": 34262
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queue.test.ts",
+      "sha256": "fe0a6906844efeab7c31ec0f26da3af29ecb59775a26b428366100c567175ab6",
+      "bytes": 33631
+    },
+    {
+      "path": "apps/server/src/reconciliation.test.ts",
+      "sha256": "6388baadbc4b0e2baad1a193529d3132fac79ac43b39d70c0cae5b8da2199c6c",
+      "bytes": 23389
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "f9af1e4dcafa26387f9a9182584238dfd6897d22cf262e09aa86e9f30f115cff",
+      "bytes": 6487
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "sha256": "b30aac75b853052f36466a0e38636861637388ee4ef508584fe6a8c212253240",
+      "bytes": 15329
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43",
+      "bytes": 4414
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/k02/boundary-matrix-cleanup.json",
+      "sha256": "643567425034212bcddfeb714f5461e189226352c4dec895d651daf87de8c3de",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/k02/boundary-matrix-resource.json",
+      "sha256": "dac942794f308ca38be95ed0fdcb7e64659968fa7ccba259d6ced8254a432df6",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/k02/boundary-matrix-result.json",
+      "sha256": "02d58f88678fa0821a42d3e492ce454894288c616ee41ee4e79c9deeec400f88",
+      "bytes": 3638
+    },
+    {
+      "path": "docs/evidence/k02/boundary-matrix.log",
+      "sha256": "7b03b1b133c9d05d112685263cb2b30243b23c3ffd129494032e9ede520ebaf8",
+      "bytes": 335
+    },
+    {
+      "path": "docs/evidence/k02/claim-receipt.json",
+      "sha256": "5f45236da3b38b6f9f745fbda360c8b8ab76893e4f3086b43f58673f7f451008",
+      "bytes": 1329
+    },
+    {
+      "path": "docs/evidence/k02/claim-seam-cleanup.json",
+      "sha256": "950b03bab820509591d5d27a37dee49399ee05f26c88999c6b5728986e76a305",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/k02/claim-seam-resource.json",
+      "sha256": "7b932c2e120462485a6825c845432450244ca6d5208847281fd0523a0cb44246",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/k02/claim-seam-result.json",
+      "sha256": "360b36949e96ac5aa6e7d0d126f69a299e81fd7c67750c33434b0daada351850",
+      "bytes": 998
+    },
+    {
+      "path": "docs/evidence/k02/claim-seam.log",
+      "sha256": "2a1695d112a1984054a2f51563723088622c0b2611dd138e81ff7ceb3f9417f1",
+      "bytes": 332
+    },
+    {
+      "path": "docs/evidence/k02/claim-typecheck-result.json",
+      "sha256": "2e9e52dc997de1d58c8669db86d194a7b761f478e999848376112ca160d557fa",
+      "bytes": 890
+    },
+    {
+      "path": "docs/evidence/k02/claim-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/k02/complete-typecheck-result.json",
+      "sha256": "9f51a5cff4a8aad3caa41cecf1626f7561bfe4b66fd8e98fb9d89cf4b84374b1",
+      "bytes": 3530
+    },
+    {
+      "path": "docs/evidence/k02/complete-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/k02/context-green-canonical-cleanup.json",
+      "sha256": "9d20cdba58d200c42277021d266d12e50211a53381a929bc0d0fcdeb056a3cc0",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/k02/context-green-canonical-resource.json",
+      "sha256": "c242ecba8561ab37be1a9aa9ca7a1711f3f98da4944df90483debc487d827351",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/k02/context-green-canonical-result.json",
+      "sha256": "ef3ec3994865514efa67ffe76c427911a264075c8be59ecd8e9138cc12450d0e",
+      "bytes": 998
+    },
+    {
+      "path": "docs/evidence/k02/context-green-canonical.log",
+      "sha256": "0691826e2ed4cef0e77bdc762888af19a313eb40ba26dfece33515a266dba236",
+      "bytes": 330
+    },
+    {
+      "path": "docs/evidence/k02/context-green-cleanup.json",
+      "sha256": "257de23954bbc34eeb7ee27cae2125f187054ac1d081c00557426cfec19961e8",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/k02/context-green-resource.json",
+      "sha256": "dcf37eb06b9e0042fa5d39f44c9d829cbb55c456e621e542f1dfec00a8a2a1b5",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/k02/context-green-result.json",
+      "sha256": "3ddbb06d53b5a89775e354ac0acf709e111da6d83b517a0beb52a622f123a9f3",
+      "bytes": 998
+    },
+    {
+      "path": "docs/evidence/k02/context-green.log",
+      "sha256": "263ad55c4ee8f3dd56a32175583eb5ed5df54d9cbc1c76994ef8bfaa3c9519ba",
+      "bytes": 880
+    },
+    {
+      "path": "docs/evidence/k02/context-red-cleanup.json",
+      "sha256": "dfc6955d11327f913c1b8ac72ad58faa879f85c983dae3943ba500cfa684f6c7",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/k02/context-red-resource.json",
+      "sha256": "e3f59b3c12b8e1b4ac4b05a0c8ddc7fca093b124f94bebd52045af0b14f0e13d",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/k02/context-red-result.json",
+      "sha256": "3ffe597606a835366678b97158536f556dd49ac94412a8157208bd34d575db58",
+      "bytes": 998
+    },
+    {
+      "path": "docs/evidence/k02/context-red.log",
+      "sha256": "a044d29baf6b7d724984011ff9fc2d3ae0452092e54b8a67d9bddedaa57235de",
+      "bytes": 880
+    },
+    {
+      "path": "docs/evidence/k02/delivery-typecheck-result.json",
+      "sha256": "7c57b0d6f7ae84a3dc55f057ccd13bb595d43b59a1a39e43a28f5b3aa1c1a08e",
+      "bytes": 3530
+    },
+    {
+      "path": "docs/evidence/k02/delivery-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/k02/final-matrix-bounded-reads.json",
+      "sha256": "fb10a1479c8d98b2aa319046add88959a518869646c5e7a07cb2629251afe15f",
+      "bytes": 250
+    },
+    {
+      "path": "docs/evidence/k02/final-matrix-cleanup.json",
+      "sha256": "a2b2f1e65330047d11f9c8e7fb7f076dfa92ab8b916755c7990b44c234f70fd1",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/k02/final-matrix-resource.json",
+      "sha256": "2dbd316debe35ed9fa3fcebe03b7230b4e1d1966c5566f74ce9c61ea844136f6",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/k02/final-matrix-result.json",
+      "sha256": "9ad147b64004dc66acd8c8c306e64cdfabf69fde7d2fedecaed2c66de28acc33",
+      "bytes": 3638
+    },
+    {
+      "path": "docs/evidence/k02/final-matrix.log",
+      "sha256": "91d2e2653e6fa223b0e623a8d1c275f1a27241f40f1dc1b9e7b66a42a008df9c",
+      "bytes": 446
+    },
+    {
+      "path": "docs/evidence/k02/first-typecheck-result.json",
+      "sha256": "41649631cafbf6315178e71edbdd00f90b2f8b4c2c25565241b25720460b7aaa",
+      "bytes": 890
+    },
+    {
+      "path": "docs/evidence/k02/first-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/k02/integrity-extra-cleanup.json",
+      "sha256": "28052ef96155b95a8b8cff269a877ac9303941c32e25a0999ef3c983edfcc36c",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/k02/integrity-extra-resource.json",
+      "sha256": "4de904090699b830da2ffda8a9caf64136409eaa2d857117a49f12f9550c2464",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/k02/integrity-extra-result.json",
+      "sha256": "39fe828f4c0f5780dce29be9948e3c2dd296b4bb7d46084ea04f4f2e60b3784f",
+      "bytes": 3700
+    },
+    {
+      "path": "docs/evidence/k02/integrity-extra.log",
+      "sha256": "71ffa36f7291863b113b72ef7f1455afb7c4d4bf64dacc6bdd88ea72e8752957",
+      "bytes": 359
+    },
+    {
+      "path": "docs/evidence/k02/module-typecheck-result.json",
+      "sha256": "b9d2b35edb3b97c0be05359d3e7d5cb186fda5c2bae1f2eab646a61ca1cb36b0",
+      "bytes": 3530
+    },
+    {
+      "path": "docs/evidence/k02/module-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/k02/queue-green-cleanup.json",
+      "sha256": "6ae0eb1599c277bce0f10388afa86a99ec52125e3e76c1193b2e797443eb1336",
+      "bytes": 149
+    },
+    {
+      "path": "docs/evidence/k02/queue-green-resource.json",
+      "sha256": "40d75d39e6d75b6ab0f53d0872d53d389fb8e2a3d1b030153221057258ce5be3",
+      "bytes": 80
+    },
+    {
+      "path": "docs/evidence/k02/queue-green-result.json",
+      "sha256": "3b4a7d21d170e89cc3e742907e979d08ef480094756bdec0c82f10d3638be23d",
+      "bytes": 3671
+    },
+    {
+      "path": "docs/evidence/k02/queue-green.log",
+      "sha256": "53808071339eddb6ce5be8bc3610bad52aaa541b7bccc79cd98fbf54bb69767b",
+      "bytes": 356
+    },
+    {
+      "path": "docs/evidence/k02/queue-red-cleanup.json",
+      "sha256": "acaf4b6d29d44e68de736fc83dd43fe15cdefc4a584f51f70e68dbb912237a24",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/k02/queue-red-resource.json",
+      "sha256": "7e4091562199ded4c6bc6395d2c1e49cbe2ee904f28769a66cbf60ab310d1d7d",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/k02/queue-red-result.json",
+      "sha256": "0c16e4131993be372f6f1ab3f2e29ba488df1e4fe9773745934d319a559f9f86",
+      "bytes": 3671
+    },
+    {
+      "path": "docs/evidence/k02/queue-red.log",
+      "sha256": "566cb319d8718b3b93fd8f30c0997e444449072755e6012fbfb37b5b17dccd32",
+      "bytes": 1137
+    },
+    {
+      "path": "docs/evidence/k02/retry-green-cleanup.json",
+      "sha256": "f1dabfacd4e5474b056579302d1593b004e4a770a494df21118264ece82de2ef",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/k02/retry-green-resource.json",
+      "sha256": "f447003bd61df5b7199219cc7b584212a8ad154cee48a089d591521d657e8a4e",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/k02/retry-green-result.json",
+      "sha256": "bc136ea8f8428f8b52effdd214130eca447999ca0c3aaa74b2db87d92c81de91",
+      "bytes": 3671
+    },
+    {
+      "path": "docs/evidence/k02/retry-green.log",
+      "sha256": "419315311c42e30b6202a8a578ce1890ed7726c89d001a7604eb3a6f38c2c95a",
+      "bytes": 356
+    },
+    {
+      "path": "docs/evidence/k02/retry-red-cleanup.json",
+      "sha256": "ba659725a268a56aceb628675ee8cb3539d31fd5e006c41800f4897e9513ab01",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/k02/retry-red-resource.json",
+      "sha256": "91e3974ce56290a19086ff814ed0ac9e8cffa57abf7ec167bfc34ba652d34972",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/k02/retry-red-result.json",
+      "sha256": "4aaac1d8d301d6f6aa911918a950cfe50d58c90efbe1c79e60c20140a145ca35",
+      "bytes": 3683
+    },
+    {
+      "path": "docs/evidence/k02/retry-red.log",
+      "sha256": "06b0c79d4381dddb9321c91a211171e99a28d1f99c3db6a478a487f1ae65fa44",
+      "bytes": 1410
+    },
+    {
+      "path": "docs/evidence/k02/runner-seam-handoff-receipt.json",
+      "sha256": "84412dced43828aedca42fe837cc586e65d2c559f25fec5cfd5ebd9e18305a59",
+      "bytes": 1268
+    },
+    {
+      "path": "docs/evidence/k02/session-budget-cleanup.json",
+      "sha256": "3b9580ea135952554144e21433407cb4d69d477458ac260d05a7b0ce47951bcd",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/k02/session-budget-resource.json",
+      "sha256": "b8af3f18e6fa8bf39b7305e18c2dcc7e2ea62cec059b7d49c7bf13b8b9e73fc0",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/k02/session-budget-result.json",
+      "sha256": "242719a8ac8484d870633de8f2f62a7ba3dab85d37f52516dbed3d0b68cc0a5b",
+      "bytes": 3666
+    },
+    {
+      "path": "docs/evidence/k02/session-budget.log",
+      "sha256": "22df3ea1c66c2899513e900d097c4209f6ffce068f734cead30c4e745a205022",
+      "bytes": 359
+    },
+    {
+      "path": "docs/evidence/k02/test-prefix-proof.json",
+      "sha256": "c04dbe88aa6ae7af510cc4a6d5ee8128f4aeaa66665295789bb5c00460935520",
+      "bytes": 390
+    }
+  ],
+  "checks": [
+    {
+      "label": "boundary-matrix",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:52:12.073Z",
+      "endedAt": "2026-10-06T05:52:16.099Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/boundary-matrix-result.json"
+    },
+    {
+      "label": "claim-seam",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:45:22.216Z",
+      "endedAt": "2026-10-06T05:45:24.563Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/claim-seam-result.json"
+    },
+    {
+      "label": "claim-typecheck",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-06T05:45:24.600Z",
+      "endedAt": "2026-10-06T05:45:28.955Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/claim-typecheck-result.json"
+    },
+    {
+      "label": "complete-typecheck",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-06T05:53:58.506Z",
+      "endedAt": "2026-10-06T05:54:03.285Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/complete-typecheck-result.json"
+    },
+    {
+      "label": "context-green-canonical",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:44:50.788Z",
+      "endedAt": "2026-10-06T05:44:52.272Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/context-green-canonical-result.json"
+    },
+    {
+      "label": "context-green",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:44:25.085Z",
+      "endedAt": "2026-10-06T05:44:26.540Z",
+      "exitCode": 1,
+      "result": "docs/evidence/k02/context-green-result.json"
+    },
+    {
+      "label": "context-red",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:42:55.060Z",
+      "endedAt": "2026-10-06T05:42:56.574Z",
+      "exitCode": 1,
+      "result": "docs/evidence/k02/context-red-result.json"
+    },
+    {
+      "label": "delivery-typecheck",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-06T05:54:50.093Z",
+      "endedAt": "2026-10-06T05:54:54.160Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/delivery-typecheck-result.json"
+    },
+    {
+      "label": "final-matrix",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:53:11.155Z",
+      "endedAt": "2026-10-06T05:53:14.378Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/final-matrix-result.json"
+    },
+    {
+      "label": "first-typecheck",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-06T05:44:26.576Z",
+      "endedAt": "2026-10-06T05:44:31.049Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/first-typecheck-result.json"
+    },
+    {
+      "label": "integrity-extra",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner",
+        "-t",
+        "claim fails closed on|context digest depends"
+      ],
+      "startedAt": "2026-10-06T05:53:56.819Z",
+      "endedAt": "2026-10-06T05:53:58.467Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/integrity-extra-result.json"
+    },
+    {
+      "label": "module-typecheck",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-06T05:53:14.419Z",
+      "endedAt": "2026-10-06T05:53:19.236Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/module-typecheck-result.json"
+    },
+    {
+      "label": "queue-green",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner",
+        "-t",
+        "enqueue freezes"
+      ],
+      "startedAt": "2026-10-06T05:49:33.896Z",
+      "endedAt": "2026-10-06T05:49:36.103Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/queue-green-result.json"
+    },
+    {
+      "label": "queue-red",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "-t",
+        "enqueue freezes",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:46:42.703Z",
+      "endedAt": "2026-10-06T05:46:44.148Z",
+      "exitCode": 1,
+      "result": "docs/evidence/k02/queue-red-result.json"
+    },
+    {
+      "label": "retry-green",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner",
+        "-t",
+        "reconciliation "
+      ],
+      "startedAt": "2026-10-06T05:50:32.084Z",
+      "endedAt": "2026-10-06T05:50:33.712Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/retry-green-result.json"
+    },
+    {
+      "label": "retry-red",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner",
+        "-t",
+        "reconciliation revised-work"
+      ],
+      "startedAt": "2026-10-06T05:50:03.694Z",
+      "endedAt": "2026-10-06T05:50:05.229Z",
+      "exitCode": 1,
+      "result": "docs/evidence/k02/retry-red-result.json"
+    },
+    {
+      "label": "session-budget",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/conversation-context/context.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner",
+        "-t",
+        "valid 8192"
+      ],
+      "startedAt": "2026-10-06T05:54:48.639Z",
+      "endedAt": "2026-10-06T05:54:50.057Z",
+      "exitCode": 0,
+      "result": "docs/evidence/k02/session-budget-result.json"
+    }
+  ],
+  "acceptedDistinctModuleTests": 23,
+  "acceptedRuns": [
+    {
+      "label": "final-matrix",
+      "selected": 19,
+      "passed": 19
+    },
+    {
+      "label": "integrity-extra",
+      "selected": 3,
+      "passed": 3
+    },
+    {
+      "label": "session-budget",
+      "selected": 1,
+      "passed": 1
+    }
+  ],
+  "typecheck": "delivery-typecheck",
+  "limitations": [
+    "Original consumer suites and production automatic mount not yet executed on this fixed domain target.",
+    "Early context/claim source sampling omitted then-untracked test and fixture; original records retained unchanged.",
+    "Lost ACK test cancels response body after headers; not an arbitrary TCP failure model.",
+    "Real runner uses injected Claude query, no model or cloud execution.",
+    "SQL counts are classified SQL statements, not PG wire, latency or execution capacity.",
+    "Runner source seams frozen at 7368497 and handed to O07; no current write authority."
+  ]
+}
