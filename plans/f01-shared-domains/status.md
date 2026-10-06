@@ -9,6 +9,7 @@
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
+| Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v47 active；仅032两源+自身plan/evidence；56旧scope已原子交回，[receipt](../../docs/evidence/f01/old-scope-closeout-receipt.json) |
 | Branch | `codex/m2-shared-foundation` |
 | 工作基线 / HEAD | 受控移交 HEAD c67d6973d5b9f516fcb3000538939d1046b39367；O14生产候选73aabff4fac96c0439817bdc72358c1385371e8d保持 |
 | 工作树dirty状态 | 当前两新源固定停写；仅证据/metadata收口，提交后clean |
