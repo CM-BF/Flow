@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:42:39 UTC / 最近main只读0cee7556 clean；本次metadata未重新声称集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:45:51 UTC / 最近main核验0cee7556 clean；本次仅解析格式同步 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
 | 工作基线 / HEAD | 原始b1c2e398；已受控合入8d8ab520 / 当前实现 a7357c21511a81ca8e603b728c3a24725d7cc140；metadata随后提交 |
-| 工作树dirty状态 | 核65fa04dc clean、v4 ACTIVE后仅更新review/status；a735的19项source/raw/support仍等于固定target |
+| 工作树dirty状态 | 核955650ed clean与v4 ACTIVE后仅更正自有status/review解析格式；源码/raw冻结 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | 历史局部41/41（18wire+6DTO+11store consumer+6HTTP），8根文件继承root严格noEmit0；真实PG/全局owner鉴权未验；[证据](../../docs/evidence/wpf-mature-04/history-checks.json) |
+| 检查状态 | NOT_RUN a7357c21511a81ca8e603b728c3a24725d7cc140：真实PG事务/rollback/约束及全局owner鉴权待验；局部41/41与8根文件strict noEmit0见[证据](../../docs/evidence/wpf-mature-04/history-checks.json) |
 | 已集成main状态 / HEAD | 未集成：固定main 8d8ab520a9d43c7b9dafb22911416ee799ebf665 无6源码，879/3ab双target非祖先；[唯一集成输入](../../docs/evidence/wpf-mature-04/integration-readiness.json) |
 | 实现目标 | a7357c21511a81ca8e603b728c3a24725d7cc140 |
-| 实现范围 | 8新增event/history合同、store/routes及对应测试；6已审源不变 |
+| 实现范围 | apps/server/src/context-transparency/routes.test.ts, apps/server/src/context-transparency/routes.ts, apps/server/src/context-transparency/store.test.ts, apps/server/src/context-transparency/store.ts, packages/contracts/src/context-observation-event.test.ts, packages/contracts/src/context-observation-event.ts, packages/contracts/src/context-observation-history.test.ts, packages/contracts/src/context-observation-history.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 历史样本保存和读回模块已完成局部验证；规范估算与摘要转换两片已审待集成 |
 | 下一可用交付 | 采用唯一正式迁移完成数据库验证，再挂载历史读回；当前占用及剩余容量仍未知 |
-| 当前阻塞 | 历史数据库验证等待Execution Lead分配唯一迁移编号/owner；独立合同与HTTP片已推进，不等待Codex |
+| 当前阻塞 | ACTIVE: 历史数据库验证等待Execution Lead分配唯一迁移编号/owner；局部合同与HTTP片已完成验证，不等待Codex |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：a7357c21静态/模块预审无P1/P2，Mika/gpt-6-astra，2026-10-06 10:42:39 UTC；不批准store/routes生产接入，真实PG/共享owner-auth仍PENDING；旧879/3ab批准独立保持 |
+| Review | NOT_STARTED a7357c21511a81ca8e603b728c3a24725d7cc140：待唯一DDL和真实PG后最终审查；2026-10-06 10:42:39 UTC静态/模块预审无P1/P2，不批准生产接入，见[review.md](review.md) |
 | Claim | [COMMITTED amend v4](../../docs/evidence/wpf-mature-04/history-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v4 ACTIVE；仅追加8新history文件，已审6源码冻结 |
 | 架构影响 | 中心历史record/readLatestHistory与局部GET已实现未挂载，沿原事务/fence，无新runner端点；唯一DDL及全局挂载由Lead协调，架构视图待集成target更新 |
 
@@ -32,7 +32,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-04-01 | completed | architecture_read | bbfb7037ee3ca3e37bf14a078f8a05582b209f48已push；7文档/6 TODO/9验收自查通过 |
 | WPF-MATURE-04-02 | completed | architecture_read / mika | 879c989a594a8f4f266b9a78a885e311c52eca0d；30/30、局部strict noEmit；Mika独立APPROVED，无P1/P2 |
-| WPF-MATURE-04-03 | in-progress | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已获mika批准历史首片8新路径；v4已追加；33/33局部合同/HTTP/早拒绝与strict noEmit0；唯一迁移DDL及真实PG待验，当前/remaining/SDK采集仍未知 |
+| WPF-MATURE-04-03 | in-progress | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已获mika批准历史首片8新路径；v4已追加；41/41局部合同/HTTP/事务consumer与strict noEmit0；唯一迁移DDL及真实PG待验，当前/remaining/SDK采集仍未知 |
 | WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | 纯Adapter P2修复源码已完成，49/49与strict noEmit0，独立APPROVED；不含真实采集、压缩事件或生产接线 |
 | WPF-MATURE-04-05 | pending | d01 管理 Web owner | 沿本计划与中心合同消费；未实施 |
 | WPF-MATURE-04-06 | pending | architecture_read / mika | 仅schema/纯投影独审已过；完整矩阵与后继独审、main交付未完成 |
@@ -66,3 +66,5 @@
 2026-10-06T10:36:04.816805+00:00：历史片8新文件局部实现完成待唯一DDL。41不同用例=18wire+6history+11store事务consumer+6HTTP；前轮23/33/40均重叠不累计。8根文件继承root strict/noUnchecked/ES2023 noEmit0。store用确定性query响应验证小Interface，并非SQL、约束或PG回滚证据；全局owner auth仍待挂载验证。主线尚无本片，当前阶段implementation，待迁移号/owner而非等待Codex。原六源逐字等于批准target。
 
 2026-10-06 10:42:39 UTC：根审完成a735新8源/测试及19项manifest核验，静态/模块预审无P1/P2；不将41局部通过扩张为PG/全局鉴权或生产批准。源码/raw冻结，等待Lead唯一migration编号/owner，禁止自占026；无ready实现时不扩producer框架。
+
+2026-10-06 10:45:51 UTC：metadata解析安全点；Mika报告2026-10-06 10:45:18 UTC对4320的一次snapshot已确认04 source live、stale=false、955650ed clean，任务层级大task/co-lead正确；本owner未另抓大聚合。修正8个实现literal、ACTIVE阻塞及NOT_RUN总体验证字段；TODO完成度不变。当前review首状态/target改为a735待PG最终审，静态预审与旧批准分开保留。

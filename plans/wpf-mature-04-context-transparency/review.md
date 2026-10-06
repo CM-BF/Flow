@@ -1,5 +1,14 @@
 # WPF-MATURE-04 独立审查记录
 
+状态：NOT_STARTED（当前历史片待真实PG与共享鉴权验证后的最终审查；静态/模块预审无P1/P2）
+
+- Review target commit：a7357c21511a81ca8e603b728c3a24725d7cc140。
+- 当前独立预审：Mika / gpt-6-astra，2026-10-06 10:42:39 UTC。无P1/P2静态发现，不批准store/routes生产接入。
+- 41项局部合同/确定性query/fixture-auth检查与strict noEmit0已核；真实PG事务、rollback、约束及共享owner-auth待验。
+- 原六源码批准及历史修复记录如下保留，不替代当前target最终审查。
+
+# 第二片历史review：3ab95d2修复
+
 状态：APPROVED（3ab95d2 P2修复；旧e81f200的CHANGES_REQUESTED与879的APPROVED均保留）
 
 ## 当前修复target
