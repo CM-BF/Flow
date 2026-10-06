@@ -1,0 +1,298 @@
+{
+  "base": "22a0806bc2465e11096949618113833f31766b19",
+  "reason": "runner.test real CLI entry is a new URL reference, not an import edge; original failure preserved",
+  "entry": "apps/runner/src/main.ts",
+  "kind": "TypeScript AST literal runtime/type import closure; no product import or execution",
+  "files": [
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "bytes": 598,
+      "sha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "bytes": 4272,
+      "sha256": "89ff8005b4817b1ae231e999abc9e43e62202dd815d4962ec11e07c9d4b59f43",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/checker.ts",
+      "bytes": 4705,
+      "sha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/identity.ts",
+      "bytes": 1898,
+      "sha256": "dbe1198133e0158350835ff76735a0efa536994818ef16790f0277b9e2347f5f",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/launch.ts",
+      "bytes": 1435,
+      "sha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/resources.ts",
+      "bytes": 4956,
+      "sha256": "26545a80686e0d0e3bed6de85716980df930c471eac891211dd1bdca2d831368",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "bytes": 6695,
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "bytes": 12205,
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/writer.ts",
+      "bytes": 1514,
+      "sha256": "59ac0c67279b3be98244f0482da9a5413c20d6a6716a3cbcfb3bd674647e1470",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 5186,
+      "sha256": "484d5bcb44f5e2b69b44a0189b25f4d6114f034c9add8deead587590ac462c8f",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/configuration.ts",
+      "bytes": 2579,
+      "sha256": "647a01cb7b65cb3f125515bc9c895396a4a582f6fa9843fb7ad923ce846d4651",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/index.ts",
+      "bytes": 8396,
+      "sha256": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/lease.ts",
+      "bytes": 2276,
+      "sha256": "c97314b4d8dd7f8fd7056982a2bca6186245062d94d60fb27c29eeb514ac90fb",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/materials.ts",
+      "bytes": 2078,
+      "sha256": "bd1da1e99f3956585a16a9bd6b59757bff1ecca9a09354f9f0004f9994c9a963",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-bridge.ts",
+      "bytes": 11288,
+      "sha256": "67fbc4083eea37e1d2c070ac5719551791de690d9d1c008301a172427565e6f3",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-client.ts",
+      "bytes": 4223,
+      "sha256": "a2e45e629c34480237ab7336f392bb0db9a555c086af3f029b533e346eb38219",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-http-server.ts",
+      "bytes": 4450,
+      "sha256": "ad4cbc74ce0b91e98a3e6cafe2c4a5fdb31f77df5aabe3fea4df485a07e1a811",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-mapping.ts",
+      "bytes": 5127,
+      "sha256": "0bc876161bfeb1926e8eb03d043a8f0189bc918c5e5ee14093a9db622f53b0c3",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/http-policy.ts",
+      "bytes": 3017,
+      "sha256": "af6635f13ab067a0ecfb5af582a364e6131ba6f829845eaa3391ed936687a637",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/index.ts",
+      "bytes": 167,
+      "sha256": "0747ae484303c1042148d28bacfd9817cdd2d94795c60e3c690b92dfff394e85",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/mcp-client.ts",
+      "bytes": 4001,
+      "sha256": "c03a6d29112b580ffffa05390638b3ed3dc47f8e2d30a57ed2f11d6624430807",
+      "present": false
+    }
+  ],
+  "allCount": 109,
+  "allBytes": 492912,
+  "thirdParty": [
+    {
+      "specifier": "zod",
+      "typeOnly": false,
+      "from": [
+        "packages/contracts/src/tasks.ts",
+        "packages/contracts/src/claude-turn-settings.ts",
+        "packages/contracts/src/harnesses.ts",
+        "packages/contracts/src/execution-profiles.ts",
+        "packages/contracts/src/protocol-task.ts",
+        "packages/contracts/src/engineering.ts",
+        "packages/contracts/src/engineering-profile.ts",
+        "packages/contracts/src/engineering-native.ts",
+        "packages/contracts/src/goal-graph-runs.ts",
+        "packages/contracts/src/projects.ts",
+        "packages/contracts/src/goal-graph-proposals.ts",
+        "packages/contracts/src/goals.ts",
+        "packages/contracts/src/goal-context.ts",
+        "packages/contracts/src/knowledge.ts",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/attachments.ts",
+        "packages/contracts/src/goal-tool-runs.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/contracts/src/active-steering.ts",
+        "packages/contracts/src/assistant-stream.ts",
+        "packages/contracts/src/assistant.ts",
+        "packages/contracts/src/context-observation-event.ts",
+        "packages/contracts/src/native-activity.ts",
+        "packages/contracts/src/reconciliation.ts",
+        "packages/contracts/src/workspace.ts",
+        "packages/contracts/src/protocol-dispatch.ts",
+        "packages/contracts/src/goal-delivery.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/plugins.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/runner-maintenance.ts",
+        "packages/contracts/src/plugin-package-fetches.ts",
+        "packages/contracts/src/package-artifacts.ts",
+        "packages/contracts/src/goal-native-executions.ts",
+        "packages/contracts/src/context-transparency.ts",
+        "packages/contracts/src/context-observation-history.ts",
+        "packages/contracts/src/browser-session.ts",
+        "packages/contracts/src/plugin-installations.ts",
+        "packages/contracts/src/goal-progression.ts",
+        "packages/contracts/src/goal-plan-confirmation.ts",
+        "apps/runner/src/engineering/setup.ts",
+        "apps/runner/src/engineering/checker.ts",
+        "apps/runner/src/engineering/identity.ts",
+        "apps/runner/src/engineering/workspace.ts",
+        "apps/runner/src/goal-graph-tools/mcp.ts",
+        "apps/runner/src/goal-tools-mcp/read.ts",
+        "apps/runner/src/context-observations/claude-summary-values.ts",
+        "apps/runner/src/native-harness/codex/wire.ts",
+        "apps/runner/src/admission-journal.ts"
+      ]
+    },
+    {
+      "specifier": "@anthropic-ai/claude-agent-sdk",
+      "typeOnly": true,
+      "from": [
+        "apps/runner/src/claude-message-settings.ts",
+        "apps/runner/src/active-steering/host.ts",
+        "apps/runner/src/active-steering/input.ts",
+        "apps/runner/src/active-steering/state.ts",
+        "apps/runner/src/goal-tool-bridge/policy.ts",
+        "apps/runner/src/assistant-stream/index.ts",
+        "apps/runner/src/assistant-stream/accumulator.ts",
+        "apps/runner/src/native-activity/index.ts",
+        "apps/runner/src/context-observations/claude-summary-read.ts",
+        "apps/runner/src/context-observations/claude-summary-values.ts"
+      ]
+    },
+    {
+      "specifier": "@anthropic-ai/claude-agent-sdk",
+      "typeOnly": false,
+      "from": [
+        "apps/runner/src/goal-graph-tools/mcp.ts",
+        "apps/runner/src/goal-tools-mcp/index.ts",
+        "apps/runner/src/claude.ts"
+      ]
+    },
+    {
+      "specifier": "@a2a-js/sdk",
+      "typeOnly": false,
+      "from": [
+        "apps/runner/src/protocol-dispatch/index.ts",
+        "packages/protocols/src/a2a-client.ts",
+        "packages/protocols/src/a2a-mapping.ts",
+        "packages/protocols/src/a2a-bridge.ts",
+        "packages/protocols/src/a2a-http-server.ts"
+      ]
+    },
+    {
+      "specifier": "@a2a-js/sdk/client",
+      "typeOnly": false,
+      "from": [
+        "packages/protocols/src/a2a-client.ts"
+      ]
+    },
+    {
+      "specifier": "@a2a-js/sdk/errors",
+      "typeOnly": false,
+      "from": [
+        "packages/protocols/src/a2a-client.ts",
+        "packages/protocols/src/a2a-bridge.ts"
+      ]
+    },
+    {
+      "specifier": "@a2a-js/sdk/server",
+      "typeOnly": false,
+      "from": [
+        "packages/protocols/src/a2a-bridge.ts",
+        "packages/protocols/src/a2a-http-server.ts"
+      ]
+    },
+    {
+      "specifier": "@modelcontextprotocol/client",
+      "typeOnly": false,
+      "from": [
+        "packages/protocols/src/mcp-client.ts"
+      ]
+    },
+    {
+      "specifier": "@a2a-js/sdk",
+      "typeOnly": true,
+      "from": [
+        "apps/runner/src/protocol-dispatch/materials.ts"
+      ]
+    }
+  ],
+  "unresolved": [],
+  "metadata": [
+    {
+      "path": "packages/protocols/package.json",
+      "bytes": 366,
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294",
+      "present": false
+    }
+  ],
+  "additionalIgnoredLinks": [
+    {
+      "path": "node_modules/@flow/protocols",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery/packages/protocols",
+      "version": "0.1.0"
+    },
+    {
+      "path": "node_modules/@a2a-js/sdk",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk",
+      "version": "1.3.0"
+    },
+    {
+      "path": "node_modules/@modelcontextprotocol/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@modelcontextprotocol+client@2.3.1/node_modules/@modelcontextprotocol/client",
+      "version": "2.3.1"
+    }
+  ]
+}
