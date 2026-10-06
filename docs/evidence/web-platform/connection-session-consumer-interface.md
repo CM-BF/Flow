@@ -1,5 +1,21 @@
 # MATURE06-04 中心会话消费者接口补充
 
+## 当前固定输入与三项最小差异（13:10更新）
+
+中心首DTO固定 **31824d831ef72b331459d568301371bb037d9734**。原[035119fd v1 receipt](connection-session-center-claim-receipt.json)已核为13:03:35.196Z COMMITTED，native_center_owner独占六中心源码+028迁移+own records共九literal；这不是Web consumer已领取。固定DTO无运行模块/028实现的阶段观察，不能宣称整个session可用。
+
+现ready的centerId/ownerPrincipalId/expiresAt/csrfToken已足够Web最小消费，无需强制增加sessionRef/authEpoch/issuedAt/serverTime/boundOrigin。恢复namespace用可信中心地址+centerId+principal；expiresAt只是提示，授权最终归中心。若CSRF严格绑定cookie，可等价保护旧tab请求意图；前端须冻结点击时CSRF，失败后不取新CSRF自动重试logout。cookie模式无Authorization、HTTP/watch统一credentials、cookie-only read/SSE确认以及原unknown身份验收继续。read不建/不续、8h绝对期、无Origin安全同源判定和DB singleton32方向已明确。
+
+以下三项由root认可为当前最小冻结条件，中心owner需确认，不扩DTO/账户管理：
+
+1. **实际调用方Origin绑定。** cookieOrigin是目标中心origin，不能替代connect请求的caller/sourceOrigin。仅trustedOrigins allowlist不等逐session绑定；应保存经校验的实际connect Origin，后续effective caller须相同。无Origin safe同源请求沿Sec-Fetch-Site:same-origin+exact scheme/Host、不信Forwarded推导effective caller后仍核session绑定。若刻意允许受信Origin共享会话，须明确改变原约定。
+2. **迟到ClearCookie。** CSRF能拦新cookie已到时的旧请求，却拦不了S1撤销已通过后，S2先设置、S1迟到清cookie响应再到。最小候选为server revoke only，logout/失效read/error不无条件clearCookie；这是RFC规范推演，未browser复现，不称当前产品已失败或已修。最后仍cookie-only read核实际身份，不增加复杂锁。
+3. **重复connect与32槽位。** 同身份同sourceOrigin有效cookie再次显式connect建议复用且不续8h；若每次新建须明确。刷新/newtab只read，丢connect ACK先read，不自动重POST；unauthenticated不能证明前POST未占槽。singleton32有效计数及过期释放由中心，满拒不踢旧。并发connect最终cookie乱序不由JS epoch保证。
+
+三态DTO可保留；unauthenticated只提示重认证，不伪称精确expired。Origin/CSRF forbidden、quota及网络/资源错误分开；普通资源403不清登录、任意404不冒旧中心unsupported。SSE仍EventPage，授权失效关流后consumer一次readSession分类，不添加未协调auth data。详细来源及原始方法见下方历史。
+
+## 13:04历史六项建议（由上述固定DTO差异收敛，非新增字段硬合同）
+
 2026-10-06 13:04 UTC。来源为 panels 经 root 认可的只读报告：管理 proposal 固定 `ca0ba84c2bc3b7e694939353e3a00659b8570082`，client/watch/streams 固定 `aeb764e5d2c2ec043ae8673cde2724f5330db2ab`。本记录没有实施、实验或服务操作；不是另一份进度源。归原 MATURE06-04，完整设计和 owner 指派见 [既有 proposal](connection-recovery-readonly-proposal.json)。
 
 Lead 已指派 `native_center_owner` 承接候选 `WPF-CONNECTION01`，独立 `browser-connection-session/codex/browser-connection-session`、`plans/wpf-connection-session`，六中心产品 literal 加正式预留 `packages/storage/migrations/028-browser-sessions.sql` 与自身计划/证据；F01 处理 mount/exports/client。尚未收到 COMMITTED receipt，不把候选范围当已领取。Web consumer/Recovery 拟 panels，须 ATTACHI02 main/release 后另取合法范围。所有实现子task直接归 MATURE06。

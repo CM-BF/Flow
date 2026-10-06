@@ -12,5 +12,14 @@
     "detail": "SVC removed only owned stage; about 1.85GiB available and no copy process per Lead. I02 will rerun only the two checks previously stopped before import; Web does not repeat191 or longnames.",
     "scope": "Local small metadata continues; no new product experiment by manager"
   },
-  "followupReported": "Lead via root reports combination PG2 + UI17 and root/Web types passed, intake underway without main SHA; original pre-import0tests retained, no Web rerun."
+  "followupReported": "Lead via root reports combination PG2 + UI17 and root/Web types passed, intake underway without main SHA; original pre-import0tests retained, no Web rerun.",
+  "currentResourceGate": {
+    "source": "Lead via root; no local free-space sampling",
+    "availableGiBApprox": 1.7,
+    "fullBuildMinimumGiB": 2.5,
+    "reason": "physical expansion estimated +1GiB with margin",
+    "allowed": "small checks and metadata only; center/recovery preparation read-only, no new build/PG/browser",
+    "ownerInventory": "d06-owned-output-inventory.json",
+    "globalBlocked": false
+  }
 }

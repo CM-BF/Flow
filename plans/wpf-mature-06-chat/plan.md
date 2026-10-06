@@ -55,7 +55,7 @@ WPF-MATURE-06-03的事实/呈现边界与四旅程细目见[固定研究](../../
 
 T3固定输入后续已核：root实际只读SHA `9bd1d8009a6b7c50f9dd9458e2bf27d481ff3b43` 与MIT/T3 Tools Inc.，原[source audit及应用摘要](../../docs/evidence/web-platform/t3-auth-fixed-research/README.md)。每中心唯一transport、HTTP授权与流生命周期分离、epoch/缓存新鲜度/不自动mutation重投沿原TODO04；issue7756是closed duplicate旧nightly，仅失败场景，不采用JS可读cookie workaround。中心session唯一合法writer已由Lead指派native_center_owner，精确DTO/公开client接缝仍须冻结，当前F01 v31持server/client index；Web不越权写，输入可独立先行而不等整个UI。
 
-只读实现准备已收敛为[两个Module的现有TODO04候选](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)：中心ConnectionSession负责auth/session/流失效，ConversationRecovery只为原controllers增加durablecheckpoint；13/16候选literal及32draft/128command/4MiB仅待精确owner/scope与容量审定的设计，不是已批准容量/写权。A中心owner已指派、028迁移已预留，shared出口由F01；尚未收到COMMITTED，B等ATTACHI02准确组合main与交权；真实HTTP/browser预算实施前冻结，本轮零实验。
+只读实现准备已收敛为[两个Module的现有TODO04候选](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)：中心ConnectionSession负责auth/session/流失效，ConversationRecovery只为原controllers增加durablecheckpoint；13/16候选literal及32draft/128command/4MiB仅待精确owner/scope与容量审定的设计，不是已批准容量/写权。A中心owner已指派、028迁移已预留，shared出口由F01；035119fd v1九scope已COMMITTED，B等ATTACHI02完整main收口与交权；真实HTTP/browser预算实施前冻结，本轮零实验。
 
 Root方向已批准进入Interface与合法owner协调，不授共享中心写入；中心独立Module由Lead指定唯一writer先受领可独立六产品路径及own records，共享mount/exports/client/migration仍精确协调。Web consumer/Recovery拟panels pending legal scope；都直接父MATURE06。checkpoint保相同key/body/知识与附件有序refs及下一draft；center/principal来自中心、同中心不同账号隔离。容量候选先对齐公开正文上限，禁止静默截断/淘汰unknown。
 
@@ -63,4 +63,4 @@ Root方向已批准进入Interface与合法owner协调，不授共享中心写�
 
 同TODO04容量冻结门槛（fixedaeb只读）：4MiB/32draft/128command仍proposal，普通turn16k UTF16、Queue16k UTF8、Steer16384 UTF8并不等价；128合法中文turn仅正文6,144,000bytes已超4MiB，JSON控制字符转义还会膨胀。计完整最终版本化record UTF8，明确namespace/记录单位及CREATE绑定、ACK状态增长预留；不得承诺所有合法输入均可恢复，不截断请求或淘汰unknown。未来发送journal CAS不自动覆盖当前上传journal跨tab read-modify-write风险，详原[候选Interface](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。本轮无实现/实验。
 
-中心具体指派已落[原proposal](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)：WPF-CONNECTION01仍是06的直接子task；8h绝对期限/GET不续、32有效session满拒不踢、同DB稳定中心/主体与token轮换epoch、trusted Origin和mutation CSRF、invalid Bearer不fallback。cookie名称不提供port隔离。冻结前六项[Web消费者接口差异](../../docs/evidence/web-platform/connection-session-consumer-interface.md)包括cookie-only read+HTTP/watch、无Origin同源读取、失败码、SSE关流诊断及旧tab logout；本条不等已实现/已领取，Web仍pending合法范围。
+中心具体指派已落[原proposal](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)：WPF-CONNECTION01仍是06的直接子task；8h绝对期限/GET不续、32有效session满拒不踢、同DB稳定中心/主体与token轮换epoch、trusted Origin和mutation CSRF、invalid Bearer不fallback。cookie名称不提供port隔离。冻结前六项[Web消费者接口差异](../../docs/evidence/web-platform/connection-session-consumer-interface.md)包括cookie-only read+HTTP/watch、无Origin同源读取、失败码、SSE关流诊断及旧tab logout；中心已正式九scope领取但不等已实现；Web仍pending合法范围。首DTO31824d8四字段足够，原六点按实际callerOrigin、迟到ClearCookie与重复connect三项收敛，原建议不作为额外字段硬合同。

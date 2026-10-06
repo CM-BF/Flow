@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 13:05 UTC |
+| 最近更新 | 2026-10-06 13:12 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-03](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,14 +14,14 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | ATTACHI02 fixed9eec真实App/HTTP片已独审APPROVED，final6f3b双端clean；26scope停产品写、待main；大task完整验收开放 |
-| 下一可用交付 | 受控接收9eec并核当前history producer×attachment-only组合；持久Send/Queue恢复归06-04，Picker插件条目coverage仍后继 |
+| 当前产出 | ATTACHI02 fixed9eec与history修复已main cde6646；owner506958双端clean后0b7f v4释放，完整附件/provider/持久恢复仍开放 |
+| 下一可用交付 | 06-04独立恢复旅程按新claim推进；Picker条目完整插件coverage排后继 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-03-attachments |
 | 检查状态 | NOT_RUN；当前为整体计划，已有子片检查只沿各canonical，不继承为全体验收 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；计划登记/大task功能验收分别记录 |
+| 已集成main状态 / HEAD | 局部INTEGRATED cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd；24App与2history源码正式同批，Lead组合PG2/UI17/types0；整个大task仍开放 |
 | Review | [review.md](review.md)，NOT_STARTED；完整大task未验收 |
 | 写权 | 管理632a7149 v3仅本计划目录；实现子task各自claim不由本表替代 |
 
@@ -30,13 +30,13 @@
 | WPF-MATURE-03-01 | completed | Web co-lead | CONTEXTI01从已授权project创建、cap确认后选引用；Send/Queue ordered tuple到真实HTTP并校ACK；不宣称本地上传完成。 |
 | WPF-MATURE-03-02 | in-progress | Web co-lead | 区分本地上传、已有知识、runner文件的来源/版本/权限/大小类型，绑定当前project/view/connection；timeline只轻引用。 |
 | WPF-MATURE-03-03 | in-progress | Web co-lead | 三个入口实际片已审；Picker条目P01覆盖仍开放，须view/project/fixed-ref授权，不套task artifact上下文，见plan。 |
-| WPF-MATURE-03-04 | pending | Web co-lead | 同一次Send/Queue深冻材料版本/顺序；unknown保原key/payload，预算拒绝保留receipt，ACK不得清新稿/新refs；异步prepare须绑定点击意图/材料与submission代际，仅真实receipt接管后consume；材料真实进入model context。 |
-| WPF-MATURE-03-05 | pending | Web co-lead | 双split草稿独立、换连接/close/隐藏/撤权迟到隔离；旧center缺cap阻附件，plain省略attachments字段；旧页读v2只显示正文。类型/大小/授权失败可行动，兼容矩阵待实际fixture；journal异常隔离保raw/unknown和纯文本，cap/namespace按绑定失效，生产宿主未验。 |
-| WPF-MATURE-03-06 | pending | Web co-lead | 真实App fixture覆盖入口到执行请求、引用审计与按需详情；provider执行验收另经明确预算，不能拿fixture证明模型收到。 |
+| WPF-MATURE-03-04 | in-progress | Web co-lead | 同一次Send/Queue深冻材料版本/顺序；unknown保原key/payload，预算拒绝保留receipt，ACK不得清新稿/新refs；异步prepare须绑定点击意图/材料与submission代际，仅真实receipt接管后consume；材料真实进入model context。 |
+| WPF-MATURE-03-05 | in-progress | Web co-lead | 双split草稿独立、换连接/close/隐藏/撤权迟到隔离；旧center缺cap阻附件，plain省略attachments字段；旧页读v2只显示正文。类型/大小/授权失败可行动，实际App/HTTP有限矩阵已9eec独审，真实provider/跨reload恢复仍开放；journal异常隔离保raw/unknown和纯文本，cap/namespace按绑定失效，生产宿主有限fixture已审，个人部署另计。 |
+| WPF-MATURE-03-06 | in-progress | Web co-lead | 真实App fixture覆盖入口到执行请求、引用审计与按需详情；provider执行验收另经明确预算，不能拿fixture证明模型收到。 |
 
 ## 依赖与领取
 
-CONTEXTI01已main并释放；ATTACH01 runtime/fixture与公共六client/sharedv2/factory已正式main fd1322，23源逐字相同，Lead有限组合6项/8自动启动无fallback/4DB清零。owner c698正常pushclean后18scope全停写，ef617 v3已release；[正式证据](../../docs/evidence/web-platform/attachment-main-fd1322-observation.json)。ATTACHI01 fixed4c4d九源已另外接收main1c496，owner2b0a33e收口后94b84 v2释放；不混入fd1322的23源。ATTACHI02经0b7fc000 v3精确amend至26scope，fixed9eec已独审APPROVED、final6f3b正常pushclean，产品停写等main；[固定接收审计](../../docs/evidence/web-platform/attachi02-approved-management-audit.json)。CACHE六路径已交权；大task/provider/持久恢复与当前history组合仍开放。
+CONTEXTI01已main并释放；ATTACH01 runtime/fixture与公共六client/sharedv2/factory已正式main fd1322，23源逐字相同，Lead有限组合6项/8自动启动无fallback/4DB清零。owner c698正常pushclean后18scope全停写，ef617 v3已release；[正式证据](../../docs/evidence/web-platform/attachment-main-fd1322-observation.json)。ATTACHI01 fixed4c4d九源已另外接收main1c496，owner2b0a33e收口后94b84 v2释放；不混入fd1322的23源。ATTACHI02经0b7fc000 v3精确amend至26scope，fixed9eec已审并main cde6646，owner506958正常pushclean/全scope停写后0b7f v4释放；[固定接收审计](../../docs/evidence/web-platform/attachi02-approved-management-audit.json)。CACHE六路径已交权；大task/provider/持久恢复与当前history组合仍开放。
 
 当前子任务来源：[ATTACH01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)；[CONTEXTI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。该子任务直接归本大task，WPF管理只做来源追溯。
 

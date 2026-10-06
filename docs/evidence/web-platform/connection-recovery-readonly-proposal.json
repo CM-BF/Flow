@@ -44,7 +44,7 @@
       "packages/client/src/index.ts",
       "packages/client/src/browser-session.test.ts"
     ],
-    "migration": "Lead reserved packages/storage/migrations/028-browser-sessions.sql for center owner; exact claim receipt pending",
+    "migration": "028-browser-sessions.sql included in native_center_owner035119fd v1",
     "assignedCenterDesign": {
       "absoluteLifetimeHours": 8,
       "getRenews": false,
@@ -126,6 +126,18 @@
         "Storage admission failure keeps same receipt/full materials,nextdraft,0HTTP",
         "Future send journal CAS does not fix current upload journal read-JSON-write cross-tab lost-update risk; no experiment confirms that risk"
       ]
+    },
+    "indexedDbBarrierResearch": {
+      "source": "Root read-only official W3C IndexedDB3 transaction-lifecycle/commit-transaction and MDN IDBDatabase.transaction; no experiment",
+      "barrier": "Wait transaction complete, not single put success; commit can still abort for Quota/Unknown",
+      "durability": "Use strict durability hint for critical prepare/dispatching/ACK; do not call default relaxed guaranteed durability. No promise against hardware power loss or user storage clearing.",
+      "transaction": "CAS/version/budget/record in the same readwrite transaction; do not await network/external async and accidentally make transaction inactive.",
+      "permissions": "No storage.persist request or new permission",
+      "urls": [
+        "https://w3c.github.io/IndexedDB/#transaction-lifecycle",
+        "https://w3c.github.io/IndexedDB/#commit-transaction",
+        "https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/transaction"
+      ]
     }
   },
   "acceptance": [
@@ -145,10 +157,10 @@
   "newClaims": 0,
   "newWorktrees": 0,
   "experiments": 0,
-  "approvalBoundary": "Center owner/design assigned by Lead; no COMMITTED receipt received here and no manager center write authorization. Web consumer/Recovery proposed panels pending ATTACHI02 main/release and exact scopes. Module decomposition does not create a third task layer.",
+  "approvalBoundary": "Center owner has formal nine-scope COMMITTED receipt. Web manager has no center write authority. Web consumer/Recovery remains proposed panels pending ATTACHI02 main closeout/release and separate fresh scopes. Direct parent MATURE06 only.",
   "dispatchCandidate": {
     "parent": "WPF-MATURE-06",
-    "centerOwner": "native_center_owner — assigned by Execution Lead; COMMITTED receipt not received",
+    "centerOwner": "native_center_owner — formally claimed by Execution Lead",
     "centerProductScopes": [
       "packages/contracts/src/browser-session.ts",
       "apps/server/src/browser-session/index.ts",
@@ -172,12 +184,13 @@
     "centerTaskCandidate": "WPF-CONNECTION01",
     "centerWorktreeCandidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session",
     "centerBranchCandidate": "codex/browser-connection-session",
-    "centerBaseReported": "280289 (Lead short reference; exact base/HEAD pending canonical receipt)",
+    "centerBaseReported": "280289008a5a3779e4e5e6453181b96062ed9514",
     "assignmentSource": "Lead inbound via root, 2026-10-06 13:0x UTC; no manager service sampling",
-    "claimState": "NOT_CONFIRMED; 13:01:50.638Z list has no CONNECTION01 record; later assignment is not a COMMITTED receipt",
-    "centerMigration": "packages/storage/migrations/028-browser-sessions.sql",
+    "claimState": "COMMITTED 2026-10-06T13:03:35.196Z; claim035119fd v1, nine exact scopes",
+    "centerMigration": "packages/storage/migrations/028-browser-sessions.sql (included in committed claim)",
     "consumerInterfaceAddendum": "connection-session-consumer-interface.md",
-    "sharedOwner": "F01, existing mount/contracts exports/public client handoff"
+    "sharedOwner": "F01, existing mount/contracts exports/public client handoff",
+    "centerClaimReceipt": "connection-session-center-claim-receipt.json"
   },
   "assignmentUpdatedAt": "2026-10-06T13:04:32.047398+00:00",
   "firstFixedCenterDto": {
@@ -201,6 +214,12 @@
       "repeat connect behavior"
     ],
     "fieldPolicy": "Six consumer points are semantic goals; no mechanical requirement for sessionRef/authEpoch or extra public fields if CSRF and private generation provide equivalent protections. Panels narrows delta against fixed DTO.",
-    "claimReceipt": "not received"
+    "claimReceipt": "connection-session-center-claim-receipt.json",
+    "currentSemanticDelta": [
+      "Bind actual connect caller Origin, not only center cookieOrigin/trusted allowlist",
+      "Avoid delayed unconditional clearCookie invalidating a later session; normative not browser reproduced",
+      "Explicit repeat connect and singleton32 slot semantics"
+    ],
+    "fields": "Existing ready centerId/ownerPrincipalId/expiresAt/csrfToken sufficient; no hard requirement for additional sessionRef/authEpoch/boundOrigin DTO fields"
   }
 }

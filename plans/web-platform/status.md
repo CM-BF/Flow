@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:05 UTC / D06与ATTACHI02已审READY待正式main；个人服务只沿SVC05回执 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:12 UTC / 正式main cde6646接31源；D06与ATTACHI双端收口clean且fresh释放 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,8 +17,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | ATTACHI02 fixed9eec已独审APPROVED，24源和双端clean核；中心会话owner已指派但COMMITTED未到；插件条目coverage保持后继 |
-| 下一可用交付 | Lead受控接收ATTACHI02与D06，保history attachment-only组合条件；中心DTO六项consumer差异冻结后再合法派Web恢复 |
+| 当前产出 | ATTACHI02与MATURE04附件历史修复、D06已受控main；中心会话正式九scope领取，固定DTO三项consumer差异待确认 |
+| 下一可用交付 | 中心固定DTO三项consumer差异确认；Recovery新树/fresh范围待派，完整build≥2.5GiB门槛；个人产物未切换 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
