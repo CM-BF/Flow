@@ -1,0 +1,87 @@
+{
+  "recordedAt": "2026-10-06T07:26:53.259Z",
+  "taskId": "WPF-CHAT06S01",
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "增量正文模块已完成校验与隔离检查，等待独立审查",
+      "next": "完成独立审查并交集成，随后接入聊天",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7",
+      "scopes": [
+        "apps/web/src/conversation-stream/patches.ts",
+        "apps/web/src/conversation-stream/projection.ts",
+        "apps/web/src/conversation-stream/messages.ts",
+        "apps/web/test/conversation-stream.test.ts",
+        "apps/web/test/conversation-stream-projection.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-CHAT06S01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/web-conversation-stream",
+    "branchState": "IN_PROGRESS",
+    "updatedAt": "2026-10-06T07:26:00.000Z",
+    "updatedRecord": "2026-10-06 07:26 UTC / fa9a8288341d4f2bd8160e03fe9173dafa2de1a6",
+    "todos": [
+      {
+        "id": "WPF-CHAT06S01-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[输入](../../docs/evidence/wpf-chat06-stream/input-provenance.json)、[接口](../../docs/evidence/wpf-chat06-stream/interface.md)、[质量](../../docs/evidence/wpf-chat06-stream/quality.md)"
+      },
+      {
+        "id": "WPF-CHAT06S01-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[直接检查与来源绑定](../../docs/evidence/wpf-chat06-stream/checks.json)，身份/UTF8/不可变patch/预算通过"
+      },
+      {
+        "id": "WPF-CHAT06S01-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[验证](../../docs/evidence/wpf-chat06-stream/validation.md)，代际/drain/final竞态/显式消息状态通过"
+      },
+      {
+        "id": "WPF-CHAT06S01-04",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "作者检查完成，独审待结论；已据Lead 07:16:38实采确认聚合入口，非本次target采样"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 / 实际HEAD由Git聚合",
+    "declaredDirty": "实现已提交冻结，交付文档收口；实际dirty由Git聚合",
+    "checks": {
+      "state": "passed",
+      "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7",
+      "record": "PASSED 3ac11cba14ce8baac3b3a769c19827f6343ca4a7; 54 direct / Web tsc，作者证据见[验证](../../docs/evidence/wpf-chat06-stream/validation.md)"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": "3ac11cba14ce8baac3b3a769c19827f6343ca4a7"
+  }
+}

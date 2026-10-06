@@ -1,0 +1,102 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream
+
+ ❯ apps/web/test/conversation-stream-projection.test.ts (22 tests | 1 failed) 142ms
+     ✓ does not read without eligibility {"capability":false} 4ms
+     ✓ does not read without eligibility {} 0ms
+     ✓ does not read without eligibility {} 0ms
+     ✓ does not read without eligibility {"visible":false} 0ms
+     ✓ does not read without eligibility {"online":false} 0ms
+     ✓ does not dispatch a stale reader when a loading subscriber hides then restores the view 3ms
+     ✓ serializes refresh, accumulates body, and resumes from the applied cursor 1ms
+     ✓ refreshes metadata once when a block appears after the first metadata snapshot 0ms
+     ✓ shows a later patch revision even when the metadata revision is older 1ms
+     ✓ suppresses hidden/disposed responses and resumes the same attempt from the saved cursor 53ms
+     ✓ checks lifetime again after an in-flight crypto digest 1ms
+     ✓ clears old-attempt body before consuming a new current attempt 1ms
+     ✓ collects metadata pages before applying bodies and rejects repeated cursors 1ms
+     ✓ rejects metadata pagination crossing attempts and preserves the previous verified body 0ms
+     ✓ reports missing patch history instead of treating incomplete body as caught up 0ms
+     ✓ does not read patches for wrong-task metadata or a malformed partition 1ms
+     ✓ treats timeout as an error and preserves body, rather than silently staying loading 0ms
+     ✓ bounds repeated failures and requires explicit retry after the error budget 2ms
+     × does not reset the failure budget after a valid prefix followed by missing patch history 3ms
+     ✓ drains at most four patch pages per flight and yields before continuing 3ms
+     ✓ waits for final patches and canonical source before replacing the explicit draft partition 54ms
+     ✓ binds the public client readers without requesting full block/detail or adding a second fetch layer 14ms
+ ❯ apps/web/test/conversation-stream.test.ts (32 tests | 1 failed) 20ms
+     ✓ applies jumping sequence and UTF-8 bytes, preserves changing SDK source IDs, and applies empty terminal patches 5ms
+     ✓ deduplicates exact sealed replay and rejects changed replay without mutation 1ms
+     ✓ rejects changed task identity/integrity 0ms
+     ✓ rejects changed attempt identity/integrity 0ms
+     ✓ rejects changed session identity/integrity 0ms
+     ✓ rejects changed source identity/integrity 1ms
+     ✓ rejects changed stream identity/integrity 0ms
+     ✓ rejects changed revision identity/integrity 0ms
+     ✓ rejects changed offset identity/integrity 0ms
+     ✓ rejects changed digest identity/integrity 0ms
+     ✓ rejects a bad later patch atomically without publishing the valid prefix 0ms
+     ✓ rejects oversized/invalid Unicode/NUL/empty open patch 0ms
+     ✓ rejects oversized/invalid Unicode/NUL/empty open patch 0ms
+     ✓ rejects oversized/invalid Unicode/NUL/empty open patch 0ms
+     ✓ rejects oversized/invalid Unicode/NUL/empty open patch 0ms
+     ✓ accepts the exact 8 KiB UTF-8 boundary and rejects a forged first sequence 0ms
+     ✓ enforces attempt bytes and patch-count budgets 1ms
+     ✓ does not reopen closed or superseded blocks 1ms
+     ✓ rejects nonadvancing or invented page cursor {"patches":[],"nextCursor":0,"hasMore":true} 0ms
+     ✓ rejects nonadvancing or invented page cursor {"patches":[],"nextCursor":3,"hasMore":false} 0ms
+     ✓ bounds patch pages and rejects out-of-order sequences 0ms
+     × marks an actual canonical final complete while the task remains running, including before stream metadata 3ms
+     ✓ rejects metadata/patch disagreement at the same sealed revision 0ms
+     ✓ never overwrites a newly authoritative final with a same-ID stale digest result 0ms
+     ✓ does not mix a final from an older attempt with current-attempt stream body 0ms
+     ✓ validates current metadata identity, ordering and complete settlement partitions 1ms
+     ✓ does not accept presentation-policy replacement for incomplete or superseded blocks 0ms
+     ✓ replaces only an explicitly settled draft once full canonical text is verified 1ms
+     ✓ keeps retained tool-introduction and unavailable drafts beside the independent final 0ms
+     ✓ does not replace when final arrives before all patches or belongs to another attempt 0ms
+     ✓ does not guess truncated final text or accept wrong final digest 0ms
+     ✓ keeps failed/cancelled drafts interrupted and offline drafts paused, without fake task success 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-stream-projection.test.ts > bound stream projection > does not reset the failure budget after a valid prefix followed by missing patch history
+AssertionError: expected "vi.fn()" to be called 3 times, but got 5 times
+ ❯ apps/web/test/conversation-stream-projection.test.ts:133:36
+    131|       await vi.waitFor(() => expect(value.projection.getSnapshot().loa…
+    132|     }
+    133|     expect(value.port.readPatches).toHaveBeenCalledTimes(3);
+       |                                    ^
+    134|     expect(value.projection.getSnapshot().error).toContain("not reache…
+    135|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/web/test/conversation-stream.test.ts > metadata and explicit final settlement > marks an actual canonical final complete while the task remains running, including before stream metadata
+AssertionError: expected undefined to deeply equal { type: 'complete', reason: 'unknown' }
+
+- Expected: 
+{
+  "reason": "unknown",
+  "type": "complete",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/web/test/conversation-stream.test.ts:106:39
+    104|     for (const current of [state(metadata([ref]), patches), state(meta…
+    105|       const messages = streamConversationMessages(t, current);
+    106|       expect(messages.at(-1)?.status).toEqual({ type: "complete", reas…
+       |                                       ^
+    107|       expect(t.task.status).toBe("running");
+    108|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 52 passed (54)
+   Start at  00:24:33
+   Duration  514ms (transform 107ms, setup 0ms, import 201ms, tests 162ms, environment 0ms)
+
