@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract
+
+stdout | apps/server/src/runner-read-fence.test.ts
+{"kind":"s01p04-cleanup","databaseName":"flow_s01p04_fe8e284c569b4a74ae1ba645b31c7001","postgresVersionNumber":"160013","connectionsClosed":true,"databaseAbsent":true}
+
+ ✓ apps/server/src/runner-read-fence.test.ts (9 tests | 7 skipped) 1154ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed | 7 skipped (9)
+   Start at  05:43:27
+   Duration  2.22s (transform 425ms, setup 0ms, import 971ms, tests 1.15s, environment 0ms)
+
