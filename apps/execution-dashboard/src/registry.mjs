@@ -38,6 +38,8 @@ const assignments = [
   ['CHAT02', '真实助手正文事件', '工作线', 'conversation-native-events', 'chat02-native-messages'],
   ['WPF-CHAT01', '产品持续对话', '工作线', 'web-conversations', 'wpf-chat01-conversations'],
   ['CHAT01', '持久对话与回复', '工作线', 'conversation-center', 'chat01-conversations'],
+  ['CHAT03', '执行选项与能力', '工作线', 'execution-profiles', 'chat03-execution-profiles'],
+  ['P03', '外部协议传输优化', '工作线', 'protocol-payload', 'p03-protocol-payload'],
   ['D05', '代码架构视图', '工程协作', 'dashboard-architecture', 'd05-architecture-view'],
   ['D04', '多 Lead 领取协调', '工程协作', 'dashboard-coordination', 'd04-coordination'],
   ['F01', '共享领域接口', '工作线', 'm2-shared-foundation', 'f01-shared-domains'],
