@@ -85,6 +85,7 @@ export type ThreadGroupPart = MessagePrimitive.GroupedParts.GroupPart;
  */
 export type ThreadComponents = {
   MessageActions?: ComponentType | undefined;
+  MessageFooter?: ComponentType | undefined;
   ComposerActions?: ComponentType | undefined;
   AssistantMessage?: ComponentType | undefined;
   Welcome?: ComponentType | undefined;
@@ -588,6 +589,7 @@ const AssistantMessage: FC = () => {
     ToolGroup,
     ReasoningGroup,
     TaskGroup: TaskGroupComponent,
+    MessageFooter,
   } = useContext(ThreadComponentsContext);
   const groupBy = TaskGroupComponent ? taskAwareGroupBy : messageGroupBy;
 
@@ -688,6 +690,7 @@ const AssistantMessage: FC = () => {
         <BranchPicker />
         <AssistantActionBar />
       </div>
+      {MessageFooter && <MessageFooter />}
     </MessagePrimitive.Root>
   );
 };
@@ -776,6 +779,7 @@ const UserImagePart: ImageMessagePartComponent = (part) => (
 );
 
 const UserMessage: FC = () => {
+  const { MessageFooter } = useContext(ThreadComponentsContext);
   return (
     <MessagePrimitive.Root
       data-slot="aui_user-message-root"
@@ -795,6 +799,7 @@ const UserMessage: FC = () => {
         </div>
       </div>
 
+      {MessageFooter && <div style={{ gridColumn: "1 / -1" }} className="min-w-0 w-full"><MessageFooter /></div>}
       <BranchPicker
         data-slot="aui_user-branch-picker"
         className="col-span-full col-start-1 -me-1 justify-end"

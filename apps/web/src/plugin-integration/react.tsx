@@ -13,6 +13,7 @@ import { AssistantDataRenderers } from "../data-renderers/react";
 import { ReplyBindingsProvider, flowReplyFallback } from "../data-renderers/flow-reply-detail";
 import { FLOW_REPLY_OWNER } from "../data-renderers/registry";
 import { createConversationReplyBindings } from "./data-renderers";
+import { createConversationActivityBindings, ActivityBindingsContext } from "./activity";
 import type { ConversationProjection } from "../conversations/projection";
 
 const SessionContext = createContext<AppPluginSession | null>(null);
@@ -44,6 +45,29 @@ export function ConversationDataRenderers({ viewId, projection, visible, childre
     {visible && ready === bindings && <AssistantDataRenderers registry={session.dataRenderers} fallback={flowReplyFallback} />}
     {children}
   </ReplyBindingsProvider>;
+}
+export function ConversationActivities({ viewId, projection, visible, children }: { viewId: string; projection: ConversationProjection; visible: boolean; children: ReactNode }) {
+  const session = useContext(SessionContext)!;
+  const bindings = useMemo(() => createConversationActivityBindings(session, viewId, projection), [session, viewId, projection]);
+  const state = useSyncExternalStore(projection.subscribe, projection.getSnapshot);
+  useLayoutEffect(() => { bindings.setVisible(visible); return () => bindings.setVisible(false); }, [bindings, visible]);
+  useLayoutEffect(() => { bindings.sync(); }, [bindings, state.turns, state.connection]);
+  useEffect(() => { const close = () => bindings.dispose(); session.signal.addEventListener("abort", close, { once: true }); return () => { session.signal.removeEventListener("abort", close); bindings.setVisible(false); }; }, [session, bindings]);
+  return <ActivityBindingsContext.Provider value={bindings}>{children}</ActivityBindingsContext.Provider>;
+}
+export function MessageFooter() {
+  const session = useContext(SessionContext)!;
+  const scope = useContext(ThreadScope);
+  const messageId = useAuiState(state => state.message.id);
+  const role = useAuiState(state => state.message.role);
+  const taskId = scope.messageTask?.(messageId);
+  const panels = useSyncExternalStore(listener => session.host.subscribeSlot("chat.message.footer", listener), () => session.host.getSlotSnapshot("chat.message.footer"));
+  if (!taskId || role !== "user") return null;
+  const context: ResourceContext = { kind: "message", taskId, messageId, role };
+  return <div className="my-2 w-full min-w-0 space-y-2" data-extension-slot="chat.message.footer">
+    {panels.filter(item => item.declaration.kind === "panel").map(item => <PluginView key={item.declaration.id} host={session.host} contributionId={item.declaration.id} context={context} />)}
+    <AppSlot slot="chat.message.footer" context={context} />
+  </div>;
 }
 export function AppSlot({ slot, context = globalContext, className = "" }: { slot: SlotId; context?: ResourceContext; className?: string }) {
   const session = useContext(SessionContext);
