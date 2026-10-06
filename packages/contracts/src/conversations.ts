@@ -42,7 +42,8 @@ export interface ConversationCapabilities {
   /** Capability varies by center version; older centers may not expose durable queues. */
   queue: boolean;
   steer: false;
-  liveAssistantText: false;
+  /** Missing/false means unsupported. Enable only with the matching live text consumer. */
+  liveAssistantText?: boolean;
   perTurnModel: false;
   perTurnThinking: false;
   perTurnTools: false;
