@@ -23,3 +23,9 @@ root再次只读installed core0.3.22 composer：342–350先detach；469–472�
 clean-code安全停点：分别保留固定已审内容、后续事实metadata和各唯一owner canonical；main接收、服务运行、看板登记、fixture浏览器范围不相互替代。新claim先fresh/read→原子take→owner首canonical，不借释放前写权。
 
 后继readability（root/GO明确同意、仍未take）：现Thread宿主slots足够，不改官方Thread/App/Runtime。空queue压缩时，error/stale/blocked/unknown可行动摘要在折叠后仍须可见；稳定profile/协议/重复execution内容可达，创建前选择profile入口和真实权限差异保留。root已读[W3C Disclosure](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/)；Enter/Space、expanded/焦点复验，固定1280×720与390 fixture前后实际量高度，不能凭空规定收益百分比。待CHAT06I main/release后panels精确scope，CONTEXT02八scope无交叉。
+
+## 对外交接降噪规则（GO经root明确重申）
+
+同一交付的完整REVIEW_READY由本管理者一次发GO转ExecutionLead；root没有新decision/blocker时不重复SHA、claim和验证矩阵。后续消息只写taskID、实际变化、canonical路径和需动作，旧证据用链接。原take/capability/验证要求不变；没有新部署回执不重复API，没有实现变化不重复产品测试。新source登记、blocking接口、固定review-ready和main接收仍是可行动里程碑。
+
+CHAT-READABILITY下一片只读范围已由panels提出并交root：七产品/专测路径加自有plan/evidence共九literal，见[精确候选](readability-proposal.json)。等CHAT06I正式main/全停写release后才定新base、独立树与fresh take；现在未建树/领取/实现。CONTEXT02候选5e821已交root独立代码审，管理等待owner最终metadata后只做scope/parser/docs，不以测试通过替代审查。

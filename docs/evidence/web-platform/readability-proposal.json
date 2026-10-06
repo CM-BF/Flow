@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-10-06T08:18:34.252105+00:00",
+  "source": "workspace_panels_owner bounded read-only proposal relayed to root",
+  "taskCandidate": "CHAT-READABILITY (existing U11/REQ43)",
+  "stage": "proposal; no worktree/take/writes/tests",
+  "base": "Wait CHAT06I main receipt and release; do not infer moving main",
+  "scopeCandidates": [
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/conversations.css",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/src/execution-profiles/execution-profiles.css",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx",
+    "apps/web/test/conversation-readability.fixture.ts",
+    "apps/web/test/conversation-readability.browser.ts"
+  ],
+  "metadataScopes": "Own plan/evidence names to finalize at task take; total9literal",
+  "readOnlyProtected": [
+    "apps/web/src/App.tsx",
+    "official Thread",
+    "queue-elements",
+    "commands/outbox",
+    "S01/shared"
+  ],
+  "acceptance": [
+    "stable profile/protocol under accessible compact details; preserve new-chat profile selection",
+    "queue error/stale/blocked/unknown visible outside closed details",
+    "measure baseline/final rect at1280x720 and390x844; only actual deltas, no invented target percentage",
+    "reuse actual stream/queue/profile HTTP fixture; keyboard/focus and two themes"
+  ],
+  "priority": "After stream integration, while CONTEXT02 pure receipt runs independently"
+}
