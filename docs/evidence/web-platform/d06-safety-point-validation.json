@@ -80,5 +80,11 @@
       "plans/web-platform/plan.md",
       "../../docs/evidence/f01/queue-live/second-reply-dark-narrow.png"
     ]
-  ]
+  ],
+  "linkBoundary": "15 reported missing relative targets are pre-existing historical cross-worktree links in old plan; new safety-point links all resolve locally. No product/parser failure and no mechanical rewrite of historical links.",
+  "transport": {
+    "firstPush": "remote fatal error in commit_refs; local7220f46 remote6e6eb74 remained different",
+    "retry": "one normalpush samecommit succeeded; subsequent ls-remote=7220f46adab98e487484fe3f33d0e9607df520bd;clean",
+    "forceRebaseNoop": false
+  }
 }

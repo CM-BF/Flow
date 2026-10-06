@@ -35,7 +35,12 @@
       "createdAt": "2026-10-06T12:39:42.275Z"
     }
   },
-  "review": "NOT_STARTED",
+  "review": "NOT_STARTED; fixed input sentroot",
   "registry": "Existing D06 authority unchanged; no newsource requested",
-  "deployment": "No new UI claim sampled; fixed data still implementation"
+  "deployment": "No new UI claim sampled; fixed data still implementation",
+  "implementationTarget": "6570ef7e896d29040961247f46aa62dc4e466284",
+  "metadata": "e77176914fd600de2e145d2397d0614c7c268a12",
+  "sourceHashes": "Own canonical candidate.json; 5 current/git/browser hashes match",
+  "checks": "18Node + 106fixedfiles/171lines +5views9.034s; no realregistry/PG/provider",
+  "localRemote": "equal/clean observed after normalpush"
 }
