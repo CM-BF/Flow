@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-06T15:48:17.242324+00:00",
-  "main": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
+  "recordedAt": "2026-10-06T16:01:54.052492+00:00",
+  "main": "cc135026f8c3db809be25c81ab617dc4f65df4f2",
   "sourceSampleAt": "2026-10-06T15:38:16.075Z",
   "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
   "reviewedQueue": [],
@@ -33,9 +33,9 @@
     },
     {
       "taskId": "WPF-RELEASE03",
-      "phase": "old-backend-history-failed-cleaned",
+      "phase": "new-script-reviewed-history-not-run-resource",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
-      "next": "3874/180000ms retained; candidate362+three-line approved fixb298 prepared; newtuple/fresh resource before any A/B continuation. No personal switch."
+      "next": "Newtuple af51/5069586 script reviewed; 15:58 fresh gate insufficient,0attempt/budget unchanged3874/180000ms. Wait actual resource; original failed A retained; no personal operation."
     },
     {
       "taskId": "SVC06",
@@ -53,7 +53,7 @@
       "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6"
     }
   ],
-  "mainBeforeBatch": "280289008a5a3779e4e5e6453181b96062ed9514",
+  "mainBeforeBatch": "cc135026f8c3db809be25c81ab617dc4f65df4f2",
   "reviewAndVerificationQueue": [
     {
       "taskId": "F01/O14",
@@ -66,19 +66,26 @@
       "target": "9fd1cbf83d52b2b3e52cdd330ddbe4d9376d1cf2",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-input-confirmation/plans/o15-goal-input-confirmation/status.md",
       "next": "Independent source precheck noP1/P2 at9fd1; PGNOT_RUN, no full approval. Fresh resource gate required."
+    },
+    {
+      "taskId": "TUI01F",
+      "target": "044ab84db42606fb1757903258078e3dfbab9545",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/plans/tui01f-task-cancel/status.md",
+      "next": "Only source precheck completed; actual selected checks pending owner result, complete approval not granted."
     }
   ],
   "sourceProvisionQueue": [
     {
       "taskId": "TUI01F",
-      "state": "source-only provision complete, owner assigned fresh claim/implementation; no PG/browser or dependencies",
+      "state": "044ab source precheck noP1/P2; selected tests/types in authorized bounded pure-check window; no PG/PTY/App claim; dependency-view created without install.",
       "worktree": "tui-task-cancel",
       "input": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5"
     },
     {
       "taskId": "WPF-MATURE-02-CORE",
-      "state": "leaf reviewed/main22d, registry164 live; next scope handed off directly to Mika, actual owner status authoritative",
+      "state": "Exact source restored with recorded own-scope correction; active c652v3 includes032. Owner continuing; full domain and runtime unapproved.",
       "worktree": "claude-message-settings-core"
     }
-  ]
+  ],
+  "batch": "OPS four-tree receipts/correction; F01 migration032 assignment; registry165 TUI01F. Product source unchanged."
 }
