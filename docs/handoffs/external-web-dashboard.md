@@ -52,3 +52,8 @@ W01 必读且已按用户要求安装：
 ## 回传
 
 启动即确认 owner/model/base/head/worktree/独占范围并更新自己的 status。交付回传完整 head SHA、分支/dirty 状态、启动命令/本地 URL、检查命令和真实结果、两主题证据、技能/clean-code 记录、未验证/阻塞、自己的 plan/status/review 路径及具体 review target。所有完成都同步 status 事实源；dashboard 未实现时注明等待展示，完成后验证聚合。独立 review 默认只读，修复由 owner 执行，工程集成由原 Execution Lead 负责。
+
+
+## 冻结后的新增状态源（不改变外部实现基线）
+
+W01/D01继续使用冻结 `eacee76fa7f1b6cc46b06b57ae68458637be4a26`；以下只是dashboard只读任务登记补充，owner开始时核验实际路径/branch/head：I01→`m1-integration` / `codex/m1-integration` / `plans/i01-integration/status.md`；R02→`m1-native-harness` / `codex/m1-native-harness` / `plans/r02-native-harness/status.md`；LAB01→`performance-probes` / `codex/performance-probes` / `plans/lab01-performance/status.md`。根前缀仍为上表相同Flow-worktrees。研究/汇总仍由plan-status-review worktree的Execution Lead维护；其他worktrees的副本不覆盖各task owner状态。

@@ -41,6 +41,7 @@
 | L01 | [CLI](l01-cli/plan.md) | `in-progress` | [status](l01-cli/status.md) / [review](l01-cli/review.md) |
 | W01 | [Web与双主题（reserved-external）](w01-web/plan.md) | `accepted` | [status](w01-web/status.md) / [review](w01-web/review.md) |
 | D01 | [工程执行 dashboard（reserved-external）](d01-execution-dashboard/plan.md) | `accepted` | [status](d01-execution-dashboard/status.md) / [review](d01-execution-dashboard/review.md) |
+| I01 | [M1集成验收](i01-integration/plan.md) | `in-progress` | [status](i01-integration/status.md) / [review](i01-integration/review.md) |
 | OPS-001 | [计划状态与review规范](ops-001-status-review/plan.md) | `in-progress` | [status](ops-001-status-review/status.md) / [review](ops-001-status-review/review.md) |
 
 总计划状态：[FLOW-001](flow-001-architecture/status.md) / [FLOW-002](flow-002-provider-harness/status.md) / [FLOW-003](flow-003-m1-execution/status.md)。
@@ -52,3 +53,5 @@
 W01已保留给用户另开的外部task，当前awaiting-dispatch；内部不会重复派发，具体base与接力见后续handoff记录。
 
 W01 与 D01 交给用户新开的外部执行分队并行推进；[共同交接与独占范围](../docs/handoffs/external-web-dashboard.md)。
+
+当前已提交并经过功能审查：C01 `8481168`、R01 `3382637`、L01 `1baf123`；I01 `564febf`有54项全检及新增后5项真实进程/PG场景证据，完整Web/native验收未完成，main仍未集成应用。R02与LAB01的唯一状态源分别位于其 `m1-native-harness`、`performance-probes` worktree，交付后合入本索引。
