@@ -72,9 +72,15 @@ viewSelect.addEventListener('change',()=>{selectedView=views.find(view=>view.id=
 $('#architecture-zoom-in').addEventListener('click',()=>{fit=false;zoom=Math.min(2,zoom+.2);sizeCanvas();});
 $('#architecture-zoom-out').addEventListener('click',()=>{fit=false;zoom=Math.max(.4,zoom-.2);sizeCanvas();});
 $('#architecture-fit').addEventListener('click',()=>{fit=true;sizeCanvas();});
-$('#architecture-baseline').append(html('span',`架构观察：${baseline.date}；基线 `),sourceLink(''),html('p','这是固定源码版本的结构说明，不是实时运行拓扑。分支开发中的能力不计入已实现。'));
-$('#architecture-baseline a').textContent=baseline.commit;
-$('#architecture-baseline a').href=`${baseline.repository}/tree/${baseline.commit}`;
+function snapshotLink(short = false) {
+  const link = html('a', short ? baseline.commit.slice(0, 8) : baseline.commit);
+  link.href = `${baseline.repository}/tree/${baseline.commit}`;
+  link.title = baseline.commit; link.target = '_blank'; link.rel = 'noopener noreferrer';
+  return link;
+}
+const verified = baseline.verifiedAt.replace('T', ' ').replace('Z', ' UTC');
+$('.architecture-heading p').replaceChildren('固定源码快照 ', snapshotLink(true), ` · 源码核验于 ${verified} · 非实时运行拓扑`);
+$('#architecture-baseline').append(html('span', `源码核验于 ${verified}；基线 `), snapshotLink(), html('p', '这是固定源码版本的结构说明，不是实时运行拓扑。分支开发中的能力不计入已实现；代码已集成不代表常驻服务已升级。'));
 function activateTab() {
   const architecture=location.hash==='#architecture';
   $('#architecture-panel').hidden=!architecture; $('#progress-panel').hidden=architecture;

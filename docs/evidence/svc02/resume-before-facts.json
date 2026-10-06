@@ -1,0 +1,46 @@
+{
+  "observedAt": "2026-10-06T05:40:25.679Z",
+  "source": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "clean": true,
+  "sourceAtStart": {
+    "head": "fb906cb42391971a8b315dbd813f7633927d7265",
+    "dirty": false
+  },
+  "counts": {
+    "tasks": 0,
+    "unfinished_attempts": 0,
+    "nonrevoked_runners": 1
+  },
+  "maintenance": {
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "version": 2,
+    "state": "maintenance",
+    "operationId": "0cfd680a-e515-4258-ab8c-4a3ddf0ddccd",
+    "activeAttempts": 0,
+    "uncertainAttempts": 0,
+    "updatedAt": "2026-10-06T05:38:48.158Z",
+    "stopPermitted": false
+  },
+  "processes": {
+    "center": {
+      "pid": 77104,
+      "expectedPidMatches": true,
+      "identity": "running"
+    },
+    "runner": {
+      "pid": 77264,
+      "expectedPidMatches": true,
+      "identity": "running"
+    },
+    "web": {
+      "pid": 77304,
+      "expectedPidMatches": true,
+      "identity": "running"
+    }
+  },
+  "listeners": {
+    "center": true,
+    "web": true
+  },
+  "modelCalls": 0
+}

@@ -28,7 +28,7 @@ function wireSnapshot(queue: unknown, lastTurn: ConversationTurn | null = null):
 function deferred<T>() { let resolve!: (value: T) => void; let reject!: (error: unknown) => void; const promise = new Promise<T>((yes, no) => { resolve = yes; reject = no; }); return { promise, resolve, reject }; }
 const projections: ConversationProjection[] = [];
 afterEach(() => { projections.splice(0).forEach(projection => projection.dispose()); });
-function setup(initial = snapshot(), id: string | null = "chat") {
+function setup(initial = snapshot(), id: string | null = "chat", withQueue = false) {
   let current = initial;
   const client = {
     conversation: vi.fn<FlowClient["conversation"]>(async () => current),
@@ -37,12 +37,31 @@ function setup(initial = snapshot(), id: string | null = "chat") {
     submitConversationTurn: vi.fn<FlowClient["submitConversationTurn"]>(async (_id, input) => ({ conversation: { ...current.conversation, revision: input.expectedRevision + 1 }, turn: turn(input.expectedRevision + 1, input.text), replayed: false })),
     conversationDetail: vi.fn<FlowClient["conversationDetail"]>(async () => ({ id: "detail", title: "Full reply", kind: "artifact" as const, content: "Complete reply", mediaType: "text/plain", artifactVersion: "v1" })),
   };
+  const queueApi = {
+    conversationQueue: vi.fn<FlowClient["conversationQueue"]>(async () => ({ conversationId: "chat", queueRevision: 1, paused: false, currentTurn: null, items: [], nextCursor: null, blocked: null })),
+    conversationQueueItem: vi.fn(), enqueueConversationTurn: vi.fn(), cancelConversationQueueItem: vi.fn(), pauseConversationQueue: vi.fn(), resumeConversationQueue: vi.fn(), cancel: vi.fn(),
+  };
+  if (withQueue) Object.assign(client, queueApi);
   const projection = new ConversationProjection(client, id, 100_000);
   projections.push(projection);
-  return { projection, client, set: (next: ConversationSnapshot) => { current = next; } };
+  return { projection, client, queueApi, set: (next: ConversationSnapshot) => { current = next; } };
 }
 
 describe("public conversation projection", () => {
+  it("uses explicit queue intent while preserving active execution and the visible observer lifecycle", async () => {
+    const { projection, queueApi, client } = setup(wireSnapshot(true, turn()), "chat", true);
+    projection.setVisible(true); await projection.refresh(); await projection.queue.refresh();
+    expect(projection.sendDisabledReason()).toContain("Choose Queue next"); expect(projection.sendDisabledReason("queue")).toBeNull();
+    expect(client.submitConversationTurn).not.toHaveBeenCalled(); expect(projection.getSnapshot().snapshot?.lastTurn?.task.status).toBe("running");
+    projection.setOnline(false); expect(projection.sendDisabledReason("queue")).toContain("Reconnect"); projection.setVisible(false);
+    const reads = queueApi.conversationQueue.mock.calls.length; projection.setOnline(true); expect(queueApi.conversationQueue).toHaveBeenCalledTimes(reads);
+    projection.setVisible(true); await projection.queue.refresh(); expect(queueApi.conversationQueue.mock.calls.length).toBeGreaterThan(reads);
+  });
+  it("does not activate queue methods for a false capability even when the public client supports them", async () => {
+    const { projection, queueApi } = setup(wireSnapshot(false), "chat", true); projection.setVisible(true); await projection.refresh();
+    await projection.queue.refresh(); expect(queueApi.conversationQueue).not.toHaveBeenCalled(); expect(projection.sendDisabledReason("queue")).toContain("unavailable");
+    expect(projection.sendDisabledReason()).toBeNull();
+  });
   it.each([false, true])("reads queue=%s while keeping active-turn sending unavailable in this Web version", async queue => {
     const { projection, client } = setup(wireSnapshot(queue, turn()));
     await projection.refresh();

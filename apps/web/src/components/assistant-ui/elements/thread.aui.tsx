@@ -69,6 +69,7 @@ import {
   type FC,
   type PropsWithChildren,
   type ReactNode,
+  type KeyboardEventHandler,
 } from "react";
 
 export type ThreadGroupPart = MessagePrimitive.GroupedParts.GroupPart;
@@ -135,6 +136,9 @@ export type ThreadProps = {
   composerPlaceholder?: string;
   sendLabel?: string;
   composerHeader?: ReactNode;
+  composerInputOnKeyDown?: KeyboardEventHandler<HTMLTextAreaElement>;
+  /** Explicit host delivery intent; keeps the official composer draft/send lifecycle. */
+  composerSubmit?: () => void;
   footer?: ReactNode;
 };
 
@@ -185,12 +189,14 @@ export const Thread: FC<ThreadProps> = ({
   composerPlaceholder = "Describe a task…",
   sendLabel = "Create task",
   composerHeader,
+  composerInputOnKeyDown,
+  composerSubmit,
   footer,
 }) => {
   const isEmpty = useAuiState(isNewChatView);
 
   return (
-    <ComposerLabelsContext.Provider value={{ placeholder: composerPlaceholder, sendLabel }}><ThreadComponentsContext.Provider value={components}>
+    <ComposerLabelsContext.Provider value={{ placeholder: composerPlaceholder, sendLabel, onKeyDown: composerInputOnKeyDown, submit: composerSubmit }}><ThreadComponentsContext.Provider value={components}>
       <ThreadRoot
         isEmpty={isEmpty}
         autoFocus={autoFocus}
@@ -203,7 +209,7 @@ export const Thread: FC<ThreadProps> = ({
   );
 };
 
-const ComposerLabelsContext = createContext({ placeholder: "Describe a task…", sendLabel: "Create task" });
+const ComposerLabelsContext = createContext<{ placeholder: string; sendLabel: string; onKeyDown?: KeyboardEventHandler<HTMLTextAreaElement>; submit?: () => void }>({ placeholder: "Describe a task…", sendLabel: "Create task" });
 
 const ThreadRoot: FC<{
   isEmpty: boolean;
@@ -454,9 +460,9 @@ const ThreadSuggestionItem: FC = () => {
 };
 
 const Composer: FC<{ autoFocus: boolean }> = ({ autoFocus }) => {
-  const { placeholder } = useContext(ComposerLabelsContext);
+  const { placeholder, onKeyDown, submit } = useContext(ComposerLabelsContext);
   return (
-    <ComposerPrimitive.Root className="aui-composer-root relative flex w-full flex-col">
+    <ComposerPrimitive.Root className="aui-composer-root relative flex w-full flex-col" onSubmit={submit ? event => { event.preventDefault(); submit(); } : undefined}>
       <ComposerPrimitive.AttachmentDropzone asChild>
         <div
           data-slot="aui_composer-shell"
@@ -464,6 +470,7 @@ const Composer: FC<{ autoFocus: boolean }> = ({ autoFocus }) => {
         >
           <ComposerAttachments />
           <ComposerPrimitive.Input
+            onKeyDown={onKeyDown}
             placeholder={placeholder}
             cancelOnEscape={false}
             className="aui-composer-input caret-primary placeholder:text-muted-foreground/60 max-h-48 min-h-10 w-full resize-none bg-transparent px-2.5 py-1 text-base leading-6 outline-none"
@@ -480,7 +487,8 @@ const Composer: FC<{ autoFocus: boolean }> = ({ autoFocus }) => {
 };
 
 const ComposerAction: FC = () => {
-  const { sendLabel } = useContext(ComposerLabelsContext);
+  const { sendLabel, submit } = useContext(ComposerLabelsContext);
+  const canSend = useAuiState(s => s.composer.canSend);
   const { ComposerActions } = useContext(ThreadComponentsContext);
   return (
     <div className="aui-composer-action-wrapper relative flex items-center justify-end">
@@ -528,7 +536,7 @@ const ComposerAction: FC = () => {
               s.composer.submission === undefined)
           }
         >
-          <ComposerPrimitive.Send asChild>
+          {submit ? <TooltipIconButton tooltip={sendLabel} side="bottom" type="submit" disabled={!canSend} variant="default" size="icon" className="aui-composer-send size-7 rounded-full" aria-label={sendLabel}><ArrowUpIcon className="aui-composer-send-icon size-4" /></TooltipIconButton> : <ComposerPrimitive.Send asChild>
             <TooltipIconButton
               tooltip={sendLabel}
               side="bottom"
@@ -540,7 +548,7 @@ const ComposerAction: FC = () => {
             >
               <ArrowUpIcon className="aui-composer-send-icon size-4" />
             </TooltipIconButton>
-          </ComposerPrimitive.Send>
+          </ComposerPrimitive.Send>}
         </AuiIf>
         <AuiIf
           condition={(s) =>

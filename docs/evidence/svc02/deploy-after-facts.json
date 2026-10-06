@@ -1,0 +1,101 @@
+{
+  "observedAt": "2026-10-06T05:39:13.742Z",
+  "operation": "read-only post-refresh; no resume",
+  "sourceAtStart": {
+    "head": "fb906cb42391971a8b315dbd813f7633927d7265",
+    "dirty": false
+  },
+  "sourceNow": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "sourceClean": true,
+  "processes": {
+    "center": {
+      "identity": "running",
+      "pid": 77104,
+      "pgid": 77104
+    },
+    "runner": {
+      "identity": "running",
+      "pid": 77264,
+      "pgid": 77264
+    },
+    "web": {
+      "identity": "running",
+      "pid": 77304,
+      "pgid": 77304
+    }
+  },
+  "listenerIdentity": {
+    "center": true,
+    "web": true
+  },
+  "center": {
+    "url": "http://127.0.0.1:61227",
+    "reachable": true
+  },
+  "webUrl": "http://127.0.0.1:61228",
+  "preserved": {
+    "configurationBytes": true,
+    "nativeConfigurationBytes": true,
+    "nativeDirectoryIdentity": true,
+    "runnerId": true,
+    "installationId": true,
+    "ports": true
+  },
+  "databaseMarkerMatches": true,
+  "runnerIdentityMatches": true,
+  "managedRunnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+  "registeredRunners": [
+    {
+      "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "harnesses": [
+        "claude"
+      ],
+      "capacity": 1,
+      "revoked": false
+    }
+  ],
+  "unfinishedAttempts": [],
+  "unfinishedAttemptCount": 0,
+  "taskCounts": [],
+  "migrations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "maintenance": {
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "version": 2,
+    "state": "maintenance",
+    "operationId": "0cfd680a-e515-4258-ab8c-4a3ddf0ddccd",
+    "activeAttempts": 0,
+    "uncertainAttempts": 0,
+    "updatedAt": "2026-10-06T05:38:48.158Z",
+    "stopPermitted": false
+  },
+  "provider": "not-probed",
+  "profile": {
+    "id": "7ed454e9-f1db-420c-ac7f-4aa53f3856c0",
+    "source": "runner-configured",
+    "model": "claude-sonnet-5-5"
+  },
+  "limits": {
+    "maxTurns": 2,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 60000,
+    "scope": "per-query-not-project-total"
+  },
+  "modelCalls": 0
+}
