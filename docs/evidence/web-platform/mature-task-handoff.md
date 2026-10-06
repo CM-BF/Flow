@@ -8,6 +8,8 @@
 
 **Recovery27入口已重绑，但本轮NOT_RUN。** [新政策准入原证据](recovery01-1b8-direct-new-policy-not-run.json) / [实际runner19源绑定](recovery01-1b8-rebound-manifest.json)。1b8实现/current0eef clean，原6ffv4二十一scope；Lead16:03纯检查许可后root采用start1GiB+16MiB、stop1GiB+8MiB，仅限network-deny单文件1worker/mockIDB。manager16:06:13唯一freshfree894,640,128B未达start1,090,519,040B，无gate/0test；旧32/16政策与raw保留，A/B门槛不变。runner真实存在并已pin，原direct2.540秒/余27.460不变；真实IDB/browser仍未验，正式review NOT_STARTED。后来的A3新外部窗口不重用作Recovery许可。
 
+**原MATURE01-03/CHATREAD视觉后继**：[固定源与历史图研究](short-chat-visual-fixed-source-intake.json)核四源码/两图片blob，single-running-long与split-succeeded-short证据分开；queue上下文、异常常显与展开前零新增读取均保留。只读计划细化，panels slotpeer待到，不占当前App/新增task。
+
 **可逆sparse候选仅供Lead核定**：[W01短收口](sparse-next-candidates/report.md)。PROFILEUX存在活跃watcher，明确KEEP；PERF03/DPERF01/CONTEXT02仅名义候选，外部reverse依赖和精确历史证据闭包未完成，未知仍KEEP。0本组sparse/删除/新空间采样，不因delivered/released推断无人消费。ATTACHI依赖donor、CONTEXTI活fixture继续KEEP。
 
 ## SVC05 窗口已正式关闭；D06 原源继续（本段取代窗口暂冻状态）

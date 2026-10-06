@@ -52,3 +52,5 @@ VISUAL01固定a8b/交付f708已独审并main4391接收，owner558895d收口且35
 2026-10-06 15:32 发布安全点：固定362实际A两项history失败，完整raw/清理与余176.126秒见[唯一接收入口](../../docs/evidence/web-platform/release03-a-actual-intake.json)。Lead已接收，后继只等待原backend owner的immutable362+已审三行修复新HEAD/tree；先新A再B/全兼容后原受管发布，不重跑未变362或改旧期望，不覆盖原WT。DPERF04保持未take，当前个人版本不变。
 
 2026-10-06 GO固定fixture图反馈归原01-03/CHATREAD：[完整验收](../../docs/evidence/web-platform/short-chat-visual-go-intake.json)。普通hi以正文和输入为主，工程状态/loaded计数进明确详情入口；空queue轻入口，waiting/paused/error/unknown外显。只用已有metadata、展开前0detail，不猜空或总数；profile requested/effective沿MATURE02真实能力。发布/DPERF之后在同固定短聊单窗与split对照、键盘及异常可达性验收；无当前App写权或新第三层task。
+
+[固定83f535四源与两张历史截图研究](../../docs/evidence/web-platform/short-chat-visual-83f535/report.md)补充原01-03：单窗图是running/长回答，split图才是succeeded/短回复；不把历史图标为当前SHA。普通turn的工程信息可归单详情入口，但Queue仍conversation上下文。轻空态须当前成功页无cursor/paused/blocked/error/unknown等；所有异常和可行动取消/决定仍外显。展开前不新增activity list/body请求，不为判断空预取；保officialThread/P01/原receipt。具体slot接缝待独立peer，不新增当前写权。

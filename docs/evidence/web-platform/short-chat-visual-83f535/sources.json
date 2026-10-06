@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-06T16:16:26.013198+00:00",
+  "researcher": "root read-only",
+  "sourceCommit": "83f535b54f2390a729f02bc818e07ba684d94ccb",
+  "sources": [
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 22770,
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "bytes": 8924,
+      "sha256": "b435794fac3c4f5006919f6f07e440b21ffa829aa2be41ee7f4d70b7072505d1"
+    },
+    {
+      "path": "apps/web/src/conversation-activity/ConversationActivity.tsx",
+      "bytes": 6044,
+      "sha256": "bf98db02a5b3a26725780ee8bc182351d242d2530e604834fc58b6fcad405d9d"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/activity.tsx",
+      "bytes": 9512,
+      "sha256": "8ad48a26e40bc4462221329fdfe9f1d922af3b21f7dfeaf664e1dd21ddfe6ed2"
+    }
+  ],
+  "images": [
+    {
+      "path": "docs/evidence/wpf-visual01/production-light-1280.png",
+      "bytes": 88129,
+      "sha256": "fd8166d606bfdf25a7ddc6991551d75ba8ec75a28a4efb1b169b06e28a6ce93c",
+      "provenance": "Existing historical fixture evidence; screenshot is not claimed to have been captured at current source commit."
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-cache/2026-10-06T11-46-47.041Z-desktop-light.png",
+      "bytes": 83604,
+      "sha256": "38df67f27c9016abe97bd2ecc06cc8ff14f8c2bc50b3cb415921aa532740c620",
+      "provenance": "Existing historical fixture evidence; screenshot is not claimed to have been captured at current source commit."
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "method": "Local installed catalogue first; no install needed.",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/frontend-design/SKILL.md",
+      "method": "User Arc/Codex brief, visual hierarchy, compact shell/readable transcript, critique the actual images.",
+      "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "method": "Existing fixed baseline reused for this research boundary: one authority per action, no duplicate caches or hidden data-loading responsibility. No implementation change.",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "mapping": [
+    "WPF-MATURE-01-03",
+    "CHATREAD",
+    "REQ43"
+  ],
+  "runtime": "NOT_RUN: 0 product edit, 0 browser/test/server/request/free-space query. Images inspected using view_image; fixed source read only.",
+  "independentPeer": "Pending panels owner source-slot seam report; do not infer endorsement before receipt."
+}

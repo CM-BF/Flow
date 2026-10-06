@@ -29,7 +29,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-01-01 | in-progress | Web co-lead | builtin材质片已审；单一typed catalogue/有限值域/映射/default仍开放，见[固定研究](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。 |
 | WPF-MATURE-01-02 | in-progress | Web co-lead | 外部theme材质/reload仍开放；附件Files入口已走P01但Picker条目动作覆盖缺口沿REQ22–23后继，见plan与固定9eec审计。 |
-| WPF-MATURE-01-03 | in-progress | Web co-lead | 实际空态、长正文、代码/表格、streaming、tool/thinking展开、错误截图；新增GO短聊正文优先验收见plan，异常/unknown仍可达。 |
+| WPF-MATURE-01-03 | in-progress | Web co-lead | 实际空态、长正文、代码/表格、streaming、tool/thinking展开、错误截图；新增GO短聊正文优先验收及[固定源研究](../../docs/evidence/web-platform/short-chat-visual-fixed-source-intake.json)见plan，异常/unknown仍可达。 |
 | WPF-MATURE-01-04 | in-progress | Web co-lead | 390px与桌面、键盘焦点/IME、reduced-motion、不支持/禁用backdrop-filter时不透明可读fallback。 |
 | WPF-MATURE-01-05 | pending | Web co-lead | 实际App前后图/交互与固定产物；RS13按唯一asset去重、初始依赖图/延后chat及parse/可输入/首次chat取舍；与SVC owner定义哈希asset cache/encoding和HTML/身份/API边界，有界冷暖/版本切换，未实施。 |
 

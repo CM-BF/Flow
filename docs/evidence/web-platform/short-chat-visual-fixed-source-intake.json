@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-06T16:17:11.433374+00:00",
+  "sourceCommit": "83f535b54f2390a729f02bc818e07ba684d94ccb",
+  "mapping": [
+    "WPF-MATURE-01-03",
+    "CHATREAD",
+    "REQ43"
+  ],
+  "archives": [
+    {
+      "source": "/tmp/root-short-chat-visual-83f535/report.md",
+      "archive": "short-chat-visual-83f535/report.md",
+      "bytes": 7068,
+      "sha256": "1834e56d3fbff44006b29435a10c9c2c7865e77083ad859c2c11d8612ca4f54e"
+    },
+    {
+      "source": "/tmp/root-short-chat-visual-83f535/sources.json",
+      "archive": "short-chat-visual-83f535/sources.json",
+      "bytes": 2823,
+      "sha256": "dd07ae9df05470576af44fde5d8469479f930f91459bc04b45fac8f7ab7eed54"
+    }
+  ],
+  "fixedSourceAndHistoricalImageBlobs": [
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "fixedBlobHashMatches": true,
+      "imageCaptureSHAClaimed": null
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "fixedBlobHashMatches": true,
+      "imageCaptureSHAClaimed": null
+    },
+    {
+      "path": "apps/web/src/conversation-activity/ConversationActivity.tsx",
+      "fixedBlobHashMatches": true,
+      "imageCaptureSHAClaimed": null
+    },
+    {
+      "path": "apps/web/src/plugin-integration/activity.tsx",
+      "fixedBlobHashMatches": true,
+      "imageCaptureSHAClaimed": null
+    },
+    {
+      "path": "docs/evidence/wpf-visual01/production-light-1280.png",
+      "fixedBlobHashMatches": true,
+      "imageCaptureSHAClaimed": false
+    },
+    {
+      "path": "docs/evidence/wpf-workspace-cache/2026-10-06T11-46-47.041Z-desktop-light.png",
+      "fixedBlobHashMatches": true,
+      "imageCaptureSHAClaimed": false
+    }
+  ],
+  "sampleCorrection": "Root viewed single-pane running/long reply and split-pane succeeded/short reply. Only latter directly supports excessive normal-short-chat chrome; neither image is newly captured at83f535. Manager checked hashes, didnotre-view/capture images.",
+  "interface": "One compact turn-details entry for ordinary message engineering actions, queue remains separate conversation context. Existing officialThread/P01 capabilities/receipt identities preserved.",
+  "emptyQueue": "Only current successfullyloaded snapshot with noitems/cursor/paused/blocked/error/unknown/actiondisabled; never notloaded/stale/offline impliesempty.",
+  "lazy": "0newactivitylist/body requests before explicitexpansion; generalmenu alone mustnotload bodies; do notprefetch toguessempty",
+  "exception": "waiting/activecancelor decision/authloss/rejectedunknownreceipts/stale/unavailable/errors remainexternal/actionable",
+  "priority": "ExistingMATURE01-03/CHATREAD/REQ43 afterReleaseandDPERF; no task/claim/Appscopechange",
+  "peer": "Separatepanels slotseam pending; no inferredendorsement",
+  "productRuntime": 0,
+  "spaceSamples": 0,
+  "managementChecks": {
+    "at": "2026-10-06T16:17:28.114366+00:00",
+    "scopePaths": 7,
+    "newLinks": 3,
+    "brokenLinks": [],
+    "parsers": [
+      {
+        "tree": "web-platform-management",
+        "path": "plans/web-platform/status.md",
+        "id": "WPF-001",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 36
+      },
+      {
+        "tree": "web-platform-management",
+        "path": "plans/wpf-mature-01-visual/status.md",
+        "id": "WPF-MATURE-01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 5
+      },
+      {
+        "tree": "web-platform-management",
+        "path": "plans/wpf-mature-06-chat/status.md",
+        "id": "WPF-MATURE-06",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "tree": "dashboard-summary-detail",
+        "path": "plans/wpf-dperf04-summary-detail/status.md",
+        "id": "WPF-DPERF04",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 3
+      }
+    ],
+    "cleanCode": "Kept imageprovenance distinctfromsourceSHA; queue/messageauthority distinct; no duplicatedstate/emptyguessing/newreadsideeffects or claims."
+  }
+}
