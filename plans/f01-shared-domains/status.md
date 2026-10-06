@@ -16,8 +16,8 @@
 | 检查状态 | NOT_RUN 当前032准备；此前O14 PG2/2与旧CLI/types已独审并main，原证据保持 |
 | 已集成main状态 / HEAD | O14五源已main bd14f984e3927df139815597c4c3171af84ec4b7；032/C01本组合尚未main，个人服务不变 |
 | Review | NOT_STARTED 当前032准备；历史O14 73a已独审APPROVED/main，见review.md |
-| 实现目标 | a9ea7ca8ac00fef8243f0e0b7906b76b5652690a |
-| 实现范围 | packages/client/src/claude-message-settings-production.test.ts |
+| 实现目标 | f4375f07a841f7937010f132a6a34546c177b8f5 |
+| 实现范围 | apps/server/src/index.ts, packages/client/src/claude-message-settings-production.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
@@ -227,7 +227,7 @@ Web A-only 实际结束并正常清理后，fresh free1,098,022,912B低于1GiB+3
 
 原owner ExecutionLead全树停止写后handoff v44；本owner fresh核账本并accept v45，committedAt 2026-10-06T16:58:29.499Z。唯一claim 8470e7d2-662a-4dbe-9b0e-12ef82aac90e active，59 literal原scope保留。[handoff](../../docs/evidence/f01/native-owner-handoff-receipt.json) / [accept](../../docs/evidence/f01/native-owner-accept-receipt.json)。
 
-本次实施授权严格限于已有O14生产index/test的source+动态资源预检与一次排定PG窗口；之后仅在CORE正式独审通过后接032 migration与最薄真实FlowClient生产直接consumer。尚未领取新test路径，未改客户端/CLI或5个CORE非owned合同，不以59scope扩大实现。C01另一树保持固定563/独审通过/待集成。CORE资格、SDK和生产消息设置未验边界独立。
+本次实施授权严格限于已有O14生产index/test的source+动态资源预检与一次排定PG窗口；之后仅在C01补充独审与固定公共输入通过后接032 migration与最薄真实FlowClient生产直接consumer。尚未领取新test路径，未改客户端/CLI或5个CORE非owned合同，不以59scope扩大实现。C01另一树保持固定563/独审通过/待集成。CORE资格、SDK和生产消息设置未验边界独立。
 
 O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/provider/browser/个人服务操作。现只写合法计划/证据。032新增挂载与新测试需独立固定delta并独审，任何scope新增先amend。
 
@@ -237,6 +237,6 @@ O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/
 
 2026-10-06 17:09:20 UTC：O14唯一独审APPROVED原样归档，source73a不变，等待main精确接收。F01 fresh无冲突后已原子amend v46（17:08:13.061Z），新增唯一 packages/client/src/claude-message-settings-production.test.ts，60literal；[回执](../../docs/evidence/f01/claude-message-settings-production-scope-amend.json)。032当前只准备设计/闭包，不应用未审CORE或启动PG；O14源继续冻结，C01目录不动。
 
-| F01-43 | in-progress | native_center_owner | [032生产Interface](../../docs/evidence/f01/claude-message-settings-production-interface.md)，新专测固定5ce，NOT_RUN；待CORE正式批准/受控输入/独占窗口。 |
+| F01-43 | in-progress | native_center_owner | [032生产Interface](../../docs/evidence/f01/claude-message-settings-production-interface.md)，新专测固定5ce，NOT_RUN；待C01补充批准/受控输入/独占窗口。 |
 
 2026-10-06 17:14:15 UTC：O14本片delivered，五源对main逐hash相同，[main receipt](../../docs/evidence/f01/goal-progression-production-main-receipt.json)，0重测。当前source准备转032消费者，只新增一个测试文件，未修改已冻结O14 factory/其他source；不将历史批准继承到新片。架构影响为迁移前置依赖，正式target固定后由ExecutionLead同步；现无第二鉴权/scan/runtime。

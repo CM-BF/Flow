@@ -13,3 +13,5 @@
 准备命令（NOT_RUN）：`Node24 node_modules/vitest/vitest.mjs run packages/client/src/claude-message-settings-production.test.ts --maxWorkers=1 --no-cache`。须CORE正式APPROVED、固定输入/materialization完整、薄032接线固定且Leader明确独占PG窗口后执行。当前待TUI资源正常收尾及Lead重新排窗口，本片不会自行启动。
 
 只读直接消费者复核发现 registerRunner 既有签名只有一个参数，已仅修专测调用；其请求沿原client默认15s timeout，其余显式signal仍5s。没有扩client API，也未运行types或PG。
+
+2026-10-06 17:26:03 UTC：CORE正式独审已到，34源以8269a0ef精确受控接收（core-input.json）。新写源target `f4375f07a841f7937010f132a6a34546c177b8f5`，index仅import/await两行、顺序如上。新专测在pool.end后最多3s观察pid/state，异常或非零保留，不把本地end回调当远端已消失。C01等待6d114补充独审及9源固定输入；此组合仍NOT_RUN。
