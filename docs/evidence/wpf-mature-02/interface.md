@@ -2,75 +2,12 @@
 
 Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf-mature-02-harness-capabilities/plan.md)。当前仅实验consumer，不另造R05宿主。
 
-## Lead待输入
+## Lead当前可行动请求
 
-- [F01 goal progression薄client已审](goal-progression-client-review.md)：deef0e48，status_read15:04:20/Mika15:05:27 APPROVED，仅薄transport，领域/公开mount不扩大。
-- [自有OpenSSL配置小对照准备](node-owned-openssl/README.md)：原candidate/权限不变，仅显式own config argv；actual NOT_OPEN，检查PENDING_RESOURCE。三种运行角色独立，Claude纵线不等待本探针。
+- **优先Claude逐消息设置**：[唯一core→consumer交接请求](claude-message-settings-handoff.md)。请协调status_read/mika的source-only独立WT/branch、sibling管理路径、R05兼容合同、F01 v40与RECOVERY01 v4、唯一migration号及最小精确scope；02四个execution-profile路径当前仅记录可移交，不先amend。
+- [F01 goal progression薄client正式APPROVED](goal-progression-client-review.md)：deef0e48，仅薄transport，供Lead受控接收；[plugin installation薄client正式APPROVED](plugin-installation-client-review.md)沿同一既有收据，不重复审。
 
-- [私有错误文本单目标结果](node-failure-text/run-report.md)：本次确认Node报告OpenSSL配置打开错误；完整246B已独审并精确清理；a442结果忠实性APPROVED，目标exit1，观察/清理/计量完成，窗口已消费。具体规则与native资格未证明，未扩权限。
-
-- Claude逐消息设置后继：当前诊断收束后请Lead协调R05/中心配置及低磁盘独立WT，Mika另派≥Sol实现；固定SDK0.3.290声明+注入SDK/真实中心首片，0付费/安装。model/thinking或effort/fast、requested/observed/unsupported、历史/运行/队列冻结与Web/TUI合同沿[原plan](../../../plans/wpf-mature-02-harness-capabilities/plan.md)，不等Codex全资格，不在诊断WT并行改产品。
-- [X01双gate已审接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/host-gates-integration-ready.md)：固定e6827d8a，Mika14:47:23 APPROVED；仅两phase当前权限回调，边界/进度由原owner维护。
-
-- [F01插件安装薄client已审](plugin-installation-client-review.md)：67fd4592，status_read14:43:12 / Mika14:43:34 APPROVED，领域/公开factory边界不扩大。
-- [单目标私有错误文本准备](node-failure-text/README.md)：组合744ccb6f已获architecture_read14:56:25 / Mika14:56:41准备APPROVED；仅独立私有诊断副本，实际NOT_OPEN。旧8b1/3c53失败封存不重跑。
-
-- Git忽略收口：先前已向共享 `/Users/citrine/Projects/AgentHarness/Flow/.git/info/exclude` 加入精确 `/docs/evidence/wpf-mature-02/node-runtime-metadata/outer-time.stderr`；现改用本scope可审 [局部.gitignore](node-runtime-metadata/.gitignore)，check-ignore来源已核，未删除共享规则、未动sparse/config；共享规则后续由Lead协调。
-
-- [S01P06唯一已审集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds/docs/evidence/s01p06/integration-ready.md)：metadata31c06b4a / impl cdd3，沿原owner接收。
-- [X01 enable binding后继设计待决策](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/enable-binding-preparation.md)：8e520b7274a6d4112e91318c6eb5ba1758bf7c1c方向已审；029保留，后续SQL由Lead定号，030属O14；host/store资格与公共字段需冻结，runtime待P06交回再fresh领取。
-
-- [运行库元数据窗口结果](node-runtime-metadata/run-report.md)：首槽code1/246B有限分类UNKNOWN，第二槽NOT_RUN；完整计量与清理确认，measurement FAIL，8b1已获双独审限定APPROVED；窗口CONSUMED。GO已授权failure-text单目标准备以保留私有有界错误文本，实际NOT_OPEN；旧证据封存，无自动重试。
-- [X01中心静态安装已审集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/center-integration-ready.md)：a578固定领域/029；host及共享接线边界沿唯一owner，不可将executionSettled恒置true。
-
-- [F01 goal run list薄client已审98e5](goal-run-list-client-review.md)：Mika13:46:39 UTC APPROVED，仅transport。
-
-- [单目标加载观察已执行结果](node-loader-cause/run-report.md)：12f502b1已获Mika13:42:44限定APPROVED：完整双流命中固定库角色/errno未知；SIGABRT，启动隔离仍阻塞，无后继授权。
-
-- [X01中心静态安装DTO固定输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/center-installation-seam-request.md)：cb20a75dddc0bddc724b88d66437444b397391f9 的 packages/contracts/src/plugin-installations.ts 可供F01薄client准备；领域后继沿原owner。
-
-- [F01 transport修复已APPROVED](client-transport-review.md)：d6d5089c，原Bearer互斥P2关闭，Mika13:38:16接收。
-
-- [S01P06已审正式集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-wait-bounds/docs/evidence/s01p06/integration-ready.md)；固定cdd3cb1c，唯一owner/status沿该树。
-- [X01中心安装小合同/共享scope与唯一DDL请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/center-installation-seam-request.md)：84529441权威输入，已审leaf可独立接收。
-
-- [X01首leaf已审待main](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/leaf-integration-ready.md)：bf337814固定实现，范围及后继由唯一owner维护。
-
-- [S01完整mixed26固定接收清单](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-integration/README.md)：c0cc598b权威包，6de26仅两observer由已审c259替代；四项基线漂移由接收点核，不重跑capacity。
-- [04附件main接收](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/attachment-main-acceptance.json)与[源码交回](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/attachment-source-handback-receipt.json)：后继沿权威owner。
-
-- [Node加载失败单目标观察候选](node-loader-cause/interface.md)：v2 a5984db6已独审APPROVED，原两P2关闭；窗口go-node-loader-cause-once已CONSUMED，原结果在5b1d3003封存。明确双流宿主与旧R06观测差异，目标输入/权限不变。
-- 资源：02/04/X01新增可回收0B；S01/P05仅清4个结束Vitest小缓存（1039逻辑B/8192文件分配B，非volume净回收）。Data约1.7GiB仍不足大构建门槛；不扫全盘/他树。
-
-- [Node唯一窗口结果及限定](node-rootliteral/result-limits.md)：rootliteral SIGABRT，第三NOT_RUN；清理确认但整体输出计量UNKNOWN，Mika13:08:21限定APPROVED。当前无剩余运行许可。
-
-- F01依赖f63502e26d44f33a86a01e98761b22aefbd5fa60已获Mika12:56:50–12:57 UTC限定APPROVED（manifest/lock接线，非插件启用）；请F01在自身证据记review。后继与[X01 leaf Interface](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/leaf-interface.md)成套接收。
-
-- [X01固定leaf Interface及依赖输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/leaf-interface.md)：5346bd838f96b01015f26a265c31859c82cd6023；Mika12:52:50 UTC批准准备manifest/Interface（非叶实现完成）。请F01接server/runner workspace:*与lock importer/受控offline依赖，不改个人Flow node_modules；原owner继续leaf实现。
-
-- [S01 observer已审接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/observer-share-fix/integration-ready.md)：旧128观测限制仍以权威文件为准。
-- [X01八个leaf路径与共享依赖请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/leaf-scope-request.md)：由Lead协调唯一writer，设计审批不替代源码领取。
-
-- [S01 128固定结果接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-128-run/integration-ready.md)：已独审，具体观测限制沿权威文件。
-- X01 [精确scope请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/scope-request.md)与[安装依赖补充](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/installation-dependency-addendum.md)：显式workspace/tar依赖方向已审；需Lead协调4 manifests/lock唯一writer与最小leaf scope，公共vertical仍需host/task/event/DDL输入。
-- [S01P05已独审6336正式集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence/docs/evidence/s01p05/integration-ready.md)：仅等价/写次数结论，A/B未开放；进度沿权威owner维护。
-
-- [Node rootliteral三槽设计](node-rootliteral/design.md)：设计ff927712已审；source d17ad56ad47ec065cea107ba4ab15fc7afd56b0e已固定，组合1f32735e已独审APPROVED；实际2目标/0编译，唯一窗口已消费。旧C结果/尾部以e47历史快照封存，本阶段另记。
-- [ENG01G host资格/全writer撤销最小输入](native-engineering-authority-inputs.md)：固定557397e9接口；C、未来Node与真实Codex证据分层，生产authority仍不可签发。
-- [04附件上下文修复：已独审待main](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/attachment-integration-ready.md)；进度只在[04权威status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md)，固定实现4f87934f。
-
-- [04 producer main接收权威比对](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/context-producer-source-comparison.json)；owner维护后续接收状态。
-
-- [Root literal唯一窗口结果](rootliteral/run-report.md)：两份完整C报告，measurement/cleanup/accounting完成、CLI0，Mika12:28:41 UTC限定APPROVED；不证明Node/Codex或完整隔离，不推断旧根因。窗口已消费。
-
-- [R06五源已main接收/逐blob核验](r06-main-accepted.json)；已停写并完成[claim v5部分交回](r06-source-handback-receipt.json)。main362af3只接收已审生产seam；薄consumer仍待单独确认，诊断窗口不重开。
-
-- [P04 main权威比对](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/runner-read-fence-source-comparison.json)及[最终release](/tmp/flow-p04-final-release-receipt-20261006.json)。
-- B01 [首片](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/integration-ready.md) / [第三reader](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/head/integration-ready.md) / [authority登记请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/authority-request.md)：只路由权威输入，不复制TODO。
-- [04 main接收](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/main-acceptance.json) / [handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/handoff-current.md)。
-- 跨task独审唯一收据：[附件client](attachment-client-review.md) / [附件production](attachment-production-review.md) / [native catalog client](native-catalog-client-review.md) / [native profile client](native-profile-client-review.md) / [TUI](tui01a-review.md) / [R05B mount](r05b-mount-review.md) / [production projection](production-projection-review.md)。范围/target/raw绑定区别在各文件，不能扩为部署批准。
-- [Native工程file-only/≥Sol/全writer停止边界](native-engineering-boundaries.md)及[固定bootstrap只读事实](bootstrap-policy-readonly.md)：当前rootliteral后继只按新Node明确许可准备，旧策略候选不另产生授权。
-- 所有早期诊断与已审target见[review索引](../../../plans/wpf-mature-02-harness-capabilities/review.md)；旧窗口已消费，历史完整路由文本保留Git ff927712。本阶段无需读取旧raw正文。
+OpenSSL ca6a候选保持PENDING_RESOURCE/NOT_OPEN，不继续扩诊断，不阻Claude独立产品线。已完成诊断/跨task审查及历史路由保持原证据与Git ca6a7a15；本页仅保留最新可行动请求，进度仍由各owner唯一status维护。
 
 ## 首片可独立实现
 

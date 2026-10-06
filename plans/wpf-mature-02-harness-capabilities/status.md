@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:09:01 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:16:38 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,25 +10,25 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 65c69e0124e419030182eb615f0bcdb6cf4b9485（failure-text源码；旧3c53封存） |
-| 工作树dirty状态 | 新failure-text私有保存/薄入口/用例和cause单分支；源码65c69e01/组合744ccb6f已审；已执行唯一窗口，旧38e78已封存；新owned-openssl仅cause小分支/固定配置/薄入口/用例，尚未验证。旧profile/R06/已封存raw未改。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / ca6a7a15f76d333f20caf0690ed85b76e29d2c54（源码checkpoint不变；本轮仅管理metadata） |
+| 工作树dirty状态 | 本轮仅父plan/status/review/canonical与Claude交接文档；ca6a源码、旧raw/profile/R06不变，提交后clean。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | planning |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | PENDING_RESOURCE：Data1020632KiB低于1GiB+32MiB；仅小源码，0新Vitest/target/compile/listener/PG/provider。旧19检查与审批不继承本片。 |
+| 当前检查 | 仅管理文档一致性/链接核验，0工程测试/目标/PG/build；OpenSSL ca6a仍PENDING_RESOURCE。fresh Data1056984KiB低于1GiB+32MiB门槛。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
-| 实现目标 / 范围 | 新owned-openssl固定recipe/自有注释配置/argv，复用原owner/保留副本；未固定验证/独审，actual NOT_OPEN。 |
+| 实现目标 / 范围 | 当前优先Claude逐消息设置：产品core→共享consumer两层子任务，独立source-only WT/兼容合同/精确scope待Lead协调；本树只parent管理。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已保留完整私有错误文本，确认本次Node报告OpenSSL配置打开失败；目标与临时资源已回收，副本已独审并精确清理。 |
-| 下一可用交付 | 先交付有界私有错误诊断；随后并行推进Claude每条消息的模型、思考/effort与fast设置，不等待Codex全部资格。 |
-| 当前阻塞 | ACTIVE: Node/Codex启动隔离与真实权限资格仍未证明；旧对照首步失败且窗口已消费；本次有限文本已定位配置打开错误，具体沙箱规则与修复尚未验证；窗口已消费。Claude设置独立推进。 |
+| 当前产出 | 已明确Claude下一条消息设置的交付边界：用户选择模型、思考/effort和fast，历史与已发送/排队配置各自保留。核心与界面两层交接已准备。 |
+| 下一可用交付 | 先交付Claude中心冻结配置与执行传递，再把同一能力接到Web/TUI；不等待Codex全资格或Node小对照完成。 |
+| 当前阻塞 | ACTIVE: Claude独立工作树、共享兼容接口及精确写入范围待Lead协调；涉及PG/构建的验证还需磁盘满足预留。小范围计划与源码准备可继续。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | owned-openssl NOT_STARTED；旧failure-text a442结果APPROVED且38e78已封存，不视为新片通过。 |
+| Review | Claude子任务尚未领取/实现，NOT_STARTED；历史诊断审批不继承产品线。OpenSSL checkpoint未审且NOT_OPEN。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
-| 架构影响 | Node复用已交回R06唯一进程owner、旧owned canary与私有sink；新增仅实验接缝，未改变生产Interface/运行生命周期。ENG当前仅资格/撤销输入建议，无新公共合同。 |
+| 架构影响 | 计划在既有中心profile与事务边界加入逐消息配置snapshot，并由Web/TUI共享消费；当前仅设计交接、无产品结构变化。固定实现后由core owner与Lead同步架构基线。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -41,6 +41,8 @@
 | WPF-MATURE-02-07 | in-progress | chatui01_owner | 纯语义固定target已独审通过，待集成；后继隔离片另审 |
 | WPF-MATURE-02-08 | pending | chatui01_owner | 完整目标未验收 |
 | WPF-MATURE-02-09 | pending | R05共享owner / d01 | 下一条配置可变与历史/当前/队列冻结分离；CAS/未知ACK/恢复/跨harness，04测量失效，见唯一interface |
+| WPF-MATURE-02-10 | pending | status_read（拟owner）/ mika | Claude产品core；source-only独立WT、共享兼容合同/SQL编号/精确scope待Lead协调，尚未take |
+| WPF-MATURE-02-11 | pending | Lead待分配 | 同合同client/interaction/Web/TUI consumer；待core固定接口与独立WT/精确scope，不在诊断树实现 |
 
 ## 接口与dashboard
 
@@ -75,3 +77,7 @@
 ## 三种运行角色
 
 Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收；现bootstrap-inspection的Codex依赖不含Homebrew Node/OpenSSL。本Node错误不证明真实Codex失败，也不是所有harness永久前置。Codex自身启动/权限/模型/停止验收保留；Claude逐消息设置独立用户线不等待此探针。
+
+## Claude当前优先交接
+
+[claude-message-settings-handoff](../../docs/evidence/wpf-mature-02/claude-message-settings-handoff.md)是最新可行动请求：core拟status_read/mika，sibling管理路径避免parent scope冲突；consumer稍后独立领取。02现四个execution-profile路径可在最终派工后停写并部分移交，当前v5保留，未amend。F01 v40、R05兼容、migration唯一编号及RECOVERY01 v4由Lead协调。没有用户待决定项，不改变完整Codex与Claude验收要求。
