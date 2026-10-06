@@ -563,3 +563,29 @@ CHAT06消费者关联风险（root固定53e/115b只读，06:27归档）：assist
 CHAT06运行状态/rollout补充（root只读 installed react0.15.23/core0.3.22，06:29归档）：ThreadMessageLike:64–72可显式status/metadata，fromThreadMessageLike:232保留显式状态，MessageStatus定义于types/message.ts:411；未来sealed真实正文patch可沿现ExternalStoreRuntime文本/显式状态，不造第二useChat或打字动画。block-complete仅块停止增长，不能推出task成功；aborted/uncertain不统称用户取消，不伪造duration/token timing。固定115b ConversationCapabilities.liveAssistantText仍literal false，projection.assertCapabilities将其置必须false列表；未来后台改true将导致旧reader拒绝整个snapshot，需公开capability与最小Webreader/实际消费者同批，不单独flip或capfalse宣称流式。当前rendererI不扩范围；CHAT06新client/export/mount尚未批准，待correlation回应及准确输入。
 
 CHAT06身份关联后继决定（GO→root，取代上文当时待确认）：采用显式Flow presentation settlement，区别于SDK provider一一correlation。中心与final同事务记录finalMessageId/replaceStreamIds/retainStreamIds及policy或unavailable，同task/attempt/session，集合完整且不相交；真实主tool_use边界形成保留前缀（包含工具前独立text message），最后工具后临时正文group由final结算替换，历史原文保留。无工具使用明确attempt-draft policy；gap/aborted/缺边界给incomplete/unavailable，Web不猜顺序/不文本去重。250ms合并不能让工具前未flush文本跨tool边界。该决定还需新固定DTO与行为证据，旧53e不足直接开UI；rendererI/D06不受影响、无共享文件修改。
+
+## 06:38 CHAT06最新固定DTO与有界兼容候选
+
+Lead最新固定DTO749b5510e7f597a55913a10ae624d79c3d832b3e，经root实际读assistant-stream.ts/interface对53e差异，新增page.settlement+marker+policy，承载GO已定显式Flow presentation settlement；仍仅合同、领域实施中/0query、公共client未独审，不将749b当生产已就绪。现rendererI/D06固定115b继续，不追新DTO。
+
+root与管理固定a26读到projection.ts assertCapabilities67–72对GET和CREATE ACK共同检查：liveAssistantText与steer/perTurn*同放must-false数组。当前公共ConversationCapabilities仍liveAssistantText:false；最小reader只对该字段接受最终合同boolean/可选缺省，其他unsupported flags不整体放宽。queue/projection不读该字段，只由父queue===true设置；现conversation-projection.test setup已有queue sidecar/spy，可在该单test文件验证queue门禁、GET、CREATE ACK与拒绝字符串/null等，不需改queue源码。拟WPF-CHAT06C01四literal：apps/web/src/conversations/projection.ts、apps/web/test/conversation-projection.test.ts、plans/wpf-chat06-compatibility、docs/evidence/wpf-chat06-compatibility；建议新web-stream-compatibility/codex/web-stream-compatibility。06:36:34.965Z来源账本无交叉仅作准备事实，正式base/共享type须Lead明确、D06原owner停写后fresh take，当前无tree/claim。不以as/any把true硬塞literal false类型；不能因true自动请求未知route或许诺尚未接的流式UI。
+
+GO产品架构要求与root[官方AIP180](https://google.aip.dev/180)研究（2026-10-06实际访问，由root归因）：source、wire、semantic兼容分开，新增可选能力保留旧行为，默认与序列化缺省不可暗变，响应enum扩展需约定未知值处理。Flow后继采用明确optional+逐字段fallback：未消费广告不破坏正文/queue，身份/授权/正文错误仍严格拒绝；不以any全对象透传或undefined一律支持。本次同批启用是修复旧literal false迁移，不固化以后前后端同步部署；有限矩阵应明确旧Web/新center、新Web/旧center各保证范围，未升级旧Web在true下仍拒绝的问题不能文案消除。当前只liveAssistantText，其他flags后继独立所有权与验收，不借本片顺改。
+
+## 06:45 CHAT06冻结输入、协商与消费者边界（root/GO来源）
+
+领域5ff8880b3518992121216998c169dd01ab44cee0已获GO限定独审（72不同检查、SDK注入与真实PG/HTTP，非真实provider/Web验收）。它补充Unicode有效性/NUL拒绝、phase/reason/truncated语义；streaming必须非空，但block-complete/incomplete/superseded可有零文本终态patch。消费者不得见空text就跳过，revision/cursor/phase仍推进。state final_id可使reference.status=final-available，但header.phase保留，不能据此宣称每块完整或task成功。本管理仅记录root固定读码结论，没有重跑域或模型。
+
+749b/5ff消费矩阵：patch after/nextCursor是attempt内runner sequence，中间可有工具/其他事件，去重并递增但不要求+1连续；每block revision/fromBytes UTF8字节/prefixDigest分别验。页最多8×8KiB、attempt最多1MiB；重连从已验证applied cursor恢复，taskUpdatedAt/blockrevision独立conversation CAS。失败/取消/uncertain保留文字但不冒充完成；final只按显式settlement replace/retain集合，未知policy或集合不完整不猜最后message/不文本去重。隐藏/换中心隔离迟到结果与异步digest。未来测持续patch与1MiB重连的请求/重复读取/rendercommit，不以2s poll或250ms SDK flush证明UI延迟；本C01不实现正文consumer。
+
+GO最终表示约定：CREATE ACK及同key replay永久稳定原receipt且显式liveAssistantText:false；仅GET snapshot以连接header X-Flow-Assistant-Stream: patch-v1协商，未协商/未知false，center挂载与产品门槛满足才true，不绑lastTurn已有patch、不保证provider实际delta。capfalse不阻adapter生成stream。Lead单文件86fc3af54eb500d24416121b4f36e701ea9fd3c4仅把conversations.ts类型改optional boolean，missing/false unsupported；管理git show已核唯一文件、parent该文件与a26相同。C01沿此固定输入只放宽liveAssistantText，其他cap/身份/授权/正文仍严格，不any/as绕类型、不发header。正式协商公共实现SHA是后继输入，不阻这片reader。
+
+跨消费者集成风险（w01/root只读5ff，未实跑404）：saveAssistantStream把streamId作timeline reference，而旧TaskThread/ACTIVITY对所有ref.id请求generic detail；capfalse不能保护已加载旧JS免于错误详情路由。root已一次交GO桥Lead作为老reader兼容投影门槛，未来Activity用typed port/禁错误入口；不扩C01、不撤销rendererI/D06批准或域限定审查。
+
+本段方法沿已安装find-skills本地优先/clean-code：只在管理唯一源记录固定目标、历史采样与后继决定，scope/receipt/动态表示分开；实际发现过期候选时态已更正，两独审来源归因明确，无产品测试/API复采/新依赖。
+
+ACTIVITY正式P01后继候选（w01固定8014+61b只读，非take）：从原host footer方向收敛为13literal：App、ConversationThread、officialThread、plugin-integration/activity.tsx（新）、integration/react.tsx/session.ts、plugins/types.ts/validation.ts、专用integration test/browser、既有plugin-host.test.ts、自己plan/evidence。新的typed chat.message.footer支持message context+panel，task.activity.read与reference.read分开授权；沿现P01 registry/enable/cleanup，不造第二权限表。当前rendererI仍持其中四path，须main/release后新fresh take；P01已释放也不自动授新写权。沿既有visible非focused两pane，稳定user-turn锚点，已展开可见online且到tail才合并刷新，hasMore只用户翻页；body仍懒载。可选顺序rendererI→活动接口→CHAT06 consumer由Lead确认，同Thread只有一个writer。
+
+更精确stream引用触发链（w01/root，固定5ff只读，未运行404）：runner claude.ts60/69–78直接includePartialMessages并emitpatch，events18–20与streamstore42–45产生streamId reference；a26 TaskThread95–109把所有reference当flow_reference，点击走generic /api/details/:id；generic server只读flow.details，而stream存在独立表/DTO/route。ACTIVITY61b也统一bound readDetail，未来conversationDetail JOIN仍是flow.details。Lead需保旧consumer兼容投影；Activity host可识别已加载reference.stream禁错误endpoint并说明unsupported，若改善61b按钮还须额外正式scope。该条件链不当生产已报错，不扩大C01。
+
+Activity footer接线验收补充（root接受13scope方向，仍待准确main/take）：用户要求任意位置可加按钮，新chat.message.footer不能只渲染panel而静默丢button/menu。接线同时复用ExtensionSlot的button/menu与PluginView panel，通过真实sample三类验证排序、message context、disable和错误隔离；现host.show/activationEvent/checkView可复用，不新registry、不改host.ts。task.activity.read须原P01 manifest授权与view-bound端口双重校验，不以global focus替代；预计现13scope的react.tsx已涵盖，不扩领取。

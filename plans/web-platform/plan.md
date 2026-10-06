@@ -320,3 +320,9 @@ CHAT05后继正文边界：超64KiB仅prefix+full原文digest，完整超限正�
 06:26 root授权rendererI真实App消费，独立115b树完成preflight并取得ff62150f v1九scope，实际native-hidden方案与RS08窄converter验证沿既有REQ43/插件目标，不增加产品需求。D06原唯一ID下一固定115b刷新由panels准备四scope，旧source只读，新receipt+canonical后迁移registry；不追movingmain或把个人servicefb906等同图基线。
 
 06:29 ACTIVITY61b已在mainacfd，独立六scope同源核验与owner delivered/release51f v2齐，父本片completed；App折叠活动入口仍为REQ43后继开放。rendererI与D06115b新轮均已take并首canonical登记请求，未将领取等同已部署进度卡。
+
+06:38 原U11/REQ43兼容验收约束更新（GO/root）：前端应可替换、独立更新。本次liveAssistantText literal false迁移只能与最小reader和实际消费者验收后启用，不单独后台flip true；旧false/正式定义的缺省语义保留。身份/授权/正文合同错误继续拒绝；未消费的新可选能力广告不应破坏已有正文/queue，只禁相应控制，广告不等执行许可。source/wire/semantic兼容与字段缺省需分别定义，不能泛化undefined即支持；本片只改liveAssistantText，其他flag策略另有界后继。最小reader候选WPF-CHAT06C01限projection+直接test+自有资料，当前仅准备，无新tree/take，等待固定共享input与D06停写。CHAT06当前DTO749b含显式settlement，旧53e只留历史，不在rendererI/D06当前范围实施。
+
+06:45 当前兼容决定覆盖06:38准备态：GO确认CREATE ACK及同key重放永远保留原receipt、显式liveAssistantText:false；GET snapshot只按X-Flow-Assistant-Stream: patch-v1连接协议协商，未协商/未知false，中心mount与消费门槛满足才true，不与lastTurn已有patch绑定、不保证provider delta。C01已获准确basea26与单文件shared86fc、四scope ca26v1后正式实施，仅接受optional boolean，不发送opt-in或自动读取正文。后继真正消费者仍等rendererI正式交权与冻结client/表示；旧Web兼容不能只靠新版JS上线。
+
+GO管理审计规则：active claim按实际开发/持续管理、冻结待审/集成、已main待原owner收口分别列，历史数量不当agent并发。需固定祖先+保留scope+权威status事实后由原owner核尚有无写入、metadata停点、fresh版本release；不强制revoke，也不因历史基线状态过时恢复已转交路径。
