@@ -9,13 +9,13 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release |
 | Branch | codex/personal-current-release |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915；首canonical 79e632c5（已push）；实施中 |
-| 工作树dirty状态 | 四模块及原始证据待本次提交；产品目录无变化 |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915；实现target dc8e25f141a1f52964056df823b988a5fe24cbea；metadata另记 |
+| 工作树dirty状态 | 实验实现/原始证据已固定；此交付metadata提交后clean |
 | 工作分支状态 | review |
 | 本片段交付阶段 | review |
 | 检查状态 | PASSED；3实际App组合 + 旧24→27迁移/历史/重启/公开读取，0provider；[summary](../../docs/evidence/svc05/summary.json) |
 | 已集成main状态 / HEAD | 本片未集成；基线已核main/origin362af3 |
-| 实现目标 | UNKNOWN |
+| 实现目标 | dc8e25f141a1f52964056df823b988a5fe24cbea |
 | 实现范围 | experiments/personal-current-release, plans/svc05-current-release, docs/evidence/svc05 |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -23,7 +23,7 @@
 | 下一可用交付 | 独立审查兼容证据与更新步骤，之后另行安排个人服务窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，NOT_STARTED；固定dc8e25f141a1f52964056df823b988a5fe24cbea |
 | 领取 | 859ce9ba-9909-4fa7-a09f-7a6b5037dd7a v1；[receipt](../../docs/evidence/svc05/claim.json) |
 | 架构影响 | 无生产模块变化；仅固定发布组合和已有发布模块消费者，架构基线不冒更新 |
 
