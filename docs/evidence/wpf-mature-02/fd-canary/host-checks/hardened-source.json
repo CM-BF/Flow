@@ -1,0 +1,30 @@
+{
+  "purpose": "18 checks after final-inventory and report/compiler decoder hardening; before forced-child unref delta",
+  "files": [
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/command.mjs",
+      "bytes": 3289,
+      "sha256": "ee53a32d72cee439d49474cab9ee799b82bd1e50a41abd3127cf35528c59d646"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.mjs",
+      "bytes": 4089,
+      "sha256": "a91be0811e956e4053945de053c658f29a18cde8f7ab7ecd71ac7a7c9d0af880"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.mjs",
+      "bytes": 11797,
+      "sha256": "e3f65659280a660d1b502e0f2901f2d333faa19f36977d73f7d51af26f0906c6"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.test.ts",
+      "bytes": 13455,
+      "sha256": "19bd472c2e3f7f4d00db5ff06b7dfc458c4481451ad0abfdd934b7461c4f2b4b"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/vitest.config.mjs",
+      "bytes": 396,
+      "sha256": "e5c5236223fc043004da69288ab1c0da6817c74e2ab59b1f34df22ec8ab971f9"
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 import assert from 'node:assert/strict';
 const exact = (value, names) => assert.deepEqual(Object.keys(value).sort(), [...names].sort());
 export function decodeReport(bytes, nonce, pid) {
+  assert.match(nonce, /^[0-9a-f]{32}$/);
+  assert.ok(Number.isSafeInteger(pid) && pid >= 1 && pid <= 2147483647);
   assert.ok(bytes.length <= 4096 && bytes.at(-1) === 10);
   const lines = bytes.toString('utf8').trimEnd().split('\n'); assert.equal(lines.length, 5);
   const records = lines.map(line => JSON.parse(line));
@@ -30,10 +32,20 @@ export function decodeReport(bytes, nonce, pid) {
 
 export function compilerInventory(bytes, directory, artifacts, clang, linker) {
   assert.ok(bytes.length <= 65536);
-  const commands = [];
+  const commands = []; let includeSearch = false;
   for (const line of bytes.toString('utf8').split('\n')) {
-    if (!/^\s+"\//.test(line)) continue;
-    const words = [...line.matchAll(/"([^"\n]*)"/g)].map(match => match[1]);
+    const trimmed = line.trim();
+    if (/^#include .* search starts here:$/.test(trimmed)) { includeSearch = true; continue; }
+    if (trimmed === 'End of search list.') { includeSearch = false; continue; }
+    if (includeSearch) { assert.ok(/^\/[^\n]+(?: \(framework directory\))?$/.test(trimmed)); continue; }
+    if (/^clang -cc1 version [0-9][^\n]* default target [A-Za-z0-9_.-]+$/.test(trimmed)) continue;
+    const commandLike = /^["/]/.test(trimmed) || /(?:^|\s)-(?:cc1|cc1as|o)(?:\s|$)/.test(trimmed);
+    if (!commandLike) continue;
+    // Unknown or mixed unquoted invocation syntax cannot be silently omitted from the inventory.
+    assert.ok(/^"\//.test(trimmed));
+    const tokens = [...trimmed.matchAll(/"(?:[^"\\]|\\.)*"/g)].map(match => match[0]);
+    assert.equal(trimmed.replace(/"(?:[^"\\]|\\.)*"/g, '').trim(), '');
+    const words = tokens.map(token => JSON.parse(token));
     assert.ok(words.length > 1 && [clang, linker].includes(words[0]));
     const role = words[0] === linker ? 'linker' : words.includes('-cc1as') ? 'assembler' : words.includes('-cc1') ? 'frontend' : null;
     assert.ok(role);
@@ -42,6 +54,7 @@ export function compilerInventory(bytes, directory, artifacts, clang, linker) {
     assert.ok(output.startsWith(`${directory}/`) && artifacts.some(item => item.path === output));
     commands.push({ executable: words[0], role, output: output.slice(directory.length + 1), pid: null, evidence: 'compiler-verbose-command' });
   }
+  assert.equal(includeSearch, false);
   assert.ok(commands.length >= 2 && commands.length <= 8 && commands.some(item => item.role === 'frontend') && commands.some(item => item.role === 'linker'));
   return commands;
 }

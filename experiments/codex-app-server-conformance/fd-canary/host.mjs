@@ -65,7 +65,7 @@ const healthy = result => closed(result) && result.reason === 'completed' && res
 export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, toolchain }, dependencies = {}) {
   const io = dependencies.io ?? fs; const now = dependencies.now ?? (() => performance.now());
   const command = dependencies.command ?? runOwnedCommand;
-  const start = now(); const startedAt = new Date().toISOString(); const budget = makeBudget();
+  const start = dependencies.start ?? now(); const startedAt = dependencies.startedAt ?? new Date().toISOString(); const budget = makeBudget();
   const roots = []; const descriptors = []; const result = { startedAt, compileReservations: 0, compileCalls: 0, targetReservations: 0, targetStartsObserved: 0, stages: [],
     targets: ['NOT_RUN', 'NOT_RUN', 'NOT_RUN'], compilerOutputAccounting: 'unknown', cleanupComplete: false, retainedRoots: [] };
   let reserved = false; let allClosed = true; let descriptorsClosed = true; let creatingRoot = false;
@@ -73,7 +73,7 @@ export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, too
   function makeRoot(prefix) {
     creatingRoot = true;
     const createdPath = io.mkdtempSync(prefix);
-    const record = { createdPath, directory: createdPath, identity: null, prepared: false }; roots.push(record); creatingRoot = false;
+    const record = { createdPath, directory: createdPath, identity: null, prepared: false, finalInventoryConfirmed: false }; roots.push(record); creatingRoot = false;
     record.directory = io.realpathSync(createdPath); const stat = io.lstatSync(record.directory);
     if (!stat.isDirectory() || stat.isSymbolicLink()) fail(); record.identity = identity(stat);
     io.chmodSync(record.directory, 0o700); record.prepared = true; return record.directory;
@@ -86,7 +86,9 @@ export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, too
     if (elapsed() >= 45000 || result.compileReservations > 1 || result.targetReservations > 3) fail();
     if (kind === 'compile') { if (result.compileReservations !== 0) fail(); result.compileReservations++; }
     else { if (result.compileCalls !== 1 || result.targetReservations >= 3) fail(); result.targetReservations++; }
+    if (kind !== 'compile') result.targets[result.targetReservations - 1] = { state: 'reservation-unconfirmed', report: null };
     durable(path.join(evidenceDirectory, `slot-${kind}.json`), { kind, elapsedMs: elapsed(), consumed: true }, budget, io);
+    if (kind !== 'compile') result.targets[result.targetReservations - 1] = { state: 'attempted', execution: 'unknown', report: null };
     allClosed = false;
     if (kind === 'compile') result.compileCalls++;
     const returned = await command(options, budget);
@@ -94,6 +96,7 @@ export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, too
     const stage = { kind, ...returned.safe, stdoutBytes: returned.stdout.length, stdoutSha256: hash(returned.stdout),
       stderrBytes: returned.stderr.length, stderrSha256: hash(returned.stderr) };
     result.stages.push(stage); allClosed = closed(stage);
+    if (kind !== 'compile') result.targets[result.targetReservations - 1] = { state: allClosed ? 'closed' : 'close-unknown', reason: stage.reason, report: null };
     if (!healthy(stage)) fail();
     return returned;
   }
@@ -140,14 +143,14 @@ export async function runFdCanaryBatch({ sourceDirectory, evidenceDirectory, too
       if (allClosed && descriptorsClosed && root.prepared) try {
         if (!same(io.lstatSync(root.directory), root.identity)) fail();
         // All expected writers are confirmed closed; inspect only this exact own root before recursive removal.
-        inventory(root.directory, budget, io, false); io.rmSync(root.directory, { recursive: true }); removed = true;
+        inventory(root.directory, budget, io, false); root.finalInventoryConfirmed = true; io.rmSync(root.directory, { recursive: true }); removed = true;
       } catch { /* Retain exact originally created path when any identity/output/close is unknown. */ }
       if (!removed) result.retainedRoots.push(root.createdPath);
     }
     result.rootCreationUnknown = creatingRoot;
     result.cleanupComplete = allClosed && descriptorsClosed && !creatingRoot && result.retainedRoots.length === 0;
   }
-  result.outputAccountingComplete = allClosed && !creatingRoot && (result.compileCalls === 0 || result.compilerOutputAccounting === 'visible-owned-files-and-verbose-outputs');
+  result.outputAccountingComplete = allClosed && !creatingRoot && roots.every(root => root.finalInventoryConfirmed) && (result.compileCalls === 0 || result.compilerOutputAccounting === 'visible-owned-files-and-verbose-outputs');
   result.elapsedMs = elapsed(); result.elapsedBasis = 'before-result-persistence'; result.output = budget.snapshot();
   result.withinBudget = result.elapsedMs <= 60000 && result.output.withinMeasuredBudget && result.outputAccountingComplete;
   if (reserved) {

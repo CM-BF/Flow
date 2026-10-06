@@ -144,3 +144,28 @@ it('stops a fake output stream at the capture bound without copying extra bytes'
   child.stderr.write(Buffer.alloc(65537)); await vi.advanceTimersByTimeAsync(750); const result = await pending;
   expect(consumed).toBe(65536); expect(result.stderr.length).toBe(65536); expect(result.safe.reason).toBe('output-bound');
 });
+
+it('makes accounting unknown when final root enumeration cannot finish after all commands close', async () => {
+  const f = fixture(); let lastStageEnumerations = 0;
+  const io = new Proxy(f.io, { get(target, name) {
+    if (name === 'readdirSync') return (directory: string) => {
+      if (f.calls.length === 4 && directory === path.dirname(f.calls[0].cwd) && ++lastStageEnumerations === 2) throw new Error('synthetic final inventory failure');
+      return fs.readdirSync(directory);
+    };
+    return Reflect.get(target, name);
+  } });
+  const result = await runFdCanaryBatch(f.input, { ...f, io });
+  expect(result).toMatchObject({ measurementComplete: true, outputAccountingComplete: false, withinBudget: false, cleanupComplete: false });
+  expect(result.retainedRoots).toHaveLength(1); expect(result.output.withinMeasuredBudget).toBe(true);
+});
+it('rejects caller identity outside the report schema even when the payload echoes it', () => {
+  expect(() => decodeReport(encode(records('x', 42)), 'x', 42)).toThrow();
+  expect(() => decodeReport(encode(records('a'.repeat(32), 0)), 'a'.repeat(32), 0)).toThrow();
+});
+it('refuses an unquoted or unknown compiler command instead of omitting it from known commands', () => {
+  const artifacts = [{ path: '/owned/a.o' }, { path: '/owned/b' }];
+  const valid = ' "/fixed/clang" "-cc1" "-o" "/owned/a.o"\n "/fixed/ld" "-o" "/owned/b"\n';
+  expect(compilerInventory(Buffer.from(valid), '/owned', artifacts, toolchain.clang, toolchain.linker)).toHaveLength(2);
+  expect(() => compilerInventory(Buffer.from(valid + ' /fixed/unknown -o /owned/c\n'), '/owned', artifacts, toolchain.clang, toolchain.linker)).toThrow();
+  expect(() => compilerInventory(Buffer.from(valid + ' "/fixed/unknown" "-o" "/owned/c"\n'), '/owned', artifacts, toolchain.clang, toolchain.linker)).toThrow();
+});
