@@ -8,7 +8,7 @@ ContextSnapshot v1 是中心生成的有限 metadata 投影。runner/估算器�
 
 | 字段组 | 候选字段 / 语义 |
 | --- | --- |
-| subject | taskId/attemptId/ownerVersion/nativeSessionId 或独立 draftRevision；运行主体与草稿主体用 discriminated union，不伪造尚不存在的 task |
+| subject | attempt的taskId/attemptId/ownerVersion/nativeSessionId；draft的draftId/settingsRevision；queued的queueItemId/冻结settingsRevision；用discriminated union，不伪造尚不存在的task |
 | model | requested identifier/profile reference；resolved identifier 或 null；两者各自来源，别名不是已解析模型 |
 | input | executionInputDigest（有K02时）、materialRevisionDigest、historyEpoch/observationId；每个缺失值显式 unknown，不声称覆盖全部SDK输入 |
 | measurements | modelCapacity、compactionWindow、used，以及两窗口分别计算的remaining：每项value（非负安全整数或null）、kind=provider/estimate/unknown、source及版本、measurementMethod（provider-report/sdk-summary-estimate/host-estimate/derived）、evidenceRef、observedAt、coverage与适用输入 |
@@ -60,3 +60,17 @@ draft预估需要针对已有草稿提交权限、已加载profile和citation se
 ## 依赖协调
 
 R05-A的descriptor只保留配置port，不能在其未获审target上附加上下文字段。可先使用当前profile/K02 metadata构建pure projection，观测Adapter待R05接收后由owner商定是否需要新port；没有port时unsupported/unknown。WPF-MATURE-02的能力合同候选位于`/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/docs/evidence/wpf-mature-02/interface.md`（由mika提供，未读取未完成稿）；本任务消费其固定来源和实际模型身份，不另造能力目录。Web由d01消费中心规范snapshot；本owner提供固定schema和验收样例，不直接修改App/CHATUI或另造计划。
+
+## 当前实现片的固定选择
+
+mika批准4文件并完成amend v2后实现了本候选的schema/纯投影片。实际Interface为`projectContextSnapshot({identity,asOf,materials,observation})`，合同源`packages/contracts/src/context-transparency.ts`，不导出到公共index、没有endpoint/DB或SDK采样。此片只消费现有harnessSchema，未来Codex身份必须由共享owner扩展固定合同后接入，不接受任意harness字符串自授权。
+
+identity包含harness/requested/resolvedModel/profile reference/input digest/material digest/historyEpoch及上述subject。next-turn model/effort/fast变更推进draft.settingsRevision（即使model名不变）；queued用受理时冻结revision，attempt用自己的profile/input版本。函数无外部可变状态，返回解析后的独立metadata对象，不改任何旧queued/attempt。相同nativeSession也不能跨harness复用观测。02设置实现是依赖，本片只声明消费者失效语义。
+
+输入须由中心可信caller固定实际identity与材料revision；投影不计算源码全文digest、不证明调用方提供的digest正确、不提供身份鉴权。相同identity才比较观测；resolved model/input digest/material digest/historyEpoch（attempt还需session）缺失时为unknown。观测时间未来或超过30秒为stale；这个30秒是本模块的保守展示界限，不是provider freshness保证或轮询承诺。
+
+只支持K02已冻结的最多4引用、总8192 UTF-8 bytes，不把未来32项native材料候选提前实现。草稿role=selected，queued/attempt role=included仅表示冻结输入包含这些片段，不宣称模型已读或当前驻留；token分项保持unknown。categories最多32条，按kind保存，不参与总量再求和。响应序列化硬上限65536 bytes，无IO/连接/计时器/资源所有权。
+
+已知测量保留source+version、measurementMethod、tokenBasis、full/partial coverage与持久evidenceRef。derived结果显式两operand的value/kind/引用，不能提升estimate；SDK context来源不能填modelCapacity，仅作为compactionWindow/used候选。此处provider-capability/provider-window仅是规范来源类别，不是已接入某个provider或通过schema就获得报告权限。
+
+压缩本片仅保留observed/not-observed/unsupported及可选summaryRef/covered refs；缺摘要正文不能假造引用。真正有序持久记录、trigger、前后epoch/计量和授权可访问性仍属TODO -03/-04，不由此pure DTO验收。

@@ -14,3 +14,7 @@
 提交前再检查本地链接、稳定TODO/status、claim literal scope、NOT_STARTED及候选/已实现语义。结果单独记录在[validation](validation.md)。未解决项是后续实施的provider字段、测量覆盖和共享scope协调，不是已经验证通过。
 
 本片再次只读核四个本地技能SHA256并记录[hash证据](skill-hashes.json)，clean-code与全局固定基线一致。接mika精确SDK输入后复核候选：将model硬容量与compaction策略窗口分开，SDK来源与estimate准确度分开，增加full默认成本/summary未知生命周期、deferred排除数学及Codexlast语义未知约束。没有以字段名猜当前上下文，也没有新增provider调用。
+
+2026-10-06 09:09 UTC实现交付前clean-code复核：schema负责形状/数值证据语义，projection负责当前identity/freshness及窗口算术，无IO或隐藏状态；复用现有harness/profile/knowledge引用合同，不复制auth/usage/压缩状态机。发现并修复两处语义漏洞：derived输入为estimate不能在输出升级provider；SDK autocompact report不能填hard modelCapacity。源与方法分离，limits命名区分modelHardLimit/compactionPolicy。遵循[唯一模块化规则](/Users/citrine/Projects/AgentHarness/Flow/AGENTS.md#modular-design)，未复制框架规则。
+
+资源界限：4材料/8192选中bytes、32categories、65536响应bytes；未知与失效在Interface内集中；pure函数返回detached对象，既有固定队列/attempt不受draft变更影响。没有声明性能提升或provider真实token精度。剩余限制：host将真实素材变更可靠映射到identity digest、SDK来源适配、持久化/鉴权/重启与UI尚未实施，由完整TODO继续跟踪。

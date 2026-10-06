@@ -9,13 +9,13 @@
 | 权威 worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency / codex/context-transparency |
 | 固定启动基线 | b1c2e39837c2208e6fc2c59a80e16797f26448b5 |
 | 当前阶段 | M2 |
-| 当前写入范围 | plans/wpf-mature-04-context-transparency、docs/evidence/wpf-mature-04；仅规划与证据 |
+| 当前写入范围 | plan/evidence及[amend v2](../../docs/evidence/wpf-mature-04/amend-receipt.json)的4个新合同/纯投影文件；不含生产挂载 |
 
 ## 用户结果与已确认边界
 
 用户应能理解当前所选或实际执行模型的上下文容量、当前窗口已用/剩余、材料占用，以及压缩/摘要何时发生、产生何种结果、原文如何追溯。数值必须区分 provider 证据、estimate 与 unknown；换模型、增减材料或执行输入变化后应更新，超限必须明确。session 累计 token/成本绝不能冒充当前窗口使用量。前端插件消费中心规范数据，只按需打开引用，不为计量重新上传或重复传送全文。
 
-GO/用户已授权该方向及规划实施。当前首片只登记完整验收、查明差距、提出公共 Interface 与精确实施范围；工程实现及其受影响验证由 mika 协调路径后启动。Web 由 d01 管理并沿本计划验收，不另写重复目标；不修改 S01、CHATUI 或其他任务的状态。首片不运行当前源码工程测试、真实模型、安装、私人服务或凭据操作；协调连接只通过已配置环境加载，证据不含凭据。
+GO/用户已授权该方向及规划实施。首片规划已固定，mika随后协调批准4文件纯投影实现与局部验证；当前不包含生产SDK采集、持久化或页面挂载。Web由d01管理并沿本计划验收，不另写重复目标；不修改S01、CHATUI或其他任务的状态。只有后续明确获准的2测试路径/严格noEmit在此实现片执行；没有真实模型、安装、私人服务或凭据操作，协调连接只通过已配置环境加载。
 
 ## 当前事实与差距
 
@@ -45,12 +45,12 @@ GO/用户已授权该方向及规划实施。当前首片只登记完整验收�
 - 一个版本化 ContextSnapshot，绑定 requested/resolved model、profile、task/attempt/ownerVersion/session 与输入版本。分开模型硬容量和压缩策略窗口，used及每个窗口remaining各自携带provider/estimate/unknown、来源/方法/证据和适用输入；SDK来源与数值准确度是两个维度，不能把SDK估算或一个provider容量字段的可信度传播给usage。
 - materials 复用精确引用与 byteLength，区分 selected/authorized/included/observed-read，token 占用不可从未读取文件的大小断言；分项不无条件相加。
 - 压缩/摘要是有序、去重的事实记录，记录来源、前后计量、摘要结果引用与覆盖原文引用。未收到事件只是 not-observed，不表示没有发生；不读取或展示私有推理。
-- 当前执行快照与草稿预估分开。输入/model/profile/material revision/压缩 epoch 改变即失效，不将迟到结果盖到新输入。已锁定 conversation 不因本任务隐式开放原地换模型；新合法选择或未来已授权切换动作触发新计量。
+- 当前执行快照、已持久队列与下一条草稿预估分开。用户新验收允许同harness空闲会话的受支持model/effort/fast设置“下一条生效”，由WPF-MATURE-02/R05提供真实capability及设置门禁；每次改变next-turn settingsRevision即失效对应草稿测量。历史、当前running和已持久队列保持各自冻结配置，不能被新选择改写。跨harness必须显式新会话/兼容边界，不凭相同nativeSessionId继承；本片只表达identity/失效，不实现设置命令。
 - 中心列表只传有限 metadata/引用；正文沿既有 owner 鉴权详情入口按需获取。零新增全文上传；没有来源证据时保留 unknown。
 
 ## 稳定 TODO 与阶段交付
 
-- [ ] **WPF-MATURE-04-01** 固定权威计划、原子 claim、源码/依赖差距和全部用户验收；首片文档自查、commit/push，独立 review 保持 NOT_STARTED。
+- [x] **WPF-MATURE-04-01** 固定权威计划、原子 claim、源码/依赖差距和全部用户验收；首片文档自查、commit/push，独立 review 保持 NOT_STARTED。
 - [ ] **WPF-MATURE-04-02** 确定上下文测量公有合同和精确 writable scope；独立实现 schema/纯投影，覆盖 unknown、不可比、材料版本、模型变化及超限。
 - [ ] **WPF-MATURE-04-03** 实现受 ownership 保护的中心观测持久化与 owner 读取；提供去重/重放/过期/重启/权限证据，保留已有 usage 与全文隔离。
 - [ ] **WPF-MATURE-04-04** 接入受支持 harness 的实际容量/当前窗口/压缩来源与估算方法；unsupported 明确 unknown，唯一压缩 owner 与结果/原文 refs 可追溯。
@@ -68,7 +68,7 @@ GO/用户已授权该方向及规划实施。当前首片只登记完整验收�
 | CT-03 | 材料占用 | 精确 citation/version/digest/locator、字节计量与 token 口径；selected 不冒充已读/驻留；重叠与 compiled 输入不双加 |
 | CT-04 | 压缩发生与结果 | 有序幂等记录压缩来源、发生事实、前后口径、结果 ref、覆盖原文 refs；缺失观测为 unknown/not-observed，重启后保留 |
 | CT-05 | 引用追溯 | 授权用户可按需打开固定来源/摘要；越权、摘要不存在、原文不可用和版本失效明确；默认列表无正文 |
-| CT-06 | 模型/材料变化 | 合法新选择及材料增减改变输入 revision；旧观测不能覆盖；已锁定对话配置保持原有门禁 |
+| CT-06 | 模型/材料变化 | 同harness支持的next-turn model/effort/fast变更推进settingsRevision；材料增减推进输入revision；旧观测不能覆盖，历史/running/已持久队列保持冻结；跨harness显式新会话/兼容边界，不以session猜兼容 |
 | CT-07 | 超限与未知 | hard-limit与compaction-window超限及provider/estimate可区分；deferred分类排除窗口求和，按kind而非英文label分类；未知不能显示0或安全；不会静默裁剪或新增自动压缩 |
 | CT-08 | 前端插件消费 | 中心到客户端 schema 可兼容；Web 零全文重传、详情展开才读取；离线/重连、双主题/窄屏/键盘可用 |
 | CT-09 | 事实与权限 | current attempt/session/input 关联、稳定事件去重、冲突拒绝、stale fenced、owner/runner角色隔离、main 与 branch证据分开 |
@@ -89,3 +89,7 @@ GO/用户已授权该方向及规划实施。当前首片只登记完整验收�
 ## 实质变更
 
 2026-10-06：按授权建立 WPF-MATURE-04 唯一计划；区分当前窗口、累计 usage、Flow 字节预算及 R05 配置描述，登记中心规范投影候选与完整验收。
+
+2026-10-06 09:04 UTC：首片bbfb7037ee3ca3e37bf14a078f8a05582b209f48已push。mika批准候选的4个新文件和局部行为验证；fresh ledger无冲突，claim v2已COMMITTED。遵循主仓3d31版本[统一模块化规则](/Users/citrine/Projects/AgentHarness/Flow/AGENTS.md#modular-design)；本任务仅补小Interface、状态归属、metadata字节界限与直接消费者证据，不复制通用规则。纯投影无状态、无IO；中心仍唯一持久事实owner，未来runner/SDK负责观测来源。
+
+2026-10-06 09:09 UTC：纯投影/schema的2文件30个行为检查及继承root严格配置的局部noEmit通过。追加下一条设置revision与queued/attempt冻结语义；修正derived准确度不可升级估算、SDK autocompact reading不可冒充model hard limit。未挂载生产，完整任务不完成。
