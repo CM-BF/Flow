@@ -1,0 +1,7 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "../../../../../apps/server/src/assistant-stream/task-head.test.ts",
+    "../../../../../apps/server/src/assistant-stream/queries.ts"
+  ]
+}
