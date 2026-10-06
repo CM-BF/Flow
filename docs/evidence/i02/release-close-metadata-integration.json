@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-06T12:45:12.546510+00:00",
+  "base": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+  "inputs": [
+    {
+      "taskId": "SVC05",
+      "fixedSource": "a0a7c5c0e37c1571be5fd418e61992122babe938",
+      "paths": [
+        "plans/svc05-current-release",
+        "docs/evidence/svc05"
+      ]
+    },
+    {
+      "taskId": "ENG01G",
+      "fixedSource": "bb794bdcba12b6ded459c7b5ee35a9090df81036",
+      "paths": [
+        "plans/eng01g-native-writer",
+        "docs/evidence/eng01g"
+      ]
+    },
+    {
+      "taskId": "SVC06",
+      "fixedSource": "3467f3e8ef70ba47d1cf4f148e42b90e084ccbf7",
+      "paths": [
+        "plans/svc06-backend-release",
+        "docs/evidence/svc06"
+      ]
+    },
+    {
+      "taskId": "ENG01H",
+      "fixedSource": "d0e697af215b5a753decc838a7610f69dd173e54",
+      "paths": [
+        "plans/eng01h-native-engineering-contract",
+        "docs/evidence/eng01h"
+      ]
+    },
+    {
+      "taskId": "D05",
+      "fixedSource": "cd2c478eded71adfc6773cbfaf93d7b60dac0606",
+      "paths": [
+        "apps/execution-dashboard/src/registry.mjs",
+        "plans/README.md",
+        "plans/d05-architecture-view/status.md",
+        "docs/evidence/d05/tui-goal-149-live.json",
+        "docs/evidence/d05/native-contract-150-registry.json",
+        "docs/evidence/d05/fixed-release-151-registry.json"
+      ]
+    },
+    {
+      "taskId": "ENG-001",
+      "fixedSource": "08751d3a57f7ae49a995bcc26ea97eb39fbc140d",
+      "paths": [
+        "plans/eng01-engineering-delivery"
+      ]
+    },
+    {
+      "taskId": "FLOW-001",
+      "fixedSource": "2721502cc2c34611485cb5150e98141ee37723a0",
+      "paths": [
+        "plans/flow-001-architecture/status.md",
+        "plans/flow-001-architecture/full-plan-matrix.md"
+      ]
+    },
+    {
+      "taskId": "F01",
+      "fixedSource": "1aad7edc79e62728bed6cbf8b6ba18a92a23a3b7",
+      "paths": [
+        "docs/evidence/f01/eng01h-runner-contract-handback.json"
+      ]
+    }
+  ],
+  "kind": "Fixed accepted operational evidence plus owner metadata and unique registry; no product implementation changed",
+  "runtime": "362af3bac77541e5a60979326bcf4d4b8c947915 / accepting v15",
+  "web": "8d8ab520a9d43c7b9dafb22911416ee799ebf665 / caa1 / v2",
+  "productTests": 0,
+  "operatorQueries": 0
+}

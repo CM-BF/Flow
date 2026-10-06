@@ -1,0 +1,30 @@
+{
+  "target": "0aaa7eb9591d83e5194d0894a1417f75615f0517",
+  "delivery": "e5e3c6c5a0eda48414c14b50f511c384f779d638",
+  "manifestSha256": "af266acc9d406690777ebfb51956d60912a367b1f794929be69def97c0e3ea0b",
+  "entries": 65,
+  "mismatches": [],
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "author": "assignment_review (independent from reviewer)",
+  "reviewedAt": "2026-10-06 12:51:57 UTC",
+  "state": "APPROVED",
+  "findings": [],
+  "unresolvedP1P2": 0,
+  "reviewerTestRuns": 0,
+  "providerCalls": 0,
+  "sourceReview": "Read all 12 source files and complete base delta; inspected unchanged public goal controller command/read/lifecycle seams and original conversation journal behavior. No added dependency or lock delta.",
+  "evidenceReview": [
+    "65 fixed/current entries match; all 18 direct inputs match base.",
+    "Original final 21/21 (8 new + 13 unchanged) and actual exit receipts verified; typecheck exit 0 with empty compiler output. Earlier failures, partial runs and selected counts retained.",
+    "Real production createServer with random PostgreSQL, two clients, 57 history refs / 3 pages, sibling state refresh with zero repeated material, exact key/body lost-ACK replay after explicit recover.",
+    "Observed task/decision identities, fixed artifact digest, mechanical pass vs business acceptance, quit without cancel and cancellation pending until runner completion.",
+    "Actual Node JSONL and owned PTY CJK/emoji/multiline/52-column resize/raw-mode restoration; final PTY exit 0, transcript 12762 bytes, zero command POSTs. Owned random DB removed and server closed."
+  ],
+  "boundaries": [
+    "Approval is for explicit goal terminal reuse and isolated public HTTP/PG/JSONL/PTY journeys, not Web or complete TUI-to-Web-to-TUI acceptance.",
+    "Quit disposes local observation and preserves original unknown intent; does not cancel remote work. Unknown ACK recovery requires explicit original-key/body replay; definite CAS rejection makes only the rejected POST and attempts a plan refresh.",
+    "192 KiB is the journal and JSONL INPUT framing bound, not a universal output-frame bound. Explicit body reads retain the public controller bounds (up to 1 MiB artifact / 2 MiB goal response); screen windows remain at most 1600 code points.",
+    "Private journal uses existing owner-only directory/file checks, atomic replacement and exclusive lock; same-UID race resistance, stale-lock recovery and universal OS crash/power-loss durability are not proven.",
+    "No provider, browser, personal-service action or author-tree write by reviewer."
+  ]
+}

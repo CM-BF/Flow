@@ -1,8 +1,12 @@
 import type { Readable, Writable } from 'node:stream';
-import type { InteractionController } from '@flow/interaction';
+interface HeadlessController {
+  execute(command: never): Promise<unknown>;
+  snapshot(): { closed: boolean };
+  dispose(): Promise<void>;
+}
 
 /** Sequential JSONL commands use the exact same controller as Ink, including unresolved ACK semantics. */
-export async function runHeadless(controller: InteractionController, input: Readable, output: Writable): Promise<void> {
+export async function runHeadless(controller: HeadlessController, input: Readable, output: Writable): Promise<void> {
   const write = (value: unknown) => new Promise<void>((resolve, reject) => {
     const text = JSON.stringify(value).replace(/[\u202a-\u202e\u2066-\u2069]/g, c => `\\u${c.charCodeAt(0).toString(16)}`);
     output.write(`${text}\n`, error => error ? reject(error) : resolve());

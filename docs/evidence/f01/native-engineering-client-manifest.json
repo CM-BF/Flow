@@ -1,0 +1,66 @@
+{
+  "task": "F01",
+  "target": "79b569a14d14c218874781e2d05ae6e42e234ce2",
+  "domainTarget": "916e59f69cea6f5eef4fe8cd80dc1f735c5b705b",
+  "recordedAt": "2026-10-06T12:51:59.658254+00:00",
+  "scope": "thin transport/export only",
+  "checks": {
+    "red": {
+      "exitCode": 1,
+      "passed": 1,
+      "failed": 1
+    },
+    "green": {
+      "exitCode": 0,
+      "passed": 2
+    },
+    "typecheck": {
+      "exitCode": 0
+    }
+  },
+  "providerCalls": 0,
+  "entries": [
+    {
+      "role": "source",
+      "path": "packages/client/src/index.ts",
+      "bytes": 45195,
+      "sha256": "8f1c48b8a938c65450417064204153bfaa3d2d669354ffd0dc6aaf020c68d6dc"
+    },
+    {
+      "role": "source",
+      "path": "packages/client/src/engineering-profiles.test.ts",
+      "bytes": 7649,
+      "sha256": "4b9111b1b97f1971e691efcceeb6962bdf83e0d99466d622d30d5a7303f11b4b"
+    },
+    {
+      "role": "source",
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1268,
+      "sha256": "214f8b9c9f1c7c72aedac28a6b147c57079beca4a50f9829d4677153b0ed5a86"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/f01/native-engineering-client-red.txt",
+      "bytes": 1399,
+      "sha256": "10ebbf93d6870c66dc7dc2362788e068f83f6c7ff1895fc98983d798c6b54e58"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/f01/native-engineering-client-green.txt",
+      "bytes": 325,
+      "sha256": "9e56bad571f6f42e9575f3c532138c95254418c3e05f0adb9a3616a69c521db8"
+    },
+    {
+      "role": "raw",
+      "path": "docs/evidence/f01/native-engineering-client-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "role": "input",
+      "path": "packages/contracts/src/engineering-native.ts",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:28:29 UTC / main a8aef18291de147c0a6ce9a3bba9383b54f5cf1f |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:53 UTC / 实采main3609 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 148项进度已实际展示；看板读取并发与单次快照复用已发布，原生工程、发布准备和附件接线继续独立推进。 |
+| 当前产出 | 工程看板已展示151个唯一来源，个人后台版本、工程配置和固定发布后继状态可查。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -95,3 +95,11 @@
 2026-10-06 12:22:56 UTC：12:22:18.854Z实际147源[回执](../../docs/evidence/d05/attachment-binding-147-live.json)已核；新三项source live、errors/issues空、父任务关联正确。SVC05原owner已修正父链接，不回写先前unknown样本。新DPERF03只领取待首canonical，下一正常批再登记；本次未操作个人服务或刷新用户tab。
 
 2026-10-06 12:28:29 UTC：[148源真实快照](../../docs/evidence/d05/snapshot-sharing-148-live.json)记录12:24:33.364Z实际main/clean、领取来源全部已登记，DPERF03获审实现已main。仅替换自有4320，个人服务/标签不动；架构固定快照不重审。
+
+2026-10-06 12:37:14 UTC：[149真实快照](../../docs/evidence/d05/tui-goal-149-live.json)于12:35:18.813Z登记齐全。自有4320现由固定I02 aeb树运行；个人更新窗口中原Flow暂时detached362，main/origin ref仍aeb，反映真实工作目录而非分支回退。窗口未结束前不推进main；其他独立worktree正常。
+
+2026-10-06 12:40:25 UTC：ENG01H 原生工程用途与检查收据已独立领取；候选150源唯一、真实三件套/人读字段/解析通过，见[登记](../../docs/evidence/d05/native-contract-150-registry.json)。个人后台固定更新尚在窗口内，main和看板保持149实采；此登记不提前发布、不重跑工程测试。
+
+2026-10-06 12:44:20 UTC：[151源候选](../../docs/evidence/d05/fixed-release-151-registry.json)中ENG01H实施、SVC06计划均有唯一父任务/完整三件套。SVC05已关闭窗口，原开发树恢复main aeb，实际后台362/v15与Web8d8/v2区分。当前看板仍149源实采；固定架构不变，不为metadata重跑产品。
+
+2026-10-06 12:46:32 UTC 实采151来源：[发布后看板](../../docs/evidence/d05/release-close-151-live.json)。main3609 clean；架构固定f181未改。本次仅保存实际快照，不重复restart或工程测试。

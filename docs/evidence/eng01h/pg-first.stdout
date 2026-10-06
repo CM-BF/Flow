@@ -1,0 +1,55 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract
+
+ ❯ apps/server/src/engineering/native.test.ts (28 tests | 1 failed) 1946ms
+   ✓ publishes immutable native purpose separately without claiming host qualification 45ms
+   × paginates only native engineering declarations and keeps all old catalogs unchanged 36ms
+   ✓ rejects mismatched target at admission 26ms
+   ✓ rejects mismatched project at admission 16ms
+   ✓ rejects mismatched base at admission 15ms
+   ✓ rejects mismatched checker at admission 11ms
+   ✓ rejects mismatched digest at admission 14ms
+   ✓ rejects mixed ordinary, fixture, conversation and planner purposes 23ms
+   ✓ filters historical malformed and ordinary tasks before claim and routes a valid pin once 59ms
+   ✓ saves an exact current receipt, reads it publicly, and replays the same lost-ACK batch without a second completion 62ms
+   ✓ rolls back a succeeded batch without a verified native receipt 36ms
+   ✓ rejects wrong attempt evidence and preserves batch sequence 31ms
+   ✓ rejects wrong task evidence and preserves batch sequence 49ms
+   ✓ rejects wrong owner evidence and preserves batch sequence 31ms
+   ✓ rejects wrong runner evidence and preserves batch sequence 33ms
+   ✓ rejects wrong lease evidence and preserves batch sequence 32ms
+   ✓ rejects wrong pin evidence and preserves batch sequence 31ms
+   ✓ rejects wrong qualification evidence and preserves batch sequence 30ms
+   ✓ rejects wrong model evidence and preserves batch sequence 29ms
+   ✓ rejects wrong base evidence and preserves batch sequence 30ms
+   ✓ rejects wrong snapshot evidence and preserves batch sequence 34ms
+   ✓ rejects wrong diff evidence and preserves batch sequence 30ms
+   ✓ rejects wrong source evidence and preserves batch sequence 29ms
+   ✓ rejects wrong result evidence and preserves batch sequence 30ms
+   ✓ rejects wrong artifact evidence and preserves batch sequence 29ms
+   ✓ rejects wrong verifier evidence and preserves batch sequence 32ms
+   ✓ records a failed host check but refuses success and leaves the exact batch replayable 47ms
+   ✓ rechecks revocation before claim and rejects another harness publication 23ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/engineering/native.test.ts > paginates only native engineering declarations and keeps all old catalogs unchanged
+AssertionError: expected undefined to deeply equal []
+
+- Expected: 
+[]
+
++ Received: 
+undefined
+
+ ❯ apps/server/src/engineering/native.test.ts:89:160
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 27 passed (28)
+   Start at  05:41:14
+   Duration  3.45s (transform 690ms, setup 0ms, import 1.42s, tests 1.95s, environment 0ms)
+

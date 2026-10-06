@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:29:51 UTC / main 557397e9f756bfd9500107d7c1d1ce0ae65f7906 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:54 UTC / main3609受控接收候选 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | eb95fba已含工程完整快照收据；本批目标会话公共入口/可选诊断/工作区原始基线 |
-| 工作树dirty状态 | 仅本次管理收口；产品已提交并main |
-| 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | ENG01G 56源码/直接输入完全一致、root types0；DPERF03五源与独审相同、登记直接1项通过及148源实采；0provider。 |
-| 已集成main状态 / HEAD | 557397e9f756bfd9500107d7c1d1ce0ae65f7906 已推送，已审工程writer、上下文观察与看板读取改进均main。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
+| 工作基线 / HEAD | 前main3609；本批ENG01H/F01/TUI01D固定已审输入，source比较见工程终端接收记录 |
+| 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
+| 工作分支状态 | completed |
+| 检查状态 | 28源码对独审目标逐字一致，实际组合root noEmit0；复用原领域61/HTTP2/TUI21，不重跑PG/PTY/provider |
+| 已集成main状态 / HEAD | 已审工程合同与终端控制本批待fast-forward；个人backend362/v15 accepting、Web8d8/caa1/v2保持 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 工程写入接缝与看板读取改进已进入主线；发布兼容准备正在独立审查。 |
-| 下一可用交付 | 本批已交付；个人预览发布与终端后继在独立任务推进。 |
+| 当前产出 | 终端可在同一目标入口看计划、历史和控制；原生工程用途与回执合同已完成独立审查并组合。 |
+| 下一可用交付 | 本批已交付；固定后台release与真实工程宿主继续独立推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -147,3 +147,7 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 12:22:57 UTC：本批固定四源已随 main7cbda706 推送，owner主线回执已给Mika，后续收口仍由其唯一status。147源已真实换载，新发布准备仍按固定362隔离组合，不追moving main、不改变个人运行版本。
 
 2026-10-06 12:29:51 UTC：ENG01G八源/48直接输入在实际组合点逐字匹配，root types0；105不同作者检查复用，不重跑。DPERF03五源码已main且实际148源读取可用，仅登记直接消费者1项新验。原raw末尾空行保留，不改写检查输出。SVC05固定准备已交独立review，TUI01D在另一槽推进；个人服务和全部模型预算保持。
+
+2026-10-06 12:45:41 UTC：SVC05窗口真实receipt已独立只读接收，22source/28raw全同，63.132秒/0query/0tab操作，原checkpoint与初依赖缺链失败保留。恢复main aeb未改变loaded source362或node_modules；原Web指针与两保留产物不变。ENG01G最终metadata和ENG01H/SVC06首计划本批同步，151来源登记；无需重跑工程/架构检查。见[固定输入](../../docs/evidence/i02/release-close-metadata-integration.json)、[实际接收](../../docs/evidence/i02/svc05-live-acceptance.json)。
+
+2026-10-06 12:54 UTC：ENG01H916e / F01薄传输79b / TUI01D0aaa分别独审批准，28源对固定目标逐字一致，实际组合root noEmit0；[接收记录](../../docs/evidence/i02/engineering-terminal-integration.json)。复用原局部证据，0产品重跑/0provider。个人runtime362/v15、Web8d8保持；SVC05收口metadata纳入，P01产物读取仅研究后继。

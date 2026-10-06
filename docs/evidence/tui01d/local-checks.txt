@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-goal-session
+
+ ✓ apps/tui/src/recovery.test.ts (9 tests) 558ms
+   ✓ two public HTTP clients alternate turns, preserve a stale draft, recover the original ACK and observe work after one disconnects  465ms
+ ✓ apps/tui/src/terminal.test.ts (4 tests) 148ms
+ ✓ apps/tui/src/goal/terminal.test.ts (2 tests) 51ms
+
+ Test Files  3 passed (3)
+      Tests  15 passed (15)
+   Start at  05:33:50
+   Duration  2.14s (transform 198ms, setup 0ms, import 1.15s, tests 757ms, environment 0ms)
+

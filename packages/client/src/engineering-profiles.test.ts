@@ -51,3 +51,43 @@ it('publishes and reads a bounded fixture engineering profile without reclassify
     await new Promise<void>(resolve => server.close(() => resolve()));
   }
 });
+
+
+it('transports native engineering declarations with purpose-safe decoded receipts and bounded catalog queries', async () => {
+  const configuration = { protocol: 'flow.engineering-profile.v2' as const, harness: 'codex' as const, adapterVersion: 'engineering-codex-1' as const,
+    purpose: 'engineering-native' as const, recipe: 'calculator-arithmetic-v1' as const,
+    project: { id: 'owned-project', baseCommit: 'a'.repeat(40) },
+    checker: { id: 'calculator-arithmetic' as const, version: '1' as const, sourcePolicy: 'flow.calculator-source.v1' as const },
+    model: 'gpt-5.6-sol' as const, authority: { policy: 'calculator-file-only-v1' as const, qualificationDigest: 'b'.repeat(64) }, limits: { writerTimeoutMs: 1000 } };
+  const reference = { id: '00000000-0000-4000-8000-000000000001', runnerId: '00000000-0000-4000-8000-000000000002', configDigest: 'c'.repeat(64) };
+  const profile = { reference, configuration, source: 'runner-declared-native-setup', availability: 'host-qualification-required', createdAt: '2026-10-06T00:00:00.000Z' };
+  const publication = { profile, replayed: true }, page = { protocol: 'flow.native-engineering-profile-catalog.v1', profiles: [profile], nextCursor: reference.id };
+  const calls: { method: string; path: string; token: unknown; body: string }[] = [];
+  const server = createServer(async (request, response) => {
+    let body = ''; for await (const chunk of request) body += chunk;
+    calls.push({ method: request.method!, path: request.url!, token: request.headers.authorization, body });
+    const after = new URL(request.url!, 'http://127.0.0.1').searchParams.get('after');
+    response.writeHead(after === 'conflict' ? 409 : 200, { 'content-type': 'application/json' });
+    response.end(JSON.stringify(after === 'conflict' ? { error: { code: 'native_engineering_profile_unavailable', message: 'Unavailable.' } }
+      : after === 'wrong-purpose' ? { ...page, profiles: [{ ...profile, availability: 'qualified' }] }
+      : request.method === 'POST' ? publication : after ? { ...page, profiles: [], nextCursor: null } : page));
+  }).listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  const baseUrl = `http://127.0.0.1:${(server.address() as AddressInfo).port}`;
+  const runner = new FlowClient({ baseUrl, token: 'synthetic-runner' }), owner = new FlowClient({ baseUrl, token: 'synthetic-owner' });
+  try {
+    expect(await runner.publishNativeEngineeringProfile({ configuration })).toEqual(publication);
+    expect(await owner.listNativeEngineeringProfiles({ limit: 1 })).toEqual(page);
+    expect(await owner.listNativeEngineeringProfiles({ after: reference.id, limit: 1 })).toEqual({ ...page, profiles: [], nextCursor: null });
+    await expect(owner.listNativeEngineeringProfiles({ after: 'wrong-purpose' })).rejects.toThrow();
+    await expect(owner.listNativeEngineeringProfiles({ after: 'conflict' })).rejects.toMatchObject({ status: 409, code: 'native_engineering_profile_unavailable' });
+    await owner.listNativeEngineeringProfiles({ after: 'a/b ?' });
+    await expect(runner.publishNativeEngineeringProfile({ configuration }, AbortSignal.abort())).rejects.toThrow();
+    await expect(owner.listNativeEngineeringProfiles({}, AbortSignal.abort())).rejects.toThrow();
+    expect(calls).toEqual([
+      { method: 'POST', path: '/api/runner/native-engineering-profile', token: 'Bearer synthetic-runner', body: JSON.stringify({ configuration }) },
+      ...['?limit=1', `?after=${reference.id}&limit=1`, '?after=wrong-purpose', '?after=conflict', '?after=a%2Fb+%3F']
+        .map(suffix => ({ method: 'GET', path: `/api/native-engineering-profiles${suffix}`, token: 'Bearer synthetic-owner', body: '' })),
+    ]);
+  } finally { server.closeAllConnections(); await new Promise<void>(resolve => server.close(() => resolve())); }
+});

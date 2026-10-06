@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-06 12:29:51 UTC",
-  "main": "557397e9f756bfd9500107d7c1d1ce0ae65f7906",
+  "recordedAt": "2026-10-06T12:54:57.136259+00:00",
+  "main": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
   "sourceSampleAt": "2026-10-06T12:24:33.364Z",
   "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
   "reviewedQueue": [
@@ -25,19 +25,12 @@
       "target": "5609ea719ec400a803bb6036429312b7a212c90f",
       "main": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
       "evidence": "dperf03-integration.json"
-    },
-    {
-      "taskId": "ENG01G",
-      "classification": "already-main-awaiting-owner-close",
-      "target": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
-      "main": "557397e9f756bfd9500107d7c1d1ce0ae65f7906",
-      "evidence": "engineering-native-writer-integration.json"
     }
   ],
   "mainButNotUserSurface": [
     {
       "taskId": "O12",
-      "next": "TUI01D explicit goal/control mode assigned to assignment_review, independent of Web",
+      "next": "TUI01D approved explicit goal terminal accepted in this batch; Web cross-client remains open",
       "note": "Package/controller and historical reads main; no NL or UI acceptance claimed"
     },
     {
@@ -47,25 +40,32 @@
     },
     {
       "taskId": "ENG01G",
-      "next": "Native authority/profile production admission and separately budgeted actual model acceptance",
+      "next": "ENG01H declaration/receipt center contract accepted; concrete host authority and model qualification remain separate",
       "note": "One real shared exchange pump and injected authority; actual model/enforcement/revocation not demonstrated"
     },
     {
       "taskId": "WPF-MATURE-04",
       "next": "Historical observation producer main; Web consumer and real SDK control evidence remain independent",
-      "note": "027 history and four-source producer main; current/cut not implied; personal runtime unchanged"
+      "note": "Historical producer main and backend deployed362; actual UI/SDK control evidence still independent"
     }
   ],
   "releaseQueue": [
     {
       "taskId": "SVC05",
-      "phase": "fixed-isolated-preparation-in-independent-review",
-      "fixedBackendCandidate": "362af3bac77541e5a60979326bcf4d4b8c947915",
-      "actualBackend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "phase": "actual-window-closed",
+      "actualBackend": "362af3bac77541e5a60979326bcf4d4b8c947915",
       "actualWeb": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
-      "note": "All retained artifact compatibility must be explicit. No personal-service action/query permitted in preparation.",
-      "target": "dc8e25f141a1f52964056df823b988a5fe24cbea"
+      "version": 15,
+      "admission": "accepting",
+      "evidence": "svc05-live-acceptance.json",
+      "next": "Canonical close/release9daf received; no further operation"
+    },
+    {
+      "taskId": "SVC06",
+      "phase": "plan-only",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/plans/svc06-backend-release/status.md",
+      "next": "assignment_review read-only module/layout scope preparation; no personal cutover"
     }
   ],
-  "mainBeforeBatch": "f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa"
+  "mainBeforeBatch": "3609d8dabd3713e37d877af4f96d2daa2bd96e57"
 }

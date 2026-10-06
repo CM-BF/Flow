@@ -93,3 +93,7 @@ ENG01D/E/F均已受控main；E只解释完整受限源码，不执行被测JS；
 ## ENG01G接收后的实际接通（2026-10-06 12:29:32 UTC）
 
 ENG01G已main557397；唯一receive/close pump、finite file策略、真实assignment和authority生命周期的0模型组合已独审。它未注册生产authority，不能把小模块通过当原生写入已交付。原ENG001-04下一项为显式versioned工程purpose/profile与可信host授权接入，保持fixture/readonly旧canonical和恢复语义；与Mika唯一Codex诊断共享qualification/settlement事实，不另开重复probe。权限来源缺失仍拒绝执行，但中心合同、入参绑定与公开受理可独立准备。实际>=Sol模型来源、真实所有writer撤销、固定检查及独立actor接受属于05，不用注入revoked标记替代。
+
+## 当前实施接缝（2026-10-06 12:40:26 UTC）
+
+[ENG01H](../../../engineering-native-contract/plans/eng01h-native-engineering-contract/status.md) 承接ENG001-04，唯一writer native_center_owner；15个已领取literal见其权威status，不在父计划复制另一份范围账本。它新增有限原生engineering v2用途、独立profile catalog与受信runner检查收据关联，旧fixture v1和普通只读canonical不变。真实host授权、所有writer撤销证明、>=Sol真实执行与独立actor接受仍归05/06，不以这个0模型中心片完成替代。

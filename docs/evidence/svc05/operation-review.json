@@ -1,0 +1,19 @@
+{
+  "recordedAt": "2026-10-06T12:51:27.999454+00:00",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "role": "independent readonly review",
+  "target": "a0a7c5c0e37c1571be5fd418e61992122babe938",
+  "result": "APPROVED",
+  "basis": "Lead message: live manifest 22 fixed sources / 28 raw all matched; facts and preservation scripts fully read; identity, 60-table digests with explicit exclusions, migrations 025–027, both retained artifacts, checkpoint before exactly one resume v15 and 0 operator query verified.",
+  "manifest": "live/manifest.json",
+  "manifestSha256": "4fda5cb82c2c4900b0f57b694b13a45d19e48cd4078e895b2654b91919376368",
+  "rerun": false,
+  "findings": [],
+  "limits": [
+    "Prepared compatibility approval dc8e retained separately",
+    "Personal operation is one explicitly approved window; no authority for later service changes",
+    "Preservation excludes pre-omitted queue_checked_at and separately explains four maintenance fields",
+    "No real provider conformance or user tab refresh",
+    "Runtime 362 remains independent from restored main checkout"
+  ]
+}

@@ -1,0 +1,37 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract
+
+stdout | apps/server/src/runner-read-fence.test.ts
+{"kind":"s01p04-cleanup","databaseName":"flow_s01p04_8a7f6782ad2d47258c4cf00a0b679737","connectionsClosed":true,"databaseAbsent":true}
+
+ ❯ apps/server/src/runner-read-fence.test.ts (9 tests | 9 skipped) 3ms
+   ↓ different attempts share the runner fence for ownership, heartbeat and event commit
+   ↓ the same attempt remains serialized and preserves ordered event acknowledgements
+   ↓ revoke waits for an in-flight fence and all later credential reads recheck revocation
+   ↓ a reader queued behind a writer rechecks the committed revoked row
+   ↓ drain blocks only new admission, allows existing work, and hold waits for zero active attempts
+   ↓ exclusive claim keeps capacity one and unresolved attempts continue occupying the slot
+   ↓ protocol recovery retains the outer exclusive fence before nested ownedAttempt
+   ↓ goal authority retains runner then project and nested task-attempt fences
+   ↓ missing runner, foreign attempt, stale owner and expired lease keep their existing fences
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/runner-read-fence.test.ts [ apps/server/src/runner-read-fence.test.ts ]
+Error: FLOW_S01P04_ADMIN_URL must identify the approved local PG16 endpoint.
+ ❯ apps/server/src/runner-read-fence.test.ts:32:26
+     30| beforeAll(async () => {
+     31|   const configured = process.env.FLOW_S01P04_ADMIN_URL;
+     32|   if (!configured) throw new Error('FLOW_S01P04_ADMIN_URL must identif…
+       |                          ^
+     33|   const url = new URL(configured);
+     34|   if (!['postgres:', 'postgresql:'].includes(url.protocol) || url.host…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  9 skipped (9)
+   Start at  05:43:12
+   Duration  936ms (transform 408ms, setup 0ms, import 846ms, tests 3ms, environment 0ms)
+

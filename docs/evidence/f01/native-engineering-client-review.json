@@ -1,0 +1,21 @@
+{
+  "task": "F01",
+  "target": "79b569a14d14c218874781e2d05ae6e42e234ce2",
+  "reviewer": "assignment_review/gpt-6-astra",
+  "review": "APPROVED",
+  "reviewedAt": "2026-10-06T12:53:24.434901+00:00",
+  "manifestSha256": "5d5b5cc6e094cdf06cc8caccc1a9474e5ab321107c6accb831e23245d1aaca41",
+  "scope": "3source/52line thin transport/export",
+  "checks": [
+    "Read full delta, old fixture case, request auth/signal/error and fixed916e real routes",
+    "3source/3raw/1input fixed+working bytes/hash all match",
+    "DTO exact916e; trueHTTP red1green1 ->2green; author noEmit0 original record"
+  ],
+  "findings": [],
+  "reviewerTests": 0,
+  "providerCalls": 0,
+  "limits": [
+    "Not host qualification, native execution, domain or production mount approval",
+    "Empty typecheck stdout exit0 from author manifest not reviewer execution"
+  ]
+}

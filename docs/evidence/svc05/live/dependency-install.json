@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-06T12:39:33.782Z",
+  "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "head": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "dirty": "",
+  "command": "CI=true pnpm install --offline --frozen-lockfile --ignore-scripts",
+  "exit": 0,
+  "downloaded": 0,
+  "reused": 41,
+  "hashes": {
+    "package.json": {
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "matchesFixed": true
+    },
+    "pnpm-lock.yaml": {
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "matchesFixed": true
+    },
+    "apps/server/package.json": {
+      "bytes": 509,
+      "sha256": "ed0aa11b4107898d54166a5d340b88396dd972433ba90bc259048db1af8ac0d0",
+      "matchesFixed": true
+    },
+    "apps/runner/package.json": {
+      "bytes": 423,
+      "sha256": "98933c9182d8c380f53d323ad0b289c1fd945b916f751babc64588092d749063",
+      "matchesFixed": true
+    }
+  },
+  "resolution": {
+    "server": {
+      "zod": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+      "zodVersion": "4.6.5"
+    },
+    "runner": {
+      "zod": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+      "zodVersion": "4.6.5"
+    },
+    "sdk": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "version": "0.3.290",
+      "entrySha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2"
+    }
+  },
+  "log": "/tmp/flow-svc05-fixed-install.txt",
+  "observationCorrection": "SDK package.json is not exported; first observation failed only at version lookup, then read resolved package directory metadata."
+}

@@ -1,0 +1,395 @@
+{
+  "task": "TUI01D",
+  "createdAt": "2026-10-06T12:49:47.815023+00:00",
+  "sourceTarget": "0aaa7eb9591d83e5194d0894a1417f75615f0517",
+  "base": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+  "scope": "explicit goal terminal using public goal session; 0provider; no personal service",
+  "sources": [
+    {
+      "path": "apps/tui/README.md",
+      "bytes": 8557,
+      "sha256": "c2afde8dde353af02865f698ec3c76477e96040fa946072d802d66cd1fb53f3a",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/goal/commands.ts",
+      "bytes": 5210,
+      "sha256": "eea58c676a7b0bf50a52925db82952e8d9241c2ca1794ceb4387907b8c587fea",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/goal/journey.test.ts",
+      "bytes": 14255,
+      "sha256": "85faa08dbc12b23a1d1a52ca83a5e1f7b7778fef31a436b162dac285dab7a95e",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/goal/screen.tsx",
+      "bytes": 2650,
+      "sha256": "a63e1fc5c60bc2902dbdc57fb311a9f078847ad1e5a4b5577878c2ff49c577d2",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/goal/store.ts",
+      "bytes": 1289,
+      "sha256": "8b9c27f896c65fbba63eae64f2fa2813ea880fa9be1717b0b6674576c2fb6d8d",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/goal/terminal.test.ts",
+      "bytes": 3286,
+      "sha256": "7c52a4212191d3c9dbba1b543fbe2d887832576f22fea324a6f1e9e4a26d7cd7",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/goal/terminal.ts",
+      "bytes": 7722,
+      "sha256": "5c8eaafd8a033d89a011b683a84cf1d7daf2cec3c85f2a94ea4bc7ba6adabdbe",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/headless.ts",
+      "bytes": 1766,
+      "sha256": "723492661e0056e24e47ac909aedc18ffbb0ac661026b086d525f3fa4cfdace7",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/intent-store.ts",
+      "bytes": 659,
+      "sha256": "33555b4ff95d4a7b79990fce57fba1c865d7ffbaa5eab37b36c22c886ebba3b7",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4125,
+      "sha256": "ac909b6740f4fae628d8bea61f76e5ca5fad16f64b6f3399707e61ba3066b2cb",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/private-journal.ts",
+      "bytes": 3195,
+      "sha256": "beb8e8374811998d4b55997fe90a50857115fc89220b8b841b56075f005e2bf2",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/test-fixtures/goal_driver.py",
+      "bytes": 2880,
+      "sha256": "8fef835920471c5c4fe49ce59258c8ab5df9c8d26d85d0b8f06142161c188d3a",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "packages/interaction/package.json",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "bytes": 10852,
+      "sha256": "91766e60c23c589151fa75549bf87af840de651b26f55db8212e1fd7627e4135",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "packages/interaction/src/goal/types.ts",
+      "bytes": 2407,
+      "sha256": "a20c40916905737af533a1c6878d31eb9f53517d39147ef0d1d592d65d671529",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "packages/interaction/src/goal/reads.ts",
+      "bytes": 7591,
+      "sha256": "9f507ff364a9a74e269f18865638051b2f1f2528201b1af7cb10c6d0cb931795",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "packages/interaction/src/goal/commands.ts",
+      "bytes": 5082,
+      "sha256": "87788e3280d279ea7a7656f36c06bcbe8f20cda0ed68e3097f60bf4c8b44a79c",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "packages/contracts/src/goals.ts",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "packages/contracts/src/goal-delivery.ts",
+      "bytes": 4968,
+      "sha256": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "packages/contracts/src/projects.ts",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 5369,
+      "sha256": "6e30e7fc7c3f6852911d42b58c2db3960868f13f6d80b11b0e9abd3ee0e393be",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 44108,
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/server/src/goal-delivery/test-support.ts",
+      "bytes": 4065,
+      "sha256": "380922ba25ba29b245ca0fa03156a3879c61223d4d703ecb6d68f907b85b851b",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/lifecycle.ts",
+      "bytes": 394,
+      "sha256": "423b170a5bea8dc4fcb5c405a6d1b7559f16e45c3d2ce7a439728ff50c186107",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/terminal.test.ts",
+      "bytes": 4270,
+      "sha256": "3fb22e26c3f4f3c2094e5b2c60aa6ab1a1cda51ba7cc8090621bb2e020cf8bd7",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/recovery.test.ts",
+      "bytes": 14942,
+      "sha256": "5cf1af83cc6c2ce2200e9d9546df985cce0e9d871c9a7dfa4ea9e5162f2a2643",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/src/screen.tsx",
+      "bytes": 5897,
+      "sha256": "fea86a1a4cdc7c17e6be6d48a8ef7f2bb60be1974b74fcf808f46d813971fa52",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "apps/tui/package.json",
+      "bytes": 453,
+      "sha256": "cf66a662ad0dab061952dded7b4a429217bac526f7cd0745297d5dbfc766dcc8",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "commit": "0aaa7eb9591d83e5194d0894a1417f75615f0517"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/tui01d/checks-final-exit.json",
+      "bytes": 301,
+      "sha256": "84771605d8f7d1c0d55e6a56188cf03a3f508d154580cfe7b825fbb4db95aabf"
+    },
+    {
+      "path": "docs/evidence/tui01d/checks-final.txt",
+      "bytes": 1211,
+      "sha256": "622cbb6ab5cdab83d5a95c9ee9f6e57bc8bc5ac8ba606f3e01a61e1269308346"
+    },
+    {
+      "path": "docs/evidence/tui01d/final/tui-cli.json",
+      "bytes": 10333,
+      "sha256": "7243b10fb35c166d7bb30c6c51253dc6c1bda84bb37a78af4e3a713d8a9d7112"
+    },
+    {
+      "path": "docs/evidence/tui01d/final/tui-controls.json",
+      "bytes": 294,
+      "sha256": "fc985e37e2206a9ed9235b90ace38dce97c40eb5aec568f2f68111823214d0bb"
+    },
+    {
+      "path": "docs/evidence/tui01d/final/tui-history.json",
+      "bytes": 1343,
+      "sha256": "50b5d4298ac590a97d61ea8b125dfae3dd5ffadf1cdd306bfaea1214ff355302"
+    },
+    {
+      "path": "docs/evidence/tui01d/final/tui-lost-ack.json",
+      "bytes": 941,
+      "sha256": "e69d87231eb5568985aff7530c652eab660c54af6025ff551bcc6b3d791915ac"
+    },
+    {
+      "path": "docs/evidence/tui01d/final/tui-two-client.json",
+      "bytes": 880,
+      "sha256": "c66fc0a4705070ac7dcbd57a1982310c1e3435441e884165f80fd77e13249650"
+    },
+    {
+      "path": "docs/evidence/tui01d/final/tui01d-cleanup.json",
+      "bytes": 105,
+      "sha256": "4f272563e41a1fab073d0516c6530f6537a04125bcc9e82aff32cd8deb65296c"
+    },
+    {
+      "path": "docs/evidence/tui01d/goal-final.txt",
+      "bytes": 2462,
+      "sha256": "5c2338e3bc29c4d37d11dec748133d814ee5d514df163c8352b548bbe6a9da0f"
+    },
+    {
+      "path": "docs/evidence/tui01d/initialization-red.txt",
+      "bytes": 433,
+      "sha256": "5d70bbb103f311883aebaaf599098699e0a34d446f0e049b0ef292adbcebaf2b"
+    },
+    {
+      "path": "docs/evidence/tui01d/install.txt",
+      "bytes": 658,
+      "sha256": "a7ea0837e1b2ed937d2011cc84b235ec98948aca735cde016059701479ca8f0d"
+    },
+    {
+      "path": "docs/evidence/tui01d/journey-2/tui-history.json",
+      "bytes": 1343,
+      "sha256": "0f18727e15eef08098322c24641cbaaa445c6828f791875b258c46d121e39b0a"
+    },
+    {
+      "path": "docs/evidence/tui01d/journey-2/tui-lost-ack.json",
+      "bytes": 941,
+      "sha256": "52b3c238ae05a5ed93e461155e32abe59c541f6ecef420f1b7f66e48c9906638"
+    },
+    {
+      "path": "docs/evidence/tui01d/journey-2/tui-two-client.json",
+      "bytes": 880,
+      "sha256": "10413c32137349f8007fb9a32f917b3e51aaa9ab1f670872f4d31778b890a1c0"
+    },
+    {
+      "path": "docs/evidence/tui01d/journey-2/tui01d-cleanup.json",
+      "bytes": 105,
+      "sha256": "cd192cca72edb8362ab3c7df7b2c7fa2452984bd2efba73a6ff1ff676afff1a5"
+    },
+    {
+      "path": "docs/evidence/tui01d/journey-3/tui-controls.json",
+      "bytes": 294,
+      "sha256": "e626a30902173eb362716a7ba7b15522dfe77bce9d6b7fe7afa25359d5ecca03"
+    },
+    {
+      "path": "docs/evidence/tui01d/journey-3/tui-history.json",
+      "bytes": 1343,
+      "sha256": "6e739ad783f8e0939a5d21da75392132d8c44e5b5884b5e48ed7c017f7a63bcb"
+    },
+    {
+      "path": "docs/evidence/tui01d/journey-3/tui-lost-ack.json",
+      "bytes": 941,
+      "sha256": "aaeafc8b366009fb992480edff32fafb489efd7adc570ec124e31083b7412f0d"
+    },
+    {
+      "path": "docs/evidence/tui01d/journey-3/tui-two-client.json",
+      "bytes": 880,
+      "sha256": "7bd3cc66277be5f1c710154f7e6e08d9259153597819a5c02498aeda90f55edf"
+    },
+    {
+      "path": "docs/evidence/tui01d/journey-3/tui01d-cleanup.json",
+      "bytes": 105,
+      "sha256": "e346f51eb2d67cb2435a202a759e98e10a76d6ab5545ce7d9d788f95d1158007"
+    },
+    {
+      "path": "docs/evidence/tui01d/journey-first.txt",
+      "bytes": 1066,
+      "sha256": "9433cf4ccc808f71a7fe2b1e975d2cbad3303f3e5001694d4b5bb5cd3994840b"
+    },
+    {
+      "path": "docs/evidence/tui01d/journey-second.txt",
+      "bytes": 4933,
+      "sha256": "4c8d8c27e560d33bca02b1e59c5c21635dc75723ff0f58ed66d485572e90243c"
+    },
+    {
+      "path": "docs/evidence/tui01d/local-checks.txt",
+      "bytes": 555,
+      "sha256": "d6205fd01e913a987819b08dbecc14fa26f053224b3a9fed705b5720688d7f51"
+    },
+    {
+      "path": "docs/evidence/tui01d/pty-final/tui-cli.json",
+      "bytes": 10333,
+      "sha256": "8c00ed548e50f4521f8eeeed6238fe8b763c88e04521087fadb56d493d3120a0"
+    },
+    {
+      "path": "docs/evidence/tui01d/pty-final/tui01d-cleanup.json",
+      "bytes": 105,
+      "sha256": "2c9d75984bfe5cb0a12f35f412267a32d6fccc2283634a78156cffc975e3e4dc"
+    },
+    {
+      "path": "docs/evidence/tui01d/pty-final.txt",
+      "bytes": 454,
+      "sha256": "324b92e93a6a49c4c760abd236db576fa4864da7a27af4e86f6de8b28c1a5f64"
+    },
+    {
+      "path": "docs/evidence/tui01d/red.txt",
+      "bytes": 1004,
+      "sha256": "d6c43d7aa111f203a746c3a42b6d9dd163da337979895189b4a76f4b0439dd92"
+    },
+    {
+      "path": "docs/evidence/tui01d/typecheck-final-exit.json",
+      "bytes": 143,
+      "sha256": "2b61fb80953e64c7f4da4c9034426171439fe57e25fa286153aa97c94dd3ae8b"
+    },
+    {
+      "path": "docs/evidence/tui01d/typecheck-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/tui01d/typecheck-first.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "documents": [
+    {
+      "path": "docs/evidence/tui01d/README.md",
+      "bytes": 6398,
+      "sha256": "cb0a0c17c17dd685b29149f6ea918ede7085d03d8a51c06e35ff7532ccc35272"
+    },
+    {
+      "path": "docs/evidence/tui01d/interface.md",
+      "bytes": 1563,
+      "sha256": "72db497ed27ef0ebfdb19361b405e79cff19dbad7747b2cb34f93c9d9a396c63"
+    },
+    {
+      "path": "docs/evidence/tui01d/quality.md",
+      "bytes": 1912,
+      "sha256": "efe2ca705435e24f1bfccee961ca1ea849dcc7c5581d9b258de4c34cb6b73cc9"
+    },
+    {
+      "path": "docs/evidence/tui01d/claim.json",
+      "bytes": 794,
+      "sha256": "5955ac32871772a3280075fc6279ee2673b4489abc4df549af2d6c7173d2d809"
+    },
+    {
+      "path": "docs/evidence/tui01d/.gitattributes",
+      "bytes": 12,
+      "sha256": "fd13dad2ecae9b5cdde18e56b396b87ce73a5e3d9c05455bb00a1afc2c424106"
+    }
+  ],
+  "checks": {
+    "finalSelection": [
+      "apps/tui/src/goal/terminal.test.ts",
+      "apps/tui/src/goal/journey.test.ts",
+      "apps/tui/src/terminal.test.ts",
+      "apps/tui/src/recovery.test.ts"
+    ],
+    "finalPassed": 21,
+    "distinctNew": 8,
+    "distinctUnchangedConsumers": 13,
+    "typecheckExit": 0,
+    "providerCalls": 0,
+    "browserRuns": 0,
+    "finalRawSourceBinding": "0aaa7eb9591d83e5194d0894a1417f75615f0517",
+    "historicalRaw": "Earlier red/partial passes retained; not asserted as runs of final target. See README."
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "vitest": "4.0.18",
+    "pnpm": "9.15.4",
+    "typescript": "5.9.3",
+    "os": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.3"
+  },
+  "review": "NOT_STARTED"
+}

@@ -1,0 +1,2177 @@
+{
+  "at": "2026-10-06T12:40:34.342Z",
+  "label": "after-refresh",
+  "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "operatorQueries": 0,
+  "source": {
+    "head": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "dirty": false
+  },
+  "private": {
+    "files": {
+      "config.json": {
+        "bytes": 672,
+        "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee",
+        "mode": 384,
+        "owned": true,
+        "regular": true
+      },
+      "claude.json": {
+        "bytes": 145,
+        "sha256": "b79a5a08590000c6d0c01cb9fd04811f24368947e58c6d399b57a2af9a05f9af",
+        "mode": 384,
+        "owned": true,
+        "regular": true
+      },
+      "web-release.json": {
+        "bytes": 976,
+        "sha256": "58d45a8e1369b9719054b0d010de33a786a910b5b84528cebac81f0b8649f037",
+        "mode": 384,
+        "owned": true,
+        "regular": true
+      }
+    },
+    "nativeMatches": true,
+    "lockPresent": false,
+    "runnerDirectory": {
+      "device": 16777234,
+      "inode": 117819908,
+      "mode": 448,
+      "files": [
+        {
+          "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3adae11ef699bc5a6da493b0a7488f4a392b063827a28618834f451a825813e8/claude-result-430e01ea-30b8-495a-98d4-4d43e573f55f.txt",
+          "bytes": 29,
+          "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+        },
+        {
+          "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3f17ba068480566b261a7133aa56ab695b359b1942730d2c99ef9539bb86debb/claude-result-784cd197-f10e-4b0b-833b-ab11da5a8432.txt",
+          "bytes": 27,
+          "sha256": "af5ff4cc022d0e63215d3a6e0b03bf288c3f5204ee6b1fa121aafe4a74e05631"
+        },
+        {
+          "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/4a3f3cd1b922d835ca83e1f00711fdea80344edbbf55e32856d0777a069ab253/claude-result-0e9affc6-3636-4153-8808-0a9fb2751079.txt",
+          "bytes": 29,
+          "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+        },
+        {
+          "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+          "bytes": 46,
+          "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+        },
+        {
+          "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/d784f9af8945af94d9636738d8ce68e607ffb5120087f1591af02976a907bcd8/claude-result-a9ceb1dc-79a4-4c32-9fce-b8e5f9a06714.txt",
+          "bytes": 9,
+          "sha256": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde"
+        }
+      ]
+    }
+  },
+  "status": {
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "webArtifact": {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+      "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "releaseVersion": 2,
+      "retained": 2,
+      "validatedAgainstBackendHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "state": "verified",
+      "serving": "confirmed"
+    },
+    "observedAt": "2026-10-06T12:40:34.772Z",
+    "startedAt": "2026-10-06T12:40:28.742Z",
+    "sourceAtStart": {
+      "head": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "dirty": false
+    },
+    "configured": "claude-sonnet-5-5",
+    "provider": "not-probed",
+    "processes": {
+      "center": "running",
+      "runner": "running",
+      "web": "running"
+    },
+    "center": {
+      "url": "http://127.0.0.1:61227",
+      "reachable": true
+    },
+    "webUrl": "http://127.0.0.1:61228",
+    "database": "owned",
+    "work": {
+      "total": 4,
+      "pending": 0,
+      "lastTaskSucceededAt": "2026-10-06T08:29:35.480Z",
+      "lastHeartbeatAt": "2026-10-06T08:29:35.459Z"
+    },
+    "lastError": null,
+    "profile": {
+      "id": "7ed454e9-f1db-420c-ac7f-4aa53f3856c0",
+      "source": "runner-configured",
+      "model": "claude-sonnet-5-5"
+    },
+    "lastProcessExits": {},
+    "limits": {
+      "maxTurns": 2,
+      "maxBudgetUsd": 0.2,
+      "timeoutMs": 60000,
+      "scope": "per-query-not-project-total"
+    }
+  },
+  "processes": {
+    "center": {
+      "identity": "running",
+      "pid": 64904,
+      "group": 64904,
+      "startedAt": "Tue Oct  6 05:40:26 2026"
+    },
+    "runner": {
+      "identity": "running",
+      "pid": 65168,
+      "group": 65168,
+      "startedAt": "Tue Oct  6 05:40:28 2026"
+    },
+    "web": {
+      "identity": "running",
+      "pid": 65219,
+      "group": 65219,
+      "startedAt": "Tue Oct  6 05:40:28 2026"
+    }
+  },
+  "listeners": {
+    "center": true,
+    "web": true
+  },
+  "runnerEntrypoints": [
+    {
+      "pid": 65210,
+      "parent": 65168,
+      "group": 65168,
+      "ownedGroup": true
+    }
+  ],
+  "release": {
+    "format": 1,
+    "policy": "flow-web-release-v1",
+    "version": 2,
+    "backendHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+    "compatibilityIds": {
+      "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90": "d4afbf557c00e53088edb6442b2fff1bc995c6d02e93b105ec450f5f9f9a8d5c",
+      "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe": "bc02d897a957d100bddb564aa18b9cae3849b5290f6c230f0630832f9dac0c06"
+    },
+    "current": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+    "artifacts": [
+      {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5"
+      },
+      {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      }
+    ],
+    "updatedAt": "2026-10-06T10:54:44.580Z"
+  },
+  "artifacts": [
+    {
+      "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "verified": true
+    },
+    {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+      "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "verified": true
+    }
+  ],
+  "dependencies": [
+    {
+      "role": "server",
+      "name": "@fastify/cors",
+      "expected": "11.3.0",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/index.js"
+    },
+    {
+      "role": "server",
+      "name": "fastify",
+      "expected": "5.12.5",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js"
+    },
+    {
+      "role": "server",
+      "name": "npm-package-arg",
+      "expected": "13.0.2",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/lib/npa.js"
+    },
+    {
+      "role": "server",
+      "name": "pacote",
+      "expected": "21.5.1",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/index.js"
+    },
+    {
+      "role": "server",
+      "name": "pg",
+      "expected": "8.23.1",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js"
+    },
+    {
+      "role": "server",
+      "name": "pg-boss",
+      "expected": "12.37.0",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js"
+    },
+    {
+      "role": "server",
+      "name": "ssri",
+      "expected": "13.0.1",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/lib/index.js"
+    },
+    {
+      "role": "server",
+      "name": "zod",
+      "expected": "4.6.5",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs"
+    },
+    {
+      "role": "runner",
+      "name": "@anthropic-ai/claude-agent-sdk",
+      "expected": "0.3.290",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs"
+    },
+    {
+      "role": "runner",
+      "name": "@a2a-js/sdk",
+      "expected": "1.3.0",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk/dist/index.cjs"
+    },
+    {
+      "role": "runner",
+      "name": "zod",
+      "expected": "4.6.5",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs"
+    },
+    {
+      "role": "web",
+      "name": "@assistant-ui/react",
+      "expected": "0.15.23",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/dist/index.js"
+    },
+    {
+      "role": "web",
+      "name": "react",
+      "expected": "19.3.0",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/react@19.3.0/node_modules/react/index.js"
+    },
+    {
+      "role": "web",
+      "name": "react-dom",
+      "expected": "19.3.0",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/index.js"
+    },
+    {
+      "role": "web",
+      "name": "lucide-react",
+      "expected": "1.52.0",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/lucide-react@1.52.0_@types+react@19.3.0_react@19.3.0/node_modules/lucide-react/dist/cjs/lucide-react.js"
+    },
+    {
+      "role": "web",
+      "name": "@assistant-ui/react-markdown",
+      "expected": "0.14.18",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown/dist/index.js"
+    },
+    {
+      "role": "web",
+      "name": "@radix-ui/react-avatar",
+      "expected": "1.2.7",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@radix-ui+react-avatar@1.2.7_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_mj6654ekvi7ktl3to63fvkbm2q/node_modules/@radix-ui/react-avatar/dist/index.js"
+    },
+    {
+      "role": "web",
+      "name": "@radix-ui/react-collapsible",
+      "expected": "1.1.21",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@radix-ui+react-collapsible@1.1.21_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@_naquxvtbmxxhunvy2f77cme4ty/node_modules/@radix-ui/react-collapsible/dist/index.js"
+    },
+    {
+      "role": "web",
+      "name": "@radix-ui/react-dialog",
+      "expected": "1.2.0",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/dist/index.js"
+    },
+    {
+      "role": "web",
+      "name": "@radix-ui/react-slot",
+      "expected": "1.4.0",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot/dist/index.js"
+    },
+    {
+      "role": "web",
+      "name": "@radix-ui/react-tooltip",
+      "expected": "1.3.0",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip/dist/index.js"
+    },
+    {
+      "role": "web",
+      "name": "ansi-to-react",
+      "expected": "6.2.6",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ansi-to-react@6.2.6_react-dom@19.3.0_react@19.3.0__react@19.3.0/node_modules/ansi-to-react/lib/index.js"
+    },
+    {
+      "role": "web",
+      "name": "class-variance-authority",
+      "expected": "0.7.1",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority/dist/index.js"
+    },
+    {
+      "role": "web",
+      "name": "clsx",
+      "expected": "2.1.1",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/dist/clsx.js"
+    },
+    {
+      "role": "web",
+      "name": "radix-ui",
+      "expected": "1.7.0",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/radix-ui@1.7.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_react-dom@19._rujyxztpbyqe2txzjmvvwojbie/node_modules/radix-ui/dist/index.js"
+    },
+    {
+      "role": "web",
+      "name": "remark-gfm",
+      "expected": "4.0.1",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/remark-gfm@4.0.1/node_modules/remark-gfm/index.js"
+    },
+    {
+      "role": "web",
+      "name": "tailwind-merge",
+      "expected": "3.7.0",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge/dist/bundle-cjs.js"
+    },
+    {
+      "role": "web",
+      "name": "tw-animate-css",
+      "expected": "1.4.0",
+      "resolved": false
+    },
+    {
+      "role": "web",
+      "name": "tw-shimmer",
+      "expected": "0.4.13",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tw-shimmer@0.4.13_tailwindcss@4.3.3/node_modules/tw-shimmer/src/index.css"
+    },
+    {
+      "role": "web",
+      "name": "zustand",
+      "expected": "5.0.15",
+      "resolved": true,
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zustand@5.0.15_@types+react@19.3.0_react@19.3.0/node_modules/zustand/index.js"
+    }
+  ],
+  "database": {
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "identityMatches": true,
+    "tasks": [
+      {
+        "status": "succeeded",
+        "count": 4
+      }
+    ],
+    "unfinished": [],
+    "queue": [
+      {
+        "state": "promoted",
+        "count": 1
+      }
+    ],
+    "runners": [
+      {
+        "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "harnesses": [
+          "claude"
+        ],
+        "capacity": 1,
+        "revoked": false,
+        "maintenance_state": "maintenance",
+        "maintenance_version": 14,
+        "maintenance_operation_id": "a92a167b-c891-4a93-a4e5-d64cf29ce55a",
+        "maintenance_updated_at": "2026-10-06T12:40:26.693Z"
+      }
+    ],
+    "retainedConversation": {
+      "id": "2c507833-67fe-4d10-acf5-6c97eedd05bb",
+      "revision": 1
+    },
+    "tables": {
+      "artifacts": {
+        "columns": [
+          "task_id",
+          "artifact_id",
+          "version",
+          "attempt_id",
+          "detail_id"
+        ],
+        "omitted": [],
+        "count": 4,
+        "digests": [
+          "8fc399cff2126636734bfaf37121b21f",
+          "a2bc8ca0bc42737f270548aa1be2e2ce",
+          "ebb9a3c219752c5311807a5eb2f167bf",
+          "fbf79fa8ea6040ea02ef9143529bbe8a"
+        ]
+      },
+      "assistant_messages": {
+        "columns": [
+          "ordinal",
+          "id",
+          "task_id",
+          "attempt_id",
+          "event_id",
+          "sequence",
+          "native_session_id",
+          "source",
+          "source_message_id",
+          "content_digest",
+          "detail_id",
+          "settings",
+          "created_at",
+          "native_source_identity"
+        ],
+        "omitted": [],
+        "count": 4,
+        "digests": [
+          "43154b29c8cead75861fc2385761b25e",
+          "7d63cb3bfddff5cfb5b39fa6a9ee947b",
+          "8cb29feceae954dcae7937af68c9282b",
+          "c14587c5e0b08e2717633c2214d68caa"
+        ]
+      },
+      "assistant_stream_blocks": {
+        "columns": [
+          "id",
+          "task_id",
+          "attempt_id",
+          "first_sequence",
+          "last_sequence",
+          "revision",
+          "bytes",
+          "header",
+          "created_at",
+          "updated_at"
+        ],
+        "omitted": [],
+        "count": 2,
+        "digests": [
+          "b25d6ba5cbc0d564633f5347e30867b1",
+          "ea3fe465e35cd84f2aabd560dbd034f3"
+        ]
+      },
+      "assistant_stream_markers": {
+        "columns": [
+          "id",
+          "task_id",
+          "attempt_id",
+          "sequence",
+          "data",
+          "payload_digest"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "assistant_stream_patches": {
+        "columns": [
+          "stream_id",
+          "revision",
+          "task_id",
+          "attempt_id",
+          "event_id",
+          "sequence",
+          "data",
+          "payload_digest",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 4,
+        "digests": [
+          "3e29970e4a2ac15f03ad3573b685de25",
+          "c922791b4efa95142446c9e6162f07ea",
+          "e0789eb1cc367189b7efd9cbcdfdb96d",
+          "ec86bf1459c987586e79934eec25666b"
+        ]
+      },
+      "assistant_stream_settlements": {
+        "columns": [
+          "attempt_id",
+          "task_id",
+          "final_id",
+          "data",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 2,
+        "digests": [
+          "959a32d257cdb425b87c31040984a29a",
+          "cb440a77ec47e149eceaa76539b737a7"
+        ]
+      },
+      "attachment_namespace": {
+        "columns": [
+          "singleton",
+          "recovery_scope_id"
+        ],
+        "omitted": [],
+        "count": 1,
+        "digests": [
+          "9fcdd1dd3740af0f4aaf4bf4bcd15ace"
+        ]
+      },
+      "attachment_resources": {
+        "columns": [
+          "id",
+          "project_id",
+          "version",
+          "name",
+          "media_type",
+          "content",
+          "content_digest",
+          "byte_length",
+          "created_at",
+          "expires_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "attempts": {
+        "columns": [
+          "id",
+          "task_id",
+          "runner_id",
+          "owner_version",
+          "lease_expires_at",
+          "last_sequence",
+          "native_session_id",
+          "completed_at",
+          "last_heartbeat_at",
+          "last_event_at"
+        ],
+        "omitted": [],
+        "count": 4,
+        "digests": [
+          "3032cf5e0c1df8ff879c9e498f82a4c6",
+          "3b97b9afac18f72d4f0d49cf2f53ac91",
+          "55330caea3973a1de2f3dd0cbc14a9e3",
+          "af1135730df812cc95aa075b76ae7fec"
+        ]
+      },
+      "commands": {
+        "columns": [
+          "operation",
+          "key",
+          "digest",
+          "response"
+        ],
+        "omitted": [],
+        "count": 9,
+        "digests": [
+          "10f1313858cd722150beb508a757eca1",
+          "1e45744ec82c2934301ed5a69f96b3cf",
+          "2670445eaefb3236ff7e3cf23184d579",
+          "6a8db545ca79051926874280935a17aa",
+          "749eaffc821cb04727e17d3d5ad3c659",
+          "9df55a36dedaf47a42160b5b2241e21b",
+          "cc485423566f56edffe66ac0917d273d",
+          "d2afdc0c865eeff7cad3e104d4d42459",
+          "dfefa22830f76d564b35481c786c4073"
+        ]
+      },
+      "context_observations": {
+        "columns": [
+          "task_id",
+          "attempt_id",
+          "observation_id",
+          "event_sequence",
+          "wire_canonical",
+          "wire_digest",
+          "sample",
+          "detail_id",
+          "observed_at",
+          "received_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "conversation_attachment_bindings": {
+        "columns": [
+          "context_id",
+          "ordinal",
+          "resource_id"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "conversation_contexts": {
+        "columns": [
+          "id",
+          "conversation_id",
+          "project_id",
+          "context_digest",
+          "sources",
+          "raw_bytes",
+          "created_at",
+          "attachments"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "conversation_execution_inputs": {
+        "columns": [
+          "id",
+          "context_id",
+          "user_text",
+          "template_version",
+          "execution_prompt",
+          "execution_input_digest",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "conversation_queue": {
+        "columns": [
+          "id",
+          "conversation_id",
+          "sequence",
+          "state",
+          "user_text",
+          "turn_id",
+          "task_id",
+          "turn_number",
+          "created_at",
+          "updated_at",
+          "conversation_input_id"
+        ],
+        "omitted": [],
+        "count": 1,
+        "digests": [
+          "e350606a8d638ae7ea2b40145521e452"
+        ]
+      },
+      "conversation_turns": {
+        "columns": [
+          "id",
+          "conversation_id",
+          "number",
+          "task_id",
+          "user_text",
+          "created_at",
+          "conversation_input_id"
+        ],
+        "omitted": [],
+        "count": 4,
+        "digests": [
+          "013143c9d355d7e6dd66063f60863723",
+          "4d885ff8d6cf598ba25b0bb3fedaf1f9",
+          "dea82fc218cd209ba1994297b7b56f4c",
+          "eec6c6cce6018b11372ff52c7e5157ac"
+        ]
+      },
+      "conversations": {
+        "columns": [
+          "id",
+          "title",
+          "harness",
+          "requested",
+          "revision",
+          "created_at",
+          "updated_at",
+          "execution_profile",
+          "queue_paused",
+          "queue_revision",
+          "queue_checked_at",
+          "project_id"
+        ],
+        "omitted": [
+          "queue_checked_at"
+        ],
+        "count": 3,
+        "digests": [
+          "2c4e593a7db5acf4b9772793b599de2f",
+          "32b6724ee995664d918c3062c6932c3a",
+          "87bfaf644ee1e21e156bc25fa8540571"
+        ]
+      },
+      "decisions": {
+        "columns": [
+          "task_id",
+          "id",
+          "prompt",
+          "answer",
+          "created_at",
+          "answered_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "details": {
+        "columns": [
+          "id",
+          "task_id",
+          "attempt_id",
+          "title",
+          "kind",
+          "content",
+          "media_type",
+          "artifact_version"
+        ],
+        "omitted": [],
+        "count": 24,
+        "digests": [
+          "08d0dbb494034f947060a315db12948e",
+          "100adbd2173664cff7af8daf84e65cf2",
+          "10df2e49e167013c135f3d6d22d73f23",
+          "1b3a5ec8bc3bbff6c7a5a4861cdf8685",
+          "2b7f08a90ff5285bfafb55faa5286293",
+          "41cbdcb83d321c7be3c95d9273ce261d",
+          "4c687ce3a9dd649ac2b04f16a559f2c7",
+          "549a0a137ed48780b18f34c2ebf3261a",
+          "5b1425be192af07aead239a764292203",
+          "6b89ef31e123822b75cd3afeda566bec",
+          "6db8f5a092c27544186b6b86499ff0fb",
+          "77215fc8db890222295e59fdfb4f7ebc",
+          "8654deb6de35478d88c816045e9f5fdf",
+          "93b0dd0ed737a175dbfcd0a4d80f84f2",
+          "a73cac8e358f36b9aff8d4d87421a9e5",
+          "ab9208d69db21a0a81b1bc4e36676784",
+          "bd8fb52c8ed7b667d13002423ad82ae0",
+          "be6d81913af90dc40aa991922c570927",
+          "c383fe6b473ce0d87012d5b433f043d3",
+          "c5615605b3778ae6f0e6d87a380e26f7",
+          "cd12b79ba449106cc2486cda6dfb46ef",
+          "dc82341e6d694a968edca71db6fa9cfa",
+          "df68e130967635dfbc447ba8a39fc552",
+          "e3947628820b41e3373fe9cb4c02ce01"
+        ]
+      },
+      "execution_profiles": {
+        "columns": [
+          "id",
+          "runner_id",
+          "config_digest",
+          "configuration",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 1,
+        "digests": [
+          "69f6ce7ecb7d5b7bb804461d8fb755c5"
+        ]
+      },
+      "goal_acceptances": {
+        "columns": [
+          "goal_id",
+          "explanation_version",
+          "binding"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_contexts": {
+        "columns": [
+          "id",
+          "goal_id",
+          "node_id",
+          "input_version",
+          "project_id",
+          "context_digest",
+          "sources",
+          "raw_bytes",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_execution_inputs": {
+        "columns": [
+          "id",
+          "context_id",
+          "public_prompt",
+          "template_version",
+          "execution_prompt",
+          "execution_input_digest",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_executions": {
+        "columns": [
+          "id",
+          "goal_id",
+          "node_id",
+          "task_id",
+          "input_version",
+          "dependencies",
+          "project_revision",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_explanations": {
+        "columns": [
+          "goal_id",
+          "version",
+          "kind",
+          "text",
+          "source",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_graph_applications": {
+        "columns": [
+          "proposal_id",
+          "project_id",
+          "from_revision",
+          "to_revision",
+          "node_ids",
+          "actor",
+          "applied_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_graph_calls": {
+        "columns": [
+          "run_id",
+          "sequence",
+          "runner_id",
+          "attempt_id",
+          "owner_version",
+          "command_key",
+          "digest",
+          "kind",
+          "proposal_id",
+          "proposal_digest",
+          "applied_revision",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_graph_proposals": {
+        "columns": [
+          "id",
+          "goal_id",
+          "project_id",
+          "base_revision",
+          "goal_digest",
+          "proposal_digest",
+          "input",
+          "source",
+          "node_count",
+          "edge_count",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_graph_runs": {
+        "columns": [
+          "id",
+          "goal_id",
+          "task_id",
+          "version",
+          "scope",
+          "mode",
+          "used_commands",
+          "created_at",
+          "revoked_at",
+          "revocation_reason"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_inputs": {
+        "columns": [
+          "goal_id",
+          "node_id",
+          "version",
+          "input",
+          "project_revision",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_nodes": {
+        "columns": [
+          "goal_id",
+          "node_id",
+          "input_version",
+          "latest_execution_id",
+          "accepted_binding"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_tool_calls": {
+        "columns": [
+          "run_id",
+          "sequence",
+          "attempt_id",
+          "owner_version",
+          "command_key",
+          "digest",
+          "kind",
+          "node_id",
+          "result",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goal_tool_runs": {
+        "columns": [
+          "id",
+          "goal_id",
+          "task_id",
+          "version",
+          "scope",
+          "mode",
+          "used_commands",
+          "created_at",
+          "revoked_at",
+          "revocation_reason"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "goals": {
+        "columns": [
+          "id",
+          "project_id",
+          "original",
+          "explanation_version",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "knowledge_chunks": {
+        "columns": [
+          "source_id",
+          "version",
+          "ordinal",
+          "start_byte",
+          "end_byte",
+          "content",
+          "search_vector"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "knowledge_sources": {
+        "columns": [
+          "id",
+          "project_id",
+          "title",
+          "current_version",
+          "created_at",
+          "updated_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "knowledge_versions": {
+        "columns": [
+          "source_id",
+          "version",
+          "content",
+          "content_digest",
+          "byte_length",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "migrations": {
+        "columns": [
+          "version",
+          "applied_at"
+        ],
+        "omitted": [],
+        "count": 27,
+        "digests": [
+          "0c876627ff8f4c43729d779912ba41c7",
+          "109b6602fbead4631900b8dd93ec7337",
+          "1403f78934be86c1dfc29c822b8b2694",
+          "140ba299ad3364ead7f70695fbfe877f",
+          "17162a97d295dd079031411d4fd35fb8",
+          "1c218a6a2eb3e45930c5e4add5a7aca3",
+          "20df5a932b8b372623a85b61e3b132f7",
+          "3013ed1ad1fdf22f3673cdb53887cb88",
+          "3ca3a852a3ae4b8bf348e1db3002d77e",
+          "4e6a4e36299f769c8763702a7d8722b9",
+          "540997db381a093ee0467c0c38db1da2",
+          "54b4d32c8e77b5d16fcc2eaf8fe44006",
+          "6f3e4b32cd25e3c7ffc9d5b8e06ec81f",
+          "7517b6e5c6a91e94d8888839a1fe8385",
+          "8c69182c49a690208f7eb8efec5042b7",
+          "90931567844094000316eaf2ec0d47ef",
+          "982777d198d797f60d807748af1d5c05",
+          "997f07124999d9435e3619b736cc0378",
+          "a208fcf1b43fc996748e608ee36c6694",
+          "a5b1304f580e4e65a6c032f7635d5b89",
+          "a60659fac1f9c7bcaa5f7181385c889c",
+          "b209e4c0ab3c02292e62decbc0be2820",
+          "c0538d61e4b9dfa3809a0cfcd464921f",
+          "ca679bcf550decf22fa8f4bb6bfb0754",
+          "e557b27adb0278330e0db75a987cf2e6",
+          "e7eec7e7bcd893e9705570baafc283ab",
+          "ffa25e2613fa7fc339a65fd442f3adb8"
+        ]
+      },
+      "native_activities": {
+        "columns": [
+          "ordinal",
+          "id",
+          "task_id",
+          "attempt_id",
+          "event_id",
+          "sequence",
+          "native_session_id",
+          "tool_use_id",
+          "parent_tool_use_id",
+          "phase",
+          "header",
+          "payload_digest",
+          "detail_id",
+          "detail_digest",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 2,
+        "digests": [
+          "a30409b1f2b5a123e05447e1ceaac503",
+          "bde7ef1f07ab010742a6e96d23830135"
+        ]
+      },
+      "plugin_installations": {
+        "columns": [
+          "id",
+          "workspace_id",
+          "project_id",
+          "package_name",
+          "revision",
+          "created_at",
+          "updated_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "plugin_operations": {
+        "columns": [
+          "id",
+          "installation_id",
+          "kind",
+          "actor",
+          "input_digest",
+          "before_revision",
+          "after_revision",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "plugin_package_fetch_attempts": {
+        "columns": [
+          "id",
+          "operation_id",
+          "ordinal",
+          "artifact_id",
+          "status",
+          "worker_id",
+          "error",
+          "artifact",
+          "created_at",
+          "updated_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "plugin_package_fetch_audit": {
+        "columns": [
+          "cursor",
+          "operation_id",
+          "attempt_id",
+          "kind",
+          "actor",
+          "reason",
+          "error",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "plugin_package_fetches": {
+        "columns": [
+          "id",
+          "installation_id",
+          "version_id",
+          "admitted_revision",
+          "package_name",
+          "package_version",
+          "expected_sha256",
+          "integrity",
+          "store_id",
+          "registry_ref",
+          "registry_url",
+          "current_attempt_id",
+          "created_at",
+          "updated_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "plugin_revisions": {
+        "columns": [
+          "installation_id",
+          "revision",
+          "version_id",
+          "configuration",
+          "grants",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "plugin_versions": {
+        "columns": [
+          "id",
+          "installation_id",
+          "package_version",
+          "declaration",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "project_revisions": {
+        "columns": [
+          "project_id",
+          "revision",
+          "reason",
+          "actor",
+          "nodes",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "project_task_bindings": {
+        "columns": [
+          "task_id",
+          "project_id",
+          "node_id"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "projects": {
+        "columns": [
+          "id",
+          "workspace_id",
+          "title",
+          "revision",
+          "created_at",
+          "updated_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "protocol_intents": {
+        "columns": [
+          "attempt_id",
+          "task_id",
+          "owner_version",
+          "endpoint_ref",
+          "endpoint_digest",
+          "command_id",
+          "phase",
+          "remote_task_id",
+          "cancel_started",
+          "reason",
+          "created_at",
+          "updated_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "reconciliation_audit": {
+        "columns": [
+          "ordinal",
+          "id",
+          "task_id",
+          "attempt_id",
+          "actor",
+          "action",
+          "request",
+          "before_state",
+          "after_state",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "reconciliation_retries": {
+        "columns": [
+          "task_id",
+          "source_task_id",
+          "source_attempt_id",
+          "resolution_id",
+          "retry_audit_id"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "runner_events": {
+        "columns": [
+          "attempt_id",
+          "sequence",
+          "event_id",
+          "digest"
+        ],
+        "omitted": [],
+        "count": 32,
+        "digests": [
+          "09e2879e6e683a3c73dcd35d11b47857",
+          "1a605ce5821c6c4672a4b77d3c9e7897",
+          "1ca9c3a98bbac2d674be1707e9cec460",
+          "222e8174d34bca61b0bd0886798c4849",
+          "225e90240147c06b47609b41ae66d6c9",
+          "29d6e55f7152f8bc7b34db8094795cec",
+          "2e3536bd7b52c9efd84aef447d9214a0",
+          "3fc88aa6be3902b88a048d69164a48d9",
+          "440449cdffd49973fe44a8b465ff2e11",
+          "54a59f1329da03798cb78b6ccfbc3b3d",
+          "5f045981e9af25aa16b7803f9844167f",
+          "6ac81a3587096eec6a9c078140c9d71f",
+          "6e1d9d429cf4f6a437e464f8d0e7812a",
+          "7c5614a30d7c9fa68ed364b5efb5c432",
+          "7ffd838ffd5b25fad52fdde91ae50b7b",
+          "865f87805583d355cfeeb36ec56ab6ff",
+          "8c9cf77efffb4ee66889c8489baaf23c",
+          "907d20af2cb24a2fa5bb646097f9ff8f",
+          "90e82e40b8cb63ba7f9616bc6189409d",
+          "9da24a6345966fc82a29edc81b4c142f",
+          "a21f5d6e6c22dfe7bec53e1dc7b7f5c3",
+          "b43bcb6b68eaa036ef639feeb84f411b",
+          "b7ce900973c678e4dc9fed947381d2bd",
+          "d0dcdbd6508cc840fc30e02dd5c6e073",
+          "d4b94fca70349c43f92242190d272540",
+          "de75a6d410ed57378f34e1791c1cfbdf",
+          "e247b47d4c13e8eb614cd36825321f33",
+          "e66d17c168ea87e1c64b2f2905b03481",
+          "ee96fb49af81c98c4b51a9515ef2124d",
+          "efb6edc41286f2f30028c418eb12df80",
+          "f3147b65700841d310e357bbe9ec5f6f",
+          "f418816c9d7e405853e2072c99eb33b7"
+        ]
+      },
+      "runner_maintenance_audit": {
+        "columns": [
+          "ordinal",
+          "id",
+          "runner_id",
+          "request_id",
+          "digest",
+          "result"
+        ],
+        "omitted": [],
+        "count": 14,
+        "digests": [
+          "01d6e28529aa79b3119805c69ebdc56f",
+          "367fb3815af89e3613e682ebbf379a23",
+          "3fc61d805408225a1df58e5b2e31bab0",
+          "48fc9098baa1ad6bd85accf9b15b4a35",
+          "4f6b53c35f93055f8632d68b9f7e5b1c",
+          "52d4e7746b8dcbf225d346e167b2ccea",
+          "674b87d56951cb5c4595647b1591a2a5",
+          "6928b1c5fe1d3b73418eb4c244a1d830",
+          "77dad86ada0d75193a3fdb8073133411",
+          "7a7a7607e71f9ae827d1c4417228e3e3",
+          "7a93b89d9405b417a71c56f521e493e2",
+          "a577806974d96202fc48709259a02dc3",
+          "ddc228362eac5a1960582917895456e8",
+          "e9843e7e2161771c16cf148ae1cae56e"
+        ]
+      },
+      "runners": {
+        "columns": [
+          "id",
+          "name",
+          "token_hash",
+          "harnesses",
+          "capacity",
+          "revoked",
+          "maintenance_state",
+          "maintenance_version",
+          "maintenance_operation_id",
+          "maintenance_updated_at"
+        ],
+        "omitted": [
+          "maintenance_state",
+          "maintenance_version",
+          "maintenance_operation_id",
+          "maintenance_updated_at"
+        ],
+        "count": 1,
+        "digests": [
+          "e97a50dd4adc7982f16dc0877998d10e"
+        ]
+      },
+      "sessions": {
+        "columns": [
+          "id",
+          "harness",
+          "runner_id",
+          "active_task_id"
+        ],
+        "omitted": [],
+        "count": 3,
+        "digests": [
+          "159313f1b66df57984c96e4a55055650",
+          "6beebf76fd24a0afd87fab72c34ee1b0",
+          "e261db63efb53ac3e7339c89d4556311"
+        ]
+      },
+      "steering_attempts": {
+        "columns": [
+          "attempt_id",
+          "task_id",
+          "revision",
+          "seal"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "steering_audit": {
+        "columns": [
+          "ordinal",
+          "id",
+          "task_id",
+          "attempt_id",
+          "command_id",
+          "action",
+          "actor",
+          "data",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "steering_commands": {
+        "columns": [
+          "id",
+          "task_id",
+          "attempt_id",
+          "owner_version",
+          "native_session_id",
+          "revision",
+          "user_message_uuid",
+          "text",
+          "input_digest",
+          "status",
+          "receipt_revision",
+          "created_at",
+          "updated_at"
+        ],
+        "omitted": [],
+        "count": 0,
+        "digests": []
+      },
+      "tasks": {
+        "columns": [
+          "id",
+          "submission",
+          "status",
+          "verification_status",
+          "created_at",
+          "updated_at",
+          "cursor",
+          "owner_version",
+          "dispatch_ready",
+          "current_attempt_id",
+          "pending_decision",
+          "latest_artifact_id",
+          "latest_artifact_version",
+          "usage",
+          "conversation_input_id",
+          "goal_input_id"
+        ],
+        "omitted": [],
+        "count": 4,
+        "digests": [
+          "0cbd73db648df64dd891081f9515f9bb",
+          "15afe00f4eacf9a8222fde8c18bde7f1",
+          "558a148e7d25eacfdefd7df7e527008e",
+          "e564e3850ccdf1884153fc376edb0f1a"
+        ]
+      },
+      "timeline": {
+        "columns": [
+          "task_id",
+          "cursor",
+          "entry"
+        ],
+        "omitted": [],
+        "count": 28,
+        "digests": [
+          "04e2452cf9c1e1907ae50cf7330d27ab",
+          "141073ee04a81b3ce925d654b71350ee",
+          "19e76e9c103bef9a6448ad9fbb3888c1",
+          "28be9f4bb920661a9a3809a95c76207a",
+          "2fa79b57b39f04bacfc161875b59b315",
+          "31e5f47a4a9663691fe1d40305dab4fd",
+          "3a3e9d8b4e338cb9298932f8ffaa5b64",
+          "48d23e7a1091fc3ce25fb0d416b105c8",
+          "4d1f371ab3be653ff2215f6b3ed3b8b3",
+          "537417cf3a2d149163861c47607afb4c",
+          "5ac665b26841571b7780548e58ec1764",
+          "5dabfd383244953981a5e9b211d51372",
+          "66b8edd111e8d66f732f0e76eaf5e1e4",
+          "6b36056ddd634f791d61c4ecf7b77bfd",
+          "6bc4acc3c2e246e03f2c40dfa51db4d8",
+          "70ba66df5b9b43259305c59cde1cbf3a",
+          "70f28fe521905a108be027faab237069",
+          "76785466c65f1bccbbfc7d8c45deffdd",
+          "8ed2d5a0e3410f26766830b5f9db3152",
+          "99e6e111af881381d8f3f91536da7230",
+          "b2d06eeee48e6811fd181419f891f44f",
+          "bf3d3e28aa4c07306c44438e82425a8f",
+          "ecbdf84c665698579fae6cce57404ad4",
+          "edc05b15673d2b1aec1a7d6f3ff04137",
+          "efccc6a9c636fe9643319b1110efaaf9",
+          "f36c019dcba450baf453b3e9ecf9ebcd",
+          "fd9095b86d22e128fcd96a387e80cff5",
+          "ff9a92c09d65b285ead06454d7983ec6"
+        ]
+      },
+      "usage_samples": {
+        "columns": [
+          "ordinal",
+          "task_id",
+          "stream",
+          "sample_id",
+          "digest",
+          "sample",
+          "authoritative",
+          "input_tokens",
+          "output_tokens",
+          "cost_usd",
+          "cost_kind"
+        ],
+        "omitted": [],
+        "count": 6,
+        "digests": [
+          "16da631ad4bcffeb77e5b961de3a91d0",
+          "504e6d5163da376223a6a7b983d0c7fc",
+          "614c369cc328029289db73b855fa1ddf",
+          "97895fffcf273efe32062ee960dcc3fc",
+          "d69348f130c23a3049a8f0864066fd12",
+          "fcd3733f8bf310b3ecc38003a6d55969"
+        ]
+      },
+      "workspace_feed": {
+        "columns": [
+          "ordinal",
+          "task_id",
+          "task_cursor",
+          "task_title",
+          "entry"
+        ],
+        "omitted": [],
+        "count": 32,
+        "digests": [
+          "052e986fef4952bef1e2bfa229ba89d0",
+          "066aa4a3a810f4b175db4eccbe016ab1",
+          "0a41d80a3227b5a84a7145547093fa8c",
+          "0a55f9f0c61142def70c0355a1e2ff91",
+          "0a975fb8468b6fc61e8dffb44f5fec68",
+          "0db40d212b640a7944759b95c3ba7792",
+          "0e84ecdb0bd6e33d783c6aa8c9f28b0d",
+          "144260f9132303f0ff0b7ffc737c45c5",
+          "20797cd283c772dd95e4a6b8b0a12a49",
+          "264253d343c9d86514d8541cb9e9d3e6",
+          "269af3cb6fa378e996410039092b1c97",
+          "2965d5435fc3998ad0e350f61addd7dc",
+          "3d137df5363eed58f526f8bb3f07a3fc",
+          "43e054d4166d472922f29bff723ce7c4",
+          "4cc7bfdfb5f01bef587f65b12a7478d8",
+          "5c6e8d4f898886caba2233378553dec6",
+          "60551fd231843a6b0b98f7482a0b5ac0",
+          "639585f5b9f8cd26746bc2278d1e5ac9",
+          "740a9878552a2e904d60be89583eca22",
+          "95c787a89f8098e8f89afec237b8d015",
+          "9ea4053bd55420d58c76bd252c9d7606",
+          "a0584fe7ae4ed4cd680b9f54488d2f43",
+          "ac69d65b5951019485083a9178eb3b4d",
+          "b122a60ac1ca7ebffd9afcc54410c645",
+          "c739a349b44bb3e5e70d4aa397fe0c05",
+          "e005ce1bb098c1afd969fa5eb4634bdb",
+          "e4a65a9c5a1d5b679f6534e26305e279",
+          "e4ea3518dd2c672db99fc50f25a06ddc",
+          "e9a2a55f25e332bb7bc7580c9e9f62de",
+          "ea0b4c7d1f0a072e3f0da6e51276b00f",
+          "eac14d3db608d2e8236c479313496e88",
+          "f6684db517c3fe86d2977f90e024f092"
+        ]
+      },
+      "workspaces": {
+        "columns": [
+          "id",
+          "title",
+          "created_at"
+        ],
+        "omitted": [],
+        "count": 1,
+        "digests": [
+          "9cf31762df27840d83b5c105e06a19ff"
+        ]
+      }
+    },
+    "migrations": [
+      {
+        "version": 1,
+        "applied_at": "2026-10-06T04:35:59.617Z"
+      },
+      {
+        "version": 2,
+        "applied_at": "2026-10-06T04:35:59.639Z"
+      },
+      {
+        "version": 3,
+        "applied_at": "2026-10-06T04:35:59.650Z"
+      },
+      {
+        "version": 4,
+        "applied_at": "2026-10-06T04:35:59.677Z"
+      },
+      {
+        "version": 5,
+        "applied_at": "2026-10-06T04:35:59.693Z"
+      },
+      {
+        "version": 6,
+        "applied_at": "2026-10-06T04:35:59.739Z"
+      },
+      {
+        "version": 7,
+        "applied_at": "2026-10-06T04:35:59.754Z"
+      },
+      {
+        "version": 8,
+        "applied_at": "2026-10-06T04:35:59.793Z"
+      },
+      {
+        "version": 9,
+        "applied_at": "2026-10-06T04:35:59.812Z"
+      },
+      {
+        "version": 10,
+        "applied_at": "2026-10-06T04:35:59.830Z"
+      },
+      {
+        "version": 11,
+        "applied_at": "2026-10-06T05:38:48.967Z"
+      },
+      {
+        "version": 12,
+        "applied_at": "2026-10-06T05:38:48.985Z"
+      },
+      {
+        "version": 13,
+        "applied_at": "2026-10-06T05:38:48.986Z"
+      },
+      {
+        "version": 14,
+        "applied_at": "2026-10-06T05:38:49.004Z"
+      },
+      {
+        "version": 15,
+        "applied_at": "2026-10-06T05:38:49.027Z"
+      },
+      {
+        "version": 16,
+        "applied_at": "2026-10-06T05:38:40.338Z"
+      },
+      {
+        "version": 17,
+        "applied_at": "2026-10-06T07:39:20.387Z"
+      },
+      {
+        "version": 18,
+        "applied_at": "2026-10-06T07:39:20.346Z"
+      },
+      {
+        "version": 19,
+        "applied_at": "2026-10-06T07:39:20.392Z"
+      },
+      {
+        "version": 20,
+        "applied_at": "2026-10-06T07:39:20.428Z"
+      },
+      {
+        "version": 21,
+        "applied_at": "2026-10-06T07:39:20.459Z"
+      },
+      {
+        "version": 22,
+        "applied_at": "2026-10-06T07:39:20.519Z"
+      },
+      {
+        "version": 23,
+        "applied_at": "2026-10-06T07:39:20.613Z"
+      },
+      {
+        "version": 24,
+        "applied_at": "2026-10-06T08:27:10.961Z"
+      },
+      {
+        "version": 25,
+        "applied_at": "2026-10-06T12:40:27.991Z"
+      },
+      {
+        "version": 26,
+        "applied_at": "2026-10-06T12:40:28.026Z"
+      },
+      {
+        "version": 27,
+        "applied_at": "2026-10-06T12:40:28.051Z"
+      }
+    ],
+    "audit": [
+      {
+        "ordinal": "1",
+        "id": "4850bfe6-4237-4640-9587-d136c07d121f",
+        "result": {
+          "audit": {
+            "id": "4850bfe6-4237-4640-9587-d136c07d121f",
+            "after": {
+              "state": "draining",
+              "version": 1
+            },
+            "action": "drain",
+            "before": {
+              "state": "accepting",
+              "version": 0
+            },
+            "reason": "Operator requested a local preview update.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T05:38:40.364Z",
+            "requestId": "1816f45f-57ed-4226-a4a7-74c150f60876",
+            "operationId": "0cfd680a-e515-4258-ab8c-4a3ddf0ddccd"
+          },
+          "state": {
+            "state": "draining",
+            "version": 1,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": "0cfd680a-e515-4258-ab8c-4a3ddf0ddccd"
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "2",
+        "id": "d75eb2d8-8d52-4648-a943-a7578df55cbd",
+        "result": {
+          "audit": {
+            "id": "d75eb2d8-8d52-4648-a943-a7578df55cbd",
+            "after": {
+              "state": "maintenance",
+              "version": 2
+            },
+            "action": "hold",
+            "before": {
+              "state": "draining",
+              "version": 1
+            },
+            "reason": "No active attempts; reserve the local update.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T05:38:48.158Z",
+            "requestId": "b867720c-2a61-47ac-8e7f-7f06928c4e7b",
+            "operationId": "0cfd680a-e515-4258-ab8c-4a3ddf0ddccd"
+          },
+          "state": {
+            "state": "maintenance",
+            "version": 2,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": "0cfd680a-e515-4258-ab8c-4a3ddf0ddccd"
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "3",
+        "id": "26547122-6a4c-407d-846e-42fa2bbd6518",
+        "result": {
+          "audit": {
+            "id": "26547122-6a4c-407d-846e-42fa2bbd6518",
+            "after": {
+              "state": "accepting",
+              "version": 3
+            },
+            "action": "resume",
+            "before": {
+              "state": "maintenance",
+              "version": 2
+            },
+            "reason": "Operator explicitly resumed the verified local preview.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T05:40:32.995Z",
+            "requestId": "763156de-0696-4f94-9a0b-72b9f0c6612a",
+            "operationId": "0cfd680a-e515-4258-ab8c-4a3ddf0ddccd"
+          },
+          "state": {
+            "state": "accepting",
+            "version": 3,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": null
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "4",
+        "id": "b6e510cf-8a34-4ee7-80cf-1cf549685bff",
+        "result": {
+          "audit": {
+            "id": "b6e510cf-8a34-4ee7-80cf-1cf549685bff",
+            "after": {
+              "state": "draining",
+              "version": 4
+            },
+            "action": "drain",
+            "before": {
+              "state": "accepting",
+              "version": 3
+            },
+            "reason": "Operator requested a local preview update.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T07:39:01.812Z",
+            "requestId": "91cdaf28-ba0f-4b03-8295-8ee56c5a177f",
+            "operationId": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1"
+          },
+          "state": {
+            "state": "draining",
+            "version": 4,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1"
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "5",
+        "id": "b4ab306f-1350-4cdb-81ae-291a983bc322",
+        "result": {
+          "audit": {
+            "id": "b4ab306f-1350-4cdb-81ae-291a983bc322",
+            "after": {
+              "state": "maintenance",
+              "version": 5
+            },
+            "action": "hold",
+            "before": {
+              "state": "draining",
+              "version": 4
+            },
+            "reason": "No active attempts; reserve the local update.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T07:39:18.740Z",
+            "requestId": "db5e5166-df15-4281-a234-31a21370eca0",
+            "operationId": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1"
+          },
+          "state": {
+            "state": "maintenance",
+            "version": 5,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1"
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "6",
+        "id": "a7194c08-9a79-4b6a-bd9d-de23ee357359",
+        "result": {
+          "audit": {
+            "id": "a7194c08-9a79-4b6a-bd9d-de23ee357359",
+            "after": {
+              "state": "accepting",
+              "version": 6
+            },
+            "action": "resume",
+            "before": {
+              "state": "maintenance",
+              "version": 5
+            },
+            "reason": "Operator explicitly resumed the verified local preview.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T07:45:23.637Z",
+            "requestId": "9c886c2b-f39a-4978-8ee0-b58bd438be76",
+            "operationId": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1"
+          },
+          "state": {
+            "state": "accepting",
+            "version": 6,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": null
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "7",
+        "id": "0420a0a1-756c-403a-8f4b-3cab9446d372",
+        "result": {
+          "audit": {
+            "id": "0420a0a1-756c-403a-8f4b-3cab9446d372",
+            "after": {
+              "state": "draining",
+              "version": 7
+            },
+            "action": "drain",
+            "before": {
+              "state": "accepting",
+              "version": 6
+            },
+            "reason": "Operator requested a local preview update.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T08:26:57.892Z",
+            "requestId": "f7a86b99-9000-41bd-9ab3-29fc23c1bfa5",
+            "operationId": "4ee51717-972d-4396-8410-72e7a7158063"
+          },
+          "state": {
+            "state": "draining",
+            "version": 7,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": "4ee51717-972d-4396-8410-72e7a7158063"
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "8",
+        "id": "06ad430f-760b-426b-94d3-2054cf16ba27",
+        "result": {
+          "audit": {
+            "id": "06ad430f-760b-426b-94d3-2054cf16ba27",
+            "after": {
+              "state": "maintenance",
+              "version": 8
+            },
+            "action": "hold",
+            "before": {
+              "state": "draining",
+              "version": 7
+            },
+            "reason": "No active attempts; reserve the local update.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T08:27:09.941Z",
+            "requestId": "ac4e644d-c0a5-45ab-ad24-fb5e798b0849",
+            "operationId": "4ee51717-972d-4396-8410-72e7a7158063"
+          },
+          "state": {
+            "state": "maintenance",
+            "version": 8,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": "4ee51717-972d-4396-8410-72e7a7158063"
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "9",
+        "id": "1a7734da-4ffb-4c6c-bd15-2ee8d381920c",
+        "result": {
+          "audit": {
+            "id": "1a7734da-4ffb-4c6c-bd15-2ee8d381920c",
+            "after": {
+              "state": "accepting",
+              "version": 9
+            },
+            "action": "resume",
+            "before": {
+              "state": "maintenance",
+              "version": 8
+            },
+            "reason": "Operator explicitly resumed the verified local preview.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T08:29:29.365Z",
+            "requestId": "c5141985-4794-49be-aae7-e22ad1761327",
+            "operationId": "4ee51717-972d-4396-8410-72e7a7158063"
+          },
+          "state": {
+            "state": "accepting",
+            "version": 9,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": null
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "10",
+        "id": "fcc32d95-9109-4543-b923-72166cd7c250",
+        "result": {
+          "audit": {
+            "id": "fcc32d95-9109-4543-b923-72166cd7c250",
+            "after": {
+              "state": "draining",
+              "version": 10
+            },
+            "action": "drain",
+            "before": {
+              "state": "accepting",
+              "version": 9
+            },
+            "reason": "Operator requested a local preview update.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T08:55:03.037Z",
+            "requestId": "2100c5e8-1511-4812-b1b5-f7bb179c67bb",
+            "operationId": "3dd38d12-d7f9-4253-828b-6f8ff7edc585"
+          },
+          "state": {
+            "state": "draining",
+            "version": 10,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": "3dd38d12-d7f9-4253-828b-6f8ff7edc585"
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "11",
+        "id": "4c959e6f-af10-4688-b198-6d3f4ee813c3",
+        "result": {
+          "audit": {
+            "id": "4c959e6f-af10-4688-b198-6d3f4ee813c3",
+            "after": {
+              "state": "maintenance",
+              "version": 11
+            },
+            "action": "hold",
+            "before": {
+              "state": "draining",
+              "version": 10
+            },
+            "reason": "No active attempts; reserve the local update.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T08:55:04.436Z",
+            "requestId": "8e1b280a-7299-479f-b9a8-fe432772b9bc",
+            "operationId": "3dd38d12-d7f9-4253-828b-6f8ff7edc585"
+          },
+          "state": {
+            "state": "maintenance",
+            "version": 11,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": "3dd38d12-d7f9-4253-828b-6f8ff7edc585"
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "12",
+        "id": "255e5fc7-2d3c-4358-91b3-b8028e27fdf8",
+        "result": {
+          "audit": {
+            "id": "255e5fc7-2d3c-4358-91b3-b8028e27fdf8",
+            "after": {
+              "state": "accepting",
+              "version": 12
+            },
+            "action": "resume",
+            "before": {
+              "state": "maintenance",
+              "version": 11
+            },
+            "reason": "Operator explicitly resumed the verified local preview.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T08:55:54.390Z",
+            "requestId": "c9a9d75e-58cf-40c0-8784-6530def3120b",
+            "operationId": "3dd38d12-d7f9-4253-828b-6f8ff7edc585"
+          },
+          "state": {
+            "state": "accepting",
+            "version": 12,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": null
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "13",
+        "id": "53b1da6c-33c4-4fb9-a35f-460e9df704b0",
+        "result": {
+          "audit": {
+            "id": "53b1da6c-33c4-4fb9-a35f-460e9df704b0",
+            "after": {
+              "state": "draining",
+              "version": 13
+            },
+            "action": "drain",
+            "before": {
+              "state": "accepting",
+              "version": 12
+            },
+            "reason": "Operator requested a local preview update.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T12:40:10.620Z",
+            "requestId": "ece032f0-318e-4a4e-bf7f-86fd961c0b5d",
+            "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+          },
+          "state": {
+            "state": "draining",
+            "version": 13,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+          },
+          "replayed": false
+        }
+      },
+      {
+        "ordinal": "14",
+        "id": "f8578b85-6659-4b43-a0d5-6b9c3f246f19",
+        "result": {
+          "audit": {
+            "id": "f8578b85-6659-4b43-a0d5-6b9c3f246f19",
+            "after": {
+              "state": "maintenance",
+              "version": 14
+            },
+            "action": "hold",
+            "before": {
+              "state": "draining",
+              "version": 13
+            },
+            "reason": "No active attempts; reserve the local update.",
+            "source": "trusted-host",
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "createdAt": "2026-10-06T12:40:26.693Z",
+            "requestId": "43d2d350-b22a-4e2b-bce8-61c203272e12",
+            "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+          },
+          "state": {
+            "state": "maintenance",
+            "version": 14,
+            "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+            "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a"
+          },
+          "replayed": false
+        }
+      }
+    ],
+    "additive": {
+      "assistantNativeIdentityNonNull": 0,
+      "contextAttachmentsNonempty": 0
+    }
+  },
+  "operation": {
+    "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a",
+    "phase": "ready-paused",
+    "target": "362af3bac77541e5a60979326bcf4d4b8c947915"
+  },
+  "outcome": "observed",
+  "limits": [
+    "Instant read-only snapshot, not admission lock.",
+    "Known installation, authoritative identity, full local runner entrypoint and whole-database unfinished inventory; no proof of arbitrary remote deployment.",
+    "Old field digests omit only conversations.queue_checked_at and four explicitly expected runner maintenance columns.",
+    "Provider not probed; no user task created/retried/cancelled."
+  ]
+}
