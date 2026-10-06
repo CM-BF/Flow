@@ -16,7 +16,8 @@ it('requires an explicit stop confirmation and reviewed side effects before reso
 it('keeps observation separate from resolution and retry separate from native session resume', () => {
   expect(reconciliationObservationSchema.parse({ ...ownership, evidence }).evidence).toEqual(evidence);
   expect(reconciliationObservationSchema.safeParse({ ...ownership, evidence, outcome: 'failed' }).success).toBe(false);
-  expect(reconciliationRetrySchema.parse({ ...ownership, resolutionId: 'resolution-1' }).resolutionId).toBe('resolution-1');
+  expect(reconciliationRetrySchema.safeParse({ ...ownership, resolutionId: 'resolution-1' }).success).toBe(false);
+  expect(reconciliationRetrySchema.parse({ ...ownership, resolutionId: 'resolution-1', safety: { strategy: 'revised-work', prompt: 'Verify the existing output, without repeating the write.', evidence } }).resolutionId).toBe('resolution-1');
   expect(reconciliationRetrySchema.safeParse({ ...ownership, resolutionId: 'resolution-1', resumeSessionId: 'old-session' }).success).toBe(false);
   expect(reconciliationRetrySchema.safeParse({ ...ownership, resolutionId: 'resolution-1', ownerVersion: 0 }).success).toBe(false);
 });

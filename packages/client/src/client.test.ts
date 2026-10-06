@@ -22,7 +22,7 @@ it('queries audit pages and sends explicit fenced recovery commands with authent
     await client.reconciliation('task/1', 12);
     await client.recordReconciliation('task/1', { ...ownership, evidence }, 'observe-1');
     await client.resolveReconciliation('task/1', { ...ownership, stoppedConfirmed: true, stopEvidence: evidence, sideEffects: 'none-confirmed', effectsEvidence: evidence, outcome: 'cancelled' }, 'resolve-1');
-    await client.retryReconciledTask('task/1', { ...ownership, resolutionId: 'audit-1' }, 'retry-1');
+    await client.retryReconciledTask('task/1', { ...ownership, resolutionId: 'audit-1', safety: { strategy: 'no-side-effects', evidence } }, 'retry-1');
     expect(requests.map(({ url, key }) => ({ url, key }))).toEqual([
       { url: '/api/tasks/task%2F1/reconciliation?after=12', key: undefined },
       { url: '/api/tasks/task%2F1/reconciliation/observations', key: 'observe-1' },
@@ -30,7 +30,7 @@ it('queries audit pages and sends explicit fenced recovery commands with authent
       { url: '/api/tasks/task%2F1/reconciliation/retry', key: 'retry-1' },
     ]);
     expect(requests[1]!.body).toEqual({ ...ownership, evidence });
-    expect(requests[3]!.body).toEqual({ ...ownership, resolutionId: 'audit-1' });
+    expect(requests[3]!.body).toEqual({ ...ownership, resolutionId: 'audit-1', safety: { strategy: 'no-side-effects', evidence } });
   } finally {
     await new Promise<void>(resolve => server.close(() => resolve()));
   }
