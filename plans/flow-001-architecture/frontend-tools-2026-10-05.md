@@ -33,3 +33,8 @@
 ## 与当前工作的关系
 
 LAB01 的两个可丢弃 vanilla toy 可使用现有 Playwright；不拖慢原任务时，可额外做一次官方 CLI 最小 smoke：独立版本/临时目录/session，打开页面、snapshot、实际点击、截图并关闭，不全局安装或改根依赖。只有实际检查后才能写接入结果；没有实测继续保留为候选。外部 W01/D01 的已冻结公共业务契约不因本备忘录改变。
+
+
+## 设计画布候选（未实测）
+
+[Pencil / pen.dev 的 AI 集成](https://docs.pencil.dev/getting-started/ai-integration)允许 agent 经 MCP 编辑可编辑画布，`.pen` 可进入 Git；[设计与代码转换](https://docs.pencil.dev/design-and-code/design-to-code)由 agent 执行，设计和代码仍需分别复核，适合两种视觉方向或布局草图，不自动保证生产 UI。[官方 CLI](https://docs.pencil.dev/for-developers/pen-cli)支持 headless，但操作/导出也需要 pen.dev 认证，因此不进入当前0额外模型/0云的 LAB01。当前不安装、不接入；若已有 Figma 设计再评估官方 Figma MCP，不为候选堆叠工具。
