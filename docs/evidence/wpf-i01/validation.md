@@ -39,10 +39,12 @@
 
 ## Clean-code、限制与后续
 
-技能来源、实际应用、03:00/03:04/03:07/03:26安全停点和发现/修复见 [quality](quality.md)。Settings 焦点问题经 root moving-tree CUA复验；最终target仍独立 NOT_STARTED。不得拿输入P01/M02的 APPROVED 代替本次产品App审查。
+技能来源、实际应用、03:00/03:04/03:07/03:26安全停点和发现/修复见 [quality](quality.md)。Settings 焦点问题经 root moving-tree CUA复验；最终target已获 root 独立 APPROVED（03:30 UTC）。不得拿输入P01/M02的 APPROVED 代替本次产品App审查。
 
 本轮是 trusted Web host 的连接内挂载，没有 npm安装/持久配置/第三方隔离/跨CLI插件管理；用户明确要求的完整管理由主线X01权威计划承接。`flow.composer.insertText` 明确unsupported并显示错误，不改草稿。Terminal仅任务输出，FileTree仅任务产物/引用；无PTY或任意磁盘API。既有HTTP fixture仍固定模拟流程，用户新增真实持续模型对话由U11承接，不宣称这里已实现。只验证Chrome及上述390px；未覆盖其他浏览器、大型历史性能或完整E2E模型调用。
 
 构建主chunk581.60kB/gzip174.09kB、assistant-ui562.08kB/gzip169.61kB告警保留；workspace/theme adapter chunks按需请求已验，但共享WorkspacePanels代码未声称全部单独延迟。后续性能轮独立scope，不为此次实现作无证据优化结论。原Lead负责main集成；本owner没有merge main。
 
 03:28 UTC [dashboard 实采](dashboard-observation.json)：canonical source/claim v1 matchesSource、人类字段齐全、checks passed/review not_started/main未集成、implementationProof unchanged、issues空。55049与49922 HTTP均200。
+
+03:30 UTC root固定92a/base1002独立APPROVED，实际24tests/CUA与未重复范围见[正式review](../../../plans/wpf-i01-plugin-integration/review.md)。metadata4004审查时clean且源码diff0；本次转录不改变实现。

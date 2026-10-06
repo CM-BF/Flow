@@ -1,6 +1,6 @@
 # WPF-I01 独立审查入口
 
-**状态：NOT_STARTED**
+**状态：APPROVED**
 
 Review target commit：92a786abb9f7ef16e15482ac00b98ff860ecc47f
 
@@ -14,10 +14,28 @@ Base：`1002f2688c2b4d2e3a5723d94bdbe965a2a88626`（完整输入 merge）；M02 
 
 [验证记录](../../docs/evidence/wpf-i01/validation.md)：9 bridge + 15 direct host tests、9 HTTP fixture browser 组、3 真实隔离 PostgreSQL/public runner 旅程组、typecheck、build、production smoke 通过。明确区分真实协议与 live 模型。现有两个 >500kB chunk 告警保留。原始 lock patch 保留导致全量 diff --check 不能概括为通过，排除原始 patch 的实现/docs whitespace 检查另记。
 
-root 在 moving tree 期间反馈 Settings 关闭焦点丢失、workspace.tabs 动作未消费；作者已修。root CUA 独立复验 Settings Close/Escape 回入口，但不以此代替本固定 target 整体 review。此文件尚无正式 reviewer 结论，不以空 findings 表示通过。
+root 在 moving tree 期间反馈 Settings 关闭焦点丢失、workspace.tabs 动作未消费；作者已修。root CUA 独立复验 Settings Close/Escape 回入口，但不以此代替本固定 target 整体 review。本次正式结论见下文，作者记录来自 root 独立报告，不以作者结果替代。
 
 ## 可复制只读审查任务
 
 先核 tree、branch、live claim v1、base、完整 target 与 dirty。只读固定 target，不读作者 metadata dirty 代替实现。审阅上述行为并运行相应局部检查，区分 HTTP fixture 与真实中心、作者与独立证据。对每项 finding 给严重级别、触发路径、文件位置、blocking 与复验条件；修复交唯一 owner。固定target中 P01 本身没有作者改动。最终结论绑定完整 SHA，metadata 新 HEAD 不自动扩大行为 approval；原 Lead 负责 main 集成。
 
-当前预览：http://127.0.0.1:55049/ ，HTTP fixture，owner 保持该实现冻结；不要停止用户保留的 M02 49922 服务。作者回应/正式发现/修复/复审：待独立 review。
+当前预览：http://127.0.0.1:55049/ ，HTTP fixture，owner 保持该实现冻结；不要停止用户保留的 M02 49922 服务。作者回应：已转录正式 review；实现停止写入，待范围转交。
+
+## 正式独立结论（2026-10-06 03:30 UTC）
+
+Reviewer：root / gpt-6-astra ultra。结论：APPROVED，严格绑定 target `92a786abb9f7ef16e15482ac00b98ff860ecc47f` / base `1002f2688c2b4d2e3a5723d94bdbe965a2a88626`。审查时 metadata HEAD4004aec721f3f7821326836092c126746f6b6a40 clean，apps 源码相对 target diff0。管理者 d01 的独立 scope/claim/docs 检查亦无 blocking。
+
+Root 实际执行/核对：
+
+- 只读13个实现/测试文件：资源身份、connection epoch、窄 ports、完整官方 Thread、slots组合与状态保留。
+- Node24 / Vitest4 两直接模块24/24 PASS，本轮03:28:52。
+- 固定同内容55049 CUA：侧栏插件打开 demo-completed；官方 Thread Task output→Terminal且焦点正确；reference→artifact聚焦与正文；Notes往返仍选artifact；Settings Escape/Close均回 Extensions and appearance。
+- workspace.tabs 合法button/menu来源与局部fixture、最终390px图核对，动作在tablist外。
+
+| 发现 | 触发 | 修复与结果 | 状态 |
+| --- | --- | --- | --- |
+| Settings return focus | Close/Escape后焦点曾到BODY | controlled Dialog onCloseAutoFocus恢复实际入口；root两路CUA复验 | CLOSED |
+| workspace.tabs actions | 合法button/menu曾被panel过滤静默丢弃 | 同workspace context独立AppSlot，动作不置于tablist；合法声明fixture/键盘/Bcontext/disable通过，root复核 | CLOSED |
+
+未重新运行作者9browser/3PG/build全套；root已读原始报告与最终源码不变复用边界。结论不覆盖live模型/持续chat、完整X01插件管理、PTY/任意fs或main已集成。后续只有metadata，不扩大行为approval。

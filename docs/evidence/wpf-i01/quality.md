@@ -27,3 +27,5 @@
 实际浏览器发现与修复：Notes 打开时原生引用请求曾未选择 Task workspace，现显式 request serial 驱动贡献选择并保留 visited Activity 状态；Settings Close/Escape 曾丢焦点到 BODY，现 onCloseAutoFocus 返回实际入口，root 另用 CUA 复验；侧栏装饰箭头曾污染可访问名称，改空 CSS mask；窄屏长产物版本号换行。root 发现 workspace.tabs 仅消费 panel，补同 context 的 button/menu AppSlot，动作与 Close 置于 tablist 外；新增合法声明 fixture 核 button、键盘 menu、本地 B / 全局 A 与 disable。实际看 390px 图时发现贡献按钮挤压 tabs，补最小 tab 区宽度、按钮不缩小与行换行。
 
 检查范围：9 bridge + 15 已审 host 直接依赖测试，9 HTTP fixture browser 组，3 真实隔离 PostgreSQL / public protocol runner 旅程组，typecheck、生产 build 与生产烟测；具体绑定和限制见 validation.md。开发测试自身的版本号/selector/运行中官方 ActionBar 可见性假设错误已修正，不当作产品缺陷。原始 dependency-install.patch 原样保留（统一 diff 空白上下文可被 diff --check 报告），只对实现和非原始证据 Markdown/JSON 作 whitespace 通过声明。未解决：现有两个 >500 kB chunk 告警；composer 插入仍显式 unsupported；完整持久化插件管理归主线 X01；持续真实模型对话归新产品 U11，不在本次可信扩展挂载里宣称完成。
+
+03:30 UTC 正式交付 clean-code 文档复核：root固定92a整体APPROVED，两个进行中发现CLOSED；仅转录审查与交付，无实现改动，无需重跑产品套件。检查三件套TODO/检查target/独立review/main事实分离；根锁原始patch例外保留。停止I01实现写入，等待D04正式范围交接。

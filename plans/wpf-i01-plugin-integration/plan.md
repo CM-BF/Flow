@@ -1,6 +1,6 @@
 # WPF-I01 主 App 插件挂载
 
-创建：2026-10-06 03:00 UTC；更新：03:27 UTC。状态：in-progress（实现交付，待独立 review）。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
+创建：2026-10-06 03:00 UTC；更新：03:30 UTC。状态：completed（本 owner 实现、review 与交付完成；main 集成仍由原 Lead 执行）。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
 
 将已审可信 Web host、内建 WorkspacePanels 与主题接入已审 WPF-M02 产品 App，使声明式贡献在真实界面生效。继承管理计划 WPF-I01-01..04，不另造插件协议。对应用户可插拔 Web 与唯一领取要求；不因此宣称 X01 全栈 npm 生命周期、第三方隔离、CLI 或真实 PTY/任意文件系统完成。
 
@@ -30,10 +30,10 @@ App 的 chat groups、每 task 的原生 workspace tab 与草稿保留唯一 aut
 - [x] **WPF-I01-01** 冻结两已审完整输入，完成 D04 旧 scope 转交/新 claim、新 worktree 与唯一 plan/status/review。
 - [x] **WPF-I01-02** 实现窄 App bridge 与声明式 slots，内建插件及诊断/设置接入。
 - [x] **WPF-I01-03** 运行局部桥接与产品浏览器/真实中心验收，记录双主题截图、技能与 clean-code。
-- [ ] **WPF-I01-04** 固定 SHA 独立 review、修复闭环并交原 Lead 集成，不代 merge main。
+- [x] **WPF-I01-04** 固定 SHA 独立 review、修复闭环并交原 Lead 集成，不代 merge main。
 
 ## 当前风险与交接
 
-实现目标 `92a786abb9f7ef16e15482ac00b98ff860ecc47f`；9 bridge + 15 direct host tests、9 fixture browser、3 real PostgreSQL/public runner 旅程、typecheck/build/生产烟测通过，见[验证](../../docs/evidence/wpf-i01/validation.md)。等待固定 target 独立审查，不以作者检查代替 review；实现冻结，无当前实现阻塞。新增文件若超 receipt 范围先由 Lead amend，不以 worktree 隔离代替领取。计划索引和 dashboard task→owner worktree 登记由管理者/原 Lead 维护；旧管理准备目录已由管理者转只读 stub，避免两份进度。
+实现目标 `92a786abb9f7ef16e15482ac00b98ff860ecc47f`；9 bridge + 15 direct host tests、9 fixture browser、3 real PostgreSQL/public runner 旅程、typecheck/build/生产烟测通过，见[验证](../../docs/evidence/wpf-i01/validation.md)。root 已对固定 target 独立 APPROVED；两个进行中发现 CLOSED。实现停止写入，已交原 Lead 集成；main 尚未集成。新增文件若超 receipt 范围先由 Lead amend，不以 worktree 隔离代替领取。计划索引和 dashboard task→owner worktree 登记由管理者/原 Lead 维护；旧管理准备目录已由管理者转只读 stub，避免两份进度。
 
 用户后续要求的全产品持久化插件管理（center 公共命令/Web/CLI/npm 版本生命周期/执行版本/权限隔离）归主线 X01；真实持续模型对话归 U11。本 feature 的 Settings 明示本连接可信扩展，不声称这些后续目标完成。workspace.tabs 的 panel/button/menu 均消费，普通动作不混入 tablist。

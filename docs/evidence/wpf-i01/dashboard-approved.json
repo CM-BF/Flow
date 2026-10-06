@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-10-06T03:30:43.831Z",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T03:30:29.065Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md",
+    "syncedAt": "2026-10-06T03:30:43.831Z",
+    "stale": false,
+    "ageHours": 0.012175277777777778
+  },
+  "checks": {
+    "state": "passed",
+    "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+    "record": "PASSED 92a786abb9f7ef16e15482ac00b98ff860ecc47f; 9 bridge + 15 host direct tests, 9 HTTP fixture browser groups, 3 real PG/public runner journey groups, typecheck, build, production smoke；范围与限定见 validation"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+    "proof": {
+      "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+      "head": "4004aec721f3f7821326836092c126746f6b6a40",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/TaskThread.tsx",
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/components/workspace/WorkspacePanels.tsx",
+        "apps/web/src/plugin-integration",
+        "apps/web/src/themes.ts",
+        "apps/web/test/plugin-integration.browser.ts",
+        "apps/web/test/plugin-integration.config.ts",
+        "apps/web/test/plugin-integration.test.ts"
+      ],
+      "observedAt": "2026-10-06T03:30:44.445Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/wpf-i01/assignment.md",
+        "docs/evidence/wpf-i01/browser-failure.png",
+        "docs/evidence/wpf-i01/browser-results.json",
+        "docs/evidence/wpf-i01/dashboard-observation.json",
+        "docs/evidence/wpf-i01/dependency-install.patch",
+        "docs/evidence/wpf-i01/integration-dark-390.png",
+        "docs/evidence/wpf-i01/integration-dark.png",
+        "docs/evidence/wpf-i01/integration-light-390.png",
+        "docs/evidence/wpf-i01/integration-light.png",
+        "docs/evidence/wpf-i01/module-results.json",
+        "docs/evidence/wpf-i01/production-smoke.json",
+        "docs/evidence/wpf-i01/quality.md",
+        "docs/evidence/wpf-i01/real-center-dark-390.png",
+        "docs/evidence/wpf-i01/real-center-light.png",
+        "docs/evidence/wpf-i01/real-center-results.json",
+        "docs/evidence/wpf-i01/seams.md",
+        "docs/evidence/wpf-i01/validation.md",
+        "docs/evidence/wpf-i01/workspace-slot-actions.png",
+        "plans/wpf-i01-plugin-integration/plan.md",
+        "plans/wpf-i01-plugin-integration/review.md",
+        "plans/wpf-i01-plugin-integration/status.md"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "declarationProof": "unchanged"
+  },
+  "progress": {
+    "completed": 4,
+    "total": 4
+  },
+  "implementationProof": "unchanged",
+  "humanComplete": true,
+  "issues": [],
+  "assignment": [
+    {
+      "claimId": "b6666c29-ebc5-47b2-b754-55b62687fd00",
+      "version": 1,
+      "state": "active",
+      "matchesSource": true
+    }
+  ]
+}
