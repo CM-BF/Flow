@@ -2,21 +2,21 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 03:15 UTC / 2026-10-06 03:04 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 03:41 UTC / 2026-10-06 03:41 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | d444608ab6c796c731e44e51a892868bf39bec2a / 1eb4196f1beecb13b7f845e680480babf1110d52（本记录前集成commit） |
+| 工作基线 / HEAD | d444608ab6c796c731e44e51a892868bf39bec2a / 5b55601d5fa22ec8d6b71c2dbd0a045f32c5d450（本记录前集成commit） |
 | 工作树dirty状态 | 仅本次交付记录；实现已提交 |
-| 工作分支状态 | completed（本批已审集成片段） |
-| 检查状态 | PASSED；G01/P02/CLI/client/harness直接影响10/10；实际A2A生产入口选择1/1（14未选择）；Web20/20+typecheck/build；0模型 |
-| 已集成main状态 / HEAD | main/origin ea8d44f为03:04观察值；本批已核验组件与检查就绪，待本记录提交后fast-forward |
+| 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
+| 检查状态 | PASSED；组合goal CLI1/1与root typecheck、Web frozen/typecheck/build；历史10/10/选择1/Web20保留；0新增模型 |
+| 已集成main状态 / HEAD | main/origin 4e817611b669579f6194d27a09031ae30cefa2a6已推送；新CHAT transport/registry metadata待本批记录后fast-forward |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 统一Web、版本化项目命令与持久外部执行已完成整合检查 |
-| 下一可用交付 | 本批发布后由O01接自然语言目标执行、WPF-I01接插件挂载 |
+| 当前产出 | 目标命令、Runner租期修复与Web插件挂载已进入主线 |
+| 下一可用交付 | 同一会话的真实两轮回复、重连和按需详情 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -27,6 +27,9 @@
 | I02-T03 | completed | Lead | P01 SDK11项已审并集成；P02 task-based出站f942独审，生产入口选择1项与G01共享组合10项通过；MCP持久交互仍open |
 | I02-T04 | completed | Lead | D03与D04已独审，4320真实ea8 28源已核；新30源注册在本批，无产品语义变化 |
 | I02-T05 | completed | Lead / 外部UI | 新Thread真实中心完整旅程；WPF-M02 d47独审、10task真PG/HTTP4组及8chat/双split/窄屏证据，集成Web20项通过 |
+
+| I02-T06 | completed | Lead | main4e817；各固定target独审及[第二批原始检查](../../docs/evidence/i02/2026-10-06-integration.md) |
+| I02-T07 | in-progress | Lead/CHAT owners | transport841已审；三端接通、真实预算调用仍未执行 |
 
 ## 限制与handoff
 
