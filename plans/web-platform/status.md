@@ -4,26 +4,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:52 UTC / 增量正文与消息复用已入主线并释放；两新模块独立实施 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:02:07 UTC / 固定管理文档与知识选择模块均已获独审；待Lead接收 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `bd8876257ad67649300ca320f9fa01976f256bf7`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `9c492f1cfd468f2d940af66e164ee65e2ea6ffed`（本次批准metadata前实核clean；交付HEAD以Git回执为准） |
 | 工作树dirty状态 | 本次仅管理证据、主线接收与新模块领取记录；提交后以实际Git为准 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 聊天工具与思考界面已入主线；增量正文模块已通过审查 |
-| 下一可用交付 | 将增量正文接入聊天，完成知识引用选择组件 |
+| 当前产出 | 管理需求文档与知识选择组件已通过独立审查 |
+| 下一可用交付 | 发布完整需求文档，并把增量正文接入聊天 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
-| 已集成main状态 / HEAD | 管理独核main/origin6426b44cd32d10216141af13ecfa83b8879025fb clean；ActivityI ba341祖先，S01 3ac/PERF03 f909及各final祖先、8源码相同。两旧claim已v2释放。ExecutionLead回执个人center/runner b54 accepting v6、61227/61228原端口与数据保留，0新增provider；本管理未服务验证。管理文档main仍旧副本，当前固定发布另待独审/Lead同步 |
-| Review | [review.md](review.md)，本次固定发布NOT_STARTED a5e500136438b197305339cbe0a5e10a196a4317；历史c075仅见归档，不覆盖本次 |
+| 已集成main状态 / HEAD | 管理独核main/origin6426b44cd32d10216141af13ecfa83b8879025fb clean；ActivityI ba341祖先，S01 3ac/PERF03 f909及各final祖先、8源码相同。两旧claim已v2释放。ExecutionLead回执个人center/runner b54 accepting v6、61227/61228原端口与数据保留，0新增provider；本管理未服务验证。管理文档main仍旧副本，本次a5固定发布已由root07:59限定APPROVED，等待Lead受控同步 |
+| Review | [review.md](review.md)，本次固定发布APPROVED a5e500136438b197305339cbe0a5e10a196a4317；root2026-10-06 07:59 UTC；历史c075仅见归档，不覆盖本次 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -63,7 +63,7 @@
 | 当前工作 | 唯一来源、范围与下一步 |
 | --- | --- |
 | WPF-001 | d01_owner / web-platform-management，632a7149 v2，仅管理plan/evidence；准备主线固定发布快照 |
-| WPF-CONTEXT01 | w01_owner / web-knowledge-selection，bfecec43 v1，九新scope；首3412347f已送登记；候选736ef0修复读取deadline R1，当前CHANGES_REQUESTED待root复审，Send/Queue后继 |
+| WPF-CONTEXT01 | w01_owner / web-knowledge-selection，bfecec43 v1，九新scope；首3412347f已送登记；固定736ef0已由root07:56:55APPROVED/R1 CLOSED，final d6a609 clean；管理七hash/九scope/36本地links核验通过，待Lead集成，Send/Queue后继 |
 | WPF-CHAT06I01 | workspace_panels_owner / web-conversation-stream-integration，a7293487 v1，十三scope；首0a497624已送登记，基于6426实际App接线，模块源码只读 |
 
 ## 当前交付与依赖（局部窗口，不是整个goal受阻）
@@ -343,3 +343,11 @@ CONTEXT01初段接口澄清由root交owner在原九scope收敛：picker关闭不
 主线旧管理副本缺U11的实际发布缺口由GO提出。此次仅原两目录准备固定发布，不修改main或产品；当前主线/runtime与旧历史明确分开，旧c075审批原文归档，本次review NOT_STARTED等待新的完整target。U12改为root对U08的准确转述，U08逐字原话及全部REQ保留。CONTEXT01的R1 deadline修复当前仍待root复审，未计产品通过；CHAT06I01已有正式写权并在实施，不将其首canonical当已验证。
 
 当前相对链接按已接收6426+本次两目录虚拟发布树验证；其他owner目录不复制。历史delivery快照保留当时绝对canonical入口，明确不作为新clone实时状态。两新active source首三件套用固定commit原文.txt供clone读取，非第二手填源。发布文件范围与固定检查见publication目录；无产品测试、API采样或模型操作。
+
+## 固定发布截止后的来源附记
+
+本次content target a5e500136438b197305339cbe0a5e10a196a4317保留07:56:21.089Z文档观察截止，不因新进度滚动。root07:59限定docs APPROVED已见review。CONTEXT01 root07:56:55固定736ef APPROVED/R1 CLOSED，作者final d6a609a82c3aec3b8b4e6609a83a452d11ac1d89 clean；管理增量仅核Git/hash/范围/parser/链接，[核验记录](../../docs/evidence/web-platform/context01-delivery-audit.json)保留旧34cd浏览器与新736受影响检查的区别。
+
+ExecutionLead最新REGISTERED回执：main/origin bbe2b4f7ed1adf58f6f81de0f23a65d682f29047 clean、4320共90来源，O09/CHAT06I01/CHAT06P01 issues=[]，所见CHAT06I01首0a497；GO07:59只读浏览器另见领取/CONTEXT独审清楚且无重叠。本管理未再fetch，Lead本条未给精确采样秒数，不伪造。Web实施固定6426，个人center/runner仍Lead报告b54/v6；未重启或reload用户tab。
+
+本次管理安全停点继续应用已读本地find-skills与clean-code：选择本地已有方法，无安装；检查唯一权威、审批target、时间归因、原始日志边界与必要复杂度。固定plan/research/publication说明三内容文件未变，仅审批/as-of元数据和审计记录。下一CHAT06I优先固定独审；真实聊天验收须明确候选和GO单次预算，当前0新增provider。
