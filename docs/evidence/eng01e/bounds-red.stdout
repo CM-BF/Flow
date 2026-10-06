@@ -1,0 +1,68 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-checker
+
+ ❯ apps/runner/src/engineering/calculator-checker.test.ts (34 tests | 1 failed | 33 skipped) 5ms
+   ↓ reports host-owned fixed checks against the exact complete content binding
+   ↓ returns failed for valid wrong arithmetic a-b
+   ↓ returns failed for valid wrong arithmetic b-a
+   ↓ returns failed for valid wrong arithmetic a*a
+   ↓ returns failed for valid wrong arithmetic a/b
+   ↓ binds staged and unstaged contents as distinct complete versions while checking the current worktree
+   ↓ rejects a mismatched host leaseId binding
+   ↓ rejects a mismatched host baseCommit binding
+   ↓ rejects a mismatched host headCommit binding
+   ↓ rejects a mismatched host snapshotDigest binding
+   ↓ does not accept recomputed source bytes under an old snapshot identity
+   ↓ rejects unsupported untracked membership in the complete file set
+   ↓ rejects unsupported deleted membership in the complete file set
+   ↓ rejects unsupported index-deleted membership in the complete file set
+   ↓ rejects unsupported executable membership in the complete file set
+   ↓ rejects unsupported renamed membership in the complete file set
+   ↓ rejects unsupported extra-tracked membership in the complete file set
+   ↓ rejects missing content instead of inspecting one selected file only
+   ↓ rejects extra content instead of inspecting one selected file only
+   ↓ rejects duplicate content instead of inspecting one selected file only
+   ↓ rejects wrong-path content instead of inspecting one selected file only
+   ↓ rejects wrong-bytes content instead of inspecting one selected file only
+   ↓ rejects wrong-digest content instead of inspecting one selected file only
+   ↓ rejects hostile source without executing or trusting its output: console.log("{\"checks\":[{\"id\":\"sum\",\"passed\":true}]}");process.exit(0);
+   ↓ rejects hostile source without executing or trusting its output: import "node:fs";
+   ↓ rejects hostile source without executing or trusting its output: setInterval(()=>{},1);
+   ↓ rejects hostile source without executing or trusting its output: require("node:fs").writeFileSync("baseline.mjs","passed");
+   ↓ rejects unknown snapshots and self-reported completion undefined
+   ↓ rejects unknown snapshots and self-reported completion null
+   ↓ rejects unknown snapshots and self-reported completion {}
+   ↓ rejects unknown snapshots and self-reported completion {"settlement":"stopped"}
+   ↓ rejects unknown snapshots and self-reported completion {"result":"passed","stdout":"{\"checks\":[]}"}
+   ↓ rejects extra evidence, invalid versions, oversized and unsupported file shapes
+   × rejects oversized file collections before inspecting any member 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects oversized file collections before inspecting any member
+Error: Collection members must not be inspected.
+ ❯ Array.get apps/runner/src/engineering/calculator-checker.test.ts:103:55
+    101|   const api = input();
+    102|   const oversized = new Array(129);
+    103|   Object.defineProperty(oversized, 0, { get() { throw new Error('Colle…
+       |                                                       ^
+    104|   expect(checkCalculatorSnapshot(api.expected, { ...api.snapshot, file…
+    105|   expect(checkCalculatorSnapshot(api.expected, { ...api.snapshot, cont…
+ ❯ inst._zod.parse node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/schemas.js:844:31
+ ❯ Internals.wrapped node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/memoizer.js:239:32
+ ❯ Internals.inst._zod.run node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/schemas.js:112:38
+ ❯ eval node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/doc.js:35:25
+ ❯ inst._zod.parse node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/schemas.js:1187:23
+ ❯ Internals.wrapped node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/memoizer.js:239:32
+ ❯ Module.<anonymous> node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/parse.js:43:32
+ ❯ _.safeParse node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/classic/schemas.js:141:22
+ ❯ checkCalculatorSnapshot apps/runner/src/engineering/calculator-checker.ts:24:76
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 33 skipped (34)
+   Start at  04:46:33
+   Duration  210ms (transform 46ms, setup 0ms, import 116ms, tests 5ms, environment 0ms)
+

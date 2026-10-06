@@ -1,0 +1,14 @@
+{
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "apps/runner/src/engineering/calculator-checker.test.ts",
+    "-t",
+    "rejects oversized file collections before inspecting any member"
+  ],
+  "startedAt": "2026-10-06T11:46:32.974665+00:00",
+  "finishedAt": "2026-10-06T11:46:33.740067+00:00",
+  "exitCode": 1
+}

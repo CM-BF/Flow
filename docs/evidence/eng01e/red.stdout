@@ -1,0 +1,481 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-checker
+
+ ❯ apps/runner/src/engineering/calculator-checker.test.ts (33 tests | 27 failed) 15ms
+   × reports host-owned fixed checks against the exact complete content binding 6ms
+   × returns failed for valid wrong arithmetic a-b 1ms
+   × returns failed for valid wrong arithmetic b-a 0ms
+   × returns failed for valid wrong arithmetic a*a 0ms
+   × returns failed for valid wrong arithmetic a/b 0ms
+   × binds staged and unstaged contents as distinct complete versions while checking the current worktree 0ms
+   × rejects a mismatched host leaseId binding 0ms
+   × rejects a mismatched host baseCommit binding 0ms
+   × rejects a mismatched host headCommit binding 0ms
+   × rejects a mismatched host snapshotDigest binding 0ms
+   × does not accept recomputed source bytes under an old snapshot identity 0ms
+   × rejects unsupported untracked membership in the complete file set 0ms
+   × rejects unsupported deleted membership in the complete file set 0ms
+   × rejects unsupported index-deleted membership in the complete file set 0ms
+   × rejects unsupported executable membership in the complete file set 0ms
+   × rejects unsupported renamed membership in the complete file set 0ms
+   × rejects unsupported extra-tracked membership in the complete file set 0ms
+   × rejects missing content instead of inspecting one selected file only 0ms
+   × rejects extra content instead of inspecting one selected file only 0ms
+   × rejects duplicate content instead of inspecting one selected file only 0ms
+   × rejects wrong-path content instead of inspecting one selected file only 0ms
+   × rejects wrong-bytes content instead of inspecting one selected file only 0ms
+   × rejects wrong-digest content instead of inspecting one selected file only 0ms
+   × rejects hostile source without executing or trusting its output: console.log("{\"checks\":[{\"id\":\"sum\",\"passed\":true}]}");process.exit(0); 0ms
+   × rejects hostile source without executing or trusting its output: import "node:fs"; 0ms
+   × rejects hostile source without executing or trusting its output: setInterval(()=>{},1); 0ms
+   × rejects hostile source without executing or trusting its output: require("node:fs").writeFileSync("baseline.mjs","passed"); 0ms
+   ✓ rejects unknown snapshots and self-reported completion undefined 0ms
+   ✓ rejects unknown snapshots and self-reported completion null 0ms
+   ✓ rejects unknown snapshots and self-reported completion {} 0ms
+   ✓ rejects unknown snapshots and self-reported completion {"settlement":"stopped"} 0ms
+   ✓ rejects unknown snapshots and self-reported completion {"result":"passed","stdout":"{\"checks\":[]}"} 0ms
+   ✓ rejects extra evidence, invalid versions, oversized and unsupported file shapes 0ms
+ ❯ apps/runner/src/engineering/calculator-source.test.ts (34 tests | 6 failed) 7ms
+   × parses the complete fixed recipe to immutable arithmetic data 3ms
+   × accepts finite + arithmetic and reversed declaration order, without assuming correctness 1ms
+   × accepts finite - arithmetic and reversed declaration order, without assuming correctness 0ms
+   × accepts finite * arithmetic and reversed declaration order, without assuming correctness 0ms
+   × accepts finite / arithmetic and reversed declaration order, without assuming correctness 0ms
+   × enforces the complete ASCII 2048-byte boundary 0ms
+   ✓ rejects forged pass and exit before any evaluation 0ms
+   ✓ rejects import before any evaluation 0ms
+   ✓ rejects background writer before any evaluation 0ms
+   ✓ rejects baseline write before any evaluation 0ms
+   ✓ rejects property constructor before any evaluation 0ms
+   ✓ rejects expression call before any evaluation 0ms
+   ✓ rejects loop before any evaluation 1ms
+   ✓ rejects assignment before any evaluation 0ms
+   ✓ rejects object result before any evaluation 0ms
+   ✓ rejects block comment before any evaluation 0ms
+   ✓ rejects line comment before any evaluation 0ms
+   ✓ rejects unicode separator before any evaluation 0ms
+   ✓ rejects unicode escape before any evaluation 0ms
+   ✓ rejects hidden zero-width before any evaluation 0ms
+   ✓ rejects NUL before any evaluation 0ms
+   ✓ rejects control character before any evaluation 0ms
+   ✓ rejects extra export before any evaluation 0ms
+   ✓ rejects duplicate export before any evaluation 0ms
+   ✓ rejects missing export before any evaluation 0ms
+   ✓ rejects wrong parameters before any evaluation 0ms
+   ✓ rejects unsupported operator before any evaluation 0ms
+   ✓ rejects trailing executable before any evaluation 0ms
+   ✓ rejects unknown input undefined 0ms
+   ✓ rejects unknown input null 0ms
+   ✓ rejects unknown input 7 0ms
+   ✓ rejects unknown input {} 0ms
+   ✓ rejects unknown input undefined 0ms
+   ✓ rejects unknown input {"0":65} 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 33 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > reports host-owned fixed checks against the exact complete content binding
+AssertionError: expected { result: 'rejected' } to deeply equal { …(6) }
+
+- Expected
++ Received
+
+  {
+-   "binding": {
+-     "baseCommit": "2222222222222222222222222222222222222222",
+-     "headCommit": "3333333333333333333333333333333333333333",
+-     "leaseId": "843c3f04-443e-4ab0-946c-6a3572fded50",
+-     "snapshotDigest": "32b326314c551526eef3bb2b50fe63b372b7642ca6ba61c33a30d87670e490d7",
+-   },
+-   "checker": {
+-     "id": "calculator-arithmetic",
+-     "sourcePolicy": "flow.calculator-source.v1",
+-     "version": "1",
+-   },
+-   "checks": [
+-     {
+-       "id": "sum",
+-       "passed": true,
+-     },
+-     {
+-       "id": "difference",
+-       "passed": true,
+-     },
+-   ],
+-   "protocol": "flow.calculator-check.v1",
+-   "result": "passed",
+-   "sourceDigest": "77c064ee33dfb7d07518b41719bacac5bef914baa060997c933f6d6721c1788d",
++   "result": "rejected",
+  }
+
+ ❯ apps/runner/src/engineering/calculator-checker.test.ts:23:18
+     21|   const api = input();
+     22|   const report = checkCalculatorSnapshot(Object.freeze({ ...api.expect…
+     23|   expect(report).toEqual({ protocol: 'flow.calculator-check.v1', resul…
+       |                  ^
+     24|     binding: api.expected, sourceDigest: digest(correct), checks: [{ i…
+     25|   expect(Object.isFrozen(report)).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > returns failed for valid wrong arithmetic a-b
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > returns failed for valid wrong arithmetic b-a
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > returns failed for valid wrong arithmetic a*a
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > returns failed for valid wrong arithmetic a/b
+AssertionError: expected { result: 'rejected' } to match object { result: 'failed', …(1) }
+
+- Expected
++ Received
+
+  {
+-   "checks": [
+-     {
+-       "id": "sum",
+-       "passed": false,
+-     },
+-     {
+-       "id": "difference",
+-       "passed": true,
+-     },
+-   ],
+-   "result": "failed",
++   "result": "rejected",
+  }
+
+ ❯ apps/runner/src/engineering/calculator-checker.test.ts:35:63
+     33| it.each(['a-b', 'b-a', 'a*a', 'a/b'])('returns failed for valid wrong …
+     34|   const api = input(correct.replace('a+b', expression));
+     35|   expect(checkCalculatorSnapshot(api.expected, api.snapshot)).toMatchO…
+       |                                                               ^
+     36| });
+     37| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > binds staged and unstaged contents as distinct complete versions while checking the current worktree
+AssertionError: expected { result: 'rejected' } to match object { result: 'passed', binding: { …(4) } }
+
+- Expected
++ Received
+
+  {
+-   "binding": {
+-     "baseCommit": "2222222222222222222222222222222222222222",
+-     "headCommit": "3333333333333333333333333333333333333333",
+-     "leaseId": "62858c67-7898-457a-8377-3f5adc7abc2e",
+-     "snapshotDigest": "32b326314c551526eef3bb2b50fe63b372b7642ca6ba61c33a30d87670e490d7",
+-   },
+-   "result": "passed",
++   "result": "rejected",
+  }
+
+ ❯ apps/runner/src/engineering/calculator-checker.test.ts:42:13
+     40|   second.snapshot.files[0]!.index!.oid = '4'.repeat(40); rebind(second…
+     41|   const a = checkCalculatorSnapshot(first.expected, first.snapshot), b…
+     42|   expect(a).toMatchObject({ result: 'passed', binding: first.expected …
+       |             ^
+     43|   expect(first.expected.snapshotDigest).not.toBe(second.expected.snaps…
+     44|   expect(checkCalculatorSnapshot(first.expected, second.snapshot)).toM…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects a mismatched host leaseId binding
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects a mismatched host baseCommit binding
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects a mismatched host headCommit binding
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects a mismatched host snapshotDigest binding
+AssertionError: expected { result: 'rejected' } to match object { result: 'rejected', …(1) }
+
+- Expected
++ Received
+
+  {
+-   "reason": "binding-mismatch",
+    "result": "rejected",
+  }
+
+ ❯ apps/runner/src/engineering/calculator-checker.test.ts:49:63
+     47| it.each(['leaseId', 'baseCommit', 'headCommit', 'snapshotDigest'] as c…
+     48|   const api = input(); api.snapshot[field] = field === 'leaseId' ? ran…
+     49|   expect(checkCalculatorSnapshot(api.expected, api.snapshot)).toMatchO…
+       |                                                               ^
+     50| });
+     51| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > does not accept recomputed source bytes under an old snapshot identity
+AssertionError: expected { result: 'rejected' } to match object { result: 'rejected', …(1) }
+
+- Expected
++ Received
+
+  {
+-   "reason": "content-set-mismatch",
+    "result": "rejected",
+  }
+
+ ❯ apps/runner/src/engineering/calculator-checker.test.ts:54:63
+     52| it('does not accept recomputed source bytes under an old snapshot iden…
+     53|   const api = input(); api.snapshot.files[0]!.index!.oid = '0'.repeat(…
+     54|   expect(checkCalculatorSnapshot(api.expected, api.snapshot)).toMatchO…
+       |                                                               ^
+     55| });
+     56| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects unsupported untracked membership in the complete file set
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects unsupported deleted membership in the complete file set
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects unsupported index-deleted membership in the complete file set
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects unsupported executable membership in the complete file set
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects unsupported renamed membership in the complete file set
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects unsupported extra-tracked membership in the complete file set
+AssertionError: expected { result: 'rejected' } to match object { result: 'rejected', …(1) }
+
+- Expected
++ Received
+
+  {
+-   "reason": "unsupported-files",
+    "result": "rejected",
+  }
+
+ ❯ apps/runner/src/engineering/calculator-checker.test.ts:65:76
+     63|   if (mode === 'renamed') file.path = 'other.mjs';
+     64|   if (mode === 'extra-tracked') api.snapshot.files.push({ ...file, pat…
+     65|   rebind(api); expect(checkCalculatorSnapshot(api.expected, api.snapsh…
+       |                                                                            ^
+     66| });
+     67| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects missing content instead of inspecting one selected file only
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects extra content instead of inspecting one selected file only
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects duplicate content instead of inspecting one selected file only
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects wrong-path content instead of inspecting one selected file only
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects wrong-bytes content instead of inspecting one selected file only
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects wrong-digest content instead of inspecting one selected file only
+AssertionError: expected { result: 'rejected' } to match object { result: 'rejected', …(1) }
+
+- Expected
++ Received
+
+  {
+-   "reason": "content-mismatch",
+    "result": "rejected",
+  }
+
+ ❯ apps/runner/src/engineering/calculator-checker.test.ts:76:76
+     74|   if (mode === 'wrong-bytes') api.snapshot.files[0]!.worktree!.bytes++;
+     75|   if (mode === 'wrong-digest') api.snapshot.files[0]!.worktree!.digest…
+     76|   rebind(api); expect(checkCalculatorSnapshot(api.expected, api.snapsh…
+       |                                                                            ^
+     77| });
+     78| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects hostile source without executing or trusting its output: console.log("{\"checks\":[{\"id\":\"sum\",\"passed\":true}]}");process.exit(0);
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects hostile source without executing or trusting its output: import "node:fs";
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects hostile source without executing or trusting its output: setInterval(()=>{},1);
+ FAIL  apps/runner/src/engineering/calculator-checker.test.ts > rejects hostile source without executing or trusting its output: require("node:fs").writeFileSync("baseline.mjs","passed");
+AssertionError: expected { result: 'rejected' } to deeply equal { …(3) }
+
+- Expected
++ Received
+
+  {
+-   "protocol": "flow.calculator-check.v1",
+-   "reason": "invalid-source",
+    "result": "rejected",
+  }
+
+ ❯ apps/runner/src/engineering/calculator-checker.test.ts:83:98
+     81|   'import "node:fs";', 'setInterval(()=>{},1);', 'require("node:fs").w…
+     82| ])('rejects hostile source without executing or trusting its output: %…
+     83|   const api = input(prefix+correct); expect(checkCalculatorSnapshot(ap…
+       |                                                                                                  ^
+     84| });
+     85| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-source.test.ts > parses the complete fixed recipe to immutable arithmetic data
+AssertionError: expected null to deeply equal { …(2) }
+
+- Expected: 
+{
+  "functions": {
+    "add": {
+      "left": "a",
+      "operator": "+",
+      "right": "b",
+    },
+    "subtract": {
+      "left": "a",
+      "operator": "-",
+      "right": "b",
+    },
+  },
+  "protocol": "flow.calculator-source.v1",
+}
+
++ Received: 
+null
+
+ ❯ apps/runner/src/engineering/calculator-source.test.ts:8:18
+      6| it('parses the complete fixed recipe to immutable arithmetic data', ()…
+      7|   const parsed = parseCalculatorSource(valid);
+      8|   expect(parsed).toEqual({ protocol: 'flow.calculator-source.v1', func…
+       |                  ^
+      9|     add: { left: 'a', operator: '+', right: 'b' }, subtract: { left: '…
+     10|   } });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-source.test.ts > accepts finite + arithmetic and reversed declaration order, without assuming correctness
+AssertionError: expected null to match object { functions: { add: { …(3) }, …(1) } }
+
+- Expected: 
+{
+  "functions": {
+    "add": {
+      "left": "a",
+      "operator": "+",
+      "right": "a",
+    },
+    "subtract": {
+      "left": "b",
+      "operator": "+",
+      "right": "a",
+    },
+  },
+}
+
++ Received: 
+null
+
+ ❯ apps/runner/src/engineering/calculator-source.test.ts:18:41
+     16| it.each(['+', '-', '*', '/'])('accepts finite %s arithmetic and revers…
+     17|   const source = `\t export const subtract = ( a , b ) => b ${operator…
+     18|   expect(parseCalculatorSource(source)).toMatchObject({ functions: { a…
+       |                                         ^
+     19| });
+     20| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-source.test.ts > accepts finite - arithmetic and reversed declaration order, without assuming correctness
+AssertionError: expected null to match object { functions: { add: { …(3) }, …(1) } }
+
+- Expected: 
+{
+  "functions": {
+    "add": {
+      "left": "a",
+      "operator": "-",
+      "right": "a",
+    },
+    "subtract": {
+      "left": "b",
+      "operator": "-",
+      "right": "a",
+    },
+  },
+}
+
++ Received: 
+null
+
+ ❯ apps/runner/src/engineering/calculator-source.test.ts:18:41
+     16| it.each(['+', '-', '*', '/'])('accepts finite %s arithmetic and revers…
+     17|   const source = `\t export const subtract = ( a , b ) => b ${operator…
+     18|   expect(parseCalculatorSource(source)).toMatchObject({ functions: { a…
+       |                                         ^
+     19| });
+     20| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-source.test.ts > accepts finite * arithmetic and reversed declaration order, without assuming correctness
+AssertionError: expected null to match object { functions: { add: { …(3) }, …(1) } }
+
+- Expected: 
+{
+  "functions": {
+    "add": {
+      "left": "a",
+      "operator": "*",
+      "right": "a",
+    },
+    "subtract": {
+      "left": "b",
+      "operator": "*",
+      "right": "a",
+    },
+  },
+}
+
++ Received: 
+null
+
+ ❯ apps/runner/src/engineering/calculator-source.test.ts:18:41
+     16| it.each(['+', '-', '*', '/'])('accepts finite %s arithmetic and revers…
+     17|   const source = `\t export const subtract = ( a , b ) => b ${operator…
+     18|   expect(parseCalculatorSource(source)).toMatchObject({ functions: { a…
+       |                                         ^
+     19| });
+     20| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-source.test.ts > accepts finite / arithmetic and reversed declaration order, without assuming correctness
+AssertionError: expected null to match object { functions: { add: { …(3) }, …(1) } }
+
+- Expected: 
+{
+  "functions": {
+    "add": {
+      "left": "a",
+      "operator": "/",
+      "right": "a",
+    },
+    "subtract": {
+      "left": "b",
+      "operator": "/",
+      "right": "a",
+    },
+  },
+}
+
++ Received: 
+null
+
+ ❯ apps/runner/src/engineering/calculator-source.test.ts:18:41
+     16| it.each(['+', '-', '*', '/'])('accepts finite %s arithmetic and revers…
+     17|   const source = `\t export const subtract = ( a , b ) => b ${operator…
+     18|   expect(parseCalculatorSource(source)).toMatchObject({ functions: { a…
+       |                                         ^
+     19| });
+     20| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/33]⎯
+
+ FAIL  apps/runner/src/engineering/calculator-source.test.ts > enforces the complete ASCII 2048-byte boundary
+AssertionError: expected null not to be null
+ ❯ apps/runner/src/engineering/calculator-source.test.ts:22:62
+     20| 
+     21| it('enforces the complete ASCII 2048-byte boundary', () => {
+     22|   expect(parseCalculatorSource(valid.padEnd(2048, ' '))).not.toBeNull(…
+       |                                                              ^
+     23|   expect(parseCalculatorSource(valid.padEnd(2049, ' '))).toBeNull();
+     24| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/33]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  33 failed | 34 passed (67)
+   Start at  04:44:37
+   Duration  321ms (transform 48ms, setup 0ms, import 131ms, tests 21ms, environment 0ms)
+
