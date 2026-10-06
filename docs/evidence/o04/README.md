@@ -30,3 +30,18 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vitest run apps/runner/src/ru
 边界：query函数被注入，未调用原生SDK子进程/模型/auth，未验证自然语言规划或真实语义；只两个受限Flow工具，无工程写权。O01 execute仍fixture，本trace只证明确实受理queued child；native final/自身artifact verified不等于goal或child最终交付。O02仍每读全snapshot/hash，不宣称token/中心性能提升。无native planner resume/C02自动重放；未知外部写仍须核对。
 
 [设计/clean-code](design.md)、[唯一状态](../../../plans/o04-native-goal-bridge/status.md)。官方参考：[custom tools](https://code.claude.com/docs/en/agent-sdk/custom-tools)、[permissions](https://code.claude.com/docs/en/agent-sdk/permissions)，实现依本机固定SDK0.3.290声明与实际官方peer。
+
+## 既有012授权升级补证（Root独审要求）
+
+2026-10-06T05:05:09Z，test-only固定 `a169a2e139e5db5e7bc2fd6f55699014a41e9926`，产品实现仍为 `1420dfa2f44117f49ec022665bcddc11739e36ae`。Root已核原23源码/20输出与102检查；尚待本补证复核，不预写APPROVED。原源码和输出hash均未变化。
+
+新增单场景先在随机专属DB从空库顺序运行实际前置迁移至011，再执行仓库原012 SQL及版本记录；没有创建013后倒退。012模式约束实测只含fixture，版本表实际为1至12。通过现生产domain接口创建fixture grant、claim与一次define-input审计call；这段是既有012真实schema的数据准备，不声称启动旧版本中心进程。随后实际调用生产 `migrateGoalToolRuns` 升至013并重复调用，核旧版本时间、完整grant/scope/used_commands和完整call数据不变；再启动生产 `createServer` 重复迁移，以公开HTTP验证同一旧grant、原key结果重放、唯一命令额度仍拒绝新key、撤销后缓存key也拒绝。PG触发器仍阻止扩大scope、更改mode、回减额度、删除call或清除已撤销状态。新显式goal-tools profile的claude grant返回201/queued；没有启动runner或query。
+
+新增 **1/1，2.02s**；类型检查通过。首次运行即通过，没有人为制造SQL错误或声称修复过产品缺陷。未重跑原102项。原始stdout：[场景](checks-migration-upgrade.txt)、[类型检查](typecheck-migration-upgrade.txt)；真实前后行/版本/HTTP状态与DB删除确认：[原始JSON](migration-upgrade.json)，SHA256 `d04ff10e2e4450e6e49e4a0acad1bb24d54c21c841ebad30deeac3d72e10715a`。不含runner token，专属DB已删除，现有服务未动。
+
+复跑：
+```sh
+FLOW_O04_MIGRATION_EVIDENCE="$PWD/docs/evidence/o04/migration-upgrade.json" PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vitest run apps/server/src/goal-tool-runs/migration.test.ts --no-cache --configLoader runner
+PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm typecheck
+```
+复跑会使用新的随机专属DB；独立review需另设临时输出路径，不覆盖本原始JSON。

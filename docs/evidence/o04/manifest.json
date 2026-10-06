@@ -254,5 +254,45 @@
     "Profile mode and goal grant do not authorize arbitrary engineering tools",
     "Not integrated into main at delivery; production createServer mounted in author worktree",
     "No native planner resume or automatic replay of uncertain effects"
-  ]
+  ],
+  "reviewSupplement": {
+    "recordedAt": "2026-10-06T05:05:09Z",
+    "testTarget": "a169a2e139e5db5e7bc2fd6f55699014a41e9926",
+    "productionImplementationTarget": "1420dfa2f44117f49ec022665bcddc11739e36ae",
+    "reason": "Root requested populated 012 fixture grant/call to 013 migration evidence; no product code finding or change",
+    "checks": {
+      "selectedTests": 1,
+      "passed": 1,
+      "seconds": 2.02,
+      "typecheck": "PASSED",
+      "modelCalls": 0,
+      "original102Rerun": false
+    },
+    "sources": [
+      {
+        "path": "apps/server/src/goal-tool-runs/migration.test.ts",
+        "bytes": 11725,
+        "sha256": "c3ac720131b5669b7fe1a2daec01c867cfb65f76cdfa58a4c58ea9aa3a29784c"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "docs/evidence/o04/checks-migration-upgrade.txt",
+        "bytes": 444,
+        "sha256": "d931afc55cca70874e2eee42c25b9878be90c195c6403f30290853ad17336edb"
+      },
+      {
+        "path": "docs/evidence/o04/typecheck-migration-upgrade.txt",
+        "bytes": 109,
+        "sha256": "0e0180e214bd11031cb03c3c30df9cfbd5a07bd9a8b66a330af995eb699aef32"
+      },
+      {
+        "path": "docs/evidence/o04/migration-upgrade.json",
+        "bytes": 6363,
+        "sha256": "d04ff10e2e4450e6e49e4a0acad1bb24d54c21c841ebad30deeac3d72e10715a"
+      }
+    ],
+    "originalSourceHashesUnchanged": 23,
+    "originalOutputHashesUnchanged": 20
+  }
 }

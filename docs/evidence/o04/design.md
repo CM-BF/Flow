@@ -13,3 +13,5 @@ Host Port封闭固定goal/ownership/grant；无显式input version拒绝。每�
 发现/修复：首集成测试误用不存在的client.task/assistantMethods，改实际show及公开assistant HTTP；测试submit预期201改真实202；第三synthetic run重复前一个runner的native session导致中心拒绝（正确防线），修独立session identity，不放宽生产归属。共享输入单pick冲突已abort，按Lead授权完整merge dc9；未修改共享冲突。最终77/77（18.96s）+25/25直接runtime消费者（2.03s）+tsc；0模型，无本片段未解决blocking。
 
 限制：query函数被注入，实际MCP server/Client/HTTP/PG与runner循环是真的；未启动原生SDK子进程或验证FQ在原生模型进程中的执行，仅按固定SDK key/name/真实tools list与query options核对。typed final证明native turn文本归属，不代表goal/child交付已验证；child execute只fixture并在本测试保持queued。普通读取仍有O02全snapshot取数/hash；本片段不宣称token/中心性能提升。新native grant不支持resume或C02自动重放，未知外部写仍需显式核对。
+
+2026-10-06T05:05:09Z clean-code补证复核：本地find-skills/codebase-design复用，重新读clean-code/tdd；仅新增migration.test，使用生产迁移/domain/HTTP seams和真实PG，拆分012创建、数据准备、请求与存储快照，无生产逻辑复制、schema降级或新依赖。fixture claim给60s有效租期，仅本测试库；finally关闭本app/boss/pool并删该随机DB。原23源码/20输出hash全一致。单场景+tsc首次通过；无未解决产品finding，等待Root证据复核。
