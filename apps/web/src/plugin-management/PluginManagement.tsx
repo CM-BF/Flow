@@ -119,7 +119,7 @@ function OperationPage({ registry, id, after, onPage }: { registry: PluginRegist
   const load = useCallback((signal: AbortSignal) => registry.pluginOperations(id, { after, limit: PAGE_SIZE }, signal), [registry, id, after]);
   const read = useRead(load);
   if (!read.data) return <ReadNotice {...read} label="audit history" />;
-  const titles = { register: 'Registration', configure: 'Configuration changed', 'set-grants': 'Grants changed', 'register-version': 'Version declared', 'select-version': 'Version selected' };
+  const titles = { register: 'Registration', configure: 'Configuration changed', 'set-grants': 'Grants changed', 'register-version': 'Version declared', 'select-version': 'Version selected', enable: 'Enabled for new tool tasks', disable: 'Disabled for new tool tasks' };
   return <>{read.failed ? <ReadNotice {...read} label="audit history" /> : read.pending ? <p role="status">Updating audit history…</p> : null}<h4>Revision audit</h4>{read.data.operations.length ? <ol className="flow-plugin-history">{read.data.operations.map(item => <li key={item.id}>
     <strong>{titles[item.kind]}</strong><p>Revision {item.beforeRevision ?? '—'} → {item.afterRevision} · {item.actor} · {item.status}</p>
     <time dateTime={item.createdAt}>{new Date(item.createdAt).toLocaleString()}</time>

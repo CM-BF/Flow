@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 23:12:23 UTC |
+| 最近更新时间 | 2026-10-06 23:22:45 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -11,19 +11,19 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；供给067920b5 / owner metadata c77802e6；接收metadata单独提交，产品未改 |
-| 工作树 dirty 状态 | 供给5 modified+3 untracked全部原owner metadata；已逐hash核，当前接收收据/status另行固定，无产品diff |
+| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；接收metadata065938bf；当前固定首源码checkpoint（本提交），未main |
+| 工作树 dirty 状态 | 供给overlay已在065938bf固定；当前仅v8所领源码和metadata变更，随首源码checkpoint提交 |
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN 当前enable/binding；资源低于门槛，0测试/types/import/build/install/PG/browser/provider；历史通过不移用 |
 | Review | NOT_STARTED 当前领域/持久binding/窄host；固定源码后交独审；历史e682/a578/bf337批准保留 |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
-| 实现目标 | enable/binding领域合同与持久化、窄host实现中；暂无产品target |
+| 实现目标 | 首源码checkpoint：领域合同、034、enable/disable与绑定/phase gate、未挂载routes及窄host；消费者测试仍在补齐 |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 静态安装和双阶段权限门禁已交付；独立源码与写权已就绪，开始实现公开启用、冻结工具任务和执行适配 |
-| 下一可用交付 | 先交可独审的领域合同、唯一DDL和持久binding；真实生产runner调用待共享资格与恢复接线 |
+| 当前产出 | 静态安装与双阶段权限已交付；启用、冻结工具任务和实时授权源码已形成，正在补齐直接行为验证 |
+| 下一可用交付 | 首源码checkpoint交静态审查；随后交直接消费者与真实专库验证，生产runner调用仍待共享资格与恢复接线 |
 | 当前阻塞 | ACTIVE: 工程检查因资源门槛尚未开放；源码实施可继续。生产挂载仍待共享claim能力/恢复guard接线 |
 | 需用户决定 | NONE |
 
@@ -48,7 +48,7 @@
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；当前6ddedc73 v5持host两源与两metadata，旧center八源和其余leaf已交回。真实事实/检查/文档target随本scope metadata单独更新。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。当前同claim v8已accept到plugin-enable-binding，17scope为14源码+034+两metadata；host两源已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -121,3 +121,5 @@
 2026-10-06 22:59:39 UTC：fresh HEAD68db2d60 clean、6ddedc73 v5 ACTIVE原四scope。Lead指出固定main60ca两个迁移入口以file数组读取012/013/017/019，前包未纳这四官方SQL；撤回68db的source-complete结论，仅在本metadata追加精确四Git输入并重算总量。14候选/base/0依赖复制不变，未产品写/执行工程检查。另记录browser固定旧X03输出须在新树合法领取后改自有排他namespace；本轮不改该源码、不运行浏览器。
 
 2026-10-06 23:12:23 UTC：新唯一owner接收。旧树最终status提交c3a4c1a2a75284c379cdfaaa92797216cfcbfae3已push/clean并停止全部范围；handoff v6在23:09:51.395Z、accept v7在23:09:58.229Z、amend v8在23:10:09.716Z均COMMITTED，23:12:23 fresh账本确认新树v8 ACTIVE。两host源移出，保14候选+正式034+两metadata。sole source operator已停写；[完整供给](../../docs/evidence/x01/enable-binding-source-provision.json)545文件2,999,381B/30官方SQL与067请求逐hash一致，0依赖复制/安装/导入；新树base60ca，仅5 modified+3 untracked旧metadata overlay。所有收据精确归档于自有evidence，067/c778固定请求/历史raw不改。本树接续唯一status；旧树不回写。semver7.8.5/ISC compare已选，未build/真实执行；完整X01未Done。即开始合法源码实施，不因检查资源门槛停在重复设计。工程检查仍NOT_RUN，浏览器运行前须将旧X03输出改X01排他namespace；生产route必须等shared资格/恢复guard，不借模块路由提前mount。[方法与质量](../../docs/evidence/x01/enable-binding-quality.md)。Lead需将dashboard唯一来源迁到本树，当前未宣称在线已刷新。
+
+2026-10-06 23:22:45 UTC：fresh账本23:18:42.545确认v8 ACTIVE。首源码checkpoint形成单revision追加、正式034复合身份/不可变绑定与phase唯一收据、独立runtime命令/未挂载公开路由和原host/flow.text窄适配。旧四change schema不扩，仅operation读回增加两kind并补Web两个label。已落实grant/fence先于幂等缓存，disable不撤旧pin；新claim v3协商/旧reader过滤/retained/reconciliation仍共享后继，生产不mount。Root静态指出ES2023无String.isWellFormed声明，已改局部surrogate检查并保留emoji/lone surrogate/BOM用例；没有修改tsconfig。DB reviewer对034初稿未见NULL/复合FK阻断，非正式实现批准。只做文件/Git空白检查，0工程checks；server/runner行为tests与browser输出修正仍本片待办，不以首checkpoint当交付。方法/架构影响见quality。

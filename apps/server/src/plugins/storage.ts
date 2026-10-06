@@ -1,4 +1,5 @@
 import type { PoolClient } from 'pg';
+import { randomUUID } from 'node:crypto';
 import type { PluginCapability, PluginConfiguration, PluginInstallation, PluginOperation, PluginSnapshot, PluginVersion, PluginVersionDeclaration } from '../../../../packages/contracts/src/plugins.js';
 import { HttpError } from '../database.js';
 
@@ -29,4 +30,19 @@ export async function readSnapshot(client: PoolClient, id: string, revision?: nu
   const missing = selected.declaration.publicConfiguration.some(field => field.required && !Object.hasOwn(selected.configuration, field.key));
   return { installation: installationView(row), revision: selected.revision, version: versionView(selected), configuration: selected.configuration,
     grants: selected.grants, configurationStatus: missing ? 'incomplete' : 'ready' };
+}
+
+/** Caller holds the registration lock. All registry/runtime mutations share this revision authority. */
+export async function appendPluginRevision(client: PoolClient, installation: InstallationRecord, input: {
+  versionId: string; configuration: PluginConfiguration; grants: PluginCapability[];
+  kind: Exclude<PluginOperation['kind'], 'register'>; inputDigest: string;
+}): Promise<{ snapshot: PluginSnapshot; operation: PluginOperation }> {
+  if (installation.revision === 2_147_483_647) throw new HttpError(409, 'plugin_revision_conflict', 'Plugin revision cannot advance.');
+  const revision = installation.revision + 1;
+  await client.query('INSERT INTO flow.plugin_revisions(installation_id,revision,version_id,configuration,grants) VALUES($1,$2,$3,$4,$5)',
+    [installation.id, revision, input.versionId, JSON.stringify(input.configuration), JSON.stringify(input.grants)]);
+  await client.query('UPDATE flow.plugin_installations SET revision=$2,updated_at=clock_timestamp() WHERE id=$1', [installation.id, revision]);
+  const operation = (await client.query<OperationRecord>(`INSERT INTO flow.plugin_operations(id,installation_id,kind,actor,input_digest,before_revision,after_revision)
+    VALUES($1,$2,$3,'owner',$4,$5,$6) RETURNING *`, [randomUUID(), installation.id, input.kind, input.inputDigest, installation.revision, revision])).rows[0]!;
+  return { snapshot: await readSnapshot(client, installation.id), operation: operationView(operation) };
 }

@@ -64,7 +64,7 @@ export interface PluginSnapshot {
   grants: PluginCapability[];
 }
 export interface PluginOperation {
-  id: string; installationId: string; kind: 'register' | PluginCommand['change']['kind'];
+  id: string; installationId: string; kind: 'register' | PluginCommand['change']['kind'] | 'enable' | 'disable';
   status: 'succeeded'; actor: 'owner'; inputDigest: string;
   beforeRevision: number | null; afterRevision: number; createdAt: string;
 }
