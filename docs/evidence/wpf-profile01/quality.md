@@ -24,3 +24,5 @@
 
 
 04:46 UTC review补充停点：GoalOwner明确未来goal/tools类profile不能当普通chat选项，正式合同尚未冻结。未猜测新字段，只给未知占位access做消费者测试：合法none/configured-readonly精确保持，未知由共享schema拒绝、整页原子失败。a28仅增1测试，14/14通过；production与b2零diff。界面与bundle沿用b2证据，不无关重测。缺点保留：未知access导致整页错误而非逐项分类；未来受控合同另片。
+
+04:49 UTC交付clean-code：固定a28生产与b2零diff；核目录缓存/选择快照/创建payload/回执对照四个状态所有者明确，未知access整页失败写入Interface而不隐瞒。独立root14tests+源码/CUA限定批准已转录；未新增泛化profile组合/新状态库/模型探测。剩余工作为实际App消费，交原owner另领；本scope停止实现，保留review修复权。

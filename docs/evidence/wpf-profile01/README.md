@@ -34,3 +34,7 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/execution-p
 未知项：真实中心/provider/runner可达、实际模型名与工具、App组合、Safari/Firefox/屏读；queue/steer/effort切换不在此合同。被冻结输入经过其他模块schema.parse可能重新变可变，消费端必须重新冻结ref/requested；这属于接入检查，不以本模块的冻对象推整个App已安全。
 
 后继a28仅增加未知access消费者测试；浏览器/生产bundle为b2生产实现检查，未冒充新目标再次重跑。生产文件四项零diff，隔离fixture/browser脚本也未改变。
+
+## 独立结论
+
+root于2026-10-06 04:48:10 UTC正式APPROVED模块target a28，独立14tests/source/CUA通过。作者与审查者实际检查、未验证项分别见[review](../../../plans/wpf-profile01-execution-profiles/review.md)。不把此批准写成App已经接通或main已集成。

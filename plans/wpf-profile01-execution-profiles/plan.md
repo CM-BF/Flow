@@ -3,8 +3,8 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 | WPF-PROFILE01 |
-| 状态 | in-progress |
-| 创建 / 更新 | 2026-10-06 04:43 UTC |
+| 状态 | completed |
+| 创建 / 更新 | 2026-10-06 04:49 UTC |
 | Owner / model | w01_owner / gpt-6-astra ultra（派发指定；运行上下文为 GPT-6） |
 | Worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles / codex/web-execution-profiles |
 | 基线 | 4e0289f29ffa48c6c49003837d4520f57c22b6b0 |
@@ -18,7 +18,7 @@
 - [x] **WPF-PROFILE01-01** 目录分页、刷新/错误/中止与连接隔离的不可变投影。
 - [x] **WPF-PROFILE01-02** 整份配置选择、深冻结 creation、完整 pin 回执核对、旧无 pin 兼容。
 - [x] **WPF-PROFILE01-03** 受控选择器与 HTTP fixture；浅深主题、390px、键盘、错误恢复和未知回执锁定。
-- [ ] **WPF-PROFILE01-04** 独立审查、修复、固定模块交接；主 App 集成另领。
+- [x] **WPF-PROFILE01-04** 独立审查、修复、固定模块交接；主 App 集成另领。
 
 ## 设计与验证
 
@@ -27,3 +27,5 @@
 目录刷新保持旧页可查看但标陈旧，失败保留；401 也不清空已冻结输入，陈旧目录不能产生新选择。loadMore 保留已读页及游标用于重试。dispose/refresh 取消旧请求且 generation 拒绝迟到响应。选择不随刷新自动改变。
 
 测试通过公开模块接口与真实 FlowClient HTTP fixture；不调用模型/数据库。只运行本模块与类型检查、隔离浏览器。未验证真实中心/runner/provider、App 接线、Safari/Firefox/屏读。方法及实际发现见 [quality](../../docs/evidence/wpf-profile01/quality.md)，接口见 [interface](../../docs/evidence/wpf-profile01/interface.md)。
+
+本模块交付已获独立APPROVED target a28c78cc3a1ac8557f7fd95afa074c4971128246；completed仅指本计划模块范围，App接入与真实中心另片，见review边界。

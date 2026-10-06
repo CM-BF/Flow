@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:46 UTC；固定输入，不追 moving main |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:49 UTC；固定输入，不追 moving main |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra（派发指定） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles |
@@ -16,18 +16,18 @@
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/catalog.ts, apps/web/src/execution-profiles/execution-profiles.css, apps/web/src/execution-profiles/selection.ts, apps/web/test/execution-profiles.browser.ts, apps/web/test/execution-profiles.fixture.tsx, apps/web/test/execution-profiles.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 独立配置选择模块、冻结输入及双主题HTTP fixture已验证；待固定目标独立审查 |
-| 下一可用交付 | 独立审查闭环后交App owner另领接线 |
+| 当前产出 | 独立配置选择模块已获固定目标审查通过；可交下一App接入片消费 |
+| 下一可用交付 | 交App owner另领配置接线；模块当前停止实现写入并保留review修复claim |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，APPROVED a28c78cc3a1ac8557f7fd95afa074c4971128246；仅独立模块 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-PROFILE01-01 | completed | w01_owner | 14局部tests中真实HTTP分页/错误/连接隔离；固定a28 |
 | WPF-PROFILE01-02 | completed | w01_owner | 完整pin/深冻/旧default局部检查；固定a28 |
 | WPF-PROFILE01-03 | completed | w01_owner | 5组HTTP浏览器，双主题390/键盘/锁；截图已目视 |
-| WPF-PROFILE01-04 | in-progress | w01_owner | a28固定target已交root（新增unsupported access test；生产不变），review NOT_STARTED |
+| WPF-PROFILE01-04 | completed | w01_owner | root独立APPROVED a28；14tests+CUA/源码；App另片 |
 
 ## 领取与架构影响
 
@@ -35,11 +35,16 @@
 
 ## 未验证与下一步
 
-局部验证已完成；固定实现交 root 独立 review，随后另由 App owner 接入。实际 App 接入由 workspace_panels_owner 后续独立领取；0模型，根manifest/lock不得改变。Dashboard：2026-10-06 04:44:34.265Z 实采4320，source HEAD bc3e5f15f72a8fca89a24da4f42d828173a3b05a clean（此为新增test前历史采样）；human.complete=true/issues=[]，checks绑定b2，review NOT_STARTED，implementationProof unchanged，main not-contained，claim17093 v1 matchesSource。原样本任务摘录见 [dashboard-snapshot](../../docs/evidence/wpf-profile01/dashboard-snapshot.json)。
+局部验证已完成；固定a28已获root独立APPROVED，随后另由App owner按新claim接入。实际 App 接入由 workspace_panels_owner 后续独立领取；0模型，根manifest/lock不得改变。Dashboard：2026-10-06 04:44:34.265Z 实采4320，source HEAD bc3e5f15f72a8fca89a24da4f42d828173a3b05a clean（此为新增test前历史采样）；human.complete=true/issues=[]，checks绑定b2，review NOT_STARTED，implementationProof unchanged，main not-contained，claim17093 v1 matchesSource。原样本任务摘录见 [dashboard-snapshot](../../docs/evidence/wpf-profile01/dashboard-snapshot.json)。
 
 
 ## 本段检查与交付
 
 [验证报告](../../docs/evidence/wpf-profile01/README.md)；[浏览器原始结果](../../docs/evidence/wpf-profile01/browser-results.json)；[接口](../../docs/evidence/wpf-profile01/interface.md)；[技能与清码](../../docs/evidence/wpf-profile01/quality.md)。Node24 / pnpm9.15.4 / Chrome154。已启动独立HTTP fixture http://127.0.0.1:62662（开发预览，启动脚本每次动态端口）。测试自动端口已清理。0真实模型，未运行真实中心/runner、App组合、Safari/Firefox/屏读。
 
-frozen-lockfile安装复用既有449依赖，不新增manifest条目；根manifest/lock diff0。client/contracts均链接本工作树packages。最初fixture漏Vite HTML变换及textarea可访问名称问题已修，最终5组全部通过；不是忽略失败。Review尚未开始，不继承任何W01/P01历史approval。
+frozen-lockfile安装复用既有449依赖，不新增manifest条目；根manifest/lock diff0。client/contracts均链接本工作树packages。最初fixture漏Vite HTML变换及textarea可访问名称问题已修，最终5组全部通过；不是忽略失败。Review已独立绑定a28通过，不继承任何W01/P01历史approval。
+
+
+## 独立审查交付
+
+root / GPT-6 只读审查，2026-10-06 04:48:10 UTC 正式 APPROVED，target a28c78cc3a1ac8557f7fd95afa074c4971128246 / base 4e0289f29ffa48c6c49003837d4520f57c22b6b0。独立14tests PASS（226ms）、7文件源码审读、固定diffcheck0、4生产文件b2→HEAD零差异、CUA展开/选择/焦点/草稿/未知ACK冻结通过。作者5browser/隔离编译由证据复核，root没有声称再次独立全跑。无未关闭blocking；未来goal-tools分类/实际App/真实中心与模型不在批准范围。当前未知access整页拒绝，不声称逐项降级。
