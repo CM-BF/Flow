@@ -2,14 +2,14 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:49 UTC / input main56d90e8c |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:00 UTC / input maind679444c |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main56d90e8c；SVC06保护片14源与target逐字一致，3个已审主线输入差异明确保留 |
+| 工作基线 / HEAD | maind679444c；O14模块14源逐字一致，root类型组合通过；SVC06和D05已审metadata收口 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
 | 检查状态 | 生产公共读口1/1 PG/HTTP、strict0已有原证据，集成十源零diff；无新provider/重复领域测量 |
@@ -18,7 +18,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 用量共用读口和终端已交付；插件安装领域及发布前拒绝保护已接收，完整固定后台产物仍待验证。 |
+| 当前产出 | 目标持续推进模块已接收；插件安装的生产入口正在验证，固定后台产物仍待资源条件。 |
 | 下一可用交付 | 已授权目标节点持续推进，以及各端直接查看用量说明。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -172,4 +172,6 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 
 2026-10-06T14:39:25.366843+00:00：接收X01已审中心静态材料领域a578，八源逐hash一致、root strict0；不重跑14领域用例。仅领域代码与029文件进入主线候选，默认factory/client/CLI尚未挂，不能称已启用插件或完整安装生命周期。三处metadata冲突全部取原X01唯一权威8e520b7，无产品冲突。
 
-2026-10-06 14:49 UTC：受控接收SVC06 6d276限定已审保护小片及185e元数据；14source+40raw逐字一致，12直接input中9相同，3个已审主线差异逐项记录。未重跑原legacy检查或构建，原证据不冒当前全产物成功。完整构建/独立启动/个人切换均未获此批准，2.5GiB门槛保留。见[本批接收](../../docs/evidence/i02/svc06-bounded-integration.json)。个人runtime362/v15和Web8d8/v2不变。
+2026-10-06 14:46 UTC：受控接收SVC06 6d276限定已审保护小片及185e元数据；14source+40raw逐字一致，12直接input中9相同，3个已审主线差异逐项记录。未重跑原legacy检查或构建，原证据不冒当前全产物成功。完整构建/独立启动/个人切换均未获此批准，2.5GiB门槛保留。见[本批接收](../../docs/evidence/i02/svc06-bounded-integration.json)。个人runtime362/v15和Web8d8/v2不变。
+
+2026-10-06T14:56:54.347164+00:00：O14持久推进模块独审通过并受控接收，14源码与b808固定target逐字一致；尚未挂载030/自动scan，旧中心读口由原域的缺表兼容保留，不能宣称生产已自动推进。SVC06仅接收保护片收口，完整固定产物仍待资源条件。161源登记已真实发布。见[固定比较](../../docs/evidence/i02/goal-progression-module-integration.json)。

@@ -1,0 +1,128 @@
+{
+  "observedAt": "2026-10-06T14:56:54.347164+00:00",
+  "inputMain": "d679444c4bed52bbd53d38f4944f914b30fbbd92",
+  "target": "b8081a8fba7468337f668670a67206005bc0a73f",
+  "delivery": "7b49a57a7758e4ee80a3a59c745585d73bba1858",
+  "sourceBindings": [
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-delivery/delivery.test.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 20697,
+      "sha256": "72f4ed935f3ce96db4ad538f888fa8ff479ec1b6f7ccf806fafb2dd8c3af2f88",
+      "gitBlob": "008a44c80222643baa154e58fc12fdf288476bd2"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-delivery/metadata.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 5144,
+      "sha256": "3db661d56190460957f527e77ea903dd42ec7ecf91bfdab8ef7fcc45baac192b",
+      "gitBlob": "96b14cfb4850c2190721c622fa0012f37d37b120"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-delivery/state.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 3394,
+      "sha256": "964df126f6188a02fb55d0043529abb029c32cec95c4db17dfd88bc3937b0b5a",
+      "gitBlob": "4b0e017aab69723800ac3e0f3b7213bd7466c901"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/advance.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 3820,
+      "sha256": "24793fc7b9eeb91bc3bf5ec0bd687431c91f7818171b857b0ce9916ede72f8ee",
+      "gitBlob": "c996f65903dd45574e97a84a2636e7994c3e1220"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/fixture.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 8999,
+      "sha256": "a91a26d807cc8b9cdbe69917eb7f3dc755acb8d1fb4fb2a46763229499f99dc1",
+      "gitBlob": "839db9353be31fbfbdc1b205b81b5354866e321d"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/index.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 2385,
+      "sha256": "deb89a24c6c3ba1f7ce0968689f5501124b5cd4d987370899dddef50b9172165",
+      "gitBlob": "78198ac59649b668ed49b8e86e9fb07505a70828"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/progression.test.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 15600,
+      "sha256": "73dda47d81740d7832805a60a43955e123309b6f0cc94d03d31bf0ce37db44fc",
+      "gitBlob": "d8946a77ced12c1f361668105a33f974dcbba97d"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/provenance.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 2315,
+      "sha256": "dc8558895803968862431c3ad7dea64be81981170ee5bdab7be1408868a7143f",
+      "gitBlob": "30cb7a7ffbb07b173f0ab7d12ba291ce52248584"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/store.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 10762,
+      "sha256": "78841cf61dcb35d121704645a9b0131057f3ea72f412b2ec2ed858802e814912",
+      "gitBlob": "6173826136ddbe74781b3570d6e29f31815dcf17"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goals/commands.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 14007,
+      "sha256": "66fc56ff48c46bd9f9ebaac51614985d9f9dbbeec31cf161011dd1ff3813ba32",
+      "gitBlob": "ce37279c11be8808f617ac22e9dce7c5957b9201"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goals/goals.test.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 28828,
+      "sha256": "ac0091d00c7f2a901781d95a10537425cddd584d7305795768702bdb9b5932c2",
+      "gitBlob": "e7fb9947e8e0f52b6ea9a2f9219130b2b6495cf2"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goals/state.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 15446,
+      "sha256": "23365f92b07fa98eb658e6900a22edaeff336ec69ca1e11c794fdf5c806e1405",
+      "gitBlob": "1d0983f999ad14627930668eef3f28b42370659e"
+    },
+    {
+      "kind": "source",
+      "path": "packages/contracts/src/goal-progression.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 2915,
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10",
+      "gitBlob": "57f92dd1828bf4d7801b4f6c72a4322e2b474137"
+    },
+    {
+      "kind": "source",
+      "path": "packages/storage/migrations/030-goal-progression.sql",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "bytes": 4315,
+      "sha256": "0a6a7c0f09729b53da704e188d19167bd907b8180fad8b7f3d761c4a39609737",
+      "gitBlob": "096fc6a7e361db984fd41765cf7d7719d46c62d3"
+    }
+  ],
+  "comparison": "14 reviewed source files byte-identical",
+  "review": "docs/evidence/o14/independent-review.json",
+  "limitation": "Module/manual sweep only. Existing provenance reader explicitly tolerates absent030; factory/client/automatic lifecycle integration pending F01. No provider/personal runtime update.",
+  "typecheck": {
+    "exit": 0,
+    "stdout": "docs/evidence/i02/goal-progression-module-types.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
