@@ -1,6 +1,6 @@
 # ATTACH01 phase1 handoff
 
-固定合同实现 `6bc2918cf35a652e241e6378c3b6297cac179adb`，base `f181d84b5fb3652d62e2a181acff442d42b3e066`，branch `codex/attachment-resources`。独审状态见[review](../../../plans/wpf-attach01-resources/review.md)，此候选尚未批准/main接收。
+固定合同实现 `6bc2918cf35a652e241e6378c3b6297cac179adb`，base `f181d84b5fb3652d62e2a181acff442d42b3e066`，branch `codex/attachment-resources`。独审状态见[review](../../../plans/wpf-attach01-resources/review.md)，phase1已获root独审APPROVED，main接收未发生。
 
 入口：[Interface](interface.md)、[验证](validation.md)、[质量](quality.md)、[final hashes](resource-checks.json)、[claim](take-receipt.json)。本片无UI预览/截图，因为只交typed合同和pure校验。
 

@@ -1,6 +1,6 @@
 # ATTACH01 phase1 validation
 
-固定实现 `6bc2918cf35a652e241e6378c3b6297cac179adb`；base `f181d84b5fb3652d62e2a181acff442d42b3e066`；2026-10-06 10:25:00 UTC。范围是两个合同源和一个专测；独审尚未开始。
+固定实现 `6bc2918cf35a652e241e6378c3b6297cac179adb`；base `f181d84b5fb3652d62e2a181acff442d42b3e066`；2026-10-06 10:25:00 UTC。范围是两个合同源和一个专测；root已限定批准phase1，详情见review。
 
 - **49/49 PASS**：41 attachment/consumer tests + 8 unchanged legacy context receipt tests，Vitest4.0.18，2026-10-06 03:23:53 -07 / 10:23:53 UTC，471ms（tests40ms）；[原日志](resource-direct.log)。
 - Node24 / pnpm9.15.4 根 `pnpm exec tsc --noEmit` exit0；[日志](resource-types.log)为空是成功退出。
@@ -18,3 +18,5 @@
 - 兼容fixture初次@flow/client在contracts package无依赖解析失败，新suite未收集，旧8通过；改显式只读相对入口。随后[compat-first.log](compat-first.log)44过1失败，是作者fixture开启queue却未加载page触发正确门禁；改普通Send场景queue=false，未改产品门禁。
 
 raw日志Vitest格式空白保留，不声称全raw证据diffcheck0。0browser/截图/HTTPserver/PG/provider/model/个人服务操作。后继真实PG/HTTP、cap发布、retention/授权原子性、prompt冻结/runner材料一致性尚未实现验证；不把schema成功当ready权威。
+
+Root独立49/49于03:25:41 PDT通过，1.01s；原日志root-independent.log。root已读作者tsc而未重复，不扩大成真实HTTP或运行域通过。
