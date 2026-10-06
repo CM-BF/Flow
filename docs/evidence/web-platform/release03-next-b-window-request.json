@@ -1,0 +1,46 @@
+{
+  "recordedAt": "2026-10-06T17:27:06.680796+00:00",
+  "state": "SOURCE_REVIEWS_APPROVED_AWAITING_NEW_B_WINDOW",
+  "task": "WPF-RELEASE03",
+  "owner": "w01_owner",
+  "source": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+  "metadata": "495f7287273ce7d4bfd56503c093c273a0a5b92c",
+  "backend": {
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6"
+  },
+  "artifact": {
+    "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "id": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+  },
+  "historyProof": {
+    "run": "all-20261006-164711-15b54e",
+    "sourceCommit": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+    "files": 12,
+    "contract": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086"
+  },
+  "budget": {
+    "previousMs": 39935,
+    "maximumRemainingMs": 140065,
+    "cleanupReserveMs": 20000,
+    "retainedTotalLimitBytes": 8388608,
+    "existing43RawBytes": 464871
+  },
+  "resource": {
+    "startBytes": 1207959552,
+    "stopBytes": 1140850688,
+    "freshSample": "NOT_TAKEN",
+    "grant": "NOT_GRANTED_AFTER_TUI_RETURN"
+  },
+  "mode": "app only, no A rerun, no artifact rebuild",
+  "requirements": [
+    "Root+peer fixed ef458 source reviews closed0blocking; preserve boundaries",
+    "Lead explicit separate PG/Chrome window",
+    "Fresh original4/currentHEAD/twohash/17+10readonlydeps/af51exactclosure/artifact/all12 and actualfree admission",
+    "New single-use gate, no automatic retry"
+  ],
+  "parallel": "W01 can edit DPERF wrapper source-only; return to frozenRELEASE at safe point when eligiblewindow is explicitly granted",
+  "peerReview": "release03-ef458-peer-source-review.md",
+  "rootReview": "release03-ef458-root-source-review.json",
+  "reviewBoundary": "Two source-only independent approvals/0blocking; newruntime NOT_RUN, no compatibility green"
+}

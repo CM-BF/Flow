@@ -1,0 +1,44 @@
+{
+  "result": "APPROVED_SOURCE_SCOPED",
+  "target": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+  "base": "6411ba7a43f0f54b5fc924ef8850b88d80e44ac2",
+  "metadataObserved": "495f7287273ce7d4bfd56503c093c273a0a5b92c",
+  "branch": "codex/web-current-preview-compatibility",
+  "dirty": "",
+  "files": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 32158,
+      "sha256": "4016c7811e77e12d8c8dbf2e6d90a433f93a3559bdff1e34b3a268a651c6d974"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 49676,
+      "sha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7"
+    }
+  ],
+  "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+  "oldRawVerified": {
+    "files": 43,
+    "bytes": 464871,
+    "equalOriginalGitAndCurrent": true
+  },
+  "blockingFindings": [],
+  "reviewed": [
+    "Only two claimed harness files change; supervisor/budget/history proof logic and product/backend/artifact remain unchanged",
+    "Complete bounded real UTF8 JSON ACK captured first with upstream hash; response framing/compression and accepted identity validated; app retains shared semantic decoder assertions",
+    "Downstream realstatus/fullbyte Content-Length/one actual byte prefix/Connectionclose; flush then owned TCP FIN, with1s error deadline. Local close facts are separate from browser receipt",
+    "Exact selected Request carries request→headers→requestfailed; headers/key/body digest crosschecked with wire and prefix/full framing;2s observer bound honors parent signal; no response.finished",
+    "Unknown actual UI and one actual wire POST before explicit Retry; exact second samekey/body/turn-or-item/replayedtrue; nextdraft/materialrefs/noCancel preserved",
+    "Only observed selectedfault console error permitted; all pageErrors remain disallowed; unsuccessful injection/cleanup retained as failure",
+    "Own observer handlers removed after successful validation or finally; one-shot close tracked and joined during owned preview cleanup"
+  ],
+  "limits": [
+    "Source approval only: no import/types/HTTP/PG/Chrome execution and no new runtime allowance",
+    "Actual client header receipt/body failure/unknownUI and1s close behavior remain unverified until new one-shot admitted B",
+    "Old B underlying Chromium retry attribution remains hypothesis; original43 raw preserved",
+    "No A rerun or artifact rebuild; reuse exact all12 attestation atba7 only with fixed backend/artifact/contract match",
+    "Cumulative39935ms/remaining140065ms is accounting, not new run permission"
+  ],
+  "cleanCode": "Reviewed named fault payload, one owned transport seam, bounded lifecycle, request identity versus UI state, error attribution, raw evidence immutability and retained behavior assertions. No required source correction found."
+}

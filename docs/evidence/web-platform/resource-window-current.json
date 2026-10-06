@@ -90,10 +90,11 @@
     "sourceRepair": {
       "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
       "metadata": "495f7287273ce7d4bfd56503c093c273a0a5b92c",
-      "review": "IN_PROGRESS root+peer source-only",
+      "review": "Root+peer APPROVED_SOURCE_SCOPED0blocking; NOT_RUN",
       "runtime": "NOT_RUN",
       "evidence": "release03-ef458-source-intake.json"
-    }
+    },
+    "nextWindowRequest": "release03-next-b-window-request.json"
   },
   "recoveryDirect": {
     "state": "CONTROLLED_DIRECT_PASS_CLEANED",
@@ -147,7 +148,8 @@
       "evidence": "dperf04-node-first-intake.json"
     },
     "metadata": "62ddb315adc26ff934eecf7e125079dd0ce47d36",
-    "review": "UNKNOWN targetabd2; scopedsource approved, browser/fullfeature pending"
+    "review": "UNKNOWN targetabd2; scopedsource approved, browser/fullfeature pending",
+    "wrapper": "SOURCE_ONLY_DISPATCHED17:26:23 original9; no behavior changes/runtime"
   },
   "leadEvents": [
     {

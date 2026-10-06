@@ -124,7 +124,7 @@
   "sparseSourceCandidate": "Historical estimate only; actual Lead-provisioned fixed362 source tree and four-scope receipt remain archived. No new source provision or in-place rewrite authorized.",
   "updatedAt": "2026-10-06T17:25:55.259474+00:00",
   "prepareState": "PREPARED_RELEASED",
-  "validationState": "EF458_FIXED_SOURCE_REVIEW_IN_PROGRESS_B_NOT_RUN",
+  "validationState": "EF458_SOURCE_APPROVED_AWAITING_NEW_B_WINDOW",
   "historicalRawArtifact": {
     "source": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
     "artifact": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
@@ -205,15 +205,18 @@
   },
   "latestSourceReview": {
     "target": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
-    "state": "IN_PROGRESS",
+    "state": "APPROVED_SOURCE_SCOPED root+peer",
     "rootParallel": true,
     "peer": "workspace_panels_owner",
-    "runtime": "NOT_RUN"
+    "runtime": "NOT_RUN",
+    "rootState": "APPROVED_SOURCE_SCOPED",
+    "peerEvidence": "release03-ef458-peer-source-review.md"
   },
   "latestActualEvidence": "release03-app-171109-intake.json",
   "sourceRepairAdvice": "release03-app-cause-intake.json",
   "currentWindow": {
     "state": "NO_SUCCESSOR_GRANTED_AFTER_TUI_RETURN",
     "evidence": "lead-tui01f-return-1718.json"
-  }
+  },
+  "nextWindowRequest": "release03-next-b-window-request.json"
 }

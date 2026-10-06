@@ -1,6 +1,6 @@
 {
   "observedAt": "2026-10-06T17:25:55.259474+00:00",
-  "state": "FIXED_SOURCE_INDEPENDENT_REVIEW_IN_PROGRESS",
+  "state": "SOURCE_REVIEWS_APPROVED_AWAITING_NEW_B_WINDOW",
   "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
   "metadata": "495f7287273ce7d4bfd56503c093c273a0a5b92c",
   "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
@@ -33,13 +33,16 @@
   "quality": {
     "method": "Existing local find-skills/clean-code reused: pin evidence and author status separately from runtime/independent review; no new modules or product checks",
     "metadata": {
-      "files": 8,
-      "jsonValid": 5,
-      "localLinks": 379,
+      "files": 10,
+      "jsonValid": 6,
+      "localLinks": 383,
       "broken": [],
       "scopeErrors": 0,
       "diffCheck": 0
     },
     "statusParser": "errors[]/humancomplete WPF36/M01 5/M06 6/DPERF3"
-  }
+  },
+  "rootReview": "release03-ef458-root-source-review.json",
+  "peerReview": "release03-ef458-peer-source-review.md",
+  "reviewBoundary": "Two source-only independent approvals/0blocking; newruntime NOT_RUN, no compatibility green"
 }
