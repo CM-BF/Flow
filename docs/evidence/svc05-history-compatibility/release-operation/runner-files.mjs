@@ -14,7 +14,10 @@ const fileMatches = (actual, expected) => actual.isFile() && !actual.isSymbolicL
   && actual.uid === process.getuid() && actual.dev === expected.dev && actual.ino === expected.ino
   && actual.size === expected.size && actual.mtimeMs === expected.mtimeMs && actual.ctimeMs === expected.ctimeMs;
 
-export async function runnerFiles(root, io = { lstat, readdir, bounded }) {
+export async function runnerFiles(root, baseUrl, io = { lstat, readdir, bounded }) {
+  // Same normalization/hash as fixed runtime.ts stateDirectory; never discover a journal by filename.
+  const admissionPath = sha(baseUrl.replace(/\/$/, '')) + '/admission.json';
+  const temporaryPath = admissionPath + '.tmp';
   const deadline = performance.now() + 250, observations = [], directories = new Map();
   let identity, observedEntries = 0, observedBytes = 0;
   const fail = code => Object.assign(Error(code), { code });
@@ -54,23 +57,23 @@ export async function runnerFiles(root, io = { lstat, readdir, bounded }) {
           if (!name || name === '.' || name === '..' || name.includes('/') || name.includes('\0')) throw fail('RUNNER_ENTRY_NAME');
           if (++observedEntries > 512) throw fail('RUNNER_ENTRY_BOUND');
           const relative = prefix + name, next = join(path, name);
-          if (relative === 'admission.json.tmp' && !entry.isFile()) throw fail('RUNNER_FILE_IDENTITY');
+          if (relative === temporaryPath && !entry.isFile()) throw fail('RUNNER_FILE_IDENTITY');
           try {
             const st = await read(() => io.lstat(next));
             if (st.isSymbolicLink() || st.uid !== process.getuid()) throw fail('RUNNER_FILE_IDENTITY');
             if (st.isDirectory()) await walk(next, st, relative + '/', depth + 1);
             else {
               if (sample.files.length >= 256 || !st.isFile()) throw fail('RUNNER_FILE_BOUND');
-              const bytes = await content(next, st, relative === 'admission.json' ? 65536 : 8 * 1024 * 1024);
+              const bytes = await content(next, st, relative === admissionPath ? 65536 : 8 * 1024 * 1024);
               sample.files.push({ path: relative, bytes: bytes.length, sha256: sha(bytes) }); sample.totalBytes += bytes.length;
-              if (relative === 'admission.json') {
+              if (relative === admissionPath) {
                 sample.admission = { idle: idle(bytes) };
                 if (!sample.admission.idle) throw fail('RUNNER_ADMISSION_NOT_IDLE');
               }
             }
           } catch (error) {
             // No missing directory/history file is retried. Only this enumerated, fixed temporary entry.
-            if (relative === 'admission.json.tmp' && error.code === 'ENOENT') throw Object.assign(fail('RUNNER_ADMISSION_RENAMED'), { retry: true });
+            if (relative === temporaryPath && error.code === 'ENOENT') throw Object.assign(fail('RUNNER_ADMISSION_RENAMED'), { retry: true });
             throw error;
           }
         }
@@ -79,11 +82,11 @@ export async function runnerFiles(root, io = { lstat, readdir, bounded }) {
       try {
         await walk(root, identity);
         if (!sample.admission?.idle) throw fail('RUNNER_ADMISSION_MISSING');
-        if (sample.files.some(f => f.path === 'admission.json.tmp')) throw fail('RUNNER_ADMISSION_TEMP_PRESENT');
-        const st = await read(() => io.lstat(join(root, 'admission.json')));
-        const bytes = await content(join(root, 'admission.json'), st, 65536);
-        sample.admissionFinal = { idle: idle(bytes), bytes: bytes.length, sha256: sha(bytes) };
-        if (!sample.admissionFinal.idle || sample.admissionFinal.sha256 !== sample.files.find(f => f.path === 'admission.json').sha256) throw fail('RUNNER_ADMISSION_CHANGED');
+        if (sample.files.some(f => f.path === temporaryPath)) throw fail('RUNNER_ADMISSION_TEMP_PRESENT');
+        const st = await read(() => io.lstat(join(root, admissionPath)));
+        const bytes = await content(join(root, admissionPath), st, 65536);
+        sample.admissionFinal = { path: admissionPath, idle: idle(bytes), bytes: bytes.length, sha256: sha(bytes) };
+        if (!sample.admissionFinal.idle || sample.admissionFinal.sha256 !== sample.files.find(f => f.path === admissionPath).sha256) throw fail('RUNNER_ADMISSION_CHANGED');
         await checkDirectory(root, identity); sample.outcome = 'idle';
         return { dev: identity.dev, ino: identity.ino, uid: identity.uid, files: sample.files, totalBytes: sample.totalBytes,
           admission: sample.admissionFinal, observations, retries: attempt, observedEntries, observedBytes, nonAtomic: true };

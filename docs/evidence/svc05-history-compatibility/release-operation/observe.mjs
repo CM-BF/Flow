@@ -85,7 +85,7 @@ export async function observe() {
   result.invariantStateSha256 = sha(JSON.stringify(invariantState)); result.lastError = state.lastError;
   result.webArtifact = state.webArtifact; result.webReleaseOperation = state.webReleaseOperation ?? null;
   result.operation = await host.readPreviewJson(join(directory, 'maintenance.json'));
-  result.native = await runnerFiles(join(directory, 'runner'));
+  result.native = await runnerFiles(join(directory, 'runner'), `http://127.0.0.1:${config.centerPort}`);
   result.lock = await lstat(join(directory, 'operation.lock')).then(() => 'present', e => e.code === 'ENOENT' ? 'absent' : 'unknown');
   for (const role of ['center', 'runner', 'web']) {
     const r = state.processes[role]; result.processes[role] = { pid: r.pid, group: r.group, recordSha256: sha(JSON.stringify(r)), identity: await processes.inspectOwnedProcess(r) };

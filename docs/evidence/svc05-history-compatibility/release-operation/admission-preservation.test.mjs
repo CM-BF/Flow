@@ -2,18 +2,22 @@ import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, lstat, readdir, writeFile, rename, unlink, rm, mkdir, symlink } from 'node:fs/promises';
 import { join } from 'node:path';
-import { runnerFiles } from './runner-files.mjs';
+import { runnerFiles as observeRunnerFiles } from './runner-files.mjs';
 import { compare } from './preservation.mjs';
 import { bounded, durable, sha } from '../center-recovery/facts.mjs';
 
 const parent = process.env.FLOW_SVC05H_TEST_TMP, output = process.env.FLOW_SVC05H_TEST_FACTS;
 assert.ok(parent && output, 'Only exclusive, supervisor-owned test paths');
 const parentIdentity = await lstat(parent), records = [];
+const baseUrl = 'http://127.0.0.1:61227', namespace = sha(baseUrl);
+const journal = (root, name) => join(root, namespace, name);
+const runnerFiles = (root, io) => observeRunnerFiles(root, baseUrl, io);
 const idle = JSON.stringify({ version: 1, inFlight: null, assignments: [] });
 const io = { lstat, readdir, bounded };
 const create = async () => {
   const root = await mkdtemp(join(parent, 'runner-'));
-  await writeFile(join(root, 'admission.json'), idle, { mode: 0o600 });
+  await mkdir(join(root, namespace));
+  await writeFile(journal(root, 'admission.json'), idle, { mode: 0o600 });
   await writeFile(join(root, 'history.result'), 'fixed historical delivery', { mode: 0o600 });
   return root;
 };
@@ -29,13 +33,49 @@ after(async () => {
   await rm(parent, { recursive: true });
 });
 
+
+test('namespace uses the exact normalized runtime digest and preserves whole-root history', async () => {
+  const root = await create();
+  const result = await captured(() => observeRunnerFiles(root, baseUrl + '/'));
+  assert.equal(result.admission.path, namespace + '/admission.json');
+  assert.equal(result.admission.idle, true);
+  assert.ok(result.files.some(f => f.path === 'history.result'));
+  assert.ok(result.files.some(f => f.path === namespace + '/admission.json'));
+});
+
+test('namespace root or wrong-digest fake admission never satisfies idle', async () => {
+  for (const wrong of ['', sha('http://127.0.0.1:61226')]) {
+    const root = await mkdtemp(join(parent, 'wrong-'));
+    if (wrong) await mkdir(join(root, wrong));
+    await writeFile(join(root, wrong, 'admission.json'), idle);
+    await assert.rejects(captured(() => runnerFiles(root)), e => e.code === 'RUNNER_ADMISSION_MISSING'
+      && e.runnerObservation.observations[0].files.length === 1);
+  }
+});
+
+test('namespace atomic rename only retries its enumerated admission temporary', async () => {
+  const root = await create(); await writeFile(journal(root, 'admission.json.tmp'), idle);
+  let renamed = false;
+  const result = await captured(() => runnerFiles(root, { ...io, readdir: async (path, options) => {
+    const entries = await readdir(path, options);
+    if (!renamed && path === join(root, namespace)) { renamed = true; await rename(journal(root, 'admission.json.tmp'), journal(root, 'admission.json')); }
+    return entries;
+  } }));
+  assert.equal(result.retries, 1); assert.equal(result.admission.path, namespace + '/admission.json');
+  assert.equal(result.observations[0].code, 'RUNNER_ADMISSION_RENAMED');
+  const other = await create(); await writeFile(join(other, 'admission.json.tmp'), idle);
+  await assert.rejects(captured(() => runnerFiles(other, { ...io, readdir: async (path, options) => {
+    const entries = await readdir(path, options); if (path === other) await unlink(join(other, 'admission.json.tmp')); return entries;
+  } })), e => e.code === 'ENOENT' && e.runnerObservation.observations.length === 1);
+});
+
 test('enumerated admission temporary rename or disappearance gets a bounded fresh sample', async () => {
   for (const action of ['rename', 'disappear']) {
-    const root = await create(); await writeFile(join(root, 'admission.json.tmp'), idle);
+    const root = await create(); await writeFile(journal(root, 'admission.json.tmp'), idle);
     let changed = false;
     const result = await captured(() => runnerFiles(root, { ...io, readdir: async (path, options) => {
       const names = await readdir(path, options);
-      if (!changed && path === root) { changed = true; if (action === 'rename') await rename(join(root, 'admission.json.tmp'), join(root, 'admission.json')); else await unlink(join(root, 'admission.json.tmp')); }
+      if (!changed && path === join(root, namespace)) { changed = true; if (action === 'rename') await rename(journal(root, 'admission.json.tmp'), journal(root, 'admission.json')); else await unlink(journal(root, 'admission.json.tmp')); }
       return names;
     } }));
     assert.equal(result.retries, 1); assert.equal(result.observations.length, 2);
@@ -56,10 +96,10 @@ test('in-flight, assignments, malformed admission and remaining temporary file a
   for (const value of [JSON.stringify({ version: 1, inFlight: '6a1c914f-745b-4514-93d3-d26078d3fae4', assignments: [] }),
     JSON.stringify({ version: 1, inFlight: null, assignments: [{ attemptId: 'saved-attempt' }] }),
     JSON.stringify({ version: 1, inFlight: null, assignments: [], extra: true })]) {
-    const root = await create(); await writeFile(join(root, 'admission.json'), value);
+    const root = await create(); await writeFile(journal(root, 'admission.json'), value);
     await assert.rejects(captured(() => runnerFiles(root)), e => e.code === 'RUNNER_ADMISSION_NOT_IDLE' && e.runnerObservation.observations.length === 1);
   }
-  const root = await create(); await writeFile(join(root, 'admission.json.tmp'), idle);
+  const root = await create(); await writeFile(journal(root, 'admission.json.tmp'), idle);
   await assert.rejects(captured(() => runnerFiles(root)), { code: 'RUNNER_ADMISSION_TEMP_PRESENT' });
 });
 
@@ -72,9 +112,9 @@ test('root loss, history disappearance and directory symlink fail closed without
   await assert.rejects(captured(() => runnerFiles(second, { ...io, lstat: async path => {
     if (path === second && ++count === 2) throw Object.assign(Error('root disappeared'), { code: 'ENOENT' }); return lstat(path);
   } })), e => e.code === 'ENOENT');
-  const tempDirectory = await create(); await mkdir(join(tempDirectory, 'admission.json.tmp'));
+  const tempDirectory = await create(); await mkdir(journal(tempDirectory, 'admission.json.tmp'));
   await assert.rejects(captured(() => runnerFiles(tempDirectory, { ...io, readdir: async (path, options) => {
-    const entries = await readdir(path, options); if (path === tempDirectory) await rm(join(tempDirectory, 'admission.json.tmp'), { recursive: true }); return entries;
+    const entries = await readdir(path, options); if (path === join(tempDirectory, namespace)) await rm(journal(tempDirectory, 'admission.json.tmp'), { recursive: true }); return entries;
   } })), { code: 'RUNNER_FILE_IDENTITY' });
   const third = await create(); await symlink(second, join(third, 'nested'));
   await assert.rejects(captured(() => runnerFiles(third)), { code: 'RUNNER_FILE_IDENTITY' });
@@ -83,7 +123,7 @@ test('root loss, history disappearance and directory symlink fail closed without
 test('persistent temporary churn exhausts exactly two retries; no implicit success', async () => {
   const root = await create();
   await assert.rejects(captured(() => runnerFiles(root, { ...io, readdir: async (path, options) => {
-    if (path === root) { await writeFile(join(root, 'admission.json.tmp'), idle); const names = await readdir(path, options); await unlink(join(root, 'admission.json.tmp')); return names; }
+    if (path === join(root, namespace)) { await writeFile(journal(root, 'admission.json.tmp'), idle); const names = await readdir(path, options); await unlink(journal(root, 'admission.json.tmp')); return names; }
     return readdir(path, options);
   } })), e => e.code === 'RUNNER_ADMISSION_RENAMED' && e.runnerObservation.observations.length === 3);
 });
