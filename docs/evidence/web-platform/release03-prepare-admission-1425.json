@@ -1,0 +1,67 @@
+{
+  "observedAt": "2026-10-06T14:25:46.703154+00:00",
+  "sourceWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+  "branch": "codex/web-attachment-production",
+  "head": "5069586a9f17332de526e101eca3a4250cbc8d91",
+  "dirty": "",
+  "availableBytes": 1262997504,
+  "requiredStartBytes": 1207959552,
+  "spaceAdmitted": true,
+  "cache": [
+    {
+      "path": "apps/web/node_modules/.vite-temp",
+      "exists": true,
+      "isSymlink": false,
+      "isDirectory": true,
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/node_modules/.vite-temp",
+      "writable": true,
+      "uid": 501
+    },
+    {
+      "path": "apps/web/node_modules/.vite",
+      "exists": true,
+      "isSymlink": false,
+      "isDirectory": true,
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/node_modules/.vite",
+      "writable": true,
+      "uid": 501
+    }
+  ],
+  "ledgerRawPath": "/tmp/d01-release03-admission-ledger.json",
+  "ledgerSha256": "5c6fa335e0379cef85c5f4fbe1c552b10939e7f69a648d5cc980480ccde3fcf4",
+  "ledgerTopKeys": [
+    "state",
+    "observedAt",
+    "claims"
+  ],
+  "note": "One fresh admission observation; shared-volume free space has no exclusive attribution. No build, claim, service or product operation yet.",
+  "conflicts": [],
+  "managementClaim": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform",
+        "plans/wpf-mature-01-visual",
+        "plans/wpf-mature-03-attachments",
+        "plans/wpf-mature-05-workspace",
+        "plans/wpf-mature-06-chat"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T08:56:20.186Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    }
+  ],
+  "allGatesForTake": true
+}

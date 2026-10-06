@@ -1,0 +1,7 @@
+(version 1)
+(allow default)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/flow-release03-prepare-5069586-u1zh3mln"))
+(allow file-write* (subpath "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/node_modules/.vite-temp"))
+(allow file-write* (subpath "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/node_modules/.vite"))
+(allow file-write* (literal "/dev/null"))

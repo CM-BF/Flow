@@ -1,0 +1,52 @@
+{
+  "observedAt": "2026-10-06T14:30:08.386524+00:00",
+  "kind": "INDEPENDENT_READONLY_ARTIFACT_INTEGRITY",
+  "artifact": {
+    "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+  },
+  "releaseId": "388371a4972c469b8ace623454594132",
+  "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+  "sourceProvenance": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+  "files": 10,
+  "totalBytes": 1588311,
+  "checks": {
+    "manifestDigest": true,
+    "fullFileSetAndBytes": true,
+    "noSymlinks": true,
+    "rootEntries": true,
+    "formatAndReleaseId": true,
+    "sourceDescriptor": true,
+    "evidenceHashes": {
+      "config.json": true,
+      "gate.json": true,
+      "live-ledger.json": true,
+      "supervise.py": true,
+      "driver.mjs": true,
+      "prepare.sb": true,
+      "tools/web-artifact.mjs": true,
+      "tools/environment.mjs": true,
+      "supervisor-result.json": true,
+      "artifact-result.json": true,
+      "cache-before.json": true,
+      "cache-after.json": true
+    },
+    "fixedToolBytes": {
+      "web-artifact.mjs": true,
+      "environment.mjs": true
+    },
+    "sourceHeadCurrent": true,
+    "sourceCleanCurrent": true,
+    "gitTree": true,
+    "lockGitBytes": true,
+    "approvedImplementationSourceEqual": true,
+    "releaseNamespacedHtml": true
+  },
+  "limitations": [
+    "No rebuild, server/browser/PG/provider or personal service operation",
+    "Integrity/source binding only; backend compatibility and publication remain unverified",
+    "Supervisor runtime/cleanup claims are source report, not independently reproduced"
+  ],
+  "sourceDiff": ""
+}

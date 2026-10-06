@@ -48,7 +48,7 @@
       "fullInstallBuildMinimumBytes": 2684354560
     },
     "afterCheckoutAvailableBytes": 1416241152,
-    "permitted": "Small source/metadata only while below resource reserve; two dependency/type windows finished, no new artifact tests.",
+    "permitted": "Small source and existing-dependency noEmit under60s segment budget continue. New behavioral/artifact checks separately gated; latest shared-space observation is resource-admission-1425.json.",
     "fullBuildGate": "Superseded at Lead13:49: SVC06 alone retains2.5GiB; otherWebnewartifacts/dependencycopies require actualpeak estimation and about1GiB completionmargin. No build authorized yet.",
     "historicalPreflightBoundary": "Embedded13:46preflight/provision observations and originalclaim unchanged; currentpolicy record resource-policy-1349.json."
   },
@@ -58,7 +58,7 @@
     "repeat connect /32slot semantics",
     "real browser/IDB/HTTP evidence within approved budget and resources"
   ],
-  "release03": "not taken; no matching formalformat2 descriptor, build resource gate unmet, actualbackend362history repair/observation gate retained",
+  "release03": "One formalformat2 artifact now prepared, two-cache claim released; actualbackend362 compatibility and publication remain pending. No continuing cachewriter.",
   "archives": [
     {
       "path": "recovery01-provision-resource-preflight.json",
@@ -117,6 +117,6 @@
   ],
   "currentResourcePolicy": "resource-policy-1349.json",
   "currentClaim": "6ff988b2 v4, original 21 scopes only; all temporary dependency scopes relinquished after explicit stop. Receipt recovery01-dependency-final-narrow-receipt.json.",
-  "currentResourceGate": "resource-admission-1405.json",
+  "currentResourceGate": "resource-admission-1425.json (one prepare admission only; earlier1405 retained)",
   "earlyReview": "recovery01-82d78-root-readonly-findings.json: five early foundation findings, not final review. Earlier three-item message is superseded; raw was expanded before archival."
 }

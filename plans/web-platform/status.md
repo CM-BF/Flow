@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:21 UTC / 八项部分预审与DPERF源码请求 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:29 UTC / 正式format2准备完成与临时写权释放 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 刷新恢复持续接线，临时依赖写权已归还；稳定页面发布未运行，看板摘要后继已获结构批准待源码树 |
-| 下一可用交付 | 继续完整草稿与未决回执恢复接线；空间满足门槛后准备正式页面产物并验证当前后台兼容 |
-| 当前阻塞 | ACTIVE: 全机可用空间低于1GiB保留额，发布prepare未take/build，新依赖与浏览器/PG验证暂停；恢复小源码继续，最终旅程仍需中心三语义，发布仍需后台362附件历史组合验证 |
+| 当前产出 | 刷新恢复持续接线；稳定页面正式format2产物已准备且临时写权释放，看板摘要后继仍待Lead源码树 |
+| 下一可用交付 | 取得独立验证树和资源后核当前后台与正式页面产物兼容；并行继续完整草稿与未决回执恢复 |
+| 当前阻塞 | ACTIVE: 后台362附件历史缺口及真实兼容验证、正式发布待完成；恢复真实旅程仍待独立资源与中心三语义，源码及限额noEmit继续 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -113,7 +113,7 @@ SVC05窗口已由Lead正式关闭，个人backend362/v15与Web8d8/caa1/v2沿服�
 
 [本次收敛前原文历史](status-history.md)保留原时点、失败、未验、SHA与原始证据链接；仅历史不得更新成第二状态源。[plan](plan.md)保留完整U00–U12/REQ01–45与稳定36TODO；[research](../../docs/evidence/web-platform/research.md)记录研究依据；[固定发布说明](../../docs/evidence/web-platform/publication/README.md)界定a5独审副本；[本轮成熟度handoff](../../docs/evidence/web-platform/mature-task-handoff.md)供正常登记/集成。
 
-[RELEASE03候选/批准范围](../../docs/evidence/web-platform/release03-current-preview-proposal.json)直接MATURE01，w01唯一验证owner、未claim；不复用RELEASE01/02释放权，不抢Recovery。原SVCoperator独立接精确descriptor/compatibility后发布；个人服务未操作。
+[RELEASE03候选/批准范围](../../docs/evidence/web-platform/release03-current-preview-proposal.json)直接MATURE01，w01唯一验证owner、四scope验证未claim；两cacheprepare已完成并释放，见[take与释放](../../docs/evidence/web-platform/release03-prepare-release-receipt.json)；不复用RELEASE01/02释放权，不抢Recovery。原SVCoperator独立接精确descriptor/compatibility后发布；个人服务未操作。
 
 恢复正式领取与唯一来源见[dispatch审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)和[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json)；当前实施事实由新owner status维护，不由管理表复制TODO。13源比对不是13tests，Lead组合为1pass/2未选+types0；本组无产品复测。
 

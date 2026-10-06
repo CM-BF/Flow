@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-06T14:09:44.264975+00:00",
-  "state": "CONDITIONAL_RUN_APPROVED_BUT_FRESH_DISK_GATE_FAILED_NOT_TAKEN",
+  "recordedAt": "2026-10-06T14:28:17.634869+00:00",
+  "state": "FORMAL_PREPARE_SUCCEEDED_TWO_CACHE_CLAIM_RELEASED",
   "task": "WPF-RELEASE03",
   "directParent": "WPF-MATURE-01",
   "writer": "w01_owner",
@@ -26,11 +26,11 @@
       "action": "Recoveryowner stopsdependencywrites; freshamend removesparent beforeReleasecachetake. DifferentWT doesnotbypassgloballedger.",
       "resolved": "Recoveryv3amend14:03:44.346Z removedapps/webparent and3package dependencydirs; cachetake stillmustfreshcheckaftersecondresourcewindow."
     },
-    "latestAdmission": "release03-prepare-admission-deferred.json: 14:05:53.498Z ledger, no conflicts; source506 clean"
+    "latestAdmission": "release03-prepare-admission-1425.json: fresh14:25:46 ledger no conflicts, source506 clean, free1262997504B; f51fb3ad v1 COMMITTED14:25:59.538Z"
   },
   "originalOwnerAgreement": "W01 explicitly agreed conditional root one-prepare authorization + fresh runclaim, only own two caches/privateoutput; all prior source scopes remain stopped. See archived report.",
   "claimSequence": "Prefer same RELEASE03 serial runclaim on existingWT two exact ignoredcache dirs, then explicit stop/release before its separate verificationWT fourliteral claim. Fourliteral proposal is untaken so cannot amend it; D04 forbids same task or WT parallelwriter. No additional producttask/thirdlayer.",
-  "privateOutput": "Prepared only private /private/tmp/flow-release03-prepare-5069586-u1zh3mln (0700), gate absent, no build execution. Old source/cache unchanged.",
+  "privateOutput": "Formal artifact retained in private run directory; see release03-formal-prepare/prepare-handoff.json for exact descriptor/location.",
   "blockingWriteSeam": {
     "trigger": "installedVite recursive mkdir(.vite-temp) EACCES triggers configuration-adjacent temp path; writeFile failure later does not fallback",
     "potentialPath": "apps/web/vite.config.ts.timestamp-<time>-<random>.mjs",
@@ -42,9 +42,9 @@
     "priority": "Recovery dependencywindow before RELEASE03build; no concurrent new preparations",
     "policy": "Lead13:49 onlySVC06 >=2.5GiB; otherWeb actualpeak estimate +about1GiBcompletionmargin",
     "lastOwnerSnapshot": "13:56 historical sample only; current separate observations in resource-admission-1405.json",
-    "candidateBudgetOnly": "Root conditionally approved 120s including20s cleanup, exact two-cache scope, sandbox allowlist and start/stop gates; currently not admitted, not a hard quota. Product HTTP/browser180s unchanged.",
+    "candidateBudgetOnly": "Original root-approved one prepare budget now dispatched under exact claim; no compatibility/publish or future run permission.",
     "recoveryWindow": "Both dependency/type windows complete; v4 now original 21 source scopes only, five dependency scopes stopped/removed. Links retained read-only.",
-    "currentAdmission": "Manager 900775936B <1207959552B start threshold, later root952800KiB also below1GiB; no take/build."
+    "currentAdmission": "14:25 single admission succeeded; one prepare1.919s with min observed including final1250111488B; cache no change, all stopped and f51 v2 released. No continuing run permission."
   },
   "compatibilityGate": "actualbackend362 attachment-only/mixed native context_observation/reportEvents remainsrequired; no SendQueue-only fullPASS, no personalpublishauthorization",
   "archives": [
@@ -134,12 +134,14 @@
     "directory": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln",
     "mode": "0700 ownerreport",
     "releaseId": "388371a4972c469b8ace623454594132",
-    "scriptState": "privateconfig/profile/driver/supervisor prepared; PythonASTonly; gateabsent; no build",
+    "scriptState": "Executed once successfully under original sandbox and guard hashes; fullraw preserved; 0PG/browser/provider/publication.",
     "fixedTool": "84005two sourcebyteshashed byowner",
     "rootApproval": "conditional onresourcewindow/freshclaim/free/consumer gates; originaloperatorpublishes",
     "staticReview": "release03-supervisor-static-review/static-guard-review.md",
     "executionBeforeFixes": "Two unexecuted supervisor guard findings fixed by W01 and read-only checked by root; see guard-fix-audit.json. No run/probe/build or resource-gate clearance.",
     "supervisorSha256": "6dcfd01d9713fd6af282d22c2a3e0b9eac83cb268bed2703c1e558e9e50e8d9f"
   },
-  "futureWorktreeCoordination": "Lead sole Git owner will serially enable shared extensions.worktreeConfig for O14, with sparse flags only its new config.worktree. This group changes no shared Git config/provision now. Future RELEASE03 sparse WT must coordinate with the same Git owner; estimate is not permission."
+  "futureWorktreeCoordination": "Lead sole Git owner will serially enable shared extensions.worktreeConfig for O14, with sparse flags only its new config.worktree. This group changes no shared Git config/provision now. Future RELEASE03 sparse WT must coordinate with the same Git owner; estimate is not permission.",
+  "currentClaimReceipt": "release03-prepare-release-receipt.json",
+  "managementAudit": "release03-formal-prepare-management-audit.json"
 }

@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-06T14:27:49.207448+00:00",
+  "operation": "Single authorized fixed84005 prepare and verify",
+  "claimId": "f51fb3ad-3a64-416f-b62f-923a6125dbdd",
+  "claimVersion": 1,
+  "success": true,
+  "artifactDirectory": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+  "artifact": {
+    "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+  },
+  "releaseId": "388371a4972c469b8ace623454594132",
+  "format": 2,
+  "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+  "approvedSourceProvenance": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+  "sourceTree": "f01fca67b9aa396ea6303fd2246c20c1d62d4277",
+  "lockDigest": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+  "toolchain": {
+    "node": "24.20.0",
+    "vite": "8.3.2"
+  },
+  "files": 10,
+  "rawArtifactBytes": 1588311,
+  "elapsedSeconds": 1.919,
+  "minimumObservedFreeIncludingFinalBytes": 1250111488,
+  "supervisorMonitorMinimumBytes": 1250115584,
+  "freeBeforeBytes": 1251807232,
+  "freeAfterBytes": 1250111488,
+  "sourceClean": true,
+  "cacheNewOrChanged": {},
+  "processGroupRemaining": false,
+  "cleanupErrors": [],
+  "scopeStopped": true,
+  "scope": [
+    "apps/web/node_modules/.vite",
+    "apps/web/node_modules/.vite-temp"
+  ],
+  "limits": "Polling is not a hard quota; shared filesystem free changes/OS swap not attributable to this run. Monitor minimum excludes final cleanup observation; both preserved explicitly.",
+  "notPerformed": [
+    "install",
+    "clone",
+    "PG product database",
+    "Chrome",
+    "provider",
+    "personal service/tab operation",
+    "publication",
+    "backend362 compatibility verification"
+  ],
+  "evidenceHashes": {
+    "config.json": "a328ff2a3b6d45e499c891ee455d1befcb39fc32c54ab67267146c3018af3bd6",
+    "gate.json": "57f75c59af5799af1a56f2efe6b568937cdf6b8de65a2e3dbea7f968964ec998",
+    "live-ledger.json": "15f464dadd21dea04281fc76f6b87a2a96c09838bc5ba64561074dc47e798bed",
+    "supervise.py": "6dcfd01d9713fd6af282d22c2a3e0b9eac83cb268bed2703c1e558e9e50e8d9f",
+    "driver.mjs": "f1bbb52ac119b39772108966bab3ebf684a2bfee2a665a896aaf4b775945e23e",
+    "prepare.sb": "8fae0a041295498ca35fcd171b9c1ebb853a1c504a4bff07112a86fb176e5a91",
+    "tools/web-artifact.mjs": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e",
+    "tools/environment.mjs": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+    "supervisor-result.json": "35b30582a9c1fc4cdc48ad849504a2d5e884947ea32d61cf487185830ece20cd",
+    "artifact-result.json": "5896f4f9945f1ddd0ff0a416ecb03df0346a3bfaf91829341172d659cf83680e",
+    "cache-before.json": "777297d11c51db4a6dc956ceb76d3205df9df33243bc22fc97f3d30a2f645287",
+    "cache-after.json": "777297d11c51db4a6dc956ceb76d3205df9df33243bc22fc97f3d30a2f645287"
+  }
+}

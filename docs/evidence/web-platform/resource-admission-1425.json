@@ -1,0 +1,98 @@
+{
+  "recordedAt": "2026-10-06T14:28:17.634869+00:00",
+  "opsSource": "resource-space-ops-1418.json",
+  "opsLatest": {
+    "at": "2026-10-06T14:18:00.009252+00:00",
+    "availableBytes": 1198407680,
+    "observedVolumeDeltaBytes": 20066304,
+    "attribution": "Shared-volume before/after, not exclusive reclaim attribution; below RELEASE start but above1GiB."
+  },
+  "laterLeadInbound": "browser/TUI ended own trees sparse: shared volume deltas +20066304/+43560960B; approximately1.19GB is not an admission value. O14 new sparse tree12,568KiB by sole Git owner, no deps; this team made no Git configuration or sparse changes.",
+  "freshAdmission": {
+    "at": "2026-10-06T14:25:46.703154+00:00",
+    "availableBytes": 1262997504,
+    "threshold": 1207959552,
+    "conflicts": [],
+    "decision": "exact two-cache take and one bounded prepare dispatched; worker must still pass runtime gates"
+  },
+  "ledgerObservedAt": "2026-10-06T14:25:46.677Z",
+  "managementClaim": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform",
+        "plans/wpf-mature-01-visual",
+        "plans/wpf-mature-03-attachments",
+        "plans/wpf-mature-05-workspace",
+        "plans/wpf-mature-06-chat"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T08:56:20.186Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    }
+  ],
+  "flowRefObservation": {
+    "head": "ec50957fc7bd39e47cb6c44de852fe99373e05e7",
+    "main": "ec50957fc7bd39e47cb6c44de852fe99373e05e7",
+    "originMain": "ec50957fc7bd39e47cb6c44de852fe99373e05e7",
+    "role": "working integration window observation, not a new formal deployment/main receipt"
+  },
+  "registryRead": {
+    "path": "apps/execution-dashboard/src/registry.mjs",
+    "recoveryEntryObserved": false,
+    "dperf04EntryObserved": false,
+    "limit": "File-only read, no aggregate/PG snapshot/4320 request; no new DPERF source provision receipt found."
+  },
+  "independentGates": "SVC06 remains2.5GiB; Recovery small source + authorized noEmit continue, actual new dependency/PG/browser/build require their own resource decision. No blanket feature unblock or all-development blocked claim.",
+  "historical": "resource-admission-1405.json remains exact earlier failed observations, not current absolute free-space claim.",
+  "rawArchives": [
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow/docs/quality/resource-space-2026-10-06.json",
+      "archive": "resource-space-ops-1418.json",
+      "bytes": 3805,
+      "sha256": "a22697770f35662f8ce24868c1c77af5f26977b2e5948c2594c9234cd29f85b7"
+    },
+    {
+      "source": "/tmp/d01-release03-admission-1418.json",
+      "archive": "release03-prepare-admission-1425.json",
+      "bytes": 2307,
+      "sha256": "6315ce22d243b17ae9a0419688be7a3f705eb9ddfcaae57b866e18ac39b4f0de"
+    },
+    {
+      "source": "/tmp/d01-release03-prepare-take-request.json",
+      "archive": "release03-prepare-take-request.json",
+      "bytes": 421,
+      "sha256": "ebd3ea75647aa0a8ccd60c6a05933e9e46347c961986e07608c8000be3e21e89"
+    },
+    {
+      "source": "/tmp/d01-release03-prepare-take-receipt.json",
+      "archive": "release03-prepare-take-receipt.json",
+      "bytes": 642,
+      "sha256": "da8fe63217f7c9538acd1374a9c7370d3c514749e8e391296d865625774c96b4"
+    },
+    {
+      "source": "/tmp/root-recovery-plugin-surface-coverage-82d78.json",
+      "archive": "recovery01-plugin-surface-coverage-82d78.json",
+      "bytes": 1619,
+      "sha256": "02ce3a2d2cc6b54c5b48b0907be791f09d6d8c435c8d62c99d334f9036ead914"
+    }
+  ],
+  "outcome": "One prepare1.919s succeeded, exactartifact/manifest checked; both scopes stopped then freshrelease f51fb3ad v2. No additional manager disk polling.",
+  "authorRuntimeSpace": {
+    "freeBeforeBytes": 1251807232,
+    "minimumObservedFreeIncludingFinalBytes": 1250111488,
+    "attribution": "Author bounded runtime monitoring, shared volume not exclusive allocation attribution or hard quota"
+  }
+}

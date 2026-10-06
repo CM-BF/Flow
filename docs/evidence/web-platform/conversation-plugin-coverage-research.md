@@ -54,3 +54,8 @@ Panels现有Arc只读Interface已收敛，[候选18literal/唯一layout/稳定�
 ### 附件条目动作仍缺 P01 覆盖（root固定9eec源码审计，后继）
 
 [原始固定审计](attachment-plugin-coverage-9eec.json)对应REQ22–23/WPF-001-05、MATURE03-03与MATURE01-02。Files入口和整个composer面板已走P01，但Picker的草稿/项目目录/恢复条目动作仍硬编码；ResourceContext没有pre-task attachment item。现artifact.actions是task reference，不能把upload ref套成task artifact或借taskId冒授权。后继优先复用单一registry，让真实上传条目可由sample贡献动作，宿主核当前center/view/project/fixed-ref；不公开private FlowClient。declare/grant、disable/unload/revoke及旧view回调须实测；unknown upload尚无ready ref，不能授权为已接受artifact。本次仅源码coverage缺口，不是ATTACHI02新blocking finding、不扩范围/抢06-04优先级。
+
+
+### 恢复界面扩展覆盖后继（fixed82d78，只读）
+
+[root固定源码审计](recovery01-plugin-surface-coverage-82d78.json)确认恢复入口已是P01 sidebar.footer command/button，但RecoverySurface内部refresh/restore/retry/remove仍固定按钮，无header/record-actions扩展接缝。沿REQ22–23与原06-04覆盖后继，由plugin co-lead定义最小record id/domain/phase+当前binding context；不暴露raw journal/client/全部namespace，保原命令授权与失效代次。此为partial实现的覆盖记录，不是当前21scope新finding/验收gate或全plugin完成；0运行，不扩写权。

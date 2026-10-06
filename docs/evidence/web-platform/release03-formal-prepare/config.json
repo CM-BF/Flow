@@ -1,0 +1,42 @@
+{
+  "preparedAt": "2026-10-06T14:02:36.228983+00:00",
+  "run": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln",
+  "sourceRepository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+  "target": "5069586a9f17332de526e101eca3a4250cbc8d91",
+  "approvedProvenance": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+  "fixedTool": "84005a260dfcb668cd38b09c21564d0754a0f513",
+  "releaseId": "388371a4972c469b8ace623454594132",
+  "node": "/opt/homebrew/opt/node@24/bin/node",
+  "tools": [
+    {
+      "path": "tools/web-artifact.mjs",
+      "source": "84005a260dfcb668cd38b09c21564d0754a0f513:tools/personal-preview/web-artifact.mjs",
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "tools/environment.mjs",
+      "source": "84005a260dfcb668cd38b09c21564d0754a0f513:tools/personal-preview/environment.mjs",
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    }
+  ],
+  "cachePaths": [
+    "apps/web/node_modules/.vite-temp",
+    "apps/web/node_modules/.vite"
+  ],
+  "limits": {
+    "totalSeconds": 120,
+    "workSeconds": 100,
+    "cleanupSeconds": 20,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688,
+    "pollSeconds": 0.5,
+    "distBytes": 16777216,
+    "distFiles": 128,
+    "singleDistBytes": 8388608,
+    "cacheGrowthBytes": 4194304,
+    "singleConfigTempBytes": 1048576,
+    "logBytes": 1048576
+  },
+  "executionAuthorized": false,
+  "gateRequired": "gate.json with current committed claim, completed Recovery dependency/typecheck window and explicit root authorization"
+}

@@ -1,0 +1,84 @@
+{
+  "observedAt": "2026-10-06T13:12:37Z",
+  "filesystem": "/System/Volumes/Data",
+  "availableKiB": 1826984,
+  "capacityPercent": 100,
+  "largePreparation": "paused",
+  "minimumFreeGiB": 2.5,
+  "sharedReserveGiB": 1,
+  "scope": "SVC06 full artifact preparation only",
+  "ordinarySmallChecks": "allowed with bounded actual budget",
+  "cleanupPolicy": "only ended, owned, identity-confirmed, rebuildable temporary resources; preserve user data, other worktrees/dependencies, active/unknown resources and original review evidence",
+  "deletedByExecutionLead": [],
+  "personalServicesChanged": false,
+  "providerCalls": 0,
+  "followUp": {
+    "observedAt": "2026-10-06 13:37:42 UTC",
+    "availableKiB": 1739948,
+    "capacity": "100%",
+    "ownedR05Cleanup": {
+      "observedAt": "2026-10-06T13:18:46.349Z",
+      "candidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host/node_modules",
+      "authorization": "Lead 2026-10-06: original install owner cleanup R05 node_modules only",
+      "checks": {
+        "observedAt": "2026-10-06T13:16:04.234Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host/node_modules",
+        "real": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host/node_modules",
+        "isDirectory": true,
+        "isSymlink": false,
+        "directReverseRefs": [],
+        "processCandidates": [],
+        "worktreesChecked": 185
+      },
+      "openFiles": {
+        "observedAt": "2026-10-06T13:16:21.157Z",
+        "matches": [],
+        "stderr": ""
+      },
+      "reverseReferenceScan": "",
+      "duKiB": 553748,
+      "beforeAvailableBytes": 1849630720,
+      "afterAvailableBytes": 1859465216,
+      "actualFreeDeltaBytes": 9834496,
+      "sourceLockEvidenceUntouched": true,
+      "globalStoreUntouched": true
+    },
+    "webContextOldInstall": "owner reports two active fixture consumers, preserved; reclaimed 0",
+    "svc06GateGiB": 2.5,
+    "largePreparation": "paused; no full retry",
+    "nextDesign": "fixed-lock platform-specific seed closure has read-only size facts, no narrowed install/physical peak proof"
+  },
+  "observations": [
+    {
+      "observedAt": "2026-10-06 13:49:04 UTC",
+      "availableKiB": 1388440,
+      "source": "actual df -k on Data volume",
+      "attribution": "unknown, shared host concurrent work",
+      "decision": "full SVC06 remains blocked; small work continues; preserve ~1GiB shared completion reserve; both co-leads notified once",
+      "cleanupActions": 0
+    },
+    {
+      "observedAt": "2026-10-06 14:08:56 UTC",
+      "availableKiB": 892260,
+      "source": "actual df -k Data volume",
+      "attribution": "unknown shared host",
+      "decision": "below1GiB reserve; no new install/fullbuild/PG-load/AB, light source/review/metadata/integration continue; SVC06full remains2.5GiB gate",
+      "cleanupActions": 0,
+      "retainedCandidates": [
+        "/tmp/flow-harness-eval.iq7BzZ has source provenance references",
+        "/tmp/flow-t3-inspect.fFfqh2 original owner unknown",
+        "web-context-integration active installation unchanged"
+      ],
+      "timeCorrection": "Earlier A2A label14:13 was management typo, not measurement timestamp; authoritative observation is this recorded time and GO14:07:34 fact."
+    },
+    {
+      "observedAt": "2026-10-06T14:18:00.009252+00:00",
+      "availableBytes": 1198407680,
+      "sparseOperation": "browser-connection-session",
+      "observedFreeDeltaBytes": 20066304,
+      "attribution": "single-operation before/after on shared volume; no exclusive physical attribution",
+      "decision": "still below SVC06 2.5GiB; bounded source/metadata permitted; next ended tree evaluated independently",
+      "evidence": "sparse-worktree-2026-10-06/browser-session-result.json"
+    }
+  ]
+}

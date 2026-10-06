@@ -1,0 +1,36 @@
+{
+  "observedAt": "2026-10-06T14:26:12.196871+00:00",
+  "fixedHead": "82d78a9d77f4f51a27dc76fdc413a63dcd88ea72",
+  "source": "apps/web/src/recovery/binding.tsx",
+  "sha256": "35d437eb7afcb3a7ffcf48295eac7fe8e288c1f4842bde218600beae374774e4",
+  "lines": {
+    "export function createRecoveryPlugin": [
+      149
+    ],
+    "export function RecoverySurface": [
+      155
+    ],
+    "Refresh saved records": [
+      158
+    ],
+    "Restore without sending": [
+      161
+    ],
+    "Retry original request": [
+      162
+    ],
+    "Remove saved record": [
+      163
+    ]
+  },
+  "finding": "Recovery entry is a real trusted builtin P01 sidebar.footer button/command. RecoverySurface accepts only workspace and renders fixed refresh/restore/retry/remove buttons, with no explicit dialog header/footer/record-action contribution seam in this fixed foundation.",
+  "classification": "REQ22/REQ23 plugin surface coverage backlog; not a new approval gate on an unfinished foundation or permission to expand current 21 scopes.",
+  "requiredDirection": "Coordinate a later explicit P01 surface/action-context contract with the plugin co-lead. Contribution context should be minimal validated record identity/domain/phase and current binding, not raw journal/client or all namespaces. Preserve command authorization and disposed-generation checks.",
+  "limits": [
+    "Actual App integration still in progress",
+    "No claim that current unpublished feature is plugin-complete",
+    "No proposed source edit or new public slot under current scope",
+    "No browser/runtime check; static coverage only"
+  ],
+  "projectWrites": 0
+}

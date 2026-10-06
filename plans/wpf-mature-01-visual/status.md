@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 14:09 UTC |
+| 最近更新 | 2026-10-06 14:29 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 已审页面已进入主线；新预览产物与当前后台的兼容验证方案已确定，个人页面尚未切换 |
-| 下一可用交付 | 满足正式产物构建资源及后台附件历史修复条件后，完成定向兼容验证，交原发布方更新预览 |
-| 当前阻塞 | ACTIVE: RELEASE03空间检查未通过，未领取运行范围或构建；待可用空间≥1GiB+128MiB并满足预算，后台362附件历史缺口仍需修复与组合验证，个人页面保持当前版本 |
+| 当前产出 | 已审页面在主线；正式format2产物一次准备成功，两cache临时写权已释放，个人页面未切换 |
+| 下一可用交付 | 使用同descriptor完成当前后台的定向兼容验证，再交原发布方更新预览 |
+| 当前阻塞 | ACTIVE: 等独立验证树/资源/四scope领取；后台362附件历史缺口及组合验证仍是发布门槛，prepare已完成 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |
@@ -47,4 +47,4 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 
 RELEASE01兼容输入已main c450且20a v2释放；后继根严格类型检查发现fixture构建矩阵的noUncheckedIndexedAccess两错，RELEASE02独立base2e71/03323bce v1三scope由w01窄修，runner_owner独立审。不是env/ENG失败，旧定向检查与原browser报告保其真实范围；不重跑旅程或个人发布。[当前接收队列](../../docs/evidence/web-platform/mature-task-handoff.md)。
 
-实际发布新增[RELEASE03批准方案](../../docs/evidence/web-platform/release03-current-preview-proposal.json)：w01拟唯一验证owner、四范围未take，原SVCoperator发布。现成9eec hash核齐但无正式format2，当前资源不够正式build；backend362有特定history v2缺口须最小差分/合法修复，不等整Recovery或全SVC06。0个人操作，当前产物保持8d8/caa1/v2，来源与解除条件见中央队列。
+实际发布新增[RELEASE03批准方案](../../docs/evidence/web-platform/release03-current-preview-proposal.json)：w01拟唯一验证owner、四范围未take，原SVCoperator发布。现成9eec hash核齐但无正式format2；14:25fresh准入后一次正式prepare成功，14:28两cache已释放；backend362有特定history v2缺口须最小差分/合法修复，不等整Recovery或全SVC06。0个人操作，当前产物保持8d8/caa1/v2，来源与解除条件见中央队列。

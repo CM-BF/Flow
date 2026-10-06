@@ -77,3 +77,6 @@ Root方向已批准进入Interface与合法owner协调，不授共享中心写�
 Root已接收完整envelope候选并批准用于实现：128KiB初始record连slot/index、32KiB预付增长、4MiB全局；仍须实际serializer/CAS准入，非所有合法输入或IDB/App已验。116451B样本包含namespace/manifest，增长8805B；含非法字段组合的129651B过估不作合法极值。保draftVersion精确交接、ACK超界原identity/unknown及存储失败0mutation。21范围不变，不另启设计回合。
 
 2026-10-06 13:46 UTC 正式执行：共享domain582f/clientd6d/production9406三独审与84005主线组合已齐；固定13源逐hash同。原批准21范围fresh查重后COMMITTED6ff988b2 v1，panels已被正式派工，唯一新树与source见[dispatch审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)。保用户U08/REQ37的跨lead不重叠、实际take可聚合与两层任务要求。轻量开发资源已核，完整install/build及最终browser仍分别守资源/三中心语义gate，不因尚未完整验收停止首代码；不冒已完成06-04。
+
+
+06-04插件覆盖后继仍归REQ22–23：[fixed82d78审计](../../docs/evidence/web-platform/recovery01-plugin-surface-coverage-82d78.json)确认P01入口已接，但恢复dialog内部记录动作尚无可贡献接缝。后继由plugin co-lead定义最小受权record context，保原authority；不扩当前21scope，不因入口可插拔冒内部全可插拔，也不把未完成基础片记失败。
