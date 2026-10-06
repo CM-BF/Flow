@@ -1,0 +1,13 @@
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:143
+if (failure || errors.length) throw Error(failure ?? errors.join("\n"));
+                                    ^
+
+Error: locator.fill: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for getByLabel('Owner token', { exact: true })[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:52:75)
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:143:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Node.js v24.20.0
