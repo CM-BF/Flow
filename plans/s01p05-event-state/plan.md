@@ -7,7 +7,7 @@
 ## TODO
 
 - [x] **S01P05-01** 固定main输入、调用影响和最小Interface；metadata领取/权威登记请求。
-- [ ] **S01P05-02** F01停写并移交events.ts；本claim追加两个生产/test路径成功。
+- [x] **S01P05-02** F01停写并移交events.ts；本claim追加两个生产/test路径成功。
 - [ ] **S01P05-03** 最小red→green实现，保留公共接口/错误与锁顺序，完成clean-code自审。
 - [ ] **S01P05-04** 专库功能等价/写次数/rollback/finalization与局部strict，保存所有raw/cleanup/固定source。
 - [ ] **S01P05-05** ≥Sol独立固定commit review与Lead main接收，分别记录，不用分支通过代main。
@@ -17,3 +17,5 @@
 新source未实现、真实PG未执行、未来A/B未OPEN；本计划不会改变旧S01已封存128结果。
 
 2026-10-06 12:48:38 UTC：验收细化为7类真实行为（不是已通过测试数），A/B只有预算候选且不得自行运行；原稳定TODO未新增目标。
+
+2026-10-06 12:54:04 UTC：F01移交与本claim v2追加完成；受控main3609已合入，当前开始原矩阵的最小red→green，不再存在路径阻塞。上述旧时间快照保留；A/B仍未开放。

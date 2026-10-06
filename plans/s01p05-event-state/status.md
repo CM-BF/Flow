@@ -2,34 +2,34 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:48:38 UTC / fixed main aeb764e5；只更新验收metadata |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:54:04 UTC / fixed main 3609d8dabd3713e37d877af4f96d2daa2bd96e57；已受控合入 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence |
 | Branch | codex/event-state-persistence |
-| 工作基线 / HEAD | aeb764e5d2c2ec043ae8673cde2724f5330db2ab；当前仅metadata，提交HEAD见Git |
+| 工作基线 / HEAD | 3609d8dabd3713e37d877af4f96d2daa2bd96e57；integration HEAD f0ebd514a2d10ad04a88782eaa99a86865fcfc90 |
 | 工作树dirty状态 | 开工base clean；仅已claim metadata新增，提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN：7类验收和A/B总clock/预算候选已固定，仅文档；0PG/HTTP/测试/负载 |
+| 检查状态 | NOT_RUN：7类功能验收开始实现，当前尚无新PG/测试；A/B NOT_OPEN |
 | 已集成main状态 / HEAD | 本片未实现/未集成；base main aeb764e5d2c2ec043ae8673cde2724f5330db2ab |
 | 实现目标 | NONE（仅metadata，无生产target） |
-| 实现范围 | docs/evidence/s01p05, plans/s01p05-event-state |
+| 实现范围 | events.ts、event-state.test.ts；docs/evidence/s01p05, plans/s01p05-event-state |
 | 阶段 | M2 |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 已明确一次任务状态写入的回滚、重放和数据一致性验收；生产仍待路径移交 |
+| 当前产出 | v2已追加两个source/test路径；受控main3609合入无冲突，准备public消费入口行为测试 |
 | 下一可用交付 | 共享文件移交后实现及专库验证；未来A/B必须固定两版同观测器与总预算再开门禁 |
-| 当前阻塞 | ACTIVE: F01仍持events.ts，待原owner停写并移交；解除责任Lead/F01 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | NOT_STARTED：无生产实现，不将空review当批准 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | S01P05-01 | completed | status_read | [Interface](../../docs/evidence/s01p05/interface.md)、[claim](../../docs/evidence/s01p05/claim-receipt.json) |
-| S01P05-02 | pending | status_read / Lead / F01 | Interface精确移交顺序；尚未追加源码scope |
-| S01P05-03 | pending | status_read | 待合法源码scope |
+| S01P05-02 | completed | status_read | [v2 receipt](../../docs/evidence/s01p05/claim-amend-receipt.json)、[F01 handoff](../../docs/evidence/s01p05/f01-handoff-receipt.json) |
+| S01P05-03 | in-progress | status_read | 最小新test先red，生产尚未改 |
 | S01P05-04 | pending | status_read | NOT_RUN |
 | S01P05-05 | pending | Mika / Lead | NOT_STARTED / main未集成 |
 
@@ -38,3 +38,7 @@
 Dashboard：fixed main registry尚无S01P05，已提出唯一权威source登记请求，等待Lead登记/聚合；不改registry或手填JSON。架构影响：拟仅现函数内部持久化语句合并，无API/模块/池/锁/状态机/外部依赖变化，故没有需改架构图的新边界。SVC05临时主目录detach不作为base；当前main ref固定aeb，无集成操作。
 
 2026-10-06 12:48:38 UTC：仅在原两metadata scope细化[7类验证矩阵](../../docs/evidence/s01p05/validation-matrix.md)与[A/B方案](../../docs/evidence/s01p05/ab-design.md)。每accepted批一task UPDATE、完整rollback、usage unknown/null、纯重放updated_at和trigger列保护均显式；A/B共同observer/version/profile、单总clock、无unknown重试及顺序/观测开销限制。尚无production scope、代码、PG或新window。设计自审不增加Module/框架；原S01 observerc259审批独立，不代替本生产实现。
+
+2026-10-06 12:54:04 UTC：F01 v33移除events.ts后，fresh账本核对并COMMITTED本claim v2（12:51:36.033Z）；独立scope[] integration 759596ae合入已审main3609至f0ebd514，0冲突，随后release v2。10项既有输入相对aeb逐字未变。当前4scope合法，局部忽略node_modules逐项symlink复用main固定依赖，无安装/lock修改；准备专库功能测试，0新容量窗口。
+
+2026-10-06 12:56:41 UTC：真实专库定向red已复现一accepted批3次task UPDATE（目标1）；1selected failed/8未选，PG160013、1task，own pool/admin closed、库absent。三次初始类型依赖图失败原raw保留，固定依赖paths补全后局部strict0。尚未修改生产，接下来最小SQL合并与9项必要行为green。0容量/A-B/provider。

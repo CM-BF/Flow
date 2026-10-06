@@ -1,0 +1,32 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@flow/contracts": [
+        "../../../packages/contracts/src/index.ts"
+      ],
+      "npm-package-arg": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/npm-package-arg/index.d.ts"
+      ],
+      "pacote": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/pacote/index.d.ts"
+      ],
+      "ssri": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/ssri/index.d.ts"
+      ]
+    },
+    "typeRoots": [
+      "../../../node_modules/@types",
+      "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types"
+    ]
+  },
+  "include": [
+    "../../../apps/server/src/events.ts",
+    "../../../apps/server/src/event-state.test.ts"
+  ],
+  "exclude": [
+    "../../../node_modules",
+    "../../../experiments",
+    "../../../**/dist/**"
+  ]
+}

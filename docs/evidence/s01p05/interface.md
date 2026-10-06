@@ -1,3 +1,5 @@
+> 2026-10-06 12:54:04 UTC 当前：生产范围已合法移交，writer4eb31983 v2；受控main3609合入至f0ebd514。以下旧开工/阻塞段为历史。最小Interface不变，开始必要专库功能验证，A/B NOT_OPEN。
+
 # S01P05：task事件状态一次持久化候选
 
 **当前只领取metadata，生产尚未开工。** Owner status_read/gpt-6-astra；co-lead Mika；权威WT `/Users/citrine/Projects/AgentHarness/Flow-worktrees/event-state-persistence` / `codex/event-state-persistence`；fixed base `aeb764e5d2c2ec043ae8673cde2724f5330db2ab`。唯一status [S01P05](../../../plans/s01p05-event-state/status.md)。接收派工不代表events.ts写权：本claim `4eb31983-3bd8-415e-9898-143e28c727ef` v1仅docs/evidence/s01p05、plans/s01p05-event-state。
