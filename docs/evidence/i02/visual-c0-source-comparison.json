@@ -81,13 +81,30 @@
       "sha256": "8f6b91429eef8c1135e33428ec7a2f68f8ea5103068becc1535423473c15e5eb",
       "matchesTarget": true,
       "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.mjs",
+      "target": "6313c885c5c5524faedba9b8c49e4d3e164028d5",
+      "bytes": 5179,
+      "sha256": "01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.d.mts",
+      "target": "6313c885c5c5524faedba9b8c49e4d3e164028d5",
+      "bytes": 716,
+      "sha256": "8595d7c661688e9c2aad8cb3a69530a904167798cccc218bd0a450bd8e8e3e6c",
+      "matchesTarget": true,
+      "matchesManifest": null
     }
   ],
   "providerCalls": 0,
   "personalRuntimeChanged": false,
   "reviews": {
     "visual": "Web root APPROVED a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231, fixed 7 source; 17 direct and development/production 8 each reused",
-    "c0": "Execution Lead independent readonly APPROVED 27022407f175597d1d9c897f23f59261f24ab49b, 3 source + runtime/control/outbox/admission; fixed/working 17 manifest entries matched; no tests repeated"
+    "c0": "Execution Lead independent readonly APPROVED 27022407f175597d1d9c897f23f59261f24ab49b, 3 source + runtime/control/outbox/admission; fixed/working 17 manifest entries matched; no tests repeated",
+    "projection": "Execution Lead independent readonly APPROVED 6313c885c5c5524faedba9b8c49e4d3e164028d5: complete pure projection + d.mts; algorithm byte identical to Mika approved 0d0524 fixed source; source and 3 evidence hashes exact; 15 actual consumer checks read, no rerun. Only evidence projection; raw AssertionError must be discarded by future adapter."
   },
   "validation": {
     "rootTypecheckExit": 0,
@@ -103,7 +120,8 @@
         "bytes": 0,
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
       }
-    ]
+    ],
+    "typechecksIncludeProjection": true
   },
   "limits": [
     "No C1 Codex adapter or actual provider validation",

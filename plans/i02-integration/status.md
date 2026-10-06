@@ -12,7 +12,7 @@
 | 工作基线 / HEAD | 80ba95ad70cdf724251be4d88130b6bac56d3606 / 本批已审视觉与未知执行边界 |
 | 工作树dirty状态 | 固定源码比对及root/Web类型检查通过；本次记录随后提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；视觉7源/C0 3源均与独审target逐字一致，root/Web类型检查exit0；117源实际可见，0provider |
+| 检查状态 | PASSED；视觉7源/C0 3源与普通终文投影2源均与独审target逐字一致，root/Web类型检查exit0；117源实际可见，0provider |
 | 已集成main状态 / HEAD | main80ba95已含R05B中心接线与ENG计划；本批视觉/C0待本次fast-forward发布。个人backend/static仍b1c、accepting v12，不随main更新。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
@@ -106,4 +106,6 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 
 2026-10-06 09:10:33 UTC：[补充指令独立模块组合](../../docs/evidence/i02/steering-module-integration.json)六源码与Web独审target/manifest逐字一致，当前Web类型检查exit0。未重复33/浏览器、未挂App或启个人steer。登记111源已实采；实际个人center/runner/staticWeb仍b1c/v12，不随main前进。
 
-2026-10-06 09:40 UTC：[视觉与C0组合](../../docs/evidence/i02/visual-c0-source-comparison.json)10源码与各独审target/manifest完全一致，root/Web类型检查exit0；沿用固定领域/浏览器证据，无模型或个人服务更新。C0仅可信原生未知状态，不涵盖正在实施的Codex adapter。ENG计划与117源实采回执同批归档；纯文档不跑工程测试。
+2026-10-06 09:40 UTC：[视觉与C0组合](../../docs/evidence/i02/visual-c0-source-comparison.json)12源码与各独审target完全一致，其中原10项也与manifest完全一致，root/Web类型检查exit0；沿用固定领域/浏览器证据，无模型或个人服务更新。C0仅可信原生未知状态，不涵盖正在实施的Codex adapter。ENG计划与117源实采回执同批归档；纯文档不跑工程测试。
+
+同批普通终文投影提升6313c885另获Execution Lead限定独审：算法与Mika原0d0524来源逐字相同，15项原断言仅换import后的原始输出已核。当前无adapter连接，不将投影completed等同Flow任务完成；未来adapter必须归一可能含原文的AssertionError。
