@@ -176,6 +176,9 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-19** [WPF-ACTIVITY01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/plan.md)：按固定3d4985新独立树与八scope受领，复用真实TaskSummary与bound lazy events/detail交付执行活动独立模块；初始零请求、显式分页/刷新、身份与隐藏/连接寿命隔离，App接线另片，不把现reference伪作typed tool/thinking。
 - [x] **WPF-001-20** [WPF-RENDERERI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/plans/wpf-renderer-i01-integration/plan.md)：消费已审renderer747并在115b独立树领取九scope接实际聊天；显式native-hidden可见性与display lease、真实按需详情、provider清理与原composer行为验证，完整X01/typedCHAT05另片。
 
+- [ ] **WPF-001-21** WPF-CHAT06C01：四scope独立a26树消费86fc单文件输入，仅兼容liveAssistantText缺省/boolean，身份与原回执/queue保持；不opt-in或启用增量正文，固定验证后独审/集成。
+- [ ] **WPF-001-22** WPF-ACTIVITYI01：同一U11/REQ43活动接线在固定86a独立树领取17scope，消费已main CHAT05真实typed工具/思考与generic fallback，P01统一message footer button/menu/panel、按需有界详情与生命周期；保留C01/61b/shared只读，完整CHAT06正文另片。
+
 ## 验收、风险与持续方式
 
 每轮只在其可验证条件满足时完成；持续总目标保持活动，新增用户要求/研究发现追加到本计划、排队并由明确owner实施。禁止为了持续工作堆无依据复杂度，也不能因“本批完成”就把无限优化声明完成。
@@ -328,3 +331,5 @@ CHAT05后继正文边界：超64KiB仅prefix+full原文digest，完整超限正�
 GO管理审计规则：active claim按实际开发/持续管理、冻结待审/集成、已main待原owner收口分别列，历史数量不当agent并发。需固定祖先+保留scope+权威status事实后由原owner核尚有无写入、metadata停点、fresh版本release；不强制revoke，也不因历史基线状态过时恢复已转交路径。
 
 06:49 GO更新既有U11活动接线优先级：同一WPF-ACTIVITYI01须同时消费已main CHAT05 typed工具/真实thinking，不能仅generic61b；不扩大为CHAT06流正文。准确base候选86a36eaeffbf09f0a3772c3d1509c17dc0a76f92，rendererI已released；原13scope未take，等窄typed接口/scope明确再fresh领取。实际provider证据、轻metadata/展开64KiB prefix、unknown/截断语义与真实水位合并是验收约束，不造thinking/耗时或每消息poll。
+
+06:54 再次遵循用户U12“take工作在dashboard标清、跨lead防overlap”：每个新片先向现D04原子账本登记唯一owner/Lead、分支/工作树与精确literal范围，再交唯一canonical给Lead注册；已领取但来源未部署如实展示，不能把receipt当完整进度卡，不另写平行账本。ActivityI17scope fresh06:53:53.277Z无交叉（特别不含C01的conversations/projection.ts），122210f6 v1已committed。后继source部署收到后由manager唯一采样；其它Lead协调沿既有GO桥接及四类实质变化，不重复派工。

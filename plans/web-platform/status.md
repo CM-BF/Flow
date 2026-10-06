@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:48 UTC / 两已审交付main接收实核；原owner正在收口释放 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:54 UTC / 原两片已main并释放；正文兼容独审与活动接线新受领 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
@@ -13,7 +13,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 聊天按需详情接线和架构快照已集成；增量正文兼容正在实施 |
+| 当前产出 | 聊天按需详情已集成；正文兼容已验证，工具与思考展示开始接线 |
 | 下一可用交付 | 保持旧中心聊天兼容，再接入执行活动与增量正文 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -45,6 +45,8 @@
 | WPF-001-18 | completed | d01_owner | [K02C01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility/plans/wpf-k02-compatibility/status.md)固定7633937c322090bbd6d526f378df464f2a7436ed、final394e2ae35ab9f526c339705b59f6a2bf8a5a6efd clean；受控输入e9a0259与自有八scope分开；25paths/6md25links/4TODO/六hash已核，作者102direct/typecheck，root05:58:18Z独立102并APPROVED、最终metadata approved/目标匹配已核，06:14单次聚合通过（样本bec72/两proof不变）；main115b已含、六path相同，最后2bce444ad910b1f7fdb549ab933b2d145c730a83 clean，5ab v2于06:24:18.370Z released；无context UI |
 | WPF-001-19 | completed | d01_owner | WPF-ACTIVITY01 / web-conversation-activity / base3d4985；51f962ee-7e6f-4806-a9f9-df3838dc27f5 v1于06:04:36.078Z committed，八新scope，固定61b9349af390c137cc4cfeabd38bad058ec69cb5，final b024cfc2c3cd150e0f6db02df5dfe3f64159b1f8 clean；29paths/8scope、7md29links/四TODO、dev/prod各7旅程六hash独立match；root06:17:33Z独立22+局部CUA并APPROVED，最终本地parser approved/checks passed target61b、proof unchanged；main acfd已含且六path相同，最后8cc13eaa9c2aa29f77f841637d9891b67fd1264f clean，51f v2于06:28:50.477Z released；无App/shared写入 |
 | WPF-001-20 | completed | d01_owner | RendererI固定8014cf9be49391157fb54eeb857a41ee1d6af68c/root06:40:07Z APPROVED，final2a420ffe6a27860156057368a18e94e73957e395 clean；九scope/七实现、7md39links/parser与本地proof unchanged，已在accepted86a36完整main实核祖先/七scope相同，原owner最终9da5add318df9cf08d50fb5262f9ceb6bfae29e9 clean，ff621v2已06:49:15.261Z released；06:36原样采样不倒填批准 |
+| WPF-001-21 | in-progress | d01_owner | C01 ca26v1四scope/basea26，8c562固定作者104/tsc，ce0b clean/6md28links/两hash/proof unchanged管理核；root06:53:27独立104后APPROVED已到，等待作者最终metadata/交Lead；0opt-in/stream |
+| WPF-001-22 | in-progress | d01_owner | ActivityI新86a独立树/17scope fresh无重叠，122210f6-eaac-4cc7-840d-3bd7db1626d9 v1于06:53:53.518Z committed；owner w01已followup正式实施，首canonical待登记；不把领取当部署 |
 
 ## 当前唯一owner、claim与下一步
 
@@ -242,3 +244,7 @@ WPF-CHAT06C01已独立a26新tree web-stream-compatibility/branch codex/web-strea
 06:49 rendererI原owner已核main并以9da5add318df9cf08d50fb5262f9ceb6bfae29e9 clean收口，九scope全停写后freshrelease ff621v2 committed，见[原receipt](../../docs/evidence/web-platform/rendereri01-release-receipt.json)。WPF-ACTIVITYI01仍未take；GO要求同一后继同时消费86a已main的CHAT05 nativeActivities/nativeActivity真实typed tool/thinking，原13scope提案暂缓，w01仅只读补最小接口/确切scope。只provider实际thinking显示，unknown不造；typed≤64KiB prefix截断明确、typed route与genericfallback分开，不等CHAT06、不复制任务。
 
 06:49 D06原owner以52cdfb7cf31c5036fa06dbdfb58f083906088bee clean、delivered收口，fixed115b图不变；四scope停写/fresh981v2 release06:49:34.174Z committed，见[receipt](../../docs/evidence/web-platform/d06-context-release-receipt.json)。本管理再只读核两owner最终HEAD/clean，见[关单](../../docs/evidence/web-platform/renderer-d06-release-closeout.json)，两原树均不再写。w01确认ActivityI尚未建树/take/安装，当前仅typed输入提案。C01作者reported首red14fail→104direct/Webtsc绿，尚待fixedtarget独审，未把作者进展写成批准。
+
+06:54 C01管理审计仅metadata/源码绑定：ce0b85b3df6a15037fc00be31932bf2d905f1079 clean，2source afterChecks/8c562/当前hash相同，104检查真实b76+dirty来源保持，ca26v1准确；6md28links/parser/proof通过，当时review NOT_STARTED，见[候选审计](../../docs/evidence/web-platform/chat06c01-candidate-audit.json)。其后root06:53:27独立104 PASS并APPROVED target8c，正式结论归root，作者正在metadata收口；本管理不重复套件/API。
+
+ActivityI经root批准17scope，新tree /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity-integration / branch codex/web-conversation-activity-integration / base86a36eaeffbf09f0a3772c3d1509c17dc0a76f92。原rendererI fresh已released，06:53:53.277Z账本精确/父子交叉均0；[preflight](../../docs/evidence/web-platform/activityi01-preflight.json)列相对与绝对17路径，122210f6 v1于06:53:53.518Z [take committed](../../docs/evidence/web-platform/activityi01-take-receipt.json)后才正式followup实施。native/projection.ts与C01 conversations/projection.ts不同，保护61b/generic模块与shared；首source待注册，不称卡已部署。
