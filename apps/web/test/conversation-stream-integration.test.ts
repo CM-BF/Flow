@@ -6,6 +6,7 @@ import { AppPluginSession, type AppActions } from "../src/plugin-integration/ses
 import { userMessageId } from "../src/conversations/messages";
 import { themes } from "../src/themes";
 import { createConversationFixture } from "./conversation.fixture";
+import { coreFixture } from "./conversation-message-reuse.probe";
 import { installStreamFixture } from "./conversation-stream-integration.fixture";
 const cleanups: (()=>Promise<void>)[]=[];
 afterEach(async()=>{await Promise.all(cleanups.splice(0).map(close=>close()));});
@@ -81,6 +82,19 @@ describe("actual conversation stream host",()=>{
   for(let i=0;i<4;i++){s.stream.append(s.tasks[0]!,` ${i}`);await s.projections[0]!.refresh();await new Promise(resolve=>setTimeout(resolve,30));}
   expect(s.stream.reads).toHaveLength(5);expect(s.hosts[0]!.getSnapshot().states.values().next().value?.error).toBeTruthy();
   s.stream.setFailure(false);const turn=s.projections[0]!.getSnapshot().turns[0]!;s.hosts[0]!.retry(turn.id);await vi.waitFor(()=>expect(s.hosts[0]!.getSnapshot().messages.some(m=>JSON.stringify(m.content).includes("0 1 2 3"))).toBe(true));
+ });
+
+ it("reconciles the actual official runtime repository without phantom branches or retained evicted bodies",async()=>{
+  const s=await setup(3);await s.start();const core=await coreFixture([...s.hosts[0]!.getSnapshot().messages]);
+  const apply=()=>core.update([],{messages:undefined,convertMessage:undefined,messageRepository:s.hosts[0]!.getSnapshot().repository,isRunning:true});
+  const assertExact=()=>{apply();expect(core.thread.export().messages.map(item=>item.message.id).sort()).toEqual(s.hosts[0]!.getSnapshot().messages.map(m=>m.id).sort());};
+  core.thread.composer.setText("Independent composer draft");assertExact();const originalUser=core.thread.messages[0];
+  for(let i=0;i<3;i++){await s.session.host.deactivate(STREAM_OWNER);assertExact();expect(core.thread.export().messages).toHaveLength(1);await s.session.host.activate(STREAM_OWNER);await vi.waitFor(()=>expect(s.hosts[0]!.getSnapshot().messages.length).toBe(2));assertExact();expect(core.thread.messages[0]).toBe(originalUser);}
+  s.stream.append(s.tasks[0]!,"","block-complete");s.stream.finish(s.tasks[0]!,"Canonical after draft");await s.projections[0]!.refresh();await vi.waitFor(()=>expect(s.hosts[0]!.getSnapshot().messages).toHaveLength(2));assertExact();expect(core.thread.export().messages).toHaveLength(2);expect(core.thread.messages.at(-1)?.status).toEqual({type:"complete",reason:"unknown"});expect(core.thread.isRunning).toBe(true);
+  const pending=s.fixture.addTurn("chat-1","Draft to evict",false),pendingTask=s.stream.seed(pending);s.stream.append(pendingTask,"Evict this runtime draft");await s.projections[0]!.refresh();await vi.waitFor(()=>expect(s.hosts[0]!.getSnapshot().messages.some(m=>JSON.stringify(m.content).includes("Evict this runtime draft"))).toBe(true));assertExact();s.hosts[0]!.setVisible(false);
+  // Fill other panes: cross-host eviction must also remove the victim's public runtime body.
+  for(let i=0;i<4;i++)for(const view of [1,2]){const turn=s.fixture.addTurn(`chat-${view+1}`,`evict ${i}`,false),task=s.stream.seed(turn);s.stream.append(task,`other ${i}`);await s.projections[view]!.refresh();await vi.waitFor(()=>expect(s.hosts[view]!.getSnapshot().messages.some(m=>JSON.stringify(m.content).includes(`other ${i}`))).toBe(true));}
+  assertExact();expect(JSON.stringify(core.thread.export())).not.toContain("Evict this runtime draft");expect(core.thread.composer.text).toBe("Independent composer draft");expect(core.thread.capabilities.switchToBranch).toBe(false);
  });
 
 });

@@ -1,4 +1,4 @@
-import type { ThreadMessageLike } from "@assistant-ui/react";
+import { ExportedMessageRepository, type ThreadMessageLike } from "@assistant-ui/react";
 import { TERMINAL_STATUSES, type AssistantStreamPage, type AssistantStreamPatchPage, type ConversationTurn } from "@flow/contracts";
 import type { ConversationProjection } from "../conversations/projection";
 import { replyDetailKey } from "../conversations/projection";
@@ -23,7 +23,7 @@ interface Entry {
 }
 export interface StreamMember { taskId: string; turnId: string; role: "user" | "assistant"; draft: boolean }
 export interface StreamViewSnapshot {
-  messages: readonly ThreadMessageLike[]; members: ReadonlyMap<string, StreamMember>;
+  messages: readonly ThreadMessageLike[]; repository: ExportedMessageRepository; members: ReadonlyMap<string, StreamMember>;
   states: ReadonlyMap<string, StreamState>; evicted: boolean; enabled: boolean;
 }
 const terminal = (turn: ConversationTurn) => TERMINAL_STATUSES.includes(turn.task.status);
@@ -54,7 +54,7 @@ export class StreamConnectionBudget {
 /** One mounted pane. All history reads come from an explicit finite dirty set. */
 export class ConversationStreamHost {
   private entries = new Map<string, Entry>();
-  private state: StreamViewSnapshot = { messages: [], members: new Map(), states: new Map(), evicted: false, enabled: false };
+  private state: StreamViewSnapshot = { messages: [], repository: { messages: [] }, members: new Map(), states: new Map(), evicted: false, enabled: false };
   private listeners = new Set<() => void>();
   private visible = false;
   private disposed = false;
@@ -64,6 +64,7 @@ export class ConversationStreamHost {
   private unlisten: (() => void)[] = [];
   private mounted = 0;
   private online = false;
+  private repositoryCache = new WeakMap<ThreadMessageLike, ExportedMessageRepository["messages"][number]["message"]>();
   private messageCache = new WeakMap<ConversationTurn, { stream: StreamState | undefined; visible: boolean; online: boolean; messages: readonly ThreadMessageLike[] }>();
   constructor(readonly viewId: string, private projection: ConversationProjection, private authority: StreamAuthority, private budget: StreamConnectionBudget) { this.publish(); }
   getSnapshot = () => this.state;
@@ -181,7 +182,13 @@ export class ConversationStreamHost {
     const enabled = source.snapshot?.capabilities.liveAssistantText === true && [...this.entries.values()].some(entry => this.authority.allowed(entry.identity));
     if (messages.length === this.state.messages.length && messages.every((message, index) => message === this.state.messages[index]) && enabled === this.state.enabled && this.evicted === this.state.evicted
       && states.size === this.state.states.size && [...states].every(([key, value]) => this.state.states.get(key) === value)) return;
-    this.state = { messages, members, states, evicted: this.evicted, enabled }; this.listeners.forEach(listener => listener());
+    // The public repository adapter removes absent IDs; the plain messages adapter retains branches.
+    const repository: ExportedMessageRepository = { messages: messages.map((message, index) => {
+      let converted = this.repositoryCache.get(message);
+      if (!converted) { converted = ExportedMessageRepository.fromArray([message]).messages[0]!.message; this.repositoryCache.set(message, converted); }
+      return { message: converted, parentId: index ? messages[index - 1]!.id! : null };
+    }) };
+    this.state = { messages, repository, members, states, evicted: this.evicted, enabled }; this.listeners.forEach(listener => listener());
   }
   dispose() { if (this.disposed) return; this.disposed = true; this.unlisten.splice(0).forEach(unlisten => unlisten()); for (const entry of this.entries.values()) { entry.unsubscribe(); entry.module.dispose(); } this.entries.clear(); this.budget.remove(this); this.listeners.clear(); }
 }

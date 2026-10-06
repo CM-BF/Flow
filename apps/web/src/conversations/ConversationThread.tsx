@@ -1,5 +1,5 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { AssistantRuntimeProvider, MessageNotSentError, useExternalStoreRuntime, type ThreadMessageLike } from "@assistant-ui/react";
+import { AssistantRuntimeProvider, MessageNotSentError, useExternalStoreRuntime, type ThreadMessage } from "@assistant-ui/react";
 import { TERMINAL_STATUSES, conversationTurnSchema, conversationQueueEnqueueSchema, type ConversationTurn, type ConversationSnapshot, type ConversationCreation } from "@flow/contracts";
 import { Thread } from "../components/assistant-ui/elements/thread.aui";
 import { ComposerActions, MessageActions, PluginThreadScope, ConversationDataRenderers, ConversationActivities, MessageFooter, ConversationStreams, useConversationStream } from "../plugin-integration/react";
@@ -11,7 +11,6 @@ import { freezeConversationCreation, type ProfileSelection } from "../execution-
 import { ConversationQueue } from "./queue/ConversationQueue";
 import "./conversations.css";
 
-const convertConversationMessage = (message: ThreadMessageLike) => message;
 const components = { MessageFooter, MessageActions, ComposerActions, Welcome: () => <div className="flow-conversation-welcome"><h1>What’s on your mind?</h1><p>Start a conversation. Keep the next thought in your draft while Flow replies.</p></div> };
 
 function TurnStatus({ turn, requested, onInspect, onOpenTask }: { turn: ConversationTurn; requested: ConversationSnapshot["conversation"]["requested"] | undefined; onInspect: (id: string) => void; onOpenTask: (id: string) => void }) {
@@ -37,7 +36,6 @@ export function ConversationThread({ viewId, visible, projection, drafts, profil
   const [sendError, setSendError] = useState<string | null>(null);
   const stream = useConversationStream(viewId, projection, visible);
   const streamState = useSyncExternalStore(stream.subscribe, stream.getSnapshot);
-  const messages = streamState.messages;
   const lockedProfile = state.snapshot ? { creation: state.snapshot.conversation, reason: "created" as const }
     : state.outbox?.creation && state.outbox.state !== "rejected" ? { creation: state.outbox.creation, reason: "receipt-pending" as const } : undefined;
   const profileReason = () => {
@@ -49,7 +47,7 @@ export function ConversationThread({ viewId, visible, projection, drafts, profil
   const reason = projection.sendDisabledReason(intent) ?? profileReason();
   const last = state.snapshot?.lastTurn;
   useEffect(() => { if (last) onCurrentTask(last.task.id); }, [last?.task.id]);
-  const runtime = useExternalStoreRuntime({ messages, convertMessage: convertConversationMessage,
+  const runtime = useExternalStoreRuntime<ThreadMessage>({ messageRepository: streamState.repository,
     isRunning: Boolean(last && !TERMINAL_STATUSES.includes(last.task.status)), isLoading: state.loading || Boolean(state.error && !state.snapshot), isSendDisabled: Boolean(reason),
     onNew: async message => {
       const blocked = projection.sendDisabledReason(intent) ?? profileReason();
