@@ -18,8 +18,9 @@ SPEC.loader.exec_module(MODULE)
 Launch, Policy, Ownership, Capture, supervise = MODULE.Launch, MODULE.Policy, MODULE.Ownership, MODULE.Capture, MODULE.supervise
 
 
-def launch(code, ownership=Ownership.CHILD_PID_ONLY, capture=Capture.SEPARATE):
-    return Launch((sys.executable, '-B', '-c', code), os.getcwd(), dict(os.environ), ownership, capture)
+def launch(code, ownership=Ownership.CHILD_PID_ONLY, capture=None):
+    options = {} if capture is None else {'capture': capture}
+    return Launch((sys.executable, '-B', '-c', code), os.getcwd(), dict(os.environ), ownership, **options)
 
 
 def policy(work=.25, term=0, kill=.3, output=65536):
