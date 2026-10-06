@@ -27,10 +27,14 @@ beforeAll(async () => {
   app = await createServer({ databaseUrl, ownerToken: owner, leaseMs: 3000, shutdownGraceMs: 2000 }); url = await app.listen({ host: '127.0.0.1', port: 0 });
   client = new FlowClient({ baseUrl: url, token: owner });
   const catalogRunner = await client.registerRunner({ name: 'TUI01A configured-only profile', harnesses: ['claude'], capacity: 1 });
-  configuredProfile = (await new FlowClient({ baseUrl: url, token: catalogRunner.token }).publishExecutionProfile({ configuration: {
+  const publishedProfile = (await new FlowClient({ baseUrl: url, token: catalogRunner.token }).publishExecutionProfile({ configuration: {
     harness: 'claude', adapterVersion: 'claude-sdk-0.3.290-v2', model: 'synthetic-model', thinking: 'disabled', permissionMode: 'dontAsk', access: 'none', requireReadApproval: false,
     materialScopeDigest: createHash('sha256').update('[]').digest('hex'), limits: { maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 60_000 },
   } })).profile;
+  const controls = publishedProfile.controls;
+  if (!('model' in controls)) throw new Error('Expected the legacy configured profile controls');
+  expect(controls).toEqual({ model: 'select-configured-profile', thinking: 'fixed-disabled', effort: 'unsupported', access: 'configured-policy', queue: false, steer: false });
+  configuredProfile = { ...publishedProfile, controls };
   const runner = await client.registerRunner({ name: 'TUI01A synthetic fixture', harnesses: ['claude'], capacity: 1 });
   running = runRunner({ baseUrl: url, token: runner.token, workingDirectory: join(directory, 'runner'), signal: stop.signal, pollIntervalMs: 50, heartbeatIntervalMs: 500, requestTimeoutMs: 1000,
     adapters: [{ name: 'claude', version: 'claude-sdk-0.3.290-v1', async run(context) {
