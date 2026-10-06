@@ -146,8 +146,10 @@ WPF-MATURE-02-03允许后继最多3次自有合成子进程、总60秒含清理�
 
 ## R06 private stderr 当前实施边界（2026-10-06 10:06:13 UTC）
 
-唯一交付：[诊断seam/driver证据](diagnostics/README.md)，固定target `4e1c989c0503cc73206d4e3de615e57b881d452e`。原writer claim0dd97484-f0ce-4738-8075-505bd5e2541a已原子amend为v2，新增精确 `apps/runner/src/codex/{types.ts,options.ts,index.ts,stderr-capture.ts,stderr-capture.test.ts}`；其他生产路径无写权。R06唯一process owner不变。privateStderr默认关闭，默认report/timing不变；仅trusted host可启用有界字节sink，async/thenable明确观察失败且安全消耗拒绝，原文不进product error/detail/UI。
+唯一交付：[诊断seam/driver证据](diagnostics/README.md)，固定target `7297986fbc879bb5040879daf97c7d5bb8b657ac`。原writer claim0dd97484-f0ce-4738-8075-505bd5e2541a已原子amend为v2，新增精确 `apps/runner/src/codex/{types.ts,options.ts,index.ts,stderr-capture.ts,stderr-capture.test.ts}`；其他生产路径无写权。R06唯一process owner不变。privateStderr默认关闭，默认report/timing不变；仅trusted host可启用有界字节sink，async/thenable明确观察失败且安全消耗拒绝，原文不进product error/detail/UI。
 
 Mika已独审APPROVED 0778847的五源seam；当前driver清理修复另待审。C1固定7127已随Lead批准mainf181进入同树，wire/adapter等strict编译通过，未执行其child/PG测试。F01/client/index、adapter/default env未改。预算尚未消费：最多3 child/60秒含私有分类与清理，固定driver只实现前2次，第3NOT_RUN；待Mika安排与S01串行窗口，不自行启动。
 
 S01P02协调入口：[部分交回receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/docs/evidence/s01p02/main-partial-handback-receipt.json)与[main接收receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry/docs/evidence/s01p02/main-accepted.json)。Lead输入：main.ts已在v2停写交回，mainf181已接收4源；这里仅原始回执指针，不复制其进度。
+
+组合根登记修复：7297986把mkdtemp成功后的路径即时入账，后续realpath/lstat/chmod失败保留并标cleanup未知。新增6项零listener/零child故障检查。profile/preload/peer/grants/七项不变，当前用diagnostics/manifest-v5与driver-input-v5；原reviewer正复审，执行继续HOLD。

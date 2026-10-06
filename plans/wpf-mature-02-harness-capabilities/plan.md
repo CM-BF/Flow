@@ -56,4 +56,4 @@ R05C纯投影已独审并集成已审main4391bbf9；本实验改为相对薄导�
 
 Lead后继边界：C1只pinned Codex普通任务/typed final，不承诺conversation端口。后继versioned native catalog和unsupported conversation capabilities需与Lead协调server/execution-profiles，F01 client/index仍原owner单写；不放宽旧Claude-only reader或丢字段维持旧digest。具体诊断方案见[seam候选](../../docs/evidence/wpf-mature-02/diagnostic-seam-proposal.md)，当前仅文档，不改R06源码。
 
-WPF-MATURE-02-03实施进展：合法writer v2追加精确R06五文件；五源seam已独审，诊断driver修复target4e1c989c0503cc73206d4e3de615e57b881d452e待审，19+10零child检查与同树C1 strict通过。真实窗口最多3/60秒尚未消费，由Mika与S01窗口串行安排；当前driver第三次固定NOT_RUN，私有分类和清理均计入窗口。
+WPF-MATURE-02-03实施进展：合法writer v2追加精确R06五文件；五源seam已独审，诊断driver修复target7297986fbc879bb5040879daf97c7d5bb8b657ac待审，19+10零child检查与同树C1 strict通过。真实窗口最多3/60秒尚未消费，由Mika与S01窗口串行安排；当前driver第三次固定NOT_RUN，私有分类和清理均计入窗口。

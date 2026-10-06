@@ -1,6 +1,6 @@
 # Current diagnostic preparation
 
-[Private stderr seam and revised diagnostic driver](diagnostics/README.md), target `4e1c989c0503cc73206d4e3de615e57b881d452e`. R06 five-source seam at0778847 independently APPROVED; revised driver awaiting review. 19+10 distinct zero-child cases and strict R06/C1 compile passed. No real diagnostic window, app-server/auth/provider run. [Manifest v4](diagnostics/manifest-v4.json) is current; prior manifests remain fixed history.
+[Private stderr seam and revised diagnostic driver](diagnostics/README.md), target `7297986fbc879bb5040879daf97c7d5bb8b657ac`. R06 five-source seam at0778847 independently APPROVED; revised driver awaiting review. 19+10 distinct zero-child cases and strict R06/C1 compile passed. No real diagnostic window, app-server/auth/provider run. [Manifest v5](diagnostics/manifest-v5.json) is current; prior manifests remain fixed history.
 
 # WPF-MATURE-02 evidence
 

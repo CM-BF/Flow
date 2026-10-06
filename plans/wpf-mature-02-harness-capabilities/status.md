@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:07:35 UTC / 2026-10-06 10:00:37 UTC（受控固定main） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:13:12 UTC / 2026-10-06 10:00:37 UTC（固定main） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,21 +10,21 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；已受控合入f181d84b5fb3652d62e2a181acff442d42b3e066 / 4e1c989c0503cc73206d4e3de615e57b881d452e（metadata HEAD由Git核） |
-| 工作树dirty状态 | 当前源码/证据已提交；metadata提交后由Git核clean |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；已受控合入f181d84b5fb3652d62e2a181acff442d42b3e066 / 7297986fbc879bb5040879daf97c7d5bb8b657ac（metadata HEAD由Git核） |
+| 工作树dirty状态 | 当前修复源码/证据已提交；metadata提交后由Git核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED：R06 19/19与driver 10/10 distinct，0真实child；strict R06与同树C1消费者均exit0，31子进程suite未执行 |
+| 检查状态 | PASSED：composition delta6/6，0child/0listener；原R06 19/driver10/C1strict保留固定target，未重跑 |
 | 已集成main状态 / HEAD | 当前R06可选sink/driver未集成；生产C1/投影输入已在受控mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
-| 实现目标 | 4e1c989c0503cc73206d4e3de615e57b881d452e |
+| 实现目标 | 7297986fbc879bb5040879daf97c7d5bb8b657ac |
 | 实现范围 | R06已领取精确5文件；experiments/codex-app-server-conformance/diagnostics；本task计划/证据 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 可选私有诊断接口已通过独立审查；启动诊断准备完成，清理修复与零子进程检查已交复审。 |
-| 下一可用交付 | 审定诊断driver并安排独占运行窗口，获取启动失败的有界安全分类。 |
+| 当前产出 | 组合准备失败时也能完整记录自有临时目录；6项针对性故障检查通过，已交原reviewer复审。 |
+| 下一可用交付 | 复审根目录登记修复，再由Mika安排独占诊断窗口。 |
 | 当前阻塞 | ACTIVE: 实际隔离启动原因仍未知；当前只验证诊断代码，未启动真实诊断窗口。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：R06五源0778847 APPROVED；当前driver修复待审；历史thin/语义approval保留 |
+| Review | [review.md](review.md)：原4e1c989组合P2已修，当前7297986待原reviewer复审；R06五源077 APPROVED保留 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | R06新增默认关闭的trusted-host私有sink，原process owner不变；R05C同树直接消费者strict通过。共享架构更新待集成target/owner Mika/ExecutionLead。 |
 
@@ -74,6 +74,8 @@ WPF-MATURE-02-03新增独立诊断阶段：最多3次自有合成子进程，总
 
 ## 当前诊断准备事实
 
-[诊断报告](../../docs/evidence/wpf-mature-02/diagnostics/README.md)与[manifest-v4](../../docs/evidence/wpf-mature-02/diagnostics/manifest-v4.json)绑定当前source/raw/直接消费者。R06五源已独审通过；driver先前清理不在窗口内的finding已修，根目录和半建sink失败也进入finally，10个真实私有文件/假transport检查通过，待独审。没有真实batch-reservation，没有启动任何新child。受控f181 merge无冲突，integration claim4d035471…已v2 released，writer v2保留。早期v1/v2 manifest及旧许可/失败均为历史，不能重置预算。
+[诊断报告](../../docs/evidence/wpf-mature-02/diagnostics/README.md)与[manifest-v5](../../docs/evidence/wpf-mature-02/diagnostics/manifest-v5.json)绑定当前source/raw/直接消费者。R06五源已独审通过；driver先前清理不在窗口内的finding已修，根目录和半建sink失败也进入finally，10个真实私有文件/假transport检查通过，待独审。没有真实batch-reservation，没有启动任何新child。受控f181 merge无冲突，integration claim4d035471…已v2 released，writer v2保留。早期v1/v2 manifest及旧许可/失败均为历史，不能重置预算。
 
-当前运行HOLD：S01独占窗口已于10:06:34获准，本owner保持0新child，等待其资源receipt和Mika单独窗口。driver最终10项包含fsync预算越界回归；文件注明持久化前elapsed，CLI在durableCreate后给最终耗时和withinBudget。
+当前运行HOLD：S01窗口已结束，本owner仍保持0新child，等待原reviewer复审和Mika单独窗口。driver最终10项包含fsync预算越界回归；文件注明持久化前elapsed，CLI在durableCreate后给最终耗时和withinBudget。
+
+组合review修复：原4e1c989有1 P2（创建根后realpath/lstat失败时漏登记）；当前7297986在创建即登记，未知身份/准备不完整保留。新增6/6故障检查，0listener/0child；旧profile/raw保持固定target，本次仅cleanup变动。

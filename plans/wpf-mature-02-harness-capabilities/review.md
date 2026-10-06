@@ -1,4 +1,12 @@
-# WPF-MATURE-02 当前诊断driver修复审查
+# WPF-MATURE-02 composition根登记修复复审
+
+状态：NOT_STARTED。Review target commit: 7297986fbc879bb5040879daf97c7d5bb8b657ac。原reviewer architecture_read/gpt-6-astra对4e1c989c0503cc73206d4e3de615e57b881d452e给CHANGES_REQUESTED，Mika接收2026-10-06 10:10:29 UTC，1 P2/0 P1：组合makeRoot创建后才在realpath/lstat成功时登记。
+
+本修复只在mkdtemp成功后立即登记原路径，后续补身份/准备完成状态；realpath/lstat/chmod任意失败保留并报告cleanup-unconfirmed，身份未知或准备不完整不删除。0child/0listener真实临时目录故障6/6通过（3类各覆盖第1/2根）。profile/preload/peer/grants/七项语义未动。R06五源077审批仍有效；19/driver10与C1strict保留原target，不重复运行。当前driver/test只有input selector v4→v5更新，执行输入绑定新compositionhash。
+
+[当前manifest-v5](../../docs/evidence/wpf-mature-02/diagnostics/manifest-v5.json)与[6项raw](../../docs/evidence/wpf-mature-02/diagnostics/composition-preparation.stdout)。无真实batch-reservation，窗口仍HOLD；只读复审后由Mika另给窗口。
+
+# 前一诊断driver审查记录
 
 状态：NOT_STARTED。Review target commit: 4e1c989c0503cc73206d4e3de615e57b881d452e。R06五源seam固定0778847702e595405f6cba0de51c1058b1436504已由Mika/gpt-6-astra独审APPROVED；当前source逐字未变，19/19零child与strict0保留，不重跑。driver原077版本CHANGES_REQUESTED：私有文件清理未含入60秒窗口。修复为同一finally登记/关闭/固定allowlist分类/按inode移除，unknown诚实retained且cleanupComplete=false；首根创建及半建sink失败受覆盖。
 
