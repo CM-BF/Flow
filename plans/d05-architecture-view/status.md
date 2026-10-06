@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:48:40 UTC / main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:21:28 UTC / main648e331c58043cf7ee307300521ab1c628cb2ee1 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已显示131项实际进度，工程执行配置和终端流式显示都能直接查看。 |
+| 当前产出 | 看板已显示132项实际进度；工程写入与附件等五项新进展已登记，等待本批发布。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -71,3 +71,5 @@
 10:49:58.895Z实际131来源、ENG01B/TUI01C/DPERF02 current=true且errors/issues空，见proof-131-registry-live.json。新增Web共享ACK来源待下一正常132来源换载，不为metadata重复架构或产品检查。
 
 2026-10-06 11:00:58.883Z：实际4320重载132唯一来源，main4285182a clean；ACK01/ENG01B/TUI01C/SVC04人读字段完整、source live、errors/issues空。仅替换核PID18687的本看板服务，个人61227/61228未动；[实际快照摘要](../../docs/evidence/d05/proof-132-registry-live.json)。
+
+2026-10-06 11:21:28 UTC：登记ENG01C、S01P04、WPF-ATTACHI01、WPF-RELEASE02和WPF-WORKSPACEPERF01至137个唯一来源。三件套/证据目录实际存在，状态解析、人读字段与唯一父任务/co-lead通过；见[登记回执](../../docs/evidence/d05/engineering-attachment-137-registry-validation.json)。部署前仍以132实采为准；只维护登记，不改固定架构图、不跑产品或模型。
