@@ -26,6 +26,10 @@ export type ClaudeMessageSettingsFinal = z.infer<typeof claudeMessageSettingsFin
 // Keep the legacy codec/type intact. New finals never fabricate its disabled-only requested field.
 export const claudeAssistantSettingsSchema = z.union([assistantSettingsSchema, z.strictObject({
   effective: assistantSettingsSchema.shape.effective, messageSettings: claudeMessageSettingsFinalSchema,
+}).superRefine((settings, context) => {
+  if (settings.effective.model !== (settings.messageSettings.observed?.model ?? null)) {
+    context.addIssue({ code: 'custom', path: ['effective', 'model'], message: 'Claude effective model must match the reported initialization, or be null when no initialization was observed.' });
+  }
 })]);
 export type ClaudeAssistantSettings = z.infer<typeof claudeAssistantSettingsSchema>;
 const nativeId = idSchema.refine(value => new TextEncoder().encode(value).byteLength <= 128, 'Native identity exceeds byte limit');

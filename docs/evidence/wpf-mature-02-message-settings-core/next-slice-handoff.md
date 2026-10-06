@@ -1,6 +1,6 @@
 # 下一片：冻结消息设置实际传到现有 Claude adapter
 
-Owner status_read/gpt-6-astra，co-lead mika，parent WPF-MATURE-02；沿同一 core WT/branch。原四scope已于2026-10-06T15:44:19.351Z原子扩为claim c652bc61 v2，共37 literal，见[next-slice-amend-receipt.json](next-slice-amend-receipt.json)。已可从本树可见contracts实施，其余source待Lead source-only closure；尚未运行任何后继检查。当前只读基线 main `a89f42ab57acb53657af6a2d1b745dabd4d50aa5`；parent 已逐源确认与本树 base70cc相同，无须merge/rebase。0 新工程检查/PG/SDK/provider/build/install。
+Owner status_read/gpt-6-astra，co-lead mika，parent WPF-MATURE-02；沿同一 core WT/branch。原四scope已于2026-10-06T15:44:19.351Z原子扩为claim c652bc61 v2，首次共37 literal，见[next-slice-amend-receipt.json](next-slice-amend-receipt.json)；15:50:24.492Z现已v3/39，新增reconciliation与Lead指定032，见[next-slice-v3-amend-receipt.json](next-slice-v3-amend-receipt.json)。已可从本树可见contracts实施，其余source待Lead source-only closure；尚未运行任何后继检查。当前只读基线 main `a89f42ab57acb53657af6a2d1b745dabd4d50aa5`；parent 已逐源确认与本树 base70cc相同，无须merge/rebase。0 新工程检查/PG/SDK/provider/build/install。
 
 首 leaf source `4e7b7f968a2160a60989b3b6343506ae8fb5ef6a` 已随 metadata `b34280e8f4acb7fe31c5adb33cd0e62396ac9506` 接入 main `22d5ca67159b35bb794b2711cf6df0cb905b92e8`；owner 两源 Git 比对相同。正式接收 [receipt](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/claude-message-settings-intake.json)。不 merge/retest，不把首 leaf 的5/5或批准继承给本片。
 
@@ -61,7 +61,7 @@ center在现session/source/fence验证后，按task.submission.messageSettings�
 
 ## 所有任务入口与旧任务边界
 
-TaskSubmission schema在messageSettings存在时要求harness=claude、明确executionProfile且三元逐字段相等，拒绝fixture/protocol/engineering同时出现；resume的not-requested不确定组合另拒绝。`assertTaskExecutionProfile`在既有execution-profiles/store.ts消费可信profile做整组合/互斥/请求存在校验；普通tasks.acceptTask、conversation prepareTurnAdmission以及claim均已有此调用，复用它覆盖直POST /tasks，不能仅conversation校验。另retryReconciled在recoverySubmission后直接INSERT绕过受理helper：须在command callback且幂等命中之后、INSERT之前仅对messageSettings ordinary项调用同一assert；失败整笔回滚且不产生task/audit/wake，旧goal/engineering行为不扩改。原spread自然保留snapshot/profile并移除resume，不另造复制/恢复FSM。该额外literal已获parent授权、等待同后续DDL编号的fresh amend。新共用pure校验不得反向import store形成循环。
+TaskSubmission schema在messageSettings存在时要求harness=claude、明确executionProfile且三元逐字段相等，拒绝fixture/protocol/engineering同时出现；resume的not-requested不确定组合另拒绝。`assertTaskExecutionProfile`在既有execution-profiles/store.ts消费可信profile做整组合/互斥/请求存在校验；普通tasks.acceptTask、conversation prepareTurnAdmission以及claim均已有此调用，复用它覆盖直POST /tasks，不能仅conversation校验。另retryReconciled在recoverySubmission后直接INSERT绕过受理helper：须在command callback且幂等命中之后、INSERT之前仅对messageSettings ordinary项调用同一assert；失败整笔回滚且不产生task/audit/wake，旧goal/engineering行为不扩改。原spread自然保留snapshot/profile并移除resume，不另造复制/恢复FSM。该额外literal已于15:50:24.492Z和032一起合法amend，物化待Lead。新共用pure校验不得反向import store形成循环。
 
 opt-in runner必须拒绝无profile或无完整snapshot的任务，query调用数为0；不让legacy unpinned任务隐式继承新model/thinking/fast。旧runner/profile对无snapshot维持原行为，对带snapshot拒绝；不会把新属性丢弃后当旧任务继续。新profile是新的immutable配置/runner身份，旧session不会热切到它；在同一个新opt-in session后续消息可选择可信整组合，并各自冻结。
 
@@ -85,7 +85,7 @@ opt-in runner必须拒绝无profile或无完整snapshot的任务，query调用�
 | 真实中心纵向检查 | 新增 `apps/server/src/conversations/message-settings.test.ts`；新增 `apps/server/src/conversations/message-settings-fixture.ts`（唯一专库fixture，含context requestedModel断言，不复制另一套fixture） |
 | 现adapter实际映射 | `apps/runner/src/claude.ts`；`apps/runner/src/native-harness/claude.ts`；`apps/runner/src/execution-profiles.ts`；新增 `apps/runner/src/claude-message-settings.ts`；新增 `apps/runner/src/claude-message-settings.test.ts`（注入现createClaudeAdapter，不启动native Query） |
 
-migration精确文件名须 Lead 分配后才入claim，拟 `packages/storage/migrations/NNN-claude-message-settings.sql` 仅为未分配占位，不能拿NNN/glob领取；031已由O15持有。DDL只加queue nullable列/有限形状检查与该列不可变保护，并保护task submission的新settings键不被改；无tasks新列/turn新列、不约束其他历史submission字段，不回填旧NULL。具体字节口径见下节；禁止把jsonb文本/二进制长度直接当leaf canonical 1024B。
+Lead已唯一分配 `packages/storage/migrations/032-claude-message-settings.sql`，随v3合法领取；不使用旧NNN占位，031不动。DDL只加queue nullable列/有限形状检查与该列不可变保护，并保护task submission的新settings键不被改；无tasks新列/turn新列、不约束其他历史submission字段，不回填旧NULL。具体字节口径见下节；禁止把jsonb文本/二进制长度直接当leaf canonical 1024B。
 
 仅只读直接消费者/闭包：`apps/runner/src/claude.test.ts`、`apps/runner/src/execution-profiles.test.ts`、`apps/runner/src/native-harness.test.ts`、`apps/server/src/conversations/conversations.test.ts`、`apps/server/src/conversation-queue/queue.test.ts`、`apps/server/src/context-transparency/store.test.ts`、`apps/server/src/execution-profiles/publication.ts`、`apps/server/src/native-harness-policy.ts`、`packages/contracts/src/runner.ts`、`apps/server/src/conversations/index.ts`、`apps/server/src/conversation-queue/index.ts`、旧007/009/010/011/018/025 migrations。现有默认tests不先编辑，若具体失败证明需修先精确amend。
 
@@ -102,8 +102,12 @@ parent 15:40:52 fresh账本F01 v40仍持 `packages/client/src/index.ts`、`packa
 3. 独占专库HTTP：send A/queue B后改变草稿C，task/queue/turn/ACK仍各冻结；同key回放/异body409、CAS回滚；真实resolve→retry snapshot/profile保留且resume移除、同幂等重放与校验拒绝回滚；自动和手动promotion一致；旧行升级不变、SQL-before-limit与sentinel；final不同snapshot拒绝及context requestedModel取task。
 4. 保留既有直接消费者必要覆盖，不跑全库/容量；真实PG/HTTP须root资源/串行门禁，不因本设计获得运行许可。当前没有新PG/test/build/install；root 15:31:45 F01资源gate未过且0PG不涉及本片回归。
 
-目前37 literal已合法领取；剩余条件是Lead source-only closure、F01独立薄合作、唯一migration编号，以及后续实际验证资源门禁；没有新的GO审批要求。
+目前39 literal已合法领取；剩余条件是Lead source-only closure、F01独立薄合作、032 migration实现，以及后续实际验证资源门禁；没有新的GO审批要求。
 
 2026-10-06 15:44:19 UTC安全点：selector/final/bytes/task入口设计收紧；既有源25项逐Git与base70cc一致，context附件v2保护也两端存在。后继设计独审反馈与source实现批准分开，首leaf原manifest/raw不变。
 
 验证副作用边界：旧conversation-queue/queue.test.ts会写他task的chat04/latest资源证据，当前只读closure不授权其运行写入。优先本片唯一私有fixture覆盖所需legacy/队列/recovery行为；不原样运行旧fixture或悄改输出。
+
+两个helper直接接线接口：中心checkTaskMessageSettings(task, authenticatedProfile|null)只返回固定ok/snapshot或finite admission code，不开数据库/不拥有HTTP；现store在原事务内映射HttpError。runner claudeMessageOptions只给model/thinking/effort/settings四个请求部分，外部merge到原安全settings；claudeMessageObservation只解析同session最新init，claudeMessageFinalSettings复用新settings schema核effective.model与observed一致，不重复一套校验。都没有query/spawn/IO/生命周期，本片未独立交付这些helper。
+
+2026-10-06 15:53:33 UTC：新settings分支统一要求effective.model等于observed.model（无observed则null），legacy原分支不动；新增两矛盾反例，正例明确匹配实际init model。仅源码静态完成，0检查。Lead /tmp/flow-claude-message-settings-source-expansion.json于15:49:45记录NOT_RUN_INSUFFICIENT_SPACE/0物化；19既有caller仍不可见，不能据新helper存在视为闭包已恢复。

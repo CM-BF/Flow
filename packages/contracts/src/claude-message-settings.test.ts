@@ -74,8 +74,10 @@ it('keeps final envelope extension and the legacy settings codec while separatin
 
 it('preserves init absence, explicit null effort and cooldown without inventing effective controls', () => {
   const observed = { source: 'claude.sdk.system.init', model: 'resolved-alias', effort: null, fastModeState: 'cooldown', fastModeDisabledReason: 'sdk_opt_in_required' };
-  const payload = { ...final(), settings: { ...final().settings, messageSettings: { snapshot, observed } } };
+  const payload = { ...final(), settings: { ...final().settings, effective: { ...effective, model: observed.model }, messageSettings: { snapshot, observed } } };
   expect(assistantFinalDataSchema.parse(payload)).toEqual(payload);
+  expect(assistantFinalDataSchema.safeParse({ ...payload, settings: { ...payload.settings, effective: { ...effective, model: 'different-model' } } }).success).toBe(false);
+  expect(assistantFinalDataSchema.safeParse({ ...final(), settings: { ...final().settings, effective: { ...effective, model: observed.model } } }).success).toBe(false);
   const sparse = { ...payload, settings: { ...payload.settings, messageSettings: { snapshot, observed: { source: observed.source, model: observed.model } } } };
   expect(assistantFinalDataSchema.parse(sparse)).toEqual(sparse);
   for (const patch of [{ model: undefined }, { effort: 'ultra' }, { fastModeState: null }, { fastModeDisabledReason: 'private reason' }, { thinking: 'adaptive' }]) {

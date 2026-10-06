@@ -6,7 +6,7 @@
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
   "branch": "codex/claude-message-settings-core",
   "claimId": "c652bc61-f8a9-4848-a709-978adbb425ed",
-  "observedClaimVersion": 2,
+  "observedClaimVersion": 3,
   "base": "70cc4e852365e974cefde30bfad75c7d233985c6",
   "readMain": "a89f42ab57acb53657af6a2d1b745dabd4d50aa5",
   "currentScopes": [
@@ -231,19 +231,25 @@
       "path": "apps/server/src/context-transparency/store.ts",
       "existsAtReadMain": true,
       "handoffReceipt": "/tmp/flow-svc05h01-source-handoff-receipt.json"
+    },
+    {
+      "group": "recovery",
+      "path": "apps/server/src/reconciliation.ts",
+      "existsAtReadMain": true
+    },
+    {
+      "group": "migration",
+      "path": "packages/storage/migrations/032-claude-message-settings.sql",
+      "existsAtReadMain": false
     }
   ],
   "readonlyContextConsumer": "apps/server/src/context-transparency/attachment-history.test.ts",
-  "unassignedMigration": {
-    "path": null,
-    "reason": "Lead must assign one exact migration filename before inclusion; no NNN/glob scope"
-  },
   "externalOwnedPaths": [
     "packages/client/src/index.ts",
     "packages/client/src/conversation-acknowledgement.ts",
     "packages/contracts/src/index.ts",
     "apps/server/src/index.ts"
   ],
-  "execution": "AMEND_COMMITTED 2026-10-06T15:44:19.351Z; 37 scopes; contracts visible may implement; other source waits Lead closure; no tests/PG/native authorized",
-  "committedReceipt": "next-slice-amend-receipt.json"
+  "execution": "AMEND_COMMITTED 2026-10-06T15:50:24.492Z; 39 scopes; no tests/PG/native authorized",
+  "committedReceipt": "next-slice-v3-amend-receipt.json"
 }

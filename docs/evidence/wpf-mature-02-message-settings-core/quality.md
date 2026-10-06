@@ -22,3 +22,5 @@
 2026-10-06 15:44:19 UTC设计复核：复用既有精确header选择；legacy/new final严格分支，不假填disabled；SDK init观察有限且null/缺键不混为默认。canonical与PG文本bytes分离，普通/tasks复用assertTaskExecutionProfile防旁路。37 literal合法扩权后才准备源码。仅本scope文档，0新tests/PG/build/install/provider，旧raw/source未改。
 
 2026-10-06 15:47:08 UTC合同源码安全点：既有5契约源+1新直接行为test草稿，旧leaf两源不改。保留旧AssistantSettings类型与outer strict final，仅settings层union；配置optional缺键不默认填入；整profile引用/目的与已知resume检查属于公共TaskSubmission，不只conversation。新controls不宣称fixed-disabled或资格探测。6组test先写后接线，因运行门禁未开放不声称red/green，未跑类型或任意工程检查。后继server/runner source仍等待Lead闭包。
+
+2026-10-06 15:53:33 UTC小源码收口：new final model一致性归唯一schema权威，helper只复用，legacy不受新refinement影响。两明确反例覆盖矛盾model和无观察却声称effective model，正例同步绑定；未运行不称通过。两个pure helper仅候接既有caller，不复制host/FSM；先前授权创建事实保留。原leaf SHA未变；0tests/tsc/PG/目标/安装；其余caller仍受Lead磁盘gate阻塞，不导出tmp绕过。
