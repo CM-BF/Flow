@@ -1,67 +1,91 @@
-# Claude逐消息设置：共享consumer交接
+# Claude逐消息设置：共享consumer可执行交接
 
-2026-10-06 15:50:43 UTC；parent WPF-MATURE-02 / TODO-11，co-lead mika。此页是既有owner间的接线请求与验收约束，不是源码领取、实施通过或新运行许可。父status仍为唯一父进度；child状态不复制到本页。
+2026-10-06 16:26 UTC；parent WPF-MATURE-02 / TODO-11，co-lead mika。本页维护接口与现owner派工请求；源码/检查进度仍由各owner的唯一status维护，不是新的任务层级或写权。
 
-## 固定输入与当前缺口
+## Lead现在可派工
 
-首契约leaf已main22d5；新的core contracts checkpoint `29bbf52589611a936068fa44991c67991b67f4c2` 只固定了接线源码，**尚未验证、未独审，不能单独称产品交付**。权威[core下一片请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)负责实际profile→中心→队列→adapter合同与范围。
+请立即由F01合法owner接以下client/CLI小片，Web/d01与TUI01F合法owner并行接各自consumer；**不等CORE的PG或整个UI验证完成**。若现owner不能接，先明确停止精确路径写入，再用当前version原子amend移除，由本组独立WT的新consumer owner fresh take/amend成功后开工。不能绕过F01公共入口、占用中的recovery/controller或复制HTTP/FSM。source先固定交审；工程检查按各自资源门禁，PG/SDK/provider当前不由此页开放。
 
-consumer按完整`messageSettings`快照工作：protocol、profile三元`id/runnerId/configDigest`、完整requested组合。受信configured choices以完整组合授权，不把SDK枚举当账号可用；不跨组合拼model/effort/speed，不回填defaults，不热改旧profile。`not-requested` effort仅未请求，不承诺SDK重置；unknown/unsupported保持显式。新reader沿精确单header `X-Flow-Execution-Profile: flow.claude-turn-settings.v1`，旧codec与旧profile字节兼容必须保留。
+CORE源码恢复已解阻：Mika本轮报告Lead已恢复并独核155缺源hash零错误；[CORE精确source closure](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/vertical-source-closure.json)：固定92f768采样227文件、155不可见/673771逻辑B、4KiB名义1,003,520B。恢复由Lead唯一operator执行，本owner未改sparse；17已安装依赖只复用第三方，@flow指向CORE本WT。Lead回执`/tmp/flow-claude-vertical-source-materialized.json`说明155source补齐；ba2→c33d并发仅9metadata，源ea未变。恢复不当验证通过。032已[正式分配](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/f01/claude-message-settings-migration-assignment.json)，这里只证明号/领取，F01 actual factory挂载仍是单独接线。
 
-## 现有owner路由
+## 固定合同与现场
 
-以下权属来自architecture_read对main `a89f42ab57acb53657af6a2d1b745dabd4d50aa5` 的独立只读地图及2026-10-06 15:47:14 UTC账本观察。它们是协调输入，不授予本父owner或core前端写权；实际改动前由Lead与现owner核最新claim，沿原范围实施或明确停写后原子交接。
+公有输入固定为CORE `ea276572c3c99fb8400808a93efc69ce530d55a4`：`claude-turn-settings.ts`、`execution-profiles.ts`、`conversations.ts`、`conversation-queue.ts`、`assistant.ts`。首leaf已main22d5；后继source未因leaf批准自动通过。Mika核16:21:52 contracts-only三文件16/16、16:25:51合同focused strict exit0；16:26:31注入现Claude adapter单文件5/5 exit0。0真实query/native/PG/provider；整related-closure focused strict另由child进行，本页不提前给结论。完整core合同/范围见[下一片handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)。
 
-- F01 v40：client reader header/codec、send/enqueue完整冻结body与ACK matcher、contracts index。复用既有HTTP transport/idempotency/signal，不复制请求层。
-- Web RECOVERY01：workspace_panels_owner，claim6ff988 v4，现持App/ConversationThread、outbox/projection/queuecommands/recoverybinding；Web/d01须协调该owner后落实同合同，不重复派writer。
-- TUI01F：assignment_review，claim9fe77a v1，现持interaction types/commands/controller与TUI main/screen；在既有Intent/mutate/recover/private journal上消费，不造第二FSM。
+本owner16:24:10.888 UTC fresh账本：父0dd97484 v6只docs/实验/plan。F01 v40、TUI01F v1、RECOVERY01 v4仍ACTIVE。F01 `5f0fc08bfa84f35ec5728f0dfbee639619496027` clean，权威[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/plans/f01-shared-domains/status.md)仍O14实施/资源等待；不能因另一个产品片已交付而抢公共源。architecture_read 16:21:56.939快照：Web `0eef4cda8813afe336df8dc88256da28e206c0d4` dirty仅6个direct-second evidence；TUI `26e21690c7d100b7115bef07aae7b55ab44529c6` dirty为fixture/journey/cancel_driver，虽slice delivered仍未release。其只读地图基线main65659028；改写前必须再次fresh核，不覆盖这些dirty。
 
-## 精确候选路径与直接检查
+## F01可立即实现的小接口
 
-这是source-only读闭包/现owner协调清单，不是一次领取整表。条件项仅出现实际类型/展示需要时由owner确定；所有路径仓库相对，独立WT固定提交后交审。
+沿既有FlowClient实例、Bearer/cookie互斥、Signal、HTTP错误与无暗重试，不新增transport/连接配置或全局selector。冻结此方法名供Web/TUI/CLI共用：
 
-| 接缝 | 实际路径 |
+```ts
+claudeMessageSettingsProfiles(
+  options: { after?: string; limit?: number } = {}, signal?: AbortSignal
+): Promise<ClaudeMessageSettingsCatalogPage>
+
+// 既有签名保持；input的公有类型在CORE增加optional messageSettings。
+submitConversationTurn(id: string, input: ConversationTurnAdmission,
+  key: string, signal?: AbortSignal): Promise<ConversationTurnAccepted>
+enqueueConversationTurn(id: string, input: ConversationQueueEnqueue,
+  key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted>
+
+// 增量decoder仍放既有acknowledgement模块，供所有consumer复用。
+decodeConversationQueueAccepted(raw: unknown, conversationId: string,
+  input: ConversationQueueEnqueue): ConversationQueueAccepted
+```
+
+新catalog每页固定单一 `X-Flow-Execution-Profile: flow.claude-turn-settings.v1`，GET仍`/api/execution-profiles`，after/limit沿URLSearchParams原样编码；使用`claudeMessageSettingsCatalogPageSchema.parse`，显式返回`profiles[].profile`的新版形状。旧200、native-v1/steering-v1 envelope、矛盾配置或错误protocol直接拒绝，不能fallback旧reader或吞错误成空列表；旧`executionProfiles`/`nativeExecutionProfiles`签名、默认header与codec保持。schema限制100项/页、tuple最多32、profile绑定与cursor已有公有校验，不拼四个维度的笛卡尔积。
+
+`packages/contracts/src/index.ts`只补`export * from './claude-turn-settings.js'`；其余新增catalog/final类型已由现execution-profiles/assistant出口带出，不复制DTO。F01的`publishExecutionProfile`返回类型跟随公有`ExecutionProfilePublished`联合，不把新profile硬cast成旧controls；本片不创造自动publication或账号资格。
+
+### 冻结请求与ACK
+
+发送维持现有`body = JSON.stringify(input)`一次序列化、再由同body解析冻结的比较对象。入队在**请求携带messageSettings时**走同样冻结与`conversationAcknowledgement`错误边界，再调用新decoder；legacy无字段入队维持现行为，既有部分ACK transport测试不需要删除。不得让调用方在await之后的嵌套对象变更影响matcher；key/body不因重读catalog或草稿变化被替换。
+
+send的现decoder保留conversation/turn/task/文本/revision/context全部检查，再对`turn.messageSettings`调用`assertClaudeTurnSettingsMatch(input.messageSettings, actual)`。仅在请求明确带设置时要求它存在；错、缺、非法、profile任一三元或组合不符，映射既有`UnknownConversationAcknowledgementError`，不得透传raw正文。新能力是optional `capabilities.messageSettings`，校验protocol、profile三元与`choices:'execution-profile'`并保留，不把旧`perTurnModel/perTurnThinking/perTurnTools=false`改true。creation锁只锁原profile，不授权绕过messageSettings资格。
+
+新入队decoder用于opt-in分支：校验返回conversationId和item.conversationId等于请求id、UUID item.id、finite整数queueRevision为原expectedQueueRevision+1、item.sequence等于该receipt revision、`state:'waiting'`/`promoted:null`、时间/replayed与bounded preview形状，再精确匹配`item.messageSettings`。初始ACK与幂等重放都是不可变enqueue receipt；不能拿后续GET当前promoted状态替它判定。完整文本不在ACK内，preview只做≤512 UTF-8字节/请求前缀与truncated一致性，不冒称全文receipt；正文身份仍由原冻结body/key及中心digest绑定。后续当前详情另走既有read方法，不新增“确认后自动重发”。
+
+### requested / observed读回
+
+`conversation`、`conversationTurns`、`conversationQueue/Item`沿旧endpoint/分页；HTTP层不strip新增字段。公共ACK和Web/TUI边界对存在的`turn.messageSettings`解析`claudeTurnSettingsSchema`，对存在的`effective.messageSettings`严格解析`claudeMessageSettingsFinalSchema`，wrapper.snapshot与该turn请求匹配，并核`effective.model === (observed?.model ?? null)`；坏observed不能因requested已匹配就穿过typed UI。snapshot是请求，observed只来自同task的SDK init：缺失、null、model alias、effort缺/null、fast off/cooldown/on与禁用原因原样保留；不得从requested回填。existing effective/source身份检查继续成立，不能为了新分支删旧校验。旧记录未带字段不补disabled/standard；无可信能力、stale三元或resume不支持的not-requested由中心拒绝，客户端保留草稿/intent。
+
+### CLI最小兼容入口
+
+F01固定源当前**没有conversation/catalog CLI命令**。不改现`submit`的task语义或给它偷加全局设置。新增同组的三个薄命令，沿现parseArgs、`--input/--key/--after/--limit/--json/--url`与signal，不需要新参数维度或第二JSON读取器：
+
+| 命令 | 精确调用 |
 | --- | --- |
-| F01合同/请求/ACK | `packages/client/src/index.ts`；`packages/client/src/conversation-acknowledgement.ts`；`packages/contracts/src/index.ts` |
-| F01直接tests | `packages/client/src/conversation-acknowledgement.test.ts`；`packages/client/src/execution-profiles.test.ts`；`packages/client/src/conversation-queue.test.ts`；`packages/client/src/conversations.test.ts` |
-| Web草稿/提交/恢复 | `apps/web/src/App.tsx`；`apps/web/src/conversations/ConversationThread.tsx`；`apps/web/src/conversations/outbox.ts`；`apps/web/src/conversations/projection.ts`；`apps/web/src/conversations/queue/commands.ts`；`apps/web/src/conversations/queue/projection.ts`；`apps/web/src/recovery/binding.tsx` |
-| Web目录/队列展示 | `apps/web/src/execution-profiles/catalog.ts`；`apps/web/src/execution-profiles/selection.ts`；`apps/web/src/conversations/queue/ConversationQueue.tsx` |
-| Web直接tests | `apps/web/test/conversation-outbox.test.ts`；`apps/web/test/conversation-projection.test.ts`；`apps/web/test/conversation-queue.test.ts`；`apps/web/test/execution-profiles.test.ts`；recovery owner树的 `apps/web/test/conversation-recovery.test.ts`、`apps/web/test/conversation-recovery.fixture.ts`、`apps/web/test/conversation-recovery.browser.ts` |
-| TUI/interaction状态与展示 | `packages/interaction/src/types.ts`；`packages/interaction/src/commands.ts`；`packages/interaction/src/controller.ts`；`packages/interaction/src/projection.ts`；`packages/interaction/src/queue-control/index.ts`；`apps/tui/src/screen.tsx`；`apps/tui/src/main.tsx`仅reader option/queue port注入需要时 |
-| TUI直接tests | `packages/interaction/src/controller.test.ts`；`packages/interaction/src/queue-control/controller.test.ts`；`apps/tui/src/recovery.test.ts`；`apps/tui/src/journey.test.ts`；`apps/tui/src/queue-controls/journey.test.ts` |
+| `flow conversation profiles --after UUID --limit N --json` | `claudeMessageSettingsProfiles({after,limit}, signal)`；只这一命令选择新protocol |
+| `flow conversation send CONVERSATION_ID --input FILE --key KEY --json` | `conversationTurnSchema.parse(await readJsonInput(FILE, 131072))`；首入口限定mode follow-up；调用既有submitConversationTurn |
+| `flow conversation enqueue CONVERSATION_ID --input FILE --key KEY --json` | `conversationQueueEnqueueSchema.parse(await readJsonInput(FILE, 131072))`；调用既有enqueueConversationTurn |
 
-F01源与前三tests由v40持有；`packages/client/src/conversations.test.ts`只是候选，需fresh查账。Web固定观察recovery树`f29751812090f85d5d01a4c67a4bdca09566ec85`、TUI树`d65886faf82c7df3c74c5b19fc27f02643b4d9f9`均当时clean；上述清单不保证全部路径已由同claim覆盖。`ExecutionProfilePicker.tsx`仅创建选择展示确需新codec时、`apps/web/src/TaskThread.tsx`仅现Map<string,DraftState>可选字段类型接缝确需时才另核精确路径/范围，不另造draft map。
+input包含完整请求（expectedRevision或expectedQueueRevision、text、原可选materials和messageSettings），不合并独立model/fast flags，不给effort补default。snapshot canonical上限1024字节继续由公有schema执行；131072只是输入文件上界，沿现工具的有限文件读取。send/enqueue必须显式稳定`--key`，缺key/非法JSON在发HTTP前失败；unknown ACK沿现错误出口非0，给同key/body的显式恢复提示，不自动生成新key或重发。输出原接受receipt含requested，不宣称已执行；历史observed由现客户端/跨端读回保真，本小片不另建CLI会话FSM。旧submit/list/watch/reconcile及各既有命令路径、选项、输出和退出码保持。
 
-F01 send已用公共ACK decoder，enqueue现仅request，需要共用有限snapshot matcher。`packages/interaction/src/acknowledgement.ts`已委托client decoder，优先原样复用。`apps/web/src/conversation-context/receipts.ts`只深冻materials，其余浅冻，新增settings须在outbox/command边界递归freeze；不为此改通用helper。`apps/web/src/recovery/journal.ts`、TUI的`apps/tui/src/intent-store.ts`→`apps/tui/src/private-journal.ts`、共用controller的`apps/tui/src/headless.ts`先作直接只读输入，不先改generic journal或造新持久化层。
+## 最小合法源码范围与切片
 
-## Web：捕获A，保留后改草稿B
+| 当前owner | 本片精确路径 / 直接检查 |
+| --- | --- |
+| F01 v40 | `packages/client/src/index.ts`、`packages/client/src/conversation-acknowledgement.ts`、`packages/contracts/src/index.ts`；同目录`execution-profiles.test.ts`、`conversation-acknowledgement.test.ts`、`conversation-queue.test.ts`已持有；`apps/cli/src/index.ts`、`apps/cli/src/cli.test.ts`、`apps/cli/README.md`在既有apps/cli目录scope。`json-input.ts`先只复用。无需新增client test路径或扩大整个目录。 |
+| Web现owner或独立合法leaf | `apps/web/src/execution-profiles/catalog.ts`、`selection.ts`、`ExecutionProfilePicker.tsx`；`apps/web/src/App.tsx`、`TaskThread.tsx`；`apps/web/src/conversations/ConversationThread.tsx`、`outbox.ts`、`projection.ts`；`conversations/queue/commands.ts`、`projection.ts`、`ConversationQueue.tsx`；`apps/web/src/recovery/binding.tsx`。其中App/Thread/outbox/会话projection/queue.commands/recovery.binding被RECOVERY v4持有；其余当时free，仅fresh take后可先独立catalog/选择/视图leaf。 |
+| TUI01F现owner或独立合法leaf | `packages/interaction/src/types.ts`、`commands.ts`、`controller.ts`、`projection.ts`、`queue-control/index.ts`；`apps/tui/src/main.tsx`、`screen.tsx`。前3与main/screen被TUI01F v1持有；projection/queue-control当时free，可fresh领取独立codec leaf。不能在同tree抢写已有controller。 |
 
-沿现`CompleteDraft`与`viewKey`，发送/入队开始时捕获文本、材料选择和完整设置；**在任何材料await之前递归复制并冻结新snapshot**。pending capture、幂等key与最终请求body绑定同一份A；后续UI修改只形成新draft B，不能改A的对象或请求。view切换/刷新后的`readRecoveryDraft`须完整保存与恢复这份设置，不因只恢复文本丢失请求身份；generic journal格式与生命周期机制不另建一套。
+F01可先固定client/CLI源与局部HTTP/codec检查（检查另遵资源门禁），无需等server factory mount或真实PG；F01负责后续032 `apps/server/src/index.ts`真实挂载，只有集成验证才能称纵向工作。Web/TUI free leaf可同时准备，新client入口若尚未可见先用精确typed port/测试注入，最终必须消费单一FlowClient；不可复制HTTP或构造第二draft状态。
 
-成功回执只有与A的profile三元及完整设置匹配才可确认A。清draft须比较完整captured draft/view身份，不能只比正文：同文本但设置已改的B也必须保留。错/缺设置的HTTP200、abort和结果不明均保留A的key+body，恢复只重放同一冻结intent；不自动换key或用当前B重新拼A。旧legacy缺字段仍走原行为，不替它补disabled/standard。
+## Web/TUI最小行为接线
 
-## TUI：同Intent覆盖发送与恢复
+Web沿现唯一DraftState map加optional snapshot；`CompleteDraft/readRecoveryDraft`、App保存/恢复/route切换同带。`ConversationThread.submit`在materials await/composer.send前parse、复制、递归freeze，pending、onNew、send/enqueue、outbox恢复只用captured A。draft身份包含viewKey/text/canonical snapshot与既有材料身份；App restore冲突与Thread ACK清稿必须包含设置，正文相同但设置改为B也不清/回填B。`profileReason`已有lockedProfile放行仅适用creation；新设置另核conversation.capabilities.messageSettings.profile、conversation.executionProfile与catalog三元相同及完整tuple获准。缺能力/stale目录保稿阻新设置，旧legacy路径仍可用。通用journal.ts、材料helper与draft map不新建第二套。
 
-沿已有Intent、`mutate`、`recover`和私有journal保存完整body/设置，ACK matcher复用同一个已审leaf接口。重启后的显式恢复保持原key和冻结body；新草稿与旧pending intent分开。当前TUI没有enqueue；若本产品片纳入enqueue，把它加到同一Intent分支和恢复路径，不另造queue mutation FSM。操作是否纳入本片由Lead/consumer owner固定，不能因UI尚未实现而降低完整02队列验收。
+TUI沿同IntentStore.save→dispatch→ACK→clear/recover，draft存完整snapshot；新增显式`/settings`列/选configured完整tuple、`/enqueue <text>`使用已读queueRevision走同Intent，不busy时暗切queue。refresh保留messageSettings三元能力；controller只比text的清稿与screen命令清稿同时改为完整captured identity。Intent version1/key、旧journal读取保持；不改private-journal/headless实现或新增FSM。queue-control现z.object会strip snapshot且blocked缺`message-settings-unsupported`，与Web queue projection必须显式接收/展示。
 
-## 展示与直接codec消费者
+两端分别显示draft下一条requested、历史turn与队列自身冻结requested、init observed。目录configured≠账号entitlement；explicit standard/fast不得暗换model或承诺价格/实际生效。运行A、已入队B与新draft C互不覆盖，旧会话可读可续；能力未知组合不伪装可用。
 
-- draft显示下一条请求的完整model/thinking或effort/speed选择及可用性；不将configured等同已生效。
-- 历史turn与持久队列显示自身冻结requested，不跟随当前draft变化。
-- init observed独立展示：实际model别名、effort缺/null、fast off/cooldown/on与禁用原因保持事实；requested fast不冒称actual，未知不填成功。
-- 新queue blocked值`message-settings-unsupported`必须由interaction与Web投影一起接收并呈现，不得因新合法枚举拒绝整页；精确路径在下方共享清单。
+## 直接验收与交付边界
 
-## 最小直接验证（待owner实施，不是已运行证据）
+F01最小：新reader精确header/翻页/旧200拒绝，旧reader不变；send/enqueue异步嵌套变更后body和matcher仍A；200缺/非法/不同snapshot（含三元）→unknown且不retry；enqueue replay不可变ACK；observed absent/null/alias保真；CLI新3命令路由、bounded输入、required key、409/abort/unknown出口，旧submit固定body保留。已有HTTP fixtures即可，不需要PG/模型才能开始源码。
 
-1. 先捕获A、材料await期间编辑B，A发送的key/body/settings不变；A回执不能清B。再单独覆盖正文相同、只改settings的B。
-2. HTTP200缺snapshot、非法snapshot或不同profile/组合均转unknown ACK，保留A；不错误清intent或建立新key。abort、刷新恢复和TUI重启仍保原A的key/body/设置。
-3. 旧codec与legacy缺字段路径逐字兼容；profile任一三元过期/不匹配明确拒绝，不用新profile替换旧pending请求。
-4. Web/TUI使用同DTO与matcher；队列新blocked reason可读，历史/队列requested与init observed不被draft覆盖。仅模块和直接消费者检查，实际PG/SDK/provider不由本交接授权。
+Web直接tests：`apps/web/test/execution-profiles.test.ts`、`conversation-outbox.test.ts`、`conversation-projection.test.ts`、`conversation-queue.test.ts`、`conversation-recovery.test.ts`及既有recovery fixture/browser必要段。TUI：`packages/interaction/src/controller.test.ts`、`queue-control/controller.test.ts`、`apps/tui/src/recovery.test.ts`、`journey.test.ts`、`queue-controls/journey.test.ts`。测试路径也须合法owner/claim，不因列在本页自动授权。
 
-## Lead当前精确补充
+共同反例：①完整tuple与legacy codec，nested mutation隔离；②材料pending中编辑B及同文不同设置B，A回执不能清B；③错ACK/断线/刷新/重启仍保A原key/body；④queue/history冻结、observed unknown不回填；⑤not-requested resume409保稿，stale profile任一三元不绕creation锁。实际SDK、PG、Web实跑与全产品验收仍独立记录；本页0运行，不冒称这些检查已通过。
 
-Lead正在provision33 source及只读闭包；032已正式分配core。另只补 `apps/server/src/reconciliation.ts` 到core source-only闭包：固定main a89f42ab的`retryReconciled`经`recoverySubmission`后直接INSERT task，需在插入前验证新完整设置与可信profile；不能仅依send/enqueue路径。core将fresh amend加入该literal与正式032，未确认receipt前不写；本父不扩scope、不再泛索其他目录。
-
-## 方法与范围
-
-沿本地find-skills/clean-code固定sickn33@bdacd76，复用既有深接口/单一状态所有者，核对快照身份、错误传播与无重复FSM。本次仅只读固定源码与管理文档；0工程检查、PG、目标、安装或新诊断。旧Node/OpenSSL与sealed证据不动。
+方法：本地find-skills匹配TypeScript client/CLI与跨端状态边界，复用clean-code固定sickn33@bdacd76、codebase-design方法；16:24重新读本地技能，核命名、单一请求/状态owner、错误传播与无需第二hash/FSM。未安装技能/依赖。本轮只读固定Git/账本/owner状态并写父交接，0测试/PG/provider/新诊断；旧sealed证据不改。

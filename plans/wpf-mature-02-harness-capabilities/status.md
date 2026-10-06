@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:14:52 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:26:23 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,20 +10,20 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / dfc75a6509fd30b3cb5f0c50f7964be0c7fad783（本轮父metadata基线；ca6a实验源码checkpoint不变） |
-| 工作树dirty状态 | 本轮仅父status/canonical的CORE闭包准入路由；0产品源码改动，提交后clean。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 29bfc1ff16647769db6a78fdf4258106f8d2bda2（本轮父metadata基线；ca6a实验源码checkpoint不变） |
+| 工作树dirty状态 | 本轮仅consumer交接、canonical及父plan/status；0产品源码改动，提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | 仅管理文档、链接及领取回执一致性核验；0工程测试/目标/PG/install/build。OpenSSL ca6a保持PENDING_RESOURCE/NOT_OPEN，未新核运行资源或启动。 |
+| 当前检查 | 本owner仅固定合同/现owner/入口源码只读与文档一致性核验，0工程测试/目标/PG/install/build；Mika报告CORE contracts-only三文件16/16，其余由child记。OpenSSL ca6a保持PENDING_RESOURCE/NOT_OPEN，未新核运行资源或启动。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；core首leaf main22d5ca67159b35bb794b2711cf6df0cb905b92e8已接收；不代表个人服务部署 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude产品core首契约已main；当前接入现profile、中心事务、队列与已有adapter。child next-slice-handoff维护唯一精确合同/闭包；本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude逐消息设置的共用契约已进入主线；中心和执行器接线已进入验证准备，界面尚未开放逐消息选择。 |
-| 下一可用交付 | 让每条消息的设置在提交、排队与Claude执行中保持一致，再由Web/TUI共享消费。 |
-| 当前阻塞 | ACTIVE: 验证前需Lead恢复精确缺失源码并满足资源准入；共享client/界面与迁移挂载仍由现owner接线。源码固定不代表验证通过。 |
+| 当前产出 | Claude逐消息设置的中心与执行器接线正在验证；客户端和界面接线已细化到可并行派工，尚未开放产品选择。 |
+| 下一可用交付 | 让合法owner并行接通目录、发送和排队快照，保护修改后的草稿，并在Web/TUI保留真实执行设置。 |
+| 当前阻塞 | ACTIVE: 源码闭包已恢复；共享client/界面需Lead立即派现owner接线或部分交接，中心验证和生产挂载尚未完成。无需用户决定。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
 | Review | core首plain-contract leaf已APPROVED且main22d5接收；后继center/adapter未沿用该批准。OpenSSL ca6仅SOURCE_REVIEW/PENDING_VALIDATION、NOT_OPEN。 |
@@ -42,7 +42,7 @@
 | WPF-MATURE-02-08 | pending | chatui01_owner | 完整目标未验收 |
 | WPF-MATURE-02-09 | pending | R05共享owner / d01 | 下一条配置可变与历史/当前/队列冻结分离；CAS/未知ACK/恢复/跨harness，04测量失效，见唯一interface |
 | WPF-MATURE-02-10 | in-progress | status_read / mika | 首leaf已main；下一片profile/中心/adapter以[child handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)为唯一合同与范围来源，完整core未完成 |
-| WPF-MATURE-02-11 | pending | Lead协调现owner | [consumer交接](../../docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md)已明确F01/Web/TUI现owner、冻结/恢复及直接验收；未领取前端源，未实施验证 |
+| WPF-MATURE-02-11 | pending | Lead协调现owner | [consumer交接](../../docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md)已固定F01函数/CLI、ACK/observed与Web/TUI最小接线及直接验收，正式请求现owner实施或原子交接；本父未领产品源，不宣称已实施 |
 
 ## 接口与dashboard
 
