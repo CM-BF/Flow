@@ -1,0 +1,42 @@
+{
+  "startedAt": "2026-10-06T18:11:48.821169+00:00",
+  "finishedAt": "2026-10-06T18:11:49.394896+00:00",
+  "wallSeconds": 0.5737425410188735,
+  "source": "acbb3311ad4a5b35cb8c91527e969da75853dd71",
+  "pid": 3419,
+  "exitCode": 0,
+  "stdioEOF": true,
+  "closed": true,
+  "processGroup": "absent",
+  "failure": null,
+  "raw": {
+    "bytes": 2857,
+    "sha256": "d547bb35018c30ecda0a5f301fd8e26f6a3e268f660de48e0465472d37216316"
+  },
+  "roots": [
+    {
+      "path": "/tmp/flow-wpf02-native-pagesize-vitest-cache",
+      "identity": {
+        "dev": 16777234,
+        "ino": 123119752
+      },
+      "removed": true,
+      "logicalBytes": 154,
+      "allocatedBytes": 4096
+    },
+    {
+      "path": "/tmp/flow-wpf02-native-pagesize-check-tmp",
+      "identity": {
+        "dev": 16777234,
+        "ino": 123119753
+      },
+      "removed": true,
+      "logicalBytes": 0,
+      "allocatedBytes": 0
+    }
+  ],
+  "actualCompilerHelpers": 0,
+  "pg": 0,
+  "provider": 0,
+  "listeners": 0
+}

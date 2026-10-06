@@ -18,4 +18,6 @@ A=原37023逐字前缀+两臂共同exact CANARY_EXECUTABLE exec/read/map fixture
 
 Caller实现采用一个host（固定A/B顺序、owned文件收据/逐项inventory、严格report）和一个惰性entry，唯一process owner仍runOwnedCommand，编译词法沿compilerInventory。runtime必须包含command静态依赖stderr-capture.ts。宿主显式NODE_DISABLE_COMPILE_CACHE=1；目标及compiler六项env不继承NODE_*。入口提前核固定输入和其自身输出缺席，outer先预约的8路径由最终OPEN外部fresh核，不能把wx当全量preflight。全程以outer启动前UTC至工具真实exit确认≤30s，内部performance从Node启动计，末次落盘与CLI回调独立门禁。
 
-固定C/A/B checkpoint fde671c974baf7fa2cdca5e9333e8f1eb0afcba7已获architecture_read SOURCE_REVIEW无P1/P2、Mika接收；只批准三源，不覆盖新caller/执行。新10个fake用例只注入command函数、不触实际spawn/clang/helper，含负观测、诊断errno、非法报告、一次compile/A/B参数、unknown停B、copy失败保原件、最终receipt失败、同clock门禁；当前未运行。含compiler副本失败保根。拟一次Vitest4 configLoader native/1worker +Node24 inert import+sh -n，合计30s/raw16KiB/cache32MiB，起跑需Mika精确小窗及fresh资源/claim。
+固定C/A/B checkpoint fde671c974baf7fa2cdca5e9333e8f1eb0afcba7已获architecture_read SOURCE_REVIEW无P1/P2、Mika接收；只批准三源，不覆盖新caller/执行。原10个fake用例只注入command函数、不触实际spawn/clang/helper，含负观测、诊断errno、非法报告、一次compile/A/B参数、unknown停B、copy失败保原件、最终receipt失败、同clock门禁；已分轮通过10+2，详quality；本真实窗口未运行。含compiler副本失败保根。拟一次Vitest4 configLoader native/1worker +Node24 inert import+sh -n，合计30s/raw16KiB/cache32MiB，起跑需Mika精确小窗及fresh资源/claim。
+
+执行检查已经收束：12 distinct fake分轮，原生惰性import与shell语法0，初次0tests保留。严格compiler stream gate在verbose parser之前；regular读前先进入保留状态、sameidentity closed-file size sample入账，超限/未知不删原件。这不将文件最终size冒称wire累计，也不声称编译全系统IO峰值。最终组合只等待固定inputs/prepared/archive核验与Mika唯一OPEN。

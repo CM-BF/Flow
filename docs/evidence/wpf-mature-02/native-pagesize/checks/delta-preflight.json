@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-06T18:11:48.821169+00:00",
+  "head": "acbb3311ad4a5b35cb8c91527e969da75853dd71",
+  "claimVersion": 6,
+  "freeBytes": 1695780864,
+  "threshold": 1107296256,
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "--configLoader",
+    "native",
+    "--config",
+    "experiments/codex-app-server-conformance/native-pagesize/vitest.config.mjs",
+    "--maxWorkers",
+    "1",
+    "--reporter=verbose",
+    "-t",
+    "accounting delta"
+  ],
+  "inputs": [
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/host.mjs",
+      "bytes": 17844,
+      "sha256": "6656fb8e92cd1a3e05d3d01a6fac50a373fe1d0d1fba023d246b38df74ed4166"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/host.test.ts",
+      "bytes": 12551,
+      "sha256": "bcddabc420c49fecd6e0f86f15fe362b7c6893e04d7ba75b3ec3957de2798382"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/vitest.config.mjs",
+      "bytes": 404,
+      "sha256": "da422d40b8ad13848b3b3dbfeb928c68b8c8cc6697d7557a9a6d950a3409d7b8"
+    }
+  ],
+  "roots": [
+    {
+      "path": "/tmp/flow-wpf02-native-pagesize-vitest-cache",
+      "identity": {
+        "dev": 16777234,
+        "ino": 123119752
+      },
+      "removed": false
+    },
+    {
+      "path": "/tmp/flow-wpf02-native-pagesize-check-tmp",
+      "identity": {
+        "dev": 16777234,
+        "ino": 123119753
+      },
+      "removed": false
+    }
+  ],
+  "expectedSelected": 2,
+  "expectedUnselected": 10,
+  "budget": {
+    "seconds": 30,
+    "raw": 16384,
+    "temp": 33554432
+  }
+}
