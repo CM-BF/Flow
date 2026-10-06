@@ -1,0 +1,9104 @@
+{
+  "startedAt": "2026-10-06T18:26:40.595Z",
+  "root": "/private/tmp/flow-svc05h-sockets-gIVi6m",
+  "identity": {
+    "dev": 16777234,
+    "ino": 123125766
+  },
+  "pid": 47524,
+  "node": "v24.20.0",
+  "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "attempts": 133,
+  "phase": "cleanup",
+  "inputs": [
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "bytes": 5081,
+      "sha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "bytes": 2670,
+      "sha256": "f109fff88512ed5cf39503b7a4b2a1de1c95bff333cb1d3635454558e3bfefc7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js",
+      "bytes": 1383675,
+      "sha256": "21d5c6b4fb1013b98b1436e9e2a3bb416c8932343ad42ec293bbf760f51a0131"
+    },
+    {
+      "path": "/tmp/flow-svc05h-net-embedded-source.js",
+      "bytes": 85948,
+      "sha256": "73ec9d0b5e0096b9f8daf2d9d7271920179c46d71996d85bb41a0c54d2be3eed"
+    },
+    {
+      "path": "/tmp/flow-svc05h-_http_server-embedded-source.js",
+      "bytes": 43902,
+      "sha256": "cd81e1020a8f2b3f6731b2db28648d889ec99db4fbff45ed608821bcc4209be9"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/negotiation.json",
+      "bytes": 265,
+      "sha256": "9206dcacfd63481c7d67ec7cad6e08529d01ab490c9d654715c34d55240db933"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/read.json",
+      "bytes": 249,
+      "sha256": "bbfccc446c91b11d70bae5cf93955eb49c17153a91b64e7ca583137eab19481c"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/recover.json",
+      "bytes": 231,
+      "sha256": "9dde466bc8ef9d6870a238014deb2608d98ff634b2f0f76e64fc41a05bb9e2b1"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/report.json",
+      "bytes": 646,
+      "sha256": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/send.json",
+      "bytes": 239,
+      "sha256": "50134443cca2ab9cd04262a91b7f8de3d031a0e56dabd757607fd22481313a83"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/",
+      "mode": "complete",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 950
+    },
+    {
+      "path": "/__flow_preview_identity",
+      "mode": "complete",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 278
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "abort",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/__flow_preview_identity",
+      "mode": "complete",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 278
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/api/sse",
+      "mode": "hold",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 16
+    },
+    {
+      "path": "/__flow_preview_identity",
+      "mode": "drop",
+      "status": null,
+      "error": "ECONNRESET",
+      "bodyBytes": 0
+    },
+    {
+      "path": "/__flow_preview_identity",
+      "mode": "complete",
+      "status": 200,
+      "error": null,
+      "bodyBytes": 278
+    }
+  ],
+  "events": [
+    {
+      "ms": 274,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 1
+    },
+    {
+      "ms": 275,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/"
+    },
+    {
+      "ms": 276,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 1,
+      "hadError": false
+    },
+    {
+      "ms": 277,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 2
+    },
+    {
+      "ms": 277,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/__flow_preview_identity"
+    },
+    {
+      "ms": 277,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 2,
+      "hadError": false
+    },
+    {
+      "ms": 278,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 3
+    },
+    {
+      "ms": 279,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 4
+    },
+    {
+      "ms": 279,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 279,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 3,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 279,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 280,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 3,
+      "hadError": true
+    },
+    {
+      "ms": 280,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 5
+    },
+    {
+      "ms": 280,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 280,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 4
+    },
+    {
+      "ms": 280,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 6
+    },
+    {
+      "ms": 281,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 4,
+      "hadError": false
+    },
+    {
+      "ms": 281,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 7
+    },
+    {
+      "ms": 281,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 5
+    },
+    {
+      "ms": 281,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 5,
+      "hadError": false
+    },
+    {
+      "ms": 281,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 281,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 6,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 281,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 281,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 6,
+      "hadError": true
+    },
+    {
+      "ms": 281,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 8
+    },
+    {
+      "ms": 282,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 282,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 7
+    },
+    {
+      "ms": 282,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 7,
+      "hadError": false
+    },
+    {
+      "ms": 282,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 9
+    },
+    {
+      "ms": 282,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 8
+    },
+    {
+      "ms": 282,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 8,
+      "hadError": false
+    },
+    {
+      "ms": 282,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 10
+    },
+    {
+      "ms": 282,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 282,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 9,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 282,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 282,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 9,
+      "hadError": true
+    },
+    {
+      "ms": 282,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 11
+    },
+    {
+      "ms": 283,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 283,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 10
+    },
+    {
+      "ms": 283,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 12
+    },
+    {
+      "ms": 283,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 10,
+      "hadError": false
+    },
+    {
+      "ms": 283,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 11
+    },
+    {
+      "ms": 283,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 11,
+      "hadError": false
+    },
+    {
+      "ms": 283,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 283,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 12,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 283,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 13
+    },
+    {
+      "ms": 283,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 12,
+      "hadError": true
+    },
+    {
+      "ms": 283,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 283,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 14
+    },
+    {
+      "ms": 283,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 284,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 13
+    },
+    {
+      "ms": 284,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 13,
+      "hadError": false
+    },
+    {
+      "ms": 284,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 15
+    },
+    {
+      "ms": 284,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 14
+    },
+    {
+      "ms": 284,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 14,
+      "hadError": false
+    },
+    {
+      "ms": 284,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 16
+    },
+    {
+      "ms": 284,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 284,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 15,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 284,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 284,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 15,
+      "hadError": true
+    },
+    {
+      "ms": 284,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 17
+    },
+    {
+      "ms": 284,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 284,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 16
+    },
+    {
+      "ms": 284,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 16,
+      "hadError": false
+    },
+    {
+      "ms": 285,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 18
+    },
+    {
+      "ms": 285,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 17
+    },
+    {
+      "ms": 285,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 17,
+      "hadError": false
+    },
+    {
+      "ms": 285,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 19
+    },
+    {
+      "ms": 285,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 285,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 18,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 285,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 285,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 18,
+      "hadError": true
+    },
+    {
+      "ms": 285,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 20
+    },
+    {
+      "ms": 285,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 285,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 19
+    },
+    {
+      "ms": 285,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 21
+    },
+    {
+      "ms": 285,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 19,
+      "hadError": false
+    },
+    {
+      "ms": 286,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 20
+    },
+    {
+      "ms": 286,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 20,
+      "hadError": false
+    },
+    {
+      "ms": 286,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 286,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 21,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 286,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 22
+    },
+    {
+      "ms": 286,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 21,
+      "hadError": true
+    },
+    {
+      "ms": 286,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 286,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 23
+    },
+    {
+      "ms": 286,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 286,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 22
+    },
+    {
+      "ms": 286,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 24
+    },
+    {
+      "ms": 286,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 22,
+      "hadError": false
+    },
+    {
+      "ms": 286,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 23
+    },
+    {
+      "ms": 286,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 23,
+      "hadError": false
+    },
+    {
+      "ms": 286,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 286,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 24,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 286,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 25
+    },
+    {
+      "ms": 287,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 24,
+      "hadError": true
+    },
+    {
+      "ms": 287,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 287,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 26
+    },
+    {
+      "ms": 287,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 287,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 25
+    },
+    {
+      "ms": 287,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 25,
+      "hadError": false
+    },
+    {
+      "ms": 287,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 26
+    },
+    {
+      "ms": 287,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 27
+    },
+    {
+      "ms": 287,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 26,
+      "hadError": false
+    },
+    {
+      "ms": 287,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 28
+    },
+    {
+      "ms": 288,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 288,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 27,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 288,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 27,
+      "hadError": true
+    },
+    {
+      "ms": 288,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 288,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 29
+    },
+    {
+      "ms": 288,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 288,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 28
+    },
+    {
+      "ms": 288,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 30
+    },
+    {
+      "ms": 288,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 28,
+      "hadError": false
+    },
+    {
+      "ms": 288,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 29
+    },
+    {
+      "ms": 288,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 29,
+      "hadError": false
+    },
+    {
+      "ms": 288,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 288,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 30,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 288,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 31
+    },
+    {
+      "ms": 288,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 30,
+      "hadError": true
+    },
+    {
+      "ms": 288,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 289,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 32
+    },
+    {
+      "ms": 289,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 289,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 31
+    },
+    {
+      "ms": 289,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 33
+    },
+    {
+      "ms": 289,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 31,
+      "hadError": false
+    },
+    {
+      "ms": 289,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 34
+    },
+    {
+      "ms": 289,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 32
+    },
+    {
+      "ms": 289,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 32,
+      "hadError": false
+    },
+    {
+      "ms": 289,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 289,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 33,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 289,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 289,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 33,
+      "hadError": true
+    },
+    {
+      "ms": 289,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 35
+    },
+    {
+      "ms": 289,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 290,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 34
+    },
+    {
+      "ms": 290,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 34,
+      "hadError": false
+    },
+    {
+      "ms": 290,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 36
+    },
+    {
+      "ms": 290,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 35
+    },
+    {
+      "ms": 290,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 35,
+      "hadError": false
+    },
+    {
+      "ms": 290,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 37
+    },
+    {
+      "ms": 290,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 290,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 36,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 290,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 290,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 36,
+      "hadError": true
+    },
+    {
+      "ms": 290,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 38
+    },
+    {
+      "ms": 290,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 290,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 37
+    },
+    {
+      "ms": 290,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 37,
+      "hadError": false
+    },
+    {
+      "ms": 290,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 39
+    },
+    {
+      "ms": 290,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 38
+    },
+    {
+      "ms": 291,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 38,
+      "hadError": false
+    },
+    {
+      "ms": 291,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 40
+    },
+    {
+      "ms": 291,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 291,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 39,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 291,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 291,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 39,
+      "hadError": true
+    },
+    {
+      "ms": 291,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 41
+    },
+    {
+      "ms": 291,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 291,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 40
+    },
+    {
+      "ms": 291,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 40,
+      "hadError": false
+    },
+    {
+      "ms": 291,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 42
+    },
+    {
+      "ms": 291,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 41
+    },
+    {
+      "ms": 291,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 41,
+      "hadError": false
+    },
+    {
+      "ms": 291,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 291,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 42,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 291,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 42,
+      "hadError": true
+    },
+    {
+      "ms": 291,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 43
+    },
+    {
+      "ms": 291,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 292,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 44
+    },
+    {
+      "ms": 292,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 292,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 43
+    },
+    {
+      "ms": 292,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 43,
+      "hadError": false
+    },
+    {
+      "ms": 292,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 45
+    },
+    {
+      "ms": 292,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 46
+    },
+    {
+      "ms": 292,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 44
+    },
+    {
+      "ms": 292,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 44,
+      "hadError": false
+    },
+    {
+      "ms": 292,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 292,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 45,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 292,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 292,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 45,
+      "hadError": true
+    },
+    {
+      "ms": 292,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 47
+    },
+    {
+      "ms": 292,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 292,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 46
+    },
+    {
+      "ms": 293,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 46,
+      "hadError": false
+    },
+    {
+      "ms": 293,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 48
+    },
+    {
+      "ms": 293,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 47
+    },
+    {
+      "ms": 293,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 47,
+      "hadError": false
+    },
+    {
+      "ms": 293,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 49
+    },
+    {
+      "ms": 293,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 293,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 48,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 293,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 48,
+      "hadError": true
+    },
+    {
+      "ms": 293,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 293,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 50
+    },
+    {
+      "ms": 293,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 293,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 49
+    },
+    {
+      "ms": 293,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 49,
+      "hadError": false
+    },
+    {
+      "ms": 293,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 50
+    },
+    {
+      "ms": 294,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 50,
+      "hadError": false
+    },
+    {
+      "ms": 294,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 51
+    },
+    {
+      "ms": 294,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 52
+    },
+    {
+      "ms": 294,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 294,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 51,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 294,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 294,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 51,
+      "hadError": true
+    },
+    {
+      "ms": 294,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 53
+    },
+    {
+      "ms": 294,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 294,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 52
+    },
+    {
+      "ms": 294,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 52,
+      "hadError": false
+    },
+    {
+      "ms": 294,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 54
+    },
+    {
+      "ms": 294,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 53
+    },
+    {
+      "ms": 294,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 53,
+      "hadError": false
+    },
+    {
+      "ms": 294,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 55
+    },
+    {
+      "ms": 294,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 294,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 54,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 295,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 295,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 54,
+      "hadError": true
+    },
+    {
+      "ms": 295,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 56
+    },
+    {
+      "ms": 295,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 295,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 55
+    },
+    {
+      "ms": 295,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 55,
+      "hadError": false
+    },
+    {
+      "ms": 295,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 57
+    },
+    {
+      "ms": 295,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 56
+    },
+    {
+      "ms": 295,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 56,
+      "hadError": false
+    },
+    {
+      "ms": 295,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 58
+    },
+    {
+      "ms": 295,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 295,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 57,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 295,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 295,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 57,
+      "hadError": true
+    },
+    {
+      "ms": 295,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 59
+    },
+    {
+      "ms": 295,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 296,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 58
+    },
+    {
+      "ms": 296,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 58,
+      "hadError": false
+    },
+    {
+      "ms": 296,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 60
+    },
+    {
+      "ms": 296,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 59
+    },
+    {
+      "ms": 296,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 59,
+      "hadError": false
+    },
+    {
+      "ms": 296,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 61
+    },
+    {
+      "ms": 296,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 296,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 60,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 296,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 60,
+      "hadError": true
+    },
+    {
+      "ms": 296,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 296,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 62
+    },
+    {
+      "ms": 296,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 296,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 61
+    },
+    {
+      "ms": 296,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 61,
+      "hadError": false
+    },
+    {
+      "ms": 297,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 63
+    },
+    {
+      "ms": 297,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 62
+    },
+    {
+      "ms": 297,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 62,
+      "hadError": false
+    },
+    {
+      "ms": 297,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 64
+    },
+    {
+      "ms": 297,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 297,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 63,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 297,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 297,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 63,
+      "hadError": true
+    },
+    {
+      "ms": 297,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 65
+    },
+    {
+      "ms": 297,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 298,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 64
+    },
+    {
+      "ms": 298,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 64,
+      "hadError": false
+    },
+    {
+      "ms": 298,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 66
+    },
+    {
+      "ms": 298,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 65
+    },
+    {
+      "ms": 298,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 65,
+      "hadError": false
+    },
+    {
+      "ms": 298,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 67
+    },
+    {
+      "ms": 298,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 298,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 66,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 298,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 298,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 66,
+      "hadError": true
+    },
+    {
+      "ms": 298,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 68
+    },
+    {
+      "ms": 298,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 298,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 67
+    },
+    {
+      "ms": 298,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 67,
+      "hadError": false
+    },
+    {
+      "ms": 298,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 69
+    },
+    {
+      "ms": 298,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 68
+    },
+    {
+      "ms": 298,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 68,
+      "hadError": false
+    },
+    {
+      "ms": 299,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 70
+    },
+    {
+      "ms": 299,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 299,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 69,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 299,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 299,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 69,
+      "hadError": true
+    },
+    {
+      "ms": 299,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 71
+    },
+    {
+      "ms": 299,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 299,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 70
+    },
+    {
+      "ms": 299,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 72
+    },
+    {
+      "ms": 299,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 70,
+      "hadError": false
+    },
+    {
+      "ms": 299,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 73
+    },
+    {
+      "ms": 299,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 71
+    },
+    {
+      "ms": 299,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 71,
+      "hadError": false
+    },
+    {
+      "ms": 299,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 299,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 72,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 300,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 300,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 72,
+      "hadError": true
+    },
+    {
+      "ms": 300,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 74
+    },
+    {
+      "ms": 300,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 300,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 73
+    },
+    {
+      "ms": 300,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 73,
+      "hadError": false
+    },
+    {
+      "ms": 300,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 75
+    },
+    {
+      "ms": 300,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 74
+    },
+    {
+      "ms": 300,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 74,
+      "hadError": false
+    },
+    {
+      "ms": 300,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 76
+    },
+    {
+      "ms": 300,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 300,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 75,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 300,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 300,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 75,
+      "hadError": true
+    },
+    {
+      "ms": 300,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 77
+    },
+    {
+      "ms": 300,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 300,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 76
+    },
+    {
+      "ms": 300,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 78
+    },
+    {
+      "ms": 301,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 76,
+      "hadError": false
+    },
+    {
+      "ms": 301,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 79
+    },
+    {
+      "ms": 301,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 77
+    },
+    {
+      "ms": 301,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 77,
+      "hadError": false
+    },
+    {
+      "ms": 301,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 301,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 78,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 301,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 301,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 78,
+      "hadError": true
+    },
+    {
+      "ms": 301,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 80
+    },
+    {
+      "ms": 301,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 301,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 79
+    },
+    {
+      "ms": 301,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 81
+    },
+    {
+      "ms": 301,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 79,
+      "hadError": false
+    },
+    {
+      "ms": 301,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 82
+    },
+    {
+      "ms": 301,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 80
+    },
+    {
+      "ms": 301,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 80,
+      "hadError": false
+    },
+    {
+      "ms": 301,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 301,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 81,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 301,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 301,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 81,
+      "hadError": true
+    },
+    {
+      "ms": 301,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 83
+    },
+    {
+      "ms": 301,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 302,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 82
+    },
+    {
+      "ms": 302,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 84
+    },
+    {
+      "ms": 302,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 82,
+      "hadError": false
+    },
+    {
+      "ms": 302,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 85
+    },
+    {
+      "ms": 302,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 83
+    },
+    {
+      "ms": 302,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 83,
+      "hadError": false
+    },
+    {
+      "ms": 302,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 302,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 84,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 302,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 302,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 84,
+      "hadError": true
+    },
+    {
+      "ms": 302,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 86
+    },
+    {
+      "ms": 302,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 303,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 85
+    },
+    {
+      "ms": 303,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 85,
+      "hadError": false
+    },
+    {
+      "ms": 303,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 87
+    },
+    {
+      "ms": 303,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 86
+    },
+    {
+      "ms": 303,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 86,
+      "hadError": false
+    },
+    {
+      "ms": 303,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 88
+    },
+    {
+      "ms": 303,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 303,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 87,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 303,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 303,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 87,
+      "hadError": true
+    },
+    {
+      "ms": 303,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 89
+    },
+    {
+      "ms": 303,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 304,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 88
+    },
+    {
+      "ms": 304,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 90
+    },
+    {
+      "ms": 304,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 88,
+      "hadError": false
+    },
+    {
+      "ms": 304,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 89
+    },
+    {
+      "ms": 304,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 89,
+      "hadError": false
+    },
+    {
+      "ms": 304,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 304,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 90,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 304,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 91
+    },
+    {
+      "ms": 304,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 90,
+      "hadError": true
+    },
+    {
+      "ms": 304,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 304,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 92
+    },
+    {
+      "ms": 304,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 304,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 91
+    },
+    {
+      "ms": 304,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 91,
+      "hadError": false
+    },
+    {
+      "ms": 304,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 93
+    },
+    {
+      "ms": 304,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 92
+    },
+    {
+      "ms": 304,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 92,
+      "hadError": false
+    },
+    {
+      "ms": 304,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 94
+    },
+    {
+      "ms": 304,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 304,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 93,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 304,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 305,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 93,
+      "hadError": true
+    },
+    {
+      "ms": 305,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 95
+    },
+    {
+      "ms": 305,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 305,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 94
+    },
+    {
+      "ms": 305,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 96
+    },
+    {
+      "ms": 305,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 94,
+      "hadError": false
+    },
+    {
+      "ms": 305,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 95
+    },
+    {
+      "ms": 305,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 95,
+      "hadError": false
+    },
+    {
+      "ms": 305,
+      "kind": "client-error",
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 305,
+      "kind": "socket-error",
+      "label": "frontend",
+      "id": 96,
+      "code": "ECONNRESET"
+    },
+    {
+      "ms": 305,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 97
+    },
+    {
+      "ms": 305,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 96,
+      "hadError": true
+    },
+    {
+      "ms": 305,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 305,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 98
+    },
+    {
+      "ms": 305,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 305,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 97
+    },
+    {
+      "ms": 305,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 97,
+      "hadError": false
+    },
+    {
+      "ms": 305,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 98
+    },
+    {
+      "ms": 305,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 98,
+      "hadError": false
+    },
+    {
+      "ms": 333,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 99
+    },
+    {
+      "ms": 333,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/__flow_preview_identity"
+    },
+    {
+      "ms": 333,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 99,
+      "hadError": false
+    },
+    {
+      "ms": 334,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 100
+    },
+    {
+      "ms": 334,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 334,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 101
+    },
+    {
+      "ms": 334,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 334,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 102
+    },
+    {
+      "ms": 334,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 334,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 103
+    },
+    {
+      "ms": 335,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 335,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 104
+    },
+    {
+      "ms": 335,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 335,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 105
+    },
+    {
+      "ms": 335,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 335,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 106
+    },
+    {
+      "ms": 335,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 336,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 107
+    },
+    {
+      "ms": 336,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 336,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 108
+    },
+    {
+      "ms": 336,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 336,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 109
+    },
+    {
+      "ms": 336,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 336,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 110
+    },
+    {
+      "ms": 337,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 337,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 111
+    },
+    {
+      "ms": 337,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 337,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 112
+    },
+    {
+      "ms": 337,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 337,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 113
+    },
+    {
+      "ms": 337,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 338,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 114
+    },
+    {
+      "ms": 338,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 338,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 115
+    },
+    {
+      "ms": 338,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 338,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 116
+    },
+    {
+      "ms": 338,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 338,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 117
+    },
+    {
+      "ms": 338,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 339,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 118
+    },
+    {
+      "ms": 339,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 339,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 119
+    },
+    {
+      "ms": 339,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 340,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 120
+    },
+    {
+      "ms": 340,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 340,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 121
+    },
+    {
+      "ms": 340,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 340,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 122
+    },
+    {
+      "ms": 340,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 340,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 123
+    },
+    {
+      "ms": 340,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 341,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 124
+    },
+    {
+      "ms": 341,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 341,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 125
+    },
+    {
+      "ms": 341,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 341,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 126
+    },
+    {
+      "ms": 341,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 341,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 127
+    },
+    {
+      "ms": 341,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 342,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 128
+    },
+    {
+      "ms": 342,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 342,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 129
+    },
+    {
+      "ms": 342,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 342,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 130
+    },
+    {
+      "ms": 342,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 342,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 131
+    },
+    {
+      "ms": 342,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 342,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 132
+    },
+    {
+      "ms": 342,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 343,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 133
+    },
+    {
+      "ms": 343,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 343,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 134
+    },
+    {
+      "ms": 343,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 343,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 135
+    },
+    {
+      "ms": 343,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 343,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 136
+    },
+    {
+      "ms": 343,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 343,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 137
+    },
+    {
+      "ms": 343,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 343,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 138
+    },
+    {
+      "ms": 343,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 344,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 139
+    },
+    {
+      "ms": 344,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 344,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 140
+    },
+    {
+      "ms": 344,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 344,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 141
+    },
+    {
+      "ms": 344,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 344,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 142
+    },
+    {
+      "ms": 344,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 344,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 143
+    },
+    {
+      "ms": 344,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 344,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 144
+    },
+    {
+      "ms": 344,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 344,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 145
+    },
+    {
+      "ms": 344,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 345,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 146
+    },
+    {
+      "ms": 345,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 345,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 147
+    },
+    {
+      "ms": 345,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 345,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 148
+    },
+    {
+      "ms": 345,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 345,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 149
+    },
+    {
+      "ms": 345,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 345,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 150
+    },
+    {
+      "ms": 345,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 346,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 151
+    },
+    {
+      "ms": 346,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 346,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 152
+    },
+    {
+      "ms": 346,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 346,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 153
+    },
+    {
+      "ms": 346,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 346,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 154
+    },
+    {
+      "ms": 346,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 346,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 155
+    },
+    {
+      "ms": 346,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 346,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 156
+    },
+    {
+      "ms": 346,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 346,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 157
+    },
+    {
+      "ms": 346,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 347,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 158
+    },
+    {
+      "ms": 347,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 347,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 159
+    },
+    {
+      "ms": 347,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 347,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 160
+    },
+    {
+      "ms": 347,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 347,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 161
+    },
+    {
+      "ms": 347,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 347,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 162
+    },
+    {
+      "ms": 347,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 347,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 163
+    },
+    {
+      "ms": 347,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 347,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 164
+    },
+    {
+      "ms": 348,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 348,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 165
+    },
+    {
+      "ms": 348,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 348,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 166
+    },
+    {
+      "ms": 348,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 348,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 167
+    },
+    {
+      "ms": 348,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 348,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 168
+    },
+    {
+      "ms": 348,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 348,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 169
+    },
+    {
+      "ms": 348,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 349,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 170
+    },
+    {
+      "ms": 349,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 349,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 171
+    },
+    {
+      "ms": 349,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 349,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 172
+    },
+    {
+      "ms": 349,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 349,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 173
+    },
+    {
+      "ms": 349,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 349,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 174
+    },
+    {
+      "ms": 349,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 349,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 175
+    },
+    {
+      "ms": 349,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 349,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 176
+    },
+    {
+      "ms": 350,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 350,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 177
+    },
+    {
+      "ms": 350,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 350,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 178
+    },
+    {
+      "ms": 350,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 350,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 179
+    },
+    {
+      "ms": 350,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 350,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 180
+    },
+    {
+      "ms": 350,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 350,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 181
+    },
+    {
+      "ms": 350,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 350,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 182
+    },
+    {
+      "ms": 350,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 350,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 183
+    },
+    {
+      "ms": 350,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 350,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 184
+    },
+    {
+      "ms": 351,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 351,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 185
+    },
+    {
+      "ms": 351,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 351,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 186
+    },
+    {
+      "ms": 351,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 351,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 187
+    },
+    {
+      "ms": 351,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 351,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 188
+    },
+    {
+      "ms": 351,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 351,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 189
+    },
+    {
+      "ms": 351,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 352,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 190
+    },
+    {
+      "ms": 352,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 352,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 191
+    },
+    {
+      "ms": 352,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 352,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 192
+    },
+    {
+      "ms": 352,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 352,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 193
+    },
+    {
+      "ms": 353,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 353,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 194
+    },
+    {
+      "ms": 353,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 353,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 195
+    },
+    {
+      "ms": 353,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 353,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 196
+    },
+    {
+      "ms": 353,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 353,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 197
+    },
+    {
+      "ms": 353,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 354,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 198
+    },
+    {
+      "ms": 354,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 354,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 199
+    },
+    {
+      "ms": 354,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 354,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 200
+    },
+    {
+      "ms": 354,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 354,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 201
+    },
+    {
+      "ms": 354,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 354,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 202
+    },
+    {
+      "ms": 355,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 355,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 203
+    },
+    {
+      "ms": 355,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 355,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 204
+    },
+    {
+      "ms": 355,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 355,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 205
+    },
+    {
+      "ms": 355,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 355,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 206
+    },
+    {
+      "ms": 355,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 355,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 207
+    },
+    {
+      "ms": 355,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 356,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 208
+    },
+    {
+      "ms": 356,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 356,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 209
+    },
+    {
+      "ms": 356,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 356,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 210
+    },
+    {
+      "ms": 356,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 356,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 211
+    },
+    {
+      "ms": 356,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 356,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 212
+    },
+    {
+      "ms": 356,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 357,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 213
+    },
+    {
+      "ms": 357,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 357,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 214
+    },
+    {
+      "ms": 357,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 357,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 215
+    },
+    {
+      "ms": 357,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 357,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 216
+    },
+    {
+      "ms": 357,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 357,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 217
+    },
+    {
+      "ms": 357,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 358,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 218
+    },
+    {
+      "ms": 358,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 358,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 219
+    },
+    {
+      "ms": 358,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 358,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 220
+    },
+    {
+      "ms": 358,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 358,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 221
+    },
+    {
+      "ms": 358,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 358,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 222
+    },
+    {
+      "ms": 359,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 359,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 223
+    },
+    {
+      "ms": 359,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 359,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 224
+    },
+    {
+      "ms": 359,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 359,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 225
+    },
+    {
+      "ms": 359,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 359,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 226
+    },
+    {
+      "ms": 359,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 359,
+      "kind": "connection",
+      "label": "upstream",
+      "id": 227
+    },
+    {
+      "ms": 359,
+      "kind": "http-arrival",
+      "label": "upstream",
+      "path": "/api/sse"
+    },
+    {
+      "ms": 360,
+      "kind": "drop",
+      "label": "frontend"
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 100
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 102
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 104
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 106
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 108
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 110
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 112
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 114
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 116
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 118
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 120
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 122
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 124
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 126
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 128
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 130
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 132
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 134
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 136
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 138
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 140
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 142
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 144
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 146
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 148
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 150
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 152
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 154
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 156
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 158
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 160
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 162
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 164
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 166
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 168
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 170
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 172
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 174
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 176
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 178
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 180
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 182
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 184
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 186
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 188
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 190
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 192
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 194
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 196
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 198
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 200
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 202
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 204
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 206
+    },
+    {
+      "ms": 382,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 208
+    },
+    {
+      "ms": 383,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 210
+    },
+    {
+      "ms": 383,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 212
+    },
+    {
+      "ms": 383,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 214
+    },
+    {
+      "ms": 383,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 216
+    },
+    {
+      "ms": 383,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 218
+    },
+    {
+      "ms": 383,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 220
+    },
+    {
+      "ms": 383,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 222
+    },
+    {
+      "ms": 383,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 224
+    },
+    {
+      "ms": 383,
+      "kind": "socket-end",
+      "label": "frontend",
+      "id": 226
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 226,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 224,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 222,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 220,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 218,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 216,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 214,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 212,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 210,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 208,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 206,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 204,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 202,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 200,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 198,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 196,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 194,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 192,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 190,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 188,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 186,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 184,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 182,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 180,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 178,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 176,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 174,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 172,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 170,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 168,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 166,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 164,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 162,
+      "hadError": false
+    },
+    {
+      "ms": 383,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 160,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 158,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 156,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 154,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 152,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 150,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 148,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 146,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 144,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 142,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 140,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 138,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 136,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 134,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 132,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 130,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 128,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 126,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 124,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 122,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 120,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 118,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 116,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 114,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 112,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 110,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 108,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 106,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 104,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 102,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 100,
+      "hadError": false
+    },
+    {
+      "ms": 384,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 227
+    },
+    {
+      "ms": 384,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 225
+    },
+    {
+      "ms": 384,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 223
+    },
+    {
+      "ms": 384,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 221
+    },
+    {
+      "ms": 384,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 219
+    },
+    {
+      "ms": 384,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 217
+    },
+    {
+      "ms": 384,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 215
+    },
+    {
+      "ms": 384,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 213
+    },
+    {
+      "ms": 384,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 211
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 209
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 207
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 205
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 203
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 201
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 199
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 197
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 195
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 193
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 191
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 189
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 187
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 185
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 183
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 181
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 179
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 177
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 175
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 173
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 171
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 169
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 167
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 165
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 163
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 161
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 159
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 157
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 155
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 153
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 151
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 149
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 147
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 145
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 143
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 141
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 139
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 137
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 135
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 133
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 131
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 129
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 127
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 125
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 123
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 121
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 119
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 117
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 115
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 113
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 111
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 109
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 107
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 105
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 103
+    },
+    {
+      "ms": 385,
+      "kind": "socket-end",
+      "label": "upstream",
+      "id": 101
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 101,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 103,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 105,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 107,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 109,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 111,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 113,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 115,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 117,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 119,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 121,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 123,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 125,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 127,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 129,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 131,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 133,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 135,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 137,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 139,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 141,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 143,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 145,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 147,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 149,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 151,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 153,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 155,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 157,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 159,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 161,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 163,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 165,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 167,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 169,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 171,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 173,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 175,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 177,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 179,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 181,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 183,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 185,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 187,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 189,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 191,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 193,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 195,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 197,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 199,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 201,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 203,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 205,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 207,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 209,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 211,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 213,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 215,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 217,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 219,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 221,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 223,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 225,
+      "hadError": false
+    },
+    {
+      "ms": 386,
+      "kind": "socket-close",
+      "label": "upstream",
+      "id": 227,
+      "hadError": false
+    },
+    {
+      "ms": 409,
+      "kind": "connection",
+      "label": "frontend",
+      "id": 228
+    },
+    {
+      "ms": 409,
+      "kind": "http-arrival",
+      "label": "frontend",
+      "path": "/__flow_preview_identity"
+    },
+    {
+      "ms": 409,
+      "kind": "socket-close",
+      "label": "frontend",
+      "id": 228,
+      "hadError": false
+    },
+    {
+      "ms": 414,
+      "kind": "server-close",
+      "label": "frontend"
+    },
+    {
+      "ms": 414,
+      "kind": "server-close",
+      "label": "upstream"
+    }
+  ],
+  "snapshots": [
+    {
+      "label": "baseline-zero",
+      "ms": 278,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 0,
+          "tracked": 0,
+          "drops": 0,
+          "requests": 0
+        },
+        {
+          "role": "frontend",
+          "getConnections": 0,
+          "tracked": 0,
+          "drops": 0,
+          "requests": 2
+        }
+      ],
+      "observedWireBytes": 1718,
+      "available": 1619542016
+    },
+    {
+      "label": "churn-8",
+      "ms": 284,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 4
+        },
+        {
+          "role": "frontend",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 6
+        }
+      ],
+      "observedWireBytes": 3850,
+      "available": 1619542016
+    },
+    {
+      "label": "churn-16",
+      "ms": 287,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 8
+        },
+        {
+          "role": "frontend",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 10
+        }
+      ],
+      "observedWireBytes": 5982,
+      "available": 1619542016
+    },
+    {
+      "label": "churn-24",
+      "ms": 290,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 12
+        },
+        {
+          "role": "frontend",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 14
+        }
+      ],
+      "observedWireBytes": 8114,
+      "available": 1619542016
+    },
+    {
+      "label": "churn-32",
+      "ms": 293,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 16
+        },
+        {
+          "role": "frontend",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 18
+        }
+      ],
+      "observedWireBytes": 10246,
+      "available": 1619542016
+    },
+    {
+      "label": "churn-40",
+      "ms": 296,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 20
+        },
+        {
+          "role": "frontend",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 22
+        }
+      ],
+      "observedWireBytes": 12378,
+      "available": 1619537920
+    },
+    {
+      "label": "churn-48",
+      "ms": 300,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 24
+        },
+        {
+          "role": "frontend",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 26
+        }
+      ],
+      "observedWireBytes": 14510,
+      "available": 1619537920
+    },
+    {
+      "label": "churn-56",
+      "ms": 303,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 28
+        },
+        {
+          "role": "frontend",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 30
+        }
+      ],
+      "observedWireBytes": 16642,
+      "available": 1619537920
+    },
+    {
+      "label": "churn-64",
+      "ms": 305,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 32
+        },
+        {
+          "role": "frontend",
+          "getConnections": 1,
+          "tracked": 1,
+          "drops": 0,
+          "requests": 34
+        }
+      ],
+      "observedWireBytes": 18774,
+      "available": 1619537920
+    },
+    {
+      "label": "churn-final",
+      "ms": 333,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 0,
+          "tracked": 0,
+          "drops": 0,
+          "requests": 32
+        },
+        {
+          "role": "frontend",
+          "getConnections": 0,
+          "tracked": 0,
+          "drops": 0,
+          "requests": 34
+        }
+      ],
+      "observedWireBytes": 18774,
+      "available": 1619537920
+    },
+    {
+      "label": "pre-calibration-zero",
+      "ms": 334,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 0,
+          "tracked": 0,
+          "drops": 0,
+          "requests": 32
+        },
+        {
+          "role": "frontend",
+          "getConnections": 0,
+          "tracked": 0,
+          "drops": 0,
+          "requests": 35
+        }
+      ],
+      "observedWireBytes": 19288,
+      "available": 1619533824
+    },
+    {
+      "label": "calibration-64",
+      "ms": 360,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 64,
+          "tracked": 64,
+          "drops": 0,
+          "requests": 96
+        },
+        {
+          "role": "frontend",
+          "getConnections": 64,
+          "tracked": 64,
+          "drops": 0,
+          "requests": 99
+        }
+      ],
+      "observedWireBytes": 51288,
+      "available": 1619533824
+    },
+    {
+      "label": "calibration-drained",
+      "ms": 408,
+      "values": [
+        {
+          "role": "upstream",
+          "getConnections": 0,
+          "tracked": 0,
+          "drops": 0,
+          "requests": 96
+        },
+        {
+          "role": "frontend",
+          "getConnections": 0,
+          "tracked": 0,
+          "drops": 1,
+          "requests": 99
+        }
+      ],
+      "observedWireBytes": 51288,
+      "available": 1619529728
+    }
+  ],
+  "ports": [
+    60350,
+    60351
+  ],
+  "outcome": "CHURN_NOT_REPRODUCED_CAPACITY_DROP_CONFIRMED",
+  "pg": 0,
+  "provider": 0,
+  "personalActions": 0,
+  "cleanup": "SERVERS_STOPPED_TMP_RETAINED_FOR_SUPERVISOR",
+  "churnReturnedZero": true,
+  "calibration": {
+    "before": {
+      "drops": 0,
+      "requests": 99
+    },
+    "after": {
+      "drops": 1,
+      "requests": 99
+    },
+    "overflow": {
+      "path": "/__flow_preview_identity",
+      "mode": "drop",
+      "status": null,
+      "error": "ECONNRESET",
+      "bodyBytes": 0
+    },
+    "dropBeforeHttp": true
+  },
+  "workElapsedMs": 409,
+  "serverCleanup": [
+    {
+      "role": "upstream",
+      "listening": false,
+      "closed": true,
+      "connections": 0,
+      "tracked": 0
+    },
+    {
+      "role": "frontend",
+      "listening": false,
+      "closed": true,
+      "connections": 0,
+      "tracked": 0
+    }
+  ],
+  "knownLogicalBytes": 1619271,
+  "elapsedMs": 414,
+  "sockets": [
+    {
+      "id": 1,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": true,
+      "bytesRead": 60,
+      "bytesWritten": 1144
+    },
+    {
+      "id": 2,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": true,
+      "bytesRead": 83,
+      "bytesWritten": 431
+    },
+    {
+      "id": 3,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 4,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 5,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 6,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 7,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 8,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 9,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 10,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 11,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 12,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 13,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 14,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 15,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 16,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 17,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 18,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 19,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 20,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 21,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 22,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 23,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 24,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 25,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 26,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 27,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 28,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 29,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 30,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 31,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 32,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 33,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 34,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 35,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 36,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 37,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 38,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 39,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 40,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 41,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 42,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 43,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 44,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 45,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 46,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 47,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 48,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 49,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 50,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 51,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 52,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 53,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 54,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 55,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 56,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 57,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 58,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 59,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 60,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 61,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 62,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 63,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 64,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 65,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 66,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 67,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 68,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 69,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 70,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 71,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 72,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 73,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 74,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 75,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 76,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 77,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 78,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 79,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 80,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 81,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 82,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 83,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 84,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 85,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 86,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 87,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 88,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 89,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 90,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 91,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 92,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 93,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 94,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 95,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 96,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": false,
+      "bytesRead": 33,
+      "bytesWritten": 0
+    },
+    {
+      "id": 97,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 98,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 99,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": true,
+      "bytesRead": 83,
+      "bytesWritten": 431
+    },
+    {
+      "id": 100,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 101,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 102,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 103,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 104,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 105,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 106,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 107,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 108,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 109,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 110,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 111,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 112,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 113,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 114,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 115,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 116,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 117,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 118,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 119,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 120,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 121,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 122,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 123,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 124,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 125,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 126,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 127,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 128,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 129,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 130,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 131,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 132,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 133,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 134,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 135,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 136,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 137,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 138,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 139,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 140,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 141,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 142,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 143,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 144,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 145,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 146,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 147,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 148,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 149,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 150,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 151,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 152,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 153,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 154,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 155,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 156,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 157,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 158,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 159,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 160,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 161,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 162,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 163,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 164,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 165,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 166,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 167,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 168,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 169,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 170,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 171,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 172,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 173,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 174,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 175,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 176,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 177,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 178,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 179,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 180,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 181,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 182,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 183,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 184,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 185,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 186,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 187,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 188,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 189,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 190,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 191,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 192,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 193,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 194,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 195,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 196,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 197,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 198,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 199,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 200,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 201,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 202,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 203,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 204,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 205,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 206,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 207,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 208,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 209,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 210,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 211,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 212,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 213,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 214,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 215,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 216,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 217,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 218,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 219,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 220,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 221,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 222,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 223,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 224,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 225,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 226,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 227,
+      "role": "upstream",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": true,
+      "writableFinished": true,
+      "bytesRead": 67,
+      "bytesWritten": 183
+    },
+    {
+      "id": 228,
+      "role": "frontend",
+      "closed": true,
+      "destroyed": true,
+      "readableEnded": false,
+      "writableFinished": true,
+      "bytesRead": 83,
+      "bytesWritten": 431
+    }
+  ]
+}

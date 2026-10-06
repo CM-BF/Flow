@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-06T18:26:41.245700+00:00",
+  "exitCode": 0,
+  "stopReason": null,
+  "elapsedMs": 699,
+  "pgid": 47524,
+  "groupAbsent": true,
+  "ports": [
+    {
+      "port": 60350,
+      "lsofExit": 1,
+      "bytes": 0,
+      "noKernelEntries": true
+    },
+    {
+      "port": 60351,
+      "lsofExit": 1,
+      "bytes": 0,
+      "noKernelEntries": true
+    }
+  ],
+  "checkpointPresent": true,
+  "checkpointSha256": "82c4ce45722b218c3e6d2fabf96736a913a182f66bc6b641cd40ea115f061dae",
+  "minimumObservedFreeBytes": 1619140608,
+  "peakObservedRawBytes": 1575,
+  "peakObservedTempLogicalBytes": 1621521,
+  "physicalPeakMeasured": false,
+  "deleteAllowed": true,
+  "tmpRemoved": true,
+  "tempIdentityMatches": true,
+  "finalRawBytesBeforeReceipt": 174550
+}

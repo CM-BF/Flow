@@ -1,0 +1,101 @@
+{
+  "target": "796d6d7df6bb500fdabc43b4b46290a1bc6c0149",
+  "manifestSha256": "a4410ac6847d5f54e2ac05c77fb7998d2330a63e45c6569ed2a2ecec54126b5f",
+  "status": "APPROVED",
+  "scope": "same-version Web-only operation fidelity",
+  "count": 21,
+  "entries": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/cli-checkpoint.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/facts-after.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/independent-preparation-bindings.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/invocation-marker.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/ownership-diagnostic.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/parser-difference.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/preflight-corrected.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/preflight.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/preservation-checkpoint.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/reservation.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/source-window-closed.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/stderr.txt",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/run-svc05h-same-web-recovery-20261006-1835/stdout.txt",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/read-only-facts.mjs",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/read-only-after-facts.mjs",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/proposal.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/request-candidate.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/manifest.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/facts-before.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/dependencies.json",
+      "ok": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/source-bindings.json",
+      "ok": true
+    }
+  ],
+  "reviewerTests": 0,
+  "providerQueries": 0,
+  "limitations": [
+    "personal root cause unknown",
+    "private state whole snapshot not independently retained",
+    "old Web recorded exit1 on TERM preserved; group absent confirmed",
+    "no new backend/Web publication"
+  ]
+}

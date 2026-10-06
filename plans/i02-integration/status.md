@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:18 UTC / main8bd02cc3 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:40 UTC / mainec5da343 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main0b8cd6f4；已审流式增量校验已发布，本批仅171来源和运行边界汇总 |
+| 工作基线 / HEAD | main ec5da343；本批接收已审同版本网页恢复及限定隔离诊断记录，无产品变化 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | completed |
 | 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
-| 已集成main状态 / HEAD | main0b8cd6f4含确认CLI/流式哈希/170来源；本批O16首来源登记。个人runtime362/v15与Web8d8/v2不变 |
+| 已集成main状态 / HEAD | main ec5da343含确认CLI/流式哈希/171来源；个人runtime362/v15与Web8d8/v2保留，一次仅Web恢复已完成 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 流式正文校验减少重复处理，保持既有正文与回放结果；完整计划确认已可通过命令行操作。 |
-| 下一可用交付 | Web消息设置实施与连续目标验收准备并行；个人发布继续补齐保留页面兼容和服务身份事实。 |
+| 下一可用交付 | Web消息设置与O16准备并行；当前网页已恢复，新版发布继续补齐保留页面兼容。 |
 | 当前阻塞 | ACTIVE: 固定后端大型构建仍缺空间；个人更新等待保留网页组合证据。 |
 | 需用户决定 | NONE |
 
@@ -219,3 +219,7 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 18:18 UTC / main8bd02cc3：CLI三源ccfa原HTTP1/types绿、Lead独审通过；CHAT06P03两源+42Git/5dependency固定核对后，实际组合类型检查暴露baseline docs路径无法解析SDK，原红保留，暂退下2产品源及未发布本次副本，不覆盖Mika原5项批准。CLI独立检查后先发布，hash修复只由原owner处理，不拖无关交付。
 
 2026-10-06T18:12:31.382936+00:00：登记消息设置唯一source为第170项；F01 CLI三源精确已main，作者v52全部释放。只同步fixed metadata，不重复工程测试。
+
+2026-10-06 18:40 UTC：SVC05H隔离诊断d8b固定40项binding通过；恢复准备ce6固定17及实际52项binding通过；一次同版本Web bootstrap exit0/922ms，固定结果796d的13raw+8input再次核hash/fixed。原外层ps误判保留、正式helper修正且没有重复命令；旧Web exit1 on TERM保留，whole group absent与新owned ready已证。仅own计划/证据同步，无新的产品测试或provider，个人残留根因仍未证明。
+
+2026-10-06 18:44 UTC：受控接收SVC05H操作封存、FLOW/OPS恢复事实与第172个SVC05R01来源；所有导入文件逐blob核对固定提交一致。个人服务没有本轮新操作，未执行产品测试或provider。见[批次绑定](../../docs/evidence/i02/recovery-registry172-batch.json)。

@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-06T18:35:44.989Z",
+  "parentContinuation": "original one-shot; pure parser false preserved; formal fixed process helper replaces outer parser",
+  "checks": {
+    "owned:center": true,
+    "owned:runner": true,
+    "owned:web": true,
+    "config.json": true,
+    "claude.json": true,
+    "state.json": true,
+    "maintenance.json": true,
+    "web-release.json": true,
+    "tools/personal-preview/cli.mjs": true,
+    "tools/personal-preview/preview.mjs": true,
+    "tools/personal-preview/process.mjs": true,
+    "tools/personal-preview/environment.mjs": true,
+    "tools/personal-preview/static-web.mjs": true,
+    "tools/personal-preview/web-artifact.mjs": true,
+    "tools/personal-preview/web-release.mjs": true,
+    "package.json": true,
+    "apps/web/package.json": true,
+    "pnpm-lock.yaml": true,
+    "head": true,
+    "clean": true,
+    "lockAbsent": true
+  },
+  "identities": {
+    "center": "running",
+    "runner": "running",
+    "web": "running"
+  },
+  "ready": true
+}

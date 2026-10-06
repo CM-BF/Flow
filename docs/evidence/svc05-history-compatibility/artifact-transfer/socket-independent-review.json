@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-06T18:30:37.427893+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "target": "d8b4c961b9d36915f07ff4109299fac642566519",
+  "observedMetadata": "31f7585906a2fa4b380d16b684016ab3265a0a2e",
+  "manifestSha256": "f650453c401cdf13dae181a822ddf6c08db68fb53cc79652fe0b4644766c5c53",
+  "status": "APPROVED",
+  "scope": "one isolated loopback diagnostic only",
+  "verification": {
+    "sourceRead": 2,
+    "rawEntries": 9,
+    "inputEntries": 28,
+    "derivedEntries": 1,
+    "all40HashAndBytesMatched": true,
+    "fixedRefsMatchedWorking": true,
+    "reviewerReruns": 0
+  },
+  "observations": {
+    "churnReturnedZero": true,
+    "socketsAllClosed": 228,
+    "capacity64DropBeforeHttp": true,
+    "attempts": 133,
+    "workerMs": 409,
+    "outerMs": 699,
+    "ownedGroupAndPortsAbsent": true,
+    "checkpointBeforeTempRemoval": true,
+    "cleanupComplete": true,
+    "provider": 0,
+    "personalActions": 0
+  },
+  "unresolvedFindings": [],
+  "limits": [
+    "Personal accumulated CLOSED descriptor cause NOT_PROVEN",
+    "Vite clientError early return alone is not a root cause",
+    "Finite synthetic sequence does not establish all abort timing or long-lived browser behavior",
+    "No personal service repair or new artifact publication performed"
+  ],
+  "skills": [
+    "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+    "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "at": "2026-10-06T18:26:25.092580+00:00",
+  "fixedProposal": "3980ae6850662b00aa3180a4be30502d8174c3d6",
+  "inputs": [
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "/tmp/flow-svc05h-net-embedded-source.js",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "/tmp/flow-svc05h-_http_server-embedded-source.js",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/negotiation.json",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/read.json",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/recover.json",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/report.json",
+      "bytesMatch": true,
+      "shaMatch": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility/send.json",
+      "bytesMatch": true,
+      "shaMatch": true
+    }
+  ],
+  "dynamicProductResources": "four fixed .mjs plus 10 artifact files/manifest and five compatibility JSON; no SQL",
+  "staticNodeSyntaxExit": 0,
+  "pythonAstParsed": true,
+  "applicationImports": 0,
+  "runtimeProven": false,
+  "dependencies": {
+    "node": "v24.20.0",
+    "dependencyMode": "static public resolution only; no application module imports",
+    "viteVersion": "8.3.2",
+    "dependencies": [
+      {
+        "name": "lightningcss",
+        "requested": "^1.33.0",
+        "entry": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/lightningcss@1.33.0/node_modules/lightningcss/node/index.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/lightningcss@1.33.0/node_modules/lightningcss/node/index.js",
+        "exists": true
+      },
+      {
+        "name": "picomatch",
+        "requested": "^4.0.7",
+        "entry": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/picomatch@4.0.7/node_modules/picomatch/index.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/picomatch@4.0.7/node_modules/picomatch/index.js",
+        "exists": true
+      },
+      {
+        "name": "postcss",
+        "requested": "^8.5.28",
+        "entry": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/postcss@8.5.29/node_modules/postcss/lib/postcss.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/postcss@8.5.29/node_modules/postcss/lib/postcss.js",
+        "exists": true
+      },
+      {
+        "name": "rolldown",
+        "requested": "~1.2.11",
+        "entry": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/index.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/index.mjs",
+        "exists": true
+      },
+      {
+        "name": "tinyglobby",
+        "requested": "^0.2.17",
+        "entry": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tinyglobby@0.2.17/node_modules/tinyglobby/dist/index.cjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tinyglobby@0.2.17/node_modules/tinyglobby/dist/index.cjs",
+        "exists": true
+      }
+    ],
+    "nativeSourceSha256": "bfdad04241cc86e8eccb1cfdd0c3aea0f355a348535be50d92c0e8fb74be9d3a",
+    "nativeNonEof": "if (nread !== UV_EOF) {\n    // CallJSOnreadMethod expects the return value to be a buffer.\n    // Ref: https://github.com/nodejs/node/pull/34375\n    stream.destroy(new ErrnoException(nread, 'read'));\n    return;\n  }\n\n  // Defer this until we actually emit end\n  if (stream._readableState.endEmitted) {\n    if (stream[kMaybeDestroy])\n      stream[kMaybeDestroy]();\n  } else {\n    if (stream[kMaybeDestroy])\n      stream.on('end', stream[kMaybeDestroy]);\n\n    //",
+    "imports": 0,
+    "servers": 0,
+    "requests": 0
+  },
+  "freshFreeBytes": 1627123712,
+  "limits": "one forthcoming run only; no retry on failure or unknown"
+}

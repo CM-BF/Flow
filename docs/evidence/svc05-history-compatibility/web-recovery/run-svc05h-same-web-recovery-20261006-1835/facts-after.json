@@ -1,0 +1,389 @@
+{
+  "observedAt": "2026-10-06T18:36:20.373Z",
+  "mode": "read-only Web recovery after-observation",
+  "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "personalMutations": 0,
+  "httpRequests": 0,
+  "providerQueries": 0,
+  "files": {
+    "config.json": {
+      "bytes": 672,
+      "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee",
+      "mode": 384,
+      "dev": 16777234,
+      "ino": 117819925
+    },
+    "claude.json": {
+      "bytes": 145,
+      "sha256": "b79a5a08590000c6d0c01cb9fd04811f24368947e58c6d399b57a2af9a05f9af",
+      "mode": 384,
+      "dev": 16777234,
+      "ino": 117819909
+    },
+    "state.json": {
+      "bytes": 1564,
+      "sha256": "2b4a355a594e4d5edd385d561cec4f138c32a14d936f23c49821ab1991179c7e",
+      "mode": 384,
+      "dev": 16777234,
+      "ino": 123128295
+    },
+    "maintenance.json": {
+      "bytes": 314,
+      "sha256": "8eb28f209d36250b5701edc3836f315eaa86aa83237a37d5344ffb69d478abd1",
+      "mode": 384,
+      "dev": 16777234,
+      "ino": 122441906
+    },
+    "web-release.json": {
+      "bytes": 976,
+      "sha256": "58d45a8e1369b9719054b0d010de33a786a910b5b84528cebac81f0b8649f037",
+      "mode": 384,
+      "dev": 16777234,
+      "ino": 121127872
+    }
+  },
+  "limits": [
+    "Instant local observations; no future user-work guarantee.",
+    "No personal HTTP, token, user body, process arguments or SQL body is reported.",
+    "Socket counts do not establish the personal failure cause."
+  ],
+  "config": {
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+    "directory": "/Users/citrine/.flow-personal",
+    "databaseName": "flow_preview_07d6dc6776c8dda8641512aa",
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "centerPort": 61227,
+    "webPort": 61228
+  },
+  "runtimeSource": {
+    "head": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "dirty": false
+  },
+  "operation": {
+    "operationId": "a92a167b-c891-4a93-a4e5-d64cf29ce55a",
+    "phase": "resumed",
+    "target": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "resumeVersion": 14
+  },
+  "operationLock": "absent",
+  "checkout": {
+    "head": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "dirty": false,
+    "confirmed": true
+  },
+  "processes": {
+    "center": {
+      "pid": 64904,
+      "group": 64904,
+      "startedAt": "Tue Oct  6 05:40:26 2026",
+      "identity": "running",
+      "members": [
+        {
+          "pid": 64904,
+          "parent": 1,
+          "group": 64904,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "socketObservationCode": 1,
+          "tcpStates": {}
+        },
+        {
+          "pid": 64942,
+          "parent": 64904,
+          "group": 64904,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "socketObservationCode": 0,
+          "tcpStates": {
+            "ESTABLISHED": 3,
+            "LISTEN": 1
+          }
+        },
+        {
+          "pid": 64944,
+          "parent": 64942,
+          "group": 64904,
+          "executable": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "socketObservationCode": 1,
+          "tcpStates": {}
+        }
+      ]
+    },
+    "runner": {
+      "pid": 65168,
+      "group": 65168,
+      "startedAt": "Tue Oct  6 05:40:28 2026",
+      "identity": "running",
+      "members": [
+        {
+          "pid": 65168,
+          "parent": 1,
+          "group": 65168,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "socketObservationCode": 1,
+          "tcpStates": {}
+        },
+        {
+          "pid": 65210,
+          "parent": 65168,
+          "group": 65168,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "socketObservationCode": 1,
+          "tcpStates": {}
+        },
+        {
+          "pid": 65262,
+          "parent": 65210,
+          "group": 65168,
+          "executable": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "socketObservationCode": 1,
+          "tcpStates": {}
+        }
+      ]
+    },
+    "web": {
+      "pid": 23534,
+      "group": 23534,
+      "startedAt": "Tue Oct  6 11:35:45 2026",
+      "identity": "running",
+      "members": [
+        {
+          "pid": 23534,
+          "parent": 1,
+          "group": 23534,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "socketObservationCode": 1,
+          "tcpStates": {}
+        },
+        {
+          "pid": 23631,
+          "parent": 23534,
+          "group": 23534,
+          "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+          "cwd": "/Users/citrine/.flow-personal",
+          "socketObservationCode": 0,
+          "tcpStates": {
+            "LISTEN": 1,
+            "ESTABLISHED": 1
+          }
+        }
+      ]
+    }
+  },
+  "listeners": {
+    "center": true,
+    "web": true
+  },
+  "release": {
+    "format": 1,
+    "policy": "flow-web-release-v1",
+    "version": 2,
+    "backendHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+    "compatibilityIds": {
+      "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90": "d4afbf557c00e53088edb6442b2fff1bc995c6d02e93b105ec450f5f9f9a8d5c",
+      "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe": "bc02d897a957d100bddb564aa18b9cae3849b5290f6c230f0630832f9dac0c06"
+    },
+    "current": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+    "artifacts": [
+      {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5"
+      },
+      {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      }
+    ],
+    "updatedAt": "2026-10-06T10:54:44.580Z"
+  },
+  "current": {
+    "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+    "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+    "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+  },
+  "retained": [
+    {
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5"
+      },
+      "files": 10,
+      "bytes": 1442591,
+      "verified": true,
+      "bootstrapReportBackend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "reportId": "6ed88b7bd276cf25808786df60df748279fc0bdbb9dbfeb8318e0c970250c11d",
+      "reportFiles": {
+        "report": {
+          "bytes": 646,
+          "sha256": "6ed88b7bd276cf25808786df60df748279fc0bdbb9dbfeb8318e0c970250c11d"
+        },
+        "read": {
+          "bytes": 249,
+          "sha256": "f34bbcb7fac27f1c7695c20ee7fa4495c760735972bd35bbbfe8116a9ca7fd42"
+        },
+        "send": {
+          "bytes": 239,
+          "sha256": "033091bf62bcc6b29ccb49ebf6732834c2f48cf2c570b377a0b2832ead133eb4"
+        },
+        "recover": {
+          "bytes": 231,
+          "sha256": "9320bf74069d54b29b922a0a687fe75a6f964845f53b16be741bea317a3161be"
+        },
+        "negotiation": {
+          "bytes": 265,
+          "sha256": "f2fea197dda36655c8c9c3eb6cbe8449cdc856203d88b3cc7238507492cecc41"
+        }
+      },
+      "pointerReportBackend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "pointerReportId": "d4afbf557c00e53088edb6442b2fff1bc995c6d02e93b105ec450f5f9f9a8d5c",
+      "pointerReportFiles": {
+        "report": {
+          "bytes": 646,
+          "sha256": "d4afbf557c00e53088edb6442b2fff1bc995c6d02e93b105ec450f5f9f9a8d5c"
+        },
+        "read": {
+          "bytes": 249,
+          "sha256": "ab41b55148714fac4aa06650854d07bb52ac8fe279eb4cb2e4a082401bb21970"
+        },
+        "send": {
+          "bytes": 239,
+          "sha256": "e83d7f6576b8324bd9d2d7f9b935ba10bf095ced421b8312a8da4bbcc644226b"
+        },
+        "recover": {
+          "bytes": 231,
+          "sha256": "3263fab1c4fc87fbb9d72fd65616feba1d454eb819280332d25585a79ed6b17f"
+        },
+        "negotiation": {
+          "bytes": 265,
+          "sha256": "01480431830dbf75e318f5cadc0a3962d62907a6771171667581e57e803f9d1a"
+        }
+      }
+    },
+    {
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "files": 10,
+      "bytes": 1507758,
+      "verified": true,
+      "bootstrapReportBackend": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "reportId": "e0d2abd4bb161407e547dd934fb08a004d11e61c5cee448f227f3becb6c88ae1",
+      "reportFiles": {
+        "report": {
+          "bytes": 646,
+          "sha256": "e0d2abd4bb161407e547dd934fb08a004d11e61c5cee448f227f3becb6c88ae1"
+        },
+        "read": {
+          "bytes": 249,
+          "sha256": "97ee56166e6c601c22d06ec3f6d06f90155cd0bfe53c5cbd5fb488349ab686b4"
+        },
+        "send": {
+          "bytes": 239,
+          "sha256": "65ae38c036fa0ff83a96013719a1486692891ad42e136cc142f21e983ad9d993"
+        },
+        "recover": {
+          "bytes": 231,
+          "sha256": "d4add7f866e3c4eb1b92b126008c08c809e05d119b227e18a5046e1dcf67789c"
+        },
+        "negotiation": {
+          "bytes": 265,
+          "sha256": "68455b4ad4b09251d59ef136036199440cf382ad7736b2bfd8e6fc664a88ef3e"
+        }
+      },
+      "pointerReportBackend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "pointerReportId": "bc02d897a957d100bddb564aa18b9cae3849b5290f6c230f0630832f9dac0c06",
+      "pointerReportFiles": {
+        "report": {
+          "bytes": 646,
+          "sha256": "bc02d897a957d100bddb564aa18b9cae3849b5290f6c230f0630832f9dac0c06"
+        },
+        "read": {
+          "bytes": 249,
+          "sha256": "f721cbdcd185e75ec41ed0d9ac0e14ba0c9662bcd39ab8ddc0e201e25257d9b5"
+        },
+        "send": {
+          "bytes": 239,
+          "sha256": "0f536afcb0eda6d469a4b7083750742aa6a49db928a71a5524b5f8561d5b6ab0"
+        },
+        "recover": {
+          "bytes": 231,
+          "sha256": "7ab8159fcb20a4f830f6ecd3b62f684d0cc47e11da05637ea8f7d6135d6e4e0d"
+        },
+        "negotiation": {
+          "bytes": 265,
+          "sha256": "c9b95c869a802eb68d772f5778a437f9b995ad93b8c527f68d2a7c3f934bbc8a"
+        }
+      }
+    }
+  ],
+  "pgEntry": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+  "database": {
+    "markerMatched": true,
+    "marker": [
+      {
+        "installation_id": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+        "directory": "/Users/citrine/.flow-personal"
+      }
+    ],
+    "runnerIdentityMatched": true,
+    "runner": [
+      {
+        "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "maintenance_state": "accepting",
+        "maintenance_version": 15,
+        "maintenance_operation_id": null
+      }
+    ],
+    "tasks": [
+      {
+        "id": "34306502-aeb8-4f81-9135-339a8ff1f83b",
+        "status": "succeeded",
+        "current_attempt_id": "1443e90d-7a8f-449f-bcfe-4dca23cef88c",
+        "updated_at": "2026-10-06T08:29:32.625Z"
+      },
+      {
+        "id": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+        "status": "succeeded",
+        "current_attempt_id": "72291dd4-d874-442e-8314-2d8bfe920064",
+        "updated_at": "2026-10-06T06:02:23.703Z"
+      },
+      {
+        "id": "99b3084f-b4a9-47e6-927c-b0cc147c6e78",
+        "status": "succeeded",
+        "current_attempt_id": "97a94b97-e819-4940-936f-6768d1aaf800",
+        "updated_at": "2026-10-06T08:29:35.480Z"
+      },
+      {
+        "id": "c0f1f284-021d-400c-b76f-691c511b12f2",
+        "status": "succeeded",
+        "current_attempt_id": "20578167-d110-4bcc-b5a3-86abebb61147",
+        "updated_at": "2026-10-06T06:02:27.180Z"
+      }
+    ],
+    "queue": [
+      {
+        "state": "promoted",
+        "count": 1
+      }
+    ],
+    "unfinishedCount": 0,
+    "retainedConversation": [
+      {
+        "id": "2c507833-67fe-4d10-acf5-6c97eedd05bb",
+        "revision": 1
+      }
+    ]
+  },
+  "outcome": "observed"
+}

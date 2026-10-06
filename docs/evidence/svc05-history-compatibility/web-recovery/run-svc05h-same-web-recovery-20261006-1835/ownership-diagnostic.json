@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-06T18:35:09.572Z",
+  "mode": "read-only; no service invocation",
+  "rows": [
+    {
+      "role": "center",
+      "formalHelper": "running",
+      "formalRegex": {
+        "group": true,
+        "date": true,
+        "command": true,
+        "nonce": true
+      },
+      "pythonSliceIssue": "Python command rest[25:] retained extra ps spacing; official parser consumes one-or-more whitespace."
+    },
+    {
+      "role": "runner",
+      "formalHelper": "running",
+      "formalRegex": {
+        "group": true,
+        "date": true,
+        "command": true,
+        "nonce": true
+      },
+      "pythonSliceIssue": "Python command rest[25:] retained extra ps spacing; official parser consumes one-or-more whitespace."
+    },
+    {
+      "role": "web",
+      "formalHelper": "running",
+      "formalRegex": {
+        "group": true,
+        "date": true,
+        "command": true,
+        "nonce": true
+      },
+      "pythonSliceIssue": "Python command rest[25:] retained extra ps spacing; official parser consumes one-or-more whitespace."
+    }
+  ],
+  "bootstrapCalls": 0
+}
