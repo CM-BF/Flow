@@ -37,6 +37,13 @@
       "scope": "Initial plan and inherited draft",
       "findings": "Draft imports assume former directory; final growth may be observed only after final exists; need explicit sample observation and bounded hooks.",
       "unresolved": "Implementation pending"
+    },
+    {
+      "at": "2026-10-06T08:47:00Z",
+      "scope": "journey/evidence/fixture/runtime + local behavior checks",
+      "findings": "Strict same-frame draft-vs-final snapshot; fixed none-profile UI and mutation binding; archived product source; imports preserve own package identity. Names/responsibilities/errors/duplication checked.",
+      "fixes": "Separated browser journey, safety evidence helper, fixture and isolated-source setup. Removed unused hash. Existing full Web suite not repeated.",
+      "unresolved": "No live entry/permit/actual usage seam; candidate records exact prerequisites."
     }
   ]
 }

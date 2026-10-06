@@ -15,8 +15,8 @@
 ## TODO 与验收
 
 - [x] CHATUI01-01：核空闲领取、独立worktree、技能与首状态。
-- [ ] CHATUI01-02：收敛可审通用旅程、持久证据与一次 mutation guard；零模型 unit checks。
-- [ ] CHATUI01-03：同driver跑实际App、合成HTTP流，记录两次真实DOM增长/结算/草稿/清理。
+- [x] CHATUI01-02：收敛可审通用旅程、持久证据与一次 mutation guard；零模型 unit checks。
+- [x] CHATUI01-03：同driver跑实际App、合成HTTP流，记录两次真实DOM增长/结算/草稿/清理。
 - [ ] CHATUI01-04：固定源码和证据、独立review、及时commit/push与主线接收。
 - [ ] CHATUI01-05：另行取得一次真实query窗口后执行；本次准备不标完成。
 
