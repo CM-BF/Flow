@@ -25,3 +25,11 @@ PG工程fixture使用本机55432已有设施，但仅创建随机`flow_tui01a_<n
 `1cec921`固定2个新importer与41条新增package/snapshot，既有importer/resolved均无漂移，实际`@assistant-ui/core`仍只0.3.22。Ink8.0.0/React19.3.0/react-ink0.0.46/test4.0.0实包SRI/license/engines见dependency-provenance.json；安装ignore-scripts。offline缺缓存原始失败保留，再registry受控下载成功；锁scope已交回。TextInput为真实包独立受控primitive，不启用其本地会话运行时。
 
 最近20turn、六项菜单页、正文显示截断是本片边界；更早历史导航、流式/工具/thinking/权限详情、queue/steer/cancel/decision、附件、实际provider验收留父task。只读轮询和known configured profile不代表provider在线。未知ACK由私有本机journal保留，显式重放；磁盘/电源故障、多设备恢复、终端恶意插件等不属本片安全证明。私有锁不自动窃取，不保证进程crash后无手工核对。真实中心公共鉴权继续由既有server执行，首片不另建登录系统。
+
+## 独审修复（增量，原始结果不重写）
+
+Mika/status_read对9e5588d固定只读结论为2 P2，见[independent-review-initial.md](independent-review-initial.md)。P2-A保存pending期间dispose遇磁盘失败会提前拒绝并跳资源清理；P2-B未验证ACK便删除原intent，未知200和错误受理turn无法用原key恢复。
+
+修复按原scope：dispose等待settled，终端三个清理阶段独立finally，signal rejection有处理；新ACK小模块校验必需shape、create原始字段、send conversation/revision/turn ordinal/原始正文和task身份，然后才清除intent。未知200保留原key/body。新`recovery.test.ts`用真实临时private journal与动态HTTP服务（不启动PG/provider）复现7red；修复后8新回归+11直接controller为19/19（860ms），见review-recovery-final.txt；types最终exit0见review-recovery-types-final.txt。增加字段核验使3个旧mock不匹配输入，合法修正fixture回显，不减少断言，初轮输出保留review-recovery-consumers-red.txt。
+
+增量source/检查绑定随后见manifest-review-fixes.json。原17 distinct与本轮8新增合计25不同检查，不能把重跑11再累加；本轮未重原renderer/PG/PTY，只按授权验证直接影响。该修复未自行取得独审批准。

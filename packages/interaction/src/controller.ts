@@ -3,6 +3,7 @@ import { FlowApiError } from '@flow/client';
 import { conversationCreationSchema, conversationTurnSchema, type ConversationSummary, type ExecutionProfile } from '@flow/contracts';
 import { commandDescriptors, commandSchema, parseInput, type Command } from './commands.js';
 import { turnView } from './projection.js';
+import { acknowledgedConversation } from './acknowledgement.js';
 import { intentSchema, type CommandResult, type Intent, type IntentStore, type InteractionClient, type InteractionController, type InteractionSnapshot } from './types.js';
 class LocalError extends Error { constructor(readonly code: string, message: string) { super(message); } }
 const result = (ok: boolean, code: string, message: string): CommandResult => ({ ok, code, message });
@@ -54,13 +55,13 @@ export function createInteractionController(options: { client: InteractionClient
       if (!current(version) || signal.aborted) throw new LocalError('UNKNOWN', 'Disconnected before dispatch.');
       const response = pending.kind === 'create' ? await client.createConversation(pending.input, pending.key, signal)
         : await client.submitConversationTurn(pending.conversationId, pending.input, pending.key, signal);
-      if (pending.kind === 'send' && response.conversation.id !== pending.conversationId) throw new LocalError('UNKNOWN', 'Acknowledgement identity mismatch.');
       if (!current(version)) throw new LocalError('UNKNOWN', 'Observation changed before acknowledgement was accepted.');
+      const conversation = acknowledgedConversation(pending, response);
       await intents.clear(); intent = null;
       if (!current(version)) { patch({ pending: null }); return result(true, 'ACCEPTED', 'Center accepted the request; observation remains stopped.'); }
-      patch({ pending: null, view: 'conversation', selected: selection(response.conversation), connected: true,
+      patch({ pending: null, view: 'conversation', selected: selection(conversation), connected: true,
         ...(pending.kind === 'send' && state.draft === pending.input.text ? { draft: '' } : {}) });
-      try { await refresh(response.conversation.id, version); } catch { if (current(version)) patch({ connected: false, notice: 'Accepted by center. Observation needs /recover.' }); }
+      try { await refresh(conversation.id, version); } catch { if (current(version)) patch({ connected: false, notice: 'Accepted by center. Observation needs /recover.' }); }
       schedule(); return result(true, 'ACCEPTED', 'Center accepted the request; this is not execution completion.');
     } catch (error) {
       if (!recovering && error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408) {
@@ -125,7 +126,7 @@ export function createInteractionController(options: { client: InteractionClient
   function dispose(): Promise<void> {
     if (disposed) return disposed;
     disconnect(); patch({ closed: true }); listeners.clear();
-    disposed = (async () => { await activeMutation; })(); return disposed;
+    disposed = (async () => { await activeMutation?.then(() => undefined, () => undefined); })(); return disposed;
   }
   async function execute(raw: Command): Promise<CommandResult> {
     if (!initialized) return result(false, 'NOT_INITIALIZED', 'Initialize interaction first.');

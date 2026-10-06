@@ -1,6 +1,6 @@
 import { afterEach, expect, test } from 'vitest';
 import { randomUUID } from 'node:crypto';
-import type { ConversationCreated, ConversationSnapshot, ConversationSummary } from '@flow/contracts';
+import type { ConversationCreated, ConversationCreation, ConversationSnapshot, ConversationSummary } from '@flow/contracts';
 import { createInteractionController, parseInput, completeInput, terminalText, type Intent, type InteractionClient, type InteractionController, type IntentStore } from './index.js';
 const id = randomUUID();
 const conversation: ConversationSummary = { id, title: 'Saved conversation', harness: 'claude', requested: { model: 'runner-default', thinking: 'disabled', tools: 'configured-readonly' }, revision: 0, createdAt: '2026-01-01', updatedAt: '2026-01-01' };
@@ -14,7 +14,7 @@ function setup(overrides: Partial<InteractionClient> = {}, initial: Intent | nul
   const client: InteractionClient = {
     conversations: async () => ({ conversations: [conversation], nextCursor: null }), conversation: async () => snapshot,
     conversationTurns: async () => ({ conversation, turns: [], nextCursor: null }), executionProfiles: async () => ({ profiles: [], nextCursor: null }),
-    createConversation: async (input, key) => { calls.push({ input, key }); return created; },
+    createConversation: async (input, key) => { calls.push({ input, key }); return { ...created, conversation: { ...conversation, ...input } }; },
     submitConversationTurn: async () => { throw new Error('No fixture turn configured'); }, ...overrides,
   };
   const controller = createInteractionController({ client, intents: store, connectionId: 'test-connection', pollMs: 60_000 }); controllers.push(controller);
@@ -34,7 +34,7 @@ test('help is offline and creation persists before the typed client mutation', a
 });
 test('lost creation ACK retains the immutable body/key and only explicit recover replays it', async () => {
   const seen: { input: unknown; key: string }[] = [];
-  const { controller, saved } = setup({ createConversation: async (input, key) => { seen.push({ input, key }); if (seen.length === 1) throw new Error('lost ACK'); return { ...created, replayed: true }; } });
+  const { controller, saved } = setup({ createConversation: async (input, key) => { seen.push({ input, key }); if (seen.length === 1) throw new Error('lost ACK'); return { ...created, conversation: { ...conversation, ...input }, replayed: true }; } });
   await controller.initialize(); expect((await controller.input('/new Unchanged')).code).toBe('UNKNOWN');
   expect((await controller.input('/new replacement')).code).toBe('UNRESOLVED'); expect(seen).toHaveLength(1);
   expect(saved()).toMatchObject({ kind: 'create', input: { title: 'Unchanged' } });
@@ -78,7 +78,7 @@ test('disconnect during durable save never dispatches a new POST on the replacem
 test('disconnect during ACK journal cleanup cannot reselect or reconnect the old epoch', async () => {
   let release!: () => void; let entered!: () => void;
   const clearing = new Promise<void>(done => { entered = done; });
-  const client = { createConversation: async () => created } as unknown as InteractionClient;
+  const client = { createConversation: async (input: ConversationCreation) => ({ ...created, conversation: { ...conversation, ...input } }) } as unknown as InteractionClient;
   const controller = createInteractionController({ client, connectionId: 'test-connection', intents: {
     load: async () => null, save: async () => {}, clear: async () => { entered(); await new Promise<void>(done => { release = done; }); },
   } }); controllers.push(controller); await controller.initialize();
