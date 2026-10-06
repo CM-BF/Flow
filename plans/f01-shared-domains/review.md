@@ -25,3 +25,7 @@ Goal Owner只读APPROVED `2b75416326162000e517d1e845cc7b9921b54695`，核clean m
 ## CHAT薄客户端独立批准
 
 Goal Owner只读APPROVED `84117ca1c7446ee2e2b50f0526f3460dd42a2869`：6methods/export/HTTP test、raw5/5(386ms)+tsc输出均已读，原文/key/revision/路径编码/鉴权/AbortSignal/unsupported409不暗重试；无blocking。未独立重跑，不覆盖中心PG/真实聊天。Web受控patch仅移除无关上下文，before/after hash和来源保存，不重测metadata。
+
+## 执行配置client独立增量
+
+Mika只读APPROVED，固定94f50acf38213caacb2852d740c818b8480e3d15，范围packages/client/src/index.ts、packages/client/src/execution-profiles.test.ts、packages/contracts/src/index.ts。1/1 HTTP(366ms)+tsc及原始hash核，未重跑；无finding。目录/发布仅薄传输，不批准CHAT03领域实现或后续SDK依赖。检查hash ac2b6fbbdbfd096e39c401e814484e46ef9690bee4ad42312c2f13bdf3747183，tsc1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a。
