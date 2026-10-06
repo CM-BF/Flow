@@ -1,0 +1,87 @@
+{
+  "target": "aea5536f673022482ff37bba316171e33d7ef96f",
+  "observedAt": "2026-10-06T15:16:52.996330+00:00",
+  "sources": [
+    {
+      "path": "apps/cli/README.md",
+      "bytes": 7066,
+      "sha256": "301b7980c9a00ed50b5eaf73ea2737234bd5f42e405f03adb6a5bcd4699eff11"
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 23730,
+      "sha256": "fb15f3e7b9485ffe53124ba861ed859f490d545725d28644cf539fe820f766a2"
+    },
+    {
+      "path": "apps/cli/src/goal-progression.test.ts",
+      "bytes": 4437,
+      "sha256": "7137659de95aac3ba33ddbcc2fe40fe3186ac12349feef13eebb33726514fe3b"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 14219,
+      "sha256": "1f64303d80b30a342912c350281ca96d38ba68509201649393ca94c90b3f84fc"
+    },
+    {
+      "path": "packages/client/src/goal-progression-production.test.ts",
+      "bytes": 12112,
+      "sha256": "57a56f1bc2cddc224159f18e93b9df67d77a63c443d12fa2fd9683b2aabfcb91"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/goal-progression-cli-green.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-cli-green.txt",
+      "bytes": 313,
+      "sha256": "24155978fd183b4252b40bf06055f4188632bcac99194ff0ad74edffa3a96692"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-cli-red.exit",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-cli-red.txt",
+      "bytes": 1297,
+      "sha256": "fcbf056174c387aa2d762df871a219174b3d25cf052be67b64f52b2cc0250470"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-production-types-red.exit",
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-production-types-red.txt",
+      "bytes": 133,
+      "sha256": "71ac54b42711815e36f386964e3bca948830c81086ca035d978049841de5dff3"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-production-types-red2.txt",
+      "bytes": 833,
+      "sha256": "b01f052f0c7079289c668454b2b57c0af95590cbd33e3ccc0220b3ae03e673b9"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-production-types.exit",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/evidence/f01/goal-progression-production-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "review": "NOT_STARTED production; source precheck pending",
+  "checks": {
+    "cliHTTP": "1 red -> 1 green33ms",
+    "rootTypes": "2 author test DTO errors preserved, final exit0",
+    "productionPG": "NOT_RUN: resource guard; no model query"
+  },
+  "domainTarget": "b8081a8fba7468337f668670a67206005bc0a73f",
+  "thinTarget": "deef0e484d37974171e42eee0f547ef3423ea9a6",
+  "runtime": "Existing personal services unchanged"
+}

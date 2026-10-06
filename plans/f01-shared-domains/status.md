@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T14:59:45.048714+00:00 / mainaf9768c7 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T15:16:52.996330+00:00 / main7810cbf1461f60710a3aad29f86c7b2378aaa32e |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,20 +10,20 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main56d90已审领域；当前生产/CLI 5e121041cf628817b27cbb64f00317d5d62ad1e2 |
-| 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
-| 工作分支状态 | completed |
-| 检查状态 | PASSED 5e121041cf628817b27cbb64f00317d5d62ad1e2；配置4（旧consumer2）+CLI HTTP1+生产PG/HTTP1分轮绿，root strict0，0provider |
-| 已集成main状态 / HEAD | COST领域、薄client、生产读口与CLI0550已进入main59ef2134；个人runtime362/v15未更新 |
-| Review | APPROVED 5e121041cf628817b27cbb64f00317d5d62ad1e2；assignment_review；薄client67fd由Mika批准 |
-| 实现目标 | 5e121041cf628817b27cbb64f00317d5d62ad1e2 |
-| 实现范围 | apps/cli/README.md, apps/cli/src/index.ts, apps/cli/src/plugin-installations.test.ts, apps/server/src/index.ts, apps/server/src/main.ts, apps/server/src/package-fetch-configuration.ts, apps/server/src/plugin-installation-configuration.test.ts, apps/server/src/plugin-installation-configuration.ts, apps/server/src/private-json-configuration.ts, packages/client/src/plugin-installations-production.test.ts |
+| 工作基线 / HEAD | O14已审模块af976；生产候选aea5536f673022482ff37bba316171e33d7ef96f |
+| 工作树dirty状态 | 产品候选已固定；本次原始证据和metadata提交后clean |
+| 工作分支状态 | in-progress |
+| 检查状态 | CLI HTTP1红→1绿33ms，根types最终0；production PG NOT_RUN，资源门槛未达。 |
+| 已集成main状态 / HEAD | X01静态安装client67fd/生产5e121已审进入7810cbf1；O14领域已main，当前生产候选未集成。个人runtime362/v15未更新。 |
+| Review | NOT_STARTED 当前O14生产候选；薄deef独审排队。X015e121/67fd原独审已接收main。 |
+| 实现目标 | aea5536f673022482ff37bba316171e33d7ef96f |
+| 实现范围 | apps/cli/README.md, apps/cli/src/index.ts, apps/cli/src/goal-progression.test.ts, apps/server/src/index.ts, packages/client/src/goal-progression-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 静态插件安装已通过真实中心与终端验证；重启后原请求能恢复同一回执。 |
-| 下一可用交付 | 完成独立审查并发布默认关闭的安装入口；目标持续推进继续接现有后台扫描。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 静态插件安装入口已进入主线；目标的自动推进接线和终端命令已形成候选。 |
+| 下一可用交付 | 完成真实中心恢复与停机验证，让已授权的依赖任务自动继续。 |
+| 当前阻塞 | ACTIVE: 磁盘未达到数据库验证增量与收尾余量；源码和轻量检查继续。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -197,10 +197,12 @@
 
 2026-10-06T14:35:06.228081+00:00：CLI固定0550已main59ef2134，I02五源比较零差；本次仅metadata，不重新执行HTTP/PG/types。
 
-| F01-41 | in-progress | Lead | X01五方法client/export；固定67fd4592、真实HTTP1/1、types0，待独审；默认mount/CLI另验 |
+| F01-41 | completed | Lead | 已审67fd/5e121在main7810，原分轮HTTP/PG与types证据保留；installed不等于enabled。 |
 
 2026-10-06T14:59:45.048714+00:00：F01-41薄client67fd获status_read/Mika独审，[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。生产固定5e121等待独审，[manifest](../../docs/evidence/f01/plugin-installation-mount-manifest.json)绑定10源、6领域输入、分轮证据与专库正常清理。静态installed不等于启用或可调用。
 
-| F01-42 | in-progress | Lead | 已审O14模块已mainaf976；薄client固定deef（HTTP1/1、types0）待独审；生产挂载/自动scan尚未修改，待插件共享index审结 |
+| F01-42 | in-progress | Lead | 已审O14模块已mainaf976；薄client固定deef（HTTP1/1、types0）待独审；生产候选aea5536已写；CLI1/1、types0，真实PG受资源门槛阻塞，未集成 |
 
 2026-10-06T15:04:21.640726+00:00：X01生产接线5e121独审APPROVED，限定结果与原始资源事实已绑定；现在受控接收。O14 deef薄client另待审，未借本批准；scan产品修改尚未开始。
+
+2026-10-06T15:16:52.996330+00:00：O14生产候选已固定，见[候选绑定](../../docs/evidence/f01/goal-progression-production-candidate.json)与[Interface](../../docs/evidence/f01/goal-progression-interface.md)。两次作者测试DTO类型失败原文保留；没有运行PG或模型来补齐结果。X01已main收口，不再等待重复审查。

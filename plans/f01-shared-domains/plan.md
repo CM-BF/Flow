@@ -81,6 +81,6 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 
 - [x] **F01-40** 提供只读 `usage <task-id>` CLI，复用共享用量读口并保留来源/未知覆盖，不另算账或提交任务。
 
-- [ ] **F01-41** 按已审X01中心合同接五薄client/public export及后续默认factory/CLI；只传稳定key/请求/receipt，不把accepted等同installed，不自造executionSettled。
+- [x] **F01-41** 按已审X01中心合同接五薄client/public export及后续默认factory/CLI；只传稳定key/请求/receipt，不把accepted等同installed，不自造executionSettled。
 
 - [ ] **F01-42** O14 三方法/public export 与030生产扫描生命周期接线，复用现有queue scan单生命周期；实际客户端断开/重启后持久推进，owner接受保持独立。
