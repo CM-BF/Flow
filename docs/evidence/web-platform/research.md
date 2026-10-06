@@ -459,3 +459,11 @@ root转Mika固定 `1eefebd5dca8f74bbefaf260a106e0e540e7fcf1` / basefb906；管�
 公共context仅id、contextDigest、executionInputId/executionInputDigest、templateVersion及有界sources metadata；详情owner鉴权双ID按需，最大JSON65536B，原citation冻结文本合计8192UTF8B；执行编译输入另核16000UTF16/49152UTF8B，现queue原输入16000UTF8B继续保留。旧task.snapshot.prompt/user_text不改，runner只在授权assignment副本获得私有输入。具体reader/pin校验由原panels槽只读准备，待实装/Lead固定输入再受领，不抢QUEUE范围。
 
 composer精确安装源码补充：core0.3.22 `runtime/interfaces/composer-runtime-core.ts:67–71`、`runtime/api/composer-runtime.ts:221–225,345–349`说明SendOptions/send:void；`runtime/base/base-composer-runtime-core.ts:302–357,458–479,564–573`为草稿/附件/dispatch/错误恢复；`runtimes/external-store/external-store-thread-runtime-core.ts:702–714,724–742`先SDKqueue分派再默认user-run客户端tool abort/onNew。react0.15.23 ComposerRoot:99–104,131、ComposerInput:251–272,395为用户handler先行和preventDefault；ComposerSend:11–15/core primitive-predicates:13–17为running门禁。这里只保证startRun:false跳过该append自动abort，不泛称所有工具lifetime不受影响；无额外测试/产品批准。
+
+### K02薄reader候选：固定1eef的消费接缝（panels只读，未take）
+
+唯一QUEUE owner按固定309读到 `conversations/projection.ts:46–48` 的creationFields用于assertSummary/snapshot/page与creation冻结，显式字段未包含未来projectId；`execution-profiles/selection.ts`的receipt比较也显式枚举且未含该未来字段。当前1eef公共schema还未接入，所以这是预防未来合同丢身份/单边错拒风险，不是已部署故障。待实装固定后两处按正式presence/identity语义同改；旧缺失不得静默补personal，绑定project不可变。
+
+最小后继候选为projection.ts、execution-profiles/selection.ts及直接projection/profile/outbox/queue四test，自己的plans/wpf-k02-compatibility与docs/evidence/wpf-k02-compatibility（拟名）。owner05:43:48 ledger观察QUEUE仍占projection及两相关test，其他候选当时无writer；此历史观察不授写权，必须QUEUE交付后freshledger/CAS再take。App/Thread/messages/queue生产模块不需为薄reader变化，0UI开放/0context detail GET。
+
+必要验收：旧缺字段plain发送/queue字节保持且0detail；capability缺省false、合法bool读入/非法类型拒绝；project有无/同值/错值/意外新增/漏值在CREATE ACK、snapshot/page一致校验，错ACK为unknown且不续发；context元数据在页/详情保留但不映user/assistant正文；原key/body/pin/project重试与新draft分离、unknown后401不清、跨连接同ID隔离。未来knowledge发送另需typed input透传+深冻结citation/locator，不重取最新版或换key；薄reader不声称已支持引用发送，也不为digest预取冻结正文。panels本次0写/测试/模型，复用本地find-skills/codebase-design/clean-code，设计只在已有身份边界集中校验，无第二DTO/client/状态源。
