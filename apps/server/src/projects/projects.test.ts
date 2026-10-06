@@ -24,8 +24,10 @@ async function request(path: string, body?: unknown, options: { token?: string; 
 }
 async function startServer() {
   server = await createServer({ databaseUrl, ownerToken });
-  await migrateProjects(pool);
-  registerProjectRoutes(server, pool);
+  if (!server.hasRoute({ method: 'GET', url: '/api/projects' })) {
+    await migrateProjects(pool);
+    registerProjectRoutes(server, pool);
+  }
   baseUrl = await server.listen({ host: '127.0.0.1', port: 0 });
 }
 beforeAll(async () => {
