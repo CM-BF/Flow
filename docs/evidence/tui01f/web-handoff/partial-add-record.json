@@ -1,0 +1,17 @@
+{
+  "kind": "author tool-transcript summary, not process stdout",
+  "source": "native_center_owner conversation tools before context compaction",
+  "observed": {
+    "initialGitAddExit": 1,
+    "reason": "new experiment directory excluded by worktree sparse rules",
+    "partialCommit": "87d928e844ae5a0720fd71cab657309d015879d1",
+    "included": "fixture delta and evidence",
+    "excluded": [
+      "experiments/tui-web-control-handoff/journey.ts",
+      "experiments/tui-web-control-handoff/preview.ts",
+      "experiments/tui-web-control-handoff/terminal.py"
+    ]
+  },
+  "correction": "Lead exact sparse directory add, then stage complete files; do not treat 87d928e8 as complete source target",
+  "testsRepeatedForSparseMetadata": false
+}

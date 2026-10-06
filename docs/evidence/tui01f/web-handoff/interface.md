@@ -13,6 +13,8 @@
 
 验收：TUI冻结r请求→Web实际发送A/r+1→放行原TUI请求得409且草稿完整/仅一次POST→用户明确清空后取消当前A一次→两界面观察A取消→Web发送B→TUI只读recover显示B→退出且B不取消→fixture释放B→真实Web显示最终内容。unknown不重投、不生成新key；受理不等于停止；fixture最终结果不代表模型。
 
-本阶段仅源码、静态和有界便宜纯检查。真实PG/Chrome/PTY需要固定driver独审、fresh资源和另行串行窗口；120s行为+60s收尾、4MiB总raw/16MiB私有增量仅候选。独立总监督覆盖pending finally，unknown保留DB/tmp，不FORCE。原03失败、清理修复和main回执保持。
+本阶段仅源码、静态和有界便宜纯检查。真实PG/Chrome/PTY需要固定driver独审、fresh资源和另行串行窗口；90s行为+60s收尾（150s独立总期限）、4MiB总raw/16MiB私有增量仅候选。独立总监督覆盖pending finally，unknown保留DB/tmp，不FORCE。原03失败、清理修复和main回执保持。
 
 技能：已读本地find-skills、codebase-design、clean-code、brainstorming、webapp-testing，沿已批准有界设计直接实施，不另建计划；只复用已有身份/状态和资源深Module。使用实际可见条件，不以networkidle作为SSE结束；固定权限与资源先于测试便利。
+
+失败归因保留实际阶段、异常类型、可用code及最多512 UTF-8字节message，先去掉合成token/Bearer/URL凭据再截断，不把所有错误映射为白名单通用原因；收尾错误独立记录。Python同时回传原失败阶段/安全原因与既有限额转录。
