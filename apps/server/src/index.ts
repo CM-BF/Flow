@@ -1,3 +1,4 @@
+import { registerGoalNativeExecutionRoutes } from './goal-native-executions/index.js';
 import { migrateActiveSteering, registerActiveSteeringRoutes } from './active-steering/index.js';
 import { migrateAssistantStreams, registerAssistantStreamRoutes } from './assistant-stream/index.js';
 import { migratePackageFetches, registerPackageFetchRoutes, startPackageFetchWorker, type PackageFetchHost, type PackageFetchWorker } from './plugin-package-fetches/index.js';
@@ -138,6 +139,7 @@ export async function createServer(options: ServerOptions) {
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
   registerGoalRoutes(app, pool, boss);
+  registerGoalNativeExecutionRoutes(app, pool, boss);
   registerActiveSteeringRoutes(app, pool, { acceptCommands: options.activeSteering === true });
   registerAssistantStreamRoutes(app, pool);
   registerConversationRoutes(app, pool, boss, { assistantStreamReadable: true });
