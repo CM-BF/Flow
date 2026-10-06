@@ -5,7 +5,7 @@
 | 计划编号 | R05 |
 | 状态 | in-progress |
 | 创建日期 / 最近更新 | 2026-10-06 / 2026-10-06 |
-| 父计划 | [FLOW-002](../flow-002-implementation/plan.md)，FLOW002-T09；[AQ-01 历史记录](../../docs/quality/architecture-health-2026-10-06.md) |
+| 父计划 | [FLOW-002](../flow-002-provider-harness/plan.md)，FLOW002-T09；[AQ-01 历史记录](../../docs/quality/architecture-health-2026-10-06.md) |
 | Owner / model | assignment_review / gpt-6-astra |
 | Worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host / codex/native-harness-host |
 | 基线 | d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
@@ -15,8 +15,8 @@
 ## TODO
 
 - [x] **R05-A01** 核验独立工作树、原子 claim 与有限 Interface。
-- [ ] **R05-A02** 提取 Claude 配置与公开 profile 描述，fixture 与旧入口兼容，生产启动消费 descriptor。
-- [ ] **R05-A03** 局部 red/green、直接消费者、类型检查与 clean-code；固定源码及原始证据。
+- [x] **R05-A02** 提取 Claude 配置与公开 profile 描述，fixture 与旧入口兼容，生产启动消费 descriptor。
+- [x] **R05-A03** 局部 red/green、直接消费者、类型检查与 clean-code；固定源码及原始证据。
 - [ ] **R05-A04** 独立 review、修复、main 接收与 claim 收口。
 - [ ] **R05-A05** 独立后继：执行结局 settled/unknown 的明确语义；本片不修改 Promise<void> 或宿主终态。
 - [ ] **R05-B01** 后继：中心认可的 final/profile/session 来源与命名空间、兼容前进迁移。

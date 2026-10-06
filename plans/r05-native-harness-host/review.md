@@ -2,13 +2,13 @@
 
 状态：**NOT_STARTED**。作者自查不构成独立 approval。
 
-- Review target commit：待固定。
+- Review target commit：47e6943080a0d4713190c51dd5ffb234b8efd915。
 - Base commit：d7e1e64e7792f4d1ad4933db042f10f266ad0cca。
 - Worktree：/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host。
 - Branch：codex/native-harness-host。
 - Scope：当前 A 配置/profile descriptor 提取；不含终态语义、中心兼容/Pi。
 - Criteria：旧 JSON/hash、错误拒绝、fixture/字符串入口、pin/port/unpin、startup 先发布再 claim；runtime/A2A 不变。
-- 已执行/未执行：见 [status](status.md) 与证据；目前尚无工程检查。
+- 已执行/未执行：见 [status](status.md) 与证据；作者局部 42/42 与 tsc0；尚未独审。
 - Findings / severity / blocking：未评估。
 - Reviewer / model / 时间：未指派。
 

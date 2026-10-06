@@ -1,0 +1,83 @@
+{
+  "base": "d7e1e64e7792f4d1ad4933db042f10f266ad0cca",
+  "checkedAt": "2026-10-06T08:52:23.471Z",
+  "exact": {
+    "parser": true,
+    "profileDescription": true,
+    "publishAndGuard": true
+  },
+  "dependencies": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 13786,
+      "sha256": "cb91b42d9bc672b767f8539c2e5989e558c896a95acf128cca3b7b4519dac740",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 19269,
+      "sha256": "3659f874a9ac06963cedb426068fdd481227e861abb9be19c22a68f4844a4439",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/fixture.ts",
+      "bytes": 2615,
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d",
+      "unchanged": true
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/index.ts",
+      "bytes": 8396,
+      "sha256": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51",
+      "unchanged": true
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 6419,
+      "sha256": "6636f0dd920184a70dec7cfcf488aae2c4712e1c526c6694527a11ff27e3e5ac",
+      "unchanged": true
+    },
+    {
+      "path": "packages/contracts/src/harnesses.ts",
+      "bytes": 815,
+      "sha256": "b9ebb14bb1005bccd23fdd2508997c6de27fdc2223cc3409e1cbc4cbfb09868f",
+      "unchanged": true
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 3405,
+      "sha256": "3043252bbf514e5cbfcc57a86a3e70e9a6751b486eee2cd067e8ced46fc8eb0e",
+      "unchanged": true
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "unchanged": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 265530,
+      "sha256": "cac4ee68595237001f83b47f71bc4c7e735aefe1ae7e03e412758a0c0f6ed08c",
+      "unchanged": true
+    }
+  ]
+}

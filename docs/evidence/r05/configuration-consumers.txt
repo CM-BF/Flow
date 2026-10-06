@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-harness-host
+
+ ✓ apps/runner/src/execution-profiles.test.ts (10 tests) 2825ms
+   ✓ publishes from the real startup entry before polling (accepted: true, steering: false)  947ms
+   ✓ publishes from the real startup entry before polling (accepted: false, steering: false)  625ms
+   ✓ publishes from the real startup entry before polling (accepted: true, steering: true)  671ms
+   ✓ publishes from the real startup entry before polling (accepted: false, steering: true)  566ms
+ ✓ apps/runner/src/goal-graph-tools/sdk.test.ts (3 tests) 41ms
+ ✓ apps/runner/src/native-harness.test.ts (8 tests) 14ms
+ ✓ apps/runner/src/configuration.test.ts (15 tests) 18ms
+ ✓ apps/runner/src/goal-tool-bridge/configuration.test.ts (6 tests) 10ms
+
+ Test Files  5 passed (5)
+      Tests  42 passed (42)
+   Start at  01:51:21
+   Duration  4.61s (transform 370ms, setup 0ms, import 1.23s, tests 2.91s, environment 0ms)
+

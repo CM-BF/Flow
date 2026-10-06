@@ -11,3 +11,5 @@ ports 仅 { steering?: 'flow.active-steering.v1', goalTools?: 1, goalGraphTools?
 不将 descriptor 序列化进 profile，不改变旧 hash/参数默认值/ordinary 字符串路径。不修改 HarnessAdapter.run Promise<void>、runtime terminal、A2A、S01 journal或型别枚举；settled/unknown 另独立后继。未知 manifest 字段继续 fail-closed，不对外接收用户提供 descriptor。
 
 验收 seam：现有配置加载/guard、真实 main 子进程，外加 descriptor 返回内容与版本。无需新依赖、export 或 client/server 接线。
+
+固定实现：47e6943080a0d4713190c51dd5ffb234b8efd915（合同首提交 c938f98）。新增 loadRunnerConfiguration.harnesses，旧字段引用同一 adapter/profile；main 通过 descriptor.publicProfile 选择 guard。无公共 index/安装新依赖需求。
