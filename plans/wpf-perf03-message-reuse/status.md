@@ -2,24 +2,24 @@
 
 | 字段 | 当前值 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 07:25 UTC |
+| 最近更新时间 | 2026-10-06 07:31 UTC |
 | 单一status owner / model | w01_owner；派发 gpt-6-astra / ultra |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 正在减少未变化聊天消息的重复转换 |
-| 下一可用交付 | 保留动态回复更新的消息复用实现与验证结果 |
+| 本片段交付阶段 | review |
+| 当前产出 | 未变化聊天消息可复用，动态回复与草稿检查已通过 |
+| 下一可用交付 | 完成独立审查后将消息复用改进交给主线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse |
 | Branch | codex/web-message-reuse |
-| 工作基线 / HEAD | 30b97cbf3665c4ef7a314a6a8b59394ae68781af；首canonical准备提交 |
-| 工作树dirty状态 | 首计划和证据待提交，生产未改 |
-| 工作分支状态 | in-progress |
-| 实现目标 | UNKNOWN |
+| 工作基线 / HEAD | 30b97cbf3665c4ef7a314a6a8b59394ae68781af；实现f909d32f5fcff5b0ac6408dc96e8630bfeffae4e；metadata单独提交 |
+| 工作树dirty状态 | 3实现/测试已提交；当前仅计划和证据待提交，保护路径无差异 |
+| 工作分支状态 | implemented / awaiting-review |
+| 实现目标 | f909d32f5fcff5b0ac6408dc96e8630bfeffae4e |
 | 实现范围 | apps/web/src/conversations/messages.ts, apps/web/test/conversation-messages.test.ts, apps/web/test/conversation-message-reuse.probe.ts |
-| 检查状态 | NOT_RUN 尚未实施 |
-| Review | NOT_STARTED |
+| 检查状态 | PASSED f909d32f5fcff5b0ac6408dc96e8630bfeffae4e；最终8消息测试/typecheck/实际core计数；此前77直接projection通过，来源见证据 |
+| Review | NOT_STARTED f909d32f5fcff5b0ac6408dc96e8630bfeffae4e |
 | 已集成main状态 / HEAD | 本片未集成，固定输入30b97cbf3665c4ef7a314a6a8b59394ae68781af |
 | Claim | 2ec58c2c-811d-4f24-a14b-cf1a3e89cdb3 v1 active，本人live核准五scope |
 
@@ -27,13 +27,13 @@
 
 | TODO ID | 状态 | Owner | 证据 / 下一步 |
 | --- | --- | --- | --- |
-| PERF03-01 | in-progress | w01_owner | 原消息模块内部WeakMap实现 |
-| PERF03-02 | pending | w01_owner | 新局部测试与实际core小计数 |
-| PERF03-03 | pending | w01_owner | 固定review与主线接收 |
+| PERF03-01 | completed | w01_owner | 原消息模块内部WeakMap已实现，接口不变 |
+| PERF03-02 | completed | w01_owner | 最终8+此前77/typecheck与实际core计数，原红测保留 |
+| PERF03-03 | in-progress | w01_owner | 固定f909交root独审，主线接收尚未完成 |
 
 ## 下一步 / handoff
 
-建立首source后实施与必要局部验证，固定候选交root只读审查。[计划](plan.md) · [review](review.md) · [质量](../../docs/evidence/wpf-perf03/quality.md)。等待manager登记聚合source，不把未采样当已展示。
+固定f909d32f5fcff5b0ac6408dc96e8630bfeffae4e交root只读审查；[结果](../../docs/evidence/wpf-perf03/README.md)、[3文件hash](../../docs/evidence/wpf-perf03/source-manifest.json)。实现冻结，metadata不冒充新实现目标。[计划](plan.md) · [review](review.md) · [质量](../../docs/evidence/wpf-perf03/quality.md)。ExecutionLead 07:27:49Z实际4320的87源观察到首canonical8f2959 live/issues=[]；来源为Lead通报，未自行重复采样，不倒填为本target已部署。
 
 ## 风险 / 未验证
 

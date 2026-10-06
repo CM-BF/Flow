@@ -10,8 +10,8 @@ conversationMessages接口保持现状。按不可变ConversationTurn对象身�
 
 ## TODO
 
-- [ ] PERF03-01：实现弱引用消息复用，保持现有内容、ID、日期及懒详情标记语义。
-- [ ] PERF03-02：局部真实projection行为与实际core小计数，证明复用及动态更新；保留失败记录与精确版本。
+- [x] PERF03-01：实现弱引用消息复用，保持现有内容、ID、日期及懒详情标记语义。
+- [x] PERF03-02：局部真实projection行为与实际core小计数，证明复用及动态更新；保留失败记录与精确版本。
 - [ ] PERF03-03：独立固定review、修复及Lead主线接收。
 
 ## 验收与限制
@@ -19,3 +19,5 @@ conversationMessages接口保持现状。按不可变ConversationTurn对象身�
 必须覆盖same-revision pending→final/正文变化、truncated/source版本变化、分页/顺序、task状态和core自动尾status、新中心同ID隔离、草稿与final分离。用现安装core0.3.22纯内存100turn/200messages的小计数；只报告对象identity与converter调用，不能推断React渲染次数、用户延迟或内存无泄漏。保持O(n)数组遍历，不新增缓存框架；数据输入/输出不可原地修改的契约明示。每段/交付clean-code，metadata不重复产品测试。
 
 架构影响：仅原消息展示转换函数内部缓存，不改变模块公开接口/协议/FSM/DB，无需架构图改造。
+
+2026-10-06 07:31 UTC：固定f909d32f5fcff5b0ac6408dc96e8630bfeffae4e，3文件实现；最终8+此前77局部/typecheck通过，小计数证明未变200条复用且实际converter回调200→0，变化末轮仅2；不等于runtime/React工作为0。独立review NOT_STARTED，主线未接收。

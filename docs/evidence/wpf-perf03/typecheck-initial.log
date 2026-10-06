@@ -1,0 +1,11 @@
+
+> @flow/web@0.1.0 typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/apps/web
+> tsc --noEmit -p tsconfig.json
+
+test/conversation-message-reuse.probe.ts(22,49): error TS2322: Type '"fixture-only"' is not assignable to type '"claude-sdk-0.3.290-v1"'.
+test/conversation-messages.test.ts(89,89): error TS2322: Type '"no-final-reply"' is not assignable to type '"execution-pending" | "execution-not-succeeded" | "unknown-adapter" | "missing-session" | "missing-result" | "ambiguous-result" | "invalid-result"'.
+test/conversation-messages.test.ts(101,111): error TS2532: Object is possibly 'undefined'.
+test/conversation-messages.test.ts(102,112): error TS2532: Object is possibly 'undefined'.
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @flow/web@0.1.0 typecheck: `tsc --noEmit -p tsconfig.json`
+Exit status 2

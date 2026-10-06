@@ -2,7 +2,7 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：UNKNOWN
+Review target commit：f909d32f5fcff5b0ac6408dc96e8630bfeffae4e
 
 Base：30b97cbf3665c4ef7a314a6a8b59394ae68781af
 
@@ -12,4 +12,4 @@ Base：30b97cbf3665c4ef7a314a6a8b59394ae68781af
 
 ## 检查与结论
 
-尚未执行产品检查或独立审查。未发现finding不等通过，当前NOT_STARTED。验收与scope见[plan](plan.md)。
+作者已执行最终8消息测试、此前77直接projection、Web typecheck及固定core100轮小计数；详见[证据](../../docs/evidence/wpf-perf03/README.md)。尚未执行独立审查，当前NOT_STARTED。验收与scope见[plan](plan.md)。
