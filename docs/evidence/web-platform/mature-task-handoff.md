@@ -1,6 +1,6 @@
 # Web 当前交接与唯一来源
 
-**当前共享窗口归Lead F04；Web无执行holder或新运行准入。** [Lead最新分配](f04-shared-window-received-2056.json)为固定capture一次150s/0provider，worker自行fresh资源；本组不推断其进程已启动。[20:56:11 D04窄观察](web-finding-wait-take-observation-2056.json)确认Recovery原6ff v4/21仍由panels唯一持有、无overlap或第二个Recovery take；Settings a5 v1与DPERF04 b554 v1仍合法持有，DPERF05 v2已释放。Recovery已明确route不足以唯一标识恢复记录，root正收敛可访问行身份方案；[窄修范围与后续准入条件](recovery01-rec4d-finding-wait.json)已列，不新建任务或提前派修。
+**当前共享窗口归Lead F04清理；Web无执行holder或新运行准入。** [Lead新实际回执](f04-cleanup-only-window-intake.json)：F04一次26.512s旅程1选0过，owned runtime已停，专DB/tmp依原规则保留；仅原owner有≤20s正常精确清理，尚未实际归还。原[150s分配](f04-shared-window-received-2056.json)留历史，本组不抢下一窗口。[20:56:11 D04窄观察](web-finding-wait-take-observation-2056.json)确认Recovery原6ff v4/21仍由panels唯一持有、无overlap或第二个Recovery take；Settings a5 v1与DPERF04 b554 v1仍合法持有，DPERF05 v2已释放。Recovery已明确route不足以唯一标识恢复记录，root正收敛可访问行身份方案；[窄修范围与后续准入条件](recovery01-rec4d-finding-wait.json)已列，不新建任务或提前派修。
 
 **Recovery4d本次页面子集失败且清理完成，Web窗口已归还Lead F04。** [实际归还](recovery01-4d-window-return.json)：cookieRead通过，Restore定位匹配2行导致strict失败，pageErrors=[]，原因待独立核查，未先判产品缺陷。专DB已DROP/连接0，PGID10546和12234均退出、ownedgroups absent/scratch删除、cleanup errors=[]；manager隔离adminenv已删除。更晚终态10674.167625ms，browser累计25520.435/90000、余64479.565仅算术；原budget10671.133875保留不回填。0自动重试/不接下一Web检查，本组无holder。
 
