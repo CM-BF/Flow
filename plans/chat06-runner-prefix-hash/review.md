@@ -1,5 +1,8 @@
-# CHAT06P03 独立review
+# CHAT06P03 review
 
-状态：NOT_STARTED。Review target commit：尚未固定。Owner architecture_read/gpt-6-astra，独审预定Mika。
-
-请只读固定target与base，核原baseline两文件逐字相同、生产仅Block/seal、输入计数未漏full assistant/重复两实现/红绿轮次。复核公开coalescer逐字段相等与原始Hash.update/byteLength总输入测量，独立Hash.copy状态和空phase、多块、异常边界。源码与raw/selected/pass、strict、资源/时间边界分开；0tests不得算绿，原超窗测试NOT_SELECTED，不借旧检查审批。必要修复交owner，review/修复期保留claim。当前无执行证据、无独立结论、未main。
+- 状态：NOT_STARTED
+- Review target：`4c6676caf545aea1939a9b676b419cf702eed19c`
+- Reviewer：待Mika独立只读审
+- 固定证据：[review-ready](../../docs/evidence/chat06p03/review-ready.md)、[manifest](../../docs/evidence/chat06p03/manifest.json)，SHA `6658db0b68066cbc065d2093a4500d4b6e824d72a0d3649c9c732d457b25f832`。
+- 范围：2源、42bindings；5不同专测/strict0；public coalescer全输出对照与实际输入字节。0provider/PG；原大窗口stream测试未选；非生产1MiB上限实测。
+- main：NOT_INTEGRATED。
