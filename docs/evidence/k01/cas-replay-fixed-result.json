@@ -1,0 +1,55 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/knowledge/knowledge.test.ts",
+    "-t",
+    "two publishing clients",
+    "--no-cache",
+    "--configLoader",
+    "runner"
+  ],
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/knowledge/index.ts",
+      "sha256": "28fd0fd2a053c8e1764913cd0a09f1dc9e73576746a38e49bb2b11def94ae5a7"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "sha256": "20467c23531ea87a0c05586609e303d796a8e58371495d72f3bdd39f8681c2d6"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42"
+    },
+    {
+      "path": "apps/server/src/knowledge/text.ts",
+      "sha256": "f44e78e9214fe76b0513f8080acf71d0546c90d62c440b0617e13a73d0d26ce1"
+    },
+    {
+      "path": "apps/server/src/knowledge/knowledge.test.ts",
+      "sha256": "5e5a5a74a5b1d0b8087b8decc8238c07d6f723b7ea379811733df5d89d7d9e0e"
+    },
+    {
+      "path": "apps/server/src/knowledge/fixture.ts",
+      "sha256": "73627ca0019db370cdf092221863834338a1b219c1a58a9dc9936c011e7c4cb3"
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "packages/storage/migrations/015-knowledge-sources.sql",
+      "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1"
+    },
+    {
+      "path": "docs/evidence/k01/check.mjs",
+      "sha256": "6430b4959fae92abb9081167c75c99b01e3f25f32b71f68c0d2d126133886876"
+    }
+  ],
+  "startedAt": "2026-10-06T05:21:59.297Z",
+  "endedAt": "2026-10-06T05:22:04.066Z",
+  "exitCode": 0,
+  "signal": null
+}
