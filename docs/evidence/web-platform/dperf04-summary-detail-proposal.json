@@ -61,7 +61,7 @@
     "cleanupReserveSeconds": 15,
     "rawMaxBytes": 8388608,
     "scope": "Single owned synthetic server and one Chrome, existing approved read-only Playwright dependency only after explicit resource/precise cache permission; no install, PG or realregistry/4320.",
-    "checks": "Actual homepage summary first, on-demand selected detail, parent-child/unknown/claim scope reachability, delayed response A-to-B discard, failed refresh retains timestamp, keyboard close and light/dark390 compact smoke.",
+    "checks": "Actual homepage summary first, on-demand selected detail, parent-child/unknown/claim scope reachability, delayed response A-to-B discard, failed refresh retains timestamp, keyboard close and light/dark390 compact smoke. Include unregistered active/handoff claim disclosure with exact claimId/version/scopes/next/aged-still-occupied, keyboard access and escaped long text; reuse registered claim renderer. No fake registered task or separate status source.",
     "limits": "Node tests do not establish DOM/keyboard behavior; full UI acceptance remains pending until this gate is met. No temporary page evidence as deployed4320 acceptance."
   },
   "resourceAndGit": {
@@ -165,5 +165,25 @@
     "budget": "Existing Node30s and shared future browser60s only; task-links browser moves to actual new routes within the same 60s, no extra old-suite allowance.",
     "newFinding": "Old same-task plan/review document response/error can overwrite newer selection; fix within existing app.js scope, no separate task.",
     "notDone": "No claim, implementation, runtime or performance result"
+  },
+  "unregisteredClaimDisclosureAcceptance": {
+    "source": "dperf04-claim-disclosure-c837-root.json",
+    "intake": "dperf04-claim-disclosure-intake.json",
+    "fixed": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+    "finding": {
+      "id": "DPERF04-UNREGISTERED-DISCLOSURE",
+      "priority": "P2 source UX gap; not runtime overlap evidence",
+      "location": "public/app.js:91-100 compared with registered detail:171-177",
+      "fact": "Registered task detail shows claimId/version, lead/worker, state/role, branch/worktree, exact scope, origin/observation/update, stale-still-occupied and next owner. Unregistered claim cards show only taskId, lead/worker, state/branch/worktree; there is no registered taskButton or claim disclosure, so exact occupied scope and claim version cannot be inspected through that UI path. aggregate returns full claim data already.",
+      "impact": "An active claim whose status source is not registered remains an occupied scope in the authoritative ledger. The dashboard displays its existence but does not expose enough detail for co-leads to identify the exact reservation. This is not proof that a conflict occurred."
+    },
+    "requirements": [
+      "Under existing DPERF04 app.js scope, provide a bounded keyboard-operable claim disclosure for every unregistered active/handoff claim, without creating a fake registered task or a second handwritten status source.",
+      "Reuse the same claim fact renderer for registered/unregistered locations: exact claimId/version, role/state, lead/worker, branch/worktree, scopes, source match/not-applicable, original observedAt/updatedAt, next receiver and stale-still-occupied warning.",
+      "Preserve literal user-facing values with textContent. Include long scopes, escaped text, review/integration roles, handoff_pending and stale cases in the already-planned synthetic assignment browser checks; do not add a new test budget.",
+      "Latest assignment failure must show unknown and original timestamp if retaining previous claims, never imply empty/unclaimed. Assignment response/current registry fingerprint governs source matching, independently of status summary/detail proof.",
+      "Dashboard remains read-only. Only original atomic take/amend/accept/release COMMITTED receipt grants write authority; stale or invisible claims are never automatic release."
+    ],
+    "execution": "Source-only P2 visibility gap; no overlap evidence or runtime validation; same nine scopes and budgets, no take"
   }
 }

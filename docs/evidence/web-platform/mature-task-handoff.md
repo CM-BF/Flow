@@ -35,6 +35,8 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 RELEASE03前一源码阶段 **997d731a98c837ccfce61712d2c7318ae13fb3d2 / metadata900fc59ae46cc0c05c563da2d82710393963fe87** 当时双端clean，A-only入口已固定，[panels独立只读核](release03-source-review-997d/report.md)限定脚本结构APPROVED/0blocking，资源/DBownership/进程清理/真实source-artifact绑定/失败禁止绿回执均按源码核；0执行且不授writer。root记录997d noEmit1.839676秒PASS，仍不是实际兼容。后继432b资源guard/import前监控delta已固定/root小审通过，但本次fresh准入失败，当前以顶部NOT_RUN为准。GO明确先exact362两条attachment-only/mixed实际HTTP history，任一red保两raw+清理，B/Chrome NOT_RUN并交原backend合法operator最小修复；A全绿且B未准入也封存，不自动续跑或发布。原累计180秒/8MiB/1专DB/0provider不重置；运行需脚本固定审/必要types及真实PG增量、约1GiB收尾fresh准入，无虚构开始时刻。
 
 
+**DPERF04原领取可见性验收补足**：[fixedc837三源研究](dperf04-claim-disclosure-c837-root.json) / [管理hash与原TODO映射](dperf04-claim-disclosure-intake.json)将未登记active claim无法下钻精确claimId/version/scope/next/陈旧占用列为P2源码UI缺口；不是实际冲突证据。未来原app.js复用同claim事实renderer，键盘可达、文字转义，unknown保时间且不冒无占用；不造假task/写接口。仍同九literal、synthetic assignment与原预算，无take/运行。W01724 worker与panels唯一host生命周期两份只读审查尚在进行，收到后沿原目标归档，不开启窗口。
+
 **DPERF04固定Interface消歧已接收，仍无实施claim**：[W01原报告](dperf04-fixed-interface/report.md)及[14固定源清单](dperf04-fixed-interface/sources.json)已原字节归档，管理核fixed/current同、c837 clean。summary/detail/assignments三类读取分离；作者声明与现场proof不同，旧snapshot/document兼容、全文/unknown claims可达；每个await的成功/失败及同task换文档都核generation。旧task-links browser转真实新route，共用原60秒后置预算；该same-task迟到文档缺口纳现app.js九范围，不新task。root认可为已批方案实施消歧，非take/执行/性能通过；w01只读完成，RELEASE恢复窗口优先。[原九literal方案](dperf04-summary-detail-proposal.json)。
 
 RELEASE03当前metadata **e212c2de2289a3d3bc3bc173b75050fb4d214270** 已正常push/local=remote/clean核，两源码仍432b，只有源码批准与NOT_RUN证据收口；无gate或运行。[管理来源核验](management-review-resource-intake.json)。

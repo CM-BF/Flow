@@ -371,10 +371,13 @@ GO首屏需求执行（11:44）：工程dashboard当前与下一交付应优先�
 
 D01/DPERF原WPF-001-36后继（2026-10-06）：GO单次实读首页snapshot为156任务/1,879,706bytes/8545ms/no-store，不是p95/CPU/容量基线。用户结果是尽快可读摘要与按需详情/核验，正常刷新不反复阻塞首页；失败保上次内容、原时间与错误。优先级低于Recovery和可用预览、高于装饰。保持唯一status、作者声明/现场核验区别、fresh/stale/unknown、所有task/claim可达；claim授权仍实时PG原子take。root固定7源只读[结构候选](../../docs/evidence/web-platform/dashboard-summary-readonly-design/report.md)建议保完整snapshot兼容、摘要与单task详细proof分离、client刷新guard/旧详情丢弃，不做HEAD-only跨轮green缓存。已交DPERF01–03保持原完成范围，此后继尚无implementationclaim/实验，不新增通用负载观测框架、不重复4320GET。[单次原观察归因](../../docs/evidence/web-platform/dperf-home-summary-followup.json)。
 
-DPERF同一后继已收敛为[WPF-DPERF04九literal候选](../../docs/evidence/web-platform/dperf04-summary-detail-proposal.json)：子task直接D01，w01拟唯一owner；状态摘要sourceCurrent与现场proof分开，保完整snapshot、单task按需核验与PG独立观察，失效/旧响应不得假fresh。Node内置≤30s含5s收尾，实际UI另≤60s含15s清理且待资源；源码44files/667441B估计，不当物理峰值。只读九scope当时无冲突；root已结构批准，SOURCE_REQUEST交Lead唯一Gitowner串行≤20MiB源码sparse预检/provision，之后fresh九scope COMMITTED才写，当前无take/新树/实验。既有DPERF01–03完成范围不回改，不新建第三层或负载框架。
+DPERF同一后继已收敛为[WPF-DPERF04九literal候选](../../docs/evidence/web-platform/dperf04-summary-detail-proposal.json)：子task直接D01，w01拟唯一owner；状态摘要sourceCurrent与现场proof分开，保完整snapshot、单task按需核验与PG独立观察，失效/旧响应不得假fresh。Node内置≤30s含5s收尾，实际UI另≤60s含15s清理且待资源；源码44files/667441B估计，不当物理峰值。只读九scope当时无冲突；root已结构批准，SOURCE_REQUEST交Lead唯一Gitowner串行≤20MiB源码sparse预检/provision，之后fresh九scope COMMITTED才写，该提案时尚无take/新树/实验；现Lead已provision固定c837小树，但仍未take/实施/运行。既有DPERF01–03完成范围不回改，不新建第三层或负载框架。
 
 
 DPERF04原九范围Interface消歧（固定c837，未领取）：[固定报告](../../docs/evidence/web-platform/dperf04-fixed-interface/report.md)明确summary/detail/assignments各自观察代际，summary仅sourceCurrent/status-source声明；完整snapshot/document与全部unknown/claim入口保留。每个await成功与失败均核选择、来源与文档generation，同task plan→review迟到覆盖在现app.js范围修；旧task-links浏览器断言转新route，共用原60秒后置预算。归原D01/DPERF后继，Node30秒、九literal和唯一owner不变；不新增第三层task、scope、claim或运行许可，RELEASE资源恢复优先。
 
 
 连接页插件覆盖的本段接收（原REQ22/23、WPF-001-05）：[固定源核验](../../docs/evidence/web-platform/connection-plugin-2498-intake.json)确认十产品hash与两份ead94需求hash。候选由认证外层拥有唯一host，Workspace业务租期服从session/namespace/generation与retained guard；复用现slot的真实button/menu/panel，不扩public auth command。凭据始终私有，无参Connect只请求宿主form；禁用卸载、旧lease、保稿与实际preauth/reauth UI列入原TODO验收。此处归档不授产品写权，完整精确执行范围/fixture仍待plugin co-lead与Recovery交权后协调；不新增第三层任务或平行status。
+
+
+原DPERF04领取可见性验收补充（U08/U12/REQ37，固定c837）：[三源P2研究](../../docs/evidence/web-platform/dperf04-claim-disclosure-c837-root.json)确认未登记active claim的卡片缺少claimId/version/精确scope/next/陈旧仍占用的可达详情，而aggregate已有完整事实。未来在原app.js范围复用已登记claim renderer，为所有未登记active/handoff记录提供有界键盘disclosure；保原时间/角色/来源匹配、长值textContent转义、unknown与旧观察分离。不造假task或第二status，不改PG原子写入口；页面不授take权、stale不释放。并入原synthetic assignment验收/同30秒Node和后置60秒browser预算，未实跑/未take，不表示实际overlap。
