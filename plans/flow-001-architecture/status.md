@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:49:04 UTC / main6a3acb21 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:08:56 UTC / main3e1b1bfa |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,11 +12,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | 登录恢复领域/客户端/生产入口已main84005a26；当前main6a3acb21，156唯一来源已部署。个人后台362/v15 accepting、Web8d8/caa1/v2保持。 |
+| 已集成main状态 / HEAD | TUI01E、O13目标入口与S01P06有界等待已main5dbabadc；当前main3e1b含158来源登记候选。个人后台362/v15 accepting、Web8d8/caa1/v2不变。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 登录恢复公开接口已进入主线；终端队列控制正在修复审查发现的问题，连续目标旅程已并行实施。 |
-| 下一可用交付 | 终端可靠查看、暂停和继续队列；网页恢复同一连接；同一目标入口组合真实计划和文本子任务。 |
+| 当前产出 | 终端队列控制和同一目标入口已进入主线，可关联计划、显式子任务与固定产物。 |
+| 下一可用交付 | 中心持续推进已授权且输入完整的节点；用量说明与网页连接恢复并行。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -118,3 +118,5 @@ SVC05固定362沿既有授权完成63.132秒drain→hold→refresh→显式resum
 2026-10-06 13:37:42 UTC：O01-05/O12-05/M02连续自然语言目标旅程为下一ready用户结果，native_center_owner先收敛现O07/O09/O11/O12公共接口组合；0模型旅程与后续独立预算实际模型组合分开。O08/O10封存次数不复用、不等Codex工程资格或SVC06磁盘；不造新调度器。TUI01E由assignment_review独立tui-queue-controls实施，沿原TUI-001-06/08，不等所有Web。Connection生产9406限定loopback，远端TLS代理后继open，当前个人入口未启sessioncookie。
 
 2026-10-06 13:49:04 UTC：O13已在continuous-goal-journey独立tree/claim实施，追溯原O01-05/O12-05/M02，不新建大task。先公开接口与注入SDK组合，真实规划+child另列新预算，O08/O10封存不复用。TUI01E与网页恢复并行；SVC06仍空间门禁，个人运行版本不等同main。
+
+2026-10-06 14:08:56 UTC：O13已独审/main，限定公开旅程与注入SDK，不等同自动推进或真实组合模型验收。后继O14沿原O01-05/M02：固定输入与显式有限授权、中心持久推进、失败/未知停点、机械通过不代替独立接受；仅/tmp设计与空间受限准备，030候选预留。COST01A已独立实施，旧汇总/历史语义保持。整体ENG/native与双端验收继续开放。
