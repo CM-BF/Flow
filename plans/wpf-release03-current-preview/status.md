@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 17:24:37 UTC |
+| 最近更新时间 | 2026-10-06 17:33:12 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
@@ -19,17 +19,17 @@
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 丢回执故障已改为响应正文截断，待独立源码审查 |
-| 下一可用交付 | 审核故障观测后，在新受控窗口完成页面兼容验证 |
+| 当前产出 | 响应正文截断检查已通过源码审查，页面兼容仍待实测 |
+| 下一可用交付 | 在新受控窗口完成原键恢复与页面兼容验证 |
 | 当前阻塞 | ACTIVE: 新故障注入尚未执行；完整页面兼容仍待验 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；当前正文丢失注入源码NOT_STARTED，原源码/实际A独审历史保留；完整兼容未通过 |
+| Review | [review.md](review.md)；UNKNOWN：ef458双独立源码限定批准/0blocking，新运行未执行；原A通过/B失败保留，完整兼容未通过 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | RELEASE03-01 | completed | w01_owner | [固定源码审查](../../docs/evidence/wpf-release03/source-review-432b.json)、[manifest](../../docs/evidence/wpf-release03/source-manifest.json) |
 | RELEASE03-02 | in-progress | w01_owner | [最新B结果](../../docs/evidence/wpf-release03/app-result-171109.json)：原A通过，B未知回执断言未达；累计39935/180000ms |
-| RELEASE03-03 | pending | w01_owner | 432b源码条件独审已通过；root已独立核实际A失败原始证据；B/主线交付未完成 |
+| RELEASE03-03 | pending | w01_owner | [ef458源码双独审](../../docs/evidence/wpf-release03/body-loss-source/review-index.json)通过；B/完整兼容/主线交付未完成 |
 
 ## 架构影响与未验
 
@@ -122,3 +122,7 @@ B真实App plain Send省略材料字段与旧receipt路径已PASS；随后Files 
 ## 2026-10-06 17:24:37 UTC 响应正文丢失源码修复
 
 本人live核原四scope v3后，固定两脚本 `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7`：完整真实upstream ACK先留证，真实状态/JSON头/全字节Content-Length与严格原正文前缀下发，1秒有界优雅关闭。浏览器点击前绑定精确Request，只接受response头→requestfailed事件、真实unknownUI和显式Retry前恰1POST；Send/Queue均保原key/body/ref与新稿，Queue补exact2/replayedtrue。历史契约59cde与43raw/464871B逐字不变，累计39935ms/余140065ms不变。仅Git/Python文本/哈希/范围核，0types/import/PG/Chrome/build/space采样；[源码审计](../../docs/evidence/wpf-release03/body-loss-source/source-audit.json)。本修复未运行，不能将局部flush当浏览器已收包。
+
+## 2026-10-06 17:33:12 UTC 双独立源码审查安全收口
+
+当前ef458已获root与workspace_panels_owner限定SOURCE批准，0blocking，[原报告与边界](review.md)。两源码固定未改；原43raw合464871B/history contract59cde不变。没有新增types/import/runtime/free/PG/Chrome；39935ms已用/140065ms剩余不变。下一B-only必须新协调窗口/fresh gate；不自动重试、不重跑A、不生成SVC绿报告。当前仅metadata正常提交/push，提交后双端clean另核。

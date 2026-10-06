@@ -65,3 +65,7 @@
 ## 2026-10-06 17:24:37 UTC 正文丢失清码停点
 
 复用本地find-skills/clean-code/webapp-testing已读版本；领域TypeScript HTTP proxy+Playwright。只在现成两脚本内一处bounded transport seam/一处精确Request observer，不加新框架。完整upstream与真实strict prefix独立记录，错误/压缩/非JSON/不完整响应拒绝；端到端不能只凭本地flush。避免Playwright1.63 finished悬置，采用事件身份+工作signal有界等待，成功/失败finally移除observer并清所有fault定时器。原pageErrors不吞，console仅已验证选中fault的实际错误码；Queue强化真实replay。Git diffcheck0、43raw与history字节不变/保护范围0diff；这是源码静态核而非运行/类型通过。原设计引用见body-loss-source，候选独审NOT_STARTED。
+
+## 2026-10-06 17:33:12 UTC 限定独审归档clean-code
+
+原样归档root/peer固定ef458 source reviews，真实审查与未执行行为分别表示；顶层UNKNOWN避免将APPROVED_SOURCE_SCOPED错误映射成完整兼容批准。源码/manifest/raw/契约不改，只有自己metadata/原件副本。没有重复绿色检查、类型、资源采样或新运行；后继fresh gate仍由管理者负责。

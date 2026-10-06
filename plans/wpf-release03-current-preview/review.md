@@ -1,12 +1,12 @@
 # WPF-RELEASE03 独立审查
 
-**状态：NOT_STARTED**
+**状态：UNKNOWN（源码限定审查已通过；完整兼容验收未完成）**
 
 Review target commit：ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7
 
 Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
-当前审查范围：after-headers真实ACK正文截断的fixture/browser两脚本窄delta；本target NOT_STARTED/未运行。原all两项A独立证据通过，后继9927 B已越过Files但unknownUI未出现，原失败和源码条件批准分开保留；完整兼容未通过。
+当前审查范围：after-headers真实ACK正文截断的fixture/browser两脚本窄delta；root与workspace_panels_owner均已APPROVED_SOURCE_SCOPED、0blocking。本target未运行，完整兼容未完成，不能将限定源码批准冒作整片APPROVED。原all两项A独立证据通过，后继9927 B已越过Files但unknownUI未出现，原失败和源码条件批准分开保留；完整兼容未通过。
 
 ## 后续只读任务
 
@@ -65,3 +65,9 @@ Target `9927bb071494ec16a9d8091a6ba5edb4ea72c18a`，only browser delta。请核e
 ## 2026-10-06 17:24:37 UTC 新正文丢失候选待独审
 
 Target `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7`；原9927注入preheader destroy与same-key自动第二请求事实见[author cause](../../docs/evidence/wpf-release03/body-loss-source/author-cause.md)，没有归因已证Chromium或产品bug。本轮实现遵从[root设计](../../docs/evidence/wpf-release03/body-loss-source/root-design.json)；请核真实完整ACK与downstream fault分离、1秒close/error清理、Request精确事件绑定、不调用response.finished、单preRetry/两次最终POST和Queue原引用/新稿、console只允许已绑定fault实际错误码、history marker/全部raw不变。局部文档/字节检查不代替types或实跑；新runtime NOT_RUN，下一执行另需freshgate。
+
+## 2026-10-06 17:33:12 UTC 当前ef458双独立源码批准归档
+
+[root原报告](../../docs/evidence/wpf-release03/body-loss-source/root-fixed-review.json)、[workspace_panels_owner原报告](../../docs/evidence/wpf-release03/body-loss-source/peer-fixed-review.md)（peer实际2026-10-06T17:26:51.613259+00:00）：均APPROVED_SOURCE_SCOPED/0blocking，仅固定两harness source delta。独立核真实ACK完整字节与downstream prefix分离、headers→同Request失败证据、exact1 preRetry与exact2/replayed身份、Queue/新稿不变、1秒owned socket清理和console精确归因；原43raw/契约/保护范围均不变。
+
+两位reviewer均未运行import/types/HTTP/PG/Chrome或资源采样；本地flush/关闭不等远端已接收，实际unknown UI与1秒关闭行为仍待一次新准入B。原B自动重发原因未证实，失败材料不覆盖；两A继续仅按既有完整all12证明复用。累计39935ms/余140065ms、8MiB总上限不变，没有新gate/运行/发布许可。

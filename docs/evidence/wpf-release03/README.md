@@ -1,8 +1,8 @@
-# RELEASE03 当前源码候选（未运行）
+# RELEASE03 当前源码限定批准（未运行）
 
-当前target `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7` 将真实成功ACK改为headers后严格正文前缀截断，并记录本地关闭与浏览器同Request失败证据；[源码审计](body-loss-source/source-audit.json)、[已批准设计](body-loss-source/root-design.json)。源码待独立复审，0新types/import/PG/Chrome/build/space采样，不能称兼容已通过。
+当前target `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7` 将真实成功ACK改为headers后严格正文前缀截断，并记录本地关闭与浏览器同Request失败证据；[源码审计](body-loss-source/source-audit.json)、[已批准设计](body-loss-source/root-design.json)。[root与peer双独立源码审查](body-loss-source/review-index.json)均APPROVED_SOURCE_SCOPED/0blocking；0新types/import/PG/Chrome/build/space采样，不能称兼容已通过。
 
-最近实际B仍是9927/HEADb6c：plain与文件选择通过，unknownUI未出现；点击Retry前第二POST同key/body/turn且replayedtrue。因果尚不归产品/Chromium，完整原始结果[app-result](app-result-171109.json)不改。当前累计39935ms/余140065ms，43raw合464871B，A契约59cde保持。未来B另需新fixed source review/freshgate；不重复A，不改个人发布。
+最近实际B仍是9927/HEADb6c：plain与文件选择通过，unknownUI未出现；点击Retry前第二POST同key/body/turn且replayedtrue。因果尚不归产品/Chromium，完整原始结果[app-result](app-result-171109.json)不改。当前累计39935ms/余140065ms，43raw合464871B，A契约59cde保持。未来B仍需新协调窗口/freshgate；不重复A，不改个人发布。
 
 ## 历史all结果
 
