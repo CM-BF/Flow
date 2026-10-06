@@ -23,7 +23,7 @@ catalog 的两种协议共享私有分页/取消/代际实现，分别验证公�
 
 selection 仅预校验并深冻结公共 `ClaudeTurnSettings`；完整 profile 三元组、当前可信 capability、目录完整 tuple 都须一致。省略与显式 not-requested 不等同。中心仍是准入权威，不承诺 provider 支持。
 
-Picker 由宿主传入 value/onChange；只持有 Dialog 展开状态，不增加草稿存储。选择完整 tuple，不组合独立轴。实际 requested model 与创建基准 model 分开。details(navigate) 只扩展展示，关闭/焦点交接后调用宿主动作，不扩展授权。
+Picker 由宿主传入 value/onChange；只持有 Dialog 展开状态，不增加草稿存储。选择完整 tuple，不组合独立轴。实际 requested model 与创建基准 model 分开。首层直接展示下一条的模型、思考/力度、速度与必要不可用原因；Runner/Profile ID、digest 等工程身份仅在 details，不能让用户先读协议。details(navigate) 只扩展展示，关闭/焦点交接后调用宿主动作，不扩展授权。
 
 ## 验收与阶段
 
