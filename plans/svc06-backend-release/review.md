@@ -25,3 +25,7 @@ Review target commit: `87dc292ae2dc8c1357f074ec7bddd41de20108d8`
 ## 已审片段主线接收（2026-10-06 14:54 UTC）
 
 作者仅记录 [main receipt](../../docs/evidence/svc06/main-receipt.json)：6d276/185e均为接收main cbd3dd95及观察main d679444c的祖先，14源码逐文件一致。9个直接输入无差；3个已审main变化由Lead在 `docs/evidence/i02/svc06-bounded-integration.json` 分别解释，不冒全部输入未变。本次没有新工程检查或独立产品批准，原review target与full artifact NOT_PROVEN限制保持。
+
+## 纯模块主线接收（2026-10-06 15:26 UTC）
+
+[接收事实](../../docs/evidence/svc06/closure-main-receipt.json)：main fb9fe5e745ee1617f889a7fea420d445a0b7c05c经受控等价提交包含固定87dc全部6源，逐字相同；原target不是main祖先。本记录不改变独审target，不新增review/checks，不涵盖正式parser、安装和完整artifact。

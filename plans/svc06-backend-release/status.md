@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:20 UTC；main旧保护片接收保留14:54观察 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:26 UTC；纯模块接收与旧保护片分别记录 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,17 +11,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 原基线 280289008a5a3779e4e5e6453181b96062ed9514；本片 base 91402e174022b7568aa21ce2ddfcb69932e111bd；源码 87dc292ae2dc8c1357f074ec7bddd41de20108d8 |
-| 工作树dirty状态 | 产品源码已固定停写；当前仅自身证据与计划收尾，最终 clean/push 由 Git 核验 |
+| 工作树dirty状态 | 产品源码停写；仅主线接收 metadata，本次提交后核 clean/push |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 实现目标 | 87dc292ae2dc8c1357f074ec7bddd41de20108d8 |
 | 实现范围 | tools/personal-preview/backend-release/dependency-plan.mjs, tools/personal-preview/backend-release/installation-view.mjs, tools/personal-preview/backend-release/cache-plan.mjs, tools/personal-preview/backend-release/dependency-plan.test.mjs, tools/personal-preview/backend-release/cache-plan.test.mjs, docs/evidence/svc06/closure-observe.mjs |
 | 检查状态 | PASSED 87dc292ae2dc8c1357f074ec7bddd41de20108d8：新纯模块 7/7、语法6/6，固定锁只读选择256/683；0安装/fullbuild/PG/provider |
-| 已集成main状态 / HEAD | 已接收 cbd3dd95754be96bf7eeed534fb4c7fcce8a16a8；观察 main/origin d679444c4bed52bbd53d38f4944f914b30fbbd92，6d276 与 185e 均祖先、14 源码零差；[main-receipt](../../docs/evidence/svc06/main-receipt.json)。个人 runtime/Web 未操作 |
+| 已集成main状态 / HEAD | 纯模块87dc经受控等价提交fcf59接收 main/origin fb9fe5e745ee1617f889a7fea420d445a0b7c05c，6source与固定target及工作树逐字相同；原target并非main祖先，[接收事实](../../docs/evidence/svc06/closure-main-receipt.json)。旧保护6d276接收cbd3保留；个人runtime/Web未操作 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 后台依赖选择与安装配置校验已独立审查通过，待接收；旧启动保护已在主线 |
-| 下一可用交付 | 接收纯模块后，接入固定解析器并在空间满足时验证真实离线产物 |
+| 当前产出 | 后台依赖选择与安装配置校验已进入主线；完整独立运行产物尚未验证 |
+| 下一可用交付 | 本片段已交付；后继接入固定解析器，并在空间满足时验证真实离线产物 |
 | 当前阻塞 | ACTIVE: 完整构建仍需至少2.5 GiB可用空间并保留1 GiB收尾；正式解析器和builder接线待共享依赖，纯模块不受阻 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED 87dc292ae2dc8c1357f074ec7bddd41de20108d8（纯选择器限定）；旧6d276保护片批准与main接收保留 |
@@ -57,3 +57,7 @@
 ## 纯模块独审收口（2026-10-06 15:20 UTC）
 
 Execution Lead 独立只读 APPROVED `87dc292ae2dc8c1357f074ec7bddd41de20108d8`；[原回执](../../docs/evidence/svc06/closure-independent-review.json)核6source/12inputs/23raw精确字节与hash，全文阅读，0重跑/provider。当前仅本纯片段 integration；正式YAML/parser、builder接线/安装和完整artifact仍open，2.5GiB与1GiB资源限制不变。源码停止写入，claim v4保留。
+
+## 纯模块主线接收（2026-10-06 15:26 UTC）
+
+[独立核对回执](../../docs/evidence/svc06/closure-main-receipt.json)：main fb9fe5e745ee1617f889a7fea420d445a0b7c05c通过等价提交fcf59接收6source，固定87dc/main/工作树逐字相同，远端main同SHA；原feature target/metadata非main祖先，不将此误判为产品未接。仅本片delivered，不完成SVC06-03/04/05，不复跑原检查。parser/install/build与资源gate保留，产品停写、claim v4仍保留后继范围。

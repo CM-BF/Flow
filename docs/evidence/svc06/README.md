@@ -58,3 +58,7 @@
 ## 纯模块独审（2026-10-06 15:20 UTC）
 
 [独立回执](closure-independent-review.json)批准87dc纯Module，核6+12+23绑定，无finding、无重跑。原closure-manifest的NOT_STARTED为作者封存时事实，未改原manifest/raw。当前待main接收；未变成正式parser/filtered install/fullartifact成功。
+
+## 纯模块主线接收（2026-10-06 15:26 UTC）
+
+[closure-main-receipt.json](closure-main-receipt.json)核main/origin fb9fe5e745ee1617f889a7fea420d445a0b7c05c经fcf59接收87dc，6source逐字相同；原feature target/metadata不是main祖先。本纯片已交付，历史待接收记录保留原时点；0重测/安装/构建/PG/provider/个人操作，完整artifact仍NOT_PROVEN。
