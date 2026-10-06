@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [私有错误文本单目标结果](node-failure-text/run-report.md)：本次确认Node报告OpenSSL配置打开错误；完整246B私有保留待独审，目标exit1，观察/清理/计量完成，窗口已消费。具体规则与native资格未证明，未扩权限。
+
 - Claude逐消息设置后继：当前诊断收束后请Lead协调R05/中心配置及低磁盘独立WT，Mika另派≥Sol实现；固定SDK0.3.290声明+注入SDK/真实中心首片，0付费/安装。model/thinking或effort/fast、requested/observed/unsupported、历史/运行/队列冻结与Web/TUI合同沿[原plan](../../../plans/wpf-mature-02-harness-capabilities/plan.md)，不等Codex全资格，不在诊断WT并行改产品。
 - [X01双gate已审接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/host-gates-integration-ready.md)：固定e6827d8a，Mika14:47:23 APPROVED；仅两phase当前权限回调，边界/进度由原owner维护。
 
