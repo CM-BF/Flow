@@ -154,3 +154,7 @@ GO review caught the original legacy34 C02 fixture reusing fixedflow_c02, resett
 
 ### 2026-10-06 06:35:43 UTC K03薄client
 固定77465eb59121bad5ac2785036961f1707911d21b，只增加owner固定goal/node/inputVersion的context读取与合同export。真实HTTP1红→1绿20ms（suite147ms）及tsc；编码路径、原文Unicode/digest/currentVersion、403与预取消无额外请求均核。沿既有本地find-skills/codebase-design/clean-code保持薄传输，不缓存或替换latest；无PG/模型，领域独审与021生产挂载另验。manifest绑定3源3输出。
+
+### 2026-10-06 06:41:32 UTC K03生产入口
+固定44bd8bc8e8e30ec49f86b6828f4947bf2c47d148，021迁移在scheduler/default queue前，owner hook下固定版本route；真实client→生产factory→PG验证公开prompt不变/显式原文v1当前v2/私有claim冻结/重启/真实revoke→C02明确安全retry同key重放，未造goal execution。新随机专库before[]/create确认/正常DROP/remaining[]，无模型。
+初4用例1绿3红：旧012与018fixture调用最新claim缺后继表/列，新test误写client方法名；修两旧fixture仅种各自时代真实attempt，原command/迁移/replay/额度/旧版本时间断言保留，取得F01v14精确scope。次3用例旧2绿，新用例对JSON嵌套CRLF错误按raw匹配；保留green文件名的实际失败。修为精确JSON编码匹配后只重跑新1绿1609ms，4different各有绿，非一次4/4。noEmit独立exit0；最终string-only断言无类型变化，finalstdout也空。clean-code检查：3行生产挂载、既有领域不改；资源与stage输入写明，不通过提前迁移伪造历史。

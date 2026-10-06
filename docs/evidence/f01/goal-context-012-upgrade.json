@@ -1,0 +1,325 @@
+{
+  "database": "flow_o04_upgrade_728e57511bd94b39b44808a2f30e89a0",
+  "modelCalls": 0,
+  "before": {
+    "versions": [
+      {
+        "version": 1,
+        "applied_at": "2026-10-06T06:39:43.368Z"
+      },
+      {
+        "version": 2,
+        "applied_at": "2026-10-06T06:39:43.389Z"
+      },
+      {
+        "version": 3,
+        "applied_at": "2026-10-06T06:39:43.401Z"
+      },
+      {
+        "version": 4,
+        "applied_at": "2026-10-06T06:39:43.427Z"
+      },
+      {
+        "version": 5,
+        "applied_at": "2026-10-06T06:39:43.440Z"
+      },
+      {
+        "version": 6,
+        "applied_at": "2026-10-06T06:39:43.489Z"
+      },
+      {
+        "version": 7,
+        "applied_at": "2026-10-06T06:39:43.512Z"
+      },
+      {
+        "version": 8,
+        "applied_at": "2026-10-06T06:39:43.549Z"
+      },
+      {
+        "version": 9,
+        "applied_at": "2026-10-06T06:39:43.579Z"
+      },
+      {
+        "version": 10,
+        "applied_at": "2026-10-06T06:39:43.592Z"
+      },
+      {
+        "version": 11,
+        "applied_at": "2026-10-06T06:39:43.609Z"
+      },
+      {
+        "version": 12,
+        "applied_at": "2026-10-06T06:39:43.625Z"
+      }
+    ],
+    "constraint": "CHECK ((mode = 'fixture'::text))",
+    "stored": {
+      "grant": {
+        "id": "56c51d1c-46b1-4a93-bc6e-3fd5892a4fd2",
+        "goal_id": "fce7055a-e0cb-4ca1-b683-23ef65467123",
+        "task_id": "3c494286-06d5-4942-a9e7-7c42e41ffe6a",
+        "version": 1,
+        "scope": {
+          "readScope": "whole-goal",
+          "maxCommands": 1,
+          "allowedNodeIds": [
+            "1457819b-5a48-46e8-b35a-ef43a4a6743a"
+          ],
+          "allowedCommands": [
+            "define-input"
+          ]
+        },
+        "mode": "fixture",
+        "used_commands": 1,
+        "created_at": "2026-10-06T06:39:43.785Z",
+        "revoked_at": null,
+        "revocation_reason": null
+      },
+      "calls": [
+        {
+          "run_id": "56c51d1c-46b1-4a93-bc6e-3fd5892a4fd2",
+          "sequence": 1,
+          "attempt_id": "04aaa87c-f361-4c01-9017-e2eaf461adc4",
+          "owner_version": 1,
+          "command_key": "saved-command",
+          "digest": "6ab348409d560965a83d86b52563b1c522442a6f15b69d106433b80514fe64c9",
+          "kind": "define-input",
+          "node_id": "1457819b-5a48-46e8-b35a-ef43a4a6743a",
+          "result": {
+            "changed": true,
+            "inputVersion": 1,
+            "explanationVersion": 2
+          },
+          "created_at": "2026-10-06T06:39:43.801Z"
+        }
+      ]
+    }
+  },
+  "productionVersions": [
+    {
+      "version": 1,
+      "applied_at": "2026-10-06T06:39:43.368Z"
+    },
+    {
+      "version": 2,
+      "applied_at": "2026-10-06T06:39:43.389Z"
+    },
+    {
+      "version": 3,
+      "applied_at": "2026-10-06T06:39:43.401Z"
+    },
+    {
+      "version": 4,
+      "applied_at": "2026-10-06T06:39:43.427Z"
+    },
+    {
+      "version": 5,
+      "applied_at": "2026-10-06T06:39:43.440Z"
+    },
+    {
+      "version": 6,
+      "applied_at": "2026-10-06T06:39:43.489Z"
+    },
+    {
+      "version": 7,
+      "applied_at": "2026-10-06T06:39:43.512Z"
+    },
+    {
+      "version": 8,
+      "applied_at": "2026-10-06T06:39:43.549Z"
+    },
+    {
+      "version": 9,
+      "applied_at": "2026-10-06T06:39:43.579Z"
+    },
+    {
+      "version": 10,
+      "applied_at": "2026-10-06T06:39:43.592Z"
+    },
+    {
+      "version": 11,
+      "applied_at": "2026-10-06T06:39:43.609Z"
+    },
+    {
+      "version": 12,
+      "applied_at": "2026-10-06T06:39:43.625Z"
+    },
+    {
+      "version": 13,
+      "applied_at": "2026-10-06T06:39:43.821Z"
+    },
+    {
+      "version": 14,
+      "applied_at": "2026-10-06T06:39:43.875Z"
+    },
+    {
+      "version": 15,
+      "applied_at": "2026-10-06T06:39:43.890Z"
+    },
+    {
+      "version": 16,
+      "applied_at": "2026-10-06T06:39:43.900Z"
+    },
+    {
+      "version": 17,
+      "applied_at": "2026-10-06T06:39:43.929Z"
+    },
+    {
+      "version": 18,
+      "applied_at": "2026-10-06T06:39:43.914Z"
+    },
+    {
+      "version": 19,
+      "applied_at": "2026-10-06T06:39:43.930Z"
+    },
+    {
+      "version": 20,
+      "applied_at": "2026-10-06T06:39:43.944Z"
+    },
+    {
+      "version": 21,
+      "applied_at": "2026-10-06T06:39:43.967Z"
+    }
+  ],
+  "after": {
+    "versions": [
+      {
+        "version": 1,
+        "applied_at": "2026-10-06T06:39:43.368Z"
+      },
+      {
+        "version": 2,
+        "applied_at": "2026-10-06T06:39:43.389Z"
+      },
+      {
+        "version": 3,
+        "applied_at": "2026-10-06T06:39:43.401Z"
+      },
+      {
+        "version": 4,
+        "applied_at": "2026-10-06T06:39:43.427Z"
+      },
+      {
+        "version": 5,
+        "applied_at": "2026-10-06T06:39:43.440Z"
+      },
+      {
+        "version": 6,
+        "applied_at": "2026-10-06T06:39:43.489Z"
+      },
+      {
+        "version": 7,
+        "applied_at": "2026-10-06T06:39:43.512Z"
+      },
+      {
+        "version": 8,
+        "applied_at": "2026-10-06T06:39:43.549Z"
+      },
+      {
+        "version": 9,
+        "applied_at": "2026-10-06T06:39:43.579Z"
+      },
+      {
+        "version": 10,
+        "applied_at": "2026-10-06T06:39:43.592Z"
+      },
+      {
+        "version": 11,
+        "applied_at": "2026-10-06T06:39:43.609Z"
+      },
+      {
+        "version": 12,
+        "applied_at": "2026-10-06T06:39:43.625Z"
+      },
+      {
+        "version": 13,
+        "applied_at": "2026-10-06T06:39:43.821Z"
+      }
+    ],
+    "oldGrant": {
+      "grant": {
+        "id": "56c51d1c-46b1-4a93-bc6e-3fd5892a4fd2",
+        "goal_id": "fce7055a-e0cb-4ca1-b683-23ef65467123",
+        "task_id": "3c494286-06d5-4942-a9e7-7c42e41ffe6a",
+        "version": 1,
+        "scope": {
+          "readScope": "whole-goal",
+          "maxCommands": 1,
+          "allowedNodeIds": [
+            "1457819b-5a48-46e8-b35a-ef43a4a6743a"
+          ],
+          "allowedCommands": [
+            "define-input"
+          ]
+        },
+        "mode": "fixture",
+        "used_commands": 1,
+        "created_at": "2026-10-06T06:39:43.785Z",
+        "revoked_at": "2026-10-06T06:39:44.070Z",
+        "revocation_reason": "After upgrade"
+      },
+      "calls": [
+        {
+          "run_id": "56c51d1c-46b1-4a93-bc6e-3fd5892a4fd2",
+          "sequence": 1,
+          "attempt_id": "04aaa87c-f361-4c01-9017-e2eaf461adc4",
+          "owner_version": 1,
+          "command_key": "saved-command",
+          "digest": "6ab348409d560965a83d86b52563b1c522442a6f15b69d106433b80514fe64c9",
+          "kind": "define-input",
+          "node_id": "1457819b-5a48-46e8-b35a-ef43a4a6743a",
+          "result": {
+            "changed": true,
+            "inputVersion": 1,
+            "explanationVersion": 2
+          },
+          "created_at": "2026-10-06T06:39:43.801Z"
+        }
+      ]
+    },
+    "audit": [
+      {
+        "sequence": 1,
+        "attemptId": "04aaa87c-f361-4c01-9017-e2eaf461adc4",
+        "ownerVersion": 1,
+        "key": "saved-command",
+        "digest": "6ab348409d560965a83d86b52563b1c522442a6f15b69d106433b80514fe64c9",
+        "kind": "define-input",
+        "nodeId": "1457819b-5a48-46e8-b35a-ef43a4a6743a",
+        "result": {
+          "changed": true,
+          "inputVersion": 1,
+          "explanationVersion": 2
+        },
+        "createdAt": "2026-10-06T06:39:43.801Z"
+      }
+    ],
+    "nativeGrant": {
+      "id": "6e6c52b6-3c8d-4660-9533-f8b47e2b206b",
+      "version": 1,
+      "goalId": "fce7055a-e0cb-4ca1-b683-23ef65467123",
+      "taskId": "8ce12282-b435-4a81-b06c-e9e354476882",
+      "scope": {
+        "readScope": "whole-goal",
+        "maxCommands": 1,
+        "allowedNodeIds": [
+          "1457819b-5a48-46e8-b35a-ef43a4a6743a"
+        ],
+        "allowedCommands": [
+          "define-input"
+        ]
+      },
+      "mode": "claude",
+      "usedCommands": 0,
+      "createdAt": "2026-10-06T06:39:44.103Z",
+      "revokedAt": null,
+      "revocationReason": null
+    },
+    "replayStatus": 200,
+    "quotaStatus": 409,
+    "revokedReplayStatus": 409,
+    "repeatedMigrationUnchanged": true
+  },
+  "passed": true,
+  "databaseRemoved": true
+}

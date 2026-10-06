@@ -1,0 +1,95 @@
+{
+  "target": "44bd8bc8e8e30ec49f86b6828f4947bf2c47d148",
+  "observedAt": "2026-10-06 06:41:32 UTC",
+  "sources": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 11389,
+      "sha256": "854d50bd56fbc03de9d67e85211d1c66e4cd34d5544e45f72c0687a3447029d4"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/migration.test.ts",
+      "bytes": 12188,
+      "sha256": "b7315a157ec8de5c90739bb44db2f8abf0c9f727726450687a37d69d5039c392"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/native-migration.test.ts",
+      "bytes": 9748,
+      "sha256": "b0f6be46f2d147e384489774084b55effe66b3319f08eea790fa3980dc862387"
+    },
+    {
+      "path": "packages/client/src/goal-context-production.test.ts",
+      "bytes": 7716,
+      "sha256": "8b46e61ccb67935783fc0616a5f57dec6398efa818eaa67e79d4b02ff9ab937d"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/goal-context-012-upgrade.json",
+      "bytes": 8085,
+      "sha256": "ffcabc41b1e13c75709075545788bbb27779f1a0685269ea5c996ea0a0cd0fda"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-018-upgrade.json",
+      "bytes": 5856,
+      "sha256": "1f8a7145dfe83a18da330649b3396c4b81116d1228e78ba476c88260f225cdc8"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-migration-first.txt",
+      "bytes": 3495,
+      "sha256": "179716d3af519a4c57d01ae7060456a9154dae6882d29ad69ba970094463d4a2"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-production-escaped-facts.json",
+      "bytes": 452,
+      "sha256": "56ed9a3f6cdf9ca40e1b1bc1f3a19d3f37c97542e89fd33cb15cd9061d93175a"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-production-facts.json",
+      "bytes": 921,
+      "sha256": "c9ebcb0507856ec31f4fbca1adc71b5e3fae65bb4317de395d753beaba0cc0e0"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-production-final.txt",
+      "bytes": 451,
+      "sha256": "891c5ff39c5c82f3d0cec06259aac14fe2cb397b10d9a9ba36feefa1829f9784"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-production-first-facts.json",
+      "bytes": 452,
+      "sha256": "ebb9f53d011168f6169a63cf1674b1f72e94961cfcfd9bc3d97cf252519def37"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-production-green.txt",
+      "bytes": 2674,
+      "sha256": "eb2351edb096a5c5769b22ba5adaae6bb09a1005a8308ede380d9bf74253325d"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-production-red.txt",
+      "bytes": 1398,
+      "sha256": "3de4d47446a4385f3116acf6526acf038ff900c262672e4b794694b63262eeb3"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-production-typecheck-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-production-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "differentCases": 4,
+    "description": "first4: old graph migration1 passed, two staged fixtures and new consumer failed; corrected staged2 passed; final new consumer1 passed. Not one 4/4 run.",
+    "typecheck": "observed separate noEmit exit0, before string assertion correction; later final stdout also empty",
+    "models": 0,
+    "resources": "new production fixture random DB before[]/createdtrue/connections[]/remaining[], stage fixture DBs separately removed"
+  },
+  "limitations": [
+    "old-schema attempts are explicit persisted fixture inputs; current claim is only exercised after full production startup",
+    "021 module approval Mika21d2 separate",
+    "no native/provider or personal service upgrade"
+  ]
+}
