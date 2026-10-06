@@ -127,3 +127,7 @@ Review target commit: `51541b0cad73dcad32c7374dc87d631f0b9a8432`。本准备已�
 Review target commit: `339147cb015fdd40ed1cedbc66aca26e736b3ee7`。状态APPROVED，runVerdict=PASS；固定结果已于2026-10-06 10:53:39 UTC经Mika独审，见末段回执。实现51541b0c，实际execution5ea1b26f，productionBase0cee。57项manifest=21source/21readonly/8raw/7support。审查任务：只读核固定Git/WT/SHA/bytes、32真实身份及A/B各16重叠/各12成功4取消、1027事件id/seq/digest/fence/accepted、5journal清空、资源清理和含清理总预算；保留1次无类别/attemptID的heartbeat错误、略早timer标记与实际adapter区间区别、背景/观测/phase限制。核旧FAIL/raw/journal冻结。不要重审同一source设计、重跑检查/PG/HTTP/provider或追加窗口；如有发现精确定位原证据，修复不能覆盖raw。
 
 2026-10-06 10:53:39 UTC：Mika / gpt-6-astra正式只读 **APPROVED** 结果 `339147cb015fdd40ed1cedbc66aca26e736b3ee7`，0P1/P2；57项与32真实身份、1027事件绑定、5journal、资源/预算、错误/计时/背景限制均复核。详见[回执](../../docs/evidence/s01/mixed-after-drain-run/independent-review.json)。这是本次固定零模型负载PASS证据验收，不是整体S01/FLOW-001或>100容量完成。architecture_read未重复审，未重跑任何检查/窗口。
+
+## 2026-10-06 13:26:07 UTC main接收
+
+固定 main `aae1eb1054d75e78273e7c91ed048aeac80195da`，本owner核26源与原APPROVED目标逐字一致；来源 [main-acceptance](../../docs/evidence/s01/main-acceptance.json)。无新review target或新容量检查，旧限定保持。全部scope停写后交回，release实际回执项目外。

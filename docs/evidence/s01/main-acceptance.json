@@ -1,0 +1,185 @@
+{
+  "observedAt": "2026-10-06 13:26:07 UTC",
+  "main": "aae1eb1054d75e78273e7c91ed048aeac80195da",
+  "ownSources": [
+    {
+      "path": "experiments/runner-capacity/mixed/README.md",
+      "bytes": 4953,
+      "sha256": "d61b4826b630b897146724b88f4a594a145e5c3cae2444df69ec2a6b7f4408c9",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/channel.ts",
+      "bytes": 1675,
+      "sha256": "f99b9c46fb03ab785aa45d2df1d1c1ed9dda8a29751cfbf5345249d67c135830",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/child.ts",
+      "bytes": 12569,
+      "sha256": "64d8bc3f18d064c4190acd9d0cf6efa7e3c5e5db9cafbab9ebefe934ec48b7ef",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/contract.test.ts",
+      "bytes": 1405,
+      "sha256": "ff67bea350f4232d0df3e95d165e72e930300990f29625dc9ff69ffb61cd8ff0",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/contract.ts",
+      "bytes": 4286,
+      "sha256": "dff6dbe46e5ba15a93179a9b79ffb8c6f6e5ea403bd35a24e69f341e9c83ddb5",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/deadline.test.ts",
+      "bytes": 1281,
+      "sha256": "ca202a4e14121cb3a3967bc61d286a5b3395e0c24fd7169a021181bcd861524e",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/deadline.ts",
+      "bytes": 1098,
+      "sha256": "3431dd41074b0ae2613bfff00c38da3c3e78fdcb2b5d5a367751f9f2ca47d76a",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/driver.ts",
+      "bytes": 30390,
+      "sha256": "06292e2d904a66c9b1b61b0ff19e37d091df67553a521b3d24fb7c1dcf698f57",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/evidence-bounds.test.ts",
+      "bytes": 2594,
+      "sha256": "e2e56f25b8e72c33958e06ec1cf3a40518bd84c5de4c7d9109c59eab8aeff371",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/main.ts",
+      "bytes": 1061,
+      "sha256": "3b5b3ffec08e17c0a9a598f5623c926055d53cffe99655cbfecd1d38f2242691",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observation-archive.ts",
+      "bytes": 1045,
+      "sha256": "dde8c42d673dc04d1747d418ad9b792398e25bcb325916a0e6c6a05c13dea44d",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.test.ts",
+      "bytes": 5311,
+      "sha256": "2831b5e5eedecf3c583b7b1c97623a1264f9746de08c6d24ead0a41ce7e4c529",
+      "sourceCommit": "c259e8e53cd53830fe1bc78ce3c8dae7b34d5540"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.ts",
+      "bytes": 5337,
+      "sha256": "68ea05ed95178c5973c097ebfaca9481a755f625874be253b45f02832467353e",
+      "sourceCommit": "c259e8e53cd53830fe1bc78ce3c8dae7b34d5540"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/process.ts",
+      "bytes": 2762,
+      "sha256": "87e1e2d959546d48409205b94e7d68926cd34614a5e6c13dfb5e24f7e06b4419",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/profile.test.ts",
+      "bytes": 3413,
+      "sha256": "e597852b271d03a54c1d9da7f6dd03f58fff1dc0b9127213c0d9ab5d192d983a",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/proof.test.ts",
+      "bytes": 2061,
+      "sha256": "45974063cf5feb9be4ff8e8feda611d9455bea0f92008f0ae4fb7961029494f2",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/proof.ts",
+      "bytes": 12294,
+      "sha256": "40a1ca8a2a61867bd837a9cf1ffb5c9d75d56640320a58a2c62ee85154f5cdba",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/request-error.ts",
+      "bytes": 755,
+      "sha256": "5ec7a45c2c9f819e04f303f064183d813a7b3b2bc0c2d58659a2d4d287f650f2",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/run-identity.test.ts",
+      "bytes": 2712,
+      "sha256": "7bc02d9d47f5e32546d9ce10df521c54b312856adb7d6164434c11af345eea15",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/run-identity.ts",
+      "bytes": 4265,
+      "sha256": "d72047c731193540801187bf214945b74c2e080466df6c80260aafbee0f1ff04",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/runtime-dependencies.json",
+      "bytes": 1150,
+      "sha256": "24deb4832a1c4cde186b959f4b255b26022c11b70a9b00ed0e2ee7097a564462",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/stream-bytes.test.ts",
+      "bytes": 1789,
+      "sha256": "015221f67762c06cf484aef9bce39bed2c4a1ec285781be4278be7fe2c689122",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/stream-bytes.ts",
+      "bytes": 1830,
+      "sha256": "6b88d05a975bf91bdec9eedb42b2a4f0c47b7c2149831a9bbb0a11c118fade2b",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/sustained-proof.test.ts",
+      "bytes": 7501,
+      "sha256": "8dc9e60be5d036ead4dc584711d3dcccfadfc6c79bceefc31493d53819fd9b98",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/tsconfig.json",
+      "bytes": 258,
+      "sha256": "2f7bfc694006d11811592ae4ef4bc57d50300ce2c89c32c12a190fa305272c52",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/vitest.config.ts",
+      "bytes": 190,
+      "sha256": "06ad6c5354ad53e6b729a5d444e1c890a3481633f2b5470d8dace817c09e7801",
+      "sourceCommit": "6de928d8092ba8c22ac2222ac7c16af3660be48a"
+    }
+  ],
+  "allSourceGitMainGitMainWTOwnWTMatched": true,
+  "integrationEvidence": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/event-capacity-integration.json",
+  "leadChecks": {
+    "pgPassed": 4,
+    "pgUnselected": 5,
+    "tasks": 4,
+    "databaseAbsent": true,
+    "rootTypesExit": 0,
+    "mixedTypesExit": 0
+  },
+  "ownerNewTests": 0,
+  "newCapacity": 0,
+  "releaseIntent": {
+    "requestId": "155244f0-ded5-49dc-9947-3c3498bd30fb",
+    "actor": {
+      "lead": "mika",
+      "worker": "status_read"
+    },
+    "claimId": "8e4660a6-625f-4ada-8558-20c19b9e23e0",
+    "version": 3,
+    "stoppedWriting": true
+  },
+  "releaseState": "NOT_SENT; after this metadata commit/push, receipt outside project; no write after release"
+}

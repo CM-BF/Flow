@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:00:30 UTC；只读固定main280289 runtime wait缺口登记 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:26:07 UTC / aae1eb1054d75e78273e7c91ed048aeac80195da |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,17 +10,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 固定main1c输入；observer implementation c259e8e53cd53830fe1bc78ce3c8dae7b34d5540；历史128 source6de/execution70c/result64911各自冻结 |
-| 工作树dirty状态 | 新旧source/raw冻结；仅正式review/ready metadata，提交后clean |
-| 工作分支状态 | in-progress |
+| 工作树dirty状态 | 源码/raw冻结；本次main收口metadata提交后clean，随后全部范围停写 |
+| 工作分支状态 | completed |
 | 检查状态 | PASSED：observer后继4/4 fake direct+局部strict0；128历史结果APPROVED保持，不新增实际调用 |
-| 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
+| 已集成main状态 / HEAD | 本片已集成 main/origin aae1eb1054d75e78273e7c91ed048aeac80195da；own source逐字核符，接收方检查见main-acceptance |
 | 实现目标 | c259e8e53cd53830fe1bc78ce3c8dae7b34d5540 |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 4 |
-| 当前产出 | 实验观测器共享锁查询分类修复已独审通过，128历史证据保持原样 |
-| 下一可用交付 | P05固定6336cd00待独审；S01-06长驻wait已登记，产品owner/scope待Mika协调 |
+| 当前产出 | 本片已进入主线；等待资源有界后继由独立S01P06推进 |
+| 下一可用交付 | 本片段已交付；未启动的A/B须fresh领取与独立窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED：observer c259e8e53cd53830fe1bc78ce3c8dae7b34d5540，architecture_read/Astra，2026-10-06 12:45:30 UTC，0P1/P2；Mika接收 |
@@ -191,3 +191,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 13:13:52 UTC：为Lead解阻新增[mixed完整26源接收入口](../../docs/evidence/s01/mixed-integration/README.md)：6de完整26固定源仅overlay c259两observer，Git/WT逐项核；27历史readonly在固定当前main cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd 有4项漂移，接收点必须再核，不覆盖生产依赖。未复制/改raw，0测试/PG/capacity。P05正式审批metadata已固定7d97f737，main待接收。
 
 2026-10-06 13:17:06 UTC：资源安全点仅核本人P05/S01两个WT的非symlink Vitest .vite/.vite-temp缓存，结束后移除4小root、2文件共1039逻辑B/8192已分配文件B；这是删除文件分配量，不是整盘可用空间净增断言。[receipt](../../docs/evidence/s01/long-lived-wait/resource-cleanup.json)。未遍历/删除symlink目标或.pnpm、任何raw/journal（FKye9L未触）、他人WT/个人数据。longwait已向Mika只读回报fresh scope无active覆盖及最小track-once/wait/close候选、32虚拟ticks计数反例与直接消费者，未领取/修改产品或启动任何新检查。
+
+2026-10-06 13:26:07 UTC：独立核本片26个source/config=固定源Git=mainGit=mainWT=ownerWT；[main接收](../../docs/evidence/s01/main-acceptance.json)。接收方4项PG/4tasks与root/mixed types0是集成检查，owner0重测/新容量。旧64911共享锁耗时UNKNOWN不回填，原完整计划未验收项保持开放。确认全部原scope停止写入；release请求 `155244f0-ded5-49dc-9947-3c3498bd30fb` 尚未发送，提交/push后执行，实际回执仅协调账本及项目外保存，释放后不回写。架构范围未扩；clean-code metadata一致性/固定source核验完成。
