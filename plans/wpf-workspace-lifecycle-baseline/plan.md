@@ -4,8 +4,8 @@
 
 目标：在固定真实App源码上量化8/16/32个累计合成conversation的visible/hidden/closed-clean/closed-protected可见DOM与HTTP观察，验证重开保留草稿、知识选择及原key未知receipt；形成下一最小回收Interface，当前不改生产代码。0provider/产品DB/个人服务。
 
-- [ ] WPF-WORKSPACEPERF01-01：固定输入、独占scope、技能/fixture Interface及观察口径。
-- [ ] WPF-WORKSPACEPERF01-02：两个新专测复用真实App和已有HTTPfixture，最多2可见pane，区分迟到读取与新读。
+- [x] WPF-WORKSPACEPERF01-01：固定输入、独占scope、技能/fixture Interface及观察口径。
+- [x] WPF-WORKSPACEPERF01-02：两个新专测复用真实App和已有HTTPfixture，最多2可见pane，区分迟到读取与新读。
 - [ ] WPF-WORKSPACEPERF01-03：一次实验90秒硬预算（含启动与10秒cleanup），原始证据≤8MiB；记录三档与保护状态，覆盖不全如实partial。
 - [ ] WPF-WORKSPACEPERF01-04：固定目标独审、交付与main接收；后继优化须新scope，不能把基线当性能达标。
 
