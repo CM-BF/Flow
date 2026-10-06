@@ -7,18 +7,21 @@ import { acknowledgedConversation } from './acknowledgement.js';
 import { intentSchema, type CommandResult, type Intent, type IntentStore, type InteractionClient, type InteractionController, type InteractionSnapshot } from './types.js';
 import { TurnObservation, type ObservationClient } from './observation/index.js';
 import { ObservationReads } from './observation/reads.js';
+import { dispatchQueueIntent, readQueuePage, type QueueControlPort } from './queue-control/index.js';
 class LocalError extends Error { constructor(readonly code: string, message: string) { super(message); } }
 const result = (ok: boolean, code: string, message: string): CommandResult => ({ ok, code, message });
 const freeze = <T>(value: T): T => { if (value && typeof value === 'object') { Object.freeze(value); for (const child of Object.values(value)) freeze(child); } return value; };
 
 /** Owns local observation and immutable intent, never center task/queue/execution state. */
-export function createInteractionController(options: { client: InteractionClient; connectionId: string; intents: IntentStore; makeKey?: () => string; pollMs?: number; observe?: ObservationClient }): InteractionController {
+export function createInteractionController(options: { client: InteractionClient; connectionId: string; intents: IntentStore; makeKey?: () => string; pollMs?: number; observe?: ObservationClient; queue?: QueueControlPort }): InteractionController {
   if (!options.connectionId || options.connectionId.length > 160 || options.pollMs !== undefined && (!Number.isInteger(options.pollMs) || options.pollMs < 100 || options.pollMs > 60_000)) throw new Error('Invalid interaction options');
   const { client, intents } = options;
-  let state: InteractionSnapshot = freeze({ view: 'conversations', connected: false, busy: false, closed: false, draft: '', notice: 'Use /help or /conversations.', observation: null, selected: null, turns: [], conversations: [], conversationCursor: null, profiles: [], profileCursor: null, pending: null });
+  let state: InteractionSnapshot = freeze({ view: 'conversations', connected: false, busy: false, closed: false, draft: '', notice: 'Use /help or /conversations.', observation: null, queue: null, selected: null, turns: [], conversations: [], conversationCursor: null, profiles: [], profileCursor: null, pending: null });
   const listeners = new Set<() => void>();
   const reads = new ObservationReads();
   let loadedTurns: ConversationTurn[] = []; let focused: number | null = null; let streamCapability = false;
+  let queueCapability = false; let queueAfter: number | null = null;
+  let queuePageVersion = 0;
   const observation = options.observe ? new TurnObservation(options.observe, options.connectionId, reads, value => patch({ observation: value })) : null;
   let initialized = false; let epoch = 0; let connection = new AbortController(); let timer: NodeJS.Timeout | undefined;
   let activeMutation: Promise<CommandResult> | null = null;
@@ -38,15 +41,32 @@ export function createInteractionController(options: { client: InteractionClient
     }, options.pollMs ?? 1000);
   }
   async function refresh(id: string, version: number) {
-    const signal = connection.signal;
+    const signal = connection.signal; const pageVersion = queuePageVersion;
     const snapshot = await reads.run(signal, () => client.conversation(id, signal));
     if (!current(version)) return;
     if (snapshot.conversation.id !== id) throw new LocalError('INVALID_RESPONSE', 'Conversation identity mismatch.');
     const page = await reads.run(signal, () => client.conversationTurns(id, { after: Math.max(0, (snapshot.lastTurn?.number ?? 0) - 20), limit: 20 }, signal));
     if (!current(version)) return;
     if (page.conversation.id !== id || page.turns.length > 20 || page.turns.some(turn => turn.conversationId !== id)) throw new LocalError('INVALID_RESPONSE', 'History identity or bound mismatch.');
-    loadedTurns = page.turns; streamCapability = snapshot.capabilities.liveAssistantText === true;
+    loadedTurns = page.turns; streamCapability = snapshot.capabilities.liveAssistantText === true; queueCapability = snapshot.capabilities.queue === true;
     patch({ selected: selection(page.conversation), turns: page.turns.map(turnView), connected: true }); syncObservation();
+    if (queueAfter !== null && pageVersion === queuePageVersion) {
+      if (!queueCapability || !options.queue) { queueAfter = null; patch({ queue: null }); }
+      else await refreshQueue(id, queueAfter, version, pageVersion);
+    }
+  }
+  async function refreshQueue(id: string, after: number, version: number, pageVersion: number) {
+    const signal = connection.signal;
+    const relevant = () => current(version) && pageVersion === queuePageVersion;
+    if (!relevant()) return;
+    try {
+      const value = await reads.run(signal, () => options.queue!.conversationQueue(id, { after, limit: 20 }, signal));
+      if (relevant()) patch({ queue: readQueuePage(value, id, after) });
+    } catch (error) { if (relevant()) throw error; }
+  }
+  function requireQueue() {
+    if (!state.connected || !state.selected) throw new LocalError('NO_CONVERSATION', 'Open a connected conversation first.');
+    if (!queueCapability || !options.queue) throw new LocalError('UNSUPPORTED_QUEUE', 'This center or client has not enabled queue control.');
   }
   function syncObservation() {
     const turn = focused === null ? loadedTurns.at(-1) : loadedTurns.find(value => value.number === focused);
@@ -66,15 +86,27 @@ export function createInteractionController(options: { client: InteractionClient
     patch({ pending: { kind: pending.kind, status: 'sending' } });
     try {
       if (!current(version) || signal.aborted) throw new LocalError('UNKNOWN', 'Disconnected before dispatch.');
-      const response = pending.kind === 'create' ? await client.createConversation(pending.input, pending.key, signal)
-        : await client.submitConversationTurn(pending.conversationId, pending.input, pending.key, signal);
+      let conversation: ConversationSummary | null = null;
+      if (pending.kind === 'queue-pause' || pending.kind === 'queue-resume') {
+        if (!options.queue) throw new LocalError('UNSUPPORTED_QUEUE', 'Queue transport is unavailable; original request remains unresolved.');
+        await dispatchQueueIntent(options.queue, pending, signal);
+      } else {
+        const response = pending.kind === 'create' ? await client.createConversation(pending.input, pending.key, signal)
+          : await client.submitConversationTurn(pending.conversationId, pending.input, pending.key, signal);
+        conversation = acknowledgedConversation(pending, response);
+      }
       if (!current(version)) throw new LocalError('UNKNOWN', 'Observation changed before acknowledgement was accepted.');
-      const conversation = acknowledgedConversation(pending, response);
       await intents.clear(); intent = null;
       if (!current(version)) { patch({ pending: null }); return result(true, 'ACCEPTED', 'Center accepted the request; observation remains stopped.'); }
+      if (!conversation) {
+        const id = (pending as Extract<Intent, { kind: 'queue-pause' | 'queue-resume' }>).conversationId;
+        queueAfter ??= 0; patch({ pending: null, view: 'queue' });
+        try { await refresh(id, version); } catch { if (current(version)) patch({ connected: false, notice: 'Control accepted. Use /recover to observe current facts.' }); }
+        return result(true, 'ACCEPTED', 'Queue control accepted; it does not prove current execution has stopped or completed.');
+      }
       if (state.selected?.id !== conversation.id) {
-        focused = null; loadedTurns = []; streamCapability = false; observation?.dispose();
-        patch({ observation: null, turns: [] });
+        focused = null; loadedTurns = []; streamCapability = false; queueAfter = null; queueCapability = false; observation?.dispose();
+        patch({ observation: null, turns: [], queue: null });
       }
       const selected = state.selected?.id === conversation.id && state.selected.revision > conversation.revision ? state.selected : selection(conversation);
       patch({ pending: null, view: 'conversation', selected, connected: true,
@@ -114,8 +146,8 @@ export function createInteractionController(options: { client: InteractionClient
       return result(true, 'PROFILES', 'Configured profiles loaded; provider availability has not been probed.');
     },
     open: async command => {
-      requireFree(); rotate(); focused = null; loadedTurns = []; observation?.dispose(); const version = epoch;
-      patch({ observation: null, view: 'conversation', selected: null, turns: [], connected: false }); await refresh(command.id, version); schedule();
+      requireFree(); rotate(); focused = null; loadedTurns = []; queueAfter = null; queueCapability = false; observation?.dispose(); const version = epoch;
+      patch({ observation: null, queue: null, view: 'conversation', selected: null, turns: [], connected: false }); await refresh(command.id, version); schedule();
       if (!current(version)) return result(false, 'STALE', 'Old observation ignored.');
       return result(true, 'OPENED', 'Saved conversation opened.');
     },
@@ -150,9 +182,27 @@ export function createInteractionController(options: { client: InteractionClient
     detail: async command => { await requireObservation().detail(command.number); return result(true,'DETAIL','Selected activity body loaded.'); },
     reply: async () => { await requireObservation().reply(); return result(true,'REPLY','Recorded final reply loaded.'); },
     back: async () => { patch({view:'conversation'}); syncObservation(); requireObservation().back(); return result(true,'BACK','Back to assistant text.'); },
+    queue: async command => {
+      requireQueue();
+      if (command.next && state.queue?.nextCursor == null) throw new LocalError('NO_NEXT_PAGE', 'No next queue page is loaded.');
+      const after = command.next ? state.queue!.nextCursor! : 0; const version = epoch;
+      // A page selection supersedes polls that began before it, even before their queue GET.
+      const pageVersion = ++queuePageVersion;
+      await refreshQueue(state.selected!.id, after, version, pageVersion);
+      if (!current(version)) return result(false, 'STALE', 'Old queue observation ignored.');
+      queueAfter = after; patch({ view: 'queue' }); return result(true, 'QUEUE', 'Queue references loaded; pause affects later promotion only.');
+    },
+    pause: async () => queueCommand('queue-pause'),
+    resume: async () => queueCommand('queue-resume'),
     disconnect: async () => { disconnect(); return result(true, 'DISCONNECTED', 'Observation stopped. Center work is not cancelled.'); },
     quit: async () => { await dispose(); return result(true, 'QUIT', 'Terminal closed. Center work is not cancelled.'); },
   };
+  async function queueCommand(kind: 'queue-pause' | 'queue-resume') {
+    requireFree(); requireQueue();
+    if (!state.queue || state.queue.conversationId !== state.selected!.id) throw new LocalError('QUEUE_NOT_LOADED', 'Use /queue before changing its state.');
+    const input = { expectedQueueRevision: state.queue.queueRevision, ...(kind === 'queue-resume' ? { expectedTaskId: state.queue.currentTurn?.taskId ?? null } : {}) };
+    return mutate(intentSchema.parse({ version: 1, connectionId: options.connectionId, key: (options.makeKey ?? randomUUID)(), kind, conversationId: state.selected!.id, input }), false);
+  }
   function disconnect() { rotate(); patch({ connected: false, notice: 'Disconnected; center work continues.', ...(intent ? { pending: { kind: intent.kind, status: 'unknown' } } : {}) }); }
   function dispose(): Promise<void> {
     if (disposed) return disposed;

@@ -1,0 +1,20 @@
+{
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "observedAt": "2026-10-06T13:48:00.187584+00:00",
+  "target": "d4478653918144377696ce83ace128fcf4213961",
+  "result": "CHANGES_REQUESTED",
+  "binding": "/tmp/flow-tui01e-review-binding.json",
+  "reviewerTests": 0,
+  "providerCalls": 0,
+  "findings": [
+    {
+      "priority": "P2",
+      "path": "packages/interaction/src/controller.ts",
+      "function": "refreshQueue / queue command / timer refresh",
+      "summary": "same-epoch late queue page can overwrite a newer user-selected page",
+      "condition": "timer old after=0 request is pending; /queue next after=20 returns first and sets queueAfter=20; old request then patches state.queue because only connection epoch is compared",
+      "requested": "bind accepted queue reads to page selection/request generation; focused controllable-promise red/green via public controller; preserve PG/PTY raw, no full rerun"
+    }
+  ],
+  "otherwise": "Full product delta, receipts, real HTTP/PG and PTY evidence read; current source/raw bindings all match; no other blocker found."
+}

@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls
+
+ ✓ packages/interaction/src/controller.test.ts (15 tests) 14ms
+ ✓ apps/tui/src/recovery.test.ts (9 tests) 554ms
+   ✓ two public HTTP clients alternate turns, preserve a stale draft, recover the original ACK and observe work after one disconnects  457ms
+ ✓ packages/interaction/src/queue-control/controller.test.ts (9 tests) 13ms
+ ✓ apps/tui/src/terminal.test.ts (4 tests) 154ms
+
+ Test Files  4 passed (4)
+      Tests  37 passed (37)
+   Start at  06:41:52
+   Duration  2.28s (transform 199ms, setup 0ms, import 1.21s, tests 735ms, environment 0ms)
+

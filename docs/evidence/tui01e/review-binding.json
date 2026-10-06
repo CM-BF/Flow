@@ -1,0 +1,307 @@
+{
+  "target": "d4478653918144377696ce83ace128fcf4213961",
+  "checked": 61,
+  "rows": [
+    {
+      "kind": "sources",
+      "path": "apps/tui/README.md",
+      "same": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/tui/src/main.tsx",
+      "same": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/tui/src/queue-controls/journey.test.ts",
+      "same": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/tui/src/screen.tsx",
+      "same": true
+    },
+    {
+      "kind": "sources",
+      "path": "apps/tui/test-fixtures/queue_driver.py",
+      "same": true
+    },
+    {
+      "kind": "sources",
+      "path": "packages/interaction/src/acknowledgement.ts",
+      "same": true
+    },
+    {
+      "kind": "sources",
+      "path": "packages/interaction/src/commands.ts",
+      "same": true
+    },
+    {
+      "kind": "sources",
+      "path": "packages/interaction/src/controller.ts",
+      "same": true
+    },
+    {
+      "kind": "sources",
+      "path": "packages/interaction/src/queue-control/controller.test.ts",
+      "same": true
+    },
+    {
+      "kind": "sources",
+      "path": "packages/interaction/src/queue-control/index.ts",
+      "same": true
+    },
+    {
+      "kind": "sources",
+      "path": "packages/interaction/src/types.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "pnpm-lock.yaml",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "package.json",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "packages/interaction/package.json",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "packages/client/src/index.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/tui/src/intent-store.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/tui/src/private-journal.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/tui/src/headless.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/server/src/conversation-queue/controls.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/server/src/conversation-queue/store.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/server/src/conversation-queue/index.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/tui/src/recovery.test.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/tui/src/terminal.test.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "packages/interaction/src/controller.test.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/server/src/index.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/runner/src/runtime.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/runner/src/verifier.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "packages/interaction/src/observation/reads.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "packages/interaction/src/goal/index.ts",
+      "same": true
+    },
+    {
+      "kind": "inputs",
+      "path": "apps/tui/src/goal/terminal.ts",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/ack-boundary-red-exit.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/ack-boundary-red.txt",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/controller-consumers-exit.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/controller-consumers.txt",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/controller-first-green-exit.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/controller-first-green.txt",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/controller-next-exit.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/controller-next.txt",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/controller-red-exit.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/controller-red.txt",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/install-confirmed.txt",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/install-exit.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/install.txt",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/journey-final-exit.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/journey-final.txt",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/journey-first-exit.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/journey-first.txt",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/space-after.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/space-before.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/types-final-exit.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/types-final.txt",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/types-first-exit.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/types-first.txt",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/types-next-exit.json",
+      "same": true
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/tui01e/types-next.txt",
+      "same": true
+    },
+    {
+      "kind": "derived",
+      "path": "docs/evidence/tui01e/protected-inputs.json",
+      "same": true
+    },
+    {
+      "kind": "derived",
+      "path": "docs/evidence/tui01e/journey-measurements.json",
+      "same": true
+    },
+    {
+      "kind": "derived",
+      "path": "docs/evidence/tui01e/install-wrapper-note.json",
+      "same": true
+    }
+  ],
+  "claim": true
+}

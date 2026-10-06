@@ -29,3 +29,7 @@ P05源6336由chatui01_owner独审/Mika接受，S01完整源6de、固定结果649
 ## 2026-10-06 13:42:00 UTC 浏览器会话受控接收
 
 复用领域582f、薄client d6 P2复审及生产9406三份独立批准；13源码均为批准blob，没有手工产品冲突。当前组合仅受影响的生产单例/类型验证，非重新审批整包。[事实与限制](../../docs/evidence/i02/browser-session-integration.json)。clean-code安全点：单一认证模块承担HTTP/SSE鉴权，client共用transport、不开重试或第二状态机，配置与用户输入分离；无新发现。
+
+## 2026-10-06 13:56:12 UTC 终端队列接收
+
+复用TUI01E独立批准22f：同epoch旧分页响应覆盖新选择P2已由作者修复并增量复审。11个固定源码/文档与当前组合一致；只新验当前factory下两个公开客户端的stale/暂停/继续路径及类型。[回执](../../docs/evidence/i02/tui-queue-integration.json)。clean-code安全点：slash与JSONL共享结构化控制器及原intent，不新增中心状态机，页请求身份独立于连接epoch；无新阻断。

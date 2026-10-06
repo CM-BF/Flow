@@ -1,0 +1,57 @@
+{
+  "bounded": {
+    "references": [
+      20,
+      3
+    ],
+    "outputBytes": 22483,
+    "firstPageBytes": 15530,
+    "originalMaterialBytes": 110460,
+    "itemBodyRequests": 0,
+    "requests": [
+      "GET /api/conversations/208dd4c6-0a9d-43ca-a281-19ce7d82e178",
+      "GET /api/conversations/208dd4c6-0a9d-43ca-a281-19ce7d82e178/turns?after=0&limit=20",
+      "GET /api/conversations/208dd4c6-0a9d-43ca-a281-19ce7d82e178/queue?after=0&limit=20",
+      "GET /api/conversations/208dd4c6-0a9d-43ca-a281-19ce7d82e178/queue?after=21&limit=20"
+    ]
+  },
+  "pty": {
+    "exitCode": 0,
+    "rawModeRestored": true,
+    "resized": [
+      60,
+      20
+    ],
+    "transcriptBytes": 22793,
+    "checkpoints": [
+      "Ctrl-C disconnect and quit",
+      "/open 8ba3be21-2810-4f9d-a97b-a5a3c118e77b",
+      "Saved conversation opened.",
+      "Message or /command",
+      "/queue",
+      "Queue references loaded",
+      "Message or /command",
+      "Queue · paused",
+      "/pause",
+      "Queue control accepted",
+      "Message or /command",
+      "/resume",
+      "Queue control accepted",
+      "Message or /command",
+      "Queue · not paused",
+      "保留中文🙂",
+      "Flow",
+      "second draft",
+      "保留中文🙂",
+      "second draft"
+    ],
+    "unsentCjkMultilineDraft": true
+  },
+  "cleanup": {
+    "database": "flow_tui01e_f7c8dd1718ea",
+    "remaining": [],
+    "ownedRunnerStopped": true,
+    "providerCalls": 0
+  },
+  "source": "journey-final.txt; verbatim JSON records extracted, no extra run"
+}

@@ -1,0 +1,52 @@
+{
+  "observedAt": "2026-10-06 13:56:12 UTC",
+  "inputMain": "8dd6fe7978bb85674d9dbd945fc94084967536c1",
+  "approvedProduct": "22f0e2c2b702112aa1a5d1b36874b56165cd267e",
+  "authorMetadata": "e061915676089e0f5198c4816280d1b29614bbca",
+  "independentReview": "docs/evidence/tui01e/final-independent-review.json",
+  "sourceComparison": "tui-queue-source-comparison.json",
+  "checks": {
+    "productionQueue": {
+      "selected": 1,
+      "unselected": 3,
+      "passed": 1,
+      "exit": 0,
+      "toolChunk": "3cf7db"
+    },
+    "rootTypes": {
+      "exit": 0,
+      "toolChunk": "5adfbb"
+    },
+    "webTypes": {
+      "exit": 0,
+      "toolChunk": "d2bf01"
+    },
+    "randomDatabase": "flow_tui01e_9b5ddfb86574",
+    "remainingDatabases": [],
+    "ownedRunnerStopped": true,
+    "providerCalls": 0
+  },
+  "raw": [
+    {
+      "path": "docs/evidence/i02/tui-queue-combined.txt",
+      "bytes": 623,
+      "sha256": "d8c36f79329c923ef30f87dd2582518f5f46432c4f48d2e79bcae2b994a90952"
+    },
+    {
+      "path": "docs/evidence/i02/tui-queue-root-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/tui-queue-web-types.txt",
+      "bytes": 138,
+      "sha256": "867109a0443c0f5e4ee097f1840dd96e0fa65e4a5fbf43f5beca8cd9a6fbb74a"
+    }
+  ],
+  "limits": [
+    "Current factory with browser-session integration; unchanged 11 reviewed sources",
+    "Original 44 distinct checks across rounds reused; original full HTTP/PTY suites not repeated",
+    "Not actual TUI-Web-TUI or provider acceptance; remaining chat controls stay open",
+    "Personal backend 362af3ba accepting v15 and Web8d8ab520 release v2 unchanged"
+  ]
+}
