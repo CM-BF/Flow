@@ -12,6 +12,14 @@
 | 检查状态 | PASSED `fb14d351b46da69b17e48e8815006fc320e765e1`：typecheck、6文件17/17针对测试、frozen install；被测源码哈希见manifest，不代表完整P01或main能力 |
 | 已集成 main 状态 / HEAD | P01未集成；02:24只读观察main `13703a4accef004d16fd40312dd565d390896e09` clean；不以branch检查代替main能力 |
 | Review | [review](review.md)，NOT_STARTED |
+| 阶段 | M2 |
+| 优先级 | 2 |
+| 当前产出 | 官方协议SDK首段已提交，17项验证通过，等待独立审查 |
+| 下一可用交付 | 持久外部任务关联与执行恢复，接入中心人工等待 |
+| 当前阻塞 | NONE |
+| 需用户决定 | NONE |
+| 实现目标 | fb14d351b46da69b17e48e8815006fc320e765e1 |
+| 实现范围 | packages/protocols/ |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
