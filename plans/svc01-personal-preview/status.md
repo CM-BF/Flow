@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:33:47 UTC / 2026-10-06 04:29 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:34:50 UTC / 2026-10-06 04:29 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-preview` |
@@ -16,17 +16,17 @@
 | 实现范围 | tools/personal-preview/ |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 独立审查环境隔离发现已修复，三端零模型8项检查通过 |
-| 下一可用交付 | 独立审查后由Lead启动专属持久服务并另交新URL |
+| 当前产出 | 启动器已独立审查通过，环境隔离修复与8项检查证据已确认 |
+| 下一可用交付 | Lead合入启动器与SDK环境隔离后，启动专属服务并另交新URL |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | IN_PROGRESS；[review.md](review.md) |
+| Review | APPROVED 715eca5f299fecda9e71a0c58c62f6fa7a5656dc，Execution Lead独立只读；[review.md](review.md) |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | SVC01-01 | completed | runner_owner | handoff v2→accept v3，04:13:58Z，receipt已落盘 |
 | SVC01-02 | completed | runner_owner | 8/8真实公开行为；本工具无provider探测 |
-| SVC01-03 | in-progress | Lead / independent reviewer | P2环境隔离已修，等待固定715eca5复审 |
+| SVC01-03 | in-progress | Lead / independent reviewer | 实现715eca5已独立APPROVED；待Lead主线接收 |
 | SVC01-04 | pending | Lead | 未启动服务，原49922仍fixture |
 
 ## 证据与下一步
@@ -38,3 +38,5 @@ Dashboard仅聚合本status，领取事实从D04账本读取；Lead已登记第4
 架构影响：本地个人center/runner/Web持有拓扑与专库标记；本scope README记录接口，Lead集成target后同步工程dashboard固定图。当前实际用户服务未启动。
 
 2026-10-06 04:33:28 UTC 独立review发现P2：继承全部进程环境。已隔离wrapper/实际role child，并用纯合成marker检查6个真实子进程环境；相关三端生命周期复跑8/8。修复target 715eca5f299fecda9e71a0c58c62f6fa7a5656dc，旧7/7日志不覆盖。产品runner→SDK环境隔离由Lead另行修复，不在本scope。
+
+2026-10-06 04:34:50 UTC Lead独立只读APPROVED固定715eca5，未重跑；本树源码冻结，claim v3保留待集成。SVC01-03的main接收和04常驻交付仍由Lead完成，native SDK环境隔离是另一个独立修复，不由本status冒称已部署。
