@@ -1,0 +1,49 @@
+{
+  "recordedAt": "2026-10-06T09:33:50.577507+00:00",
+  "driverTarget": "7c6e3d835655e1c2c274b71ce0d65225e87172df",
+  "staticTarget": "e535fc04364c3be4a08ab0c6bc8bebe25afed977",
+  "r06Target": "a239b14d5328c78cca02a8757e26f2b65502f926",
+  "permissionConsumed": true,
+  "automaticRetry": false,
+  "command": "/opt/homebrew/opt/node@24/bin/node --import /Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs experiments/codex-app-server-conformance/isolation/run-once.mjs",
+  "driverExitCode": 1,
+  "startedAt": "2026-10-06T09:32:21.310Z",
+  "endedAt": "2026-10-06T09:32:21.558Z",
+  "functionCalls": 1,
+  "factoryCalls": 1,
+  "sevenCanaryChecks": "UNAVAILABLE: no valid child report; do not infer any passed",
+  "observedFailure": "DISCONNECTED with SIGABRT before valid canary report; exact cause unknown",
+  "close": {
+    "reason": "DISCONNECTED",
+    "child": "confirmed-exited",
+    "exitCode": null,
+    "signal": "SIGABRT",
+    "remoteEffects": "unknown"
+  },
+  "listenerClosed": true,
+  "cleanupObservation": {
+    "allowedRoot": {
+      "path": "/private/tmp/flow-wpf02-allow-ZeK77w",
+      "exists": false
+    },
+    "deniedRoot": {
+      "path": "/private/tmp/flow-wpf02-deny-y42s9s",
+      "exists": false
+    }
+  },
+  "files": {
+    "docs/evidence/wpf-mature-02/isolation/canary-once-reservation.json": "b85f7ab6d2b478de12366a8336ccc7bd2626a6cd8e5cdbe7eedf9fdf5aa1cfb9",
+    "docs/evidence/wpf-mature-02/isolation/canary-actual-input.json": "e13b767dbdd3cd2479023c92eac25c458f6ee3c0877f258cf4e8b67b95e94dd9",
+    "docs/evidence/wpf-mature-02/isolation/canary-result.json": "a66933434a749456ee9afe878becbbab8a226c5aa3848e4707fc8a5ff4d8a312",
+    "docs/evidence/wpf-mature-02/isolation/canary-driver-stdout.jsonl": "fba4d03cdeb8e6f1abd9da92b4f25ecfa3191dee0d14e7ebc605d550a7942e0f",
+    "docs/evidence/wpf-mature-02/isolation/canary-driver-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "preparedDriverManifestSha256": "e607f3aad56831157c0e1378f6a9895c48012754b3811042231233355983a1b0",
+  "staticManifestSha256": "5671088ae9b23b19fa7711df04ad5da2e130ada65ff6c3a92e8e3b2b3830d503",
+  "reviewedFilesUnchanged": true,
+  "semanticSourceRawSchemaUnchanged": true,
+  "realAppServerStarts": 0,
+  "authCalls": 0,
+  "providerCalls": 0,
+  "outsideNetworkProbes": 0
+}

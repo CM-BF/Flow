@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-06T09:32:21.529Z",
+  "options": {
+    "spawn": {
+      "executable": "/usr/bin/sandbox-exec",
+      "cwd": "/private/tmp/flow-wpf02-allow-ZeK77w/state",
+      "args": [
+        "-D",
+        "ALLOW_ROOT=/private/tmp/flow-wpf02-allow-ZeK77w",
+        "-D",
+        "DENY_ROOT=/private/tmp/flow-wpf02-deny-y42s9s",
+        "-f",
+        "/private/tmp/flow-wpf02-allow-ZeK77w/control/default-deny.sb",
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--jitless",
+        "--no-addons",
+        "--import",
+        "/private/tmp/flow-wpf02-allow-ZeK77w/control/canary-preload.mjs",
+        "/private/tmp/flow-wpf02-allow-ZeK77w/control/peer.mjs",
+        "normal"
+      ],
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "HOME": "/private/tmp/flow-wpf02-allow-ZeK77w/state/home",
+        "CODEX_HOME": "/private/tmp/flow-wpf02-allow-ZeK77w/state/codex",
+        "TMPDIR": "/private/tmp/flow-wpf02-allow-ZeK77w/state/tmp",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC"
+      }
+    },
+    "initialize": {
+      "clientInfo": {
+        "name": "flow_seatbelt_canary",
+        "title": "Synthetic isolation canary",
+        "version": "1"
+      },
+      "capabilities": {
+        "experimentalApi": false,
+        "requestAttestation": false
+      }
+    },
+    "limits": {
+      "initializeTimeoutMs": 3000,
+      "requestTimeoutMs": 1000,
+      "terminateMs": 500,
+      "killMs": 500,
+      "frameBytes": 4096,
+      "inboundBytes": 8192,
+      "outboundBytes": 8192,
+      "inboundFrames": 8,
+      "outboundFrames": 8,
+      "pendingRequests": 1,
+      "serverRequests": 1
+    }
+  },
+  "config": {
+    "runId": "4229575c5260eed392ad64c422a6a4ac",
+    "allowedRoot": "/private/tmp/flow-wpf02-allow-ZeK77w",
+    "deniedRoot": "/private/tmp/flow-wpf02-deny-y42s9s",
+    "port": 57985,
+    "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+  },
+  "copiedHashes": {
+    "config.json": "3746fde27799d39565b552b7682f51effdd9334994d059d5ec87120318a9e108",
+    "default-deny.sb": "b050b371c0739f8081a26fd3e4df27487075fdd6b0adee0107da05b12e1ef779",
+    "canary-preload.mjs": "d197b240be265f2606b0f6b9d00efd30993fc3de31c5ec0bd46daeb59a183e30",
+    "peer.mjs": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf"
+  },
+  "inputSha256": "41b33f8f284fbb3986bb8b449e049575c4c7b2ffd95c43dd490889776f27fe2b",
+  "driverSha256": "d35912089241ad46e3553eaf3d6090f8d9e06139f3fb94225cdbc07c64835f21"
+}

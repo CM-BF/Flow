@@ -8,4 +8,6 @@ Fixed implementation target: `0d0524c3439363d1fe60aad63f62817ba51fa2a5`. Recorde
 
 No real app-server, account/auth, provider, model or network request was made by these tests. No R06 transport composition or production/Web behavior was tested. [Isolation plan](isolated-run-plan.md) is NOT_RUN pending enforceable controls and canary evidence. Full Claude/Codex settings and next-turn revision acceptance remain open.
 
-Separate isolation-design target: `e535fc04364c3be4a08ab0c6bc8bebe25afed977`. Its [manifest](isolation/manifest.json) and [review](../../../plans/wpf-mature-02-harness-capabilities/review.md) are static-only, NOT_STARTED; no sandbox/canary/R06 composition executed. This does not extend the semantic approval.
+Separate isolation-design target: `e535fc04364c3be4a08ab0c6bc8bebe25afed977`. Its [manifest](isolation/manifest.json) and [review](../../../plans/wpf-mature-02-harness-capabilities/review.md) record the static-only design approved by Mika at 09:28:12 UTC for one synthetic invocation; no real Codex authorization. The subsequent invocation result is recorded below. This does not extend the semantic approval.
+
+Current one-shot result: **FAILED / STOPPED**. See [runtime report](isolation/canary-run-report.md). One authorized synthetic call aborted with SIGABRT before a valid canary report; child/listener cleanup confirmed, no retry. No real app-server/provider/auth. Static source records remain historical and unchanged.

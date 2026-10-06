@@ -113,11 +113,18 @@ Mika转交status_read对固定Codex0.154.0 schema及官方current文档的只读
 
 来源：[固定E02归档](schema-source.json)及status_read只读输入；官方[config reference](https://learn.chatgpt.com/docs/config-file/config-reference)、[approvals/security](https://learn.chatgpt.com/docs/agent-approvals-security)是current资料，不能替代固定版本执行证据。隔离目录probe约束文件/网络/进程的启动边界，与以后允许provider网络后的无工具推理分开。
 
-## 隔离后继当前状态
+## 隔离后继静态准备时点（后续运行结果见文末）
 
-[静态设计](../../../experiments/codex-app-server-conformance/isolation/README.md)已绑定独审R06 target a239b14d5328c78cca02a8757e26f2b65502f926及其main e785a29f5dee324127603f73e9efda8a66242009；本轮仅profile/canary脚本、命令与失败清理的可审文件，不执行sandbox/R06组合/真实Codex。先前纯语义approval不覆盖本后继。
+[静态设计](../../../experiments/codex-app-server-conformance/isolation/README.md)已绑定独审R06 target a239b14d5328c78cca02a8757e26f2b65502f926及其main e785a29f5dee324127603f73e9efda8a66242009；该静态段仅profile/canary脚本、命令与失败清理的可审文件，未执行sandbox/R06组合/真实Codex。先前纯语义approval不覆盖本后继。
 
 账号后继补充（Mika/status_read只读输入）：GetAccountParams.refreshToken=true可主动刷新token，account/read不能一概称零网络只读；Account目录信息不证明模型entitlement。login结果/通知并非总有可关联loginId，AccountUpdated也不是请求receipt；任何实际account/read/login/logout均未授权/执行，secret/token/email/raw认证URL不进入普通日志。ModelReroutedNotification的同thread/turn from/to可作为逐turn实际模型证据候选，不能用ThreadStart配置回填actual。
 
 
 固定源码补证（status_read只读提供）：官方rust-v0.154.0 tag commit `6b9826e3aa83b1a5947db50f4332cb9c65f1b340` 的Cargo版本为0.154.0，ThreadStart schema与本地归档相同；但发布产物至本机binary `4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc` 的校验链尚未证明。[spec_plan.rs](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/core/src/tools/spec_plan.rs#L1079)中ShellTool=false仅跳过核心exec_command/write_stdin，MCP resource/apply_patch/view_image仍为独立注册；[hosted_spec.rs](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/core/src/tools/hosted_spec.rs#L14)的Disabled不生成hosted search。这是0.154源码候选证据，不是本机binary全部无工具证明，不产生运行授权或access:none承诺。
+
+
+## 当前一次隔离运行结果：FAILED / STOPPED
+
+固定driver7c6e3d8已按Mika许可只调用一次runSyntheticCanary；[唯一运行证据](isolation/canary-run-report.md)为SIGABRT/无有效报告，七项结果不可用，R06确认退出，listener与两个自有临时根已清理。不得把静态APPROVED或本次失败当运行隔离证明；不重试、不加profile grant、不启动真实app-server。原profile/语义算法保持冻结。
+
+02/04 identity的共享后继请求仅在[04 canonical center-store-request](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/center-store-request.md)维护；Mika提供固定HEAD `5ef354c4d4273ce7f47dafff148f65d7c4629355` clean。共享Lead可从那里读取迁移号/source授权/consumed cut及精确接线需求。这里仅提供依赖指针，不复制04 TODO/进度，也不把04阻塞改写为02整task blocker。
