@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-06T12:32:03.712Z",
+  "sourceCount": 149,
+  "task": {
+    "id": "TUI01D",
+    "title": "终端目标与控制旅程",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-goal-session",
+    "branch": "codex/tui-goal-session",
+    "planDir": "plans/tui01d-goal-session",
+    "evidenceDir": "docs/evidence/tui01d"
+  },
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "已确定目标终端入口与按需详情、命令恢复的职责。",
+    "next": "在终端查看同一目标的计划和执行，处理决定并恢复未知回执。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "checks": "Registry identities/three canonical paths/parser only. No implementation test or duplicate parent plan."
+}
