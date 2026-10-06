@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 12:51:36 UTC |
+| 最近更新时间 | 2026-10-06 12:57:16 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -24,7 +24,7 @@
 | 优先级 | 1 |
 | 当前产出 | 纵向设计3bd1add6已独审；正式workspace/tar依赖方向已审；八literal leaf请求ready；无产品实现 |
 | 下一可用交付 | 有界真实包安装、重读和执行模块；中心完整管理链随后接入 |
-| 当前阻塞 | ACTIVE: 本地验证依赖F01的workspace声明/lock与受控offline准备；公共vertical待host资格、共享合同及唯一migration |
+| 当前阻塞 | ACTIVE: F01依赖接线已审，正在受控接收/本树离线准备；公共vertical待host资格、共享合同及唯一migration |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -65,3 +65,5 @@
 2026-10-06 12:46:02 UTC：fresh HEAD91ac13d0 clean、writer6ddedc73 v1 ACTIVE；Mika批准显式workspace/tar7.5.22方向，[收据](../../docs/evidence/x01/dependency-design-review.json)。已给 [八literal请求](../../docs/evidence/x01/leaf-scope-request.md)；F01 v32持三共享依赖路径，未领取/修改产品。独立prepare/read/loader片可先推进，整体publicvertical/唯一DDL仍待协调。0新工程测试/安装。
 
 2026-10-06 12:51:36 UTC：fresh HEAD45ebc277 clean及账本无冲突，Lead授权八leaf经v1→v2原子amend成功。先固定新包manifest与[本片Interface](../../docs/evidence/x01/leaf-interface.md)供F01依赖接线；未安装/测试，不触共享manifests/lock。源码实现准备中，当前产品review NOT_STARTED；原两次批准均仅方向。架构新增共享安装材料Module与runner loader，后续集成时由Lead更新基线图。
+
+2026-10-06 12:57:16 UTC：固定首tracer checkpoint以接收已审F01 f635依赖三blob。prepare/read和host为明确NOT_IMPLEMENTED stub，首真实fixture测试尚未运行；不把0tests或导入失败当red。该checkpoint不是实现交付/approval。
