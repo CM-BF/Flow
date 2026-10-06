@@ -22,6 +22,11 @@ export async function* coalesceAssistantStream(source:AsyncIterable<SDKMessage>,
       const frame=result.value.value;
       // Session/init and all existing observations are handled before dependent text patches.
       for(const record of accumulator.before(frame)) yield record.type==='assistant-stream' ? {kind:'patch',patch:record} : {kind:'marker',patch:record};
+      // A result may conditionally seal this attempt: persist every earlier SDK text patch first.
+      if (frame.type==='result') {
+        for(const patch of accumulator.flush()) yield {kind:'patch',patch};
+        for(const marker of accumulator.drainMarkers()) yield {kind:'marker',patch:marker};
+      }
       yield {kind:'frame',frame};
       for(const patch of accumulator.observe(frame)) yield {kind:'patch',patch};
       if (Date.now()>=flushAt) { for(const patch of accumulator.flush()) yield {kind:'patch',patch}; flushAt=Date.now()+ASSISTANT_FLUSH_MS; }

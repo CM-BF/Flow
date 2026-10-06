@@ -314,3 +314,69 @@ it('passes only explicit native SDK environment and excludes Flow service creden
   await createClaudeAdapter({ materialFiles: [], query }).run(test.context);
   expect(JSON.stringify(test.events)).not.toContain('synthetic-');
 });
+
+it('uses one input query for three bounded results, deduplicates result UUIDs and chains cumulative usage baselines', async () => {
+  const test = await setup(); let calls = 0, finalized = 0, closed = false;
+  test.context.steering = { async mailbox() { return { revision: 0, sealed: false, commands: [], delivery: null }; }, async finalize(input) {
+    finalized++; await new Promise(resolve => setTimeout(resolve, 150)); expect(input.resultId).toBe('three'); expect(input.events.map(event => event.type)).toEqual(['artifact', 'verification', 'assistant-final']);
+    expect(input.events[0]).toMatchObject({ content: 'violet-317' }); return { state: 'committed', proposalId: 'synthetic-proposal', lastSequence: 3, replayed: false };
+  } };
+  const query: ClaudeQuery = ({ prompt }) => Object.assign((async function* () {
+    calls++; if (typeof prompt === 'string') throw new Error('Expected streaming input'); await prompt[Symbol.asyncIterator]().next();
+    yield result({ uuid: 'child-result', queued_turn_count: 0, parent_tool_use_id: 'child-tool' });
+    yield result({ uuid: 'one', queued_turn_count: 1 });
+    yield result({ uuid: 'two', queued_turn_count: 1 });
+    yield result({ uuid: 'two', queued_turn_count: 1 });
+    yield result({ uuid: 'three', queued_turn_count: 0 });
+  })(), { close() { closed = true; } });
+  await createClaudeAdapter({ materialFiles: [], query }).run(test.context);
+  expect(calls).toBe(1); expect(finalized).toBe(1); expect(closed).toBe(true);
+  const usage = test.events.filter(event => event.type === 'usage'); expect(usage).toHaveLength(3);
+  expect(usage[0]!.baseline).toEqual({ kind: 'new-session' });
+  expect(usage[1]!.baseline).toEqual({ kind: 'sample', sampleId: usage[0]!.sampleId });
+  expect(usage[2]!.baseline).toEqual({ kind: 'sample', sampleId: usage[1]!.sampleId });
+  expect(test.events.filter(event => event.type === 'artifact' || event.type === 'assistant-final')).toHaveLength(0);
+});
+it.each(['missing-pending', 'error-result'] as const)('does not publish a conditional final for %s', async kind => {
+  const test = await setup(); let finalized = 0;
+  test.context.steering = { async mailbox() { return { revision: 0, sealed: false, commands: [], delivery: null }; }, async finalize() { finalized++; throw new Error('Unexpected final'); } };
+  const query: ClaudeQuery = ({ prompt }) => Object.assign((async function* () {
+    if (typeof prompt === 'string') throw new Error('Expected streaming input'); await prompt[Symbol.asyncIterator]().next();
+    yield result(kind === 'missing-pending' ? {} : { subtype: 'error_during_execution', is_error: true, queued_turn_count: 0 });
+  })(), { close() {} });
+  await expect(createClaudeAdapter({ materialFiles: [], query }).run(test.context)).rejects.toThrow();
+  expect(finalized).toBe(0); expect(test.events.some(event => event.type === 'assistant-final' || event.type === 'artifact')).toBe(false);
+});
+it('keeps one total deadline across intermediate results and aborts a blocked native input', async () => {
+  const test = await setup(); let finalized = 0, closed = false;
+  test.context.steering = { async mailbox() { return { revision: 0, sealed: false, commands: [], delivery: null }; }, async finalize() { finalized++; throw new Error('Unexpected final'); } };
+  const query: ClaudeQuery = ({ prompt }) => Object.assign((async function* () {
+    if (typeof prompt === 'string') throw new Error('Expected streaming input'); const input = prompt[Symbol.asyncIterator](); await input.next();
+    yield result({ uuid: 'deadline-one', queued_turn_count: 1 });
+    await new Promise(resolve => setTimeout(resolve, 30));
+    yield result({ uuid: 'deadline-two', queued_turn_count: 1 });
+    await input.next();
+  })(), { close() { closed = true; } });
+  await expect(createClaudeAdapter({ materialFiles: [], query, timeoutMs: 80 }).run(test.context)).rejects.toThrow('timed out');
+  expect(finalized).toBe(0); expect(closed).toBe(true);
+  expect(test.events.filter(event => event.type === 'steering-result')).toHaveLength(2);
+});
+it('pauses native mailbox delivery during a still-owned tool decision and resumes after the decision', async () => {
+  const test = await setup(); let waiting = true, finalized = false;
+  const { FlowApiError } = await import('@flow/client');
+  test.context.steering = { async mailbox() {
+    if (waiting) throw new FlowApiError(409, 'steering_unavailable', 'Waiting for a decision');
+    return { revision: 0, sealed: false, commands: [], delivery: null };
+  }, async finalize() { finalized = true; return { state: 'committed', proposalId: 'decision-final', lastSequence: 3, replayed: false }; } };
+  test.context.waitForDecision = async () => { await new Promise(resolve => setTimeout(resolve, 130)); waiting = false; return 'approve'; };
+  const query: ClaudeQuery = ({ prompt, options }) => Object.assign((async function* () {
+    if (typeof prompt === 'string') throw new Error('Expected streaming input'); const input = (await prompt[Symbol.asyncIterator]().next()).value!;
+    const snapshot = /Authorized material: (.+)/.exec(String(input.message.content))![1]!;
+    yield { type: 'system', subtype: 'init', session_id: 'native-1', uuid: 'decision-init', model: 'test', permissionMode: 'dontAsk', tools: ['Read'], plugins: [], skills: [], mcp_servers: [], claude_code_version: 'injected' } as unknown as SDKMessage;
+    const permitted = await options!.hooks!.PreToolUse![0]!.hooks[0]!({ hook_event_name: 'PreToolUse', tool_name: 'Read', tool_input: { file_path: snapshot }, tool_use_id: 'deciding-read', session_id: 'native-1', transcript_path: '', cwd: test.context.workingDirectory }, 'deciding-read', { signal: test.abort.signal });
+    expect(permitted).toMatchObject({ hookSpecificOutput: { permissionDecision: 'allow' } });
+    yield result({ uuid: 'decision-result', queued_turn_count: 0 });
+  })(), { close() {} });
+  await createClaudeAdapter({ materialFiles: [test.material], requireReadApproval: true, query }).run(test.context);
+  expect(finalized).toBe(true);
+});

@@ -56,6 +56,8 @@ export const steeringStateQuerySchema = steeringPageSchema.extend({ attemptId: i
 
 // CHAT08: all transport methods are runner-authenticated and remain opt-in at the host.
 export const MAX_STEERING_COMMANDS_PER_ATTEMPT = 64;
+/** Host evidence bound, not the SDK maxTurns meaning or a renewed query budget. */
+export const MAX_STEERING_RESULTS_PER_ATTEMPT = 65;
 export const steeringMailboxSchema = z.strictObject(ownership);
 export interface SteeringMailbox {
   revision: number;
