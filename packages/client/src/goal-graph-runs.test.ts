@@ -3,6 +3,7 @@ import { once } from 'node:events';
 import type { AddressInfo } from 'node:net';
 import { expect, it } from 'vitest';
 import { FlowClient } from './index.js';
+import { ownershipSchema, goalGraphReadCallSchema, goalGraphDetailCallSchema, goalGraphCommandCallSchema } from '@flow/contracts';
 
 it('preserves bounded graph authority, fixed versions, actor receipts and replay keys without retry or role fallback', async () => {
   const seen: { path: string; token: string | undefined; body: unknown; key: string | undefined }[] = [];
@@ -11,6 +12,9 @@ it('preserves bounded graph authority, fixed versions, actor receipts and replay
     let raw = ''; for await (const part of request) raw += part;
     const body = raw ? JSON.parse(raw) : null;
     seen.push({ path: request.url!, token: request.headers.authorization, body, key: request.headers['idempotency-key'] as string | undefined });
+    const schema = ({ '/api/runner/goal-graph/grant': ownershipSchema, '/api/runner/goal-graph/read': goalGraphReadCallSchema, '/api/runner/goal-graph/proposal': goalGraphDetailCallSchema, '/api/runner/goal-graph/command': goalGraphCommandCallSchema } as const)[request.url as '/api/runner/goal-graph/grant'];
+    const invalid = schema && !schema.safeParse(body).success;
+    if (invalid) { response.writeHead(400, { 'content-type': 'application/json' }); response.end(JSON.stringify({ error: { code: 'invalid_request', message: 'Schema rejected.' } })); return; }
     const denied = body?.ownerVersion === 99;
     response.writeHead(denied ? 409 : 200, { 'content-type': 'application/json' });
     response.end(JSON.stringify(denied ? { error: { code: 'ownership_lost', message: 'Ownership lost.' } } : result));
@@ -19,7 +23,7 @@ it('preserves bounded graph authority, fixed versions, actor receipts and replay
   const baseUrl = `http://127.0.0.1:${(server.address() as AddressInfo).port}`;
   const owner = new FlowClient({ baseUrl, token: 'owner-only' });
   const runner = new FlowClient({ baseUrl, token: 'runner-only' });
-  const ownership = { taskId: 'task-1', attemptId: 'attempt-1', ownerVersion: 4 };
+  const ownership = { attemptId: 'attempt-1', ownerVersion: 4 };
   const input = { ...ownership, grant: { id: 'grant-1', version: 1 as const } };
   const proposal = { expectedProjectRevision: 1, reason: '  原文保留\n', additions: [{ key: 'draft', title: '中文🙂', dependencies: [{ kind: 'existing' as const, nodeId: 'node-A', expectedVersion: 3 }] }] };
   try {
