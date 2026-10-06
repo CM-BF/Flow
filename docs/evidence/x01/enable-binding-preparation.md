@@ -2,6 +2,18 @@
 
 沿原 [X01](../../../plans/x01-plugin-management/plan.md)，不新增父计划。本段固定只读 main `65659028ec3aed7c4b5a68eb20a39a32026e5dc5`；中心材料 `a578bfd9`、host 双 gate `e6827d8a` 已接收主线，见 [main 接收记录](host-gates-main-acceptance.md)。当前 `invokeInstalledTool` 仍无 production caller。以下是推荐后继合同，不是已实现/已批准公有 API；旧 [输入观察](enable-binding-inputs.json) 只作历史。2026-10-06 16:28:29 UTC 核本树 HEAD `7f6d82228632ddc46723a3a8a3e3305733940ab7` clean、writer `6ddedc73…v5 ACTIVE` 原四 scope；本次只改两 metadata，host 两源继续停写。
 
+## 2026-10-06 22:50 后继开工准备（当前推荐，替代上文旧输入/owner观察）
+
+冻结源码 `60ca1942411634843fda14e158f138191b832d8b`；原 owner `3c5622ad` clean、claim `6ddedc73 v5 ACTIVE`。当前仅原树 metadata，host 两源停写。请求独立树 `plugin-enable-binding` / `codex/plugin-enable-binding`，仍属唯一 X01，同一路径 plan/status；详细 literal、供给与原子移交在 [source-only 请求](enable-binding-provision.md)，精确字节/hash 在 [清单](enable-binding-source-request.json)。旧段落中的“原 WT 实现”、共享空闲及 CORE/F01 owner 观察均只属16:30历史，不能作为当前写权。
+
+首片收敛为领域合同、单 revision enable/disable、同事务冻结 binding 与只消费旧 host 的窄执行模块，生产路由暂不挂载。008 的 operation kind CHECK 与公有 PluginOperation 类型必须前向兼容 enable/disable；现 `plugins/storage.ts` 提供一个内部 append-revision 接缝，由旧 changePlugin 与新领域命令共用，旧四 change/注册结果、错误、审计和旧五种读回保持。新领域命令用独立有界 schema，旧 registry command 路由不提前接新行为；旧 PluginInstallation 的 unavailable 投影保持，新的 runtime DTO 单独读事实。第一片不是生产可执行资格。
+
+**生产挂载的必要门槛**：S01P07 的新 claim.v2 assignment 是 strict codec；历史持久 host tuple 不能证明当前/降级进程仍支持插件。因此必须由共享 owner 冻结明确的当前 claim 能力协商、center ACK 和 SQL-before-LIMIT 过滤，旧 decoder 不收到新 binding、绑定任务不走 fixture fallback。新领域 route 仅在这些共享条件及 reconciliation 防降级 guard 已接收后由 Lead factory 启用；模块验证不能让未就绪公共中心创建可被旧 runner 领取的任务。本片只消费固定main现有类型，不复制未合入的 S01 codec。
+
+**窄执行 Interface**：`plugins/execution.ts` 接中心 FrozenPluginToolBinding、原 attempt/ownerVersion、可信 store、load/invoke 当前授权 port、ownership、abort，复用 `invokeInstalledTool` 和 `verifyText`；返回有限 artifact/verification/provenance 给原 runtime/outbox caller，不另发HTTP、分配sequence或伪造中心ref。原 host 参数 configuration 为字符串；中心声明允许的 boolean/integer/enum 在此唯一适配为 `true/false`、规范十进制、原enum字符串，binding仍保原有限配置和digest，不能假装宿主已原生支持任意配置。当前推荐首实际包只有无配置compare，通用类型适配必须有直接行为证据。只有既定 OUTCOME_UNKNOWN / 已发送授权 ACK 未知转成 caller 可识别 unsettled，fence/emit异常保身份；共享 runtime 接线前只称独立leaf，不称恢复已完成。
+
+Root已选择 `semver@7.8.5` / ISC 的确定性 compare 能力作为 X01-04/07 真实npm验收方向。拟后续显式build-time单index.mjs bundle，固定源、构建参数、两manifest/license与产物digest；编译常量消除 NODE_DEBUG 读取，不改宿主环境。初始供给不复制任何 node_modules 或上游包源码，不安装/build；锁SRI只声明，不能当tarball已验证。外部来源由独立固定记录交接，本轮不再选包或运行。
+
 ## 推荐字段与调用边界
 
 | 入口 / 权威 | 最小字段与确定语义 |
@@ -20,7 +32,7 @@
 | 主责 / 可独立交付 | literal 与唯一职责 |
 | --- | --- |
 | X01 领域片，授权后原 WT 实现 | `packages/contracts/src/plugin-runtime.ts`, `packages/contracts/src/plugin-runtime.test.ts`；`apps/server/src/plugin-runtime/commands.ts`（enable/任务命令）、`apps/server/src/plugin-runtime/store.ts`（host/runtime pointer/binding/gate 记录）、`apps/server/src/plugin-runtime/routes.ts`（公开入口/读回）、`apps/server/src/plugin-runtime/events.ts`（调用来源 record）、`apps/server/src/plugin-runtime/runtime.test.ts`（真实 public HTTP/PG 事务）。一份新 SQL 由 Lead 正式分配编号；复用唯一正式 SQL，不复制 029 或另拆空 migration helper。可先交公开 enable/冻结 binding/历史读回模块，明确尚无 runner 执行，不再交未被消费的纯 helper 堆叠。 |
-| 中心共享 owner，由 Lead 明确领取 | `packages/contracts/src/plugins.ts`, `packages/contracts/src/plugins.test.ts`（加 enable/disable）；`apps/server/src/plugins/commands.ts`（单 revision 的窄复用接口）；`apps/server/src/runners.ts`（claim 条件/assignment）；`apps/server/src/events.ts`（调用领域 record）；`packages/contracts/src/runner.ts`（optional binding/事件 union）；`apps/server/src/reconciliation.ts`（仅通用 retry 的 plugin binding guard，当前 CORE v3 持有）。`tasks.ts`/TaskSubmission/evidence.ts 首选只消费不修改。 |
+| 中心共享 owner，由 Lead 明确领取 | `packages/contracts/src/plugins.ts`, `apps/server/src/plugins/plugins.test.ts`（旧命令与新增operation直接兼容）；`apps/server/src/plugins/commands.ts`（单 revision 的窄复用接口）；`apps/server/src/runners.ts`（claim 条件/assignment）；`apps/server/src/events.ts`（调用领域 record）；`packages/contracts/src/runner.ts`（optional binding/事件 union）；`apps/server/src/reconciliation.ts`（仅通用 retry 的 plugin binding guard，当前 CORE v3 持有）。`tasks.ts`/TaskSubmission/evidence.ts 首选只消费不修改。 |
 | runner owner，由 Lead 明确领取 | 新 `apps/runner/src/plugins/execution.ts`, `apps/runner/src/plugins/execution.test.ts` 承担 host→事件适配；`apps/runner/src/runtime.ts` 只分派已授权 binding、识别 unsettled；`apps/runner/src/runner.test.ts` 验真实 public runRunner/journal。`apps/runner/src/main.ts`, `apps/runner/src/configuration.ts`, `apps/runner/src/configuration.test.ts` 只接 operator TrustedPackageStore 与 host 发布；`fixture.ts`、attempt-control、admission-journal 首选不改。旧 host 两源只消费，不恢复写权。 |
 | F01 共享接线 | `packages/contracts/src/index.ts`、`packages/client/src/index.ts`、`apps/server/src/index.ts`，对应直接 client/生产 mount 检查新路径由 F01 冻结；CLI 在其 `apps/cli` scope 用同一客户端，Web/TUI 不另造 HTTP。16:28:29 账本 F01 `8470…v41` 持这些路径；CORE `c652…v3` 持 tasks/profile 源，不碰其范围。上述 runner/中心共享 literal 本次未见 active writer，不等于 X01 获授权。 |
 

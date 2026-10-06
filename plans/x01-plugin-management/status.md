@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:31:30 UTC |
+| 最近更新时间 | 2026-10-06 22:53:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -11,20 +11,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
-| 工作基线 / HEAD | base8e520b7274a6d4112e91318c6eb5ba1758bf7c1c；host固定e6827d8a30fd103e34966a5d7298570545865057；center已main56d90 |
+| 工作基线 / HEAD | 原owner HEAD3c5622ad88c34ba19535790c278c3cc941ab0a79 clean；后继只读源码冻结main60ca1942411634843fda14e158f138191b832d8b；尚未同步产品 |
 | 工作树 dirty 状态 | host两源/raw固定e6827d8a30fd103e34966a5d7298570545865057；metadata独立，聚合读取实际clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED e6827d8a30fd103e34966a5d7298570545865057；host 21/21（14旧+7新）/strict局部0；原red/raw保留，本次metadata零重测 |
-| Review | APPROVED e6827d8a30fd103e34966a5d7298570545865057；Mika/gpt-6-astra 2026-10-06 14:47:23 UTC，0P1/P2 |
+| 检查状态 | NOT_RUN 后继enable/binding；当前仅源码供给与设计准备。历史e682 host 21/21与strict0保留，零重测 |
+| Review | NOT_STARTED 后继enable/binding；历史e682独审APPROVED及main接收保留于review.md |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
-| 实现目标 | e6827d8a30fd103e34966a5d7298570545865057 |
-| 实现范围 | apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts |
-| 本片段交付阶段 | delivered |
+| 实现目标 | 后继领域/持久binding/窄host，尚无产品实现target；既有host e682已交付 |
+| 实现范围 | docs/evidence/x01, plans/x01-plugin-management |
+| 本片段交付阶段 | planning |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 静态安装公开入口及包加载、执行前两次权限核验已进入主线；完整插件运行管理仍未完成 |
-| 下一可用交付 | 本片段已交付；后继公开启用、冻结任务与真实runner调用方案已收敛，等待共享写权和唯一迁移编号 |
-| 当前阻塞 | NONE |
+| 当前产出 | 静态安装及加载、执行前两次权限核验已交付；正在准备公开启用与冻结工具任务的独立实现片 |
+| 下一可用交付 | 先交领域合同、持久绑定与窄宿主模块，再接真实runner产物链；原完整插件管理验收保持 |
+| 当前阻塞 | ACTIVE: 等待Lead按固定源码供给新工作树、完成唯一owner移交与分配迁移号；当前只写原metadata，产品未开工 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -113,3 +113,7 @@
 2026-10-06 16:30:00 UTC：fresh owner HEAD7f6d82228632ddc46723a3a8a3e3305733940ab7 clean、16:28:29 ledger 6ddedc73 v5 ACTIVE 原四scope；仅收敛[后继一页合同](../../docs/evidence/x01/enable-binding-preparation.md)。固定只读 main65659028ec3aed7c4b5a68eb20a39a32026e5dc5 的 runtime/claim/TaskSubmission/host/插件命令/事件与验证真实接口，推荐 host tuple、单revision enable、中心生成binding、load/invoke当前grant与有来源artifact字段。未知复用原settlement/admission保留，不增加执行FSM；独立领域HTTP/持久冻结片与共享caller逐literal分开。F01现v41、CORE现v3，空闲共享路径也未授写权；新SQL号/共享writer/受控输入由Lead冻结。已交付e682片仍delivered，后继仅design，原10TODO不变；host两源停写，旧raw/manifest不改。方法沿本地find-skills/codebase-design/固定clean-code/brainstorming，检查有限接口、错误保留及锁序；0工程测试、PG、SDK/provider、安装和sparse操作。后继有Module/runtime接线架构影响，实施后由Lead维护固定main视图，本次未改架构图。 只读parseStatus errors=[]、delivered/10TODO，两个文档本地链接无缺失、diff空白检查通过；不声称在线看板已刷新。
 
 2026-10-06 16:31:30 UTC：补固定main656的直接reconciliation consumer：通用retry只复制submission/K02/goal，后继必须显式拒绝plugin binding走普通fixture重试，避免丢来源后伪成功；精确共享guard路径已列入准备页，当前CORE持有，未写入。其余字段/已交付事实不变，0工程运行。
+
+2026-10-06 22:48:06 UTC：GO恢复既有X01/REQ11–13后继；fresh旧树3c5622ad clean、6ddedc73 v5 ACTIVE原四scope，host两源维持停写。冻结main60ca1942411634843fda14e158f138191b832d8b作为本次source-only请求输入，新plugin-enable-binding树/branch尚不存在。只准备≤5MiB Flow源码、直接consumer与自有文档；0依赖复制、安装、导入、工程测试、PG或provider。新SQL号待Lead，033属CHAT05P01；现runtime/client/factory/exports占用不抢。迁移前本status仍唯一权威，完整10TODO不减少。技能沿本地find-skills→codebase-design/clean-code固定sickn33基线/brainstorming，已授权设计不增加用户审批。
+
+2026-10-06 22:53:00 UTC：已收敛[一次源码供给/唯一权威移交请求](../../docs/evidence/x01/enable-binding-provision.md)，候选14源码literal及待Lead分配的唯一SQL。补齐008审计kind、旧五操作直接读回与Web两个label consumer；first slice无生产mount，明确claim能力协商/旧strict decoder/fixture fallback门槛。Root选semver7.8.5/ISC compare方向，初始请求不含上游包源或依赖复制；实际bundle及真实runner仍未验。当前仍原树metadata唯一authority，0新产品修改/工程运行。

@@ -1,3 +1,13 @@
+# X01 当前 enable / frozen binding 后继准备
+
+状态：NOT_STARTED
+
+Review target commit：尚无产品实现；只读源码输入固定 main60ca1942411634843fda14e158f138191b832d8b。
+
+原计划恢复推进，当前仅[供给与scope请求](../../docs/evidence/x01/enable-binding-provision.md)。旧host双gate、中心安装与材料leaf已交付；下面批准仍只绑定各自原target，不用于新领域/production runner。新树供给、原子owner迁移、精确amend和唯一SQL编号到达后才开产品写入。当前0工程检查/PG/provider。
+
+---
+
 # X01 当前host双阶段权限核验
 
 状态：APPROVED
