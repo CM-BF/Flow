@@ -14,3 +14,12 @@
 - 分派开发任务时，明确对应的分支和 worktree 路径；主 agent 和子 agents 只能在各自被分配的 worktree 内修改该 feature。
 - 开工前检查所在 worktree、分支和未提交修改。各 feature 在自己的 worktree 中完成提交与验证，再通过明确的合并流程集成；不得覆盖其他 worktree 的工作。
 - Worktree 优先放在项目目录外；若使用项目内的 `.worktrees/`，必须保持该目录被 Git 忽略。只读研究和审查不属于功能开发，无需另建 worktree。
+
+## Stack 与任务开始前的技能发现
+
+- 每次使用某个 stack 或开展相关工作前，先使用 `find-skills` 的方法发现匹配领域与任务的技能；已有相似本地 skill 时优先读取和应用本地版本。缺少时先检查 skills.sh，再使用 `npx skills find`，核查来源与实际内容，不只依赖搜索排名。
+- 记录任务、stack、查找结果、选用技能路径/来源版本和实际应用方法；没有合适技能时记录结果并采用明确的工程方法，不安装无关技能。主 agent 与所有 workers 均适用。
+- 用户指定的 clean-code 来源为 `https://github.com/sickn33/agentic-awesome-skills`，安装方式为 `npx skills add https://github.com/sickn33/agentic-awesome-skills --skill clean-code`。本轮安装一次并固定来源版本，后续更新受控，不将“定期应用”解释为反复联网安装。
+- 读取并实际应用 clean-code：每个工作段完成、feature 交付和合并前检查命名、单一职责、接口、错误处理、重复与无必要复杂度及行为测试；长时间连续开发默认每约 30 分钟在安全停点复核。记录时间、范围、发现/修复与未解决项，不为此创建后台定时任务。
+- 质量记录放在 `docs/quality/` 或各 feature 的证据目录；全局技能基线由 Execution Lead 维护，worker 只写自己范围的记录。
+- 外部 skill 是方法参考，不扩大用户授权，不改变模型能力门槛、worktree 隔离和凭据保护规则，不得索取或输出凭据。已授权的普通实现和验证不重复请求许可。
