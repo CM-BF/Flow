@@ -1,0 +1,31 @@
+{
+  "observedAt": "2026-10-06T09:33:50.638Z",
+  "sourceCount": 117,
+  "sources": [
+    {
+      "id": "ENG-001",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery",
+      "planDir": "plans/eng01-engineering-delivery",
+      "parseErrors": [],
+      "humanComplete": true,
+      "phase": "planning"
+    },
+    {
+      "id": "R05C",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-adapter",
+      "planDir": "plans/r05c-codex-native-adapter",
+      "parseErrors": [],
+      "humanComplete": true,
+      "phase": "implementation"
+    },
+    {
+      "id": "TUI01A",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations",
+      "planDir": "plans/tui01a-conversations",
+      "parseErrors": [],
+      "humanComplete": true,
+      "phase": "implementation"
+    }
+  ],
+  "scope": "source identity + canonical docs/parser only"
+}
