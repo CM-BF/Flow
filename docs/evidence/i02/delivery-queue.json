@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T15:37:14.443713+00:00",
+  "recordedAt": "2026-10-06T15:40:05.295189+00:00",
   "main": "22d5ca67159b35bb794b2711cf6df0cb905b92e8",
-  "sourceSampleAt": "2026-10-06T15:19:18.967Z",
+  "sourceSampleAt": "2026-10-06T15:38:16.075Z",
   "authority": "This is a bounded integration intake observation; each linked owner status remains authoritative, not a parallel task state ledger.",
   "reviewedQueue": [],
   "mainButNotUserSurface": [
@@ -46,10 +46,11 @@
     {
       "taskId": "SVC05H01",
       "target": "b29807979a5589678a61d3fb84781950cf366396",
-      "metadata": "0037921d12c089e6334b001545f698db067087f8",
-      "phase": "fixed-source-only-preparation",
+      "metadata": "af51c621696230fbced12227670f014ca73bd8a1",
+      "phase": "fixed-source-and-dependency-view-ready",
       "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/plans/svc05-history-compatibility/status.md",
-      "next": "Independent source precheck and existing Web A/B with frozen newtuple; source/lock otherwise362,0PG/provider/personal operations."
+      "next": "Independent source precheck noP1/P2; Webmanager owns newtuple A/B after independent script delta review/fresh reserve.0provider/personal operations.",
+      "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6"
     }
   ],
   "mainBeforeBatch": "280289008a5a3779e4e5e6453181b96062ed9514",

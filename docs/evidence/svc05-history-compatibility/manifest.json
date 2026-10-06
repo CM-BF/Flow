@@ -1,0 +1,71 @@
+{
+  "sourceTarget": "b29807979a5589678a61d3fb84781950cf366396",
+  "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "mode": "candidate-source-binding-only",
+  "behaviorChecks": "NOT_RUN",
+  "independentReview": "SOURCE_BINDING / NO_P1_P2; VALIDATION_PENDING; NOT_PRODUCT_OR_DEPLOYMENT_APPROVAL",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/claim-receipt.json",
+      "bytes": 784,
+      "sha256": "3b7aa17ed2d3dcd428a01aedc784b084b6d0a023e22d1a250e18b499499cd716"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/dependency-view.json",
+      "bytes": 9579,
+      "sha256": "8eca2632a14ffaf3c8aaf9cec4b0a491b56b88ebc94a55d22ba03679222d4bde"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/interface.md",
+      "bytes": 4754,
+      "sha256": "829daf5f3c35be84f7a0b9414b836d271f0505c19bfc89fba4134e3dbbf68b2c"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/old-a-result.json",
+      "bytes": 3710,
+      "sha256": "7292991d07dadbd920a44e3be22c4b8d7a908d308fd52704d566e2165c27c234"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/old-a-review.json",
+      "bytes": 8095,
+      "sha256": "a1304d49692d80b0d9aa36f990eab2b19a9bc0602354f7b58ce418a39f17e24d"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/provision.json",
+      "bytes": 659,
+      "sha256": "c903fbfd2552ba02fb67b5c4dbae2d350701ec8acdea03a5add6ac997b3f524d"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/quality.md",
+      "bytes": 1856,
+      "sha256": "4d3174b95347d6bee81d719cd8a100b39230acfbb6797255d0d141a6d33ba3d3"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/source-bindings.json",
+      "bytes": 15032,
+      "sha256": "f9a76ccdd93b3b49fa38489ffb83a6008dcd43934c6d51257d4809d293901af8"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/source-precheck.json",
+      "bytes": 7342,
+      "sha256": "bef82168b40dfd3e7217eaa419141576f5625d2f3a78c4bb6358170f7fb70290"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ]
+}
