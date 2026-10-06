@@ -1,0 +1,1196 @@
+{
+  "generatedAt": "2026-10-06T12:24:33.364Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T12:24:33.416Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "taskCount": 148,
+  "assignmentsState": "available",
+  "unregistered": [],
+  "tasks": [
+    {
+      "id": "WPF-DPERF03",
+      "title": "看板读取并发与快照复用",
+      "role": "工程协作",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot",
+      "branch": "codex/dashboard-git-snapshot",
+      "planDir": "plans/wpf-dperf03",
+      "evidenceDir": "docs/evidence/wpf-dperf03",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:19:23.785Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/plans/wpf-dperf03/status.md",
+        "syncedAt": "2026-10-06T12:24:33.364Z",
+        "stale": false,
+        "ageHours": 0.07593444444444444
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/dashboard-git-snapshot",
+        "head": "cc390fd7613c5a0b6ce801bb5dccc85b20437764",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T12:24:33.486Z"
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)",
+            "id": "D01",
+            "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Web /root",
+            "value": "Web /root"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "integration",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "看板单次读取已限流，重复主线观察减少且保留未知状态",
+          "next": "集成已审看板读取改进",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+          "scopes": [
+            "apps/execution-dashboard/src/aggregate.mjs",
+            "apps/execution-dashboard/src/proof.mjs",
+            "apps/execution-dashboard/src/git-snapshot.mjs",
+            "apps/execution-dashboard/test/git-snapshot.test.mjs",
+            "apps/execution-dashboard/test/proof-snapshot.test.mjs"
+          ],
+          "errors": []
+        },
+        "taskId": "WPF-DPERF03",
+        "owner": "workspace_panels_owner / gpt-6-astra ultra",
+        "branch": "codex/dashboard-git-snapshot",
+        "branchState": "in-progress / approved / waiting-main",
+        "updatedAt": "2026-10-06T12:20:00.000Z",
+        "updatedRecord": "2026-10-06 12:20:00 UTC",
+        "todos": [
+          {
+            "id": "WPF-DPERF03-01",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "[Interface](../../docs/evidence/wpf-dperf03/interface.md)、[质量](../../docs/evidence/wpf-dperf03/quality.md)"
+          },
+          {
+            "id": "WPF-DPERF03-02",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "[固定5源](../../docs/evidence/wpf-dperf03/candidate.json)"
+          },
+          {
+            "id": "WPF-DPERF03-03",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "[验证/失败/预算](../../docs/evidence/wpf-dperf03/validation.md)"
+          },
+          {
+            "id": "WPF-DPERF03-04",
+            "state": "in-progress",
+            "owner": "workspace_panels_owner",
+            "evidence": "root 12:18:07 UTC独审APPROVED；main待接收"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "eb95fba43b0305db0dd40dfe85ccc0d58eb9a6ea / 当前Git聚合",
+        "declaredDirty": "五实现/专测已固定；当前仅交付metadata，提交后Git聚合为准",
+        "checks": {
+          "state": "passed",
+          "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+          "record": "PASSED 5609ea719ec400a803bb6036429312b7a212c90f；37直接消费者、1临时Git实验；原失败/预算见validation"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED 5609ea719ec400a803bb6036429312b7a212c90f",
+        "mainRecord": "NOT_INTEGRATED",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED**",
+        "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+        "proof": {
+          "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+          "head": "cc390fd7613c5a0b6ce801bb5dccc85b20437764",
+          "scopes": [
+            "apps/execution-dashboard/src/aggregate.mjs",
+            "apps/execution-dashboard/src/proof.mjs",
+            "apps/execution-dashboard/src/git-snapshot.mjs",
+            "apps/execution-dashboard/test/git-snapshot.test.mjs",
+            "apps/execution-dashboard/test/proof-snapshot.test.mjs"
+          ],
+          "observedAt": "2026-10-06T12:24:33.489Z",
+          "state": "unchanged",
+          "implementationChanges": [],
+          "outsideChanges": [],
+          "metadataChanges": [
+            "docs/evidence/wpf-dperf03/README.md",
+            "docs/evidence/wpf-dperf03/amend-receipt.json",
+            "docs/evidence/wpf-dperf03/candidate.json",
+            "docs/evidence/wpf-dperf03/checks.json",
+            "docs/evidence/wpf-dperf03/controlled-final.log",
+            "docs/evidence/wpf-dperf03/controlled.log",
+            "docs/evidence/wpf-dperf03/direct-consumers.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288831727/aggregate-frozen-fallback.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288831727/eight-repositories.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288831727/four-main-proofs.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288831727/freshness-and-isolation.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288831727/queued-head-movement.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288831727/real-spawn-failure-releases-permit.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288831727/report.json",
+            "docs/evidence/wpf-dperf03/experiment-1791288846658/aggregate-frozen-fallback.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288846658/eight-repositories.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288846658/four-main-proofs.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288846658/freshness-and-isolation.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288846658/queued-head-movement.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288846658/real-spawn-failure-releases-permit.jsonl.log",
+            "docs/evidence/wpf-dperf03/experiment-1791288846658/report.json",
+            "docs/evidence/wpf-dperf03/experiment-budget.json",
+            "docs/evidence/wpf-dperf03/experiment-second.log",
+            "docs/evidence/wpf-dperf03/experiment.log",
+            "docs/evidence/wpf-dperf03/first-controlled.log",
+            "docs/evidence/wpf-dperf03/initial-contract-red.log",
+            "docs/evidence/wpf-dperf03/install.log",
+            "docs/evidence/wpf-dperf03/live-amend.json",
+            "docs/evidence/wpf-dperf03/quality.md",
+            "docs/evidence/wpf-dperf03/review-parser.json",
+            "docs/evidence/wpf-dperf03/root-audit.json",
+            "docs/evidence/wpf-dperf03/root-direct-tests.log",
+            "docs/evidence/wpf-dperf03/validation.md",
+            "plans/wpf-dperf03/plan.md",
+            "plans/wpf-dperf03/review.md",
+            "plans/wpf-dperf03/status.md"
+          ],
+          "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+        },
+        "declarationProof": "unchanged"
+      },
+      "implementationProof": {
+        "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+        "head": "cc390fd7613c5a0b6ce801bb5dccc85b20437764",
+        "scopes": [
+          "apps/execution-dashboard/src/aggregate.mjs",
+          "apps/execution-dashboard/src/proof.mjs",
+          "apps/execution-dashboard/src/git-snapshot.mjs",
+          "apps/execution-dashboard/test/git-snapshot.test.mjs",
+          "apps/execution-dashboard/test/proof-snapshot.test.mjs"
+        ],
+        "observedAt": "2026-10-06T12:24:33.489Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/wpf-dperf03/README.md",
+          "docs/evidence/wpf-dperf03/amend-receipt.json",
+          "docs/evidence/wpf-dperf03/candidate.json",
+          "docs/evidence/wpf-dperf03/checks.json",
+          "docs/evidence/wpf-dperf03/controlled-final.log",
+          "docs/evidence/wpf-dperf03/controlled.log",
+          "docs/evidence/wpf-dperf03/direct-consumers.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288831727/aggregate-frozen-fallback.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288831727/eight-repositories.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288831727/four-main-proofs.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288831727/freshness-and-isolation.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288831727/queued-head-movement.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288831727/real-spawn-failure-releases-permit.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288831727/report.json",
+          "docs/evidence/wpf-dperf03/experiment-1791288846658/aggregate-frozen-fallback.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288846658/eight-repositories.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288846658/four-main-proofs.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288846658/freshness-and-isolation.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288846658/queued-head-movement.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288846658/real-spawn-failure-releases-permit.jsonl.log",
+          "docs/evidence/wpf-dperf03/experiment-1791288846658/report.json",
+          "docs/evidence/wpf-dperf03/experiment-budget.json",
+          "docs/evidence/wpf-dperf03/experiment-second.log",
+          "docs/evidence/wpf-dperf03/experiment.log",
+          "docs/evidence/wpf-dperf03/first-controlled.log",
+          "docs/evidence/wpf-dperf03/initial-contract-red.log",
+          "docs/evidence/wpf-dperf03/install.log",
+          "docs/evidence/wpf-dperf03/live-amend.json",
+          "docs/evidence/wpf-dperf03/quality.md",
+          "docs/evidence/wpf-dperf03/review-parser.json",
+          "docs/evidence/wpf-dperf03/root-audit.json",
+          "docs/evidence/wpf-dperf03/root-direct-tests.log",
+          "docs/evidence/wpf-dperf03/validation.md",
+          "plans/wpf-dperf03/plan.md",
+          "plans/wpf-dperf03/review.md",
+          "plans/wpf-dperf03/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "documents": [
+        {
+          "path": "plans/wpf-dperf03/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-dperf03/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-dperf03/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/wpf-dperf03/take-receipt.json",
+          "title": "原receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-dperf03/interface.md",
+          "title": "小Interface",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-dperf03/amend-receipt.json",
+          "title": "回执",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-dperf03/validation.md",
+          "title": "validation",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-dperf03/quality.md",
+          "title": "质量",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-dperf03/candidate.json",
+          "title": "固定5源",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-dperf03/root-audit.json",
+          "title": "原审计",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-dperf03/root-direct-tests.log",
+          "title": "原始日志",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 3,
+        "total": 4
+      },
+      "main": {
+        "record": "NOT_INTEGRATED",
+        "recordedHead": null,
+        "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+        "mainHead": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+        "scopes": [
+          "apps/execution-dashboard/src/aggregate.mjs",
+          "apps/execution-dashboard/src/proof.mjs",
+          "apps/execution-dashboard/src/git-snapshot.mjs",
+          "apps/execution-dashboard/test/git-snapshot.test.mjs",
+          "apps/execution-dashboard/test/proof-snapshot.test.mjs"
+        ],
+        "observedAt": "2026-10-06T12:24:33.416Z",
+        "current": true,
+        "historicalIntegrated": false,
+        "method": "scope-tree",
+        "scopeEqual": true,
+        "dirtyScopePaths": [],
+        "reason": "目标与 main 的声明范围 Git 树相同；范围以外不作保证"
+      },
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/src/aggregate.mjs",
+            "apps/execution-dashboard/src/git-snapshot.mjs",
+            "apps/execution-dashboard/src/proof.mjs",
+            "apps/execution-dashboard/test/git-snapshot.test.mjs",
+            "apps/execution-dashboard/test/proof-snapshot.test.mjs",
+            "docs/evidence/wpf-dperf03",
+            "plans/wpf-dperf03"
+          ],
+          "state": "active",
+          "branch": "codex/dashboard-git-snapshot",
+          "origin": "new",
+          "taskId": "WPF-DPERF03",
+          "worker": "workspace_panels_owner",
+          "claimId": "db0b7d25-9e70-477d-a75e-f8bfb0878578",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot",
+          "createdAt": "2026-10-06T12:08:09.454Z",
+          "updatedAt": "2026-10-06T12:14:24.927Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ],
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Web /root",
+          "value": "Web /root"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)",
+          "reason": "",
+          "targetId": "D01",
+          "title": "工程进度"
+        }
+      }
+    },
+    {
+      "id": "WPF-ATTACHI02",
+      "title": "附件随聊天可靠发送",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+      "branch": "codex/web-attachment-production",
+      "planDir": "plans/wpf-attach-i02-production-binding",
+      "evidenceDir": "docs/evidence/wpf-attach-i02",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:24:30.155Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/plans/wpf-attach-i02-production-binding/status.md",
+        "syncedAt": "2026-10-06T12:24:33.364Z",
+        "stale": false,
+        "ageHours": -0.007398888888888889
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-attachment-production",
+        "head": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
+        "dirty": true,
+        "changedFiles": 17,
+        "observedAt": "2026-10-06T12:24:33.488Z"
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)",
+            "id": "WPF-MATURE-03",
+            "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Web /root（执行管理 d01_owner）",
+            "value": "Web /root（执行管理 d01_owner）"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "发送和排队已保留固定附件材料，正在接入聊天界面",
+          "next": "在聊天中添加附件并保留安全的重试和草稿",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "4a91cfce17ee9e577057c115d4b81889af728d66",
+          "scopes": [
+            "apps/web/src/conversation-context/receipts.ts",
+            "apps/web/src/conversations/outbox.ts",
+            "apps/web/src/conversations/queue/commands.ts",
+            "apps/web/src/plugin-integration/attachments.tsx",
+            "apps/web/src/plugins/types.ts",
+            "apps/web/src/plugins/validation.ts",
+            "apps/web/test/attachment-integration.test.ts",
+            "apps/web/test/conversation-context-receipts.test.ts",
+            "apps/web/test/conversation-outbox.test.ts",
+            "apps/web/test/plugin-host.test.ts"
+          ],
+          "errors": []
+        },
+        "taskId": "WPF-ATTACHI02",
+        "owner": "w01_owner / gpt-6-astra / ultra",
+        "branch": "codex/web-attachment-production",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T12:25:00.000Z",
+        "updatedRecord": "2026-10-06 12:25 UTC",
+        "todos": [
+          {
+            "id": "ATTACHI02-01",
+            "state": "completed",
+            "owner": "w01_owner",
+            "evidence": "[启动证据](../../docs/evidence/wpf-attach-i02/README.md)"
+          },
+          {
+            "id": "ATTACHI02-02",
+            "state": "completed",
+            "owner": "w01_owner",
+            "evidence": "真实P01和官方core消费者已验证；App尚待"
+          },
+          {
+            "id": "ATTACHI02-03",
+            "state": "pending",
+            "owner": "w01_owner",
+            "evidence": "v2已获完整24scope，实际聊天界面接线和组合检查进行中"
+          },
+          {
+            "id": "ATTACHI02-04",
+            "state": "pending",
+            "owner": "w01_owner",
+            "evidence": "尚无固定候选/独立 review/main 接收"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "base 1c4968354dabce1e6748f3301a2e6eecd33e77d4；首段实现 4a91cfce17ee9e577057c115d4b81889af728d66",
+        "declaredDirty": "首段已提交；第二段 App 接线与专测正在工作树修改，尚未固定",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "IN_PROGRESS；首段88+12与types0；第二段186项首次185通过，分页测试需同步可见生命周期；types0，实际HTTP/App未跑"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "NOT_INTEGRATED；组合输入已在 main，本任务新增接线尚未实现",
+        "next": "首段已提交；[v2原子扩围](../../docs/evidence/wpf-attach-i02/phase2-claim-receipt.json)及[本人核验](../../docs/evidence/wpf-attach-i02/phase2-claim-observation.json)后接真实App，浏览器/HTTP累计预算仍未使用。唯一 status 交管理登记，不另抓 dashboard。",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED**",
+        "target": null
+      },
+      "implementationProof": {
+        "target": "4a91cfce17ee9e577057c115d4b81889af728d66",
+        "head": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
+        "scopes": [
+          "apps/web/src/conversation-context/receipts.ts",
+          "apps/web/src/conversations/outbox.ts",
+          "apps/web/src/conversations/queue/commands.ts",
+          "apps/web/src/plugin-integration/attachments.tsx",
+          "apps/web/src/plugins/types.ts",
+          "apps/web/src/plugins/validation.ts",
+          "apps/web/test/attachment-integration.test.ts",
+          "apps/web/test/conversation-context-receipts.test.ts",
+          "apps/web/test/conversation-outbox.test.ts",
+          "apps/web/test/plugin-host.test.ts"
+        ],
+        "observedAt": "2026-10-06T12:24:33.489Z",
+        "state": "changed",
+        "implementationChanges": [
+          "apps/web/src/plugin-integration/attachments.tsx"
+        ],
+        "outsideChanges": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/messages.ts",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/queue/projection.ts",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/test/conversation-messages.test.ts",
+          "apps/web/test/conversation-projection.test.ts",
+          "apps/web/test/attachment-integration.fixture.ts"
+        ],
+        "metadataChanges": [
+          "docs/evidence/wpf-attach-i02/README.md",
+          "docs/evidence/wpf-attach-i02/binding-final.log",
+          "docs/evidence/wpf-attach-i02/binding-first.log",
+          "docs/evidence/wpf-attach-i02/install.log",
+          "docs/evidence/wpf-attach-i02/interface.md",
+          "docs/evidence/wpf-attach-i02/material-green-fixed.log",
+          "docs/evidence/wpf-attach-i02/material-green.log",
+          "docs/evidence/wpf-attach-i02/material-red.log",
+          "docs/evidence/wpf-attach-i02/phase1-source-manifest.json",
+          "docs/evidence/wpf-attach-i02/phase1-tests.log",
+          "docs/evidence/wpf-attach-i02/quality.md",
+          "docs/evidence/wpf-attach-i02/typecheck-first.log",
+          "docs/evidence/wpf-attach-i02/typecheck-phase1-fixed.log",
+          "docs/evidence/wpf-attach-i02/typecheck-phase1.log",
+          "plans/wpf-attach-i02-production-binding/plan.md",
+          "plans/wpf-attach-i02-production-binding/status.md",
+          "docs/evidence/wpf-attach-i02/phase2-claim-observation.json",
+          "docs/evidence/wpf-attach-i02/phase2-claim-receipt.json",
+          "docs/evidence/wpf-attach-i02/phase2-direct-first.log",
+          "docs/evidence/wpf-attach-i02/phase2-types-first.log",
+          "docs/evidence/wpf-attach-i02/phase2-types.log"
+        ],
+        "reason": "声明实现范围已有变化"
+      },
+      "documents": [
+        {
+          "path": "plans/wpf-attach-i02-production-binding/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-attach-i02-production-binding/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-attach-i02-production-binding/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/wpf-attach-i02/claim-receipt.json",
+          "title": "committed receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-attach-i02/README.md",
+          "title": "启动证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-attach-i02/claim-observation.json",
+          "title": "本人 live 核验",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-attach-i02/quality.md",
+          "title": "技能与质量",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-attach-i02/phase2-claim-receipt.json",
+          "title": "v2原子扩围",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-attach-i02/phase2-claim-observation.json",
+          "title": "本人核验",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 2,
+        "total": 4
+      },
+      "main": {
+        "record": "NOT_INTEGRATED；组合输入已在 main，本任务新增接线尚未实现",
+        "recordedHead": null,
+        "target": "4a91cfce17ee9e577057c115d4b81889af728d66",
+        "mainHead": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+        "scopes": [
+          "apps/web/src/conversation-context/receipts.ts",
+          "apps/web/src/conversations/outbox.ts",
+          "apps/web/src/conversations/queue/commands.ts",
+          "apps/web/src/plugin-integration/attachments.tsx",
+          "apps/web/src/plugins/types.ts",
+          "apps/web/src/plugins/validation.ts",
+          "apps/web/test/attachment-integration.test.ts",
+          "apps/web/test/conversation-context-receipts.test.ts",
+          "apps/web/test/conversation-outbox.test.ts",
+          "apps/web/test/plugin-host.test.ts"
+        ],
+        "observedAt": "2026-10-06T12:24:33.416Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "unknown",
+        "reason": "无法以祖先关系证明，且 owner 实现范围存在变化或未知"
+      },
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/conversation-context/receipts.ts",
+            "apps/web/src/conversations/ConversationThread.tsx",
+            "apps/web/src/conversations/messages.ts",
+            "apps/web/src/conversations/outbox.ts",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/conversations/queue/commands.ts",
+            "apps/web/src/conversations/queue/projection.ts",
+            "apps/web/src/plugin-integration/attachments.tsx",
+            "apps/web/src/plugin-integration/react.tsx",
+            "apps/web/src/plugin-integration/session.ts",
+            "apps/web/src/plugins/types.ts",
+            "apps/web/src/plugins/validation.ts",
+            "apps/web/test/attachment-integration.browser.ts",
+            "apps/web/test/attachment-integration.fixture.ts",
+            "apps/web/test/attachment-integration.test.ts",
+            "apps/web/test/conversation-context-receipts.test.ts",
+            "apps/web/test/conversation-messages.test.ts",
+            "apps/web/test/conversation-outbox.test.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "apps/web/test/conversation-queue.test.ts",
+            "apps/web/test/plugin-host.test.ts",
+            "docs/evidence/wpf-attach-i02",
+            "plans/wpf-attach-i02-production-binding"
+          ],
+          "state": "active",
+          "branch": "codex/web-attachment-production",
+          "origin": "new",
+          "taskId": "WPF-ATTACHI02",
+          "worker": "w01_owner",
+          "claimId": "0b7fc000-2096-4075-95c1-f6c5a347d584",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+          "createdAt": "2026-10-06T12:06:02.212Z",
+          "updatedAt": "2026-10-06T12:18:09.220Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ],
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)",
+          "reason": "",
+          "targetId": "WPF-MATURE-03",
+          "title": "附件与文件输入"
+        }
+      }
+    },
+    {
+      "id": "SVC05",
+      "title": "新版个人预览兼容准备",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release",
+      "branch": "codex/personal-current-release",
+      "planDir": "plans/svc05-current-release",
+      "evidenceDir": "docs/evidence/svc05",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:20:01.185Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release/plans/svc05-current-release/status.md",
+        "syncedAt": "2026-10-06T12:24:33.364Z",
+        "stale": false,
+        "ageHours": 0.14260111111111112
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/personal-current-release",
+        "head": "79e632c5775a8da7118a2b3927fe6156033fbb91",
+        "dirty": true,
+        "changedFiles": 16,
+        "observedAt": "2026-10-06T12:24:33.536Z"
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+            "id": "FLOW-001",
+            "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Execution Lead",
+            "value": "Execution Lead"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "已建立独立发布准备范围，个人服务保持原状",
+          "next": "新后端与保留网页的真实兼容证据和可审更新步骤",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "experiments/personal-current-release",
+            "plans/svc05-current-release",
+            "docs/evidence/svc05"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "SVC05",
+        "owner": "assignment_review / gpt-6-astra",
+        "branch": "codex/personal-current-release",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T12:16:00.000Z",
+        "updatedRecord": "2026-10-06 12:16 UTC",
+        "todos": [
+          {
+            "id": "SVC05-01",
+            "state": "in-progress",
+            "owner": "assignment_review",
+            "evidence": "[Interface](../../docs/evidence/svc05/interface.md)"
+          },
+          {
+            "id": "SVC05-02",
+            "state": "pending",
+            "owner": "assignment_review",
+            "evidence": "尚未运行"
+          },
+          {
+            "id": "SVC05-03",
+            "state": "pending",
+            "owner": "assignment_review",
+            "evidence": "待固定证据/独审"
+          },
+          {
+            "id": "SVC05-04",
+            "state": "pending",
+            "owner": "Execution Lead",
+            "evidence": "实际窗口未执行，不影响准备工作"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915；首canonical 79e632c5（已push）；实施中",
+        "declaredDirty": "仅本scope首文档",
+        "checks": {
+          "state": "not_run",
+          "target": null,
+          "record": "NOT_RUN；先核实际保留产物与生产接口"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "本片未集成；基线已核main/origin362af3",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED。Review target commit：未固定。",
+        "target": null
+      },
+      "implementationProof": {
+        "target": null,
+        "head": "79e632c5775a8da7118a2b3927fe6156033fbb91",
+        "scopes": [
+          "experiments/personal-current-release",
+          "plans/svc05-current-release",
+          "docs/evidence/svc05"
+        ],
+        "observedAt": "2026-10-06T12:24:33.536Z",
+        "state": "unknown",
+        "reason": "实现目标需完整 SHA"
+      },
+      "documents": [
+        {
+          "path": "plans/svc05-current-release/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/svc05-current-release/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/svc05-current-release/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/svc05/claim.json",
+          "title": "receipt",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/svc05/interface.md",
+          "title": "Interface",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 0,
+        "total": 4
+      },
+      "main": {
+        "record": "本片未集成；基线已核main/origin362af3",
+        "recordedHead": null,
+        "target": null,
+        "mainHead": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+        "scopes": [
+          "experiments/personal-current-release",
+          "plans/svc05-current-release",
+          "docs/evidence/svc05"
+        ],
+        "observedAt": "2026-10-06T12:24:33.416Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "unknown",
+        "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+      },
+      "assignments": [
+        {
+          "lead": "astra_ultra_execution_lead",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "docs/evidence/svc05",
+            "experiments/personal-current-release",
+            "plans/svc05-current-release"
+          ],
+          "state": "active",
+          "branch": "codex/personal-current-release",
+          "origin": "new",
+          "taskId": "SVC05",
+          "worker": "assignment_review",
+          "claimId": "859ce9ba-9909-4fa7-a09f-7a6b5037dd7a",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-current-release",
+          "createdAt": "2026-10-06T12:13:50.578Z",
+          "updatedAt": "2026-10-06T12:13:50.578Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ],
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+          "reason": "",
+          "targetId": "FLOW-001",
+          "title": "产品与技术架构"
+        }
+      }
+    },
+    {
+      "id": "ENG01G",
+      "title": "原生工程写入组合",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer",
+      "branch": "codex/engineering-native-writer",
+      "planDir": "plans/eng01g-native-writer",
+      "evidenceDir": "docs/evidence/eng01g",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T12:24:13.246Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer/plans/eng01g-native-writer/status.md",
+        "syncedAt": "2026-10-06T12:24:33.364Z",
+        "stale": false,
+        "ageHours": 0.18121222222222222
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/engineering-native-writer",
+        "head": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T12:24:33.564Z"
+      },
+      "status": {
+        "taskLinks": {
+          "kind": "subtask",
+          "reason": "",
+          "parent": {
+            "state": "known",
+            "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+            "id": "ENG-001",
+            "location": "../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md"
+          },
+          "coLead": {
+            "state": "known",
+            "record": "Execution Lead",
+            "value": "Execution Lead"
+          },
+          "ownId": {
+            "state": "unknown",
+            "record": "",
+            "reason": "未声明"
+          }
+        },
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "工程写入组合与现有原生消息处理已完成局部验证",
+          "next": "可审查的受限文件写入组合与未知结果保护",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": null,
+          "scopes": [
+            "apps/runner/src/engineering/native-policy.test.ts",
+            "apps/runner/src/engineering/native-policy.ts",
+            "apps/runner/src/engineering/native-writer.test.ts",
+            "apps/runner/src/engineering/native-writer.ts",
+            "apps/runner/src/native-harness.test.ts",
+            "apps/runner/src/native-harness/codex/evidence.ts",
+            "apps/runner/src/native-harness/codex/exchange.test.ts",
+            "apps/runner/src/native-harness/codex/exchange.ts",
+            "apps/runner/src/native-harness/codex/turn.ts",
+            "docs/evidence/eng01g",
+            "plans/eng01g-native-writer"
+          ],
+          "errors": [
+            "实现目标需完整 SHA"
+          ]
+        },
+        "taskId": "ENG01G",
+        "owner": "native_center_owner / gpt-6-astra",
+        "branch": "codex/engineering-native-writer",
+        "branchState": "in-progress",
+        "updatedAt": "2026-10-06T12:13:41.000Z",
+        "updatedRecord": "2026-10-06 12:13:41 UTC",
+        "todos": [
+          {
+            "id": "ENG01G-01",
+            "state": "completed",
+            "owner": "native_center_owner",
+            "evidence": "claim与Interface"
+          },
+          {
+            "id": "ENG01G-02",
+            "state": "completed",
+            "owner": "native_center_owner",
+            "evidence": "单消息pump与工程策略"
+          },
+          {
+            "id": "ENG01G-03",
+            "state": "completed",
+            "owner": "native_center_owner",
+            "evidence": "105 distinct分轮、原red与types/资源清理证据"
+          },
+          {
+            "id": "ENG01G-04",
+            "state": "pending",
+            "owner": "native_center_owner",
+            "evidence": "独审/main未完成"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / 首Interface提交后由Git固定",
+        "declaredDirty": "本metadata提交后clean",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "105 distinct分轮通过；最终types0，source提交后绑定"
+        },
+        "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+        "mainRecord": "ENG01G未集成；base含已审ENG01F",
+        "next": "",
+        "risks": "",
+        "decisions": ""
+      },
+      "review": {
+        "state": "not_started",
+        "record": "[review.md](review.md)，NOT_STARTED",
+        "target": null
+      },
+      "implementationProof": {
+        "target": null,
+        "head": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
+        "scopes": [
+          "apps/runner/src/engineering/native-policy.test.ts",
+          "apps/runner/src/engineering/native-policy.ts",
+          "apps/runner/src/engineering/native-writer.test.ts",
+          "apps/runner/src/engineering/native-writer.ts",
+          "apps/runner/src/native-harness.test.ts",
+          "apps/runner/src/native-harness/codex/evidence.ts",
+          "apps/runner/src/native-harness/codex/exchange.test.ts",
+          "apps/runner/src/native-harness/codex/exchange.ts",
+          "apps/runner/src/native-harness/codex/turn.ts",
+          "docs/evidence/eng01g",
+          "plans/eng01g-native-writer"
+        ],
+        "observedAt": "2026-10-06T12:24:33.565Z",
+        "state": "unknown",
+        "reason": "实现目标需完整 SHA"
+      },
+      "documents": [
+        {
+          "path": "plans/eng01g-native-writer/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/eng01g-native-writer/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/eng01g-native-writer/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/eng01g/interface.md",
+          "title": "Interface",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 3,
+        "total": 4
+      },
+      "main": {
+        "record": "ENG01G未集成；base含已审ENG01F",
+        "recordedHead": null,
+        "target": null,
+        "mainHead": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+        "scopes": [
+          "apps/runner/src/engineering/native-policy.test.ts",
+          "apps/runner/src/engineering/native-policy.ts",
+          "apps/runner/src/engineering/native-writer.test.ts",
+          "apps/runner/src/engineering/native-writer.ts",
+          "apps/runner/src/native-harness.test.ts",
+          "apps/runner/src/native-harness/codex/evidence.ts",
+          "apps/runner/src/native-harness/codex/exchange.test.ts",
+          "apps/runner/src/native-harness/codex/exchange.ts",
+          "apps/runner/src/native-harness/codex/turn.ts",
+          "docs/evidence/eng01g",
+          "plans/eng01g-native-writer"
+        ],
+        "observedAt": "2026-10-06T12:24:33.416Z",
+        "current": false,
+        "historicalIntegrated": false,
+        "method": "unknown",
+        "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+      },
+      "assignments": [
+        {
+          "lead": "astra_ultra_execution_lead",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/runner/src/engineering/native-policy.test.ts",
+            "apps/runner/src/engineering/native-policy.ts",
+            "apps/runner/src/engineering/native-writer.test.ts",
+            "apps/runner/src/engineering/native-writer.ts",
+            "apps/runner/src/native-harness.test.ts",
+            "apps/runner/src/native-harness/codex/evidence.ts",
+            "apps/runner/src/native-harness/codex/exchange.test.ts",
+            "apps/runner/src/native-harness/codex/exchange.ts",
+            "apps/runner/src/native-harness/codex/turn.ts",
+            "docs/evidence/eng01g",
+            "plans/eng01g-native-writer"
+          ],
+          "state": "active",
+          "branch": "codex/engineering-native-writer",
+          "origin": "new",
+          "taskId": "ENG01G",
+          "worker": "native_center_owner",
+          "claimId": "f7a3d631-5b1f-46eb-82b1-731cb6c18e17",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer",
+          "createdAt": "2026-10-06T12:13:02.739Z",
+          "updatedAt": "2026-10-06T12:13:02.739Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ],
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+          "reason": "",
+          "targetId": "ENG-001",
+          "title": "真实工程任务交付"
+        }
+      }
+    }
+  ],
+  "rawSource": "/tmp/flow-proof-148-live.json",
+  "rawSha256": "07caf29c334b746679c39873bc43b534d331a57743ae820bcfe8c988025fe761",
+  "limits": "One actual snapshot after owned4320 replacement; no architecture or product/provider checks rerun."
+}
