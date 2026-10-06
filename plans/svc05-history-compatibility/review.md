@@ -89,3 +89,7 @@ Lead完整读56306d后发现临时admission原子rename与瞬时inFlight误比�
 ## 2026-10-06 20:30 UTC 执行准备P2独立批准
 
 Execution Lead 独立APPROVED a6441a426ea98ee90e8baac44b75fd1d0d61cbeb；67绑定/4源/8不同直接用例及原52完整审查成立，0重跑。原件 release-operation/executable-final-independent-review.json。随后授唯一svc05h-af51-d629-20261006-2030操作窗口，逐步intent/result/freshgate；实际结果另记，不预称发布成功。
+
+## 2026-10-06 20:34 UTC 实际layout窄修待独审
+
+2030窗口step01实际停止，原完整raw保留；原sampler错误要求root/admission，而固定runtime的path是baseUrl摘要一级目录。后继target5fe98f97cb7506f65555ab72205ebaea8464af84仅observer/helper/原专测：同规范精确namespace，不放宽missing/idle/历史hash。3新定向检查3过/100ms，旧8未重跑，0新个人观察/PG/服务；REVIEW_PENDING，不以作者检查替代窗口。

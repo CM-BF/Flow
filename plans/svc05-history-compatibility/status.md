@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:31 UTC；唯一窗口在现场准入停止，个人服务未变更 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:34 UTC；精确runner子目录修复已固定，个人服务未变更 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -19,8 +19,8 @@
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 兼容证据与执行准备已审；现场准入发现观察脚本使用的受理文件层级与真实runner不一致，已在任何发布变更前停止并保留失败。 |
-| 下一可用交付 | 修正精确受理路径并做局部合成路径检查，独审后再安排新的唯一发布窗口。 |
+| 当前产出 | 现场检查在任何发布变更前安全停止；观察脚本已对齐runner真实受理目录，三个定向检查通过，等待增量独审。 |
+| 下一可用交付 | 独审通过后按新的唯一窗口做现场准入，再逐步更新后台和网页；旧失败保留。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；033dd固定方案获Lead方向批准；56306d两脚本已完整审读；a6441a426ea98ee90e8baac44b75fd1d0d61cbeb的admission采样P2独立APPROVED，8个不同本地检查，0个人运行 |
@@ -87,3 +87,7 @@
 ### 20:30窗口实际停止
 
 唯一01-before退出1/181ms，RUNNER_ADMISSION_MISSING；原raw其实保存了baseUrl摘要一级目录下的admission文件hash，不能从hash猜idle。观察器误匹配根路径，停在任何材料导入/维护/服务变更前。02–20均未执行，0主动模型/用户tab。Lead已关闭窗口并负责恢复开发checkout；不换参数重试。见[原始失败与分析](../../docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2030/analysis.json)。
+
+### 精确namespace后继
+
+固定source5fe98f97cb7506f65555ab72205ebaea8464af84；[namespace manifest](../../docs/evidence/svc05-history-compatibility/release-operation/namespace-fix-manifest.json)。3新定向检查/3过，100ms；旧8未重跑。独立review待完成，0新的个人probe/PG/服务。20:30原失败与停止事实已固定9bbffd683776f1f9b82e8c4edf0eccd9d7c14083，不改成绿、不自动重用许可。
