@@ -4,6 +4,7 @@ import { readFile, writeFile, rm, symlink } from 'node:fs/promises';
 import path from 'node:path';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
+import { request as httpRequest } from 'node:http';
 import { aggregate, readTaskDetail } from '../src/aggregate.mjs';
 import { readSummary, readAssignments, registryFingerprint } from '../src/read-model.mjs';
 import { createGitSnapshot } from '../src/git-snapshot.mjs';
@@ -121,7 +122,21 @@ test('summary/detail reads preserve declared vs observed boundaries', { timeout:
     await fetch(`${f.url}/api/task?task=T01`); assert.equal(contexts.length, 2);
     assert.equal((await fetch(`${f.url}/api/task?task=not-registered`)).status, 404);
     assert.equal((await fetch(`${f.url}/api/summary`, { method: 'POST' })).status, 405);
-    assert.equal((await fetch(`${f.url}/api/summary`, { headers: { Host: 'example.invalid' } })).status, 403);
+    let inboundHost;
+    const observeHost = request => { if (request.url === '/api/summary') inboundHost = request.headers.host; };
+    f.server.on('request', observeHost);
+    try {
+      const responseStatus = await new Promise((resolve, reject) => {
+        const request = httpRequest(`${f.url}/api/summary`, { headers: { Host: 'example.invalid' }, agent: false }, response => {
+          response.on('error', reject); response.once('aborted', () => reject(new Error('Host probe response aborted')));
+          response.once('end', () => resolve(response.statusCode)); response.resume();
+        });
+        request.setTimeout(2000, () => request.destroy(new Error('Host probe timed out')));
+        request.on('error', reject); request.end();
+      });
+      assert.equal(inboundHost, 'example.invalid', 'The real server must receive the exact untrusted Host');
+      assert.equal(responseStatus, 403);
+    } finally { f.server.off('request', observeHost); }
     const url = file => `${f.url}/api/document?${new URLSearchParams({ task: child.id, path: file })}`;
     assert.match(await (await fetch(url(`${child.planDir}/plan.md`))).text(), /# 计划/);
     assert.equal((await fetch(url('../../secret'))).status, 404);
