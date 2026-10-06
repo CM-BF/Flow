@@ -39,3 +39,7 @@ root确认离线连接未接reader生命周期。修复采用已存在connection
 root完整读前版15源与修复五文件，独立7 adapter通过、17hash一致，并在ba341实际App预览抽验Tool/Reasoning/菜单/两主题/split/草稿；root未CUA复跑offline。旧完整browser及截图=e930，新offline专项=ba341，root目检=ba341，作者60与root7分别记录，未写成新全量76。原失败log与旧REQUEST_CHANGES保留。
 
 当前metadata只改自有计划/证据，source与dist保持冻结；核链接、status/review解析及源码零差后独立文档提交。不因metadata再跑产品套件。main仍未集成，最终交管理统一接收，claim保持以供明确修复。
+
+## 2026-10-06T07:22:58.871590+00:00 主线收口
+
+本人只读Git核main/origin=253b8ad38fd869297e7d9948a26c1d310fef5c6c，ba341与c9e均为祖先，17声明路径对ba341零差异。已读Lead原始source比较/51组合记录；Web types通过为Lead通报，未冒称本人重跑。仅自有文档记录delivered/TODO完成/停写意图，不改产品或preview、不复跑测试。按clean-code复核文档事实与来源，个人center/runner仍fb906未升级；metadata提交后全部17scope停写，release由manager处理。

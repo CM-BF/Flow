@@ -1,0 +1,24 @@
+{
+  "observedAt": "2026-10-06T07:22:58.871590+00:00",
+  "acceptedMain": "253b8ad38fd869297e7d9948a26c1d310fef5c6c",
+  "observedMain": "253b8ad38fd869297e7d9948a26c1d310fef5c6c",
+  "observedOriginMain": "253b8ad38fd869297e7d9948a26c1d310fef5c6c",
+  "implementationTarget": "ba341d77672ba8456197d64d54193aee79719e46",
+  "deliveryMetadata": "c9e76ef5c3f797432a0f6c09fe3950473d922592",
+  "ancestorChecks": {
+    "implementation": true,
+    "metadata": true
+  },
+  "declaredPathCount": 17,
+  "changedDeclaredPaths": [],
+  "leadEvidence": [
+    "253b8ad38fd869297e7d9948a26c1d310fef5c6c:docs/evidence/i02/activity-ui-source-comparison.json",
+    "253b8ad38fd869297e7d9948a26c1d310fef5c6c:docs/evidence/i02/activity-ui-combination.txt"
+  ],
+  "checks": {
+    "ownerThisSegment": "read-only Git ancestry and source equality; no product tests",
+    "leadReported": "7 adapter + 44 generic cursor = 51 PASS; Web types PASS"
+  },
+  "runtimeBoundary": "Personal center/runner remains fb906; HTTP fixture unchanged; no real model or DB checks",
+  "stopIntent": "After this metadata commit, stop all 17 scopes. Manager may CAS release current claim after fresh validation. No writes after release."
+}

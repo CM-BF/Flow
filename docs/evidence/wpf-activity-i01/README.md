@@ -1,6 +1,6 @@
 # WPF-ACTIVITYI01 聊天活动交付候选
 
-当前固定实现：`ba341d77672ba8456197d64d54193aee79719e46`；首候选：`e93070cc08339325cd299105f5805ca871a07ea8`；基线：`86a36eaeffbf09f0a3772c3d1509c17dc0a76f92`。分支 `codex/web-conversation-activity-integration`。root独立review对原e930提出ACTIVITYI-R1 P2；ba341已修复并于2026-10-06T07:17:38Z获固定APPROVED，R1 CLOSED，主线未接收。见[修复检查](revision.md)。
+当前固定实现：`ba341d77672ba8456197d64d54193aee79719e46`；首候选：`e93070cc08339325cd299105f5805ca871a07ea8`；基线：`86a36eaeffbf09f0a3772c3d1509c17dc0a76f92`。分支 `codex/web-conversation-activity-integration`。root独立review对原e930提出ACTIVITYI-R1 P2；ba341已修复并于2026-10-06T07:17:38Z获固定APPROVED，R1 CLOSED，主线已接收于253b8ad38fd869297e7d9948a26c1d310fef5c6c。见[修复检查](revision.md)。
 
 聊天每轮用户消息下方现在有一直可见的活动入口。展开Tools and thinking读取最多20条轻记录，Tool/Reasoning逐条展开才读正文；Task events走既有通用阅读器。工具input-ready与running/unknown分别显示，思考只来自真实provider类型记录，不造时长。P01 footer实际含按钮、菜单、面板；更换中心、关闭或隐藏pane使旧读取失效，两可见split不互相依赖焦点。
 
@@ -45,8 +45,8 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversatio
 
 这是合成HTTPfixture，未跑真实中心/provider、模型、产品数据库、Firefox/Safari或屏读。原有bundle大小和已读分页/body线性缓存未优化。generic公共events没有abort参数，hide使等待/结果失效，不能声称底层HTTP均取消。每页最多20但历史显式访问仍会保留缓存；没有内存上界承诺。原文SHA仅标识完整内容，未对截断前缀宣称完整验证。
 
-CHAT06流正文未消费，旧timeline跨版本兼容由Lead负责；未改C01会话projection、messages、queue、profile或公共contracts。主线集成还需Lead组合检查。详情见[Interface](interface.md)、[技能与clean-code](quality.md)、[权威status](../../../plans/wpf-activity-i01-integration/status.md)、[review](../../../plans/wpf-activity-i01-integration/review.md)。
+CHAT06流正文未消费，旧timeline跨版本兼容由Lead负责；未改C01会话projection、messages、queue、profile或公共contracts。Lead已执行必要局部组合检查；个人center/runner仍fb906未升级，不把fixture称真实。详情见[Interface](interface.md)、[技能与clean-code](quality.md)、[权威status](../../../plans/wpf-activity-i01-integration/status.md)、[review](../../../plans/wpf-activity-i01-integration/review.md)。
 
 ## 最终交付边界
 
-当前实现ba341，最终metadata单独提交；17源与固定审查目标保持相同。分支检查通过和APPROVED不代表main集成。保留51454与claim，等待Lead接收；不自行merge/release。新增离线60相关/tsc/build及dev/prod各1和root独立7 adapter、当前预览CUA详见[修复](revision.md)。本次只收口文档，未重复产品检查或改变dist。
+当前实现ba341，最终metadata单独提交；17源与固定审查目标保持相同。main/origin已在253b8ad38fd869297e7d9948a26c1d310fef5c6c接收；本人独立核祖先及17路径同内容，见[主线回执](main-acceptance.json)。51454保留不变；最终metadata后全部scope停写，交manager原子release，不自行merge。新增离线60相关/tsc/build及dev/prod各1和root独立7 adapter、当前预览CUA详见[修复](revision.md)。本次只收口文档，未重复产品检查或改变dist。
