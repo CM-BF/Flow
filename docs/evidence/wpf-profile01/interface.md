@@ -33,4 +33,4 @@ locked完全读取冻结creation；未知ACK没有summary也必须锁定，不�
 
 outbox再schema.parse会clone成新对象，接入owner必须重新深冻ref/requested，不以本helper输出曾冻结推parse后仍冻结。ACK在bind/首turn前核完整pin；不匹配保留unknown。App继续拥有key/retry/draft/connection lifetime，不向模块泄漏token或扩大到模型调用。原有新草稿不得被迟到ACK覆盖。
 
-旧a28/4e批准仅是历史；后继混合目录取代原“未知access整页错误”策略，target4f待新的独审。未知未来profile目的仅能只读，不自动激活。
+旧a28/4e批准仅是历史；后继混合目录取代原“未知access整页错误”策略，target4f已于04:51:33获独立模块限定APPROVED。未知未来profile目的仅能只读，不自动激活。

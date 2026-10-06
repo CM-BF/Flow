@@ -34,3 +34,7 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/execution-p
 [Interface](interface.md)。DirectoryProfile只是声明，只有allowlist产生ChatProfile；未知access不推目的或可用。已知goal-tools无审批/空材料策略继续严格。中心准入再核ref，UI不保证在线。
 
 未验证实际App组合、真实center/runner/provider/模型、Safari/Firefox/屏读。queue/steer/effort切换不在此合同。App outbox再次parse后ref需重新冻结；unknown原key/body重试与草稿安全由接入owner在独立claim验证。旧a28批准不能自动覆盖新合同或后续App。
+
+## 当前独立结论
+
+root于04:51:33 UTC限定APPROVED target4f：独立16tests/366ms、五文件后继diff、混合目录CUA和双主题截图复核。完整实际检查边界见review；App/真实center未接，不从模块批准推main能力。

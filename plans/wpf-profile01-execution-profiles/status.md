@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:52 UTC；固定输入，不追 moving main |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:53 UTC；固定输入，不追 moving main |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra（派发指定） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles |
@@ -16,18 +16,18 @@
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/catalog.ts, apps/web/src/execution-profiles/execution-profiles.css, apps/web/src/execution-profiles/selection.ts, apps/web/test/execution-profiles.browser.ts, apps/web/test/execution-profiles.fixture.tsx, apps/web/test/execution-profiles.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 固定02683混合目录适配已验证；禁选goal-tools/未知配置，合法项保留 |
-| 下一可用交付 | 新target4f独立复审；App消费另领 |
+| 当前产出 | 固定4f混合目录与chat allowlist已获独立APPROVED，可交App接入片 |
+| 下一可用交付 | App owner另领消费；本模块实现停止写入，claim保留review修复权 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED 4f1985769564eafad9218570411d5ce1114b4ec0；历史a28/4e APPROVED保留 |
+| Review | [review.md](review.md)，APPROVED 4f1985769564eafad9218570411d5ce1114b4ec0；独立模块限定 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-PROFILE01-01 | completed | w01_owner | 16局部tests：混合目录/分页/错误/连接隔离；固定4f |
 | WPF-PROFILE01-02 | completed | w01_owner | 完整pin/深冻/显式chat allowlist/旧default；固定4f |
 | WPF-PROFILE01-03 | completed | w01_owner | 5组混合目录HTTP浏览器，禁选/双主题390/键盘/锁；截图已目视 |
-| WPF-PROFILE01-04 | in-progress | w01_owner | 4f待复审；历史a28 approval不覆盖后继 |
+| WPF-PROFILE01-04 | completed | w01_owner | root4f独立APPROVED，16tests/源码/混合目录CUA；App另片 |
 
 ## 领取与架构影响
 
@@ -54,3 +54,8 @@ root / GPT-6 只读审查，2026-10-06 04:48:10 UTC 正式 APPROVED，target a28
 Lead固定02683be019ae75591b21c1ada64e01669678f068新增goal-tools access，管理/root授权在现9scope适配。旧target的整页拒绝策略被新产品要求替代：目录阅读与可提交选择分离，goal-tools/未知access只读禁选、合法项保留、其他畸形仍整页拒绝。源码基线4e不变，026只读作为已固定形状输入；共享文件不修改。新target4f已提交并作者16tests/typecheck/5browser通过，旧approval不覆盖当前实现。
 
 后继固定target4f的新增源与验证见报告；既有dashboard-snapshot是04:44旧b2采样，不能据此把新review解析当已正确。最终新review元数据后将单次核review.state/target/proof。
+
+
+## 后继独立结论（当前）
+
+2026-10-06 04:51:33 UTC root / GPT-6只读APPROVED target4f1985769564eafad9218570411d5ce1114b4ec0，base4e。独立16tests PASS/366ms、a28→4f五文件diff审读/diffcheck0/共享未改；目视新版双主题图；CUA64954确认goal-tools/unknown两radio禁用且有原因，合法第一项Down跳到合法第四项，临时20已关闭。没有新增blocking。root本轮Escape工具无树变化不计新增验证；先前Escape和作者本轮5browser来源保留。未实际消费新O04共享域、真实center/模型或App组合。

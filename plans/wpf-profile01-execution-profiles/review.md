@@ -1,41 +1,31 @@
 # WPF-PROFILE01 独立审查
 
-**状态：NOT_STARTED**
+**状态：APPROVED**
 
 Review target commit：4f1985769564eafad9218570411d5ce1114b4ec0
-Base：4e0289f29ffa48c6c49003837d4520f57c22b6b0。
 
-后继作者：16局部tests、Web typecheck、5组混合目录HTTP浏览器已过；root新target审查待回。
+Base：4e0289f29ffa48c6c49003837d4520f57c22b6b0
 
-以下为历史a28/4e APPROVED记录，仅旧合同独立模块片；新target不继承。
+范围：独立模块7个实现/测试文件；完整目录见[status](status.md)。worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles`，branch `codex/web-execution-profiles`。Reviewer root / GPT-6，只读；最新结论2026-10-06 04:51:33 UTC。没有新增blocking。
 
-## 固定目标
+## 最新实际独立检查
 
-- implementation / test target：`a28c78cc3a1ac8557f7fd95afa074c4971128246`
-- base：`4e0289f29ffa48c6c49003837d4520f57c22b6b0`
-- worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles`，branch `codex/web-execution-profiles`。
-- 7实现/测试文件见[status](status.md)；b2为4生产文件实现，a28仅增加1消费者测试；随后metadata不自动扩大approval。
-- Reviewer：root / GPT-6，只读；2026-10-06 04:48:10 UTC。
-
-## 实际独立检查
-
-| 检查 | 实际结果 |
+| 检查 | 独立结果 |
 | --- | --- |
-| 完整7文件源审查 | 已读catalog/selection/Picker/CSS及3测试文件；目录、pin、immutable、连接和UI职责核对 |
-| b2局部tests | 13 PASS，04:44:18，219ms |
-| a28局部tests | 14 PASS，04:48:10，226ms；新增未知access消费者回归已读 |
-| 固定差异/工作树 | target diffcheck0；4生产文件b2→HEAD diff0；metadata aac13 clean |
-| CUA实际操作 | 目录20条、展开第二项details不改变默认选择、明确选第一profile、Escape回trigger/草稿保留、未知回执冻结完整pin；临时tab19已关闭 |
-| 作者证据 | 复核5组HTTP browser/双主题390截图与隔离fixture编译；未声称root独立重跑整套browser/build/typecheck |
+| 局部tests | 16 PASS / 366ms / 04:51:33 UTC，固定4f |
+| 差异与范围 | 完整a28→4f五文件diff已读；固定diffcheck0；共享未改 |
+| 权限和目录 | 显式chat allowlist不随公共schema放宽；目录读取/可选类型分离；合法goal-tools/未知access保留禁选；已知goal-tools跨字段无效整页失败 |
+| 双主题 | 目视新版light与390dark图 |
+| CUA64954 | 20项中goal-tools/unknown两radio disabled且有原因；合法第一项Down跳至合法第四项；临时tab20已关闭；0模型 |
 
-0模型/0DB。检查通过属于这个固定目标，不覆盖后续实现。
+本轮Escape尝试工具无树变化，**不计为root新增Escape验证**。作者本轮typecheck/5HTTP浏览器与原始证据复核，未声称root独立重跑整套browser/build/typecheck。没有新的blocking finding。
 
-## Findings / 作者回应
+## 历史检查（不替代最新target）
 
-无已报告P0–P3 actionable finding / 未关闭blocking。GoalOwner新增的未来非普通chat access边界作为消费者验收增补：a28用未知占位literal验证拒绝，合法none/configured-readonly不变；不猜测未来合同字段。当前catalog整页原子拒绝未知access并保留上一份数据（若有），不是逐项优雅降级。
+a28c78cc3a1ac8557f7fd95afa074c4971128246 / 同base获04:48:10限定批准，独立14tests/226ms。此前b2完整7文件审查、13tests/219ms及CUA展开details不改默认、选择/Escape返回/草稿/pending完整pin通过。该基线未知access整页拒绝策略已被4f混合目录策略替代；旧结论不声称覆盖后继。
 
-## 限制及后续
+## 限制与交接
 
-批准范围只含可信HTTP目录、冻结输入和独立选择器fixture；不含实际App接线、真实中心/runner/provider/模型、未来goal-tools合同、任意每turn effort/thinking切换、Safari/Firefox/屏读。App owner另领消费时须验证目录门禁、unknown同key原输入重试、再次parse后ref深冻、pin核对再绑定、draft和connection lifetime。详见[interface](../../docs/evidence/wpf-profile01/interface.md)。
+审批仅普通聊天执行配置独立模块和隔离fixture，不含App挂载、实际消费O04共享域、真实center/runner/provider/模型、Safari/Firefox/屏读、任意每turn effort/thinking/queue/steer切换。目录中的不支持声明不是可提交Selection，中心准入仍再验ref。后继正式App接入另claim验证outbox再次parse后的ref深冻、unknown原key/body重试、pin核对后绑定、connection/draft安全。实际界面与原始证据见[报告](../../docs/evidence/wpf-profile01/README.md)，导出/消费语义见[interface](../../docs/evidence/wpf-profile01/interface.md)。
 
-作者证据见[报告](../../docs/evidence/wpf-profile01/README.md)。后续有实现修改须新target复审；本轮仅记录metadata，不无关重跑已不受影响的浏览器/编译。
+后续metadata不自动扩展审查范围；任何实现变化须新target复审。
