@@ -18,7 +18,8 @@ const publicField = z.discriminatedUnion('kind', [
 ]);
 export const pluginVersionSchema = z.strictObject({
   packageName: z.string().max(214).regex(/^(?:@[a-z0-9][a-z0-9._-]*\/)?[a-z0-9][a-z0-9._-]*$/),
-  packageVersion: z.string().max(128).regex(/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/),
+  packageVersion: z.string().max(128).regex(/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/)
+    .refine(value => value.split('+')[0]!.split('-').slice(1).join('-').split('.').every(identifier => !/^0[0-9]+$/.test(identifier))),
   source: z.literal('npm'),
   /** Operator declaration only; registry does not fetch or verify package bytes. */
   declaredSha256: z.string().regex(/^[a-f0-9]{64}$/),

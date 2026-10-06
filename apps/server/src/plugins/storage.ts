@@ -26,7 +26,7 @@ export async function readSnapshot(client: PoolClient, id: string, revision?: nu
     FROM flow.plugin_revisions r JOIN flow.plugin_versions v ON v.id=r.version_id AND v.installation_id=r.installation_id
     WHERE r.installation_id=$1 AND r.revision=$2`, [id, revision ?? row.revision])).rows[0];
   if (!selected) throw new HttpError(404, 'plugin_revision_not_found', 'Plugin revision not found.');
-  const missing = selected.declaration.publicConfiguration.some(field => field.required && !(field.key in selected.configuration));
+  const missing = selected.declaration.publicConfiguration.some(field => field.required && !Object.hasOwn(selected.configuration, field.key));
   return { installation: installationView(row), revision: selected.revision, version: versionView(selected), configuration: selected.configuration,
     grants: selected.grants, configurationStatus: missing ? 'incomplete' : 'ready' };
 }

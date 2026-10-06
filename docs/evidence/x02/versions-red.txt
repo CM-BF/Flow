@@ -1,0 +1,35 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-registry
+
+ ❯ apps/server/src/plugins/plugins.test.ts (3 tests | 1 failed) 616ms
+   ✓ registers a fixed declaration without granting capabilities or claiming the package was installed 49ms
+   ✓ versions configuration and explicit grants with CAS and original-result idempotency 58ms
+   × retains immutable declarations and history while selecting a version clears configuration and grants 46ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/plugins/plugins.test.ts > retains immutable declarations and history while selecting a version clears configuration and grants
+AssertionError: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ apps/server/src/plugins/plugins.test.ts:93:24
+     91|   const declaration = { ...version, packageName: initial.version.packa…
+     92|   const added = await request(`/api/plugins/${id}/commands`, { expecte…
+     93|   expect(added.status).toBe(200);
+       |                        ^
+     94|   expect(added.body.snapshot.version.packageVersion).toBe('1.0.0');
+     95|   const versions = await request(`/api/plugins/${id}/versions`);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  20:40:19
+   Duration  918ms (transform 109ms, setup 0ms, import 225ms, tests 616ms, environment 0ms)
+

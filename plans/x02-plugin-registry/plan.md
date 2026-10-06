@@ -18,8 +18,8 @@
 ## TODO 与验收
 
 - [x] **X02-01** 小合同、拒绝语义、接线文档；由本提交回传主Lead/Web。
-- [ ] **X02-02** 008 migration、不可变版本/revision/audit、registry commands。
-- [ ] **X02-03** 独立临时PG/动态HTTP验证：身份/作用域、CAS/双事务、幂等、重启、配置/授予、版本不可变、分页字节上限。
+- [x] **X02-02** 008 migration、不可变版本/revision/audit、registry commands。
+- [x] **X02-03** 独立临时PG/动态HTTP验证：身份/作用域、CAS/双事务、幂等、重启、配置/授予、版本不可变、分页字节上限。
 - [ ] **X02-04** 固定实现SHA、原始检查/质量证据、独立review与修复。
 - [ ] **X02-05** 主Lead接共享 client/CLI/index、受控集成；分支检查不等于main具备。
 
