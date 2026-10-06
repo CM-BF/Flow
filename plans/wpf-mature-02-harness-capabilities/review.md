@@ -1,3 +1,7 @@
+# Current C fd v2 result review
+
+State: NOT_STARTED. [Once-only run](../../docs/evidence/wpf-mature-02/fd-canary-v2/run-report.md): compile1/target2; control socket metadata succeeds, profile target SIGABRT/no report, third NOT_RUN. Measurement false, cleanup/accounting true, CLI1. Fixed result target supplied from Git; no further execution. Prior 851 source approval remains scoped.
+
 # Current C fd logging/lexer v2 review
 
 State: APPROVED byMika/gpt-6-astra,2026-10-06 11:20:49 UTC,0P1/P2. Fixed target `851fd8c7a48b6ebec64cbf80ccda4eb6bcfaf845`; runtime source checkpoint391f67b42d4ec272ec679a33c0812517afd69090. [Candidate README](../../docs/evidence/wpf-mature-02/fd-canary-v2/README.md), [manifest](../../docs/evidence/wpf-mature-02/fd-canary-v2/manifest.json) SHA224b101fe787ac331507550ea530b4cf6ef1057d836ced71f02700f0b24b4cda, [input](../../docs/evidence/wpf-mature-02/fd-canary-v2/driver-input.json) SHA0b4ca46c82273e88c527ab79e3a35c3e8053180b8221e59c961d243ebd5bea96. 37current repository entries,5unchanged approved sources,38frozen old evidence and6external inputs independently checked Git/WT/hash/bytes, includingprepared104454B;freshclaimv4 ACTIVE/3aeff clean.

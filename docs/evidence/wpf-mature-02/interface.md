@@ -4,11 +4,12 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
-- [整项目Codex诊断阻塞：v2已审候选的一次新窗口请求](fd-canary-v2/approval-window-request.md)：Mika11:20:49 UTC APPROVED851fd8c7，申请1编译/最多3合成目标/60秒/2MiB；旧窗口已消费，当前运行授权NONE。请GO评估新预算，获准后仍由Mika绑定clean HEAD命名唯一窗口。
+- [Codex诊断v2最终结果：控制socket已测，profile SIGABRT](fd-canary-v2/run-report.md)：获批唯一窗口已消费，1编译/2目标，第三NOT_RUN；测量未完成、清理/输出计量完成，待独立结果审查，无剩余运行许可。
+- [04归一化集成输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/normalize-integration-ready.md)。请Lead按此权威输入接收，进度仅在04维护。
 
-- [附件生产挂载CHANGES_REQUESTED反馈](attachment-production-review.md)：固定69eb2476仅新test资源生命周期1 P2；独立于下方已APPROVED薄client，修复交原owner。
+- [附件生产挂载/清理delta APPROVED回执](attachment-production-review.md)：Mika11:26:54 UTC接收f04修复，原69eb mount及P2关闭；scope与历史见唯一收据。
 
-- [C诊断v2最小日志/解析候选](fd-canary-v2/README.md)：固定851fd8c7已独审APPROVED，26/26局部受影响检查通过/9未选，0新增compiler/target，等待后继新预算。旧6d窗口保持FAIL/0target并已封存。
+- [C诊断v2最小日志/解析候选](fd-canary-v2/README.md)：固定851fd8c7已独审APPROVED，26/26局部受影响检查通过/9未选；本次获批运行结果见页首。旧6d窗口保持FAIL/0target并已封存。
 
 - [附件薄client APPROVED回执](attachment-client-review.md)：实现ab1bcb与metadata bea11 raw分别绑定，Lead可读取该唯一review收据。
 - [04历史领域集成输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/history-integration-ready.json) / [04独审回执](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/history-independent-review.json) / [当前handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/handoff-current.md)：正式9ac领域已获status_read于11:11:12 UTC APPROVED；请Lead接收领域与027，具体范围/进度只在权威输入维护。
@@ -24,7 +25,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 目录已通过main固定 `21e0a56c4b2b65a04a1e8d510a9d132e77c3894b` 接收：本owner只读逐blob核4源=c9、测试=a761，见[main接收核验](native-catalog/main-accepted.json)；复用33+1证据，未重测，不代表个人服务已部署，也未包含R06 stderr/诊断。
 
-**当前03最小C诊断候选：** [一页合同](fd-canary/contract.md) / [source manifest](fd-canary/manifest.json)。固定source `722032083d2cdfc6790103d18749c333c1b8f9e1`，C/schema/profile及组合已审；[当前host组合合同](fd-canary/execution-plan-v2.md)与[精确入口](fd-canary/README.md)已在唯一窗口消费，1编译/0目标，清理完成而计量unknown；[最终结果](fd-canary/run-report.md)是当前事实，冻结README中的NOT_RUN为运行前时点。旧失败原因仍unknown，三目标只观察自身fd metadata，不做Node/JSONRPC/provider或网络探针。
+**历史03最小C诊断候选（本次v2结果见页首）：** [一页合同](fd-canary/contract.md) / [source manifest](fd-canary/manifest.json)。固定source `722032083d2cdfc6790103d18749c333c1b8f9e1`，C/schema/profile及组合已审；[当前host组合合同](fd-canary/execution-plan-v2.md)与[精确入口](fd-canary/README.md)已在唯一窗口消费，1编译/0目标，清理完成而计量unknown；[最终结果](fd-canary/run-report.md)是当前事实，冻结README中的NOT_RUN为运行前时点。旧失败原因仍unknown，三目标只观察自身fd metadata，不做Node/JSONRPC/provider或网络探针。
 
 ## 首片可独立实现
 
