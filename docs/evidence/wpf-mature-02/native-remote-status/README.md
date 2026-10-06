@@ -1,6 +1,6 @@
 # 固定remote-control状态兼容候选
 
-source e7ff1a83 / checks92785f4c；完整ref及18runtime/当前prepared见[manifest](manifest.json)。Mika源审及6/6直接组、sh0；0实际target，当前NOT_OPEN。复用原probe/entry/notifications/R06，旧默认保留；新entry仅固定namespace+validator，旧源码历史Git保留，policy ba856不变。详[Interface](interface.md)。
+source e7ff1a83 / checks92785f4c；完整ref及18runtime/当前prepared见[manifest](manifest.json)。Mika源审及6/6直接组、sh0；固定c3349fff组合已[批准](packet-review.json)，READY待holder交接，0实际target/NOT_OPEN。复用原probe/entry/notifications/R06，旧默认保留；新entry仅固定namespace+validator，旧源码历史Git保留，policy ba856不变。详[Interface](interface.md)。
 
 Mika绑定HEAD且Lead holder可用后，唯一命令：
 ```sh
