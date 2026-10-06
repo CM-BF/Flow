@@ -135,3 +135,8 @@ Reviewer：Execution Lead / gpt-6-astra；target `1994182e4f1d7ff0cb5b08d005defe
 ## 2026-10-06 21:54 UTC main接收与正式关闭
 
 既有独立批准范围不变。最终cef5记录已由Lead受控接收main `2af8639ddfa66252ecf97fd6921eaab40389020d`，本owner只读核该提交与后继 `78fb37704d708e3b3b6ea4f1810947f012666196` 的两个完整own范围逐文件零差。源码、原raw、manifest不改，无产品测试或个人状态采样。全部写入停止，整claim释放后不再写本树；未来wrapper复用需新owner精确领取。[接收回执](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json)。
+
+
+## 2026-10-06 23:41:20 UTC：af51/v18 center-only 新恢复准备（NOT_STARTED）
+
+范围仅 center-recovery-af51 的facts/operator/supervise，固定源提交后填写manifest。原362许可不复用，原OPS14 wrapper/module只读固定输入；没有实际启动。独立审查核新版本/v18、唯一spawn、原锁/marker、baseline所有旧列仅queue_checked_at例外、源固定门、PID-only截止和失败unknown。证据见该目录README/runtime-bindings/facts-before/baseline-supervision/historical-boundary。已做一次只读DB基线；未运行产品tests/恢复/HTTP/provider。

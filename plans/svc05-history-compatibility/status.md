@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:54 UTC；最终记录已main，本次仅正式停写收口，无新现场采证 |
+| 最近更新时间 | 2026-10-06 23:41:20 UTC |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -10,21 +10,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility |
 | Branch | codex/personal-history-compatibility |
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
-| 工作树dirty状态 | 固定源码停写；本次仅own metadata提交，clean以实际Git回执为准 |
-| 工作分支状态 | completed |
-| 本片段交付阶段 | delivered |
-| 检查状态 | PASSED 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736；实际结果target1994182e4f1d7ff0cb5b08d005defe199d5cbf8c独审APPROVED，24命令/25检查/100绑定 |
+| 工作树dirty状态 | 新恢复三源码已准备；本次own范围待固定，原已发布源码不变 |
+| 工作分支状态 | in-progress |
+| 本片段交付阶段 | review |
+| 检查状态 | NOT_RUN 实际恢复；一次只读基线exit0/577ms，原准备入口失败保留；无产品测试。 |
 | 已集成main状态 / HEAD | 已接收 2af8639ddfa66252ecf97fd6921eaab40389020d；后继 78fb37704d708e3b3b6ea4f1810947f012666196 两个完整own范围对cef5逐文件零差；[最终接收](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json) |
-| 实现目标 | 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736 |
-| 实现范围 | docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window.py, docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json, docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json, docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py, docs/evidence/svc05-history-compatibility/release-operation/observe.mjs, docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/descriptor.test.mjs |
+| 实现目标 | UNKNOWN；af51中心恢复准备实施中，原发布6e7109/1994182结果已交付保持。 |
+| 实现范围 | docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs, docs/evidence/svc05-history-compatibility/center-recovery-af51/operator.mjs, docs/evidence/svc05-history-compatibility/center-recovery-af51/supervise.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 个人后台和新页面已更新，恢复接收任务；旧页面、会话和历史数据保留。 |
-| 下一可用交付 | 本片段已交付 |
-| 当前阻塞 | NONE |
+| 当前产出 | 个人后台与页面已完成更新；共享数据库中断后中心退出，现正在准备同版本中心恢复，runner 和网页保留。 |
+| 下一可用交付 | 固定只启动中心的恢复输入，经独审和执行窗口后恢复后台可用性。 |
+| 当前阻塞 | ACTIVE: 中心未监听，恢复准备尚待独审与一次执行窗口。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；Execution Lead独立APPROVED实际结果1994182e4f1d7ff0cb5b08d005defe199d5cbf8c，100绑定无差、0重跑/新probe |
-| Claim | cd2d2e57-f633-444b-9797-f83a45624ae2：全范围正式停写，原v2占用由本owner释放；最终released事实以协调账本外部回执为准，无后继写权 |
+| Review | NOT_STARTED 新同版本恢复固定准备待独审；原发布实际1994182独审APPROVED不改变。 |
+| Claim | 新 22000abe-192a-489a-bdee-6cbc3cd2ea4a v1，仅 center-recovery-af51 证据与本计划；旧 cd2d v3 已released，OPS14旧wrapper仍其唯一writer。 |
 | 架构影响 | 既有host维护与独立Web CAS完成实际发布；限定旧intent退役有私有原件/审计，普通idle/API不变。运行af51与Web5069586/d629独立于moving main。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -35,6 +35,7 @@
 | SVC05H01-04 | completed | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；[独立APPROVED](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json) |
 | SVC05H01-05 | completed | assignment_review / Execution Lead独审 | 实际af51/v18+d629/v3；[唯一结果APPROVED](../../docs/evidence/svc05-history-compatibility/intent-retirement/retirement-release-independent-review.json)，24命令/25检查/64表保护/27迁移/三retained；原失败与unknown保留 |
 | SVC05H01-06 | completed | assignment_review | 一次ready/8组保留true；Lead独立比对64表并关闭窗口，原期限P2已关闭 |
+| SVC05H01-07 | in-progress | assignment_review | [同版本中心恢复准备](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/README.md)，原恢复许可不重用。 |
 
 ## Dashboard
 
