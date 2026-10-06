@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T16:45:42.321628+00:00 / main74bc72f0 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:59 UTC / main9314c81a |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | 规则与产品基线已main74bc72f0；本记录仅资源与源码恢复事实 |
+| 工作基线 / 本记录核验时HEAD | 规则与资源记录已main9314c81a；本次补局部验证方法与真实动态SQL补源事实 |
 | 工作树dirty状态 | 仅本次资源事实和运行约束记录 |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main74bc72f0已接收当前规则、运行文档与166来源；后续资源事实仍由本唯一status维护。 |
+| 已集成main状态 / HEAD | main9314c81a已接收当前规则、运行文档与167来源；后续资源事实仍由本唯一status维护。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 本批十二个已交付目录完成可逆收起，源码、依赖与各任务原始证据保持。 |
-| 下一可用交付 | 网页组按现场余量顺序验证现有候选；公共客户端与终端小片并行推进。 |
-| 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；小验证余量已达到准备线，实际运行继续逐次核对。 |
+| 当前产出 | 本批十二个目录的安全收起已完成；中心验证遗漏的迁移文件已补齐，入口资源已核对。 |
+| 下一可用交付 | 逐消息设置按新独占窗口验证；共享客户端已独审，生产接线由明确的执行 owner 收口。 |
+| 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；小验证按现场余量准入，已失败的准备记录保留。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -158,3 +158,16 @@ RELEASE03 A3附件场景通过、mixed资源中断、B未启动；累计7,983/18
 2026-10-06T16:50:07.903872+00:00：串行PG窗口次序固定为Web RELEASE03 A→B及实际清理归还 → MATURE02 CORE既有8组专库 → O14/O15/TUI。CORE仅其固定slot请求的fresh1GiB+128MiB、120s工作+80s清理、0provider；没有当前开跑许可，不借16:44余量。两lead直接交窗口，普通小源码/类型/HTTP按原小预算继续；完整SVC门槛不变。
 
 2026-10-06T16:51:27.830936+00:00：Web16:47:43.636已实际归还：两A完整通过，B普通发送后Files同名定位失败，未生成兼容报告；专库removed、两个自有进程exit0/errors[]。下一CORE8组已交Mika，只凭其fresh原gate准入，O14/O15/TUI及Web后继B不并跑。原20,309ms累计/159,691ms剩余保持。[窗口交接](../../docs/quality/sparse-worktree-2026-10-06/next12b/web-core-window-handoff.json)。
+
+
+## 2026-10-06 16:59 UTC 入口核对与CORE新窗口
+
+| TODO ID | 状态 | Owner | 完成证据/检查 |
+| --- | --- | --- | --- |
+| OPS-001-12 | completed | Execution Lead | [局部验证方法](../../docs/quality/local-validation.md)补充真实动态资源与唯一定位检查；只核文档/diff，不运行工程测试 |
+
+CORE 16:52首次专库在beforeAll缺012时失败：8例全部skipped、0HTTP；1旧合成task，所有连接关闭/普通DROP后absent，进程/cache/temp正常清理。其余三份固定数组SQL同样缺失。唯一Git operator在16:56只补四文件5,539B/名义分配16KiB，原342物化文件hash及HEAD/status不变；第一次 `add --no-cone` 用法错误未写，随后沿既有no-cone配置执行add成功。完整[源恢复回执](../../docs/quality/sparse-worktree-2026-10-06/next12b/core-dynamic-sql-materialization.json)。
+
+assignment_review 独立只读核175本地源、28SQL及10包入口均存在且fixed hash一致；静态报告已交CORE唯一证据owner归档，不代表实际初始化通过。16:58已给Mika一次CORE-PG-RETRY条件窗口：固定ea276/原8组、fresh≥1,207,959,552B、120s工作+80s清理、0provider，结束必须明确归还，不自动再试。Web B定位修复继续源码/独审，本队O14/O15/TUI不并行PG。原Web累计20,309ms与159,691ms余额不变。
+
+F01共享接线由Lead16:57:49停止全树写入并正式handoff给native_center_owner，接收accept后原树唯一维护；C01共享client/CLI563已独审，其受控CORE/O14输入未因此自动获批。Lead负责接口、独审和集成，workers处理现成生产验证与032挂载，不把两个模块串成等待Lead亲写。
