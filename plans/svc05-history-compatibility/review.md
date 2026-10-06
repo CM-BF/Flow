@@ -101,3 +101,7 @@ Execution Lead 独立APPROVED_EXECUTABLE_PREPARATION，固定5fe98f97cb7506f6555
 ## 2026-10-06 20:47 UTC 只读诊断（非新的实现批准）
 
 [单文件schema事实](../../docs/evidence/svc05-history-compatibility/release-operation/admission-readonly-diagnosis.json)与[15固定源码绑定](../../docs/evidence/svc05-history-compatibility/release-operation/admission-diagnosis-bindings.json)定位到合法持久未决inFlight，原strictIdle保持，原2030/2040失败均保留。维护锁屏障/既有reconciliation边界已只读核对；[最小恢复提案](../../docs/evidence/svc05-history-compatibility/release-operation/admission-resolution-proposal.md)待Lead核定新增显式操作语义，不作者自批、不执行。0新工程检查/DB/进程/服务/provider。
+
+## 2026-10-06 21:11 UTC 精确旧intent退役准备 REVIEW_PENDING
+
+固定 `0a8dd95bae123b3c749d859a42c2357e65321bcf`，作者不自批。Lead/GO明确批准一次新退役语义后实施；同安装marker/唯一runner/hold行锁/旧runner停止/全部pending确认，原件备份和先行意图持久后仅精确journal替换。普通idle不改、无旧ACK伪造。18不同纯/小文件例分轮通过，真实host/PG/个人退役尚未执行；新增seam/template/deadline与实际逐步输入完整绑定见 [manifest](../../docs/evidence/svc05-history-compatibility/intent-retirement/fixed-manifest.json)。checks-1的合成stdout checkpoint精度限制与后两轮真实durable区别保留。原2030/2040失败保持，独立审查由Lead完成。
