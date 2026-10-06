@@ -2,13 +2,13 @@
   "errors": [],
   "human": {
     "delivery": {
-      "state": "review",
+      "state": "integration",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 2,
-    "output": "知识引用已冻结，排队回执会核对收到的引用",
-    "next": "独立审查后交付聊天接线所需的引用接口",
+    "output": "知识引用回执已通过审查，排队接收会核对固定引用",
+    "next": "交付已验证接口，准备后续聊天界面接线",
     "blocker": {
       "state": "none",
       "text": ""
@@ -39,8 +39,8 @@
     "record": "PASSED 5e8213a564bd76e58feddb0c6470faa74bae1d66；142 局部/直接依赖，Web typecheck0；无 browser/真实中心"
   },
   "review": {
-    "state": "not_started",
-    "record": "NOT_STARTED**",
+    "state": "approved",
+    "record": "APPROVED**",
     "target": "5e8213a564bd76e58feddb0c6470faa74bae1d66"
   }
 }

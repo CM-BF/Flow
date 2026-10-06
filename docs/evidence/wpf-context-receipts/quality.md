@@ -18,3 +18,9 @@ clean-code 实际发现与修复：公共 schema.parse 会产生新的可变 kno
 测试先红：10 failed / 28 passed 证明旧实现不冻结 refs、错 ACK 被误收。最终 142/142 与 typecheck0；实 FlowClient + 内存 fetch 验证序列化/原键，未启动任何 HTTP/PG/模型。限额、创建项目不符前置拒绝不分配 key；unknown 后预算拒绝仍 unknown，既有明确 budget 拒绝保留 text/refs。没有更改旧 projection 或 UI，没有 claim 外接口“顺便优化”。
 
 局限：完整 project/capability 宿主门禁、Send 调用 guard 及 UI 接线明确后继；不把本片纯 helper 验证写成用户已可发送知识。6 源固定后仅 metadata 继续，独审 NOT_STARTED。
+
+## 2026-10-06 08:20:15 UTC 交付 clean-code / 独立审查转录
+
+Root 08:19:33Z APPROVED `5e8213a564bd76e58feddb0c6470faa74bae1d66`，无 blocking。独立实际 124+18 两次合计 142；未冒称首个误写 selection 路径的命令执行了 142，也不冒称独立重跑 typecheck。六源固定后没有更改。author/root 均核 source diffcheck0；原始工具日志空白保持，README 列明完整 metadata 例外。
+
+交付复核：共享 helper 集中规则、无新依赖/定时器/网络；新建项目约束与已建会话宿主授权责任明确；unknown 回执不吞错误或自动改变引用。当前 stop：产品冻结，保留 claim 仅供具体审查修复，待 MainLead 接收后另作 delivered/release。不把模块完成当实际聊天知识可用。
