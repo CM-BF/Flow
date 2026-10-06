@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:47 UTC / maina89f42ab57acb53657af6a2d1b745dabd4d50aa5 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T16:10:36.850746+00:00 / main83f535b54f2390a729f02bc818e07ba684d94ccb |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 266105c6329822773f116fc9fa36c2b58a722b7b；本次仅管理metadata |
 | 工作树dirty状态 | 管理metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | TUI01A/B/C/D/E已审/main；E原41+3不同检查及当前组合1selected/类型0，本父metadata不重测 |
-| 已集成main状态 / HEAD | TUI01E已maind4a2e0a7；A/B/C/D与O12已接收，完整聊天控制和实际TUI→Web→TUI旅程仍未完成 |
+| 检查状态 | A–E与F限定controller/Ink接线片已审/main；F原35+1/focused类型0，本父metadata不重测 |
+| 已集成main状态 / HEAD | TUI01F限定片已main83f535；实际HTTP/PG取消、PTY和TUI→Web→TUI仍未完成 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/tui, packages/interaction |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 终端已能查看聊天队列、暂停和继续，并保留草稿、原请求和当前所选页。 |
-| 下一可用交付 | 终端显式取消当前聊天任务，保留原请求以便断线恢复；随后验证网页与终端交替操作。 |
+| 当前产出 | 终端已增加明确任务的取消与原请求恢复；队列、草稿和观察接续能力保留。 |
+| 下一可用交付 | 实际验证取消的中心状态与终端交互，再验证网页和终端交替操作。 |
 | 当前阻塞 | ACTIVE: 源码可继续；数据库与实际终端、网页组合验证等待足够的磁盘余量。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -34,7 +34,7 @@
 | TUI001-03 | completed | runner_owner / Execution Lead | [TUI01C](../../../tui-stream-activity/plans/tui01c-stream-activity/status.md)独审及焦点修复通过、main648e接收；[父回执](../../docs/evidence/tui01/tui01c-main-receipt.json) |
 | TUI001-04 | pending | TUI owner / Mika合同 | 真实model能力仍逐项接通 |
 | TUI001-05 | pending | TUI owner / Web合同 | 附件生命周期与context |
-| TUI001-06 | in-progress | assignment_review / Execution Lead | [TUI01D](../../../tui-goal-session/plans/tui01d-goal-session/status.md)已审main280289；goal控制和TUI01E队列已main；TUI01F现已分派显式聊天cancel，steer/decision仍后继 |
+| TUI001-06 | in-progress | assignment_review / Execution Lead | [TUI01D](../../../tui-goal-session/plans/tui01d-goal-session/status.md)已审main280289；goal控制和TUI01E队列已main；TUI01F限定cancel接线已审main，实际03/04验证及steer/decision仍后继 |
 | TUI001-07 | pending | TUI owner | runner/plugin管理 |
 | TUI001-09 | completed | runner_owner / Web独立消费者 | TUI01B与WPF-ACK01均已独审/main；共享v2附件回执df8也已mainfd132，完整双端旅程仍归08 |
 | TUI001-08 | pending | 独立review / Execution Lead | 完整日用/PTY/双公开客户端共同中心/provider验收仍开放 |
@@ -54,3 +54,5 @@
 2026-10-06 13:57:22 UTC：TUI01E fixed22f已独审，分页迟到P2关闭；maind4a2e0a7原11源相同，当前生产中心单例及root/Web类型通过。[实际组合](../../docs/evidence/i02/tui-queue-integration.json)。完整06/08未勾完；下一空闲实现槽按全局优先级交COST01A，TUI控制/双端后继保持ready候选，不称外部阻塞。
 
 2026-10-06 15:47 UTC：沿用户再次确认的slash/typed command方向，当前兼容候选已冻结，assignment_review安全转入TUI01F。复用既有FlowClient.cancel和单持久intent，明确取消受理不等于停止；目标ID/原key/body在unknown恢复中不替换，退出只停止观察。已有取消API是task范围，不捏造attempt CAS；跨客户端过期冲突沿原send/queue规则验证，不自动改版本重发。具体[最小设计](../../docs/evidence/tui01/task-cancel-next-design.json)与[独立源码树](../../docs/evidence/tui01/task-cancel-source-provision.json)已固定；owner须fresh原子take后写。后台共同接口/headless可先独立验收，实际PTY与同中心生产App旅程分别留真实证据，不以两个headless替代浏览器。暂无新工程测试/provider；父06/08与完整日用验收保持开放。
+
+2026-10-06T16:10:36.850746+00:00：已核[本片主线接收](../../docs/evidence/tui01/tui01f-main-receipt.json)，取消受理与停止事实分开，旧请求恢复不换key/body。controller+Ink静态接线的局部批准不关闭F-03/04和父06/08；actual HTTP/PG/PTY/App等待资源，Web/TUI互不作为全体后端的串行门禁。
