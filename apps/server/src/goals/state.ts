@@ -59,7 +59,19 @@ export function requireNode(state: GoalState, nodeId: string) {
   if (!node) throw new HttpError(404, 'goal_node_not_found', 'The node is not in this goal project.');
   return node;
 }
-export function currentDeliveries(state: GoalState) {
+/** Shared validity needs identities and knowledge references, never material text. */
+export type GoalValidityExecution = Pick<ExecutionRow, 'node_id' | 'input_version' | 'dependencies'> & {
+  task: Pick<ExecutionTask, 'status' | 'verification_status' | 'latest_artifact_id' | 'latest_artifact_version'>;
+};
+export interface GoalValidityState {
+  goal: Pick<GoalView, 'projectId'>;
+  project: { graph: { nodes: Pick<ProjectSnapshot['graph']['nodes'][number], 'id' | 'dependsOn'>[] } };
+  inputs: Map<string, { version: number; input: Pick<GoalInput, 'knowledge'> }>;
+  knowledgeHeads: Map<string, number>;
+  nodes: Map<string, { accepted_binding: GoalArtifactBinding | null }>;
+  executions: Map<string, GoalValidityExecution>;
+}
+export function currentDeliveries(state: GoalValidityState) {
   const memo = new Map<string, GoalArtifactBinding | null>();
   const visiting = new Set<string>();
   function current(nodeId: string): GoalArtifactBinding | null {
@@ -79,7 +91,7 @@ export function currentDeliveries(state: GoalState) {
     const bindings = node.dependsOn.map(current);
     return bindings.every((binding): binding is GoalArtifactBinding => binding !== null) ? sortBindings(bindings) : null;
   }
-  function isCurrent(execution: ExecutionRow): boolean {
+  function isCurrent(execution: GoalValidityExecution): boolean {
     const definition = state.inputs.get(execution.node_id);
     const bindings = dependencies(execution.node_id);
     return definition?.version === execution.input_version && knowledgeCurrent(definition.input, state.goal.projectId, state.knowledgeHeads) && bindings !== null && equalBindings(bindings, execution.dependencies);
