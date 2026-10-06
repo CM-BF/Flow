@@ -104,3 +104,5 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 
 - CHAT08：原生对话中的补充指令；唯一source `native-active-steering/plans/chat08-native-active-steering`，仍0provider实施。
 - CHAT06P01：流式正文存储成本测量；唯一source `assistant-stream-cost-probe/plans/chat06-stream-cost`，方法准备，真实测量待协调窗口。
+
+- WPF-PERF03：聊天消息复用；唯一source `web-message-reuse/plans/wpf-perf03-message-reuse`，不变消息转换优化实施，不声称浏览器延迟收益。
