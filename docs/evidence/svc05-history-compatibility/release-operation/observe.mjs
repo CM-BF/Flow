@@ -65,6 +65,10 @@ async function databaseFacts(config) {
 }
 
 export async function observe() {
+  return observeHost(runnerFiles);
+}
+/** Private procedural seam: the ordinary entry above always uses the original strict idle sampler. */
+export async function observeHost(sampleNative) {
   const source = { head: (await execute('git', ['-C', repository, 'rev-parse', 'HEAD'], { timeout: 2000 })).stdout.trim(),
     dirty: Boolean((await execute('git', ['-C', repository, 'status', '--porcelain'], { timeout: 2000 })).stdout) };
   if (source.head !== target || source.dirty) throw Error('FIXED_AF51_CHECKOUT_REQUIRED');
@@ -85,7 +89,7 @@ export async function observe() {
   result.invariantStateSha256 = sha(JSON.stringify(invariantState)); result.lastError = state.lastError;
   result.webArtifact = state.webArtifact; result.webReleaseOperation = state.webReleaseOperation ?? null;
   result.operation = await host.readPreviewJson(join(directory, 'maintenance.json'));
-  result.native = await runnerFiles(join(directory, 'runner'), `http://127.0.0.1:${config.centerPort}`);
+  result.native = await sampleNative(join(directory, 'runner'), `http://127.0.0.1:${config.centerPort}`);
   result.lock = await lstat(join(directory, 'operation.lock')).then(() => 'present', e => e.code === 'ENOENT' ? 'absent' : 'unknown');
   for (const role of ['center', 'runner', 'web']) {
     const r = state.processes[role]; result.processes[role] = { pid: r.pid, group: r.group, recordSha256: sha(JSON.stringify(r)), identity: await processes.inspectOwnedProcess(r) };

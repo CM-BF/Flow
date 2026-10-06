@@ -42,7 +42,8 @@ export async function holdAndStopRunner(request, output) {
         operationId: request.operationId, reason: 'No active attempts; reserve the local update.' }, local.holdKey, 'trusted-host');
       await durable(join(output, 'hold.json'), receipt);
     } finally { await pool.end(); }
-    if (sha((await readRegular(join(personal, 'state.json'))).bytes) !== sha(stateBytes)) fail('STATE_CHANGED');
+    if (sha((await readRegular(join(personal, 'state.json'))).bytes) !== sha(stateBytes)
+      || sha((await readRegular(join(personal, 'config.json'))).bytes) !== before.files['config.json'].sha256) fail('STATE_CHANGED');
     // The reviewed helper sends TERM only to its positively identified group; never force/KILL.
     const stopped = await processTools.stopOwnedProcess(state.processes.runner);
     const confirmed = await processTools.inspectOwnedProcess(state.processes.runner);

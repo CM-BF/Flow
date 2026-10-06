@@ -62,6 +62,12 @@ function fixedNewBytes(original) {
     || !uuid.test(value.inFlight ?? '') || !Array.isArray(value.assignments) || value.assignments.length !== 0) fail('LEGACY_INTENT_SHAPE');
   return Buffer.from(JSON.stringify({ ...value, inFlight: null }));
 }
+export async function boundIntent(request) {
+  const paths = locations(request); await checkDirectories(request, paths);
+  const original = await readRegular(paths.journal);
+  if (!sameIdentity(original.stat, request.journalIdentity) || sha(original.bytes) !== request.originalSha256) fail('ORIGINAL_CHANGED');
+  return { paths, original, replacement: fixedNewBytes(original.bytes) };
+}
 
 /** ports.withFence keeps the existing host operation lock and same runner row lock until use returns. */
 export async function retireIntent(request, ports) {
@@ -73,9 +79,7 @@ export async function retireIntent(request, ports) {
     paths = locations(request);
     return await ports.withFence(request, async confirm => {
       const initial = await confirm(); assertConfirmation(request, initial); confirmations.push(initial); await checkDirectories(request, paths);
-      original = await readRegular(paths.journal);
-      if (!sameIdentity(original.stat, request.journalIdentity) || sha(original.bytes) !== request.originalSha256) fail('ORIGINAL_CHANGED');
-      replacement = fixedNewBytes(original.bytes);
+      ({ original, replacement } = await boundIntent(request));
       // Exclusive directory makes every attempt one-shot, including interrupted attempts.
       phase = 'reservation'; await mkdir(paths.archive, { mode: 0o700 }); await syncDirectory(request.root);
       phase = 'backup'; await ports.boundary?.(phase);
