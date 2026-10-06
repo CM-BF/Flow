@@ -1,6 +1,6 @@
 # Fixed Codex 0.154.0 semantic consumer
 
-This experiment consumes already-decoded JSON. It contains no process, JSONL framing, request IDs, timer, retry, network, auth or provider implementation.
+The semantic modules consume already-decoded JSON. They contain no process, JSONL framing, request IDs, timer, retry, network, auth or provider implementation. The separate isolation experiment has its own historical run evidence.
 
 - `discoverModels(peer, limits?)`: caller must await R06 `ready`; peer only needs `request(method, params)`. Complete bounded model catalog or throw, never a partial catalog. No initialize/initialized call here.
 - `normalizeModelPage(page)` / `validateRequestedControls(model, selection)`: catalog strings remain catalog choices, not account entitlement. Effort and service tier are separate. Missing fields remain missing; explicit null remains null. Persistent serviceTier null/omission semantics remain unknown.
@@ -17,3 +17,11 @@ Run only the named local tests using Node24:
 ```
 
 Fixtures are synthetic. They do not initialize the installed app-server, verify an account or execute a model. The selected immutable schema copies and manifest provenance are in `docs/evidence/wpf-mature-02/`.
+
+## Single production projection owner
+
+`final.mjs` is a relative re-export of `../../apps/runner/src/native-harness/codex/projection.mjs`, brought into this same worktree from reviewed main `4391bbf9f1785212d098ef6aa1c01a0320a003d3`. The production module owns the algorithm; there is no local copy or fallback and no cross-worktree runtime import. The existing final tests still import the public experiment entry, so they directly exercise the production algorithm. Catalogue/discovery modules and both test files are unchanged.
+
+Production projection implementation `6313c885c5c5524faedba9b8c49e4d3e164028d5` preserves the original algorithm bytes. Its AssertionError can contain native IDs/text in actual/expected; production hosts must emit fixed safe reason/code instead of raw errors to logs/detail/UI.
+
+The original `conformance-manifest.json` is historical evidence for fixed `0d0524c3439363d1fe60aad63f62817ba51fa2a5`; it is not a manifest of the new thin entry. Current consumer evidence is separately bound under `docs/evidence/wpf-mature-02/production-import/`.

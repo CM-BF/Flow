@@ -1,0 +1,100 @@
+{
+  "recordedAt": "2026-10-06T09:46:07.702339+00:00",
+  "kind": "same-worktree production projection thin consumer",
+  "controlledMain": "4391bbf9f1785212d098ef6aa1c01a0320a003d3",
+  "productionImplementation": "6313c885c5c5524faedba9b8c49e4d3e164028d5",
+  "mergeCommit": "9f1121178914196af113db1ad5d9a261435c138b",
+  "mergeConflicts": false,
+  "sources": {
+    "experiments/codex-app-server-conformance/README.md": {
+      "bytes": 3808,
+      "sha256": "807a00ca759adb6208449f0a086149bee5b3e37281c828ea2b3e8bd49604bf3d"
+    },
+    "experiments/codex-app-server-conformance/catalog.mjs": {
+      "bytes": 3787,
+      "sha256": "325748922248b5baba3ade65cf707e0bf527ecbe5598be4b3fd541c8ec79e5e9"
+    },
+    "experiments/codex-app-server-conformance/discover.mjs": {
+      "bytes": 1573,
+      "sha256": "53070af0acd0675ae92ea9378735737229a8aaebd88b937bf384a11714486b2e"
+    },
+    "experiments/codex-app-server-conformance/final.mjs": {
+      "bytes": 201,
+      "sha256": "ab4a565bb56dd8e6f47e425fad86ed8bb464dd4ab142e7218e3772db766efa05"
+    },
+    "experiments/codex-app-server-conformance/catalog.test.mjs": {
+      "bytes": 5964,
+      "sha256": "5dfdb8fe99e6374173249cce8fe9e628e7d3dc7ebdd6df355543afbb4b02d85e"
+    },
+    "experiments/codex-app-server-conformance/final.test.mjs": {
+      "bytes": 6816,
+      "sha256": "d689150a48ce95534fa0c035051acb62c142b76cf1b9345d19b339f6ec75906c"
+    }
+  },
+  "productionInputs": {
+    "apps/runner/src/native-harness/codex/projection.mjs": {
+      "bytes": 5179,
+      "sha256": "01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad"
+    },
+    "apps/runner/src/native-harness/codex/projection.d.mts": {
+      "bytes": 716,
+      "sha256": "8595d7c661688e9c2aad8cb3a69530a904167798cccc218bd0a450bd8e8e3e6c"
+    }
+  },
+  "raw": {
+    "docs/evidence/wpf-mature-02/production-import/consumers.tap": {
+      "bytes": 5517,
+      "sha256": "605d36f20e77449f8c8ab397626303a0f28be62a7627aac414f49be4bd2fc786"
+    },
+    "docs/evidence/wpf-mature-02/production-import/consumers.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/production-import/check-result.json": {
+      "bytes": 281,
+      "sha256": "4c2c0268b84f4df91dbec93de42e1cb2391382bc1c49106fa96439105c94e561"
+    },
+    "docs/evidence/wpf-mature-02/production-import/integration-take.json": {
+      "bytes": 552,
+      "sha256": "a1b6e70b4057c850bf3dc9418a0031ff9a5488f539fb8b9ad9c3e2c89025813f"
+    },
+    "docs/evidence/wpf-mature-02/production-import/integration-release.json": {
+      "bytes": 557,
+      "sha256": "33db72c578992002161592a407b0421609d2981275d02451a5c75822665b3fed"
+    }
+  },
+  "historicalUnchanged": {
+    "docs/evidence/wpf-mature-02/conformance-manifest.json": {
+      "bytes": 5631,
+      "sha256": "442255c1000dfc1d2d154413d1fba9eeacbfbad24b831e143ddd2bbf162ac15f"
+    },
+    "docs/evidence/wpf-mature-02/conformance.tap": {
+      "bytes": 5511,
+      "sha256": "5b853262f207708a058bb6fb913fb9933657bbc06719991a3f3d4f83de4c5fb5"
+    },
+    "docs/evidence/wpf-mature-02/isolation/manifest.json": {
+      "bytes": 1500,
+      "sha256": "5671088ae9b23b19fa7711df04ad5da2e130ada65ff6c3a92e8e3b2b3830d503"
+    },
+    "docs/evidence/wpf-mature-02/isolation/canary-run-manifest.json": {
+      "bytes": 2327,
+      "sha256": "a07849c0b2caf1489ca5ac70a7f8478eda3911d3b82f70adb219f46611a0999e"
+    }
+  },
+  "checks": {
+    "selected": 27,
+    "passed": 27,
+    "failed": 0,
+    "skipped": 0,
+    "runs": 1,
+    "exitCode": 0,
+    "result": "docs/evidence/wpf-mature-02/production-import/check-result.json"
+  },
+  "productionSourceModified": false,
+  "testFilesModified": false,
+  "crossWorktreeRuntimeImports": false,
+  "realAppServerStarts": 0,
+  "authCalls": 0,
+  "modelCalls": 0,
+  "transportSuiteRuns": 0
+}
