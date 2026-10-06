@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 140项实际进度已可查看，工程受信检查与统一目标读口均有独立进度入口。 |
+| 当前产出 | 140项实际进度可查看；目标会话、工程收据和两项网页改进已登记，随本批更新。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -83,3 +83,5 @@
 2026-10-06T11:45:06.000446+00:00：ENG01E唯一source存在且parser无错误、人读字段完整；140来源候选见[登记记录](../../docs/evidence/d05/engineering-checker-140-registry.json)，保留架构固定f181快照，不重跑产品/架构检查。
 
 2026-10-06T11:49:00.745135+00:00：4320实际140来源已部署，ENG01E live/current、人读完整、issues=[]，见[实际回执](../../docs/evidence/d05/engineering-checker-140-live.json)。仅替换已核main目录的自有59884进程；架构固定快照和个人服务保持。
+
+2026-10-06T11:56:33.581142+00:00：O12/ENG01F及两Web已审片的canonical三件套、父任务、人读字段已核，144来源候选，见[登记](../../docs/evidence/d05/goal-checker-web-144-registry.json)。网页摘要源码由Web独立批准后在I02接收，本登记不修改human/app/图。
