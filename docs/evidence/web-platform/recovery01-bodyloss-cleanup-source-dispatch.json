@@ -75,5 +75,8 @@
     "localLinks": 365,
     "scopeErrors": 0,
     "diffCheck": 0
-  }
+  },
+  "actualPoolSourceAudit": "recovery01-ec91-pg-close-risk-root.json",
+  "actualVersion": "Root resolved own pg8.23.1/pg-pool3.14.0 and matched installed source; static finding only, notTUIcause reproduction",
+  "cleanupObservation": "Both pre-marker/post-marker existing checks bounded within parent hardAt/cleanupreserve; serialboundedquery and limitedpid/state/safecode, no URI/querytext. Existing standaloneharddeadline unchanged."
 }
