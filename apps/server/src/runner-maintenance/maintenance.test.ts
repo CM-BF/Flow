@@ -154,3 +154,42 @@ it('lets drain commit first while the real legacy claim is queued on the same id
     await request(`/api/tasks/${taskId}/cancel`, {});
   } finally { await blocker.query('ROLLBACK'); blocker.release(); await maintenancePool.end(); }
 });
+
+import { mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { runRunner } from '../../../runner/src/runtime.js';
+import { migrate } from '../database.js';
+it('lets the actual runner heartbeat and durable outbox finish after a drain command', async () => {
+  const identity = await runner(); const taskId = await submit('Live runtime drain');
+  const directory = await mkdtemp(join(tmpdir(), 'flow-svc02-runtime-')); const shutdown = new AbortController();
+  let began!: () => void; const started = new Promise<void>(resolve => { began = resolve; });
+  let finish!: () => void; const finishing = new Promise<void>(resolve => { finish = resolve; });
+  const execution = runRunner({ baseUrl: url, token: identity.token, workingDirectory: directory, signal: shutdown.signal, heartbeatIntervalMs: 30, pollIntervalMs: 20,
+    adapters: [{ name: 'fixture', version: 'svc02-seam', async run(context) { began(); await finishing; await context.assertOwnership(); await context.emit({ type: 'message', text: 'Runtime completed while admission was paused.' }); } }] });
+  try {
+    await started;
+    await commandRunnerMaintenance(pool, identity.runnerId, 'drain', { version: 0, operationId: randomUUID(), reason: 'Drain while runtime is active' }, randomUUID(), 'trusted-host');
+    await new Promise(resolve => setTimeout(resolve, 100)); finish();
+    await expect.poll(async () => (await request(`/api/tasks/${taskId}`)).body.status).toBe('succeeded');
+    expect((await request(`/api/runners/${identity.runnerId}/maintenance`)).body).toMatchObject({ state: 'draining', activeAttempts: 0 });
+  } finally { finish(); shutdown.abort(); await execution; await rm(directory, { recursive: true, force: true }); }
+});
+it('rolls back a contended bootstrap migration within its short lock bound before enabling any gate', async () => {
+  const name = `flow_svc02_m_${randomUUID().replaceAll('-', '').slice(0, 10)}`;
+  await admin.query(`CREATE DATABASE ${name}`);
+  const local = new Pool({ connectionString: databaseUrl.replace('/flow_svc02', `/${name}`), max: 2 });
+  let blocker: PoolClient | undefined;
+  try {
+    await migrate(local); blocker = await local.connect();
+    await blocker.query('BEGIN'); await blocker.query('LOCK TABLE flow.runners IN ACCESS EXCLUSIVE MODE');
+    const before = performance.now();
+    await expect(migrateRunnerMaintenance(local)).rejects.toMatchObject({ code: '55P03' });
+    expect(performance.now() - before).toBeLessThan(2500);
+    await blocker.query('ROLLBACK'); blocker.release(); blocker = undefined;
+    expect((await local.query('SELECT 1 FROM flow.migrations WHERE version=16')).rowCount).toBe(0);
+    expect((await local.query("SELECT 1 FROM information_schema.columns WHERE table_schema='flow' AND table_name='runners' AND column_name='maintenance_state'")).rowCount).toBe(0);
+    await migrateRunnerMaintenance(local);
+    expect((await local.query('SELECT 1 FROM flow.migrations WHERE version=16')).rowCount).toBe(1);
+  } finally { if (blocker) { await blocker.query('ROLLBACK'); blocker.release(); } await local.end(); await admin.query(`DROP DATABASE ${name}`); }
+});

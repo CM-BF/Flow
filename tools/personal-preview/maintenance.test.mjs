@@ -78,3 +78,48 @@ test('identity failure after durable drain keeps admission closed and never sign
     assert.equal((await statusPreview({ directory })).processes.runner, 'running');
   });
 });
+
+import { createServer as createSocket } from 'node:net';
+import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess } from './process.mjs';
+import { setTimeout as sleep } from 'node:timers/promises';
+test('a failed new Web start retains the maintenance gate and does not kill an unrelated listener', async () => {
+  const target = (await execute('git', ['-C', repository, 'rev-parse', 'HEAD'])).stdout.trim();
+  await fixture(async (directory, config) => {
+    await command(directory, 'bootstrap');
+    const state = JSON.parse(await readFile(join(directory, 'state.json'), 'utf8'));
+    assert.equal(await stopOwnedProcess(state.processes.web), 'stopped');
+    const listener = createSocket();
+    await new Promise((resolve, reject) => { listener.once('error', reject); listener.listen(config.webPort, '127.0.0.1', resolve); });
+    try {
+      await assert.rejects(command(directory, 'refresh', target), error => error.stderr.includes('START_UNCONFIRMED_CHECK_STATUS'));
+      assert.equal(listener.listening, true);
+      assert.equal((await command(directory, 'status')).state, 'maintenance');
+      await assert.rejects(command(directory, 'resume'), error => error.stderr.includes('UPDATED_PROCESSES_NOT_CONFIRMED'));
+    } finally { await new Promise(resolve => listener.close(resolve)); }
+  });
+});
+test('TERM timeout retains maintenance and reports unknown without progressing to the next service', async () => {
+  const target = (await execute('git', ['-C', repository, 'rev-parse', 'HEAD'])).stdout.trim();
+  await fixture(async (directory) => {
+    await command(directory, 'bootstrap');
+    const path = join(directory, 'state.json'); const state = JSON.parse(await readFile(path, 'utf8')); const originalRunner = state.processes.runner;
+    assert.equal(await stopOwnedProcess(originalRunner), 'stopped');
+    const marker = join(directory, 'test-term-ready');
+    const program = `require('node:fs').writeFileSync(${JSON.stringify(marker)},'ready');process.on('SIGTERM',()=>{});setInterval(()=>{},1000);`;
+    const owned = await spawnOwnedProcess({ args: ['-e', program, '--'], cwd: directory, env: { PATH: process.env.PATH } });
+    for (let i = 0; i < 50; i++) { try { await readFile(marker); break; } catch { await sleep(10); } }
+    assert.equal(await readFile(marker, 'utf8'), 'ready');
+    state.processes.runner = owned; await writeFile(path, JSON.stringify(state));
+    try {
+      await assert.rejects(command(directory, 'refresh', target), error => error.stderr.includes('STOP_UNCONFIRMED'));
+      assert.equal((await command(directory, 'status')).state, 'maintenance');
+      assert.equal(await inspectOwnedProcess(state.processes.center), 'running');
+      assert.equal(await inspectOwnedProcess(owned), 'running');
+    } finally {
+      // Only this test-created, freshly verified stubborn process may be forcibly cleaned up.
+      if (await inspectOwnedProcess(owned) === 'running') process.kill(-owned.group, 'SIGKILL');
+      for (let i = 0; i < 100 && await inspectOwnedProcess(owned) !== 'stopped'; i++) await sleep(10);
+      state.processes.runner = originalRunner; await writeFile(path, JSON.stringify(state));
+    }
+  });
+});

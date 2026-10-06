@@ -47,3 +47,33 @@ node --test tools/personal-preview/environment.test.mjs tools/personal-preview/p
 ```
 
 测试仅随机专库、动态端口和独占临时目录，先核持有标记再清理。真实复用server/main、runner/main和Vite；8个公开行为检查包含CLI退出后服务保留、配置发布、0任务启动、角色环境隔离、私密输出、pending确认、数据库身份、端口冲突、错误PID身份与TERM超时。唯一排队fixture故意不被Claude-only runner领取，0模型/0云。此验证不替代真实聊天、浏览器验收或用户常驻部署。
+
+
+## 安全更新（SVC02）
+
+这是显式可信本机维护入口，复用当前0600配置和专库持有标记。不会启动第二个中心或scheduler，也不会探测provider。先执行：
+
+```sh
+node tools/personal-preview/cli.mjs maintenance bootstrap --directory "$HOME/.flow-personal"
+node tools/personal-preview/cli.mjs maintenance status --directory "$HOME/.flow-personal"
+```
+
+bootstrap以短事务安装016保护旧中心的attempt INSERT，并持久停止接新任务。正在执行的任务、心跳和事件继续；等待中的人工决策需要照常解决。uncertain占用不会因过期自动清除。返回计数只是观察，不能当作停止许可。
+
+在固定、干净且已经审查的main版本上执行（替换明确的40位提交）：
+
+```sh
+node tools/personal-preview/cli.mjs maintenance refresh --directory "$HOME/.flow-personal" --target <40位已审提交>
+```
+
+若仍有active attempt，返回等待当前任务；没有active时，同runner行锁内取得持久maintenance hold，然后退出PG事务。整个本机更新保持operation.lock，但不跨服务启动持PG锁，避免与新中心迁移死锁。HTTP owner不能解除maintenance；只有本机显式恢复入口会在验证新进程后开放接收。更新按自有PID/命令/启动时间/PGID停止并重新启动，保留数据库、身份、工作目录、配置、端口和网页地址。不会自动回退到旧源码或自动恢复队列；失败保持暂停/unknown。重复已成功的refresh不再次重启进程。
+
+新服务就绪后仍暂停，需要明确执行：
+
+```sh
+node tools/personal-preview/cli.mjs maintenance resume --directory "$HOME/.flow-personal"
+```
+
+该命令会允许已有合法queued任务继续，可能启动模型，因此必须由操作方明确选择执行；本功能测试只有fixture任务，生产部署与恢复窗口另行确认。每次恢复带CAS/幂等和中心不可变审计，重复同一次确认不会再创建审计。启动器的普通start/stop保留原有语义；普通start不会解除维护gate。
+
+状态措辞为停止接新任务/等待当前任务/可更新/恢复接收；这些状态不声称旧任务已取消或外部副作用已撤销。私有maintenance.json只保存本机操作ID、幂等key与版本，不存新凭据。丢失或未知操作记录拒绝自动接管，须先核对。
