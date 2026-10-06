@@ -11,7 +11,7 @@
 - [x] O08-01 claim/固定基线/技能与三件套。
 - [x] O08-02 默认零query预检、单次授权/marker与预算guard。
 - [x] O08-03 可运行隔离配置、复用生产runner/SDK桥接的0query真实MCP/HTTP/PG演练。
-- [ ] O08-04 原始证据/清理/clean-code/固定交付与独立review。
+- [x] O08-04 原始证据/清理/clean-code/固定交付与独立review。
 - [ ] O08-05 新GO单次预算后才真实原生query/NL验收；本轮不执行。
 
 范围只有experiments/native-graph-acceptance、plans/o08-native-graph-acceptance、docs/evidence/o08；不改生产/lock/真实服务/真实凭据。普通技术选择沿已批准边界直接执行，后继原生调用须另获授权。
@@ -25,3 +25,7 @@ Root审查P2：原stopWorker以leader退出判断进程组停止有误；原clai
 07:01 UTC：Root独立APPROVED decfcee，P2 CLOSED，仅0query准备；10source/32raw/6dependencies核验，未重跑、未query。片段stage integration，O08-05仍pending且native未就绪，等待Lead限定接收。
 
 07:08 UTC：GO接受在历史3+3managed资源声明下仅授予两图工具；新候选7403b56b98070848c189c2d36663cb89846977be已实现、局部检查并固定，待唯一Root复审。原零扩展门槛被显式新候选替代，但原生当前配置/语义仍unknown，未发permit。O08-04为新候选审查暂open，原decf批准记录保留。
+
+07:15 UTC：Root已批准7403准备，并沿用户既有登录/低成本原型授权分配一次native预算，approvalId flow-o08-native-20261006-071420，07:14:20–08:14:20 UTC，query1/turn4/SDK USD0.20/90s。许可绑定af062与本worktree；先reservation后query，未知/失败不补次，只有合成图、0child，不改服务/组织配置。执行原始事实另审。
+
+07:17 UTC：一次native query已结束，无补次，预算SEALED。SDK4turns/估算USD0.0318802，真实图3node2edge/1planner/0child及typed final保存，自有组/center/DB/tmp清理true。原程序failed-or-unknown因中文literal失配保留；O08-05仍待GO独立读取语义/audit，不自行标绿。
