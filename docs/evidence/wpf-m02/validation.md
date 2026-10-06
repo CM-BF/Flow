@@ -10,7 +10,7 @@ From this worktree, use Node24 and pnpm9.15.4. All dependencies are installed lo
 PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/workspace-preview.ts --preview
 ```
 
-The command prints a dynamic loopback URL and starts its own process-memory HTTP fixture. It auto-connects using the public fixture-only token. This is simulated. For a real running center, use `FLOW_CENTER_URL=http://127.0.0.1:<center-port> pnpm --filter @flow/web dev --port <free-port>`, then enter that center's owner token in the connection form; tokens remain in page memory.
+Current owner preview: http://127.0.0.1:49922 (2026-10-06 02:47 UTC). The command prints a dynamic loopback URL and starts its own process-memory HTTP fixture. It auto-connects using the public fixture-only token. This is simulated. For a real running center, use `FLOW_CENTER_URL=http://127.0.0.1:<center-port> pnpm --filter @flow/web dev --port <free-port>`, then enter that center's owner token in the connection form; tokens remain in page memory.
 
 ## Checks
 
