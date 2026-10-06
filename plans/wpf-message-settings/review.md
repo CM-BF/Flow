@@ -1,21 +1,21 @@
 # WPF-MESSAGESETTINGS01 独立审查
 
-**状态：UNKNOWN — 完整片段的运行验收尚未完成。**
+**状态：UNKNOWN — b5浏览器已实际通过，固定运行证据独立复核与主线接收待完成。**
 
-Review target commit：270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67。新目标仅browser的named group/count/visible窄修，已获[Root限定源码复审](../../docs/evidence/wpf-message-settings/root-270c-locator-source-review.json) **APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN**，0blocking、P2 SOURCE_ADDRESSED；browser尚未复验。原1cd的b2初始化失败和b4真实fixture首定位器失败原样保留；root已接受b4失败与清理并要求该P2修复，完整feature仍UNKNOWN。Base：8d84d529a0756116bd0fc8bad969d61a6c26248e。
+Review target commit：270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67。新目标仅browser的named group/count/visible窄修，已获[Root限定源码复审](../../docs/evidence/wpf-message-settings/root-270c-locator-source-review.json) **APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN**，0blocking、P2 SOURCE_ADDRESSED；本次b5已复验通过，原件等待独立证据审。原1cd的b2初始化失败和b4真实fixture首定位器失败原样保留；root已接受b4失败与清理并要求该P2修复，完整feature仍UNKNOWN。Base：8d84d529a0756116bd0fc8bad969d61a6c26248e。
 历史f3限定源码结论：**APPROVED_SOURCE_SCOPED_NOT_RUN**，不自动批准上述新目标。Root 于 2026-10-06T18:25:38.301159Z 完成 f3a6 复审，源码无 blocking。该结论为18:25源码审查时点；后续 strict noEmit/direct37 的限定证据已独立接受，后续浏览器入口首次执行在CDP前失败、0界面断言，不构成完整功能或 main/deployment approval。
 
 ## 已执行的源码审查与历史
 
 Root 对初版 `ed769f929a7efe01a279ddd85c2e1e88b46839e6` 只读源码检查指出 P2：当前草稿区的连续长 requested.model 没有 min-width/overflow-wrap 保护，390px Dialog 可能横向溢出。此为源码发现，未执行浏览器，不伪称实跑红。
 
-Owner 在 `f3a6a7ec89d5b3f789c49b0d8662401b23032ab2` 仅给既有 section 添加 minWidth:0 / overflowWrap:anywhere，并将 disabled thinking 明确显示“关闭思考”、effort 映射中文。browser 只同步“力度高”文本，原180字符 model、390几何/焦点/A-B-C验收全部保留。Root 已独立核对修复，P2 为 ADDRESSED_IN_SOURCE；真实390运行确认仍 NOT_RUN。
+Owner 在 `f3a6a7ec89d5b3f789c49b0d8662401b23032ab2` 仅给既有 section 添加 minWidth:0 / overflowWrap:anywhere，并将 disabled thinking 明确显示“关闭思考”、effort 映射中文。browser 只同步“力度高”文本，原180字符 model、390几何/焦点/A-B-C验收全部保留。Root 已独立核对修复，P2 为 ADDRESSED_IN_SOURCE；该审查时点真实390运行尚为NOT_RUN，现b5实际结果在末节单独绑定。
 
 Root 转述 peer 对 catalog/selection/direct 源码未发现 blocking；此不是产品测试通过或完整 leaf approval。原件已逐字归档：[root](../../docs/evidence/wpf-message-settings/root-f3-source-review.json)、[peer](../../docs/evidence/wpf-message-settings/peer-ed769-source-review.md)、[peer audit](../../docs/evidence/wpf-message-settings/peer-ed769-source-audit.json)。
 
 ## 审查入口
 
-[计划](plan.md)、[状态](status.md)、[当前六源绑定](../../docs/evidence/wpf-message-settings/source-manifest.json)、[初版绑定](../../docs/evidence/wpf-message-settings/source-manifest-initial.json)、[Interface](../../docs/evidence/wpf-message-settings/interface.md)。核公共 tuple/capability、旧目录兼容、取消代际、受控选择和 details 关闭焦点回调。当前目标仅named group/count/visible窄修已限定批准，原f3类型/direct检查已完成；b2限定准备审查已批准，后继b4实际已到达fixture但首定位器失败；真实App/Send/Queue/Recovery后继。
+[计划](plan.md)、[状态](status.md)、[当前六源绑定](../../docs/evidence/wpf-message-settings/source-manifest.json)、[初版绑定](../../docs/evidence/wpf-message-settings/source-manifest-initial.json)、[Interface](../../docs/evidence/wpf-message-settings/interface.md)。核公共 tuple/capability、旧目录兼容、取消代际、受控选择和 details 关闭焦点回调。当前目标仅named group/count/visible窄修已限定批准，原f3类型/direct检查已完成；b2准备/历史b4失败各自保留；最新b5实际4/4通过等待独立证据核验。真实App/Send/Queue/Recovery后继。
 
 ## 已执行的运行证据独立核验
 
@@ -54,3 +54,9 @@ Root于20:12:51.320495 UTC独立核固定270c的三行locator差异、六源hash
 270c locator源码已审；[b5软停止修复](../../docs/evidence/wpf-message-settings/root-browser-b5-repaired-review.json)已于20:34:01 UTC由root限定批准，0blocking，状态APPROVED_SCOPED_PREPARATION_NOT_RUN。handler记Cooperative stop/FAILED、终态与exit排stopping、outer finally恢复handlers并封存晚到stop；此前[补审P2](../../docs/evidence/wpf-message-settings/root-browser-b5-soft-stop-addendum.json)关闭为SOURCE_ADDRESSED。初批与旧边界接受原件仍保留，不将旧审批移绑新字节。
 
 [当前精确boundary](../../docs/evidence/wpf-message-settings/browser-b5-repaired-native-boundary-acceptance.json)由root依既有GO授权记录，parent ea3c / worker71a643；[当前候选与pins](../../docs/evidence/wpf-message-settings/browser-b5-preparation-archive.json)仅准备归档，PREPARED/no gate。Root的AST/源pins核验按其报告归因，owner未运行新parser/产品。实际第三次b4仍FAIL/0完成checks，累计20609、余39391；新b5未运行，完整feature顶层UNKNOWN、主线与实际host接线未完成。
+
+## 2026-10-06 20:47:23 UTC 当前b5实际证据复核入口（待独立结论）
+
+只读[原件/索引](../../docs/evidence/wpf-message-settings/browser-fourth-observation.json)：impl270c/实际0925，parent8267ms/PASS/实际exit0，worker4/4checks、两张390浅深截图、pageErrors[]，双owned组与scratch清理完成。累计28876/余31124，旧三次失败与noEmit/direct37/父countFAIL各自保留。完整native精确边界接受与gate在原件中，绝不由通过结果补造许可。
+
+作者只封存事实、未自批；本次controlled组件+synthetic HTTP目录不覆盖生产App/Send/Queue/Recovery/provider。源码准备批准与运行证据批准分开，当前独立运行证据审PENDING；本片完整review顶层UNKNOWN/main未集成。

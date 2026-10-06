@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS01：逐条消息设置选择控件
 
-状态：in-progress；创建：2026-10-06 18:11:03 UTC；最近更新：2026-10-06 20:38:50 UTC。直接父：[WPF-MATURE-02 / TODO-11](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)。本片为既有需求的受控选择控件，不另建大任务。
+状态：in-progress；创建：2026-10-06 18:11:03 UTC；最近更新：2026-10-06 20:47:23 UTC。直接父：[WPF-MATURE-02 / TODO-11](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)。本片为既有需求的受控选择控件，不另建大任务。
 
 ## 目标与范围
 
@@ -40,3 +40,5 @@ App/Thread、outbox/Queue/Recovery 与真实 requested/observed 读回不在本�
 ## 方法与质量
 
 遵循[根模块规则](../../AGENTS.md#modular-design)。本地 find-skills → codebase-design/clean-code/React 方法，来源与实际应用见[技能与质量](../../docs/evidence/wpf-message-settings/quality.md)。本片已有 root 批准方案，遵循其范围，不重复规划。
+
+2026-10-06 20:47:23 UTC：b5唯一fresh准入已实际4/4 browser checks通过，390双主题截图/完整清理可核；MSGSET-02已完成，MSGSET-03待固定证据独审与main接收。累计28876/60000，余量不代表重跑许可；真实host接线仍后继，不将leaf片段冒完整设置全链。

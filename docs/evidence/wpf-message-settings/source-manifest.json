@@ -53,7 +53,7 @@
   ],
   "protectedDiff": [],
   "readonlyCreationParameterPreserved": "configuredSelection(input: Immutable<DirectoryProfile>)",
-  "runtimeChecks": "Current locator-only delta NOT_RUN. Historical f3 strict noEmit/direct37 PASS and parent count FAIL preserved. Original1cd/18ede b4 reached fixture then first group locator strict failure; checks0, cumulative20609/60000ms. Scoped locator source review approved; new binding/gate required; no automatic rerun.",
+  "runtimeChecks": "270c/actual0925 one permitted b5 browser run: parentPASS/exit0, 4checks/two390screenshots, pageErrors[], complete dual-group/scratch cleanup; 8267ms, cumulative28876/60000. Independent runtime evidence review pending. Historical f3 types/direct37PASS and parent countFAIL preserved; old1cd first/b2/b4 browserFAIL preserved.",
   "previousImplementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
   "scopedSourceReview": {
     "verdict": "APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN",
@@ -69,5 +69,16 @@
     "boundaryAcceptance": "browser-b5-repaired-native-boundary-acceptance.json",
     "runtime": "NOT_RUN",
     "archive": "browser-b5-preparation-archive.json"
+  },
+  "browserRuntime": {
+    "observation": "browser-fourth-observation.json",
+    "run": "settings-b5-20261006-204433-4029cd",
+    "actualSourceHead": "0925d6e3b1c86c432449cbe324f4f8ebfe1ebf0e",
+    "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+    "checks": 4,
+    "parentExitCode": 0,
+    "outcome": "PASS",
+    "independentEvidenceReview": "PENDING",
+    "scope": "Independent controlled component + synthetic HTTP catalog; no App/send/queue/recovery/provider integration."
   }
 }
