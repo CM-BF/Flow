@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-execution-profile |
 | Branch | codex/engineering-execution-profile |
 | 工作基线 / HEAD | c5bab40ffd9a334403c0db743f798d10815961f0 / a750dbaa482ddd54aedd08495c66e73cc1458e53 |
-| 工作树dirty状态 | 仅最后manifest/review metadata；源码已冻结 |
+| 工作树dirty状态 | clean（本metadata提交后）；源码冻结 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | 123不同检查分轮通过；实际main 4自有进程正常关闭；最终root noEmit0，raw见delivery-types |
@@ -29,7 +29,7 @@
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
-| ENG01B-01 | completed | native_center_owner | [claim](../../docs/evidence/eng01b/claim.json)、Interface待固定 |
+| ENG01B-01 | completed | native_center_owner | [claim](../../docs/evidence/eng01b/claim.json)、Interface固定6c9fbfde；共享输入见manifest |
 | ENG01B-02 | completed | native_center_owner | 自有持久marker，未知lease不重建 |
 | ENG01B-03 | completed | native_center_owner | 已合入固定21e0a56c；中心用途门禁已验，main薄入口待接 |
 | ENG01B-04 | completed | native_center_owner | 41入口/旧维护+真实main2+role1；shared inputs固定已合 |
