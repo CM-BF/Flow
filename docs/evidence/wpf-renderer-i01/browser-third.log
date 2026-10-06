@@ -1,0 +1,12 @@
+11:33:01 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+PASS actual App renders shortened reply with zero initial detail reads, Enter reveals once and caches
+PASS native hidden removes its own renderer and resumes expanded cached reply and draft without another request
+PASS both split panes are readable while focus remains independent
+PASS disable remains disabled across hide/resume and keeps the host-authorized fallback
+PASS overview hides registrations without discarding the cached content, and closing a pane does not cancel execution
+PASS same-revision assistant content and history pagination still reach the official Thread
+PASS stable converter preserves new intent/onNew, running gates and the separate draft
+PASS late HTTP reply from old connection cannot fill a new center with the same conversation IDs
+PASS real App light/dark narrow keyboard and reduced-motion screenshots retain readable full reply
+11:33:11 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+PASS direct React consumer updates a same-visible new binding without polling and Activity keeps expanded cache

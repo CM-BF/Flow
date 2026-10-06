@@ -1,30 +1,18 @@
-import { createContext, useContext, useEffect, useMemo, useState, useSyncExternalStore } from "react";
-import { AssistantRuntimeProvider, makeAssistantDataUI, MessageNotSentError, useExternalStoreRuntime } from "@assistant-ui/react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { AssistantRuntimeProvider, MessageNotSentError, useExternalStoreRuntime, type ThreadMessageLike } from "@assistant-ui/react";
 import { TERMINAL_STATUSES, conversationTurnSchema, conversationQueueEnqueueSchema, type ConversationTurn, type ConversationSnapshot, type ConversationCreation } from "@flow/contracts";
 import { Thread } from "../components/assistant-ui/elements/thread.aui";
-import { ComposerActions, MessageActions, PluginThreadScope } from "../plugin-integration/react";
+import { ComposerActions, MessageActions, PluginThreadScope, ConversationDataRenderers } from "../plugin-integration/react";
 import { fixtureMode, type DraftState } from "../TaskThread";
 import { conversationMessages, messageTask } from "./messages";
-import { ConversationProjection, replyDetailKey } from "./projection";
+import { ConversationProjection } from "./projection";
 import { ExecutionProfilePicker } from "../execution-profiles/ExecutionProfilePicker";
 import type { ExecutionProfileCatalog } from "../execution-profiles/catalog";
 import { freezeConversationCreation, type ProfileSelection } from "../execution-profiles/selection";
 import { ConversationQueue } from "./queue/ConversationQueue";
 import "./conversations.css";
 
-const ReplyContext = createContext<ConversationProjection | null>(null);
-const ReplyDetail = makeAssistantDataUI<{ turnId: string }>({ name: "flow-reply-detail", render: ({ data }) => {
-  const projection = useContext(ReplyContext)!;
-  const state = useSyncExternalStore(projection.subscribe, projection.getSnapshot);
-  const [expanded, setExpanded] = useState(false);
-  const turn = state.turns.find(turn => turn.id === data.turnId);
-  const key = turn && state.snapshot && replyDetailKey(state.snapshot.conversation.id, turn);
-  const detail = key ? state.details[key] : undefined;
-  return <div className="flow-reply-detail"><p>This reply is shortened.</p>
-    <button className="flow-link" aria-expanded={expanded} onClick={() => { setExpanded(value => !value); if (!expanded) void projection.loadReply(data.turnId); }}>{expanded ? "Hide full reply" : "Read full reply"}</button>
-    {expanded && <div>{detail?.loading && <p role="status">Loading full reply…</p>}{detail?.error && <p role="alert">{detail.error} <button className="flow-link" onClick={() => void projection.loadReply(data.turnId)}>Retry reply</button></p>}{detail?.data && <pre>{detail.data.content}</pre>}</div>}
-  </div>;
-} });
+const convertConversationMessage = (message: ThreadMessageLike) => message;
 const components = { MessageActions, ComposerActions, Welcome: () => <div className="flow-conversation-welcome"><h1>What’s on your mind?</h1><p>Start a conversation. Keep the next thought in your draft while Flow replies.</p></div> };
 
 function TurnStatus({ turn, requested, onInspect, onOpenTask }: { turn: ConversationTurn; requested: ConversationSnapshot["conversation"]["requested"] | undefined; onInspect: (id: string) => void; onOpenTask: (id: string) => void }) {
@@ -38,8 +26,8 @@ function TurnStatus({ turn, requested, onInspect, onOpenTask }: { turn: Conversa
     </details>
   </div>;
 }
-export function ConversationThread({ viewId, projection, drafts, profiles, profileSelection, onProfileSelection, onAccepted, onInspect, onCurrentTask, onOpenTask }: {
-  viewId: string; projection: ConversationProjection; drafts: Map<string, DraftState>;
+export function ConversationThread({ viewId, visible, projection, drafts, profiles, profileSelection, onProfileSelection, onAccepted, onInspect, onCurrentTask, onOpenTask }: {
+  viewId: string; visible: boolean; projection: ConversationProjection; drafts: Map<string, DraftState>;
   profiles: ExecutionProfileCatalog; profileSelection: ProfileSelection; onProfileSelection: (selection: ProfileSelection) => void;
   onAccepted: (id: string) => void; onInspect: (taskId: string) => void; onCurrentTask: (taskId: string) => void; onOpenTask: (taskId: string) => void;
 }) {
@@ -60,7 +48,7 @@ export function ConversationThread({ viewId, projection, drafts, profiles, profi
   const reason = projection.sendDisabledReason(intent) ?? profileReason();
   const last = state.snapshot?.lastTurn;
   useEffect(() => { if (last) onCurrentTask(last.task.id); }, [last?.task.id]);
-  const runtime = useExternalStoreRuntime({ messages, convertMessage: message => message,
+  const runtime = useExternalStoreRuntime({ messages, convertMessage: convertConversationMessage,
     isRunning: Boolean(last && !TERMINAL_STATUSES.includes(last.task.status)), isLoading: state.loading || Boolean(state.error && !state.snapshot), isSendDisabled: Boolean(reason),
     onNew: async message => {
       const blocked = projection.sendDisabledReason(intent) ?? profileReason();
@@ -89,8 +77,7 @@ export function ConversationThread({ viewId, projection, drafts, profiles, profi
       drafts.set(viewId, { harness: "claude", scenario: "success", text: runtime.thread.composer.getState().text });
     });
   }, [runtime, viewId, drafts]);
-  return <PluginThreadScope editableComposer viewId={viewId} taskId={last?.task.id ?? null} messageTask={id => messageTask(state.turns, id)}><ReplyContext.Provider value={projection}><AssistantRuntimeProvider runtime={runtime}>
-    <ReplyDetail />
+  return <PluginThreadScope editableComposer viewId={viewId} taskId={last?.task.id ?? null} messageTask={id => messageTask(state.turns, id)}><AssistantRuntimeProvider runtime={runtime}><ConversationDataRenderers viewId={viewId} projection={projection} visible={visible}>
     <Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
       composerSubmit={intent === "queue" ? () => { if (!projection.sendDisabledReason("queue")) runtime.thread.composer.send({ startRun: false }); } : undefined}
       composerInputOnKeyDown={event => {
@@ -103,5 +90,5 @@ export function ConversationThread({ viewId, projection, drafts, profiles, profi
       composerHeader={<>{!lockedProfile && !viewId.startsWith("draft-") ? <p role="status">Loading conversation configuration…</p> : <ExecutionProfilePicker catalog={profileCatalog} selection={profileSelection} onSelect={onProfileSelection} onRefresh={() => { void profiles.refresh(); }} onLoadMore={() => { void profiles.loadMore(); }} locked={lockedProfile} />}<div className="flow-conversation-controls" aria-label="Conversation capabilities"><button disabled title="Per-turn thinking controls are unavailable">Thinking</button><button disabled title="Per-turn tool controls are unavailable">Tools</button><fieldset className="flex items-center gap-2" aria-label="Message delivery"><label><input type="radio" name={`delivery-${viewId}`} checked={intent === "follow-up"} onChange={() => setIntent("follow-up")} /> Send now</label><label><input type="radio" name={`delivery-${viewId}`} checked={intent === "queue"} disabled={!queue.available} onChange={() => setIntent("queue")} /> Queue next</label></fieldset><button disabled title="Steering is not available in this Web version">Steer</button></div></>}
       footer={<div className="flow-conversation-footer">{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{sendError && <p role="alert">{sendError}</p>}<p role="status">{reason ?? (state.snapshot ? "Continue this conversation." : "Your message starts a new conversation.")}</p><span>Replies appear when complete. Steering and per-turn controls are unavailable. Queue next uses durable center acceptance; unresolved receipts are local to this page.</span></div>}
     />
-  </AssistantRuntimeProvider></ReplyContext.Provider></PluginThreadScope>;
+  </ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
 }

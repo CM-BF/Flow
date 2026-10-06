@@ -202,6 +202,7 @@ interface View {
 interface PanelFocusRequest { serial: number; taskId: string; tab: WorkspaceTabId }
 function ChatPane({
   viewId,
+  visible,
   view,
   drafts,
   profiles,
@@ -214,6 +215,7 @@ function ChatPane({
   onOpenTask,
 }: {
   viewId: string;
+  visible: boolean;
   view: View;
   drafts: Map<string, DraftState>;
   profiles: ExecutionProfileCatalog;
@@ -231,7 +233,7 @@ function ChatPane({
   );
   const [confirm, setConfirm] = useState(false);
   const task = state.task;
-  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewId={viewId} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
+  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
   if (!task && !viewId.startsWith("draft-")) return <section className="flow-no-chat" aria-label="Task loading state">
     {state.error ? <><p role="alert">Could not load this task: {state.error}</p><Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button></> : <p role="status">{state.connection === "disconnected" ? "Task is not loaded. Reconnect to the center or retry." : "Loading task…"}</p>}
     {!state.error && state.connection === "disconnected" && <Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button>}
@@ -835,6 +837,7 @@ function Workspace({
                     >
                       <ChatPane
                         viewId={id}
+                        visible={!overview && pageVisible && group.activeId === id}
                         view={views.get(id)!}
                         drafts={drafts}
                         profiles={profiles}

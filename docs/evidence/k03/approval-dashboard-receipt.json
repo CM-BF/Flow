@@ -1,0 +1,314 @@
+{
+  "generatedAt": "2026-10-06T06:37:54.382Z",
+  "task": {
+    "id": "K03",
+    "title": "目标节点知识引用",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context",
+    "branch": "codex/goal-knowledge-context",
+    "planDir": "plans/k03-goal-knowledge-context",
+    "evidenceDir": "docs/evidence/k03",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-06T06:37:44.905Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context/plans/k03-goal-knowledge-context/status.md",
+      "syncedAt": "2026-10-06T06:37:54.382Z",
+      "stale": false,
+      "ageHours": 0.014828333333333334
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/goal-knowledge-context",
+      "head": "eae9f1c33cec83dc68538d069c2afa5011a9aa55",
+      "dirty": true,
+      "changedFiles": 6,
+      "observedAt": "2026-10-06T06:37:55.511Z"
+    },
+    "status": {
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "节点固定知识输入与过期保护已通过独立审查，实际执行保留完整原文",
+        "next": "接入生产入口并完成产品接收",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": "21d2e05eb571e44883589eb38bff6b5a4b2eaeb7",
+        "scopes": [
+          "apps/server/src/goal-context",
+          "apps/server/src/goal-tool-runs/runner.ts",
+          "apps/server/src/goals/state.ts",
+          "packages/contracts/src/goal-context.ts",
+          "packages/contracts/src/goals.ts",
+          "apps/server/src/goals/commands.ts",
+          "apps/server/src/reconciliation.ts",
+          "apps/server/src/runners.ts",
+          "packages/storage/migrations/021-goal-context.sql",
+          "docs/evidence/k03/check.mjs"
+        ],
+        "errors": []
+      },
+      "taskId": "K03",
+      "owner": "b01_bounded_reads / gpt-6-astra ultra；lead mika",
+      "branch": "codex/goal-knowledge-context",
+      "branchState": "reviewed",
+      "updatedAt": "2026-10-06T06:37:01.000Z",
+      "updatedRecord": "2026-10-06 06:37:01 UTC",
+      "todos": [
+        {
+          "id": "K03-01",
+          "state": "completed",
+          "owner": "b01_bounded_reads",
+          "evidence": "DTO/021/migrate/register/private接口已固定"
+        },
+        {
+          "id": "K03-02",
+          "state": "completed",
+          "owner": "b01_bounded_reads",
+          "evidence": "冻结/详情/过期真实依赖传播已验证"
+        },
+        {
+          "id": "K03-03",
+          "state": "completed",
+          "owner": "b01_bounded_reads",
+          "evidence": "实际claim/原runtime adapter/C02两种恢复已验证"
+        },
+        {
+          "id": "K03-04",
+          "state": "completed",
+          "owner": "b01_bounded_reads / Mika",
+          "evidence": "44不同用例与noEmit通过；Mika已绑定固定target独立批准，无未解决P1/P2"
+        },
+        {
+          "id": "K03-05",
+          "state": "pending",
+          "owner": "Lead / Goal Owner",
+          "evidence": "未集成、未验收"
+        },
+        {
+          "id": "K03-06",
+          "state": "pending",
+          "owner": "后继owner",
+          "evidence": "后继保持开放"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "branch base a6c9b09a8a4d4020a497341d3fb6deed16b08d02；共享固定base acfd409a493315a00f1cc19ac96c5f1b36c19e57；implementation HEAD 21d2e05eb571e44883589eb38bff6b5a4b2eaeb7",
+      "declaredDirty": "已核 eae9f1c33cec83dc68538d069c2afa5011a9aa55 clean；本次仅独审metadata，产品源码持续停写",
+      "checks": {
+        "state": "passed",
+        "target": "21d2e05eb571e44883589eb38bff6b5a4b2eaeb7",
+        "record": "PASSED 21d2e05eb571e44883589eb38bff6b5a4b2eaeb7；20新领域+24直接消费者=44不同用例，noEmit exit0；限定见README"
+      },
+      "reviewRecord": "[review.md](review.md)，APPROVED；Mika独立技术review，Goal Owner产品验收另行接收",
+      "mainRecord": "本片段未集成；06:36:52 UTC dashboard观察main a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8 尚未包含目标；等待Execution Lead受控集成回执",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "approved",
+      "record": "APPROVED",
+      "target": "21d2e05eb571e44883589eb38bff6b5a4b2eaeb7",
+      "proof": {
+        "target": "21d2e05eb571e44883589eb38bff6b5a4b2eaeb7",
+        "head": "eae9f1c33cec83dc68538d069c2afa5011a9aa55",
+        "scopes": [
+          "apps/server/src/goal-context",
+          "apps/server/src/goal-tool-runs/runner.ts",
+          "apps/server/src/goals/state.ts",
+          "packages/contracts/src/goal-context.ts",
+          "packages/contracts/src/goals.ts",
+          "apps/server/src/goals/commands.ts",
+          "apps/server/src/reconciliation.ts",
+          "apps/server/src/runners.ts",
+          "packages/storage/migrations/021-goal-context.sql",
+          "docs/evidence/k03/check.mjs"
+        ],
+        "observedAt": "2026-10-06T06:37:55.648Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/k03/README.md",
+          "docs/evidence/k03/dashboard-receipt.json",
+          "docs/evidence/k03/interface.md",
+          "docs/evidence/k03/manifest.json",
+          "docs/evidence/k03/quality.md",
+          "plans/k03-goal-knowledge-context/plan.md",
+          "plans/k03-goal-knowledge-context/review.md",
+          "plans/k03-goal-knowledge-context/status.md",
+          "docs/evidence/k03/independent-review.json"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "declarationProof": "unchanged"
+    },
+    "implementationProof": {
+      "target": "21d2e05eb571e44883589eb38bff6b5a4b2eaeb7",
+      "head": "eae9f1c33cec83dc68538d069c2afa5011a9aa55",
+      "scopes": [
+        "apps/server/src/goal-context",
+        "apps/server/src/goal-tool-runs/runner.ts",
+        "apps/server/src/goals/state.ts",
+        "packages/contracts/src/goal-context.ts",
+        "packages/contracts/src/goals.ts",
+        "apps/server/src/goals/commands.ts",
+        "apps/server/src/reconciliation.ts",
+        "apps/server/src/runners.ts",
+        "packages/storage/migrations/021-goal-context.sql",
+        "docs/evidence/k03/check.mjs"
+      ],
+      "observedAt": "2026-10-06T06:37:55.648Z",
+      "state": "unchanged",
+      "implementationChanges": [],
+      "outsideChanges": [],
+      "metadataChanges": [
+        "docs/evidence/k03/README.md",
+        "docs/evidence/k03/dashboard-receipt.json",
+        "docs/evidence/k03/interface.md",
+        "docs/evidence/k03/manifest.json",
+        "docs/evidence/k03/quality.md",
+        "plans/k03-goal-knowledge-context/plan.md",
+        "plans/k03-goal-knowledge-context/review.md",
+        "plans/k03-goal-knowledge-context/status.md",
+        "docs/evidence/k03/independent-review.json"
+      ],
+      "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+    },
+    "documents": [
+      {
+        "path": "plans/k03-goal-knowledge-context/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/k03-goal-knowledge-context/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/k03-goal-knowledge-context/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/k03/claim-receipt.json",
+        "title": "回执",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/k03/commands-migration-receipt.json",
+        "title": "commands/migration",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/k03/reconciliation-handoff-receipt.json",
+        "title": "回执",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/k03/runner-handoff-receipt.json",
+        "title": "receipt",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/k03/manifest.json",
+        "title": "manifest",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/k03/README.md",
+        "title": "README",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/k03/dashboard-receipt.json",
+        "title": "receipt",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/k03/independent-review.json",
+        "title": "独审记录",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 4,
+      "total": 6
+    },
+    "main": {
+      "record": "本片段未集成；06:36:52 UTC dashboard观察main a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8 尚未包含目标；等待Execution Lead受控集成回执",
+      "recordedHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "target": "21d2e05eb571e44883589eb38bff6b5a4b2eaeb7",
+      "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+      "scopes": [
+        "apps/server/src/goal-context",
+        "apps/server/src/goal-tool-runs/runner.ts",
+        "apps/server/src/goals/state.ts",
+        "packages/contracts/src/goal-context.ts",
+        "packages/contracts/src/goals.ts",
+        "apps/server/src/goals/commands.ts",
+        "apps/server/src/reconciliation.ts",
+        "apps/server/src/runners.ts",
+        "packages/storage/migrations/021-goal-context.sql",
+        "docs/evidence/k03/check.mjs"
+      ],
+      "observedAt": "2026-10-06T06:37:55.511Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "not-contained",
+      "scopeEqual": false,
+      "dirtyScopePaths": [],
+      "reason": "main 声明范围与目标不同，或存在未提交变化"
+    },
+    "assignments": [
+      {
+        "lead": "mika",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/server/src/goal-context",
+          "apps/server/src/goal-tool-runs/runner.ts",
+          "apps/server/src/goals/commands.ts",
+          "apps/server/src/goals/state.ts",
+          "apps/server/src/reconciliation.ts",
+          "apps/server/src/runners.ts",
+          "docs/evidence/k03",
+          "packages/contracts/src/goal-context.ts",
+          "packages/contracts/src/goals.ts",
+          "packages/storage/migrations/021-goal-context.sql",
+          "plans/k03-goal-knowledge-context"
+        ],
+        "state": "active",
+        "branch": "codex/goal-knowledge-context",
+        "origin": "new",
+        "taskId": "K03",
+        "worker": "b01_bounded_reads",
+        "claimId": "fcde300a-4851-415a-ae42-74009f721920",
+        "version": 4,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context",
+        "createdAt": "2026-10-06T06:04:25.366Z",
+        "updatedAt": "2026-10-06T06:17:23.731Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ]
+  }
+}

@@ -130,3 +130,9 @@ CHAT05产品57d+首次020旧库证据修复216由Mika独立APPROVED；F01公共�
 生产020在scheduler/default scan前、owner hook后routes；F01真实PG/HTTP测试1与薄transport1均通过，独立随机库正常创建删除；cancel后工具unknown、重启保留、轻列表不含输入/输出正文。0provider。展示仍是独立模块，未主App挂载/实时水位；CHAT05保留64KiB前缀与full digest，余文不可追回。CHAT06增量正文和X05持久下载操作已领独立范围，75源注册仅解析/路径校验，不重测架构。
 
 full-plan-matrix已按main115b对齐REQ01/08/10/11/15/19/21/22及滚动队列，仍保留知识选择UI、KB向量、真正native规划、完整npm/工程harness/FS/PTY/100会话未完。实际个人center/runner仍fb906，本批不重启它们。
+
+## 2026-10-06 06:48 UTC K03 / rendererI / architecture
+
+受控接收 K03领域21d2（Mika APPROVED；final8776798）、薄client77465与生产44bd（Root APPROVED）、Web rendererI8014（Web独审，final2a420）、D06ff5ca（Web独审，finale7e37）。各固定scope对候选实现零diff，记录见k03-renderer-source-comparison.json。组合仅root/Web typecheck各exit0、实际消息详情直接消费者8/8、固定架构10/10；原始stdout分别保存k03-renderer-*.txt。未重复K03领域44、Web独审31、PG或模型调用。已批准X05薄client07随共享分支进入，此处仅类型/传输，023下载worker未挂载。
+
+本段clean-code/codebase-design复核：知识冻结与public/private读取边界仍在领域层，renderer只读port保持惰性详情，架构固定115b不追moving；无手工源冲突，无新依赖。CHAT06能力合同86fc及正文领域/022暂未进入本批，旧timeline兼容P2由独立CHAT06C02修复；个人center/runner仍fb906，main发布不等运行升级。

@@ -1,31 +1,30 @@
 # D06 固定基线架构刷新
 
-状态：in-progress。更新：2026-10-06 05:34 UTC。唯一 owner：w01_owner；派发模型 gpt-6-astra / ultra（运行时未另提供型号证明）。
+状态：completed（分支交付；main待集成）。更新：2026-10-06T06:40:59Z。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
 
-目标：沿既有五视图，将源码事实刷新到固定已发布提交 `eb14991a170b72d7d974428b2e440e1faada2c1e`，并在标题旁公开固定快照与源码核验时间。该图不代表实时服务部署或所有在研分支。
+目标：沿既有五视图，将架构源码事实刷新到固定 main `115b0dbdfa02db5483f9e9699852682ce699633c`，清楚区分代码已集成、仅独立模块、后继计划与真实服务。本轮没有产品运行改动。
 
-## 已确认范围
+## 范围和已确认方案
 
-- worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current`；branch `codex/dashboard-architecture-current`；base eb14991。
-- 正式 [take receipt](../../docs/evidence/d06/current/take-receipt.json)：e5b2fb56-8e3a-40b7-bfa4-192f34187c0b v1；05:26:27.385Z live 核 active，旧 D06 f619 v2 已释放。旧树只读，唯一来源由 Lead 迁移，不新增第二 D06。
-- 五个 literal scopes：architecture-data.js、architecture.js、architecture.test.mjs、本目录、docs/evidence/d06。CSS/index/server/registry/shared 不改。
-- 保留单一 baseline 数据、五视图与任务状态机语义；只修正已集成/规划和固定来源。标题与底部消费同一 baseline，显示短 SHA、UTC 核验时间与非实时声明。
-- O05 已包含于本基线；K01/O06/SVC02 只作 planned。持续聊天、执行配置、插件管理、队列中心、R04/P03 按固定源码逐项核验，不能从依赖存在推运行验收。常驻 61227 仍是历史 75a 服务，不能称本轮升级。
-- 产品 PG 正文、独立工程领取 PG、assistant-final/usage/verification/task status 的边界保持。架构影响仅策展图与固定版本提示，不改运行 Interface。
+新树 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-context`，branch `codex/dashboard-architecture-context`，base 115b。[正式领取](../../docs/evidence/d06/context/take-receipt.json) claim981d7c08-a145-4846-b456-496fe0ce5c83 v1，06:26:57.559Z committed，06:27:16.818Z owner核live active。旧e5b2 v2已释放且旧owner停写；唯一source迁移由Lead完成，本树不写registry。
 
-## TODO 与验收
+四literal scopes：`apps/execution-dashboard/public/architecture-data.js`、`apps/execution-dashboard/test/architecture.test.mjs`、`plans/d06-architecture-refresh`、`docs/evidence/d06`。renderer architecture.js/CSS/index/server/shared/根依赖不改。证据下新可执行检查脚本属于实现target和scope。
 
-- [x] D06-01：新树/claim/技能与同一 canonical 来源切换；保留旧 8f 审查历史。
-- [x] D06-02：固定 eb 源码核验、刷新五图事实与标题，所有链接统一同一提交。
-- [x] D06-03：局部 Node/source 检查与动态独立预览；五图、双主题、390px、键盘、减少动画；记录 clean-code。
-- [ ] D06-04：固定候选独立 review、真实聚合与 Lead 集成；实现审查和 main/服务分别记录。
+固定源码核Queue Web真实控件、K01/K02、O06/O07、X04；X04只包校验落盘，不能写成npm安装/启用。renderer747已含模块但App未接，CHAT05/06不在基线则planned。当前图不是实时运行拓扑；个人服务历史fb906与本115b快照分别描述，不变更任何服务。使用同一baseline生成source链接，planned节点也必须有115b可验证来源。
 
-## 验证与边界
+## TODO
 
-不安装新依赖、不调模型或产品数据库，不改 4320/旧 55247 等服务。公开模块与静态 HTTP 局部测试，浏览器只用独立动态预览。运行验证单列原证据来源，不重跑产品套件，不声明容量/真实模型/新服务已通过。新实现 target 默认 NOT_STARTED，不继承旧 approval。
+- [x] D06-01：新树、正式claim、技能、旧canonical原样归档与唯一source迁移交接。
+- [x] D06-02：固定115b源码核验，更新五视图数据与精确来源。
+- [x] D06-03：局部Node/source检查与动态预览，双主题390px、键盘与减少动画，记录clean-code。
+- [x] D06-04：固定实现独立review、唯一聚合与Lead集成交接；main/部署分别记录。
 
-旧轮：ef42277ff55d1cbb76ea707836481a9788619033/base8f 独审 APPROVED 并已集成，其 [plan](../../docs/evidence/d06/current/historical-8f-plan.txt)、[status](../../docs/evidence/d06/current/historical-8f-status.txt)、[review](../../docs/evidence/d06/current/historical-8f-review.txt) 原文保留；其中旧 active claim 是当时记录，当前领取以新 receipt/live 为准。
+## 验证与历史
 
-[status](status.md) · [review](review.md) · [本轮质量](../../docs/evidence/d06/current/quality.md)
+仅现有图检查和新事实直接校验；无模型/产品DB/全库/真实服务重启。架构影响为固定策展数据，没有新增运行Interface。当前root独立review APPROVED ff5ca7c880910841e8180df7632753c81aea2492，不继承历史approval。
 
-05:33:19 UTC root正式APPROVED最终5ec6ce2，R2来源修正关闭；D06-04的review已完成，Lead集成/最终聚合仍待，故不提前勾选整项。
+[旧eb轮索引](../../docs/evidence/d06/context/history.md)保留原三件套txt及历史source路径语义；其5ec目标曾批准并已含本base，不代表本轮批准。原D06-01..04稳定ID沿用。source登记由manager/Lead单点迁移。
+
+[status](status.md) · [review](review.md) · [本轮证据](../../docs/evidence/d06/context/README.md)
+
+固定实现 `ff5ca7c880910841e8180df7632753c81aea2492` 已交root独审；作者10局部检查与五图browser通过，图/browser/preview三文件hash不变复用原browser；两检查脚本复审修复后重跑Node/source，[验证](../../docs/evidence/d06/context/validation.md)。D06-04仍待修复独立复审与Lead交付；06:36唯一聚合已确认，main尚未集成，未提前勾选。

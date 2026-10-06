@@ -1,0 +1,31 @@
+{
+  "base": "115b0dbdfa02db5483f9e9699852682ce699633c",
+  "implementationTarget": "8014cf9be49391157fb54eeb857a41ee1d6af68c",
+  "sourceFiles": {
+    "apps/web/src/App.tsx": "3c358413cb386b78be59e3723973e0d007b5138eb9ac4b7eed4a0d70559b81b1",
+    "apps/web/src/conversations/ConversationThread.tsx": "c2fc59a0ea7874c29f1ae25216bad0b146e2b5f19f0cab756672db7da8dd8d47",
+    "apps/web/src/plugin-integration/session.ts": "89fe431bc8106d9401bb3e33f4d6d653511fe52717a665d23449bb74009ece97",
+    "apps/web/src/plugin-integration/react.tsx": "794897088a4150365d1a65ba532fd706cf70959c09584e14e3403caf57b87dab",
+    "apps/web/src/plugin-integration/data-renderers.ts": "868d7915f6d95eacdb6d7a1e647e5873a1987c84ee84cf7abe46d69e61a4b8e6",
+    "apps/web/test/data-renderer-integration.test.ts": "17a19aca875ae5094c8315b684db7213d657be6e5e3db284289b32e7d151e4fb",
+    "apps/web/test/data-renderer-integration.browser.ts": "ea59eeb8e98e3bee16148d23b8c21b0ef4c8785c0f2444910bd6f1ad6d8eeb3e"
+  },
+  "reports": {
+    "development-browser.json": "0290d56e4c7af27cb7e1964d2cb8e128e04f29a5af5219cdd74ec026c57b8609",
+    "production-browser.json": "d0877d6d33ec2bedb3312d44679e0d69bf319fdf081d6d5c1a4a99d3d4857f7c"
+  },
+  "currentSourceEqualsTarget": true,
+  "guardedPathsDiff": "packages, root manifest/lock, data-renderers module, plugins, conversation projection/outbox, official Thread: empty",
+  "productionAssets": {
+    "index.html": "db8bf091ff18d2eb71e8524ffa706d72964548d930eb598dfe0ca31f29c1c617",
+    "assets/workspace-BQZJ0GrI.js": "898928dac3fa03d78be02eb06d6630717ea85139615011bf558094a7ff7741ea",
+    "assets/assistant-ui-CcdakA0V.css": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5",
+    "assets/assistant-ui-BVxBYM--.js": "52f802179b182d106a98f3654dc28b2fdbb8e47302a07d61b2443bdaa4f66c84",
+    "assets/theme-CAUb6x2Q.js": "cf55aceeb28e1386011fcfab5730c5d673659723a1ef5dd210ac2c564d54303b",
+    "assets/index-DfrGBhOt.js": "96e8872abb38949f1976114863ceae5028533e68a727d62fc6caa31c51d03a3b",
+    "assets/PluginManagement-B58UCVn-.js": "42c4b8d04b3804289c421f6af5f93474660ecd9b7c0a366eef853ae692229eb1",
+    "assets/rolldown-runtime-qXqUbbKo.js": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51",
+    "assets/index-C9jPWYF2.css": "38eda6181a69b73427cd65cb17e6ad16461da9218416b564b1feebe57d5db861",
+    "assets/PluginManagement-Dok11XwQ.css": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9"
+  }
+}
