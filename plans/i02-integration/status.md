@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:39:09 UTC / main0cee7556befa1988e60bae94b510240122c34b88 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:49:32 UTC / main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 0cee7556befa1988e60bae94b510240122c34b88 / 已审ENG01A E0+E1与129来源候选 |
+| 工作基线 / HEAD | 21e0a56c4b2b65a04a1e8d510a9d132e77c3894b / 已审看板内部读取优化与131来源候选 |
 | 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | 14工程源码固定hash一致；新S01停止语义下3个直接PG旅程通过，2未选；根类型检查通过，10主线保护文件零差 |
-| 已集成main状态 / HEAD | 终端确认/执行器停止0cee已推送；本批工程通路与129源即将fast-forward。个人backend/static仍b1c2e398、accepting v12。 |
+| 检查状态 | 3固定源码hash一致；main原proof/aggregate输入未变；131来源解析通过。复用独立27项行为检查，未重复性能实验。 |
+| 已集成main状态 / HEAD | 工程核心与原生配置目录已main21e；本批看板读取优化与131来源待fast-forward。个人backend/static仍b1c2e398 accepting v12。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 受管工程工作区可以保存真实文件修改、固定检查结果，并在未知结果或确认丢失后保持原执行事实。 |
-| 下一可用交付 | 工程执行配置和启动恢复入口；真实网页新旧版本兼容验证继续。 |
+| 当前产出 | 工程核心与原生配置目录已进入主线，看板正在接入减少重复源码读取的改进。 |
+| 下一可用交付 | 固定工程执行配置和终端逐段正文；真实网页发布兼容审查继续。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
