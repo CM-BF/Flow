@@ -1,10 +1,10 @@
 # F01 共享接线审查
 
-**当前增量状态：APPROVED（Root独立只读，020活动公共接线）**
+**当前增量状态：NOT_STARTED（X05薄client）**
 
-Review target commit：9ea33ef61da2304123d08ea87558023d63b38468
+Review target commit：07b1b11060c069db76f9f958f92c1c53af9fca46
 
-Scope：apps/server/src/index.ts、packages/contracts/src/index.ts、packages/client/src/index.ts、packages/client/src/native-activity.test.ts、packages/client/src/native-activity-production.test.ts。证据：activity-mount-manifest.json；既往549/d640审批仅对应各自范围。
+Scope：packages/client/src/index.ts、packages/client/src/package-fetches.test.ts、packages/contracts/src/index.ts。manifest：docs/evidence/f01/package-fetch-client-manifest.json；领域1405551仅固定合同输入，不冒称产品已审。
 
 ## K01薄client独立批准
 Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。

@@ -11,15 +11,15 @@
 | 工作树dirty状态 | 固定实现，当前仅metadata更新 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
-| 已集成main状态 / HEAD | 115b0dbdfa02db5483f9e9699852682ce699633c 已推送，018/019+Web兼容/renderer模块及X04已接收；020公共接线本分支待独审。实际center/runner仍fb906cb |
-| Review | Root独立APPROVED9ea33ef61da2304123d08ea87558023d63b38468；历史549+d640已批准并main，见review.md |
-| 实现目标 | 9ea33ef61da2304123d08ea87558023d63b38468 |
-| 实现范围 | apps/server/src/index.ts, packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/native-activity.test.ts, packages/client/src/native-activity-production.test.ts |
+| 已集成main状态 / HEAD | acfd409a493315a00f1cc19ac96c5f1b36c19e57 已推送，020公共接线/领域及活动展示模块已接收；X05薄client本分支待独审。实际center/runner仍fb906cb |
+| Review | 07b1b11060c069db76f9f958f92c1c53af9fca46 薄client待独审；020 9ea已Root批准并main |
+| 实现目标 | 07b1b11060c069db76f9f958f92c1c53af9fca46 |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/package-fetches.test.ts, packages/contracts/src/index.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
 | 当前产出 | 真实运行中排队与同会话回复已验证，关闭测试浏览器后后台继续、重开正文可见 |
-| 下一可用交付 | 可读取真实工具活动，展开时取得输入和结果详情 |
+| 下一可用交付 | 让包下载操作可以持久受理、查询和核对恢复 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -75,6 +75,10 @@
 
 2026-10-06 06:20 UTC：Root限定复审APPROVED，C02资源隔离P2关闭。旧34日志保留，其中旧C02运行前资源归属NOT_PROVEN；新随机库完整create/drop事实与12/12、tsc可核。X04依赖9cde获runner_owner独立只读批准。仅本次审查/metadata变化，无产品重测。
 
-| F01-17 | in-progress | Lead | 9ea33ef61da2304123d08ea87558023d63b38468 020生产挂载+两owner方法，2/2（1真实PG/HTTP+1薄传输）及tsc通过，待独审；无模型 |
+| F01-17 | completed | Lead | 9ea33ef61da2304123d08ea87558023d63b38468 020生产挂载+两owner方法，2/2（1真实PG/HTTP+1薄传输）及tsc通过，待独审；无模型 |
 
 2026-10-06 06:28 UTC：020薄client+生产挂载获Root独立只读APPROVED；领域216由Mika独立批准。保留0provider/64KiB截断不可追回余文边界，下一动作main接收。
+
+| F01-18 | in-progress | Lead | X05固定合同1405551的5个薄client方法，1/1HTTP+tsc，target07b1b11060c069db76f9f958f92c1c53af9fca46待独审；PG/worker未就绪不挂生产 |
+
+2026-10-06 06:30 UTC：X05只消费固定领域合同，未知状态/409/abort原样传递，不暗重试。契约1405551来源保留，无本片领域或模型能力推断。

@@ -148,3 +148,6 @@ GO review caught the original legacy34 C02 fixture reusing fixedflow_c02, resett
 
 ### 2026-10-06 06:26 UTC CHAT05公共接线
 固定9ea33ef61da2304123d08ea87558023d63b38468，2红（缺route/client）→2绿2.22s+tsc。独立随机库真实CREATE确认/普通DROP与remaining[]见activity-production-facts.json；没有手动module挂载/migration。轻metadata与显式详情、鉴权/AbortSignal/重启/cancel unknown验证，modelQueries0。clean-code：仅薄方法与3行生产挂载，复用原report/存储/错误；无新loop/重复领域逻辑。独立review待接，manifest绑定5源码/5输出。
+
+### 2026-10-06 06:30 UTC X05薄client
+固定07b1b11060c069db76f9f958f92c1c53af9fca46；5方法按固定1405551合同透传受理/当前状态/分页/history/显式重试核对。真实HTTP1红→1绿、types通过；409/abort不重试，receipt不当当前可变状态，strict输入schema与key/URL/原文断言保留。无PG/worker/model；clean-code仅薄传输，无领域逻辑复制。见package-fetch-client-manifest.json。
