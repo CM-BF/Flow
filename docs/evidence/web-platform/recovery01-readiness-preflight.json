@@ -233,5 +233,28 @@
     },
     "boundary": "Public compactbody bounds, not actualjournal128KiB verification; example envelope not canonical; commands128xreserve32KiB already4MiB; all counts conjunctive not promised occupancy",
     "managerReruns": 0
+  },
+  "latestProductionInput": {
+    "at": "2026-10-06T13:32:12.650456+00:00",
+    "target": "9406ca5f2aa5a88dbc028d64e09f48f438bd627e",
+    "metadata": "19aaaef119bab2dac608fc1013f317d3e418a336",
+    "fixedAudit": "recovery-session-production-fixed-audit.json",
+    "archives": [
+      {
+        "path": "recovery-session-production-fixed-interface.md",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/browser-session-production-interface.md",
+        "ref": "19aaaef119bab2dac608fc1013f317d3e418a336",
+        "sha256": "36f15157631f8197690a03ee3aa887c53ad78726e7e210df9f5094d66d49e6f5",
+        "bytes": 3739
+      },
+      {
+        "path": "recovery-session-production-fixed-manifest.json",
+        "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/browser-session-production-manifest.json",
+        "ref": "19aaaef119bab2dac608fc1013f317d3e418a336",
+        "sha256": "18c50b216cc6710aa71b9dc4be79b1070af1cabc3ce3622194aa435af7c723c8",
+        "bytes": 5980
+      }
+    ],
+    "status": "Fixed input only: client Mika review and production native review in progress per Lead; no formal main receipt. Scope21/budget unchanged; no take."
   }
 }

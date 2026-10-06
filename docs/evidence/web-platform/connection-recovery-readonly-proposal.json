@@ -229,6 +229,9 @@
     "reason": "Add existing-slot trusted P01 binding to20candidate rather than hardcoded recoveryentry; underlying16+4materialseams retained",
     "F01FixedSha": "5be830e2614d45dbaa023e98923fc74f470b37ec",
     "F01Review": "NOT_STARTED observed at c1a173 metadata",
-    "readinessRecord": "recovery01-readiness-preflight.json"
+    "readinessRecord": "recovery01-readiness-preflight.json",
+    "productionFixedSha": "9406ca5f2aa5a88dbc028d64e09f48f438bd627e",
+    "productionInterface": "recovery-session-production-fixed-interface.md",
+    "productionReadiness": "Fixed input; independent reviews/main pending; no newtake"
   }
 }

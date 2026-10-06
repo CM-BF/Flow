@@ -69,3 +69,5 @@ Root方向已批准进入Interface与合法owner协调，不授共享中心写�
 06-04实施准备更新：root正式批准[RECOVERY01的21精确范围和接口](../../docs/evidence/web-platform/recovery01-fixed-cde-proposal.json)，直接归本大task、panels唯一owner。P01真实入口、材料恢复、原authority同步交接与IDB complete/CAS/CREATE两步沿固定方案；90秒实际旅程预算已批，容量尚待最大合法请求和完整记录验证。F01已有固定待审客户端，中心领域已独审但三项Web消费语义仍需对齐；资源门槛未满足，尚未创建树或领取。[具体核验与解除条件](../../docs/evidence/web-platform/recovery01-readiness-preflight.json)。
 
 排程门槛已明确：F01固定且独审/main组合输入到位、fresh无冲突和轻量开发资源满足即可开工，中心三项语义并行对齐，完整浏览器旅程与整片批准前必须解决；不因这些不改DTO的方法细节推迟所有journal/controller工作。[独立正文容量依据](../../docs/evidence/web-platform/recovery01-request-bounds/report.md)已到，仅证明public请求body上界；owner必须测实际完整record与预留增长，全量预算不足不得截断或淘汰unknown。完整构建资源门槛独立保留。
+
+2026-10-06 13:32 UTC 固定生产接口9406已核：[factory/session接缝](../../docs/evidence/web-platform/recovery-session-production-fixed-interface.md)。Recovery自有真实fixture显式传browserSession配置；未配置中心准确显示unsupported。接口无需新增21范围或扩预算，独审/main仍是开工输入门槛；Node测试cookie jar不替代浏览器cookie→read→SSE→reload，TLS/proxy及个人启用不在当前证明范围。

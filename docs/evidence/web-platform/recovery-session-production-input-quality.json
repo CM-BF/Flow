@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-06T13:32:29.736476+00:00",
+  "method": "Reused actual local find-skills/codebase-design/clean-code: fixed Interface read, ownership/startup delegation and default unsupported explicit, domain approval versus factory/client/main/browser proof separated. No implementation changes.",
+  "managementClaim": {
+    "id": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3,
+    "observedAt": "2026-10-06T13:31:12.796Z"
+  },
+  "paths": [
+    "docs/evidence/web-platform/connection-recovery-readonly-proposal.json",
+    "docs/evidence/web-platform/mature-task-handoff.md",
+    "docs/evidence/web-platform/recovery-session-production-fixed-audit.json",
+    "docs/evidence/web-platform/recovery-session-production-fixed-interface.md",
+    "docs/evidence/web-platform/recovery-session-production-fixed-manifest.json",
+    "docs/evidence/web-platform/recovery01-fixed-cde-proposal.json",
+    "docs/evidence/web-platform/recovery01-readiness-preflight.json",
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-06-chat/plan.md",
+    "plans/wpf-mature-06-chat/status.md"
+  ],
+  "outsideScope": [],
+  "newLinks": [
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "recovery-session-production-fixed-interface.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "recovery-session-production-fixed-manifest.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "recovery-session-production-fixed-audit.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-06-chat/plan.md",
+      "target": "../../docs/evidence/web-platform/recovery-session-production-fixed-interface.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-06-chat/status.md",
+      "target": "../../docs/evidence/web-platform/recovery-session-production-fixed-audit.json",
+      "exists": true
+    }
+  ],
+  "parser": [
+    {
+      "path": "plans/web-platform/status.md",
+      "errors": [],
+      "human": true,
+      "todos": 36
+    },
+    {
+      "path": "plans/wpf-mature-06-chat/status.md",
+      "errors": [],
+      "human": true,
+      "todos": 6
+    }
+  ],
+  "fixedCheck": "recovery-session-production-fixed-audit.json",
+  "sourceCounts": {
+    "product": 3,
+    "readonly": 10,
+    "raw": 12
+  },
+  "mismatches": 0,
+  "scopeDelta": [],
+  "budgetChanged": false,
+  "newProductRuns": 0,
+  "take": false,
+  "next": "Await client/factory independent reviews and formal fixed main; then fresh scope/resource gates. Center3semantics remain finalbrowser gate."
+}

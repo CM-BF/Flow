@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 13:26 UTC |
+| 最近更新 | 2026-10-06 13:32 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -51,3 +51,5 @@ Recovery设计已补同步receipt接管→durable barrier→HTTP及crash边界�
 [本轮就绪预检](../../docs/evidence/web-platform/recovery01-readiness-preflight.json)：新树/branch未建、无Recovery claim；完整build资源门槛未满足。结构批准不等已开始实现，public请求body上界已独立核验，实际完整record与容量准入仍待owner验证。
 
 root已细分开工/最终验收门槛：正式获审主线client到位且轻量资源允许，可先实现journal/controller与App接线；中心三语义并行但最终真实旅程前必须对齐。W01仅publicbody容量核验已到，实际record仍待owner验证；未将候选数量上限说成可同时满载。
+
+会话生产组合9406固定接口已到，factory显式opt-in/default unsupported与公开client保持单一认证authority；[3源码/10只读输入/12raw管理核验](../../docs/evidence/web-platform/recovery-session-production-fixed-audit.json)一致。Mika薄client/native生产独审和正式main待，未领取Recovery；21范围/90秒预算不变，仅loopback验证方向，远端TLS/proxy另行未验证。
