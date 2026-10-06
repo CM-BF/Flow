@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T14:41:45.167657+00:00 / main56d90e8c |
+| 最近更新 / 最近main同步核验 | 2026-10-06T14:59:45.048714+00:00 / mainaf9768c7 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main56d90已审X01领域；五薄方法target67fd45924e51c3356ca07e199335f35038f34968 |
+| 工作基线 / HEAD | main56d90已审领域；当前生产/CLI 5e121041cf628817b27cbb64f00317d5d62ad1e2 |
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | completed |
-| 检查状态 | PASSED 67fd45924e51c3356ca07e199335f35038f34968；1红→1绿实际HTTP38ms、root strict0，0PG/provider |
+| 检查状态 | PASSED 5e121041cf628817b27cbb64f00317d5d62ad1e2；配置4（旧consumer2）+CLI HTTP1+生产PG/HTTP1分轮绿，root strict0，0provider |
 | 已集成main状态 / HEAD | COST领域、薄client、生产读口与CLI0550已进入main59ef2134；个人runtime362/v15未更新 |
-| Review | NOT_STARTED 67fd45924e51c3356ca07e199335f35038f34968；限定五方法client/export |
-| 实现目标 | 67fd45924e51c3356ca07e199335f35038f34968 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/plugin-installations.test.ts, packages/contracts/src/index.ts |
+| Review | NOT_STARTED 5e121041cf628817b27cbb64f00317d5d62ad1e2；薄client67fd已Mika独审APPROVED |
+| 实现目标 | 5e121041cf628817b27cbb64f00317d5d62ad1e2 |
+| 实现范围 | apps/cli/README.md, apps/cli/src/index.ts, apps/cli/src/plugin-installations.test.ts, apps/server/src/index.ts, apps/server/src/main.ts, apps/server/src/package-fetch-configuration.ts, apps/server/src/plugin-installation-configuration.test.ts, apps/server/src/plugin-installation-configuration.ts, apps/server/src/private-json-configuration.ts, packages/client/src/plugin-installations-production.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 用量读口与终端已交付；插件材料安装的共用接口已通过局部验证。 |
-| 下一可用交付 | 让终端与网页共用静态安装、状态和历史读取，再接默认中心。 |
+| 当前产出 | 静态插件安装已通过真实中心与终端验证；重启后原请求能恢复同一回执。 |
+| 下一可用交付 | 完成独立审查并发布默认关闭的安装入口；目标持续推进继续接现有后台扫描。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -198,3 +198,5 @@
 2026-10-06T14:35:06.228081+00:00：CLI固定0550已main59ef2134，I02五源比较零差；本次仅metadata，不重新执行HTTP/PG/types。
 
 | F01-41 | in-progress | Lead | X01五方法client/export；固定67fd4592、真实HTTP1/1、types0，待独审；默认mount/CLI另验 |
+
+2026-10-06T14:59:45.048714+00:00：F01-41薄client67fd获status_read/Mika独审，[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。生产固定5e121等待独审，[manifest](../../docs/evidence/f01/plugin-installation-mount-manifest.json)绑定10源、6领域输入、分轮证据与专库正常清理。静态installed不等于启用或可调用。

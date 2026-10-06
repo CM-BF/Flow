@@ -334,3 +334,13 @@ APPROVED — assignment_review / gpt-6-astra，2026-10-06T14:31:26Z独立只读�
 Review target commit: 67fd45924e51c3356ca07e199335f35038f34968
 
 NOT_STARTED — 三file/六raw/已main的固定DTO；五方法/原key/body/两cursor/ACK未知/abort/403409传递，只审transport，不重跑领域PG。
+
+Review target commit: 67fd45924e51c3356ca07e199335f35038f34968
+
+APPROVED — status_read / gpt-6-astra，Mika接收，无P1/P2；[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。0 reviewer tests。
+
+## X01 production/configuration/CLI
+
+Review target commit: 5e121041cf628817b27cbb64f00317d5d62ad1e2
+
+NOT_STARTED — 10源/6不同局部用例分轮、root types与自有随机库正常清理；只接线，不重审领域。
