@@ -7,7 +7,7 @@
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
 - Review target commit：待审查者核验并填写完整SHA；禁止笼统复用旧通过状态。
 - Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
-- 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
+- 本次scope：experiments/observer-probes、docs/evidence/lab02 与本计划三文件；排除产品实现和模型调用。验收：核对 query 提交口径、短样本原始值、数据/时间边界、435 连接的64事件一致性、独立DB清理；无需重跑 benchmark。实际测量 source 为 2fad2bc5cb6d1f720631fd56e557f193c44ebf7f，独立审查最终含证据交付 commit。
 - Reviewer / model / harness / 时间：待填写。
 
 ## 可直接复制的审查任务说明
