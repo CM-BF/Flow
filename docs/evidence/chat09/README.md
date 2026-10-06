@@ -1,6 +1,6 @@
 # CHAT09 配置绑定的执行中指令受理
 
-固定实现/Review target：`cd8594be137ee165f2745265842fc3678c5dfb46`；base `9c6fa9b100f04916f43b04280f05f497b28eeb0f`；首合同 `042192732831a7f921d474a37870d688f9dc6716`。单一owner runner_owner / gpt-6-astra。独立review尚未开始，本分支未入main。完整范围/hash见[manifest](manifest.json)，接口见[interface](interface.md)。
+固定实现/Review target：`cd8594be137ee165f2745265842fc3678c5dfb46`；base `9c6fa9b100f04916f43b04280f05f497b28eeb0f`；首合同 `042192732831a7f921d474a37870d688f9dc6716`。单一owner runner_owner / gpt-6-astra。assignment_review 独立只读 APPROVED，范围见[正式review](../../../plans/chat09-steering-admission/review.md)；未重跑检查，本分支仍待main receipt。完整范围/hash见[manifest](manifest.json)，接口见[interface](interface.md)。
 
 显式manifest开关经过同一次解析参与profile发布与runtime启动。只有新配置的固定protocol写入digest；false/缺省仍保留旧canonical bytes。新配置不支持planner tools，不能以旧runner identity变更。adapter前检查当前pin/digest/port；未pin旧任务移除steering port并继续原string query。旧adapter-only loader拒绝丢弃开启配置，调用者须使用完整configuration入口。
 
