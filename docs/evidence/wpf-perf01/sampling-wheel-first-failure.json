@@ -1,0 +1,548 @@
+{
+  "taskCount": 1,
+  "liveEntries": 240,
+  "initialVisibleEntries": 40,
+  "url": "http://127.0.0.1:55435",
+  "checks": [
+    "Detail requests 0 before expansion, 1 on first expansion, 1 after cached reopen",
+    "1 retained chat(s): one visible stream; overview zero; no cancel"
+  ],
+  "status": "failed",
+  "connectionFormReadyAutomationMs": 70.61416699999972,
+  "workspaceReadyAutomationMs": 78.53499999999985,
+  "navigation": [
+    {
+      "name": "http://127.0.0.1:55435/",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 45.700000047683716,
+      "navigationId": 1545,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "http/1.1",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 0.20000004768371582,
+      "domainLookupStart": 0.20000004768371582,
+      "domainLookupEnd": 0.20000004768371582,
+      "connectStart": 0.20000004768371582,
+      "secureConnectionStart": 0,
+      "connectEnd": 0.20000004768371582,
+      "requestStart": 0.6000000238418579,
+      "responseStart": 1.5,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 1.5,
+      "responseEnd": 1.7000000476837158,
+      "transferSize": 1005,
+      "encodedBodySize": 705,
+      "decodedBodySize": 705,
+      "responseStatus": 200,
+      "serverTiming": [],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 10.5,
+      "domContentLoadedEventStart": 45.5,
+      "domContentLoadedEventEnd": 45.60000002384186,
+      "domComplete": 45.700000047683716,
+      "loadEventStart": 45.700000047683716,
+      "loadEventEnd": 45.700000047683716,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "high"
+      }
+    }
+  ],
+  "error": "page.waitForFunction: Timeout 10000ms exceeded.\n    at interactions (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/apps/web/test/performance-probe.ts:84:16)\n    at async runScenario (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/apps/web/test/performance-probe.ts:197:7)\n    at async main (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/apps/web/test/performance-probe.ts:251:37)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/apps/web/test/performance-probe.ts:254:1)",
+  "timing": {
+    "phase": "delivery-100",
+    "phases": [
+      {
+        "name": "delivery-100",
+        "at": 745.6000000238419
+      }
+    ],
+    "longTasks": [],
+    "events": [
+      {
+        "name": "beforeinput",
+        "startTime": 110.90000009536743,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 114.40000009536743,
+        "duration": 16,
+        "inputDelay": 1.399999976158142,
+        "processing": 1.1999999284744263,
+        "interactionId": 0
+      },
+      {
+        "name": "keydown",
+        "startTime": 937.2000000476837,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 0.19999992847442627,
+        "interactionId": 7002
+      },
+      {
+        "name": "keypress",
+        "startTime": 937.2000000476837,
+        "duration": 16,
+        "inputDelay": 0.2999999523162842,
+        "processing": 2.9000000953674316,
+        "interactionId": 7002
+      },
+      {
+        "name": "beforeinput",
+        "startTime": 937.5,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 937.7000000476837,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 2.600000023841858,
+        "interactionId": 0
+      },
+      {
+        "name": "keyup",
+        "startTime": 972.5,
+        "duration": 16,
+        "inputDelay": 0.20000004768371582,
+        "processing": 0,
+        "interactionId": 7009
+      },
+      {
+        "name": "keydown",
+        "startTime": 1034.9000000953674,
+        "duration": 16,
+        "inputDelay": 0.19999992847442627,
+        "processing": 3.399999976158142,
+        "interactionId": 7023
+      },
+      {
+        "name": "beforeinput",
+        "startTime": 1035.2000000476837,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 1035.4000000953674,
+        "duration": 16,
+        "inputDelay": 0.09999990463256836,
+        "processing": 3,
+        "interactionId": 0
+      },
+      {
+        "name": "keyup",
+        "startTime": 1040.3000000715256,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0.10000002384185791,
+        "interactionId": 7023
+      },
+      {
+        "name": "keydown",
+        "startTime": 1103,
+        "duration": 16,
+        "inputDelay": 0.20000004768371582,
+        "processing": 3.299999952316284,
+        "interactionId": 7037
+      },
+      {
+        "name": "beforeinput",
+        "startTime": 1103.3000000715256,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 1103.5,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 2.899999976158142,
+        "interactionId": 0
+      },
+      {
+        "name": "keyup",
+        "startTime": 1106.8000000715256,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 0.09999990463256836,
+        "interactionId": 7037
+      }
+    ],
+    "keys": [
+      {
+        "at": 811.3000000715256,
+        "handlerAt": 812.3000000715256,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 818.6000000238419
+      },
+      {
+        "at": 842.5,
+        "handlerAt": 842.9000000953674,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 847.8000000715256
+      },
+      {
+        "at": 875.1000000238419,
+        "handlerAt": 875.3000000715256,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 885.4000000953674
+      },
+      {
+        "at": 904.9000000953674,
+        "handlerAt": 905.2000000476837,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 908.7000000476837
+      },
+      {
+        "at": 937.2000000476837,
+        "handlerAt": 937.4000000953674,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 952
+      },
+      {
+        "at": 968.2000000476837,
+        "handlerAt": 968.5,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 972.3000000715256
+      },
+      {
+        "at": 999.9000000953674,
+        "handlerAt": 1000.1000000238419,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1003.7000000476837
+      },
+      {
+        "at": 1034.9000000953674,
+        "handlerAt": 1035.1000000238419,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1051.5
+      },
+      {
+        "at": 1069,
+        "handlerAt": 1069.1000000238419,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1072.5
+      },
+      {
+        "at": 1103,
+        "handlerAt": 1103.2000000476837,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1118.2000000476837
+      },
+      {
+        "at": 1132.9000000953674,
+        "handlerAt": 1133,
+        "trusted": true,
+        "key": "p",
+        "rafAt": 1136.2000000476837
+      },
+      {
+        "at": 1163.5,
+        "handlerAt": 1163.7000000476837,
+        "trusted": true,
+        "key": "Backspace",
+        "rafAt": 1166.7000000476837
+      }
+    ],
+    "wheels": [
+      {
+        "at": 1257.5,
+        "handlerAt": 1285.7000000476837,
+        "trusted": true,
+        "from": 19189
+      }
+    ],
+    "supported": [
+      "element",
+      "event",
+      "first-input",
+      "interaction-contentful-paint",
+      "largest-contentful-paint",
+      "layout-shift",
+      "long-animation-frame",
+      "longtask",
+      "mark",
+      "measure",
+      "navigation",
+      "paint",
+      "resource",
+      "soft-navigation",
+      "visibility-state"
+    ]
+  },
+  "at": "2026-10-06T03:12:48.555Z",
+  "stages": [],
+  "checkpoints": [
+    {
+      "name": "initial",
+      "at": 743.9000000953674,
+      "domElements": 711,
+      "renderedRecords": 40,
+      "scrollTop": 5110,
+      "scrollHeight": 5828,
+      "following": "Following latest activity",
+      "memoryAPI": {
+        "userAgentSpecific": false,
+        "legacyMemory": true,
+        "crossOriginIsolated": false
+      },
+      "renderCount": null,
+      "renderCountReason": "Ordinary production build has no React profiling instrumentation",
+      "cdp": {
+        "Documents": 4,
+        "Nodes": 1876,
+        "LayoutCount": 26,
+        "RecalcStyleCount": 70,
+        "LayoutDuration": 0.020565,
+        "RecalcStyleDuration": 0.011238,
+        "ScriptDuration": 0.13407,
+        "TaskDuration": 0.292699,
+        "JSHeapUsedSize": 17185056,
+        "JSHeapTotalSize": 32047104
+      },
+      "heapCaveat": "No forced GC; JS heap sample, not retained-object count or a leak proof"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/",
+      "type": "document"
+    },
+    {
+      "path": "/assets/index-Qq2fU1v6.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/assistant-ui-zkRmV749.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/assistant-ui-CcdakA0V.css",
+      "type": "stylesheet"
+    },
+    {
+      "path": "/assets/index-C3CTlol8.css",
+      "type": "stylesheet"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-001",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-001/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/details/perf-001-artifact",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/task-index",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    }
+  ],
+  "workspaceResponses": [
+    {
+      "at": 3189.073417,
+      "after": null,
+      "before": null,
+      "count": 40,
+      "nextCursor": 41,
+      "watermark": 41
+    },
+    {
+      "at": 3787.107542,
+      "after": 41,
+      "before": null,
+      "count": 40,
+      "nextCursor": 81,
+      "watermark": 141
+    },
+    {
+      "at": 3803.464375,
+      "after": 81,
+      "before": null,
+      "count": 40,
+      "nextCursor": 121,
+      "watermark": 141
+    },
+    {
+      "at": 3809.75425,
+      "after": 121,
+      "before": null,
+      "count": 20,
+      "nextCursor": 141,
+      "watermark": 141
+    },
+    {
+      "at": 6314.621084,
+      "after": 141,
+      "before": null,
+      "count": 0,
+      "nextCursor": 141,
+      "watermark": 141
+    },
+    {
+      "at": 8817.779875,
+      "after": 141,
+      "before": null,
+      "count": 0,
+      "nextCursor": 141,
+      "watermark": 141
+    },
+    {
+      "at": 11320.411,
+      "after": 141,
+      "before": null,
+      "count": 0,
+      "nextCursor": 141,
+      "watermark": 141
+    },
+    {
+      "at": 13823.598584,
+      "after": 141,
+      "before": null,
+      "count": 0,
+      "nextCursor": 141,
+      "watermark": 141
+    }
+  ],
+  "pageErrors": [],
+  "apiRequests": [
+    {
+      "method": "GET",
+      "path": "/api/workspace"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-001"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-001/stream?after=41"
+    },
+    {
+      "method": "GET",
+      "path": "/api/details/perf-001-artifact"
+    },
+    {
+      "method": "GET",
+      "path": "/api/task-index?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=41"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=81"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=121"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=141"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=141"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=141"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=141"
+    }
+  ],
+  "memoryLimit": "measureUserAgentSpecificMemory support recorded, not called without isolation; no forced GC; separate projection counts are not this App heap",
+  "p95": null,
+  "p95Reason": "One scenario run per scale; threshold-filtered Event Timing is not an unbiased latency distribution",
+  "renderCount": null
+}

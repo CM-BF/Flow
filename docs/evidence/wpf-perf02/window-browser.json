@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-06T03:39:13.452Z",
+  "checks": [
+    "1040 variable-height records: every cursor/id/body hash accessible through bounded public windows",
+    "Tab crosses virtual window boundaries through 40 consecutive record actions without focus loss",
+    "Focused offscreen row remains mounted without expanding to all intervening rows",
+    "Reading anchor/offset preserved while 80 live records buffer and after index roundtrip",
+    "390px reflow preserves anchor and has no horizontal page overflow; light/dark/reduced motion",
+    "Explicit reveal retains all 1120 records and follows measured latest row",
+    "Older HTTP page prepends 16 references without displacing the reading ID/offset",
+    "No detail prefetch, no cancel, no browser page error"
+  ],
+  "errors": []
+}

@@ -1,0 +1,453 @@
+{
+  "taskCount": 128,
+  "liveEntries": 10000,
+  "initialVisibleEntries": 40,
+  "url": "http://127.0.0.1:56547",
+  "checks": [
+    "Detail requests 0 before expansion, 1 on first expansion, 1 after cached reopen",
+    "8 retained chat(s): one visible stream; split two / merge one; overview zero; no cancel"
+  ],
+  "status": "failed",
+  "connectionFormReadyAutomationMs": 61.39733399999386,
+  "workspaceReadyAutomationMs": 60.98833400000876,
+  "navigation": [
+    {
+      "name": "http://127.0.0.1:56547/",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 39.60000002384186,
+      "navigationId": 4978,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "http/1.1",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 0.20000004768371582,
+      "domainLookupStart": 0.20000004768371582,
+      "domainLookupEnd": 0.20000004768371582,
+      "connectStart": 0.20000004768371582,
+      "secureConnectionStart": 0,
+      "connectEnd": 0.20000004768371582,
+      "requestStart": 0.6000000238418579,
+      "responseStart": 1.3000000715255737,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 1.3000000715255737,
+      "responseEnd": 1.5,
+      "transferSize": 1005,
+      "encodedBodySize": 705,
+      "decodedBodySize": 705,
+      "responseStatus": 200,
+      "serverTiming": [],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 5.100000023841858,
+      "domContentLoadedEventStart": 39.5,
+      "domContentLoadedEventEnd": 39.5,
+      "domComplete": 39.60000002384186,
+      "loadEventStart": 39.60000002384186,
+      "loadEventEnd": 39.60000002384186,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "high"
+      }
+    }
+  ],
+  "error": "locator.click: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Load more tasks', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button disabled class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2\">Load more tasks</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m  - element was detached from the DOM, retrying\u001b[22m\n\n    at runScenario (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/apps/web/test/performance-probe.ts:188:171)\n    at async main (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/apps/web/test/performance-probe.ts:254:13)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance/apps/web/test/performance-probe.ts:261:1)",
+  "timing": {
+    "phase": "navigation",
+    "phases": [],
+    "longTasks": [],
+    "events": [
+      {
+        "name": "beforeinput",
+        "startTime": 86.40000009536743,
+        "duration": 16,
+        "inputDelay": 0,
+        "processing": 0.09999990463256836,
+        "interactionId": 0
+      },
+      {
+        "name": "input",
+        "startTime": 86.80000007152557,
+        "duration": 16,
+        "inputDelay": 0.10000002384185791,
+        "processing": 0.8999999761581421,
+        "interactionId": 0
+      }
+    ],
+    "keys": [],
+    "wheels": [],
+    "supported": [
+      "element",
+      "event",
+      "first-input",
+      "interaction-contentful-paint",
+      "largest-contentful-paint",
+      "layout-shift",
+      "long-animation-frame",
+      "longtask",
+      "mark",
+      "measure",
+      "navigation",
+      "paint",
+      "resource",
+      "soft-navigation",
+      "visibility-state"
+    ]
+  },
+  "at": "2026-10-06T03:17:40.898Z",
+  "stages": [],
+  "checkpoints": [],
+  "requests": [
+    {
+      "path": "/",
+      "type": "document"
+    },
+    {
+      "path": "/assets/index-Qq2fU1v6.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/assistant-ui-zkRmV749.js",
+      "type": "script"
+    },
+    {
+      "path": "/assets/assistant-ui-CcdakA0V.css",
+      "type": "stylesheet"
+    },
+    {
+      "path": "/assets/index-C3CTlol8.css",
+      "type": "stylesheet"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-128",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-128/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/details/perf-128-artifact",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-121",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-121/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-122",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-122/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-123",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-123/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-124",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-124/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-125",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-125/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-126",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-126/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-127",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-127/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks/perf-126/stream",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/tasks",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/task-index",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/task-index",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/task-index",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/task-index",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    },
+    {
+      "path": "/api/workspace",
+      "type": "fetch"
+    }
+  ],
+  "workspaceResponses": [
+    {
+      "at": 125674.590542,
+      "after": null,
+      "before": null,
+      "count": 40,
+      "nextCursor": 168,
+      "watermark": 168
+    },
+    {
+      "at": 128185.605875,
+      "after": 168,
+      "before": null,
+      "count": 0,
+      "nextCursor": 168,
+      "watermark": 168
+    },
+    {
+      "at": 130689.715042,
+      "after": 168,
+      "before": null,
+      "count": 0,
+      "nextCursor": 168,
+      "watermark": 168
+    },
+    {
+      "at": 133193.940042,
+      "after": 168,
+      "before": null,
+      "count": 0,
+      "nextCursor": 168,
+      "watermark": 168
+    },
+    {
+      "at": 135698.695834,
+      "after": 168,
+      "before": null,
+      "count": 0,
+      "nextCursor": 168,
+      "watermark": 168
+    },
+    {
+      "at": 138202.033,
+      "after": 168,
+      "before": null,
+      "count": 0,
+      "nextCursor": 168,
+      "watermark": 168
+    },
+    {
+      "at": 140705.408042,
+      "after": 168,
+      "before": null,
+      "count": 0,
+      "nextCursor": 168,
+      "watermark": 168
+    }
+  ],
+  "pageErrors": [],
+  "apiRequests": [
+    {
+      "method": "GET",
+      "path": "/api/workspace"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-128"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-128/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/details/perf-128-artifact"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-121"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-121/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-122"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-122/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-123"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-123/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-124"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-124/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-125"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-125/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-126"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-126/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-127"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-127/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/perf-126/stream?after=1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/task-index?limit=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/task-index?limit=40&cursor=40"
+    },
+    {
+      "method": "GET",
+      "path": "/api/task-index?limit=40&cursor=80"
+    },
+    {
+      "method": "GET",
+      "path": "/api/task-index?limit=40&cursor=120"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=168"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=168"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=168"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=168"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=168"
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=168"
+    }
+  ],
+  "memoryLimit": "measureUserAgentSpecificMemory support recorded, not called without isolation; no forced GC; separate projection counts are not this App heap",
+  "p95": null,
+  "p95Reason": "One scenario run per scale; threshold-filtered Event Timing is not an unbiased latency distribution",
+  "renderCount": null
+}
