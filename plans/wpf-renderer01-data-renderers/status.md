@@ -4,7 +4,9 @@
 
 | 字段 | 当前值 |
 | --- | --- |
-| Owner | w01_owner；派发 gpt-6-astra / ultra，运行时无独立型号证明，不另作身份声称 |
+| 最近更新时间 | 2026-10-06 05:47 UTC |
+| 工作树dirty状态 | 文档与领取记录已提交；本次 metadata 提交后 clean |
+| 单一status owner / model | w01_owner；派发 gpt-6-astra / ultra，运行时无独立型号证明，不另作身份声称 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 本片段交付阶段 | implementation |
@@ -14,23 +16,23 @@
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers |
 | Branch | codex/web-data-renderers |
-| Base | fb906cb42391971a8b315dbd813f7633927d7265 |
-| 工作分支状态 | in-progress |
+| 工作基线 / HEAD | fb906cb42391971a8b315dbd813f7633927d7265 |
+| 工作分支状态 | in-progress | w01_owner |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/data-renderers/registry.ts, apps/web/src/data-renderers/react.tsx, apps/web/src/data-renderers/flow-reply-detail.tsx, apps/web/test/data-renderers.test.ts, apps/web/test/data-renderers.browser.ts, apps/web/test/data-renderers.fixture.tsx |
-| 检查状态 | NOT_STARTED |
+| 检查状态 | NOT_RUN |
 | Review | NOT_STARTED |
-| Main 集成 | 本片未集成；App 接线未实施 |
+| 已集成main状态 / HEAD | 本片未集成；App 接线未实施 |
 | Claim | 87948975-fa99-49b6-a84c-3ca126aaeb92 v1 active；2026-10-06T05:44:40.603Z live 核验一致 |
 
 ## TODO 对应
 
-| ID | 状态 | 证据 / 下一步 |
-| --- | --- | --- |
-| RENDERER01-01 | in-progress | 声明与现有 P01 生命周期 interface 已确定，待代码 |
-| RENDERER01-02 | planned | provider 本地桥与只读详情绑定 |
-| RENDERER01-03 | planned | 固定实现后局部验证与独立 review |
-| RENDERER01-04 | planned | 独立后继 App 接线，当前 scope 不含 |
+| TODO ID | 状态 | Owner | 证据 / 下一步 |
+| --- | --- | --- | --- |
+| RENDERER01-01 | in-progress | w01_owner | 声明与现有 P01 生命周期 interface 已确定，待代码 |
+| RENDERER01-02 | pending | w01_owner | provider 本地桥与只读详情绑定 |
+| RENDERER01-03 | pending | w01_owner | 固定实现后局部验证与独立 review |
+| RENDERER01-04 | pending | w01_owner | 独立后继 App 接线，当前 scope 不含 |
 
 ## 事实与边界
 

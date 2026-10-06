@@ -2,7 +2,7 @@
 
 状态：in-progress · 创建/更新：2026-10-06
 
-父计划：[Web 平台](../web-platform/plan.md)。Goal Owner 已批准这一个模块片；后续 App 接线另领，不扩大 X01。
+父计划：[Web 平台](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)。Goal Owner 已批准这一个模块片；后续 App 接线另领，不扩大 X01。
 
 目标：将消息 data type 映射到受信 React renderer，复用 P01 激活/停用/清理。现有 `flow-reply-detail` 为唯一真实用例；正文与按需详情在 renderer 缺失或故障时仍可访问。
 
