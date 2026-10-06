@@ -1,0 +1,68 @@
+{
+  "observedAt": "2026-10-06T09:19:41.863901+00:00",
+  "base": "77c420cf9ee5de0291ea93014b6ea11aead6fab5",
+  "target": "a239b14d5328c78cca02a8757e26f2b65502f926",
+  "delivery": "b56ecf002f7e2d13cf8482e75121fb5afeb0e080",
+  "source": [
+    {
+      "path": "apps/runner/src/codex.test.ts",
+      "bytes": 16259,
+      "sha256": "ec740e38ef16934718386a0e6ee7e0e940edb009228b0f4656c5b02495b9670d",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/codex/fixtures/peer.mjs",
+      "bytes": 3728,
+      "sha256": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/codex/framing.ts",
+      "bytes": 3554,
+      "sha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "bytes": 13095,
+      "sha256": "036f7a002237a8dc55bb99015ddf1b26b4491eeeaac1fbeffbe99ee648801a4d",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "bytes": 3410,
+      "sha256": "a2d03fab6158330700a623b3803725739d42bc32e6600f4fbbd1bab71599d655",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "bytes": 2721,
+      "sha256": "7e66b84406cfb238a6d1a701aa2cd1e05e6935b5760c55cc7e1ccfbe1a944f07",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/codex/writer.ts",
+      "bytes": 3117,
+      "sha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21",
+      "matchesTarget": true,
+      "matchesManifest": true
+    }
+  ],
+  "checks": {
+    "rootTypecheck": {
+      "exitCode": 0,
+      "path": "docs/evidence/i02/r06-integration-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "review": "Execution Lead readonly 7 source/15 raw/6 schema match, 31 author tests; no independent rerun",
+    "providerCalls": 0
+  },
+  "boundary": "Transport only; no real app-server/adapter/private service activation; TUI/COST are plans."
+}

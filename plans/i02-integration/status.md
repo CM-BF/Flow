@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:10:33 UTC / main1737cd6（接收前） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:21 UTC / 接收前main77c420c |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | b1c2e39837c2208e6fc2c59a80e16797f26448b5 / 本批R05-A与架构首次适配 |
-| 工作树dirty状态 | 候选已提交；当前交付记录整理 |
+| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 本批有界Codex通信与新目标文档 |
+| 工作树dirty状态 | 本批固定输入已合入，集成证据待提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；固定输入逐文件一致，root/Web类型检查exit0；S01初始ES2023红与修复分别保留；0新增provider |
-| 已集成main状态 / HEAD | mainb1c已发布且个人backend/static artifact固定此源、acceptingv12；本候选接收R05-A及D05FIT两已审片段。实际个人服务不随本批main变更，原端口/数据/身份保留，0operatorquery。 |
+| 检查状态 | PASSED；R06七源码逐字等于独审target，root类型检查exit0；registry114来源/三新源parser errors[]，0provider |
+| 已集成main状态 / HEAD | 前批main77c420c含已审补充指令控件；本批R06与TUI/COST计划待发布。个人backend/static仍b1c、accepting v12，不随main更新。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 固定聊天页面保持可用；补充指令控件已审接收，等待实际聊天接线。 |
-| 下一可用交付 | 继续接通Codex与Claude的能力选择，并接收已审界面改进。 |
+| 当前产出 | 补充指令控件已接收；新的执行工具通信模块已审，终端客户端开始实施。 |
+| 下一可用交付 | 接通Codex普通任务及可发送、恢复会话的终端首片。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
