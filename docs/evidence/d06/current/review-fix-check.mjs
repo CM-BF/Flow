@@ -21,7 +21,7 @@ try {
     assert.equal(href, `https://github.com/CM-BF/Flow/blob/eb14991a170b72d7d974428b2e440e1faada2c1e/${path}`);
     sources.push({ id, href });
   }
-  assert.doesNotMatch(await page.locator('#architecture-canvas').innerText(), /O06|SVC02|K01/);
+  assert.doesNotMatch(await page.locator('#architecture-canvas').textContent(), /O06|SVC02|K01/);
   await page.locator('#architecture-fit').click();
   await page.screenshot({ path: 'docs/evidence/d06/current/review-fix-modules-light.png', fullPage: true });
   await page.setViewportSize({ width: 390, height: 844 });
