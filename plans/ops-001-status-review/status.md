@@ -108,3 +108,5 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 2026-10-06 14:26 UTC：第三棵 O13 已正式release且无openfile，初次收起3542副本后审查发现根规则链接的d04必须完整保留；即时通过sparse规则恢复22个d04文件并逐固定blob核，Git仍clean，最终3520其他历史副本收起。原始前后回执与[规则闭包更正](../../docs/quality/sparse-worktree-2026-10-06/o13-rule-correction.json)分别保留，不掩盖中间缺口。新O14也按需补d04只读材料。最终可用1,258,967,040B，SVC06仍未解阻；本次到三棵授权自有旧树为止，不继续猜删未知资源或活动树。全部原始任务证据/生产源码/依赖保留，历史副本仍在固定Git与main同blob，可逆恢复。
 
 2026-10-06T14:35:35.073416+00:00：GO补充SVC06固定0e6a99c2 lock的只读依赖闭包候选：server+runner prod/optional及显式root tsx涉及5 workspace importers、256/683 snapshots，候选缓存256/581且missing/unsupported/cache-missing=0。保留content求和321,929,020B、排除186,269,334B含共享重复，均非实测物理空间/安装峰值。待原owner只读收敛selected install/peer/SQL/相对入口验证方案；仍保持2.5GiB全准备门槛及1GiB收尾额，不据该候选启动安装或宽删。
+
+2026-10-06T14:36:54.528536Z：唯一Git owner串行建立RELEASE03 fixed362与DPERF04 fixedc837小型稀疏源码树，分别du8,800/5,484KiB；fixedblob全相同、clean/main受保护、shared worktreeConfig原true未改。正式四/九writer scope由Web管理者fresh take，未安装/构建/PG/browser/provider。回执在docs/quality/sparse-worktree-2026-10-06；最后共享卷free1,192,497,152B，后续检查按增量复核，SVC06仍未达2.5GiB。
