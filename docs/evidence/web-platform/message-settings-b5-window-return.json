@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-06T20:45:44.404156+00:00",
+  "state": "SETTINGS_B5_PASS_CLEANED_WINDOW_RETURNED_F04",
+  "run": "settings-b5-20261006-204433-4029cd",
+  "source": "Manager read actual result/budget plus W01 actualexit/4checks receipt; independent root review pending",
+  "directory": "/private/tmp/msgset-b5",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "runtimeHead": "0925d6e3b1c86c432449cbe324f4f8ebfe1ebf0e",
+  "startedAt": "2026-10-06T20:45:00.573285+00:00",
+  "elapsedMs": 8267,
+  "cumulativeMs": 28876,
+  "remainingMs": 31124,
+  "checks": "4/4 PASS per actual owner receipt; root evidence audit pending",
+  "actualParentExit": 0,
+  "pageErrors": [],
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "workerPgid": 20627,
+  "chromePgid": 16283,
+  "chromeExit": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-06T20:45:08.787816+00:00",
+    "beforeCdpPort": false
+  },
+  "retainedBytes": 1504685,
+  "gateConsumed": true,
+  "windowReturnedTo": "Lead F04 per prior coordination",
+  "PG": false,
+  "provider": false,
+  "automaticNextRun": false,
+  "rawPins": {
+    "result.json": "68f93add2b85cba8bb30cfce529523784b0ca158a70d918fe8517fa1716e381c",
+    "browser-budget.json": "22d804e93bf99b1a08b82d3b474a82a11b9bc3738a56343abebcd79ac1cba039"
+  }
+}

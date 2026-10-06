@@ -1,0 +1,22 @@
+{
+  "recordedAt": "2026-10-06T20:45:11.900081+00:00",
+  "state": "SCOPED_PARENT_SOURCE_APPROVED_PREPARED_NOT_RUN",
+  "head": "d3d45bcb58e2b34064abfdbb90b9d56edc6cd0d9",
+  "implementation": "4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb",
+  "clean": true,
+  "localEqualsRemote": true,
+  "source": "Owner exact prepared report/manifest copied; manager head/clean/remote verified. Sourcepins independently reviewed by root. No runtime or fullfeature acceptance.",
+  "preparedManifest": "manifest.json",
+  "report": "report.md",
+  "rootReview": "../recovery01-browser-next-prepared/root-4d330-source-review.json",
+  "budgetMs": {
+    "previous": 14846.267375,
+    "remaining": 75153.732625,
+    "cleanup": 15000
+  },
+  "gate": false,
+  "freeSampling": false,
+  "runtime": false,
+  "fullFeature": "NOT_STARTED/UNKNOWN;actualbrowseroldfailure not revalidated",
+  "preparedReview": "root-preparation-review.json"
+}

@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-10-06T20:44:17.738470+00:00",
+  "state": "NOT_RUN_RETURNED_BEFORE_DISPATCH",
+  "run": "settings-b5-20261006-204318-410d67",
+  "source": "Lead revised ordering via root immediately after manageradmission, before ownerdispatch",
+  "previousAdmission": "message-settings-b5-admission.json",
+  "ownerDispatched": false,
+  "gateConsumed": false,
+  "processStarted": false,
+  "noResultScratch": true,
+  "gateRetired": "/private/tmp/msgset-b5/gate.cancelled-before-dispatch.json",
+  "spentMs": 20609,
+  "remainingMs": 39391,
+  "freeSampling": "Only the one original admission reading; no retry/newresource sample",
+  "nextHolderRequest": "Mika SVC07 candidate93dacd96, original30s/2connection freshgate; no actualrun claimed",
+  "nextWeb": "After Mika actualcleanup or NOT_RUN; must get newfreshgate, no reuse",
+  "later": "Lead F04 after Web per latestLeadorder"
+}

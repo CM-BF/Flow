@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-06T20:44:51.084325+00:00",
+  "verdict": "APPROVED_SCOPED_PREPARATION_NOT_RUN",
+  "candidate": "/private/tmp/recovery-browser-next4d-0347_mi4",
+  "manifestSha256": "6f76b3583b15e6bc0619f7b59a6d82d15f54b33d1b49d718009c21398da5f54b",
+  "reportSha256": "aea28cde4b1a8abc2c014ef7b49c9358490d3d9c6cae8a8521929098c9225cda",
+  "metadataHead": "d3d45bcb58e2b34064abfdbb90b9d56edc6cd0d9",
+  "implementation": "4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb",
+  "productHelperSource": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "sourceReview": {
+    "path": "/tmp/root-recovery-4d330-late-stop-source-review.json",
+    "sha256": "2a3826caf708b570aa4e9fe226a2d2bb31711e943cfdfdd10a9daabd61ec4315"
+  },
+  "validation": {
+    "currentSourcePinsVerified": 19,
+    "sourcePinsEqualApproved4d330": true,
+    "publicInputPinsVerified": 9,
+    "packageIdentitiesVerified": 11,
+    "runtimeFilesVerified": 11,
+    "nodePinVerified": true,
+    "oldBrowserRawVerified": 10,
+    "metadataHeadMatchesActual": true,
+    "worktreeClean": true,
+    "runtime": "NOT_RUN",
+    "resourceSampling": false,
+    "credentialAccess": false,
+    "projectWrites": false
+  },
+  "budget": {
+    "browserTotalMs": 90000,
+    "usedMs": 14846.267375,
+    "remainingMs": 75153.732625,
+    "cleanupReserveMs": 15000,
+    "maximumWorkMs": 60153.732625000004,
+    "proposedIntegerTotalMs": 75153,
+    "proposedIntegerWorkMs": 60153,
+    "scratchBytes": 67108864,
+    "evidenceBytes": 8388608,
+    "perRunRetainReserveBytes": 5242880,
+    "logBytes": 1048576,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688,
+    "currentRetainedEvidenceBytes": 925425,
+    "currentHeadroomBeforeParentRunReserveBytes": 2220303
+  },
+  "blockingSourceFindings": [],
+  "nextPrerequisites": [
+    "Actually available serialized PG/Chrome window and manager fresh original6ff/v4/21 exact-scope observation.",
+    "Fresh fixedHEAD19source/dependency/resource checks and a new single-use gate; old prepared/gate artifacts remain historical.",
+    "New controlled isolated-test admin environment under existing manager authority; no personal-service/default endpoint discovery or exposed credentials.",
+    "Retain all raw, post-final-write stdout, actual exit, group/DB/scratch cleanup and cumulative budget; no automatic retry or new scenarios."
+  ],
+  "scope": "Same existing one-origin native browser subset; fullfeature remains NOT_STARTED/UNKNOWN, no mainintegration/deployment claim. No direct50 or types rerun required for this metadata preparation."
+}

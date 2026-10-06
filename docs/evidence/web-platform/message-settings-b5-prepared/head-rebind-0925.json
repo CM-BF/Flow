@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-06T20:41:35.176814+00:00",
+  "previousHead": "20957ebb0df3bbeb907aa3c654eeaa55f71f573d",
+  "head": "0925d6e3b1c86c432449cbe324f4f8ebfe1ebf0e",
+  "source": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "change": "Only binding.head and manifest.sourceHead/current binding digest; source/executable/boundary/budget unchanged",
+  "sourceCount": 6,
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+    "apps/web/src/execution-profiles/selection.ts": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+    "apps/web/test/message-settings.test.ts": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+    "apps/web/test/message-settings.fixture.tsx": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+    "apps/web/test/message-settings.browser.ts": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c"
+  },
+  "localEqualsRemote": true,
+  "clean": true,
+  "state": "PREPARED",
+  "gate": false,
+  "runtime": false,
+  "freeSampling": false,
+  "runnerSha256": "ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7",
+  "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+  "bindingSha256": "df17eb0df05e1e10f28343281e1e27b40790529ca3659f79d7c8f7ae7f026279",
+  "manifestSha256": "edfd8448f6c3e936cb908bce1830e59f7469f71f2c4900933825df38975924df",
+  "boundary": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/message-settings-b5-prepared/repaired-native-chrome-boundary-acceptance.json",
+    "sha256": "13855287aad7a2b27a9611d370222c9b46fee81c70976fedfc761a3c420e65cb"
+  },
+  "claimObservation": "../management-owner-fresh-2040.json"
+}

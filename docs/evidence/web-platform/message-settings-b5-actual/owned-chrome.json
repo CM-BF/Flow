@@ -1,0 +1,77 @@
+{
+  "parentPid": 15993,
+  "chromePid": 16283,
+  "pgid": 16283,
+  "processGroup": "separate-parent-owned-session",
+  "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "argv": [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "--headless=new",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--disable-sync",
+    "--remote-debugging-port=0",
+    "--remote-debugging-address=127.0.0.1",
+    "--user-data-dir=/private/tmp/msgset-b5/scratch/profile",
+    "--disk-cache-dir=/private/tmp/msgset-b5/scratch/cache",
+    "about:blank"
+  ],
+  "temp": {
+    "TMPDIR": "/private/tmp/msgset-b5/scratch/temp",
+    "TMP": "/private/tmp/msgset-b5/scratch/temp",
+    "TEMP": "/private/tmp/msgset-b5/scratch/temp",
+    "MAC_CHROMIUM_TMPDIR": "/private/tmp/msgset-b5/scratch/temp",
+    "XDG_CACHE_HOME": "/private/tmp/msgset-b5/scratch/cache",
+    "BREAKPAD_DUMP_LOCATION": "/private/tmp/msgset-b5/scratch/crash"
+  },
+  "spawnAttemptedAt": "2026-10-06T20:45:00.767091+00:00",
+  "spawnReturnedAt": "2026-10-06T20:45:00.783327+00:00",
+  "cdpPortDiscoveredAt": "2026-10-06T20:45:05.365846+00:00",
+  "exit": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-06T20:45:08.787816+00:00",
+    "beforeCdpPort": false
+  },
+  "close": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-06T20:45:08.788142+00:00",
+    "beforeCdpPort": false,
+    "meaning": "Parent observed direct-child exit plus both captured pipe EOFs; not a Node close event"
+  },
+  "launchError": null,
+  "signals": [
+    {
+      "signal": "SIGTERM",
+      "at": "2026-10-06T20:45:08.765629+00:00",
+      "target": "owned-chrome-pgid"
+    }
+  ],
+  "streams": {
+    "chrome.stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "chrome.stderr": {
+      "receivedBytes": 6357,
+      "keptBytes": 6357,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "worker": {
+      "receivedBytes": 620,
+      "keptBytes": 620,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    }
+  },
+  "cdpEndpoint": "http://127.0.0.1:56456"
+}

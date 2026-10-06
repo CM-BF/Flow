@@ -1,0 +1,140 @@
+{
+  "at": "2026-10-06T20:28:16.879992+00:00",
+  "verdict": "APPROVED_SCOPED_PREPARATION_NOT_RUN",
+  "candidate": "/private/tmp/msgset-b5",
+  "manifestSha256": "4d4b32dce54209b6d33a33f28a079479f6d37f3c3e5224d5aaeaf96a9c74677d",
+  "bindingSha256": "d11c9272423a097b340c3665119aa8a7afbd718bc55badd28a3e69af0913943b",
+  "runnerSha256": "1a478638173e16f1b59a8ea3eb15e445ac305f6aae6de4c801eaa41e21b0e586",
+  "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "metadataHead": "20957ebb0df3bbeb907aa3c654eeaa55f71f573d",
+  "branch": "codex/web-message-settings",
+  "dirty": false,
+  "priorPreparationReview": {
+    "path": "/tmp/root-message-settings-b4-preparation-review.json",
+    "sha256": "235ffcb5e20aeb30290280664b4b81d0fb1e944058f53c3031de519c6b49d065"
+  },
+  "productSourceReview": {
+    "path": "/tmp/root-message-settings-270c-locator-source-review.json",
+    "sha256": "a96a893b8ef870da4bcb5d3e12eb4156b4829e2e3f8c3f2f80f5e25f74826abe"
+  },
+  "changesReviewed": [
+    "The sole executable delta compares all five successful b4 cleanup fields exactly, including both worker and Chrome group absence. This retains fail-closed carry validation against actual prior terminal evidence.",
+    "Only browser locator source changed from1cd to270c; exact accessible group name narrows the existing assertion. Five other source pins are identical.",
+    "The redundant readOnlyDependencies browser declaration now agrees with sources and actual270c bytes. The prior parent source-merge precedence already selected the sources entry; the corrected inconsistency was metadata, not proof of a runtime product failure.",
+    "Previous cumulative runtime20609ms and retained741839B are carried without reset. New own gate and boundary record are required."
+  ],
+  "blockingFindings": [],
+  "validation": {
+    "candidateManifestFilesVerified": 14,
+    "sourcePinsVerified": 6,
+    "readonlyPinsVerified": 116,
+    "externalPinsVerified": 37,
+    "nodePinVerified": true,
+    "oldB4FilesPreserved": 26,
+    "oldB4RuntimeResultSha256": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c",
+    "duplicateCorrectionOnlyOneBindingValue": true,
+    "priorThreePreparationOriginalsPreserved": true,
+    "exactExecutableDeltaVerified": true,
+    "workerAliasesRuntimeConfigBudgetByteIdentical": true,
+    "pythonAST": "PASS ast.parse only",
+    "noGate": true,
+    "noResult": true,
+    "boundaryInCandidateAtReview": null,
+    "candidateFiles": [
+      {
+        "path": "/private/tmp/msgset-b5/aliases.json",
+        "bytes": 3453,
+        "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/binding.json",
+        "bytes": 33970,
+        "sha256": "d11c9272423a097b340c3665119aa8a7afbd718bc55badd28a3e69af0913943b"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/binding.json.before-readonly-pin-fix",
+        "bytes": 33970,
+        "sha256": "04f65810f5b671868e94364fa5f608d3b90145207cc0d454f1d7b6ebc79d16a6"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/binding.json.diff",
+        "bytes": 3737,
+        "sha256": "147f22fd18ab94a359c385a6bf501c9910265ee623194ee767aae71de8e602cf"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/browser-budget.json",
+        "bytes": 199,
+        "sha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/manifest.json.before-readonly-pin-fix",
+        "bytes": 2828,
+        "sha256": "b7822b508182e58888289eef91ce72c7cd7489486c850800c57a2a0864bfa04d"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/readonly-pin-fix.diff",
+        "bytes": 1023,
+        "sha256": "3fb644b54e31207743b70b44c1a6ed6115801884f2d94186ab0b4b7a7f5c84e7"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/report.md",
+        "bytes": 4224,
+        "sha256": "8b359e8caf6258ab058cb91fc94012a986b73e7197ef54b1c60bd3495f6e1650"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/runtime-tsconfig.json",
+        "bytes": 1590,
+        "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/source-audit.json",
+        "bytes": 5781,
+        "sha256": "67b74fb0a448dfe7955df892acb0667c94a5b6556fa5e38191bfbe011f4eadcb"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/source-audit.json.before-readonly-pin-fix",
+        "bytes": 4815,
+        "sha256": "8bdb734b13ed1e863e42afe252f1a73f8ec55a10395e7a106b5e279b925dcabc"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/supervisor.py",
+        "bytes": 21091,
+        "sha256": "1a478638173e16f1b59a8ea3eb15e445ac305f6aae6de4c801eaa41e21b0e586"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/supervisor.py.diff",
+        "bytes": 774,
+        "sha256": "eefec0d38bfc72a8627d00a21e5eebe1e30b363128c15f5145ad50605b39979d"
+      },
+      {
+        "path": "/private/tmp/msgset-b5/worker.mjs",
+        "bytes": 6976,
+        "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b"
+      }
+    ],
+    "projectWrites": false,
+    "runtime": "NOT_RUN",
+    "resourceOrServiceSampling": false
+  },
+  "budget": {
+    "totalMs": 60000,
+    "spentMs": 20609,
+    "remainingMs": 39391,
+    "workMs": 24391,
+    "cleanupReserveMs": 15000,
+    "previousRetainedBytes": 741839
+  },
+  "limits": [
+    "This is preparation and fixed-source approval only, not browser PASS or full Settings feature approval.",
+    "Public dependency entry and package metadata pins do not exhaustively hash all transitive package bytes or the Chrome framework.",
+    "Fresh D04 claim/head/source/dependency/resource checks are still required at an actually available serialized window.",
+    "Lead personal af51+d629 publish has priority; Mika native request is also waiting. This review grants no holder and no gate.",
+    "Old failed attempts and all browser behavior not yet reached remain recorded."
+  ],
+  "cleanCode": {
+    "scope": "Narrow cleanup equality delta and duplicate binding declaration",
+    "finding": "One inconsistent duplicate readonly source hash discovered and corrected by owner with before artifacts preserved.",
+    "result": "No unresolved blocking finding in this exact candidate; no product refactor or extra abstraction introduced."
+  }
+}

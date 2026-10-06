@@ -1,5 +1,15 @@
 # Web 当前交接与唯一来源
 
+**Settings b5 单次页面检查4/4通过并完成清理，Web已立即归还窗口给Lead F04。** [实际归还](message-settings-b5-window-return.json)：执行270c/0925，parent actualexit0/PASS；8267ms，累计28876/60000、余31124仅算术。worker PGID20627、Chrome PGID16283均absent，scratch删除、cleanup errors=[]；Chrome exit/close0，pageErrors=[]、fixture/context关闭。0PG/provider，原raw不改，root独立结果审待接收。Web无holder，不自动接Recovery/DPERF04，也不冒称F04已启动。
+
+**本轮准入历史：Settings b5已通过fresh准入并交唯一W01执行，现已完成清理。** [本次准入](message-settings-b5-next-admission.json)核0925/270c六源、116只读、37外部与ea3c监督/71a643 worker及真实boundary；原20609ms已用，余39391ms含15s清理。Mika SVC07已20:43:06.094669实际2/2通过并清理归还Web（其入站归因）；本组结束后交Lead F04，不自动连跑Recovery/DPERF04。此次门槛/结果以本准入原件为准，不复用旧free。
+
+**历史20:43准入未启动：Settings b5首gate在派发前撤回，让Mika SVC07先行。** [本次NOT_RUN原件](message-settings-b5-admission.json)：准入曾核0925/270c与全部pins及一次free，但尚未dispatch/consume、无result/scratch，未启动任何进程。原gate已改名封存，不可执行；20609/39391预算不变。Mika93dacd96原30s/2连接仍须其freshgate，未冒已运行；其actualcleanup或NOT_RUN后才交Web最短ready项，再后是Lead F04。旧free不能用于后继Webgate。
+
+**历史20:37交接：Mika目录观察已完成并交回Lead个人受管更新。** [Mika20:37:33回执](mika-native-window-return-203733.json)来自其入站经root转交：1target/1modelList返回6models，R06确认退出/EOF，两owned root exact lstat absent、0pending launch。本组未实采其环境。该次交给已审READY的Lead 5fe98（af51+d629）；后继仅只读172ms停止并归还，未发布，当前顺序见页首。此前个人step01只读181ms因 `RUNNER_ADMISSION_MISSING` 停止，0材料导入/drain/服务/发布，个人版本未更新。[正式handback历史](web-mika-native-window-handback.json)与[完整入站顺序](personal-release-mika-shared-window-intake.json)保留，只经canonical协调，无外发绕行。
+
+[20:27:42.487 D04实际领取](web-mika-take-observation-2027.json)显示本组原四 active claims 与 Mika MATURE02 v6原三范围无overlap，DPERF05 v2仍RELEASED；卡片领取继续由D04单一链聚合。该历史观察区分运行请求与take；后继Mika实际运行归还见页首。最新[20:40:36 D04窄观察](management-owner-fresh-2040.json)核管理6、Settings8、Recovery21原claim均active且无overlap。
+
 **Recovery50 单次受控检查已50/50通过并清理，机会已归还Lead。** [实际归还](recovery01-50-window-return.json)：原result3099ms保留；更晚终态stdout postWrite3100.050625ms、累计9968.050625/30000、余20031.949375ms，actualexit0、无soft-stop。owned PGID98483 absent、scratch删除、cleanup errors=[]；0HTTP/PG/Chrome/types/provider，不自动接下一检查。若未来使用整数gate，以累计向上取9969/余20031保守记账，不重置预算。[root实际证据已限定接收](recovery01-50-actual/root-runtime-review.json)，50受控通过不代真实IDB/完整浏览器验收。
 
 **Settings b4唯一检查已失败并清理，当前窗口立即归还Lead。** [实际归还](message-settings-b4-window-return.json)：6861ms，累计20609/60000、余39391仅算术；真实CDP已连接、fixture已显示，首UI断言因dialog内group定位4匹配而strict失败，checks=[]，不能冒产品功能红或说Chrome启动仍失败。原result/budget/raw保持；worker PGID11051、Chrome PGID6481均absent，scratch删除，cleanup errors=[]，fixture/context关闭，Chrome exit/close code0。0PG/provider/个人操作，不自动重试或接DPERF04/Recovery。原[唯一准入](message-settings-b4-admission.json)和[Lead交窗](message-settings-b4-window-received.json)保历史，下一holder由Lead安排。
@@ -10,7 +20,7 @@
 
 **历史18:58首轮：Settings浏览器检查失败并清理后归还Lead R01。** [实际归还](message-settings-browser-window-return-1858.json)：执行f800/f3，5197ms/60秒，0行为checks/截图；owned Chrome在CDP准备前退出，尚非产品行为失败结论。PGID87564 absent、Chrome87566 exited、fixture closed、scratch removed，cleanup errors=[]，0PG/provider。本组无活跃PG/Chrome/HTTP，余54803ms不自动续跑；**Lead18:58:58已接收归还，随后R01仅2.927s因af51缺client alias退出，0Chrome且清理归还；该次归还后曾无共享holder，原因与本次Chrome故障不混同；R01后继窗口亦已结束，最新资源限制以页首为准。共同启动风险：原Chrome stderr有Crashpad/settings.dat写拒绝与ProcessSingleton socket目录创建失败，父exit1不是Chrome actual code；后者未被持久采集。[root原生临时目录线索](message-settings-chrome-startup-risk-intake.json)：current Chromium primary在CreateUniqueTempDir失败、bind之前报同文，macOS首看MAC_CHROMIUM_TMPDIR否则NSTemporaryDirectory；首轮parent未绑定前者，故越出owned scratch是强候选。154精确tag与原失败path/errno未得，不能唯一归因或断言R01同样失败；Crashpad日志另列。不重跑/不扩大sandbox/不读个人profile。** [本轮授权](message-settings-browser-window-received.json)与[单次准入](message-settings-browser-admission.json)保留，旧18:45归还属于历史。
 
-[最近D04领取观察（19:56:39.683）](web-current-claim-observation-1956.json)保留owner、唯一WT/branch、claim ID/version和全部scope：Settings a5b v1、Recovery6ff v4、DPERF04 b554 v1为COMMITTED/active；RELEASE03原bfb v4与PROFILEC02 e0b v2已RELEASED。DPERF05曾为 **9a876001 v1 COMMITTED**，现main-close后已[9a876001 v2 RELEASED](dperf05-main-release-receipt.json)；[18:45候选NOT_TAKEN快照](web-current-claim-observation-1845.json)仅为领取前历史。该次观察核原五active claim无overlap；后继DPERF05释放见实际CAS回执，剩四原active claim；RELEASED沿原历史回执保留。每次新写/take仍须D04当前精确范围，不能把旧中断或unknown当空闲。任务进度只取各owner status，领取由D04事实聚合，不维护第二进度表。[root固定7713链路审查](dashboard-take-traceability-root-review.json)确认ledger→aggregate→卡片/详情提供原字段并区分unknown/unregistered/stale占用；这是源码核验，不冒当前页面部署。
+[历史D04领取观察（19:56:39.683）](web-current-claim-observation-1956.json)保留owner、唯一WT/branch、claim ID/version和全部scope：Settings a5b v1、Recovery6ff v4、DPERF04 b554 v1为COMMITTED/active；RELEASE03原bfb v4与PROFILEC02 e0b v2已RELEASED。DPERF05曾为 **9a876001 v1 COMMITTED**，现main-close后已[9a876001 v2 RELEASED](dperf05-main-release-receipt.json)；[18:45候选NOT_TAKEN快照](web-current-claim-observation-1845.json)仅为领取前历史。该次观察核原五active claim无overlap；后继DPERF05释放见实际CAS回执，剩四原active claim；RELEASED沿原历史回执保留。每次新写/take仍须D04当前精确范围，不能把旧中断或unknown当空闲。任务进度只取各owner status，领取由D04事实聚合，不维护第二进度表。[root固定7713链路审查](dashboard-take-traceability-root-review.json)确认ledger→aggregate→卡片/详情提供原字段并区分unknown/unregistered/stale占用；这是源码核验，不冒当前页面部署。
 
 ## 看板时间格式窄修与主线接收
 
@@ -88,6 +98,17 @@ Recovery恢复编辑P1已固定 **2b01eb6f / a99037a4**，[十九源8变11同](r
 
 Recovery2b01 限定源码批准已由 owner 正常封存为 **994ce852**，19源不变。唯一 direct50 候选准备时未运行；[父监督初审](recovery01-50-initial-supervisor-root-review.json)的扫描错误传播和软停止清理两项已获[固定修复批准](recovery01-50-ready/supervisor-root-review.json)。[准备就绪输入](recovery01-50-ready/intake.json)已绑定994ce/2b01与最终binding，累计6868、余23132ms含5秒清理；没有gate或新运行窗，最终必须同时核原result、终态stdout postWrite及实际exit。后继已按页首一次通过50项并完整清理；原38历史不迁移，真实页面仍待独立验收。
 
-Settings270c 源审已由 owner 封存为 **20957ebb**，双端clean/六源固定不变。[新 b5 准备稿](message-settings-b5-prepared/intake.json)仅修正真实 b4 五字段清理回执消费；累计20609、余39391ms含15秒清理、741839 B旧证据完整保留。root正核最小差异与新的精确boundary绑定，当前PREPARED、无gate/无新Chrome窗口；不得以旧b4接受记录覆盖新runner字节。
+Settings270c 源审已由 owner 封存为 **20957ebb**，双端clean/六源固定不变。[新 b5 准备稿](message-settings-b5-prepared/intake.json)仅修正真实 b4 五字段清理回执消费；累计20609、余39391ms含15秒清理、741839 B旧证据完整保留。[root限定准备审](message-settings-b5-prepared/root-preparation-review.json)与[新runner精确boundary接受](message-settings-b5-prepared/native-chrome-boundary-acceptance.json)已完成；重复readonly hash已修并保修前原件。后继[root终态停止补审](message-settings-b5-prepared/root-soft-stop-addendum.json)发现cleanup/report阶段soft-stop可能仍PASS，曾替代初次准备批准用于准入，后继固定ea3c复审通过见下方；W01在[fresh原八范围](message-settings-b5-prepared/soft-stop-claim.json)后仅修/tmp父监督并保修前原件。产品270c和原预算不变、无gate/无新Chrome窗口；修后root重新核精确runner并沿既有GO授权绑定，当前继续等待Lead个人发布和Mika串行交接。
 
 Recovery50 原件和两阶段监督审查已由 owner 一次封存为 **c36b1f12**，[管理核验](recovery01-50-owner-seal.json)确认双端一致、clean、19源码仍2b01。执行来源永久保994ce，晚终态预算与早result分别保留；原21继续持有并停写，真实浏览器失败未复验，完整feature NOT_STARTED。
+
+Recovery 下一真实browser仅已准备[固定输入与预算](recovery01-browser-next-prepared/intake.json)：c36b/2b01、原parent7ca，保首轮失败14.846267375秒和剩75.153732625秒含15秒清理；旧admin env已删除，未读取凭据。无gate/无free采样/无运行，占用仍按页首Mika handback。Settings父监督soft-stop修后runner **ea3c5470** 已获[root限定复审](message-settings-b5-prepared/root-soft-stop-repaired-review.json)及[修后精确boundary接受](message-settings-b5-prepared/repaired-native-chrome-boundary-acceptance.json)，当前仅metadata绑定、PREPARED/no gate；旧1a478批准保历史，不准沿它启动。
+
+Recovery原browser准备经[root限定审](recovery01-browser-next-prepared/root-late-stop-review.json)发现cleanup阶段吞晚interrupt的P2，已按[20:34 fresh原21](recovery01-browser-next-prepared/late-stop-claim.json)派panels仅修原parent/自有记录；准备不可运行。2b01生产恢复与50受控通过结论不撤，原scenario/预算不扩、无browser gate。
+
+
+本次正常owner安全点：Settings **0925d6e3** 已push/clean，六源仍270c；[HEAD-only准备重绑](message-settings-b5-prepared/head-rebind-0925.json)已核六源fixed=current，父ea3c/worker71a643/真实boundary138552与预算不变，当前REVIEWED_SOURCE_BOUND，但唯一gate未dispatch即撤回，仍NOT_RUN。Recovery **4d330/c059** parent晚停止修已获[root限定源码批准](recovery01-browser-next-prepared/root-4d330-source-review.json)，原50受控证据不扩为新parent运行；原owner已完成一次正常metadata收口d3d45bcb并[重建19pin只读准备](recovery01-browser-next4d-prepared/intake.json)，旧真实browser失败及75.153732625秒余量保持。
+
+[本次Settings未启动即归还](message-settings-b5-window-return-not-run.json)保留准入与调度先后，现无Webholder；不能把管理已生成gate冒称实际浏览器占用。
+
+[本轮少量终态/worker原件](message-settings-b5-actual/manifest.json)显示4项通过限定独立受控组件与synthetic HTTP catalog；并非真实App/send/queue/recovery/provider集成通过。原父count20/37失败与三次browser失败历史保持，owner封存和root独审分别记录。

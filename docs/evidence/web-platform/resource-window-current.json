@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T20:23:39.576168+00:00",
-  "state": "CONTROLLED_DIRECT50_PASS_CLEANED_WINDOW_RETURNED",
-  "groupWindowOwnership": "Recovery50 pure Node finished; owned PGID98483/scratch absent, actualexit0 and final stdout PASS. Opportunity returned to Lead, no automatic follow-on.",
+  "recordedAt": "2026-10-06T20:45:44.404156+00:00",
+  "state": "SETTINGS_B5_PASS_CLEANED_WEB_NO_HOLDER_RETURN_F04",
+  "groupWindowOwnership": "Settings b5 one actual browser check completed PASS and both owned groups/scratch absent. Web has no holder; opportunity returned to Lead F04, no automatic Recovery/DPERF04.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,33 +407,11 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "recordedAt": "2026-10-06T20:07:55.826235+00:00",
-    "state": "FAILED_SINGLE_BROWSER_CLEANED_WINDOW_RETURNED",
-    "source": "W01 actual result plus manager read original parent/budget; no automatic retry",
-    "run": "settings-b4-20261006-200629-5a13ef",
-    "elapsedMs": 6861,
-    "previousMs": 13748,
-    "cumulativeMs": 20609,
-    "remainingMs": 39391,
-    "checks": [],
-    "failure": "First UI assertion strict locator: dialog.getByRole(group) matches4 at browser.ts:81; actualCDP/fixture ready, not Chrome startup failure",
-    "cleanup": {
-      "errors": [],
-      "groupAbsent": true,
-      "workerGroupAbsent": true,
-      "chromeGroupAbsent": true,
-      "scratchAbsent": true
-    },
-    "workerPgid": 11051,
-    "chromePgid": 6481,
-    "raw": "/private/tmp/msgset-b4",
-    "resultSha256": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c",
-    "budgetSha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373",
-    "runtimeReleased": true,
-    "PG": 0,
-    "provider": 0,
-    "personalOperations": 0,
-    "next": "Lead schedules next holder; no automatic DPERF04/Recovery/b4 retry. Source/data diagnosis before new fixed candidate and gate."
+    "source": "Actual b5 result/budget and owner actualexit receipt",
+    "webHolder": null,
+    "actualWindowReturned": true,
+    "next": "Lead F04 by existing order; not claiming its actualstart",
+    "noAutomaticRun": "Recovery/DPERF04 stay prepared"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -489,8 +467,16 @@
       "direct50": "50/50 controlled PASS; late terminal cumulative9968.050625, original browser failure not revalidated",
       "browser": "Prior failure remains not revalidated",
       "ownerMetadataSeal": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
-      "direct50Preparation": "REVIEWED_READY_NOT_RUN; scan/soft-stop P2 source addressed, no new window or gate",
+      "direct50Preparation": "Executed once;50controlledPASS accepted. No repeat",
       "direct50PreparationEvidence": "recovery01-50-ready/intake.json"
+    },
+    "nextPrepared": {
+      "evidence": "recovery01-browser-next4d-prepared/intake.json",
+      "state": "SCOPED_PARENT_SOURCE_APPROVED_PREPARED_NOT_RUN",
+      "window": null,
+      "source": "4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb",
+      "review": "recovery01-browser-next-prepared/root-4d330-source-review.json",
+      "head": "d3d45bcb58e2b34064abfdbb90b9d56edc6cd0d9"
     }
   },
   "settingsLeaf": {
@@ -500,7 +486,7 @@
     "version": 1,
     "sourceRequest": "mature02-message-settings-source-request.json",
     "PG": false,
-    "browser": "B4_FAILED_FIRST_LOCATOR_CLEANED",
+    "browser": "B5_4_CHECKS_PASS_CLEANED_ROOT_REVIEW_PENDING",
     "sourceReady": "message-settings-source-ready.json",
     "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
     "metadata": "9363195c4ffb7c38380716fa68060c99449df801",
@@ -521,8 +507,8 @@
     "browserCandidateState": "B4_CONSUMED_FAILED_CLEANED_SELECTOR_REPAIR_SOURCE_ONLY",
     "metadataSeal": "message-settings-browser-metadata-seal.json",
     "browserResult": "message-settings-b4-window-return.json",
-    "browserSpentMs": 20609,
-    "browserRemainingMs": 39391,
+    "browserSpentMs": 28876,
+    "browserRemainingMs": 31124,
     "browserRepair": {
       "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
       "metadata": "b41c93e7a7e054faec68faed101be5adf4d21225",
@@ -546,6 +532,16 @@
       "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
       "metadata": "ba43716f142667897ec6ca8e17442dde92b6f4d2",
       "intake": "message-settings-270c-locator-intake.json"
+    },
+    "b5Ready": {
+      "evidence": "message-settings-b5-prepared/intake.json",
+      "state": "APPROVED_REPAIRED_PREPARATION_NATIVE_BOUNDARY_ACCEPTED_NOT_RUN",
+      "source": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+      "metadata": "0925d6e3b1c86c432449cbe324f4f8ebfe1ebf0e",
+      "bindingSha256": "dbd44eb3de82d2c5e6d6ac9886a90a118db67ed1d88dee089ac90b09d345adde",
+      "gate": false,
+      "runtime": false,
+      "windowState": "NOT_RUN_REASSIGNED_BEFORE_DISPATCH"
     }
   },
   "retainedAf51": {
@@ -554,7 +550,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "recovery01-50-window-return.json",
+  "currentWindowReturn": "message-settings-b5-window-return.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -853,7 +849,12 @@
     "closure": "MAIN_DELIVERED_CAS_RELEASED v2; no rerun",
     "release": "dperf05-main-release-receipt.json"
   },
-  "currentLedgerAvailability": "AVAILABLE_MANAGER_OBSERVATION_2026-10-06T19:56:39.683Z",
+  "currentLedgerAvailability": {
+    "state": "available",
+    "observedAt": "2026-10-06T20:27:42.487Z",
+    "source": "web-mika-take-observation-2027.json",
+    "overlap": []
+  },
   "nativeChromeBoundaryDecision": {
     "state": "ACCEPTED_EXPLICIT_GO",
     "evidence": "native-chrome-boundary-go-intake.json",
@@ -861,9 +862,9 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "NO_NEW_RUNTIME_READY_GATE",
-    "priority": "Settings270c scopedsource approved, newcandidate binding prepared next; no newwindow/gate. Recoverydirect50 preparation only",
-    "boundary": "GO explicitaccepted originalfixednative executables, no repeatedconfirmation",
+    "state": "PREPARATIONS_APPROVED_NOT_RUN_WAIT_LEAD_RETURN",
+    "priority": "Settings270c/ea3c exactboundary approved, metadata0925 rebound; Recovery4d330 parentapproved and owner finalprep pending. No newgate.",
+    "boundary": "Exact real GO delegated acceptance138552 binds currentea3c runner/71a643 worker; preserved native Chrome sandbox, custom Node restrictions, no custom Chrome outerwrite/egress guarantee",
     "remainingSettingsMs": 39391,
     "gate": null
   },
@@ -960,5 +961,7 @@
     "reviewEvidence": "recovery01-50-actual/root-runtime-review.json",
     "ownerFinal": "c36b1f12d169d09ff9f6bb58d97f99b1bf9e8f83",
     "ownerSealEvidence": "recovery01-50-owner-seal.json"
-  }
+  },
+  "messageSettingsB5Admission": "message-settings-b5-next-admission.json",
+  "messageSettingsB5Result": "message-settings-b5-window-return.json"
 }
