@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T16:29:35.867569+00:00 / input main65659028 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T16:47:12.803017+00:00 / input main74bc72f0 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main65659028；本批修正文档并归档资源/source与166来源事实，无产品源码差异 |
+| 工作基线 / HEAD | main74bc72f0；本批归档资源与共享入口移交，登记第167个来源，无产品源码差异 |
 | 工作树dirty状态 | 本批产品与证据已提交；此metadata收口后clean |
 | 工作分支状态 | completed |
 | 检查状态 | 终端9产品源对获审a1f82f逐字相同；作者35+1与focused类型检查有效，集成无重跑/PG/provider |
-| 已集成main状态 / HEAD | main83f535已含终端取消限定片；165来源已在4320实核。本批仅metadata，个人runtime362/v15与Web8d8/v2不变 |
+| 已集成main状态 / HEAD | main74bc72f0已含终端取消限定片与166来源；本批167来源发布后核实际看板。个人runtime362/v15与Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 终端取消限定片已进入主线；网页附件兼容场景通过，混合场景因空间触线暂停。 |
-| 下一可用交付 | 留足余量后完成网页兼容；并行补终端真实中心与PTY旅程代码。 |
-| 当前阻塞 | ACTIVE: 磁盘余量不足局部数据库验证，大型构建继续关闭。 |
+| 当前产出 | 十二个目录的可逆整理已完成；逐消息设置公共入口由独立owner实施，网页组接续兼容验证。 |
+| 下一可用交付 | 顺序完成网页兼容与终端真实中心旅程，接收逐消息设置共享客户端。 |
+| 当前阻塞 | ACTIVE: 大型构建仍缺空间；局部验证依现场余量串行运行。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -193,3 +193,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T16:17:28.029524+00:00：本批仅接收OPS七树保留回执、165来源实采与TUI01F独审/main/后继边界；无产品差异、无重跑或provider。见[metadata接收](../../docs/evidence/i02/resource-terminal-metadata-receipt.json)。RELEASE03累计7,983ms，B未运行；不把资源中断写为产品失败，不刷新用户页面。
 
 2026-10-06T16:29:35.867569+00:00：运行并发/恢复/TUI入口三文档按独立只读建议和固定源码事实修正，三文件hash与9878一致；收录166来源已采回执及CORE/TUI source-only闭包事实。无产品/工程检查/PG/provider或个人服务操作；[本批绑定](../../docs/evidence/i02/runtime-source-metadata-receipt.json)。磁盘资源新批按既有授权处理，WebA→B尚未重开。
+
+2026-10-06T16:47:12.803017+00:00：受控接收F01共享入口正式交回、D05第167个MATURE02C01唯一来源和OPS12树封存。仅registry单行与文档/证据，不改变产品；固定输入见[本批回执](../../docs/evidence/i02/2026-10-06-mature02c01-resource-batch.json)。CORE与O14尚未批准生产挂载，MATURE02C01受控输入不提前main；原模型预算不变。
