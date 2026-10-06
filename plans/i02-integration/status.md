@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:05 UTC / main6ea3b9ca |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:41 UTC / main2af8639d |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -13,13 +13,13 @@
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | CHAT06P03原5项独审批准复用；cad76两type适配与20绑定独审，实际root types0/9.295s；初始组合红永久保留 |
-| 已集成main状态 / HEAD | main/origin e731bc45一致且clean，175源20:21实际聚合；R01结果已接收，个人中心source362/v15、Web8d8/v2保持 |
+| 已集成main状态 / HEAD | main/origin2af8639d clean已接消息设置组件、终端修复和个人发布完整证据；178来源已加载。个人实际af51/v18、Web d629/v3，与源码main分开。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 终端与网页首验失败和独立资源收尾已固定；个人更新的旧记录恢复方案正在补齐受控操作。 |
-| 下一可用交付 | 本批已交付；个人固定版本更新准备与终端、网页接续driver并行继续。 |
+| 当前产出 | 个人后台和新版网页已受控更新，原数据与旧网页资源保留；全部操作结果已独立核验并进入主线。 |
+| 下一可用交付 | 本批已交付；事务连接、终端双端接续及网页恢复按资源准入继续，进程监督模块先补局部检查再接收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -253,3 +253,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T21:14:02.758575+00:00：F04终端观察修复c612已限定独审APPROVED；27新/780不变/29历史绑定无差，原PTY1、局部2及types原证据有效，reviewer零重跑。完整旅程仍保留原失败，后继须新固定permit与原磁盘/共享窗口门槛。[review](../../docs/evidence/i02/tui01f04-terminal-repair-review.json)。
 
 2026-10-06T21:14:32.623233+00:00：SVC05H精确旧intent退役准备0a8限定独审通过，130固定/129现场绑定全同；18不同局部例分轮有效，无真实PG/个人操作。允许在新固定源与串行窗口下沿既有GO一次授权执行，旧失败不改。[review](../../docs/evidence/i02/svc05h-intent-retirement-review.json)。
+
+2026-10-06 21:41 UTC：个人操作100绑定fixed/current、24命令、25最终checks独立核验见[结果review](../../docs/evidence/i02/svc05h-retirement-release-result-review.json)，178个固定交付路径1,340,547逻辑B原样接收见[receipt](../../docs/evidence/i02/svc05h-final-controlled-receipt.json)。0新个人probe/模型/产品重测；记录仅本次固定af51+d629与原数据/历史保持，不扩成moving main部署声明。
