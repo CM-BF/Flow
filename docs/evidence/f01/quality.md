@@ -168,3 +168,10 @@ GO review caught the original legacy34 C02 fixture reusing fixedflow_c02, resett
 真实production factory/PG/loopback+CLI 3项与配置纯模块2项共5/5、2.80s，typecheck独立exit0。固定随机库before[]/createdtrue/connections[]/remaining[]；下载成功重启幂等且tarball1GET，取消下载/重启/local reconcile仍1GET。验证压缩bytes不等install/load，runtimeStatus仍unavailable。未触个人服务/真实npm/模型。
 
 本段clean-code复核：声明配置深模块只读文件，业务策略复用已有host，worker生命周期收在server入口，CLI不复制状态机；无新依赖。保留X05协作取消与FS清理非硬时限、SIGKILLstaging无GC边界。manifest见package-fetch-production-manifest.json，待独立只读review。
+
+
+## 2026-10-06 06:56 UTC assistant stream client
+
+Fixed 88a869efd782afd5f64f5d7adad0a9167da121c1: three task-bound read methods and explicit patch-v1 opt-in only for conversation GET; creation body/header/idempotency remain stable. Four source files include public exports/optional capability documentation. Real HTTP 1/1 (34ms; suite384ms), independent noEmit exit0; no PG/provider. Errors and AbortSignal unchanged, no hidden retries. First run green, no red invented. Manifest binds fixed sources and two raw logs. Clean-code: preserve thin transport and server cursor/ownership semantics; no presentation settlement duplicated into client.
+
+X05 production3691d1b: Mika independent read-only APPROVED, six source/three raw hashes checked, five distinct checks and noEmit, no P1/P2; GO accepted. No independent rerun. This approval excludes installation/loading and personal service refresh.

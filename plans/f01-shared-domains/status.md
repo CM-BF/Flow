@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:52:03 UTC / 2026-10-06 06:48 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:56 UTC / 2026-10-06 06:48 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | main acfd409a493315a00f1cc19ac96c5f1b36c19e57；当前K03薄client 77465eb59121bad5ac2785036961f1707911d21b |
+| 工作基线 / HEAD | main 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a；本轮流式读取接口 88a869efd782afd5f64f5d7adad0a9167da121c1 |
 | 工作树dirty状态 | 固定实现，当前仅metadata更新 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
-| 已集成main状态 / HEAD | acfd409a493315a00f1cc19ac96c5f1b36c19e57 已推送，020公共接线/领域及活动展示模块已接收；X05薄client本分支已独审待集成；K03薄client与021生产delta已独审待集成。实际center/runner仍fb906cb |
-| Review | NOT_STARTED X05生产3691d1b；此前021生产44bd与薄client已独审且main86a36接收 |
-| 实现目标 | 3691d1b3dffa5eb33546ff3b84f45fa88401a9d5 |
-| 实现范围 | apps/server/src/index.ts, apps/server/src/main.ts, apps/server/src/package-fetch-configuration.ts, apps/server/src/package-fetch-configuration.test.ts, apps/cli/src/index.ts, packages/client/src/package-fetch-production.test.ts |
+| 已集成main状态 / HEAD | 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a 已推送；K03/021及renderer接线已交付。X05生产已审待集成；流式公共读取接口待审。实际center/runner仍fb906cb。 |
+| Review | NOT_STARTED 88a869efd782afd5f64f5d7adad0a9167da121c1；X05生产3691d1b已独立APPROVED |
+| 实现目标 | 88a869efd782afd5f64f5d7adad0a9167da121c1 |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/assistant-stream.test.ts, packages/contracts/src/index.ts, packages/contracts/src/conversations.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 真实运行中排队与同会话回复已验证，关闭测试浏览器后后台继续、重开正文可见 |
-| 下一可用交付 | 为目标子任务读取固定版本的知识引用；接入可核对恢复的包下载 |
+| 当前产出 | 让回复能够逐段读取，并保持旧聊天界面正常使用。插件包下载入口已完成审查。 |
+| 下一可用交付 | 通过公共入口验证后交付逐段回复读取，供网页接入。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -92,3 +92,5 @@
 2026-10-06 06:46 UTC：Root已独立批准021生产44bd；知识引用固定版本、来源更新后的新鲜度与恢复任务读取已具备可集成证据。4不同局部检查分轮通过，未重跑。新增流式协议协商属下片，旧页面兼容未验前不会随本批启用。
 
 2026-10-06 06:52 UTC：知识固定引用片段已main86a36。可恢复包下载已接生产factory/可信配置与CLI，5项局部通过、领域零diff，待独立review；个人服务保持fb906，未启用包下载。流式兼容C02另独立工作线，发布门槛仍有效。
+
+| F01-20 | in-progress | Lead | 流式三读取方法与显式协议协商；1/1 HTTP+tsc，待独审/生产挂载 |

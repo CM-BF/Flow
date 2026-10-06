@@ -1,10 +1,10 @@
 # F01 共享接线审查
 
-**当前增量状态：NOT_STARTED（X05可选生产挂载/配置/CLI）**
+**当前增量状态：NOT_STARTED（流式正文公共读取接口）**
 
-Review target commit：3691d1b3dffa5eb33546ff3b84f45fa88401a9d5
+Review target commit：88a869efd782afd5f64f5d7adad0a9167da121c1
 
-Scope：apps/server/src/index.ts、apps/server/src/main.ts、apps/server/src/package-fetch-configuration.ts、apps/server/src/package-fetch-configuration.test.ts、apps/cli/src/index.ts、packages/client/src/package-fetch-production.test.ts。manifest：docs/evidence/f01/package-fetch-production-manifest.json。
+Scope：packages/client/src/index.ts、packages/client/src/assistant-stream.test.ts、packages/contracts/src/index.ts、packages/contracts/src/conversations.ts。manifest：docs/evidence/f01/assistant-stream-client-manifest.json。
 
 ## K01薄client独立批准
 Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。
@@ -118,3 +118,7 @@ K03薄client77465eb59121bad5ac2785036961f1707911d21b由Root独立只读APPROVED�
 
 ## 2026-10-06 06:46 UTC K03生产独立批准
 Root独立只读APPROVED固定44bd8bc8e8e30ec49f86b6828f4947bf2c47d148；4source/12raw固定hash与bytes全部匹配，原失败CRLF由base64核实。021在scheduler/defaultscan前await，owner路由在鉴权下。真实client→PG冻结v1/sourcev2freshness/重启/撤销uncertain→C02新task恢复及重放/public不漏原文均有证据；两旧stage fixture保留原迁移/配额/审计/撤销断言。4distinct分轮绿，不称单轮4/4；最后consumer1/1与独立typecheck0，随机库创建和正常清理事实完整。无新测试/模型，不重复Mika领域审批；个人runtime仍fb906，需另行安全刷新。
+
+
+## X05 production 独立批准
+Mika只读APPROVED3691d1b3dffa5eb33546ff3b84f45fa88401a9d5；6source/3raw一致，5different及tsc/正常清理证据核，无P1/P2、未重跑。GO接收。范围可选host配置、worker生产生命周期与CLI；不包括实际npm启用/执行或个人运行环境更新。
