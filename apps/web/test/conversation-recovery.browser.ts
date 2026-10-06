@@ -82,6 +82,7 @@ async function supervisor() {
   const errors: string[] = [], cleanupErrors: string[] = [];
   let lease: RecoveryDatabaseLease | undefined, scratch: string | undefined, result: WorkerResult | undefined;
   let minimumFreeBytes = Infinity, peakScratchBytes = 0, logBytes = 0, stopped = false, chromeRequested = false;
+  let stopReason: string | undefined, interruptionRequested = false;
   let monitor: NodeJS.Timeout | undefined, monitoring: Promise<void> | undefined, logs = Promise.resolve();
   const signalGroups = (signal: NodeJS.Signals) => {
     for (const child of children) if (child.pid) try { process.kill(-child.pid, signal); }
@@ -96,8 +97,16 @@ async function supervisor() {
         databaseState: lease?.state, ownedPids: children.map(child => child.pid), cleanupConfirmed: false }), { mode: 0o600 });
     } finally { process.exit(1); } // Even a hard stop during final accounting invalidates the budget.
   }, gate.totalMs);
-  const stop = (reason: string) => { if (!stopped) errors.push(reason); stopped = true; signalGroups("SIGTERM"); };
-  const interrupted = () => stop("Supervisor interrupted"); process.once("SIGINT", interrupted); process.once("SIGTERM", interrupted);
+  const stop = (reason: string) => {
+    // Cleanup stopping work is not evidence that a later stop request was recorded.
+    if (stopReason === undefined) { stopReason = reason; errors.push(reason); }
+    if (!stopped) { stopped = true; signalGroups("SIGTERM"); }
+  };
+  const interrupted = () => {
+    if (interruptionRequested) return;
+    interruptionRequested = true; stop("Supervisor interrupted");
+  };
+  process.on("SIGINT", interrupted); process.on("SIGTERM", interrupted);
   const working = () => { requireThat(!stopped && performance.now() < hardAt - CLEANUP_MS, "Work deadline reached; cleanup reserve started"); };
   const checkpoint = async () => {
     try {
@@ -232,9 +241,9 @@ async function supervisor() {
     const persistReports = async (complete: boolean) => {
       const elapsedMs = performance.now() - began;
       Object.assign(budget, { complete, cleanupComplete: allOwnedGroupsAbsent && scratchRemoved && cleanupErrors.length === 0, elapsedMs });
-      await json(join(directory, "supervisor.json"), { passed: complete && allOwnedGroupsAbsent && scratchRemoved && !!result && !errors.length && !cleanupErrors.length && elapsedMs <= gate.totalMs && priorMs + elapsedMs <= TOTAL_MS,
+      await json(join(directory, "supervisor.json"), { passed: complete && stopReason === undefined && !interruptionRequested && allOwnedGroupsAbsent && scratchRemoved && !!result && !errors.length && !cleanupErrors.length && elapsedMs <= gate.totalMs && priorMs + elapsedMs <= TOTAL_MS,
         errors, cleanupErrors, databaseCleanup, processIds: children.map(child => ({ pid: child.pid, exitCode: child.exitCode, signalCode: child.signalCode })),
-        allOwnedGroupsAbsent, minimumFreeBytes, peakScratchBytes, logBytes, scratchRemoved, terminal,
+        stopReason, interruptionRequested, allOwnedGroupsAbsent, minimumFreeBytes, peakScratchBytes, logBytes, scratchRemoved, terminal,
         attribution: "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation", providerQueries: 0 });
       await json(join(directory, "budget.json"), budget);
     };
@@ -244,7 +253,7 @@ async function supervisor() {
       terminal.push(await observeTail("after-initial-report-and-budget"));
       await persistReports(true);
       postWrite = await observeTail("after-final-report-and-budget");
-      if (postWrite.errors.length) {
+      if (postWrite.errors.length || stopReason !== undefined || interruptionRequested) {
         terminal.push(postWrite);
         await persistReports(false); // Bounded failure correction; no report/retry loop.
         postWrite = await observeTail("after-failure-correction");
@@ -253,10 +262,10 @@ async function supervisor() {
       errors.push("Final report accounting: " + text(error));
       try { await persistReports(false); } catch (failure) { errors.push("Failure report write: " + text(failure)); }
     } finally {
-      console.log(JSON.stringify({ kind: "recovery-final-accounting", directory, postWrite, errors, cleanupErrors, allOwnedGroupsAbsent, scratchRemoved }));
+      console.log(JSON.stringify({ kind: "recovery-final-accounting", directory, postWrite, stopReason, interruptionRequested, errors, cleanupErrors, allOwnedGroupsAbsent, scratchRemoved }));
       clearTimeout(hardStop); process.off("SIGINT", interrupted); process.off("SIGTERM", interrupted);
     }
-    if (!result || errors.length || cleanupErrors.length || !allOwnedGroupsAbsent || !scratchRemoved || performance.now() > hardAt || priorMs + performance.now() - began > TOTAL_MS) process.exitCode = 1;
+    if (stopReason !== undefined || interruptionRequested || !result || errors.length || cleanupErrors.length || !allOwnedGroupsAbsent || !scratchRemoved || performance.now() > hardAt || priorMs + performance.now() - began > TOTAL_MS) process.exitCode = 1;
   }
 }
 
