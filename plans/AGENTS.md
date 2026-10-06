@@ -77,7 +77,7 @@
 - 并行features的plan/status/review由各owner在自己的worktree维护；跨任务汇总和索引由Execution Lead负责，不并发编辑他人status。review者默认只读实现，若要写review记录先明确该文件唯一owner与范围；实际写入仍须模型>=Sol。
 - review.md至少包含target/scope、base/head、验收criteria/关键文件、已执行与未执行检查、证据链接、独立review步骤、severity/blocking findings、结论/限制、作者回应/修复commit和复审。新建模板明确 `NOT_STARTED`，空模板不能当approval。
 - review模板须包含可复制任务说明，先验证实际worktree/base/head，结论绑定具体commit。Claude Code或其他外部agent可只读审查；直接修改Flow文件仍受Sol以上门槛与独立worktree规则约束。
-- 用户期望开发并发上限10（含Goal Owner+Execution Lead）；实际并行度=min(10,运行时cap,ready独立任务数)。区分期望和实际，不虚称可用槽；运行时拒绝后记录准确错误，不反复无意义探测或通过新task绕过。
+- 当前用户授权每Lead任务1+3，三队4/4/4总上限12；实际并行度受运行时cap和ready独立任务数限制。区分期望和实际，不虚称可用槽；运行时拒绝后记录准确错误，不反复无意义探测或通过新task绕过。
 - 目录迁移必须更新本地相对链接、README索引与状态，并验证原始实验JSON/hash未被修改。
 
 ## Dashboard 同步
@@ -123,4 +123,4 @@ status 的“当前产出/下一可用交付/当前阻塞/需用户决定”描�
 
 status可选枚举 `本片段交付阶段`：planning（未来计划）、implementation（实施）、review（待审/修复）、integration（已审待集成）、delivered（本片段已交付）。它与完整plan的开放TODO独立，禁止为了首页筛选勾选后继。显式非法值为未知；旧记录只按标准branchState token兼容，completed仅作者完成的legacy历史，不推断review/main事实。当前下一交付只展示implementation/review/integration，真实当前阻塞优先。新增任务及活跃owner在安全更新点采用字段，不要求全历史机械补写。
 
-当前协作职责与沟通以根AGENTS“Lead职责与沟通边界”为准：唯一status→dashboard为默认进度通道；普通回执不逐条私信。只有跨Lead接口/范围/资源裁决、紧急用户影响或真实阻塞才一次直接对话，结果回写本status。
+当前协作以根AGENTS“两层任务、职责与消息预算”为准：GO仅定义大task，co-lead自主规划执行sub-tasks。每个sub-task表格必须填写唯一`所属大task`稳定ID/链接及`co-lead`，由唯一status进入dashboard；缺失如实未知。co-lead→GO每个大task仅#独立blockers + Done(1)，同一blocker无变化不重报，内部可解问题不报。片段ready/review/merge/登记/claim/普通接口确认仅更新看板，不私信。完整验收后才一次Done，禁止改名绕预算；worker↔本组lead必要执行通信保留。
