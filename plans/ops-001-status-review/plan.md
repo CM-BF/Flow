@@ -45,3 +45,7 @@
 co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须大task受阻且需要GO介入，同一blocker只一次，无变化不重复；大task满足完整验收才一次Done。片段完成/ready/review/merge/登记/claim/metadata/普通接口确认均只更新status/dashboard，可自行解决的内部问题不是blocker。本规则覆盖此前“重要决策/关键里程碑”泛化例外。worker↔本组lead执行通信正常，co-lead间处理具体依赖不逐条抄送GO。已一次同步两外部lead；本次规则修订按一个大task收口，不把子片当多个Done。
 
 - [x] **OPS-001-10** 用户全局模块化/复用/扩展/性能规则：根AGENTS为唯一权威，plans规则要求风险相称的职责/Interface/依赖/扩展点及行为/性能证据；WPF-MATURE六大task统一引用，不复制六份。实际规则固定1d36a7a4532bbd2f29300c220d5451f755bd756c，经runner_owner独立只读批准；本批随主线发布，原始质量证据与限制保留。
+
+## 共享磁盘资源的当前执行约束
+
+资源预检以实时可用空间和本片物理峰值为准，不以逻辑文件上限或一次小检查通过代替。大型准备须保留数据库/证据/其他队伍收尾余量；不足只暂停该大型操作，小范围工作按其实际预算继续。清理限定已结束、自有、身份明确且可重建的临时资源，不删除用户数据、其他owner资源、active/unknown或原始审查证据。当前数值与解除条件见唯一[status](status.md)及SVC06状态，不另设资源状态权威。
