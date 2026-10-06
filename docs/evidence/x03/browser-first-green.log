@@ -1,0 +1,22 @@
+{
+  "startedAt": "2026-10-06T04:06:55.268Z",
+  "completedAt": "2026-10-06T04:06:59.075Z",
+  "exitCode": 0,
+  "checks": [
+    "public client registers config/grants/versions; same revision survives real center restart",
+    "closed view sends zero registry requests",
+    "opened view reads scoped real registry"
+  ],
+  "pageErrors": [],
+  "cleanup": [
+    {
+      "database": "flow_x03_91085_0_3b7d5bda",
+      "remaining": 0
+    },
+    {
+      "database": "flow_x03_91085_1_29f0f3da",
+      "remaining": 0
+    }
+  ],
+  "boundary": "Isolated module fixture, real PG/HTTP/host. Production App mounting is separate acceptance."
+}
