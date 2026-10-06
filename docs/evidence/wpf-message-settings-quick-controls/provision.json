@@ -1,0 +1,107 @@
+{
+  "startedAt": "2026-10-06T21:59:29.023524+00:00",
+  "operator": "root under explicit original Execution Lead one-path Git delegation",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "branch": "codex/web-message-settings-quick-controls",
+  "base": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "manifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/message-settings-quick-controls-provision/source-input-manifest.json",
+  "steps": [
+    {
+      "arguments": [
+        "worktree",
+        "add",
+        "--no-checkout",
+        "-b",
+        "codex/web-message-settings-quick-controls",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+        "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "output": ""
+    },
+    {
+      "arguments": [
+        "config",
+        "--worktree",
+        "core.sparseCheckout",
+        "true"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+      "output": ""
+    },
+    {
+      "arguments": [
+        "config",
+        "--worktree",
+        "core.sparseCheckoutCone",
+        "false"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+      "output": ""
+    },
+    {
+      "arguments": [
+        "config",
+        "--worktree",
+        "index.sparse",
+        "false"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+      "output": ""
+    },
+    {
+      "arguments": [
+        "read-tree",
+        "-mu",
+        "HEAD"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+      "output": ""
+    }
+  ],
+  "status": "PROVISIONED_VERIFIED_CLEAN",
+  "runtimeRun": false,
+  "dependenciesCopiedOrInstalled": false,
+  "before": {
+    "mainHead": "78fb37704d708e3b3b6ea4f1810947f012666196",
+    "sharedConfigSha256": "1911982ce83b78cae331e7763540c88572220fed3c79b0dad3019f16c584882d",
+    "pathAbsent": true,
+    "branchAbsent": true
+  },
+  "sparseRules": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-message-settings-quick-controls/info/sparse-checkout",
+    "sha256": "68d3ab4f94f8ec48e1f4e264e9d857aa3e002407edb91af10cb650a35f873dd7",
+    "literalFileCount": 352,
+    "futureOwnDirectories": [
+      "plans/wpf-message-settings-quick-controls",
+      "docs/evidence/wpf-message-settings-quick-controls"
+    ],
+    "mode": "non-cone exact positive patterns"
+  },
+  "verification": {
+    "branch": "codex/web-message-settings-quick-controls",
+    "head": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+    "dirty": false,
+    "materializedRegularFiles": 352,
+    "materializedLogicalBytes": 3019669,
+    "all352Sha256Match": true,
+    "sourceCapBytes": 4194304,
+    "fullCheckoutPerformed": false,
+    "indexPresentEntries": 352,
+    "indexSkipWorktreeEntries": 9115,
+    "gitMetadataLogicalBytes": 1164904,
+    "sharedConfigSha256": "1911982ce83b78cae331e7763540c88572220fed3c79b0dad3019f16c584882d",
+    "sharedConfigUnchanged": true,
+    "mainHeadAfter": "78fb37704d708e3b3b6ea4f1810947f012666196",
+    "mainHeadUnchangedDuringOperation": true,
+    "rulesIncluded": [
+      "AGENTS.md",
+      "plans/AGENTS.md"
+    ],
+    "noDependencies": true,
+    "checks": "metadata and fixed source content only; no project imports/tests/runtime"
+  },
+  "next": "Manager fresh check actual tree/head/clean and current D04, register sole authoritative owner and atomic six-scope take; source writes only after COMMITTED. No inherited runtime permit.",
+  "endedAt": "2026-10-06T21:59:29.744537+00:00",
+  "gitAuthorityReturned": "Root returns the exact one-path Git/source-only provisioning delegation to original Execution Lead. Root holds no further Git mutation authority; no retries, broad checkout, dependency operations, tests or main/config changes are authorized by this receipt."
+}
