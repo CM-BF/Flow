@@ -1,5 +1,9 @@
 # P02 持久A2A出站检查
 
+最新源码target **4c2e037488dcd0847cfba5068b5a1621648237e9**；02:53 UTC联合12/12（15.60s）+typecheck通过。[最新原始JSON](timeout-checks.json)、[输出](timeout-checks.log)、[源码与证据hash](timeout-manifest.json)。新增中心ACK悬挂而heartbeat健康的超时回归先红后绿；有界请求等待后明确uncertain，远端send0、无重发。产品main入口仍待共享挂载验证。
+
+以下保留11项首阶段的准确检查记录，原JSON/hash未覆盖。
+
 源码target **572d6a095421074b2affe961cb78d82fd9e504ee**，基线72278b22ae81f551dc13d68da2fb45f2ef182038。中心/runtime实现1bb6c27，公开client endpointDigest修订6503253（Lead cdd215e）。2026-10-06 02:49 UTC：typecheck通过，11/11检查通过（13.45s）。[原始JSON](checks.json)、[原始输出](checks.log)、[源码及证据SHA256](manifest.json)。
 
 持久权威是专用PostgreSQL flow_p02；中心监听动态端口；8个runtime场景启动独立Node进程，调用公开runProtocolRunner；外部对端使用固定@a2a-js/sdk1.3.0的真实HTTP/JsonRpcTransportHandler/DefaultRequestHandler。对端InMemoryTaskStore只做确定性夹具，不宣称远端持久产品。进程入口当前为test-process.ts；产品main挂载尚待Lead共享提交，不能把这个测试入口称为产品CLI启动验证。0模型、0云、未动4320。
