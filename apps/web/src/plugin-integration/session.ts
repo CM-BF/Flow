@@ -5,6 +5,9 @@ import { createSamplePlugin } from "../plugins/sample";
 import type { HostPort, NavigationSnapshot, ResourceContext, ThemeDefinition, ThemeSnapshot, WorkspaceDisplay, WorkspaceTabId } from "../plugins/types";
 import { themes } from "../themes";
 import { createTaskActionsPlugin } from "./task-actions";
+import { createDataRendererRegistry } from "../data-renderers/registry";
+import { flowReplyDeclaration } from "../data-renderers/flow-reply-detail";
+import { createReplyRendererPlugin } from "./data-renderers";
 
 export function createStore<T>(initial: T) {
   let value = initial;
@@ -43,6 +46,9 @@ export class AppPluginSession {
   readonly theme: ReturnType<typeof createStore<ThemeSnapshot>>;
   readonly workspace = createStore<WorkspaceDisplay>(emptyDisplay);
   readonly host: PluginHost;
+  readonly dataRenderers: ReturnType<typeof createDataRendererRegistry>;
+  private readonly lifetime = new AbortController();
+  get signal() { return this.lifetime.signal; }
   private closed = false;
   private context: ResourceContext = { kind: "global" };
   private actions: AppActions;
@@ -90,6 +96,8 @@ export class AppPluginSession {
       },
     };
     this.host = new PluginHost(port);
+    this.dataRenderers = createDataRendererRegistry([flowReplyDeclaration], this.host);
+    this.host.register(createReplyRendererPlugin(this.dataRenderers));
     for (const plugin of createBuiltinPlugins({ workspace: this.workspace })) this.host.register(plugin);
     this.host.register(createSamplePlugin());
     this.host.register(createTaskActionsPlugin());
@@ -115,6 +123,9 @@ export class AppPluginSession {
     if (old.themeId !== theme.id || old.scheme !== theme.scheme)
       this.theme.set({ themeId: theme.id, scheme: theme.scheme, availableThemes: [...themes, ...(themes.some(item => item.id === theme.id) ? [] : [theme])] });
   }
+  canReadReply(viewId: string, taskId: string, messageId: string) {
+    return !this.closed && this.actions.hasDraft(viewId) && this.validContext({ kind: "message", taskId, messageId, role: "assistant" });
+  }
   private assertCurrent(signal: AbortSignal) {
     if (this.closed || signal.aborted) throw Error("This extension belongs to a closed connection.");
   }
@@ -137,14 +148,16 @@ export class AppPluginSession {
   }
   dispose = async () => {
     if (this.closed) return;
+    this.closed = true;
+    this.lifetime.abort();
+    this.dataRenderers.dispose();
     // Clear the old connection's custom palette synchronously, before a new connection can render.
     const active = this.theme.getSnapshot();
     if (!themes.some(theme => theme.id === active.themeId)) {
       const fallback = themes.find(theme => theme.id === active.scheme)!;
       this.actions.setTheme(fallback);
-      this.publishTheme(fallback);
+      this.theme.set({ themeId: fallback.id, scheme: fallback.scheme, availableThemes: themes });
     }
-    this.closed = true;
     this.workspace.set(emptyDisplay);
     await this.host.dispose();
   };
