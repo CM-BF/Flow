@@ -1,0 +1,14 @@
+{
+  "operatorPid": 20591,
+  "operatorExit": 0,
+  "deadlineExceeded": false,
+  "operatorStopped": true,
+  "outcome": "operator-returned-zero",
+  "elapsedMs": 56,
+  "stdout": "{\"phase\":\"preflight\",\"passed\":true,\"checks\":{\"source\":true,\"runtime\":true,\"identity\":true,\"config\":true,\"invariantState\":true,\"lockAbsent\":true,\"owned\":true,\"singleKnownRunner\":true,\"zeroWork\":true,\"queue\":true,\"migrations\":true,\"maintenance\":true,\"dependencies\":true,\"tableNames\":true,\"tables\":true,\"oldAudit\":true,\"newAudit\":true,\"operation\":true,\"retained\":true,\"materials\":true,\"pointer\":true,\"explicitLegacyIntentPolicy\":true,\"nativeHistory\":true,\"waitingQueueEmpty\":true}}\n",
+  "stderr": "",
+  "serviceSignals": 0,
+  "at": "2026-10-06T21:24:06.765687+00:00",
+  "step": "02-preflight",
+  "freeAfter": 1249464320
+}

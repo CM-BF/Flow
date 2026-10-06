@@ -1,0 +1,458 @@
+{
+  "kind": "fixed-procedural-input-not-a-permit",
+  "target": "af51c621696230fbced12227670f014ca73bd8a1",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+  "oneAtATime": true,
+  "automaticLoop": false,
+  "maintenanceEnvironment": "exact baseServiceEnvironment(center) from bound environment.mjs; direct maintenance-host is CLI child, no extra wrapper left alive on timeout",
+  "supervisor": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/window.py",
+  "recordPolicy": "Exclusive run/step intent before invocation; durable result required before next. Do not repeat nonzero/unknown. Begin drain marker exactly once before step09; every step09..20 uses same window.run_step remaining budget. All later observations/checkpoint I/O occur inside supervised Node child; no resetting 900s total.",
+  "steps": [
+    {
+      "id": "01-before",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nlet value; try { value={outcome:'observed',facts:await observeLegacyIntent(await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json\"))}; } catch(e) { value={outcome:'unknown',code:/^[A-Z0-9_]+$/.test(e.code??e.message)?e.code??e.message:'OBSERVATION_UNKNOWN'}; process.exitCode=1; }\nif(Buffer.byteLength(JSON.stringify(value))>4*1024*1024)throw Error('REPORT_BOUND'); await durable(process.argv[1],value); console.log(JSON.stringify({outcome:value.outcome,code:value.code}));",
+        "{RUN}/01-before.json"
+      ],
+      "requiresSuccessfulReceipt": null,
+      "output": "01-before-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "supervise(argv,118,2)"
+    },
+    {
+      "id": "02-preflight",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nconst [before,after,phase,requestPath,resultPath,output]=process.argv.slice(1); const result=compareLegacyRelease(await read(before),await read(after),phase,await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/proposal.json\"),await read(requestPath),resultPath==='NONE'?undefined:await read(resultPath)); await durable(output,result); console.log(JSON.stringify({phase,passed:result.passed,checks:result.checks})); if(!result.passed)process.exitCode=1;",
+        "{RUN}/01-before.json",
+        "{RUN}/01-before.json",
+        "preflight",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json",
+        "NONE",
+        "{RUN}/02-preflight.json"
+      ],
+      "requiresSuccessfulReceipt": "01-before",
+      "output": "02-preflight-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "supervise(argv,118,2)"
+    },
+    {
+      "id": "03-import-retained-0",
+      "kind": "report-import",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "import-compatibility",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--report-directory",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/docs/evidence/svc05-retained-web-compatibility/runs/retained-af51-20261006-1952/retained-0"
+      ],
+      "requiresSuccessfulReceipt": "02-preflight",
+      "output": "03-import-retained-0-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "supervise(argv,118,2)"
+    },
+    {
+      "id": "04-import-retained-1",
+      "kind": "report-import",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "import-compatibility",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--report-directory",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/docs/evidence/svc05-retained-web-compatibility/runs/retained-af51-20261006-1952/retained-1"
+      ],
+      "requiresSuccessfulReceipt": "03-import-retained-0",
+      "output": "04-import-retained-1-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "supervise(argv,118,2)"
+    },
+    {
+      "id": "05-import-new-d629",
+      "kind": "report-import",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "import-compatibility",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--report-directory",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility"
+      ],
+      "requiresSuccessfulReceipt": "04-import-retained-1",
+      "output": "05-import-new-d629-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "supervise(argv,118,2)"
+    },
+    {
+      "id": "06-artifact",
+      "kind": "artifact-copy",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+        "--execute-reviewed-d629"
+      ],
+      "requiresSuccessfulReceipt": "05-import-new-d629",
+      "output": "06-artifact-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "supervise(argv,118,2)"
+    },
+    {
+      "id": "07-materials",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nlet value; try { value={outcome:'observed',facts:await observeLegacyIntent(await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json\"))}; } catch(e) { value={outcome:'unknown',code:/^[A-Z0-9_]+$/.test(e.code??e.message)?e.code??e.message:'OBSERVATION_UNKNOWN'}; process.exitCode=1; }\nif(Buffer.byteLength(JSON.stringify(value))>4*1024*1024)throw Error('REPORT_BOUND'); await durable(process.argv[1],value); console.log(JSON.stringify({outcome:value.outcome,code:value.code}));",
+        "{RUN}/07-materials.json"
+      ],
+      "requiresSuccessfulReceipt": "06-artifact",
+      "output": "07-materials-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "supervise(argv,118,2)"
+    },
+    {
+      "id": "08-material-gate",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nconst [before,after,phase,requestPath,resultPath,output]=process.argv.slice(1); const result=compareLegacyRelease(await read(before),await read(after),phase,await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/proposal.json\"),await read(requestPath),resultPath==='NONE'?undefined:await read(resultPath)); await durable(output,result); console.log(JSON.stringify({phase,passed:result.passed,checks:result.checks})); if(!result.passed)process.exitCode=1;",
+        "{RUN}/01-before.json",
+        "{RUN}/07-materials.json",
+        "materials",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json",
+        "NONE",
+        "{RUN}/08-material-gate.json"
+      ],
+      "requiresSuccessfulReceipt": "07-materials",
+      "output": "08-material-gate-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "supervise(argv,118,2)"
+    },
+    {
+      "id": "09-drain",
+      "kind": "maintenance",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--import",
+        "tsx",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
+        "bootstrap",
+        "/Users/citrine/.flow-personal"
+      ],
+      "requiresSuccessfulReceipt": "08-material-gate",
+      "output": "09-drain-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId, begin_drain=True)"
+    },
+    {
+      "id": "10-drained",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nlet value; try { value={outcome:'observed',facts:await observeLegacyIntent(await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json\"))}; } catch(e) { value={outcome:'unknown',code:/^[A-Z0-9_]+$/.test(e.code??e.message)?e.code??e.message:'OBSERVATION_UNKNOWN'}; process.exitCode=1; }\nif(Buffer.byteLength(JSON.stringify(value))>4*1024*1024)throw Error('REPORT_BOUND'); await durable(process.argv[1],value); console.log(JSON.stringify({outcome:value.outcome,code:value.code}));",
+        "{RUN}/10-drained.json"
+      ],
+      "requiresSuccessfulReceipt": "09-drain",
+      "output": "10-drained-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)"
+    },
+    {
+      "id": "11-stop-gate",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nconst [before,after,phase,requestPath,resultPath,output]=process.argv.slice(1); const result=compareLegacyRelease(await read(before),await read(after),phase,await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/proposal.json\"),await read(requestPath),resultPath==='NONE'?undefined:await read(resultPath)); await durable(output,result); console.log(JSON.stringify({phase,passed:result.passed,checks:result.checks})); if(!result.passed)process.exitCode=1;",
+        "{RUN}/01-before.json",
+        "{RUN}/10-drained.json",
+        "drained",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json",
+        "NONE",
+        "{RUN}/11-stop-gate.json"
+      ],
+      "requiresSuccessfulReceipt": "10-drained",
+      "output": "11-stop-gate-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)"
+    },
+    {
+      "id": "11a-hold-stop",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--import",
+        "tsx",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { holdAndStopRunner } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs';\nconst d=await read(process.argv[1]);if(d.outcome!=='observed')throw Error('DRAINED_FACTS');const row=d.facts.database.runners.find(r=>r.id===d.facts.identity.runnerId);if(row?.maintenance_version!==16||row.maintenance_state!=='draining')throw Error('DRAINED_IDENTITY');const result=await holdAndStopRunner({source:\"af51c621696230fbced12227670f014ca73bd8a1\",runnerId:row.id,drainVersion:16,operationId:d.facts.operation.operationId},process.argv[2]);console.log(JSON.stringify(result));if(result.outcome!=='held-runner-stopped')process.exitCode=1;",
+        "{RUN}/10-drained.json",
+        "{RUN}/hold-stop"
+      ],
+      "requiresSuccessfulReceipt": "11-stop-gate",
+      "kind": "explicit-legacy-intent-resolution",
+      "output": "11a-hold-stop-command.json",
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)",
+      "workSeconds": "min(118, remainingSeconds - 2)",
+      "exitSeconds": 2
+    },
+    {
+      "id": "11b-retirement-request",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nconst value=requestFromReceipts(await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json\"),await read(process.argv[1]),await read(process.argv[2]),await read(process.argv[3]));await durable(process.argv[4],value);console.log(JSON.stringify({outcome:'fixed-request-saved',holdVersion:value.holdVersion,operationId:value.operationId}));",
+        "{RUN}/01-before.json",
+        "{RUN}/hold-stop/result.json",
+        "{RUN}/retirement-authorization.json",
+        "{RUN}/retirement-request.json"
+      ],
+      "requiresSuccessfulReceipt": "11a-hold-stop",
+      "kind": "explicit-legacy-intent-resolution",
+      "output": "11b-retirement-request-command.json",
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)",
+      "workSeconds": "min(118, remainingSeconds - 2)",
+      "exitSeconds": 2
+    },
+    {
+      "id": "11c-retire-once",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs",
+        "--retire-once",
+        "{RUN}/retirement-request.json",
+        "{RECORDED_REQUEST_SHA256}",
+        "{RUN}/retirement"
+      ],
+      "requiresSuccessfulReceipt": "11b-retirement-request",
+      "kind": "explicit-legacy-intent-resolution",
+      "output": "11c-retire-once-command.json",
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)",
+      "workSeconds": "min(118, remainingSeconds - 2)",
+      "exitSeconds": 2
+    },
+    {
+      "id": "11d-retirement-checkpoint",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { inspectRetirement, readRegular, sha } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs';\nimport { join } from 'node:path';\nconst request=await read(process.argv[1]),result=await read(process.argv[2]),current=await inspectRetirement(request),archive=join(request.root,'admission-retirement-'+request.retirementId),files=[];for(const name of ['original.bin','intent.json','replacement.bin','pre-rename-confirmation.json','result.json']){const f=await readRegular(join(archive,name));files.push({name,bytes:f.bytes.length,sha256:sha(f.bytes),dev:f.stat.dev,ino:f.stat.ino,mode:f.stat.mode&511});}const passed=result.outcome==='retired'&&result.renamed===true&&current.current==='retired-bytes'&&files.find(f=>f.name==='original.bin').sha256===request.originalSha256&&files.find(f=>f.name==='replacement.bin').sha256===result.newSha256;await durable(process.argv[3],{outcome:passed?'verified':'unknown',current,privateArchive:archive,files,originalClaimOutcome:'unknown',writesToJournal:0});console.log(JSON.stringify({outcome:passed?'verified':'unknown'}));if(!passed)process.exitCode=1;",
+        "{RUN}/retirement-request.json",
+        "{RUN}/retirement/result.json",
+        "{RUN}/11d-retirement-checkpoint.json"
+      ],
+      "requiresSuccessfulReceipt": "11c-retire-once",
+      "kind": "explicit-legacy-intent-resolution",
+      "output": "11d-retirement-checkpoint-command.json",
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)",
+      "workSeconds": "min(118, remainingSeconds - 2)",
+      "exitSeconds": 2
+    },
+    {
+      "id": "12-refresh",
+      "kind": "maintenance",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--import",
+        "tsx",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
+        "refresh",
+        "/Users/citrine/.flow-personal",
+        "af51c621696230fbced12227670f014ca73bd8a1"
+      ],
+      "requiresSuccessfulReceipt": "11d-retirement-checkpoint",
+      "output": "12-refresh-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)"
+    },
+    {
+      "id": "13-paused",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+        "{RUN}/13-paused.json"
+      ],
+      "requiresSuccessfulReceipt": "12-refresh",
+      "output": "13-paused-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)"
+    },
+    {
+      "id": "14-resume-gate",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nconst [before,after,phase,requestPath,resultPath,output]=process.argv.slice(1); const result=compareLegacyRelease(await read(before),await read(after),phase,await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/proposal.json\"),await read(requestPath),resultPath==='NONE'?undefined:await read(resultPath)); await durable(output,result); console.log(JSON.stringify({phase,passed:result.passed,checks:result.checks})); if(!result.passed)process.exitCode=1;",
+        "{RUN}/01-before.json",
+        "{RUN}/13-paused.json",
+        "paused",
+        "{RUN}/retirement-request.json",
+        "{RUN}/retirement/result.json",
+        "{RUN}/14-resume-gate.json"
+      ],
+      "requiresSuccessfulReceipt": "13-paused",
+      "output": "14-resume-gate-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "requiresAdditionalReceipt": "11d-retirement-checkpoint",
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)"
+    },
+    {
+      "id": "15-resume",
+      "kind": "maintenance",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--import",
+        "tsx",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
+        "resume",
+        "/Users/citrine/.flow-personal"
+      ],
+      "requiresSuccessfulReceipt": "14-resume-gate",
+      "output": "15-resume-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)"
+    },
+    {
+      "id": "16-resumed",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+        "{RUN}/16-resumed.json"
+      ],
+      "requiresSuccessfulReceipt": "15-resume",
+      "output": "16-resumed-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)"
+    },
+    {
+      "id": "17-publish-gate",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nconst [before,after,phase,requestPath,resultPath,output]=process.argv.slice(1); const result=compareLegacyRelease(await read(before),await read(after),phase,await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/proposal.json\"),await read(requestPath),resultPath==='NONE'?undefined:await read(resultPath)); await durable(output,result); console.log(JSON.stringify({phase,passed:result.passed,checks:result.checks})); if(!result.passed)process.exitCode=1;",
+        "{RUN}/01-before.json",
+        "{RUN}/16-resumed.json",
+        "resumed",
+        "{RUN}/retirement-request.json",
+        "{RUN}/retirement/result.json",
+        "{RUN}/17-publish-gate.json"
+      ],
+      "requiresSuccessfulReceipt": "16-resumed",
+      "output": "17-publish-gate-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "requiresAdditionalReceipt": "11d-retirement-checkpoint",
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)"
+    },
+    {
+      "id": "18-publish",
+      "kind": "pointer-publish",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "publish",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--request",
+        "{RUN}/web-publish-request.json"
+      ],
+      "requiresSuccessfulReceipt": "17-publish-gate",
+      "output": "18-publish-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)"
+    },
+    {
+      "id": "19-published",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+        "{RUN}/19-published.json"
+      ],
+      "requiresSuccessfulReceipt": "18-publish",
+      "output": "19-published-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)"
+    },
+    {
+      "id": "20-final-gate",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--input-type=module",
+        "-e",
+        "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nconst [before,after,phase,requestPath,resultPath,output]=process.argv.slice(1); const result=compareLegacyRelease(await read(before),await read(after),phase,await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/proposal.json\"),await read(requestPath),resultPath==='NONE'?undefined:await read(resultPath)); await durable(output,result); console.log(JSON.stringify({phase,passed:result.passed,checks:result.checks})); if(!result.passed)process.exitCode=1;",
+        "{RUN}/01-before.json",
+        "{RUN}/19-published.json",
+        "published",
+        "{RUN}/retirement-request.json",
+        "{RUN}/retirement/result.json",
+        "{RUN}/20-final-gate.json"
+      ],
+      "requiresSuccessfulReceipt": "19-published",
+      "output": "20-final-gate-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2,
+      "requiresAdditionalReceipt": "11d-retirement-checkpoint",
+      "supervisorCall": "run_step(argv, RUN/drain-deadline.json, approvalId)"
+    }
+  ],
+  "originalInput": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/steps.json",
+  "directoriesCreatedBeforeDrain": [
+    "{RUN}/hold-stop",
+    "{RUN}/retirement"
+  ],
+  "authorization": "Existing GO semantic allocation plus new Lead fixed source/window; never inferred from an old result.",
+  "variableInputs": [
+    "RUN new exclusive evidence directory",
+    "approvalId/expiresAt/reference from explicit new window",
+    "operationId from definite current hold receipt only",
+    "RECORDED_REQUEST_SHA256 from newly persisted fixed request; anchors never reread/rebased"
+  ]
+}

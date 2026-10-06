@@ -101,3 +101,33 @@ Execution Lead 独立APPROVED_EXECUTABLE_PREPARATION，固定5fe98f97cb7506f6555
 ## 2026-10-06 20:47 UTC 只读诊断（非新的实现批准）
 
 [单文件schema事实](../../docs/evidence/svc05-history-compatibility/release-operation/admission-readonly-diagnosis.json)与[15固定源码绑定](../../docs/evidence/svc05-history-compatibility/release-operation/admission-diagnosis-bindings.json)定位到合法持久未决inFlight，原strictIdle保持，原2030/2040失败均保留。维护锁屏障/既有reconciliation边界已只读核对；[最小恢复提案](../../docs/evidence/svc05-history-compatibility/release-operation/admission-resolution-proposal.md)待Lead核定新增显式操作语义，不作者自批、不执行。0新工程检查/DB/进程/服务/provider。
+
+## 2026-10-06 21:11 UTC 精确旧intent退役准备 REVIEW_PENDING
+
+固定 `0a8dd95bae123b3c749d859a42c2357e65321bcf`，作者不自批。Lead/GO明确批准一次新退役语义后实施；同安装marker/唯一runner/hold行锁/旧runner停止/全部pending确认，原件备份和先行意图持久后仅精确journal替换。普通idle不改、无旧ACK伪造。18不同纯/小文件例分轮通过，真实host/PG/个人退役尚未执行；新增seam/template/deadline与实际逐步输入完整绑定见 [manifest](../../docs/evidence/svc05-history-compatibility/intent-retirement/fixed-manifest.json)。checks-1的合成stdout checkpoint精度限制与后两轮真实durable区别保留。原2030/2040失败保持，独立审查由Lead完成。
+
+## 2026-10-06 21:16 UTC 独立准备批准
+
+Execution Lead APPROVED_EXECUTABLE_PREPARATION target0a8dd95bae123b3c749d859a42c2357e65321bcf / delivery7fb235cc，130fixed/129current全吻合，18不同原检查分轮只读核验，0重跑/个人读取。原件[独立回执](../../docs/evidence/svc05-history-compatibility/intent-retirement/independent-review.json)。已建立全新exclusive准备reservation与私有记录子目录，不复用2030/2040许可或结果；真实hold request只能在definite新hold receipt后生成。等待Lead准确af51源窗口与START，本轮0个人动作。
+
+## 21:18个人窗口前置失败（原准备批准不回填为执行通过）
+
+新exclusive窗口01通过、02 retained-only失败，后继零动作；确定旧比较器JSON.stringify误把descriptor键顺序当值差异。原false/exit1和全部源仍保留。仅基于存储事实定位，不另探测个人环境、不重跑，源码后继待窄修授权。
+
+## 2026-10-06 21:21 UTC descriptor窄修待增量独审
+
+source6e7109c47b41ae6d45fdcc9a8ef365375dcd2736，全局JSON等价不变；只严格三字段artifact对象及有序artifact数组复用专用比较。3纯例red→green，真实保存01反例通过；原18不重跑、真实个人窗口未重开。原失败raw/manifest保持，作者不自批。
+
+## 2026-10-06 21:23 UTC 描述符增量独审通过
+
+Execution Lead独立APPROVED_LIMITED_DESCRIPTOR_COMPARISON_DELTA，target6e7109c47b41ae6d45fdcc9a8ef365375dcd2736 / clean20f42c，146fixed/145current无差，原3新raw只读核、旧18未重审重跑。原件[descriptor-independent-review](../../docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-independent-review.json)。原211659 manifest14项原字节再次核一致，原failed不变；新exclusive记录已准备，个人retirement request仍未生成，等START。
+
+## 2026-10-06 21:27 UTC 实际操作结果待独立核验
+
+固定6e7109+原0a8已审输入在2125唯一窗口完成24步骤，全部exit0；最终25保护检查true，旧journal有明确退役私有原件/意图/结果，原claim结果仍unknown。后台af51/v18及Web d629/v3实际ready，原两retained和64表保护摘要保留；原raw/三次失败保持。作者只归档结果，不授予自身APPROVED。交Execution Lead只读核本次manifest/原facts/checkpoint/退役与维护/发布身份，不重跑服务或旧检查。
+
+## 2026-10-06 21:32 UTC 实际发布结果独立APPROVED
+
+Reviewer：Execution Lead / gpt-6-astra；target `1994182e4f1d7ff0cb5b08d005defe199d5cbf8c`，observed clean `cf239ba6694b09c80726efffdf794ad27bc020d5`。原件来自I02 `e07d1e64`，镜像[唯一结果review](../../docs/evidence/svc05-history-compatibility/intent-retirement/retirement-release-independent-review.json)，SHA256 `233543b5b1df69a0735a42ca9cdac81998f4cdeaea087c0fc7470f9ef6d768ae`。100 fixed/current绑定无差，24命令exit0、25最终检查全true；hold/旧runner停止→精确退役checkpoint→af51 refresh/resume18→独立Web CAS d629/v3顺序与64表保护摘要/27迁移/4历史/3retained核验成立。无P1/P2，reviewer0测试/0个人probe/0provider。
+
+批准限已保存实际操作忠实性。原claim outcome unknown、ordinaryNativeChecks false、原失败不回写；保留证明是预先声明保护列摘要，不是所有raw字段相等。原0a8实现与6e比较窄修批准分别保留，不扩大到新的恢复API、个人新probe或当前main全功能。

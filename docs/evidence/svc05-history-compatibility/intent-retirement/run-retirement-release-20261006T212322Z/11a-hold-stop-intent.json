@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-06T21:26:20.241989+00:00",
+  "window": "svc05h-af51-d629-retire-20261006-2125",
+  "id": "11a-hold-stop",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--input-type=module",
+    "-e",
+    "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { holdAndStopRunner } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs';\nconst d=await read(process.argv[1]);if(d.outcome!=='observed')throw Error('DRAINED_FACTS');const row=d.facts.database.runners.find(r=>r.id===d.facts.identity.runnerId);if(row?.maintenance_version!==16||row.maintenance_state!=='draining')throw Error('DRAINED_IDENTITY');const result=await holdAndStopRunner({source:\"af51c621696230fbced12227670f014ca73bd8a1\",runnerId:row.id,drainVersion:16,operationId:d.facts.operation.operationId},process.argv[2]);console.log(JSON.stringify(result));if(result.outcome!=='held-runner-stopped')process.exitCode=1;",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/10-drained.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop"
+  ],
+  "freeBytes": 1247887360,
+  "rawBytes": 325249,
+  "source": "af51c621696230fbced12227670f014ca73bd8a1",
+  "requiresSuccessfulReceipt": "11-stop-gate",
+  "state": "intended-not-a-result"
+}

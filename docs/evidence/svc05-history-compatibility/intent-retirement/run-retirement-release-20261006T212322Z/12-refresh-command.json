@@ -1,0 +1,16 @@
+{
+  "operatorPid": 99003,
+  "operatorExit": 0,
+  "deadlineExceeded": false,
+  "operatorStopped": true,
+  "outcome": "operator-returned-zero",
+  "elapsedMs": 2516,
+  "stdout": "{\"runnerId\":\"d22f4df2-8242-49f4-a1b4-77f8f08611ef\",\"version\":17,\"state\":\"maintenance\",\"operationId\":\"4709cece-d8ba-42b1-99a9-24ca2efbe152\",\"activeAttempts\":0,\"uncertainAttempts\":0,\"updatedAt\":\"2026-10-06T21:26:21.067Z\",\"stopPermitted\":false,\"update\":\"ready-paused\",\"source\":\"af51c621696230fbced12227670f014ca73bd8a1\",\"provider\":\"not-probed\",\"display\":\"\u53ef\u66f4\u65b0\"}\n",
+  "stderr": "",
+  "serviceSignals": 0,
+  "totalDrainElapsedSeconds": 137.52424311637878,
+  "totalDrainLimitSeconds": 900,
+  "at": "2026-10-06T21:26:50.704444+00:00",
+  "step": "12-refresh",
+  "freeAfter": 1255927808
+}

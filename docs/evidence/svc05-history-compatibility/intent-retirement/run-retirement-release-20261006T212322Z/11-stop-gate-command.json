@@ -1,0 +1,16 @@
+{
+  "operatorPid": 37937,
+  "operatorExit": 0,
+  "deadlineExceeded": false,
+  "operatorStopped": true,
+  "outcome": "operator-returned-zero",
+  "elapsedMs": 68,
+  "stdout": "{\"phase\":\"drained\",\"passed\":true,\"checks\":{\"source\":true,\"runtime\":true,\"identity\":true,\"config\":true,\"invariantState\":true,\"lockAbsent\":true,\"owned\":true,\"singleKnownRunner\":true,\"zeroWork\":true,\"queue\":true,\"migrations\":true,\"maintenance\":true,\"dependencies\":true,\"tableNames\":true,\"tables\":true,\"oldAudit\":true,\"newAudit\":true,\"operation\":true,\"retained\":true,\"materials\":true,\"pointer\":true,\"explicitLegacyIntentPolicy\":true,\"nativeHistory\":true,\"waitingQueueEmpty\":true}}\n",
+  "stderr": "",
+  "serviceSignals": 0,
+  "totalDrainElapsedSeconds": 10.640947103500366,
+  "totalDrainLimitSeconds": 900,
+  "at": "2026-10-06T21:24:43.821151+00:00",
+  "step": "11-stop-gate",
+  "freeAfter": 1255043072
+}

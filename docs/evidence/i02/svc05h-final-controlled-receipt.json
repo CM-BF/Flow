@@ -1,0 +1,909 @@
+{
+  "at": "2026-10-06T21:36:59.584092+00:00",
+  "fixedDelivery": "cef5f4c574c1cc38918f95554e8a69cdce8d42bd",
+  "resultTarget": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+  "resultReview": "e07d1e64",
+  "inputs": "Earlier namespace/center-recovery/main receipts plus approved 0a8 retirement source,6e descriptor delta and reviewed212322 actual results",
+  "controlledScopes": [
+    "docs/evidence/svc05-history-compatibility",
+    "plans/svc05-history-compatibility"
+  ],
+  "files": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/6a50c864-fb1e-4bf3-b536-dcbca25da24e-prepared.json",
+      "bytes": 595,
+      "sha256": "fc9a42728668f7a5e3e3522dbd13d105483b60b8bb6c36d728288e24e5072afc"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/6a50c864-fb1e-4bf3-b536-dcbca25da24e-reservation.json",
+      "bytes": 486,
+      "sha256": "5c6e3a268ab0d1f9e0a8d007539e1130761dc4ce9b56f2f9dadc57d1d47aa093"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/6a50c864-fb1e-4bf3-b536-dcbca25da24e-result.json",
+      "bytes": 601,
+      "sha256": "246eff4c1640071c46d112d3fba3e64c6cfee86b80294a62dc99415bcf972513"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/operation-independent-review.json",
+      "bytes": 6142,
+      "sha256": "5eab8d40edf665d9cf5fa7d18c210d7892f64ad78bfe8449ce3c6aacf187f52f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/operation-main-receipt.json",
+      "bytes": 9263,
+      "sha256": "6e48cd7d070da51895921b8a2a055a3ce1e27cea4e0e84a9a4d20b0c268a3c7f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/README.md",
+      "bytes": 3370,
+      "sha256": "fb7d2b522b8245dcf0577cf3fc415a837d2a73fe4285ce33d38a1cf4b56e3df8"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-1/0-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-1/0-stdout.txt",
+      "bytes": 9900,
+      "sha256": "d50afb2740c0500430d875738b181c47d6b245292312f7b546214d342f784424"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-1/1-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-1/1-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-1/2-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-1/2-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-1/process.json",
+      "bytes": 1453,
+      "sha256": "3dc9f14b1f0f926729f6dcf16cf6e87efb3864b5e014502f119813b0052754eb"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-entry/0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-entry/0.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-entry/1.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-entry/1.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-entry/2.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-entry/2.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-entry/3.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-entry/3.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-entry/4.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-entry/4.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-entry/process.json",
+      "bytes": 1000,
+      "sha256": "c1725457be1711a14f1a85f892e68d2932def86b6ee102e837b26aeef6f09da0"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/0-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/0-stdout.txt",
+      "bytes": 13899,
+      "sha256": "3bb480fb54731b6f62f523c7c9e38f2fcc82fc89457abad5cf09e5eea048f0de"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/1-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/1-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/2-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/2-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/401d1016-f491-4c1c-b029-87d595b73b56.json",
+      "bytes": 889,
+      "sha256": "17f7dad63a4ab30db3f519b50149554c481c22ccd72650f961ed3e46f61956c1"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/4aae4ed3-1003-4709-ad37-ba5088a94bd6.json",
+      "bytes": 1416,
+      "sha256": "48412c6671898336bd1c4ad04f9265e14db9f1520941042afe3fd57188bfe95b"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/51a6613b-a6c4-4e22-8a7b-9b1a361446c8.json",
+      "bytes": 1517,
+      "sha256": "23145ff5f8679798b8d4a44ea00434dc37f3011f87241a90f5cb382b30fde09f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/7a9f95c1-68c9-46ab-95b7-a04a5f2a2c05.json",
+      "bytes": 548,
+      "sha256": "bda441e27ba3452f06403db88c677cb8d9a718e358e1ca2be0acd2c3f308346a"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/8c6cdf92-142a-49ca-b603-f5bdf0a7f3e4.json",
+      "bytes": 1247,
+      "sha256": "671192dc94a83916e753d78e0e423950fd0c32d3547f0d02c4910f028495b2f4"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/8ce7547b-211b-4500-9c8b-9f82446c9a31.json",
+      "bytes": 718,
+      "sha256": "5d9e214591cc21e529b210f0f8222992058d6504f8a36d449e21d588bce166e8"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/9c3213e5-4a5f-43f9-a9c0-582390283265.json",
+      "bytes": 548,
+      "sha256": "9639f6f674634e6e3d6db4004d98fd3328c2ceedd288bba5463d8434a77a499b"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/cc83303b-22e7-43ea-a754-3e0a4deccfa2.json",
+      "bytes": 548,
+      "sha256": "bb497bf4c9f9782a8848982c2fed7153c4722e5a34da47981c5b4e7ed3fb17f3"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/e7d3b576-c94d-4ac7-a845-9a1c7b4547ff.json",
+      "bytes": 1416,
+      "sha256": "d0f31cb0a36e552ce4f26cb216f1e29e2668b9b1104c9f4d945a02cea77c77ec"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/e9caa2bc-8ee0-4e5c-85f7-e926fee9f27c.json",
+      "bytes": 1061,
+      "sha256": "e911c9416438706a5043fa98a0bdc4cbcdaa921ac0ae5ae19896eab62cae14f1"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/f61ba094-dd70-4cbb-ab72-71152b21e1f6.json",
+      "bytes": 1247,
+      "sha256": "78b71a5da6ee439b2221feeb3cc42d44c5aa07de0626aa6cb8c49d509e392b63"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-final/process.json",
+      "bytes": 1457,
+      "sha256": "d0e1dff2da6fd8fa389a3ff6f193dc66f2ab758fe065320f376caf9b8d78396e"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-seam/0.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-seam/0.stdout.txt",
+      "bytes": 922,
+      "sha256": "8b52d2219d9ef939e93c25d01b892c48c45b5f82cc8720f696e4b62beb42f232"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-seam/1.stderr.txt",
+      "bytes": 279,
+      "sha256": "5e569ec532c28f5b1a42cac8d6de6dad6ba8f552bbf645af641718bc4ced41af"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-seam/1.stdout.txt",
+      "bytes": 146,
+      "sha256": "c2f784eaf9d4886fcede08cd09b47331fd39f5cd1860def358ef1986a18acc93"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-seam/2.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-seam/2.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-seam/checkpoints/file-case-checkpoint.json",
+      "bytes": 3457,
+      "sha256": "243fdfb606ec9028a6cc95e1ab703795b829ec62efd4dc48e082f66abfebc666"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/checks-seam/process.json",
+      "bytes": 1442,
+      "sha256": "527586354aa535081261a5668d515ed04737c052822566a7c4e01d36008275fe"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-README.md",
+      "bytes": 1196,
+      "sha256": "9f60a20a89819c5a5dce815a85e93862cfc3f8fdead89390a6c6adb94ea23c8e"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-green/process.json",
+      "bytes": 536,
+      "sha256": "80610c197534fa6ddc0f026d514d6d0b068ff6bfe4a973bf84eab5af8cd50815"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-green/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-green/stdout.txt",
+      "bytes": 429,
+      "sha256": "458166295264b8ddb2fcf1a28187f3566f8bb861cb7b8593a088eae7aa838128"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-independent-review.json",
+      "bytes": 1663,
+      "sha256": "290c5f128047258ad70ab42d4c380145e26eb763820c1837b008720508b33a86"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-manifest.json",
+      "bytes": 99320,
+      "sha256": "d4048e0b49fe7edd18725d68c5484efe899af97e858f6706eb4bfcb159dff6eb"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-red/process.json",
+      "bytes": 537,
+      "sha256": "2f2ac2ce3b4aa438bd3fe903630ae08110a312fe17bcbf9fcb4a23937ab68008"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-red/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-red/stdout.txt",
+      "bytes": 2981,
+      "sha256": "a9298a975adbb10b4c61b28bbdc90273e447292c2b964d8060a78e199ccdbca7"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor.test.mjs",
+      "bytes": 2363,
+      "sha256": "673e31cbc4957a450a4a2aed94461024cf7340b482acbbd07e7a0d78c6c4db79"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json",
+      "bytes": 29958,
+      "sha256": "19ce9d2a22e220fa54f124d5b5561231ac09390863abaeade0384ee16714b2ef"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/fixed-manifest.json",
+      "bytes": 86464,
+      "sha256": "4f8a688f98a0f314e807433d3d2342bff08ef9dd1a646d04ef4775153edfb93e"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json",
+      "bytes": 2282,
+      "sha256": "94dd4f823f5aeaad341867e0dbd0cabe5600cb9782b53e889315c31f7b46bb2d"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs",
+      "bytes": 4528,
+      "sha256": "20f3d2c8f8b8105ca69ddb0e1ca8254334035eba1c6e50d0734a3b33c2403eb8"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs",
+      "bytes": 8017,
+      "sha256": "e656dc1fcdde3bd0a3a2b183f2d85e375b9b40b339b134fe0fb91b279ed9f32a"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/independent-review.json",
+      "bytes": 3295,
+      "sha256": "6b999006a79d62aaf3757e48ca62ee70282549e45f4e44884ecb522888d94257"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/interface.md",
+      "bytes": 4516,
+      "sha256": "548bb74d5880cc884e031cbfc70ae7db94b740f0d38303bda47463fffd3d75ba"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs",
+      "bytes": 1804,
+      "sha256": "47bdadbe77cc794a01db2fc04f6c6419742edd91a9b578d06e4dacd0b7b8f0d8"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs",
+      "bytes": 5299,
+      "sha256": "c3c79d0246fc312db8e5a15ae775bd8b80a2da9ba5ad21ef721685a546ecdf4e"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs",
+      "bytes": 13089,
+      "sha256": "c7f4068a81e87ff9a5cd4c86e1a447f3dd0b145c7112ad09bf3f7af7739cb547"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs",
+      "bytes": 9493,
+      "sha256": "268e240e8b9194b776cd195ea11513a3ab8fe7916daedbd0a15eda6c7d0bdaa5"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs",
+      "bytes": 9864,
+      "sha256": "958870d327710448bc8718cbfce484d8515188066058e75246c74ac4daf078b5"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/retirement-release-independent-review.json",
+      "bytes": 2011,
+      "sha256": "233543b5b1df69a0735a42ca9cdac81998f4cdeaea087c0fc7470f9ef6d768ae"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/01-before-command.json",
+      "bytes": 340,
+      "sha256": "2d372514dbb0cc9175d70b36c225dff2d382a7c176e0f66fadab3fe6a168cfff"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/01-before-intent.json",
+      "bytes": 1739,
+      "sha256": "23bc38b203390f9506c25ec9a0a7e8b8960806db774c24a72bae213ab506c56f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/01-before.json",
+      "bytes": 82245,
+      "sha256": "e16118c56367da6490d545c339c9dc433a47988945a61374c0428888e9dc910e"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/02-preflight-command.json",
+      "bytes": 837,
+      "sha256": "7e8cd8c2ffc19adab66b13625d490cc61743b8c5f8cc24a5dc9e5658beed8a58"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/02-preflight-intent.json",
+      "bytes": 2322,
+      "sha256": "9f4e1c53ebe563553dd3cba2be2b2574b3e0ea2015bee37a680af0794a3d630b"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/02-preflight.json",
+      "bytes": 15898,
+      "sha256": "9f426550c5559e44347dcbdc50d0965041985ce770a8f554fea10a6d24206710"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/analysis.json",
+      "bytes": 2558,
+      "sha256": "be1b4b1de2d580f44f205f570e5772672a19eba5667d3049658a4c25993e209e"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/frozen-input-template.json",
+      "bytes": 2282,
+      "sha256": "94dd4f823f5aeaad341867e0dbd0cabe5600cb9782b53e889315c31f7b46bb2d"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/manifest.json",
+      "bytes": 3894,
+      "sha256": "374a4c825420319f60e405b2681e1004bb5e7df607006887fa77a9e6c5bbc616"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/reservation.json",
+      "bytes": 1232,
+      "sha256": "71c205cc39b3f7aa264c494c0d1bf9d3424bf4aff00e1d2864bb5072c05ad148"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/retirement-authorization.json",
+      "bytes": 646,
+      "sha256": "b7181a2e575f07dd14bb8de3a4dabdee1b7f98a05728569c03de7f436411ed56"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/source-preflight.json",
+      "bytes": 313,
+      "sha256": "5aa67d8302b7bd4d2954e1f37a26e82f1c0eba360cae9ce941978fde42358144"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/source-window.json",
+      "bytes": 1075,
+      "sha256": "ab9a4fa0e7865f0facf6dd6d5dca8fe02b8f74591d256e58f25349e9dfa5fe06"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/start-authorization.json",
+      "bytes": 578,
+      "sha256": "48365a20d300c5f5378707402c7c9387db825a8ed05c0219ef4398467470e1b5"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/web-publish-request.json",
+      "bytes": 443,
+      "sha256": "a473421ed9dd95e83b86df45c013da0206576373d9ebac13ccb2fe5cd5bc335a"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/01-before-command.json",
+      "bytes": 340,
+      "sha256": "456792b9af360d1c15cb986a910941bc078b9c76c04e82d3ee30f1fabf76657d"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/01-before-intent.json",
+      "bytes": 1739,
+      "sha256": "f8ad6f615e23ca8b0da4b776b26f0529b219b94b61f53fc33e7d92cff3cfe640"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/01-before.json",
+      "bytes": 82245,
+      "sha256": "d15ae9e140c646ed037efa1d99e11f8c17d5b3505d7d2f4fd1c49b1b39e8a747"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/02-preflight-command.json",
+      "bytes": 850,
+      "sha256": "d6930c4af7f2dfae392d4f386c08fcb5a6c9135c64bdd59b9fee1fc55f111ed4"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/02-preflight-intent.json",
+      "bytes": 2322,
+      "sha256": "23c7a7c750c3857337e0804b339b8733d7a3b421c7d6dbd448a8aae59bf95f9f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/02-preflight.json",
+      "bytes": 15896,
+      "sha256": "52fa717a73d72e1339696b3cbb07bf8748f19b43fbfc0f1c7ee5c09b5ba2da7f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/03-import-retained-0-command.json",
+      "bytes": 415,
+      "sha256": "ccd4d4204b3de59c70a22c91d70e1caffa7751bd18c6921ce9f878eb92905f25"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/03-import-retained-0-intent.json",
+      "bytes": 765,
+      "sha256": "47a5811f980c8938a76b86166d3e70a1cb2e0201b72c0bc1f78c250a7f68ce2e"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/04-import-retained-1-command.json",
+      "bytes": 415,
+      "sha256": "9b642fcf961f1667cb01267d5aee48d0849dcfb78956945717f0d068da9f6f16"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/04-import-retained-1-intent.json",
+      "bytes": 773,
+      "sha256": "3bc2b59b24cde1f6efe15ad5db45a757b25e1c6c772b556ec4ef82b96daefc1d"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/05-import-new-d629-command.json",
+      "bytes": 413,
+      "sha256": "e5de65b8bd95fc68a290d62d85adbf6ab62a75ab4f03385ee179cda6d43bf4e9"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/05-import-new-d629-intent.json",
+      "bytes": 761,
+      "sha256": "3f595e530149be350db566a92a0407f04adacfed123d1546cc7f4f8474e821b9"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/06-artifact-command.json",
+      "bytes": 476,
+      "sha256": "72f5de455a2367ac7ccc3a4250257e645d2c72673ddaa1a782a13a8bbd46ac78"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/06-artifact-intent.json",
+      "bytes": 572,
+      "sha256": "d84f1e96c145d9708039ca31568754dbbc7b8758f436b51e02bc18b304601e7e"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/07-materials-command.json",
+      "bytes": 343,
+      "sha256": "89f27cea5f73f42b7e0aca27b479feca402a87f4cbbafa608fcfae2ceae14d6e"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/07-materials-intent.json",
+      "bytes": 1756,
+      "sha256": "1f5666f3f1c24c0b2d1b9191d03b657d99f26092eb5fae734b36cde485bcf0cf"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/07-materials.json",
+      "bytes": 82430,
+      "sha256": "0839d700feacb7c63804f7f7235f5db01862b60e738da4bc1cd1977d22982eab"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/08-material-gate-command.json",
+      "bytes": 854,
+      "sha256": "282af27b8bf4c40eb73ebaab202e63b001c93c9ded947f82bdbd435e60fd123d"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/08-material-gate-intent.json",
+      "bytes": 2337,
+      "sha256": "134e94e2cace10693c930073183246450b5e9bb5741688a350caabb9bd5dafb6"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/08-material-gate.json",
+      "bytes": 15896,
+      "sha256": "8cd92c9785195e918b30e692bc6e83394b90e3e6bfe1c4a9d3950ecadb61d497"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/09-drain-command.json",
+      "bytes": 740,
+      "sha256": "5f4b0285414a0d328e25a5e2e9ca6ba10d292abb76ee93cf90f8d71f1845e973"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/09-drain-intent.json",
+      "bytes": 544,
+      "sha256": "c19cc8f1819b8bd073f0a48851154f33f219c9024fb83f25b9190ad5967c5b0b"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/10-drained-command.json",
+      "bytes": 423,
+      "sha256": "0257a9a5d1d9d94dbaf615d3b7ee9c6555cf1d9dfa2237ec1efaa5d24cab3634"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/10-drained-intent.json",
+      "bytes": 1749,
+      "sha256": "3666821e211666330a8c7038c78c04237d9f2c3c00e827427a11f24a8747cb24"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/10-drained.json",
+      "bytes": 83388,
+      "sha256": "96ce4dc9e252bbfb198581dcc212e8222c232bbeefc603af76a900681f5282f4"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11-stop-gate-command.json",
+      "bytes": 931,
+      "sha256": "39dbc82bfca3fd05871994f9161356f7f2d437cecee76cb8fa35cbee15916390"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11-stop-gate-intent.json",
+      "bytes": 2323,
+      "sha256": "5edd68539e9a46426db8736b9f78ec1b0d8c14a4284489c2bd73845a82c0ee94"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11-stop-gate.json",
+      "bytes": 16668,
+      "sha256": "6419dd4e743367e1f85c1d272caffda32b6883bb875e63847e9112d410818af8"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11a-hold-stop-command.json",
+      "bytes": 851,
+      "sha256": "3c4b6380acc9fc7b3ab98232213f692c7829b2e61ebfc0d3676428e3201d0864"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11a-hold-stop-intent.json",
+      "bytes": 1880,
+      "sha256": "5b1786196a4843f8cd71cd4b3005939bf1a58fa38ae49198b250936e843414bd"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11b-retirement-request-command.json",
+      "bytes": 522,
+      "sha256": "4b7ba6eaf1b33189deffda4c35355aef61a7041f38148f6fbfae3ce73e555517"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11b-retirement-request-intent.json",
+      "bytes": 2269,
+      "sha256": "2534d7332497f8eceafd51fc8e2b6c81e8a586d9c079e152a5ace6de1e233c35"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11c-retire-once-command.json",
+      "bytes": 802,
+      "sha256": "93622a0c65e884d1f9d4d57c732ebd32d6ecc6cb94a8cf7838dee80866951407"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11c-retire-once-intent.json",
+      "bytes": 1054,
+      "sha256": "692e50337fc1494b0fed8d37db799a33a479ab77dcdfb82fcb5c065f5ae68dfe"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11d-retirement-checkpoint-command.json",
+      "bytes": 436,
+      "sha256": "36458e0515860b06de7e38c6565ffe65f54f63df0c0938c7db12c3458f91dbe0"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11d-retirement-checkpoint-intent.json",
+      "bytes": 2573,
+      "sha256": "c08d1d245255d9206072a975a13a9088a78b47d9ed25611ffff7a515d2bcc259"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11d-retirement-checkpoint.json",
+      "bytes": 1653,
+      "sha256": "62a3bb701a8d56e3d4c2653cee2aa11a1200f3f8334f371312fff0931524f072"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/12-refresh-command.json",
+      "bytes": 811,
+      "sha256": "3c3172965f07a038b4abed72f003a92b00abdc10787bf54f8c77b8d126c54f08"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/12-refresh-intent.json",
+      "bytes": 601,
+      "sha256": "0be0d00360214cabe272dd64a273d2931794f335ec5f06188ace18aa5ba1f33c"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/13-paused-command.json",
+      "bytes": 636,
+      "sha256": "b823f6edb764aee6572a5c9e58ef57f9c8601e8706ddac4a7f235f9bd12bfeb8"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/13-paused-intent.json",
+      "bytes": 732,
+      "sha256": "e3ade6652d37235059d37a2b554daee76661fd198001de80070a9cd0b05a34df"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/13-paused.json",
+      "bytes": 88153,
+      "sha256": "5a392588b52641db7b37f53089b4700847093bd2c846654303349d437b9c1665"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/14-resume-gate-command.json",
+      "bytes": 930,
+      "sha256": "29bfa1f610ddbc3506d3ee05596dfb8eaf968471a49dd467f9fbe939b624e072"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/14-resume-gate-intent.json",
+      "bytes": 2562,
+      "sha256": "cd5d8ffd2b45933f2523d206989d6746f5c53ac93035c95a4f53662114e5fd8f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/14-resume-gate.json",
+      "bytes": 17604,
+      "sha256": "acbddfd5035ec5afe3019db80bd456acc74206272357365b09279a62d373c7bd"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/15-resume-command.json",
+      "bytes": 692,
+      "sha256": "279c7f97b6d3db863234bab4781fbfcd328183d4629a95d43613de94beb89db5"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/15-resume-intent.json",
+      "bytes": 540,
+      "sha256": "be61d199a717d8f16cd676aa972f3de24e7543145e7a8547a0740ffd5e8c00eb"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed-command.json",
+      "bytes": 636,
+      "sha256": "605be9ce651ab73ca73222c8bb812e4017f84bfa2d24a3cfad7c76cf8f8ffc2a"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed-intent.json",
+      "bytes": 733,
+      "sha256": "2c70a18b9d6696e8dd76bf9ee8ee66a6f1b0d66e243e1f4606ebd5700a0d5531"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed.json",
+      "bytes": 87590,
+      "sha256": "4af983b4f6e8bd0f15cdda9ef2834dc8c363840da08686e68e6db043a9cf3960"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/17-publish-gate-command.json",
+      "bytes": 934,
+      "sha256": "78252265872c5ade0414c6572ca566bdf3e706e54449b5708b6bd87e46beb515"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/17-publish-gate-intent.json",
+      "bytes": 2567,
+      "sha256": "68f5ba50738afc68cacde4777bff2cb3c7b42cafb719c2a59817578a32c2abc8"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/17-publish-gate.json",
+      "bytes": 18418,
+      "sha256": "a5f54e344dc16e4b21f82b1d66ab7af1da4e03792dea64f3d8b7da5168b60306"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/18-publish-command.json",
+      "bytes": 1856,
+      "sha256": "f6ad1056b494f7d4196cfa2b417d1445cf0c6a44c6422f6312cc57a4b817d452"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/18-publish-intent.json",
+      "bytes": 765,
+      "sha256": "62113c48de8f8a18acd2335269691af530888ab96a96c16be8d5c6503e87aab5"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/19-published-command.json",
+      "bytes": 642,
+      "sha256": "3e35607a6b01eca4a826b31e55abc40603165af101edfa5ced7145fce673cfc6"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/19-published-intent.json",
+      "bytes": 738,
+      "sha256": "aafb808a4f3cdc4edde4746b8a6e2671431b414c081bc1227c7c359c471c86be"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/19-published.json",
+      "bytes": 90400,
+      "sha256": "db5cbcdc3022a57ac6dbecb364a0372e20dcb9280baa0755bda0542abd24efc6"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/20-final-gate-command.json",
+      "bytes": 956,
+      "sha256": "162b1d49fecc7a3d5d0628ff11bcd4ae2ac42d043b9c728553f55ba01f7265f8"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/20-final-gate-intent.json",
+      "bytes": 2569,
+      "sha256": "fae740b39dcdbfc41064ef7046c9e649e2cb3ed7bdcc53cdf3bddae50f0da69b"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/20-final-gate.json",
+      "bytes": 18446,
+      "sha256": "1fd8f49ef7e7030bd0c6e401274785e8ee2cd8a1abf13e7aa27f04a3d9cfbe57"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/README.md",
+      "bytes": 1964,
+      "sha256": "1081b0d648ec1a6212d317e84410bc00151ccfe834edc52aadf4747d3495703b"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/drain-deadline.json",
+      "bytes": 142,
+      "sha256": "ddd3d9f91a222c3eef97f5987a8afa31932c4004e283c48f33869dded6605aff"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/frozen-input-template.json",
+      "bytes": 2282,
+      "sha256": "94dd4f823f5aeaad341867e0dbd0cabe5600cb9782b53e889315c31f7b46bb2d"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/before.json",
+      "bytes": 19563,
+      "sha256": "d43b1220f950ebfc439da478223c1ca652d773415f5e7486e060ef999abf2155"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/hold.json",
+      "bytes": 744,
+      "sha256": "19090f7847eef3c2468ddea9ef7e4f6e4ca9069575046b071bd7f11538a1f46e"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/intent.json",
+      "bytes": 332,
+      "sha256": "045dae60288a42a855913b8d04a0b61928ba78ac7acfff599c226de562a77af4"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/result.json",
+      "bytes": 469,
+      "sha256": "91a33eb2c7af0eb216fd2e20e222c5ba3389a5da9e2a79135bcfc3038290be5a"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/operation-analysis.json",
+      "bytes": 12597,
+      "sha256": "80c5e72cfc4e3428887c1e20ce956f8b5d5a2bb3baabf7f49a37e44eb4a3d71a"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/operation-manifest.json",
+      "bytes": 71416,
+      "sha256": "c48825821644463b296fe74db186d5b4187e52fd347aaff7d347d8fb8803e482"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/reservation.json",
+      "bytes": 1384,
+      "sha256": "d2b3c1b08b986db4f28fb5e0a5e8d732e58a05c4ab748e98b7cd7b73c8844f8f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-authorization.json",
+      "bytes": 638,
+      "sha256": "a7265420eec17033bc7c40731e12d7fb83505d0457a644cbcd6b8b3c13fbd40c"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-request.json",
+      "bytes": 3040,
+      "sha256": "f1d0769cba240fa5f2c80f1571c2eee92de03814447a6901ed50020ed1643a70"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement/reservation.json",
+      "bytes": 183,
+      "sha256": "2d87cdba4207b25c7bb0a4a53a34c052480f9c7bf2d43d3913bf485810a8b016"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement/result.json",
+      "bytes": 414,
+      "sha256": "7a4d4a0f1fbe0bb1326ba5fd79481a1712bc017581a9e908fe5dbcec3d5cfab9"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/source-preflight.json",
+      "bytes": 313,
+      "sha256": "baad0d2036dadf640322ee172d691db0040db962132f9dd12d6da7df72da06f8"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/source-window.json",
+      "bytes": 1113,
+      "sha256": "3be50bfd08682ed384f22e03f9ae851b34f6d4f287901c4a10e60d510c93cdd8"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/start-authorization.json",
+      "bytes": 570,
+      "sha256": "e9d9bada777533f32e825c4805b9ff99263fc3319f0456ddd3d75f65e38de767"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/web-publish-request.json",
+      "bytes": 443,
+      "sha256": "a473421ed9dd95e83b86df45c013da0206576373d9ebac13ccb2fe5cd5bc335a"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/steps.md",
+      "bytes": 3470,
+      "sha256": "3ba84188edc8d17fd90be4b680ab40ec2d40cdb2e0a412432f84e7cb5012c4ea"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/window.py",
+      "bytes": 2519,
+      "sha256": "ca38bf5e34c7482bec3b5ca32e6a79a768c46a7a7c34f3990fa9e24600f1f072"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py",
+      "bytes": 2435,
+      "sha256": "d6f99255fc50072fb6232aacd259f725bfc66c30498ef49e52313d8a5dc4f5e3"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/namespace-independent-review.json",
+      "bytes": 1572,
+      "sha256": "147c31f26b4e43154023ac94c4d4b999191e28fba92362abae2fc929aeef2ddb"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+      "bytes": 12248,
+      "sha256": "32e050258d8733390dbbb31925be6e0ba1effd0db36bdb06e52986ae04a19b3f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+      "bytes": 9315,
+      "sha256": "43ed0c9946836bba0555a7ae06baa16b7a3f4a3b63bf83678e89d03b0da64fe0"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/operation-independent-review.json",
+      "bytes": 3673,
+      "sha256": "33236b9a6eab2452c37836da2d81c550c16612ed45e346b5d629a25b7de22a1e"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery/operation-main-receipt.json",
+      "bytes": 5645,
+      "sha256": "54d4599e4501279b8e64774dce49389a15095d620ae0368ac3cd1dab8c61da13"
+    },
+    {
+      "path": "plans/svc05-history-compatibility/plan.md",
+      "bytes": 5196,
+      "sha256": "6c26dcd4862a0b4810187429623d935d2a08badc2c992b5b9afef7a44f7c30b5"
+    },
+    {
+      "path": "plans/svc05-history-compatibility/review.md",
+      "bytes": 16864,
+      "sha256": "3aa0f50e0e3281fadc20369a8d36421398686b3a34dbf308bddb15b01d7f365c"
+    },
+    {
+      "path": "plans/svc05-history-compatibility/status.md",
+      "bytes": 17474,
+      "sha256": "408e6576311b1680edc4c5fec09f11515215bfac3271d4db1425bcbe4fba0b74"
+    }
+  ],
+  "count": 178,
+  "logicalBytes": 1340547,
+  "productFilesChanged": 0,
+  "testsRepeated": 0,
+  "runtimeUnchangedByIntegration": true,
+  "runtime": "af51 accepting v18; Webd629 v3 as closed21:27:19; root source main independent"
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "exclusive-preparation-reservation",
+  "createdAt": "2026-10-06T21:16:59.794689+00:00",
+  "operator": "assignment_review",
+  "source": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+  "reviewSha256": "6b999006a79d62aaf3757e48ca62ee70282549e45f4e44884ecb522888d94257",
+  "manifestSha256": "4f8a688f98a0f314e807433d3d2342bff08ef9dd1a646d04ef4775153edfb93e",
+  "executionInputsSha256": "19ce9d2a22e220fa54f124d5b5561231ac09390863abaeade0384ee16714b2ef",
+  "frozenTemplateSha256": "94dd4f823f5aeaad341867e0dbd0cabe5600cb9782b53e889315c31f7b46bb2d",
+  "claimId": "cd2d2e57-f633-444b-9797-f83a45624ae2",
+  "claimVersion": 2,
+  "initialOutcome": "NOT_STARTED",
+  "executionAuthorized": false,
+  "waitingFor": "Lead exact af51 source-window and START; new window authorization will be separately persisted",
+  "retirementRequest": "not generated: operationId must come only from definite new hold receipt",
+  "personalReads": 0,
+  "personalActions": 0,
+  "provider": 0,
+  "noAutomaticRetry": true,
+  "drainLimitSeconds": 900,
+  "runDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z"
+}

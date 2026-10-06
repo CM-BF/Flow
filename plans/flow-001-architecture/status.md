@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:02 UTC / mainca683820 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:34 UTC / main0bc8d40b |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,12 +12,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin ca683820已接F04准备独审与SVC07固定HTTP输入回执；175来源已登记。个人后台362/v15与Web8d8/caa1/v2保持；2040更新只读step01停止，0材料/维护/重启/发布。 |
+| 已集成main状态 / HEAD | main/origin0bc8d40b已接终端修复、消息设置组件及178来源；个人实际backend af51 accepting v18、Web d629/current v3。已审旧intent精确退役和固定发布完成，运行版本与main分开。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 保留网页与候选后台的兼容证据已完整；终端和网页接续首验在终端请求捕获前失败，未创建任务，专用资源已独立收尾。 |
-| 下一可用交付 | 先修复终端启动诊断与收尾输出留存，再验证双端接续；个人更新的旧未决记录恢复正做限定独审，其他已就绪检查继续串行运行。 |
-| 当前阻塞 | ACTIVE: 新版发布需处理已定位的旧本地未决领取记录；一次保历史退役方案已授权，正做实现/独审，未操作个人记录。完整后台产物仍待原空间门槛；小检查按各自fresh预算继续。 |
+| 当前产出 | 个人后台与新版网页已更新并恢复接收；原会话、数据和旧页面资源保留。消息设置独立组件与终端诊断修复已进入主线。 |
+| 下一可用交付 | 按资源准入完成事务连接、网页恢复和终端双端接续验证；消息设置接入实际发送，持续目标与原生工程主路径继续。 |
+| 当前阻塞 | ACTIVE: 小型PG/浏览器检查仍受波动磁盘余量限制，完整固定后台产物需2.5GiB；真实双端旅程及完整目标/工程验收仍开放。旧本地intent发布阻塞已解除，未新增模型调用。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
@@ -142,3 +142,5 @@ SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB�
 2026-10-06T18:43:03.221Z：恢复记录已main888c，dashboard实采172source；SVC05R01旧保留网页对af51的兼容脚本与O16连续目标旅程独立实施。个人运行仍362/v15、caa1/v2，新版发布尚未发生。
 
 2026-10-06 19:10:54 UTC：FLOW-001-T04-SCAN-01 proposed；单会话/项目行锁下无关推进与整轮关闭时限纳入REQ15后继。GO固定22a源码观察保留为未复现风险，未领取产品scope、未运行PG/负载；兼容发布/消息设置仍优先。
+
+2026-10-06 21:34 UTC：本次个人发布已由Execution Lead独立核100项固定/现文件、24命令和25最终检查；同op drain→hold→旧runner整组停止→0600原件先行/精确intent退役→af51 refresh→explicit resume v18→d629 Web CAS v3。总drain166.030s/900s，0主动task/provider/tab；旧claim仍unknown，不造ACK。独审[I02结果](../../../m2-integration/docs/evidence/i02/svc05h-retirement-release-result-review.json)。64表保护摘要/27迁移/4历史保留，不把摘要核对称逐值明文证明，也不把固定发布等同moving main全部功能或新真实UI验收。

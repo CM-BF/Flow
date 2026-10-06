@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-06T21:32:27.471243+00:00",
+  "generatedAt": "2026-10-06T21:30:59.068Z",
+  "sourceCount": 178,
+  "sourceMain": "0bc8d40b",
+  "dashboardSession": 73049,
+  "startupAttempt": "First unqualified node exited on Node24 guard before listening; explicit /opt/homebrew/opt/node@24/bin/node then listened4320",
+  "scope": "Engineering dashboard only; no user product tabs/reloads",
+  "tasks": [
+    {
+      "id": "OPS14",
+      "sourceMode": "live",
+      "statusPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/plans/ops14-owned-process-supervision/status.md",
+      "parseErrors": [],
+      "humanComplete": true
+    },
+    {
+      "id": "MATURE02C02",
+      "sourceMode": "live",
+      "statusPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/plans/wpf-mature-02-codex-continuity/status.md",
+      "parseErrors": [
+        "缺少工作分支状态",
+        "缺少 TODO 状态表"
+      ],
+      "humanComplete": false
+    },
+    {
+      "id": "REQ15",
+      "sourceMode": "live",
+      "statusPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch/plans/req15-conversation-turn-page-batch/status.md",
+      "parseErrors": [],
+      "humanComplete": true
+    }
+  ]
+}

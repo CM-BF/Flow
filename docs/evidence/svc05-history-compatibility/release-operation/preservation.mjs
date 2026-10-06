@@ -4,6 +4,15 @@ import { bounded, durable } from '../center-recovery/facts.mjs';
 const target = 'af51c621696230fbced12227670f014ca73bd8a1';
 const oldTarget = '362af3bac77541e5a60979326bcf4d4b8c947915';
 const equal = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+const artifactFields = ['artifactId', 'manifestDigest', 'sourceHead'];
+export function sameArtifact(a, b) {
+  const exact = value => value && typeof value === 'object' && !Array.isArray(value)
+    && Object.keys(value).sort().join(',') === artifactFields.join(',');
+  return Boolean(exact(a) && exact(b) && artifactFields.every(key => typeof a[key] === 'string' && a[key] === b[key]));
+}
+export function sameArtifacts(a, b) {
+  return Array.isArray(a) && Array.isArray(b) && a.length === b.length && a.every((value, index) => sameArtifact(value, b[index]));
+}
 const contains = (all, old) => {
   const counts = new Map(); for (const x of all) counts.set(x, (counts.get(x) ?? 0) + 1);
   for (const x of old) { if (!counts.get(x)) return false; counts.set(x, counts.get(x) - 1); } return true;
@@ -57,9 +66,9 @@ export function compare(before, after, phase, proposal) {
       : a.operation.target === target && a.operation.phase === (phase === 'paused' ? 'ready-paused' : 'resumed'));
   const oldReports = proposal.reports.slice(0, 2);
   const beforeMaterial = phase === 'preflight';
-  checks.retained = oldReports.every(expected => a.reports.some(x => equal(x.artifact, expected.artifact)
+  checks.retained = oldReports.every(expected => a.reports.some(x => sameArtifact(x.artifact, expected.artifact)
     && (beforeMaterial || x.compatibilityId === expected.compatibilityId)))
-    && b.reports.every(old => a.reports.some(x => equal(x.artifact, old.artifact) && equal(x.files, old.files) && x.totalBytes === old.totalBytes));
+    && b.reports.every(old => a.reports.some(x => sameArtifact(x.artifact, old.artifact) && equal(x.files, old.files) && x.totalBytes === old.totalBytes));
   checks.materials = beforeMaterial || a.candidate.present && a.candidate.compatibilityId === proposal.webPublishRequestCandidate.compatibilityId;
   if (phase !== 'published') {
     checks.pointer = equal(b.files['web-release.json'], a.files['web-release.json']) && equal(b.release, a.release)
@@ -67,7 +76,7 @@ export function compare(before, after, phase, proposal) {
   } else {
     const request = proposal.webPublishRequestCandidate;
     checks.pointer = a.release.version === 3 && a.release.current === request.artifact.artifactId && a.release.backendHead === target
-      && equal(a.release.artifacts, [...b.release.artifacts, request.artifact])
+      && sameArtifacts(a.release.artifacts, [...b.release.artifacts, request.artifact])
       && proposal.reports.every(x => a.release.compatibilityIds[x.artifact.artifactId] === x.compatibilityId);
     checks.webOperation = a.webReleaseOperation?.action === 'publish' && a.webReleaseOperation.version === 3 && a.webReleaseOperation.outcome === 'ready';
   }

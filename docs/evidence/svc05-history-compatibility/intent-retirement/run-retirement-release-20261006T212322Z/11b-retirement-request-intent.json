@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-06T21:26:34.466474+00:00",
+  "window": "svc05h-af51-d629-retire-20261006-2125",
+  "id": "11b-retirement-request",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--input-type=module",
+    "-e",
+    "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { observeLegacyIntent, compareLegacyRelease, requestFromReceipts } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs';\nconst value=requestFromReceipts(await read(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json\"),await read(process.argv[1]),await read(process.argv[2]),await read(process.argv[3]));await durable(process.argv[4],value);console.log(JSON.stringify({outcome:'fixed-request-saved',holdVersion:value.holdVersion,operationId:value.operationId}));",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/01-before.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/result.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-authorization.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-request.json"
+  ],
+  "freeBytes": 1248362496,
+  "rawBytes": 349088,
+  "source": "af51c621696230fbced12227670f014ca73bd8a1",
+  "requiresSuccessfulReceipt": "11a-hold-stop",
+  "state": "intended-not-a-result"
+}

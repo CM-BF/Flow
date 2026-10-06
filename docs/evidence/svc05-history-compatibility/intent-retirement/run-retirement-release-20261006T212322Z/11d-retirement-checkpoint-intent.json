@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-06T21:26:40.760512+00:00",
+  "window": "svc05h-af51-d629-retire-20261006-2125",
+  "id": "11d-retirement-checkpoint",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--input-type=module",
+    "-e",
+    "import { bounded, durable } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs';\nconst read = async path => JSON.parse((await bounded(path, 4 * 1024 * 1024)).bytes);\nimport { inspectRetirement, readRegular, sha } from 'file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs';\nimport { join } from 'node:path';\nconst request=await read(process.argv[1]),result=await read(process.argv[2]),current=await inspectRetirement(request),archive=join(request.root,'admission-retirement-'+request.retirementId),files=[];for(const name of ['original.bin','intent.json','replacement.bin','pre-rename-confirmation.json','result.json']){const f=await readRegular(join(archive,name));files.push({name,bytes:f.bytes.length,sha256:sha(f.bytes),dev:f.stat.dev,ino:f.stat.ino,mode:f.stat.mode&511});}const passed=result.outcome==='retired'&&result.renamed===true&&current.current==='retired-bytes'&&files.find(f=>f.name==='original.bin').sha256===request.originalSha256&&files.find(f=>f.name==='replacement.bin').sha256===result.newSha256;await durable(process.argv[3],{outcome:passed?'verified':'unknown',current,privateArchive:archive,files,originalClaimOutcome:'unknown',writesToJournal:0});console.log(JSON.stringify({outcome:passed?'verified':'unknown'}));if(!passed)process.exitCode=1;",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-request.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement/result.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11d-retirement-checkpoint.json"
+  ],
+  "freeBytes": 1246900224,
+  "rawBytes": 357372,
+  "source": "af51c621696230fbced12227670f014ca73bd8a1",
+  "requiresSuccessfulReceipt": "11c-retire-once",
+  "state": "intended-not-a-result"
+}

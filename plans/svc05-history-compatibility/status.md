@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:47 UTC；单文件只读定位为合法未决意图，维护屏障方案待核定 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:32 UTC；实际发布结果获独立APPROVED，无新现场采证 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -10,22 +10,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility |
 | Branch | codex/personal-history-compatibility |
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
-| 工作树dirty状态 | 两源码已冻结；仅本次自身 metadata 收口后提交 |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 检查状态 | PASSED af51c621696230fbced12227670f014ca73bd8a1（RELEASE03 A12+B3分轮与独审）；本owner0重跑 |
-| 已集成main状态 / HEAD | 同版本中心恢复3271的41文件逐字同main6223c7493a3b6f392813a5d9d82c24d87312ad26（aca6接收，非祖先）；实际仍362/v15+caa1/v2，新发布未执行 |
-| 实现目标 | b29807979a5589678a61d3fb84781950cf366396 |
-| 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
+| 工作树dirty状态 | 固定源码停写；本次仅own metadata提交，clean以实际Git回执为准 |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | delivered |
+| 检查状态 | PASSED 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736；实际结果target1994182e4f1d7ff0cb5b08d005defe199d5cbf8c独审APPROVED，24命令/25检查/100绑定 |
+| 已集成main状态 / HEAD | 历史同版本恢复已main；本次实际af51/accepting v18+d629/v3发布已独审接收，最终own记录main接收由Lead后续回执（未新采） |
+| 实现目标 | 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736 |
+| 实现范围 | docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window.py, docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json, docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json, docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py, docs/evidence/svc05-history-compatibility/release-operation/observe.mjs, docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/descriptor.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 受理记录格式正确，但保留一个未解决的本地意图；尚未证明有活任务，发布前保持停止。 |
-| 下一可用交付 | 已提出维护屏障和保留审计的最小恢复方案，待核定新增操作边界。 |
-| 当前阻塞 | ACTIVE: 合法本地受理意图未决；旧接口没有相应恢复回执，需核定显式退役边界后才能继续发布。 |
+| 当前产出 | 个人后台和新页面已更新，恢复接收任务；旧页面、会话和历史数据保留。 |
+| 下一可用交付 | 本片段已交付 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；5fe98f97cb7506f65555ab72205ebaea8464af84 独立APPROVED_EXECUTABLE_PREPARATION，79绑定/3新检查；原a644批准与8旧检查保持，2次独立窗口只读准入失败、0发布变更 |
+| Review | [review.md](review.md)；Execution Lead独立APPROVED实际结果1994182e4f1d7ff0cb5b08d005defe199d5cbf8c，100绑定无差、0重跑/新probe |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
-| 架构影响 | 产品历史投影无新边界；新增固定目标操作脚本复用host锁/marker，file-only seam与Mac排他rename，非通用发布平台；仅同版本Web/中心恢复已执行，d629搬运及af51新发布未启用。 |
+| 架构影响 | 既有host维护与独立Web CAS完成实际发布；限定旧intent退役有私有原件/审计，普通idle/API不变。运行af51与Web5069586/d629独立于moving main。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -33,7 +33,7 @@
 | SVC05H01-02 | completed | assignment_review | [Interface](../../docs/evidence/svc05-history-compatibility/interface.md) 已固定 |
 | SVC05H01-03 | completed | Web RELEASE03 / Root独审 | [af51+d629独立批准](../../docs/evidence/svc05-history-compatibility/release-preparation/web-app1750-independent-review.json)；本owner未重跑 |
 | SVC05H01-04 | completed | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；[独立APPROVED](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json) |
-| SVC05H01-05 | pending | Execution Lead窗口 / owner | 三份准确af51报告及执行准备均已审；2030/2040只读准入失败保持，现等待未决本地意图的恢复边界，同版本恢复不替代 |
+| SVC05H01-05 | completed | assignment_review / Execution Lead独审 | 实际af51/v18+d629/v3；[唯一结果APPROVED](../../docs/evidence/svc05-history-compatibility/intent-retirement/retirement-release-independent-review.json)，24命令/25检查/64表保护/27迁移/三retained；原失败与unknown保留 |
 | SVC05H01-06 | completed | assignment_review | 一次ready/8组保留true；Lead独立比对64表并关闭窗口，原期限P2已关闭 |
 
 ## Dashboard
@@ -103,3 +103,19 @@ Execution Lead于2026-10-06T20:35:57.334026+00:00独立APPROVED_EXECUTABLE_PREPA
 ### 2026-10-06 20:47 UTC 只读未决受理定位
 
 唯一获准读取的精确namespace文件是合法version1/inFlight非空UUID/assignments[]，80B/hash与两窗口保存值相同；只证明持久未决，不证明活任务或原失败原因。362/af51相关15源码逐字一致，strictIdle拒绝正确；未改已审源、未读正文/token、未重采DB/进程或操作服务。维护同runner行锁可形成禁止新受理的屏障，但现有reconciliation不处理无中心requestId的本地intent。[一页恢复提案](../../docs/evidence/svc05-history-compatibility/release-operation/admission-resolution-proposal.md)将新人工退役语义与原claim回执严格分开，当前只提案，0执行。
+
+### 2026-10-06 21:11 UTC 一次旧 intent 退役准备
+
+GO经Lead已批准a7d提案1–5；当前实现/局部证明而非个人执行。固定源0a8dd95bae123b3c749d859a42c2357e65321bcf，[18不同分轮检查与界限](../../docs/evidence/svc05-history-compatibility/intent-retirement/README.md)；普通idle仍严格，缺hold的冻结模板仅可读不能写；全部后继步骤扣同一drain900秒，unknown不重试。原历史与两个失败窗口不改。新manifest待唯一独审，claim仍仅own plan/evidence。
+
+### 21:18新窗口停止
+
+01 fresh observed/613ms，02preflight exit1/57ms，唯一false retained。已保存descriptor三字段值全同而对象键顺序不同，JSON.stringify导致误拒；兼容报告null在preflight允许，不是此失败原因。03后及退役四步骤均未执行，没有drain时标/个人request；0个人变更/provider/用户tab。Lead已关闭源窗口，原raw不改，[分析与manifest](../../docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/analysis.json)。仅只读定位，尚未改比较器。
+
+### 2026-10-06 21:21 UTC 描述符等价窄修待审
+
+固定6e7109c47b41ae6d45fdcc9a8ef365375dcd2736，保存的真实01反例+键序/未知键/字段值/有序列表3纯例3/3；原18未重跑。只针对严格三字段tuple，普通数据hash/bytes/compatID不变；原窗口false/exit1与0后继动作保留，[delta](../../docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-README.md)。
+
+2026-10-06 21:27 UTC：唯一2125窗口实际24步骤完成，退役checkpoint先于refresh，保留gate先于resume与独立Web CAS。drain166.030s/900s，原2030/2040/211659失败保持；0模型/任务/tab。见[本次实际记录](../../docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/README.md)。窗口已向Lead归还，未新增探针；操作结果待独审，非作者自批。
+
+2026-10-06 21:32 UTC：Execution Lead已独立APPROVED本次实际发布记录，100 fixed/current绑定无差，24命令及25保留检查逐项核验；无新测试/现场采样。05本片交付完成，完整FLOW-001其他后继不在本批准内。原ordinaryNativeChecks false、old claim unknown、历史失败/raw/manifest保持。

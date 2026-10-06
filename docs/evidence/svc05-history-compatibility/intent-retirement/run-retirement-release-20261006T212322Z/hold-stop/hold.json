@@ -1,0 +1,27 @@
+{
+  "state": {
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "state": "maintenance",
+    "version": 17,
+    "operationId": "4709cece-d8ba-42b1-99a9-24ca2efbe152"
+  },
+  "audit": {
+    "id": "60baec01-ad7d-4a98-9890-74d190fbb5bf",
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "requestId": "5f7b138c-1af0-4922-b6f2-1ad79181384d",
+    "action": "hold",
+    "source": "trusted-host",
+    "operationId": "4709cece-d8ba-42b1-99a9-24ca2efbe152",
+    "reason": "No active attempts; reserve the local update.",
+    "before": {
+      "state": "draining",
+      "version": 16
+    },
+    "after": {
+      "state": "maintenance",
+      "version": 17
+    },
+    "createdAt": "2026-10-06T21:26:21.067Z"
+  },
+  "replayed": false
+}

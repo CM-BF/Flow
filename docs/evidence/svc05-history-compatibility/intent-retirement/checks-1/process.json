@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-06T20:53:39.281586+00:00",
+  "freeBefore": 1228890112,
+  "gate": 1082130432,
+  "source": "2fcd9ac27d17f87bd689f16d4b04ce319c0301cc",
+  "limits": {
+    "workSeconds": 10,
+    "rawAndTemporaryBytes": 1048576
+  },
+  "PG": 0,
+  "personalActions": 0,
+  "provider": 0,
+  "commands": [
+    {
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--test",
+        "docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs"
+      ],
+      "pid": 1449,
+      "group": 1449,
+      "exit": 0,
+      "deadlineExceeded": false,
+      "groupAbsent": true,
+      "stdoutBytes": 9900,
+      "stderrBytes": 0
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--check",
+        "docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs"
+      ],
+      "pid": 1744,
+      "group": 1744,
+      "exit": 0,
+      "deadlineExceeded": false,
+      "groupAbsent": true,
+      "stdoutBytes": 0,
+      "stderrBytes": 0
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--check",
+        "docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs"
+      ],
+      "pid": 1756,
+      "group": 1756,
+      "exit": 0,
+      "deadlineExceeded": false,
+      "groupAbsent": true,
+      "stdoutBytes": 0,
+      "stderrBytes": 0
+    }
+  ],
+  "elapsedMs": 410,
+  "rawBytes": 9900,
+  "freeAfter": 1228861440,
+  "outcome": "completed"
+}

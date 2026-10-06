@@ -1,0 +1,1020 @@
+{
+  "kind": "svc05h-retirement-release-operation-manifest",
+  "at": "2026-10-06T21:30:07.936875+00:00",
+  "source": "6e7109c47b41ae6d45fdcc9a8ef365375dcd2736",
+  "baseApprovedSource": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+  "operationTarget": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+  "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "review": "PENDING_INDEPENDENT_RESULT_REVIEW",
+  "entries": [
+    {
+      "kind": "changed-source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+      "ref": "6e7109c47b41ae6d45fdcc9a8ef365375dcd2736",
+      "bytes": 9315,
+      "sha256": "43ed0c9946836bba0555a7ae06baa16b7a3f4a3b63bf83678e89d03b0da64fe0",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "new-test",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/descriptor.test.mjs",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor.test.mjs",
+      "ref": "6e7109c47b41ae6d45fdcc9a8ef365375dcd2736",
+      "bytes": 2363,
+      "sha256": "673e31cbc4957a450a4a2aed94461024cf7340b482acbbd07e7a0d78c6c4db79",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 9493,
+      "sha256": "268e240e8b9194b776cd195ea11513a3ab8fe7916daedbd0a15eda6c7d0bdaa5",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 8017,
+      "sha256": "e656dc1fcdde3bd0a3a2b183f2d85e375b9b40b339b134fe0fb91b279ed9f32a",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 1804,
+      "sha256": "47bdadbe77cc794a01db2fc04f6c6419742edd91a9b578d06e4dacd0b7b8f0d8",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 4528,
+      "sha256": "20f3d2c8f8b8105ca69ddb0e1ca8254334035eba1c6e50d0734a3b33c2403eb8",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 5299,
+      "sha256": "c3c79d0246fc312db8e5a15ae775bd8b80a2da9ba5ad21ef721685a546ecdf4e",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/window.py",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/window.py",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 2519,
+      "sha256": "ca38bf5e34c7482bec3b5ca32e6a79a768c46a7a7c34f3990fa9e24600f1f072",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 9864,
+      "sha256": "958870d327710448bc8718cbfce484d8515188066058e75246c74ac4daf078b5",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 13089,
+      "sha256": "c7f4068a81e87ff9a5cd4c86e1a447f3dd0b145c7112ad09bf3f7af7739cb547",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 2435,
+      "sha256": "d6f99255fc50072fb6232aacd259f725bfc66c30498ef49e52313d8a5dc4f5e3",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 12248,
+      "sha256": "32e050258d8733390dbbb31925be6e0ba1effd0db36bdb06e52986ae04a19b3f",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-fixed-execution-input",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 29958,
+      "sha256": "19ce9d2a22e220fa54f124d5b5561231ac09390863abaeade0384ee16714b2ef",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "retained-fixed-execution-input",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json",
+      "ref": "0a8dd95bae123b3c749d859a42c2357e65321bcf",
+      "bytes": 2282,
+      "sha256": "94dd4f823f5aeaad341867e0dbd0cabe5600cb9782b53e889315c31f7b46bb2d",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/01-before-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/01-before-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 340,
+      "sha256": "456792b9af360d1c15cb986a910941bc078b9c76c04e82d3ee30f1fabf76657d",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/01-before-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/01-before-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 1739,
+      "sha256": "f8ad6f615e23ca8b0da4b776b26f0529b219b94b61f53fc33e7d92cff3cfe640",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/01-before.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/01-before.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 82245,
+      "sha256": "d15ae9e140c646ed037efa1d99e11f8c17d5b3505d7d2f4fd1c49b1b39e8a747",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/02-preflight-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/02-preflight-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 850,
+      "sha256": "d6930c4af7f2dfae392d4f386c08fcb5a6c9135c64bdd59b9fee1fc55f111ed4",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/02-preflight-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/02-preflight-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 2322,
+      "sha256": "23c7a7c750c3857337e0804b339b8733d7a3b421c7d6dbd448a8aae59bf95f9f",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/02-preflight.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/02-preflight.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 15896,
+      "sha256": "52fa717a73d72e1339696b3cbb07bf8748f19b43fbfc0f1c7ee5c09b5ba2da7f",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/03-import-retained-0-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/03-import-retained-0-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 415,
+      "sha256": "ccd4d4204b3de59c70a22c91d70e1caffa7751bd18c6921ce9f878eb92905f25",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/03-import-retained-0-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/03-import-retained-0-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 765,
+      "sha256": "47a5811f980c8938a76b86166d3e70a1cb2e0201b72c0bc1f78c250a7f68ce2e",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/04-import-retained-1-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/04-import-retained-1-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 415,
+      "sha256": "9b642fcf961f1667cb01267d5aee48d0849dcfb78956945717f0d068da9f6f16",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/04-import-retained-1-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/04-import-retained-1-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 773,
+      "sha256": "3bc2b59b24cde1f6efe15ad5db45a757b25e1c6c772b556ec4ef82b96daefc1d",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/05-import-new-d629-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/05-import-new-d629-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 413,
+      "sha256": "e5de65b8bd95fc68a290d62d85adbf6ab62a75ab4f03385ee179cda6d43bf4e9",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/05-import-new-d629-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/05-import-new-d629-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 761,
+      "sha256": "3f595e530149be350db566a92a0407f04adacfed123d1546cc7f4f8474e821b9",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/06-artifact-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/06-artifact-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 476,
+      "sha256": "72f5de455a2367ac7ccc3a4250257e645d2c72673ddaa1a782a13a8bbd46ac78",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/06-artifact-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/06-artifact-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 572,
+      "sha256": "d84f1e96c145d9708039ca31568754dbbc7b8758f436b51e02bc18b304601e7e",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/07-materials-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/07-materials-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 343,
+      "sha256": "89f27cea5f73f42b7e0aca27b479feca402a87f4cbbafa608fcfae2ceae14d6e",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/07-materials-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/07-materials-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 1756,
+      "sha256": "1f5666f3f1c24c0b2d1b9191d03b657d99f26092eb5fae734b36cde485bcf0cf",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/07-materials.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/07-materials.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 82430,
+      "sha256": "0839d700feacb7c63804f7f7235f5db01862b60e738da4bc1cd1977d22982eab",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/08-material-gate-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/08-material-gate-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 854,
+      "sha256": "282af27b8bf4c40eb73ebaab202e63b001c93c9ded947f82bdbd435e60fd123d",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/08-material-gate-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/08-material-gate-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 2337,
+      "sha256": "134e94e2cace10693c930073183246450b5e9bb5741688a350caabb9bd5dafb6",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/08-material-gate.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/08-material-gate.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 15896,
+      "sha256": "8cd92c9785195e918b30e692bc6e83394b90e3e6bfe1c4a9d3950ecadb61d497",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/09-drain-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/09-drain-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 740,
+      "sha256": "5f4b0285414a0d328e25a5e2e9ca6ba10d292abb76ee93cf90f8d71f1845e973",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/09-drain-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/09-drain-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 544,
+      "sha256": "c19cc8f1819b8bd073f0a48851154f33f219c9024fb83f25b9190ad5967c5b0b",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/10-drained-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/10-drained-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 423,
+      "sha256": "0257a9a5d1d9d94dbaf615d3b7ee9c6555cf1d9dfa2237ec1efaa5d24cab3634",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/10-drained-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/10-drained-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 1749,
+      "sha256": "3666821e211666330a8c7038c78c04237d9f2c3c00e827427a11f24a8747cb24",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/10-drained.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/10-drained.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 83388,
+      "sha256": "96ce4dc9e252bbfb198581dcc212e8222c232bbeefc603af76a900681f5282f4",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11-stop-gate-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11-stop-gate-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 931,
+      "sha256": "39dbc82bfca3fd05871994f9161356f7f2d437cecee76cb8fa35cbee15916390",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11-stop-gate-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11-stop-gate-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 2323,
+      "sha256": "5edd68539e9a46426db8736b9f78ec1b0d8c14a4284489c2bd73845a82c0ee94",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11-stop-gate.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11-stop-gate.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 16668,
+      "sha256": "6419dd4e743367e1f85c1d272caffda32b6883bb875e63847e9112d410818af8",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11a-hold-stop-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11a-hold-stop-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 851,
+      "sha256": "3c4b6380acc9fc7b3ab98232213f692c7829b2e61ebfc0d3676428e3201d0864",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11a-hold-stop-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11a-hold-stop-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 1880,
+      "sha256": "5b1786196a4843f8cd71cd4b3005939bf1a58fa38ae49198b250936e843414bd",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11b-retirement-request-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11b-retirement-request-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 522,
+      "sha256": "4b7ba6eaf1b33189deffda4c35355aef61a7041f38148f6fbfae3ce73e555517",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11b-retirement-request-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11b-retirement-request-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 2269,
+      "sha256": "2534d7332497f8eceafd51fc8e2b6c81e8a586d9c079e152a5ace6de1e233c35",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11c-retire-once-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11c-retire-once-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 802,
+      "sha256": "93622a0c65e884d1f9d4d57c732ebd32d6ecc6cb94a8cf7838dee80866951407",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11c-retire-once-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11c-retire-once-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 1054,
+      "sha256": "692e50337fc1494b0fed8d37db799a33a479ab77dcdfb82fcb5c065f5ae68dfe",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11d-retirement-checkpoint-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11d-retirement-checkpoint-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 436,
+      "sha256": "36458e0515860b06de7e38c6565ffe65f54f63df0c0938c7db12c3458f91dbe0",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11d-retirement-checkpoint-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11d-retirement-checkpoint-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 2573,
+      "sha256": "c08d1d245255d9206072a975a13a9088a78b47d9ed25611ffff7a515d2bcc259",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11d-retirement-checkpoint.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/11d-retirement-checkpoint.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 1653,
+      "sha256": "62a3bb701a8d56e3d4c2653cee2aa11a1200f3f8334f371312fff0931524f072",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/12-refresh-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/12-refresh-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 811,
+      "sha256": "3c3172965f07a038b4abed72f003a92b00abdc10787bf54f8c77b8d126c54f08",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/12-refresh-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/12-refresh-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 601,
+      "sha256": "0be0d00360214cabe272dd64a273d2931794f335ec5f06188ace18aa5ba1f33c",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/13-paused-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/13-paused-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 636,
+      "sha256": "b823f6edb764aee6572a5c9e58ef57f9c8601e8706ddac4a7f235f9bd12bfeb8",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/13-paused-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/13-paused-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 732,
+      "sha256": "e3ade6652d37235059d37a2b554daee76661fd198001de80070a9cd0b05a34df",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/13-paused.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/13-paused.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 88153,
+      "sha256": "5a392588b52641db7b37f53089b4700847093bd2c846654303349d437b9c1665",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/14-resume-gate-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/14-resume-gate-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 930,
+      "sha256": "29bfa1f610ddbc3506d3ee05596dfb8eaf968471a49dd467f9fbe939b624e072",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/14-resume-gate-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/14-resume-gate-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 2562,
+      "sha256": "cd5d8ffd2b45933f2523d206989d6746f5c53ac93035c95a4f53662114e5fd8f",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/14-resume-gate.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/14-resume-gate.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 17604,
+      "sha256": "acbddfd5035ec5afe3019db80bd456acc74206272357365b09279a62d373c7bd",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/15-resume-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/15-resume-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 692,
+      "sha256": "279c7f97b6d3db863234bab4781fbfcd328183d4629a95d43613de94beb89db5",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/15-resume-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/15-resume-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 540,
+      "sha256": "be61d199a717d8f16cd676aa972f3de24e7543145e7a8547a0740ffd5e8c00eb",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 636,
+      "sha256": "605be9ce651ab73ca73222c8bb812e4017f84bfa2d24a3cfad7c76cf8f8ffc2a",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 733,
+      "sha256": "2c70a18b9d6696e8dd76bf9ee8ee66a6f1b0d66e243e1f4606ebd5700a0d5531",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 87590,
+      "sha256": "4af983b4f6e8bd0f15cdda9ef2834dc8c363840da08686e68e6db043a9cf3960",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/17-publish-gate-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/17-publish-gate-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 934,
+      "sha256": "78252265872c5ade0414c6572ca566bdf3e706e54449b5708b6bd87e46beb515",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/17-publish-gate-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/17-publish-gate-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 2567,
+      "sha256": "68f5ba50738afc68cacde4777bff2cb3c7b42cafb719c2a59817578a32c2abc8",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/17-publish-gate.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/17-publish-gate.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 18418,
+      "sha256": "a5f54e344dc16e4b21f82b1d66ab7af1da4e03792dea64f3d8b7da5168b60306",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/18-publish-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/18-publish-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 1856,
+      "sha256": "f6ad1056b494f7d4196cfa2b417d1445cf0c6a44c6422f6312cc57a4b817d452",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/18-publish-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/18-publish-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 765,
+      "sha256": "62113c48de8f8a18acd2335269691af530888ab96a96c16be8d5c6503e87aab5",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/19-published-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/19-published-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 642,
+      "sha256": "3e35607a6b01eca4a826b31e55abc40603165af101edfa5ced7145fce673cfc6",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/19-published-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/19-published-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 738,
+      "sha256": "aafb808a4f3cdc4edde4746b8a6e2671431b414c081bc1227c7c359c471c86be",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/19-published.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/19-published.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 90400,
+      "sha256": "db5cbcdc3022a57ac6dbecb364a0372e20dcb9280baa0755bda0542abd24efc6",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/20-final-gate-command.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/20-final-gate-command.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 956,
+      "sha256": "162b1d49fecc7a3d5d0628ff11bcd4ae2ac42d043b9c728553f55ba01f7265f8",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/20-final-gate-intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/20-final-gate-intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 2569,
+      "sha256": "fae740b39dcdbfc41064ef7046c9e649e2cb3ed7bdcc53cdf3bddae50f0da69b",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/20-final-gate.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/20-final-gate.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 18446,
+      "sha256": "1fd8f49ef7e7030bd0c6e401274785e8ee2cd8a1abf13e7aa27f04a3d9cfbe57",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "run-derived",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/README.md",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/README.md",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 1964,
+      "sha256": "1081b0d648ec1a6212d317e84410bc00151ccfe834edc52aadf4747d3495703b",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/drain-deadline.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/drain-deadline.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 142,
+      "sha256": "ddd3d9f91a222c3eef97f5987a8afa31932c4004e283c48f33869dded6605aff",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/frozen-input-template.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/frozen-input-template.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 2282,
+      "sha256": "94dd4f823f5aeaad341867e0dbd0cabe5600cb9782b53e889315c31f7b46bb2d",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/before.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/before.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 19563,
+      "sha256": "d43b1220f950ebfc439da478223c1ca652d773415f5e7486e060ef999abf2155",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/hold.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/hold.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 744,
+      "sha256": "19090f7847eef3c2468ddea9ef7e4f6e4ca9069575046b071bd7f11538a1f46e",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/intent.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/intent.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 332,
+      "sha256": "045dae60288a42a855913b8d04a0b61928ba78ac7acfff599c226de562a77af4",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/result.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/hold-stop/result.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 469,
+      "sha256": "91a33eb2c7af0eb216fd2e20e222c5ba3389a5da9e2a79135bcfc3038290be5a",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "run-derived",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/operation-analysis.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/operation-analysis.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 12597,
+      "sha256": "80c5e72cfc4e3428887c1e20ce956f8b5d5a2bb3baabf7f49a37e44eb4a3d71a",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/reservation.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/reservation.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 1384,
+      "sha256": "d2b3c1b08b986db4f28fb5e0a5e8d732e58a05c4ab748e98b7cd7b73c8844f8f",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement/reservation.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement/reservation.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 183,
+      "sha256": "2d87cdba4207b25c7bb0a4a53a34c052480f9c7bf2d43d3913bf485810a8b016",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement/result.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement/result.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 414,
+      "sha256": "7a4d4a0f1fbe0bb1326ba5fd79481a1712bc017581a9e908fe5dbcec3d5cfab9",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-authorization.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-authorization.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 638,
+      "sha256": "a7265420eec17033bc7c40731e12d7fb83505d0457a644cbcd6b8b3c13fbd40c",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-request.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-request.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 3040,
+      "sha256": "f1d0769cba240fa5f2c80f1571c2eee92de03814447a6901ed50020ed1643a70",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/source-preflight.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/source-preflight.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 313,
+      "sha256": "baad0d2036dadf640322ee172d691db0040db962132f9dd12d6da7df72da06f8",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/source-window.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/source-window.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 1113,
+      "sha256": "3be50bfd08682ed384f22e03f9ae851b34f6d4f287901c4a10e60d510c93cdd8",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/start-authorization.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/start-authorization.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 570,
+      "sha256": "e9d9bada777533f32e825c4805b9ff99263fc3319f0456ddd3d75f65e38de767",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "operation-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/web-publish-request.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/web-publish-request.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 443,
+      "sha256": "a473421ed9dd95e83b86df45c013da0206576373d9ebac13ccb2fe5cd5bc335a",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "artifact-transfer-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/6a50c864-fb1e-4bf3-b536-dcbca25da24e-prepared.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/artifact-transfer/6a50c864-fb1e-4bf3-b536-dcbca25da24e-prepared.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 595,
+      "sha256": "fc9a42728668f7a5e3e3522dbd13d105483b60b8bb6c36d728288e24e5072afc",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "artifact-transfer-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/6a50c864-fb1e-4bf3-b536-dcbca25da24e-reservation.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/artifact-transfer/6a50c864-fb1e-4bf3-b536-dcbca25da24e-reservation.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 486,
+      "sha256": "5c6e3a268ab0d1f9e0a8d007539e1130761dc4ce9b56f2f9dadc57d1d47aa093",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "artifact-transfer-raw",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/6a50c864-fb1e-4bf3-b536-dcbca25da24e-result.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/artifact-transfer/6a50c864-fb1e-4bf3-b536-dcbca25da24e-result.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 601,
+      "sha256": "246eff4c1640071c46d112d3fba3e64c6cfee86b80294a62dc99415bcf972513",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "prior-fixed-review-and-failure",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/fixed-manifest.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/fixed-manifest.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 86464,
+      "sha256": "4f8a688f98a0f314e807433d3d2342bff08ef9dd1a646d04ef4775153edfb93e",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "prior-fixed-review-and-failure",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-manifest.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-manifest.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 99320,
+      "sha256": "d4048e0b49fe7edd18725d68c5484efe899af97e858f6706eb4bfcb159dff6eb",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "prior-fixed-review-and-failure",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/independent-review.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/independent-review.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 3295,
+      "sha256": "6b999006a79d62aaf3757e48ca62ee70282549e45f4e44884ecb522888d94257",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "prior-fixed-review-and-failure",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-independent-review.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-independent-review.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 1663,
+      "sha256": "290c5f128047258ad70ab42d4c380145e26eb763820c1837b008720508b33a86",
+      "fixedMatchesCurrent": true
+    },
+    {
+      "kind": "prior-fixed-review-and-failure",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/manifest.json",
+      "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "relativePath": "docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T211659Z/manifest.json",
+      "ref": "1994182e4f1d7ff0cb5b08d005defe199d5cbf8c",
+      "bytes": 3894,
+      "sha256": "374a4c825420319f60e405b2681e1004bb5e7df607006887fa77a9e6c5bbc616",
+      "fixedMatchesCurrent": true
+    }
+  ],
+  "count": 100,
+  "bindingProblems": [],
+  "runOutcome": "24 commands exited0; 25 final checks true; all operations completed",
+  "limits": [
+    "Previous historical failures/raw unchanged; only explicit legacy journal retirement exception.",
+    "Source preflight fixes 145 approved bindings before first operation; reused reviewed source/dependency closure, not new engineering tests.",
+    "No credential values or original private admission bytes in public evidence; retirement checkpoint contains hashes only.",
+    "This manifest binds saved observations, not new personal probes."
+  ]
+}
