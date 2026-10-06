@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T11:54:25.347605+00:00 / main52ebd2b1efe5ecbfab9d3c59b1da2ed1580dd52f |
+| 最近更新 / 最近main同步核验 | 2026-10-06T12:01:50.170012+00:00 / main2f4a5789ee13937914fa2c25161c8d5ed1071550 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -14,12 +14,12 @@
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | 1HTTP红→绿/5实际请求；root types0，无PG/provider。 |
-| 已集成main状态 / HEAD | 上下文027与O11领域/公共factory/client已main52eb；个人服务不变。 |
+| 已集成main状态 / HEAD | 上下文027、O11公共读口与ec6目标会话取消传输已main2f4；个人服务不变。 |
 | Review | APPROVED：native_center_owner限定ec6ad204，c05公共读口已main |
 | 实现目标 | ec6ad20479872a8cb701917b6fa448ca23a2a843 |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/goal-session-transport.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 统一目标读口已主线可用；本地退出观察可通过共享接口释放在途读取。 |
 | 下一可用交付 | 接入持续目标会话控制器，保留决定、取消与未知确认的中心规则。 |
@@ -168,3 +168,5 @@
 | F01-33 | completed | Lead | [目标公开接线manifest](../../docs/evidence/f01/goal-delivery-manifest.json)，待独审；不重复O11领域32项。 |
 
 | F01-34 | in-progress | Lead | [transport manifest](../../docs/evidence/f01/goal-session-transport-manifest.json)，待独审；package入口待O12 Interface。 |
+
+目标会话ec6薄传输已由main2f4接收，源码与固定target一致；F01-34仍保留O12公共package export后继，待其冻结模块输入，不把薄传输批准扩大到controller。metadata不重测。
