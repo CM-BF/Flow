@@ -163,3 +163,5 @@ SVC06已由assignment_review接收原唯一树与九scope实施固定后台产�
 
 - WPF-RECOVERY01：[聊天恢复唯一计划](../../web-conversation-recovery/plans/wpf-conversation-recovery/plan.md)，归 WPF-MATURE-06。
 - WPF-RELEASE03：[当前后台网页兼容验证](../../web-current-preview-compatibility/plans/wpf-release03-current-preview/plan.md)，归 WPF-MATURE-01。
+
+- MATURE02C01：[逐消息设置共享接口与命令行](../../claude-message-settings-client/plans/mature02c01-claude-message-settings-client/plan.md)，WPF-MATURE-02下的独立共享consumer；CORE合同输入与O14候选验证边界分别保留。

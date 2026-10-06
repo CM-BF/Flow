@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-06T16:40:10.821Z",
+  "sourceCount": 167,
+  "task": {
+    "id": "MATURE02C01",
+    "title": "逐消息设置共享接口与命令行",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client",
+    "branch": "codex/claude-message-settings-client",
+    "planDir": "plans/mature02c01-claude-message-settings-client",
+    "evidenceDir": "docs/evidence/mature02c01"
+  },
+  "firstCanonical": "87fc0433b42746da49529fbc51ccd29b508c79b5",
+  "claim": "85784ec0-9695-470d-b1bd-b1a447c9805a v1",
+  "parserErrors": [],
+  "parent": "WPF-MATURE-02",
+  "coLead": "ExecutionLead",
+  "checks": "Registry uniqueness, three actual canonical files and status parsing; no full aggregate/product tests.",
+  "deployment": "PENDING_NORMAL_BATCH"
+}
