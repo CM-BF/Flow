@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:41:32 UTC / 2026-10-06 06:33:39 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:46:17 UTC / 2026-10-06 06:33:39 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
@@ -11,12 +11,12 @@
 | 工作树dirty状态 | 固定实现，当前仅metadata更新 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
-| 已集成main状态 / HEAD | acfd409a493315a00f1cc19ac96c5f1b36c19e57 已推送，020公共接线/领域及活动展示模块已接收；X05薄client本分支已独审待集成；K03薄client待审。实际center/runner仍fb906cb |
-| Review | NOT_STARTED 44bd8bc8e8e30ec49f86b6828f4947bf2c47d148 021生产delta；K03薄client77465及X05薄client07b1已Root批准 |
+| 已集成main状态 / HEAD | acfd409a493315a00f1cc19ac96c5f1b36c19e57 已推送，020公共接线/领域及活动展示模块已接收；X05薄client本分支已独审待集成；K03薄client与021生产delta已独审待集成。实际center/runner仍fb906cb |
+| Review | APPROVED 44bd8bc8e8e30ec49f86b6828f4947bf2c47d148 021生产delta；K03薄client77465及X05薄client07b1已Root批准 |
 | 实现目标 | 44bd8bc8e8e30ec49f86b6828f4947bf2c47d148 |
 | 实现范围 | apps/server/src/index.ts, apps/server/src/goal-tool-runs/migration.test.ts, apps/server/src/goal-graph-runs/native-migration.test.ts, packages/client/src/goal-context-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 真实运行中排队与同会话回复已验证，关闭测试浏览器后后台继续、重开正文可见 |
 | 下一可用交付 | 为目标子任务读取固定版本的知识引用；接入可核对恢复的包下载 |
@@ -88,3 +88,5 @@
 | F01-19 | in-progress | Lead | K03固定版本context薄client 77465eb59121bad5ac2785036961f1707911d21b；1/1HTTP+tsc，待独审/021生产挂载 |
 
 2026-10-06 06:41:32 UTC：K03完整领域21d2获Mika独审，薄client77465获Root独审；当前021生产delta44bd8bc8e8e30ec49f86b6828f4947bf2c47d148待独审。4different局部各有最终绿，stagefixture修复只改测试输入，不降低原迁移断言；个人服务仍fb906。
+
+2026-10-06 06:46 UTC：Root已独立批准021生产44bd；知识引用固定版本、来源更新后的新鲜度与恢复任务读取已具备可集成证据。4不同局部检查分轮通过，未重跑。新增流式协议协商属下片，旧页面兼容未验前不会随本批启用。
