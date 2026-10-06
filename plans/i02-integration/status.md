@@ -177,3 +177,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T14:56:54.347164+00:00：O14持久推进模块独审通过并受控接收，14源码与b808固定target逐字一致；尚未挂载030/自动scan，旧中心读口由原域的缺表兼容保留，不能宣称生产已自动推进。SVC06仅接收保护片收口，完整固定产物仍待资源条件。161源登记已真实发布。见[固定比较](../../docs/evidence/i02/goal-progression-module-integration.json)。
 
 2026-10-06T15:01:26.795368+00:00：X01宿主load/invoke两阶段即时授权检查已按Mika独审固定e682接收，两源码与target逐字相同，原main基线相同。复用21局部与strict原证据，不把本地callback批准说成中心grant/runtime纵向已接。见[接收](../../docs/evidence/i02/plugin-host-gates-integration.json)。
+
+2026-10-06T15:05:33.405554+00:00：X01五薄client/029默认关闭factory/私有配置/CLI均独审并受控接收，13源分别对固定67fd/5e121全相同；无领域复制或自动启用插件。canonical F01两metadata冲突按原owner acbd恢复，O14薄client仍未审未并入。见[成套接收](../../docs/evidence/i02/plugin-installation-production-integration.json)。

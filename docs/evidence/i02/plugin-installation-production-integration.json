@@ -1,0 +1,91 @@
+{
+  "observedAt": "2026-10-06T15:05:33.405554+00:00",
+  "mainBefore": "fe1b362f",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 50566,
+      "sha256": "3a8543bed0fb5c680f198311e8f48669ac94fb8eba76c08b8ff9f2b934f701ec",
+      "target": "67fd45924e51c3356ca07e199335f35038f34968"
+    },
+    {
+      "path": "packages/client/src/plugin-installations.test.ts",
+      "bytes": 5230,
+      "sha256": "dba7aea1d155b5d39e53666c36990185421e296d17f1b568e0b76998a972920b",
+      "target": "67fd45924e51c3356ca07e199335f35038f34968"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1385,
+      "sha256": "1b60d4582bee11db36b0335f8927d48f7597d13b51ab46395363bb7c40749c6e",
+      "target": "67fd45924e51c3356ca07e199335f35038f34968"
+    },
+    {
+      "path": "apps/cli/README.md",
+      "bytes": 6150,
+      "sha256": "5c3c4c0ca35a20fa9ccaa3f6ead347cdb9d7e9618179827b2a14c96b7c8b1d76",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2"
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 22540,
+      "sha256": "48751b0f0f8f83a7d679b9b414d7663061a808dc5bc555779b27632f5d6a04ec",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2"
+    },
+    {
+      "path": "apps/cli/src/plugin-installations.test.ts",
+      "bytes": 4477,
+      "sha256": "d0d6404bab3bbbed83a2981841b61379afd165c738897753e0b40dd5288fc7c8",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13801,
+      "sha256": "6df36211fe717f5e8934120e44a8732d5f59a32a04c69eaed89338c3d6268b1c",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "bytes": 2964,
+      "sha256": "8da31946307ac1da338df9ab0ee640e4df2ba534fc04918113b3cbecdd1ef9b9",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2"
+    },
+    {
+      "path": "apps/server/src/package-fetch-configuration.ts",
+      "bytes": 2138,
+      "sha256": "ee4a913e2e9dd03d152966f5c58d87b67c59702135ad705aa39e02437c3212d1",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2"
+    },
+    {
+      "path": "apps/server/src/plugin-installation-configuration.test.ts",
+      "bytes": 2892,
+      "sha256": "cb7658dd613a2212e3e42cfc3b9b475953b221b616d60483f2c0e014d54767b4",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2"
+    },
+    {
+      "path": "apps/server/src/plugin-installation-configuration.ts",
+      "bytes": 1127,
+      "sha256": "bbbde194876e327867f32724998d8408c1b0ce788ae5462cdfb6578a05ab571e",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2"
+    },
+    {
+      "path": "apps/server/src/private-json-configuration.ts",
+      "bytes": 1256,
+      "sha256": "d28371844178889916ff09df8e7d204d8d5a8306c740e3c21cba812c6cedfb2b",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2"
+    },
+    {
+      "path": "packages/client/src/plugin-installations-production.test.ts",
+      "bytes": 9390,
+      "sha256": "2c491ce8d680a3f61ae03a3ef2264bc39e99e02e13cd71e6b3d05a4f201512d0",
+      "target": "5e121041cf628817b27cbb64f00317d5d62ad1e2"
+    }
+  ],
+  "reviews": [
+    "docs/evidence/f01/plugin-installation-client-independent-review.md",
+    "docs/evidence/f01/plugin-installation-mount-independent-review.json"
+  ],
+  "checks": "13 distinct sources byte-identical to reviewed targets. Domain already main; original config4/CLI1/PG1/types0, no repeated tests/provider. O14 pending client was not merged.",
+  "metadataConflict": "F01 owner explicitly chose canonical acbd8e9a status/review. This preserves separate pending O14 entry, not its product source.",
+  "limitations": "Default optional installation policy absent, static preparation only; personal runtime362/v15 unchanged."
+}
