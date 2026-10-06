@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:07:03 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:09:16 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,8 +10,8 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 2f29a569783d3a33f23d0ff350d109e0c6b0d5d1（本轮父metadata基线；ca6a实验源码checkpoint不变） |
-| 工作树dirty状态 | 本轮仅父status/canonical及resource-candidates文档；0产品源码改动，提交后clean。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 93b4d9331a04d9d220743b324b513fec37bf3d38（本轮父metadata基线；ca6a实验源码checkpoint不变） |
+| 工作树dirty状态 | 本轮仅父status/canonical及research-inputs文档；0产品源码改动，提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
@@ -89,3 +89,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收�
 15:50:43管理更新：core contracts checkpoint29bbf52589611a936068fa44991c67991b67f4c2已固定但未验证，不能沿用首leaf批准；032已由Lead正式分配，source-only闭包仅补reconciliation.ts供retry插入前校验。共享consumer交接已形成，实际写权和检查由现owner协调；本父0工程检查/PG/安装，不开诊断。
 
 16:07:03资源管理：本父fresh v6 ACTIVE、2f29 clean；只读核三个已交付released树，另转述X01 active条件候选，见[resource-candidates](../../docs/evidence/wpf-mature-02/resource-candidates.md)。Lead唯一Git operator决定KEEP/可逆收起，02与CORE KEEP；0回收/稀疏/运行检查。032正式assignment main e807已读，号/领取不替代DDL执行；完整02仍in-progress。
+
+16:09:16只读研究输入：GO轮询/续租成本线索已[固定归档并路由原S01/REQ15、CHAT08](../../docs/evidence/wpf-mature-02/research-inputs.md)，静态推算非容量事实，0测试/PG/provider/压测。CORE仍优先，未创建新任务或改外部状态。

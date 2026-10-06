@@ -5,6 +5,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 ## Lead当前可行动请求
 
 - **资源有界候选供Lead唯一Git operator判断**：[三已释放树与X01条件候选](resource-candidates.md)。02与CORE KEEP；本owner0回收/0稀疏化，当前非稀疏不冒称历史从未稀疏。
+- [GO性能研究输入：active-steering轮询/续租成本](research-inputs.md)仅路由S01/REQ15与CHAT08原owner/计划；固定e807源码推算，未实测，0新压测/PG/provider授权，不改变CORE优先级。
 
 - **Claude core下一片：** [唯一精确接线请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)。checkpoint`29bbf52589611a936068fa44991c67991b67f4c2`仅固定contracts、未验证，不是单独交付。032正式assignment已main`e807730328a8f220721efcc3e346c03945991965`，[号/领取收据](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/f01/claude-message-settings-migration-assignment.json)记录core v3及精确`032-claude-message-settings.sql`，只证明分配/领取，不证明DDL运行。source-only闭包另有`apps/server/src/reconciliation.ts`补充，retry直接INSERT前也需验证messageSettings；不泛扩闭包。
 - **四条profile路径已交回**：[COMMITTED回执](claude-core-profile-handback-receipt.json) / [停写记录](claude-core-profile-stopped-writing.json)。2026-10-06 15:43:03.052 UTC原claim原子amend为v6，仅保留本父docs/实验/plan；core现已原子amend至c652bc61 v2（15:44:19.351 UTC），含四路径与context store，见[接收receipt](/tmp/flow-core-next-scope-amend-receipt.json)；父owner不恢复写入。保留main已有templateVersion2→unknown三行修复，不改SVC旧362固定候选。其余独立源可先行，context直接消费者仍须纳入最终纵向验收。
