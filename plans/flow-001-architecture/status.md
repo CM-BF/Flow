@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:38 UTC / mainec5da343 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:57 UTC / main77132408 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,11 +12,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main ec5da343 已含流式增量哈希及O15完整输入与一次确认领域/公共接线、Claude逐消息配置与CLI、TUI01F限定取消和收尾证据、RELEASE03实际App兼容证据。registry171已实采18:19；O16实际实施。18:35一次受管Web-only同版本恢复成功，个人后台362/v15、Web8d8/caa1/v2保持，原Flow checkout已恢复ec5 clean。 |
+| 已集成main状态 / HEAD | main77132408已接同版本Web恢复独审/操作证据及172来源实际登记；既有O15、Claude逐消息配置/CLI、TUI01F和RELEASE03批准保持。个人后台仍362/v15、Web8d8/caa1/v2，18:35一次Web-only恢复成功；新的兼容验证未发布到个人服务。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 用户确认完整计划输入后，中心可继续推进依赖任务；逐消息设置的公共接口和命令行已可用。 |
-| 下一可用交付 | Web消息设置控件、保留旧页面的实际发布与终端双端接续；O16独立worker已开始真实连续规划与执行的零模型验收准备。 |
+| 下一可用交付 | 先补保留页面对新后台的兼容与连续目标验收；随后补工具完整原文持久保留和授权分页，终端与网页共用读取入口。 |
 | 当前阻塞 | ACTIVE: 个人新版发布仍须补两组保留页面兼容证明；当前同版本网页已恢复，连接残留根因未证明且不作为无限诊断门槛。完整后台产物仍缺空间，小片继续。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -46,6 +46,8 @@
 ## 下一步与handoff
 
 Execution Lead已接管本权威status并核验实际owner交付；启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。
+
+2026-10-06 18:57 UTC：REQ15/CHAT05-06完整原文后继已列ready，Execution Lead管理；assignment_review在当前R01收口后首个合适槽接有界纵向实现，依赖新claim与O16相关runner接缝交权。现无新产品writer或运行，详情见[唯一父计划](plan.md#chat05-06-完整工具原文下一-ready-交付2026-10-06-1857-utc)。Mika的会话页批量读取保持独立，不重复派工。
 
 2026-10-06 01:14 UTC：新增 [架构改进研究](research-2026-10-05.md)，由 Goal Owner 提供官方资料结论，标记研究建议/未实测。未改冻结 M1/Web/dashboard 契约，也未新增完成标记。
 
