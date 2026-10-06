@@ -2,7 +2,7 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：311a932f6bef0efe81367569da00c13bf3bf6ac8
+Review target commit：6bc2918cf35a652e241e6378c3b6297cac179adb
 
 Base：f181d84b5fb3652d62e2a181acff442d42b3e066。当前phase1只允许两个合同源与一个pure专测，不包含runtime或已实接能力。
 
@@ -10,4 +10,4 @@ Base：f181d84b5fb3652d62e2a181acff442d42b3e066。当前phase1只允许两个合
 
 已执行独立审查：无。Blocking findings：尚未审查。真实HTTP/PG/浏览器/provider：本phase未执行。
 
-作者候选证据：[validation](../../docs/evidence/wpf-attach01/validation.md) / [checks](../../docs/evidence/wpf-attach01/additive-checks.json)。39+8直接测试及根类型检查通过，尚不能代替独立review；新上传/PG/真实runner尚未实现。
+作者候选证据：[validation](../../docs/evidence/wpf-attach01/validation.md) / [checks](../../docs/evidence/wpf-attach01/resource-checks.json)。41+8直接测试及根类型检查通过，尚不能代替独立review；新上传/PG/真实runner尚未实现。

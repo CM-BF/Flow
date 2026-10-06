@@ -1,5 +1,5 @@
 {
-  "observedAt": "2026-10-06T10:22:19.641Z",
+  "observedAt": "2026-10-06T10:25:00.216Z",
   "taskId": "WPF-ATTACH01",
   "status": {
     "taskLinks": {
@@ -29,7 +29,7 @@
       },
       "phase": "M2",
       "priority": 1,
-      "output": "文本附件合同与旧客户端兼容用例已实现，47项局部检查通过",
+      "output": "文本附件合同与旧客户端兼容用例已实现，49项局部检查通过",
       "next": "完成小合同独立审查与公共发布，再实现中心上传及固定材料保留",
       "blocker": {
         "state": "none",
@@ -43,7 +43,7 @@
       "complete": true
     },
     "implementation": {
-      "target": "311a932f6bef0efe81367569da00c13bf3bf6ac8",
+      "target": "6bc2918cf35a652e241e6378c3b6297cac179adb",
       "scopes": [
         "packages/contracts/src/attachments.ts",
         "packages/contracts/src/conversation-context.ts",
@@ -55,8 +55,8 @@
     "owner": "workspace_panels_owner / gpt-6-astra ultra",
     "branch": "codex/attachment-resources",
     "branchState": "in-progress",
-    "updatedAt": "2026-10-06T10:22:19.000Z",
-    "updatedRecord": "2026-10-06 10:22:19 UTC",
+    "updatedAt": "2026-10-06T10:25:00.000Z",
+    "updatedRecord": "2026-10-06 10:25:00 UTC",
     "todos": [
       {
         "id": "WPF-ATTACH01-01",
@@ -88,8 +88,8 @@
     "declaredDirty": "实现已固定提交，当前仅自有metadata收口；最终dirty以Git为准",
     "checks": {
       "state": "passed",
-      "target": "311a932f6bef0efe81367569da00c13bf3bf6ac8",
-      "record": "PASSED 311a932f6bef0efe81367569da00c13bf3bf6ac8；作者39合同/legacy兼容+8旧receipt=47/47，根typecheck exit0；[验证](../../docs/evidence/wpf-attach01/validation.md)"
+      "target": "6bc2918cf35a652e241e6378c3b6297cac179adb",
+      "record": "PASSED 6bc2918cf35a652e241e6378c3b6297cac179adb；作者41合同/legacy兼容+8旧receipt=49/49，根typecheck exit0；[验证](../../docs/evidence/wpf-attach01/validation.md)"
     },
     "reviewRecord": "[review.md](review.md)，NOT_STARTED",
     "mainRecord": "NOT_INTEGRATED",
@@ -100,6 +100,6 @@
   "review": {
     "state": "not_started",
     "record": "NOT_STARTED**",
-    "target": "311a932f6bef0efe81367569da00c13bf3bf6ac8"
+    "target": "6bc2918cf35a652e241e6378c3b6297cac179adb"
   }
 }

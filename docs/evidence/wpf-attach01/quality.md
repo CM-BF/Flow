@@ -17,3 +17,5 @@ clean-code固定来源sickn33/agentic-awesome-skills@bdacd76ed9e388733b5f91a5c75
 未解决项是已分段后继：runtime/admission/retention/PGHTTP；全局journal无GC；浏览器upload恢复实现、Send/Queue跨reload未知receipt不在本phase。当前原始response/body和授权并未实接，公共types不能冒称端到端完成。兼容按root最窄裁决，无新header或GET阻断。
 
 2026-10-06 10:22:19 UTC 共享ACK对齐复核：按root正式接口要求，producer strict与consumer known-field projection分离；用Zod safeExtend/strip保留原source/locator refinement，两个版本共用validateContextReferences，不复制整份ACK规则。future字段逐层剥离与已知字段错误两组实际回归通过；最终39+8=47、根typecheck0。保持原45/40/首轮证据各自源码，不回填执行target。固定实现311a932f6bef0efe81367569da00c13bf3bf6ac8后只metadata收口，源码冻结待root快审。
+
+2026-10-06 10:25:00 UTC 最后接口复核：TUI只持有序列化frozenAdmission，因此公共v2 helper必选输入改为完整ordered refs；已核upload descriptor只作可选额外期望，避免从ref捏造name/bytes。完整accepted.resource结构合法作为descriptor，通过投影四字段兼容其状态/时间附字段；保持完整ref/名称/bytes核验。新增实际结构性consumer回归，最终41+8=49与根types0；正式target 6bc2918cf35a652e241e6378c3b6297cac179adb。producer/consumer共用结构，无新网络/协议/权限状态。原wire48项与additive47项证据各自保留，最终report在resource-checks.json。

@@ -1,18 +1,20 @@
 # ATTACH01 phase1 validation
 
-固定实现 `311a932f6bef0efe81367569da00c13bf3bf6ac8`；base `f181d84b5fb3652d62e2a181acff442d42b3e066`；2026-10-06 10:20:46 UTC。
+固定实现 `6bc2918cf35a652e241e6378c3b6297cac179adb`；base `f181d84b5fb3652d62e2a181acff442d42b3e066`；2026-10-06 10:25:00 UTC。范围是两个合同源和一个专测；独审尚未开始。
 
-- 39 attachment/compatibility tests + 8 unchanged legacy context receipt tests = **47/47 PASS**，Vitest4.0.18，2026-10-06 03:21:23 -07 / 10:21:23 UTC，514ms；[原日志](additive-direct.log)。
-- Node24 / pnpm9.15.4 根 `pnpm exec tsc --noEmit` exit0；[日志](additive-types.log)为空是成功退出，没有隐藏错误。
-- [additive-checks.json](additive-checks.json)保留真实执行时196cee3+dirty。三源hash于完成后立即采集，无中间源码更改；不是声称在后来的固定SHA重新执行。14个直接只读依赖均与f181相同。
-- 实现三个文件 staged diffcheck0；新manifest与根lock/现旧Web/client/共享exports无修改。根依赖仅offline frozen install（[log](install.log)），不安装新依赖。
+- **49/49 PASS**：41 attachment/consumer tests + 8 unchanged legacy context receipt tests，Vitest4.0.18，2026-10-06 03:23:53 -07 / 10:23:53 UTC，471ms（tests40ms）；[原日志](resource-direct.log)。
+- Node24 / pnpm9.15.4 根 `pnpm exec tsc --noEmit` exit0；[日志](resource-types.log)为空是成功退出。
+- [resource-checks.json](resource-checks.json)保留真实执行时52317c4+dirty；执行前采集三源hash，完成后逐一验证未变。[candidate.json](candidate.json)绑定其字节到最终实现，不声称在后来SHA重跑。14个直接只读依赖与f181相同。
+- 实现三文件diffcheck0；manifest/lock/旧Web/client/共享exports无修改。仅offline frozen install既有依赖（[log](install.log)），无新依赖。
 
-覆盖UTF8边界/非法字节/BOM/CRLF/原digest、header-safe upload key、不可变ref与元数据不含正文、ready原receipt和当前expired/unavailable分离、namespace非auth、v1 wire/旧detail不变、v2完整顺序/identity/合计预算/错误ACK。
+覆盖UTF8边界/非法字节/BOM/CRLF/实际digest、header-safe original key、不可变ref与元数据无正文、saved ready receipt/current expired或unavailable分离、namespace非auth、v1 wire/detail不变、v2完整有序身份/总预算。消费者逐层忽略future字段但不放松已知字段；bare frozen references可供共享decoder直接验证，可选完整resource metadata进一步核name/type/bytes，无需caller伪造不可得事实。
 
-兼容增加真实旧函数+FlowClient/mock fetch：旧strict request拒attachments:[]；GET保留v2metadata而正文不变/0内容请求；Send/enqueue若错回v2则unknown、重试同key/完整body并接受原v1。未实现新client序列化或后端，不能将此当端到端HTTP。
+兼容用例直接运行与f181字节相同的旧ConversationProjection、QueueCommands、ConversationQueueProjection、conversationMessages和FlowClient；只有fetch为mock：旧strict request拒attachments:[]；GET保留v2metadata但正文不变/0内容请求；Send/enqueue错误v2 ACK保持unknown和原key/body，重试可接受原v1。未实现新client序列化或后端，不能称端到端HTTP/部署兼容已完成。
 
-保留历史而不冒充全为产品红：first-direct.log为首31合同通过；first-typecheck.log的ES2023不支持String.isWellFormed已用Unicode surrogate显式验证修正。checks.json/direct.log为后来40项检查；不是最终45项。兼容fixture初次import @flow/client在contracts package无声明解析失败（8旧tests过，新suite未收集），已改显式只读相对入口；随后[compat-first.log](compat-first.log)44过1失败是作者fixture误开queue却未加载队列，实际send门禁正确，已改为false的普通Send场景。未改生产门禁来适配fixture。
+历史记录原样保留：
 
-raw测试日志含Vitest格式空白原样保留，不声称全raw证据diffcheck0。无browser、截图、HTTPserver、PG、model/provider或个人服务操作。后继真实PG/HTTP、cap发布、资源retention/授权原子性、完整prompt冻结及runner读取尚未验证。
+- first-direct.log为首31合同通过；first-typecheck.log的ES2023不支持String.isWellFormed已用surrogate规则修正，未改编译配置。
+- checks.json/direct.log为40项；final-checks.json/compat-green.log为45项；additive-checks.json/additive-direct.log为47项；wire-checks.json/wire-direct.log为48项。这些均不是最终49项。
+- 兼容fixture初次@flow/client在contracts package无依赖解析失败，新suite未收集，旧8通过；改显式只读相对入口。随后[compat-first.log](compat-first.log)44过1失败，是作者fixture开启queue却未加载page触发正确门禁；改普通Send场景queue=false，未改产品门禁。
 
-共享ACK对齐追加：producer reference严格schema继续拒多余字段；consumer `conversationContextResponseSchema` 从同一结构派生逐层strip，复用locator/source/合计refinement，保持已知identity/version/order/bytes严格。`parseAttachmentContextReceipt`用消费schema且不保留未知字段到状态。新增future字段全层剥离和错误已知字段回归；final-checks.json与compat-green.log是此前45项历史，additive-checks.json才绑定最终47项。
+raw日志Vitest格式空白保留，不声称全raw证据diffcheck0。0browser/截图/HTTPserver/PG/provider/model/个人服务操作。后继真实PG/HTTP、cap发布、retention/授权原子性、prompt冻结/runner材料一致性尚未实现验证；不把schema成功当ready权威。
