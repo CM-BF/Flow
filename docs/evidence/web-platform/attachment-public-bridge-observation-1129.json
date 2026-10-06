@@ -1,0 +1,107 @@
+{
+  "observedAt": "2026-10-06T11:28:21.940794+00:00",
+  "authoritativeStatus": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/plans/f01-shared-domains/status.md",
+    "bytes": 16374,
+    "sha256": "081abfc5d1560ed0c982d714e5fd849ae72ead520efd001d4deae23b42dff715"
+  },
+  "sharedHead": "b2c5e3a2c9d0650ec523b76e6af08facb165d895",
+  "sharedClean": true,
+  "sharedRemote": "b2c5e3a2c9d0650ec523b76e6af08facb165d895",
+  "main": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
+  "mainRemote": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
+  "mainClean": true,
+  "mainAbsenceChecks": {
+    "apps/server/src/index.ts": {
+      "needle": "registerAttachmentRoutes",
+      "present": false
+    },
+    "packages/client/src/index.ts": {
+      "needle": "attachmentCapabilities(",
+      "present": false
+    },
+    "packages/client/src/conversation-acknowledgement.ts": {
+      "needle": "parseAttachmentContextReceipt",
+      "present": false
+    }
+  },
+  "manifests": [
+    {
+      "manifest": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/attachment-client-manifest.json",
+        "bytes": 1788,
+        "sha256": "1c9d30eee359ea951b9e88baa38b8cb26b213ebd63d0de2b4965bf3856bd633d"
+      },
+      "target": "ab1bcb14531995ccb3916492eaf328cdae2213b3",
+      "fixedSourcesMatch": true,
+      "sources": [
+        "packages/client/src/index.ts",
+        "packages/client/src/attachments.test.ts"
+      ]
+    },
+    {
+      "manifest": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/attachment-ack-manifest.json",
+        "bytes": 2017,
+        "sha256": "66e0de2155c8de4a663f1b14185c6a71cbc0612c247398da942c763b60a07f37"
+      },
+      "target": "df8d077accea7a28536f1f56407a729c41e4639c",
+      "fixedSourcesMatch": true,
+      "sources": [
+        "packages/client/src/conversation-acknowledgement.ts",
+        "packages/client/src/conversation-acknowledgement.test.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "manifest": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/attachment-production-manifest.json",
+        "bytes": 3421,
+        "sha256": "4295f93b570a1e5f6a6c44674621df69b07a9276185d9fe624b23cd2a37c9c37"
+      },
+      "target": "69eb2476ba59308a906c891c4391e243e3b2512a",
+      "fixedSourcesMatch": true,
+      "sources": [
+        "apps/server/src/index.ts",
+        "packages/client/src/attachment-production.test.ts"
+      ]
+    },
+    {
+      "manifest": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/attachment-cleanup-manifest.json",
+        "bytes": 2077,
+        "sha256": "bf77cc35f0fc4eb65e468f4b741cad7afa82105b593df4311d7c553d10286b2c"
+      },
+      "target": "f04cb29633ca678b35aa423e02a16953add0cfba",
+      "fixedSourcesMatch": true,
+      "sources": [
+        "packages/client/src/attachment-production.test.ts"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/attachment-client-independent-review.md",
+      "bytes": 1108,
+      "sha256": "850e425f3bd91eb7e2b22569d4c7ebb49b108c398ade1c175521277a8376660a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/attachment-ack-independent-review.md",
+      "bytes": 2467,
+      "sha256": "7599cb78e799a17de979ddc154539a2d394a3302664cdfe616849f16fcd05d12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/attachment-production-review-first.md",
+      "bytes": 2085,
+      "sha256": "9337bda225a80918dc1e430b1b0b9e48ceb2a5ac1676e46bc02c12386f1fe18f"
+    }
+  ],
+  "conclusion": {
+    "client": "ab1b APPROVED by Mika 11:15:12 UTC",
+    "sharedAck": "df8d APPROVED by native_center_owner 11:11:45 UTC",
+    "factory": "69eb production3lines plus test; P2 cleanup failure; f04 cleanup-only fix awaiting Mika incremental review per authoritative F01 status11:27",
+    "main": "no new attachment public bridge accepted at fixed53ce",
+    "integrationConsumer": "approved ATTACH1f0 fixture input available; production automated mount combination remains pending"
+  },
+  "actions": "read only Git/manifests/status; no test/API/service"
+}

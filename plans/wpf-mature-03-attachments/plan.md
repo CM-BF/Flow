@@ -78,3 +78,7 @@ installed core0.3.22的Composer.send先快照text/attachments/options，随后�
 ### 生产宿主接线的错误隔离验收
 
 root本轮只读发现createAttachmentInput初始journal list可因storage拒绝或损坏抛错；生产宿主须隔离为附件可行动错误，保留raw和unknown身份，纯文本Thread继续，不自动清坏记录、不让Session整体卡死。cap null/旧namespace缓存在重连或升级时由明确binding生命周期重建/失效，不能仅凭URL复用授权。与CACHE知识binding回收可能共享session.ts，精确take前先排单writer窗口。这是原03-05/05-05后继要求，不是已审4c4d模块已经验证的行为。
+
+### 公共桥接固定输入状态（管理只读核11:28）
+
+六client ab1b及shared ACK-v2 df8d分别已获Mika/native_center_owner独审；factory69eb的P2仅生产专测清理，f04修复仍按F01 11:27权威status待增量复审。实际main53ce未含附件mount/六方法/v2分支，不能把作者3/3或分支可用当main能力。完整manifest与review归因见[只读观察](../../docs/evidence/web-platform/attachment-public-bridge-observation-1129.json)。CACHE小Interface先结构审查/精确take，ATTACHI实际App/session绑定随后明确交权；free账本观察不是预占，原独立模块claim不变。

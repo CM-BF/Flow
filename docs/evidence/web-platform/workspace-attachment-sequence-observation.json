@@ -1,0 +1,87 @@
+{
+  "observedAt": "2026-10-06T11:27:52.141Z",
+  "main": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
+  "paths": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "writers": []
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "writers": []
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "writers": []
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "writers": []
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "writers": []
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "writers": []
+    },
+    {
+      "path": "apps/web/src/workspace-state.ts",
+      "writers": []
+    }
+  ],
+  "existingClaims": [
+    {
+      "taskId": "WPF-ATTACH01",
+      "claimId": "ef617d78-eb39-484e-898e-5f057fca50d4",
+      "version": 2,
+      "worker": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+      "scope": [
+        "apps/server/src/attachments/attachments.test.ts",
+        "apps/server/src/attachments/context.test.ts",
+        "apps/server/src/attachments/fixture.ts",
+        "apps/server/src/attachments/index.ts",
+        "apps/server/src/attachments/storage.ts",
+        "apps/server/src/conversation-context/store.ts",
+        "apps/server/src/conversation-queue/commands.ts",
+        "apps/server/src/conversations/commands.ts",
+        "apps/server/src/conversations/queries.ts",
+        "apps/server/src/conversations/state.ts",
+        "docs/evidence/wpf-attach01",
+        "packages/contracts/src/attachments.test.ts",
+        "packages/contracts/src/attachments.ts",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/storage/migrations/026-attachment-resources.sql",
+        "plans/wpf-attach01-resources"
+      ],
+      "state": "active"
+    },
+    {
+      "taskId": "WPF-ATTACHI01",
+      "claimId": "94b84c59-ab64-4ad5-b1de-fe11e62c443c",
+      "version": 1,
+      "worker": "w01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview",
+      "scope": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/adapter.ts",
+        "apps/web/src/attachments/attachments.css",
+        "apps/web/src/attachments/controller.ts",
+        "apps/web/src/attachments/recovery.ts",
+        "apps/web/test/attachment-controller.test.ts",
+        "apps/web/test/attachment-input.browser.ts",
+        "apps/web/test/attachment-input.fixture.tsx",
+        "apps/web/test/attachment-recovery.test.ts",
+        "docs/evidence/wpf-attach-i01",
+        "plans/wpf-attach-i01-input-preview"
+      ],
+      "state": "active"
+    }
+  ],
+  "sequence": "CACHE minimal interface first once structural review is approved; ATTACHI production App/session consumer follows a defined handoff. No new claim or pre-reservation by this observation. DTO-only module claims remain separate.",
+  "condition": "exact proposals and fixed bridge inputs, then fresh D04 COMMITTED exact scopes; no parallel App/session writers"
+}

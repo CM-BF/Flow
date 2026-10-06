@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 11:21 UTC |
+| 最近更新 | 2026-10-06 11:29 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-05](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -52,3 +52,5 @@ WORKSPACEPERF01 [限定审查来源](../../docs/evidence/web-platform/workspacep
 最新排程覆盖先前Arc先行：05最小回收先行，protected draft/附件/unknown保护、关闭DOM/读flight/JS引用分开；容量满额/late detail+history/重开原身份直接验收。新生产scope仍未take，ATTACHI App窗口有序协调，原四scope只基线。
 
 11:11管理fresh检查：固定main2e71、App/Thread/outbox/session/workspace-state当前无writer；projection的ACK已release，client归F01。仅时点，不是预占；panels正式只读最小cache Interface，ATTACHI未来App窗口仍需有序协调，[scope依据](../../docs/evidence/web-platform/workspace-cache-scope-observation.json)。
+
+最新只读scope观察为11:27:52，[App/session等候选无writer](../../docs/evidence/web-platform/workspace-attachment-sequence-observation.json)；等待两owner精确Interface后，先结构审查ready CACHE小接口，再fresh take，ATTACHI App窗口后接。未新增claim、没有生产修改。

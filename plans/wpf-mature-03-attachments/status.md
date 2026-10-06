@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 11:27 UTC |
+| 最近更新 | 2026-10-06 11:29 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-03](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -49,3 +49,5 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 附件v2由唯一shared decoder配套；Webrecovery替代重复receipt matcher，查找/恢复/retention与11scope首片已root授权并fresh take；不依赖不存在公共方法。[具体回复置于集中队列顶部](../../docs/evidence/web-platform/mature-task-handoff.md)。
 
 生产factory升级直接消费者接缝已实施并root独审通过；pre026真实PG原行/首次026/HTTP重放与六项定向验收、固定共享输入边界见[集中接缝记录](../../docs/evidence/web-platform/attach01-fixture-handoff.json)。共享ACK df8d已独审，六方法ab1b仍薄审/生产mount固定输入待到，不借fixture fallback声称实际生产接通。
+
+公共依赖新事实：[F01固定输入观察](../../docs/evidence/web-platform/attachment-public-bridge-observation-1129.json)确认六client/sharedv2分别已独审；factory69eb清理P2修复f04仍待增量审，main53ce尚未接。生产绑定与CACHE的App/session窗口先方案结构审查，再按[精确范围时点](../../docs/evidence/web-platform/workspace-attachment-sequence-observation.json) fresh take，不预占。

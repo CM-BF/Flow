@@ -53,3 +53,5 @@ WORKSPACEPERF01固定partial基线已足够，不再补齐所有截图/分位数
 Arc后继键盘参考（root本轮只读来源）：[W3C tabs](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)支持有明显加载延迟时手动激活；[window splitter](https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/)给出可聚焦separator、名称/controls/value/min/max和方向键，但该页面说明模式仍待工作组完成review，不写成完整认证。03/04须用真实比例、窄屏和关闭后焦点验收，不只添加role；此研究不改变当前cache优先级、不新增scope/测试。
 
 CACHE与附件宿主的共享接缝：session.ts可能同时承担知识binding回收与ATTACHI实际挂接，两个owner先以最新main/账本定单writer窗口，再fresh精确take；不预领App/session宽范围。附件journal损坏隔离与cap/namespace失效属03-05并与05-05保护矩阵衔接，不作为4c4d模块既有实测，也不把缓存回收升级为第二状态authority。
+
+共享写入窗口准备（11:27:52 fresh账本）：App/Thread/session与候选projection/outbox/queueprojection/workspace-state当时无writer，详[时点记录](../../docs/evidence/web-platform/workspace-attachment-sequence-observation.json)。先ready CACHE小Interface经root结构审查后精确领取，再为ATTACHI实际绑定明确单writer窗口；free不是写权，不提前领宽scope或改变两层task归属。

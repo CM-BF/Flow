@@ -1,5 +1,15 @@
 # 成熟聊天大task来源与登记队列
 
+## 公共桥接最新固定事实与共享写入窗口（11:28只读）
+
+[权威F01/实际Git/manifest审计](attachment-public-bridge-observation-1129.json)：`m2-shared-foundation` **b2c5e3a2c9d0650ec523b76e6af08facb165d895** local=origin/clean。六client **ab1bcb14531995ccb3916492eaf328cdae2213b3** 已Mika 11:15:12 UTC APPROVED；shared v2 ACK **df8d077accea7a28536f1f56407a729c41e4639c** 已native_center_owner APPROVED。这纠正下方11:18历史“六方法待审”，不扩大批准到领域或生产。
+
+正式factory固定 **69eb2476ba59308a906c891c4391e243e3b2512a** 已有026+owner routes及生产专测；Mika发现唯一P2为测试资源清理。修复 **f04cb29633ca678b35aa423e02a16953add0cfba** 只改生产专测，F01 11:27权威status仍为增量待复审，原3行生产/index/client/ACK未变。输入分别是同树 `docs/evidence/f01/attachment-production-manifest.json`、`attachment-cleanup-manifest.json`；作者3/3和types0按原来源，不由本管理重测或先标批准。原ATTACH1f0已审fixture可供Lead正式factory下有限组合验证，仍未收到该组合通过/main receipt。
+
+本次实际main/origin **53ce2ec2c95b489aa7a2a2eaa49849821af00c16** clean；只读核server无附件mount、client无六方法、shared ACK无v2分支，因此不能把F01分支可用等同main已接收。个人backend/static不操作、不采样。I02唯一status11:23仍描述附件公共入口后继，工程53ce后续不改变此附件结论。
+
+[CACHE/ATTACHI精确窗口时点](workspace-attachment-sequence-observation.json)：11:27:52.141Z fresh账本available，App.tsx、ConversationThread.tsx、conversation projection/outbox/queue projection、plugin-integration/session.ts、workspace-state.ts均无active/handoff writer；现ATTACHI94b84十一新模块与ATTACHef617十八scope仍各自持有。这只是观察，**不是预占或写许可**。先结构审查已ready的CACHE小Interface/精确范围，再fresh COMMITTED领取；ATTACHI生产绑定按其后明确App/session交权窗口，不双方预领宽scope，不把模块claim扩成App授权。两proposal尚待实际owner给出，不承诺未知路径都已可并行。
+
 ## ATTACH01 最新获审完整输入：runtime + factory fixture
 
 **Lead请消费固定1f0c1966e3cbfef166c58c4aebb7f1aece8c1da9，最终metadata d32a2a2507dc96508479f8d5dd40714c3167e9e0。** 11:24:56UTC管理已核local=origin/clean、fixed/current/新manifest累计16源全等，原runtime-candidate.json及8701/78证据未改；[只读审计](attach01-fixture-final-audit.json)。
