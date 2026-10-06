@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:17 UTC / mainfc113945 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:20:30 UTC / main32c371d |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
 | 工作基线 / HEAD | main9c6fa9b100f04916f43b04280f05f497b28eeb0f；O09共享生产目标 c587436c12324b5c121957643d51173cfc66009e |
-| 工作树dirty状态 | 产品已固定；证据与状态本次提交 |
-| 工作分支状态 | in-progress |
+| 工作树dirty状态 | 产品停写；本次仅main接收记录 |
+| 工作分支状态 | delivered |
 | 检查状态 | PASSED 89931e0d9cfd00b5f51f5b266b7aaa38bba2718b；HTTP2/2与tsc0，0provider |
-| 已集成main状态 / HEAD | fc113945ff73d1a43092d0a70b51e901aa4be1e2 已含O09领域/client/生产接线；个人center/runner仍b54/v6。新增最薄CLI与配置协商已独审，等待本批接收。 |
+| 已集成main状态 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256 已含O09CLI和CHAT09薄client/领域；个人center/runner仍b54/v6，未开启steering。 |
 | Review | APPROVED：Root 89931配置协商与0d48 CLI；领域cd859由独立assignment_review批准。 |
 | 实现目标 | 89931e0d9cfd00b5f51f5b266b7aaa38bba2718b |
 | 实现范围 | packages/client/src/index.ts, packages/client/src/execution-profiles.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 命令行原生子任务入口已审查通过；新执行配置可由兼容的客户端明确选择读取。 |
-| 下一可用交付 | 发布命令行入口，并完成新旧配置目录兼容接线。 |
+| 当前产出 | 原生子任务命令行和兼容的执行配置目录已发布到主线。 |
+| 下一可用交付 | 本片段已交付；执行中补充指令的可用状态另由CHAT10推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -114,3 +114,5 @@
 | F01-24 | completed | Lead | CHAT09只读目录协商 89931e0d9cfd00b5f51f5b266b7aaa38bba2718b；HTTP2/2/tsc，独立review待定 |
 
 2026-10-06 08:17 UTC：Root独立只读APPROVED 89931薄client，2源/3raw固定hashbytes及2/2 HTTP、typecheck0核验，无P1/P2/未重跑。CHAT09领域最终metadata e021已受控接收。目录header仅声明客户端可解析格式，运行服务及steering能力未启用。
+
+2026-10-06 08:20:30 UTC：main/origin32c371d已接CLI0d48、配置client899与CHAT09 cd859；本片批准绑定保持原target，不继承为provider或个人服务已开启。I02固定34source精确相同、O09 readonly组合2/2与root/Webtypes0。
