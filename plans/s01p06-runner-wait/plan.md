@@ -13,8 +13,8 @@
 ## TODO
 
 - [x] S01P06-01：固定输入、六scope与最小Interface。
-- [ ] S01P06-02：有限counter红绿与内部唤醒实现。
-- [ ] S01P06-03：真实loopback及时补槽及runner/shutdown/capacity直接消费者、局部strict。
+- [x] S01P06-02：有限counter红绿与内部唤醒实现。
+- [x] S01P06-03：真实loopback及时补槽及runner/shutdown/capacity直接消费者、局部strict。
 - [ ] S01P06-04：固定source/raw、独立review与main接收。
 
 风险：完成早于wait不得丢通知；多个完成仅需一次通知；abort/close清理timer/listener；订阅在journal.complete和active.delete之后唤醒。原4项PG未选，不变更已有断言。
