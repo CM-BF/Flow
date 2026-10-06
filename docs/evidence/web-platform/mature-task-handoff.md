@@ -71,3 +71,9 @@ MATURE06语音研究（root已读官方dictation/MDN与installed core0.3.22）�
 09:13 UTC D08已root技术批准，唯一panels owner / dashboard-task-links / codex/dashboard-task-links / fixed77c420cf9ee5de0291ea93014b6ea11aead6fab5，fresh available无冲突后[49510580 v1 COMMITTED take](d08-take-receipt.json)，仅九scope，父D01原工程dashboard结果、FLOW003只追溯；首canonical待owner落盘，registry仍Lead单写。STEER owner仅main metadata已push01842a87f768bd28ce7370681ff02d7b834765f7，八scope停写后[2bae v2 release](steer01-main-release-receipt.json)09:12:22.611Z；不再修改旧树，不重测。
 
 09:16安全点：D08首canonical f772a1e0d89a92f18dfaedd8f2070ce6f3eff4f9已owner提交clean，唯一dashboard-task-links/plans/d08-task-links，evidence docs/evidence/d08，父D01/co-lead Web/root。请Lead正常登记，claims不是进度卡。root实读Mika02/04仍self-parent，本管理已一次直接Mika要求合法owner改显式大task身份，无需修改TODO；D08继续严格拒self-parent，不能hardcode豁免。
+
+## 管理收敛安全点
+
+当前status已压缩为当前事实、稳定TODO、依赖与入口；此前全文原样移同目录status-history.md，明确仅历史。不清洗失败/JSON/hash、不重跑产品或dashboard。Mika02/04合法owner已改显式大task身份（D08作者只读确认）；本组没有改他人计划，最终实际关联仍待D08独审/部署。
+
+MATURE01主题扩展后继（root固定be50只读）：descendant!important的thread宽度/composer圆角仍阻根token覆盖；validation仅颜色名单，builtin四主题成功不证明完整材质插件。后继沿原主题TODO考虑一个typed token catalogue产生允许名称/数值域/映射/default，组件消费var回退、禁用清旧token；CSS.supports自定义变量不是值域校验，@property不能替代普通fallback。另initialTheme仅builtin会覆盖已保存pluginID，现reload测试仅builtin；待授权插件声明齐后恢复保存ID/scheme，缺失/禁用/换连接显式fallback，不首屏盲apply外部CSS。需真实外部theme材质/禁用与三reload状态验收。来源为root已读MDN@property/CSS.supports与CSS Variables规范，不是当前browser复现的插件缺陷。

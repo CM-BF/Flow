@@ -1,0 +1,263 @@
+{
+  "at": "2026-10-06T09:25:17.270Z",
+  "parserSource": "Current main status.mjs; old management baseline parser lacks human, first local call TypeError; no product failure",
+  "records": [
+    {
+      "id": "WPF-001",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "六项成熟聊天目标已登记；知识App已审待集成，补充指令模块已main；轻质视觉与两层看板关联实施中",
+        "next": "完成两层看板实际展示，并交付轻质双主题实际App；知识接线进入主线队列",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "todos": 34,
+      "planIds": [
+        "WPF-001-01",
+        "WPF-001-02",
+        "WPF-001-03",
+        "WPF-001-04",
+        "WPF-001-05",
+        "WPF-001-06",
+        "WPF-001-07",
+        "WPF-001-08",
+        "WPF-001-09",
+        "WPF-001-10",
+        "WPF-001-11",
+        "WPF-001-12",
+        "WPF-001-13",
+        "WPF-001-14",
+        "WPF-001-15",
+        "WPF-001-16",
+        "WPF-001-17",
+        "WPF-001-18",
+        "WPF-001-19",
+        "WPF-001-20",
+        "WPF-001-21",
+        "WPF-001-22",
+        "WPF-001-23",
+        "WPF-001-24",
+        "WPF-001-25",
+        "WPF-001-26",
+        "WPF-001-27",
+        "WPF-001-28",
+        "WPF-001-29",
+        "WPF-001-30",
+        "WPF-001-31",
+        "WPF-001-32",
+        "WPF-001-33",
+        "WPF-001-34"
+      ],
+      "statusIds": [
+        "WPF-001-01",
+        "WPF-001-02",
+        "WPF-001-03",
+        "WPF-001-04",
+        "WPF-001-05",
+        "WPF-001-06",
+        "WPF-001-07",
+        "WPF-001-08",
+        "WPF-001-09",
+        "WPF-001-10",
+        "WPF-001-11",
+        "WPF-001-12",
+        "WPF-001-13",
+        "WPF-001-14",
+        "WPF-001-15",
+        "WPF-001-16",
+        "WPF-001-17",
+        "WPF-001-18",
+        "WPF-001-19",
+        "WPF-001-20",
+        "WPF-001-21",
+        "WPF-001-22",
+        "WPF-001-23",
+        "WPF-001-24",
+        "WPF-001-25",
+        "WPF-001-26",
+        "WPF-001-27",
+        "WPF-001-28",
+        "WPF-001-29",
+        "WPF-001-30",
+        "WPF-001-31",
+        "WPF-001-32",
+        "WPF-001-33",
+        "WPF-001-34"
+      ]
+    },
+    {
+      "id": "WPF-MATURE-01",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "VISUAL01独立九scope实现轻质外壳、四主题与降级，正在真实App验证；整体材质扩展仍开放。",
+        "next": "固定实际App视觉子片，交独立审查与主线接收",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "todos": 5,
+      "planIds": [
+        "WPF-MATURE-01-01",
+        "WPF-MATURE-01-02",
+        "WPF-MATURE-01-03",
+        "WPF-MATURE-01-04",
+        "WPF-MATURE-01-05"
+      ],
+      "statusIds": [
+        "WPF-MATURE-01-01",
+        "WPF-MATURE-01-02",
+        "WPF-MATURE-01-03",
+        "WPF-MATURE-01-04",
+        "WPF-MATURE-01-05"
+      ]
+    },
+    {
+      "id": "WPF-MATURE-03",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "知识选择与receipt模块已入主线，实际知识App接线CONTEXTI01已root独审通过待main；本地附件/拖放/@file尚未完成。",
+        "next": "主线接收已审知识聊天旅程；本地附件生命周期待唯一后端owner和固定合同",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "todos": 6,
+      "planIds": [
+        "WPF-MATURE-03-01",
+        "WPF-MATURE-03-02",
+        "WPF-MATURE-03-03",
+        "WPF-MATURE-03-04",
+        "WPF-MATURE-03-05",
+        "WPF-MATURE-03-06"
+      ],
+      "statusIds": [
+        "WPF-MATURE-03-01",
+        "WPF-MATURE-03-02",
+        "WPF-MATURE-03-03",
+        "WPF-MATURE-03-04",
+        "WPF-MATURE-03-05",
+        "WPF-MATURE-03-06"
+      ]
+    },
+    {
+      "id": "WPF-MATURE-05",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "planning",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已有split/merge与workspace-state基础；尚未完成一个顶层tab内A与B组合的完整验收。",
+        "next": "在现有workspace-state上设计组合tab/pane模型并领取最小实际App片",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "todos": 5,
+      "planIds": [
+        "WPF-MATURE-05-01",
+        "WPF-MATURE-05-02",
+        "WPF-MATURE-05-03",
+        "WPF-MATURE-05-04",
+        "WPF-MATURE-05-05"
+      ],
+      "statusIds": [
+        "WPF-MATURE-05-01",
+        "WPF-MATURE-05-02",
+        "WPF-MATURE-05-03",
+        "WPF-MATURE-05-04",
+        "WPF-MATURE-05-05"
+      ]
+    },
+    {
+      "id": "WPF-MATURE-06",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "stream、typed活动、queue与readability已分片交付；steering独立模块已审/main77接收，语音及跨reload恢复等仍开放。",
+        "next": "CONTEXTI主线/释放后接补充指令实际聊天UI，保持语音与恢复后继开放",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "todos": 6,
+      "planIds": [
+        "WPF-MATURE-06-01",
+        "WPF-MATURE-06-02",
+        "WPF-MATURE-06-03",
+        "WPF-MATURE-06-04",
+        "WPF-MATURE-06-05",
+        "WPF-MATURE-06-06"
+      ],
+      "statusIds": [
+        "WPF-MATURE-06-01",
+        "WPF-MATURE-06-02",
+        "WPF-MATURE-06-03",
+        "WPF-MATURE-06-04",
+        "WPF-MATURE-06-05",
+        "WPF-MATURE-06-06"
+      ]
+    }
+  ]
+}
