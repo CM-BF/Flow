@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:13:41 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:24:45 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -10,18 +10,18 @@
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-writer |
 | Branch | codex/engineering-native-writer |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 首Interface提交后由Git固定 |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d |
 | 工作树dirty状态 | 本metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 实现目标 | UNKNOWN |
+| 本片段交付阶段 | review |
+| 实现目标 | 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d |
 | 实现范围 | apps/runner/src/engineering/native-policy.test.ts, apps/runner/src/engineering/native-policy.ts, apps/runner/src/engineering/native-writer.test.ts, apps/runner/src/engineering/native-writer.ts, apps/runner/src/native-harness.test.ts, apps/runner/src/native-harness/codex/evidence.ts, apps/runner/src/native-harness/codex/exchange.test.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/turn.ts, docs/evidence/eng01g, plans/eng01g-native-writer |
-| 检查状态 | 105 distinct分轮通过；最终types0，source提交后绑定 |
+| 检查状态 | PASSED 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d；105 distinct分轮，types0；[manifest](../../docs/evidence/eng01g/fixed-manifest.json) |
 | 已集成main状态 / HEAD | ENG01G未集成；base含已审ENG01F |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 工程写入组合与现有原生消息处理已完成局部验证 |
-| 下一可用交付 | 可审查的受限文件写入组合与未知结果保护 |
+| 下一可用交付 | 独立审查受限文件写入组合与未知结果保护 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -36,3 +36,5 @@
 | ENG01G-04 | pending | native_center_owner | 独审/main未完成 |
 
 本片无provider/原生诊断或生产authority；默认unsupported是未证明模型身份、真实控制与全部writer停止，不妨碍本片0query实现。后续有界shell策略可以独立审定。唯一status待Lead登记聚合。
+
+8源码已冻结；预留native-harness.test.ts未改，仅作为直接消费者8项通过。真实启用仍unsupported。
