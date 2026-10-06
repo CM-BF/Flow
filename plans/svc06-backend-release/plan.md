@@ -32,3 +32,7 @@ SVC05 fixed362受控更新于12:41:29 closed，v15 accepting，保留会话/两W
 - [ ] **SVC06-03** 实现产物准备、校验及现host启动接线，证明开发checkout独立性。
 - [ ] **SVC06-04** 自有环境局部兼容/失败/保留检查与独立review，受控main接收。
 - [ ] **SVC06-05** 后续明确窗口下真实个人发布及固定身份/数据/网页保留验收。
+
+## 已收到的固定工具研究（GO只读输入）
+
+固定pnpm9.15.4的 [deploy源码](https://raw.githubusercontent.com/pnpm/pnpm/v9.15.4/releasing/plugin-commands-deploy/src/deploy.ts) 106–117由GO只读核到关闭frozenLockfile/preferFrozenLockfile且一次选择一个package；不能假设deploy --prod等同本片完整冻结产物。mainaeb的tsx是根devDependency，真实server/runner TS入口与跨包相对SQL迁移路径需要保留。首候选保留所需布局与真实依赖闭包，解析/SQL资源必须在产物目录内；不能省略loader/资源，也不为打包先重构全库imports。此为来源标明的研究输入，尚无本片安装或执行证据。
