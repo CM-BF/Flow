@@ -16,3 +16,5 @@
 Darwin zombie EPERM 不是 absent：报告保留 unknown observation，禁止再 signal，只 reap 自己已知退出的 child 后重新只读观察。fresh ESRCH 才确认为 absent。不存在 reap 后 signal recycled group 的路径。
 
 通过没有把长期资源清理收进模块；组 outside-session 逃逸仍 open。两真实 consumer 需双方 owner 正式移交后迁移，OPS14-04 保持 pending。
+
+21:33:44 UTC 窄参数修复 gate：free 1,032,241,152 B <1,077,936,128 B，NOT_RUN，未启动检查子进程。newChildSession 正 TERM grace 新增无 spawn 反例，并按独立源码预读将原 EPERM 例设 term=.03 保留全部断言。后续最小选择仅这两例，未追加运行；当前总 13 个 case 中原 12 有历史通过，新例尚无运行证据。

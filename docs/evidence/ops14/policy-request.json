@@ -1,0 +1,18 @@
+{
+  "sourceTarget": "3097730ee1abbb054c09ae2ed14c998ebde3ef49",
+  "command": [
+    "python3",
+    "-B",
+    "tools/owned-process-supervision/supervise.test.py",
+    "SupervisionTests.test_new_session_zero_term_grace_is_rejected_before_spawn",
+    "SupervisionTests.test_unknown_group_observation_never_escalates_or_reports_absent"
+  ],
+  "expectedSelected": 2,
+  "expectedUnselected": 11,
+  "state": "NOT_RUN",
+  "gate": "Fresh >=1077936128 B required. Prior gate below; no repeated attempt.",
+  "maximumWorkSeconds": 10,
+  "PG": 0,
+  "Chrome": 0,
+  "providerCalls": 0
+}
