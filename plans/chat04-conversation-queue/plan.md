@@ -17,9 +17,9 @@ Execution Lead：公共 exports/client、生产 migration/register/scan 生命�
 
 ## TODO
 
-- [ ] CHAT04-01 固定公共 DTO、HTTP routes、migrate/register/promote/scan Interface，交接可用 commit。
-- [ ] CHAT04-02 实现 PG enqueue/cancel/FIFO/原子 promotion、独立 revision 与不插队规则。
-- [ ] CHAT04-03 隔离真实 PG/HTTP 验证：幂等/ACK 丢失、双客户端 CAS、竞争/重启/冻结/公平/边界；保留失败与资源清理证据。
+- [x] CHAT04-01 固定公共 DTO、HTTP routes、migrate/register/promote/scan Interface，交接可用 commit。
+- [x] CHAT04-02 实现 PG enqueue/cancel/FIFO/原子 promotion、独立 revision 与不插队规则。
+- [x] CHAT04-03 隔离真实 PG/HTTP 验证：幂等/ACK 丢失、双客户端 CAS、竞争/重启/冻结/公平/边界；保留失败与资源清理证据。
 - [ ] CHAT04-04 独立审查固定 target、质量和 dashboard 同步；生产集成与 main 事实另核。
 
 ## 验证方法

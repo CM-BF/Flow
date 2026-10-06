@@ -2,32 +2,32 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:21:39 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:30:26 UTC / main启动基线dd1b9daf |
 | Plan | [plan.md](plan.md) |
-| 单一status owner / model | mika / b01_bounded_reads；gpt-6-astra ultra |
+| 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue |
 | Branch | codex/conversation-queue |
-| 工作基线 / HEAD | base dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；HEAD dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8 |
-| 工作树dirty状态 | Interface 与首个 red 测试待提交 |
+| 工作基线 / HEAD | base dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；实现 HEAD 77168ccabfe5aaf6c11f7d3a7b2aa8168aab5310，metadata由Git聚合 |
+| 工作树dirty状态 | 实现已提交；仅metadata待整理 |
 | 工作分支状态 | in-progress |
-| 检查状态 | FAILED；首个真实 PG/HTTP enqueue 用例正确 red，fixture cleanup 已修正并清自有库 |
+| 检查状态 | PASSED 77168ccabfe5aaf6c11f7d3a7b2aa8168aab5310；15 queue +22原consumer=37不同用例，noEmit exit0 |
 | 已集成main状态 / HEAD | 未集成 CHAT04；启动核 main/origin dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8 clean |
-| 实现目标 | 未提交 |
+| 实现目标 | 77168ccabfe5aaf6c11f7d3a7b2aa8168aab5310 |
 | 实现范围 | apps/server/src/conversation-queue, apps/server/src/conversations/commands.ts, apps/server/src/conversations/admission.ts, apps/server/src/conversations/state.ts, packages/contracts/src/conversations.ts, packages/contracts/src/conversation-queue.ts, packages/storage/migrations/011-conversation-queue.sql |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 公共 DTO/routes/migrate/promote/scan 签名已固定，首片 red 已记录 |
-| 下一可用交付 | 公共 DTO、路由与 promotion Interface commit |
+| 当前产出 | 持久queue 37用例通过，已固定实现待独审 |
+| 下一可用交付 | Mika独立review；Lead接生产入口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| CHAT04-01 | in-progress | b01_bounded_reads | [Interface](../../docs/evidence/chat04/interface.md)；先固定合同，显式 stub 尚待实现 |
-| CHAT04-02 | pending | b01_bounded_reads | 未实现 |
-| CHAT04-03 | pending | b01_bounded_reads | 未执行 |
-| CHAT04-04 | pending | b01_bounded_reads / Mika | 未独审；生产接线由 Lead |
+| CHAT04-01 | completed | b01_bounded_reads | [Interface](../../docs/evidence/chat04/interface.md)；先固定合同，显式 stub 尚待实现 |
+| CHAT04-02 | completed | b01_bounded_reads | 固定 77168ccabfe5aaf6c11f7d3a7b2aa8168aab5310；真实队列矩阵通过 |
+| CHAT04-03 | completed | b01_bounded_reads | 最终15 queue +22 consumer；checks.json |
+| CHAT04-04 | in-progress | b01_bounded_reads / Mika | 未独审；生产接线由 Lead |
 
 ## 领取与交接
 
@@ -35,10 +35,20 @@
 
 ## 架构与 Dashboard
 
-新增持久队列 FSM、公共读取/命令及中心扫描生命周期；待固定实现后由 Execution Lead 同步架构 target。当前等 Lead 登记唯一权威本 status，尚未声称 dashboard 展示。
+新增持久队列 FSM、公共读取/命令及中心扫描生命周期；待固定实现后由 Execution Lead 同步架构 target。Root已核2026-10-06 04:28:29 UTC dashboard来源本WT/current/issues[]。
 
 ## 下一步与未验证
 
 固定窄接口供公共 client/生产路由/扫描接线。原子 promotion、真实 PG/HTTP、独审及实际 main 都尚未完成。
 
 首次 red 还暴露 fixture 的 afterAll 误用 Vitest expect.poll；已换显式有界连接等待，原失败库确认0连接后正常 DROP，恢复证据保留。第二次 red 只有预期 enqueue 500→202 断言失败，自己的临时库已清。
+
+## 2026-10-06 04:28:57 UTC 实质进展
+
+首矩阵14/14通过（queue-matrix.log），自己的PG库已清。共同admission复用、follow-up禁止绕队列、FIFO/取消竞争/双中心最多一次/重启/冻结/失败全回滚和公平rotation均有首证据；当前追加网络真实丢ACK、列表SQL仅读preview前缀、schema NULL约束。consumer先因未解析已安装SDK而0 tests失败，保留日志，现复用已安装依赖再跑；未将0 tests当通过。noEmit首查仅测试参数implicit any已修，待重查。
+
+X03主线metadata/release已顺序完成，本worker恢复仅CHAT04写入。生产index/client迁移注册由Lead接线，当前fixture显式migration11；未用缺表当空队列绕过。
+
+## 2026-10-06 04:30:26 UTC 固定实现待独审
+
+目标 77168ccabfe5aaf6c11f7d3a7b2aa8168aab5310；[完整manifest](../../docs/evidence/chat04/checks.json)。15 queue/22原consumer/noEmit全部exit0，自有DB remaining[]；历史失败保留。实际生产入口及main集成尚未完成；Stop-vs-success竞态边界由Goal Owner明确，当前只依据任务终态，未新增pause/stop-all或改runner/events。架构target为本实现，Execution Lead待更新PGqueue/HTTP/scan生命周期基线。
