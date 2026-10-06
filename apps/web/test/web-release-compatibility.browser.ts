@@ -2,11 +2,11 @@ import assert from "node:assert/strict";
 import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
-import { chromium, expect, type Page } from "@playwright/test";
+import { chromium, expect, type Page, type Browser } from "@playwright/test";
 import { BACKEND, NEW_WEB, evidence, hash, repository, startReleaseFixture, until } from "./web-release-compatibility.fixture";
 
 const fixture = await startReleaseFixture();
-const browser = await chromium.launch({ channel: "chrome", headless: true });
+let browser: Browser | undefined;
 const results: unknown[] = []; let failure: string | null = null;
 const input = (page: Page) => page.getByRole("textbox", { name: "Message input", exact: true }).filter({ visible: true });
 async function connect(page: Page, url: string) {
@@ -17,14 +17,15 @@ async function connect(page: Page, url: string) {
 }
 
 try {
+  browser = await chromium.launch({ channel: "chrome", headless: true });
   const { importWebCompatibility, verifyWebCompatibility } = await import(pathToFileURL(join(repository, "tools/personal-preview/web-release.mjs")).href);
   for (const preview of fixture.previews) {
     const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, reducedMotion: "reduce" });
     const page = await context.newPage(); page.setDefaultTimeout(15_000);
-    const pageErrors: string[] = [], consoleErrors: string[] = [], loadedAssets: Array<{ path: string; sha256: string }> = [];
+    const pageErrors: string[] = [], consoleErrors: Array<{ text: string; url: string }> = [], loadedAssets: Array<{ path: string; sha256: string }> = [];
     const assetReads: Promise<void>[] = [];
     page.on("pageerror", error => pageErrors.push(error.message));
-    page.on("console", message => { if (message.type() === "error") consoleErrors.push(message.text()); });
+    page.on("console", message => { if (message.type() === "error") consoleErrors.push({ text: message.text(), url: message.location().url }); });
     page.on("response", response => {
       const path = new URL(response.url()).pathname.slice(1);
       if (response.status() === 200 && /\.(js|css)$/.test(path)) assetReads.push(response.body().then(bytes => { loadedAssets.push({ path, sha256: hash(bytes) }); }));
@@ -45,7 +46,7 @@ try {
       const receipt = page.getByRole("region", { name: "Message receipt", exact: true });
       await expect(receipt).toContainText("Receipt unknown"); await expect(input(page)).toHaveValue(draft);
       const first = preview.proxy.records.find(record => record.dropped)!;
-      assert.ok(first && first.status === 201 || first && first.status === 200); assert.ok(first.key && first.body);
+      assert.ok(first && first.status >= 200 && first.status < 300); assert.ok(first.key && first.body);
       const accepted = first.response, conversationId = accepted.conversation.id, taskId = accepted.turn.task.id;
       const finalTask = await until(() => fixture.request(`/api/tasks/${taskId}`), value => value.status === "succeeded");
       assert.equal(finalTask.verificationStatus, "passed");
@@ -86,6 +87,13 @@ try {
       assert.equal(negotiation.denied, 401); assert.equal(negotiation.status, 200);
       assert.ok(negotiation.profiles.some((profile: any) => profile.reference.id === fixture.profile.reference.id && profile.reference.configDigest === fixture.profile.reference.configDigest));
       await Promise.all(assetReads); assert.equal(pageErrors.length, 0);
+      const expectedConsole = consoleErrors.every(error => {
+        const path = error.url ? new URL(error.url).pathname : "";
+        return path === first.path && /502|ERR_EMPTY_RESPONSE|ERR_FAILED/.test(error.text)
+          || path === `/api/conversations/${conversationId}` && /401/.test(error.text)
+          || path === "/favicon.ico" && /404/.test(error.text);
+      });
+      assert.ok(expectedConsole, `Unexpected console errors: ${JSON.stringify(consoleErrors)}`);
       for (const asset of loadedAssets) assert.equal(asset.sha256, manifest.files.find(file => file.path === asset.path)?.sha256);
       assert.ok(loadedAssets.some(asset => asset.path.endsWith(".js"))); assert.ok(loadedAssets.some(asset => asset.path.endsWith(".css")));
       const observations = {
@@ -118,7 +126,8 @@ try {
   }
 } catch (error) { failure = error instanceof Error ? error.stack ?? error.message : String(error); process.exitCode = 1; }
 finally {
-  await browser.close(); await fixture.close();
+  try { await browser?.close(); } catch { failure = `${failure ?? ""}\nBrowser cleanup failed`; process.exitCode = 1; }
+  try { await fixture.close(); } catch { failure = `${failure ?? ""}\nFixture cleanup failed; see cleanup.json`; process.exitCode = 1; }
   const paths = ["apps/web/test/web-release-compatibility.fixture.ts", "apps/web/test/web-release-compatibility.browser.ts"];
   const sources = await Promise.all(paths.map(async path => ({ path, sha256: hash(await readFile(join(repository, path))) })));
   await writeFile(join(evidence, "browser-results.json"), JSON.stringify({ at: new Date().toISOString(), backend: BACKEND, oldWeb: BACKEND, newWeb: NEW_WEB, sources, results, failure, passed: !failure && results.length === 2 }, null, 2) + "\n");

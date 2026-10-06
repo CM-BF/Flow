@@ -85,12 +85,15 @@ export async function startReleaseFixture() {
     if (closed) return; closed = true; const failures: string[] = [];
     for (const action of closures.reverse()) { try { await action(); } catch (error) { failures.push(error instanceof Error ? error.message : "Cleanup failed"); } }
     if (databaseCreated) {
-      const own = new Pool({ connectionString: databaseUrl.href, max: 1 });
-      try { assert.deepEqual((await own.query("SELECT id FROM public.release_fixture_owner")).rows, [{ id: ownerId }]); }
-      finally { await own.end(); }
-      const admin = new Pool({ connectionString: adminUrl, max: 1 });
-      try { await admin.query(`DROP DATABASE "${databaseName}"`); cleanup.databaseRemoved = (await admin.query("SELECT datname FROM pg_database WHERE datname=$1", [databaseName])).rowCount === 0; }
-      finally { await admin.end(); }
+      try {
+        const own = new Pool({ connectionString: databaseUrl.href, max: 1 });
+        try { assert.deepEqual((await own.query("SELECT id FROM public.release_fixture_owner")).rows, [{ id: ownerId }]); }
+        finally { await own.end(); }
+        // Any failure above deliberately prevents DROP. Other owned resource cleanup still proceeds.
+        const admin = new Pool({ connectionString: adminUrl, max: 1 });
+        try { await admin.query(`DROP DATABASE "${databaseName}"`); cleanup.databaseRemoved = (await admin.query("SELECT datname FROM pg_database WHERE datname=$1", [databaseName])).rowCount === 0; }
+        finally { await admin.end(); }
+      } catch { failures.push("Owned database cleanup failed; verify its marker before manual cleanup"); }
     }
     for (const path of checkoutPaths) { try { assert.equal((await execute("git", ["-C", path, "status", "--porcelain"])).stdout.trim(), ""); await git("worktree", "remove", "--force", path); } catch { failures.push("Owned build checkout cleanup failed"); } }
     cleanup.finishedAt = new Date().toISOString(); cleanup.failures = failures; cleanup.retained = "Private verified artifacts only; no token/config persisted";
