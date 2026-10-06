@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:40 UTC；新准入发现受理记录非空闲，发布前停止 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:47 UTC；单文件只读定位为合法未决意图，维护屏障方案待核定 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -19,9 +19,9 @@
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新观察已准确找到runner受理记录，但不能证明空闲；已在材料导入和服务变更前停止，保留两次原始失败。 |
-| 下一可用交付 | 先由Lead核定未决受理的恢复边界；不清空记录、不重试或继续发布。 |
-| 当前阻塞 | ACTIVE: runner受理记录尚不能证明空闲，安全准入未通过；先核定恢复边界，不能继续发布。 |
+| 当前产出 | 受理记录格式正确，但保留一个未解决的本地意图；尚未证明有活任务，发布前保持停止。 |
+| 下一可用交付 | 已提出维护屏障和保留审计的最小恢复方案，待核定新增操作边界。 |
+| 当前阻塞 | ACTIVE: 合法本地受理意图未决；旧接口没有相应恢复回执，需核定显式退役边界后才能继续发布。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；5fe98f97cb7506f65555ab72205ebaea8464af84 独立APPROVED_EXECUTABLE_PREPARATION，79绑定/3新检查；原a644批准与8旧检查保持，2次独立窗口只读准入失败、0发布变更 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
@@ -33,7 +33,7 @@
 | SVC05H01-02 | completed | assignment_review | [Interface](../../docs/evidence/svc05-history-compatibility/interface.md) 已固定 |
 | SVC05H01-03 | completed | Web RELEASE03 / Root独审 | [af51+d629独立批准](../../docs/evidence/svc05-history-compatibility/release-preparation/web-app1750-independent-review.json)；本owner未重跑 |
 | SVC05H01-04 | completed | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；[独立APPROVED](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json) |
-| SVC05H01-05 | pending | Execution Lead窗口 / owner | 三份准确af51报告及执行准备均已审；等待新串行窗口，原2030只读失败不改绿，同版本恢复不替代 |
+| SVC05H01-05 | pending | Execution Lead窗口 / owner | 三份准确af51报告及执行准备均已审；2030/2040只读准入失败保持，现等待未决本地意图的恢复边界，同版本恢复不替代 |
 | SVC05H01-06 | completed | assignment_review | 一次ready/8组保留true；Lead独立比对64表并关闭窗口，原期限P2已关闭 |
 
 ## Dashboard
@@ -99,3 +99,7 @@ Execution Lead于2026-10-06T20:35:57.334026+00:00独立APPROVED_EXECUTABLE_PREPA
 ### 20:40窗口实际准入停止
 
 使用全新reservation与5fe固定源码，唯一01-before退出1/172ms，RUNNER_ADMISSION_NOT_IDLE。正确namespace文件存在且idle=false；其bytes/hash与2030保存记录相同，仅是两次观察，不证明连续状态或原因。02–20均未执行，0材料/维护/服务/发布变更，0主动模型/用户tab。无重采/清journal/改参重试；[原始结果与分析](../../docs/evidence/svc05-history-compatibility/release-operation/run-svc05h-af51-d629-20261006-2040/analysis.json)。
+
+### 2026-10-06 20:47 UTC 只读未决受理定位
+
+唯一获准读取的精确namespace文件是合法version1/inFlight非空UUID/assignments[]，80B/hash与两窗口保存值相同；只证明持久未决，不证明活任务或原失败原因。362/af51相关15源码逐字一致，strictIdle拒绝正确；未改已审源、未读正文/token、未重采DB/进程或操作服务。维护同runner行锁可形成禁止新受理的屏障，但现有reconciliation不处理无中心requestId的本地intent。[一页恢复提案](../../docs/evidence/svc05-history-compatibility/release-operation/admission-resolution-proposal.md)将新人工退役语义与原claim回执严格分开，当前只提案，0执行。

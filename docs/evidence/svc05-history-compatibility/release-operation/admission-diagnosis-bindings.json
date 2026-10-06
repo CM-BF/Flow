@@ -1,0 +1,177 @@
+{
+  "kind": "readonly-admission-diagnosis-bindings",
+  "createdAt": "2026-10-06T20:46:35.644323+00:00",
+  "sourceBindings": [
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 5175,
+      "targetBytes": 5175,
+      "oldSha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "targetSha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "identical": true
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 14832,
+      "targetBytes": 14832,
+      "oldSha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc",
+      "targetSha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc",
+      "identical": true
+    },
+    {
+      "path": "apps/runner/src/verifier.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 1069,
+      "targetBytes": 1069,
+      "oldSha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200",
+      "targetSha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200",
+      "identical": true
+    },
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 5733,
+      "targetBytes": 5733,
+      "oldSha256": "76edf9ace719161329d6534bfd37d27d1185704bf1f1896ebffe9df45adc8559",
+      "targetSha256": "76edf9ace719161329d6534bfd37d27d1185704bf1f1896ebffe9df45adc8559",
+      "identical": true
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 26547,
+      "targetBytes": 26547,
+      "oldSha256": "f6a2883606ba1fa35661619da79a747bef176bca90d6b1b5a2fbd4a655783de2",
+      "targetSha256": "f6a2883606ba1fa35661619da79a747bef176bca90d6b1b5a2fbd4a655783de2",
+      "identical": true
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 11992,
+      "targetBytes": 11992,
+      "oldSha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9",
+      "targetSha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9",
+      "identical": true
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 6424,
+      "targetBytes": 6424,
+      "oldSha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+      "targetSha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+      "identical": true
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 6384,
+      "targetBytes": 6384,
+      "oldSha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926",
+      "targetSha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926",
+      "identical": true
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/index.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 2050,
+      "targetBytes": 2050,
+      "oldSha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e",
+      "targetSha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e",
+      "identical": true
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/maintenance.test.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 17107,
+      "targetBytes": 17107,
+      "oldSha256": "c182d83cb285b147f6feedd60369f0b434731a97d78625d3e1c94fc38c0a3344",
+      "targetSha256": "c182d83cb285b147f6feedd60369f0b434731a97d78625d3e1c94fc38c0a3344",
+      "identical": true
+    },
+    {
+      "path": "packages/storage/migrations/016-runner-maintenance.sql",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 1796,
+      "targetBytes": 1796,
+      "oldSha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc",
+      "targetSha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc",
+      "identical": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 44108,
+      "targetBytes": 44108,
+      "oldSha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd",
+      "targetSha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd",
+      "identical": true
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 11658,
+      "targetBytes": 11658,
+      "oldSha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd",
+      "targetSha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd",
+      "identical": true
+    },
+    {
+      "path": "apps/server/src/protocol-dispatch/store.ts",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 9611,
+      "targetBytes": 9611,
+      "oldSha256": "d573ddaa69e36fddaec45f14305fb1a5432bd8889c992991925e757eb224d560",
+      "targetSha256": "d573ddaa69e36fddaec45f14305fb1a5432bd8889c992991925e757eb224d560",
+      "identical": true
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "oldRef": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "targetRef": "af51c621696230fbced12227670f014ca73bd8a1",
+      "oldBytes": 8241,
+      "targetBytes": 8241,
+      "oldSha256": "e441f575b025420aea5133a54300260bfa558de5f75e95d6380d9d8d4a4be05e",
+      "targetSha256": "e441f575b025420aea5133a54300260bfa558de5f75e95d6380d9d8d4a4be05e",
+      "identical": true
+    }
+  ],
+  "singlePersonalObservation": {
+    "path": "docs/evidence/svc05-history-compatibility/release-operation/admission-readonly-diagnosis.json",
+    "bytes": 1616,
+    "sha256": "d0c71e5096e76e66459998e6edf59d1c0320966bee47aca5ba489ac9e6872e40"
+  },
+  "observerSource": "5fe98f97cb7506f65555ab72205ebaea8464af84",
+  "newPersonalProbesAfterObservation": 0,
+  "newTests": 0,
+  "newPG": 0,
+  "personalMutations": 0,
+  "limits": "Fixed source review only. Existing test source read, not executed. No claim receipt inferred for the old local UUID.",
+  "proposal": {
+    "path": "docs/evidence/svc05-history-compatibility/release-operation/admission-resolution-proposal.md",
+    "bytes": 5090,
+    "sha256": "2721088010281b49e4ecef3599cd8376ae460038c475579d717ef7ccf190a6c1"
+  },
+  "qualityReview": {
+    "at": "2026-10-06 20:47 UTC",
+    "method": "Existing local clean-code/codebase-design: retain authority and lifecycle boundaries; no new product abstraction or reset behavior; source and derived facts separated.",
+    "unresolved": "New explicit local-intent resolution semantics require separate authorization/review."
+  }
+}
