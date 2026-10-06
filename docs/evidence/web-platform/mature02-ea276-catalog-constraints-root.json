@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-06T16:37:24.039364+00:00",
+  "task": "Existing WPF-MATURE-02 / TODO-11 Web consumer preparation only",
+  "sourceCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+  "files": [
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 12150,
+      "sha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962"
+    }
+  ],
+  "method": "Root read-only fixed contracts and full Mika consumer handoff; no imports, tests, provider probes, project edit or writer claim. Reuse local find-skills/codebase-design/clean-code methods.",
+  "constraints": [
+    {
+      "fact": "claudeTurnSettingsSchema is strict, full profile id/runnerId/configDigest plus a complete model/thinking/effort/speed requested tuple. Canonical snapshot <=1024 UTF-8 bytes.",
+      "implication": "Use the public schema/canonical helper and original frozen command body/key authority; no extra settings DTO, HTTP client or request identity."
+    },
+    {
+      "fact": "Configured choices are finite complete tuples,0..32 entries and <=16384 canonical bytes, unique after schema parsing.",
+      "implication": "No Cartesian product across independent controls or guessed SDK model capability. Empty configured choices is not a license to invent a default; absence of an opted-in draft value and an explicit not-requested effort are different."
+    },
+    {
+      "fact": "checkClaudeTurnSettingsAllowed distinguishes unknown missing policy, profile mismatch and unsupported complete tuple; exact triple equality is required.",
+      "implication": "A visible conversation-creation profile lock does not authorize arbitrary new per-message settings. Selection validity must bind to the captured profile triple/current trusted policy without clearing an edited draft on stale catalog."
+    },
+    {
+      "fact": "Explicit new catalog protocol shares the GET/header location, has its own strict envelope and wrapped profiles[].profile shape. The native catalog schema explicitly rejects turnSettings profiles.",
+      "implication": "Consume the promised single FlowClient method through a precise port if preparation precedes integration; do not fall back to the old/native reader on a200 response with the wrong protocol."
+    },
+    {
+      "fact": "Catalog profile.model.value matches configuration.model, while each configured requested choice has its own model. The new controls shape contains messageSettings instead of old fixed-thinking/unsupported-effort control fields.",
+      "implication": "Use union/schema narrowing. Show the actual selected requested tuple rather than reusing the creation profile base-model label as the per-message setting. This is configured intent, not provider entitlement or observed SDK result."
+    },
+    {
+      "fact": "Policy forbids turnSettings combined with activeSteering or goal-tools access; only ordinary Claude none/configured-readonly profiles qualify.",
+      "implication": "No implicit enablement in steering/goal or Codex flows. Shared/public F01 and CORE owners retain all contract/server authority."
+    }
+  ],
+  "handoffOnlyNotIndependentlyReadInThisTwoFileNote": [
+    "Mika handoff specifies actual requested/observed final schemas, queue ACK matcher and capability profile ties; root has not newly inspected assistant/conversation/queue sources for this note.",
+    "UI integration must preserve existing DraftState/Recovery, capturedA vs nextdraftB, original queue/outbox and full material identity; actual App/recovery paths remain originalRecovery claim until lawful serial handoff."
+  ],
+  "priority": "Release actual window and DPERF fixes stay ahead; panels can prepare an independent directory/selection leaf source map, no new third execution layer or premature scope take."
+}

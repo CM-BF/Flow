@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:28 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:49 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | Recovery固定1b8受控direct27/27通过并清理；DPERF04已登记、原owner修正源码审查P2。A3仅附件通过、mixed资源中断，发布A/B继续暂停 |
-| 下一可用交付 | W01继续首页摘要与按需核验；Recovery真实IDB/App旅程仍待条件；短聊视觉三件归原01-03验收，不扩写权 |
-| 当前阻塞 | ACTIVE: A/B仍无完整兼容且Lead新批资源整理中，先整批再A/B；Recovery真实IDB/HTTP/browser未验，直接mock检查不能替代；源码实施正常 |
+| 当前产出 | Recovery固定1b8受控27/27通过；DPERF Node六叶过/Host前提失败已清理。发布af51两A完整通过，B定位器失败待窄修，窗口已归还 |
+| 下一可用交付 | 发布harness定位器与完整A复用接缝原范围窄修后独审；DPERF Host构造随后修；MATURE02八literal候选待固定公共出口 |
+| 当前阻塞 | ACTIVE: 发布B被harness locator挡住且无兼容绿报告，后继待源审/新准入；DPERF failedtest待精准修正；Recovery真实IDB/HTTP/browser未验；源码修复正常 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -97,7 +97,7 @@
 - 六大task与Mika02/04唯一canonical、用户原话/Arc抽象、登记字段与待集成目标统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)。Web只拥有01/03/05/06，02/04不复制计划。
 - Lead09:09:25正式观察111 sources/current/issues[]，六MATURE/CONTEXTI/STEER/VISUAL已登记；本管理不重复API。D08已main f181；root10:44–10:45实际页面已核六parent与子片父/worker领取；MATURE04 stale已自恢复，剩余声明格式交Mika合法owner。
 - root12:24既有DOM已核148来源、main a8aef、顶部三大task分散；Lead同期ledger available/unregistered[]，没有展开领取详情或本组API采样；[精确观察](../../docs/evidence/web-platform/dashboard-148-root-dom-observation.json)。
-- 下一完整旅程沿MATURE06-04，附件/已审dashboard安全点后优先恢复而非Arc；中心582f/共享d6d/生产9406已正式main84005；panels Recovery新21范围已COMMITTED，首canonical dcaf6356已normalpush/ls-remote核同，SOURCE_READY已置中央登记；当前源码dirty实施不是fixed审批。[接口/写权队列](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。
+- 原下一完整旅程沿MATURE06-04；中心582f/共享d6d/生产9406已main84005。Recovery原21领取/首canonical dcaf属于历史启动；当前1b8受控27/27与正式未全审边界见页首及唯一owner status，不能沿旧dirty描述推断当前状态。[接口/写权队列](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。
 - D05 registry evidenceDir应为docs/evidence/d05-first-fit；现owner仍Lead队，仅其可修registry，本组不抢写。
 - CONTEXTI已main并释放；STEIRI01、ACTIVITYREAD和D08已main f181并全部停写释放，source见集中handoff。
 - GO已将MATURE03附件端到端责任交Web/root；运行域及实际ATTACHI02已main cde且旧scope释放，完整MATURE03目标仍开放；CACHE也已main/released。新RECOVERY01仅用自己fresh21claim，不沿已释放写权。
@@ -117,13 +117,15 @@ SVC05窗口已由Lead正式关闭，个人backend362/v15与Web8d8/caa1/v2沿服�
 
 恢复正式领取与唯一来源见[dispatch审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)和[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json)；当前实施事实由新owner status维护，不由管理表复制TODO。13源比对不是13tests，Lead组合为1pass/2未选+types0；本组无产品复测。
 
-DPERF既有后继：[单次首页观察/固定摘要设计](../../docs/evidence/web-platform/dperf-home-summary-followup.json)待排，优先级低于恢复与可用预览、高于装饰。已交DPERF01–03不回改，后继未领取；首页尽快可读与按需proof/详情的验收仍需未来独立片，当前不复采服务。
+历史DPERF后继研究：[单次首页观察/固定摘要设计](../../docs/evidence/web-platform/dperf-home-summary-followup.json)待排，优先级低于恢复与可用预览、高于装饰。已交DPERF01–03不回改；当时尚未领取的阶段已由下述DPERF04正式claim推进，当前不复采服务。
 
-[DPERF04精确后继候选](../../docs/evidence/web-platform/dperf04-summary-detail-proposal.json)已收敛为direct D01 / w01 / 九literal，已root结构批准且Lead已provision，尚无take/实施；小源码可独立于Recovery，但新树仅Lead串行sparse、实际检查仍守各自资源门槛。恢复82d78原五项与W01新增三项合计[八项早期partial发现](../../docs/evidence/web-platform/recovery01-foundation-review-intake.json)，已交唯一owner，非完整独审结论。
+[DPERF04精确后继候选](../../docs/evidence/web-platform/dperf04-summary-detail-proposal.json)已收敛为direct D01 / w01 / 九literal，原结构批准/Lead provision后已b554v1领取并实施；当前固定源与检查见页首、唯一owner status。小源码独立于Recovery，实际检查仍守各自门槛。恢复82d78原五项与W01新增三项合计[八项早期partial发现](../../docs/evidence/web-platform/recovery01-foundation-review-intake.json)，已交唯一owner，非完整独审结论。
 
 
-连接页插件方案仅归WPF-001-05/REQ22–23：[原报告](../../docs/evidence/web-platform/connection-plugin-2498/report.md)与[来源核验](../../docs/evidence/web-platform/connection-plugin-2498-intake.json)为只读候选，六产品+两专测不是已领取范围。Recovery724的RB1–3源码窄审已闭合、worker断言另审、browser/22direct未跑，PG/Chrome窗口仍Lead；本管理未采样空间或个人服务。
+连接页插件方案仅归WPF-001-05/REQ22–23：[原报告](../../docs/evidence/web-platform/connection-plugin-2498/report.md)与[来源核验](../../docs/evidence/web-platform/connection-plugin-2498-intake.json)为只读候选，六产品+两专测不是已领取范围。Recovery724当时RB1–3源码审查和22direct未跑只是历史；当前1b8与27受控检查见页首，真实browser未验。本管理不以历史研究扩产品写权。
 
 DPERF04直接D01子task已[原九scope COMMITTED](../../docs/evidence/web-platform/dperf04-take-receipt.json)，W01独立树源码派工；[首canonical704894已正常推送且parser0](../../docs/evidence/web-platform/dperf04-source-ready.json)，registry与页面展示不由此推断。原DPERF03/WPF-001-36完成记录保持原范围。
 
-最新原始结果已由Lead接收，继续next12资源整理并保留本组运行暂停；[c18bd标签窄审](../../docs/evidence/web-platform/release03-c18bd-label-review-root.json)只批准报告逻辑，完整A/B仍未通过。后继运行依实际窗口/原预算，不因该审查自动启用。
+历史A3原始结果已由Lead接收；随后next12b完成、一次all两A通过/B locator失败与窗口归还见页首。[c18bd标签窄审](../../docs/evidence/web-platform/release03-c18bd-label-review-root.json)只批准报告逻辑，完整A/B仍未通过。后继运行依实际窗口/原预算，不因该审查自动启用。
+
+MATURE02仍链接Mika唯一plan/TODO-11：[固定公共输入与八literal候选](../../docs/evidence/web-platform/mature02-message-settings-consumer-intake.json)。未新建task/claim，C01固定出口尚缺，App/outbox/Recovery串行；不把新目录配置当账号资格或SDK observed。

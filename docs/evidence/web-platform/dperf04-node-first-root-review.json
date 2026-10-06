@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-06T16:47:06.040700+00:00",
+  "reviewer": "root",
+  "state": "FAILED_RUN_EVIDENCE_ACCEPTED",
+  "implementation": "1441d86baa40e98f4cb81b82dcc551202973209b",
+  "runtimeHead": "36d687fc682809ce73a90910d86ad34c6349d9dc",
+  "raw": {
+    "result.json": {
+      "bytes": 3341,
+      "sha256": "7a71e8e221f3c2afe14d1eb42a7582d117f340b16110cd79aef6afe156548c3f"
+    },
+    "node.log": {
+      "bytes": 3505,
+      "sha256": "f47bd30c574b80c9607fb583d5a524d4734a31ddb6771f93160eea19bd93da5d"
+    },
+    "binding.json": {
+      "bytes": 3913,
+      "sha256": "59892025f5ac3705dfd55c912dd44c17bd3725d536df56d5a1de9651446dab4b"
+    },
+    "consumed-gate.json": {
+      "bytes": 963,
+      "sha256": "8dc999dc76ea28accefe564511efe3684043094e9bf324735335d230c606dbc1"
+    }
+  },
+  "binding": "All seven result source hashes match binding; implementation/runtime HEAD and three runner/binding/profile pins match the actual single-use gate.",
+  "actual": {
+    "elapsedMs": 1632,
+    "remainingMs": 28368,
+    "leafPass": 6,
+    "leafFail": 1,
+    "tapIncludingParent": {
+      "passed": 6,
+      "failed": 2,
+      "expectedTests": 8
+    },
+    "failure": "summary-detail.test.mjs124 expected Host rejection403, observed200",
+    "cleanup": {
+      "state": "fulfilled",
+      "errors": [],
+      "seconds": 0.0,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "serverClosureBasis": "Fixed server and Git children remain within the terminated/reaped owned process group; no external service used"
+    },
+    "maxObservedLogicalTmpBytes": 93088,
+    "minObservedFreeBytes": 1237180416
+  },
+  "limits": [
+    "Six passed leaves cover live summary zeroGit declarations, stale/frozen source errors, summary independent of stalled synthetic assignments, selected detail Git scope/freshness, during-read source change, and synthetic assignment identity.",
+    "The seventh leaf stopped at the Host assertion: later document traversal/symlink and snapshot compatibility assertions were not executed in this run. Earlier assertions in the same leaf are not independently labelled whole-test PASS.",
+    "200!=403 alone does not identify product failure versus header transport behavior. A separate fixed-source diagnostic is in progress.",
+    "No retry occurred; no realPG, browser, realregistry or production4320 validation. Runtime does not establish throughput/latency benchmarks.",
+    "Resource/tmp are sampled observations, not physical peak or causal attribution. Scratch absence independently read; PGID cleanup accepted from pinned supervisor, not sampled again by root."
+  ],
+  "next": "Keep failed raw immutable; diagnose source, fix only exact claimed path after RELEASE window, and debit any future approved run from28.368s remaining."
+}

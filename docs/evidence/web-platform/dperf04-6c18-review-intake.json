@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-06T16:43:09.315944+00:00",
+  "target": "6c18b81a11eece9c07dd047d28da099a0b6bbb24",
+  "result": "CHANGES_REQUESTED_C1_U_SOURCE_ONLY",
+  "original": "dperf04-6c18-client-rereview/report.md",
+  "fixedSources": [
+    {
+      "commit": "6c18b81a11eece9c07dd047d28da099a0b6bbb24",
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 30868,
+      "sha256": "282226b050274ab87467e8673f395bb48b215cde817b04ffc402d1824f58bbf1"
+    },
+    {
+      "commit": "6c18b81a11eece9c07dd047d28da099a0b6bbb24",
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "bytes": 29132,
+      "sha256": "1b081a8d168f132c0a89867e88ee342f4a49e1000452d004a7f1b1e1c8eb6025"
+    }
+  ],
+  "movingCurrent": "Peer recorded dirtyapp at report end; fixedsource review does not cover movingrepair.",
+  "nextCandidate": "b0e937d53a664b3398d36a080cef1a2d4225b6f3",
+  "candidateMetadata": "9dd9967013ebbe2ac980d2de2c51ea4079fabdd3",
+  "limits": "b0e/new testdelta await root review;0runtime/space/gate. No oldsource test."
+}

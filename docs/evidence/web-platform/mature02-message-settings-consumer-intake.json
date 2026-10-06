@@ -1,0 +1,195 @@
+{
+  "at": "2026-10-06T16:39:02.377784+00:00",
+  "source": "GO new authorization relayed byroot; existing MATURE02/TODO11 owner Mika remains authority",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md",
+  "fixedReferenceHead": "2bcc65cb52d75957239f25c5648a1b4977c3d9b8",
+  "fixedReferenceBytes": 14802,
+  "fixedReferenceSha256": "a4d30fdf079a91086914b9a89460731967c006f37156820c8aa6c19126cebb0b",
+  "currentEqualsFixedBlob": false,
+  "currentState": "Owner has uncommitted handoff edits; management links unique current source, does not certify moving protocol or copy status. Fixedreference above is historical interface context.",
+  "publicContract": "CORE ea276572c3c99fb8400808a93efc69ce530d55a4 named in fixed handoff; no manager import/test",
+  "direction": "Prepare independent Web catalog/selection UI leaf without waiting productPG or fullRELEASE; RELEASE/DPERF remain higher priority. Panels only8-source read-only scope proposal at this point.",
+  "coordination": "App/Thread/outbox/projection/Recovery paths remain originalRECOVERY writer; fullhook-up requires serial freshhandoff. No newtree/claim/runtime here.",
+  "constraints": [
+    "Only final sharedFlowClient/catalog protocol; no second HTTP transport",
+    "Use existingdraft/receipt/journal and originalkeys; no secondFSM",
+    "Requested snapshot and actualobserved facts separate; no accountentitlement inference fromcatalog",
+    "Freeze capturedA before materialawait; nextdraftB and originalunknownreceipt remain separate"
+  ],
+  "limits": "No Mika plan/status edit; no newthird-layer task. This intake links exactauthority and records coordination, not a duplicate featurestatus.",
+  "rootConstraints": "mature02-ea276-catalog-constraints-root.json",
+  "leafProposal": "mature02-web-leaf-65659028/report.md",
+  "fixedSourceVerification": [
+    {
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 4055,
+      "sha256": "b4092cd354d9058457eaa531fb35567ddbe16228363720741bd4365932197ec3"
+    },
+    {
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 5057,
+      "sha256": "9a56ba34efd52c0d542802da1e48dd168c1ad36abae9554b926386abe7ea2d82"
+    },
+    {
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 8619,
+      "sha256": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c"
+    },
+    {
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "path": "apps/web/test/execution-profiles.test.ts",
+      "bytes": 14848,
+      "sha256": "03ee026277f3f52373d328a516ca3722ec4e5c95cc5c68d5a766f6bfc180350d"
+    },
+    {
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 50767,
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d"
+    },
+    {
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 22770,
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c"
+    },
+    {
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 5323,
+      "sha256": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085"
+    },
+    {
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 11653,
+      "sha256": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523"
+    },
+    {
+      "commit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "commit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 12150,
+      "sha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962"
+    }
+  ],
+  "candidate": {
+    "id": "WPF-MESSAGESETTINGS01",
+    "state": "READ_ONLY_PROPOSAL_NOT_TAKEN",
+    "directParent": "WPF-MATURE-02 / TODO-11",
+    "worktree": "web-message-settings",
+    "branch": "codex/web-message-settings",
+    "scope": [
+      "apps/web/src/execution-profiles/catalog.ts",
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.browser.ts",
+      "plans/wpf-message-settings",
+      "docs/evidence/wpf-message-settings"
+    ],
+    "gates": "Manager/Lead uniqueness and exact fixed public input plus structure acceptance before any new take. App/outbox/Recovery remains serial owned integration."
+  },
+  "rootFactLimits": "Two fixed public contract files only: exact profile triple/full tuple,0..32 choices,1024 UTF8 snapshot,new strict catalog shape. Base profile model differs from selected requested model. No SDK observed/provider entitlement verification.",
+  "peerAuthorityNote": "Peer handoff bytehash is a separate later moving owner observation, not the fixed2bcc reference above. Neither is a publicclient publication/main receipt.",
+  "readiness": {
+    "at": "2026-10-06T16:43:58.135997+00:00",
+    "clientCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/plans/mature02c01-claude-message-settings-client/status.md",
+    "clientHead": "87fc0433b42746da49529fbc51ccd29b508c79b5",
+    "clientSourceState": "moving dirty product edits; fixed HEAD is only interface/metadata initial commit",
+    "fixedImplementationTarget": "UNKNOWN",
+    "fixedReview": "NOT_STARTED",
+    "clientMethodPresentAtFixedHead": false,
+    "contractLeafExportPresentAtFixedHead": false,
+    "controlledBase": "8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6",
+    "publicInputGate": "Need immutable client/contract-export target or a Lead-approved controlled composition exposing the exact public types; do not consume moving source or redefine DTO/HTTP. Typed reader preparation is allowed after such fixed public input, without waiting CORE PG or fullApp.",
+    "candidateOwner": "workspace_panels_owner proposed, no new slot/thread; serial source switch after existing bounded peer review, Recovery remains separate original WT",
+    "provisionOwner": "Lead sole Git operator; base must include approved fixed public export composition, not assume current main has it",
+    "registryRef": "74bc72f0d32daebc8f89a75528f3d72002b3a29e",
+    "nameAbsentFromFixedRegistry": true,
+    "nameAbsentFromObservedLedger": true,
+    "observedLiteralOverlaps": [],
+    "ledgerObservedAt": "2026-10-06T16:41:30.683Z",
+    "candidatePathExists": false,
+    "candidateBranchExists": false,
+    "freshTakeRequired": true,
+    "claimIssued": false,
+    "provisionPerformed": false,
+    "fixedRecords": {
+      "plans/mature02c01-claude-message-settings-client/status.md": {
+        "sha256": "74342812ccdd53d7a96687ce70c88e30d22b8bb87df8237d3ce49c8b7a8e2a81",
+        "bytes": 2834
+      },
+      "plans/mature02c01-claude-message-settings-client/review.md": {
+        "sha256": "978495465fdf8f92a2cb437db85c33ef6f4c828e570dffe237affd797c1f6ede",
+        "bytes": 878
+      },
+      "docs/evidence/mature02c01/interface.md": {
+        "sha256": "c8fa503e8958a1dc12a42fa096dd708dc5e7eb3d3b944e8fd6e4720fbc162f30",
+        "bytes": 2214
+      }
+    }
+  },
+  "readbackSupplement": {
+    "root": "mature02-ea276-readback-constraints-root.json",
+    "peer": "mature02-web-readback-65659028/report.md",
+    "fixedSources": [
+      {
+        "commit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+        "path": "packages/contracts/src/assistant.ts",
+        "bytes": 5785,
+        "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+      },
+      {
+        "commit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+        "path": "packages/contracts/src/conversations.ts",
+        "bytes": 6621,
+        "sha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35"
+      },
+      {
+        "commit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+        "path": "packages/contracts/src/conversation-queue.ts",
+        "bytes": 4175,
+        "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b"
+      },
+      {
+        "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+        "path": "apps/web/src/conversations/projection.ts",
+        "sha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db",
+        "bytes": 24648,
+        "lines": 396
+      },
+      {
+        "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+        "path": "apps/web/src/conversations/queue/projection.ts",
+        "sha256": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65",
+        "bytes": 13034,
+        "lines": 166
+      },
+      {
+        "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+        "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "sha256": "b435794fac3c4f5006919f6f07e440b21ffa829aa2be41ee7f4d70b7072505d1",
+        "bytes": 8924,
+        "lines": 78
+      },
+      {
+        "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+        "path": "apps/web/src/TaskThread.tsx",
+        "sha256": "62c5643735b0546d5d99b4340f8a0f4b8ddeec6f6b3421f24bfc6670d36f0a01",
+        "bytes": 10543,
+        "lines": 296
+      }
+    ],
+    "meaning": "Conversation GET preserves optional values without new validation; Queue allowlist rejects the new unsupported reason, item fields otherwise remain unchecked; UI omission is separate. TaskThread is sharedDraftState/legacy task surface, not assistant decoder. No expansion of eightleaf scope or current Recovery authority."
+  }
+}

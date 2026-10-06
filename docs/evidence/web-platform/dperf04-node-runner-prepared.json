@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-06T16:43:09.315944+00:00",
+  "state": "EXECUTED_ONCE_FAIL_CLEANED",
+  "directory": "/private/tmp/dperf04-node-once-kz6cfj2k",
+  "files": {
+    "run.py": {
+      "bytes": 13145,
+      "sha256": "c45999bf132e13fcabd50b4250744e7eda06e25216c768a23dd888b270a19dfd"
+    },
+    "sandbox.sb": {
+      "bytes": 311,
+      "sha256": "34b1d7c5be162a2ea8bb456617086c210f6ff9ea97899e1a578b8539266d2335"
+    },
+    "binding.json": {
+      "bytes": 3913,
+      "sha256": "59892025f5ac3705dfd55c912dd44c17bd3725d536df56d5a1de9651446dab4b"
+    }
+  },
+  "implementation": "1441d86baa40e98f4cb81b82dcc551202973209b",
+  "head": "36d687fc682809ce73a90910d86ad34c6349d9dc",
+  "sourceCount": 7,
+  "readOnlyDependencyCount": 15,
+  "expectedTestsIncludingParent": 8,
+  "scope": "Manager own/tmp supervisor only; no product writer change",
+  "hold": "Singleuse consumed; no automatic retry. Source-only diagnosis after RELEASE window.",
+  "syntax": {
+    "command": "sandbox-exec -f sandbox.sb /usr/bin/true",
+    "exitCode": 0,
+    "elapsedSeconds": 0.017430291045457125,
+    "priorFailurePreserved": true,
+    "scope": "Syntax-only; no Node/HTTP/PG/product import or budget use."
+  },
+  "gateCreated": true,
+  "spaceSamples": 1,
+  "processesStarted": {
+    "syntaxTrue": 1,
+    "product": 0
+  },
+  "limits": {
+    "totalSeconds": 30,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "finalReportReserveBytes": 131072,
+    "pollSeconds": 0.25
+  },
+  "environment": "HOME/home/CODEX_HOME preserved; ownTMP/cache+Gitconfig/devnull; loopback1270 only",
+  "next": "Root exactrunner/pins review and finalsource then onefreshadmission, no duplicate permission for alreadyapprovedbudget",
+  "archive": "dperf04-node-prepared-b0e",
+  "currentEvidence": "dperf04-node-first-intake.json"
+}

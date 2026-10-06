@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T16:45:33.723867+00:00",
+  "reviewer": "/root/workspace_panels_owner",
+  "state": "READ_ONLY_SEAMS_NOT_IMPLEMENTED",
+  "webCommit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+  "coreCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+  "sources": [
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db",
+      "bytes": 24648,
+      "lines": 396
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "sha256": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65",
+      "bytes": 13034,
+      "lines": 166
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "sha256": "b435794fac3c4f5006919f6f07e440b21ffa829aa2be41ee7f4d70b7072505d1",
+      "bytes": 8924,
+      "lines": 78
+    },
+    {
+      "path": "apps/web/src/TaskThread.tsx",
+      "sha256": "62c5643735b0546d5d99b4340f8a0f4b8ddeec6f6b3421f24bfc6670d36f0a01",
+      "bytes": 10543,
+      "lines": 296
+    }
+  ],
+  "contractAudit": {
+    "path": "/tmp/root-mature02-ea276-readback-constraints.json",
+    "sha256": "130894fcbdf96204d9188877918576fef22f13e0266224c2ca952976a83d5061"
+  },
+  "runtime": "NOT_RUN; no product imports, tests, HTTP, PG, browser, resource sampling, project edits or claim"
+}

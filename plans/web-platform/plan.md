@@ -387,3 +387,5 @@ DPERF04原九范围Interface消歧（固定c837，未领取）：[固定报告](
 2026-10-06 15:52 UTC 原REQ45/MATURE06-05：[installed core0.3.22 stop/cancel原研究](../../docs/evidence/web-platform/voice-stop-cancel-core0322-root.json)与[管理核验](../../docs/evidence/web-platform/gate-voice-intake.json)。core send会cancel并取当前text，不等待final；官方MediaRecorder示例若stop提前resolve可能先解除转写callbacks。未来同一composer adapter必须定义停止等待final后可编辑/明确SendQueue与取消丢弃，私有pane/auth/draft lease覆盖异步mic获取及每个await，旧回调不能清新session或改新稿。记录/转写状态、5秒有界结束与cleanup只作为来源/候选约束；不是已实现能力或已复现产品bug，无mic/provider/browser/新claim，不改变当前Recovery优先级。
 
 2026-10-06 16:10 新GO优先级已落原DPERF04：[原9scope正式领取](../../docs/evidence/web-platform/dperf04-take-receipt.json)，W01在RELEASE A3安全收口后切独立树源码，不等整个发布/Recovery；无新task层、agent或运行许可。旧“未take”段落均为对应时点历史。新增[GO两个API样本](../../docs/evidence/web-platform/dperf04-go-source-priority.json)不当性能基准；原声明/现场proof/实时claim与disclosure验收不变。
+
+2026-10-06 原MATURE02/TODO-11 Web消费准备：[唯一handoff intake](../../docs/evidence/web-platform/mature02-message-settings-consumer-intake.json)归既有真实能力与逐消息settings验收。独立catalog/纯capture/受控完整tuple选择可先准备，公共codec/client输入必须固定，旧creation语义保持；实际App/Outbox/Queue/Recovery须原authority串行交权。八literal只是候选，未开新第三层任务或领取。

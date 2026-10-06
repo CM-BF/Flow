@@ -1,32 +1,59 @@
 {
-  "recordedAt": "2026-10-06T16:28:09.597115+00:00",
-  "state": "LEAD_NEW_RESOURCE_BATCH_AB_PAUSED",
-  "groupWindowOwnership": "Lead new bounded resource batch; whole batch before A→B. Group0runtime; Recovery pure check complete.",
+  "recordedAt": "2026-10-06T16:49:24.551616+00:00",
+  "state": "RELEASE03_A_PASSED_B_LOCATOR_FAILED_CLEANED_WINDOW_RETURNED",
+  "groupWindowOwnership": "Returned toLead afteractual worker+Chromeexit0 and ownedDBremoved; no next run until reviewedsource and freshwindow/admission.",
   "release03": {
-    "state": "PARTIAL_RESOURCE_STOP",
-    "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
-    "actualHead": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
+    "state": "A_PASS_B_LOCATOR_FAILURE_CLEANED_WINDOW_RETURNED",
+    "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+    "actualHead": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
     "backend": "af51c621696230fbced12227670f014ca73bd8a1",
     "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
-    "admissionFreeBytes": 1109671936,
-    "startBytes": 1107296256,
-    "stopBytes": 1090519040,
-    "newRuntimeMs": 4109,
-    "spentMs": 7983,
-    "remainingMs": 172017,
-    "minimumSampledFreeBytes": 1090244608,
-    "finalSampledFreeBytes": 1089323008,
+    "admissionFreeBytes": 1228890112,
+    "startBytes": 1207959552,
+    "stopBytes": 1140850688,
+    "newRuntimeMs": 12326,
+    "spentMs": 20309,
+    "remainingMs": 159691,
+    "minimumSampledFreeBytes": 1199947776,
+    "finalSampledFreeBytes": 1203339264,
     "gateConsumed": true,
     "cleanupComplete": true,
-    "evidence": "release03-a3-intake.json",
-    "B": "NOT_RUN",
+    "evidence": "release03-all-first-intake.json",
+    "B": "FAILED_HARNESS_LOCATOR_BEFORE_COMPLETE_COMPATIBILITY",
     "labelSource": {
       "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
       "metadata": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
       "review": "APPROVED_SOURCE_LABEL_FIX",
       "runtime": "NOT_RUN; A3remains269103/0b3e",
       "evidence": "release03-c18bd-label-review-root.json"
-    }
+    },
+    "previousRun": {
+      "state": "PARTIAL_RESOURCE_STOP",
+      "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+      "actualHead": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
+      "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+      "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "admissionFreeBytes": 1109671936,
+      "startBytes": 1107296256,
+      "stopBytes": 1090519040,
+      "newRuntimeMs": 4109,
+      "spentMs": 7983,
+      "remainingMs": 172017,
+      "minimumSampledFreeBytes": 1090244608,
+      "finalSampledFreeBytes": 1089323008,
+      "gateConsumed": true,
+      "cleanupComplete": true,
+      "evidence": "release03-a3-intake.json",
+      "B": "NOT_RUN",
+      "labelSource": {
+        "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+        "metadata": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+        "review": "APPROVED_SOURCE_LABEL_FIX",
+        "runtime": "NOT_RUN; A3remains269103/0b3e",
+        "evidence": "release03-c18bd-label-review-root.json"
+      }
+    },
+    "run": "all-20261006-164711-15b54e"
   },
   "recoveryDirect": {
     "state": "CONTROLLED_DIRECT_PASS_CLEANED",
@@ -53,13 +80,17 @@
     "claim": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
     "version": 1,
     "scopeCount": 9,
-    "mode": "SOURCE_ONLY",
-    "runtime": "NOT_RUN; fixed source corrections and external Node supervisor proposal before fresh admission",
+    "mode": "FAILED_NODE_CLEANED",
+    "runtime": "6 leafpass/1 leaffail; TAP6/2 inclparent.1632ms, remaining28368; ownPGID/scratchclosed",
     "firstCanonical": "704894e97f573f7683e1c3fa37020fc0d9a5205c",
     "sourceReady": "dperf04-source-ready.json",
     "registration": "REGISTERED",
     "registrationCommit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
-    "registrationEvidence": "dperf04-registration-656-intake.json"
+    "registrationEvidence": "dperf04-registration-656-intake.json",
+    "implementation": "1441d86baa40e98f4cb81b82dcc551202973209b",
+    "actualHead": "36d687fc682809ce73a90910d86ad34c6349d9dc",
+    "evidence": "dperf04-node-first-intake.json",
+    "browser": "NOT_RUN"
   },
   "leadEvents": [
     {
@@ -80,13 +111,19 @@
       "freeBytes": 1150287872,
       "source": "Lead via root",
       "coordination": "next12 12/12 complete/stopped; A/B paused; existing pure-check fresh policy only"
+    },
+    {
+      "time": "16:44:51",
+      "freeBytes": 1243852800,
+      "source": "Lead via root; not managerfresh",
+      "coordination": "next12b12/12 complete; >=1GiB+160MiB; one serial A->B allowed, O14/O15/TUI PG held"
     }
   ],
   "limits": [
-    "Shared volume observations are not exclusive per-run allocation or causal attribution",
-    "A3 RESOURCE_STOP is not mixed product failure; old362 actual two failures remain historical",
-    "No B/Chrome/SVCgreen/deployment",
-    "No automatic retry/free polling; A/B remain paused despite completed pure check."
+    "Sharedfree samples are not causal allocation/physical peak guarantees",
+    "Runtime12,326ms, cumulative20,309/180,000; remainder159,691 is budget arithmetic only, no automatic nextgate",
+    "A failure prevents Chrome/B; no automatic retry, artifact rebuild, provider or personal service operation",
+    "Prior old362failure/A3partial retained; Node failing Host test does not establish product bypass"
   ],
-  "latestCoordination": "lead-next-resource-batch-candidate-handoff.json"
+  "latestCoordination": "release03-all-admission.json"
 }

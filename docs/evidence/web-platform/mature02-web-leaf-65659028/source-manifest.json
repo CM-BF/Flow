@@ -1,0 +1,106 @@
+{
+  "at": "2026-10-06T16:41:27.611836+00:00",
+  "reviewer": "/root/workspace_panels_owner",
+  "kind": "READ_ONLY_PROPOSAL_NOT_IMPLEMENTED",
+  "webCommit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+  "publicContractCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+  "projectSourceCount": 8,
+  "sources": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "sha256": "b4092cd354d9058457eaa531fb35567ddbe16228363720741bd4365932197ec3",
+      "bytes": 4055,
+      "lines": 79
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "sha256": "9a56ba34efd52c0d542802da1e48dd168c1ad36abae9554b926386abe7ea2d82",
+      "bytes": 5057,
+      "lines": 85
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "sha256": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c",
+      "bytes": 8619,
+      "lines": 86
+    },
+    {
+      "path": "apps/web/test/execution-profiles.test.ts",
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "sha256": "03ee026277f3f52373d328a516ca3722ec4e5c95cc5c68d5a766f6bfc180350d",
+      "bytes": 14848,
+      "lines": 183
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+      "bytes": 50767,
+      "lines": 1104
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c",
+      "bytes": 22770,
+      "lines": 216
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "sha256": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085",
+      "bytes": 5323,
+      "lines": 128
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "commit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+      "sha256": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523",
+      "bytes": 11653,
+      "lines": 134
+    }
+  ],
+  "references": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md",
+      "sha256": "bf59d099c9c455792f368de1b06a371e378ae7614eed179973145fe8432de5c4",
+      "bytes": 15344
+    },
+    {
+      "path": "/tmp/root-mature02-ea276-catalog-constraints.json",
+      "sha256": "4aa63faa271f5b9c624beb59a45d15b2360f74ed78c79e21164e752b4fbfe448",
+      "bytes": 3955
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "bytes": 5472
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "bytes": 6446
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "bytes": 4835
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "sha256": "20bd24ab58c8d281b329e1df34655c8a6dc0cd56d8a087aff252b37025c6937c",
+      "bytes": 9967
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/vercel-react-best-practices/SKILL.md",
+      "sha256": "71ed7794962fa6e803ee83030517b5b93a9f70fbfeb431ec4535c5480a8d8355",
+      "bytes": 7251
+    }
+  ],
+  "rules": "Exactly 8 fixed Web source/test blobs; metadata/status/skill reads only in addition. No imports/tests/HTTP/PG/browser/provider/resource sampling, no project edits, claim or worktree created."
+}

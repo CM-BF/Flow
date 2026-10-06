@@ -1,0 +1,51 @@
+{
+  "reviewer": "root independent read-only review",
+  "at": "2026-10-06T16:43:40.341144+00:00",
+  "state": "SUPERVISOR_SOURCE_ACCEPTED_WITH_SCOPED_LIMITS",
+  "pins": {
+    "run.py": {
+      "bytes": 13145,
+      "sha256": "c45999bf132e13fcabd50b4250744e7eda06e25216c768a23dd888b270a19dfd"
+    },
+    "sandbox.sb": {
+      "bytes": 311,
+      "sha256": "34b1d7c5be162a2ea8bb456617086c210f6ff9ea97899e1a578b8539266d2335"
+    },
+    "sandbox-syntax-review.json": {
+      "bytes": 1146,
+      "sha256": "30b09876f6a3e63624ad880fc3b8915bd7cea2161f72da7002fab22474ce83c9"
+    }
+  },
+  "readScope": "Full 13KB supervisor, corrected 311B profile, binding and preparation audit. No product runtime. Final source binding may change for the date-independent direct-test correction.",
+  "checks": [
+    "Single-use expiring external gate and exact runner/profile/source/Node hashes before child launch.",
+    "30s cumulative total with 5s cleanup reserved; deadline starts before source verification/import.",
+    "Own process group only, TERM then KILL/reap; own scratch cleanup verified; neither shared services nor other owners killed.",
+    "Child write scope confined to owned scratch and /dev/null; network restricted to localhost; fixed source owns its dynamic HTTP listener.",
+    "Scrubs FLOW/PG/DATABASE_URL/NODE_OPTIONS/proxies; preserves HOME/home/CODEX_HOME.",
+    "Sampled free and owned logical tmp monitoring, bounded pipe capture, explicit test count and cleanup all participate in PASS. No automatic retry."
+  ],
+  "nativeSyntaxEvidence": {
+    "rootPrevious": {
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/dperf04-node-once-kz6cfj2k/sandbox.sb",
+        "/usr/bin/true"
+      ],
+      "historicalProfileSha256": "f028f164322a887736e2fb77e6d7d3e1b44ab533bbb6bd5942c9010305070517",
+      "exit": 65,
+      "seconds": 0.007073,
+      "error": "host must be * or localhost in network address"
+    },
+    "managerCorrection": "Read exact archived syntax review: localhost local/remote ip plus explicit network-bind, true exit0 / 0.017430291s.",
+    "meaning": "Syntax checks consumed no Node test budget and established no network behavior."
+  },
+  "limits": [
+    "Kernel loopback rule permits localhost ports, not only the owned fixture port; ownership follows fixed inspected source.",
+    "Sampled tmp/free checks are not hard physical quotas, causal attribution or peak guarantees.",
+    "No browser, real PG, production4320 latency, provider or personal service validation.",
+    "Await fixed date-independent source delta plus fresh single admission before execution."
+  ],
+  "sourceReference": "https://github.com/openai/codex/blob/main/codex-rs/sandboxing/src/seatbelt.rs"
+}

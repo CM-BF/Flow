@@ -1,0 +1,26 @@
+{
+  "reviewer": "/root/workspace_panels_owner",
+  "at": "2026-10-06T16:38:27.159063+00:00",
+  "target": "6c18b81a11eece9c07dd047d28da099a0b6bbb24",
+  "previous": "4facd052c25e63ea300f72ea46c03c51fb983980",
+  "head": "35d9ac6d5ff410013ebcd6ffb21acbbc48fdc656",
+  "branch": "codex/dashboard-summary-detail",
+  "dirty": " M apps/execution-dashboard/public/app.js\n",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "fixedSha256": "282226b050274ab87467e8673f395bb48b215cde817b04ffc402d1824f58bbf1",
+      "currentSha256": "b8942cc5571276facca0e5d77322d730b2a4ab3db5c2cc326c4524a8f6f8a332",
+      "previousSha256": "688998b3d8376fc9f68d8fc0e33c795a3463710a9e3fda66ae4ca1807e01f3b2",
+      "lines": 396
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "fixedSha256": "1b081a8d168f132c0a89867e88ee342f4a49e1000452d004a7f1b1e1c8eb6025",
+      "currentSha256": "1b081a8d168f132c0a89867e88ee342f4a49e1000452d004a7f1b1e1c8eb6025",
+      "previousSha256": "2220e2e48a117ade0c72aead0189103b8bd6514be377e867050048200e0d20f6",
+      "lines": 352
+    }
+  ],
+  "execution": "NOT_RUN; git show / file reads only; no product import, test, browser, service, PG, network or resource sampling"
+}

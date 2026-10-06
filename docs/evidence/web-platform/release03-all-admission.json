@@ -1,0 +1,168 @@
+{
+  "at": "2026-10-06T16:47:11.585745+00:00",
+  "state": "ADMITTED_ONE_ALL",
+  "sourceHead": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+  "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+  "sourceFiles": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 28313,
+      "sha256": "353aabc21dffc9461015f2d798e3a6894f5eeb58714368de21a75bf18d38a1bb"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 43491,
+      "sha256": "fd5a216059bfc85600dfb832c00b7948bd89f35d7f4d985a203017ee7a8d0e10"
+    }
+  ],
+  "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+  "backend": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+    "metadata": [
+      {
+        "path": "docs/evidence/svc05-history-compatibility/claim-receipt.json",
+        "sha256": "3b7aa17ed2d3dcd428a01aedc784b084b6d0a023e22d1a250e18b499499cd716"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/dependency-view.json",
+        "sha256": "8eca2632a14ffaf3c8aaf9cec4b0a491b56b88ebc94a55d22ba03679222d4bde"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/interface.md",
+        "sha256": "829daf5f3c35be84f7a0b9414b836d271f0505c19bfc89fba4134e3dbbf68b2c"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/manifest.json",
+        "sha256": "5eb1f1a5aa1bbfc15b5d45bfca48a2332b1c42b9954aed49e67aec65b5069754"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/old-a-result.json",
+        "sha256": "7292991d07dadbd920a44e3be22c4b8d7a908d308fd52704d566e2165c27c234"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/old-a-review.json",
+        "sha256": "a1304d49692d80b0d9aa36f990eab2b19a9bc0602354f7b58ce418a39f17e24d"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/provision.json",
+        "sha256": "c903fbfd2552ba02fb67b5c4dbae2d350701ec8acdea03a5add6ac997b3f524d"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/quality.md",
+        "sha256": "4d3174b95347d6bee81d719cd8a100b39230acfbb6797255d0d141a6d33ba3d3"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/source-bindings.json",
+        "sha256": "f9a76ccdd93b3b49fa38489ffb83a6008dcd43934c6d51257d4809d293901af8"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/source-precheck.json",
+        "sha256": "bef82168b40dfd3e7217eaa419141576f5625d2f3a78c4bb6358170f7fb70290"
+      },
+      {
+        "path": "plans/svc05-history-compatibility/plan.md",
+        "sha256": "90541be95f20c50127c05afe46214b72a8e1204071624354dd5535d66b952a83"
+      },
+      {
+        "path": "plans/svc05-history-compatibility/review.md",
+        "sha256": "9d74948f5f695a1b75a434cf5845c51f99d036bd278668aa9b5f7f50e4a72c0c"
+      },
+      {
+        "path": "plans/svc05-history-compatibility/status.md",
+        "sha256": "5256457c6b31f2690cd92a7f42537cbb7742c789962a7dd9486744191d9fae41"
+      }
+    ]
+  },
+  "artifact": {
+    "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+  },
+  "artifactSourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+  "releaseId": "388371a4972c469b8ace623454594132",
+  "artifactFiles": 10,
+  "runnerDeps": 17,
+  "backendDeps": 10,
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-current-preview.browser.ts",
+      "apps/web/test/web-current-preview.fixture.ts",
+      "docs/evidence/wpf-release03",
+      "plans/wpf-release03-current-preview"
+    ],
+    "state": "active",
+    "branch": "codex/web-current-preview-compatibility",
+    "origin": "new",
+    "taskId": "WPF-RELEASE03",
+    "worker": "w01_owner",
+    "claimId": "bfb209ae-4c74-49cd-8140-f6d4bd3b0f92",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+    "createdAt": "2026-10-06T14:37:56.939Z",
+    "updatedAt": "2026-10-06T14:47:08.816Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerObservedAt": "2026-10-06T16:46:34.204Z",
+  "overlaps": [],
+  "availableBytes": 1228890112,
+  "startBytes": 1207959552,
+  "stopBytes": 1140850688,
+  "previousRuntimeMs": 7983,
+  "allowedMs": 172017,
+  "cleanupReserveMs": 20000,
+  "retainedBytesBefore": 127606,
+  "retainedBytesLimit": 8388608,
+  "previousBudgets": [
+    {
+      "run": "history3-20261006-160901-741882",
+      "elapsedMs": 4109,
+      "cleanup": {
+        "databaseName": "flow_release03_f043891611ba49e9ad73",
+        "databaseCreateAttempted": true,
+        "databaseCreated": true,
+        "markerWritten": true,
+        "databaseRemoved": true,
+        "errors": [],
+        "processIds": [
+          {
+            "pid": 47927,
+            "exitCode": null,
+            "signalCode": "SIGTERM"
+          }
+        ],
+        "finishedAt": "2026-10-06T16:09:24.715Z"
+      }
+    },
+    {
+      "run": "history-20261006-152729-727a99",
+      "elapsedMs": 3874,
+      "cleanup": {
+        "databaseName": "flow_release03_76a0b643c070475ea1b8",
+        "databaseCreateAttempted": true,
+        "databaseCreated": true,
+        "markerWritten": true,
+        "databaseRemoved": true,
+        "errors": [],
+        "processIds": [
+          {
+            "pid": 381,
+            "exitCode": 0,
+            "signalCode": null
+          }
+        ],
+        "finishedAt": "2026-10-06T15:27:59.219Z"
+      }
+    }
+  ],
+  "nodePreviousWindowClosed": true,
+  "run": "all-20261006-164711-15b54e",
+  "gatePath": "/tmp/d01-release03-all-20261006-164711-15b54e-gate.json",
+  "coordination": "Root relay Lead16:44:51 newbatch12/12complete, O14/O15/TUI PG held; one serial A->B approved, no newartifact/personals/provider. A3 partial cannot satisfy A. Sample is managerfresh, not Lead priorfree.",
+  "windowDisposition": "W01_ONE_ALL_PENDING_CLEANUP"
+}

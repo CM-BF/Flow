@@ -1,0 +1,64 @@
+{
+  "state": "SOURCE_BOUND_NOT_RUN",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "branch": "codex/dashboard-summary-detail",
+  "implementation": "6c18b81a11eece9c07dd047d28da099a0b6bbb24",
+  "head": "35d9ac6d5ff410013ebcd6ffb21acbbc48fdc656",
+  "sources": {
+    "apps/execution-dashboard/src/read-model.mjs": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0",
+    "apps/execution-dashboard/src/aggregate.mjs": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc",
+    "apps/execution-dashboard/src/server.mjs": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994",
+    "apps/execution-dashboard/public/app.js": "282226b050274ab87467e8673f395bb48b215cde817b04ffc402d1824f58bbf1",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "6439f771e20942859c7934d4888656bc19d27fbc9f3f2acbdfa03fb5fcb2c885",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "1b081a8d168f132c0a89867e88ee342f4a49e1000452d004a7f1b1e1c8eb6025",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712"
+  },
+  "readOnlyDependencies": {
+    "apps/execution-dashboard/src/human.mjs": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+    "apps/execution-dashboard/src/task-links.mjs": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+    "apps/execution-dashboard/src/status.mjs": "45322a4e1eb0884c212b05f356cbf19f73e79f8c01758426216c52aa32ee7748",
+    "apps/execution-dashboard/src/registry.mjs": "76695b62e820b645ccf2dc764e61bf4c2638060d8416537174f3e4cca059e6e5",
+    "apps/execution-dashboard/src/proof.mjs": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+    "apps/execution-dashboard/src/git-snapshot.mjs": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+    "apps/execution-dashboard/src/documents.mjs": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+    "apps/execution-dashboard/src/coordination/ledger.mjs": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+    "apps/execution-dashboard/test/fixture.mjs": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+    "apps/execution-dashboard/public/index.html": "bb1bfbefd5cf80794f658a32b4530bfc28a18d08d09978fb8a8461b69e8a8614",
+    "apps/execution-dashboard/public/styles.css": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c",
+    "apps/execution-dashboard/public/architecture-data.js": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+    "package.json": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+    "pnpm-lock.yaml": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+    "pnpm-workspace.yaml": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+  },
+  "expectedTestCount": 8,
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "claim": {
+    "id": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 1,
+    "scopeCount": 9,
+    "worker": "w01_owner"
+  },
+  "commandArgs": [
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "apps/execution-dashboard/test/summary-detail.test.mjs"
+  ],
+  "limits": {
+    "totalSeconds": 30,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "finalReportReserveBytes": 131072,
+    "pollSeconds": 0.25
+  },
+  "previousRuntimeMs": 0,
+  "preparedAt": "2026-10-06T16:37:15.275592+00:00",
+  "boundary": "Fixed source nowbound; new6c18 source review + supervisor exactpins acceptance + fresh admission still pending. No gate, product imports or runtime."
+}

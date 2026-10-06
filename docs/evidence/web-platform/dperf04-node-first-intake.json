@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-06T16:48:17.775255+00:00",
+  "state": "FAIL_RAW_ACCEPTED_NOT_PRODUCT_ROOT_CAUSE",
+  "implementation": "1441d86baa40e98f4cb81b82dcc551202973209b",
+  "runtimeHead": "36d687fc682809ce73a90910d86ad34c6349d9dc",
+  "ownerMetadataAfterRun": "34bac707656a7ceca36aa18a569a6c7432d839b1 reported by owner; actualrun remains36d",
+  "leafPass": 6,
+  "leafFail": 1,
+  "tapIncludingParent": {
+    "passed": 6,
+    "failed": 2,
+    "expectedTests": 8
+  },
+  "failure": "test124 Host expected403 observed200; transport diagnosis pending primary source evidence",
+  "notExecuted": "After failed Host assertion, later document traversal/symlink and snapshot compatibility assertions in seventh leaf were not reached. No browser/realPG/registry/4320 conclusion.",
+  "runtimeMs": 1632,
+  "remainingMs": 28368,
+  "cleanup": {
+    "state": "fulfilled",
+    "errors": [],
+    "seconds": 0.0,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "serverClosureBasis": "Fixed server and Git children remain within the terminated/reaped owned process group; no external service used"
+  },
+  "minimumSampledFreeBytes": 1237180416,
+  "maxObservedLogicalTmpBytes": 93088,
+  "evidence": "dperf04-node-first",
+  "rootReview": "dperf04-node-first-root-review.json",
+  "next": "RELEASE actual window first; root/panels source-only header diagnosis; exact claimed test fix after handoff, no automatic rerun or reset.",
+  "diagnosis": "dperf04-1441-host-diagnosis/report.md",
+  "diagnosisMeaning": "FixedNode24.20.0 official vendoredfetch dropsHost; actualincomingheader was not recorded, so productHost bypass notdemonstrated. Onlytest repair planned, original403 unchanged."
+}
