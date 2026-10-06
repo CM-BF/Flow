@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:27:42 UTC / 固定main32c接收与旧claim释放已核；readability实施中 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:33:42 UTC / 7106知识回执接收及六源码相同；b485 v2已释放 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
@@ -15,14 +15,14 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 增量聊天与架构快照已进入主线，聊天可读性正在实施 |
-| 下一可用交付 | 交付更紧凑的聊天界面，并完成知识引用回执主线收口 |
+| 当前产出 | 增量聊天和知识回执已进入主线，正在修复紧凑界面的任务下钻 |
+| 下一可用交付 | 交付紧凑且操作顺畅的聊天界面，再接通知识选择 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
-| 已集成main状态 / HEAD | 管理独核main/origin32c371d389a913f8dd71c3bd8b98dd0697411256 clean；CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已审且在I02候选，尚待正式main；readability c832v1实施。ExecutionLead回执个人center/runner b54 accepting v6、61227/61228原端口与数据保留，0新增provider；本管理未服务验证。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
+| 已集成main状态 / HEAD | 管理独核main/origin32c371d389a913f8dd71c3bd8b98dd0697411256 clean；CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已main7106、六源码相同，66695c收口后b485 v2释放；readability c832v1修复独审R1。ExecutionLead最新回执个人center/runner32c accepting v9、SVC02关闭、用户实际请求完成/operator0query；本管理未服务验证、无新增query授权。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
 | Review | [review.md](review.md)，本次固定发布APPROVED a5e500136438b197305339cbe0a5e10a196a4317；root2026-10-06 07:59 UTC；历史c075仅见归档，不覆盖本次 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -54,7 +54,7 @@
 | WPF-001-25 | completed | d01_owner | PERF03 f909/root8独审，最终7998已入6426且3源码相同；owner9cea记录后2ec58 v2释放，仅对象/转换计数，不声称浏览器收益 |
 | WPF-001-26 | completed | d01_owner | CONTEXT01独立选择模块736ef/d6已审并入fc113，59b9650收口后bfe v2释放；实际App另属后继，不偷偷扩大本TODO |
 | WPF-001-27 | completed | d01_owner | CHAT06I01 9da/e30已审并入32c、十一源同；owner8ca0684c纯main metadata后a729 v2已释放，实际服务/provider验收单列 |
-| WPF-001-28 | in-progress | d01_owner | CONTEXT02八scope5e8213/rootAPPROVED，final6caccb90已once交Lead；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md)，main未接/Send UI后继 |
+| WPF-001-28 | completed | d01_owner | CONTEXT02 5e8213/6cacc已main7106，六源码同；66695c记录后b485 v2释放；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md)，实际Send projection/App仍后继 |
 | WPF-001-29 | in-progress | d01_owner | 已批WPF-CHATREAD01，原CHAT06I已释放；从32c独立树已c832v1九scope正式take；[候选](../../docs/evidence/web-platform/readability-proposal.json)，[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)已建立并送登记，尚无部署观察 |
 
 ## 当前唯一owner、claim与下一步
@@ -65,14 +65,13 @@
 | --- | --- |
 | WPF-001 | d01_owner / web-platform-management，632a7149 v2，仅管理两目录；33bd固定副本已fc113发布，authority不迁 |
 
-| WPF-CONTEXT02 | w01_owner / web-context-receipts，b4858792 v1，固定fc113八scope；5e8213已审/final6caccb90已交Lead，纯冻结/回执逻辑，不占App/Thread/projection |
-| WPF-CHATREAD01 | workspace_panels_owner / web-conversation-readability，c832542c v1，准确32c九scope；已正式派工，首fce5e07已once送登记，[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)；未获部署观察 |
+| WPF-CHATREAD01 | workspace_panels_owner / web-conversation-readability，c832542c v1，准确32c九scope；已正式派工，fixedb9db独审R1待修；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)，Lead97sources登记来源，管理未API采样 |
 
 ## 当前交付与依赖（局部窗口，不是整个goal受阻）
 
 K02、renderer、generic活动及typed ActivityI都已在主线；S01增量正文模块3ac与PERF03消息复用f909也已正式接收于6426，管理独核祖先及八源码相同，旧d94/2ec均v2释放。CHAT06I01以该完整基线领取新十三scope，由同一panels接真实App；CONTEXT01已接收fc113并全九scope释放；CONTEXT02用新独立fc113八scope接纯回执逻辑，知识实际App UI仍后继。主线模块就绪不等新的接线已验证。
 
-当前个人center/runner版本以ExecutionLead的b54 accepting v6回执为准，Web源码、main和后台运行版本分开。旧fb906/75a观察在下方历史时点保留，不能据main推进推断服务自动重载。管理文档主线固定副本由Lead受控同步，唯一实时权威仍是管理worktree。
+当前个人center/runner版本以ExecutionLead的32c accepting v9回执为准，Web源码、main和后台运行版本分开。旧fb906/75a观察在下方历史时点保留，不能据main推进推断服务自动重载。管理文档主线固定副本由Lead受控同步，唯一实时权威仍是管理worktree。
 
 ## 验收边界与开放目标
 

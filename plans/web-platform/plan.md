@@ -99,7 +99,6 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 
 | 当前工作 | 唯一owner / worktree / branch | 写入范围与下一停点 |
 | --- | --- | --- |
-| WPF-CONTEXT02 | w01_owner / web-context-receipts / codex/web-context-receipts | b4858792 v1，固定fc113八literal；5e8213已独审、final6caccb90已交Lead，实际知识App另片 |
 | WPF-CHATREAD01 | workspace_panels_owner / web-conversation-readability / codex/web-conversation-readability | c832542c v1，固定32c九literal；正文与composer优先，保留折叠外error/unknown，首fce5e07已once送登记，[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md) |
 | WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v2，仅管理两目录；固定33bd发布已fc113逐字接收，authority不迁 |
 
@@ -120,7 +119,7 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 | 已集成 / 原范围释放 | WPF-ACTIVITYI01真实工具/思考与footer | ba341已审并在253b祖先/17paths相同，最终9aa35096 clean、122 v2已释放；保留R1红→修与不同target证据，不重复验收 |
 | 已集成 / 原范围释放 | WPF-CHAT06S01与PERF03 | 3ac/f909已入6426，八source同批准目标；原d94/2ec已v2释放，保留模块/计数验证边界 |
 | 已集成 / 原范围释放 | WPF-CONTEXT01知识引用选择 | 736ef已审并入fc113；九scope全停写/bfe v2释放；仅选择模块，真实App知识入口仍未实施 |
-| 已审待main | WPF-CONTEXT02知识引用回执 | 八scope纯逻辑5e8213已审/final6caccb90已交Lead；Queue实际guard，Send guard准备但projection未接 |
+| 已集成 / 原范围释放 | WPF-CONTEXT02知识引用回执 | 5e8213/6cacc已main7106，六源码同；66695c收口后b485 v2释放；Queue实际guard，Send guard准备但projection未接 |
 | 独立实施 | WPF-CHATREAD01聊天可读性 | 原CHAT06I已main/released；新32c独立树已c832v1九scope正式take；沿REQ43，不抢CONTEXT02 |
 | 已集成 / 待owner释放 | WPF-CHAT06I01增量正文 | fixed9da/e30已main32c/十一源码同；rootR1 CLOSED，owner只作main metadata与停止全部scope，再fresh release |
 | 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
@@ -161,7 +160,7 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 
 - [x] **WPF-001-27** WPF-CHAT06I01：完整已审6426基线领取十三scope接入增量正文；P01唯一启停/授权、当前turn有限读预算/连接可见性/单Thread语义/phase提示，实际App fixture验证。
 
-- [ ] **WPF-001-28** WPF-CONTEXT02（沿REQ42）：纯引用冻结/回执片，固定fc113八scope，5e8213已审/final6caccb90已交Lead；[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md)。main收口另计，Send projection与实际UI继续开放。
+- [x] **WPF-001-28** WPF-CONTEXT02（沿REQ42）：纯引用冻结/回执片，固定fc113八scope，5e8213/6cacc已审并入7106，66695c收口/b485 v2释放；[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/plans/wpf-context-receipts/status.md)。该receipt片main收口完成，Send projection与实际UI继续开放。
 - [ ] **WPF-001-29** WPF-CHATREAD01（沿REQ43）：已批准下一可读性片，九literal精确候选见[范围](../../docs/evidence/web-platform/readability-proposal.json)；拟独立web-conversation-readability，[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)已建立；main/release→fresh take→首canonical顺序已完成，已一次登记请求，稳定配置收详情但error/unknown必须可达。
 
 ## 验收、风险与持续方式

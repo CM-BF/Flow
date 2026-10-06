@@ -49,3 +49,11 @@ ExecutionLead请求root给F01唯一driver准备单次真实stream UI observer与
 研究以固定main32c的conversation-stream-integration.browser.ts、App tab属性、plugin-integration/react/session、conversation-stream/messages及contracts/assistant-stream为源码依据：选中tab的aria-controls解析对应visible pane，定位Message input；观察[data-stream-status]与aui_assistant-message-root/content。flow.assistant-stream在当前真实user anchor自动激活并经窄task.assistant-stream.read授权；Disable按钮仅表示enabled，不能证明当前readiness。
 
 一次候选旅程只有在至少两次实际draft正文增长时才报告增量；final必须按typed source、settlement replace/retain与水位判定，不能强制清掉全部draft（合法retain需保留）。当前pane的Previous/Next应为0，下一条未发送draft必须保留。只被动捕获公开响应白名单，不自动读取details/全文。如果provider无partial，或截断无法结算，如实记录限制，绝不为补证再发query。真实执行需GO另给具体候选及单次预算，F01保持唯一driver。
+
+## 2026-10-06 08:33:42 UTC 接收与独审变化
+
+CONTEXT02正式main7106a35447bf43026ad7b5ad7c25dc530fd0c4f5接收，管理独核main/origin/clean、5e/6c祖先与六hash一致；原142不重跑。作者66695c6579189644ae6399dcaca80cc04487a178 clean并全八scope停写，fresh b485 v2于08:33:02.956Z释放，[原始回执](context02-release-receipt.json)。父TODO28完成，实际知识App20scope仍等readability完成/完整组合base后领取，不用后继拖原片永远in-progress。
+
+Lead报告97sources已登记CHATREAD/CHAT10、4320重载中；管理不重复API。个人center/runner32c acceptingv9，SVC02关闭，用户实际请求完成/operator0query是Lead来源，不是本队复验或新增query许可。
+
+CHATREAD01 b9db/616671管理窄核见[审计](chatread01-candidate-audit.json)：58paths/9scope、七target/dev/prod/currenthash同、5baselinehash=32c、6md43links0断。root固定CUA发现R1/P2：设置modal里Inspect turn打开后台任务workspace但modal未关闭、page仍inert、焦点留Inspect。已交唯一owner同九scope修复两个下钻动作，原验收保持历史，新target再独审，暂不REVIEW_READY。管理没有重复browser/产品检查。

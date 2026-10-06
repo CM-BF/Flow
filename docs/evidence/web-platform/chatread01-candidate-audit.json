@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-06T08:32:43.454645+00:00",
+  "head": "616671aed211359d2b0ec9b44dd2c9d9b48b6b44",
+  "clean": true,
+  "base": "32c371d389a913f8dd71c3bd8b98dd0697411256",
+  "target": "b9db679e403fb2a814261cdc9b68f462b31b65b7",
+  "paths": 58,
+  "scopeCount": 9,
+  "outside": [],
+  "hashes": {
+    "apps/web/src/conversations/ConversationThread.tsx": "4fe16c3966b300c6d9290215a2e92b4f7f2bf4beec29acaf008eecf0f2758b81",
+    "apps/web/src/conversations/conversations.css": "2e91126603ffdd214ea0cff925818f416deef64fdd8e870e25a10b989bf897d3",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "1a34e83b8236697e61a6cfd1e096bae389e7f08470d452e51cd93fc52390a704",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "4d9cc523034b040c13da4b1b8fcb62b2b98dcfe92309a2cb88ace4b25ab3f4a1",
+    "apps/web/src/execution-profiles/execution-profiles.css": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+    "apps/web/test/conversation-readability.browser.ts": "d14541d9ec2b8ed23d339a424fa4d1f93417bbc5c0bbd2c440419b9efad77aa6",
+    "apps/web/test/conversation-readability.fixture.ts": "7ebd91ad495f23962a532fda85c0b7d599f7c0efbda197731ca6000b7f7c3333"
+  },
+  "reports": {
+    "development-browser.json": {
+      "at": null,
+      "sourceCommit": "fce5e07daab8adccb0ac824e55ee3a25659d88cb",
+      "checks": 7,
+      "errors": [],
+      "failure": null
+    },
+    "production-browser.json": {
+      "at": null,
+      "sourceCommit": "fce5e07daab8adccb0ac824e55ee3a25659d88cb",
+      "checks": 7,
+      "errors": [],
+      "failure": null
+    }
+  },
+  "layoutHashComparison": "five baseline production hashes match32c; after hashes match fixedtarget; final behavior screenshots not assumed initial state",
+  "layoutObserved": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "footerBefore": 295.71875,
+      "footerAfter": 178.796875,
+      "bodyAboveComposerBefore": 344.28125,
+      "bodyAboveComposerAfter": 461.203125,
+      "bodyDelta": 116.921875,
+      "emptyQueueBefore": 47.5,
+      "emptyQueueAfter": 30,
+      "overflowBefore": false,
+      "overflowAfter": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "footerBefore": 339.234375,
+      "footerAfter": 192.4375,
+      "bodyAboveComposerBefore": 424.765625,
+      "bodyAboveComposerAfter": 571.5625,
+      "bodyDelta": 146.796875,
+      "emptyQueueBefore": 47.5,
+      "emptyQueueAfter": 30,
+      "overflowBefore": false,
+      "overflowAfter": false
+    }
+  ],
+  "protectedDiffEmpty": true,
+  "markdown": 6,
+  "links": 43,
+  "broken": [],
+  "review": "CHANGES_REQUESTED root fixed b9db: R1/P2 settings modal remains open and page inert after task Inspect navigation. Manager scope audit does not close this behavior finding.",
+  "noRepeatedProductBrowserApi": true,
+  "next": "Original owner repairs both task drilldown actions in existing9scope, newfixedtarget needs root re-review."
+}
