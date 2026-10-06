@@ -5,6 +5,7 @@ import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
 import type { GoalArtifactBinding, GoalCommand, GoalCommandResult, GoalCreation, GoalExplanation } from '../../../../packages/contracts/src/goals.js';
+import type { ExecutionProfileReference } from '../../../../packages/contracts/src/execution-profiles.js';
 import { taskSubmissionSchema } from '../../../../packages/contracts/src/tasks.js';
 import { canonical, HttpError, sha256 } from '../database.js';
 import { loadProject } from '../projects/storage.js';
@@ -33,7 +34,7 @@ export async function applyGoalCommand(client: PoolClient, boss: PgBoss, goalId:
   const state = authorizedState ?? await loadState(client, goalId, true);
   requireNode(state, input.nodeId);
   if (input.kind === 'define-input') return defineInput(client, state, input);
-  if (input.kind === 'execute') return execute(client, boss, state, input);
+  if (input.kind === 'execute') return executeGoalNode(client, boss, state, input, { harness: 'fixture', fixture: input.fixture });
   return acceptDelivery(client, state, input);
 }
 
@@ -59,7 +60,12 @@ async function defineInput(client: PoolClient, state: GoalState, input: Extract<
   const explanation = await explain(client, state, input.kind, `Actual input version ${version} was saved. ${input.reason}`, { nodeId: input.nodeId, inputVersion: version });
   return { goalId: state.goal.id, nodeId: input.nodeId, inputVersion: version, explanation, changed: true };
 }
-async function execute(client: PoolClient, boss: PgBoss, state: GoalState, input: Extract<GoalCommand, { kind: 'execute' }>): Promise<Result> {
+type ExecutionInput = Omit<Extract<GoalCommand, { kind: 'execute' }>, 'fixture'>;
+type ExecutionTarget = { harness: 'fixture'; fixture: Extract<GoalCommand, { kind: 'execute' }>['fixture'] }
+  | { harness: 'claude'; executionProfile: ExecutionProfileReference };
+/** Caller owns authorization/transaction; both owner-native and fixture commands share exact input binding. */
+export async function executeGoalNode(client: PoolClient, boss: PgBoss, state: GoalState, input: ExecutionInput, target: ExecutionTarget): Promise<Result> {
+  requireNode(state, input.nodeId);
   const definition = state.inputs.get(input.nodeId);
   if (!definition || definition.version !== input.expectedInputVersion) throw new HttpError(409, 'input_version', 'Execution requires the current actual input version.');
   if (!knowledgeCurrent(definition.input, state.goal.projectId, state.knowledgeHeads)) throw new HttpError(409, 'goal_knowledge_obsolete', 'Selected knowledge has changed; redefine the input with current references.');
@@ -69,7 +75,7 @@ async function execute(client: PoolClient, boss: PgBoss, state: GoalState, input
   const context = await dependencyContent(client, dependencies);
   const prompt = JSON.stringify({ goal: { originalGoal: state.goal.originalGoal, constraints: state.goal.constraints, acceptance: state.goal.acceptance }, input: definition.input, dependencies: context });
   if (prompt.length > 16_000) throw new HttpError(409, 'input_too_large', 'Actual inputs exceed the task prompt limit; no context was truncated.');
-  const taskInput = taskSubmissionSchema.parse({ title: requireNode(state, input.nodeId).title, prompt, harness: 'fixture', fixture: input.fixture, verification: definition.input.verification });
+  const taskInput = taskSubmissionSchema.parse({ title: requireNode(state, input.nodeId).title, prompt, ...target, verification: definition.input.verification });
   const task = await acceptTask(client, boss, taskInput);
   if (definition.input.knowledge?.length) await bindGoalExecutionInput(client, task.id, state.goal.id, input.nodeId, definition.version, prompt);
   const id = randomUUID();
@@ -78,7 +84,7 @@ async function execute(client: PoolClient, boss: PgBoss, state: GoalState, input
   const explanation = await explain(client, state, input.kind, `Execution was authorized with input version ${definition.version} and ${dependencies.length} fixed dependencies. ${input.reason}`, { nodeId: input.nodeId, inputVersion: definition.version, executionId: id });
   return { goalId: state.goal.id, nodeId: input.nodeId, inputVersion: definition.version, executionId: id, task, explanation, changed: true };
 }
-async function requirePreviousStopped(client: PoolClient, state: GoalState, input: Extract<GoalCommand, { kind: 'execute' }>) {
+async function requirePreviousStopped(client: PoolClient, state: GoalState, input: ExecutionInput) {
   const previous = state.nodes.get(input.nodeId)?.latest_execution_id ?? null;
   if (previous !== input.previousExecutionId) throw new HttpError(409, 'execution_version', 'A new execution must explicitly name its predecessor.');
   if (!previous) return;
