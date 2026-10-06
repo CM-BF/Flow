@@ -19,3 +19,5 @@ Reviewer：root / gpt-6-astra ultra。结论 **APPROVED，仅有界 partial 基�
 Root只复核作者第二轮34.322秒与85ms cleanup fulfilled证据，不称独立重跑。首轮cleanup报告不完整、保守45秒计与累计79.322秒非机器精确的性质保留。确认32为仍打开conversation数，另有初始draft；close3后DOM下降、late detail重开共1GET只说明缓存观察，不推heap。draft/knowledge/未知receipt原key/body仅同页恢复，不扩为reload。
 
 Blocking findings：0。P3非阻塞：末尾theme/截图未覆盖（App Chats toggle sidebar导致locator timeout已源码核实），page-hidden/heap/latency/late-history未测；已知脚本限制保留，复跑须新预算。原partial/exit1/checks失败字段不改成全绿。无真实中心/provider/DB或生产优化验收。主线接收另记，当前claim继续保留。
+
+主线独立事实：362af3bac77541e5a60979326bcf4d4b8c947915已受控接收，两源逐字匹配[main观察](../../docs/evidence/wpf-workspace-lifecycle-baseline/main-observation.json)。本次纯metadata不重跑browser，不改变原review限定范围或checks FAILED/partial。

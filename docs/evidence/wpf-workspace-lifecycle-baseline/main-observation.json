@@ -1,0 +1,42 @@
+{
+  "observedAt": "2026-10-06T12:20:00.054424+00:00",
+  "accepted": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "observedRefs": {
+    "HEAD": "628156e199ee335ffadd22e28247f16a8887d82f",
+    "main": "f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa",
+    "origin/main": "f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa"
+  },
+  "dirtyBefore": "",
+  "ancestryToAccepted": {
+    "implementation": false,
+    "priorMetadata": false
+  },
+  "note": "Source intake: blob equality is recorded separately from ancestry; no tests/browser/API were rerun.",
+  "sources": [
+    {
+      "path": "apps/web/test/workspace-lifecycle.fixture.ts",
+      "sha256": {
+        "target": "44becc897d2fca5288da15b222d69b9094a3f84c31a7001914c22437f6ff3a0d",
+        "accepted": "44becc897d2fca5288da15b222d69b9094a3f84c31a7001914c22437f6ff3a0d",
+        "observedMain": "44becc897d2fca5288da15b222d69b9094a3f84c31a7001914c22437f6ff3a0d",
+        "working": "44becc897d2fca5288da15b222d69b9094a3f84c31a7001914c22437f6ff3a0d"
+      },
+      "allEqual": true
+    },
+    {
+      "path": "apps/web/test/workspace-lifecycle.browser.ts",
+      "sha256": {
+        "target": "29400ad8913900212dd40cbfa19687c4bdb43dfcfc18a4b9508b247d71d022b5",
+        "accepted": "29400ad8913900212dd40cbfa19687c4bdb43dfcfc18a4b9508b247d71d022b5",
+        "observedMain": "29400ad8913900212dd40cbfa19687c4bdb43dfcfc18a4b9508b247d71d022b5",
+        "working": "29400ad8913900212dd40cbfa19687c4bdb43dfcfc18a4b9508b247d71d022b5"
+      },
+      "allEqual": true
+    }
+  ],
+  "leadEvidence": {
+    "commit": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "path": "docs/evidence/i02/native-sink-workspace-comparison.json",
+    "checks": "Lead root/Web types0; original partial 8 complete/1 locator failure retained; browser not rerun."
+  }
+}

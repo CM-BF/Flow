@@ -1,0 +1,102 @@
+{
+  "status": {
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md)",
+        "id": "WPF-MATURE-05",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root",
+        "value": "Web /root"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "delivered",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 2,
+      "output": "已测得隐藏聊天继续保留界面、关闭移除界面；草稿与未决回执重开保留",
+      "next": "本片段已交付",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7",
+      "scopes": [
+        "apps/web/test/workspace-lifecycle.fixture.ts",
+        "apps/web/test/workspace-lifecycle.browser.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-WORKSPACEPERF01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/web-workspace-lifecycle-baseline",
+    "branchState": "completed / approved / main-accepted",
+    "updatedAt": "2026-10-06T12:20:00.000Z",
+    "updatedRecord": "2026-10-06 12:20:00 UTC",
+    "todos": [
+      {
+        "id": "WPF-WORKSPACEPERF01-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[take](../../docs/evidence/wpf-workspace-lifecycle-baseline/take-receipt.json)、[Interface](../../docs/evidence/wpf-workspace-lifecycle-baseline/interface.md)"
+      },
+      {
+        "id": "WPF-WORKSPACEPERF01-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "两新脚本已具备固定hash/90秒budget与cleanup；首异常保留"
+      },
+      {
+        "id": "WPF-WORKSPACEPERF01-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[实际partial报告](../../docs/evidence/wpf-workspace-lifecycle-baseline/validation.md)，8检查/三档与保护场景已记录；截图与native page-hidden未覆盖"
+      },
+      {
+        "id": "WPF-WORKSPACEPERF01-04",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "root 11:07:36限定APPROVED；main受控接收，partial保持"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "c450c2da7e6185b88db9f46e0299ee504ee6f3e8 / 当前Git聚合",
+    "declaredDirty": "两个测试源已固定；本次仅证据/三件套收口，实际Git聚合为准",
+    "checks": {
+      "state": "failed",
+      "target": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7",
+      "record": "FAILED 1711e2b0933ec28b8bbd9af11cba4243b644e0d7；有界实验 partial：8完成/1末尾locator失败，定向types通过；全Web既有两类型错误"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED 1711e2b0933ec28b8bbd9af11cba4243b644e0d7（仅partial基线）",
+    "mainRecord": "INTEGRATED 362af3bac77541e5a60979326bcf4d4b8c947915，两源逐字匹配；[观察](../../docs/evidence/wpf-workspace-lifecycle-baseline/main-observation.json)",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7"
+  }
+}

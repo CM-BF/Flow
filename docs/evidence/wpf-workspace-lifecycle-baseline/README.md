@@ -18,4 +18,4 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH FLOW_LIFECYCLE_BUDGET_MS=45000 pnpm exe
 
 类型验证只覆盖两个新入口及直接依赖；全 Web 原有 release fixture 两处 `string | undefined` 错误仍在。没有 browser screenshots、native page-hidden、可靠交互延迟或 heap 结论；没有模型、真实中心、数据库或个人服务操作。
 
-Root已于2026-10-06 11:07:36 UTC限定批准固定1711 partial基线；[独立审查](../../../plans/wpf-workspace-lifecycle-baseline/review.md)。作者browser仍partial，审查不使截图/未测项目完成，主线接收另待。
+Root已于2026-10-06 11:07:36 UTC限定批准固定1711 partial基线；[独立审查](../../../plans/wpf-workspace-lifecycle-baseline/review.md)。作者browser仍partial，审查不使截图/未测项目完成，主线已于固定362af3bac77541e5a60979326bcf4d4b8c947915受控接收，见[来源观察](main-observation.json)；原partial结论不变。
