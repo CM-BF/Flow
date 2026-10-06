@@ -29,3 +29,9 @@ Lead对a3ad296d独立APPROVED_DEPENDENCY_VIEW_DELTA，94绑定、67固定backend
 ## 2026-10-06 19:20 UTC 窄修待审/纯检查未启动
 
 新target `b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16`，两源采样/异常保留与9个own-evidence小用例。此前25b与a3ad批准不自动扩到本delta。前置free不足时在reservation/测试进程前退出；selected0，不能声称9项通过。[manifest](../../docs/evidence/svc05-retained-web-compatibility/sampling-delta/manifest.json)，无新增PG/Chrome/provider。
+
+## 2026-10-06 19:27 UTC 源码独审与9纯case实际结果
+
+独立reviewer native_center_owner 对b41ae1a7/a602结论APPROVED_SOURCE_NOT_RUN，无P1/P2、11bindings一致，原回执 [independent-source-review](../../docs/evidence/svc05-retained-web-compatibility/sampling-delta/independent-source-review.json) 保留限定。随后Lead授权的一次9纯case均通过，361.654ms/exit0/909B，PGID53235自然退出absent，checkpoint后同inode tmp删除；0PG/Chrome/provider。该新raw交Lead补核，作者不将source-only批准伪扩为真实兼容验收。
+
+[verification-manifest](../../docs/evidence/svc05-retained-web-compatibility/sampling-delta/verification-manifest.json) 与 [runtime-prepared](../../docs/evidence/svc05-retained-web-compatibility/sampling-delta/runtime-prepared.json) 固定新sourceDigest；原两次失败与空间前置失败不变。源码停写，新实际两App窗口未授权。

@@ -39,3 +39,9 @@ Lead批准的两条 ignored alias 已建立：`@flow/client`只指同一af51源�
 完整checkpoint后worker46178/Chrome49046全组absent，三监听消失；专库marker/目录devino相同，5.09ms连接零，普通DROP remaining[]/tmp清理。原chrome输出3847B完整保存；退出code未观测，不称exit0。minfree1,473,245,184B、peaktemp8,890,074B，均在观测阈值内。累计保守扣两次整个supervisor时间17,812ms；候选剩余72,188ms并非新许可。兼容NOT_PROVEN，0provider/个人操作，无重试。
 
 [最小后继提案](second-run-followup-proposal.json)仅改验收器采样/异常保留，尚无源码变更或新增检查授权。
+
+## 2026-10-06 19:27 UTC 采样/异常窄修准备通过
+
+新source `b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16` 已native_center_owner源码独审；新sourceDigest `ae8b53e021b9dc6c473069e3ca189db31b6acd3dafba8633024a4cc18b0c16b3`。一次9个纯小用例9/9（361.654ms，外层423ms），stdout909B/stderr0，group自然退出/同inode tmp清理。此前空间不足未启动记录保留。临时文件20ms采样观察峰值0，不误说实际无写入；用例固定文件最大100B，无大复制。
+
+[新检查manifest](sampling-delta/verification-manifest.json) 限定纯修复准备，旧两App兼容仍NOT_PROVEN；原失败、断言、累计预算和个人服务均不改。源码停写，等待新实际窗口。

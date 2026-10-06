@@ -1,0 +1,141 @@
+{
+  "at": "2026-10-06T19:27:51.343583+00:00",
+  "source": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+  "state": "PURE9_PASSED_REAL_COMPATIBILITY_NOT_PROVEN",
+  "sourceDigest": "ae8b53e021b9dc6c473069e3ca189db31b6acd3dafba8633024a4cc18b0c16b3",
+  "entries": [
+    {
+      "path": "experiments/personal-current-release/fixture.mjs",
+      "bytes": 15439,
+      "sha256": "29a1129103eb05ba29a526b2baf86500abe6bf9d2b7f60aba596e0d0b47645fd",
+      "kind": "source",
+      "commit": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16"
+    },
+    {
+      "path": "experiments/personal-current-release/browser.mjs",
+      "bytes": 27090,
+      "sha256": "26428e653f3c41f4c3462a5be2366eddce533337c006d05aa2da07c773610098",
+      "kind": "source",
+      "commit": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16"
+    },
+    {
+      "path": "experiments/personal-current-release/inventory.mjs",
+      "bytes": 5165,
+      "sha256": "7cd7d4bf63b964becae3af7e0cc06be75d42f7ab8311cbd22614c2e822ea5e46",
+      "kind": "source",
+      "commit": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16"
+    },
+    {
+      "path": "experiments/personal-current-release/transport.mjs",
+      "bytes": 8743,
+      "sha256": "fb1d6cc892c6377b5b66bded4d1f1bd8ccd4968083a272312e3f489888a4d1aa",
+      "kind": "source",
+      "commit": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/checks.test.mjs",
+      "bytes": 6333,
+      "sha256": "f1351596984019b3dc9a0f9a276b3c97b993022e44c8459583919b6767f97725",
+      "kind": "test source",
+      "commit": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/checks-20261006-1926/checkpoint.json",
+      "bytes": 348,
+      "sha256": "ec9ec4c13142002a929793b1bc6bf3481e460a4c029e133bb0ff62b3a53526e7",
+      "kind": "raw"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/checks-20261006-1926/reservation.json",
+      "bytes": 645,
+      "sha256": "414517038b531a817ab90875f4032503ed42216f402ad9fa604d79125d34fc3d",
+      "kind": "raw"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/checks-20261006-1926/resource.json",
+      "bytes": 136,
+      "sha256": "dc6e7f73e26392fbd564a5ef2f1c9dee713cf4ae7a7ec02dcaa735e8860a9777",
+      "kind": "raw"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/checks-20261006-1926/result.json",
+      "bytes": 424,
+      "sha256": "56bfaccf7abbd5c749cfc13aad3aaf262ca4e3046902ad562b9849d1951bf8e3",
+      "kind": "raw"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/checks-20261006-1926/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "raw"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/checks-20261006-1926/stdout.txt",
+      "bytes": 909,
+      "sha256": "11c79aaa6c60ac0e3fac33fc2c2fd11ebe937f71b303bd94e74806ca005d0ab0",
+      "kind": "raw"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/manifest.json",
+      "bytes": 3282,
+      "sha256": "fb09783ce0303c559ed8324f1abc86ddfb36288d9dad6287cd2dd7e344d658cf",
+      "kind": "evidence"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/preflight-failure.txt",
+      "bytes": 88,
+      "sha256": "ac45f41b84f5f7903b2f0e0a971871deafcd85cb989783a139c0f536cf8179a3",
+      "kind": "evidence"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/not-run.json",
+      "bytes": 780,
+      "sha256": "4e89f0cb32f87fab5d1fc6f60d19102b275a6af7078edfbf958d3a00338daf91",
+      "kind": "evidence"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/independent-source-review.json",
+      "bytes": 6004,
+      "sha256": "b1a0018289766dff1dc84dae954eaace0a977f54de810a4f16fb58eff2c19d7f",
+      "kind": "evidence"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/runtime-prepared.json",
+      "bytes": 1252,
+      "sha256": "9ce0a3026c6b1288c4d1c3460d9d6837833273ec89e0e9096d12c3429b794570",
+      "kind": "evidence"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/verification-analysis.json",
+      "bytes": 1249,
+      "sha256": "ea93567565e8e8980be0d4a76e5118148b14ca977e25b21d93aff8c970ca795b",
+      "kind": "evidence"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/first-run-manifest.json",
+      "bytes": 6857,
+      "sha256": "c0a623b1e358a3ba6e0c33234580930bbc920567277fc57321ef389ee8ed531d",
+      "kind": "historical unchanged"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/second-run-manifest.json",
+      "bytes": 8738,
+      "sha256": "efb4ebbfd239e440adbe5c1342721d89e78131d0e2c593528091cb9d5862207c",
+      "kind": "historical unchanged"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/runtime-dependency-delta/manifest.json",
+      "bytes": 31904,
+      "sha256": "469542723f7962db03e07859498559292ca280eb7dd6cf61d09176bcd8bf43e9",
+      "kind": "historical unchanged"
+    }
+  ],
+  "testExecution": {
+    "selected": 9,
+    "passed": 9,
+    "durationMs": 361.654209,
+    "exitCode": 0,
+    "oneActualInvocation": true
+  },
+  "limits": "No PG/Chrome/provider; prior2runs remain failed; sample accounting is observational, not OS hardquota; source-only independent approval separate from new raw review"
+}
