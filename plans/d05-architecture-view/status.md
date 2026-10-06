@@ -69,3 +69,5 @@
 新增 ENG01B/TUI01C 至131个唯一来源，登记与解析验证见 engineering-tui-registry-validation.json；129实际历史快照已归档 engineering-129-registry-live.json。固定架构仍由D06维护，本批不改图、不把新登记当产品完成。
 
 10:49:58.895Z实际131来源、ENG01B/TUI01C/DPERF02 current=true且errors/issues空，见proof-131-registry-live.json。新增Web共享ACK来源待下一正常132来源换载，不为metadata重复架构或产品检查。
+
+2026-10-06 11:00:58.883Z：实际4320重载132唯一来源，main4285182a clean；ACK01/ENG01B/TUI01C/SVC04人读字段完整、source live、errors/issues空。仅替换核PID18687的本看板服务，个人61227/61228未动；[实际快照摘要](../../docs/evidence/d05/proof-132-registry-live.json)。

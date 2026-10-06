@@ -1,0 +1,119 @@
+{
+  "generatedAt": "2026-10-06T11:00:58.883Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "4285182adb71158f223faf32d60f3c095d58a071",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T11:01:00.419Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "sources": 132,
+  "selected": [
+    {
+      "id": "WPF-ACK01",
+      "current": true,
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "聊天回执已统一检查，异常回复仍可用原请求安全重试",
+        "next": "主线接收统一的聊天受理判断",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ENG01B",
+      "current": true,
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "review",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "专用工程宿主已接通并完成恢复验证，正在独立审查",
+        "next": "经审查后接收可配置的合成工程通路",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "TUI01C",
+      "current": true,
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "终端已能逐段显示正文并按需展开活动，正在核对网页共同使用的规则",
+        "next": "可看到回复逐段增长并展开工具活动的终端",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "SVC04",
+      "current": true,
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "个人网页已独立更新，后台与执行器持续运行，旧页面资源仍保留。",
+        "next": "本片段已交付。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    }
+  ]
+}
