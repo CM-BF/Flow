@@ -1,0 +1,50 @@
+{
+  "observedAt": "2026-10-06T08:45:51.897069+00:00",
+  "mainReceipt": "d7e1e64e7792f4d1ad4933db042f10f266ad0cca",
+  "ownerHeadAtObservation": "2f8585985f702ffb57ab34a4ad4c4bb0282a46bf",
+  "dirtyAtObservation": "",
+  "implementationTarget": "527176c2b13880e6009be9605f08ae560315624d",
+  "sourceFiles": {
+    "apps/web/src/conversations/ConversationThread.tsx": "c25c512abc122a6a257262c6bf91ff6506b7c1021e092eefc9dc61388a733da1",
+    "apps/web/src/conversations/conversations.css": "2e91126603ffdd214ea0cff925818f416deef64fdd8e870e25a10b989bf897d3",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "1a34e83b8236697e61a6cfd1e096bae389e7f08470d452e51cd93fc52390a704",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c",
+    "apps/web/src/execution-profiles/execution-profiles.css": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+    "apps/web/test/conversation-readability.browser.ts": "41fa7656a43cd197ad3affbca0419c21a89d7c702ddf4318617b5adb4f51b52e",
+    "apps/web/test/conversation-readability.fixture.ts": "7ebd91ad495f23962a532fda85c0b7d599f7c0efbda197731ca6000b7f7c3333"
+  },
+  "sevenMainHashesMatch": true,
+  "targetAncestor": true,
+  "leadEvidence": "docs/evidence/i02/pool-readability-final-comparison.json",
+  "liveClaimObservedAt": "2026-10-06T08:45:25.379Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/conversations.css",
+      "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-readability.browser.ts",
+      "apps/web/test/conversation-readability.fixture.ts",
+      "docs/evidence/wpf-chat-readability",
+      "plans/wpf-chat-readability"
+    ],
+    "state": "active",
+    "branch": "codex/web-conversation-readability",
+    "origin": "new",
+    "taskId": "WPF-CHATREAD01",
+    "worker": "workspace_panels_owner",
+    "claimId": "c832542c-0222-4167-bb6f-3746d585a10c",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability",
+    "createdAt": "2026-10-06T08:23:06.246Z",
+    "updatedAt": "2026-10-06T08:23:06.246Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "apiResampled": false,
+  "realService": "No operation; personal center remains32c/v9, steering false."
+}

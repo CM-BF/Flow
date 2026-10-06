@@ -23,3 +23,5 @@ R1 fixedreview发现：b9db配置Dialog内两个导航action仍沿正文触发ca
 2026-10-06 08:38 UTC R1交付clean-code：新增同文件useProfileDialog只管open与明确导航后的关闭焦点，普通关闭不拦Radix默认行为；展示slot给navigate闭包，不给client或权限。Thread只组合确切task动作/焦点；无第二全局焦点系统，App/runtime保持只读。按[Radix Dialog](https://www.radix-ui.com/primitives/docs/components/dialog)受控open/onOpenChange与onCloseAutoFocus、[APG modal](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/)工作流目标焦点例外实现。检查错误处理/命名/职责/重复后，无额外结构拆分必要。两次R1脚本locator/cleanup错误保留；dev8/prod8确认两个实际导航和普通关闭、草稿、queue/stream等未回归。527176c源冻结，独立复审尚待；不把作者检查当root重跑。
 
 2026-10-06 08:39:09 UTC root独立复审：完整五生产与fixture/browser、R1两源一专测差异核验，CUA实际两导航/目标键盘/草稿和普通Escape通过，七hash与作者dev8/prod8全同，APPROVED/R1 CLOSED。Root未重跑作者16browser/tsc/build；HMR时旧tab错误与既有App view-binding观察按review保留，不宣称整会话无错误。最终metadata只转录，不为文档重跑产品；产品继续冻结。
+
+2026-10-06T08:45:51.897069+00:00 main收口：仅metadata，7实现hash与main相等，原review保持527；本地来源parser/链接轻核，无产品测试或API/服务动作。全部九scope停止写入，待管理release。
