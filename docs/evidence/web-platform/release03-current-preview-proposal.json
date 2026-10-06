@@ -4,7 +4,6 @@
   "task": "WPF-RELEASE03",
   "parent": "WPF-MATURE-01",
   "owner": "w01_owner",
-  "state": "STRUCTURE_APPROVED_NOT_TAKEN",
   "candidateWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
   "candidateBranch": "codex/web-current-preview-compatibility",
   "candidateBase": "362af3bac77541e5a60979326bcf4d4b8c947915",
@@ -15,16 +14,6 @@
     "docs/evidence/wpf-release03"
   ],
   "priority": "Advance reviewed stablefrontend to actualpreview while Recovery continues; neither entireRecovery norSVC06bigbuild is prerequisite. Ordinaryupdates only canonicalstatus/dashboard, noGOACK.",
-  "frontend": {
-    "source": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
-    "artifact": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
-    "audit": "release03-existing-artifact-root-audit.json",
-    "files": 10,
-    "logicalBytes": 1588017,
-    "verifiedRootScope": "Exact10files/hashes/finalsource-manifest/noSymlinks/fiveHTMLrefs, fixturefalse fixedbuildsource; no runtimecheck",
-    "releaseReady": false,
-    "reason": "Plain/assets bytes, no releaseId/SVC descriptor manifest. ExistingSVC04 prepare has no prebuiltimport; only reuses already verified matching formalartifact, otherwise internal-build withformat2base. Do not forge manifest or rewritebytes under oldevidence."
-  },
   "backend": {
     "source": "362af3bac77541e5a60979326bcf4d4b8c947915",
     "sourceEvidence": "SVC05 formal live receipt; no personalresampling",
@@ -35,13 +24,15 @@
     "minimalRemediation": "Originalbackendoperator receives approved4f879/cde minimalhistoryfix with focusedverification/deployment if362fails; no attachmentdisable/dropobservation workaround, no blanketSVC06wait."
   },
   "svcInterface": {
-    "fixedToolSource": "aae1eb1054d75e78273e7c91ed048aeac80195da",
     "canonicalOwner": "runner_owner / web-artifact-release / plans/svc04-web-release",
     "operatorAuthority": "ExecutionLead selects originallegalSVCoperator; Webverificationtake doesnotauthorize personaldirectory/processoperations",
     "prepare": "tools/personal-preview/web-artifact.mjs:75–106; reusedartifact requires matching releaseId/sourceTree/lock/toolchain andfullverify, otherwiseinternal-build93; base namespace injected111",
     "publish": "SVC04 publish pointerCAS expectedVersion+actualbackendHead+exactartifact+compatibilityId; no backend/runner/Webrestart foralreadybootstrappedhost; nousertabreload",
     "retained": "max3artifacts/192MiB,total each64MiB,compatibility32; existingtwo perSVC05receipt, actualfreshcapacity/compatibility/oldchunks verifiedonlybyoperator beforepublish; noTTL/removeunknownoldtabs",
-    "checks": "read/send/recover/negotiation realApp rawJSONSHA binds exactbackend+artifact, report≤4KiB each; importandverify usingexistingSVCAPI onownstate only"
+    "checks": "read/send/recover/negotiation realApp rawJSONSHA binds exactbackend+artifact, report≤4KiB each; importandverify usingexistingSVCAPI onownstate only",
+    "historicalInterfaceReadSource": "aae1eb1054d75e78273e7c91ed048aeac80195da",
+    "currentPreparationToolSource": "84005a260dfcb668cd38b09c21564d0754a0f513",
+    "validationToolBytes": "Four fixed tools (web-artifact/environment/web-release/static-web) 362→84005 zero diff, exact hashes in release03-fixed-fixture-plan/sources.json; no tool modification inferred from moving commits."
   },
   "validation": {
     "budgetSeconds": 180,
@@ -79,7 +70,7 @@
       "supersededBy": "resource-policy-1349.json"
     }
   },
-  "recoveryParallel": "Panels continues Recovery21; W01 now runs sole authorized prepare window, DPERF04 waits Lead source provision. No concurrent feature writes for same owner.",
+  "recoveryParallel": "Panels continues Recovery21 unique writer. W01 completed prepare and released both caches; now fixed-fixture research complete, waiting source provision and fresh verification claim. DPERF04 also waits Lead sole Git owner, preview priority preserved.",
   "archives": [
     {
       "source": "/tmp/root-attachi02-existing-release-artifact-audit.json",
@@ -111,7 +102,21 @@
   "runScopeProposal": "release03-run-scope-proposal.json",
   "currentRunState": "Formal prepare succeeded1.919s under exacttwo-cache claim, releasedf51v2; format2 d629631d/release388371a4 now ready for bounded compatibility intake. Fourvalidation scopes/newWT remain untaken.",
   "sparseSourceCandidate": "release03-sparse-source-estimate.json: future fixed362 source-only checkout estimate, no WT created; excludes dependency/PG/browser peak, no run permission.",
-  "formalArtifact": {
+  "updatedAt": "2026-10-06T14:33:50.892685+00:00",
+  "prepareState": "PREPARED_RELEASED",
+  "validationState": "AWAITING_PROVISION_AND_FRESH_CLAIM",
+  "historicalRawArtifact": {
+    "source": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+    "artifact": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
+    "audit": "release03-existing-artifact-root-audit.json",
+    "files": 10,
+    "logicalBytes": 1588017,
+    "verifiedRootScope": "Exact10files/hashes/finalsource-manifest/noSymlinks/fiveHTMLrefs, fixturefalse fixedbuildsource; no runtimecheck",
+    "releaseReady": false,
+    "reason": "Plain/assets bytes, no releaseId/SVC descriptor manifest. ExistingSVC04 prepare has no prebuiltimport; only reuses already verified matching formalartifact, otherwise internal-build withformat2base. Do not forge manifest or rewritebytes under oldevidence.",
+    "role": "Historical pre-format2 source artifact investigation only; no longer the current frontend input."
+  },
+  "frontend": {
     "handoff": "release03-formal-prepare/prepare-handoff.json",
     "managementAudit": "release03-formal-prepare-management-audit.json",
     "artifact": {
@@ -124,6 +129,30 @@
     "releaseId": "388371a4972c469b8ace623454594132",
     "files": 10,
     "bytes": 1588311,
-    "compatibilityReady": false
+    "compatibilityReady": false,
+    "format": 2,
+    "artifactDirectory": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "approvedSourceProvenance": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+    "integrity": "Management and root independently checked exact files/manifest/source binding; no backend compatibility or publication claim",
+    "publicationReady": false
+  },
+  "fixtureInterface": {
+    "source": "release03-fixed-fixture-plan/report.md",
+    "state": "ROOT_STRUCTURE_APPROVED_READONLY_IMPLEMENTATION_PLAN_NO_NEW_RUN_OR_SCOPE",
+    "server": "Actual362 createServer and same-root client/contracts, default migration/scanner, random ownDB; do not import later fixedserver or oldfixture launcher.",
+    "web": "Read-only exact formalformat2 bytes served by private Node HTTP fixture using original verifyWebArtifact/releaseAsset, API proxy to actual362. No Vite/build/cache or invented release pointer/compatibility.",
+    "runner": "Fixed362 public runner protocol simulator, explicit claim/reportEvents including native context_observation; no actual provider or full runner SDK runtime.",
+    "order": "Independent attachment-only and mixed HTTP reportEvents/contextHistory first; then realApp read/send/lostACK samekey/body/nextdraft/Queue and negotiation inside remaining original180s.",
+    "failure": "History failures retained separately and prevent wholecompatibility PASS/import even if four SVC observations pass. No dropped observations/disabled attachments; exactbackend repair belongs originalowner.",
+    "dependencies": "SOURCE preparation must supply fixed362 local imports/SQL/client/contracts and legal third-party resolve (tsx,fastify,pg,pg-boss,zod and static plugin package closure, Playwright/browser). Do not borrow506/moving @flow/dist, install, link or write cache without exact authorization. No resolve or dependency operation performed in research."
+  },
+  "sourceRequest": {
+    "owner": "Execution Lead sole Git owner",
+    "candidateWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+    "candidateBranch": "codex/web-current-preview-compatibility",
+    "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "sourceBudget": "Earlier705files/5.18MB logical estimate included fullrunner/Web source; obsolete as an exact checkout request. Lead soleGitowner should safely derive actual362 createServer localimport+SQL and same-root client/contracts closure, root rules/manifests/lock, needed original statictools and own test/records paths. No fullrunner/Vite/Websource assumed required; exactphysical/thirdparty/PG/Chrome increment still unmeasured.",
+    "provision": "Lead soleGitowner decides exact actualimport closure/sparse paths and resource policy. No new source scope or experiment permission, no group shared Git config writes. Return exactHEAD/branch/clean, materialized closure and resource result; never reset/overwrite an existing tree.",
+    "then": "Management fresh four literal overlap/take, one W01 writer. If dependencies need writes, identify exact per-tree literals first; no source-scope workaround."
   }
 }

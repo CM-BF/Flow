@@ -1,0 +1,73 @@
+{
+  "observedAt": "2026-10-06T14:31:33.549883+00:00",
+  "ledgerObservedAt": "2026-10-06T14:31:33.499Z",
+  "ledgerState": "available",
+  "claims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/attachments/controller.ts",
+        "apps/web/src/connection/session.ts",
+        "apps/web/src/conversation-context/controller.ts",
+        "apps/web/src/conversation-steering/SteeringControl.tsx",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/src/recovery/journal.ts",
+        "apps/web/test/conversation-recovery.browser.ts",
+        "apps/web/test/conversation-recovery.fixture.ts",
+        "apps/web/test/conversation-recovery.test.ts",
+        "docs/evidence/wpf-conversation-recovery",
+        "plans/wpf-conversation-recovery"
+      ],
+      "state": "active",
+      "branch": "codex/web-conversation-recovery",
+      "origin": "new",
+      "taskId": "WPF-RECOVERY01",
+      "worker": "workspace_panels_owner",
+      "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+      "version": 4,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+      "createdAt": "2026-10-06T13:46:08.213Z",
+      "updatedAt": "2026-10-06T14:05:53.395Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/node_modules/.vite",
+        "apps/web/node_modules/.vite-temp"
+      ],
+      "state": "released",
+      "branch": "codex/web-attachment-production",
+      "origin": "new",
+      "taskId": "WPF-RELEASE03",
+      "worker": "w01_owner",
+      "claimId": "f51fb3ad-3a64-416f-b62f-923a6125dbdd",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production",
+      "createdAt": "2026-10-06T14:25:59.538Z",
+      "updatedAt": "2026-10-06T14:28:25.959Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "recoveryOverlaps": [],
+  "fixedOriginMain": "61744371606f3ee890a9d64e21b33f52940d6e14",
+  "registrySha256": "20f2dd3060b69b3d0a446bb1d65301be6f75bbfc778b381da719daa2da51e662",
+  "registryMatchingLines": [],
+  "limits": "One fresh ledger read and fixed origin/main registry only; no fetch, aggregate,4320, service, product test, installation or provision."
+}
