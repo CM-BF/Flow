@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/attachment-production.test.ts (1 test | 1 failed) 2304ms
+   × mounts 026 before readiness and binds owner uploads, Send/Queue receipts and private claim across restart 8ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  04:17:18
+   Duration  4.10s (transform 940ms, setup 0ms, import 1.69s, tests 2.30s, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/attachment-production.test.ts > mounts 026 before readiness and binds owner uploads, Send/Queue receipts and private claim across restart
+AssertionError: expected [ Array(25) ] to include 26
+ ❯ packages/client/src/attachment-production.test.ts:44:60
+     42| it('mounts 026 before readiness and binds owner uploads, Send/Queue re…
+     43|   const migrations = (await pool.query('SELECT version FROM flow.migra…
+     44|   facts.migrationsAtReady = migrations; expect(migrations).toContain(2…
+       |                                                            ^
+     45|   expect(app!.hasRoute({ method: 'POST', url: '/api/projects/:projectI…
+     46|   const projectId = (await client.createProject({ workspaceId: 'person…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
