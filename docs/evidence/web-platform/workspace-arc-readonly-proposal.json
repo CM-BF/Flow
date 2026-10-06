@@ -65,5 +65,18 @@
   "newClaims": 0,
   "experiments": 0,
   "productWrites": 0,
-  "priority": "After originalMATURE06-04 complete connection/refresh/pending-send recovery journey; ATTACHI02 current write window precedes both. Arc remains read-only/unclaimed."
+  "priority": "After originalMATURE06-04 complete connection/refresh/pending-send recovery journey; ATTACHI02 current write window precedes both. Arc remains read-only/unclaimed.",
+  "recoveryInterfaceRefinement": {
+    "source": "workspace-arc-recovery-2498-interface.json",
+    "fixed": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
+    "mapping": "Existing MATURE05-01/02/03/05",
+    "constraints": [
+      "Stable keyed sibling rendering parent for open layout refs, not all32closed-protected residents",
+      "view.key layout identity; App resolves route aliases; verified namespace before structure restore",
+      "3pane progress must account for sustained hasMore/wake/reacquire and all reply/queue reads; no inferred fairness",
+      "P01 pane-targeted context must fit an actual coordinated typed boundary",
+      "Actual App focus/selection/scroll/materials/receipts mandatory"
+    ],
+    "state": "READ_ONLY_NO_NEW_CLAIM_OR_IMPLEMENTATION"
+  }
 }

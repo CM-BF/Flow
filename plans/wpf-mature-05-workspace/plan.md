@@ -71,3 +71,12 @@ CACHE完整[16literal只读方案](../../docs/evidence/web-platform/workspace-ca
 Arc后继当前只读18literal方案已集中到[现有研究入口](../../docs/evidence/web-platform/workspace-arc-readonly-proposal.json)，仍归本计划01/02/03；没有新写权或第三层执行计划。候选同一平铺ChatPane父节点保持view.key与实际composer/材料，唯一layout有界pane数组；首片2可见、3+和持久化后继。正式实施先等附件固定接收和五条当前交集移交，再核准确base/结构/fresh scope；90秒/10秒清理/8MiB只是候选验收预算，尚未执行。
 
 最新GO优先级覆盖此前Arc紧随缓存的候选排程：附件与已审dashboard安全停点后先完成原MATURE06-04连接/刷新/未决发送恢复，Arc/装饰后排。18literal仍只读未领，复用已有研究，不因等待而预占App或产生并行writer。
+
+
+## Arc × Recovery 固定接口研究（2498，仅原01/02/03/05）
+
+[root原始八源研究](../../docs/evidence/web-platform/workspace-arc-recovery-2498-interface.json)与[管理来源核](../../docs/evidence/web-platform/arc-recovery-source-intake.json)只细化已有目标，无新任务或写权。布局仅持有open-layout的stable view.key引用，在同一稳定keyed父级中移动；App继续解析route alias和拥有view/controller，Workspace/Recovery不因split/merge换代。closed-protected的32驻留上限不能解释为32个永久Thread DOM，显式close沿原保护/释放、重开由原owner恢复，布局不cancel任务。
+
+结构恢复先核中心/主体身份，再按版本化有界view引用、比例和选中项恢复；不复制journal、请求、controller或凭据，不为同稿造第二view.key，未知引用有界占位。首验同顶层tab内A|B；3pane仍开放，须核stream lease在持续hasMore/wake/reacquire下的进展及reply/queue整体并发，不从lease上限2推断公平或饥饿已实证。P01 pane目标需协调实际typed context，不用global focus/task冒归属，私有App仍唯一mutation owner。
+
+真实App必须覆盖独立焦点/选择/scroll、profile/知识/附件及pending capture/原receipt保留、手动tab激活/相邻关闭焦点/390 splitter键盘；纯reducer或stable key本身不证明这些行为。此研究0产品执行，不扩Recovery21，后继仍待合法App交权与独审。

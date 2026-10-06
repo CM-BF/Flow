@@ -1,0 +1,129 @@
+{
+  "at": "2026-10-06T15:19:50.239171+00:00",
+  "arc": {
+    "source": "/tmp/root-arc-recovery-2498-interface.json",
+    "archive": "workspace-arc-recovery-2498-interface.json",
+    "sha256": "97ddcb27332ae7fa56697093e763858dc70e3a99e261cf9b3307839bda3ca6b3",
+    "bytes": 6650,
+    "fixedSourceChecks": [
+      {
+        "path": "apps/web/src/App.tsx",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/workspace-state.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/workspace-retention.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/conversation-stream/host.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/react.tsx",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "apps/web/src/plugins/types.ts",
+        "fixedHashMatches": true
+      },
+      {
+        "path": "packages/interaction/src/stream/projection.ts",
+        "fixedHashMatches": true
+      }
+    ],
+    "mapping": [
+      "WPF-MATURE-05-01",
+      "WPF-MATURE-05-02",
+      "WPF-MATURE-05-03",
+      "WPF-MATURE-05-05"
+    ],
+    "scope": "Read-only proposal; no take, source edit or product execution"
+  },
+  "recoveryHarness": {
+    "target": "724424237962ed8563db08f5ea8597ee6e7eb11d",
+    "metadata": "d1a388876864c2f03b95f47dd405a9e4c281682d",
+    "localEqualsRemoteAtRead": true,
+    "cleanAtRead": true,
+    "sourceChanges": [
+      {
+        "path": "apps/web/test/conversation-recovery.browser.ts",
+        "sha256": "f84280696572d4c7ad4e075f35b152f3f3283ad9cf398a33588a6b76d8d9d1e7",
+        "bytes": 33753,
+        "fixedCurrentEqual": true
+      },
+      {
+        "path": "apps/web/test/conversation-recovery.fixture.ts",
+        "sha256": "e69d8170427f19b7c183aae6e78fd21de0d11677dfdfeb1f1247667fb06edab8",
+        "bytes": 13496,
+        "fixedCurrentEqual": true
+      }
+    ],
+    "protectedProductionAndDirectTestVs2498": "No apps/packages differences except the two harness files; 16 production sources and direct test unchanged",
+    "recordArchive": "recovery01-browser-harness-7244.md",
+    "recordSha256": "3d14077d6ff4052979ac605e5492752b13b56289ba7407b7a359951b96869999",
+    "review": "Awaiting root fixed narrow review; not product APPROVED or runtime admission",
+    "runtime": 0,
+    "typesRemainingSeconds": 7.186,
+    "directRemainingSeconds": 27.46,
+    "caseCountSource": 22,
+    "caseExecution": "Second 22-case source NOT_RUN; earlier 4ba20/20 evidence unchanged",
+    "futureRun": "Old2498 direct preflight must be rebound to new HEAD and changed harness hashes in a newly authorized window. Prepared scratch/threshold requirements are not manager-approved runtime margins."
+  },
+  "window": "Still Lead, no free-space sample or claim change",
+  "skills": "Local find-skills/codebase-design/clean-code reused for stable resource ownership, reference-only layout and source-versus-runtime boundaries",
+  "validation": {
+    "at": "2026-10-06T15:20:03.177295+00:00",
+    "parser": [
+      {
+        "path": "web-platform-management/plans/web-platform/status.md",
+        "id": "WPF-001",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 36
+      },
+      {
+        "path": "web-platform-management/plans/wpf-mature-01-visual/status.md",
+        "id": "WPF-MATURE-01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 5
+      },
+      {
+        "path": "web-platform-management/plans/wpf-mature-06-chat/status.md",
+        "id": "WPF-MATURE-06",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "path": "web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+        "id": "WPF-RECOVERY01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "path": "web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
+        "id": "WPF-RELEASE03",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 3
+      }
+    ],
+    "scopePaths": 8,
+    "outsideScopes": [],
+    "newLinks": 6,
+    "brokenLinks": [],
+    "archivesHashMatched": 2,
+    "cleanCode": "Review keeps source ownership, layout references and author-prepared harness separate from runtime permission; no second resource owner or duplicate task status.",
+    "productChecks": 0
+  }
+}

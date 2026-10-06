@@ -81,7 +81,15 @@
     },
     "resultArchive": "recovery01-direct-prepared-4ba/direct-first.json",
     "nextCheckpoint": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
-    "remainingSeconds": 27.46
+    "remainingSeconds": 27.46,
+    "sourceOnlyHarnessCheckpoint": {
+      "target": "724424237962ed8563db08f5ea8597ee6e7eb11d",
+      "metadata": "d1a388876864c2f03b95f47dd405a9e4c281682d",
+      "state": "Prepared NOT_RUN, awaiting fixed narrow source review",
+      "businessAndDirectTestBase": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
+      "preflightRebindRequired": true,
+      "record": "arc-recovery-source-intake.json"
+    }
   },
   "leadWindow": {
     "source": "f01-plugin-window-cleanup-1457.json",

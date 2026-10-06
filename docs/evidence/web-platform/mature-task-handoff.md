@@ -20,6 +20,10 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 前一Lead F01窗口[原清理事实](f01-plugin-window-cleanup-1457.json)与本组Recovery2.540秒direct清理都保历史。新RELEASE A-onlysource32/16MiB gate已[root限定批准](release03-source-review-432b-root.json)，[panels同432b独立delta复核](release03-source-review-432b-peer/report.md)亦为限定源码APPROVED/0blocking；多份源审不替代一次实跑或资源准入。原60秒含20秒清理/累计180秒/8MiB不重置；准入失败不构成运行或发布许可。
 
+**Recovery harness新固定点，仍无运行许可**：[管理来源核](arc-recovery-source-intake.json)确认target **724424237962ed8563db08f5ea8597ee6e7eb11d**、metadata **d1a388876864c2f03b95f47dd405a9e4c281682d** 双端clean，两harness固定/current同；16生产源与直接22case相对2498零diff。[原owner预算/覆盖矩阵](recovery01-browser-harness-7244.md)为prepared/NOT_RUN，RB1–3源码待root窄审，RB4知识/profile/Steer及CREATE/Queue/第二中心等仍明确pending。types7.186s/direct27.460s余额不变；旧2498 preflight必须在未来获准窗口重绑新HEAD/两hash，不能原样启动。0imports/runtime/install/额外types/资源采样。
+
+**Arc × Recovery同层研究已入原05-01/02/03/05**：[八固定源报告](workspace-arc-recovery-2498-interface.json)保open-layout稳定keyed父级、closed-protected不等永久DOM、stable view.key/私有alias、身份后结构恢复、3pane完整读取预算与真实P01 typed context。未执行、不领取、不占Recovery写权，实际App焦点/滚动/材料/原receipt仍必须验。
+
 **Recovery未来浏览器预检仅源码修正，不开启运行窗口**：[固定2498原报告](recovery01-browser-preflight-2498-root.json) / [原TODO映射与fresh21权属](recovery01-browser-preflight-intake.json)。RB1硬90s/启动前process ownership、RB2 unknown CREATE清理误报、RB3 cache漏计与资源监控、RB4完整材料与page-only auth-loss真实App覆盖，交唯一panels原21范围修fixture/browser/记录；0imports/runtime/install/额外types，22cases仍未跑。没有实际泄漏/超时/丢稿复现，不扩大为第三层task。PG/Chrome总窗口保持已交回Lead；资源失败不当362 history红，尚无实际失败可据此请求backend部署。
 
 **登记已闭合，页面事实按Lead归因**：[fixed d679 registry双来源核](registry-d679-recovery-release03-observation.json)确认RECOVERY01与RELEASE03指向原owner各自canonical。Lead实际4320于14:51:18为161来源，两项live/parser0/人读完整；管理只读Git registry，没有GET/刷新/页面复采，不再写等待首次登记。
