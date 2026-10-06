@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:17:35 UTC |
+| 最近更新 | 2026-10-06 18:21:19 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -14,7 +14,7 @@
 | HEAD | 首Interface提交后固定；当前无产品实现 |
 | Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1 active；三literal，18:16:25.736 UTC取得 |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN；仅只读proposal输入核对，0import/test/PG/provider |
+| 检查状态 | Node内建纯permit检查5不同通过；最初missing-module红保留，4+5分轮重叠不累计；0SDK/PG/provider |
 | Review | NOT_STARTED |
 | 实现目标 | UNKNOWN |
 | 实现范围 | experiments/continuous-goal-acceptance |
@@ -22,7 +22,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 已明确规划和执行分段确认的验收路径，正在准备可恢复的零模型旅程。 |
+| 当前产出 | 已完成有限许可和调用槽恢复的局部检查，正在组合公开目标旅程。 |
 | 下一可用交付 | 可核对调用预算、确认边界和中心自动推进的独立验收入口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -30,7 +30,7 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | O16-01 | completed | native_center_owner | [claim](../../docs/evidence/o16/claim.json)、[Interface](../../docs/evidence/o16/interface.md) |
-| O16-02 | in-progress | native_center_owner | 有限permit/持久reservation待实现 |
+| O16-02 | in-progress | native_center_owner | phase/actual confirmation/持久slot/reopen已实现且5不同检查通过；原生query观察接线待继续 |
 | O16-03 | pending | native_center_owner | public journey/checkpoint待实现 |
 | O16-04 | pending | native_center_owner | 纯检查可推进；PG需Lead串行窗口 |
 | O16-05 | pending | native_center_owner | manifest/独审待固定 |
