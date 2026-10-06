@@ -1,0 +1,100 @@
+{
+  "target": "2d69959a50954912c388eddb18d3b6a9574bf680",
+  "domainTarget": "a3296e0f6ffc37c746cf1d59a7105aeb2131579b",
+  "observedAt": "2026-10-06T08:32:50.681804+00:00",
+  "sources": [
+    {
+      "path": "apps/server/src/main.ts",
+      "bytes": 2007,
+      "sha256": "d29980feece7e8094f3d317fd6761edc132f6e7827d458e748e9e0ec77a92180"
+    },
+    {
+      "path": "apps/server/src/steering-production.test.ts",
+      "bytes": 10359,
+      "sha256": "18a46c3212a03235ed3ff675eba4fcf1b26a8a7dbc773480a8338fb51709cdb9"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/steering-startup-red.txt",
+      "bytes": 1853,
+      "sha256": "d6076c8e3320e08b19d40d2e9a5a8af7fefa961eb2696e7cb8d7c7f9880a3b02"
+    },
+    {
+      "path": "docs/evidence/f01/steering-startup-green.txt",
+      "bytes": 652,
+      "sha256": "7bd4bad7264f24b197265204e8908e8d0f25b1621334502712d32acc07127027"
+    },
+    {
+      "path": "docs/evidence/f01/steering-startup-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "redExit": 1,
+    "greenExit": 0,
+    "typecheckExit": 0,
+    "selected": 1,
+    "skipped": 2,
+    "cases": [
+      "absent disabled",
+      "0 disabled",
+      "1 does not bypass attempt authorization",
+      "invalid generic nonzero startup without echoing value"
+    ],
+    "ownedChildProcesses": "Each normal SIGTERM/exited checked, SIGKILL fallback would fail test",
+    "providerQueries": 0,
+    "personalServicesTouched": false
+  },
+  "domainComparisons": [
+    {
+      "path": "apps/server/src/active-steering-configuration.test.ts",
+      "bytes": 808,
+      "sha256": "ea9b5d676a06ba57a1a3232f431ecc9e3f31503002d4c9d75e1e734987b21777",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/server/src/active-steering-configuration.ts",
+      "bytes": 319,
+      "sha256": "8138cd0125132b8a680a0842dad40d573c2f1a4832ab7af7cb0a59ba0dacb09d",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/server/src/active-steering/admission-policy.ts",
+      "bytes": 1756,
+      "sha256": "508dbe8530c00a43f8e8ef66fd1a0279245df1f46cf71184178f59de2dc9f6bf",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/server/src/active-steering/admission.test.ts",
+      "bytes": 16113,
+      "sha256": "0102abedb446a3f3f3e8b5860233f755e6cf493d50ac09bdfc46dff097a2dc30",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/server/src/active-steering/admission.ts",
+      "bytes": 4315,
+      "sha256": "839e2148bdf208fa579c766abbb2cc573bee2bafd70aa698a5a8e4682eb59783",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/server/src/active-steering/commands.ts",
+      "bytes": 6995,
+      "sha256": "8e105358e2ba9eb2946cf7a7bc2668a3c293f6731d884918bcce9266d41fe920",
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/server/src/active-steering/index.ts",
+      "bytes": 4109,
+      "sha256": "ed1b9aff63601aadd81796f83ccc448e6722f2bfacdc216b93e3f75a4a6241bd",
+      "fixedMatch": true
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311",
+      "fixedMatch": true
+    }
+  ]
+}

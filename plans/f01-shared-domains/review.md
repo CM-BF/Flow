@@ -1,5 +1,13 @@
 # F01 共享接线审查
 
+**当前增量状态：NOT_STARTED（CHAT10可信启动配置薄挂载）**
+
+Review target commit：2d69959a50954912c388eddb18d3b6a9574bf680
+
+Scope：apps/server/src/main.ts, apps/server/src/steering-production.test.ts。仅显式环境配置传入已审factory；证据 steering-startup-manifest.json。领域a329与薄client25a原批准不代替此增量。
+
+## 上一CHAT10薄client独立批准
+
 **当前增量状态：APPROVED（CHAT10只读受理状态client）**
 
 Review target commit：25a22e0488d6d9aef1f3308e3179e0e874fa425f

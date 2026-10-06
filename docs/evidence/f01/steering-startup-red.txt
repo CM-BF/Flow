@@ -1,0 +1,43 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+stdout | apps/server/src/steering-production.test.ts
+STEERING_PRODUCTION_DATABASE_FACTS {"database":"flow_steering_mount_1d6ae8b5a0a043298dd6f05e11a368af","created":true,"before":[],"connections":[],"remaining":[]}
+
+ ❯ apps/server/src/steering-production.test.ts (3 tests | 1 failed | 2 skipped) 2889ms
+   ↓ mounts 024 and authenticated control routes but keeps default intake and conversation capability disabled
+   ↓ preserves a default string-query runner final through the production factory with 024 installed
+   × passes only the explicit trusted startup configuration to steering intake 1918ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/steering-production.test.ts > passes only the explicit trusted startup configuration to steering intake
+AssertionError: expected { …(6) } to match object { …(3) }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "reason": "no-attempt",
++   "reason": "disabled",
+    "state": "unavailable",
+    "taskId": "33a949f4-54a5-47ac-bd6f-cf23ae4238e3",
+  }
+
+ ❯ apps/server/src/steering-production.test.ts:135:38
+    133|       }
+    134|       expect(response?.status, output).toBe(200);
+    135|       expect(await response!.json()).toMatchObject({ taskId: task.id, …
+       |                                      ^
+    136|       const post = await fetch(`http://127.0.0.1:${port}/api/tasks/${t…
+    137|         method: 'POST', headers: { authorization: `Bearer ${ownerToken…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 skipped (3)
+   Start at  01:32:01
+   Duration  5.42s (transform 1.33s, setup 0ms, import 2.37s, tests 2.89s, environment 0ms)
+

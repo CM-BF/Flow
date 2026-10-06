@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:24:26 UTC / main32c371d |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:32:50 UTC / main7106a35 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
@@ -10,16 +10,16 @@
 | 工作基线 / HEAD | main9c6fa9b100f04916f43b04280f05f497b28eeb0f；O09共享生产目标 c587436c12324b5c121957643d51173cfc66009e |
 | 工作树dirty状态 | 产品已固定；本次证据与状态提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 25a22e0488d6d9aef1f3308e3179e0e874fa425f；HTTP1/1与tsc0，0provider |
+| 检查状态 | PASSED；可信启动1 selected/2未选，typecheck0；领域8源对a329精确一致；0provider |
 | 已集成main状态 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256 已含O09CLI和CHAT09薄client/领域；个人center/runner已32c/v9，未开启steering。 |
-| Review | APPROVED：Mika独立只读25a22薄client；CHAT10领域a329由Lead独立审查，生产启动挂载另验。 |
-| 实现目标 | 25a22e0488d6d9aef1f3308e3179e0e874fa425f |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/steering-admission.test.ts |
+| Review | NOT_STARTED：CHAT10可信启动薄接线；先前25a22已Mika独审。 |
+| 实现目标 | 2d69959a50954912c388eddb18d3b6a9574bf680 |
+| 实现范围 | apps/server/src/main.ts, apps/server/src/steering-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 客户端已能读取当前任务是否可提交补充指令及具体原因。 |
-| 下一可用交付 | 接入中心显式启动配置，保持默认关闭并给出可提交补充指令的具体原因。 |
+| 当前产出 | 中心可通过明确启动配置决定是否接收运行中的补充指令，默认关闭。 |
+| 下一可用交付 | 完成启动接线独立审查并发布，随后接入界面发送入口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 

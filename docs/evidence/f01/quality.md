@@ -225,3 +225,7 @@ Fixed 1bd4855f1582107e3b1b17ba9ba77cb43801e74d consumes strict contract d5d32ec1
 ### 2026-10-06 08:24:26 UTC CHAT10只读受理状态client
 
 固定25a22e0488d6d9aef1f3308e3179e0e874fa425f，消费合同3b157a3；一个GET方法复用request/auth/abort/errors。真实HTTP1红（方法不存在）→1绿28ms，suite199ms；403/404/409保持原错误且不重试，abort不发请求，原nullable unavailable/ready身份不推断权限。tsc exit0，0PG/provider。clean-code复核：无重复策略、状态机或输入重写，仅可选attempt查询编码；证据见 steering-admission-client-manifest.json。
+
+## CHAT10可信启动接线 2d69959a50954912c388eddb18d3b6a9574bf680
+
+两文件增量，main仅调用已审严格parser并传activeSteering。真实子进程中心absent/0默认关闭，1只开启受理门且错误attempt仍404；非法值启动exit1且不回显。首次red保留（1仍disabled）；final1selected/2未选，typecheck0。随机专库before[]/createdtrue/connections[]/remaining[]；每个child正常退出断言。域8源对a329精确一致。未重48/106或provider，不动个人服务。
