@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-10-06T17:19:15.408785+00:00",
+  "run": "app-20261006-171109-8cf8c3",
+  "source": "9927 / runtime b6c / raw freeze6411",
+  "reviews": [
+    "release03-app-171109-owner-cause.md",
+    "release03-app-171109-peer-cause.md",
+    "release03-app-171109-root-review.json"
+  ],
+  "actual": "wire34 dropped202, wire35 samekey/body/turn/task and replayedtrue before script Retry; failed unknown wait and successful receipt removal are consistent with delivered replay ACK. No NetLog evidence identifies specific Chromium retry branch.",
+  "rootDesign": "After-headers strict prefix of actual valid ACK JSON plus Connection close; preserve upstream acceptance and raw complete ACK, separately identify downstream fault. Add response headers/body failure evidence and exactly one preRetry POST, keep originalkey/body/ref and explicitRetry.",
+  "state": "STRUCTURE_APPROVED_SOURCE_ONLY_DISPATCHED",
+  "writer": "w01_owner original bfbv3 four literal",
+  "scopeEvidence": "release03-fault-source-scope.json",
+  "limits": [
+    "No product change or relaxed assertions",
+    "A contract unchanged",
+    "No runtime or fresh space sampling",
+    "Priorraw/budget39935+140065 unchanged",
+    "RELEASE repair precedes DPERF wrapper source changes"
+  ],
+  "sourceDesign": "release03-body-loss-source-design-root.json",
+  "scopeObservedAt": "2026-10-06T17:19:30.292Z",
+  "dispatch": "followup W01 on frozen6411, original4; fixed delta review required before any runtime"
+}

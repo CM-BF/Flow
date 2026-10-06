@@ -1,0 +1,123 @@
+{
+  "result": "APPROVED_SOURCE_SCOPED",
+  "target": "ec91d1113898e70f380f9bb503f3b5ceff9467b2",
+  "metadata": "02398a665b2815b7b663b3ae30551db0bac0581b",
+  "branch": "codex/web-conversation-recovery",
+  "dirty": "",
+  "sourcesVerified": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "01216d648c226549c9a8b79410c597669dfec5f0c42c38cde43233f6b774c0c1",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "664d61c88a923ed8f3ee14558c6aa17bf6531fec409195ea1cc16c8ca1ead6dd",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "22adeb1f431e23f4e95cfd53804e301159c1e409df9a2f853a24636f6845852c",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "07f26356643439cc5a08d3a9eb7c938f6d01bdc1b98d5818340cf40310fde6d4",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "3be8d4ddc82c78bc514e35b3dbe09038f421426d147c73d7444411fb4c5a641e",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "883c1195584e23ec6bfe1a69b5b8aa50929204826ef26ff8a814b479fe5c6ac5",
+      "equalsPrevious": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "da356017311ea318b57aae582c1b2a51177fdc6a157ea9cbe04dbec60b713160",
+      "equalsPrevious": false
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "d58903f9ad64054bf233cea28f18574d19bb85af19bcae18a6415e6b7bf3f9b9",
+      "equalsPrevious": true
+    }
+  ],
+  "scope": "Only native HTTP proxy delta; not full Recovery approval or HTTP/browser execution",
+  "blockingFindings": [],
+  "reviewed": [
+    "Native request connects only to owned center URL but preserves actual caller Host/raw duplicates; no generated Origin and no center authentication weakening",
+    "Body bounded256KiB, Content-Length recalculated from exact buffered bytes; auth/cookie/csrf recorded as booleans only",
+    "Set-Cookie arrays remain separate; source.pipe preserves streaming and backpressure for SSE and ordinary body",
+    "Parent abort and browser close destroy owned upstream; settled guard and retained stream error handlers handle late aborts without double settlement",
+    "Wire1MiB and parent cumulative deadline constraints remain; no unrelated source change"
+  ],
+  "separateExistingRisk": [
+    "Committed ACK-loss seam still destroys response before sending headers and clears one-shot fault. New RELEASE03 failed run observed transparent same-key duplicate; Chromium source supports reused/no-headers retry as hypothesis. Before Recovery browser admission, determine a bounded deterministic lost-body injection; this is pre-existing fault seam, not Host delta regression."
+  ],
+  "unverified": [
+    "No import/type/test/HTTP/PG/Chrome executed by this review",
+    "Actual true Host/auth acceptance, Set-Cookie multiplicity, streaming and cleanup need separately admitted real HTTP/browser checks",
+    "Existing27 direct remains bound to1b8; do not relabel it as ec91 runtime evidence",
+    "Three center semantics remain unresolved: caller-Origin binding; delayed logout/new-cookie race; repeated connect/lostACK/session-cap behavior"
+  ],
+  "cleanCode": "Reviewed transport ownership, single settlement, named limits, error handling and no duplication of auth authority. No blocking source finding within native proxy scope."
+}

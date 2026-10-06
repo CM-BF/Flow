@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-06T17:09:59.799379+00:00",
+  "claimObservation": {
+    "observedAt": "2026-10-06T17:09:07.111Z",
+    "state": "available",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/attachments/controller.ts",
+        "apps/web/src/connection/session.ts",
+        "apps/web/src/conversation-context/controller.ts",
+        "apps/web/src/conversation-steering/SteeringControl.tsx",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/src/recovery/journal.ts",
+        "apps/web/test/conversation-recovery.browser.ts",
+        "apps/web/test/conversation-recovery.fixture.ts",
+        "apps/web/test/conversation-recovery.test.ts",
+        "docs/evidence/wpf-conversation-recovery",
+        "plans/wpf-conversation-recovery"
+      ],
+      "state": "active",
+      "branch": "codex/web-conversation-recovery",
+      "origin": "new",
+      "taskId": "WPF-RECOVERY01",
+      "worker": "workspace_panels_owner",
+      "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+      "version": 4,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+      "createdAt": "2026-10-06T13:46:08.213Z",
+      "updatedAt": "2026-10-06T14:05:53.395Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    "overlaps": []
+  },
+  "source": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
+  "peerReport": "recovery01-1b8-browser-readiness.md",
+  "reportSha256": "ac8bd88335120a950d5d5353f8d8f1a7955d06f46a29b400390561f83e6aa21d",
+  "fixedSourceHashes": {
+    "apps/web/test/conversation-recovery.browser.ts": "883c1195584e23ec6bfe1a69b5b8aa50929204826ef26ff8a814b479fe5c6ac5",
+    "apps/web/test/conversation-recovery.fixture.ts": "041eda9cb24bd7bcee8156f8784b6c8abf3f253dfff2b111dab7d19eb46c42c0",
+    "apps/server/src/browser-session/index.ts": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a",
+    "apps/server/src/browser-session/store.ts": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+  },
+  "finding": "Node24 fetch discards forwardedHost; fixture public cookieOrigin and center dynamic destination differ. Source-level confirmed transport mismatch, no runtime reproduction.",
+  "authorization": "Root source-only fixture.ts repair inside original21; manager followup after freshlive. Preserve actualHost/callerheaders/SSE/abort/multipleSetCookie/owned cleanup; do not modify center auth.",
+  "implementationOwner": "workspace_panels_owner",
+  "runtime": "NOT_RUN; no imports/types/space/PG/Chrome. Existing27direct stays at1b8 and does not validate laterfixture.",
+  "remainingAcceptance": "90s browser ceiling unchanged; three center semantics and full actualApp matrix still pending; metadata stale direct27 intro to be clarified by soleowner."
+}

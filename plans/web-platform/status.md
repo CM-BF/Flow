@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:01 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:14 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | Recovery固定1b8受控27/27通过；DPERF第二Node七叶+父通过/累计3.950秒，原Host红测保留。发布af51两A完整通过，B定位器失败待窄修，窗口归还已获Lead接收，O14已归还，当前无人持PG/资源批进行 |
-| 下一可用交付 | 发布9927定位器/all12源修获审，等资源批完成后明确交窗；DPERF abd2 Node通过、browser独立后置；MATURE02固定563公共出口已审，八literal待Lead物化后取权 |
-| 当前阻塞 | ACTIVE: 发布B被harness locator挡住且无兼容绿报告，后继待源审、资源批完成后明确交窗和新准入；DPERF browser未验；Recovery真实IDB/HTTP/browser未验；源码修复正常 |
+| 当前产出 | 发布af51两A完整通过；9927本次B-only复用all12证明且未重跑A，普通Send/Files已到达，unknown回执等待失败原因待核；cleanup完整、窗口归还。DPERF七叶+父Node通过，Recovery受控27通过，均不冒浏览器或整片通过 |
+| 下一可用交付 | W01封存B的12raw后独立核wire/fixture/client因果；累计39.935秒/余140.065秒不自动重试。DPERF browser后置；M02固定已审八literal等待Lead物化 |
+| 当前阻塞 | ACTIVE: B未完成兼容，回执等待失败原因待固定证据审；窗口已归Lead。Recovery真实浏览器与DPERF浏览器未验；源码与有界只读工作正常 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |

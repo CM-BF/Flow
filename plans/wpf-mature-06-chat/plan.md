@@ -98,3 +98,5 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 
 
 2026-10-06 15:52 UTC 原REQ45/MATURE06-05：[installed core0.3.22 stop/cancel原研究](../../docs/evidence/web-platform/voice-stop-cancel-core0322-root.json)与[管理核验](../../docs/evidence/web-platform/gate-voice-intake.json)。core send会cancel并取当前text，不等待final；官方MediaRecorder示例若stop提前resolve可能先解除转写callbacks。未来同一composer adapter必须定义停止等待final后可编辑/明确SendQueue与取消丢弃，私有pane/auth/draft lease覆盖异步mic获取及每个await，旧回调不能清新session或改新稿。记录/转写状态、5秒有界结束与cleanup只作为来源/候选约束；不是已实现能力或已复现产品bug，无mic/provider/browser/新claim，不改变当前Recovery优先级。
+
+2026-10-06 17:18 UTC，原06-04验收接缝更新：[ec91固定nativeHTTP fixture源审](../../docs/evidence/web-platform/recovery01-ec91-native-proxy-root-review.json)仅源码批准，实际public Host、重复caller headers、分离Set-Cookie、SSE/backpressure及abort/close仍待真实运行。丢ACK注入必须证明已提交且浏览器只见不确定结果，不能把无headers socket销毁当不可透明重发的保证；保原key/body/material顺序与显式Retry断言，不改产品适应harness。未增task/scope/预算。

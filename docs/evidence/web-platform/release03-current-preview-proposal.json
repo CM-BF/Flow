@@ -90,7 +90,7 @@
       "supersededBy": "resource-policy-1349.json"
     }
   },
-  "recoveryParallel": "Recovery27 controlled direct passed; real IDB/HTTP/browser/fullreview remain open. W01 sequential RELEASE source repair then DPERF Host test; no new runtime.",
+  "recoveryParallel": "Recovery only fixture source repair; DPERF Node complete, browser preparation only. No PG/Chrome window held.",
   "archives": [
     {
       "source": "/tmp/root-attachi02-existing-release-artifact-audit.json",
@@ -120,11 +120,11 @@
   "currentResourcePolicy": "resource-policy-1349.json",
   "existingSourceReuseStudy": "release03-existing-source-resource-study/report.md",
   "runScopeProposal": "release03-run-scope-proposal.json",
-  "currentRunState": "all12326ms: attachment-only+mixed passed on af51; Bplain202 then Files strict locator failure. Cleanup complete, total20309ms/remaining159691ms. Lead accepts returned window; O14 completed and returned; no current PG owner, four-tree resource batch in progress. B awaits explicit next window after batch.",
+  "currentRunState": "B-only app-20261006-171109-8cf8c3 completed19626ms; cumulative39935/remaining140065; no retry; cause pending fixed review",
   "sparseSourceCandidate": "Historical estimate only; actual Lead-provisioned fixed362 source tree and four-scope receipt remain archived. No new source provision or in-place rewrite authorized.",
-  "updatedAt": "2026-10-06T17:03:17.650833+00:00",
+  "updatedAt": "2026-10-06T17:14:44.184965+00:00",
   "prepareState": "PREPARED_RELEASED",
-  "validationState": "A_ACCEPTED_9927_APPROVED_WAIT_RESOURCE_BATCH_AND_EXPLICIT_WINDOW",
+  "validationState": "B_FAILED_CAUSALITY_REVIEWED_FAULT_FIX_SOURCE_ONLY",
   "historicalRawArtifact": {
     "source": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
     "artifact": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
@@ -209,12 +209,13 @@
   },
   "latestSourceReview": {
     "target": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
-    "metadata": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
-    "root": "release03-9927-root-review.json",
-    "peer": "release03-9927-peer-review.md",
-    "meaning": "sourceonly; no B-only execution yet"
+    "state": "APPROVED_SOURCE_SCOPED",
+    "runtime": "B_FAILED causality review; future fault delta requires new fixed review"
   },
-  "latestActualEvidence": "release03-all-164711-root-review.json",
-  "sourceRepairAdvice": "release03-c18-files-and-history-peer.md",
-  "currentWindow": "lead-o14-complete-resource-batch.json"
+  "latestActualEvidence": "release03-app-171109-intake.json",
+  "sourceRepairAdvice": "release03-app-cause-intake.json",
+  "currentWindow": {
+    "state": "TUI01F_PG_NEXT_WEB_RETURNED",
+    "evidence": "lead-release-b-1710-window.json"
+  }
 }

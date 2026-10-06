@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 16:23 UTC |
+| 最近更新 | 2026-10-06 17:18 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 固定1b8/current0eef受控IDB/mock fetch单文件27/27 PASS，2.034秒并清理；原direct累计4.574/30秒 |
-| 下一可用交付 | 原owner封存direct证据；真实IDB/HTTP/App/browser须后续有界验证，原direct余25.426秒，不自动续跑 |
-| 当前阻塞 | ACTIVE: 受控direct不代真实IDB/App及中心语义验收，完整feature review仍未完成；A/B发布窗口暂停 |
+| 当前产出 | 固定1b8/实际0eef受控27/27 PASS、累计4.574秒；后继ec91仅nativeHTTP fixture修正，02398push/clean并获限定源码批准，18其余源未变 |
+| 下一可用交付 | 确定性丢ACK fixture接缝与三center语义收口后再真实IDB/HTTP/App/browser验收；ec91无新运行，原direct余25.426秒不自动续跑 |
+| 当前阻塞 | ACTIVE: 受控direct不代真实IDB/App及中心语义验收，完整feature review仍未完成；原27不覆盖新fixture运行 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |
@@ -44,7 +44,7 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 
 调度以[GO经root原指令](../../docs/evidence/web-platform/connection-recovery-priority.md)为准。ATTACHI02已main cde并旧scope释放；恢复实现从正式组合84005独立新树开始，Arc18候选未领取。T3固定9bd1/MIT只借鉴职责与epoch方法，不引入外部实现。
 
-RECOVERY01直接子task由workspace_panels_owner唯一实施；新树 `web-conversation-recovery / codex/web-conversation-recovery`，**6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v1** fresh21 scope COMMITTED13:46:08.213Z，[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json) / [来源资源及派工审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)。首canonical dcaf6356已到，实际parser0/6TODO/人类完整，[SOURCE_READY](../../docs/evidence/web-platform/recovery01-source-ready.json)待Lead正常登记；当前源码dirty实施、未获审批，dashboard取权可从D04读取；没有另造手填子任务进度。
+RECOVERY01直接子task由workspace_panels_owner唯一实施；新树 `web-conversation-recovery / codex/web-conversation-recovery`，**6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v1** fresh21 scope COMMITTED13:46:08.213Z，[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json) / [来源资源及派工审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)。首canonical dcaf6356已到，实际parser0/6TODO/人类完整，[SOURCE_READY](../../docs/evidence/web-platform/recovery01-source-ready.json)为历史首入口；后续d679/Lead14:51:18正式登记已闭合。当前实际源码/领取以owner status与v4原21为准，没有另造手填子任务进度。
 
 F01 clientd6d与production9406独审已闭合，domain582f及13源正式main84005且hash一致；本批Lead实际组合selected1pass/2unselected和root/Webtypes0，不是13tests、未重跑领域全量。factory会话仍显式opt-in，Node jar/loopback不替代本片浏览器cookie→read→SSE→reload；个人入口未变。
 
@@ -55,4 +55,6 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 最新两轮依赖/类型诊断及原始红日志见[窗口记录](../../docs/evidence/web-platform/recovery01-dependency-window.json)；全部依赖写停后v4恢复原21scope。第二types0只属于82d78阶段源码；[八项独立早期finding及来源](../../docs/evidence/web-platform/recovery01-foundation-review-intake.json)待原owner修复，未形成feature终审。当前资源决定见[分时记录](../../docs/evidence/web-platform/resource-admission-1405.json)，不重复采样或将整体目标标阻塞。
 
 
-最新固定源码安全点4ba、后继2498类型累计52.814/60s（余7.186）与原f13部分复核历史见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)。20direct受控基线已20/20，R4-1未覆盖、真实IDB/browser未验，正式review仍NOT_STARTED；d679已登记，Lead14:51:18实际161来源，两项live/parser0/人读完整，非管理页面复采。
+历史固定源码安全点4ba、后继2498当时类型累计52.814/60s（余7.186）与原f13部分复核历史见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)。20direct受控基线已20/20，R4-1未覆盖、真实IDB/browser未验，正式review仍NOT_STARTED；d679已登记，Lead14:51:18实际161来源，两项live/parser0/人读完整，非管理页面复采。
+
+当前[ec91 fixture固定接收](../../docs/evidence/web-platform/recovery01-ec91-intake.json)与[root独立源审](../../docs/evidence/web-platform/recovery01-ec91-native-proxy-root-review.json)只确认Host/SSE/清理接缝源码修复，未运行新fixture；原1b8受控27保原目标。丢ACK注入的浏览器透明retry前提和三中心语义仍须真实验收，full review仍NOT_STARTED。

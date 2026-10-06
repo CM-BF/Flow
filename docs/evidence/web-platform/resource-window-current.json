@@ -1,68 +1,92 @@
 {
-  "recordedAt": "2026-10-06T17:03:17.650833+00:00",
-  "state": "NO_PG_OWNER_RESOURCE_BATCH_IN_PROGRESS",
-  "groupWindowOwnership": "No PG window currently held. O14 completed2/2 and cleaned/returned; authorized four-tree resource batch underway. B awaits explicit Lead window after batch completes.",
+  "recordedAt": "2026-10-06T17:14:44.184965+00:00",
+  "state": "TUI01F_PG_WINDOW_RELEASE_B_CLEANED",
+  "groupWindowOwnership": "Lead accepted B return at17:11:55 and assigned next PG window to TUI01F original2group shortjourney. Web source review only; next B needs new window.",
   "release03": {
-    "state": "A_PASS_B_LOCATOR_FAILURE_CLEANED_WINDOW_RETURNED",
-    "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
-    "actualHead": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+    "state": "B_FAILED_RECEIPT_WAIT_CAUSE_NOT_YET_REVIEWED",
+    "run": "app-20261006-171109-8cf8c3",
+    "implementation": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
+    "actualHead": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
     "backend": "af51c621696230fbced12227670f014ca73bd8a1",
     "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
-    "admissionFreeBytes": 1228890112,
+    "admissionFreeBytes": 1247502336,
     "startBytes": 1207959552,
     "stopBytes": 1140850688,
-    "newRuntimeMs": 12326,
-    "spentMs": 20309,
-    "remainingMs": 159691,
-    "minimumSampledFreeBytes": 1199947776,
-    "finalSampledFreeBytes": 1203339264,
+    "newRuntimeMs": 19626,
+    "spentMs": 39935,
+    "remainingMs": 140065,
     "gateConsumed": true,
     "cleanupComplete": true,
-    "evidence": "release03-all-first-intake.json",
-    "B": "FAILED_HARNESS_LOCATOR_BEFORE_COMPLETE_COMPATIBILITY",
-    "labelSource": {
-      "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
-      "metadata": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
-      "review": "APPROVED_SOURCE_LABEL_FIX",
-      "runtime": "Executed in all-20261006-164711-15b54e at ba7dea; A3 remains earlier269103/0b3e.",
-      "evidence": "release03-c18bd-label-review-root.json"
-    },
+    "B": "FAILED_RECEIPT_WAIT_CAUSE_PENDING",
+    "compatibilityId": null,
+    "A": "REUSED_ATTESTED_ALL12_NOT_RERUN",
+    "evidence": "release03-app-171109-intake.json",
     "previousRun": {
-      "state": "PARTIAL_RESOURCE_STOP",
-      "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
-      "actualHead": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
+      "state": "A_PASS_B_LOCATOR_FAILURE_CLEANED_WINDOW_RETURNED",
+      "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+      "actualHead": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
       "backend": "af51c621696230fbced12227670f014ca73bd8a1",
       "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
-      "admissionFreeBytes": 1109671936,
-      "startBytes": 1107296256,
-      "stopBytes": 1090519040,
-      "newRuntimeMs": 4109,
-      "spentMs": 7983,
-      "remainingMs": 172017,
-      "minimumSampledFreeBytes": 1090244608,
-      "finalSampledFreeBytes": 1089323008,
+      "admissionFreeBytes": 1228890112,
+      "startBytes": 1207959552,
+      "stopBytes": 1140850688,
+      "newRuntimeMs": 12326,
+      "spentMs": 20309,
+      "remainingMs": 159691,
+      "minimumSampledFreeBytes": 1199947776,
+      "finalSampledFreeBytes": 1203339264,
       "gateConsumed": true,
       "cleanupComplete": true,
-      "evidence": "release03-a3-intake.json",
-      "B": "NOT_RUN",
+      "evidence": "release03-all-first-intake.json",
+      "B": "FAILED_HARNESS_LOCATOR_BEFORE_COMPLETE_COMPATIBILITY",
       "labelSource": {
         "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
         "metadata": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
         "review": "APPROVED_SOURCE_LABEL_FIX",
-        "runtime": "NOT_RUN; A3remains269103/0b3e",
+        "runtime": "Executed in all-20261006-164711-15b54e at ba7dea; A3 remains earlier269103/0b3e.",
         "evidence": "release03-c18bd-label-review-root.json"
+      },
+      "previousRun": {
+        "state": "PARTIAL_RESOURCE_STOP",
+        "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+        "actualHead": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
+        "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+        "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "admissionFreeBytes": 1109671936,
+        "startBytes": 1107296256,
+        "stopBytes": 1090519040,
+        "newRuntimeMs": 4109,
+        "spentMs": 7983,
+        "remainingMs": 172017,
+        "minimumSampledFreeBytes": 1090244608,
+        "finalSampledFreeBytes": 1089323008,
+        "gateConsumed": true,
+        "cleanupComplete": true,
+        "evidence": "release03-a3-intake.json",
+        "B": "NOT_RUN",
+        "labelSource": {
+          "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+          "metadata": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+          "review": "APPROVED_SOURCE_LABEL_FIX",
+          "runtime": "NOT_RUN; A3remains269103/0b3e",
+          "evidence": "release03-c18bd-label-review-root.json"
+        }
+      },
+      "run": "all-20261006-164711-15b54e",
+      "evidenceReview": "release03-all-164711-root-review.json",
+      "reuse": "A facts accepted from all12; explicit adapter/source review and externally pinned all12 required before separate fresh B-only admission.",
+      "sourceRepair": {
+        "implementation": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
+        "metadata": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
+        "review": "APPROVED_SOURCE_SCOPED root+peer",
+        "runtime": "NOT_RUN",
+        "evidence": "release03-9927-root-review.json"
       }
     },
-    "run": "all-20261006-164711-15b54e",
-    "evidenceReview": "release03-all-164711-root-review.json",
-    "reuse": "A facts accepted from all12; explicit adapter/source review and externally pinned all12 required before separate fresh B-only admission.",
-    "sourceRepair": {
-      "implementation": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
-      "metadata": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
-      "review": "APPROVED_SOURCE_SCOPED root+peer",
-      "runtime": "NOT_RUN",
-      "evidence": "release03-9927-root-review.json"
-    }
+    "evidenceReview": "release03-app-171109-root-review.json",
+    "ownerMetadata": "6411ba7a43f0f54b5fc924ef8850b88d80e44ac2",
+    "minimumSampledFreeBytes": 1220063232,
+    "finalSampledFreeBytes": 1230462976
   },
   "recoveryDirect": {
     "state": "CONTROLLED_DIRECT_PASS_CLEANED",
@@ -83,7 +107,8 @@
     "policySource": "Lead16:03 independent low-incremental check permission adopted byroot; prior2.540s/maxsampledtmp2.7MiB. Does not change A/B.",
     "gateConsumed": true,
     "cleanupComplete": true,
-    "coverage": "27/27 controlled IDB/mock fetch; no real IDB/browser/HTTP"
+    "coverage": "27/27 controlled IDB/mock fetch; no real IDB/browser/HTTP",
+    "laterFixture": "ec91 sourceonly approved; old1b8 direct pass not relabeled"
   },
   "dperf04": {
     "claim": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
@@ -113,7 +138,9 @@
       "actualHead": "36d687fc682809ce73a90910d86ad34c6349d9dc",
       "runtime": "6 leafpass/1 leaffail; TAP6/2 inclparent.1632ms, remaining28368; ownPGID/scratchclosed",
       "evidence": "dperf04-node-first-intake.json"
-    }
+    },
+    "metadata": "62ddb315adc26ff934eecf7e125079dd0ce47d36",
+    "review": "UNKNOWN targetabd2; scopedsource approved, browser/fullfeature pending"
   },
   "leadEvents": [
     {
@@ -156,13 +183,27 @@
     {
       "source": "LatestLead via root afterO14",
       "coordination": "O14 2/2/9.89s, ownedDBDROP/connections0/remaining[]/runtimeclean/0provider, returned. New four-tree batch toward1GiB+160MiB; finish at target orlimit before unifiedCORE8/B coordination. No automatic dispatch merely crossing threshold."
+    },
+    {
+      "source": "Lead17:07 via root",
+      "observedAt": "2026-10-06T17:07:11Z",
+      "freeBytes": 1265397760,
+      "coordination": "Two exact oldBuildKit caches cleaned; next4c0treeoperations stopped atpreparationline; CORE1707exclusive128MiB/120+80, B priority afterreturn. Notmanagerfresh."
+    },
+    {
+      "source": "Lead1710 via root and W01 actual completion",
+      "coordination": "CORE1707 actual8/8 cleaned; one B admitted17:11:09, actual19626ms failure/cleanup; immediately returned, no retry."
+    },
+    {
+      "source": "Lead via root afterB",
+      "coordination": "Accepted17:11:55Breturn; nextPG TUI01F original2shortjourneys. A not rerun, personalservices unchanged."
     }
   ],
   "limits": [
     "Sharedfree samples are not causal allocation/physical peak guarantees",
-    "Runtime12,326ms, cumulative20,309/180,000; remainder159,691 is budget arithmetic only, no automatic nextgate",
+    "Cumulative39,935/180,000ms, remainder140,065 is arithmetic only, not automatic retry.",
     "A failure prevents Chrome/B; no automatic retry, artifact rebuild, provider or personal service operation",
     "Prior old362failure/A3partial retained; Node failing Host test does not establish product bypass"
   ],
-  "latestCoordination": "lead-o14-complete-resource-batch.json"
+  "latestCoordination": "lead-release-b-1710-window.json"
 }

@@ -1,0 +1,47 @@
+{
+  "recordedAt": "2026-10-06T17:14:44.184965+00:00",
+  "source": "Lead RELEASE03-B-20261006-1710 via root; W01 actual completion, raw freeze pending",
+  "window": "RETURNED_TO_LEAD",
+  "corePrior": {
+    "finishedAt": "2026-10-06T17:09:09.484Z",
+    "cases": "8/8",
+    "exitCode": 0,
+    "databaseAbsent": true,
+    "connections": 0,
+    "errors": [],
+    "runtimeTempCacheCleared": true,
+    "freeAfterBytes": 1247244288
+  },
+  "run": "app-20261006-171109-8cf8c3",
+  "implementation": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
+  "actualHead": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
+  "startedAt": "2026-10-06T17:11:35.622Z",
+  "elapsedMs": 19626,
+  "previousRuntimeMs": 20309,
+  "cumulativeMs": 39935,
+  "remainingMs": 140065,
+  "result": "B_FAILED_RECEIPT_WAIT_CAUSE_NOT_YET_REVIEWED",
+  "history": "all12 A attestation accepted, no A rerun",
+  "observations": "Plain passed; Files reached; receipt initially Sending then disappeared before expected unknown. No product-cause conclusion before fixed raw/source review.",
+  "compatibilityId": null,
+  "cleanup": {
+    "database": "flow_release03_3aa7c8c85b6548af9de2",
+    "markerConfirmedRemoved": true,
+    "worker": {
+      "pid": 1710,
+      "exitCode": 0
+    },
+    "chrome": {
+      "pid": 3420,
+      "exitCode": 0
+    },
+    "errors": []
+  },
+  "rawDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3",
+  "rawFileCount": 12,
+  "rawFreeze": "6411ba7a43f0f54b5fc924ef8850b88d80e44ac2 pushed clean,12 files145329B verified fixed/current",
+  "next": "No automatic retry. New PG/Chrome requires fresh independent window. Personal services unchanged.",
+  "leadAcceptedReturnAt": "2026-10-06T17:11:55Z",
+  "nextWindowOwner": "TUI01F original2group shortjourney",
+  "intake": "release03-app-171109-intake.json"
+}

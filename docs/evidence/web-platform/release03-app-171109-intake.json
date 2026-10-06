@@ -1,0 +1,126 @@
+{
+  "observedAt": "2026-10-06T17:16:55.443527+00:00",
+  "state": "ACTUAL_B_FAILURE_EVIDENCE_INTAKE_CAUSE_PENDING",
+  "ownerCommit": "6411ba7a43f0f54b5fc924ef8850b88d80e44ac2",
+  "implementation": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
+  "runtimeHead": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
+  "runtimeDirty": "?? docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3/",
+  "dirtyBoundary": "Admission clean; runtime captures only own new raw directory, not source modification",
+  "run": "app-20261006-171109-8cf8c3",
+  "ownerRawDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs/app-20261006-171109-8cf8c3",
+  "files": [
+    {
+      "name": "app-failure.png",
+      "bytes": 58257,
+      "sha256": "f5e70b203d399b334392571c5ddf42eda757c211f577c023dcace8a4e260bbd2"
+    },
+    {
+      "name": "app.json",
+      "bytes": 2186,
+      "sha256": "3ea4d48a0be713f0ed51656560eff18ca3c9eee28102471db3005ac6095a3eac"
+    },
+    {
+      "name": "budget.json",
+      "bytes": 136,
+      "sha256": "39c692b1ddfaf212768538a3ea19b4166fc87f61fb21bb4d09901c0f84a4e8dd"
+    },
+    {
+      "name": "cleanup.json",
+      "bytes": 412,
+      "sha256": "0a36a8cae4ec5eb0358e9c5387f8ec2a9bc894cec9fd30dac9936d967c3604b4"
+    },
+    {
+      "name": "database-owner.json",
+      "bytes": 169,
+      "sha256": "8caf34077d48fe83b9b190fe0031d34a85f71a4688ce6a5ce321e995add6cf1b"
+    },
+    {
+      "name": "history-attestation.json",
+      "bytes": 4659,
+      "sha256": "414fe8e30e5f4f9e175d941eb3560dd04e3d952c0217a0702d750c22bd87db45"
+    },
+    {
+      "name": "outcome.json",
+      "bytes": 5230,
+      "sha256": "4862913f71698ca8bc63dc7db6a49f6f6a0351a1d446fe4b95711e40d38f1096"
+    },
+    {
+      "name": "process.log",
+      "bytes": 5496,
+      "sha256": "e357a57b6bddc8a8067411d648356f4b9a192c27e2476fde7322090ddce3a81b"
+    },
+    {
+      "name": "sources.json",
+      "bytes": 5521,
+      "sha256": "9b8fc611007e3ef3faac0df1d52fcbcee4967194eb161e74f1f43b9289687ace"
+    },
+    {
+      "name": "supervisor.json",
+      "bytes": 8479,
+      "sha256": "a951b81e33939698b5ad205a130af4ab4912db73cb19060aae9f5d8d71a816a3"
+    },
+    {
+      "name": "wire.json",
+      "bytes": 47478,
+      "sha256": "fec6ccd225f84a4dc79f153bd2211c573de98c1b5c8f8804d567ac45992cc5d1"
+    },
+    {
+      "name": "worker.json",
+      "bytes": 7306,
+      "sha256": "747a0526dceba1f93e8b41393bc26db77a852d1727efd7de03ce57027e23d21e"
+    }
+  ],
+  "rawBytes": 145329,
+  "priorRawBytes": 319542,
+  "retainedTotalBytes": 464871,
+  "historyAttestation": "Exact12 gate pins match retained all12; sourceMode all/sourcePhaseB FAILED preserved; no A rerun",
+  "newRuntimeMs": 19626,
+  "previousRuntimeMs": 20309,
+  "cumulativeRuntimeMs": 39935,
+  "remainingRuntimeMs": 140065,
+  "cleanup": {
+    "databaseName": "flow_release03_3aa7c8c85b6548af9de2",
+    "databaseCreateAttempted": true,
+    "databaseCreated": true,
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "errors": [],
+    "processIds": [
+      {
+        "pid": 1710,
+        "exitCode": 0,
+        "signalCode": null
+      },
+      {
+        "pid": 3420,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "finishedAt": "2026-10-06T17:11:55.198Z"
+  },
+  "outcome": {
+    "passed": false,
+    "historyPassed": true,
+    "phaseB": "FAILED",
+    "compatibilityId": null
+  },
+  "supervisorResource": {
+    "resourcePolicy": {
+      "startMargin": 1207959552,
+      "stopMargin": 1140850688,
+      "admittedStart": 1207959552
+    },
+    "minimumFreeBytes": 1220063232,
+    "freeAtEnd": 1230462976,
+    "providerQueries": 0
+  },
+  "failure": "unknown receipt wait failed after Sending; fixed wire/source causal review pending; no product-cause assertion",
+  "window": "Returned and accepted by Lead; nextPG TUI01F",
+  "limits": [
+    "No runtime replay",
+    "No unchanged Node recheck",
+    "No live PG/free/personal query",
+    "No new retry authorization from remaining budget"
+  ]
+}
