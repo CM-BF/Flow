@@ -1,0 +1,72 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity
+
+ ❯ packages/interaction/src/controller.test.ts (15 tests | 2 failed | 13 skipped) 11ms
+   ↓ descriptors parse commands, complete names and preserve ordinary text exactly
+   ↓ help is offline and creation persists before the typed client mutation
+   ↓ lost creation ACK retains the immutable body/key and only explicit recover replays it
+   ↓ startup with saved intent sends nothing and rejects a different connection binding
+   ↓ disconnect ignores a late read from the old epoch and does not cancel center work
+   ↓ disconnect during a mutation keeps unknown and quit waits for local cleanup only
+   ↓ raw draft is preserved while terminal display escapes OSC, ANSI and bidi controls
+   ↓ disconnect during durable save never dispatches a new POST on the replacement epoch
+   ↓ disconnect during ACK journal cleanup cannot reselect or reconnect the old epoch
+   ↓ saved unsupported queue intent is rejected without dispatch
+   ↓ discovery pages remain selectable while a conversation is open and expose every bounded row
+   ↓ a stale send rejection preserves the draft, reloads only observations and resumes polling
+   ↓ a failed explicit observation recovery becomes disconnected instead of a silent connected non-poller
+   × confirmed new conversation resets the old focused turn (lost ACK: false) 9ms
+   × confirmed new conversation resets the old focused turn (lost ACK: true) 1ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 13 skipped (15)
+   Start at  04:09:33
+   Duration  341ms (transform 140ms, setup 0ms, import 241ms, tests 11ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/controller.test.ts > confirmed new conversation resets the old focused turn (lost ACK: false)
+AssertionError: expected null to match object { …(2) }
+
+- Expected: 
+{
+  "number": 1,
+  "turnId": "59291c2b-403f-445e-b4d0-2a0bb14c28b5",
+}
+
++ Received: 
+null
+
+ ❯ packages/interaction/src/controller.test.ts:181:45
+    179|   expect(saved).toBeNull(); expect(controller.snapshot().observation).…
+    180|   expect((await controller.input('First message in second conversation…
+    181|   expect(controller.snapshot().observation).toMatchObject({ turnId: se…
+       |                                             ^
+    182|   expect((await controller.input('/activity')).ok).toBe(true);
+    183|   expect(activityTasks).toEqual([secondTurns[0]!.task.id]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/interaction/src/controller.test.ts > confirmed new conversation resets the old focused turn (lost ACK: true)
+AssertionError: expected null to match object { …(2) }
+
+- Expected: 
+{
+  "number": 1,
+  "turnId": "50cd1d00-9e27-4595-8bbd-ad92eaaa52a3",
+}
+
++ Received: 
+null
+
+ ❯ packages/interaction/src/controller.test.ts:181:45
+    179|   expect(saved).toBeNull(); expect(controller.snapshot().observation).…
+    180|   expect((await controller.input('First message in second conversation…
+    181|   expect(controller.snapshot().observation).toMatchObject({ turnId: se…
+       |                                             ^
+    182|   expect((await controller.input('/activity')).ok).toBe(true);
+    183|   expect(activityTasks).toEqual([secondTurns[0]!.task.id]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
