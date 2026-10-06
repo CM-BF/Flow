@@ -87,3 +87,5 @@ W1证明本机四个独立fixture runner可同时执行该固定负载，没有S
 2026-10-06 07:48 UTC W2 MAIN_ACCEPTED：Lead明确main/origin6426已接收5504；owner核5504为祖先、三scope对main零diff，见[w2-main-receipt.json](../../docs/evidence/s01/w2-main-receipt.json)。不重跑、不把cc741只读提案混入批准。GO已认可提案总体方向但要求补claim丢失回执的真实接口缺口；完成CHAT06结果审查后补，后继实现未授权/未领取。
 
 2026-10-06 07:51 UTC GO只读review修正已落实原plan：当前claim空body/无requestId、丢失回执无可靠公开恢复接口，原“现有恢复协议核实”撤回。首片建议未知claim停admission且保留占用、已知attempt继续；真正自动恢复需事务绑定稳定requestId与原结果的窄接口，未领取产品写权/未预设新表。CHAT06实际结果已独审APPROVED160b，0新增运行；此提案修正待GO接收，不与W2结果或main事实混淆。
+
+2026-10-06 07:55 UTC proposal边界复核：worker只读fc5351未见P1/P2；非阻断补充已纳入：claim发送前持久化in-flight意图，确定响应才清除，重启遗留意图保守unknown，防止提交后/记unknown前崩溃漏记。没有中心回执身份仍不能自动恢复。此建议未实现、不覆盖CHAT08写权。CHAT06P02已由Lead正式解锁给原worker新WT/take，S01后继产品实现仍未领取。

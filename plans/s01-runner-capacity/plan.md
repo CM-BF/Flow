@@ -55,7 +55,7 @@ S01-01/02 是文档片段，不代表压测已运行。实验交付须包含固�
 
 现状：`POST /api/runner/claim`要求空body，`FlowClient.claim()`不带稳定requestId，响应只有assignment/remainingLeaseMs；本轮未发现按claim请求身份查回执的公开接口。请求可能已在中心提交但响应丢失，本地不知道attemptId；现有outbox重放和FinalProposalJournal只覆盖已知身份记录，**不能恢复这个未知claim**。即使网络恢复、下次claim得到另一个task、或本地Map有空槽，也不能把原claim记成已恢复。lease到期可把任务标uncertain，但`completed_at IS NULL`仍计中心容量，不等于释放。
 
-当前可实现的保守行为：单一claim请求一旦出现无法确认提交结果的失败，进入明确unknown-claim状态、停止新admission，不重试成新执行；已知合法attempt继续各自心跳/执行/清理。保留请求开始时间、runner身份与未知结果事实（不含token），向owner报告需核对。没有新回执接口时，本地不能自动猜测未知attempt身份、补发completed或用超时清空占用；需由中心/owner明确核对并按现有授权恢复动作处理后，才解除admission阻断。进程重启也不是清空该状态的证据。此保守模式降低可用性，是首个局部并发片的明确限制，不能称已支持无损claim恢复。
+当前可实现的保守行为：发送单一claim请求前先持久化本地in-flight意图，只在收到确定响应后清除；进程崩溃后遗留意图也按未知结果处理，覆盖中心已提交但本地还没记unknown的窗口。单一claim请求一旦出现无法确认提交结果的失败，进入明确unknown-claim状态、停止新admission，不重试成新执行；已知合法attempt继续各自心跳/执行/清理。保留请求开始时间、runner身份与未知结果事实（不含token），向owner报告需核对。没有新回执接口时，本地不能自动猜测未知attempt身份、补发completed或用超时清空占用；需由中心/owner明确核对并按现有授权恢复动作处理后，才解除admission阻断。进程重启也不是清空该状态的证据。此保守模式降低可用性，是首个局部并发片的明确限制，不能称已支持无损claim恢复。
 
 真正的自动恢复需要一个窄claim回执能力：客户端在发送前持久化稳定requestId；同runner+requestId的重试/查询必须返回同一次已提交的assignment及权属/剩余租约，或明确的未分配/已失效/仍未知状态，不能领取另一个task冒充恢复。中心必须在领取事务中原子绑定requestId与结果，重试冲突/重复键/身份变更要明确拒绝；已过期或uncertain不得通过查回执静默重新执行。接口形状和最小存储方式由后继owner评审，可优先评估既有领取记录的窄扩展，不预设新表/服务或通用调度框架。
 
