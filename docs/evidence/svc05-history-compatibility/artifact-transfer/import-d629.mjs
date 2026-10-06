@@ -29,12 +29,20 @@ async function absent(path) {
   fail('DESTINATION_EXISTS');
 }
 async function boundedFile(path, expectedBytes, expectedHash) {
-  const file = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW);
+  if (!Number.isSafeInteger(expectedBytes) || expectedBytes < 0 || expectedBytes > totalBytes) fail('FILE_BOUND');
+  const file = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
   try {
     const info = await file.stat();
     if (!info.isFile() || info.uid !== process.getuid() || info.size !== expectedBytes) fail('FILE_IDENTITY');
-    const bytes = await file.readFile();
-    if (bytes.length !== expectedBytes || sha(bytes) !== expectedHash) fail('FILE_INTEGRITY');
+    const buffer = Buffer.alloc(expectedBytes + 1);
+    let length = 0;
+    while (length < buffer.length) {
+      const { bytesRead } = await file.read(buffer, length, buffer.length - length, null);
+      if (bytesRead === 0) break;
+      length += bytesRead;
+    }
+    const bytes = buffer.subarray(0, length);
+    if (length !== expectedBytes || sha(bytes) !== expectedHash) fail('FILE_INTEGRITY');
     return bytes;
   } finally { await file.close(); }
 }
