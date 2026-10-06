@@ -1,0 +1,65 @@
+{
+  "task": "CHATUI01",
+  "stack": [
+    "Node24",
+    "Playwright1.63.0",
+    "Vite actual App",
+    "existing typed stream protocol"
+  ],
+  "discovery": "Local skills already cover domain; no external search/install.",
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "name": "webapp-testing",
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+    },
+    {
+      "name": "brainstorming",
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    }
+  ],
+  "cleanCodeSource": "https://github.com/sickn33/agentic-awesome-skills@bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5",
+  "application": "Bounded accepted scope. DOM-specific readiness instead of networkidle for polling. Separate journey, guard, evidence checkpoint. No mechanical function splits.",
+  "checks": [
+    {
+      "at": "2026-10-06T08:41:10Z",
+      "scope": "Initial plan and inherited draft",
+      "findings": "Draft imports assume former directory; final growth may be observed only after final exists; need explicit sample observation and bounded hooks.",
+      "unresolved": "Implementation pending"
+    },
+    {
+      "at": "2026-10-06T08:47:00Z",
+      "scope": "journey/evidence/fixture/runtime + local behavior checks",
+      "findings": "Strict same-frame draft-vs-final snapshot; fixed none-profile UI and mutation binding; archived product source; imports preserve own package identity. Names/responsibilities/errors/duplication checked.",
+      "fixes": "Separated browser journey, safety evidence helper, fixture and isolated-source setup. Removed unused hash. Existing full Web suite not repeated.",
+      "unresolved": "No live entry/permit/actual usage seam; candidate records exact prerequisites."
+    },
+    {
+      "at": "2026-10-06T08:52:00Z",
+      "scope": "P2 create receipt guard only; owner fix",
+      "findings": "route.continue did not attest a successful creation and allowed an arbitrary first conversation ID. Initial mocked continue failure missed the real network boundary.",
+      "fixes": "Create uses no-retry/no-redirect route.fetch; validate fresh receipt identity/config; fsync checkpoint then bind turn; all invalid or unknown outcomes latch failure. Replaced two weak guard mocks with five real Chrome/HTTP scenarios.",
+      "checks": "5/5 actual network regressions red on prior code; 9/9 current behavior checks green; one same-driver actualApp green. No product or live entry change.",
+      "unresolved": "Independent delta review pending; real live permit/caller/usage remains unimplemented."
+    },
+    {
+      "at": "2026-10-06T08:55:00Z",
+      "scope": "P2 continuation: turn transport only",
+      "findings": "Creation fix did not cover browser implicit resend of the turn POST. Real lost turn response reproduced three total POSTs instead of one create plus one turn.",
+      "fixes": "Both mutations now use maxRetries0/maxRedirects0 route.fetch; turn acknowledgement bound to conversation/turn/task/prompt, persisted before fulfillment; unknown/non2xx locks all later mutations.",
+      "checks": "2/2 new real-network red at f80; 3/3 affected network checks green including happy identity binding; same actualApp journey passed; 3 strict growth samples, receipts and own Chrome exit0.",
+      "unresolved": "Independent delta review pending; no live entry or permit."
+    }
+  ]
+}
