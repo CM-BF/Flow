@@ -1,5 +1,16 @@
 # S01 独立审查
 
+状态：APPROVED（仅A/B准备）
+Review target commit：d3ba03a88b8d25d134b7abade7f55f8198b182ba
+
+architecture_read / gpt-6-astra于2026-10-06 14:11:28 UTC完成增量独审，Mika/root / gpt-6-astra于14:12:06 UTC独立复核并正式接收；原da932唯一P2 CLOSED，0剩余P1/P2。[审批回执](../../docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/independent-review.json)、[准备入口](../../docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/ready.md)。18项delta绑定Git=WT/hash/bytes，manifest SHA `4a555e969cb445e913c6bb5bf99a7757166eb3a73c56cabc2bd445a53ab39040`。每次同步Git显式受preparation绝对期限及outer期限夹紧，耗尽不执行，返回先扣实际Buffer字节再核门禁；OS超时仍不等于可靠取消。
+
+64 distinct=原61+新增3，最终覆盖分次形成；本次17项含14重叠直接消费者，不能加为78。原3red与全部失败保留，local strict0；审者0重测/导出/PG/目标。原da932的APPROVED已撤回为CHANGES_REQUESTED，历史记录保留于下文，本次修复批准不覆写旧manifest/raw。
+
+此结论只批准准备，不是实际A/B通过、main接收或OPEN。资源RESOURCE_HOLD、条件PENDING、窗口NOT_OPEN；须fresh磁盘≥1GiB+512MiB、PG/WAL条件及串行安排确认，并由Mika点名唯一窗口。源码/raw冻结，不因等待资源新增检查。
+
+## 以下为历史observer批准，不覆盖当前A/B准备
+
 状态：APPROVED
 Review target commit：c259e8e53cd53830fe1bc78ce3c8dae7b34d5540
 
