@@ -1,6 +1,6 @@
 # COST01A — 有界任务用量解释
 
-Module 已获独立只读 APPROVED，待main/公共接线。它读取原账本，未改 UsageTotals 数值定义或现有存量行，也未调用 provider。共享 factory/client/各端呈现尚未接入。
+Module 已获独立只读 APPROVED，已随公共 client 和默认 factory 接线进入主线；接收事实见 [main-receipt.json](main-receipt.json)。它读取原账本，未改 UsageTotals 数值定义或现有存量行，也未调用 provider。各端界面呈现仍是后继。
 
 ## 已实现
 
@@ -41,4 +41,4 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH node node_modules/typescript/bin/tsc --
 
 ## 边界与后继
 
-未验证/未实现：Web/TUI/CLI呈现、共享 factory/client、实际 Codex权威用量、辅助调用外部补计、阶段归因、全局预算、真实模型重复实验、真实订阅账单。原来的 SDK 版本/attempt未随每条sample持久关联，不能在轻读时编造或读取正文猜补。COST-001仍 open。
+未验证/未实现：Web/TUI/CLI呈现、实际 Codex权威用量、辅助调用外部补计、阶段归因、全局预算、真实模型重复实验、真实订阅账单。原来的 SDK 版本/attempt未随每条sample持久关联，不能在轻读时编造或读取正文猜补。COST-001仍 open。
