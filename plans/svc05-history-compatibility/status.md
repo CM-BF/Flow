@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 23:41:20 UTC |
+| 最近更新时间 | 2026-10-06 23:44:39 UTC |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility |
 | Branch | codex/personal-history-compatibility |
 | 工作基线 / HEAD | 3a263677db28e92f28622917eef70edb0f260f85 / 新恢复 d8349bdec815b53f29ddae54d6b5b1ce49d78bd5；运行目标af51，metadata以本文件提交为准 |
-| 工作树dirty状态 | 新恢复三源码固定停写；仅manifest/status收口，clean以交付回执为准 |
+| 工作树dirty状态 | 恢复源码固定停写；仅实际结果/metadata收口，clean以交付回执为准 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | NOT_RUN 实际恢复；一次只读基线exit0/577ms，原准备入口失败保留；无产品测试。 |
+| 检查状态 | PASSED d8349bdec815b53f29ddae54d6b5b1ce49d78bd5 单次center ready/2095ms/8保留检查；无产品测试。 |
 | 已集成main状态 / HEAD | 已接收 2af8639ddfa66252ecf97fd6921eaab40389020d；后继 78fb37704d708e3b3b6ea4f1810947f012666196 两个完整own范围对cef5逐文件零差；[最终接收](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json) |
 | 实现目标 | d8349bdec815b53f29ddae54d6b5b1ce49d78bd5 |
 | 实现范围 | docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs, docs/evidence/svc05-history-compatibility/center-recovery-af51/operator.mjs, docs/evidence/svc05-history-compatibility/center-recovery-af51/supervise.py |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 个人后台与页面已完成更新；共享数据库中断后中心退出，现正在准备同版本中心恢复，runner 和网页保留。 |
-| 下一可用交付 | 固定只启动中心的恢复输入，经独审和执行窗口后恢复后台可用性。 |
-| 当前阻塞 | ACTIVE: 中心未监听，恢复准备尚待独审与一次执行窗口。 |
+| 当前产出 | 个人中心已按原版本恢复，原 runner、网页、配置和用户数据保持；实际结果已封存待独审。 |
+| 下一可用交付 | 完成这次中心恢复的独立结果核对与接收。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED 新同版本恢复固定准备待独审；原发布实际1994182独审APPROVED不改变。 |
+| Review | APPROVED 准备d8349bde；实际恢复结果待独立核对，原发布批准保留。 |
 | Claim | 新 22000abe-192a-489a-bdee-6cbc3cd2ea4a v1，仅 center-recovery-af51 证据与本计划；旧 cd2d v3 已released，OPS14旧wrapper仍其唯一writer。 |
 | 架构影响 | 既有host维护与独立Web CAS完成实际发布；限定旧intent退役有私有原件/审计，普通idle/API不变。运行af51与Web5069586/d629独立于moving main。 |
 

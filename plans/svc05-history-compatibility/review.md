@@ -142,3 +142,8 @@ Reviewer：Execution Lead / gpt-6-astra；target `1994182e4f1d7ff0cb5b08d005defe
 范围仅 center-recovery-af51 的facts/operator/supervise，固定源提交后填写manifest。原362许可不复用，原OPS14 wrapper/module只读固定输入；没有实际启动。独立审查核新版本/v18、唯一spawn、原锁/marker、baseline所有旧列仅queue_checked_at例外、源固定门、PID-only截止和失败unknown。证据见该目录README/runtime-bindings/facts-before/baseline-supervision/historical-boundary。已做一次只读DB基线；未运行产品tests/恢复/HTTP/provider。
 
 本次固定实现 `d8349bdec815b53f29ddae54d6b5b1ce49d78bd5`；[固定manifest](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/fixed-manifest.json)。两个JS语法和PythonAST通过（非运行测试），41绑定核一致；旧历史到fresh的64表原摘要及私有文件/retained全部相等。
+
+
+## 2026-10-06 23:44:39 UTC：准备批准与一次执行事实
+
+Execution Lead 已独立 APPROVED 实现d8349bdec815b53f29ddae54d6b5b1ce49d78bd5，57绑定及三脚本/共享OPS14 consumer、历史至fresh摘要全核。[原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/preparation-independent-review.json)。一次新许可svc05h-center-af51-20261006-2343启动center，wrapper exit0/2095ms，原raw与8保留checks已保存；operator PID已收尾，未向服务发信号。实际结果独审尚待完成，源/历史不改、0后继probe。[实际分析](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-analysis.json)。
