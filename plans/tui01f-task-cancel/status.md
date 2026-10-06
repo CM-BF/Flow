@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:16:17 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 22:42:03 UTC；main同步核验 2026-10-06 21:16:17 UTC |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -21,7 +21,7 @@
 | 优先级 | 2 |
 | 当前产出 | 终端初屏与正常退出已单独验证；启动和收尾失败现可保留诊断，完整双界面接续仍待验证。 |
 | 下一可用交付 | 待资源及独占窗口满足后，按已审固定入口验证双界面接续。 |
-| 当前阻塞 | 完整旅程所需磁盘余量尚不足，且共享运行窗口未分配；源码修复已审，原首败根因仍未知。 |
+| 当前阻塞 | ACTIVE: 完整双界面接续仍待原门槛的资源复核和新独占窗口；源码修复已审，原首败根因仍未知。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，c612观察delta限定APPROVED；准备批准与实际失败保留，无全程新许可。 |
 | Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v4 active；20:06:00.587Z accept；本次授权仅3实验源/fixture/自有记录 |
@@ -89,3 +89,5 @@
 2026-10-06 21:14:33 UTC：Execution Lead唯一限定APPROVED c612，27新/780原输入/29历史原始绑定均核同，reviewer0复跑，无P1/P2。[原样独审回执](../../docs/evidence/tui01f/web-handoff/independent-terminal-repair-review.json)来源I02 fcdf9982，SHA17f0a7142f663ae0f3eaf578c9bc04cf42a60fee396dab89a6620fb7e4b40df8。源码继续停写，actual完整旅程仍原1/0，未生成新permit；原fresh1GiB+128MiB门槛/独占窗口保持。
 
 2026-10-06 21:16:17 UTC：Lead main receipt 421b2e89f10225bd37d1928ef2b627c6a375b76a已接收c612及固定记录（31路径输入一致，无新运行）；本owner再次只读逐字核两实验源码与固定c612/main/current全同。仅观察修复接收，F04完整验收继续open，claim保留后继；不重跑PG/Chrome/PTY，不降低gate。
+
+2026-10-06 22:42:03 UTC：fresh核原claim v4 active/本owner/本树后，仅将当前阻塞改为可解析ACTIVE字段并更新本次metadata时间；main核验时间、原失败/限定批准与全部产品/运行证据保持。未执行产品测试或新旅程。
