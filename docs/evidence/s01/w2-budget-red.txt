@@ -1,0 +1,176 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+ ❯ experiments/runner-capacity/evidence.test.ts (6 tests | 5 failed) 21ms
+   ✓ preserves the audited historical totals and gate requirement without rewriting raw evidence 10ms
+   × counts claim without emit and deduplicates all observations of one attempt 4ms
+   × charges unknown claim ACK and failed gate by reservation even without emitted events 2ms
+   × does not treat successful but incomplete count evidence as zero consumption 1ms
+   × refuses missing or invalid reservations and incomplete earlier runs 2ms
+   × refuses reruns and separate task, attempt, and elapsed budget overflow 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/runner-capacity/evidence.test.ts > counts claim without emit and deduplicates all observations of one attempt
+AssertionError: expected { label: 'new-run', …(12) } to match object { usedAttempts: 2, usedTasks: 2 }
+(11 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "usedAttempts": 2,
+-   "usedTasks": 2,
++   "usedAttempts": 1,
++   "usedTasks": 0,
+  }
+
+ ❯ experiments/runner-capacity/evidence.test.ts:35:23
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  experiments/runner-capacity/evidence.test.ts > charges unknown claim ACK and failed gate by reservation even without emitted events
+AssertionError: expected { label: 'new-run', …(12) } to match object { usedTasks: 9, usedAttempts: 9 }
+(11 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "usedAttempts": 9,
+-   "usedTasks": 9,
++   "usedAttempts": 0,
++   "usedTasks": 0,
+  }
+
+ ❯ experiments/runner-capacity/evidence.test.ts:44:23
+     42|   await prior(path, 'failed-gate', { ...failed(8, 8), scenario: { id: …
+     43|   const { reservation } = await reserveRun(path, input);
+     44|   expect(reservation).toMatchObject({ usedTasks: 9, usedAttempts: 9 });
+       |                       ^
+     45|   expect(reservation.priorRuns.every(run => run.observedAttempts === 0…
+     46| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  experiments/runner-capacity/evidence.test.ts > does not treat successful but incomplete count evidence as zero consumption
+AssertionError: expected { label: 'new-run', …(12) } to match object { usedTasks: 3, usedAttempts: 3 }
+(11 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "usedAttempts": 3,
+-   "usedTasks": 3,
++   "usedAttempts": 0,
++   "usedTasks": 0,
+  }
+
+ ❯ experiments/runner-capacity/evidence.test.ts:50:55
+     48| it('does not treat successful but incomplete count evidence as zero co…
+     49|   const path = await root(); await prior(path, 'incomplete-counts', { …
+     50|   expect((await reserveRun(path, input)).reservation).toMatchObject({ …
+       |                                                       ^
+     51| });
+     52| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  experiments/runner-capacity/evidence.test.ts > refuses missing or invalid reservations and incomplete earlier runs
+AssertionError: promise resolved "{ …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "output": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-budget-rWwFkl/new-run",
++   "reservation": {
++     "attempts": 12,
++     "databaseName": "synthetic-owned-db",
++     "label": "new-run",
++     "maxWindowMs": 30000,
++     "priorRuns": [
++       {
++         "attempts": 0,
++         "elapsedMs": 100,
++         "failed": true,
++         "label": "unknown",
++         "tasks": 0,
++       },
++     ],
++     "requireGate": false,
++     "scenario": "declared-four",
++     "startedAt": "2026-10-06T07:17:18.186Z",
++     "tasks": 12,
++     "usedAttempts": 0,
++     "usedMs": 100,
++     "usedTasks": 0,
++     "windowId": "synthetic-window",
++   },
+  }
+
+ ❯ experiments/runner-capacity/evidence.test.ts:56:41
+     54|   for (const reservation of [undefined, { tasks: -1, attempts: 1 }, { …
+     55|     const path = await root(); await prior(path, 'unknown', { ...faile…
+     56|     await expect(reserveRun(path, input)).rejects.toThrow('prior reser…
+       |                                         ^
+     57|   }
+     58|   const path = await root(); const dir = join(path, 'unfinished'); awa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  experiments/runner-capacity/evidence.test.ts > refuses reruns and separate task, attempt, and elapsed budget overflow
+AssertionError: promise resolved "{ …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "output": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-budget-CFnkQW/new-run",
++   "reservation": {
++     "attempts": 12,
++     "databaseName": "synthetic-owned-db",
++     "label": "new-run",
++     "maxWindowMs": 30000,
++     "priorRuns": [
++       {
++         "attempts": 0,
++         "elapsedMs": 100,
++         "failed": true,
++         "label": "prior",
++         "tasks": 0,
++       },
++     ],
++     "requireGate": false,
++     "scenario": "declared-four",
++     "startedAt": "2026-10-06T07:17:18.188Z",
++     "tasks": 12,
++     "usedAttempts": 0,
++     "usedMs": 100,
++     "usedTasks": 0,
++     "windowId": "synthetic-window",
++   },
+  }
+
+ ❯ experiments/runner-capacity/evidence.test.ts:68:41
+     66|   for (const [tasks, attempts] of [[60, 1], [1, 60]]) {
+     67|     const path = await root(); await prior(path, 'prior', failed(tasks…
+     68|     await expect(reserveRun(path, input)).rejects.toThrow('task or att…
+       |                                         ^
+     69|   }
+     70|   const slow = await root(); await prior(slow, 'prior', { ...failed(1,…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 1 passed (6)
+   Start at  00:17:18
+   Duration  132ms (transform 23ms, setup 0ms, import 30ms, tests 21ms, environment 0ms)
+

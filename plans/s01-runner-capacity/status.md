@@ -2,26 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:11 UTC；生产基线115b；main观察fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:44 UTC；W1 main30b，W2结果待main接收 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；正式入口target 9da9de1b6778afec5219e55f39b53b365c8cf900，metadata后继单列 |
-| 工作树dirty状态 | 交付前观察9811f5967184efb9f444ad01c34313fa4c9e743f clean；本次仅结果review/status metadata，源码9da未变 |
+| 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；W2源码target 2ab7967f2eb808fecd1205f7552a119eee8e0b36，metadata后继单列 |
+| 工作树dirty状态 | 固定结果0dac4b92747db5a3c8ed2dc25301e7cbecc2e8bf clean，后继仅独审/状态/报告说明metadata |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 9da9de1b6778afec5219e55f39b53b365c8cf900：6纯统计/预算unit测试，noEmit0；W1 gate8tasks/2attempts与formal16tasks/16attempts通过，固定结果9e独审APPROVED |
-| 已集成main状态 / HEAD | 未集成；07:11 UTC观察main/origin fa9a8288341d4f2bd8160e03fe9173dafa2de1a6，S01仍待Lead接收 |
-| 实现目标 | 9da9de1b6778afec5219e55f39b53b365c8cf900 |
+| 检查状态 | PASSED 2ab：11纯统计/预算/参数tests，noEmit0；W2实跑12tasks/12attempts且正常清理，结果0dac独审APPROVED |
+| 已集成main状态 / HEAD | W1已集成main/origin30b97cbf3665c4ef7a314a6a8b59394ae68781af；W2结果已审待集成 |
+| 实现目标 | 2ab7967f2eb808fecd1205f7552a119eee8e0b36 |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 4 |
-| 当前产出 | 首个四进程测量和独立结果审查已完成，固定事实等待主线接收 |
-| 下一可用交付 | 主线接收首个窗口证据；后继优先核实单进程声明容量与实际并发 |
+| 当前产出 | 单进程声明容量4、实测并发1的结果已独审通过，待main接收 |
+| 下一可用交付 | main接收W2；既有plan内提交最小有界slot建议 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，9da准备代码与9e固定W1结果均限定APPROVED；不宣称模型容量或SLO |
+| Review | [review.md](review.md)，W2准备2ab与结果0dac均APPROVED；W1已批准并集成 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -29,12 +29,12 @@
 | S01-02 | completed | mika | [合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json) |
 | S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
 | S01-04 | in-progress | mika / Lead | W1首个128空会话+4runner/16task场景已运行并清理；可选control16/control12未运行，待证据决定 |
-| S01-05 | in-progress | 独立reviewer | 准备代码APPROVED9da；W1固定结果9e10e09独审APPROVED，main尚未接收 |
+| S01-05 | in-progress | 独立reviewer / Lead | W1结果9e独审APPROVED/main30b；W2准备2ab与结果0dac独审APPROVED，待main接收；后继ACK/browser开放 |
 | S01-06 | pending | 后继owner | 真实provider与更大并发未包含 |
 
 ## 权限、优先级与事实边界
 
-claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` v1 ACTIVE，06:22:33.774Z；[回执](../../docs/evidence/s01/claim-receipt.json)。只写3个新目录，无共享生产写权。K03关键验证与独审优先，本人负责S01，不新增agent。W1许可已执行并结束；未领取新的运行窗口。
+claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` v1 ACTIVE，06:22:33.774Z；[回执](../../docs/evidence/s01/claim-receipt.json)。只写3个新目录，无共享生产写权。K03关键验证与独审优先，本人负责S01，不新增agent。W1与W2许可均已执行、清理并释放；没有新的运行授权。
 
 W1证明本机四个独立fixture runner可同时执行该固定负载，没有SLO、模型容量或真实provider成本结论。128背景会话对象与 native session、实际在途 attempts 各自计数。生产源码可能串行是源码观察，须由实验给出有效容量，不自动派生优化收益。
 
@@ -65,3 +65,19 @@ W1证明本机四个独立fixture runner可同时执行该固定负载，没有S
 2026-10-06 07:11 UTC W1独立结果审查APPROVED target9e10e09，无P1/P2，报告补充poll50/默认500ms、读端小样本和总时长非吞吐窗口。冻结manifest/raw未改，独审回执独立保存。本片段已审待main接收，完整S01仍开放；可选12task declared4优先建议待GO决定，0新增运行。架构影响：仅实验消费者与证据，无产品接口/DB/生命周期变更。
 
 2026-10-06 07:12 UTC dashboard实读：权威S01 source live/stale=false，9cda03662783c58ce606958d68ed7526d8847179 clean，review approved、implementation unchanged、issues=[]；首窗片段integration，等待Lead主线接收。见[当前dashboard回执](../../docs/evidence/s01/w1-dashboard-receipt.json)。原子账本07:11实读claim v1仍ACTIVE，scope与唯一owner未变；本段之后继续保留后继协调权，不释放或启动新负载。
+
+2026-10-06 07:16 UTC W2准备启动：Goal Owner明确批准仅准备declared4/12，继续同WT/claim/base115b；root唯一writer，worker转独立CHAT06P01。按声明capacity校验且保留实际peak；修复claim未emit/未知结果的保守预算扣额。W1已限定验收并交Lead接收2784473，新源码不沿用旧批准。0新增smoke/负载/模型，纯unit与noEmit检查允许；固定源码独审后申请≤30秒窗口。S01-04继续in-progress。
+
+2026-10-06 07:19 UTC 实质进展：W1获MAIN_ACCEPTED30b，owner核2784473祖先且三scope对main零diff，见w1-main-receipt.json。W2固定场景解析/真实注册容量与per-runner峰值、未知attempt保守预算已实现；新6预算用例先复现5失败，再与统计/参数共11tests通过，noEmit0（最终源码11pass/noEmit0）。未创建任何新PG或负载。新源码待固定与独审；W1 main事实不覆盖W2。
+
+2026-10-06 07:26 UTC W2独审完成：独立worker限定APPROVED2ab，无P1/P2，源码/25hash与旧raw边界核验。Mika向GO申请≤30秒阶段，CHAT06P01尚准备时不拖S01；常驻服务刷新与测量由GO错开。当前0新负载/模型，原64/64/180秒/64MiB及实际32/26未变。
+
+2026-10-06 07:27 UTC dashboard实读：S01 a22329e clean、approved/unchanged/current、live且stale=false、issues=[]；人类摘要为准备已独审、协调实际测量窗口。见[W2聚合回执](../../docs/evidence/s01/w2-approved-dashboard.json)。
+
+2026-10-06 07:33 UTC 窗口阻塞：两次固定起点预约因最终GO未及时到达而不启动，后续07:32:30租约到期也未收到最终GO；0新tasks/attempts/PG，见w2-window-coordination.json。解除条件为明确GO且剩余静默期足够完整30秒，责任Mika协调GO；不用缩短清理或补跑绕行。独立工作为CHAT06P01源码/纯验证，worker已恢复必要检查；S01源码固定2ab不变。
+
+2026-10-06 07:37 UTC W2实质交付：条件GO/三队全ACK后07:36:13.218→21.191完成declared4/12一次运行并清理，已QUIET_RELEASE。注册容量4、保守attempt峰值1/1、adapter/tool峰值1，12任务全部通过；结果待独审，不能作加速比/SLO。累计44tasks/38attempts/20.925025秒stage，0模型；原raw保留，W2未集成main。下一独立工作为既有plan内的0调用有界slot方案，与CHAT08源码owner界限明确，CHAT06P01测量入口仍优先。
+
+2026-10-06 07:44 UTC W2结果独审APPROVED0dac，无P1/P2。原raw/manifest保持hash；两项P3观察边界已补，首次PG空application_name连接归unknown，停止阶段一次claim失败与72事件ACK区分。累计44/38与20.925025秒未变，0重跑。claim v1 ACTIVE同scope已复核；后继只记录批准/交main与0调用slot方案，dashboard待本次状态聚合。
+
+2026-10-06 07:44 UTC dashboard确认：权威S01 source live/stale=false、0bd16d4 clean，delivery integration、review approved、implementation unchanged/current、issues=[]；W2 main仍not-contained。见[w2-result-dashboard.json](../../docs/evidence/s01/w2-result-dashboard.json)。metadata交接后不重复轮询或运行。

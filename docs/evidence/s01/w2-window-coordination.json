@@ -1,0 +1,30 @@
+{
+  "recordedAt": "2026-10-06T07:33:17.278852+00:00",
+  "actualNewTasks": 0,
+  "actualNewAttempts": 0,
+  "runsStarted": 0,
+  "entries": [
+    {
+      "windowId": "S01-W2-20261006T072800Z",
+      "outcome": "not-started",
+      "reason": "No final GO before enough of the fixed window remained."
+    },
+    {
+      "windowId": "S01-W2-20261006T072930Z",
+      "outcome": "not-started",
+      "reason": "First local clock read after final GO was 07:29:44 UTC; only 16 seconds remained, so did not start."
+    },
+    {
+      "quietLeaseUntil": "2026-10-06T07:32:30Z",
+      "outcome": "not-started",
+      "reason": "No final GO received before lease expired; pure checks on independent CHAT06P01 resumed after 07:32:35 UTC."
+    }
+  ],
+  "implementationUnchanged": "2ab7967f2eb808fecd1205f7552a119eee8e0b36",
+  "budgetUnchanged": {
+    "tasks": 32,
+    "actualAttempts": 26,
+    "elapsedMs": 13135.276166
+  },
+  "nextCondition": "Explicit GO with sufficient remaining quiet lease, after all leads and local worker have acknowledged quiet. No automatic start or retry."
+}

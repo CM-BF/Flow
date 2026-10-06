@@ -1,0 +1,46 @@
+{
+  "observedAt": "2026-10-06T07:44:43.193740+00:00",
+  "generatedAt": "2026-10-06T07:44:38.804Z",
+  "id": "S01",
+  "source": {
+    "mode": "live",
+    "modifiedAt": "2026-10-06T07:44:06.385Z",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/plans/s01-runner-capacity/status.md",
+    "syncedAt": "2026-10-06T07:44:38.804Z",
+    "stale": false,
+    "ageHours": 0.010778888888888888
+  },
+  "git": {
+    "available": true,
+    "branch": "codex/runner-capacity-probe",
+    "head": "0bd16d4f2c83e0ba76d0e4729688a3dc0678b26f",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T07:44:39.527Z"
+  },
+  "delivery": {
+    "state": "integration",
+    "source": "explicit"
+  },
+  "output": "单进程声明容量4、实测并发1的结果已独审通过，待main接收",
+  "review": "approved",
+  "implementationProof": "unchanged",
+  "current": true,
+  "issues": [],
+  "main": {
+    "record": "W1已集成main/origin30b97cbf3665c4ef7a314a6a8b59394ae68781af；W2结果已审待集成",
+    "recordedHead": "30b97cbf3665c4ef7a314a6a8b59394ae68781af",
+    "target": "2ab7967f2eb808fecd1205f7552a119eee8e0b36",
+    "mainHead": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+    "scopes": [
+      "experiments/runner-capacity"
+    ],
+    "observedAt": "2026-10-06T07:44:39.527Z",
+    "current": false,
+    "historicalIntegrated": false,
+    "method": "not-contained",
+    "scopeEqual": false,
+    "dirtyScopePaths": [],
+    "reason": "main 声明范围与目标不同，或存在未提交变化"
+  }
+}

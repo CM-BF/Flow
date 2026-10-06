@@ -1,0 +1,48 @@
+{
+  "reviewer": "/root/b01_bounded_reads / gpt-6-astra, independent read-only",
+  "reviewedAt": "2026-10-06T07:40:32Z",
+  "recordedAt": "2026-10-06T07:44:06.383212+00:00",
+  "resultTarget": "0dac4b92747db5a3c8ed2dc25301e7cbecc2e8bf",
+  "implementationTarget": "2ab7967f2eb808fecd1205f7552a119eee8e0b36",
+  "executionHead": "a6260adaa96d63941bffef4783891dd51ef5d655",
+  "ownerObservedHead": "0dac4b92747db5a3c8ed2dc25301e7cbecc2e8bf",
+  "ownerObservedDirtyBeforeRecording": false,
+  "decision": "APPROVED",
+  "scope": "W2 declared-capacity4, one-process, 12-task fixture result only; not provider capacity, speedup or SLO",
+  "manifestAsReviewedSha256": "fa5287c93bb71641cca0dfd963617f6937cab68b3ce5990386550f2f6b41344e",
+  "manifestPreservedAsReviewed": true,
+  "unresolvedP1P2": [],
+  "verified": {
+    "runtimeSourceFiles": 18,
+    "rawAndSupportingRecords": 5,
+    "tasks": 12,
+    "attempts": 12,
+    "declaredCapacity": 4,
+    "attemptPeakLower": 1,
+    "attemptPeakUpper": 1,
+    "adapterPeakObserved": 1,
+    "toolPeakObserved": 1,
+    "uniqueSenderEvents": 72,
+    "acceptedEventAcks": 72,
+    "terminalAcksBeforeRunnerClosed": 12,
+    "toolDigests": 12,
+    "cumulativeActualTasks": 44,
+    "cumulativeActualAttempts": 38,
+    "cumulativeChargedAttempts": 38,
+    "cumulativeStageElapsedMsIncludingCleanup": 20925.025083,
+    "ownedProcessesNormalExit0": 2,
+    "databasesRemaining": [],
+    "pendingOutbox": []
+  },
+  "reviewerRanTestsServicesOrLoad": false,
+  "nonBlockingClarifications": [
+    "First PG sample contains one unknown application_name-empty connection; do not attribute it to center/scheduler or autovacuum.",
+    "One claim HTTP failure was observed after terminal observation and immediately before runner close; no event ACK failure and no reason to claim all HTTP succeeded.",
+    "All 12 W2 dispatch observations have lastFalse-to-firstTrue bounds; do not inherit the W1 left-unknown description."
+  ],
+  "limitations": [
+    "DB/public full rowsets not retained after DROP; fixed-program assertions passed, retained sender/ACK/attempt observations support narrower independent checks.",
+    "Fixed local fixture with poll50ms; no real model/cloud calls, no provider or 100-agent capacity inference.",
+    "W1 has16 tasks and W2 has12; whole-stage durations are not a valid speedup comparison."
+  ]
+}

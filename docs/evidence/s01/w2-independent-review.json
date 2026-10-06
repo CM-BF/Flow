@@ -1,0 +1,23 @@
+{
+  "reviewer": "/root/b01_bounded_reads / gpt-6-astra, independent read-only",
+  "reviewedAt": "2026-10-06T07:26:06Z",
+  "recordedAt": "2026-10-06T07:26:47.833679+00:00",
+  "target": "2ab7967f2eb808fecd1205f7552a119eee8e0b36",
+  "observedMetadata": "4bf425189dc2ebbdde2d6dae0e38ab1d1d97364e",
+  "observedDirty": false,
+  "decision": "APPROVED",
+  "scope": "W2 declared-four preparation only; needs GO coordinated window; not a capacity or measurement-result approval",
+  "manifestAsReviewedSha256": "32478fc330401da99c20745c4b231fd8ffaa54fd788d387c9958d8f476cc55af",
+  "verified": {
+    "sourceFiles": 25,
+    "rawLogs": 3,
+    "unitTests": 11,
+    "behavioralRedFailures": 5,
+    "typecheckExit": 0,
+    "productionAppsPackagesDiff": [],
+    "w1FrozenRawAndManifestUnchanged": true
+  },
+  "unresolvedP1P2": [],
+  "reviewerRanTestsServicesOrDatabase": false,
+  "note": "Original raw test log whitespace retained; no source diffcheck issue."
+}
