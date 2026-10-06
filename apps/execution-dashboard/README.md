@@ -33,9 +33,16 @@ node apps/execution-dashboard/src/server.mjs --json
 | FLOW-001 / FLOW-002 / FLOW-003 / OPS-001 | `plan-status-review` |
 | C01 | `m1-control-plane` |
 | R01 | `m1-runner` |
+| R02 | `m1-native-harness` |
 | L01 | `m1-cli` |
 | W01 | `m1-web` |
 | D01 | `execution-dashboard` |
+| I01 | `m1-integration` |
+| LAB01 | `performance-probes` |
+| LAB02 | `observer-probes` |
+| D02 | `dashboard-progress-sync` |
+
+D02按已确认派工补登记R02/I01/LAB01/LAB02及自身。来源文件的未知字段仍保守处理，不因为新增登记变成检查或review通过；真实读取证据见`docs/evidence/d02`。现有4320实例不会自动换代码，部署/重启由协调者另行安排。
 
 默认 worktree 路径来自本机交接。其他机器需显式传 `--config /absolute/registry.json` 或 `FLOW_DASHBOARD_CONFIG`，登记包含 `mainWorktree`、`fallbackWorktree`、`frozenCommit`（完整 SHA）、`staleAfterHours`、`tasks`。每项含 `id`、`title`、`role`（`工作线` 或其他分组）、`worktree`（绝对路径）、`branch`、`planDir`（`plans/<name>`）、`evidenceDir`（`docs/evidence/<name>`）以及可选 `appEvidence`（`apps/<name>/EVIDENCE.md`）。配置只登记来源和显示名称，不承载进度。
 
@@ -74,7 +81,7 @@ main 的 HEAD / branch / dirty 单独只读观察。记录的 main SHA 不等于
 node --test apps/execution-dashboard/test/*.test.mjs
 ```
 
-只创建临时 Git 样本，覆盖 owner 选择、更新隔离、空 review、冻结 / 缺失 / 解析错误 / 过期、重复字段、分支与登记切换、main 与 review 分离、路径限制 / symlink / Host / XSS 文本、文件体积限制。真实 worktree 只读 smoke。
+只创建临时 Git 样本，覆盖 owner 选择、更新隔离、空 review、冻结 / 缺失 / 解析错误 / 过期、重复字段、分支与登记切换、main 与 review 分离、路径限制 / symlink / Host / XSS 文本、文件体积限制。真实 worktree 只读 smoke。D02新增来源可使用 `node apps/execution-dashboard/test/progress-smoke.mjs`，它在独立动态端口读取实际status并核对HTTP返回，写入 `docs/evidence/d02`；普通测试不运行此live检查。
 
 浏览器检查使用 workspace 已有 Playwright 开发依赖（或设置 `PLAYWRIGHT_MODULE` 指向现有 Playwright module），不新增生产依赖：
 

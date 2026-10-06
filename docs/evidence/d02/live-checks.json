@@ -1,0 +1,168 @@
+{
+  "observedAt": "2026-10-06T01:39:57.098Z",
+  "node": "v24.20.0",
+  "sourceHead": "40bc3336155a143384c196776147a9bc4e9589d8",
+  "tasks": [
+    {
+      "id": "R02",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-native-harness/plans/r02-native-harness/status.md",
+      "sha256": "5969c8824a885f4c68783aab02abc39cde8a01123bdd7d91a9360ee43d4f9da4",
+      "head": "4b94d269de33b61cab23e840a05cb70cc00b5de3",
+      "dirty": false,
+      "source": "live",
+      "current": true,
+      "progress": {
+        "completed": 5,
+        "total": 5
+      },
+      "issues": [],
+      "main": {
+        "record": "尚未集成；`0763d4653264b09ddd355c292fc8bd88dfc3c584`；不以集成worktree验证代替main能力",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      },
+      "review": {
+        "state": "unknown",
+        "record": "PASSED — Execution Lead独立审查通过，严格绑定下列源码/集成提交。**",
+        "target": "e4f12efbe1c2efdc4fd287dfe39a6e6949b4d1a2"
+      },
+      "checks": {
+        "state": "unknown",
+        "target": null,
+        "record": "57/57分支测试与typecheck通过；独立Claude/configuration 28/28与typecheck通过；R02+I01真实5/5预算已用完"
+      },
+      "documentMatches": true
+    },
+    {
+      "id": "I01",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-integration/plans/i01-integration/status.md",
+      "sha256": "f92b2989c645819ea2c404eef459552d3b10263e134397613b22dc9ff7a173f6",
+      "head": "de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4",
+      "dirty": true,
+      "source": "live",
+      "current": true,
+      "progress": {
+        "completed": 3,
+        "total": 5
+      },
+      "issues": [],
+      "main": {
+        "record": "NOT_INTEGRATED；`0763d4653264b09ddd355c292fc8bd88dfc3c584`，应用尚未合入main",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      },
+      "review": {
+        "state": "not_started",
+        "record": "SCOPED_APPROVE，限固定提交的4个确定性集成场景；完整M1未审查完成。**",
+        "target": null
+      },
+      "checks": {
+        "state": "failed",
+        "target": "6434fba78bba5097376555a66114462f5432ca25",
+        "record": "FAILED；`6434fba78bba5097376555a66114462f5432ca25`全检83/84、typecheck通过；唯一4320端口冲突已由948e6bc改动态端口，受影响SSE检查1/1通过；新增Web后全检待执行"
+      },
+      "documentMatches": true
+    },
+    {
+      "id": "LAB01",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/performance-probes/plans/lab01-performance/status.md",
+      "sha256": "7562164a4c897c264912387d150bebe246c2c866d125ae3dc44611461533fb52",
+      "head": "5d55db1328fecf4c06863b8905e8189ecbf6eae6",
+      "dirty": false,
+      "source": "live",
+      "current": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "issues": [],
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；LAB01未集成",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      },
+      "review": {
+        "state": "outdated",
+        "record": "独立 review 绑定旧提交，当前 HEAD 未获 approval。",
+        "target": "f226c42dba577053f64a14dcf213180bf150f66d"
+      },
+      "checks": {
+        "state": "passed",
+        "target": "f226c42dba577053f64a14dcf213180bf150f66d",
+        "record": "PASSED `f226c42dba577053f64a14dcf213180bf150f66d`；样本正确性/摘要/分位数重算、语法、链接、截图检查通过，后续metadata不声称重跑"
+      },
+      "documentMatches": true
+    },
+    {
+      "id": "LAB02",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/observer-probes/plans/lab02-observer-probes/status.md",
+      "sha256": "8fe35e5d601fdc5537ba489b868b6506f02b7ecb2a9787d626f47a9f4a5970e1",
+      "head": "6434fba78bba5097376555a66114462f5432ca25",
+      "dirty": true,
+      "source": "live",
+      "current": true,
+      "progress": {
+        "completed": 1,
+        "total": 4
+      },
+      "issues": [],
+      "main": {
+        "record": "未集成；`0763d4653264b09ddd355c292fc8bd88dfc3c584`",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED — 模板待review，不构成approval。**",
+        "target": null
+      },
+      "checks": {
+        "state": "unknown",
+        "target": null,
+        "record": "frozen install 通过；测量尚未执行"
+      },
+      "documentMatches": true
+    },
+    {
+      "id": "D02",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-progress-sync/plans/d02-progress-sync/status.md",
+      "sha256": "600376ad572d485751f5a3ab0d9423b521095ea4012b39542fb571d6f237ad98",
+      "head": "40bc3336155a143384c196776147a9bc4e9589d8",
+      "dirty": true,
+      "source": "live",
+      "current": true,
+      "progress": {
+        "completed": 3,
+        "total": 3
+      },
+      "issues": [],
+      "main": {
+        "record": "`0763d4653264b09ddd355c292fc8bd88dfc3c584`；D02未集成",
+        "recordedHead": "0763d4653264b09ddd355c292fc8bd88dfc3c584",
+        "current": true
+      },
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED。模板不是approval。",
+        "target": "40bc3336155a143384c196776147a9bc4e9589d8"
+      },
+      "checks": {
+        "state": "passed",
+        "target": "40bc3336155a143384c196776147a9bc4e9589d8",
+        "record": "PASSED `40bc3336155a143384c196776147a9bc4e9589d8`；Node10/10、5新源HTTP/正文/源码摘要一致；后续metadata不改变实现"
+      },
+      "documentMatches": true
+    }
+  ],
+  "failures": [],
+  "sourceHashes": {
+    "src/registry.mjs": "27c882aa93e3b5b6aa9d83a737717f85dd4b3fa9c62189367401b2f6c15745f0",
+    "src/server.mjs": "b150df781e560b10936c2f8228b5da305735b78d195e5924dc6d26409d1f1133",
+    "src/aggregate.mjs": "bf6bb0587db0caf7308cb0b282188b4c9c2d711ddbfb39d01437523c24344607",
+    "src/status.mjs": "767f32a9398ba4a217f456635391fb1cd567cfed4883e165eb238a7d3fd694c5",
+    "src/documents.mjs": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+    "test/progress-smoke.mjs": "8e85ad76ae8c948620790b46dfba7e9ef560bc61e3b1adc6879ae24436a67812"
+  },
+  "url": "http://127.0.0.1:55370",
+  "closed": true
+}
