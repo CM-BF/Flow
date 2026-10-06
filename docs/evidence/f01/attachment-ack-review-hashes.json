@@ -1,0 +1,106 @@
+{
+  "target": "df8d077accea7a28536f1f56407a729c41e4639c",
+  "delivery": "8ed0137c855dd2403e9ba62b60d9c0d30bc15ac7",
+  "manifestSha256": "66e0de2155c8de4a663f1b14185c6a71cbc0612c247398da942c763b60a07f37",
+  "entries": [
+    {
+      "role": "sources",
+      "commit": "df8d077accea7a28536f1f56407a729c41e4639c",
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 11246,
+      "sha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8",
+      "fixedAndWorkingMatch": true
+    },
+    {
+      "role": "sources",
+      "commit": "df8d077accea7a28536f1f56407a729c41e4639c",
+      "path": "packages/client/src/conversation-acknowledgement.test.ts",
+      "bytes": 16234,
+      "sha256": "137239308138f0e20e28e8d97aa588aac9f73a48849f45bd409ecc855b26dbdf",
+      "fixedAndWorkingMatch": true
+    },
+    {
+      "role": "sources",
+      "commit": "df8d077accea7a28536f1f56407a729c41e4639c",
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1050,
+      "sha256": "34d05a279569a727cc54cb4bfca56765d77b0e5b244c1a7faa12f6d0053e7e7d",
+      "fixedAndWorkingMatch": true
+    },
+    {
+      "role": "outputs",
+      "commit": "8ed0137c855dd2403e9ba62b60d9c0d30bc15ac7",
+      "path": "docs/evidence/f01/attachment-ack-green.json",
+      "bytes": 77,
+      "sha256": "fbc6b975b7d861f2e34bcd834254269428553cf3e27213809a6e1e7d6c42e66a",
+      "fixedAndWorkingMatch": true
+    },
+    {
+      "role": "outputs",
+      "commit": "8ed0137c855dd2403e9ba62b60d9c0d30bc15ac7",
+      "path": "docs/evidence/f01/attachment-ack-green.stdout",
+      "bytes": 336,
+      "sha256": "d30bc834f2401b19500964396236dad52e6360e2337a3b82f53108f04abe295b",
+      "fixedAndWorkingMatch": true
+    },
+    {
+      "role": "outputs",
+      "commit": "8ed0137c855dd2403e9ba62b60d9c0d30bc15ac7",
+      "path": "docs/evidence/f01/attachment-ack-red.json",
+      "bytes": 91,
+      "sha256": "268eb19c5e1cd2db165f6cb274c7140586c7c273570be31fd66d0c4a88aabd4a",
+      "fixedAndWorkingMatch": true
+    },
+    {
+      "role": "outputs",
+      "commit": "8ed0137c855dd2403e9ba62b60d9c0d30bc15ac7",
+      "path": "docs/evidence/f01/attachment-ack-red.stdout",
+      "bytes": 5954,
+      "sha256": "399a8f26da45b4ebae47d2094bada8d160f0ecb375b589d089055bb2e69fe17c",
+      "fixedAndWorkingMatch": true
+    },
+    {
+      "role": "outputs",
+      "commit": "8ed0137c855dd2403e9ba62b60d9c0d30bc15ac7",
+      "path": "docs/evidence/f01/attachment-ack-types.json",
+      "bytes": 113,
+      "sha256": "ace5a832e725f9e600e16cc773756e91a5532d0aaf086647acce2e95e2118b36",
+      "fixedAndWorkingMatch": true
+    },
+    {
+      "role": "outputs",
+      "commit": "8ed0137c855dd2403e9ba62b60d9c0d30bc15ac7",
+      "path": "docs/evidence/f01/attachment-ack-types.stdout",
+      "bytes": 108,
+      "sha256": "1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a",
+      "fixedAndWorkingMatch": true
+    }
+  ],
+  "domainInputs": [
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "inputCommit": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+      "fixedAndWorkingMatch": true
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "inputCommit": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+      "bytes": 6138,
+      "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705",
+      "fixedAndWorkingMatch": true
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "inputCommit": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+      "fixedAndWorkingMatch": true
+    }
+  ],
+  "reviewerTests": 0,
+  "providerCalls": 0,
+  "result": "APPROVED",
+  "findings": []
+}
