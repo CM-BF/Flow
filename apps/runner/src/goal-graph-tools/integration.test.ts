@@ -1,3 +1,4 @@
+import { bindGoalToolCapability } from '../goal-tool-bridge/index.js';
 import type { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { randomUUID } from 'node:crypto';
 import { mkdtemp, rm, writeFile } from 'node:fs/promises';
@@ -124,4 +125,28 @@ it('cancels a live bridged query without accepting a late final or artifact', as
   expect((await get(`/api/tasks/${run.accepted.task.id}/assistant-messages`)).messages).toEqual([]);
   const task = await owner.show(run.accepted.task.id); expect(task.verificationStatus).toBe('pending');
   expect((await pool.query('SELECT count(*)::int AS n FROM flow.artifacts WHERE task_id=$1', [task.id])).rows[0].n).toBe(0); facts.push({ scenario: 'cancel-late-final', taskId: task.id, status: task.status, artifacts: 0 });
+});
+
+it('keeps the existing node bridge versioned and node-only through the shared host authority helper', async () => {
+  const project = (await post('/api/projects', { title: 'Existing node bridge consumer' })).snapshot.project;
+  const nodeId = (await post(`/api/projects/${project.id}/commands`, { expectedRevision: 1, reason: 'Node scope', change: { kind: 'add-node', title: 'A' } })).changedNodeId;
+  const goal = (await post('/api/goals', { projectId: project.id, originalGoal: 'Node-only', constraints: '', acceptance: 'Input version retained' })).goal;
+  const registered = await owner.registerRunner({ name: 'Node-only consumer', harnesses: ['claude'], capacity: 1 });
+  const client = new FlowClient({ baseUrl: url, token: registered.token });
+  const options = { materialFiles: [], allowRead: false, goalTools: true, model: 'synthetic-no-query', timeoutMs: 5000 };
+  const configuration = describeExecutionProfile(options, createClaudeAdapter(options));
+  const published = await client.publishExecutionProfile({ configuration });
+  const accepted = await owner.admitGoalToolRun(goal.id, { scope: { readScope: 'whole-goal', allowedNodeIds: [nodeId], allowedCommands: ['define-input'], maxCommands: 1 }, prompt: 'Node command only', execution: { harness: 'claude', executionProfile: published.profile.reference } }, randomUUID());
+  let assignment: Awaited<ReturnType<FlowClient['claim']>>['assignment'];
+  await expect.poll(async () => { assignment = (await client.claim()).assignment; return assignment; }, { timeout: 5000, interval: 20 }).not.toBeNull();
+  expect(assignment!.task.id).toBe(accepted.task.id); expect(assignment!.goalToolRun!.id).toBe(accepted.run.id); expect(assignment!.goalGraphRun).toBeUndefined();
+  let checks = 0; const stop = new AbortController();
+  const capability = await bindGoalToolCapability({ client, assignment: assignment!, signal: stop.signal, async assertOwnership() { checks++; } });
+  const command = { kind: 'define-input' as const, nodeId, expectedInputVersion: 0, input: { goal: 'Preserved', constraints: '', acceptance: 'Version one', verification: { kind: 'nonempty' as const } }, reason: 'Shared host helper' };
+  expect((await capability.port.commandGoal(goal.id, command, 'same-node-command')).inputVersion).toBe(1);
+  expect((await capability.port.readGoalInput(goal.id, nodeId, 1)).input.goal).toBe('Preserved');
+  expect(() => capability.port.readGoalInput(goal.id, nodeId)).toThrow('version');
+  await expect(client.goalGraphGrant({ attemptId: assignment!.attempt.id, ownerVersion: assignment!.attempt.ownerVersion })).rejects.toMatchObject({ status: 403 });
+  stop.abort(); await expect(capability.port.readGoal(goal.id)).rejects.toThrow(); expect(checks).toBeGreaterThanOrEqual(6);
+  facts.push({ scenario: 'existing-node-consumer', taskId: accepted.task.id, inputVersion: 1, graphDenied: true, nativeQueries: 0 });
 });
