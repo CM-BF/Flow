@@ -7,11 +7,11 @@
 | 单一 status owner / model | runner_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/observer-probes` |
 | Branch | `codex/observer-probes` |
-| 工作基线 / 本记录核验时 HEAD | `6434fba78bba5097376555a66114462f5432ca25` / `2fad2bc5cb6d1f720631fd56e557f193c44ebf7f`（实际测量 source） |
-| 工作树 dirty 状态 | 证据与交付记录待本次提交；源码与实际运行 source 一致 |
+| 工作基线 / 本记录核验时 HEAD | `6434fba78bba5097376555a66114462f5432ca25` / `e202e4ff27c776a662676bfbe333aeb99d811039`（含代码与证据的交付） |
+| 工作树 dirty 状态 | 交付 e202e4f 后核验 clean；本次仅补交付 SHA metadata |
 | 工作分支状态 | completed；一次有界诊断完成，待独立 review |
 | 检查状态 | PASS；专用 TypeScript、真实 PG/HTTP 9 窗口、事件断言、清理核验、证据防覆写通过 |
-| Review | NOT_STARTED；[模板](review.md)，无 approval |
+| Review | NOT_STARTED；target `e202e4ff27c776a662676bfbe333aeb99d811039`；[模板](review.md)，无 approval |
 | 已集成 main 状态 / HEAD | 未集成；`0763d4653264b09ddd355c292fc8bd88dfc3c584` |
 
 | TODO ID | 状态 | Owner | 完成证据 / 检查 |
@@ -31,4 +31,4 @@
 
 ## 交付与证据
 
-实际执行源为 `2fad2bc5cb6d1f720631fd56e557f193c44ebf7f`，最终交付含原始 JSON、方法/限制、plan/status/review；交付 SHA 由 handoff 同步。64 固定事件贯穿三档观察者，query 指标为客户端提交而非成功吞吐。heartbeat 各 N=24；取消各 N=3 仅列原始值与范围。不声称容量或 SLO。原始 JSON hash `cb57495f88340050d595aa30bacd1e520b44bc2a19b6e25dca0816852c91b5b3`，main 核验仍 `0763d4653264b09ddd355c292fc8bd88dfc3c584`。本分支完成不表示主线具备该诊断。
+实际执行源为 `2fad2bc5cb6d1f720631fd56e557f193c44ebf7f`，最终交付含原始 JSON、方法/限制、plan/status/review；代码与证据交付 SHA `e202e4ff27c776a662676bfbe333aeb99d811039`；本次 metadata 不改变实测脚本/JSON。64 固定事件贯穿三档观察者，query 指标为客户端提交而非成功吞吐。heartbeat 各 N=24；取消各 N=3 仅列原始值与范围。不声称容量或 SLO。原始 JSON hash `cb57495f88340050d595aa30bacd1e520b44bc2a19b6e25dca0816852c91b5b3`，main 核验仍 `0763d4653264b09ddd355c292fc8bd88dfc3c584`。本分支完成不表示主线具备该诊断。
