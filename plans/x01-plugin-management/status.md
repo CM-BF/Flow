@@ -2,12 +2,12 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 12:46:02 UTC |
+| 最近更新时间 | 2026-10-06 12:51:36 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [新take6ddedc73 v1](../../docs/evidence/x01/owner-take-receipt.json)，ACTIVE，仅两metadata目录 |
+| Claim | [amend6ddedc73 v2](../../docs/evidence/x01/leaf-amend-receipt.json)，ACTIVE，八leaf与原两metadata目录 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
@@ -19,12 +19,12 @@
 | 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；完整npm生命周期未实现 |
 | 实现目标 | 3bd1add6ef7e868765b4508e88286bd62f49edd7（仅Interface设计；无产品实现） |
 | 实现范围 | docs/evidence/x01, plans/x01-plugin-management |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 纵向设计3bd1add6已独审；正式workspace/tar依赖方向已审；八literal leaf请求ready；无产品实现 |
-| 下一可用交付 | Lead分配八leaf及F01 manifest/lock接线，随后领取静态prepare/read+真实loader小片；公共vertical仍待唯一migration/host/task/event/commands |
-| 当前阻塞 | ACTIVE: leaf源码scope与manifest/lock writer待Lead分配；公共vertical待target runner/store资格、共享union/命令及唯一migration |
+| 下一可用交付 | 有界真实包安装、重读和执行模块；中心完整管理链随后接入 |
+| 当前阻塞 | ACTIVE: 本地验证依赖F01的workspace声明/lock与受控offline准备；公共vertical待host资格、共享合同及唯一migration |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -63,3 +63,5 @@
 2026-10-06 12:41:21 UTC：fresh 核 HEAD4e6afb0 clean 与 writer6ddedc73 v1 ACTIVE 两metadata scope；录 [设计独审](../../docs/evidence/x01/vertical-design-review.json)，只批准3bd1add6方向。新增 [安装依赖请求](../../docs/evidence/x01/installation-dependency-addendum.md)明确没有现成受限解包 seam、不得借间接依赖；产品源码0改动/0测试/0安装。disable后只拒新binding，旧pin不被claim资格检查意外强断。主仓个人发布临时detached HEAD不视为main新基线，本树仍受控7cb。
 
 2026-10-06 12:46:02 UTC：fresh HEAD91ac13d0 clean、writer6ddedc73 v1 ACTIVE；Mika批准显式workspace/tar7.5.22方向，[收据](../../docs/evidence/x01/dependency-design-review.json)。已给 [八literal请求](../../docs/evidence/x01/leaf-scope-request.md)；F01 v32持三共享依赖路径，未领取/修改产品。独立prepare/read/loader片可先推进，整体publicvertical/唯一DDL仍待协调。0新工程测试/安装。
+
+2026-10-06 12:51:36 UTC：fresh HEAD45ebc277 clean及账本无冲突，Lead授权八leaf经v1→v2原子amend成功。先固定新包manifest与[本片Interface](../../docs/evidence/x01/leaf-interface.md)供F01依赖接线；未安装/测试，不触共享manifests/lock。源码实现准备中，当前产品review NOT_STARTED；原两次批准均仅方向。架构新增共享安装材料Module与runner loader，后续集成时由Lead更新基线图。
