@@ -15,11 +15,11 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | 两项直接HTTP/生产PG通过；修正测试显式默认值后1项定向通过、最终root types0，原失败保留。 |
 | 已集成main状态 / HEAD | 上下文027领域/薄client/生产与O11领域已mainbf067；本次目标公共接线待独审，个人服务不变。 |
-| Review | NOT_STARTED：c05fca7beadd7bc59b1156e582d4d84078c512c8，此前上下文生产APPROVED保留 |
+| Review | APPROVED：assignment_review独立只读c05fca7beadd7bc59b1156e582d4d84078c512c8，历史批准范围保留 |
 | 实现目标 | c05fca7beadd7bc59b1156e582d4d84078c512c8 |
 | 实现范围 | apps/server/src/index.ts, packages/contracts/src/index.ts, packages/client/src/index.ts, packages/client/src/goal-delivery.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 目标计划和实时执行状态已有独立公共读取入口，正文仅显式读取。 |
 | 下一可用交付 | 完成公共接线独审并接入主线，供终端和网页并行消费。 |
