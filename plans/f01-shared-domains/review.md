@@ -293,3 +293,9 @@ NOT_STARTED — 2source/3raw/固定O13 DTO，限定单方法传输，不重审�
 Review target commit: 98e5b2012ffb57b357adcfa7ce68b25608ed631c
 
 APPROVED — Mika/gpt-6-astra 2026-10-06 13:46:39 UTC独立只读2source/3raw/固定DTO六项同源，无P1/P2；新1+旧1 HTTP与types0原证据有效，无重跑/PG/provider。只transport，领域仍待固定。[正式回执](../../docs/evidence/f01/goal-run-list-client-independent-review.md)。
+
+## COST01A thin readout
+
+状态：NOT_STARTED
+
+Review target commit `fb0e992e8b308a987bcea273e29e883b9cf13caf`。仅client/export与一项真实HTTP直接测试；无PG/provider。独立review需核透明数量/null、覆盖、编码/auth/abort/错误无重试与固定合同27d4。
