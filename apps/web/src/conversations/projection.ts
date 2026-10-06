@@ -1,4 +1,4 @@
-import { FlowApiError, type FlowClient } from "@flow/client";
+import { decodeConversationCreated, decodeConversationTurnAccepted, FlowApiError, type FlowClient } from "@flow/client";
 import {
   TERMINAL_STATUSES,
   conversationCreationSchema,
@@ -9,7 +9,6 @@ import {
   type Detail,
 } from "@flow/contracts";
 import { ConversationOutbox, type OutboxEntry } from "./outbox";
-import { assertContextReceiptMatches } from "../conversation-context/receipts";
 import { freezeContextSelection, type FrozenCitation } from "../conversation-context/selection";
 import { assertCreationReceiptMatches } from "../execution-profiles/selection";
 import { queuePort } from "./queue/commands";
@@ -269,11 +268,10 @@ export class ConversationProjection {
     try {
       let id = entry.conversationId;
       if (!id) {
-        const created = await this.client.createConversation(entry.creation!, entry.creationKey, signal);
+        const raw = await this.client.createConversation(entry.creation!, entry.creationKey, signal);
         if (this.lifetime.signal.aborted) return;
-        assertSummary(created.conversation); const capabilities = readCapabilities(created);
-        if (typeof created.replayed !== "boolean") throw Error("The creation receipt is not confirmed.");
-        assertCreationReceiptMatches(entry.creation!, created.conversation);
+        const created = decodeConversationCreated(raw, entry.creation!);
+        const capabilities = readCapabilities(created);
         this.creation = entry.creation!;
         id = created.conversation.id;
         this.id = id; this.outbox.bindConversation(entry.id, id);
@@ -284,14 +282,10 @@ export class ConversationProjection {
         this.update({ loading: false, error: null }); this.schedule();
         return id;
       }
-      const accepted = await this.client.submitConversationTurn(id, entry.request, entry.turnKey, signal);
+      const raw = await this.client.submitConversationTurn(id, entry.request, entry.turnKey, signal);
       if (this.lifetime.signal.aborted) return;
-      assertSummary(accepted.conversation, id); assertTurn(accepted.turn, id);
+      const accepted = decodeConversationTurnAccepted(raw, id, entry.request);
       this.validateCreation(accepted.conversation);
-      if (typeof accepted.replayed !== "boolean" || accepted.conversation.revision < entry.request.expectedRevision + 1
-        || accepted.turn.number !== entry.request.expectedRevision + 1 || accepted.turn.user.text !== entry.request.text)
-        throw Error("The turn receipt does not match the frozen message. Retry with its original request identity.");
-      assertContextReceiptMatches(entry.request.knowledge, accepted.turn.context);
       const current = this.state.snapshot!;
       const known = this.state.turns.find(turn => turn.number === accepted.turn.number);
       if (known && (known.id !== accepted.turn.id || known.task.id !== accepted.turn.task.id))

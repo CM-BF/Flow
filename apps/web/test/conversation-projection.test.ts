@@ -49,6 +49,19 @@ function setup(initial = snapshot(), id: string | null = "chat", withQueue = fal
 }
 
 describe("public conversation projection", () => {
+  it.each(["revision", "task timestamp", "effective source"])("uses the shared decoder for a non-HTTP port's invalid %s success", async field => {
+    const { projection, client } = setup(); await projection.refresh();
+    const value = { conversation: snapshot(turn()).conversation, turn: turn(), replayed: false };
+    if (field === "revision") value.conversation.revision = 2;
+    else if (field === "task timestamp") value.turn.task.updatedAt = "invalid";
+    else value.turn.effective.source = { kind: "recorded-adapter-session", taskId: "different-task", attemptId: "attempt", detailId: "detail", adapterVersion: "fixture" };
+    client.submitConversationTurn.mockResolvedValueOnce(value);
+    await projection.send("hi"); const pending = projection.getSnapshot().outbox!;
+    expect(pending).toMatchObject({ state: "unknown", everUnknown: true }); expect(projection.getSnapshot().turns).toEqual([]);
+    await projection.retry(); expect(client.submitConversationTurn.mock.calls[1]!.slice(0, 3)).toEqual(client.submitConversationTurn.mock.calls[0]!.slice(0, 3));
+    expect(projection.getSnapshot().outbox).toBeNull();
+  });
+
   it("prepares zero-turn conversation using one CREATE receipt, then sends without recreating", async () => {
     const { projection, client } = setup(snapshot(), null);
     const creation = { ...configuredCreation, projectId: "project-a" };
