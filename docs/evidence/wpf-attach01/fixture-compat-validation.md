@@ -7,7 +7,7 @@
 - 六个明确选中的PG/HTTP case通过；其余23项由 `-t` 有意未选，不声称29或78重跑。首升级、普通能力/BOM、upload ACK丢失重启、owner鉴权、独占child SIGKILL重启、Send ACK丢失重启。
 - 严格Node24/TypeScript5.9.3两入口及传递依赖 `--strict --noUncheckedIndexedAccess` exit0；不称全库types重跑。
 - 资源、context、独立upgrade及child四个随机DB均 remaining=[]、connections=0、errors=[]，只动态端口/专用数据库，无provider或个人服务操作。
-- 两源码差异 `git diff --check` 为0；全部metadata/raw日志是否存在空白另列，不能据此概称全仓无异常。
+- 两源码差异 `git diff --check` 为0；metadata完整检查仅原始 `fixture-compat-first/direct.log:13` 末尾空行，原log保留，不称完整diffcheck为0。
 
 ## 升级证据的真实层次
 
