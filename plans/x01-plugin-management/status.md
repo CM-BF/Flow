@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 03:24 UTC |
+| 最近更新时间 | 2026-10-06 03:28 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一 status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
@@ -11,7 +11,7 @@
 | 工作树 dirty 状态 | 本次仅已领取的 X01 计划/证据目录，交付提交后 clean |
 | 工作分支状态 | 计划交付 completed；完整 X01 实现 pending |
 | 检查状态 | NOT_RUN（产品）；文档 888308dce1d8061ab66ce93c10c023ec66d6eb58 的链接/事实/10TODO对应/diffcheck 已通过，非产品测试 |
-| Review | NOT_STARTED；文档 target 888308dce1d8061ab66ce93c10c023ec66d6eb58，本轮审计划完整性，不构成产品批准；root已报依赖不一致已修，待复审修复target |
+| Review | APPROVED c21731c01f97afb450e443245b3fae0d2b0edb9b（plan-only，Goal Owner只读）；不批准未实现产品 |
 | 已集成 main 状态 / HEAD | 本计划尚未集成；观察基线 main 3773db5d014a6d38d09553acd0a5fe8df900b7c4；不声称完整插件管理存在 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | UNKNOWN（本轮仅文档，后续 writer 需另领取） |
@@ -37,10 +37,10 @@
 
 ## 当前事实与边界
 
-本轮只是用户明确要求的完整计划小交付。implementation UNKNOWN / Review NOT_STARTED；不能用文档完整代替产品通过。WPF-P01 trusted Web host已审、WPF-I01主App挂载独立进行，实际观察见证据；它们均非全X01。没有新增模型/云调用、产品测试、依赖或秘密读取。
+本轮只是用户明确要求的完整计划小交付。implementation UNKNOWN / plan-only Review APPROVED c21731c01f97afb450e443245b3fae0d2b0edb9b；不能用文档完整代替产品通过。WPF-P01 trusted Web host已审、WPF-I01主App挂载独立进行，实际观察见证据；它们均非全X01。没有新增模型/云调用、产品测试、依赖或秘密读取。
 
 当前通用计划/合同无外部阻塞。候选身份只影响 X01-09，进入未来候选阶段时由 Goal Owner 核对已有指代；当前不需要用户行动。不从名字猜项目，也不重复询问已授权生命周期方向。后续产品实现必须另明确 worktree/owner/scope，本计划不授予跨模块写权。
 
 ## Handoff 与看板
 
-计划小交付后交 Lead 登记全局索引/registry/REQ-11～13 并安排独立只读 review。本 status 是唯一手填进度；尚未亲自核验 dashboard 聚合，不称已展示。D04 claim 04c5de3f-2e76-49d1-9a92-6f0069d69a88 v1 在03:18:09 UTC读回 active；review修复期保留。真实事实/检查/文档target随本scope metadata单独更新。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；尚未亲自核验 dashboard 聚合，不称已展示。D04 claim 04c5de3f-2e76-49d1-9a92-6f0069d69a88 v1 在03:18:09 UTC读回 active；review修复期保留。真实事实/检查/文档target随本scope metadata单独更新。
