@@ -36,3 +36,7 @@
 ## 接收边界
 
 本片不接runner/MCP/URL文件抓取/embedding，不声称源更新自动使全部下游摘要失效。REQ-10完整授权一致的hybrid/vector矩阵开放，后续CTX/O05仅共享KnowledgeCitation协议，实际grant/选择/消费需另行验收。共享export/client/生产migrate/register和架构knowledge模块/3表接线由Execution Lead负责；Mika独立审技术，Goal Owner验收接收产品范围，无重复全量测试要求。
+
+## 主线接收
+
+2026-10-06 05:38:05 UTC：main/origin/main fb906cb42391971a8b315dbd813f7633927d7265 clean，已核本target祖先与完整9实现文件零diff，见[main receipt](main-receipt.json)。Lead的i02固定范围接收同时记录K01/F01原范围未漂移；共享migrate/register/export已在固定main源码出现。本owner不重复测试、不重启服务；既有模块/CLI/生产接线证据分别保留其责任范围。本片已交付，后继hybrid/vector、授权下游消费和失效规则仍开放。
