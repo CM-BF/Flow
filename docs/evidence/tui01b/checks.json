@@ -1,0 +1,79 @@
+{
+  "recordedAt": "2026-10-06T10:29:36Z",
+  "providerQueries": 0,
+  "personalServiceActions": 0,
+  "distinctChecks": 70,
+  "runs": [
+    {
+      "command": "pnpm install --offline --frozen-lockfile --ignore-scripts",
+      "stdout": "install.txt",
+      "exit": 0
+    },
+    {
+      "command": "pnpm exec vitest run packages/client/src/conversation-acknowledgement.test.ts",
+      "stdout": "client-red.txt",
+      "exit": 1,
+      "passed": 1,
+      "failed": 4,
+      "role": "behavior red"
+    },
+    {
+      "command": "pnpm exec vitest run packages/client/src/conversation-acknowledgement.test.ts",
+      "stdout": "client-first-green.txt",
+      "exit": 0,
+      "passed": 5
+    },
+    {
+      "command": "pnpm exec vitest run packages/interaction/src/controller.test.ts -t \"a stale send rejection|a failed explicit observation\"",
+      "stdout": "controller-red.txt",
+      "exit": 1,
+      "failed": 2,
+      "skipped": 11,
+      "role": "behavior red"
+    },
+    {
+      "command": "pnpm exec vitest run packages/interaction/src/controller.test.ts",
+      "stdout": "controller-first-green.txt",
+      "exit": 0,
+      "passed": 13
+    },
+    {
+      "command": "pnpm exec tsc --noEmit",
+      "stdout": "types-first.txt",
+      "exit": 0
+    },
+    {
+      "command": "pnpm exec vitest run packages/client/src/conversation-acknowledgement.test.ts packages/client/src/conversations.test.ts apps/tui/src/recovery.test.ts",
+      "stdout": "ack-matrix-first.txt",
+      "exit": 1,
+      "passed": 51,
+      "failed": 3,
+      "role": "test fixture alias error; no product relaxation"
+    },
+    {
+      "command": "pnpm exec vitest run packages/client/src/conversation-acknowledgement.test.ts packages/client/src/conversations.test.ts packages/interaction/src/controller.test.ts apps/tui/src/recovery.test.ts",
+      "stdout": "behavior-first.txt",
+      "exit": 0,
+      "passed": 69
+    },
+    {
+      "command": "pnpm exec vitest run apps/tui/src/recovery.test.ts packages/client/src/assistant-stream.test.ts",
+      "stdout": "consumers-final.txt",
+      "exit": 0,
+      "passed": 10,
+      "overlapWithPrevious": 9,
+      "note": "last two-client case strengthened; F01 stream fixture new direct consumer"
+    },
+    {
+      "command": "pnpm exec tsc --noEmit",
+      "stdout": "types-final.txt",
+      "exit": 0
+    }
+  ],
+  "limitations": [
+    "HTTP in-memory center fixture, not actual PG/runner",
+    "No Web consumer implementation or provider/PTY run",
+    "v1 context only; attachment v2 requires explicit reviewed matcher",
+    "Response revision maximum is decoder boundary, not production admission proof"
+  ]
+}
