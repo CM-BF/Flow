@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['O15', '确认完整输入后推进目标', '工作线', 'goal-input-confirmation', 'o15-goal-input-confirmation'],
   ['WPF-RECOVERY01', '刷新后恢复聊天与草稿', '工作线', 'web-conversation-recovery', 'wpf-conversation-recovery'],
   ['WPF-RELEASE03', '新版网页与现有后台兼容', '技术验证', 'web-current-preview-compatibility', 'wpf-release03-current-preview'],
   ['O14', '授权后持续推进依赖任务', '工作线', 'goal-persistent-progression', 'o14-goal-progression'],
