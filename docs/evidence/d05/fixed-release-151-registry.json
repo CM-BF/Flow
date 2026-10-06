@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-06 12:44:20 UTC",
+  "count": 151,
+  "unique": 151,
+  "records": [
+    {
+      "id": "SVC06",
+      "task": {
+        "id": "SVC06",
+        "title": "后台固定版本与依赖发布",
+        "role": "工作线",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "branch": "codex/backend-release",
+        "planDir": "plans/svc06-backend-release",
+        "evidenceDir": "docs/evidence/svc06"
+      },
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "planning",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已明确让后台运行版本脱离开发目录的发布目标",
+        "next": "当前终端片段收口后，接入固定源码与依赖的后台发布产物",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "ENG01H",
+      "task": {
+        "id": "ENG01H",
+        "title": "原生工程用途与检查收据",
+        "role": "工作线",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract",
+        "branch": "codex/engineering-native-contract",
+        "planDir": "plans/eng01h-native-engineering-contract",
+        "evidenceDir": "docs/evidence/eng01h"
+      },
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "正在区分原生工程任务用途与检查收据",
+        "next": "可校验的工程任务受理、领取与结果关联",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    }
+  ],
+  "checks": "metadata/parser/links only; no product tests; runtime362/v15 independent of mainaeb"
+}

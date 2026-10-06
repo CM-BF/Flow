@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-06T12:40:05.667Z",
+  "task": {
+    "id": "ENG01H",
+    "title": "原生工程用途与检查收据",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-contract",
+    "branch": "codex/engineering-native-contract",
+    "planDir": "plans/eng01h-native-engineering-contract",
+    "evidenceDir": "docs/evidence/eng01h"
+  },
+  "sourceHead": "d0e697af215b5a753decc838a7610f69dd173e54",
+  "registryCount": 150,
+  "uniqueIds": 150,
+  "parsed": {
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "正在区分原生工程任务用途与检查收据",
+      "next": "可校验的工程任务受理、领取与结果关联",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+      "scopes": [
+        "apps/runner/src/engineering/adapter.ts",
+        "apps/server/src/engineering/index.ts",
+        "apps/server/src/engineering/native-profile.ts",
+        "apps/server/src/engineering/native-verification.ts",
+        "apps/server/src/engineering/native.test.ts",
+        "apps/server/src/engineering/profile.ts",
+        "apps/server/src/engineering/verification.ts",
+        "apps/server/src/evidence.ts",
+        "apps/server/src/execution-profiles/publication.ts",
+        "apps/server/src/runners.ts",
+        "packages/contracts/src/engineering-native.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/contracts/src/tasks.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "ENG01H",
+    "owner": "native_center_owner / gpt-6-astra",
+    "branch": "codex/engineering-native-contract",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-06T12:37:53.000Z",
+    "updatedRecord": "2026-10-06 12:37:53 UTC",
+    "todos": [
+      {
+        "id": "ENG01H-01",
+        "state": "completed",
+        "owner": "native_center_owner",
+        "evidence": "claim与Interface"
+      },
+      {
+        "id": "ENG01H-02",
+        "state": "in-progress",
+        "owner": "native_center_owner",
+        "evidence": "DTO/中心实施"
+      },
+      {
+        "id": "ENG01H-03",
+        "state": "pending",
+        "owner": "native_center_owner",
+        "evidence": "等实现验证"
+      },
+      {
+        "id": "ENG01H-04",
+        "state": "pending",
+        "owner": "native_center_owner",
+        "evidence": "独审与main未完成"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab / aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+    "declaredDirty": "开发中",
+    "checks": {
+      "state": "not_run",
+      "target": null,
+      "record": "NOT_RUN"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "本片未集成；固定base aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "scope": "Registration only; personal SVC window retains fixed source; no product tests or provider"
+}

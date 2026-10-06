@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:29:32 UTC / main 557397e9f756bfd9500107d7c1d1ce0ae65f7906 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:40:26 UTC / main ref aeb764e5d2c2ec043ae8673cde2724f5330db2ab |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -19,8 +19,8 @@
 | 实现范围 | plans/eng01-engineering-delivery, docs/evidence/eng01 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 同一原生通信循环已支持受限工程写入策略；完整快照与独立检查收据已交付。 |
-| 下一可用交付 | 接入明确的工程执行配置与可信写入授权，再用真实合格模型验证受管工程交付。 |
+| 当前产出 | 原生通信与工程快照检查已交付；正在接入独立工程用途、固定执行配置与结果关联。 |
+| 下一可用交付 | 中心可明确受理原生工程任务，并校验执行身份、固定内容集与检查收据；真实宿主写权限随后接通。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -32,7 +32,7 @@
 | ENG001-01 | completed | Execution Lead | plan / research / source-observation / claim receipt |
 | ENG001-02 | completed | native_center_owner | ENG01A工作区/检查合同已main；[ENG01B执行配置](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)补用途/pin/恢复门禁 |
 | ENG001-03 | completed | native_center_owner / 独立runner_owner review | ENG01A E0+E1固定040已mainc5；真实Git/checker/PG、unknown重启/丢ACK恢复；fixture非native |
-| ENG001-04 | in-progress | native_center_owner | [ENG01G](../../../engineering-native-writer/plans/eng01g-native-writer/status.md)已main557397：真实身份/单pump/受限file policy复用，可信authority无生产实现；显式native profile与实际权限/停止后继仍开放 |
+| ENG001-04 | in-progress | native_center_owner | [ENG01H](../../../engineering-native-contract/plans/eng01h-native-engineering-contract/status.md) 已领取15个精确范围、首合同d0e697af；旧v1及只读配置保持，真实资格与原生写入仍开放 |
 | ENG001-05 | pending | 独立operator/reviewer | 无新provider许可或执行 |
 | ENG001-06 | pending | Web/TUI owner | 交付读取与接受待公开合同 |
 | ENG001-07 | pending | adapter owner | 第二harness扩展未实现 |
@@ -57,3 +57,5 @@
 2026-10-06T12:13:55.672556+00:00：ENG01F主线eb95已接、作者82c91收口/claim释放；ENG01G已正式派原worker新WT/fresh claim后推进。09原始native预算均封存；本段没有新调用。
 
 2026-10-06 12:29:32 UTC：G固定受控接收已完成，原105不同检查不重跑。当前只证明注入可信authority与synthetic JSONL peer组合，不证明实际>=Sol模型、OS写入边界或完整停止。SVC05由同槽完成后交独立审查，TUI01D已并行派工；工程后继不占终端执行槽。
+
+2026-10-06 12:40:26 UTC：ENG01H 以aeb764e5固定base独立实施；首合同分离声明配置、任务用途和原生检查收据，复用已有发布表、授权锁及S01读取隔离。profile存在不等可执行，缺真实host qualification仍fail closed；中心只关联声明、产物和当前attempt，不冒充OS停止证明。F01已正式交回runner合同，公开出口/薄client后续局部接线。没有新provider许可，TUI01D和个人SVC更新独立推进。
