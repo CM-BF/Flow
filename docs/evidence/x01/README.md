@@ -34,3 +34,7 @@
 2026-10-06 03:24 UTC clean-code/依赖一致性复核：响应root只读finding，修复X01-10错误等待候选09的依赖，并移除当前用户决定提示；候选身份未确认与09 blocked事实保留。修改仅本scope文档；重查链接/TODO/diff，无产品测试、模型或新增依赖。
 
 2026-10-06 04:04 UTC clean-code/计划边界复核：已核 X01 active v1 与 clean c9592b8，实际读取 X03 唯一 plan/status。新增只读 registry + host.list/subscribe 输入，package→definition 未证实则分开展示；无 npm 加载/自动 grant/主App越权接线。仅链接与 diff 检查，0 产品测试/模型/云；完整 X01-06 仍 pending。
+
+## 2026-10-06 04:39:30 UTC canonical事实刷新
+
+重新读claim active v1、唯一树clean a87b9f。已核main75a33包含a87b9f且本计划/证据范围零diff；读取该main中X02/X03状态，registry与CLI、只读模块分别已交，主App挂载另在WPF-X03I01。候选输入由Goal Owner经Lead固定转交，记在plan附件，未安装/未测、不视为用户已亲自确认，CTX01不被身份阻塞。clean-code检查文案与TODO边界，X01-03/09不勾大验收；仅文档链接/diff检查，不跑产品tests。提交后停写release文档claim。

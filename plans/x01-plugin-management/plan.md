@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 | --- | --- |
-| 计划编号 / 状态 | X01 / accepted；本轮仅计划交付，产品实现未开始 |
+| 计划编号 / 状态 | X01 / in-progress；计划已交付，registry/只读视图片段已入main，完整生命周期未完成 |
 | 创建 / 最近更新 | 2026-10-06 / 2026-10-06 |
 | 父计划 / 追溯 | [FLOW-001 §10](../flow-001-architecture/plan.md)、[完整矩阵 REQ-11/12/13](../flow-001-architecture/full-plan-matrix.md)；同时消费 REQ-08/09/20 |
 | 唯一计划/status owner | runner_owner / gpt-6-astra |
@@ -70,7 +70,7 @@
 
 ## 上下文扩展与 billion-context 兼容片段
 
-`billion-context` / `billion-context-pi` 是**身份尚未确定的候选**，不安装、不承诺原生十亿 token 窗口，不依据作者节省比例选型。确定用户所指仓库、精确 commit/包版本、许可证、proxy/native 形态和宿主后才安排该候选实验；通用插件管理不因此停止。
+`billion-context` / `billion-context-pi` 候选已定位，固定研究输入见[候选附件](candidate-inputs.md)，但尚非用户亲自确认所指身份。CTX01已授权先核acp-kernel0.0.101纯core，不等待该身份确认；Pi/proxy与完整兼容仍独立未测，不承诺原生十亿token窗口或依据作者节省比例选型。
 
 沿用既有矩阵，不新造压缩平台。模块输入是目标、约束、验收、剩余预算、授权范围、固定来源版本/locator 和增量；大结果先在工具侧过滤，原文可按版本追回，source 更新使相应摘要/下游证据显式失效。每个 session 只有一个 compression owner，Flow 与宿主/插件不能同时独立 compact；压缩、工具和任务委派能力可分别启停。更换 owner 必须在明示安全点保存 checkpoint/lineage/原文引用后交接，不能因 disable 丢失解压/历史读取能力。
 
@@ -78,7 +78,7 @@
 
 ## TODO、owner 与依赖
 
-下面所有实现项仍 pending；责任角色是后续派工归属，不是目前已经存在的 writer claim。Lead 先冻结小公共合同，再并行分派无冲突范围。
+下列复选框只表示完整项完成。X02已交registry/公共CLI片段、X03已交只读模块；其具体进展见唯一status，均不能勾完整生命周期。各后继writer仍须独立领取精确scope。
 
 - [x] **X01-01** 完整计划、现有能力核对、稳定验收/依赖与三件套。Owner：runner_owner；本轮文档交付。
 - [ ] **X01-02** 冻结 manifest、安装/版本/配置/授予/operation 公共合同与 client。Owner：Execution Lead（共享入口）；依赖 X01-01；交付精确合同及拒绝语义，不先扩平台。
@@ -116,6 +116,8 @@ Goal Owner 已批准 Mika 在 [X03 唯一计划](/Users/citrine/Projects/AgentHa
 
 ## 取舍、当前决定与后继
 
-已确认：中心 PG 权威、同公共 commands、全生命周期与 Web/CLI、版本固定/权限不自授、凭据服务端归属、唯一 compression owner。初步设计：上述最小持久模型/命令名称及隔离方式，待 X01-02 冻结；不自动采用新库。当前未知：具体 billion-context 项目与版本、各宿主实际兼容/恢复边界，这些只阻塞对应候选验收。
+已确认：中心 PG 权威、同公共 commands、全生命周期与 Web/CLI、版本固定/权限不自授、凭据服务端归属、唯一 compression owner。初步设计：上述最小持久模型/命令名称及隔离方式，待 X01-02 冻结；不自动采用新库。候选项目与固定版本已定位，用户具体所指仍待未来确认；各宿主实际兼容/恢复边界未测。CTX01零模型core实验已授权，不受身份阻塞。
 
 本轮使用本地 find-skills/codebase-design/clean-code，应用记录见 [证据](../../docs/evidence/x01/README.md)。文档链接/事实/一致性检查即可，不为计划运行产品测试。独立 review 从 [review.md](review.md) 的 NOT_STARTED 开始；进度只写 [status.md](status.md)。全局索引、registry 与 REQ-11～13 更新由 Lead 单写，本 owner 不越权。
+
+2026-10-06 04:39:30 UTC 事实同步：本计划已入main75a33；X02 registry与公共CLI已入main，X03独立只读模块已入main，主App挂载归WPF-X03I01。既有拟定完整模型/生命周期仍是后继设计，不因registry存在声称npm安装/启停/升级/回滚/删除可用。
