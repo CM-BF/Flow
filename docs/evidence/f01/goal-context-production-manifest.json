@@ -61,8 +61,8 @@
     },
     {
       "path": "docs/evidence/f01/goal-context-production-green.txt",
-      "bytes": 2674,
-      "sha256": "eb2351edb096a5c5769b22ba5adaae6bb09a1005a8308ede380d9bf74253325d"
+      "bytes": 2673,
+      "sha256": "9d144ef017f5493cacc765753feb3d436213a80a3d229955bb1437b03bca0999"
     },
     {
       "path": "docs/evidence/f01/goal-context-production-red.txt",
@@ -78,6 +78,11 @@
       "path": "docs/evidence/f01/goal-context-production-typecheck.txt",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-production-green-raw.json",
+      "bytes": 3833,
+      "sha256": "b55ef08304a186ae169c5cfed507f82eb83451fcdce98131169933ef71b43b57"
     }
   ],
   "checks": {
@@ -91,5 +96,6 @@
     "old-schema attempts are explicit persisted fixture inputs; current claim is only exercised after full production startup",
     "021 module approval Mika21d2 separate",
     "no native/provider or personal service upgrade"
-  ]
+  ],
+  "outputEncoding": "Readable green.txt has one CRLF normalized by existing Git setting; exact original bytes preserved in green-raw.json base64, with raw hash."
 }
