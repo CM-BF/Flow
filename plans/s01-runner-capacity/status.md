@@ -10,11 +10,11 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 后继 base 4391bbf9f1785212d098ef6aa1c01a0320a003d3；受控合入 HEAD 7511f5592daa6a86076fabb53d7a6fd6e8226d4b；旧 W1/W2 基线与 target 不变 |
-| 工作树dirty状态 | mixed driver与准备证据待固定提交；仅三owned scope内变更，旧实验源码/raw零diff |
+| 工作树dirty状态 | 实现634926238已固定clean；后继仅本manifest/status/review metadata，旧实验源码/raw零diff |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新混合driver：14个纯unit通过、strict noEmit0；未运行真实PG/HTTP/runner负载。旧W1/W2检查限定历史target |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
-| 实现目标 | mixed准备待本次提交固定；旧W2 target 2ab7967f2eb808fecd1205f7552a119eee8e0b36保持历史绑定 |
+| 实现目标 | mixed准备 target 634926238f749fb1547a5973b521bc6dc5498574；旧W2 target 2ab7967f2eb808fecd1205f7552a119eee8e0b36保持历史绑定 |
 | 实现范围 | experiments/runner-capacity/mixed；新准备证据及本任务plan/status，无产品修改 |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
@@ -125,3 +125,5 @@ status_read / gpt-6-astra 接收 S01 唯一 owner，co-lead mika，所属 FLOW-0
 旧W1/W2源/raw及所有既有experiments/runner-capacity、docs/evidence/s01路径相对接收98098354保持逐字节一致；只新增mixed与mixed-preparation。0新tasks/attempts/负载/provider。architecture_read进行固定源码独审，Mika安排后继运行；writer claim v3保留，不部署CLI/个人服务。架构影响仅实验观测，无产品Interface/schema/锁/pool配置变化。
 
 2026-10-06 10:03 UTC固定前：预审所提cleanup阶段预算与CREATE丢ACK已修，新增3个截止行为用例及1个自有流清理用例，现14个不同纯测试/strict noEmit0，旧8/10日志保留不累加。phase截止与UNKNOWN/retained语义见混合合同及quality；没有新负载，真实接线仍未验。10:02:58 fresh账本available确认本owner claim v3 ACTIVE/三scope不变。
+
+2026-10-06 10:04 UTC：mixed准备实现固定 `634926238f749fb1547a5973b521bc6dc5498574`，5文件14纯tests/strict noEmit0绑定当前source；[manifest](../../docs/evidence/s01/mixed-preparation/manifest.json)固定source/raw/readonly字节，当前待architecture_read及Mika独审。未执行真实窗口，状态来源等待现有dashboard聚合；不重复工程验证。

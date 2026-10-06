@@ -66,7 +66,7 @@ DB/public行集清理后未留存，只认可固定程序完整断言通过，�
 
 ## S01 mixed 准备独立review（2026-10-06 10:03 UTC）
 
-状态 NOT_STARTED（固定target待本次提交后manifest绑定）；原W1/W2 APPROVED不覆盖本片。base main4391，经scope=[] integration合入7511f559，writer status_read/gpt-6-astra，三目录scope。reviewer architecture_read只读核资源/预算/并发证据，Mika复核。范围新增mixed driver/合同、准备证据与父plan/status；没有产品改动或实际负载。
+状态 IN_REVIEW，固定target `634926238f749fb1547a5973b521bc6dc5498574`，[manifest](../../docs/evidence/s01/mixed-preparation/manifest.json)绑定source/raw/readonly；原W1/W2 APPROVED不覆盖本片。base main4391，经scope=[] integration合入7511f559，writer status_read/gpt-6-astra，三目录scope。reviewer architecture_read只读核资源/预算/并发证据，Mika复核。范围新增mixed driver/合同、准备证据与父plan/status；没有产品改动或实际负载。
 
 复制检查：先核codex/runner-capacity-probe真实HEAD/dirty，再核mixed-preparation/manifest.json所列target/source/raw。按1×16/4×4同child、32tasks不补跑、6秒+1500ms settlement、45+15秒与48+16MiB，以及DB权属/lease+adapter区间/ACK/心跳门禁审查。Pool装饰必须透传；PG行查询时间含执行往返，Lock采样遗漏不作零。cleanup未确认closed禁止DROP，creation unknown按唯一dbName核查，原证据冻结。默认不跑测试、DB、HTTP、runner或provider；回具体severity/行/触发，结论绑定target。
 
