@@ -55,3 +55,9 @@ main8f1481现场核实已含X02/CHAT共享接线，原095/37ab独立approval仍�
 ## CHAT03生产挂载 2026-10-06 04:17 UTC
 
 固定300f0035b4c754cd09a4e38680378d8fb81924cc：server/index三行，010在scheduler前await，runner/owner角色hook之后路由，保留R04。生产createServer直接消费者只选3/7（目录重启/选择选路/两轮配置生效分层），3/3通过3.12s，4未选；typecheck通过，原始profile-production-consumer.txt/profile-production-typecheck.txt。0模型，测试SDK注入不冒充provider验收。Root只读独立APPROVED，无finding/未重跑，source固定与working一致；consumer hash 0ef54c31a9cec4991e12fbf392d102153f9aed14f9f925f14014e81c1b143338 / tsc1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a。领域a28由Mika独审，范围分开。
+
+## 真实两轮报告及零模型补证 2026-10-06 04:29 UTC
+
+复用本地find-skills/webapp-testing/clean-code，明确ready locator而非networkidle。真实2query固定dd1b/de9源码，原检查弱UI断言及pending截图原样保留；补focused visible second assistant exact text，仅重放保存响应，不再付费。首次主题定位失败和侧栏遮挡截图保留，04:28重放显式关闭侧栏后桌面/390px深色已目视正文可读，0POST/pageErrors空。报告区分SDK请求空扩展数组与init实际3plugins/3skills、归一化modelUsage与原始wire、累计估算与未知增量；无需为metadata重跑产品套件。manifest更新覆盖所有证据。
+
+Root新增独立APPROVED dac8c3910eee1828e7081a3d33e19a89a056f4d4：仅runner package/lock importer，zod4.6.5对应O02生产import、MCP1.32.1仅dev peer；未改resolved块或SDK版本。O02固定8/8+tsc支持使用，无重跑，不与Mika94f客户端审查混同。

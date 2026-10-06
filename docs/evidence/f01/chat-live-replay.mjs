@@ -48,12 +48,14 @@ try {
   await page.screenshot({ path: path.join(output, 'replay-two-rounds-light.png') });
   await page.getByRole('button', { name: 'Use dark theme', exact: true }).click();
   await page.setViewportSize({ width: 390, height: 844 });
+  await page.getByRole('button', { name: 'Hide chat list', exact: true }).click();
+  await expect(page.getByRole('complementary', { name: 'Chats' })).toHaveCount(0);
   await expect(assistant.nth(1)).toHaveText(inputs[1].turn.assistant.text);
   await expect(assistant.nth(1)).toBeVisible();
   await page.screenshot({ path: path.join(output, 'replay-two-rounds-dark-narrow.png') });
   expect(fixture.requests.filter(request => request.method === 'POST')).toHaveLength(0);
   expect(pageErrors).toEqual([]);
-  result.checks.push({ name: 'Narrow dark visible nonce; zero POST or model query; no page errors', passed: true, at: new Date().toISOString() });
+  result.checks.push({ name: 'Narrow dark after explicitly closing sidebar: visible nonce; zero POST or model query; no page errors', passed: true, at: new Date().toISOString() });
   result.status = 'PASSED_REPLAY_ONLY';
 } catch (error) {
   result.status = 'FAILED_REPLAY'; result.error = String(error.message); process.exitCode = 1;
