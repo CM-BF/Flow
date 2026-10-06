@@ -1,4 +1,5 @@
 import type { ExecutionProfilePublication, ExecutionProfilePublished, ExecutionProfilePage } from '@flow/contracts';
+import type { ConversationQueueEnqueue, ConversationQueueCancel, ConversationQueuePause, ConversationQueueResume, ConversationQueueAccepted, ConversationQueueCancelled, ConversationQueuePaused, ConversationQueueResumed, ConversationQueuePage, ConversationQueueItemDetail } from '@flow/contracts';
 import type { PluginRegistration, PluginCommand, PluginMutationResult, PluginSnapshot, PluginList, PluginVersions, PluginOperations, PluginOperation } from '@flow/contracts';
 import type { ConversationCreation, ConversationCreated, ConversationList, ConversationSnapshot, ConversationTurnAdmission, ConversationTurnAccepted, ConversationTurnPage } from '@flow/contracts';
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
@@ -136,6 +137,27 @@ export class FlowClient {
   }
   conversationDetail(id: string, turnId: string, detailId: string, signal?: AbortSignal): Promise<Detail> {
     return this.request(`/api/conversations/${encodeURIComponent(id)}/turns/${encodeURIComponent(turnId)}/details/${encodeURIComponent(detailId)}`, { signal });
+  }
+
+  enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  conversationQueue(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationQueuePage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue${query.size ? `?${query}` : ''}`, { signal });
+  }
+  conversationQueueItem(id: string, itemId: string, signal?: AbortSignal): Promise<ConversationQueueItemDetail> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue/${encodeURIComponent(itemId)}`, { signal });
+  }
+  cancelConversationQueueItem(id: string, itemId: string, input: ConversationQueueCancel, key: string, signal?: AbortSignal): Promise<ConversationQueueCancelled> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue/${encodeURIComponent(itemId)}/cancel`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  pauseConversationQueue(id: string, input: ConversationQueuePause, key: string, signal?: AbortSignal): Promise<ConversationQueuePaused> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue/pause`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  resumeConversationQueue(id: string, input: ConversationQueueResume, key: string, signal?: AbortSignal): Promise<ConversationQueueResumed> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue/resume`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   queryTasks(options: TaskIndexQuery = {}, signal?: AbortSignal): Promise<TaskIndexPage> {
