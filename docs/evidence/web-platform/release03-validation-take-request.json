@@ -1,0 +1,16 @@
+{
+  "requestId": "release03-validation-8ef84612-9a82-41bd-b29e-b46fc32bfbc0",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "taskId": "WPF-RELEASE03",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+  "branch": "codex/web-current-preview-compatibility",
+  "scope": [
+    "apps/web/test/web-current-preview.fixture.ts",
+    "apps/web/test/web-current-preview.browser.ts",
+    "plans/wpf-release03-current-preview",
+    "docs/evidence/wpf-release03"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "at": "2026-10-06T14:35:19.196300+00:00",
+  "role": "Management fixed source/canonical/scope audit; not implementation review or behavior execution",
+  "base": "84005a260dfcb668cd38b09c21564d0754a0f513",
+  "checkpoint": "f13de5c13e3983b94e16ae857ddc7b01cbba7a26",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+  "branch": "codex/web-conversation-recovery",
+  "head": "f13de5c13e3983b94e16ae857ddc7b01cbba7a26",
+  "origin": "f13de5c13e3983b94e16ae857ddc7b01cbba7a26",
+  "dirty": "",
+  "scopeBasis": {
+    "claim": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "state": "active",
+    "observedAt": "2026-10-06T14:31:33.499Z",
+    "literalCount": 21
+  },
+  "changedFileCount": 50,
+  "sourceFiles": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "d2f81cc012b95d92ce4e6299141cd77aacd8c3a6268bc2bb064d4f78cfb586a1",
+      "bytes": 66086
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+      "bytes": 24536
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "fbfc62f07993d710ebc9b70ff092836bdba46eee51ebc9abc8f6cb35ced46dce",
+      "bytes": 8210
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "7d243f987ab1967f06f8c6547d2dacbd126a3e46aac631e03fb0e7e3634ca71d",
+      "bytes": 16842
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "bytes": 5953
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "b60057d00901f9ebb38388a07afdb4aa70377ccfe244dd3508f6c3334b9d07d1",
+      "bytes": 23648
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "c726beabcc01bef7f67cacb427e8a966bd2673c212f56094ff83ccfd18586ac4",
+      "bytes": 24273
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "b86e880a4655aff431412d7350909925667483acf4f5523ce82457d447b6578c",
+      "bytes": 8213
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "d5e3c6e3b373738dc73da272a5693ec278e092d4ca66e753205725d0b95f4ad6",
+      "bytes": 27070
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "180ff24fdf79aefae28d3a2799c5f8d34356ff91a51588af58bca8ab38c2539c",
+      "bytes": 15944
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "a77d6f72eb4f6adb2a4fbc78e5c402bf21700673fa52163cdee9aea473414c08",
+      "bytes": 19969
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+      "bytes": 13875
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "22adeb1f431e23f4e95cfd53804e301159c1e409df9a2f853a24636f6845852c",
+      "bytes": 24555
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "e6e54ab855a4896bba9df6ac38a0796bc46fdcc90b646be77ff57248c72c0b63",
+      "bytes": 22257
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "f610a8e857c7a5cd139a2d0a343a70a9d37797837d7dbbc6218bbc2252b145c6",
+      "bytes": 20527
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "5b1cad9323ce13d7b3261fc9dd3210973c70969b6baa1ce2502b14cfee4ddfb7",
+      "bytes": 19844
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "94714672ca3cd3469464c62674bcae938044d4c1370c1590522574bf77471d52",
+      "bytes": 16791
+    }
+  ],
+  "outsideScope": [],
+  "types": {
+    "latestSeconds": 5.616,
+    "latestExit": 0,
+    "segmentUsedSeconds": 28.711,
+    "segmentBudgetSeconds": 60,
+    "remainingSeconds": 31.289
+  },
+  "behavior": "13 direct tests are authored but not run; no IDB/HTTP/browser test claim",
+  "review": "Checkpoint only; formal NOT_STARTED. Await root5/peer3 fixed-source findings before combined management intake."
+}

@@ -1,0 +1,132 @@
+{
+  "target": "f13de5c13e3983b94e16ae857ddc7b01cbba7a26",
+  "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "method": "git show fixed object only; no product import or execution",
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "gitBlob": "bdfa77a76ef8a47799e34abcb8be2b0c8a3c9ba1",
+      "sha256": "d2f81cc012b95d92ce4e6299141cd77aacd8c3a6268bc2bb064d4f78cfb586a1",
+      "bytes": 66086
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "gitBlob": "4b21cc3121e493a05e332e747919e29f71d3c5ae",
+      "sha256": "f610a8e857c7a5cd139a2d0a343a70a9d37797837d7dbbc6218bbc2252b145c6",
+      "bytes": 20527
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "gitBlob": "1f38ac8ba8acf720433d7b6e7244260ebf97d745",
+      "sha256": "5b1cad9323ce13d7b3261fc9dd3210973c70969b6baa1ce2502b14cfee4ddfb7",
+      "bytes": 19844
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "gitBlob": "6edd62666fbce60b25d6afb0f2b9aece9914ba0e",
+      "sha256": "b86e880a4655aff431412d7350909925667483acf4f5523ce82457d447b6578c",
+      "bytes": 8213
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "gitBlob": "bb8ce9eea91e5a3b7cce7c9769d805b2d6757181",
+      "sha256": "d5e3c6e3b373738dc73da272a5693ec278e092d4ca66e753205725d0b95f4ad6",
+      "bytes": 27070
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "gitBlob": "f83983db7de15a372f59a2d70465e0275d02e115",
+      "sha256": "180ff24fdf79aefae28d3a2799c5f8d34356ff91a51588af58bca8ab38c2539c",
+      "bytes": 15944
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "gitBlob": "d44acf9d24fe98958ac4039e7917915d4bbea040",
+      "sha256": "b60057d00901f9ebb38388a07afdb4aa70377ccfe244dd3508f6c3334b9d07d1",
+      "bytes": 23648
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "gitBlob": "71ea1be88464906e5e5a6170fa7a620426f0b442",
+      "sha256": "e6e54ab855a4896bba9df6ac38a0796bc46fdcc90b646be77ff57248c72c0b63",
+      "bytes": 22257
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "gitBlob": "eea6329b4c9f0347fc9c7d994e79d9bd064d0067",
+      "sha256": "7d243f987ab1967f06f8c6547d2dacbd126a3e46aac631e03fb0e7e3634ca71d",
+      "bytes": 16842
+    },
+    {
+      "path": "apps/web/src/conversation-context/ContextPicker.tsx",
+      "gitBlob": "def58e4eb01798212fad4140c435b97de2b8759e",
+      "sha256": "058f8b75af5f31b3852ba733ff09ac05c09b1504d1df3488bf581659090473ee",
+      "bytes": 6065
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "gitBlob": "485ecfb242cd4412f0c42b6bfe3d6a3755de3a1c",
+      "sha256": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+      "bytes": 13875
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "gitBlob": "a22ad3b914f7c6a1ef8400ade996e8f2858fdcf5",
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+      "bytes": 24536
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "gitBlob": "db8c54709161e73339297a1d10c324b7e40606d4",
+      "sha256": "a77d6f72eb4f6adb2a4fbc78e5c402bf21700673fa52163cdee9aea473414c08",
+      "bytes": 19969
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "gitBlob": "cb376b2a6c83c13adbab2743e9d9be27c2b8acb7",
+      "sha256": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072",
+      "bytes": 2254
+    },
+    {
+      "path": "apps/web/src/conversation-context/selection.ts",
+      "gitBlob": "8a9c587a4f3364b3f519716a54c98d7fd293ba34",
+      "sha256": "6baaf6a13ab95360b628afc70986b7b48599fddc7dd3419c97dfe80c82870543",
+      "bytes": 1739
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "gitBlob": "cae354221f04dc372ef094be2138eb84e4913c65",
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+      "bytes": 8422
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "gitBlob": "094d5426c01c9547f21cc179742f41fe95e1dde6",
+      "sha256": "94714672ca3cd3469464c62674bcae938044d4c1370c1590522574bf77471d52",
+      "bytes": 16791
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/checkpoint-review-map.md",
+      "gitBlob": "bfc43ff4778f7c78eef51d6c17c48c450ea556ca",
+      "sha256": "103679d9a13bdbd69f3886c06601f7b9cca2ac3e5d0cea76a14f61555502304e",
+      "bytes": 2265
+    }
+  ],
+  "localSkills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "application": "Previously read local method reused; no reinstall. Fixed source/consumer boundaries, minimal actionable counterexample, failure-state ownership, no speculative redesign."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "application": "Previously read local method reused; no reinstall. Fixed source/consumer boundaries, minimal actionable counterexample, failure-state ownership, no speculative redesign."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "application": "Previously read local method reused; no reinstall. Fixed source/consumer boundaries, minimal actionable counterexample, failure-state ownership, no speculative redesign."
+    }
+  ]
+}

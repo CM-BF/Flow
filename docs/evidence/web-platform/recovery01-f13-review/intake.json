@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-06T14:41:08.140692+00:00",
+  "checkpoint": "f13de5c13e3983b94e16ae857ddc7b01cbba7a26",
+  "role": "Bounded fixed source reviews, not final candidate or behavior approval",
+  "management": "management-audit.json: fixed50files/17apps source, original21scope outside0; clean/local=origin at14:35 read",
+  "parser": "parser.json errors0/humancomplete/6TODO",
+  "root": {
+    "originalFindings": "1/4/5 sourcefixpresent behaviorunverified;2/3 partial",
+    "new": [
+      {
+        "priority": "P1",
+        "id": "F13-1",
+        "issue": "First prepare binds authority after await, may continue pending operation following same-namespace reauth; capture/recheck before every await and dispatch, preserve original receipt with0HTTP."
+      },
+      {
+        "priority": "P1",
+        "id": "F13-2",
+        "issue": "Auth-loss/center or principal replacement unmounts retained Workspace, potentially losing unsaved protected draft; guard actual protection, no crossnamespace save."
+      }
+    ],
+    "clarifications": [
+      "Stale prepare must carry restored expectedversion/owner generation; test delayed B after A dispatch and CREATE step advancement.",
+      "Production BrowserWorkspace requires opt-in browser-session center; unsupported default rollout not proved by legacy fixture."
+    ]
+  },
+  "peer": {
+    "originalThree": "Source corrections visible; same-live-key terminal consumer gap remains",
+    "new": [
+      {
+        "priority": "P2",
+        "issue": "Same key localunknown/durableaccepted restore skips reconciliation and retry correctly refuses accepted journal; CREATE may lacklocalid. Match original identities and settlewithoutPOST/newdraftloss."
+      },
+      {
+        "priority": "P3",
+        "issue": "Restored unverified knowledge may use oldcachedbody on default expand; explicitCheckagain workaround exists. Fresh authorization needed, do not trust retainedcache."
+      }
+    ]
+  },
+  "handoff": "Both original reports sent to workspace_panels_owner; corrections remain within original21scope; no extra test/claim permitted by this record.",
+  "types": {
+    "latestSeconds": 5.616,
+    "exit": 0,
+    "usedSeconds": 28.711,
+    "remainingSeconds": 31.289,
+    "totalSeconds": 60,
+    "perRunSeconds": 15,
+    "logsBytes": 524288
+  },
+  "behavior": "13 authored direct cases notrun; realIDB/HTTP/browser notrun",
+  "formalReview": "NOT_STARTED; noAPPROVED",
+  "fixedHashChecks": [
+    {
+      "report": "root-review.json",
+      "sourceCount": 11,
+      "mismatches": []
+    },
+    {
+      "report": "w01-sources.json",
+      "sourceCount": 18,
+      "mismatches": []
+    }
+  ],
+  "additionalSourceReview": {
+    "archive": "root-open-retry.json",
+    "kind": "fixed f13 control-flow review only, no runtime reproduction",
+    "finding": "P2 failed open Promise remains cached; blocked late success may orphan DB; root already delivered to sole owner",
+    "formalReview": "NOT_STARTED"
+  }
+}

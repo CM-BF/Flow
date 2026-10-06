@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 14:29 UTC |
+| 最近更新 | 2026-10-06 14:46 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 连接与持久草稿恢复继续原21范围接线，临时依赖写权已归还；最新类型窄化问题已修，尚待必要复查 |
-| 下一可用交付 | 先实现原回执同步接管和持久检查点、完整材料恢复及真实插件入口，再按资源条件验证刷新与显式原key恢复 |
-| 当前阻塞 | ACTIVE: 真实浏览器/PG旅程仍待单独资源准入及callerOrigin、迟到注销Cookie、重复连接名额语义对齐；小源码与限额noEmit继续，最新空间不再沿用旧低于1GiB读数 |
+| 当前产出 | f13源码安全点已接完整草稿与P01，最新类型检查通过；部分固定预审发现授权、未保存稿与同key对账问题，原owner继续修 |
+| 下一可用交付 | 先修复认证换代不续发、未保存稿保护和终态对账，再验证刷新与显式原key恢复 |
+| 当前阻塞 | ACTIVE: 固定源码预审问题仍待修和行为验证；真实IDB/HTTP/browser待独立资源及中心三语义门槛，轻源码和限额noEmit继续 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |
@@ -53,3 +53,6 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 仅轻量代码/metadata先开工；13:46实际建后available1,416,241,152B事实不改。按[13:49最新政策](../../docs/evidence/web-platform/resource-policy-1349.json)，仅SVC06需2.5GiB，其他Web新产物/依赖复制先估峰值并留约1GiB；当前仍无build许可。真实App/HTTP仍累计90秒含15秒清理/8MiB/1PG+1Chrome，开始前复核资源；center三语义并行，是最终验收gate而非第一行代码blocker。上传journal跨tabCAS仍独立未解，未因本片设计冒称修复。
 
 最新两轮依赖/类型诊断及原始红日志见[窗口记录](../../docs/evidence/web-platform/recovery01-dependency-window.json)；全部依赖写停后v4恢复原21scope。第二types0只属于82d78阶段源码；[八项独立早期finding及来源](../../docs/evidence/web-platform/recovery01-foundation-review-intake.json)待原owner修复，未形成feature终审。当前资源决定见[分时记录](../../docs/evidence/web-platform/resource-admission-1405.json)，不重复采样或将整体目标标阻塞。
+
+
+最新固定源码安全点f13与本轮部分复核见[合批入口](../../docs/evidence/web-platform/recovery01-f13-review/intake.json)：固定f13当时types累计28.711/60s；root随后核当前dirty fixture-types5.834s通过，累计34.545/60s、余25.455s。13direct源码尚未运行；两P1、同key对账P2及缓存验证P3已交原owner，不把旧八项“源码有修正”写成全部闭合。正式review仍NOT_STARTED，main/实际浏览器未验。

@@ -1,6 +1,6 @@
 {
   "at": "2026-10-06T14:19:38.081908+00:00",
-  "state": "STRUCTURE_APPROVED_AWAITING_LEAD_SOURCE_PROVISION_AND_FRESH_CLAIM",
+  "state": "SOURCE_PROVISIONED_AWAITING_OWNER_WINDOW_AND_FRESH_CLAIM",
   "candidateTaskId": "WPF-DPERF04",
   "directParent": "D01",
   "continuity": "Existing WPF-001-36 / D01 DPERF successor; prior DPERF01–03 completion remains unchanged. No third task layer or new broad plan.",
@@ -131,5 +131,15 @@
     "actualProvisionReceipt": null,
     "claimReceipt": null,
     "canonicalNotCreated": "plans/wpf-dperf04-summary-detail/status.md"
+  },
+  "actualSourceProvision": {
+    "receipt": "dperf04-source-provision.json",
+    "managementAudit": "release03-dperf04-provision-management-audit.json",
+    "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+    "branch": "codex/dashboard-summary-detail",
+    "cleanAtCheck": true,
+    "scopeClaimed": false,
+    "implementationStarted": false,
+    "ownerPriority": "W01 RELEASE03 first; no pre-reserved writer forDPERF04"
   }
 }

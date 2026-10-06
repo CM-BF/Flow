@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-06T14:44:20.819656+00:00",
+  "target": "f13de5c13e3983b94e16ae857ddc7b01cbba7a26",
+  "kind": "ADDITIONAL_FIXED_SOURCE_REVIEW_NOT_EXECUTED",
+  "source": {
+    "path": "apps/web/src/recovery/journal.ts",
+    "sha256": "5b1cad9323ce13d7b3261fc9dd3210973c70969b6baa1ce2502b14cfee4ddfb7"
+  },
+  "finding": {
+    "id": "F13-3",
+    "priority": "P2",
+    "line": 120,
+    "title": "Reset failed IDB open promise and close a late orphan result",
+    "scenario": "open() caches this.database before request.onerror/onblocked. Those callbacks reject but never reset that cached promise. A later explicit retry (including following the close-other-tab guidance) reuses the same rejection and never calls factory.open again. In blocked->late-success sequence, onsuccess resolves an already-rejected promise and leaves the returned database open; close() awaits the rejected promise and cannot obtain that database.",
+    "evidence": [
+      "journal115\u2013124 cached open promise, error and blocked handlers",
+      "journal122 late onsuccess only assigns onversionchange and resolve",
+      "journal245 close catches rejection to undefined, cannot close orphan result"
+    ],
+    "required": "Track the actual in-flight open attempt, clear only that failed attempt so a later explicit retry can open again, and handle/close success that arrives after that attempt was invalidated or abandoned. Do not auto-resend any command or create a background retry loop.",
+    "laterValidation": [
+      "first open fails, explicit retry invokes a second successful open and preserves original command key",
+      "blocked attempt rejects, later success is closed once rather than orphaned",
+      "late error/success from old attempt cannot clear/replace a newer attempt"
+    ]
+  },
+  "limits": [
+    "Source control-flow finding only, no real IndexedDB or browser behavior executed",
+    "Existing direct event-port test lacks open error/blocked events; do not claim its transaction cases cover this"
+  ]
+}

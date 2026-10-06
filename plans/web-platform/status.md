@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:35 UTC / 固定兼容接缝与SOURCE_REQUEST收敛 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:46 UTC / Recovery固定预审与发布验证领取 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 刷新恢复持续接线；稳定页面正式format2产物已准备且临时写权释放，看板摘要后继仍待Lead源码树 |
-| 下一可用交付 | 先取得固定362验证源码/依赖与资源，按附件历史再实际App顺序核正式产物兼容；恢复接线并行继续 |
-| 当前阻塞 | ACTIVE: 后台362附件历史缺口及真实兼容验证、正式发布待完成；恢复真实旅程仍待独立资源与中心三语义，源码及限额noEmit继续 |
+| 当前产出 | Recovery完整草稿已接源码，固定预审问题交原owner修；发布验证已独立领取轻源码，看板后继树已备但未占writer |
+| 下一可用交付 | 修复恢复授权与终态对账；发布验证先准备准确依赖与轻量脚本，准入后核固定后台与产物 |
+| 当前阻塞 | ACTIVE: Recovery预审两P1及终态对账等问题待修和行为验证；发布PG/Chrome仍待依赖资源准入，后台362历史缺口保留；当前源码可继续 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -37,7 +37,7 @@
 | WPF-001-06 | completed | d01_owner | PERF01基线3d47和PERF02窗口a87限定批准、后者main已含；d36 v2 released，未来优化另凭证据领取 |
 | WPF-001-07 | completed | d01_owner | M02 d47已审集成，原保留范围已于06:45:37由owner完成main收口并release v4；后继不沿旧权写入 |
 | WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验；最新CHATv5→QUEUE01v1与旧D06v2释放→新e5b2v1均有原始receipt |
-| WPF-001-09 | in-progress | d01_owner | CHAT与queue已审集成；GO/Lead真实两query结果CLOSED 2/2已收到，沿固定证据不重测；tool/thinking、context、steer、voice后继仍开放；04历史GET/client/DTO已main362 ready，Web consumer待排程；附件v2材料投影最小修复4f879已Mika独审READY，待Leadmain组合验收，不冒完整材料展示 |
+| WPF-001-09 | in-progress | d01_owner | CHAT与queue已审集成；GO/Lead真实两query结果CLOSED 2/2已收到，沿固定证据不重测；tool/thinking、context、steer、voice后继仍开放；04历史GET/client/DTO已main362 ready，Web consumer待排程；附件v2材料投影最小修复4f879已main cde，Lead组合PG2已验；实际backend362仍缺该修复，不冒完整材料展示 |
 | WPF-001-10 | completed | d01_owner | X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计 |
 | WPF-001-11 | completed | d01_owner | PROFILE独立模块4f198576获rootAPPROVED、finale730clean，管理范围/6md20links/4TODO通过；App接线仍另片 |
 | WPF-001-12 | completed | d01_owner | QUEUE00 5acc已审，d10b4b0记录main698实现相同、claim13185v2 released |
@@ -113,10 +113,10 @@ SVC05窗口已由Lead正式关闭，个人backend362/v15与Web8d8/caa1/v2沿服�
 
 [本次收敛前原文历史](status-history.md)保留原时点、失败、未验、SHA与原始证据链接；仅历史不得更新成第二状态源。[plan](plan.md)保留完整U00–U12/REQ01–45与稳定36TODO；[research](../../docs/evidence/web-platform/research.md)记录研究依据；[固定发布说明](../../docs/evidence/web-platform/publication/README.md)界定a5独审副本；[本轮成熟度handoff](../../docs/evidence/web-platform/mature-task-handoff.md)供正常登记/集成。
 
-[RELEASE03候选/批准范围](../../docs/evidence/web-platform/release03-current-preview-proposal.json)直接MATURE01，w01唯一验证owner、四scope验证未claim；两cacheprepare已完成并释放，见[take与释放](../../docs/evidence/web-platform/release03-prepare-release-receipt.json)；不复用RELEASE01/02释放权，不抢Recovery。原SVCoperator独立接精确descriptor/compatibility后发布；个人服务未操作。
+[RELEASE03候选/批准范围](../../docs/evidence/web-platform/release03-current-preview-proposal.json)直接MATURE01，w01唯一验证owner、四scope验证已bfb209ae v1 COMMITTED并派轻源码；两cacheprepare已完成并释放，见[take与释放](../../docs/evidence/web-platform/release03-prepare-release-receipt.json)；不复用RELEASE01/02释放权，不抢Recovery。原SVCoperator独立接精确descriptor/compatibility后发布；个人服务未操作。
 
 恢复正式领取与唯一来源见[dispatch审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)和[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json)；当前实施事实由新owner status维护，不由管理表复制TODO。13源比对不是13tests，Lead组合为1pass/2未选+types0；本组无产品复测。
 
 DPERF既有后继：[单次首页观察/固定摘要设计](../../docs/evidence/web-platform/dperf-home-summary-followup.json)待排，优先级低于恢复与可用预览、高于装饰。已交DPERF01–03不回改，后继未领取；首页尽快可读与按需proof/详情的验收仍需未来独立片，当前不复采服务。
 
-[DPERF04精确后继候选](../../docs/evidence/web-platform/dperf04-summary-detail-proposal.json)已收敛为direct D01 / w01 / 九literal，已root结构批准并SOURCE_REQUEST交Lead唯一Git owner，无take/provision；小源码可独立于Recovery，但新树仅Lead串行sparse、实际检查仍守各自资源门槛。恢复82d78原五项与W01新增三项合计[八项早期partial发现](../../docs/evidence/web-platform/recovery01-foundation-review-intake.json)，已交唯一owner，非完整独审结论。
+[DPERF04精确后继候选](../../docs/evidence/web-platform/dperf04-summary-detail-proposal.json)已收敛为direct D01 / w01 / 九literal，已root结构批准且Lead已provision，尚无take/实施；小源码可独立于Recovery，但新树仅Lead串行sparse、实际检查仍守各自资源门槛。恢复82d78原五项与W01新增三项合计[八项早期partial发现](../../docs/evidence/web-platform/recovery01-foundation-review-intake.json)，已交唯一owner，非完整独审结论。

@@ -1,0 +1,147 @@
+{
+  "at": "2026-10-06T14:38:54.792266+00:00",
+  "target": "f13de5c13e3983b94e16ae857ddc7b01cbba7a26",
+  "kind": "PARTIAL_FIXED_SOURCE_REVIEW_NOT_FINAL_APPROVAL",
+  "method": "Fixed Git object read, no product execution/IDB/HTTP/browser/types rerun. Prior root five findings and actual App seam inspection.",
+  "priorFindings": [
+    {
+      "id": "root1",
+      "state": "SOURCE_FIX_PRESENT_BEHAVIOR_UNVERIFIED",
+      "evidence": "binding prepare ends handoff only on success; failed prepare retains original durable draft and deferred state. Test source covers commit rejection, not run."
+    },
+    {
+      "id": "root2",
+      "state": "PARTIAL_SOURCE_FIX_REQUIRES_STALE_PREPARE_CASE",
+      "evidence": "journal.change now compares per-port expected version in transaction and rejects accepted downgrade. prepare old-record branch still adopts current stored version without carrying restored snapshot version; test85\u201392 covers only both prepares before first dispatch. See C1."
+    },
+    {
+      "id": "root3",
+      "state": "PARTIAL_SOURCE_FIX_REMAINING_AUTHORITY_CAPTURE_GAP",
+      "evidence": "enqueue/list/restore now capture namespace and generation. First command port binding still occurs after handoff awaits; see F13-1."
+    },
+    {
+      "id": "root4",
+      "state": "SOURCE_FIX_PRESENT_BEHAVIOR_UNVERIFIED",
+      "evidence": "Outbox/Queue/Steer pre-HTTP RecoveryError remains unknown/local-blocked and retains original request identity; retry uses same key. Not a runtime result."
+    },
+    {
+      "id": "root5",
+      "state": "SOURCE_FIX_PRESENT_BEHAVIOR_UNVERIFIED",
+      "evidence": "session.logout101+ revokes public auth/CSRF synchronously and uses private captured token callback for the one logout. Server delayed Set-Cookie gate unchanged."
+    }
+  ],
+  "findings": [
+    {
+      "id": "F13-1",
+      "priority": "P1",
+      "file": "apps/web/src/recovery/binding.tsx",
+      "line": 183,
+      "title": "Capture command authority before the first handoff await",
+      "scenario": "First command on a new commandPort waits for a queued handoff draft; same namespace reauthentication changes host generation while that queue is pending. The old queued write rejects before saving because enqueue.current sees the old generation. prepare184 automatically enqueues handoff.data using the new generation, and bound191 first binds that new generation. The original pending send can then pass dispatch and issue HTTP without a new explicit retry.",
+      "sourceChain": [
+        "commandPort160\u2013175 has lazy binding; no captured namespace/generation until bound()",
+        "prepare178\u2013184 awaits/automatically retries source save before first bound191",
+        "App layout effect replaces future recovery ports, but original projection dispatch retains its captured old port",
+        "projection300+ awaits prepare then dispatch then HTTP"
+      ],
+      "required": "Capture exact namespace/view/project/authority generation at prepare entry before any await; recheck before automatic source-save retry, binding, transfer, dispatch. A changed authority fails this pending operation with original receipt/key/materials retained and 0 HTTP. Later explicit retry can use a new authorized port.",
+      "validation": "Hold prior draft queue, change same-namespace generation, release; assert no retry save under new generation and no HTTP. Then explicit retry preserves original keys."
+    },
+    {
+      "id": "F13-2",
+      "priority": "P1",
+      "file": "apps/web/src/App.tsx",
+      "line": 1205,
+      "title": "Do not unmount unsaved retained workspace during authentication or center change",
+      "scenario": "A draft has an aborted/quota-blocked checkpoint (in-memory next draft protected by RecoveryWorkspace). Session becomes offline/unauthenticated, so Connection form appears while old Workspace is hidden. Connecting to another URL calls setRetained(null) directly; observing a different principal at same URL changes retained in1196. Both remove the old keyed Workspace and dispose its in-memory unsaved draft/receipt state. Workspace.disconnectNow flush guard is bypassed on these paths.",
+      "sourceChain": [
+        "Workspace.disconnectNow790+ flush checks only explicit workspace disconnect",
+        "BrowserWorkspace1196 replaces namespace after observed ready identity",
+        "BrowserWorkspace1205 unconditionally sets retained null before center switch",
+        "BrowserWorkspace1212 mounts exactly one retained key"
+      ],
+      "required": "Gate retained workspace replacement/disposal on its actual recovery protection state, including auth-loss and external identity-change paths. Retain old unsaved state inactive or explicitly resolve it before release; do not expose A state as B or write A draft into B. Ordinary navigation/auth changes must not silently discard the page-only remainder.",
+      "validation": "Fail draft commit, revoke auth, then attempt other center and same-center different principal; verify original in-memory draft/receipt remains retained and no cross-namespace save/automatic POST."
+    }
+  ],
+  "clarifications": [
+    {
+      "id": "C1",
+      "file": "apps/web/src/recovery/journal.ts",
+      "line": 203,
+      "topic": "CAS restore/admission input",
+      "detail": "Current prepare on an existing record returns old.version even for dispatching. A stale restored B snapshot can therefore adopt a later A version before B dispatch. Test both-prepare-before-dispatch is insufficient. Define explicit restored expectedVersion/owner generation; exercise A prepare+dispatch before delayed B prepare, plus CREATE stage advancement. This is source gap analysis, not reproduced two-tab HTTP or a demand for a generic distributed lease framework."
+    },
+    {
+      "id": "C2",
+      "file": "apps/web/src/App.tsx",
+      "line": 1223,
+      "topic": "Browser-session rollout limitation",
+      "detail": "Production App now always enters BrowserWorkspace; default unsupported/disabled browser-session centers cannot enter through legacy page-only Bearer path. The center contract is opt-in by default. Record this explicit compatibility/rollout boundary and ensure eventual deployment target is enabled; do not count legacy fixture path as actual production recovery compatibility."
+    }
+  ],
+  "sources": [
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "f610a8e857c7a5cd139a2d0a343a70a9d37797837d7dbbc6218bbc2252b145c6",
+      "bytes": 20527
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "5b1cad9323ce13d7b3261fc9dd3210973c70969b6baa1ce2502b14cfee4ddfb7",
+      "bytes": 19844
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "fbfc62f07993d710ebc9b70ff092836bdba46eee51ebc9abc8f6cb35ced46dce",
+      "bytes": 8210
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "b86e880a4655aff431412d7350909925667483acf4f5523ce82457d447b6578c",
+      "bytes": 8213
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "d5e3c6e3b373738dc73da272a5693ec278e092d4ca66e753205725d0b95f4ad6",
+      "bytes": 27070
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "180ff24fdf79aefae28d3a2799c5f8d34356ff91a51588af58bca8ab38c2539c",
+      "bytes": 15944
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "b60057d00901f9ebb38388a07afdb4aa70377ccfe244dd3508f6c3334b9d07d1",
+      "bytes": 23648
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "d2f81cc012b95d92ce4e6299141cd77aacd8c3a6268bc2bb064d4f78cfb586a1",
+      "bytes": 66086
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "c726beabcc01bef7f67cacb427e8a966bd2673c212f56094ff83ccfd18586ac4",
+      "bytes": 24273
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "94714672ca3cd3469464c62674bcae938044d4c1370c1590522574bf77471d52",
+      "bytes": 16791
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "sha256": "b122f9aa7736d8b4ef15f4749b9eb43beb89cf5b3d2ec631375adf37f5c9a5f0",
+      "bytes": 267
+    }
+  ],
+  "notPerformed": [
+    "No mutation of project files",
+    "No tests/IDB/browser/services/provider",
+    "No formal review approval",
+    "No finding for CREATE frozen identity: frozenOutbox42 deliberately retains null when creation exists",
+    "No StrictMode finding: actual main.tsx renders App without StrictMode"
+  ]
+}

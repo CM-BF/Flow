@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-06T14:41:08.140692+00:00",
+  "taskId": "WPF-RELEASE03",
+  "directParent": "WPF-MATURE-01",
+  "owner": "w01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+  "branch": "codex/web-current-preview-compatibility",
+  "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-current-preview.browser.ts",
+      "apps/web/test/web-current-preview.fixture.ts",
+      "docs/evidence/wpf-release03",
+      "plans/wpf-release03-current-preview"
+    ],
+    "state": "active",
+    "branch": "codex/web-current-preview-compatibility",
+    "origin": "new",
+    "taskId": "WPF-RELEASE03",
+    "worker": "w01_owner",
+    "claimId": "bfb209ae-4c74-49cd-8140-f6d4bd3b0f92",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+    "createdAt": "2026-10-06T14:37:56.939Z",
+    "updatedAt": "2026-10-06T14:47:08.816Z",
+    "observedAt": null
+  },
+  "claimCommittedAt": "2026-10-06T14:47:08.816Z",
+  "state": "SOURCE_READY_LIGHT_SOURCE_IMPLEMENTATION_RUNTIME_GATES_PENDING",
+  "dispatch": "followup_task after W01 completed f13 readonly report; create uniqueplan/status/review first, sourceimplementation authorized on exactfour literals",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md",
+  "interface": "release03-fixed-fixture-plan/report.md and current proposal, root structure approved",
+  "sourceProvision": "Lead sole Gitowner; worktree-local sparse, sharedconfigunchanged; management actualbranch/HEAD/clean verified",
+  "resourceSource": "Lead final1,192,497,152B only, not new management sample or reservedcapacity",
+  "runtimeGates": [
+    "17 exact links now read-only; original four implementation scopes active v3. No further dependency changes, product import/PG/Chrome remain separate gates.",
+    "No install/build/PG/Chrome until actualresource/dependency conditions and exactwritescope authorized.",
+    "Original180s including20cleanup/8MiB/1PG+1Chrome future runtime budget, no execution yet."
+  ],
+  "priority": "W01 RELEASE03 first; DPERF04 sourceprovisioned butuntaken untilownerwindow. No sameowner parallelfeaturewriting.",
+  "noOperations": [
+    "No compatibilityrun",
+    "No personalservice/user tabs",
+    "No newsourceprovision/configwritebythisgroup"
+  ],
+  "sourceReady": {
+    "commit": "422d0fba2bf6f45f61dfde3bcec99f14c62ae5e5",
+    "observedAt": "2026-10-06T14:41:58.633988+00:00",
+    "branch": "codex/web-current-preview-compatibility",
+    "cleanAtManagementRead": true,
+    "parserErrors": [],
+    "humanComplete": true,
+    "todos": 3,
+    "review": "NOT_STARTED",
+    "remote": "Owner normalpush and management ls-remote both422d0fba2bf6f45f61dfde3bcec99f14c62ae5e5; later own proposal/source edits are implementation, not approval",
+    "registry": "Registration request only; no current fixed registry entry or4320display observation"
+  },
+  "dependencyProposal": {
+    "archive": "release03-dependency-proposal.json",
+    "sha256": "0a278317af87cd5cfd14e62651e92122858b372c9ad2e93966e34d2fd3a16fb2",
+    "state": "EXACT17_CREATED_VERIFIED_STOPPED_SCOPE_RETURNED_TO_FOUR",
+    "links": 17,
+    "scopeCandidate": "Original four plus exact17 link literal paths, no broad node_modules rights",
+    "execution": "20.132ms, errors0, productImports0; owner stopped all17, v3 returns original4 at14:47:08.816Z",
+    "receipt": "release03-dependency-narrow-receipt.json",
+    "result": "release03-dependency-link-result.json",
+    "managementAudit": "release03-dependency-management-audit.json"
+  },
+  "initialClaim": {
+    "claimId": "bfb209ae-4c74-49cd-8140-f6d4bd3b0f92",
+    "version": 1,
+    "taskId": "WPF-RELEASE03",
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+    "branch": "codex/web-current-preview-compatibility",
+    "scope": [
+      "apps/web/test/web-current-preview.browser.ts",
+      "apps/web/test/web-current-preview.fixture.ts",
+      "docs/evidence/wpf-release03",
+      "plans/wpf-release03-current-preview"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-06T14:37:56.939Z",
+    "createdAt": "2026-10-06T14:37:56.939Z"
+  }
+}

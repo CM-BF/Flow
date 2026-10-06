@@ -1,0 +1,31 @@
+{
+  "observedAt": "2026-10-06T14:37:56.827877+00:00",
+  "ledgerObservedAt": "2026-10-06T14:37:56.809Z",
+  "provisioned": [
+    {
+      "task": "WPF-RELEASE03",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+      "branch": "codex/web-current-preview-compatibility",
+      "head": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "dirty": "",
+      "base": "362af3bac77541e5a60979326bcf4d4b8c947915"
+    },
+    {
+      "task": "WPF-DPERF04",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+      "branch": "codex/dashboard-summary-detail",
+      "head": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+      "dirty": "",
+      "base": "c837b5dccaea429b0112d1c7e0c752c41334204a"
+    }
+  ],
+  "releaseScope": [
+    "apps/web/test/web-current-preview.fixture.ts",
+    "apps/web/test/web-current-preview.browser.ts",
+    "plans/wpf-release03-current-preview",
+    "docs/evidence/wpf-release03"
+  ],
+  "conflicts": [],
+  "dperfClaimed": false,
+  "resource": "Lead provision final1192497152B; receipt only, no new disk sample. Light source only, no dependency link/install/PG/browser/build permission."
+}
