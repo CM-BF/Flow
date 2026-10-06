@@ -52,3 +52,5 @@
 2026-10-06 18:14 UTC：搬运候选窄修为非阻塞regular读取及expected+1上限；固定91ce18d33a1edf3cd087020ab0ea761579affc63。原2边界失败、后8/8纯文件通过/538ms，tmp checkpoint后清理；独审待完成，原失败保留。新连接计数记录1 LISTEN+64 CLOSED仅为候选事实，非根因证明。见[本轮manifest](../../docs/evidence/svc05-history-compatibility/artifact-transfer/tiny-manifest.json)。没有个人搬运/PG/provider/额外HTTP。
 
 2026-10-06 18:16 UTC：Lead独立APPROVED固定91ce搬运准备，21项绑定核实、0重跑，P2关闭；只准备不授权个人效果。后继仅只读设计独立loopback诊断，个人HTTP/连接/服务不动；原raw与manifest保留。
+
+2026-10-06 18:20 UTC：已完成[只读loopback复现方案](../../docs/evidence/svc05-history-compatibility/artifact-transfer/socket-reproduction-proposal.json)。固定af51 static-web、现装Vite8.3.2与Node24.20源码区分capacity drop/HTTP错误/代理abort；候选136连接尝试、35s工作+10s清理、1MiB输出/4MiB自有tmp。未启动，需Lead独立窗口；不追加个人HTTP、不升cap/重启。
