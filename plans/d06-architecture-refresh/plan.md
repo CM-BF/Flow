@@ -1,6 +1,6 @@
 # D06 固定基线架构刷新
 
-状态：in-progress。更新：2026-10-06T06:34:16Z。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
+状态：in-progress。更新：2026-10-06T06:39:59Z。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
 
 目标：沿既有五视图，将架构源码事实刷新到固定 main `115b0dbdfa02db5483f9e9699852682ce699633c`，清楚区分代码已集成、仅独立模块、后继计划与真实服务。本轮没有产品运行改动。
 
@@ -27,4 +27,4 @@
 
 [status](status.md) · [review](review.md) · [本轮证据](../../docs/evidence/d06/context/README.md)
 
-固定实现 `ebad46356efec7bd86f8aadd9d765bb6b6b190af` 已交root独审；作者10局部检查与五图browser通过，sourcehash精确绑定，[验证](../../docs/evidence/d06/context/validation.md)。D06-04仍待独立review/最终聚合与main，未提前勾选。
+固定实现 `ff5ca7c880910841e8180df7632753c81aea2492` 已交root独审；作者10局部检查与五图browser通过，图/browser/preview三文件hash不变复用原browser；两检查脚本复审修复后重跑Node/source，[验证](../../docs/evidence/d06/context/validation.md)。D06-04仍待修复独立复审与Lead交付；06:36唯一聚合已确认，main尚未集成，未提前勾选。

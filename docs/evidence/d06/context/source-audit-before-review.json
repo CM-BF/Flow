@@ -1,5 +1,5 @@
 {
-  "observedAt": "2026-10-06T06:38:36.319Z",
+  "observedAt": "2026-10-06T06:33:03.561Z",
   "baseline": {
     "commit": "115b0dbdfa02db5483f9e9699852682ce699633c",
     "date": "2026-10-06",
@@ -491,7 +491,8 @@
     }
   ],
   "absent": [
-    "apps/server/src/native-activity/index.ts"
+    "apps/server/src/conversation-activity/index.ts",
+    "apps/server/src/native-assistant-stream/index.ts"
   ],
   "absentMigrations": [
     "020-*",
