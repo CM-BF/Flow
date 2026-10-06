@@ -22,8 +22,8 @@ try {
     const loaded = await loadRunnerConfiguration(process.env.FLOW_CLAUDE_MATERIALS_FILE);
     const profile = loaded.profile;
     const reference = profile ? await publishExecutionProfile({ ...common, configuration: profile }) : null;
-    const adapters = loaded.adapters.map(adapter => profile && reference && adapter.name === profile.harness
-      ? guardExecutionProfile(adapter, reference, profile) : adapter);
+    const adapters = loaded.harnesses.map(({ adapter, descriptor }) => descriptor.publicProfile && reference
+      ? guardExecutionProfile(adapter, reference, descriptor.publicProfile) : adapter);
     await runRunner({ ...common, adapters, activeSteering: loaded.activeSteering });
   }
 } catch {
