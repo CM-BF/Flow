@@ -10,8 +10,8 @@
 
 ## TODO
 
-- [ ] ATTACHI01-01 实现绑定ports、官方attachment adapter及固定引用捕获，局部语义测试。
-- [ ] ATTACHI01-02 实现有界原key上传恢复与官方Thread可用输入/预览，双主题390/键盘验证。
+- [x] ATTACHI01-01 实现绑定ports、官方attachment adapter及固定引用捕获，局部语义测试。
+- [x] ATTACHI01-02 实现有界原key上传恢复与官方Thread可用输入/预览，双主题390/键盘验证。
 - [ ] ATTACHI01-03 clean-code、固定source证据、独立review与主线交付。
 
 无真实模型/产品DB；本片模拟ports不是真实HTTP或center重启证明。浏览器reload恢复只覆盖upload记录；Send/Queue unknown跨reload恢复仍未实现。公开exports未桥接时仅直接导入本树已审合同文件，不创建伪client方法；最终公共client接线另审。
