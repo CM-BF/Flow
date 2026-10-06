@@ -1,0 +1,31 @@
+{
+  "observedAt": "2026-10-06T05:39:13.742Z",
+  "operationSource": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "implementationReviewTarget": "9aa790552cb8847d6feb8c8f90c870407a54e572",
+  "operator": "runner_owner / gpt-6-astra",
+  "approvedWindow": "Root via Execution Lead",
+  "modelCalls": 0,
+  "resumed": false,
+  "outputs": [
+    {
+      "path": "docs/evidence/svc02/deploy-before-facts.json",
+      "bytes": 1167,
+      "sha256": "993576de36087c9eb5a2931870e74e0701813a9f0dd86861f6b00a1134ca6fa5"
+    },
+    {
+      "path": "docs/evidence/svc02/deploy-bootstrap.json",
+      "bytes": 567,
+      "sha256": "0027b0cc3a89041cbed4675d5477cc1f88640ad700b8e09be384face30ec2441"
+    },
+    {
+      "path": "docs/evidence/svc02/deploy-refresh.json",
+      "bytes": 644,
+      "sha256": "379c6c8de76557870338809dd7f5cf37a5b19a7ddd24edebc71e5b30463211d9"
+    },
+    {
+      "path": "docs/evidence/svc02/deploy-after-facts.json",
+      "bytes": 2111,
+      "sha256": "b9f5eef8d8d4c25175990f200be4f98b23fb3b92bef8498cba9eb4b1915b7324"
+    }
+  ]
+}

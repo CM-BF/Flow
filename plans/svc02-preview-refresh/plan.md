@@ -30,3 +30,5 @@
 测试仅本模块+直接消费者，flow_svc02专库/动态端口；不运行全产品/共享DB套。覆盖身份/旧version/同key异input/重启审计、drain与旧claim交错、已占用session回滚、heartbeat/outbox继续、uncertain阻止hold、显式resume、错误PID/TERM超时/启动失败关门。0模型/0云。
 
 2026-10-06 05:36 UTC：已审实现9aa790552cb8847d6feb8c8f90c870407a54e572进入main fb906cb42391971a8b315dbd813f7633927d7265；SVC02-04仅剩单独窗口和真实部署记录。05:36:59Z原子amend至v2交回 apps/server/src/runners.ts，后续该文件由Lead协调新owner；本owner保留其余scope，不触碰现有服务。
+
+2026-10-06 05:39 UTC：Root批准窗口中，唯一执行owner runner_owner已完成实际bootstrap→refresh并核原DB/配置/native目录/端口保留。更新source固定fb906cb，暂不resume；SVC02-04仅保留明确恢复接收的后续操作，不把进程就绪称模型可用。

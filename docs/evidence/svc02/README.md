@@ -51,3 +51,15 @@ bootstrap先核现0700/0600私有配置、DB marker/runner token hash、自有PI
 Root独立只读APPROVED固定9aa790552cb8847d6feb8c8f90c870407a54e572，现场clean129cc7751900809e321080d770c8a55710954ab1；核17source/12raw、manifest `6f46cd26a2435353d3e77e9f71fdd6f7ca418ed8d7736f50bfe814deb605805b`，完整代码/测试/输出，无blocking，0重跑。见[正式review](../../../plans/svc02-preview-refresh/review.md)。
 
 批准仅单个受管runner的本机预览更新，不是整个center的多runner排空。真实部署窗口前必须确认全DB没有其他runner未完成attempt、没有其他活动runner部署；存在或未知时不能只凭本runner0就停止center，应保持暂停并升级协调。查询快照不是锁，idle runner无心跳时只能标unknown，不能推断其部署离线。产品实现不扩范围，原始manifest与source/raw保持不变；真实窗口由Root另确认。
+
+## 实际单安装更新（0query）
+
+Root批准的窗口于2026-10-06 05:38–05:39 UTC执行，操作源码为已审main `fb906cb42391971a8b315dbd813f7633927d7265`，原安装source75a33。唯一operator runner_owner，使用已审CLI，无产品改动、无第二中心bootstrap。
+
+- [fresh全库/身份前置事实](deploy-before-facts.json)：唯一原runner，0task/0未完attempt，旧owned PID及原端口匹配。
+- [bootstrap原始exit/stdout/stderr](deploy-bootstrap.json)：exit0，454ms，持久draining。
+- [refresh原始exit/stdout/stderr](deploy-refresh.json)：exit0，2085ms，原子hold后更新自有进程，ready-paused。
+- [更新后只读核对](deploy-after-facts.json)：新owned PID=PGID 77104/77264/77304 running，配置/native配置字节、native目录inode、DB marker/runner身份、61227/61228原端口保留；main未前进；migrations1..16；全库仍0任务/attempt，maintenance v2。
+- [独立部署证据manifest](deploy-manifest.json)：不改写先前17source/12raw实现验收manifest。
+
+未resume、未发消息或调用模型，provider not-probed。没有操作4320/49922或任何用户tab；未跑浏览器验收。窗口明确仅这一受管runner部署，观察快照不冒充持续锁/多runner排空协议。配置仅内存读取并比较，摘要不含token/hash值/DB URL；临时0600比较基线已删除。
