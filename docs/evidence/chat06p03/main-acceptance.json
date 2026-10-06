@@ -1,0 +1,107 @@
+{
+  "observedAt": "2026-10-06T18:21:53.921444+00:00",
+  "fixedMain": "0b8cd6f496e626cf6e7dfb75f4702c57e280da70",
+  "ownerHeadBeforeMetadata": "6840b76232e735a0116422433614aead44cb672b",
+  "implementation": "4c6676caf545aea1939a9b676b419cf702eed19c",
+  "typeFix": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+  "bindings": [
+    {
+      "path": "apps/runner/src/assistant-stream/accumulator.ts",
+      "sourceRef": "4c6676caf545aea1939a9b676b419cf702eed19c",
+      "bytes": 10069,
+      "sha256": "d81c8c0c2b975f257b0efb934fc3279633f73ef3a41c68f5634580b311c6a4fc",
+      "fixedMainEqualsOwner": true
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/accumulator-incremental.test.ts",
+      "sourceRef": "4c6676caf545aea1939a9b676b419cf702eed19c",
+      "bytes": 10511,
+      "sha256": "a7c87fcbf7ec9bfb0acd39794f01d50fd12d882f014c5774e2eaba6a1777e645",
+      "fixedMainEqualsOwner": true
+    },
+    {
+      "path": "docs/evidence/chat06p03/baseline/accumulator.ts",
+      "sourceRef": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+      "bytes": 10007,
+      "sha256": "f362bab2dd7b54dcd80fa0525c5553e78c57930c1c5073736764cc95a1d5ef7f",
+      "fixedMainEqualsOwner": true
+    },
+    {
+      "path": "docs/evidence/chat06p03/baseline/index.ts",
+      "sourceRef": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+      "bytes": 3863,
+      "sha256": "bf8f6972371438857b56c33630644ae098999629def359507aabe4c1f72d3d6b",
+      "fixedMainEqualsOwner": true
+    },
+    {
+      "path": "docs/evidence/chat06p03/baseline/accumulator.ts.txt",
+      "sourceRef": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+      "bytes": 9939,
+      "sha256": "774b8905671370d8e70558a741d8f1e0fe8e7ab0ec9946489e3641f8a7a69792",
+      "fixedMainEqualsOwner": true
+    },
+    {
+      "path": "docs/evidence/chat06p03/baseline/index.ts.txt",
+      "sourceRef": "cad76bf59ea0ce3598b8f03878da09625ef7cbd2",
+      "bytes": 3795,
+      "sha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5",
+      "fixedMainEqualsOwner": true
+    }
+  ],
+  "originalArchivesMatchApprovedBaseline": true,
+  "canonicalReceipts": [
+    {
+      "path": "docs/evidence/i02/chat06p03-integration.json",
+      "ref": "0b8cd6f496e626cf6e7dfb75f4702c57e280da70",
+      "bytes": 3527,
+      "sha256": "6c65fcffd0db412d1bbdc00c01b6f4f38385fad97230c9af4d71a59d3aa0b274"
+    },
+    {
+      "path": "docs/evidence/i02/chat06p03-fixed-root-types.json",
+      "ref": "0b8cd6f496e626cf6e7dfb75f4702c57e280da70",
+      "bytes": 413,
+      "sha256": "fb2304257a9862e63b3761b112e7dd08e1f6f1062dc4af6d594fa33759f8f02e"
+    }
+  ],
+  "integrationValidation": {
+    "executor": "Execution Lead / I02",
+    "exitCode": 0,
+    "seconds": 9.294680875027552,
+    "rawBytes": 0,
+    "actualRootOptions": true,
+    "sdkAliasAdded": false,
+    "dependencyOrConfigRelaxation": false
+  },
+  "checksThisCloseout": "read-only Git/byte/hash/receipt comparison; no engineering checks run",
+  "preservedEvidence": {
+    "originalExpectedRed": 1,
+    "distinctGreen": 5,
+    "originalIntegrationTypesExit": 2,
+    "typeErasureEqual": 2,
+    "newBehaviorRuns": 0,
+    "providerCalls": 0,
+    "productionOneMiBBoundary": "NOT_SELECTED; reduced-limit fixture only"
+  },
+  "claimAtMetadata": {
+    "observedAt": "2026-10-06T18:20:46.257Z",
+    "claimId": "e8c06a73-522d-43a8-bbfa-7ba97aed154c",
+    "version": 1,
+    "state": "active",
+    "scope": [
+      "apps/runner/src/assistant-stream/accumulator-incremental.test.ts",
+      "apps/runner/src/assistant-stream/accumulator.ts",
+      "docs/evidence/chat06p03",
+      "plans/chat06-runner-prefix-hash"
+    ]
+  },
+  "handback": {
+    "projectWritesEnd": "after this metadata commit/push; then atomic release only",
+    "releaseReceipt": "/tmp/flow-chat06p03-main-release-receipt.json",
+    "releaseStatusAtMetadata": "NOT_YET_EXECUTED; live ledger and external receipt are authoritative; no project writes after successful release"
+  },
+  "quality": {
+    "method": "existing local find-skills/codebase-design/clean-code fixed baseline; closeout checks evidence identity, scope, naming and truthful error/history boundaries",
+    "findings": "no product changes; integration-only baseline type-resolution P2 closed by actual root noEmit",
+    "limits": "no CPU/throughput/provider benefit or production 1MiB maximum-boundary claim"
+  }
+}
