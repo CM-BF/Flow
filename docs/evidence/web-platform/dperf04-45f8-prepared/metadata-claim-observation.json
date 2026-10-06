@@ -1,0 +1,59 @@
+{
+  "observedAt": "2026-10-06T19:50:49.575Z",
+  "state": "available",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/read-model.mjs",
+      "apps/execution-dashboard/src/server.mjs",
+      "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs",
+      "docs/evidence/wpf-dperf04",
+      "plans/wpf-dperf04-summary-detail"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-summary-detail",
+    "origin": "new",
+    "taskId": "WPF-DPERF04",
+    "worker": "w01_owner",
+    "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+    "createdAt": "2026-10-06T16:10:21.626Z",
+    "updatedAt": "2026-10-06T16:10:21.626Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "managerClaim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/web-platform",
+      "plans/web-platform",
+      "plans/wpf-mature-01-visual",
+      "plans/wpf-mature-03-attachments",
+      "plans/wpf-mature-05-workspace",
+      "plans/wpf-mature-06-chat"
+    ],
+    "state": "active",
+    "branch": "codex/web-platform-management",
+    "origin": "migration",
+    "taskId": "WPF-001",
+    "worker": "external_web_d01_owner",
+    "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+    "createdAt": "2026-10-06T02:48:43.295Z",
+    "updatedAt": "2026-10-06T08:56:20.186Z",
+    "observedAt": "2026-10-06T02:48:42.000Z",
+    "needsVerification": false
+  },
+  "overlaps": [],
+  "purpose": "Original DPERF04 owner one metadata-only seal of fixed45f8 source approval. No source edits, take, runtime or boundary approval."
+}

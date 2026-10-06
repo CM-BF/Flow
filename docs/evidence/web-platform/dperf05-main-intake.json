@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-06T19:52:30.975248+00:00",
+  "state": "MAIN_ACCEPTED_OWNER_CLOSE_QUEUED_AFTER_RECOVERY_SOURCE_SAFE_POINT",
+  "main": "aca6e89214711ef3787ac3e3ee3b2754bb40b960",
+  "receiptCommit": "6223c7493a3b6f392813a5d9d82c24d87312ad26",
+  "source": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+  "ownerBeforeClose": "825f3245ab857d6f73cf5b49ed51feccce4233c8",
+  "sourceBindings": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 6660,
+      "sha256": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
+      "mainEqualsFixedEqualsOwnerCurrent": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "bytes": 6353,
+      "sha256": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1",
+      "mainEqualsFixedEqualsOwnerCurrent": true
+    }
+  ],
+  "integrationReview": "dperf05-main-integration-review.json",
+  "leadReceipt": "dperf05-main-lead-receipt.json",
+  "directConsumer": {
+    "at": "2026-10-06T19:29:29.666359+00:00",
+    "state": "PASS",
+    "exit": 0,
+    "reason": null,
+    "elapsedMs": 506,
+    "pgid": 66514,
+    "pgidAbsent": true,
+    "tempSameIdentity": true,
+    "tempRemaining": [],
+    "freeBeforeBytes": 1114095616,
+    "freeAfterBytes": 1113993216,
+    "rawBytes": 323,
+    "tests": "one actual aggregate direct consumer, not repeated62",
+    "pg": 0,
+    "chrome": 0,
+    "provider": 0,
+    "tempRemoved": true
+  },
+  "dashboard": {
+    "source": "Lead retained snapshot receipt; no manager GET/reload",
+    "observedAt": "2026-10-06T19:49:23.169Z",
+    "count": 173,
+    "dperf05": {
+      "id": "WPF-DPERF05",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T19:17:06.538Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps/plans/wpf-dperf05-status-timestamps/status.md",
+        "syncedAt": "2026-10-06T19:49:23.169Z",
+        "stale": false,
+        "ageHours": 0.5381025
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/dashboard-status-timestamps",
+        "head": "825f3245ab857d6f73cf5b49ed51feccce4233c8",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T19:49:23.255Z"
+      },
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "高精度 UTC 与坏时间隔离已通过 62 项纯解析检查，等待受控接收。",
+        "next": "独立审核已通过，供主线接收；真实看板部署仍由 Lead 验证。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "errors": [],
+      "issues": []
+    },
+    "originalThree": "TUI-001/COST-001/MATURE02 not listed in this receipt; no separate deployed recovery claim for those three",
+    "limits": "Not all173 human.complete=true: receipt I02 has human.complete=false/missing blocker; preserve that source fact"
+  },
+  "claim": "9a876001 v1 original4 remains active until owner main-close/pushclean/allstop then fresh CAS release",
+  "runtime": "No rerun62, aggregate, browser, PG, or personal checks by manager"
+}

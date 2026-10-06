@@ -1,0 +1,276 @@
+{
+  "at": "2026-10-06T19:50:13.782201+00:00",
+  "main": "aca6e89214711ef3787ac3e3ee3b2754bb40b960",
+  "remoteSame": true,
+  "branch": "main",
+  "inputs": "center-recovery-publication.json and retained-goal-preparation-integration.json",
+  "dashboard": {
+    "observedAt": "2026-10-06T19:49:23.169Z",
+    "count": 173,
+    "snapshotSha256": "5338ecaff0c84487fc9cab394278e72a9b7a4018f526d136d72b005785a9711c",
+    "ownedServerSession": 70817,
+    "selected": [
+      {
+        "id": "WPF-DPERF05",
+        "source": {
+          "mode": "live",
+          "modifiedAt": "2026-10-06T19:17:06.538Z",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps/plans/wpf-dperf05-status-timestamps/status.md",
+          "syncedAt": "2026-10-06T19:49:23.169Z",
+          "stale": false,
+          "ageHours": 0.5381025
+        },
+        "git": {
+          "available": true,
+          "branch": "codex/dashboard-status-timestamps",
+          "head": "825f3245ab857d6f73cf5b49ed51feccce4233c8",
+          "dirty": false,
+          "changedFiles": 0,
+          "observedAt": "2026-10-06T19:49:23.255Z"
+        },
+        "human": {
+          "delivery": {
+            "state": "integration",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "高精度 UTC 与坏时间隔离已通过 62 项纯解析检查，等待受控接收。",
+          "next": "独立审核已通过，供主线接收；真实看板部署仍由 Lead 验证。",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "errors": [],
+        "issues": []
+      },
+      {
+        "id": "SVC05R01",
+        "source": {
+          "mode": "live",
+          "modifiedAt": "2026-10-06T19:27:51.491Z",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/plans/svc05-retained-web-compatibility/status.md",
+          "syncedAt": "2026-10-06T19:49:23.169Z",
+          "stale": false,
+          "ageHours": 0.3731025
+        },
+        "git": {
+          "available": true,
+          "branch": "codex/personal-retained-web-compatibility",
+          "head": "eac3737efc57510d4cc9a2770dfebcb04d6db699",
+          "dirty": false,
+          "changedFiles": 0,
+          "observedAt": "2026-10-06T19:49:23.281Z"
+        },
+        "human": {
+          "delivery": {
+            "state": "review",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "采样竞态与错误保留修复已通过小型检查；旧页面真实兼容仍待新的受控验证。",
+          "next": "独审本次检查证据后，在独立窗口完成两份旧页面兼容检查。",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "errors": [],
+        "issues": []
+      },
+      {
+        "id": "O16",
+        "source": {
+          "mode": "live",
+          "modifiedAt": "2026-10-06T19:34:22.814Z",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/plans/o16-continuous-goal-acceptance/status.md",
+          "syncedAt": "2026-10-06T19:49:23.169Z",
+          "stale": false,
+          "ageHours": 0.25032472222222224
+        },
+        "git": {
+          "available": true,
+          "branch": "codex/continuous-native-goal-acceptance",
+          "head": "924873c27ac4db42d199e25f5d81b39def1c7861",
+          "dirty": false,
+          "changedFiles": 0,
+          "observedAt": "2026-10-06T19:49:23.306Z"
+        },
+        "human": {
+          "delivery": {
+            "state": "review",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "零模型旅程已完成提案和两项依赖执行；独立接受被中心拒绝，资源与证据保留。",
+          "next": "修复的单个检查已通过，等待证据复核及后续公开旅程安排。",
+          "blocker": {
+            "state": "active",
+            "text": "原公开旅程未通过，等待独立复核与后续安排；原失败资源保留。"
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "errors": [],
+        "issues": []
+      },
+      {
+        "id": "SVC05H01",
+        "source": {
+          "mode": "live",
+          "modifiedAt": "2026-10-06T19:47:23.336Z",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/plans/svc05-history-compatibility/status.md",
+          "syncedAt": "2026-10-06T19:49:23.169Z",
+          "stale": false,
+          "ageHours": 0.05643583333333333
+        },
+        "git": {
+          "available": true,
+          "branch": "codex/personal-history-compatibility",
+          "head": "3271dcb449ce426d31136bd3ed03d2804fa4b1de",
+          "dirty": false,
+          "changedFiles": 0,
+          "observedAt": "2026-10-06T19:49:23.444Z"
+        },
+        "human": {
+          "delivery": {
+            "state": "integration",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "原版本中心已恢复，网页和执行器持续运行；原身份、会话、任务和页面版本保留。",
+          "next": "收口本次恢复证据；继续保留页面与新后台的兼容验证后再准备版本发布。",
+          "blocker": {
+            "state": "active",
+            "text": "新后台发布仍待两个保留页面的对应兼容报告；原版本中心恢复已完成。"
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "errors": [],
+        "issues": []
+      },
+      {
+        "id": "OPS-001",
+        "source": {
+          "mode": "live",
+          "modifiedAt": "2026-10-06T19:47:26.386Z",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/ops-001-status-review/status.md",
+          "syncedAt": "2026-10-06T19:49:23.169Z",
+          "stale": false,
+          "ageHours": 0.05643583333333333
+        },
+        "git": {
+          "available": true,
+          "branch": "codex/plan-status-review",
+          "head": "07f0d86b048311fe3da1a9d9f203bb010bb7b572",
+          "dirty": false,
+          "changedFiles": 0,
+          "observedAt": "2026-10-06T19:49:25.753Z"
+        },
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 5,
+          "output": "原数据库、领取登记和个人中心均已恢复；现有网页、runner、配置和任务保持。",
+          "next": "已审小片受控发布；共享窗口先交已就绪的网页恢复检查，清理归还后再接后续验证。",
+          "blocker": {
+            "state": "active",
+            "text": "页面兼容与完整目标旅程尚待实际验证；磁盘准入逐次核验，大构建原门槛保持。现无个人中心恢复阻塞。"
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "errors": [],
+        "issues": []
+      },
+      {
+        "id": "I02",
+        "source": {
+          "mode": "live",
+          "modifiedAt": "2026-10-06T19:48:44.008Z",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/plans/i02-integration/status.md",
+          "syncedAt": "2026-10-06T19:49:23.169Z",
+          "stale": false,
+          "ageHours": 0.03976916666666667
+        },
+        "git": {
+          "available": true,
+          "branch": "codex/m2-integration",
+          "head": "aca6e89214711ef3787ac3e3ee3b2754bb40b960",
+          "dirty": false,
+          "changedFiles": 0,
+          "observedAt": "2026-10-06T19:49:25.911Z"
+        },
+        "human": {
+          "delivery": {
+            "state": "integration",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "个人中心已同版本恢复，数据与身份保留；看板时间解析与兼容工具的已审小片正在发布。",
+          "next": "发布已审小片并继续页面兼容和完整目标验收。",
+          "blocker": {
+            "state": "unknown",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [
+            "当前阻塞"
+          ],
+          "complete": false
+        },
+        "errors": [],
+        "issues": []
+      }
+    ]
+  },
+  "personalRuntime": {
+    "source": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "maintenance": "accepting",
+    "version": 15,
+    "centerPid": 74763,
+    "webPointerUnchanged": true
+  },
+  "verification": "One actual dashboard snapshot after sole owned4320 restart. No personal HTTP/PG/provider or browser reload. Product changed only already-approved parser; author/raw reviews and direct consumer reused.",
+  "remaining": [
+    "R01 retained actual App reports pending; previous2 failures preserved.",
+    "O16 actual goal journey still pending; originalPG failure/KEEP preserved.",
+    "New backend/Web publication and immutable backend release not included."
+  ]
+}

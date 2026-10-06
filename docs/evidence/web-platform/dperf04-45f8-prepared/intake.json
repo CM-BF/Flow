@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-06T19:49:34.504279+00:00",
+  "state": "APPROVED_SCOPED_LIFECYCLE_SOURCE_AND_PREPARATION_NOT_RUN",
+  "sourceTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "metadata": "3a51a78ebd7f90e36fa2c0c1f5e9d83c2ec4e51c",
+  "branch": "codex/dashboard-summary-detail",
+  "clean": true,
+  "sourcePinsMatched": 7,
+  "candidateManifestSha256": "4c9cfcc21cf3736343d8c6265b0e1fb7cafc7ee273d9332ebf2bd199a772391f",
+  "candidateFiles": [
+    {
+      "name": "binding.json",
+      "bytes": 15052,
+      "sha256": "ce84127219097e032aed35edf5836e5e8a43a2874205d4d1198ae177bb46a58e"
+    },
+    {
+      "name": "report.md",
+      "bytes": 4118,
+      "sha256": "b55e124864db8c96ff3b77cbdd5a5e780060b62140cfddf03078a2748903e157"
+    },
+    {
+      "name": "source-audit.json",
+      "bytes": 3856,
+      "sha256": "57171a8227be6d9362cb47464731a176d33fa051e9b2dc92813b88d4eebdd20e"
+    },
+    {
+      "name": "supervisor.py",
+      "bytes": 22052,
+      "sha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79"
+    },
+    {
+      "name": "supervisor.py.diff",
+      "bytes": 29797,
+      "sha256": "c5f906dfad7bcba6d159abc25de11d675b21ba074f81638f1149b592686e1073"
+    },
+    {
+      "name": "wrapper.diff",
+      "bytes": 11336,
+      "sha256": "7db306af1a0d2999dc7a6e702d1f462d0f4cde44ab70e263e4c66f22764696e8"
+    }
+  ],
+  "boundaryAcceptance": null,
+  "gateCreated": false,
+  "runtime": "0 new run; Node3950ms remains historicalabd2, browser0/60000 with15000cleanup",
+  "ownerEvidence": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-lifecycle-repair/interface.md",
+  "rootReview": "APPROVED_SCOPED_LIFECYCLE_SOURCE_AND_PREPARATION_NOT_RUN; root-review.json",
+  "scope": "Originalb554v1/9, wrapper lifecycle and ownrecords/TMP only; business assertions unchanged per owner audit",
+  "ownerMetadataAction": "SEALED_NORMAL_PUSH_CLEAN_ORIGINAL_NINE_STOPPED_CLAIM_RETAINED",
+  "ownerSeal": {
+    "head": "12ac7db8bfa9037b16432d848d967c85c6389e05",
+    "localEqualsLsRemote": true,
+    "clean": true,
+    "sourceDiffFrom45f8": [],
+    "checkedAt": "2026-10-06T19:57:45.509000+00:00",
+    "runtime": "No new parser/product test/PG/Chrome/free sample"
+  }
+}

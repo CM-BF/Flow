@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T19:48:03.976583+00:00",
-  "state": "NOT_RUN_READINESS_WINDOW_RETURNED",
-  "groupWindowOwnership": "Web ready-first offer returned NOT_RUN; no current Web PG/Chrome/HTTP. Lead schedules next holder.",
+  "recordedAt": "2026-10-06T19:57:45.509000+00:00",
+  "state": "MIKA_NATIVE_DIAGNOSTIC_SHARED_WINDOW",
+  "groupWindowOwnership": "Lead reports R01 actual cleanup/window return; next sole shared PG/Chrome holder Mika native diagnostic. Web has no shared window.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -287,11 +287,15 @@
       "bindingCandidate": "dperf04-summary-binding-candidate/binding.json",
       "bindingBoundary": "No gate or runnable state; future fresh identity/budget/path/claim/window/free required. Stop guard remains >=1140850688; observed stop fires <= threshold.",
       "runtimePreparation": {
-        "state": "SOURCE_ONLY_REPAIR_DISPATCHED",
-        "evidence": "dperf04-browser-lifecycle-dispatch.json",
-        "rootAddendum": "dperf04-browser-resource-root-addendum.json",
+        "state": "APPROVED_SCOPED_LIFECYCLE_SOURCE_AND_PREPARATION_NOT_RUN",
+        "target": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+        "metadataAtReview": "3a51a78ebd7f90e36fa2c0c1f5e9d83c2ec4e51c",
+        "evidence": "dperf04-45f8-prepared/intake.json",
+        "rootReview": "dperf04-45f8-prepared/root-review.json",
+        "nativeChromeBoundaryAcceptance": null,
         "browser": "NOT_RUN",
-        "nativeChromeBoundaryAcceptance": null
+        "ownerFinal": "12ac7db8bfa9037b16432d848d967c85c6389e05",
+        "ownerStoppedWriting": true
       }
     }
   },
@@ -397,7 +401,20 @@
     "Recovery累计14846.267375/90000ms、余75153.732625仅算术；失败后窗口已返，源码修复不带运行许可。",
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
-  "latestCoordination": "web-validation-window-return-1946.json",
+  "latestCoordination": {
+    "recordedAt": "2026-10-06T19:57:45.509000+00:00",
+    "source": "Latest Lead inbound via root; manager has not sampled services/space or independently reviewed R01 runtime",
+    "state": "MIKA_NATIVE_DIAGNOSTIC_SHARED_WINDOW",
+    "previousHolder": "R01",
+    "r01ReportedResult": {
+      "elapsedSeconds": 15.794,
+      "retainedAppsPassed": 2,
+      "cleanup": "Owned DB DROP, groups, ports and temporary directories cleaned; window returned perLead"
+    },
+    "holder": "Mika original reviewed native diagnostic",
+    "web": "No active PG/Chrome/HTTP and no new runtime gate; Settings/DPERF native boundary acceptance remains null; Recovery source repair only",
+    "provisionNotice": "Lead will provision three small trees at a safe point; no Web provision scope or newtake inferred"
+  },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
     "claimId": "e0b86bb5-b373-4ad6-9257-6d8c18d06335",
@@ -687,6 +704,32 @@
       "cleanup": "No new process/DB/scratch created. Prior Settings b2, Recovery browser and pure-check cleanup receipts remain actual historical proof.",
       "nextHolder": "Lead schedules R01/O16/Mika or other authorized holder; Web retains no heavy window",
       "externalMessageSent": false
+    },
+    {
+      "recordedAt": "2026-10-06T19:53:15.713748+00:00",
+      "source": "Latest Lead inbound forwarded byroot after explicit acceptance of Web19:46 NOT_RUN return",
+      "state": "R01_EXCLUSIVE_PG_CHROME_WINDOW",
+      "holder": "R01",
+      "fixed": "b41 perLead inbound",
+      "workRemainingMs": 72188,
+      "cleanupReserveMs": 20000,
+      "permission": "One shared PG/Chrome window, original fresh gate,0provider/personal operations",
+      "web": "No Web PG/Chrome/HTTP active; source and independently permitted pure checks only; no native Chrome boundary acceptance inferred",
+      "next": "Wait actual R01 cleanup and Lead fresh window scheduling, not reuse Web returned opportunity"
+    },
+    {
+      "recordedAt": "2026-10-06T19:57:45.509000+00:00",
+      "source": "Latest Lead inbound via root; manager has not sampled services/space or independently reviewed R01 runtime",
+      "state": "MIKA_NATIVE_DIAGNOSTIC_SHARED_WINDOW",
+      "previousHolder": "R01",
+      "r01ReportedResult": {
+        "elapsedSeconds": 15.794,
+        "retainedAppsPassed": 2,
+        "cleanup": "Owned DB DROP, groups, ports and temporary directories cleaned; window returned perLead"
+      },
+      "holder": "Mika original reviewed native diagnostic",
+      "web": "No active PG/Chrome/HTTP and no new runtime gate; Settings/DPERF native boundary acceptance remains null; Recovery source repair only",
+      "provisionNotice": "Lead will provision three small trees at a safe point; no Web provision scope or newtake inferred"
     }
   ],
   "dperf05Pure": {
@@ -715,7 +758,10 @@
     },
     "evidence": "dperf05-node-first/intake.json",
     "window": "Independentpurefinished;O16sharedPG/Chromeownershipunchanged",
-    "ownerFinal": "825f3245ab857d6f73cf5b49ed51feccce4233c8"
+    "ownerFinal": "825f3245ab857d6f73cf5b49ed51feccce4233c8",
+    "mainIntake": "dperf05-main-intake.json",
+    "main": "aca6e89214711ef3787ac3e3ee3b2754bb40b960",
+    "closure": "Owner main-close queued after current Recovery source safe point; original claim still active until explicit stop and CAS release"
   },
-  "currentLedgerAvailability": "AVAILABLE_MANAGER_OBSERVATION_193501030"
+  "currentLedgerAvailability": "AVAILABLE_MANAGER_OBSERVATION_2026-10-06T19:56:39.683Z"
 }

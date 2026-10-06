@@ -1,0 +1,14 @@
+{
+  "recordedAt": "2026-10-06T19:57:45.509000+00:00",
+  "source": "Latest Lead inbound via root; manager has not sampled services/space or independently reviewed R01 runtime",
+  "state": "MIKA_NATIVE_DIAGNOSTIC_SHARED_WINDOW",
+  "previousHolder": "R01",
+  "r01ReportedResult": {
+    "elapsedSeconds": 15.794,
+    "retainedAppsPassed": 2,
+    "cleanup": "Owned DB DROP, groups, ports and temporary directories cleaned; window returned perLead"
+  },
+  "holder": "Mika original reviewed native diagnostic",
+  "web": "No active PG/Chrome/HTTP and no new runtime gate; Settings/DPERF native boundary acceptance remains null; Recovery source repair only",
+  "provisionNotice": "Lead will provision three small trees at a safe point; no Web provision scope or newtake inferred"
+}

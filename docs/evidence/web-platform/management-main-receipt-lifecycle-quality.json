@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-06T19:58:36.556981+00:00",
+  "scope": "Original management six directories, fresh claim632a7149 v3 at19:56:39.683Z; no product edits",
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "method": "Reuse local previously fixed skill; no install or network update; metadata scope uses clear naming/source boundaries/limited duplication."
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "method": "Reuse local previously fixed skill; no install or network update; metadata scope uses clear naming/source boundaries/limited duplication."
+    }
+  ],
+  "cleanCode": {
+    "applied": [
+      "One current resource holder with attributed receipts; older windows explicitly historical",
+      "Task progress remains owner status; D04 is the only take authority",
+      "Source approval, actual runtime, main integration and deployed observations kept distinct",
+      "CAS acceptance clarified without modifying original finding or adding duplicate draft storage"
+    ],
+    "unresolved": [
+      "Recovery P1 source repair awaiting fixed checkpoint",
+      "Settings/DPERF native Chrome custom-boundary acceptance remains null",
+      "DPERF05 owner main-close/release queued after Recovery source safe point"
+    ]
+  },
+  "validation": {
+    "changedFiles": 21,
+    "jsonParsed": 15,
+    "newMarkdownLinks": 10,
+    "newBrokenLinks": [],
+    "outsideScopes": [],
+    "rawDiffExcluded": [
+      "docs/evidence/web-platform/dperf04-45f8-prepared/supervisor.py.diff",
+      "docs/evidence/web-platform/dperf04-45f8-prepared/wrapper.diff"
+    ]
+  },
+  "statusParser": {
+    "path": "plans/web-platform/status.md",
+    "taskId": "WPF-001",
+    "errors": [],
+    "humanComplete": true,
+    "todos": 36,
+    "scope": "Only management metadata"
+  },
+  "parserInvocationCorrection": "First metadata-only call omitted required taskId and produced title mismatch; corrected API call with WPF-001 passed. No product parser change or behavior test was made.",
+  "sourceVerification": "DPERF04 seven fixed45f8 hashes=current12ac, normalpush remote=current and clean; root review archived in owner is byte-identical. DPERF05 two mainaca6/sourcec8d/current825 blobs equal.",
+  "runtime": "No product tests, free sampling, PG/Chrome/HTTP experiments or personal operations; normal read-only D04 control-plane only",
+  "diffCheck": "Changed management prose/JSON and staged non-diff artifacts pass; two original raw unified .diff files are preserved and excluded from whitespace claims",
+  "externalHandoff": "Canonical route only; no blocked outbound tool attempted"
+}

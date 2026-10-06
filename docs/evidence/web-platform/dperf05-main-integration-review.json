@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-06T19:33:38.514704+00:00",
+  "result": "ACCEPTED_LIMITED_PARSER",
+  "source": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+  "delivery": "825f3245ab857d6f73cf5b49ed51feccce4233c8",
+  "priorIndependentReview": "Web root 62/62; exact two source blobs retained; no repeat",
+  "sourceBindings": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 6660,
+      "sha256": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432"
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "bytes": 6353,
+      "sha256": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1"
+    }
+  ],
+  "directConsumer": {
+    "at": "2026-10-06T19:29:29.666359+00:00",
+    "state": "PASS",
+    "exit": 0,
+    "reason": null,
+    "elapsedMs": 506,
+    "pgid": 66514,
+    "pgidAbsent": true,
+    "tempSameIdentity": true,
+    "tempRemaining": [],
+    "freeBeforeBytes": 1114095616,
+    "freeAfterBytes": 1113993216,
+    "rawBytes": 323,
+    "tests": "one actual aggregate direct consumer, not repeated62",
+    "pg": 0,
+    "chrome": 0,
+    "provider": 0,
+    "tempRemoved": true
+  },
+  "behavior": "High-precision UTC normalizes milliseconds; malformed primary time remains unknown, main-sync does not repair it; independent task remains current.",
+  "deployed": "not yet; main publication and actual4320 reload pending"
+}

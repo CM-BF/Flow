@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T19:55:19.638227+00:00",
+  "finding": "RECOVERY-RESTORE-EDIT",
+  "originalReport": {
+    "path": "/tmp/root-recovery-restore-edit-source-review.json",
+    "sha256": "ba3cbbbf1ef7607ff5d7759ca6b37e965c8bfda5c312669c1c717efbc6814fb2"
+  },
+  "kind": "ACCEPTANCE_CLARIFICATION_SAME_SCOPE",
+  "reason": "Owner correctly identified that one namespace/view uses one draft:id slot; retaining the older record forever while checkpointing a newer draft into that same slot is contradictory.",
+  "required": [
+    "A conflicted/stale Restore itself must neither apply the older material nor delete the stored draft as a side effect.",
+    "Current complete user draft remains in memory and can be checkpointed through the original stable owner/slot and version CAS.",
+    "A successful ordinary current-draft checkpoint may replace the prior value in that slot, as the existing journal already does. Failed CAS/storage preserves the current memory draft and visible recoverability error.",
+    "No permanent duplicate records, new view identity, implicitfork or new storage schema is required."
+  ],
+  "unchanged": [
+    "After-await complete material identity/lease fencing",
+    "Same-view concurrent restore isolation",
+    "No automatic command dispatch",
+    "Existing namespace/authorization guards and exact original receipt rules",
+    "No browser/test/resource budget reset or current run admission"
+  ],
+  "authority": "Root source reviewer clarified original finding to original owner; manager informed for same dispatch/evidence. This does not widen original21 scope.",
+  "runtime": "NOT_RUN"
+}
