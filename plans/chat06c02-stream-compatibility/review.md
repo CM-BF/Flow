@@ -2,7 +2,7 @@
 
 状态：APPROVED
 
-- Review target commit：77f0b152a2be32806b17cc7f8a57d33afc2043b3。
+- Review target commit：5f4fe454881a792823504db242f4d948e5b7180b。
 - Base commit：a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8。
 - Reviewer：assignment_review / gpt-6-astra；2026-10-06，owner于06:54:51 UTC转录。
 - Scope：同一legacy timeline投影、原rows游标、可选conversation连接协商；排除已审CHAT06领域、公共mount/client、Web/provider。
@@ -17,3 +17,7 @@
 APPROVED fixed 77f0b152a2be32806b17cc7f8a57d33afc2043b3；现场5eb61ce8f69441813b660324ce7e6537307963e8 clean。7 source fixed/working与9 raw hash/bytes全符，manifest SHA256 `03b1f552b6bc0a4c5876500163380b9aa7ede182760fbed2ded9e2a348247e3d`。完整小delta、d9a162 test及直接SSE/routes/receipt链已读，无P1/P2、无blocking finding；核作者8+1（18未选择）/tsc原输出，未重跑/未写文件/0provider。
 
 批准限legacy投影/原游标/精确连接协商/no-store/稳定创建receipt及授权test delta；公共optional boolean为受控输入。生产挂载/Web另验，不宣称重审5ff领域。Owner接受结论并停止源码写入，保留claim供集成协调；metadata不重跑产品。
+
+## 组合锚点（2026-10-06 07:14:54 UTC）
+
+当前锚点5f4fe454881a792823504db242f4d948e5b7180b由两个已批准部分组成：原assignment_review对77f0b152a2be32806b17cc7f8a57d33afc2043b3的领域批准；同reviewer对694c3fdbd6ef4affa66140f13a039156f27023e0（test5f + productionda7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2）的组合批准，明确包含5f首case fixture适配。F01 `assistant-stream-compatibility-manifest.json`固定2source/2raw，mounted8/8+noEmit原证据与本树5f测试内容一致。5f相对77f没有产品算法变化，仅显式disabled及本专库rename/finally readiness故障注入。原领域8+1/tsc仍分别绑定原target，不假称新全域审查或重复验证。Lead经Root授权仅修metadata锚点，不改source/parser/范围。
