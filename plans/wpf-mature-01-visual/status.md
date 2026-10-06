@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 17:52 UTC |
+| 最近更新 | 2026-10-06 18:11 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | RELEASE B1750实际3Appchecks PASS并获root精确tuple独立批准，复用af51两A不重跑；ef458/d629/compat599a5b17，DB及worker/Chrome清理并归还窗口。DPERF旧abd2 Node8通过，b17 wrapper与候选binding限定源审完成，browser未跑 |
-| 下一可用交付 | 原SVC operator接受固定af51+506/d629+compat599a5b17后受管发布；当前个人服务未变。DPERF summary-detail候选binding还须fresh独立browser窗口，task-links后继另绑；CHATREAD/视觉同层计划保持后继 |
-| 当前阻塞 | ACTIVE: 发布兼容检查已完成，实际受管发布尚未发生；DPERF浏览器交互未验。历史失败/NOT_RUN保留，累计50.809秒/余129.191秒不自动续跑，无需用户决定 |
+| 当前产出 | 新前端已通过真实发送、排队和回执恢复检查，相关验证已接入主线；当前预览仍是旧版本。 |
+| 下一可用交付 | 补齐旧页面与新后台的兼容记录后推进预览更新；后续收拢普通聊天的技术信息，保留错误和待办入口。 |
+| 当前阻塞 | ACTIVE: 旧页面保留版本与新后台的组合尚未验证；实际发布、完整窄屏和键盘体验仍待完成。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |
@@ -47,8 +47,10 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 
 RELEASE01兼容输入已main c450且20a v2释放；后继根严格类型检查发现fixture构建矩阵的noUncheckedIndexedAccess两错，RELEASE02独立base2e71/03323bce v1三scope由w01窄修，runner_owner独立审。不是env/ENG失败，旧定向检查与原browser报告保其真实范围；不重跑旅程或个人发布。[当前接收队列](../../docs/evidence/web-platform/mature-task-handoff.md)。
 
-实际发布新增[RELEASE03批准方案](../../docs/evidence/web-platform/release03-current-preview-proposal.json)：w01唯一验证owner、四范围已bfb209ae v1 COMMITTED，原SVCoperator发布。历史9eec原产物无format2；14:25fresh准入后正式506/d629 prepare成功，14:28两cache已释放。旧backend362缺口已由af51固定组合闭合两A实证，不等整Recovery或全SVC06。0个人操作，当前产物保持8d8/caa1/v2，来源与解除条件见中央队列。
+历史发布准备：[RELEASE03批准方案](../../docs/evidence/web-platform/release03-current-preview-proposal.json)：w01唯一验证owner、四范围已bfb209ae v1 COMMITTED，原SVCoperator发布。历史9eec原产物无format2；14:25fresh准入后正式506/d629 prepare成功，14:28两cache已释放。旧backend362缺口已由af51固定组合闭合两A实证，不等整Recovery或全SVC06。0个人操作，当前产物保持8d8/caa1/v2，来源与解除条件见中央队列。
 
 [先前all两A实证审查](../../docs/evidence/web-platform/release03-all-164711-root-review.json)已接收；B只完成plainSend，Files定位器失败由原owner窄修，完整兼容未通过。12原raw不裁改，all12复用必须显式适配/独审。[Lead已确认CORE1707新窗口](../../docs/evidence/web-platform/lead-core-1707-window.json)；后继B另fresh准入，不因A通过自动启用。
 
-最新[app-only保留证据](../../docs/evidence/web-platform/release03-app-171109-intake.json)及[root独立复核](../../docs/evidence/web-platform/release03-app-171109-root-review.json)：复用完整A证明，B回执等待失败，原因只读核定中；累计39.935秒/余140.065秒，DB/双进程清理完整，Lead已收回并将下一PG交TUI01F。无自动重试/兼容绿报告/个人发布。
+历史17:11 [app-only保留证据](../../docs/evidence/web-platform/release03-app-171109-intake.json)及[root独立复核](../../docs/evidence/web-platform/release03-app-171109-root-review.json)：复用完整A证明，B回执等待失败，原因只读核定中；累计39.935秒/余140.065秒，DB/双进程清理完整，Lead已收回并将下一PG交TUI01F。无自动重试/兼容绿报告/个人发布。
+
+最新发布验证已[main收口并释放](../../docs/evidence/web-platform/release03-main-intake.json)，个人发布与[两旧产物×af51准备](../../docs/evidence/web-platform/retained-af51-minimal-plan-root.json)仍由原SVC owner接续；下方旧运行段均保历史，不代表当前仍待同一次源码或结果审查。

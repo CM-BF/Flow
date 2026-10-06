@@ -1,0 +1,10 @@
+{
+  "state": "INCOMPLETE_UNPOPULATED_INDEX_AFTER_NO_CHECKOUT",
+  "reason": "sparse-checkout set configured patterns with an empty fresh index; no source materialized, no implementation modified; initial clean assertion failed",
+  "head": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "indexEntries": 0,
+  "sourceFiles": 0,
+  "continuation": "read-tree -mu HEAD only in this new explicitly delegated worktree with exact sparse pattern set",
+  "commonConfigSha256BeforeReadTree": "5011bb856727d395725257235cfcf3795d91a1afc1076191cc561381df0cf438",
+  "commonConfigMtimeNs": 1791308903029836836
+}

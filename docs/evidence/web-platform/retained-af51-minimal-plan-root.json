@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-06T18:07:50.741356+00:00",
+  "purpose": "Minimal preparation for the two retained artifacts against fixed af51; NOT_RUN, no deploy or new authority",
+  "fixedSources": [
+    {
+      "commit": "dc8e25f141a1f52964056df823b988a5fe24cbea",
+      "path": "experiments/personal-current-release/browser.mjs",
+      "bytes": 8993,
+      "sha256": "8b7b6745821fc5dac0461e5f301b6891ba35d34f90d31cabb62b242db2060ac1"
+    },
+    {
+      "commit": "dc8e25f141a1f52964056df823b988a5fe24cbea",
+      "path": "experiments/personal-current-release/fixture.mjs",
+      "bytes": 18017,
+      "sha256": "8f7973b1e1a4a39369737133020ba946110f3ed22fc806a3c0f7fc010f68a1fb"
+    },
+    {
+      "commit": "dc8e25f141a1f52964056df823b988a5fe24cbea",
+      "path": "experiments/personal-current-release/inventory.mjs",
+      "bytes": 3141,
+      "sha256": "7b303b906207ad1e4b2e5203041a7cfacdb3f93af41af41e1d427a1f88225138"
+    },
+    {
+      "commit": "dc8e25f141a1f52964056df823b988a5fe24cbea",
+      "path": "experiments/personal-current-release/transport.mjs",
+      "bytes": 3432,
+      "sha256": "fdfcea03e71fe0ab63ebb4239aa2c4324f30cf9df14be917c834e61a6269b1e3"
+    },
+    {
+      "commit": "af51c621696230fbced12227670f014ca73bd8a1",
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "commit": "af51c621696230fbced12227670f014ca73bd8a1",
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "commit": "af51c621696230fbced12227670f014ca73bd8a1",
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2"
+    }
+  ],
+  "inputProof": "/tmp/root-retained-af51-artifact-inputs.json",
+  "inputProofSha256": "cbebb23fd4dad766d94905715265e5075b43ac21277616f84b2182b45972f792",
+  "backend": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+    "factory": "apps/server/src/index.ts",
+    "closure": "Use already reviewed RELEASE03 fixed backend source/dependency tuple; no moving-main imports"
+  },
+  "noNewRun": [
+    "The d629/af51 RELEASE03 report 599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9 remains accepted; do not rerun its A or B.",
+    "SVC05 old 362/b1c reports remain historical evidence, never rebind their backend IDs.",
+    "No private installation, actual user tab, user token/config, personal DB or provider is an input."
+  ],
+  "ownerBoundary": "Existing SVC05 history/operator follow-up under its own claim or a separately claimed narrow validation slice; root research does not claim existing experiment files and must not overlap manager/W01 settings or panels Recovery. Existing SVC05 runnable source is fixed but hardcoded to 362, so it is a method reference only. Adapted validation source target remains UNKNOWN until a legal owner prepares and seals it.",
+  "requiredAdaptation": [
+    "Use the two hash-verified old retained copies read-only (format1 root namespace and format2 original release namespace); no build/install/worktree or migration rerun from old SVC05 createFixture.",
+    "Start actual fixed af51 factory against one random owned marked DB and synthetic public-HTTP runner; no changing product response/DTO. Run the two browser contexts sequentially, each exact original artifact bytes.",
+    "Keep original SVC05 user-facing read/send/original-key recovery/legacy and patch-v1 negotiation. Replace its pre-header response.destroy fault with the already independently reviewed ef458 actual acknowledged body-prefix truncation method and same-Request headers→requestfailed witness; prove no hidden browser replay.",
+    "Keep exact ACK decoder identity binding, two total business POSTs with same key/body/turn/task; next draft survives unknown and explicit retry. No automatic cancel/compensation.",
+    "Generate four original flow-web-api-v1 observations and report separately per actual artifact+af51, only after real assertions and cleanup pass; call existing import/verify in own private output only. Operator later imports exact bytes under its window."
+  ],
+  "matrix": [
+    {
+      "check": "read",
+      "actions": "Connect actual retained App to synthetic center; reload/select its created conversation; observe matching task and assistant result; supplemental unauthenticated GET must be rejected.",
+      "observations": [
+        "ownerAuthenticated",
+        "conversationBound",
+        "taskBound"
+      ]
+    },
+    {
+      "check": "send",
+      "actions": "Pick real synthetic public execution profile, enter message and Send; public ACK must bind conversation, text, turn and requested exact profile.",
+      "observations": [
+        "acceptedTurnBound",
+        "requestedProfilePreserved"
+      ]
+    },
+    {
+      "check": "recover",
+      "actions": "After center acceptance truncate actual response after headers; App displays unknown and preserves independent draft; user clicks same-message retry once; center returns same turn/task with replay=true and exactly one stored turn.",
+      "observations": [
+        "sameKey",
+        "sameBody",
+        "sameTurn"
+      ]
+    },
+    {
+      "check": "negotiation",
+      "actions": "Record actual App patch-v1 conversation capability; reload actual App through proxy omitting only this header, verify legacy representation remains readable; additionally public steering-v1 profile GET matches exact configuration identity. Do not advertise SSE semantic/provider coverage.",
+      "observations": [
+        "legacyReadable",
+        "streamHeaderHandled",
+        "profileHeaderHandled"
+      ]
+    }
+  ],
+  "futureAdmissionProposal": {
+    "automaticRun": false,
+    "mustReviewSourceFirst": true,
+    "window": "Manager serial gate after Recovery window return, fresh matching ownership and resource/dependency checks; separate bounded attempt ledger for both retained combinations.",
+    "suggestedTotalSeconds": 90,
+    "cleanupReserveSeconds": 20,
+    "concurrency": "one PG DB, one owned Chrome; sequential artifact contexts",
+    "scratchLogicalMaxBytes": 67108864,
+    "retainedEvidenceMaxBytes": 8388608,
+    "startMinFreeBytes": 1207959552,
+    "stopMinFreeBytes": 1140850688,
+    "notYetGranted": true,
+    "failure": "Seal partial/failed/unknown and cleanup, never automatic rerun or certificate reuse. Resource observations are not attributable physical quotas."
+  },
+  "evidence": "Record exact sources/deps/backend/artifact manifests and loaded asset hashes, bounded redacted wire, ACK event order, per-artifact assertions/report, own process/DB cleanup, attempt time and source-only remaining coverage. Initial source preparation is not an execution window.",
+  "skillApplication": {
+    "find-skills": "Local find-skills route; existing webapp-testing and clean-code fit read-only journey/evidence review, no install.",
+    "webapp-testing": "Actual rendered App and descriptive locators, ready-state and page error/wire evidence, explicit cleanup. Repo SSE requires targeted readiness instead of unbounded networkidle.",
+    "clean-code": "Separate immutable inputs, fixture lifecycle, actual browser assertions and report formatting; reuse release verification rather than introduce another deploy controller."
+  }
+}

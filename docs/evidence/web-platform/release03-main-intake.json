@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-06T18:11:56.162919+00:00",
+  "state": "DELIVERED_MAIN_AND_RELEASED",
+  "main": "8fc76397c4243bdea93c3ca5e1bf6b4c5ef16981",
+  "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+  "ownerFinal": "9d4641c9409d02049770610091ddf59537e22378",
+  "sourceAndBFilesEqual": 26,
+  "integrationValidation": "Lead root noEmit exit0/9.075298625044525s/0B raw; no A/B rerun",
+  "attribution": "Lead fixed I02 original; no management A/B or types rerun",
+  "release": {
+    "requestId": "d01-release03-main-release-d3b911cf-cb06-447f-b840-0c2520e75498",
+    "action": "release",
+    "committedAt": "2026-10-06T18:05:46.125Z",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/test/web-current-preview.browser.ts",
+        "apps/web/test/web-current-preview.fixture.ts",
+        "docs/evidence/wpf-release03",
+        "plans/wpf-release03-current-preview"
+      ],
+      "state": "released",
+      "branch": "codex/web-current-preview-compatibility",
+      "origin": "new",
+      "taskId": "WPF-RELEASE03",
+      "worker": "w01_owner",
+      "claimId": "bfb209ae-4c74-49cd-8140-f6d4bd3b0f92",
+      "version": 4,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+      "createdAt": "2026-10-06T14:37:56.939Z",
+      "updatedAt": "2026-10-06T18:05:46.125Z",
+      "observedAt": null
+    }
+  },
+  "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+  "exactTupleOnly": "af51 backend + source506/artifactd629/release388371 only",
+  "personalDeployment": false,
+  "sourceReceptionNotAncestry": true,
+  "ownerCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md"
+}

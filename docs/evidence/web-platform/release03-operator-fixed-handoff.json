@@ -1,14 +1,16 @@
 {
-  "recordedAt": "2026-10-06T17:56:00.533555+00:00",
+  "recordedAt": "2026-10-06T18:11:56.162919+00:00",
   "state": "EXACT_NEW_TUPLE_COMPATIBILITY_READY_FOR_ORIGINAL_OPERATOR",
   "authority": "Lead accepted evidence/cleanup; original SVC05H operator owns release operations. Manager no personal service reads or deployment.",
   "source": {
     "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
-    "sealedHead": "51e8597d10e14146f95c5d572cb3bf5d30545b07",
+    "sealedHead": "9d4641c9409d02049770610091ddf59537e22378",
     "leadPreviouslyObserved": "ee6d0a5282d1820f1d37e059bf94ad268ac41f22",
-    "delta": "Only one current review summary sentence, source/raw unchanged",
+    "delta": "Owner main-close only; two sources and 24 B files fixed/main/current match",
     "review": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/review.md",
-    "rootReview": "release03-app1750-root-review.json"
+    "rootReview": "release03-app1750-root-review.json",
+    "main": "8fc76397c4243bdea93c3ca5e1bf6b4c5ef16981",
+    "releaseReceipt": "release03-main-release-receipt.json"
   },
   "artifactRoot": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts",
   "artifactDirectory": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
@@ -61,13 +63,20 @@
     "notAutomaticRuntimeAllowance": true
   },
   "retainedCompatibility": {
-    "state": "UNKNOWN_NOT_READ_BY_MANAGEMENT",
-    "knownPriorTuple": "Personal backend362/v15 plus Web8d8/v2, source receipt only; not newly sampled",
-    "needed": "Original operator reads old retained artifact/report and checks exact retained artifact × af51 compatibility through existing release path. Known old362 tuple does not establish this cross-combination.",
-    "forbiddenShortcut": "Do not edit old362 report to relabel its backend or assume compatibility from newd629 evidence."
+    "state": "EXACT_RETAINED_ARTIFACT_INPUTS_VERIFIED_CROSS_COMPATIBILITY_UNKNOWN",
+    "operatorObservation": "Retained461a/caa1 lack af51 compatibility reports; known old362 reports remain historical, never relabel.",
+    "rootReadBoundary": "Root checked only public retained tmp copies from original SVC05 run-5, not personal installation",
+    "inputProof": "retained-af51-artifact-inputs-root.json",
+    "sourceOnlyAdaptationProposal": "retained-af51-minimal-plan-root.json",
+    "nextOwner": "Original SVC owner/Lead with own legal scope",
+    "adaptedTarget": "UNKNOWN",
+    "runtime": "NOT_RUN",
+    "newWindowAuthorized": false,
+    "newD629Report": "Already accepted; do not repeat A/B"
   },
   "limits": [
-    "No additional A/B tests, personal reads/restarts/reload or service mutation by this management action.",
-    "Actual main integration receipt and personal deployment are separate; neither claimed here."
+    "No personal reads/restarts/reload/service mutation by management.",
+    "RELEASE source/evidence integratedmain; actual personal deployment still not performed.",
+    "Retained × af51 preparation is a proposal only; owner adaptation/review and separate actual window required."
   ]
 }

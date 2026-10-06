@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 17:52 UTC |
+| 最近更新 | 2026-10-06 18:11 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 固定1b8/实际0eef受控27/27 PASS保持历史；新harness667真实nested task.id经公共codec核验获root限定源审0blocking，owner仅metadata0fe939已push clean。0新运行，完整feature未批准 |
-| 下一可用交付 | DPERF独立只读binding候选已完成并获结构审；Recovery真实IDB/HTTP/App/browser与三center语义仍待。原direct余25.426秒不自动续跑；B1750已结束/窗口归Lead，不据此授Recovery测试 |
-| 当前阻塞 | ACTIVE: 受控direct不代真实IDB/App及中心语义验收，完整feature review仍未完成；原27不覆盖新fixture运行 |
+| 当前产出 | 恢复功能已能建立浏览器会话，但草稿保存未通过首轮真实检查；失败证据和清理结果已保留。 |
+| 下一可用交付 | 修复默认保存启动和数据库观察器，审查固定源码后再验证刷新恢复；成功排队回执的紧凑呈现留在原计划。 |
+| 当前阻塞 | ACTIVE: 草稿恢复有两项明确源码问题正在修复；跨中心、注销竞态及完整发送恢复旅程仍未验收。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |
@@ -57,4 +57,6 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 
 历史固定源码安全点4ba、后继2498当时类型累计52.814/60s（余7.186）与原f13部分复核历史见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)。20direct受控基线已20/20，R4-1未覆盖、真实IDB/browser未验，正式review仍NOT_STARTED；d679已登记，Lead14:51:18实际161来源，两项live/parser0/人读完整，非管理页面复采。
 
-当前[ec91 fixture固定接收](../../docs/evidence/web-platform/recovery01-ec91-intake.json)与[root独立源审](../../docs/evidence/web-platform/recovery01-ec91-native-proxy-root-review.json)只确认Host/SSE/清理接缝源码修复，未运行新fixture；原1b8受控27保原目标。丢ACK注入的浏览器透明retry前提和三中心语义仍须真实验收，full review仍NOT_STARTED。
+历史17:18 [ec91 fixture固定接收](../../docs/evidence/web-platform/recovery01-ec91-intake.json)与[root独立源审](../../docs/evidence/web-platform/recovery01-ec91-native-proxy-root-review.json)只确认Host/SSE/清理接缝源码修复，未运行新fixture；原1b8受控27保原目标。丢ACK注入的浏览器透明retry前提和三中心语义仍须真实验收，full review仍NOT_STARTED。
+
+本安全点：[首轮真实浏览器失败及清理](../../docs/evidence/web-platform/recovery01-browser-first-intake.json)、[两项源审修复派工](../../docs/evidence/web-platform/recovery01-idb-repair-dispatch.json)归原06-04；[accepted queue后继](../../docs/evidence/web-platform/accepted-queue-506-intake.json)归原06-03。原27受控通过与新browser失败分开，不修改失败raw或全feature验收状态。

@@ -106,3 +106,5 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 原06-03呈现后继补[app1750用户验收](../../docs/evidence/web-platform/app1750-product-acceptance-followup.json)：桌面accepted queue receipt的大块技术说明可研究紧凑项/状态；unknown、失败、必须动作与原请求身份仍明确保留，不能以美化隐藏。390需在关闭导航后实读消息/编辑发送/展开详情，跨宽度保草稿与可见焦点。固定截图与兼容green不代完整移动或a11y验收；无新增运行/任务/当前scope。
 
 同一app1750验收补[root固定506导航两源研究](../../docs/evidence/web-platform/app1750-narrow-navigation-root.md)：fresh窄屏与desktop resize须分别验；导航开关expanded与关闭/选会话后的焦点回交需真实键盘验证，保持main/draftMap和原plugin slots身份。源码推导不等运行bug，原native disclosure/modal取舍按实际交互核；不阻RELEASE或新建任务。
+
+2026-10-06 安全点，原06-03/01-03 CHATREAD补[accepted queue六源研究](../../docs/evidence/web-platform/accepted-queue-506-research/report.md)：只将accepted enqueue收据作为最小紧凑候选；accepted cancel-item可能already-promoted、cancel-task仅请求接受，不能推无待办。unknown/rejected/sending、刷新失败/paused/blocked/current task确认、原key/context/动作和插件权限继续显著；展开前0详情预取。研究0运行、不新增任务或当前scope，后继仍真实用户验收。

@@ -1,9 +1,9 @@
 {
-  "recordedAt": "2026-10-06T17:57:28.281819+00:00",
-  "state": "F01_O15_PRODUCTION_1756_EXCLUSIVE_PG",
-  "groupWindowOwnership": "Lead F01-O15-PRODUCTION-1756 assigned native_center_owner one productiontest/120+30s/0provider/start1GiB+64MiB. Web1750 returned; Recovery/DPERFbrowser waitactualcleanup/newwindow. No managerfree sample or newrun.",
+  "recordedAt": "2026-10-06T18:11:56.162919+00:00",
+  "state": "RECOVERY_FIRST_BROWSER_FAILED_CLEANED_WINDOW_RETURNED",
+  "groupWindowOwnership": "Recovery prepared subset one run ended FAILED/cleanupcomplete; returned immediately to Lead. No automatic retry/DPERF window. Private ownadmin env removed after all ownedprocesses ended.",
   "release03": {
-    "state": "APPROVED_RELEASE03_COMPATIBILITY_EVIDENCE_SCOPED",
+    "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
     "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
     "actualHead": "58197960009ac882a3aadaf59b51c315dd82e55f",
@@ -19,7 +19,7 @@
     "windowReturned": true,
     "evidence": "release03-app1750-intake.json",
     "admission": "release03-app1750-admission.json",
-    "next": "Original SVC operator accepts exact fixedtuple through existing publication process; this record does not deploy.",
+    "next": "Originaloperator retained compatibility preparation and managed publication; no repeat accepted d629 A/B.",
     "previousRun": {
       "state": "EF458_APPROVED_B1736_NOT_RUN_RESOURCE",
       "run": "app-20261006-171109-8cf8c3",
@@ -153,7 +153,10 @@
       }
     },
     "evidenceReview": "release03-app1750-root-review.json",
-    "ownerMetadata": "51e8597d10e14146f95c5d572cb3bf5d30545b07"
+    "ownerMetadata": "51e8597d10e14146f95c5d572cb3bf5d30545b07",
+    "ownerFinal": "9d4641c9409d02049770610091ddf59537e22378",
+    "main": "8fc76397c4243bdea93c3ca5e1bf6b4c5ef16981",
+    "claimReleased": "bfb209ae v4"
   },
   "recoveryDirect": {
     "state": "CONTROLLED_DIRECT_PASS_CLEANED",
@@ -182,7 +185,8 @@
       "review": "APPROVED_SOURCE_SCOPED root0blocking, originalP2 SOURCE_ADDRESSED",
       "evidence": "recovery01-667-root-source-review.json",
       "runtime": "NOT_RUN; historical1b8 direct27 unchanged",
-      "next": "panels ownmetadata then read-only DPERF per-entry binding candidate in own/tmp, no runnable state/gate"
+      "next": "panels ownmetadata then read-only DPERF per-entry binding candidate in own/tmp, no runnable state/gate",
+      "historicalOnly": true
     },
     "latestSource": {
       "implementation": "667889058d3decc0abc9f635a37fd0f05f2c090c",
@@ -319,15 +323,20 @@
       "source": "Lead via root1756",
       "event": "F01-O15-PRODUCTION-1756",
       "coordination": "Lead F01-O15-PRODUCTION-1756 assigned native_center_owner one productiontest/120+30s/0provider/start1GiB+64MiB. Web1750 returned; Recovery/DPERFbrowser waitactualcleanup/newwindow. No managerfree sample or newrun."
+    },
+    {
+      "source": "Lead via root after1756cleanup",
+      "event": "RECOVERY_NEXT_PREPARED_SUBSET",
+      "coordination": "Lead F01-O15-PRODUCTION1756 actual1/1/5.65s and ownedDB absent/connections[]/PGID52469absent returned; explicitly assigns Recovery nextserialPG/Chrome window. Original90s incl15cleanup subset only; current no run until onefresh gate. DPERFnotassigned."
     }
   ],
   "limits": [
     "Sharedfree samples are not causal allocation/physical peak guarantees",
-    "Cumulative39,935/180,000ms, remainder140,065 is arithmetic only, not automatic retry.",
-    "A failure prevents Chrome/B; no automatic retry, artifact rebuild, provider or personal service operation",
-    "Prior old362failure/A3partial retained; Node failing Host test does not establish product bypass"
+    "RELEASE累计50809/180000ms、余129191仅算术；已main/released，不能自动重跑或部署。",
+    "Recovery累计14846.267375/90000ms、余75153.732625仅算术；失败后窗口已返，源码修复不带运行许可。",
+    "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
-  "latestCoordination": "release03-app1750-intake.json",
+  "latestCoordination": "recovery01-browser-first-intake.json",
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
     "claimId": "e0b86bb5-b373-4ad6-9257-6d8c18d06335",
@@ -340,7 +349,7 @@
     "implementation": "2d1e2ade19941e9a8b38f18148e6a2d434f8c730",
     "metadata": "0f4e68927754b188026711b588a722166a618994",
     "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-readonly-compatibility/plans/wpf-profile-readonly-compatibility/status.md",
-    "registry": "PENDING_LEAD_REGISTRATION",
+    "registry": "Lead reported registry169 source registration; actual4320 display not observed",
     "sourceReview": "APPROVED_SOURCE_SCOPED0blocking; profile-readonly-2d1-root-source-review.json",
     "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
     "ownerFinal": "f704714abb8edddd8f6769483495507cf83c93c7",
@@ -350,5 +359,36 @@
       "committedAt": "2026-10-06T17:56:15.159Z",
       "evidence": "profile-readonly-release-receipt.json"
     }
+  },
+  "recoveryBrowser": {
+    "implementation": "667889058d3decc0abc9f635a37fd0f05f2c090c",
+    "runtimeHead": "0fe939fa222e69993ebaca825c6ca6bf0ea683fd",
+    "run": "rec667-20261006-180030-f86542",
+    "state": "FAILED_UNCLASSIFIED_IDB_STORE_NOT_FOUND",
+    "elapsedMs": 14846.267375,
+    "remainingMs": 75153.732625,
+    "cleanupComplete": true,
+    "cookieRead": "PASS",
+    "textIntentDraft": "FAILED_PREDICATE_TIMEOUT",
+    "materials": "NOT_COMPLETED",
+    "otherCoverage": "NOT_RUN/PENDING",
+    "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542",
+    "files": 10,
+    "bytes": 17415,
+    "adminEnvRemoved": true,
+    "sourceReview": "CHANGES_REQUESTED_SOURCE_SCOPED P1 activation/P2 observer; source repair only; not sole dynamic root-cause proof",
+    "source": "recovery01-browser-first-intake.json",
+    "repair": "recovery01-idb-repair-dispatch.json",
+    "retryAuthorized": false
+  },
+  "settingsLeaf": {
+    "state": "SOURCE_ONLY_IMPLEMENTATION",
+    "owner": "w01_owner",
+    "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+    "version": 1,
+    "sourceRequest": "mature02-message-settings-source-request.json",
+    "PG": false,
+    "browser": false,
+    "sourceReady": "message-settings-source-ready.json"
   }
 }

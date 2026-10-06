@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-06T18:11:56.162919+00:00",
+  "state": "SOURCE_RESEARCH_ONLY",
+  "report": "accepted-queue-506-research/report.md",
+  "sources": "accepted-queue-506-research/sources.json",
+  "fixedSourceCount": 6,
+  "mapping": [
+    "WPF-MATURE-06-03",
+    "WPF-MATURE-01-03",
+    "CHATREAD",
+    "REQ43"
+  ],
+  "scopeChange": false,
+  "runtime": false,
+  "recommendation": "Only accepted enqueue receipt compact by default. Accepted cancel-item/task response is not proof no action remains; preserve current queue facts, unknown/rejected/sending/errors/paused/blocked/current task, original identity and actions, lazy detail and plugin authority.",
+  "navigationRelated": "app1750-narrow-navigation-root.md"
+}

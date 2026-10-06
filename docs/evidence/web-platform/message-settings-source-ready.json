@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-06T18:12:36.670499+00:00",
+  "state": "SOURCE_READY",
+  "task": "WPF-MESSAGESETTINGS01",
+  "owner": "w01_owner",
+  "parent": "WPF-MATURE-02",
+  "coLead": "Web /root, execution management d01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings",
+  "branch": "codex/web-message-settings",
+  "base": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "firstCanonical": "02c64878c37100f2fc9ad46461b58a2c44f95a12",
+  "remote": "02c64878c37100f2fc9ad46461b58a2c44f95a12",
+  "observedHead": "02c64878c37100f2fc9ad46461b58a2c44f95a12",
+  "dirtyAtObservation": " M apps/web/src/execution-profiles/catalog.ts\n M apps/web/src/execution-profiles/selection.ts\n",
+  "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+  "version": 1,
+  "scopeCount": 8,
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/plans/wpf-message-settings/status.md",
+  "sourceFiles": [
+    {
+      "path": "plans/wpf-message-settings/plan.md",
+      "bytes": 3249,
+      "sha256": "6a35ba2221b51a2b44aae782c673fde7cd72f4c5e06538baf02c5f4f6822488d"
+    },
+    {
+      "path": "plans/wpf-message-settings/status.md",
+      "bytes": 2365,
+      "sha256": "dcc0520cefc2617dba3e6029efd6a5cdce8d9b110026a843e2c7bb65f4771978"
+    },
+    {
+      "path": "plans/wpf-message-settings/review.md",
+      "bytes": 481,
+      "sha256": "941890a1f29d5c73823bdfc3346c11608e87ea27ab191deb5aed6160c25dcbe4"
+    }
+  ],
+  "registration": "PENDING_LEAD_REGISTRY",
+  "actualDashboardDisplay": "NOT_OBSERVED",
+  "runtime": "NOT_RUN",
+  "note": "Source-only may proceed while manager registers canonical; no shadow task status.",
+  "parser": {
+    "tree": "web-message-settings",
+    "path": "plans/wpf-message-settings/status.md",
+    "id": "WPF-MESSAGESETTINGS01",
+    "commit": "02c64878c37100f2fc9ad46461b58a2c44f95a12",
+    "errors": [],
+    "humanComplete": true,
+    "todos": 3,
+    "stage": null
+  }
+}

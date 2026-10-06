@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:52 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:11 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | RELEASE B1750实际3Appchecks PASS，复用af51两A而未重跑；ef458/581979执行，compatibility599a5b17已生成，DB/worker/Chrome清理完成并归还窗口。原失败/未准入保留；DPERF旧Node8与Recovery1b8受控27通过保持原范围 |
-| 下一可用交付 | RELEASE获root独立实证限定批准，待原SVC operator受管发布，个人服务尚未更新；累计50.809秒/余129.191秒不自动续跑。DPERF候选binding获结构审、browser待独立窗；Recovery667限定源审通过；PROFILEC02已main8d84接收/组合root noEmit0并e0b v2释放，本地重复检查取消 |
-| 当前阻塞 | ACTIVE: RELEASE精确tuple兼容已独立批准，受管发布尚未执行；Recovery/DPERF真实浏览器仍待。PROFILEC02已交付并释放，独立settings UI leaf继续排队，独立settings UI leaf未交付；无需用户决定 |
+| 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置控件开始独立实现。 |
+| 下一可用交付 | 先补齐旧页面与新后台的兼容记录，再由原发布负责人更新预览；同时修复刷新后草稿恢复，并完成设置选择控件。 |
+| 当前阻塞 | ACTIVE: 预览尚未更新；草稿恢复在真实浏览器中失败，正在修复保存启动和测试观察器；看板浏览器交互仍待验证。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -129,3 +129,5 @@ DPERF04直接D01子task已[原九scope COMMITTED](../../docs/evidence/web-platfo
 历史A3原始结果已由Lead接收；随后next12b完成、一次all两A通过/B locator失败与窗口归还见页首。[c18bd标签窄审](../../docs/evidence/web-platform/release03-c18bd-label-review-root.json)只批准报告逻辑，完整A/B仍未通过。后继运行依实际窗口/原预算，不因该审查自动启用。
 
 MATURE02仍链接Mika唯一plan/TODO-11：[固定公共输入与八literal候选](../../docs/evidence/web-platform/mature02-message-settings-consumer-intake.json)。未新建task/claim，C01固定出口尚缺，App/outbox/Recovery串行；不把新目录配置当账号资格或SDK observed。
+
+本安全点可聚合入口：[设置控件固定base/唯一owner/原8take](../../docs/evidence/web-platform/mature02-message-settings-source-request.json)、[RELEASE main/release](../../docs/evidence/web-platform/release03-main-intake.json)、[Recovery首轮失败与清理](../../docs/evidence/web-platform/recovery01-browser-first-intake.json)。任务进度仍取各owner唯一status；管理队列不冒登记或实际页面加载。

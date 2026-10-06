@@ -68,3 +68,5 @@ VISUAL01固定a8b/交付f708已独审并main4391接收，owner558895d收口且35
 app1750新增用户结果验收仍归原01-03/04与CHATREAD/REQ43：[固定506+af51截图后继](../../docs/evidence/web-platform/app1750-product-acceptance-followup.json)。390导航展开覆盖聊天只证明当时状态；后继实际关闭导航后读完整消息、编辑发送和展开详情，验证desktop↔narrow草稿与可见焦点保留、导航开关键盘语义。此补充不否定已通过发布兼容、不冒完整移动/a11y验收，不重跑原green旅程。
 
 同一app1750验收补[root固定506导航两源研究](../../docs/evidence/web-platform/app1750-narrow-navigation-root.md)：fresh窄屏与desktop resize须分别验；导航开关expanded与关闭/选会话后的焦点回交需真实键盘验证，保持main/draftMap和原plugin slots身份。源码推导不等运行bug，原native disclosure/modal取舍按实际交互核；不阻RELEASE或新建任务。
+
+2026-10-06 安全点，原06-03/01-03 CHATREAD补[accepted queue六源研究](../../docs/evidence/web-platform/accepted-queue-506-research/report.md)：只将accepted enqueue收据作为最小紧凑候选；accepted cancel-item可能already-promoted、cancel-task仅请求接受，不能推无待办。unknown/rejected/sending、刷新失败/paused/blocked/current task确认、原key/context/动作和插件权限继续显著；展开前0详情预取。研究0运行、不新增任务或当前scope，后继仍真实用户验收。
