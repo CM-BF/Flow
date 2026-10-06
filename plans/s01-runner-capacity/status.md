@@ -2,14 +2,14 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:31:35 UTC / idle 固定 main8d84d529a0756116bd0fc8bad969d61a6c26248e 只读输入；历史集成 aae |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:47:00 UTC / idle 固定 main8d84d529a0756116bd0fc8bad969d61a6c26248e 只读输入；历史集成 aae |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | idle 固定生产8d84；本次准备前 HEAD7fd60892e2c4e8d5e6a7ea88d205d1c07a5a9859 clean；未合入新main。历史 A/B 固定A=a3e670b、B=aae1eb、已审 source=d3ba03a |
+| 工作基线 / HEAD | idle 固定生产8d84；early checkpoint73157915758b934cce5131045317c892288ddc7a；完整准备本次固定（含Lead供应61文件）；未合入新main。历史 A/B 固定A=a3e670b、B=aae1eb、已审 source=d3ba03a |
 | 工作树dirty状态 | 本次 idle 观察器/新证据/owner metadata 实施中；历史 A/B/128 source 与 raw 未修改 |
 | 工作分支状态 | in-progress |
 | 检查状态 | idle NOT_RUN，fake/actual/strict 均未运行；历史 A/B 64 distinct 分次最终覆盖与 local strict0 不覆盖新准备 |
@@ -20,10 +20,10 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
 | 当前产出 | 准备单个空闲 runner 的领取持久化调用计量，区分真实 API 调用、静态预期和未知；尚未运行 |
-| 下一可用交付 | 固定有界观察器/loopback 探针与输入预算供只读 review；Lead 供应固定源码镜像后再安排检查窗口 |
-| 当前阻塞 | 输入镜像待Lead sole Git供给；实现可继续；fake/actual NOT_OPEN。A/B 仍 RESOURCE_PENDING/NOT_OPEN |
+| 下一可用交付 | 固定完整有界观察器、单项探针与薄外壳供只读 review；获独立检查窗口后再验证 |
+| 当前阻塞 | 输入镜像READY（61项逐hash核）；实现已具备交审稿，fake/actual NOT_OPEN。A/B 仍 RESOURCE_PENDING/NOT_OPEN |
 | 需用户决定 | NONE |
-| Review | idle NOT_STARTED；历史 A/B APPROVED preparation d3ba03a，0剩余P1/P2；不覆盖本次准备 |
+| Review | idle observer/budget 73157915 SOURCE_REVIEW 无P1/P2/VALIDATION_PENDING（architecture_read18:38:51）；完整组合 NOT_STARTED；历史 A/B APPROVED preparation d3ba03a，0剩余P1/P2；不覆盖本次准备 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -212,3 +212,7 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 17:21:13 UTC：GO低优先idle-runner候选已在原plan的S01-06登记。fresh17:20:13.977账本508f9c85-a27c-4382-bfe9-caca43be4b0e v1 ACTIVE，4scope仍本owner/WT/branch；故本次仅合法plan/status小写，拟新idle证据目录不在scope、未创建。固定main4df三blob核符，每完整明确空轮静态2replace/4sync，不是实际物理IO/功耗结论。当前WT runtime旧blob且无attempt-wakeup，未来必须绑定固定4df闭包，不能直接执行旧树。候选1runtime/capacity1/active0、≤12空claim/15s含清理/raw+ownTMP≤2MiB，0PG/provider/install；未实现/未运行，不宣称100agents实测。原A/B64项、历史128/旧raw不变；未碰FKye9L，native source ready时优先返回只读审。clean-code复核只登记实际边界与解除条件，不新增框架。
 
 2026-10-06 18:31:35 UTC：原子 amend COMMITTED 18:26:18.855Z，v2/5 scope；[receipt](../../docs/evidence/s01/idle-claim-cost/claim-amend-receipt.json)。[供给请求](../../docs/evidence/s01/idle-claim-cost/source-supply-request.json)固定8d84：57 source 283197B、4metadata1431B，共284628B，全部计未来2MiB输入预算。仅Lead物化，owner未导出产品源；当前创建观察器与fake用例，0checks。首次ENOENT保留，unknown不变null，不接触历史保留journal。架构影响仅实验观察器/直接公开runtime消费者，不改生产durability/poll/recovery。
+
+2026-10-06 18:41:03 UTC：early source73157915已push/clean交只读审，observer/budget 18:38:51 SOURCE_REVIEW无P1/P2；9 fake未运行。现补此实验薄外壳，其独审/实际tool退出和预算仍pending，不继承early结论；供给镜像未到，未物化/执行。
+
+2026-10-06 18:47:00 UTC：Lead独立供给已落到专属source-snapshot，61项284628B逐SHA/bytes核符；owner仅按明确授权复制，0Git物化/安装/import。完整准备9个源码/config与74项固定输入（文件362257B+manifest16618B）交审，9fake草稿及actual单项仍0运行。薄外壳区分预约、stdio/group close、内部case、pre-final快照/最终CLI与外部shell退出；2MiB计量仍保守采样，非硬quota。旧A/B与128证据原样，不读历史unknownjournal。

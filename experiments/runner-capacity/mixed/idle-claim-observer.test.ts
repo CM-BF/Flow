@@ -6,6 +6,7 @@ import { observeIdleJournal } from './idle-claim-observer.js';
 const directory = '/owned/idle/journal';
 function fake() {
   const calls: { name: string; receiver: unknown; args: unknown[] }[] = [];
+  const promises: Promise<unknown>[] = [];
   const makeHandle = () => ({
     writeFile(this: unknown, ...args: unknown[]) { calls.push({ name: 'writeFile', receiver: this, args }); return Promise.resolve(); },
     sync(this: unknown, ...args: unknown[]) { calls.push({ name: 'sync', receiver: this, args }); return Promise.resolve(); },
@@ -13,19 +14,24 @@ function fake() {
   } as unknown as FileHandle);
   const handles: FileHandle[] = [];
   const actual = {
-    open(...args: unknown[]) { calls.push({ name: 'open', receiver: this, args }); const handle = makeHandle(); handles.push(handle); return Promise.resolve(handle); },
-    rename(...args: unknown[]) { calls.push({ name: 'rename', receiver: this, args }); return Promise.resolve(); },
+    open(...args: unknown[]) { calls.push({ name: 'open', receiver: this, args }); const handle = makeHandle(); handles.push(handle); const pending = Promise.resolve(handle); promises.push(pending); return pending; },
+    rename(...args: unknown[]) { calls.push({ name: 'rename', receiver: this, args }); const pending = Promise.resolve(); promises.push(pending); return pending; },
   } as Pick<typeof Fs, 'open' | 'rename'>;
   let ticks = 0, unknowns = 0;
   const observer = observeIdleJournal(actual, directory, { now: () => ++ticks, onUnknown: () => { unknowns++; } });
-  return { actual, observer, calls, handles, get unknowns() { return unknowns; } };
+  return { actual, observer, calls, handles, promises, get unknowns() { return unknowns; } };
 }
 test('counts one real API sequence without conflating file and directory sync or retaining JSON', async () => {
   const f = fake();
   const value = JSON.stringify({ version: 1, inFlight: 'synthetic-intent', assignments: [] });
-  const handle = await f.observer.open(`${directory}/admission.json.tmp`, 'wx', 0o600);
+  const openPending = f.observer.open(`${directory}/admission.json.tmp`, 'wx', 0o600);
+  expect(openPending).toBe(f.promises[0]);
+  const handle = await openPending;
   await handle.writeFile(value); await handle.sync(); await handle.close();
-  await f.observer.rename(`${directory}/admission.json.tmp`, `${directory}/admission.json`);
+  const renamePending = f.observer.rename(`${directory}/admission.json.tmp`, `${directory}/admission.json`);
+  expect(renamePending).toBe(f.promises[1]); await renamePending;
+  expect(f.calls.find(call => call.name === 'open')?.receiver).toBe(f.observer);
+  expect(f.calls.find(call => call.name === 'rename')?.receiver).toBe(f.observer);
   const dir = await f.observer.open(directory, 'r'); await dir.sync(); await dir.close();
   const snapshot = f.observer.snapshot();
   expect(snapshot.samples.map(sample => sample.operation)).toEqual(['open-temp', 'writeFile', 'file-sync', 'close-file', 'rename', 'open-directory', 'directory-sync', 'close-directory']);

@@ -32,15 +32,18 @@ export function sampleIdleRoot(root: string) {
 }
 
 /** The reviewed file list includes the Lead-provided mirror and preparation sources/configs. */
-export function verifyIdleInputs(worktree: string, manifestPath: string) {
+export function verifyIdleInputs(worktree: string, manifestPath: string, expectedSha256: string | undefined) {
   const stat = lstatSync(manifestPath);
   if (!stat.isFile() || stat.size > 65536) throw Error('INPUT_MANIFEST_SIZE');
   const bytes = readFileSync(manifestPath);
+  const manifestSha256 = createHash('sha256').update(bytes).digest('hex');
+  if (manifestSha256 !== expectedSha256) throw Error('UNREVIEWED_INPUT_MANIFEST');
   const data = JSON.parse(bytes.toString('utf8')) as { fixedRef?: unknown; files?: unknown };
   if (data.fixedRef !== '8d84d529a0756116bd0fc8bad969d61a6c26248e' || !Array.isArray(data.files) || data.files.length > 96 || data.files.length < 61) throw Error('INPUT_MANIFEST_SHAPE');
   const seen = new Set<string>(); let inputBytes = bytes.length;
   for (const entry of data.files as { path?: unknown; bytes?: unknown; sha256?: unknown }[]) {
     if (typeof entry.path !== 'string' || isAbsolute(entry.path) || entry.path.split('/').some(part => !part || part === '.' || part === '..')
+      || !(entry.path.startsWith('docs/evidence/s01/idle-claim-cost/') || entry.path.startsWith('experiments/runner-capacity/mixed/idle-claim') || entry.path === 'experiments/runner-capacity/mixed/execute-idle.mjs')
       || seen.has(entry.path) || !Number.isSafeInteger(entry.bytes) || (entry.bytes as number) < 0 || (entry.bytes as number) > 1024 * 1024
       || typeof entry.sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(entry.sha256)) throw Error('INPUT_ROW');
     seen.add(entry.path);
@@ -53,5 +56,5 @@ export function verifyIdleInputs(worktree: string, manifestPath: string) {
     inputBytes += value.length;
     if (inputBytes + IDLE_LIMITS.rawReserve >= IDLE_LIMITS.bytes) throw Error('INPUT_BUDGET');
   }
-  return { inputBytes, files: seen.size, manifestSha256: createHash('sha256').update(bytes).digest('hex') };
+  return { inputBytes, files: seen.size, manifestSha256 };
 }

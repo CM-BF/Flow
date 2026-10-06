@@ -1,0 +1,13 @@
+{
+  "extends": "./idle-claim-pure-tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "vitest": ["/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/dist/index.d.ts"],
+      "zod": ["/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.d.ts"],
+      "@flow/contracts": ["../../../docs/evidence/s01/idle-claim-cost/source-snapshot/packages/contracts/src/index.ts"],
+      "@flow/client": ["../../../docs/evidence/s01/idle-claim-cost/source-snapshot/packages/client/src/index.ts"]
+    }
+  },
+  "include": ["./idle-claim-observer.ts", "./idle-claim-observer.test.ts", "./idle-claim-budget.ts", "./idle-claim-budget.test.ts", "./idle-claim.test.ts"],
+  "exclude": []
+}

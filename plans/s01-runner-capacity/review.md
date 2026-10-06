@@ -1,6 +1,6 @@
 # S01 独立审查
 
-当前 idle-claim-cost 准备：NOT_STARTED。输入固定8d84，尚未固定实现 target，0fake/actual/strict。历史批准均不覆盖新准备。
+当前 idle-claim-cost 全组合准备：NOT_STARTED，0fake/actual/strict。输入固定8d84；early checkpoint73157915758b934cce5131045317c892288ddc7a由architecture_read于2026-10-06 18:38:51 UTC只读SOURCE_REVIEW，无P1/P2、VALIDATION_PENDING；仅observer/budget+9fake草稿，不覆盖后加薄外壳/实际窗。历史批准均不覆盖新准备。
 
 ## 历史 A/B 准备批准
 

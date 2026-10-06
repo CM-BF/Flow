@@ -27,7 +27,7 @@ test('one public idle runtime retains twelve definite empty claims through norma
   if (!rootIdentity.isDirectory() || rootIdentity.isSymbolicLink()) throw Error('OWN_ROOT_IDENTITY');
   const worktree = process.cwd();
   const manifestPath = resolve(worktree, 'docs/evidence/s01/idle-claim-cost/fixed-input.json');
-  const inputs = verifyIdleInputs(worktree, manifestPath);
+  const inputs = verifyIdleInputs(worktree, manifestPath, process.env.FLOW_S01_IDLE_INPUT_SHA256);
   if (inputs.manifestSha256 !== process.env.FLOW_S01_IDLE_INPUT_SHA256) throw Error('REVIEWED_INPUT_MISMATCH');
   const actual = await vi.importActual<typeof import('node:fs/promises')>('node:fs/promises');
   const workDirectory = join(root, 'work');
@@ -39,6 +39,7 @@ test('one public idle runtime retains twelve definite empty claims through norma
   const requests: { ordinal: number; receivedMs: number; finishedMs?: number; closedMs?: number; bytes: number; status?: number }[] = [];
   const faults = new Set<string>(), notices: string[] = [];
   let peakOwnBytes = 0, runtimeClosed = false, serverClosed = false, adapterStarts = 0;
+  let normalStopAtMs: number | null = null, runtimeClosedAtMs: number | null = null;
   let runtime: Promise<void> | undefined, journalDirectory: string | undefined;
   let finalJournal: 'EMPTY' | 'UNKNOWN' = 'UNKNOWN', rootSample: ReturnType<typeof sampleIdleRoot> | undefined;
   let observer: ReturnType<typeof observeIdleJournal> | undefined, timer: ReturnType<typeof setTimeout> | undefined;
@@ -77,7 +78,7 @@ test('one public idle runtime retains twelve definite empty claims through norma
     request.on('end', () => {
       if (body !== '{}') { fault('REQUEST_BODY'); response.writeHead(400).end(); return; }
       checkBudget();
-      if (row.ordinal === IDLE_LIMITS.maxClaims) stop.abort();
+      if (row.ordinal === IDLE_LIMITS.maxClaims) { normalStopAtMs = sampleTime(); stop.abort(); }
       // Even after normal stop, finish this already-sent claim with one definite null ACK.
       response.writeHead(200, { 'content-type': 'application/json' }).end('{"assignment":null,"remainingLeaseMs":0}');
     });
@@ -107,7 +108,7 @@ test('one public idle runtime retains twelve definite empty claims through norma
       maxConcurrentAttempts: 1, requestTimeoutMs: 1500,
       adapters: [{ name: 'fixture', async run() { adapterStarts++; throw Error('NO_ASSIGNMENT_EXPECTED'); } }],
       onNotice(notice) { if (notices.length < 16) notices.push(notice.type); else fault('NOTICE_LIMIT'); },
-    }).then(() => { runtimeClosed = true; }, () => { runtimeClosed = true; fault('RUNTIME_REJECTED'); });
+    }).then(() => { runtimeClosed = true; runtimeClosedAtMs = sampleTime(); }, () => { runtimeClosed = true; runtimeClosedAtMs = sampleTime(); fault('RUNTIME_REJECTED'); });
     await settle(runtime, started + IDLE_LIMITS.workMs + 1750);
   } catch { fault('RUN_NOT_COMPLETE'); }
   finally {
@@ -137,7 +138,13 @@ test('one public idle runtime retains twelve definite empty claims through norma
       || JSON.stringify(snapshot.commits.map(commit => commit.phase)) !== JSON.stringify(expectedPhases)) fault('INCOMPLETE_JOURNAL_TRACE');
     if (snapshot?.samples.some(sample => sample.succeeded === false && !(sample.operation === 'open-read' && sample.error === 'ENOENT'))
       || snapshot?.counts['open-read']?.issued !== 1 || snapshot?.counts['open-read']?.failed !== 1) fault('UNEXPECTED_FS_FAILURE');
+    for (const operation of ['open-temp', 'writeFile', 'file-sync', 'close-file', 'rename', 'open-directory', 'directory-sync', 'close-directory'] as const) {
+      const count = snapshot?.counts[operation];
+      if (count?.issued !== 24 || count.succeeded !== 24 || count.failed !== 0) fault('API_COUNT_GATE');
+    }
     if (requests.length !== 12 || requests.some(row => row.status !== 200 || row.finishedMs === undefined) || adapterStarts || notices.length || finalJournal !== 'EMPTY') fault('BEHAVIOR_GATE');
+    if (normalStopAtMs === null || runtimeClosedAtMs === null || runtimeClosedAtMs < normalStopAtMs
+      || (snapshot?.commits.at(-1)?.completedMs ?? -1) < normalStopAtMs) fault('NORMAL_DRAIN_GATE');
     try {
       const current = lstatSync(root);
       if (current.dev !== rootIdentity.dev || current.ino !== rootIdentity.ino || !current.isDirectory()) throw Error('ROOT_CHANGED');
@@ -151,7 +158,7 @@ test('one public idle runtime retains twelve definite empty claims through norma
       internalBehaviorPassed: faults.size === 0 && runtimeClosed && serverClosed && sockets.size === 0,
       overallVerdict: 'PENDING_OUTER_RECEIPT', faults: [...faults], inputs,
       topology: { runtimeInstances: 1, configuredCapacity: 1, activeAttempts: 0, adapterStarts, processTopology: 'vitest parent plus one fork worker; external exit confirmation pending' },
-      requests, notices, observer: snapshot ?? null, finalJournal,
+      requests, notices, normalStopAtMs, runtimeClosedAtMs, observer: snapshot ?? null, finalJournal,
       resources: { runtimeClosed, serverClosed, openSockets: sockets.size, root, workDirectory, retainedUntilOuterExit: true },
       budget: { ...budget, peakOwnBytesSampled: peakOwnBytes, rootSample, inputBytes: inputs.inputBytes, rawReserve: IDLE_LIMITS.rawReserve,
         internalElapsedMs: now() - started, fullOuterElapsedMs: null, cachePeakBetweenSamples: 'UNKNOWN' } };

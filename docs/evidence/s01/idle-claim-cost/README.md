@@ -16,7 +16,7 @@
 
 ## 计时、计量与关闭
 
-15s从外壳计时开始，前10s允许工作，之后仅原请求排空/关闭/计量/证据；case接收同一绝对起点，不在运行停止时重置期限。case绿只证明内部行为；完整 Vitest 退出、最终cache目录、raw、清理和外部shell wall必须单列收据。尚待完成薄外壳及源镜像绑定，**目前不能执行 actual**。
+15s从外壳计时开始，前10s允许工作，之后仅原请求排空/关闭/计量/证据；case接收同一绝对起点，不在运行停止时重置期限。case绿只证明内部行为；完整 Vitest 退出、最终cache目录、raw、清理和外部shell wall必须单列收据。薄外壳已准备，完整镜像已供应，全组合审查仍待完成，**目前不能执行 actual**。
 
 2MiB包括实际镜像输入、准备文件、raw/CLI/receipt和ownTMP；reserve128KiB给有界raw，journal尝试写入累计额外保守计入，ownTMP同时报logical与allocated样本最大值，取较大者。运行中采样不是硬文件系统quota，样本间cache峰值UNKNOWN；最终退出后的完整own目录计数是另一事实。不得用删除文件冲减累计journal charges，也不声称计量全部OS/安装模块加载I/O。若无法证实门禁则 UNKNOWN，不启动第二次。
 
@@ -26,7 +26,7 @@ Node24 `NODE_DISABLE_COMPILE_CACHE=1`、不设置 `NODE_COMPILE_CACHE`；定向 
 
 ## 实现位置与复用结论
 
-`experiments/runner-capacity/mixed/idle-claim-observer.ts` 隐藏有限的FileHandle观察/还原；budget文件仅本实验的输入/样本/原始期限核对；两个fake测试文件现9组草稿，0运行。actual单项与定向config是同一直接消费者，尚待外壳与镜像供给。
+`experiments/runner-capacity/mixed/idle-claim-observer.ts` 隐藏有限的FileHandle观察/还原；budget文件仅本实验的输入/样本/原始期限核对；两个fake测试文件现9组草稿，0运行。actual单项与定向config是同一直接消费者；execute-idle.mjs 仅拥有这一个 Vitest 进程组，13s TERM / 14s KILL / 14.3s关闭观察、剩余预算作清理/证据，0执行。正常case仍10s停止新工作，原已发请求独立deadline排空。Lead专门目录已供应，owner获明确授权后按61 literal复制并逐hash复核，0import/check。
 
 已读 mixed/process.ts 与 ../processes.ts：前者固定 fork旧child.ts +tsx +IPC配置，后者同样固定旧child与IPC停机，直接复用会导入原PG/runner场景及原合同，且没有Vitest子进程组/最终cache计量接口。本片保留它们原样，仅准备此实验的薄外壳，不制造共享supervisor框架。
 
@@ -35,3 +35,11 @@ Node24 `NODE_DISABLE_COMPILE_CACHE=1`、不设置 `NODE_COMPILE_CACHE`；定向 
 9 fake groups计划覆盖 this/Promise/error透明性、非目标路径、failed write bytes、初次ENOENT、轨迹上限、还原未知、固定时间/byte预算。actual单项的12HTTP、24durable phase与实际sync次数逐项核，不能用公式替代观测。检查均 NOT_RUN，不能沿用旧 A/B 的64通过。
 
 本地 find-skills → clean-code（sickn33 固定 bdacd76）+codebase-design/brainstorming；2026-10-06 18:36:05 UTC 安全点静态自审：观察器只负责精确私有API计数，预算只负责固定输入/时间/byte门禁，停止/排空继续由公开runtime负责。已修正失败write也应计尝试字节、轨迹溢出仍保留issued计数；未执行验证，类型/实际透传仍待有界fake检查。无新技能安装。新源码批准不会自动开放实际窗口。
+
+18:38:51 UTC architecture_read 对固定73157915的observer/budget及9fake草稿完成限定SOURCE_REVIEW，无P1/P2、VALIDATION_PENDING；0执行。非阻断成功open/rename Promise identity与receiver断言已在原首case补充，无新增重复case。此静态意见不覆盖后加薄外壳，不是正式准备批准。
+
+外壳保留所有预约/owned root identity；采样前与删除前核同dev/ino，只有确认runtime case通过且Vitest close/进程组gone/stdio end后删除自有root。异常时保留PID/root，超时不冒称取消。原始outer-result是PRE_FINAL_PERSISTENCE_SNAPSHOT，末次CLI才包含其写入与archive计数结果；最终Shell exit和完整wall仍必须外部收据确认，不能将snapshot或case通过升格整体PASS。CLI/raw截断、清理未知、窗口超限都不得启第二次。
+
+Lead供给已接收：61文件284628B逐byte/hash与固定8d84请求一致；[operator receipt](source-supply-receipt.json) SHA a883dc915dce693fd1124c07c546e61049e5c0dcbe05e231acadf86247442653。仅从其专门sourceRoot复制，未自行Git物化。复制前free1575358464B；当时满足1GiB与小副本预留，此事实不授权后续运行或代替其fresh gate。
+
+定向类型配置继承原root strict/noUnchecked/ES2023，pure仅4个本片文件；runtime另含actual入口及镜像传递闭包。@flow只指向固定镜像，vitest/zod/@types仅指向既有安装；没有SDK alias。全部检查NOT_RUN。实际窗口尚须固定input SHA、clean execution HEAD、ledger和独立review，以及外部Shell全过程time/退出/归档最终复核；环境OPEN变量不是自行发放权限。

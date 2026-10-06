@@ -1,0 +1,11 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "typeRoots": ["/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"],
+    "paths": {
+      "vitest": ["/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/dist/index.d.ts"]
+    }
+  },
+  "include": ["./idle-claim-observer.ts", "./idle-claim-observer.test.ts", "./idle-claim-budget.ts", "./idle-claim-budget.test.ts"],
+  "exclude": []
+}
