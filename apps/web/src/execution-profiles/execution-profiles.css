@@ -16,18 +16,15 @@
 .ep-option summary { cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }
 .ep-notice, .ep-error { margin: 0; padding: .5rem .7rem; border-left: 2px solid var(--border); line-height: 1.5; }
 .ep-error { border-color: var(--destructive); }
-.ep-locked { max-width: 40rem; line-height: 1.5; }
-.ep-locked-heading { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: .75rem; }
-.ep-locked-heading strong { min-width: 0; overflow-wrap: anywhere; font-weight: 600; }
-.ep-locked-heading > span, .ep-locked-summary { color: var(--muted-foreground); font-size: .8rem; }
-.ep-locked-summary { margin: .15rem 0; }
-.ep-locked-details { font-size: .8rem; }
-.ep-locked-details > summary { cursor: pointer; border-radius: .2rem; }
-.ep-locked-details > summary:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
-.ep-locked-details > summary > span { margin-left: .5rem; color: var(--muted-foreground); }
-.ep-locked-details > p { margin: .5rem 0; }
-.ep-locked dl { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: .4rem .8rem; margin: .75rem 0; }
-.ep-locked dt { color: var(--muted-foreground); }
-.ep-locked dd { margin: 0; overflow-wrap: anywhere; }
-@media (max-width: 450px) { .ep-dialog { padding: 1.1rem; } .ep-locked dl { grid-template-columns: 1fr; gap: .2rem; } .ep-locked dd { margin-bottom: .4rem; } }
-@media (prefers-reduced-motion: reduce) { .ep-dialog { animation: none !important; transition: none !important; } }
+.ep-trigger { display:inline-flex; gap:.45rem; font-size:.75rem; font-weight:500; padding:.3rem .55rem; min-height:2rem; line-height:1.35; }
+.ep-trigger-access, .ep-trigger-lock { color:var(--muted-foreground); font-weight:400; }
+.ep-trigger-access { border-left:1px solid var(--border); padding-left:.45rem; }
+.ep-locked { line-height:1.5; }
+.ep-requested h3 { margin:0; font-weight:600; }
+.ep-configuration-dialog dl { display:grid; grid-template-columns:8rem minmax(0,1fr); gap:.4rem .8rem; margin:.75rem 0; }
+.ep-configuration-dialog dt { color:var(--muted-foreground); }
+.ep-configuration-dialog dd { margin:0; overflow-wrap:anywhere; }
+.ep-identities summary { cursor:pointer; color:var(--muted-foreground); }
+.ep-identities summary:focus-visible { outline:2px solid var(--ring); outline-offset:3px; }
+@media (max-width:450px) { .ep-dialog { padding:1.1rem; } .ep-configuration-dialog dl { grid-template-columns:1fr; gap:.2rem; } .ep-configuration-dialog dd { margin-bottom:.4rem; } }
+@media (prefers-reduced-motion:reduce) { .ep-dialog { animation:none!important; transition:none!important; } }
