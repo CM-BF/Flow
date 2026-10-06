@@ -2,20 +2,20 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:12:49 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 16:15:42 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core |
 | Branch | codex/claude-message-settings-core |
-| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 已核checkpoint HEAD 5239aa4d2969147812749f3e756e1c2af46a0225；历史leaf source4e7、validation8c56冻结；下一纵向caller接线与新fixture源码尚未验证 |
-| 工作树dirty状态 | 5239之后本scope contracts/server/runner caller接线、032迁移与注入/专库测试准备dirty；无其他owner文件改动 |
+| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 已核source HEAD ea276572c3c99fb8400808a93efc69ce530d55a4；历史leaf source4e7、validation8c56冻结；下一纵向caller接线与新fixture源码尚未验证 |
+| 工作树dirty状态 | source已固定ea276；仅本次配置/manifest/review/status metadata待封存 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | 下一纵向 NOT_RUN；首leaf4e7b7f968a2160a60989b3b6343506ae8fb5ef6a历史5/5与strict0不重跑 |
 | 已集成main状态 / HEAD | 首leaf已main 22d5ca67159b35bb794b2711cf6df0cb905b92e8；下一纵向已在本branch实施，未main |
-| 实现目标 | 下一纵向未固定；首leaf历史4e7b7f968a2160a60989b3b6343506ae8fb5ef6a已main |
+| 实现目标 | 纵向source ea276572c3c99fb8400808a93efc69ce530d55a4，生产checkpoint92f；未验证/未main；首leaf4e7历史已main |
 | 实现范围 | v3 39 literal：contracts、center/queue、Claude adapter、final/context/retry、032与定向tests；F01/client/Web/TUI共享入口另owner |
 | 阶段 | M2 |
 | 优先级 | 2 |
@@ -23,7 +23,7 @@
 | 下一可用交付 | 纵向fixed source + 注入SDK/真实专库HTTP测试准备及精确依赖闭包；当前0检查 |
 | 当前阻塞 | 实现NONE：Lead已完成source-only扩源；验证RESOURCE_PENDING/NOT_OPEN，仍需最小依赖闭包与单次资源窗口；外部F01/Web/TUI消费者待协作 |
 | 需用户决定 | NONE |
-| Review | 下一纵向SOURCE_REVIEW：5239的base-refinement P2已在dirty源最小修复、待固定验证；[review.md](review.md)保留首leaf4e7 APPROVED/0P1P2 |
+| Review | 下一纵向SOURCE_REVIEW：root读92f生产未见P1/P2；.extend静态P2关闭；fixture收束P2由ea276最小修复待独核，全部运行pending；[review.md](review.md)保留首leaf4e7 APPROVED/0P1P2 |
 | Claim | c652bc61-f8a9-4848-a709-978adbb425ed v3 ACTIVE/39 literal；[amend receipt](../../docs/evidence/wpf-mature-02-message-settings-core/next-slice-v3-amend-receipt.json) |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -62,3 +62,5 @@ Lead [main receipt](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/
 当前调用链已接：TaskSubmission与profile共享校验、send/queue冻结、自动和手动first promotion、empty unpause原continuation/profile检查、现Claude Query参数/有限init观察、typed final/task匹配、context requestedModel与retry再受理。032及专用migration入口已写；新注入SDK测试5组和独有专库fixture正在准备。base conversationTurn保留可extend对象，真实mode受理拒绝另测；legacy不可用pin enqueue保持待处理语义；Claude publication ACK显式union。所有本段检查仍NOT_RUN，未经独立正式approval；无模型/SDK目标/PG/tsc/安装。
 
 2026-10-06 16:12:49 UTC source checkpoint准备：新runner5组/server8组/contract6组源码齐，032 prerequisite升级fixture与publication类型补齐。227 source只读闭包中155文件/673771逻辑B尚不可见，依赖精确清单见 [checkpoint](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-source-checkpoint.md)。0checks/tsc/PG；当前v3已fresh核。正式检查与完整独审仍待资源窗口，source准备不等于delivery。
+
+2026-10-06 16:15:42 UTC：source92f已push，root生产静态SOURCE_REVIEW未见新增P1/P2（非APPROVED）；architecture静态关base .extend P2，提出fixture afterAll时限P2。ea276仅改afterAll为80s并自备catalog第二profile，待其delta复核。prepared纯/PG配置分离、strict继承根选项，全部NOT_RUN；[manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-source-manifest.json)绑定当前source、3config与原92f支持文档。

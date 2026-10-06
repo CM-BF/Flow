@@ -31,4 +31,13 @@ Mika与architecture_read正式固定审均0 P1/P2；无待修finding。完整来
 
 ## main接收与后继范围
 
-首leaf source4e7/metadata b342已接main22d5ca67159b35bb794b2711cf6df0cb905b92e8，owner两源比对一致，不重测。后继optional turnSettings真实接线尚未实现/未独审，不继承此批准。
+首leaf source4e7/metadata b342已接main22d5ca67159b35bb794b2711cf6df0cb905b92e8，owner两源比对一致，不重测。后继optional turnSettings纵向已于独立source checkpoint实施；仍不继承首leaf批准，当前范围见下节。
+
+## 下一纵向 SOURCE_REVIEW（运行未开放）
+
+- Review target commit: 92f768e3517a64235629858f50cdc3926d099b2d
+- 修复 target: ea276572c3c99fb8400808a93efc69ce530d55a4（仅新test hook80s与自备分页前提）。
+- Mika/root只读完整生产链：profile/catalog→send/queue→first promotion/empty resume→SDK query/init→final/context/retry，无新增生产P1/P2；本owner于2026-10-06 16:15:42 UTC收录，原消息未提供单独审时，不伪造通过时间。
+- architecture_read只读确认5239新base refinement导致interaction extend异常的P2在92f移除后静态关闭；032/helper于16:07:10静态未见阻断。不是PG或正式组合批准。
+- architecture提出92f fixture afterAll60s短于最多9×8s清理链P2，已ea276将hook80s以覆盖清理；分页用例额外自建第二profile，保留断言。待原审者固定delta确认。
+- 所有新pure/HTTP/PG/typecheck仍NOT_RUN；源码审查不证明运行、迁移、shared factory/ACK与用户consumer可用。[manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-source-manifest.json)是SOURCE_REVIEW包，非integration-ready。
