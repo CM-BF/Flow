@@ -33,6 +33,6 @@ Review target commit: 7127b5bfda3135670e1595dd4b6e90c4c9ea416c
 
 审查任务：核实际WT/branch/head/dirty，读13源diff与宿主直接上下文，对照[Interface](../../docs/evidence/r05c/interface.md)核责任、两个request/单一receive生命周期、身份/普通final/完整terminal.items、全部server-request deny、settled/unknown及close资源语义。核95个不同检查及tsc0原始输出；首次PG测试查询失败与单选补充透明保留。核unknown无event/无completed、PG reservation/journal/restart与ownership门禁，Claude旧public codec/配置消费者保持；核源和validation/证据manifest字节。未执行真实Codex/app-server/auth/provider，不可由fixture推断生产支持或无工具隔离。
 
-Findings/结论：Execution Lead只读APPROVED 7127b5bfda3135670e1595dd4b6e90c4c9ea416c。完整读13源delta（adapter/evidence/policy/wire/guard/descriptor、全部新tests/peer），47项manifest fixed/current bytes+SHA一致，7既审输入零差。核95 distinct=48 adapter/bounds+42 consumer+5 PG分轮通过；保留首次PG测试SQL失败与selected1/4未选，2随机DB正常移除/6自有Node peer关闭，tsc0。review未重跑、0provider，无P1/P2。批准仅注入transport普通final+既有host/PG路径；无production配置、真实app-server、原生工具隔离或聊天resume结论。源码继续冻结待main receipt。
+Findings/结论：Execution Lead只读APPROVED 7127b5bfda3135670e1595dd4b6e90c4c9ea416c。完整读13源delta（adapter/evidence/policy/wire/guard/descriptor、全部新tests/peer），47项manifest fixed/current bytes+SHA一致，7既审输入零差。核95 distinct=48 adapter/bounds+42 consumer+5 PG分轮通过；保留首次PG测试SQL失败与selected1/4未选，2随机DB正常移除/6自有Node peer关闭，tsc0。review未重跑、0provider，无P1/P2。批准仅注入transport普通final+既有host/PG路径；无production配置、真实app-server、原生工具隔离或聊天resume结论。源码已集成main f181d84b5fb3652d62e2a181acff442d42b3e066，13源与已审target逐字相同；main receipt来源Execution Lead，组合profile13+main22/root types通过。
 
 记录时间：2026-10-06 09:53:46 UTC。
