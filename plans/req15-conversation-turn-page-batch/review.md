@@ -19,3 +19,11 @@ base为22a0806bc2465e11096949618113833f31766b19，唯一树/分支及拟scope见
 Target `3cd7a6e867bd84ca877e07ea4e6e97f70d685e32`，base22a0806bc2465e11096949618113833f31766b19，scope为[source manifest](../../docs/evidence/req15-turn-page-batch/source-manifest.json)8路径（6产品+2测试）。独立结论PENDING，不视空模板为通过。请核pair绑定/当前attempt-owner-session/每task LIMIT2/known typed错误隔离/legacy fallback/冻结context-settings/UTF8全文digest与UTF16边界/同client与单项复用。
 
 已执行：首红26selected/17failed/9passed、exit1，fake旧mixed50实数214次；新source的green/strict **NOT_RUN_RESOURCE**，此前green准入0child。真实SQL/PG/HTTP/并发snapshot/字节测量/main均未执行。源码静态审与后继测试回执各自绑定，不通过删断言或降低预算收口。
+
+## 固定source独立结论
+
+Reviewer：status_read，2026-10-06 21:36:02UTC；Mika另核六源diff/SQL约束/UTF16等价无blocking。Target `3cd7a6e867bd84ca877e07ea4e6e97f70d685e32`，结论 **SOURCE_REVIEW_APPROVED / VALIDATION_PENDING，0 P1/P2**。8 paths /55175B逐Git(target)=WT=manifest hash；manifest SHA256 `45fcdaee14075d904bb1a170bb7859019e690d1ce31c8c3a0a7fe9194fda6c90`。
+
+本结论仅为source/SQL静态审，不证明运行正确性或main能力。首红26selected/17failed/9passed原件保持；新实现green/strict为NOT_RUN_RESOURCE，0新运行。真实PG后继须覆盖suffix坏但prefix相同的完整digest、每task LIMIT2混合、错误attempt/owner/session及并发RR快照。mixed50部分expected复用新turnView，只提供公开投影的一致性约束，不能代替SQL执行证据。
+
+作者接受，无源码修复请求。本次仅metadata归档，claim保留；空间恢复后按Lead新准入补green/strict，实际PG另行窗口。

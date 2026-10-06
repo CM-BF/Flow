@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:34:02 UTC；固定base22a，main未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:37:03 UTC；固定base22a，main未集成 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
 | 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；实现3cd7a6e867bd84ca877e07ea4e6e97f70d685e32；本次仅metadata归档 |
-| 工作树dirty状态 | 产品/测试已固定3cd7a6e8；本次status/plan/review/source manifest提交后clean，未修改其他scope |
+| 工作树dirty状态 | 归档前HEAD cd0616f070c695b545f05ee0744d203319231e9c clean；本次仅status/review，已审8路径与manifest不变 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 实现目标 | 3cd7a6e867bd84ca877e07ea4e6e97f70d685e32 |
 | 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts |
-| 检查状态 | 首红26选/17失败/9通过、exit1；green/strict NOT_RUN_RESOURCE；源码静态独审待完成 |
-| 已集成main状态 / HEAD | 未集成；本片尚无实现提交 |
+| 检查状态 | 首红26选/17失败/9通过、exit1；green/strict NOT_RUN_RESOURCE；SOURCE_REVIEW_APPROVED / VALIDATION_PENDING |
+| 已集成main状态 / HEAD | 未集成；实现3cd7a6e8已固定，未在main验证 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已实现最多50轮的批量读取接口，保留单轮与分页语义，等待定向验证 |
-| 下一可用交付 | 保持回复与分页语义的有界批量读取实现 |
+| 当前产出 | 最多50轮的批量读取接口已完成源码独审，等待定向验证 |
+| 下一可用交付 | 完成定向行为与严格类型验证，形成可集成的批量读取片段 |
 | 当前阻塞 | ACTIVE: 绿色测试与严格类型检查尚未启动，可用空间低于轻检查门槛；依赖已就绪，等待Lead安排空间恢复 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，PENDING 3cd7a6e867bd84ca877e07ea4e6e97f70d685e32 |
+| Review | [review.md](review.md)，SOURCE_REVIEW_APPROVED / VALIDATION_PENDING 3cd7a6e867bd84ca877e07ea4e6e97f70d685e32 |
 | Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v1 ACTIVE；10 literal见[回执](../../docs/evidence/req15-turn-page-batch/claim-receipt.json) |
 | 架构影响 | conversation读取内部新增批量Interface，外部契约/事务所有者不变；实现固定后由Lead核架构基线是否需同步，当前未作main事实 |
 
@@ -37,7 +37,7 @@
 
 ## Dashboard 与交接
 
-唯一status canonical为 `/root/db_transaction_owner`；新任务等待Lead登记本worktree并核聚合，不编辑生成JSON或全局索引。依赖等待期间继续静态源码与用例准备，不算整个任务阻断。SVC07独立旧claim保留；按Lead调度暂切回其独立worktree准备HTTP消费者入口，本树停止产品编辑等待依赖，不能交叉使用claim。
+唯一status canonical为 `/root/db_transaction_owner`；新任务等待Lead登记本worktree并核聚合，不编辑生成JSON或全局索引。本片源码已固定并独审，当前green/strict等待资源；依赖已就绪。SVC07独立旧claim保留且停止执行，不交叉使用claim。
 
 ## 最近安全点
 
@@ -50,3 +50,7 @@
 2026-10-06 21:32:49 UTC：首红两路径26selected/17failed/9passed、exit1/0.824651s，raw10455B完整、PGID52890 absent、TMP空且same-inode移除。旧mixed50的214次调用仅本fake口径。现已最小实现6源，green第一次准入free1042001920B <1107296256B，HOLD/0child；不降门槛、不重跑旧SVC检查。静态复核task+attempt成对、session owner/runner/harness、每task LIMIT2、typed错误隔离与legacy fallback条件；单项与批量使用同一投影。真实SQL/快照/性能仍NOT_RUN。
 
 2026-10-06 21:34:02 UTC：固定source checkpoint 3cd7a6e867bd84ca877e07ea4e6e97f70d685e32，给Mika立即独立source/SQL审查；真实main/PG能力不由分支静态审或fake证明。资源恢复后仅必要两路径green+strict，保留首红，0自动清理。C02可消费state.turnViews与replies.assistantProjections的同client有界Interface，新增consumer仍需独立scope和直接验证。
+
+## 固定源码独立审查
+
+2026-10-06 21:37:03 UTC归档：status_read于2026-10-06 21:36:02UTC对3cd7a6e867bd84ca877e07ea4e6e97f70d685e32给出SOURCE_REVIEW_APPROVED / VALIDATION_PENDING，0 P1/P2；Mika另核6源diff/SQL约束/UTF16等价未见blocking。8路径55175B逐Git=WT=hash，manifest SHA256 45fcdaee14075d904bb1a170bb7859019e690d1ce31c8c3a0a7fe9194fda6c90。本次不改已审source，不运行green/strict/PG；首红26/17/9与NOT_RUN_RESOURCE保持。后续真实PG必须覆盖prefix相同但suffix损坏的全文hash、每task LIMIT2混合、错attempt/owner/session及并发RR快照；mock共享新turnView作部分expected不能替代真实SQL。claim v1保留等待Lead空间/新准入。
