@@ -1,6 +1,6 @@
 # Final projection promotion — R05C handoff
 
-WPF-MATURE-02实验writer仍为chatui01_owner/co-lead mika；当前final.mjs及final.test.mjs冻结。Mika同意R05C native_center_owner在其codex-native-adapter独立worktree、正式领取的 `apps/runner/src/native-harness/codex` 内只读提升这一算法。本回执不移交实验scope，不更改R05C状态或文件。
+WPF-MATURE-02实验writer仍为chatui01_owner/co-lead mika；此交接建立时final.mjs及final.test.mjs冻结；后续薄入口状态见末段。Mika同意R05C native_center_owner在其codex-native-adapter独立worktree、正式领取的 `apps/runner/src/native-harness/codex` 内只读提升这一算法。本回执不移交实验scope，不更改R05C状态或文件。
 
 固定来源：`0d0524c3439363d1fe60aad63f62817ba51fa2a5:experiments/codex-app-server-conformance/final.mjs`，SHA-256 `01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad`。本owner已再核当前文件与该Git对象逐字相同。固定相关测试路径：`experiments/codex-app-server-conformance/final.test.mjs`（15项final场景）与 `experiments/codex-app-server-conformance/catalog.test.mjs`（12项目录场景）；现有[manifest](conformance-manifest.json)绑定两文件、全部27项raw及来源。不重跑本次无行为变更的测试。
 
@@ -20,3 +20,5 @@ WPF-MATURE-02实验writer仍为chatui01_owner/co-lead mika；当前final.mjs及f
 
 
 生产错误边界：实验使用node:assert，AssertionError可能持有actual/expected（含native IDs/正文）。R05C不得把原始AssertionError或远端params/body写入detail/log/UI。可保留throw后投影失效语义，但host必须归一为固定reason/code并回报unknown/unsupported，不暴露rawactual/expected；若改专用错误，由实际消费者验证。此项是生产提升约束，不是现已审纯实验发生泄漏的结论。
+
+后继实际消费：已审main 4391bbf9f1785212d098ef6aa1c01a0320a003d3 通过受控merge进入本树，薄入口target 38516be71bf267ab546347a39da2adbe71f79e20保留同一public API；final.test.mjs未改，27项直接消费者一次通过。共享production Module为唯一算法来源，历史0d manifest保留，新[manifest](production-import/manifest.json)单列。当前consumer独审NOT_STARTED。

@@ -1,4 +1,10 @@
-# WPF-MATURE-02 first semantic slice
+# WPF-MATURE-02 evidence
+
+Current thin-consumer implementation `38516be71bf267ab546347a39da2adbe71f79e20`: [production import report](production-import/README.md), [manifest](production-import/manifest.json). One 27/27 direct-consumer run passed; independent review NOT_STARTED. Production source from reviewed main `4391bbf9f1785212d098ef6aa1c01a0320a003d3` is unchanged; the experiment now re-exports it within this same worktree.
+
+The following records are historical fixed slices; their source hashes do not describe the new thin wrapper.
+
+## Original semantic slice
 
 Fixed implementation target: `0d0524c3439363d1fe60aad63f62817ba51fa2a5`. Recorded 2026-10-06 09:11:49 UTC. Independent review APPROVED by status_read / gpt-6-astra; Mika accepted 2026-10-06 09:15:59 UTC. No P1/P2; read-only review, no test rerun. Not integrated in main. Claim retained for review/fixes.
 

@@ -49,3 +49,7 @@ Node24/pnpm9.15.4固定；优先Node行为测试，源码/fixture绑定schema哈
 ## WPF-MATURE-02-03 隔离后继片段
 
 纯语义target0d0524c已独审通过，approval metadata已单独提交1aead2e，仍等待集成。隔离片只生成[默认拒绝profile/canary设计](../../experiments/codex-app-server-conformance/isolation/README.md)，单列[manifest](../../docs/evidence/wpf-mature-02/isolation/manifest.json)与静态检查；没有执行sandbox、listener、R06组合或真实Codex。该静态片交付条件是可逐条审的路径/环境/七项合成canary及失败清理，不把静态设计当运行证明。后继按Mika明确许可执行一次，结果SIGABRT且无有效canary报告；失败后停止，未扩大profile。具体当前事实只在status和run report维护。
+
+## WPF-MATURE-02-04 单一投影消费与03诊断后继
+
+R05C纯投影已独审并集成已审main4391bbf9；本实验改为相对薄导出，27项原测试直接消费生产单一算法，当前待独审，不代表中心/runner/Web完整贯通。03另设有界诊断阶段：最多3次自有合成子进程、总60秒含清理，逐次具体假设或诊断能力变化；先评估并交Mika审R06默认关闭、字节有界、宿主私有落盘方案与精确scope。不复制supervisor、不读取私人crash历史、无真实Codex/auth/provider/外网，不新增全盘或网络grant；原一次失败封存，不原样重试到绿。

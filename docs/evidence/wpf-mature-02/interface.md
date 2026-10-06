@@ -25,9 +25,9 @@ Web owner d01按本大task对接model/thinking/fast/access与账号/实际状态
 
 共享owner需固定实际模型能力目录、请求选项、init/effective回执与unsupported的合同；Web d01仅消费已落地字段，不修改本owner实验来伪造生产支持。
 
-共享审查输入：[TUI01A CHANGES_REQUESTED回执](tui01a-review.md)（2 P2，原owner修复）；[R05C纯投影APPROVED回执](production-projection-review.md)（仅projection.mjs/.d.mts，等共享entry后再薄import）。两者均非第二进度源，当前不跨WT导入或合入未审C1。
+共享审查输入：[TUI01A CHANGES_REQUESTED回执](tui01a-review.md)（2 P2，原owner修复）；[R05C纯投影APPROVED回执](production-projection-review.md)（仅projection.mjs/.d.mts；已审main提供共享entry）。两者均非第二进度源，当前不跨WT导入或合入未审C1。
 
-**R05C复用交接：** [final投影提升回执](final-projection-handoff.md)。固定0d0524c算法只读提升至其已领取生产目录；本实验冻结，生产模块独审后改薄入口并复验直接消费者，禁止长期双实现。
+**R05C复用交接：** [final投影提升回执](final-projection-handoff.md)。固定0d0524c算法只读提升至其已领取生产目录；生产模块已由已审main 4391bbf9f1785212d098ef6aa1c01a0320a003d3 进入本树；实验薄入口target 38516be71bf267ab546347a39da2adbe71f79e20已删除算法副本，27/27直接消费者通过，待独审。见[当前消费证据](production-import/README.md)，禁止长期双实现。
 
 共享client输入：[native profile client独立review回执](native-profile-client-review.md)，固定095bdb8仅批准薄client接口，不复制F01进度，也不证明实际access:none。
 
@@ -132,3 +132,7 @@ Mika转交status_read对固定Codex0.154.0 schema及官方current文档的只读
 固定driver7c6e3d8已按Mika许可只调用一次runSyntheticCanary；[唯一运行证据](isolation/canary-run-report.md)为SIGABRT/无有效报告，七项结果不可用，R06确认退出，listener与两个自有临时根已清理。不得把静态APPROVED或本次失败当运行隔离证明；不重试、不加profile grant、不启动真实app-server。原profile/语义算法保持冻结。
 
 02/04 identity的共享后继请求仅在[04 canonical center-store-request](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/center-store-request.md)维护；Mika提供固定HEAD `5ef354c4d4273ce7f47dafff148f65d7c4629355` clean。共享Lead可从那里读取迁移号/source授权/consumed cut及精确接线需求。这里仅提供依赖指针，不复制04 TODO/进度，也不把04阻塞改写为02整task blocker。
+
+## 有界启动诊断候选（尚未实施）
+
+WPF-MATURE-02-03允许后继最多3次自有合成子进程、总60秒含清理；须先固定最窄R06诊断seam/scope与每次假设及停止规则，Mika内部审查后才实施。旧SIGABRT运行与许可封存。当前无scope扩展、无新运行、不扫描私人诊断历史、不复制supervisor；原文只允许可信宿主私有sink，产品error/detail/UI仍固定安全。生产transport stderr仅计数且可能在stdio drain前关闭，方案必须区分完整捕获、截断和观察失败，不能假定data callback必收全部stderr。

@@ -1,4 +1,12 @@
-# WPF-MATURE-02 当前隔离设计审查
+# WPF-MATURE-02 生产投影薄入口审查
+
+状态：NOT_STARTED。Review target commit: 38516be71bf267ab546347a39da2adbe71f79e20。范围仅本task实验final.mjs/README、新生产消费证据与metadata；已审生产源未修改。固定main输入4391bbf9f1785212d098ef6aa1c01a0320a003d3经scope=[] integration receipt合入，无冲突。
+
+[新manifest](../../docs/evidence/wpf-mature-02/production-import/manifest.json)绑定6实验文件、2生产输入和5 raw/receipt文件。唯一一次27/27直接消费者通过，failed/skipped 0；两测试文件未改。只读审单一相对re-export、API保持、生产bytes与已审目标一致、raw及历史manifest边界；不重跑27/31/全库，不启动真实app-server/provider/auth。生产AssertionError安全归一仍为host责任。
+
+当前approval不能由历史实验/生产promotion批准自动推断。实际head/dirty与唯一status见[status](status.md)。
+
+# 历史隔离设计审查
 
 状态：APPROVED；仅静态设计可进入一次合成canary，未证明隔离，不批准真实app-server。
 
