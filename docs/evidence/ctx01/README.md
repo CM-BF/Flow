@@ -49,3 +49,5 @@ core/runtime三个JS与tarball内容逐字hash一致，安装脚本未执行，�
 交付diffcheck：本地文件/脚本检查通过；逐字保留的上游LICENSE自带末尾空行，完整diffcheck仅报告该原文格式警告，未为消除警告改许可原文/hash。排除此单个vendored LICENSE后的diffcheck通过。core dist文件被根忽略规则覆盖，已明确force-add这三个已核hash的固定vendor依赖，未改根ignore或lock。
 
 2026-10-06 04:46:01 UTC 实现固定`f58fdf36b073e2a98a683c8f40442dbb64ee7eec`，后续本提交仅计划/证据metadata。独立review未开始；原始measurements/source hash不改。
+
+2026-10-06 04:46:54 UTC 只追加[原生宿主/缓存限制](harness-limits.md)：实际读取两份Claude官方文档并收录Root研究输入。f58fdf36源码与raw未改变，不扩大实验验收或重复负载；Pi hook仍是后继待核候选，Claude/Codex不作透明改写承诺。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 04:46:01 UTC |
+| 最近更新时间 | 2026-10-06 04:46:54 UTC |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-kernel-probe |
 | Branch | codex/context-kernel-probe |
@@ -32,3 +32,5 @@
 权威source路径即本status，已发Lead登记；未亲自核dashboard聚合。没有原始模型调用，不消费任何封存预算。
 
 2026-10-06 04:46:01 UTC 固定实现f58fdf36b073e2a98a683c8f40442dbb64ee7eec，完整source/raw/provenance已交Lead。原始JSON不改，review NOT_STARTED，claim v1保留等待独立审查。仅本地合成core/宿主实验，不声称生产能力；无根deps/lock变更。
+
+2026-10-06 04:46:54 UTC Root已开始fixed f58fdf36只读方法review；本次仅docs限制补充，原始measurements hash不变。native cache/signatures/resume边界见[harness-limits](../../docs/evidence/ctx01/harness-limits.md)，不据core结果推断可编辑性或模型费用。
