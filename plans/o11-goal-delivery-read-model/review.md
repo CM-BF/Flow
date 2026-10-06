@@ -18,3 +18,5 @@
 | 无 P1/P2 finding | 无 | 否 | 无需源码修复 |
 
 结论：APPROVED，限 owner read/domain。稳定planRef不受B活动影响；相关input/dependency/knowledge变化仍stale且旧写拒绝；200节点4页、两刷新9,196→2,629 B限定成立。Owner接受限定结论，未改源码，原raw/manifest历史字段不改写。生产未挂载边界不能由本片批准掩盖；factory/client/Web/MCP及完整连续目标闭环不在批准范围，整 FLOW-001 未完成。
+
+2026-10-06 11:48 UTC owner接收记录：main/origin bf067e328bc1dc63cde39acf4b637cfb055e467a 含已审target，9源码逐字相同，见 [main receipt](../../docs/evidence/o11/main-receipt.json)。这是接收核验而非新的独立review；factory/client/Web/MCP仍不在本审批范围，未重测。
