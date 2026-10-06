@@ -1,0 +1,30 @@
+{
+  "purpose": "15 initial zero-target checks; draft before final-inventory and decoder/compiler-parser hardening",
+  "files": [
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/command.mjs",
+      "bytes": 3289,
+      "sha256": "ee53a32d72cee439d49474cab9ee799b82bd1e50a41abd3127cf35528c59d646"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.mjs",
+      "bytes": 3133,
+      "sha256": "018190b2cebcc17a52aa0de495729598d71f4b34c8287230ee759979c0647a05"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.mjs",
+      "bytes": 11200,
+      "sha256": "3636af5fd49e3f1e70af8e79c46c490e5c65dad71737fa1aaa13cc628fbb39f3"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.test.ts",
+      "bytes": 11627,
+      "sha256": "8d052c25e90d7872b83fc187d55c5aa54f7bc52061a61183275f744b1e5383a8"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/vitest.config.mjs",
+      "bytes": 396,
+      "sha256": "e5c5236223fc043004da69288ab1c0da6817c74e2ab59b1f34df22ec8ab971f9"
+    }
+  ]
+}

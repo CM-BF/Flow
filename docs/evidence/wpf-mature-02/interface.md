@@ -4,7 +4,9 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
-- [04权威center-store请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/center-store-request.md)：请分配唯一migration号与DDL owner，解锁真实PG验证；04 owner建议负责DDL及同Module migration函数。这里仅路由请求，进度仍见04权威status。
+- [F01 native catalog client固定APPROVED回执](native-catalog-client-review.md)：实现5ffe与metadata1fc raw绑定分开，Lead可独立接收；不是本owner冒称已main。
+
+- [04权威center-store请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/center-store-request.md)：请分配唯一后继migration号与DDL owner（026已有ATTACH01占用，不能视为空闲），解锁真实PG验证；04 owner建议负责DDL及同Module migration函数。这里仅路由请求，进度仍见04权威status。
 - 本目录生产target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22` 已独审APPROVED，client接线待共享owner。[集成输入](integration-readiness.md)。已停止写入唯一共享store.ts并完成[部分交回COMMITTED回执](catalog-store-partial-handback.json)（v4，10:39:02.809 UTC）；[停写与固定source](catalog-store-stopped.json)。ENG01B/Lead可take该单一路径，其他四个目录路径仍由本owner保留，P3测试delta a761941f已于10:39:53 UTC独审APPROVED。
 
 目录已通过main固定 `21e0a56c4b2b65a04a1e8d510a9d132e77c3894b` 接收：本owner只读逐blob核4源=c9、测试=a761，见[main接收核验](native-catalog/main-accepted.json)；复用33+1证据，未重测，不代表个人服务已部署，也未包含R06 stderr/诊断。
@@ -193,3 +195,5 @@ R05D接入依赖：已只读核[main41315b四源接收](r05d-dependency.json)等
 
 
 P3 test-only delta `a761941fce5b2b6dd12d8c974c6d2c7e51894628` 已由status_read/gpt-6-astra于2026-10-06 10:39:53 UTC独审APPROVED，原问题关闭；只有1项定向检查与strict0，原c9生产33证据不变。共享store.ts已通过页首v4 receipt交回，其他四目录路径/R06/本task证据保留；不恢复store写入。S01P03当前main接收/释放只查[权威status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop/plans/s01-graceful-stop/status.md)及其receipt，不在02复制进度。
+
+C静态source72203208已由architecture_read/gpt-6-astra于2026-10-06 10:48:20 UTC独审APPROVED，仅C/profile/schema，无P1/P2；不包括执行设计/driver或运行。后继编译将按已读官方/本地clang文档评估单次-save-temps=obj保留所有own产物，固定v2设计与薄host组合另审，当前0compile/0target。
