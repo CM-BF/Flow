@@ -1,5 +1,5 @@
 {
-  "implementationTarget": "f333eddfb5bec76453e78a08fe76d182998a15d9",
+  "implementationTarget": "997d731a98c837ccfce61712d2c7318ae13fb3d2",
   "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
   "method": "Fixed git object bytes equal current source; no import or execution",
   "files": [
@@ -10,8 +10,8 @@
     },
     {
       "path": "apps/web/test/web-current-preview.browser.ts",
-      "bytes": 32557,
-      "sha256": "349a229352f3a44881629081fa1b332571b63f35e5fa8b144da2702ac5339cf4"
+      "bytes": 33559,
+      "sha256": "a73b63890e610684f0f44e2f75eb3767ec462c2116264d1473a2d1566db2a650"
     }
   ],
   "checks": {
@@ -21,5 +21,6 @@
     "PG": "NOT_RUN",
     "Chrome": "NOT_RUN",
     "compatibility": "NOT_RUN"
-  }
+  },
+  "executionMode": "A-only first; B NOT_RUN unless independently admitted and A passed"
 }

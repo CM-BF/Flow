@@ -9,13 +9,13 @@
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / f333eddfb5bec76453e78a08fe76d182998a15d9 |
-| 工作树dirty状态 | 本次安全点：原f333基础新增A-only门禁与文档，提交后实际clean另核 |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 997d731a98c837ccfce61712d2c7318ae13fb3d2 |
+| 工作树dirty状态 | A-only实现已固定997d；本次仅metadata待提交，提交后实际clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | NOT_RUN；仅实际领取/固定输入核验 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片尚未送固定实现独审 |
-| 实现目标 | f333eddfb5bec76453e78a08fe76d182998a15d9 |
+| 实现目标 | 997d731a98c837ccfce61712d2c7318ae13fb3d2 |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
