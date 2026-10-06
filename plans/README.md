@@ -26,7 +26,7 @@
 - 用户期望总并发上限10（含Goal Owner和Execution Lead），所有ready独立任务尽量并行；当前运行时第5worker实测被拒绝，实际cap4，暂有两个执行workers。实际并行度取用户上限、运行时cap和ready任务数的最小值。用户已授权正式开工，F00 骨架、契约和调度短验证完成；后续从同一已提交契约基线在独立 worktrees 派发功能任务。
 - F00 已建立工程 workspace、公共契约与薄 client，完成 PostgreSQL/pg-boss 短验证；中心、runner、CLI/Web均已接收，真实整浏览器退出的系统旅程与93/93检查通过；独立review和main集成已完成。
 
-用户已授权持续完成完整 FLOW-001/002，M1已完成只是基础。[完整验收矩阵](flow-001-architecture/full-plan-matrix.md)逐项保留要求、证据和缺口；C02/P01/M02已实际启动，完成后验收/集成并领取下一ready项。不得停在单批次或降低验收。
+用户已授权长期持续推进 Flow，完整 FLOW-001/002 是必须满足的基线，M1已完成只是基础，原计划完成后仍依据收益与证据迭代。[完整验收矩阵](flow-001-architecture/full-plan-matrix.md)逐项保留要求、证据和缺口；C02/P01/M02已实际启动，完成后验收/集成并领取下一ready项。不得停在单批次或降低验收。
 
 逐 stack 的技能发现与 clean-code 固定来源、应用记录见 [技能与质量基线](../docs/quality/skills.md)。
 
@@ -36,9 +36,9 @@
 
 | 编号 | 计划 | 状态 | 独立状态 / review |
 | --- | --- | --- | --- |
-| C01 | [中心](c01-control-plane/plan.md) | `completed`（M1已验收；owner metadata同步中） | [status](c01-control-plane/status.md) / [review](c01-control-plane/review.md) |
-| R01 | [Runner](r01-runner/plan.md) | `completed`（M1已验收；owner metadata同步中） | [status](r01-runner/status.md) / [review](r01-runner/review.md) |
-| L01 | [CLI](l01-cli/plan.md) | `completed`（M1已验收；owner metadata同步中） | [status](l01-cli/status.md) / [review](l01-cli/review.md) |
+| C01 | [中心](c01-control-plane/plan.md) | `completed`（M1已验收） | [status](c01-control-plane/status.md) / [review](c01-control-plane/review.md) |
+| R01 | [Runner](r01-runner/plan.md) | `completed`（M1已验收） | [status](r01-runner/status.md) / [review](r01-runner/review.md) |
+| L01 | [CLI](l01-cli/plan.md) | `completed`（M1已验收） | [status](l01-cli/status.md) / [review](l01-cli/review.md) |
 | W01 | [Web与双主题](w01-web/plan.md) | `completed` | [status](w01-web/status.md) / [review](w01-web/review.md) |
 | D01 | [工程执行 dashboard](d01-execution-dashboard/plan.md) | `completed` | [status](d01-execution-dashboard/status.md) / [review](d01-execution-dashboard/review.md) |
 | I01 | [M1集成验收](i01-integration/plan.md) | `completed` | [status](i01-integration/status.md) / [review](i01-integration/review.md) |
@@ -65,13 +65,15 @@ M1最终独立APPROVED target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真�
 
 [工程/管理质量台账](../docs/quality/architecture-health-2026-10-06.md)记录后续P2。M1是持久执行基础；M2优先统一跨任务解释/决策入口，不把目前task页当最终心流体验。
 
-## 当前完整目标批次（2026-10-06 02:05 UTC）
+## 当前完整目标批次（2026-10-06 02:32 UTC）
 
 | 任务 | 实际状态 | 唯一owner工作树/状态 |
 | --- | --- | --- |
-| C02 核对恢复 | in-progress | `Flow-worktrees/m2-reconciliation/plans/c02-reconciliation/status.md`；runner_owner |
-| P01 协议接入 | in-progress | `Flow-worktrees/protocol-adapters/plans/p01-protocols/status.md`；assignment_review |
+| C02 核对恢复 | completed；独立审查后已集成 | `Flow-worktrees/m2-reconciliation/plans/c02-reconciliation/status.md`；runner_owner |
+| P01 协议接入 | SDK首段已审；durable出站后继open | `Flow-worktrees/protocol-adapters/plans/p01-protocols/status.md`；assignment_review |
 | M02 统一工作入口/公共契约 | in-progress | `Flow-worktrees/m2-workspace/plans/m02-unified-workspace/status.md`；Execution Lead |
-| D03 高层进度与metadata语义 | 下一ready短项，尚未派发 | 见[质量台账](../docs/quality/architecture-health-2026-10-06.md)与完整矩阵；不把准备写成已运行 |
+| D03 高层进度与metadata语义 | 实际实现/独立review修复中 | `Flow-worktrees/dashboard-human-view/plans/d03-dashboard-human/status.md`；runner_owner |
 
 上表新feature正文在其权威worktree，集成后补本仓库相对链接；不复制未合入副本制造第二状态源。
+
+[Web平台管理 WPF-001](web-platform/plan.md) 已接收至3493088文档快照，权威外部owner后续变化按实际commit接收；其子项不与主线P01/D03重复派发。M02后端与CLI已进入main8c57f2f；真实统一Web入口由外部WPF-M02独占实现。I02集成状态见[plan](i02-integration/plan.md)/[status](i02-integration/status.md)/[review](i02-integration/review.md)。

@@ -2,15 +2,15 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 01:29 UTC / 2026-10-06 01:26 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 02:14 UTC / 2026-10-06 02:14 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-control-plane` |
 | Branch | `codex/m1-control-plane` |
 | 工作基线 / 本记录核验时HEAD | F00 `542f70b`；已同步公共client与计划 edca9fc / 实现HEAD `fdd0cc296819efc38ba8113bb87624b747bfb646`；交付HEAD `848116863f1c6532f5d774518bb253b0e0abdbc6`；本记录随后仅metadata提交不改变实现 |
 | 工作树dirty状态 | 核验时clean；本次仅status review事实同步待提交，文档提交后应为clean |
-| 工作分支状态 | C01四项TODO完成；Execution Lead固定target独立审查无blocking，已进入I01集成分支；应用代码检查绑定实现HEAD |
-| 已集成main状态 / HEAD | `0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成 |
+| 工作分支状态 | C01四项TODO完成；Execution Lead固定target独立审查无blocking，M1已验收且实现进入main；应用代码检查绑定实现HEAD |
+| 已集成main状态 / HEAD | 已集成；观察main `e845eb069c594989117fadf380335650efef27a2` 包含C01实现 `fdd0cc296819efc38ba8113bb87624b747bfb646`（祖先核验通过）。这是集成观察点，不要求后续每个无关metadata HEAD重审 |
 | Review | SCOPED_REVIEW_COMPLETE，target `848116863f1c6532f5d774518bb253b0e0abdbc6`；权威审查记录由Execution Lead维护在m1-integration的`plans/c01-control-plane/review.md`，本worktree的review模板仍为旧副本，不据此推翻已确认审查事实 |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -34,9 +34,9 @@
 - 2026-10-06 01:29 UTC只读核对Execution Lead的独立审查记录（review时间01:12，target8481168），覆盖事务/lease/连续事件/verifier/usage/HTTP。Execution Lead另报告I01集成全检54/54通过，绑定I01 target `5bdb7fa293ebd0d13515fe367f004687927f1897`；不能将其外推为全部故障或main能力。
 
 - 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。
-- 应用端到端、真实harness、双主题及故障验收仍待相应feature证据，短probe不能代替。
+- M1端到端与真实harness有限范围证据已由I01验收，C01旧工作树不复制其状态；更广故障/容量承诺仍待后续验收。
 - C01刻意保留uncertain attempt占用的容量与session，等待人工核对，不自动释放后重跑；当前没有核对UI。未测数据库硬故障、真实Claude恢复、跨机器或100+并发。SSE慢客户端会被断开，需从已交付cursor重连。
 
 ## 下一步与handoff
 
-Execution Lead已完成独立审查与I01分支集成检查；等待其明确main合并流程，不由本owner合并。此次仅同步status事实，无实现修改或额外测试。此status为C01唯一手填事实源，等待dashboard按m1-control-plane聚合；尚未核验其展示。
+Execution Lead已完成独立审查、I01验收及main集成；本owner在02:14核验实现祖先关系，只更新plan/status事实，无实现修改或额外测试。本feature已completed；旧分支不自行merge/push约束保留，不能把此workflow限制写成main阻塞。此status仍为C01唯一事实源，由dashboard按m1-control-plane聚合。

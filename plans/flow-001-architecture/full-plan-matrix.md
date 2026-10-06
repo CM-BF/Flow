@@ -1,12 +1,12 @@
 # 完整计划验收矩阵与滚动批次
 
-核验时间：2026-10-06 02:05 UTC。基线 main/origin/main `e845eb069c594989117fadf380335650efef27a2`。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，不另建一份替代计划；唯一汇总状态仍在 [status](status.md)。完成定义保持原文，下面未完成项没有因 M1 通过而删减。
+核验时间：2026-10-06 02:32 UTC。基线 main/origin/main `8c57f2f97345167207fa0d2590e9ad6310c922d4`。本矩阵是 [FLOW-001](plan.md) 的要求追溯附件，不另建一份替代计划；唯一汇总状态仍在 [status](status.md)。完成定义保持原文，下面未完成项没有因 M1 通过而删减。
 
 | ID / 原始要求 | 任务/依赖 | 验收与所需证据 | 当前事实与缺口 |
 | --- | --- | --- | --- |
-| REQ-01 FLOW001§1/6/12 连续多任务工作流 | M02 | 同一连续入口至少10任务，跨任务可读解释/不同待决策/原地证据，无需逐task切换；新消息不打断阅读；记录切换、重复问题、人工时间 | 现M1仅task下钻；M02已开工，未完成 |
+| REQ-01 FLOW001§1/6/12 连续多任务工作流 | M02 | 同一连续入口至少10任务，跨任务可读解释/不同待决策/原地证据，无需逐task切换；新消息不打断阅读；记录切换、重复问题、人工时间 | M02后端/CLI已集成，真实Web连续入口由外部WPF-M02实现中，产品10任务旅程未完成 |
 | REQ-02 §7/8 Project/Workspace、动态计划 | G01，接M02/C02 | 项目授权边界，版本化新增/拆分/依赖更改，禁止循环，取消传播与失效决策/旧结果拒绝；故障后保留因果记录 | personal固定workspace、无依赖/版本；未完成 |
-| REQ-03 §7/12 未知副作用和恢复 | C02正在执行 | 失联保留占用；实际结果核对、人工停止确认/副作用证据、不可变审计、显式新task retry；旧attempt不能复活；PG重启后审计仍在 | M1只有uncertain保护，无恢复入口；C02公共契约0046db3/中心实现中 |
+| REQ-03 §7/12 未知副作用和恢复 | C02已集成 | 失联保留占用；实际结果核对、人工停止确认/副作用证据、不可变审计、显式新task retry；旧attempt不能复活；PG重启后审计仍在 | C02已独立审查并集成：停止/副作用审计、安全重跑依据、新task provenance、旧fence拒绝；operator断言不等于外部客观停止 |
 | REQ-04 §5.3/12 A2A双向互操作 | P01正在执行 | 固定实际SDK/规范/对端，发现/auth/直接响应/长任务/补充输入/产物/取消；至少一侧官方SDK；重复、ACK丢失、重连/降级/大inline | 未完成；出站client不等于持久external binding，后续接runner/中心 |
 | REQ-05 §5.3/12 MCP client | P01 | 固定规范、角色/transport/capability；tools/resources/prompts/elicitation权限进入业务决策；draft Tasks显式实验；runner持会话，Web关闭后继续 | 未完成；ACP依选定harness、AGUI/MCP server依真实需要，不要求所有候选 |
 | REQ-06 §4/12 FLOW002-T05/T07 公平harness关键场景 | E01，接C02/插件接口 | 同底层模型/SDK版本比较原生与wrapper；Claude wrapper刷新400原因与合法来源；实际工程受控写改→测试→固定产物验证；恢复/取消/权限/资源差异记录 | Claude read-only M1与Pi小冒烟不能代替；R02 5/5预算耗尽，新模型实验须独立小预算，0模型准备可继续 |
@@ -24,8 +24,7 @@
 | REQ-18 §8/12 超100持久会话 | S01，依赖G01/预算/恢复 | 128持久session，分别调节model/tool/DB并发；成功率/资源/连接/写量/延迟/故障；真模型负载独立预算 | 128observer/合成DOM不是agents容量；未完成 |
 | REQ-19 §12/13 自托管部署和故障 | S01 | 一中心本机/远端runner部署文档、持久存储/权限/重启恢复/故障演练；浏览器/中心/runner断连承诺分开 | M1浏览器退出、queued中心重启已有证据；active/跨机恢复未完整 |
 | REQ-20 §11 验证和证据链 | M02/G01/X01/S01 | 要求→产物版本→独立验证→合并版本可追溯；知识结论来源范围；不同任务可选verifier | M1 flow.text非空/contains已有；工程/知识/扩展验证未完整 |
-| REQ-21 工程协作dashboard用户要求 | D03下一短项 | 结构化human摘要；首屏当前阶段/2–3项工作/下一交付/真正决策，历史折叠；细节可追溯；review实现target与metadata、main祖先关系分离 | D01/D02已展示14源；02:00用户实际页面仍工程段落+4个“无”决策，Goal Owner只读UX问题记录，非新approval |
-
+| REQ-21 工程协作dashboard用户要求 | D03实现/review中 | 结构化human摘要；首屏当前阶段/2–3项工作/下一交付/真正决策，历史折叠；细节可追溯；review实现target与metadata、main祖先关系分离 | D01/D02已展示14源；02:00用户实际页面仍工程段落+4个“无”决策，Goal Owner只读UX问题记录，非新approval |
 | REQ-22 §1/5/7/11 自然语言目标到交付 | O01，接G01/M02/E01 | 目标→后台生成/修订版本化子任务与依赖→不同agents产出→独立验证循环→统一解释/用户决策→固定产物交付；复用harness，计划变更仅受限中心commands | 尚未完成；手动创建10个任务并聚合阅读只验证M02，不能替代最终编排 |
 
 ## 后续研究/实验输入（未实测）
@@ -36,6 +35,18 @@
 
 ## 当前滚动调度
 
-实际cap4：Goal Owner + Execution Lead + C02 runner_owner + P01 assignment_review；用户期望10，不重复探测/绕过。Lead公共契约/锁与M02。两worker交付即独立审查/修复/集成，释放位优先D03短项与G01动态计划；后续X01/K01/B01、R03/S01按已稳定接口并行。E01可先0模型认证/SDK/上游提取调查；需要新增真实模型时明确独立预算，不用R02额度重新试。
+实际cap4：Goal Owner + Execution Lead + D03 runner_owner + P01 assignment_review；用户期望10，不重复探测/绕过。Lead公共契约/锁与M02。两worker交付即独立审查/修复/集成，D03交付后runner_owner接G01动态计划；P01 owner审查D03后接durable出站纵向闭环；后续X01/K01/B01、R03/S01按已稳定接口并行。E01可先0模型认证/SDK/上游提取调查；需要新增真实模型时明确独立预算，不用R02额度重新试。
 
 **持续执行**：完成→核查实际证据/验收→集成→下一ready项。阻塞→记录原因/owner/解除条件/绕行与其他独立工作。暂时无ready实现→有界研究或低成本实验，用证据改计划，不增加无意义复杂度，不降低原验收。所有feature仍各自独立worktree/status/review；此矩阵不替代owner状态。
+
+## 后续证据输入补充（研究建议/源码风险，未实测）
+
+- G01：项目revision提交边界内验证无环；真实双事务 A→B/B→A 不能分别验证后合成环。项目范围CAS/锁或可串行化重试由owner选择，不能加全局图锁。先小合同/CLI片段解除O01，不把十个手工任务当自然语言编排。
+- E01：Paseo固定7a30305的jsonl-rpc-process/decoder是候选，先测UTF8跨chunk、超长无newline、退出pending和bounded/redacted stderr；T3固定cfa4f76的ClaudeHome与continuation可小型复用，不引整套Effect。保留路径/许可/改动，当前只是源码风险。
+- Context：[Claude缓存与tools](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching)中每轮换tools与deferred discovery不同；先0模型登记各adapter工具发现/原文引用/cacheusage能力，对比稳定小工具面与动态工具集的请求，再按批准小预算测总验收成本。大结果先程序筛选和版本化原文引用，复用harness，不为[Code Execution方向](https://www.anthropic.com/engineering/code-execution-with-mcp)另造通用执行器。
+- X01：候选billion-context的[SESSION-IDENTITY](https://raw.githubusercontent.com/ranxianglei/billion-context/master/SESSION-IDENTITY.md)与PLUGIN.md提示匿名历史匹配曾误合并。项目身份仍待确认，实验前固定SHA；测试授权Flow会话ID、resume/fork lineage、同prompt隔离、附属store迁移、compact后原文可用性；同ID不证明跨机恢复。admin保持runner loopback，未知major fail closed。
+- K01：先0模型中文连续句/两字词、camelCase/下划线、路径版本数字、同名跨项目/旧版本的带source+locator词法小集。记录PG16 locale/实际tokens，对比simple FTS/exact/pg_trgm；[PG parser](https://www.postgresql.org/docs/16/textsearch-parsers.html)、[pg_trgm](https://www.postgresql.org/docs/16/pgtrgm.html)不保证两字中文又快又准，缺trigram可能全扫。PGroonga仅候选，真实语义质量不以手造向量代替。
+- R03/S01：Lead接收WPF BR-01-A/B/C/D执行位置、受限版本化只读文件、真实process日志、独立PTY。各片段独立交付，M02投影不承诺filesystem。lease使用跨机墙钟相减存在偏差风险，设计剩余租期/请求起点单调基准，0模型测±5分钟、延迟/过期响应，中心fence权威。当前answer20ms唤醒与replayPending全历史目录扫描仅源码风险；内部控制唤醒/待发送索引先量化，不引broker/新DB。
+- B01：workspace GET投影anti-join全历史先测长历史p95/扫描量再优化；已验证晚提交与201task受理因果顺序不等于性能通过。
+
+原计划完成后仍按性能、美观、有用功能的明确收益滚动，不为持续目标扩展无根据复杂度。R02 5/5真实模型预算封存；后续E01另交场景、调用数、总预算给Goal Owner审定。
