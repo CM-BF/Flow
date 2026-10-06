@@ -5,8 +5,8 @@
 目标：Web/TUI通过client窄decoder校验两类ACK；未知响应保留原key/body供显式恢复。TUI遇另一客户端已推进revision导致409，保留draft、不自动重新提交，恢复只读刷新和轮询；一端退出不取消中心任务。
 
 - [x] TUI01B-01 现代码/共享设计核对，独立领取与小Interface。
-- [ ] TUI01B-02 共享decoder与两POST真实HTTP，冻结输入/未知ACK/上界/上下文。
-- [ ] TUI01B-03 TUI复用与过期CAS观察恢复；双公开client有界实际HTTP。
+- [x] TUI01B-02 共享decoder与两POST真实HTTP，冻结输入/未知ACK/上界/上下文。
+- [x] TUI01B-03 TUI复用与过期CAS观察恢复；双公开client有界实际HTTP。
 - [ ] TUI01B-04 定向检查、固定证据、独立review/main。
 - [ ] TUI01B-05 Web真实消费者由外部owner按固定Interface接入，成套验收父任务09。
 

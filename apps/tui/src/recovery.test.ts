@@ -83,3 +83,82 @@ test('independent terminal cleanup closes the journal even when settle and unmou
     unmount: () => { unmounted = true; throw new Error('Synthetic unmount failure'); }, closeJournal: journal.close })).rejects.toThrow();
   expect(unmounted).toBe(true); const reopened = await openIntentStore(directory, connectionId); await reopened.close();
 });
+
+
+test('two public HTTP clients alternate turns, preserve a stale draft, recover the original ACK and observe work after one disconnects', async () => {
+  // A bounded HTTP contract fixture; no real runner/PG/provider and no claim of native execution.
+  const creation = accepted(); let conversation = structuredClone(creation.conversation);
+  const turns: ConversationTurnAccepted['turn'][] = [];
+  const receipts = new Map<string, { body: string; value: ConversationTurnAccepted }>();
+  const posts: { path: string; key?: string; body: string }[] = [];
+  let hideNextAck = false; let failReads = false; let reads = 0; let rightSubmitted = false;
+  const server = createServer(async (request, response) => {
+    const pieces: Buffer[] = []; for await (const piece of request) pieces.push(piece as Buffer);
+    const body = Buffer.concat(pieces).toString(); const key = request.headers['idempotency-key'] as string | undefined;
+    let value: unknown; let status = 200;
+    if (request.method === 'POST') {
+      posts.push({ path: request.url!, key, body }); const input = JSON.parse(body);
+      if (request.headers.authorization === 'Bearer synthetic-right') rightSubmitted = true;
+      const old = key ? receipts.get(key) : undefined;
+      if (old) {
+        if (old.body !== body) { status = 409; value = { error: { code: 'idempotency_conflict', message: 'different original body' } }; }
+        else value = { ...old.value, replayed: true };
+      } else if (!request.url?.endsWith('/turns') || input.expectedRevision !== conversation.revision) {
+        status = 409; value = { error: { code: 'conversation_revision_conflict', message: 'another client advanced the conversation' } };
+      } else {
+        const taskId = randomUUID(); conversation = { ...conversation, revision: conversation.revision + 1 };
+        const turn: ConversationTurnAccepted['turn'] = { id: randomUUID(), conversationId: conversation.id, number: conversation.revision, createdAt: conversation.createdAt,
+          user: { role: 'user', text: input.text }, task: { id: taskId, title: conversation.title, harness: 'claude', status: 'running', verificationStatus: 'pending', createdAt: conversation.createdAt, updatedAt: conversation.updatedAt },
+          assistant: { state: 'pending', reason: 'execution-pending' }, effective: { model: null, tools: null, thinking: 'unknown', source: null }, telemetry: { kind: 'execution', taskId, title: 'Fixture execution' } };
+        turns.push(turn); const receipt: ConversationTurnAccepted = { conversation: structuredClone(conversation), turn: structuredClone(turn), replayed: false };
+        receipts.set(key!, { body, value: receipt }); value = hideNextAck ? {} : receipt; hideNextAck = false;
+      }
+    } else {
+      reads++;
+      if (failReads) { status = 503; value = { error: { code: 'synthetic_read_failure', message: 'read unavailable' } }; }
+      else {
+        // Freeze only the right client's initial read view until it attempts its stale CAS.
+        // This avoids timing the conflict against the 100ms observer under shared-host load.
+        const initialRight = request.headers.authorization === 'Bearer synthetic-right' && !rightSubmitted;
+        const visibleConversation = initialRight ? creation.conversation : conversation; const visibleTurns = initialRight ? [] : turns;
+        value = request.url?.includes('/turns') ? { conversation: visibleConversation, turns: visibleTurns, nextCursor: null }
+          : { conversation: visibleConversation, capabilities: creation.capabilities, nativeSession: null, lastTurn: visibleTurns.at(-1) ?? null };
+      }
+    }
+    response.writeHead(status, { 'content-type': 'application/json' }); response.end(JSON.stringify(value));
+  });
+  await new Promise<void>(done => server.listen(0, '127.0.0.1', done));
+  closers.push(() => new Promise<void>(done => { server.closeAllConnections(); server.close(() => done()); }));
+  const address = server.address(); if (!address || typeof address === 'string') throw Error('Fixture address missing');
+  const options = { baseUrl: `http://127.0.0.1:${address.port}`, token: 'synthetic-owner' };
+  const leftClient = new FlowClient(options); const rightClient = new FlowClient({ ...options, token: 'synthetic-right' });
+  const state = () => { let pending: Intent | null = null; return { load: async () => pending, save: async (value: Intent) => { pending = structuredClone(value); }, clear: async () => { pending = null; }, current: () => pending }; };
+  const leftStore = state(); const rightStore = state();
+  const left = createInteractionController({ client: leftClient, connectionId: 'left', intents: leftStore, pollMs: 60_000 });
+  const right = createInteractionController({ client: rightClient, connectionId: 'right', intents: rightStore, pollMs: 100 });
+  closers.push(() => left.dispose(), () => right.dispose());
+  await left.initialize(); await right.initialize(); await left.execute({ type: 'open', id: conversation.id }); await right.execute({ type: 'open', id: conversation.id });
+  const waitFor = async (ready: () => boolean) => { for (let attempt = 0; attempt < 100 && !ready(); attempt++) await new Promise(done => setTimeout(done, 10)); expect(ready()).toBe(true); };
+  left.setDraft('First by left'); expect((await left.execute({ type: 'send', text: 'First by left' })).code).toBe('ACCEPTED');
+  right.setDraft('  Preserved right draft 中文🙂\n'); const originalDraft = right.snapshot().draft;
+  expect((await right.execute({ type: 'send', text: originalDraft })).code).toBe('HTTP_409');
+  expect(right.snapshot().draft).toBe(originalDraft); expect(right.snapshot().selected?.revision).toBe(1); expect(rightStore.current()).toBeNull();
+  const before = reads; await waitFor(() => reads > before); expect(posts).toHaveLength(2);
+  turns[0]!.task.status = 'succeeded'; hideNextAck = true;
+  expect((await right.execute({ type: 'send', text: originalDraft })).code).toBe('UNKNOWN');
+  expect(rightStore.current()).not.toBeNull(); const originalPost = posts[2]!;
+  expect((await left.execute({ type: 'quit' })).code).toBe('QUIT');
+  expect(turns[1]!.task.status).toBe('running'); expect(posts).toHaveLength(3);
+  await waitFor(() => right.snapshot().turns.at(-1)?.status === 'running');
+  turns[1]!.task.status = 'succeeded'; await waitFor(() => right.snapshot().turns.at(-1)?.status === 'succeeded');
+  // The separate public client advances once more while the terminal still holds turn 2's unknown ACK.
+  await leftClient.submitConversationTurn(conversation.id, { expectedRevision: 2, text: 'Third explicit turn', mode: 'follow-up' }, randomUUID());
+  await waitFor(() => right.snapshot().selected?.revision === 3);
+  expect((await right.execute({ type: 'recover' })).code).toBe('ACCEPTED');
+  expect(posts[4]).toEqual(originalPost); expect(posts).toHaveLength(5); expect(rightStore.current()).toBeNull();
+  expect(right.snapshot().turns[1]?.status).toBe('succeeded'); expect(right.snapshot().selected?.revision).toBe(3);
+  turns[2]!.task.status = 'succeeded'; await waitFor(() => right.snapshot().turns.at(-1)?.status === 'succeeded');
+  expect((await leftClient.conversation(conversation.id)).lastTurn?.task.status).toBe('succeeded');
+  expect(posts.every(post => post.path.endsWith('/turns'))).toBe(true);
+  failReads = true; expect((await right.execute({ type: 'recover' })).ok).toBe(false); expect(right.snapshot().connected).toBe(false);
+});
