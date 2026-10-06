@@ -148,3 +148,8 @@ D06新轮：固定base`eb14991a170b72d7d974428b2e440e1faada2c1e`、impl`5ec6ce20
 06:01 后继批准已收并核最终metadata：K02 root05:58:18Z独立102通过、approved763/finalbec72daec26e6bfc3d944ec3af01fb0bb4ee7796；renderer root05:58:49Z独立14+局部CUA通过、approved747/final7ff614f6aa210aae5a08119f1f16f2ef08b2298a。管理实核clean/actualparser approved目标/metadata-only/源码零差，见[K02](k02c01-approved-metadata-audit.json)与[renderer](renderer01-approved-metadata-audit.json)。两feature stageintegration/main未接，K02 source部署尚待；不重复产品检查，root统一OPS交接。
 
 06:07 GO/Lead来源真实验收更新：真实queue窗口06:02完成，2/2 query结果封存，GO独立核原始结果/双图/固定manifest确认running入队、明确Continue、浏览器退出仍运行、精确第二回复通过。本队0模型/重测；原模型窗口冻结已解除，Lead组合后回准确base，当前不再以模型窗口解释等待。源码base/常驻服务版本不能由此推定自动一致。
+
+
+06:22 ACTIVITY模块正式可交付：实现61b9349af390c137cc4cfeabd38bad058ec69cb5 / finalb024cfc2c3cd150e0f6db02df5dfe3f64159b1f8 clean / base3d4985。root06:17:33Z独立22+CUA限定APPROVED；作者dev7/prod7/typecheck/build仅复核，0App/真实center/DB/model。管理增量七metadata、7md29links、八scope无越界、实际parser/checks/review绑定61b与本地proof unchanged，见[审计](activity01-approved-metadata-audit.json)。73源06:14样本仍保留当时UNKNOWN过渡事实，不复采。预览53851/session46011保留，claim51f v1产品停写待main。
+
+Renderer App后继提案按真实native hidden修正为九scope，新增App.tsx窄visible传递；[06:20ledger](renderer-i01-visibility-scope-preflight.json)仅CHAT session.ts相交，未amend/take/建树。正式派工只等Lead已含747的精确main输入及原子领取，不重复等待模型窗口。

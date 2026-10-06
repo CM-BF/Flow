@@ -1,0 +1,181 @@
+{
+  "observedAt": "2026-10-06T06:20:45.520Z",
+  "kind": "local final metadata delta audit; no new dashboard fetch or product tests",
+  "head": "b024cfc2c3cd150e0f6db02df5dfe3f64159b1f8",
+  "dirty": "",
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "可按需查看执行活动与详情，长记录按页显示",
+      "next": "集成已审活动模块，再接入聊天界面",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+      "scopes": [
+        "apps/web/src/conversation-activity/projection.ts",
+        "apps/web/src/conversation-activity/ConversationActivity.tsx",
+        "apps/web/src/conversation-activity/activity.css",
+        "apps/web/test/conversation-activity.test.ts",
+        "apps/web/test/conversation-activity.fixture.ts",
+        "apps/web/test/conversation-activity.browser.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-ACTIVITY01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/web-conversation-activity",
+    "branchState": "COMPLETED",
+    "updatedAt": "2026-10-06T06:18:00.000Z",
+    "updatedRecord": "2026-10-06 06:18 UTC / 固定3d4985fca060155435b159e0467815bf8e88b8b8",
+    "todos": [
+      {
+        "id": "WPF-ACTIVITY01-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[接口](../../docs/evidence/wpf-activity01/interface.md)、[技能](../../docs/evidence/wpf-activity01/quality.md)"
+      },
+      {
+        "id": "WPF-ACTIVITY01-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "reader与身份/代际/reset/详情按需22直接检查"
+      },
+      {
+        "id": "WPF-ACTIVITY01-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "dev7/prod7、双主题390/键盘、只读HTTPfixture；不是App接线"
+      },
+      {
+        "id": "WPF-ACTIVITY01-04",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "root06:17:33独立APPROVED；06:14唯一合采已确认过渡来源，当前字段由本地parser核；交Lead，main未集成"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "3d4985fca060155435b159e0467815bf8e88b8b8 / 实际HEAD由Git聚合",
+    "declaredDirty": "六个新源/专测已固定；当前仅本任务metadata收口",
+    "checks": {
+      "state": "passed",
+      "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+      "record": "PASSED 61b9349af390c137cc4cfeabd38bad058ec69cb5；22 direct、typecheck、dev7/prod7与独立fixture build；[验证](../../docs/evidence/wpf-activity01/validation.md)"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED 61b9349af390c137cc4cfeabd38bad058ec69cb5",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5"
+  },
+  "proof": {
+    "target": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+    "head": "b024cfc2c3cd150e0f6db02df5dfe3f64159b1f8",
+    "scopes": [
+      "apps/web/src/conversation-activity/projection.ts",
+      "apps/web/src/conversation-activity/ConversationActivity.tsx",
+      "apps/web/src/conversation-activity/activity.css",
+      "apps/web/test/conversation-activity.test.ts",
+      "apps/web/test/conversation-activity.fixture.ts",
+      "apps/web/test/conversation-activity.browser.ts"
+    ],
+    "observedAt": "2026-10-06T06:20:45.390Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-activity01/README.md",
+      "docs/evidence/wpf-activity01/browser-results.json",
+      "docs/evidence/wpf-activity01/browser.log",
+      "docs/evidence/wpf-activity01/dashboard-excerpt.json",
+      "docs/evidence/wpf-activity01/desktop-light.png",
+      "docs/evidence/wpf-activity01/direct.log",
+      "docs/evidence/wpf-activity01/first-direct.log",
+      "docs/evidence/wpf-activity01/narrow-dark.png",
+      "docs/evidence/wpf-activity01/narrow-light.png",
+      "docs/evidence/wpf-activity01/production-browser-results.json",
+      "docs/evidence/wpf-activity01/production-browser.log",
+      "docs/evidence/wpf-activity01/production-desktop-light.png",
+      "docs/evidence/wpf-activity01/production-narrow-dark.png",
+      "docs/evidence/wpf-activity01/production-narrow-light.png",
+      "docs/evidence/wpf-activity01/quality.md",
+      "docs/evidence/wpf-activity01/red-direct.log",
+      "docs/evidence/wpf-activity01/source-binding.json",
+      "docs/evidence/wpf-activity01/status-parser.json",
+      "docs/evidence/wpf-activity01/typecheck.log",
+      "docs/evidence/wpf-activity01/validation.md",
+      "plans/wpf-activity01/plan.md",
+      "plans/wpf-activity01/review.md",
+      "plans/wpf-activity01/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "claimObservedAt": "2026-10-06T06:20:17.407Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/conversation-activity/ConversationActivity.tsx",
+      "apps/web/src/conversation-activity/activity.css",
+      "apps/web/src/conversation-activity/projection.ts",
+      "apps/web/test/conversation-activity.browser.ts",
+      "apps/web/test/conversation-activity.fixture.ts",
+      "apps/web/test/conversation-activity.test.ts",
+      "docs/evidence/wpf-activity01",
+      "plans/wpf-activity01"
+    ],
+    "state": "active",
+    "branch": "codex/web-conversation-activity",
+    "origin": "new",
+    "taskId": "WPF-ACTIVITY01",
+    "worker": "workspace_panels_owner",
+    "claimId": "51f962ee-7e6f-4806-a9f9-df3838dc27f5",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity",
+    "createdAt": "2026-10-06T06:04:36.078Z",
+    "updatedAt": "2026-10-06T06:04:36.078Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "changedPathCount": 31,
+  "outsideClaim": [],
+  "metadataDelta": [
+    "docs/evidence/wpf-activity01/README.md",
+    "docs/evidence/wpf-activity01/quality.md",
+    "docs/evidence/wpf-activity01/status-parser.json",
+    "docs/evidence/wpf-activity01/validation.md",
+    "plans/wpf-activity01/plan.md",
+    "plans/wpf-activity01/review.md",
+    "plans/wpf-activity01/status.md"
+  ],
+  "protectedDiff": "",
+  "maintainedMdCount": 7,
+  "localLinkCount": 29,
+  "brokenLinks": [],
+  "rootReviewAt": "2026-10-06T06:17:33Z",
+  "sourceObservation": {
+    "generatedAt": "2026-10-06T06:14:43.956Z",
+    "sha256": "4ec31f648eff6915a295dc2825709bc094d5ad5bd2ebf3aeaec53db2792f5a05",
+    "preservedState": "61b+dirty15 with prior implementation/UNKNOWN status; not rewritten as final approved"
+  }
+}

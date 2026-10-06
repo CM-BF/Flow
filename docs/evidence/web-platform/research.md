@@ -498,7 +498,7 @@ GO观察、root转述的[synthetic窄屏图](/Users/citrine/Projects/AgentHarnes
 
 Root补充固定main3d官方Thread接缝：MessageActions位于hideWhenRunning/autohide的ActionBar内，运行中活动入口不能借此槽。后继独立始终可见的message footer/activity入口须由唯一Thread writer另领；pending turn只有真实user message，不生成伪assistant tool/thinking消息。独立模块先TaskSummary+host-bound lazy port；未来typed活动须Reference.activity明确身份，不按标题猜。官方[工具显示注册](https://www.assistant-ui.com/docs/api-reference/tools/rendering)与[Message primitives](https://www.assistant-ui.com/docs/primitives/message)由root本段核，实装仍以0.15.x固定源码为准；显示注册不赋予工具执行能力。本管理记录root只读证据，未浏览/运行/修改该Thread。
 
-## 06:02 后继只读设计停点（没有新领取）
+## 历史06:02 后继只读设计停点（没有新领取；renderer八scope被06:22九scope修正）
 
 w01根据固定main3d4985与已审renderer747/final7ff给WPF-RENDERERI01候选：新web-data-renderer-integration/codex/web-data-renderer-integration，准确实现base等Lead包含已审输入。八literal为`apps/web/src/conversations/ConversationThread.tsx`、`apps/web/src/plugin-integration/session.ts`、`apps/web/src/plugin-integration/react.tsx`、新`apps/web/src/plugin-integration/data-renderers.ts`、新`apps/web/test/data-renderer-integration.test.ts`/`apps/web/test/data-renderer-integration.browser.ts`、`plans/wpf-renderer-i01-integration`、`docs/evidence/wpf-renderer-i01`。不写App/officialThread/projection/selection/outbox/messages/queue/P01。05:59:55.298Z作者只读ledger唯一相交为CHAT082v5的session.ts，未来必须旧owner明确停写→freshversion CAS→新take；K02C01仍持projection/selection等六实现文件，不能借接线修改。
 
@@ -508,7 +508,7 @@ panels给原REQ43独立活动模块候选八literal：`apps/web/src/conversation
 
 作者实际读到FlowClient.events目前无AbortSignal，因此只能generation/lifetime丢弃迟到，不能声称collapse取消底层HTTP；detail可用signal。缓存含上述身份与已读reference，未读页id拒读；reset清缓存、错误保留旧页/stale。测试候选涵盖分页/reset、401/离线、collapse/换中心、键盘/390与0模型。真实App接线后继由唯一Thread writer在renderer后领取always-visible footer，不用hideWhenRunning ActionBar；pending只真实user message。CHAT05 ae4仍初interface，模块候选不消费未冻结client/typed活动，也不声称已解决窄屏整合。两proposal已交root作优先级/接口协调，未建树、未take、未运行验证。
 
-06:04 renderer接线寿命补充（w01固定3d只读）：App关闭conversation仍setVisible(false)并保留projection/views缓存，hasDraft不能作pane活跃许可。拟宿主adapter拥有display lease代际，Activity cleanup失效/abort旧port、resume新代际，稳定ReplyBindings与纯disclosure保留，projection cache仍权威；旧port捕获代际不能hide→show复活。session.dispose在host异步清理前同步closed/abort。按真实message/turn/task/detail身份允许非focused split A/B各自读，嫁接身份0GET；禁用后restore不偷偷activate。只管理UI绑定寿命，不新建授权/enable权威，仍原八scope候选、未实施。
+历史06:04 renderer接线寿命补充（w01固定3d只读；仅依Activity cleanup的假设在06:22被修正）：App关闭conversation仍setVisible(false)并保留projection/views缓存，hasDraft不能作pane活跃许可。拟宿主adapter拥有display lease代际，Activity cleanup失效/abort旧port、resume新代际，稳定ReplyBindings与纯disclosure保留，projection cache仍权威；旧port捕获代际不能hide→show复活。session.dispose在host异步清理前同步closed/abort。按真实message/turn/task/detail身份允许非focused split A/B各自读，嫁接身份0GET；禁用后restore不偷偷activate。只管理UI绑定寿命，不新建授权/enable权威，仍原八scope候选、未实施。
 
 Root本段实际官方资料核对来源：[assistant-ui导航](https://www.assistant-ui.com/llms.txt)、[data/tool显示注册](https://www.assistant-ui.com/docs/api-reference/tools/rendering)、[Message primitives](https://www.assistant-ui.com/docs/api-reference/primitives/message)、[Claude SDK streaming output](https://code.claude.com/docs/en/agent-sdk/streaming-output)。采用边界仅显示注册不赋执行权限、block结束不等工具执行成功；实装行为仍以当前固定版本源码/已审契约为准。本管理者归档root已访问来源，未独立浏览或据文档宣称CHAT05流式实装，无新增需求/范围。
 
@@ -529,3 +529,21 @@ Root核本地frontend/codebase-design、固定747 trusted renderer/P01 hostApi1�
 RS08固定3d追加精确证据（w01只读）：ConversationThread的queue/profile状态可使父组件render，inline identity converter改变身份；installed core0.3.22 useExternalStoreRuntime effect每次setAdapter，converter身份变化清旧converter并绕过相同messages/isRunning早返，原message WeakMap复用因此失效。最窄未来候选为module-level纯identity converter，保留onNew实时closure与新intent门禁（store更新在早返前）；不memo整个adapter、不做revision-only缓存、不省略converter。SDK早返仍通知订阅，不等零render或延迟收益；plugin后代自身render也不必触发该父组件。此固定3d静态证据与旧eb20turn内存探针分别保留，没有新测试/时延测量，准确scope/base与必要行为验证后再决定实现，不默认混入renderer接线。
 
 ACTIVITY作者61b固定候选已在validation记录awaitSignal factory/gate、双reject handler与reset独立detail代际，并以22direct通过覆盖此前moving反馈；管理仅核source hash/范围与原始报告，root固定行为独审仍未出结论，不把作者修复记录冒充独立关闭。
+
+## 06:22 renderer真实可见性修正与活动后继接缝
+
+w01与root以固定3d4985实证App:827–854聊天tab使用原生hidden，React.Activity仅右workspace；之前仅靠effect cleanup使display lease失效不足以覆盖真实隐藏，现撤回为历史设计。当前rendererI方案九literal＝06:02原八项加apps/web/src/App.tsx，仅从已有group/page状态传visible={!overview && pageVisible && group.activeId===id}经同文件ChatPane→ConversationThread→既拟bridge。所有split当前pane各自true，不用全局focus/DOM观察、不迁整chat至Activity、不读projection私有visible。
+
+在committed visible=false时layout清理本pane lease/provider wrapper，旧port失效且abort；稳定外层ReplyBindings/disclosure与原projection缓存保留，恢复时新代际，旧回调不能复活。不能deactivate整个共享session插件，也不能声称Thread已有全部订阅停止。close卸载、center同步closed-before-await仍独立验证；真实native hidden与模块React.Activity测试分别记录。06:20:17.407Zfreshledger预检仅session.ts归CHAT082v5，App与另七路径无active交叉；此为时点事实，正式take前再次检查，当前仍无新tree/claim。
+
+活动App后继固定61b接口已足够。w01建议官方Thread新增始终可见的MessageFooter，置两role ActionBar外；每turn以稳定userMessageId锚定唯一活动入口，pending无assistant时不造消息。用本pane真实message→turn/task成员而非focused导航；TaskSummary实时由host更新，activity展开/刷新按需，updateTask只标stale不自动poll。该后继需renderer交付停写后再领取Thread/App可见性等路径，不把独立模块ready当实际聊天已接线。
+
+## 2026-10-06 06:19 U11 typed Tool/Reasoning组件适配研究（root来源）
+
+Root实际读取本地ai-elements skill及tool/reasoning引用，并浏览[Tool](https://elements.ai-sdk.dev/components/tool)、[Reasoning](https://elements.ai-sdk.dev/components/reasoning)，再对固定CHAT05 ae4cc5c的native-activity.ts核语义。官方ToolHeader把input-available标Running、output-available标Completed，公开状态枚举没有unknown；但Flow初合同input-ready仅表示输入已观测，attempt结束未有结果须unknown，不能按task succeeded推tool成功。后继适配建议是为input-ready/unknown给明确自定义状态标签，只有明确succeeded/failed才呈终态；复用内容/折叠组件，不强迫持久事实适配错误枚举。
+
+官方Reasoning默认open=true，streaming会自动开合，组件可提供duration。Flow后继应controlled collapsed、授权展开才取正文；provider未给duration不能把组件挂载计时显示为模型耗时，未支持partial时isStreaming=false。上述官方行为是root观察，Flow接线是后继设计推断与验收建议，不是当前ACTIVITY61b缺陷、CHAT05完成或新pipeline/依赖/take。本管理者仅归档其来源与边界，待完整typed公共输入冻结后交唯一renderer owner。
+
+ACTIVITY此前moving awaitSignal/身份/分页问题已在固定61b修复，root06:17:33Z独立22检查、hash与局部CUA批准；原作者22+7+7/typecheck/build与root实际执行范围继续分开。最终metadata b024 clean、当地parser approved/target61b/proof unchanged，73源06:14过渡样本不改写。
+
+插件完整性补充（root固定3d只读）：现P01 SlotId有chat.message.actions、没有message footer。计划中的ThreadComponents.MessageFooter只是宿主组件插口，不能称已支持plugin manifest贡献。后继如向外部插件开放常驻footer，应回到P01唯一registry/lifecycle定义slot、message context、排序/禁用/清理/错误隔离并正式协调types原owner，不能另造注册表。该完整插件目标仍开放；当前rendererI九scope不扩P01，MessageActions的hideWhenRunning也不冒充此能力。
