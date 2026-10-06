@@ -1,0 +1,151 @@
+{
+  "at": "2026-10-06T20:31:44.491334+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery",
+  "headBeforeAfter": "30682614cd9973cfa62071d03ff399485877a16e",
+  "base": "22a0806bc2465e11096949618113833f31766b19",
+  "requestSha256": "c10b972f07c3e8098109207e25e77d4513a3d86d84b8ea460e8c6c777b28400f",
+  "files": [
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "bytes": 598,
+      "sha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "bytes": 4272,
+      "sha256": "89ff8005b4817b1ae231e999abc9e43e62202dd815d4962ec11e07c9d4b59f43",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/checker.ts",
+      "bytes": 4705,
+      "sha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/identity.ts",
+      "bytes": 1898,
+      "sha256": "dbe1198133e0158350835ff76735a0efa536994818ef16790f0277b9e2347f5f",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/launch.ts",
+      "bytes": 1435,
+      "sha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/resources.ts",
+      "bytes": 4956,
+      "sha256": "26545a80686e0d0e3bed6de85716980df930c471eac891211dd1bdca2d831368",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "bytes": 6695,
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "bytes": 12205,
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/engineering/writer.ts",
+      "bytes": 1514,
+      "sha256": "59ac0c67279b3be98244f0482da9a5413c20d6a6716a3cbcfb3bd674647e1470",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 5186,
+      "sha256": "484d5bcb44f5e2b69b44a0189b25f4d6114f034c9add8deead587590ac462c8f",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/configuration.ts",
+      "bytes": 2579,
+      "sha256": "647a01cb7b65cb3f125515bc9c895396a4a582f6fa9843fb7ad923ce846d4651",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/index.ts",
+      "bytes": 8396,
+      "sha256": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/lease.ts",
+      "bytes": 2276,
+      "sha256": "c97314b4d8dd7f8fd7056982a2bca6186245062d94d60fb27c29eeb514ac90fb",
+      "present": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/materials.ts",
+      "bytes": 2078,
+      "sha256": "bd1da1e99f3956585a16a9bd6b59757bff1ecca9a09354f9f0004f9994c9a963",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-bridge.ts",
+      "bytes": 11288,
+      "sha256": "67fbc4083eea37e1d2c070ac5719551791de690d9d1c008301a172427565e6f3",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-client.ts",
+      "bytes": 4223,
+      "sha256": "a2e45e629c34480237ab7336f392bb0db9a555c086af3f029b533e346eb38219",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-http-server.ts",
+      "bytes": 4450,
+      "sha256": "ad4cbc74ce0b91e98a3e6cafe2c4a5fdb31f77df5aabe3fea4df485a07e1a811",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-mapping.ts",
+      "bytes": 5127,
+      "sha256": "0bc876161bfeb1926e8eb03d043a8f0189bc918c5e5ee14093a9db622f53b0c3",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/http-policy.ts",
+      "bytes": 3017,
+      "sha256": "af6635f13ab067a0ecfb5af582a364e6131ba6f829845eaa3391ed936687a637",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/index.ts",
+      "bytes": 167,
+      "sha256": "0747ae484303c1042148d28bacfd9817cdd2d94795c60e3c690b92dfff394e85",
+      "present": false
+    },
+    {
+      "path": "packages/protocols/src/mcp-client.ts",
+      "bytes": 4001,
+      "sha256": "c03a6d29112b580ffffa05390638b3ed3dc47f8e2d30a57ed2f11d6624430807",
+      "present": false
+    }
+  ],
+  "materialized": 22,
+  "logicalBytes": 93543,
+  "protectedMaterializedFiles": 319,
+  "protectedUnchanged": true,
+  "statusBefore": "?? docs/evidence/s01p07/checks/capacity-auth-goal-1.json\n?? docs/evidence/s01p07/checks/capacity-auth-goal-1.stderr\n?? docs/evidence/s01p07/checks/capacity-auth-goal-1.stdout\n?? docs/evidence/s01p07/checks/focused-types-2.json\n?? docs/evidence/s01p07/checks/focused-types-2.stderr\n?? docs/evidence/s01p07/checks/focused-types-2.stdout\n?? docs/evidence/s01p07/type-input-supplement.json\n",
+  "statusAfter": "?? docs/evidence/s01p07/checks/capacity-auth-goal-1.json\n?? docs/evidence/s01p07/checks/capacity-auth-goal-1.stderr\n?? docs/evidence/s01p07/checks/capacity-auth-goal-1.stdout\n?? docs/evidence/s01p07/checks/focused-types-2.json\n?? docs/evidence/s01p07/checks/focused-types-2.stderr\n?? docs/evidence/s01p07/checks/focused-types-2.stdout\n?? docs/evidence/s01p07/type-input-supplement.json\n",
+  "availableBeforeBytes": 1279270912,
+  "availableAfterBytes": 1279012864,
+  "installImportTestsPgProvider": 0,
+  "configuration": "Only this existing worktree sparse rules appended; main/shared config/other worktrees unchanged"
+}
