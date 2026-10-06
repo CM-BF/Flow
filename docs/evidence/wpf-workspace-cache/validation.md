@@ -31,3 +31,10 @@ Screenshots actually inspected: [desktop light](2026-10-06T11-46-47.041Z-desktop
 Closed-clean is classified by authoritative local material. Accepted-after-close rechecks current groups and draft contents; alias migration never becomes a second view. Protected receipt controllers remain alive. Heap, all history/metadata, legacy task detail/feed/runtime/stream caches and network server memory are outside the UTF8 body budget. Final-release public snapshots drop owned body/history references and session subscriptions; this does not claim GC/heap measurement. 32 is the total resident conversation cap; original baseline's32 was still-open tabs, not32 close cycles. Attachment App bindings are not present in this base: future owner must add actual input items, pending capture/submission and journal-unknown to the existing session protection seam. No claim of attachment production protection, cross-reload receipt recovery or Arc layout completion.
 
 Browser automation has stopped. For an independent reviewer, direct checks can be rerun without modifying author reports. Any new browser experiment needs its own explicitly recorded budget; do not silently consume unused time or rewrite these reports.
+
+
+## Independent review
+
+Root已正式 APPROVED /0 blocking（owner转录2026-10-06 11:53:23 UTC），精确绑定4ec291c2381faa0fc212cf598b8126b9feecae71。独立四文件133/133、3.85秒；原样[log](root-independent-tests.log)和[audit](root-independent-audit.json)。Root逐读14源与命令/知识生命周期、14hash/206readonlydeps/16scope、逐审7份browser/raw/source复用边界并目视390dark；未重新跑browser/types。作者与reviewer证据来源分开，main仍未接收。
+
+全历史diffcheck存在原测试日志尾空白/尾空行（consumer-first、direct-final、direct、first-direct、generation-red、red-direct、types-*及独立log），原样保留；source implementation diffcheck0，不声称所有raw文本零空白。
