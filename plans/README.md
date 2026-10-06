@@ -91,3 +91,5 @@ M1最终独立APPROVED target `da7ce435e03e7abad1227353e473a35a6e9b1349`；[真�
 R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前registry新增唯一来源；尚未集成的正文以登记owner树为准。普通自然对话与目标编排分别验收，fixture回复不代表模型对话。
 
 2026-10-06 04:43 UTC：新增独立来源 [CTX01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-kernel-probe/plans/ctx01-context-kernel/plan.md)（实验owner树 context-kernel-probe，main未收正文时看dashboard只读源）与 [WPF-PROFILE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/plans/wpf-profile01-execution-profiles/plan.md)（web-execution-profiles）；领取已确认，登记不代表完成。
+
+2026-10-06 05:17 UTC：新增唯一来源 K01（项目知识原文与检索）、WPF-PROFILEUX01（聊天配置摘要优化）、SVC02（真实预览安全更新）；各自已领取且三件套存在。权威目录分别为 `Flow-worktrees/knowledge-source-store/plans/k01-knowledge-sources`、`web-execution-profile-summary/plans/wpf-profileux-execution-summary`、`preview-refresh/plans/svc02-preview-refresh`；当前均实施中。登记不代表当前常驻中心已更新。

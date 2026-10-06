@@ -5,6 +5,9 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['K01', '项目知识原文与检索', '工作线', 'knowledge-source-store', 'k01-knowledge-sources'],
+  ['WPF-PROFILEUX01', '聊天配置摘要优化', '工作线', 'web-execution-profile-summary', 'wpf-profileux-execution-summary'],
+  ['SVC02', '真实预览安全更新', '工作线', 'preview-refresh', 'svc02-preview-refresh'],
   ['FLOW-001', '产品与技术架构', '总体计划', 'plan-status-review', 'flow-001-architecture'],
   ['FLOW-002', 'Provider 与 Harness', '技术验证', 'plan-status-review', 'flow-002-provider-harness'],
   ['FLOW-003', 'M1 执行与验收', '里程碑', 'plan-status-review', 'flow-003-m1-execution'],
@@ -77,7 +80,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };
