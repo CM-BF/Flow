@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T17:00:24.519258+00:00",
-  "state": "MIKA_CORE_PG_WINDOW_RELEASE_SOURCE_REPAIR_ONLY",
-  "groupWindowOwnership": "Mika CORE8 groups after Lead accepted RELEASE all cleanup/return. This group has no PG/Chrome runtime window.",
+  "recordedAt": "2026-10-06T17:02:31.245685+00:00",
+  "state": "O14_EXCLUSIVE_PG_WINDOW_RELEASE_B_WAITING",
+  "groupWindowOwnership": "native_center_owner O14 fixedtwo-case PG window; CORE retryNOT_RUN returned. This group has no PG/Chrome window.",
   "release03": {
     "state": "A_PASS_B_LOCATOR_FAILURE_CLEANED_WINDOW_RETURNED",
     "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
@@ -148,6 +148,10 @@
     {
       "source": "Lead via root16:58",
       "coordination": "CORE initial0/8 due4missingSQL, cleaned; exact28SQL closure fixed; oneCORE-PG-RETRY-20261006-1658 under+128MiB/200s. PG remainsCORE, no B/O14 overlap; <=8MiB pureHTTP allowed separately."
+    },
+    {
+      "source": "LatestLead via root afterCORE16:58retry admission",
+      "coordination": "CORE freshabout15MBshort,NOT_RUN/0newDB/process andreturned; O14native_center_ownerexclusivePG,original+32MiB/120s+30s; B waitsactualcleanup/fresh originalBthreshold."
     }
   ],
   "limits": [
@@ -156,5 +160,5 @@
     "A failure prevents Chrome/B; no automatic retry, artifact rebuild, provider or personal service operation",
     "Prior old362failure/A3partial retained; Node failing Host test does not establish product bypass"
   ],
-  "latestCoordination": "lead-core-window-after-release-all.json"
+  "latestCoordination": "lead-o14-window-after-core-not-run.json"
 }

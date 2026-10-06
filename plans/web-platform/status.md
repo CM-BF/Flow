@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | Recovery固定1b8受控27/27通过；DPERF第二Node七叶+父通过/累计3.950秒，原Host红测保留。发布af51两A完整通过，B定位器失败待窄修，窗口归还已获Lead接收，现PG归Mika CORE |
-| 下一可用交付 | 发布9927定位器/all12源修获审，等CORE交回；DPERF abd2 Node通过、browser独立后置；MATURE02固定563公共出口已审，八literal待Lead物化后取权 |
-| 当前阻塞 | ACTIVE: 发布B被harness locator挡住且无兼容绿报告，后继待源审、CORE实际归还和新准入；DPERF browser未验；Recovery真实IDB/HTTP/browser未验；源码修复正常 |
+| 当前产出 | Recovery固定1b8受控27/27通过；DPERF第二Node七叶+父通过/累计3.950秒，原Host红测保留。发布af51两A完整通过，B定位器失败待窄修，窗口归还已获Lead接收，现PG归O14/native_center_owner |
+| 下一可用交付 | 发布9927定位器/all12源修获审，等O14交回；DPERF abd2 Node通过、browser独立后置；MATURE02固定563公共出口已审，八literal待Lead物化后取权 |
+| 当前阻塞 | ACTIVE: 发布B被harness locator挡住且无兼容绿报告，后继待源审、O14实际归还和新准入；DPERF browser未验；Recovery真实IDB/HTTP/browser未验；源码修复正常 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |

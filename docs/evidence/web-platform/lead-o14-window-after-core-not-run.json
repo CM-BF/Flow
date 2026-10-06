@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-06T17:02:31.245685+00:00",
+  "source": "Latest direct Lead inbound relayed by root; no independent resource/runtime sample",
+  "coreRetry": {
+    "window": "CORE-PG-RETRY-20261006-1658",
+    "state": "NOT_RUN_RETURNED",
+    "reason": "Fresh availability about15MB below its original start threshold; approximate gap reported, no exact newfree value supplied",
+    "newDatabases": 0,
+    "newProcesses": 0,
+    "thresholdUnchanged": 1207959552
+  },
+  "currentWindow": {
+    "task": "O14",
+    "owner": "native_center_owner",
+    "mode": "one fixed two-case PG check",
+    "startBytes": 1107296256,
+    "workSeconds": 120,
+    "cleanupSeconds": 30,
+    "exclusivePG": true,
+    "actualRunOrCleanupReceipt": "PENDING"
+  },
+  "release03": "B remains waiting for O14 actual cleanup/Lead coordination and fresh B admission; no reuse of16:44/16:58free. B/CORE thresholds unchanged.",
+  "dperf04": "Node scopedPASS sealed; no rerun",
+  "mature02": "Fixedapproved563 eightliteral SOURCE_REQUEST still waiting soleGitowner materialization",
+  "operationsThisUpdate": {
+    "resourceSamples": 0,
+    "productChecks": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "serviceCalls": 0
+  },
+  "quality": "Metadata-only current-owner correction. Prior CORE notice and failed/unrun evidence preserved; no scope change or duplicate task."
+}
