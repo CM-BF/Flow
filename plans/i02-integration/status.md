@@ -179,3 +179,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T15:01:26.795368+00:00：X01宿主load/invoke两阶段即时授权检查已按Mika独审固定e682接收，两源码与target逐字相同，原main基线相同。复用21局部与strict原证据，不把本地callback批准说成中心grant/runtime纵向已接。见[接收](../../docs/evidence/i02/plugin-host-gates-integration.json)。
 
 2026-10-06T15:05:33.405554+00:00：X01五薄client/029默认关闭factory/私有配置/CLI均独审并受控接收，13源分别对固定67fd/5e121全相同；无领域复制或自动启用插件。canonical F01两metadata冲突按原owner acbd恢复，O14薄client仍未审未并入。见[成套接收](../../docs/evidence/i02/plugin-installation-production-integration.json)。
+
+2026-10-06T15:16:19.175003+00:00：接收O15唯一来源与四树可逆资源记录；162来源候选，个人服务保持362/v15与Web8d8/v2。无产品/模型重跑；[批次回执](../../docs/evidence/i02/o15-resource-registry-integration.json)。
