@@ -110,3 +110,7 @@ RECOVERY01-04本轮2b01共50受控case已单次通过，见[验证边界](../../
 Root实际时点2026-10-06T20:39:13.481403+00:00，固定 `4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb` / metadata c059c278；[原始报告](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-root-approval.json) SHA256 `2a3826caf708b570aa4e9fe226a2d2bb31711e943cfdfdd10a9daabd61ec4315`，**APPROVED_SCOPED_LATE_STOP_PARENT_SOURCE_NOT_RUN / 0 blocking**。旧CHANGES_REQUESTED及作者待审段是历史，RECOVERY-BROWSER-LATE-STOP当前SOURCE_ADDRESSED。止停事实与cleanup状态分开、重复信号去重、最终stdout/actualexit晚到失败判定均获源码认可。
 
 没有signal注入或新运行；不声称SIGKILL/进程崩溃/移除listener后的信号均被捕获。另18源和worker/旧10raw不改；2b01/direct50仅保原范围，完整feature NOT_STARTED/targetUNKNOWN。下一browser只读准备必须绑定最终实际HEAD和19源，旧7ca准备不可运行；原75.153732625s剩余包含15s清理，需manager新window/gate和受控admin输入。
+
+## 2026-10-06 20:52:18 UTC — 原子集第二次运行证据
+
+[第二次browser验证](../../docs/evidence/wpf-conversation-recovery/browser-second-validation.md)执行d3d45/固定4d330，FAILED/actualexit1；cookieRead PASS，textIntentDraft的Restore定位匹配2行，后续未完成。作者只记录原始事实，尚未作产品或harness根因裁决。清理完整，晚终态累计25520.435ms，未来整数carry25521/剩64479且含15s清理；没有重试许可。19源、首轮10raw、50受控实证各保原范围。完整feature独审NOT_STARTED/targetUNKNOWN，当前运行等待独立证据复核，不自行APPROVED。

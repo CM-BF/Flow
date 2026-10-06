@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 20:41:28 UTC |
+| 最近更新 | 2026-10-06 20:52:18 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,21 +10,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；产品/helper2b01；当前browser parent限定source4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb；metadata HEAD以Git为准 |
-| 工作树dirty状态 | c059c278 clean输入；19源固定4d3303d7且获限定源码批准；本次只归档metadata，正常push后核local=origin/clean |
+| 工作树dirty状态 | d3d45 clean执行输入；19源固定4d330且不改；本次归档实际失败raw/metadata，正常push后核local=origin/clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 恢复编辑保护已通过受控回归；验证父进程的晚停止修复已获限定源码批准，真实恢复仍待复验 |
-| 下一可用交付 | 将原浏览器入口绑定最终提交；新准入后复验原实际恢复子集 |
-| 当前阻塞 | ACTIVE: 首浏览器失败未复验，真实IDB与完整中心恢复验收保持开放 |
+| 当前产出 | 第二次实际浏览器验证在选择恢复记录时遇到重复按钮，已保留失败证据并完成隔离资源清理 |
+| 下一可用交付 | 先定位同会话恢复记录的身份与定位歧义，再按明确派工推进 |
+| 当前阻塞 | ACTIVE: 第二次浏览器恢复记录选择失败，完整草稿恢复与中心旅程尚未通过 |
 | 需用户决定 | NONE |
-| 检查状态 | FAILED: 首真实browser草稿旅程失败保留；当前2b01受控50/50 PASS、0pending/todo/fail，direct按终态保守累计9969/30000ms、清理通过；types未新增，不代表真实IDB/App通过 |
+| 检查状态 | FAILED: 第二次browser strict locator匹配2记录，actualexit1/清理完整；browser晚终态累计25520.435ms；2b01受控50/50原PASS/direct保守9969ms不改，types未新增 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；20:40:36.059Z管理fresh/唯一owner/nooverlap，原件已核；本段metadata与只读准备，无运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；manager本次rec4d gate核原21/唯一owner/nooverlap；唯一browser运行已结束/无续跑许可，现仅归档原raw |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -33,7 +33,7 @@
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt屏障与部分恢复受控case已通过；完整真实controller旅程未完成 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
 | WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前50 direct](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)源绑定2b01单次通过；旧38原范围不变，共用owner helper不冒mounted Workspace/Thread或完整App材料prepare通过 |
-| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [首真实browser失败](../../docs/evidence/wpf-conversation-recovery/browser-first-validation.md)保留；38受控case通过；[当前父监督晚停止修复](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-root-approval.json)已获限定源审/NOT_RUN，真实旅程未重跑 |
+| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [第二次browser失败](../../docs/evidence/wpf-conversation-recovery/browser-second-validation.md)原run rec4d：cookieRead PASS、Restore匹配2行失败、清理完整；首轮原失败与50受控证据保持 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
 ## 阻塞 / 风险 / 未验证
@@ -221,3 +221,7 @@ Root原件[DIRECT50_EVIDENCE_ACCEPTED_SCOPED](../../docs/evidence/wpf-conversati
 ## 2026-10-06 20:41:28 UTC — 4d330独立限定源码批准与下一浏览器准备
 
 Root于2026-10-06T20:39:13.481403+00:00给[原始批准](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-root-approval.json) APPROVED_SCOPED_LATE_STOP_PARENT_SOURCE_NOT_RUN，0blocking，RECOVERY-BROWSER-LATE-STOP源码addressed。固定4d330/c059输入与19源、worker/旧10raw保真被独核；不把源码结论当signal注入或新browser通过。原2b01/direct50保持原执行绑定；本段0types/tests/import/HTTP/PG/Chrome/free。原browser累计14846.267375ms、余75153.732625ms含15000清理不变。最终metadata封存后只在新own/tmp重绑现有入口/依赖pins，无gate；旧prepare仅历史，完整feature NOT_STARTED/targetUNKNOWN/main未接。
+
+## 2026-10-06 20:52:18 UTC — 第二次浏览器实际失败封存
+
+[原报告](../../docs/evidence/wpf-conversation-recovery/browser-second-validation.md)与[15原件manifest](../../docs/evidence/wpf-conversation-recovery/browser-second-manifest.json)绑定d3d45/4d330。仅一次same-origin子集，actualexit1；Restore按同conversation route定位出2行，尚未判产品或harness因果。原19源冻结，旧10raw保留，清理完整已回manager。晚终态累计25520.435ms/余64479.565ms含下一次15s清理，未来整数保守25521/64479，非新许可。完整feature NOT_STARTED/targetUNKNOWN/main未接。

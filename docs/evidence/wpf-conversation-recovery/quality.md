@@ -167,3 +167,7 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 ## 2026-10-06 20:41:28 UTC — 独审归档与只读准备clean-code安全点
 
 本段按本地find-skills优先方法复用clean-code/codebase-design/webapp-testing，无安装。只核批准原字节、19源稳定性、唯一status和旧raw/预算归因；Root确认停止事实与正常cleanup职责分开且复用同一有限报告修正，没有新framework。0blocking是限定source结论，完整feature未验不改绿。按一次metadata提交后再bind最终HEAD，避免prepare与归档互相递归改写；旧准备和失败保留。当前无types/test/产品import/服务/空间采样。
+
+## 2026-10-06 20:52:18 UTC — 第二次browser失败安全点
+
+复用本地find-skills/webapp-testing/clean-code方法：保严格定位失败不改.first()/删除断言；观察事实与因果分开，较晚parent stdout/actualexit优先于较早序列化budget。原11run文件和外部capture/gate逐hash保存，19源码不改，先交资源清理再归档。当前暂无代码修复或新抽象；后继需固定身份/真实记录证据定位，不能把来源相同conversation当唯一draft owner的假设直接改为产品结论。0重试/types/direct。
