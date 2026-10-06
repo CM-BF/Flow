@@ -1,0 +1,42 @@
+{
+  "stage": "control",
+  "endedAt": "2026-10-06T10:14:37.635Z",
+  "elapsedMs": 55.47049999999999,
+  "close": {
+    "reason": "DISCONNECTED",
+    "child": "confirmed-exited",
+    "exitCode": 7,
+    "signal": null,
+    "remoteEffects": "unknown",
+    "stderrCapture": {
+      "observedBytes": 40,
+      "writtenBytes": 40,
+      "truncated": false,
+      "observerFailed": false,
+      "streamEnded": true,
+      "childCloseObserved": true,
+      "incomplete": false
+    }
+  },
+  "artifact": {
+    "file": "/private/tmp/flow-wpf02-private-YUNu9f/attempt-1.stderr",
+    "identity": {
+      "ino": 120397807,
+      "dev": 16777234,
+      "directory": false,
+      "regular": true,
+      "symlink": false
+    },
+    "flush": true,
+    "close": true,
+    "bytes": 40,
+    "sha256": "ca5c7bbdd4599b7cb7154d4895952561b9f7e94d48d84dba22c898910af1130c",
+    "classification": "expected-control",
+    "removed": false,
+    "retained": true
+  },
+  "observation": {
+    "expectedExitCode": 7,
+    "expectedStderrSha256": "ca5c7bbdd4599b7cb7154d4895952561b9f7e94d48d84dba22c898910af1130c"
+  }
+}

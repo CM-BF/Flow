@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-06T10:14:37.587Z",
+  "elapsedMs": 7.846457999999998,
+  "number": 1,
+  "stage": "control",
+  "hypothesis": "Known synchronous stderr tail survives immediate exit and drain",
+  "options": {
+    "spawn": {
+      "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "args": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/experiments/codex-app-server-conformance/diagnostics/immediate-exit.mjs"
+      ],
+      "cwd": "/private/tmp/flow-wpf02-private-YUNu9f/control-cwd",
+      "environment": {
+        "PATH": "/usr/bin:/bin",
+        "HOME": "/private/tmp/flow-wpf02-private-YUNu9f/control-cwd",
+        "TMPDIR": "/private/tmp/flow-wpf02-private-YUNu9f/control-cwd",
+        "LANG": "C",
+        "LC_ALL": "C",
+        "TZ": "UTC"
+      }
+    },
+    "initialize": {
+      "clientInfo": {
+        "name": "flow_diagnostic_control",
+        "title": null,
+        "version": "1"
+      },
+      "capabilities": null
+    },
+    "limits": {
+      "initializeTimeoutMs": 3000,
+      "requestTimeoutMs": 1000,
+      "frameBytes": 4096,
+      "terminateMs": 500,
+      "killMs": 500
+    },
+    "signal": "owned-8s-abort",
+    "privateStderr": {
+      "maxBytes": 65536,
+      "sink": "host-private-file"
+    }
+  },
+  "inputSha256": "dd1c6a22a61a3edf5f2e09db784c711a2c16a636770da29ab28dd0fa63565cc6",
+  "privateFile": "/private/tmp/flow-wpf02-private-YUNu9f/attempt-1.stderr"
+}

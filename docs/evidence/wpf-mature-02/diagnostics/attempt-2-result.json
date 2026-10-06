@@ -1,0 +1,60 @@
+{
+  "stage": "canary",
+  "endedAt": "2026-10-06T10:14:37.851Z",
+  "elapsedMs": 272.007583,
+  "close": {
+    "reason": "DISCONNECTED",
+    "child": "confirmed-exited",
+    "exitCode": null,
+    "signal": "SIGABRT",
+    "remoteEffects": "unknown",
+    "stderrCapture": {
+      "observedBytes": 0,
+      "writtenBytes": 0,
+      "truncated": false,
+      "observerFailed": false,
+      "streamEnded": true,
+      "childCloseObserved": true,
+      "incomplete": false
+    }
+  },
+  "artifact": {
+    "file": "/private/tmp/flow-wpf02-private-YUNu9f/attempt-2.stderr",
+    "identity": {
+      "ino": 120397827,
+      "dev": 16777234,
+      "directory": false,
+      "regular": true,
+      "symlink": false
+    },
+    "flush": true,
+    "close": true,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "classification": "empty",
+    "removed": false,
+    "retained": true
+  },
+  "observation": {
+    "passed": false,
+    "reason": "canary-or-transport-failed",
+    "retainedRoots": [],
+    "close": {
+      "reason": "DISCONNECTED",
+      "child": "confirmed-exited",
+      "exitCode": null,
+      "signal": "SIGABRT",
+      "remoteEffects": "unknown",
+      "stderrCapture": {
+        "observedBytes": 0,
+        "writtenBytes": 0,
+        "truncated": false,
+        "observerFailed": false,
+        "streamEnded": true,
+        "childCloseObserved": true,
+        "incomplete": false
+      }
+    },
+    "listenerClosed": true
+  }
+}

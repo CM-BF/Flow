@@ -1,0 +1,82 @@
+{
+  "recordedAt": "2026-10-06T10:15:17.032858+00:00",
+  "reviewedImplementation": "7297986fbc879bb5040879daf97c7d5bb8b657ac",
+  "launchMetadataHEAD": "548a63d8377eab99f846d714acff290a8fb2b458",
+  "independentReviewer": "architecture_read/gpt-6-astra",
+  "approvalAt": "2026-10-06 10:13:38 UTC",
+  "MikaWindowApprovalAt": "2026-10-06 10:14:03 UTC",
+  "input": {
+    "bytes": 3745,
+    "sha256": "dd1c6a22a61a3edf5f2e09db784c711a2c16a636770da29ab28dd0fa63565cc6"
+  },
+  "sourceManifest": {
+    "bytes": 18074,
+    "sha256": "8c5cf27ceee91889ff48873a4f9dfea15f0a09a7ba145a32c74965346c97513e"
+  },
+  "raw": {
+    "docs/evidence/wpf-mature-02/diagnostics/batch-reservation.json": {
+      "bytes": 266,
+      "sha256": "b4325f78d0925a632fd6ce4ae94fcdc365464c05f6956c36ee60fd843ef8ab6d"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/attempt-1-reservation.json": {
+      "bytes": 1443,
+      "sha256": "d9b6b2d4e57a84e8cdcadae2403ca0eadc72a636bf9b49f8375979278987129a"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/attempt-1-result.json": {
+      "bytes": 1082,
+      "sha256": "3b60c6a38207b28d20e3c29643669f535d39bdf1595e9e0529e81434ec12d9e9"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/attempt-2-reservation.json": {
+      "bytes": 2096,
+      "sha256": "1f85ae4852fad8ff1c67a6a23c53d5d8beab3d6dade7c7ca99209e49a3321194"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/attempt-2-result.json": {
+      "bytes": 1479,
+      "sha256": "d8672a0af23f8d93fc73a5087d24a53078ae4c0fa5115fd6a7276b02beee3e07"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/canary-input.json": {
+      "bytes": 676,
+      "sha256": "0d1ea1a8513ea67804e4f385224cf9178a86439a97430de8ea10c18d6ba55303"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/batch-result.json": {
+      "bytes": 4448,
+      "sha256": "97ad0d7c23e114773486b8c90dbfacda7230a97647a01b07fbb395a234a67f46"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/batch-cli.json": {
+      "bytes": 3094,
+      "sha256": "1e93acf4e8d0eb3dc5336bb174b1c25b3201e949eeb9f4460e01f59dc1e720b2"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/batch-cli.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/wpf-mature-02/diagnostics/batch-cli-exit.json": {
+      "bytes": 313,
+      "sha256": "1d51da4c186ae6bea8bbbf27935e5847336808f9f689fe6bf71fa18ec2ba9570"
+    }
+  },
+  "result": {
+    "factoryCalls": 2,
+    "thirdAttempt": "NOT_RUN",
+    "control": "expected-control,40bytes,exit7",
+    "canary": "FAILED,SIGABRT,0stderrbytes,classification=empty",
+    "cause": "unknown",
+    "canaryPassed": false,
+    "diagnosticCaptureAndCleanupCompleted": true,
+    "cliExitCode": 0,
+    "finalElapsedMs": 282.794417,
+    "withinBudget": true,
+    "cleanupComplete": true,
+    "privateStderrRemoved": true,
+    "specificOwnedRootsAbsent": [
+      "/private/tmp/flow-wpf02-allow-a5GFlE",
+      "/private/tmp/flow-wpf02-deny-xo6gtb",
+      "/private/tmp/flow-wpf02-private-YUNu9f"
+    ],
+    "realAppServerStarts": 0,
+    "authCalls": 0,
+    "providerCalls": 0,
+    "retries": 0
+  },
+  "truthBoundary": "exit0 reports bounded diagnostic evidence/cleanup, not canary or isolation success; file elapsed before persistence, CLI finalElapsed after fsync; original null/unknown unchanged"
+}
