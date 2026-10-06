@@ -1,0 +1,19 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities
+
+ ❯ apps/server/src/execution-profiles/native-catalog.test.ts (9 tests | 1 failed) 1813ms
+   ✓ returns configured native facts with explicit unsupported Codex conversation capability 40ms
+   × preserves no-header and steering legacy readers and never negotiates unknown or combined headers 38ms
+   ✓ keeps catalog owner-only despite a native header 28ms
+   ✓ filters known adapter pairs and revoked rows before limit while preserving complete pagination 50ms
+   ✓ rejects corrupted recognized sentinel rows without leaking or skipping their fields 26ms
+   ✓ rejects a valid-shaped row whose immutable digest does not match 10ms
+   ✓ bounds cursor and limits before reading and preserves explicit empty native pages 12ms
+   ✓ marks both goal purposes unsupported for ordinary conversation without changing their profile 18ms
+   ✓ keeps Codex conversation rejection and revoked or altered pin admission checks after catalog reads 39ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  03:29:06
+   Duration  2.84s (transform 317ms, setup 0ms, import 945ms, tests 1.81s, environment 0ms)
+

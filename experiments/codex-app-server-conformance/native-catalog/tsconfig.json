@@ -1,0 +1,48 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "typeRoots": [
+      "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types",
+      "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types"
+    ],
+    "paths": {
+      "@flow/contracts": [
+        "../../../packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "../../../packages/client/src/index.ts"
+      ],
+      "@flow/protocols": [
+        "../../../packages/protocols/src/index.ts"
+      ],
+      "*": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/*",
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/*",
+        "/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/node_modules/*",
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/runner/node_modules/*",
+        "/Users/citrine/Projects/AgentHarness/Flow/packages/protocols/node_modules/*"
+      ],
+      "pg": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types/pg/index.d.ts"
+      ],
+      "npm-package-arg": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/npm-package-arg/index.d.ts"
+      ],
+      "pacote": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/pacote/index.d.ts"
+      ],
+      "ssri": [
+        "/Users/citrine/Projects/AgentHarness/Flow/apps/server/node_modules/@types/ssri/index.d.ts"
+      ]
+    }
+  },
+  "include": [
+    "../../../packages/contracts/src/execution-profiles.ts",
+    "../../../packages/contracts/src/execution-profiles.test.ts",
+    "../../../apps/server/src/execution-profiles/*.ts",
+    "../../../packages/client/src/execution-profiles.test.ts",
+    "../../../packages/client/src/native-profile-publication.test.ts"
+  ],
+  "exclude": []
+}
