@@ -1,8 +1,8 @@
 # F01 共享接线审查
 
-**当前增量状态：NOT_STARTED（知识CLI与015/016生产挂载）**
+**当前增量状态：REQUEST_CHANGES（Mika P2已有修复，待固定delta复审）**
 
-Review target commit：c03cc5884a6ed71bad390b3a3ffa2b9e7e297e27
+Review target commit：59219dbf693964555c075685cf961aa1f9509cf0
 
 Scope：apps/server/src/index.ts、apps/cli/src/index.ts、json-input.ts、knowledge.test.ts、README.md。manifest与真实检查见docs/evidence/f01/knowledge-maintenance-manifest.json；领域各自独审不重复覆盖。
 
@@ -74,3 +74,6 @@ Review target commit：caea11bbd5589d33e1cad8d73a328587323ad873
 
 ## SVC02薄client独立批准
 Mika独立只读APPROVED caea11bbd5589d33e1cad8d73a328587323ad873，现场clean294612ab；3源3输出hash和固定91878合同核一致，1/1 HTTP/noEmit原证据，无finding未重跑。manifest ace17c6aa83413998c8fc5b0a39faaf92f79ad3bd47d03ed63b593adc5e3deeb。限定薄传输，不含PG维护/host流程。
+
+## K01/016生产挂载局部review
+Mika只读c03挂载与CLI主体无其他阻断，但JSON文件读取P2（FIFO等待/短读backing预算）要求修复，因此c03不批准。59219db修复和2项纯模块证据见json-input-review-manifest.json；旧红事实保留，待Mika复审此delta。

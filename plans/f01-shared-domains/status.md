@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:31:00 UTC / 2026-10-06 05:31:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:34:00 UTC / 2026-10-06 05:34:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 873738d9eb998c10bc71721d9b325fcc76ecd7b5 / c03cc5884a6ed71bad390b3a3ffa2b9e7e297e27（当前知识CLI/生产挂载target） |
+| 工作基线 / HEAD | 873738d9eb998c10bc71721d9b325fcc76ecd7b5 / 59219dbf693964555c075685cf961aa1f9509cf0（当前知识CLI/生产挂载target） |
 | 工作树dirty状态 | 实现已提交；仅本次证据与status收尾 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED；当前11/11直接消费者+typecheck；初组合17绿/1退出码红已修，原失败保留 |
+| 检查状态 | PASSED；当前11/11直接消费者+typecheck；review修复2/2模块+typecheck，旧FIFO超时及测试harness失败保留 |
 | 已集成main状态 / HEAD | main eb14991a170b72d7d974428b2e440e1faada2c1e 已含O05领域/薄client/生产208a；K01/SVC02领域及薄client已审，当前生产挂载待小delta审查，未main/未部署 |
-| Review | 当前知识CLI/015/016挂载待独审；K01 b5和SVC02 caea均Mika独审APPROVED，见review.md |
-| 实现目标 | c03cc5884a6ed71bad390b3a3ffa2b9e7e297e27 |
-| 实现范围 | apps/server/src/index.ts, apps/cli/src/index.ts, apps/cli/src/json-input.ts, apps/cli/src/knowledge.test.ts, apps/cli/README.md |
+| Review | 当前知识CLI/015/016挂载复审中；Mika P2已修为非阻塞打开与单buffer；K01 b5和SVC02 caea均Mika独审APPROVED，见review.md |
+| 实现目标 | 59219dbf693964555c075685cf961aa1f9509cf0 |
+| 实现范围 | apps/server/src/index.ts, apps/cli/src/index.ts, apps/cli/src/json-input.ts, apps/cli/src/knowledge.test.ts, apps/cli/src/json-input.test.ts, apps/cli/README.md |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
