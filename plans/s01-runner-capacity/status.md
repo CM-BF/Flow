@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:44 UTC；W1 main30b，W2结果待main接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:48 UTC；W1/W2已main6426，slot提案独立后继 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | mika / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
@@ -11,14 +11,14 @@
 | 工作树dirty状态 | 固定结果0dac4b92747db5a3c8ed2dc25301e7cbecc2e8bf clean，后继仅独审/状态/报告说明metadata |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 2ab：11纯统计/预算/参数tests，noEmit0；W2实跑12tasks/12attempts且正常清理，结果0dac独审APPROVED |
-| 已集成main状态 / HEAD | W1已集成main/origin30b97cbf3665c4ef7a314a6a8b59394ae68781af；W2结果已审待集成 |
+| 已集成main状态 / HEAD | W1/W2已集成main/origin6426b44cd32d10216141af13ecfa83b8879025fb，W2交接5504三scope零diff；slot提案未集成 |
 | 实现目标 | 2ab7967f2eb808fecd1205f7552a119eee8e0b36 |
 | 实现范围 | experiments/runner-capacity |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 4 |
-| 当前产出 | 单进程声明容量4、实测并发1的结果已独审通过，待main接收 |
-| 下一可用交付 | main接收W2；既有plan内提交最小有界slot建议 |
+| 当前产出 | W2测量已独审并集成main；最小slot提案需补未知claim回执边界 |
+| 下一可用交付 | 完成CHAT06结果独审，再补既有slot方案的保守恢复行为 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，W2准备2ab与结果0dac均APPROVED；W1已批准并集成 |
@@ -29,7 +29,7 @@
 | S01-02 | completed | mika | [合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json) |
 | S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
 | S01-04 | in-progress | mika / Lead | W1首个128空会话+4runner/16task场景已运行并清理；可选control16/control12未运行，待证据决定 |
-| S01-05 | in-progress | 独立reviewer / Lead | W1结果9e独审APPROVED/main30b；W2准备2ab与结果0dac独审APPROVED，待main接收；后继ACK/browser开放 |
+| S01-05 | in-progress | 独立reviewer / Lead | W1/W2结果均独审APPROVED并main6426；完整S01后继ACK/browser仍开放 |
 | S01-06 | pending | 后继owner待Lead协调 | [既有plan内最小slot建议](plan.md)：0调用只读提案；CHAT08 runtime/outbox在用，未领取产品实现；真实provider另计 |
 
 ## 权限、优先级与事实边界
@@ -83,3 +83,5 @@ W1证明本机四个独立fixture runner可同时执行该固定负载，没有S
 2026-10-06 07:44 UTC dashboard确认：权威S01 source live/stale=false、0bd16d4 clean，delivery integration、review approved、implementation unchanged/current、issues=[]；W2 main仍not-contained。见[w2-result-dashboard.json](../../docs/evidence/s01/w2-result-dashboard.json)。metadata交接后不重复轮询或运行。
 
 2026-10-06 07:46 UTC S01-06只读提案已写回原plan：一个admission/recovery owner+有限attempt Map，明确注册/执行/unknown占用、session排他、outbox与FinalProposalJournal、maintenance/host与单attempt失败边界。CHAT08权威status/head/dirty及账本核验，未写其scope、未启动测试/负载。W2交接固定止于5504b16，proposal后继不混作W2结果批准；CHAT06P01已准备APPROVED，实际矩阵等SVC操作结束条件。
+
+2026-10-06 07:48 UTC W2 MAIN_ACCEPTED：Lead明确main/origin6426已接收5504；owner核5504为祖先、三scope对main零diff，见[w2-main-receipt.json](../../docs/evidence/s01/w2-main-receipt.json)。不重跑、不把cc741只读提案混入批准。GO已认可提案总体方向但要求补claim丢失回执的真实接口缺口；完成CHAT06结果审查后补，后继实现未授权/未领取。
