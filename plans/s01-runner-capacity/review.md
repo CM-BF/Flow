@@ -82,3 +82,5 @@ DB/public行集清理后未留存，只认可固定程序完整断言通过，�
 复制步骤：核manifest对应固定target/source/raw/CLI与当前WT字节；六份原始driver文件与raw-freeze完全一致；19 mixed source保持634=execution12154=WT，78legacy保持98098354。核16个live/fenced gate和adapter区间、每attempt心跳/533event digest/终ACK、4取消阶段、12成功与verification；确认末尾claim无确定响应、inFlight保留/assignments[]、不启动B/不补跑。核最终10.6731145秒与18,660,992B（归档增量另有保守上界）、两child正常退出、自有DB DROP及唯一retained journal。A-window统计只作分层观测，median/nearest-rank定义固定，B absent，无纯锁时长或容量SLO推断。
 
 原14纯unit/strict0仅准备证据。只读saved raw/source，无新工程测试、HTTP、PG、runner或provider；具体问题交owner修报告，不允许重跑取好结果或清未知。结果批准仅证明如实失败交付可接收。
+
+2026-10-06 10:15:58 UTC结果独审 **APPROVED**，target `6a5961a0d815113bba7cea149bc08ca07fdd128a`，reviewer architecture_read / gpt-6-astra，0 P1/P2证据问题。明确仅如实失败交付，runVerdict=FAIL不变；[独审回执](../../docs/evidence/s01/mixed-run/independent-review.json)。原source/raw/analysis冻结，不补跑、不清unknown；main接收另记。

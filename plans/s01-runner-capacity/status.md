@@ -17,13 +17,13 @@
 | 实现目标 | mixed准备634926238f749fb1547a5973b521bc6dc5498574；实际执行12154；结果target见结果manifest。旧W2 target2ab7967保持历史绑定 |
 | 实现范围 | experiments/runner-capacity/mixed冻结；mixed-run结果与本任务metadata，无产品修改 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 4 |
 | 当前产出 | 唯一窗口如实FAIL及A组有效观测已封存；16真实attempt重叠，正常停止留下未知claim且B未启动 |
-| 下一可用交付 | architecture_read独审固定结果；正常停止drain后继由Mika另派S01P03独立scope，不在本树实施或补跑 |
-| 当前阻塞 | 完整两组合同未通过；原未知claim journal保留。结果等待独审，后继无新窗口授权 |
+| 下一可用交付 | Lead接收已审失败结果；S01P03已另派独立scope准备正常停止drain，不在本树实施或补跑 |
+| 当前阻塞 | 完整两组合同未通过；原未知claim journal保留。结果已独审待main接收，后继无新窗口授权 |
 | 需用户决定 | NONE |
-| Review | 准备634 APPROVED；本次FAIL结果独审pending，[review.md](review.md)，不沿用准备批准 |
+| Review | 准备634 APPROVED；本次FAIL结果6a5961a独审APPROVED（仅如实失败交付），[review.md](review.md)，不沿用准备批准 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -140,4 +140,6 @@ Mika在准备独审后批准唯一window `mika-s01-mixed-20261006-100634`，执�
 
 本地clean-code结果封存检查完成，质量记录在mixed-run/quality.md。结果待architecture_read独立只读审定，main未接收mixed；唯一status供既有dashboard聚合，待新状态展示，不另写聚合JSON。Mika将另派正常停止领取并有界排空claim的S01P03独立WT/scope，尚未开工，原S01保留writer claim v3做结果收口。
 
-2026-10-06 10:18 UTC：结果target `6a5961a0d815113bba7cea149bc08ca07fdd128a` 固定并核clean；[结果manifest](../../docs/evidence/s01/mixed-run/manifest.json)绑定19source/16readonly/8raw/7support，旧78文件不变。整体FAIL、未知journal保留，交architecture_read独审。追加metadata不改变执行12154或原raw；本次归档保守重复计量上界25,625,526B，含64KiB metadata预留。没有再运行负载或工程测试。
+2026-10-06 10:15 UTC：结果target `6a5961a0d815113bba7cea149bc08ca07fdd128a` 固定并核clean；[结果manifest](../../docs/evidence/s01/mixed-run/manifest.json)绑定19source/16readonly/8raw/7support，旧78文件不变。整体FAIL、未知journal保留，交architecture_read独审。追加metadata不改变执行12154或原raw；本次归档保守重复计量上界25,625,526B，含64KiB metadata预留。没有再运行负载或工程测试。
+
+2026-10-06 10:16 UTC：architecture_read于10:15:58Z只读APPROVED结果target6a5961a，0 P1/P2，仅批准如实失败证据；runVerdict仍FAIL。19/16/8/7绑定、78legacy、实际80B journal与A层级统计均独核。见[独审回执](../../docs/evidence/s01/mixed-run/independent-review.json)。本片待Lead集成，原始raw/source不变、0重测；之前封存metadata的10:18手填时间已校正为10:15，无运行时间或raw变更。后继S01P03已由Mika明确派工，独立runner-graceful-stop WT/claim，不继承本树scope。
