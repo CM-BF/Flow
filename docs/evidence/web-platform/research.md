@@ -451,3 +451,11 @@ root/w01只读实际react0.15.23/core0.3.22源码：在当前无SDK queue adapte
 w01固定main/origin `fb906cb42391971a8b315dbd813f7633927d7265` 建议为新模块base；正式派发若换base须明示。八literal为data-renderers/registry.ts、react.tsx、flow-reply-detail.tsx，test/data-renderers.test.ts、data-renderers.browser.ts、data-renderers.fixture.tsx，以及plans/wpf-renderer01-data-renderers、docs/evidence/wpf-renderer01（源码与test均apps/web前缀）。均新路径，05:40 freshledger无相交，未建树/领取/实现。优先级低于QUEUE及K02正式reader合同，已交root统一协调Lead。
 
 接口建议为静态可信catalog(ownerId/name/version/parse)整批校验+受控registry snapshot/subscribe/resolve/attach Disposable，现PluginHost.list/subscribe/activate只作lifecycle窄输入，attach由context.own/signal回收；不新增manifest kind/公共DTO。每provider一个稳定且独有的注册Bridge，pane只传message绑定资源及reply port；现flow-reply-detail仅此保留名接受无version legacy v1，strict turnId再核message/turn/task，port仅getSnapshot/subscribe/read()，不接受任意detail/task参数。未知版/schema不发load，合法builtin禁用保留App-owned安全显式详情fallback。App接线另需ConversationThread/session/react正式受领，现QUEUE写界不可抢。此独立可信展示模块不关闭完整X01 npm/第三方隔离/CLI生命周期。
+
+## 05:43 K02首DTO候选（仍非生产ready）
+
+root转Mika固定 `1eefebd5dca8f74bbefaf260a106e0e540e7fcf1` / basefb906；管理已git show核 `docs/evidence/k02/interface.md` 和 `packages/contracts/src/conversation-context.ts`。精确候选名为creation.projectId?（创建后不可变）、turn/enqueue.knowledge?:KnowledgeCitation[]（最多4且不重复）、capabilities.knowledgeContext?:boolean（旧缺省false）、turn/queue.context?仅元数据。此前泛称context:boolean只作草案历史，不映射成冻结字段。route仍501/原creation-turn schema尚未挂、NOT_RUN，不因首DTO或take称产品ready。
+
+公共context仅id、contextDigest、executionInputId/executionInputDigest、templateVersion及有界sources metadata；详情owner鉴权双ID按需，最大JSON65536B，原citation冻结文本合计8192UTF8B；执行编译输入另核16000UTF16/49152UTF8B，现queue原输入16000UTF8B继续保留。旧task.snapshot.prompt/user_text不改，runner只在授权assignment副本获得私有输入。具体reader/pin校验由原panels槽只读准备，待实装/Lead固定输入再受领，不抢QUEUE范围。
+
+composer精确安装源码补充：core0.3.22 `runtime/interfaces/composer-runtime-core.ts:67–71`、`runtime/api/composer-runtime.ts:221–225,345–349`说明SendOptions/send:void；`runtime/base/base-composer-runtime-core.ts:302–357,458–479,564–573`为草稿/附件/dispatch/错误恢复；`runtimes/external-store/external-store-thread-runtime-core.ts:702–714,724–742`先SDKqueue分派再默认user-run客户端tool abort/onNew。react0.15.23 ComposerRoot:99–104,131、ComposerInput:251–272,395为用户handler先行和preventDefault；ComposerSend:11–15/core primitive-predicates:13–17为running门禁。这里只保证startRun:false跳过该append自动abort，不泛称所有工具lifetime不受影响；无额外测试/产品批准。

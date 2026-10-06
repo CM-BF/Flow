@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:44 UTC / 架构与排队操作已审待主线；聚合/claim证据均已核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:44 UTC / 架构与排队操作已被主线接收；可信内容展示模块正式受领 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `12120a6ccc91b5480bede96548b0fe6aaa8d8fea`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `32ef566e95097c17d789b07ee3ccd49408da7c41`（本次管理停点前实核） |
 | 工作树dirty状态 | 本次仅管理范围的交付、正式领取回执与计划文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 聊天执行选项和紧凑摘要已合入；新版架构图和排队操作均通过审查，等待集成 |
-| 下一可用交付 | 可操作的消息队列与标明版本的架构图 |
+| 下一可用交付 | 集成消息队列与架构图，再验证按需内容展示 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -41,10 +41,11 @@
 | WPF-001-14 | completed | d01_owner | DPERF5cd限定APPROVED/final4d7425 clean；5md15links3TODO/范围0越界，4新检查与旧关联失败分开；main6b4已含、08bd记录后bb7efv2 released |
 | WPF-001-15 | completed | d01_owner | PROFILEUX55b获root限定APPROVED，60d8交付与5md27links3TODO通过，ef869记录main14c61；d113v2已release |
 | WPF-001-16 | in-progress | d01_owner | QUEUE01新14c61树已核clean，CHATv5移出官方Thread，b4ea85d0v1正式13scope受领；首canonical已注册；固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432croot05:40:36 APPROVED、最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean，41paths/13scope、6md36links、原样聚合和11源码hash核验通过，待主线 |
+| WPF-001-17 | in-progress | d01_owner | RENDERER01新fb906树已核clean、05:44:10.659Z原子take87948975v1八scope，先canonical后模块实现，不改QUEUE/App/shared |
 
 ## 当前唯一owner、claim与下一步
 
-管理者只写本树两目录，05:40:26.108Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审；workspace_panels_owner已固定queue UI候选等待独审；w01_owner已交付D06新轮并停写保留回修权，正在只读准备已有renderer候选。两者写scope不重叠；本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
+管理者只写本树两目录，05:40:26.108Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审；workspace_panels_owner已固定queue UI候选等待独审；w01_owner已交付D06新轮并停写保留回修权，正式受领新renderer独立模块；QUEUE/D06已MainLead RECEIVED等待集成。两者写scope不重叠；本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
 
 | 当前工作 | 已核事实与边界 |
 | --- | --- |
@@ -162,4 +163,6 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 
 05:41 MainLead正式接收D06进入集成队列，当前固定main fb906，SVC bootstrap→refresh窗口结束后再合D06/更新4320；未收到main/部署完成前不改为delivered、不释放claim、不停55247/58207。QUEUE01作者固定309/base14c61，全部11实现/测试文件的dev/prod报告hash据作者已匹配，管理等待其最终metadata核scope/links/TODO；root负责产品独审，当前不称通过。
 
-05:44 QUEUE01最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean管理检查闭合，复用作者05:41:16.755Z唯一API原样摘录，不另取样。实现309 root05:40:36批准；41paths在13scope、6md36links/5TODO、11源码及两份报告hash匹配，F01 pending与三个raw日志空白例外保留。产品全scope停写保留claim回修，完整OPS字段已交root一次桥Lead。当前无真实queue模型旅程通过的主张。
+05:43 QUEUE01最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean管理检查闭合，复用作者05:41:16.755Z唯一API原样摘录，不另取样。实现309 root05:40:36批准；41paths在13scope、6md36links/5TODO、11源码及两份报告hash匹配，F01 pending与三个raw日志空白例外保留。产品全scope停写保留claim回修，完整OPS字段已交root一次桥Lead。当前无真实queue模型旅程通过的主张。
+
+05:44 RENDERER01正式受领：[原take](../../docs/evidence/web-platform/renderer01-take-receipt.json) 87948975-fa99-49b6-a84c-3ca126aaeb92 v1，固定fb906，web-data-renderers/codex/web-data-renderers；manager独立HEAD/branch/clean及05:44:02.397Z freshledger通过后原子take。八scope不含App/QUEUE/P01/shared，w01已followup实施，首canonical未回前仅领取可见不称进度卡注册。MainLead已RECEIVED D06与QUEUE309/496，等待组合集成精确SHA，所有旧产品scope保留回修权不提前release。

@@ -171,6 +171,7 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-14** WPF-DPERF01：5cd限定APPROVED/final4d7425，临时样本同target比较2→1、Git启动29→24，4新检查通过；关联旧registry计数失败明确保留，main接收另计。
 - [x] **WPF-001-15** WPF-PROFILEUX01：紧凑摘要与原生details，固定55b/rootAPPROVED；60d8交付及本地链接/TODO通过，main14c61已接收，ef869记录后全六scoperelease。保持原公开Interface/权限/冻结语义。
 - [ ] **WPF-001-16** WPF-QUEUE01：已按固定14c61独立树与13scope正式受领，交付中心权威排队/暂停/继续/独立取消与真实键盘发送一致性；保持REQ44的回执、持久性、分页和跨连接验收，独审/集成另计。
+- [ ] **WPF-001-17** WPF-RENDERER01：按固定fb906独立模块与八scope正式受领，交付确定性可信data-renderer注册和每provider隔离、按需详情的单一内建例子；App接线、完整X01生命周期另片，独审/主线另计。
 
 ## 验收、风险与持续方式
 
@@ -286,3 +287,5 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 05:33 U11/REQ42 context后继依赖预警（GoalOwner转Mika，非固定合同）：获批设计K02拟为conversation/queue增加optional immutable projectId及固定KnowledgeCitation context≤4/8KiB，目前未take/未freeze。等待正式exactSHA后才定reader/receipt兼容与用户选择UI，现QUEUE01/D06优先，不开放context按钮、不造私有ref。公共task/turn/queue/SSE初始数据不带引用正文，正文仅授权claim执行副本或按需detail。当前未实证回执失败，不能列现存bug。
 
 05:42 当前状态文案质量finding闭合：root指出父status无历史限定的“当前按钮不变”已过时，已改为e423旧研究历史与QUEUE01固定309已审分支/待主线部署边界。05:37未固定、05:40固定通过按实际先后保留，不反写旧观察。K02在05:40:26.108Z freshledger已active（后台/shared），上段05:33未take仅该时点事实；仍须正式固定合同/批准后消费，不据领取开启context UI。
+
+05:43 GoalOwner/root正式批准现有renderer候选独立模块实施，沿WPF-001-05/原插件需求细分：固定fb906，仅3新源码+3专测+自己plan/evidence八scope；不是App接线或X01安装/启停/赋权新权威。先独立web-data-renderers树preflight、freshledger与原子take，再派写；此时仍无新receipt。K02首DTO字段按上列固定1eef记录，产品未ready时不让移动共享schema挤占QUEUE已审交付。
