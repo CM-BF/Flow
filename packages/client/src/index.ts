@@ -1,4 +1,5 @@
 import type { PluginInstallRequest, PluginInstallCommand, PluginInstallAccepted, PluginMaterialInstall, PluginInstallList, PluginInstallHistory } from '@flow/contracts';
+import type { GoalProgressionAuthorization, GoalProgressionRevocation, GoalProgressionResult, GoalProgressionSnapshot } from '@flow/contracts';
 import type { TaskUsageReadout } from '@flow/contracts';
 import { BROWSER_SESSION_CSRF_HEADER, browserSessionReadySchema, browserSessionReadSchema, type BrowserSessionReady, type BrowserSessionRead } from '@flow/contracts';
 import { nativeEngineeringProfilePageSchema, nativeEngineeringProfilePublishedSchema, type NativeEngineeringProfileConfiguration, type NativeEngineeringProfilePage, type NativeEngineeringProfilePublished } from '@flow/contracts';
@@ -273,6 +274,16 @@ export class FlowClient {
     const query = new URLSearchParams({ nodeId: options.nodeId });
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/goals/${encodeURIComponent(id)}/executions?${query}`, { signal });
+  }
+
+  authorizeGoalProgression(goalId: string, input: GoalProgressionAuthorization, key: string, signal?: AbortSignal): Promise<GoalProgressionResult> {
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/progressions`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  goalProgression(goalId: string, progressionId: string, signal?: AbortSignal): Promise<GoalProgressionSnapshot> {
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/progressions/${encodeURIComponent(progressionId)}`, { signal });
+  }
+  revokeGoalProgression(goalId: string, progressionId: string, input: GoalProgressionRevocation, key: string, signal?: AbortSignal): Promise<GoalProgressionResult> {
+    return this.request(`/api/goals/${encodeURIComponent(goalId)}/progressions/${encodeURIComponent(progressionId)}/revoke`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
   createGoalGraphProposal(goalId: string, input: GoalGraphProposalInput, key: string, signal?: AbortSignal): Promise<GoalGraphProposalCreated> {
