@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T18:26:46+00:00 / main8d84接收事实由Lead报告，部署未核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T18:31:59.756891+00:00 / main8d84接收事实由Lead报告，部署未核 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,22 +11,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；native source51c11fca6e91069c69790c787025a214a3e114bf，检查证据另固定；旧候选按历史Git保留 |
-| 工作树dirty状态 | 新compat只增固定输入/入口与证据，原pagesize封存000f17cf；提交后clean。 |
+| 工作树dirty状态 | compat单次运行安全证据封存；source/input/prepared与旧片冻结，提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | pagesize 12distinct分轮已验；真实e5d窗口1clang+2C，完整A/B均页读取−1/errno1，单hw.pagesize规则未改善；process/root cleanup与限定accounting确认，结果已获18:23:28忠实性接收；compat五源18:26:05源码审通过，惰性import/sh-n两项0，实际未OPEN。0真实Codex重试。 |
+| 当前检查 | compat一次1clang+2C：A三读取−1/errno1；B唯一compat许可后三项16384/errno0；全部关闭/清理与限定计量完成，结果待忠实性审查。原12未重跑、0native重试。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；CORE/C01/F01已由main8d84d529接收，唯一组合回执见canonical；不代表个人服务部署或完整跨端验收 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude产品core首契约已main；当前接入现profile、中心事务、队列与已有adapter。child next-slice-handoff维护唯一精确合同/闭包；本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude逐消息设置中心与公共客户端已接入主线；页大小对照已完成，新增许可未改善读取，原Codex握手失败仍未解决。 |
-| 下一可用交付 | 准备数字页大小兼容名称的有界对照；合法consumer继续Web/TUI完整冻结设置验收。 |
+| 当前产出 | Claude逐消息设置中心与公共客户端已接入主线；精确兼容许可改善了C页大小读取，真实Codex启动仍未验证。 |
+| 下一可用交付 | 封存单项许可对照的忠实结果；合法consumer继续Web/TUI完整冻结设置验收。 |
 | 当前阻塞 | ACTIVE: 真实Codex握手失败，尚无目录或实际模型资格；Claude完整跨端产品验收仍待完成。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | pagesize源码acbb已Mika18:12:25增量接受，e5d组合18:15:33通过并单次开放；实际bb818结果已Mika18:23:28忠实性接收，0P1/P2。原native fcd已限定ACCEPTED，功能失败未变。 |
+| Review | compat ebfff源审18:26:05、a712组合18:29:45通过；实际结果待独审。旧bb818已18:23:28忠实性接收并000f封存；native功能失败未变。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | native薄caller复用R06唯一stdio/process owner及同一policy，不改生产接口；单页目录不作账号/实际模型或writer停止证明。Claude架构接线由CORE/共享consumer与Lead同步。 |
 
@@ -48,7 +48,7 @@
 
 [canonical](../../docs/evidence/wpf-mature-02/interface.md)唯一路由共享owner。本claim v6仅docs/实验/plan三scope，四profile路径已停写并[原子交回](../../docs/evidence/wpf-mature-02/claude-core-profile-handback-receipt.json)，R06/store此前已交回。Lead报告2026-10-06 15:38:16 UTC实际4320快照164来源、CORE live/issues=[]，后续9bdb仅registry；本owner未重采。子进度由其唯一status维护，完整02仍in-progress。
 
-CHAT06P03已main接收并release，唯一status与receipt由canonical链接；本父不维护该子task第二状态。CORE/C01组合接入与Web/TUI仍优先，旧native窗口CONSUMED；pagesize已消费并封存；compat准备中，实际未OPEN。
+CHAT06P03已main接收并release，唯一status与receipt由canonical链接；本父不维护该子task第二状态。CORE/C01组合接入与Web/TUI仍优先，旧native窗口CONSUMED；pagesize已消费并封存；compat已消费，实际结果待独审。
 
 ## 固定证据与边界
 
