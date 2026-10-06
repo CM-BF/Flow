@@ -95,5 +95,19 @@
     "Each G01 intermediate revision is saved, but all changes and receipt commit in one transaction",
     "Proposal source is authenticated owner submission, not a claim about original text authorship",
     "No Web/CLI/client/rootlock edits"
-  ]
+  ],
+  "independentReview": {
+    "recordedAt": "2026-10-06T05:18:55Z",
+    "reviewer": "Mika",
+    "status": "APPROVED",
+    "target": "1f211995daae06b23cf98400199ef4d3cd3995b0",
+    "evidenceHead": "ba1a670e452e08a01321a806967fa04db37bd591",
+    "originalManifestSha256": "63e16bfbd31d677c47f07ff8947fd2bc930cc56d8fdd39dc4ef14cc14bd3a7f7",
+    "verifiedSources": 7,
+    "verifiedOutputs": 7,
+    "originalG01AssertionsUnchanged": true,
+    "reranTests": false,
+    "findings": [],
+    "mainIntegration": "pending"
+  }
 }
