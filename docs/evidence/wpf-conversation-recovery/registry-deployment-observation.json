@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-06T14:58:53.930524+00:00",
+  "fixedMain": "d679444c4bed52bbd53d38f4944f914b30fbbd92",
+  "registrySha256": "8a0fefe5b730e723f14b24a2f5eda51eb9d745352ba30b73b3aaee09ab82f447",
+  "entries": [
+    {
+      "taskId": "WPF-RECOVERY01",
+      "fixedRegistryLine": "['WPF-RECOVERY01', '刷新后恢复聊天与草稿', '工作线', 'web-conversation-recovery', 'wpf-conversation-recovery'],"
+    },
+    {
+      "taskId": "WPF-RELEASE03",
+      "fixedRegistryLine": "['WPF-RELEASE03', '新版网页与现有后台兼容', '技术验证', 'web-current-preview-compatibility', 'wpf-release03-current-preview'],"
+    }
+  ],
+  "leadActualObservation": {
+    "at": "2026-10-06T14:51:18Z",
+    "sourceCount": 161,
+    "twoTasks": "live, parser0, humancomplete, owner sources retained",
+    "source": "Lead inbound via root, not manager UI/API observation"
+  },
+  "limits": "Only fixed registry source read; no aggregate,4320GET,reload,provider or product test"
+}

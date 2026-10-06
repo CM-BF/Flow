@@ -37,3 +37,13 @@ Root固定4ba报告原样归档。首direct20/20，2.540秒、tmp9227B、清理�
 ## 2026-10-06 15:05 UTC — 同键终态binding清理
 
 核root提醒成立：host终态对账成功后blockedCommands/handoff仍可能残留。修复仅已通过host完整identity匹配且namespace/generation仍current的terminal ID；handoff显式关联原commandId，不全量清保护。prepare事务真正commit后即记录source draft已transfer（version0），authgate仍拒旧HTTP；终态Restore保留并写deferred下一稿，失败identity不解保护。新增binding层受控case而非只outbox单测。完整Webtypes6.152s/exit0；累计52.814/60。行为仍待第二fresh窗口。
+
+## 2026-10-06 15:17 UTC — RB1–RB4 future-harness clean-code
+
+沿本地find-skills发现既有codebase-design/clean-code/webapp-testing；复用已固定本地版本，无安装/联网。适用方法为明确父supervisor、DB lease与App worker三项职责，小Interface通过同一两入口执行；没有通用进程框架/共享产品接口。webapp-testing的方法只用于真实UI定位/生命周期设计，本段不调用浏览器helper或运行任何脚本。
+
+RB1：父进程先持有worker/Chrome detached PGID再等待启动；独立硬timer覆盖挂起import/factory/Chrome连接及清理。worker没有无法拥有的launch Promise；清理结果与budget complete分离，未清理/未知旧attempt阻止下次。RB2：CREATE尝试在SQL前落归属记录；confirmed与marker分开，只有精确marker+零连接可DROP，不FORCE，unknown CREATE始终保错误且非空remaining不再漏报。RB3：唯一/tmp scratch计量与删除，Vite native loader不写依赖目录vite-temp，递归evidence/原始日志/截图/report分别有界。发现Chrome transient singleton symlink不得误判证据外链，scratch只计lstat不跟链接；目录瞬时消失可忽略，其他监测错误停止。250ms观察不是物理硬quota。
+
+RB4：源码备好真实Files目录选择、metadata-only原ref恢复后显式revalidate、材料turn丢ACK同key/body；IDB写入强制abort后无reload认证失效/重连保page-only草稿，非假私有controller替身。全量profile/knowledge/steer稿、CREATE/queue/steer真实重开及第二中心仍PENDING，不称完整能力通过。所有新脚本未import/typecheck/运行；原4ba20绿与2498新增2case未运行保持不变。
+
+本段仅2专测源和own记录，17其他源对2498零差；diffcheck0是静态格式核验，不等编译/行为通过。剩type7.186s与direct27.460s未使用。磁盘不足，不重新测空间、不新占运行窗口。

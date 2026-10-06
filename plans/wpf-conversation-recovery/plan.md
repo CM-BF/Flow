@@ -28,3 +28,7 @@
 ## 范围与证据
 
 精确21literal以[take回执](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)为准；新增path须先amend。[Interface](../../docs/evidence/wpf-conversation-recovery/interface.md)、[质量](../../docs/evidence/wpf-conversation-recovery/quality.md)、[状态](status.md)、[审查](review.md)。
+
+### 未来浏览器入口的运行前门禁（RB1–RB4）
+
+父进程在启动前拥有worker和Chrome进程组，独立监督累计90s并保留至少15s清理；数据库CREATE尝试/确认/marker持久记录，只有精确marker且零连接可删，unknown与非空remaining均阻止通过/重跑。唯一scratch目录与递归evidence/日志预算、实时free监测须先于业务import/CREATE。材料稿及无reload认证失效纳入显式coverage矩阵；未实际运行保持NOT_RUN，不能沿text-only旅程宣称完整恢复。

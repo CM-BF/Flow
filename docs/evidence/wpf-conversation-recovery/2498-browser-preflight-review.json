@@ -1,0 +1,58 @@
+{
+  "target": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
+  "at": "2026-10-06T15:09:07.100877+00:00",
+  "reviewer": "root read-only future browser-harness review",
+  "execution": "NONE; does not alter direct20/20 baseline or2498 pending22 cases",
+  "files": [
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 9760,
+      "sha256": "f963b0d7428d676ed8e5f19978554aa768cc7a4808193260f7eb1645b4e0f194"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 13974,
+      "sha256": "f63e18666f204aed961fff5d7df989602ad65d83f394fb6b0ce2be5babe47773"
+    }
+  ],
+  "conclusion": "Future real-browser/PG execution remains NOT_ADMITTED until lifecycle/budget issues resolved and fresh resource window exists",
+  "findings": [
+    {
+      "id": "RB-1",
+      "priority": "P1",
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "title": "The90s cumulative budget is checked after work, without an owned hard-deadline supervisor",
+      "evidence": "Work timer aborts lifetime and closes only an already-assigned browser. startRecoveryFixture/chromium.launch are assigned after awaited startup; pending startup cannot be owned or terminated at deadline. browser.close is unbounded and fixture close uses Promise.race without cancelling the losing operation. A late/hung launch or cleanup can exceed90s; final elapsed check records overshoot only after it happens.",
+      "requested": "Before any run, use an external parent owning detached worker/Chrome groups before startup, durable attempt/DB owner facts, deadline including cleanup, bounded source/imports and monotonic resource checks. A failed/hung cleanup must remain explicit and block rerun; no unrelated process or DB termination."
+    },
+    {
+      "id": "RB-2",
+      "priority": "P1",
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "title": "Unknown CREATE outcome can retain a DB while cleanup reports success",
+      "evidence": "created becomes true only after CREATE reply. If database creation commits but acknowledgement rejects/times out, created stays false. close reads remaining rows but only throws if connections or created; remaining=[ownedName],connections=0,created=false is reported errors[].",
+      "requested": "Track attempted/confirmed/marker ownership before CREATE; unknown acknowledgement or nonempty remaining must always make cleanup incomplete. Do not infer authorization to drop from name alone; preserve exact owned facts for operator recovery."
+    },
+    {
+      "id": "RB-3",
+      "priority": "P1",
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "title": "Evidence cap ignores the Vite cache directory and is not enforced during work",
+      "evidence": "fixture places Vite cache under docs/evidence/wpf-conversation-recovery/vite-cache. Final byte loop adds only top-level isFile entries, so that retained directory is excluded. No live free-space/evidence monitor or approved scratch isolation is in the entry.",
+      "requested": "Scope own cache to an approved unique scratch tree, recursively count retained evidence and bound process/wire output, monitor fresh free space during initialization/work, verify scratch cleanup. Declare scratch peak separately from8MiB retained evidence; do not silently exempt persistent cache."
+    },
+    {
+      "id": "RB-4",
+      "priority": "P2",
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "title": "Actual App coverage does not yet demonstrate complete-draft and page-only auth-loss promises",
+      "evidence": "Current flow restores text+delivery intent and retries a text-only existing-conversation turn. fixture uploads a resource but browser does not attach it or restore knowledge/profile/Steer. Auth expiry path reloads first, so it cannot demonstrate retention of unsaved page-only state in the mounted old workspace. CREATE+first-turn and Queue/Steer recovery remain direct/source coverage.",
+      "requested": "Maintain an explicit runtime coverage matrix; add highest-risk real App cases within existing90s budget (complete material draft and original key/body; auth-loss without reload while save fails), or keep these acceptance items pending instead of claiming complete browser verification. No broader rerun/budget increase implied."
+    }
+  ],
+  "notes": [
+    "These issues concern prepared future browser harness; no PG/browser has run, so no actual leak, overshoot or App data-loss reproduction is claimed.",
+    "Current resource fresh gate failure remains NOT_RUN, not a history/product failure.",
+    "Changes stay within existing21 paths and require owner current claim; shared server/contracts/session semantics are not part of this fix."
+  ]
+}

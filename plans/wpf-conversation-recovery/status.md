@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:05 UTC |
+| 最近更新 | 2026-10-06 15:17 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；已推05c4176ab6aef3a0319871f8ad25a1da27299ec6 + dirty终态binding修复；提交后Git为准 |
-| 工作树dirty状态 | 恢复源码及本任务证据修改；本段提交后实际Git为准 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；已推249894321f22763ec4801af8bd9c2ef0e0e3c36b；本段仅未来验证脚本及记录修改 |
+| 工作树dirty状态 | 未来浏览器harness与本任务证据修改；正式恢复源码/22case保持2498固定 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 连接观察器、IDB检查点与原命令屏障已有源码；已接完整草稿和P01真实入口；早期问题及f13复核已逐项源码修正，行为尚未验证 |
+| 当前产出 | 已接完整草稿与恢复入口；基础事务检查已通过，补齐浏览器验证的清理和材料恢复用例，真实浏览器尚待运行 |
 | 下一可用交付 | 刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复 |
-| 当前阻塞 | ACTIVE: 浏览器与完整构建等待可用磁盘和中心会话语义核验；轻量实现可继续 |
+| 当前阻塞 | ACTIVE: 浏览器与完整构建等待可用磁盘和中心会话语义核验；本段仅修未来浏览器验证脚本，第二direct仍未运行 |
 | 需用户决定 | NONE |
 | 检查状态 | 4ba基线20/20受控direct PASS；R4及终态binding新case待测。最新Web noEmit0，累计52.814/60s，浏览器NOT_RUN |
 | 实现目标 | UNKNOWN |
@@ -42,11 +42,11 @@ pre-provision可用1,584,984,064B，建树后管理报告1,416,241,152B，非当
 
 ## 下一步与handoff
 
-已在App接cookie观察器/P01入口，继续检查完整稿、跨tab/原key恢复及八项早期预审边界；不得孤立journal交付。当前无实现target/approval。唯一status由本owner维护。
+已在App接cookie观察器/P01入口，继续检查完整稿、跨tab/原key恢复及八项早期预审边界；不得孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
 
 ## Dashboard同步
 
-SOURCE_READY dcaf已交管理并push；登记待实际回执；未读4320/API，不把登记请求写成部署。实际parser证据随后落本任务evidence。
+登记已闭合：管理固定main d679444c4bed52bbd53d38f4944f914b30fbbd92核registry指向本唯一canonical；Lead 2026-10-06 14:51:18Z实际观察161 sources，本任务live/parser0/human完整。[原归因观察](../../docs/evidence/wpf-conversation-recovery/registry-deployment-observation.json)已原样保存；这不是本owner新API采样。dcaf SOURCE_READY为历史请求，不冒后续源码已验。
 
 ## 本段轻量检查 / 资源
 
@@ -67,3 +67,11 @@ f13两P1、同key终态对账、迟到CAS与failed-open修复映射已更新。�
 ## 15:06 UTC 单文件基线与后继修复
 
 [首direct原报告](../../docs/evidence/wpf-conversation-recovery/direct-first.json)固定4ba，20/20 PASS，runner2.540s/cleanup fulfilled/tmp9227B，全部mockIDB/mockfetch；不覆盖后继R4。已修auth-null期间成功commit版本记账、明确Restore同key终态后解除该receipt blocker并保存deferred下一稿。新22case目标待fresh运行，原4ba日志不改。新增真实App fixture/browser仍0执行，中心/IDB跨重开语义不由直接检查代替。
+
+## 15:11 UTC 未来浏览器验证入口修复
+
+Root只读[2498预检](../../docs/evidence/wpf-conversation-recovery/2498-browser-preflight-review.json)发现RB1父监督/硬截止、RB2未知CREATE清理、RB3缓存与递归证据计量、RB4材料和page-only auth-loss覆盖缺口。没有运行造成的泄漏或数据丢失复现。现6ff v4 active/21scope已本人live核；先source-only修两脚本。4ba20/20不覆盖新增2case；第二direct剩27.460s，本段0types/PG/Chrome/HTTP/Vite import/install，空间不足不轮询准入。
+
+## 15:17 UTC source-only harness安全点
+
+RB1–3已源码修正：父监督持有两进程组和DB lease，硬截止/清理未确认阻止重跑；未知CREATE不凭随机名删除，非空remaining必报错；cache独立scratch/native配置加载、递归计量与live监测写入未来入口。RB4新增实际UI文件引用+丢ACK原body以及无reload的IDB写入abort/auth-loss旅程，但全部NOT_RUN。[覆盖矩阵与运行门禁](../../docs/evidence/wpf-conversation-recovery/browser-harness.md)。本段0types/测试/产品import/HTTP/PG/Chrome，types余7.186s、direct余27.460s；17其他源码及22case对2498零改。待新fixed后，旧2498 direct预检manifest须重绑，不可直接运行。
