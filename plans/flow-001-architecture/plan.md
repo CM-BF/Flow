@@ -494,3 +494,16 @@ GO只读固定4285182（至a7238相应文件无差）：goal-tools-mcp/read.ts�
 ### 连续入口的历史解释与共享控制器（2026-10-06 11:55:24 UTC）
 
 O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连续观察、显式命令/未知ACK恢复与断开不取消。复用immutable goal_explanations提供轻历史引用和按固定id显式正文，超过旧50条窗口仍可达；兄弟活动不能使旧解释引用失效，历史解释不代表当前状态仍有效。0模型公开旅程覆盖>50条、相关版本冲突、两个公开客户端和同key恢复。状态仍中心权威，客户端不自动调模型或调度child；owner读口不直接授予runner/MCP。公开typed入口由headless/TUI/Web并行消费，完整自然语言目标闭环不因本片通过而勾完。
+
+
+### 有界独立分支与共享预算后继（2026-10-06 15:25 UTC）
+
+归原REQ-18/22、O01-05/M02和COST001-05，不改已审O14 v1：固定70cc的goal-progression/store.ts:83–99会在同授权任一未完成执行时返回，因而独立ready节点也串行。当前首版只证明有限有序推进，不代表百agent编排。O15当前输入确认继续，不扩其writer。
+
+后继按显式版本策略允许独立分支在中心容量/共享预算内并行；依赖未满足仍等待，全局撤销停止新受理，unknown不自动重试或释放预留。0模型验收A/B独立、C依赖A：A待人时许可策略允许B实际完成，C不提前；证据须真实重叠而非只queued多行。复用现scheduler、usage账本和中心事务；原子预留、跨runner竞争、lost ACK/重启不重复占用、unknown不凭超时退款归COST001-05，次数/并发硬界与估算USD分开。资源未达不启动负载。
+
+来源：[官方SDK成本说明](https://code.claude.com/docs/en/agent-sdk/cost-tracking)，2026-10-06实际读取；当前文档说明query预算不计resume带回历史额，clear可重新起算，费用是客户端估算。仅作后继设计输入，不替代固定SDK0.3.290行为证据，也不改历史usage字段/旧grant。
+
+### P01读取取消的局部后继（2026-10-06 15:25 UTC）
+
+固定7810至本轮已审客户端增量，a2a-mapping的read包装组合signal只中断等待，flow.events/detail未收到该signal；client detail支持signal，events尚无可选signal。底层HTTP仍到自身默认15秒超时，并非无限泄漏。归原P01/REQ-08/10低优先后继：兼容地透传观察取消，实际挂起HTTP证明observer abort后events/detail关闭、没有后继页/详情读取，正常和默认超时保持；断开观察绝不cancel中心任务。0PG/provider/新依赖，仅直接模块。现reference仅id/title，不能无依据先判断artifact种类；不借本片建缓存/事件系统或重跑全库。
