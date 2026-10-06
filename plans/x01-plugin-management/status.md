@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 12:32:03 UTC |
+| 最近更新时间 | 2026-10-06 12:35:42 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -11,20 +11,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
-| 工作基线 / HEAD | 接收880af9f654230fa922e01f9ed9c0243c03024ec7 clean；拟受控同步已审main7cbda706；无新产品实现 |
-| 工作树 dirty 状态 | 仅新claim两个metadata目录，实际dirty由Git聚合 |
+| 工作基线 / HEAD | c837853829f0344634df78ed7195ee7255f6b832；受控合入固定已审main7cbda706，无冲突/apps/packages零diff；后续仅设计metadata |
+| 工作树 dirty 状态 | 仅新claim两metadata目录，提交后clean由Git聚合 |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN 新纵向片产品；本轮owner/源码事实/计划检查，未跑PG或模型 |
-| Review | NOT_STARTED 新纵向片Interface设计待固定；旧c21731c plan-only APPROVED仍限原计划 |
+| 检查状态 | NOT_RUN 产品；仅设计文档/链接/10TODO/固定20源码/hash/原计划完整验收与受控merge检查，0PG负载/SDK/provider |
+| Review | NOT_STARTED 新纵向片Interface设计待固定独审，原plan-only批准不覆盖 |
 | 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；完整npm生命周期未实现 |
 | 实现目标 | UNKNOWN（本轮设计待固定，非产品实现） |
 | 实现范围 | docs/evidence/x01, plans/x01-plugin-management |
 | 本片段交付阶段 | planning |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 新owner接收原权威计划，纠正已完成Web挂载事实；准备真实trusted npm纵向片Interface |
-| 下一可用交付 | 固定最小install/config/grant/enable/task/load/verify/disable合同与F01接线/migration请求 |
-| 当前阻塞 | ACTIVE: 产品实现待共享F01合同与唯一migration分配；设计可独立推进 |
+| 当前产出 | 同机trusted真实npm纵向片Interface/精确scope请求已成稿；20固定源码输入；原Web挂载阻塞已纠正 |
+| 下一可用交付 | Mika审固定设计；Lead分配唯一migration和共享host/task/event/commands接线范围，随后才领取产品scope |
+| 当前阻塞 | ACTIVE: 产品实现待Lead冻结target runner/store资格、共享union/命令及唯一migration；设计已ready |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -48,10 +48,12 @@
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；尚未亲自核验 dashboard 聚合，不称已展示。D04 claim 04c5de3f-2e76-49d1-9a92-6f0069d69a88 v1 在03:18:09 UTC读回 active；review修复期保留。真实事实/检查/文档target随本scope metadata单独更新。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；尚未亲自核验 dashboard 聚合，不称已展示。旧D04 claim04c5de3f v2已released；当前仅新owner6ddedc73 v1两metadata范围，旧观察不表示当前写权。真实事实/检查/文档target随本scope metadata单独更新。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
 2026-10-06 04:39:30 UTC 已核唯一树clean/active claim v1；main75a33含a87b9f计划（范围零diff）。main中X02状态绑定实现3d0cfc8/共享095497；X03模块绑定895c8999且主App挂载仍独立WPF-X03I01。此后只做文档同步，不重测/安装/发模型。最终metadata提交后明确停止X01全部范围写入，再release当前v1；实际回执外报，不在release后回写。未来修订须新take。
 
 2026-10-06 12:32:03 UTC：Mika交接后fresh核旧X01 released/HEAD880 clean，新take6ddedc73 v1成功；[owner接收](../../docs/evidence/x01/owner-acceptance.md)修正Web挂载已完成事实，原10项TODO不减。现仅设计metadata，计划同步固定已审main7cb；共享scope和migration由Lead分配，不借新claim写产品。
+
+2026-10-06 12:35:42 UTC：固定main7cb受控合入c8378538，无冲突，所有apps/packages逐diff相同，integration c0e1f593 v2已release；[收据](../../docs/evidence/x01/controlled-main-integration.json)。[纵向Interface](../../docs/evidence/x01/vertical-interface.md)/[精确请求](../../docs/evidence/x01/scope-request.md)只设计未实现；scope仍两个metadata。原完整TODO/用户目标保留，0新增产品tests/PG/SDK/provider/安装。
