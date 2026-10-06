@@ -23,3 +23,5 @@
 2026-10-06 20:09:02 UTC：b4唯一准入执行后的证据安全段。保已接受native边界与Node外层sandbox差异，实际Chrome code0/完整close、双owned PGID/scratch清理原件可核。将fixture首次locator strict failure与旧CDP启动失败分开，不放宽负向内容断言或删除失败，不重跑37。19原件逐字归档，父errors短串与worker真实堆栈并存；6861全额入账，累计20609，余39391非许可。应用已有clean-code方法复核来源、错误分类、唯一预算与原raw保真；产品六源保持不变，只有ownmetadata正常提交。
 
 2026-10-06 20:11:18 UTC：MSGSET-B4-LOCATOR窄修clean-code安全点。复用本地webapp-testing/clean-code，以现有fieldset legend建立唯一语义定位，先计数/可见性再原否定内容断言；不动ARIA、未加.first()兜底、不扩product或launcher。反替源码逐字核对与19raw hash保真，5其余源无改；当前delta未运行，旧37/原b4失败各自归因。源码与metadata分提交，待独审后才可能新freshgate，0额外资源采样。
+
+2026-10-06 20:19:12 UTC：metadata-only限定批准收口。核manager原a5b v1八scope/无overlap观察与root270c原件hash，当前摘要准确标注源码批准/browser未复验；旧失败与预算原样保留。应用既有clean-code/webapp-testing方法，核精确语义定位、事实时点、完整feature UNKNOWN与来源链接；六源/原b4执行目录不改，无产品运行或空间采样。最终HEAD提交后用于新/tmp候选，避免循环修改binding。

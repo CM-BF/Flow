@@ -53,6 +53,12 @@
   ],
   "protectedDiff": [],
   "readonlyCreationParameterPreserved": "configuredSelection(input: Immutable<DirectoryProfile>)",
-  "runtimeChecks": "Current locator-only delta NOT_RUN. Historical f3 strict noEmit/direct37 PASS and parent count FAIL preserved. Original1cd/18ede b4 reached fixture then first group locator strict failure; checks0, cumulative20609/60000ms. New source review/binding/gate required; no automatic rerun.",
-  "previousImplementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014"
+  "runtimeChecks": "Current locator-only delta NOT_RUN. Historical f3 strict noEmit/direct37 PASS and parent count FAIL preserved. Original1cd/18ede b4 reached fixture then first group locator strict failure; checks0, cumulative20609/60000ms. Scoped locator source review approved; new binding/gate required; no automatic rerun.",
+  "previousImplementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "scopedSourceReview": {
+    "verdict": "APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN",
+    "report": "root-270c-locator-source-review.json",
+    "blocking": 0,
+    "runtime": "NOT_RUN"
+  }
 }

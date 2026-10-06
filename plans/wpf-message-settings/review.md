@@ -2,7 +2,7 @@
 
 **状态：UNKNOWN — 完整片段的运行验收尚未完成。**
 
-Review target commit：270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67。新目标仅browser的named group/count/visible窄修，待固定源码复审、NOT_RUN。原1cd的b2初始化失败和b4真实fixture首定位器失败原样保留；root已接受b4失败与清理并要求该P2修复，完整feature仍UNKNOWN。Base：8d84d529a0756116bd0fc8bad969d61a6c26248e。
+Review target commit：270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67。新目标仅browser的named group/count/visible窄修，已获[Root限定源码复审](../../docs/evidence/wpf-message-settings/root-270c-locator-source-review.json) **APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN**，0blocking、P2 SOURCE_ADDRESSED；browser尚未复验。原1cd的b2初始化失败和b4真实fixture首定位器失败原样保留；root已接受b4失败与清理并要求该P2修复，完整feature仍UNKNOWN。Base：8d84d529a0756116bd0fc8bad969d61a6c26248e。
 历史f3限定源码结论：**APPROVED_SOURCE_SCOPED_NOT_RUN**，不自动批准上述新目标。Root 于 2026-10-06T18:25:38.301159Z 完成 f3a6 复审，源码无 blocking。该结论为18:25源码审查时点；后续 strict noEmit/direct37 的限定证据已独立接受，后续浏览器入口首次执行在CDP前失败、0界面断言，不构成完整功能或 main/deployment approval。
 
 ## 已执行的源码审查与历史
@@ -15,7 +15,7 @@ Root 转述 peer 对 catalog/selection/direct 源码未发现 blocking；此不�
 
 ## 审查入口
 
-[计划](plan.md)、[状态](status.md)、[当前六源绑定](../../docs/evidence/wpf-message-settings/source-manifest.json)、[初版绑定](../../docs/evidence/wpf-message-settings/source-manifest-initial.json)、[Interface](../../docs/evidence/wpf-message-settings/interface.md)。核公共 tuple/capability、旧目录兼容、取消代际、受控选择和 details 关闭焦点回调。当前目标一行fixture修复已固定，原f3类型/direct检查已完成；b2限定准备审查已批准，后继b4实际已到达fixture但首定位器失败；真实App/Send/Queue/Recovery后继。
+[计划](plan.md)、[状态](status.md)、[当前六源绑定](../../docs/evidence/wpf-message-settings/source-manifest.json)、[初版绑定](../../docs/evidence/wpf-message-settings/source-manifest-initial.json)、[Interface](../../docs/evidence/wpf-message-settings/interface.md)。核公共 tuple/capability、旧目录兼容、取消代际、受控选择和 details 关闭焦点回调。当前目标仅named group/count/visible窄修已限定批准，原f3类型/direct检查已完成；b2限定准备审查已批准，后继b4实际已到达fixture但首定位器失败；真实App/Send/Queue/Recovery后继。
 
 ## 已执行的运行证据独立核验
 
@@ -41,6 +41,10 @@ Root 于18:48:17 UTC给出[APPROVED_BROWSER_PREPARATION_SOURCE_SCOPED_NOT_RUN](.
 
 [原件/哈希索引](../../docs/evidence/wpf-message-settings/browser-third-observation.json)绑定同1cd/18ede。本次native边界已有精确接受，成功CDP连接/展示picker；browser.ts:81的group locator匹配4处而strict失败，checks=[]，未改断言/自动重试。父6861ms、累计20609/余39391，两个独立owned PGID与scratch清理完整。仅报告原事实，不自批整体；本轮不重跑types/direct37，完整feature UNKNOWN/main NOT_INTEGRATED。
 
-## 2026-10-06 20:11:18 UTC 当前locator修复复审入口
+## 2026-10-06 20:11:18 UTC locator修复复审入口（历史提交时点）
 
 只读 `270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67` 相对1cd的browser单点delta及[来源审计](../../docs/evidence/wpf-message-settings/browser-locator-fix-source.json)：named fieldset group恰1且visible，Adapter否定断言与其余行为原样，其他五源/19原件不变。[Root b4证据审](../../docs/evidence/wpf-message-settings/root-browser-b4-runtime-review.json)是实际失败与清理接受，不是本新delta批准。请勿运行旧consumedgate；预算20609/39391保持，新源码未运行。
+
+## 2026-10-06 20:19:12 UTC 当前限定源码复审结论
+
+Root于20:12:51.320495 UTC独立核固定270c的三行locator差异、六源hash与原b4十份证据子集，结论[APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN](../../docs/evidence/wpf-message-settings/root-270c-locator-source-review.json)、0blocking。原b4 strict4失败、19份owner归档、历史37/types及父计数FAIL保持；未运行新源码或继承行为通过。完整feature顶层UNKNOWN，browser复验/main接收/实际App接线仍待。
