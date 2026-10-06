@@ -361,5 +361,29 @@
       "bytes": 20586,
       "sha256": "6d7bebdd0f952eb1e33ee09aa266ae1ab34654f96f8a5de3d0e611034696ebd3"
     }
+  ],
+  "independentReview": {
+    "decision": "APPROVED",
+    "reviewer": "Goal Owner / Root",
+    "target": "c22412b5dd1368e3cdb14cd2c9afb6785b33a0e5",
+    "recordedAt": "2026-10-06 06:04 UTC",
+    "reviewedManifestSha256": "13b500b5c22248593ff75df5f34b79d230704243b0a9bca66364a76aca4826e7",
+    "sourceCount": 26,
+    "outputCount": 33,
+    "reranTests": false,
+    "modelQueries": 0,
+    "findings": [],
+    "scope": "Actual MCP/public client/HTTP/PG; injected query is not real native broker, natural-language or child execution evidence."
+  },
+  "coordinationReceipts": [
+    {
+      "path": "docs/evidence/o07/chat05-scope-amend-receipt.json",
+      "sha256": "6aee8789b9c627a488db60f9f9209fb52341b2fbd3559e9b143d499faf8b2a8f",
+      "claimVersion": 4,
+      "removed": [
+        "apps/runner/src/claude.ts",
+        "packages/contracts/src/runner.ts"
+      ]
+    }
   ]
 }
