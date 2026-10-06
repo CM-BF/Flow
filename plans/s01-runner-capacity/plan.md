@@ -99,3 +99,7 @@ GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika�
 - [x] 独立review固定准备实现：Mika 2026-10-06 12:29:56 UTC APPROVED 6de928d；实际窗口仍待明确OPEN。
 - [x] Mika点名70c92414后唯一128实际window完成，CLI0/14.64s/清理完成；0额外capacity调用，结果待独审。
 - [x] 本次全量session/attempt/event ACK/fence/unknown与资源证据封存独审：Mika 2026-10-06 12:37:14 UTC APPROVED 64911a3c；REQ-18真实模型/完整故障/部署边界继续开放。
+
+## S01-06 长驻wait后继登记（2026-10-06 13:00:30 UTC）
+
+固定main280289 runtime.ts:55–59每轮race订阅全部active promises；结合TC39规范推断长驻pending订阅随tick积累。详见[有界登记与验收](../../docs/evidence/s01/long-lived-wait/README.md)。现6秒128已审证据不证明小时驻留有界，无heap/RSS实测结论。S01-06继续in-progress；后继需fresh产品scope+独立WT，由Mika协调owner，少量pending/有限虚拟ticks红绿验证订阅/唤醒、及时补槽及shutdown/unknown-claim/recovery-drain不变。此轮只metadata，0测试/负载，不触旧raw。

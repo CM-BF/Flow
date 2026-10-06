@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-10-06 13:00:30 UTC",
+  "fixedMain": "280289008a5a3779e4e5e6453181b96062ed9514",
+  "path": "apps/runner/src/runtime.ts",
+  "bytes": 14832,
+  "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc",
+  "lines": "55-59",
+  "claim": {
+    "id": "8e4660a6-625f-4ada-8558-20c19b9e23e0",
+    "version": 3,
+    "state": "active",
+    "scope": "S01 three experiment/metadata scopes, no runtime write"
+  },
+  "method": "existing local find-skills/clean-code/codebase-design; read fixed Git source + official TC39 two operations; bounded metadata only",
+  "inference": "Repeated races can add pending reactions per tick while long-lived active promise remains unresolved",
+  "notMeasured": [
+    "heap",
+    "RSS",
+    "hours-long residence",
+    "capacity change"
+  ],
+  "newTestOrLoadCalls": 0
+}

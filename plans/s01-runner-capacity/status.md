@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:46:21 UTC；observer后继独审通过，main接收另核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:00:30 UTC；只读固定main280289 runtime wait缺口登记 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -20,7 +20,7 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 4 |
 | 当前产出 | 实验观测器共享锁查询分类修复已独审通过，128历史证据保持原样 |
-| 下一可用交付 | Lead受控接收observer小片；P05独立计划继续细化验收，生产路径待移交 |
+| 下一可用交付 | P05固定6336cd00待独审；S01-06长驻wait已登记，产品owner/scope待Mika协调 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED：observer c259e8e53cd53830fe1bc78ce3c8dae7b34d5540，architecture_read/Astra，2026-10-06 12:45:30 UTC，0P1/P2；Mika接收 |
@@ -32,7 +32,7 @@
 | S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
 | S01-04 | in-progress | status_read / mika | 旧W1/W2冻结；mixed唯一窗口A16实测部分有效、整体FAIL/B未启动，无补跑。ACK/browser仍未执行 |
 | S01-05 | in-progress | architecture_read / Lead | W1/W2结果历史APPROVED；mixed结果6a5961a独审APPROVED仅如实失败；新窗口准备/结果另审 |
-| S01-06 | in-progress | 后继独立owner / Mika / Lead | [独立后继status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/status.md)：核心已独审并集成main d7e1e64，根检查通过；启动参数及真实provider另计 |
+| S01-06 | in-progress | 后继独立owner / Mika / Lead | [长驻wait登记](../../docs/evidence/s01/long-lived-wait/README.md)；[独立后继status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/status.md)：核心已独审并集成main d7e1e64，根检查通过；启动参数及真实provider另计 |
 
 ## 历史权限、优先级与事实边界（当前接收见末节）
 
@@ -185,3 +185,5 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 12:42:56 UTC：observer固定target `c259e8e53cd53830fe1bc78ce3c8dae7b34d5540`，[manifest](../../docs/evidence/s01/observer-share-fix/manifest.json) SHA `e2fe714fac89c12913ebf97689aa3bdfca87a1d53c5b9fc6d3722409eda01711`；2source/4readonly/8raw/2support共16绑定Git=WT。当前review等待Mika，只读验证无需再跑4项/strict。
 
 2026-10-06 12:46:21 UTC：observer固定c259e8e53cd53830fe1bc78ce3c8dae7b34d5540获architecture_read/Astra精确12:45:30 UTC APPROVED，0P1/P2；Mika接收。[接收入口](../../docs/evidence/s01/observer-share-fix/integration-ready.md)与独审/质量回执已封存，原4/4/strict0不重跑。批准仅实验分类修复，不等于新capacity/生产变更通过；历史64911 raw与UNKNOWN保持。
+
+2026-10-06 13:00:30 UTC：fresh本writer8e4660a6 v3 ACTIVE三scope、HEAD1ca035 clean后登记S01-06长驻wait缺口，证据见[README](../../docs/evidence/s01/long-lived-wait/README.md)与source-observation。只读fixedmain280289及官方TC39，不改本树实验source/旧raw，不改runtime；0测试/PG/容量。后继独立WT/产品scope与owner尚待Mika派工。dashboard依本唯一status聚合，不手填进度JSON。P05独立source6336cd00已9/9+strict0交审，未因此声称本S01增加新实际验证。
