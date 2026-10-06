@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-06T11:04:05.929Z",
+  "sourceState": "preparation-only; runners.ts unchanged from c450c2da7e6185b88db9f46e0299ee504ee6f3e8",
+  "newTests": 9,
+  "testsRun": 0,
+  "postgresConnections": 0,
+  "checks": [
+    {
+      "command": "/opt/homebrew/opt/node@24/bin/node node_modules/typescript/bin/tsc --noEmit -p docs/evidence/s01p04/tsconfig.json",
+      "raw": "strict-initial.txt",
+      "exitCode": 2,
+      "reason": "Direct typed project change lacked parser-defaulted taskId/parent fields; fixed fixture with explicit null values"
+    },
+    {
+      "command": "/opt/homebrew/opt/node@24/bin/node node_modules/typescript/bin/tsc --noEmit -p docs/evidence/s01p04/tsconfig.json",
+      "raw": "strict-preparation.txt",
+      "exitCode": 0,
+      "scope": "inherits root compiler settings, includes new server test and runners with transitive production imports; not root-wide typecheck"
+    }
+  ],
+  "dependencies": "No install/version/lock change. Real Git-ignored node_modules directory; per-entry links reuse main fixed dependencies; @flow/contracts and protocols point to this worktree. git check-ignore verified."
+}

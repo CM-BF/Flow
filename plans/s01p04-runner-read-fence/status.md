@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:57:23 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:04:05 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence |
 | Branch | codex/runner-read-fence |
-| 工作基线 / HEAD | base c450c2da7e6185b88db9f46e0299ee504ee6f3e8；初始HEAD同base |
-| 工作树dirty状态 | 初始clean；当前只准备本任务metadata，测试/生产尚未修改 |
+| 工作基线 / HEAD | base c450c2da7e6185b88db9f46e0299ee504ee6f3e8；metadata HEAD f2c2137197169839c88dd5a29f6a60a6cb5b9068；新测试/证据待固定 |
+| 工作树dirty状态 | 仅自有新增测试与准备证据dirty；runners.ts未改 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 只读源码/调用图/PG16锁矩阵；工程测试与PG运行均NOT_RUN |
+| 检查状态 | 局部strict 0；初次类型失败保留；9项新PG测试尚NOT_RUN，0 PG连接 |
 | 已集成main状态 / HEAD | 本片尚未实现/集成；观察main c450c2da7e6185b88db9f46e0299ee504ee6f3e8 |
 | 实现目标 | UNKNOWN（尚无生产实现） |
 | 实现范围 | plans/s01p04-runner-read-fence, docs/evidence/s01p04, apps/server/src/runner-read-fence.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | planning |
 | 优先级 | 2 |
-| 当前产出 | 同一执行器多attempt的授权读取锁改进方案已准备，生产改动等待原owner交接 |
+| 当前产出 | 同一执行器多attempt的授权读取锁方案与隔离测试已准备，生产改动等待原owner交接 |
 | 下一可用交付 | 先准备专库交错回归，再在合法交接后实施最小修复 |
 | 当前阻塞 | ACTIVE: 核心源码仍由ENG01B持有；Mika协调其ready稳定片后的交接，独立测试准备可继续 |
 | 需用户决定 | NONE |
@@ -28,7 +28,7 @@
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | S01P04-01 | completed | status_read / mika | [Interface](../../docs/evidence/s01p04/interface.md)，明确移交请求和锁顺序矩阵 |
-| S01P04-02 | in-progress | status_read | 专用PG测试准备，尚未写/运行 |
+| S01P04-02 | in-progress | status_read | 9项专用PG交错测试已写、局部strict 0；尚未连接/运行，见 preparation-checks.json |
 | S01P04-03 | pending | status_read / Mika / ENG01B | runners.ts不在当前claim；等待原owner稳定片停写/amend |
 | S01P04-04 | pending | status_read / 独审者 | NOT_RUN / NOT_STARTED |
 | S01P04-05 | pending | Lead / status_read | 未集成 |
