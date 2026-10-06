@@ -9,10 +9,9 @@ import { EventOutbox, EventStorageError, replayPending, reportBatch } from '../o
 import { textDigest } from '../verifier.js';
 import { ProtocolLease } from './lease.js';
 import { importArtifacts } from './materials.js';
-import type { ProtocolEndpoints } from './configuration.js';
+import { configuredEndpoint, ProtocolConfigurationError, type ProtocolEndpoints } from './configuration.js';
 export { loadProtocolEndpoints, type ProtocolEndpoints } from './configuration.js';
 
-class ProtocolConfigurationError extends Error {}
 
 export interface ProtocolRunnerOptions {
   baseUrl: string; token: string; workingDirectory: string; signal: AbortSignal; endpoints: ProtocolEndpoints;
@@ -24,7 +23,7 @@ export async function runProtocolRunner(options: ProtocolRunnerOptions): Promise
   if ((options.heartbeatIntervalMs ?? 1000) > 2000 || !options.token || !options.workingDirectory) throw new Error('Invalid protocol runner configuration.');
   const client = new FlowClient(options);
   const root = join(options.workingDirectory, textDigest(options.baseUrl.replace(/\/$/, '')));
-  await mkdir(root, { recursive: true, mode: 0o700 });
+  await prepareDirectory(root);
   const signal = () => AbortSignal.any([options.signal, AbortSignal.timeout(options.requestTimeoutMs ?? 1500)]);
   while (!options.signal.aborted) {
     try {
@@ -43,39 +42,38 @@ export async function runProtocolRunner(options: ProtocolRunnerOptions): Promise
 }
 async function execute(assignment: ClaimedTask, client: FlowClient, root: string, options: ProtocolRunnerOptions) {
   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
-  const lease = new ProtocolLease(client, ownership, options.signal, options.requestTimeoutMs ?? 1500, options.heartbeatIntervalMs ?? 1000);
+  const endpoint = configuredEndpoint(options.endpoints, assignment.task.protocol?.endpointRef ?? '');
   const directory = join(root, textDigest(assignment.attempt.id));
-  await mkdir(directory, { recursive: true, mode: 0o700 });
+  await prepareDirectory(directory);
+  const lease = new ProtocolLease(client, ownership, options.signal, options.requestTimeoutMs ?? 1500, options.heartbeatIntervalMs ?? 1000);
   let state: ProtocolState | undefined;
   let command: ProtocolCommand | undefined;
   let outbox: EventOutbox | undefined;
   let sendingMayHaveStarted = false;
   try {
     await lease.check();
-    const endpoint = options.endpoints[assignment.task.protocol?.endpointRef ?? ''];
-    if (!endpoint) throw new ProtocolConfigurationError('The configured remote endpoint is unavailable.');
     const prepareInput = { ...ownership, endpointDigest: textDigest(new URL(endpoint.url).href) };
-    state = await client.protocolPrepare(prepareInput, lease.signal);
+    state = await client.protocolPrepare(prepareInput, lease.requestSignal());
     command = { ...ownership, commandId: state.intent.commandId };
     outbox = new EventOutbox(directory, ownership, async batch => {
-      try { await reportBatch(client, batch, lease.signal); }
+      try { await reportBatch(client, batch, lease.requestSignal()); }
       catch (error) { lease.interrupt(); throw error; }
     }, state.lastSequence);
     const peer = await connectA2A(endpoint);
     if (state.intent.phase === 'prepared') {
       await lease.check();
       if (lease.cancelRequested) {
-        state = await client.protocolPrepare(prepareInput, lease.signal);
+        state = await client.protocolPrepare(prepareInput, lease.requestSignal());
         if (state.intent.phase !== 'prepared') throw new Error('A cancellation raced with remote dispatch.');
         await outbox.emit({ type: 'completed', outcome: 'cancelled' }); return;
       }
       sendingMayHaveStarted = true;
-      const permit = await client.protocolBegin(command, lease.signal);
+      const permit = await client.protocolBegin(command, lease.requestSignal());
       state = permit.state;
       if (!permit.maySend) throw new Error('Dispatch permission was already consumed.');
       const response = await peer.send(SendMessageRequest.fromJSON({ message: { messageId: state.intent.commandId, role: 'ROLE_USER', parts: [{ text: assignment.task.prompt }] }, configuration: { returnImmediately: true } }), { signal: lease.signal });
       if (!('id' in response) || !response.id) throw new Error('The remote agent did not return a durable Task.');
-      state = await client.protocolBind({ ...command, remoteTaskId: response.id }, lease.signal);
+      state = await client.protocolBind({ ...command, remoteTaskId: response.id }, lease.requestSignal());
     }
     if (state.intent.phase !== 'bound' || !state.intent.remoteTaskId) throw new Error('Remote outcome is unresolved.');
     await observe(peer, state, command, client, lease, outbox, assignment, directory, options);
@@ -84,7 +82,7 @@ async function execute(assignment: ClaimedTask, client: FlowClient, root: string
     if (!lease.signal.aborted && command && state) {
       if (state.intent.phase === 'prepared' && !sendingMayHaveStarted) await outbox?.emit({ type: 'completed', outcome: 'failed', error: 'Remote dispatch could not be prepared.' });
       else {
-        await client.protocolUncertain({ ...command, reason: state.intent.remoteTaskId ? 'remote-read-failed' : 'send-result-unknown' }, lease.signal);
+        await client.protocolUncertain({ ...command, reason: state.intent.remoteTaskId ? 'remote-read-failed' : 'send-result-unknown' }, lease.requestSignal());
         options.onNotice?.({ type: 'protocol-uncertain', attemptId: ownership.attemptId });
       }
     }
@@ -95,7 +93,7 @@ async function observe(peer: A2APeer, state: ProtocolState, command: ProtocolCom
   while (!lease.signal.aborted) {
     await lease.check();
     if (lease.cancelRequested && !state.intent.cancelStarted) {
-      const permission = await client.protocolStartCancel(command, lease.signal);
+      const permission = await client.protocolStartCancel(command, lease.requestSignal());
       state = permission.state;
       if (permission.maySend) {
         try { await peer.cancel(state.intent.remoteTaskId!, { signal: lease.signal }); }
@@ -114,4 +112,9 @@ async function observe(peer: A2APeer, state: ProtocolState, command: ProtocolCom
     if (![TaskState.TASK_STATE_SUBMITTED, TaskState.TASK_STATE_WORKING].includes(status ?? TaskState.TASK_STATE_UNSPECIFIED)) throw new Error('Remote state requires unsupported interaction or reconciliation.');
     await sleep(options.pollIntervalMs ?? 500, undefined, { signal: lease.signal });
   }
+}
+
+async function prepareDirectory(directory: string): Promise<void> {
+  try { await mkdir(directory, { recursive: true, mode: 0o700 }); }
+  catch { throw new EventStorageError(); }
 }

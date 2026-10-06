@@ -2,7 +2,6 @@ import { randomUUID } from 'node:crypto';
 import { Pool } from 'pg';
 import { afterEach, beforeEach, expect, test } from 'vitest';
 import { createServer } from '../index.js';
-import { migrateProtocolDispatch, registerProtocolDispatch } from './index.js';
 
 const databaseUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_p02';
 const ownerToken = 'p02-owner-fixture';
@@ -11,8 +10,6 @@ let server: Awaited<ReturnType<typeof createServer>>;
 let baseUrl: string;
 async function start() {
   server = await createServer({ databaseUrl, ownerToken, leaseMs: 15_000 });
-  await migrateProtocolDispatch(pool);
-  if (!server.hasRoute({ method: 'POST', url: '/api/runner/protocol/prepare' })) registerProtocolDispatch(server, pool);
   baseUrl = await server.listen({ host: '127.0.0.1', port: 0 });
 }
 async function request(path: string, body?: object, token = ownerToken) {

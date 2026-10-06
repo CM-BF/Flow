@@ -1,0 +1,15 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-dispatch
+
+ ✓ apps/runner/src/protocol-dispatch/runtime.test.ts (15 tests | 10 skipped) 5523ms
+   ✓ an unwritable attempt directory stops the production runner without leaked heartbeat timers or a remote send  1380ms
+   ✓ invalid local endpoint missing-ref exits without dispatch or continuing heartbeats  1222ms
+   ✓ invalid local endpoint constructor exits without dispatch or continuing heartbeats  1161ms
+   ✓ invalid local endpoint toString exits without dispatch or continuing heartbeats  1151ms
+   ✓ invalid local endpoint bad-url exits without dispatch or continuing heartbeats  608ms
+
+ Test Files  1 passed (1)
+      Tests  5 passed | 10 skipped (15)
+   Start at  19:58:08
+   Duration  5.86s (transform 110ms, setup 0ms, import 249ms, tests 5.52s, environment 0ms)
+
