@@ -34,6 +34,11 @@ test('tool input has both task character and host UTF-8 byte bounds, without alt
   expect(pluginToolTaskRequestSchema.safeParse({ ...task, input: '\ud800' }).success).toBe(false);
   expect(pluginToolTaskRequestSchema.safeParse({ ...task, input: '\udc00' }).success).toBe(false);
   expect(pluginToolTaskRequestSchema.parse({ ...task, input: '\ufeff😀' }).input).toBe('\ufeff😀');
+  for (const invalid of ['\0', '\ud800', '\udc00']) {
+    expect(pluginToolTaskRequestSchema.safeParse({ ...task, input: invalid }).success).toBe(false);
+    expect(pluginToolTaskRequestSchema.safeParse({ ...task, title: 'title' + invalid }).success).toBe(false);
+    expect(pluginToolTaskRequestSchema.safeParse({ ...task, verification: { kind: 'contains', expected: invalid } }).success).toBe(false);
+  }
   for (const extra of [{ fixture: { scenario: 'success' } }, { resumeSessionId: id }, { executionProfile: {} }, { harness: 'claude' }]) {
     expect(pluginToolTaskRequestSchema.safeParse({ ...task, ...extra }).success).toBe(false);
   }

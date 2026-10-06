@@ -1,0 +1,189 @@
+import { randomUUID } from 'node:crypto';
+import { writeFile } from 'node:fs/promises';
+import { afterAll, beforeAll, expect, test } from 'vitest';
+import { Pool } from 'pg';
+import { PgBoss } from 'pg-boss';
+import { createServer } from '../index.js';
+import { transaction } from '../database.js';
+import { PLUGIN_RUNTIME_PROTOCOL, type PluginToolBinding } from '../../../../packages/contracts/src/plugin-runtime.js';
+import { migratePluginRuntime } from './store.js';
+import { registerPluginRuntimeRoutes } from './routes.js';
+
+const database = `flow_x01_binding_${randomUUID().replaceAll('-', '')}`;
+const adminUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
+const databaseUrl = adminUrl.replace('/postgres', `/${database}`);
+const admin = new Pool({ connectionString: adminUrl, max: 1, connectionTimeoutMillis: 1500, statement_timeout: 3000, query_timeout: 3500 });
+const pool = new Pool({ connectionString: databaseUrl, max: 4, connectionTimeoutMillis: 1500, statement_timeout: 4000, query_timeout: 4500 });
+const owner = `x01-${randomUUID()}`;
+let app: Awaited<ReturnType<typeof createServer>> | undefined;
+let boss: PgBoss | undefined; let base = ''; let creationRequested = false;
+const facts: Record<string, unknown>[] = [];
+async function request(path: string, body?: unknown, key = randomUUID(), token = owner) {
+  const response = await fetch(base + path, { method: body === undefined ? 'GET' : 'POST', headers: {
+    authorization: `Bearer ${token}`, 'content-type': 'application/json', 'idempotency-key': key },
+    body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(8000) });
+  const raw = await response.text(); return { status: response.status, body: JSON.parse(raw), raw, headers: response.headers };
+}
+async function openApp() {
+  app = await createServer({ databaseUrl, ownerToken: owner, automaticQueueScan: false });
+  await migratePluginRuntime(pool);
+  // A real PgBoss client without another worker; createServer retains its existing task worker.
+  boss = new PgBoss({ connectionString: databaseUrl, max: 1, connectionTimeoutMillis: 1500 });
+  boss.on('error', () => { facts.push({ kind: 'send-client-error' }); });
+  await boss.start();
+  registerPluginRuntimeRoutes(app, pool, boss);
+  base = await app.listen({ host: '127.0.0.1', port: 0 });
+}
+beforeAll(async () => {
+  creationRequested = true; await admin.query(`CREATE DATABASE ${database}`);
+  await openApp();
+}, 30_000);
+afterAll(async () => {
+  const cleanup: Record<string, unknown> = { database, creationRequested, providerCalls: 0, nativeCalls: 0 };
+  const closed = await Promise.allSettled([app?.close(), boss?.stop({ graceful: true, timeout: 5000 })]);
+  cleanup.ownersClosed = closed.every(value => value.status === 'fulfilled');
+  cleanup.poolClosed = await pool.end().then(() => true, () => false);
+  try {
+    const exists = (await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [database])).rowCount;
+    const connections = Number((await admin.query<{ count: string }>('SELECT count(*) FROM pg_stat_activity WHERE datname=$1', [database])).rows[0]!.count);
+    cleanup.connections = connections;
+    if (creationRequested && exists && connections === 0 && cleanup.ownersClosed && cleanup.poolClosed) await admin.query(`DROP DATABASE ${database}`);
+    cleanup.databaseAbsent = (await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [database])).rowCount === 0;
+  } catch { cleanup.failure = 'owned_database_cleanup_unconfirmed'; }
+  finally {
+    cleanup.adminClosed = await admin.end().then(() => true, () => false);
+    if (process.env.FLOW_X01_BINDING_EVIDENCE) await writeFile(process.env.FLOW_X01_BINDING_EVIDENCE, JSON.stringify({ facts, cleanup }, null, 2) + '\n', { flag: 'wx' });
+  }
+  expect(cleanup).toMatchObject({ ownersClosed: true, poolClosed: true, adminClosed: true, connections: 0, databaseAbsent: true });
+}, 60_000);
+
+/** Synthetic terminal material metadata exercises the real SQL source chain; no download/load is claimed here. */
+async function fixture() {
+  const name = `flow-binding-${randomUUID()}`;
+  const registered = await request('/api/plugins', { scope: { workspaceId: 'personal', projectId: null }, version: {
+    packageName: name, packageVersion: '1.0.0', source: 'npm', declaredSha256: 'a'.repeat(64), license: 'MIT', hostApiMajor: 1,
+    capabilities: ['tool'], publicConfiguration: [{ key: 'prefix', kind: 'enum', required: true, values: ['v1:', 'v2:'] }] } });
+  expect(registered.status).toBe(201);
+  const registrationId: string = registered.body.snapshot.installation.id; const versionId: string = registered.body.snapshot.version.id;
+  const runner = await request('/api/runners', { name: 'Plugin test host', harnesses: ['fixture'], capacity: 1 });
+  expect(runner.status).toBe(200);
+  const runnerId: string = runner.body.runnerId; const token: string = runner.body.token;
+  expect((await request('/api/runner/plugin-host', { protocol: PLUGIN_RUNTIME_PROTOCOL, storeId: 'test-material', hostApiMajor: 1 }, randomUUID(), token)).status).toBe(200);
+  const materialId = randomUUID(); const fetchId = randomUUID(); const fetchAttempt = randomUUID(); const artifactId = randomUUID();
+  const artifact = { artifactId, name, version: '1.0.0', bytes: 123, sha256: 'a'.repeat(64), integrity: 'sha512-' + 'a'.repeat(86) + '==',
+    format: 'npm-tarball', verifiedAt: new Date().toISOString(), source: { registry: 'http://127.0.0.1:1/', tarball: 'http://127.0.0.1:1/test.tgz' } };
+  const { format: _format, verifiedAt: _verified, source: _source, ...identity } = artifact;
+  const receipt = { schemaVersion: 1, installationId: 'b'.repeat(64), storeId: 'test-material', artifact: identity,
+    manifest: { schemaVersion: 1, hostApiMajor: 1, kind: 'tool', entrypoint: 'index.mjs' }, files: [], treeDigest: 'c'.repeat(64) };
+  await transaction(pool, async client => {
+    await client.query(`INSERT INTO flow.plugin_package_fetches(id,installation_id,version_id,admitted_revision,package_name,package_version,expected_sha256,
+      integrity,store_id,registry_ref,registry_url,current_attempt_id) VALUES($1,$2,$3,1,$4,'1.0.0',$5,$6,'test-artifacts','own','http://127.0.0.1:1/',$7)`,
+    [fetchId, registrationId, versionId, name, artifact.sha256, artifact.integrity, fetchAttempt]);
+    await client.query(`INSERT INTO flow.plugin_package_fetch_attempts(id,operation_id,ordinal,artifact_id,status,artifact) VALUES($1,$2,1,$3,'succeeded',$4)`, [fetchAttempt, fetchId, artifactId, JSON.stringify(artifact)]);
+    await client.query(`INSERT INTO flow.plugin_material_installs(id,registration_id,version_id,admitted_revision,fetch_operation_id,fetch_attempt_id,
+      artifact_id,artifact_store_id,store_id,artifact,input_digest,status,execution_id,receipt) VALUES($1,$2,$3,1,$4,$5,$6,'test-artifacts','test-material',$7,$8,'installed',$9,$10)`,
+    [materialId, registrationId, versionId, fetchId, fetchAttempt, artifactId, JSON.stringify(artifact), 'd'.repeat(64), randomUUID(), JSON.stringify(receipt)]);
+  });
+  const command = async (expectedRevision: number, change: unknown) => request(`/api/plugins/${registrationId}/commands`, { expectedRevision, reason: 'Fixture registry change', change });
+  expect((await command(1, { kind: 'configure', values: { prefix: 'v1:' } })).status).toBe(200);
+  expect((await command(2, { kind: 'set-grants', capabilities: ['tool'] })).status).toBe(200);
+  const enable = { expectedRevision: 3, reason: 'Enable exact material', change: { kind: 'enable', materialInstallOperationId: materialId, targetRunnerId: runnerId, storeId: 'test-material' } };
+  return { registrationId, versionId, runnerId, token, materialId, enable, command };
+}
+async function enabled() {
+  const f = await fixture(); const result = await request(`/api/plugins/${f.registrationId}/runtime/commands`, f.enable);
+  expect(result.status).toBe(200); return f;
+}
+async function bound(f: Awaited<ReturnType<typeof fixture>>) {
+  const input = { expectedRevision: 4, title: 'Bound tool task', input: '1.0.0 2.0.0', verification: { kind: 'nonempty' } };
+  const result = await request(`/api/plugins/${f.registrationId}/tool-tasks`, input);
+  expect(result.status).toBe(201); return { input, binding: result.body.binding as PluginToolBinding };
+}
+async function active(f: Awaited<ReturnType<typeof fixture>>, binding: PluginToolBinding) {
+  const attemptId = randomUUID();
+  await transaction(pool, async client => {
+    await client.query(`INSERT INTO flow.attempts(id,task_id,runner_id,owner_version,lease_expires_at) VALUES($1,$2,$3,1,clock_timestamp()+interval '1 hour')`, [attemptId, binding.taskId, f.runnerId]);
+    await client.query("UPDATE flow.tasks SET status='running',owner_version=1,current_attempt_id=$2 WHERE id=$1", [binding.taskId, attemptId]);
+  });
+  return { attemptId, ownerVersion: 1, bindingId: binding.bindingId, invocationId: binding.invocationId };
+}
+
+test('enable advances the same revision, preserves old operation readback and replays the original receipt', async () => {
+  const f = await fixture(); const path = `/api/plugins/${f.registrationId}/runtime/commands`; const key = randomUUID();
+  const result = await request(path, f.enable, key);
+  expect(result.status).toBe(200); expect(result.body).toMatchObject({ snapshot: { revision: 4, configuration: { prefix: 'v1:' }, grants: ['tool'] }, operation: { kind: 'enable', beforeRevision: 3, afterRevision: 4 }, runtime: { bindingAllowed: true, loaded: 'unknown', callable: 'unknown' } });
+  expect((await request(path, f.enable, key)).body).toEqual({ ...result.body, replayed: true });
+  expect((await request(path, { ...f.enable, reason: 'Different' }, key)).status).toBe(409);
+  const disabled = await request(path, { expectedRevision: 4, reason: 'No new tasks', change: { kind: 'disable' } });
+  expect(disabled.body).toMatchObject({ snapshot: { revision: 5 }, operation: { kind: 'disable' }, runtime: { bindingAllowed: false, desiredEnabled: false } });
+  const operations = (await request(`/api/plugins/${f.registrationId}/operations`)).body.operations;
+  expect(operations.map((row: { kind: string }) => row.kind).sort()).toEqual(['configure', 'disable', 'enable', 'register', 'set-grants']);
+  expect((await request(`/api/plugins/${f.registrationId}`)).body.installation.runtimeStatus).toBe('unavailable');
+});
+test('owner and runner roles, exact host/store/material and strict public bodies reject without revision changes', async () => {
+  const f = await fixture(); const other = await fixture(); const path = `/api/plugins/${f.registrationId}/runtime/commands`;
+  expect((await request(path, f.enable, randomUUID(), f.token)).status).toBe(403);
+  expect((await request('/api/runner/plugin-host', { protocol: PLUGIN_RUNTIME_PROTOCOL, storeId: 'test-material', hostApiMajor: 1 })).status).toBe(403);
+  for (const change of [{ ...f.enable.change, materialInstallOperationId: other.materialId }, { ...f.enable.change, storeId: 'another' }]) expect((await request(path, { ...f.enable, change })).status).toBe(409);
+  expect((await request(path, { ...f.enable, root: '/private' })).status).toBe(400);
+  for (const invalid of ['\0', '\ud800', '\udc00']) {
+    const body = { expectedRevision: 3, title: 'Tool', input: 'input' };
+    for (const value of [{ ...body, input: invalid }, { ...body, title: 'title' + invalid }, { ...body, verification: { kind: 'contains', expected: invalid } }]) {
+      expect((await request(`/api/plugins/${f.registrationId}/tool-tasks`, value)).status).toBe(400);
+    }
+  }
+  expect((await request(`/api/plugins/${f.registrationId}`)).body.revision).toBe(3);
+});
+test('configuration changes invalidate new bindings while an accepted binding and original key survive disable and restart', async () => {
+  const f = await enabled(); const input = { expectedRevision: 4, title: 'Frozen task', input: 'before' }; const key = randomUUID(); const path = `/api/plugins/${f.registrationId}/tool-tasks`;
+  const accepted = await request(path, input, key); expect(accepted.status).toBe(201);
+  const binding = accepted.body.binding;
+  expect((await f.command(4, { kind: 'configure', values: { prefix: 'v2:' } })).status).toBe(200);
+  expect((await request(`/api/plugins/${f.registrationId}/runtime`)).body).toMatchObject({ currentRevision: 5, enabledRevision: 4, bindingAllowed: false, reason: 'revision-changed' });
+  expect((await request(path, { ...input, expectedRevision: 5 })).status).toBe(409);
+  expect((await request(`/api/plugins/${f.registrationId}/runtime/commands`, { expectedRevision: 5, reason: 'Stop new binding', change: { kind: 'disable' } })).status).toBe(200);
+  await app!.close(); await boss!.stop({ graceful: true, timeout: 5000 }); await openApp();
+  expect((await request(path, input, key)).body).toEqual({ ...accepted.body, replayed: true });
+  const read = await request(`/api/tasks/${binding.taskId}/plugin-binding`);
+  expect(read.body).toEqual(binding); expect(read.headers.get('cache-control')).toBe('no-store'); expect(read.body.configuration).toEqual({ prefix: 'v1:' });
+});
+test('phase replay rechecks grant/fence and changing key cannot authorize a second package action', async () => {
+  const f = await enabled(); const { binding } = await bound(f); const identity = await active(f, binding); const path = '/api/runner/plugin-tool/authorize'; const key = randomUUID();
+  const load = { ...identity, phase: 'load' };
+  expect((await request(path, { ...identity, phase: 'invoke' }, randomUUID(), f.token)).status).toBe(409);
+  const first = await request(path, load, key, f.token); expect(first.body).toMatchObject({ replayed: false, authorizedRevision: 4 });
+  expect((await request(path, load, key, f.token)).body).toEqual({ ...first.body, replayed: true });
+  expect((await request(path, load, randomUUID(), f.token)).body.replayed).toBe(true);
+  expect((await f.command(4, { kind: 'set-grants', capabilities: [] })).status).toBe(200);
+  expect((await request(path, load, key, f.token)).status).toBe(403);
+  expect((await request(path, { ...identity, phase: 'invoke' }, randomUUID(), f.token)).status).toBe(403);
+  expect((await pool.query('SELECT 1 FROM flow.plugin_tool_authorizations WHERE binding_id=$1', [binding.bindingId])).rowCount).toBe(1);
+});
+test('disable preserves accepted pin permission, maintenance drains, and cancellation/expired/stale/revoked fences reject', async () => {
+  const f = await enabled(); const { binding } = await bound(f); const identity = await active(f, binding); const path = '/api/runner/plugin-tool/authorize';
+  expect((await request(`/api/plugins/${f.registrationId}/runtime/commands`, { expectedRevision: 4, reason: 'No new binding', change: { kind: 'disable' } })).status).toBe(200);
+  await pool.query("UPDATE flow.runners SET maintenance_state='draining' WHERE id=$1", [f.runnerId]);
+  expect((await request(path, { ...identity, phase: 'load' }, randomUUID(), f.token)).status).toBe(200);
+  expect((await request(path, { ...identity, phase: 'invoke', ownerVersion: 2 }, randomUUID(), f.token)).status).toBe(409);
+  await pool.query("UPDATE flow.tasks SET status='cancel_requested' WHERE id=$1", [binding.taskId]);
+  expect((await request(path, { ...identity, phase: 'invoke' }, randomUUID(), f.token)).status).toBe(409);
+  await pool.query("UPDATE flow.tasks SET status='running' WHERE id=$1", [binding.taskId]);
+  await pool.query("UPDATE flow.attempts SET lease_expires_at=clock_timestamp()-interval '1 second' WHERE id=$1", [identity.attemptId]);
+  expect((await request(path, { ...identity, phase: 'invoke' }, randomUUID(), f.token)).status).toBe(409);
+  await pool.query('UPDATE flow.runners SET revoked=true WHERE id=$1', [f.runnerId]);
+  expect((await request(path, { ...identity, phase: 'load' }, randomUUID(), f.token)).status).toBe(401);
+});
+test('binding constraint failure rolls back task and command, and immutable rows reject edits', async () => {
+  const f = await enabled(); const before = (await pool.query('SELECT count(*)::int AS count FROM flow.tasks')).rows[0].count;
+  await pool.query(`CREATE FUNCTION flow.x01_reject_binding() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN RAISE EXCEPTION 'fixture rollback'; END; $$;
+    CREATE TRIGGER x01_reject_binding BEFORE INSERT ON flow.plugin_tool_bindings FOR EACH ROW EXECUTE FUNCTION flow.x01_reject_binding()`);
+  const key = randomUUID();
+  try { expect((await request(`/api/plugins/${f.registrationId}/tool-tasks`, { expectedRevision: 4, title: 'Rollback', input: 'input' }, key)).status).toBe(500); }
+  finally { await pool.query('DROP TRIGGER x01_reject_binding ON flow.plugin_tool_bindings; DROP FUNCTION flow.x01_reject_binding()'); }
+  expect((await pool.query('SELECT count(*)::int AS count FROM flow.tasks')).rows[0].count).toBe(before);
+  expect((await pool.query('SELECT 1 FROM flow.commands WHERE operation=$1 AND key=$2', [`plugin.tool-task:${f.registrationId}`, key])).rowCount).toBe(0);
+  const { binding } = await bound(f);
+  await expect(pool.query("UPDATE flow.plugin_tool_bindings SET configuration='{}' WHERE id=$1", [binding.bindingId])).rejects.toMatchObject({ code: '23514' });
+  await expect(pool.query('DELETE FROM flow.plugin_runtime_hosts WHERE runner_id=$1', [f.runnerId])).rejects.toMatchObject({ code: '23514' });
+  expect((await request(`/api/tasks/${binding.taskId}/plugin-binding`)).body).toEqual(binding);
+});

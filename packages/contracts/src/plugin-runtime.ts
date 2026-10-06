@@ -12,7 +12,9 @@ const storeId = z.string().regex(/^[a-zA-Z0-9_-]{1,64}$/);
 const reason = z.string().trim().min(1).max(512);
 const jsonBytes = (value: unknown) => new TextEncoder().encode(JSON.stringify(value)).byteLength;
 const bounded = (value: unknown) => jsonBytes(value) <= PLUGIN_RUNTIME_LIMITS.bodyBytes;
-function wellFormedUtf16(value: string): boolean {
+/** Text ultimately persisted in PostgreSQL text/jsonb: no NUL or unpaired UTF-16 surrogate. */
+export function isPersistablePluginText(value: string): boolean {
+  if (value.includes('\0')) return false;
   for (let index = 0; index < value.length; index++) {
     const unit = value.charCodeAt(index);
     if (unit >= 0xdc00 && unit <= 0xdfff) return false;
@@ -38,10 +40,10 @@ export const pluginRuntimeCommandSchema = z.strictObject({
 }).refine(bounded, 'Plugin runtime command exceeds its byte limit');
 export const pluginToolTaskRequestSchema = z.strictObject({
   expectedRevision: pluginRevisionSchema,
-  title: z.string().trim().min(1).max(180),
-  input: z.string().min(1).max(16_000).refine(value => wellFormedUtf16(value)
+  title: z.string().trim().min(1).max(180).refine(isPersistablePluginText, 'Invalid persisted title'),
+  input: z.string().min(1).max(16_000).refine(value => isPersistablePluginText(value)
     && new TextEncoder().encode(value).byteLength <= PLUGIN_RUNTIME_LIMITS.inputBytes, 'Invalid or oversized UTF-8 tool input'),
-  verification: verificationRuleSchema.optional(),
+  verification: verificationRuleSchema.refine(rule => rule.kind !== 'contains' || isPersistablePluginText(rule.expected), 'Invalid persisted verification text').optional(),
 }).refine(bounded, 'Plugin task request exceeds its byte limit');
 const artifactIdentity = packageArtifactSchema.pick({ artifactId: true, name: true, version: true, integrity: true, bytes: true, sha256: true });
 /** No paths, full input, mutable defaults, or caller-created attempt identity. */

@@ -1,6 +1,6 @@
 import type { TrustedPackageStore } from '@flow/plugin-runtime';
 import type { Ownership, TaskSubmission, RunnerEventData } from '@flow/contracts';
-import { pluginToolBindingSchema, pluginGrantReceiptSchema, type PluginToolBinding, type PluginGrantRequest, type PluginGrantReceipt } from '../../../../packages/contracts/src/plugin-runtime.js';
+import { isPersistablePluginText, pluginToolBindingSchema, pluginGrantReceiptSchema, type PluginToolBinding, type PluginGrantRequest, type PluginGrantReceipt } from '../../../../packages/contracts/src/plugin-runtime.js';
 import { invokeInstalledTool, PluginToolError, type PluginToolResult } from './host.js';
 import { textDigest, verifyText } from '../verifier.js';
 
@@ -36,7 +36,7 @@ export async function executePluginTool(input: PluginExecutionInput): Promise<Pl
   const task = input.task; const ownership = { ...input.ownership }; const prompt = task.prompt;
   const taskId = task.id; const runnerId = input.runnerId; const authorize = input.authorize;
   if (taskId !== binding.taskId || runnerId !== binding.targetRunnerId || input.store.storeId !== binding.storeId
-    || textDigest(prompt) !== binding.inputDigest || task.harness !== 'fixture' || task.fixture || task.protocol || task.executionProfile
+    || !isPersistablePluginText(prompt) || textDigest(prompt) !== binding.inputDigest || task.harness !== 'fixture' || task.fixture || task.protocol || task.executionProfile
     || task.engineering || task.resumeSessionId || task.messageSettings) throw new PluginToolError('BINDING_MISMATCH');
   const verification = task.verification ? { ...task.verification } : undefined;
   try {
@@ -53,6 +53,7 @@ export async function executePluginTool(input: PluginExecutionInput): Promise<Pl
           || receipt.runnerId !== runnerId || receipt.attemptId !== ownership.attemptId || receipt.ownerVersion !== ownership.ownerVersion
           || receipt.phase !== phase || receipt.replayed) throw new PluginAuthorizationUnknown();
       } });
+    if (!isPersistablePluginText(result.content)) throw new PluginToolError('OUTPUT_REJECTED');
     const artifactId = `plugin-${binding.invocationId}`;
     return { artifact: { type: 'artifact', artifactId, title: 'Plugin tool output', content: result.content,
       mediaType: 'text/plain', version: textDigest(result.content) }, verification: verifyText(artifactId, result.content, verification), provenance: result.provenance };

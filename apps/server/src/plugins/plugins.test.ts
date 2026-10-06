@@ -105,6 +105,8 @@ it('retains immutable declarations and history while selecting a version clears 
   const foreign = await registered();
   expect((await request(`/api/plugins/${id}/commands`, { expectedRevision: 5, reason: 'Cannot select another installation version', change: { kind: 'select-version', versionId: foreign.version.id } })).status).toBe(404);
   expect((await request(`/api/plugins/${id}`)).body.revision).toBe(5);
+  expect((await request(`/api/plugins/${id}/operations`)).body.operations.map((item: { kind: string }) => item.kind).sort())
+    .toEqual(['configure', 'register', 'register-version', 'select-version', 'set-grants']);
 });
 
 it('keeps the same registration receipt and immutable operation after the center restarts', async () => {

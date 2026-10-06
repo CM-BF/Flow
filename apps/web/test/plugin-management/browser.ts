@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
-import { writeFile } from 'node:fs/promises';
+import { mkdir, lstat, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { Pool } from 'pg';
 import { chromium, expect } from '@playwright/test';
@@ -9,7 +9,13 @@ import { FlowClient } from '@flow/client';
 import type { PluginCommand, PluginVersionDeclaration } from '@flow/contracts';
 import { createServer as createCenter } from '../../../server/src/index';
 
-const output = fileURLToPath(new URL('../../../../docs/evidence/x03/', import.meta.url));
+const output = fileURLToPath(new URL(`../../../../docs/evidence/x01/enable-binding-browser-${randomUUID()}/`, import.meta.url));
+let outputIdentity: { dev: number; ino: number } | undefined;
+async function save(name: string, content: string | Buffer) {
+  const current = await lstat(output);
+  if (!outputIdentity || !current.isDirectory() || current.isSymbolicLink() || current.dev !== outputIdentity.dev || current.ino !== outputIdentity.ino) throw new Error('Owned evidence directory identity changed.');
+  await writeFile(output + name, content, { flag: 'wx', mode: 0o600 });
+}
 const startedAt = new Date().toISOString();
 const sourceCommit = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const adminConnection = new URL('postgresql://flow:flow-local-only@127.0.0.1:55432/postgres');
@@ -29,6 +35,8 @@ let browserStartRequest = 0;
 const longKey = 'configuration' + 'x'.repeat(35);
 const longVersion = '1.0.0-' + 'x'.repeat(122);
 try {
+  await mkdir(output, { mode: 0o700 });
+  const outputStat = await lstat(output); outputIdentity = { dev: outputStat.dev, ino: outputStat.ino };
   vite = await createVite({ root: fileURLToPath(new URL('../..', import.meta.url)), server: { host: '127.0.0.1', port: 0, strictPort: false } });
   await vite.listen();
   const address = vite.httpServer!.address() as { port: number };
@@ -133,6 +141,17 @@ try {
   expect(reads().filter(request => request.path.includes('/versions'))).toHaveLength(2);
   expect(reads().filter(request => request.path.includes('/operations'))).toHaveLength(2);
   checks.push('versions 10+2 and audit 10+4 use public paginated reads only after user expansion');
+  // Synthetic bounded public read fixtures exercise the additive labels, not a production enable action.
+  await page.route(`**/api/plugins/${target.id}/operations*`, async route => {
+    const response = await route.fetch(); const body = await response.json();
+    body.operations[0] = { ...body.operations[0], kind: 'enable' };
+    body.operations[1] = { ...body.operations[1], kind: 'disable' };
+    await route.fulfill({ response, json: body });
+  }, { times: 1 });
+  await page.getByRole('button', { name: 'First audit page', exact: true }).click();
+  await expect(audit).toContainText('Enabled for new tool tasks');
+  await expect(audit).toContainText('Disabled for new tool tasks');
+  checks.push('bounded audit DTO fixtures render enable/disable labels without implying package load');
   await page.getByRole('button', { name: 'Activate trusted extension', exact: true }).click();
   const trusted = local.getByRole('listitem').filter({ hasText: 'trusted.example' });
   await expect(trusted.locator('.flow-plugin-status')).toHaveText('active');
@@ -222,7 +241,7 @@ try {
   await expect(page.getByLabel('Public configuration', { exact: true })).toContainText('enabledFeaturetrue');
   checks.push('open view session change aborts old detail and rejects old-center late result with the same plugin ID');
 
-  await page.screenshot({ path: `${output}module-light-desktop.png`, fullPage: true });
+  await save('module-light-desktop.png', await page.screenshot({ fullPage: true }));
   await page.setViewportSize({ width: 390, height: 844 });
   await selectTarget().focus(); await page.keyboard.press('Space');
   await expect(selectTarget()).toHaveAttribute('aria-expanded', 'false');
@@ -253,15 +272,18 @@ try {
   boundaryMeasurements = { keyLength: longKey.length, versionLength: longVersion.length, keyBounds, versionBounds };
   checks.push('legal 48-character key and 128-character semver wrap at 390px without clipping, overlap or page overflow');
   await page.getByRole('button', { name: 'Hide versions', exact: true }).click();
-  await page.screenshot({ path: `${output}module-light-390.png`, fullPage: true });
+  await save('module-light-390.png', await page.screenshot({ fullPage: true }));
   await page.getByRole('button', { name: 'Use dark theme', exact: true }).click();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await page.screenshot({ path: `${output}module-dark-390.png`, fullPage: true });
+  await save('module-dark-390.png', await page.screenshot({ fullPage: true }));
   checks.push('390px light/dark no horizontal overflow, keyboard expansion and visible focus');
   expect(errors).toEqual([]);
 } catch (error) { failure = error instanceof Error ? error.message : String(error); process.exitCode = 1; }
 finally {
-  await writeFile(`${output}browser-progress.json`, JSON.stringify({ startedAt, recordedAt: new Date().toISOString(), exitCode: process.exitCode ?? 0, checks, failure, pageErrors: errors, phase: 'before resource cleanup' }, null, 2));
+  if (outputIdentity) {
+    try { await save('browser-progress.json', JSON.stringify({ startedAt, recordedAt: new Date().toISOString(), exitCode: process.exitCode ?? 0, checks, failure, pageErrors: errors, phase: 'before resource cleanup' }, null, 2)); }
+    catch { process.exitCode = 1; failure ??= 'Owned progress evidence could not be saved.'; }
+  }
   const closeErrors: { resource: string; message: string }[] = [];
   const close = async (resource: string, operation: () => Promise<unknown>) => {
     try { await operation(); }
@@ -283,6 +305,6 @@ finally {
   } finally { await admin.end(); }
   const result = { sourceCommit, startedAt, completedAt: new Date().toISOString(), exitCode: process.exitCode ?? 0, checks, failure, pageErrors: errors, closeErrors, cleanup, boundaryMeasurements, reads: requests.slice(browserStartRequest),
     boundary: 'Isolated module fixture, real PG/HTTP/host. Production App mounting is separate acceptance.' };
-  await writeFile(`${output}browser-results.json`, JSON.stringify(result, null, 2));
+  if (outputIdentity) await save('browser-results.json', JSON.stringify(result, null, 2));
   console.log(JSON.stringify(result, null, 2));
 }
