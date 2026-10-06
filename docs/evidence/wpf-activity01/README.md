@@ -11,3 +11,7 @@
 未验证：真实中心/执行器/DB/model及App组合；events不能abort底层HTTP，不开放typed工具/思考，不能把metadata标题猜成tool种类。不自动加载引用正文、不创建第二条聊天pipeline。main由Lead集成，当前未集成。
 
 正式独立review APPROVED（root2026-10-06T06:17:33Z）：22 direct独立通过、CUA展开/详情/宿主状态/跨center/暗色/离线通过；作者14browser/typecheck/build已复核，未冒称独立重跑。claim51f962ee-7e6f-4806-a9f9-df3838dc27f5 v1保留，后续main集成由Lead完成。
+
+## Main 集成观察
+
+2026-10-06T06:28:42Z：Lead已集成固定main `acfd409a493315a00f1cc19ac96c5f1b36c19e57`；owner独立核target祖先和六paths零diff，见[证据](main-integration.json)。这只交付独立模块，App入口后继另领。当前metadata提交后全八scope停写并授权release，rawreceipt由管理保存，不再追写；预览保持。

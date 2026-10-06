@@ -15,3 +15,5 @@ Root / gpt-6-astra ultra 于2026-10-06T06:17:33Z：APPROVED target61b9349af390c1
 独立CUA tab27实际53851：Return展开、reference正文转义显示且8192字符；host完成显示Succeeded但Verification pending；loadmore60；same-ID切B后pre0+B引用可见；dark；offline刷新disabled/不取消说明；errorlogs=[]，临时tab已关。Root实际目视作者production desktop light1280与dark390，文字/焦点/布局可读。
 
 限制：没有独立重跑完整作者7+7/typecheck/build，没有App/真实center/DB/model/typedCHAT05验收。作者按结论冻结实现，只收口本任务metadata；保留claim至正式main接收后另行停写release。
+
+Main后续事实：2026-10-06T06:28:42Z owner核 `acfd409a493315a00f1cc19ac96c5f1b36c19e57` 已含61b且六paths零diff，[证据](../../docs/evidence/wpf-activity01/main-integration.json)。原独立APPROVED范围不扩大为App/真实模型验收。
