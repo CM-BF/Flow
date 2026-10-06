@@ -1,6 +1,6 @@
 # WPF-ACTIVITYI01 聊天活动接线
 
-创建/更新：2026-10-06。状态：in-progress。唯一 owner：w01_owner。父需求是已授权 U11 聊天活动展示，沿用[工程管理计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)，不新建共享协议。
+创建/更新：2026-10-06。状态：completed。唯一 owner：w01_owner。父需求是已授权 U11 聊天活动展示，沿用[工程管理计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)，不新建共享协议。
 
 ## 目标与已批准边界
 
@@ -19,14 +19,16 @@ Tool采用固定官方AI Elements最小组件；Reasoning复用现assistant-ui�
 - [x] ACTIVITYI01-01：实现有界原生活动projection及Tool/Reasoning展示，验证身份、分页、状态和截断。
 - [x] ACTIVITYI01-02：官方Thread footer接P01三类贡献与宿主read ports，保留发送/队列语义。
 - [x] ACTIVITYI01-03：局部和实际App HTTPfixture验证双主题390、键盘、懒读与隔离。
-- [ ] ACTIVITYI01-04：固定候选独立review、修复与Lead主线接收。
+- [x] ACTIVITYI01-04：固定候选独立review、修复与Lead主线接收。
 
 ## 验收与风险
 
 局部测试覆盖当前页刷新/旧页陈旧、跨attempt顺序、正文身份/字节/错误/取消缓存、permission/visible/epoch；实际App覆盖pending/running用户锚点、两split、native hidden恢复、折叠0请求、hasMore显式分页、队列草稿不回归。dev StrictMode+Activity单独列，不能用它代替native hidden事实。0模型fixture不等真实中心/provider验收。每工作段/约30分钟安全停点/交付应用clean-code。
 
-架构影响：新增宿主活动read port及typed footer slot，Lead接收固定ba341后协调架构图更新。当前独立review见[review](review.md)，main接收仍未完成。
+架构影响：新增宿主活动read port及typed footer slot，Lead接收固定ba341后协调架构图更新。当前独立review见[review](review.md)，main253b已接收本片；个人运行环境升级仍属于其他任务。
 
 2026-10-06 07:09 UTC：实现固定e93070c，精确消费已审C03两文件输入889f→07da10c；未改变其内容。局部74、dev11与typecheck/build通过，production10组合通过，独审NOT_STARTED。
 
 2026-10-06 07:18 UTC：ba341修复离线读取生命周期，root固定独审APPROVED / ACTIVITYI-R1 CLOSED；本片进入integration。保留e930历史REQUEST_CHANGES和各版本检查边界，ACTIVITYI01-04的主线接收尚未完成。
+
+2026-10-06T07:22:58.871590+00:00：Lead MAIN_ACCEPTED 253b8ad38fd869297e7d9948a26c1d310fef5c6c。本人独立核ba341与c9e为其祖先、17声明路径同内容；仅元数据收口，本片TODO完成，全部scope停止写入并交管理release。

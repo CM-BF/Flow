@@ -30,4 +30,4 @@ root在production 51454独立CUA检查当前ba341：公开fixture登录、运行
 
 独立批准覆盖fixture下的本片接线与已审依赖；未验证真实中心/provider、模型、产品数据库、Firefox/Safari、屏读或CHAT06组合。generic公共events没有AbortSignal参数，视图失效不能宣称取消所有底层HTTP。root未重复完整browser/build/typecheck；作者原始证据与版本边界保持。
 
-main：NOT_INTEGRATED。下一步由Lead接收已审提交并执行所需主线组合检查；本owner保持实现冻结，保留claim用于明确的review修复。
+main：已接收 253b8ad38fd869297e7d9948a26c1d310fef5c6c。本人独立核target与c9e交付为祖先、17路径同内容。主线组合7 adapter+44 generic=51与Web types通过由Lead提供，不冒称本owner重跑；原始来源与检查边界见[主线回执](../../docs/evidence/wpf-activity-i01/main-acceptance.json)。本次仅元数据收口，之后全部scope停写，release交manager执行。
