@@ -48,3 +48,13 @@ R01 首次隔离旅程在真实 center 已启动后，runner 的 outbox 导入 @
 O16与SVC05H中心恢复初审都发现期限依赖operator自身或证据写盘的问题。当前中心恢复的2项定向修复保持其固定审查边界；恢复后沿OPS-001-14安排独立owner，用本地codebase-design/clean-code检查最小可复用的test/operator Module，先覆盖这两个真实消费者。Interface必须明确监督一个PID还是自有组、哪些detached服务永远不由它停止、期限相对何时开始、父进程先退/证据阻塞时如何收尾，以及停止operator不等于外部效果已停止，结果仍可能unknown。
 
 只复用这项生命周期职责；DB删除权、资源归属、源码绑定及OPS-001-13连接观察仍独立。不造通用测试平台，不为了抽象重跑产品或抹掉历史失败；真实复用价值由两个直接消费者和局部故障证据决定。
+
+## 失败事实与资源收尾分离（2026-10-06 21:02 UTC）
+
+失败的行为结果保持失败，但不因此永久保留已确认归属的整套浏览器缓存或专库。删除前必须先持久保存所需诊断，特别是停止期间才产生的子进程输出；再 fresh 核 exact namespace、marker、dev/ino、全部自有组停止及远端零连接，使用正常 DROP 和精确目录收尾。任何证据/归属/停止状态 unknown 继续 KEEP；不扩大到旧未知目录，不用 FORCE、通配路径或通用清盘器。必要私有诊断限量且0600，凭据不进Git。原 FAIL/KEEP与后续收尾分别留证，不回改历史。
+
+F04首验26,512ms在terminal-request-capture失败，0task；20:59:20另行有界cleanup核完整归属与空连接后正常DROP并移除精确私有目录，3组absent。此次原报告只保存停止前的bytes0/events[]，未再次保存shutdown期间可能产生的PTY输出；不能证明该输出存在，也不能从已删临时目录恢复。该诊断缺口必须如实保留并在后继原owner小修中闭合，不能由cleanup成功推断行为通过。原cleanup wrapper的PG:0标签错误另记录更正，实际有PG观察与正常DROP，不重跑操作修metadata。
+
+### 限定 source operator 委派
+
+MATURE02C02此次仅新树codex-conversation-continuity由Mika作为受控source operator，从固定eae85567按已核291项/现有精确依赖链接准备，owner仍须fresh原子take。Execution Lead未创建该树；委派不含main、其他树、共享Git配置、个人运行源或共享PG/Chrome窗口。小源码准备与运行余量线分离，不为此新增审批往返。
