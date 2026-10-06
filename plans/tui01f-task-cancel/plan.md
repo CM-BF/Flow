@@ -32,3 +32,5 @@
 2026-10-06 16:33 UTC：03固定da673获得SOURCE_PRECHECK_NO_P1_P2，仅源码；运行仍NOT_RUN，03/04未勾选。原a1f限定controller/static Ink批准与main83f保留。
 
 2026-10-06 16:45 UTC：TUI01F-03已执行有界focused类型检查，修正fixture宿主身份字段；实际两场景PG/PTY仍NOT_RUN，保留03 in-progress/04 pending。见[类型检查证据](../../docs/evidence/tui01f/journey-static-validation.md)。
+
+2026-10-06 16:49 UTC：静态增量40508f已SCOPED_APPROVED；真实03/04不因源码/类型通过完成。仅列运行依赖视图提议，交Lead按后续窗口建立，未安装或运行。

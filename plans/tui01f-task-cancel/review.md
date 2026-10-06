@@ -1,6 +1,14 @@
-# TUI01F-03 静态修复增量待审
+# TUI01F-03 限定静态准备批准
 
 Review target commit: 40508f18432ffc20eadd638b208841a364c72bea
+
+SCOPED_APPROVED。Execution Lead / gpt-6-astra 于2026-10-06T16:46:48.254Z独立只读核2增量/3旅程/9保护/23输入、710 compiler inputs与5raw；未发现P1/P2，未重跑。批准仅宿主identity缺失拒绝及focused类型配置，不表示PG/HTTP/PTY/browser旅程通过。[原回执](../../docs/evidence/tui01f/independent-static-delta-review.json)，SHA67acee23da8bcaf5e1ae5d1272edda2ac4c8031657d1a75378a17879b7a91d3e。
+
+03实际旅程NOT_RUN、04仍open。后续运行依赖入口仅[文件级预检](../../docs/evidence/tui01f/journey-runtime-dependency-view-proposal.json)，尚未创建links/import/运行。旧da673源审和下列历史作者待审文字均保留原时点。
+
+# TUI01F-03 静态修复提交时观察（历史）
+
+Historical submitted target: 40508f18432ffc20eadd638b208841a364c72bea
 
 NOT_STARTED（本增量独立审查待安排）。fixture改为宿主executionIdentity并缺失拒绝，focused配置仅公开类型映射；作者首次1类型诊断→focused noEmit0，不运行旅程。原独立source-precheck保持绑定da673，不能自动扩为新增量批准。[增量与原始记录](../../docs/evidence/tui01f/journey-static-validation.md)。原9产品逐字未变，03/04仍open。
 
