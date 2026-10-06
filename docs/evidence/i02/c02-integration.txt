@@ -1,0 +1,21 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+ ✓ apps/server/src/server.test.ts (10 tests) 9138ms
+     ✓ atomically rejects gaps and mismatched ownership, and never revives expired work  966ms
+     ✓ serializes concurrent claims and command retries, and retains cancellation history  355ms
+     ✓ streams durable pages and state-only changes, then closes observers without cancelling work  1611ms
+     ✓ persists accepted commands across restart and rejects changed retries  369ms
+     ✓ claims once across runners and stores an atomic replayable completion  838ms
+     ✓ retains a human decision across restart and distinguishes cancel request from stopped work  843ms
+     ✓ keeps large evidence folded and verifies the exact artifact independently  830ms
+     ✓ counts authoritative cumulative usage once and preserves unknown values  793ms
+     ✓ resumes only a known session on its original runner without concurrent use  1543ms
+     ✓ bounds history and request sizes and rejects malformed command bodies  989ms
+ ✓ packages/client/src/client.test.ts (3 tests) 44ms
+ ✓ packages/contracts/src/reconciliation.test.ts (3 tests) 4ms
+
+ Test Files  3 passed (3)
+      Tests  16 passed (16)
+   Start at  19:19:08
+   Duration  9.73s (transform 93ms, setup 0ms, import 310ms, tests 9.19s, environment 0ms)

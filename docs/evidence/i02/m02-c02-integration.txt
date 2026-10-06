@@ -1,0 +1,15 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+ ✓ apps/server/src/reconciliation.test.ts (12 tests | 10 skipped) 5738ms
+   ✓ resolves confirmed stopped work atomically, retains history and rejects every late original owner report  2417ms
+   ✓ does not blindly repeat a successful external write whose completion acknowledgement was lost  2409ms
+ ✓ apps/server/src/m2-workspace.test.ts (5 tests | 2 skipped) 2260ms
+   ✓ delivers a late source commit after the observer already passed a newer committed source  445ms
+   ✓ exposes ten task decisions together and rejects a stale decision after cancellation  1494ms
+   ✓ provides an authorized updated-order task index with exact filtered totals and bound cursors  321ms
+
+ Test Files  2 passed (2)
+      Tests  5 passed | 12 skipped (17)
+   Start at  19:20:24
+   Duration  8.60s (transform 100ms, setup 0ms, import 418ms, tests 8.00s, environment 0ms)
