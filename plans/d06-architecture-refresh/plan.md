@@ -1,35 +1,31 @@
 # D06 固定基线架构刷新
 
-状态：completed。创建/更新：2026-10-06 04:13 UTC。唯一 owner：d01_owner / gpt-6-astra ultra。
+状态：in-progress。更新：2026-10-06 05:34 UTC。唯一 owner：w01_owner；派发模型 gpt-6-astra / ultra（运行时未另提供型号证明）。
 
-目标：将工程 dashboard 架构 tab 从旧3773基线更新为已集成固定 `8f1481df880cf5077e1ddb9a8f302fe700a7ece8` 的真实模块、数据与运行关系。用户要求工程 dashboard 增架构tab；本轮由GoalOwner经root明确授权刷新，既有五视图UI保持，架构事实不追随moving main。
+目标：沿既有五视图，将源码事实刷新到固定已发布提交 `eb14991a170b72d7d974428b2e440e1faada2c1e`，并在标题旁公开固定快照与源码核验时间。该图不代表实时服务部署或所有在研分支。
 
-## 已确认范围与取舍
+## 已确认范围
 
-- 独立tree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh`，branch `codex/dashboard-architecture-refresh`，base8f。
-- [正式领取](../../docs/evidence/d06/take-receipt.json) f6196ecc-b1e4-4ae2-9bd5-a2c36a6570bc v1，04:13:12.526Z。原D05已v2移出图/测试范围；只写 architecture-data.js、architecture.test.mjs、本三件套与docs/evidence/d06。
-- 保持纯策展数据Interface与五视图renderer，不新建状态源/任意源码读取端点，不重启4320。原D05保留历史source，新D06由Lead登记。
-- 运行边界明确用户Web/CLI、中心、独立Runner和外部SDK；数据明确产品PG+pg-boss与工程领取独立PG。
-- 固定8f包含受限goals、中心conversation/typed assistant、PG plugin registry、trusted浏览器host；尚不含新版Web CHAT7cb、X03管理UI、R04有界停机、P03协议传输优化；另无并发runner或出站持久input-required、完整npm插件运行时。
-- 正文/产物当前均存产品PG details.content；blob仅规划，不画已运行对象存储。assistant final、usage、验证、执行完成分开。
-- FSM补全running/waiting/cancel_requested的真实completed结果与失联uncertain；uncertain经审计终结后安全retry是另一个task，不复活旧task。
-- 已授权有界设计；brainstorming方法用于核范围/取舍，不重复要求用户批准。若改renderer/CSS须先新amend，当前不需要。
+- worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current`；branch `codex/dashboard-architecture-current`；base eb14991。
+- 正式 [take receipt](../../docs/evidence/d06/current/take-receipt.json)：e5b2fb56-8e3a-40b7-bfa4-192f34187c0b v1；05:26:27.385Z live 核 active，旧 D06 f619 v2 已释放。旧树只读，唯一来源由 Lead 迁移，不新增第二 D06。
+- 五个 literal scopes：architecture-data.js、architecture.js、architecture.test.mjs、本目录、docs/evidence/d06。CSS/index/server/registry/shared 不改。
+- 保留单一 baseline 数据、五视图与任务状态机语义；只修正已集成/规划和固定来源。标题与底部消费同一 baseline，显示短 SHA、UTC 核验时间与非实时声明。
+- O05 已包含于本基线；K01/O06/SVC02 只作 planned。持续聊天、执行配置、插件管理、队列中心、R04/P03 按固定源码逐项核验，不能从依赖存在推运行验收。常驻 61227 仍是历史 75a 服务，不能称本轮升级。
+- 产品 PG 正文、独立工程领取 PG、assistant-final/usage/verification/task status 的边界保持。架构影响仅策展图与固定版本提示，不改运行 Interface。
 
 ## TODO 与验收
 
-- [x] D06-01：核tree/base/claim与技能，建立唯一三件套；来源固定SHA可核验。
-- [x] D06-02：刷新五图数据，所有source在固定8f存在；已集成与planned分开，关键FSM边不漏。
-- [x] D06-03：运行本模块节点/source/关系与只读HTTP测试，动态端口检查五图/双主题/窄屏，记录真实证据和clean-code。
-- [x] D06-04：提交固定候选、root独立review/修复闭环，真实dashboard聚合，交Lead集成；不自行merge main。
+- [x] D06-01：新树/claim/技能与同一 canonical 来源切换；保留旧 8f 审查历史。
+- [x] D06-02：固定 eb 源码核验、刷新五图事实与标题，所有链接统一同一提交。
+- [x] D06-03：局部 Node/source 检查与动态独立预览；五图、双主题、390px、键盘、减少动画；记录 clean-code。
+- [ ] D06-04：固定候选独立 review、真实聚合与 Lead 集成；实现审查和 main/服务分别记录。
 
-## 风险、验证与移交
+## 验证与边界
 
-固定图不代表最新所有分支或吞吐容量。主线继续变更时，显示旧基线是诚实边界，未来另登记更新。重用现Node24内置HTTP，无新增依赖。行为测试直接使用公开策展模块与server；源码固定gitshow核验，不用同份文字自我证明。图完整性/可读性采用动态独立预览；不改用户49922/55049/63743或工程4320。
+不安装新依赖、不调模型或产品数据库，不改 4320/旧 55247 等服务。公开模块与静态 HTTP 局部测试，浏览器只用独立动态预览。运行验证单列原证据来源，不重跑产品套件，不声明容量/真实模型/新服务已通过。新实现 target 默认 NOT_STARTED，不继承旧 approval。
 
-[status](status.md) · [review](review.md) · [质量与来源](../../docs/evidence/d06/quality.md)
+旧轮：ef42277ff55d1cbb76ea707836481a9788619033/base8f 独审 APPROVED 并已集成，其 [plan](../../docs/evidence/d06/current/historical-8f-plan.txt)、[status](../../docs/evidence/d06/current/historical-8f-status.txt)、[review](../../docs/evidence/d06/current/historical-8f-review.txt) 原文保留；其中旧 active claim 是当时记录，当前领取以新 receipt/live 为准。
 
-## 独立验收后的非阻塞后继
+[status](status.md) · [review](review.md) · [本轮质量](../../docs/evidence/d06/current/quality.md)
 
-GoalOwner目视modules-light/data-dark无blocking，维持ef批准；另观察标题“当前代码”与底部折叠的固定8f说明可能被误读。后续取得renderer/标题区域正式写权时，在标题旁显示短SHA及“固定快照”，不让已更新的R04/P03被看成当前仍未交付。本轮不扩改architecture.js/css/index.html，不阻集成，不为纯后继记录重跑六图。由父REQ39协作队列登记，不以该建议撤销固定8f事实有效性。
-
-04:28:28.679Z实际4320已47源，D06唯一live source、claim匹配、checks/review ef、proof unchanged、issues空；main4e0289f已ancestor且两实现文件scopeEqual，实际architecture-data.js含固定8f与修正registry source。完成本轮并交主线，后继标题提示仍排队。
+05:33:19 UTC root正式APPROVED最终5ec6ce2，R2来源修正关闭；D06-04的review已完成，Lead集成/最终聚合仍待，故不提前勾选整项。

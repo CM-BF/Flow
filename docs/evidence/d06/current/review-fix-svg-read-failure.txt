@@ -1,0 +1,13 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.innerText: Error: Node is not an HTMLElement
+Call log:
+[2m  - waiting for locator('#architecture-canvas')[22m
+
+    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current/docs/evidence/d06/current/review-fix-check.mjs:24:66 {
+  log: [ "  - waiting for locator('#architecture-canvas')" ]
+}
+
+Node.js v24.20.0
