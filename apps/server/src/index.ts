@@ -1,3 +1,4 @@
+import { migrateGoalPlanConfirmations, registerGoalPlanConfirmationRoutes } from './goal-plan-confirmation/index.js';
 import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
 import { registerUsageReadoutRoutes } from './usage-readout/index.js';
 import { migratePluginInstallations } from './plugin-installations/migration.js';
@@ -100,6 +101,7 @@ export async function createServer(options: ServerOptions) {
     await migrateBrowserSessions(pool);
     await migratePluginInstallations(pool);
     await migrateGoalProgressions(pool);
+    await migrateGoalPlanConfirmations(pool);
     await migrateClaudeMessageSettings(pool);
     authentication = await createBrowserSessionAuthentication(pool, options);
     const corsOptions = authentication.corsOptions ?? (options.allowedOrigin ? { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] } : undefined);
@@ -163,6 +165,7 @@ export async function createServer(options: ServerOptions) {
   registerGoalDeliveryRoutes(app, pool);
   registerGoalNativeExecutionRoutes(app, pool, boss);
   registerGoalProgressionRoutes(app, pool);
+  registerGoalPlanConfirmationRoutes(app, pool, boss);
   registerActiveSteeringRoutes(app, pool, { acceptCommands: options.activeSteering === true });
   registerAssistantStreamRoutes(app, pool);
   registerConversationRoutes(app, pool, boss, { assistantStreamReadable: true });

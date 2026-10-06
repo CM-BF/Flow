@@ -38,3 +38,4 @@ export * from './usage-readout.js';
 export * from './plugin-installations.js';
 export * from './goal-progression.js';
 export * from './claude-turn-settings.js';
+export * from './goal-plan-confirmation.js';

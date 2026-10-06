@@ -1,3 +1,4 @@
+import type { GoalPlanConfirmation, GoalPlanConfirmationResult } from '@flow/contracts';
 import type { PluginInstallRequest, PluginInstallCommand, PluginInstallAccepted, PluginMaterialInstall, PluginInstallList, PluginInstallHistory } from '@flow/contracts';
 import type { GoalProgressionAuthorization, GoalProgressionRevocation, GoalProgressionResult, GoalProgressionSnapshot } from '@flow/contracts';
 import type { TaskUsageReadout } from '@flow/contracts';
@@ -294,6 +295,9 @@ export class FlowClient {
     const query = new URLSearchParams();
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/goals/${encodeURIComponent(goalId)}/graph-proposals${query.size ? `?${query}` : ''}`, { signal });
+  }
+  confirmGoalPlan(proposalId: string, input: GoalPlanConfirmation, key: string, signal?: AbortSignal): Promise<GoalPlanConfirmationResult> {
+    return this.request(`/api/goal-graph-proposals/${encodeURIComponent(proposalId)}/confirm-inputs`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
   goalGraphProposal(id: string, signal?: AbortSignal): Promise<GoalGraphProposal> {
     return this.request(`/api/goal-graph-proposals/${encodeURIComponent(id)}`, { signal });
