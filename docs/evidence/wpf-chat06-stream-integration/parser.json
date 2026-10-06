@@ -1,18 +1,18 @@
 {
-  "recordedAt": "2026-10-06T07:50:06.567Z",
+  "at": "2026-10-06T08:12:13.481Z",
   "status": {
     "human": {
       "delivery": {
-        "state": "implementation",
+        "state": "review",
         "source": "explicit"
       },
       "phase": "M2",
       "priority": 1,
-      "output": "正在把逐步生成的回复接入聊天页面",
-      "next": "可查看逐步生成回复的独立模拟预览",
+      "output": "已修复旧草稿分支残留，增量回复接线等待独立复审",
+      "next": "修复权威消息仓库同步并交独立复审",
       "blocker": {
-        "state": "none",
-        "text": ""
+        "state": "active",
+        "text": "R1已修复并局部验证，等待固定9da独立复审"
       },
       "decision": {
         "state": "none",
@@ -22,7 +22,7 @@
       "complete": true
     },
     "implementation": {
-      "target": null,
+      "target": "9dafff7702f700e8b89f8ccee1992bce9ccb63d1",
       "scopes": [
         "apps/web/src/App.tsx",
         "apps/web/src/conversation-stream/host.ts",
@@ -36,16 +36,14 @@
         "apps/web/test/conversation-stream-integration.test.ts",
         "apps/web/test/plugin-host.test.ts"
       ],
-      "errors": [
-        "实现目标需完整 SHA"
-      ]
+      "errors": []
     },
     "taskId": "WPF-CHAT06I01",
     "owner": "workspace_panels_owner / gpt-6-astra ultra",
     "branch": "codex/web-conversation-stream-integration",
-    "branchState": "IN_PROGRESS",
-    "updatedAt": "2026-10-06T07:50:00.000Z",
-    "updatedRecord": "2026-10-06 07:50 UTC / 6426b44cd32d10216141af13ecfa83b8879025fb",
+    "branchState": "REVIEW_READY",
+    "updatedAt": "2026-10-06T08:11:00.000Z",
+    "updatedRecord": "2026-10-06 08:11 UTC / 6426b44cd32d10216141af13ecfa83b8879025fb",
     "todos": [
       {
         "id": "WPF-CHAT06I01-01",
@@ -55,30 +53,30 @@
       },
       {
         "id": "WPF-CHAT06I01-02",
-        "state": "in-progress",
+        "state": "completed",
         "owner": "workspace_panels_owner",
-        "evidence": "宿主接口/私有授权实施中"
+        "evidence": "[host接口/权限/预算](../../docs/evidence/wpf-chat06-stream-integration/interface.md)"
       },
       {
         "id": "WPF-CHAT06I01-03",
-        "state": "pending",
+        "state": "completed",
         "owner": "workspace_panels_owner",
-        "evidence": "尚未接入真实Thread"
+        "evidence": "[实际App dev8/prod8](../../docs/evidence/wpf-chat06-stream-integration/validation.md)"
       },
       {
         "id": "WPF-CHAT06I01-04",
-        "state": "pending",
+        "state": "in-progress",
         "owner": "workspace_panels_owner",
-        "evidence": "检查/独审未开始，首source交manager登记后再确认聚合"
+        "evidence": "检查通过、固定target待独审；GO07:59看板观察已登记，非本队新API样本"
       }
     ],
     "errors": [],
     "declaredHead": "6426b44cd32d10216141af13ecfa83b8879025fb / 当前HEAD由Git聚合",
-    "declaredDirty": "仅本任务canonical新增，尚未改产品",
+    "declaredDirty": "实现已提交冻结；当前仅自有metadata收口，最终dirty由Git聚合",
     "checks": {
-      "state": "not_run",
-      "target": null,
-      "record": "NOT_RUN"
+      "state": "passed",
+      "target": "9dafff7702f700e8b89f8ccee1992bce9ccb63d1",
+      "record": "PASSED 9dafff7702f700e8b89f8ccee1992bce9ccb63d1；28 direct、Web tsc/build、dev8/prod8 HTTPfixture页面旅程；[验证归属](../../docs/evidence/wpf-chat06-stream-integration/validation.md)"
     },
     "reviewRecord": "[review.md](review.md)，NOT_STARTED",
     "mainRecord": "NOT_INTEGRATED",
@@ -87,8 +85,8 @@
     "decisions": ""
   },
   "review": {
-    "state": "not_started",
-    "record": "NOT_STARTED**",
-    "target": null
+    "state": "changes_requested",
+    "record": "CHANGES_REQUESTED**",
+    "target": "9dafff7702f700e8b89f8ccee1992bce9ccb63d1"
   }
 }

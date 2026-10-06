@@ -5,8 +5,8 @@
 目标：在现有官方Thread单runtime中展示真实公共patch-v1增量正文；独立可信Web扩展授权与生命周期，final/草稿/执行状态分开。0模型/DB，HTTPfixture与真实provider验收分开。
 
 - [x] WPF-CHAT06I01-01 固定输入、技能、领取与宿主接口。
-- [ ] WPF-CHAT06I01-02 私有bound读端口、P01独立权限、有限缓存与读取资格。
-- [ ] WPF-CHAT06I01-03 实际Thread消息/状态/动作会员接入，保留发送、草稿、profile与queue。
+- [x] WPF-CHAT06I01-02 私有bound读端口、P01独立权限、有限缓存与读取资格。
+- [x] WPF-CHAT06I01-03 实际Thread消息/状态/动作会员接入，保留发送、草稿、profile与queue。
 - [ ] WPF-CHAT06I01-04 局部直接/HTTP浏览器/双主题与窄屏证据、独审和交集成。
 
 每view最多4turn/2MiB、connection8turn/4MiB UTF8 draft缓存（非JS堆承诺），每可见pane一个读lease/两split最多2个flight。只current active和已观察待final settlement有限dirty集合，实际宿主更新/用户Retry才再次入队，队列处理完静默，不能loading=false互相轮回。不对每个historical turn发请求；LRU淘汰非活跃draft历史、canonical保留，明确非lossless缓存。
