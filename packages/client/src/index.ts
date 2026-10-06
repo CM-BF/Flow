@@ -3,11 +3,12 @@ import type { GoalProgressionAuthorization, GoalProgressionRevocation, GoalProgr
 import type { TaskUsageReadout } from '@flow/contracts';
 import { BROWSER_SESSION_CSRF_HEADER, browserSessionReadySchema, browserSessionReadSchema, type BrowserSessionReady, type BrowserSessionRead } from '@flow/contracts';
 import { nativeEngineeringProfilePageSchema, nativeEngineeringProfilePublishedSchema, type NativeEngineeringProfileConfiguration, type NativeEngineeringProfilePage, type NativeEngineeringProfilePublished } from '@flow/contracts';
-import { decodeConversationCreated, decodeConversationTurnAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
+import { decodeConversationCreated, decodeConversationTurnAccepted, decodeConversationQueueAccepted, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
+import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeMessageSettingsCatalogPageSchema, type ClaudeMessageSettingsCatalogPage } from '@flow/contracts';
 import { EXECUTION_PROFILE_HEADER, NATIVE_EXECUTION_PROFILE_VERSION, nativeExecutionProfileCatalogPageSchema, type NativeExecutionProfileCatalogPage } from '@flow/contracts';
 import { engineeringProfilePageSchema, engineeringProfilePublishedSchema, type EngineeringProfileConfiguration, type EngineeringProfilePage, type EngineeringProfilePublished } from '@flow/contracts';
 import { contextHistoryResponseSchema, type ContextHistoryResponse } from '@flow/contracts';
-export { decodeConversationCreated, decodeConversationTurnAccepted, assertConversationCreationMatches, assertConversationContextMatches, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
+export { decodeConversationCreated, decodeConversationTurnAccepted, decodeConversationQueueAccepted, assertConversationCreationMatches, assertConversationContextMatches, UnknownConversationAcknowledgementError } from './conversation-acknowledgement.js';
 import type { SteeringAdmission, SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage, SteeringMailbox, SteeringFinalizationInput, SteeringFinalizationResult, SteeringProposalLookup, SteeringProposalStatus } from '@flow/contracts';
 import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
 import type { AssistantStreamPage, AssistantStreamPatchPage, AssistantStreamBlock } from '@flow/contracts';
@@ -377,6 +378,13 @@ export class FlowClient {
   publishExecutionProfile(input: ExecutionProfilePublication, signal?: AbortSignal): Promise<ExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
   }
+  async claudeMessageSettingsProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<ClaudeMessageSettingsCatalogPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return claudeMessageSettingsCatalogPageSchema.parse(await this.request<unknown>(`/api/execution-profiles${query.size ? `?${query}` : ''}`, {
+      signal, headers: { [EXECUTION_PROFILE_HEADER]: CLAUDE_TURN_SETTINGS_PROTOCOL },
+    }));
+  }
   async publishEngineeringProfile(input: { configuration: EngineeringProfileConfiguration }, signal?: AbortSignal): Promise<EngineeringProfilePublished> {
     return engineeringProfilePublishedSchema.parse(await this.request<unknown>('/api/runner/engineering-profile', {
       method: 'POST', body: JSON.stringify(input), signal,
@@ -504,8 +512,11 @@ export class FlowClient {
     return this.request(`/api/projects/${encodeURIComponent(projectId)}/attachments/upload-receipt?${query}`, { signal });
   }
 
-  enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {
-    return this.request(`/api/conversations/${encodeURIComponent(id)}/queue`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  async enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {
+    const body = JSON.stringify(input); const frozen = JSON.parse(body) as ConversationQueueEnqueue;
+    const path = `/api/conversations/${encodeURIComponent(id)}/queue`;
+    if (frozen.messageSettings === undefined) return this.request(path, { method: 'POST', body, headers: { 'Idempotency-Key': key }, signal });
+    return decodeConversationQueueAccepted(await this.conversationAcknowledgement(path, body, key, signal), id, frozen);
   }
   conversationQueue(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationQueuePage> {
     const query = new URLSearchParams();

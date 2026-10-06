@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-06T17:26:57.421659+00:00",
+  "beforeHead": "24830442df31cc260eed84fab1d45b5acfcfd848",
+  "beforeClean": true,
+  "mode": "controlled-approved-input; no client/CLI edits",
+  "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+  "originalApproval": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+  "supplementApprovalSha256": "2370bf557ba866ff3dca705c05f21b124453fe0aad4d96e59d45202128ee0fac",
+  "entries": [
+    {
+      "path": "apps/cli/README.md",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "beforeHead": "24830442df31cc260eed84fab1d45b5acfcfd848",
+      "beforeBytes": 7066,
+      "beforeSha256": "301b7980c9a00ed50b5eaf73ea2737234bd5f42e405f03adb6a5bcd4699eff11",
+      "beforeExactControlledBase": true,
+      "bytes": 8350,
+      "sha256": "c56778839a6eaf81e63f59ba63f8be25c2bf0667ad82a33b9d74f9edd28839ba",
+      "blob": "957e5b584f037ac694d4657747e990548f3a52d9"
+    },
+    {
+      "path": "apps/cli/src/cli.test.ts",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "beforeHead": "24830442df31cc260eed84fab1d45b5acfcfd848",
+      "beforeBytes": 10309,
+      "beforeSha256": "7176c4e2d09029650db778a24997bc9688d92dbc4ac7fb746f43ced238bafb0c",
+      "beforeExactControlledBase": true,
+      "bytes": 17834,
+      "sha256": "90c50bcc6ce46dd1506926268759187a2488b9ccf522180ba12323e8ce1c25f7",
+      "blob": "163ab76e4bfa2f9b2f000e5494a1f4a6b04e89d8"
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "beforeHead": "24830442df31cc260eed84fab1d45b5acfcfd848",
+      "beforeBytes": 23730,
+      "beforeSha256": "fb15f3e7b9485ffe53124ba861ed859f490d545725d28644cf539fe820f766a2",
+      "beforeExactControlledBase": true,
+      "bytes": 25827,
+      "sha256": "0b55574691abce3ac8edc93f0a25e4bb0ab0f786ad68acc8ac2590719ea5f1ae",
+      "blob": "9c664db3048587070b8503d40431d441038efcc3"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.test.ts",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "beforeHead": "24830442df31cc260eed84fab1d45b5acfcfd848",
+      "beforeBytes": 16234,
+      "beforeSha256": "137239308138f0e20e28e8d97aa588aac9f73a48849f45bd409ecc855b26dbdf",
+      "beforeExactControlledBase": true,
+      "bytes": 24251,
+      "sha256": "62449d0899aa3450919fee44c7edcc6d1c928c6605b096a0475d6ca08bdf050b",
+      "blob": "87039d44eab7884be7d288d7e41fab1808e71b9a"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "beforeHead": "24830442df31cc260eed84fab1d45b5acfcfd848",
+      "beforeBytes": 11246,
+      "beforeSha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8",
+      "beforeExactControlledBase": true,
+      "bytes": 14330,
+      "sha256": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2",
+      "blob": "ec9f90c0304fc808a1e1a1883d8cccc362a194a9"
+    },
+    {
+      "path": "packages/client/src/conversation-queue.test.ts",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "beforeHead": "24830442df31cc260eed84fab1d45b5acfcfd848",
+      "beforeBytes": 3501,
+      "beforeSha256": "5d06945106c8d720f579b1e1ff4ccbac4d2d0cf64b2676e30438fb46f68806bd",
+      "beforeExactControlledBase": true,
+      "bytes": 11995,
+      "sha256": "97ee6565dde24d037be38640b2b5c8b2a1fad06e5617e671233c4e9b92521e34",
+      "blob": "200e8c34e41853b4f3c619d0af4511894ec12ed7"
+    },
+    {
+      "path": "packages/client/src/execution-profiles.test.ts",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "beforeHead": "24830442df31cc260eed84fab1d45b5acfcfd848",
+      "beforeBytes": 5679,
+      "beforeSha256": "3d3a28aa0cadae83e108a288fe99464be5f69372dc1a614a7a1e2d92bbab8a26",
+      "beforeExactControlledBase": true,
+      "bytes": 12124,
+      "sha256": "c1775f97e444d14e7a39b46135369dda40474f0c889dc41f6b73bacb041b2ae7",
+      "blob": "1301de372430f7d7e0c5bbc3787d18fb68f51e77"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "beforeHead": "24830442df31cc260eed84fab1d45b5acfcfd848",
+      "beforeBytes": 51680,
+      "beforeSha256": "297f77f7a05c0eda2fd588b63915a70034de260fefe6d17d87cc1d3dc069f75f",
+      "beforeExactControlledBase": true,
+      "bytes": 52725,
+      "sha256": "6355ed6f114a7b01833a03488ed4b0c59fb9ebd91f88acedffcd4051834bbee5",
+      "blob": "6ab93f3383a7292af31d02fe071ecb21c6da5fb1"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "source": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+      "beforeHead": "24830442df31cc260eed84fab1d45b5acfcfd848",
+      "beforeBytes": 1424,
+      "beforeSha256": "ea7f16163aaf5e07b27e420143bfea85ff1b149b31fbb303579c1656fad0af94",
+      "beforeExactControlledBase": true,
+      "bytes": 1467,
+      "sha256": "d62739a19e76a0f65effacb34d4e1b0d2d7d5fd90bf32fd2e2bcb1ef79351384",
+      "blob": "072a0400c81b6198e85254c31363fdcbaf7c5452"
+    }
+  ],
+  "O14BeforeExact73a": true,
+  "O14After": "original goal command unchanged in approved C01; dedicated test is not replaced",
+  "tests": 0,
+  "PG": 0,
+  "provider": 0
+}

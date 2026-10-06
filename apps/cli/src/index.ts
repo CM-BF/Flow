@@ -5,7 +5,8 @@ import { knowledgeCreateSchema, knowledgePublishSchema, knowledgeResolveSchema, 
 import { parseArgs } from 'node:util';
 import { randomUUID } from 'node:crypto';
 import { JsonInputError, readJsonInput } from './json-input.js';
-import { FlowClient, FlowApiError } from '@flow/client';
+import { FlowClient, FlowApiError, UnknownConversationAcknowledgementError } from '@flow/client';
+import { conversationTurnSchema, conversationQueueEnqueueSchema } from '@flow/contracts';
 import { watchTask, taskLine } from './watch.js';
 import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, projectCreationSchema, projectCommandSchema, goalCreationSchema, goalCommandSchema, goalNativeExecutionSchema, type TaskSubmission } from '@flow/contracts';
 
@@ -33,6 +34,10 @@ export async function runCli(args: string[], io: CliIO = defaultIO, env: NodeJS.
     const client = new FlowClient({ baseUrl: values.url ?? env.FLOW_URL ?? 'http://127.0.0.1:4310', token: env.FLOW_TOKEN });
     return await executeCommand({ client, values, positionals, io, signal });
   } catch (error) {
+    if (error instanceof UnknownConversationAcknowledgementError) {
+      io.err('Conversation acceptance is unknown. Keep the original --key and unchanged input file; recover explicitly with that same request.');
+      return 4;
+    }
     io.err(error instanceof Error ? error.message : 'Command failed.');
     if (error instanceof FlowApiError) return error.status === 409 ? 3 : 4;
     if (error instanceof UsageError || error instanceof JsonInputError || (error instanceof Error && error.name === 'ZodError') || (typeof error === 'object' && error && 'code' in error && String(error.code).startsWith('ERR_PARSE_ARGS'))) return 2;
@@ -98,6 +103,7 @@ async function executeCommand(context: CommandContext): Promise<number> {
       return 0;
     }
     case 'knowledge': return knowledgeCommand(context);
+    case 'conversation': return conversationCommand(context);
     case 'plugin': return pluginCommand(context);
     case 'goal': return goalCommand(context);
     case 'project': return projectCommand(context);
@@ -107,6 +113,29 @@ async function executeCommand(context: CommandContext): Promise<number> {
   }
 }
 
+
+async function conversationCommand({ client, values, positionals, io, signal }: CommandContext): Promise<number> {
+  const action = positionals[1];
+  if (action === 'profiles') {
+    if (positionals.length !== 2) throw new UsageError('Use conversation profiles [--after UUID] [--limit N].');
+    io.out(JSON.stringify(await client.claudeMessageSettingsProfiles({
+      ...(values.after !== undefined ? { after: values.after } : {}),
+      ...(values.limit !== undefined ? { limit: positiveNumber(values.limit, 'limit') } : {}),
+    }, signal)));
+    return 0;
+  }
+  if (!['send', 'enqueue'].includes(action ?? '') || positionals.length !== 3) throw new UsageError('Use conversation profiles|send CONVERSATION_ID|enqueue CONVERSATION_ID.');
+  const id = required(positionals[2], 'conversation ID');
+  const key = required(values.key, '--key (stable command identifier)');
+  const input = await readJsonInput(required(values.input, '--input JSON-file'), 131_072);
+  if (action === 'enqueue') io.out(JSON.stringify(await client.enqueueConversationTurn(id, conversationQueueEnqueueSchema.parse(input), key, signal)));
+  else {
+    const parsed = conversationTurnSchema.parse(input);
+    if (parsed.mode !== 'follow-up') throw new UsageError('conversation send requires mode follow-up. Use conversation enqueue for queued input.');
+    io.out(JSON.stringify(await client.submitConversationTurn(id, parsed, key, signal)));
+  }
+  return 0;
+}
 
 async function knowledgeCommand({ client, values, positionals, io, signal }: CommandContext): Promise<number> {
   const projectId = required(values.project, '--project');
@@ -307,6 +336,9 @@ Package fetch: plugin fetch PLUGIN VERSION --input FILE --key KEY; plugin fetche
 Flow — durable work, from your terminal
 
 Commands:
+  conversation profiles [--after UUID] [--limit number] [--json]
+  conversation send <conversation-id> --input JSON-file --key stable-key [--json]
+  conversation enqueue <conversation-id> --input JSON-file --key stable-key [--json]
   submit "prompt" [--title title] [--harness fixture|claude|a2a] [--key key]
   list
   workspace [--after cursor | --before cursor] [--limit count]
