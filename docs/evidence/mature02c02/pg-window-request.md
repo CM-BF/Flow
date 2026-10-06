@@ -14,4 +14,6 @@
 
 直接输入：`pg-source-manifest.json`（291固定供给含30SQL+本片新增依赖）。专属类型配置已静态检查该PG源码（exit0），不执行它。原pure53日志/定向7、旧consumer65/66与修后8记录不重跑；首组退出码UNKNOWN纠正保留。
 
-外部验收必须读取真实selected=6、passed=6、进程退出码、全部raw与最终fixture收据；adminError/poolError/cleanupErrors任何非空均失败。最终收据不声称自身写入已确认；监督者另核其O_NOFOLLOW身份/hash/完整JSON，与stdout安全事实比对。当前 `execute-pg-once.py` 已按既有S01有界subprocess方法实现，尚未审查或执行该外部运行收据，不能仅凭测试源码或清理字段打开窗口。
+外部验收必须读取真实selected=6、passed=6、进程退出码、全部raw与最终fixture收据；adminError/poolError/cleanupErrors任何非空均失败。最终收据不声称自身写入已确认；监督者另核其O_NOFOLLOW身份/hash/完整JSON，与stdout安全事实比对。当前 `execute-pg-once.py` 已按既有S01有界subprocess方法实现。独审发现receipt资格、末尾阶段时钟与external遗漏三P2，已窄修待固定复核：未获严格receipt资格保根；每个read/sample/delete/save阶段核同一剩余时间；Node/Vitest流hash在spawn前。尚未执行该外部运行收据，不能仅凭测试源码或清理字段打开窗口。
+
+最终文件仅before-final-receipt阶段快照，stdout独立delivery报告写ACK与末时钟，真实工具退出另由调用方记录。4096项/depth8的自有临时目录仅进程组/stdio结束并receipt确认后完整采样；不能冒称活动写删峰值或硬磁盘配额。

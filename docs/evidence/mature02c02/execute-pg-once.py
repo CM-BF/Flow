@@ -61,16 +61,18 @@ def stop_group(child):
     return {'state': group_state(child.pid), 'signals': actions}
 
 
-def temp_sample(root, identity):
+def temp_sample(root, identity, deadline):
     current = root.lstat()
     if not stat.S_ISDIR(current.st_mode) or (current.st_dev, current.st_ino) != identity:
         raise ValueError('TEMP_IDENTITY')
     pending, count, size = [(root, 0)], 0, 0
     while pending:
+        if time.monotonic() >= deadline: raise ValueError('TEMP_SAMPLE_DEADLINE')
         directory, depth = pending.pop()
         if depth > 8: raise ValueError('TEMP_DEPTH')
         with os.scandir(directory) as entries:
             for entry in entries:
+                if time.monotonic() >= deadline: raise ValueError('TEMP_SAMPLE_DEADLINE')
                 count += 1
                 if count > 4096: raise ValueError('TEMP_ENTRIES')
                 info = entry.stat(follow_symlinks=False)
@@ -88,9 +90,24 @@ def main():
     expected = os.environ.get('FLOW_C02_EXECUTION_HEAD', '')
     head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=WT, text=True, timeout=3).strip()
     if head != expected or subprocess.check_output(['git', 'status', '--porcelain'], cwd=WT, timeout=3): raise SystemExit('SOURCE_NOT_FIXED')
-    for row in json.loads((EVIDENCE / 'pg-source-manifest.json').read_text())['items']:
+    manifest = json.loads((EVIDENCE / 'pg-source-manifest.json').read_text())
+    for row in manifest['items']:
         value = (WT / row['path']).read_bytes()
         if len(value) != row['bytes'] or hashlib.sha256(value).hexdigest() != row['sha256']: raise SystemExit('INPUT_CHANGED')
+    for row in manifest['external']:
+        if str(Path(row['path']).resolve()) != row['realpath']: raise SystemExit('EXTERNAL_PATH_CHANGED')
+        fd = os.open(row['realpath'], os.O_RDONLY | os.O_NOFOLLOW); digest = hashlib.sha256(); count = 0
+        try:
+            before = os.fstat(fd)
+            if not stat.S_ISREG(before.st_mode): raise SystemExit('EXTERNAL_KIND_CHANGED')
+            while True:
+                chunk = os.read(fd, 1048576)
+                if not chunk: break
+                count += len(chunk); digest.update(chunk)
+            after = os.fstat(fd)
+            if (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns) != (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns): raise SystemExit('EXTERNAL_CHANGED_DURING_READ')
+        finally: os.close(fd)
+        if count != row['bytes'] or digest.hexdigest() != row['sha256']: raise SystemExit('EXTERNAL_CHANGED')
     for row in json.loads((EVIDENCE / 'dependency-link-request.json').read_text())['links']:
         link = WT / row['destination']
         value = (link / 'package.json').read_bytes()
@@ -110,6 +127,10 @@ def main():
     if free < 1207959552: raise SystemExit('RESOURCE_NOT_RUN')
     record = {'window': window, 'sourceHead': head, 'startedAt': at.isoformat(), 'freeBefore': free, 'errors': [], 'actualCodex': 0, 'provider': 0}
     errors = record['errors']; root = None; child = None; streams = {}; eof = set(); selector = selectors.DefaultSelector(); observed = 0
+    def phase(name, reserve):
+        if time.monotonic() + reserve >= start + 120:
+            errors.append(name + '_NOT_STARTED_DEADLINE'); return False
+        return True
     try:
         root = Path(tempfile.mkdtemp(prefix='flow-c02-pg-window-'))
         record['tempRoot'] = str(root); info = root.lstat(); identity = (info.st_dev, info.st_ino); record['tempIdentity'] = list(identity)
@@ -167,23 +188,31 @@ def main():
             except OSError: errors.append('CAPTURE_CLOSE_UNKNOWN')
         record.update({'processGroup': process, 'stdioEof': sorted(eof), 'observedRawBytes': observed, 'rawComplete': observed <= RAW_LIMIT and eof == {'stdout', 'stderr'}})
         if child and (process['state'] != 'absent' or eof != {'stdout', 'stderr'}): errors.append('PROCESS_OR_STDIO_UNKNOWN')
-        fixture = None
+        fixture = None; fixture_confirmed = False
         try:
+            if not phase('RECEIPT_READ', 5): raise ValueError('RECEIPT_DEADLINE')
             fixture, record['fixtureBinding'] = read_json(prefix + '.fixture.json', 8192)
             tests, record['vitestBinding'] = read_json(prefix + '.vitest.json', 32768)
             reservation, record['databaseReservationBinding'] = read_json(prefix + '.fixture.json.reservation.json', 8192)
             owned, record['databaseIdentityBinding'] = read_json(prefix + '.fixture.json.database.json', 8192)
             if not isinstance(fixture, dict) or fixture.get('window') != window or fixture.get('sourceHead') != head: raise ValueError('FIXTURE_BINDING')
             if fixture.get('database') != reservation.get('database') or owned.get('database') != reservation.get('database') or owned.get('creationAcknowledged') is not True or owned.get('identity', {}).get('marker') != reservation.get('marker') or fixture.get('databaseIdentity') != owned.get('identity'): raise ValueError('DATABASE_BINDING')
+            if not isinstance(owned.get('identity'), dict) or not isinstance(owned['identity'].get('oid'), str) or not re.fullmatch(r'[1-9][0-9]*', owned['identity']['oid']): raise ValueError('DATABASE_OID')
             if not isinstance(tests, dict) or not isinstance(tests.get('testResults'), list): raise ValueError('TEST_RESULT_SHAPE')
             assertions = [case for suite in tests['testResults'] for case in suite['assertionResults']]
             record['selection'] = {'selected': len(assertions), 'passed': sum(case['status'] == 'passed' for case in assertions)}
             if tests.get('success') is not True or len(assertions) != 6 or any(case['status'] != 'passed' for case in assertions): errors.append('TESTS_FAILED_OR_SELECTION')
-            if fixture.get('cleanupComplete') is not True or fixture.get('cleanupErrors') or fixture.get('adminError') or fixture.get('poolError'): errors.append('FIXTURE_FAILURE')
-            if not isinstance(fixture.get('databaseLogicalBytes'), int) or fixture['databaseLogicalBytes'] > 64 * 1024 * 1024: errors.append('DATABASE_SAMPLE_BOUND')
+            cleanup = fixture.get('cleanup')
+            if not isinstance(cleanup, dict) or any(cleanup.get(key) is not True for key in ['startupSettled', 'runnersClosed', 'appClosed', 'poolClosed', 'adminClosed', 'databaseIdentityConfirmed', 'databaseAbsent']) or type(cleanup.get('connections')) is not int or cleanup['connections'] != 0 or 'retainedDatabase' not in fixture or fixture['retainedDatabase'] is not None: raise ValueError('CLEANUP_FACTS_UNKNOWN')
+            if fixture.get('primaryPhases') != [] or fixture.get('cleanupErrors') != [] or fixture.get('cleanupComplete') is not True or fixture.get('adminError') or fixture.get('poolError'): raise ValueError('FIXTURE_FAILURE')
+            if not isinstance(fixture.get('roots'), list) or any(row.get('state') != 'removed' for row in fixture['roots']): raise ValueError('FIXTURE_ROOTS_UNKNOWN')
+            if type(fixture.get('databaseLogicalBytes')) is not int or fixture['databaseLogicalBytes'] < 0 or fixture['databaseLogicalBytes'] > 64 * 1024 * 1024: raise ValueError('DATABASE_SAMPLE_BOUND')
+            fixture_confirmed = not errors
         except (OSError, ValueError, KeyError, TypeError, AttributeError): errors.append('RESULT_UNKNOWN')
+        record['fixtureReceiptConfirmed'] = fixture_confirmed
         record['captures'] = {}
         for channel in streams:
+            if not phase('CAPTURE_HASH', 4): break
             try:
                 fd = os.open(prefix + '.' + channel, os.O_RDONLY | os.O_NOFOLLOW)
                 try:
@@ -195,10 +224,11 @@ def main():
                 finally: os.close(fd)
             except (OSError, ValueError): errors.append('RAW_IDENTITY_UNKNOWN')
         record['retainedTempRoot'] = str(root) if root else None
-        if root and child and process['state'] == 'absent' and eof == {'stdout', 'stderr'} and fixture and fixture.get('cleanupComplete') is True:
+        if root and child and process['state'] == 'absent' and eof == {'stdout', 'stderr'} and fixture_confirmed and phase('TEMP_SAMPLE', 4):
             try:
-                record['tempFinalSample'] = temp_sample(root, identity)
+                record['tempFinalSample'] = temp_sample(root, identity, start + 117)
                 if record['tempFinalSample']['logicalBytes'] > 32 * 1024 * 1024: errors.append('TEMP_SAMPLE_BOUND')
+                if not phase('TEMP_DELETE', 3): raise ValueError('DELETE_DEADLINE')
                 current = root.lstat()
                 if not stat.S_ISDIR(current.st_mode) or (current.st_dev, current.st_ino) != identity: raise ValueError('TEMP_IDENTITY_CHANGED')
                 shutil.rmtree(root)
@@ -209,7 +239,8 @@ def main():
         record['phase'] = 'before-final-receipt'
         record['checksPassed'] = child is not None and record.get('exitCode') == 0 and not errors and record['rawComplete'] and record['retainedTempRoot'] is None and record['elapsedSeconds'] < 120
         receipt_written = False
-        try: save(prefix + '.result.json', record); receipt_written = True
+        try:
+            if phase('FINAL_RECEIPT', 1): save(prefix + '.result.json', record); receipt_written = True
         except OSError: errors.append('FINAL_RECEIPT_UNKNOWN')
         delivery = {'finalReceiptWritten': receipt_written, 'elapsedSeconds': time.monotonic() - start}
         delivery['success'] = record['checksPassed'] and receipt_written and not errors and delivery['elapsedSeconds'] < 120
