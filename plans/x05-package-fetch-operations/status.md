@@ -11,7 +11,7 @@
 | 实现范围 | packages/contracts/src/plugin-package-fetches.ts, apps/server/src/plugin-package-fetches/, apps/server/src/package-artifacts/input.ts, apps/server/src/package-artifacts/index.ts, apps/server/src/package-artifacts/storage.ts, packages/storage/migrations/023-plugin-package-fetches.sql |
 | 工作树dirty状态 | 固定源码9ebb3bdd781b3667f0c164405e9a17387ce89d76；本次仅交付metadata |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED：24不同（X05 11 + 旧X04 13）；23组合 + 5局部含4重复，tsc exit0 |
+| 检查状态 | PASSED 9ebb3bdd781b3667f0c164405e9a17387ce89d76；24不同（X05 11 + 旧X04 13）；23组合 + 5局部含4重复，tsc exit0 |
 | Review | NOT_STARTED |
 | Review target commit | 9ebb3bdd781b3667f0c164405e9a17387ce89d76 |
 | 已集成main状态 / HEAD | 未集成；X04已在main115b，X05已固定待独立审查，尚未生产挂载 |
