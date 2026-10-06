@@ -11,7 +11,7 @@
 ## TODO
 
 - [x] **R05C-01** 固定来源、scope、Interface与claim。
-- [ ] **R05C-02** C0明确settled/unknown错误合同，复用宿主既有lost/admission/outbox路径并独审。
+- [x] **R05C-02** C0明确settled/unknown错误合同，复用宿主既有lost/admission/outbox路径并独审。
 - [ ] **R05C-03** C1 factory/普通final/逐项deny与JSONL peer纵向PG验证；共享projection与Mika协调单源。
 - [ ] **R05C-04** 固定manifest、独审、必要直接消费者检查及受控main集成。
 
