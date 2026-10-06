@@ -1,0 +1,39 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability
+
+ ❯ apps/web/test/conversation-activity-integration.test.ts (7 tests | 1 failed) 92ms
+     × registers genuine button/menu/panel without any reads and expands lazily 30ms
+     ✓ allows both split panes while global navigation focuses only one 13ms
+     ✓ native hide is zero-read, resume retains cache, and collapsed updates do not poll 14ms
+     ✓ disable, close and session disposal reject existing ports and late responses 8ms
+     ✓ task events stay separate from native routes and only expand the selected source 8ms
+     ✓ offline with unchanged turns blocks native/events/body and reconnect restores an open view 13ms
+     ✓ going offline aborts a body signal and drops its late result without losing settled cache 6ms
+ ✓ apps/web/test/native-activity.test.ts (9 tests) 26ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-activity-integration.test.ts > conversation activity host bridge > registers genuine button/menu/panel without any reads and expands lazily
+AssertionError: expected [ 'button', 'menu', 'panel', 'panel' ] to deeply equal [ 'button', 'menu', 'panel' ]
+
+- Expected
++ Received
+
+  [
+    "button",
+    "menu",
+    "panel",
++   "panel",
+  ]
+
+ ❯ apps/web/test/conversation-activity-integration.test.ts:30:133
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 15 passed (16)
+   Start at  02:38:05
+   Duration  1.73s (transform 308ms, setup 0ms, import 1.45s, tests 118ms, environment 0ms)
+
