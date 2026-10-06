@@ -162,12 +162,12 @@ Feature owners 向 Execution Lead 回报工程进展、阻塞和证据；Executi
 M1 的共同完成条件：
 
 - [ ] **M1-A01** Web / CLI / 中心 / runner 可分别启动，中心连接两个测试 runners，任务由一个有效 attempt 执行。
-- [ ] **M1-A02** 模拟受理响应丢失后以相同幂等键重试，只有一项任务；内容冲突能明确返回。
+- [x] **M1-A02** 模拟受理响应丢失后以相同幂等键重试，只有一项任务；内容冲突能明确返回。
 - [ ] **M1-A03** Web 提交后关闭整个浏览器，后台继续；CLI 可以观察同一任务并回答一项决策；Web 重连恢复一致状态。
-- [ ] **M1-A04** 退出 CLI watch 不取消任务；显式 cancel、完成竞争和重复事件均有确定结果。
+- [x] **M1-A04** 退出 CLI watch 不取消任务；显式 cancel、完成竞争和重复事件均有确定结果。
 - [ ] **M1-A05** 时间线和普通 SSE 不含折叠详情 payload；展开才按需读取；超长正文/详情都有界。
-- [ ] **M1-A06** 产物有固定版本和确定性验证，执行完成与验收通过分别记录。
-- [ ] **M1-A07** 中心重启后受理记录可恢复处理；runner 失联标记待核对，不盲目重跑可能已完成的外部写入。
+- [x] **M1-A06** 产物有固定版本和确定性验证，执行完成与验收通过分别记录。
+- [x] **M1-A07** 中心重启后受理记录可恢复处理；runner 失联标记待核对，不盲目重跑可能已完成的外部写入。
 - [ ] **M1-A08** 真实 harness 使用随机未知 fixture，提示不泄露答案；恢复题禁用工具，设置无历史对照，分别报告通过和失败。
 - [ ] **M1-A09** usage 不因重报或恢复重复累计，缺失分类不记作零，估算与实际供应商统计分开。
 - [ ] **M1-A10** 各自记录功能、故障、UI 和性能测试范围；不把模拟通过写成真实模型、跨机恢复或 100+ 容量通过。
@@ -200,13 +200,13 @@ M1 完成后沿用用户10槽期望上限并按运行时实际cap安排，后续
 ## 执行 TODO（稳定 ID）
 
 - [x] **F00** 公共契约、骨架与调度短验证；证据见 ../../docs/evidence/f00/scheduler.json，提交542f70b/3995ec1。
-- [ ] **C01** 中心闭环；独立计划见 [C01](../c01-control-plane/plan.md)。
-- [ ] **R01** 确定性 runner；独立计划见 [R01](../r01-runner/plan.md)。
-- [ ] **L01** 正式 CLI；独立计划见 [L01](../l01-cli/plan.md)。
+- [x] **C01** 中心闭环；独立计划见 [C01](../c01-control-plane/plan.md)。
+- [x] **R01** 确定性 runner；独立计划见 [R01](../r01-runner/plan.md)。
+- [x] **L01** 正式 CLI；独立计划见 [L01](../l01-cli/plan.md)。
 - [ ] **W01** Web 与双主题；独立计划见 [W01](../w01-web/plan.md)。
 - [ ] **D01** 工程执行 dashboard；独立计划见 [D01](../d01-execution-dashboard/plan.md)。
 - [ ] **R02** 真实 harness 接入与有界验证。
-- [ ] **I01** 合并版本的端到端、故障与UI验收。
+- [ ] **I01** 合并版本的端到端、故障与UI验收；[独立计划](../i01-integration/plan.md)。
 
 - 2026-10-05：用户要求所有ready独立任务尽量并行，期望上限10；当前第5worker仍被运行时拒绝。每plan迁移独立status/review，当前feature owners维护各自状态，branch完成与main集成分别记录。
 
@@ -223,3 +223,5 @@ M1 完成后沿用用户10槽期望上限并按运行时实际cap安排，后续
 当前保留：W01（Web与完整浅深主题），依赖F00已ready，owner待用户派发；其余内部继续C01/R01/L01。其他可独立安排的是针对固定commit的只读review；E01 wrapper认证调查仅限隔离只读分析、不修改共享登录或生产实现；协议映射设计需先明确版本与输入契约，不把未ready的协议实现冒充可并行任务。
 
 W01 与 D01 均 reserved-external/awaiting-dispatch；用户将自行新开一个执行分队 task（协调者 + 两 feature owners，最多 3 个活跃 agents）。两个 feature 独立 worktree，不共享可写 UI 包、lock 或 contracts。具体输入、任务登记与交付格式见 [外部交接](../../docs/handoffs/external-web-dashboard.md)。当前内部 4 槽运行限制仍据实记录；不将预留写成已运行。
+
+当前确定性核心已在I01集成验证并独立审查，main仍未合入。R02进行真实adapter有界验证；用户另授权LAB01可丢弃性能toy，独立performance-probes worktree，0模型/0云。LAB结果不替代产品性能或真实agent容量证据。
