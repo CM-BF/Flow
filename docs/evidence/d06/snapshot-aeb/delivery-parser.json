@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-06T12:49:54.460Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "固定架构图已更新，区分已接入、fixture与待接职责，等待独立审查",
+    "next": "独立审查后由Lead接收固定五source，图中部署事实另查服务回执",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED",
+    "target": "6570ef7e896d29040961247f46aa62dc4e466284"
+  },
+  "proof": {
+    "target": "6570ef7e896d29040961247f46aa62dc4e466284",
+    "head": "6570ef7e896d29040961247f46aa62dc4e466284",
+    "scopes": [
+      "apps/execution-dashboard/public/architecture-data.js",
+      "apps/execution-dashboard/test/architecture.test.mjs",
+      "docs/evidence/d06/snapshot-aeb/source-audit.mjs",
+      "docs/evidence/d06/snapshot-aeb/preview.mjs",
+      "docs/evidence/d06/snapshot-aeb/browser-check.mjs"
+    ],
+    "observedAt": "2026-10-06T12:49:54.337Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/d06/snapshot-aeb/README.md",
+      "docs/evidence/d06/snapshot-aeb/quality.json",
+      "plans/d06-architecture-refresh/plan.md",
+      "plans/d06-architecture-refresh/review.md",
+      "plans/d06-architecture-refresh/status.md",
+      "docs/evidence/d06/snapshot-aeb/browser-checks.json",
+      "docs/evidence/d06/snapshot-aeb/browser.log",
+      "docs/evidence/d06/snapshot-aeb/candidate.json",
+      "docs/evidence/d06/snapshot-aeb/data-dark-narrow.png",
+      "docs/evidence/d06/snapshot-aeb/data-dark.png",
+      "docs/evidence/d06/snapshot-aeb/data-light-narrow.png",
+      "docs/evidence/d06/snapshot-aeb/modules-bottom-light.png",
+      "docs/evidence/d06/snapshot-aeb/modules-light.png",
+      "docs/evidence/d06/snapshot-aeb/node-final.log",
+      "docs/evidence/d06/snapshot-aeb/node-first.log",
+      "docs/evidence/d06/snapshot-aeb/peer-source-review.json",
+      "docs/evidence/d06/snapshot-aeb/runtime-light.png",
+      "docs/evidence/d06/snapshot-aeb/service-owner-observation.json",
+      "docs/evidence/d06/snapshot-aeb/source-audit.json",
+      "docs/evidence/d06/snapshot-aeb/source-first.log",
+      "docs/evidence/d06/snapshot-aeb/states-dark.png",
+      "docs/evidence/d06/snapshot-aeb/states-light.png",
+      "docs/evidence/d06/snapshot-aeb/validation.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  }
+}

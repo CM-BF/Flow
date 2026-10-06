@@ -18,6 +18,8 @@
 本批完整[授权及后续验证澄清](../../docs/evidence/d06/snapshot-aeb/authorization.md)沿原D06，不另建同义任务。保持原四literal与五图renderer Interface；完整目标/源检查/有限viewport见[Interface](../../docs/evidence/d06/snapshot-aeb/interface.md)。本批source为aeb764e5d2c2ec043ae8673cde2724f5330db2ab，feature原HEAD631173保留，不reset、不追临时detached362。上文f181和D06-01～04仅历史已完成批；旧证据不改。
 
 - [x] D06-05：原权威树/分支/旧释放与fixedaeb检查；四scope fresh领取。
-- [ ] D06-06：核固定源码并更新职责、运行/数据/状态与外部依赖边界，保持默认图可读。
-- [ ] D06-07：小范围数据/来源/viewport验证，原失败与部署边界准确。
+- [x] D06-06：核固定源码并更新职责、运行/数据/状态与外部依赖边界，保持默认图可读。
+- [x] D06-07：小范围数据/来源/viewport验证，原失败与部署边界准确。
 - [ ] D06-08：固定独审、正常push、Lead窗口resume后受控main接收与合法收口。
+
+本批固定目标6570及[验证](../../docs/evidence/d06/snapshot-aeb/validation.md)已齐，D06-08仍等待独立review/main。用户重申“其他 agent leads…不要 overlap；take 工作最好也在 dashboard 标清楚”沿U08/REQ37，四literal实际claim6cad30a2 v1与唯一status/D04 receipt关联，不另手填领取或父进度。SVC05窗口已由Lead正式关闭，服务owner回执与固定source分开，管理没有服务查询。
