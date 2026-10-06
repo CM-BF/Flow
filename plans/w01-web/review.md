@@ -1,10 +1,14 @@
 # W01 独立审查记录
 
-**状态：APPROVED — 仅针对下述实现提交和约定的 Web/HTTP fixture 范围。**
+**状态：NOT_STARTED — 官方Thread/workspace新target `cb4a39211e264538704ba9d474eeb08fc4b2759c`；以下历史APPROVED不覆盖该目标。**
 
 本记录由 W01 owner 按协调者明确回传的独立只读结论落盘；不是 owner 自审 approval。后续 metadata HEAD 不自动继承实现 SHA 的审查。
 
-## Target 与 scope
+## 新整改审查入口
+
+Review target commit：`cb4a39211e264538704ba9d474eeb08fc4b2759c`。Base commit：`b04df95821a55384c55c833e94405daaf35af8ad`（冻结基线eacee76仍祖先）。范围为官方Thread/Composer及依赖元素、新shell、split/merge与右侧AI Elements panels。Owner已完成Web模块/直接依赖检查、双主题和10项浏览器回归，独立review不得沿用以下历史目标结论。新证据见 [thread-revision/validation.md](../../docs/evidence/w01/thread-revision/validation.md)。重点看官方来源/最少适配、迟到受理关闭、每task观察隔离、草稿保留、keyboard/窄屏、模拟数据边界及依赖锁patch。
+
+## 历史 Target 与 scope
 
 - Review target commit：`866c20e8462f295736f685541e2ecb9ba8639101`。
 - Base commit：`eacee76fa7f1b6cc46b06b57ae68458637be4a26`。
