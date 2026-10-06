@@ -1,0 +1,15 @@
+{
+  "verdict": "APPROVED",
+  "reviewer": "Mika / gpt-6-astra",
+  "at": "2026-10-06 11:57:54 UTC",
+  "target": "7d69f8b48a67bbf08eb1d7dbdebd8437da861b40",
+  "manifestSha256": "5f43a18ff05fc27fce1f4d8fe605fc3e70ae195c40da25eefe55dca555455f40",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "reviewerReranTests": false,
+  "checks": "Full6line production delta and113line5checks read;38current Git/WT bytes/hash,4red and50first historicalGit;49first current unchanged/one declared readonly drift;19legacy unchanged",
+  "actualEvidence": "new5 PGHTTP andlocalstrict0,red1retained;no first8rerun.5runs10tasks/8186.435709ms/733075B;5DBclosed/absent",
+  "limits": "row JSON bytes only; declared SQL historical/state fixtures;0SDK/provider/runtime;not wire/TOAST/latency/SLO"
+}

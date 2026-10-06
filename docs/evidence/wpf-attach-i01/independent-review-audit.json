@@ -1,0 +1,94 @@
+{
+  "time": "2026-10-06T11:24:53.574748+00:00",
+  "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a",
+  "base": "8701a6cf547248e70aa5758f05da1d7d314ae9c0",
+  "head": "c07c05421359b5ef58961fef8c074abd4ded9c68",
+  "dirty": "",
+  "sources": [
+    {
+      "path": "apps/web/src/attachments/AttachmentPicker.tsx",
+      "manifest": "d9a196ae46bb7f95764d1762ddd9940a30325825e5c0950727e70382eb8d3a25",
+      "current": "d9a196ae46bb7f95764d1762ddd9940a30325825e5c0950727e70382eb8d3a25",
+      "target": "d9a196ae46bb7f95764d1762ddd9940a30325825e5c0950727e70382eb8d3a25",
+      "browser": "d9a196ae46bb7f95764d1762ddd9940a30325825e5c0950727e70382eb8d3a25"
+    },
+    {
+      "path": "apps/web/src/attachments/adapter.ts",
+      "manifest": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3",
+      "current": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3",
+      "target": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3",
+      "browser": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3"
+    },
+    {
+      "path": "apps/web/src/attachments/attachments.css",
+      "manifest": "81b78eed67579a8d5122927590cf6b4ad678cad50c9d2694f8af8f4decd27333",
+      "current": "81b78eed67579a8d5122927590cf6b4ad678cad50c9d2694f8af8f4decd27333",
+      "target": "81b78eed67579a8d5122927590cf6b4ad678cad50c9d2694f8af8f4decd27333",
+      "browser": "81b78eed67579a8d5122927590cf6b4ad678cad50c9d2694f8af8f4decd27333"
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "manifest": "0c6eb70bd3ce9bff108e67c3a0bdf3e7142dcdab1b16371654f6e78e89f20576",
+      "current": "0c6eb70bd3ce9bff108e67c3a0bdf3e7142dcdab1b16371654f6e78e89f20576",
+      "target": "0c6eb70bd3ce9bff108e67c3a0bdf3e7142dcdab1b16371654f6e78e89f20576",
+      "browser": "0c6eb70bd3ce9bff108e67c3a0bdf3e7142dcdab1b16371654f6e78e89f20576"
+    },
+    {
+      "path": "apps/web/src/attachments/recovery.ts",
+      "manifest": "932e2376cea18464b9283b7ed162df2de0ba60a64e988eb74201fdf88b938c0f",
+      "current": "932e2376cea18464b9283b7ed162df2de0ba60a64e988eb74201fdf88b938c0f",
+      "target": "932e2376cea18464b9283b7ed162df2de0ba60a64e988eb74201fdf88b938c0f",
+      "browser": "932e2376cea18464b9283b7ed162df2de0ba60a64e988eb74201fdf88b938c0f"
+    },
+    {
+      "path": "apps/web/test/attachment-controller.test.ts",
+      "manifest": "52a30235e60bd59460568e1841eb19ee29e3f04c1577493a3265159d5d00e93b",
+      "current": "52a30235e60bd59460568e1841eb19ee29e3f04c1577493a3265159d5d00e93b",
+      "target": "52a30235e60bd59460568e1841eb19ee29e3f04c1577493a3265159d5d00e93b",
+      "browser": "52a30235e60bd59460568e1841eb19ee29e3f04c1577493a3265159d5d00e93b"
+    },
+    {
+      "path": "apps/web/test/attachment-input.browser.ts",
+      "manifest": "2768d9b31a339fe7264d4a778f85390941b5d5dd205575226caf254561f5b96f",
+      "current": "2768d9b31a339fe7264d4a778f85390941b5d5dd205575226caf254561f5b96f",
+      "target": "2768d9b31a339fe7264d4a778f85390941b5d5dd205575226caf254561f5b96f",
+      "browser": "2768d9b31a339fe7264d4a778f85390941b5d5dd205575226caf254561f5b96f"
+    },
+    {
+      "path": "apps/web/test/attachment-input.fixture.tsx",
+      "manifest": "1627b9289feeab051860c63a45b9423ce73200fc32a0b5e01da72eca4e79c25f",
+      "current": "1627b9289feeab051860c63a45b9423ce73200fc32a0b5e01da72eca4e79c25f",
+      "target": "1627b9289feeab051860c63a45b9423ce73200fc32a0b5e01da72eca4e79c25f",
+      "browser": "1627b9289feeab051860c63a45b9423ce73200fc32a0b5e01da72eca4e79c25f"
+    },
+    {
+      "path": "apps/web/test/attachment-recovery.test.ts",
+      "manifest": "df209a6158d6d8250c31bdef0ac8241c7e1887047c056589befb06037a15ecbb",
+      "current": "df209a6158d6d8250c31bdef0ac8241c7e1887047c056589befb06037a15ecbb",
+      "target": "df209a6158d6d8250c31bdef0ac8241c7e1887047c056589befb06037a15ecbb",
+      "browser": "df209a6158d6d8250c31bdef0ac8241c7e1887047c056589befb06037a15ecbb"
+    }
+  ],
+  "allFourWayEqual": true,
+  "protectedChanges": [],
+  "sourceDiffCheck": 0,
+  "sourceDiffCheckOutput": "",
+  "implementationOutsideAllowed": [],
+  "independentTests": {
+    "passed": 17,
+    "files": 2,
+    "durationMs": 807,
+    "log": "/tmp/root-attachi01-module-review.log"
+  },
+  "authorBrowser": {
+    "groups": 10,
+    "errors": [],
+    "failure": null,
+    "independentlyRerun": false
+  },
+  "reviewedScreenshots": [
+    "attachment-light.png",
+    "attachment-dark-390.png"
+  ],
+  "scopeLimit": "Isolated module, typed-memory ports and official Thread. Real public HTTP, production App/Send/Queue, reload-selected-drafts, cross-tab atomicity, Safari/Firefox and screen reader not validated."
+}

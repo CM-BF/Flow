@@ -1,0 +1,15 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/task-read-projection.test.ts > list reads omit the legal long prompt without adding a query
+AssertionError: expected [ 'conversation_input_id', …(15) ] to not include 'submission'
+ ❯ apps/server/src/task-read-projection.test.ts:33:46
+     31|   expect(current.value.tasks[0]).toMatchObject({ id: primaryId, title:…
+     32|   expect(current.value.nextCursor).toBeNull();
+     33|   expect(current.measurement.taskFields).not.toContain('submission');
+       |                                              ^
+     34|   expect(current.measurement.taskRowJsonBytes).toBeLessThan(1024);
+     35|   expect(current.measurement.queryCalls).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

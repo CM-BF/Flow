@@ -9,17 +9,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 本批已审S01P04授权读取锁与O12薄取消传输；144源登记 |
+| 工作基线 / HEAD | 已审附件输入模块与B01任务/活动轻投影；S01P04/O12传输已main2f4 |
 | 工作树dirty状态 | 本批集成证据待提交；已审产品scope逐文件相同 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | 31固定源码/原始证据绑定与root types0；11不同S01局部检查及1HTTP原证据复用，0provider |
-| 已集成main状态 / HEAD | 017adc27已接O11公共读口、ENG01E和Web缓存/父子摘要；本批小修待fast-forward。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
+| 检查状态 | 45固定源码/原始证据绑定；root/Web types0；原17附件与8+5读取检查复用，0provider |
+| 已集成main状态 / HEAD | 2f4a5789已接S01P04/O12薄传输与144登记；本批附件模块/轻投影待fast-forward。个人backend b1c/v12、Web8d8/caa1/v2保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 目标公共读取、可信检查和网页回收已进主线；执行器并发读取修复正在收口。 |
-| 下一可用交付 | 接收执行器读取修复与新子任务登记，继续目标会话和真实工程路径。 |
+| 当前产出 | 并发读取修复已进主线；附件输入模块与轻量任务读取正在完成接收。 |
+| 下一可用交付 | 接收已审附件与读取优化，继续目标会话和真实工程路径。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -135,3 +135,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06T11:55:41.949116+00:00：接收Web独审DASHSUM01 c1de与WORKSPACECACHE01 4ec；18源码与固定target/manifest一致，main接收前源码等于各base，无手工冲突。Web类型0；原22/133独审与浏览器证据复用，未重跑。个人静态Web/后台不随main变化。[接收比较](../../docs/evidence/i02/web-cache-dashboard-summary-source-comparison.json)。
 
 2026-10-06T11:57:48.011301+00:00：S01P04生产e184+必需94b消费者修复按原独审接收；private FOR SHARE仅替换既有attempt的凭据读取，保留ENG claim/公开lockRunner强锁。31source/raw固定hash，root types0，无重跑容量或PG。O12 thin transport ec6两源exact，四新canonical登记144来源。[回执](../../docs/evidence/i02/runner-read-fence-source-comparison.json)。
+
+2026-10-06T12:02:14.623280+00:00：附件模块4c4与B01 c96/7d69三片固定源码/原始输出45项核验，18source无差、修改路径原main与作者base一致；root/Web类型各0。复用独审行为证据，不重跑PG/浏览器/容量或provider。来源见[接收比较](../../docs/evidence/i02/attachment-task-read-source-comparison.json)。
