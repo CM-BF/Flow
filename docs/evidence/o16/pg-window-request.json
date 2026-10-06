@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-06 18:49:42 UTC",
-  "source": "2daf37ee8b56d52620e68750e169097cdc015037",
-  "entry": "experiments/continuous-goal-acceptance/journey.test.mjs",
+  "at": "2026-10-06 19:08:23 UTC",
+  "source": "e9319eda0189e878035c2115b9f050f35e130145",
+  "entry": "experiments/continuous-goal-acceptance/operator.mjs --rehearse",
   "selected": 1,
   "permission": "REQUESTED_NOT_GRANTED",
-  "command": "FLOW_O16_PG_WINDOW=approved-one-shot TSX_DISABLE_CACHE=1 /opt/homebrew/opt/node@24/bin/node --import tsx --test experiments/continuous-goal-acceptance/journey.test.mjs",
+  "command": "FLOW_O16_PG_WINDOW=approved-one-shot TSX_DISABLE_CACHE=1 /opt/homebrew/opt/node@24/bin/node --import tsx experiments/continuous-goal-acceptance/operator.mjs --rehearse",
   "bounds": {
     "workMs": 120000,
     "cleanupMs": 30000,
@@ -18,15 +18,23 @@
     "privateDatabases": 1
   },
   "entryClosure": {
-    "source": 236,
+    "source": 240,
     "sql": 30,
     "packages": 21,
     "configs": 10,
     "missing": 0,
-    "falsePositive": 2
+    "falsePositive": 3
   },
   "cleanup": "exclusive fsynced DB/marker reservation before CREATE; same DB across closed staged centers; parent checkpoints each owned group before continuing; normal DROP only after independent decision evidence durable, marker/dev-ino/group-zero/connection-zero<=3s LIMIT33 confirmed; unknown retains/no retry",
   "query": 0,
   "provider": 0,
-  "fixture": "Synthetic planner through actual MCP + original runRunner/adapter; public HTTP/PG own production center, not real model evidence."
+  "fixture": "Synthetic planner through actual MCP + original runRunner/adapter; public HTTP/PG own production center, not real model evidence.",
+  "sourceDigest": "af58df30aba1deb4760fafb631d1402ae240788b8e1a973ea122df906ca480eb",
+  "parentTotalDeadline": {
+    "process": "separate Node watchdog before test startup",
+    "totalMs": 150000,
+    "finalUnknownCheckpointAllowanceMs": 1000,
+    "normalCompletion": "ACK does not disarm; parent exit and group-zero release watchdog",
+    "unknown": "stop parent and registered groups before pending final I/O; never DB/tmp cleanup; original durable reservation retained"
+  }
 }

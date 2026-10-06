@@ -2,7 +2,7 @@
 
 状态：NOT_STARTED
 
-Review target commit：UNKNOWN
+Review target commit：e9319eda0189e878035c2115b9f050f35e130145
 
 作者 native_center_owner / gpt-6-astra，独立reviewer待ExecutionLead指定。范围仅三literal中的实验实现与证据；当前Interface不是产品/模型批准。
 
