@@ -6,7 +6,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 - **S01空领取测量：请Lead soleGit提供固定只读镜像。** [唯一61项source supply请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/source-supply-request.json)固定8d84，57TS+4metadata共284628B，保持相对路径置于该证据的source-snapshot，不覆盖旧产品src；原owner claim508f v2已追加合法evidence，实际测量仍NOT_OPEN。
 
-- **numeric pagesize单许可出现正差异，窗口已消费。** [固定结果](native-pagesize-compat/run-report.md)：A三API −1/EPERM；B只增加hw.pagesize_compat后三API全16384/errno0，1compile+2helper正常关闭、自有根清理。仅本C组合改善，不自动native重试或声称根因/修复；结果待忠实性独审。
+- **numeric pagesize单许可出现正差异，窗口已消费。** [固定结果](native-pagesize-compat/run-report.md)：A三API −1/EPERM；B只增加hw.pagesize_compat后三API全16384/errno0，1compile+2helper正常关闭、自有根清理。仅本C组合改善，不自动native重试或声称根因/修复；[忠实性已接收](native-pagesize-compat/result-review.json)。
 - **CHAT06P03已main接收并交回写权（Mika核验）。** [唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-runner-hash/plans/chat06-runner-prefix-hash/status.md)：owner567d62042f273f6a8b23ff6da334e698bed94ff7 clean/pushed；main0b8cd6f4六源与refs一致，真实noEmit0已关闭类型P2，v2于18:22:14.915 RELEASED；[实际外部release](/tmp/flow-chat06p03-main-release-receipt.json)。无需重复集成或重测。
 
 - **REQ-15会话页批量读取后继READY（GO路由事实）。** CORE共享读路径已交付/释放；排在hash接收和空领取测量安全点后，由Lead按[原FLOW-001计划](/Users/citrine/Projects/AgentHarness/Flow/plans/flow-001-architecture/plan.md)登记独立WT/精确scope。保持权限/REPEATABLE READ、冻结context与requested/effective语义，以减少DB往返为目标；当前0实现/PG，不把历史B03样本当当前性能。
