@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:00:27 UTC / mainc450c2da7e6185b88db9f46e0299ee504ee6f3e8 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:32:46 UTC / mainfd1322f9c0c1d085d5e343e39f6216b20d26c264 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -15,8 +15,8 @@
 | 已集成main状态 / HEAD | c450c2da7e6185b88db9f46e0299ee504ee6f3e8；已含共享发送ACK、ENG01A受管Git/受信检查fixture通路、native目录协议和真实Web兼容证据。个人backend仍b1c2e398、accepting v12；Web已独立发布固定8d8ab520/artifact caa1e938/release v2，旧资源保留，center/runner原进程不变。10:49:58.895Z实际看板131源；132源登记为当前待发布批。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 新版网页已独立发布，后台执行不中断；受管工程工作区与检查证据通路已进入主线，终端与网页正复用相同发送规则。 |
-| 下一可用交付 | 接通工程执行配置与终端逐段正文；随后用一个连续入口串起计划、执行、验证与交付。 |
+| 当前产出 | 工程配置、终端逐段正文与附件公共入口已进主线；个人网页独立发布版本与后台执行保持稳定。 |
+| 下一可用交付 | 并行实现目标统一读口和原生工程身份接缝，再串起计划、执行、验证与交付。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -102,3 +102,5 @@ SVC04真实Web-only发布已完成，固定报告与脱敏操作事实见[发布
 之后优先推进原O01-05与M02/REQ-01、REQ-22的连续目标闭环，不新增重复大task：由Execution Lead协调中心命令/持久因果事实与CLI/headless/TUI公开旅程，Web并行消费。下一片先固定现有goal/proposal/execute/verification/decision之间的有界关联和统一交付读模型；原有入口/逐任务手动操作不算自动闭环。完整验收、接口责任与依赖见[计划的连续目标路径](plan.md#continuous-goal-delivery)，零模型协议旅程与实际native语义分开，不复用已封存预算。
 
 2026-10-06 11:15：连续目标统一读口新增GO只读研究输入，见plan同名小节；稳定材料分页与实时活动分离仍是待实现验收，不冒称已测token收益。工程ENG01B已审main2e71，TUI01C唯一P2已闭合、待组合接收；真实native工程仍沿ENG001-04/05/06继续，非fixture完成即大目标Done。无新模型/工程测试。
+
+2026-10-06 11:32:46 UTC 当前主线核对：fd132已含ENG01B/C、TUI01C及附件026公共接口；个人backend b1c/Web8d8保持。原连续目标路径已由[O11](../../../goal-delivery-read-model/plans/o11-goal-delivery-read-model/status.md)独立实施，与[ENG01D](../../../engineering-native-seams/plans/eng01d-native-writer-seams/status.md)并行。139来源登记随本批；不以小读口或fixture工程代表完整自然语言交付。
