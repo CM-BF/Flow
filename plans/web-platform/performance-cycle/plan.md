@@ -24,7 +24,7 @@ React.lazy会缓存load Promise/rejection；仅reset ErrorBoundary不保证重�
 
 原Goal Owner定向增量：后续用固定1/16/128合成task连续更新，同时实际输入与滚动，记录输入延迟/render数/long tasks/attention出现延迟。保持每task独立projection、未变对象与可见片区窄订阅；不指望startTransition把external mutation变非阻塞，不为猜测引状态库或全量机械memo。此为UI合成负载而非agent容量证明；现阶段M02/P01继续。
 
-优先正确性发现：root已用7chat浏览器复现HTTP/1 SSE连接占满，P2 blocking，修复归当前M02 App owner；性能轮保留观察请求数/可见pane预算回归，不等待bundle优化。Node并发测试不替代浏览器连接池证明，停观察不可cancel任务或重置幂等ACK；当前补2page/hidden恢复/2split的实际局部验收。跨多窗口集中预算留主线B01后续，当前不引SharedWorker/BroadcastChannel。具体步骤见研究RS14。
+优先正确性发现：root已用7chat浏览器复现HTTP/1 SSE连接占满，P2 blocking，修复已由M02 d47完成并获root独立APPROVED；性能轮保留观察请求数/可见pane预算回归，不等待bundle优化。Node并发测试不替代浏览器连接池证明，停观察不可cancel任务或重置幂等ACK；当前补2page/hidden恢复/2split的实际局部验收。跨多窗口集中预算留主线B01后续，当前不引SharedWorker/BroadcastChannel。具体步骤见研究RS14。
 
 ## TODO
 
@@ -35,3 +35,10 @@ React.lazy会缓存load Promise/rejection；仅reset ErrorBoundary不保证重�
 ## 来源与变更
 
 需求见父计划U00～U07及稳定REQ表；工程研究/官方出处见[研究台账](../../../docs/evidence/web-platform/research.md)。2026-10-06首版：建立独立验收与唯一status/review；未实施事项保持pending。
+
+
+## 长时feed驻留：待浏览器量测的具体假设
+
+root只读固定M02 d47：accept对entries/buffered全量Map+sort，当前无客户端驻留上限。不是已证实的UI性能故障。readonly公开refresh探针100批×100条、每条256字符，前50批following、后50批reading；第1/10/50/100批entries为100/1000/5000/5000，末buffered5000，revealNew后entries10000/buffered0。Node sampled refresh0.443～0.702ms（首0.484）仅进程内函数测量，不是浏览器输入延迟、内存、网络或模型容量。
+
+下一固定生产浏览器样本合并现有1/16/128合成task与连续10k记录，记录retained entries、buffered entries、DOM数量、实际输入/滚动延迟、long tasks及可测内存。先证据再选择bounded history/cache或订阅改动；必须保留历史分页锚点、新记录缓冲、决策到达及展开详情缓存语义。content-visibility跳过部分layout/paint不减少JS保留对象，不能把CSS当驻留预算；来源为[MDN content-visibility](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content-visibility)和[React external store](https://react.dev/reference/react/useSyncExternalStore)。

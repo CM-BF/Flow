@@ -158,3 +158,14 @@ root同期20测试/typecheck通过，在49922 HTTP fixture独立复验旧6chat�
 
 
 02:52 UTC更新：root正式APPROVED M02 targetd47c602f3bab1fe97a9be70fd37780c2918bcfbc，SSE P2关闭；独立20tests/typecheck，8chat+Approve/detail/splitmerge、390px活动tab可见和darkoverview，审完投影/views/index/App/SSE。未独立重跑真实PG；作者10协议任务证据已读。管理者已向原Goal Owner直接发送WPF-I01精确11项scope/新tree/branch/owner依赖，要求先M02释放App/TaskThread/WorkspacePanels再账本转交，P01整包仍在审，不提前开写；此前RS18“review中”保留当时观察。
+
+
+## RS19 UI错误反馈与长时feed驻留（02:55 UTC）
+
+root正式P01 d810整包REQUEST_CHANGES，PH-R3 P2：CUA5190 fresh→Notes→Fail App bridge→Use Ocean theme，theme未变且alerts=[]；sample只setError未render。模块3d812 scoped approval保留，唯一owner补local alert/该路径回归，并自查renderer context mutation freeze；新候选e5341915ebbffd9a667f68f7d1ca9c45c14c7c52正独立复验，owner9browser/typecheck通过不自动等于APPROVED。
+
+root对固定M02 d47公开refresh做只读内存fixture：100批×100条、每条256字符，前50批following/后50批reading；entries100/1000/5000/5000，buffered末5000，revealNew后10000/0。Node单refresh采样0.443～0.702ms（首0.484），不当浏览器输入/内存/网络或模型容量。代码全Map+sort和无驻留上限支持待测hypothesis；性能plan已加1/16/128任务+10k记录测对象/DOM/真实输入与内存，先测后决定bounded cache。不是确认性能bug，不扩大当前P01/I01修复。
+
+管理者只读D04实际migration-receipts：M02 dea92c6b-3450-404c-a32c-3fd007485ac6 v1、P01 0686525b-d323-49b5-affa-cefc66cb13be v1；管理WPF001632a7149-e812-4ddb-b342-99572c554cc5经amend为v2，observedAt纠正02:48:42，原未来02:55审计仍保留，不能倒填。M02 owner最终metadata c526c1c889437ee39155d669921577995195c74e clean并确认App/TaskThread/WorkspacePanels三路径停写，已tool报原GoalOwner请求amend再I01take；停写事实不冒充PG已变更。D04 take需真实worktree，root许可owner仅从c526初始化新tree只读，未取得receipt/审定输入不写实现。
+
+02:56后续：P01 PH-R3 root独立CUA复验关闭；e534整体仍待另一只读React/接口检查再给总范围结论，模块/单finding/整体分开。父status NONE括号解释导致D03缺字段已按实际问题修为纯NONE，解释移正文；这是管理记录格式修复，不改变聚合器或他人状态。

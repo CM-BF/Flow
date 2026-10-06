@@ -140,3 +140,6 @@ docs/evidence/wpf-i01/
 ```
 
 `plugins/`与plugin-host专用测试排除；不改shared/backend/rootmanifest/rootlock。fixture可放自有plugin-integration/fixture，不借旧owner测试文件扩scope。若实际需要额外文件先按D04追加，不以目录邻近推定授权。准备计划见[plugin-integration/plan](../../../plans/web-platform/plugin-integration/plan.md)，实施后转stub，正式平级新plan/status由实现owner唯一维护。
+
+
+02:55迁移/转交进展：实际只读PG receipt文件核验M02 claim dea92c6b-3450-404c-a32c-3fd007485ac6 v1、P01 0686525b-d323-49b5-affa-cefc66cb13be v1；管理claim632a7149-e812-4ddb-b342-99572c554cc5 v2。M02 c526c1 metadata clean已回Lead，三相交路径owner明确停写，等待Lead按v1 amend后I01take；未收到新committed receipt前不得开写。P01整包新输入e534仍复验，旧d810 PH-R3未以旧approval掩盖。初始化I01目录可从c526只读建树满足take实物校验，P01审定后再明确合入。

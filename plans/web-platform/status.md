@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:50 UTC / main交接2026-10-06 02:30 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 02:55 UTC / main交接2026-10-06 02:30 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `d8e7b9c7f3ecf888989e1d35b9b2cbe40bfcb794`（02:50核验；旧review仍绑定c075bb5） |
-| 工作树dirty状态 | 核验时clean；本次仅管理文档及WPF-I01准备计划pending，不自指未来提交 |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `082c4cb2f275d97b483c6600c1c4dd811fee6d6d`（02:54核验；旧review仍绑定c075bb5） |
+| 工作树dirty状态 | 核验时clean；本次仅研究/性能计划与交接证据pending，不自指未来提交 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 37条需求追溯；M02固定候选范围核验；P01模块审查闭环；I01独立集成计划/领取准备 |
 | 下一可用交付 | M02整体独立review与P01 UI审查；随后D04明确交接后独立WPF-I01实际挂载 |
-| 当前阻塞 | NONE（M02 d47已获root独立APPROVED，SSE后发现P2关闭；P01 UI审查与I01登记按序继续） |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/integration-checklist.md,docs/evidence/web-platform/research.md |
@@ -28,10 +28,10 @@
 | WPF-001-02 | completed | d01_owner | 5个子计划齐三件套；P01/M02转独立唯一owner，dashboard/性能/I01准备在管理树 |
 | WPF-001-03 | in-progress | d01_owner | W01 cb4a392历史APPROVED；后发现SSE由M02 d47修复，M02 d47独立APPROVED已关闭；待正式交原Lead集成 |
 | WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
-| WPF-001-05 | in-progress | d01_owner | P01模块3d812独立APPROVED，PH-R1/R2关闭；整包d81075 UI另审，完整X01仍开放；I01实际App挂载另计划 |
+| WPF-001-05 | in-progress | d01_owner | P01模块3d812独立APPROVED，PH-R1/R2关闭；整包d810 PH-R3已由root窄复验关闭，e534整包等待追加只读UI审查，完整X01仍开放；I01实际App挂载另计划 |
 | WPF-001-06 | pending | d01_owner | PERF按生产测量排队，已有eager双chunk基线；未声称体积或吞吐已优化 |
-| WPF-001-07 | in-progress | d01_owner | M02实现d47c602、metadata0a9e85 clean；20局部/9总览/6观察/4真实PG组owner通过；root整体APPROVED，未代main集成 |
-| WPF-001-08 | in-progress | d01_owner | 精确scope已交主线迁移，WorkspacePanels追加c2de313已回执；D04正式PG receipt/展示待验证，I01后续转交待登记 |
+| WPF-001-07 | in-progress | d01_owner | M02实现d47c602、metadata c526c1 clean；20局部/9总览/6观察/4真实PG组owner通过；root整体APPROVED，未代main集成 |
+| WPF-001-08 | in-progress | d01_owner | 精确scope已交主线迁移，WorkspacePanels追加c2de313已回执；D04 PG迁移M02/P01 v1与管理v2已只读核；I01三文件owner停写确认已回Lead，账本amend/take待回执 |
 
 ## 当前管理工作
 
@@ -55,3 +55,5 @@ SSE修复d47已获root整体独立APPROVED：20tests/typecheck、8chat/Approve/d
 ## Dashboard同步
 
 最近已证实采样为2026-10-06T02:38:47.600Z：22来源，WPF001/M02/P01 human.complete=true、missing/issues空。彼时Git快照只在研究记录保存，不冒充当前实现。D04领取机制由主线实施，当前c2de313为过渡登记而非PG receipt；I01来源只有实际owner新树成立后才转交登记，管理准备不新增第二进度源。
+
+02:54:17.494Z管理者只读4320实际复核：22源，M02 HEADc526c1 clean，review approved targetd47且proof unchanged，human complete。管理父status原NONE加括号不合D03严格语法导致blocker unknown，本次修为规范字段；最新PH-R3窄复验关闭后为纯NONE，审查中说明放本段而非伪造阻塞；不改聚合器迁就记录。
