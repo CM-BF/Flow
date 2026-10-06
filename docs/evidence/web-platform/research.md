@@ -357,3 +357,8 @@ w01完整固定e423/Core0.3.22研究及root新pause/currentTurn竞态已归[同�
 PROFILE01按GoalOwner细化只做新选择模块+pure creation/pin helpers与局部测试，不转交现ConversationThread/projection/outbox/App。w01已给7新文件+plan/evidence两目录精确9scope，04:33 live账本无literal冲突。锁定显示采用creation+reason（created/receipt-pending），不要求未知ACK已有conversation summary。实际App消费由后继唯一owner受领，不称模块交付即U11完成。
 
 root固定dd1只读的低优先REQ22/23候选：slot允许的context与command.contexts可能完全无交集，现ExtensionSlot实际点击才经host拒绝；没有已确认builtin故障。未来可静态拒绝无交集组合，按当前context给不可用理由，渲染不activate，执行前与async load后仍重新authorize；不引任意表达式DSL、不改权限。参考[VS Code contribution points](https://code.visualstudio.com/api/references/contribution-points)的menu when与command enablement区别及[activation events](https://code.visualstudio.com/api/references/activation-events)。未来验证global/task/composer、非法组合、键盘理由与直接execute拒绝；排profile/queue/X03后，不新take或阻断当前功能。
+
+
+04:39 X03I01固定84acdcaaa9687a4ca75ebdb40a6efc7e5539029a/base4e已获root限定APPROVED，无blocking；root独立核开发8/生产7报告五源码hash，不冒充重跑作者typecheck/build/模型/DB。管理者固定diff审10路径全在a104v1七scope、保护shared/Mika模块/plugins/conversations/session/官方Thread/依赖零diff、diffcheck0。owner仅收metadata和一次自身dashboard，后续scope/docs局部复核不重复产品检查。
+
+SVC01首连候选由GoalOwner经root报告：真实Web61228/center61227/main75a33dec短SHA，用户tab5仅预填center而未认证，0任务/模型。只说服务已运行，不说可直接聊天；root只读研究首连说明与安全本机取凭据流程，协调Lead/SVC owner。没有本队token读取/注入URL或localStorage、弱鉴权、App抢写或服务重启。完整main SHA/后续认证结论待责任owner给出，不猜测。

@@ -105,3 +105,12 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/workspace-w
 [plan](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/plan.md) · [status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/status.md) · [review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/review.md) · [检查/图/限制](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/docs/evidence/d06/validation.md) · [技能/clean-code](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/docs/evidence/d06/quality.md)。
 
 独立[预览55247](http://127.0.0.1:55247/#architecture)/PID42719保留，恢复Node24 `node docs/evidence/d06/preview.mjs`动态端口，不承诺原端口。4320由Lead控制。固定8f图不是movingmain实时拓扑；Safari/Firefox/屏读未验。后继标题旁固定快照标签需新scope，不阻本轮。所有D06写入已停止，04:29:52[release v2](d06-release-receipt.json)，未在release后修改旧source。
+
+
+## WPF-X03I01 App只读插件管理挂载（04:40收口）
+
+- 固定base4e0289f29ffa48c6c49003837d4520f57c22b6b0；实现84acdcaaa9687a4ca75ebdb40a6efc7e5539029a，final metadata4b7e0f6553025ba1dbb93e7e3c2b82a9958b92e3，branch codex/web-plugin-management-integration，管理实核clean/实现diff0。
+- root04:36:39限定APPROVED，作者dev8/prod7/typecheck/build通过；root审3prod+2test及五源码hash/报告，未重跑作者套件/DB/模型。管理6md39locallinks/4TODO一致、scope保护与source diff通过；最终全diffcheck只有原始build/typecheck log两处whitespace例外，source check0，保留原raw。
+- source：[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/plans/wpf-x03-plugin-integration/status.md)、同目录plan/review；[验证与四截图](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/docs/evidence/wpf-x03/validation.md)、quality.md记skills/clean-code。开发preview http://127.0.0.1:59473/，session96967，HTTP fixture0模型/DB；在该树 `pnpm exec tsx apps/web/test/plugin-management-integration.fixture.ts --app-preview`，恢复端口读stdout，不承诺仍59473。
+- 作者04:37:33单次dashboard HEAD692当时clean/current/issues空，checks/review84/proofunchanged/claima104v1匹配/main未含；后续只metadata并如实保留采样SHA。产品停写，root一次交MainLead集成，管理不重复同采样。
+- 模块没有npm下载/运行/隔离能力，registry与本地extension独立，默认personal；无真实中心或模型验收、无整体性能预算结论。架构增App私有四读reader→X03懒视图，待MainLead按真实集成基线同步，不能续写releasedD06。

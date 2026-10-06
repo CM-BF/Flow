@@ -17,6 +17,7 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | WPF-CHAT01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations | codex/web-conversations | plans/wpf-chat01-conversations | docs/evidence/wpf-chat01 |
 | D06 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh | codex/dashboard-architecture-refresh | plans/d06-architecture-refresh | docs/evidence/d06 |
 | WPF-X03I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration | codex/web-plugin-management-integration | plans/wpf-x03-plugin-integration | docs/evidence/wpf-x03 |
+| WPF-PROFILE01（待注册） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles | codex/web-execution-profiles | plans/wpf-profile01-execution-profiles | docs/evidence/wpf-profile01 |
 
 WPF-D01仅协作，无第二dashboard实现；七源均已实际聚合，未知/未验证项仍来自各owner。新增两项证据见[实采与19claim范围审计](chat-perf-source-verification.json)。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
 
@@ -238,3 +239,6 @@ WPF-PROFILE01下一片仅新选择模块/pure creation与pin helpers、局部tes
 
 
 PROFILE01正式take：04:36:37.979Z，claim17093c4c-a8fa-4e43-bc72-6bd54cab0795 v1，actor external_web_d01_owner/w01_owner；tree web-execution-profiles、branch codex/web-execution-profiles、base4e0289f29ffa48c6c49003837d4520f57c22b6b0。原样[receipt](profile01-take-receipt.json)列精确9scope，仅7新module/test文件+自身plan/evidence。canonical计划预定plans/wpf-profile01-execution-profiles，evidence docs/evidence/wpf-profile01，等首commit再登记；不新增第二份管理子计划，不把模块当App接线完成。
+
+
+PROFILE01 canonical首commit ae47c8a1f8feb7b0dec71435e868c3a262c53d06已实核clean/status/interface，再给root桥Lead登记；targetUNKNOWN/reviewNOT_STARTED，模块与实际App消费明确分开。X03I01最终4b7e0f/实现84独审通过，source与7scope已注册，作者04:37单次实采checks/review/proof/claim齐，main尚未含。管理6md39links4TODO/保护path/源码diff0通过；两原始log whitespace例外不清洗、不重测。App私有四读reader→X03懒视图的架构影响交MainLead按集成target登记；D06旧release不能借此重写。

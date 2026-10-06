@@ -54,3 +54,8 @@ root 固定4e只读补充：ConversationThread 当前 runtime 仅 onNew，没有
 可能新增 queue-projection、queue-outbox、ConversationQueue；现 ConversationThread/projection 仅能力/create→enqueue 接线，官方 Thread 若需 composer seam 必须单独 literal claim。shared client/barrel 只用 Lead 固定输入。专用 queue test/browser/fixture 可复用现 HTTP方法但不运行旧 stub 假装能力通过。
 
 有意义场景包括：丢 ACK 后先 promote 再旧 replay 不复活 waiting；already-promoted 不暗取消 task；20/50 分页间 promotion/cancel/new enqueue 后完整去重；sameRevision blocked 更新；UTF-8/100限额；普通按键/按钮/IME/unsupported steer 一致无重复 POST；create 与 queue ACK 两阶段恢复；关闭/reload/换中心迟到 journal 隔离；只有中心提升，隐藏/关闭 Web 不触发取消；双主题390键盘/局部 alert。新 pause/currentTurn/continue 竞态验收随冻结 v2 补齐，不把本报告当实现完成。
+
+
+## 后继固定 v2 合同候选79867（root只读核对）
+
+root随后实际读取 `79867bdf1b094957c593dc0f142e6e676f2475df` 的 contracts/conversation-queue.ts 和 interface.md；controls 仍stub，生产未批准、public client待Lead。此为后继固定合同，不将旧e423内容覆盖。精确限制仍为页default20/max50、100waiting、正文16000 UTF-8 bytes；pause HTTP200、resume HTTP202，resume expectedTaskId可null。currentTurn.taskStatus可在同queueRevision下由queued→running→终态，GET不能仅因revision没涨就丢弃新的currentTurn/blocked。历史ACK不能回滚最新GET，与同revision接受新动态状态是两个独立合并要求；分页revision变后重新从头读取。root只读来源，无本队queue实现take或当前按钮变化。

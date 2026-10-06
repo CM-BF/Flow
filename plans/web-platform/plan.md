@@ -149,7 +149,7 @@ type WorkspacePanelsProps = {
 | 已审交付 | [WPF-I01插件主App挂载](plugin-integration/plan.md) | 92a整体APPROVED、b584交付；I01v3已转出CHAT四文件和X03I01 CSS，剩余保留范围 |
 | 已审测量 | WPF-PERF01 | 3d47正式benchmark APPROVED，最终metadatacc334；未做生产优化，probe已受控转PERF02 |
 | 已集成首批 / 后继开放 | [WPF-CHAT01真实持续对话](conversation-core/plan.md) | 7cb限定APPROVED，083978b记录dd1/main已含；queue/steer/语音及完整模型控制仍开放，真实两query仅Lead执行、结果未收到 |
-| 当前实施 | WPF-X03I01 | 固定4e / a104v1七scope，实际App只读插件管理挂载；唯一owner workspace_panels_owner |
+| 已审待集成 | WPF-X03I01 | 实现84acdc / final4b7e0f clean，rootAPPROVED、管理scope/docs通过，停止产品写，Lead统一集成 |
 | 当前独立模块 | WPF-PROFILE01 | 已发布整份profile选择与纯pin helper，无旧UI文件；fixed4e/17093c4c v1已受领，不把模块当App接通 |
 | 已集成 | WPF-PERF02 | 固定a87f64f及报告获独立APPROVED，metadata b617实证main8f包含/范围相同；claimv2已released，不继续占用已完成八scope |
 
@@ -164,7 +164,7 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
 - [x] **WPF-001-08** 收取两owner精确literal范围并交主线单点登记，验证D04领取/转交/冲突展示，避免多lead重复派工。
 - [ ] **WPF-001-09** 优先推进U11真实持续对话：冻结center能力/会话/queue-steer接缝，分阶段独立派工并真实验收。
-- [ ] **WPF-001-10** WPF-X03I01：消费Mika已审X03模块，在真实App设置挂载只读插件管理；固定main4e/新独立tree/a104v1七scope已开工，完成局部检查和独立review。
+- [x] **WPF-001-10** WPF-X03I01：消费Mika已审X03模块，在真实App设置挂载只读插件管理；84acdc整体限定APPROVED/final4b7e0f，独立scope/docs通过，交Lead集成仍另计。
 - [ ] **WPF-001-11** WPF-PROFILE01：独立新模块实现整份已发布执行配置选择、冻结creation与pin校验；局部测试/fixture后独审，真实App接线另受领，不能把模块完成当U11完成。
 
 ## 验收、风险与持续方式
@@ -236,3 +236,8 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 04:34 当前轮：X03I01七scope已正式开工；PROFILE01根据GoalOwner新切分只创建独立选择模块、pure pin helpers/局部tests与自身三件套，不转交现ConversationThread/projection/outbox/App。04:33 live ledger可读、拟9scope无literal冲突，等待新树实际核验后原子take。REQ44已更新PG pause/continue新决定，保留旧e423历史，不新增queue writer。
 
 04:36:37.979Z PROFILE01新take已committed，claim17093c4c-a8fa-4e43-bc72-6bd54cab0795 v1，管理者独立核fixed4e/branch/clean后领取，原样[receipt](../../docs/evidence/web-platform/profile01-take-receipt.json)。精确9scope与X03无重叠，已派w01先唯一canonical后模块实施；未改旧CHAT/App/共享接口，0模型。
+
+
+04:39 U11首连验收候选（GoalOwner/root观察，非新已实现能力）：SVC01真实Web http://127.0.0.1:61228 / center61227，由其owner保持服务；GoalOwner页面只预填center、尚未首次认证，0任务/模型。不能把“服务已运行”写成“可直接聊天”。root只读研究最小连接说明与安全本机取凭据流程，交Lead/SVC唯一owner；不塞token URL/localStorage、不弱鉴权、不抢X03 Appscope，当前PROFILE/queue优先。此接线候选未take，真实SVC与旧预览均不由本队重启替换。
+
+04:40 X03I01最终4b7e0f6553025ba1dbb93e7e3c2b82a9958b92e3 clean，84acdcaaa9687a4ca75ebdb40a6efc7e5539029a获root限定APPROVED。管理6md/39links/4TODO、保护范围和实现diff0通过；全metadata diffcheck仅两原始log空白例外保留，不清洗证据。PROFILE01 canonical ae47c8a1f8feb7b0dec71435e868c3a262c53d06 已给root桥Lead注册，独立模块实施继续。
