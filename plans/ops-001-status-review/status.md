@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:08:56 UTC / main3e1b1bfa |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:18:00 UTC / mainc837b5dc |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -96,3 +96,9 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 2026-10-06 13:49:04 UTC：实际Data available1,388,440KiB（约1.32GiB），共享消耗归因unknown。SVC06完整准备仍不达2.5GiB；小源码/局部验证继续，大字节操作先预检并保留约1GiB收尾余量。两co-lead已直接协调，无删除/大复制/个人服务操作。
 
 2026-10-06 14:08:56 UTC：Data实采可用892260KiB，已低于1GiB收尾余量。GO14:07:34观察886001664B；此前A2A“14:13”标签笔误，不作实际时间证据。新大安装/完整构建/PG与A-B负载暂停，轻量源码/审查/小metadata/已审集成继续。COST检查此前已清理，O14未建全树；未删除未知tmp或仍被使用的依赖，用户腾空间尚未回复。见同一资源记录。
+
+## 2026-10-06 14:18 UTC 可逆工作树稀疏化
+
+仅首个已释放、无进程/打开文件使用的 browser-connection-session 收起其他任务的已提交历史副本，源码/测试/规则/全部计划/实际fixture及自有完整证据保留。Git clean与固定HEAD不变，4743保留文件逐hash相同；1844历史副本仍在固定Git及当前main同blob，其他7个受保护工作树HEAD/status/index相同。共享worktreeConfig启用，只有候选树有sparse设置；disable会恢复文件但保留共享扩展。详见[实际回执](../../docs/quality/sparse-worktree-2026-10-06/browser-session-result.json)和[小仓库往返验证](../../docs/quality/sparse-worktree-2026-10-06/existing-worktree-toy.json)。
+
+本次卷可用量前后增加20,066,304B，总1,198,407,680B；共享卷观察不保证独占归因，不按du或逻辑字节夸回收。此前到本操作前的余量变化归因未知。仍未达SVC06 2.5GiB门槛；下一树逐个fresh核归属/消费者/fixture后决定，不动活跃依赖、个人服务或权威原证据。技能：已读本地find-skills；采用已验证Git2.50.1原生机制，无安装/新框架/PG实验/provider。
