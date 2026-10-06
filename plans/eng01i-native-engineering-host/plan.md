@@ -1,6 +1,6 @@
 # ENG01I 原生工程宿主编排
 
-状态：in-progress；创建/更新 2026-10-06。Owner native_center_owner / gpt-6-astra；co-lead Execution Lead；所属大task：[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)。遵循[模块规则](../../AGENTS.md#modular-design)。
+状态：accepted；创建/更新 2026-10-06。Owner native_center_owner / gpt-6-astra；co-lead Execution Lead；所属大task：[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)。遵循[模块规则](../../AGENTS.md#modular-design)。
 
 把已有G真实writer、F完整内容检查和A公开收据组合为可替换HarnessAdapter；实际authority/setup/launch仍不提供，不把注入资格测试当生产native能力。旧fixture/readonly/profile/runtime行为不改。
 
@@ -10,3 +10,5 @@
 - [ ] **ENG01I-04** 固定证据、独立review与main接收。
 
 Interface及资源/错误边界见[证据](../../docs/evidence/eng01i/interface.md)。实际Node/Codex资格预检归Mika，不新增模型/个人服务/启动入口。
+
+2026-10-06 12:59：按新的用户收益优先级暂缓本片，产品尚未修改；接口保留，恢复时重新领取scope，不等待Mika期间预占。
