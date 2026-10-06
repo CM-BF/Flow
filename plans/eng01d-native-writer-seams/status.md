@@ -16,7 +16,7 @@
 | 本片段交付阶段 | review |
 | 实现目标 | 855e5675245f7774b8ce927ab8b2ffdb6133bddf |
 | 实现范围 | packages/contracts/src/runner.ts, apps/runner/src/runtime.ts, apps/runner/src/execution-identity.test.ts, apps/runner/src/native-harness/codex/adapter.ts, apps/runner/src/native-harness/codex/turn.ts, apps/runner/src/native-harness.test.ts, plans/eng01d-native-writer-seams, docs/evidence/eng01d |
-| 检查状态 | 65 distinct通过；32未选；root types0；原raw见[README](../../docs/evidence/eng01d/README.md) |
+| 检查状态 | PASSED 855e5675245f7774b8ce927ab8b2ffdb6133bddf；65 distinct通过；32未选；root types0；原raw见[README](../../docs/evidence/eng01d/README.md) |
 | 已集成main状态 / HEAD | ENG01D未集成；base53ce已有已审ENG01C |
 | 阶段 | M2 |
 | 优先级 | 1 |
