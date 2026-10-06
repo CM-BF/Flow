@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
+- **请登记WPF-MATURE-02-CORE唯一状态来源**：[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/plans/wpf-mature-02-message-settings-core/status.md) / [README](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/README.md)。owner status_read，WT claude-message-settings-core，branch codex/claude-message-settings-core，claim c652bc61 v1；两源leaf已提交4e7b7f968a2160a60989b3b6343506ae8fb5ef6a，检查/独审与证据整理进行中，不是通过或交付。无需GO确认，父不复制child TODO/checks。
+
 - **优先Claude逐消息设置**：[唯一core→consumer交接请求](claude-message-settings-handoff.md)。status_read/mika已COMMITTED core四scope并实施；child canonical存在后请登记dashboard，后继R05/F01 v40/RECOVERY01 v4兼容接线和唯一SQL编号仍逐片协调。02四个execution-profile路径不先amend。
 - [F01 goal progression薄client正式APPROVED](goal-progression-client-review.md)：deef0e48，仅薄transport，供Lead受控接收；[plugin installation薄client正式APPROVED](plugin-installation-client-review.md)沿同一既有收据，不重复审。
 

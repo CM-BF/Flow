@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:25:25 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:28:56 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -21,7 +21,7 @@
 | 实现目标 / 范围 | 当前优先Claude逐消息设置：产品core→共享consumer两层子任务，core独立source-only WT已取得/base70cc，core owner已COMMITTED领取两契约文件+sibling管理scope，当前小源码实施；后继分片扩大，本树只parent管理。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已明确Claude下一条消息设置的交付边界：用户选择模型、思考/effort和fast，历史与已发送/排队配置各自保留。两个新契约文件的核心首片已正式领取实施，再接中心/执行及共享界面。 |
+| 当前产出 | Claude逐消息设置的共用契约与回执匹配首片已提交，检查和独审进行中；用户界面与中心执行接线仍待后继交付。 |
 | 下一可用交付 | 先交付Claude中心冻结配置与执行传递，再把同一能力接到Web/TUI；不等待Codex全资格或Node小对照完成。 |
 | 当前阻塞 | ACTIVE: Claude独立源码树已取得；core已正式领取实施，后继共享兼容接线待协调；涉及PG/构建的验证还需磁盘满足预留。小范围计划与源码准备可继续。 |
 | 需用户决定 | NONE |
@@ -87,3 +87,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收�
 15:23协调更新：Lead已provision core95文件/2422458logicalB、base70cc4e852365e974cefde30bfad75c7d233985c6、clean/0install/PG；正式[receipt](/tmp/flow-claude-message-settings-provision.json)。跨Lead阻塞解除，child canonical出现后登记dashboard。首leaf Interface已固定，5组检查仍只是设计；当前不替新owner领取。
 
 15:25:25 fresh父v5与core c652bc61-f8a9-4848-a709-978adbb425ed v1均ACTIVE；core任务WPF-MATURE-02-CORE/status_read/mika，独立WT/branch70cc四scope已COMMITTED15:24:10.824Z。WT阻塞解除，child canonical存在后Lead登记dashboard；真实检查仍资源pending。[OpenSSL只读源码收据](../../docs/evidence/wpf-mature-02/node-owned-openssl/source-review.json)仅PENDING_VALIDATION，ca6六源不变、0执行。
+
+15:28:56核core实际HEAD4e7b7f968a2160a60989b3b6343506ae8fb5ef6a，两源leaf已提交；检查配置/证据整理中有dirty，不推定通过。canonical已给Lead child唯一[status来源](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/plans/wpf-mature-02-message-settings-core/status.md)及README登记入口；child细节只由原owner维护。
