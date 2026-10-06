@@ -12,11 +12,11 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
 | 已集成main状态 / HEAD | 115b0dbdfa02db5483f9e9699852682ce699633c 已推送，018/019+Web兼容/renderer模块及X04已接收；020公共接线本分支待独审。实际center/runner仍fb906cb |
-| Review | 9ea33ef61da2304123d08ea87558023d63b38468 待独立只读；历史549+d640已批准并main，见review.md |
+| Review | Root独立APPROVED9ea33ef61da2304123d08ea87558023d63b38468；历史549+d640已批准并main，见review.md |
 | 实现目标 | 9ea33ef61da2304123d08ea87558023d63b38468 |
 | 实现范围 | apps/server/src/index.ts, packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/native-activity.test.ts, packages/client/src/native-activity-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 真实运行中排队与同会话回复已验证，关闭测试浏览器后后台继续、重开正文可见 |
 | 下一可用交付 | 可读取真实工具活动，展开时取得输入和结果详情 |
@@ -76,3 +76,5 @@
 2026-10-06 06:20 UTC：Root限定复审APPROVED，C02资源隔离P2关闭。旧34日志保留，其中旧C02运行前资源归属NOT_PROVEN；新随机库完整create/drop事实与12/12、tsc可核。X04依赖9cde获runner_owner独立只读批准。仅本次审查/metadata变化，无产品重测。
 
 | F01-17 | in-progress | Lead | 9ea33ef61da2304123d08ea87558023d63b38468 020生产挂载+两owner方法，2/2（1真实PG/HTTP+1薄传输）及tsc通过，待独审；无模型 |
+
+2026-10-06 06:28 UTC：020薄client+生产挂载获Root独立只读APPROVED；领域216由Mika独立批准。保留0provider/64KiB截断不可追回余文边界，下一动作main接收。
