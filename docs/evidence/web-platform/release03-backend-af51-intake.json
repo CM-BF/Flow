@@ -1,0 +1,117 @@
+{
+  "at": "2026-10-06T15:42:23.500932+00:00",
+  "state": "FINAL_FIXED_BACKEND_SOURCE_AND_DEPENDENCY_RECEIPT_RECEIVED_HARNESS_REVIEW_PENDING",
+  "backend": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+    "sourceTarget": "b29807979a5589678a61d3fb84781950cf366396",
+    "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "approvedFix": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+  },
+  "archive": {
+    "source": "/tmp/root-svc05h01-af51-source-dependency-audit.json",
+    "path": "release03-backend-af51-root-audit.json",
+    "bytes": 8971,
+    "sha256": "daabbb65373e755594fe1f339c07591de1a55f203076cc0014c9e5edd536e04d"
+  },
+  "managerFixedBlobChecks": [
+    {
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/claim-receipt.json",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/dependency-view.json",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/interface.md",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/manifest.json",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/old-a-result.json",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/old-a-review.json",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/provision.json",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/quality.md",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/source-bindings.json",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/source-precheck.json",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "plans/svc05-history-compatibility/plan.md",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "plans/svc05-history-compatibility/review.md",
+      "fixedHashMatches": true
+    },
+    {
+      "path": "plans/svc05-history-compatibility/status.md",
+      "fixedHashMatches": true
+    }
+  ],
+  "dependencyAuthority": "Root original audit verifies10realpaths/package.json versions/hashes, no import/fullpackage integrity; manager preserves attribution rather than reruns dependencies",
+  "sourceClosure": "Two exact approved cde source blobs +13 exact metadata paths;003792/11metadata is historical candidate,not currentruninput",
+  "leadConditionalAuthority": "After new exactguard independent review, manager may fresh once original4scope/currentfixedsources/dependencies/clean/free>=1107296256 history gate without another Lead confirmation. No gate until conditions actually met.",
+  "windowNotice": "Lead reports other0PG andO14/O15notstarted;not a free-space sample,resource reservation,or permission to run unreviewed harness",
+  "runtime": {
+    "newRuntime": 0,
+    "priorSpentMs": 3874,
+    "remainingMs": 176126,
+    "retainedMaxBytes": 8388608,
+    "historySingleMs": 60000,
+    "cleanupReserveMs": 20000,
+    "historyStartBytes": 1107296256,
+    "historyStopBytes": 1090519040,
+    "BstartBytes": 1207959552,
+    "BseparateGate": true
+  },
+  "personalDeployment": "Unchanged; source freeze is not A/B or deployment approval",
+  "scope": "W01 original4 owns harness only; backend owner frozen source/read-only dependencies preserved; manager own managementscope only",
+  "managementChecks": {
+    "changedPaths": [
+      "docs/evidence/web-platform/mature-task-handoff.md",
+      "docs/evidence/web-platform/post-a-source-checkpoints.json",
+      "docs/evidence/web-platform/release03-backend-af51-intake.json",
+      "docs/evidence/web-platform/release03-backend-af51-root-audit.json",
+      "docs/evidence/web-platform/release03-current-preview-proposal.json",
+      "docs/evidence/web-platform/resource-window-current.json",
+      "plans/web-platform/status.md",
+      "plans/wpf-mature-01-visual/status.md"
+    ],
+    "outsideScope": [],
+    "newLinks": 2,
+    "brokenLinks": [],
+    "JSON": "valid",
+    "cleanCode": "Onefinalsource input, explicit oldcandidate history; no duplicateddeployment/runtimeauthority or widenedmetadataallowlist",
+    "productRuntime": 0,
+    "freeSamples": 0
+  }
+}

@@ -2,7 +2,7 @@
 
 **当前：RELEASE03 A-only实际两项失败并完成清理，总PG/Chrome窗口已交回Lead。** [实际证据与管理逐hash核验](release03-a-actual-intake.json) / [root独立retained-evidence审查](release03-a-actual-362-review-root.json) / [唯一资源入口](resource-window-current.json)。固定432b脚本、backend362、formal artifact506/d629；15:27:55.348Z开始，15:27:59.219Z清理完。attachment-only `POST /api/runner/events` 500；mixed200/accepted1，但history仅knowledge为known，未满足v2材料unknown/metadata-unavailable。两原raw保留，**B/Chrome NOT_RUN、compatibilityId=null、无SVC绿报告**。累计 **3.874/180秒，余176.126秒**；10raw共80,470B。唯一DB已删除、cleanup errors=[]、worker381 exit0，监督器结束；不是准入/清理失败，不推断个人服务表现。
 
-**Lead已直接读raw并接收，新的更高优先后继是固定修复组合。** 原backend owner/Lead准备 **362 + main cde6646 store.ts三行已审history修复**，必须交immutable新HEAD/tree/source清单，并把源码tuple与实际部署tuple分开。W01不改共享源、不改旧失败期望、不重跑未变362、不覆盖当前原WT；同descriptor与原剩余预算、8MiB、fresh窗口/资源/合法scope复验，**新A通过后才B，全兼容后才原受管个人发布流程**。当前个人backend362/v15、Web8d8/caa1/v2未变；新源码候选b298/003792已到，尚无实际兼容/部署通过。普通步骤沿既有授权，无需GO重复批准；DPERF04尚未take，源码启动低于此发布路径。
+**Lead已直接读raw并接收，新的更高优先后继是固定修复组合。** 原backend owner/Lead准备 **362 + main cde6646 store.ts三行已审history修复**，必须交immutable新HEAD/tree/source清单，并把源码tuple与实际部署tuple分开。W01不改共享源、不改旧失败期望、不重跑未变362、不覆盖当前原WT；同descriptor与原剩余预算、8MiB、fresh窗口/资源/合法scope复验，**新A通过后才B，全兼容后才原受管个人发布流程**。当前个人backend362/v15、Web8d8/caa1/v2未变；最终源码输入b298/af51已到，尚无实际兼容/部署通过。普通步骤沿既有授权，无需GO重复批准；DPERF04尚未take，源码启动低于此发布路径。
 
 本次[唯一fresh准入](release03-a-second-admission.json)核15:26:53.773Z bfb v3原4、432b两hash、17只读依赖与clean；新事件后仅一次free1,123,295,232B采样。[gate](release03-a-second-gate.json)已使用一次，不可复用。旧15:07未准入/四树低空间记录仅历史。同一fresh账本[Recovery6ff v4原21唯一writer](recovery01-claim-1526-source-only.json)无overlap，panels只修源；第二22direct/browser未运行，不因A结束自动获得窗口。Lead可安排O14/O15后续独立fresh窗口，本组不占空窗、不补空间/4320/个人服务采样。
 
@@ -18,9 +18,11 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 ## 当前优先队列（当前安全点；以下较早时点只作历史）
 
+**最终backend输入已freeze，尚未运行**：[af51原root审计](release03-backend-af51-root-audit.json) / [管理15固定blob核验与条件授权](release03-backend-af51-intake.json)。`personal-history-compatibility` HEAD **af51c621696230fbced12227670f014ca73bd8a1** / tree **308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6** / implb298，2cde源码+13精确metadata，10只读依赖身份由root核；非A/B或发布批准。003792/11metadata只是上一候选。W01原四scope精确guard与B-only证据输入仍待固定独审；通过后管理可沿既授权fresh一次history start1,107,296,256B，余176.126秒/8MiB，无需再等同样确认。Lead当前他方0PG/O14/O15未开始仅调度通知，不当空间准入；B仍另需+128MiB。当前0新运行/空间采样/个人变更。
+
 **最新固定审查事实，0新增运行**：[02d5与b298完整接收](source-review-02d5-b298-intake.json)。Recovery02d5 root源审P1：未验证/部分ready材料可被composer条件capture静默遗漏；P2：目录B先/A后验证可把保存[A,B]变[B,A]。原21唯一owner源码修，完整选择/顺序必须在receipt/HTTP前校验，保草稿/原refs且不误阻旧held材料后的新稿；24direct/browser未跑，fullreview NOT_STARTED。
 
-RELEASE dbaa独立源审P2为精确guard与合法组合不匹配：backend **b29807979a5589678a61d3fb84781950cf366396** 两源逐字cde，candidate metadata **0037921d12c089e6334b001545f698db067087f8** / tree **1cf10d9434b0cf57d083c0e5e01b9bc8b72dc074** 另有精确11metadata。native_center_owner仅SOURCE_BINDING/NO_P1_P2预审，非A/B或部署批准。W01原四scope只修精确闭包，禁止广泛test/docs豁免；backend最终metadata/只读依赖回执、harness窄审与fresh运行门槛仍待。旧3,874ms两红/余176.126秒冻结。Lead main9bdb/4320拟164仅进行中通知，不当页面已验；当前无运行窗口/空间采样。REQ45官方adapter研究已在198b7299归原06-05，不重复建任务。
+RELEASE dbaa独立源审P2为精确guard与合法组合不匹配：backend **b29807979a5589678a61d3fb84781950cf366396** 两源逐字cde，candidate metadata **0037921d12c089e6334b001545f698db067087f8** / tree **1cf10d9434b0cf57d083c0e5e01b9bc8b72dc074** 另有精确11metadata。native_center_owner仅SOURCE_BINDING/NO_P1_P2预审，非A/B或部署批准。W01原四scope只修精确闭包，禁止广泛test/docs豁免；最终af51/13metadata/10依赖回执已到，harness窄审与fresh运行门槛仍待。旧3,874ms两红/余176.126秒冻结。Lead main9bdb/4320拟164仅进行中通知，不当页面已验；当前无运行窗口/空间采样。REQ45官方adapter研究已在198b7299归原06-05，不重复建任务。
 
 **已释放旧树≤4只读候选，交Lead最终核定后操作**：[清单/范围与限制](released-sparse-candidates-intake.json) / [原固定blob与进程/依赖观察](released-sparse-candidates/report.json)。web-release-type-fix、dashboard-human-summary、dashboard-git-snapshot、web-workspace-cache均delivered/main、clean、15:34:17 fresh ledger released/无active；单次lsof/ps与8,215常规package链接未见消费者。仅固定origin/main22d5相同blob的非自身历史evidence副本候选，保source/tests/rules/plans/D04/完整own raw/所有fixtures/deps及source-runtime引用目录。全虚拟store/任意外部脚本未穷尽，Lead如发现unknown即KEEP；逻辑39.51/41.68/42.08/39.71MB不能当实际可回收。管理0sparse/删除/df/产品运行，ATTACHI/CONTEXTI明确KEEP。
 

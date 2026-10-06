@@ -18,7 +18,7 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 旧362实际两history红已封存/清理完成；b298修复候选已源预审，dbaa精确guard待修；Recovery02d5 P1材料完整性/P2顺序源审交原owner，24direct/browser未跑 |
-| 下一可用交付 | 固定新backend最终tuple/依赖与精确harness闭包获审后，按余176.126秒fresh条件先A再B；Recovery原范围修材料完整性/顺序，不开启运行窗口 |
+| 下一可用交付 | 最终af51输入已到，精确harness闭包与B-only输入获审后，按余176.126秒fresh条件先A再B；Recovery原范围修材料完整性/顺序，不开启运行窗口 |
 | 当前阻塞 | ACTIVE: 新backend组合尚未实际兼容且harness闭包待审；Recovery02d5源审两项需修、真实IDB/App未验；无本组运行窗口，轻源码继续，个人版本未切 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |

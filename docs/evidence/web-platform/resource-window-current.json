@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-06T15:40:26.272754+00:00",
-  "state": "RETURNED_TO_LEAD_AFTER_A_HISTORY_FAILURE_AND_CLEANUP",
+  "recordedAt": "2026-10-06T15:42:23.500932+00:00",
+  "state": "NO_ACTIVE_RUN_FIXED_AF51_RECEIVED_AWAITING_REVIEW_AND_FRESH_GATE",
   "source": "release03-a-actual-intake.json",
   "release03": {
     "claim": "bfb209ae v3 original4, only owner metadata/sources under original authority",
@@ -25,12 +25,18 @@
     "freshAdmission": "release03-a-second-admission.json",
     "actualRawReview": "release03-a-actual-362-review-root.json",
     "nextSourceCandidate": {
-      "harness": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
-      "state": "SOURCE_GUARD_P2_CHANGE_REQUESTED",
-      "backendImplementation": "b29807979a5589678a61d3fb84781950cf366396",
-      "candidateHead": "0037921d12c089e6334b001545f698db067087f8",
-      "candidateTree": "1cf10d9434b0cf57d083c0e5e01b9bc8b72dc074",
-      "pending": "Exact two-source/eleven-metadata closure guard, finalmetadata/dependency receipt, independentreview andfresh run gate"
+      "backend": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "head": "af51c621696230fbced12227670f014ca73bd8a1",
+        "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+        "sourceTarget": "b29807979a5589678a61d3fb84781950cf366396",
+        "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+        "approvedFix": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
+      },
+      "sourceArchive": "release03-backend-af51-root-audit.json",
+      "state": "EXACT_HARNESS_GUARD_AND_B_ONLY_INTERFACE_REVIEW_PENDING",
+      "closure": "2approvedsource+13fixedmetadata",
+      "dependencies": "10rootverifiedreadonlyidentities;not runtimeclosure"
     }
   },
   "recoveryDirect": {
@@ -93,10 +99,10 @@
     }
   },
   "groupWindowOwnership": {
-    "state": "NO_ACTIVE_GROUP_TEST_WINDOW",
-    "source": "Lead15:31:45 F01 O14 NOT_RUN and immediately returned window after own admission failure",
+    "state": "NO_ACTIVE_RUN_CONDITIONAL_ONE_HISTORY_ADMISSION_AFTER_SOURCE_REVIEW",
     "reservedByThisGroup": false,
-    "next": "New backend tuple not fixed and last Lead free below start; no fresh group A/direct gate, no poll or reserved idle window"
+    "source": "Latest Lead authorizes manager fresh singleA afterguardapproval; otherPGreported0,no resourcecapacityinferred",
+    "next": "No resource sample until reviewed fixedharness ready. Freshgate belowthreshold=>NOT_RUN/return immediately. B separate+128MiB."
   },
   "registry": "Lead latest inbound reports mainfb9fe5e7/dashboard162; prior fixed d679 registry verified by manager. No new4320GET/reload.",
   "historicalResourceEvidence": [
