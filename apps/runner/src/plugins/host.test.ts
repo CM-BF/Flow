@@ -57,13 +57,17 @@ test('loads the installed real npm module after authorization and returns bounde
   const f = await fixture();
   try {
     let authorized = 0; let owned = 0;
+    const phases: string[] = []; let firstBinding: Readonly<FrozenToolInvocation> | undefined;
     const result = await invokeInstalledTool({ ...f, input: 'hello', signal: new AbortController().signal,
-      authorize: async binding => { authorized++; expect(binding).toEqual(f.binding); }, assertOwnership: () => { owned++; } });
+      authorize: async (binding, phase) => {
+        authorized++; phases.push(phase); expect(binding).toEqual(f.binding);
+        if (firstBinding) expect(binding).toBe(firstBinding); else firstBinding = binding;
+      }, assertOwnership: () => { owned++; } });
     expect(result).toEqual({ kind: 'text', content: 'verified: hello', provenance: {
       bindingId: f.binding.bindingId, invocationId: f.binding.invocationId, taskId: f.binding.taskId, attemptId: f.binding.attemptId, ownerVersion: 1,
       installationId: f.binding.material.installationId, artifactId: f.binding.material.artifact.artifactId,
       artifactSha256: f.binding.material.artifact.sha256, treeDigest: f.binding.material.treeDigest, hostApiMajor: 1 } });
-    expect(authorized).toBe(1); expect(owned).toBeGreaterThanOrEqual(1);
+    expect(authorized).toBe(2); expect(phases).toEqual(['load', 'invoke']); expect(owned).toBeGreaterThanOrEqual(1);
   } finally { await rm(f.root, { recursive: true, force: true }); }
 });
 
@@ -161,4 +165,60 @@ test.each(['import', 'invoke'] as const)('abort after pending %s is unknown; it 
     await import(installed.entrypoint.href); // settle the actual import before removing owned fixture files
     delete globals[key]; await rm(f.root, { recursive: true, force: true });
   }
+});
+
+test('revocation while the real module import is pending prevents its invoke action', async () => {
+  const key = 'flow-grant-gate-' + randomUUID();
+  const globals = globalThis as unknown as Record<string, unknown>;
+  let started!: () => void; let release!: () => void;
+  const entered = new Promise<void>(resolve => { started = resolve; });
+  globals[key] = () => new Promise<void>(resolve => { release = resolve; started(); });
+  const f = await fixture({ code: root => `import {writeFileSync} from 'node:fs'; await globalThis[${JSON.stringify(key)}](); export const hostApiMajor=1; export function invoke(){writeFileSync(${JSON.stringify(join(root, 'invoked'))}, 'ran'); return 'forbidden'}` });
+  let granted = true; const denied = new Error('grant revoked during import');
+  const outcome = invokeInstalledTool({ ...invocation(f), authorize: async () => { if (!granted) throw denied; } });
+  const settled = outcome.then(value => ({ value, error: undefined }), error => ({ value: undefined, error }));
+  try {
+    await Promise.race([entered, settled.then(() => { throw Error('Module import did not reach its pending gate'); })]);
+    granted = false; release();
+    expect((await settled).error).toBe(denied);
+    await expect(readFile(join(f.root, 'invoked'))).rejects.toMatchObject({ code: 'ENOENT' });
+  } finally {
+    release?.(); await settled;
+    delete globals[key]; await rm(f.root, { recursive: true, force: true });
+  }
+});
+
+
+test.each(['load', 'invoke'] as const)('unknown %s authorization ACK blocks its package action and preserves the original error', async deniedPhase => {
+  const f = await fixture({ code: root => `import {writeFileSync} from 'node:fs'; writeFileSync(${JSON.stringify(join(root, 'loaded'))}, 'yes'); export const hostApiMajor=1; export function invoke(){writeFileSync(${JSON.stringify(join(root, 'invoked'))}, 'yes'); return 'forbidden'}` });
+  const unknown = Object.assign(new Error('authorization ACK unknown'), { code: 'OUTCOME_UNKNOWN' });
+  const phases: string[] = [];
+  try {
+    await expect(invokeInstalledTool({ ...invocation(f), authorize: async (_binding, phase) => {
+      phases.push(phase); if (phase === deniedPhase) throw unknown;
+    } })).rejects.toBe(unknown);
+    expect(phases).toEqual(deniedPhase === 'load' ? ['load'] : ['load', 'invoke']);
+    if (deniedPhase === 'load') await expect(readFile(join(f.root, 'loaded'))).rejects.toMatchObject({ code: 'ENOENT' });
+    else expect(await readFile(join(f.root, 'loaded'), 'utf8')).toBe('yes');
+    await expect(readFile(join(f.root, 'invoked'))).rejects.toMatchObject({ code: 'ENOENT' });
+  } finally { await rm(f.root, { recursive: true, force: true }); }
+});
+
+test.each([
+  ['load', 'abort'], ['load', 'ownership'], ['invoke', 'abort'], ['invoke', 'ownership'],
+] as const)('%s gate checks %s again before its package action', async (changedPhase, change) => {
+  const f = await fixture({ code: root => `import {writeFileSync} from 'node:fs'; writeFileSync(${JSON.stringify(join(root, 'loaded'))}, 'yes'); export const hostApiMajor=1; export function invoke(){writeFileSync(${JSON.stringify(join(root, 'invoked'))}, 'yes'); return 'forbidden'}` });
+  const controller = new AbortController(); const fenced = new Error('ownership changed'); let owned = true;
+  try {
+    const outcome = invokeInstalledTool({ ...invocation(f), signal: controller.signal,
+      authorize: async (_binding, phase) => {
+        await Promise.resolve();
+        if (phase === changedPhase) { if (change === 'abort') controller.abort(); else owned = false; }
+      }, assertOwnership: () => { if (!owned) throw fenced; } });
+    if (change === 'ownership') await expect(outcome).rejects.toBe(fenced);
+    else await expect(outcome).rejects.toMatchObject({ code: 'CANCELLED' });
+    if (changedPhase === 'load') await expect(readFile(join(f.root, 'loaded'))).rejects.toMatchObject({ code: 'ENOENT' });
+    else expect(await readFile(join(f.root, 'loaded'), 'utf8')).toBe('yes');
+    await expect(readFile(join(f.root, 'invoked'))).rejects.toMatchObject({ code: 'ENOENT' });
+  } finally { await rm(f.root, { recursive: true, force: true }); }
 });

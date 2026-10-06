@@ -1,0 +1,24 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/plugins/host.test.ts > revocation while the real module import is pending prevents its invoke action
+AssertionError: expected undefined to be Error: grant revoked during import // Object.is equality
+
+- Expected: 
+Error {
+  "message": "grant revoked during import",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/plugins/host.test.ts:179:35
+    177|     await Promise.race([entered, settled.then(() => { throw Error('Mod…
+    178|     granted = false; release();
+    179|     expect((await settled).error).toBe(denied);
+       |                                   ^
+    180|     await expect(readFile(join(f.root, 'invoked'))).rejects.toMatchObj…
+    181|   } finally {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
