@@ -11,7 +11,7 @@ import { promisify } from "node:util";
 import { Pool } from "pg";
 
 export const BACKEND = "b1c2e39837c2208e6fc2c59a80e16797f26448b5";
-export const NEW_WEB = "8d8ab520a9d43c7b9dafb22911416ee79ebf665";
+export const NEW_WEB = "8d8ab520a9d43c7b9dafb22911416ee799ebf665";
 export const RELEASE_ID = "8d8ab520a9d43c7b9dafb22911416ee7";
 export const repository = fileURLToPath(new URL("../../../", import.meta.url));
 export const evidence = join(repository, "docs/evidence/wpf-release01");
@@ -89,6 +89,7 @@ async function startObservationProxy(centerPort: number) {
 
 export async function startReleaseFixture() {
   assert.match(RELEASE_ID, /^[a-f0-9]{32}$/);
+  for (const target of [BACKEND, NEW_WEB]) { assert.match(target, /^[a-f0-9]{40}$/); assert.equal(await git("cat-file", "-t", target), "commit"); }
   const parent = await realpath(await mkdtemp(join(tmpdir(), "flow-release01-")));
   const checkoutPaths: string[] = [], closures: Array<() => Promise<void>> = [];
   const databaseName = `flow_release_${randomUUID().replaceAll("-", "").slice(0, 24)}`;
