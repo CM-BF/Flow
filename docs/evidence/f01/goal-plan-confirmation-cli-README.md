@@ -1,0 +1,11 @@
+# Complete-plan confirmation CLI
+
+Fixed three-source target: `ccfa04b22d6027c6e7606b22708bcb485e01ae05`. Command: `goal plan confirm-inputs <proposal-id> --input JSON-file --key stable-key`.
+
+This is one finite branch in the existing goal command, using the existing nonblocking regular-file UTF-8 JSON reader with65536-byte ceiling, the public strict goalPlanConfirmationSchema, and FlowClient.confirmGoalPlan. It passes the original key and optional AbortSignal to the existing transport and preserves exit/error behavior. No added parser framework, permission mechanism, scheduler, model call, retry or state machine. Old command source branches are unchanged.
+
+The single real loopback HTTP test passed **1 selected /1 passed, exit0**; it performed two HTTP POSTs (one synthetic success and one409) with equal original key/body. Pre-aborted transport exits4 without another request; missing stable key, unknown plan action, unknown schema authority field and oversized file exit2 before sending. Help and README discovery are asserted in the same case. Socket server and owned temporary input directory close/remove in finally; the process exits0. Focused noEmit separately exits0. Raw outputs and exit/source-hash receipts are preserved; no old CLI suite, PG, domain suite or provider rerun.
+
+The mock server's receipt is a transport fixture, not a new production-acceptance proof. Actual central validation, confirmation receipt identity, automatic progression and database cleanup were independently approved on7f59 and are main0e4c. A lost response still requires the unchanged input and original key. Confirmed inputs/queued work do not mean completion or semantic acceptance; client exit/cancellation does not cancel tasks. Live natural-language planning remains outside this CLI slice.
+
+Local find-skills/codebase-design/clean-code method: reuse the existing bounded reader and public transport; keep plan syntax finite; avoid duplicating DTO/authority/recovery rules. Resource validation is one tiny HTTP case and focused types, using Node24/Vitest4.0.18/existing dependencies with fresh1GiB+8MiB gates and30-second command bounds. No install, PG or personal service changes. Independent review/main receipt for the CLI remain pending.

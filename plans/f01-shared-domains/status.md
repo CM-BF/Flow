@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:02:40 UTC / settings main8d84 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:06:21 UTC / O15 production main 0e4c7b0f69937f5b7a0c6dee3029ccc27f904364 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
-| Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v49 active，10literal；原范围保持，追加CLI index/专测/README |
+| Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v50 active；仅CLI index/专测/README与自身records共5literal，已审生产5路径停写交回 |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | O15受控input 1c0018d2；本共享source 7f59daa552aa0618776468ec54b6ed4c5a6990cb；原settings组合与O14保持 |
-| 工作树dirty状态 | 四新源停止写入；本次只固定1case实际PG证据，提交后clean |
+| 工作基线 / HEAD | CLI前置bb7bdd5e；三源固定 ccfa04b22d6027c6e7606b22708bcb485e01ae05；settings/O15生产已main |
+| 工作树dirty状态 | CLI三源固定；仅证据/status收口，提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 新生产PG1选中/1过/exit0，正常DROP与目录清理；focusedtypes0；214源/30SQL/19包预检无缺件；原O15 thirteen/settings不重跑 |
-| 已集成main状态 / HEAD | O14已main bd14；settings45源已main 8d84d529a0756116bd0fc8bad969d61a6c26248e exact。当前O15共享接线尚未main，个人服务不变 |
-| Review | APPROVED 7f59daa552aa0618776468ec54b6ed4c5a6990cb；Execution Lead唯一四源/285binding/实际1case核；CLI后继不继承 |
-| 实现目标 | 7f59daa552aa0618776468ec54b6ed4c5a6990cb |
-| 实现范围 | apps/server/src/index.ts, packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/goal-plan-confirmation-production.test.ts |
+| 检查状态 | 新CLI真实HTTP1/1（含help/错误/边界）、focusedtypes0；0PG/provider，原领域/生产检查不重跑 |
+| 已集成main状态 / HEAD | settings已main8d84；O15生产4源已main 0e4c7b0f69937f5b7a0c6dee3029ccc27f904364；CLI新三源尚未main |
+| Review | CLI三源待独审；7f59生产独审已main、source原样保持 |
+| 实现目标 | ccfa04b22d6027c6e7606b22708bcb485e01ae05 |
+| 实现范围 | apps/cli/src/index.ts, apps/cli/src/goal-plan-confirmation.test.ts, apps/cli/README.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 一次确认后自动推进依赖任务的生产入口已获独立批准，待主线接收。 |
-| 下一可用交付 | 接收已审生产接线；补同接口的最小命令行确认入口。 |
+| 当前产出 | 中心一次确认与自动推进已接入主线，命令行确认入口已完成局部验证。 |
+| 下一可用交付 | 独立审查后交付命令行确认入口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -242,8 +242,10 @@ O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/
 
 2026-10-06 17:14:15 UTC：O14本片delivered，五源对main逐hash相同，[main receipt](../../docs/evidence/f01/goal-progression-production-main-receipt.json)，0重测。当前source准备转032消费者，只新增一个测试文件，未修改已冻结O14 factory/其他source；不将历史批准继承到新片。架构影响为迁移前置依赖，正式target固定后由ExecutionLead同步；现无第二鉴权/scan/runtime。
 
-| F01-44 | in-progress | native_center_owner | [真实生产1case](../../docs/evidence/f01/goal-plan-confirmation-production-README.md)，正常资源清理；target7f59待独立最终审查 |
+| F01-44 | completed | native_center_owner | 7f59独审APPROVED，[main精确回执](../../docs/evidence/f01/goal-plan-confirmation-production-main-receipt.json)，本段delivered |
 
 2026-10-06 17:53:52 UTC：F01-44固定四源7f59daa552aa0618776468ec54b6ed4c5a6990cb，复用既有scan不新增timer；[真实入口预检](../../docs/evidence/f01/goal-plan-confirmation-production-preflight.json)与[下一窗口请求](../../docs/evidence/f01/goal-plan-confirmation-production-request.json)。新PG未跑，旧13领域/032不重复。
 
 2026-10-06 17:57:49 UTC：F01-O15-PRODUCTION-1756窗口已正常归还；1/1实际生产入口通过，未补跑13领域/旧settings。源码停写，Lead唯一最终窄审。
+
+| F01-45 | in-progress | native_center_owner | [CLI三源固定/1HTTP+types0](../../docs/evidence/f01/goal-plan-confirmation-cli-README.md)，待独立审查/main |
