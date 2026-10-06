@@ -4,7 +4,7 @@
 
 | ID / 原始要求 | 任务/依赖 | 验收与所需证据 | 当前事实与缺口 |
 | --- | --- | --- | --- |
-| REQ-01 FLOW001§1/6/12 连续多任务工作流 | M02 | 同一连续入口至少10任务，跨任务可读解释/不同待决策/原地证据，无需逐task切换；新消息不打断阅读；记录切换、重复问题、人工时间 | M02 backend/CLI和WPF-M02 d47已集成；10任务真PG/HTTP4组、8chat双split及窄屏证据已审；确定性交互成立，跨任务语义解释质量/人工时间对照仍open；CHAT01/02/03+Web7cb已审并集成：持久conversation/typed正文/配置pin。2query真实session记忆与首轮Web正文通过；第二轮live UI未证实，保存响应零模型重放通过，报告cc73待独立核；U11模型/effort/access选择UI、queue/steer/context/files/voice等仍open |
+| REQ-01 FLOW001§1/6/12 连续多任务工作流 | M02 | 同一连续入口至少10任务，跨任务可读解释/不同待决策/原地证据，无需逐task切换；新消息不打断阅读；记录切换、重复问题、人工时间 | M02 backend/CLI和WPF-M02 d47已集成；10任务真PG/HTTP4组、8chat双split及窄屏证据已审；确定性交互成立，跨任务语义解释质量/人工时间对照仍open；CHAT01/02/03+Web7cb已审并集成：持久conversation/typed正文/配置pin。2query真实session记忆与首轮Web正文通过；第二轮live UI未证实，保存响应零模型重放通过，报告cc73已获限定独立批准；U11模型/effort/access选择UI、queue/steer/context/files/voice等仍open |
 | REQ-02 §7/8 Project/Workspace、动态计划 | G01，接M02/C02 | 项目授权边界，版本化新增/拆分/依赖更改，禁止循环，取消传播与失效决策/旧结果拒绝；故障后保留因果记录 | G016394项目revision/节点version/依赖无环/CAS与历史持久化、CLI已集成；O01 a4首段及F01公共goal命令已集成，真实PG diamond证明输入/依赖版本失效；自然语言规划/自动调度/取消传播完整范围仍open |
 | REQ-03 §7/12 未知副作用和恢复 | C02已集成 | 失联保留占用；实际结果核对、人工停止确认/副作用证据、不可变审计、显式新task retry；旧attempt不能复活；PG重启后审计仍在 | C02已独立审查并集成：停止/副作用审计、安全重跑依据、新task provenance、旧fence拒绝；operator断言不等于外部客观停止 |
 | REQ-04 §5.3/12 A2A双向互操作 | P01 SDK已集成；P02首出站已集成 | 固定实际SDK/规范/对端，发现/auth/直接响应/长任务/补充输入/产物/取消；至少一侧官方SDK；重复、ACK丢失、重连/降级/大inline | 官方SDK1.3互操作和P02 f942 task-based持久意图/binding/重启Get/取消/产物验证已集成；失ID不重发。P03显式send/Get historyLength0已审集成，同task1024历史wire2,185,338→16,580B且状态/产物相同；真实外部agent语义/所有输入与预算路径仍未完整 |
@@ -68,7 +68,11 @@ main4e0289f已含CHAT01/02/03与Web持续对话、X02登记/CLI、B01、R04、P0
 
 ## 2026-10-06 04:30 UTC 剩余接缝与成本边界
 
-- CHAT04已取独立claim、011，首合同e423；模块stub和首红例不算业务通过。所有queued input先中心持久受理，取消/promotion同conversation锁，failed/cancelled/uncertain冻结并显示原因；不让queue冒充active steering。
+- CHAT04已取独立claim、011，首合同e423；模块stub和首红例不算业务通过。所有queued input先中心持久受理，取消/promotion同conversation锁，failed/cancelled/uncertain冻结并显示原因；新增持久pause与同锁显式resume，暂停先ACK再task取消，不保证撤销已运行操作；不让queue冒充active steering。
 - O03 012授予只允许实际task/attempt/fence与固定goal/node/commands；撤销/过期/取消在replay也同事务核验，明确锁序。现readonly profile不能宣称goal写工具；SDK子进程环境须过滤Flow服务凭据。首段不含自动创建graph，不另造agent loop。
 - CHAT live请求plugins=[]/skills=[]，实际init仍报告各3项扩展；effective tools=[]、thinking unknown。保留配置差异，不称干净上下文或工程harness公平对照。R02 5/5与CHAT 2/2均封存；新的模型用途须独立小预算。
 - U11后继按已配置runner声明/固定SDK0.3.290可观测模型/effort能力构建，alias不当resolved model；supportedModels/startup候选未测时明确unknown，不偷偷预热或发新query。
+
+## 2026-10-06 04:35 UTC E02原生Codex候选（研究准备）
+
+本机codex-cli0.154.0可作原生app-server适配候选，官方 [app-server](https://learn.chatgpt.com/docs/app-server) / [产品嵌入说明](https://developers.openai.com/blog/codex-as-a-platform) 描述持久thread/turn、delta、审批、steer(expectedTurnId)、interrupt及model/list。先核本机固定schema和公开RPC的0query兼容性，官网示例不替代固定版本。model catalog不是账户可用证明；[SIWC](https://developers.openai.com/siwc/token-sharing-open-source/codex-app-server) 的新OAuth机制不等于授权借用token文件。当前只读help/schema准备，不读凭据、不auth/模型调用，不替换Claude/Pi；真实工程预算与写模型门槛另审。
