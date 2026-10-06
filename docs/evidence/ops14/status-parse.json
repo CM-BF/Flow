@@ -1,0 +1,76 @@
+{
+  "errors": [],
+  "owner": "native_center_owner / gpt-6-astra",
+  "branchState": "review",
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "已实现自有进程的有界停止与输出收束；原调用形状的局部验证已完成。",
+    "next": "独立审查通过后交付模块；两个服务包装器的正式接入仍待交接。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[OPS-001](../../../plan-status-review/plans/ops-001-status-review/plan.md)",
+      "id": "OPS-001",
+      "location": "../../../plan-status-review/plans/ops-001-status-review/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "todos": [
+    {
+      "id": "OPS14-01",
+      "state": "completed",
+      "owner": "native_center_owner",
+      "evidence": "[Interface](../../docs/evidence/ops14/interface.md)、[claim](../../docs/evidence/ops14/take-receipt.json)"
+    },
+    {
+      "id": "OPS14-02",
+      "state": "completed",
+      "owner": "native_center_owner",
+      "evidence": "[12 个不同局部检查分轮证据](../../docs/evidence/ops14/README.md)"
+    },
+    {
+      "id": "OPS14-03",
+      "state": "in-progress",
+      "owner": "native_center_owner",
+      "evidence": "已固定源码与原输出，等待唯一独审和 main 接收"
+    },
+    {
+      "id": "OPS14-04",
+      "state": "pending",
+      "owner": "native_center_owner",
+      "evidence": "两旧包装器 freeze；待双方 owner 正式移交"
+    }
+  ],
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED",
+    "target": "0d9503ad9115f5537a2025a33d1f78239f4fb409"
+  }
+}
