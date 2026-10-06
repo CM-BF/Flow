@@ -77,3 +77,5 @@ Mika/root已独核650bb包40 bindings全符、三配置静态未放宽，生产S
 按ROOT分别开放的局部窗口：contracts-only strict exit0/931.641ms；注入query runner单文件5 selected/5 passed/exit0/713.736ms（raw2326B）；五入口focused strict exit0/2227.619ms。每步fresh free均满足1,107,296,256B，最终1,128,894,464B。runner owncache132B清理，自有TMPDIR结束为空并移除，combined observed peak998994B低于32MiB。当前21 distinct为先前16合同+新5注入，不累计历史leaf5；所有34源仍ea276。PG/真实SDK/provider/共享挂载仍NOT_RUN，完整交付review与main未完成。固定[新局部manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-local-validation-manifest.json)绑定source/readonly/config/16raw。
 
 Root静态发现prepared PG config的`.js`引用在native loader下不存在；仅改为磁盘已有`.ts`，不放宽compiler、不重跑21项。旧source manifest保留历史config hash，新局部manifest显式绑定这一prepared delta；未实际加载PG配置或连接数据库。
+
+下一ready专库窗口请求已固定：[PG/HTTP slot](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-pg-slot-request.md)。仅8组/120s工作+80s清理/≤32tasks，拟fresh floor1,207,959,552B含128MiB规划余量；DB/WAL增量未实测且共享增长UNKNOWN。当前NOT_OPEN，不运行探容量，不将自有migration验证当F01生产factory挂载。
