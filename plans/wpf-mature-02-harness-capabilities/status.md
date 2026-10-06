@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T19:15:15.713066+00:00 / main8d84由Lead报告，部署未核 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T19:21:43.052072+00:00 / main8d84由Lead报告，部署未核 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,22 +11,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；native source51c11fca6e91069c69790c787025a214a3e114bf，检查证据另固定；旧候选按历史Git保留 |
-| 工作树dirty状态 | native-catalog-observation source61e28固定，7组检查已完成，当前封包；旧根/原件KEEP。 |
+| 工作树dirty状态 | 仅保存失败preflight与明确更正及HOLD；source/检查/fixedinput不变。此提交后停诊断写入。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
-| 当前检查 | observation新7/7 direct + sh0、0spawn/listener/target，4fixture同identity清理；既有17/6不重跑。 |
+| 当前检查 | 新7/7+sh0已固定；25a1组合已审。本次准入磁盘与账本双失败，0wrapper/0target，原true字段已明确更正UNKNOWN。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；CORE/C01/F01已由main8d84d529接收，唯一组合回执见canonical；不代表个人服务部署或完整跨端验收 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude产品core首契约已main；当前接入现profile、中心事务、队列与已有adapter。child next-slice-handoff维护唯一精确合同/闭包；本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude中心与公共客户端已接入主线；真实Codex已完成初始化，但目录结果尚未取得，自有残留完整保留。 |
-| 下一可用交付 | 本次失败与保留资源已独审封存；后继有限链接/通知观察准备，跨端设置验收继续。 |
-| 当前阻塞 | ACTIVE: 原生目录未取得，根清单与完整输出计量未知；Claude完整跨端产品验收仍待完成。 |
+| 当前产出 | Claude中心与公共客户端已接入主线；Codex后继准备完成，但总体资源不足且协调账本不可用，本次未启动。 |
+| 下一可用交付 | 等待Lead确认资源和账本恢复，由root重新给定执行门禁；当前不重试。 |
+| 当前阻塞 | ACTIVE: RESOURCE_AND_COORDINATION_HOLD：磁盘不足与fresh领取未知两个独立阻塞，OPEN撤回；目录/完整跨端验收未完成。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
-| Review | observation source61e28：architecture_read19:12:48 APPROVED/0P1P2，Mika接收；最终组合待审，actual NOT_OPEN。 |
+| Review | 25a1组合Root19:18:22 APPROVED；准入失败非产品测试失败，0目标。原preflight硬编码claim=true错误按独立收据更正，NOT_OPEN。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | native薄caller复用R06唯一stdio/process owner及同一policy，不改生产接口；单页目录不作账号/实际模型或writer停止证明。Claude架构接线由CORE/共享consumer与Lead同步。 |
 
