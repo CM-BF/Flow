@@ -1,6 +1,6 @@
 # S01 独立审查
 
-当前 idle-claim-cost 全组合准备：SOURCE_APPROVED（architecture_read 2026-10-06 19:04:43 UTC，source4da7三P2全CLOSED），VALIDATION_PASSED(9fake+两局部strict+两syntax，分次)/actual单窗已完成，结果REVIEW_PENDING。原runtime strict2与首轮停止原件保留；fd24一行类型修复后定向通过。输入固定8d84；early checkpoint73157915758b934cce5131045317c892288ddc7a由architecture_read于2026-10-06 18:38:51 UTC只读SOURCE_REVIEW，无P1/P2、VALIDATION_PENDING；仅observer/budget+9fake草稿，不覆盖后加薄外壳/实际窗。历史批准均不覆盖新准备。
+当前 idle-claim-cost 全组合准备：SOURCE_APPROVED（architecture_read 2026-10-06 19:04:43 UTC，source4da7三P2全CLOSED），VALIDATION_PASSED(9fake+两局部strict+两syntax，分次)/actual固定e4ed单窗结果双审APPROVED。原runtime strict2与首轮停止原件保留；fd24一行类型修复后定向通过。输入固定8d84；early checkpoint73157915758b934cce5131045317c892288ddc7a由architecture_read于2026-10-06 18:38:51 UTC只读SOURCE_REVIEW，无P1/P2、VALIDATION_PENDING；仅observer/budget+9fake草稿，不覆盖后加薄外壳/实际窗。历史批准均不覆盖新准备。
 
 2026-10-06 18:56:32 UTC root/architecture静态审发现并交owner修复：最终sample unknown仍读/删root、预约后未重新夹10s启动、截断尾流未补收费。owner本次修final sample事实gate、明确EMPTY/known identity、spawn紧前同deadline、超capture尾流额外收费/unknown；加root tsconfig只读input，统一light floor1107296256B。整体预算仍2MiB/15s，按root允许将预留分为128KiB自动+128KiB人工归档，以单清单计整个plan/status/review和检查/收口。新source未复审、0检查，不将working delta记为P2已获关闭。旧input/manifest/ready原字节保留。
 
@@ -13,6 +13,8 @@ Review target commit: `4da7f6852a047e417a5779ae3f1d745745f9a77d`；[最小delta 
 2026-10-06 19:09:20 UTC：最终source `fd24a1f4d89839c867ed9184ef2c28680c5922cd`仅补inert fixture version:1；原4da7源审门禁不变。定向runtime strict0及两syntax0，不重跑9fake/pure。旧失败完整保留，所有工具/自有根清理已核；原actual未选/NOT_OPEN。clean-code限定复核adapter name/version与0执行约束，无新抽象或产品改变。
 
 2026-10-06 19:12:48 UTC：root19:10:45已正式批准完整准备；唯一actual窗口CONSUMED，raw/case/CLI/external-exit和/result-manifest.json已封待原reviewer。12空claim200、24rename/48sync、EMPTY/closed/absent、全外壳6.642s/2MiB门禁；不将case pending snapshot当终态，不以结果推断物理I/O或100runner。独立review只读，不重测。
+
+2026-10-06 19:16:46 UTC：固定结果 `e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a` 经Mika19:15:35和architecture_read19:16:32 RESULT_APPROVED/0P1P2，[结果review](../../docs/evidence/s01/idle-claim-cost/result-review.json)。只批准单runtime观察忠实性，0重测；不证明物理I/O/百runner，不产生新窗口。
 
 ## 历史 A/B 准备批准
 
