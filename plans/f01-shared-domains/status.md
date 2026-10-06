@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:32:59 UTC / O14 main bd14f984e3927df139815597c4c3171af84ec4b7 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:35:32 UTC / O14 main bd14f984e3927df139815597c4c3171af84ec4b7 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -16,14 +16,14 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 0ee2494ed4298169c56ac3a6950fa1910ed62a7a；真实生产PG1/1、focused types最终0（首次2保留）；CORE29/C0186不重跑；原O14独审/main保持 |
 | 已集成main状态 / HEAD | O14五源已main bd14f984e3927df139815597c4c3171af84ec4b7；032/C01本组合尚未main，个人服务不变 |
-| Review | NOT_STARTED 当前032生产固定target；历史O14已独审/main，见review.md |
+| Review | APPROVED 0ee2494ed4298169c56ac3a6950fa1910ed62a7a；历史O14已独审/main，见review.md |
 | 实现目标 | 0ee2494ed4298169c56ac3a6950fa1910ed62a7a |
 | 实现范围 | apps/server/src/index.ts, packages/client/src/claude-message-settings-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 消息设置的生产入口已验证，发送与排队记录在重启后保持原设置，待独立审查。 |
-| 下一可用交付 | 独立审查后将固定生产接线接入主线，供客户端共同使用。 |
+| 当前产出 | 消息设置的生产入口已通过独立审查，发送与排队记录在重启后保持原设置。 |
+| 下一可用交付 | 将已审生产接线与固定客户端、中心合同一起接入主线。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 

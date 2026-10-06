@@ -1,9 +1,9 @@
 # F01 当前032消息设置生产审查
 
-状态：NOT_STARTED
+状态：APPROVED；Reviewer：astra_ultra_execution_lead / gpt-6-astra，独立于作者native_center_owner
 Review target commit：0ee2494ed4298169c56ac3a6950fa1910ed62a7a
 
-作者native_center_owner；当前范围仅apps/server/src/index.ts及packages/client/src/claude-message-settings-production.test.ts。CORE ea27634源与C01最终6d1149源均作为独审固定输入，非本片作者实现或重审范围。真实生产1/1、focusedtypes最终0和原始失败/资源清理已固定，等待唯一独立review。[delivery](../../docs/evidence/f01/claude-message-settings-production-README.md)。无provider/runtime；ACK已收后重启，不是lostACK。
+作者native_center_owner；当前范围仅apps/server/src/index.ts及packages/client/src/claude-message-settings-production.test.ts。CORE ea27634源与C01最终6d1149源均作为独审固定输入，非本片作者实现或重审范围。唯一独立review已完整读2源/原证据，249固定/current bytes+hash全符；188保护源/配置对当次main无差，无P1/P2，reviewer0重跑/provider。[原报告](../../docs/evidence/f01/claude-message-settings-production-independent-review.json)。真实生产1/1、focusedtypes最终0及首次红、正常资源清理均已核。[delivery](../../docs/evidence/f01/claude-message-settings-production-README.md)。无provider/runtime；ACK已收后重启，不是lostACK。
 
 历史O14已main bd14，下面原审查保留，不能批准032新片。
 
