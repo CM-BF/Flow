@@ -13,14 +13,14 @@
 | 工作树dirty状态 | 管理metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | A–E与F控制片已审/main；F-03真实HTTP/PG取消与Ink PTY两行为通过，原suite exit1保留；独立收尾1/1及类型兼容已审，本父不重测 |
-| 已集成main状态 / HEAD | TUI01F-03七源已main8d84逐字接收，当前main1126保持；TUI01F-04真实网页交替仍未实施/运行 |
+| 已集成main状态 / HEAD | TUI01F-03七源已main8d84逐字接收，当前mainbd25保持；F-04固定准备已独审，真实网页交替尚未运行 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/tui, packages/interaction |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 终端显式取消、原请求恢复和退出不取消后台任务已通过真实中心与终端验证并进入主线。 |
-| 下一可用交付 | 由同组worker接续同一会话的真实终端→网页→终端旅程；网页呈现与后台合同继续独立交付。 |
+| 下一可用交付 | 在独立运行窗口验证同一会话的真实终端→网页→终端接续；网页呈现与后台合同继续独立交付。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；F-03限定独审APPROVED，完整大task验收仍开放 |
@@ -60,3 +60,5 @@
 2026-10-06 20:05 UTC：[实际取消/PTY主线回执](../../docs/evidence/tui01/tui01f-actual-cancel-pty-main-receipt.json)核七源固定/作者/main一致。原行为2项通过但cleanup导致suite exit1保留；后继仅收尾1/1修复正常清理，未重跑已过行为。退出观察不取消C，合成任务继续完成；不外推native强杀或模型能力。
 
 下一片继续原TUI001-06/08、TUI01F-04：assignment_review原范围停写/正式handoff给native_center_owner，使用既定真实PTY+生产App方案。候选backend明确改为已审af51、Web固定d629/source506，TUI保持已审ec30七源；实现只扩test-only fixture端口和独立driver，不改中心权威或私有Web状态。完整运行另固定driver、依赖/资源与共享窗口，不继承旧预算。公共typed contract/headless可先交付，Web与TUI均不成为所有后台的串行门禁。
+
+2026-10-06 20:26 UTC：F04固定源码d147a636已获Execution Lead准备限定独审，782输入字节/hash一致、4个分轮纯例与两次focused types原始证据成立。实际PG/Chrome/PTY仍NOT_RUN，个人发布后再按fresh资源安排单次共享窗口；不重复F03。原08追加机器输出有界投影/原文显式读取验收，当前仅源码研究、未领取新产品scope；不打断F04或发布。
