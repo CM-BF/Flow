@@ -1,0 +1,205 @@
+{
+  "state": "READ_ONLY_INTERFACE_PROPOSAL_NOT_RUN",
+  "fixedMain": "d721cf28123b45dab5b4e531281b312956e1bc28",
+  "projectPins": [
+    {
+      "path": "AGENTS.md",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 17226,
+      "sha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/markdown-text.tsx",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 7301,
+      "sha256": "b041132faa98790395e4161329249eb1a38642ce7a5603042a67e7ab7ff72808"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 32735,
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 22770,
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/patches.ts",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 257,
+      "sha256": "3de48ce8c324e5e87692a95f5dc6486dd1bbd5f50cac0b92d61794238eee44e9"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/messages.ts",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 1934,
+      "sha256": "45c7c0f1f4bb4049764cae6dad7436e2a2c457948bca2b6880fb75d7aff5bef7"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 14766,
+      "sha256": "506efd942fb3f47831db7e1c381616132c1e2ffd6798f2c6c3bc5e22f10b6848"
+    },
+    {
+      "path": "packages/interaction/src/stream/patches.ts",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 13510,
+      "sha256": "8868cc08faa2ac17f48e3c8cafc8d07521cccd635f05632647e571c60281addc"
+    },
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 10826,
+      "sha256": "cf7b8247f67a1061f5b8a786874cf5e37f4dc7ce51b66c99310e84697b70fa6f"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 4993,
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382"
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+    },
+    {
+      "path": "apps/web/test/conversation-stream-integration.fixture.ts",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 9524,
+      "sha256": "550c29f29cfdacb57bcfe49c61e0bc9ff6f8fe07f67888f356a6a48bcd9936df"
+    },
+    {
+      "path": "apps/web/test/conversation-stream-integration.browser.ts",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 10269,
+      "sha256": "051d442399e8fd004aed9e6e4d7df623688bf3d92e542c45f70c1df606b754ea"
+    },
+    {
+      "path": "apps/web/test/performance-probe.ts",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 24449,
+      "sha256": "da33380a6fa50870f90fd90f6f819b22177c4b17a09827f648e16516ae9215ab"
+    },
+    {
+      "path": "apps/web/test/performance-fixture.ts",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 7521,
+      "sha256": "058fe797d3e823733fa0ba972aaa693205a2b346fd1fb1c0c0161613ced91996"
+    },
+    {
+      "path": "plans/chat06-assistant-stream/plan.md",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 3075,
+      "sha256": "9be4487fe8c9e346ad94285789ecb2164c7a00f25473210a4f32527c34235732"
+    },
+    {
+      "path": "plans/chat06-prefix-hash/plan.md",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 3582,
+      "sha256": "33735880f0c1d6c05fb0c9a3b5ece6894def7259921a415cf4d51f9363941536"
+    },
+    {
+      "path": "plans/chat06-runner-prefix-hash/plan.md",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 2625,
+      "sha256": "7595a5fbbe32ad67946677712f8f52c910d24018c2408769d3d361a557549825"
+    },
+    {
+      "path": "plans/chatui01-stream-acceptance/plan.md",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 2403,
+      "sha256": "66c13d86d3ea56e5184c1812bb0c33fce526a23a276892c02221c6b0d24afd48"
+    },
+    {
+      "path": "plans/wpf-perf01-web-performance/plan.md",
+      "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+      "bytes": 4674,
+      "sha256": "3344de30b0896992dbba1b9e16e7807d09873fb1f043f8b55c438ea655463469"
+    }
+  ],
+  "localReadPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown/package.json",
+      "bytes": 2238,
+      "sha256": "b8bc2d5b903eaa3316242785aa207b25f0d8618a1b4100ab6236d483aca527c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown/src/primitives/MarkdownText.tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown/src/primitives/MarkdownText.tsx",
+      "bytes": 9787,
+      "sha256": "b935f30d3b9f1bf903260b330b3e28047069aa7a88c89a313fdf02f349e33225"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/react-markdown@10.1.0_@types+react@19.3.0_react@19.3.0/node_modules/react-markdown/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/react-markdown@10.1.0_@types+react@19.3.0_react@19.3.0/node_modules/react-markdown/package.json",
+      "bytes": 5047,
+      "sha256": "c6b7d280b5e5a6b620ad252abfd318560f2223562e67414fcc3dcd1f784e89c5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/react-markdown@10.1.0_@types+react@19.3.0_react@19.3.0/node_modules/react-markdown/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/react-markdown@10.1.0_@types+react@19.3.0_react@19.3.0/node_modules/react-markdown/lib/index.js",
+      "bytes": 12802,
+      "sha256": "1c8d95723a74051c354dd4470fb669ae5269baf0ac62aa9b52c4516960ace5ee"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "bytes": 9967,
+      "sha256": "20bd24ab58c8d281b329e1df34655c8a6dc0cd56d8a087aff252b37025c6937c"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/references/architecture.md",
+      "realpath": "/Users/citrine/.agents/skills/assistant-ui/references/architecture.md",
+      "bytes": 6663,
+      "sha256": "00cee1aff4625b7865384ede0fc064e9915f640dfc3df70f2916c1677382a56c"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/vercel-react-best-practices/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/vercel-react-best-practices/SKILL.md",
+      "bytes": 7251,
+      "sha256": "71ed7794962fa6e803ee83030517b5b93a9f70fbfeb431ec4535c5480a8d8355"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/vercel-react-best-practices/rules/rerender-use-deferred-value.md",
+      "realpath": "/Users/citrine/.agents/skills/vercel-react-best-practices/rules/rerender-use-deferred-value.md",
+      "bytes": 1846,
+      "sha256": "8c3579576a61a949884167745dcfaf1d5426ba305cc61fd0a79602d70fda4909"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "rootAcceptance": {
+    "path": "/tmp/root-req17-chat06-measurement-acceptance.json",
+    "bytes": 8906,
+    "sha256": "f12dfc29908d4e6d7d9588cf51f7e8c6a0547d5b1590bdf6bfa2eea6200dc438"
+  },
+  "actions": {
+    "projectWrites": 0,
+    "productImports": 0,
+    "tests": 0,
+    "browser": 0,
+    "HTTP": 0,
+    "PG": 0,
+    "provider": 0,
+    "resourceSampling": 0,
+    "installs": 0
+  },
+  "limits": "Installed source/package pins establish local inspection only; future instrumented bundle and profiling build must bind their actual emitted imports separately."
+}

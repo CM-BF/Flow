@@ -133,6 +133,10 @@ U08/U12/REQ37的[领取显示固定源研究](../../docs/evidence/web-platform/d
 
 现有 MATURE02/TODO11、MSGQUICK-03/04 的[远程验证消费研究](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)固定比较 OPS-CI01 与 fe6。若后继选择远程验证，须选中同一不可变源码与真实 strict types / 26 exact direct 入口；浏览器显式调用原 fixture/check，保六组、两张390主题PNG、真实CSS、退出及清理证据。原 OPS 候选仅 contracts/handler，不覆盖此验收也不因此阻塞它的原独审；平台适配、结果留存与启用另需具体准备，不能直接搬 macOS 本地包。此研究归既有 TODO，不新增任务、claim、runner或预算，不继承旧37/4。
 
+GO 既有 REQ17/Web性能与 CHAT06 的[有界测量接口](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)归本表 WPF-REQ-17/21 与 MATURE06-03，不新编号。后继复用真实 stream fixture/Thread，保持最终原文与完整SHA/replay/identity/unknown；分别量 actual digest bytes、parse输入/调用、真实commit与composer输入延迟，默认smooth/defer和终态显示追平分开。128/4096前缀求和仅算术，全部指标NOT_RUN；透明插桩须原shared/renderer owner协调，不改协议/依赖或引新框架。
+
+原 MSGQUICK-04 的[portable strict→26direct 候选](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)已由唯一W01在原六scope的证据目录固定，产品fe6四源不变，候选已获限定静态独审、所有实际检查未运行。它复用原真实检查入口，外层CI containment与启用归原owner/GO；本地c1/b1不因此重写或继承远程结果。
+
 ## 执行顺序与交权规则
 
 当前优先级、fixed输入、检查窗口和具体下一步统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)及上列owner status；这里不再维护第二份滚动状态表。共享PG/Chrome由Lead明确交接，纯检查按自身获批预算独立fresh准入。所有项目写入先核D04精确范围与唯一writer；源码、独审、运行证据、main接收、实际页面发布分别记录。

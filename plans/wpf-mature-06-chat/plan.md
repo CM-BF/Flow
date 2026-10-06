@@ -29,6 +29,10 @@ CHAT06I01固定9da已main，官方runtime权威repository避免伪branch；Activ
 - [ ] **WPF-MATURE-06-05** 控制滚动与语音退路：后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿，无自动模型调用。
 - [ ] **WPF-MATURE-06-06** 完成可靠真实聊天旅程：实际App fixture覆盖失败/恢复/双pane；明确预算后单次真实provider观察，至少两次正文增长才称增量，没有partial如实记录不补query。
 
+### 既有正文性能验收的测量接口
+
+[GO REQ17/CHAT06固定接口与验收](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)补充原06-03、CHAT06-06/07客户端与WPF-PERF01-02，不新增子任务。相同最终UTF-8原文/hash，对照短段、长代码、长表格的patch分区/频率；首轮仅一有界pair。实际digest字节、parser调用/输入（含中断尝试）、Profiler提交及真实composer输入延迟分别记录；projection页/调度、smooth/defer与显示追平不可合成单个计数。缺样不当零延迟，128/4096前缀算术不当实测；完整原文/复制/表格语义、SHA/replay/identity/unknown必须保持。仅接口已研究，指标全部NOT_RUN；实际插桩/构建先由原shared/renderer owner审查，不扩Recovery21或Quick6、不迁移parser/hash包。
+
 ## 验证与交付规则
 
 每个实际子task直接链接本大task稳定ID及co-lead；进度只维护其唯一status。仅完整TODO验收通过、证据环境/固定源码明确并完成受控主线集成后才可将本大taskDone；当前所有大task验收仍开放。普通片段ready/review/merge/claim不向GO发送，内部worker通信保留，需GO解决的整任务独立blocker仅一次。新scope依D04查重/原子领取，本计划不授权重启个人服务、刷新用户tab或新增provider调用。验证按影响范围，不为文档重复产品测试。

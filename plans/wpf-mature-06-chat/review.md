@@ -11,3 +11,6 @@ Review target commit：UNKNOWN
 
 
 后继724的[root supervisor窄审](../../docs/evidence/web-platform/recovery01-724-supervisor-review-root.json)仅把RB1/RB2/RB3标为SOURCE_ADDRESSED、源码delta APPROVED/0blocking；worker实际App断言另审，RB4完整覆盖矩阵仍有pending。无imports/types/PG/browser运行，不提升本大task或Recovery正式review；22direct/browser仍NOT_RUN、窗口仍Lead。
+
+
+[REQ17/CHAT06测量接口研究](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)及root验收口径已作为原06-03输入归档；仅固定源与接口研究，性能指标全部NOT_RUN，未批准插桩、共享协议修改或优化收益，不改变本功能审查状态。

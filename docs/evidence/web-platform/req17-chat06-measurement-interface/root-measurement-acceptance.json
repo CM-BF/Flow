@@ -1,0 +1,136 @@
+{
+  "at": "2026-10-06T23:13:26.578163+00:00",
+  "kind": "REQ17/CHAT06 bounded measurement acceptance research; proposal only",
+  "source": "d721cf28123b45dab5b4e531281b312956e1bc28",
+  "inputs": [
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/markdown-text.tsx",
+      "bytes": 7301,
+      "sha256": "b041132faa98790395e4161329249eb1a38642ce7a5603042a67e7ab7ff72808"
+    },
+    {
+      "path": "packages/interaction/src/stream/patches.ts",
+      "bytes": 13510,
+      "sha256": "8868cc08faa2ac17f48e3c8cafc8d07521cccd635f05632647e571c60281addc"
+    }
+  ],
+  "mapping": "Existing GO REQ17/Web performance + CHAT06; manager maps to existing local WPF-REQ-17/WPF-REQ-21/MATURE06-03 without inventing another framework or task layer.",
+  "state": "PREPARATION_ONLY_ALL_PERFORMANCE_METRICS_NOT_RUN",
+  "measurementContract": [
+    {
+      "metric": "Digest calls and actual bytes",
+      "acceptance": "Count the BufferSource byte length delivered to actual SHA-256 per executed call, with identity, patch-fingerprint, full-prefix and unknown categories kept distinct. Preserve actual digest result/rejection. Fixture generation/expected digests and summary hashing must not contaminate measured ingestion. Prefix arithmetic is a prediction only; replay computes identity/fingerprint but skips sealed content reconstruction. Any unclassified calls stay explicit."
+    },
+    {
+      "metric": "Markdown parse calls and input",
+      "acceptance": "Observe the actual installed parsing entry, counting invocations and UTF-8 input bytes even for render attempts later abandoned. Remark transformer callbacks happen after parsing and cannot alone measure parse entry/duration. Counting message events, network patches or component renders is not a parser count. Instrumentation must be transparent, bounded and removable; do not replace the implementation with a hand-copied parser."
+    },
+    {
+      "metric": "Committed React work",
+      "acceptance": "Use actual Profiler onRender commits, retaining phase/actualDuration/commitTime. Deduplicate nested records by profiler identity plus shared commitTime when aggregating; parse attempts remain a separate series. Declare exact build mode/profiling configuration because normal production profiling is disabled; development StrictMode work must not be presented as normal production cost."
+    },
+    {
+      "metric": "Keyboard latency",
+      "acceptance": "Use owned fixture composer keystrokes which do not submit. Capture Event Timing input queue delay processingStart-startTime when supported, correlate target/interaction, and report filtering threshold, rounded duration and missing samples. No entry does not mean zero latency. A fallback event-handler-to-value-commit measurement must be named as that narrower metric, never full input-to-paint or product INP. Playwright command wall time includes automation overhead and is not the browser metric."
+    },
+    {
+      "metric": "Stream and display completion",
+      "acceptance": "Record patch arrival, verified state application, actual parse attempt, React commit, terminal stream receipt and display catch-up separately. smooth/defer may skip or add intermediate display work; do not impose patch count = parse count = commit count. Wait for exact final text/renderer settled state or mark incomplete rather than using network terminal alone."
+    }
+  ],
+  "boundedScenarioProposal": {
+    "families": [
+      "same short-paragraph document",
+      "same long fenced-code document",
+      "same long GFM table document"
+    ],
+    "pairedInputs": "Within each family preserve exact final UTF-8 text/hash and total byte count; vary patch partition/count/cadence. The source-analysis stress comparison is 128 versus 4096 equal-sized patches. It is not an approved run matrix or measured result.",
+    "limits": "Respect <=1 MiB aggregate attempt, <=4096 total accepted patches including any terminal patch, <=8 patches/page, legal UTF-8 boundaries and unchanged identity/revision/replay rules. If final phase needs its own patch, allocate it inside the existing cap rather than silently creating patch4097.",
+    "cadence": "Record proposed schedule and observed enqueue/apply times; hold the declared schedule duration and final content constant for the intended comparison. Report timer drift/coalescing and batch boundaries, never infer frame work from network frequency.",
+    "firstAdmission": "First future run should admit one named pair and bounded data/trace/cleanup limits. Expand only on evidence and explicit available resources, not an automatic full factorial suite.",
+    "outputBound": "Aggregate exact call/byte counters; retain only bounded timing samples and identify overflow/censoring. Do not copy every full prefix into trace output. Store one final fixture plus its hash and metadata instead of O(prefix-count * final-size) raw logs."
+  },
+  "semanticGates": [
+    "Existing full SHA-256 checks, identity, replay rejection, offsets, unknown/recovery and final settlement remain unchanged; no skip-verification or hash-semantic change.",
+    "Before speed comparison, check exact final/raw text remains reachable, fenced-code clipboard content preserves full code and line breaks, and GFM table headers/cells/order/accessibility semantics remain intact.",
+    "Record current smooth/defer behavior as baseline. Any comparison changing them must also report display catch-up and terminal status semantics; fewer displayed intermediates alone does not prove cheaper parsing.",
+    "Use the actual assistant-ui Thread/part context and its current renderer. A standalone alternate renderer is a separate experiment and cannot replace current product acceptance.",
+    "No Streamdown/hash-library upgrade is selected. Shared interaction instrumentation or production changes belong to its original owner; Web may propose an isolated fixture consumer in its own later claimed scope."
+  ],
+  "arithmeticOnly": {
+    "formula": "For N bytes in K equal append patches, sum of full prefixes is N*(K+1)/2; excludes identity/fingerprint/terminal/replay hashing.",
+    "oneMiB128": 67633152,
+    "oneMiB4096": 2148007936,
+    "notClaimed": [
+      "elapsed time",
+      "CPU time",
+      "keyboard latency",
+      "token savings",
+      "actual parse counts",
+      "measured speedup"
+    ]
+  },
+  "officialReferences": [
+    {
+      "url": "https://www.assistant-ui.com/llms.txt",
+      "use": "Current docs index checked per local skill; not evidence of installed package behavior."
+    },
+    {
+      "url": "https://www.assistant-ui.com/elements/markdown-text",
+      "use": "Renderer belongs to runtime text-part context; modern documentation is not a substitute for installed version source."
+    },
+    {
+      "url": "https://www.assistant-ui.com/docs/guides/streamdown",
+      "use": "Alternative renderer guide only; no migration chosen or installed."
+    },
+    {
+      "url": "https://react.dev/reference/react/Profiler",
+      "use": "onRender identifies actual committed updates; profiling overhead and production-build caveat."
+    },
+    {
+      "url": "https://react.dev/reference/react/useDeferredValue",
+      "use": "Deferred render attempts can be interrupted/restarted and are distinct from request counts."
+    },
+    {
+      "url": "https://www.w3.org/TR/event-timing/",
+      "use": "Input delay formula, entry support/threshold and rounded duration; missing entries are censored, not zero."
+    }
+  ],
+  "cleanCode": {
+    "scope": "Measurement responsibilities and evidence output",
+    "findings": [
+      "Keep digest/parser/commit/input timelines distinct instead of a generic performance success flag.",
+      "Use actual source seams and lossless aggregates rather than copied implementations or unbounded full-prefix logs."
+    ],
+    "fixes": "Acceptance/interface proposal only; no code or protocol change.",
+    "unresolved": "Exact instrumentation hook compatibility and all performance/semantic runtime results remain unverified."
+  },
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "sha256": "20bd24ab58c8d281b329e1df34655c8a6dc0cd56d8a087aff252b37025c6937c"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/vercel-react-best-practices/SKILL.md",
+      "sha256": "71ed7794962fa6e803ee83030517b5b93a9f70fbfeb431ec4535c5480a8d8355"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "actions": {
+    "projectWrites": 0,
+    "installs": 0,
+    "productImports": 0,
+    "performanceRuns": 0,
+    "browserStarts": 0,
+    "PGStarts": 0,
+    "providerCalls": 0,
+    "newClaims": 0
+  }
+}

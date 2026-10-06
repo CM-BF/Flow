@@ -1,0 +1,130 @@
+{
+  "recordedAt": "2026-10-06T23:20:47.786458+00:00",
+  "kind": "PORTABLE_SOURCE_CANDIDATE_INTAKE_NOT_RUN",
+  "sourceReview": "APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN, root+peer, 0 blocking",
+  "candidateTarget": "dc67b3410c12f321d62a1565145e184b52b0ca84",
+  "ownerMetadata": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+  "productTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "owner": "w01_owner",
+  "ownerWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "ownerBranch": "codex/web-message-settings-quick-controls",
+  "claim": {
+    "id": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "scopeCount": 6,
+    "unchanged": true
+  },
+  "existingMapping": "WPF-MATURE-02-11 / MSGQUICK-04 verification preparation; no new task or runner authority",
+  "managerReadOnlyVerification": {
+    "localHeadMatches": true,
+    "porcelainEmpty": true,
+    "remote": "Owner reported normal push and actual ls-remote equals final; no additional manager remote fetch",
+    "productSourceDiffAgainstFe6": [],
+    "changedFiles": [
+      "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "docs/evidence/wpf-message-settings-quick-controls/portable-candidate-manifest.json",
+      "docs/evidence/wpf-message-settings-quick-controls/portable-check/README.md",
+      "docs/evidence/wpf-message-settings-quick-controls/portable-check/accept.mjs",
+      "docs/evidence/wpf-message-settings-quick-controls/portable-check/expected-tests.json",
+      "docs/evidence/wpf-message-settings-quick-controls/portable-check/prepared-manifest.json",
+      "docs/evidence/wpf-message-settings-quick-controls/portable-check/run.mjs",
+      "docs/evidence/wpf-message-settings-quick-controls/portable-check/source-pins.json",
+      "docs/evidence/wpf-message-settings-quick-controls/portable-check/static-checks.json",
+      "docs/evidence/wpf-message-settings-quick-controls/portable-check/tsconfig.json",
+      "docs/evidence/wpf-message-settings-quick-controls/portable-check/vitest.config.mjs",
+      "docs/evidence/wpf-message-settings-quick-controls/portable-preflight-claim.json",
+      "docs/evidence/wpf-message-settings-quick-controls/quality.md",
+      "docs/evidence/wpf-message-settings-quick-controls/root-b1-preparation-review.json",
+      "plans/wpf-message-settings-quick-controls/plan.md",
+      "plans/wpf-message-settings-quick-controls/review.md",
+      "plans/wpf-message-settings-quick-controls/status.md"
+    ],
+    "allChangesWithinExistingEvidenceAndPlan": true
+  },
+  "contractSummary": [
+    "117 fixed source/config/lock bytes and installed package versions; immutable selected checkout required. Linux resolution and installed optional binaries are not verified.",
+    "Targeted relative strict noEmit then one actual TSX direct file, 26 exact names with zero failures/skip/todo; Node direct CSS=false only.",
+    "Worker can only emit CHECKS_PASSED_PENDING_CLEANUP. Independent accept consumes externally observed actual exit, unique complete terminal, exact result/raw hashes and outer cleanup receipt.",
+    "Outer CI owner supplies containment, admitted total/work/tmp/output bounds and teardown; script is not a new general supervisor or workflow."
+  ],
+  "authorStaticChecks": {
+    "syntax": "Three node --check commands PASS, no config import",
+    "aliasHelper": "14 exact alias pure-expression checks PASS",
+    "limitations": "Static/helper results only, not actual types/direct/browser or Linux dependency execution"
+  },
+  "runtime": {
+    "types": "NOT_RUN",
+    "direct26": "NOT_RUN",
+    "browser6": "NOT_RUN",
+    "install": "NOT_RUN",
+    "remoteWorkflow": "NOT_ENABLED / NOT_RUN per root CI intake",
+    "gate": null,
+    "holder": null,
+    "reservation": false
+  },
+  "localPackets": {
+    "c1": "Preserved unchanged, original metadata3fb; at future real admission rebind current owner HEAD then verify fe6 inputs",
+    "b1": "Preserved unchanged, original metadata38bf; c1 actual accepted prerequisite and new exact native boundary still required",
+    "noAutomaticHeadRebindInThisBatch": true
+  },
+  "evidence": [
+    {
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/portable-candidate-manifest.json",
+      "archive": "owner-candidate-manifest.json",
+      "bytes": 2460,
+      "sha256": "f8fd24435fca15bea2ddde50182877ca345f723aa39d2397a807e6af54c2ccdb"
+    },
+    {
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/portable-check/prepared-manifest.json",
+      "archive": "owner-prepared-manifest.json",
+      "bytes": 738,
+      "sha256": "9f5c27718bf4e1d29f4d03c7ffdb6600273adee8e1c7606eec6573826bb29f7d"
+    },
+    {
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/portable-check/README.md",
+      "archive": "owner-report.md",
+      "bytes": 6657,
+      "sha256": "b6829b272e05abeb7ee2f0ea045ad492f784b5166168e9d7a90f89e930bd620c"
+    },
+    {
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/portable-check/static-checks.json",
+      "archive": "owner-static-checks.json",
+      "bytes": 5906,
+      "sha256": "efbc2ed82c7977df531db4351f694c200764c8566f1a813e32a6634b56924688"
+    }
+  ],
+  "reviews": [
+    {
+      "path": "root-preparation-review.json",
+      "bytes": 5516,
+      "sha256": "283a6aa4a5741ee4da57b5c4a1f4023470f9fa1f1376fec27e85f46eb107264a"
+    },
+    {
+      "path": "peer-failure-path-review.md",
+      "bytes": 4058,
+      "sha256": "9cf077621be9c8fbacff69b2f656cf3ce9f88ba2d28ee27cefd8227bc5ffd7dc"
+    }
+  ],
+  "metadataAtCandidateReview": "ffdc513a5836281ead4908a66b2b50cf931644bd",
+  "metadataCloseout": {
+    "at": "2026-10-06T23:22:51.244642+00:00",
+    "ownerReport": "Normal push and actual ls-remote equal final; scope stopped, claim839e v1 retained",
+    "managerLocalHeadAndClean": true,
+    "nineCandidateFilesUnchanged": true,
+    "fourProductsUnchanged": true,
+    "localPackets": [
+      {
+        "path": "/private/tmp/msgquick-checks-c1/manifest.json",
+        "sha256": "4bf7cf408d4eb764c138c5b4cc253c1e6704d28b3575596cc74ea00dd57ab240",
+        "unchanged": true
+      },
+      {
+        "path": "/private/tmp/msgquick-b1/manifest.json",
+        "sha256": "acee9bc2f242388ef36f14d70e36cca3723532e8c19a43dec1973cc4cfa2f654",
+        "unchanged": true
+      }
+    ],
+    "sourceReviewArtifactsArchivedByOwner": true,
+    "productExecution": false
+  }
+}

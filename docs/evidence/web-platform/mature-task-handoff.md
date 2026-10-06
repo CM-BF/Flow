@@ -1,6 +1,6 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-06T23:07:45.744217+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+更新：2026-10-06T23:22:51.244642+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
 
 ## 共享窗口
 
@@ -13,7 +13,7 @@
 **此前已交接回执：[Git/config 操作权已归还 + 两预览退役/释放](ops-two-fixture-retirement/lead-handoff-current.json)。** Root 一次精确建树授权已结束；W01 的源码 claim 不保留 Git/config 委派权。
 [原退役 receipt](ops-two-fixture-retirement/owner-raw/retirement-receipt.json) · [ACTIVITY CAS RELEASED](ops-two-fixture-retirement/activity-retirement-release-receipt.json) · [CHAT CAS RELEASED](ops-two-fixture-retirement/chat-retirement-release-receipt.json) · [本组冻结消费者确认](ops-two-fixture-retirement/root-known-consumers.json)。**最新 Lead fresh 审计：ACTIVITY `.vite` 仍被 PID15811 / 51452–51454 消费，STRICT KEEP；只 CHAT 保留精确缓存候选。** 仅旧53851已退役，不得停止51454或扩大服务操作。CHAT仍须 Lead 最终 fresh 核查；不重停、不扩依赖目录。
 
-**Web 无重运行、预约或 gate；Mika SVC07 为下一实际运行请求，C02 排后，均不冒已启动。** 快速设置 [fe6源码与c1精确准备均已获限定批准](message-settings02-c1-prepared/report.md)，owner已静态封存38bf双端clean；全部新检查仍未运行，准入请求不等于grant或窗口。[Lead 22:12:19 已观察179来源实际加载](message-settings-quick-controls-provision/registration-request.json)，owner 解析已 errors=[] / 5 TODO，本组未复采。
+**Web 无重运行、预约或 gate；Mika SVC07 为下一实际运行请求，C02 排后，均不冒已启动。** 快速设置 [fe6源码与c1精确准备均已获限定批准](message-settings02-c1-prepared/report.md)，owner已交付[portable专用候选](message-settings02-portable-prepared/report.md)，当前60ffa双端clean；本地c1/b1保持旧绑定待真正准入，全部新检查仍未运行，准入请求不等于grant或窗口。[Lead 22:12:19 已观察179来源实际加载](message-settings-quick-controls-provision/registration-request.json)，owner 解析已 errors=[] / 5 TODO，本组未复采。
 [九树原轮历史结果](ops-nine-vite-cache/report.md)：当时七棵保留预览均 KEEP；其中本轮三项的实际退役及释放已由页首新回执更新，其余保留边界不变。[两 exact cache 有界确认](ops-nine-vite-cache/two-cache-manager-confirmation.json)已由 Lead 消费并[完成回收](ops-nine-vite-cache/lead-two-cache-cleanup-intake.json)。该轮仅 workspace-cache/lifecycle-baseline 的 `.vite`，当时 source/true deps/siblings 保持；后来的 workspace-cache 依赖操作另见页首原件。
 [Fresh D04](ops-nine-vite-cache/fresh-ledger.json)核九树原 claim 均 released，但这不等于预览退役或缓存没有消费者。[owner 原文与机器决策](ops-nine-vite-cache/request.json)已齐，[root 当前准备声明](ops-nine-vite-cache/root-known-consumers.json)无直接命中不替代退役；Lead 新目录／内核原件已归档：两处当时无kernel consumer；只有 Lead 最终 fresh 检查并操作，未知路径仍 KEEP。
 [两缓存 root 正式合证](ops-nine-vite-cache/root-two-cache-confirmation.json)与历史确认均保留；当时 Lead 报 free 1,182,425,088 B仍不足原门槛；这是历史回收时点，最新依赖回收后观察见页首，本组不重采/不启动。
@@ -57,7 +57,7 @@
 
 [远程 CI 消费研究已收口](ops-ci01-web-consumer-intake/report.md)：固定 OPS-CI01 只执行 contracts/handler，四个 Web 文件也不是 fe6；不能当作新 26 direct 或六组/双 PNG 页面验收。只关联既有 TODO11 待验项，不新建任务/runner、不阻 OPS 原独审、不开放运行窗口。
 
-- 快速设置：[独立真实CSS/六组HTTP浏览器静态包](message-settings02-browser-prepared/report.md)已获限定静态准备独审；c1类型/direct实际通过与新精确Chrome边界为前置，全部新checks NOT_RUN，无gate/预约。
+- 快速设置：[portable strict→26direct 专用源码候选](message-settings02-portable-prepared/report.md)已固定并获限定静态独审，原scope内无产品变化；当前所有实际检查NOT_RUN。[独立真实CSS/六组HTTP浏览器静态包](message-settings02-browser-prepared/report.md)已获限定静态准备独审；c1类型/direct实际通过与新精确Chrome边界为前置，全部新checks NOT_RUN，无gate/预约。
 
 - Recovery：原 owner 已交[8ed 两文件固定源码](recovery01-8ed-identity-source/intake.json)，owner 已 seal 000a clean / 19 pins 核同；[root 限定源码复审](recovery01-8ed-identity-source/root-source-review.json)关闭两项 finding。
   [固定设计](recovery01-rec4d-identity-design/root-design-review.json)要求可辨识草稿摘要与 exact record 身份；同段补[关闭时合法入口回焦](recovery01-rec4d-identity-design/root-focus-review.json)，保持其他 17 源及原权限/断言。
@@ -81,9 +81,10 @@
 P01 认证外层 host 的[限定差异研究](recovery-connection-p01-4d330-delta/intake.json)归原 REQ22/23、MATURE06-04；不新增 task/slot/claim。
 其 private RecoveryHost.restore(record, lease) 与 UI RecoveryWorkspace.restore(record, retry?) 不可混用。
 [MATURE02 快速设置接口已收敛](message-settings-ownership-interface/root-review.json)：opaque token + 同步 host CAS，另以每次打开的私有 liveness 撤销关闭后的 Apply/omit；组件接口可独立，生产host交权另计。原 TODO11四产品 literal 已在独立六范围领取，原 Settings01 released claim 不复用。
-[精确 provision/take 实际回执](message-settings-quick-controls-provision/actual-intake.json)：WPF-MESSAGESETTINGS02 / W01，固定 c8e 的352输入/3,019,669逻辑B新树已建并 fresh 六scope COMMITTED；首 canonical b803 已提交；当前fe6源码/c1静态准备已审；owner新38bf仅浏览器准备metadata，c1原绑定3fb留待实际准入重绑；类型/direct/browser仍NOT_RUN，未获运行准入。Root 一次建树权已归还 Lead。
+[精确 provision/take 实际回执](message-settings-quick-controls-provision/actual-intake.json)：WPF-MESSAGESETTINGS02 / W01，固定 c8e 的352输入/3,019,669逻辑B新树已建并 fresh 六scope COMMITTED；首 canonical b803 已提交；当前fe6源码/c1/b1静态准备已审；owner新60ffa已封存portable候选限定静态独审，本地c1原绑定3fb、b1原38bf留待实际准入重绑；类型/direct/browser仍NOT_RUN，未获运行准入。Root 一次建树权已归还 Lead。
 [键盘与读屏验收细化](message-settings-quick-controls-acceptance/keyboard-root-review.json)保当前编辑生命周期/合法焦点；[生产插件接线研究](message-settings-quick-controls-acceptance/plugin-host-research.json)归原 REQ22/23、MATURE02-11/001-05，保激活租期与唯一 C/session，等待后继交权，不扩当前六scope。
 [领取历史显示后继](dashboard-claim-presentation/root-review.json)归 U08/U12/REQ37 与原 D04-03/D01-02/03：区分曾释放/从未领取，不改变账本或当前45f8候选，不占其预算。
+[REQ17/CHAT06 测量接口](req17-chat06-measurement-interface/report.md)已归原REQ17/21/MATURE06-03：复用真实Thread/stream，digest、parse、commit、composer延迟与显示追平分别验收，全部指标未运行；共享/renderer精确插桩仍归原owner，不改协议/依赖或引新框架。
 MATURE01/05/06 视觉与 D06 固定架构快照沿已有计划，不扩当前 source 范围。
 
 ## 历史入口

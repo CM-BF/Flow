@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-06T23:21:19.467436+00:00",
+  "reviewer": "root / gpt-6-astra; independent source review, no product execution",
+  "target": "dc67b3410c12f321d62a1565145e184b52b0ca84",
+  "metadataObserved": "ffdc513a5836281ead4908a66b2b50cf931644bd",
+  "scope": "docs/evidence/wpf-message-settings-quick-controls/portable-check",
+  "productTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "conclusion": "APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN",
+  "blockingFindings": [],
+  "fixedCandidateFiles": [
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/README.md",
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/accept.mjs",
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/expected-tests.json",
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/prepared-manifest.json",
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/run.mjs",
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/source-pins.json",
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/static-checks.json",
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/tsconfig.json",
+    "docs/evidence/wpf-message-settings-quick-controls/portable-check/vitest.config.mjs"
+  ],
+  "candidateManifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/portable-candidate-manifest.json",
+    "bytes": 2460,
+    "sha256": "f8fd24435fca15bea2ddde50182877ca345f723aa39d2397a807e6af54c2ccdb"
+  },
+  "verification": {
+    "fixedReadOnlyInputs": 117,
+    "preparedPayloadHashes": 7,
+    "candidateFilesAndWorkingBytesMatched": 9,
+    "productFilesUnchangedFromFe6": 4,
+    "exactExpectedNames": 26,
+    "sourceHashErrors": 0,
+    "newAppsPackagesDiff": false,
+    "localPacketManifestsUnchanged": [
+      {
+        "path": "/private/tmp/msgquick-checks-c1/manifest.json",
+        "bytes": 2528,
+        "sha256": "4bf7cf408d4eb764c138c5b4cc253c1e6704d28b3575596cc74ea00dd57ab240"
+      },
+      {
+        "path": "/private/tmp/msgquick-b1/manifest.json",
+        "bytes": 4942,
+        "sha256": "acee9bc2f242388ef36f14d70e36cca3723532e8c19a43dec1973cc4cfa2f654"
+      }
+    ]
+  },
+  "sourceAssessment": [
+    "Relative configs resolve this checkout and real installed workspace packages; strict/noUncheckedIndexedAccess/noEmit and a single explicit direct test remain distinct steps. No donor absolute aliases or installer/workflow were added.",
+    "Actual sourceCommit/clean checkout plus 117 fixed source/config/lock hashes and installed package versions are checked. An arbitrary newer main revision does not automatically satisfy this fixed closure.",
+    "Each child must actually exit zero with no signal/error/output overflow; bounded complete Vitest JSON must show one exact file, 26 expected passed names, no pending/todo/failure. Failure, no collection, timeout, missing report or mismatch cannot become a passed candidate.",
+    "CHECKS_PASSED_PENDING_CLEANUP deliberately excludes outer cleanup. Offline acceptance requires separately trusted receipt provenance, matching source/run/result/raw hashes, one complete terminal observation, actual external exit0, admitted external elapsed and owned process/scratch absence.",
+    "The script does not supply recursive containment, physical scratch write quota, platform installation or through-exit supervision. README correctly assigns these to the future admitted CI owner; the offline checker certifies consistency, not authenticity of caller assertions.",
+    "Alias escaping early-read ambiguity is closed by exact Git character bytes plus owner builtin-only expression evidence for 14 real specifiers and negative examples. This was not an established product defect or product test.",
+    "Nine files are a dedicated verification candidate; original fe6 products and local c1/b1 payloads stay unchanged. Browser prerequisites and acceptance remain separate."
+  ],
+  "peer": {
+    "path": "/private/tmp/msgquick-portable-dc67-failure-path-peer.md",
+    "bytes": 4058,
+    "sha256": "9cf077621be9c8fbacff69b2f656cf3ce9f88ba2d28ee27cefd8227bc5ffd7dc"
+  },
+  "staticEvidence": "Owner three node --check invocations and isolated alias expression checks passed; source hashes verified. Root did not rerun those checks, import candidate/config, or run any product test.",
+  "unverified": [
+    "actual Linux/other-platform package and optional-binary behavior",
+    "actual TypeScript resolution/typecheck",
+    "actual Vitest selection and all 26 checks",
+    "actual remote run/containment/deadline/cleanup",
+    "all browser rendering, six groups and two screenshots",
+    "real App/Queue/Recovery production integration"
+  ],
+  "admission": "No new local or remote execution grant, workflow activation, resource reservation, model call, installation or browser prerequisite approval. Future execution must use an independently reviewed actual checkout and outer owner boundary.",
+  "quality": {
+    "method": "Local clean-code and existing Web testing methods; responsibilities, failure states, source identity, bounded evidence and direct consumer scope checked.",
+    "findings": "No blocking issue within the stated dedicated-candidate/trusted-outer-owner interface.",
+    "fixes": "No root implementation edits; early alias ambiguity resolved through bytes and isolated owner static evidence."
+  },
+  "rootRuntimeChecks": 0
+}
