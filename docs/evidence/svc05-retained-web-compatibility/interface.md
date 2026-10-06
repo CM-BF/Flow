@@ -14,3 +14,5 @@
 暂定运行边界（未获许可）：一个DB/center/runner、两个App顺序/一Chrome；90s工作+20s清理，raw8MiB/tmp64MiB观测阈值，fresh1GiB+128MiB且运行保持1GiB+64MiB；实际窗口由Lead根据源码和资源另定。所有配置凭据仅合成/内存并脱敏；checkpoint包含最小身份/失败/资源后才DROP或rm。不得清原只读artifact copies。
 
 依赖：现有af51源/它的已固定第三方视图，Chrome和Playwright沿已审Web安装来源，仅resolve/hash准备；缺件提交精确donor需求，不安装、不指向moving main源码。动态SQL/跨包入口显式绑定。无新调度器/部署FSM，后续受管import仍用现CLI。
+
+收口约束：PG观察每轮remaining query_timeout且晚回零仍unknown；停止周期采样后，whole groups停止及输出保存后，必须末采free/raw/tmp再checkpoint和清理。报告仅在清理成功后于own私有evidence调用固定import/verify，格式失败使最终outcome失败。
