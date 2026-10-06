@@ -1,5 +1,10 @@
 # 成熟聊天大task来源与登记队列
 
+
+**最新A2：NOT_RUN，PG/Chrome窗口已立即交回Lead。** 2026-10-06 **15:58:36.348208Z** 唯一fresh可用 **1,103,237,120B < start1,107,296,256B**，差4,059,136B；不复采/不降门槛/不重试。原四scope bfb v3/无overlap、获审2691两源与freeze HEAD0b3e、17runner依赖、af51两源+外部13metadata+10只读依赖、d629 artifact/source freeze及旧raw/清理账全通过，但**未创建gate、0新A/PG/Chrome、累计仍3,874ms/余176,126ms**。[本次完整准入与来源](release03-a2-not-run-intake.json) / [原只读核验](release03-a2-not-run-admission.json)。首管理helper把同树contracts依赖误按第三方字段读取，在0space/0run阶段停止，按固定362实际字段核正后仅一次空间观察，原helper错误保留，不当产品red。
+
+[root2691窄审](release03-2691-source-review-root.json)已闭合1a7 detail/reference P1，contract59cde31c…/11,859B；旧CHANGES_REQUESTED历史不改。新af51尚无成功A可供B reuse，不签绿报告/不发布；Recovery当前27direct仅只读准备，不继承该空间读数或测试窗口，W01/panels已知停止运行。
+
 **当前：RELEASE03 A-only实际两项失败并完成清理，总PG/Chrome窗口已交回Lead。** [实际证据与管理逐hash核验](release03-a-actual-intake.json) / [root独立retained-evidence审查](release03-a-actual-362-review-root.json) / [唯一资源入口](resource-window-current.json)。固定432b脚本、backend362、formal artifact506/d629；15:27:55.348Z开始，15:27:59.219Z清理完。attachment-only `POST /api/runner/events` 500；mixed200/accepted1，但history仅knowledge为known，未满足v2材料unknown/metadata-unavailable。两原raw保留，**B/Chrome NOT_RUN、compatibilityId=null、无SVC绿报告**。累计 **3.874/180秒，余176.126秒**；10raw共80,470B。唯一DB已删除、cleanup errors=[]、worker381 exit0，监督器结束；不是准入/清理失败，不推断个人服务表现。
 
 **Lead已直接读raw并接收，新的更高优先后继是固定修复组合。** 原backend owner/Lead准备 **362 + main cde6646 store.ts三行已审history修复**，必须交immutable新HEAD/tree/source清单，并把源码tuple与实际部署tuple分开。W01不改共享源、不改旧失败期望、不重跑未变362、不覆盖当前原WT；同descriptor与原剩余预算、8MiB、fresh窗口/资源/合法scope复验，**新A通过后才B，全兼容后才原受管个人发布流程**。当前个人backend362/v15、Web8d8/caa1/v2未变；最终源码输入b298/af51已到，尚无实际兼容/部署通过。普通步骤沿既有授权，无需GO重复批准；DPERF04尚未take，源码启动低于此发布路径。
@@ -18,7 +23,7 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 ## 当前优先队列（当前安全点；以下较早时点只作历史）
 
-**当前RELEASE source HOLD，尚未签新gate**：[root1a7正式源审](release03-1a7-source-review-root.json)为 **CHANGES_REQUESTED_P1_DETAIL_CONTRACT_MISMATCH / RELEASE1A7-P1**：真实ConversationContextDetail被送入reference response schema，缺必需executionInputId/digest会导致harness错误红；原W01四scope最小修正并固定复审。target1a7 / metadataa92cb7此前双端clean；[管理gate接缝报告](release03-gate-schema-review/report.md)只确认可提供字段，绝不是源审通过。previousRuntimeMs=3,874，backend.metadata只取root独立af51精确13项，未来B sourceCommit取真实A sources.head（metadataHEAD），实施target另绑定；cleanup无marker字段、旧红raw缺新字段绝不回填。目前没有成功A可签，余176.126秒/8MiB不重置，0新运行/space/allowRun。
+**历史1a7 source HOLD（已由顶部2691闭合），该时点未签gate**：[root1a7正式源审](release03-1a7-source-review-root.json)为 **CHANGES_REQUESTED_P1_DETAIL_CONTRACT_MISMATCH / RELEASE1A7-P1**：真实ConversationContextDetail被送入reference response schema，缺必需executionInputId/digest会导致harness错误红；原W01四scope最小修正并固定复审。target1a7 / metadataa92cb7此前双端clean；[管理gate接缝报告](release03-gate-schema-review/report.md)只确认可提供字段，绝不是源审通过。previousRuntimeMs=3,874，backend.metadata只取root独立af51精确13项，未来B sourceCommit取真实A sources.head（metadataHEAD），实施target另绑定；cleanup无marker字段、旧红raw缺新字段绝不回填。目前没有成功A可签，余176.126秒/8MiB不重置，0新运行/space/allowRun。
 
 **Recovery1b8源码安全点，未行为通过**：owner报告impl1b8a335ecf26ece7539ad19e634508ac12ca3729 / metadataf29751812090f85d5d01a4c67a4bdca09566ec85已push/clean，五源修完整current draft门禁/保存顺序，其余14源对02d相同；[root窄审](recovery01-1b8-material-source-review-root.json)结合[W01独立八源审查](recovery01-1b8-material-source-review-peer/report.md)确认M1/M2 SOURCE_ADDRESSED、0新增blocking。27direct/types/browser NOT_RUN，旧4ba20/20只保原范围，formal review仍NOT_STARTED，types7.186/direct27.460余额不变。原21/6ffv4未amend，本段不开放运行窗口。
 

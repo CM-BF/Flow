@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:52 UTC |
+| 最近更新 | 2026-10-06 15:59 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,8 +15,8 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 正式format2已备；fixed362实际A两history失败，原raw封存/DB与进程清理完成，B/Chrome NOT_RUN，无兼容绿回执 |
-| 下一可用交付 | af51最终tuple已到，1a7 gate字段一致但root源审P1 detail契约误用需原owner修正；新fixed获审后同artifact/余176.126秒fresh先A再B，原operator发布 |
-| 当前阻塞 | ACTIVE: 原362两项实际红保留；1a7 harness P1待修，新af51尚无成功A/B或部署；未发新gate，不等完整Recovery/SVC06 |
+| 下一可用交付 | 2691源修已APPROVED；af51/artifact依赖核通过但A2单次空间不足，无gate/0运行/窗口归Lead；等新实质条件再原预算先A后B |
+| 当前阻塞 | ACTIVE: 新组合尚无实际成功A/B；A2 free1,103,237,120B<1,107,296,256B，未执行并交回窗口；旧362两红保留，不等整个Recovery/SVC06 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |

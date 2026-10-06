@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-06T16:00:13.889928+00:00",
+  "state": "A2_NOT_RUN_RESOURCE_WINDOW_RETURNED",
+  "freshLedgerObservedAt": "2026-10-06T15:56:19.925Z",
+  "note": "Claim.observedAt in the raw database row is null; fresh observation timestamp is the CLI response timestamp here, not that historical claim field.",
+  "availableBytes": 1103237120,
+  "startBytes": 1107296256,
+  "deficitBytes": 4059136,
+  "spaceObservedAt": "2026-10-06T15:58:36.348208+00:00",
+  "spaceSamples": 1,
+  "passedChecks": {
+    "claim": true,
+    "source2Runner17Backend2Metadata13Deps10": true,
+    "artifactSourceFreeze": true,
+    "budgetRawCleanup": true
+  },
+  "currentSource": {
+    "head": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
+    "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+    "files": [
+      {
+        "path": "apps/web/test/web-current-preview.fixture.ts",
+        "bytes": 28313,
+        "sha256": "353aabc21dffc9461015f2d798e3a6894f5eeb58714368de21a75bf18d38a1bb"
+      },
+      {
+        "path": "apps/web/test/web-current-preview.browser.ts",
+        "bytes": 43464,
+        "sha256": "f741966746e4222380288c93f92e6fbec092ff042633717752b785cc69943ffa"
+      }
+    ],
+    "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086"
+  },
+  "archives": [
+    {
+      "source": "/tmp/d01-release03-history2-20261006-155733-c206a1-ready.json",
+      "path": "release03-a2-not-run-admission.json",
+      "bytes": 5857,
+      "sha256": "d1ca4d11f64f81ef9fba38e880130c75f888678bff34e0b2a784c2f30ea90141"
+    },
+    {
+      "source": "/tmp/d01-release03-history2-20261006-155733-c206a1-admission.json",
+      "path": "release03-a2-manager-schema-check.json",
+      "bytes": 2505,
+      "sha256": "5a29df1bb6f957ec82204f94422895eb13afa9f300602e45afbfdf372331772b"
+    },
+    {
+      "source": "/tmp/root-release03-2691-source-review.json",
+      "path": "release03-2691-source-review-root.json",
+      "bytes": 4077,
+      "sha256": "b9b1c1db2774ce01946d18e46c5126f5bbde86d20f4734855fccd633ad1f7e56"
+    }
+  ],
+  "runtime": {
+    "newRuns": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "gateCreated": false,
+    "priorSpentMs": 3874,
+    "remainingMs": 176126,
+    "priorTwoFailuresPreserved": true
+  },
+  "window": "Immediately returned to Lead; no local runtime window reserved; W01/panels notified. No polling or lower gate.",
+  "managerPrecheck": "One initial read-only dependency schema assumption failed before any free sample. Same-tree contracts uses exact362 source, not third-party package hash. Corrected bounded read checks passed; original failed helper audit retained, not a product failure.",
+  "recovery": "Current source1b8/metadata0eef remains frozen;27direct NOT_RUN. Read-only readiness preparation resumes only; no resource or test-window assumption.",
+  "cleanCode": "Exact external13 closure, separate source approval/runtime admission, no false product red from environment or manager field mismatch; current canonical now says resource NOT_RUN."
+}

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:52 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:59 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 旧362两history红/清理封存；新harness1a7 gate字段已核，root源审P1 detail契约误用待修，未准入；Recovery1b8材料M1/M2窄审SOURCE_ADDRESSED，27direct/browser未跑 |
-| 下一可用交付 | W01原四scope修RELEASE1A7-P1并固定复审；af51组合获审及fresh条件后按余176.126秒先A再B；Recovery原21窄审/后继验证，REQ45 stop/cancel研究归原TODO |
-| 当前阻塞 | ACTIVE: RELEASE1a7源码P1必须修正，新backend尚无成功A/B；Recovery真实IDB/App未验；本段无运行gate/窗口或个人更新 |
+| 当前产出 | 旧362两history红封存；2691已修1a7 P1且源码获审，A2单次free未达标/无gate/0运行/窗口归Lead；Recovery1b8材料源码已闭合，27direct/browser未跑 |
+| 下一可用交付 | RELEASE新af51组合待后续实质窗口/资源条件，原余176.126秒先A再B；Recovery仅准备当前27direct准入材料，禁止复用旧2498预检 |
+| 当前阻塞 | ACTIVE: A2 free1,103,237,120B低于1,107,296,256B；新backend尚无成功A/B，Recovery真实IDB/App未验；无本组运行窗口/个人更新 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |

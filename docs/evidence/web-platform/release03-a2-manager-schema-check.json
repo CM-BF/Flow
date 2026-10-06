@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-06T15:57:33.811855+00:00",
+  "run": "history2-20261006-155733-c206a1",
+  "state": "NOT_RUN_PREFLIGHT",
+  "gateCreated": false,
+  "checks": {
+    "originalFourClaim": true,
+    "sourceAndLocalProtected": true
+  },
+  "spaceSamples": 0,
+  "window": {
+    "source": "root relayed latest direct Lead notification plus current owner freeze receipts",
+    "Lead": "15:54:23 legal sparse complete; F01/O15 explicitly held and ONE A2 returned to this group, not old free used",
+    "W01": "0b3e metadata/source frozen, no run/free sampling",
+    "Recovery": "0eef metadata/source frozen, no direct/browser/window; prep paused",
+    "scope": "This one history attempt only; no B/Chrome/build; return after cleanup or NOT_RUN"
+  },
+  "claim": {
+    "observedAt": null,
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-current-preview.browser.ts",
+      "apps/web/test/web-current-preview.fixture.ts",
+      "docs/evidence/wpf-release03",
+      "plans/wpf-release03-current-preview"
+    ],
+    "state": "active",
+    "branch": "codex/web-current-preview-compatibility",
+    "origin": "new",
+    "taskId": "WPF-RELEASE03",
+    "worker": "w01_owner",
+    "claimId": "bfb209ae-4c74-49cd-8140-f6d4bd3b0f92",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+    "createdAt": "2026-10-06T14:37:56.939Z",
+    "updatedAt": "2026-10-06T14:47:08.816Z",
+    "needsVerification": false,
+    "overlap": []
+  },
+  "source": {
+    "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+    "actualHead": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
+    "files": [
+      {
+        "path": "apps/web/test/web-current-preview.fixture.ts",
+        "bytes": 28313,
+        "sha256": "353aabc21dffc9461015f2d798e3a6894f5eeb58714368de21a75bf18d38a1bb"
+      },
+      {
+        "path": "apps/web/test/web-current-preview.browser.ts",
+        "bytes": 43464,
+        "sha256": "f741966746e4222380288c93f92e6fbec092ff042633717752b785cc69943ffa"
+      }
+    ],
+    "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+    "reviewPath": "/tmp/root-release03-2691-source-review.json",
+    "reviewSha256": "b9b1c1db2774ce01946d18e46c5126f5bbde86d20f4734855fccd633ad1f7e56",
+    "clean": true
+  },
+  "error": "'packageJsonSha256'",
+  "errorType": "KeyError",
+  "windowDisposition": "RETURNED_TO_LEAD_NO_GATE_PENDING_SPECIFIC_RESOLUTION"
+}
