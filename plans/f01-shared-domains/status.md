@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T13:16:16.945431+00:00 / maincde6646 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T13:30:13.752347+00:00 / mainaae1eb10 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | 领域DTO31824d8 / 共享target5be830e2614d45dbaa023e98923fc74f470b37ec |
+| 工作基线 / HEAD | 已审领域582f + client5be；生产固定9406ca5f2aa5a88dbc028d64e09f48f438bd627e |
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 新HTTP/SSE3 + 既有client/ACK51 =54通过；root类型检查0；无PG/provider/个人操作 |
+| 检查状态 | 3不同新生产旅程分轮通过；旧queue3通过、root types0；原失败保留，0provider |
 | 已集成main状态 / HEAD | ENG01H + native工程薄client已main280289；X01依赖待与leaf独立批准后接收 |
-| Review | NOT_STARTED：连接会话HTTP/SSE传输；X01依赖独审并行，历史批准范围保留 |
-| 实现目标 | 5be830e2614d45dbaa023e98923fc74f470b37ec |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/browser-session.test.ts, packages/contracts/src/index.ts |
+| Review | NOT_STARTED：生产接线；领域582f APPROVED、薄client5be由Mika独审中 |
+| 实现目标 | 9406ca5f2aa5a88dbc028d64e09f48f438bd627e |
+| 实现范围 | apps/server/src/index.ts, apps/server/src/main.ts, packages/client/src/browser-session-production.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 连接会话的普通读取、写入和持续观察已使用同一明确鉴权方式；旧命令行方式保留。 |
-| 下一可用交付 | 独审共享客户端，并接入中心已验证的会话与撤销规则。 |
+| 当前产出 | 连接会话已接入真实中心启动入口，重新连接可保留身份，退出连接不取消后台任务。 |
+| 下一可用交付 | 完成生产接线独审并交给网页恢复功能使用；个人入口保持当前版本。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
