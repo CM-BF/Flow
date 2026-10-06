@@ -2,17 +2,17 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 19:19:59 UTC |
+| 最近更新时间 | 2026-10-06 20:09:02 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings |
 | Branch | codex/web-message-settings |
-| 工作基线 / HEAD | 8d84d529a0756116bd0fc8bad969d61a6c26248e；实现 1cd5cd41e47c8c101d9bb1acfdca1e870769c014；本次 metadata 前 HEAD b41c93e7a7e054faec68faed101be5adf4d21225 |
+| 工作基线 / HEAD | 8d84d529a0756116bd0fc8bad969d61a6c26248e；实现 1cd5cd41e47c8c101d9bb1acfdca1e870769c014；本次运行与metadata前 HEAD 18ede5e0b606f9aa08a075565637fb2d991bd81a |
 | 工作树dirty状态 | 本次读取时 clean；仅本轮 metadata 待提交，提交后以 Git/remote 回执为准 |
 | 工作分支状态 | in-progress |
-| 检查状态 | UNKNOWN；strict noEmit exit0、两direct37/37，父预期计数20误漏参数化17项，原FAIL保留；browser两次初始化失败/0界面checks |
+| 检查状态 | UNKNOWN；strict noEmit exit0、两direct37/37，父预期计数20误漏参数化17项，原FAIL保留；browser第三次到达fixture后首定位器歧义失败/0完成checks；前两次初始化失败保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；基线 8d84d529a0756116bd0fc8bad969d61a6c26248e |
 | 实现目标 | 1cd5cd41e47c8c101d9bb1acfdca1e870769c014 |
 | 实现范围 | apps/web/src/execution-profiles/catalog.ts, apps/web/src/execution-profiles/selection.ts, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/test/message-settings.test.ts, apps/web/test/message-settings.fixture.tsx, apps/web/test/message-settings.browser.ts, plans/wpf-message-settings, docs/evidence/wpf-message-settings |
@@ -20,10 +20,10 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 已实现逐条消息组合选择；目录与冻结接口的本地检查通过，浏览器体验尚待验证。 |
-| 下一可用交付 | 定位受控Chrome初始化失败后继续实际界面验收，保留全部原始失败。 |
-| 当前阻塞 | ACTIVE: 浏览器已发现DevTools端口后异常退出，0界面断言；需解决受控启动兼容性后继续验收。 |
+| 下一可用交付 | 修正本次首定位器歧义后继续界面验收，保留全部原始失败。 |
+| 当前阻塞 | ACTIVE: 本次fixture已打开，首个group定位器匹配4处；尚无完成的界面用例，需窄修与后续准入。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN；源码/浏览器准备历史源码审查0blocking；本次启动FAIL/0断言，类型/direct证据已接受，完整验收待完成 |
+| Review | [review.md](review.md)，UNKNOWN；源码/浏览器准备历史源码审查0blocking；本次定位器FAIL/0完成checks，类型/direct证据已接受，完整验收待完成 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -37,7 +37,7 @@
 
 ## 当前固定源与已验范围
 
-当前六源目标为 1cd5cd41e47c8c101d9bb1acfdca1e870769c014：仅browser入口新增真实fixture扫描配置，其余五源逐字等f3a6，保护范围未改。该单点与b2准备已由root限定源码批准；b2实际初始化失败仍0界面断言，不把源码批准当行为通过。[Interface](../../docs/evidence/wpf-message-settings/interface.md) 与[当前 manifest](../../docs/evidence/wpf-message-settings/source-manifest.json)说明受控组件/纯冻结边界。Root f3a6 源码复审及 peer 审查均无 blocking；初版长模型断行 P2 已在源码处理，真实390几何仍待浏览器验收。
+当前六源目标为 1cd5cd41e47c8c101d9bb1acfdca1e870769c014：仅browser入口新增真实fixture扫描配置，其余五源逐字等f3a6，保护范围未改。该单点与b2准备已由root限定源码批准；b2初始化失败原样保留；本次b4在相同六源上实际连通CDP并显示fixture，首定位器strict失败，仍0完成checks，不把准备批准当行为通过。[Interface](../../docs/evidence/wpf-message-settings/interface.md) 与[当前 manifest](../../docs/evidence/wpf-message-settings/source-manifest.json)说明受控组件/纯冻结边界。Root f3a6 源码复审及 peer 审查均无 blocking；初版长模型断行 P2 已在源码处理，真实390几何仍待浏览器验收。
 
 18:33:58 UTC 唯一受限检查绑定 f3a6/85aba，strict noEmit exit0/1728ms；原 execution-profiles21项 + message-settings16项，共37/37、0失败/跳过。父报告仍为 FAIL：准备时 expected20 漏计17个参数化用例，属于监督计数元数据错误，原 binding/gate/raw 不改、无重跑。Root 已独立接受[类型/direct限定证据](../../docs/evidence/wpf-message-settings/root-direct-evidence-review.json)。父总耗时2762ms，cleanup fulfilled/errors[]，PGID66175与scratch均已无；不把该证据升级为完整功能批准。
 
@@ -58,3 +58,11 @@
 2026-10-06 19:19:59 UTC：Root[限定准备稿审查](../../docs/evidence/wpf-message-settings/root-browser-b2-preparation-review.json)后，manager唯一fresh gate绑定1cd/b41c执行一次。原[本次原件](../../docs/evidence/wpf-message-settings/browser-second-observation.json)保留，8551ms、父FAILED；累计13748/60000，余46252仅算术，无自动重试。Chrome67309已产生DevToolsActivePort与ws connected，但完整CDP初始化未完成，随后实际exit/close均code=null、SIGTRAP；原日志含native sandbox初始化EPERM、GPU/network子进程失败与GPU FATAL，不推定产品UI错误或唯一底层原因。0行为checks/截图/PG/provider。
 
 PGID66244 absent、Chrome exited、fixtureClosed/scratchAbsent=true、cleanup.errors=[]；日志11145B全部保留且dropped0/两stream closed，原first16文件不变。共享窗已立即归还；没有修改源码、放宽sandbox/Library权限、读取个人profile或重试。当前源码冻结，完整feature UNKNOWN/main未集成，后继只按新明确授权推进。
+
+## 2026-10-06 20:09:02 UTC 第三次浏览器：fixture已到达，定位器失败，窗口已归还
+
+唯一gate绑定1cd/18ede与已接受的native Chrome sibling边界，Node仍外层sandbox；没有禁Chrome原生sandbox，也不声称与旧双重sandbox等价。本次[19份原件与观察](../../docs/evidence/wpf-message-settings/browser-third-observation.json)逐字封存：父FAILED、6861ms，原13748合计20609/60000，余39391含15000清理仅算术，无自动重试。
+
+已实际CDP connected并打开真实受控picker；browser.ts:81的`dialog.getByRole("group")`在4个元素上strict violation，首断言未完成，checks=[]、无截图。原负向Adapter断言未放宽，失败未归产品UI语义；父errors短信息`Browser report: `与worker完整堆栈均原样保留。worker PGID11051与Chrome PGID6481均absent、scratchAbsent=true、fixture/contextClosed=true、cleanup.errors=[]；Chrome实际exit/close code0、signal null，受控TERM与完整stream EOF见原件。0PG/provider/37重跑/个人操作。
+
+父retained观察741839B含旧360142 carry；实际本次选定归档文件数/字节/hash见索引，不把磁盘观察当硬quota或独占归因。共享窗口已即时归还；产品/候选源不改、无新space采样。[Root b2证据核验](../../docs/evidence/wpf-message-settings/root-browser-b2-runtime-review.json)于本次正常记录段归档，接受旧失败与清理，不批准新行为；本次运行仍待独立证据核验。

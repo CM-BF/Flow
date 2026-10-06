@@ -19,3 +19,5 @@
 2026-10-06 19:10:12 UTC：原8范围source-only修复。只在browser入口新增optimizeDeps.entries，四组行为体与其余五源不变。对照固定成功RELEASE入口，不把非同sandbox成功作为本轮通过；/tmp新候选明确MAC temp、尾slash owned UNIX前缀、Chrome真实exit/close与有限日志事实，缺失保持null。原16件hash核同、5197累计不重置；旧parent最终retained177631B追加计新候选上限。Python AST/源码diff/metadata核对，无Node/import/runtime/free/安装。应用本地find-skills、webapp-testing、clean-code，检查单一资源owner、命名/错误归因/清理与不改断言；候选NOT_RUN并等独审，未改原candidate或扩大个人Library/系统tmp权限。
 
 2026-10-06 19:19:59 UTC：按b2唯一新gate执行一次，不重跑37。明确DevTools端口发现≠完整CDP连接/界面就绪；实际exit与close同SIGTRAP、父worker code1分开；stderr11145/保留11145/drop0和完整stream结束事实均原样。保旧16raw及5197累计，新8551后总13748/余46252；本段产品源/候选源不变，清理后立即归还shared窗口。clean-code复核错误分类、资源owner/原件不可变/预算不重置；没有为过测试增加权限、禁sandbox、扩大依赖或运行重试。
+
+2026-10-06 20:09:02 UTC：b4唯一准入执行后的证据安全段。保已接受native边界与Node外层sandbox差异，实际Chrome code0/完整close、双owned PGID/scratch清理原件可核。将fixture首次locator strict failure与旧CDP启动失败分开，不放宽负向内容断言或删除失败，不重跑37。19原件逐字归档，父errors短串与worker真实堆栈并存；6861全额入账，累计20609，余39391非许可。应用已有clean-code方法复核来源、错误分类、唯一预算与原raw保真；产品六源保持不变，只有ownmetadata正常提交。

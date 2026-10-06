@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS01：逐条消息设置选择控件
 
-状态：in-progress；创建：2026-10-06 18:11:03 UTC；最近更新：2026-10-06 19:19:59 UTC。直接父：[WPF-MATURE-02 / TODO-11](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)。本片为既有需求的受控选择控件，不另建大任务。
+状态：in-progress；创建：2026-10-06 18:11:03 UTC；最近更新：2026-10-06 20:09:02 UTC。直接父：[WPF-MATURE-02 / TODO-11](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)。本片为既有需求的受控选择控件，不另建大任务。
 
 ## 目标与范围
 
@@ -31,7 +31,7 @@ Picker 由宿主传入 value/onChange；只持有 Dialog 展开状态，不增�
 - MSGSET-02：固定源码后申请必要只读依赖与轻量 checks；官方组件 fixture 的双主题 390px/键盘/双 pane/callback 检查须独立运行准入。
 - MSGSET-03：固定来源/clean-code/独立审查、交付与 main 接收分别留证。
 
-当前 strict noEmit 与37项 direct 已运行通过；原父 expected20 计数断言 FAIL 保留并由独审分类，不重跑。浏览器准备源码已限定独审；首次获准入口运行5197ms后在Chrome CDP就绪前失败，0界面断言/截图，清理完成且窗口归还。fixture扫描与短owned Mac临时目录/退出证据已源码审；新独立准入运行8551ms后Chrome SIGTRAP，0界面断言，累计13748/60000，清理完毕、未自动重试。无安装、依赖写入、PG、build 或真实服务采样。
+当前 strict noEmit 与37项 direct 已运行通过；原父 expected20 计数断言 FAIL 保留并由独审分类，不重跑。浏览器准备源码已限定独审；首次获准入口运行5197ms后在Chrome CDP就绪前失败，0界面断言/截图，清理完成且窗口归还。fixture扫描与短owned Mac临时目录/退出证据已源码审；新独立准入运行8551ms后Chrome SIGTRAP，0界面断言，当时累计13748/60000，清理完毕、未自动重试。第三次b4在明确native边界接受后，6861ms实际到达fixture，首group定位器歧义失败/0完成checks，累计20609/60000、余39391；双PGID与scratch清理完成，未重跑或修改原断言。无安装、依赖写入、PG、build 或真实服务采样。
 
 ## 后继与限制
 
