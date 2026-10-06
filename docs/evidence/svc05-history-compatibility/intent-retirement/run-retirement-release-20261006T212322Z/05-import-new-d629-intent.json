@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-06T21:24:17.360687+00:00",
+  "window": "svc05h-af51-d629-retire-20261006-2125",
+  "id": "05-import-new-d629",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+    "web",
+    "import-compatibility",
+    "--directory",
+    "/Users/citrine/.flow-personal",
+    "--report-directory",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility"
+  ],
+  "freeBytes": 1260781568,
+  "rawBytes": 112503,
+  "source": "af51c621696230fbced12227670f014ca73bd8a1",
+  "requiresSuccessfulReceipt": "04-import-retained-1",
+  "state": "intended-not-a-result"
+}

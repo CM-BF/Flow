@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-06T21:27:02.713476+00:00",
+  "window": "svc05h-af51-d629-retire-20261006-2125",
+  "id": "15-resume",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
+    "resume",
+    "/Users/citrine/.flow-personal"
+  ],
+  "freeBytes": 1254084608,
+  "rawBytes": 474063,
+  "source": "af51c621696230fbced12227670f014ca73bd8a1",
+  "requiresSuccessfulReceipt": "14-resume-gate",
+  "state": "intended-not-a-result"
+}

@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-06T21:27:12.548580+00:00",
+  "window": "svc05h-af51-d629-retire-20261006-2125",
+  "id": "18-publish",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+    "web",
+    "publish",
+    "--directory",
+    "/Users/citrine/.flow-personal",
+    "--request",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/web-publish-request.json"
+  ],
+  "freeBytes": 1253830656,
+  "rawBytes": 586173,
+  "source": "af51c621696230fbced12227670f014ca73bd8a1",
+  "requiresSuccessfulReceipt": "17-publish-gate",
+  "state": "intended-not-a-result"
+}

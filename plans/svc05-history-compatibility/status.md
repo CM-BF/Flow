@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:23 UTC；描述符窄修获独审，新记录已准备待START |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:27 UTC；实际更新完成，结果封存待独立核验 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -12,20 +12,20 @@
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
 | 工作树dirty状态 | 固定源码停写；本次仅own metadata提交，clean以实际Git回执为准 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 检查状态 | PASSED 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736（新增3纯例3/3；原18不同未重跑）；实际发布NOT_RUN |
-| 已集成main状态 / HEAD | 同版本中心恢复3271的41文件逐字同main6223c7493a3b6f392813a5d9d82c24d87312ad26（aca6接收，非祖先）；实际仍362/v15+caa1/v2，新发布未执行 |
+| 本片段交付阶段 | review |
+| 检查状态 | PASSED 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736（原准备已审；本次24操作exit0，25保留检查true；实际结果待独审） |
+| 已集成main状态 / HEAD | 历史同版本恢复已main；本次个人运行已af51/accepting v18+d629/v3，操作证据尚待独立review/main接收 |
 | 实现目标 | 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736 |
 | 实现范围 | docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window.py, docs/evidence/svc05-history-compatibility/intent-retirement/execution-inputs.json, docs/evidence/svc05-history-compatibility/intent-retirement/frozen-input-template.json, docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/release-seam.test.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/window_test.py, docs/evidence/svc05-history-compatibility/release-operation/observe.mjs, docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs, docs/evidence/svc05-history-compatibility/intent-retirement/descriptor.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 保留产物比较已修正并通过独立核验；新的操作记录已准备，个人更新仍未开始。 |
-| 下一可用交付 | 收到准确源窗口START后，以新现场准入完成原定受控发布。 |
+| 当前产出 | 个人后台和新页面已更新，恢复接收任务；旧页面、会话和历史数据保留。 |
+| 下一可用交付 | 固定操作证据交独立核验并接收；本次无需用户操作。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；Lead APPROVED_LIMITED_DESCRIPTOR_COMPARISON_DELTA 6e7109c47b41ae6d45fdcc9a8ef365375dcd2736，146fixed/145current无差；原0a8批准及211659失败保持 |
+| Review | [review.md](review.md)；6e7109准备限定APPROVED，212322实际操作结果待Execution Lead独立核验 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
-| 架构影响 | 仅证据范围的单次operator：确认Adapter复用host锁/同runner行锁，私有原件与audit先于精确字节替换；普通idle与产品API不变。准备未集成/未个人运行，待Execution Lead登记固定target。 |
+| 架构影响 | 复用已审单次operator/维护屏障/私有退役audit；普通idle和产品API不变。实际af51+d629运行已完成，记录接收待Lead。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -33,7 +33,7 @@
 | SVC05H01-02 | completed | assignment_review | [Interface](../../docs/evidence/svc05-history-compatibility/interface.md) 已固定 |
 | SVC05H01-03 | completed | Web RELEASE03 / Root独审 | [af51+d629独立批准](../../docs/evidence/svc05-history-compatibility/release-preparation/web-app1750-independent-review.json)；本owner未重跑 |
 | SVC05H01-04 | completed | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；[独立APPROVED](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json) |
-| SVC05H01-05 | pending | Execution Lead窗口 / owner | 三报告原批准不变；2030/2040只读失败保留；GO已批准一次显式退役语义，新operator/18局部检查待独审和实际窗口，个人未执行 |
+| SVC05H01-05 | in-progress | assignment_review / Execution Lead独审 | 24步骤完成、25保留检查true；后台af51/v18、新页面d629/v3，待本次结果独审/接收；历史失败保持 |
 | SVC05H01-06 | completed | assignment_review | 一次ready/8组保留true；Lead独立比对64表并关闭窗口，原期限P2已关闭 |
 
 ## Dashboard
@@ -115,3 +115,5 @@ GO经Lead已批准a7d提案1–5；当前实现/局部证明而非个人执行�
 ### 2026-10-06 21:21 UTC 描述符等价窄修待审
 
 固定6e7109c47b41ae6d45fdcc9a8ef365375dcd2736，保存的真实01反例+键序/未知键/字段值/有序列表3纯例3/3；原18未重跑。只针对严格三字段tuple，普通数据hash/bytes/compatID不变；原窗口false/exit1与0后继动作保留，[delta](../../docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-README.md)。
+
+2026-10-06 21:27 UTC：唯一2125窗口实际24步骤完成，退役checkpoint先于refresh，保留gate先于resume与独立Web CAS。drain166.030s/900s，原2030/2040/211659失败保持；0模型/任务/tab。见[本次实际记录](../../docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/README.md)。窗口已向Lead归还，未新增探针；操作结果待独审，非作者自批。

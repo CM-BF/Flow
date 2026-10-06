@@ -1,0 +1,16 @@
+{
+  "operatorPid": 10350,
+  "operatorExit": 0,
+  "deadlineExceeded": false,
+  "operatorStopped": true,
+  "outcome": "operator-returned-zero",
+  "elapsedMs": 397,
+  "stdout": "{\"action\":\"publish\",\"release\":{\"format\":1,\"policy\":\"flow-web-release-v1\",\"version\":3,\"backendHead\":\"af51c621696230fbced12227670f014ca73bd8a1\",\"compatibilityIds\":{\"461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90\":\"adc587ad334da4136bdc5d364daa933f8b8865f6344ae8b1e04983a423d5d68d\",\"caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe\":\"e87ffda1ee15c14c6458849c388c5f217675af4053cb1b64bd052214cee2af0e\",\"d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88\":\"599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9\"},\"current\":\"d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88\",\"artifacts\":[{\"artifactId\":\"461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90\",\"manifestDigest\":\"461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90\",\"sourceHead\":\"b1c2e39837c2208e6fc2c59a80e16797f26448b5\"},{\"artifactId\":\"caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe\",\"sourceHead\":\"8d8ab520a9d43c7b9dafb22911416ee799ebf665\",\"manifestDigest\":\"caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe\"},{\"artifactId\":\"d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88\",\"sourceHead\":\"5069586a9f17332de526e101eca3a4250cbc8d91\",\"manifestDigest\":\"d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88\"}],\"updatedAt\":\"2026-10-06T21:27:12.813Z\"},\"web\":\"ready\"}\n",
+  "stderr": "",
+  "serviceSignals": 0,
+  "totalDrainElapsedSeconds": 159.76769304275513,
+  "totalDrainLimitSeconds": 900,
+  "at": "2026-10-06T21:27:12.947891+00:00",
+  "step": "18-publish",
+  "freeAfter": 1253789696
+}

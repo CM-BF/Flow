@@ -121,3 +121,7 @@ source6e7109c47b41ae6d45fdcc9a8ef365375dcd2736，全局JSON等价不变；只严
 ## 2026-10-06 21:23 UTC 描述符增量独审通过
 
 Execution Lead独立APPROVED_LIMITED_DESCRIPTOR_COMPARISON_DELTA，target6e7109c47b41ae6d45fdcc9a8ef365375dcd2736 / clean20f42c，146fixed/145current无差，原3新raw只读核、旧18未重审重跑。原件[descriptor-independent-review](../../docs/evidence/svc05-history-compatibility/intent-retirement/descriptor-independent-review.json)。原211659 manifest14项原字节再次核一致，原failed不变；新exclusive记录已准备，个人retirement request仍未生成，等START。
+
+## 2026-10-06 21:27 UTC 实际操作结果待独立核验
+
+固定6e7109+原0a8已审输入在2125唯一窗口完成24步骤，全部exit0；最终25保护检查true，旧journal有明确退役私有原件/意图/结果，原claim结果仍unknown。后台af51/v18及Web d629/v3实际ready，原两retained和64表保护摘要保留；原raw/三次失败保持。作者只归档结果，不授予自身APPROVED。交Execution Lead只读核本次manifest/原facts/checkpoint/退役与维护/发布身份，不重跑服务或旧检查。

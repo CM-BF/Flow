@@ -1,0 +1,16 @@
+{
+  "operatorPid": 82829,
+  "operatorExit": 0,
+  "deadlineExceeded": false,
+  "operatorStopped": true,
+  "outcome": "operator-returned-zero",
+  "elapsedMs": 885,
+  "stdout": "{\"outcome\":\"held-runner-stopped\",\"stopped\":\"stopped\",\"confirmed\":\"stopped\",\"hold\":{\"runnerId\":\"d22f4df2-8242-49f4-a1b4-77f8f08611ef\",\"state\":\"maintenance\",\"version\":17,\"operationId\":\"4709cece-d8ba-42b1-99a9-24ca2efbe152\"},\"stateSha256\":\"da0054c74b21c3ffa8216b373db0e1f97e15b7aae12dee4dda95f290781acd85\",\"runnerRecordSha256\":\"4218f53625fb2e5525e5b9568d3c00b509d5d7b31fb1537aa026b1ce5c4cf4cc\",\"otherRoleSignals\":0}\n",
+  "stderr": "",
+  "serviceSignals": 0,
+  "totalDrainElapsedSeconds": 107.94941306114197,
+  "totalDrainLimitSeconds": 900,
+  "at": "2026-10-06T21:26:21.129612+00:00",
+  "step": "11a-hold-stop",
+  "freeAfter": 1248100352
+}

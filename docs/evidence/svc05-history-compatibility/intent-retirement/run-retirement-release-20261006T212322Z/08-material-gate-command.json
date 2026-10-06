@@ -1,0 +1,14 @@
+{
+  "operatorPid": 30931,
+  "operatorExit": 0,
+  "deadlineExceeded": false,
+  "operatorStopped": true,
+  "outcome": "operator-returned-zero",
+  "elapsedMs": 62,
+  "stdout": "{\"phase\":\"materials\",\"passed\":true,\"checks\":{\"source\":true,\"runtime\":true,\"identity\":true,\"config\":true,\"invariantState\":true,\"lockAbsent\":true,\"owned\":true,\"singleKnownRunner\":true,\"zeroWork\":true,\"queue\":true,\"migrations\":true,\"maintenance\":true,\"dependencies\":true,\"tableNames\":true,\"tables\":true,\"oldAudit\":true,\"newAudit\":true,\"operation\":true,\"retained\":true,\"materials\":true,\"pointer\":true,\"explicitLegacyIntentPolicy\":true,\"nativeHistory\":true,\"waitingQueueEmpty\":true}}\n",
+  "stderr": "",
+  "serviceSignals": 0,
+  "at": "2026-10-06T21:24:27.847031+00:00",
+  "step": "08-material-gate",
+  "freeAfter": 1256534016
+}
