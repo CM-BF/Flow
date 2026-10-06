@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:06:45 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:13:46 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -13,7 +13,7 @@
 | 工作树dirty状态 | preparation source固定；当前仅目标red证据/status metadata；runners.ts未改 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 局部strict 0；唯一目标red实际1失败/8未选，符合旧锁预期；专库清理已核 |
-| 已集成main状态 / HEAD | 本片尚未实现/集成；观察main c450c2da7e6185b88db9f46e0299ee504ee6f3e8 |
+| 已集成main状态 / HEAD | 本片未实现/集成；观察main 2e71fabc218df28f6ccb78a927432ae1101c17c5 clean，含ENG221809d3，未合入本树 |
 | 实现目标 | UNKNOWN（尚无生产实现） |
 | 实现范围 | plans/s01p04-runner-read-fence, docs/evidence/s01p04, apps/server/src/runner-read-fence.test.ts |
 | 阶段 | M2 |
@@ -21,7 +21,7 @@
 | 优先级 | 2 |
 | 当前产出 | 已用隔离事务复现同一执行器不同attempt被串行阻塞，等待源码交接后修复 |
 | 下一可用交付 | 正式交接后实施最小修复，并验证撤销、维护和领取保护 |
-| 当前阻塞 | ACTIVE: 核心源码仍由ENG01B持有；Mika协调其ready稳定片后的交接，独立测试准备可继续 |
+| 当前阻塞 | ACTIVE: 核心源码仍由ENG01B持有；Mika协调其ready稳定片后的交接，测试准备/red已封存，等待正式路径移交 |
 | 需用户决定 | NONE |
 | Review | NOT_STARTED；方法已获Mika同意，不等于实现批准 |
 
@@ -44,3 +44,5 @@
 2026-10-06 11:05:15 UTC Mika核18项preparation绑定并批准唯一目标red。实际11:05:54.391Z→11:05:57.141Z、exit1，正Lock/blocker分支在首次ownedAttempt触发预期失败，heartbeat/report段未运行；8项未选不当通过。所有自有连接关闭，专库 `flow_s01p04_a57c5ac6e3c9426f9084d378eb406286` 由实际DROP后查询核absent，无retained。无重跑/容量窗口/provider，runners.ts仍只读base c450；源码交接待ENG稳定片。
 
 目标red证据固定 `2d93ec616ee479c3c42ba2a0193327ad1e29e539`，25项[red manifest](../../docs/evidence/s01p04/red-manifest.json)包括原18 preparation绑定及7个新raw/support；全部fixedGit=WT=hash/bytes。当前无green产品结论，仍等待正式路径移交。
+
+2026-10-06 11:07:57 UTC Mika复核red固定2d93全部25绑定，接受faithful EXPECTED_RED，非生产实现批准。随后[ENG继承只读核对](../../docs/evidence/s01p04/eng-inheritance.md)确认最小共享方案和9项fixture仍适用；新增publication保留runner独占，没有新shared→exclusive路径。fresh ENG v2仍持runners，P04 v1未获写权；源码与原red冻结，0新PG/测试。
