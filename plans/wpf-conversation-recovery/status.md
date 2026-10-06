@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 15:46 UTC |
+| 最近更新 | 2026-10-06 15:55 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,16 +10,16 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段材料完整性源码固定1b8a335ecf26ece7539ad19e634508ac12ca3729；父supervisor保7244，fixture仅增第二材料；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 本段5源已固定；仅owner metadata收口，最终以Git clean核验 |
+| 工作树dirty状态 | 五源保持1b8固定；本次只归档独立复核与owner metadata，提交前后核Git clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已在提交前补完整文件选择检查，分批验证按原顺序同步；等待受控验证 |
+| 当前产出 | 完整文件选择与原顺序修正已获独立源码复核；实际恢复和发送行为等待受控验证 |
 | 下一可用交付 | 刷新后保留原草稿与未决发送身份，重新连接后由用户明确恢复 |
 | 当前阻塞 | ACTIVE: 浏览器与完整构建等待可用磁盘和中心会话语义核验；本段只修材料提交与同步源码，第二direct仍未运行 |
 | 需用户决定 | NONE |
-| 检查状态 | 4ba基线20/20受控direct PASS；当前27case待测。最新types绿为2498前后阶段，不覆盖本段；累计52.814/60s，浏览器NOT_RUN |
+| 检查状态 | 历史4ba 20/20受控direct PASS；当前27 direct、types、browser全部NOT_RUN。1b8 M1/M2仅源码addressed；types累计52.814/60s未新增 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
@@ -34,7 +34,7 @@
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
 | WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | 4ba 20/20通过；后续R4及材料完整性/顺序扩为27case均未运行 |
 | WPF-RECOVERY01-05 | blocked | workspace_panels_owner | 资源与中心语义验收门槛未满足 |
-| WPF-RECOVERY01-06 | pending | workspace_panels_owner | 独审/main未完成 |
+| WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
 ## 阻塞 / 风险 / 未验证
 
@@ -42,7 +42,7 @@ pre-provision可用1,584,984,064B，建树后管理报告1,416,241,152B，非当
 
 ## 下一步与handoff
 
-已在App接cookie观察器/P01入口，继续检查完整稿、跨tab/原key恢复及八项早期预审边界；不得孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
+已在App接cookie观察器/P01入口，当前源码冻结，等待管理对固定27 direct入口给出新的实际运行门槛；不得孤立journal交付。完整feature目标仍UNKNOWN、review NOT_STARTED；2498仅阶段binding源码结论。唯一status由本owner维护。
 
 ## Dashboard同步
 
@@ -95,3 +95,9 @@ Root固定[02d报告](../../docs/evidence/wpf-conversation-recovery/02d-material
 ## 15:46 UTC — 材料完整性固定源码安全点
 
 固定source `1b8a335ecf26ece7539ad19e634508ac12ca3729`，5源变化（Thread/binding/direct/browser/fixture），其余14源对02d相同，[19源manifest](../../docs/evidence/wpf-conversation-recovery/material-integrity-checkpoint.json)。P1/M1完整Input与composer有序交接在Send/Queue执行前校验，P2/M2分批验证不跳过未ready前项；held/inTransit/consumed旧材料与下一稿分离。当前27case及双文件实际App旅程均NOT_RUN，0额外types或空间采样。只静态diffcheck0；完整feature target UNKNOWN/review NOT_STARTED。源冻结待root窄审，metadata正常push后以local/origin及clean事实核。
+
+## 2026-10-06 15:55 UTC — 1b8 材料修复独立源码复核归档
+
+Root于2026-10-06T15:52:25.524058Z对固定 `1b8a335ecf26ece7539ad19e634508ac12ca3729` 确认M1/M2 SOURCE_ADDRESSED；[root原报告](../../docs/evidence/wpf-conversation-recovery/1b8-material-root-review.json)与[W01原报告](../../docs/evidence/wpf-conversation-recovery/1b8-material-peer-review/report.md)原样归档。无新增局部blocking，但不代表完整feature批准或行为通过。当前27 direct/types/browser仍NOT_RUN，完整target UNKNOWN/review NOT_STARTED。
+
+本人15:54:29.253Z通过既有协调CLI [fresh窄账本](../../docs/evidence/wpf-conversation-recovery/1b8-material-review-claim.json)核6ff v4 active/原21/本人WT与branch/overlap=[]；不是产品PG实验。全部19源码hash仍等固定manifest，本次0产品改动、0types/tests/PG/Chrome/import/资源采样。仅metadata normal push后核local=origin/clean；未生成运行gate、未释放claim。

@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-06T15:52:25.524058+00:00",
+  "reviewer": "root independent delta read and peer report intake",
+  "target": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
+  "base": "02d5a49aa2f17261d7dfcc9590f433c84b10defe",
+  "observedHead": "f29751812090f85d5d01a4c67a4bdca09566ec85",
+  "dirty": "",
+  "decision": "SOURCE_FINDINGS_M1_M2_ADDRESSED; FULL_FEATURE_NOT_STARTED",
+  "sources": [
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22780,
+      "sha256": "664d61c88a923ed8f3ee14558c6aa17bf6531fec409195ea1cc16c8ca1ead6dd"
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 24536,
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 39888,
+      "sha256": "d58903f9ad64054bf233cea28f18574d19bb85af19bcae18a6415e6b7bf3f9b9"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 36653,
+      "sha256": "883c1195584e23ec6bfe1a69b5b8aa50929204826ef26ff8a814b479fe5c6ac5"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 13938,
+      "sha256": "041eda9cb24bd7bcee8156f8784b6c8abf3f253dfff2b111dab7d19eb46c42c0"
+    }
+  ],
+  "peer": {
+    "report": "/tmp/w01-recovery-1b8-material-review/report.md",
+    "sha256": "a9d5c3d8968f02f2ef2d4bf944ced7ff734e7d094a512247b537cdf1b055c884",
+    "scope": "eight fixed sources; no runtime"
+  },
+  "findingsRevisited": [
+    {
+      "id": "RECOVERY02D-M1",
+      "sourceStatus": "ADDRESSED",
+      "reason": "Thread calls captureDraft unconditionally for binding before pending/recoveryhandoff/core.send. Private Input selection validates all readiness/metadata and exact full composer order before capture. Held/inTransit old material excluded unless actually returned to composer; empty next draft does not inherit old selected files. No second registry/command owner."
+    },
+    {
+      "id": "RECOVERY02D-M2",
+      "sourceStatus": "ADDRESSED",
+      "reason": "Sync preserves Input-order prefix, stops at unready predecessor and checks current immutable selected item/lease after each add. Later B cannot precede unverified A; execution guard rejects reordered/partial handoff. Source controlled cases now stage actual Input pages B then A, explicitly remove A, assert refs and no duplicate insertion."
+    }
+  ],
+  "runtimeCoveragePrepared": [
+    "Controlled27cases include Send and Queue zero-receipt/HTTP while unverified/partial; successful explicit smallerselection afterremove; stagedorderedpair; held/inTransit nextplain draft. These are NOT_RUN current.",
+    "Actual App harness adds second uploaded ref, pending/partial Send+Queue noHTTP/command assertions, ordered officialchips and same ordered original-body receipt after ACKloss. NOT_RUN; selectors/React scheduling/IDB/auth must be observed later."
+  ],
+  "checks": [
+    "Six fixed/current sourcebytes match; clean observed.",
+    "Root read production submit/binding/controller and full five-source diff; peer no new actionable regression within bounded source review.",
+    "Prior sourceapproval2498 and supervisor724 retain separate fixed scope; no broad reapproval inferred."
+  ],
+  "limits": [
+    "No imports/types/tests/PG/Chrome/build/provider/model/resource sampling by reviewers.",
+    "Historical4ba20/20 does not validate27currentcases. Types remain52.814/60s, direct2.540/30s; not consumed by this review.",
+    "This closes the two checkpoint source counterexamples only. Fullfeature review remainsNOT_STARTED, implementationtargetUNKNOWN until required behavioral evidence.",
+    "Future direct/currenttype/browser runs need their own bounded fresh admission and exact source manifest; RELEASE remains higher priority for shared runtime window."
+  ],
+  "cleanCode": "One private complete ordered selection authority at the command entry; stable preparation watcher and reactive synchronization retain separate lifetimes; exceptions preserve draft before effects."
+}

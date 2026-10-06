@@ -21,3 +21,13 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 02d局部审查CHANGES_REQUESTED：[原报告](../../docs/evidence/wpf-conversation-recovery/02d-material-review.json)。P1选中但未进入composer的材料可被静默遗漏，P2分批验证可改变原序。当前源码修复中，未标行为CLOSED；正式feature target仍UNKNOWN。
 
 15:46 source-only后继固定 `1b8a335ecf26ece7539ad19e634508ac12ca3729`（5源，对02d）：M1/M2已按源码修正，27case和更新browser均NOT_RUN；[固定manifest](../../docs/evidence/wpf-conversation-recovery/material-integrity-checkpoint.json)。原controller/官方runtime不改，完整feature审查仍NOT_STARTED，等待独立窄审。
+
+## 2026-10-06 15:55 UTC — 1b8 独立源码窄复核（非feature审批）
+
+固定checkpoint `1b8a335ecf26ece7539ad19e634508ac12ca3729`，对照 `02d5a49aa2f17261d7dfcc9590f433c84b10defe`。Root [原始结论](../../docs/evidence/wpf-conversation-recovery/1b8-material-root-review.json)的实际时点为2026-10-06T15:52:25.524058Z；W01 [原报告](../../docs/evidence/wpf-conversation-recovery/1b8-material-peer-review/report.md)及[sources](../../docs/evidence/wpf-conversation-recovery/1b8-material-peer-review/sources.json)原样保留。
+
+- RECOVERY02D-M1/P1：源码ADDRESSED，所有Send/Queue在receipt/core send前验证完整Input选择、ready事实和composer有序一致，零chip不能降为纯文字。
+- RECOVERY02D-M2/P2：源码ADDRESSED，分批先B后A只同步ready前缀，原序及每await后租期/身份检查保留；执行门禁另拒部分或乱序。
+- 本局部无新增blocking。两reviewer均0运行；当前27 direct、types、实际browser NOT_RUN，不把controlled port源码断言当React/HTTP已通过。
+
+完整feature结论仍NOT_STARTED、targetUNKNOWN；原4ba20/20、2498与7244限定源码记录各保原范围。作者本次仅归档与metadata更新，五固定源不改。
