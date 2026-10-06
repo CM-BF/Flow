@@ -1,9 +1,9 @@
 import { useId, useRef, useState, type ReactNode } from "react";
-import type { ConversationCreation } from "@flow/contracts";
+import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeTurnSettingsJson, type ClaudeTurnSettings, type ConversationCreation } from "@flow/contracts";
 import { Button } from "../components/ui/button";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "../components/ui/dialog";
-import type { ExecutionProfileCatalogSnapshot } from "./catalog";
-import { configuredSelection, isChatAccess, legacyDefaultSelection, type ProfileSelection } from "./selection";
+import type { ExecutionProfileCatalogSnapshot, MessageSettingsCatalogSnapshot } from "./catalog";
+import { captureMessageSettings, messageSettingsAvailability, sameMessageSettings, configuredSelection, isChatAccess, legacyDefaultSelection, type Immutable, type MessageSettingsContext, type ProfileSelection } from "./selection";
 import "./execution-profiles.css";
 
 export interface ExecutionProfilePickerProps {
@@ -83,4 +83,68 @@ function FrozenConfiguration({ creation, pending, details }: { creation: Convers
       </DialogContent>
     </Dialog>
   </section>;
+}
+
+
+export interface MessageSettingsPickerProps {
+  catalog: MessageSettingsCatalogSnapshot;
+  context: MessageSettingsContext;
+  value: Immutable<ClaudeTurnSettings> | undefined;
+  onChange(value: Immutable<ClaudeTurnSettings> | undefined): void;
+  onRefresh(): void;
+  onLoadMore(): void;
+  details?: ExecutionProfilePickerProps["details"];
+}
+
+/** Controlled next-message intent. Frozen sent/queued settings belong to their receipt owners. */
+export function MessageSettingsPicker({ catalog, context, value, onChange, onRefresh, onLoadMore, details }: MessageSettingsPickerProps) {
+  const groupId = useId();
+  const dialog = useProfileDialog();
+  const available = messageSettingsAvailability(catalog, context);
+  const choices = catalog.profiles.flatMap(profile => (profile.configuration.turnSettings?.choices ?? []).map((requested): Immutable<ClaudeTurnSettings> => ({
+    protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: profile.reference, requested,
+  })));
+  const missing = value !== undefined && catalog.loaded && !choices.some(choice => sameMessageSettings(value, choice));
+  return <div className="ep-picker">
+    <Dialog open={dialog.open} onOpenChange={dialog.onOpenChange}>
+      <DialogTrigger asChild><Button type="button" variant="outline" className="ep-trigger" aria-label={`消息设置：${value?.requested.model ?? "不附加设置"}`}>
+        <span>{value?.requested.model ?? "下一条消息设置"}</span><span className="ep-trigger-access">{value ? describeMessageChoice(value.requested) : "不附加"}</span><span aria-hidden="true">⌄</span>
+      </Button></DialogTrigger>
+      <DialogContent className="ep-dialog" onCloseAutoFocus={dialog.onCloseAutoFocus}>
+        <DialogTitle>下一条消息设置</DialogTitle>
+        <DialogDescription>选择一个已配置的完整组合。仅影响下一次提交，已发送或排队的消息保持原设置。</DialogDescription>
+        <div className="ep-directory-actions">
+          <Button type="button" variant="outline" onClick={onRefresh} disabled={catalog.loading}>{catalog.loading ? "正在加载…" : "刷新设置目录"}</Button>
+          <span role="status">{catalog.loaded ? `已加载 ${catalog.profiles.length} 项配置${catalog.nextCursor ? "，还有更多" : ""}` : "尚未加载目录"}</span>
+        </div>
+        {catalog.error && <p role="alert" className="ep-error">{catalog.error}</p>}
+        {!available.allowed && <p className="ep-notice">{available.reason}</p>}
+        {missing && <p className="ep-notice">原选择不在已加载目录中，仍保留原值；请加载更多或刷新后核对。</p>}
+        {value && <section aria-label="当前草稿设置" className="ep-requested">
+          <strong>{value.requested.model}</strong><p>{describeMessageChoice(value.requested)}</p>
+          <details className="ep-identities"><summary>选择身份</summary><p className="ep-footnote" style={{ overflowWrap: "anywhere" }}>配置 {value.profile.id} · Runner {value.profile.runnerId} · {value.profile.configDigest}</p></details>
+        </section>}
+        <fieldset className="ep-options">
+          <legend className="sr-only">完整消息设置组合</legend>
+          <label className="ep-option"><input type="radio" name={groupId} checked={value === undefined} onChange={() => onChange(undefined)} /><span><strong>不附加消息设置</strong><small>省略本次设置请求，不代表重置或继承上一条设置。</small></span></label>
+          {choices.map(choice => {
+            const same = available.allowed && choice.profile.id === available.profile.reference.id && choice.profile.runnerId === available.profile.reference.runnerId && choice.profile.configDigest === available.profile.reference.configDigest;
+            return <label className="ep-option" key={claudeTurnSettingsJson(choice)}>
+              <input type="radio" name={groupId} checked={sameMessageSettings(value, choice)} disabled={!same} onChange={() => onChange(captureMessageSettings(choice, catalog, context))} />
+              <span><strong>{choice.requested.model}</strong><span>{describeMessageChoice(choice.requested)}</span>{!same && <small>当前会话不可选择此组合</small>}<details><summary>配置身份</summary><small>配置 {choice.profile.id}</small><small>Runner {choice.profile.runnerId}</small><small>摘要 {choice.profile.configDigest}</small></details></span>
+            </label>;
+          })}
+        </fieldset>
+        {catalog.loaded && choices.length === 0 && <p>目录没有可选组合，不会自动生成默认设置。</p>}
+        {catalog.nextCursor && <Button type="button" variant="outline" disabled={!catalog.canLoadMore} onClick={onLoadMore}>加载更多设置</Button>}
+        <p className="ep-footnote">这里展示配置意图，不代表账号权限、模型可用性或实际执行结果。提交时仍由中心验证。</p>
+        {details?.(dialog.navigate)}
+      </DialogContent>
+    </Dialog>
+  </div>;
+}
+
+function describeMessageChoice(choice: Immutable<ClaudeTurnSettings["requested"]>): string {
+  const effort = choice.effort.kind === "level" ? `力度 ${choice.effort.value}` : "不请求力度";
+  return `${choice.thinking === "adaptive" ? "自适应思考" : "不请求思考"} · ${effort} · ${choice.speed === "fast" ? "快速请求" : "标准速度"}`;
 }
