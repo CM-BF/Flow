@@ -186,9 +186,9 @@ PERF source移交已落实：首文档c7bf1a81e5d21a602636f388ff565bae1844d83e�
 PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/workspace-preview.ts --preview
 ```
 
-恢复默认动态端口，以stdout真实URL为准，不承诺自动复用49922，不杀其他owner服务。I01 [55049](http://127.0.0.1:55049/)是正在验证的开发fixture（owner exec session79831），不替代已审预览。工程dashboard架构tab已由主线承接，具体唯一[D05 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)已核，交付target仍UNKNOWN，我方仅WPF-D01协作登记。
+恢复默认动态端口，以stdout真实URL为准，不承诺自动复用49922，不杀其他owner服务。I01 [55049](http://127.0.0.1:55049/)是正在验证的开发fixture（owner exec session79831），不替代已审预览。工程dashboard架构tab已由主线承接，具体唯一[D05 canonical](../../../plans/d05-architecture-view/plan.md)已核，交付target仍UNKNOWN，我方仅WPF-D01协作登记。
 
-U10“plugin管理写进计划里”由原Goal Owner逐字转交。主线负责X01 canonical全产品计划，Web管理页/CLI同公共center命令、持久版本/配置/权限/作用域、npm安装启停升级回滚移除、活跃执行版本绑定和信任隔离均属父范围；[X01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/plans/x01-plugin-management/plan.md)已只读核验，文档888308d clean / 产品未实施 / review NOT_STARTED。P01/I01仅可信Web前置，不以本地Settings替代，当前claim不扩大。
+U10“plugin管理写进计划里”由原Goal Owner逐字转交。主线负责X01 canonical全产品计划，Web管理页/CLI同公共center命令、持久版本/配置/权限/作用域、npm安装启停升级回滚移除、活跃执行版本绑定和信任隔离均属父范围；[X01 canonical](../../../plans/x01-plugin-management/plan.md)已只读核验，文档888308d clean / 产品未实施 / review NOT_STARTED。P01/I01仅可信Web前置，不以本地Settings替代，当前claim不扩大。
 
 已审提交的完整SHA、分支clean状态、恢复方式、检查边界、双主题图和三件套入口汇总于[03:20固定交付快照](delivery-snapshot.md)；它是提交级索引，不是第二进度源。
 
@@ -226,14 +226,14 @@ GoalOwner经root确认Mika承担X03最小只读模块，仅新apps/web/src/plugi
 04:02 PERF02已由主线完成集成：Lead明确main/origin8f1481df880cf5077e1ddb9a8f302fe700a7ece8已push且clean；root04:01:30实际origin/main相同、a87ancestor exit0。管理者04:01:56.630Z独立dashboard实采main methodancestor/current/scopeEqual/historicalIntegrated真、dirtyScopePaths空、issues空，[证据](perf02-main-dashboard.json)。这是新增事实，前03:49not-contained证据保留。owner下次canonical元数据同步，不需重复产品测试。CHAT先固定自身当前target再按Lead要求受控消费完整main，不跟随移动main覆写。
 
 
-04:20当前变更：PERF02已经[release v2](perf02-release-receipt.json)，无pending修复不再保留writer，旧保留描述为03:50历史。D06实际独立canonical和receipt在[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh/plans/d06-architecture-refresh/status.md)，四scope仅图数据/测试/自有docs，原D05保留源不覆盖。CHAT最终331/7cb已由root一次交付主线，管理者不重复模型验收。X03 fixed895模块已被Mika root批准，等待最终metadata及完整main，再为独立WPF-X03挂载正式移交App/react/CSS，当前未领取/写入。
+04:20当前变更：PERF02已经[release v2](perf02-release-receipt.json)，无pending修复不再保留writer，旧保留描述为03:50历史。D06实际独立canonical和receipt在[status](../../../plans/d06-architecture-refresh/status.md)，四scope仅图数据/测试/自有docs，原D05保留源不覆盖。CHAT最终331/7cb已由root一次交付主线，管理者不重复模型验收。X03 fixed895模块已被Mika root批准，等待最终metadata及完整main，再为独立WPF-X03挂载正式移交App/react/CSS，当前未领取/写入。
 
 
 ### WPF-X03I01受控接线（04:22，尚未take）
 
 输入等待：Lead两次真实query结束后的精确含CHAT与MikaX03 main；不将1290e7db模块metadata或movingmain自行当综合base。原owner已明确三文件停写。CHAT claim08259c1d v2移出App.tsx与plugin-integration/react.tsx，[原receipt](chat-x03-amend-receipt.json)；I01 claimb666 v3移出integration.css，[原receipt](i01-x03-amend-receipt.json)。没有释放整claim，其他14/10范围保留。新task WPF-X03I01/worker workspace_panels_owner，七scope已在父plan，独立新tree须精确base+clean才take。receipt未有不实施；source到位后向Lead登记唯一canonical，不建第二手填状态。
 
-CHAT04候选e423abb5f404334b4bb781de1fe1a429278762d4仅固定合同/stub，路径[Interface](/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-queue/docs/evidence/chat04/interface.md)随owner实施会变化，读取需固定gitshow。claim3be53dee v1为Mika队唯一writer，外部Web未take新消费；waiting列表与独立queueRevision/receipt重放语义已记research。生产实现、client/export与独审ready前不得代替已有unsupported行为。
+CHAT04候选e423abb5f404334b4bb781de1fe1a429278762d4仅固定合同/stub，路径[Interface](../chat04/interface.md)随owner实施会变化，读取需固定gitshow。claim3be53dee v1为Mika队唯一writer，外部Web未take新消费；waiting列表与独立queueRevision/receipt重放语义已记research。生产实现、client/export与独审ready前不得代替已有unsupported行为。
 
 
 ## 04:34 当前消费与后继边界

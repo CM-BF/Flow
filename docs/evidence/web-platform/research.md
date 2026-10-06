@@ -490,7 +490,7 @@ root固定fb906核ConversationTurn已有task id/title/status/verificationStatus/
 
 K02受控输入e9a0259151fcb215e1bd607b5461d81412da2742来自Lead736三contracts原样patch，SHA/before/after管理与root各自独立一致；该输入不代表后台批准。作者固定763与renderer固定747的范围、源码hash、链接/解析已由管理核查，产品行为独审归root，不以文档绿替代行为。原日志/patch空白保留，不把fullmetadata diffcheck声称0。
 
-GO观察、root转述的[synthetic窄屏图](/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/queue-live-preflight/second-reply-dark-narrow.png)显示底部两处Execution details与Requested runner-default/Read-only/Thinking off/Unpinned legacy、Continue this conversation和多行说明占用聊天高度。后继U11整合单一折叠执行入口，默认只留用户需要选择的model/access/queue状态；真实unsupported、未知回执和简短fixture身份仍明确。管理未重拍或将此升级当前阻断；原REQ43正文/过程优先保持，既有typed tool状态缺口不被文案伪补。
+GO观察、root转述的[synthetic窄屏图](../f01/queue-live-preflight/second-reply-dark-narrow.png)显示底部两处Execution details与Requested runner-default/Read-only/Thinking off/Unpinned legacy、Continue this conversation和多行说明占用聊天高度。后继U11整合单一折叠执行入口，默认只留用户需要选择的model/access/queue状态；真实unsupported、未知回执和简短fixture身份仍明确。管理未重拍或将此升级当前阻断；原REQ43正文/过程优先保持，既有typed tool状态缺口不被文案伪补。
 
 ## CHAT05初合同依赖（固定ae4，未当产品完成）
 
@@ -514,7 +514,7 @@ Root本段实际官方资料核对来源：[assistant-ui导航](https://www.assi
 
 ## 06:09 真实两轮窄屏人工观察补证
 
-[真实queue-live截图](/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/queue-live/second-reply-dark-narrow.png)由root人工目视，区别此前queue-live-preflight synthetic。管理只读manifest/checks，实际确认observedAt06:04:30.199828Z、web3d4985fca060155435b159e0467815bf8e88b8b8、centerRunnerfb906cb42391971a8b315dbd813f7633927d7265、caller0695bae99a20acd639b02826bf092c64040a21a1与CLOSED2/2，checks PASSED_TWO_QUERY_QUEUE_AND_VISIBLE_MEMORY、结束06:02:28.394Z；不重新测试。
+[真实queue-live截图](../f01/queue-live/second-reply-dark-narrow.png)由root人工目视，区别此前queue-live-preflight synthetic。管理只读manifest/checks，实际确认observedAt06:04:30.199828Z、web3d4985fca060155435b159e0467815bf8e88b8b8、centerRunnerfb906cb42391971a8b315dbd813f7633927d7265、caller0695bae99a20acd639b02826bf092c64040a21a1与CLOSED2/2，checks PASSED_TWO_QUERY_QUEUE_AND_VISIBLE_MEMORY、结束06:02:28.394Z；不重新测试。
 
 Root目视真实两轮中文回复，底部同时0 waiting loaded、两处Execution details、Requested runner-default/locked/Read-only/Thinking off/Unpinned legacy、禁用Thinking/Tools/Steer和长footer，配置说明约占底部三分之一。这是定性截图观察，非输入延迟/完整产品复验，不撤销功能通过。既有U11后继按真实聊天与折叠详情链优先，再单一外层execution disclosure；保留model/access/queue主要项、可达技术语义、unsupported/unknown明确，用同390×844与键盘验证。完整归属/hash见[观察证据](queue-live-ux-observation.json)。
 
