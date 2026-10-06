@@ -1,3 +1,12 @@
+# X01 当前纵向片设计审查
+
+状态：NOT_STARTED
+
+- 当前owner architecture_read/gpt-6-astra；仅原两个metadata目录。原plan-only approval不覆盖新Interface/产品源码。
+- 实施前明确共享scope/migration、真实加载与权限/版本绑定、公有command语义；0产品验证。
+
+---
+
 # X01 独立审查
 
 **状态：APPROVED（plan-only）target c21731c01f97afb450e443245b3fae0d2b0edb9b；不构成产品实现批准。**
