@@ -6,6 +6,8 @@
 
 2026-10-06 19:03:37 UTC：architecture_read指出JSON.parse后internal已赋值并不表示身份/input/journal通过；本窄修复用成功保存后才成立的caseReceiptConfirmed限制accountingComplete。任何CASE_RECEIPT_UNKNOWN保持known/withinTotal=false。v3 input和单archive ledger另存，旧packet不改；候选待独立复审，0检查/actual。
 
+Review target commit: `4da7f6852a047e417a5779ae3f1d745745f9a77d`；[最小delta manifest](../../docs/evidence/s01/idle-claim-cost/receipt-accounting-fix-manifest.json)，4bindings与81input均Git=WT/hash/bytes核符，旧d215七份准备记录逐字不变。此为绑定核对，非工程检查。
+
 ## 历史 A/B 准备批准
 
 状态：APPROVED（仅A/B准备）

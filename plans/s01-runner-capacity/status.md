@@ -9,19 +9,19 @@
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | idle固定main8d84；当前最小receipt accounting修复待固定（前包a41e5126/d215保留）；旧0de832/380666保留。未合入新main |
+| 工作基线 / HEAD | idle固定main8d84；当前receipt accounting source 4da7f6852a047e417a5779ae3f1d745745f9a77d（前包a41e5126/d215保留）；旧0de832/380666保留。未合入新main |
 | 工作树dirty状态 | 本次 idle 观察器/新证据/owner metadata 实施中；历史 A/B/128 source 与 raw 未修改 |
 | 工作分支状态 | in-progress |
 | 检查状态 | idle NOT_RUN，fake/actual/strict 均未运行；历史 A/B 64 distinct 分次最终覆盖与 local strict0 不覆盖新准备 |
 | 已集成main状态 / HEAD | 新A/B未main；历史mixed26+c259已mainaae，范围见历史main-acceptance |
-| 实现目标 | idle前两P2已静态关闭；第三P2的receipt accounting最后门禁已修待固定复审；0checks |
+| 实现目标 | idle前两P2已静态关闭；第三P2的receipt accounting最后门禁已固定待复审；0checks |
 | 实现范围 | claim508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE，mixed、两个A/B evidence、idle-claim-cost evidence、原plan共5 literal；无产品写权 |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 4 |
 | 当前产出 | 计量完整性改为要求已校验并保存的case receipt；身份/input/journal未知时known与withinTotal均false；尚未运行 |
 | 下一可用交付 | 独立复核新固定包；获得明确小检查窗口后验证9个fake及类型，实际探针另开窗口 |
-| 当前阻塞 | 最小修复待固定交审；独立复审/验证PENDING，fake/actual NOT_OPEN。A/B仍NOT_OPEN |
+| 当前阻塞 | 最小修复已固定交审；独立复审/验证PENDING，fake/actual NOT_OPEN。A/B仍NOT_OPEN |
 | 需用户决定 | NONE |
 | Review | 原0de832三P2 CHANGES_REQUESTED；a41e前两P2静态关闭，第三最后门禁修复待独审；observer early731仅SOURCE_REVIEW无P1/P2/VALIDATION_PENDING；历史A/B批准不覆盖idle |
 
