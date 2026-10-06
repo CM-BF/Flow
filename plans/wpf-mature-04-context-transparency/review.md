@@ -1,13 +1,14 @@
 # WPF-MATURE-04 独立审查记录
 
-状态：NOT_STARTED（当前正式027/历史持久化组合待独审；全局挂载/真实SDK不在本target范围）
+状态：APPROVED（9ac历史Module与正式027；全局挂载/真实SDK/current不在本target范围）
 
 - Review target commit：9ac549dddd12b6bb186bf34116c4c72fe9889cfc。
+- 独立reviewer：status_read / gpt-6-astra，2026-10-06 11:11:12 UTC；Mika接收，无P1/P2。[独审收据](../../docs/evidence/wpf-mature-04/history-independent-review.json)，只读审查、未重跑检查。
 - Scope：history-pg-manifest.json的10源码，包含原a735八源及正式027/局部migration入口；原六已审源冻结。
 - 50/50不同检查：18 wire、6 DTO、11确定性store、9真实PG、6 fixture-auth HTTP；严格root选项noEmit0。首次strict缺真实augmentation及声明路径两轮失败保留，未以shim或放宽配置规避。
 - 真实PG核首迁移保留旧证据、完整canonical重放首sequence/receivedAt/ref、unique-sequence冲突及外层异常无孤儿detail、FK归属/immutable/字节限制、source/session拒绝、K02精确metadata及pool关闭重开读回。两轮均0连接后DROP，未依赖026。
 - 全局owner-auth/server/client/events挂载、真实采集/current/remaining/freshness仍待；本片只能批准有限历史持久化/局部路由实现。
-- [固定清单](../../docs/evidence/wpf-mature-04/history-pg-manifest.json)列出的全部raw/support已经在target中；清单与此review/status作为随后metadata固定。独立review只读，不重跑已过检查；问题交本owner修。
+- [固定清单](../../docs/evidence/wpf-mature-04/history-pg-manifest.json)列出的全部raw/support已经在target中；清单与此review/status作为随后metadata固定。独立review已只读完成；原28绑定均核验一致。
 - 前次a735静态/模块预审：Mika/gpt-6-astra于2026-10-06 10:42:39 UTC，无P1/P2静态发现；当时41局部检查，不含PG，历史结论不扩大为本target已批准。
 
 # 第二片历史review：3ab95d2修复

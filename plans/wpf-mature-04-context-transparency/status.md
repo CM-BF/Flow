@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:10:39 UTC / 最近main核2e71fabc clean；本次仅共享owner路由澄清 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:12:42 UTC / 最近main核2e71fabc clean；本次批准metadata |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
 | 工作基线 / HEAD | 原始b1c2e398；受控合入8d8ab520 / 实现 9ac549dddd12b6bb186bf34116c4c72fe9889cfc；metadata随后提交 |
-| 工作树dirty状态 | 实现9ac549dd已固定；本轮仅自有交审metadata，10源及原始证据停写等待独审 |
+| 工作树dirty状态 | 核661f8ba7 clean/v5 ACTIVE后仅录批准metadata；9ac的10源、绑定support/raw与manifest冻结 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED 9ac549dddd12b6bb186bf34116c4c72fe9889cfc：50/50（41既有+9真实PG）、root严格noEmit0；真实专库已DROP；全局鉴权/挂载NOT_RUN，见[证据](../../docs/evidence/wpf-mature-04/history-pg-checks.json) |
 | 已集成main状态 / HEAD | 未集成：本次核main 2e71fabc218df28f6ccb78a927432ae1101c17c5 clean，879/3ab/9ac均非祖先；[固定集成输入](../../docs/evidence/wpf-mature-04/integration-readiness.json) |
 | 实现目标 | 9ac549dddd12b6bb186bf34116c4c72fe9889cfc |
 | 实现范围 | apps/server/src/context-transparency/migration.ts, apps/server/src/context-transparency/routes.test.ts, apps/server/src/context-transparency/routes.ts, apps/server/src/context-transparency/store.test.ts, apps/server/src/context-transparency/store.ts, packages/contracts/src/context-observation-event.test.ts, packages/contracts/src/context-observation-event.ts, packages/contracts/src/context-observation-history.test.ts, packages/contracts/src/context-observation-history.ts, packages/storage/migrations/027-context-observation-history.sql |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 历史样本已验证可靠保存、重放和重启后读回；正式迁移与局部接口等待独审 |
-| 下一可用交付 | 独审通过后由Lead接入既有事件与鉴权读回，供界面展示历史估算；当前占用与剩余仍未知 |
+| 当前产出 | 历史样本保存与读回及正式迁移已获独审通过，等待中心接线集成 |
+| 下一可用交付 | Lead接入既有事件和鉴权读回后可展示历史估算；当前占用与剩余仍未知 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED 9ac549dddd12b6bb186bf34116c4c72fe9889cfc：正式027/真实PG组合待独审；a735静态预审与旧两片批准独立保留 |
+| Review | APPROVED 9ac549dddd12b6bb186bf34116c4c72fe9889cfc：status_read / gpt-6-astra，2026-10-06 11:11:12 UTC，Mika接收，无P1/P2；仅历史Module+027，不含global/SDK/current |
 | Claim | [COMMITTED amend v5](../../docs/evidence/wpf-mature-04/history-ddl-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v5 ACTIVE；18 scopes；review修复期保留，旧6停写 |
 | 架构影响 | 新增中心历史record/read/local GET、唯一027表/归属复合FK与索引、migration(pool)入口；无新runner端点/FSM；全局挂载及固定架构视图由Lead于集成target更新 |
 
@@ -32,7 +32,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-04-01 | completed | architecture_read | bbfb7037ee3ca3e37bf14a078f8a05582b209f48已push；7文档/6 TODO/9验收自查通过 |
 | WPF-MATURE-04-02 | completed | architecture_read / mika | 879c989a594a8f4f266b9a78a885e311c52eca0d；30/30、局部strict noEmit；Mika独立APPROVED，无P1/P2 |
-| WPF-MATURE-04-03 | in-progress | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已获mika批准历史首片8新路径；v5已追加唯一027及局部入口；50/50含9真实PG、严格noEmit0，正式组合待独审/集成；当前/remaining/SDK采集仍未知 |
+| WPF-MATURE-04-03 | in-progress | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已获mika批准历史首片8新路径；v5已追加唯一027及局部入口；50/50含9真实PG、严格noEmit0，正式组合已独审APPROVED待集成；当前/remaining/SDK采集仍未知 |
 | WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | 纯Adapter P2修复源码已完成，49/49与strict noEmit0，独立APPROVED；不含真实采集、压缩事件或生产接线 |
 | WPF-MATURE-04-05 | pending | d01 管理 Web owner | 沿本计划与中心合同消费；未实施 |
 | WPF-MATURE-04-06 | pending | architecture_read / mika | 仅schema/纯投影独审已过；完整矩阵与后继独审、main交付未完成 |
@@ -76,3 +76,5 @@
 2026-10-06 11:09:53 UTC：fresh v5 ACTIVE/8251d597 clean后只修dashboard枚举与UTC格式：检查使用PASSED，时间使用显式UTC。只读parseStatus确认target9ac、10literal、review阶段/NOT_STARTED，无source/raw改动或工程重测。正式027入口/薄接线已固定于target内canonical请求。
 
 2026-10-06 11:10:39 UTC：fresh账本11:10:26确认runner.ts/events.ts无active claim，contracts/index、server/index、client/index均F01 Lead8470 v28；[当前接线路由](../../docs/evidence/wpf-mature-04/handoff-current.md)澄清9ac bound页面的ENG01A/TUI01B仅历史快照。空scope不构成授权，后继Lead必须fresh take/amend；本次只改metadata，不改任何9ac绑定source/support/raw/manifest，正式027/Interface不变。
+
+2026-10-06 11:12:42 UTC：接收status_read固定9ac的APPROVED（11:11:12 UTC，无P1/P2），28bindings与旧6均核实，50不同+strict0/twoDB清理成立；未重跑。独审仅历史Module/DDL，[唯一已审集成输入](../../docs/evidence/wpf-mature-04/history-integration-ready.json)引用原manifest与新review收据，原绑定资料不改。保持v5修复期/source冻结；下一producer仅做有界接缝准备，不扩大范围。
