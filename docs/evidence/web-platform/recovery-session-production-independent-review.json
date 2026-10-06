@@ -1,0 +1,51 @@
+{
+  "reviewer": "native_center_owner",
+  "author": "astra_ultra_execution_lead (F01)",
+  "status": "APPROVED",
+  "reviewTargetCommit": "9406ca5f2aa5a88dbc028d64e09f48f438bd627e",
+  "observedDelivery": "19aaaef119bab2dac608fc1013f317d3e418a336",
+  "reviewedAt": "2026-10-06 13:33:01 UTC",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation",
+  "manifest": "docs/evidence/f01/browser-session-production-manifest.json",
+  "binding": {
+    "target": "9406ca5f2aa5a88dbc028d64e09f48f438bd627e",
+    "observedDelivery": "19aaaef119bab2dac608fc1013f317d3e418a336",
+    "manifestSha256": "18c50b216cc6710aa71b9dc4be79b1070af1cabc3ce3622194aa435af7c723c8",
+    "counts": {
+      "sources": 3,
+      "readonlyInputs": 10,
+      "raw": 12
+    },
+    "mismatches": []
+  },
+  "scope": [
+    "apps/server/src/index.ts",
+    "apps/server/src/main.ts",
+    "packages/client/src/browser-session-production.test.ts"
+  ],
+  "independence": "Reviewer did not author these three files. Earlier browser-session domain implementation is a fixed, separately approved input; its seven files were hash-bound only, not self-reviewed here. Client three-file input retains its separate independent review.",
+  "findings": [],
+  "unresolvedP1P2": 0,
+  "sourceReview": [
+    "Read all three-file delta and full new production test. Migration 028 runs before scheduler/package worker/queue scan. One domain authentication preHandler replaces duplicated local owner/runner logic; routes follow that hook, and streams receive the same authorizeStream port.",
+    "Configured CORS replaces the legacy CORS options in the single registration. Configuration absence preserves legacy Bearer support and unsupported session state; configuration is finite and validated by the domain factory before listen. Main limits JSON input to 4096 UTF-8 bytes and rejects malformed input.",
+    "Factory failure cleanup and existing lifecycle remain in the composition. No trustProxy/TLS/Forwarded authority or provider capability was introduced."
+  ],
+  "evidenceReview": {
+    "newChecks": "3 distinct passing across rounds: 2 in green2, then final selected 1 with 2 unselected; not a single 3/3 final run.",
+    "legacyDirectConsumer": "3 queue lifecycle tests passed, process exit 0, original output and tool chunk 9b3135 retained.",
+    "typecheck": "Final root noEmit exit 0 recorded by tool chunk 80fb94; empty compiler stdout is not a fabricated success log. Earlier three test-typing errors remain recorded.",
+    "actualJourney": "Random isolated PostgreSQL with real createServer and public FlowClient: unsupported default, owner/runner role boundary, configured cookie session, invalid Bearer precedence, Origin/Host/CSRF rejection, same session after factory restart, SSE revocation on logout, running task not cancelled, plus actual Node main malformed config exit 1 and valid owned child normal exit 0.",
+    "resources": "Four recorded random test databases had no pre-existing match; each was created and later had connections=[] and remaining=[]. Initial red child manual TERM is disclosed; it is not counted as automatic invalid-config rejection. Legacy queue check has no separately captured preflight database-facts manifest.",
+    "failuresPreserved": "Initial three red results and subsequent test-only mistakes (claim shape including remainingLeaseMs, ignored fetch Host header, and TaskSnapshot property usage) remain in raw evidence.",
+    "reviewerTestRuns": 0,
+    "reviewerProviderCalls": 0,
+    "reviewerPersonalServiceOperations": 0
+  },
+  "approvalBoundary": [
+    "Approval is limited to this factory/main/client-production-test composition at the fixed target.",
+    "Node explicit cookie jar and HTTP loopback evidence do not establish real browser persistence, Web UI acceptance, or reverse-proxy HTTPS/TLS deployment.",
+    "028 first-upgrade coverage remains prior domain evidence; the factory checks prove mounting and availability, not a repeated first-upgrade experiment.",
+    "No personal deployment, native provider execution, or current-main integration is asserted by this review."
+  ]
+}

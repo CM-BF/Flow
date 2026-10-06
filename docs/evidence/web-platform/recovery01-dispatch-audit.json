@@ -1,0 +1,116 @@
+{
+  "recordedAt": "2026-10-06T13:48:28.571676+00:00",
+  "role": "management readiness/source/claim audit; no product retest",
+  "base": "84005a260dfcb668cd38b09c21564d0754a0f513",
+  "sourceBinding": {
+    "count": 13,
+    "fixedMainVsApprovedTargetAndManifestMismatches": [],
+    "comparison": "recovery-session-main-source-comparison.json"
+  },
+  "reviews": {
+    "domain": "Execution Lead approved582f",
+    "client": "status_read independent/Mika accepted d6d; original5be P2 closed",
+    "production": "native_center_owner approved9406"
+  },
+  "combinationChecksAttributedToLead": {
+    "selectedProductionPassed": 1,
+    "unselected": 2,
+    "rootTypesExit": 0,
+    "webTypesExit": 0,
+    "domainFullReruns": 0,
+    "managerProductReruns": 0
+  },
+  "dispatch": {
+    "taskId": "WPF-RECOVERY01",
+    "directParent": "WPF-MATURE-06",
+    "owner": "workspace_panels_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "branch": "codex/web-conversation-recovery",
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 1,
+    "committedAt": "2026-10-06T13:46:08.213Z",
+    "scopeCount": 21,
+    "conflicts": [],
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+    "canonicalState": "owner dispatched by followup_task; first SOURCE_READY pending",
+    "registryState": "pending new unique source registration by Execution Lead; no dashboard/service read"
+  },
+  "resources": {
+    "preflight": {
+      "availableBytes": 1584984064,
+      "trackedLogicalBytes": 145089156,
+      "tracked4096RoundedBytes": 162811904,
+      "checkoutAndLightMetadataAllowanceBytes": 234881024,
+      "remainingAfterAllowanceBytes": 1350103040,
+      "minimumRemainingBytes": 1073741824,
+      "permitted": "provision checkout + light source/metadata editing only; no install/build/PG/browser",
+      "fullInstallBuildMinimumBytes": 2684354560
+    },
+    "afterCheckoutAvailableBytes": 1416241152,
+    "permitted": "light source/metadata implementation; no install/build/PG/browser yet",
+    "fullBuildGate": "available>=2.5GiB AND estimated physical increment leaves>=1GiB; separate from code editing"
+  },
+  "finalJourneyGates": [
+    "center effective callerOrigin policy",
+    "late expiry Set-Cookie response race",
+    "repeat connect /32slot semantics",
+    "real browser/IDB/HTTP evidence within approved budget and resources"
+  ],
+  "release03": "not taken; no matching formalformat2 descriptor, build resource gate unmet, actualbackend362history repair/observation gate retained",
+  "archives": [
+    {
+      "path": "recovery01-provision-resource-preflight.json",
+      "source": "/tmp/d01-recovery-preprovision.json",
+      "bytes": 1908,
+      "sha256": "b9171784d79841c56ce2d7188ea48469b64e0752b8c076041c412c1873e9d3c9"
+    },
+    {
+      "path": "recovery01-provisioned-tree.json",
+      "source": "/tmp/d01-recovery-provisioned.json",
+      "bytes": 366,
+      "sha256": "3926aef8f3cb735a6cc4fd55cfc9e9210afb55f0608af000e660b42c8a4990e4"
+    },
+    {
+      "path": "recovery01-take-receipt.json",
+      "source": "/tmp/d01-recovery01-take-receipt.json",
+      "bytes": 1493,
+      "sha256": "1512c85d0c6c9f3c6c16d112647aae12c1c42a8d741731d3d78936646b400aa7"
+    },
+    {
+      "path": "recovery-session-main-intake-receipt.json",
+      "source": "84005a260dfcb668cd38b09c21564d0754a0f513:docs/evidence/i02/browser-session-integration.json",
+      "bytes": 2285,
+      "sha256": "456b795a674c485ae1b1c18d2bb6c87cb2b500e91e59dbc4a18f14aa2dbf5ed9"
+    },
+    {
+      "path": "recovery-session-main-source-comparison.json",
+      "source": "84005a260dfcb668cd38b09c21564d0754a0f513:docs/evidence/i02/browser-session-source-comparison.json",
+      "bytes": 3422,
+      "sha256": "d153dd14cae903aa490eb360290c6eb1b25e2aeadbc299246991f7c280a90696"
+    },
+    {
+      "path": "recovery-session-client-independent-review.md",
+      "source": "e29870337ba9ee51cb9ae83427a5b3d742c7a137:docs/evidence/f01/browser-session-client-independent-review.md",
+      "bytes": 1274,
+      "sha256": "eaf7fdcb2c5f549c3c452097f46ef0d899f6e2c0cc505ee72d5cc6ba5b06a227"
+    },
+    {
+      "path": "recovery-session-client-review-manifest.json",
+      "source": "e29870337ba9ee51cb9ae83427a5b3d742c7a137:docs/evidence/f01/browser-session-client-review-manifest.json",
+      "bytes": 1667,
+      "sha256": "6256bf63da093a9e017c0bd6e3ea395bf8268989694e704fb75bfc805c94a460"
+    },
+    {
+      "path": "recovery-session-production-independent-review.json",
+      "source": "e29870337ba9ee51cb9ae83427a5b3d742c7a137:docs/evidence/f01/browser-session-production-independent-review.json",
+      "bytes": 4121,
+      "sha256": "1d8a78d86591616f5409a03d9737ed270d8efe671b196d4bcea3c33ae7eb6eec"
+    }
+  ],
+  "limits": [
+    "opt-in session remains disabled by default",
+    "Node jar/loopback is not browser persistence or TLS/proxy proof",
+    "personal backend362/v15 and Web8d8/v2 unchanged",
+    "no new provider/API/PG/browser or usertab operation"
+  ]
+}

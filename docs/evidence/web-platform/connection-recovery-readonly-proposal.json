@@ -1,6 +1,6 @@
 {
   "at": "2026-10-06T12:29:09.217077+00:00",
-  "state": "ROOT_DIRECTION_APPROVED_INTERFACE_AND_LEGAL_OWNER_COORDINATION_ONLY",
+  "state": "ROOT_STRUCTURE_APPROVED_RECOVERY01_FRESH21_DISPATCHED",
   "parent": "WPF-MATURE-06",
   "stableTodo": "WPF-MATURE-06-04",
   "source": "workspace_panels_owner six-point bounded study, no new files/trees/claims/experiments by worker",
@@ -179,7 +179,7 @@
       "packages/client/src/index.ts",
       "packages/client/src/browser-session.test.ts"
     ],
-    "webConsumerAndRecoveryOwner": "workspace_panels_owner — proposed, pending legal scope; not claimed",
+    "webConsumerAndRecoveryOwner": "workspace_panels_owner — fresh21COMMITTED6ff988b2v1, dispatched onformal84005; ownstatus pending SOURCE_READY",
     "hierarchy": "Each implementation subtask directlyparentMATURE06, ownunique status; Module decomposition is not thirdexecutionlayer",
     "centerTaskCandidate": "WPF-CONNECTION01",
     "centerWorktreeCandidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session",
@@ -224,14 +224,16 @@
   },
   "latestRecoveryScopeProposal": {
     "record": "recovery01-fixed-cde-proposal.json",
-    "state": "ROOT_STRUCTURE_APPROVED21_NOT_TAKEN; implementation waits approvedmainclient/freshscope/lightresources; threecentersemantics parallel until finaljourney",
+    "state": "FRESH21_COMMITTED_DISPATCHED",
     "fixedMain": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
     "reason": "Add existing-slot trusted P01 binding to20candidate rather than hardcoded recoveryentry; underlying16+4materialseams retained",
-    "F01FixedSha": "5be830e2614d45dbaa023e98923fc74f470b37ec",
-    "F01Review": "NOT_STARTED observed at c1a173 metadata",
+    "F01FixedSha": "d6d5089c680f862e34a8e4d25f8f65d03057e70e",
+    "F01Review": "APPROVED status_read/Mika, original5beP2closed",
     "readinessRecord": "recovery01-readiness-preflight.json",
     "productionFixedSha": "9406ca5f2aa5a88dbc028d64e09f48f438bd627e",
     "productionInterface": "recovery-session-production-fixed-interface.md",
-    "productionReadiness": "Fixed input; independent reviews/main pending; no newtake"
+    "productionReadiness": "APPROVED native9406 and formalmain84005; finalWebjourney gates remain",
+    "implementationBase": "84005a260dfcb668cd38b09c21564d0754a0f513",
+    "dispatchRecord": "recovery01-dispatch-audit.json"
   }
 }

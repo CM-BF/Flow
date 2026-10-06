@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:40 UTC / 首页摘要与发布、恢复依赖已对齐 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:48 UTC / 共享会话正式主线与恢复领取已核 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 附件发送与架构更新已进入主线；已审页面发布和刷新恢复两条线正在并行准备 |
-| 下一可用交付 | 验证稳定页面与当前后台的兼容组合并交原发布方；恢复接口获审并进入主线后领取实现 |
-| 当前阻塞 | ACTIVE: 发布等待正式format2构建资源（可用≥2.5GiB，扣预计增量后余≥1GiB），以及后台362的附件历史修复与组合验证；恢复等待共享客户端独审及主线输入。两片尚未领取，其他独立工作继续 |
+| 当前产出 | 附件与会话共享输入已进入主线；刷新恢复已领取实施，稳定页面发布兼容准备并行 |
+| 下一可用交付 | 实现刷新后的完整草稿与原未决回执恢复；发布资源与后台修复就绪后验证稳定页面并交原发布方 |
+| 当前阻塞 | ACTIVE: 发布等待正式format2构建资源及后台362附件历史修复与组合验证；恢复可先写代码，完整安装/构建仍需可用≥2.5GiB且增量后余≥1GiB，最终浏览器旅程需对齐三项中心语义 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -84,7 +84,7 @@
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
 | RELEASE02 → MATURE01 | web-release-type-fix / 03323bce v2 released三scope | fixed560c已Lead独审并main648e；ownerfed5 normalpush双端clean/parser0后全停写，03323 v2已release；0浏览器/PG/个人发布 |
 | ATTACHI01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md)，94b84c59 v2 released十一scope | fixed4c4d已main1c496九源同，owner2b0a33e双端clean/parser0后全停写；94b84 v2 released，实际App仍属新生产绑定片 |
-| ATTACHI02 → MATURE03 | web-attachment-production / 0b7fc000 v2完整二十四scope | fixed1c496输入；首段4a91固定十源和局部检查，12:18后十二fresh无冲突原子amend成功；同一owner实际接线，完整App/HTTP未完成 |
+| ATTACHI02 → MATURE03 | web-attachment-production / 0b7fc000 v4 released二十六scope | fixed9eec二十四源已main cde；owner5069586双端clean全停写后v4释放，后继Recovery独立fresh21领取；个人服务未切 |
 | WORKSPACEPERF01 → MATURE05 | c815bc00 v2 released四scope / web-workspace-lifecycle-baseline | fixed1711已正式main362af3两源同；owner12e4双端clean/全停写后c815 v2 released；8完成/1失败、累计79.322s保持partial，0生产优化 |
 | DASHSUM01 → D01 | dashboard-human-summary / fe63511a v2 released六scope | fixedc1de已main017adc，owner2daf070双端clean/parser0后全停写；fe635 v2正式释放，root148既有DOM已核顶部不同大task，未复验领取详情 |
 | WORKSPACECACHE01 → MATURE05 | web-workspace-cache / 883321bc v2 released十六scope | fixed4ec已main017adc、十四hash同，owner10ca8双端clean后全停写/883321 v2释放；含六ATTACHI交集；原分次browser限制保留 |
@@ -97,15 +97,15 @@
 - 六大task与Mika02/04唯一canonical、用户原话/Arc抽象、登记字段与待集成目标统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)。Web只拥有01/03/05/06，02/04不复制计划。
 - Lead09:09:25正式观察111 sources/current/issues[]，六MATURE/CONTEXTI/STEER/VISUAL已登记；本管理不重复API。D08已main f181；root10:44–10:45实际页面已核六parent与子片父/worker领取；MATURE04 stale已自恢复，剩余声明格式交Mika合法owner。
 - root12:24既有DOM已核148来源、main a8aef、顶部三大task分散；Lead同期ledger available/unregistered[]，没有展开领取详情或本组API采样；[精确观察](../../docs/evidence/web-platform/dashboard-148-root-dom-observation.json)。
-- 下一完整旅程沿MATURE06-04，附件/已审dashboard安全点后优先恢复而非Arc；中心writer待Lead明确，panels Web/Recovery仅候选pending legal scope。[接口/写权队列](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。
+- 下一完整旅程沿MATURE06-04，附件/已审dashboard安全点后优先恢复而非Arc；中心582f/共享d6d/生产9406已正式main84005；panels Recovery新21范围已COMMITTED并派工，source登记待首canonical。[接口/写权队列](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。
 - D05 registry evidenceDir应为docs/evidence/d05-first-fit；现owner仍Lead队，仅其可修registry，本组不抢写。
 - CONTEXTI已main并释放；STEIRI01、ACTIVITYREAD和D08已main f181并全部停写释放，source见集中handoff。
-- GO已将MATURE03附件端到端责任交Web/root；root已冻结附件设计；panels运行域与两fixture增量已fd1322 main并release；w01 ATTACHI模块已main1c496并released，新ATTACHI02已0b7fc v2全24实际接线；CACHE已main017adc并完成16scope停写/released。共享receipt四Web路径09:51:27 fresh账本无writer；仅时点观察，未来仍fresh take。
+- GO已将MATURE03附件端到端责任交Web/root；运行域及实际ATTACHI02已main cde且旧scope释放，完整MATURE03目标仍开放；CACHE也已main/released。新RECOVERY01仅用自己fresh21claim，不沿已释放写权。
 - 跨lead接口/资源裁决才有界直接协调；GO每完整大task只独立blocker与Done一次。无不可解除的整体阻塞；用户再次要求take在dashboard明确展示、各lead防overlap，已核plan U08/U12与REQ37完整覆盖；fresh COMMITTED后才写、停止后fresh release及其账本展示保持验收项。
 
 ## 当前服务与验收边界
 
-ExecutionLead新通知：SVC05由唯一operator assignment_review对固定362个人后台执行授权更新fresh gates；原Flow目录临时clean detached362，main/origin ref仍aeb764e5，集成冻结直至Lead resume。独立WT照常，不从临时HEAD取base；4320由独立I02树149来源继续服务（仅Lead归因，本组未复采样）。这是运行窗口而非成功发布回执，b1c/8d8是前窗口历史状态；[通知](../../docs/evidence/web-platform/svc05-runtime-window-notice.json)。本组未操作个人服务或用户页。旧SVC03 artifact461a/accepting v12及main-Vite/32c-v9/fb906仅历史，不能当当前产物。main不等当前页面，不新增真实query。
+SVC05窗口已由Lead正式关闭，个人backend362/v15与Web8d8/caa1/v2沿服务owner固定receipt；本组无新个人服务采样。原Flow临时detached只属已结束操作窗口，不当源码回退；当前恢复输入固定84005。实际registry/页面发布另依Lead回执，不因新take假称已展示。
 
 完整聊天/附件/主题插件材质/组合tab/真实多provider/context用量/语音成功路径仍按六大task开放验收。局部fixture/独审/main/个人产物分别记录。GO历史真实queue2/2封存结果只引用原证据，本组0真实模型/语音调用，不重复他队实验。
 
@@ -114,3 +114,5 @@ ExecutionLead新通知：SVC05由唯一operator assignment_review对固定362个
 [本次收敛前原文历史](status-history.md)保留原时点、失败、未验、SHA与原始证据链接；仅历史不得更新成第二状态源。[plan](plan.md)保留完整U00–U12/REQ01–45与稳定36TODO；[research](../../docs/evidence/web-platform/research.md)记录研究依据；[固定发布说明](../../docs/evidence/web-platform/publication/README.md)界定a5独审副本；[本轮成熟度handoff](../../docs/evidence/web-platform/mature-task-handoff.md)供正常登记/集成。
 
 [RELEASE03候选/批准范围](../../docs/evidence/web-platform/release03-current-preview-proposal.json)直接MATURE01，w01唯一验证owner、未claim；不复用RELEASE01/02释放权，不抢Recovery。原SVCoperator独立接精确descriptor/compatibility后发布；个人服务未操作。
+
+恢复正式领取与唯一来源见[dispatch审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)和[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json)；当前实施事实由新owner status维护，不由管理表复制TODO。13源比对不是13tests，Lead组合为1pass/2未选+types0；本组无产品复测。

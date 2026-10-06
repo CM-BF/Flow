@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 13:40 UTC |
+| 最近更新 | 2026-10-06 13:48 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 连接与草稿、未决发送恢复方案已批准；同步交接、材料保留和持久记录容量已有只读依据，尚未实现 |
-| 下一可用交付 | 共享客户端独审和主线组合输入就绪、轻量资源允许后，领取恢复实现；页面发布由另一条线推进 |
-| 当前阻塞 | ACTIVE: RECOVERY01等待共享客户端独审及正式主线组合输入；中心三项会话语义并行对齐，作为最终浏览器验收条件，不阻挡届时先实现持久记录 |
+| 当前产出 | 连接与持久草稿、未决发送恢复已领取实施；共享会话输入已获审进入主线，完整用户旅程尚未验证 |
+| 下一可用交付 | 先实现原回执同步接管和持久检查点、完整材料恢复及真实插件入口，再按资源条件验证刷新与显式原key恢复 |
+| 当前阻塞 | ACTIVE: 轻量实现已可进行；完整安装/构建等待可用≥2.5GiB及增量后余≥1GiB，最终浏览器旅程还需对齐callerOrigin、迟到注销Cookie及重复连接名额语义 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |
@@ -30,7 +30,7 @@
 | WPF-MATURE-06-01 | in-progress | Web co-lead | 逐条引用stream/activity/queue/readability固定证据与限制，模块/fixture/真实provider分开，不重复勾整体Done。 |
 | WPF-MATURE-06-02 | in-progress | Web co-lead | admission仅快照非许可，POST重验、原key unknown、receiptRevision更新、received不冒模型遵从；模块和App接线分别验收。 |
 | WPF-MATURE-06-03 | in-progress | Web co-lead | 成功回复默认入口收敛，error/unknown/decision常显；390须区分侧栏开/关场景，自然状态/Details按需绑定普通hi、stream/tool、queue等待、断线unknown四旅程；ACTIVITYREAD仅展开活动区，queue/stream/react与全组合仍开放；正文规则不冒工程Verified，产物版本/source未绑定须限定或unknown，关联ENG-001后继；[细目](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。 |
-| WPF-MATURE-06-04 | pending | Web co-lead | 下一完整旅程优先：有效期刷新/重开同中心会话、草稿及未决原identity；离线/认证过期/拒绝可行动提示，重认证不自动重投，logout≠cancel；真实HTTP+流、多tab/中心/撤销/重启/lostACK，auth与发送恢复独立Module。中心native_center_owner035119fd v1九scope已COMMITTED；panels Web/Recovery pending legal scope；个人服务不动/0provider，完整验收见plan。 |
+| WPF-MATURE-06-04 | in-progress | Web co-lead | 下一完整旅程优先：有效期刷新/重开同中心会话、草稿及未决原identity；离线/认证过期/拒绝可行动提示，重认证不自动重投，logout≠cancel；真实HTTP+流、多tab/中心/撤销/重启/lostACK，auth与发送恢复独立Module。中心native_center_owner035119fd v1九scope已COMMITTED；panels RECOVERY01已新21scope COMMITTED并正式派工；个人服务不动/0provider，完整验收见plan。 |
 | WPF-MATURE-06-05 | pending | Web co-lead | 后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿，无自动模型调用。 |
 | WPF-MATURE-06-06 | pending | Web co-lead | 实际App fixture覆盖失败/恢复/双pane；明确预算后单次真实provider观察，至少两次正文增长才称增量，没有partial如实记录不补query。 |
 
@@ -42,14 +42,12 @@ STEER模块已main，STEIRI01十三scope已main f181并释放；CONTEXTI已释�
 
 root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见[真实页面专项](../../docs/evidence/web-platform/mature-dashboard-ui-acceptance.json)；此项通过不代表本大task完整功能验收完成。
 
-调度以[GO经root原指令](../../docs/evidence/web-platform/connection-recovery-priority.md)为准；panels暂先只读方案，ATTACHI02已main cde6646且0b7f v4释放，Web后继仍需新claim，Arc18候选未领取。两已有Connect页不用于推断断线原因，T3后续root已核9bd1/MIT，方法audit已归档；未采用实现或声称恢复完成。
+调度以[GO经root原指令](../../docs/evidence/web-platform/connection-recovery-priority.md)为准。ATTACHI02已main cde并旧scope释放；恢复实现从正式组合84005独立新树开始，Arc18候选未领取。T3固定9bd1/MIT只借鉴职责与epoch方法，不引入外部实现。
 
-恢复方案已获root正式21范围结构批准，尚未领取；中心native_center_owner035119fd v1九scope含028已COMMITTED，中心582f领域已独审，F01固定5be830客户端待审；当前callerOrigin/迟到ClearCookie/重复connect三项Web消费语义待确认。Web consumer/Recovery拟workspace_panels_owner **pending legal scope，尚未take**。ATTACHI02 main/release后再取App交集；4MiB/32/128仍候选非定案，完整checkpoint身份/下一草稿及跨账号隔离必验。[具体dispatch输入](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。
+RECOVERY01直接子task由workspace_panels_owner唯一实施；新树 `web-conversation-recovery / codex/web-conversation-recovery`，**6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v1** fresh21 scope COMMITTED13:46:08.213Z，[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json) / [来源资源及派工审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)。首canonical待owner实际落盘后登记，dashboard取权可从D04读取；没有另造手填子任务进度。
 
-Recovery设计已补同步receipt接管→durable barrier→HTTP及crash边界；本地写失败保原材料/下一稿、本次0HTTP，首次未落盘文字不保证崩溃恢复。结构已批准，无新claim/实现/实验。
+F01 clientd6d与production9406独审已闭合，domain582f及13源正式main84005且hash一致；本批Lead实际组合selected1pass/2unselected和root/Webtypes0，不是13tests、未重跑领域全量。factory会话仍显式opt-in，Node jar/loopback不替代本片浏览器cookie→read→SSE→reload；个人入口未变。
 
-[本轮就绪预检](../../docs/evidence/web-platform/recovery01-readiness-preflight.json)：新树/branch未建、无Recovery claim；完整build资源门槛未满足。结构批准不等已开始实现，public请求body上界已独立核验，实际完整record与容量准入仍待owner验证。
+原21[批准Interface](../../docs/evidence/web-platform/recovery01-fixed-cde-proposal.json)保持：同步原authority receipt接管后durable prepare/dispatching事务complete/CAS才HTTP，CREATE两步、完整draft与有序材料、P01真入口和权限绑定；存储失败可继续编辑但0mutation，unknown不降级不自动重投。完整envelope128KiB+32KiBreserve/4MiB候选已获结构批准，仍待实际serializer/IDB准入验证，不保证数量满载。
 
-root已细分开工/最终验收门槛：正式获审主线client到位且轻量资源允许，可先实现journal/controller与App接线；中心三语义并行但最终真实旅程前必须对齐。W01仅publicbody容量核验已到，实际record仍待owner验证；未将候选数量上限说成可同时满载。
-
-会话生产组合9406固定接口已到，factory显式opt-in/default unsupported与公开client保持单一认证authority；[3源码/10只读输入/12raw管理核验](../../docs/evidence/web-platform/recovery-session-production-fixed-audit.json)一致。Mika薄client/native生产独审和正式main待，未领取Recovery；21范围/90秒预算不变，仅loopback验证方向，远端TLS/proxy另行未验证。
+仅轻量代码/metadata先开工；实际建后available1,416,241,152B，不达完整install/build门槛。真实App/HTTP仍累计90秒含15秒清理/8MiB/1PG+1Chrome，开始前复核资源；center三语义并行，是最终验收gate而非第一行代码blocker。上传journal跨tabCAS仍独立未解，未因本片设计冒称修复。
