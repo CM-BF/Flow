@@ -2,8 +2,11 @@
 
 状态：NOT_STARTED
 
-- Review target commit：待固定；起点9f9bb00e263b8517a036822f74ae65ce94b86200。
+- Review target commit：c1733a0c4a2ce389489a8bc11ea3b68ef5693d34；起点9f9bb00e263b8517a036822f74ae65ce94b86200。
 - 范围：新增claude-summary-values.ts/.test.ts，保持行为提取claude-summary.ts/.test.ts。
+- 检查：58/58不同=8helper+27mapper+23直接projection；root局部严格noEmit0。旧26mapper断言逐字保留，首次fixture缺apiUsage类型错误保留；没有新provider/PG/采集。
+- [新固定manifest](../../docs/evidence/wpf-mature-04/normalize-manifest.json)：4source/12raw/4support/4readonly均在本target；manifest及本状态后续metadata提交。
+- 独审重点：null model仍完整校验、类别ID/顺序与拒绝行为兼容、同kind安全和/预算、无私有字段或伪ref，SDK只type import。
 - 9ac/3ab等旧批准仅绑定各自固定Git，不转移到新mapper源码。历史domain的[固定集成输入](../../docs/evidence/wpf-mature-04/history-integration-ready.json)不变。
 
 # WPF-MATURE-04 独立审查记录

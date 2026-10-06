@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:20:53 UTC / main648e331c clean；本轮纯归一化待固定 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:21:22 UTC / main648e331c clean；纯归一化target固定待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -10,21 +10,21 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
-| 工作基线 / HEAD | 原始b1c2e398；受控合入8d8ab520 / 本片起点9f9bb00e263b8517a036822f74ae65ce94b86200；未固定新源码 |
-| 工作树dirty状态 | fresh 9f9bb00e clean后v6追加成功；开始4源提取，历史9ac的10源/raw/support/manifest不改 |
+| 工作基线 / HEAD | 原始b1c2e398；受控合入8d8ab520 / 本片起点9f9bb00e；实现c1733a0c4a2ce389489a8bc11ea3b68ef5693d34，metadata随后提交 |
+| 工作树dirty状态 | 实现target已提交，4源及raw停止写入；本次仅manifest/status/review metadata；v6 ACTIVE |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | 待固定target：本片58/58及strict0；首次strict失败保留。历史9ac证据保持原target |
+| 检查状态 | PASSED c1733a0c4a2ce389489a8bc11ea3b68ef5693d34：58/58不同（8helper+27mapper+23projection），root局部strict noEmit0；首次fixture类型错误保留，见[manifest](../../docs/evidence/wpf-mature-04/normalize-manifest.json) |
 | 已集成main状态 / HEAD | 未集成：本次核main 648e331c58043cf7ee307300521ab1c628cb2ee1 clean，879/3ab/9ac均非祖先；[固定集成输入](../../docs/evidence/wpf-mature-04/integration-readiness.json) |
-| 实现目标 | 待固定：Claude summary纯归一化；历史9ac另见固定integration-ready |
+| 实现目标 | c1733a0c4a2ce389489a8bc11ea3b68ef5693d34 |
 | 实现范围 | apps/runner/src/context-observations/claude-summary-values.ts, apps/runner/src/context-observations/claude-summary-values.test.ts, apps/runner/src/context-observations/claude-summary.ts, apps/runner/src/context-observations/claude-summary.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 提取单一数值校验与类别汇总，保持历史估算和未知结果的公开行为 |
-| 下一可用交付 | 纯归一化模块供后续采样复用；已审历史持久化片仍可独立集成 |
+| 当前产出 | 数值归一化提取已通过局部验证，待独立审查；历史样本持久化片已审待集成 |
+| 下一可用交付 | 归一化模块可供下一片采样复用；历史保存与公开读回仍沿固定已审输入接线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED 新归一化片待固定独审；9ac历史Module+027的APPROVED保持原target |
+| Review | NOT_STARTED c1733a0c4a2ce389489a8bc11ea3b68ef5693d34：新4源独审待执行；9ac历史Module+027批准保持原target |
 | Claim | [COMMITTED amend v6](../../docs/evidence/wpf-mature-04/normalize-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v6 ACTIVE；20 scopes，新增仅2归一化文件 |
 | 架构影响 | 纯数值归一化为单一Module，mapper仅绑定host身份/证据；无IO/SDK运行依赖/状态或采集挂载。9ac正式历史模块的架构接线仍由Lead集成时更新 |
 
@@ -33,7 +33,7 @@
 | WPF-MATURE-04-01 | completed | architecture_read | bbfb7037ee3ca3e37bf14a078f8a05582b209f48已push；7文档/6 TODO/9验收自查通过 |
 | WPF-MATURE-04-02 | completed | architecture_read / mika | 879c989a594a8f4f266b9a78a885e311c52eca0d；30/30、局部strict noEmit；Mika独立APPROVED，无P1/P2 |
 | WPF-MATURE-04-03 | in-progress | architecture_read / mika | [一页store请求](../../docs/evidence/wpf-mature-04/center-store-request.md)已获mika批准历史首片8新路径；v5已追加唯一027及局部入口；50/50含9真实PG、严格noEmit0，正式组合已独审APPROVED待集成；当前/remaining/SDK采集仍未知 |
-| WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | 纯Adapter P2修复源码已完成，49/49与strict noEmit0，独立APPROVED；不含真实采集、压缩事件或生产接线 |
+| WPF-MATURE-04-04 | in-progress | architecture_read / runner owner | 原3ab纯Adapter批准保留；新纯归一化c1733a0c4a2ce389489a8bc11ea3b68ef5693d34，58/58+strict0，待独审；不含真实采集、压缩事件或生产接线 |
 | WPF-MATURE-04-05 | pending | d01 管理 Web owner | 沿本计划与中心合同消费；未实施 |
 | WPF-MATURE-04-06 | pending | architecture_read / mika | 仅schema/纯投影独审已过；完整矩阵与后继独审、main交付未完成 |
 
