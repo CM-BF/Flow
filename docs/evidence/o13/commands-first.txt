@@ -1,0 +1,43 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey
+
+ ❯ packages/interaction/src/goal/entry.test.ts (11 tests | 1 failed | 6 skipped) 17ms
+   ↓ persists exact natural-language input before creating and restores the accepted goal without a second request
+   ↓ lost ACK and recovered CAS rejection preserve original body/key through restart and explicit recovery only
+   ↓ refuses mismatched accepted input and retains unknown when the accepted binding cannot be persisted
+   ↓ does not dispatch before durable storage or after disconnect while storage is pending
+   ↓ validates stored namespace and bounded input before any request
+   ↓ clears only definite first-send rejection and never interprets abort as goal cancellation
+   ✓ new commands preserve old clients and require explicitly observed input instead of graph titles 6ms
+   ✓ new planning command keeps malformed receipt unknown and replays only the original input/key 2ms
+   ✓ new native command binds goal, input, execution and exact profile receipt before clearing intent 2ms
+   ✓ new planning read is bounded and validates goal, task mode and advancing cursors without fetching bodies 3ms
+   × new planning intent applies the existing 64 KiB UTF-8 limit before dispatch 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/goal/entry.test.ts > new planning intent applies the existing 64 KiB UTF-8 limit before dispatch
+AssertionError: expected [Function] to throw an error
+
+- Expected: 
+null
+
++ Received: 
+undefined
+
+ ❯ packages/interaction/src/goal/entry.test.ts:99:127
+     97|   let calls = 0; const c = controller({ async admitGoalGraphRun() { ca…
+     98|   const allowedExistingNodes = Array.from({ length: 200 }, (_, n) => (…
+     99|   expect(() => c.command({ kind: 'graph-plan', input: { ...planning, s…
+       |                                                                                                                               ^
+    100| });
+    101| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed | 6 skipped (11)
+   Start at  06:52:46
+   Duration  416ms (transform 176ms, setup 0ms, import 294ms, tests 17ms, environment 0ms)
+

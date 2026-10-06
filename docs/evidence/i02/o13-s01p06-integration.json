@@ -1,0 +1,74 @@
+{
+  "observedAt": "2026-10-06T14:05:33.650596+00:00",
+  "inputMain": "d4a2e0a7f255a2c68b99c7aafbc006c7bc3b3b50",
+  "approvedInputs": {
+    "O13": "ddf9f9404561515b61a85d89aa203d609dbfff8e",
+    "F01client": "98e5b2012ffb57b357adcfa7ce68b25608ed631c",
+    "S01P06": "cdd3cb1c67b3e907c1c4e6f3c18a486a1cef99fc"
+  },
+  "sourceComparisons": [
+    "o13-source-comparison.json",
+    "s01p06-source-comparison.json"
+  ],
+  "checks": {
+    "realProductionJourney": {
+      "exit": 0,
+      "selected": 1,
+      "unselected": 1,
+      "passed": 1,
+      "toolChunk": "597cb8",
+      "testMs": 2934
+    },
+    "rootTypes": {
+      "exit": 0,
+      "toolChunk": "e184a8"
+    },
+    "webTypes": {
+      "exit": 0,
+      "toolChunk": "3aa257"
+    },
+    "ownedDatabase": "flow_o13_journey_a7ec65af4c9c49398dd01c5332bee503",
+    "remainingDatabases": [],
+    "ownedDirectoryRemoved": true,
+    "providerCalls": 0
+  },
+  "raw": [
+    {
+      "path": "docs/evidence/i02/o13-s01p06-journey.txt",
+      "bytes": 494,
+      "sha256": "013575aacc58f4dafc780bd4a4f240fed769dccefdb852eb76285708439162e6"
+    },
+    {
+      "path": "docs/evidence/i02/o13-s01p06-root-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/o13-s01p06-web-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/i02/o13-s01p06-journey-facts.json",
+      "bytes": 5641,
+      "sha256": "0bfb9f01563919c9bc302903ecc1a9a96c0e2d3d7b9bad9a055e3192b779ddfe"
+    }
+  ],
+  "reviewReuse": {
+    "O13": "24 distinct cases across original rounds; independent APPROVED",
+    "S01P06": "72 distinct original cases, no repeated capacity/load suite",
+    "sharedClient": "Mika independent thin transport APPROVED"
+  },
+  "directInputChanges": [
+    "Current ConnectionSession factory retained",
+    "Current X01 manifest/lock additions retained",
+    "New S01P06 bounded wakeup consumed by actual runtime journey"
+  ],
+  "limits": [
+    "Injected SDK transports, not actual provider planning",
+    "Owner explicitly defines and executes one child; persistent authorized progression remains successor",
+    "Mechanical checks and independent owner acceptance kept distinct",
+    "Personal backend362/v15 and Web8d8/v2 unchanged",
+    "Original raw whitespace retained, not normalized"
+  ]
+}

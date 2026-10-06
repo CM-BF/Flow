@@ -47,3 +47,28 @@ it('preserves bounded graph authority, fixed versions, actor receipts and replay
     expect(seen).toHaveLength(10);
   } finally { await new Promise<void>(resolve => server.close(() => resolve())); }
 });
+
+it('lists goal-bound planning runs with opaque pagination and preserves errors and cancellation without retry', async () => {
+  const seen: { method: string | undefined; path: string; token: string | undefined; bytes: number }[] = [];
+  const page = { goalId: 'goal/中文', projectId: 'project-1', runs: [], nextCursor: 'next+/=' };
+  const server = createServer(async (request, response) => {
+    let bytes = 0; for await (const part of request) bytes += part.length;
+    seen.push({ method: request.method, path: request.url!, token: request.headers.authorization, bytes });
+    const denied = request.url?.includes('/denied/');
+    response.writeHead(denied ? 403 : 200, { 'content-type': 'application/json' });
+    response.end(JSON.stringify(denied ? { error: { code: 'wrong_role', message: 'Owner required.' } } : page));
+  }).listen(0, '127.0.0.1');
+  await once(server, 'listening');
+  const client = new FlowClient({ baseUrl: `http://127.0.0.1:${(server.address() as AddressInfo).port}`, token: 'owner-only' });
+  try {
+    expect(await client.goalGraphRuns('goal/中文')).toEqual(page);
+    expect(await client.goalGraphRuns('goal/中文', { after: 'opaque+/= 中文', limit: 20 })).toEqual(page);
+    await expect(client.goalGraphRuns('denied')).rejects.toMatchObject({ status: 403, code: 'wrong_role' });
+    await expect(client.goalGraphRuns('goal/中文', {}, AbortSignal.abort())).rejects.toThrow();
+    expect(seen).toEqual([
+      { method: 'GET', path: '/api/goals/goal%2F%E4%B8%AD%E6%96%87/graph-runs', token: 'Bearer owner-only', bytes: 0 },
+      { method: 'GET', path: '/api/goals/goal%2F%E4%B8%AD%E6%96%87/graph-runs?after=opaque%2B%2F%3D+%E4%B8%AD%E6%96%87&limit=20', token: 'Bearer owner-only', bytes: 0 },
+      { method: 'GET', path: '/api/goals/denied/graph-runs', token: 'Bearer owner-only', bytes: 0 },
+    ]);
+  } finally { await new Promise<void>(resolve => server.close(() => resolve())); }
+});

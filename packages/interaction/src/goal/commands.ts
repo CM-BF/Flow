@@ -3,11 +3,16 @@ import { goalCommandSchema } from '../../../contracts/src/goals.js';
 import { projectCommandSchema } from '../../../contracts/src/projects.js';
 import { harnessSchema } from '../../../contracts/src/harnesses.js';
 import { decisionSchema, idSchema } from '../../../contracts/src/tasks.js';
+import { goalGraphRunAdmissionSchema, goalGraphScopeSchema } from '../../../contracts/src/goal-graph-runs.js';
+import { executionProfileReferenceSchema } from '../../../contracts/src/execution-profiles.js';
+import { goalNativeExecutionSchema } from '../../../contracts/src/goal-native-executions.js';
 import type { GoalIntent, GoalSessionCommand, GoalSessionPort, GoalCommandReceipt } from './types.js';
 
 export const sessionCommandSchema = z.discriminatedUnion('kind', [
   z.strictObject({ kind: z.literal('goal'), input: goalCommandSchema }),
   z.strictObject({ kind: z.literal('project'), input: projectCommandSchema }),
+  z.strictObject({ kind: z.literal('graph-plan'), input: goalGraphRunAdmissionSchema.extend({ execution: z.strictObject({ harness: z.literal('claude'), executionProfile: executionProfileReferenceSchema }) }) }),
+  z.strictObject({ kind: z.literal('native-execute'), input: goalNativeExecutionSchema }),
   z.strictObject({ kind: z.literal('decision'), nodeId: idSchema, taskId: idSchema, input: decisionSchema }),
   z.strictObject({ kind: z.literal('cancel'), nodeId: idSchema, taskId: idSchema }),
 ]);
@@ -22,6 +27,12 @@ export function dispatch(client: GoalSessionPort, intent: GoalIntent, signal: Ab
   switch (c.kind) {
     case 'goal': return client.commandGoal(intent.goalId, c.input, intent.key, signal);
     case 'project': return client.changeProject(intent.projectId, c.input, intent.key, signal);
+    case 'graph-plan':
+      if (!client.admitGoalGraphRun) throw Error('Goal planning is not available on this client.');
+      return client.admitGoalGraphRun(intent.goalId, c.input, intent.key, signal);
+    case 'native-execute':
+      if (!client.executeGoalNative) throw Error('Native goal execution is not available on this client.');
+      return client.executeGoalNative(intent.goalId, c.input, intent.key, signal);
     case 'decision': return client.decide(c.taskId, c.input, intent.key, signal);
     case 'cancel': return client.cancel(c.taskId, intent.key, signal);
   }
@@ -32,7 +43,13 @@ const goalReceipt = z.object({ goalId: id, nodeId: id, changed: z.boolean(), rep
 /** Receipt validation is deliberately separate from server validity/authorization: it checks transport identity only. */
 export function checkReceipt(intent: GoalIntent, value: unknown): void {
   const c = intent.command;
-  if (c.kind === 'goal') {
+  if (c.kind === 'graph-plan') {
+    const r = z.object({ run: z.object({ id, version: z.literal(1), goalId: id, projectId: id, taskId: id, mode: z.literal('claude'), goalDigest: z.string().regex(/^[a-f0-9]{64}$/), scope: goalGraphScopeSchema }), task: taskReceipt, replayed: z.boolean() }).parse(value);
+    if (r.run.goalId !== intent.goalId || r.run.projectId !== intent.projectId || r.run.taskId !== r.task.id || r.task.harness !== 'claude' || JSON.stringify(r.run.scope) !== JSON.stringify(c.input.scope)) throw Error('Planning receipt identity mismatch.');
+  } else if (c.kind === 'native-execute') {
+    const r = goalReceipt.extend({ executionProfile: executionProfileReferenceSchema }).parse(value), input = c.input;
+    if (r.goalId !== intent.goalId || r.nodeId !== input.nodeId || !r.executionId || r.task?.harness !== 'claude' || r.inputVersion !== input.expectedInputVersion || r.explanation.kind !== 'execute' || r.explanation.source.nodeId !== input.nodeId || r.explanation.source.executionId !== r.executionId || r.explanation.source.inputVersion !== input.expectedInputVersion || JSON.stringify(r.executionProfile) !== JSON.stringify(input.executionProfile)) throw Error('Native execution receipt identity mismatch.');
+  } else if (c.kind === 'goal') {
     const r = goalReceipt.parse(value), input = c.input;
     if (r.goalId !== intent.goalId || r.nodeId !== input.nodeId || r.explanation.kind !== input.kind || r.explanation.source.nodeId !== input.nodeId) throw Error('Goal receipt identity mismatch.');
     if (input.kind === 'define-input' && (r.inputVersion !== input.expectedInputVersion + (r.changed ? 1 : 0) || r.explanation.source.inputVersion !== r.inputVersion)) throw Error('Input receipt version mismatch.');
