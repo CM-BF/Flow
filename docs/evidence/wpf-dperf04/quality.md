@@ -19,3 +19,5 @@
 ## 2026-10-06 16:38:55 UTC 领取阅读补修 clean-code
 
 新增create/update/renderClaimReading三个小职责，当前事实只读snapshot；DOM原事实指纹仅为避免重复替换。未变化行不move、不replace；变更与unknown显式标旧，用户更新后焦点回summary。关闭/离开旧观察才移除，不把缺记录解释成释放。保持原reader、PG权威、三server模块不动；专测新增100项完整scope选区与原节点/焦点、显式更新与unknown/缺失路径。源diffcheck0，所有行为NOT_RUN；资源准入与当前候选复审未完成。
+
+2026-10-06 16:42:53 UTC clean-code窄维护：消除写死今天日期的测试前提，使用fixture声明时间作为唯一now；旧/未来输入经真实status写入口生成，断言字段生效而非容许replace无操作。未改生产或browser，不增加测试运行预算。尚NOT_RUN。

@@ -2,20 +2,20 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 16:38:55 UTC |
+| 最近更新时间 | 2026-10-06 16:42:53 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail |
 | Branch | codex/dashboard-summary-detail |
-| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / b0e937d53a664b3398d36a080cef1a2d4225b6f3 |
+| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / 1441d86baa40e98f4cb81b82dcc551202973209b |
 | 工作树dirty状态 | 七源码固定已提交；本记录为metadata安全点，提交后双端clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN b0e937d53a664b3398d36a080cef1a2d4225b6f3 |
+| 检查状态 | NOT_RUN 1441d86baa40e98f4cb81b82dcc551202973209b |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | b0e937d53a664b3398d36a080cef1a2d4225b6f3 |
+| 实现目标 | 1441d86baa40e98f4cb81b82dcc551202973209b |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -56,3 +56,7 @@
 root固定6c18源复核认可scope原文/绝对deadline修正，发现未登记claim列表仍全量重建的同类P2。本轮固定 `b0e937d53a664b3398d36a080cef1a2d4225b6f3`，仅app/browser两源后继差异。按claimId保原DOM与展开/焦点/选区，显示指纹不成为账本；新version/content到达不替换正在阅读的范围，明确旧观察并提供显式更新。unknown或从当前列表消失也不伪称released；关闭并离开旧详情后可丢弃其阅读节点。加入100 scope完整选择、自动同步、版本变化/显式更新/unknown/消失回归。
 
 仍0产品import/测试/浏览器/PG/free；原Node30秒预算全未用。6c18及4fac来源manifest保留，当前七源见唯一manifest，独审待新delta复核。
+
+## 2026-10-06 16:42:53 UTC 日期专测维护
+
+root发现原future-clock替换写死2026-10-06。固定后继 `1441d86baa40e98f4cb81b82dcc551202973209b` 只改直接test：从同一fixture更新时间定义now，旧/未来分别±48小时；写入后明确断言Updated字段与原文不同，再传同一now给readSummary。b0e获审中的app/browser逐字未动，其他源亦零差。静态diffcheck0，0运行/free，manifest重新绑定，首次Node准入尚待。

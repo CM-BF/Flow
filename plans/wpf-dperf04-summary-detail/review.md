@@ -13,3 +13,5 @@ Base：c837b5dccaea429b0112d1c7e0c752c41334204a
 后继候选 `6c18b81a11eece9c07dd047d28da099a0b6bbb24` 已完成对应源修复，仅app/browser两文件，尚待独立delta复审及实际行为检查；本记录不提前关闭finding。
 
 root对6c18补充源码finding：未登记claim每次刷新仍重建阅读节点；scope原文/绝对deadline源修正确认。后继 `b0e937d53a664b3398d36a080cef1a2d4225b6f3` 修复此同类P2并增加100 scope/unknown/版本变更回归。当前仍为修复待复审，未取得运行证据。
+
+root授权日期专测维护固定 `1441d86baa40e98f4cb81b82dcc551202973209b`：只有summary-detail.test.mjs变化，b0e app/browser原字节保持；首次行为检查仍NOT_RUN，不以此维护commit改变既有审查结论。

@@ -1,7 +1,7 @@
 {
-  "implementationTarget": "1441d86baa40e98f4cb81b82dcc551202973209b",
+  "implementationTarget": "b0e937d53a664b3398d36a080cef1a2d4225b6f3",
   "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
-  "recordedAt": "2026-10-06 16:42:53 UTC",
+  "recordedAt": "2026-10-06 16:38:55 UTC",
   "files": [
     {
       "path": "apps/execution-dashboard/src/read-model.mjs",
@@ -25,8 +25,8 @@
     },
     {
       "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
-      "bytes": 11898,
-      "sha256": "6a679056223aa37dacfed10f4b1628f6af0fb4b768f4f003bbf69c4a6d2f6f4b"
+      "bytes": 11294,
+      "sha256": "6439f771e20942859c7934d4888656bc19d27fbc9f3f2acbdfa03fb5fcb2c885"
     },
     {
       "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
@@ -74,5 +74,5 @@
     "completedProofCache": false,
     "ledgerAuthority": "Original dynamically imported PG ledger; synthetic observer is test-only and grants no writer scope"
   },
-  "revision": "Date-independent direct test maintenance; app/browser bytes unchanged from b0e"
+  "revision": "Follow-up unregistered claim reading preservation, pending independent review and runtime checks"
 }
