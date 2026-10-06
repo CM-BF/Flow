@@ -15,3 +15,5 @@ approvalId flow-o08-native-20261006-071420，07:14:20–08:14:20 UTC有效，1 S
 - 从driver startedAt07:15:28.322Z至finishedAt07:15:45.216Z约16.894s。自有PGID95453确认stopped、未强杀，center/随机DB/私有tmp全部清理true，原始output与marker保留。个人61228/4320服务未操作。
 
 [manifest](native-manifest.json)绑定已审source、6产品依赖和6原始/分析文件。无raw thinking或凭据记录。未做Web/UI或child执行验收；未证明插件信任、组织hook隔离、跨进程脱组治理或计费硬上限。原managed准备manifest中NOT_STARTED是当时历史，由当前review补正，不覆盖旧raw。
+
+07:19 UTC独立结果更新：Root已[限定APPROVED](native-review.md)真实受限图调用与正文忠实性，原脚本为字面oracle误报且FAILED保持。上述“待判定”是07:17封存时的历史事实；原raw/manifest/analysis不改。host允许read不独立证明其成功，native wire=[]。本次预算SEALED，无重跑。
