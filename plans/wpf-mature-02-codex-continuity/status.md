@@ -10,7 +10,7 @@
 | 最近更新 / 最近main同步核验 | 2026-10-06 21:32:00 UTC；main最近核验为基线，未集成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
 | 当前产出 | 持久会话接口已通过源码审查、注入恢复与类型检查；公开任务链路等待专库验证。 |
 | 下一可用交付 | 两轮独立执行复用同一自有会话存储的公开任务接口。 |
@@ -19,12 +19,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 最近固定3ccae21a clean/pushed；当前仅PG生命周期/单窗口封套准备与检查metadata；最终focused types已实际exit0。 |
-| HEAD（最近观察） | 3ccae21a2697c9a95189bac2ed01e1e17bd2d939 |
+| 工作树dirty状态 | 最近固定3ccae21a clean/pushed；最新源码/封套checkpoint 3f432c31；本提交仅固定输入清单与状态。final focused types已实际exit0。 |
+| HEAD（最近观察） | 3f432c318c201034249d68f652639014e4173705 |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v2 ACTIVE，21 literal，amend COMMITTED 2026-10-06T21:25:31.797Z |
 | 实现目标 | 413420a1c0abc76850ab61f8bf67c9d9ac81a494 |
 | 实现范围 | packages/contracts/src/execution-profiles.ts, packages/contracts/src/tasks.ts, packages/contracts/src/native-harness.ts, apps/server/src/execution-profiles/store.ts, apps/runner/src/native-harness/descriptor.ts, apps/runner/src/native-harness/codex/adapter.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/turn.ts, apps/runner/src/native-harness/codex/wire.ts, apps/runner/src/native-harness/codex/index.ts, apps/runner/src/native-harness/codex/session-storage.ts |
-| Review | 413420a1 SOURCE_REVIEW_APPROVED / VALIDATION_PENDING，mika + architecture_read 2026-10-06T21:26:29Z附近；0P1/P2，仅固定源码范围。3ccae21a test delta与3c33ca4a PG helper窄修已SOURCE_REVIEW_APPROVED/VALIDATION_PENDING；外部运行记录入口待审。 |
+| Review | 413420a1 SOURCE_REVIEW_APPROVED / VALIDATION_PENDING，mika + architecture_read 2026-10-06T21:26:29Z附近；0P1/P2，仅固定源码范围。3ccae21a test delta与3c33ca4a PG helper窄修已SOURCE_REVIEW_APPROVED/VALIDATION_PENDING；外部运行记录入口三P2已窄修，固定3f432c31待复审。 |
 | 检查 | 合同red 1/3；首5文件log 50/53，fixture时间戳修后定向7/7、exit0。直接consumer65/66、exit1；随后仅post-terminal真实交付与抽取影响8/8、43未选、exit0；类型1个fixture推断诊断已窄修，先resource NOT_RUN，恢复后唯一finalfocused types exit0/2.417s/raw0B（含PG源码静态、不执行）。0PG/Codex/provider/install。 |
 | main集成 | NOT_INTEGRATED；基线 eae85567ba5dfb650ba71b473917130f87b5945c |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |
@@ -42,3 +42,5 @@
 依赖：[dependency-link-request](../../docs/evidence/mature02c02/dependency-link-request.json)，17已装第三方+3本树@flow，只请求20个ignored links。供给回执已归档 source-provision-receipt.json；owner未安装或自行物化。
 
 检查原件：contract-red-*、continuity-first-*、continuity-green-*、direct-consumers-*、focused-types-first-*。首5文件收据退出码误用日志推断，独立 continuity-first-correction.json 将实际进程退出码标UNKNOWN；50pass只引用Vitest报告，未声称整组成功。
+
+公开API单窗口准备（NOT_OPEN）：[固定输入](../../docs/evidence/mature02c02/pg-source-manifest.json) → [资源与接收条件](../../docs/evidence/mature02c02/pg-window-request.md)。源码/metadata准备不占共享PG运行时段。
