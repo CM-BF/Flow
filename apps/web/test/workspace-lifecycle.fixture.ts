@@ -3,7 +3,7 @@ import { startContextPreview } from "./conversation-context-integration.fixture"
 
 export interface LifecycleRead {
   id: number; method: string; path: string; startedAt: number;
-  handledAt?: number; finishedAt?: number; closedAt?: number; delayed: boolean;
+  handledAt?: number; finishedAt?: number; closedAt?: number; delayed: boolean; cancelledBeforeHandling?: boolean; error?: string;
 }
 
 /** Instrument only the simulated HTTP server. App, private stores and runtime remain untouched. */
@@ -19,14 +19,21 @@ export async function startLifecycleFixture() {
     fixture.chats.set(id, model); fixture.addTurn(id, `Lifecycle sample ${n}`, true);
   }
   for (const chat of fixture.chats.values()) chat.snapshot.conversation.projectId = "project-01";
-  const handler = fixture.server.listeners("request")[0] as (req: IncomingMessage, res: ServerResponse) => void;
+  const handler = fixture.server.listeners("request")[0] as (req: IncomingMessage, res: ServerResponse) => void | Promise<void>;
   fixture.server.removeAllListeners("request");
   fixture.server.on("request", (req, res) => {
     const row: LifecycleRead = { id: reads.length, method: req.method ?? "GET", path: req.url ?? "/", startedAt: Date.now(), delayed: false };
     reads.push(row);
     res.once("finish", () => { row.finishedAt = Date.now(); });
     res.once("close", () => { row.closedAt = Date.now(); });
-    const route = () => { row.handledAt = Date.now(); if (!closed) handler(req, res); };
+    const route = () => {
+      row.handledAt = Date.now();
+      if (closed || req.destroyed || res.destroyed) { row.cancelledBeforeHandling = true; return; }
+      Promise.resolve(handler(req, res)).catch(error => {
+        row.error = String(error);
+        if (!res.destroyed) { res.writeHead(500); res.end(); }
+      });
+    };
     if (nextDelay && row.method === "GET" && row.path === nextDelay.path) {
       row.delayed = true; const delay = nextDelay.ms; nextDelay = null;
       const timer = setTimeout(() => { timers.delete(timer); route(); }, delay); timers.add(timer);

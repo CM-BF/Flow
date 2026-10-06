@@ -16,20 +16,25 @@ const sourceCommit = execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, enc
 const sourceDirty = execFileSync("git", ["status", "--porcelain=v1"], { cwd: root, encoding: "utf8" }).trim();
 await mkdir(output, { recursive: true });
 const sourceHashes = await hashes(paths), dependencyHashes = await hashes(dependencies);
-const startedAt = Date.now(), actionDeadline = startedAt + 80_000;
+const budgetMs = Number(process.env.FLOW_LIFECYCLE_BUDGET_MS ?? 90_000);
+if (!Number.isInteger(budgetMs) || budgetMs < 15_000 || budgetMs > 90_000) throw Error("Experiment budget must be 15–90 seconds including cleanup.");
+const startedAt = Date.now(), actionDeadline = startedAt + budgetMs - 10_000;
 const runId = new Date(startedAt).toISOString().replaceAll(":", "-");
 const prefix = `${output}${runId}`;
 const checks: string[] = [], failures: { name: string; error: string }[] = [], errors: string[] = [];
 const samples: unknown[] = [], lifecycle: unknown[] = [], cleanupErrors: string[] = [];
 let preview: Awaited<ReturnType<typeof startLifecycleFixture>> | undefined, browser: Browser | undefined, page: Page | undefined;
 let deadlineReached = false, cleanupComplete = false;
-const actionsTimer = setTimeout(() => { deadlineReached = true; void browser?.close().catch(error => cleanupErrors.push(String(error))); }, 80_000);
-const hardTimer = setTimeout(() => { console.error("HARD BUDGET EXHAUSTED: cleanup incomplete"); writeFileSync(prefix + "-hard-timeout.json", JSON.stringify({ elapsedMs: Date.now() - startedAt, cleanupComplete: false, status: "partial", reason: "90 second hard stop; cleanup unconfirmed" })); process.exit(2); }, 90_000);
+const actionsTimer = setTimeout(() => { deadlineReached = true; void browser?.close().catch(error => cleanupErrors.push(String(error))); }, budgetMs - 10_000);
+const hardTimer = setTimeout(() => { console.error("HARD BUDGET EXHAUSTED: cleanup incomplete"); writeFileSync(prefix + "-hard-timeout.json", JSON.stringify({ elapsedMs: Date.now() - startedAt, cleanupComplete: false, status: "partial", reason: "Hard budget stop; cleanup unconfirmed" })); process.exit(2); }, budgetMs);
+function checkpoint() {
+  writeFileSync(prefix + "-checkpoint.json", JSON.stringify({ sourceCommit, sourceDirty, sourceHashes, startedAt: new Date(startedAt).toISOString(), at: new Date().toISOString(), budgetMs, checks, failures, samples, lifecycle, reads: preview?.reads ?? [] }, null, 2) + "\n");
+}
 const remaining = () => Math.max(1, Math.min(3000, actionDeadline - Date.now()));
 function available() { if (Date.now() >= actionDeadline || deadlineReached) throw Error("Action budget exhausted; reserving cleanup time."); }
 async function check(name: string, run: () => Promise<void>) {
-  available(); try { await run(); checks.push(name); console.log("PASS", name); }
-  catch (error) { failures.push({ name, error: String(error) }); console.error("FAIL", name, String(error)); }
+  available(); try { await run(); checks.push(name); console.log("PASS", name); checkpoint(); }
+  catch (error) { failures.push({ name, error: String(error) }); console.error("FAIL", name, String(error)); checkpoint(); }
 }
 const pane = (n: number) => page!.locator(`[id="panel-conversation:chat-${n}"]`);
 const input = (n: number) => pane(n).getByRole("textbox", { name: "Message input", exact: true });
@@ -45,7 +50,7 @@ async function sample(label: string) {
     panes: [...document.querySelectorAll<HTMLElement>('.flow-tab-body[role="tabpanel"]')].map(element => ({ id: element.id, hidden: element.hidden, visible: element.getClientRects().length > 0 && getComputedStyle(element).display !== "none", nodes: element.querySelectorAll("*").length })),
     composers: document.querySelectorAll('textarea[aria-label="Message input"]').length }));
   expect(dom.panes.filter(item => item.visible).length).toBeLessThanOrEqual(2);
-  samples.push({ label, at: Date.now(), elapsedMs: Date.now() - startedAt, ...dom, activeSse: preview!.first.activeStreamCount(), readCount: preview!.reads.length });
+  samples.push({ label, at: Date.now(), elapsedMs: Date.now() - startedAt, ...dom, activeSse: preview!.first.activeStreamCount(), readCount: preview!.reads.length }); checkpoint();
 }
 function readsSince(at: number) { return preview!.reads.filter(row => row.startedAt >= at && row.method === "GET"); }
 async function observe(label: string, allowed: number[]) {
@@ -54,7 +59,7 @@ async function observe(label: string, allowed: number[]) {
   const perPane = rows.filter(row => /^\/api\/(?:conversations\/[^/?]+(?:[/?]|$)|tasks\/chat-)/.test(row.path));
   const unexpected = perPane.filter(row => { const match = row.path.match(/(?:conversations\/|tasks\/)(chat-\d+)(?:[/?-]|$)/); return match && !allowedIds.has(match[1]!); });
   const late = preview!.reads.filter(row => row.startedAt < at && (row.finishedAt ?? row.closedAt ?? 0) >= at);
-  lifecycle.push({ label, at, end: Date.now(), allowed, reads: rows.map(row => row.id), late: late.map(row => row.id), unexpected: unexpected.map(row => row.id) });
+  lifecycle.push({ label, at, end: Date.now(), allowed, workspaceReads: rows.filter(row => row.path.startsWith("/api/workspace")).map(row => row.id), taskIndexReads: rows.filter(row => row.path.startsWith("/api/task-index")).map(row => row.id), reads: rows.map(row => row.id), late: late.map(row => row.id), unexpected: unexpected.map(row => row.id) });
   expect(unexpected).toHaveLength(0);
 }
 async function selectKnowledge(n: number) {
@@ -148,12 +153,12 @@ finally {
   const finishedAt = Date.now(); const sourceAfter = await hashes(paths);
   const directoryBytes = async (): Promise<number> => { let sum = 0; for (const entry of await readdir(output, { withFileTypes: true })) if (entry.isFile()) sum += (await stat(output + entry.name)).size; return sum; };
   const report = { runId, sourceCommit, sourceDirty, sourceHashes, sourceAfter, dependencyHashes, startedAt: new Date(startedAt).toISOString(), finishedAt: new Date(finishedAt).toISOString(), elapsedMs: finishedAt - startedAt,
-    cleanupStartedAt: new Date(cleanupStartedAt).toISOString(), cleanupMs: finishedAt - cleanupStartedAt, cleanupComplete, cleanupErrors,
-    status: failures.length || errors.length || deadlineReached || finishedAt - startedAt > 90_000 ? "partial" : "complete",
-    checks, failures, errors, deadlineReached, samples, lifecycle, reads: preview?.reads ?? [],
-    privateCacheObjects: "unknown; no private store instrumentation", heap: "unknown", interactionLatency: "unknown; no reliable latency benchmark", scope: "Actual fixed App; synthetic HTTP center only. No production changes/provider/DB/personal service." };
+    budgetMs, cleanupStartedAt: new Date(cleanupStartedAt).toISOString(), cleanupMs: finishedAt - cleanupStartedAt, cleanupComplete, cleanupErrors,
+    status: failures.length || errors.length || deadlineReached || finishedAt - startedAt > budgetMs ? "partial" : "complete",
+    checks, failures, errors, transportErrors: preview?.reads.filter(row => row.error) ?? [], deadlineReached, samples, lifecycle, reads: preview?.reads ?? [],
+    privateCacheObjects: "unknown; no private store instrumentation", heap: "unknown", interactionLatency: "unknown; no reliable latency benchmark", nativePageHidden: "not measured within this bounded slice; overview hidden is not document.hidden", scope: "Actual fixed App; synthetic HTTP center only. No production changes/provider/DB/personal service." };
   await writeFile(prefix + "-report.json", JSON.stringify(report, null, 2) + "\n"); const evidenceBytes = await directoryBytes();
-  await writeFile(prefix + "-budget.json", JSON.stringify({ evidenceBytes, maxBytes: 8 * 1024 * 1024, withinBytes: evidenceBytes < 8 * 1024 * 1024, elapsedMs: report.elapsedMs, withinTime: report.elapsedMs <= 90_000 }, null, 2) + "\n");
+  await writeFile(prefix + "-budget.json", JSON.stringify({ evidenceBytes, maxBytes: 8 * 1024 * 1024, withinBytes: evidenceBytes < 8 * 1024 * 1024, elapsedMs: report.elapsedMs, withinTime: report.elapsedMs <= budgetMs }, null, 2) + "\n");
   console.log(JSON.stringify({ status: report.status, checks: checks.length, failures, errors, elapsedMs: report.elapsedMs, cleanupComplete, evidenceBytes }));
-  if (report.status !== "complete" || !cleanupComplete || evidenceBytes >= 8 * 1024 * 1024) process.exitCode = 1;
+  if (preview?.reads.some(row => row.error) || report.status !== "complete" || !cleanupComplete || evidenceBytes >= 8 * 1024 * 1024) process.exitCode = 1;
 }
