@@ -108,3 +108,9 @@ it('fails closed on corrupt recognized storage and never uses a digest as a code
   expect((await request('/api/engineering-profiles')).status).toBe(409);
   expect((await request('/api/runner/engineering-profile', { configuration }, registration.token)).status).toBe(409);
 });
+it('keeps owner catalog and runner publication roles under the production authentication hook', async () => {
+  const api = await configured();
+  expect((await request('/api/runner/engineering-profile', { configuration })).status).toBe(403);
+  expect((await request('/api/engineering-profiles', undefined, api.registration.token)).status).toBe(403);
+  expect((await request('/api/engineering-profiles', undefined, '')).status).toBe(401);
+});

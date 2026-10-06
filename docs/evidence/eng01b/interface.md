@@ -13,3 +13,7 @@ runner setup仅接受受信本地文件选择recipe/projectId/checkerTimeoutMs�
 共享store已由原owner停写并v4原子移出，受控合入已审main 21e0a56c4b2b65a04a1e8d510a9d132e77c3894b后，ENG01B writer v2正式追加store/publication。新helper只服务有限已识别codec，固定flow.execution_profiles表，不接受表名/任意registry。公共contracts/index/client/server挂载由Lead协调唯一writer。
 
 合同interface-only固定 6c9fbfde15e27ea5be69ef53b6e74d0ec5b83664，工程领域尚未独审/main。main新增 FLOW_ENGINEERING_SETUP_FILE，拒绝与Claude materials/A2A并用；此首片专用单project local concurrency固定1，S01旧native并发保持。取消/事件/journal仍由runRunner拥有，配置启动失败只报既有固定错误。
+
+已实现入口：loadEngineeringRunner({baseUrl,token,workingDirectory,manifestFile,signal?}) → HarnessAdapter；先本地prepare/restore，再共享client发布并确认完整canonical+digest，最后绑定immutable pin。publication请求≤5s，cancel不启动宿主。错误由main旧固定消息输出，不泄露本地path或原异常。新增recipe需在setup有限定义及codec中明确授权修改，调用方不能任意注册命令。工程profile最多目录100条+sentinel，project保留≤8个worktree，不自动删除未知资源。
+
+实际信任边界：runner token授权的是配置发布者身份，不是远端二进制/工具隔离证明；中心只核验可信宿主receipt的关联，source分类不代表探测可用。普通fixture误配置为target但未发布工程purpose会在新受理前拒绝；老无pin排队不领取、不暗中升级。

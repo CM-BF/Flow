@@ -11,3 +11,15 @@ fresh账本10:40:40.455 available且ENG01B ID未占，取9 literal后写。ENG01
 clean-code安全点：2026-10-06中心实现段复核命名/单职责/错误和重复；publication隐藏表/immutable/runner identity，工程Module拥有purpose/project/checker关联，旧Native消费者仍用自身codec，移除不必要类型断言。不引入第二claim状态机，不把runner自报配置当OS权限证明。
 
 入口候选：27 main（旧22+工程5）+5 launch组合+9既有maintenance直接消费者，共41绿。此阶段共享client尚未合入，main真实独立进程测试只是准备未运行，不能将模拟组合当生产入口已可用。共享client/export 3a12ed7e已本owner独立只读小审，限定该3文件和原4 HTTP检查；回执shared-client-independent-review.json。
+
+最终验证与范围：123不同检查按需分轮=28 setup/旧workspace +15旧工程直接消费者 +13新profile/用途/role +24旧Native profile/catalog/steering +41main/launch/maintenance +2真实main进程链。13profile分为11首过、1用途修正selected/11未选、1新增role selected/12未选；0测试发现失败和最初type错误保留，不虚计。共享client作者4项不并入123。最后全根types见delivery-types，未重跑已绿集合。
+
+main-process-tests通过实际apps/runner/src/main.ts启动4个独立Node进程，使用受信私有setup文件、共享FlowClient与已固定production createServer mount：成功执行后正常停止并新进程恢复相同profile/base/checker，第二task形成独立worktree；另用自有loopback代理在中心提交artifact后丢弃响应，确认artifact可读但verification pending，lease过期uncertain，停止/重启后保留journal且下一task0次claim、仅1个worktree/1条artifact事件。原active project lease跨进程加载由setup.test另证；这里lost ACK发生在已退出的checker后，不宣称未停止外部checker被恢复。4子进程均exit0关闭，记录main-process-resources；新role随机DB删除见mount-role-resources。不存在provider/app-server/auth/账户操作。
+
+固定共享输入：21e0a56c目录源经scope=[] merge；5ffe→3a12→1c081三单提交经另一scope=[] claim受控pick并release，前者Mika独审，后二者本owner独立审薄出口/挂载，权威回执在本目录。3a12 client严格schema与身份字段传递；1c081仅server/index两行，沿既有owner/runner鉴权，无migration。领域实现必须另交独立review，薄输入approved不能替代领域批准。
+
+clean-code交付复核：Module职责为codec（有限目的）、publication（固定同表immutable/runner pin）、engineering profile（用途与项目/checker关联）、setup（受信recipe与持久自有身份）、launch（共享发布和现host组合）。没有第二调度器/HTTP客户端/状态机，未知结果由已有host journal与项目lease各自持有，不复制authority。生产入口只接受明确本地路径且单项目local并发1；旧Native并发入口、Claude/Codex codec和目录路径保留。
+
+资源界限：本地manifest/marker读取16KiB、project snapshot128文件/单文件64KiB/总512KiB、diff256KiB、checker输出每流64KiB、checker≤30s及既有有界kill关闭、保留worktree≤8；目录分页≤100+1条先过滤再校验，工作区IO/内容集语义沿E1。没有整体性能提升宣称；2个进程旅程原stdout分别5071ms与1476ms是单样本端到端观察，包含本机Git/Node/PG，不是产品吞吐结论。
+
+限制：受信同UID配置/marker是合作约束，不是强隔离；中心不重跑远端checker，仅核receipt/version/intent绑定；配置发布是注册runner自报事实，不是独立能力证明。仅内置calculator合成工程，0模型，真实>=Sol工程预算未授权；旧无pin工程receipt读取兼容而旧排队工程需显式重新提交。部分历史原工程/旧profile tests只在其afterAll断言清理，未启用额外资源JSON，证据不补造。

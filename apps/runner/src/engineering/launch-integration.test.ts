@@ -9,7 +9,6 @@ import { Pool } from 'pg';
 import { afterAll, afterEach, beforeAll, expect, it } from 'vitest';
 import { FlowClient } from '@flow/client';
 import { createServer } from '../../../server/src/index.js';
-import { registerEngineeringRoutes } from '../../../server/src/engineering/index.js';
 import { expireLeases } from '../../../server/src/runners.js';
 import { engineeringProfilePageSchema, type EngineeringProfile } from '../../../../packages/contracts/src/engineering-profile.js';
 import { engineeringReceiptSchema } from '../../../../packages/contracts/src/engineering.js';
@@ -31,7 +30,7 @@ beforeAll(async () => {
   creationRequested = true; await admin.query(`CREATE DATABASE ${database}`);
   pool = new Pool({ connectionString: databaseUrl, max: 2, statement_timeout: 5000 });
   app = await createServer({ databaseUrl, ownerToken, leaseMs: 300_000, automaticQueueScan: false });
-  if (!app.hasRoute({ method: 'POST', url: '/api/runner/engineering-profile' })) registerEngineeringRoutes(app, pool);
+  expect(app.hasRoute({ method: 'POST', url: '/api/runner/engineering-profile' })).toBe(true);
   baseUrl = await app.listen({ host: '127.0.0.1', port: 0 }); owner = new FlowClient({ baseUrl, token: ownerToken });
 });
 afterEach(async () => { for (const cleanup of cleanups.splice(0).reverse()) await cleanup(); });
