@@ -5,7 +5,7 @@
 ## Target 与 scope
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Review target commit：待审查者核验并填写完整SHA；禁止笼统复用旧通过状态。
+- Review target commit：实现 `28d1e9a64c8bf6c7858f0163ef8628434cba70e8`；审查者须核验最新metadata HEAD，结论绑定具体实现。
 - Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
 - 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
 - Reviewer / model / harness / 时间：待填写。

@@ -7,8 +7,8 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-cli` |
 | Branch | `codex/m1-cli` |
-| 工作基线 / 本记录核验时HEAD | `eacee76fa7f1b6cc46b06b57ae68458637be4a26` / `eacee76fa7f1b6cc46b06b57ae68458637be4a26`（仅表示同步时观察值） |
-| 工作树dirty状态 | 有未提交修改 |
+| 工作基线 / 本记录核验时HEAD | `eacee76fa7f1b6cc46b06b57ae68458637be4a26` / `28d1e9a64c8bf6c7858f0163ef8628434cba70e8`（仅表示同步时观察值） |
+| 工作树dirty状态 | 实现已提交；本记录为后续metadata提交 |
 | 工作分支状态 | 依下方TODO；未提交工作不等于已交付 |
 | 已集成main状态 / HEAD | `0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -39,4 +39,4 @@ Owner在合并此文档基线后立即核验实际branch/head并接管本status�
 
 ## 当前工作段 / dashboard 同步
 
-命令、JSON、幂等键、watch超时与重连已实现；11条CLI HTTP测试与4条公共测试、typecheck通过，准备提交，独立review未完成。此 status 是唯一手填进度源，等待 D01 聚合展示。
+命令、JSON、幂等键、watch超时与重连已实现；11条CLI HTTP测试与4条公共测试、typecheck通过，实现提交 `28d1e9a64c8bf6c7858f0163ef8628434cba70e8`，独立review未完成。此 status 是唯一手填进度源，等待 D01 聚合展示。
