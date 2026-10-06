@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import { engineeringCheckerReferenceSchema } from './engineering-profile.js';
+import { executionProfileReferenceSchema } from './execution-profiles.js';
 
 const id = z.string().min(1).max(128);
 const digest = z.string().regex(/^[a-f0-9]{64}$/);
@@ -11,7 +13,9 @@ export const ENGINEERING_MAX_WORKSPACE_BYTES = 524_288;
 /** Intent selects a trusted local registry entry; it contains no executable paths, arguments or grants. */
 export const engineeringIntentSchema = z.strictObject({
   protocol: z.literal('flow.engineering.v1'), targetRunnerId: z.uuid(), projectId: id, baseCommit: commit,
-  checker: z.strictObject({ id, version: z.literal('1'), baselineDigest: digest }),
+  checker: engineeringCheckerReferenceSchema,
+  // Old stored receipts remain readable; current admission requires a configured engineering pin.
+  profile: executionProfileReferenceSchema.optional(),
 });
 export type EngineeringIntent = z.infer<typeof engineeringIntentSchema>;
 

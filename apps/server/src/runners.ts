@@ -49,7 +49,15 @@ export async function claim(pool: Pool, runnerId: string, leaseMs: number): Prom
       SELECT t.id FROM flow.tasks t LEFT JOIN flow.execution_profiles rp ON rp.runner_id=$2 LEFT JOIN flow.sessions s ON s.id=t.submission->>'resumeSessionId' AND s.harness=t.submission->>'harness'
       WHERE t.status='queued' AND t.dispatch_ready AND t.submission->>'harness'=ANY($1)
       AND (t.submission->'executionProfile' IS NULL OR t.submission->'executionProfile'->>'runnerId'=$2)
-      AND (t.submission->'engineering' IS NULL OR t.submission->'engineering'->>'targetRunnerId'=$2)
+      AND ((t.submission->'engineering' IS NULL AND COALESCE(rp.configuration->>'purpose','')<>'engineering-fixture') OR
+        (t.submission->'engineering'->>'targetRunnerId'=$2 AND rp.configuration->>'protocol'='flow.engineering-profile.v1'
+          AND rp.configuration->>'purpose'='engineering-fixture' AND rp.configuration->>'harness'='fixture'
+          AND t.submission->'engineering'->'profile'->>'id'=rp.id
+          AND t.submission->'engineering'->'profile'->>'runnerId'=$2
+          AND t.submission->'engineering'->'profile'->>'configDigest'=rp.config_digest
+          AND t.submission->'engineering'->>'projectId'=rp.configuration->'project'->>'id'
+          AND t.submission->'engineering'->>'baseCommit'=rp.configuration->'project'->>'baseCommit'
+          AND t.submission->'engineering'->'checker'=rp.configuration->'checker'))
       AND (COALESCE(rp.configuration->>'access','none')<>'goal-tools' OR
         (t.submission->'executionProfile'->>'runnerId'=$2 AND EXISTS
           (SELECT 1 FROM flow.goal_tool_runs g WHERE g.task_id=t.id AND g.mode='claude' AND g.revoked_at IS NULL)))

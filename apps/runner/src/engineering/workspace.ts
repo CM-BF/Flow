@@ -1,13 +1,15 @@
 import { randomUUID } from 'node:crypto';
-import { lstat, mkdir, mkdtemp, opendir, rm, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { lstat, mkdir, mkdtemp, opendir, realpath, rm, writeFile } from 'node:fs/promises';
+import { join, resolve } from 'node:path';
+import { z } from 'zod';
+import { directoryIdentity, readDirectoryRecord, recordDirectory, writeRecord } from './identity.js';
 import { ENGINEERING_MAX_FILES, ENGINEERING_MAX_FILE_BYTES, ENGINEERING_MAX_WORKSPACE_BYTES, engineeringPathSchema, engineeringSnapshotJson, type EngineeringFile } from '../../../../packages/contracts/src/engineering.js';
 import { NativeExecutionError } from '../native-harness/settlement.js';
 import { digest, readTextFile, runCommand } from './resources.js';
 
 export interface WorkspaceSnapshot { baseCommit: string; headCommit: string; files: EngineeringFile[]; digest: string; diff: string }
 export interface EngineeringWorkspace { directory: string; leaseId: string; snapshot(): Promise<WorkspaceSnapshot>; release(): Promise<void> }
-export interface SyntheticProject { id: string; baseCommit: string; acquire(): Promise<EngineeringWorkspace>; dispose(): Promise<void> }
+export interface SyntheticProject { rootDirectory: string; id: string; baseCommit: string; acquire(): Promise<EngineeringWorkspace>; dispose(): Promise<void> }
 const gitOptions = ['-c', 'core.hooksPath=/dev/null', '-c', 'core.fsmonitor=false', '-c', 'core.autocrlf=false', '-c', 'core.filemode=true', '-c', 'core.quotePath=false', '-c', 'commit.gpgSign=false'];
 
 async function git(cwd: string, args: string[], allowDifference = false): Promise<string> {
@@ -20,7 +22,7 @@ async function git(cwd: string, args: string[], allowDifference = false): Promis
 /** Owns only a newly created synthetic repository. No API accepts an existing/personal Git repository. */
 export async function createSyntheticProject(parent: string, id: string, initial: Record<string, string>): Promise<SyntheticProject> {
   if (Object.keys(initial).length > ENGINEERING_MAX_FILES || Object.values(initial).reduce((total, content) => total + Buffer.byteLength(content), 0) > ENGINEERING_MAX_WORKSPACE_BYTES) throw new Error('Synthetic baseline exceeds its bounds.');
-  const root = await mkdtemp(join(parent, 'flow-engineering-')), repository = join(root, 'repository');
+  const root = await realpath(await mkdtemp(join(parent, 'flow-engineering-'))), repository = join(root, 'repository');
   await mkdir(repository); await mkdir(join(root, 'worktrees'));
   try {
     for (const [path, content] of Object.entries(initial)) {
@@ -32,29 +34,63 @@ export async function createSyntheticProject(parent: string, id: string, initial
     await git(repository, ['add', '--all']);
     await git(repository, ['-c', 'user.name=Flow fixture', '-c', 'user.email=flow-fixture@invalid', 'commit', '--quiet', '--no-gpg-sign', '-m', 'Synthetic engineering baseline']);
     const baseCommit = (await git(repository, ['rev-parse', 'HEAD'])).trim();
-    let active = false, disposed = false, workspaceCount = 0;
-    return {
-      id, baseCommit,
-      async acquire() {
-        if (disposed || active || workspaceCount >= 8) throw new Error('Synthetic project is unavailable or already leased.');
-        const leaseId = randomUUID(), leaseFile = join(root, 'active-lease.json'), directory = join(root, 'worktrees', leaseId);
-        await writeFile(leaseFile, JSON.stringify({ leaseId, baseCommit }), { flag: 'wx', mode: 0o600 }); active = true;
-        try { await git(repository, ['worktree', 'add', '--quiet', '-b', `codex/engineering-${leaseId}`, directory, baseCommit]); }
-        catch (error) { if (!(error instanceof NativeExecutionError && error.settlement === 'unknown')) { active = false; await rm(leaseFile); } throw error; }
-        workspaceCount++;
-        let released = false;
-        return { directory, leaseId, snapshot: () => snapshot(directory, baseCommit),
-          async release() {
-            if (released) return;
-            const recorded = JSON.parse((await readTextFile(leaseFile, 1024)).content) as { leaseId: string };
-            if (recorded.leaseId !== leaseId) throw new Error('Engineering project lease changed.');
-            await rm(leaseFile); active = false; released = true;
-          },
-        };
-      },
-      async dispose() { if (active) throw new Error('Cannot remove a project with unresolved engineering execution.'); disposed = true; await rm(root, { recursive: true }); },
-    };
+    await recordDirectory(root, '.flow-project.json', { id, baseCommit });
+    return projectHandle(root, id, baseCommit, false);
   } catch (error) { if (!(error instanceof NativeExecutionError && error.settlement === 'unknown')) await rm(root, { recursive: true, force: true }); throw error; }
+}
+
+const projectRecord = z.strictObject({ id: z.string().min(1).max(128), baseCommit: z.string().regex(/^[a-f0-9]{40}$/) });
+const leaseRecord = z.strictObject({ leaseId: z.uuid(), baseCommit: z.string().regex(/^[a-f0-9]{40}$/) });
+/** Restores only a marked synthetic repository with the expected immutable identity; never initializes a missing one. */
+export async function restoreSyntheticProject(root: string, expected: { id: string; baseCommit: string }): Promise<SyntheticProject> {
+  const recorded = await readDirectoryRecord(root, '.flow-project.json', projectRecord);
+  if (recorded.id !== expected.id || recorded.baseCommit !== expected.baseCommit) throw new Error('Synthetic project identity changed.');
+  const repository = join(root, 'repository'); await directoryIdentity(repository); await directoryIdentity(join(root, 'worktrees'));
+  const common = (await git(repository, ['rev-parse', '--git-common-dir'])).trim();
+  if (resolve(repository, common) !== join(repository, '.git') || (await git(repository, ['rev-parse', 'HEAD'])).trim() !== expected.baseCommit
+    || (await git(repository, ['status', '--porcelain', '--untracked-files=all', '--ignored'])).trim()) throw new Error('Synthetic repository baseline changed.');
+  let active = false;
+  try {
+    const lease = leaseRecord.parse(JSON.parse((await readTextFile(join(root, 'active-lease.json'), 1024)).content));
+    if (lease.baseCommit !== expected.baseCommit) throw new Error('Synthetic lease belongs to another baseline.');
+    active = true;
+  } catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
+  await countWorkspaces(root);
+  return projectHandle(root, expected.id, expected.baseCommit, active);
+}
+async function countWorkspaces(root: string): Promise<number> {
+  let count = 0;
+  for await (const entry of await opendir(join(root, 'worktrees'))) {
+    if (!entry.isDirectory() || !z.uuid().safeParse(entry.name).success || ++count > 8) throw new Error('Synthetic worktree registry is invalid.');
+  }
+  return count;
+}
+function projectHandle(root: string, id: string, baseCommit: string, initialActive: boolean): SyntheticProject {
+  let active = initialActive, disposed = false;
+  return { rootDirectory: root, id, baseCommit,
+    async acquire() {
+      if (disposed || active || await countWorkspaces(root) >= 8) throw new Error('Synthetic project is unavailable or already leased.');
+      const leaseId = randomUUID(), leaseFile = join(root, 'active-lease.json'), directory = join(root, 'worktrees', leaseId);
+      await writeRecord(leaseFile, { leaseId, baseCommit }); active = true;
+      try { await git(join(root, 'repository'), ['worktree', 'add', '--quiet', '-b', `codex/engineering-${leaseId}`, directory, baseCommit]); }
+      catch (error) { if (!(error instanceof NativeExecutionError && error.settlement === 'unknown')) { active = false; await rm(leaseFile); } throw error; }
+      let released = false;
+      return { directory, leaseId, snapshot: () => snapshot(directory, baseCommit),
+        async release() {
+          if (released) return;
+          const recorded = leaseRecord.parse(JSON.parse((await readTextFile(leaseFile, 1024)).content));
+          if (recorded.leaseId !== leaseId || recorded.baseCommit !== baseCommit) throw new Error('Engineering project lease changed.');
+          await rm(leaseFile); active = false; released = true;
+        },
+      };
+    },
+    async dispose() {
+      if (active) throw new Error('Cannot remove a project with unresolved engineering execution.');
+      try { await lstat(join(root, 'active-lease.json')); throw new Error('Cannot remove a project with unresolved engineering execution.'); }
+      catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
+      await readDirectoryRecord(root, '.flow-project.json', projectRecord); disposed = true; await rm(root, { recursive: true });
+    },
+  };
 }
 
 async function snapshot(directory: string, baseCommit: string): Promise<WorkspaceSnapshot> {
