@@ -1,6 +1,6 @@
 # Claude summary 纯适配器证据
 
-当前P2修复target：`PENDING_P2_TARGET`，复审NOT_STARTED。旧target `e81f2009153436cacf791aa7c8de492875906586`已被status_read/gpt-6-astra预审判CHANGES_REQUESTED（1P2/0P1），mika于09:25:10 UTC核hash后接收；旧46项记录保留为历史。已审首片879c989的4源码逐文件diff为空；新实现仅`apps/runner/src/context-observations/claude-summary.ts`及`.test.ts`，claim v3 [COMMITTED receipt](sdk-amend-receipt.json)。本页记录静态来源与局部行为，不是采集/持久化事实。
+当前P2修复target：`3ab95d288a91214d03dec719dc6b44024206118a`，复审NOT_STARTED。旧target `e81f2009153436cacf791aa7c8de492875906586`已被status_read/gpt-6-astra预审判CHANGES_REQUESTED（1P2/0P1），mika于09:25:10 UTC核hash后接收；旧46项记录保留为历史。已审首片879c989的4源码逐文件diff为空；新实现仅`apps/runner/src/context-observations/claude-summary.ts`及`.test.ts`，claim v3 [COMMITTED receipt](sdk-amend-receipt.json)。本页记录静态来源与局部行为，不是采集/持久化事实。
 
 小Interface为`mapClaudeContextSummary({identity, observationId, observedAt, evidenceRef, requestDetail: 'summary', response}) → ContextObservation`。仅接受subject.kind=attempt且nativeSessionId非空；draft/queued拒绝，需后继独立host-estimator。authenticated host负责已消费input/history cut、采样来源、冻结身份、receipt权限；adapter仅规范化数值，中心pure projection仍唯一负责freshness和remaining算术。无Query实例、计数API、时间采样、计时器、auth或持久状态，SDK仅`import type`，运行时不加载它。没有改先前公有schema。
 

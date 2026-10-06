@@ -4,13 +4,13 @@
 
 ## 当前修复target
 
-- Target：PENDING_P2_TARGET；base：42ab81ea67b5db7a5135802e7e3df6642533ca1f；同branch/worktree与v3 claim。
+- Target：3ab95d288a91214d03dec719dc6b44024206118a；base：42ab81ea67b5db7a5135802e7e3df6642533ca1f；同branch/worktree与v3 claim。
 - 修复scope仅claude-summary.ts/.test.ts两文件，先前已审4源码不变。仅允许带nativeSessionId的attempt；draft/queued/null session拒绝，pending估算留后继独立来源。authenticated host仍负责已消费input/history cut，未加状态机。
 - 修后26 Adapter + 23直接projection = 49/49、root局部strict noEmit0；[新manifest](../../docs/evidence/wpf-mature-04/sdk-p2-check.json)及原始日志在同目录；旧46不计修后证据。
 - 当前独立reviewer/结论：NOT_STARTED；待确认P2修复，不以作者验证当批准。
 
 ```text
-只读复审PENDING_P2_TARGET，base42ab81ea67b5db7a5135802e7e3df6642533ca1f。核branch/head/dirty和新2源码hash，确认旧879四源码不变。核e81f200的P2：SDK Query summary不得覆盖pending draft/queued；修复仅接受subject.kind=attempt且nativeSessionId非空，host消费cut仍外部可信前置。检查默认attempt、三项拒绝、detachment/身份失效及保留的privacy/双窗口/数值边界，结合新49/49与strict noEmit原始证据。禁止provider/Query/auth/安装/个人服务；如需重跑仅同2显式测试路径。不扩范围，给绑定target的P2复审结论与未检查项。
+只读复审3ab95d288a91214d03dec719dc6b44024206118a，base42ab81ea67b5db7a5135802e7e3df6642533ca1f。核branch/head/dirty和新2源码hash，确认旧879四源码不变。核e81f200的P2：SDK Query summary不得覆盖pending draft/queued；修复仅接受subject.kind=attempt且nativeSessionId非空，host消费cut仍外部可信前置。检查默认attempt、三项拒绝、detachment/身份失效及保留的privacy/双窗口/数值边界，结合新49/49与strict noEmit原始证据。禁止provider/Query/auth/安装/个人服务；如需重跑仅同2显式测试路径。不扩范围，给绑定target的P2复审结论与未检查项。
 ```
 
 作者回应：已按P2完成最小修复并等待独立复审；下列旧结论原样保留，不因新作者检查自行升级。

@@ -2,7 +2,7 @@
 
 权威[plan](../../../plans/wpf-mature-04-context-transparency/plan.md) / [status](../../../plans/wpf-mature-04-context-transparency/status.md) / [review](../../../plans/wpf-mature-04-context-transparency/review.md)。当前包含独立schema/无IO投影与纯Claude summary响应Adapter；未挂载生产API/采集/runner/Web，不代表完整上下文透明度交付。
 
-第二片当前P2修复target `PENDING_P2_TARGET`：2个runner文件，26+23 = 49/49、局部root严格noEmit0，复审NOT_STARTED。旧target `e81f2009153436cacf791aa7c8de492875906586`为CHANGES_REQUESTED（pending输入覆盖P2），旧46项保留；[详细证据](claude-summary.md)、[修后source manifest](sdk-p2-check.json)、[claim v3](sdk-amend-receipt.json)。以下30/30与APPROVED记录仅对应第一片879。
+第二片当前P2修复target `3ab95d288a91214d03dec719dc6b44024206118a`：2个runner文件，26+23 = 49/49、局部root严格noEmit0，复审NOT_STARTED。旧target `e81f2009153436cacf791aa7c8de492875906586`为CHANGES_REQUESTED（pending输入覆盖P2），旧46项保留；[详细证据](claude-summary.md)、[修后source manifest](sdk-p2-check.json)、[claim v3](sdk-amend-receipt.json)。以下30/30与APPROVED记录仅对应第一片879。
 
 固定环境：Node24.20.0、pnpm9.15.4、Vitest4.0.18。复用主仓固定已安装依赖；临时配置给Vitest设置真实worktree root及Zod路径、给TypeScript继承该worktree根strict/noUncheckedIndexedAccess等配置并列4个受影响根文件。没有安装、node_modules symlink、改项目配置、provider/auth/个人服务操作。配置快照见[validation-config.json](validation-config.json)。
 
