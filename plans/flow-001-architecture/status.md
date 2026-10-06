@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:34 UTC / main0bc8d40b |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:32 UTC / main0bc8d40b |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -143,4 +143,4 @@ SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB�
 
 2026-10-06 19:10:54 UTC：FLOW-001-T04-SCAN-01 proposed；单会话/项目行锁下无关推进与整轮关闭时限纳入REQ15后继。GO固定22a源码观察保留为未复现风险，未领取产品scope、未运行PG/负载；兼容发布/消息设置仍优先。
 
-2026-10-06 21:34 UTC：本次个人发布已由Execution Lead独立核100项固定/现文件、24命令和25最终检查；同op drain→hold→旧runner整组停止→0600原件先行/精确intent退役→af51 refresh→explicit resume v18→d629 Web CAS v3。总drain166.030s/900s，0主动task/provider/tab；旧claim仍unknown，不造ACK。独审[I02结果](../../../m2-integration/docs/evidence/i02/svc05h-retirement-release-result-review.json)。64表保护摘要/27迁移/4历史保留，不把摘要核对称逐值明文证明，也不把固定发布等同moving main全部功能或新真实UI验收。
+2026-10-06 21:32 UTC：本次个人发布已由Execution Lead独立核100项固定/现文件、24命令和25最终检查；同op drain→hold→旧runner整组停止→0600原件先行/精确intent退役→af51 refresh→explicit resume v18→d629 Web CAS v3。总drain166.030s/900s，0主动task/provider/tab；旧claim仍unknown，不造ACK。独审[I02结果](../../../m2-integration/docs/evidence/i02/svc05h-retirement-release-result-review.json)。64表保护摘要/27迁移/4历史保留，不把摘要核对称逐值明文证明，也不把固定发布等同moving main全部功能或新真实UI验收。

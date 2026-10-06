@@ -289,3 +289,9 @@ S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补�
 同一原operator完成 run-retirement-release-20261006T212322Z 的24步，25个最终check均true、166.030s/900s、0主动任务/provider/tab操作。旧80B intent先0600私有备份与持久审计，再按已批精确语义退役为46B；旧claim结果仍unknown，不造ACK/重放。af51后台accepting v18，新Web d629 v3，三保留产物和旧数据保持。Lead只读核保存回执后恢复root mainc8e2e9e clean；[源码窗口关闭记录](../../../m2-integration/docs/evidence/i02/af51-d629-retirement-source-window-2125-closed.json)。
 
 下一共享短窗口给Mika SVC07既定HTTP消费者，开始前重新核原资源线；结束后直接与Web/F04交还，不把末free1,252,483,072B当未来准入值。REQ15九个原固定依赖链接已核版本/hash并供给，未改tracked/dirty，无install/import/PG，见[供给回执](../../docs/quality/req15-dependency-provision-20261006.json)。OPS14、MATURE02C02、REQ15三来源进入正常登记批，metadata错误仍由原owner修，不改parser猜状态。
+
+## 2026-10-06 21:36 两棵历史副本的资源收尾
+
+[窄批summary](../../docs/quality/sparse-worktree-2026-10-06/readability-two/summary.json)：两棵readability树各232个与fixedGit/main同blob的非自有历史文件可逆收起。全部保留文件哈希与clean HEAD复核成立，源码/测试/计划/规则/自有raw/实际输入/依赖与旧预览均保留。首树观测卷增18,587,648B；次操作前后增18,329,600B，但共享卷持续波动，最后约1.063GB，仍缺原重运行线约145MB，不把逻辑35,853,616B当物理保证。
+
+第二树Git操作exit0之后共享/其他worktree配置hash断言失败，原APPLIED_PENDING_VERIFY不改；另次只读复核保留内容map、clean/head及精确候选缺省状态。shared config前值当时仅内存，无法归因该hash变化，明确NOT_PROVEN；未改共享配置、重试sparse或回滚掩盖。后续批次先持久化配置前hash/受保护字段，仍仅单一Git operator；原两树数量到限停。当前等待已授权项目副本的下一组候选事实，worker源码/只读审查可继续；不反复试探运行门槛。
