@@ -1,3 +1,4 @@
+import { bindExecutionInput } from '../conversation-context/store.js';
 import { randomUUID } from 'node:crypto';
 import type { PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
@@ -38,9 +39,10 @@ export async function prepareTurnAdmission(client: PoolClient, conversation: Con
   return input;
 }
 /** Task, wake-up, immutable turn and admission revision share the caller's transaction. */
-export async function acceptConversationTurn(client: PoolClient, boss: PgBoss, conversation: ConversationRow, input: TaskSubmission): Promise<Omit<ConversationTurnAccepted, 'replayed'>> {
+export async function acceptConversationTurn(client: PoolClient, boss: PgBoss, conversation: ConversationRow, input: TaskSubmission, contextInputId?: string | null): Promise<Omit<ConversationTurnAccepted, 'replayed'>> {
   const task = await acceptTask(client, boss, input);
-  const row = (await client.query<TurnRow>('INSERT INTO flow.conversation_turns(id,conversation_id,number,task_id,user_text) VALUES($1,$2,$3,$4,$5) RETURNING *', [randomUUID(), conversation.id, conversation.revision + 1, task.id, input.prompt])).rows[0]!;
+  await bindExecutionInput(client, task.id, contextInputId, conversation.id);
+  const row = (await client.query<TurnRow>('INSERT INTO flow.conversation_turns(id,conversation_id,number,task_id,user_text,conversation_input_id) VALUES($1,$2,$3,$4,$5,$6) RETURNING *', [randomUUID(), conversation.id, conversation.revision + 1, task.id, input.prompt, contextInputId ?? null])).rows[0]!;
   await client.query('UPDATE flow.conversations SET revision=revision+1,updated_at=clock_timestamp() WHERE id=$1', [conversation.id]);
   return { conversation: conversationView(await loadConversation(client, conversation.id)), turn: await turnView(client, row) };
 }

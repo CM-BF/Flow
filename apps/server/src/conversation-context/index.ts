@@ -1,6 +1,8 @@
 import type { FastifyInstance } from 'fastify';
 import type { Pool } from 'pg';
 import { readFile } from 'node:fs/promises';
+import { idSchema } from '../../../../packages/contracts/src/tasks.js';
+import { contextDetail } from './store.js';
 import { HttpError, transaction } from '../database.js';
 
 /** Call after migrations 7,11,15 and before registering routes or enabling queue processing. */
@@ -13,6 +15,9 @@ export async function migrateConversationContext(pool: Pool): Promise<void> {
   });
 }
 /** Uses the center's owner-only auth. The conversation and context IDs must both match. */
-export function registerConversationContextRoutes(app: FastifyInstance, _pool: Pool): void {
-  app.get('/api/conversations/:conversationId/contexts/:contextId', () => { throw new HttpError(501, 'conversation_context_not_implemented', 'Context detail implementation is pending.'); });
+export function registerConversationContextRoutes(app: FastifyInstance, pool: Pool): void {
+  app.get<{ Params: { conversationId: string; contextId: string } }>('/api/conversations/:conversationId/contexts/:contextId', request => {
+    if (!idSchema.safeParse(request.params.conversationId).success || !idSchema.safeParse(request.params.contextId).success) throw new HttpError(400, 'invalid_conversation_context', 'Invalid context reference.');
+    return contextDetail(pool, request.params.conversationId, request.params.contextId);
+  });
 }
