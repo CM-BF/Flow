@@ -141,3 +141,17 @@ it("a fresh catalog never sends until explicitly refreshed, and removes subscrip
   await catalog.refresh(); expect(notices).toBe(2); unsubscribe(); await catalog.refresh(); expect(notices).toBe(2);
   expect(catalog.getSnapshot()).toMatchObject({ loaded: true, stale: false, profiles: [], canLoadMore: false }); catalog.dispose();
 });
+
+it("rejects unknown access declarations instead of activating them, while supported access remains exact", async () => {
+  for (const access of ["none", "configured-readonly"] as const) {
+    const allowed = profile(); allowed.configuration.access = access;
+    expect(freezeConversationCreation("Allowed", configuredSelection(allowed)).requested.tools).toBe(access);
+  }
+  const unsupported = { ...profile(2), configuration: { ...profile(2).configuration, access: "unsupported-fixture-access" } } as unknown as ExecutionProfile;
+  expect(() => configuredSelection(unsupported)).toThrow();
+  const catalog = createExecutionProfileCatalog({ executionProfiles: async () => ({ profiles: [profile(), unsupported], nextCursor: null }) });
+  await catalog.refresh();
+  expect(catalog.getSnapshot()).toMatchObject({ profiles: [], loaded: false, stale: true });
+  expect(catalog.getSnapshot().error).toBeTruthy();
+  catalog.dispose();
+});
