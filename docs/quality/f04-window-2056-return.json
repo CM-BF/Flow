@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-06T21:02:31Z",
+  "state": "F04_FAILED_CLEANED_WINDOW_RETURNED",
+  "windowId": "flow-tui01f04-20261006-2056",
+  "actualJourney": "failed-before-original-terminal-request",
+  "elapsedMs": 26512,
+  "tasks": 0,
+  "providerCalls": 0,
+  "cleanupOnly": {
+    "beganAt": "2026-10-06T20:59:20.192Z",
+    "endedAt": "2026-10-06T20:59:20.569Z",
+    "groupsAbsent": true,
+    "databaseRemoved": true,
+    "temporaryRemoved": true,
+    "connections": []
+  },
+  "diagnosticLimit": "Only pre-shutdown terminal bytes0/events[] persisted. Post-shutdown PTY transcript was not persisted; cannot assert existence or recover it from removed directory.",
+  "holder": null,
+  "evidence": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/cleanup-once-result.json",
+      "bytes": 1146,
+      "sha256": "02907ecaeefc97a3a3564f86d2717bf695d6a5c639b209fca7bbfbb5f7af9210"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/cleanup-once-checkpoint.json",
+      "bytes": 777,
+      "sha256": "318c64dcc9332f29efe09b70924fafc47932ee5cd29ed6aff57d28595b145a01"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/cleanup-once-metadata-correction.json",
+      "bytes": 547,
+      "sha256": "1b05c005848fff16c3323cf0879f8a6151ada56e9407fc1cb82a0705b3ead4a6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/cleanup-once-summary.md",
+      "bytes": 1859,
+      "sha256": "6c2a6ed300275835639545c8f7784941331c93667a247901ca5f8b0f3826e498"
+    }
+  ],
+  "review": "Lead read actual cleanup facts; no rerun or new product check."
+}

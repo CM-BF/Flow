@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:45 UTC / main13f92d05 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 21:02 UTC / mainca683820 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main13f92d05；恢复证据/已审准备工具与看板修复已发布。个人source362/v15、Web8d8/v2保持 |
+| 已集成main状态 / HEAD | main/origin ca683820已接F04准备独审与SVC07固定HTTP输入回执；175来源已登记。个人后台362/v15与Web8d8/caa1/v2保持；2040更新只读step01停止，0材料/维护/重启/发布。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
-| 当前产出 | 原中心与网页保持可用；两份旧网页通过候选后台兼容检查，三项后端实施已获得所需源码。 |
-| 下一可用交付 | 准备固定兼容版本的个人更新；共享验证按已审就绪顺序交接，后台实现并行继续。 |
-| 当前阻塞 | ACTIVE: 完整目标旅程及后续发布仍有各自验收；磁盘逐次准入，大构建原门槛保持。源码准备不再阻塞三项后端实现。 |
+| 当前产出 | 保留网页与候选后台的兼容证据已完整；终端和网页接续首验在终端请求捕获前失败，未创建任务，专用资源已独立收尾。 |
+| 下一可用交付 | 先修复终端启动诊断与收尾输出留存，再验证双端接续；个人更新的旧未决记录恢复正做限定独审，其他已就绪检查继续串行运行。 |
+| 当前阻塞 | ACTIVE: 新版发布需处理已定位的旧本地未决领取记录；一次保历史退役方案已授权，正做实现/独审，未操作个人记录。完整后台产物仍待原空间门槛；小检查按各自fresh预算继续。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -273,3 +273,7 @@ SVC05H恢复准备已固定b1b759d6，唯一独审当前只要求补强operator�
 S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补齐366B；固定22a与本树HEAD同blob、既有源码/dirty不变，0安装/import/运行。[元数据供给](../../docs/quality/source-provision-2026-10-06/s01p07-entry-metadata-receipt.json)。小额源码按已记录模块闭包方式供给，不套用PG余量线；新的运行仍fresh原gate。
 
 2026-10-06T20:53:49Z：SVC07 真实HTTP消费者准备的209个固定缺失源码/SQL共869,209B与13精确现有依赖链接已补，原7输入、HEAD及dirty保持；未安装/import/PG。[供给回执](../../docs/quality/source-provision-2026-10-06/svc07-http-receipt.json)。当前Web Recovery持有共享窗口；F04准备批准后排其清理归还，个人intent退役仅实现/临时目录小检查。
+
+2026-10-06 20:56 UTC：Web Recovery实际清理归还后，F04取得一次原150s/0provider串行窗口；实际开始仍须fresh源码/领取/空间。Mika/Web已直接协调暂停重运行，源码和审查继续。[准入](../../docs/quality/f04-window-2056.json)。
+
+2026-10-06 21:02 UTC：F04首验26,512ms失败、0task，原证据保留；独立cleanup-only于20:59:20正常完成，3自有组absent、marker/devino匹配、空连接、DB/tmp删除确认，窗口已归还Web/Mika。停止期PTY输出未持久的诊断缺口明确记录，不把清理成功当行为通过；后继先0PG/Chrome修捕获。MATURE02C02新树source-only操作按GO限定委派Mika，本Lead尚未创建；main/其它树/共享配置仍原边界。
