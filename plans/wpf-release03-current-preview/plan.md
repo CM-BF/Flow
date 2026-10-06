@@ -4,7 +4,7 @@
 
 ## 目标与固定输入
 
-验证已审新前端与个人后台所用固定版本能否安全组合，为原 SVC operator 提供可核对的正式产物与真实兼容证据；本片不发布、不操作个人服务。后端、client、contracts 固定 `362af3bac77541e5a60979326bcf4d4b8c947915`；前端正式 format2 产物 d629，sourceHead5069586、获审生产来源9eec，releaseId388371a4972c469b8ace623454594132，详见[产物输入](../../docs/evidence/wpf-release03/artifact-input.json)。不重构建或重装，不追 moving main。
+验证已审新前端与个人后台所用固定版本能否安全组合，为原 SVC operator 提供可核对的正式产物与真实兼容证据；本片不发布、不操作个人服务。初始负兼容后台及本验证client/contracts固定 `362af3bac77541e5a60979326bcf4d4b8c947915`；后继实际factory使用外部独审af51固定组合（原362 + 已审history窄修，13metadata闭包）；前端正式 format2 产物 d629，sourceHead5069586、获审生产来源9eec，releaseId388371a4972c469b8ace623454594132，详见[产物输入](../../docs/evidence/wpf-release03/artifact-input.json)。不重构建或重装，不追 moving main。
 
 ## 两模块和资源边界
 
@@ -16,7 +16,7 @@
 ## TODO
 
 - [x] RELEASE03-01 固定输入、领取与依赖/生命周期边界可审；完成两脚本源码。
-- [ ] RELEASE03-02 取得资源及依赖授权后，执行有界真实兼容矩阵并保留失败/清理事实。
+- [x] RELEASE03-02 取得资源及依赖授权后，执行有界真实兼容矩阵并保留失败/清理事实。
 - [ ] RELEASE03-03 固定候选、独立审查、正常交接；真实发布仍由原 operator 决定。
 
 ## 完成条件
@@ -44,3 +44,7 @@ root的1a7详情DTO误用P1由fixture窄修处理，固定269103d44f153f13a2f35f
 新af51组合单附件检查通过，混合材料被资源监督停止。累计7,983ms/180秒、余172,017ms，B NOT_RUN；数据库/进程清理完成。运行TODO仍未完成，源码269103d冻结，不重试或降低门槛。详见唯一status及原样raw。
 
 - 2026-10-06 17:24:37 UTC：同一RELEASE03原四scope修复故障注入，headers后真实ACK正文丢失；原验收与累计账保持，候选 `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7` 仅源审，下一B另fresh准入。
+
+## 2026-10-06 17:52:11 UTC 当前阶段
+
+实际两A与B限定组合已通过，完整原始记录/失败历史/清理见唯一status；原SVC兼容报告已在自有目录生成并verify，等待独立结果审查与main交接。不重跑已绿A，不部署个人服务。

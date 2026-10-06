@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 17:36:43 UTC |
+| 最近更新时间 | 2026-10-06 17:52:11 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
@@ -10,26 +10,26 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7（响应正文丢失注入源码修复） |
-| 工作树dirty状态 | 两源码已固定；本段metadata提交前待提交，normalpush后双端clean另核，未新运行 |
+| 工作树dirty状态 | 产品两源固定且未改；本段仅新增实际raw与metadata，最终normalpush/clean回执另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PARTIAL ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7；原A通过/原B失败保留；本target运行NOT_RUN |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；源码条件已审，新组合部分运行；完整兼容未通过 |
+| 检查状态 | PASSED ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7；实际B 3项通过，复用已审all12两A；不是新类型检查/个人发布 |
+| 已集成main状态 / HEAD | NOT_INTEGRATED；实际限定组合兼容通过，独立结果审查/main交接待完成 |
 | 实现目标 | ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7 |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 响应正文截断检查已通过源码审查，页面兼容仍待实测 |
-| 下一可用交付 | 在新受控窗口完成原键恢复与页面兼容验证 |
-| 当前阻塞 | ACTIVE: 本次运行资源不足，未启动；完整页面兼容仍待验 |
+| 当前产出 | 真实页面普通发送和附件发送/队列的原键恢复已通过，草稿保留 |
+| 下一可用交付 | 独立核验完整证据并交原发布操作员受控接收 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；UNKNOWN：ef458双独立源码限定批准/0blocking，新运行未执行；原A通过/B失败保留，完整兼容未通过 |
+| Review | [review.md](review.md)；UNKNOWN：源码双审通过，实际A/B证据齐备，完整结果独审待完成 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | RELEASE03-01 | completed | w01_owner | [固定源码审查](../../docs/evidence/wpf-release03/source-review-432b.json)、[manifest](../../docs/evidence/wpf-release03/source-manifest.json) |
-| RELEASE03-02 | in-progress | w01_owner | [最新B结果](../../docs/evidence/wpf-release03/app-result-171109.json)：原A通过，B未知回执断言未达；累计39935/180000ms |
-| RELEASE03-03 | pending | w01_owner | [ef458源码双独审](../../docs/evidence/wpf-release03/body-loss-source/review-index.json)通过；B/完整兼容/主线交付未完成 |
+| RELEASE03-02 | completed | w01_owner | [B1750通过](../../docs/evidence/wpf-release03/app-result-175014.json)：原A-all12复用，B三项PASS；累计50809/180000ms |
+| RELEASE03-03 | pending | w01_owner | [ef458源码双独审](../../docs/evidence/wpf-release03/body-loss-source/review-index.json)通过；完整实际证据独审/主线交付待完成 |
 
 ## 架构影响与未验
 
@@ -130,3 +130,11 @@ B真实App plain Send省略材料字段与旧receipt路径已PASS；随后Files 
 ## 2026-10-06 17:36:43 UTC B1736未准入安全收口
 
 管理一次fresh于2026-10-06T17:35:43.958730+00:00观察free1,179,914,240B，低于start1,207,959,552B，差28,045,312B。原四scope/实际e223/ef458两源、backend/artifact/依赖/完整A proof原predicate通过，但没有gate；[准入原件](../../docs/evidence/wpf-release03/app2-admission-not-run-173543.json)。仅NOT_RUN_RESOURCE，非业务失败。窗口已归还，没有PG/Chrome/产品运行或本人新free采样，预算39935/180000ms、余140065ms不变，旧43raw保留。当前只归档metadata，源码冻结；不得复用本次准入或自动重试。
+
+## 2026-10-06 17:52:11 UTC B1750 唯一实际通过
+
+本人live核bfb v3原四scope、实际HEAD5819796/两源ef458未改后，消费manager唯一fresh gate执行一次app模式。17:50:30.870Z开始，10,874ms完成；本轮没有重跑A，严格复用已独立审查all12完整raw及同backend af51/artifactd629/historycontract59cde。plain Send材料字段省略与v1兼容、v2 Send未知回执显式原键恢复、Queue Enter及原键恢复共三项PASS。两个真实202分别发送完整Content-Length与非空真实前缀后优雅关闭，浏览器同Request均观察到response-headers→requestfailed/ERR_CONTENT_LENGTH_MISMATCH；unknown UI与恰一个preRetry POST成立，随后显式Retry的第二POST同key/body/turn、replayed true，冻结引用与新草稿保持。原preheader注入失败历史不覆盖，未据此证明原Chromium自动重发原因。
+
+[完整索引与24raw hashes](../../docs/evidence/wpf-release03/app-result-175014.json)、[App原始结果](../../docs/evidence/wpf-release03/runs/app1750-20261006-175014-344a04/app.json)、[wire](../../docs/evidence/wpf-release03/runs/app1750-20261006-175014-344a04/wire.json)、[cleanup](../../docs/evidence/wpf-release03/runs/app1750-20261006-175014-344a04/cleanup.json)。本轮24文件225,635B，原43文件464,871B逐字未改；合67文件690,506B。预算累计50,809/180,000ms，余129,191ms。专库flow_release03_95008589c98745629a90 marker确认并删除，worker76508/Chrome76648均exit0，cleanup errors=[]；窗口已即时交回。minimumFree1,732,190,208B/end1,735,483,392B仅共享卷观察，不归因本次物理峰值。
+
+原SVC import/verify在本自有证据目录完成，compatibilityId `599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9`；只绑定此backend/artifact/releaseId，不泛化所有主线/旧362。页面pageErrors=[]，console保留favicon404、两个已绑定截断错与结尾授权撤销401。浅色/深色390截图已保存；作者本轮未独立重看截图。0provider、0build/install、0个人服务/指针操作。完整独立结果审查和main接收尚待，不自行批准或发布。

@@ -1,6 +1,6 @@
 # WPF-RELEASE03 独立审查
 
-**状态：UNKNOWN（源码限定审查已通过；完整兼容验收未完成）**
+**状态：UNKNOWN — ef458源码双独审通过，实际A/B证据已齐备，完整结果独审待完成。
 
 Review target commit：ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7
 
@@ -71,3 +71,7 @@ Target `ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7`；原9927注入preheader destr
 [root原报告](../../docs/evidence/wpf-release03/body-loss-source/root-fixed-review.json)、[workspace_panels_owner原报告](../../docs/evidence/wpf-release03/body-loss-source/peer-fixed-review.md)（peer实际2026-10-06T17:26:51.613259+00:00）：均APPROVED_SOURCE_SCOPED/0blocking，仅固定两harness source delta。独立核真实ACK完整字节与downstream prefix分离、headers→同Request失败证据、exact1 preRetry与exact2/replayed身份、Queue/新稿不变、1秒owned socket清理和console精确归因；原43raw/契约/保护范围均不变。
 
 两位reviewer均未运行import/types/HTTP/PG/Chrome或资源采样；本地flush/关闭不等远端已接收，实际unknown UI与1秒关闭行为仍待一次新准入B。原B自动重发原因未证实，失败材料不覆盖；两A继续仅按既有完整all12证明复用。累计39935ms/余140065ms、8MiB总上限不变，没有新gate/运行/发布许可。
+
+## 2026-10-06 17:52:11 UTC 作者运行提交独立结果审查
+
+B1750 target ef458/actual HEAD5819796 三Appchecks PASS；原all12 A直接复用，0重复A。24raw225635B/累计50809ms/清理完成/compatibilityId见[完整索引](../../docs/evidence/wpf-release03/app-result-175014.json)。请核source/input/原样raw绑定、真实fault事件与显式同key恢复、兼容四observations/报告hash、预算与清理。作者不自行批准完整兼容，个人发布未操作。

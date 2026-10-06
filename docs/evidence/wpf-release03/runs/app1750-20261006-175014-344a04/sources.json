@@ -1,0 +1,129 @@
+{
+  "head": "58197960009ac882a3aadaf59b51c315dd82e55f",
+  "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+  "sourceTree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+  "backendInput": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6",
+    "metadata": [
+      {
+        "path": "docs/evidence/svc05-history-compatibility/claim-receipt.json",
+        "sha256": "3b7aa17ed2d3dcd428a01aedc784b084b6d0a023e22d1a250e18b499499cd716"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/dependency-view.json",
+        "sha256": "8eca2632a14ffaf3c8aaf9cec4b0a491b56b88ebc94a55d22ba03679222d4bde"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/interface.md",
+        "sha256": "829daf5f3c35be84f7a0b9414b836d271f0505c19bfc89fba4134e3dbbf68b2c"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/manifest.json",
+        "sha256": "5eb1f1a5aa1bbfc15b5d45bfca48a2332b1c42b9954aed49e67aec65b5069754"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/old-a-result.json",
+        "sha256": "7292991d07dadbd920a44e3be22c4b8d7a908d308fd52704d566e2165c27c234"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/old-a-review.json",
+        "sha256": "a1304d49692d80b0d9aa36f990eab2b19a9bc0602354f7b58ce418a39f17e24d"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/provision.json",
+        "sha256": "c903fbfd2552ba02fb67b5c4dbae2d350701ec8acdea03a5add6ac997b3f524d"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/quality.md",
+        "sha256": "4d3174b95347d6bee81d719cd8a100b39230acfbb6797255d0d141a6d33ba3d3"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/source-bindings.json",
+        "sha256": "f9a76ccdd93b3b49fa38489ffb83a6008dcd43934c6d51257d4809d293901af8"
+      },
+      {
+        "path": "docs/evidence/svc05-history-compatibility/source-precheck.json",
+        "sha256": "bef82168b40dfd3e7217eaa419141576f5625d2f3a78c4bb6358170f7fb70290"
+      },
+      {
+        "path": "plans/svc05-history-compatibility/plan.md",
+        "sha256": "90541be95f20c50127c05afe46214b72a8e1204071624354dd5535d66b952a83"
+      },
+      {
+        "path": "plans/svc05-history-compatibility/review.md",
+        "sha256": "9d74948f5f695a1b75a434cf5845c51f99d036bd278668aa9b5f7f50e4a72c0c"
+      },
+      {
+        "path": "plans/svc05-history-compatibility/status.md",
+        "sha256": "5256457c6b31f2690cd92a7f42537cbb7742c789962a7dd9486744191d9fae41"
+      }
+    ],
+    "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "sourceTarget": "b29807979a5589678a61d3fb84781950cf366396",
+    "approvedHistorySource": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+    "sources": [
+      {
+        "path": "apps/server/src/context-transparency/store.ts",
+        "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245"
+      },
+      {
+        "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+        "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b"
+      }
+    ],
+    "factoryPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/index.ts"
+  },
+  "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+  "artifact": {
+    "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+  },
+  "releaseId": "388371a4972c469b8ace623454594132",
+  "harnessBase": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "dirty": "?? docs/evidence/wpf-release03/runs/app1750-20261006-175014-344a04/",
+  "files": [
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "sha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "sha256": "4016c7811e77e12d8c8dbf2e6d90a433f93a3559bdff1e34b3a268a651c6d974"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "sha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7"
+    }
+  ]
+}

@@ -73,3 +73,7 @@
 ## 2026-10-06 17:36:43 UTC 未准入记录安全点
 
 原样归档管理fresh拒绝与无gate/0运行，不把共享空间变化归因本任务；源码/43raw/累计预算不改，不补跑检查或采样。仅own metadata正常提交/push；原SOURCE批准继续有效，完整兼容仍未验。
+
+## 2026-10-06 17:52:11 UTC B1750结果收口
+
+本段仅raw/metadata，ef458两源及history契约未改；43原raw逐字核同。本轮24raw225635B，实际B三项PASS，cleanup errors[]，原A proof独立复用。clean-code复核命名、错误/资源归因：headers/prefix发送与同Request失败分开证明，原失败历史不清洗；全绿报告仅exactbackend/artifact，未独立批准/发布。无额外产品检查。
