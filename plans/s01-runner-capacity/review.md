@@ -94,3 +94,5 @@ Review target commit: `51541b0cad73dcad32c7374dc87d631f0b9a8432`。当前NOT_STA
 ## after-drain-v1 真实结果独立审查
 
 Review target commit: `339147cb015fdd40ed1cedbc66aca26e736b3ee7`。状态PENDING_INDEPENDENT_REVIEW，runVerdict=PASS待核。实现51541b0c，实际execution5ea1b26f，productionBase0cee。57项manifest=21source/21readonly/8raw/7support。审查任务：只读核固定Git/WT/SHA/bytes、32真实身份及A/B各16重叠/各12成功4取消、1027事件id/seq/digest/fence/accepted、5journal清空、资源清理和含清理总预算；保留1次无类别/attemptID的heartbeat错误、略早timer标记与实际adapter区间区别、背景/观测/phase限制。核旧FAIL/raw/journal冻结。不要重审同一source设计、重跑检查/PG/HTTP/provider或追加窗口；如有发现精确定位原证据，修复不能覆盖raw。
+
+2026-10-06 10:53:39 UTC：Mika / gpt-6-astra正式只读 **APPROVED** 结果 `339147cb015fdd40ed1cedbc66aca26e736b3ee7`，0P1/P2；57项与32真实身份、1027事件绑定、5journal、资源/预算、错误/计时/背景限制均复核。详见[回执](../../docs/evidence/s01/mixed-after-drain-run/independent-review.json)。这是本次固定零模型负载PASS证据验收，不是整体S01/FLOW-001或>100容量完成。architecture_read未重复审，未重跑任何检查/窗口。
