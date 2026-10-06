@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:20:30 UTC / main32c371d |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:30:24 UTC / main32c371d |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | fc113945ff73d1a43092d0a70b51e901aa4be1e2 / 本批CHAT09、原生CLI与流式界面固定接收 |
+| 工作基线 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256 / 已审知识引用回执与97来源登记 |
 | 工作树dirty状态 | 候选已提交；当前交付记录整理 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；34固定源码比较一致，原生只读直接消费者2/2，root与Web类型检查exit0；0provider |
-| 已集成main状态 / HEAD | 32c371d389a913f8dd71c3bd8b98dd0697411256 已推送；CHAT09、CLI与流式界面已审main。个人center/runner仍b54de1dbb08e3ccc7d33a27295a318f2799e76ae / accepting v6，受控升级准备中。 |
+| 检查状态 | PASSED；CONTEXT02六源码与已审target逐字一致，组合Web类型检查exit0；registry97两个新来源格式完整；0provider |
+| 已集成main状态 / HEAD | 上一main32c371d已发布；本候选接收CONTEXT02与97来源。个人服务已受控更新到32c371d / accepting v9，原端口/数据/身份保留；用户主动请求正常完成，operator主动0query。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 流式聊天界面、执行配置目录和原生子任务命令行已发布到主线。 |
-| 下一可用交付 | 个人服务受控更新后验证实际聊天体验。 |
+| 当前产出 | 真实个人聊天服务已更新；知识引用的发送与排队回执保护已完成集成准备。 |
+| 下一可用交付 | 发布知识引用回执保护，继续接入聊天资料选择和运行中补充指令的受理条件。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -93,3 +93,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 08:10 UTC：O09领域7ddd/薄client1bd/生产c587、CONTEXT01 736ef独立模块、CHAT06P02 b009均按各唯一独审固定输入受控接收。产品逐字比对与root/Web组合types绿见native-context-prefix-integration.json；未重跑领域/provider。Web父计划仅从33bd两个批准目录发布，权威仍原管理WT；F01 metadata冲突精确采用canonical1be，不改产品。registry92含CHAT09/P02及D06来源迁移，尚待本次实际部署回执。个人center/runner仍b54/v6。
 
 2026-10-06 08:20 UTC：已审输入逐文件绑定见 [本批组合](../../docs/evidence/i02/stream-profile-integration.json)。既有F01两metadata冲突仅恢复唯一owner新记录；所有产品blob保持固定已审target。未重跑原领域全套/浏览器，无新增模型，个人服务未更新。
+
+2026-10-06 08:30:24 UTC：SVC02-32窗口已关闭；08:29:29一次resume到v9，08:29:40后置三owned组/端口/身份通过，用户请求后4succeeded/未完0。此为operator回执摘要，原始更新证据由SVC02唯一source固化。CONTEXT02固定5e8213a/6cacc通过六源码比较及Web类型检查，原142与独立124+18不重跑。main后继不改变个人center/runner加载源。
