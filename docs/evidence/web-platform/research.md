@@ -479,3 +479,9 @@ composer精确安装源码补充：core0.3.22 `runtime/interfaces/composer-runti
 必要回归：project有无与GET/page一致；P→Q、有→无、无→有、null/empty拒；合法CREATE ACK才继续唯一turn，wrong/missing/unexpected project保持unknown/0turn；原key/payload/pin/project重试、新draft分离；cap缺失false、有效bool可读但不开放UI，非bool拒；有无context metadata原样保留且不进user/assistant正文、不自动context GET。旧plain enqueue/turn请求无knowledge字段。knowledge写入与引用选择/深冻citation属于后继，薄reader不声称支持引用发送、不预取冻结正文重算digest。
 
 原panels仅只读查scope/固定源码/设计，0文件写/测试/模型/新tree。主Lead正在协调准确受控base/shared输入；QUEUE main receipt与旧路径停写/CAS移权在新take之前，不能用历史无冲突观察或同owner身份跨树写。
+
+### U11/REQ43真实过程反馈的最小现有合同（root只读）
+
+root固定fb906核ConversationTurn已有task id/title/status/verificationStatus/updatedAt和telemetry，首段可在turn旁稳定折叠Execution activity，初始0新增detail/events；用户展开再用现FlowClient.events(taskId,after)分页持久reference(id/title)，单项展开才conversationDetail(conversationId,turnId,detailId)，后台queries已有双ID/task归属校验。不要求先跳task页。
+
+这不提供typed tool状态：Reference只有id/title，runnerEvent union无tool/thinking，固定claude循环仅init/result。不能从标题或task总成功推单工具完成，未提供thinking不造。清晰工具状态后继需要native→持久typed activity reference及tool identity/phase/终态证据/detail ref；真正partial另需message+block identity、delta去重与重连cursor。GO对SDK0.3.290的includePartialMessages/tool_progress/tool_result能力研究与root当前代码未使用的事实分别归因；content_block_stop只表明输入参数生成结束，不是tool完成。0项目写/测试/模型，不新建重复计划或挤占renderer/K02范围。

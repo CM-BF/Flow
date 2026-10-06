@@ -1,10 +1,10 @@
 # WPF-D01 Dashboard 协作需求与来源登记
 
-更新：2026-10-06 04:50 UTC。唯一计划/status owner：d01_owner / gpt-6-astra ultra。父计划：[WPF-001](../plan.md)。固定文档基线 `d444608ab6c796c731e44e51a892868bf39bec2a`；本计划始终只做协作登记，没有第二个dashboard实现。
+更新：2026-10-06 05:54 UTC。唯一计划/status owner：d01_owner / gpt-6-astra ultra。父计划：[WPF-001](../plan.md)。固定文档基线 `d444608ab6c796c731e44e51a892868bf39bec2a`；本计划始终只做协作登记，没有第二个dashboard实现。
 
 ## 唯一实施边界
 
-紧凑中性工作台和高层语义由主线D03实现；D04负责PostgreSQL分配账本与领取展示。4320服务由原Lead单写管理，我方不停止、重启、改代码或另派dashboard owner。用户U09架构tab已由主线D05部署，原canonical [D05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)记录；D06已在独立树完成固定8f刷新（ef42277），实际main4e/4320部署已核，最终6ea2且claim v2 released。本计划保留后继快照提示/性能候选，未再领取实现。
+紧凑中性工作台和高层语义由主线D03实现；D04负责PostgreSQL分配账本与领取展示。4320服务由原Lead单写管理，我方不停止或重启服务；本队仅在正式独立claim下实施过局部架构刷新与proof优化，不创建平行看板权威。用户U09架构tab已由主线D05部署，原canonical [D05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)记录；D06已在独立树完成固定8f刷新（ef42277），实际main4e/4320部署已核，最终6ea2且claim v2 released。其后同一D06来源迁至dashboard-architecture-current，新claim e5b2v1完成固定eb刷新和页首快照提示；5ec已审、main3d4985已含，4320两静态资产hash吻合，最后4452且e5b2v2已释放。DPERF5cd也已受控main/released；本协作片段已交付，未来新需求另按正式范围领取。
 
 我方负责提交用户需求与canonical status来源，核对领取/来源是否真实呈现。手填进度只在各唯一status，JSON/网页派生；assignment账本只记owner/lead/scope/claim/handoff，不复制TODO/check/review。分支实现、检查、独立审查和main集成分开，缺失/过时/失败标未知，不猜百分比或ETA。
 
@@ -32,7 +32,7 @@ D04领取详情已经root实际CUA验证ID/version/lead/worker/scope/branch/时�
 
 04:07:57实际42来源、当前21activewriterclaims literal0overlap，PERF02 b617 main集成记录正确；仅X03新claim待canonical注册。管理者独立CUA实际看见owner/lead/worktree/branch/16scope/state/version与来源，见[领取可见实证](../../../docs/evidence/web-platform/assignment-visibility-verification.json)。U12不新增第二账本；进度仍唯一owner status。
 
-- [ ] **WPF-D01-06** D06新轮已从固定eb14991/独立新树正式take五scope，w01刷新源码结构并把短SHA/实际源码核验时间/固定快照提示放标题旁，继续同一baseline对象。旧8f已审记录保持历史，等待新target独审与唯一registry迁移后部署验收。
+- [x] **WPF-D01-06** D06新轮已从固定eb14991/独立新树正式take五scope，w01刷新源码结构并把短SHA/实际源码核验时间/固定快照提示放标题旁，继续同一baseline对象。旧8f已审记录保持历史，新target5ec独审通过、唯一registry已迁移，main3d4985已含且4320两静态资产hash匹配批准实现；最终owner metadata/release完成。
 
 - [x] **WPF-D01-07** 已移交WPF-DPERF01独立领取与验证：5cd获审，临时样本Git启动29→24且跨snapshot/异target语义保留；不是线上提速承诺，main6b4已含并bb7efv2释放。
 

@@ -170,8 +170,9 @@ type WorkspacePanelsProps = {
 - [x] **WPF-001-13** WPF-PROFILEI01：2e4c限定APPROVED/finalc1dc，创建即锁/完整pin/未知回执/新草稿连接隔离已验证；管理scope/docs与实际看板目标一致，交Lead集成另计。
 - [x] **WPF-001-14** WPF-DPERF01：5cd限定APPROVED/final4d7425，临时样本同target比较2→1、Git启动29→24，4新检查通过；关联旧registry计数失败明确保留，main接收另计。
 - [x] **WPF-001-15** WPF-PROFILEUX01：紧凑摘要与原生details，固定55b/rootAPPROVED；60d8交付及本地链接/TODO通过，main14c61已接收，ef869记录后全六scoperelease。保持原公开Interface/权限/冻结语义。
-- [ ] **WPF-001-16** WPF-QUEUE01：已按固定14c61独立树与13scope正式受领，交付中心权威排队/暂停/继续/独立取消与真实键盘发送一致性；保持REQ44的回执、持久性、分页和跨连接验收，独审/集成另计。
+- [x] **WPF-001-16** WPF-QUEUE01：已按固定14c61独立树与13scope正式受领，交付中心权威排队/暂停/继续/独立取消与真实键盘发送一致性；保持REQ44的回执、持久性、分页和跨连接验收，独审/集成另计。
 - [ ] **WPF-001-17** [WPF-RENDERER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/plans/wpf-renderer01-data-renderers/plan.md)：按固定fb906独立模块与八scope正式受领，交付确定性可信data-renderer注册和每provider隔离、按需详情的单一内建例子；App接线、完整X01生命周期另片，独审/主线另计。
+- [ ] **WPF-001-18** WPF-K02C01：原QUEUE已停写释放后，从已审3d4985新树取得八scope；仅消费Lead三contracts受控输入，完成project身份与旧cap/metadata薄兼容，不开放引用选择/发送，固定验证后独审。
 
 ## 验收、风险与持续方式
 
@@ -291,3 +292,5 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 05:43 GoalOwner/root正式批准现有renderer候选独立模块实施，沿WPF-001-05/原插件需求细分：固定fb906，仅3新源码+3专测+自己plan/evidence八scope；不是App接线或X01安装/启停/赋权新权威。先独立web-data-renderers树preflight、freshledger与原子take，再派写；此时仍无新receipt。K02首DTO字段按上列固定1eef记录，产品未ready时不让移动共享schema挤占QUEUE已审交付。
 
 05:49 K02薄reader进入下一关键路径准备：固定7368497ade6b80725e024d86541b87c971389476已实际把projectId/knowledge/knowledgeContext/context加到公开类型，详情/发送/claim首片已实装、queue/retry未完且整体未审。消费范围仍两生产+四test+plan/evidence，不拿整未审K02当Web基线；等Lead给含QUEUE01已审代码及受控schema的精确base，再核旧QUEUE停写/CAS amend/新take。同聊天tool/thinking与真实过程反馈优先级按上表REQ43更新，沿U11原剩余ID，不增加装饰片或调走renderer。
+
+05:51 QUEUE309/D065ec正式main3d4985回执已到并由管理独立核精确实现范围；WPF-001-16本片交付完成，原REQ44跨reload原key/steer后继不勾。K02薄compat准确base同3d4985，唯一共享owner仅授权三contracts patch消费，原QUEUE释放与新八scope take仍须实际receipt。共享domain未整体审定、0context UI，renderer仍独立正常。

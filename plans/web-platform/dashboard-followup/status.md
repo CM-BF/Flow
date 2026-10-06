@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 05:37 UTC |
+| 最近更新 | 2026-10-06 05:53 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（协作记录）；实际dashboard由原Lead负责 / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `2c22f6010b92092ecfd8af96f1239108d9eb2f03`（本段修改前核验） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `a8b8d3669cfa23dbb1abc7ea069f262e71c7aba4`（本段修改前核验） |
 | 工作树dirty状态 | 当前仅管理claim两目录的文档/来源证据待提交 |
-| 工作分支状态 | in-progress；来源/领取视图已证实，D06固定8f已审集成并释放；后继D06新固定基线已取得正式写权 |
+| 工作分支状态 | COMPLETED；D06新轮已审、main3d4985接收、静态部署hash相同且新claim已释放 |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | delivered |
 | 优先级 | 3 |
-| 当前产出 | 新版架构图已通过审查，并明确显示固定源码版本 |
-| 下一可用交付 | 将已审架构图更新到工程看板 |
+| 当前产出 | 新版架构图已发布，并标明固定源码版本 |
+| 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -30,7 +30,7 @@
 | WPF-D01-03 | completed | d01_owner（协作） | 四独立feature平级planDir已注册，nested转stub；4320入口与receipts真实验证，无放宽nested安全范围 |
 | WPF-D01-04 | completed | d01_owner（协作）；原Lead实施 | U09架构tab已部署，root读取固定3773图；管理04:07 CUA见可访问架构入口；不是最新8f图已交付 |
 | WPF-D01-05 | completed | d01_owner（协作） | D06 ef42277独审通过，04:28实际47源/claim匹配/main4e同范围/4320部署；最终6ea2，v2释放 |
-| WPF-D01-06 | in-progress | d01_owner（协作） | D06新轮5ec/rootAPPROVED、61d70clean；05:37实际两proof与claim完整，唯一source已迁移，本轮main/页面部署待Lead |
+| WPF-D01-06 | completed | d01_owner（协作） | D06新轮5ec/rootAPPROVED、61d70clean；05:37实际两proof与claim完整，唯一source已迁移，main3d4985已含，05:52:39静态data/renderer served hash与5ec相同；最终4452/e5b2v2释放 |
 | WPF-D01-07 | completed | d01_owner（协作） | 已移交独立WPF-DPERF01，5cd限定APPROVED；main6b4同两scope，最后08bd记录后bb7efv2 released；临时Git计数不泛化线上速度 |
 
 ## 阻塞 / 风险 / 未验证
@@ -56,3 +56,5 @@ WPF-001父源和六个独立feature canonical源已实际注册；本nested协�
 05:31:45.221Z原D06 registry已实际指向dashboard-architecture-current，manager单次65源API确认live/current/e5b2matchesSource，人读完整。候选375未批准，proof因可执行browser脚本缺literal实现范围为unknown已交owner；source迁移完成不替代这轮实现review。旧三档归raw保持byte相等，索引链接正常；原f619释放记录不改。
 
 05:37 root独审5ec限定APPROVED/R2CLOSED，管理35paths/6md44links4TODO/5hash与05:37:09.032Z最终API闭环；原完整source/script范围遗漏已补，proof从05:31unknown变unchanged的两个真实样本分别保留。原8f部署与新eb待部署分开，TODO06保留in-progress直至实际接收/页面核验，不为进度勾完。
+
+05:53 D06新轮main3d4985已受控接收，owner最终4452dc8929f81469acc406623cdf80b6583de491 clean/e5b2v2released；管理一次只读4320两静态资产，均200且SHA256与批准5ec相同。此为静态部署证据，未重跑浏览器DOM、真实运行/模型，旧58207/55247均保留。
