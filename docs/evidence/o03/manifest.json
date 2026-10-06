@@ -1,0 +1,111 @@
+{
+  "recordedAt": "2026-10-06T04:38:43+00:00",
+  "implementationTarget": "94e012ac44095ab3d4aca54df7951d0971f69dfa",
+  "base": "4e0289f29ffa48c6c49003837d4520f57c22b6b0",
+  "sharedHelperOriginal": "dbb57268889b82efb74c330bbf268b13f01b6402",
+  "sharedHelperLocal": "0a4a06fd0f1db7d54c584794b44ce955ee76a718",
+  "node": "v24.20.0",
+  "vitest": "4.0.18",
+  "models": 0,
+  "sources": [
+    {
+      "path": "apps/server/src/goal-tool-runs/authorization.test.ts",
+      "bytes": 17083,
+      "sha256": "ae10093f26c5bdcca75e3dea32ae2197162fac28d5c980d85001aab28489c7d9"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/authorize.ts",
+      "bytes": 2490,
+      "sha256": "59afcc9d836e0e29c3d5daf622fe9a3be2263bfaca1fa6b848372db56c632bbb"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/index.ts",
+      "bytes": 3209,
+      "sha256": "5089b16a0a0103f7c463a9d27eda68580553b2d1f72d70d502d52c838a9f131e"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/runner.ts",
+      "bytes": 3063,
+      "sha256": "a8274a7ce968a25b23cb1a8d0254c393a56e53fb314ea6d796abf07ccaa6a6b1"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/store.ts",
+      "bytes": 4472,
+      "sha256": "a2e144eb0549d133bacae0999227ca03457170c7d4e0a2a890cec2fbc53e5dc3"
+    },
+    {
+      "path": "packages/contracts/src/goal-tool-runs.ts",
+      "bytes": 3392,
+      "sha256": "eaf3b245eb5fae83d7a7ba1e550627d933a27a17215eb5775ad0dfb00c154c39"
+    },
+    {
+      "path": "packages/storage/migrations/012-goal-tool-runs.sql",
+      "bytes": 2076,
+      "sha256": "8b9a5c6ac912e2aa7cf7d1a893f3da39e97e2206ee7e2ea94e36fd9559271e5b"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/o03/checks-final.txt",
+      "bytes": 1222,
+      "sha256": "e27d7f17c309b1ecc38c5cc6ffc5de8d3d430688a722cdc3c58f42156532a2bf"
+    },
+    {
+      "path": "docs/evidence/o03/green-admission.txt",
+      "bytes": 333,
+      "sha256": "5a30a4d6bd1ac7f1c2b3ccab2f3d852f82366784d45f2787fd5f3cd0f4040c24"
+    },
+    {
+      "path": "docs/evidence/o03/green-authorization.txt",
+      "bytes": 1105,
+      "sha256": "ad6fb5a3a6b37291435c07a534bf440e743ffa9eacf9fa08dcb8384e80dd61ba"
+    },
+    {
+      "path": "docs/evidence/o03/progress-authorization.txt",
+      "bytes": 8879,
+      "sha256": "2c3c411952e26a372d0a5b6bc45641f508758a416cfc31daf29c198419f1fe0b"
+    },
+    {
+      "path": "docs/evidence/o03/red-admission.txt",
+      "bytes": 1118,
+      "sha256": "f316d502c3f5663be8203635a3d2b1f31e0dae3d15b32a42adb412f03773bf35"
+    },
+    {
+      "path": "docs/evidence/o03/typecheck-final.txt",
+      "bytes": 111,
+      "sha256": "fc5a92c46503b7118f0552eccf1fafb3312cfb08996edf1f6bf462224a26d762"
+    },
+    {
+      "path": "docs/evidence/o03/typecheck-progress.txt",
+      "bytes": 3867,
+      "sha256": "482527bca72b51f735d1bc8227fcfcc14fe883a7eab2f58b9dffb39878082c32"
+    },
+    {
+      "path": "docs/evidence/o03/claim-receipt.json",
+      "bytes": 748,
+      "sha256": "24fb7f6dc62f1fe21eae21fb3bebc10cea717efe77e8f2edd9fbd5080a3a1f3f"
+    },
+    {
+      "path": "docs/evidence/o03/cleanup.json",
+      "bytes": 251,
+      "sha256": "b8fe8ae493089e3a52a9765591f9b94b2f985a034cbd987e2be90996518dbb83"
+    }
+  ],
+  "finalChecks": {
+    "tests": 9,
+    "passed": 9,
+    "totalSeconds": 8.11,
+    "typecheck": "PASSED",
+    "testMode": "public HTTP with real isolated PostgreSQL, explicit module mount onto createServer",
+    "productionMount": false,
+    "nativeQuery": false
+  },
+  "limitations": [
+    "No SDK query or model/auth calls",
+    "No independent OS runner child; deterministic runner HTTP requests",
+    "Center restart is close/recreate in same test process, not hard-kill",
+    "Read scope is whole fixed goal; node allowlist applies only to input and commands",
+    "Only fixture admission; all native requests are rejected until explicit supported profile exists",
+    "Owner/runner shared clients and production module registration not part of this slice"
+  ]
+}

@@ -1,0 +1,128 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-tool-authorization
+
+ ❯ apps/server/src/goal-tool-runs/authorization.test.ts (8 tests | 7 failed) 1207ms
+   ✓ accepts one durable fixture grant, rejects native readonly profiles and enforces owner role 172ms
+   × enforces current runner/attempt/grant scope and preserves the whole-goal read policy 46ms
+   × counts distinct admitted keys, keeps bounded audit and replays across restart without bypassing input conflicts 42ms
+   × revokes authority durably and rechecks authorization before returning cached commands 39ms
+   × rejects expired, completed and revoked-runner ownership without reviving cached authority 107ms
+   × serializes an in-flight cached command against revoke without granting a post-revocation replay 37ms
+   × serializes an in-flight cached command against cancel without granting a post-revocation replay 39ms
+   × rolls back failed application without consuming authority and protects immutable scope and audit history 40ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-tool-runs/authorization.test.ts > enforces current runner/attempt/grant scope and preserves the whole-goal read policy
+TypeError: Cannot read properties of null (reading 'task')
+ ❯ active apps/server/src/goal-tool-runs/authorization.test.ts:62:138
+     60|   const response = await request(`/api/goals/${context.goalId}/tool-ru…
+     61|   const runner = (await request('/api/runners', { name: 'Planner fixtu…
+     62|   const claimed = await request('/api/runner/claim', {}, runner.token)…
+       |                                                                                                                                          ^
+     63|   const ownership = { attemptId: claimed.body.assignment.attempt.id, o…
+     64|   const grant = { id: response.body.run.id, version: 1 };
+ ❯ apps/server/src/goal-tool-runs/authorization.test.ts:72:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  apps/server/src/goal-tool-runs/authorization.test.ts > counts distinct admitted keys, keeps bounded audit and replays across restart without bypassing input conflicts
+TypeError: Cannot read properties of null (reading 'task')
+ ❯ active apps/server/src/goal-tool-runs/authorization.test.ts:62:138
+     60|   const response = await request(`/api/goals/${context.goalId}/tool-ru…
+     61|   const runner = (await request('/api/runners', { name: 'Planner fixtu…
+     62|   const claimed = await request('/api/runner/claim', {}, runner.token)…
+       |                                                                                                                                          ^
+     63|   const ownership = { attemptId: claimed.body.assignment.attempt.id, o…
+     64|   const grant = { id: response.body.run.id, version: 1 };
+ ❯ apps/server/src/goal-tool-runs/authorization.test.ts:91:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  apps/server/src/goal-tool-runs/authorization.test.ts > revokes authority durably and rechecks authorization before returning cached commands
+TypeError: Cannot read properties of null (reading 'task')
+ ❯ active apps/server/src/goal-tool-runs/authorization.test.ts:62:138
+     60|   const response = await request(`/api/goals/${context.goalId}/tool-ru…
+     61|   const runner = (await request('/api/runners', { name: 'Planner fixtu…
+     62|   const claimed = await request('/api/runner/claim', {}, runner.token)…
+       |                                                                                                                                          ^
+     63|   const ownership = { attemptId: claimed.body.assignment.attempt.id, o…
+     64|   const grant = { id: response.body.run.id, version: 1 };
+ ❯ apps/server/src/goal-tool-runs/authorization.test.ts:108:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  apps/server/src/goal-tool-runs/authorization.test.ts > rejects expired, completed and revoked-runner ownership without reviving cached authority
+AssertionError: expected '5e0a1a50-074f-4aea-8aab-0d3106d4a2dc' to be 'b1009c63-dea7-4ab3-ba0d-6eec8e8b4f43' // Object.is equality
+
+Expected: "b1009c63-dea7-4ab3-ba0d-6eec8e8b4f43"
+Received: "5e0a1a50-074f-4aea-8aab-0d3106d4a2dc"
+
+ ❯ active apps/server/src/goal-tool-runs/authorization.test.ts:62:147
+     60|   const response = await request(`/api/goals/${context.goalId}/tool-ru…
+     61|   const runner = (await request('/api/runners', { name: 'Planner fixtu…
+     62|   const claimed = await request('/api/runner/claim', {}, runner.token)…
+       |                                                                                                                                                   ^
+     63|   const ownership = { attemptId: claimed.body.assignment.attempt.id, o…
+     64|   const grant = { id: response.body.run.id, version: 1 };
+ ❯ apps/server/src/goal-tool-runs/authorization.test.ts:124:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  apps/server/src/goal-tool-runs/authorization.test.ts > serializes an in-flight cached command against revoke without granting a post-revocation replay
+AssertionError: expected 'a5fbfe6c-bf71-478b-a6d2-fef59500e443' to be '0f6cbede-8651-4bb3-ad51-3bb6a850c006' // Object.is equality
+
+Expected: "0f6cbede-8651-4bb3-ad51-3bb6a850c006"
+Received: "a5fbfe6c-bf71-478b-a6d2-fef59500e443"
+
+ ❯ active apps/server/src/goal-tool-runs/authorization.test.ts:62:147
+     60|   const response = await request(`/api/goals/${context.goalId}/tool-ru…
+     61|   const runner = (await request('/api/runners', { name: 'Planner fixtu…
+     62|   const claimed = await request('/api/runner/claim', {}, runner.token)…
+       |                                                                                                                                                   ^
+     63|   const ownership = { attemptId: claimed.body.assignment.attempt.id, o…
+     64|   const grant = { id: response.body.run.id, version: 1 };
+ ❯ apps/server/src/goal-tool-runs/authorization.test.ts:136:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+ FAIL  apps/server/src/goal-tool-runs/authorization.test.ts > serializes an in-flight cached command against cancel without granting a post-revocation replay
+AssertionError: expected 'b2585ad1-0a14-4a64-8ea5-fcde4c95bd89' to be '3798d04e-860f-4769-9c39-8f5340c33e28' // Object.is equality
+
+Expected: "3798d04e-860f-4769-9c39-8f5340c33e28"
+Received: "b2585ad1-0a14-4a64-8ea5-fcde4c95bd89"
+
+ ❯ active apps/server/src/goal-tool-runs/authorization.test.ts:62:147
+     60|   const response = await request(`/api/goals/${context.goalId}/tool-ru…
+     61|   const runner = (await request('/api/runners', { name: 'Planner fixtu…
+     62|   const claimed = await request('/api/runner/claim', {}, runner.token)…
+       |                                                                                                                                                   ^
+     63|   const ownership = { attemptId: claimed.body.assignment.attempt.id, o…
+     64|   const grant = { id: response.body.run.id, version: 1 };
+ ❯ apps/server/src/goal-tool-runs/authorization.test.ts:136:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+
+ FAIL  apps/server/src/goal-tool-runs/authorization.test.ts > rolls back failed application without consuming authority and protects immutable scope and audit history
+AssertionError: expected 'b1009c63-dea7-4ab3-ba0d-6eec8e8b4f43' to be 'b8cea382-bcca-40ed-aeec-8271c6b7fcc9' // Object.is equality
+
+Expected: "b8cea382-bcca-40ed-aeec-8271c6b7fcc9"
+Received: "b1009c63-dea7-4ab3-ba0d-6eec8e8b4f43"
+
+ ❯ active apps/server/src/goal-tool-runs/authorization.test.ts:62:147
+     60|   const response = await request(`/api/goals/${context.goalId}/tool-ru…
+     61|   const runner = (await request('/api/runners', { name: 'Planner fixtu…
+     62|   const claimed = await request('/api/runner/claim', {}, runner.token)…
+       |                                                                                                                                                   ^
+     63|   const ownership = { attemptId: claimed.body.assignment.attempt.id, o…
+     64|   const grant = { id: response.body.run.id, version: 1 };
+ ❯ apps/server/src/goal-tool-runs/authorization.test.ts:152:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  7 failed | 1 passed (8)
+   Start at  21:34:07
+   Duration  1.66s (transform 179ms, setup 0ms, import 367ms, tests 1.21s, environment 0ms)
+
