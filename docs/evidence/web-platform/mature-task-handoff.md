@@ -1,5 +1,7 @@
 # Web 当前交接与唯一来源
 
+**当前共享窗口归Lead F04；Web无执行holder或新运行准入。** [Lead最新分配](f04-shared-window-received-2056.json)为固定capture一次150s/0provider，worker自行fresh资源；本组不推断其进程已启动。[20:56:11 D04窄观察](web-finding-wait-take-observation-2056.json)确认Recovery原6ff v4/21仍由panels唯一持有、无overlap或第二个Recovery take；Settings a5 v1与DPERF04 b554 v1仍合法持有，DPERF05 v2已释放。Recovery已明确route不足以唯一标识恢复记录，root正收敛可访问行身份方案；[窄修范围与后续准入条件](recovery01-rec4d-finding-wait.json)已列，不新建任务或提前派修。
+
 **Recovery4d本次页面子集失败且清理完成，Web窗口已归还Lead F04。** [实际归还](recovery01-4d-window-return.json)：cookieRead通过，Restore定位匹配2行导致strict失败，pageErrors=[]，原因待独立核查，未先判产品缺陷。专DB已DROP/连接0，PGID10546和12234均退出、ownedgroups absent/scratch删除、cleanup errors=[]；manager隔离adminenv已删除。更晚终态10674.167625ms，browser累计25520.435/90000、余64479.565仅算术；原budget10671.133875保留不回填。0自动重试/不接下一Web检查，本组无holder。
 
 **本轮Recovery准入历史：原同源子集fresh准入后交panels一次执行，现已失败并清理。** [单次准入](recovery01-4d-admission.json)核d3d45/4d330十九源、原21claim/依赖/旧raw/累计预算及新隔离测试输入；旧14.846267375秒保留，本次最多75153ms含15s清理，不扩完整三中心/CREATE/Queue/Steer等验收。F04当前未占共享窗，本次结束立即归还。
@@ -124,3 +126,5 @@ P01外层host仅新增[4d330差异研究](recovery-connection-p01-4d330-delta/in
 [Recovery4d本轮11raw与3终态捕获原件](recovery01-4d-actual/manifest.json)已逐字保留；父早budget与晚stdout分列，清理不等旅程通过。新隔离测试输入来自原ef458已准端点，已删除，不存凭据。P01研究没有改动本次任何源码/执行接口。
 
 Recovery原owner已[12955f7d正常封存](recovery01-4d-actual/owner-seal.json)，manager核双端同且clean，19源未改；11raw加父终态和准入共15原件23320B归owner，管理只存14个精确运行/终态原件20770B，口径分列。等待root限定失败证据/源码归因审，不修改断言或自动重试。
+
+[Recovery rec4d独立实证审](recovery01-4d-actual/root-runtime-review.json)仅接受原FAILED与清理，15原件23320B/19源/旧10raw核符，保晚累计25520.435。root确认browser398/441按route选行不唯一，已有draftId未作为DOM精确身份；不能用first/nth或侵入React规避。panels仅只读评估用户可区分且可访问的行身份/摘要，原binding与browser都在21scope内，待root给精确两文件修法再fresh派写。F04 holder与本组无运行准入不变。

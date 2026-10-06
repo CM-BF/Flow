@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T20:52:38.194471+00:00",
-  "state": "RECOVERY4D_FAILED_CLEANED_WEB_NO_HOLDER_RETURN_F04",
-  "groupWindowOwnership": "Recovery originalsubset endedFAIL at Restore strictlocator2matches; ownedDB/groups/scratch cleaned; privateadminenvremoved. Webnoholder and returnsF04, no retry.",
+  "recordedAt": "2026-10-06T20:57:26.380352+00:00",
+  "state": "F04_LEAD_WINDOW_ALLOCATED_WEB_NO_HOLDER",
+  "groupWindowOwnership": "Lead F04 one fixedcapture150s/0provider sharedwindow allocated by inbound; worker fresh resource gate. Web no holder/no runtime admission, only originalscope source/metadata.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,9 +407,12 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
+    "source": "Lead inbound via root; not Webruntime sampling",
+    "record": "f04-shared-window-received-2056.json",
+    "allocatedHolder": "F04 / Execution Lead",
     "webHolder": null,
-    "source": "ActualRecoverycleanups+owner terminalreceipt",
-    "next": "LeadF04 per priorcoordination; its actualstart not asserted"
+    "F04ActualProcess": "Not sampled or inferred",
+    "recoveryRepair": "Original6ffv4/21 valid and soleowner; awaiting root explicitfinding beforedispatch"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -964,5 +967,7 @@
   "messageSettingsB5Admission": "message-settings-b5-next-admission.json",
   "messageSettingsB5Result": "message-settings-b5-window-return.json",
   "recovery4dAdmission": "recovery01-4d-admission.json",
-  "recovery4dResult": "recovery01-4d-window-return.json"
+  "recovery4dResult": "recovery01-4d-window-return.json",
+  "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
+  "recovery4dFinding": "Route-onlyRestore row locator is not unique; exactDOM/useridentity seam pending minimalreadonlyassessment, no sourcefix dispatched"
 }
