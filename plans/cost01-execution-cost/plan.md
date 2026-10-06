@@ -36,3 +36,6 @@
 ## 当前源码与研究
 
 固定main77c420c：claude.ts已保存cacheRead/cacheWrite到usage event；server usage.ts贡献/汇总只input/output/cost，tasks.ts UsageTotals没有缓存分解；Web标签Input tokens未表达source计数口径。因此当前不足以跨provider汇总token或证明cache节省。见[research.md](../../docs/evidence/cost01/research.md)。MATURE04的上下文容量不等于本任务成本账本；E01 harness对照保持独立，勿复制计划。
+
+
+COST001-02补充候选：稳定资料前缀结构toy及明确限制统一见[研究记录](../../docs/evidence/cost01/research.md)。只读来源与字节边界不代表token节省；具体实施待空槽fresh scope，不修改当前context或附件版本，不提高到ENG/TUI/附件前。
