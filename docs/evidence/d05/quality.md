@@ -13,3 +13,5 @@ clean-code工作段/合并前：架构数据、SVG交互、原进度聚合各自
 初稿local-checks.txt实际是1pass/1fail，作者未正确检查前一步exit code，随后git diff --check为0导致错误汇报2/2。失败原文原样保留于local-checks.txt与initial-host-negative-failure.txt，绝不替换为绿。Host负例用fetch传Host时观察到200，未额外捕获请求头，不能据此断言传输内部原因；改用node:http显式Host负例，产品服务代码未改。最终以set -e执行同两项，local-checks-final.txt记录2/2、fail0；post/Host/CSP/任意source404仍保持原要求。初步2/2口头与早期文字不能作为通过证据，独立review以修复后的固定target及final输出为准。
 
 2026-10-06 03:29 UTC：合并前clean-code复核已审数据/交互边界，新增仅owner registry与审批metadata；无新增依赖或产品语义变化。Root批准cad1251；保留初始失败与最终绿色输出。
+
+后续registry维护：新增真实已领取且canonical status存在的B01/X02/WPF-PERF02/CHAT02，精确owner树只读登记。架构仍固定3773；main4e817后的O01、WPF-I01/R03结构增量待本owner刷新基线，不把图的历史基线当实时main。
