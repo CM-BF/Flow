@@ -1,6 +1,7 @@
 import {
   Activity,
   useEffect,
+  useMemo,
   useCallback,
   useLayoutEffect,
   useRef,
@@ -11,6 +12,7 @@ import {
   type RefObject,
 } from "react";
 import { FlowClient } from "@flow/client";
+import type { PluginRegistryReader } from "./plugin-management/PluginManagement";
 import {
   TERMINAL_STATUSES,
   type TaskStatus,
@@ -344,6 +346,12 @@ function Workspace({
   theme: Theme;
   onTheme: (theme: Theme) => void;
 }) {
+  const registry = useMemo<PluginRegistryReader>(() => ({
+    plugins: (options, signal) => client.plugins(options, signal),
+    plugin: (id, revision, signal) => client.plugin(id, revision, signal),
+    pluginVersions: (id, options, signal) => client.pluginVersions(id, options, signal),
+    pluginOperations: (id, options, signal) => client.pluginOperations(id, options, signal),
+  }), [client]);
   const [catalog] = useState(() => new TaskProjection(client));
   const [conversations] = useState(() => new ConversationCatalog(client));
   const list = useSyncExternalStore(catalog.subscribe, catalog.getSnapshot);
@@ -629,7 +637,7 @@ function Workspace({
             {theme.scheme === "dark" ? <Moon size={18} /> : <Sun size={18} />}
           </IconButton>
           <PluginRail />
-          <PluginSettings />
+          <PluginSettings registry={registry} />
           <IconButton label="Change connection" onClick={() => { void session.dispose(); onDisconnect(); }}>
             <Settings2 size={18} />
           </IconButton>
