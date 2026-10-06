@@ -1,0 +1,113 @@
+{
+  "observedAt": "2026-10-06T23:24:44.531394+00:00",
+  "generatedAt": "2026-10-06T23:24:32.043Z",
+  "count": 182,
+  "responseBytes": 2508785,
+  "responseSha256": "042973b774eb004b32426aad95118f532a5c1ee5a4c8f5a3e34f2cad57e74672",
+  "raw": "bounded selected projection only",
+  "tasks": [
+    {
+      "id": "OPS-CI01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/ops-remote-validation",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T23:04:27.674Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/ops-remote-validation/plans/ops-ci01-remote-validation/status.md",
+        "syncedAt": "2026-10-06T23:24:32.043Z",
+        "stale": false,
+        "ageHours": 0.33473416666666667
+      },
+      "current": true,
+      "issues": [],
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已审远程验证模板已进入主线；准备片已交付，尚未启用或远程运行。",
+        "next": "本片段已交付",
+        "blocker": {
+          "state": "active",
+          "text": "REMOTE_NOT_ENABLED；远程验证尚未启用，需用户决定是否执行已审启用步骤。"
+        },
+        "decision": {
+          "state": "active",
+          "text": "是否将已审模板原样启用为 .github/workflows/bounded-check.yml 并手动运行一次；由 Goal Owner 唯一提出。"
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "TUI01G",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T23:22:37.358Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings/plans/tui01g-message-settings/status.md",
+        "syncedAt": "2026-10-06T23:24:32.043Z",
+        "stale": false,
+        "ageHours": 0.03195638888888889
+      },
+      "current": true,
+      "issues": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已确定终端逐消息设置的选择与恢复规则，正在实现。",
+        "next": "可从公开配置选择完整设置，并可靠保存下一条消息的请求。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    },
+    {
+      "id": "TUI-001",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T23:23:36.667Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client/plans/tui01-terminal-client/status.md",
+        "syncedAt": "2026-10-06T23:24:32.043Z",
+        "stale": false,
+        "ageHours": 0.0565325
+      },
+      "current": true,
+      "issues": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "终端显式取消、原请求恢复和退出不取消后台任务已通过真实中心与终端验证并进入主线。",
+        "next": "终端通过共享接口选择Claude逐消息执行设置；实际终端→网页→终端接续在资源恢复后继续独立验收。",
+        "blocker": {
+          "state": "active",
+          "text": "本地空间不足当前运行门槛，完整双界面旅程的原首败根因尚未证明；逐消息设置源码可独立推进。"
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      }
+    }
+  ],
+  "checkerCorrection": "Prior read-only projection accessed task.human instead of task.status.human and exited1; no dashboard failure or product test inferred."
+}
