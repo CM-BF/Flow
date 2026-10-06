@@ -54,7 +54,9 @@ async function stop(item) {
   if (item.child.exitCode === null && item.child.signalCode === null) {
     // Negative PID is only the isolated group created by this script, never a scanned port.
     try { process.kill(-item.pid, 'SIGTERM'); } catch (e) { if (e.code !== 'ESRCH') throw e; }
-    const exited = await Promise.race([once(item.child, 'exit').then(() => true), new Promise(resolve => setTimeout(() => resolve(false), 22000))]);
+    let timer;
+    const exited = await Promise.race([once(item.child, 'exit').then(() => true), new Promise(resolve => { timer = setTimeout(() => resolve(false), 22000); })]);
+    clearTimeout(timer);
     if (!exited) { item.forced = true; try { process.kill(-item.pid, 'SIGKILL'); } catch (e) { if (e.code !== 'ESRCH') throw e; } await once(item.child, 'exit'); }
   }
   return { name: item.name, pid: item.pid, startedAt: item.startedAt, exitCode: item.child.exitCode, signal: item.child.signalCode, forced: Boolean(item.forced) };
@@ -186,7 +188,10 @@ try {
   check('distinct tasks and attempts preserve native session', first.task.id !== second.task.id && first.task.attempt.id !== second.task.attempt.id && first.task.attempt.nativeSessionId === second.task.attempt.nativeSessionId);
   check('conservative sum of SDK session samples within approved total', first.cost + second.cost <= 0.40);
   evidence.costSemantics = 'SDK modelUsage normalized samples; resumed baseline unknown. Sum is a conservative bound, not incremental provider billing.';
-  await expect(pane(page).locator('[data-slot="aui_assistant-message-content"]')).toHaveCount(2, { timeout: 10000 });
+  const visibleReplies = pane(page).locator('[data-slot="aui_assistant-message-root"] [data-slot="aui_assistant-message-content"]');
+  await expect(visibleReplies).toHaveCount(2, { timeout: 10000 });
+  await expect(visibleReplies.nth(1)).toBeVisible();
+  await expect(visibleReplies.nth(1)).toHaveText(nonce, { timeout: 10000 });
   await page.screenshot({ path: path.join(output, 'two-rounds.png') });
   check('exactly two admitted browser sends', evidence.submittedTurns === 2);
   const stored = await api(`/api/conversations/${conversationId}/turns`);

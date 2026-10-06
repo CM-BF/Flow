@@ -31,3 +31,9 @@ Goal Owner只读APPROVED `84117ca1c7446ee2e2b50f0526f3460dd42a2869`：6methods/e
 Mika只读APPROVED，固定94f50acf38213caacb2852d740c818b8480e3d15，范围packages/client/src/index.ts、packages/client/src/execution-profiles.test.ts、packages/contracts/src/index.ts。1/1 HTTP(366ms)+tsc及原始hash核，未重跑；无finding。目录/发布仅薄传输，不批准CHAT03领域实现或后续SDK依赖。检查hash ac2b6fbbdbfd096e39c401e814484e46ef9690bee4ad42312c2f13bdf3747183，tsc1185ecf11053eb49f76c61e0735805fedcc40c0559340400df8b4df87f0a295a。
 
 CHAT03 mount独立增量：Root只读APPROVED 300f0035b4c754cd09a4e38680378d8fb81924cc，仅apps/server/src/index.ts三行。检查/source hash见quality.md；不继承为真实模型通过，未重跑。领域Mika a28与thin client94f各自独审。
+
+O02共享依赖：Root只读APPROVED dac8c3910eee1828e7081a3d33e19a89a056f4d4（runner manifest+lock importer），无resolved版本漂移。真实CHAT报告独立验收待Root，尤其第二轮live可见正文明确NOT_PROVEN；不能沿用历史接线approval覆盖新模型/浏览器结论。
+
+## CHAT真实运行限定报告
+
+Root只读APPROVED `cc73ada6bf331fdcfadf7f61a30778ac4d892ab8`：19份manifest固定/working hash一致；独立核同conversation/session、不同task/attempt、第二input无nonce但reply精确相等、两正文digest、专用Chrome退出重开与SDK保守和$0.013442。目视真实第一图、原pending第二图和两份无遮挡重放图。无重跑/新query。结论仅真实后台两轮记忆+首轮UI、零模型重放；第二轮live UI仍NOT_PROVEN。thinking unknown、实际3plugins/3skills/内部Haiku与归一化usage非wire均保留，不关闭完整U11。
