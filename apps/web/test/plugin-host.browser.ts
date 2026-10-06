@@ -94,6 +94,7 @@ test("lazy loader retry actually reloads and isolates render failure", async ({
   await expect(
     page.getByRole("heading", { name: "Notes extension" }),
   ).toBeVisible();
+  await expect(page.locator("article[data-context-frozen=true]")).toBeVisible();
   await page.getByLabel("Break Notes render").check();
   await expect(page.getByRole("alert")).toContainText("could not render");
   await expect(page.getByRole("textbox", { name: "Draft" })).toHaveValue(
@@ -193,4 +194,28 @@ test("menu keyboard and bridge failure report top-level failure locally", async 
   await page.getByRole("button", { name: "Dark theme", exact: true }).click();
   await expect(page.getByRole("alert")).toContainText("Fixture bridge failed");
   await expect(page.getByTestId("theme")).toHaveText("light");
+});
+
+test("sample panel bridge failure is visible locally and retry clears it", async ({
+  page,
+}) => {
+  await page.goto("");
+  await page.getByRole("tab", { name: "Notes", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "Notes extension" }),
+  ).toBeVisible();
+  await page.getByLabel("Fail App bridge").check();
+  await page
+    .getByRole("button", { name: "Use Ocean theme", exact: true })
+    .click();
+  await expect(page.getByRole("article").getByRole("alert")).toHaveText(
+    "Fixture bridge failed",
+  );
+  await expect(page.getByTestId("theme")).toHaveText("light");
+  await page.getByLabel("Fail App bridge").uncheck();
+  await page
+    .getByRole("button", { name: "Use Ocean theme", exact: true })
+    .click();
+  await expect(page.getByTestId("theme")).toHaveText("sample.notes.ocean");
+  await expect(page.getByRole("article").getByRole("alert")).toHaveCount(0);
 });

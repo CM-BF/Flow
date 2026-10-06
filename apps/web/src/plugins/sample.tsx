@@ -122,11 +122,11 @@ export function createSamplePlugin(
               });
             },
           });
-          function Notes({ execute }: PluginViewProps) {
+          function Notes({ execute, context: resource }: PluginViewProps) {
             const [error, setError] = useState<string>();
             if (options.throwRender?.()) throw Error("Fixture render failed");
             return (
-              <article>
+              <article data-context-frozen={Object.isFrozen(resource)}>
                 <h3>Notes extension</h3>
                 <p>
                   A separately registered panel using the same host interface.
@@ -142,6 +142,7 @@ export function createSamplePlugin(
                 >
                   Use Ocean theme
                 </button>
+                {error && <p role="alert">{error}</p>}
               </article>
             );
           }

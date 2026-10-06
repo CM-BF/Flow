@@ -10,7 +10,7 @@ import {
 } from "react";
 import type { PluginHost } from "./host";
 import type { ContributionView, ResourceContext, SlotId } from "./types";
-import { validateSlot } from "./validation";
+import { validateSlot, validateContext } from "./validation";
 import "./react.css";
 
 export function ExtensionSlot({
@@ -257,7 +257,7 @@ export function PluginView({
     >
       <div className={className}>
         <Renderer
-          context={context}
+          context={validateContext(context)}
           execute={host.bind(contributionId, context)}
         />
       </div>
