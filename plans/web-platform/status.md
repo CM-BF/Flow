@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:53 UTC / 排队与架构已交付释放；上下文兼容已正式受领 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:01 UTC / 两项已独审通过，最终资料已核，待部署登记与主线接收 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `a8b8d3669cfa23dbb1abc7ea069f262e71c7aba4`（本次管理停点前实核） |
-| 工作树dirty状态 | 本次仅管理范围的交付、正式领取回执与计划文档pending |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `89a98188484672e4bc87c33659c5e609318a2ca6`（本次管理停点前实核） |
+| 工作树dirty状态 | 本次仅管理范围的候选范围审计与当前/历史事实文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 排队操作和新版架构图已合入；正在实现项目引用兼容与按需内容展示 |
-| 下一可用交付 | 让聊天兼容项目引用，并验证按需内容展示 |
+| 当前产出 | 排队操作和新版架构图已合入；项目身份兼容与按需内容展示已通过独立审查 |
+| 下一可用交付 | 把已验证的项目身份兼容和按需内容展示交付主线 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -41,12 +41,12 @@
 | WPF-001-14 | completed | d01_owner | DPERF5cd限定APPROVED/final4d7425 clean；5md15links3TODO/范围0越界，4新检查与旧关联失败分开；main6b4已含、08bd记录后bb7efv2 released |
 | WPF-001-15 | completed | d01_owner | PROFILEUX55b获root限定APPROVED，60d8交付与5md27links3TODO通过，ef869记录main14c61；d113v2已release |
 | WPF-001-16 | completed | d01_owner | QUEUE01新14c61树已核clean，CHATv5移出官方Thread，b4ea85d0v1正式13scope受领；首canonical已注册；固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432croot05:40:36 APPROVED、最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean，41paths/13scope、6md36links、原样聚合和11源码hash核验通过；main3d4985已含309且11paths零差，跨reload原key后继F01仍未完成 |
-| WPF-001-17 | in-progress | d01_owner | RENDERER01新fb906树已核clean、05:44:10.659Z原子take87948975v1八scope，canonical2e25d807cf88c55d0c0bb6897642a118e40c07e7已核clean/解析0errors，已给root登记，模块实施不改QUEUE/App/shared |
-| WPF-001-18 | in-progress | d01_owner | WPF-K02C01准确base3d4985、三contracts输入manifest已核，QUEUE release后freshledger八scope无冲突，5ab6863cv1正式受领；无context UI |
+| WPF-001-17 | in-progress | d01_owner | [RENDERER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers/plans/wpf-renderer01-data-renderers/status.md)固定747cbe616408dc3e44ab3587216c5753e6de3994、final7ff614f6aa210aae5a08119f1f16f2ef08b2298a clean；23paths/8scope、6md28links/4TODO与六source hash已核；作者14tests/typecheck/10browser，root05:58:49Z独立14+局部CUA通过并APPROVED，最终metadata approved/目标匹配已核，聚合部署待单次确认，App未接 |
+| WPF-001-18 | in-progress | d01_owner | [K02C01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-compatibility/plans/wpf-k02-compatibility/status.md)固定7633937c322090bbd6d526f378df464f2a7436ed、finalbec72daec26e6bfc3d944ec3af01fb0bb4ee7796 clean；受控输入e9a0259与自有八scope分开；25paths/6md25links/4TODO/六hash已核，作者102direct/typecheck，root05:58:18Z独立102并APPROVED、最终metadata approved/目标匹配已核，待登记部署单次聚合，无context UI |
 
 ## 当前唯一owner、claim与下一步
 
-管理者只写本树两目录，05:40:26.108Z CLI实核claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active。root持续只读研究/独审；workspace_panels_owner已固定queue UI候选等待独审；w01_owner已交付D06新轮并停写保留回修权，正式受领新renderer独立模块；QUEUE/D06已MainLead RECEIVED等待集成。两者写scope不重叠；本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
+管理者只写本树两目录；本次fresh CLI确认claim632a7149-e812-4ddb-b342-99572c554cc5 v2 active，时间见本轮候选审计。root持续只读独审；workspace_panels_owner已在新八scope提交K02薄兼容固定候选，w01_owner已在另一八scope提交renderer模块候选。QUEUE/D06已在main3d4985且原owner全部停写、正式release v2；不恢复旧树写入。两新feature范围不重叠，本队最多4、主线4、Mika2总上限10，claim数不代表agent数。
 
 | 当前工作 | 已核事实与边界 |
 | --- | --- |
@@ -64,7 +64,7 @@
 
 ## 当前发布门槛与解除（局部依赖，不是整个goal受阻）
 
-K02薄reader已正式受领：固定736公开类型已核，后台queue/retry未完成、整体未批准；MainLead已给准确base3d4985及仅三contracts的受控patch/manifest；原QUEUE owner记录main并release后，原panels新树/八scope已原子take，先核三份输入hash再接两身份边界与四直接test。原QUEUE b4ea v2已正式released；新WPF-K02C01 5ab6863c v1于05:52:04.217Z committed，原panels新3d4985树正式受领八scope；不以未审整K02树作Web基线、无context按钮。renderer8794v1独立八scope继续，无相交。
+K02薄reader固定候选已交独审：固定736公开类型经Lead原样三contracts patch消费，后台整体未批准；准确base3d4985上输入提交e9a0259151fcb215e1bd607b5461d81412da2742的before/apply/after由作者、管理与root分别核对。两个生产身份接缝与四直接test已固定7633937c322090bbd6d526f378df464f2a7436ed，作者102direct/typecheck通过，root05:58:18Z独立102通过并限定APPROVED；最终聚合/主线接收仍另计。原QUEUE b4ea v2已正式released；新WPF-K02C01 5ab6863c v1于05:52:04.217Z committed，原panels新3d4985树正式受领八scope；不以未审整K02树作Web基线、无context按钮。renderer8794v1独立八scope继续，无相交。
 
 历史CHAT04 queue=true消费不兼容已通过QUEUE00最小boolean reader修复并与后台/client在main698成套独审集成；旧false仍兼容。它不等完整队列操作UI。实际App配置接线已在main14c61；完整queue UI以13scope正式受领，含必要官方Thread局部键盘接缝，其他能力尚未完成。实际SVC升级仍其owner负责，本队不以main可用冒称用户常驻构建已升级。
 
@@ -177,3 +177,9 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 05:51 MainLead正式MAIN_RECEIPT 3d4985fca060155435b159e0467815bf8e88b8b8 pushed/clean，管理独立HEAD/origin一致、QUEUE309与D065ec祖先且11/5paths零差。Lead组合Webtsc/架构7green，本队未重跑。两owner已被正式唤醒或安全点通知自己main metadata→全scope停写→freshversion release，当前不假填release。受控K02 patch来源736、SHA2569e7c8f62042c5d68380eb82f58b22110d328b0f2ec7c3831c72102b8188e23bb已实际核；只有contracts三文件，不消费未审后台/出口/client。Lead05:49:16.984Z确认68源/issues空含renderer，属Lead实采，不是本队新读。
 
 05:53 原scope已实际释放而非意向：[QUEUEv2](../../docs/evidence/web-platform/queue01-release-receipt.json)05:51:14.499Z，最后6ca7803c9ea0032a64e534824f35214ed0cd8a6a clean；[D06v2](../../docs/evidence/web-platform/d06-current-release-receipt.json)05:51:45.661Z，最后4452dc8929f81469acc406623cdf80b6583de491 clean，均不再追写。管理05:52:39.911Z只读两个4320静态图文件，字节hash与批准5ec完全相同（不重复/api/snapshot/浏览器）；[部署证据](../../docs/evidence/web-platform/d06-current-served-observation.json)。新[WPF-K02C01领取](../../docs/evidence/web-platform/k02c01-take-receipt.json)之前freshledger已核QUEUEreleased、八scope无重叠和新treeclean。
+
+05:59 两候选管理检查：K02先canonical2fb1eed9fbb1111e9226f1da458c5612aeb84c6e、现metadataf9cf4733b8481d92aa67a7a42584e89d8af816ff clean；renderer metadata5753eca1bb3a80b17eda58ceb0eae0b9f9d2f62a clean。两者actual parse errors空、人类字段完整、stage review、checks目标匹配、review NOT_STARTED目标准确，不能因作者完成先报批准。fresh ledger两v1 active/管理v2 active；详见[项目兼容候选审计](../../docs/evidence/web-platform/k02c01-candidate-audit.json)与[renderer候选审计](../../docs/evidence/web-platform/renderer01-candidate-audit.json)。root一次桥接K02 source登记，尚无该卡部署采样；renderer注册复用Lead05:49:16.984Z68源结果，不重复API。无产品重测/模型调用。
+
+05:59审批事实后继：root05:58:18Z限定批准K02C01 763、独立102/102；05:58:49Z限定批准renderer747、独立14/14与CUA26局部行为，作者套件与root实际边界不混。上述05:59管理审计中的NOT_STARTED是读取当时的owner元数据，后继owner将绑定同target转录APPROVED；保留读取先后，最终metadata/聚合收口后再交Lead。
+
+06:01 最终metadata管理核：K02 bec72daec26e6bfc3d944ec3af01fb0bb4ee7796、renderer7ff614f6aa210aae5a08119f1f16f2ef08b2298a均实际clean，六源码及apps/packages/root依赖对各批准target零差。actual parse errors空、checks/review分别approved绑定763/747、human完整/stageintegration；[K02最终审核](../../docs/evidence/web-platform/k02c01-approved-metadata-audit.json)、[renderer最终审核](../../docs/evidence/web-platform/renderer01-approved-metadata-audit.json)。K02尚无registry部署回执，不空采；root会一次交Lead，获部署确认后单次核两卡。两owner下一仅只读准备renderer App接线/独立Execution activity模块，准确base/范围未正式take前不写，避免同Thread双writer。

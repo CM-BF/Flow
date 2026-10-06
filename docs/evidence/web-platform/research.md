@@ -485,3 +485,15 @@ composer精确安装源码补充：core0.3.22 `runtime/interfaces/composer-runti
 root固定fb906核ConversationTurn已有task id/title/status/verificationStatus/updatedAt和telemetry，首段可在turn旁稳定折叠Execution activity，初始0新增detail/events；用户展开再用现FlowClient.events(taskId,after)分页持久reference(id/title)，单项展开才conversationDetail(conversationId,turnId,detailId)，后台queries已有双ID/task归属校验。不要求先跳task页。
 
 这不提供typed tool状态：Reference只有id/title，runnerEvent union无tool/thinking，固定claude循环仅init/result。不能从标题或task总成功推单工具完成，未提供thinking不造。清晰工具状态后继需要native→持久typed activity reference及tool identity/phase/终态证据/detail ref；真正partial另需message+block identity、delta去重与重连cursor。GO对SDK0.3.290的includePartialMessages/tool_progress/tool_result能力研究与root当前代码未使用的事实分别归因；content_block_stop只表明输入参数生成结束，不是tool完成。0项目写/测试/模型，不新建重复计划或挤占renderer/K02范围。
+
+## 05:59 固定候选交接与窄屏后继观察
+
+K02受控输入e9a0259151fcb215e1bd607b5461d81412da2742来自Lead736三contracts原样patch，SHA/before/after管理与root各自独立一致；该输入不代表后台批准。作者固定763与renderer固定747的范围、源码hash、链接/解析已由管理核查，产品行为独审归root，不以文档绿替代行为。原日志/patch空白保留，不把fullmetadata diffcheck声称0。
+
+GO观察、root转述的[synthetic窄屏图](/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/queue-live-preflight/second-reply-dark-narrow.png)显示底部两处Execution details与Requested runner-default/Read-only/Thinking off/Unpinned legacy、Continue this conversation和多行说明占用聊天高度。后继U11整合单一折叠执行入口，默认只留用户需要选择的model/access/queue状态；真实unsupported、未知回执和简短fixture身份仍明确。管理未重拍或将此升级当前阻断；原REQ43正文/过程优先保持，既有typed tool状态缺口不被文案伪补。
+
+## CHAT05初合同依赖（固定ae4，未当产品完成）
+
+管理实际git show `ae4cc5c630b88616fe75c72eff9fc276a9f84f6c:docs/evidence/chat05/interface.md`，与root研究对齐：typed task list只含轻metadata，body另lazy activity detail；phase是不可变观察，status是最近观察到的工具状态，停止/uncertain后未解析为unknown。input-ready不等success，SDK tool_result也不等外部副作用独立验证。timeline reference新增可选activity身份须后端HTTP验证保留，旧detail fallback仍读得懂。body UTF8有界64KiB、truncated/originalBytes/full原文sha分清；不保存signature/redacted、不造缺失thinking，unsupported只类型。首段忽略SDK partial，不把assistant-text activity冒充最终reply。该初interface的PG/adapter/client/index尚未全部冻结，Web不先接未审shared，不新增scope；沿REQ43后继依赖，待完整固定输入与公开client再消费。
+
+Root补充固定main3d官方Thread接缝：MessageActions位于hideWhenRunning/autohide的ActionBar内，运行中活动入口不能借此槽。后继独立始终可见的message footer/activity入口须由唯一Thread writer另领；pending turn只有真实user message，不生成伪assistant tool/thinking消息。独立模块先TaskSummary+host-bound lazy port；未来typed活动须Reference.activity明确身份，不按标题猜。官方[工具显示注册](https://www.assistant-ui.com/docs/api-reference/tools/rendering)与[Message primitives](https://www.assistant-ui.com/docs/primitives/message)由root本段核，实装仍以0.15.x固定源码为准；显示注册不赋予工具执行能力。本管理记录root只读证据，未浏览/运行/修改该Thread。
