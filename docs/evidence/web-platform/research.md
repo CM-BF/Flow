@@ -128,3 +128,17 @@ SSE验收补充来自原Goal Owner并直接交M02：连接池跨同浏览器同o
 用户U08原话已逐字进入主plan并追加REQ37。主线D04唯一Execution Lead负责领取展示/单点登记，assignment账本仅lead/owner/scope/claim/handoff，不复制TODO/check/review。管理者已向两owner收精确literal路径并要求阶段短值M2，P01排除App/Thread/workspace、M02排除plugins/plugin-host测试；声明handoff后集成，不用worktree隔离掩盖重复实现。领取时间取当前实观登记，不倒填；每次派工前读dashboard+权威status+liveGit，缺/旧/冲突不当空闲。
 
 root独立新版D03观察2026-10-06T02:38:47.600Z：22源，WPF001/M02/P01 human.complete=true、missing/issues空；父fa725440 clean，M02 35f0bb9 dirty12，P01 c8900a6 dirty4。W014735d476 clean、SSE blocker active；M02 blocker none为同步滞后已要求唯一owner下安全点更新。来源注册TODO已完成，但不等于实现或D04领取展示完成。
+
+
+## RS17 正在实现中的host错误结果与M02窄屏实证
+
+root前置只读发现（非正式SHA review）：host.execute把handler返回的底层{ok:false}再次包为顶层{ok:true,value:{ok:false}}，当前模块测试也断言嵌套形状，UI可能只看顶层误报成功。已直接交P01唯一owner统一单层OperationResult或内部throw/public收敛，并验证实际button拒绝/桥接失败反馈；不对未提交整体下approval。
+
+M02 owner实际390px浏览器确认活动tab超出视野：Field notes summary→关面板→Verification evidence，aria-selected正确但tab right603.64大于容器right360。管理者向原Lead请求追加唯一文件WorkspacePanels.tsx scope。消息交叉：owner在登记门禁送达前已按原apps/web广范围授权落17行局部scroll effect/ResizeObserver；仍未提交，接通知后冻结该文件，不回滚覆盖，真实时序已报root/MainLead。待单点登记回执后纳入固定候选；无P01重叠writer。
+
+owner随后报告6项专项通过：HTTP1 8chat、2split、2pagehidden恢复、隐藏迟到受理不重发、show失败retry、390px活动tab可见；真实PG/HTTP10协议runner任务4组与20局部单测/typecheck/build通过。当前仅owner结果，SSE仍ACTIVE待固定SHA与root独立复验。准备独立模块候选/真实浏览器证据，不扩大全库测试。
+
+
+范围追加已解除：管理者实际读取原Lead提交c2de313ce5a6f036f07bbfb28d52a7e1a2cc1b9f的docs/evidence/d04/transitional-assignment.md，登记时间2026-10-06T02:43:31.089188Z，明确WPF-M02追加WorkspacePanels.tsx且与P01无交集，允许原owner局部修复/提交。已通知owner解除该文件冻结。此为过渡协调登记，不是PostgreSQL receipt、不是OS强隔离；正式账本迁移后核对origin=migration，不伪造更早许可。
+
+2026-10-06 02:44 UTC管理clean-code安全停点：范围为需求账本、scope移交、状态与研究证据。检查单一来源/命名/当前与历史事实分离、边界清晰度、无重复实现和无多余全库测试；修正了旧nested仍称权威、当前等待注册过时、阶段长句与范围过宽；将当前3个源、两个只读stub、D04分配账本与status进度各自唯一写入责任明确。用户新原话逐条持久化，待实现/owner检查/独立review分层，不把测试报告当整体approval。未解决：SSE待稳定target独立复验、P01模块/UI分段review、D04正式receipt迁移。

@@ -7,8 +7,8 @@
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `c107fddc8db5ba5c58d3f5b1778c401be22baa32`（本次核验HEAD；review仍绑定c075bb5） |
-| 工作树dirty状态 | 本次核验c107fdd；当前仅管理范围文档/来源/接口同步pending，下一提交不自指 |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `5543d7ec59b44dcb763635a35498abd26c667005`（02:44文档停点核验HEAD；review仍绑定c075bb5） |
+| 工作树dirty状态 | 02:44核验5543d7e；当前仅研究/登记回执与管理status文档pending，下一提交不自指 |
 | 工作分支状态 | in-progress；持续执行管理按轮验收，不宣称完美 |
 | 阶段 | M2 |
 | 优先级 | 2 |
@@ -31,7 +31,7 @@
 | WPF-001-05 | in-progress | d01_owner | WPF-P01为X01 Web子项，新树web-plugin-host基线0673653已核验，唯一status转至plans/wpf-p01-plugin-host；typed接口v1已对齐判别context/局部invocation并进入实现；新增跨中心旧host失效回归，不阻塞独立模块开发 |
 | WPF-001-06 | pending | d01_owner | WPF-PERF01排队；W01已报告新JS总1.08MB/gzip323KB，待读取正式证据并选实测瓶颈，不把体积当验收 |
 | WPF-001-07 | in-progress | d01_owner | WPF-M02已正式独立实施，最新main8c57合入；HTTP fixture9组通过后正在SSE专项/真实中心10任务，唯一status在owner树 |
-| WPF-001-08 | in-progress | d01_owner | 用户U08/REQ37已落盘；02:41 UTC两owner精确literal范围已回报Lead迁移，D04 receipt与展示待验证 |
+| WPF-001-08 | in-progress | d01_owner | 用户U08/REQ37已落盘；02:41 UTC两owner精确literal范围已回报Lead迁移，D04 PostgreSQL receipt与展示待验证；WorkspacePanels单文件过渡追加c2de313已登记 |
 
 ## 当前管理工作与检查
 

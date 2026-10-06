@@ -114,3 +114,6 @@ docs/evidence/wpf-p01/
 不写App/TaskThread/既有workspace/themes。稳定host提交后明确handoff/cherry-pick交M02挂载；需改host回原唯一owner，或Lead记录显式转交。这里的依赖集成不是两owner同时实施同一路径。
 
 两新树rootlock安装仅已授权本地可逆例外，最终恢复、提供patch给Lead，不能混同共享锁交付ownership。旧W01代码冻结，原owner仅维护后发现与人读status/review元数据（最新3b6c5a39568fa27ca62f1ea45e06a77fb678daee clean）；原broad apps/web写界不继续作为新实现占用。所有后续新take/转交先核dashboard、owner status、liveGit并走Lead登记；缺/旧/冲突不能当空闲。
+
+
+WPF-M02 WorkspacePanels.tsx追加已获过渡登记c2de313ce5a6f036f07bbfb28d52a7e1a2cc1b9f（02:43:31.089188Z），原Lead明确允许原owner继续局部修复/提交。以上M02精确scope增加该单文件，其余不变；不是PostgreSQL receipt，正式D04迁移后核对origin=migration。新增实际范围不与P01交集，已同步双方。
