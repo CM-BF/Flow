@@ -1,0 +1,33 @@
+{"report":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/docs/evidence/wpf-dperf03/experiment-1791288831727/report.json","elapsedMs":1020.65975,"cumulativeMs":1020.65975,"cleanup":{"state":"fulfilled","removedOwnedRoot":"/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/dperf03-git-yr1peE","elapsedMs":12.89587500000016}}
+✖ bounded temporary Git experiment (no real registry or coordination DB) (1038.235375ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1120.560125
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/git-snapshot.test.mjs:152:48
+✖ bounded temporary Git experiment (no real registry or coordination DB) (1038.235375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '2d90634e5b3cf8435d80266b1d05dc298b4d9339\n'
+  - '2d90634e5b3cf8435d80266b1d05dc298b4d9339'
+  
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/apps/execution-dashboard/test/git-snapshot.test.mjs:236:44
+      at async trace (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/apps/execution-dashboard/test/git-snapshot.test.mjs:175:19)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/apps/execution-dashboard/test/git-snapshot.test.mjs:232:23)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '2d90634e5b3cf8435d80266b1d05dc298b4d9339\n',
+    expected: '2d90634e5b3cf8435d80266b1d05dc298b4d9339',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

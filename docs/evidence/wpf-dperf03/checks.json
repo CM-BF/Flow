@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-10-06T12:15:41.842479+00:00",
+  "sourceCommit": "2a52b8ae5250781c712b71117ccd5321a6b4103d",
+  "sourceDirty": true,
+  "base": "eb95fba43b0305db0dd40dfe85ccc0d58eb9a6ea",
+  "sources": {
+    "apps/execution-dashboard/src/aggregate.mjs": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+    "apps/execution-dashboard/src/proof.mjs": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+    "apps/execution-dashboard/src/git-snapshot.mjs": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+    "apps/execution-dashboard/test/git-snapshot.test.mjs": "1acb9177f68de415b716aa8acdd023da08d9bd83be051bffe17d9be785cc4ae2",
+    "apps/execution-dashboard/test/proof-snapshot.test.mjs": "f74c0eea4d774ac53068e9f10258c24a38c8cbfa381f755e3c6950a317994de3"
+  },
+  "readonlyDependencies": {
+    "apps/execution-dashboard/test/human-proof.test.mjs": "16b370276c5df9224be34f7b3b17a985d9343824f52b9b29da92d7a9ac29a693",
+    "apps/execution-dashboard/src/status.mjs": "45322a4e1eb0884c212b05f356cbf19f73e79f8c01758426216c52aa32ee7748",
+    "apps/execution-dashboard/src/task-links.mjs": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+    "apps/execution-dashboard/src/human.mjs": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+    "apps/execution-dashboard/src/registry.mjs": "26da663085d1287b959347f44816083fb58c22f2dd4803679f875a83d9cf965e",
+    "apps/execution-dashboard/test/fixture.mjs": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+    "apps/execution-dashboard/src/server.mjs": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4",
+    "apps/execution-dashboard/src/documents.mjs": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+    "apps/execution-dashboard/test/proof-tree-batch.test.mjs": "810ca77798d40f6d819ae37435c259d038e71949f53acb61381c20097222410f",
+    "apps/execution-dashboard/src/coordination/ledger.mjs": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+    "apps/execution-dashboard/src/coordination/input.mjs": "d950149a4c173dfef82912b207635750ccd3a9c318cebf7d140c18a1c9af2fa1",
+    "package.json": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+    "pnpm-lock.yaml": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e"
+  },
+  "direct": {
+    "command": "env -u FLOW_COORDINATION_DATABASE_URL -u FLOW_COORDINATION_REPO PATH=/opt/homebrew/opt/node@24/bin:$PATH node --test --test-concurrency=1 apps/execution-dashboard/test/git-snapshot.test.mjs apps/execution-dashboard/test/proof-snapshot.test.mjs apps/execution-dashboard/test/proof-tree-batch.test.mjs apps/execution-dashboard/test/human-proof.test.mjs",
+    "passed": 37,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 25741.907042,
+    "log": "direct-consumers.log"
+  },
+  "experiment": {
+    "passed": 1,
+    "failed": 0,
+    "report": "experiment-1791288846658/report.json",
+    "originalFailedReport": "experiment-1791288831727/report.json",
+    "cumulativeMs": 2151.294833,
+    "rawBytesAtSecondRun": 515053
+  },
+  "independentReview": "NOT_STARTED"
+}
