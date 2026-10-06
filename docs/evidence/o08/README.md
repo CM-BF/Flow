@@ -34,3 +34,5 @@
 依据[Node24.20.0 detached官方说明](https://github.com/nodejs/node/blob/v24.20.0/doc/api/child_process.md#optionsdetached)和[process.kill官方说明](https://github.com/nodejs/node/blob/v24.20.0/doc/api/process.md#processkillpid-signal)，Unix detached进程是新组leader，子孙存活独立于leader。证明只限本次已知PGID；主动脱组/setsid未隔离或证明，1s确认失败即unknown，不声称全系统树停止或OS硬实时。未知会保留私有tmp且最终failed-or-unknown；中心cancel仍不等于停止。
 
 [known-extensions.json](known-extensions.json)绑定BASE实际[历史会话证据](../f01/queue-live/turn-1.json)9991B/hash a18d7acaac7546b6e0c8f875025743ef05f5ef935710e0bb6a16aa6c8d468b9d：3managed plugins+3skills与零扩展gate不符，native未就绪。这里只核已保存字节，无新SDK startup/query/auth探测，不绕组织配置。真实运行仍沿GO既有预算流程，当前准备授权不变成执行许可。
+
+07:01 UTC收到Root独立APPROVED decfcee90264f84ecf3c02874c1e6c85d65bfe13，现场clean39f5967；10source/32raw/6dependencies全部固定/current hash符合。P2 CLOSED，无P1/P2，Root核分批原始检查、未重跑或query；批准仅0query准备，native仍未就绪且无执行许可。原manifest/hash保留，本段只是独立结论转录。
