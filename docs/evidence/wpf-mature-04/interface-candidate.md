@@ -86,3 +86,5 @@ mika转来的只读研究绑定main77c420cf9ee5de0291ea93014b6ea11aead6fab5：�
 current判定需中心最小cut：既有event sequence与已覆盖steering revision，steering accepted立即使旧值失效；后续序号/attempt/input改变保守失效。材料revision须从按序精确citation refs版本化派生，不能把含正文的contextDigest改名顶替。事务owner存attempt+observationId；canonical内容相同重报不刷新时间，异内容409；receivedAt取DB时间、按sequence选最新、refs核归属。缺可信绑定可存历史sample，但公开current=unknown。上述依赖尚未实装，本pure projection不能替代中心鉴权/防自证。
 
 共享runner.ts由R05B、共享index/client由Lead协调，migration编号与精确scope待当前ledger核定；本片不领取或修改它们。后继仍使用本plan/status为唯一进度源，不复制第二状态权威。
+
+后继的精确文件/事务Interface/共享owner输入集中于[中心store一页请求](center-store-request.md)，取代继续散列接线细节；其进度仍只写canonical status，当前未领取/实现。

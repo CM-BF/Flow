@@ -32,3 +32,5 @@ pnpm exec tsc --noEmit -p /tmp/wpf-mature-04-tsconfig.json
 第一片已审待integration，main接收待mika协调。此approval只覆盖schema/纯投影，未覆盖SDK采集、持久化、权限/Web或实际服务部署；本段对应的approval记录是metadata更新；后继Adapter交审单独记录。
 
 2026-10-06 09:30:13 UTC：当前3ab95d2与首片879均APPROVED、待mika受控integration；metadata记录不复跑测试，也不将approval扩展至SDK采集/鉴权/持久化/生产freshness。
+
+后继共享输入已收敛为[中心store一页请求](center-store-request.md)：事务Interface、来源/refs/current cut、迁移及精确接线owner；只是实施候选，不新增claim，不影响首两片integration。
