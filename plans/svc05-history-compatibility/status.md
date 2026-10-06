@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:39 UTC；本轮未变更 main |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:16 UTC；候选源码af51冻结，搬运准备独立APPROVED |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -12,26 +12,28 @@
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
 | 工作树dirty状态 | 两源码已冻结；仅本次自身 metadata 收口后提交 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
-| 检查状态 | NOT_RUN；本轮禁止工程检查，仅固定源码和只读绑定 |
+| 本片段交付阶段 | integration |
+| 检查状态 | PASSED af51c621696230fbced12227670f014ca73bd8a1（RELEASE03 A12+B3分轮与独审）；本owner0重跑 |
 | 已集成main状态 / HEAD | 本候选未集成；原修复来源已审不代表固定旧后台组合已验证 |
 | 实现目标 | b29807979a5589678a61d3fb84781950cf366396 |
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 附件历史修复候选已通过独立源码核对，运行依赖链接已就绪；兼容性与发布尚未验证。 |
-| 下一可用交付 | 资源足够后验证新后台与实际页面的兼容性。 |
-| 当前阻塞 | ACTIVE: 磁盘余量不足以启动后续隔离验证；候选准备可继续。 |
+| 当前产出 | 新后台与固定新版网页的兼容性及固定产物搬运准备均已独立验收；个人安装尚未更新。 |
+| 下一可用交付 | 补齐个人安装保留的旧页面组合证据，核清网页身份后准备受控发布。 |
+| 当前阻塞 | ACTIVE: 两个保留旧页面尚无新后台兼容报告，网页在线身份读取未确认；当前仅准备，未获操作窗口。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，SOURCE_BINDING / NO_P1_P2；VALIDATION_PENDING，不代替 A/B |
-| Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v1，见证据回执 |
-| 架构影响 | 无新增模块/接口/表/依赖；已有历史投影的 v2 未知语义修复，无需改固定架构图。 |
+| Review | [review.md](review.md)，源码预审保留；Root APPROVED RELEASE03 af51+d629限定组合，不代表个人部署 |
+| Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
+| 架构影响 | 产品历史投影无新边界；新增固定目标操作脚本复用host锁/marker，file-only seam与Mac排他rename，非通用发布平台；实际操作未启用。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | SVC05H01-01 | completed | assignment_review | [source-bindings](../../docs/evidence/svc05-history-compatibility/source-bindings.json) 两源码精确同源 |
 | SVC05H01-02 | completed | assignment_review | [Interface](../../docs/evidence/svc05-history-compatibility/interface.md) 已固定 |
-| SVC05H01-03 | blocked | assignment_review / Execution Lead 协调 Web | 0 次验证运行，旧 362 两项失败不替代新候选检查 |
+| SVC05H01-03 | completed | Web RELEASE03 / Root独审 | [af51+d629独立批准](../../docs/evidence/svc05-history-compatibility/release-preparation/web-app1750-independent-review.json)；本owner未重跑 |
+| SVC05H01-04 | completed | assignment_review | 搬运target91ce18d33a1edf3cd087020ab0ea761579affc63，2边界red→8tiny green；[独立APPROVED](../../docs/evidence/svc05-history-compatibility/artifact-transfer/independent-review.json) |
+| SVC05H01-05 | pending | Execution Lead窗口 / owner | 个人发布未授权，retained报告与身份仍前置 |
 
 ## Dashboard
 
@@ -42,3 +44,13 @@
 [dependency-view.json](../../docs/evidence/svc05-history-compatibility/dependency-view.json)：9 个已固定第三方包 + @flow/contracts 自身源码，共 10 个 ignored symlink；目标字符串 1309 B，仅逻辑链接字节，非物理资源或闭包证明。0 安装/复制/import/type/tests/产品 PG/provider/个人操作。独立源码回执已归档，生成视图只用于随后已授权 Web 的显式候选输入。原 source-bindings 中 nodeModulesPresent=false 保留为更早观察；现以此记录为准。清理归属限本 owner 创建的确切链接，不跟随删除 donor。
 
 验收选择（Lead 15:39 补充）：后续仅优先 RELEASE03 真实 A 两项，再按原合同 B；四 case 源码只是已审来源，不再起 Vitest、不补包、不作额外前置。新风险才协调定向补测。
+
+2026-10-06 18:01 UTC：RELEASE03实际A all12复用+B三项通过，Root独立scoped批准已归档，历史失败与原NOT_RUN观察不改。新报告严格绑定af51+d629。只读安装快照仍362/accepting v15/四成功任务、零未完attempt；两保留产物完整但无af51报告；Web identity读取unknown，细因未捕获，不推定损坏。见[发布准备](../../docs/evidence/svc05-history-compatibility/release-preparation/README.md)。个人服务/配置/token/tab未改。
+
+2026-10-06 18:07 UTC：获准一次身份读取明确ECONNRESET/-54/read，owned PID/port同，未取得HTTP响应，不推定根因；原unknown保留。已准备[固定d629搬运脚本与tiny验证方案](../../docs/evidence/svc05-history-compatibility/artifact-transfer/README.md)，未运行/import或操作个人产物；复用原config/marker/operation.lock，源码/旧报告不改。
+
+2026-10-06 18:14 UTC：搬运候选窄修为非阻塞regular读取及expected+1上限；固定91ce18d33a1edf3cd087020ab0ea761579affc63。原2边界失败、后8/8纯文件通过/538ms，tmp checkpoint后清理；独审待完成，原失败保留。新连接计数记录1 LISTEN+64 CLOSED仅为候选事实，非根因证明。见[本轮manifest](../../docs/evidence/svc05-history-compatibility/artifact-transfer/tiny-manifest.json)。没有个人搬运/PG/provider/额外HTTP。
+
+2026-10-06 18:16 UTC：Lead独立APPROVED固定91ce搬运准备，21项绑定核实、0重跑，P2关闭；只准备不授权个人效果。后继仅只读设计独立loopback诊断，个人HTTP/连接/服务不动；原raw与manifest保留。
+
+2026-10-06 18:20 UTC：已完成[只读loopback复现方案](../../docs/evidence/svc05-history-compatibility/artifact-transfer/socket-reproduction-proposal.json)。固定af51 static-web、现装Vite8.3.2与Node24.20源码区分capacity drop/HTTP错误/代理abort；候选136连接尝试、35s工作+10s清理、1MiB输出/4MiB自有tmp。未启动，需Lead独立窗口；不追加个人HTTP、不升cap/重启。
