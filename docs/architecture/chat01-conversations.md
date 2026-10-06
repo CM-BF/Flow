@@ -1,0 +1,11 @@
+# CHAT01 对话受理与回复来源
+
+中心conversation持久ID/递增revision，有序immutable user turn与唯一task绑定；native session不是conversation主键。POST创建和turn受理均经鉴权+Idempotency-Key，turn事务锁conversation后校验revision和上一task状态，再调用acceptTask并写turn，同事务提交wake。运行/等待/cancel_requested/uncertain拒绝follow-up；queue/steer明确unsupported。task状态仍唯一执行权威，不复制第二套任务状态机。
+
+GET summary/turn page用一致快照读取；完整用户输入不被改写，普通hi直接成为task.prompt。后继轮使用已登记且所属上一attempt的native session，已有claim只会分配给其runner且互斥；不跨机自动重建会话。无session或未知状态不得默默开启全新模型会话冒充连续上下文。
+
+兼容projection只承认claude-sdk-0.3.290-v1：源码在SDK success后将final.result写成唯一text artifact，再验证/完成；中心必须核对task.harness、当前attempt、exact session record adapterVersion、唯一artifact、latest digest/media和success。artifact标题不是判据，timeline text始终telemetry。未知adapter/缺失/多结果/旧attempt均unavailable。短正文直接输出role assistant/text；长正文明确truncated且提供带turn/task归属的typed lazy ref，不静默摘要。
+
+后继runner seam（本片段不改runner.ts）：fenced ordered assistant-final event带messageId、text或exact artifact reference、native session ID、SDK result ID和effective model/thinking/tools来源；task/attempt已能由envelope绑定turn，无须runner任意指定conversation。可选delta事件带同messageId/fragment序号及final完整摘要，重报去重，旧owner拒绝；未final的流不可假completed。能力注册声明conversation/resume/stream/steer/queue及配置支持；无ack的steer不可当已受理。Lead待R03合同释放后独立接入；这是完整CHAT必要后继，不因本兼容projection通过而取消。
+
+requested模型目前只有runner-default、thinking disabled、tools configured-readonly可兑现，其他选项明确unsupported。effective model只有记录中无歧义model资源才给值，否则null；readonly/thinking-disabled仅以精确已知adapter版本声明并附session detail来源。不能把用户requested当实际模型配置。
