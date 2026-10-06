@@ -10,8 +10,8 @@
 
 ## TODO
 
-- [ ] SVC01-01：独立claim、接口与隔离资源规则。
-- [ ] SVC01-02：start/status/stop启动器及有界失败处理；0模型局部验收。
+- [x] SVC01-01：独立claim、接口与隔离资源规则。
+- [x] SVC01-02：start/status/stop启动器及有界失败处理；0模型局部验收。
 - [ ] SVC01-03：独立审查与固定main接收，核对CHAT三端及服务配置。
 - [ ] SVC01-04：启动保留专属服务并交付真实产品URL，核验连接性质/能力限制；不自动发送模型消息。
 
@@ -20,3 +20,5 @@
 ## 维护
 
 本工程小片链接既有U11产品需求，不替代Web权威计划。启动/进展/阻塞/交付更新同目录status，review固定commit。架构影响为本地个人运行拓扑/启动命令，交付时通知架构视图owner核对。
+
+2026-10-06 04:29 UTC 实现小片已完成：公开[使用说明](../../tools/personal-preview/README.md)，真实三端基线main dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8；7条0模型局部检查通过。SVC01-03独立review/接收与04真实常驻启动仍pending，不把临时测试URL交成用户服务。

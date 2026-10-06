@@ -1,10 +1,10 @@
 # SVC01 独立 review
 
-状态：NOT_STARTED
+状态：APPROVED
 
-Review target commit：UNKNOWN
+Review target commit：715eca5f299fecda9e71a0c58c62f6fa7a5656dc
 
-Scope：tools/personal-preview/；计划与证据下钻。Base：8f1481df880cf5077e1ddb9a8f302fe700a7ece8。尚未执行审查，不构成approval。
+Scope：tools/personal-preview/；计划与证据下钻。实现基线：dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8（受控合入已审三端/R04；原计划base8f1481）。Execution Lead / gpt-6-astra 已完成独立只读复审，结论APPROVED。
 
 ## 可复制审查任务
 
@@ -12,6 +12,12 @@ Scope：tools/personal-preview/；计划与证据下钻。Base：8f1481df880cf50
 
 | Severity | Finding | Blocking | 作者回应 / fix commit | 复审 |
 | --- | --- | --- | --- | --- |
-| 未审查 | 无结论 | unknown | 待定 | 未执行 |
+| P2 | runService将父环境全部传给所有服务，管理凭据可传播 | yes | 改为明确环境允许清单；wrapper和实际服务按角色隔离；8/8通过 | 已关闭，复审APPROVED 715eca5f299fecda9e71a0c58c62f6fa7a5656dc |
 
-结论/限制：待固定target；真实模型、总项目预算、远程多租户不在启动器零模型验证范围。
+结论/限制：修复target已独立只读APPROVED；真实模型、总项目预算、远程多租户不在启动器零模型验证范围。
+
+作者检查：Node公开边界7/7，15.257s，原始输出[behavior-tests.txt](../../docs/evidence/svc01/behavior-tests.txt)；Node语法检查、相对链接、diffcheck通过。测试后只读确认flow_preview_*数据库数量0。此为原实现检查；修复后8/8，15.496s见[review-fix-tests.txt](../../docs/evidence/svc01/review-fix-tests.txt)，独立review已核原日志但未重跑；未做真实模型、产品浏览器或用户长期服务验收。
+
+## 2026-10-06 04:34:50 UTC 独立复审结论
+
+Reviewer：Execution Lead / gpt-6-astra。APPROVED `715eca5f299fecda9e71a0c58c62f6fa7a5656dc`，审查时metadata HEAD `467d0668b37273e604b38c495b82c7c4a8bfc815` clean。完整preview/process/CLI/environment与8个tests已读，合成子进程隔离及8/8原始日志吻合；P2经wrapper和role允许清单关闭，无剩余blocking。reviewer未重跑测试。批准仅覆盖启动器；native SDK环境修复26ddd8d由Lead独立提交并另审，不冒称本target覆盖。长期服务待其接收和Lead操作；本owner未启动常驻或调用模型。
