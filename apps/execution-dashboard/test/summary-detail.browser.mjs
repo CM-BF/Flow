@@ -1,9 +1,8 @@
 import assert from 'node:assert/strict';
-import { readFile, writeFile, mkdir, mkdtemp, rm, stat, readdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, mkdtemp, rm, stat, readdir, realpath, lstat } from 'node:fs/promises';
 import { writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { execFileSync, spawn } from 'node:child_process';
-import { once } from 'node:events';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -57,86 +56,99 @@ async function bytesIn(directory) {
   return bytes;
 }
 
-/** Shared cumulative allowance for both browser scripts. Requires a new external resource gate. */
+/** The reviewed parent owns the only cumulative budget and the worker/Chrome process group. */
 export async function runBrowserCheck(name, check) {
-  if (!process.env.DPERF04_BROWSER_GATE) throw new Error('Browser resource gate required; source-only is the default');
-  const gate = JSON.parse(await readFile(process.env.DPERF04_BROWSER_GATE, 'utf8'));
-  assert.equal(gate.allowRun, true); assert.ok(Date.parse(gate.expiresAt) > Date.now());
-  assert.match(gate.run, /^[a-zA-Z0-9-]{1,80}$/); assert.ok(path.isAbsolute(gate.chromeExecutable));
-  assert.equal(git(process.cwd(), 'rev-parse', 'HEAD'), gate.sourceHead);
-  const outputRoot = path.resolve('docs/evidence/wpf-dperf04'), budgetFile = path.join(outputRoot, 'browser-budget.json');
-  let spentMs = 0;
-  try { const budget = JSON.parse(await readFile(budgetFile, 'utf8')); assert.equal(budget.complete, true, 'Previous browser cleanup unknown'); spentMs = budget.spentMs; } catch (error) { if (error.code !== 'ENOENT') throw error; }
-  assert.ok(Number.isFinite(spentMs) && spentMs >= 0 && spentMs < 45000);
-  const started = Date.now(), limit = 60000, cleanupReserve = 15000;
-  const output = path.join(outputRoot, 'browser-runs', gate.run); await mkdir(output, { recursive: false }).catch(async error => { if (error.code !== 'ENOENT') throw error; await mkdir(path.dirname(output), { recursive: true }); await mkdir(output); });
-  const report = { name, startedAt: new Date(started).toISOString(), sourceHead: gate.sourceHead, sourceDirty: Boolean(git(process.cwd(), 'status', '--porcelain')), sourceHashes: {}, checks: [], screenshots: [], errors: [], cleanupErrors: [], pg: 0, outcome: 'failed' };
-  for (const file of sourceFiles) { report.sourceHashes[file] = hash(await readFile(file)); assert.equal(report.sourceHashes[file], gate.sourceHashes[file], `Source gate mismatch: ${file}`); }
-  await writeFile(budgetFile, JSON.stringify({ complete: false, spentMs, run: gate.run, startedAt: report.startedAt }) + '\n');
-  let fixture, chrome, browser, stopped = false, profile;
+  if (!process.env.DPERF04_BROWSER_GATE) throw new Error('Supervised browser resource gate required');
+  const gatePath = process.env.DPERF04_BROWSER_GATE;
+  const gateStat = await lstat(gatePath); assert.ok(gateStat.isFile() && !gateStat.isSymbolicLink() && gateStat.size <= 65536);
+  const gate = JSON.parse(await readFile(gatePath, 'utf8')), supervision = gate.supervision;
+  assert.equal(gate.allowRun, true); assert.equal(gate.mode, 'dperf-browser'); assert.equal(gate.singleUse, true); assert.equal(gate.entry, name);
+  assert.ok(Date.parse(gate.expiresAt) > Date.now()); assert.match(gate.run, /^[a-zA-Z0-9-]{1,80}$/);
+  assert.ok(supervision && supervision.parentPid === process.ppid && process.ppid > 1, 'Owned supervisor parent required');
+  const { startedAtMs: started, workDeadlineMs: workAt, hardDeadlineMs: hardAt, scratch, output } = supervision;
+  assert.ok([started, workAt, hardAt, gate.previousRuntimeMs, gate.totalMs].every(Number.isSafeInteger));
+  assert.ok(started <= Date.now() && Date.now() < workAt && gate.previousRuntimeMs >= 0);
+  assert.equal(gate.previousRuntimeMs + gate.totalMs, 60000); assert.ok(gate.totalMs > 15000);
+  assert.equal(hardAt, started + gate.totalMs); assert.equal(workAt, hardAt - 15000);
+  assert.ok(path.isAbsolute(scratch)); assert.equal(await realpath(scratch), scratch);
+  assert.equal(output, path.resolve('docs/evidence/wpf-dperf04/browser-runs', gate.run)); assert.equal(await realpath(output), output);
+  for (const key of ['TMPDIR', 'TMP', 'TEMP', 'XDG_CACHE_HOME', 'NODE_COMPILE_CACHE']) assert.equal(await realpath(process.env[key] ?? ''), scratch);
+  assert.equal(await realpath(tmpdir()), scratch); assert.equal(process.env.NODE_DISABLE_COMPILE_CACHE, '1');
+  assert.ok(path.isAbsolute(gate.chromeExecutable) && path.isAbsolute(gate.playwrightModule));
+  assert.equal(await realpath(gate.playwrightModule), gate.playwrightModule);
+  assert.match(gate.playwrightSha256, /^[a-f0-9]{64}$/);
+  assert.deepEqual(Object.keys(gate.sourceHashes).sort(), [...sourceFiles].sort());
+  const report = { name, startedAt: new Date(started).toISOString(), workerStartedAt: new Date().toISOString(), parentPid: process.ppid,
+    workerPid: process.pid, chromePid: null, chromeProcessGroup: 'inherited-worker', sourceHead: gate.sourceHead, sourceHashes: {},
+    checks: [], screenshots: [], errors: [], cleanupErrors: [], pg: 0, outcome: 'failed', budgetOwner: 'external-parent' };
+  let fixture, chrome, browser, stopped = false, profile, chromeLog = '', launchError;
   const cleanups = [];
-  const groupAlive = () => { if (!chrome?.pid) return false; try { process.kill(-chrome.pid, 0); return true; } catch (error) { if (error.code === 'ESRCH') return false; throw error; } };
-  const signalChrome = signal => { if (groupAlive()) process.kill(-chrome.pid, signal); };
-  const checkpoint = () => { if (stopped || Date.now() - started > limit - spentMs - cleanupReserve) throw new Error('Browser work deadline reached'); };
-  const workDeadline = setTimeout(() => { stopped = true; signalChrome('SIGTERM'); fixture?.server.closeAllConnections(); }, Math.max(1, started + limit - spentMs - cleanupReserve - Date.now()));
+  const chromeExited = () => !chrome?.pid || chrome.exitCode !== null || chrome.signalCode !== null;
+  const signalChrome = signal => { if (chrome?.pid && !chromeExited()) chrome.kill(signal); };
+  const stopWork = () => { stopped = true; signalChrome('SIGTERM'); fixture?.server.closeAllConnections(); };
+  const checkpoint = () => { if (stopped || Date.now() >= workAt) throw new Error('Parent browser work deadline reached'); };
+  process.on('SIGTERM', stopWork);
+  const workDeadline = setTimeout(stopWork, Math.max(1, workAt - Date.now()));
   const hardDeadline = setTimeout(() => {
     signalChrome('SIGKILL'); fixture?.server.closeAllConnections();
-    report.cleanupErrors.push('Hard deadline: cleanup not confirmed'); report.elapsedMs = Date.now() - started;
-    writeFileSync(path.join(output, 'browser-results.json'), JSON.stringify(report, null, 2));
-    writeFileSync(budgetFile, JSON.stringify({ complete: false, spentMs: spentMs + report.elapsedMs, run: gate.run }));
-    process.exit(1);
-  }, Math.max(1, started + limit - spentMs - Date.now()));
+    report.cleanupErrors.push('Parent hard deadline: child cleanup not confirmed'); report.observedElapsedMs = Date.now() - started;
+    try { writeFileSync(path.join(output, 'browser-results.json'), JSON.stringify(report, null, 2)); } finally { process.exit(1); }
+  }, Math.max(1, hardAt - Date.now()));
   try {
-    checkpoint(); fixture = await summaryFixture({ after: cleanup => cleanups.push(cleanup) }); checkpoint();
-    profile = await mkdtemp(path.join(tmpdir(), 'flow-summary-chrome-')); checkpoint();
-    chrome = spawn(gate.chromeExecutable, ['--headless=new', '--no-first-run', '--no-default-browser-check', '--disable-background-networking', '--disable-component-update', '--disable-sync', '--remote-debugging-port=0', `--user-data-dir=${profile}`, 'about:blank'], { detached: true, stdio: ['ignore', 'pipe', 'pipe'] });
-    report.chromePid = chrome.pid; let chromeLog = '', launchError;
+    checkpoint(); assert.equal(git(process.cwd(), 'rev-parse', 'HEAD'), gate.sourceHead); checkpoint();
+    for (const file of sourceFiles) { report.sourceHashes[file] = hash(await readFile(file)); assert.equal(report.sourceHashes[file], gate.sourceHashes[file], `Source gate mismatch: ${file}`); checkpoint(); }
+    assert.equal(hash(await readFile(gate.playwrightModule)), gate.playwrightSha256, 'Read-only Playwright entry changed'); checkpoint();
+    fixture = await summaryFixture({ after: cleanup => cleanups.push(cleanup) }); checkpoint();
+    profile = await mkdtemp(path.join(scratch, 'flow-summary-chrome-')); checkpoint();
+    chrome = spawn(gate.chromeExecutable, ['--headless=new', '--no-first-run', '--no-default-browser-check', '--disable-background-networking', '--disable-component-update', '--disable-sync', '--remote-debugging-port=0', `--user-data-dir=${profile}`, `--disk-cache-dir=${path.join(profile, 'disk-cache')}`, 'about:blank'], { detached: false, stdio: ['ignore', 'pipe', 'pipe'] });
+    report.chromePid = chrome.pid ?? null;
     chrome.on('error', error => { launchError = error; });
-    for (const stream of [chrome.stdout, chrome.stderr]) stream.on('data', chunk => { if (chromeLog.length < 65536) chromeLog += chunk.toString().slice(0, 65536 - chromeLog.length); });
+    await writeFile(path.join(output, 'owned-chrome.json'), JSON.stringify({ workerPid: process.pid, chromePid: report.chromePid, processGroup: 'inherited-worker', profile }) + '\n');
+    for (const stream of [chrome.stdout, chrome.stderr]) stream.on('data', chunk => { const remaining = 65536 - Buffer.byteLength(chromeLog); if (remaining > 0) chromeLog += chunk.subarray(0, remaining).toString(); });
     let port;
-    const launchDeadline = Math.min(started + limit - spentMs - cleanupReserve, Date.now() + 8000);
+    const launchDeadline = Math.min(workAt, Date.now() + 8000);
     while (!port) {
-      checkpoint(); if (launchError) throw launchError; if (Date.now() >= launchDeadline) throw new Error('Owned Chrome did not become ready');
+      checkpoint(); if (launchError) throw launchError; if (chromeExited()) throw new Error('Owned Chrome exited before readiness');
+      if (Date.now() >= launchDeadline) throw new Error('Owned Chrome did not become ready');
       try { port = Number((await readFile(path.join(profile, 'DevToolsActivePort'), 'utf8')).split('\n')[0]); } catch (error) { if (error.code !== 'ENOENT') throw error; }
       if (!port) await delay(50);
     }
-    const { chromium } = await import('@playwright/test'); checkpoint();
-    browser = await chromium.connectOverCDP(`http://127.0.0.1:${port}`, { timeout: 3000 }); checkpoint();
-    const context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: 'reduce' });
-    const page = await context.newPage(); page.setDefaultTimeout(2000);
+    assert.ok(Number.isInteger(port) && port > 0 && port <= 65535); checkpoint();
+    const { chromium } = await import(pathToFileURL(gate.playwrightModule).href); checkpoint();
+    browser = await chromium.connectOverCDP(`http://127.0.0.1:${port}`, { timeout: Math.min(3000, Math.max(1, workAt - Date.now())) }); checkpoint();
+    const context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: 'reduce' }); checkpoint();
+    const page = await context.newPage(); page.setDefaultTimeout(2000); checkpoint();
     page.on('pageerror', error => report.errors.push(error.message));
     await check({ page, f: fixture, report, output, checkpoint }); checkpoint();
     assert.deepEqual(report.errors, []); report.outcome = 'passed';
-    await writeFile(path.join(output, 'chrome.log'), chromeLog);
-  } catch (error) { report.failure = error.stack; report.outcome = 'failed'; }
+  } catch (error) { report.failure = error.stack ?? String(error); report.outcome = 'failed'; }
   finally {
     clearTimeout(workDeadline);
     try {
       signalChrome('SIGTERM');
-      const until = Date.now() + 3000;
-      while (groupAlive() && Date.now() < until) await delay(25);
-      if (groupAlive()) signalChrome('SIGKILL');
-      if (chrome?.pid && chrome.exitCode === null && chrome.signalCode === null) await once(chrome, 'exit');
-      const reapUntil = Date.now() + 1000;
-      while (groupAlive() && Date.now() < reapUntil) await delay(25);
-      if (groupAlive()) report.cleanupErrors.push('Owned Chrome process group still present');
+      const until = Math.min(hardAt - 5000, Date.now() + 3000);
+      while (!chromeExited() && Date.now() < until) await delay(25);
+      if (!chromeExited()) signalChrome('SIGKILL');
+      const reapUntil = Math.min(hardAt - 3000, Date.now() + 1000);
+      while (!chromeExited() && Date.now() < reapUntil) await delay(25);
+      if (!chromeExited()) report.cleanupErrors.push('Owned Chrome PID has not exited; parent must reap group');
     } catch (error) { report.cleanupErrors.push(String(error)); }
     try { await browser?.close(); } catch (error) { report.cleanupErrors.push(String(error)); }
     for (const cleanup of cleanups.reverse()) try { await cleanup(); } catch (error) { report.cleanupErrors.push(String(error)); }
-    try { if (profile) await rm(profile, { recursive: true, force: true }); } catch (error) { report.cleanupErrors.push(String(error)); }
+    // Descendants/profile belong to the parent group. Never delete scratch before its group-absence check.
+    report.chromeExited = Boolean(chrome?.pid) && chromeExited(); report.profileCleanupOwner = 'external-parent-after-group-absence';
     report.serverClosed = fixture ? !fixture.server.listening : null;
-    report.fixtureRemoved = fixture ? await stat(fixture.root).then(() => false, error => { if (error.code === 'ENOENT') return true; throw error; }) : null;
-    report.elapsedMs = Date.now() - started; report.cumulativeMs = spentMs + report.elapsedMs;
-    report.finishedAt = new Date().toISOString();
-    if (report.cleanupErrors.length || report.serverClosed === false || report.fixtureRemoved === false || report.cumulativeMs > limit) report.outcome = 'failed';
+    try { report.fixtureRemoved = fixture ? await stat(fixture.root).then(() => false, error => { if (error.code === 'ENOENT') return true; throw error; }) : null; }
+    catch (error) { report.cleanupErrors.push(String(error)); report.fixtureRemoved = false; }
+    report.observedElapsedMs = Date.now() - started; report.finishedAt = new Date().toISOString();
+    if (report.cleanupErrors.length || !report.chromeExited || report.serverClosed !== true || report.fixtureRemoved !== true || Date.now() >= hardAt) report.outcome = 'failed';
+    await writeFile(path.join(output, 'chrome.log'), chromeLog);
+    report.retainedRunBytes = await bytesIn(output);
+    if (report.retainedRunBytes > 8 * 1024 * 1024 - 128 * 1024) { report.outcome = 'failed'; report.errors.push('Run retained evidence reserve exceeded'); }
     await writeFile(path.join(output, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');
-    report.retainedBytes = await bytesIn(outputRoot);
-    if (report.retainedBytes > 8 * 1024 * 1024) { report.outcome = 'failed'; report.errors.push('Retained evidence exceeds 8 MiB'); }
-    await writeFile(path.join(output, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');
-    await writeFile(budgetFile, JSON.stringify({ complete: report.cleanupErrors.length === 0 && report.fixtureRemoved !== false && report.serverClosed !== false, spentMs: report.cumulativeMs, limitMs: limit, cleanupReserveMs: cleanupReserve }) + '\n');
-    clearTimeout(hardDeadline);
+    clearTimeout(hardDeadline); process.off('SIGTERM', stopWork);
   }
-  console.log(JSON.stringify({ output, outcome: report.outcome, checks: report.checks, elapsedMs: report.elapsedMs, cumulativeMs: report.cumulativeMs, cleanupErrors: report.cleanupErrors }));
+  console.log(JSON.stringify({ output, outcome: report.outcome, checks: report.checks, observedElapsedMs: report.observedElapsedMs, cleanupErrors: report.cleanupErrors, budgetOwner: 'external-parent' }));
   if (report.outcome !== 'passed') process.exitCode = 1;
 }
 
