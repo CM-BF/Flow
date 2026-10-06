@@ -1,7 +1,7 @@
 # F01 共享接线审查
 
-**当前增量状态：APPROVED**
-Review target commit：095497dc1719d10df8309fdf17d95539fc891e06
+**当前增量状态：NOT_STARTED（O05薄client增量；下方历史批准保留）
+Review target commit：e28d547ed3b446a252595bd1960953382ffa4dd8
 Scope：X02公共挂载/export/client/CLI；CHAT生产入口37ab367另列同批检查。Mika独立只读APPROVED 095497：7薄client方法/CLI稳定key与schema/PG消费者检查完整核对，5源码与raw输出hash一致，无finding，未重跑。CHAT生产37ab由Goal Owner独立只读批准，核007/009迁移、鉴权后挂载、错误清理与10/10原始证据；未重跑。
 
 ## 历史已审接线
@@ -49,3 +49,6 @@ Mika独立只读APPROVED `83f7da6c6e366e3520c8373c7d21408dad5fb145`，3文件66�
 
 ## CHAT04/O03 production mount
 Mika独立只读APPROVED固定`b87a4bb1d6e6459eb97a689d6c32ab9f65d91d18`两文件，核11/11保存PG与noEmit，未重跑；默认串行scan/关闭等待与011/012初始化，原失败/owner修复均保留。当前生产index对target零diff。后补`dc506b9419cae76b679d0166e99f6a96ef62ac7c`仅测试，新增factory false到默认startup的真实flag消费1/1（2未选），无生产更改。CHAT04领域及Web reader的各自批准不扩展完整queue UI。
+
+## O05薄client待审
+固定e28d547，3文件52行，仅四个owner方法/导出/真实HTTP用例。固定合同589a；request原文/revision/key/digest、cursor编码、AbortSignal与409不暗重试。domain/PG/模型/生产挂载均非本增量结论。

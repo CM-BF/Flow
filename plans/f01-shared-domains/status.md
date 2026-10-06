@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:57 UTC / 2026-10-06 04:57 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:13:17 UTC / 2026-10-06 05:11 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
@@ -10,15 +10,16 @@
 | 工作基线 / HEAD | 873738d9eb998c10bc71721d9b325fcc76ecd7b5 / b87a4bb1d6e6459eb97a689d6c32ab9f65d91d18（生产挂载target；后续测试dc506单列） |
 | 工作树dirty状态 | 实现已提交；仅本次证据与status收尾 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED：默认扫描+O03真PG11/11、factory显式手动模式1/1（另2未选）、client队列2/2/O03 1/1；组合root/Web typecheck通过；原始失败保留 |
-| 已集成main状态 / HEAD | main e802854f346a81749efdef3f36737b16141b98ef 已含真实预览/受限聊天证据；当前CHAT04+兼容reader+O03挂载完整候选待本批合入，不能称常驻61227已升级 |
-| Review | APPROVED：Mika队列client83f与生产b87、runner_owner O03 clientdc9；Web Lead兼容reader5acc与profile模块4f；各合同/domain自有独审 |
-| 实现目标 | b87a4bb1d6e6459eb97a689d6c32ab9f65d91d18 |
-| 实现范围 | packages/client/src/index.ts, packages/contracts/src/index.ts, apps/server/src/index.ts |
+| 检查状态 | PASSED e28d547ed3b446a252595bd1960953382ffa4dd8；O05薄client真实HTTP1/1+typecheck，原红例保留 |
+| 已集成main状态 / HEAD | main6b4b89f已含queue/O03/O04与B03；当前O05薄client未集成，domain/mount另验 |
+| Review | 新O05 client待独审；此前queue/O03各固定批准已main，见review历史 |
+| 实现目标 | e28d547ed3b446a252595bd1960953382ffa4dd8 |
+| 实现范围 | packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/goal-graph-proposals.test.ts |
 | 阶段 | M2 |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 真实聊天基础已交付；消息排队、暂停与继续的后台接入已经验证 |
-| 下一可用交付 | 为聊天界面的执行选项和待发送消息提供可用接口，继续接入受限目标工具 |
+| 当前产出 | 聊天队列与受限目标工具接口已交付，正在接入目标拆分提案 |
+| 下一可用交付 | 让目标拆分提案可保存、查看并整份应用 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -44,9 +45,11 @@
 
 两次真实query预算已封存，main dd1b三端已审集成。证据与弱断言纠正见[真实执行报告](../../docs/evidence/f01/chat-live/README.md)，原PASSED日志保留但不是完整第二轮live可见正文approval。recorded replay为另一次0模型界面检查。
 
-| F01-09 | in-progress | Lead | 最终ae9d队列合同，六个薄client方法；[2/2真实HTTP局部检查](../../docs/evidence/f01/queue-client-green.txt)，typecheck通过；生产扫描尚未挂载，Web兼容reader待接收 |
-| F01-10 | in-progress | Lead | O03模块94e已Root独审并进入main80e3；共享挂载/client待实现 |
+| F01-09 | completed | Lead | main698ff成套queue domain/兼容reader/scan已审接收，11+1与组合types证据 |
+| F01-10 | completed | Lead | O03八方法/挂载已审main，O04另独审并da8主线接收 |
 
 04:45 UTC：F01 claim8470e7d2 v10已停止并交回claude.ts/claude.test.ts/tasks.ts供O04新树领取；[receipt](../../docs/evidence/f01/o04-scope-amend-receipt.json)。SDK env26ddd/共享事务dbb已Root批准并main；2query报告cc73已限定批准，第二轮live UI仍NOT_PROVEN，预算封存。
 
 2026-10-06 04:57 UTC：生产b87保持固定；补充dc506测试实际factory false禁止自动提升、下次默认startup恢复同意图1/1通过（2未选）。消费者CHAT04 test seam fac202由Mika独审，原32行为保留；新增profile模块4f不代表App已挂载。
+
+| F01-11 | in-progress | Lead | O05固定589a合同，四薄方法e28d真实HTTP1/1/typecheck；domain/生产挂载未验 |

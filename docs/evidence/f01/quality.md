@@ -85,3 +85,5 @@ O03薄client固定dc9a9f1，8方法分owner与runner认证实例，fenced输入/
 Mika发现定时扫描与手动领域测试竞争；已交原owner以显式factory选项隔离，54领域与默认生产生命周期分开检查，不删断言。WPF-QUEUE00兼容reader5acc独审已收到，须成套后main；当下未进入main/未改61228常驻服务。clean-code复核将生命周期局限createServer，复用现scan模块，无第二调度状态，无owner credential进runner MCP。
 
 2026-10-06 04:57 UTC：实际组合接收CHAT04 fac202测试驱动开关+Web reader5acc+profile模块4f；[默认/手动factory分离定向1/1](queue-scan-control-checks.txt)验证显式false确被生产factory读取，关闭后下次默认启动恢复同等待项。此前11/11仍为对应旧测试版本，分别报告不混成一次套件。root与Web组合类型检查见queue-profile-combination-typecheck.txt / queue-profile-web-typecheck.txt；零额外模型。正式独审结论已写review，main合入与常驻服务升级分开。
+
+2026-10-06 05:13:17 UTC：O05 client固定e28d547ed3b446a252595bd1960953382ffa4dd8，沿本地find-skills/codebase-design/clean-code，复用现request小Interface；真实HTTP1/1(38ms、suite218ms)+root typecheck。red因方法缺失为真实失败，未改领域。source+logs见graph-proposal-client-manifest.json，待独立review，无模型/PG调用。
