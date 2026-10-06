@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 15:53:31 UTC |
+| 最近更新时间 | 2026-10-06 16:09:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -23,7 +23,7 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 静态安装公开入口及包加载、执行前两次权限核验已进入主线；完整插件运行管理仍未完成 |
-| 下一可用交付 | 本片段已交付；中心实时授权、任务绑定与真实runner执行链仍待协调后继 |
+| 下一可用交付 | 本片段已交付；后继接中心实时授权、任务绑定及真实runner，并纳入现成npm能力复用验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -32,10 +32,10 @@
 | X01-01 | completed | runner_owner | [完整计划](plan.md)、[事实/质量记录](../../docs/evidence/x01/README.md) |
 | X01-02 | in-progress | Execution Lead（公共入口） | X02 registry/public client/CLI合同已冻结入main；完整安装生命周期合同仍未完 |
 | X01-03 | in-progress | architecture_read | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
-| X01-04 | in-progress | architecture_read | 静态材料/真实loader首leaf已独审；中心资格/绑定、版本pin与回收仍待接入 |
+| X01-04 | in-progress | architecture_read | 静态材料/真实loader首leaf已独审；中心资格/绑定、版本pin与回收仍待接入；新增现成npm能力固定来源/许可/版本及bundle或受控依赖验收，尚未选包 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；完整Web/TUI/CLI生命周期未完 |
-| X01-07 | in-progress | architecture_read | 自有真实text-tool已通过局部实际import/invoke；真实runner任务产物/public管理链未接入 |
+| X01-07 | in-progress | architecture_read | 自有真实text-tool已通过局部实际import/invoke；真实runner任务产物/public管理链未接入；须另验至少一个现成npm能力及升级身份 |
 | X01-08 | pending | Lead派发contextwriter | 依赖02/04/G01/usage；通用接口可先推进 |
 | X01-09 | pending | Goal Owner / Lead | 候选固定输入已定位、用户未亲自确认；CTX01 core可推进，不以身份阻塞toy，完整兼容验收未完 |
 | X01-10 | pending | Lead协调review/集成writer | 通用管理依赖03～08；09候选独立后续验收，独立产品review/整体验收未开始 |
@@ -107,3 +107,5 @@
 2026-10-06 14:48:21 UTC：接收Mika14:47:23对e6827d8a30fd103e34966a5d7298570545865057独立APPROVED；[稳定集成输入](../../docs/evidence/x01/host-gates-integration-ready.md)列两host源码、固定manifest/21与strict证据，0P1/P2。原源码/raw/support/manifest逐字保持、未重测；v5保留至正式main接收。完整X01原TODO未减少，中心live grant/runtime retained仍后继。
 
 2026-10-06 15:53:31 UTC：fresh owner HEAD96712f914ddb2cf4fae3b932ac48b41250a87bbd clean、6ddedc73 v5 ACTIVE四scope。补录15:11:44已完成的主线核验，并再次只读核host两源e682=fe1b=7810=owner；[接收记录](../../docs/evidence/x01/host-gates-main-acceptance.md)引用main生产安装13源收据。本片段delivered，原10TODO与未完成publicvertical保持；host两源明确停止写入，v5尚未amend交回。本次零工程测试/PG/provider。仅只读本树两个Vitest缓存，最多4096 allocated B，未删除、实际回收0 B；不扩大资源扫描。
+
+2026-10-06 16:09:00 UTC：fresh owner HEAD4de33e6688f0b002805388b35deb10723397cff7 clean、账本16:08:31确认6ddedc73 v5 ACTIVE原四scope。仅在[后继准备](../../docs/evidence/x01/enable-binding-preparation.md)及原计划归档GO新增X01-04/07验收：至少一个来源/许可/版本固定的现成npm能力，通过明确bundle或受控依赖接Flow Adapter，证明真实runner产物与升级身份。只读main e807730328a8f220721efcc3e346c03945991965 clean确认host仍无production caller；静态安装/host双gate已交付事实与原10TODO状态不变。当前未选包/安装/工程测试/PG/provider，host两源继续停写，未操作sparse或缓存；质量方法沿本地find-skills/codebase-design/clean-code固定基线，未改旧raw/manifest。只读parseStatus errors=[]、delivered/10TODO，三份文档链接无缺失、diff空白检查通过；不声称看板在线页面已刷新。
