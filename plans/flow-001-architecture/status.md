@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:45:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:57:11 UTC / mainb1c2e39837c2208e6fc2c59a80e16797f26448b5 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[大task定义](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,11 +12,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | d7e1e64e7792f4d1ad4933db042f10f266ad0cca；CHAT10受理门禁、S01P01有界并发内核、CHATREAD紧凑展示、O10限定验收均已审接收。个人center/runner固定32c371d / accepting v9；97源为上次已部署观察，98源候选在main。Web当前Vite可随主线变化，SVC03固定构建实现中。 |
+| 已集成main状态 / HEAD | b1c2e39837c2208e6fc2c59a80e16797f26448b5；已审CHAT10/S01P01/CHATREAD/SVC03已main。个人center/runner固定b1c2e398 / accepting v12，Web固定artifact461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90，原61227/61228与数据身份保留；用户tab未reload。4320在08:52:38实际101源。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 真实聊天服务已安全更新；紧凑聊天展示、可靠指令受理条件和有界并行运行内核已合入。 |
-| 下一可用交付 | 固定网页版本避免开发更新打断体验；用第二种实际执行工具验证可替换接口。 |
+| 当前产出 | 聊天页面已固定版本，开发更新不会再自动替换用户正在使用的页面。 |
+| 下一可用交付 | 完善Claude与Codex的真实能力选择，并持续补齐成熟聊天界面的交互。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -88,3 +88,5 @@ main3773db5已推送clean；G01/P02/F01/WPF-M02分别获独立审查，必要组
 主线32c371d与origin一致clean。WPF-CHAT06I01假分支R1已修复并独审，CHAT09和O09CLI各独审，I02仅运行2个readonly直接消费者+组合类型检查；34固定源码一致。个人服务仍b54/v6，更新仅准备，未启steering/新增query。O10单child原生验收仍0query准备；S01P01有界并发池与CHAT10受理状态各独立实施，CONTEXT02收据链不占App。
 
 2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
+
+2026-10-06 08:57:11 UTC：SVC03实际窗口已结束，接受v12；4任务成功、无未完attempt/等待队列、业务摘要及迁移列表保留。一次属性顺序比较误报保留，未重复refresh。0operator provider/用户tab操作。新成熟界面六大task沿WPF-001唯一源，宿主依赖见FLOW-002-T09。

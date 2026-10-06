@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:45:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:57:11 UTC / mainb1c2e39837c2208e6fc2c59a80e16797f26448b5 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-002（[大task定义](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -19,7 +19,7 @@
 | 本片段交付阶段 | planning |
 | 优先级 | 1 |
 | 当前产出 | 原生聊天与恢复路径已有实际验收，身份刷新和上下文插件实验记录了明确限制。 |
-| 下一可用交付 | 收拢执行器与原生工具的边界，并让第二种实际执行工具消费同一接口。 |
+| 下一可用交付 | 保留Claude使用体验，接通Codex的真实模型与执行能力。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -55,6 +55,8 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 
 2026-10-06 08:23:11 UTC：只核本权威来源既有6个人读字段均齐备，保留FLOW-002未完成工程验收与OPS历史review边界；本次仅更新协作配额/观察时间，不新增产品测试或模型。
 
-| FLOW-002-T09 | in-progress | Execution Lead / 只读审查双方 | 用户要求提升为下一小批；本机运行时与Pi/AI SDK两端事实汇总后确定精确scope/独立owner，接口和第二真实消费者均必须验收。当前仅只读设计，未完成产品抽象。 |
+| FLOW-002-T09 | in-progress | Execution Lead / 只读审查双方 | R05-A本地descriptor提取47e6943已独立只读批准待集成；B中心契约准备，第二实际consumer优先Codex；Pi/AI SDK研究保留不作串行门槛。完整可替换性尚未完成。 |
 
 2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
+
+2026-10-06 08:57:11 UTC：用户新增成熟界面大方向已追溯到FLOW-002-T09与WPF-MATURE-02；Mika负责模型能力与Codex消费方，本队负责共享宿主/中心契约，Web沿唯一界面大task管理。无新增provider/auth操作。
