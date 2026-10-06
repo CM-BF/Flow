@@ -34,6 +34,7 @@ import { migrateWorkspace, registerWorkspaceRoutes } from './m2-workspace.js';
 import { registerTaskIndexRoutes } from './task-index.js';
 import { registerReconciliation } from './reconciliation-http.js';
 import { migrateProjects, registerProjectRoutes } from './projects/index.js';
+import { registerEngineeringRoutes } from './engineering/index.js';
 import { migrateProtocolDispatch, registerProtocolDispatch } from './protocol-dispatch/index.js';
 
 import { migrateGoals, registerGoalRoutes } from './goals/index.js';
@@ -151,6 +152,7 @@ export async function createServer(options: ServerOptions) {
   registerNativeActivityRoutes(app, pool);
   registerGoalContextRoutes(app, pool);
   registerExecutionProfileRoutes(app, pool);
+  registerEngineeringRoutes(app, pool);
   registerConversationQueueRoutes(app, pool, boss);
   registerConversationContextRoutes(app, pool);
   registerGoalToolRunRoutes(app, pool, boss);
