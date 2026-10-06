@@ -16,7 +16,7 @@ let url: string;
 async function start(leaseMs = 5000) {
   app = await createServer({ databaseUrl, ownerToken: 'o03-owner', leaseMs });
   await migrateGoalToolRuns(pool);
-  registerGoalToolRunRoutes(app, pool, boss);
+  if (!app.hasRoute({ method: 'POST', url: '/api/runner/goal-tools/grant' })) registerGoalToolRunRoutes(app, pool, boss);
   url = await app.listen({ host: '127.0.0.1', port: 0 });
 }
 async function stop() { await app?.close(); app = undefined; }
