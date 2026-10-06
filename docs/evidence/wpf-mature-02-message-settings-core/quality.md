@@ -20,3 +20,5 @@
 下一片设计安全点：按architecture_read/Mika意见选择v2 optional turnSettings，拒绝不必要v3迁移。列入queue手动resume、before-limit旧reader隔离、context requestedModel直接消费者；仅自有docs/plans写入，source/raw/manifest不变。首leaf main比对两源一致，未merge/retest。
 
 2026-10-06 15:44:19 UTC设计复核：复用既有精确header选择；legacy/new final严格分支，不假填disabled；SDK init观察有限且null/缺键不混为默认。canonical与PG文本bytes分离，普通/tasks复用assertTaskExecutionProfile防旁路。37 literal合法扩权后才准备源码。仅本scope文档，0新tests/PG/build/install/provider，旧raw/source未改。
+
+2026-10-06 15:47:08 UTC合同源码安全点：既有5契约源+1新直接行为test草稿，旧leaf两源不改。保留旧AssistantSettings类型与outer strict final，仅settings层union；配置optional缺键不默认填入；整profile引用/目的与已知resume检查属于公共TaskSubmission，不只conversation。新controls不宣称fixed-disabled或资格探测。6组test先写后接线，因运行门禁未开放不声称red/green，未跑类型或任意工程检查。后继server/runner source仍等待Lead闭包。

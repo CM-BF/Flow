@@ -2,15 +2,15 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:44:19 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:47:08 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core |
 | Branch | codex/claude-message-settings-core |
-| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 已核metadata HEAD e898137fb55dbe852e83202f8c16ee08ac87967d；历史source4e7、validation8c56冻结 |
-| 工作树dirty状态 | e898137fb55dbe852e83202f8c16ee08ac87967d 已核 clean且origin同；本次仅main收口/下一设计metadata |
+| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 已核metadata HEAD e898137fb55dbe852e83202f8c16ee08ac87967d；历史source4e7、validation8c56冻结；下一片5契约源+1新test草稿尚未验证 |
+| 工作树dirty状态 | e898137fb55dbe852e83202f8c16ee08ac87967d 已核 clean且origin同；本次本owner合法contracts源码与metadata草稿 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | 下一纵向 NOT_RUN；首leaf4e7b7f968a2160a60989b3b6343506ae8fb5ef6a历史5/5与strict0不重跑 |
@@ -20,7 +20,7 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 纯设置契约已进入主线；已取得接线范围，正在把冻结设置接到Claude执行入口 |
-| 下一可用交付 | 中心与队列到现adapter的消息设置纵向接线；现先contracts |
+| 下一可用交付 | 中心与队列到现adapter的消息设置纵向接线；contracts草稿已接线，0检查 |
 | 当前阻塞 | ACTIVE: 等待其余源码可见与migration编号；已可实施现有contracts |
 | 需用户决定 | NONE |
 | Review | 下一纵向NOT_STARTED；[review.md](review.md)保留首leaf4e7 APPROVED/0P1P2 |
@@ -48,3 +48,7 @@ source/raw/config 固定；[manifest与交审入口](../../docs/evidence/wpf-mat
 ## 首leaf main收口 / 下一片
 
 Lead [main receipt](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/claude-message-settings-intake.json)绑定main22d5与source4e7/metadata b342；owner独核两源Git逐字一致，未merge/retest。claim已v2共37 literal；下一片contracts准备实施，迁移仍未编号/未领取，未运行后继检查。Lead报告已登记并见实际聚合，来源时刻见上节。
+
+## 下一纵向contract checkpoint（未验证）
+
+现5个既有contract已接optional配置/请求、严格catalog、final settings层union和TaskSubmission三元/目的门禁，新增6组直接行为test源码；0tests/typecheck/PG/native，不冒充red/green或独审通过。旧leaf两源/原manifest/raw不动。额外reconciliation路径授权等待fresh amend；现19个既有server/runner源尚不可见，只有Lead可provision。新queue blocked消费者由parent协调外部owner。

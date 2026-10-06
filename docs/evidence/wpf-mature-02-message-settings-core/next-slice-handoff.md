@@ -30,7 +30,7 @@ conversation旧literal false能力字段不直接改true。新能力是 additive
 
 ## Final 与读回的严格有限结构
 
-`assistantSettingsSchema` 保留旧 strictObject 分支逐字段/顺序不变；新增互斥opt-in分支，不把新枚举塞进旧 requested。建议精确结构如下（所有对象strict，observed内字段遵循SDK0.3.290声明）：
+`assistantSettingsSchema` 与 `AssistantSettings` 保留原名/旧strictObject逐字段/顺序不变，避免既有类型索引变坏。新增 `claudeAssistantSettingsSchema` union仅用于final/read的settings层，Claude final外层仍strictObject以保留runner.ts的.extend(envelope)。新增互斥opt-in分支，不把新枚举塞进旧 requested。建议精确结构如下（所有对象strict，observed内字段遵循SDK0.3.290声明）：
 
 ```ts
 type MessageSettingsFinal = {
@@ -61,13 +61,13 @@ center在现session/source/fence验证后，按task.submission.messageSettings�
 
 ## 所有任务入口与旧任务边界
 
-TaskSubmission schema在messageSettings存在时要求harness=claude、明确executionProfile且三元逐字段相等，拒绝fixture/protocol/engineering同时出现；resume的not-requested不确定组合另拒绝。`assertTaskExecutionProfile`在既有execution-profiles/store.ts消费可信profile做整组合/互斥/请求存在校验；普通tasks.acceptTask、conversation prepareTurnAdmission以及claim均已有此调用，复用它覆盖直POST /tasks，不能仅conversation校验。新共用pure校验不得反向import store形成循环。
+TaskSubmission schema在messageSettings存在时要求harness=claude、明确executionProfile且三元逐字段相等，拒绝fixture/protocol/engineering同时出现；resume的not-requested不确定组合另拒绝。`assertTaskExecutionProfile`在既有execution-profiles/store.ts消费可信profile做整组合/互斥/请求存在校验；普通tasks.acceptTask、conversation prepareTurnAdmission以及claim均已有此调用，复用它覆盖直POST /tasks，不能仅conversation校验。另retryReconciled在recoverySubmission后直接INSERT绕过受理helper：须在command callback且幂等命中之后、INSERT之前仅对messageSettings ordinary项调用同一assert；失败整笔回滚且不产生task/audit/wake，旧goal/engineering行为不扩改。原spread自然保留snapshot/profile并移除resume，不另造复制/恢复FSM。该额外literal已获parent授权、等待同后续DDL编号的fresh amend。新共用pure校验不得反向import store形成循环。
 
 opt-in runner必须拒绝无profile或无完整snapshot的任务，query调用数为0；不让legacy unpinned任务隐式继承新model/thinking/fast。旧runner/profile对无snapshot维持原行为，对带snapshot拒绝；不会把新属性丢弃后当旧任务继续。新profile是新的immutable配置/runner身份，旧session不会热切到它；在同一个新opt-in session后续消息可选择可信整组合，并各自冻结。
 
 ## DDL 字节口径
 
-1024B只在TS leaf按解析后固定顺序 `JSON.stringify` 的UTF8字节计算；写入、promotion与读回均走该schema。PostgreSQL `jsonb::text`会增加格式空白且改变键序，binary/pg_column_size又是另一口径，均不得沿用1024阈值。DDL采用nullable+对象/版本/固定形状约束，并可用单独粗限额 `octet_length(convert_to(message_settings::text,'UTF8')) <= 4096` 防止异常DB值；该值名义是PG文本表示上界，不是canonical/physical/wire长度。合法snapshot只含有限固定键、180字节ASCII model与固定UUID/hex/枚举，格式空白上界远小于额外3072B，因此不误拒leaf合法输入；精确canonical校验仍由leaf负责。SQL NULL只代表旧行；新opt-in缺值由中心拒绝；JSON null不当合法snapshot。task JSONB的新key同样作该窄约束与不可变保护，不改历史其他key，不写K02摘要。
+1024B只在TS leaf按解析后固定顺序 `JSON.stringify` 的UTF8字节计算；写入、promotion与读回均走该schema。PostgreSQL `jsonb::text`会增加格式空白且改变键序，binary/pg_column_size又是另一口径，均不得沿用1024阈值。DDL采用nullable+对象/版本/固定形状约束，并可用单独粗限额 `octet_length(convert_to(message_settings::text,'UTF8')) <= 4096` 防止异常DB值；该值名义是PG文本表示上界，不是canonical/physical/wire长度。SQL CHECK必须把内部required-key/类型/版本谓词包为 `(...) IS TRUE`（或显式COALESCE false），禁止缺key/JSON null经SQL NULL让CHECK通过；SQL NULL旧行是唯一外层允许分支。合法snapshot只含有限固定键、180字节ASCII model与固定UUID/hex/枚举，格式空白上界远小于额外3072B，因此不误拒leaf合法输入；精确canonical校验仍由leaf负责。SQL NULL只代表旧行；新opt-in缺值由中心拒绝；JSON null不当合法snapshot。task JSONB的新key同样作该窄约束与不可变保护，不改历史其他key，不写K02摘要。
 
 ## 精确 source-only closure / writer 候选
 
@@ -91,7 +91,7 @@ migration精确文件名须 Lead 分配后才入claim，拟 `packages/storage/mi
 
 ## 共享 owner 协作
 
-parent 15:40:52 fresh账本F01 v40仍持 `packages/client/src/index.ts`、`packages/client/src/conversation-acknowledgement.ts`、其ACK/queue/profile tests、`packages/contracts/src/index.ts`、`apps/server/src/index.ts`。请求F01 own薄接线：export、复用ACK matcher、可选read selector、migration-before-admission/queue-worker及必要client1个直接旅程。不借core claim越权。
+parent 15:40:52 fresh账本F01 v40仍持 `packages/client/src/index.ts`、`packages/client/src/conversation-acknowledgement.ts`、其ACK/queue/profile tests、`packages/contracts/src/index.ts`、`apps/server/src/index.ts`。请求F01 own薄接线：export、复用ACK matcher、可选read selector、migration-before-admission/queue-worker及必要client1个直接旅程。新增queue blocked值还有外部精确消费者 `packages/interaction/src/queue-control/index.ts` 与 `apps/web/src/conversations/queue/projection.ts`，旧enum会拒整页，parent协调其owner/test接线；未接收前不能宣称产品公开可用。不借core claim越权。
 
 02已完成四profile路径partial handback，parent v6只留三管理scope；receipt位于父tree docs/evidence/wpf-mature-02/claude-core-profile-handback-receipt.json。parent 15:40:52查R05现列三路径无active占用，但实施前仍fresh核。context-store原由SVC05H01 cd2d2e57 v1/assignment_review占用；parent15:42:54.623Z已核其v2只留管理scope，/tmp/flow-svc05h01-source-handoff-receipt.json确认交回。`apps/server/src/context-transparency/store.ts`已合法纳入core v2，`apps/server/src/context-transparency/attachment-history.test.ts`仅readonly。必须保留当前main/base已有templateVersion2材料unknown的三行修复，不引入旧362候选。不改runtime/harness宿主/NativeExecutionError生命周期。没有索取原诊断目录/私人配置/付费资格。
 
@@ -99,9 +99,11 @@ parent 15:40:52 fresh账本F01 v40仍持 `packages/client/src/index.ts`、`packa
 
 1. pure契约：旧configuration canonical逐字、显式opt-in互斥、整tuple/身份、缺值与not-requested语义、new final严格schema。
 2. 注入SDK adapter：同一nativeSession两次完整请求不同model/effort/speed，每次Options精确；init别名/实际model、null/缺effort、cooldown分别观察；resume not-requested在query前拒绝，0native spawn。
-3. 独占专库HTTP：send A/queue B后改变草稿C，task/queue/turn/ACK仍各冻结；同key回放/异body409、CAS回滚；自动和手动promotion一致；旧行升级不变、SQL-before-limit与sentinel；final不同snapshot拒绝及context requestedModel取task。
+3. 独占专库HTTP：send A/queue B后改变草稿C，task/queue/turn/ACK仍各冻结；同key回放/异body409、CAS回滚；真实resolve→retry snapshot/profile保留且resume移除、同幂等重放与校验拒绝回滚；自动和手动promotion一致；旧行升级不变、SQL-before-limit与sentinel；final不同snapshot拒绝及context requestedModel取task。
 4. 保留既有直接消费者必要覆盖，不跑全库/容量；真实PG/HTTP须root资源/串行门禁，不因本设计获得运行许可。当前没有新PG/test/build/install；root 15:31:45 F01资源gate未过且0PG不涉及本片回归。
 
 目前37 literal已合法领取；剩余条件是Lead source-only closure、F01独立薄合作、唯一migration编号，以及后续实际验证资源门禁；没有新的GO审批要求。
 
 2026-10-06 15:44:19 UTC安全点：selector/final/bytes/task入口设计收紧；既有源25项逐Git与base70cc一致，context附件v2保护也两端存在。后继设计独审反馈与source实现批准分开，首leaf原manifest/raw不变。
+
+验证副作用边界：旧conversation-queue/queue.test.ts会写他task的chat04/latest资源证据，当前只读closure不授权其运行写入。优先本片唯一私有fixture覆盖所需legacy/队列/recovery行为；不原样运行旧fixture或悄改输出。

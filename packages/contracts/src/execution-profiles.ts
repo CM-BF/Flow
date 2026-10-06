@@ -1,8 +1,13 @@
 import { z } from 'zod';
+import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeTurnSettingsChoicesSchema } from './claude-turn-settings.js';
 
 export const EXECUTION_PROFILE_HEADER = 'X-Flow-Execution-Profile';
 export const EXECUTION_PROFILE_STEERING_VERSION = 'steering-v1';
 export const ACTIVE_STEERING_PROTOCOL = 'flow.active-steering.v1';
+
+export const claudeTurnSettingsConfigurationSchema = z.strictObject({
+  protocol: z.literal(CLAUDE_TURN_SETTINGS_PROTOCOL), choices: claudeTurnSettingsChoicesSchema,
+});
 
 const digest = z.string().regex(/^[a-f0-9]{64}$/);
 // The public catalog carries model identifiers, never arbitrary paths, prompts or settings text.
@@ -21,8 +26,13 @@ export const executionProfileConfigurationSchema = z.strictObject({
   materialScopeDigest: digest,
   // Absent preserves the original configuration bytes and means steering unsupported.
   activeSteering: z.strictObject({ protocol: z.literal(ACTIVE_STEERING_PROTOCOL) }).optional(),
+  // Omission preserves legacy bytes. The finite choices are configured policy, never a model probe.
+  turnSettings: claudeTurnSettingsConfigurationSchema.optional(),
   limits: z.strictObject({ maxTurns: z.number().int().min(1).max(4), maxBudgetUsd: z.number().positive().max(1), timeoutMs: z.number().int().min(1).max(90_000) }),
 }).superRefine((profile, context) => {
+  if (profile.turnSettings && (profile.activeSteering || !['none', 'configured-readonly'].includes(profile.access))) {
+    context.addIssue({ code: 'custom', message: 'Message settings require an ordinary Claude profile without active steering or goal tools.' });
+  }
   if (profile.activeSteering && !['none', 'configured-readonly'].includes(profile.access)) {
     context.addIssue({ code: 'custom', message: 'Active steering is limited to ordinary Claude execution profiles.' });
   }
@@ -76,7 +86,7 @@ export interface CodexExecutionProfile extends Omit<ExecutionProfile, 'configura
   configuration: CodexExecutionProfileConfiguration;
   controls: { model: 'select-configured-profile'; thinking: 'unsupported'; effort: 'configured-request'; serviceTier: 'configured-request'; access: 'requested-none'; queue: false; steer: false };
 }
-export type NativeExecutionProfile = ExecutionProfile | CodexExecutionProfile;
+export type NativeExecutionProfile = ExecutionProfile | CodexExecutionProfile | ClaudeMessageSettingsExecutionProfile;
 export interface NativeExecutionProfilePublished { profile: NativeExecutionProfile; replayed: boolean }
 
 /** Opt-in read protocol. This catalog reports configured intent, never provider readiness. */
@@ -107,6 +117,9 @@ const catalogConversationSchema = z.discriminatedUnion('state', [
 export const nativeExecutionProfileCatalogEntrySchema = z.strictObject({ profile: catalogProfileSchema, conversation: catalogConversationSchema })
   .superRefine(({ profile, conversation }, context) => {
     const configuration = profile.configuration;
+    if (configuration.harness === 'claude' && configuration.turnSettings) {
+      context.addIssue({ code: 'custom', message: 'Message settings require their explicit catalog protocol.' });
+    }
     const reason = configuration.harness === 'codex' ? 'codex-conversation-unimplemented'
       : configuration.access === 'goal-tools' || configuration.access === 'goal-graph-tools' ? 'profile-purpose-not-supported' : null;
     if (reason ? conversation.state !== 'unsupported' || conversation.reason !== reason : conversation.state !== 'existing-claude-contract') {
@@ -128,3 +141,31 @@ export const nativeExecutionProfileCatalogPageSchema = z.strictObject({
   }
 });
 export type NativeExecutionProfileCatalogPage = z.infer<typeof nativeExecutionProfileCatalogPageSchema>;
+
+/** Same GET path and header, with an exact version opt-in. Old readers cannot decode this entry. */
+export const claudeMessageSettingsCatalogEntrySchema = z.strictObject({
+  profile: z.strictObject({
+    ...catalogCommon,
+    configuration: executionProfileConfigurationSchema.refine(value => value.turnSettings !== undefined, 'A message settings profile must opt in'),
+    controls: z.strictObject({
+      access: z.literal('configured-policy'), queue: z.literal(false), steer: z.literal(false),
+      messageSettings: z.strictObject({ protocol: z.literal(CLAUDE_TURN_SETTINGS_PROTOCOL), choices: z.literal('configuration.turnSettings.choices') }),
+    }),
+  }),
+  conversation: z.strictObject({ state: z.literal('existing-claude-contract'), capabilitySource: z.literal('conversation-response') }),
+}).superRefine(({ profile }, context) => {
+  if (profile.model.value !== profile.configuration.model) context.addIssue({ code: 'custom', message: 'Catalog model must match configured intent.' });
+});
+export type ClaudeMessageSettingsCatalogEntry = z.infer<typeof claudeMessageSettingsCatalogEntrySchema>;
+export type ClaudeMessageSettingsExecutionProfile = ClaudeMessageSettingsCatalogEntry['profile'];
+export const claudeMessageSettingsCatalogPageSchema = z.strictObject({
+  protocol: z.literal(CLAUDE_TURN_SETTINGS_PROTOCOL),
+  profiles: z.array(claudeMessageSettingsCatalogEntrySchema).max(100),
+  nextCursor: executionProfileReferenceSchema.shape.id.nullable(),
+}).superRefine((page, context) => {
+  const ids = page.profiles.map(entry => entry.profile.reference.id);
+  if (new Set(ids).size !== ids.length || page.nextCursor !== null && page.nextCursor !== ids.at(-1)) {
+    context.addIssue({ code: 'custom', message: 'Invalid catalog page identity or cursor.' });
+  }
+});
+export type ClaudeMessageSettingsCatalogPage = z.infer<typeof claudeMessageSettingsCatalogPageSchema>;

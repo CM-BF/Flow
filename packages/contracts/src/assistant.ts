@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { claudeTurnSettingsSchema } from './claude-turn-settings.js';
 import { idSchema, MAX_DETAIL_BYTES, type Reference } from './tasks.js';
 
 const model = z.string().min(1).max(180);
@@ -10,6 +11,23 @@ export const assistantSettingsSchema = z.strictObject({
   // Only init-reported values are effective facts. The SDK does not attest effective thinking.
   effective: z.strictObject({ model: model.nullable(), permissionMode: z.string().min(1).max(180).nullable(), tools: z.array(z.string().min(1).max(200)).max(100).nullable(), thinking: z.literal('unknown') }),
 });
+/** Latest matching init from this query, not proof of the controls used throughout the turn. */
+export const claudeMessageSettingsFinalSchema = z.strictObject({
+  snapshot: claudeTurnSettingsSchema,
+  observed: z.strictObject({
+    source: z.literal('claude.sdk.system.init'), model,
+    effort: z.enum(['low', 'medium', 'high', 'xhigh', 'max']).nullable().optional(),
+    fastModeState: z.enum(['off', 'cooldown', 'on']).optional(),
+    fastModeDisabledReason: z.enum(['free', 'preference', 'extra_usage_disabled', 'network_error', 'unknown',
+      'not_first_party', 'disabled_by_env', 'model_not_allowed', 'sdk_opt_in_required', 'pending']).optional(),
+  }).nullable(),
+}).refine(value => new TextEncoder().encode(JSON.stringify(value)).byteLength <= 2048, 'Message settings observations exceed the canonical JSON byte limit');
+export type ClaudeMessageSettingsFinal = z.infer<typeof claudeMessageSettingsFinalSchema>;
+// Keep the legacy codec/type intact. New finals never fabricate its disabled-only requested field.
+export const claudeAssistantSettingsSchema = z.union([assistantSettingsSchema, z.strictObject({
+  effective: assistantSettingsSchema.shape.effective, messageSettings: claudeMessageSettingsFinalSchema,
+})]);
+export type ClaudeAssistantSettings = z.infer<typeof claudeAssistantSettingsSchema>;
 const nativeId = idSchema.refine(value => new TextEncoder().encode(value).byteLength <= 128, 'Native identity exceeds byte limit');
 export const codexSourceIdentitySchema = z.strictObject({ turnId: nativeId, itemId: nativeId });
 export type CodexSourceIdentity = z.infer<typeof codexSourceIdentitySchema>;
@@ -22,10 +40,10 @@ export const codexAssistantSettingsSchema = z.strictObject({
 });
 export type CodexAssistantSettings = z.infer<typeof codexAssistantSettingsSchema>;
 export type AssistantSettings = z.infer<typeof assistantSettingsSchema>;
-export type NativeAssistantSettings = AssistantSettings | CodexAssistantSettings;
+export type NativeAssistantSettings = ClaudeAssistantSettings | CodexAssistantSettings;
 export const claudeAssistantFinalDataSchema = z.strictObject({
   type: z.literal('assistant-final'), messageId: digest, nativeSessionId: idSchema,
-  source: z.literal('claude.sdk.result'), sourceMessageId: idSchema, content, settings: assistantSettingsSchema,
+  source: z.literal('claude.sdk.result'), sourceMessageId: idSchema, content, settings: claudeAssistantSettingsSchema,
 });
 export const codexAssistantFinalDataSchema = z.strictObject({
   type: z.literal('assistant-final'), messageId: digest, nativeSessionId: nativeId,
@@ -42,6 +60,6 @@ interface MessageReference {
 export type ClaudeAssistantMessageReference = MessageReference & { source: 'claude.sdk.result' };
 export type CodexAssistantMessageReference = MessageReference & { source: typeof CODEX_ASSISTANT_SOURCE; nativeSourceIdentity: CodexSourceIdentity };
 export type AssistantMessageReference = ClaudeAssistantMessageReference | CodexAssistantMessageReference;
-export type AssistantMessage = (ClaudeAssistantMessageReference & { content: string; settings: AssistantSettings })
+export type AssistantMessage = (ClaudeAssistantMessageReference & { content: string; settings: ClaudeAssistantSettings })
   | (CodexAssistantMessageReference & { content: string; settings: CodexAssistantSettings });
 export interface AssistantMessagePage { messages: AssistantMessageReference[]; nextCursor: string | null }
