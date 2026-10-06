@@ -1,6 +1,7 @@
-import { afterAll, beforeAll, expect, it } from 'vitest';
+import { afterAll, beforeAll, expect, it, vi } from 'vitest';
 import { randomUUID } from 'node:crypto';
 import { startGoalContextFixture } from './fixture.js';
+import { loadState } from '../goals/state.js';
 import { transaction } from '../database.js';
 import { acceptTask } from '../tasks.js';
 import { bindGoalExecutionInput, copyGoalRecoveryInput, goalExecutionInputForTask } from './store.js';
@@ -86,4 +87,67 @@ it('rolls back task and input allocation on private budget failure and rejects d
   const runner = (await f.http('/api/runners', { name: 'Context role', harnesses: ['fixture'], capacity: 1 })).body;
   expect((await f.http(s.detailPath, undefined, { token: runner.token })).status).toBe(403);
   expect((await f.http(s.detailPath, undefined, { token: '' })).status).toBe(401);
+});
+const execution = (nodeId: string, version = 1, previousExecutionId: string | null = null) => ({ kind: 'execute', nodeId, expectedInputVersion: version, dependencies: [], previousExecutionId, reason: 'Owner execution', fixture: { scenario: 'success', delayMs: 0 } });
+it('binds owner execution and blocks new work after any source version change including equal content', async () => {
+  const s = await defined();
+  const accepted = await f.http(`/api/goals/${s.goalId}/commands`, execution(s.nodeId)); expect(accepted.status).toBe(200);
+  const publicTask = (await f.http(`/api/tasks/${accepted.body.task.id}`)).body;
+  expect(publicTask.prompt).not.toContain('Private Ω');
+  const privateInput = await transaction(f.pool, client => goalExecutionInputForTask(client, publicTask.id, publicTask.prompt));
+  expect(privateInput).not.toBeNull();
+  expect((await f.http(`/api/goals/${s.goalId}`)).body.nodes[0]).toMatchObject({ knowledgeCurrent: true, knowledgeReferenceCount: 1 });
+  await f.http(`/api/projects/${s.projectId}/knowledge/sources/${s.citation.sourceId}/versions`, { expectedVersion: 1, text: s.text });
+  expect((await f.http(`/api/goals/${s.goalId}`)).body.nodes[0]).toMatchObject({ knowledgeCurrent: false, knowledgeReferenceCount: 1 });
+  const blocked = await f.http(`/api/goals/${s.goalId}/commands`, execution(s.nodeId, 1, accepted.body.executionId));
+  expect(blocked.body.error.code).toBe('goal_knowledge_obsolete');
+  expect(await transaction(f.pool, client => goalExecutionInputForTask(client, publicTask.id, publicTask.prompt))).toEqual(privateInput);
+});
+it('rejects safe JavaScript integers outside the PostgreSQL input-version range before querying', async () => {
+  for (const version of ['2147483648', '9007199254740991']) {
+    const result = await f.http(`/api/goals/${randomUUID()}/nodes/${randomUUID()}/inputs/${version}/context`);
+    expect(result.status).toBe(400); expect(result.body.error.code).toBe('invalid_goal_context');
+  }
+});
+
+it('uses one bounded source-head query for referenced definitions and no new context reads for plain definitions', async () => {
+  const s = await setup();
+  await transaction(f.pool, async client => {
+    const spy = vi.spyOn(client, 'query');
+    try { await loadState(client, s.goalId); expect(spy.mock.calls.filter(([sql]) => typeof sql === 'string' && /knowledge_sources|goal_contexts|goal_execution_inputs/.test(sql))).toHaveLength(0); }
+    finally { spy.mockRestore(); }
+  });
+  expect((await f.http(`/api/goals/${s.goalId}/commands`, s.command)).status).toBe(200);
+  await transaction(f.pool, async client => {
+    const spy = vi.spyOn(client, 'query');
+    try {
+      await loadState(client, s.goalId);
+      const heads = spy.mock.calls.filter(([sql]) => typeof sql === 'string' && sql.includes('flow.knowledge_sources'));
+      expect(heads).toHaveLength(1); expect(heads[0]![0]).toBe('SELECT id,current_version FROM flow.knowledge_sources WHERE project_id=$1 AND id=ANY($2::uuid[])');
+      expect(spy.mock.calls.filter(([sql]) => typeof sql === 'string' && /goal_contexts|goal_execution_inputs/.test(sql))).toHaveLength(0);
+    } finally { spy.mockRestore(); }
+  });
+});
+it('retains exact control characters within the real JSON detail budget and rolls back failed context insertion', async () => {
+  const s = await setup('\u0001'.repeat(4096));
+  const second = await f.http(`/api/projects/${s.projectId}/knowledge/sources`, { expectedVersion: 0, title: 'Second escaped source', text: '\u0002'.repeat(4096) });
+  const ref = { ...s.citation, sourceId: second.body.source.id, contentDigest: second.body.version.contentDigest };
+  const define = { ...s.command, input: { ...s.command.input, knowledge: [s.citation, ref] } };
+  await f.pool.query("CREATE FUNCTION flow.k03_fail_context() RETURNS trigger LANGUAGE plpgsql AS $$ BEGIN RAISE EXCEPTION 'Own fixture context insert failure'; END $$; CREATE TRIGGER k03_fail_context BEFORE INSERT ON flow.goal_contexts FOR EACH ROW EXECUTE FUNCTION flow.k03_fail_context()");
+  try { expect((await f.http(`/api/goals/${s.goalId}/commands`, define)).status).toBe(500); }
+  finally { await f.pool.query('DROP TRIGGER k03_fail_context ON flow.goal_contexts; DROP FUNCTION flow.k03_fail_context()'); }
+  expect((await f.pool.query('SELECT count(*) FROM flow.goal_inputs WHERE goal_id=$1', [s.goalId])).rows[0].count).toBe('0');
+  expect((await f.http(`/api/goals/${s.goalId}/commands`, define)).status).toBe(200);
+  const detail = await f.http(s.detailPath); expect(detail.body.rawBytes).toBe(8192); expect(detail.httpUtf8Bytes).toBeGreaterThan(49152); expect(detail.httpUtf8Bytes).toBeLessThanOrEqual(65536);
+  expect(detail.body.sources.map((item: { text: string }) => item.text)).toEqual(['\u0001'.repeat(4096), '\u0002'.repeat(4096)]);
+});
+
+it('freezes an explicitly selected old version without substituting the current source head', async () => {
+  const s = await setup('Explicitly selected old bytes');
+  expect((await f.http(`/api/projects/${s.projectId}/knowledge/sources/${s.citation.sourceId}/versions`, { expectedVersion: 1, text: 'New current bytes' })).status).toBe(201);
+  expect((await f.http(`/api/goals/${s.goalId}/commands`, s.command)).status).toBe(200);
+  const detail = await f.http(s.detailPath);
+  expect(detail.body.sources[0]).toMatchObject({ citation: s.citation, text: s.text, currentVersionAtFreeze: 2, isCurrentAtFreeze: false, currentVersion: 2, isCurrent: false });
+  const blocked = await f.http(`/api/goals/${s.goalId}/commands`, execution(s.nodeId)); expect(blocked.body.error.code).toBe('goal_knowledge_obsolete');
+  expect((await f.pool.query('SELECT count(*) FROM flow.goal_executions WHERE goal_id=$1', [s.goalId])).rows[0].count).toBe('0');
 });

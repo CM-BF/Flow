@@ -1,5 +1,6 @@
 import { normalizeGoalInput } from '../goal-context/input.js';
-import { freezeGoalContext } from '../goal-context/store.js';
+import { knowledgeCurrent } from '../goal-context/freshness.js';
+import { freezeGoalContext, bindGoalExecutionInput } from '../goal-context/store.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
@@ -28,8 +29,8 @@ export async function changeGoal(pool: Pool, boss: PgBoss, goalId: string, input
   return { ...accepted.value, replayed: accepted.replayed };
 }
 /** Apply within the caller's transaction; authorization and command replay are caller-owned. */
-export async function applyGoalCommand(client: PoolClient, boss: PgBoss, goalId: string, input: GoalCommand): Promise<Result> {
-  const state = await loadState(client, goalId, true);
+export async function applyGoalCommand(client: PoolClient, boss: PgBoss, goalId: string, input: GoalCommand, authorizedState?: GoalState): Promise<Result> {
+  const state = authorizedState ?? await loadState(client, goalId, true);
   requireNode(state, input.nodeId);
   if (input.kind === 'define-input') return defineInput(client, state, input);
   if (input.kind === 'execute') return execute(client, boss, state, input);
@@ -61,6 +62,7 @@ async function defineInput(client: PoolClient, state: GoalState, input: Extract<
 async function execute(client: PoolClient, boss: PgBoss, state: GoalState, input: Extract<GoalCommand, { kind: 'execute' }>): Promise<Result> {
   const definition = state.inputs.get(input.nodeId);
   if (!definition || definition.version !== input.expectedInputVersion) throw new HttpError(409, 'input_version', 'Execution requires the current actual input version.');
+  if (!knowledgeCurrent(definition.input, state.goal.projectId, state.knowledgeHeads)) throw new HttpError(409, 'goal_knowledge_obsolete', 'Selected knowledge has changed; redefine the input with current references.');
   const dependencies = currentDeliveries(state).dependencies(input.nodeId);
   if (dependencies === null || !equalBindings(dependencies, input.dependencies)) throw new HttpError(409, 'dependency_version', 'Execution requires the exact current verified dependencies.');
   await requirePreviousStopped(client, state, input);
@@ -69,6 +71,7 @@ async function execute(client: PoolClient, boss: PgBoss, state: GoalState, input
   if (prompt.length > 16_000) throw new HttpError(409, 'input_too_large', 'Actual inputs exceed the task prompt limit; no context was truncated.');
   const taskInput = taskSubmissionSchema.parse({ title: requireNode(state, input.nodeId).title, prompt, harness: 'fixture', fixture: input.fixture, verification: definition.input.verification });
   const task = await acceptTask(client, boss, taskInput);
+  if (definition.input.knowledge?.length) await bindGoalExecutionInput(client, task.id, state.goal.id, input.nodeId, definition.version, prompt);
   const id = randomUUID();
   await client.query('INSERT INTO flow.goal_executions(id,goal_id,node_id,task_id,input_version,dependencies,project_revision) VALUES($1,$2,$3,$4,$5,$6,$7)', [id, state.goal.id, input.nodeId, task.id, definition.version, JSON.stringify(sortBindings(dependencies)), state.project.project.revision]);
   await client.query('UPDATE flow.goal_nodes SET latest_execution_id=$3 WHERE goal_id=$1 AND node_id=$2', [state.goal.id, input.nodeId, id]);

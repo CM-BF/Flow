@@ -18,7 +18,7 @@ export async function migrateGoalContext(pool: Pool): Promise<void> {
 export function registerGoalContextRoutes(app: FastifyInstance, pool: Pool): void {
   app.get<{ Params: { goalId: string; nodeId: string; version: string } }>('/api/goals/:goalId/nodes/:nodeId/inputs/:version/context', request => {
     const { goalId, nodeId, version } = request.params;
-    if (!idSchema.safeParse(goalId).success || !idSchema.safeParse(nodeId).success || !/^[1-9][0-9]*$/.test(version) || !Number.isSafeInteger(Number(version))) throw new HttpError(400, 'invalid_goal_context', 'Invalid goal input reference.');
+    if (!idSchema.safeParse(goalId).success || !idSchema.safeParse(nodeId).success || !/^[1-9][0-9]*$/.test(version) || !Number.isSafeInteger(Number(version)) || Number(version) > 2147483647) throw new HttpError(400, 'invalid_goal_context', 'Invalid goal input reference.');
     return goalContextDetail(pool, goalId, nodeId, Number(version));
   });
 }

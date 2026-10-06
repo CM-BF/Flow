@@ -8,7 +8,7 @@ import { createServer } from '../index.js';
 import { migrateConversationContext, registerConversationContextRoutes } from '../conversation-context/index.js';
 import { migrateGoalContext, registerGoalContextRoutes } from './index.js';
 
-export async function startGoalContextFixture(label: string) {
+export async function startGoalContextFixture(label: string, leaseMs = 30_000) {
   assert.match(label, /^[a-z-]+$/);
   const startedAt = new Date().toISOString();
   const databaseName = 'flow_k03_' + process.pid + '_' + randomUUID().slice(0, 8);
@@ -18,7 +18,7 @@ export async function startGoalContextFixture(label: string) {
   const ownerToken = randomUUID();
   let created = false; let boss: PgBoss | undefined; let pool: Pool | undefined; let app: Awaited<ReturnType<typeof createServer>> | undefined; let base = '';
   async function startServer() {
-    app = await createServer({ databaseUrl: databaseUrl.href, ownerToken, automaticQueueScan: false });
+    app = await createServer({ databaseUrl: databaseUrl.href, ownerToken, automaticQueueScan: false, leaseMs });
     await migrateConversationContext(pool!);
     if (!app.hasRoute({ method: 'GET', url: '/api/conversations/:conversationId/contexts/:contextId' })) registerConversationContextRoutes(app, pool!);
     await migrateGoalContext(pool!);

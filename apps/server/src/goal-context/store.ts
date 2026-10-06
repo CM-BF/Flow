@@ -100,3 +100,13 @@ export async function goalContextDetail(pool: Pool, goalId: string, nodeId: stri
     return result;
   }, true);
 }
+/** Metadata-only batch for existing goal execution projections. Call only for inputs with references. */
+export async function goalExecutionReferences(client: PoolClient, taskIds: string[]): Promise<Map<string, GoalExecutionContextReference>> {
+  const ids = [...new Set(taskIds)];
+  if (!ids.length) return new Map();
+  if (ids.length > 400) throw invalid();
+  const rows = (await client.query<{ task_id: string; id: string; context_digest: string; reference_count: number; raw_bytes: number; input_id: string; execution_input_digest: string; template_version: 1 }>(`SELECT t.id AS task_id,c.id,c.context_digest,jsonb_array_length(c.sources) AS reference_count,c.raw_bytes,i.id AS input_id,i.execution_input_digest,i.template_version
+    FROM flow.tasks t JOIN flow.goal_execution_inputs i ON i.id=t.goal_input_id JOIN flow.goal_contexts c ON c.id=i.context_id WHERE t.id=ANY($1::text[])`, [ids])).rows;
+  if (rows.length !== ids.length) throw invalid();
+  return new Map(rows.map(row => [row.task_id, { id: row.id, contextDigest: row.context_digest, referenceCount: row.reference_count, rawBytes: row.raw_bytes, executionInputId: row.input_id, executionInputDigest: row.execution_input_digest, templateVersion: row.template_version }]));
+}

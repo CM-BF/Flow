@@ -5,7 +5,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 const [label, ...args] = process.argv.slice(2);
 if (!label || !/^[a-z-]+$/.test(label) || !args.length) throw new Error('Usage: check.mjs label command args');
 const startedAt = new Date().toISOString();
-const receipt = JSON.parse(await readFile('docs/evidence/k03/reconciliation-handoff-receipt.json', 'utf8'));
+const receipt = JSON.parse(await readFile('docs/evidence/k03/runner-handoff-receipt.json', 'utf8'));
 const paths = [...new Set(execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '--', ...receipt.claim.scope], { encoding: 'utf8' }).trim().split('\n'))].filter(path => /\.(?:ts|sql|mjs)$/.test(path)).sort();
 const sourceFiles = await Promise.all(paths.map(async path => ({ path, sha256: createHash('sha256').update(await readFile(path)).digest('hex') })));
 const log = createWriteStream(`docs/evidence/k03/${label}.log`);
