@@ -15,14 +15,14 @@
 | 工作分支状态 | completed |
 | 检查状态 | PASSED 7150d6ee9e1e36b69994da1977aa980139f3458f；实际公共HTTP/PG1/1、types0，0provider，原领域不重跑 |
 | 已集成main状态 / HEAD | 98e规划列表与O13领域已main5dbabadc7dda02da558f48505677eddbc9c83fb5并推送；个人runtime362/v15不变 |
-| Review | NOT_STARTED 7150d6ee9e1e36b69994da1977aa980139f3458f；共享factory与直接consumer限定；domain/client各自已审 |
+| Review | APPROVED 7150d6ee9e1e36b69994da1977aa980139f3458f；assignment_review限定production，domain/client各自已审 |
 | 实现目标 | 7150d6ee9e1e36b69994da1977aa980139f3458f |
 | 实现范围 | apps/server/src/index.ts, packages/client/src/usage-readout-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 用量说明已接通公开中心，并验证缓存分项、授权与重启后仍可读取。 |
-| 下一可用交付 | 完成接线独立审查后，让各端使用同一用量读口。 |
+| 下一可用交付 | 将已审公共用量说明发布到主线。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 

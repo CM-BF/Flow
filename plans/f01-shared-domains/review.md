@@ -311,3 +311,8 @@ APPROVED — assignment_review / gpt-6-astra 2026-10-06T14:13:36.619200Z 独立�
 Review target commit: 7150d6ee9e1e36b69994da1977aa980139f3458f
 
 NOT_STARTED — 两file生产挂载与直接消费者，已审领域27d4五源零diff/薄clientfb0独审；1/1实际PG+HTTP、types0、单库正常清理，0provider。
+
+
+Review target commit: 7150d6ee9e1e36b69994da1977aa980139f3458f
+
+APPROVED — assignment_review / gpt-6-astra 2026-10-06 14:26 UTC，2source/3raw/5已审domain输入十项固定/working同源，完整factory/auth及真实HTTP/PG消费者核实，无P1/P2。原1/1、1913B、replay/restart/legacy/auth/no-store与专库正常清理成立；0 reviewer tests/PG/provider，不扩UI/计费/预算。见[独审回执](../../docs/evidence/f01/usage-readout-production-independent-review.json)。
