@@ -2,23 +2,23 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:21 UTC / 接收前main77c420c |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:40 UTC / 接收前main80ba95ad70cdf724251be4d88130b6bac56d3606 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 77c420cf9ee5de0291ea93014b6ea11aead6fab5 / 本批有界Codex通信与新目标文档 |
-| 工作树dirty状态 | 本批固定输入已合入，集成证据待提交 |
+| 工作基线 / HEAD | 80ba95ad70cdf724251be4d88130b6bac56d3606 / 本批已审视觉与未知执行边界 |
+| 工作树dirty状态 | 固定源码比对及root/Web类型检查通过；本次记录随后提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；R06七源码逐字等于独审target，root类型检查exit0；registry114来源/三新源parser errors[]，0provider |
-| 已集成main状态 / HEAD | 前批main77c420c含已审补充指令控件；本批R06与TUI/COST计划待发布。个人backend/static仍b1c、accepting v12，不随main更新。 |
+| 检查状态 | PASSED；视觉7源/C0 3源均与独审target逐字一致，root/Web类型检查exit0；117源实际可见，0provider |
+| 已集成main状态 / HEAD | main80ba95已含R05B中心接线与ENG计划；本批视觉/C0待本次fast-forward发布。个人backend/static仍b1c、accepting v12，不随main更新。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 补充指令控件已接收；新的执行工具通信模块已审，终端客户端开始实施。 |
+| 当前产出 | 新的视觉主题与未知执行保护已审接收；终端基础会话片段进入审查。 |
 | 下一可用交付 | 接通Codex普通任务及可发送、恢复会话的终端首片。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -105,3 +105,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 08:58:18 UTC：本批[R05-A与首次fit固定对照](../../docs/evidence/i02/native-harness-fit-integration.json)18项全一致，根类型检查exit0；复用作者42局部检查及Web已有五组浏览器/独立可视审查，不重复工程矩阵。SVC03实际窗口已关闭，后端与静态产物固定b1c/v12，后继main不改变其运行版本。
 
 2026-10-06 09:10:33 UTC：[补充指令独立模块组合](../../docs/evidence/i02/steering-module-integration.json)六源码与Web独审target/manifest逐字一致，当前Web类型检查exit0。未重复33/浏览器、未挂App或启个人steer。登记111源已实采；实际个人center/runner/staticWeb仍b1c/v12，不随main前进。
+
+2026-10-06 09:40 UTC：[视觉与C0组合](../../docs/evidence/i02/visual-c0-source-comparison.json)10源码与各独审target/manifest完全一致，root/Web类型检查exit0；沿用固定领域/浏览器证据，无模型或个人服务更新。C0仅可信原生未知状态，不涵盖正在实施的Codex adapter。ENG计划与117源实采回执同批归档；纯文档不跑工程测试。
