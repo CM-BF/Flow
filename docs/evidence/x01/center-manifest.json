@@ -1,0 +1,747 @@
+{
+  "schemaVersion": 1,
+  "implementationCommit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+  "base": "cb20a75dddc0bddc724b88d66437444b397391f9",
+  "recordedAt": "2026-10-06T13:49:37.771747+00:00",
+  "entries": [
+    {
+      "kind": "source",
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394"
+    },
+    {
+      "kind": "source",
+      "path": "packages/contracts/src/plugin-installations.test.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 1576,
+      "sha256": "7838934889e6309e7893203c3ed8e66e8e0ae4ec3110c403860e3260bd905057"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/commands.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 11568,
+      "sha256": "829bef240c694be86f8f9fef0808d81586a2f624607ed41d238065bde3bcee89"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/store.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2459,
+      "sha256": "0856920e72facb705bd2a7e1d038d7ea2a9f10633f4a1f98902b09322f7e786a"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/routes.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 6527,
+      "sha256": "8931b177ace5ff0ecff7a14d799c629979e33f63b5cfc3d4bb88c72355c2269c"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/migration.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 760,
+      "sha256": "894abb00a1cd3375e87ef4f05c3607bb7315867a16c1c042989b04eaf26a73c6"
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/plugin-installations/installations.test.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 26150,
+      "sha256": "a5de0d126c01d5c19678dba8ecc76f9b46311b729df82f10f5151cc262ebbfb8"
+    },
+    {
+      "kind": "source",
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 4435,
+      "sha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/package.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/plugins/host.test.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 12077,
+      "sha256": "abd442fb9eec3fb50ad235158611b24e1d9441c154d5881c597639b3050d13e6",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/runner/src/plugins/host.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 5834,
+      "sha256": "e0e8f276fdc217f889ca9dc2464f9abca0b32a210a84e9fdaf48f99a2c58445c",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/package.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/database.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/index.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2641,
+      "sha256": "12701ce1dfbe9ba5317ceaf6d9b7c16ee3903a89f6a99841c385d97f8578c07c",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 4464,
+      "sha256": "827ea2d17247d027e14673848ed7d744c6142a27811e72413cdabb23cb1b30c2",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/plugin-package-fetches/commands.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 5071,
+      "sha256": "8abbf5641881cb2976d700ba3660938c7e8a7a0c13d9e14663c4267150f3bc74",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/plugin-package-fetches/host.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 1829,
+      "sha256": "f3f5ec848d3b23a7aad6e6bbcd26fc42d972b3e48b2d45a221c9c9d8b9c48760",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/plugin-package-fetches/routes.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 4593,
+      "sha256": "3aa612702abf4b794c664abb270b72004466329aa1f5abb0936234168e882c9b",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/plugin-package-fetches/store.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 4032,
+      "sha256": "10cde940502b0f4a7768de07bef9954bd8ad14f28c71babfb5c3d90e661323b3",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 7428,
+      "sha256": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/plugins/commands.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 6407,
+      "sha256": "8fd234467020340543e61084a2e807d8148ac244a6dd6d30e18d6cd81d8867f5",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/plugins/index.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 4058,
+      "sha256": "f3e73d03bab521bdcae419817f844bd8c36d6be0090d3f0ac260f16aae5f1c1c",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/plugins/storage.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 3153,
+      "sha256": "4da0052096f77cfa83a6b7b3b7373eb2cde435d3ab4269235a954c196a557abd",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/queries.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "apps/server/src/tasks.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "fixtures/plugins/text-tool/flow-plugin.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 93,
+      "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "fixtures/plugins/text-tool/index.mjs",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 155,
+      "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "fixtures/plugins/text-tool/package.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 102,
+      "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "package.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/index.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 1227,
+      "sha256": "15b003d0132513cd8ac65471c4d88d066ca3219601e906a9c1bab4e1ed58d63f",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/package-artifacts.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/plugin-package-fetches.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/contracts/src/plugins.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 4885,
+      "sha256": "c9bae366a4fa69a28e103c559ef51ea3ad21a99597ad69adc776c62723fd7747",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/plugin-runtime/package.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 182,
+      "sha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/plugin-runtime/src/package-store.test.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 16963,
+      "sha256": "6a8f4f7d72a336a8681f05a819eddca339c1cc93932b7547498018daf4303cc5",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 17555,
+      "sha256": "d2bb866b09611025fb82ec80c77503ef864901c7da09288cb84991120b4a1b88",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "packages/storage/migrations/008-plugins.sql",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 3675,
+      "sha256": "b23068a5fa46df53c3de8c46097b94d0488f54da577e96b898471e2c7fc8b452",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "pnpm-lock.yaml",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "tsconfig.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "readonly",
+      "path": "vitest.config.ts",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1",
+      "baseCommit": "cb20a75dddc0bddc724b88d66437444b397391f9"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-contract-green.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-contract-green.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-contract-green.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 326,
+      "sha256": "5faa333b2e5c34245686c1ccabaf158c8876b46e3d733ffe3080438bbd88b300"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-contract-red.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-contract-red.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 456,
+      "sha256": "bc3eb30c896eaf0aed8393fa7363cd2049b38bc77c2f0f2c9e904c11556ce013"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-contract-red.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 430,
+      "sha256": "9e8bcc371acf53f0f8d5a0bad93e48e9dc5f9190840ff81da53e2a74bbbeee91"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-cleanup.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 3686,
+      "sha256": "2a16e4380265b36c6de884f7bcb4b739be3364d41b6c9cc11137e862e727dfbf"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-http-cleanup.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 3933,
+      "sha256": "90c5988780d60a6a9ad9d6a7296a46db4ed1fdd4b6fe3f93f756b6666b6f6431"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-http-tests.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-http-tests.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-http-tests.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 753,
+      "sha256": "2ce6fd5a6eab34dfc8454a72539529ab2a626e791c152d666b3c346e05325815"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-http-typecheck.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-http-typecheck.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-http-typecheck.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-tests.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-tests.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-tests.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 1230,
+      "sha256": "7dd40e9830bbcb10c2547052ad70d54e022ecb9e5eda41f9d4fac830bd0fa4ac"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-typecheck.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-typecheck.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-final-typecheck.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-http-bound-cleanup.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 663,
+      "sha256": "40cd0e9e566c6f54e299f103c89aa4621d8d1deb07b8828c9422def091849d39"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-http-bound-tests.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-http-bound-tests.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-http-bound-tests.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 481,
+      "sha256": "3f80a4b32daef092124c367b96f7e698611bf12e30993f2c3d3bfa3d053b1fa6"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-pg-initial-cleanup.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 401,
+      "sha256": "f0168f8d5f118c4b5e50f420d5cae51b67336da0f828eed6eaae6ec6a5a34028"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-pg-initial.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-pg-initial.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 13515,
+      "sha256": "36c8350b9849bcf0a4c438666be52a6620dd6b87f059f3877ab14b7868c6ffe3"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-pg-initial.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 1206,
+      "sha256": "499516bf6c2f87b8f7479f648d5be06610298483e95439b47fd04b1dcbf44040"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-pg-pack-cleanup.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 3166,
+      "sha256": "57094556384f209f3f7ac939a58f320f261c0acc64d1076a95365f5a50637baa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-pg-pack.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-pg-pack.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-pg-pack.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 578,
+      "sha256": "9ddd81188f0cc13af344dfa0b84993e6547d71e16899ec989832192330865387"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-ready-typecheck.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-ready-typecheck.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-ready-typecheck.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-review-ready-cleanup.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 4167,
+      "sha256": "2fc2fd72c4329de9a446bfa339fd9391a674b770acd08557895a61abea8e5a3c"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-review-ready-tests.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-review-ready-tests.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-review-ready-tests.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 891,
+      "sha256": "f879dd798cb64d8c526b73dd1ce3f9eb4e4453b1c3da28c616005840f039b6b3"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-review-ready-typecheck.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-review-ready-typecheck.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-review-ready-typecheck.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-typecheck-fixture.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-typecheck-fixture.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-typecheck-fixture.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-typecheck-initial.exit",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-typecheck-initial.stderr",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/x01/center-typecheck-initial.stdout",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/x01/center-checks.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 1576,
+      "sha256": "7df3c2500b8e3e832064f7f2614811b969f752e3bde682a7f4214438afd6e004"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/x01/center-interface.md",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 3181,
+      "sha256": "831d7934e3d73093453ec6fd0403400fdc6defd12cb4ee77cfbf21cc4a99cf17"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/x01/center-quality.md",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2476,
+      "sha256": "56c0d16fccae9d74826f967c143d76c95ae4b6fae4d9a0c4cd7225c899afe365"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/x01/center-readonly-inputs.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 7820,
+      "sha256": "d41b5845fde8a6ce8ca8bf1281886f6ce84bb5971bd69bd307d507bad9939d77"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/x01/center-resources.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2910,
+      "sha256": "69a6901d251ab69a0ed8dcc35568e862118859c2e5544b8e55d0c0d9b43846c6"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/x01/center-tsconfig.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 290,
+      "sha256": "ff8fb71f30a483ddaf609d0a697a543a08a1c7b8eafb4c7cc2712fc9d5a9ab03"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/x01/center-installation-seam-request.md",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 8551,
+      "sha256": "073591279467c0a7f9afe861afef01f0f3449c6c99cc896174d4c9d49f5605c8"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/x01/center-installation-seam-inputs.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 3138,
+      "sha256": "bde64b12069c6b538bf43c766de1d57bb0fc376531ba211453a6f2ad074a3f00"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/x01/center-amend-receipt.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 1343,
+      "sha256": "d682ba95b630bdafe0aa98f46e558d5dea3555c9d98168ac9887b15448e14d10"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/x01/leaf-main-acceptance.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 2925,
+      "sha256": "0cabf30b7f5c9b8d8fd34d5f6ff853abc41a45d1d33acd94235a97b737b6a9a9"
+    },
+    {
+      "kind": "support",
+      "path": "docs/evidence/x01/leaf-handback-receipt.json",
+      "commit": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+      "bytes": 1006,
+      "sha256": "2bda5e44a879634ed26fd6e9530ee8e27e879cbeaeeba413c23b6a751fa6564b"
+    }
+  ],
+  "fixtureTool": {
+    "path": "/usr/bin/tar",
+    "bytes": 274448,
+    "sha256": "f96200d5be4a3f99cdbc88892a2e26f14d501d354c72b224472462cc67fa271d"
+  },
+  "historyNote": "Historical raw files are immutable evidence bytes bound here, not claims that their earlier runs used the final source. Final 14/14 + strict files are center-review-ready-*."
+}

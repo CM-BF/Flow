@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan
+
+ ✓ apps/server/src/plugin-installations/installations.test.ts (11 tests) 4759ms
+   ✓ owner auth, exact source ownership, CAS, trust and strict public input reject before material writes  540ms
+   ✓ accepted replay is read-only; only an explicit start may first prepare and restart preserves exact history  304ms
+   ✓ real lost PG lock aborts pending own filesystem work; a new owner cannot overlap prepare  337ms
+ ✓ packages/contracts/src/plugin-installations.test.ts (3 tests) 3ms
+
+ Test Files  2 passed (2)
+      Tests  14 passed (14)
+   Start at  06:44:32
+   Duration  6.05s (transform 478ms, setup 0ms, import 1.11s, tests 4.76s, environment 0ms)
+

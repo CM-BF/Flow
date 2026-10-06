@@ -1,0 +1,163 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/plugin-installations/installations.test.ts > public real npm fetch installs static material, replays without I/O and reads a bounded private-free receipt
+Error: DirFetcher requires either a tree or an Arborist constructor to pack
+ ❯ DirFetcher.[pacote.Fetcher._tarballFromResolved] node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/dir.js:62:13
+ ❯ promiseRetry.retries node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:323:64
+ ❯ RetryOperation.<anonymous> node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:46:30
+ ❯ RetryOperation.attempt node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/retry.js:106:13
+ ❯ node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:44:15
+ ❯ promiseRetry node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:43:10
+ ❯ node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:322:40
+ ❯ source apps/server/src/plugin-installations/installations.test.ts:49:16
+     47|   await fs.writeFile(join(directory, 'package.json'), JSON.stringify({…
+     48|   for (const file of ['index.mjs', 'flow-plugin.json']) await fs.copyF…
+     49|   const body = await pacote.tarball(directory, { ignoreScripts: true }…
+       |                ^
+     50|   const digest = createHash('sha256').update(body).digest('hex'); cons…
+     51|   const pkg = { body, integrity, requests: 0 }; packages.set(name, pkg…
+ ❯ apps/server/src/plugin-installations/installations.test.ts:90:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  apps/server/src/plugin-installations/installations.test.ts > owner auth, exact source ownership, CAS, trust and strict public input reject before material writes
+Error: DirFetcher requires either a tree or an Arborist constructor to pack
+ ❯ DirFetcher.[pacote.Fetcher._tarballFromResolved] node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/dir.js:62:13
+ ❯ promiseRetry.retries node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:323:64
+ ❯ RetryOperation.<anonymous> node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:46:30
+ ❯ RetryOperation.attempt node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/retry.js:106:13
+ ❯ node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:44:15
+ ❯ promiseRetry node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:43:10
+ ❯ node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:322:40
+ ❯ source apps/server/src/plugin-installations/installations.test.ts:49:16
+     47|   await fs.writeFile(join(directory, 'package.json'), JSON.stringify({…
+     48|   for (const file of ['index.mjs', 'flow-plugin.json']) await fs.copyF…
+     49|   const body = await pacote.tarball(directory, { ignoreScripts: true }…
+       |                ^
+     50|   const digest = createHash('sha256').update(body).digest('hex'); cons…
+     51|   const pkg = { body, integrity, requests: 0 }; packages.set(name, pkg…
+ ❯ apps/server/src/plugin-installations/installations.test.ts:103:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  apps/server/src/plugin-installations/installations.test.ts > accepted replay is read-only; only an explicit start may first prepare and restart preserves exact history
+Error: DirFetcher requires either a tree or an Arborist constructor to pack
+ ❯ DirFetcher.[pacote.Fetcher._tarballFromResolved] node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/dir.js:62:13
+ ❯ promiseRetry.retries node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:323:64
+ ❯ RetryOperation.<anonymous> node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:46:30
+ ❯ RetryOperation.attempt node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/retry.js:106:13
+ ❯ node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:44:15
+ ❯ promiseRetry node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:43:10
+ ❯ node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:322:40
+ ❯ source apps/server/src/plugin-installations/installations.test.ts:49:16
+     47|   await fs.writeFile(join(directory, 'package.json'), JSON.stringify({…
+     48|   for (const file of ['index.mjs', 'flow-plugin.json']) await fs.copyF…
+     49|   const body = await pacote.tarball(directory, { ignoreScripts: true }…
+       |                ^
+     50|   const digest = createHash('sha256').update(body).digest('hex'); cons…
+     51|   const pkg = { body, integrity, requests: 0 }; packages.set(name, pkg…
+ ❯ apps/server/src/plugin-installations/installations.test.ts:113:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  apps/server/src/plugin-installations/installations.test.ts > official migration constraints and command rollback leave no orphan admission or audit
+Error: DirFetcher requires either a tree or an Arborist constructor to pack
+ ❯ DirFetcher.[pacote.Fetcher._tarballFromResolved] node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/dir.js:62:13
+ ❯ promiseRetry.retries node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:323:64
+ ❯ RetryOperation.<anonymous> node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:46:30
+ ❯ RetryOperation.attempt node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/retry.js:106:13
+ ❯ node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:44:15
+ ❯ promiseRetry node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:43:10
+ ❯ node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:322:40
+ ❯ source apps/server/src/plugin-installations/installations.test.ts:49:16
+     47|   await fs.writeFile(join(directory, 'package.json'), JSON.stringify({…
+     48|   for (const file of ['index.mjs', 'flow-plugin.json']) await fs.copyF…
+     49|   const body = await pacote.tarball(directory, { ignoreScripts: true }…
+       |                ^
+     50|   const digest = createHash('sha256').update(body).digest('hex'); cons…
+     51|   const pkg = { body, integrity, requests: 0 }; packages.set(name, pkg…
+ ❯ apps/server/src/plugin-installations/installations.test.ts:121:53
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  apps/server/src/plugin-installations/installations.test.ts > lost preparing COMMIT acknowledgement starts zero filesystem work and persists a store gate
+Error: DirFetcher requires either a tree or an Arborist constructor to pack
+ ❯ DirFetcher.[pacote.Fetcher._tarballFromResolved] node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/dir.js:62:13
+ ❯ promiseRetry.retries node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:323:64
+ ❯ RetryOperation.<anonymous> node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:46:30
+ ❯ RetryOperation.attempt node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/retry.js:106:13
+ ❯ node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:44:15
+ ❯ promiseRetry node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:43:10
+ ❯ node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:322:40
+ ❯ source apps/server/src/plugin-installations/installations.test.ts:49:16
+     47|   await fs.writeFile(join(directory, 'package.json'), JSON.stringify({…
+     48|   for (const file of ['index.mjs', 'flow-plugin.json']) await fs.copyF…
+     49|   const body = await pacote.tarball(directory, { ignoreScripts: true }…
+       |                ^
+     50|   const digest = createHash('sha256').update(body).digest('hex'); cons…
+     51|   const pkg = { body, integrity, requests: 0 }; packages.set(name, pkg…
+ ❯ apps/server/src/plugin-installations/installations.test.ts:135:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  apps/server/src/plugin-installations/installations.test.ts > lost completion ACK reconciles by exact read only and requires trusted prior lifecycle evidence
+Error: DirFetcher requires either a tree or an Arborist constructor to pack
+ ❯ DirFetcher.[pacote.Fetcher._tarballFromResolved] node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/dir.js:62:13
+ ❯ promiseRetry.retries node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:323:64
+ ❯ RetryOperation.<anonymous> node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:46:30
+ ❯ RetryOperation.attempt node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/retry.js:106:13
+ ❯ node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:44:15
+ ❯ promiseRetry node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:43:10
+ ❯ node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:322:40
+ ❯ source apps/server/src/plugin-installations/installations.test.ts:49:16
+     47|   await fs.writeFile(join(directory, 'package.json'), JSON.stringify({…
+     48|   for (const file of ['index.mjs', 'flow-plugin.json']) await fs.copyF…
+     49|   const body = await pacote.tarball(directory, { ignoreScripts: true }…
+       |                ^
+     50|   const digest = createHash('sha256').update(body).digest('hex'); cons…
+     51|   const pkg = { body, integrity, requests: 0 }; packages.set(name, pkg…
+ ❯ apps/server/src/plugin-installations/installations.test.ts:150:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  apps/server/src/plugin-installations/installations.test.ts > real lost PG lock aborts pending own filesystem work; a new owner cannot overlap prepare
+Error: DirFetcher requires either a tree or an Arborist constructor to pack
+ ❯ DirFetcher.[pacote.Fetcher._tarballFromResolved] node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/dir.js:62:13
+ ❯ promiseRetry.retries node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:323:64
+ ❯ RetryOperation.<anonymous> node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:46:30
+ ❯ RetryOperation.attempt node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/retry.js:106:13
+ ❯ node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:44:15
+ ❯ promiseRetry node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:43:10
+ ❯ node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:322:40
+ ❯ source apps/server/src/plugin-installations/installations.test.ts:49:16
+     47|   await fs.writeFile(join(directory, 'package.json'), JSON.stringify({…
+     48|   for (const file of ['index.mjs', 'flow-plugin.json']) await fs.copyF…
+     49|   const body = await pacote.tarball(directory, { ignoreScripts: true }…
+       |                ^
+     50|   const digest = createHash('sha256').update(body).digest('hex'); cons…
+     51|   const pkg = { body, integrity, requests: 0 }; packages.set(name, pkg…
+ ❯ apps/server/src/plugin-installations/installations.test.ts:165:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  apps/server/src/plugin-installations/installations.test.ts > damaged verified artifact never becomes installed and pre-aborted first start performs no I/O
+Error: DirFetcher requires either a tree or an Arborist constructor to pack
+ ❯ DirFetcher.[pacote.Fetcher._tarballFromResolved] node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/dir.js:62:13
+ ❯ promiseRetry.retries node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:323:64
+ ❯ RetryOperation.<anonymous> node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:46:30
+ ❯ RetryOperation.attempt node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/retry.js:106:13
+ ❯ node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:44:15
+ ❯ promiseRetry node_modules/.pnpm/@gar+promise-retry@1.0.3/node_modules/@gar/promise-retry/lib/index.js:43:10
+ ❯ node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/fetcher.js:322:40
+ ❯ source apps/server/src/plugin-installations/installations.test.ts:49:16
+     47|   await fs.writeFile(join(directory, 'package.json'), JSON.stringify({…
+     48|   for (const file of ['index.mjs', 'flow-plugin.json']) await fs.copyF…
+     49|   const body = await pacote.tarball(directory, { ignoreScripts: true }…
+       |                ^
+     50|   const digest = createHash('sha256').update(body).digest('hex'); cons…
+     51|   const pkg = { body, integrity, requests: 0 }; packages.set(name, pkg…
+ ❯ apps/server/src/plugin-installations/installations.test.ts:180:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+

@@ -1,0 +1,137 @@
+{
+  "taskLinks": {
+    "kind": "big",
+    "reason": "",
+    "parent": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "mika",
+      "value": "mika"
+    },
+    "ownId": {
+      "state": "known",
+      "record": "[X01](plan.md)",
+      "id": "X01",
+      "location": "plan.md"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "公开中心静态安装与历史读回已实现并通过局部真实验证，等待独审",
+    "next": "独审后接入默认中心和共用客户端；完整启用及任务绑定沿原计划继续",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "a578bfd977f5f8f8376cee613307f7011d8778a7",
+    "scopes": [
+      "packages/contracts/src/plugin-installations.ts",
+      "packages/contracts/src/plugin-installations.test.ts",
+      "apps/server/src/plugin-installations/store.ts",
+      "apps/server/src/plugin-installations/commands.ts",
+      "apps/server/src/plugin-installations/routes.ts",
+      "apps/server/src/plugin-installations/migration.ts",
+      "apps/server/src/plugin-installations/installations.test.ts",
+      "packages/storage/migrations/029-plugin-material-installs.sql"
+    ],
+    "errors": []
+  },
+  "taskId": "X01",
+  "owner": "architecture_read / gpt-6-astra",
+  "branch": "codex/plugin-management-plan",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-06T13:48:53.000Z",
+  "updatedRecord": "2026-10-06 13:48:53 UTC",
+  "todos": [
+    {
+      "id": "X01-01",
+      "state": "completed",
+      "owner": "runner_owner",
+      "evidence": "[完整计划](plan.md)、[事实/质量记录](../../docs/evidence/x01/README.md)"
+    },
+    {
+      "id": "X01-02",
+      "state": "in-progress",
+      "owner": "Execution Lead（公共入口）",
+      "evidence": "X02 registry/public client/CLI合同已冻结入main；完整安装生命周期合同仍未完"
+    },
+    {
+      "id": "X01-03",
+      "state": "in-progress",
+      "owner": "architecture_read",
+      "evidence": "X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收"
+    },
+    {
+      "id": "X01-04",
+      "state": "in-progress",
+      "owner": "architecture_read",
+      "evidence": "静态材料/真实loader首leaf已独审；中心资格/绑定、版本pin与回收仍待接入"
+    },
+    {
+      "id": "X01-05",
+      "state": "pending",
+      "owner": "Lead派发隔离writer",
+      "evidence": "依赖02/04；未声明第三方隔离存在"
+    },
+    {
+      "id": "X01-06",
+      "state": "in-progress",
+      "owner": "Lead + Web管理owner",
+      "evidence": "X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；完整Web/TUI/CLI生命周期未完"
+    },
+    {
+      "id": "X01-07",
+      "state": "in-progress",
+      "owner": "architecture_read",
+      "evidence": "自有真实text-tool已通过局部实际import/invoke；真实runner任务产物/public管理链未接入"
+    },
+    {
+      "id": "X01-08",
+      "state": "pending",
+      "owner": "Lead派发contextwriter",
+      "evidence": "依赖02/04/G01/usage；通用接口可先推进"
+    },
+    {
+      "id": "X01-09",
+      "state": "pending",
+      "owner": "Goal Owner / Lead",
+      "evidence": "候选固定输入已定位、用户未亲自确认；CTX01 core可推进，不以身份阻塞toy，完整兼容验收未完"
+    },
+    {
+      "id": "X01-10",
+      "state": "pending",
+      "owner": "Lead协调review/集成writer",
+      "evidence": "通用管理依赖03～08；09候选独立后续验收，独立产品review/整体验收未开始"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "受控main7cb→c837，F01三依赖→1c93c102；当前中心固定a578bfd977f5f8f8376cee613307f7011d8778a7，旧leaf固定bf3378已main2f16",
+  "declaredDirty": "中心8源/raw固定a578bfd977f5f8f8376cee613307f7011d8778a7；后继仅metadata，实际clean由Git聚合",
+  "checks": {
+    "state": "unknown",
+    "target": null,
+    "record": "当前中心14/14（11真实PG/HTTP+3DTO）、strict局部0；6轮专库0连接后DROP且own根删除，49制包child自然0；首8fixture失败保留，不累计重复"
+  },
+  "reviewRecord": "NOT_STARTED a578bfd977f5f8f8376cee613307f7011d8778a7；当前中心片待独立只读review，历史leaf批准不挪用",
+  "mainRecord": "原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；bf3378八leaf+f635三依赖已main2f16e30a，完整npm生命周期未实现",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

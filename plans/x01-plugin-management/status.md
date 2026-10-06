@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 13:23:01 UTC |
+| 最近更新时间 | 2026-10-06 14:09:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [amend6ddedc73 v2](../../docs/evidence/x01/leaf-amend-receipt.json)，ACTIVE，八leaf与原两metadata目录 |
+| Claim | [amend6ddedc73 v4](../../docs/evidence/x01/leaf-handback-receipt.json)，ACTIVE；仅中心7文件+正式029与两metadata，旧8leaf已交回 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
-| 工作基线 / HEAD | 受控main7cb→c837；F01依赖三blob→1c93c102；固定实现bf33781450d2a5036e026ace03c1682e4d7f0f17，其后仅交审metadata |
-| 工作树 dirty 状态 | 本片两改动源/新raw已固定bf337814；其余原41绑定不变；实际clean由Git聚合 |
+| 工作基线 / HEAD | 受控main7cb→c837，F01三依赖→1c93c102；当前中心固定a578bfd977f5f8f8376cee613307f7011d8778a7，旧leaf固定bf3378已main2f16 |
+| 工作树 dirty 状态 | 中心8源/raw固定a578bfd977f5f8f8376cee613307f7011d8778a7；后继仅metadata，实际clean由Git聚合 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED bf33781450d2a5036e026ace03c1682e4d7f0f17；65distinct=51材料+14真实loader、严格局部noEmit0，66own根删除；原12red保留，0PG/SDK/provider |
-| Review | APPROVED bf33781450d2a5036e026ace03c1682e4d7f0f17；Mika/gpt-6-astra，2026-10-06 13:17:47 UTC，原唯一P2 CLOSED，0剩余P1/P2 |
-| 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；完整npm生命周期未实现 |
-| 实现目标 | bf33781450d2a5036e026ace03c1682e4d7f0f17 |
-| 实现范围 | packages/plugin-runtime/package.json, packages/plugin-runtime/src/package-store.ts, packages/plugin-runtime/src/package-store.test.ts, apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts, fixtures/plugins/text-tool/package.json, fixtures/plugins/text-tool/index.mjs, fixtures/plugins/text-tool/flow-plugin.json |
+| 检查状态 | 当前中心14/14（11真实PG/HTTP+3DTO）、strict局部0；6轮专库0连接后DROP且own根删除，49制包child自然0；首8fixture失败保留，不累计重复 |
+| Review | APPROVED a578bfd977f5f8f8376cee613307f7011d8778a7；chatui01_owner/gpt-6-astra 13:50:35 UTC，Mika 13:51:12接收，0P1/P2 |
+| 已集成 main 状态 / HEAD | 原计划/X02/X04/X05已main；WPF-X03I01主App只读入口已main80e3c50，固定7cb源码实见；bf3378八leaf+f635三依赖已main2f16e30a，完整npm生命周期未实现 |
+| 实现目标 | a578bfd977f5f8f8376cee613307f7011d8778a7 |
+| 实现范围 | packages/contracts/src/plugin-installations.ts, packages/contracts/src/plugin-installations.test.ts, apps/server/src/plugin-installations/store.ts, apps/server/src/plugin-installations/commands.ts, apps/server/src/plugin-installations/routes.ts, apps/server/src/plugin-installations/migration.ts, apps/server/src/plugin-installations/installations.test.ts, packages/storage/migrations/029-plugin-material-installs.sql |
 | 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 自有真实插件包可经有界静态安装并实际加载执行；独审已通过，准备接入主线 |
-| 下一可用交付 | 本片集成后接入公开中心安装命令；完整启用、任务绑定和停用行为沿原计划继续 |
+| 当前产出 | 公开中心静态安装与历史读回已独审通过，准备接入默认中心 |
+| 下一可用交付 | 接入默认中心和共用客户端；启用与真实工具任务绑定方案已具备明确接线候选 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -31,8 +31,8 @@
 | --- | --- | --- | --- |
 | X01-01 | completed | runner_owner | [完整计划](plan.md)、[事实/质量记录](../../docs/evidence/x01/README.md) |
 | X01-02 | in-progress | Execution Lead（公共入口） | X02 registry/public client/CLI合同已冻结入main；完整安装生命周期合同仍未完 |
-| X01-03 | in-progress | Lead派发中心writer | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
-| X01-04 | in-progress | architecture_read | 静态材料/真实loader首leaf待独审；中心资格/绑定、版本pin与回收仍待接入 |
+| X01-03 | in-progress | architecture_read | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
+| X01-04 | in-progress | architecture_read | 静态材料/真实loader首leaf已独审；中心资格/绑定、版本pin与回收仍待接入 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；完整Web/TUI/CLI生命周期未完 |
 | X01-07 | in-progress | architecture_read | 自有真实text-tool已通过局部实际import/invoke；真实runner任务产物/public管理链未接入 |
@@ -42,13 +42,13 @@
 
 ## 当前事实与边界
 
-当前静态安装材料与trusted self-owned真实loader已实现，原53局部检查通过；独审1P2已修复并获本leaf批准，尚未main集成。Web只读入口已完成；trusted host不等第三方隔离或完整public管理链。本片0PG、SDK/provider。
+静态材料与trusted self-owned真实loader已main2f16e30a，修后65局部检查/独审成立。当前中心材料片a578已独审通过，14不同检查含11真实PG/HTTP，尚待正式main接收；SDK/provider为0。Web只读入口已完成，trusted host不等第三方隔离或完整public管理链。
 
 当前无用户行动或身份阻塞。候选来源/版本已由Goal Owner提供，见[候选输入](candidate-inputs.md)；用户所指身份尚未亲自确认，但不阻止已授权CTX01固定core实验。不从名字猜项目，也不重复询问已授权生命周期方向。后续产品实现必须另明确 worktree/owner/scope，本计划不授予跨模块写权。
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；尚未亲自核验 dashboard 聚合，不称已展示。旧D04 claim04c5de3f v2已released；当前新owner6ddedc73 v2八leaf与两metadata范围，旧观察不表示当前写权。真实事实/检查/文档target随本scope metadata单独更新。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；当前6ddedc73 v4持中心8源与两metadata，旧8leaf已交回。真实事实/检查/文档target随本scope metadata单独更新。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -81,3 +81,19 @@
 2026-10-06 13:20:51 UTC：仅metadata形成[中心安装/读回下一片请求](../../docs/evidence/x01/center-installation-seam-request.md)，固定main a3e670b的15输入；复用X02 revision/command与X05成功精确attempt、leaf唯一prepare/read，不新scheduler或中心包执行。7新source literal和唯一DDL待Lead分配，028已被WPF-CONNECTION01占用，未amend/写产品/测试。完整disable旧pin、版本/ref/三端/隔离要求保持；leaf仍integration。
 
 2026-10-06 13:23:01 UTC：按Mika只读反馈收紧中心设计：start只启动确切未开始accepted；同key重放与reconcile不执行prepare，preparing持久ACK须先于本operation任何FS写；锁丢失须收束own FS且未知仍挡同store后继写入。migration.ts仅复用唯一正式SQL/既有迁移锁，若已有同职责入口则不申请该文件。只改设计metadata，已审leaf源码/raw/manifest不动，未领新scope/编号或运行检查。
+
+2026-10-06 13:33:24 UTC：Lead正式分配029-plugin-material-installs.sql；[v3原子amend](../../docs/evidence/x01/center-amend-receipt.json)已提交。旧8leaf停止产品写入、待正式main回执交回；本片沿845294419固定合同，先DTO后实际专库验证，未开始PG/源码checks。继续用本地find-skills、codebase-design/clean-code固定基线；brainstorming设计已授权，不重复索权。磁盘可用1,759,400KiB，保留1GiB，无新安装。
+
+2026-10-06 13:34:44 UTC：收到正式MAIN_RECEIPT，独核[11源接收](../../docs/evidence/x01/leaf-main-acceptance.json)固定Git=main2f16Git=主树=本树；Lead实际server/runner public import/roottypes0，未重跑65。原8leaf已停止写入并[v4交回](../../docs/evidence/x01/leaf-handback-receipt.json)，本owner不能恢复该写权；029实施继续。完整X01未完成。
+
+2026-10-06 13:48:53 UTC：中心安装片源码检查完成，[Interface](../../docs/evidence/x01/center-interface.md)、[checks](../../docs/evidence/x01/center-checks.json)、[资源](../../docs/evidence/x01/center-resources.json)、[质量/架构影响](../../docs/evidence/x01/center-quality.md)。仅新增中心7源/正式029，旧8leaf已main且写权已交回。模块状态/DB→FS时序有结构影响，集成后dashboard架构基线由Lead更新；本树不改全局图。当前中心独审NOT_STARTED，生产默认mount/client/CLI未接；旧leaf APPROVED不覆盖本片。
+
+当前中心固定实现`a578bfd977f5f8f8376cee613307f7011d8778a7`，[100项manifest](../../docs/evidence/x01/center-manifest.json)（SHA `cfd29ad0abf3c8bc229d9de9bfb040309e032f6e4319a86e9e9dda482bcbcaf8`），8产品/测试/DDL、33只读输入；源码/raw已冻结待review。`center-review-ready-*`是当前14/14及strict0证据；历史重复不累计。
+
+2026-10-06 13:51:12 UTC：Mika接收chatui01_owner独立APPROVED，正式[审查收据](../../docs/evidence/x01/center-independent-review.json)与[稳定集成输入](../../docs/evidence/x01/center-integration-ready.md)已记录；8source/原raw/support/manifest不改，v4保留修复期。默认mount/client/CLI与完整enable/task绑定仍后继，不冒称整X01完成。仅metadata，无14/65重测。
+
+2026-10-06 13:58:30 UTC：fresh ada576 clean/v4 ACTIVE，仅形成[下一启用与任务绑定接缝](../../docs/evidence/x01/enable-binding-preparation.md)，15输入固定main d4a2e0a。重点保留单revision、disable只拒新binding、真实unknown复用retained/journal/停止新claim；runtime等待P06正式main与原owner交回，未take共享范围。中心a578仍已审待main，不把设计当实现；0新工程测试/PG/SDK/provider。新DDL/host资格/共享字段由Lead协调，完整原TODO不减。
+
+2026-10-06 14:07:30 UTC：按Mika设计门禁补充 import完成→invoke前再次实时tool grant核验，两gate共用binding/invocation身份，任何授权ACK未知不执行/不重放包；旧host两源须fresh重新领取，不沿用v4。新binding资格必须与X02当前revision/version/config/material/host一致，旧enabled指针不能绕过。接收P06 main5db事实后重绑16只读输入，仅runtime改变并纳AttemptWakeup；原owner handback仍待。当前仅metadata，中心a578/100bindings保持，0工程测试。
+
+2026-10-06 14:09:00 UTC：后继接缝补有限host发布、enable/disable、冻结binding及load/invoke gate的最小字段候选，供Lead冻结；仍未定义第二执行FSM或领取新产品。P06正式main5db/v2释放收据已读回，旧占用解除不授本owner权限。029与100固定证据不动，O14 030不占。当前磁盘资源HOLD，仅小metadata，无新PG/build/install或清理。
