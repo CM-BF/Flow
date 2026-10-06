@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:30 UTC / main61744371 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T14:35:06.228081+00:00 / main59ef2134 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -14,15 +14,15 @@
 | 工作树dirty状态 | 固定源码与原始证据已保存；本次metadata提交后clean |
 | 工作分支状态 | completed |
 | 检查状态 | PASSED 0550b3e7318133fb0d023fd8cc4372d8b7663e78；真实HTTP1/1（20ms）和types0，无新PG/provider |
-| 已集成main状态 / HEAD | COST域27d4/薄clientfb0/生产7150已main61744371606f3ee890a9d64e21b33f52940d6e14；个人runtime362/v15不变 |
+| 已集成main状态 / HEAD | COST领域、薄client、生产读口与CLI0550已进入main59ef2134；个人runtime362/v15未更新 |
 | Review | APPROVED 0550b3e7318133fb0d023fd8cc4372d8b7663e78；assignment_review独立只读三源/两raw，0重测 |
 | 实现目标 | 0550b3e7318133fb0d023fd8cc4372d8b7663e78 |
 | 实现范围 | apps/cli/src/index.ts, apps/cli/src/usage-readout.test.ts, apps/cli/README.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 各端共用的用量读口已进入主线，终端查询命令已通过独立审查。 |
-| 下一可用交付 | 在命令行直接查看缓存分项、估价及缺测说明。 |
+| 当前产出 | 主线已提供统一的用量说明和终端查询命令，区分缓存分项、估价与缺测。 |
+| 下一可用交付 | 本片段已交付；已授权目标持续推进的公共接口另按独立子片接入。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -193,4 +193,6 @@
 
 2026-10-06 14:30 UTC：生产用量读口已main617。新增只读 `usage <task-id>` 命令沿同FlowClient，不提交任务/模型，JSON保持null/coverage；真实HTTP1/1+types0，0新增PG。help/403/409/abort/缺ID与不泄synthetic token已覆盖；独审绑定[CLI manifest](../../docs/evidence/f01/usage-readout-cli-manifest.json)。
 
-| F01-40 | in-progress | Lead | [CLI用量manifest](../../docs/evidence/f01/usage-readout-cli-manifest.json)，只读HTTP1/1+types0，独审中。 |
+| F01-40 | completed | Lead | [CLI用量manifest](../../docs/evidence/f01/usage-readout-cli-manifest.json)，只读HTTP1/1+types0，独审中。 |
+
+2026-10-06T14:35:06.228081+00:00：CLI固定0550已main59ef2134，I02五源比较零差；本次仅metadata，不重新执行HTTP/PG/types。
