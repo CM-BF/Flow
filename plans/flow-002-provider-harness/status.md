@@ -33,7 +33,7 @@
 | FLOW-002-T04 | completed | Execution Lead | 本文或既有已归档证据；见下方边界 |
 | FLOW-002-T05 | pending | Execution Lead | 未完成，无通过结论 |
 | FLOW-002-T06 | completed | Execution Lead | 本文或既有已归档证据；见下方边界 |
-| FLOW-002-T07 | pending | Execution Lead | 未完成，无通过结论 |
+| FLOW-002-T07 | pending | Execution Lead | [ENG-001](../eng01-engineering-delivery/plan.md)为唯一生产工程目标；E01保留对照，未完成真实工程验收 |
 | FLOW-002-T08 | pending | Execution Lead | 未完成，无通过结论 |
 
 ## 已完成证据与检查
@@ -55,7 +55,7 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 
 2026-10-06 08:23:11 UTC：只核本权威来源既有6个人读字段均齐备，保留FLOW-002未完成工程验收与OPS历史review边界；本次仅更新协作配额/观察时间，不新增产品测试或模型。
 
-| FLOW-002-T09 | in-progress | Execution Lead / 只读审查双方 | R05-A本地descriptor提取47e6943已独立只读批准待集成；B中心契约准备，第二实际consumer优先Codex；Pi/AI SDK研究保留不作串行门槛。完整可替换性尚未完成。 |
+| FLOW-002-T09 | in-progress | Execution Lead / 只读审查双方 | R05-A已main，R06有界transport与R05B有限中心来源已审main3418；R05C准备普通Codex adapter。Pi/AI SDK研究保留不作串行门槛，真实原生与会话完整可替换性未完成。 |
 
 2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
 
