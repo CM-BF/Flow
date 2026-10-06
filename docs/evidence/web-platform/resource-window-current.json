@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T18:58:58.026397+00:00",
-  "state": "R01_RETURNED_NO_ACTIVE_SHARED_HOLDER",
-  "groupWindowOwnership": "Lead latest: R01 failedafter2.927s af51 @flow/client alias missing,0Chrome,cleanupcomplete/windowreturned. This is notSettingsChromecause. Websource/tmprepaironly; no sharedwindowpreoccupied.",
+  "recordedAt": "2026-10-06T19:21:28.086200+00:00",
+  "state": "SHARED_RESOURCE_BELOW_RESERVE_NEW_HEAVY_RUNS_BLOCKED",
+  "groupWindowOwnership": "Lead19:19:29wholehostavailable827–828MB below1GiB,newPG/Chrome/buildNOT_RUN;Webb2alreadycleanedandreturned.NoactiveWebheavyholder.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -390,7 +390,7 @@
     "Recovery累计14846.267375/90000ms、余75153.732625仅算术；失败后窗口已返，源码修复不带运行许可。",
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
-  "latestCoordination": "LatestLeadviaRoot:R01returned; newreadyreviewedcandidate thenfreshwindow, noSettingsretrygate.",
+  "latestCoordination": "resource-lead-191929-below-reserve.json",
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
     "claimId": "e0b86bb5-b373-4ad6-9257-6d8c18d06335",
@@ -445,7 +445,7 @@
     "version": 1,
     "sourceRequest": "mature02-message-settings-source-request.json",
     "PG": false,
-    "browser": "FAILED_BEFORE_CDP_ZERO_BEHAVIOR_CHECKS",
+    "browser": "B2_FAILED_BEFORE_UI_CLEANED",
     "sourceReady": "message-settings-source-ready.json",
     "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
     "metadata": "478943c0ca5645a06feae46268ccd2e174789c7c",
@@ -463,12 +463,135 @@
     "parentReview": "message-settings-supervisor-root-review.json",
     "evidenceReview": "message-settings-first-root-evidence-review.json",
     "browserCandidate": "message-settings-browser-candidate/intake.json",
-    "browserCandidateState": "APPROVED_SOURCE_PREPARATION_SCOPED_NOT_RUN_NO_WINDOW_OR_GATE",
+    "browserCandidateState": "READY_SOURCE_PREPARATION_APPROVED_AWAITING_R01_RETURN_AND_NEW_WINDOW",
     "metadataSeal": "message-settings-browser-metadata-seal.json",
-    "browserResult": "message-settings-browser-window-return-1858.json",
-    "browserSpentMs": 5197,
-    "browserRemainingMs": 54803
+    "browserResult": "message-settings-browser-b2-window-return.json",
+    "browserSpentMs": 13748,
+    "browserRemainingMs": 46252,
+    "browserRepair": {
+      "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+      "metadata": "b41c93e7a7e054faec68faed101be5adf4d21225",
+      "evidence": "message-settings-browser-b2-prepared/intake.json",
+      "runtime": "NOT_RUN",
+      "previousRuntimeMs": 5197,
+      "remainingMs": 54803
+    },
+    "browserAdmission": "message-settings-browser-b2-admission.json",
+    "browserEvidenceReview": "message-settings-browser-b2-actual/root-runtime-review.json"
   },
   "retainedAf51": "Lead originalassignment_review accepted six-scope/newtree preparation; no Web ownership or runtime; see retained-af51-owner-scope-proposal.json",
-  "currentWindowReturn": "message-settings-browser-window-return-1858.json"
+  "currentWindowReturn": "message-settings-browser-window-return-1858.json",
+  "coordinationHistory": [
+    {
+      "recordedAt": "2026-10-06T19:12:36.267670+00:00",
+      "source": "Latest Lead inbound forwarded by root; no manager service or space observation",
+      "state": "R01_EXCLUSIVE_PG_CHROME_WINDOW",
+      "target": "R01 fixed25b / backendaf51",
+      "workMs": 87073,
+      "cleanupMs": 20000,
+      "preconditionReceipt": "Four factory import-only checks exit0, reported by Lead",
+      "web": "Settings b2 source preparation only, Recovery browser frozen, no current Web PG/Chrome/HTTP; DPERF05 pure Node separately authorized",
+      "next": "R01 actual cleanup/return then ready-first new window; no old-free reuse or automatic Settings retry"
+    },
+    {
+      "recordedAt": "2026-10-06T19:15:30.132303+00:00",
+      "source": "LatestLeadinboundviaRoot; no manager runtime/space observation",
+      "state": "O16_EXCLUSIVE_PG_CHROME_WINDOW",
+      "previousR01": "19:13:22returned;two groups/three ports/DB/tmp cleaned;Chrome/CDP ready but atomic-rename ENOENT samplingstop and bodytimeout separate;0App pass/provider",
+      "current": "O16 solewindow120s work+30s cleanup; R01sourcefix",
+      "webNext": "Settings1cd5/b41c b2 READY;54803ms incl15cleanup;root e6e16e1 preparationapproved;0PG/provider;waitO16actualreturn+newwindow/freshgate",
+      "pure": "DPERF05onlysingleNode15s independentlyadmitted; noHTTP/PG/Chrome"
+    },
+    {
+      "recordedAt": "2026-10-06T19:17:42.926129+00:00",
+      "source": "Lead explicit Settings-next-1916 via root",
+      "window": "Settings-next-1916",
+      "state": "ASSIGNED_WEB_PENDING_FRESH_SINGLE_ADMISSION",
+      "previousO16": "19:15:28 returned;driver/runtime/watchdog gone,centerclosed/rows[];retained13.3MBDB/30KiBdirectory no active load perLead",
+      "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+      "metadata": "b41c93e7a7e054faec68faed101be5adf4d21225",
+      "previousRuntimeMs": 5197,
+      "remainingMs": 54803,
+      "workMs": 39803,
+      "cleanupMs": 15000,
+      "startFreeBytes": 1207959552,
+      "stopFreeBytes": 1140850688,
+      "limits": "64MiB scratch/8MiB retained including previous177631B;0PG/provider;one browser run, no retry/direct37repeat",
+      "review": "message-settings-browser-b2-prepared/root-review.json"
+    },
+    {
+      "recordedAt": "2026-10-06T19:19:32.600004+00:00",
+      "window": "Settings-next-1916",
+      "state": "FAILED_BEFORE_UI_CLEANED_WINDOW_RETURNED",
+      "source": "Actual parent/worker raw + owner cleanup receipt, no extra runtime/space observation",
+      "sourceHead": "b41c93e7a7e054faec68faed101be5adf4d21225",
+      "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+      "run": "settings-b2-20261006-191743-60f52b",
+      "startedAt": "2026-10-06T19:18:07.180541+00:00",
+      "elapsedMs": 8551,
+      "cumulativeMs": 13748,
+      "remainingMs": 46252,
+      "checks": 0,
+      "screenshots": 0,
+      "PG": 0,
+      "provider": 0,
+      "pgid": 66244,
+      "cleanup": {
+        "errors": [],
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      "chromePid": 67309,
+      "chromeExitCode": null,
+      "chromeExitSignal": "SIGTRAP",
+      "chromeCloseCode": null,
+      "chromeCloseSignal": "SIGTRAP",
+      "beforeCdpReady": false,
+      "fixtureClosed": true,
+      "phase": "DevTools endpoint and websocket connected, then CDP timeout/1006 disconnect; no UI behavior reached",
+      "logs": "11145B retained,0drop; sandboxinitializationEPERM/GPUexit6/GPUunusableFATAL observed; not unique cause adjudication",
+      "retry": false,
+      "rawDirectory": "/private/tmp/msgset-b2/raw/settings-b2-20261006-191743-60f52b",
+      "windowReturned": true,
+      "next": "Lead schedules next holder; Web readonly evidence/cause only, no automaticretry or sandboxdisable."
+    },
+    {
+      "recordedAt": "2026-10-06T19:21:28.086200+00:00",
+      "source": "Lead actual19:19:29 observation forwarded byroot; no manager free sample",
+      "observedAt": "2026-10-06T19:19:29Z",
+      "availableDescription": "827–828 MB,below1GiB; precisionnotprovidedhere",
+      "state": "SHARED_RESOURCE_BELOW_RESERVE_NEW_HEAVY_RUNS_BLOCKED",
+      "holders": "NoWebactivePG/Chrome/HTTP;Settingsb2returnedwithcompletecleanup",
+      "restriction": "AllnewPG/Chrome/build includingI02/R01/O16 NOT_RUN; no threshold reduction, polling or automaticretry",
+      "allowed": "Existinglegal source-only/readonly,includingRecoveryparentnarrowrepair; next runtime only genuinely new resource/window plusfreshgate"
+    }
+  ],
+  "dperf05Pure": {
+    "state": "APPROVED_SCOPED_PARSER_SOURCE_AND_62_RUNTIME_EVIDENCE",
+    "implementation": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+    "runtimeHead": "7311ac51113c27a8ddd0e368338dbb0f9e1037fd",
+    "resultElapsedMs": 201,
+    "actualParentPostWriteElapsedMs": 201.40412508044392,
+    "tap": {
+      "tests": 62,
+      "pass": 62,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "expectedTests": 62
+    },
+    "pgid": 22632,
+    "cleanup": {
+      "state": "fulfilled",
+      "errors": [],
+      "seconds": 0.0,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "basis": "Only the owned sandbox/Node process group and own scratch; no service/database created"
+    },
+    "evidence": "dperf05-node-first/intake.json",
+    "window": "Independentpurefinished;O16sharedPG/Chromeownershipunchanged",
+    "ownerFinal": "825f3245ab857d6f73cf5b49ed51feccce4233c8"
+  }
 }

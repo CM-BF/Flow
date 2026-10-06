@@ -99,18 +99,19 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-44 | U11 queue和steering | 主线持久commands/runner；Web有权触发与渲染 | 中心队列持久、有序、可取消与重连；按固定main14c61公共合同，pause受理或原key重放后必须fresh GET最新paused/currentTurn，再由用户明确单独取消当前active task，两份receipt/结果分别显示，不称stop-all。same queueRevision也更新动态taskStatus/blocked/paused，旧ACK不覆盖新GET。Web实施见[QUEUE01](../wpf-queue01-ui/plan.md)；当前页面unknown key重试与中心状态重载恢复分开，原key跨reload/换连接恢复仍后继。steer仍不支持，须独立受理/送达/生效证据，不以HTTP超时当取消 |
 | WPF-REQ-45 | U11 语音录音/转写与失败恢复 | 主线能力接口；Web受控交互 | 录音与转写分开、明确开始/停止/失败，失败保留文本输入；本轮不偷接付费语音服务，未支持明确，凭据不放浏览器/插件 |
 
-## 当前 owner 与接口冻结
+## Owner 与唯一来源入口
 
-管理authority不迁，原a5固定发布/33bd副本仍仅其时点。以下是当前分配，历史表已原样移至[历史入口](status-history.md)；D04唯一账本决定写权，claim数不等agent数。
+管理authority不迁，原a5固定发布/33bd副本仍仅其时点。下表仅定位owner来源、独立worktree和branch，不另抄动态领取或技术进度。**写权必须fresh读取D04的claim ID/version/scope与COMMITTED/RELEASED；进度只由各owner唯一status聚合。** [当前跨lead交接](../../docs/evidence/web-platform/mature-task-handoff.md)保留已核原始回执和共享窗口；本表owner名字不授予已释放scope。旧过时分配段已原样归入[历史](status-history.md)。
 
-| 当前工作 | 唯一owner / worktree / branch | 写入范围与下一停点 |
+| 工作 | 来源owner / 唯一WT / branch | 唯一status |
 | --- | --- | --- |
-| RECOVERY01 → MATURE06 | workspace_panels_owner / web-conversation-recovery / codex/web-conversation-recovery | 6ff988b2 v4原21；724 worker P2官方composer接管修源，root supervisor仅源码闭合；22direct/browser未运行 |
-| RELEASE03 → MATURE01 | w01_owner / web-current-preview-compatibility / codex/web-current-preview-compatibility | bfb209ae v3原4；432b actual362两history红已封存676f/clean，原预算余176.126秒；等Lead固定三行修复tuple，源码与运行/发布分开 |
-| DPERF04 → D01 | w01_owner / dashboard-summary-detail / codex/dashboard-summary-detail | c837独立树，b554ddb6 v1九scope已COMMITTED并派源码；实际发布运行窗口优先，检查后置 |
-| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v3六管理目录；唯一status/集中交接，不构成第三执行层 |
-
-已交付ATTACH/ATTACHI/ACK/CACHE/D06/DASHSUM/DPERF03等固定main及released回执见[集中历史入口](../../docs/evidence/web-platform/mature-task-handoff.md)，不沿旧claim写；旧当前分配以Git历史保存，不当新take。
+| RECOVERY01 → MATURE06 | workspace_panels_owner / web-conversation-recovery / codex/web-conversation-recovery | [状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md) |
+| MESSAGESETTINGS01 → MATURE02 | w01_owner / web-message-settings / codex/web-message-settings | [状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/plans/wpf-message-settings/status.md) |
+| DPERF04 → D01 | w01_owner / dashboard-summary-detail / codex/dashboard-summary-detail | [状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md) |
+| DPERF05 → D01 | workspace_panels_owner / dashboard-status-timestamps / codex/dashboard-status-timestamps | [状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps/plans/wpf-dperf05-status-timestamps/status.md) |
+| RELEASE03 → MATURE01（已交付来源） | w01_owner / web-current-preview-compatibility / codex/web-current-preview-compatibility | [状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/plans/wpf-release03-current-preview/status.md) |
+| PROFILEC02 → MATURE02（已交付来源） | w01_owner / web-profile-readonly-compatibility / codex/web-profile-readonly-compatibility | [状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-readonly-compatibility/plans/wpf-profile-readonly-compatibility/status.md) |
+| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | [状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/status.md) |
 
 ## 已确认决定与工程方案
 
@@ -120,16 +121,11 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 - FileTree/Terminal与现有详情只据真实公共接口展示，不从UI推导PTY或任意文件读取能力。完整X01生命周期/第三方隔离/CLI等价仍归主线唯一计划；P01可组合slot不冒称全栈交付。
 - dashboard由Lead唯一部署/登记；我方只管理本队source和已授权窄采样。性能需实际消费者/规模证据，合成probe不能宣称生产容量或用户延迟收益。
 
-## 当前执行队列
+## 执行顺序与交权规则
 
-| 优先级 / 状态 | 当前计划 | 下一动作与真实边界 |
-| --- | --- | --- |
-| P1源码实施 | RECOVERY01 / MATURE06-04 | 原21唯一writer修复完整材料恢复；正式review NOT_STARTED，新direct/browser未跑，窗口需fresh条件 |
-| P1负兼容已封存 | RELEASE03 / MATURE01 | 原362实际两红/清理完成；Lead准备immutable362+三行修复，先新A后B/全兼容后受管发布，个人当前不变 |
-| 源码已派工 | DPERF04 / D01 | [实际九scope receipt](../../docs/evidence/web-platform/dperf04-take-receipt.json)，唯一owner W01，原有D01后继；测试/登记单列 |
-| 只读后继 | REQ22/23插件与MATURE05 Arc | 唯一host/P01接缝与稳定view布局研究，不抢Recovery范围、不增任务层级 |
+当前优先级、fixed输入、检查窗口和具体下一步统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)及上列owner status；这里不再维护第二份滚动状态表。共享PG/Chrome由Lead明确交接，纯检查按自身获批预算独立fresh准入。所有项目写入先核D04精确范围与唯一writer；源码、独审、运行证据、main接收、实际页面发布分别记录。
 
-当前三队4/4/4上限12，本树root+现三成员=4。普通进展只status→dashboard；GO只完整大task独立blocker与Done(1)，不重复私信/转发。历史真实两query2/2只引用，不新增模型预算。
+用户总槽位约束仍Root4/Web4/Mika4=12，本组root与三成员共4；claim数量不等运行agent数。普通进展通过唯一status聚合到dashboard，不重复普通外部消息。
 
 ## TODO
 

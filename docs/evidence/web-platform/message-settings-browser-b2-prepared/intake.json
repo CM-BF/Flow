@@ -1,0 +1,69 @@
+{
+  "recordedAt": "2026-10-06T19:13:29.758267+00:00",
+  "state": "READY_SOURCE_PREPARATION_APPROVED_AWAITING_R01_RETURN_AND_NEW_WINDOW",
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "actualMetadataHead": "b41c93e7a7e054faec68faed101be5adf4d21225",
+  "clean": true,
+  "branch": "codex/web-message-settings",
+  "sourceCount": 6,
+  "previousRuntimeMs": 5197,
+  "remainingMs": 54803,
+  "previousRetainedBytes": 177631,
+  "rootReview": "root-review.json",
+  "files": [
+    {
+      "name": "aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "name": "binding.json",
+      "bytes": 33851,
+      "sha256": "555109f2912b3ba861512a79a043a8c1b9d07f3a90aefce12c3cacf0bc06776a"
+    },
+    {
+      "name": "browser-budget.json",
+      "bytes": 220,
+      "sha256": "1b9c19465742cb36c2a993260b1e457580d216c543dc7d624d19c82ae6fe2af7"
+    },
+    {
+      "name": "report.md",
+      "bytes": 5619,
+      "sha256": "87b746f4c01b5728cd7b8a4479938bb2128c90a3cbe6833a3ab7f588aeb0a681"
+    },
+    {
+      "name": "runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "name": "source-audit.json",
+      "bytes": 3926,
+      "sha256": "157115b95d984c30ea91f84d102db604659bf2070320d05379e0c98a3ec54cbb"
+    },
+    {
+      "name": "supervisor.py",
+      "bytes": 13169,
+      "sha256": "3fc1067afed63ef9416487996c3669590dd98c90b2bcb6f5cd1cb3bfc3804729"
+    },
+    {
+      "name": "supervisor.py.diff",
+      "bytes": 5417,
+      "sha256": "a891740727efdc1a703aa2f7f93485ebfa350a553b5dd5645552d9d087974323"
+    },
+    {
+      "name": "worker.mjs",
+      "bytes": 10923,
+      "sha256": "9f9d205fa227da0aa1b6c529dd49f7aa9a2d58625ee13c39824f3c6c1da43fd0"
+    },
+    {
+      "name": "worker.mjs.diff",
+      "bytes": 7589,
+      "sha256": "ee2c29f866a763c6cac86c6874d5fffb225c2cc767107781fb72aef524b9a477"
+    }
+  ],
+  "limits": "Original60s cumulative incl15cleanup;64MiBscratch/8MiBretained;start1207959552/stop1140850688",
+  "beforeRun": "Fresh original8 claim/nooverlap,6sources+116readonly+37external/pins,actual metadata rebind and only state promotion then new manifest digest; freshfree/new explicit window/single-usegate. Current candidate unchanged, no gate.",
+  "window": "LeadR01exclusive;WebnoPG/Chrome/HTTP",
+  "history": "First5197ms startup failure0checks unchanged; old actual Chrome code/signal notcaptured; native temp repair candidate not runtime proof."
+}

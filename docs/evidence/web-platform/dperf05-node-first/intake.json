@@ -1,0 +1,120 @@
+{
+  "recordedAt": "2026-10-06T19:16:13.633887+00:00",
+  "state": "APPROVED_SCOPED_PARSER_SOURCE_AND_62_RUNTIME_EVIDENCE",
+  "implementation": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+  "runtimeHead": "7311ac51113c27a8ddd0e368338dbb0f9e1037fd",
+  "startedAt": "2026-10-06T19:14:51.981149+00:00",
+  "resultFinishedAt": "2026-10-06T19:14:52.182116+00:00",
+  "resultElapsedMs": 201,
+  "actualParentPostWriteElapsedMs": 201.40412508044392,
+  "resultRemainingMs": 14799,
+  "actualParentPostWriteRemainingMs": 14798.595874919556,
+  "tap": {
+    "tests": 62,
+    "pass": 62,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "expectedTests": 62
+  },
+  "pgid": 22632,
+  "cleanup": {
+    "state": "fulfilled",
+    "errors": [],
+    "seconds": 0.0,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "basis": "Only the owned sandbox/Node process group and own scratch; no service/database created"
+  },
+  "postWrite": {
+    "tmpBytes": 75618,
+    "rawBytes": 21103,
+    "resultBytes": 2452,
+    "elapsedMs": 201.40412508044392,
+    "withinLimits": true
+  },
+  "scope": "One pure parser file, no HTTP/PG/Chrome/network; not actualaggregate aging/main/servicedeployment",
+  "files": [
+    {
+      "file": "run.py",
+      "source": "/private/tmp/dperf05-node-once-iozl0vgo/run.py",
+      "bytes": 18871,
+      "sha256": "8256f6b911627348288b43d4deeb040dde6ee073d6d209a3757e2d05b8120963"
+    },
+    {
+      "file": "binding.json",
+      "source": "/private/tmp/dperf05-node-once-iozl0vgo/binding.json",
+      "bytes": 2394,
+      "sha256": "28564373a20a4a0a14b63c87002dbba35a0a12ec6bda445b2c42b0b41c3ad8c3"
+    },
+    {
+      "file": "sandbox.sb",
+      "source": "/private/tmp/dperf05-node-once-iozl0vgo/sandbox.sb",
+      "bytes": 165,
+      "sha256": "b57921a64f44becdbf6ad98cd03b654a5528ba8e12cf19e71255e6f3064efc67"
+    },
+    {
+      "file": "preparation.json",
+      "source": "/private/tmp/dperf05-node-once-iozl0vgo/preparation.json",
+      "bytes": 2813,
+      "sha256": "b61540e0dc09f95ba6683976c80895bc6369f8d1567e9d15d255d655267c3c53"
+    },
+    {
+      "file": "run-62fe-before-cleanup.py",
+      "source": "/private/tmp/dperf05-node-once-iozl0vgo/run-62fe-before-cleanup.py",
+      "bytes": 16109,
+      "sha256": "62fe3301727b32e2824b9b3076dfa14538e544eb7bd354aaf20d7a66485c5a3f"
+    },
+    {
+      "file": "cleanup-fix.diff",
+      "source": "/private/tmp/dperf05-node-once-iozl0vgo/cleanup-fix.diff",
+      "bytes": 6376,
+      "sha256": "a67a47f7dc364db5dc4879f6ff45b53f5b4af89da6cc0e179b5b42ccaba96de9"
+    },
+    {
+      "file": "dperf04-to-dperf05.diff",
+      "source": "/private/tmp/dperf05-node-once-iozl0vgo/dperf04-to-dperf05.diff",
+      "bytes": 12994,
+      "sha256": "83924ee4991caf043586080c9f3c4fa5443cc9dadc9b89edea61768f4372a03a"
+    },
+    {
+      "file": "result.json",
+      "source": "/private/tmp/dperf05-node-once-iozl0vgo/result.json",
+      "bytes": 2452,
+      "sha256": "abcbaa15e847f6eaf4ca99e773a9c95155ee68feadae09670ccb5d569bb39d22"
+    },
+    {
+      "file": "node.log",
+      "source": "/private/tmp/dperf05-node-once-iozl0vgo/node.log",
+      "bytes": 12471,
+      "sha256": "4b9a3f306e07e4ce095840c7807ffccbc26353895ff448659e38f2f22762a76c"
+    },
+    {
+      "file": "consumed-gate.json",
+      "source": "/private/tmp/dperf05-node-once-iozl0vgo/consumed-gate.json",
+      "bytes": 973,
+      "sha256": "281ca79cca167c49d0d9426a9a2ef56e7a1018bfbcb5e1099d672559cb0923c0"
+    },
+    {
+      "file": "parent-stdout.jsonl",
+      "source": "/private/tmp/dperf05-node-parent-stdout.jsonl",
+      "bytes": 446,
+      "sha256": "6026942cf0dc26ad4f7c3fd12c15c2a473c0003084f527522669eb91ab3155b3"
+    },
+    {
+      "file": "admission.json",
+      "source": "/private/tmp/d01-dperf05-node-admission.json",
+      "bytes": 3073,
+      "sha256": "20151be264f60abac23df5f6d3a27b35ae86fc0ab176acba63290f2f5b9f96d3"
+    },
+    {
+      "file": "supervisor-root-review.json",
+      "source": "/tmp/root-dperf05-supervisor-review.json",
+      "bytes": 3281,
+      "sha256": "37cd419574ba56988ae7b681b498db2d3b1c21aa25a3bc3c79bc54126fc321dd"
+    }
+  ],
+  "next": "Root retainedreview then Lead actualaggregate consumer/normalintegration; no repeat pure62.",
+  "rootReview": "root-runtime-review.json"
+}

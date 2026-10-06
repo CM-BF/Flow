@@ -1,0 +1,104 @@
+--- run-62fe-before-cleanup.py
++++ run.py
+@@ -156,13 +156,6 @@
+             errors.append('Owned process group remains')
+     except Exception as error:
+         errors.append('process cleanup: ' + str(error))
+-    try:
+-        if SCRATCH.exists():
+-            shutil.rmtree(SCRATCH)
+-        if SCRATCH.exists():
+-            errors.append('Owned scratch remains')
+-    except Exception as error:
+-        errors.append('scratch cleanup: ' + str(error))
+     if time.monotonic() > total_deadline:
+         errors.append('Total deadline exceeded during cleanup')
+     return errors
+@@ -179,6 +172,7 @@
+     log_bytes = 0
+     dropped_bytes = 0
+     selector = selectors.DefaultSelector()
++    post_write = None
+     report = {'startedAt': utc_now(), 'implementation': binding['implementation'],
+               'sourceHead': binding['head'], 'sourceHashes': binding['sources'],
+               'bindingSha256': digest(BINDING), 'runnerSha256': digest(__file__),
+@@ -253,9 +247,9 @@
+             except BaseException as error:
+                 final_errors.append(label + ': ' + type(error).__name__ + ': ' + str(error))
+                 return fallback
+-        # Check before deleting scratch: a short-lived child can exit between polls.
++        # This is an early observation only; the authoritative tail sample follows reaping.
+         final_used = capture('exit tmp observation', lambda: logical_bytes(BASE))
+-        report['exitTmpBytesBeforeCleanup'] = final_used
++        report['observedTmpBytesBeforeReap'] = final_used
+         if final_used is not None and final_used > limits['tmpBytes']:
+             final_errors.append('Temporary size limit exceeded at child exit')
+         capture('selector close', selector.close)
+@@ -264,9 +258,27 @@
+         if process and process.stdout:
+             capture('stdout close', process.stdout.close)
+         group_absent = capture('owned group observation', lambda: not group_alive(process), False)
++        report['postReapBeforeRemoval'] = {'groupAbsent': group_absent}
++        if group_absent:
++            # Stable tail: no owned child may still append files before accounting.
++            used = capture('post-reap tmp observation', lambda: logical_bytes(BASE))
++            free = capture('post-reap free observation', lambda: available_bytes(binding['worktree']))
++            report['postReapBeforeRemoval'].update(tmpBytes=used, freeBytes=free)
++            if used is not None and used > limits['tmpBytes']:
++                final_errors.append('Post-reap temporary size limit exceeded')
++            if free is not None and free <= limits['stopFreeBytes']:
++                final_errors.append('Post-reap free space below stop threshold')
++            # Accounting failure is FAIL, but a reaped group's scratch is safe to remove.
++            try:
++                if SCRATCH.exists():
++                    shutil.rmtree(SCRATCH)
++            except BaseException as error:
++                cleanup_errors.append('scratch cleanup: ' + str(error))
++        else:
++            cleanup_errors.append('Owned group remains or is unknown; scratch retained')
+         scratch_absent = capture('scratch observation', lambda: not SCRATCH.exists(), False)
+-        if not group_absent or not scratch_absent:
+-            cleanup_errors.append('Owned group or scratch remains')
++        if not scratch_absent:
++            cleanup_errors.append('Owned scratch remains')
+         report['cleanup'] = {'state': 'fulfilled' if not cleanup_errors else 'failed',
+                              'errors': cleanup_errors, 'seconds': round(time.monotonic() - cleanup_started, 3),
+                              'groupAbsent': group_absent, 'scratchAbsent': scratch_absent,
+@@ -310,12 +322,36 @@
+                       'elapsedMs': report['elapsedMs'], 'logBytes': log_bytes,
+                       'sourceHead': binding['head'], 'finalizationErrors': ['Report exceeded reserved bytes']}
+             encoded = (json.dumps(report, indent=2) + '\n').encode()
++        def check_written_result():
++            # These actual observations are also returned on stdout after the final write.
++            value = {'tmpBytes': logical_bytes(BASE),
++                     'rawBytes': sum(f.stat().st_size for f in BASE.glob('*.json')) + (LOG.stat().st_size if LOG.exists() else 0),
++                     'resultBytes': RESULT.stat().st_size}
++            value['elapsedMs'] = (time.monotonic() - started) * 1000
++            value['withinLimits'] = (value['tmpBytes'] <= limits['tmpBytes']
++                                     and value['rawBytes'] <= limits['rawBytes']
++                                     and value['resultBytes'] <= limits['finalReportReserveBytes']
++                                     and value['elapsedMs'] <= limits['totalSeconds'] * 1000)
++            return value
+         try:
+             RESULT.write_bytes(encoded)
++            post_write = capture('post-write actual accounting', check_written_result)
++            if post_write is None or not post_write['withinLimits']:
++                final_errors.append('Post-write actual tmp/raw/report/time limit or observation failure')
++                report['state'] = 'FAIL'
++                report['postWriteFailure'] = post_write
++                # At most one failure rewrite; never a reporting loop or a retry of tests.
++                failure = (json.dumps(report, indent=2) + '\n').encode()
++                if len(failure) > limits['finalReportReserveBytes']:
++                    failure = (json.dumps({'state': 'FAIL', 'cleanup': report['cleanup'],
++                        'finalizationErrors': ['Post-write accounting failure; report too large']}) + '\n').encode()
++                RESULT.write_bytes(failure)
++                post_write = capture('failure-report actual accounting', check_written_result)
+         except BaseException as error:
+             report['state'] = 'REPORT_WRITE_FAILURE'
+             report['reportWriteError'] = type(error).__name__ + ': ' + str(error)
+-    print(json.dumps({'state': report['state'], 'result': str(RESULT), 'cleanup': report['cleanup']}))
++    print(json.dumps({'state': report['state'], 'result': str(RESULT), 'cleanup': report['cleanup'],
++                      'postWrite': post_write, 'reportWriteError': report.get('reportWriteError')}))
+     return 0 if report['state'] == 'PASS' else 1
+ 
+ 

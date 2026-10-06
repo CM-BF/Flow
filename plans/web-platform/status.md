@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 19:02 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 19:19 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -19,7 +19,7 @@
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置控件已成型，类型与定向行为检查已通过限定复核，等待界面验收。 |
 | 下一可用交付 | 先补齐旧页面兼容记录并更新预览；继续验收草稿恢复、设置控件，并纠正看板更新时间误判。 |
-| 当前阻塞 | ACTIVE: 预览尚未更新；草稿恢复首轮浏览器检查失败，保存启动和观察器已修且受控检查通过，真实页面仍待复验；设置界面检查在浏览器准备阶段退出、尚未执行行为断言；看板交互仍待验证，合法更新时间窄修正在修正审查问题。 |
+| 当前阻塞 | ACTIVE: 预览尚未更新；草稿恢复首轮浏览器检查失败，保存启动和观察器已修且受控检查通过，真实页面仍待复验；设置两次界面检查均在初始化阶段退出、尚未执行行为断言；Lead最新空间低于保留额，新的重检查暂停；看板交互仍待验证，合法更新时间窄修已通过62项解析器检查，等待聚合消费者和发布验证。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -97,7 +97,7 @@
 - 六大task与Mika02/04唯一canonical、用户原话/Arc抽象、登记字段与待集成目标统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)。Web只拥有01/03/05/06，02/04不复制计划。
 - Lead09:09:25正式观察111 sources/current/issues[]，六MATURE/CONTEXTI/STEER/VISUAL已登记；本管理不重复API。D08已main f181；root10:44–10:45实际页面已核六parent与子片父/worker领取；MATURE04 stale已自恢复，剩余声明格式交Mika合法owner。
 - root12:24既有DOM已核148来源、main a8aef、顶部三大task分散；Lead同期ledger available/unregistered[]，没有展开领取详情或本组API采样；[精确观察](../../docs/evidence/web-platform/dashboard-148-root-dom-observation.json)。
-- 原下一完整旅程沿MATURE06-04；中心582f/共享d6d/生产9406已main84005。Recovery原21领取/首canonical dcaf属于历史启动；当前1b8受控27/27与正式未全审边界见页首及唯一owner status，不能沿旧dirty描述推断当前状态。[接口/写权队列](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。
+- 原下一完整旅程沿MATURE06-04；中心582f/共享d6d/生产9406已main84005。Recovery原21领取/首canonical dcaf属于历史启动；当前7cc受控38/38与真实browser未复验/正式未全审边界见页首及唯一owner status，不能沿旧dirty描述推断当前状态。[接口/写权队列](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。
 - D05 registry evidenceDir应为docs/evidence/d05-first-fit；现owner仍Lead队，仅其可修registry，本组不抢写。
 - CONTEXTI已main并释放；STEIRI01、ACTIVITYREAD和D08已main f181并全部停写释放，source见集中handoff。
 - GO已将MATURE03附件端到端责任交Web/root；运行域及实际ATTACHI02已main cde且旧scope释放，完整MATURE03目标仍开放；CACHE也已main/released。新RECOVERY01仅用自己fresh21claim，不沿已释放写权。

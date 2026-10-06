@@ -1,0 +1,153 @@
+{
+  "recordedAt": "2026-10-06T19:20:22.040766+00:00",
+  "state": "ACCEPTED_FAILED_BROWSER_ATTEMPT_AND_CLEANUP_ONLY",
+  "run": "settings-b2-20261006-191743-60f52b",
+  "sourceHead": "b41c93e7a7e054faec68faed101be5adf4d21225",
+  "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+  "elapsedMs": 8551,
+  "previousRuntimeMs": 5197,
+  "cumulativeMs": 13748,
+  "remainingMs": 46252,
+  "checks": [],
+  "screenshots": 0,
+  "ownedProcess": {
+    "workerPid": 66244,
+    "chromePid": 67309,
+    "profile": "/private/tmp/msgset-b2/scratch/chrome-9eQZd9",
+    "processGroup": "inherited-worker",
+    "argv": [
+      "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "--headless=new",
+      "--no-first-run",
+      "--no-default-browser-check",
+      "--disable-background-networking",
+      "--disable-component-update",
+      "--disable-sync",
+      "--remote-debugging-port=0",
+      "--remote-debugging-address=127.0.0.1",
+      "--user-data-dir=/private/tmp/msgset-b2/scratch/chrome-9eQZd9",
+      "--disk-cache-dir=/private/tmp/msgset-b2/scratch/chrome-9eQZd9/disk-cache",
+      "about:blank"
+    ],
+    "temp": {
+      "TMPDIR": "/private/tmp/msgset-b2/scratch",
+      "TMP": "/private/tmp/msgset-b2/scratch",
+      "TEMP": "/private/tmp/msgset-b2/scratch",
+      "MAC_CHROMIUM_TMPDIR": "/private/tmp/msgset-b2/scratch",
+      "XDG_CACHE_HOME": "/private/tmp/msgset-b2/scratch",
+      "NODE_COMPILE_CACHE": "/private/tmp/msgset-b2/scratch"
+    },
+    "spawnAttemptedAt": "2026-10-06T19:18:08.218Z",
+    "spawnedAt": "2026-10-06T19:18:08.232Z",
+    "cdpReadyAt": "2026-10-06T19:18:12.638Z",
+    "exit": {
+      "code": null,
+      "signal": "SIGTRAP",
+      "at": "2026-10-06T19:18:13.573Z",
+      "beforeCdpReady": false
+    },
+    "close": {
+      "code": null,
+      "signal": "SIGTRAP",
+      "at": "2026-10-06T19:18:13.581Z"
+    },
+    "launchError": null,
+    "signals": [],
+    "streams": {
+      "stdout": {
+        "receivedBytes": 0,
+        "keptBytes": 0,
+        "droppedBytes": 0,
+        "ended": true,
+        "closed": true
+      },
+      "stderr": {
+        "receivedBytes": 11145,
+        "keptBytes": 11145,
+        "droppedBytes": 0,
+        "ended": true,
+        "closed": true
+      }
+    }
+  },
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "scratchAbsent": true
+  },
+  "fixtureClosed": true,
+  "files": [
+    {
+      "file": "result.json",
+      "source": "/private/tmp/msgset-b2/result.json",
+      "bytes": 35710,
+      "sha256": "c2b23e6d647dc9af5c6f088e29b5896ef793072bdb56ffc1696541c2c78a7788"
+    },
+    {
+      "file": "browser-budget.json",
+      "source": "/private/tmp/msgset-b2/browser-budget.json",
+      "bytes": 199,
+      "sha256": "ee8cf882bc394c50bd0ae37e9684689ad52f4facf222cb162fdfc32283bf43f1"
+    },
+    {
+      "file": "worker.log",
+      "source": "/private/tmp/msgset-b2/worker.log",
+      "bytes": 52,
+      "sha256": "b5aff1399470c4d26e32116587ddda544ff821a16a636d49da65d1b8fe8fb5eb"
+    },
+    {
+      "file": "consumed-gate.json",
+      "source": "/private/tmp/msgset-b2/consumed-gate.json",
+      "bytes": 1466,
+      "sha256": "ae09ad03382b033a740f45630ed3525e41aa998facfcc43ba9ab438661505ca9"
+    },
+    {
+      "file": "child-gate.json",
+      "source": "/private/tmp/msgset-b2/child-gate.json",
+      "bytes": 1834,
+      "sha256": "91345680a34921034275d511c66242027e08b69b72dc769775c3918bb78a4746"
+    },
+    {
+      "file": "binding.json",
+      "source": "/private/tmp/msgset-b2/binding.json",
+      "bytes": 33843,
+      "sha256": "c32650bb30ef7692e9f9b4fddaa6c3af57139db1a2d7dde5210b64cc89e82d29"
+    },
+    {
+      "file": "manifest.json",
+      "source": "/private/tmp/msgset-b2/manifest.json",
+      "bytes": 3517,
+      "sha256": "08380ec5c262fcdb60805a83898a68c4ef458e926f18f0f96edcd22008b3b711"
+    },
+    {
+      "file": "sandbox.sb",
+      "source": "/private/tmp/msgset-b2/sandbox.sb",
+      "bytes": 500,
+      "sha256": "5dae52587733a26362f57fc3038f421cd3fb6da8b025005fd908b94bbc2e475d"
+    },
+    {
+      "file": "raw/chrome.log",
+      "source": "/private/tmp/msgset-b2/raw/settings-b2-20261006-191743-60f52b/chrome.log",
+      "bytes": 11145,
+      "sha256": "130c2fbbd24db0f5a620ea6dae510a918c91cfc57cf032e618c0ad07eae13272"
+    },
+    {
+      "file": "raw/browser-results.json",
+      "source": "/private/tmp/msgset-b2/raw/settings-b2-20261006-191743-60f52b/browser-results.json",
+      "bytes": 3770,
+      "sha256": "4c340ffa18ca1af6d3555831b21162fd681e07be52df776f2143064dcdf22fb9"
+    },
+    {
+      "file": "raw/owned-chrome.json",
+      "source": "/private/tmp/msgset-b2/raw/settings-b2-20261006-191743-60f52b/owned-chrome.json",
+      "bytes": 1683,
+      "sha256": "654ac53b2d5def1fd8c31f694bd27f4e79303cd839925a181958342fdabd30b6"
+    }
+  ],
+  "boundary": "Actual CDP discovery/ws connected thenSIGTRAP disconnect; no UI assertions. Preservedstderr0drop/closed; individual sandbox/GPU log observations not unique rootcause. Prior5197raw/codeunknown notbackfilled. No retry.",
+  "ownerSeal": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+  "remote": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+  "clean": true,
+  "ownerFullArchive": "message-settings-browser-b2-owner-observation.json",
+  "rootReview": "root-runtime-review.json"
+}

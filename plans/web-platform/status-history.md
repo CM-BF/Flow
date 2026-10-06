@@ -412,3 +412,33 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 | 已集成 / 原范围释放 | C01/ACTIVITYC01与rendererI/D06 | 源码祖先/hash及原子release已核；不再等待集成，也不在旧树追写 |
 | 已验真实持续聊天 | 既有CHAT/QUEUE与GO两query | GO/Lead固定真实两query2/2已验收封存；running入队、继续、浏览器退出与精确第二回复通过。本队只消费固定证据，不重跑模型；steer、语音、完整context等未完成项保持原REQ |
 | 跨团队协调 | D04写权、Lead来源/部署、Mika领域工作 | 用户总预算Root4/Web4/Mika4=12；本树root+现三成员=4，不新增agent。唯一status→dashboard，普通事件不逐条私信；跨lead裁决或看板无法解决的真实阻塞才一次短消息 |
+
+
+## 2026-10-06 19:14 UTC 归档的旧分配段
+
+以下原文来自管理6cfe561的旧计划；保留历史，不代表当前writer、scope、检查或集成状态。
+
+## 当前 owner 与接口冻结
+
+管理authority不迁，原a5固定发布/33bd副本仍仅其时点。以下是当前分配，历史表已原样移至[历史入口](status-history.md)；D04唯一账本决定写权，claim数不等agent数。
+
+| 当前工作 | 唯一owner / worktree / branch | 写入范围与下一停点 |
+| --- | --- | --- |
+| RECOVERY01 → MATURE06 | workspace_panels_owner / web-conversation-recovery / codex/web-conversation-recovery | 6ff988b2 v4原21；724 worker P2官方composer接管修源，root supervisor仅源码闭合；22direct/browser未运行 |
+| RELEASE03 → MATURE01 | w01_owner / web-current-preview-compatibility / codex/web-current-preview-compatibility | bfb209ae v3原4；432b actual362两history红已封存676f/clean，原预算余176.126秒；等Lead固定三行修复tuple，源码与运行/发布分开 |
+| DPERF04 → D01 | w01_owner / dashboard-summary-detail / codex/dashboard-summary-detail | c837独立树，b554ddb6 v1九scope已COMMITTED并派源码；实际发布运行窗口优先，检查后置 |
+| WPF-001管理 | d01_owner / web-platform-management / codex/web-platform-management | 632a7149 v3六管理目录；唯一status/集中交接，不构成第三执行层 |
+
+已交付ATTACH/ATTACHI/ACK/CACHE/D06/DASHSUM/DPERF03等固定main及released回执见[集中历史入口](../../docs/evidence/web-platform/mature-task-handoff.md)，不沿旧claim写；旧当前分配以Git历史保存，不当新take。
+
+
+## 当前执行队列
+
+| 优先级 / 状态 | 当前计划 | 下一动作与真实边界 |
+| --- | --- | --- |
+| P1源码实施 | RECOVERY01 / MATURE06-04 | 原21唯一writer修复完整材料恢复；正式review NOT_STARTED，新direct/browser未跑，窗口需fresh条件 |
+| P1负兼容已封存 | RELEASE03 / MATURE01 | 原362实际两红/清理完成；Lead准备immutable362+三行修复，先新A后B/全兼容后受管发布，个人当前不变 |
+| 源码已派工 | DPERF04 / D01 | [实际九scope receipt](../../docs/evidence/web-platform/dperf04-take-receipt.json)，唯一owner W01，原有D01后继；测试/登记单列 |
+| 只读后继 | REQ22/23插件与MATURE05 Arc | 唯一host/P01接缝与稳定view布局研究，不抢Recovery范围、不增任务层级 |
+
+当前三队4/4/4上限12，本树root+现三成员=4。普通进展只status→dashboard；GO只完整大task独立blocker与Done(1)，不重复私信/转发。历史真实两query2/2只引用，不新增模型预算。

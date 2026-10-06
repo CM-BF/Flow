@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-06T19:22:31.920444+00:00",
+  "type": "Settings second-startup primary research and bounded source proposal; NOT_RUN",
+  "basis": "Fixed1cd/b41c, actualb2 review e423384f; parent8551ms + first5197 =13748 cumulative;46252ms remaining arithmetic only. Lead19:19:29 reported827–828MB below existing threshold; no runtime while resource hold.",
+  "primarySources": [
+    {
+      "url": "https://bazel.build/docs/sandboxing",
+      "finding": "Official Bazel docs explicitly describe macOS sandbox-exec nesting as unsupported. This supports an outer Seatbelt conflict; it is not a trace of our installed Chrome."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/main/sandbox/mac/seatbelt.cc",
+      "finding": "Chromium native implementation calls sandbox_init / sandbox_init_with_parameters and sandbox_apply for its own policies."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/main/sandbox/mac/seatbelt_exec.cc",
+      "finding": "Child startup receives the serialized policy and initializes its native sandbox."
+    },
+    {
+      "url": "https://chromium.googlesource.com/chromium/src/+/refs/heads/main/sandbox/mac/sandbox_serializer.cc",
+      "finding": "Deserialized policy is applied through Seatbelt compiled or source initialization; failure returns false."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/main/chrome/common/chrome_paths.cc",
+      "finding": "Default DIR_CRASH_DUMPS is based on default user data directory and appends Crashpad on macOS; it deliberately does not follow a later --user-data-dir override. Therefore an isolated profile alone is insufficient for Crashpad location."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/main/chrome/app/chrome_crash_reporter_client.cc",
+      "finding": "Create reads BREAKPAD_DUMP_LOCATION and, when nonempty, overrides DIR_CRASH_DUMPS. GetCrashDumpLocation returns that overridden key. This is a source-supported owned crash path mechanism without changing HOME or disabling sandbox."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/main/chrome/app/chrome_main_delegate.cc",
+      "finding": "On POSIX Create runs before macOS InitMacCrashReporter, supporting that override ordering."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chromium/chromium/main/components/crash/core/app/crashpad_mac.mm",
+      "finding": "The macOS initial Crashpad handler receives GetCrashDumpLocation as its database path."
+    }
+  ],
+  "inference": [
+    "b2 actual reached a CDP port, WebSocket connected then disconnected; native initializationEPERM repeats, GPUexit6 loops, GPUunusableFATAL and actualSIGTRAP. With known parent sandbox-exec inheritance, native nested Seatbelt conflict is the leading supported explanation, not simply a missing file-write directory.",
+    "Do not fix this by increasing connect timeout, repeatedly allowing personal Crashpad paths, disabling Chrome sandbox/GPU sandbox, adding --no-sandbox, or attributing disk collapse to this run. Exact installed154 source/syscall chain still unconfirmed.",
+    "MAC temporary-path repair improved progress beyond the first ProcessSingleton stage, but a successful native temp creation is not actual UI success."
+  ],
+  "minimalArchitectureProposal": {
+    "status": "CANDIDATE_DESIGN_REQUIRES_EXPLICIT_RUNTIME_BOUNDARY_REVIEW; no source implementation or execution here",
+    "reuse": "Use the existing reviewed parent as the sole resource/process owner. Keep the Vite/Node worker under its existing custom read/write/network policy. Separately own installed Chrome as a parent-launched sibling with its normal native child sandboxes, analogous to existing successful project-owned Recovery/RELEASE03 launch topology. No generic arbitrary command broker or second framework.",
+    "sequence": "Validate all pinned sources first. Parent allocates owned short profile/temp/cache/crash directories, starts exact Chrome executable/argv with native sandbox defaults, collects bounded stdout/stderr/exit/close, waits for valid owned DevTools port under original work deadline, then launches the fixed sandboxed Node worker with a parent-bound loopback endpoint. Worker creates fixture and runs unchanged four behavior groups. Parent always cleans both owned groups and checks absence before removing scratch.",
+    "ownership": "Worker no longer spawns/signals Chrome. Parent owns both Chrome and Node groups and final Chrome lifecycle proof; keep fixture closure in worker. Existing claim/HEAD/manifest/one-use gate and evidence accounting bind the exact changed scripts. Avoid cleanup ownership shared between both layers.",
+    "ownedPaths": "Explicit MAC_CHROMIUM_TMPDIR plus TMP/TEMP/TMPDIR, profile and disk-cache under own short scratch. Set BREAKPAD_DUMP_LOCATION to an own crash subdirectory, record only these whitelisted values. Preserve HOME and never read/allow personal profile or personal Crashpad content. Version-specific effect remains to verify when execution is later admitted.",
+    "authorityTradeoff": "Chrome is no longer subject to the custom outer filesystem/loopback OS restrictions. Native Chrome sandbox plus owned paths is a different boundary and must be disclosed to Lead; background-network flags and browser routing are not an OS egress guarantee. Do not claim equivalence, silently replace the old approved entry or launch before this boundary is accepted. If the required custom OS limits are mandatory, this topology is not ready; choose an already-authorized browser environment with compatible controls instead.",
+    "budget": "Retain both failedraw sets, parent13748 cumulative; nexttotal<=46252ms including15000cleanup, so work<=31252ms. Carry second result retainedBytes360142 conservatively alongside new evidence. No budget reset or extra launch-only probe. Existing resource margin must recover and shared window be newly assigned; no lower threshold.",
+    "scope": "Initially source/preparation only in owner /tmp candidate and originalleaf evidence. Product sources remain1cd (fiveoriginalf3 sourcebytes unchanged); no37/direct rerun, no package install/build, no personal service/tab access."
+  },
+  "acceptance": "Prepared runner diff requires independent review of fixed launch/ownership and explicit authority tradeoff, then fresh owner/Lead resource admission. Actual future results must show four behavior groups and two theme screenshots to approve this controlled fixture; App/Send/Queue/Recovery remains separate.",
+  "skills": "Reused localfind-skills/clean-code/webapp-testing. Investigated actual failure with primary APIs, minimal private ownership change and explicit unresolved runtime authority; no unrelated installation."
+}

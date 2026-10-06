@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-06T19:18:13.503147+00:00",
+  "type": "Recovery fixed harness follow-up source review; no runtime/provision/take",
+  "head": "3896ca58a5c096e97f2816cc2066a537dcf0439e",
+  "implementation": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+  "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts",
+  "sha256": "e855cea0267552129caa1bc9caa5111a2f388e36aae702017b926ff22b569d3e",
+  "peerReport": {
+    "path": "/private/tmp/recovery-7cc-browser-preparation-readonly/report.md",
+    "sha256": "cba6db0011c5d4d5aba35367b5fb5c5ec957c3865afa17dc4c52231251e72740"
+  },
+  "verdict": "NARROW_HARNESS_REPAIR_BEFORE_NEXT_BROWSER",
+  "confirmed": [
+    "Read parent harness1–199 independently. Recovery directly launches owned worker and Chrome process groups without Settings outer write/network sandbox. First cookieRead reached browser; cannot infer same ProcessSingleton failure.",
+    "treeBytes scratch catches ENOENT around lstat/recursive call and never follows symlinks. R01 transient-file failure is not a reason to rewrite this working helper.",
+    "Prior browser14846.267375ms remains separate from38 controlled tests. Next max75153.732625ms total includes15000ms cleanup; integer gate rounds down. Ten raw prior files must stay immutable."
+  ],
+  "findings": [
+    {
+      "priority": "P2",
+      "lines": "165–197",
+      "problem": "Monitor stops before cleanup; terminal scratch size updates peak then deletes without enforcing maxScratchBytes, and there is no terminal free-space check. A last child write can exceed admitted observed limits while report.passed remains true.",
+      "minimalRepair": "After owned group absence, sample final scratch/evidence/free without work-deadline guard, record threshold/accounting failures as errors, then still perform safe cleanup. Persist final elapsed/accounting after report/budget writes with bounded completion, do not reset previous budget."
+    },
+    {
+      "priority": "P2",
+      "lines": "170–183",
+      "problem": "Unknown process-group observation errors are pushed as arbitrary text, but scratch deletion is guarded by a regexp matching only process group or exit unconfirmed. A group-check permission/error whose text misses those phrases could delete scratch before actual absence is confirmed.",
+      "minimalRepair": "Keep explicit all-owned-groups-absent boolean; only ESRCH qualifies for absence. Any unknown/live group retains scratch and marks cleanup incomplete; no dependence on human error message matching."
+    }
+  ],
+  "nativeTempPreparation": "For installed macOS Chrome set MAC_CHROMIUM_TMPDIR explicitly to owned scratch and record only owned temp/argv values. Keep HOME and default Chrome sandbox. Reuse existing own PID exit/signal recording, do not copy a second Settings collector or general supervisor. No personal directory or global /tmp permission expansion.",
+  "timingBoundary": "Current timer begins after preflight; do not describe existing90s as all invocation overhead. A revised fixed parent should preserve original measured budget and make newly included timing phase explicit; no retroactive correction of first raw.",
+  "dispatchBoundary": "Manager fresh original6ff988b2 v4/21 scopes, same panels owner, source-only one parent harness plus own plan/status/review/evidence. Do not modify other production sources or repeat38 passed tests. Exact new target and supervisor delta independently reviewed before Lead gives later Recovery shared window. Settings currentready window takes priority.",
+  "checksPerformed": "Source read/hash and peer comparison only; no Node import/PG/Chrome/HTTP/free sample or project write.",
+  "cleanCode": "Single process owner and explicit state for safe deletion; separate observation failure from permission to cleanup; no speculative framework or duplicate launch system."
+}

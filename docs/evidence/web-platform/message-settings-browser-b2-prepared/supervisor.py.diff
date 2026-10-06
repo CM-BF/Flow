@@ -1,0 +1,65 @@
+--- first/supervisor.py
++++ candidate/supervisor.py
+@@ -60,18 +60,25 @@
+         assert sha(budget) == gate['previousBudgetSha256']
+         previous = load(budget); assert previous['complete'] is True and previous['spentMs'] == gate['previousRuntimeMs']
+     else: assert gate['previousRuntimeMs'] == 0 and gate['previousBudgetSha256'] is None
++    prior = binding['previousEvidenceBasis']
++    assert sha(prior['path']) == prior['sha256']
++    prior_result = load(prior['path'])
++    assert prior_result['cumulativeMs'] == gate['previousRuntimeMs']
++    assert prior_result['cleanup'] == {'errors':[], 'groupAbsent':True, 'scratchAbsent':True}
++    assert binding['previousEvidenceBytes'] == prior_result['retainedBytes']
+     consumed = BASE/'consumed-gate.json'
+     with consumed.open('x') as f: json.dump(gate, f)  # Failure after consumption still counts; never retry here.
+     started = time.monotonic(); wall_ms = int(time.time()*1000)
+     hard = started+gate['totalMs']/1000; work = hard-CLEANUP_MS/1000
+     scratch = BASE/'scratch'; output = BASE/'raw'/gate['run']; log = BASE/'worker.log'
++    assert len(str(scratch).encode('utf8')) <= 40, 'Owned native socket temp prefix must remain short'
+     process = None; errors = []; cleanup = []; samples = []; result = None; log_bytes = 0
+     selector = selectors.DefaultSelector()
+     report = {'state':'FAILED', 'sourceHead':binding['head'], 'implementation':binding['implementation'],
+               'entry':gate['entry'], 'startedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+               'previousRuntimeMs':gate['previousRuntimeMs'], 'samples':samples, 'errors':errors}
+     def observe_resources(phase):
+-        available = free(root); tmp = sizes(scratch); retained = sizes(BASE)[0]-tmp[0]
++        available = free(root); tmp = sizes(scratch); retained = sizes(BASE)[0]-tmp[0]+binding['previousEvidenceBytes']
+         samples.append({'phase':phase,'seconds':round(time.monotonic()-started,3),'freeBytes':available,'scratchLogical':tmp[0],'scratchAllocated':tmp[1],'retainedBytes':retained})
+         if available <= gate['stopFreeBytes']: raise RuntimeError('Free-space stop')
+         if max(tmp) > 64*MiB: raise RuntimeError('Scratch/profile observed cap')
+@@ -99,12 +106,16 @@
+         scratch.mkdir(mode=0o700); output.mkdir(parents=True,mode=0o700)
+         profile=BASE/'sandbox.sb'
+         profile.write_text('(version 1)\n(allow default)\n(deny file-write*)\n(allow file-write* (subpath '+json.dumps(str(scratch)) +') (subpath '+json.dumps(str(output))+') (literal "/dev/null"))\n(deny network*)\n(allow network-bind (local ip "localhost:*"))\n(allow network-inbound (local ip "localhost:*"))\n(allow network-outbound (remote ip "localhost:*"))\n')
++        # Native Chrome ProcessSingleton uses a UNIX socket below its explicit owned temp path.
++        with profile.open('a') as sandbox:
++            for operation in ('network-bind','network-outbound'):
++                sandbox.write('(allow '+operation+' (prefix '+json.dumps(str(scratch)+'/')+'))\n')
+         child_gate={**gate,
+           'supervision':{'startedAtMs':wall_ms,'workDeadlineMs':wall_ms+gate['totalMs']-CLEANUP_MS,
+             'hardDeadlineMs':wall_ms+gate['totalMs'],'scratch':str(scratch),'output':str(output),'parentPid':os.getpid()}}
+         save(BASE/'child-gate.json',child_gate)
+         env={k:v for k,v in os.environ.items() if not k.startswith(('FLOW_','PG','POSTGRES_','DPERF04_','MESSAGE_SETTINGS_' )) and k not in ('DATABASE_URL','NODE_OPTIONS','HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy')}
+-        for key in ('TMPDIR','TMP','TEMP','XDG_CACHE_HOME','NODE_COMPILE_CACHE'): env[key]=str(scratch)
++        for key in ('TMPDIR','TMP','TEMP','MAC_CHROMIUM_TMPDIR','XDG_CACHE_HOME','NODE_COMPILE_CACHE'): env[key]=str(scratch)
+         env.update({'NODE_DISABLE_COMPILE_CACHE':'1','TSX_DISABLE_CACHE':'1','GIT_CONFIG_GLOBAL':'/dev/null','GIT_CONFIG_SYSTEM':'/dev/null','GIT_OPTIONAL_LOCKS':'0','MESSAGE_SETTINGS_BROWSER_GATE':str(BASE/'child-gate.json'),'TSX_TSCONFIG_PATH':str(BASE/'runtime-tsconfig.json')})
+         checkpoint()
+         with log.open('xb') as stream:
+@@ -155,7 +166,7 @@
+                 errors.append('Cumulative allowance exceeded')
+             retained=None
+             try:
+-                retained=sizes(BASE)[0]-sizes(scratch)[0]
++                retained=sizes(BASE)[0]-sizes(scratch)[0]+binding['previousEvidenceBytes']
+                 if retained>8*MiB-128*1024: raise RuntimeError('Retained evidence reserve exceeded')
+             except BaseException as e: errors.append('Final evidence accounting: '+str(e))
+             report.update(elapsedMs=elapsed,cumulativeMs=cumulative,remainingMs=max(0,TOTAL_MS-cumulative),
+@@ -170,7 +181,7 @@
+         except BaseException as e: errors.append('Post-write resource observation: '+str(e))
+         persist_results()
+         try:
+-            if sizes(BASE)[0]-sizes(scratch)[0]>8*MiB: raise RuntimeError('Final retained evidence cap exceeded')
++            if sizes(BASE)[0]-sizes(scratch)[0]+binding['previousEvidenceBytes']>8*MiB: raise RuntimeError('Final retained evidence cap exceeded')
+             if time.monotonic()>hard: raise TimeoutError('Total deadline includes final evidence writes')
+         except BaseException as e:
+             errors.append('Final evidence completion: '+str(e)); persist_results()
