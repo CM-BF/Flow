@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:32 UTC / 2026-10-06 02:30 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 03:17 UTC / 2026-10-06 03:15 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
-| 工作树dirty状态 | 本次规则/汇总metadata待提交 |
+| 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `10854f109459109ea7273979da4153daecdf1571`（同步时观察值） |
+| 工作树dirty状态 | 本次汇总metadata待提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | `14fea3d9b3f831aa35b8c80bf5c465a7039ad609`；2026-10-06 01:46 UTC确认本机与origin/main已集成M1；此SHA是观察值，后续metadata不让既有实现失效 |
+| 已集成main状态 / HEAD | `3773db5d014a6d38d09553acd0a5fe8df900b7c4`；2026-10-06 03:15 UTC确认main/origin已集成G01/P02/F01/WPF-M02与D04；此SHA仅观察值 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 恢复和统一工作接口已进入主线，协议与新版Web正在集成 |
-| 下一可用交付 | 同一入口处理多个任务决策，接入版本化项目计划 |
+| 当前产出 | 统一多任务Web、项目版本命令、持久外部执行已进入主线 |
+| 下一可用交付 | 自然语言目标的受限执行命令，以及真实harness工程交付对照 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -58,3 +58,7 @@ main/origin/main已核验e845eb069c594989117fadf380335650efef27a2 clean，M1完�
 ## 2026-10-06 02:32 UTC 持续目标与当前批次
 
 用户明确长期工程目标，原计划作为最低完整范围不作自动终止点。main8c57f2f已含C02恢复、M02接口/CLI与201task因果顺序修复，独立target和局部证据见I02。P01 SDK slice fb14d351独立review11项通过，完整出站持久关联仍open；D03正在review修复，外部W01新Thread cb4a392已审候选，WPF-M02统一入口开始消费公共契约。G01将于D03交付释放槽后启动，R03执行能力/时钟可靠性由Lead排队，均不提前勾完。22项原要求持续追溯，未完成项保留。
+
+## 2026-10-06 03:17 UTC 当前滚动事实
+
+main3773db5已推送clean；G01/P02/F01/WPF-M02分别获独立审查，必要组合10项、A2A真实入口选择1项、Web20项和类型/build通过，0模型。D04已部署且30来源读取正常，领取receipt与进度分离。E01 auth/Paseo方法已审，不等于生产采用；O01首段实际实现中。长期完整22项矩阵已逐行校准，不关闭自然语言、npm/隔离、KB、远端runtime及100会话验收。各历史段落为当时观察，不作为当前派工。
