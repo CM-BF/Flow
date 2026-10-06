@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:12 UTC / 2026-10-06 04:10 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:20 UTC / 2026-10-06 04:12 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
@@ -15,7 +15,7 @@
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 对话后端已集成；协议传输和有界停机已审并通过组合检查 |
+| 当前产出 | 持续对话三端与配置声明已审接收，准备有界真实两轮验收 |
 | 下一可用交付 | 同一会话的真实两轮回复、重连和按需详情 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -50,3 +50,5 @@
 [本轮完整集成清单与验证边界](../../docs/evidence/i02/2026-10-06-integration.md)。全Flow长期目标继续，O01/X01/KB/容量等仍open。
 
 2026-10-06 04:12 UTC：P03/R04领域已审源零diff+组合typecheck通过；见第四批原始记录。main8f已含第三批，不沿用此前仅候选表述。真实聊天仍等待Web固定接收，0模型；SVC01准备与O02桥接并行。
+
+2026-10-06 04:20 UTC：main6c9已推P03/R04；第五批WPF-CHAT01(7cb)/CHAT03(a28)/shared(94f,300f)各自独审且组合root/Web typecheck通过，固定main后执行最多2query/$.40，当前0。

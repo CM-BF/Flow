@@ -58,3 +58,13 @@ P03仅P02出站send/GetTask明确historyLength0，其余observe默认历史保�
 同时接收B01/X02已集成main8f观察与release metadata、X01只读管理子段依赖说明、PERF02main接收记录；未改实现。不因这些metadata再跑全库。登记X03/SVC01/O02三个唯一来源，45项；SVC01只计划，O02首status待owner，缺失明确unknown。D05图源码停写并amend交外部D06，历史3773基线仍诚实保留直至后继交付。
 
 clean-code集成复核：无手工重写领域，source同已审target；局部组合只查类型依赖。真实聊天Web7cb独立修复旧ACK与重连中间turn后正在收尾，尚未集成/未实际模型调用；CHAT03仍领域实施。下一交付为固定三端后的有界两轮。
+
+## 第五批：持续聊天Web与配置声明（2026-10-06 04:20 UTC）
+
+WPF-CHAT01完整3319122包含outbox0d4、主体842及两P2修复7cb，外部Root限定APPROVED7cb，独立16projection+3公开探针，作者25相关检查与之前33direct/dev11/prod11按原证据范围；未在此重跑。合入出现7处早期shared/CHAT01三件套冲突，全部选择主线已审完整canonical版本，不重写领域。Web App/Thread/conversations对完整331零diff，合入后的shared/client/contracts对先前main6c9零diff。原始chat-web-typecheck.txt通过。
+
+CHAT03领域a28ca199905b2d0aac95a0d440c8bc525380cdc3/Mika独立只读APPROVED，作者46不同局部行为（44+6中4重叠）与tsc；正式metadata02d。薄client94f独审Mika，生产mount300f三行独审Root；生产直接消费者3/7选中通过，4未选，原始证据F01。没有把profile声明当SDK生效/online或主线真实模型通过。组合后root及Web typecheck通过（chat-profile-*-typecheck.txt），无全库重复。
+
+O02所需runner直接依赖仅将lock既有zod4.6.5/MCP1.32.1明确列入importer，offline frozen install成功；O02桥接实现本批尚未接收。验收脚本F01/chat-live.mjs默认仅preflight，显式execute才有最大2query；独占DB/进程/浏览器、0工具、失败停、nonce两轮、持久源绑定、SDK累计usage保守上界，不调用第三次。短回复没有Read full reply按钮，只核浏览器未自动拉详情，不拿旧long-reply fixture当这次真实展开。
+
+clean-code复核：共享冲突保留批准来源整文件，领域策略单一owner；完整main冻结后先0模型资源/浏览器准备，确认配置后按原批准上限执行。生产真实query尚0。
