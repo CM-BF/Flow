@@ -13,3 +13,5 @@
 - 2026-10-06T03:42:24.054Z–03:42:29.801Z：修后同8项真实PG回归exit0，8通过/0失败/0跳过，5.747秒；schema清理仅发生于当前运行新建专用库。类型检查随后通过。性能正式修后复测待Web窗口完成。
 
 - 2026-10-06T03:44:52Z：mika独立Node24/Vitest4.0.18复跑8/8通过，5.98秒，target70af7b4；原始stdout复制SHA-256 `3677d88c1461fb9d48f7742eee7f25d30fc4074a79d74b3bf2a5b89111d5413e`。实现与方法APPROVED，性能after证据尚待执行/复核。
+
+- 2026-10-06T03:46:01.332Z–03:46:10.218Z：Web正式窗口释放后，已审70af7b4的metadata HEAD748df2d运行after probe。exit0/23检查/47,496,555响应bytes/8.887秒；五库drop、HTTP/pool全关闭。运行前git diff --exit-code验证产品/测试/测量与70af7b4一致；没有再次跑已8/8通过的同套测试。after JSON保留UTC、PID派生DB名、动态端口、源码hash、原始样本和EXPLAIN。

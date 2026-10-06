@@ -26,7 +26,7 @@
 
 `apps/server/src/m2-workspace.ts` 的projectCommittedEvents更新查询在已追平后仍扫描全timeline和feed：128任务场景扫描16,384 timeline行+16,512 feed行，EXPLAIN实际6.713ms；单任务长历史空HTTP页仅470bytes，仍扫描16,384+16,385行、6.788ms。LIMIT200只约束投影插入数量，没有约束为寻找缺口而扫描的历史量。原始EXPLAIN ANALYZE/BUFFERS计划在JSON中。
 
-候选只使用现有索引和事务：每task通过 `(task_id,task_cursor)` 索引倒序取得最后投影cursor，再通过timeline主键按 `cursor > projected.task_cursor` 读最多200条；保留最终全局排序/总LIMIT200、投影锁及acceptance先于output。没有全局source sequence/createdAt高水位。候选已在受控窗口完成8组结果等价检查，现已按同样查询应用局部产品修复；分支功能测试通过，修后HTTP性能复测/独立review/main集成分别待核。
+候选只使用现有索引和事务：每task通过 `(task_id,task_cursor)` 索引倒序取得最后投影cursor，再通过timeline主键按 `cursor > projected.task_cursor` 读最多200条；保留最终全局排序/总LIMIT200、投影锁及acceptance先于output。没有全局source sequence/createdAt高水位。候选已在受控窗口完成8组结果等价检查，现已按同样查询应用局部产品修复；分支功能测试通过，修后HTTP性能复测与独立代码review已完成，after证据复核/main集成另记。
 
 安全前提：现有events、commands、reconciliation和protocol-dispatch写timeline都在同task行锁内分配cursor并提交；同task较大cursor不会先于较小cursor提交。投影批次按每task cursor递增，因而已投影为前缀。跨task晚提交仍由各自独立cursor发现。交付前必须原样跑晚提交A/B、201task及并发投影回归，并新增同task锁/200事件边界证明。人工绕过行锁补写较小cursor不在该前提内，应明确而不是静默忽略。
 
@@ -34,7 +34,7 @@
 
 ## 当前边界
 
-产品局部修复已在分支通过功能回归，已获mika独立APPROVED，尚未完成修后性能复测或集成；独立review/main集成分别见[status](../../../plans/b01-bounded-reads/status.md)/[review](../../../plans/b01-bounded-reads/review.md)。没有真实模型容量、并发执行压测、跨机网络或UI性能证据。架构无产品变更。
+产品局部修复已在分支通过功能回归，已获mika独立APPROVED，修后性能复测已完成，尚未集成；独立review/main集成分别见[status](../../../plans/b01-bounded-reads/status.md)/[review](../../../plans/b01-bounded-reads/review.md)。没有真实模型容量、并发执行压测、跨机网络或UI性能证据。架构无产品变更。
 
 ## 候选对比与功能修复进展
 
@@ -45,3 +45,22 @@
 [首次失败](workspace-tests-failed.json)为新增测试持锁等待FK插入造成，已按合法事务时间线修复；详见validation-history。此行为也提示workspace原有FK锁等待仍可能影响延迟，当前修复不声称消除写入争用。
 
 独立review：mika已批准实现 `70af7b45814d5ed31d9638649512358e1a0a834b`，另行8/8功能复跑通过（5.98秒），无findings；[review记录](../../../plans/b01-bounded-reads/review.md)与[原始stdout](independent-review-checks.txt)。
+
+## 已审实现的修后真实HTTP结果
+
+正式after窗口：2026-10-06T03:46:01.332Z–03:46:10.218Z，8.887秒、23个命名检查、47,496,555响应UTF-8 bytes，exit0；五个唯一临时DB已drop、HTTP与pools全部关闭，cleanupErrors为空。原始[after-results.json](after-results.json)绑定source HEAD `748df2de43f6f500f45673aeb69de12a6788b5a7`；运行前确认产品/测试/测量文件相对已审target `70af7b45814d5ed31d9638649512358e1a0a834b` diff为空，差异仅review/status metadata。`sourceFiles`记录相关文件hash。候选SQL比较在after默认关闭，23项均为原有HTTP/分页/字节/分层检查，未把同一SQL与自身等价当性能证明。
+
+下面比较第二轮已提交基线(candidate-results，尚未改产品)与实际修后HTTP空workspace页；均为n=50预热样本的p50 / p95 / p99 ms。
+
+| 任务×事件 | 修前HTTP | 修后HTTP | 修后响应bytes |
+| --- | --- | --- | --- |
+| 1×128 | 4.926 / 5.504 / 5.527 | 4.051 / 4.534 / 4.978 | 466 |
+| 16×128 | 5.442 / 6.296 / 7.388 | 4.089 / 4.333 / 4.367 | 4,067 |
+| 128×128 | 10.568 / 11.685 / 13.089 | 5.569 / 6.121 / 6.298 | 24,388 |
+| 1×16384 | 10.575 / 12.277 / 13.172 | 3.619 / 4.084 / 4.203 | 470 |
+
+修后实际生产INSERT查询EXPLAIN也已记录：128×128场景1.021ms，tasks128行、workspace索引128次、timeline bitmap索引128次返回0行；单任务16384事件场景0.055ms，timeline主键索引一次返回0行、2个buffer hits，不再扫描整段历史。小表128行PG仍可选择Seq Scan；当前优化消除长历史重复扫描，仍按任务数探测，仍可能等待FK/投影锁。
+
+第二轮基线loadavg 5.57→5.73，after 3.77→4.57；虽避开Web正式计时窗口，仍有其他功能工作，两轮不是严格随机交替A/B。不能把HTTP差额全部归因于本修复，也不宣称SLO或容量。查询形状和功能回归提供因果依据，局部HTTP样本仅量化本机观察。snapshot/events查询未改，全部原始样本保留；例如after 1×128 snapshot p99=10.348ms，显示短样本仍有背景抖动，没有隐藏不利样本。
+
+此次资源：PID77562，临时DB名和动态端口见after.resources，全部dropped=true。没有读取用户文件、调用模型或改动现有预览服务。无需无依据扩大或重复全库测试。

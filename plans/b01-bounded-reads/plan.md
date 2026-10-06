@@ -13,7 +13,7 @@
 ## TODO
 
 - [x] B01-01 可重复短测、分层/UTF-8/批次与分页检查、长历史扫描证据与修复候选。
-- [ ] B01-04 按实证修复workspace长历史扫描，保留晚提交/201task并追加per-task prefix回归。
+- [x] B01-04 按实证修复workspace长历史扫描，保留晚提交/201task并追加per-task prefix回归。
 - [x] B01-02 独立 review 绑定提交、证据复核和 owner 修复。
 - [ ] B01-03 由 Execution Lead 接收集成，核实 main 与 dashboard 来源。
 

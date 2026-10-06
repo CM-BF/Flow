@@ -2,22 +2,22 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T03:45:22Z |
+| 最近更新 / 最近main同步核验 | 2026-10-06T03:46:10.218Z |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra（lead mika） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance |
 | Branch | codex/bounded-read-performance |
 | 工作基线 / HEAD | edee6b1c5d74c2ee46ec98bab2844579db6a00c4 / 70af7b45814d5ed31d9638649512358e1a0a834b（实现target；metadata HEAD由Git聚合） |
 | 工作树dirty状态 | 03:44:08核验clean；本次仅更新交付metadata |
-| 工作分支状态 | in-progress |
-| 检查状态 | PASSED 8/8真实PG功能测试、局部typecheck，target 70af7b45814d5ed31d9638649512358e1a0a834b；首轮23检查/候选31检查；修后性能复测待窗口 |
+| 工作分支状态 | completed（branch；after证据待独立复核/接收） |
+| 检查状态 | PASSED 8/8真实PG功能测试、局部typecheck，target 70af7b45814d5ed31d9638649512358e1a0a834b；首轮23检查/候选31检查；修后23项检查/8.887秒通过 |
 | 已集成main状态 / HEAD | 未集成 B01；03:44:08 main ac4e34de2331dce276440df8969883c1883060ef clean |
 | 实现目标 | 70af7b45814d5ed31d9638649512358e1a0a834b |
 | 实现范围 | experiments/bounded-reads, plans/b01-bounded-reads, docs/evidence/b01, apps/server/src/m2-workspace.ts, apps/server/src/m2-workspace.test.ts |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 已修复workspace历史扫描，8项PG回归通过 |
-| 下一可用交付 | 实现独立审查已通过，等待修后正式短测 |
+| 下一可用交付 | 实现独立审查已通过，修后正式短测通过，等待after证据复核与接收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED 实现target70af7b4；修后性能证据待复核 |
@@ -25,7 +25,7 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | B01-01 | completed | b01_bounded_reads | [首轮结果](../../docs/evidence/b01/initial-results.json)：23检查通过、临时资源清理；候选8组等价、已交具体修复 |
-| B01-04 | in-progress | b01_bounded_reads | 局部修复和8/8回归完成；等待修后性能短测 |
+| B01-04 | completed | b01_bounded_reads | 实现70af7b4已审；8/8功能，after23检查/8.887秒通过 |
 | B01-02 | completed | mika / b01_bounded_reads | [APPROVED target70af7b4](review.md)，独立8/8；after性能证据另复核 |
 | B01-03 | pending | Execution Lead | 未集成 |
 
@@ -53,7 +53,7 @@
 
 ## 2026-10-06T03:43Z 功能交付进展
 
-候选窗口与8/8功能回归证据见[报告](../../docs/evidence/b01/README.md)。第一次新测试持锁等待造成1失败，原始证据与修正依据保留。产品修改只在两文件内；准备固定实现提交。修后正式性能短测等Web矩阵结束，不抢占其计时窗口。
+候选窗口与8/8功能回归证据见[报告](../../docs/evidence/b01/README.md)。第一次新测试持锁等待造成1失败，原始证据与修正依据保留。产品修改只在两文件内；准备固定实现提交。修后正式性能短测已于Web窗口释放后完成；未抢占其计时窗口。
 
 ## 当前交付与handoff
 
@@ -62,3 +62,9 @@
 ## 2026-10-06T03:45Z 独立review交付
 
 mika逐一核写入锁/cursor前缀并独立8/8功能复跑，APPROVED实现70af7b4，0 findings；原始stdout已复制入本任务evidence。owner本次仅更新review/status/证据metadata。修后正式性能短测仍待Web计时窗口，claim保留不release。
+
+## 2026-10-06T03:46Z 修后性能交付
+
+[after-results.json](../../docs/evidence/b01/after-results.json)：03:46:01.332Z–03:46:10.218Z，23命名检查/exit0/47,496,555bytes；全部五个临时DB/HTTP/pool已清理。source748df2d相对实现70af7b4只有metadata。128×128空workspace HTTP p50/p95/p99=5.569/6.121/6.298ms，1×16384为3.619/4.084/4.203ms（各n50）；主机背景负载不同，差额不作为净因果倍数/SLO。真实生产查询长历史全扫描已改为零行索引探测。
+
+已向mika发送after证据复核与交付请求；实现已APPROVED，当前待最终证据复核/Execution Lead main接收。claimv2保留，未release。
