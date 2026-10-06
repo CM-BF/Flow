@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-06T22:06:10.296655+00:00",
+  "state": "FIRST_CANONICAL_TRIO_ALREADY_PRESENT_READY_FOR_LEAD_REGISTRATION",
+  "taskId": "WPF-MESSAGESETTINGS02",
+  "owner": "w01_owner",
+  "coLead": "Web /root (manager d01_owner)",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "branch": "codex/web-message-settings-quick-controls",
+  "plan": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/plan.md",
+  "status": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+  "review": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/review.md",
+  "parentPlan": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md",
+  "canonicalCommit": "b8034817412d3131e3fb65fa82763df9deab2f6f",
+  "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+  "claimVersion": 1,
+  "scope": [
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/test/message-settings.browser.ts",
+    "apps/web/test/message-settings.fixture.tsx",
+    "apps/web/test/message-settings.test.ts",
+    "docs/evidence/wpf-message-settings-quick-controls",
+    "plans/wpf-message-settings-quick-controls"
+  ],
+  "stage": "M2 / implementation",
+  "stateAuthority": "Owner status only; D04 atomic claim only. This request is not proof of registry/main/4320 publication.",
+  "operator": "Original Execution Lead only; no outgoing thread tool used",
+  "trioVerifiedFromFixedGit": "plan.md/status.md/review.md committed and pushed at b8034817412d3131e3fb65fa82763df9deab2f6f; status fixed blob read by manager; no wait for product implementation target.",
+  "leadIntake": "Lead has accepted canonical Git return and says normalregistry will consume the first trio; exact trio is already present at paths above. No actual registry or page receipt received."
+}

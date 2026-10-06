@@ -1,0 +1,149 @@
+{
+  "at": "2026-10-06T21:52:15.067346+00:00",
+  "state": "RETIRED_OWNER_METADATA_CLOSED_BOTH_CAS_RELEASED",
+  "authority": "Execution Lead inbound via root: new explicit OPS permission supersedes old default retention of these two self-started 0-model fixtures; GO confirmed63743 no permanent user retention. Normalstop only after original-owner identity/consumer check.",
+  "owner": "workspace_panels_owner",
+  "services": [
+    {
+      "tree": "web-conversation-activity",
+      "port": 53851,
+      "pid": 31365,
+      "ppid": 31281,
+      "pgid": 30394,
+      "originalSession": 46011,
+      "start": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversation-activity.fixture.ts --activity-preview",
+      "preflight": "Owner reports cwd/Node24/tsx/argv/127.0.0.1 listener match; no signal yet at received preflight"
+    },
+    {
+      "tree": "web-conversations",
+      "port": 63743,
+      "pid": 60286,
+      "ppid": 60280,
+      "pgid": 60270,
+      "originalSession": 14932,
+      "start": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsx apps/web/test/conversation.fixture.ts --preview",
+      "preflight": "Owner reports cwd/Node24/tsx/argv/127.0.0.1 listener match; no signal yet at received preflight"
+    }
+  ],
+  "claims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/conversation-activity/ConversationActivity.tsx",
+        "apps/web/src/conversation-activity/activity.css",
+        "apps/web/src/conversation-activity/projection.ts",
+        "apps/web/test/conversation-activity.browser.ts",
+        "apps/web/test/conversation-activity.fixture.ts",
+        "apps/web/test/conversation-activity.test.ts",
+        "docs/evidence/wpf-activity01",
+        "plans/wpf-activity01"
+      ],
+      "state": "released",
+      "branch": "codex/web-conversation-activity",
+      "origin": "new",
+      "taskId": "WPF-ACTIVITY01",
+      "worker": "workspace_panels_owner",
+      "claimId": "51f962ee-7e6f-4806-a9f9-df3838dc27f5",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity",
+      "createdAt": "2026-10-06T06:04:36.078Z",
+      "updatedAt": "2026-10-06T06:28:50.477Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/conversations/ConversationList.tsx",
+        "apps/web/src/conversations/conversations.css",
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/test/conversation.browser.ts",
+        "apps/web/test/conversation.fixture.ts",
+        "docs/evidence/wpf-chat01",
+        "plans/wpf-chat01-conversations"
+      ],
+      "state": "released",
+      "branch": "codex/web-conversations",
+      "origin": "new",
+      "taskId": "WPF-CHAT01",
+      "worker": "workspace_panels_owner",
+      "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+      "version": 7,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+      "createdAt": "2026-10-06T03:35:00.744Z",
+      "updatedAt": "2026-10-06T06:45:37.758Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "projectWriteAuthority": "Temporary exact metadata claims were atomically taken, owner sealed, then both released; old product claims remain released. No further owner project write authority from this dispatch.",
+  "keepPorts": [
+    4320,
+    61227,
+    61228,
+    49922,
+    55049,
+    61108,
+    55616
+  ],
+  "keepOther": "All unrelated active/unknown processes, user tabs, source/evidence/dependencies; no cache removal by this owner",
+  "limits": [
+    "Exact ownedPID normal SIGTERM only after preservation/identity check; no broadnode kill or unverified group signal",
+    "No inference from IAB tab count",
+    "No new test/model/query/PG/Chrome/free/cache deletion",
+    "Receipt required before Lead independently checks exactcache recovery"
+  ],
+  "currentConsumerEvidence": "root-known-consumers.json",
+  "receivedPreflightFrom": "Original owner collaboration inbound, not manager process sampling",
+  "actualReceipt": "owner-raw/retirement-receipt.json",
+  "actualReceiptSha256": "7173fbaf15bf5d86977375c8f47ef76b6664b4462ccf9a232ccc518df81fab52",
+  "sourceStateAfter": "Both worktrees clean and same HEAD/source bytes as before; no owner project changes",
+  "scopeLimitation": "exit143 preserved, no claim every asynchronous handler completed",
+  "lifecycleMetadata": {
+    "state": "BOTH_SEALED_CLEAN_CAS_RELEASED",
+    "activity": {
+      "claimId": "707b1c6c-1032-42ec-a876-9476d40bc181",
+      "version": 2,
+      "receipt": "activity-preview-retirement-metadata-receipt.json",
+      "state": "RELEASED",
+      "ownerFinal": "7564a032e586c303b6bd0a4a98774ea7fff277f4",
+      "releaseReceipt": "activity-retirement-release-receipt.json"
+    },
+    "chat": {
+      "claimId": "da159c3d-c518-41d7-a94b-6919e9180fcf",
+      "version": 2,
+      "receipt": "chat-preview-retirement-metadata-receipt.json",
+      "state": "RELEASED",
+      "ownerFinal": "c057d9a9326e6cb57b235bbf4a33463fe989c9c0",
+      "releaseReceipt": "chat-retirement-release-receipt.json"
+    },
+    "scope": "Each: only original status.md, own README.md and own preview-retirement directory",
+    "execution": "Sequential original owner, preserve old source/start/URL/retention as history, no product runtime/tests; seal clean then manager releases.",
+    "oldClaims": "Still released; no reuse",
+    "releaseSchemaCorrection": "First activity request used expectedVersion instead of schema version and surfaced INVALID before mutation. Preserved invalid request and zero-byte redirected stdout file named activity-retirement-release-invalid-schema-result.json; that empty file is not valid JSON or a success receipt. Corrected same requestId with version1 committed RELEASED v2, proven by nonempty receipt."
+  },
+  "currentCacheDisposition": {
+    "source": "New original Execution Lead fresh audit inbound via root; not Web resampling",
+    "activity": {
+      "decision": "STRICT_KEEP",
+      "observedConsumerPid": 15811,
+      "observedPorts": [
+        51452,
+        51453,
+        51454
+      ],
+      "observedOpenFiles": true,
+      "boundary": "Only old53851 was retired; separate consumer identity is not established by this manager. Do not stop51454 or broaden service operations."
+    },
+    "chat": {
+      "decision": "LEAD_EXACT_CACHE_FINAL_FRESH_CANDIDATE",
+      "sourceObservation": "Lead reported no process/openfiles and metadata claim released",
+      "authority": "Lead alone final identity/consumer check; not a whole-directory/dependency deletion permit"
+    }
+  },
+  "rootMetadataReview": "root-metadata-closeout-review.json"
+}

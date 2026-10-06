@@ -1,0 +1,101 @@
+{
+  "at": "2026-10-06T21:49:56.320947+00:00",
+  "verdict": "ACCEPTED_TWO_EXACT_CACHES_WEB_KNOWN_CONSUMER_CONFIRMATION_FOR_LEAD_FINAL_PREFLIGHT",
+  "exactCaches": [
+    {
+      "tree": "web-workspace-cache",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/node_modules/.vite",
+      "head": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+      "rootDevIno": [
+        16777234,
+        121545346
+      ],
+      "fileCount": 60,
+      "logicalBytes": 17530080,
+      "claimIds": [
+        "883321bc-933f-4da0-8f86-f200c02620cf"
+      ]
+    },
+    {
+      "tree": "web-workspace-lifecycle-baseline",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/apps/web/node_modules/.vite",
+      "head": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50",
+      "rootDevIno": [
+        16777234,
+        121180652
+      ],
+      "fileCount": 60,
+      "logicalBytes": 17530080,
+      "claimIds": [
+        "c815bc00-fd71-4652-b2c0-7affc0d7361e"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "path": "/tmp/flow-nine-vite-cache-audit.json",
+      "sha256": "68915d92e2f2e60ee204dc22e1dfd9e033cc4346f56e929cab8e13aea4a7898b",
+      "completedAt": "2026-10-06T21:46:48.567927+00:00",
+      "role": "Lead group bounded kernel and exact filesystem identity/content snapshot; not independently rerun byroot."
+    },
+    {
+      "path": "/private/tmp/w01-five-vite-retirement-evidence/audit.json",
+      "sha256": "dac10040a235408172a67500e50064e298df9400506e6da234c3f06a982619d9",
+      "role": "Original documentation-only UNKNOWN remains historical; its no-constant-preview facts combined with newer Lead kernel evidence here."
+    },
+    {
+      "path": "/tmp/root-nine-vite-known-runtime-consumers.json",
+      "sha256": "fbfec58c074e682e942ba84e15c2cb1e0a2715a23eb1d9c0b61ee17fd89fc599",
+      "role": "root direct frozen-package inputs and explicit scratch Vite cache placement."
+    }
+  ],
+  "independentlyVerifiedOwnerDocumentPins": [
+    {
+      "gitObject": "10ca8eef12df8dd675ceb61b472778ae529a6201:plans/wpf-workspace-cache/status.md",
+      "sha256": "5d2c06d40d5c22276b76b280a28a3b3010997d297b699d6c85ad579644e0779a",
+      "bytes": 3621
+    },
+    {
+      "gitObject": "10ca8eef12df8dd675ceb61b472778ae529a6201:docs/evidence/wpf-workspace-cache/README.md",
+      "sha256": "7cb0b74c62d2672930125ac5bd0e0c45e22287df8703e38c30d110dc6db94da4",
+      "bytes": 3032
+    },
+    {
+      "gitObject": "10ca8eef12df8dd675ceb61b472778ae529a6201:docs/evidence/wpf-workspace-cache/validation.md",
+      "sha256": "53f7f4bb780342daa8a603ceea869a8d86c87859dce3321cd92407b6d8cccd08",
+      "bytes": 7480
+    },
+    {
+      "gitObject": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50:plans/wpf-workspace-lifecycle-baseline/status.md",
+      "sha256": "73fea6fbc232ba40d9a5d10bc43695c5060ef0c9900e6c024296aca181020f6b",
+      "bytes": 5138
+    },
+    {
+      "gitObject": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50:docs/evidence/wpf-workspace-lifecycle-baseline/README.md",
+      "sha256": "febe050d64037ddbc4b7fbdcd556ef5b276d28c62ec3b22dc08ce933eaecc1cb",
+      "bytes": 2350
+    },
+    {
+      "gitObject": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50:docs/evidence/wpf-workspace-lifecycle-baseline/validation.md",
+      "sha256": "918c87a04f96b0799711eb1ade70a7ec04d547f0b7a19573cb9f21312fb7eda6",
+      "bytes": 6470
+    }
+  ],
+  "webGroupConfirmation": [
+    "Neither of these two owner features requests a retained long-running preview: CACHE README says no new permanent preview and own experimental services cleaned; BASELINE README says no permanent preview and own browser/server cleaned. Other retained preview trees are untouched.",
+    "No known Web-group external consumer or currently frozen fixture directly requires either exact cache. Recovery supplies own scratch/vite-cache; historical Settings b5 supplies own scratch/vite; DPERF04 uses its owned Node static fixture. Their declared runtime dependencies resolve elsewhere.",
+    "Quick-controls future source-only proposal has no runtime/dependency binding or permission yet; no frozen dependency on these existing two caches is created by that proposal.",
+    "These two caches need not be retained on behalf of this Web group. Under Lead existing authorization, only the sole operator may remove these exact regenerable cache directories after its fresh identity/consumer check; no runtime execution or dependency removal is authorized here."
+  ],
+  "preserve": [
+    "Other7 exact caches are KEEP for retained previews, as are the prior6 active-preview caches.",
+    "Entire real node_modules packages, dependency stores/symlinks, source, configuration, Git, plans and all raw/own evidence remain unchanged.",
+    "Original baseline partial failure and missing first-run cleanup audit remain unchanged; new kernel snapshot does not retroactively prove that historical cleanup complete."
+  ],
+  "limits": [
+    "Bounded own-group knowledge plus timestamped kernel snapshot, not global or perpetual absence of consumers. A changed identity/new consumer requires KEEP/re-evaluation.",
+    "60files/17,530,080B each is logical size; actual physical recovery and remaining resource gate must come from Lead operation receipt.",
+    "No root cache directory traversal/read/deletion, service/proc/free query, test/import/PG/Chrome or project/config mutation. Heavy runtime window stays closed."
+  ],
+  "methods": "find-skills/codebase-design/clean-code local reuse: combine distinct owner lifecycle and current kernel evidence without inventing a new approval bureaucracy or inheriting global certainty."
+}

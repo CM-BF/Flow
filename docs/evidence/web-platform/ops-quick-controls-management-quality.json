@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-06T22:08:13.437127+00:00",
+  "scope": "Original manager632a v3 six scopes; no product/runtime tests",
+  "filesBeforeThisQualityRecord": 71,
+  "jsonParsed": 53,
+  "emptyOriginalStdoutException": "docs/evidence/web-platform/ops-two-fixture-retirement/activity-retirement-release-invalid-schema-result.json",
+  "currentAndAddedMarkdownLinks": 81,
+  "missingLinks": [],
+  "retirementManifestRowsMatched": 19,
+  "initialOwnerCanonical": {
+    "commit": "b8034817412d3131e3fb65fa82763df9deab2f6f",
+    "trio": [
+      {
+        "file": "plan.md",
+        "bytes": 3000,
+        "sha256": "5b623b2b918a4a8ed32332248f6238823dd432440ec77b518d686a484670edcc"
+      },
+      {
+        "file": "status.md",
+        "bytes": 2511,
+        "sha256": "3bd1b807c3bd5994332f1217b90d5294a262ca4aabe67156fbfba657caeb2635"
+      },
+      {
+        "file": "review.md",
+        "bytes": 1020,
+        "sha256": "34100b2d2f14b2888da3e6a9d136d77ca0817d711841caa714776e50625026c2"
+      }
+    ]
+  },
+  "diffCheck": "PASS for current tracked delta; all newly staged files separately checked before commit",
+  "skillDiscovery": "Existing local find-skills + clean-code baseline re-read/reused; no install. Metadata single authority, explicit source-vs-runtime/current-vs-history, narrow owner roles and accurate failed exit evidence.",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "cleanCodeFindings": "Resolved stale NOT_TAKEN/current retirement wording; explicit ACTIVITY otherconsumer KEEP, CHAT candidate only; relative receipt base consistent. No new framework or redundant product tests.",
+  "limits": [
+    "Original copied raw Markdown/fixture snapshots remain byte-for-byte and are not relocated live docs; links inside originals not repaired.",
+    "One preserved failed CLI redirect is zero-byte stdout despite .json suffix; documented and excluded from JSON parse count, not fabricated as valid error JSON.",
+    "No 4320/PG/browser/free/process/cache resample by manager. D04 CLI metadata queries only.",
+    "Source-ready registration request is not proof of registry/page deployment; sole owner status remains authoritative.",
+    "Historical invalid activity release schema request retained; corrected CAS actualreceipt governs."
+  ]
+}

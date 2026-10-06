@@ -1,0 +1,232 @@
+{
+  "kind": "READ_ONLY_RETIREMENT_EVIDENCE_SCREEN",
+  "candidates": [],
+  "decisions": [
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration",
+      "fixedHead": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/apps/web/node_modules/.vite",
+      "decision": "KEEP",
+      "reason": "Explicit retained-preview evidence; no formal retirement established in inspected own records; external consumers unknown"
+    },
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+      "fixedHead": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+      "decision": "KEEP",
+      "reason": "Explicit retained-preview evidence; no formal retirement established in inspected own records; external consumers unknown"
+    },
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+      "fixedHead": "01842a87f768bd28ce7370681ff02d7b834765f7",
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+      "decision": "KEEP",
+      "reason": "Explicit retained-preview evidence; no formal retirement established in inspected own records; external consumers unknown"
+    },
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace",
+      "fixedHead": "4069566a80ead3c2e93ef9032fc2de689d50a1d0",
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/apps/web/node_modules/.vite",
+      "decision": "KEEP",
+      "reason": "Explicit retained-preview evidence; no formal retirement established in inspected own records; external consumers unknown"
+    }
+  ],
+  "sources": [
+    {
+      "tree": "web-plugin-integration",
+      "commit": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+      "path": "plans/wpf-i01-plugin-integration/status.md",
+      "sha256": "a55bdbb447d4d8df259646833845023cb2da5a2fd9b6f9dbd8f4b04c3eb1c73a",
+      "bytes": 7065
+    },
+    {
+      "tree": "web-plugin-integration",
+      "commit": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+      "path": "plans/wpf-i01-plugin-integration/plan.md",
+      "sha256": "d1934ca49db039fad533c143593908954f5e34fc4e8b52b59c0f6d2883ba3f5d",
+      "bytes": 5862
+    },
+    {
+      "tree": "web-plugin-integration",
+      "commit": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+      "path": "docs/evidence/wpf-i01/README.md",
+      "present": false
+    },
+    {
+      "tree": "web-plugin-integration",
+      "commit": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+      "path": "docs/evidence/wpf-i01/validation.md",
+      "sha256": "476516e3a3d0fc7d7ad7258a64c3f66fbfcd59cd7fba3e56ab2aa1f5109564b2",
+      "bytes": 7700
+    },
+    {
+      "tree": "web-plugin-integration",
+      "commit": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+      "path": "docs/evidence/wpf-i01/main-observation.json",
+      "present": false
+    },
+    {
+      "tree": "web-plugin-integration",
+      "commit": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+      "path": "apps/web/test/workspace-preview.ts",
+      "sha256": "19486608233e7971fe51bb77200a66b700fe2567f0cbdb0da44ba077b8e8f50a",
+      "bytes": 1367
+    },
+    {
+      "tree": "web-plugin-integration",
+      "commit": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+      "path": "apps/web/vite.config.ts",
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f",
+      "bytes": 648
+    },
+    {
+      "tree": "web-plugin-management-integration",
+      "commit": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+      "path": "plans/wpf-x03-plugin-integration/status.md",
+      "sha256": "9b4761a249be7e8edaa2bf78d3751f4dc6ff1834e33791e965e3e76c3ec5773a",
+      "bytes": 4639
+    },
+    {
+      "tree": "web-plugin-management-integration",
+      "commit": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+      "path": "plans/wpf-x03-plugin-integration/plan.md",
+      "sha256": "0b6984bd1a0c897ccbfd4f09e9cd2754aff2c98d6b9f240430ef8a411b1a183a",
+      "bytes": 2386
+    },
+    {
+      "tree": "web-plugin-management-integration",
+      "commit": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+      "path": "docs/evidence/wpf-x03/README.md",
+      "sha256": "1488b3cef694971b79b0a72fe04f8f49d8730669b26ac3f5f273c19e0fb193f5",
+      "bytes": 2668
+    },
+    {
+      "tree": "web-plugin-management-integration",
+      "commit": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+      "path": "docs/evidence/wpf-x03/validation.md",
+      "sha256": "4f285813206d4493cc038462ecbc486fc759f165d88d68d51c05b2bcd08d20f8",
+      "bytes": 4470
+    },
+    {
+      "tree": "web-plugin-management-integration",
+      "commit": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+      "path": "docs/evidence/wpf-x03/main-observation.json",
+      "sha256": "9a4a5c09467fcc387c0f9ac59eae9978c9645cdc4bf3947ba0e9c122008ee3f6",
+      "bytes": 719
+    },
+    {
+      "tree": "web-plugin-management-integration",
+      "commit": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "sha256": "9fa4706fb26e639aed55413ff07d5ff0dbd05dee6a30d14221f2b909b313c692",
+      "bytes": 6161
+    },
+    {
+      "tree": "web-plugin-management-integration",
+      "commit": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+      "path": "apps/web/vite.config.ts",
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f",
+      "bytes": 648
+    },
+    {
+      "tree": "web-steering-control",
+      "commit": "01842a87f768bd28ce7370681ff02d7b834765f7",
+      "path": "plans/wpf-steering-control/status.md",
+      "sha256": "3c4d31bb8120fc47448c15c5bf4e7a309a294db57e2cd19c11a247ac67175b00",
+      "bytes": 4128
+    },
+    {
+      "tree": "web-steering-control",
+      "commit": "01842a87f768bd28ce7370681ff02d7b834765f7",
+      "path": "plans/wpf-steering-control/plan.md",
+      "sha256": "8a550d2d44994da213ff240baf0e36b9482e55e92c22ba61ad454640e28bfce3",
+      "bytes": 2529
+    },
+    {
+      "tree": "web-steering-control",
+      "commit": "01842a87f768bd28ce7370681ff02d7b834765f7",
+      "path": "docs/evidence/wpf-steering-control/README.md",
+      "sha256": "5972fb23202259f57762b78c4dcc98c1e9d0faabb6ff44e142c9e52fde7839b0",
+      "bytes": 2992
+    },
+    {
+      "tree": "web-steering-control",
+      "commit": "01842a87f768bd28ce7370681ff02d7b834765f7",
+      "path": "docs/evidence/wpf-steering-control/validation.md",
+      "sha256": "fbf8377e465a9880d9cab5cb0abd77097b9d72680ab0d468bcbf1100b1fa80c2",
+      "bytes": 4775
+    },
+    {
+      "tree": "web-steering-control",
+      "commit": "01842a87f768bd28ce7370681ff02d7b834765f7",
+      "path": "docs/evidence/wpf-steering-control/main-observation.json",
+      "sha256": "5ef3bf4ff304399bfddda724c69bea06c884f70683e3e64dc86682d6a30c7f3a",
+      "bytes": 1568
+    },
+    {
+      "tree": "web-steering-control",
+      "commit": "01842a87f768bd28ce7370681ff02d7b834765f7",
+      "path": "apps/web/test/conversation-steering.fixture.ts",
+      "sha256": "7a231d9c723650d05c22124914b6e31abcd25ba566ba309729cf21fd635b95ae",
+      "bytes": 10622
+    },
+    {
+      "tree": "web-steering-control",
+      "commit": "01842a87f768bd28ce7370681ff02d7b834765f7",
+      "path": "apps/web/vite.config.ts",
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f",
+      "bytes": 648
+    },
+    {
+      "tree": "web-unified-workspace",
+      "commit": "4069566a80ead3c2e93ef9032fc2de689d50a1d0",
+      "path": "plans/wpf-m02-web-workspace/status.md",
+      "sha256": "8cfbc7425b04ebde8b32780d6363f335bc5b6484b69d122f50f5c6f235d1c243",
+      "bytes": 7214
+    },
+    {
+      "tree": "web-unified-workspace",
+      "commit": "4069566a80ead3c2e93ef9032fc2de689d50a1d0",
+      "path": "plans/wpf-m02-web-workspace/plan.md",
+      "sha256": "b5d49e6d21eb1d689e29f49dbe9abac15ffc618a15399f0f5cf310eaf1536d8b",
+      "bytes": 5883
+    },
+    {
+      "tree": "web-unified-workspace",
+      "commit": "4069566a80ead3c2e93ef9032fc2de689d50a1d0",
+      "path": "docs/evidence/wpf-m02/README.md",
+      "present": false
+    },
+    {
+      "tree": "web-unified-workspace",
+      "commit": "4069566a80ead3c2e93ef9032fc2de689d50a1d0",
+      "path": "docs/evidence/wpf-m02/validation.md",
+      "sha256": "3a6893c1bdd7395772163435aad7d1432bebbeed9d1ac177031fe6879a784b21",
+      "bytes": 5059
+    },
+    {
+      "tree": "web-unified-workspace",
+      "commit": "4069566a80ead3c2e93ef9032fc2de689d50a1d0",
+      "path": "docs/evidence/wpf-m02/main-observation.json",
+      "present": false
+    },
+    {
+      "tree": "web-unified-workspace",
+      "commit": "4069566a80ead3c2e93ef9032fc2de689d50a1d0",
+      "path": "apps/web/test/workspace-preview.ts",
+      "sha256": "19486608233e7971fe51bb77200a66b700fe2567f0cbdb0da44ba077b8e8f50a",
+      "bytes": 1367
+    },
+    {
+      "tree": "web-unified-workspace",
+      "commit": "4069566a80ead3c2e93ef9032fc2de689d50a1d0",
+      "path": "apps/web/vite.config.ts",
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f",
+      "bytes": 648
+    }
+  ],
+  "runtime": false,
+  "filesystemCacheIdentityChecked": false,
+  "projectWrites": false,
+  "recoveryTouched": false
+}

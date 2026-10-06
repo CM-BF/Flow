@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-06T21:46:10.378561+00:00",
+  "verdict": "NO_DECLARED_NINE_CACHE_CONSUMER_IN_THIS_GROUP_SEALED_RUNTIME_PACKAGES_NOT_RETIREMENT_CERTIFICATE",
+  "exactCandidateCaches": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/node_modules/.vite",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/apps/web/node_modules/.vite"
+  ],
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 46943,
+      "sha256": "06cfb63a8bc29e8510b17574d16ad3ec9dc5c37cbb63766f47e24e3ea752c455"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 27003,
+      "sha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/vite.config.ts",
+      "bytes": 648,
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "bytes": 31990,
+      "sha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/server.mjs",
+      "bytes": 5487,
+      "sha256": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/apps/web/test/message-settings.browser.ts",
+      "bytes": 11807,
+      "sha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/worker.mjs",
+      "bytes": 6976,
+      "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b"
+    }
+  ],
+  "declaredAbsolutePathHits": [],
+  "facts": [
+    {
+      "consumer": "Recovery next8ed actual metadata000a",
+      "source": "conversation-recovery.browser.ts:352 and fixture.ts:357",
+      "observation": "Worker passes cacheDirectory=join(init.scratch, vite-cache), fixture supplies it as Vite cacheDir. This is explicit own future supervised scratch, not any9 apps/web/node_modules/.vite. No gate/adminenv or runtime yet; no other Vite-internal behavior guaranteed."
+    },
+    {
+      "consumer": "DPERF04 b2/929b",
+      "source": "summary-detail.browser.mjs:9,19–45",
+      "observation": "Entry uses createDashboardServer, two owned temporary synthetic repositories and Node static server; no Vite creation/import in this direct entry. TEMP and cache controls are scoped to owned scratch. Does not certify every package internal filesystem access."
+    },
+    {
+      "consumer": "Delivered Settings b5",
+      "source": "worker.mjs:69 and message-settings.browser.ts:29–33",
+      "observation": "Exact actual worker supplies join(scratch,vite); fixture sets configFile:false/cacheDir explicit. Actual runtime already closed and evidence retained; no rerun proposed."
+    }
+  ],
+  "knownDonors": "Manifest/binding package realpaths remain attachment-production, m2-integration and own roots, not9 target caches. Package roots/true dependencies always KEEP.",
+  "limitations": [
+    "No conclusion that any9 cache is retired, regenerable in its real deployment, free of another lead/external consumer or deletable. Original owner closure and Lead process/directory checks still control.",
+    "No candidate cache directory was traversed/read/deleted; only explicit sources and sealed bindings inspected. Future unknown dynamic paths KEEP.",
+    "No runtime/free/proc/preview/HMR/build or project/config/cache mutation."
+  ],
+  "methods": "Reuse local find-skills/codebase-design/clean-code; distinguish explicit test cache placement from live-preview lifecycle and actual retirement authority."
+}

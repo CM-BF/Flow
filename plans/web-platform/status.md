@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:41 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 22:06 UTC |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -18,8 +18,8 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线。 |
-| 下一可用交付 | 完成草稿辨识与回焦、看板摘要详情的真实页面验证，接续真实消息设置接线与预览更新。 |
-| 当前阻塞 | ACTIVE: 草稿与看板页面候选已获限定源码准备批准，真实复验仍待资源与共享窗口；当前优先核对五棵已释放旧树的保留输入，供 Lead 受控恢复空间。Web 无运行或预约，真实发送/排队/恢复设置全旅程仍开放。 |
+| 下一可用交付 | 完成草稿辨识与回焦、看板摘要详情的页面验证；快速消息设置已在独立树开始实现，真实消息接线另按交权接续。 |
+| 当前阻塞 | ACTIVE: 草稿与看板真实复验仍待资源和共享窗口；本组无重运行或预约，Mika SVC07 下一请求尚未消费。两个旧模拟预览已退役并完成生命周期记录，ACTIVITY 缓存仍有其他消费者必须保留，仅 CHAT 待 Lead 精确核查。快速设置源码可独立推进，真实发送/排队/恢复设置全旅程仍开放。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -68,7 +68,7 @@
 
 | WPF-001-36 | completed | d01_owner | D01/DPERF两组隔离原证据与六scope[只读第二意见](../../docs/evidence/web-platform/dperf03-readonly-proposal.json)已归档；新增末尾HEAD核对后原28→23初为算术预期，实施后仅该临时样本已实测23，captured HEAD/permit/失败unknown为门槛；ATTACHI02实际派工后已root结构批准并fresh db0b7d25 v2七scope实施（新增专测分类helper）；45s/10s清理/8MiB，独审5609 APPROVED，已main a8aef五源同；7cc5双端clean全停写后db0b v3 released；不泛化CPU/SLO。 |
 
-已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛，组件实现未take；真实host接线仍需后继交权。
+已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛；[新组件唯一source](../../docs/evidence/web-platform/message-settings-quick-controls-provision/registration-request.json)已六scope领取并启动，真实host接线仍需后继交权。
 
 ## 当前唯一来源、写权与下一步
 
@@ -107,7 +107,7 @@
 
 ## 当前服务与验收边界
 
-SVC05窗口已由Lead正式关闭，个人backend362/v15与Web8d8/caa1/v2沿服务owner固定receipt；本组无新个人服务采样。原Flow临时detached只属已结束操作窗口，不当源码回退；当前恢复输入固定84005。实际registry/页面发布另依Lead回执，不因新take假称已展示。
+最新个人服务事实仅引用 Lead 21:27:19 正式发布回执：af51 accepting v18、d629 Web current v3、3 retained；本组未采样个人服务或页面。更早 backend362/v15、Web8d8/caa1/v2 与临时 detached 操作仅是历史。逐消息设置 c8e 主线接收不自动说明个人产物含它；新快速设置 source 登记/页面展示另依 Lead 实际回执。
 
 完整聊天/附件/主题插件材质/组合tab/真实多provider/context用量/语音成功路径仍按六大task开放验收。局部fixture/独审/main/个人产物分别记录。GO历史真实queue2/2封存结果只引用原证据，本组0真实模型/语音调用，不重复他队实验。
 

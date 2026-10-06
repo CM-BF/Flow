@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-06T22:02:30.638451+00:00",
+  "fixedGitSource": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "readFrom": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "verdict": "DESIGN_ACCEPTANCE_DELTAS_ONLY_NOT_IMPLEMENTED_NOT_RUN",
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa",
+      "bytes": 17226
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+      "bytes": 14325
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0",
+      "bytes": 3853
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+      "bytes": 2885
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "sha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c",
+      "bytes": 11807
+    },
+    {
+      "path": "plans/wpf-message-settings/plan.md",
+      "sha256": "e551020f21efaf7151dc86c93bae9da45642a9cf181363e8f0b438f027bbbf53",
+      "bytes": 4849
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/interface.md",
+      "sha256": "140c3f53b0a8cabf4e745522110b8b68da189d0c3c08cddbed88a45992fd81ee",
+      "bytes": 4661
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/quality.md",
+      "sha256": "42526cecaca2ab267baf4971c6046c3fe8d2bf94907da78e50c4a744891ec3d3",
+      "bytes": 7863
+    }
+  ],
+  "existingEvidence": [
+    {
+      "path": "/private/tmp/message-settings-ownership-interface-c8e/report.md",
+      "sha256": "357a6ab824d70cd1eec3702028e3494646e25e2360f7a751eb13334eb517b082",
+      "bytes": 5616
+    },
+    {
+      "path": "/tmp/root-message-settings-ownership-interface-review.json",
+      "sha256": "0efe7cde7df4b62b8c665de882f197af33cb158790dfd9d35dcf983432d199d8",
+      "bytes": 3294
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md",
+      "sha256": "5e73006d467eec274588c3667b314d57234062283c0b77360de04b9512360af7",
+      "bytes": 88304
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md",
+      "sha256": "436d9bd18d81485d51a9aa98e5a3f44b7b309b9d15a02e3bae479bc3e1c0c854",
+      "bytes": 14734
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "sha256": "20bd24ab58c8d281b329e1df34655c8a6dc0cd56d8a087aff252b37025c6937c"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/references/architecture.md",
+      "sha256": "00cee1aff4625b7865384ede0fc064e9915f640dfc3df70f2916c1677382a56c"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/web-design-guidelines/SKILL.md",
+      "sha256": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f"
+    }
+  ],
+  "operations": "Fixed git show and bounded local files only; no moving QuickControls source, import, runtime, process/free sample, app/browser/tests/network/PG/claim/project write."
+}

@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-06T22:06:10.296655+00:00",
+  "state": "SOURCE_ONLY_IMPLEMENTATION_COMMITTED",
+  "taskId": "WPF-MESSAGESETTINGS02",
+  "parent": "Existing WPF-MATURE-02 TODO11; standalone controlled component successor",
+  "sourceProvision": "root-actual-provision.json",
+  "gitAuthorityReturned": true,
+  "base": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "freshBefore": "take-before.json",
+  "fixedInputVerification": "actual-pre-take.json",
+  "atomicReceipt": "take-receipt.json",
+  "claim": {
+    "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "taskId": "WPF-MESSAGESETTINGS02",
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+    "branch": "codex/web-message-settings-quick-controls",
+    "scope": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.browser.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "docs/evidence/wpf-message-settings-quick-controls",
+      "plans/wpf-message-settings-quick-controls"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-06T22:00:19.358Z",
+    "createdAt": "2026-10-06T22:00:19.358Z"
+  },
+  "dispatch": "Internal followup activated sole w01_owner after COMMITTED; source-only in six paths. No App/Recovery/shared-contract or dependency writes.",
+  "ownerFirstCanonical": {
+    "commit": "b8034817412d3131e3fb65fa82763df9deab2f6f",
+    "source": "Owner inbound local=remote/clean; manager read fixed Git status blob",
+    "status": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+    "review": "NOT_STARTED",
+    "checks": "NOT_RUN"
+  },
+  "dashboardRegistration": {
+    "state": "REQUESTED_NOT_OBSERVED",
+    "owner": "Original Execution Lead registry owner",
+    "request": "registration-request.json"
+  },
+  "runtime": {
+    "gate": null,
+    "freeSample": false,
+    "productChecks": "NOT_RUN",
+    "prior37And4Inherited": false
+  },
+  "interface": "Required opaque draft ownership + synchronous host CAS; independent per-opening liveness. Real production host handoff remains separate; no new global store."
+}

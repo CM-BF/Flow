@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-06T22:01:51.319933+00:00",
+  "kind": "read-only fixed-source plugin host integration research",
+  "base": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 22770,
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 23725,
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 22822,
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 19732,
+      "sha256": "ecec5a76bb0c0e89c4ac3b5cd4f4d56345299d737e15ca86088f244228fcd56b"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "bytes": 6794,
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879"
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "bytes": 21387,
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca"
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "bytes": 12209,
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241"
+    }
+  ],
+  "planMapping": [
+    "U04",
+    "WPF-REQ-22",
+    "WPF-REQ-23",
+    "WPF-MATURE-02-11",
+    "WPF-001-05"
+  ],
+  "result": "Future production integration acceptance only; not a blocker or scope amendment for current standalone six-scope QuickControls implementation. No feature completion claim.",
+  "observations": [
+    {
+      "evidence": "ExecutionProfilePicker.tsx:106-121; ConversationThread.tsx:56-63",
+      "fact": "MessageSettingsPicker is a controlled standalone interface; current production composer mounts the older locked creation-profile picker directly. No production MessageSettings contribution exists at this fixed base."
+    },
+    {
+      "evidence": "plugins/types.ts:48-64,134-149; plugin-integration/react.tsx:108-123; plugin-integration/attachments.tsx:255-276",
+      "fact": "Existing chat.composer.actions button/menu and chat.composer.context panel slots already offer a real builtin adapter precedent; no additional global slot registry is justified just for message settings."
+    },
+    {
+      "evidence": "plugins/react.tsx:233-260; plugins/host.ts:199-207; plugin-integration/session.ts:35-53,283-301",
+      "fact": "PluginView may retain a renderer inside hidden React Activity; activation stop aborts its signal. ResourceContext composer viewId/isDraft alone is not the opaque draft ownership or activation generation required to apply settings."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "settings-plugin-open-seam",
+      "decision": "At the later assigned production-host handoff, contribute the builtin opening action through existing composer slot and render the one controlled settings surface through a host-owned adapter. Opening may be plugin-dispatched; applying must cross the private synchronous host CAS seam. Keep raw clients, catalog authority, draft ownership token and setter out of serializable contribution args/ResourceContext. Do not add a public set-settings host command without a real authorized requirement."
+    },
+    {
+      "id": "settings-plugin-lifetime",
+      "decision": "Future adapter must bind current activation/connection/view authority, in addition to draft ownership. Capture the original activation signal or equivalent host-owned lease in the apply callback; reject calls after disable/unload, same-plugin reactivation, hidden/inactive view and connection replacement. Do not rely only on unmount, prop freshness or a live plugin id lookup; hidden Activity can retain the old renderer. Reuse existing activation lease instead of another global store."
+    },
+    {
+      "id": "settings-plugin-one-owner",
+      "decision": "Two contributed buttons opening the same composer must use one host-owned C draft and one settings edit session; they cannot allocate parallel authoritative settings stores. Existing sent A and queued B receipts remain immutable when an extension is hidden, disabled or re-enabled."
+    }
+  ],
+  "futureAcceptance": [
+    "Current builtin and a sample alternate button open the same settings surface using existing slots without editing core Thread. Disable the plugin while a staged edit is open: close or invalidate the session, preserve C, and old Apply/omit cannot commit even after re-enable with same draft value.",
+    "Switch/hide the composer pane while the retained renderer exists; delayed old callback remains rejected. Return to the exact view through a new authorized open to edit normally.",
+    "Two entry buttons do not double-apply, fork C or duplicate catalog loads; applying uses exact declared tuple plus synchronous host CAS and cannot mutate A/B."
+  ],
+  "scope": "No changes to current Picker props, App, Thread, P01, Recovery or shared contracts requested here. Host integration will need its own fresh owner/handoff before implementation.",
+  "checks": "Only fixed Git blob reads and design review; no Node import, browser, service, resource sampling, PG, provider or tests.",
+  "cleanCode": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "applied": "Keep one small controlled interface, private host authority and existing real adapter seam. Reject redundant public commands, slot registries and draft stores; specify observable lifecycle rejection checks.",
+    "unresolved": "Exact production adapter signature awaits current Recovery/P01 host ownership handoff; no invented implementation or executed verification."
+  }
+}

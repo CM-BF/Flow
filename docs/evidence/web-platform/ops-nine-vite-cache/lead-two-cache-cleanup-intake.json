@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-10-06T21:53:35.986221+00:00",
+  "source": "Execution Lead actual operation inbound via root; Web did not perform or resample",
+  "state": "LEAD_TWO_EXACT_CACHE_CLEANUPS_COMPLETE",
+  "trees": [
+    "web-workspace-cache",
+    "web-workspace-lifecycle-baseline"
+  ],
+  "exactSuffix": "apps/web/node_modules/.vite",
+  "filesEach": 60,
+  "freshLeadPreconditions": "Released/clean/kernel consumer arrays empty; dev/ino/hash same",
+  "reportedPhysicalVolumeDifferencesBytes": [
+    17661952,
+    17694720
+  ],
+  "reportedFinalFreeBytes": 1182425088,
+  "reportedShortOfSVC07StartBytes": 25534464,
+  "resourceObservationIsHistorical": true,
+  "runtimeAdmission": false,
+  "protected": "Sources, true dependency packages and cache siblings preserved by Lead",
+  "receipts": "plan-status-review/docs/quality/vite-cache-2026-10-06/*-cleanup.json COMPLETE (two records)",
+  "reviewProvenance": "Original cleanup script P2 and fixed revision retained by Lead",
+  "webCacheOperations": 0,
+  "followup": "Only original-owner normal retirement of explicitly authorized53851/63743 continues; no cache2 rescan/free query or new heavy run"
+}

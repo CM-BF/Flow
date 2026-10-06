@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-06T22:03:30.873141+00:00",
+  "reviewer": "root",
+  "result": "ACCEPT_DESIGN_DELTAS_WITH_LIFETIME_CLARIFICATION",
+  "fixedBase": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "sourcePinsVerified": 8,
+  "report": {
+    "path": "/private/tmp/message-settings-quick-keyboard-readonly-2vnfjtgs/report.md",
+    "sha256": "f1e03382c9944a21270c3cd84f9076e3781d047a3405ef30745739b13fd2f5dd",
+    "bytes": 6306
+  },
+  "acceptance": [
+    "Accessible trigger names applied C settings, separately labels local pending Y.",
+    "Native facet group/selection semantics and real keyboard path; changes do not commit until deliberate Apply.",
+    "Meaningful status and lawful focus recovery after removing focused options or rejecting Apply."
+  ],
+  "clarifications": [
+    "Preserve local pending Y only while the same editing lifetime and authority remain valid. On draft ownership/view/connection loss, invalidate or discard the old session; do not preserve stale Y across identities to satisfy wording about keeping a candidate.",
+    "Focus repair only when current focused node within this active dialog is being removed/disabled. Do not run blanket focus effects on background catalog updates or steal focus into hidden/unauthorized panes.",
+    "Normal Cancel/Escape returns to a still connected/visible/enabled trigger. Explicit details navigation yields to its current legitimate host target."
+  ],
+  "mapping": "Existing WPF-MATURE-02-11, current six-scope QuickControls candidate; no new task/claim or scope amendment.",
+  "notClaimed": [
+    "No current implementation review approval",
+    "No keyboard/browser or screen-reader interoperability run",
+    "No cancellation of prior270c scoped review",
+    "No new runtime budget or permission"
+  ],
+  "method": "Fixed Git source plus local assistant-ui/clean-code design evidence. Concrete behavior acceptance only; no project writes."
+}

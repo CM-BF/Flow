@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-06T21:49:14.714154+00:00",
+  "verdict": "TWO_EXACT_CACHE_BOUNDED_WEB_CONFIRMATIONS_COMPLETE_SEVEN_KEEP",
+  "sourceChain": [
+    "fresh-ledger.json",
+    "five-owner-report.md",
+    "five-owner-audit.json",
+    "root-known-consumers.json",
+    "lead-nine-cache-audit.json"
+  ],
+  "leadAuditSha256": "68915d92e2f2e60ee204dc22e1dfd9e033cc4346f56e929cab8e13aea4a7898b",
+  "leadKernelAt": "2026-10-06T21:44:54.112662+00:00",
+  "items": [
+    {
+      "tree": "web-workspace-cache",
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/apps/web/node_modules/.vite",
+      "head": "10ca8eef12df8dd675ceb61b472778ae529a6201",
+      "leadRootDevIno": [
+        16777234,
+        121545346
+      ],
+      "leadFacts": {
+        "processes": [],
+        "openFiles": [],
+        "listeners": [],
+        "regularNlink1Files": 60,
+        "logicalBytes": 17530080,
+        "rootStableDuringAudit": true
+      },
+      "webOwnerEvidence": "five-owner-report.md: neither tree creates a retained long-running preview; own experiment cleanup recorded. Lifecycle first-run audit remains incomplete and is not retroactively repaired.",
+      "knownExternalCacheReads": "No retained preview declaration or known Web consumer for this exact cache in current original-owner records and sealed preparation inputs.",
+      "frozenFixtureDependencies": "Recovery cache is explicit own scratch/vite-cache; Settings is own scratch/vite; DPERF uses Node static server. No declared lexical/realpath hit on either exact cache.",
+      "webConclusion": "BOUNDED_WEB_EXTERNAL_CONSUMER_CONFIRMATION_COMPLETE",
+      "finalOperation": "Lead only, with fresh exact identity/kernel recheck under its existing rules; no mutation by Web"
+    },
+    {
+      "tree": "web-workspace-lifecycle-baseline",
+      "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline/apps/web/node_modules/.vite",
+      "head": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50",
+      "leadRootDevIno": [
+        16777234,
+        121180652
+      ],
+      "leadFacts": {
+        "processes": [],
+        "openFiles": [],
+        "listeners": [],
+        "regularNlink1Files": 60,
+        "logicalBytes": 17530080,
+        "rootStableDuringAudit": true
+      },
+      "webOwnerEvidence": "five-owner-report.md: neither tree creates a retained long-running preview; own experiment cleanup recorded. Lifecycle first-run audit remains incomplete and is not retroactively repaired.",
+      "knownExternalCacheReads": "No retained preview declaration or known Web consumer for this exact cache in current original-owner records and sealed preparation inputs.",
+      "frozenFixtureDependencies": "Recovery cache is explicit own scratch/vite-cache; Settings is own scratch/vite; DPERF uses Node static server. No declared lexical/realpath hit on either exact cache.",
+      "webConclusion": "BOUNDED_WEB_EXTERNAL_CONSUMER_CONFIRMATION_COMPLETE",
+      "finalOperation": "Lead only, with fresh exact identity/kernel recheck under its existing rules; no mutation by Web"
+    }
+  ],
+  "sevenOthers": "KEEP_ACTIVE_OR_RETAINED_PREVIEW; no changes",
+  "notClaimed": [
+    "Global or future dynamic consumer absence",
+    "The incomplete lifecycle old cleanup audit becoming complete",
+    "Physical reclaim equal to logical bytes",
+    "Any current runtime admission or permission to remove dependency packages",
+    "Cache mutation authority for Web"
+  ],
+  "scope": "Only these two exact apps/web/node_modules/.vite regenerated caches. Parent node_modules, package/dependency roots, source/config/own evidence/preview inputs remain KEEP.",
+  "operationsByWeb": {
+    "cacheReads": 0,
+    "cacheWritesOrDeletes": 0,
+    "processQueries": 0,
+    "freeQueries": 0,
+    "productRuns": 0
+  },
+  "originalOwnerConfirmation": {
+    "path": "two-original-owner-confirmation.md",
+    "bytes": 2904,
+    "sha256": "38c0bb9d568b8600113c105a2f6945fd512f1d626e4c40576e7146a27ef6e79d",
+    "statement": "No group retained long-running preview hold, no known external or frozen-fixture direct cache dependency; no owner hold remains on these two exact regenerable caches."
+  },
+  "rootConfirmation": {
+    "path": "root-two-cache-confirmation.json",
+    "sha256": "20ddfa414349b328606dc66213e7fc00f758a3a0a231d5a85d7039cb4c55d937"
+  }
+}
