@@ -39,7 +39,7 @@
 | C01 | [中心](c01-control-plane/plan.md) | `in-progress` | [status](c01-control-plane/status.md) / [review](c01-control-plane/review.md) |
 | R01 | [Runner](r01-runner/plan.md) | `in-progress` | [status](r01-runner/status.md) / [review](r01-runner/review.md) |
 | L01 | [CLI](l01-cli/plan.md) | `in-progress` | [status](l01-cli/status.md) / [review](l01-cli/review.md) |
-| W01 | [Web与双主题](w01-web/plan.md) | `accepted` | [status](w01-web/status.md) / [review](w01-web/review.md) |
+| W01 | [Web与双主题（reserved-external）](w01-web/plan.md) | `accepted` | [status](w01-web/status.md) / [review](w01-web/review.md) |
 | OPS-001 | [计划状态与review规范](ops-001-status-review/plan.md) | `in-progress` | [status](ops-001-status-review/status.md) / [review](ops-001-status-review/review.md) |
 
 总计划状态：[FLOW-001](flow-001-architecture/status.md) / [FLOW-002](flow-002-provider-harness/status.md) / [FLOW-003](flow-003-m1-execution/status.md)。
@@ -47,3 +47,5 @@
 总计划审查：[FLOW-001](flow-001-architecture/review.md) / [FLOW-002](flow-002-provider-harness/review.md) / [FLOW-003](flow-003-m1-execution/review.md)。
 
 新计划从 [plan模板](templates/plan.md)、[status模板](templates/status.md)、[review模板](templates/review.md) 建立。每个owner更新自己的status，Execution Lead维护跨任务汇总。
+
+W01已保留给用户另开的外部task，当前awaiting-dispatch；内部不会重复派发，具体base与接力见后续handoff记录。

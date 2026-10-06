@@ -4,12 +4,12 @@
 | --- | --- |
 | 最近更新 / 最近main同步核验 | 2026-10-06 00:57 UTC / 2026-10-06 00:57 UTC |
 | Plan | [plan.md](plan.md) |
-| 单一status owner / model | 待分配Web owner / gpt-6-astra（待W01派工确认） |
+| 单一status owner / model | reserved-external / 用户另开task后确认owner与至少Sol模型 |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-web` |
 | Branch | `codex/m1-web` |
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `未创建`（仅表示同步时观察值） |
 | 工作树dirty状态 | 未创建 |
-| 工作分支状态 | 已授权且F00依赖ready；受实际并发槽限制，尚未开始Web实现 |
+| 工作分支状态 | reserved-external / awaiting-dispatch；用户将自行新开task，尚未运行，内部不得重复派发 |
 | 已集成main状态 / HEAD | `0763d4653264b09ddd355c292fc8bd88dfc3c584`；规则与旧计划已集成，F00及当前应用features尚未集成 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
@@ -35,4 +35,4 @@
 
 ## 下一步与handoff
 
-Owner在合并此文档基线后立即核验实际branch/head并接管本status；此初始化记录不替代owner后续更新。启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。
+外部owner收到用户prompt后先核验实际branch/head和独占范围再接管本status；此初始化记录不替代owner后续更新。启动、实质进展、受阻、交付与review修复时更新。交付带commit、检查范围、证据和未解决项；review者先核对实际target，仅只读审查实现，修复交owner。

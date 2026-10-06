@@ -6,7 +6,7 @@
 | 状态 | `accepted` |
 | 创建日期 / 最近更新 | 2026-10-05 / 2026-10-05 |
 | 父计划 | [FLOW-003](../flow-003-m1-execution/plan.md) |
-| Owner / model | 待分配Web owner / gpt-6-astra（至少Sol） |
+| Owner / model | reserved-external；待用户另开task后确认owner / 至少Sol |
 | Worktree / branch | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-web` / `codex/m1-web` |
 | 基线 | F00 `542f70b`，公共client补丁 `3995ec1` |
 
@@ -22,3 +22,5 @@
 ## 验证和交付
 
 通过公共Interface验证可观察行为，模型模拟和真实模型证据分开记录。检查和证据必须附对应commit；未经验证不勾选。Owner在启动、实质进展、阻塞、交付和review修复后更新[status.md](status.md)，交付后由独立reviewer按[review.md](review.md)只读审查，修复交回owner。分支通过不代表已经集成main。
+
+派工保留：`reserved-external / awaiting-dispatch`。用户将自行创建外部task；内部调度不得重复启动W01。这不是已运行状态。

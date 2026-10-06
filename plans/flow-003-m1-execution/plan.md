@@ -7,7 +7,7 @@
 | 创建日期 / 最近更新 | 2026-10-05 / 2026-10-05 |
 | 父计划 | [FLOW-001：产品与技术架构](../flow-001-architecture/plan.md) |
 | 关联验证 | [FLOW-002：Provider 与 Harness](../flow-002-provider-harness/plan.md) |
-| 当前阶段 | F00已提交542f70b/3995ec1；C01/R01已在独立worktrees实施，L01并行推进，W01待运行时执行位 |
+| 当前阶段 | F00已提交542f70b/3995ec1；C01/R01已在独立worktrees实施，L01并行推进，W01保留给用户外部task（awaiting-dispatch） |
 | 规划基线 | `main` / `5df746a`，只有计划和实验归档，没有应用骨架 |
 
 ## 1. 已确认方向与首个交付目标
@@ -108,7 +108,7 @@ F00 完成条件：新 checkout 能按说明启动开发依赖，公共 schema/f
 | --- | --- | --- |
 | F00 基线 | 固定公共契约、骨架、调度与 runner 失联语义 | 按需安排中心/runner/Web owner 分批只读审查；不提前实现各 feature |
 | 第一批 | 基于 F00 开始 L01，处理契约反馈 | C01 中心 + R01 runner，先建立确定性执行闭环 |
-| 第二批 | 继续 L01，审查已交付提交并准备集成 | 首个释放的执行位启动 W01；另一位继续尚未完成的 C01/R01，或在依赖与预算具备后启动 R02 |
+| 第二批 | 继续 L01，审查已交付提交并准备集成 | W01由用户外部task启动（当前reserved-external）；内部空闲位安排其他ready工作；另一位继续尚未完成的 C01/R01，或在依赖与预算具备后启动 R02 |
 | I01 集成 | 合并、运行跨模块检查、整理工程证据 | 按需安排对应 owner 修复或只读复核；总数仍不超过两个 |
 
 若运行时容量允许，C01、R01、W01应同时启动；当前第5个agent实测被拒绝，因此临时滚动。实际启动顺序可根据依赖调整，Execution Lead 在任务单记录；feature 的目录与 owner 边界不随排队顺序改变。
@@ -210,3 +210,13 @@ M1 完成后沿用用户10槽期望上限并按运行时实际cap安排，后续
 - 2026-10-05：用户要求所有ready独立任务尽量并行，期望上限10；当前第5worker仍被运行时拒绝。每plan迁移独立status/review，当前feature owners维护各自状态，branch完成与main集成分别记录。
 
 协作记录：[status.md](status.md) · [review.md](review.md)。状态按实际提交和证据更新，review模板不是通过结论。
+
+## 外部task派工方法
+
+1. Execution Lead先确认ready任务的输入、冻结完整base SHA、独立分支/worktree和独占写入范围，登记owner占用。
+2. Goal Owner把可复制任务说明交给用户，由用户自行新开task；本轮不调用create_thread。未收到执行回报前状态保持reserved-external/awaiting-dispatch，内部不重复派发。
+3. 外部owner先核验仓库、branch/base/head和dirty状态，读AGENTS及plan/status/review，完成技能发现并实际读用相关skill；只在自己worktree写入并维护自己的status。
+4. 公共contracts/client/根lock/migrations等变更向Execution Lead提出具体需求；不自行修改他人owner范围。基线变化由Execution Lead发送具体SHA与影响说明，外部owner合并后跑受影响检查，不悄悄追逐main。
+5. 交付回传branch/head SHA、工作树、检查/证据路径、未验证/阻塞、status和review目标。外部task不自行merge main；Execution Lead统一只读review、集成验证与合并。
+
+当前保留：W01（Web与完整浅深主题），依赖F00已ready，owner待用户派发；其余内部继续C01/R01/L01。其他可独立安排的是针对固定commit的只读review；E01 wrapper认证调查仅限隔离只读分析、不修改共享登录或生产实现；协议映射设计需先明确版本与输入契约，不把未ready的协议实现冒充可并行任务。
