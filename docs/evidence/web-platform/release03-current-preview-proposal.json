@@ -73,9 +73,9 @@
       "personalservice"
     ],
     "failure": "Preserve actual red andcleanup; timeoutpartial noautomaticbudgetextension",
-    "actualUsedMs": 7983,
-    "remainingMs": 172017,
-    "actualResult": "release03-a3-intake.json"
+    "actualUsedMs": 39935,
+    "remainingMs": 140065,
+    "actualResult": "release03-app-171109-intake.json"
   },
   "resourcePreflight": {
     "availableKiB": 1750444,
@@ -90,7 +90,7 @@
       "supersededBy": "resource-policy-1349.json"
     }
   },
-  "recoveryParallel": "Recovery only fixture source repair; DPERF Node complete, browser preparation only. No PG/Chrome window held.",
+  "recoveryParallel": "Recovery768 source-only root partial P2/peer review; DPERF b17 wrapper source scoped approved, binding/browser pending; no group PG/Chrome run.",
   "archives": [
     {
       "source": "/tmp/root-attachi02-existing-release-artifact-audit.json",
@@ -120,11 +120,11 @@
   "currentResourcePolicy": "resource-policy-1349.json",
   "existingSourceReuseStudy": "release03-existing-source-resource-study/report.md",
   "runScopeProposal": "release03-run-scope-proposal.json",
-  "currentRunState": "B-only app-20261006-171109-8cf8c3 completed19626ms; cumulative39935/remaining140065; no retry; cause pending fixed review",
+  "currentRunState": "NOT_RUN_B1736_RESOURCE_WINDOW_RETURNED",
   "sparseSourceCandidate": "Historical estimate only; actual Lead-provisioned fixed362 source tree and four-scope receipt remain archived. No new source provision or in-place rewrite authorized.",
-  "updatedAt": "2026-10-06T17:30:25.267883+00:00",
+  "updatedAt": "2026-10-06T17:38:19.616370+00:00",
   "prepareState": "PREPARED_RELEASED",
-  "validationState": "EF458_SOURCE_APPROVED_AWAITING_NEW_B_WINDOW",
+  "validationState": "EF458_APPROVED_B1736_NOT_RUN_RESOURCE",
   "historicalRawArtifact": {
     "source": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
     "artifact": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
@@ -200,8 +200,8 @@
   },
   "currentHarness": {
     "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
-    "metadata": "495f7287273ce7d4bfd56503c093c273a0a5b92c",
-    "evidence": "release03-ef458-source-intake.json"
+    "metadata": "58197960009ac882a3aadaf59b51c315dd82e55f",
+    "sourceReview": "root+peer scoped0blocking; new body-loss runtime not run"
   },
   "latestSourceReview": {
     "target": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
@@ -214,9 +214,6 @@
   },
   "latestActualEvidence": "release03-app-171109-intake.json",
   "sourceRepairAdvice": "release03-app-cause-intake.json",
-  "currentWindow": {
-    "state": "F01_032_EXCLUSIVE_WEB_WAITING",
-    "evidence": "lead-f01-032-window.json"
-  },
+  "currentWindow": "B1736 returned after fresh insufficient; no gate or PG/Chrome",
   "nextWindowRequest": "release03-next-b-window-request.json"
 }

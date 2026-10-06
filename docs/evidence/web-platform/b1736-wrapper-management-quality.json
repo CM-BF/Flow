@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-06T17:38:19.616370+00:00",
+  "scope": "management632v3 only; d01 independent b17 review + B1736 NOT_RUN intake",
+  "skills": "Local find-skills/codebase-design/clean-code reused; parent authority/child interfaces/error cleanup/source-vs-runtime reviewed",
+  "actualChanges": [
+    "B1736 fresh failure now current and window returned; old F01 exclusive paragraph historical",
+    "DPERF b17 independent source review archived, prior Node remains abd2",
+    "RELEASE owner5819796/source frozen verified; current budget repaired from stale proposal7983 to actual39935",
+    "Recovery768 partial P2 intake; no product source modification"
+  ],
+  "rawArchives": [
+    {
+      "source": "/tmp/d01-dperf04-b17-wrapper-review.json",
+      "archive": "dperf04-b17-manager-source-review.json",
+      "bytes": 6123,
+      "sha256": "845d9304c21980c78390cb8dd00777287708b353ed582a1dbfa192a02af5a972"
+    },
+    {
+      "source": "/tmp/root-dperf04-b17-browser-wrapper-review.json",
+      "archive": "dperf04-b17-root-source-review.json",
+      "bytes": 4238,
+      "sha256": "d88652010d3eed686815fd983b40bb82568021dd99bd00f4c98f1f3a0caacd12"
+    }
+  ],
+  "productExecution": "NONE; only control-plane fresh observation, read-only source/hash checks and one explicitly authorized space admission sample; no new gate or runtime",
+  "checks": {
+    "statusParser": [
+      {
+        "tree": "web-platform-management",
+        "path": "plans/web-platform/status.md",
+        "id": "WPF-001",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 36
+      },
+      {
+        "tree": "web-platform-management",
+        "path": "plans/wpf-mature-01-visual/status.md",
+        "id": "WPF-MATURE-01",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 5
+      },
+      {
+        "tree": "web-platform-management",
+        "path": "plans/wpf-mature-06-chat/status.md",
+        "id": "WPF-MATURE-06",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 6
+      },
+      {
+        "tree": "dashboard-summary-detail",
+        "path": "plans/wpf-dperf04-summary-detail/status.md",
+        "id": "WPF-DPERF04",
+        "errors": [],
+        "humanComplete": true,
+        "todos": 3
+      }
+    ],
+    "changedPaths": [
+      "docs/evidence/web-platform/mature-task-handoff.md",
+      "docs/evidence/web-platform/release03-current-preview-proposal.json",
+      "docs/evidence/web-platform/release03-next-b-window-request.json",
+      "docs/evidence/web-platform/resource-window-current.json",
+      "plans/web-platform/status.md",
+      "plans/wpf-mature-01-visual/status.md",
+      "docs/evidence/web-platform/b1736-wrapper-management-quality.json",
+      "docs/evidence/web-platform/dperf04-b17-manager-source-review.json",
+      "docs/evidence/web-platform/dperf04-b17-root-source-review.json",
+      "docs/evidence/web-platform/recovery01-768-bodyloss-owner-manifest.json",
+      "docs/evidence/web-platform/recovery01-768-source-intake.json",
+      "docs/evidence/web-platform/release03-app2-not-run-1736.json"
+    ],
+    "outsideClaim": [],
+    "jsonParsed": 9,
+    "modifiedMarkdownLinks": 390,
+    "brokenLinks": [],
+    "diffCheck": "PASS"
+  }
+}

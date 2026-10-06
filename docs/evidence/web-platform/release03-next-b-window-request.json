@@ -1,10 +1,10 @@
 {
-  "recordedAt": "2026-10-06T17:27:06.680796+00:00",
-  "state": "SOURCE_APPROVED_AWAITING_F01_032_ACTUAL_RETURN_AND_NEW_B_WINDOW",
+  "recordedAt": "2026-10-06T17:38:19.616370+00:00",
+  "state": "SOURCE_APPROVED_B1736_NOT_RUN_RESOURCE_WINDOW_RETURNED",
   "task": "WPF-RELEASE03",
   "owner": "w01_owner",
   "source": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
-  "metadata": "495f7287273ce7d4bfd56503c093c273a0a5b92c",
+  "metadata": "58197960009ac882a3aadaf59b51c315dd82e55f",
   "backend": {
     "head": "af51c621696230fbced12227670f014ca73bd8a1",
     "tree": "308c41b2dc46d9fdf1d40bf7d51a5fe6e9949fd6"
@@ -29,8 +29,8 @@
   "resource": {
     "startBytes": 1207959552,
     "stopBytes": 1140850688,
-    "freshSample": "NOT_TAKEN",
-    "grant": "NOT_GRANTED_F01_032_HOLDS_PG"
+    "freshSample": "17:35:43.958730Z 1179914240B below1207959552B; one sample only",
+    "grant": "B1736 returned; no gate or runtime, awaits distinct later window/resource event"
   },
   "mode": "app only, no A rerun, no artifact rebuild",
   "requirements": [
@@ -39,9 +39,9 @@
     "Fresh original4/currentHEAD/twohash/17+10readonlydeps/af51exactclosure/artifact/all12 and actualfree admission",
     "New single-use gate, no automatic retry"
   ],
-  "parallel": "W01 can edit DPERF wrapper source-only; return to frozenRELEASE at safe point when eligiblewindow is explicitly granted",
+  "parallel": "W01 independent Recovery768 review; panels source frozen pending combined findings; DPERF b17 source review closed, no binding or browser gate",
   "peerReview": "release03-ef458-peer-source-review.md",
   "rootReview": "release03-ef458-root-source-review.json",
   "reviewBoundary": "Two source-only independent approvals/0blocking; newruntime NOT_RUN, no compatibility green",
-  "windowEvidence": "lead-f01-032-window.json"
+  "windowEvidence": "release03-app2-not-run-1736.json"
 }

@@ -1,9 +1,9 @@
 {
-  "recordedAt": "2026-10-06T17:30:25.267883+00:00",
-  "state": "F01_032_EXCLUSIVE_PG_WEB_SOURCE_ONLY",
-  "groupWindowOwnership": "Lead assigned exclusive PG to F01 032production fixed0ee2494, onecase/+64MiB/120+30s,0provider/noChrome. Web B waits explicitactualcleanup return and newwindow.",
+  "recordedAt": "2026-10-06T17:35:43.958730+00:00",
+  "state": "RELEASE03_B_1736_NOT_RUN_WINDOW_RETURNED",
+  "groupWindowOwnership": "Lead1736 B window immediately returned after one manager fresh sample below unchanged B start; no gate/PG/Chrome, no retry. Subsequent owner awaits Lead assignment.",
   "release03": {
-    "state": "B_FAILURE_PRESERVED_FAULT_FIX_SOURCE_ONLY",
+    "state": "EF458_APPROVED_B1736_NOT_RUN_RESOURCE",
     "run": "app-20261006-171109-8cf8c3",
     "implementation": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
     "actualHead": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
@@ -89,12 +89,25 @@
     "finalSampledFreeBytes": 1230462976,
     "sourceRepair": {
       "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
-      "metadata": "495f7287273ce7d4bfd56503c093c273a0a5b92c",
+      "metadata": "58197960009ac882a3aadaf59b51c315dd82e55f",
       "review": "Root+peer APPROVED_SOURCE_SCOPED0blocking; NOT_RUN",
       "runtime": "NOT_RUN",
       "evidence": "release03-ef458-source-intake.json"
     },
-    "nextWindowRequest": "release03-next-b-window-request.json"
+    "nextWindowRequest": "release03-next-b-window-request.json",
+    "nextAdmission": {
+      "state": "NOT_RUN_RESOURCE",
+      "at": "2026-10-06T17:35:43.958730+00:00",
+      "availableBytes": 1179914240,
+      "startBytes": 1207959552,
+      "stopBytes": 1140850688,
+      "gatePath": null,
+      "runtimeMs": 0,
+      "spentMs": 39935,
+      "remainingMs": 140065,
+      "evidence": "release03-app2-not-run-1736.json",
+      "windowReturned": true
+    }
   },
   "recoveryDirect": {
     "state": "CONTROLLED_DIRECT_PASS_CLEANED",
@@ -117,7 +130,18 @@
     "cleanupComplete": true,
     "coverage": "27/27 controlled IDB/mock fetch; no real IDB/browser/HTTP",
     "laterFixture": "ec91 sourceonly approved; old1b8 direct pass not relabeled",
-    "sourceSuccessor": "17:28 original21 source-only twoharness ACKbodyloss/ownedDBcleanup; no runtimewindow"
+    "sourceSuccessor": {
+      "at": "2026-10-06T17:38:19.616370+00:00",
+      "source": "owner actual fixedHEAD/clean + root in-flight readonly finding, not final approval",
+      "implementation": "7686139952becf530bcf57966425bd9d7b88b697",
+      "metadata": "a3c81dd9a4fb4a5027b48181416fd7be70833263",
+      "writer": "workspace_panels_owner",
+      "claim": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 original21",
+      "review": "REQUEST_CHANGES_PENDING_SCOPE: root partial review, peer W01 in progress",
+      "finding": "Root P2 at browser~394: retryAck.turn.taskId and originalAck.turn.taskId are absent in public turn shape; both undefined may pass. Required real turn.task.id nonempty and same turn.id/receipt. Await root full review before one merged writer dispatch.",
+      "runtime": "NOT_RUN; old1b8 27 controlled cases not relabeled; budgets unchanged",
+      "manifest": "recovery01-768-bodyloss-owner-manifest.json"
+    }
   },
   "dperf04": {
     "claim": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
@@ -150,7 +174,15 @@
     },
     "metadata": "62ddb315adc26ff934eecf7e125079dd0ce47d36",
     "review": "UNKNOWN targetabd2; scopedsource approved, browser/fullfeature pending",
-    "wrapper": "SOURCE_ONLY_DISPATCHED17:26:23 original9; no behavior changes/runtime"
+    "wrapper": {
+      "implementation": "b17bb05c797cfccc8dbeb4c3de26e57143600bec",
+      "metadata": "032b4418f5a944150b888e10fef342b64f3e3655",
+      "review": "root + d01_owner APPROVED_SOURCE_SCOPED, 0 blocking",
+      "supervisorSha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43",
+      "binding": "ABSENT",
+      "browser": "NOT_RUN",
+      "evidence": "dperf04-b17-manager-source-review.json"
+    }
   },
   "leadEvents": [
     {
@@ -215,6 +247,11 @@
     {
       "source": "LatestLead via root",
       "coordination": "F01_032 exclusive onecase fixed0ee2494 with approvedCOREea276/C016d114; noChrome. Web0PG and budget39935/140065 unchanged."
+    },
+    {
+      "event": "RELEASE03-B-20261006-1736",
+      "source": "Lead via root",
+      "coordination": "Lead RELEASE03-B-20261006-1736 explicitly assigned one B-only after F01-032 1casePASS/ownedDBDROP remaining[]/process exit; TUIcleanup/O15 waiting. No new run until one fresh original gate; no A rerun."
     }
   ],
   "limits": [
