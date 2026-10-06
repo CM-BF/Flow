@@ -1,0 +1,66 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-cursor-compatibility
+
+ ❯ apps/web/test/conversation-activity.test.ts (44 tests | 2 failed) 23ms
+     ✓ does not start a reader after its loading subscriber already hid the view 2ms
+     ✓ consumes a reader rejection that arrives after synchronous lifetime invalidation 3ms
+     ✓ rejects malformed reference identity 123 1ms
+     ✓ rejects malformed reference identity rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr 1ms
+     ✓ rejects a response exceeding the public page bound 0ms
+     ✓ reset aborts a pending detail and cannot revive it when the new history reuses its reference ID 3ms
+     ✓ keeps construction/hidden views at zero reads and deduplicates the first explicit expansion 1ms
+     ✓ loads a known reference once, caches it, and refuses arbitrary IDs 1ms
+     ✓ uses host TaskSummary updates and never replaces a newer host with an older events task 0ms
+     ✓ rejects a wrong task page without accepting its references 0ms
+     ✓ paginates explicitly, deduplicates identical overlapping entries, and stops at the watermark 0ms
+     ✓ rejects invalid/nonadvancing cursor facts {"nextCursor":0,"watermark":2,"hasMore":true} without looping 0ms
+     ✓ rejects invalid/nonadvancing cursor facts {"nextCursor":1,"watermark":0} without looping 0ms
+     ✓ rejects invalid/nonadvancing cursor facts {"nextCursor":-1} without looping 0ms
+     ✓ rejects invalid/nonadvancing cursor facts {"nextCursor":99} without looping 0ms
+     ✓ reset clears old references/details then rebuilds once from zero 0ms
+     ✓ rejects repeated reset at zero instead of looping 0ms
+     ✓ preserves previous entries after errors, distinguishes unknown from empty, and retries explicitly 0ms
+     ✓ hiding suppresses late events and cancels detail signals; reopening never auto-loads details 0ms
+     ✓ offline/online reads resume from the known cursor without cancelling execution 0ms
+     ✓ a disposed connection cannot return details into a same-ID new connection 0ms
+     ✓ validates returned detail identity/bytes and supports the public 1 MiB limit rather than 64 KiB 1ms
+     ✓ crosses the HTTP hidden-only page after 1 → 3 and reaches ordinary cursor 5 1ms
+     ✓ resumes from the SSE hidden-only raw cursor 33 and reaches ordinary cursor 37 0ms
+     ✓ accepts a visible page with a filtered tail and a final empty scanned page 0ms
+     ✓ accepts an entirely filtered terminal page and refreshes at the same exhausted cursor 0ms
+     ✓ deduplicates known overlaps while advancing beyond the last returned entry 0ms
+     ✓ rejects malformed filtered page {"entries":[{"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}},{"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}}],"nextCursor":3,"watermark":3} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[{"id":"event-2","cursor":2,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-2","title":"Reference 2"}},{"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}}],"nextCursor":3,"watermark":3} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[{"id":"event-4","cursor":4,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-4","title":"Reference 4"}}],"nextCursor":3,"watermark":3} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[],"nextCursor":4,"watermark":3} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[],"nextCursor":0,"watermark":3,"hasMore":true} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[],"nextCursor":2,"watermark":3,"hasMore":false} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[],"nextCursor":3,"watermark":3,"hasMore":true} without retry loops 0ms
+     ✓ rejects malformed filtered page {"entries":[],"nextCursor":3,"watermark":3,"task":{"id":"other","title":"A task","harness":"claude","status":"running","verificationStatus":"pending","createdAt":"2026-10-06T06:00:00Z","updatedAt":"2026-10-06T06:00:00Z"}} without retry loops 0ms
+     ✓ rejects a scan cursor moving behind after without replacing previous state 0ms
+     × retains previous entries when overlapping identities conflict {"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"different","title":"Changed payload"}} 3ms
+     × retains previous entries when overlapping identities conflict {"id":"different-event","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}} 0ms
+     ✓ refuses to backfill an unknown entry behind an already scanned filtered cursor 0ms
+     ✓ rejects reset when after 1 is not beyond watermark 1 0ms
+     ✓ rejects reset when after 1 is not beyond watermark 2 0ms
+     ✓ rejects malformed reset even when after exceeds watermark {"entries":[{"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}}]} 0ms
+     ✓ rejects malformed reset even when after exceeds watermark {"nextCursor":1} 0ms
+     ✓ rejects malformed reset even when after exceeds watermark {"hasMore":true} 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > retains previous entries when overlapping identities conflict {"id":"event-1","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"different","title":"Changed payload"}}
+ FAIL  apps/web/test/conversation-activity.test.ts > filtered raw-scan cursor compatibility > retains previous entries when overlapping identities conflict {"id":"different-event","cursor":1,"createdAt":"2026-10-06T06:00:00Z","kind":"reference","reference":{"id":"detail-1","title":"Reference 1"}}
+TypeError: entries.at is not a function
+ ❯ page apps/web/test/conversation-activity.test.ts:9:138
+
+ ❯ apps/web/test/conversation-activity.test.ts:206:49
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 42 passed (44)
+   Start at  00:04:41
+   Duration  516ms (transform 243ms, setup 0ms, import 371ms, tests 23ms, environment 0ms)
+

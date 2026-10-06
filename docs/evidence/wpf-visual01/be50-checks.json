@@ -1,0 +1,44 @@
+{
+  "implementationTarget": "be50d36f4bb7fcebc70887881cdca0237ff0d55f",
+  "at": "2026-10-06T09:19:51.805889+00:00",
+  "sourceObservation": "Reports preserve f92fd143f73f7a517004a154d3f6f2f2c7794180 + dirty at execution; this summary binds exact bytes after the implementation commit, not rerun claims.",
+  "sourceFiles": {
+    "apps/web/src/assistant-ui.css": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab",
+    "apps/web/src/plugins/builtins.ts": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72",
+    "apps/web/src/plugins/host.ts": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+    "apps/web/src/styles.css": "d9cdd47978ea0dabf20b9cf3e582e2c4d5aee5a557a3947b0fa214f7c995b751",
+    "apps/web/src/themes.ts": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f",
+    "apps/web/test/visual-shell.browser.ts": "bde14458fbfb34a847334bb3d26d95525337aafc4d7e7a13ec2439c0c561dad1",
+    "apps/web/test/visual-shell.fixture.ts": "334c6cf7519b3f7463e18cb6a89f92f91331c1f94f2dccd866e1c2df74eefcf0"
+  },
+  "checks": [
+    {
+      "name": "existing direct PluginHost consumer",
+      "passed": 17,
+      "log": "plugin-host-direct.log"
+    },
+    {
+      "name": "Web tsc",
+      "result": "PASS",
+      "log": "typecheck-final.log"
+    },
+    {
+      "name": "production build",
+      "result": "PASS",
+      "log": "build-final.log",
+      "limitations": "existing >500kB chunk warning"
+    },
+    {
+      "name": "actual App dev",
+      "passed": 8,
+      "report": "development-browser.json",
+      "log": "development-final-v3.log"
+    },
+    {
+      "name": "actual App production",
+      "passed": 8,
+      "report": "production-browser.json",
+      "log": "production-final-v2.log"
+    }
+  ]
+}

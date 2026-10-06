@@ -1,0 +1,221 @@
+{
+  "observedAt": "2026-10-06T08:01:22.799Z",
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-knowledge-selection/plans/wpf-context01-knowledge-selection/status.md",
+  "base": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+  "target": "736ef0b9f5647faa4c8d8e6c4755eaf95697b02d",
+  "head": "d6a609a82c3aec3b8b4e6609a83a452d11ac1d89",
+  "dirty": "",
+  "claimObservation": "2026-10-06T08:00:53.060Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/conversation-context/ContextPicker.tsx",
+      "apps/web/src/conversation-context/context-picker.css",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-context/selection.ts",
+      "apps/web/test/conversation-context.browser.ts",
+      "apps/web/test/conversation-context.fixture.tsx",
+      "apps/web/test/conversation-context.test.ts",
+      "docs/evidence/wpf-context01",
+      "plans/wpf-context01-knowledge-selection"
+    ],
+    "state": "active",
+    "branch": "codex/web-knowledge-selection",
+    "origin": "new",
+    "taskId": "WPF-CONTEXT01",
+    "worker": "w01_owner",
+    "claimId": "bfecec43-3b3f-438d-9d4f-b657f1fc0ec5",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-knowledge-selection",
+    "createdAt": "2026-10-06T07:43:25.096Z",
+    "updatedAt": "2026-10-06T07:43:25.096Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "changedCount": 29,
+  "outside": [],
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 2,
+      "output": "知识选择组件已通过独立审查，按需读取与引用保留可用",
+      "next": "将已验证的知识选择组件交付主线",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "736ef0b9f5647faa4c8d8e6c4755eaf95697b02d",
+      "scopes": [
+        "apps/web/src/conversation-context/selection.ts",
+        "apps/web/src/conversation-context/controller.ts",
+        "apps/web/src/conversation-context/ContextPicker.tsx",
+        "apps/web/src/conversation-context/context-picker.css",
+        "apps/web/test/conversation-context.test.ts",
+        "apps/web/test/conversation-context.fixture.tsx",
+        "apps/web/test/conversation-context.browser.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-CONTEXT01",
+    "owner": "w01_owner / gpt-6-astra ultra（派发指定）",
+    "branch": "codex/web-knowledge-selection",
+    "branchState": "implemented / approved",
+    "updatedAt": "2026-10-06T07:57:12.000Z",
+    "updatedRecord": "2026-10-06 07:57:12 UTC",
+    "todos": [
+      {
+        "id": "WPF-CONTEXT01-01",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[接口](../../docs/evidence/wpf-context01/interface.md)"
+      },
+      {
+        "id": "WPF-CONTEXT01-02",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "原34cd的16模块/9browser；736ef作者18/tsc与root独立18/CUA"
+      },
+      {
+        "id": "WPF-CONTEXT01-03",
+        "state": "in-progress",
+        "owner": "w01_owner",
+        "evidence": "固定736独审APPROVED；待主线接收"
+      },
+      {
+        "id": "WPF-CONTEXT01-04",
+        "state": "pending",
+        "owner": "后继owner待派",
+        "evidence": "NOT_IMPLEMENTED；实际Send/Queue接线另领"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae；实现736ef0b9f5647faa4c8d8e6c4755eaf95697b02d；metadata单独提交",
+    "declaredDirty": "07:57:12Z本人实核e21691a4f6c04098372275231d9026fe99002527 clean；本次仅批准metadata待提交，最终HEAD/clean以Git回执为准",
+    "checks": {
+      "state": "passed",
+      "target": "736ef0b9f5647faa4c8d8e6c4755eaf95697b02d",
+      "record": "PASSED 736ef0b9f5647faa4c8d8e6c4755eaf95697b02d；18模块/typecheck；9HTTP browser/截图固定旧34cd，R1后未重跑"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED 736ef0b9f5647faa4c8d8e6c4755eaf95697b02d；root07:56:55Z，R1 CLOSED",
+    "mainRecord": "NOT_INTEGRATED；独立模块候选尚未主线接收",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "736ef0b9f5647faa4c8d8e6c4755eaf95697b02d"
+  },
+  "proof": {
+    "target": "736ef0b9f5647faa4c8d8e6c4755eaf95697b02d",
+    "head": "d6a609a82c3aec3b8b4e6609a83a452d11ac1d89",
+    "scopes": [
+      "apps/web/src/conversation-context/selection.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-context/ContextPicker.tsx",
+      "apps/web/src/conversation-context/context-picker.css",
+      "apps/web/test/conversation-context.test.ts",
+      "apps/web/test/conversation-context.fixture.tsx",
+      "apps/web/test/conversation-context.browser.ts"
+    ],
+    "observedAt": "2026-10-06T08:01:22.264Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-context01/README.md",
+      "docs/evidence/wpf-context01/interface.md",
+      "docs/evidence/wpf-context01/quality.md",
+      "docs/evidence/wpf-context01/r1-source-manifest.json",
+      "docs/evidence/wpf-context01/r1-tests-first.log",
+      "docs/evidence/wpf-context01/r1-typecheck.log",
+      "plans/wpf-context01-knowledge-selection/plan.md",
+      "plans/wpf-context01-knowledge-selection/review.md",
+      "plans/wpf-context01-knowledge-selection/status.md"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "hashes": [
+    {
+      "path": "apps/web/src/conversation-context/selection.ts",
+      "sha256": "6baaf6a13ab95360b628afc70986b7b48599fddc7dd3419c97dfe80c82870543",
+      "unchangedFromBrowserTarget": false,
+      "targetSha256": "6baaf6a13ab95360b628afc70986b7b48599fddc7dd3419c97dfe80c82870543",
+      "currentSha256": "6baaf6a13ab95360b628afc70986b7b48599fddc7dd3419c97dfe80c82870543"
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "794fa1d0b553c323fd097f1fc1549d70b74d9a58b474585861b3caeed7acfea7",
+      "unchangedFromBrowserTarget": false,
+      "targetSha256": "794fa1d0b553c323fd097f1fc1549d70b74d9a58b474585861b3caeed7acfea7",
+      "currentSha256": "794fa1d0b553c323fd097f1fc1549d70b74d9a58b474585861b3caeed7acfea7"
+    },
+    {
+      "path": "apps/web/src/conversation-context/ContextPicker.tsx",
+      "sha256": "058f8b75af5f31b3852ba733ff09ac05c09b1504d1df3488bf581659090473ee",
+      "unchangedFromBrowserTarget": true,
+      "targetSha256": "058f8b75af5f31b3852ba733ff09ac05c09b1504d1df3488bf581659090473ee",
+      "currentSha256": "058f8b75af5f31b3852ba733ff09ac05c09b1504d1df3488bf581659090473ee"
+    },
+    {
+      "path": "apps/web/src/conversation-context/context-picker.css",
+      "sha256": "c81b7b60b5434d491b0a8ac3cad283682050ca56c27ba72055154d8df237bedf",
+      "unchangedFromBrowserTarget": true,
+      "targetSha256": "c81b7b60b5434d491b0a8ac3cad283682050ca56c27ba72055154d8df237bedf",
+      "currentSha256": "c81b7b60b5434d491b0a8ac3cad283682050ca56c27ba72055154d8df237bedf"
+    },
+    {
+      "path": "apps/web/test/conversation-context.test.ts",
+      "sha256": "e43064dbf855b0f609d2992fe19fed17409506aff1a04cc2f1db1cfdfbce0e07",
+      "unchangedFromBrowserTarget": false,
+      "targetSha256": "e43064dbf855b0f609d2992fe19fed17409506aff1a04cc2f1db1cfdfbce0e07",
+      "currentSha256": "e43064dbf855b0f609d2992fe19fed17409506aff1a04cc2f1db1cfdfbce0e07"
+    },
+    {
+      "path": "apps/web/test/conversation-context.fixture.tsx",
+      "sha256": "09b935d98bb545d889068923d55a365c72be238a5e5a11ddae0ca62f1df50761",
+      "unchangedFromBrowserTarget": true,
+      "targetSha256": "09b935d98bb545d889068923d55a365c72be238a5e5a11ddae0ca62f1df50761",
+      "currentSha256": "09b935d98bb545d889068923d55a365c72be238a5e5a11ddae0ca62f1df50761"
+    },
+    {
+      "path": "apps/web/test/conversation-context.browser.ts",
+      "sha256": "9ed0ed62fac6630c641f8f718405905a65b4386a807f1dcef7e957ecb2112021",
+      "unchangedFromBrowserTarget": true,
+      "targetSha256": "9ed0ed62fac6630c641f8f718405905a65b4386a807f1dcef7e957ecb2112021",
+      "currentSha256": "9ed0ed62fac6630c641f8f718405905a65b4386a807f1dcef7e957ecb2112021"
+    }
+  ],
+  "markdownCount": 6,
+  "localLinkCount": 36,
+  "broken": [],
+  "planIds": [
+    "WPF-CONTEXT01-01",
+    "WPF-CONTEXT01-02",
+    "WPF-CONTEXT01-03",
+    "WPF-CONTEXT01-04"
+  ],
+  "todoIds": [
+    "WPF-CONTEXT01-01",
+    "WPF-CONTEXT01-02",
+    "WPF-CONTEXT01-03",
+    "WPF-CONTEXT01-04"
+  ],
+  "fullDiffCheck": "docs/evidence/wpf-context01/module-first.log:10: new blank line at EOF.\ndocs/evidence/wpf-context01/module-tests.log:10: new blank line at EOF.\ndocs/evidence/wpf-context01/r1-tests-first.log:10: new blank line at EOF.\ndocs/evidence/wpf-context01/r1-typecheck.log:4: new blank line at EOF.\ndocs/evidence/wpf-context01/typecheck-first.log:4: new blank line at EOF.\ndocs/evidence/wpf-context01/typecheck-fixture.log:4: new blank line at EOF.\ndocs/evidence/wpf-context01/typecheck.log:4: new blank line at EOF.",
+  "limits": "Management metadata/hash/parser/links and literal scope audit only. No product tests, dashboard API, service, database or model calls. Root approval 2026-10-06 07:56:55 UTC is independent. Original 34cd browser and R1 736 direct checks stay separate."
+}

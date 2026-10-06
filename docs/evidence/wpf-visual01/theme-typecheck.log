@@ -1,0 +1,9 @@
+
+> @flow/web@0.1.0 typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web
+> tsc --noEmit -p tsconfig.json
+
+src/plugins/builtins.ts(59,11): error TS2322: Type 'string' is not assignable to type '`command:${string}` | "view:activityBar.primary" | "view:activityBar.bottom" | "view:sidebar.header" | "view:sidebar.item.actions" | "view:sidebar.footer" | "view:chat.header" | "view:chat.task.actions" | ... 7 more ... | "view:settings.sections"'.
+src/plugins/builtins.ts(60,11): error TS2322: Type 'string' is not assignable to type '`command:${string}` | "view:activityBar.primary" | "view:activityBar.bottom" | "view:sidebar.header" | "view:sidebar.item.actions" | "view:sidebar.footer" | "view:chat.header" | "view:chat.task.actions" | ... 7 more ... | "view:settings.sections"'.
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @flow/web@0.1.0 typecheck: `tsc --noEmit -p tsconfig.json`
+Exit status 2

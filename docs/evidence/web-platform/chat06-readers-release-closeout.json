@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-10-06T07:12:25.627767+00:00",
+  "mainProof": "chat06-readers-main-observation.json",
+  "items": [
+    {
+      "taskId": "WPF-CHAT06C01",
+      "head": "c155ed61a58a73c61bbf58c86bdfa34f19113988",
+      "dirty": false,
+      "claimId": "ca26e49b-b750-43a7-8bf7-ce1b987f50c9",
+      "version": 2,
+      "state": "released",
+      "committedAt": "2026-10-06T07:11:50.408Z",
+      "receipt": "chat06c01-release-receipt.json"
+    },
+    {
+      "taskId": "WPF-ACTIVITYC01",
+      "head": "b029f3a2e233b196b2a13dc78ce1ec5b9198e509",
+      "dirty": false,
+      "claimId": "5896b272-19d9-4727-aee4-1d8dd36d5fec",
+      "version": 2,
+      "state": "released",
+      "committedAt": "2026-10-06T07:11:50.505Z",
+      "receipt": "activityc01-release-receipt.json"
+    }
+  ],
+  "method": "Owner stopped-writing statements + exact raw release receipts + read-only HEAD/clean; no API or product retest."
+}

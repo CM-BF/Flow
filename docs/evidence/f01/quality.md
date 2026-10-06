@@ -145,3 +145,89 @@ X04 shared dependency9cde241 independent reviewer runner_owner APPROVED (read-on
 ## C02 fixture isolation correction / 2026-10-06 06:15 UTC
 
 GO review caught the original legacy34 C02 fixture reusing fixedflow_c02, resetting schemas and conditionallyDROP FORCE. I ran it directly and did not capture pre-run ownership, so cannot substantiate own-only DB for that historical run; no retrospective facts are invented. P2 fixed under F01 claimv13 exact reconciliation.test.ts: per-run random DB, existence refusal, create-success ownership flag before any reset, normalDROP after server/pools close, optional explicit resource output. Actual fresh run12/12 andtsc passed; original test bodies/assertions unchanged, CHAT22/new7 not rerun. Facts showbefore=[],created=true,connectionsBeforeDrop=[],remaining=[] for flow_c02_a51ef0c8620c48129e1fdfaa6b0bfab4 at06:14:47→06:15:17. New evidence is independent of historical34green.
+
+### 2026-10-06 06:26 UTC CHAT05公共接线
+固定9ea33ef61da2304123d08ea87558023d63b38468，2红（缺route/client）→2绿2.22s+tsc。独立随机库真实CREATE确认/普通DROP与remaining[]见activity-production-facts.json；没有手动module挂载/migration。轻metadata与显式详情、鉴权/AbortSignal/重启/cancel unknown验证，modelQueries0。clean-code：仅薄方法与3行生产挂载，复用原report/存储/错误；无新loop/重复领域逻辑。独立review待接，manifest绑定5源码/5输出。
+
+### 2026-10-06 06:30 UTC X05薄client
+固定07b1b11060c069db76f9f958f92c1c53af9fca46；5方法按固定1405551合同透传受理/当前状态/分页/history/显式重试核对。真实HTTP1红→1绿、types通过；409/abort不重试，receipt不当当前可变状态，strict输入schema与key/URL/原文断言保留。无PG/worker/model；clean-code仅薄传输，无领域逻辑复制。见package-fetch-client-manifest.json。
+
+### 2026-10-06 06:35:43 UTC K03薄client
+固定77465eb59121bad5ac2785036961f1707911d21b，只增加owner固定goal/node/inputVersion的context读取与合同export。真实HTTP1红→1绿20ms（suite147ms）及tsc；编码路径、原文Unicode/digest/currentVersion、403与预取消无额外请求均核。沿既有本地find-skills/codebase-design/clean-code保持薄传输，不缓存或替换latest；无PG/模型，领域独审与021生产挂载另验。manifest绑定3源3输出。
+
+### 2026-10-06 06:41:32 UTC K03生产入口
+固定44bd8bc8e8e30ec49f86b6828f4947bf2c47d148，021迁移在scheduler/default queue前，owner hook下固定版本route；真实client→生产factory→PG验证公开prompt不变/显式原文v1当前v2/私有claim冻结/重启/真实revoke→C02明确安全retry同key重放，未造goal execution。新随机专库before[]/create确认/正常DROP/remaining[]，无模型。
+初4用例1绿3红：旧012与018fixture调用最新claim缺后继表/列，新test误写client方法名；修两旧fixture仅种各自时代真实attempt，原command/迁移/replay/额度/旧版本时间断言保留，取得F01v14精确scope。次3用例旧2绿，新用例对JSON嵌套CRLF错误按raw匹配；保留green文件名的实际失败。修为精确JSON编码匹配后只重跑新1绿1609ms，4different各有绿，非一次4/4。noEmit独立exit0；最终string-only断言无类型变化，finalstdout也空。clean-code检查：3行生产挂载、既有领域不改；资源与stage输入写明，不通过提前迁移伪造历史。
+
+证据编码说明：Git已有core.autocrlf=input把失败diff中的1处CRLF规范为LF；readable green.txt保持Git文本，原始2674 bytes完整base64保存在goal-context-production-green-raw.json（包含原hash），不删除/改写失败事实。manifest分别绑定两份。
+
+## 2026-10-06 06:52 UTC X05 production / CLI
+
+固定3691d1b目标6源码，领域9ebb逐文件零diff。023先scheduler/worker；无host默认无下载routes/worker；本机FLOW_PACKAGE_FETCH_CONFIG绝对regular/owned0600/≤64KiB，拒symlink/FIFO/未知字段，URL/根策略继续由X04/X05核验。显式host初始化成功后持久worker接管，preClose先停worker再close pool；失败启动不遗留锁/连接。公开CLI五动作沿稳定key/schema/公共client，202不冒称成功。
+
+真实production factory/PG/loopback+CLI 3项与配置纯模块2项共5/5、2.80s，typecheck独立exit0。固定随机库before[]/createdtrue/connections[]/remaining[]；下载成功重启幂等且tarball1GET，取消下载/重启/local reconcile仍1GET。验证压缩bytes不等install/load，runtimeStatus仍unavailable。未触个人服务/真实npm/模型。
+
+本段clean-code复核：声明配置深模块只读文件，业务策略复用已有host，worker生命周期收在server入口，CLI不复制状态机；无新依赖。保留X05协作取消与FS清理非硬时限、SIGKILLstaging无GC边界。manifest见package-fetch-production-manifest.json，待独立只读review。
+
+
+## 2026-10-06 06:56 UTC assistant stream client
+
+Fixed 88a869efd782afd5f64f5d7adad0a9167da121c1: three task-bound read methods and explicit patch-v1 opt-in only for conversation GET; creation body/header/idempotency remain stable. Four source files include public exports/optional capability documentation. Real HTTP 1/1 (34ms; suite384ms), independent noEmit exit0; no PG/provider. Errors and AbortSignal unchanged, no hidden retries. First run green, no red invented. Manifest binds fixed sources and two raw logs. Clean-code: preserve thin transport and server cursor/ownership semantics; no presentation settlement duplicated into client.
+
+X05 production3691d1b: Mika independent read-only APPROVED, six source/three raw hashes checked, five distinct checks and noEmit, no P1/P2; GO accepted. No independent rerun. This approval excludes installation/loading and personal service refresh.
+
+
+## 2026-10-06 07:02 UTC assistant stream production
+Fixed da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2: two files only. 022 awaits before worker/scheduler/scan; task-bound routes before owner GET conversation registration option. Actual production factory (no self-mounted routes/migration/scan disable) 2red due missing migration/routes →2green2.40s; independent noEmit exit0. Stable false create/replay, old/unknown false and negotiated GET true with no turn, no-store variants, actual runner report→UTF8 patch/list/body→repeat ACK→restart→next ordinary cursor and auth are covered. Random database before[]/createdtrue/connections[]/remaining[] both runs. No SDK/provider query or personal service action.
+Clean-code: startup/export seams only; no settlement/authorization duplication. Capability means connection readability, never provider delta availability. C02 module startup fixture must adapt to production now mounting022; that test-only maintenance is with original owner. New Web activity reader cursor assumption requires C03 before main. Existing TaskProjection/WorkspaceFeed accept raw scan cursor. Approved thin client88 by Root, C02 compatibility77 by independent assignment_review; production delta independent review pending.
+
+
+07:05 UTC C02 startup fixture integration: original owner test-only5f4fe454 adapts the explicit disabled helper and temporary missing table observation to production now mounting022. Final combined 694c3fdbd6ef4affa66140f13a039156f27023e0, actual8/8 2.88s and noEmit0 after S01 timing window. All header/ACK/cursor checks retained. Root/domain first022 upgrade evidence is separate; temporary table rename is deliberately a readiness-failure input. No other old CHAT06 tests or model calls rerun. Manifest assistant-stream-compatibility-manifest.json.
+
+
+## 2026-10-06 07:14 UTC steering thin client
+Fixed 1b16d23de5b00f897fe9bd0fa07879c84d78e936; approved domain2137115 imported unchanged. Five methods only, strict server DTOs exercised in real Node HTTP transport fixture. Missing-method red→1/1 green33ms/suite210ms, independent typecheck exit0. Original Unicode whitespace/text, current ownership/CAS, stable key, server receipt phase, task+command encoding, numeric pagination, 409 and AbortSignal preserved; no retry/status inference. No production024 mount, runner consumption, model or service action. Manifest binds three source/three raw files. Clean-code review: thin boundary only, no duplicate authorization/state machine.
+
+## 2026-10-06 07:29 UTC CHAT08 薄 transport
+
+Target `3d81141324041c2c67680edbb686996cefaf8b4b` consumes fixed DTO998e2fd; only client index and one direct HTTP test. 3 POST methods preserve exact Unicode payload/proposal/revision/afterSequence/events and current ownership. Success, explicit not-committed, absent and replayed committed remain distinct; 409/transport disconnect/AbortSignal propagate without automatic retry. Strict actual schema fixture validates all requests; no invented taskId or extra key. Existing wildcard export already exposes these types. Test first missing-method red then 1/1 green39ms (suite224ms), typecheck exit0 (empty stdout); individual process exit recorded by execution tool. No provider/PG. clean-code/codebase-design review: same existing request seam, no lifecycle policy in client, no extra abstraction. Request independent review before integrating; domain/production approval remains separate.
+
+Root独立只读APPROVED3d811，2source/3raw/2contract固定hash核对，无重跑。main暂冻结b54用于SVC02已授维护窗口；此候选不越过领域审查/生产启用门槛。
+
+
+## 2026-10-06 07:57 UTC CHAT08 production factory
+
+Fixed fe5bc2d9b8dab231996b1b156bc086d858846117 only server index + steering-production test. Migration024 awaits before package worker, scheduler, lease/queue scans; route registration follows existing role hook. Default owner intake is409 unsupported; authenticated read/runner routes remain available, malformed runner input400 and owner/runner role401/403 are preserved. Conversation steer staysfalse. Trusted factory option is an integration seam, not a claim that registered runners/provider can steer; main CLI provides no enablement.
+
+New production checks2red (missing024/table) →2green1.356s: default migration/routes/role/cap gate and ordinary string-query injectedSDK final with024 present. Random database facts before[]/createdtrue/connections[]/remaining[] captured in both stdout. Existing author vertical selected1/13 (12notselected), actual production factory now owns migration/routes with explicit activeSteering:true; 1green353ms/test1.544s. This separately confirms real runtime→outbox→HTTP/PG→two injectedSDK results/one consumedcommand/onefinal. Typecheck exit0 independently. Three distinct local checks across two green commands, not full106 rerun. No provider or personal service action.
+
+Domain20source hashes match approved d4e; fixed shared source and four raw logs in steering-production-manifest.json. Clean-code/codebase-design: reused domain migration/routes and existing startup/auth lifecycle; no authorization or finalization logic duplicated. Required resources use random owned DB and normal DROP, no global cleanup. Current limitations are explicit profile/startup/attempt capability binding, real SDK optional fields, and Web control enablement; these remain next slices.
+
+
+## 2026-10-06 07:59 UTC O09 thin owner client
+
+Fixed 1bd4855f1582107e3b1b17ba9ba77cb43801e74d consumes strict contract d5d32ec173fd2139d8a732235440c0995a4019f7. Three files: public export, one existing-request method, one HTTP consumer. 1 missing-method red →1green24ms/suite201ms, typecheck0. Actual strict schema validates original body; exact goal-path encoding, owner bearer, fixed node input/dependency versions/profile digest/previous execution/reason/key, replay receipt, 409 and pre-aborted signal retained without retries. No PG/provider and no domain completion claim. The receipt is transport fixture data, not native execution evidence. Clean-code: no client authorization, retry or verifier policy duplicated. Manifest native-node-client-manifest.json.
+
+## 2026-10-06 08:07 UTC — O09 production
+
+固定 c587436c12324b5c121957643d51173cfc66009e。继续应用已发现的本地clean-code/codebase-design：仅两行挂载复用深领域，无第二loop/权限分支。新测试直接真实createServer，不用领域fixture自动补路由；默认scan不关闭。最终2/2 2.41s + noEmit0，随机库创建前空/cleanup连接空/正常DROP余库空都在原stdout。参见native-node-production-manifest.json。
+
+首次missingroute2红；readonly测试配置为空正确拒绝、receipt与snapshot字段位置假设失败、TypeScript推断UUID token过窄均保留各独立输出。修正的是测试输入/断言位置，不放宽门禁。最终验证owner auth、24默认关闭、FlowClient精确pin/key重放仅一执行、原readonly adapter stringquery、flow.text+typedfinal、业务accepted仍null。旧27领域不重跑、0provider/0真实登录。final tsc在固定源上exit0；早期绿tsc在两处测试断言修正前，明确历史。个人runtime仍b54不操作。
+
+## 2026-10-06 08:13 UTC — O09 CLI
+
+固定0d48fddd37f55854437946ea04da6c845f5b6119：最薄owner `goal execute-native`，128KiB regular UTF8 JSON→strict DTO→同公共client，key必填，signal/error原传。不新增SDK/PG逻辑。真实Node HTTP一个用例核stable key/原请求/409无重试/abort/缺key/非法字段/超界无send/help和README；47ms green，finaltsc0。unknown command red及测试假profile非UUID导致正确拒绝的历史输出保留，只修synthetic IDs不放宽schema。既有O09领域已审，无重复27/生产2，不执行模型。clean-code检查复用深模块无额外抽象，授权在中心。
+
+## 2026-10-06 08:14 UTC — CHAT09 client
+
+固定89931e0d9cfd00b5f51f5b266b7aaa38bba2718b，2文件薄改。executionProfiles options.profileProtocol只接受steering-v1并每次GET发精确header；不变URL游标/limit、缺省不发、publication不带。红1/2(缺header)→绿2/2 122ms、tsc0；strict新publication schema、ownerBearer、409不fallback/不重试、abort不多发均实NodeHTTP。不写domain、manifest或Web、不启cap/个人服务。原CHAT09 fixed cd859独审输入受控合并，F01历史metadata冲突采用本树canonical，不碰产品。
+
+### 2026-10-06 08:24:26 UTC CHAT10只读受理状态client
+
+固定25a22e0488d6d9aef1f3308e3179e0e874fa425f，消费合同3b157a3；一个GET方法复用request/auth/abort/errors。真实HTTP1红（方法不存在）→1绿28ms，suite199ms；403/404/409保持原错误且不重试，abort不发请求，原nullable unavailable/ready身份不推断权限。tsc exit0，0PG/provider。clean-code复核：无重复策略、状态机或输入重写，仅可选attempt查询编码；证据见 steering-admission-client-manifest.json。
+
+## CHAT10可信启动接线 2d69959a50954912c388eddb18d3b6a9574bf680
+
+两文件增量，main仅调用已审严格parser并传activeSteering。真实子进程中心absent/0默认关闭，1只开启受理门且错误attempt仍404；非法值启动exit1且不回显。首次red保留（1仍disabled）；final1selected/2未选，typecheck0。随机专库before[]/createdtrue/connections[]/remaining[]；每个child正常退出断言。域8源对a329精确一致。未重48/106或provider，不动个人服务。
+
+CHAT10 startup独立APPROVED：assignment_review完整只读2d699两file/2source+3raw+8domain hashes无差，1selected green/2未选和清理证据核验，无P1/P2/未重跑。Root接收，默认off/个人profile不改，准受控主线集成。

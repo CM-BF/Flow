@@ -1,0 +1,43 @@
+{
+  "target": "89931e0d9cfd00b5f51f5b266b7aaa38bba2718b",
+  "at": "2026-10-06T08:14:13.792797+00:00",
+  "domainTarget": "cd8594be137ee165f2745265842fc3678c5dfb46",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 37370,
+      "sha256": "ee869de1f29e4e86c83b09f1227c4058d5379e7857a617c7d5dc1cac3012d360"
+    },
+    {
+      "path": "packages/client/src/execution-profiles.test.ts",
+      "bytes": 5679,
+      "sha256": "3d3a28aa0cadae83e108a288fe99464be5f69372dc1a614a7a1e2d92bbab8a26"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/steering-profile-client-red.txt",
+      "bytes": 2164,
+      "sha256": "a3c8893b106a40683845bb12c32838a3e04913105c0dd09b5e34b466ad0f9a3f"
+    },
+    {
+      "path": "docs/evidence/f01/steering-profile-client-green.txt",
+      "bytes": 325,
+      "sha256": "ec6d9738955ae2cd5eb1d119a45eed82f97a4ceb5bc1eb455510ac3253b41fea"
+    },
+    {
+      "path": "docs/evidence/f01/steering-profile-client-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "HTTP": {
+      "passed": 2,
+      "durationMs": 122
+    },
+    "typecheckExit": 0,
+    "providerCalls": 0
+  },
+  "limits": "Transport-only. Header negotiates readable profile format; it does not authorize steering, activate provider, change existing runtime or retry."
+}

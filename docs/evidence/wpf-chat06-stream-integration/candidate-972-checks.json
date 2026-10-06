@@ -1,0 +1,43 @@
+{
+  "startedAt": "2026-10-06T08:04:27.547564+00:00",
+  "sourceCommit": "0a4976240706b20dd6a4b457bd26e5c09f762f65",
+  "sourceDirty": " M apps/web/src/App.tsx\n M apps/web/src/conversations/ConversationThread.tsx\n M apps/web/src/plugin-integration/react.tsx\n M apps/web/src/plugin-integration/session.ts\n M apps/web/src/plugins/types.ts\n M apps/web/src/plugins/validation.ts\n M apps/web/test/plugin-host.test.ts\n M docs/evidence/wpf-chat06-stream-integration/quality.md\n M plans/wpf-chat06-stream-integration/status.md\n?? apps/web/src/conversation-stream/host.ts\n?? apps/web/test/conversation-stream-integration.browser.ts\n?? apps/web/test/conversation-stream-integration.fixture.ts\n?? apps/web/test/conversation-stream-integration.test.ts\n?? docs/evidence/wpf-chat06-stream-integration/build.log\n?? docs/evidence/wpf-chat06-stream-integration/development-browser.json\n?? docs/evidence/wpf-chat06-stream-integration/development-dark-390.png\n?? docs/evidence/wpf-chat06-stream-integration/development-dark.png\n?? docs/evidence/wpf-chat06-stream-integration/development-light-390.png\n?? docs/evidence/wpf-chat06-stream-integration/development-light.png\n?? docs/evidence/wpf-chat06-stream-integration/eighth-browser.log\n?? docs/evidence/wpf-chat06-stream-integration/fifth-browser.log\n?? docs/evidence/wpf-chat06-stream-integration/fifth-development-browser.json\n?? docs/evidence/wpf-chat06-stream-integration/fifth-development-failure.png\n?? docs/evidence/wpf-chat06-stream-integration/first-browser.log\n?? docs/evidence/wpf-chat06-stream-integration/first-development-browser.json\n?? docs/evidence/wpf-chat06-stream-integration/first-development-failure.png\n?? docs/evidence/wpf-chat06-stream-integration/first-direct.log\n?? docs/evidence/wpf-chat06-stream-integration/first-typecheck.log\n?? docs/evidence/wpf-chat06-stream-integration/fourth-browser.log\n?? docs/evidence/wpf-chat06-stream-integration/fourth-development-browser.json\n?? docs/evidence/wpf-chat06-stream-integration/fourth-development-failure.png\n?? docs/evidence/wpf-chat06-stream-integration/fourth-direct.log\n?? docs/evidence/wpf-chat06-stream-integration/install.log\n?? docs/evidence/wpf-chat06-stream-integration/production-browser.log\n?? docs/evidence/wpf-chat06-stream-integration/second-browser.log\n?? docs/evidence/wpf-chat06-stream-integration/second-development-browser.json\n?? docs/evidence/wpf-chat06-stream-integration/second-development-failure.png\n?? docs/evidence/wpf-chat06-stream-integration/second-direct.log\n?? docs/evidence/wpf-chat06-stream-integration/second-typecheck.log\n?? docs/evidence/wpf-chat06-stream-integration/seventh-browser.log\n?? docs/evidence/wpf-chat06-stream-integration/seventh-development-browser.json\n?? docs/evidence/wpf-chat06-stream-integration/seventh-development-failure.png\n?? docs/evidence/wpf-chat06-stream-integration/sixth-browser.log\n?? docs/evidence/wpf-chat06-stream-integration/sixth-development-browser.json\n?? docs/evidence/wpf-chat06-stream-integration/sixth-development-failure.png\n?? docs/evidence/wpf-chat06-stream-integration/third-browser.log\n?? docs/evidence/wpf-chat06-stream-integration/third-development-browser.json\n?? docs/evidence/wpf-chat06-stream-integration/third-development-failure.png\n?? docs/evidence/wpf-chat06-stream-integration/third-direct.log\n?? docs/evidence/wpf-chat06-stream-integration/third-typecheck.log\n",
+  "sourceFiles": {
+    "apps/web/src/App.tsx": "fa940ea321e649258fdd4f749975f4e6e9a68b0b32c6dd8e84cbb540b1a4e049",
+    "apps/web/src/conversation-stream/host.ts": "5561cb7e4e4027855183ce1f60711b06630e9a37b3871a3acf55812b0e2aaca9",
+    "apps/web/src/conversations/ConversationThread.tsx": "fe0ae92a6c1d1b3ed55ce39ad59346459d9c67f4816dac70669a6da789d8994c",
+    "apps/web/src/plugin-integration/react.tsx": "69486ceac7f6215cb26c482a2240717e6b50c261c710996362b60db31172484a",
+    "apps/web/src/plugin-integration/session.ts": "7574aa1a448e67f1e4eca2bfb8964969832557a6015b69b28ea74d8c9e381f3e",
+    "apps/web/src/plugins/types.ts": "2dd8d0d6b9d3108d6546d582e66e0697d25e738d82c3fe5f43ff09ebd03c5e0f",
+    "apps/web/src/plugins/validation.ts": "51d1e9d5abffbd2add15812f3272f606f3d474a668209f0d374d5b1b2c37d5de",
+    "apps/web/test/conversation-stream-integration.browser.ts": "ce2f79d78fb2c007b42392917a1ae5b4d909b651b1d513f237f0e899822a556c",
+    "apps/web/test/conversation-stream-integration.fixture.ts": "550c29f29cfdacb57bcfe49c61e0bc9ff6f8fe07f67888f356a6a48bcd9936df",
+    "apps/web/test/conversation-stream-integration.test.ts": "625d8f21756115e9459a5d38be736c063898dc9657fd0b71243e9ff8b4533aab",
+    "apps/web/test/plugin-host.test.ts": "26f73c5dc218026965831094a3c555c1e775859c4f99619c9a67ca50c0b36e43"
+  },
+  "checks": [
+    {
+      "name": "direct",
+      "command": [
+        "pnpm",
+        "exec",
+        "vitest",
+        "run",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/plugin-host.test.ts"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@flow/web",
+        "typecheck"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "finishedAt": "2026-10-06T08:04:35.853293+00:00"
+}

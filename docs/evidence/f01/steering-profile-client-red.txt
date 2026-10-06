@@ -1,0 +1,60 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/execution-profiles.test.ts (2 tests | 1 failed) 38ms
+   ✓ publishes only explicit configured facts and preserves owner pagination, runner identity and conflict errors 24ms
+   × opts into the exact profile protocol on each requested page without leaking it to publication or fallback requests 14ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/execution-profiles.test.ts > opts into the exact profile protocol on each requested page without leaking it to publication or fallback requests
+AssertionError: expected [ { …(3) }, { …(3) }, { …(3) }, …(2) ] to deeply equal [ { …(3) }, { …(3) }, { …(3) }, …(2) ]
+
+- Expected
++ Received
+
+@@ -1,13 +1,13 @@
+  [
+    {
+-     "header": "steering-v1",
++     "header": undefined,
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=1",
+    },
+    {
+-     "header": "steering-v1",
++     "header": undefined,
+      "method": "GET",
+      "path": "/api/execution-profiles?after=next%2Fid&limit=1",
+    },
+    {
+      "header": undefined,
+@@ -18,10 +18,10 @@
+      "header": undefined,
+      "method": "POST",
+      "path": "/api/runner/execution-profile",
+    },
+    {
+-     "header": "steering-v1",
++     "header": undefined,
+      "method": "GET",
+      "path": "/api/execution-profiles?after=conflict",
+    },
+  ]
+
+ ❯ packages/client/src/execution-profiles.test.ts:57:22
+     55|     await expect(client.executionProfiles({ after: 'conflict', profile…
+     56|     await expect(client.executionProfiles({ profileProtocol: 'steering…
+     57|     expect(requests).toEqual([
+       |                      ^
+     58|       { path: '/api/execution-profiles?limit=1', header: 'steering-v1'…
+     59|       { path: '/api/execution-profiles?after=next%2Fid&limit=1', heade…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  01:13:26
+   Duration  245ms (transform 78ms, setup 0ms, import 135ms, tests 38ms, environment 0ms)
+

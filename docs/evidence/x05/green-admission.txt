@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-package-fetches
+
+ ❯ apps/server/src/plugin-package-fetches/fetches.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/plugin-package-fetches/fetches.test.ts [ apps/server/src/plugin-package-fetches/fetches.test.ts ]
+Error: Cannot find package 'zod' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-package-fetches/apps/server/src/plugin-package-fetches/routes.ts'
+ ❯ apps/server/src/plugin-package-fetches/routes.ts:3:1
+      1| import type { FastifyInstance } from 'fastify';
+      2| import type { Pool } from 'pg';
+      3| import { z } from 'zod';
+       | ^
+      4| import { PACKAGE_FETCH_LIMITS, packageFetchRequestSchema, packageFetch…
+      5| import { HttpError, transaction } from '../database.js';
+ ❯ apps/server/src/plugin-package-fetches/index.ts:13:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  23:26:47
+   Duration  438ms (transform 225ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

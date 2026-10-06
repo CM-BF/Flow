@@ -1,0 +1,23 @@
+{
+  "authorization": "RESUME_GO SVC02-32-user-queued-0829; explicit GO approval to release legitimate user work, reuse08:28:47 gate",
+  "observedAt": "2026-10-06T08:29:40.016Z",
+  "checks": {
+    "observed": true,
+    "runtime32c": true,
+    "threeOwnedReady": true,
+    "formalIdentity": true,
+    "acceptingV9": true,
+    "localResumed": true
+  },
+  "passed": true,
+  "taskCounts": [
+    {
+      "status": "succeeded",
+      "count": 4
+    }
+  ],
+  "unfinishedAttemptCount": 0,
+  "operatorQueries": 0,
+  "userWork": "One owner-submitted queued task was explicitly permitted to dispatch; task progress is not an operator experiment and not a semantic success claim.",
+  "window": "CLOSED after this single resume and receipt"
+}

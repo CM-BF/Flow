@@ -18,3 +18,10 @@ export * from './goal-graph-proposals.js';
 export * from './runner-maintenance.js';
 export * from './knowledge.js';
 export * from './goal-graph-runs.js';
+export * from './native-activity.js';
+export * from './plugin-package-fetches.js';
+export * from './goal-context.js';
+
+export * from "./assistant-stream.js";
+export * from './active-steering.js';
+export * from './goal-native-executions.js';

@@ -15,7 +15,9 @@ export const slots: Readonly<Record<SlotId, readonly ContextKind[]>> = {
   "chat.header": ["global", "task", "composer"],
   "chat.task.actions": ["task"],
   "chat.message.actions": ["message"],
+  "chat.message.footer": ["message"],
   "chat.composer.actions": ["composer"],
+  "chat.composer.context": ["composer"],
   "workspace.header": ["workspace"],
   "workspace.tabs": ["workspace"],
   "workspace.actions": ["workspace"],
@@ -26,9 +28,12 @@ const capabilities: readonly Capability[] = [
   "ui.navigate",
   "ui.layout",
   "reference.read",
+  "task.activity.read",
+  "task.assistant-stream.read",
   "theme.write",
   "theme.register",
   "workspace.read",
+  "knowledge.read",
   "composer.write",
   "clipboard.write",
 ];
@@ -244,7 +249,7 @@ export function validateManifest(input: PluginManifest): PluginManifest {
     );
     if (contribution.kind === "panel") {
       assert(
-        ["workspace.tabs", "settings.sections"].includes(contribution.slot) &&
+        ["workspace.tabs", "settings.sections", "chat.message.footer", "chat.composer.context"].includes(contribution.slot) &&
           manifest.capabilities.includes(contribution.capability),
         "Invalid panel contribution",
       );

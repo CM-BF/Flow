@@ -1,0 +1,55 @@
+{
+  "kind": "capacity",
+  "selection": "real PG/HTTP",
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/runtime-capacity.test.ts",
+    "--config",
+    "docs/evidence/s01p01/vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "-t",
+    "real PG/HTTP"
+  ],
+  "startedAt": "2026-10-06T08:18:57.806Z",
+  "completedAt": "2026-10-06T08:19:06.105Z",
+  "elapsedMs": 8297.293875000001,
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "sha256": "4f2fdfabb097126297014da2fa88e704ac9f4119f4a29382eaff53b0bce16d7d"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "sha256": "f074eda352d606a916080172ee9ea4b119fff7ceede404185dc5d687056971c8"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "sha256": "236fb7c9e1823b1a02451b198782e7bcef6f81dc1b1bbc6595f7c85945196b29"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "9fb515d0c00b3af3bfc91b471797383de861b16608c31dfb348e4c7d18392022"
+    },
+    {
+      "path": "docs/evidence/s01p01/check.mjs",
+      "sha256": "2304d29f6cb7bce9f554708449497678ee00c7d656d386c03f08b58c2768e686"
+    },
+    {
+      "path": "docs/evidence/s01p01/types.tsconfig.json",
+      "sha256": "c75d8c36a5bed972a5fa76fac39ad5c7e753040b5fcdefcd2634d5755b85b7ca"
+    },
+    {
+      "path": "docs/evidence/s01p01/vitest.config.mjs",
+      "sha256": "24bc11be1dc5219396a51132914a3729ab17eefb4b748c0aaddc046961492c9f"
+    }
+  ],
+  "log": "docs/evidence/s01p01/capacity-pg.log",
+  "logSha256": "79bfe60c8271a2d4d7a49b46a6323c05b8c12764dfec46d978c1db5043a16a27",
+  "sourceHead": "155494b0f797004e5d3299cf26312118dd6664af"
+}

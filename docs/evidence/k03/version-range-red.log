@@ -1,0 +1,38 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context
+
+ ❯ apps/server/src/goal-context/context.test.ts (6 tests | 1 failed | 5 skipped) 1018ms
+   ↓ freezes owner-defined references atomically and serves exact detail across restart and immutable ACK replay
+   ↓ projects frozen execution privately and recompiles recovery without creating a goal execution
+   ↓ fails closed for mismatched raw prompts, corrupt records and declared bindings while preserving immutable rows
+   ↓ rolls back task and input allocation on private budget failure and rejects detail outside its owner tuple
+   ↓ binds owner execution and blocks new work after any source version change including equal content
+   × rejects safe JavaScript integers outside the PostgreSQL input-version range before querying 22ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-context/context.test.ts > rejects safe JavaScript integers outside the PostgreSQL input-version range before querying
+AssertionError: expected 500 to be 400 // Object.is equality
+
+- Expected
++ Received
+
+- 400
++ 500
+
+ ❯ apps/server/src/goal-context/context.test.ts:108:27
+    106|   for (const version of ['2147483648', '9007199254740991']) {
+    107|     const result = await f.http(`/api/goals/${randomUUID()}/nodes/${ra…
+    108|     expect(result.status).toBe(400); expect(result.body.error.code).to…
+       |                           ^
+    109|   }
+    110| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 skipped (6)
+   Start at  23:18:09
+   Duration  2.62s (transform 1.11s, setup 0ms, import 1.51s, tests 1.02s, environment 0ms)
+

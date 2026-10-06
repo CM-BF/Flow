@@ -1,0 +1,11 @@
+{
+  "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vitest run apps/runner/src/runner.test.ts apps/runner/src/runtime-capacity.test.ts apps/runner/src/lease.test.ts apps/runner/src/admission-journal.test.ts apps/runner/src/outbox.test.ts apps/runner/src/outbox-resume.test.ts",
+  "exitCode": 0,
+  "completedAt": "2026-10-06T09:32:55.376053+00:00",
+  "output": "c0-tests.stdout",
+  "source": "process stdout/stderr captured directly",
+  "selectedFiles": 6,
+  "selectedTests": 92,
+  "passedTests": 92,
+  "passedFiles": 6
+}

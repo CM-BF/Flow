@@ -1,0 +1,14 @@
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:54
+if (failure || errors.length) throw Error(failure ?? errors.join("\n"));
+                                    ^
+
+Error: locator.evaluate: ReferenceError: __name is not defined
+    at eval (eval at evaluate (:311:30), <anonymous>:1:22)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at measure (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:33:31)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:45:3)
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:54:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Node.js v24.20.0

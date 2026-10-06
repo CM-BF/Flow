@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-10-06T07:04:30Z",
+  "main": "ba908a2d84a05b336d74fbaccd7a36d3d254c501",
+  "implementation": "9ebb3bdd781b3667f0c164405e9a17387ce89d76",
+  "ancestor": true,
+  "implementationScopeDiff": [],
+  "scope": [
+    "packages/contracts/src/plugin-package-fetches.ts",
+    "apps/server/src/plugin-package-fetches/",
+    "apps/server/src/package-artifacts/input.ts",
+    "apps/server/src/package-artifacts/index.ts",
+    "apps/server/src/package-artifacts/storage.ts",
+    "packages/storage/migrations/023-plugin-package-fetches.sql"
+  ],
+  "personalRuntime": "fb906 remains unchanged; not refreshed",
+  "scopeConclusion": "compressed-artifact durable fetch only; no unpack/install/load/enable",
+  "claimStop": "All X05 writes stopped after this metadata commit; release request follows"
+}

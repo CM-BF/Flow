@@ -1,0 +1,69 @@
+{
+  "observedAt": "2026-10-06T06:00:35.127Z",
+  "task": "WPF-RENDERER01",
+  "metadata": "7ff614f6aa210aae5a08119f1f16f2ef08b2298a",
+  "actualHead": "7ff614f6aa210aae5a08119f1f16f2ef08b2298a",
+  "dirty": "",
+  "implementation": "747cbe616408dc3e44ab3587216c5753e6de3994",
+  "priorMetadata": "5753eca1bb3a80b17eda58ceb0eae0b9f9d2f62a",
+  "metadataOnlyPaths": [
+    "docs/evidence/wpf-renderer01/README.md",
+    "docs/evidence/wpf-renderer01/interface.md",
+    "docs/evidence/wpf-renderer01/quality.md",
+    "plans/wpf-renderer01-data-renderers/plan.md",
+    "plans/wpf-renderer01-data-renderers/review.md",
+    "plans/wpf-renderer01-data-renderers/status.md"
+  ],
+  "protectedImplementationDifference": "",
+  "statusErrors": [],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "消息详情的可插拔显示、故障回退和双面板隔离已验证",
+    "next": "将已验证的详情显示接到聊天界面",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "RENDERER01-01",
+      "state": "completed"
+    },
+    {
+      "id": "RENDERER01-02",
+      "state": "completed"
+    },
+    {
+      "id": "RENDERER01-03",
+      "state": "completed"
+    },
+    {
+      "id": "RENDERER01-04",
+      "state": "pending"
+    }
+  ],
+  "checks": {
+    "state": "passed",
+    "target": "747cbe616408dc3e44ab3587216c5753e6de3994",
+    "record": "PASSED 747cbe616408dc3e44ab3587216c5753e6de3994；14局部测试/typecheck/10组HTTPfixture浏览器，非真实中心或App接线"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "747cbe616408dc3e44ab3587216c5753e6de3994"
+  },
+  "sourceRegistered": "RENDERER01: Lead reported 68-source deployment at 05:49:16.984Z; K02C01 deployment confirmation pending. No new API snapshot in this audit.",
+  "boundary": "Final metadata verification only; reused candidate scope/source binding checks; no product rerun or service/model operation."
+}

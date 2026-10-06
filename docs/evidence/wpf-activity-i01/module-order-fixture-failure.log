@@ -1,0 +1,36 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity-integration
+
+ ✓ apps/web/test/conversation-activity-integration.test.ts (5 tests) 73ms
+ ❯ apps/web/test/native-activity.test.ts (9 tests | 1 failed) 31ms
+     ✓ does no reads until active, caches body, and resumes without an automatic GET 6ms
+     ✓ refreshes only current page at its original cursor and leaves other pages stale 4ms
+     ✓ coalesces task updates and never drains nextCursor automatically 4ms
+     ✓ rejects foreign headers, repeated cursors and wrong body identity without caching 3ms
+     ✓ validates UTF-8 prefix size and metadata, permits truncated invalid JSON as text 2ms
+     ✓ ignores late body after hide, settles loading, rejects unloaded IDs 3ms
+     × rejects overlapping pages and changed immutable header order atomically 5ms
+     ✓ rejects body source and truncation inconsistencies and can retry after an HTTP failure 2ms
+     ✓ a subscriber hiding synchronously during loading prevents the request from starting 1ms
+ ✓ apps/web/test/conversation-activity.test.ts (22 tests) 11ms
+ ✓ apps/web/test/plugin-host.test.ts (16 tests) 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/native-activity.test.ts > native activity displayed-window projection > rejects overlapping pages and changed immutable header order atomically
+AssertionError: expected 'Native activity next cursor does not …' to contain 'immutable order'
+
+Expected: "immutable order"
+Received: "Native activity next cursor does not match its page."
+
+ ❯ apps/web/test/native-activity.test.ts:46:112
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 51 passed (52)
+   Start at  00:06:01
+   Duration  1.74s (transform 536ms, setup 0ms, import 1.30s, tests 125ms, environment 0ms)
+

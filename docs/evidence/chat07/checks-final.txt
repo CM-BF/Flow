@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/active-steering
+
+ ✓ apps/server/src/active-steering/steering.test.ts (16 tests) 3516ms
+   ✓ checks current ownership and availability before returning a saved receipt  407ms
+   ✓ preserves receipts and immutable audit across center restart and keeps default intake disabled  365ms
+   ✓ first-upgrades an old schema with existing data and applies 024 exactly once  875ms
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  00:07:16
+   Duration  4.00s (transform 251ms, setup 0ms, import 404ms, tests 3.52s, environment 0ms)
+

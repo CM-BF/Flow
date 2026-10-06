@@ -1,0 +1,57 @@
+{
+  "target": "3d81141324041c2c67680edbb686996cefaf8b4b",
+  "contractTarget": "998e2fd03ba42c6e2b5676074ea736b33bcc1fcb",
+  "source": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 36850,
+      "sha256": "24e9b8db2c8b69cfab9289fbc6c0a8b532a206b078a2875ab61ef515173f6f51"
+    },
+    {
+      "path": "packages/client/src/steering-finalization.test.ts",
+      "bytes": 5773,
+      "sha256": "2e83cd0210c49d1631ba70a61d4187ac9c4fbbb5f4f34b68ae46dca91951d780"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/steering-finalization-client-red.txt",
+      "bytes": 1233,
+      "sha256": "8336f4861b1363ffb997ff3c121b135ad26e3f6b3fa73f4e59236fde32b38bbd"
+    },
+    {
+      "path": "docs/evidence/f01/steering-finalization-client-green.txt",
+      "bytes": 324,
+      "sha256": "fc2613a32ba9391022299177cc74eff90b44ca5b920b30b083c48828504a8491"
+    },
+    {
+      "path": "docs/evidence/f01/steering-finalization-client-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "contract": [
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "bytes": 6269,
+      "sha256": "14ecdc80039f7d3ecb9cf19becaae5b9d0567a6bfb58360094cc5820d6e45896"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 6419,
+      "sha256": "6636f0dd920184a70dec7cfcf488aae2c4712e1c526c6694527a11ff27e3e5ac"
+    }
+  ],
+  "checks": {
+    "httpPassed": 1,
+    "httpMilliseconds": 39,
+    "suiteMilliseconds": 224,
+    "typecheckExit": 0,
+    "providerQueries": 0
+  },
+  "limits": [
+    "Thin transport only; CHAT08 domain remains unreviewed moving work",
+    "No production mount, PG/provider or finalization correctness claim",
+    "Unknown transport failure propagates, no retry or automatic candidate replacement; absent is not permission to create a new candidate"
+  ]
+}

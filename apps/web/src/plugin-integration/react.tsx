@@ -1,4 +1,6 @@
-import { Activity, createContext, useContext, useEffect, useId, useLayoutEffect, useRef, useState, useSyncExternalStore, type ComponentType, type ReactNode, type RefObject } from "react";
+import { ConversationStreamHost, STREAM_OWNER, STREAM_PANEL } from "../conversation-stream/host";
+import type { PluginDefinition, PluginViewProps } from "../plugins/types";
+import { Activity, createContext, useContext, useEffect, useId, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore, type ComponentType, type ReactNode, type RefObject } from "react";
 import { useAuiState } from "@assistant-ui/react";
 import { Puzzle, SlidersHorizontal } from "lucide-react";
 import { ExtensionSlot, PluginView } from "../plugins/react";
@@ -9,8 +11,15 @@ import type { ProjectionState } from "../projection";
 import type { AppPluginSession } from "./session";
 import type { PluginManagementProps, PluginRegistryReader } from "../plugin-management/PluginManagement";
 import "./integration.css";
+import { AssistantDataRenderers } from "../data-renderers/react";
+import { ReplyBindingsProvider, flowReplyFallback } from "../data-renderers/flow-reply-detail";
+import { FLOW_REPLY_OWNER } from "../data-renderers/registry";
+import { createConversationReplyBindings } from "./data-renderers";
+import { createConversationActivityBindings, ActivityBindingsContext } from "./activity";
+import type { ConversationProjection } from "../conversations/projection";
 
-const SessionContext = createContext<AppPluginSession | null>(null);
+const StreamBindingsContext = createContext<ConversationStreamHost | null>(null);
+export const SessionContext = createContext<AppPluginSession | null>(null);
 const ThreadScope = createContext<{ viewId: string; taskId: string | null; editableComposer?: boolean; messageTask?: (id: string) => string | null }>({ viewId: "", taskId: null });
 const globalContext: ResourceContext = { kind: "global" };
 export function PluginProvider({ session, children }: { session: AppPluginSession; children: ReactNode }) {
@@ -18,6 +27,80 @@ export function PluginProvider({ session, children }: { session: AppPluginSessio
 }
 export function PluginThreadScope({ viewId, taskId, messageTask, editableComposer, children }: { viewId: string; taskId: string | null; editableComposer?: boolean; messageTask?: (id: string) => string | null; children: ReactNode }) {
   return <ThreadScope.Provider value={{ viewId, taskId, messageTask, editableComposer }}>{children}</ThreadScope.Provider>;
+}
+/** Explicit native-hidden visibility, independent of which split pane owns keyboard focus. */
+export function ConversationDataRenderers({ viewId, projection, visible, children }: { viewId: string; projection: ConversationProjection; visible: boolean; children: ReactNode }) {
+  const session = useContext(SessionContext)!;
+  const bindings = useMemo(() => createConversationReplyBindings(session, viewId, projection), [session, viewId, projection]);
+  const [ready, setReady] = useState<typeof bindings | null>(null);
+  const state = useSyncExternalStore(projection.subscribe, projection.getSnapshot);
+  const hasReplyDetail = state.turns.some(turn => turn.assistant.state === "available" && turn.assistant.truncated);
+  useLayoutEffect(() => {
+    bindings.setVisible(visible); setReady(visible ? bindings : null);
+    return () => bindings.setVisible(false);
+  }, [bindings, visible]);
+  useEffect(() => {
+    // A disabled/failed owner remains disabled/failed; only untouched registration is lazy activated.
+    if (visible && hasReplyDetail && session.host.list().find(plugin => plugin.id === FLOW_REPLY_OWNER)?.state === "registered")
+      void session.host.activate(FLOW_REPLY_OWNER);
+  }, [session, visible, hasReplyDetail]);
+  return <ReplyBindingsProvider value={bindings}>
+    {visible && ready === bindings && <AssistantDataRenderers registry={session.dataRenderers} fallback={flowReplyFallback} />}
+    {children}
+  </ReplyBindingsProvider>;
+}
+export function ConversationActivities({ viewId, projection, visible, children }: { viewId: string; projection: ConversationProjection; visible: boolean; children: ReactNode }) {
+  const session = useContext(SessionContext)!;
+  const bindings = useMemo(() => createConversationActivityBindings(session, viewId, projection), [session, viewId, projection]);
+  const state = useSyncExternalStore(projection.subscribe, projection.getSnapshot);
+  useLayoutEffect(() => { bindings.setVisible(visible); return () => bindings.setVisible(false); }, [bindings, visible]);
+  useLayoutEffect(() => { bindings.sync(); }, [bindings, state.turns, state.connection]);
+  useEffect(() => { const close = () => bindings.dispose(); session.signal.addEventListener("abort", close, { once: true }); return () => { session.signal.removeEventListener("abort", close); bindings.setVisible(false); }; }, [session, bindings]);
+  return <ActivityBindingsContext.Provider value={bindings}>{children}</ActivityBindingsContext.Provider>;
+}
+export function useConversationStream(viewId: string, projection: ConversationProjection, visible: boolean) {
+  const session = useContext(SessionContext)!;
+  const bindings = useMemo(() => new ConversationStreamHost(viewId, projection, session.streamAuthority(), session.streamBudget), [session, viewId, projection]);
+  const source = useSyncExternalStore(projection.subscribe, projection.getSnapshot);
+  useLayoutEffect(() => bindings.attach(), [bindings]);
+  useLayoutEffect(() => { bindings.setVisible(visible); return () => bindings.setVisible(false); }, [bindings, visible]);
+  useEffect(() => {
+    if (visible && source.snapshot?.capabilities.liveAssistantText === true && session.host.list().find(plugin => plugin.id === STREAM_OWNER)?.state === "registered") void session.host.activate(STREAM_OWNER);
+  }, [session, visible, source.snapshot?.capabilities.liveAssistantText]);
+  return bindings;
+}
+export function ConversationStreams({ bindings, children }: { bindings: ConversationStreamHost; children: ReactNode }) { return <StreamBindingsContext.Provider value={bindings}>{children}</StreamBindingsContext.Provider>; }
+function StreamStatusPanel({ context }: PluginViewProps) {
+  const bindings = useContext(StreamBindingsContext);
+  const state = useSyncExternalStore(bindings?.subscribe ?? (() => () => {}), () => bindings?.getSnapshot());
+  const member = context.kind === "message" ? state?.members.get(context.messageId) : null;
+  const current = member && state?.states.get(member.turnId);
+  return current?.error ? <p role="alert">Reply updates paused: {current.error} <button className="flow-link" onClick={() => bindings?.retry(member!.turnId)}>Retry reply updates</button></p> : null;
+}
+export function createAssistantStreamPlugin(): PluginDefinition {
+  return { manifest: { id: STREAM_OWNER, version: "1.0.0", hostApi: 1, capabilities: ["task.assistant-stream.read"], activationEvents: ["view:chat.message.footer"], commands: [],
+    contributions: [{ kind: "panel", id: STREAM_PANEL, slot: "chat.message.footer", title: "Live assistant text", capability: "task.assistant-stream.read" }] },
+    load: async () => ({ activate(context) { context.contribute(STREAM_PANEL, StreamStatusPanel); } }) };
+}
+export function MessageFooter() {
+  const session = useContext(SessionContext)!;
+  const scope = useContext(ThreadScope);
+  const stream = useContext(StreamBindingsContext);
+  const messageId = useAuiState(state => state.message.id);
+  const role = useAuiState(state => state.message.role);
+  const taskId = scope.messageTask?.(messageId);
+  const panels = useSyncExternalStore(listener => session.host.subscribeSlot("chat.message.footer", listener), () => session.host.getSlotSnapshot("chat.message.footer"));
+  const custom = useAuiState(state => state.message.metadata.custom);
+  if (taskId && role === "assistant" && stream?.getSnapshot().members.get(messageId)?.draft) {
+    const fact = custom.flowStream as { interrupted?: boolean; observationPaused?: boolean; truncated?: boolean; phase?: string } | undefined;
+    return <p className="mt-1 text-xs text-muted-foreground" data-stream-status={messageId}>{fact?.interrupted ? "Interrupted draft" : fact?.observationPaused ? "Draft · updates paused" : fact?.phase === "block-complete" ? "Draft · block complete" : "Draft · generating"}{fact?.truncated ? " · truncated" : ""} · not the final reply</p>;
+  }
+  if (!taskId || role !== "user") return null;
+  const context: ResourceContext = { kind: "message", taskId, messageId, role };
+  return <div className="my-2 w-full min-w-0 space-y-2" data-extension-slot="chat.message.footer">
+    {panels.filter(item => item.declaration.kind === "panel").map(item => <PluginView key={item.declaration.id} host={session.host} contributionId={item.declaration.id} context={context} />)}
+    <AppSlot slot="chat.message.footer" context={context} />
+  </div>;
 }
 export function AppSlot({ slot, context = globalContext, className = "" }: { slot: SlotId; context?: ResourceContext; className?: string }) {
   const session = useContext(SessionContext);
@@ -33,7 +116,7 @@ export function MessageActions() {
 }
 export function ComposerActions() {
   const { viewId, taskId, editableComposer } = useContext(ThreadScope);
-  return <AppSlot slot="chat.composer.actions" context={{ kind: "composer", viewId, isDraft: editableComposer ?? (!taskId && viewId.startsWith("draft-")) }} />;
+  return <span data-composer-view={viewId}><AppSlot slot="chat.composer.actions" context={{ kind: "composer", viewId, isDraft: editableComposer ?? (!taskId && viewId.startsWith("draft-")) }} /></span>;
 }
 
 /** The rail stays 48px wide; text-based contributed actions live in an accessible popover. */

@@ -2,22 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:23 UTC / 2026-10-06 06:23 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:40 UTC / 接收前main80ba95ad70cdf724251be4d88130b6bac56d3606 |
 | Plan | [plan.md](plan.md) |
+| 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
+| co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 823fea9bd8bc868243398d58725b4076528a7ffc / 当前候选由Git聚合 |
-| 工作树dirty状态 | 仅本次交付记录；实现已提交 |
+| 工作基线 / HEAD | 80ba95ad70cdf724251be4d88130b6bac56d3606 / 本批已审视觉与未知执行边界 |
+| 工作树dirty状态 | 固定源码比对及root/Web类型检查通过；本次记录随后提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；本批root/Web组合typecheck与固定源码比对；复用各领域/接线局部独审，C02隔离P2已修，未重复全库 |
-| 已集成main状态 / HEAD | main/origin 823fea9已含O06/QUEUE01/D06与73源登记；K02/O07/X04和Web兼容/renderer模块本批已审待fast-forward，运行center/runner仍fb906 |
+| 检查状态 | PASSED；视觉7源/C0 3源与普通终文投影2源均与独审target逐字一致，root/Web类型检查exit0；117源实际可见，0provider |
+| 已集成main状态 / HEAD | main80ba95已含R05B中心接线与ENG计划；本批视觉/C0待本次fast-forward发布。个人backend/static仍b1c、accepting v12，不随main更新。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 真实聊天排队、关闭浏览器后继续执行与重开回复已验证；知识引用和目标工具已审待发布 |
-| 下一可用交付 | 发布版本化知识引用与目标工具接线，继续正文流式显示和插件下载 |
+| 当前产出 | 新的视觉主题与未知执行保护已审接收；终端基础会话片段进入审查。 |
+| 下一可用交付 | 接通Codex普通任务及可发送、恢复会话的终端首片。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -72,6 +74,38 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 
 2026-10-06 05:50 UTC：本批固定scope及组合检查见集成记录；部署版本fb906和main候选分开，0新增模型。
 
-| I02-T09 | in-progress | Lead | K02a6/O07c224/Web763+747/X04fa2及共享549+d640分别独审；原始局部checks与组合typecheck/源码比对见本次集成清单，待main发布 |
+| I02-T09 | completed | Lead | K02a6/O07c224/Web763+747/X04fa2及共享549+d640分别独审；原始局部checks与组合typecheck/源码比对见本次集成清单，待main发布 |
 
 2026-10-06 06:23 UTC：本批仅应用已审输入，K02两runner路径由已审O07覆盖且全scope同O07固定source。新真实queue验收已GO接收，2/2 query/$0.012396保守SDK和封存；严格第二assistant正文和browser退出后真实running成立。旧CHAT第二轮UI未证明仍为历史，不改写。个人中心/runner载入fb906，后继main不表示运行环境同步。
+
+| I02-T10 | completed | Lead | CHAT05领域216/Mika与公共9ea/GO批准、WPF-ACTIVITY01 61b/Web批准，固定scope零diff；root/Web组合types绿，75来源候选；待main发布 |
+
+2026-10-06 06:30 UTC：实际main/origin acfd409；020和活动模块已接收，75源06:27:06.326Z实采可核。新增S01/RENDERERI01与D06唯一来源迁移登记77源候选，原图仍固定eb149且未改renderer/data，无产品测试。实际center/runner仍fb906。
+
+2026-10-06 06:48 UTC：K03领域/021接线、rendererI与D06固定图已受控合并，源码对各审批target零diff，组合root/Web types及8详情消费者+10架构检查通过；下一动作main fast-forward。CHAT06独立发布门槛不拖本批，实际个人backend仍fb906。
+
+2026-10-06 07:43 UTC：stream/reuse 候选检查及固定输入见 `docs/evidence/i02/stream-reuse-integration-receipt.json`；SVC02 maintenance 保持，main 不前进，待窗口结束发布。
+
+2026-10-06 07:46 UTC：SVC02 操作窗口已关闭，个人 center/runner 固定 b54，accepting v6，原服务端口/数据与队列保留，0新增模型。接收 S01 W2 独审结果5504，仅固定实验与证据，未重跑负载；本批 stream/reuse 及 S01 可发布，个人后台不自动跟随新 main。
+
+2026-10-06 07:59 UTC：CHAT06P01固定f490自身三scope逐文件与已审输入一致，历史产品fa9证据不替换；SVC最终release metadata只收事实。O09与Web逐段正文接线首canonical已登记，未假称完成。无产品测试/provider/个人服务重启。
+
+2026-10-06 08:01 UTC：CHAT08领域d4e/薄client3d811/默认关闭生产挂载fe5分别已独审；固定24源码逐字相同，server/runner/contracts/storage对fe5无新增差异，无理由重跑相同106/局部3项。仅F01批准metadata上下文冲突，保留原作者CHAT08批准段落，未带入后继未审O09代码。即将main接收；个人运行仍b54/v6，不启补充指令。
+
+2026-10-06 08:10 UTC：O09领域7ddd/薄client1bd/生产c587、CONTEXT01 736ef独立模块、CHAT06P02 b009均按各唯一独审固定输入受控接收。产品逐字比对与root/Web组合types绿见native-context-prefix-integration.json；未重跑领域/provider。Web父计划仅从33bd两个批准目录发布，权威仍原管理WT；F01 metadata冲突精确采用canonical1be，不改产品。registry92含CHAT09/P02及D06来源迁移，尚待本次实际部署回执。个人center/runner仍b54/v6。
+
+2026-10-06 08:20 UTC：已审输入逐文件绑定见 [本批组合](../../docs/evidence/i02/stream-profile-integration.json)。既有F01两metadata冲突仅恢复唯一owner新记录；所有产品blob保持固定已审target。未重跑原领域全套/浏览器，无新增模型，个人服务未更新。
+
+2026-10-06 08:30:24 UTC：SVC02-32窗口已关闭；08:29:29一次resume到v9，08:29:40后置三owned组/端口/身份通过，用户请求后4succeeded/未完0。此为operator回执摘要，原始更新证据由SVC02唯一source固化。CONTEXT02固定5e8213a/6cacc通过六源码比较及Web类型检查，原142与独立124+18不重跑。main后继不改变个人center/runner加载源。
+
+2026-10-06 08:44 UTC：CHAT10领域/薄client/可信启动、CHATREAD01展示、S01P01及ES2023增量各自已独审；固定source与原主线三个runner保护文件hash一致，root/Web组合types通过，S01默认2项生产消费者复用原绿。O10原生单child限定语义由GO独立通过，预算1/1封存，本文未追加模型。初始root类型红保留，未重跑既有领域/浏览器矩阵。证据见pool-readability-final-comparison.json及steering-native-child-comparison.json。个人center/runner仍32c/v9，Vite Web来自移动主线；SVC03固定产物另行实现，不能把main发布称后台重启。
+
+2026-10-06 08:55 UTC：SVC03固定artifact与static Web独立审查通过，11源码在实际集成点对d938逐字一致；原7+10行为/有界构建证据复用，无重复测试。两层任务与消息预算最终规则在根AGENTS/plans/OPS同步，101来源含R05/CHATUI01/D05FIT01/SVC03均本地parse无错/人读字段完整。即将发布本批；实际个人服务切换尚未执行，原32c/v9保留。
+
+2026-10-06 08:58:18 UTC：本批[R05-A与首次fit固定对照](../../docs/evidence/i02/native-harness-fit-integration.json)18项全一致，根类型检查exit0；复用作者42局部检查及Web已有五组浏览器/独立可视审查，不重复工程矩阵。SVC03实际窗口已关闭，后端与静态产物固定b1c/v12，后继main不改变其运行版本。
+
+2026-10-06 09:10:33 UTC：[补充指令独立模块组合](../../docs/evidence/i02/steering-module-integration.json)六源码与Web独审target/manifest逐字一致，当前Web类型检查exit0。未重复33/浏览器、未挂App或启个人steer。登记111源已实采；实际个人center/runner/staticWeb仍b1c/v12，不随main前进。
+
+2026-10-06 09:40 UTC：[视觉与C0组合](../../docs/evidence/i02/visual-c0-source-comparison.json)12源码与各独审target完全一致，其中原10项也与manifest完全一致，root/Web类型检查exit0；沿用固定领域/浏览器证据，无模型或个人服务更新。C0仅可信原生未知状态，不涵盖正在实施的Codex adapter。ENG计划与117源实采回执同批归档；纯文档不跑工程测试。
+
+同批普通终文投影提升6313c885另获Execution Lead限定独审：算法与Mika原0d0524来源逐字相同，15项原断言仅换import后的原始输出已核。当前无adapter连接，不将投影completed等同Flow任务完成；未来adapter必须归一可能含原文的AssertionError。

@@ -1,0 +1,19 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-prefix-hash
+
+stdout | apps/server/src/assistant-stream/prefix-hash.test.ts
+CHAT06P02_DATABASE {"database":"flow_chat06p02_f8481d7355c54e3e90e41bb3be284612","version":"16.13"}
+
+stdout | apps/server/src/assistant-stream/prefix-hash.test.ts > returns only the verified digest while keeping the full Unicode block publicly readable
+CHAT06P02_DECODED_RETURN {"prefixUtf8Bytes":8192,"appendedUtf8Bytes":3,"queryCount":1,"fields":["digest"],"decodedValueUtf8Bytes":64,"decodedRowsJsonUtf8Bytes":79,"unit":"decoded UTF8 values/JSON, not PostgreSQL wire or CPU cost"}
+
+stdout | apps/server/src/assistant-stream/prefix-hash.test.ts
+CHAT06P02_CLEANUP {"database":"flow_chat06p02_f8481d7355c54e3e90e41bb3be284612","connections":[],"remaining":[]}
+
+ ✓ apps/server/src/assistant-stream/prefix-hash.test.ts (1 test) 1924ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  00:57:39
+   Duration  3.24s (transform 725ms, setup 0ms, import 1.22s, tests 1.92s, environment 0ms)
+

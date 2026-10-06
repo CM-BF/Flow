@@ -1,0 +1,6 @@
+
+> flow@ typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-compatibility
+> tsc --noEmit
+
+apps/server/src/assistant-stream-compatibility/compatibility.test.ts(23,125): error TS18046: 'error' is of type 'unknown'.
+ ELIFECYCLE  Command failed with exit code 2.

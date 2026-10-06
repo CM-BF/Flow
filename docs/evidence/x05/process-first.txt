@@ -1,0 +1,15 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-package-fetches
+
+ ✓ apps/server/src/plugin-package-fetches/workflow.test.ts (5 tests) 7828ms
+   ✓ accepted command survives center restart and stable replay does not download again  1043ms
+   ✓ hard exit after file publication but before PG commit recovers by known ID without another GET  852ms
+   ✓ interrupted network requires explicit retry with a fresh attempt; reconciliation does no download  1410ms
+   ✓ declared SHA256 mismatch is not a verified version and retries have a fixed attempt budget  833ms
+   ✓ a different center store can observe but cannot reconcile or execute the local operation  1652ms
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  23:29:55
+   Duration  7.98s (transform 24ms, setup 0ms, import 61ms, tests 7.83s, environment 0ms)
+

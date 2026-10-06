@@ -1,0 +1,35 @@
+{
+  "target": "d9385185a1474c6b058c41b9187c6e075248cb5b",
+  "observedAt": "2026-10-06 08:47:45 UTC",
+  "distinctTests": 17,
+  "commands": [
+    {
+      "name": "modules-final",
+      "selected": 7,
+      "passed": 7,
+      "durationMs": 2012.887,
+      "includes": "artifact4 + static HTTP1 + environment2"
+    },
+    {
+      "name": "owned-final",
+      "selected": 10,
+      "passed": 10,
+      "durationMs": 38485.655417,
+      "includes": "preview5 + maintenance5; normal per-fixture stop/DROP/private-directory removal"
+    },
+    {
+      "name": "syntax",
+      "files": 10,
+      "exit": 0
+    },
+    {
+      "name": "diffcheck",
+      "exit": 0
+    }
+  ],
+  "overlap": "Owned first2 and intermediate module runs overlap final17, not extra distinct tests.",
+  "red": "Initial ARTIFACT_NOT_IMPLEMENTED is behavior red; subsequent canonical /var path and minifier quote assumptions were fixture/assertion corrections. All raw outputs retained.",
+  "providerCalls": 0,
+  "personalInstallationActions": 0,
+  "cleanup": "All 10 owned fixtures finished their identity-checked stop and successful DROP DATABASE; no global DB sweep or personal config read. Static/artifact temporary dirs removed in finally."
+}

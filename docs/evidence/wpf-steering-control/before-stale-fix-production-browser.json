@@ -1,0 +1,184 @@
+{
+  "observedAt": "2026-10-06T08:54:56.537Z",
+  "sourceCommit": "a3bf1b0a8122de23e72722e0d36e4c421f954f73",
+  "sourceDirty": " M docs/evidence/wpf-steering-control/quality.md\n M plans/wpf-steering-control/status.md\n?? apps/web/src/conversation-steering/\n?? apps/web/test/conversation-steering.browser.ts\n?? apps/web/test/conversation-steering.fixture.ts\n?? apps/web/test/conversation-steering.test.ts\n?? docs/evidence/wpf-steering-control/development-browser.json\n?? docs/evidence/wpf-steering-control/development-browser.log\n?? docs/evidence/wpf-steering-control/development-dark-1280.png\n?? docs/evidence/wpf-steering-control/development-dark-390.png\n?? docs/evidence/wpf-steering-control/development-light-1280.png\n?? docs/evidence/wpf-steering-control/development-light-390.png\n?? docs/evidence/wpf-steering-control/direct.log\n?? docs/evidence/wpf-steering-control/first-development-browser.json\n?? docs/evidence/wpf-steering-control/first-development-browser.log\n?? docs/evidence/wpf-steering-control/first-development-failure.png\n?? docs/evidence/wpf-steering-control/first-direct.log\n?? docs/evidence/wpf-steering-control/first-typecheck.log\n?? docs/evidence/wpf-steering-control/history-budget-red.log\n?? docs/evidence/wpf-steering-control/install.log\n?? docs/evidence/wpf-steering-control/production-browser.log\n?? docs/evidence/wpf-steering-control/second-typecheck.log\n?? docs/evidence/wpf-steering-control/typecheck.log\n",
+  "sourceFiles": {
+    "apps/web/src/conversation-steering/SteeringControl.tsx": "ad001378fe9528e8e5741c94e64e840ab09dc6236289a0eb723922ed674e15e9",
+    "apps/web/src/conversation-steering/control.ts": "d1ba95b9d38b33191b1767103c9c9775e0c22642c4e1c16531d4ab37239a26b7",
+    "apps/web/src/conversation-steering/steering.css": "1ff9acd487e6d53681e32301d8c098df8a46d6669e095b7330ab41111045e154",
+    "apps/web/test/conversation-steering.browser.ts": "6631a807ad989d725e24450e6d9fc1155722456a63bebd9e9f6c27ae41d486d1",
+    "apps/web/test/conversation-steering.fixture.ts": "7a231d9c723650d05c22124914b6e31abcd25ba566ba309729cf21fd635b95ae",
+    "apps/web/test/conversation-steering.test.ts": "601c875b3e1d6ae1084774031ce78e0a376c9a378dbc70a5c0f450a9ac7e4db1"
+  },
+  "fixture": "Independent public HTTP fixture. No App/real center/provider/model/DB.",
+  "checks": [
+    "closed zero reads; keyboard disclosure opens an authorized public FlowClient reader",
+    "UTF8 limit keeps CJK draft with no receipt or POST",
+    "IME zero, ShiftEnter newline, Enter exactly one command; next draft independent; same revision receipt refresh",
+    "lost ACK retries original key/body even after unavailable admission/4xx; new draft is not overwritten",
+    "hidden read/command lifetime preserves uncertain receipt; reopening retries rather than resends",
+    "same task ID in new center has isolated receipts and explicitly paged metadata",
+    "read failure remains visible, offline disables reads and preserves the draft",
+    "light/dark 390px and keyboard focus remain readable without horizontal overflow"
+  ],
+  "errors": [],
+  "failure": null,
+  "httpCalls": {
+    "first": [
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "POST",
+        "path": "/api/tasks/task/steering",
+        "body": "{\"attemptId\":\"attempt\",\"ownerVersion\":1,\"expectedRevision\":0,\"text\":\"Please explain the next step\\n\"}",
+        "key": "f4615b77-7ffb-4256-8107-63d5a9399685"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "POST",
+        "path": "/api/tasks/task/steering",
+        "body": "{\"attemptId\":\"attempt\",\"ownerVersion\":1,\"expectedRevision\":1,\"text\":\"Keep the output concise\"}",
+        "key": "aebc6618-5d0e-4532-ab9a-5fa39b361288"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "POST",
+        "path": "/api/tasks/task/steering",
+        "body": "{\"attemptId\":\"attempt\",\"ownerVersion\":1,\"expectedRevision\":1,\"text\":\"Keep the output concise\"}",
+        "key": "aebc6618-5d0e-4532-ab9a-5fa39b361288"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "POST",
+        "path": "/api/tasks/task/steering",
+        "body": "{\"attemptId\":\"attempt\",\"ownerVersion\":1,\"expectedRevision\":1,\"text\":\"Keep the output concise\"}",
+        "key": "aebc6618-5d0e-4532-ab9a-5fa39b361288"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "POST",
+        "path": "/api/tasks/task/steering",
+        "body": "{\"attemptId\":\"attempt\",\"ownerVersion\":1,\"expectedRevision\":2,\"text\":\"Held acknowledgement\"}",
+        "key": "42399aa6-87f8-4f36-8609-7e5f3ebe6d91"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "POST",
+        "path": "/api/tasks/task/steering",
+        "body": "{\"attemptId\":\"attempt\",\"ownerVersion\":1,\"expectedRevision\":2,\"text\":\"Held acknowledgement\"}",
+        "key": "42399aa6-87f8-4f36-8609-7e5f3ebe6d91"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      }
+    ],
+    "second": [
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=20&limit=20"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering/admission"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=0&limit=20"
+      },
+      {
+        "method": "GET",
+        "path": "/api/tasks/task/steering?attemptId=attempt&after=20&limit=20"
+      }
+    ]
+  }
+}

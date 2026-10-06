@@ -1,0 +1,10 @@
+PASS actual App renders shortened reply with zero initial detail reads, Enter reveals once and caches
+PASS native hidden removes its own renderer and resumes expanded cached reply and draft without another request
+PASS both split panes are readable while focus remains independent
+locator.click: Timeout 8000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Merge panes', exact: true })[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/apps/web/test/data-renderer-integration.browser.ts:55:74)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/apps/web/test/data-renderer-integration.browser.ts:31:67)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration/apps/web/test/data-renderer-integration.browser.ts:51:3)

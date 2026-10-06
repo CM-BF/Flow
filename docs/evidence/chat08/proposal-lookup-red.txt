@@ -1,0 +1,39 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering
+
+ ❯ apps/server/src/active-steering/finalization.test.ts (13 tests | 1 failed | 12 skipped) 1596ms
+   ↓ commits one local-verifier final proposal atomically after observed result and replays its receipt
+   ↓ does not mistake a root consumption receipt for coverage by an older result; a later result settles in the same attempt
+   ↓ does not finalize when the SDK pending count is null
+   ↓ does not finalize when the SDK pending count is 1
+   ↓ preserves successful coverage over three results and deduplicates an earlier replay without moving the frontier
+   ↓ rolls the seal and artifact back if the exact local verifier assertion is wrong
+   ↓ serializes a command/final race: command wins and no final exists, or final wins and admission is rejected
+   ↓ replays a committed receipt after completion but rejects changed payload, wrong credentials and stale ownership
+   ↓ connects one SDK streaming-input query through the real runtime, durable outbox and PG with two results and one consumed command
+   ↓ rejects bypass of the conditional final endpoint once an attempt has steering control
+   ↓ enforces the result evidence bound at the HTTP ingress while identical replays do not consume the limit
+   ↓ actual cancellation closes a waiting native input and records delivered-but-unconfirmed steering as unknown without a final
+   × uses the strict HTTP lookup shape after a lost ACK and after a process restart 186ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/active-steering/finalization.test.ts > uses the strict HTTP lookup shape after a lost ACK and after a process restart
+Error: Final proposal outcome is unknown; its original bytes are retained and native input is paused.
+ ❯ FinalProposalJournal.commit apps/runner/src/active-steering/proposal.ts:30:23
+     28|         if (receipt.state !== 'committed') throw new FinalizationUnkno…
+     29|         result = receipt;
+     30|       } catch { throw new FinalizationUnknown(); }
+       |                       ^
+     31|     }
+     32|     if (result.proposalId !== input.proposalId || !Number.isSafeIntege…
+ ❯ apps/server/src/active-steering/finalization.test.ts:213:23
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 skipped (13)
+   Start at  00:43:58
+   Duration  3.09s (transform 912ms, setup 0ms, import 1.39s, tests 1.60s, environment 0ms)
+

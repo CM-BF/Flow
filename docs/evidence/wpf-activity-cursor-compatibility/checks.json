@@ -1,0 +1,40 @@
+{
+  "capturedAt": "2026-10-06T07:05:19.012081+00:00",
+  "sourceCommit": "1e49fe4fb387dde5f787e52199b9ed0eb5f483f9",
+  "sourceDirty": [
+    " M apps/web/src/conversation-activity/projection.ts",
+    " M apps/web/test/conversation-activity.test.ts",
+    " M docs/evidence/wpf-activity-cursor-compatibility/quality.md",
+    " M plans/wpf-activity-cursor-compatibility/status.md",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/README.md",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/first-green-direct.log",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/green-direct.log",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/install.log",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/red-direct.log",
+    "?? docs/evidence/wpf-activity-cursor-compatibility/typecheck.log"
+  ],
+  "files": [
+    {
+      "path": "apps/web/src/conversation-activity/projection.ts",
+      "sha256": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b"
+    },
+    {
+      "path": "apps/web/test/conversation-activity.test.ts",
+      "sha256": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff"
+    }
+  ],
+  "direct": {
+    "command": "pnpm exec vitest run apps/web/test/conversation-activity.test.ts",
+    "startedAt": "2026-10-06T07:04:58Z",
+    "passed": 44,
+    "failed": 0,
+    "durationMs": 214,
+    "log": "green-direct.log"
+  },
+  "typecheck": {
+    "command": "pnpm --filter @flow/web typecheck",
+    "exitCode": 0,
+    "log": "typecheck.log"
+  },
+  "limits": "Actual reader with mock port and contract fixtures, not raw capture or new HTTP/DB/browser/model validation."
+}

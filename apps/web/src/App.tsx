@@ -202,6 +202,7 @@ interface View {
 interface PanelFocusRequest { serial: number; taskId: string; tab: WorkspaceTabId }
 function ChatPane({
   viewId,
+  visible,
   view,
   drafts,
   profiles,
@@ -214,6 +215,7 @@ function ChatPane({
   onOpenTask,
 }: {
   viewId: string;
+  visible: boolean;
   view: View;
   drafts: Map<string, DraftState>;
   profiles: ExecutionProfileCatalog;
@@ -231,7 +233,7 @@ function ChatPane({
   );
   const [confirm, setConfirm] = useState(false);
   const task = state.task;
-  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewId={viewId} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
+  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewKey={view.key} viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
   if (!task && !viewId.startsWith("draft-")) return <section className="flow-no-chat" aria-label="Task loading state">
     {state.error ? <><p role="alert">Could not load this task: {state.error}</p><Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button></> : <p role="status">{state.connection === "disconnected" ? "Task is not loaded. Reconnect to the center or retry." : "Loading task…"}</p>}
     {!state.error && state.connection === "disconnected" && <Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button>}
@@ -558,11 +560,37 @@ function Workspace({
     if (view.projection.getSnapshot().task?.id !== taskId) await view.projection.select(taskId);
     setPanel(tab, viewId);
   };
+  const assertActivity = (identity: import("./plugin-integration/activity").ActivityIdentity) => {
+    const view = views.get(identity.viewId), state = view?.conversation?.getSnapshot();
+    const turn = state?.turns.find(turn => turn.id === identity.turnId);
+    if (state?.snapshot?.conversation.id !== identity.conversationId || turn?.task.id !== identity.taskId || userMessageId(turn) !== identity.messageId)
+      throw Error("This activity does not belong to the bound conversation view.");
+  };
   const actions: AppActions = {
     knowsTask: id => Boolean(taskView(id)) || conversationOwnsTask(id) || catalog.getSnapshot().tasks.some(task => task.id === id),
     task: id => taskView(id)?.[1].projection.getSnapshot().task ?? null,
     hasDraft: id => Boolean(views.get(id)?.conversation) || (id.startsWith("draft-") && views.has(id)),
-    ownsMessage: (taskId, id, role) => [...views.values()].some(view => view.conversation?.getSnapshot().turns.some(turn => turn.task.id === taskId && (role === "user" ? userMessageId(turn) === id : turn.assistant.state === "available" && turn.assistant.messageId === id))),
+    knowledge: {
+      current: identity => {
+        const view = [...views.values()].find(view => view.key === identity.viewKey);
+        const conversation = view?.conversation?.getSnapshot().snapshot?.conversation;
+        return !!view?.conversation && (conversation?.id ?? null) === identity.conversationId && (conversation?.projectId ?? null) === identity.projectId;
+      },
+      projects: (_identity, after, signal) => client.projects({ limit: 40, ...(after ? { after } : {}) }, signal),
+      search: (identity, query, signal) => client.searchKnowledge(identity.projectId!, query, signal),
+      resolve: (identity, citation, signal) => client.resolveKnowledge(identity.projectId!, citation, signal),
+    },
+    activity: {
+      events: (identity, after) => { assertActivity(identity); return client.events(identity.taskId, after); },
+      detail: (identity, id, signal) => { assertActivity(identity); return client.conversationDetail(identity.conversationId, identity.turnId, id, signal); },
+      nativePage: (identity, after, signal) => { assertActivity(identity); return client.nativeActivities(identity.taskId, { ...(after ? { after } : {}), limit: 20 }, signal); },
+      nativeBody: (identity, id, signal) => { assertActivity(identity); return client.nativeActivity(id, signal); },
+    },
+    stream: {
+      metadata: (identity, options, signal) => { assertActivity(identity); return client.assistantStream(identity.taskId, options, signal); },
+      patches: (identity, options, signal) => { assertActivity(identity); return client.assistantStreamPatches(identity.taskId, options, signal); },
+    },
+    ownsMessage: (taskId, id, role) => session?.ownsStreamMessage(taskId, id, role) || [...views.values()].some(view => view.conversation?.getSnapshot().turns.some(turn => turn.task.id === taskId && (role === "user" ? userMessageId(turn) === id : turn.assistant.state === "available" && turn.assistant.messageId === id))),
     openTask: select,
     openWorkspace: (id, tab) => {
       const owner = taskView(id) ?? [...views.entries()].find(([, view]) => view.conversation?.getSnapshot().turns.some(turn => turn.task.id === id));
@@ -835,6 +863,7 @@ function Workspace({
                     >
                       <ChatPane
                         viewId={id}
+                        visible={!overview && pageVisible && group.activeId === id}
                         view={views.get(id)!}
                         drafts={drafts}
                         profiles={profiles}
@@ -910,7 +939,7 @@ function Connection({
       data-extension-slot="settings.sections"
     >
       <h1>Connect to Flow</h1>
-      <p>The owner token stays in this page’s memory.</p>
+      <p>The owner token stays in this page’s memory. Reloading requires reconnection.</p>
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -923,9 +952,11 @@ function Connection({
             type="url"
             value={url}
             placeholder="Same-origin proxy"
+            aria-describedby="center-url-help"
             onChange={(event) => setUrl(event.target.value)}
           />
         </label>
+        <small id="center-url-help">Leave blank for this Web app’s configured /api proxy, or enter the center URL supplied by your administrator.</small>
         <label>
           Owner token
           <input
@@ -936,6 +967,11 @@ function Connection({
             onChange={(event) => setToken(event.target.value)}
           />
         </label>
+        <details className="text-sm">
+          <summary>Where do I get the owner token?</summary>
+          <p>For your local personal preview, run <code>node tools/personal-preview/cli.mjs status --directory "&lt;your-private-preview-directory&gt;"</code>. It reports a credentialsFile path without printing the token. Read that private file’s ownerToken yourself and enter it here. This is a Flow token, not a Claude or Pi login token.</p>
+          <p><a href="https://github.com/CM-BF/Flow/blob/6426b44cd32d10216141af13ecfa83b8879025fb/tools/personal-preview/README.md" target="_blank" rel="noreferrer">Personal preview setup</a> · <a href="https://github.com/CM-BF/Flow/blob/6426b44cd32d10216141af13ecfa83b8879025fb/apps/web/README.md" target="_blank" rel="noreferrer">Web connection setup</a></p>
+        </details>
         <Button>Connect workspace</Button>
       </form>
     </main>
@@ -946,7 +982,7 @@ export default function App() {
   const [connectionScope, setConnectionScope] = useState(() => crypto.randomUUID());
   const [client, setClient] = useState<FlowClient | null>(() =>
     fixtureMode
-      ? new FlowClient({ baseUrl: "", token: "flow-fixture-only" })
+      ? new FlowClient({ baseUrl: "", token: "flow-fixture-only", assistantStreamProtocol: "patch-v1" })
       : null,
   );
   useEffect(() => applyTheme(theme), [theme]);
@@ -974,7 +1010,7 @@ export default function App() {
         <Connection
           onConnect={(baseUrl, token) => {
             setConnectionScope(crypto.randomUUID());
-            setClient(new FlowClient({ baseUrl, token }));
+            setClient(new FlowClient({ baseUrl, token, assistantStreamProtocol: "patch-v1" }));
           }}
         />
       )}

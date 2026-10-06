@@ -1,0 +1,10 @@
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-cost-probe/apps/server/src/index.ts:20
+import { Pool } from 'pg';
+         ^
+SyntaxError: The requested module 'pg' does not provide an export named 'Pool'
+    at #asyncInstantiate (node:internal/modules/esm/module_job:455:21)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:553:5)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.20.0

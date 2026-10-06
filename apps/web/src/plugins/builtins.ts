@@ -1,3 +1,4 @@
+import { themes } from "../themes";
 import type { BuiltinPorts, PluginDefinition } from "./types";
 export function createBuiltinPlugins(ports: BuiltinPorts): PluginDefinition[] {
   return [
@@ -55,24 +56,15 @@ export function createBuiltinPlugins(ports: BuiltinPorts): PluginDefinition[] {
         hostApi: 1,
         capabilities: ["theme.write"],
         activationEvents: [
-          "command:flow.theme.light",
-          "command:flow.theme.dark",
+          ...themes.map((theme) => `command:flow.theme.${theme.id}` as const),
           "view:settings.sections",
         ],
-        commands: [
-          {
-            id: "flow.theme.light",
-            title: "Light theme",
-            capability: "theme.write",
-            contexts: ["global"],
-          },
-          {
-            id: "flow.theme.dark",
-            title: "Dark theme",
-            capability: "theme.write",
-            contexts: ["global"],
-          },
-        ],
+        commands: themes.map((theme) => ({
+          id: `flow.theme.${theme.id}`,
+          title: `${theme.label} theme`,
+          capability: "theme.write",
+          contexts: ["global"],
+        })),
         contributions: [
           {
             kind: "button",

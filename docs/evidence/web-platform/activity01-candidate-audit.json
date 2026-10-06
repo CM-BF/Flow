@@ -1,0 +1,42 @@
+{
+  "observedAt": "2026-10-06T06:16:00.878624+00:00",
+  "task": "WPF-ACTIVITY01",
+  "metadata": "d93397aa3461d2bd99bb742e93dfdac65fb13ded",
+  "implementation": "61b9349af390c137cc4cfeabd38bad058ec69cb5",
+  "base": "3d4985fca060155435b159e0467815bf8e88b8b8",
+  "dirty": "",
+  "changedPaths": 29,
+  "claimScopeCount": 8,
+  "outsideScope": [],
+  "implementationDifference": "",
+  "markdown": 7,
+  "localLinks": 28,
+  "brokenLinks": [],
+  "reports": [
+    {
+      "report": "browser-results.json",
+      "sourceCommit": "598e5e2e78d7ef57d1add8e6ee797f519da1c0c8",
+      "sourceDirty": true,
+      "hashCount": 6,
+      "mismatches": [],
+      "checks": 7,
+      "errors": [],
+      "failure": null
+    },
+    {
+      "report": "production-browser-results.json",
+      "sourceCommit": "598e5e2e78d7ef57d1add8e6ee797f519da1c0c8",
+      "sourceDirty": true,
+      "hashCount": 6,
+      "mismatches": [],
+      "checks": 7,
+      "errors": [],
+      "failure": null
+    }
+  ],
+  "implementationDiffcheckExit": 0,
+  "fullDiffcheckExit": 2,
+  "rawDiffcheck": "docs/evidence/wpf-activity01/direct.log:10: new blank line at EOF.\ndocs/evidence/wpf-activity01/first-direct.log:10: new blank line at EOF.\ndocs/evidence/wpf-activity01/red-direct.log:15: trailing whitespace.\n+      4| \ndocs/evidence/wpf-activity01/red-direct.log:25: new blank line at EOF.\ndocs/evidence/wpf-activity01/typecheck.log:4: new blank line at EOF.\n",
+  "snapshot": "Separate deployed-source sample at06:14:43.956Z captured target UNKNOWN in then-working status; do not rewrite it to this later fixed metadata.",
+  "boundary": "Management scope/docs/hash audit only; no tests/browser/API rerun. Root owns independent behavior review."
+}

@@ -1,6 +1,9 @@
 import { FlowApiError, type FlowClient } from "@flow/client";
 import { conversationQueueEnqueueSchema, conversationQueuePauseSchema, conversationQueueResumeSchema, conversationQueueCancelSchema,
-  type ConversationQueueItem, type ConversationQueueCurrentTurn } from "@flow/contracts";
+  type ConversationQueueItem, type ConversationQueueCurrentTurn, type ConversationQueueEnqueue } from "@flow/contracts";
+
+import { assertContextReceiptMatches, freezeKnowledgeRequest } from "../../conversation-context/receipts";
+import type { FrozenCitation } from "../../conversation-context/selection";
 
 export type QueuePort = Pick<FlowClient, "enqueueConversationTurn" | "conversationQueue" | "conversationQueueItem" | "cancelConversationQueueItem" | "pauseConversationQueue" | "resumeConversationQueue" | "cancel">;
 export function queuePort(client: object): QueuePort | null {
@@ -8,15 +11,19 @@ export function queuePort(client: object): QueuePort | null {
     .every(key => typeof (client as Record<string, unknown>)[key] === "function") ? client as QueuePort : null;
 }
 export type QueueCommand =
-  | { kind: "enqueue"; conversationId: string; input: { expectedQueueRevision: number; text: string } }
+  | { kind: "enqueue"; conversationId: string; input: { expectedQueueRevision: number; text: string; knowledge?: readonly FrozenCitation[] } }
   | { kind: "pause"; conversationId: string; input: { expectedQueueRevision: number } }
   | { kind: "resume"; conversationId: string; input: { expectedQueueRevision: number; expectedTaskId: string | null } }
   | { kind: "cancel-item"; conversationId: string; itemId: string; input: { expectedQueueRevision: number } }
   | { kind: "cancel-task"; conversationId: string; taskId: string };
+type FrozenQueueCommand = Exclude<QueueCommand, { kind: "enqueue" }> | {
+  kind: "enqueue"; conversationId: string;
+  input: ConversationQueueEnqueue;
+};
 export interface QueueReceipt {
   readonly slot: string;
   readonly key: string;
-  readonly command: QueueCommand;
+  readonly command: FrozenQueueCommand;
   readonly state: "sending" | "unknown" | "rejected" | "accepted";
   readonly everUnknown: boolean;
   readonly message: string;
@@ -34,10 +41,11 @@ export const queueError = (error: unknown) => error instanceof Error ? error.mes
 function slot(command: QueueCommand) {
   return command.kind === "cancel-item" ? `item:${command.itemId}` : command.kind === "cancel-task" ? `task:${command.taskId}` : command.kind === "enqueue" ? "enqueue" : "control";
 }
-function freezeCommand(command: QueueCommand): QueueCommand {
+function freezeCommand(command: QueueCommand): FrozenQueueCommand {
   if (command.kind === "cancel-task") return Object.freeze({ ...command });
-  const schema = command.kind === "enqueue" ? conversationQueueEnqueueSchema : command.kind === "resume" ? conversationQueueResumeSchema : command.kind === "pause" ? conversationQueuePauseSchema : conversationQueueCancelSchema;
-  return Object.freeze({ ...command, input: Object.freeze(schema.parse(command.input)) }) as QueueCommand;
+  if (command.kind === "enqueue") return Object.freeze({ ...command, input: freezeKnowledgeRequest(conversationQueueEnqueueSchema.parse(command.input)) });
+  const schema = command.kind === "resume" ? conversationQueueResumeSchema : command.kind === "pause" ? conversationQueuePauseSchema : conversationQueueCancelSchema;
+  return Object.freeze({ ...command, input: Object.freeze(schema.parse(command.input)) }) as FrozenQueueCommand;
 }
 function receiptMessage(command: QueueCommand, value: unknown): string {
   const result = value as Record<string, unknown>;
@@ -51,6 +59,7 @@ function receiptMessage(command: QueueCommand, value: unknown): string {
     assertQueueItem(item, command.conversationId, command.kind === "cancel-item" ? command.itemId : undefined);
     if (command.kind === "enqueue") {
       if (item.state !== "waiting" || item.sequence !== result.queueRevision || result.queueRevision !== command.input.expectedQueueRevision + 1 || !command.input.text.startsWith(item.preview) || (!item.truncated && item.preview !== command.input.text)) throw Error("Queued message receipt does not match the frozen text.");
+      assertContextReceiptMatches(command.input.knowledge, item.context);
       return "Message accepted into the center queue. Current progress comes from the refreshed list.";
     }
     const outcome = result.outcome;

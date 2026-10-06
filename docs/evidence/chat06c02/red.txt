@@ -1,0 +1,738 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-compatibility
+
+ ❯ apps/server/src/assistant-stream-compatibility/compatibility.test.ts (8 tests | 8 failed) 31308ms
+   × requires both the explicit mounting option and readable 022 routes before advertising patch-v1 136ms
+   × keeps missing, unknown and combined headers false while explicit opt-in is independent of a last turn 41ms
+   × rejects duplicated raw HTTP negotiation headers even when both have the supported value 30003ms
+   × keeps creation receipts stable and false across header and connection changes 47ms
+   × filters legacy task and event reads without altering raw typed entries or patch retrieval 88ms
+   × advances stream-only event pages using raw rows and reaches the next ordinary entry 55ms
+   × reconnects SSE after a hidden-only page and does not lose a subsequently committed ordinary entry 116ms
+   × preserves forward and backward workspace cursors on stream-only pages 44ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/assistant-stream-compatibility/compatibility.test.ts > requires both the explicit mounting option and readable 022 routes before advertising patch-v1
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ apps/server/src/assistant-stream-compatibility/compatibility.test.ts:56:92
+     54|   expect((await request(unmounted, path, undefined, header)).capabilit…
+     55|   expect((await request(base, path, undefined, header)).capabilities.l…
+     56|   expect((await request(enabled, path, undefined, header)).capabilitie…
+       |                                                                                            ^
+     57| });
+     58| it('keeps missing, unknown and combined headers false while explicit o…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  apps/server/src/assistant-stream-compatibility/compatibility.test.ts > keeps missing, unknown and combined headers false while explicit opt-in is independent of a last turn
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ apps/server/src/assistant-stream-compatibility/compatibility.test.ts:65:83
+     63|   }
+     64|   const opted = await request(enabled, path, undefined, header);
+     65|   expect(opted.lastTurn).toBeNull(); expect(opted.capabilities.liveAss…
+       |                                                                                   ^
+     66| });
+     67| it('rejects duplicated raw HTTP negotiation headers even when both hav…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  apps/server/src/assistant-stream-compatibility/compatibility.test.ts > rejects duplicated raw HTTP negotiation headers even when both have the supported value
+Error: Test timed out in 30000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ apps/server/src/assistant-stream-compatibility/compatibility.test.ts:67:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  apps/server/src/assistant-stream-compatibility/compatibility.test.ts > keeps creation receipts stable and false across header and connection changes
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ apps/server/src/assistant-stream-compatibility/compatibility.test.ts:82:133
+     80|   const stored = (await pool.query("SELECT response FROM flow.commands…
+     81|   expect(stored).toEqual({ conversation: first.conversation, capabilit…
+     82|   expect((await request(enabled, `/api/conversations/${first.conversat…
+       |                                                                                                                                     ^
+     83|   expect((await request(base, `/api/conversations/${first.conversation…
+     84| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  apps/server/src/assistant-stream-compatibility/compatibility.test.ts > filters legacy task and event reads without altering raw typed entries or patch retrieval
+AssertionError: expected '{"id":"e5ba1904-a0b6-410b-81fc-889da9…' not to contain '8399eb7b809c8a5526a5ef721efad38521a2d…'
+
+Expected: "8399eb7b809c8a5526a5ef721efad38521a2dddbf9ea6afbfb675a54874e69ef"
+Received: "{"id":"e5ba1904-a0b6-410b-81fc-889da96da3fd","title":"Legacy projection","harness":"claude","status":"running","verificationStatus":"pending","createdAt":"2026-10-06T06:49:04.622Z","updatedAt":"2026-10-06T06:49:04.686Z","prompt":"No provider","entries":[{"id":"07d53572-c11d-4f46-960b-fc4f4075c887","kind":"reference","cursor":1,"createdAt":"2026-10-06T06:49:04.660Z","reference":{"id":"63853d41-3831-44a1-b488-67a767ec8477","title":"Native session"}},{"id":"27051cb4-f8cc-4bab-8e8a-482e9f85710f","kind":"reference","cursor":2,"createdAt":"2026-10-06T06:49:04.667Z","reference":{"id":"8399eb7b809c8a5526a5ef721efad38521a2dddbf9ea6afbfb675a54874e69ef","title":"Assistant text","stream":{"kind":"assistant-stream","revision":1,"streamId":"8399eb7b809c8a5526a5ef721efad38521a2dddbf9ea6afbfb675a54874e69ef"}}},{"id":"33bb92a0-f432-45b8-aa79-a5a277f27b13","kind":"reference","cursor":3,"createdAt":"2026-10-06T06:49:04.671Z","reference":{"id":"8399eb7b809c8a5526a5ef721efad38521a2dddbf9ea6afbfb675a54874e69ef","title":"Assistant text","stream":{"kind":"assistant-stream","revision":2,"streamId":"8399eb7b809c8a5526a5ef721efad38521a2dddbf9ea6afbfb675a54874e69ef"}}},{"id":"2db651d0-e747-42b7-ba5e-dd02cb6cb89b","kind":"reference","cursor":4,"createdAt":"2026-10-06T06:49:04.675Z","reference":{"id":"8399eb7b809c8a5526a5ef721efad38521a2dddbf9ea6afbfb675a54874e69ef","title":"Assistant text","stream":{"kind":"assistant-stream","revision":3,"streamId":"8399eb7b809c8a5526a5ef721efad38521a2dddbf9ea6afbfb675a54874e69ef"}}},{"id":"b90f302e-ebc0-4eaf-a31f-d99c312405a7","kind":"text","text":"Visible after hidden stream","cursor":5,"createdAt":"2026-10-06T06:49:04.686Z"}],"watermark":5,"hasMore":false,"pendingDecision":null,"attempt":{"id":"500a3d12-b563-4bbf-b560-9ee96737581a","runnerId":"5dd3223b-9ed8-4e8b-afed-1179b45f759b","ownerVersion":1,"leaseExpiresAt":"2026-10-06T06:54:04.642Z","nativeSessionId":"90edff8e-0cb4-4c0e-b9f2-7c2dfee19484"},"usage":{"costUsd":null,"costKind":"unknown","incomplete":true,"inputTokens":null,"outputTokens":null}}"
+
+ ❯ apps/server/src/assistant-stream-compatibility/compatibility.test.ts:105:40
+    103|   const snapshot = await request(base, `/api/tasks/${task.taskId}`);
+    104|   const page = await request(base, `/api/tasks/${task.taskId}/events`);
+    105|   expect(JSON.stringify(snapshot)).not.toContain(task.streamId); expec…
+       |                                        ^
+    106|   expect(page.entries.at(-1).text).toBe('Visible after hidden stream');
+    107|   const raw = (await pool.query('SELECT entry FROM flow.timeline WHERE…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  apps/server/src/assistant-stream-compatibility/compatibility.test.ts > advances stream-only event pages using raw rows and reaches the next ordinary entry
+AssertionError: expected [ { …(5) }, { …(5) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "createdAt": "2026-10-06T06:49:04.734Z",
++     "cursor": 2,
++     "id": "f54957a5-c307-4f70-8a44-e4f07af33faa",
++     "kind": "reference",
++     "reference": {
++       "id": "e92fd729cd927121666cc8553d75c1fe439abd4518f2851f771a59bdefb75e26",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 1,
++         "streamId": "e92fd729cd927121666cc8553d75c1fe439abd4518f2851f771a59bdefb75e26",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.737Z",
++     "cursor": 3,
++     "id": "c654e5ea-23d5-471f-8eb8-d420ad290647",
++     "kind": "reference",
++     "reference": {
++       "id": "e92fd729cd927121666cc8553d75c1fe439abd4518f2851f771a59bdefb75e26",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 2,
++         "streamId": "e92fd729cd927121666cc8553d75c1fe439abd4518f2851f771a59bdefb75e26",
++       },
++       "title": "Assistant text",
++     },
++   },
++ ]
+
+ ❯ apps/server/src/assistant-stream-compatibility/compatibility.test.ts:115:25
+    113|   const task = await streamTask(3); await task.append();
+    114|   const first = await request(base, `/api/tasks/${task.taskId}/events?…
+    115|   expect(first.entries).toEqual([]); expect(first.nextCursor).toBe(3);…
+       |                         ^
+    116|   const second = await request(base, `/api/tasks/${task.taskId}/events…
+    117|   expect(second.entries).toHaveLength(1); expect(second.entries[0].tex…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  apps/server/src/assistant-stream-compatibility/compatibility.test.ts > reconnects SSE after a hidden-only page and does not lose a subsequently committed ordinary entry
+AssertionError: expected [ { …(5) }, { …(5) }, { …(5) }, …(29) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "createdAt": "2026-10-06T06:49:04.787Z",
++     "cursor": 2,
++     "id": "f3bdcb02-c5e0-4820-a7af-97dfe95a1717",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 1,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.790Z",
++     "cursor": 3,
++     "id": "e4cd1989-86cf-4b7c-a269-dab17f5e50e2",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 2,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.793Z",
++     "cursor": 4,
++     "id": "b4143bee-2130-4c27-b833-c579d60b77f0",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 3,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.796Z",
++     "cursor": 5,
++     "id": "ada02cb2-1ab5-4378-933b-39215746326f",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 4,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.799Z",
++     "cursor": 6,
++     "id": "83933ea6-7442-44f5-85c0-191192f9b9aa",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 5,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.802Z",
++     "cursor": 7,
++     "id": "f3b672ad-8e34-4a1e-a2ca-ec6f30f14cda",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 6,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.805Z",
++     "cursor": 8,
++     "id": "d5e6e18c-7b29-46b5-b966-d50614e716f7",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 7,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.807Z",
++     "cursor": 9,
++     "id": "c9862c71-5117-4a89-a2c7-410c523ce1f6",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 8,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.810Z",
++     "cursor": 10,
++     "id": "0b810a3e-6973-4079-8b42-8646a3a00bce",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 9,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.812Z",
++     "cursor": 11,
++     "id": "b131f383-70e9-46e0-9c2f-fcbeb29f07b8",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 10,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.815Z",
++     "cursor": 12,
++     "id": "9577c657-7f91-4cb4-a1df-2a15b277cf3e",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 11,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.817Z",
++     "cursor": 13,
++     "id": "91279c2b-fc42-49bb-9108-c92e78e9d4ce",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 12,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.819Z",
++     "cursor": 14,
++     "id": "be61eae7-7a7c-47a4-b43c-dc99ac844a55",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 13,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.822Z",
++     "cursor": 15,
++     "id": "308bb0c5-81ac-48d4-9774-4c508c21c3e4",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 14,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.824Z",
++     "cursor": 16,
++     "id": "c1d6868f-589f-419d-a436-4b0fb3c2ad0e",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 15,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.826Z",
++     "cursor": 17,
++     "id": "2fb3844e-e4fd-4b09-86f1-7ed01a30e717",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 16,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.828Z",
++     "cursor": 18,
++     "id": "bde60aba-39bf-47d2-a38b-702e6ab48819",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 17,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.830Z",
++     "cursor": 19,
++     "id": "eb807533-8732-4f4c-84ff-f7219c5d420c",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 18,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.832Z",
++     "cursor": 20,
++     "id": "3887c2bc-ed93-4caf-a3f5-bbb8f4ed1424",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 19,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.834Z",
++     "cursor": 21,
++     "id": "7cbffa1e-63c5-4c20-a318-a10c9526fca2",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 20,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.836Z",
++     "cursor": 22,
++     "id": "e02143cd-3431-447e-bec2-a1786b49c10d",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 21,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.838Z",
++     "cursor": 23,
++     "id": "07b657d0-fa45-4c69-a2bb-3e1ac009bfef",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 22,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.840Z",
++     "cursor": 24,
++     "id": "11038e06-7393-4e96-8170-15c5fb2d991a",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 23,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.841Z",
++     "cursor": 25,
++     "id": "e344bb8d-3f26-4283-94dd-220598c13c29",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 24,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.843Z",
++     "cursor": 26,
++     "id": "42733e11-6dfe-45d6-923a-50080f64e930",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 25,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.845Z",
++     "cursor": 27,
++     "id": "b0dc0b7d-f507-4f27-bd76-792d1f89a65b",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 26,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.847Z",
++     "cursor": 28,
++     "id": "d8302ca4-a9fb-428a-aa4e-7183432bb335",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 27,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.849Z",
++     "cursor": 29,
++     "id": "e82dbdc6-2ea6-4775-98da-1b14a9962fe8",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 28,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.851Z",
++     "cursor": 30,
++     "id": "713cd999-127e-40ac-9311-bf755b0770a7",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 29,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.853Z",
++     "cursor": 31,
++     "id": "c608b83f-0614-45c4-ae70-69199483c726",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 30,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.854Z",
++     "cursor": 32,
++     "id": "5c2726a0-58d3-408e-a28f-241346db62f8",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 31,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++   {
++     "createdAt": "2026-10-06T06:49:04.856Z",
++     "cursor": 33,
++     "id": "ba24a9a2-79a4-48a3-aa08-2201ceaa5063",
++     "kind": "reference",
++     "reference": {
++       "id": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       "stream": {
++         "kind": "assistant-stream",
++         "revision": 32,
++         "streamId": "5342a8301136149b8881a6ee7a294e9a5308fb886b21c8169bd6d9f69d47ac70",
++       },
++       "title": "Assistant text",
++     },
++   },
++ ]
+
+ ❯ apps/server/src/assistant-stream-compatibility/compatibility.test.ts:132:70
+    130| it('reconnects SSE after a hidden-only page and does not lose a subseq…
+    131|   const task = await streamTask(35);
+    132|   const first = await ssePage(task.taskId, 1); expect(first.entries).t…
+       |                                                                      ^
+    133|   await task.append();
+    134|   const resumed = await ssePage(task.taskId, first.nextCursor);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  apps/server/src/assistant-stream-compatibility/compatibility.test.ts > preserves forward and backward workspace cursors on stream-only pages
+AssertionError: expected [ { id: 'workspace-52', …(3) }, …(1) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "cursor": 52,
++     "entry": {
++       "createdAt": "2026-10-06T06:49:04.895Z",
++       "cursor": 2,
++       "id": "8c86d8ea-a55d-47c9-9edb-61f5f1ae3003",
++       "kind": "reference",
++       "reference": {
++         "id": "070a277eb7284aa3386f750e1eaf2c8286ec2f070432a4b9c291cea9e3d2dc4d",
++         "stream": {
++           "kind": "assistant-stream",
++           "revision": 1,
++           "streamId": "070a277eb7284aa3386f750e1eaf2c8286ec2f070432a4b9c291cea9e3d2dc4d",
++         },
++         "title": "Assistant text",
++       },
++     },
++     "id": "workspace-52",
++     "task": {
++       "id": "4f71d867-5406-466e-8976-dacd5b3c6ff2",
++       "title": "Legacy projection",
++     },
++   },
++   {
++     "cursor": 53,
++     "entry": {
++       "createdAt": "2026-10-06T06:49:04.896Z",
++       "cursor": 3,
++       "id": "50397655-8093-4d4c-a8bd-3b45304a58ab",
++       "kind": "reference",
++       "reference": {
++         "id": "070a277eb7284aa3386f750e1eaf2c8286ec2f070432a4b9c291cea9e3d2dc4d",
++         "stream": {
++           "kind": "assistant-stream",
++           "revision": 2,
++           "streamId": "070a277eb7284aa3386f750e1eaf2c8286ec2f070432a4b9c291cea9e3d2dc4d",
++         },
++         "title": "Assistant text",
++       },
++     },
++     "id": "workspace-53",
++     "task": {
++       "id": "4f71d867-5406-466e-8976-dacd5b3c6ff2",
++       "title": "Legacy projection",
++     },
++   },
++ ]
+
+ ❯ apps/server/src/assistant-stream-compatibility/compatibility.test.ts:145:27
+    143|   const hidden = raw.filter(row => row.entry.reference?.stream); expec…
+    144|   const forward = await request(base, `/api/workspace?after=${hidden[0…
+    145|   expect(forward.entries).toEqual([]); expect(forward.nextCursor).toBe…
+       |                           ^
+    146|   const next = await request(base, `/api/workspace?after=${forward.nex…
+    147|   expect(next.entries).toHaveLength(1); expect(next.entries[0].entry.t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+SyntaxError: Unexpected end of JSON input
+ ❯ IncomingMessage.<anonymous> apps/server/src/assistant-stream-compatibility/compatibility.test.ts:70:140
+
+ ❯ IncomingMessage.emit node:events:526:24
+ ❯ endReadableNT node:internal/streams/readable:1757:12
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+This error originated in "apps/server/src/assistant-stream-compatibility/compatibility.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "rejects duplicated raw HTTP negotiation headers even when both have the supported value". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  1 failed (1)
+      Tests  8 failed (8)
+     Errors  1 error
+   Start at  23:48:33
+   Duration  31.83s (transform 234ms, setup 0ms, import 437ms, tests 31.31s, environment 0ms)
+

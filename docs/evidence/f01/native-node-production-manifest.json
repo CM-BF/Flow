@@ -1,0 +1,101 @@
+{
+  "task": "F01",
+  "target": "c587436c12324b5c121957643d51173cfc66009e",
+  "observedAt": "2026-10-06T08:07:01.999776+00:00",
+  "scope": "O09 production factory + actual public client/native adapter injected SDK integration",
+  "domainTarget": "7ddd763a2e2274c040dea7e114dcf6d6da226cf6",
+  "clientTarget": "1bd4855f1582107e3b1b17ba9ba77cb43801e74d",
+  "sources": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12741,
+      "sha256": "5fa81b90376f441b84f20578b79845aec20fc6a3a5cdcbc9e369a1ee64599401"
+    },
+    {
+      "path": "apps/server/src/goal-native-production.test.ts",
+      "bytes": 8281,
+      "sha256": "46148a70e9bd30a2028f0da285b3ad8e03b16e3ca7f7d312d21227b6f01ba046"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/f01/native-node-production-first.txt",
+      "bytes": 1597,
+      "sha256": "60214c06baa82b4c4b6904184fab00e022d119fcada3d9598ff654f8c128de02"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-production-green.txt",
+      "bytes": 665,
+      "sha256": "f6fd3f12eca94dd415290015164c740ae434918cd778881be2c4d928f0ed6c98"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-production-receipt-shape.txt",
+      "bytes": 2021,
+      "sha256": "fcd4ae21a7e9aae265955360b530a388b7350384080ebb1a531ebe4a70c31a10"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-production-red.txt",
+      "bytes": 2363,
+      "sha256": "b0cb10bea77469af5c5ee278c81799e2f0fcddbc897e7d15b8c4ec5d1b18192b"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-production-snapshot-shape.txt",
+      "bytes": 1951,
+      "sha256": "4ee8653d912de7ff3c01ab27524ba99354a57b9e0eb6ba881f14f7ca8fba4d12"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-production-typecheck-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-production-typecheck-first.txt",
+      "bytes": 192,
+      "sha256": "f3ef09b6faaa17bfefc8b174bef6cf15696baebf9142b6e94a9a017033f0997e"
+    },
+    {
+      "path": "docs/evidence/f01/native-node-production-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "unchangedDomainInputs": [
+    {
+      "path": "apps/server/src/goal-native-executions/index.ts",
+      "bytes": 1083,
+      "sha256": "3a3313def7fd540b4b2da2ae3a2f6e31d4a1f42fcbed190c5f358ef7650c12e8"
+    },
+    {
+      "path": "apps/server/src/goal-native-executions/store.ts",
+      "bytes": 1466,
+      "sha256": "1c3960a1eb5b5db431b499e78a0cfb3a9974b459c3e6ed63144f3ba7dbe4c4e5"
+    },
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "bytes": 13874,
+      "sha256": "19d90e2279d350e133ebea9099e8a0c1b5b601c674e9567758a16b32b2adf316"
+    },
+    {
+      "path": "apps/server/src/goal-tool-runs/runner.ts",
+      "bytes": 3930,
+      "sha256": "f57db1ed2bde342a0a606fca20374f4bdceaa497f415abffc32ff6b9a2ad60e8"
+    },
+    {
+      "path": "packages/contracts/src/goal-native-executions.ts",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+    }
+  ],
+  "checks": {
+    "production": {
+      "passed": 2,
+      "failed": 0,
+      "durationSeconds": 2.41
+    },
+    "typecheck": {
+      "exit": 0
+    },
+    "providerCalls": 0
+  },
+  "review": "NOT_STARTED"
+}

@@ -32,9 +32,12 @@ export type ContextKind = ResourceContext["kind"];
 export type Capability =
   | "ui.navigate"
   | "ui.layout"
+  | "task.activity.read"
+  | "task.assistant-stream.read"
   | "reference.read"
   | "theme.write"
   | "theme.register"
+  | "knowledge.read"
   | "workspace.read"
   | "composer.write"
   | "clipboard.write";
@@ -47,7 +50,9 @@ export type SlotId =
   | "chat.header"
   | "chat.task.actions"
   | "chat.message.actions"
+  | "chat.message.footer"
   | "chat.composer.actions"
+  | "chat.composer.context"
   | "workspace.header"
   | "workspace.tabs"
   | "workspace.actions"
@@ -134,7 +139,7 @@ export type ContributionDeclaration =
   | {
       readonly kind: "panel";
       readonly id: string;
-      readonly slot: "workspace.tabs" | "settings.sections";
+      readonly slot: "workspace.tabs" | "settings.sections" | "chat.message.footer" | "chat.composer.context";
       readonly title: string;
       readonly capability: Capability;
     }

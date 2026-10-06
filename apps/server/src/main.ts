@@ -1,3 +1,5 @@
+import { readPackageFetchConfiguration } from './package-fetch-configuration.js';
+import { parseActiveSteeringConfiguration } from './active-steering-configuration.js';
 import { createServer } from './index.js';
 
 const databaseUrl = process.env.DATABASE_URL;
@@ -5,7 +7,9 @@ const ownerToken = process.env.FLOW_TOKEN;
 if (!databaseUrl || !ownerToken) throw new Error('DATABASE_URL and FLOW_TOKEN are required.');
 const port = Number(process.env.FLOW_PORT ?? 4310);
 if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('FLOW_PORT must be a valid port.');
-const app = await createServer({ databaseUrl, ownerToken, ...(process.env.FLOW_ORIGIN ? { allowedOrigin: process.env.FLOW_ORIGIN } : {}) });
+const packageFetchHost = await readPackageFetchConfiguration(process.env.FLOW_PACKAGE_FETCH_CONFIG);
+const activeSteering = parseActiveSteeringConfiguration(process.env.FLOW_ACTIVE_STEERING);
+const app = await createServer({ databaseUrl, ownerToken, activeSteering, ...(packageFetchHost ? { packageFetchHost } : {}), ...(process.env.FLOW_ORIGIN ? { allowedOrigin: process.env.FLOW_ORIGIN } : {}) });
 let closing = false;
 const stop = () => {
   if (closing) return;

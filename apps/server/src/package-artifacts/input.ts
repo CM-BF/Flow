@@ -5,6 +5,8 @@ import { PackageArtifactError } from './errors.js';
 
 export interface PackageArtifactOptions {
   root: string;
+  /** Optional immutable publication identity, preallocated by the trusted host. */
+  artifactId?: string;
   registry: string;
   allowInsecureLoopback?: boolean;
   /** May only reduce the production ceilings, including in tests. */
@@ -40,7 +42,8 @@ export function configuredRegistry(options: PackageArtifactOptions): { registry:
   try { registry = new URL(options.registry); } catch { throw new PackageArtifactError('INVALID_CONFIGURATION'); }
   const local = options.allowInsecureLoopback && registry.protocol === 'http:'
     && ['127.0.0.1', '[::1]'].includes(registry.hostname);
-  if (registry.href.length > 1024 || !isAbsolute(options.root) || (registry.protocol !== 'https:' && !local)
+  if ((options.artifactId !== undefined && !/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(options.artifactId))
+    || registry.href.length > 1024 || !isAbsolute(options.root) || (registry.protocol !== 'https:' && !local)
     || registry.username || registry.password || registry.search || registry.hash) {
     throw new PackageArtifactError('INVALID_CONFIGURATION');
   }

@@ -1,0 +1,53 @@
+{
+  "kind": "capacity",
+  "selection": null,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/runtime-capacity.test.ts",
+    "--config",
+    "docs/evidence/s01p01/vitest.config.mjs",
+    "--configLoader",
+    "runner"
+  ],
+  "startedAt": "2026-10-06T08:17:17.126Z",
+  "completedAt": "2026-10-06T08:17:22.642Z",
+  "elapsedMs": 5515.039333,
+  "exitCode": 1,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "sha256": "4f2fdfabb097126297014da2fa88e704ac9f4119f4a29382eaff53b0bce16d7d"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "sha256": "f074eda352d606a916080172ee9ea4b119fff7ceede404185dc5d687056971c8"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "sha256": "bffccb9b59168a0f56bcb6ecec52dbf75b70d9bddc4ec4ab948ad03a3e331494"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "e3345b7f5ac4f255ea0eeda952087c893b7adb0a714568455f90470de82c1d6e"
+    },
+    {
+      "path": "docs/evidence/s01p01/check.mjs",
+      "sha256": "2304d29f6cb7bce9f554708449497678ee00c7d656d386c03f08b58c2768e686"
+    },
+    {
+      "path": "docs/evidence/s01p01/types.tsconfig.json",
+      "sha256": "c75d8c36a5bed972a5fa76fac39ad5c7e753040b5fcdefcd2634d5755b85b7ca"
+    },
+    {
+      "path": "docs/evidence/s01p01/vitest.config.mjs",
+      "sha256": "24bc11be1dc5219396a51132914a3729ab17eefb4b748c0aaddc046961492c9f"
+    }
+  ],
+  "log": "docs/evidence/s01p01/capacity-fixture-fixed.log",
+  "logSha256": "e1139485a400f1834c9d4870dd39f6406fe758daadc98edae2672a6569b6b272",
+  "sourceHead": "155494b0f797004e5d3299cf26312118dd6664af"
+}

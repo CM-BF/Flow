@@ -2,22 +2,26 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 06:13 UTC / 2026-10-06 05:49 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:30 UTC / main3418fe682944145494463dca9e09f89c8b9c2295 |
 | Plan | [plan.md](plan.md) |
+| 所属大task | FLOW-001（[大task定义](plan.md)） |
+| co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
-| 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `93aeea28125f201327d627fafa27c56bab69cd63`（本轮修改前观察值） |
-| 工作树dirty状态 | 本次汇总metadata待提交 |
+| 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
+| 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | `3d4985fca060155435b159e0467815bf8e88b8b8`；已含队列UI、K01、O06、SVC02与D06固定图；常驻center/runner实际fb906cb/v3接受，后继main不自动重载 |
+| 已集成main状态 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295；R06 transport、R05B有限中心来源和知识聊天接线已审main。个人center/runner仍固定b1c2e398、accepting v12，Web固定artifact461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90，原端口和用户tab未变；最近实际4320观察114源，115登记已main待正常换载。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 真实聊天运行中排队、同会话回复和后台继续已验证；正在接入可追溯工具活动与引用上下文 |
-| 下一可用交付 | 让聊天按需显示真实工具进度与固定版本知识依据 |
+| 当前产出 | 聊天知识引用已接入主线，Codex中心身份与本机通信已审；终端首片正在实施。 |
+| 下一可用交付 | 接通Codex普通执行与终端会话，再交付能改代码、检查并回看产物的工程任务通路。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
+
+| 本片段交付阶段 | implementation |
 
 ## TODO状态（与plan稳定ID逐项对应）
 
@@ -36,7 +40,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-- 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。
+- 当前用户授权配额为本队4 + Web4 + Mika4，总上限12；实际工具threadlimit仍须服从，不声称12个正在运行；历史单树cap4失败记录不再描述当前全队能力。这与产品runner真实并发分别计量。
 - M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
@@ -74,3 +78,15 @@ main3773db5已推送clean；G01/P02/F01/WPF-M02分别获独立审查，必要组
 2026-10-06 05:20 UTC：矩阵已核63源实际快照及main；已审片段与未完成自然语言/插件生命周期/语义检索/工程harness范围分别保留。服务未重启，无新增模型调用。
 
 2026-10-06 06:13 UTC：独立新QUEUE真实预算2/2封存，GO接受b8e0fed证据，保守SDK费用和$0.012396，非账单/增量成本；原CHAT第二轮旧弱断言不被覆盖。K02/O07已独审待主线接收，CHAT05待Mika独审，K03/X04/Web活动范围各自已领取，主线仍3d。
+
+## 2026-10-06 08:08 UTC 当前滚动事实
+
+固定main9c6fa9b已含CHAT08持久多turn/final事务收口，默认steer关闭；CHAT09配置与实际执行门禁实施中。正文流App接线WPF-CHAT06I01实施，工具活动App已main。O08一次原生受限图规划3node2dep获GO限定验收，1/1预算封存，未执行child；O09只读单child领域7ddd与薄client1bd已独审、生产接线2项绿待窄审，0新增provider。CHAT06P01有界存储成本测量已main，P02将完整prefix hash移PG的最小片实施；PG仍全聚合，尚无整体加速结论。S01声明capacity4单进程实际峰值1已审，后继有界并发池准备，不把128空会话或fixture作为100真实agents。个人服务实际b54/v6与main分离，用户页未被我们代登录/发新消息。
+
+## 2026-10-06 08:21:00 UTC 当前滚动事实
+
+主线32c371d与origin一致clean。WPF-CHAT06I01假分支R1已修复并独审，CHAT09和O09CLI各独审，I02仅运行2个readonly直接消费者+组合类型检查；34固定源码一致。个人服务仍b54/v6，更新仅准备，未启steering/新增query。O10单child原生验收仍0query准备；S01P01有界并发池与CHAT10受理状态各独立实施，CONTEXT02收据链不占App。
+
+2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
+
+2026-10-06 08:57:11 UTC：SVC03实际窗口已结束，接受v12；4任务成功、无未完attempt/等待队列、业务摘要及迁移列表保留。一次属性顺序比较误报保留，未重复refresh。0operator provider/用户tab操作。新成熟界面六大task沿WPF-001唯一源，宿主依赖见FLOW-002-T09。

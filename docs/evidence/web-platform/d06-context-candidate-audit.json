@@ -1,0 +1,144 @@
+{
+  "observedAt": "2026-10-06T06:37:16.636Z",
+  "base": "115b0dbdfa02db5483f9e9699852682ce699633c",
+  "implementation": "ebad46356efec7bd86f8aadd9d765bb6b6b190af",
+  "metadata": "0ec8433e72df1460373621e54d39389d67ef258f",
+  "currentHead": "0ec8433e72df1460373621e54d39389d67ef258f",
+  "dirty": "",
+  "changedPaths": 29,
+  "claimScopeCount": 4,
+  "outside": [],
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 3,
+      "output": "架构图已补齐排队、知识上下文和受限图工具，独立模块与产品挂载分别标明",
+      "next": "交付可核源码的架构快照并完成独立审查",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "ebad46356efec7bd86f8aadd9d765bb6b6b190af",
+      "scopes": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/test/architecture.test.mjs",
+        "docs/evidence/d06/context/source-audit.mjs",
+        "docs/evidence/d06/context/browser-check.mjs",
+        "docs/evidence/d06/context/preview.mjs"
+      ],
+      "errors": []
+    },
+    "taskId": "D06",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/dashboard-architecture-context",
+    "branchState": "IN_PROGRESS",
+    "updatedAt": "2026-10-06T06:34:16.000Z",
+    "updatedRecord": "2026-10-06T06:34:16Z",
+    "todos": [
+      {
+        "id": "D06-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "新树115b clean、receipt/live、历史原文和技能读取"
+      },
+      {
+        "id": "D06-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "47节点来源、49固定源码依据已核，数据已刷新115b"
+      },
+      {
+        "id": "D06-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "10局部Node、五视图Chrome、双主题390/键盘/减少动画、原失败记录保留"
+      },
+      {
+        "id": "D06-04",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "固定ebad46356efec7bd86f8aadd9d765bb6b6b190af已交root独审；source迁移/最终聚合待Lead事实"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "115b0dbdfa02db5483f9e9699852682ce699633c / ebad46356efec7bd86f8aadd9d765bb6b6b190af（实现；后续metadata由Git聚合）",
+    "declaredDirty": "五实现/检查脚本已冻结；仅本任务metadata收口",
+    "checks": {
+      "state": "passed",
+      "target": "ebad46356efec7bd86f8aadd9d765bb6b6b190af",
+      "record": "PASSED ebad46356efec7bd86f8aadd9d765bb6b6b190af；10局部Node/source、五图Chrome/双主题390/键盘/减少动画；[验证](../../docs/evidence/d06/context/validation.md)"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED；旧5ec已在本base，新轮未实现",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": "ebad46356efec7bd86f8aadd9d765bb6b6b190af"
+  },
+  "hashes": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "sha256": "d8348cdb4f8e32d537a87acf865a0a15a4707d588986d47f7a965787402b2126",
+      "matchesCaptured": true,
+      "matchesRecordedTarget": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "sha256": "ac8956eeb612edcd9ca037d304505d8cb02b5588774fa309c6aba193b297cdbe",
+      "matchesCaptured": true,
+      "matchesRecordedTarget": true
+    },
+    {
+      "path": "docs/evidence/d06/context/browser-check.mjs",
+      "sha256": "a7723ef896a8bdeeedce0e7fa323a1bf1221967b3fd8678cd1d0f420735cdcbf",
+      "matchesCaptured": true,
+      "matchesRecordedTarget": true
+    },
+    {
+      "path": "docs/evidence/d06/context/preview.mjs",
+      "sha256": "c139f0fd91b3150e2f08a76b677c03c953bf8bd209a1da0303a37e16c2c13742",
+      "matchesCaptured": true,
+      "matchesRecordedTarget": true
+    },
+    {
+      "path": "docs/evidence/d06/context/source-audit.mjs",
+      "sha256": "82d07fd109ee13671a82f14e1e0bf4e5cae9992886c14b4c33e7b5c5ea100e15",
+      "matchesCaptured": true,
+      "matchesRecordedTarget": true
+    }
+  ],
+  "md": 7,
+  "links": 38,
+  "broken": [],
+  "implementationDiff": "",
+  "protectedDiff": "",
+  "fixedDiffcheck": {
+    "exit": 0,
+    "output": ""
+  },
+  "fullDiffcheck": {
+    "exit": 2,
+    "output": "docs/evidence/d06/context/first-direct.log:25: trailing whitespace.\n+  \ndocs/evidence/d06/context/first-direct.log:122: trailing whitespace.\n+  \n"
+  },
+  "sourceObservation": {
+    "generatedAt": "2026-10-06T06:36:34.965Z",
+    "sha256": "68b34bf76dcd26c729fcd939fd8f22ecfd74627df58d5f00eda5988e2f93f033"
+  },
+  "boundary": "Management scope/metadata/hash audit only; no product tests or independent product approval."
+}

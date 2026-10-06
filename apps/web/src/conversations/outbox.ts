@@ -4,23 +4,35 @@ import {
   type ConversationCreation,
   type ConversationTurnAdmission,
 } from "@flow/contracts";
+import { freezeKnowledgeRequest } from "../conversation-context/receipts";
+import type { FrozenCitation } from "../conversation-context/selection";
 
 export interface OutgoingConversationTurn {
   conversationId: string | null;
   expectedRevision: number;
   text: string;
   creation?: ConversationCreation;
+  knowledge?: readonly FrozenCitation[];
 }
-export interface OutboxEntry {
+interface ReceiptBase {
   readonly id: string;
   readonly conversationId: string | null;
   readonly creationKey: string;
   readonly turnKey: string;
   readonly creation: Readonly<ConversationCreation> | null;
-  readonly request: Readonly<ConversationTurnAdmission>;
   readonly state: "sending" | "unknown" | "rejected";
   readonly error: string | null;
   readonly everUnknown: boolean;
+}
+
+export type TurnReceipt = ReceiptBase & { readonly kind: "turn"; readonly request: Readonly<ConversationTurnAdmission> };
+export type CreationReceipt = ReceiptBase & { readonly kind: "creation"; readonly creation: Readonly<ConversationCreation>; readonly request: null };
+export type OutboxEntry = TurnReceipt | CreationReceipt;
+
+function freezeCreation(input: ConversationCreation) {
+  const value = conversationCreationSchema.parse(input);
+  return Object.freeze({ ...value, requested: Object.freeze({ ...value.requested }),
+    ...(value.executionProfile ? { executionProfile: Object.freeze({ ...value.executionProfile }) } : {}) });
 }
 
 /** A receipt owns its frozen input. It never owns or restores the next draft. */
@@ -36,24 +48,40 @@ export class ConversationOutbox {
     return () => { this.listeners.delete(listener); };
   };
 
-  begin(input: OutgoingConversationTurn): OutboxEntry {
+  private assertReady() {
     if (this.closed) throw Error("This conversation connection is closed.");
     if (this.entry && this.entry.state !== "rejected")
       throw Error("The previous admission is unresolved. Check or retry its receipt first.");
-    const request = Object.freeze(conversationTurnSchema.parse({
-      expectedRevision: input.expectedRevision, text: input.text, mode: "follow-up",
-    }));
-    const creation = input.creation ? conversationCreationSchema.parse(input.creation) : null;
+  }
+
+  beginCreation(input: ConversationCreation): CreationReceipt {
+    this.assertReady();
+    const creation = freezeCreation(input), id = this.nextId();
+    const entry: CreationReceipt = { kind: "creation", id, conversationId: null, creationKey: `${id}:create`, turnKey: `${id}:turn`,
+      creation, request: null, state: "sending", error: null, everUnknown: false };
+    this.publish(entry);
+    return entry;
+  }
+
+  begin(input: OutgoingConversationTurn): TurnReceipt {
+    this.assertReady();
+    const creation = input.creation ? freezeCreation(input.creation) : null;
     if (!input.conversationId && !creation) throw Error("New conversations require creation settings.");
+    if (!input.conversationId && input.knowledge?.length && !creation?.projectId)
+      throw Error("Knowledge requires a fixed conversation project.");
+    const request = freezeKnowledgeRequest(conversationTurnSchema.parse({
+      expectedRevision: input.expectedRevision, text: input.text, mode: "follow-up",
+      ...(input.knowledge !== undefined ? { knowledge: input.knowledge } : {}),
+    }), creation?.projectId);
     const id = this.nextId();
-    this.publish({
-      id, conversationId: input.conversationId,
+    const entry: TurnReceipt = {
+      kind: "turn", id, conversationId: input.conversationId,
       creationKey: `${id}:create`, turnKey: `${id}:turn`,
-      creation: creation ? Object.freeze({ ...creation, requested: Object.freeze({ ...creation.requested }),
-        ...(creation.executionProfile ? { executionProfile: Object.freeze({ ...creation.executionProfile }) } : {}) }) : null,
+      creation,
       request, state: "sending", error: null, everUnknown: false,
-    });
-    return this.entry!;
+    };
+    this.publish(entry);
+    return entry;
   }
 
   retry(id: string): OutboxEntry | null {

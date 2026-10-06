@@ -1,0 +1,121 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity
+
+ ❯ apps/runner/src/native-activity/mapper.test.ts (5 tests | 5 failed) 8ms
+   × maps all complete text, thinking and tool blocks without confusing input completion with execution 5ms
+   × keeps redacted and missing thinking explicit without retaining signatures or opaque unknown payloads 1ms
+   × maps progress, results, failure and detached result independently 1ms
+   × uses stable per-block identities, retains parent linkage, rejects crossed sessions and ignores replay/input/partials 0ms
+   × bounds UTF-8 details with honest full-content digest and truncation metadata 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/native-activity/mapper.test.ts > maps all complete text, thinking and tool blocks without confusing input completion with execution
+AssertionError: expected [] to deeply equal [ [ 'assistant-text', …(2) ], …(2) ]
+
+- Expected
++ Received
+
+- [
+-   [
+-     "assistant-text",
+-     "observed",
+-     0,
+-   ],
+-   [
+-     "thinking",
+-     "observed",
+-     1,
+-   ],
+-   [
+-     "tool",
+-     "input-ready",
+-     2,
+-   ],
+- ]
++ []
+
+ ❯ apps/runner/src/native-activity/mapper.test.ts:11:74
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  apps/runner/src/native-activity/mapper.test.ts > keeps redacted and missing thinking explicit without retaining signatures or opaque unknown payloads
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ apps/runner/src/native-activity/mapper.test.ts:17:81
+     15| });
+     16| it('keeps redacted and missing thinking explicit without retaining sig…
+     17|   expect(mapNativeActivity(assistant([{type:'text',text:'hello'}]), 's…
+       |                                                                                 ^
+     18|   const events=mapNativeActivity(assistant([{type:'redacted_thinking',…
+     19|   expect(events[0]).toMatchObject({kind:'thinking',phase:'redacted',bo…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  apps/runner/src/native-activity/mapper.test.ts > maps progress, results, failure and detached result independently
+AssertionError: expected undefined to match object { phase: 'running', …(2) }
+
+- Expected: 
+{
+  "parentToolUseId": "parent",
+  "phase": "running",
+  "toolUseId": "tool1",
+}
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/native-activity/mapper.test.ts:25:23
+     23| it('maps progress, results, failure and detached result independently'…
+     24|   const progress=mapNativeActivity(frame({type:'tool_progress',uuid:'p…
+     25|   expect(progress[0]).toMatchObject({phase:'running',parentToolUseId:'…
+       |                       ^
+     26|   const ok=mapNativeActivity(user([{type:'tool_result',tool_use_id:'to…
+     27|   expect(ok[0]).toMatchObject({phase:'succeeded',toolUseId:'tool1'});
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  apps/runner/src/native-activity/mapper.test.ts > uses stable per-block identities, retains parent linkage, rejects crossed sessions and ignores replay/input/partials
+AssertionError: expected undefined not to be undefined // Object.is equality
+ ❯ apps/runner/src/native-activity/mapper.test.ts:33:131
+     31| it('uses stable per-block identities, retains parent linkage, rejects …
+     32|   const input=assistant([{type:'text',text:'a'},{type:'text',text:'b'}…
+     33|   const a=mapNativeActivity(input,'session'); expect(a).toEqual(mapNat…
+       |                                                                                                                                   ^
+     34|   expect(a[0]?.parentToolUseId).toBe('parent');
+     35|   expect(()=>mapNativeActivity(input,'wrong')).toThrow(/session/i);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  apps/runner/src/native-activity/mapper.test.ts > bounds UTF-8 details with honest full-content digest and truncation metadata
+AssertionError: expected undefined to be 262144 // Object.is equality
+
+- Expected: 
+262144
+
++ Received: 
+undefined
+
+ ❯ apps/runner/src/native-activity/mapper.test.ts:43:31
+     41|   const text='🌱'.repeat(MAX_ACTIVITY_DETAIL_BYTES);
+     42|   const body=mapNativeActivity(assistant([{type:'text',text}]),'sessio…
+     43|   expect(body?.originalBytes).toBe(Buffer.byteLength(text)); expect(bo…
+       |                               ^
+     44|   expect(Buffer.byteLength(body!.content)).toBeLessThanOrEqual(MAX_ACT…
+     45|   expect(body!.content).not.toContain('�'); expect(body?.sha256).toBe(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed (5)
+   Start at  22:57:22
+   Duration  298ms (transform 70ms, setup 0ms, import 156ms, tests 8ms, environment 0ms)
+

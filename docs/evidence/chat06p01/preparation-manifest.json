@@ -1,0 +1,100 @@
+{
+  "recordedAt": "2026-10-06T07:23:08.134817+00:00",
+  "implementationTarget": "37709097b879a7afff32b25da971f559d740058a",
+  "base": "fa9a8288341d4f2bd8160e03fe9173dafa2de1a6",
+  "sources": [
+    {
+      "path": "experiments/assistant-stream-cost/README.md",
+      "sha256": "63c2a35a131d3be495ffcc1831236b51df10a32bba1537b163e2ee5335ded3c7"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/check.mjs",
+      "sha256": "a6cd8e9210cd214355b8b38bb9f1c5ef105abb4c38d2cab876afa3cca3d6c5a4"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/tsconfig.json",
+      "sha256": "14772fdfc9462db079110808939112a960bea8365bb4cfc4774af4a06e5cb0ab"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/vitest.config.mjs",
+      "sha256": "faf44e6525325530a180f8199d0370d578bcc41d72c78a3767a6567ec389cc34"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.test.ts",
+      "sha256": "9d6850907da7757fd4eb08752f2990303369a1ae40ee8d032307f48a3931239a"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.ts",
+      "sha256": "f23f3919a7c7d7e11e4ba4a05bc527be91bed6dee1dc765b288828855ab97421"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/chat06p01/workload-final-green-result.json",
+      "sha256": "9f358aece73f8ab656c9ff3fa61ce10eb524f6ecedb5fb9cbc795c5cddc71548"
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-final-green.log",
+      "sha256": "1f82f03f9176de9fa3de741728c98f141966d3e7df3adfce2ea3911ebc98d7b1"
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-first-green-result.json",
+      "sha256": "aa8c3fb6c5a6cf709c615c41c4050572ebc6fe45abd31b8568308bbd40fce602"
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-first-green.log",
+      "sha256": "ad15ffefe7da3056e95b723728a7f3c586e1b6315fba8dc11ae6cc71d91dea60"
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-red-behavior-result.json",
+      "sha256": "2ae403bb98abeea22fc5588b5be82ec1816b135c895d9cc270cb2a9a293b70a4"
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-red-behavior.log",
+      "sha256": "10c2b48660b0d5cc143d653209f463978ff0c29063972a572bce04fed7e46621"
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-red-result.json",
+      "sha256": "b4855032c018ddee4e3d90dce1b621ff25958b782ee7dd3903f970e053c532d4"
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-red.log",
+      "sha256": "fc05b3f06950343fbdf3995dde58b1c05b4d425fd24465f9f8da05dafcd9cc4d"
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-types-fixed-result.json",
+      "sha256": "b4d3e544eb9e24f9520a267f9d93a80df3ce84ee5edb8b4c7df52f79ee4c586c"
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-types-fixed.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-types-result.json",
+      "sha256": "e70dfbd0d8543d045e6eb55a64df8acabd4d959fe726b8137d9669a66c497798"
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-types.log",
+      "sha256": "0866d5435938cc53bd3204f9a6d1adf6b05fe27985ff1109ee64ea486d346f68"
+    }
+  ],
+  "checks": {
+    "pureDistinctTests": 3,
+    "finalUnitExitCode": 0,
+    "finalNoEmitExitCode": 0,
+    "databaseTasks": 0,
+    "measurements": 0,
+    "providerCalls": 0
+  },
+  "sourceQualifications": [
+    "The final 3-test run used ES2023 lib typing; only tsconfig lib changed to ES2024 afterwards to describe Node24 String.isWellFormed; no runtime source/test change. Final noEmit bound to target.",
+    "First workload-red selected 0 tests because require-condition Vitest resolution pointed at CJS; retained as setup failure, not behavioral red.",
+    "workload-red-behavior selected 1 and failed at the stub; first-green passed 1; final-green passed all 3 distinct tests.",
+    "workload-types exit2 is the ES2023 lib mismatch; types-fixed exit0."
+  ],
+  "limitations": [
+    "Pure workload generation only; PG/HTTP measurement and instrumentation entry are not implemented or executed.",
+    "No capacity, latency, PG wire or optimization result.",
+    "Reference digests computed independently from the literal bytes using Python hashlib, outside measured work."
+  ]
+}

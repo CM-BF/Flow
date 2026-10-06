@@ -1,0 +1,6 @@
+
+> flow@ typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering
+> tsc --noEmit
+
+apps/server/src/active-steering/finalization.test.ts(121,49): error TS2307: Cannot find module '@anthropic-ai/claude-agent-sdk' or its corresponding type declarations.
+ ELIFECYCLE  Command failed with exit code 2.

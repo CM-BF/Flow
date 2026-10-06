@@ -1,0 +1,21 @@
+✖ builds a fixed verified artifact with no inherited or dotenv secrets and detects tampering (140.036416ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 197.898292
+
+✖ failing tests:
+
+test at tools/personal-preview/web-artifact.test.mjs:30:1
+✖ builds a fixed verified artifact with no inherited or dotenv secrets and detects tampering (140.036416ms)
+  Error: ARTIFACT_NOT_IMPLEMENTED
+      at prepareWebArtifact (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview/tools/personal-preview/web-artifact.mjs:1:52)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview/tools/personal-preview/web-artifact.test.mjs:34:28
+      at fixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview/tools/personal-preview/web-artifact.test.mjs:27:15)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview/tools/personal-preview/web-artifact.test.mjs:31:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)

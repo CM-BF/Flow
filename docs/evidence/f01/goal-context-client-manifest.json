@@ -1,0 +1,45 @@
+{
+  "target": "77465eb59121bad5ac2785036961f1707911d21b",
+  "observedAt": "2026-10-06 06:35:43 UTC",
+  "input": "K03 21d2e05eb571e44883589eb38bff6b5a4b2eaeb7 / metadata eae9f1c33cec83dc68538d069c2afa5011a9aa55; domain independent review pending",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 32579,
+      "sha256": "9d7bfd312b94a88b33f8bcf2d4279b6abec48a7d0f859d0ac6b26828a2e95694"
+    },
+    {
+      "path": "packages/client/src/goal-context.test.ts",
+      "bytes": 1765,
+      "sha256": "76b2522db475e73891bb0697bf34e05861eb1be0a217a3cdd4c402215dc6fa4e"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 850,
+      "sha256": "8e80119c1d5db84ef956afca6f53395d9459f81c5887dc6867634ffdae61fbf5"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/goal-context-client-red.txt",
+      "bytes": 1227,
+      "sha256": "845f27acd87ebe55c23962db4ae4f0ed38d87cd0594b7c5beef3715e96c37dbe"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-client-green.txt",
+      "bytes": 314,
+      "sha256": "f352dd98d7074471a769f8fafb0580eca4f23c738d900d36d4a356da88f0b4c2"
+    },
+    {
+      "path": "docs/evidence/f01/goal-context-client-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "http": "1/1 passed, 20ms; suite147ms",
+    "typecheck": "exit0",
+    "modelQueries": 0,
+    "postgres": false
+  }
+}

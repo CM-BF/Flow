@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context
+
+ ✓ apps/server/src/goal-context/claim.test.ts (3 tests) 4594ms
+   ✓ returns the complete frozen private prompt from the real authenticated claim while public projections stay raw  1853ms
+   ✓ rolls back attempt and ownership writes when the declared goal input is corrupt  1254ms
+   ✓ executes the frozen prompt through the existing runner and fixture adapter without adding a runner field  1485ms
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  23:23:59
+   Duration  5.55s (transform 572ms, setup 0ms, import 853ms, tests 4.59s, environment 0ms)
+

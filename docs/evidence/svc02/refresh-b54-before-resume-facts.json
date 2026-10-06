@@ -1,0 +1,520 @@
+{
+  "observedAt": "2026-10-06T07:45:06.213Z",
+  "operation": "read-only preparation; no maintenance writes, POST, migration, stop, start, reload or provider query",
+  "target": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+  "private": {
+    "directoryMode": "700",
+    "files": {
+      "config.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 672
+      },
+      "claude.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 145
+      },
+      "state.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 1217
+      },
+      "maintenance.json": {
+        "mode": "600",
+        "ownerMatches": true,
+        "regular": true,
+        "symlink": false,
+        "bytes": 299
+      }
+    },
+    "nativeConfigurationMatches": true,
+    "nativeDirectory": {
+      "mode": "700",
+      "device": 16777234,
+      "inode": 117819908
+    },
+    "operationLockPresent": false
+  },
+  "status": {
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "observedAt": "2026-10-06T07:45:06.373Z",
+    "startedAt": "2026-10-06T07:39:21.636Z",
+    "sourceAtStart": {
+      "head": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+      "dirty": false
+    },
+    "configured": "claude-sonnet-5-5",
+    "provider": "not-probed",
+    "processes": {
+      "center": "running",
+      "runner": "running",
+      "web": "running"
+    },
+    "center": {
+      "url": "http://127.0.0.1:61227",
+      "reachable": true
+    },
+    "webUrl": "http://127.0.0.1:61228",
+    "database": "owned",
+    "work": {
+      "total": 2,
+      "pending": 0,
+      "lastTaskSucceededAt": "2026-10-06T06:02:27.180Z",
+      "lastHeartbeatAt": "2026-10-06T06:02:27.158Z"
+    },
+    "lastError": null,
+    "profile": {
+      "id": "7ed454e9-f1db-420c-ac7f-4aa53f3856c0",
+      "source": "runner-configured",
+      "model": "claude-sonnet-5-5"
+    },
+    "lastProcessExits": {},
+    "limits": {
+      "maxTurns": 2,
+      "maxBudgetUsd": 0.2,
+      "timeoutMs": 60000,
+      "scope": "per-query-not-project-total"
+    }
+  },
+  "sourceNow": {
+    "head": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+    "dirty": false,
+    "repositoryMatchesMain": true
+  },
+  "processes": {
+    "center": {
+      "identity": "running",
+      "pid": 95468,
+      "pgid": 95468,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "startedAt": "Tue Oct  6 00:39:19 2026",
+      "members": [
+        {
+          "pid": 95468,
+          "ppid": 1,
+          "pgid": 95468,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "owned-wrapper"
+        },
+        {
+          "pid": 95820,
+          "ppid": 95468,
+          "pgid": 95468,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "center-main"
+        },
+        {
+          "pid": 96109,
+          "ppid": 95820,
+          "pgid": 95468,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "other-member"
+        }
+      ]
+    },
+    "runner": {
+      "identity": "running",
+      "pid": 1776,
+      "pgid": 1776,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "startedAt": "Tue Oct  6 00:39:20 2026",
+      "members": [
+        {
+          "pid": 1776,
+          "ppid": 1,
+          "pgid": 1776,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "owned-wrapper"
+        },
+        {
+          "pid": 1943,
+          "ppid": 1776,
+          "pgid": 1776,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "runner-main"
+        },
+        {
+          "pid": 2151,
+          "ppid": 1943,
+          "pgid": 1776,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "other-member"
+        }
+      ]
+    },
+    "web": {
+      "identity": "running",
+      "pid": 1974,
+      "pgid": 1974,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "startedAt": "Tue Oct  6 00:39:20 2026",
+      "members": [
+        {
+          "pid": 1974,
+          "ppid": 1,
+          "pgid": 1974,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+          "role": "owned-wrapper"
+        },
+        {
+          "pid": 2261,
+          "ppid": 1974,
+          "pgid": 1974,
+          "cwd": "/Users/citrine/Projects/AgentHarness/Flow/apps/web",
+          "role": "vite"
+        }
+      ]
+    }
+  },
+  "listeners": {
+    "center": true,
+    "web": true
+  },
+  "localRunnerEntrypoints": [
+    {
+      "pid": 1943,
+      "ppid": 1776,
+      "pgid": 1776,
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "ownedGroup": true
+    }
+  ],
+  "database": {
+    "snapshotAt": "2026-10-06T07:45:07.052Z",
+    "markerMatches": true,
+    "runnerIdentityMatches": true,
+    "managedRunnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "taskCounts": [
+      {
+        "status": "succeeded",
+        "count": 2
+      }
+    ],
+    "unfinishedAttempts": [],
+    "unfinishedAttemptCount": 0,
+    "registeredRunners": [
+      {
+        "runner_id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+        "harnesses": [
+          "claude"
+        ],
+        "capacity": 1,
+        "revoked": false,
+        "maintenance_state": "maintenance",
+        "maintenance_version": 5,
+        "maintenance_operation_id": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1",
+        "unfinished_attempts": 0,
+        "last_heartbeat_at": "2026-10-06T06:02:27.158Z"
+      }
+    ],
+    "migrations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "retainedCounts": {
+      "tasks": 2,
+      "attempts": 2,
+      "sessions": 1,
+      "artifacts": 2,
+      "details": 12,
+      "conversations": 1,
+      "conversation_turns": 2,
+      "conversation_queue": 1
+    },
+    "retainedRecords": {
+      "tasks": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "15afe00f4eacf9a8222fde8c18bde7f1"
+          },
+          {
+            "identity": {
+              "id": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "558a148e7d25eacfdefd7df7e527008e"
+          }
+        ]
+      },
+      "attempts": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "72291dd4-d874-442e-8314-2d8bfe920064",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "3032cf5e0c1df8ff879c9e498f82a4c6"
+          },
+          {
+            "identity": {
+              "id": "20578167-d110-4bcc-b5a3-86abebb61147",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "55330caea3973a1de2f3dd0cbc14a9e3"
+          }
+        ]
+      },
+      "sessions": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "e7de6e51-6874-4186-a4a0-5af384c81a07"
+            },
+            "row_digest": "6beebf76fd24a0afd87fab72c34ee1b0"
+          }
+        ]
+      },
+      "artifacts": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2",
+              "version": "af5ff4cc022d0e63215d3a6e0b03bf288c3f5204ee6b1fa121aafe4a74e05631",
+              "artifactId": "784cd197-f10e-4b0b-833b-ab11da5a8432"
+            },
+            "row_digest": "a2bc8ca0bc42737f270548aa1be2e2ce"
+          },
+          {
+            "identity": {
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+              "version": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde",
+              "artifactId": "a9ceb1dc-79a4-4c32-9fce-b8e5f9a06714"
+            },
+            "row_digest": "ebb9a3c219752c5311807a5eb2f167bf"
+          }
+        ]
+      },
+      "details": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "471389b8-a6c0-430c-990c-f991a94ebc4e",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "08d0dbb494034f947060a315db12948e"
+          },
+          {
+            "identity": {
+              "id": "ae4afd13-1abd-4703-9426-6a5ff613f033",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "100adbd2173664cff7af8daf84e65cf2"
+          },
+          {
+            "identity": {
+              "id": "afa4b666-43ee-43b2-9db4-c295bef05f6f",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "4c687ce3a9dd649ac2b04f16a559f2c7"
+          },
+          {
+            "identity": {
+              "id": "501b8c94-d1df-4796-9354-9303a58432ce",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "5b1425be192af07aead239a764292203"
+          },
+          {
+            "identity": {
+              "id": "9286d74f-404b-409a-8512-ddcf8268baa2",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "77215fc8db890222295e59fdfb4f7ebc"
+          },
+          {
+            "identity": {
+              "id": "cdfd5338-efa0-4cd0-a056-bb81e3d2f473",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "8654deb6de35478d88c816045e9f5fdf"
+          },
+          {
+            "identity": {
+              "id": "762e935c-c3a8-4f05-a5bd-ee9318bb6def",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "a73cac8e358f36b9aff8d4d87421a9e5"
+          },
+          {
+            "identity": {
+              "id": "f26665c5-ad47-4b27-a1ad-abce53826515",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "bd8fb52c8ed7b667d13002423ad82ae0"
+          },
+          {
+            "identity": {
+              "id": "b61634d6-fe52-4bc1-b21a-de0f7156b59d",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+            },
+            "row_digest": "c383fe6b473ce0d87012d5b433f043d3"
+          },
+          {
+            "identity": {
+              "id": "941450e7-3222-43d1-aa5c-bd6afd821c09",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "c5615605b3778ae6f0e6d87a380e26f7"
+          },
+          {
+            "identity": {
+              "id": "35af32b2-3e7c-4e5d-93af-d0b0254fa4f8",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "dc82341e6d694a968edca71db6fa9cfa"
+          },
+          {
+            "identity": {
+              "id": "1767a778-d1a7-49c6-88f8-88a282bec86b",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+            },
+            "row_digest": "e3947628820b41e3373fe9cb4c02ce01"
+          }
+        ]
+      },
+      "conversations": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [
+          "queue_checked_at"
+        ],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+            },
+            "row_digest": "32b6724ee995664d918c3062c6932c3a"
+          }
+        ]
+      },
+      "conversation_turns": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "0347d173-36c4-4f11-8bf8-3d52b2c2ca45",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2",
+              "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+            },
+            "row_digest": "013143c9d355d7e6dd66063f60863723"
+          },
+          {
+            "identity": {
+              "id": "132570f8-c02f-4917-8866-031f5b6b903c",
+              "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+              "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+            },
+            "row_digest": "eec6c6cce6018b11372ff52c7e5157ac"
+          }
+        ]
+      },
+      "conversation_queue": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "02cfb153-b300-421b-bb1a-0135189d8ae2",
+              "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2",
+              "sequence": 2,
+              "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+            },
+            "row_digest": "e350606a8d638ae7ea2b40145521e452"
+          }
+        ]
+      },
+      "execution_profiles": {
+        "digestPurpose": "change detection, not cryptographic authenticity",
+        "omittedMutableFields": [],
+        "complete": true,
+        "records": [
+          {
+            "identity": {
+              "id": "7ed454e9-f1db-420c-ac7f-4aa53f3856c0"
+            },
+            "row_digest": "69f6ce7ecb7d5b7bb804461d8fb755c5"
+          }
+        ]
+      }
+    },
+    "conversationQueue": [
+      {
+        "state": "promoted",
+        "count": 1
+      }
+    ],
+    "connections": [
+      {
+        "application_name": "",
+        "state": "idle",
+        "count": 2
+      },
+      {
+        "application_name": "pgboss:96dae00d",
+        "state": "idle",
+        "count": 1
+      }
+    ]
+  },
+  "localMaintenance": {
+    "phase": "ready-paused",
+    "target": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+    "operationId": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1"
+  },
+  "limitations": [
+    "One instant snapshot is not a lock, drain, hold, or permission to stop.",
+    "Process inventory identifies recognized entrypoints; it cannot exclude another host or custom same-credential deployment.",
+    "All other active/unknown deployments require operator coordination before any center stop.",
+    "SDK/provider availability and real model calls were not probed.",
+    "SourceAtStart records startup; Vite files may follow checkout changes without a controlled bundle refresh."
+  ],
+  "outcome": "observed"
+}

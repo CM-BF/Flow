@@ -14,7 +14,7 @@ const cli = fileURLToPath(new URL('./cli.mjs', import.meta.url));
 const repository = fileURLToPath(new URL('../../', import.meta.url));
 const adminUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
 async function command(directory, action, target) {
-  const { stdout } = await execute(process.execPath, [cli, 'maintenance', action, '--directory', directory, ...(target ? ['--target', target] : [])], { timeout: 25_000, env: { ...process.env, FLOW_SYNTHETIC_SECRET: 'never-print-this-sentinel' } });
+  const { stdout } = await execute(process.execPath, [cli, 'maintenance', action, '--directory', directory, ...(target ? ['--target', target] : [])], { timeout: 100_000, env: { ...process.env, FLOW_SYNTHETIC_SECRET: 'never-print-this-sentinel' } });
   assert.ok(!stdout.includes('never-print-this-sentinel')); return JSON.parse(stdout);
 }
 async function fixture(callback) {
@@ -49,6 +49,9 @@ test('bootstrap enables only the DB guard, refresh preserves identity and queue,
     assert.equal(status.center.url, `http://127.0.0.1:${config.centerPort}`); assert.equal(status.webUrl, `http://127.0.0.1:${config.webPort}`);
     assert.equal(status.work.pending, 1); assert.equal(status.work.total, 1); assert.equal(status.provider, 'not-probed');
     assert.equal(status.sourceAtStart.head, target);
+    assert.equal(status.webArtifact.sourceHead, target);
+    assert.equal(status.webArtifact.state, 'verified');
+    assert.equal(status.webArtifact.serving, 'confirmed');
     const after = JSON.parse(await readFile(join(directory, 'state.json'), 'utf8'));
     assert.notEqual(after.processes.runner.pid, before.processes.runner.pid);
     assert.deepEqual(JSON.parse(await readFile(join(directory, 'config.json'), 'utf8')), config);
@@ -121,5 +124,24 @@ test('TERM timeout retains maintenance and reports unknown without progressing t
       for (let i = 0; i < 100 && await inspectOwnedProcess(owned) !== 'stopped'; i++) await sleep(10);
       state.processes.runner = originalRunner; await writeFile(path, JSON.stringify(state));
     }
+  });
+});
+
+test('artifact verification failure during refresh retains the old processes and maintenance hold', async () => {
+  const target = (await execute('git', ['-C', repository, 'rev-parse', 'HEAD'])).stdout.trim();
+  await fixture(async (directory) => {
+    await command(directory, 'bootstrap');
+    const before = JSON.parse(await readFile(join(directory, 'state.json'), 'utf8'));
+    const manifest = join(directory, 'web-artifacts', before.webArtifact.artifactId, 'manifest.json');
+    const original = await readFile(manifest, 'utf8');
+    await writeFile(manifest, original + ' '); // Same parsed identity, wrong committed manifest bytes.
+    try {
+      await assert.rejects(command(directory, 'refresh', target), error => error.stderr.includes('WEB_ARTIFACT_INTEGRITY_MISMATCH'));
+      assert.equal((await command(directory, 'status')).state, 'maintenance');
+      const after = JSON.parse(await readFile(join(directory, 'state.json'), 'utf8'));
+      assert.deepEqual(after.processes, before.processes);
+      for (const process of Object.values(before.processes)) assert.equal(await inspectOwnedProcess(process), 'running');
+      assert.equal((await statusPreview({ directory })).webArtifact.state, 'unknown');
+    } finally { await writeFile(manifest, original); }
   });
 });

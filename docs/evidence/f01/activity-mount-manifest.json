@@ -1,0 +1,84 @@
+{
+  "target": "9ea33ef61da2304123d08ea87558023d63b38468",
+  "observedAt": "2026-10-06T06:24:39.673352+00:00",
+  "domainTarget": "216333f257f2be147d40b44e56e727167ea116b2",
+  "scope": [
+    "apps/server/src/index.ts",
+    "packages/contracts/src/index.ts",
+    "packages/client/src/index.ts",
+    "packages/client/src/native-activity.test.ts",
+    "packages/client/src/native-activity-production.test.ts"
+  ],
+  "sources": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 11224,
+      "sha256": "f1b0dd17274dabeeb76c0a489a6d1b3f51e13480bd8a9a443720e9d2da4a5dec"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 770,
+      "sha256": "a97de7eafdea7767ae30fd6d172065fb393da16dfacb1f5896ae4ccc5e6ab64a"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 30401,
+      "sha256": "a5af6b44bc75848ec707124ae8f85710a24d2196a1f2baebf07d981cb8870e4b"
+    },
+    {
+      "path": "packages/client/src/native-activity.test.ts",
+      "bytes": 1926,
+      "sha256": "1b77b6099dde3f880ef2fd8ad0563a09ceff23add9c122f914e36358a5225cee"
+    },
+    {
+      "path": "packages/client/src/native-activity-production.test.ts",
+      "bytes": 5235,
+      "sha256": "9e3e272c212911ffa9e5f1083ee09747536d5e6b425cc58883ef9e921f63de19"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/activity-mount-red.txt",
+      "bytes": 2288,
+      "sha256": "78ca4d8b7cc5f5b23279dc7ea56661e3e1c64e299e979c0b962674def94da8df"
+    },
+    {
+      "path": "docs/evidence/f01/activity-production-red-facts.json",
+      "bytes": 229,
+      "sha256": "796398998426d4cec926868b149cfd8531c9a79b71bf9e7170f5c824dd5f760a"
+    },
+    {
+      "path": "docs/evidence/f01/activity-mount-green.txt",
+      "bytes": 513,
+      "sha256": "dc852db65630b29b3e7db44080d46f6a7659331fecfbe47040b4e47333ab3429"
+    },
+    {
+      "path": "docs/evidence/f01/activity-production-facts.json",
+      "bytes": 547,
+      "sha256": "6ed8a9788ce9fde7b4dbef9a7e4582615ca5c6f66270edd19b30185773dd4fef"
+    },
+    {
+      "path": "docs/evidence/f01/activity-mount-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "red": {
+      "selected": 2,
+      "failed": 2
+    },
+    "green": {
+      "selected": 2,
+      "passed": 2,
+      "durationMs": 2220
+    },
+    "typecheckExit": 0,
+    "queries": 0
+  },
+  "limits": [
+    "Injected native activity; no real provider or streaming claim",
+    "Domain independently approved by Mika; no repeat85",
+    "Full body beyond64KiB prefix not retrievable; no App mounting"
+  ]
+}

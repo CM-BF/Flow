@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-06T08:43:47.627Z",
+  "sourceCommit": "3f797d7f1ddc4084d21b70f7fe3e22d1a11ed727",
+  "sourceDirty": [
+    "?? apps/execution-dashboard/test/architecture-viewport.browser.mjs",
+    "?? docs/evidence/d05-first-fit/behavior-red.log",
+    "?? docs/evidence/d05-first-fit/first-red.log"
+  ],
+  "sourceHashes": {
+    "apps/execution-dashboard/public/architecture.js": "d0c0dc52413dea09e05c896f4e1f0cc034f0689b02c89d03f15b89c6c2aa9ffc",
+    "apps/execution-dashboard/test/architecture-viewport.browser.mjs": "d99eaef0665d82d83ee7d2dd705cb474dd4bed610d3db02f5e6258ad9da9994f"
+  },
+  "checks": [],
+  "observations": [],
+  "pageErrors": [],
+  "requests": [
+    "/api/snapshot"
+  ],
+  "screenshots": [],
+  "passed": false,
+  "browser": "154.0.8037.98",
+  "failure": "Error: expect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 1\nReceived:    327\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBeLessThanOrEqual (/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at expectFit (/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/apps/execution-dashboard/test/architecture-viewport.browser.mjs:60:8)\n    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/apps/execution-dashboard/test/architecture-viewport.browser.mjs:69:11"
+}

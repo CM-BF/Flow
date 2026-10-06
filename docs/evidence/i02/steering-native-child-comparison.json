@@ -1,0 +1,158 @@
+[
+  {
+    "manifest": "docs/evidence/f01/steering-startup-manifest.json",
+    "target": "2d69959a50954912c388eddb18d3b6a9574bf680",
+    "sources": [
+      {
+        "path": "apps/server/src/main.ts",
+        "bytes": 2007,
+        "sha256": "d29980feece7e8094f3d317fd6761edc132f6e7827d458e748e9e0ec77a92180",
+        "fixedMatch": true
+      },
+      {
+        "path": "apps/server/src/steering-production.test.ts",
+        "bytes": 10359,
+        "sha256": "18a46c3212a03235ed3ff675eba4fcf1b26a8a7dbc773480a8338fb51709cdb9",
+        "fixedMatch": true
+      }
+    ]
+  },
+  {
+    "manifest": "docs/evidence/f01/steering-admission-client-manifest.json",
+    "target": "25a22e0488d6d9aef1f3308e3179e0e874fa425f",
+    "sources": [
+      {
+        "path": "packages/client/src/index.ts",
+        "bytes": 37776,
+        "sha256": "84e63baeebed37dd019e72c71b00e32cb4b3962504e916794c814520ddccd2c4",
+        "fixedMatch": true
+      },
+      {
+        "path": "packages/client/src/steering-admission.test.ts",
+        "bytes": 2734,
+        "sha256": "06e38b69943ba773369acc4afdee8e9a25f6b0584f74c7c7c75375142430e8e0",
+        "fixedMatch": true
+      }
+    ]
+  },
+  {
+    "manifest": "docs/evidence/chat10/manifest.json",
+    "target": "a3296e0f6ffc37c746cf1d59a7105aeb2131579b",
+    "sources": [
+      {
+        "path": "apps/server/src/active-steering-configuration.test.ts",
+        "bytes": 808,
+        "sha256": "ea9b5d676a06ba57a1a3232f431ecc9e3f31503002d4c9d75e1e734987b21777",
+        "fixedMatch": true
+      },
+      {
+        "path": "apps/server/src/active-steering-configuration.ts",
+        "bytes": 319,
+        "sha256": "8138cd0125132b8a680a0842dad40d573c2f1a4832ab7af7cb0a59ba0dacb09d",
+        "fixedMatch": true
+      },
+      {
+        "path": "apps/server/src/active-steering/admission-policy.ts",
+        "bytes": 1756,
+        "sha256": "508dbe8530c00a43f8e8ef66fd1a0279245df1f46cf71184178f59de2dc9f6bf",
+        "fixedMatch": true
+      },
+      {
+        "path": "apps/server/src/active-steering/admission.test.ts",
+        "bytes": 16113,
+        "sha256": "0102abedb446a3f3f3e8b5860233f755e6cf493d50ac09bdfc46dff097a2dc30",
+        "fixedMatch": true
+      },
+      {
+        "path": "apps/server/src/active-steering/admission.ts",
+        "bytes": 4315,
+        "sha256": "839e2148bdf208fa579c766abbb2cc573bee2bafd70aa698a5a8e4682eb59783",
+        "fixedMatch": true
+      },
+      {
+        "path": "apps/server/src/active-steering/commands.ts",
+        "bytes": 6995,
+        "sha256": "8e105358e2ba9eb2946cf7a7bc2668a3c293f6731d884918bcce9266d41fe920",
+        "fixedMatch": true
+      },
+      {
+        "path": "apps/server/src/active-steering/index.ts",
+        "bytes": 4109,
+        "sha256": "ed1b9aff63601aadd81796f83ccc448e6722f2bfacdc216b93e3f75a4a6241bd",
+        "fixedMatch": true
+      },
+      {
+        "path": "packages/contracts/src/active-steering.ts",
+        "bytes": 7453,
+        "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311",
+        "fixedMatch": true
+      }
+    ]
+  },
+  {
+    "manifest": "docs/evidence/o10/native-0834-manifest.json",
+    "target": "d2cc8075d1f1ffc8d242a2a674adc9d321d16412",
+    "sources": [
+      {
+        "path": "experiments/native-child-acceptance/README.md",
+        "bytes": 5971,
+        "sha256": "eb55329a4281a5bbb7ac4261640eccfb021c5bc3786ae09cec175002d4be9d0b",
+        "fixedMatch": true
+      },
+      {
+        "path": "experiments/native-child-acceptance/checkpoint.test.mjs",
+        "bytes": 4159,
+        "sha256": "1e51630d9105ee5cfb9c50168afdf7e62f83958aa04d9a4566f4d7a11320cfab",
+        "fixedMatch": true
+      },
+      {
+        "path": "experiments/native-child-acceptance/config.mjs",
+        "bytes": 3664,
+        "sha256": "2cc4570905284fdc3c5f875cfa944a4619a26c7f0832929f9351e5693a7624ea",
+        "fixedMatch": true
+      },
+      {
+        "path": "experiments/native-child-acceptance/driver.mjs",
+        "bytes": 14299,
+        "sha256": "9a8fe174724569b010c8b01dded55cc21fceb03469bcb39527d5ca46441f1f19",
+        "fixedMatch": true
+      },
+      {
+        "path": "experiments/native-child-acceptance/driver.test.mjs",
+        "bytes": 787,
+        "sha256": "cdd6351e5349ac5428caff521fc43a8eb20fa5f69c4dfadaf046a1f3b6da008a",
+        "fixedMatch": true
+      },
+      {
+        "path": "experiments/native-child-acceptance/facts.mjs",
+        "bytes": 2723,
+        "sha256": "17cb94aa582caa03cf142c253d2d5a54df99402cf6001222d7e53160d16aa517",
+        "fixedMatch": true
+      },
+      {
+        "path": "experiments/native-child-acceptance/guard.mjs",
+        "bytes": 7070,
+        "sha256": "067bdfcbe78fe1ee1385fe25fe1ab094f4f2d82e51344e72fa1717d7eda205d2",
+        "fixedMatch": true
+      },
+      {
+        "path": "experiments/native-child-acceptance/guard.test.mjs",
+        "bytes": 5392,
+        "sha256": "37185b4c895a18ca7e2c459bc10bf06b9673f27de53fbb9e00bd7634392ee326",
+        "fixedMatch": true
+      },
+      {
+        "path": "experiments/native-child-acceptance/journey.test.mjs",
+        "bytes": 1807,
+        "sha256": "5b1cd8a93c125859f80779bcca1ebb8d29ca35dcacfdd9b0d4bad7bebab7aef2",
+        "fixedMatch": true
+      },
+      {
+        "path": "experiments/native-child-acceptance/worker.mjs",
+        "bytes": 5396,
+        "sha256": "11c9d1595cb2fe104837495ed08be4dce646082a8260d9f9cea20acc9a0874f7",
+        "fixedMatch": true
+      }
+    ]
+  }
+]

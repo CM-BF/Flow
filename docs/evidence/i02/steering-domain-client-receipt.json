@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-06T07:20:12.040228+00:00",
+  "sources": [
+    {
+      "target": "21371153c6d83c67c3a3d7d0051c915c55f7b60b",
+      "path": "packages/contracts/src/active-steering.ts",
+      "bytes": 4078,
+      "sha256": "993e26f1ca3cf4cfd52f334c2a03d6d1df2e49c258f9dd9e6d974c1eb3d94b7b",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "target": "21371153c6d83c67c3a3d7d0051c915c55f7b60b",
+      "path": "apps/server/src/active-steering/commands.ts",
+      "bytes": 5998,
+      "sha256": "8b33a25c568c0ae30ba842ed9befb062f28549aedd43ca011e74ea1b5e19584b",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "target": "21371153c6d83c67c3a3d7d0051c915c55f7b60b",
+      "path": "apps/server/src/active-steering/index.ts",
+      "bytes": 3010,
+      "sha256": "53f6572bbcd15761473139a6eb79206babd260a89725d28d387c3b8debadc386",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "target": "21371153c6d83c67c3a3d7d0051c915c55f7b60b",
+      "path": "apps/server/src/active-steering/queries.ts",
+      "bytes": 3963,
+      "sha256": "4c4dcca036da762457bd979f9e66b70453008d83ebcaf16823cfdf238a097ede",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "target": "21371153c6d83c67c3a3d7d0051c915c55f7b60b",
+      "path": "apps/server/src/active-steering/steering.test.ts",
+      "bytes": 21848,
+      "sha256": "45faf008fe10a7f38eb67ab47414ef81381f236657e98c6f541d7c7207608835",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "target": "21371153c6d83c67c3a3d7d0051c915c55f7b60b",
+      "path": "apps/server/src/active-steering/storage.ts",
+      "bytes": 4217,
+      "sha256": "672f030ecb268e2fba024a42f760c7c1f66009b9493b3c2257bed194ced56db9",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "target": "21371153c6d83c67c3a3d7d0051c915c55f7b60b",
+      "path": "packages/storage/migrations/024-active-steering.sql",
+      "bytes": 1998,
+      "sha256": "551e54f031591dc22b129cb66097132e94cd3f0828441d60acf6248fac555fac",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "target": "1b16d23de5b00f897fe9bd0fa07879c84d78e936",
+      "path": "packages/client/src/index.ts",
+      "bytes": 36053,
+      "sha256": "6da7c969edf0175cc771bbab53ec7f6c75bdd2ef7be0db38ab1748dad9fbbd5c",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "target": "1b16d23de5b00f897fe9bd0fa07879c84d78e936",
+      "path": "packages/client/src/active-steering.test.ts",
+      "bytes": 4500,
+      "sha256": "5b89b0dec336c682fe829ae0e8c04206f4978a6dcd094ae7e137400bd170332a",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "target": "1b16d23de5b00f897fe9bd0fa07879c84d78e936",
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 928,
+      "sha256": "80c23378f03eeed122a42c9dbc415216149dda36b173cd6921c8d4bb88dab05b",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    }
+  ],
+  "productionMount": false,
+  "intakeEnabled": false,
+  "additionalTests": 0
+}

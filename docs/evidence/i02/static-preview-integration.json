@@ -1,0 +1,77 @@
+{
+  "observedAt": "2026-10-06T08:52:00.982743+00:00",
+  "target": "d9385185a1474c6b058c41b9187c6e075248cb5b",
+  "delivery": "a1b378041b69865b525187ad51c6d9f543065edc",
+  "source": [
+    {
+      "path": "tools/personal-preview/README.md",
+      "bytes": 10032,
+      "sha256": "cf0f5431ab4473c4270f96a9f7145e8a27c99b2d888a8e0ddf2aa2aee35e0d32",
+      "fixedMatch": true
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+      "fixedMatch": true
+    },
+    {
+      "path": "tools/personal-preview/environment.test.mjs",
+      "bytes": 2822,
+      "sha256": "98447b34330a3c014f72732ed8aa8fe9e44e3550857299511cc87546e0b61d3f",
+      "fixedMatch": true
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 8241,
+      "sha256": "e441f575b025420aea5133a54300260bfa558de5f75e95d6380d9d8d4a4be05e",
+      "fixedMatch": true
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 10302,
+      "sha256": "9e9faa83a4ed6660479b63501acf6f35de8351ac75713a8a548d1de482a541c0",
+      "fixedMatch": true
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 19957,
+      "sha256": "5e395cf9bf48467d36a5f86aa24d1c3b55ce3b7b10e9159811e6e90db1ed57dc",
+      "fixedMatch": true
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 9846,
+      "sha256": "645cf7ef0d33782d134b367b965da50eaf8d031e907c840c34b96affdc9e71e9",
+      "fixedMatch": true
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 2551,
+      "sha256": "836a0ab2331b6270a715c6c12aa2321f74480d9f58e5804d0022c9e3e191cd86",
+      "fixedMatch": true
+    },
+    {
+      "path": "tools/personal-preview/static-web.test.mjs",
+      "bytes": 4740,
+      "sha256": "63b1bf4cf9791be59f179ad025034b1b5abc9046b17c2b3f8efa29bf923fca27",
+      "fixedMatch": true
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 7521,
+      "sha256": "2ca4faed5bfe993c996d1957412983b4b6218fae7cf8ac3b75d3a8f34d74916e",
+      "fixedMatch": true
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.test.mjs",
+      "bytes": 6746,
+      "sha256": "975cb77fa772f2ac20ca45bf6383533f0b18193ab2be6d2bdca86e92b3d9003e",
+      "fixedMatch": true
+    }
+  ],
+  "review": "Execution Lead independent read-only APPROVED: full production delta/new tests/17 distinct raw, no P1/P2; no reviewer reruns.",
+  "runtimeAtReceipt": "personal backend32c/v9; existing Vite dev still running; no actual switch yet",
+  "checksReused": "7 module +10 owned preview/maintenance; not rerun unchanged code",
+  "limitations": "trusted frozen worktree/installed dependencies; not hermetic, not OS immutable, Vite local preview only"
+}

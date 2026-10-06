@@ -1,0 +1,26 @@
+✖ builds a fixed verified artifact with no inherited or dotenv secrets and detects tampering (143.368125ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 194.380292
+
+✖ failing tests:
+
+test at tools/personal-preview/web-artifact.test.mjs:30:1
+✖ builds a fixed verified artifact with no inherited or dotenv secrets and detects tampering (143.368125ms)
+  Error: ARTIFACT_SYMLINK_REJECTED
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview/tools/personal-preview/web-artifact.mjs:13:37)
+      at privateDirectory (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview/tools/personal-preview/web-artifact.mjs:17:47)
+      at async artifactRoot (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview/tools/personal-preview/web-artifact.mjs:21:3)
+      at async prepareWebArtifact (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview/tools/personal-preview/web-artifact.mjs:71:73)
+      at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview/tools/personal-preview/web-artifact.test.mjs:34:22
+      at async fixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview/tools/personal-preview/web-artifact.test.mjs:27:9)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview/tools/personal-preview/web-artifact.test.mjs:31:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    code: 'ARTIFACT_SYMLINK_REJECTED'
+  }

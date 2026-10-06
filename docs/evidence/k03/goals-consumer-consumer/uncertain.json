@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-06T06:26:48.493Z",
+  "outcome": "passed",
+  "goalId": "295392d2-906d-4f4a-aa3f-2b724db31510",
+  "authorizationStatuses": [
+    200,
+    409
+  ],
+  "executionId": "ad4e9bb2-0961-4954-a1c0-64990938d4e7",
+  "afterRestart": {
+    "id": "95e2d215-2d4b-46d2-b546-a13f0163e1d7",
+    "title": "A",
+    "harness": "fixture",
+    "status": "uncertain",
+    "verificationStatus": "pending",
+    "createdAt": "2026-10-06T06:26:44.638Z",
+    "updatedAt": "2026-10-06T06:26:48.389Z",
+    "prompt": "{\"goal\":{\"originalGoal\":\"Deliver a verified diamond\",\"constraints\":\"No models or external writes\",\"acceptance\":\"Every accepted result uses current inputs\"},\"input\":{\"goal\":\"Exactly one authorization\",\"acceptance\":\"Nonempty fixture artifact\",\"constraints\":\"Deterministic execution only\",\"verification\":{\"kind\":\"nonempty\"}},\"dependencies\":[]}",
+    "entries": [],
+    "watermark": 0,
+    "hasMore": false,
+    "pendingDecision": null,
+    "attempt": {
+      "id": "5321810e-1e52-4502-b409-0fe22c6667ec",
+      "runnerId": "859252e5-c211-432c-8308-22453b27c141",
+      "ownerVersion": 1,
+      "leaseExpiresAt": "2026-10-06T06:26:47.967Z"
+    },
+    "usage": {
+      "costUsd": null,
+      "costKind": "unknown",
+      "incomplete": true,
+      "inputTokens": null,
+      "outputTokens": null
+    }
+  },
+  "rejectedNewAuthorization": {
+    "status": 409,
+    "body": {
+      "error": {
+        "code": "execution_unsettled",
+        "message": "The previous execution is active or uncertain; reconcile it before authorizing another."
+      }
+    }
+  },
+  "modelCalls": 0
+}

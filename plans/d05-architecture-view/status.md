@@ -2,8 +2,11 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 03:29 UTC / 2026-10-06 03:29 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:38 UTC / main80ba95ad70cdf724251be4d88130b6bac56d3606 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
+| 所属大task | FLOW-001（[大task定义](../flow-001-architecture/plan.md)） |
+| co-lead | Execution Lead |
+| 本片段交付阶段 | delivered |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
@@ -15,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 架构页已上线：可展开模块职责、接口和源码依据 |
+| 当前产出 | 看板已纳入真实工程交付目标，终端客户端和执行工具接入进度可见。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -32,3 +35,17 @@
 初稿测试证据错误已纠正：初始Host负例1失败原样保留，final2/2才是通过依据。详见quality.md，不将早期错误声明当审批。
 
 部署观察：2026-10-06 03:30 UTC，原4320进程确认仓库/cwd后正常停止，新session56845。原本待部署的叙述已更新；此后普通status刷新不需重启服务。
+
+2026-10-06 07:16 UTC：唯一登记新增 WPF-CHAT06S01，84源与ID唯一/三件套路径已核；此为metadata登记，架构仍固定115b，未改图或重跑产品。07:05原83源实际部署receipt保留。
+
+2026-10-06 07:25 UTC：CHAT08与CHAT06P01真实三件套已建立并登记，86源唯一；CHAT06P01初次人读信号/时间格式问题已交原ownermetadata修正，不由renderer猜测，不阻止登记。
+
+## 2026-10-06 09:08 登记维护
+
+本批111个唯一来源，新增六个WPF-MATURE大task和R06、知识接线、补充指令、视觉外壳四个子task。真实三件套存在、状态解析与人读字段通过，证据 [mature-registry-validation.json](../../docs/evidence/d05/mature-registry-validation.json)。这是来源维护，不继承早期架构实现批准，不代表新增产品完成。上方cad1251审查保留历史；当前固定架构数据由唯一D06维护。
+
+规则已要求每子task所属大task/co-lead；实际status已有字段，但当前聚合器尚未把两者解析成页面关联。此真实展示缺口已交Web协调有界独立子片，不能把本次登记写成关系展示完成。注册发布不操作个人61227/61228或用户标签。
+
+实际部署：2026-10-06 09:09:25.827 UTC，原4320自有进程身份核对后正常换载，main1737cd6，111源；本批十项current=true/issues=[]，见 [mature-registry-live.json](../../docs/evidence/d05/mature-registry-live.json)。新R05B刚领取在下一正常登记批，未把领取状态当已登记。个人静态预览保持原b1c/v12。
+
+2026-10-06 09:36:30 UTC：确认自有4320进程身份后正常换载main80ba95；117来源，ENG-001/R05C/TUI01A唯一权威source均current、人读完整、parse errors[]与issues[]。见[实际部署回执](../../docs/evidence/d05/engineering-native-registry-live.json)。只登记与看板部署，不改固定架构图或个人61227/61228，也未刷新用户标签。

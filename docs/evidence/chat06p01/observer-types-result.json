@@ -1,0 +1,61 @@
+{
+  "kind": "types",
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+    "-p",
+    "experiments/assistant-stream-cost/runtime.tsconfig.json",
+    "--noEmit"
+  ],
+  "startedAt": "2026-10-06T07:33:02.256Z",
+  "completedAt": "2026-10-06T07:33:03.716Z",
+  "elapsedMs": 1453.848584,
+  "exitCode": 2,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "experiments/assistant-stream-cost/check.mjs",
+      "sha256": "3927ac3a1641cb291048d56619ff6f2bbf2aa2a342bfdf1f3502745ffa30a9e4"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/observer.test.ts",
+      "sha256": "b5763a70a0d7d4509a1857005ef581ea332ce98268be247d22d628aa83fa3824"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/observer.ts",
+      "sha256": "7c85032446dbba3b91939fdada57357da62d71fffdf9517384d93825d7e758c9"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/run.mjs",
+      "sha256": "6601decd8320144933401176b7e6c65a0ef8f5147b9b3b191e9ea238d69edd58"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/runtime.tsconfig.json",
+      "sha256": "67b7117d20dd36b6d878e146c8e153ab6f1c90fccbdbd79667b6fe5ff5ed583c"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/tsconfig.json",
+      "sha256": "14772fdfc9462db079110808939112a960bea8365bb4cfc4774af4a06e5cb0ab"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/vitest.config.mjs",
+      "sha256": "64b7f5fc39fc49222bfc629913ba72057e6c70acdda67cc787b1b09c8f663ce4"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/worker.ts",
+      "sha256": "828a466c1d2ed7c6ebebc4b2c37386f5bced448b25db9f7bce05c6968eec3710"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.test.ts",
+      "sha256": "9d6850907da7757fd4eb08752f2990303369a1ae40ee8d032307f48a3931239a"
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.ts",
+      "sha256": "f23f3919a7c7d7e11e4ba4a05bc527be91bed6dee1dc765b288828855ab97421"
+    }
+  ],
+  "log": "docs/evidence/chat06p01/observer-types.log",
+  "logSha256": "3f853273023bebaa3d0570158fb2a7eace74a42294c641190f0a1a102551250d",
+  "scope": "pure checks only; no PG/server/task/model workload"
+}

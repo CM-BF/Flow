@@ -1,0 +1,22 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-profile-admission
+
+ ✓ apps/server/src/active-steering/finalization.test.ts (13 tests) 2986ms
+   ✓ connects one SDK streaming-input query through the real runtime, durable outbox and PG with two results and one consumed command  338ms
+   ✓ enforces the result evidence bound at the HTTP ingress while identical replays do not consume the limit  493ms
+ ✓ apps/server/src/active-steering/steering.test.ts (16 tests) 4195ms
+   ✓ checks current ownership and availability before returning a saved receipt  480ms
+   ✓ first-upgrades an old schema with existing data and applies 024 exactly once  732ms
+ ✓ apps/runner/src/execution-profiles.test.ts (10 tests) 1667ms
+   ✓ publishes from the real startup entry before polling (accepted: true, steering: false)  520ms
+   ✓ publishes from the real startup entry before polling (accepted: false, steering: false)  362ms
+   ✓ publishes from the real startup entry before polling (accepted: true, steering: true)  410ms
+   ✓ publishes from the real startup entry before polling (accepted: false, steering: true)  367ms
+ ✓ apps/server/src/execution-profiles/steering-admission.test.ts (6 tests) 2111ms
+ ✓ apps/runner/src/configuration.test.ts (10 tests) 14ms
+
+ Test Files  5 passed (5)
+      Tests  55 passed (55)
+   Start at  01:05:24
+   Duration  12.99s (transform 388ms, setup 0ms, import 1.55s, tests 10.97s, environment 0ms)
+

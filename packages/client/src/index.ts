@@ -1,3 +1,7 @@
+import type { SteeringAdmission, SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage, SteeringMailbox, SteeringFinalizationInput, SteeringFinalizationResult, SteeringProposalLookup, SteeringProposalStatus } from '@flow/contracts';
+import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
+import type { AssistantStreamPage, AssistantStreamPatchPage, AssistantStreamBlock } from '@flow/contracts';
+import type { NativeActivityPage, NativeActivity } from '@flow/contracts';
 import type { GoalGraphRunAdmission, GoalGraphRunAccepted, GoalGraphRun, GoalGraphRunRevoked, GoalGraphAuditPage, GoalGraphReadCall, GoalGraphReadPage, GoalGraphDetailCall, GoalGraphDetailResult, GoalGraphCommandCall, GoalGraphCommandResult } from '@flow/contracts';
 import type { KnowledgeCreation, KnowledgePublication, KnowledgeAccepted, KnowledgeSourceList, KnowledgeVersionSnapshot, KnowledgeCitation, KnowledgeResolved, KnowledgeSearchResult } from '@flow/contracts';
 import type { RunnerMaintenanceView, RunnerMaintenanceHistory, RunnerMaintenanceCommand, RunnerMaintenanceResult } from '@flow/contracts';
@@ -13,7 +17,7 @@ import type { ReconciliationObservation, ReconciliationResolution, Reconciliatio
 import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
 import type { TaskIndexPage, TaskIndexQuery, WorkspacePage, WorkspaceQuery } from '@flow/contracts';
 
-import type { GoalCreation, CreatedGoal, GoalSnapshot, GoalCommand, GoalCommandResult, GoalDefinition, GoalExecutionPage } from '@flow/contracts';
+import type { GoalCreation, CreatedGoal, GoalSnapshot, GoalCommand, GoalCommandResult, GoalDefinition, GoalExecutionPage, GoalContextDetail, GoalNativeExecution, GoalNativeExecutionResult } from '@flow/contracts';
 
 import type { WorkspaceList, ProjectCreation, ProjectCommand, ProjectList, ProjectSnapshot, ProjectMutationResult } from '@flow/contracts';
 
@@ -24,15 +28,99 @@ export class FlowApiError extends Error {
   }
 }
 
-export interface ClientOptions { baseUrl: string; token: string }
+export interface ClientOptions {
+  baseUrl: string;
+  token: string;
+  /** Opt-in to the read protocol only; no promise that a runner/provider emits partial text. */
+  assistantStreamProtocol?: 'patch-v1';
+}
 
 export class FlowClient {
   private readonly baseUrl: string;
   private readonly token: string;
+  private readonly assistantStreamProtocol: 'patch-v1' | undefined;
 
   constructor(options: ClientOptions) {
     this.baseUrl = options.baseUrl.replace(/\/$/, '');
     this.token = options.token;
+    this.assistantStreamProtocol = options.assistantStreamProtocol;
+  }
+
+  assistantStream(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<AssistantStreamPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream${query.size ? `?${query}` : ''}`, { signal });
+  }
+  assistantStreamPatches(taskId: string, options: { attemptId: string; after?: number; limit?: number }, signal?: AbortSignal): Promise<AssistantStreamPatchPage> {
+    const query = new URLSearchParams({ attemptId: options.attemptId });
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/patches?${query}`, { signal });
+  }
+  assistantStreamBlock(taskId: string, blockId: string, signal?: AbortSignal): Promise<AssistantStreamBlock> {
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/${encodeURIComponent(blockId)}`, { signal });
+  }
+
+  fetchPluginPackage(pluginId: string, versionId: string, input: PackageFetchRequest, key: string, signal?: AbortSignal): Promise<PackageFetchAccepted> {
+    return this.request(`/api/plugins/${encodeURIComponent(pluginId)}/versions/${encodeURIComponent(versionId)}/fetch`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  packageFetch(id: string, signal?: AbortSignal): Promise<PackageFetchOperation> {
+    return this.request(`/api/package-fetches/${encodeURIComponent(id)}`, { signal });
+  }
+  pluginPackageFetches(pluginId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PackageFetchList> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/plugins/${encodeURIComponent(pluginId)}/package-fetches${query.size ? `?${query}` : ''}`, { signal });
+  }
+  packageFetchHistory(id: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<PackageFetchHistory> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/package-fetches/${encodeURIComponent(id)}/history${query.size ? `?${query}` : ''}`, { signal });
+  }
+  commandPackageFetch(id: string, input: PackageFetchCommand, key: string, signal?: AbortSignal): Promise<PackageFetchAccepted> {
+    return this.request(`/api/package-fetches/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+
+  acceptSteering(taskId: string, input: SteeringCommandInput, key: string, signal?: AbortSignal): Promise<SteeringCommandResult> {
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  steering(taskId: string, options: { attemptId?: string; after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<SteeringState> {
+    const query = new URLSearchParams();
+    for (const name of ['attemptId', 'after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering${query.size ? `?${query}` : ''}`, { signal });
+  }
+  steeringAdmission(taskId: string, options: { attemptId?: string } = {}, signal?: AbortSignal): Promise<SteeringAdmission> {
+    const query = new URLSearchParams();
+    if (options.attemptId !== undefined) query.set('attemptId', options.attemptId);
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering/admission${query.size ? `?${query}` : ''}`, { signal });
+  }
+  steeringText(taskId: string, commandId: string, signal?: AbortSignal): Promise<SteeringText> {
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering/${encodeURIComponent(commandId)}/text`, { signal });
+  }
+  steeringAudit(taskId: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<SteeringAuditPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering/audit${query.size ? `?${query}` : ''}`, { signal });
+  }
+  reportSteeringReceipt(input: SteeringReceiptInput, signal?: AbortSignal): Promise<SteeringCommandResult> {
+    return this.request('/api/runner/steering/receipts', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  steeringMailbox(input: Ownership, signal?: AbortSignal): Promise<SteeringMailbox> {
+    return this.request('/api/runner/steering/mailbox', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  finalizeSteering(input: SteeringFinalizationInput, signal?: AbortSignal): Promise<SteeringFinalizationResult> {
+    return this.request('/api/runner/steering/finalize', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+  steeringProposalStatus(input: SteeringProposalLookup, signal?: AbortSignal): Promise<SteeringProposalStatus> {
+    return this.request('/api/runner/steering/proposals/status', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+
+  nativeActivities(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<NativeActivityPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/native-activities${query.size ? `?${query}` : ''}`, { signal });
+  }
+  nativeActivity(id: string, signal?: AbortSignal): Promise<NativeActivity> {
+    return this.request(`/api/native-activities/${encodeURIComponent(id)}`, { signal });
   }
 
   runnerMaintenance(runnerId: string, signal?: AbortSignal): Promise<RunnerMaintenanceView> {
@@ -118,8 +206,14 @@ export class FlowClient {
   commandGoal(id: string, input: GoalCommand, key: string, signal?: AbortSignal): Promise<GoalCommandResult> {
     return this.request(`/api/goals/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
+  executeGoalNative(id: string, input: GoalNativeExecution, key: string, signal?: AbortSignal): Promise<GoalNativeExecutionResult> {
+    return this.request(`/api/goals/${encodeURIComponent(id)}/native-executions`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
   readGoalInput(id: string, nodeId: string, version?: number, signal?: AbortSignal): Promise<GoalDefinition> {
     return this.request(`/api/goals/${encodeURIComponent(id)}/inputs/${encodeURIComponent(nodeId)}${version === undefined ? '' : `?version=${version}`}`, { signal });
+  }
+  goalContext(id: string, nodeId: string, version: number, signal?: AbortSignal): Promise<GoalContextDetail> {
+    return this.request(`/api/goals/${encodeURIComponent(id)}/nodes/${encodeURIComponent(nodeId)}/inputs/${version}/context`, { signal });
   }
   goalExecutions(id: string, options: { nodeId: string; after?: string; limit?: number }, signal?: AbortSignal): Promise<GoalExecutionPage> {
     const query = new URLSearchParams({ nodeId: options.nodeId });
@@ -196,10 +290,12 @@ export class FlowClient {
     return this.request('/api/runner/goal-tools/command', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
-  executionProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<ExecutionProfilePage> {
+  executionProfiles(options: { after?: string; limit?: number; profileProtocol?: 'steering-v1' } = {}, signal?: AbortSignal): Promise<ExecutionProfilePage> {
     const query = new URLSearchParams();
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
-    return this.request(`/api/execution-profiles${query.size ? `?${query}` : ''}`, { signal });
+    return this.request(`/api/execution-profiles${query.size ? `?${query}` : ''}`, { signal,
+      ...(options.profileProtocol === 'steering-v1' ? { headers: { 'X-Flow-Execution-Profile': 'steering-v1' } } : {}),
+    });
   }
   publishExecutionProfile(input: ExecutionProfilePublication, signal?: AbortSignal): Promise<ExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
@@ -242,7 +338,9 @@ export class FlowClient {
     return this.request(`/api/conversations${query.size ? `?${query}` : ''}`, { signal });
   }
   conversation(id: string, signal?: AbortSignal): Promise<ConversationSnapshot> {
-    return this.request(`/api/conversations/${encodeURIComponent(id)}`, { signal });
+    return this.request(`/api/conversations/${encodeURIComponent(id)}`, {
+      signal, ...(this.assistantStreamProtocol === 'patch-v1' ? { headers: { 'X-Flow-Assistant-Stream': 'patch-v1' } } : {}),
+    });
   }
   conversationTurns(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationTurnPage> {
     const query = new URLSearchParams();

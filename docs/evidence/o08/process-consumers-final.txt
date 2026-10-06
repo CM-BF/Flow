@@ -1,0 +1,14 @@
+✔ default preflight reports exact real SDK tool names and zero query/authentication calls (59.598292ms)
+✔ native entry without new authorization refuses before creating an output or private resources (45.392208ms)
+✔ stops its detached group after the leader exits while a grandchild ignores TERM (3194.752375ms)
+ℹ {"node":"v24.20.0","leaderPid":9589,"leaderExit":0,"grandchildPid":9629,"groupPresentAfterStop":false,"elapsedMs":3079.049084,"report":{"workerForcedKill":true,"workerProcessGroup":{"pgid":9589,"state":"stopped"}}}
+✔ an already absent group is confirmed without forced killing (31.725417ms)
+✔ an unobservable group remains unknown and rejects instead of authorizing temporary cleanup (0.803459ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3637.921125

@@ -1,0 +1,12 @@
+{
+  "kind": "tool-transcript-transcription",
+  "provenance": "The original exec_command shell also appended the README evidence before the final check; only the actual check command is identified here. The tool returned no stdout/stderr and exit 0. This is the visible tool transcript, not a process log synthesized later.",
+  "checkCommand": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec tsc --noEmit && git diff --check",
+  "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy",
+  "sessionId": 9081,
+  "chunks": [
+    { "tool": "exec_command", "chunkId": "f1be1e", "exitCode": null, "output": "" },
+    { "tool": "write_stdin", "chunkId": "67c412", "exitCode": 0, "output": "" }
+  ],
+  "result": { "shellExitCode": 0, "typecheckExitCode": 0, "diffCheckExitCode": 0, "selectedTests": null, "inference": "Both commands were connected with && and the overall tool exit code was 0." }
+}

@@ -30,7 +30,7 @@ export async function fetchPackageArtifact(options: PackageArtifactOptions, inpu
     const staged = await source.stream(url.href, request, context,
       stream => stageStream(working!, stream, request.integrity, limits.maxBytes, stopped));
     stopped.throwIfAborted();
-    const receipt = packageArtifactSchema.parse({ ...request, artifactId: randomUUID(), format: 'npm-tarball',
+    const receipt = packageArtifactSchema.parse({ ...request, artifactId: options.artifactId ?? randomUUID(), format: 'npm-tarball',
       bytes: staged.bytes, sha256: staged.sha256, verifiedAt: new Date().toISOString(),
       source: { registry: registry.href, tarball: url.href } });
     try { await publishArtifact(options.root, staged, receipt, stopped); }

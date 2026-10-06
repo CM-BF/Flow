@@ -1,0 +1,15 @@
+PASS official Thread shows an incremental draft, typed final settles once while task remains running
+PASS new conversation Enter uses CREATE without opt-in and GET with patch-v1, first acceptance preserves focus
+PASS unavailable settlement retains draft with truthful interrupted and truncated notices
+locator.click: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('li').filter({ hasText: 'flow.assistant-stream' }).getByRole('button', { name: 'Disable', exact: true })[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:34:305)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:16:56)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:33:2) {
+  log: [
+    "  - waiting for locator('li').filter({ hasText: 'flow.assistant-stream' }).getByRole('button', { name: 'Disable', exact: true })"
+  ],
+  name: 'TimeoutError'
+}

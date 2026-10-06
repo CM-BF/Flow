@@ -1,0 +1,24 @@
+{
+  "observedAt": "2026-10-06T07:43:24.912237+00:00",
+  "ledgerObservedAt": "2026-10-06T07:42:59.708Z",
+  "git": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-knowledge-selection",
+    "branch": "codex/web-knowledge-selection",
+    "head": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae",
+    "dirty": ""
+  },
+  "scope": [
+    "apps/web/src/conversation-context/selection.ts",
+    "apps/web/src/conversation-context/controller.ts",
+    "apps/web/src/conversation-context/ContextPicker.tsx",
+    "apps/web/src/conversation-context/context-picker.css",
+    "apps/web/test/conversation-context.test.ts",
+    "apps/web/test/conversation-context.fixture.tsx",
+    "apps/web/test/conversation-context.browser.ts",
+    "plans/wpf-context01-knowledge-selection",
+    "docs/evidence/wpf-context01"
+  ],
+  "conflicts": [],
+  "authorization": "Root technical approval for existing U11/REQ42 independent module; no App/Thread/conversations/queue/shared changes; original PERF scope remains frozen pending main.",
+  "method": "Fresh D04 read plus independent Git branch/fullHEAD/clean before atomic take; no tests/API/model/service operations."
+}

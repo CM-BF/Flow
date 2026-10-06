@@ -1,0 +1,106 @@
+{
+  "observedAt": "2026-10-06T08:34:15.351Z",
+  "sourceCommit": "c71b70bf92c26cd80e11c281e4f05f504bd0119e",
+  "sourceFiles": {
+    "apps/web/src/conversations/ConversationThread.tsx": "c25c512abc122a6a257262c6bf91ff6506b7c1021e092eefc9dc61388a733da1",
+    "apps/web/src/conversations/conversations.css": "2e91126603ffdd214ea0cff925818f416deef64fdd8e870e25a10b989bf897d3",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "1a34e83b8236697e61a6cfd1e096bae389e7f08470d452e51cd93fc52390a704",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c",
+    "apps/web/src/execution-profiles/execution-profiles.css": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+    "apps/web/test/conversation-readability.browser.ts": "c5482eeee7d4e4da39e3cdb508d815b4cffa13c434f24998e93b08b55153bc1f",
+    "apps/web/test/conversation-readability.fixture.ts": "7ebd91ad495f23962a532fda85c0b7d599f7c0efbda197731ca6000b7f7c3333"
+  },
+  "fixture": "Public HTTP fixture; no model/DB. Not real-center acceptance.",
+  "checks": [
+    "same completed conversation, loaded empty queue, light theme rects at 1280x720 and 390x844",
+    "locked settings modal keeps draft, readable requested/effective details, keyboard loop and both return-focus paths"
+  ],
+  "measurements": [
+    {
+      "width": 1280,
+      "height": 720,
+      "viewport": {
+        "top": 80,
+        "bottom": 720,
+        "height": 640,
+        "width": 996
+      },
+      "footer": {
+        "top": 541.203125,
+        "bottom": 720,
+        "height": 178.796875,
+        "width": 588
+      },
+      "profile": {
+        "top": 541.203125,
+        "bottom": 569.203125,
+        "height": 28,
+        "width": 213.328125
+      },
+      "queue": {
+        "top": 344.5,
+        "bottom": 374.5,
+        "height": 30,
+        "width": 588
+      },
+      "input": {
+        "top": 592.203125,
+        "bottom": 627.203125,
+        "height": 35,
+        "width": 570
+      },
+      "protocolFooter": {
+        "top": 681.703125,
+        "bottom": 699,
+        "height": 17.296875,
+        "width": 588
+      },
+      "bodyAboveComposer": 461.203125,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "viewport": {
+        "top": 80,
+        "bottom": 844,
+        "height": 764,
+        "width": 342
+      },
+      "footer": {
+        "top": 651.5625,
+        "bottom": 844,
+        "height": 192.4375,
+        "width": 314
+      },
+      "profile": {
+        "top": 651.5625,
+        "bottom": 679.5625,
+        "height": 28,
+        "width": 213.328125
+      },
+      "queue": {
+        "top": 344.5,
+        "bottom": 374.5,
+        "height": 30,
+        "width": 314
+      },
+      "input": {
+        "top": 723.203125,
+        "bottom": 758.203125,
+        "height": 35,
+        "width": 296
+      },
+      "protocolFooter": {
+        "top": 812.703125,
+        "bottom": 830,
+        "height": 17.296875,
+        "width": 314
+      },
+      "bodyAboveComposer": 571.5625,
+      "horizontalOverflow": false
+    }
+  ],
+  "errors": [],
+  "failure": "Error: expect(locator).toBeFocused() failed\n\nLocator: getByRole('tab', { name: 'Task output', exact: true })\nExpected: focused\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toBeFocused\" getByRole('tab', { name: 'Task output', exact: true }) with timeout 5000ms\n  - waiting for getByRole('tab', { name: 'Task output', exact: true })\n\n    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)\n    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)\n    at Object.toBeFocused (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)\n    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:80:30)\n    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:45:67)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:73:5)"
+}

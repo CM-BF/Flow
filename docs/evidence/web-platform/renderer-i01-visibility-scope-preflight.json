@@ -1,0 +1,74 @@
+{
+  "observedAt": "2026-10-06T06:20:17.407Z",
+  "state": "available",
+  "kind": "read-only proposal preflight; no amend/take/new worktree",
+  "proposed": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugin-integration/react.tsx",
+    "apps/web/src/plugin-integration/data-renderers.ts",
+    "apps/web/test/data-renderer-integration.test.ts",
+    "apps/web/test/data-renderer-integration.browser.ts",
+    "plans/wpf-renderer-i01-integration",
+    "docs/evidence/wpf-renderer-i01"
+  ],
+  "intersections": [
+    {
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/conversations/ConversationList.tsx",
+          "apps/web/src/conversations/conversations.css",
+          "apps/web/src/conversations/messages.ts",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/test/conversation.browser.ts",
+          "apps/web/test/conversation.fixture.ts",
+          "docs/evidence/wpf-chat01",
+          "plans/wpf-chat01-conversations"
+        ],
+        "state": "active",
+        "branch": "codex/web-conversations",
+        "origin": "new",
+        "taskId": "WPF-CHAT01",
+        "worker": "workspace_panels_owner",
+        "claimId": "08259c1d-3711-4f5f-bf21-ad355ffa4cf3",
+        "version": 5,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations",
+        "createdAt": "2026-10-06T03:35:00.744Z",
+        "updatedAt": "2026-10-06T05:19:27.452Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      "pairs": [
+        {
+          "proposed": "apps/web/src/plugin-integration/session.ts",
+          "claimed": "apps/web/src/plugin-integration/session.ts"
+        }
+      ]
+    }
+  ],
+  "managerClaim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/web-platform",
+      "plans/web-platform"
+    ],
+    "state": "active",
+    "branch": "codex/web-platform-management",
+    "origin": "migration",
+    "taskId": "WPF-001",
+    "worker": "external_web_d01_owner",
+    "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+    "createdAt": "2026-10-06T02:48:43.295Z",
+    "updatedAt": "2026-10-06T02:49:44.635Z",
+    "observedAt": "2026-10-06T02:48:42.000Z",
+    "needsVerification": false
+  }
+}

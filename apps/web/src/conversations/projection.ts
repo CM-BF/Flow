@@ -9,6 +9,8 @@ import {
   type Detail,
 } from "@flow/contracts";
 import { ConversationOutbox, type OutboxEntry } from "./outbox";
+import { assertContextReceiptMatches } from "../conversation-context/receipts";
+import { freezeContextSelection, type FrozenCitation } from "../conversation-context/selection";
 import { assertCreationReceiptMatches } from "../execution-profiles/selection";
 import { queuePort } from "./queue/commands";
 import { ConversationQueueProjection } from "./queue/projection";
@@ -64,12 +66,14 @@ function assertTurn(value: ConversationTurn, conversationId: string) {
     || (reply.source.kind === "assistant-final" ? !reply.source.contentDigest || reply.source.messageId !== reply.messageId : reply.source.kind !== "adapter-final-artifact" || !reply.source.artifactVersion)))
     throw Error("The assistant reply source does not match this turn.");
 }
-function assertCapabilities(snapshot: Pick<ConversationSnapshot, "capabilities">) {
+function readCapabilities(snapshot: Pick<ConversationSnapshot, "capabilities">) {
   const value = snapshot.capabilities;
   if (!value || value.followUp !== true || typeof value.queue !== "boolean"
     || (value.knowledgeContext !== undefined && typeof value.knowledgeContext !== "boolean")
-    || [value.steer, value.liveAssistantText, value.perTurnModel, value.perTurnThinking, value.perTurnTools].some(value => value !== false))
+    || (value.liveAssistantText !== undefined && typeof value.liveAssistantText !== "boolean")
+    || [value.steer, value.perTurnModel, value.perTurnThinking, value.perTurnTools].some(value => value !== false))
     throw Error("This connection's conversation capabilities are not supported by this Web version.");
+  return { ...value, liveAssistantText: value.liveAssistantText ?? false };
 }
 
 /** Conversation facts remain at the center; polling and receipt lifetimes are independent. */
@@ -101,6 +105,7 @@ export class ConversationProjection {
   private update(patch: Partial<ConversationState>) {
     if (this.lifetime.signal.aborted) return;
     this.state = { ...this.state, ...patch };
+    this.queue.configureKnowledge(this.state.snapshot?.conversation.projectId ?? null, this.state.snapshot?.capabilities.knowledgeContext === true);
     this.queue.configure(this.id, this.state.snapshot?.capabilities.queue === true);
     this.listeners.forEach(listener => listener());
   }
@@ -150,13 +155,13 @@ export class ConversationProjection {
           pageAfter !== null ? this.client.conversationTurns(id, { after: pageAfter, limit: 20 }, signal) : Promise.resolve(null),
         ]);
         if (signal.aborted || this.id !== id) return;
-        assertSummary(snapshot.conversation, id); assertCapabilities(snapshot);
+        assertSummary(snapshot.conversation, id); const capabilities = readCapabilities(snapshot);
         this.validateCreation(snapshot.conversation);
         if (snapshot.lastTurn) assertTurn(snapshot.lastTurn, id);
         if (page) { assertSummary(page.conversation, id); this.validateCreation(page.conversation); assertCreationReceiptMatches(creationFields(snapshot.conversation), page.conversation); page.turns.forEach(turn => assertTurn(turn, id)); }
         this.creation ??= conversationCreationSchema.parse(creationFields(snapshot.conversation));
         const turns = this.mergeTurns([...(page?.turns ?? []), ...(snapshot.lastTurn ? [snapshot.lastTurn] : [])], sequence);
-        this.update({ snapshot: this.reconcileSnapshot(snapshot, turns, sequence), turns, nextCursor: this.historyCursor(turns, page && initial ? page.nextCursor : this.state.nextCursor), loading: false, error: null, connection: "live" });
+        this.update({ snapshot: this.reconcileSnapshot({ ...snapshot, capabilities }, turns, sequence), turns, nextCursor: this.historyCursor(turns, page && initial ? page.nextCursor : this.state.nextCursor), loading: false, error: null, connection: "live" });
       } catch (error) {
         if (this.lifetime.signal.aborted || observation.aborted) return;
         this.update({ loading: false, error: errorMessage(error), connection: "reconnecting" });
@@ -227,11 +232,28 @@ export class ConversationProjection {
     return null;
   }
 
-  async send(text: string, creation?: ConversationCreation): Promise<string | undefined> {
+  async prepare(creation: ConversationCreation): Promise<string | undefined> {
     const reason = this.sendDisabledReason();
     if (reason) throw Error(reason);
+    if (this.id) throw Error("This conversation already has a fixed project and execution configuration.");
+    return this.dispatch(this.outbox.beginCreation(creation));
+  }
+
+  validateKnowledge(knowledge?: readonly FrozenCitation[]) {
+    if (!knowledge?.length) return;
+    const snapshot = this.state.snapshot;
+    if (!snapshot?.conversation.projectId || snapshot.capabilities.knowledgeContext !== true)
+      throw Error("Prepare a supported project conversation before sending knowledge.");
+    freezeContextSelection(knowledge, snapshot.conversation.projectId);
+  }
+
+  async send(text: string, creation?: ConversationCreation, knowledge?: readonly FrozenCitation[]): Promise<string | undefined> {
+    const reason = this.sendDisabledReason();
+    if (reason) throw Error(reason);
+    this.validateKnowledge(knowledge);
     const entry = this.outbox.begin({
       conversationId: this.id, expectedRevision: this.state.snapshot?.conversation.revision ?? 0, text,
+      ...(knowledge === undefined ? {} : { knowledge }),
       ...(!this.id ? { creation: creation ?? { title: text.trim().split("\n")[0]!.slice(0, 180), harness: "claude" as const,
         requested: { model: "runner-default", thinking: "disabled" as const, tools: "configured-readonly" as const } } } : {}),
     });
@@ -249,13 +271,18 @@ export class ConversationProjection {
       if (!id) {
         const created = await this.client.createConversation(entry.creation!, entry.creationKey, signal);
         if (this.lifetime.signal.aborted) return;
-        assertSummary(created.conversation); assertCapabilities(created);
+        assertSummary(created.conversation); const capabilities = readCapabilities(created);
         if (typeof created.replayed !== "boolean") throw Error("The creation receipt is not confirmed.");
         assertCreationReceiptMatches(entry.creation!, created.conversation);
         this.creation = entry.creation!;
         id = created.conversation.id;
         this.id = id; this.outbox.bindConversation(entry.id, id);
-        this.update({ snapshot: { conversation: created.conversation, capabilities: created.capabilities, nativeSession: null, lastTurn: null } });
+        this.update({ snapshot: { conversation: created.conversation, capabilities, nativeSession: null, lastTurn: null } });
+      }
+      if (entry.kind === "creation") {
+        this.outbox.accept(entry.id);
+        this.update({ loading: false, error: null }); this.schedule();
+        return id;
       }
       const accepted = await this.client.submitConversationTurn(id, entry.request, entry.turnKey, signal);
       if (this.lifetime.signal.aborted) return;
@@ -264,6 +291,7 @@ export class ConversationProjection {
       if (typeof accepted.replayed !== "boolean" || accepted.conversation.revision < entry.request.expectedRevision + 1
         || accepted.turn.number !== entry.request.expectedRevision + 1 || accepted.turn.user.text !== entry.request.text)
         throw Error("The turn receipt does not match the frozen message. Retry with its original request identity.");
+      assertContextReceiptMatches(entry.request.knowledge, accepted.turn.context);
       const current = this.state.snapshot!;
       const known = this.state.turns.find(turn => turn.number === accepted.turn.number);
       if (known && (known.id !== accepted.turn.id || known.task.id !== accepted.turn.task.id))

@@ -125,6 +125,15 @@ function definition(
 }
 
 describe("trusted PluginHost lifecycle and authority", () => {
+  it("allows the declared composer context panel only in a composer and rechecks knowledge authority", async () => {
+    const s = setup(); const declaration = manifest({ capabilities: ["knowledge.read"], activationEvents: ["view:chat.composer.context"], commands: [], contributions: [{ kind: "panel", id: "test.plugin.knowledge-panel", slot: "chat.composer.context", title: "Knowledge", capability: "knowledge.read" }] });
+    s.host.register({ manifest: declaration, load: async () => ({ activate(context) { context.contribute("test.plugin.knowledge-panel", () => null); } }) });
+    await s.host.activate(declaration.id);
+    expect(s.host.checkView("test.plugin.knowledge-panel", { kind: "composer", viewId: "draft", isDraft: true }).ok).toBe(true);
+    expect(s.host.checkView("test.plugin.knowledge-panel", { kind: "task", taskId: "A" }).ok).toBe(false);
+    s.deny(); expect(s.host.checkView("test.plugin.knowledge-panel", { kind: "composer", viewId: "draft", isDraft: true }).ok).toBe(false);
+    await s.host.dispose();
+  });
   it("validates JSON declarations atomically without running a loader", () => {
     const { host } = setup();
     let loads = 0;
@@ -610,4 +619,22 @@ it("checks view resource and current grants synchronously without loading", asyn
   expect(host.checkView("test.plugin.panel", resource).ok).toBe(false);
   await host.dispose();
   expect(host.checkView("test.plugin.panel", resource).ok).toBe(false);
+});
+
+it("accepts the typed message footer and rejects non-message invocations", () => {
+  expect(() => validateSlot("chat.message.footer", { kind: "message", taskId: "A", messageId: "m", role: "user" })).not.toThrow();
+  expect(() => validateSlot("chat.message.footer", { kind: "task", taskId: "A" })).toThrow();
+});
+
+
+describe("independent assistant stream capability", () => {
+  it("accepts the explicit stream read capability but active state does not bypass resource permission", async () => {
+    const s=setup();
+    s.host.register({manifest:manifest({id:"test.stream",capabilities:["task.assistant-stream.read"],commands:[],activationEvents:["view:chat.message.footer"],
+      contributions:[{kind:"panel",id:"test.stream.panel",slot:"chat.message.footer",title:"Stream",capability:"task.assistant-stream.read"}]}),load:async()=>({activate(context){context.contribute("test.stream.panel",()=>null);}})});
+    await s.host.activate("test.stream");
+    const context:ResourceContext={kind:"message",taskId:"A",messageId:"actual-user",role:"user"};
+    expect(s.host.checkView("test.stream.panel",context).ok).toBe(true);s.deny();expect(s.host.checkView("test.stream.panel",context).ok).toBe(false);
+    expect(s.host.checkView("test.stream.panel",{kind:"global"}).ok).toBe(false);await s.host.dispose();
+  });
 });

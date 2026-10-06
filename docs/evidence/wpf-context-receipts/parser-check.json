@@ -1,0 +1,46 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "知识引用回执已通过审查，排队接收会核对固定引用",
+    "next": "交付已验证接口，准备后续聊天界面接线",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": 4,
+  "implementation": {
+    "target": "5e8213a564bd76e58feddb0c6470faa74bae1d66",
+    "scopes": [
+      "apps/web/src/conversation-context/receipts.ts",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/test/conversation-context-receipts.test.ts",
+      "apps/web/test/conversation-outbox.test.ts",
+      "apps/web/test/conversation-queue.test.ts"
+    ],
+    "errors": []
+  },
+  "checks": {
+    "state": "passed",
+    "target": "5e8213a564bd76e58feddb0c6470faa74bae1d66",
+    "record": "PASSED 5e8213a564bd76e58feddb0c6470faa74bae1d66；142 局部/直接依赖，Web typecheck0；无 browser/真实中心"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "5e8213a564bd76e58feddb0c6470faa74bae1d66"
+  }
+}

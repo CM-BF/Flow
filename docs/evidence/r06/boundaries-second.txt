@@ -1,0 +1,74 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-transport
+
+ ❯ apps/runner/src/codex.test.ts (26 tests | 2 failed) 1459ms
+   ✓ initializes the owned peer before exposing readiness, without returning private codexHome 48ms
+   ✓ correlates three responses out of order and ignores duplicate settled responses 48ms
+   ✓ reassembles Chinese and emoji split at every UTF8 byte 87ms
+   ✓ remote error has a distinct outcome but never leaks raw diagnostic content 54ms
+   ✓ request abort before enqueue is not sent, and abort after receipt is unknown without closing the connection 45ms
+   ✓ timeout is unknown after write and a late response cannot satisfy a new request 142ms
+   ✓ server requests require explicit delivery before response and preserve number/string identity 49ms
+   ✓ invalid-json is a terminal protocol failure, never success 51ms
+   ✓ invalid-utf8 is a terminal protocol failure, never success 44ms
+   ✓ truncated is a terminal protocol failure, never success 46ms
+   ✓ future-id is a terminal protocol failure, never success 47ms
+   ✓ wrong-id-type is a terminal protocol failure, never success 45ms
+   ✓ duplicate-server is a terminal protocol failure, never success 46ms
+   ✓ no-newline oversized stdout fails at the byte limit 45ms
+   ✓ bounded inbound backlog fails rather than dropping notifications 50ms
+   ✓ pending requests and duplicate consumers are explicitly bounded 53ms
+   ✓ exit rejects every pending request and reports actual local exit without asserting remote stop 42ms
+   ✓ close is bounded, idempotent and escalates only its own child that ignores TERM 83ms
+   ✓ stderr is drained but only a saturated byte count is retained 54ms
+   ✓ initialization timeout and malformed response never expose ready 84ms
+   × output backpressure keeps one active frame, permits queued cancellation, and respects byte budget 54ms
+   × explicit child environment excludes parent markers and rejects nonallowlisted keys before spawn 47ms
+   ✓ lifetime abort closes the child, and abort before create never spawns it 54ms
+   ✓ spawn failure is sanitized and terminates readiness without an orphaned handle 2ms
+   ✓ inbound byte and outstanding server request budgets are independent of frame count 89ms
+   ✓ outgoing UTF8 byte limit rejects before any request is sent 46ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/codex.test.ts > output backpressure keeps one active frame, permits queued cancellation, and respects byte budget
+AssertionError: expected 'DISCONNECTED' to be 'TIMEOUT' // Object.is equality
+
+Expected: "TIMEOUT"
+Received: "DISCONNECTED"
+
+ ❯ apps/runner/src/codex.test.ts:134:61
+    132|   abort.abort(); await secondCheck;
+    133|   expect(transport.snapshot().outboundFrames).toBe(1);
+    134|   await firstCheck; expect((await transport.closed).reason).toBe('TIME…
+       |                                                             ^
+    135|   console.log('R06 backpressure', JSON.stringify(transport.snapshot())…
+    136| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/runner/src/codex.test.ts > explicit child environment excludes parent markers and rejects nonallowlisted keys before spawn
+AssertionError: expected { keys: [ 'LANG', …(1) ], lang: 'C' } to deeply equal { keys: [ 'LANG' ], lang: 'C' }
+
+- Expected
++ Received
+
+  {
+    "keys": [
+      "LANG",
++     "__CF_USER_TEXT_ENCODING",
+    ],
+    "lang": "C",
+  }
+
+ ❯ apps/runner/src/codex.test.ts:141:58
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 24 passed (26)
+   Start at  02:09:59
+   Duration  1.70s (transform 92ms, setup 0ms, import 108ms, tests 1.46s, environment 0ms)
+

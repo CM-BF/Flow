@@ -1,18 +1,20 @@
-# WPF-001 独立审查
+# WPF-001 管理文档发布审查
 
-**状态：APPROVED** — 仅绑定下述管理文档target；未来实现及后续增补不自动继承。
+> 本文件的唯一持续维护权威是 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform`（branch `codex/web-platform-management`，owner d01_owner）。主线中的同路径是经独审、由Execution Lead同步的固定发布副本，不能据它推断当前进度；固定target、生成时间及同步规则见[发布说明](../../docs/evidence/web-platform/publication/README.md)。不得在main另建手填status。
 
-- Review target commit：`c075bb5c00ac2f27d54dd264982be30261a9dc51`。
-- Reviewer：root / gpt-6-astra，独立只读；结论于2026-10-06收到，owner在02:15 UTC转录。
-- Base：`d444608ab6c796c731e44e51a892868bf39bec2a`。
-- Worktree/branch：`/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` / `codex/web-platform-management`。
-- Scope：`plans/web-platform/**`、`docs/evidence/web-platform/**`；用户需求、管理边界、子计划、来源清单。不覆盖W01/panels实现或未来plugin行为。
-- Criteria：U00～U07原话/准确摘要不遗漏；REQ稳定ID；owner/独占范围/接口/依赖清楚；所有子计划三件套/TODO一致；D03单owner17源；X01父范围与Web子项区分；未知/未执行诚实记录。
-- 独立检查：root核验target树clean、14份变更全在授权范围；逐项核对U00～U07/34条与三子计划三件套、D03/X01边界；独立重跑本地链接与4plan TODO/status检查均0错误，git diff --check通过。作者同项自查通过。
-- 未执行：新W01实现review、plugin实现、性能测量、dashboard注册验证。
-- Findings/severity/blocking：独立审查无blocking finding，结论APPROVED。限制：仅需求/管理文档，不覆盖W01/panels实现、未来plugin或尚未发生的dashboard登记。
-- 作者回应：已吸收进行中原话/表格/D03边界修正；本次metadata单独提交。新PTY/fs具体请求属于target之后补充，未冒称已审查。
+**状态：APPROVED**
 
-```text
-只读审查WPF-001管理文档首commit。核验实际worktree/branch/base/head/dirty与diff范围；对照用户原话和父FLOW-001全矩阵，逐条核查REQ、owner、子计划验收、当前队列、能力/依赖及主线D03/X01边界。检查相对链接、TODO与status一致；不把运行中工作、未执行测试或尚未注册dashboard写成完成。给出完整target SHA、实际检查、severity/blocking与限制。修改由d01_owner执行；本次文档approval不得作为未来实现approval。
-```
+- Review target commit：`a5e500136438b197305339cbe0a5e10a196a4317`。
+- Reviewer：/root / gpt-6-astra ultra；2026-10-06 07:59 UTC 独立APPROVED，仅两目录管理文档固定发布，未继承历史审批。
+- Base：`de879b471b079a3943a9248bf29c93cc18aa631e`管理上一安全停点；产品读取基线为已接受main `6426b44cd32d10216141af13ecfa83b8879025fb`。
+- Scope：`plans/web-platform`与`docs/evidence/web-platform`；当前三件套、U00–U12/REQ01–45、现有后继与引用证据、发布语义。不覆盖产品实现或服务部署。
+- 作者检查：固定target作者检查：27TODO/parser0、32md384links的发布overlay相对断链0、U00–U12/REQ01–45保存、26改动全在两目录、diffcheck0；不重复产品测试、API或模型。
+- 主线尚未同步本次快照；只有Execution Lead可从明确的最终完整metadata HEAD受控同步两目录，不得整合管理分支的旧产品基线。
+
+历史c075审查原文见[原样归档](../../docs/evidence/web-platform/publication/historical-c075-review.txt)。它仅批准02:15时点的旧管理文档，不覆盖后来U11、发布副本或产品。
+
+## 本次独立审查记录
+
+root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0a5e10a196a4317、binding metadata 9c492f1cfd468f2d940af66e164ee65e2ea6ffed，APPROVED，无blocking。完整读U00–U12/REQ01–45、当前三件套/发布语义及变更；独立Git对象overlay核32md的287相对+97历史绝对链接，相对断链0；六archive与固定source逐字节相同；27 plan/status TODO对应、26本轮paths无越界、diffcheck0。限定管理两目录，不批准产品或新服务。
+
+审查后仅转录本结论与来源明确的as-of后观察，content target不滚动；详见[发布回执](../../docs/evidence/web-platform/publication/receipt.json)。CONTEXT模块批准不等于实际Send/Queue已接，90源观察不等于本管理重新采样。

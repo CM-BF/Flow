@@ -1,0 +1,29 @@
+✖ stops its detached group after the leader exits while a grandchild ignores TERM (135.414875ms)
+ℹ {"node":"v24.20.0","leaderPid":37348,"leaderExit":0,"grandchildPid":37350,"groupPresentAfterStop":true,"elapsedMs":0.0472920000000272,"report":{"workerForcedKill":false}}
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 538.35675
+
+✖ failing tests:
+
+test at experiments/native-graph-acceptance/process.test.mjs:22:1
+✖ stops its detached group after the leader exits while a grandchild ignores TERM (135.414875ms)
+  AssertionError [ERR_ASSERTION]: An exited leader must not hide a live descendant
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/native-graph-acceptance/experiments/native-graph-acceptance/process.test.mjs:34:12)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

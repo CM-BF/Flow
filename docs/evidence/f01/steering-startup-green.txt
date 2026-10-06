@@ -1,0 +1,14 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+stdout | apps/server/src/steering-production.test.ts
+STEERING_PRODUCTION_DATABASE_FACTS {"database":"flow_steering_mount_acd0f32b55d349a58686a0ba19d0efda","created":true,"before":[],"connections":[],"remaining":[]}
+
+ ✓ apps/server/src/steering-production.test.ts (3 tests | 2 skipped) 5463ms
+   ✓ passes only the explicit trusted startup configuration to steering intake  3930ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 2 skipped (3)
+   Start at  01:32:18
+   Duration  6.85s (transform 789ms, setup 0ms, import 1.30s, tests 5.46s, environment 0ms)
+

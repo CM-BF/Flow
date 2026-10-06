@@ -1,0 +1,309 @@
+{
+  "observedAt": "2026-10-06 07:49:36 UTC",
+  "reviewTarget": "d4e7445fca4fbc261cbf33101fca4d9407879315",
+  "productTarget": "f78a15c69f3f365a37c9f317249858d8e279503d",
+  "base": "42c1cc85cfbf9fa3ca3fdcbee57dc02394bff6d7",
+  "author": "runner_owner",
+  "model": "gpt-6-astra",
+  "claim": {
+    "id": "2f7b66e3-a18c-40df-a5f9-7d5977a4618e",
+    "version": 2
+  },
+  "source": [
+    {
+      "path": "apps/runner/src/active-steering/host.ts",
+      "bytes": 7143,
+      "sha256": "72f6d236f3b295e32f9d63365f7976017b0305faa254cb89ae1a06abeac66923",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/runner/src/active-steering/input.ts",
+      "bytes": 1460,
+      "sha256": "ef3adcdfc2ec84984fa9fb6fc0d84fbf80ca23f14ce2406919e5bf5919b48c02",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/runner/src/active-steering/proposal.ts",
+      "bytes": 3388,
+      "sha256": "45a8502e8d07c861210976de19ec90c6361f26d1a63994007a4fcaf10199da02",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/runner/src/active-steering/state.test.ts",
+      "bytes": 3270,
+      "sha256": "ece0bfbe99bc1e538ca097fabb0c37dda33a6a42654223ff22ee150fae0bbd5b",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/runner/src/active-steering/state.ts",
+      "bytes": 2511,
+      "sha256": "6b03718a65845f191744918ea4910fac7301da83667d0e95867a47dac5d92e08",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/index.ts",
+      "bytes": 3795,
+      "sha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/runner/src/claude.test.ts",
+      "bytes": 28030,
+      "sha256": "15ff8ce5bda76108a849f24d49858a96ee92fa15b4da1227afc24a14425bb113",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 19269,
+      "sha256": "3659f874a9ac06963cedb426068fdd481227e861abb9be19c22a68f4844a4439",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/runner/src/outbox.test.ts",
+      "bytes": 5323,
+      "sha256": "8edcf030c59342a43a2091b4bb1c3fe5b22bb6204741961c1d27f73480f8a38a",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/runner/src/runner.test.ts",
+      "bytes": 27340,
+      "sha256": "1052d12560ea69483b5b8617b2a62065a4d83104950a09bf5921a9d05915658f",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 8200,
+      "sha256": "38448a6d89890315047d3e82f192481eb78fc159c98ab44547d70925a6d65042",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/server/src/active-steering/commands.ts",
+      "bytes": 6569,
+      "sha256": "df97f328e2ba64fd19cd66d17922fd58f1ba11df6d4c98649349ccf1857d2983",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/server/src/active-steering/finalization.test.ts",
+      "bytes": 21979,
+      "sha256": "8871d2254ff4ef6076c2532aaf6fb1a100c0e9217b7b0e9bd888854f02a7eb6a",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/server/src/active-steering/finalization.ts",
+      "bytes": 7050,
+      "sha256": "69428378767444abab96d7d0646f9b2fa77943452e40545b370604babcb377d5",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/server/src/active-steering/index.ts",
+      "bytes": 3702,
+      "sha256": "747a19681c298ecc0d9a93dc966b58147855297c4ad8805952673d8d3a6dd17c",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/server/src/active-steering/results.ts",
+      "bytes": 3660,
+      "sha256": "080082ee48e9c7df31d47c5fb24491c1bfb15b4f28e7343e7e294821f91fd86e",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8276,
+      "sha256": "a54632c3c869f5f7c8d859d1dc3718c518883d9ebf56b429ae10718c47701fdf",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "bytes": 6405,
+      "sha256": "02b83e6a194e043cb8a0a5296ae9a7b6c41a88e7fb9e8cdc03a68724f974e395",
+      "fixedBlobMatchesWorking": true
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 6419,
+      "sha256": "6636f0dd920184a70dec7cfcf488aae2c4712e1c526c6694527a11ff27e3e5ac",
+      "fixedBlobMatchesWorking": true
+    }
+  ],
+  "readonlyChecks": [
+    {
+      "path": "apps/server/src/active-steering/steering.test.ts",
+      "bytes": 21848,
+      "sha256": "45faf008fe10a7f38eb67ab47414ef81381f236657e98c6f541d7c7207608835"
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/stream.test.ts",
+      "bytes": 9946,
+      "sha256": "366435364809e97ce68fd4a03ee27fc1b8bc8eba0dc972532b19a5fcb16e12c5"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/chat08/adapter-first.txt",
+      "bytes": 379,
+      "sha256": "d82ae01fd090a94353f41db29cd190d3368b65542b31011e3302c1b176f4be7b"
+    },
+    {
+      "path": "docs/evidence/chat08/checks-final.txt",
+      "bytes": 1226,
+      "sha256": "b0680fd81535d345aeaa1279c91ad3843817df8e23df49773a3ad5f2d6af6b95"
+    },
+    {
+      "path": "docs/evidence/chat08/checks-full-first.txt",
+      "bytes": 1084,
+      "sha256": "cf867a6f14bba5f8731dd87f6a903c5972e0ef02d6654c8046fd5bde29181858"
+    },
+    {
+      "path": "docs/evidence/chat08/cleanup-final.txt",
+      "bytes": 107,
+      "sha256": "15f53f1eed677e8590de35a66b46e0f5e5bcd57e7de0905424175845f9539a0e"
+    },
+    {
+      "path": "docs/evidence/chat08/cleanup.txt",
+      "bytes": 107,
+      "sha256": "f1af79c5ab012d90eccb9e3f56dcfa5af263e169f9e44b1f90fb3986b33255c8"
+    },
+    {
+      "path": "docs/evidence/chat08/factory-fixture-final.txt",
+      "bytes": 598,
+      "sha256": "815e1529e859939efee12c8f694e3e9fe71275130f24130b549ac9167b46ff87"
+    },
+    {
+      "path": "docs/evidence/chat08/finalization-red.txt",
+      "bytes": 1078,
+      "sha256": "1af9797357ed3caa21498f0c0f41c97b65dd32bcb21c03d565138ce308a2740f"
+    },
+    {
+      "path": "docs/evidence/chat08/first-green-attempt.txt",
+      "bytes": 647,
+      "sha256": "af5a6b271731e3a57d0077fe7e2393d68ad33d0f21a23247c248d71da0dc09a8"
+    },
+    {
+      "path": "docs/evidence/chat08/install.txt",
+      "bytes": 597,
+      "sha256": "84e0aff9bcc5d3eade86699c78b8936b2238e467f1642466843b4223fde488e3"
+    },
+    {
+      "path": "docs/evidence/chat08/proposal-fix-final.txt",
+      "bytes": 479,
+      "sha256": "2e286b2856bea042e9cc3e77f5e61d6e843fdf9ea03a79ee21a9d3f9e43c8d64"
+    },
+    {
+      "path": "docs/evidence/chat08/proposal-lookup-red.txt",
+      "bytes": 2568,
+      "sha256": "94bd7979165065a8d439768dd129511cb2b191c50e469aca37595566e3f25a76"
+    },
+    {
+      "path": "docs/evidence/chat08/typecheck-delivery.txt",
+      "bytes": 110,
+      "sha256": "8cee684e5af674643b9d00d8f6baa8d4ad883562f025d4672f9d1a088ada4bf0"
+    },
+    {
+      "path": "docs/evidence/chat08/typecheck-final.txt",
+      "bytes": 110,
+      "sha256": "8cee684e5af674643b9d00d8f6baa8d4ad883562f025d4672f9d1a088ada4bf0"
+    },
+    {
+      "path": "docs/evidence/chat08/typecheck-fixture.txt",
+      "bytes": 110,
+      "sha256": "8cee684e5af674643b9d00d8f6baa8d4ad883562f025d4672f9d1a088ada4bf0"
+    },
+    {
+      "path": "docs/evidence/chat08/typecheck-initial.txt",
+      "bytes": 317,
+      "sha256": "a64f18ec3fcc776b2449cb0cb405b290f8cd3f72aa9549a4f8b452bb28c0aebb"
+    },
+    {
+      "path": "docs/evidence/chat08/typecheck-second.txt",
+      "bytes": 328,
+      "sha256": "e7162d6b6a739635c2e0b825feb5904c14204644c796d4ddba025df255005529"
+    },
+    {
+      "path": "docs/evidence/chat08/typecheck-third.txt",
+      "bytes": 110,
+      "sha256": "8cee684e5af674643b9d00d8f6baa8d4ad883562f025d4672f9d1a088ada4bf0"
+    },
+    {
+      "path": "docs/evidence/chat08/vertical-initial.txt",
+      "bytes": 714,
+      "sha256": "2eb70d8ded74e2ae6132b273378897b0fc2c3917592d4c3a41f64e3edc89731e"
+    },
+    {
+      "path": "docs/evidence/chat08/claim-take.json",
+      "bytes": 980,
+      "sha256": "9f1d18e60207e3bfafbfbf4992c1eb4b1a5fd34512fab7896a3c48f369f2d20a"
+    },
+    {
+      "path": "docs/evidence/chat08/claim-amend-v2.json",
+      "bytes": 1020,
+      "sha256": "9ea633d9ffedd459e12ede1b94a43a91a9230d773d5b946d93f30439821edd17"
+    }
+  ],
+  "sharedClient": {
+    "upstreamCommit": "3d81141324041c2c67680edbb686996cefaf8b4b",
+    "localCommit": "005e042",
+    "source": [
+      {
+        "path": "packages/client/src/index.ts",
+        "bytes": 36850,
+        "sha256": "24e9b8db2c8b69cfab9289fbc6c0a8b532a206b078a2875ab61ef515173f6f51"
+      },
+      {
+        "path": "packages/client/src/steering-finalization.test.ts",
+        "bytes": 5773,
+        "sha256": "2e83cd0210c49d1631ba70a61d4187ac9c4fbbb5f4f34b68ae46dca91951d780"
+      }
+    ]
+  },
+  "sdk": {
+    "version": "0.3.290",
+    "files": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+        "bytes": 2546,
+        "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts",
+        "bytes": 530284,
+        "sha256": "193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/LICENSE.md",
+        "bytes": 147,
+        "sha256": "8ce94b9478bb9868f9641f818e06cd722fbe55d4c22e2d2ed11971b20146173a"
+      }
+    ]
+  },
+  "verification": {
+    "distinctPassing": 106,
+    "runs": [
+      {
+        "file": "checks-final.txt",
+        "passed": 105,
+        "seconds": 9.8
+      },
+      {
+        "file": "proposal-fix-final.txt",
+        "passed": 7,
+        "skipped": 37,
+        "newDistinct": 1
+      },
+      {
+        "file": "factory-fixture-final.txt",
+        "passed": 13,
+        "newDistinct": 0
+      }
+    ],
+    "typecheck": "typecheck-fixture.txt",
+    "typecheckExit": 0,
+    "providerQueries": 0,
+    "personalServiceOperations": 0
+  }
+}

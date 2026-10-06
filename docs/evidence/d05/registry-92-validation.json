@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-06T08:08:03.054Z",
+  "count": 92,
+  "unique": 92,
+  "selected": [
+    {
+      "id": "CHAT09",
+      "title": "补充指令执行配置核验",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-profile-admission",
+      "branch": "codex/steering-profile-admission",
+      "planDir": "plans/chat09-steering-admission",
+      "evidenceDir": "docs/evidence/chat09",
+      "parseErrors": [],
+      "humanComplete": true
+    },
+    {
+      "id": "CHAT06P02",
+      "title": "正文存储传输优化",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-prefix-hash",
+      "branch": "codex/assistant-stream-prefix-hash",
+      "planDir": "plans/chat06-prefix-hash",
+      "evidenceDir": "docs/evidence/chat06p02",
+      "parseErrors": [],
+      "humanComplete": true
+    },
+    {
+      "id": "D06",
+      "title": "架构固定快照更新",
+      "role": "工程协作",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-stream",
+      "branch": "codex/dashboard-architecture-stream",
+      "planDir": "plans/d06-architecture-refresh",
+      "evidenceDir": "docs/evidence/d06",
+      "parseErrors": [],
+      "humanComplete": true
+    }
+  ]
+}

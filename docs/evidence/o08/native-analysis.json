@@ -1,0 +1,61 @@
+{
+  "kind": "offline-reading-of-saved-result-not-a-rerun",
+  "approvalId": "flow-o08-native-20261006-071420",
+  "budget": "SEALED",
+  "originalProgramOutcome": "failed-or-unknown",
+  "originalExitCode": 1,
+  "suspectedFirstFailedAssertion": "assert.match(report.final.content, /未执行子任务/)",
+  "originalFinalContent": "计划已记录，但三个子任务都还没有执行。\n\n- 我先读取了底稿，它是空的，基线版本为 1。\n- 我提交了一次提案，包含三个节点，顺序为“起草发布说明”、“核对事实与格式”、“交付发布说明”。后一步依赖前一步，共两条依赖边。\n- 我用提案 ID `3e3050de-a1f3-41e4-aff7-94ed0de1ab89` 和对应的摘要应用了一次提案。中心返回的回执显示，项目版本从 1 变为 6。\n\n“纸鸢”0.1 版的发布说明还没有起草、核对或交付。应用提案只是把这份计划写入了图，没有执行任何子任务，也没有验证任何内容。",
+  "checks": {
+    "sdkQueryExactlyOne": true,
+    "queryClosed": true,
+    "taskSucceeded": true,
+    "verificationPassed": true,
+    "oneTaskNoChild": true,
+    "threeNodes": true,
+    "twoEdges": true,
+    "oneProposalOneApply": true,
+    "auditSameFence": true,
+    "typedFinalSameTaskAttempt": true,
+    "hostOnlyAllowedSdkGraph": true,
+    "sdkDenialsReportedZero": true,
+    "costAndTurnsWithinAssignedBudget": true,
+    "literalOracleMatches": false,
+    "allOwnedCleanupTrue": true
+  },
+  "semanticAcceptance": "Await independent Goal Owner review; literal assertion remains false",
+  "sdkEstimatedCostUsd": 0.031880200000000004,
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1209,
+      "outputTokens": 23,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001324,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 815,
+      "cacheReadInputTokens": 10771,
+      "cacheCreationInputTokens": 5059,
+      "webSearchRequests": 0,
+      "costUSD": 0.0305562,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "accountingBoundary": "One SDK query is not one underlying provider request; SDK estimates are not billing proof",
+  "elapsedWallMs": 16894,
+  "sourceDigest": "af062a6b456cc964cf6d39f3719a9fb672b94d3b449fbeca32fcb0117b38bbbb"
+}

@@ -1,0 +1,36 @@
+# O08 原生图规划验收准备
+
+创建/更新：2026-10-06；in-progress；父O01/U11，承接O07。唯一owner assignment_review / gpt-6-astra。准备与一次原生试验均已完成限定独立验收；原脚本字面判断失败保留，低优先验收器后继开放。
+
+有界设计：复用固定main a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8 的O07 profile/graph grant、现runRunner/Claude adapter与typed final。默认preflight只核配置/schema/SDK版本/权限guard；单独rehearsal在专用PG/tmp用注入query+真实SDK MCP/HTTP练习整条链，明确不是原生broker/NL。live显式flag必须按GO既有预算流程提供本次单次授权记录、源hash与一次attempt marker，marker在调用前落盘，失败不得自动重跑；本次已按该流程执行一次，预算现已SEALED，不再调用provider/认证/预热。
+
+合成目标：把短发布说明拆成起草→核对→交付3步，仅建立计划。新空project+goal，scope固定baseRevision1/allowedExistingNodes空/maxProposals1/maxApplications1/maxNewNodes3/maxNewEdges2。只graph_read/graph_command；host持runner credential，不给模型owner令牌；禁止工程文件、terminal、外部网络工具和child执行。记录requested/effective、实际工具FQ与extensions，结果核真实持久proposal/apply/graph/final，未知保持未知。
+
+本次GO授权预算最多1 SDK query、4turns、SDK估算$0.20、90s合作取消；已执行1query/4turns/SDK估算$0.0318802并封存。私有临时DB、动态端口、专属PID/目录；清理证据与执行证据分开；SDK费用上限不冒称最终账单硬上限。
+
+- [x] O08-01 claim/固定基线/技能与三件套。
+- [x] O08-02 默认零query预检、单次授权/marker与预算guard。
+- [x] O08-03 可运行隔离配置、复用生产runner/SDK桥接的0query真实MCP/HTTP/PG演练。
+- [x] O08-04 原始证据/清理/clean-code/固定交付与独立review。
+- [x] O08-05 GO单次预算下真实受限图调用与忠实正文，Root独立验收；原程序字面判断FAILED保留。
+- [ ] O08-06 低优先后继：改进自然语言验收器，分开结构事实断言与语义判定，不以固定正则替代语义验收；本轮不实现、不新增query。
+
+范围只有experiments/native-graph-acceptance、plans/o08-native-graph-acceptance、docs/evidence/o08；不改生产/lock/真实服务/真实凭据。普通技术选择沿已批准边界直接执行，后继原生调用须另获授权。
+
+06:49 UTC：固定6b864881a3acb4957ad8482a7bffc71619f2c8d8，8不同作者检查通过，真实native/NL仍未执行。GO提出未来同次已授权窗口可采CHAT05工具与CHAT06 partial/settlement事实，仅候选、不等组合、不扩大本准备；无UI观察不称live UI。
+
+Root审查P2：原stopWorker以leader退出判断进程组停止有误；原claim内最小修复以PGID不存在确认，3s TERM等待后KILL+1s确认，未知保留tmp且失败。新增Node24真实leader→middle→grandchild（孙进程忽略TERM）红绿回归。
+
+已知native阻塞：BASE中的[F01 turn-1](../../docs/evidence/f01/queue-live/turn-1.json)真实历史SDK init/session资源含3个managed plugins及design/doctor/plugin-authoring skills，零扩展gate不满足。当前未重新探测，不为此开query，不绕组织配置；按GO既有预算/配置流程解除后才考虑单次执行。准备验收与原生就绪分开，不把后者写成已完成。
+
+07:01 UTC：Root独立APPROVED decfcee，P2 CLOSED，仅0query准备；10source/32raw/6dependencies核验，未重跑、未query。片段stage integration，O08-05仍pending且native未就绪，等待Lead限定接收。
+
+07:08 UTC：GO接受在历史3+3managed资源声明下仅授予两图工具；新候选7403b56b98070848c189c2d36663cb89846977be已实现、局部检查并固定，待唯一Root复审。原零扩展门槛被显式新候选替代，但原生当前配置/语义仍unknown，未发permit。O08-04为新候选审查暂open，原decf批准记录保留。
+
+07:15 UTC：Root已批准7403准备，并沿用户既有登录/低成本原型授权分配一次native预算，approvalId flow-o08-native-20261006-071420，07:14:20–08:14:20 UTC，query1/turn4/SDK USD0.20/90s。许可绑定af062与本worktree；先reservation后query，未知/失败不补次，只有合成图、0child，不改服务/组织配置。执行原始事实另审。
+
+07:17 UTC：一次native query已结束，无补次，预算SEALED。SDK4turns/估算USD0.0318802，真实图3node2edge/1planner/0child及typed final保存，自有组/center/DB/tmp清理true。原程序failed-or-unknown因中文literal失配保留；O08-05仍待GO独立读取语义/audit，不自行标绿。
+
+07:19 UTC：Root独立APPROVED结果target75ff3a5c566839c732c3ad11577d801972c3b345，核原始正文、图、audit、归属/费用/清理；原driver FAILED仅为字面oracle误拒绝。O08-05按受限范围完成，交付stage integration。host允许graph_read不等于该read成功的独立证据（native wire为空）；开放式规划、100agent、UI、子任务执行均未证明。见[独立回执](../../docs/evidence/o08/native-review.md)。
+
+2026-10-06 07:22 UTC：Execution Lead MAIN_ACCEPTED 253b8ad38fd869297e7d9948a26c1d310fef5c6c；作者核7403/75ff/acaa祖先及实验源码零差异，封存数据与main逐字节一致。本片段delivered，O08-06后继保留；停止写入后释放原claim，无工程/模型重跑。

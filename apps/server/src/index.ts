@@ -1,3 +1,10 @@
+import { registerGoalNativeExecutionRoutes } from './goal-native-executions/index.js';
+import { migrateNativeHarnessSources } from './native-harness-migration.js';
+import { migrateActiveSteering, registerActiveSteeringRoutes } from './active-steering/index.js';
+import { migrateAssistantStreams, registerAssistantStreamRoutes } from './assistant-stream/index.js';
+import { migratePackageFetches, registerPackageFetchRoutes, startPackageFetchWorker, type PackageFetchHost, type PackageFetchWorker } from './plugin-package-fetches/index.js';
+import { migrateNativeActivities, registerNativeActivityRoutes } from './native-activity/index.js';
+import { migrateGoalContext, registerGoalContextRoutes } from './goal-context/index.js';
 import { migrateGoalGraphRuns, registerGoalGraphRunRoutes } from './goal-graph-runs/index.js';
 import { migrateKnowledge, registerKnowledgeRoutes } from './knowledge/index.js';
 import { migrateRunnerMaintenance, registerRunnerMaintenanceRoutes } from './runner-maintenance/index.js';
@@ -33,7 +40,12 @@ import { migrateGoals, registerGoalRoutes } from './goals/index.js';
 
 declare module 'fastify' { interface FastifyRequest { runnerId: string | null } }
 
-export interface ServerOptions { databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string; shutdownGraceMs?: number; automaticQueueScan?: boolean }
+export interface ServerOptions {
+  databaseUrl: string; ownerToken: string; leaseMs?: number; allowedOrigin?: string; shutdownGraceMs?: number;
+  automaticQueueScan?: boolean; packageFetchHost?: PackageFetchHost;
+  /** Trusted host opt-in for controlled integrations; the production CLI leaves intake disabled. */
+  activeSteering?: boolean;
+}
 export async function createServer(options: ServerOptions) {
   if (!options.ownerToken) throw new Error('ownerToken is required.');
   const app = Fastify({ bodyLimit: MAX_BATCH_BYTES, logger: false });
@@ -44,6 +56,7 @@ export async function createServer(options: ServerOptions) {
   if (options.allowedOrigin) await app.register(cors, { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] });
   const pool = new Pool({ connectionString: options.databaseUrl, max: 8, connectionTimeoutMillis: 5000, statement_timeout: 10_000 });
   pool.on('error', error => app.log.error(error));
+  let packageWorker: PackageFetchWorker | undefined;
   try {
     await migrate(pool);
     await migrateWorkspace(pool);
@@ -61,8 +74,18 @@ export async function createServer(options: ServerOptions) {
     await migrateRunnerMaintenance(pool);
     await migrateConversationContext(pool);
     await migrateGoalGraphRuns(pool);
+    await migrateNativeActivities(pool);
+    await migrateGoalContext(pool);
+    await migrateAssistantStreams(pool);
+    await migratePackageFetches(pool);
+    await migrateActiveSteering(pool);
+    await migrateNativeHarnessSources(pool);
+    if (options.packageFetchHost) packageWorker = await startPackageFetchWorker(pool, options.packageFetchHost);
   } catch (error) { await pool.end(); throw error; }
-  const boss = await startScheduler(options.databaseUrl, pool).catch(async error => { await pool.end(); throw error; });
+  const boss = await startScheduler(options.databaseUrl, pool).catch(async error => {
+    try { await packageWorker?.stop(); } finally { await pool.end(); }
+    throw error;
+  });
   let pendingSweep: Promise<void> | undefined;
   const sweep = setInterval(() => {
     if (pendingSweep) return;
@@ -83,7 +106,10 @@ export async function createServer(options: ServerOptions) {
   const queueSweep = options.automaticQueueScan === false ? undefined : setInterval(() => { void scanQueue(); }, 1000);
   queueSweep?.unref();
   if (options.automaticQueueScan !== false) app.addHook('onReady', scanQueue);
-  app.addHook('preClose', async () => { closing = true; clearInterval(queueSweep); await pendingQueueScan; });
+  app.addHook('preClose', async () => {
+    closing = true; clearInterval(queueSweep);
+    await Promise.all([pendingQueueScan, packageWorker?.stop()]);
+  });
   app.addHook('onClose', async () => {
     clearInterval(sweep);
     await pendingSweep;
@@ -115,9 +141,15 @@ export async function createServer(options: ServerOptions) {
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
   registerGoalRoutes(app, pool, boss);
-  registerConversationRoutes(app, pool, boss);
+  registerGoalNativeExecutionRoutes(app, pool, boss);
+  registerActiveSteeringRoutes(app, pool, { acceptCommands: options.activeSteering === true });
+  registerAssistantStreamRoutes(app, pool);
+  registerConversationRoutes(app, pool, boss, { assistantStreamReadable: true });
   registerPluginRoutes(app, pool);
+  if (options.packageFetchHost) registerPackageFetchRoutes(app, pool, options.packageFetchHost);
   registerAssistantRoutes(app, pool);
+  registerNativeActivityRoutes(app, pool);
+  registerGoalContextRoutes(app, pool);
   registerExecutionProfileRoutes(app, pool);
   registerConversationQueueRoutes(app, pool, boss);
   registerConversationContextRoutes(app, pool);

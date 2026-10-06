@@ -1,10 +1,11 @@
+import { packageFetchRequestSchema, packageFetchCommandSchema, PACKAGE_FETCH_LIMITS } from '@flow/contracts';
 import { knowledgeCreateSchema, knowledgePublishSchema, knowledgeResolveSchema, KNOWLEDGE_LIMITS, pluginRegistrationSchema, pluginCommandSchema, MAX_PLUGIN_REQUEST_BYTES } from '@flow/contracts';
 import { parseArgs } from 'node:util';
 import { randomUUID } from 'node:crypto';
 import { JsonInputError, readJsonInput } from './json-input.js';
 import { FlowClient, FlowApiError } from '@flow/client';
 import { watchTask, taskLine } from './watch.js';
-import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, projectCreationSchema, projectCommandSchema, goalCreationSchema, goalCommandSchema, type TaskSubmission } from '@flow/contracts';
+import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, projectCreationSchema, projectCommandSchema, goalCreationSchema, goalCommandSchema, goalNativeExecutionSchema, type TaskSubmission } from '@flow/contracts';
 
 export interface CliIO { out(text: string): void; err(text: string): void }
 const defaultIO: CliIO = { out: text => process.stdout.write(`${text}\n`), err: text => process.stderr.write(`${text}\n`) };
@@ -138,6 +139,18 @@ async function pluginCommand({ client, values, positionals, io, signal }: Comman
   const page = { ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) };
   let result: unknown;
   switch (action) {
+    case 'fetches': result = await client.pluginPackageFetches(required(positionals[2], 'plugin ID'), page, signal); break;
+    case 'fetch-show': result = await client.packageFetch(required(positionals[2], 'fetch operation ID'), signal); break;
+    case 'fetch-history': result = await client.packageFetchHistory(required(positionals[2], 'fetch operation ID'), page, signal); break;
+    case 'fetch':
+    case 'fetch-change': {
+      const input = await readJsonInput(required(values.input, '--input JSON-file'), PACKAGE_FETCH_LIMITS.bodyBytes);
+      const key = required(values.key, '--key (stable command identifier)');
+      result = action === 'fetch'
+        ? await client.fetchPluginPackage(required(positionals[2], 'plugin ID'), required(positionals[3], 'version ID'), packageFetchRequestSchema.parse(input), key, signal)
+        : await client.commandPackageFetch(required(positionals[2], 'fetch operation ID'), packageFetchCommandSchema.parse(input), key, signal);
+      break;
+    }
     case 'list': result = await client.plugins({ ...page, ...(values.project ? { projectId: values.project } : {}) }, signal); break;
     case 'show': result = await client.plugin(required(positionals[2], 'plugin ID'), values.revision ? positiveNumber(values.revision, 'revision') : undefined, signal); break;
     case 'versions': result = await client.pluginVersions(required(positionals[2], 'plugin ID'), page, signal); break;
@@ -152,7 +165,7 @@ async function pluginCommand({ client, values, positionals, io, signal }: Comman
         : await client.commandPlugin(required(positionals[2], 'plugin ID'), pluginCommandSchema.parse(input), key, signal);
       break;
     }
-    default: throw new UsageError('Use plugin register|list|show|versions|history|operation|change. Registration does not install or load a package.');
+    default: throw new UsageError('Use plugin register|list|show|versions|history|operation|change|fetch|fetches|fetch-show|fetch-history|fetch-change. Fetch only verifies compressed bytes; it does not install or load a package.');
   }
   io.out(JSON.stringify(result));
   return 0;
@@ -162,6 +175,13 @@ async function goalCommand({ client, values, positionals, io, signal }: CommandC
   const action = positionals[1];
   let result: unknown;
   switch (action) {
+    case 'execute-native': {
+      const goalId = required(positionals[2], 'goal ID');
+      const key = required(values.key, '--key (stable command identifier)');
+      const input = goalNativeExecutionSchema.parse(await readJsonInput(required(values.input, '--input JSON-file'), 131_072));
+      result = await client.executeGoalNative(goalId, input, key, signal);
+      break;
+    }
     case 'show': result = await client.readGoal(required(positionals[2], 'goal ID'), signal); break;
     case 'input': result = await client.readGoalInput(required(positionals[2], 'goal ID'), required(values.node, '--node'), values.version ? positiveNumber(values.version, 'version') : undefined, signal); break;
     case 'history': result = await client.goalExecutions(required(positionals[2], 'goal ID'), { nodeId: required(values.node, '--node'), ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) }, signal); break;
@@ -174,7 +194,7 @@ async function goalCommand({ client, values, positionals, io, signal }: CommandC
         : await client.commandGoal(required(positionals[2], 'goal ID'), goalCommandSchema.parse(input), key, signal);
       break;
     }
-    default: throw new UsageError('Use goal create|show|input|history|change.');
+    default: throw new UsageError('Use goal create|show|input|history|change|execute-native.');
   }
   io.out(JSON.stringify(result));
   return 0;
@@ -256,7 +276,8 @@ function submission(values: Flags, words: string[]): TaskSubmission {
   });
 }
 
-const HELP = `Flow — durable work, from your terminal
+const HELP = `Package fetch: plugin fetch PLUGIN VERSION --input FILE --key KEY; plugin fetches PLUGIN; plugin fetch-show OP; plugin fetch-history OP; plugin fetch-change OP --input FILE --key KEY.
+Flow — durable work, from your terminal
 
 Commands:
   submit "prompt" [--title title] [--harness fixture|claude|a2a] [--key key]
@@ -284,6 +305,7 @@ Commands:
   goal input <goal-id> --node node-id [--version number]
   goal history <goal-id> --node node-id [--after execution-id] [--limit number]
   goal change <goal-id> --input JSON-file --key stable-key
+  goal execute-native <goal-id> --input JSON-file --key stable-key
   project workspaces|list
   project create --title title --key stable-key
   project show <project-id> [--revision number]

@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-10-06T08:25:01.123Z",
+  "sourceCommit": "fce5e07daab8adccb0ac824e55ee3a25659d88cb",
+  "sourceFiles": {
+    "apps/web/src/conversations/ConversationThread.tsx": "bf64cb702ad35e564c3ccef3a8dffd21369ef7222d432b5f30f03f31b3998be4",
+    "apps/web/src/conversations/conversations.css": "24a6c0282bf89c48d64dedd8e404a587cfa6fedbe9153cce06853956e8eba21c",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx": "c3718b0e567b043a00f31d402be204688a3db5c38a4421fecf5ae7aebf9393c6",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "1f26e32d5668281cddf34db03dc7db6c186c523376df13cd0bb78cacebbde54e",
+    "apps/web/src/execution-profiles/execution-profiles.css": "3b5e70620b93145a2e31df47357f78ceaf0f5620641ab508ae81d4bd906693a7",
+    "apps/web/test/conversation-readability.browser.ts": "b7729c4b26fa03af7d943be3e256a9564ed996efdff3f88886a96c29df8d54c9",
+    "apps/web/test/conversation-readability.fixture.ts": "7ebd91ad495f23962a532fda85c0b7d599f7c0efbda197731ca6000b7f7c3333"
+  },
+  "fixture": "Public HTTP fixture; no model/DB. Not real-center acceptance.",
+  "checks": [],
+  "measurements": [],
+  "errors": [],
+  "failure": "locator.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:311:30), <anonymous>:1:22)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at measure (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:33:31)\n    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/apps/web/test/conversation-readability.browser.ts:45:3)"
+}

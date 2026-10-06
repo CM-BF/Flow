@@ -1,0 +1,167 @@
+{
+  "derivedFrom": "refresh-b54-pre-drain-facts.json + refresh-b54-after-refresh-facts.json",
+  "identities": {
+    "tasks": {
+      "identities": [
+        {
+          "id": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+        },
+        {
+          "id": "c0f1f284-021d-400c-b76f-691c511b12f2"
+        }
+      ],
+      "beforeCount": 2,
+      "afterCount": 2,
+      "preExcludedMutableFields": []
+    },
+    "attempts": {
+      "identities": [
+        {
+          "id": "72291dd4-d874-442e-8314-2d8bfe920064",
+          "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+        },
+        {
+          "id": "20578167-d110-4bcc-b5a3-86abebb61147",
+          "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+        }
+      ],
+      "beforeCount": 2,
+      "afterCount": 2,
+      "preExcludedMutableFields": []
+    },
+    "sessions": {
+      "identities": [
+        {
+          "id": "e7de6e51-6874-4186-a4a0-5af384c81a07"
+        }
+      ],
+      "beforeCount": 1,
+      "afterCount": 1,
+      "preExcludedMutableFields": []
+    },
+    "artifacts": {
+      "identities": [
+        {
+          "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2",
+          "version": "af5ff4cc022d0e63215d3a6e0b03bf288c3f5204ee6b1fa121aafe4a74e05631",
+          "artifactId": "784cd197-f10e-4b0b-833b-ab11da5a8432"
+        },
+        {
+          "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+          "version": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde",
+          "artifactId": "a9ceb1dc-79a4-4c32-9fce-b8e5f9a06714"
+        }
+      ],
+      "beforeCount": 2,
+      "afterCount": 2,
+      "preExcludedMutableFields": []
+    },
+    "details": {
+      "identities": [
+        {
+          "id": "471389b8-a6c0-430c-990c-f991a94ebc4e",
+          "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+        },
+        {
+          "id": "ae4afd13-1abd-4703-9426-6a5ff613f033",
+          "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+        },
+        {
+          "id": "afa4b666-43ee-43b2-9db4-c295bef05f6f",
+          "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+        },
+        {
+          "id": "501b8c94-d1df-4796-9354-9303a58432ce",
+          "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+        },
+        {
+          "id": "9286d74f-404b-409a-8512-ddcf8268baa2",
+          "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+        },
+        {
+          "id": "cdfd5338-efa0-4cd0-a056-bb81e3d2f473",
+          "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+        },
+        {
+          "id": "762e935c-c3a8-4f05-a5bd-ee9318bb6def",
+          "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+        },
+        {
+          "id": "f26665c5-ad47-4b27-a1ad-abce53826515",
+          "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+        },
+        {
+          "id": "b61634d6-fe52-4bc1-b21a-de0f7156b59d",
+          "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2"
+        },
+        {
+          "id": "941450e7-3222-43d1-aa5c-bd6afd821c09",
+          "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+        },
+        {
+          "id": "35af32b2-3e7c-4e5d-93af-d0b0254fa4f8",
+          "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+        },
+        {
+          "id": "1767a778-d1a7-49c6-88f8-88a282bec86b",
+          "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+        }
+      ],
+      "beforeCount": 12,
+      "afterCount": 12,
+      "preExcludedMutableFields": []
+    },
+    "conversations": {
+      "identities": [
+        {
+          "id": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+        }
+      ],
+      "beforeCount": 1,
+      "afterCount": 1,
+      "preExcludedMutableFields": [
+        "queue_checked_at"
+      ]
+    },
+    "conversation_turns": {
+      "identities": [
+        {
+          "id": "132570f8-c02f-4917-8866-031f5b6b903c",
+          "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+          "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+        },
+        {
+          "id": "0347d173-36c4-4f11-8bf8-3d52b2c2ca45",
+          "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2",
+          "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+        }
+      ],
+      "beforeCount": 2,
+      "afterCount": 2,
+      "preExcludedMutableFields": []
+    },
+    "conversation_queue": {
+      "identities": [
+        {
+          "id": "02cfb153-b300-421b-bb1a-0135189d8ae2",
+          "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2",
+          "sequence": 2,
+          "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+        }
+      ],
+      "beforeCount": 1,
+      "afterCount": 1,
+      "preExcludedMutableFields": []
+    },
+    "execution_profiles": {
+      "identities": [
+        {
+          "id": "7ed454e9-f1db-420c-ac7f-4aa53f3856c0"
+        }
+      ],
+      "beforeCount": 1,
+      "afterCount": 1,
+      "preExcludedMutableFields": []
+    }
+  }
+}

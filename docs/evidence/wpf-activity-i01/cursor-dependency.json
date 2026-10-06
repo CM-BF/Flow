@@ -1,0 +1,24 @@
+{
+  "observedAt": "2026-10-06T07:06:57Z",
+  "authority": "ExecutionLead/root explicit controlled dependency input for ACTIVITYI, not new writer ownership",
+  "sourceTarget": "889f433ef6972e4feee95aa878f0dbaf7da30448",
+  "sourceMetadata": "ce0608ec873beabcbec38779fdace600fea6cf4c",
+  "base": "86a36eaeffbf09f0a3772c3d1509c17dc0a76f92",
+  "consumerWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity-integration",
+  "method": "Cherry-pick only this verified two-file commit, or fixed two-file exact patch; separate provenance input commit, no docs/whole branch",
+  "files": [
+    {
+      "path": "apps/web/src/conversation-activity/projection.ts",
+      "beforeSHA256": "c79571eb7e927da46bc7d655ccf89a1025a7067191d65f51cf2472cf3518a6c9",
+      "afterSHA256": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b"
+    },
+    {
+      "path": "apps/web/test/conversation-activity.test.ts",
+      "beforeSHA256": "1bcacbd20e040ca2741ca3e9addbfe8e91fc6352d690f638b42ee27e5c7ba6c8",
+      "afterSHA256": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff"
+    }
+  ],
+  "beforeMatchesConsumer": true,
+  "implementationOwner": "workspace_panels_owner on WPF-ACTIVITYC01; w01 must not implement edits to these two dependency paths",
+  "review": "Root APPROVED fixed target, independent44 at07:05:41Z,543ms"
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "journal",
+  "selection": null,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/admission-journal.test.ts",
+    "--config",
+    "docs/evidence/s01p01/vitest.config.mjs",
+    "--configLoader",
+    "runner"
+  ],
+  "startedAt": "2026-10-06T08:14:30.615Z",
+  "completedAt": "2026-10-06T08:14:30.975Z",
+  "elapsedMs": 359.12795900000003,
+  "exitCode": 1,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "sha256": "c338bb5d7f805d64e695a64c3c09e30f717bf341bd8e13ce7b8a90a9838abf1e"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "38448a6d89890315047d3e82f192481eb78fc159c98ab44547d70925a6d65042"
+    },
+    {
+      "path": "docs/evidence/s01p01/check.mjs",
+      "sha256": "2304d29f6cb7bce9f554708449497678ee00c7d656d386c03f08b58c2768e686"
+    },
+    {
+      "path": "docs/evidence/s01p01/types.tsconfig.json",
+      "sha256": "c75d8c36a5bed972a5fa76fac39ad5c7e753040b5fcdefcd2634d5755b85b7ca"
+    },
+    {
+      "path": "docs/evidence/s01p01/vitest.config.mjs",
+      "sha256": "24bc11be1dc5219396a51132914a3729ab17eefb4b748c0aaddc046961492c9f"
+    }
+  ],
+  "log": "docs/evidence/s01p01/journal-red.log",
+  "logSha256": "559f387db9e08f052f67928131066b72ef2905873219e41664bbc8da20e04116",
+  "sourceHead": "155494b0f797004e5d3299cf26312118dd6664af"
+}

@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-node-execution
+
+ ✓ apps/server/src/goal-native-executions/admission.test.ts (6 tests) 5914ms
+   ✓ rejects runner credentials, forged controls and non-readonly or invalid profile pins without consuming admission  326ms
+   ✓ claims only on the selected profile and preserves a committed receipt after the runner is revoked  489ms
+   ✓ keeps native execution and delivery owner-only while the old node grant still executes and accepts a fixture child  2180ms
+   ✓ does not authorize another execution when a claimed native predecessor becomes uncertain  807ms
+ ✓ apps/server/src/goal-native-executions/runtime.test.ts (3 tests) 3837ms
+   ✓ runs selected readonly settings through the existing adapter, preserves exact final/artifact, and requires a separate owner acceptance  876ms
+   ✓ delivers frozen K03 knowledge to the native adapter while later source versions invalidate delivery without rewriting old evidence  733ms
+   ✓ does not produce or accept a final artifact when the injected SDK reports an unsuccessful result  657ms
+
+ Test Files  2 passed (2)
+      Tests  9 passed (9)
+   Start at  00:57:18
+   Duration  11.21s (transform 656ms, setup 0ms, import 1.29s, tests 9.75s, environment 0ms)
+

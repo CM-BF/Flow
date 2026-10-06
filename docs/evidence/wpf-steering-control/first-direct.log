@@ -1,0 +1,37 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control
+
+ ✓ apps/web/test/conversation-steering.test.ts (27 tests) 16267ms
+     ✓ request timeout exposes an error and releases read gate even if port ignores abort  15001ms
+     ✓ bounded local receipt capacity rejects new handoff until resolved entries explicitly cleared  413ms
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+Error: late
+ ❯ apps/web/test/conversation-steering.test.ts:37:257
+
+ ❯ node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:145:11
+ ❯ node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:26
+ ❯ node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1243:20
+ ❯ runWithTimeout node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1209:10
+ ❯ node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:37
+ ❯ Traces.$ node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/chunks/traces.CCmnQaNT.js:142:27
+ ❯ trace node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/chunks/test.B8ej_ZHS.js:239:21
+ ❯ runTest node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1653:12
+
+This error originated in "apps/web/test/conversation-steering.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "request timeout exposes an error and releases read gate even if port ignores abort". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  1 passed (1)
+      Tests  27 passed (27)
+     Errors  1 error
+   Start at  01:50:18
+   Duration  16.79s (transform 244ms, setup 0ms, import 384ms, tests 16.27s, environment 0ms)
+

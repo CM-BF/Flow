@@ -1,0 +1,9 @@
+
+> @flow/web@0.1.0 typecheck /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web
+> tsc --noEmit -p tsconfig.json
+
+src/conversations/ConversationThread.tsx(50,43): error TS2345: Argument of type '{ messageRepository: ExportedMessageRepository; isRunning: boolean; isLoading: boolean; isSendDisabled: boolean; onNew: (message: AppendMessage) => Promise<...>; }' is not assignable to parameter of type 'ExternalStoreAdapter<unknown>'.
+  Property 'convertMessage' is missing in type '{ messageRepository: ExportedMessageRepository; isRunning: boolean; isLoading: boolean; isSendDisabled: boolean; onNew: (message: AppendMessage) => Promise<...>; }' but required in type 'ExternalStoreMessageConverterAdapter<unknown>'.
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @flow/web@0.1.0 typecheck: `tsc --noEmit -p tsconfig.json`
+Exit status 2

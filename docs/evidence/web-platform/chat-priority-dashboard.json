@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-10-06T03:26:35.296Z",
+  "method": "read-only GET http://127.0.0.1:4320/api/snapshot",
+  "taskId": "WPF-001",
+  "sourceMode": "live",
+  "sourceStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/status.md",
+  "head": "c6592aaa9f4bc617fb6ade9e56de661447ee1cdd",
+  "dirty": false,
+  "phase": "M2",
+  "priority": 1,
+  "output": "45条需求追溯；真实持续对话计划优先，PERF测量已审/PERF02暂缓，I01收尾",
+  "next": "真实会话能力/持久queue-steer共享接口与唯一owner安排；I01固定候选",
+  "humanComplete": true,
+  "missing": [],
+  "issues": [],
+  "documentEntry": {
+    "path": "plans/web-platform/conversation-core/plan.md",
+    "title": "WPF-CHAT01真实持续对话",
+    "kind": "evidence"
+  },
+  "interpretation": "Parent priority and plan downlink actually aggregated; no product implementation/independent review claim"
+}

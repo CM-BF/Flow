@@ -1,0 +1,32 @@
+{
+  "recordedAt": "2026-10-06T07:25:25.130882+00:00",
+  "sourceCommit": "ed187d6ef99e0d4ba1479ebce42f27714ff219c7",
+  "sourceDirty": true,
+  "sourceDescription": "ed187d6 canonical HEAD plus five uncommitted implementation/test files; recorded after final direct/typecheck, before implementation commit",
+  "base": "fa9a8288341d4f2bd8160e03fe9173dafa2de1a6",
+  "sourceHashes": {
+    "apps/web/src/conversation-stream/patches.ts": "8868cc08faa2ac17f48e3c8cafc8d07521cccd635f05632647e571c60281addc",
+    "apps/web/src/conversation-stream/projection.ts": "336c8f81eff737c9d62f744305252e3868f02f63ea7d316014a1188305d4fa9f",
+    "apps/web/src/conversation-stream/messages.ts": "624b1a82a70bd2e7cedc53a35a21be0f0bbcb45e39092ebbb4d9fb92aeef1903",
+    "apps/web/test/conversation-stream.test.ts": "a3ef6fb569a02e655b1ed187b8a28a6e6a7eea5f7f521cfd8aca467ec7be1cda",
+    "apps/web/test/conversation-stream-projection.test.ts": "6ed3910fd9e22339009eca8593fbb2418d5189f93c74dbdbf444d5f8331f5265"
+  },
+  "checks": [
+    {
+      "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vitest run apps/web/test/conversation-stream.test.ts apps/web/test/conversation-stream-projection.test.ts",
+      "exitCode": 0,
+      "tests": 54,
+      "log": "final-direct.log"
+    },
+    {
+      "command": "PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm --filter @flow/web typecheck",
+      "exitCode": 0,
+      "log": "final-typecheck.log"
+    }
+  ],
+  "limits": [
+    "mock ports/public FlowClient with mocked fetch; no HTTP server",
+    "no App/Thread integration",
+    "no browser/build/DB/model/provider verification"
+  ]
+}

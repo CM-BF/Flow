@@ -1,0 +1,144 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream
+
+ ❯ apps/web/test/conversation-stream.test.ts (29 tests | 3 failed) 22ms
+     ✓ applies jumping sequence and UTF-8 bytes, preserves changing SDK source IDs, and applies empty terminal patches 5ms
+     ✓ deduplicates exact sealed replay and rejects changed replay without mutation 1ms
+     ✓ rejects changed task identity/integrity 0ms
+     ✓ rejects changed attempt identity/integrity 0ms
+     ✓ rejects changed session identity/integrity 0ms
+     ✓ rejects changed source identity/integrity 0ms
+     ✓ rejects changed stream identity/integrity 0ms
+     ✓ rejects changed revision identity/integrity 0ms
+     ✓ rejects changed offset identity/integrity 0ms
+     ✓ rejects changed digest identity/integrity 0ms
+     ✓ rejects a bad later patch atomically without publishing the valid prefix 0ms
+     ✓ rejects oversized/invalid Unicode/NUL/empty open patch 0ms
+     ✓ rejects oversized/invalid Unicode/NUL/empty open patch 0ms
+     ✓ rejects oversized/invalid Unicode/NUL/empty open patch 0ms
+     ✓ rejects oversized/invalid Unicode/NUL/empty open patch 0ms
+     ✓ enforces attempt bytes and patch-count budgets 1ms
+     ✓ does not reopen closed or superseded blocks 1ms
+     ✓ rejects nonadvancing or invented page cursor {"patches":[],"nextCursor":0,"hasMore":true} 0ms
+     ✓ rejects nonadvancing or invented page cursor {"patches":[],"nextCursor":3,"hasMore":false} 0ms
+     ✓ bounds patch pages and rejects out-of-order sequences 0ms
+     × rejects metadata/patch disagreement at the same sealed revision 4ms
+     × never overwrites a newly authoritative final with a same-ID stale digest result 3ms
+     × does not mix a final from an older attempt with current-attempt stream body 0ms
+     ✓ validates current metadata identity, ordering and complete settlement partitions 1ms
+     ✓ replaces only an explicitly settled draft once full canonical text is verified 1ms
+     ✓ keeps retained tool-introduction and unavailable drafts beside the independent final 0ms
+     ✓ does not replace when final arrives before all patches or belongs to another attempt 0ms
+     ✓ does not guess truncated final text or accept wrong final digest 0ms
+     ✓ keeps failed/cancelled drafts interrupted and offline drafts paused, without fake task success 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/web/test/conversation-stream.test.ts > metadata and explicit final settlement > rejects metadata/patch disagreement at the same sealed revision
+AssertionError: promise resolved "{ …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "hasMore": false,
++   "state": {
++     "attemptId": "attempt",
++     "blocks": [
++       {
++         "attemptId": "attempt",
++         "blockIndex": 0,
++         "bytes": 5,
++         "content": "Hello",
++         "createdAt": "2026-10-06T07:00:00Z",
++         "eventId": "event-1",
++         "firstSequence": 1,
++         "fromBytes": 0,
++         "lastSequence": 1,
++         "nativeMessageId": "message",
++         "nativeSessionId": "session",
++         "parentToolUseId": null,
++         "phase": "streaming",
++         "prefixDigest": "185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969",
++         "reason": null,
++         "revision": 1,
++         "sequence": 1,
++         "source": "claude.sdk.stream",
++         "sourceMessageId": "source-1",
++         "streamId": "de4cf62756ecbec9a0a4372b81a6ccceef404fc049e9dcdafc214772b0267e54",
++         "taskId": "task",
++         "text": "Hello",
++         "truncated": false,
++         "type": "assistant-stream",
++       },
++     ],
++     "cursor": 1,
++     "receipts": {
++       "1": "bdd65ac94b9f3478d1ec5dcd838e0017131cf254af0fff9a6720c35bcf235909",
++     },
++     "taskId": "task",
++     "totalBytes": 5,
++   },
+  }
+
+ ❯ apps/web/test/conversation-stream.test.ts:98:89
+     96|   it("rejects metadata/patch disagreement at the same sealed revision"…
+     97|     const p = await patch(); const ref = { ...reference(p), prefixDige…
+     98|     await expect(applyPatchPage(emptyPatchState("task", "attempt"), pa…
+       |                                                                                         ^
+     99|   });
+    100|   it("never overwrites a newly authoritative final with a same-ID stal…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  apps/web/test/conversation-stream.test.ts > metadata and explicit final settlement > never overwrites a newly authoritative final with a same-ID stale digest result
+AssertionError: expected [ { type: 'text', …(1) } ] to deeply equal [ { type: 'text', …(1) } ]
+
+- Expected
++ Received
+
+  [
+    {
+-     "text": "Correct final",
++     "text": "Original final",
+      "type": "text",
+    },
+  ]
+
+ ❯ apps/web/test/conversation-stream.test.ts:104:36
+    102|     const original = await finalTurn("Original final"), latest = await…
+    103|     const result = streamConversationMessages(latest, state(metadata([…
+    104|     expect(result.at(-1)?.content).toEqual([{ type: "text", text: "Cor…
+       |                                    ^
+    105|   });
+    106|   it("does not mix a final from an older attempt with current-attempt …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  apps/web/test/conversation-stream.test.ts > metadata and explicit final settlement > does not mix a final from an older attempt with current-attempt stream body
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ apps/web/test/conversation-stream.test.ts:110:118
+    108|     const t = await finalTurn(); if (t.assistant.state !== "available"…
+    109|     const old = { ...t, assistant: { ...t.assistant, source: { ...t.as…
+    110|     expect(streamConversationMessages(old, state(metadata([ref]), patc…
+       |                                                                                                                      ^
+    111|   });
+    112| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 26 passed (29)
+   Start at  00:18:25
+   Duration  232ms (transform 84ms, setup 0ms, import 134ms, tests 22ms, environment 0ms)
+

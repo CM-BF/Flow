@@ -1,0 +1,152 @@
+{
+  "observedAt": "2026-10-06T07:40:25.919Z",
+  "operation": "read-only exact old-column projection after known 018/021 additive migration",
+  "newColumns": {
+    "tasks": [
+      "conversation_input_id",
+      "goal_input_id"
+    ],
+    "conversations": [
+      "project_id"
+    ],
+    "conversation_turns": [
+      "conversation_input_id"
+    ],
+    "conversation_queue": [
+      "conversation_input_id"
+    ]
+  },
+  "tables": {
+    "tasks": {
+      "excludedOnlyAddedColumns": [
+        "conversation_input_id",
+        "goal_input_id"
+      ],
+      "existingMutableExclusion": [],
+      "newColumnsNonNullRows": 0,
+      "records": [
+        {
+          "identity": {
+            "id": "59280da1-4fb0-435f-92fa-9ab1a73ea46c"
+          },
+          "row_digest": "b5a4d2570850b1e4acd07464dadd7fb7"
+        },
+        {
+          "identity": {
+            "id": "c0f1f284-021d-400c-b76f-691c511b12f2"
+          },
+          "row_digest": "f3e01af645d15a991c9f86c6cbe0fb29"
+        }
+      ],
+      "oldColumnsIdentical": true
+    },
+    "conversations": {
+      "excludedOnlyAddedColumns": [
+        "project_id"
+      ],
+      "existingMutableExclusion": [
+        "queue_checked_at"
+      ],
+      "newColumnsNonNullRows": 0,
+      "records": [
+        {
+          "identity": {
+            "id": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+          },
+          "row_digest": "08e2c218a297721f624dcf9ec3b28024"
+        }
+      ],
+      "oldColumnsIdentical": true
+    },
+    "conversation_turns": {
+      "excludedOnlyAddedColumns": [
+        "conversation_input_id"
+      ],
+      "existingMutableExclusion": [],
+      "newColumnsNonNullRows": 0,
+      "records": [
+        {
+          "identity": {
+            "id": "132570f8-c02f-4917-8866-031f5b6b903c",
+            "taskId": "59280da1-4fb0-435f-92fa-9ab1a73ea46c",
+            "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+          },
+          "row_digest": "763494711ae39a1008a2ff7af395ffce"
+        },
+        {
+          "identity": {
+            "id": "0347d173-36c4-4f11-8bf8-3d52b2c2ca45",
+            "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2",
+            "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+          },
+          "row_digest": "d5fb02e3c6084d8f120db95c912dd430"
+        }
+      ],
+      "oldColumnsIdentical": true
+    },
+    "conversation_queue": {
+      "excludedOnlyAddedColumns": [
+        "conversation_input_id"
+      ],
+      "existingMutableExclusion": [],
+      "newColumnsNonNullRows": 0,
+      "records": [
+        {
+          "identity": {
+            "id": "02cfb153-b300-421b-bb1a-0135189d8ae2",
+            "taskId": "c0f1f284-021d-400c-b76f-691c511b12f2",
+            "sequence": 2,
+            "conversationId": "da0754dd-6a0f-4a5d-a656-f7969a773452"
+          },
+          "row_digest": "e43f225729f686ad6760b8e25988cec8"
+        }
+      ],
+      "oldColumnsIdentical": true
+    }
+  },
+  "maintenance": {
+    "runner_id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "maintenance_state": "maintenance",
+    "maintenance_version": 5,
+    "maintenance_operation_id": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1"
+  },
+  "audit": [
+    {
+      "id": "b6e510cf-8a34-4ee7-80cf-1cf549685bff",
+      "after": {
+        "state": "draining",
+        "version": 4
+      },
+      "action": "drain",
+      "before": {
+        "state": "accepting",
+        "version": 3
+      },
+      "reason": "Operator requested a local preview update.",
+      "source": "trusted-host",
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "createdAt": "2026-10-06T07:39:01.812Z",
+      "requestId": "91cdaf28-ba0f-4b03-8295-8ee56c5a177f",
+      "operationId": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1"
+    },
+    {
+      "id": "b4ab306f-1350-4cdb-81ae-291a983bc322",
+      "after": {
+        "state": "maintenance",
+        "version": 5
+      },
+      "action": "hold",
+      "before": {
+        "state": "draining",
+        "version": 4
+      },
+      "reason": "No active attempts; reserve the local update.",
+      "source": "trusted-host",
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "createdAt": "2026-10-06T07:39:18.740Z",
+      "requestId": "db5e5166-df15-4281-a234-31a21370eca0",
+      "operationId": "22adf2ed-3ae1-4e51-8247-3f14776ac8f1"
+    }
+  ],
+  "passed": true
+}

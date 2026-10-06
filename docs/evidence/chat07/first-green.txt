@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/active-steering
+
+ ❯ apps/server/src/active-steering/steering.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/active-steering/steering.test.ts [ apps/server/src/active-steering/steering.test.ts ]
+Error: Cannot find package 'zod' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/active-steering/apps/server/src/active-steering/index.ts'
+ ❯ apps/server/src/active-steering/index.ts:4:1
+      2| import type { FastifyInstance } from 'fastify';
+      3| import type { Pool } from 'pg';
+      4| import { z } from 'zod';
+       | ^
+      5| import { steeringCommandSchema, steeringReceiptSchema } from '../../..…
+      6| import { HttpError, transaction } from '../database.js';
+ ❯ apps/server/src/active-steering/steering.test.ts:5:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  00:04:51
+   Duration  518ms (transform 244ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

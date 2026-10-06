@@ -1,0 +1,18 @@
+{
+  "database": "flow_r05b_1f7a4dd7e6b8435eb69f395a12252e50",
+  "providerCalls": 0,
+  "appServerStarts": 0,
+  "authRequests": 0,
+  "migrationMs": 8.774499999999989,
+  "oldRowsDigestBefore": "6716ab92e4f363b336878b0859aff9d936b7ece83d8648da581d129ae82a7e3f",
+  "oldRowsDigestAfter": "6716ab92e4f363b336878b0859aff9d936b7ece83d8648da581d129ae82a7e3f",
+  "pgVersion": "16.13",
+  "sessionEvidenceIndex": "CREATE INDEX details_native_session_evidence ON flow.details USING btree (task_id, attempt_id) WHERE (kind = 'session'::text)",
+  "boundedReadSample": {
+    "bodyUtf8Bytes": 1048576,
+    "pageJsonBytes": 725,
+    "previewUtf8Bytes": 4000,
+    "pageContainsBody": false
+  },
+  "databaseRemoved": true
+}

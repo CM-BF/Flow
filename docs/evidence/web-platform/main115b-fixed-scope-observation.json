@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-06T06:23:20.958Z",
+  "main": "115b0dbdfa02db5483f9e9699852682ce699633c",
+  "origin": "115b0dbdfa02db5483f9e9699852682ce699633c",
+  "branch": "main",
+  "dirty": "",
+  "targets": [
+    {
+      "id": "WPF-K02C01",
+      "target": "7633937c322090bbd6d526f378df464f2a7436ed",
+      "ancestor": true,
+      "scopes": [
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/execution-profiles/selection.ts",
+        "apps/web/test/conversation-outbox.test.ts",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-queue.test.ts",
+        "apps/web/test/execution-profiles.test.ts"
+      ],
+      "diff": ""
+    },
+    {
+      "id": "WPF-RENDERER01",
+      "target": "747cbe616408dc3e44ab3587216c5753e6de3994",
+      "ancestor": true,
+      "scopes": [
+        "apps/web/src/data-renderers/registry.ts",
+        "apps/web/src/data-renderers/react.tsx",
+        "apps/web/src/data-renderers/flow-reply-detail.tsx",
+        "apps/web/test/data-renderers.test.ts",
+        "apps/web/test/data-renderers.browser.ts",
+        "apps/web/test/data-renderers.fixture.tsx"
+      ],
+      "diff": ""
+    }
+  ]
+}

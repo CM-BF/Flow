@@ -1,0 +1,28 @@
+# CHAT06P01 技能与质量
+
+2026-10-06T07:19:04.990350+00:00，chat06p01_owner / gpt-6-astra；已读根AGENTS、plans/AGENTS、模板、D04与CHAT06领域/真实main生产集成记录。工作分类为已授权、有界实验方法与入口准备；brainstorming按既定GO目的澄清对比变量，不重复产品许可。纯测试seam为固定Unicode样本与计量归属；PG运行另需窗口。
+
+find-skills方法：先检查本地匹配，Node/TypeScript实验、SQL观察及结构质量已有适用skills，未重复联网/安装。路径与内容hash：
+- `/Users/citrine/.agents/skills/find-skills/SKILL.md` SHA256 `c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f`。
+- `/Users/citrine/.agents/skills/codebase-design/SKILL.md` SHA256 `2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2`。
+- `/Users/citrine/.agents/skills/clean-code/SKILL.md` SHA256 `3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317`。
+- `/Users/citrine/.agents/skills/tdd/SKILL.md` SHA256 `93ea419b76e9caaf26153b828e984f7c3fb136f4caa67b14af95f32ea965a1cc`。
+- `/Users/citrine/.agents/skills/brainstorming/SKILL.md` SHA256 `74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608`。
+
+clean-code用户指定源sickn33/agentic-awesome-skills，固定 bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5；本地hash与docs/quality/skills.md基线一致，不按frontmatter再安装其它来源。应用：样本生成与观测分别单一职责、显式单位/失败、资源finally恢复，不制造通用性能框架。codebase-design：Interface固定正文/patch方案，真实中心作为已有消费者，不改其Implementation。tdd：先一个纯生成行为红例后最小实现，独立literal/digest作oracle，禁自我镜像公式测试冒充PG证据。
+
+初始检查：主main/base fa9 clean；新WT创建后base相同且clean，D04原子take成功后才写。只读ledger状态为available；本地首预检曾错误断言其名为known，随后按实际ledger/input实现纠正，未把未知视空闲、未发重复take。首次read命令还曾查不存在的coordination/model及validation，随后读实际input.mjs；不涉及项目修改/测试。原take请求与receipt保留。
+
+2026-10-06 首方法安全点：确认正文总量固定时理论重复字节随patch数线性，不将旧O(n²)文字直接当该矩阵结论；逐项区分PG decoded/raw UTF8/JSON/物理占用、提交往返/COMMIT语句、源码预测/实际测量。当前无PG测量或产品变更，无质量批准结论。
+
+2026-10-06T07:23:08.134817+00:00 纯生成安全点：保留一个16B literal tile，整tile分片避免不必要的通用UTF8切分器；3组固定正文digest，first/中间prefix已用独立Python hashlib固定期望。第一unit因Vitest require条件误取CJS，0测试，保存原日志，改为既有package明确ESM导出；真正行为红1项之后最小实现，再补offset/revision/完整Unicode/prefix向量/限定N与预测标签，最终3项绿。typecheck起初ES2023 lib未声明Node24 isWellFormed，保留exit2，改实验lib为ES2024后noEmit0；无运行行为差异，不为该metadata/config再次跑纯unit。check.mjs在spawn前wx占日志名，30秒超时且固定unit/types命令，记录所有源码含未跟踪文件hash。不存在新依赖/共享lock/产品变化。观察器尚未写，ALS/query错误/恢复仍待实施与独审，未虚报准备全部完成。
+
+2026-10-06 07:27 UTC：Mika独立复核pure target377，6源码/12raw及literal向量一致，无P1/P2，APPROVED范围仅方法与纯生成/check。B02 observer作为只读接口参考，后续新observer修正其失败查询不计数的局限，不复制该行为；命名区分COMMIT尝试与成功提交，保留原错误身份。S01只读任务已结束，未修改或运行其代码。
+
+2026-10-06T07:38:46.685631+00:00 新入口安全点：按clean-code分成固定workload、可恢复observer、真实HTTP worker、只拥有child/DB的supervisor；避免改产品/通用框架。观察器失败显式计数，多结果解码字节分类；unsupported自定义Query显式失败。10 distinct pure；noEmit/import-only/syntax通过。PG类型与ESM解析失败原日志保留，三依赖既有版本路径写dependency-runtime。新entry资源行为尚无实跑验证，所有声明限于源码/纯检查。无未解决已知代码finding，等待Mika独立review；未把源审当实际PG完成。
+
+2026-10-06T07:45:37.810501+00:00：Mika独立准备审查在07:44:39Z确认APPROVED target4951，无P1/P2；13源码/40raw及复用依赖已核。仅metadata记录，不重测、不改source/config。运行参数非默认边界已入授权记录。待SVC结束才可执行一次；失败先完整清理并保留原记录，不重跑。
+
+2026-10-06T07:50:04.991868+00:00 单次实测后clean-code复核：实现与runtime/config固定4951，无测后修码；SQL/哈希观察恢复与自有进程/DB清理实际通过，所有失败/初始预检继续保留。只用保存raw做独立UTF8重建与计数重算，未再次连接PG/测量。报告区分decoded/HTTP/logical/physical、完整stage/提交RTT/COMMIT/hash墙钟与共享背景，候选不承诺收益或取消完整校验。等待Mika结果独审，GO范围接收/main事实另记。
+
+2026-10-06 07:52 UTC：Mika于07:50:51.201097Z独立只读APPROVED结果target160b580，无P1/P2。23 source/9 raw、全部计数/Unicode重建/nearest-rank/预算清理核对通过；审查者未执行测试/PG/服务。owner按clean-code复核元数据明确当前与历史、准备与实际测量、独审与main接收边界，修正权限段陈旧“未启动”描述。原实验source/config及raw/manifest不变；本次不跑测试，后继产品scope另协调。

@@ -1,0 +1,55 @@
+{
+  "kind": "capacity",
+  "selection": "defaults to one slot|honors a lower center|persists an unknown claim|never replays an active outbox|keeps a goal permission denial",
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/runtime-capacity.test.ts",
+    "--config",
+    "docs/evidence/s01p01/vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "-t",
+    "defaults to one slot|honors a lower center|persists an unknown claim|never replays an active outbox|keeps a goal permission denial"
+  ],
+  "startedAt": "2026-10-06T08:36:07.049Z",
+  "completedAt": "2026-10-06T08:36:08.839Z",
+  "elapsedMs": 1789.0220829999998,
+  "exitCode": 0,
+  "signal": null,
+  "error": null,
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "sha256": "76edf9ace719161329d6534bfd37d27d1185704bf1f1896ebffe9df45adc8559"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "sha256": "f6a2883606ba1fa35661619da79a747bef176bca90d6b1b5a2fbd4a655783de2"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "cb91b42d9bc672b767f8539c2e5989e558c896a95acf128cca3b7b4519dac740"
+    },
+    {
+      "path": "docs/evidence/s01p01/check.mjs",
+      "sha256": "28c5038636a5390eb26334e6f09125957e7d7bc78bd6048d0663d71a22c7b1c4"
+    },
+    {
+      "path": "docs/evidence/s01p01/types.tsconfig.json",
+      "sha256": "02fe94c8d2818e9ceebc8d447d23dbc39fcbfd7222da572ea4b38703da3afabf"
+    },
+    {
+      "path": "docs/evidence/s01p01/vitest.config.mjs",
+      "sha256": "8db216ac2bf6ec48c3fae74de376f254154b685e59474fb06eb1a89f63428d34"
+    }
+  ],
+  "log": "docs/evidence/s01p01/capacity-deferred.log",
+  "logSha256": "5711137ec5ebd5d2a4342b621919625924ef2e6788ef46df9d9635590a00082e",
+  "sourceHead": "fe63a932a1c422f27af69c57da98b77c3382ed0d"
+}

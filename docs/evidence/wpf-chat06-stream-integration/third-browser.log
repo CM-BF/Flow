@@ -1,0 +1,15 @@
+PASS official Thread shows an incremental draft, typed final settles once while task remains running
+locator.click: Error: strict mode violation: getByRole('button', { name: 'New chat', exact: true }) resolved to 2 elements:
+    1) <button class="flow-new-chat">…</button> aka getByRole('complementary', { name: 'Chats' }).getByRole('button', { name: 'New chat' })
+    2) <button title="New chat" class="flow-icon " aria-label="New chat">…</button> aka getByRole('button', { name: 'New chat', description: 'New chat' })
+
+Call log:
+[2m  - waiting for getByRole('button', { name: 'New chat', exact: true })[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:26:63)
+    at check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:16:62)
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream-integration/apps/web/test/conversation-stream-integration.browser.ts:25:8) {
+  log: [
+    "  - waiting for getByRole('button', { name: 'New chat', exact: true })"
+  ]
+}

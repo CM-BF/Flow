@@ -1,0 +1,79 @@
+{
+  "observedAt": "2026-10-06T05:58:09.343310+00:00",
+  "task": "WPF-RENDERER01",
+  "metadataObserved": "5753eca1bb3a80b17eda58ceb0eae0b9f9d2f62a",
+  "implementation": "747cbe616408dc3e44ab3587216c5753e6de3994",
+  "base": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "branch": "codex/web-data-renderers",
+  "dirty": [],
+  "ledgerObservedAt": "2026-10-06T05:57:40.230Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/data-renderers/flow-reply-detail.tsx",
+      "apps/web/src/data-renderers/react.tsx",
+      "apps/web/src/data-renderers/registry.ts",
+      "apps/web/test/data-renderers.browser.ts",
+      "apps/web/test/data-renderers.fixture.tsx",
+      "apps/web/test/data-renderers.test.ts",
+      "docs/evidence/wpf-renderer01",
+      "plans/wpf-renderer01-data-renderers"
+    ],
+    "state": "active",
+    "branch": "codex/web-data-renderers",
+    "origin": "new",
+    "taskId": "WPF-RENDERER01",
+    "worker": "w01_owner",
+    "claimId": "87948975-fa99-49b6-a84c-3ca126aaeb92",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderers",
+    "createdAt": "2026-10-06T05:44:10.659Z",
+    "updatedAt": "2026-10-06T05:44:10.659Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "changedPaths": 23,
+  "controlledInputPaths": [],
+  "outsideScope": [],
+  "sourceHashes": [
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    },
+    {
+      "path": "apps/web/src/data-renderers/react.tsx",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    },
+    {
+      "path": "apps/web/src/data-renderers/flow-reply-detail.tsx",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    },
+    {
+      "path": "apps/web/test/data-renderers.test.ts",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    },
+    {
+      "path": "apps/web/test/data-renderers.browser.ts",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    },
+    {
+      "path": "apps/web/test/data-renderers.fixture.tsx",
+      "matchesRecorded": true,
+      "matchesCurrent": true
+    }
+  ],
+  "markdown": 6,
+  "localLinks": 28,
+  "brokenLinks": [],
+  "implementationDiffcheckExit": 0,
+  "fullDiffcheckExit": 2,
+  "rawDiffcheck": "docs/evidence/wpf-renderer01/module-tests.log:10: new blank line at EOF.\ndocs/evidence/wpf-renderer01/typecheck.log:4: new blank line at EOF.\n",
+  "boundary": "Management scope/docs/hash audit only; no product tests, browser, service/API sampling or model call; independent behavior review belongs to root."
+}

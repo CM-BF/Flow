@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-assistant-stream
+
+stdout | apps/server/src/assistant-stream/stream.test.ts > transfers each text byte once across bounded patch pages and reconnects without growing-prefix reads
+CHAT06_WIRE_BYTES {"payloadBytes":98304,"persistedTextBytes":98304,"persistedPatchJsonBytes":104866,"ownerPageBytes":107220,"requests":2,"patches":12,"scope":"logical JSON bytes, not PostgreSQL WAL or provider traffic"}
+
+ ✓ apps/server/src/assistant-stream/stream.test.ts (18 tests) 7468ms
+   ✓ streams injected SDK text through outbox before result and preserves success semantics  1243ms
+   ✓ streams injected SDK text through outbox before result and preserves failure semantics  960ms
+   ✓ streams injected SDK text through outbox before result and preserves cancel semantics  972ms
+   ✓ recovers a text outbox after lost acknowledgement before-save and center restart  757ms
+   ✓ recovers a text outbox after lost acknowledgement after-save and center restart  1128ms
+   ✓ rejects over-limit durable bytes and preserves its acknowledged prefix  704ms
+ ✓ apps/runner/src/assistant-stream/stream.test.ts (10 tests) 444ms
+ ✓ apps/runner/src/claude.test.ts (26 tests) 116ms
+ ✓ apps/server/src/assistant-stream/migration.test.ts (1 test) 323ms
+   ✓ first-upgrades a persisted legacy schema before version22 and preserves task/attempt/detail bytes  323ms
+ ✓ apps/runner/src/goal-tool-bridge/sdk.test.ts (10 tests) 71ms
+ ✓ apps/runner/src/goal-graph-tools/sdk.test.ts (3 tests) 28ms
+ ✓ packages/contracts/src/contracts.test.ts (2 tests) 5ms
+
+ Test Files  7 passed (7)
+      Tests  70 passed (70)
+   Start at  23:35:45
+   Duration  10.10s (transform 324ms, setup 0ms, import 1.07s, tests 8.46s, environment 0ms)
+

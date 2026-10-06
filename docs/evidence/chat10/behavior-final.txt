@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-admission-readiness
+
+ ✓ apps/server/src/active-steering/finalization.test.ts (13 tests) 2529ms
+   ✓ enforces the result evidence bound at the HTTP ingress while identical replays do not consume the limit  442ms
+ ✓ apps/server/src/active-steering/steering.test.ts (16 tests) 2874ms
+   ✓ checks current ownership and availability before returning a saved receipt  415ms
+   ✓ first-upgrades an old schema with existing data and applies 024 exactly once  645ms
+ ✓ apps/server/src/active-steering/admission.test.ts (15 tests) 3225ms
+   ✓ rejects absent, legacy, unknown and unavailable profile pins while preserving old state availability  301ms
+   ✓ keeps default-off safe before 024 exists and enabled-but-uninstalled explicitly unavailable  973ms
+ ✓ apps/server/src/active-steering-configuration.test.ts (2 tests) 2ms
+
+ Test Files  4 passed (4)
+      Tests  46 passed (46)
+   Start at  01:25:26
+   Duration  10.23s (transform 456ms, setup 0ms, import 1.28s, tests 8.63s, environment 0ms)
+

@@ -1,0 +1,12 @@
+✔ serves fixed bytes with no HMR, preserves same-origin authorization and streams SSE before completion (714.061459ms)
+✔ builds a fixed verified artifact with no inherited or dotenv secrets and detects tampering (579.7665ms)
+✔ rejects a dirty or mismatched source before building and cleans a failed stage without changing the old artifact (1018.000834ms)
+✔ concurrent identical builds converge without overwriting and reject extra files or symbolic links (347.696708ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2015.66425

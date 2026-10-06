@@ -1,0 +1,39 @@
+{
+  "observedAt": "2026-10-06T07:10:06.392009+00:00",
+  "main": "fa9a8288341d4f2bd8160e03fe9173dafa2de1a6",
+  "origin": "fa9a8288341d4f2bd8160e03fe9173dafa2de1a6",
+  "mainClean": true,
+  "items": [
+    {
+      "taskId": "WPF-CHAT06C01",
+      "target": "8c56211739ae0c20816c67caad13cee510130514",
+      "canonical": "ee294c1473693b83babd0a935597b431d6223346",
+      "targetAndCanonicalAncestors": true,
+      "paths": [
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/test/conversation-projection.test.ts"
+      ],
+      "scopeEqual": true,
+      "hashes": {
+        "apps/web/src/conversations/projection.ts": "2de9e456aea4b37d253a08a383f76c8a0df12bf2247d49c9cc492587ab8ecd62",
+        "apps/web/test/conversation-projection.test.ts": "c8f3d3c39f5c6515b5f86075b60d09a6e813834a7443eb0e7710f126d5d3748f"
+      }
+    },
+    {
+      "taskId": "WPF-ACTIVITYC01",
+      "target": "889f433ef6972e4feee95aa878f0dbaf7da30448",
+      "canonical": "ce0608ec873beabcbec38779fdace600fea6cf4c",
+      "targetAndCanonicalAncestors": true,
+      "paths": [
+        "apps/web/src/conversation-activity/projection.ts",
+        "apps/web/test/conversation-activity.test.ts"
+      ],
+      "scopeEqual": true,
+      "hashes": {
+        "apps/web/src/conversation-activity/projection.ts": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b",
+        "apps/web/test/conversation-activity.test.ts": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff"
+      }
+    }
+  ],
+  "validation": "Read-only Git only; no product tests, API snapshot, DB or model call."
+}

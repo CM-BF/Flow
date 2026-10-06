@@ -1,3 +1,4 @@
+import { isBuiltinTheme } from "../themes";
 import type {
   Capability,
   CommandContext,
@@ -476,9 +477,7 @@ export class PluginHost {
   getThemes = (): readonly ThemeDefinition[] => {
     const core = this.port.theme
       .getSnapshot()
-      .availableThemes.filter(
-        (theme) => theme.id === "light" || theme.id === "dark",
-      );
+      .availableThemes.filter((theme) => isBuiltinTheme(theme.id));
     const contributed = [...this.entries.values()].flatMap((entry) =>
       entry.state === "active"
         ? entry.manifest.contributions.flatMap((item) =>

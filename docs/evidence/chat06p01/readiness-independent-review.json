@@ -1,0 +1,26 @@
+{
+  "reviewedAt": "2026-10-06T07:44:39Z",
+  "reviewer": "mika",
+  "model": "gpt-6-astra",
+  "status": "APPROVED",
+  "target": "4951ce63945ec6364be050de877715059402095f",
+  "observedHead": "93d4b36e0bb896ec271550a3d7bba6bedf5041b8",
+  "clean": true,
+  "manifestSha256": "cf1d2f67f32748c73bc2a348b7e1489cf97b720e498a363ba228de3bb4a47aeb",
+  "scope": "complete preparation only; no PG lifecycle, matrix result or capacity approval",
+  "sourceFiles": 13,
+  "readOnlyProductSources": 11,
+  "rawEvidence": 40,
+  "reusedDependencyHashes": 6,
+  "distinctPureTests": 10,
+  "noEmitExitCode": 0,
+  "importOnlyExitCode": 0,
+  "syntaxExitCode": 0,
+  "findings": [],
+  "notes": [
+    "Observer7 code/tests unchanged after final observer run; worker/run/runtime config changed and final noEmit/syntax bind them. Import-only does not prove lifecycle.",
+    "Record leaseMs300000 and automaticQueueScan=false; scheduler remains enabled.",
+    "Review was read-only: no tests/PG/services/writes by reviewer.",
+    "07:46 oral timestamp corrected by reviewer to actual 07:44:39Z."
+  ]
+}

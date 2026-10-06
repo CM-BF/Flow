@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-transport
+
+stdout | apps/runner/src/codex.test.ts > output backpressure keeps one active frame, permits queued cancellation, and respects byte budget
+R06 backpressure {"state":"closed","pid":18519,"pendingRequests":0,"serverRequests":0,"inboundBytes":0,"inboundFrames":0,"peakInboundBytes":0,"outboundBytes":0,"outboundFrames":0,"peakOutboundBytes":1000092,"stderrBytes":0,"ignoredResponses":0}
+
+ ✓ apps/runner/src/codex.test.ts (27 tests) 1609ms
+
+ Test Files  1 passed (1)
+      Tests  27 passed (27)
+   Start at  02:11:17
+   Duration  1.74s (transform 43ms, setup 0ms, import 54ms, tests 1.61s, environment 0ms)
+

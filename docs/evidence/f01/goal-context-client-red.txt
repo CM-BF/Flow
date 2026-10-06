@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/goal-context.test.ts (1 test | 1 failed) 6ms
+   × reads one fixed goal input context with encoded identities and preserves owner errors and cancellation 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/goal-context.test.ts > reads one fixed goal input context with encoded identities and preserves owner errors and cancellation
+TypeError: client.goalContext is not a function
+ ❯ packages/client/src/goal-context.test.ts:21:25
+     19|   const client = new FlowClient({ baseUrl: `http://127.0.0.1:${(server…
+     20|   try {
+     21|     expect(await client.goalContext('goal/一', 'node/二', 7)).toEqual(de…
+       |                         ^
+     22|     await expect(client.goalContext('denied', 'node/二', 7)).rejects.to…
+     23|     await expect(client.goalContext('goal/一', 'node/二', 7, AbortSignal…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  23:34:37
+   Duration  147ms (transform 32ms, setup 0ms, import 51ms, tests 6ms, environment 0ms)
+

@@ -1,0 +1,38 @@
+{
+  "reviewedAt": "2026-10-06T07:50:51.201097Z",
+  "reviewer": "mika",
+  "model": "gpt-6-astra",
+  "status": "APPROVED",
+  "target": "160b580d516a819af63eb1457b482afb89182735",
+  "observedHead": "160b580d516a819af63eb1457b482afb89182735",
+  "clean": true,
+  "manifestSha256": "245f31bed45337d97d517b0d3ffdb36349412b5ebdb12e5a149818d390719968",
+  "scope": "fixed single PG matrix counts and report only",
+  "sourceFiles": 23,
+  "rawEvidence": 9,
+  "patchesRebuilt": 84,
+  "uniqueEventIds": 84,
+  "tasks": 3,
+  "attempts": 3,
+  "sessions": 3,
+  "streams": 3,
+  "ipcCheckpoints": 90,
+  "foregroundQueries": 2016,
+  "foregroundCommits": 84,
+  "backgroundQueries": 5,
+  "httpRequests": 126,
+  "accountedStorageBytes": 14061792,
+  "findings": [],
+  "reviewActions": [
+    "Read-only source/hash comparison",
+    "Independent Unicode/offset/digest reconstruction",
+    "Independent query/byte/timing/nearest-rank recomputation",
+    "Authorization and normal cleanup review"
+  ],
+  "limitations": [
+    "No tests/PG/services/writes by reviewer",
+    "Not PG wire/WAL, CPU bottleneck, optimization benefit, SLO or model capacity evidence",
+    "SQL candidate remains unimplemented and outside current product write scope",
+    "Original raw and manifest remain frozen"
+  ]
+}

@@ -1,0 +1,51 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool
+
+ ❯ apps/runner/src/runtime-capacity.test.ts (12 tests | 2 failed) 19995ms
+   ✓ defaults to one slot and explicitly overlaps four attempts without exceeding the local limit 248ms
+   × honors a lower center capacity and isolates one adapter failure from other slots 4010ms
+   ✓ cancels only the requested slot while the other attempt continues 103ms
+   ✓ awaits every started adapter on host abort and on swallowed heartbeat authentication rejection  348ms
+   ✓ stops every slot on event storage failure even if the adapter catches the rejected emit 79ms
+   ✓ persists an unknown claim, lets a known slot finish, and refuses another claim after restart 192ms
+   ✓ does not send a claim when its durable intent cannot be saved 4ms
+   × never replays an active outbox while another slot is being admitted 15007ms
+   ✓ rejects an invalid local slot limit 0 before admission 2ms
+   ✓ rejects an invalid local slot limit 17 before admission 1ms
+   ✓ rejects an invalid local slot limit 1.5 before admission 1ms
+   ✓ rejects an invalid local slot limit NaN before admission 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/runtime-capacity.test.ts > honors a lower center capacity and isolates one adapter failure from other slots
+Error: Expected bounded runner behavior did not occur.
+ ❯ eventually apps/runner/src/runtime-capacity.test.ts:17:62
+     15| async function eventually(condition: () => boolean | Promise<boolean>)…
+     16|   const until = Date.now() + 4000;
+     17|   while (!await condition()) { if (Date.now() > until) throw new Error…
+       |                                                              ^
+     18| }
+     19| function held(context: HarnessContext): Promise<void> {
+ ❯ apps/runner/src/runtime-capacity.test.ts:86:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/runner/src/runtime-capacity.test.ts > never replays an active outbox while another slot is being admitted
+Error: Test timed out in 15000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ apps/runner/src/runtime-capacity.test.ts:138:1
+    136| });
+    137| 
+    138| it('never replays an active outbox while another slot is being admitte…
+       | ^
+    139|   const api = await peer(2); const reported = Promise.withResolvers<vo…
+    140|   api.report((batch, response) => { if (batch.attemptId === 'attempt-1…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 10 passed (12)
+   Start at  01:16:38
+   Duration  20.27s (transform 123ms, setup 0ms, import 191ms, tests 19.99s, environment 0ms)
+

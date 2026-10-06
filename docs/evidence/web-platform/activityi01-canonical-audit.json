@@ -1,0 +1,93 @@
+{
+  "observedAt": "2026-10-06T06:57:04.208Z",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity-integration",
+  "head": "4c18839c212bee19fa0d83d28b4e0f5fbab67be9",
+  "dirty": "",
+  "branch": "codex/web-conversation-activity-integration",
+  "claimId": "122210f6-eaac-4cc7-840d-3bd7db1626d9",
+  "claimVersion": 1,
+  "scopeCount": 17,
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity-integration/plans/wpf-activity-i01-integration/status.md",
+  "parserErrors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "正在把工具与思考记录接到每轮聊天下方",
+    "next": "可展开查看工具状态和思考内容的聊天界面",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "todos": [
+    {
+      "id": "ACTIVITYI01-01",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "已批准typed边界；开始原生projection"
+    },
+    {
+      "id": "ACTIVITYI01-02",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "footer与宿主read port"
+    },
+    {
+      "id": "ACTIVITYI01-03",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "局部/实际App fixture"
+    },
+    {
+      "id": "ACTIVITYI01-04",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "固定实现后独审与主线接收"
+    }
+  ],
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": null
+  },
+  "implementation": {
+    "target": null,
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+      "apps/web/src/conversation-activity/native/projection.ts",
+      "apps/web/src/conversation-activity/native/tool.tsx",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/plugin-integration/activity.tsx",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugins/types.ts",
+      "apps/web/src/plugins/validation.ts",
+      "apps/web/test/conversation-activity-integration.browser.ts",
+      "apps/web/test/conversation-activity-integration.test.ts",
+      "apps/web/test/native-activity.test.ts",
+      "apps/web/test/plugin-host.test.ts"
+    ],
+    "errors": [
+      "实现目标需完整 SHA"
+    ]
+  },
+  "outside": [],
+  "notProductReview": true
+}

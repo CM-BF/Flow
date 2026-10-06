@@ -1,0 +1,30 @@
+{
+  "recordedAt": "2026-10-06T06:09:12.337880+00:00",
+  "visualObservationSource": "root manual inspection, transferred to d01_owner; manager did not rerun browser or make an independent visual claim",
+  "manifestSource": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/queue-live/manifest.json",
+  "checksSource": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/queue-live/checks.json",
+  "screenshot": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/docs/evidence/f01/queue-live/second-reply-dark-narrow.png",
+  "screenshotSha256": "29fdca6c7a0bdaf126a75b3b727656a4aa675eeef79e3778db11867c392921a3",
+  "screenshotPngPixels": [
+    390,
+    844
+  ],
+  "manifestObservedAt": "2026-10-06T06:04:30.199828+00:00",
+  "callerTarget": "0695bae99a20acd639b02826bf092c64040a21a1",
+  "webTarget": "3d4985fca060155435b159e0467815bf8e88b8b8",
+  "centerRunnerLoaded": "fb906cb42391971a8b315dbd813f7633927d7265",
+  "manifestBudget": "CLOSED 2/2; no retry",
+  "checksStatus": "PASSED_TWO_QUERY_QUEUE_AND_VISIBLE_MEMORY",
+  "sdkQueryCount": 2,
+  "sdkQueryLimit": 2,
+  "checksEndedAt": "2026-10-06T06:02:28.394Z",
+  "rootObservation": "Real two-turn Chinese replies visible. Bottom area combines 0 waiting loaded, two Execution details entries, requested/locked/read-only/thinking/legacy configuration, disabled Thinking/Tools/Steer and long footer; configuration explanations occupy roughly bottom third of screen. Qualitative visual observation, not geometry or input-latency measurement.",
+  "followUpAcceptance": [
+    "Preserve order: real chat and collapsible detail path before layout consolidation",
+    "Single outer execution disclosure; model/access/queue primary state readable",
+    "Technical semantics reachable in details; unsupported and pending/unknown receipts stay explicit",
+    "Requested/unknown must not be presented as observed effective values",
+    "Use same 390x844 viewport and keyboard checks in later owned implementation"
+  ],
+  "boundary": "Existing U11/REQ43 follow-up only; no current validation failure, no new task/scope, no product rerun or model call."
+}

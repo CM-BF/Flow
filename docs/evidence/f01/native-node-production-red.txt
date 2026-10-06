@@ -1,0 +1,51 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+stdout | apps/server/src/goal-native-production.test.ts
+NATIVE_GOAL_PRODUCTION_DATABASE_FACTS {"database":"flow_native_mount_29793253ead042fcb91f69bb86a34a6c","created":true,"before":[],"connections":[],"remaining":[]}
+
+ ❯ apps/server/src/goal-native-production.test.ts (2 tests | 2 failed) 1034ms
+   × mounts owner native admission behind existing authentication without enabling active steering 4ms
+   × connects the public client to the real factory and runs one pinned text child with the existing verifier 72ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-native-production.test.ts > mounts owner native admission behind existing authentication without enabling active steering
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ apps/server/src/goal-native-production.test.ts:50:86
+     48| }
+     49| it('mounts owner native admission behind existing authentication witho…
+     50|   expect(app!.hasRoute({ method: 'POST', url: '/api/goals/:id/native-e…
+       |                                                                                      ^
+     51|   const runner = await request('/api/runners', { name: 'Native mount r…
+     52|   const path = `/api/goals/${randomUUID()}/native-executions`;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/server/src/goal-native-production.test.ts > connects the public client to the real factory and runs one pinned text child with the existing verifier
+FlowApiError: The center returned HTTP 404.
+ ❯ assertResponse packages/client/src/index.ts:478:9
+    476|   if (response.ok) return;
+    477|   const body = await response.json().catch(() => ({})) as { error?: { …
+    478|   throw new FlowApiError(response.status, body.error?.code ?? 'http_er…
+       |         ^
+    479| }
+    480| 
+ ❯ FlowClient.request packages/client/src/index.ts:470:5
+ ❯ apps/server/src/goal-native-production.test.ts:81:47
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  01:05:14
+   Duration  2.29s (transform 561ms, setup 0ms, import 1.17s, tests 1.03s, environment 0ms)
+

@@ -1,0 +1,65 @@
+{
+  "node": "v24.20.0",
+  "recordedAt": "2026-10-06T06:33:09.749Z",
+  "modelQueries": 0,
+  "facts": [
+    {
+      "case": "queued-restart-and-replay",
+      "operationId": "cf12ee1b-2615-494d-95af-c54cc7ae94d3",
+      "status": "succeeded",
+      "artifactId": "30a5ba85-53b8-4611-bf39-b0489b5ae99f",
+      "requests": 1
+    },
+    {
+      "case": "published-before-PG-hard-exit",
+      "operationId": "13a7f542-2244-47e9-add6-74981e05db6f",
+      "artifactId": "715c939c-217a-4dca-9db0-fd610168488a",
+      "requests": 1,
+      "status": "succeeded"
+    },
+    {
+      "case": "interrupted-reconcile-explicit-retry",
+      "operationId": "78fd5132-ab37-448e-99d6-bf596629392a",
+      "requests": 2,
+      "attempts": [
+        {
+          "id": "6b2f9bcc-f034-4cdc-92cd-540a838c824f",
+          "ordinal": 1,
+          "artifactId": "2202a696-91de-4811-a44a-38e900c3aa3f",
+          "status": "interrupted",
+          "error": "NOT_FOUND",
+          "createdAt": "2026-10-06T06:33:05.379Z",
+          "updatedAt": "2026-10-06T06:33:06.293Z"
+        },
+        {
+          "id": "499719ec-a24b-415c-9bed-ff2c7200bcdc",
+          "ordinal": 2,
+          "artifactId": "98f75de9-00b6-4512-8690-679f180f7289",
+          "status": "succeeded",
+          "error": null,
+          "createdAt": "2026-10-06T06:33:06.308Z",
+          "updatedAt": "2026-10-06T06:33:06.526Z"
+        }
+      ]
+    },
+    {
+      "case": "declaration-mismatch-budget",
+      "operationId": "882bb862-115c-40ca-a574-508699bd2a1e",
+      "requests": 3,
+      "status": "failed"
+    },
+    {
+      "case": "foreign-store-observation-only",
+      "operationId": "582e5f0e-680d-4e91-9cbe-5e1dc06ba0a3",
+      "requests": 2
+    },
+    {
+      "case": "lost-admission-ACK",
+      "operationId": "a6f9f19e-1573-4cab-9966-be2bb6384a44",
+      "requests": 1,
+      "replayed": true
+    }
+  ],
+  "processOutput": "{\"ready\":true,\"address\":\"http://127.0.0.1:58753\",\"pid\":69547}\n{\"ready\":true,\"address\":\"http://127.0.0.1:58766\",\"pid\":71612}\n{\"ready\":true,\"address\":\"http://127.0.0.1:58776\",\"pid\":71800}\n{\"ready\":true,\"address\":\"http://127.0.0.1:58802\",\"pid\":72081}\n{\"ready\":true,\"address\":\"http://127.0.0.1:58863\",\"pid\":72221}\n{\"ready\":true,\"address\":\"http://127.0.0.1:58885\",\"pid\":72295}\n{\"ready\":true,\"address\":\"http://127.0.0.1:58912\",\"pid\":72297}\n{\"ready\":true,\"address\":\"http://127.0.0.1:58941\",\"pid\":72298}\n{\"ready\":true,\"address\":\"http://127.0.0.1:58951\",\"pid\":72299}\n",
+  "databaseRemoved": true
+}

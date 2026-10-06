@@ -1,0 +1,30 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-knowledge-context
+
+ ❯ apps/server/src/goal-context/context.test.ts (5 tests | 1 failed | 4 skipped) 1382ms
+   ↓ freezes owner-defined references atomically and serves exact detail across restart and immutable ACK replay
+   ↓ projects frozen execution privately and recompiles recovery without creating a goal execution
+   ↓ fails closed for mismatched raw prompts, corrupt records and declared bindings while preserving immutable rows
+   ↓ rolls back task and input allocation on private budget failure and rejects detail outside its owner tuple
+   × binds owner execution and blocks new work after any source version change including equal content 221ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-context/context.test.ts > binds owner execution and blocks new work after any source version change including equal content
+AssertionError: expected null not to be null
+ ❯ apps/server/src/goal-context/context.test.ts:97:28
+     95|   expect(publicTask.prompt).not.toContain('Private Ω');
+     96|   const privateInput = await transaction(f.pool, client => goalExecuti…
+     97|   expect(privateInput).not.toBeNull();
+       |                            ^
+     98|   expect((await f.http(`/api/goals/${s.goalId}`)).body.nodes[0]).toMat…
+     99|   await f.http(`/api/projects/${s.projectId}/knowledge/sources/${s.cit…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 skipped (5)
+   Start at  23:14:44
+   Duration  2.36s (transform 640ms, setup 0ms, import 890ms, tests 1.38s, environment 0ms)
+

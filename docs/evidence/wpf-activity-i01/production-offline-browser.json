@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-06T07:14:08.699Z",
+  "sourceCommit": "ba341d77672ba8456197d64d54193aee79719e46",
+  "sourceFiles": {
+    "apps/web/src/App.tsx": "7bf7e58d9a44469588594a02336f4e8fb860df56a707dbf8e7b80d19d38b4226",
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+    "apps/web/src/conversation-activity/native/NativeActivity.tsx": "1a17117598fbaed84438ff636f0f1a75a9db6033472c35ed674e2c47a2e2e9fd",
+    "apps/web/src/conversation-activity/native/projection.ts": "55eafaa0aa50a2531667b105801635042ae4391490b36a131c4d5de175af7830",
+    "apps/web/src/conversation-activity/native/tool.tsx": "a30d60afd113f471bf594db5162758e5a64d9ef1185bb4ceece46d8a46db61ff",
+    "apps/web/src/conversations/ConversationThread.tsx": "5b25dbe1f12c7b7f4f4b2f18b2b285889720dafc8a3a99922ff3642a0e93208d",
+    "apps/web/src/plugin-integration/activity.tsx": "8ad48a26e40bc4462221329fdfe9f1d922af3b21f7dfeaf664e1dd21ddfe6ed2",
+    "apps/web/src/plugin-integration/react.tsx": "9751ec0b3d8560624a938cbeac7b0982cdd7a28126c57ceac09efe5de59adb05",
+    "apps/web/src/plugin-integration/session.ts": "df68b2c0b49228d08c35ebc772b43fd6925a5a0b7e584a6deaf2dd09d79c21fe",
+    "apps/web/src/plugins/types.ts": "4f8c093f916ea5a3a2b9608f171bad6c1bd5e1441b1d62eecd0a55708f5faeed",
+    "apps/web/src/plugins/validation.ts": "a489ca5a350f1427265bb929c15516c6094062c848377745737fb4e664efa9ed",
+    "apps/web/test/conversation-activity-integration.browser.ts": "b60cab56e3e2cad5828e10cd31132ec6e2fdd75ecaf59d4b17ef566b2e0de184",
+    "apps/web/test/conversation-activity-integration.test.ts": "589c7e6d40433fe200706b24f0163d8e2fd4c5a42d3682c8863d74d04e2574ab",
+    "apps/web/test/native-activity.test.ts": "8fe55fcaf4182b17abceb4faaf48bf5848a1f9641c8ca203ede1790b2d524f1c",
+    "apps/web/test/plugin-host.test.ts": "8192ae0a9228d91005d20e3600c8a1fc1ecb8743f2a558e46c13bc1d7d7e6523",
+    "apps/web/src/conversation-activity/projection.ts": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b",
+    "apps/web/test/conversation-activity.test.ts": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff"
+  },
+  "production": true,
+  "url": "http://127.0.0.1:52388",
+  "checks": [
+    "offline same-turn disconnect stops all activity reads, aborts in-flight body and resumes safely"
+  ],
+  "errors": [],
+  "reads": [
+    {
+      "center": 0,
+      "kind": "native",
+      "taskId": "chat-2-task-1",
+      "after": null
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "20437f163c64b060335a2a294caf407a7dba36dd617664a5b4e8311cc613b886"
+    },
+    {
+      "center": 0,
+      "kind": "body",
+      "id": "20437f163c64b060335a2a294caf407a7dba36dd617664a5b4e8311cc613b886"
+    }
+  ],
+  "attemptedActivityRequests": [
+    "http://127.0.0.1:52388/api/tasks/chat-2-task-1/native-activities?limit=20",
+    "http://127.0.0.1:52388/api/native-activities/20437f163c64b060335a2a294caf407a7dba36dd617664a5b4e8311cc613b886",
+    "http://127.0.0.1:52388/api/native-activities/20437f163c64b060335a2a294caf407a7dba36dd617664a5b4e8311cc613b886"
+  ]
+}

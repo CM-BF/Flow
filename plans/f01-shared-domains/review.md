@@ -1,10 +1,28 @@
 # F01 共享接线审查
 
-**当前增量状态：APPROVED（Root独立只读，549共享接线+d640隔离修复）**
+**当前增量状态：APPROVED（CHAT10可信启动配置薄挂载）**
 
-Review target commit：549f6b3e54f902d7b75ebe6d17f293a2085e7a6c
+Review target commit：2d69959a50954912c388eddb18d3b6a9574bf680
 
-Scope：apps/server/src/index.ts、packages/client/src/index.ts、packages/contracts/src/index.ts、packages/client/src/conversation-context.test.ts、packages/client/src/context-production.test.ts；额外C02测试隔离修复d6406f906829b875d062e875dbd5aca613500e16单独绑定。manifest见docs/evidence/f01/context-mount-manifest.json及context-c02-isolation-manifest.json。
+Scope：apps/server/src/main.ts, apps/server/src/steering-production.test.ts。仅显式环境配置传入已审factory；证据 steering-startup-manifest.json。独立reviewer assignment_review，Root接收：2源/3raw与领域8fixed/current hash一致，完整parser→factory/auth/子进程生命周期已读；1red→1green/2未选、types0、专库无残余，无P1/P2、未重跑。默认关闭，可信1仍不绕attempt授权；非个人steering开通。
+
+## 上一CHAT10薄client独立批准
+
+**当前增量状态：APPROVED（CHAT10只读受理状态client）**
+
+Review target commit：25a22e0488d6d9aef1f3308e3179e0e874fa425f
+
+Scope：packages/client/src/index.ts, packages/client/src/steering-admission.test.ts。证据 steering-admission-client-manifest.json。Mika独立只读APPROVED，2source/3raw/1DTO固定hashbytes全部匹配；真实HTTP1/1与tsc0原证据，无P1/P2、未重跑。仅公开DTO薄读取，不预先批准生产启动开关。
+
+## 上一薄client批准（已main32c）
+
+**当前增量状态：APPROVED（CHAT09执行配置格式协商）**
+
+Review target commit：89931e0d9cfd00b5f51f5b266b7aaa38bba2718b
+
+Scope：packages/client/src/index.ts, packages/client/src/execution-profiles.test.ts。manifest：docs/evidence/f01/steering-profile-client-manifest.json。独立reviewer：Root；完整2文件delta、2源码/3输出hash与字节核验，2/2真实HTTP122ms、typecheck0，无P1/P2、未重跑。仅显式目录格式协商，不是steering启用或执行授权。
+
+历史CHAT08生产挂载APPROVED target fe5bc2d9b8dab231996b1b156bc086d858846117，范围 apps/server/src/index.ts, apps/server/src/steering-production.test.ts，详见 steering-production-manifest.json；该原批准及后文历史保留。
 
 ## K01薄client独立批准
 Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。
@@ -100,3 +118,74 @@ GO发现P2：原C02 legacy fixture固定库归属未证实。F01v13取得精确t
 ## 2026-10-06 06:20 UTC 最终独立增量复审
 
 Root独立只读APPROVED：549f6b3e54f902d7b75ebe6d17f293a2085e7a6c + d6406f906829b875d062e875dbd5aca613500e16。固定5源码/8raw与接线target一致；隔离修复1源码/3raw hash与bytes全匹配，12原test bodies未改。随机库创建确认后reset、拒已有、正常DROP，实际before[]/createdtrue/connections[]/remaining[]支持12/12+tsc。P2关闭；旧34日志内C02 ownership NOT_PROVEN如实保留。新7/7生产/直接consumer、Web116/116与types同源证据保持；Root未重跑。批准不扩展真实native规划、完整知识选择UI或renderer主App挂载。
+
+## CHAT05生产公共接线待审
+
+Review target commit：9ea33ef61da2304123d08ea87558023d63b38468
+状态：NOT_STARTED。5源码/5输出由activity-mount-manifest.json固定，2/2+tsc。020先scheduler/scan，route在owner角色hook后，只有显式详情取得正文；生产factory无手动migration/routes，公开report→读取→cancel→restart保留unknown。领域216/Mika另已APPROVED，此片不重跑85、不声称原生provider/流式或完整原文。
+
+## 2026-10-06 06:28 UTC 020公共接线独立批准
+Root独立只读APPROVED9ea33ef61da2304123d08ea87558023d63b38468（观测cleana95cb78）。5source/5raw固定及working hash/bytes均匹配；实际生产factory在服务/调度前020、owner hook后routes；真实PG report去重→轻列表不含私文→显式UTF8详情→401/403→取消工具unknown→重启保留；2红到2绿2.22s与tsc及随机库普通DROP核验。未重跑，无finding；不覆盖provider/全部原文/实际Appmount。全局activity详情返回taskId/attemptId，消费者必须核绑定。
+
+## 2026-10-06 06:31 UTC X05薄client独立批准
+Root独立只读APPROVED07b1b11060c069db76f9f958f92c1c53af9fca46（观测cleanad0b5ef）。3source/3raw固定/working hash与bytes匹配，1405551合同零diff；五方法key/body/CAS/编码IDs及cursor、不把202 receipt当当前状态、409/AbortSignal不重试。1红到1绿190ms/tsc原证据已核，未重跑。仅transport，X05领域/PG/worker/下载能力仍未批准。
+
+X05薄client07b1b11060c069db76f9f958f92c1c53af9fca46已获Root独立只读APPROVED；3源3raw与合同1405551零diff，1红1绿与tsc，无重跑。五方法保留两个cursor、key/CAS/error/signal，202不等当前状态；不覆盖领域/worker。
+
+K03薄client77465eb59121bad5ac2785036961f1707911d21b由Root独立只读APPROVED；3源3raw核一致、1红1绿+tsc。K03领域21d2由Mika独立APPROVED，生产delta不继承该批准。
+
+## 2026-10-06 06:46 UTC K03生产独立批准
+Root独立只读APPROVED固定44bd8bc8e8e30ec49f86b6828f4947bf2c47d148；4source/12raw固定hash与bytes全部匹配，原失败CRLF由base64核实。021在scheduler/defaultscan前await，owner路由在鉴权下。真实client→PG冻结v1/sourcev2freshness/重启/撤销uncertain→C02新task恢复及重放/public不漏原文均有证据；两旧stage fixture保留原迁移/配额/审计/撤销断言。4distinct分轮绿，不称单轮4/4；最后consumer1/1与独立typecheck0，随机库创建和正常清理事实完整。无新测试/模型，不重复Mika领域审批；个人runtime仍fb906，需另行安全刷新。
+
+
+## X05 production 独立批准
+Mika只读APPROVED3691d1b3dffa5eb33546ff3b84f45fa88401a9d5；6source/3raw一致，5different及tsc/正常清理证据核，无P1/P2、未重跑。GO接收。范围可选host配置、worker生产生命周期与CLI；不包括实际npm启用/执行或个人运行环境更新。
+
+
+## CHAT06 thin client 独立批准
+Root只读APPROVED88a869efd782afd5f64f5d7adad0a9167da121c1，4source/2raw固定blob一致，1/1 HTTP34ms/noEmit0，无P1/P2/无重跑。仅transport/export/GET opt-in，不代表生产/PG/provider。
+
+
+## CHAT06 production 独立批准
+assignment_review只读APPROVED da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2，核2source/5raw固定与working hashes；2red→2green真实PG/HTTP/noEmit，资源清理事实完整。未重跑/0query，无本delta P1/P2。明确C02模块首case startup适配及Web活动cursor reader兼容仍为发布前置；不以本批准称实际Web/provider流式通过。
+
+
+C02 fixture与生产组合694c3fdbd6ef4affa66140f13a039156f27023e0（test5f + productionda7）获assignment_review独立只读APPROVED：2source/2raw hash匹配，8/8/noEmit证据核，无重跑。Web活动cursor889也已独审，I02按原样文件成套接收；原domain/transport各自批准范围保留。
+
+
+## Steering薄client独立批准
+assignment_review独立只读APPROVED 1b16d23de5b00f897fe9bd0fa07879c84d78e936，现场clean1e6965e。完整3source与server strict schema/request错误链已读；5methods路径/query白名单/原文/key/CAS/receiptId与状态原样传递，无重试。3source/3raw固定current bytes/hash全符，manifest c7f6ccf389078c93fb65e9bb7589732a34206a0eb3dd0aa0dd6d090f8a5226de；作者1红→1绿33ms+tsc原证据有效，reviewer未重跑/0query/0修改，无P1/P2。仅transport/export，不覆盖生产mount/实际送达/模型遵从，不重复2137115领域审查。
+
+## CHAT08 finalization薄client独立批准
+Review target commit: c587436c12324b5c121957643d51173cfc66009e
+Review status: APPROVED
+只覆盖packages/client/src/index.ts与steering-finalization.test.ts；固定领域合同998e2fd是早期输入，不表示领域批准。manifest见docs/evidence/f01/steering-finalization-client-manifest.json。
+
+Root于2026-10-06 07:34 UTC独立只读APPROVED3d81141324041c2c67680edbb686996cefaf8b4b（观测clean f4ca028）。完整2-file diff及73行真实HTTP测试、2source/3raw/2固定998 DTO hash逐项一致；exact body/Bearer/AbortSignal/409/disconnect/committed/not-committed/absent覆盖，无暗重试/生命周期决策，无P1/P2。原1红→1绿39ms+tsc证据支持薄传输，reviewer无重跑/0模型。absent不允许换candidate，unknown继续传播；不批准moving CHAT08领域/生产挂载。
+
+
+## O09 thin client pending independent review
+Review target commit: c587436c12324b5c121957643d51173cfc66009e
+状态：NOT_STARTED。只3file薄接线，native-node-client-manifest.json固定原始红绿/tsc与合同输入。领域/生产不在本批准范围。
+
+
+## 2026-10-06 08:00 UTC CHAT08 production独立批准
+Root只读APPROVED fe5bc2d9b8dab231996b1b156bc086d858846117 / delivery61ed4b5f969ed1d5d4e2310411873ca1b94f0404。完整2file/factory/auth/迁移顺序已读，2源4raw hash/bytes与manifest e85d515c一致，20domain对d4e不变；2/2生产、既有纵向1selected/12未选及tsc0/随机库连接和余库[]支持限定交付，无重跑/0provider/P1P2。024先worker/scheduler，可信option严格true才受理；CLI/profile/conversation仍关闭，普通stringfinal保留。本批准不含后继O09薄client或CHAT09能力开通。
+
+## O09 thin client 独立审查与生产待审
+
+Mika 2026-10-06 08:00:22 UTC：APPROVED 1bd4855f1582107e3b1b17ba9ba77cb43801e74d；3source/3raw/合同d5逐hash一致，1红→1绿24ms/noEmit，未重跑。限定transport/export。
+
+O09 production c587436c12324b5c121957643d51173cfc66009e：NOT_STARTED。只server/index两行与独立factory test；领域独审7ddd、client独审1bd不代替本挂载审查。
+
+## 2026-10-06 08:08 UTC O09 production 独立 APPROVED
+
+Reviewer: Goal Owner / gpt-6-astra ultra。Review target commit: c587436c12324b5c121957643d51173cfc66009e。完整2file与必要domain读取；2fixed source/8raw hashes、5domain输入对7ddd相同，2/2真实factory及final noEmit0/random DB cleanup已核，无P1/P2、未重跑。仅挂载与注入SDK组合，非真实provider/语义/个人部署批准。
+
+## O09 CLI 待独审
+
+Review target commit: 0d48fddd37f55854437946ea04da6c845f5b6119。NOT_STARTED；仅3files，复用readJsonInput与严格公共schema/FlowClient，旧fixture命令不变，生产领域审批不替代本CLI。
+
+## 2026-10-06 08:14 UTC O09 CLI批准 / CHAT09 client待审
+
+Root独立APPROVED 0d48fddd37f55854437946ea04da6c845f5b6119；3源5raw固定hash核，无P1/P2、未重跑，仅薄CLI入口。新Review target commit: 89931e0d9cfd00b5f51f5b266b7aaa38bba2718b；NOT_STARTED，仅profile目录header传输与直接HTTP测试。CHAT09领域cd859已由assignment_review唯一独审APPROVED；不继承为此client审查。

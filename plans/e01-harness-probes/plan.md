@@ -18,7 +18,7 @@
 
 交付 target 8e232a0c2f52fd08565c2d377215c9d3a8904641；9场景完成，发现受控并发刷新与同PID tmp竞争、取消未传递。结果与输入差异见 [证据](../../docs/evidence/e01/README.md)。这是诊断交付，不是生产改造。
 
-写范围仅 experiments/harness-probes/、plans/e01-harness-probes/、docs/evidence/e01/；D04 claim 4c525d50-50a4-4bf4-83be-4f978b601b1d version1，已核验 active。
+写范围仅 experiments/harness-probes/、plans/e01-harness-probes/、docs/evidence/e01/；原D04 claim 4c525d50-50a4-4bf4-83be-4f978b601b1d version1；本已交付片段于06:53 UTC停止写入，metadata收尾后释放。后继新领取才能继续修改。
 
 ## 第二有界片段
 
@@ -32,3 +32,5 @@
 - [ ] E01-06 Goal Owner已允许有界0模型兼容/参数预检；真实调用未批准。先原生工程能力、后stock兼容性，不为公平重造harness；真实模型/认证/新预算明确后才可调用，失败不得补次。
 
 旧adapted-wrapper对齐方案已被取代；stock的版本/设置/工具/认证差异记录为选型事实。仅实际最小adapter必需补丁可另提，不把多项改造变体当stock。旧 R02/I01 5/5 封存，当前真实 query 仍0。
+
+2026-10-06 06:53:51 UTC：两项已审探针实现已核main/origin 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a祖先与实验范围零差，本诊断片段已交付并停止持有。E01-06工程harness/真实对照未完成，不以集成合成观察代替其验收；后继另行领取和预算审定。

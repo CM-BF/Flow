@@ -1,0 +1,106 @@
+{
+  "at": "2026-10-06T07:05:47.004630+00:00",
+  "count": 83,
+  "assignmentsState": "available",
+  "selected": [
+    {
+      "id": "WPF-ACTIVITYC01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:02:56.240Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-cursor-compatibility/plans/wpf-activity-cursor-compatibility/status.md",
+        "syncedAt": "2026-10-06T07:05:42.997Z",
+        "stale": false,
+        "ageHours": 0.045276944444444446
+      },
+      "owner": "workspace_panels_owner / gpt-6-astra ultra",
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "已修正过滤空页和尾页的游标校验，正在验证分页护栏",
+        "next": "活动列表能越过隐藏的流式记录，继续显示普通活动",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "CHAT07",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:58:18.545Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/active-steering/plans/chat07-active-steering/status.md",
+        "syncedAt": "2026-10-06T07:05:42.997Z",
+        "stale": false,
+        "ageHours": 0.14388805555555556
+      },
+      "owner": "runner_owner / gpt-6-astra",
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "正在建立执行中修改指令的持久记录与明确确认状态",
+        "next": "修改指令可保存与核对，接入真实执行另行完成",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    },
+    {
+      "id": "WPF-ACTIVITYI01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:03:26.292Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity-integration/plans/wpf-activity-i01-integration/status.md",
+        "syncedAt": "2026-10-06T07:05:42.997Z",
+        "stale": false,
+        "ageHours": 0.045276944444444446
+      },
+      "owner": "w01_owner；派发 gpt-6-astra / ultra",
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "工具与思考记录已接入聊天，正在验证隐藏恢复和窄屏",
+        "next": "可展开查看工具状态和思考内容的聊天界面",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "issues": []
+    }
+  ]
+}

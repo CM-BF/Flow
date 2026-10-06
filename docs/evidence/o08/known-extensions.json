@@ -1,0 +1,19 @@
+{
+  "base": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+  "path": "docs/evidence/f01/queue-live/turn-1.json",
+  "bytes": 9991,
+  "sha256": "a18d7acaac7546b6e0c8f875025743ef05f5ef935710e0bb6a16aa6c8d468b9d",
+  "kind": "historical-record-only-no-current-probe",
+  "plugins": [
+    "cc-plugin-agents-md",
+    "cc-plugin-telemetry",
+    "cc-plugin-plugin-authoring"
+  ],
+  "skills": [
+    "design",
+    "doctor",
+    "plugin-authoring"
+  ],
+  "nativeReady": false,
+  "reason": "Known managed resources do not match zero-extension gate; no bypass or discovery query authorized."
+}

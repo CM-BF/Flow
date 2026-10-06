@@ -1,0 +1,59 @@
+{
+  "startedSource": "0a4976240706b20dd6a4b457bd26e5c09f762f65",
+  "sourceFiles": {
+    "apps/web/src/App.tsx": "56f6ddd07f6c546de6644189653abc1de828f4e970feda29b3720747053c2e8d",
+    "apps/web/src/conversation-stream/host.ts": "56d6bd61cf23e5540249adf3b20cbc64afed93e3be8784daab6049fd5d9dfe49",
+    "apps/web/src/conversations/ConversationThread.tsx": "fe0ae92a6c1d1b3ed55ce39ad59346459d9c67f4816dac70669a6da789d8994c",
+    "apps/web/src/plugin-integration/react.tsx": "69486ceac7f6215cb26c482a2240717e6b50c261c710996362b60db31172484a",
+    "apps/web/src/plugin-integration/session.ts": "7574aa1a448e67f1e4eca2bfb8964969832557a6015b69b28ea74d8c9e381f3e",
+    "apps/web/src/plugins/types.ts": "2dd8d0d6b9d3108d6546d582e66e0697d25e738d82c3fe5f43ff09ebd03c5e0f",
+    "apps/web/src/plugins/validation.ts": "51d1e9d5abffbd2add15812f3272f606f3d474a668209f0d374d5b1b2c37d5de",
+    "apps/web/test/conversation-stream-integration.browser.ts": "f081f2da370adaeccf60e62a0ca97961581464c67809cd5f72f5ad60a3cb0eae",
+    "apps/web/test/conversation-stream-integration.fixture.ts": "05138d065df24c650fa932d73c039cb8b7c8d9be8e08a7cc1701a05b004fd663",
+    "apps/web/test/conversation-stream-integration.test.ts": "0311fef9bf81981f6bc78d95eb5e98f1c54860b51af6b8acc5d183ef10fad64b",
+    "apps/web/test/plugin-host.test.ts": "26f73c5dc218026965831094a3c555c1e775859c4f99619c9a67ca50c0b36e43"
+  },
+  "at": "2026-10-06T08:00:25.515Z",
+  "production": false,
+  "checks": [
+    "official Thread shows an incremental draft, typed final settles once while task remains running"
+  ],
+  "errors": [],
+  "failure": "Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'New chat', exact: true }) resolved to 2 elements:\n    1) <button class=\"flow-new-chat\">…</button> aka getByRole('complementary', { name: 'Chats' }).getByRole('button', { name: 'New chat' })\n    2) <button title=\"New chat\" class=\"flow-icon \" aria-label=\"New chat\">…</button> aka getByRole('button', { name: 'New chat', description: 'New chat' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'New chat', exact: true })\u001b[22m\n",
+  "streamReads": [
+    [
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "patches",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "patches",
+        "after": 3
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "metadata",
+        "after": 0
+      },
+      {
+        "taskId": "chat-2-task-1",
+        "kind": "patches",
+        "after": 6
+      }
+    ],
+    []
+  ],
+  "scope": "Actual Flow App, HTTP fixture only; no model/DB/real credentials"
+}

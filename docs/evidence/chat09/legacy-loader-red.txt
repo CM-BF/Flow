@@ -1,0 +1,60 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-profile-admission
+
+ ❯ apps/runner/src/configuration.test.ts (15 tests | 1 failed | 14 skipped) 8ms
+   ↓ defaults the ordinary runner entry point to fixture only
+   ↓ enables Claude from an explicit material manifest without starting a query
+   ↓ rejects an invalid or policy-widening manifest {}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":["relative.txt"]}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":[],"tools":["Bash"]}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":[],"query":"injected"}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":[],"maxBudgetUsd":5}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":[],"requireReadApproval":"false"}
+   ↓ rejects an invalid or policy-widening manifest {"materialFiles":[],"maxTurns":5}
+   ↓ binds explicit active steering to one immutable profile while preserving legacy canonical bytes
+   ↓ rejects a non-boolean steering manifest without starting a query: "true"
+   ↓ rejects a non-boolean steering manifest without starting a query: null
+   ↓ rejects a non-boolean steering manifest without starting a query: {"protocol":"flow.active-steering.v1"}
+   ↓ refuses steering configuration for a planner tool profile
+   × refuses to silently drop steering configuration through the legacy adapter-only loader 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/configuration.test.ts > refuses to silently drop steering configuration through the legacy adapter-only loader
+AssertionError: promise resolved "[ { name: 'fixture', …(2) }, …(1) ]" instead of rejecting
+
+- Expected: 
+Error {
+  "message": "rejected promise",
+}
+
++ Received: 
+[
+  {
+    "name": "fixture",
+    "run": [Function run],
+    "version": "1",
+  },
+  {
+    "name": "claude",
+    "run": [Function run],
+    "version": "claude-sdk-0.3.290-v2",
+  },
+]
+
+ ❯ apps/runner/src/configuration.test.ts:49:95
+     47| 
+     48| it('refuses to silently drop steering configuration through the legacy…
+     49|   await expect(loadRunnerAdapters(await manifest({ materialFiles: [], …
+       |                                                                                               ^
+     50| });
+     51| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 skipped (15)
+   Start at  01:08:31
+   Duration  319ms (transform 128ms, setup 0ms, import 237ms, tests 8ms, environment 0ms)
+

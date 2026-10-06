@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { FlowApiError, type FlowClient } from "@flow/client";
-import type { ConversationCreation, ConversationSnapshot, ConversationTurn } from "@flow/contracts";
+import { FlowApiError, FlowClient } from "@flow/client";
+import { conversationCreationSchema, conversationTurnSchema, type ConversationCreation, type ConversationSnapshot, type ConversationTurn } from "@flow/contracts";
 import { ConversationProjection, replyDetailKey } from "../src/conversations/projection";
 import { conversationMessages } from "../src/conversations/messages";
 
@@ -49,6 +49,28 @@ function setup(initial = snapshot(), id: string | null = "chat", withQueue = fal
 }
 
 describe("public conversation projection", () => {
+  it("prepares zero-turn conversation using one CREATE receipt, then sends without recreating", async () => {
+    const { projection, client } = setup(snapshot(), null);
+    const creation = { ...configuredCreation, projectId: "project-a" };
+    client.createConversation.mockRejectedValueOnce(Error("lost"));
+    await projection.prepare(creation);
+    expect(projection.getSnapshot().outbox).toMatchObject({ kind: "creation", state: "unknown", request: null });
+    const receipt = projection.getSnapshot().outbox!; await projection.retry();
+    expect(client.createConversation.mock.calls[1]![1]).toBe(receipt.creationKey);
+    expect(client.submitConversationTurn).not.toHaveBeenCalled(); expect(projection.getSnapshot().turns).toEqual([]);
+    await projection.send("first real message"); expect(client.createConversation).toHaveBeenCalledTimes(2); expect(client.submitConversationTurn).toHaveBeenCalledTimes(1);
+  });
+  it("requires a supported fixed project and checks full ordered knowledge in Send ACK", async () => {
+    const initial = snapshot(); initial.conversation.projectId = "project-a"; initial.capabilities = { ...initial.capabilities, knowledgeContext: true };
+    const { projection, client } = setup(initial); await projection.refresh();
+    const ref = { projectId: "project-a", sourceId: pin.id, version: 1, contentDigest: "a".repeat(64), locator: { kind: "utf8-bytes" as const, start: 0, end: 4 } };
+    await projection.send("with knowledge", undefined, [ref]);
+    expect(projection.getSnapshot().outbox).toMatchObject({ state: "unknown", request: { knowledge: [ref] } });
+    const first = client.submitConversationTurn.mock.calls[0]!;
+    await projection.retry(); expect(client.submitConversationTurn.mock.calls[1]!.slice(0,3)).toEqual(first.slice(0,3));
+    const unsupported = setup(snapshot()); await unsupported.projection.refresh();
+    await expect(unsupported.projection.send("text", undefined, [ref])).rejects.toThrow("supported project"); expect(unsupported.client.submitConversationTurn).not.toHaveBeenCalled();
+  });
   it.each([undefined, "project-a"])("retains project %s and rejects changed GET identity without replacing known facts", async projectId => {
     const initial = snapshot(reply(turn())); initial.conversation = { ...initial.conversation, ...(projectId === undefined ? {} : { projectId }) };
     const { projection, set } = setup(initial); await projection.refresh();
@@ -367,5 +389,113 @@ describe("public conversation projection", () => {
     const next = setup(snapshot(reply(turn(), "Center B"))); await next.projection.refresh();
     pending.resolve({ id: "detail", title: "A", kind: "artifact", content: "Center A", mediaType: "text/plain", artifactVersion: "v1" }); await loading;
     expect(next.projection.getSnapshot().details).toEqual({}); expect(next.projection.getSnapshot().turns[0]!.assistant).toMatchObject({ text: "Center B" });
+  });
+});
+
+
+describe("live text capability wire compatibility", () => {
+  afterEach(() => vi.restoreAllMocks());
+
+  function wire(liveAssistantText: unknown, queue = false, id: string | null = "chat") {
+    let current: ConversationSnapshot = { ...snapshot(), capabilities: { ...capabilities, queue } } satisfies ConversationSnapshot;
+    let live = liveAssistantText;
+    let createResponse: ((value: unknown) => unknown) | undefined;
+    const requests: { path: string; method: string; body: string | undefined; key: string | null; optIn: string | null }[] = [];
+    vi.spyOn(globalThis, "fetch").mockImplementation(async (input, init) => {
+      const url = new URL(input instanceof Request ? input.url : String(input));
+      const method = init?.method ?? "GET", headers = new Headers(init?.headers);
+      const body = typeof init?.body === "string" ? init.body : undefined;
+      requests.push({ path: url.pathname, method, body, key: headers.get("Idempotency-Key"), optIn: headers.get("X-Flow-Assistant-Stream") });
+      const wireCapabilities = () => ({ ...current.capabilities, liveAssistantText: live });
+      if (url.pathname === "/api/conversations" && method === "POST") {
+        const creation = conversationCreationSchema.parse(JSON.parse(body ?? "null"));
+        current = { ...current, conversation: { ...current.conversation, ...creation } };
+        const receipt = { conversation: current.conversation, capabilities: wireCapabilities(), replayed: requests.filter(request => request.path === url.pathname && request.method === method).length > 1 };
+        return Response.json(createResponse ? createResponse(receipt) : receipt);
+      }
+      if (url.pathname === "/api/conversations/chat/turns" && method === "POST") {
+        const admission = conversationTurnSchema.parse(JSON.parse(body ?? "null"));
+        const accepted = turn(admission.expectedRevision + 1, admission.text);
+        current = { ...current, conversation: { ...current.conversation, revision: accepted.number }, lastTurn: accepted };
+        return Response.json({ conversation: current.conversation, turn: accepted, replayed: false });
+      }
+      if (url.pathname === "/api/conversations/chat" && method === "GET") return Response.json({ ...current, capabilities: wireCapabilities() });
+      if (url.pathname === "/api/conversations/chat/turns" && method === "GET") return Response.json({ conversation: current.conversation, turns: current.lastTurn ? [current.lastTurn] : [], nextCursor: null });
+      if (url.pathname === "/api/conversations/chat/queue" && method === "GET") return Response.json({ conversationId: "chat", queueRevision: 0, paused: false, currentTurn: null, items: [], nextCursor: null, blocked: null });
+      throw Error(`Unexpected compatibility request: ${method} ${url.pathname}`);
+    });
+    const projection = new ConversationProjection(new FlowClient({ baseUrl: "http://compatibility.fixture", token: "public-fixture-token" }), id, 100_000);
+    projections.push(projection);
+    return { projection, requests, setLive(value: unknown) { live = value; }, setCurrent(value: ConversationSnapshot) { current = value; },
+      setCreateResponse(value: typeof createResponse) { createResponse = value; } };
+  }
+
+  function expectNoNewConsumer(requests: ReturnType<typeof wire>["requests"]) {
+    expect(requests.every(request => request.optIn === null)).toBe(true);
+    expect(requests.some(request => /assistant-stream|details|native-activit/.test(request.path))).toBe(false);
+  }
+
+  for (const queue of [false, true]) {
+    it.each([undefined, false, true])(`reads live=%s with queue=${queue} without enabling a stream consumer`, async live => {
+      const { projection, requests } = wire(live, queue); await projection.refresh();
+      if (queue) await projection.queue.refresh();
+      expect(projection.getSnapshot()).toMatchObject({ error: null, connection: "live", snapshot: { capabilities: { liveAssistantText: live ?? false, queue } } });
+      expect(projection.queue.getSnapshot().available).toBe(queue);
+      expect(requests.filter(request => request.path.endsWith("/queue")).length > 0).toBe(queue);
+      expect(projection.getSnapshot().outbox).toBeNull(); expect(requests.every(request => request.method === "GET")).toBe(true);
+      expectNoNewConsumer(requests);
+    });
+    it.each([undefined, false, true])(`accepts CREATE live=%s with queue=${queue}, then submits one ordinary turn`, async live => {
+      const { projection, requests } = wire(live, queue, null);
+      expect(await projection.send("hello")).toBe("chat");
+      expect(projection.getSnapshot()).toMatchObject({ outbox: null, snapshot: { capabilities: { liveAssistantText: live ?? false, queue }, conversation: { revision: 1 } } });
+      expect(requests.filter(request => request.method === "POST").map(request => request.path)).toEqual(["/api/conversations", "/api/conversations/chat/turns"]);
+      const sent = requests.find(request => request.path.endsWith("/turns") && request.method === "POST")!;
+      expect(JSON.parse(sent.body!)).toEqual({ expectedRevision: 0, text: "hello", mode: "follow-up" });
+      expectNoNewConsumer(requests);
+    });
+  }
+
+  it.each([null, "true", 1, {}])("rejects malformed GET live=%j without replacing known facts", async bad => {
+    const { projection, requests, setLive } = wire(false); await projection.refresh();
+    const known = projection.getSnapshot().snapshot; setLive(bad); await projection.refresh();
+    expect(projection.getSnapshot().snapshot).toBe(known); expect(projection.getSnapshot().error).toContain("capabilities are not supported");
+    expect(projection.getSnapshot().connection).toBe("reconnecting"); expectNoNewConsumer(requests);
+  });
+
+  it.each([null, "true", 1, {}])("keeps malformed CREATE live=%j unknown and retries the frozen receipt", async bad => {
+    const { projection, requests, setLive } = wire(bad, false, null);
+    await projection.send("hello"); const pending = projection.getSnapshot().outbox;
+    expect(pending?.state).toBe("unknown"); expect(projection.getSnapshot().snapshot).toBeNull();
+    expect(requests.filter(request => request.method === "POST")).toHaveLength(1);
+    setLive(true); expect(await projection.retry()).toBe("chat");
+    const creates = requests.filter(request => request.path === "/api/conversations");
+    expect(creates).toHaveLength(2); expect(creates[1]?.body).toBe(creates[0]?.body); expect(creates[1]?.key).toBe(pending?.creationKey);
+    expect(projection.getSnapshot().outbox).toBeNull(); expectNoNewConsumer(requests);
+  });
+
+  it("does not let true bypass GET conversation, turn or task identities", async () => {
+    const { projection, requests, setCurrent } = wire(true); await projection.refresh(); const known = projection.getSnapshot().snapshot;
+    const valid = { ...snapshot(reply(turn())), capabilities: { ...capabilities, liveAssistantText: true } } satisfies ConversationSnapshot;
+    const wrong = [
+      { ...valid, conversation: { ...valid.conversation, id: "other" } },
+      { ...valid, lastTurn: { ...valid.lastTurn!, conversationId: "other" } },
+      { ...valid, lastTurn: { ...valid.lastTurn!, telemetry: { kind: "execution", taskId: "other", title: "Execution" } } } satisfies ConversationSnapshot,
+    ];
+    for (const value of wrong) { setCurrent(value); await projection.refresh(); expect(projection.getSnapshot().snapshot).toBe(known); expect(projection.getSnapshot().error).not.toBeNull(); }
+    expectNoNewConsumer(requests);
+  });
+
+  it.each(["project", "profile"])("does not let true bypass a mismatched %s CREATE identity", async field => {
+    const { projection, requests, setCreateResponse } = wire(true, false, null);
+    const creation = { ...configuredCreation, projectId: "project-a" } satisfies ConversationCreation;
+    setCreateResponse(() => ({ conversation: { ...snapshot().conversation, ...creation,
+      ...(field === "project" ? { projectId: "project-b" } : { executionProfile: { ...pin, configDigest: "b".repeat(64) } }) }, capabilities: { ...capabilities, liveAssistantText: true }, replayed: false }));
+    await projection.send("hi", creation);
+    expect(projection.getSnapshot().outbox).toMatchObject({ state: "unknown", conversationId: null, creation });
+    expect(requests.filter(request => request.method === "POST")).toHaveLength(1); expectNoNewConsumer(requests);
+    setCreateResponse(undefined); expect(await projection.retry()).toBe("chat");
+    const creates = requests.filter(request => request.path === "/api/conversations");
+    expect(creates[1]?.key).toBe(creates[0]?.key); expect(creates[1]?.body).toBe(creates[0]?.body);
   });
 });

@@ -5,8 +5,7 @@ function html(tag, text, className) { const result = document.createElement(tag)
 function svg(tag, attributes, text) { const result = document.createElementNS(svgNamespace, tag); for (const [key,value] of Object.entries(attributes)) result.setAttribute(key, value); if (text !== undefined) result.textContent = text; return result; }
 const kinds = { flow: 'Flow 自有', external: '外部 package / 系统', planned: '分支开发 / 研究中', vendored: '引入源码 · Flow 维护' };
 let selectedView = views[0];
-let zoom = 1;
-let fit = false;
+const viewportStates = new Map(views.map(view => [view.id, { mode: 'fit', zoom: 1 }]));
 let selectedNode;
 const canvas = $('#architecture-canvas');
 const viewport = $('#architecture-viewport');
@@ -48,7 +47,15 @@ function drawEdge(edge) {
   group.append(svg('rect',{x:lx-textWidth/2,y:ly-12,width:textWidth,height:19,rx:3}),svg('text',{x:lx,y:ly+1,'text-anchor':'middle'},edge.label));return group;
 }
 function sizeCanvas() {
-  if(fit) zoom=Math.min(1,Math.max(.42,(viewport.clientWidth-20)/selectedView.width));
+  if ($('#architecture-panel').hidden) return;
+  const state = viewportStates.get(selectedView.id);
+  if (state.mode === 'fit') {
+    const style = getComputedStyle(viewport);
+    const availableWidth = viewport.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+    if (availableWidth <= 0) return;
+    state.zoom = Math.min(1, Math.max(.42, availableWidth / selectedView.width));
+  }
+  const { zoom } = state;
   canvas.setAttribute('width',String(Math.round(selectedView.width*zoom)));
   canvas.setAttribute('height',String(Math.round(selectedView.height*zoom)));
   $('#architecture-zoom').textContent=`${Math.round(zoom*100)}%`;
@@ -68,10 +75,16 @@ function draw() {
 }
 const viewSelect=$('#architecture-view');
 for(const view of views){const option=html('option',view.title);option.value=view.id;viewSelect.append(option);}
-viewSelect.addEventListener('change',()=>{selectedView=views.find(view=>view.id===viewSelect.value);fit=false;zoom=1;draw();});
-$('#architecture-zoom-in').addEventListener('click',()=>{fit=false;zoom=Math.min(2,zoom+.2);sizeCanvas();});
-$('#architecture-zoom-out').addEventListener('click',()=>{fit=false;zoom=Math.max(.4,zoom-.2);sizeCanvas();});
-$('#architecture-fit').addEventListener('click',()=>{fit=true;sizeCanvas();});
+viewSelect.addEventListener('change',()=>{selectedView=views.find(view=>view.id===viewSelect.value);draw();});
+function changeZoom(delta) {
+  const state = viewportStates.get(selectedView.id);
+  state.mode = 'manual';
+  state.zoom = Math.min(2, Math.max(.4, state.zoom + delta));
+  sizeCanvas();
+}
+$('#architecture-zoom-in').addEventListener('click',()=>changeZoom(.2));
+$('#architecture-zoom-out').addEventListener('click',()=>changeZoom(-.2));
+$('#architecture-fit').addEventListener('click',()=>{viewportStates.get(selectedView.id).mode='fit';sizeCanvas();});
 function snapshotLink(short = false) {
   const link = html('a', short ? baseline.commit.slice(0, 8) : baseline.commit);
   link.href = `${baseline.repository}/tree/${baseline.commit}`;
@@ -89,5 +102,5 @@ function activateTab() {
   if(architecture)sizeCanvas();
 }
 window.addEventListener('hashchange',activateTab);
-new ResizeObserver(()=>{if(fit&&!$('#architecture-panel').hidden)sizeCanvas();}).observe(viewport);
+new ResizeObserver(()=>{if(viewportStates.get(selectedView.id).mode==='fit')sizeCanvas();}).observe(viewport);
 draw(); activateTab();

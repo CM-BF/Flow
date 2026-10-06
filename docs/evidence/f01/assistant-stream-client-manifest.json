@@ -1,0 +1,50 @@
+{
+  "target": "88a869efd782afd5f64f5d7adad0a9167da121c1",
+  "recordedAt": "2026-10-06T06:57:25.107978+00:00",
+  "sources": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 34252,
+      "sha256": "9ca50da77efcb8e147afb324166634aa22413d2f45721acb5022c6ddd46cedea"
+    },
+    {
+      "path": "packages/client/src/assistant-stream.test.ts",
+      "bytes": 3170,
+      "sha256": "43f05c5e5a1000585c62490e4fa6d2a335b63e6a9f3d40fc44a4fd5138917f85"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 890,
+      "sha256": "1903349782abae72f704a49a850d8fc63a7310db53c8b6a89ba4d0338ae1021d"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 5897,
+      "sha256": "72e9ceb34213cc5ba95162bc1f1b3eac926d9349c83d4f54b29a8d0bd7bcd3b2"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/f01/assistant-stream-client-checks.txt",
+      "bytes": 320,
+      "sha256": "417577e1c9e05970dd79b3f467c54bab49ff55912f357151234e365e09e7fe88"
+    },
+    {
+      "path": "docs/evidence/f01/assistant-stream-client-typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "selected": 1,
+    "passed": 1,
+    "failed": 0,
+    "typecheckExit": 0,
+    "providerQueries": 0
+  },
+  "limits": [
+    "Thin HTTP client only; no PG or production mounting proof",
+    "Creation receipt never negotiates; only GET conversation opt-in",
+    "Read protocol capability is not runner/provider partial-output evidence"
+  ]
+}
