@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { claudeTurnSettingsSchema, type ClaudeTurnSettings } from './claude-turn-settings.js';
 import { attachmentSelectionSchema } from './attachments.js';
 import { conversationContextSelectionSchema, type ConversationContextReference } from './conversation-context.js';
 import { idSchema, type TaskSummary } from './tasks.js';
@@ -11,6 +12,7 @@ export const conversationQueueEnqueueSchema = z.strictObject({
   expectedQueueRevision: revision,
   knowledge: conversationContextSelectionSchema.optional(),
   attachments: attachmentSelectionSchema.optional(),
+  messageSettings: claudeTurnSettingsSchema.optional(),
   text: z.string().min(1).max(CONVERSATION_QUEUE_TEXT_BYTES).refine(text => text.trim().length > 0 && new TextEncoder().encode(text).length <= CONVERSATION_QUEUE_TEXT_BYTES),
 });
 export const conversationQueueCancelSchema = z.strictObject({ expectedQueueRevision: revision });
@@ -25,8 +27,9 @@ export type ConversationQueueCancel = z.infer<typeof conversationQueueCancelSche
 export type ConversationQueuePause = z.infer<typeof conversationQueuePauseSchema>;
 export type ConversationQueueResume = z.infer<typeof conversationQueueResumeSchema>;
 export interface ConversationQueueCurrentTurn { taskId: string; taskStatus: TaskSummary['status']; turnId: string; turnNumber: number; queueItemId: string | null }
-export type ConversationQueueBlockReason = 'queue-paused' | 'previous-turn-active' | 'previous-turn-failed' | 'previous-turn-cancelled' | 'previous-turn-uncertain' | 'native-session-unavailable' | 'native-session-busy' | 'execution-profile-unavailable';
+export type ConversationQueueBlockReason = 'queue-paused' | 'previous-turn-active' | 'previous-turn-failed' | 'previous-turn-cancelled' | 'previous-turn-uncertain' | 'native-session-unavailable' | 'native-session-busy' | 'execution-profile-unavailable' | 'message-settings-unsupported';
 export interface ConversationQueueItem {
+  messageSettings?: ClaudeTurnSettings;
   context?: ConversationContextReference;
   id: string;
   conversationId: string;
