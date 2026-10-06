@@ -326,3 +326,5 @@ CHAT05后继正文边界：超64KiB仅prefix+full原文digest，完整超限正�
 06:45 当前兼容决定覆盖06:38准备态：GO确认CREATE ACK及同key重放永远保留原receipt、显式liveAssistantText:false；GET snapshot只按X-Flow-Assistant-Stream: patch-v1连接协议协商，未协商/未知false，中心mount与消费门槛满足才true，不与lastTurn已有patch绑定、不保证provider delta。C01已获准确basea26与单文件shared86fc、四scope ca26v1后正式实施，仅接受optional boolean，不发送opt-in或自动读取正文。后继真正消费者仍等rendererI正式交权与冻结client/表示；旧Web兼容不能只靠新版JS上线。
 
 GO管理审计规则：active claim按实际开发/持续管理、冻结待审/集成、已main待原owner收口分别列，历史数量不当agent并发。需固定祖先+保留scope+权威status事实后由原owner核尚有无写入、metadata停点、fresh版本release；不强制revoke，也不因历史基线状态过时恢复已转交路径。
+
+06:49 GO更新既有U11活动接线优先级：同一WPF-ACTIVITYI01须同时消费已main CHAT05 typed工具/真实thinking，不能仅generic61b；不扩大为CHAT06流正文。准确base候选86a36eaeffbf09f0a3772c3d1509c17dc0a76f92，rendererI已released；原13scope未take，等窄typed接口/scope明确再fresh领取。实际provider证据、轻metadata/展开64KiB prefix、unknown/截断语义与真实水位合并是验收约束，不造thinking/耗时或每消息poll。
