@@ -1,0 +1,44 @@
+{
+  "phase": "v3 preparation; no runtime authorization",
+  "preparedEvidenceBytes": 122648,
+  "archiveReserveBytes": 131072,
+  "baselineFiles": [
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/driver-input.json",
+      "bytes": 9991,
+      "sha256": "6d5f6b14d832fe0e853289d58ff3e740391c1ff846ba78afe916892ccab5c442"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/manifest.json",
+      "bytes": 8993,
+      "sha256": "b07977122645a949d66fcdea7aca312866c202dfddb4443389c22344024d6f10"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/plan.md",
+      "bytes": 10198,
+      "sha256": "8e2c6d2a2afa350377f1128912ce549068bf373b7ae54a6a5aef4e31ceffc930"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/status.md",
+      "bytes": 20219,
+      "sha256": "16643323c9534a7fd15b43f322744984b6793213da3a771fe857d4cc07fdda0f"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/review.md",
+      "bytes": 19407,
+      "sha256": "d0c82670b2cee68142213cd4185ab165e5e29b69a576e071aacc3c6cdd8503d1"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/interface.md",
+      "bytes": 31093,
+      "sha256": "11807259572b9073eaa14857688e973ad21a5267a9441515c548e6d21d609a6c"
+    }
+  ],
+  "baselineListedBytes": 99901,
+  "thisReceiptBytes": 1716,
+  "baselineWithReceiptBytes": 101617,
+  "remainingArchiveReserveBytes": 29455,
+  "minimumFutureResultAndReviewHeadroomBytes": 20000,
+  "plannedRawPolicy": "runtime compiler files local0600; disk copy already charged artifact; safe archive only metadata",
+  "timeBoundary": "60s future automatic runtime evidence/cleanup/result/CLI only; manual review/Git later, actual bytes count in tail"
+}

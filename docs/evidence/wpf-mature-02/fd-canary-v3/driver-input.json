@@ -1,0 +1,260 @@
+{
+  "totalMs": 60000,
+  "maxTargets": 2,
+  "maxCompileCalls": 1,
+  "maxBytes": 2097152,
+  "archiveReserveBytes": 131072,
+  "receiptReserveBytes": 32768,
+  "node": {
+    "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "bytes": 50320,
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "toolchain": {
+    "clang": "/Library/Developer/CommandLineTools/usr/bin/clang",
+    "linker": "/Library/Developer/CommandLineTools/usr/bin/ld",
+    "sdk": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk",
+    "sandbox": "/usr/bin/sandbox-exec"
+  },
+  "externalInputs": [
+    {
+      "path": "/Library/Developer/CommandLineTools/usr/bin/clang",
+      "bytes": 269112240,
+      "sha256": "bcac6febe0148c3696bd3f7c42fb5bb475720fee4a1412de56e3b16ea1c04e5f"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/usr/bin/ld",
+      "bytes": 4616992,
+      "sha256": "f72642cacf25674cb1558893908e99ef5ef396e7510ac447ba3bb52fc2a3fae1"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/SDKSettings.json",
+      "bytes": 7529,
+      "sha256": "7a2223423d955944a74542b8a72fda83cf970fa30749ba305fa904451f3a16c1"
+    },
+    {
+      "path": "/usr/bin/sandbox-exec",
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/usr/share/man/man1/clang.1",
+      "bytes": 27478,
+      "sha256": "401ea5fbed7816e9066cbc818a3f92ac45d16bf5bce5600789b3b758756a1a4f"
+    }
+  ],
+  "candidateVersion": 3,
+  "purpose": "fixed socket control then regular-file comparison; runtime authorization NONE",
+  "sourceTarget": "3636614f3850d7eb9ca63a42c01ea0d95df19db2",
+  "timeScope": "60s automatic runtime evidence/cleanup/result/CLI; manual review/Git afterward with archive bytes separately bounded",
+  "files": [
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/candidate.sb",
+      "bytes": 6508,
+      "sha256": "fc8b5af386b2ea12208f565531d3dcbc94a671ba6d6e5840194abb4cd2681739"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/command.mjs",
+      "bytes": 3428,
+      "sha256": "1111682ef3c1c364bd2d4d1fc2e4347a93fbb7c7809aafb52dd25bd41309bc4e"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs",
+      "bytes": 4765,
+      "sha256": "d458bfbb4d5c301c591cf5582ce54a938d27af0570047e8c1f239cb46e33c19f"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/fd-canary.c",
+      "bytes": 3712,
+      "sha256": "b0a7eea8cbc5354c8966cf4e1573114e9a2c41899f04bae01577d9b5af055917"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.mjs",
+      "bytes": 15905,
+      "sha256": "ba0aa8891c409efe24a1d944b7a3edb5632d12cea550f1c087752040cd164d37"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.test.ts",
+      "bytes": 30378,
+      "sha256": "7f59025d9c7ba8efb477fe6e28134eb5f4068693b70c5917a4e2ebc0016c2673"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.mjs",
+      "bytes": 6336,
+      "sha256": "e8f7f00df2a40fd30ed7338f755d66846618c97da577208e7eebfdb1f8d6db63"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.schema.json",
+      "bytes": 14433,
+      "sha256": "e10a048a368fc114657d87de2dd353034912b07a074f394f238d77f68dbdbb67"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/vitest.config.mjs",
+      "bytes": 396,
+      "sha256": "e5c5236223fc043004da69288ab1c0da6817c74e2ab59b1f34df22ec8ab971f9"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/isolation/default-deny.sb",
+      "bytes": 6252,
+      "sha256": "b050b371c0739f8081a26fd3e4df27487075fdd6b0adee0107da05b12e1ef779"
+    }
+  ],
+  "preparedEvidence": [
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/candidate.sb",
+      "bytes": 6508,
+      "sha256": "fc8b5af386b2ea12208f565531d3dcbc94a671ba6d6e5840194abb4cd2681739"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/command.mjs",
+      "bytes": 3428,
+      "sha256": "1111682ef3c1c364bd2d4d1fc2e4347a93fbb7c7809aafb52dd25bd41309bc4e"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs",
+      "bytes": 4765,
+      "sha256": "d458bfbb4d5c301c591cf5582ce54a938d27af0570047e8c1f239cb46e33c19f"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/fd-canary.c",
+      "bytes": 3712,
+      "sha256": "b0a7eea8cbc5354c8966cf4e1573114e9a2c41899f04bae01577d9b5af055917"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.mjs",
+      "bytes": 15905,
+      "sha256": "ba0aa8891c409efe24a1d944b7a3edb5632d12cea550f1c087752040cd164d37"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.test.ts",
+      "bytes": 30378,
+      "sha256": "7f59025d9c7ba8efb477fe6e28134eb5f4068693b70c5917a4e2ebc0016c2673"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.mjs",
+      "bytes": 6336,
+      "sha256": "e8f7f00df2a40fd30ed7338f755d66846618c97da577208e7eebfdb1f8d6db63"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.schema.json",
+      "bytes": 14433,
+      "sha256": "e10a048a368fc114657d87de2dd353034912b07a074f394f238d77f68dbdbb67"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/vitest.config.mjs",
+      "bytes": 396,
+      "sha256": "e5c5236223fc043004da69288ab1c0da6817c74e2ab59b1f34df22ec8ab971f9"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/isolation/default-deny.sb",
+      "bytes": 6252,
+      "sha256": "b050b371c0739f8081a26fd3e4df27487075fdd6b0adee0107da05b12e1ef779"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/.gitignore",
+      "bytes": 34,
+      "sha256": "e5343207697eafee5ff79ab8679eec67ad0d5c5a4987b556a997ed3917b25687"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/README.md",
+      "bytes": 3322,
+      "sha256": "263efd9eeb0b84455d862370adaad960b4a330409fc54e8280f99a1e41362dfb"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/final-result.json",
+      "bytes": 957,
+      "sha256": "94723594610a10c43c1591683e673ddcc0d855a6134e7ef9fd173094cd3ca1b6"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/final-source.json",
+      "bytes": 573,
+      "sha256": "7820e15a86771693513d2ca3d627469c217cd12529a3c23a8ff1c6429767c421"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/final.stdout",
+      "bytes": 374,
+      "sha256": "db27a56bfd7706933f49b742908b94da685615b2ebd6e9ab99924c76e4460e16"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/green-result.json",
+      "bytes": 957,
+      "sha256": "d31751c6b561c450dfd0003437e3f7c51c77006da51b3b3276e730e71b24e6fb"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/green.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/green.stdout",
+      "bytes": 374,
+      "sha256": "9b6df1738aad61868e480aa400305903b4a565837542512ff6b1ef6d88d9ab51"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/native-import-result.json",
+      "bytes": 470,
+      "sha256": "64c5356ae947dc782a63f414fb6ee34c8e8d8f86f26edfa0f15a6e67f38de21f"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/native-import.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/native-import.stdout",
+      "bytes": 20,
+      "sha256": "c0a7368cc7192990daeabd5783c79a3717c1bd123854f514436c1362f44bcec5"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/red-result.json",
+      "bytes": 561,
+      "sha256": "c1ca1e282bf3b3e434f1c06766b91338b4dc1a0df24346db744a986b44eca278"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/red-source.json",
+      "bytes": 573,
+      "sha256": "e8a6710eda25f381e5791402d28d376c45be9c96057f3b563090aed9d199755e"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/red.stderr",
+      "bytes": 5412,
+      "sha256": "b314733cdb6e731b6540a60cd3c3111b09f5f603712ced391b507c8ddfc5c1d3"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/red.stdout",
+      "bytes": 8509,
+      "sha256": "ed9c2b08c73b90d1c3385c4978ff3ee766736473d188a97ad55411d132c7a63b"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/checks/syntax.json",
+      "bytes": 859,
+      "sha256": "97aac31c992de93019e71a3d1b97b3c045d26035a96fb5f564ae16fa65af86cc"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/quality.md",
+      "bytes": 1150,
+      "sha256": "ebedda896a3558b4b6851b307a9b95115ace32cd5068f4140ba7831018f9face"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary-v3/recipe-proposal.md",
+      "bytes": 4620,
+      "sha256": "6577a0f2b9e8afc873f1602c3f05ebab3891dde80052eaf88aec52dd34e778b4"
+    }
+  ],
+  "preparedEvidenceBytes": 122648
+}

@@ -1,3 +1,7 @@
+# Current C fd v3 combination review
+
+State: NOT_STARTED. Source3636614f3850d7eb9ca63a42c01ea0d95df19db2; [candidate](../../docs/evidence/wpf-mature-02/fd-canary-v3/README.md), new input/manifest. Fixed control-socket→profile-regular only; parent fd identity and child observation separate; automatic compiler inventory inside runtime clock. Final28/28 selected,16unselected,9new+19direct; inert Node24 import/3syntax0. Actual compile/targets0, no runtime authorization. Prior result approvals below are historical snapshots.
+
 # Current C fd v2 result review
 
 State: APPROVED faithful incomplete/FAIL, architecture_read/gpt-6-astra,2026-10-06 11:30:14 UTC,0P1/P2; target6b397a584e5b221c63153f843014d31c4118d011. [Run](../../docs/evidence/wpf-mature-02/fd-canary-v2/run-report.md): 13bindings exact; archive6b snapshot130152B/total425695B. Compile1/targets2,profile SIGABRT/no report,third NOT_RUN; measurement false,cleanup/accounting true,CLI1. Raw0600/hash only; no rerun. No isolation/causal approval or proof of all archival work≤60s. Later metadata does not claim old archive hashes are current.

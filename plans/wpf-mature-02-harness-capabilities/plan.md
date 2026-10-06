@@ -72,3 +72,5 @@ WPF-MATURE-02-03唯一新诊断batch已在Mika窗口中执行并封存：控制�
 ## WPF-MATURE-02-03 最小logging/格式候选
 
 旧窗口6d faithful FAIL已审且已消费。GO明确授权在同一scope做下一候选源码：编译器有限原stdout/stderr先持久化、失败阶段/检查固定枚举；LLVM固定printArg有界解析，不将源码格式问题当旧raw归因。固定v2 `851fd8c7a48b6ebec64cbf80ccda4eb6bcfaf845`完成26/26受影响检查、9未选，0新增compile/target。原C/profile/进程权限不扩，旧raw/manifest/accounting按旧target保持；新input/manifest独立目录。下一步仅源独审，实际运行须Mika以整项目阻塞新事实另申请预算，当前授权0。
+
+WPF-MATURE-02-03当前后继为[固定regular-file对照候选](../../docs/evidence/wpf-mature-02/fd-canary-v3/README.md)：一编译/两目标，自动runtime证据与人工review时钟分开；当前仅零目标验证，源码固定后独审，未来仍需新GO预算与唯一窗口。不新增任务层级或改动旧失败结论。

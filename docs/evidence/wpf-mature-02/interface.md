@@ -4,7 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
-- [缺失regular-file stdio对照的一页v3设计](fd-canary-v3/recipe-proposal.md)：只提1编译/2目标固定矩阵，当前0实施/0运行，待Mika审设计。v2归档hash仍绑定6b历史快照。
+- [缺失regular-file stdio对照v3固定候选](fd-canary-v3/README.md)：设计已获Mika允许，source3636614f，28/28局部检查与Node24惰性import通过；0实际编译/目标，待组合独审，无新运行授权。v2归档仍绑定6b历史快照。
+- [B01轻投影权威来源/registry变更请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/task-read-projections/docs/evidence/b01/task-projections/authority-request.md)。请Lead按权威请求切换登记；不复制进度。
 
 - [Codex诊断v2最终结果：控制socket已测，profile SIGABRT](fd-canary-v2/run-report.md)：获批唯一窗口已消费，1编译/2目标，第三NOT_RUN；测量未完成、清理/输出计量完成，待独立结果审查，无剩余运行许可。
 - [04归一化集成输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/normalize-integration-ready.md)。请Lead按此权威输入接收，进度仅在04维护。
