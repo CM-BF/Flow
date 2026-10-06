@@ -35,3 +35,5 @@ HTTP检查使用动态loopback端口、内存命令回执、公开fixture身份�
 这片不提供新的本地页面URL/截图，不改变任何渲染。未新增真实provider/PG/浏览器矩阵；复用已有受审UI。共享输入固定，不升级runtime。完整client decoder规则由原owner维护；Web保持v1历史/queue，附件v2继续单点共享扩展。main尚未接本片，独审已通过、由Lead集成；当前实现五source冻结。
 
 [plan](../../../plans/wpf-ack01-shared-consumer/plan.md) · [status](../../../plans/wpf-ack01-shared-consumer/status.md) · [review](../../../plans/wpf-ack01-shared-consumer/review.md) · [质量记录](quality.md)
+
+主线交付：`e4c82ccb1655612fb175c26fe472dce736f848ed` 已接收固定五源码，owner已核逐字相同，见[主线记录](main-source-observation.json)和[Lead原receipt](main-lead-receipt.json)。本片已交付，源码不重测。

@@ -1,6 +1,6 @@
 # WPF-ACK01 共享会话回执的 Web 消费
 
-状态：in-progress。创建/更新：2026-10-06 10:46 UTC。父任务：[WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)；沿[模块设计规则](../../AGENTS.md#modular-design)。
+状态：completed。创建/更新：2026-10-06 10:46 UTC。父任务：[WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)；沿[模块设计规则](../../AGENTS.md#modular-design)。
 
 固定输入 0cee7556befa1988e60bae94b510240122c34b88，公共实现 dc7f3e186ee7a628187f82734db73f48866b9f6e 已由Lead集成。Web复用 @flow/client 的创建/turn decoder及creation/context matcher，不再复制POST receipt字段规则。scope仅三现有入口、两个局部测试及本记录，无App/UI/shared/queue实现/依赖修改。
 
@@ -19,6 +19,6 @@
 
 - [x] ACK01-01 三处薄入口委托公共回执验证，保既有Web投影和冻结策略。
 - [x] ACK01-02 真实HTTP故障/恢复及直接消费者局部验证；记录clean-code和固定来源。
-- [ ] ACK01-03 独立review、主线接收；分支通过不等main完成。
+- [x] ACK01-03 独立review、主线接收；分支通过不等main完成。
 
 验收包括坏200JSON/shape/identity/context不清unknown原key/body；已知GET优于旧ACK；409无自动重发；创建profile/project匹配、知识有序tuple与Queue直接消费者保持。只跑本模块/直接依赖，不重跑完整浏览器矩阵。

@@ -19,3 +19,7 @@ Base：0cee7556befa1988e60bae94b510240122c34b88
 作者137+13分两命令及Web typecheck0见[README](../../docs/evidence/wpf-ack01/README.md)、[source-manifest](../../docs/evidence/wpf-ack01/source-manifest.json)。root未重复Web types；双方无browser/PG/provider运行。没有UI变化、个人发布或main已接收结论。未知context v2仍拒；后继附件必须由共享decoder正式扩展，不增Web平行规则。五source冻结；后续metadata提交不扩大审查范围。
 
 入口：[plan](plan.md)、[status](status.md)、[quality](../../docs/evidence/wpf-ack01/quality.md)。
+
+## 主线接收
+
+2026-10-06 11:09:21 UTC owner只读核固定main `e4c82ccb1655612fb175c26fe472dce736f848ed` 的五源码与target/current相同，[来源](../../docs/evidence/wpf-ack01/main-source-observation.json)。独审target不变，0重跑产品测试/服务操作。

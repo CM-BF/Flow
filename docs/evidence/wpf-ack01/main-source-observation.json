@@ -1,0 +1,35 @@
+{
+  "observedAt": "2026-10-06 11:09:21 UTC",
+  "main": "e4c82ccb1655612fb175c26fe472dce736f848ed",
+  "target": "2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d",
+  "implementationAncestor": false,
+  "sources": [
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "f55dbd8ea75148164e5cc52303338793f2012eb4381b34e62ccd773e72a311fd",
+      "fixedMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "9a56ba34efd52c0d542802da1e48dd168c1ad36abae9554b926386abe7ea2d82",
+      "fixedMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "sha256": "24262572d8c7901eb417c7b8573a0b161e0f978d842935e4a2eeb1631b2f5cd9",
+      "fixedMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-projection.test.ts",
+      "sha256": "1059b891b1963f1a01ef04f469253bd5afd95aed1d701454cffd36be9d31d39e",
+      "fixedMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-ack-http.test.ts",
+      "sha256": "5af8034b8e5241aa37d9d8949f6dff519239a54223128fa5af0283d9d7cf5596",
+      "fixedMainCurrentEqual": true
+    }
+  ],
+  "leadReceiptSource": "e4c82ccb1655612fb175c26fe472dce736f848ed:docs/evidence/i02/web-shared-ack-integration.json",
+  "productRetest": false
+}
