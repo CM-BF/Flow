@@ -12,9 +12,9 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；接线7、旧consumer34、Web116分别通过，原red保留；无新增模型 |
 | 已集成main状态 / HEAD | 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a 已推送；K03/021及renderer接线已交付。X05生产已审待集成；流式公共读取接口待审。实际center/runner仍fb906cb。 |
-| Review | NOT_STARTED 88a869efd782afd5f64f5d7adad0a9167da121c1；X05生产3691d1b已独立APPROVED |
-| 实现目标 | 88a869efd782afd5f64f5d7adad0a9167da121c1 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/assistant-stream.test.ts, packages/contracts/src/index.ts, packages/contracts/src/conversations.ts |
+| Review | NOT_STARTED da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2；流式thin client88与X05生产3691已独审 |
+| 实现目标 | da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2 |
+| 实现范围 | apps/server/src/index.ts, packages/client/src/assistant-stream-production.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |

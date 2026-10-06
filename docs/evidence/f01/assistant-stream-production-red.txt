@@ -1,0 +1,48 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/assistant-stream-production.test.ts (2 tests | 2 failed) 2017ms
+   × mounts 022 before default startup and opts in only readable GETs while preserving old clients and creation replays 8ms
+   × reads bound durable Unicode patches through production client routes, hides generic references and resumes after restart 566ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/assistant-stream-production.test.ts > mounts 022 before default startup and opts in only readable GETs while preserving old clients and creation replays
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ packages/client/src/assistant-stream-production.test.ts:43:95
+     41| 
+     42| it('mounts 022 before default startup and opts in only readable GETs w…
+     43|   expect((await pool.query('SELECT version FROM flow.migrations WHERE …
+       |                                                                                               ^
+     44|   expect(app!.hasRoute({ method: 'GET', url: '/api/tasks/:id/assistant…
+     45|   const input = conversationCreationSchema.parse({ title: 'Protocol ne…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/client/src/assistant-stream-production.test.ts > reads bound durable Unicode patches through production client routes, hides generic references and resumes after restart
+FlowApiError: The center could not complete this request.
+ ❯ assertResponse packages/client/src/index.ts:445:9
+    443|   if (response.ok) return;
+    444|   const body = await response.json().catch(() => ({})) as { error?: { …
+    445|   throw new FlowApiError(response.status, body.error?.code ?? 'http_er…
+       |         ^
+    446| }
+    447| 
+ ❯ FlowClient.request packages/client/src/index.ts:437:5
+ ❯ packages/client/src/assistant-stream-production.test.ts:77:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  23:59:44
+   Duration  3.27s (transform 734ms, setup 0ms, import 1.15s, tests 2.02s, environment 0ms)
+

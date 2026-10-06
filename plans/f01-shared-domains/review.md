@@ -1,10 +1,10 @@
 # F01 共享接线审查
 
-**当前增量状态：NOT_STARTED（流式正文公共读取接口）**
+**当前增量状态：NOT_STARTED（流式正文生产接线）**
 
-Review target commit：88a869efd782afd5f64f5d7adad0a9167da121c1
+Review target commit：da7ad400e6e431d46ac0c4c23cde92e9b1f6e5c2
 
-Scope：packages/client/src/index.ts、packages/client/src/assistant-stream.test.ts、packages/contracts/src/index.ts、packages/contracts/src/conversations.ts。manifest：docs/evidence/f01/assistant-stream-client-manifest.json。
+Scope：apps/server/src/index.ts、packages/client/src/assistant-stream-production.test.ts。manifest：docs/evidence/f01/assistant-stream-production-manifest.json。
 
 ## K01薄client独立批准
 Mika只读APPROVED b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69 / metadata79f8b9d，7薄方法、1/1HTTP与noEmit原始证据及manifest核验，未重跑。领域另ea0c批准，生产挂载不由薄client批准代替。
@@ -122,3 +122,7 @@ Root独立只读APPROVED固定44bd8bc8e8e30ec49f86b6828f4947bf2c47d148；4source
 
 ## X05 production 独立批准
 Mika只读APPROVED3691d1b3dffa5eb33546ff3b84f45fa88401a9d5；6source/3raw一致，5different及tsc/正常清理证据核，无P1/P2、未重跑。GO接收。范围可选host配置、worker生产生命周期与CLI；不包括实际npm启用/执行或个人运行环境更新。
+
+
+## CHAT06 thin client 独立批准
+Root只读APPROVED88a869efd782afd5f64f5d7adad0a9167da121c1，4source/2raw固定blob一致，1/1 HTTP34ms/noEmit0，无P1/P2/无重跑。仅transport/export/GET opt-in，不代表生产/PG/provider。
