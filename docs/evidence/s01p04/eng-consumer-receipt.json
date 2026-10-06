@@ -1,0 +1,27 @@
+{
+  "startedAt": "2026-10-06T11:18:55.001Z",
+  "finishedAt": "2026-10-06T11:18:57.903Z",
+  "elapsedMs": 2899.748583,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/engineering/profile.test.ts",
+    "--testNamePattern",
+    "filters unpinned historical rows and other purposes before claim without blocking legitimate work"
+  ],
+  "sources": [
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 11992,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    },
+    {
+      "path": "apps/server/src/engineering/profile.test.ts",
+      "bytes": 11442,
+      "sha256": "c9cf0abe8cf024969aff12f958af1f3021ddaf83fcb13adfb6c67f3b5d62c430"
+    }
+  ],
+  "exitCode": 0,
+  "signal": null
+}

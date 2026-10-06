@@ -1,0 +1,247 @@
+{
+  "recordedAt": "2026-10-06T11:28:11.783832+00:00",
+  "target": "e1847ce1c66646eb40b7eb4111a31468d4681e1f",
+  "bindings": [
+    {
+      "path": "apps/server/src/runners.ts",
+      "unchanged": true,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    },
+    {
+      "path": "apps/server/src/runner-read-fence.test.ts",
+      "unchanged": true,
+      "sha256": "4bf5cf79cf3894b9b2069cef46461211fb1e026871659e8722614f6ca9f42b0e"
+    },
+    {
+      "path": "docs/evidence/s01p04/tsconfig.json",
+      "unchanged": true,
+      "sha256": "0c8b27a98fee1477e735ebcd5d2e3a89a81ff04a28ed44af565cbc4b925835cf"
+    },
+    {
+      "path": "docs/evidence/s01p04/green.stdout.txt",
+      "unchanged": true,
+      "sha256": "7a9ef8ba83517ad587a2f979b7f234c9d474cf5a2b9ac0764efb74cdfe56a14d"
+    },
+    {
+      "path": "docs/evidence/s01p04/green.stderr.txt",
+      "unchanged": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p04/green-receipt.json",
+      "unchanged": true,
+      "sha256": "c96de71ec5f7c7287994074c7ced69bc17a34390b2732f083a442b1402e5f0c5"
+    },
+    {
+      "path": "docs/evidence/s01p04/strict-green.txt",
+      "unchanged": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p04/strict-green-receipt.json",
+      "unchanged": true,
+      "sha256": "66c66ab120e4dd22d0a255bd21eb03878f072c9dce5ef31a0bf88269bfe6a685"
+    },
+    {
+      "path": "docs/evidence/s01p04/eng-consumer.stdout.txt",
+      "unchanged": true,
+      "sha256": "b7400c4abb238774182ad92f36087d5e85be6f6400117c96b4aa4fcd64886994"
+    },
+    {
+      "path": "docs/evidence/s01p04/eng-consumer.stderr.txt",
+      "unchanged": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p04/eng-consumer-receipt.json",
+      "unchanged": true,
+      "sha256": "4acbf1368c2f55c01bc051bbb6a5ee3e9787451d215ce271e5dcf7c9ca65f4ec"
+    },
+    {
+      "path": "docs/evidence/s01p04/eng-consumer-cleanup.json",
+      "unchanged": true,
+      "sha256": "233d49cb5577a684a28cec0ce10ccbdaf46a119b8094e520d1a3dc2ab2d34694"
+    },
+    {
+      "path": "docs/evidence/s01p04/red.stdout.txt",
+      "unchanged": true,
+      "sha256": "4cad3e6bfa566967d87f60fe76bb5d9263c89147db913584dcbc8204c86f6a04"
+    },
+    {
+      "path": "docs/evidence/s01p04/red.stderr.txt",
+      "unchanged": true,
+      "sha256": "5939f16969d7a19c3ea71da6f9fca2a776030a3e0314802027633e8321ba3c4a"
+    },
+    {
+      "path": "docs/evidence/s01p04/red-receipt.json",
+      "unchanged": true,
+      "sha256": "4b3fa513e6956e6a906dfa0a3bca96d577bb7c55d05c0a546e442bc0ad9b2694"
+    },
+    {
+      "path": "docs/evidence/s01p04/strict-initial.txt",
+      "unchanged": true,
+      "sha256": "b8973f68d22854e55add685bd3ef54e01664d9e09a7a48b344f37b8241000d5e"
+    },
+    {
+      "path": "docs/evidence/s01p04/strict-preparation.txt",
+      "unchanged": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p04/implementation-checks.json",
+      "unchanged": true,
+      "sha256": "36fef1f2412fbcc03868f84d14534e027a8b48c9a4ea1ab69e29b9729f68d3e2"
+    },
+    {
+      "path": "docs/evidence/s01p04/implementation-quality.md",
+      "unchanged": true,
+      "sha256": "c9fd710f673ba8f6491a0686bc5ab11e64c81fd0b2d5c50b6e5abbe236c11413"
+    },
+    {
+      "path": "docs/evidence/s01p04/history-freeze-check.json",
+      "unchanged": true,
+      "sha256": "0b9e91adf97b1de131bc9d8ace746ede890488277570507aebfd5f3b65a77f89"
+    },
+    {
+      "path": "docs/evidence/s01p04/main-integration.json",
+      "unchanged": true,
+      "sha256": "efa1b6c663cae28d1127a9e917ea2c039e7c0148a95644b3991bcb1b30d3de7b"
+    },
+    {
+      "path": "docs/evidence/s01p04/amend-receipt.json",
+      "unchanged": true,
+      "sha256": "7b52fb7daa6b4f2f9dfbb6bc55b48a3c461ca426538e45a60584254451b74b60"
+    },
+    {
+      "path": "docs/evidence/s01p04/eng-release-receipt.json",
+      "unchanged": true,
+      "sha256": "21d54c7dcf1ba1b4026956969be6ad94e6fadf7d312b58d4ea2551344911fc45"
+    },
+    {
+      "path": "docs/evidence/s01p04/integration-receipt.json",
+      "unchanged": true,
+      "sha256": "c107a8ebc219c7af5abb6244fd526fdc44ce2fcd8fca385687dba2b223fd8068"
+    },
+    {
+      "path": "docs/evidence/s01p04/integration-release-receipt.json",
+      "unchanged": true,
+      "sha256": "f7a962bf3308bb26fbaac64cc321daedc2978461e873b13842774b7e8d6492b1"
+    },
+    {
+      "path": "docs/evidence/s01p04/interface.md",
+      "unchanged": true,
+      "sha256": "e8876e4ccc54b738885da028060be9f78c46441d904d7a025486a28e0e1be6b1"
+    },
+    {
+      "path": "docs/evidence/s01p04/eng-inheritance-observation.json",
+      "unchanged": true,
+      "sha256": "fec1a85994c4ab8ec34dc7152675a83c99b84017f2471f2316ef9d95be4f2584"
+    },
+    {
+      "path": "docs/evidence/s01p04/preparation-manifest.json",
+      "unchanged": true,
+      "sha256": "17dbe0b07b15443f9d9b511a4f95e335079eb83658495ac34522c172af7ccadc"
+    },
+    {
+      "path": "docs/evidence/s01p04/red-manifest.json",
+      "unchanged": true,
+      "sha256": "123f6214f72e1db6733ab1fff64bc68ab7a7b137d2750fa720c7c1c7a999e740"
+    },
+    {
+      "path": "docs/evidence/s01p04/red-analysis.json",
+      "unchanged": true,
+      "sha256": "b1d1e0beefec3b88511a2d092ed84f5a72c7f508f8894640559f795fcb9df8f8"
+    },
+    {
+      "path": "docs/evidence/s01p04/red-authorization.json",
+      "unchanged": true,
+      "sha256": "8dc2d8587d1823459948f96f0a9544fbb55fded2e01e4dab45ae91c1c260a4bb"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "unchanged": true,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "unchanged": true,
+      "sha256": "2144b8745e878c373bbe1bba7254fc0bd7dcc7b3563ad6bb78b6f6ac4f6da559"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "unchanged": true,
+      "sha256": "6d4a31ce7d3157b5626296fb7c9e836781f22fbf7e53e5413a4d6ec30dda3eb5"
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "unchanged": true,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    },
+    {
+      "path": "apps/server/src/goal-run-authority/runner-project-fence.ts",
+      "unchanged": true,
+      "sha256": "19ea493544b92cdd43dff1f8538b49afdbf4f27990fefae938b993ef757de965"
+    },
+    {
+      "path": "apps/server/src/protocol-dispatch/store.ts",
+      "unchanged": true,
+      "sha256": "d573ddaa69e36fddaec45f14305fb1a5432bd8889c992991925e757eb224d560"
+    },
+    {
+      "path": "apps/server/src/active-steering/storage.ts",
+      "unchanged": true,
+      "sha256": "672f030ecb268e2fba024a42f760c7c1f66009b9493b3c2257bed194ced56db9"
+    },
+    {
+      "path": "apps/server/src/active-steering/finalization.ts",
+      "unchanged": true,
+      "sha256": "69428378767444abab96d7d0646f9b2fa77943452e40545b370604babcb377d5"
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "unchanged": true,
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd"
+    },
+    {
+      "path": "packages/storage/migrations/016-runner-maintenance.sql",
+      "unchanged": true,
+      "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/publication.ts",
+      "unchanged": true,
+      "sha256": "209a01219a22cd621acef8509181c04eb8218de2785b2e29248ae5a8e4dd492a"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "unchanged": true,
+      "sha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8"
+    },
+    {
+      "path": "apps/server/src/engineering/profile.ts",
+      "unchanged": true,
+      "sha256": "51cf9f37f5e06e4c3ce7f2480054e4a19752db8902a43b305d1133eac5634b8a"
+    },
+    {
+      "path": "apps/server/src/engineering/profile.test.ts",
+      "unchanged": true,
+      "sha256": "c9cf0abe8cf024969aff12f958af1f3021ddaf83fcb13adfb6c67f3b5d62c430"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "unchanged": true,
+      "sha256": "9a11d6c51e0b170166efb41126a65e8d3688a46b79c2087b0e1ff6e24a744ae9"
+    },
+    {
+      "path": "tsconfig.json",
+      "unchanged": true,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "unchanged": true,
+      "sha256": "f099a75c047f86908515fb2e2d510c40603efb88aff5ecf1e7009d758f22a056"
+    }
+  ],
+  "allUnchanged": true
+}

@@ -1,0 +1,5 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": ["../../../apps/server/src/runner-read-fence.test.ts", "../../../apps/server/src/runners.ts"],
+  "exclude": ["../../../node_modules", "../../../experiments", "../../../**/dist/**"]
+}

@@ -1,0 +1,11 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": [
+    "../../../apps/server/src/active-steering/steering.test.ts"
+  ],
+  "exclude": [
+    "../../../node_modules",
+    "../../../experiments",
+    "../../../**/dist/**"
+  ]
+}

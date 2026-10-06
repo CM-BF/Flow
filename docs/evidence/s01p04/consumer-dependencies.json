@@ -1,0 +1,12 @@
+{
+  "recordedAt": "2026-10-06T11:27:04.993643+00:00",
+  "ignoredLocalSymlinks": {
+    "node_modules/@flow/client": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence/packages/client",
+    "node_modules/@anthropic-ai/claude-agent-sdk": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk"
+  },
+  "installed": false,
+  "lockChanged": false,
+  "initialFailure": "0 tests import missing @flow/client; strict missing fixed SDK declarations and query_timeout unsupported in QueryConfig",
+  "correction": "Reuse own client and existing fixed SDK0.3.290; query bound inherited from Pool config without unsupported QueryConfig property",
+  "sdkUse": "Module import through existing profile descriptor; no Query/adapter run/auth/provider call"
+}

@@ -1,0 +1,15 @@
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/active-steering/steering.test.ts [ apps/server/src/active-steering/steering.test.ts ]
+Error: Cannot find package '@flow/client' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence/apps/runner/src/execution-profiles.ts'
+ ❯ apps/runner/src/execution-profiles.ts:2:1
+      1| import type { HarnessAdapter } from '@flow/contracts';
+      2| import { FlowClient } from '@flow/client';
+       | ^
+      3| import {
+      4|   executionProfileConfigurationSchema, executionProfileReferenceSchema,
+ ❯ apps/server/src/active-steering/steering.test.ts:1:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

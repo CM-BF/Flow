@@ -23,8 +23,14 @@ export async function lockRunner(client: PoolClient, id: string): Promise<Runner
   if (!runner || runner.revoked) throw new HttpError(401, 'runner_revoked', 'Runner credential is unavailable.');
   return runner;
 }
+/** Existing-attempt reads share this fence; these paths must not upgrade the runner lock or insert attempts. */
+async function lockRunnerForAttempt(client: PoolClient, id: string): Promise<void> {
+  const result = await client.query<Pick<RunnerRecord, 'id' | 'revoked'>>('SELECT id,revoked FROM flow.runners WHERE id=$1 FOR SHARE', [id]);
+  const runner = result.rows[0];
+  if (!runner || runner.revoked) throw new HttpError(401, 'runner_revoked', 'Runner credential is unavailable.');
+}
 export async function ownedAttempt(client: PoolClient, runnerId: string, ownership: Ownership) {
-  await lockRunner(client, runnerId);
+  await lockRunnerForAttempt(client, runnerId);
   const result = await client.query<AttemptRecord>('SELECT * FROM flow.attempts WHERE id=$1', [ownership.attemptId]);
   const found = result.rows[0];
   if (!found || found.runner_id !== runnerId) throw new HttpError(403, 'attempt_forbidden', 'This attempt belongs to another runner.');

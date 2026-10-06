@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-06T11:18:15.119Z",
+  "finishedAt": "2026-10-06T11:18:17.983Z",
+  "elapsedMs": 2862.140708,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/runner-read-fence.test.ts"
+  ],
+  "mergeHead": "d7e9136f558bbd036453cbcab12f17b2858e24f4",
+  "approvedMain": "648e331c58043cf7ee307300521ab1c628cb2ee1",
+  "sources": [
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 11992,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    },
+    {
+      "path": "apps/server/src/runner-read-fence.test.ts",
+      "bytes": 19489,
+      "sha256": "4bf5cf79cf3894b9b2069cef46461211fb1e026871659e8722614f6ca9f42b0e"
+    }
+  ],
+  "node": "v24.20.0",
+  "vitest": "4.0.18",
+  "exitCode": 0,
+  "signal": null
+}
