@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:12:25 UTC |
+| 最近更新 | 2026-10-06 18:15:27 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -12,19 +12,19 @@
 | Branch | codex/assistant-stream-runner-hash |
 | 工作基线 / HEAD | bd14f984e3927df139815597c4c3171af84ec4b7 / metadata HEAD由Git读取 |
 | 工作树dirty状态 | 源/raw停止写入；metadata正常提交后clean，实际HEAD/dirty由Git读取 |
-| 工作分支状态 | 集成类型P2修复中 |
+| 工作分支状态 | 类型适配已固定，实际消费待验 |
 | 检查状态 | 原5/5+局部strict0保留；Lead root真实types exit2，类型适配待实际消费检查 |
 | 已集成main状态 / HEAD | 本片未集成；base已由Lead provision |
-| 实现目标 | 4c6676caf545aea1939a9b676b419cf702eed19c |
+| 实现目标 | cad76bf59ea0ce3598b8f03878da09625ef7cbd2（类型适配）；算法4c6676ca原批准保持 |
 | 实现范围 | apps/runner/src/assistant-stream/accumulator.ts, apps/runner/src/assistant-stream/accumulator-incremental.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | hash算法4c6676ca原批准保持；修复docs baseline SDK类型解析P2，原字节已归档 |
+| 当前产出 | cad76两type行修复已固定/擦除JS逐字相等，原字节及集成红证据保留 |
 | 下一可用交付 | Lead受控main集成2源及收据 |
-| 当前阻塞 | ACTIVE: 原baseline裸SDK import在root真实类型消费失败；两适配副本已改，待类型窗口/窄独审 |
+| 当前阻塞 | ACTIVE: 原baseline裸SDK import在root真实类型消费失败；固定适配已SOURCE_REVIEW；擦除JS完全等价，待Lead真实依赖消费types |
 | 需用户决定 | NONE |
-| Review | 当前类型适配待审；原hash算法4c6676ca APPROVED 17:33:51 UTC保持 |
+| Review | cad76类型适配SOURCE_REVIEW无P1/P2，实际types PENDING；算法4c原APPROVED保持 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -41,3 +41,5 @@ claim e8c06a73-522d-43a8-bbfa-7ba97aed154c v1 ACTIVE，17:14:44.781Z COMMITTED�
 正式独审[收据](../../docs/evidence/chat06p03/independent-review.json)绑定4c6676ca；本次仅metadata记录批准。原manifest/raw/support不改，源保持冻结，main状态仅以Lead后续正式receipt更新。
 
 集成P2事实：Lead18:07:38 root types exit2/9.089s，7诊断来自docs baseline无法解析runner独有SDK及继发any。原973B红raw与receipt逐字保存在type-fix；不放宽tsconfig/加root依赖/link/as any，不重跑原5行为。
+
+唯一源码擦除窗口18:14:18.862 UTC起，236.617ms/exit0，5原始新证据2465B；未加载baseline/产品模块、未重跑5行为。实际无SDK alias三入口类型检查由Lead staging修复后执行，当前仍NOT_RUN。
