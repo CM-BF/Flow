@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-06T19:26:20.393745+00:00",
+  "question": "Whether the Web squad has a known intentional daemon stop action associated with these two actual runs",
+  "conclusion": "NO_KNOWN_SQUAD_DAEMON_STOP_ACTION; actual Orb/Docker outage cause UNKNOWN",
+  "boundary": "This is a narrow audit of the fixed DPERF05 and Settings second-run supervisors plus their actual cleanup receipts. It does not inspect user shell history, personal app state, daemon internals or other teams; it cannot prove the cause or absence of indirect resource effects.",
+  "fixedInputs": [
+    {
+      "path": "/private/tmp/dperf05-node-once-iozl0vgo/run.py",
+      "sha256": "8256f6b911627348288b43d4deeb040dde6ee073d6d209a3757e2d05b8120963"
+    },
+    {
+      "path": "/private/tmp/msgset-b2/supervisor.py",
+      "sha256": "3fc1067afed63ef9416487996c3669590dd98c90b2bcb6f5cd1cb3bfc3804729"
+    },
+    {
+      "path": "/private/tmp/msgset-b2/worker.mjs",
+      "sha256": "9f9d205fa227da0aa1b6c529dd49f7aa9a2d58625ee13c39824f3c6c1da43fd0"
+    }
+  ],
+  "observations": [
+    "DPERF058256 runner starts Node via sandbox-exec in a new session, sendsTERM/KILL only to its owned group. Its actual22632 group was absent after201ms. No HTTP/PG/Chrome startup or container CLI/control call is present in this runner.",
+    "Settings3fc parent starts fixed9f9 Node worker in a new session under own sandbox. Actualgroup66244 cleanup complete. Worker starts only installedChrome with inheritedgroup, and its signal helper targets only recorded ChromePID. ActualChrome67309SIGTRAP occurred before any recorded worker signal.",
+    "Settings actualfixture is Vite+syntheticHTTP catalog; no PG/databaselease/provider invocation. Neither inspected supervisor nor worker contains a docker/orbctl stop/kill/restart invocation.",
+    "No root tools in this continuation stopped/restarted daemon/services or signaled personal process groups. Manager has been asked to persist this scoped known-facts statement."
+  ],
+  "leadObservation": "19:24 inbound Lead reportsfree1250004992B, docker.sock missing, orbctlStopped,55432 notlistening; no root resample and no inference about user/operator action.",
+  "action": "Keep source-only work and reviewed raw; no daemon restart, personal service/tab operation, new PG/Chrome attempt, or replacement of ledgerunknown with available. Existing original owner scopes remain the only authorized source work."
+}

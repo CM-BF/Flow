@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T19:21:28.086200+00:00",
-  "state": "SHARED_RESOURCE_BELOW_RESERVE_NEW_HEAVY_RUNS_BLOCKED",
-  "groupWindowOwnership": "Lead19:19:29wholehostavailable827–828MB below1GiB,newPG/Chrome/buildNOT_RUN;Webb2alreadycleanedandreturned.NoactiveWebheavyholder.",
+  "recordedAt": "2026-10-06T19:26:58.263479+00:00",
+  "state": "DAEMON_AND_LEDGER_UNAVAILABLE_NO_NEW_RUNTIME_OR_TAKE",
+  "groupWindowOwnership": "Lead19:24space1250004992B recoveredbutdaemon/55432/coordinationledgerunavailable; no sharedruntimewindow granted.WebnoPG/Chrome/HTTP.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -390,7 +390,7 @@
     "Recovery累计14846.267375/90000ms、余75153.732625仅算术；失败后窗口已返，源码修复不带运行许可。",
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
-  "latestCoordination": "resource-lead-191929-below-reserve.json",
+  "latestCoordination": "resource-lead-1924-daemon-ledger-unavailable.json",
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
     "claimId": "e0b86bb5-b373-4ad6-9257-6d8c18d06335",
@@ -564,6 +564,30 @@
       "holders": "NoWebactivePG/Chrome/HTTP;Settingsb2returnedwithcompletecleanup",
       "restriction": "AllnewPG/Chrome/build includingI02/R01/O16 NOT_RUN; no threshold reduction, polling or automaticretry",
       "allowed": "Existinglegal source-only/readonly,includingRecoveryparentnarrowrepair; next runtime only genuinely new resource/window plusfreshgate"
+    },
+    {
+      "recordedAt": "2026-10-06T19:26:58.263479+00:00",
+      "source": "Lead19:24inbound forwarded byroot; no manager space/daemon/socket/PG/ledger resampling",
+      "sourceObservedAt": "2026-10-06T19:24:00Z",
+      "timePrecision": "Lead message minute, not fabricated exact sample second",
+      "availableBytes": 1250004992,
+      "spaceMeaning": "Priorlowspacehold changed; no runtime permission inferred",
+      "daemonFacts": [
+        "docker.sock unavailable",
+        "orbctl status Stopped",
+        "port55432 no listener",
+        "coordination ledger unreadable"
+      ],
+      "cause": "UNKNOWN; no known active daemon stop by root or this group; do not infer user action",
+      "state": "DAEMON_AND_LEDGER_UNAVAILABLE_NO_NEW_RUNTIME_OR_TAKE",
+      "restrictions": [
+        "No restart/newPG/Chrome/build; preserve volumes/services/user tabs",
+        "No busy polling or lowered admissionthreshold",
+        "Ledgerunknown is notunclaimed scope; no newtake/amend/release or writer reassignment",
+        "ExistingRecovery narrow segment authorized under19:18:39fresh6ffv4 may reachsafe source-only checkpoint; no scope expansion/runtime"
+      ],
+      "webBrowser": "SecondSettings18ede sealed;0newattempt,cleanupcomplete/windowreturned",
+      "managementAuthority": "Root explicitly requested this bounded normal metadata segment in original6; lastobserved632a7149v3 preserved as pointintime, not fabricatedfreshledger."
     }
   ],
   "dperf05Pure": {
@@ -593,5 +617,6 @@
     "evidence": "dperf05-node-first/intake.json",
     "window": "Independentpurefinished;O16sharedPG/Chromeownershipunchanged",
     "ownerFinal": "825f3245ab857d6f73cf5b49ed51feccce4233c8"
-  }
+  },
+  "currentLedgerAvailability": "UNKNOWN_UNREADABLE_REPORTED_BY_LEAD"
 }
