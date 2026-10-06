@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:01 UTC；候选源码af51冻结，新增只读发布准备 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:07 UTC；候选源码af51冻结，新增固定产物搬运源码准备 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -12,7 +12,7 @@
 | 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 源码 b29807979a5589678a61d3fb84781950cf366396，metadata 以本文件所在提交为准 |
 | 工作树dirty状态 | 两源码已冻结；仅本次自身 metadata 收口后提交 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 检查状态 | PASSED af51c621696230fbced12227670f014ca73bd8a1（RELEASE03 A12+B3分轮与独审）；本owner0重跑 |
 | 已集成main状态 / HEAD | 本候选未集成；原修复来源已审不代表固定旧后台组合已验证 |
 | 实现目标 | b29807979a5589678a61d3fb84781950cf366396 |
@@ -32,6 +32,8 @@
 | SVC05H01-01 | completed | assignment_review | [source-bindings](../../docs/evidence/svc05-history-compatibility/source-bindings.json) 两源码精确同源 |
 | SVC05H01-02 | completed | assignment_review | [Interface](../../docs/evidence/svc05-history-compatibility/interface.md) 已固定 |
 | SVC05H01-03 | completed | Web RELEASE03 / Root独审 | [af51+d629独立批准](../../docs/evidence/svc05-history-compatibility/release-preparation/web-app1750-independent-review.json)；本owner未重跑 |
+| SVC05H01-04 | in-progress | assignment_review | 固定搬运脚本已准备，tiny验证/独审NOT_RUN |
+| SVC05H01-05 | pending | Execution Lead窗口 / owner | 个人发布未授权，retained报告与身份仍前置 |
 
 ## Dashboard
 
@@ -44,3 +46,5 @@
 验收选择（Lead 15:39 补充）：后续仅优先 RELEASE03 真实 A 两项，再按原合同 B；四 case 源码只是已审来源，不再起 Vitest、不补包、不作额外前置。新风险才协调定向补测。
 
 2026-10-06 18:01 UTC：RELEASE03实际A all12复用+B三项通过，Root独立scoped批准已归档，历史失败与原NOT_RUN观察不改。新报告严格绑定af51+d629。只读安装快照仍362/accepting v15/四成功任务、零未完attempt；两保留产物完整但无af51报告；Web identity读取unknown，细因未捕获，不推定损坏。见[发布准备](../../docs/evidence/svc05-history-compatibility/release-preparation/README.md)。个人服务/配置/token/tab未改。
+
+2026-10-06 18:07 UTC：获准一次身份读取明确ECONNRESET/-54/read，owned PID/port同，未取得HTTP响应，不推定根因；原unknown保留。已准备[固定d629搬运脚本与tiny验证方案](../../docs/evidence/svc05-history-compatibility/artifact-transfer/README.md)，未运行/import或操作个人产物；复用原config/marker/operation.lock，源码/旧报告不改。

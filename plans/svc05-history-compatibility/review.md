@@ -25,3 +25,7 @@ Findings：源码预审无 P1/P2；完整 A/B / 本候选四测试 / typecheck �
 - 旧 Vitest 测试使用随机库与有界 cleanup，但没有当前资源 statfs 或 DB marker；未来执行须外部窗口/门槛，本预审不授权运行。实际 App tuple、依赖执行、个人部署仍未验。
 
 2026-10-06 15:39 UTC 作者归档；之后只生成 9 个已核第三方入口与 1 个自身 workspace 链接，没有产品改动，没有 import；这项准备不是 A/B 验收。
+
+## 18:07 新的固定搬运候选
+
+artifact-transfer/import-d629.mjs独立源码/文件验证尚NOT_RUN、审查NOT_STARTED；不继承上述af51兼容批准。仅原evidence路径，目标固定d629/10文件，marker/config/lock复用原host，RENAME_EXCL失败无覆盖fallback，失败保留stage/目标/回执。待Lead审源码并批纯文件tiny检查，不执行个人传输。

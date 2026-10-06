@@ -13,6 +13,8 @@
 - [x] SVC05H01-01：合法领取后固定两源码与同源证据。
 - [x] SVC05H01-02：固定依赖复用、直接消费者与新 A/B tuple 方案。
 - [x] SVC05H01-03：有资源/执行许可后验证新 tuple；独立 review 后确定可兼容结论。
+- [ ] SVC05H01-04：固定同一d629产物的受控搬运源码，完成tiny纯文件检查与独审。
+- [ ] SVC05H01-05：准确retained报告/源/依赖/身份具备后，经显式窗口执行受管后台和Web发布；保留原会话。
 
 当前只授权源码与小 metadata；不安装、不运行 typecheck/PG/tests/build/Chrome/provider，不操作个人服务。RELEASE03 已花 3874ms，余 176126ms 仅为既有累计账本事实，不能以新树重新获得 180s。后继执行由 Lead/Web owner 协调，当前 free 未满足历史启动余量。
 
@@ -21,3 +23,5 @@
 01/02 为可独立交付候选；03 保持 open，直到实际同源直接消费者与 Web A/B 证据、清理、独立审查明确。源候选不是部署许可或兼容通过。
 
 2026-10-06 18:01 UTC：03由RELEASE03 A/B同tuple证据及Root独审完成；个人发布是REQ19后续操作，尚未授权，不等于完整发布完成。原准备/预算数字为历史；本轮只读检查和[最小发布步骤](../../docs/evidence/svc05-history-compatibility/release-preparation/README.md)，无新试验或服务动作。
+
+2026-10-06 18:07 UTC：04已授权源码准备，脚本与6项tiny方案固定但未运行；05无操作许可。使用已有host锁/marker，无新产品部署入口，详见[artifact-transfer](../../docs/evidence/svc05-history-compatibility/artifact-transfer/README.md)。

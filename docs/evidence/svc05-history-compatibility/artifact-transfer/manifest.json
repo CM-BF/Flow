@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-06T18:07:19.137215+00:00",
+  "status": "SOURCE_PREPARATION_NOT_RUN",
+  "files": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/README.md",
+      "bytes": 4929,
+      "sha256": "fa5d62790ddbf863098d75c544cc1c70f2eca6be666623df48520763d459ccbc"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/identity-once.json",
+      "bytes": 461,
+      "sha256": "53dfcb019d662add4f62d739912ae1c95db5ca7341a67f06ab59193b94969ef4"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/identity-once.mjs",
+      "bytes": 2749,
+      "sha256": "b9a939f89f969856357eea8ce37fafc395f2eb85fe796696e95f34e5f882ca68"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+      "bytes": 9368,
+      "sha256": "454a1c3c1c3102652770f120c558462e957ac2c399694fd8fd19925a9cae5639"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/stdio.h",
+      "bytes": 2415,
+      "sha256": "a8078ae1cba1a46a66d0de6fe7f13bbc969cdb7e78fc2d4b9a5c5cdaaf16126b"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/attr.h",
+      "bytes": 27333,
+      "sha256": "683f9671f37898c1d381fed80b0d7bf0313887aa9b3fa98b3a39ba9b3b333b88"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    }
+  ],
+  "personalArtifactWrites": 0,
+  "providerQueries": 0
+}
