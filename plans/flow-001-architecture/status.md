@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:55:24 UTC / main52ebd2b1efe5ecbfab9d3c59b1da2ed1580dd52f |
+| 最近更新 / 最近main同步核验 | 2026-10-06T12:13:55.672556+00:00 / main362af3bac77541e5a60979326bcf4d4b8c947915 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,11 +12,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | 52ebd2b1 已含O11统一目标公共读口、027上下文历史和ENG01D/E身份/可信检查模块；个人backend b1c2e398 accepting v12、独立Web8d8ab520/artifact caa1e938 release v2保持。实际看板140源，后继登记按真实canonical批发布。 |
+| 已集成main状态 / HEAD | 362af3已含O12目标会话/固定解释历史、ENG01F完整快照收据、附件模块/B01/S01P04及可选诊断接缝。个人backend b1c/v12与独立Web8d8/caa1/v2保持；最近实际看板144来源。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 目标计划与执行状态可通过公共接口分别读取；工程检查证据与模型输出保持分离，已审功能持续接入主线。 |
-| 下一可用交付 | 并行交付连续目标会话与原生工程检查接线，保留历史解释和未知执行事实。 |
+| 当前产出 | 目标可通过共享入口持续查看计划、执行与历史解释；已审附件和轻量读取已接收主线。 |
+| 下一可用交付 | 准备个人预览的新旧版本兼容发布，并行接入真实原生工程writer；终端后继复用公开控制接口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
@@ -106,3 +106,5 @@ SVC04真实Web-only发布已完成，固定报告与脱敏操作事实见[发布
 2026-10-06 11:32:46 UTC 当前主线核对：fd132已含ENG01B/C、TUI01C及附件026公共接口；个人backend b1c/Web8d8保持。原连续目标路径已由[O11](../../../goal-delivery-read-model/plans/o11-goal-delivery-read-model/status.md)独立实施，与[ENG01D](../../../engineering-native-seams/plans/eng01d-native-writer-seams/status.md)并行。139来源登记随本批；不以小读口或fixture工程代表完整自然语言交付。
 
 2026-10-06 11:55:24 UTC：O11模块与F01公共接线已独审/main52eb，稳定计划、实时状态与显式正文分层。O12接续同一目标会话控制器及固定解释历史，不另造大task；ENG01D/E已main，ENG01F将完整host snapshot绑定到新检查证据，原生writer/接受验收仍开放。普通进度沿各唯一status，不重复已审测试或provider。
+
+2026-10-06T12:13:55.672556+00:00：本次管理批按362主线同步，原独审/原始实验不改、无新工程测试。SVC05隔离兼容准备与ENG01G实现并行；TUI01D小设计归原TUI-001，个人环境未自动跟随main。
