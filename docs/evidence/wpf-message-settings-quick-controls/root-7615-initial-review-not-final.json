@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-06T22:29:50.801069+00:00",
+  "reviewer": "root",
+  "result": "APPROVED_SCOPED_SOURCE_ONLY",
+  "target": "7615ce4b89e290c42917f91f0a119c14e95e27d8",
+  "metadataRead": "585e591ba66e686f8932fa3cd938fbe8ced1e7c2",
+  "previousTarget": "35bbe76faa2128d5c1d00711fb2be3b23d54fc4f",
+  "finding": "MSGQUICK-R3",
+  "findingState": "CLOSED_SOURCE_ONLY",
+  "fixedSources": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "bytes": 25804,
+      "unchangedFrom35bbe": true
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "sha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+      "bytes": 20068,
+      "unchangedFrom35bbe": true
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "sha256": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+      "bytes": 9510,
+      "unchangedFrom35bbe": false
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "sha256": "10217715ae208372861f16ba1255582011f749e52f4d70ba9ab78b469a1e9460",
+      "bytes": 23499,
+      "unchangedFrom35bbe": false
+    }
+  ],
+  "protectedInputsVerified": 13,
+  "changedPathsWithinSixScopes": true,
+  "productDelta": [
+    "apps/web/test/message-settings.browser.ts",
+    "apps/web/test/message-settings.fixture.tsx"
+  ],
+  "reviewConclusions": [
+    "New fixture authority explicitly selects profile21, remounting both panes under fresh draft owners without fabricating applied settings snapshots.",
+    "Using the same public FlowClient catalog reader and HTTP fixture, explicit page loading and two real Apply actions establish distinct sent A and queued B snapshots plus current C for profile21.",
+    "A subsequent refresh returns only1–20; existing C/A/B/text remain identical, Apply disabled, only explicit omission radio exists, and commit count remains2.",
+    "LoadMore is verified as the second actual /connection-2/api/execution-profiles request with after=id20 and limit20; only authorized profile21 two declared tuples become selectable.",
+    "Current C and generation remain unchanged through paging/staging; one subsequent explicit Apply increases commits2→3, returns C to saved A and preserves both frozen snapshots and text.",
+    "Existing five browser scenario groups remain; legacy Picker and direct/component sources unchanged from35bbe.",
+    "No static product defect or new acceptance gap identified in this narrow delta; actual runner collection, browser and type validity remain unproven."
+  ],
+  "runtime": {
+    "types": "NOT_RUN",
+    "direct": "NOT_RUN",
+    "browser": "NOT_RUN",
+    "productionHost": "NOT_BOUND"
+  },
+  "notRun": [
+    "imports",
+    "tests",
+    "HTTP fixture",
+    "Chrome",
+    "build",
+    "provider/PG",
+    "process/free sampling"
+  ],
+  "cleanCode": {
+    "scope": "fixed two-source delta and full fixture/browser context; original one-host draft, exact public paging, observable Apply/commit behavior, no duplicated production adapter",
+    "findings": "R3 accepted coverage repaired at source; no unrelated refactor requested"
+  },
+  "limitations": [
+    "Source approval closes only R3 coverage design; it does not approve runtime packet or resource admission.",
+    "Independent controlled fixture is not production App Send/Queue/Recovery integration."
+  ]
+}

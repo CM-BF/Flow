@@ -2,7 +2,7 @@
 
 状态：CHANGES_REQUESTED。更新时间：2026-10-06 22:25:49 UTC。
 
-- 当前 Target：7615ce4b89e290c42917f91f0a119c14e95e27d8；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。本次 fixture/browser delta 等待独立复审；作者不自批。
+- 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。本次 fixture/browser delta 等待独立复审；作者不自批。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
 - Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。全部新 types/direct/browser NOT_RUN。
 
@@ -14,6 +14,10 @@ R3：fixture 增加明确的 profile21 会话授权，使用现 HTTP 分页和�
 
 ## 可复制窄复审入口
 
-`git diff 35bbe76faa2128d5c1d00711fb2be3b23d54fc4f 7615ce4b89e290c42917f91f0a119c14e95e27d8 -- apps/web/test/message-settings.fixture.tsx apps/web/test/message-settings.browser.ts`。核真实 HTTP 请求两次顺序、授权 profile21 身份、C/A/B/text/generation/commit 数和已有五场景全部保留；不得将 fixture 控制组冒生产 App。
+`git diff 35bbe76faa2128d5c1d00711fb2be3b23d54fc4f fe6ece131c489c79cf531a184e4cf51209f9c4a0 -- apps/web/test/message-settings.fixture.tsx apps/web/test/message-settings.browser.ts`。核真实 HTTP 请求两次顺序、授权 profile21 身份、C/A/B/text/generation/commit 数和已有五场景全部保留；不得将 fixture 控制组冒生产 App。
 
 [source manifest](../../docs/evidence/wpf-message-settings-quick-controls/source-manifest.json)、[Interface](../../docs/evidence/wpf-message-settings-quick-controls/interface.md)、[验证提案](../../docs/evidence/wpf-message-settings-quick-controls/validation-proposal.md)。checks 与主线均待后续明确准入/接收。
+
+## 后续定位窄修 2026-10-06 22:31:41 UTC
+
+7615 R3 旅程新增一处测试定位问题：Dialog 保持打开时 Radix hideOthers 使背景 region 不在默认 role 查询中。当前 fe6ece131c489c79cf531a184e4cf51209f9c4a0 仅把这一保稿观察改为唯一 `page.getByLabel("Draft left", { exact: true })`，不关闭弹窗、不变生产 ARIA、不删值/身份/请求/次数断言；其他三源不动。Root7615初报不能单独作为批准，正式纠正与本delta复审待收。

@@ -5,11 +5,11 @@
 | 任务 ID | WPF-MESSAGESETTINGS02 |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新时间 | 2026-10-06 22:25:49 UTC |
+| 最近更新时间 | 2026-10-06 22:31:41 UTC |
 | 单一status owner / model | w01_owner / gpt-6-astra |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 后页已选配置的分页验收源码已补齐，等待窄复审 |
+| 当前产出 | 后页分页验收与弹窗背景观察定位已补齐，等待窄复审 |
 | 下一可用交付 | 经验证的模型、思考力度与速度快速选择 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -18,12 +18,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls |
 | Branch | codex/web-message-settings-quick-controls |
 | Base | c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05 |
-| HEAD | 7615ce4b89e290c42917f91f0a119c14e95e27d8（固定实现；metadata 单独提交） |
+| HEAD | fe6ece131c489c79cf531a184e4cf51209f9c4a0（固定实现；metadata 单独提交） |
 | Dirty | 源固定；metadata 收口后核 clean |
-| 实现目标 | 7615ce4b89e290c42917f91f0a119c14e95e27d8 |
+| 实现目标 | fe6ece131c489c79cf531a184e4cf51209f9c4a0 |
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/test/message-settings.test.ts, apps/web/test/message-settings.fixture.tsx, apps/web/test/message-settings.browser.ts |
 | 检查 | NOT_RUN（source-only；旧37/4不继承） |
-| Review | CHANGES_REQUESTED（35bbe 唯一 R3 覆盖缺口；7615 fixture/browser 源已补，待窄复审；非产品 bug 已证） |
+| Review | CHANGES_REQUESTED（35bbe 唯一 R3 覆盖缺口；7615 新定位问题已窄修；fe6ece 待复审；非产品 bug 已证） |
 | Main | 本片未集成；基线含原受控组件 |
 | Claim | 839e466f-1a3f-4e92-94e1-ece390c32fbf v1 active；本人 live 已核 |
 | Dashboard | Lead 22:12:19 179-source 观察 current/live；本人未采样页面；本次 actual parseStatus errors=[] / 5 TODO |

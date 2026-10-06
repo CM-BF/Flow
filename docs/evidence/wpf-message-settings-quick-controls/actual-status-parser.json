@@ -26,7 +26,7 @@
     },
     "phase": "M2",
     "priority": 1,
-    "output": "后页已选配置的分页验收源码已补齐，等待窄复审",
+    "output": "后页分页验收与弹窗背景观察定位已补齐，等待窄复审",
     "next": "经验证的模型、思考力度与速度快速选择",
     "blocker": {
       "state": "none",
@@ -40,7 +40,7 @@
     "complete": true
   },
   "implementation": {
-    "target": "7615ce4b89e290c42917f91f0a119c14e95e27d8",
+    "target": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
     "scopes": [
       "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
       "apps/web/test/message-settings.test.ts",
@@ -53,8 +53,8 @@
   "owner": "w01_owner / gpt-6-astra",
   "branch": "codex/web-message-settings-quick-controls",
   "branchState": "in-progress",
-  "updatedAt": "2026-10-06T22:25:49.000Z",
-  "updatedRecord": "2026-10-06 22:25:49 UTC",
+  "updatedAt": "2026-10-06T22:31:41.000Z",
+  "updatedRecord": "2026-10-06 22:31:41 UTC",
   "todos": [
     {
       "id": "MSGQUICK-01",
@@ -88,14 +88,14 @@
     }
   ],
   "errors": [],
-  "declaredHead": "7615ce4b89e290c42917f91f0a119c14e95e27d8（固定实现；metadata 单独提交）",
+  "declaredHead": "fe6ece131c489c79cf531a184e4cf51209f9c4a0（固定实现；metadata 单独提交）",
   "declaredDirty": "",
   "checks": {
     "state": "unknown",
     "target": null,
     "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
   },
-  "reviewRecord": "CHANGES_REQUESTED（35bbe 唯一 R3 覆盖缺口；7615 fixture/browser 源已补，待窄复审；非产品 bug 已证）",
+  "reviewRecord": "CHANGES_REQUESTED（35bbe 唯一 R3 覆盖缺口；7615 新定位问题已窄修；fe6ece 待复审；非产品 bug 已证）",
   "mainRecord": "",
   "next": "",
   "risks": "",

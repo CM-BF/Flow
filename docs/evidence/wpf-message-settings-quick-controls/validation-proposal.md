@@ -1,6 +1,6 @@
 # 验证提案（未准入、未执行）
 
-固定 target `7615ce4b89e290c42917f91f0a119c14e95e27d8` / base `c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05`。精确路径、realpath、读取到的 SHA 在 [validation-input-proposal.json](validation-input-proposal.json)。只按既有有限清单读文件，没有安装、链接、导入、build 或空间采样。
+固定 target `fe6ece131c489c79cf531a184e4cf51209f9c4a0` / base `c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05`。精确路径、realpath、读取到的 SHA 在 [validation-input-proposal.json](validation-input-proposal.json)。只按既有有限清单读文件，没有安装、链接、导入、build 或空间采样。
 
 1. 定向 strict/noUncheckedIndexedAccess noEmit：复用已有 I02 TypeScript 5.9.3 只读 tsc 入口，临时 config 继承本树 tsconfig，files 四变化源+catalog/selection+必要 Vite CSS 声明。所有 @flow alias 指本树固定 packages/*/src，第三方声明走已列真实绝对路径；不借 moving @flow/dist。
 2. 单文件 Vitest 4.0.18 `apps/web/test/message-settings.test.ts`：真实组件模块导出同一 opening 与 host commit seam，预计静态26展开用例（含旧16）；运行结果按 collected 数与具体名称验，不沿旧 expected20 错误计数。旧 execution-profiles 未变函数做字节保护，不重跑原37。
