@@ -76,3 +76,10 @@ Root新增独立APPROVED dac8c3910eee1828e7081a3d33e19a89a056f4d4：仅runner pa
 
 ## CHAT04薄client / 2026-10-06 04:45 UTC
 沿find-skills本地codebase-design/clean-code既定范围；复用单一HTTP request，不自动retry/改key/pause或取消其他task。消费Mika固定ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 schema，六方法保留queueRevision、expectedTaskId、AbortSignal、receipt replay；readonly GET与command分明。测试先[red](queue-client-red.txt)（方法未实现）后[green](queue-client-green.txt)2/2（队列及原对话HTTP），[typecheck](queue-client-typecheck.txt)exit0。仅client接线，不替代54领域用例/生产扫描/Web队列UI/真实模型证明。每个方法短且只转送事实，无新state副本。
+
+## O03公共client与CHAT04/O03生产挂载 / 2026-10-06 04:51 UTC
+O03薄client固定dc9a9f1，8方法分owner与runner认证实例，fenced输入/固定version/key/signal原样传送；[1/1 HTTP](o03-client-checks-final.txt)、[tsc](o03-client-typecheck-final.txt)通过。初始测试input类型错误[保留](o03-client-typecheck.txt)。runner_owner独立只读APPROVED该3文件，未重跑；不含mount。
+
+生产挂载011/012先于boss；queue startup一次+1秒串行scan，关闭前停止未来scan并等inflight，后续才boss/pool关闭。factory仅显式automaticQueueScan:false支持领域手动驱动测试，生产main未提供该关闭选项。默认模式[真PG11/11](queue-o03-production-checks-final.txt)包括9条O03公开授权与2条新队列startup/阻塞scan不重叠/close等待；新test原始typing失败[保留](queue-o03-production-typecheck.txt)，最终[tsc](queue-o03-production-typecheck-final.txt)通过。首轮[9/11](queue-o03-production-checks.txt)的2项失败源于作者观测只筛测试pool application_name，原owner独立test-only e63修为专库+Lock+精确SQL，最终保留真实race断言。
+
+Mika发现定时扫描与手动领域测试竞争；已交原owner以显式factory选项隔离，54领域与默认生产生命周期分开检查，不删断言。WPF-QUEUE00兼容reader5acc独审已收到，须成套后main；当下未进入main/未改61228常驻服务。clean-code复核将生命周期局限createServer，复用现scan模块，无第二调度状态，无owner credential进runner MCP。

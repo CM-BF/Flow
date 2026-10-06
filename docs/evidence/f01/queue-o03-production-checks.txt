@@ -1,0 +1,35 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ apps/server/src/goal-tool-runs/authorization.test.ts (9 tests | 2 failed) 11212ms
+   ✓ accepts one durable fixture grant, rejects native readonly profiles and enforces owner role 170ms
+   ✓ enforces current runner/attempt/grant scope and preserves the whole-goal read policy  1116ms
+   ✓ counts distinct admitted keys, keeps bounded audit and replays across restart without bypassing input conflicts  486ms
+   ✓ revokes authority durably and rechecks authorization before returning cached commands  567ms
+   ✓ rejects expired, completed and revoked-runner ownership without reviving cached authority  1545ms
+   × serializes an in-flight cached command against revoke without granting a post-revocation replay 2536ms
+   × serializes an in-flight cached command against cancel without granting a post-revocation replay 2490ms
+   ✓ rolls back failed application without consuming authority and protects immutable scope and audit history  527ms
+   ✓ applies execution in the same grant transaction and gives no delegated authority to its fixture child  961ms
+ ✓ packages/client/src/queue-production.test.ts (2 tests) 2985ms
+   ✓ waits for an in-flight scan before disposing its pool and does not overlap interval scans  2207ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/goal-tool-runs/authorization.test.ts > serializes an in-flight cached command against revoke without granting a post-revocation replay
+ FAIL  apps/server/src/goal-tool-runs/authorization.test.ts > serializes an in-flight cached command against cancel without granting a post-revocation replay
+AssertionError: expected 0 to be greater than 0
+ ❯ apps/server/src/goal-tool-runs/authorization.test.ts:150:276
+
+
+Caused by: Error: Matcher did not succeed in time.
+ ❯ apps/server/src/goal-tool-runs/authorization.test.ts:150:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  2 failed | 9 passed (11)
+   Start at  21:48:04
+   Duration  14.90s (transform 209ms, setup 0ms, import 543ms, tests 14.20s, environment 0ms)
+
