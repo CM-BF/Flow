@@ -445,7 +445,7 @@ it('preserves null effective facts and exposes long typed content through its ex
   const runner = await newRunner();
   const assignment = await claim(runner.token);
   const content = 'x' + '中文🙂'.repeat(1800);
-  const events = typedEvents(randomUUID(), content).map(event => event.type === 'assistant-final'
+  const events = typedEvents(randomUUID(), content).map(event => event.type === 'assistant-final' && event.source === 'claude.sdk.result'
     ? { ...event, settings: { ...event.settings, effective: { model: null, permissionMode: null, tools: null, thinking: 'unknown' as const } } } : event);
   expect((await report(runner.token, assignment, events)).status).toBe(200);
   const view = (await request(`/api/conversations/${conversation.id}`)).body.lastTurn;
