@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T04:46:04Z；main/base 80e3c50e7a368c562a7730567503d8c82772b77a |
+| 最近更新 / 最近main同步核验 | 2026-10-06T04:55:03Z；base80e3c50，受控接收dc9a9f及b87a4bb生产挂载 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution |
@@ -10,13 +10,13 @@
 | 工作基线 / HEAD | 80e3c50e7a368c562a7730567503d8c82772b77a |
 | 工作树dirty状态 | 仅本scope实现/首计划 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 局部首PG用例1/1通过；完整检查尚未运行 |
+| 检查状态 | PASSED；77/77 +25/25 +tsc，固定target提交后补齐 |
 | 已集成main状态 / HEAD | O04未集成，base如上；O03已集成 |
 | 实现目标 | 未提交 |
-| 实现范围 | apps/runner/src/goal-tool-bridge, apps/runner/src/claude.ts, apps/runner/src/claude.test.ts, apps/runner/src/configuration.ts, apps/runner/src/execution-profiles.ts, apps/runner/src/runtime.ts, apps/runner/src/main.ts, apps/server/src/goal-tool-runs, apps/server/src/execution-profiles/store.ts, apps/server/src/tasks.ts, apps/server/src/runners.ts, packages/contracts/src/execution-profiles.ts, packages/contracts/src/runner.ts, packages/contracts/src/goal-tool-runs.ts, packages/storage/migrations/013-goal-native-mode.sql |
+| 实现范围 | apps/runner/src/goal-tool-bridge, apps/runner/src/claude.ts, apps/runner/src/configuration.ts, apps/runner/src/execution-profiles.ts, apps/runner/src/runtime.ts, apps/server/src/goal-tool-runs, apps/server/src/execution-profiles/store.ts, apps/server/src/tasks.ts, apps/server/src/runners.ts, packages/contracts/src/execution-profiles.ts, packages/contracts/src/runner.ts, packages/contracts/src/goal-tool-runs.ts, packages/storage/migrations/013-goal-native-mode.sql |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 中心原生准入首用例通过；宿主桥接实现中 |
+| 当前产出 | 原生工具接线的零模型闭环通过，整理固定审查交付 |
 | 下一可用交付 | 零模型真实MCP到中心命令与持久最终正文 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -25,8 +25,8 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | O04-01 | completed | assignment_review | 显式profile/内部purpose/claim合同固定，首PG用例通过 |
-| O04-02 | in-progress | assignment_review | 待实现 |
-| O04-03 | pending | assignment_review | 未测 |
-| O04-04 | pending | assignment_review | 未交付 |
+| O04-02 | completed | assignment_review | host Port/真实SDK MCP/内部purpose已接 |
+| O04-03 | completed | assignment_review | 77/77组合 +25/25 runtime消费者 +tsc；实际MCP请求响应已保存 |
+| O04-04 | in-progress | assignment_review | clean-code完成，固定源码/证据交审中 |
 
 Claim19e81eda-5795-45a7-8f1f-a0d9c0c94326 v1，2026-10-06T04:45:16.175Z；[receipt](../../docs/evidence/o04/claim-receipt.json)。本status唯一事实源。架构影响：host MCP capability与native profile准入/claim关联，待Lead更新固定架构图；dashboard源已发Lead登记。

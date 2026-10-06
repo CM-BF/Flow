@@ -1,3 +1,4 @@
+import { bindGoalToolCapability } from './goal-tool-bridge/index.js';
 import { mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { setTimeout as sleep } from 'node:timers/promises';
@@ -86,6 +87,7 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   try {
     if (!adapter) throw new Error('The assigned harness is unavailable.');
     await control.assertOwnership();
+    if (assignment.goalToolRun) context.goalTools = await bindGoalToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
     await adapter.run(context);
   } catch (error) {
     if (error instanceof EventStorageError) throw error;

@@ -37,6 +37,8 @@ it('admits only explicit native goal profiles and refuses ordinary submit/conver
   expect((await request('/api/tasks', { title: 'Ordinary', prompt: 'No grant', harness: 'claude', executionProfile: profile })).status).toBe(409);
   expect((await request('/api/tasks', { title: 'Forged purpose', prompt: 'No grant', harness: 'claude', executionProfile: profile, purpose: 'goal-tools' })).status).toBe(400);
   expect((await request('/api/conversations', { title: 'Ordinary conversation', harness: 'claude', executionProfile: profile, requested: { model: 'runner-default', thinking: 'disabled', tools: 'configured-readonly' } })).status).toBe(409);
+  const ordinary = await request('/api/tasks', { title: 'Unbound ordinary task', prompt: 'No goal authority', harness: 'claude' });
+  expect(ordinary.status).toBe(202);
   const { goalId, nodeId } = await goal();
   const admitted = await request(`/api/goals/${goalId}/tool-runs`, { scope: { readScope: 'whole-goal', allowedNodeIds: [nodeId], allowedCommands: ['define-input'], maxCommands: 2 }, prompt: 'Plan only this node', execution: { harness: 'claude', executionProfile: profile } });
   expect(admitted.status).toBe(201); expect(admitted.body.run.mode).toBe('claude');
@@ -45,4 +47,5 @@ it('admits only explicit native goal profiles and refuses ordinary submit/conver
   expect(assignment.task.id).toBe(admitted.body.task.id); expect(assignment.goalToolRun).toEqual({ id: admitted.body.run.id, version: 1 });
   const grant = await request('/api/runner/goal-tools/grant', { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion }, runner.token);
   expect(grant.status).toBe(200); expect(grant.body.goalId).toBe(goalId);
+  await request(`/api/tasks/${ordinary.body.task.id}/cancel`, {});
 });
