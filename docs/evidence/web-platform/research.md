@@ -298,3 +298,5 @@ w01_owner后续有界只读：固定center2d3bb61/clienta3b9/outbox0d4e的确定
 03:53 w01只读ACK研究交付已合入[同一CHAT接口证据](chat-interface-research.md)，固定2d3/a3/0d4e与typed746差异、源码行号、两事务ACK恢复、unknown后重试401/403不可抹旧不确定性、malformed2xx身份校验全部明确；已交CHAT owner转实际验收，未读moving caller不先判bug。内存outbox不假称跨reload持久，固定中心注册函数不等于单commit可部署，真实模型仍主Lead统一。owner只读交付后空闲，不为填槽创建新生产工作。
 
 03:54 CHAT唯一owner首预览http://127.0.0.1:63743/、session14932，明确HTTP fixture，作者Chrome同conversation hi/追问两轮正文/0pageerror。固定输入I01b584+a3b9+typed746，整体moving/targetUNKNOWN；root另开后台tab15，GoalOwner按约定用户视角验收，旧49922与55049不动。root和管理者跨消息同时桥接了同预览，管理者明确发生重复一次并停止额外通知。原owner继续runtimeACK/everUnknown局部约束，w01研究完待派，不为满槽创建新生产。
+
+03:55:53 UTC root实际CUA首CHAT预览：自建后台tab15/63743，新conversation→追问→回复时保留下一个draft，浅深主题目视、执行单折叠。首次发送draft→conversation remount后焦点BODY复现两次，交唯一owner改稳定View.key；reload后新建conversation fba2…首次受理后直接typeText(null)，activeElement仍TEXTAREA/Message input且新draft完整，进行中反馈已关闭。无固定target，整体NOT_STARTED，开发截图不代production验收。另moving源码发现>16000字符本地普通Error可能吃稿，交owner验证；ACK历史unknown后403/malformed2xx约束由w01研究交owner补局部测试，不把未审整个实现提前APPROVED。
