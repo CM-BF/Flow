@@ -147,7 +147,7 @@ for (const action of ['revoke', 'cancel'] as const) it(`serializes an in-flight 
   let pending: ReturnType<typeof callCommand> | undefined;
   try {
     pending = callCommand(run, command, 'cached-race');
-    await expect.poll(async () => Number((await pool.query("SELECT count(*) FROM pg_stat_activity WHERE datname=$1 AND application_name=$1 AND wait_event_type='Lock' AND query LIKE '%FROM flow.projects%FOR UPDATE%'", [name])).rows[0].count), { timeout: 2000, interval: 20 }).toBeGreaterThan(0);
+    await expect.poll(async () => Number((await pool.query("SELECT count(*) FROM pg_stat_activity WHERE datname=$1 AND wait_event_type='Lock' AND query LIKE '%FROM flow.projects%FOR UPDATE%'", [name])).rows[0].count), { timeout: 2000, interval: 20 }).toBeGreaterThan(0);
     const response = action === 'revoke' ? await request(`/api/goal-tool-runs/${run.grant.id}/revoke`, { reason: 'Race revoke' }) : await request(`/api/tasks/${run.taskId}/cancel`, {});
     expect(response.status).toBe(200);
   } finally { await lock.query('ROLLBACK'); lock.release(); }
