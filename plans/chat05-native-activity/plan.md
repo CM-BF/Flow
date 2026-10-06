@@ -11,8 +11,9 @@
 | CHAT05-03 | PG 020 迁移、fenced 接纳、轻列表/懒详情；真实 HTTP 验证身份/归属/重报/恢复 | runner_owner | 01 |
 | CHAT05-04 | SDK adapter→现有 durable outbox→PG→owner GET，注入 SDK 验证取消后 unknown | runner_owner | 02/03、O07 归还 SDK 接缝 |
 | CHAT05-05 | clean-code、局部检查、固定证据、独立 review、main 接收 | runner_owner / Lead | 04 |
+| CHAT05-06 | 后继 REQ15：超限原文保留/分页/外部引用；本片段不承诺可追回被截断内容 | Lead 后继派工 | 本片段后独立范围 |
 
-实现为帧 mapper、事务 store 和 owner read route 三个窄模块。timeline 仅引用，原始工具输入输出和 SDK 公开 thinking 按需读取；不存 opaque thinking 签名或 redacted payload。不启用任何新工具，不调用模型解释事件。完整帧先行，不声明逐 token 流或缺失 thinking 的内容。历史 user replay 不归属当前 attempt；工具结果必须关联当前 attempt/session/parent 的调用。取消/失联且无结果保持 unknown。
+实现为帧 mapper、事务 store 和 owner read route 三个窄模块。timeline 仅引用，工具输入输出和 SDK 公开 thinking 的有界片段按需读取；超限仅保留 UTF-8 前缀与原文 digest，truncated 必须可见，截断 JSON 回退文本，余下原文当前不可取回；不存 opaque thinking 签名或 redacted payload。不启用任何新工具，不调用模型解释事件。完整帧先行，不声明逐 token 流或缺失 thinking 的内容。历史 user replay 不归属当前 attempt；工具结果必须关联当前 attempt/session/parent 的调用。取消/失联且无结果保持 unknown。
 
 写范围以 claim 回执为准。共享 export/client/mount 由 Lead 接；O07 独占 claude.ts/runtime.ts/runner.ts 归还并原子 amend 后才接线。专用随机 flow_chat05 数据库/动态端口/合成 SDK，0 query、0 云、不操作现有服务。
 

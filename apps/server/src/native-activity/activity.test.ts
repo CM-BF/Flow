@@ -10,6 +10,7 @@ import { join } from 'node:path';
 type SDKMessage = ReturnType<ClaudeQuery> extends AsyncIterable<infer Message> ? Message : never;
 import { createServer } from '../index.js';
 import { migrateNativeActivities, registerNativeActivityRoutes } from './index.js';
+import { migrateConversationContext } from '../conversation-context/index.js';
 import { mapNativeActivity } from '../../../runner/src/native-activity/index.js';
 const db=`flow_chat05_${randomUUID().replaceAll('-','')}`;
 const admin=new Pool({connectionString:'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres',max:1});
@@ -18,6 +19,7 @@ const pool=new Pool({connectionString:databaseUrl,max:2});
 let created=false; let app:Awaited<ReturnType<typeof createServer>>; let base='';
 async function start(port=0){
   app=await createServer({databaseUrl,ownerToken:'chat05-owner',leaseMs:300_000,automaticQueueScan:false});
+  await migrateConversationContext(pool);
   await migrateNativeActivities(pool);
   if(!app.hasRoute({method:'GET',url:'/api/native-activities/:id'})) registerNativeActivityRoutes(app,pool);
   base=await app.listen({host:'127.0.0.1',port});
@@ -72,6 +74,9 @@ it('keeps input, progress and SDK result distinct and forbids a second terminal 
   await post(a,[a.session,...input,progress]);expect((await page(a)).activities.map((x:any)=>x.status)).toEqual(['running','running']);
   await post(a,[result(a,'read1',4)]);expect((await page(a)).activities.map((x:any)=>x.status)).toEqual(['succeeded','succeeded','succeeded']);
   await post(a,[result(a,'read1',5)],409);
+  const late={...progress,sourceMessageId:randomUUID(),id:randomUUID(),sequence:5};
+  await post(a,[{...late,activityId:sha256(JSON.stringify([a.sessionId,late.sourceMessageId,0,'tool']))}]);
+  expect((await page(a)).activities.map((x:any)=>x.status)).toEqual(['succeeded','succeeded','succeeded','succeeded']);
 });
 it('deduplicates original transport and repeated native frames, rejects changed payload, and survives restart',async()=>{
   const a=await attempt();const event=block(a,[{type:'text',text:'same'}])[0]!;const batch=[a.session,event];
@@ -91,6 +96,7 @@ it('rejects cross-session/parent/tool/attempt facts atomically without partial t
   await post(a,[result(a,'unseen',3)],409);
   await post(a,block(a,[{type:'tool_use',id:'child',name:'Read',input:{}}],3,{parent_tool_use_id:'parent'}));
   await post(a,[result(a,'child',4)],409);
+  await post(a,[result(a,'child',4,{parent_tool_use_id:'parent'})]);
   const b=await attempt();await post(b,[b.session]);
   await post(b,[{...event,id:randomUUID(),sequence:2}],409);
   await request('/api/runner/events',{...a.ownership,ownerVersion:a.ownership.ownerVersion+1,events:[{...event,sequence:4}]},a.token,409);

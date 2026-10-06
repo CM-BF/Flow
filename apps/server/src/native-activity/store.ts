@@ -13,7 +13,8 @@ interface ActivityRow {
 }
 const readColumns = `a.*,t.status AS task_status,p.completed_at,
   COALESCE((SELECT n.phase FROM flow.native_activities n WHERE n.attempt_id=a.attempt_id AND n.tool_use_id=a.tool_use_id
-    AND n.parent_tool_use_id IS NOT DISTINCT FROM a.parent_tool_use_id ORDER BY n.ordinal DESC LIMIT 1),a.phase) AS latest_phase`;
+    AND n.parent_tool_use_id IS NOT DISTINCT FROM a.parent_tool_use_id
+    ORDER BY (n.phase IN ('succeeded','failed')) DESC,n.ordinal DESC LIMIT 1),a.phase) AS latest_phase`;
 const readFrom = 'flow.native_activities a JOIN flow.tasks t ON t.id=a.task_id JOIN flow.attempts p ON p.id=a.attempt_id';
 const fail = (code: string, message: string): never => { throw new HttpError(409,code,message); };
 /** Existing reportEvents owns runner/task/attempt locks and the transaction. */
@@ -49,14 +50,15 @@ async function validateToolLink(client: PoolClient, attemptId: string, data: Nat
     if (!parent.rowCount) fail('activity_parent','Parent tool was not observed in this attempt.');
   }
   if (data.kind !== 'tool') return;
-  const latest = (await client.query<{phase:string}>(`SELECT phase FROM flow.native_activities WHERE attempt_id=$1 AND tool_use_id=$2 ORDER BY ordinal DESC LIMIT 1`,[attemptId,data.toolUseId])).rows[0];
+  const latest = (await client.query<{phase:string}>(`SELECT phase FROM flow.native_activities WHERE attempt_id=$1 AND tool_use_id=$2
+    ORDER BY (phase IN ('succeeded','failed')) DESC,ordinal DESC LIMIT 1`,[attemptId,data.toolUseId])).rows[0];
   if (data.phase === 'input-ready') {
     if (latest) fail('activity_tool_conflict','A tool call cannot be introduced twice.');
     return;
   }
   const input = (await client.query<{parent_tool_use_id:string|null;header:ActivityRow['header']}>("SELECT parent_tool_use_id,header FROM flow.native_activities WHERE attempt_id=$1 AND tool_use_id=$2 AND phase='input-ready' LIMIT 1",[attemptId,data.toolUseId])).rows[0];
   if (!input || input.parent_tool_use_id !== data.parentToolUseId || (data.toolName !== null && data.toolName !== input.header.toolName)) fail('activity_tool_link','Tool result/progress does not match an input in this attempt and parent.');
-  if (latest && ['succeeded','failed'].includes(latest.phase)) fail('activity_tool_terminal','A terminal tool observation cannot be changed.');
+  if (data.phase !== 'running' && latest && ['succeeded','failed'].includes(latest.phase)) fail('activity_tool_terminal','A terminal tool observation cannot be changed.');
 }
 function reference(row: ActivityRow): NativeActivityReference {
   const unresolved = row.header.kind === 'tool' && !['succeeded','failed'].includes(row.latest_phase);

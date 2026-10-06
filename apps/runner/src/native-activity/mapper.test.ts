@@ -36,6 +36,7 @@ it('uses stable per-block identities, retains parent linkage, rejects crossed se
   expect(mapNativeActivity(user([{type:'tool_result',tool_use_id:'old',content:'history'}],{isReplay:true}),'session')).toEqual([]);
   expect(mapNativeActivity(user([{type:'text',text:'user prompt'}]),'session')).toEqual([]);
   expect(mapNativeActivity(frame({type:'stream_event'}),'session')).toEqual([]);
+  expect(mapNativeActivity(assistant([{type:'text',text:'unattributed'}],{uuid:undefined}),'session')).toEqual([]);
 });
 it('bounds UTF-8 details with honest full-content digest and truncation metadata', () => {
   const text='🌱'.repeat(MAX_ACTIVITY_DETAIL_BYTES);

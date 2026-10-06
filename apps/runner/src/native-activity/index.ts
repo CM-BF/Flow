@@ -17,6 +17,8 @@ export function mapNativeActivity(frame: SDKMessage, nativeSessionId: string): N
   if (!['assistant','user','tool_progress'].includes(frame.type)) return [];
   const source = object(frame);
   if (source.isReplay === true) return [];
+  // Anonymous/nonconforming frames cannot be attributed or deduplicated. Never invent an ID.
+  if (typeof source.uuid !== 'string' || source.uuid.length === 0) return [];
   // SDK prompt/input messages may have neither UUID nor session and are not native observations.
   if (frame.type === 'user' && (!source.uuid || !source.session_id)) return [];
   if (source.session_id !== nativeSessionId) throw new Error('Native activity session does not match this query.');

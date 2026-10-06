@@ -6,6 +6,7 @@ import { query as nativeQuery, type SDKMessage, type SDKResultMessage, type SDKS
 import { MAX_DETAIL_BYTES, type HarnessAdapter, type HarnessContext } from '@flow/contracts';
 import { assistantFinalDataSchema, type AssistantSettings } from '../../../packages/contracts/src/assistant.js';
 import { textDigest, verifyText } from './verifier.js';
+import { mapNativeActivity } from './native-activity/index.js';
 
 export type ClaudeQuery = (input: Parameters<typeof nativeQuery>[0]) => AsyncIterable<SDKMessage> & { close(): void };
 export interface ClaudeAdapterOptions {
@@ -73,6 +74,12 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
             effective = { model: event.model ?? null, permissionMode: event.permissionMode ?? null, tools: event.tools ?? null, thinking: 'unknown' };
             await context.emit({ type: 'session', nativeSessionId: sessionId, adapterVersion: ADAPTER_VERSION, resources: resources(event) });
           }
+          const activities = mapNativeActivity(event, sessionId ?? context.task.resumeSessionId ?? ('session_id' in event ? event.session_id ?? '' : ''));
+          if (activities.length && !sessionId) {
+            sessionId = activities[0]!.nativeSessionId;
+            await context.emit({ type: 'session', nativeSessionId: sessionId, adapterVersion: ADAPTER_VERSION });
+          }
+          for (const activity of activities) await context.emit(activity);
           if (event.type === 'result') {
             if (final && finalIdentity(final) !== finalIdentity(event)) throw new Error('Claude returned multiple different results for one task.');
             final = event;
@@ -84,7 +91,7 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
         if (context.task.resumeSessionId && final.session_id !== context.task.resumeSessionId) throw new Error('Claude did not resume the requested native session.');
         if (!sessionId) await context.emit({ type: 'session', nativeSessionId: final.session_id, adapterVersion: ADAPTER_VERSION });
         await emitUsage(context, final);
-        if (final.permission_denials.length) await context.emit({ type: 'detail', title: 'Claude SDK permission denials', content: `SDK recorded ${final.permission_denials.length} permission refusals. Tool inputs were not retained.`, mediaType: 'text/plain' });
+        if (final.permission_denials.length) await context.emit({ type: 'detail', title: 'Claude SDK permission denials', content: `SDK recorded ${final.permission_denials.length} permission refusals. Native tool observations, when present, are available as bounded activity details.`, mediaType: 'text/plain' });
         if (final.subtype !== 'success' || final.is_error) throw new Error('Claude did not complete successfully.');
         const assistant = assistantFinalDataSchema.parse({
           type: 'assistant-final', messageId: textDigest(JSON.stringify([final.session_id, final.uuid])),

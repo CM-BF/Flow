@@ -3,6 +3,8 @@ import { idSchema, type Reference } from './tasks.js';
 
 export const MAX_ACTIVITY_DETAIL_BYTES = 65_536;
 const digest = z.string().regex(/^[a-f0-9]{64}$/);
+/** A truncated body is only a UTF-8 prefix, possibly invalid JSON; render as text.
+ * sha256 identifies the full original but does not provide a retrieval path to omitted bytes. */
 export const nativeActivityBodySchema = z.strictObject({
   content: z.string().refine(value => new TextEncoder().encode(value).byteLength <= MAX_ACTIVITY_DETAIL_BYTES, 'Activity detail exceeds byte limit'),
   mediaType: z.enum(['text/plain', 'application/json']),
@@ -46,7 +48,7 @@ export interface NativeActivityReference extends Omit<NativeActivityData, 'type'
   sequence: number;
   createdAt: string;
   detail: Reference | null;
-  /** Latest observed tool phase; unresolved tools after the attempt ends are unknown. */
+  /** Terminal tool results remain terminal despite late progress; unfinished ended attempts are unknown. */
   status: NativeActivityData['phase'] | 'unknown';
 }
 export interface NativeActivity extends NativeActivityReference { body: NativeActivityBody | null }
