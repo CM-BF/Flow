@@ -1,15 +1,9 @@
-# WPF-M02 审查
+# WPF-M02 review 已移交
 
-**NOT_STARTED**；本计划在c075bb5之后新增，不继承该文档approval，更不代表Web消费已验证。
+2026-10-06：独立Web消费owner已在 `web-unified-workspace` / `codex/web-unified-workspace` 建立唯一权威计划。此目录保留迁移入口，不再手填第二套状态；稳定TODO IDs WPF-M02-01～04由新owner继承。
 
-- Target：首版管理文档候选待提交；实际完整SHA由提交后handoff提供，review者先核验。
-- Base：`d444608ab6c796c731e44e51a892868bf39bec2a`；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management`，branch `codex/web-platform-management`。
-- Scope：[plan.md](plan.md)、[status.md](status.md)及本文件；仅计划方向/需求追溯/owner边界，非未来实现approval。
-- Criteria：父REQ对应、唯一owner、明确依赖/验收/未实施、无重复系统或越权写入、相对链接与TODO一致。
-- 已执行：作者文档自查待记录；独立review未执行。未执行：所有未来产品行为/性能检查。
-- Findings/severity/blocking：未评估，不等于无问题。
-- 作者回应/修复commit/复审：等待独立结论，结论须绑定完整target。
+- [唯一权威 review.md](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace/plans/wpf-m02-web-workspace/review.md)
+- 管理归属与需求追溯见[WPF-001](../plan.md)。
+- 输入：W01已审cb4a39211e264538704ba9d474eeb08fc4b2759c与完整M02 e888862570cba3c59789053e68df7d5720650c36；新树初始化merge c0c41f9881713f3b371ba62c8f4e68ca5d71e8db。后续实现/检查/review/main事实只读新owner status，本文不复制。
 
-```text
-请只读审查此计划及父WPF-001。先核验实际worktree/branch/base/head/dirty及允许范围，对用户原话、稳定REQ、owner、阶段与验收逐项比对。确认没有把排队写成完成、没有覆盖其他owner、没有把M02跨任务workspace当文件系统或后端通过当Web通过。记录实际target SHA、检查、severity/blocking与限制；修改交唯一owner执行。未经审查保持NOT_STARTED，未来实现不得继承本次文档结论。
-```
+旧草案历史见管理commit829e8228f413eb2e4c3a935dfc319c2170850a09与dfb497e239d9f2c155b93d63d3621eb370b1194a。未来主线集成时由Lead更新索引与来源；旧目录不是dashboard事实源。

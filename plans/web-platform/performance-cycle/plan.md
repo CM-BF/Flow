@@ -16,6 +16,14 @@
 
 按local tests约束先模块+直接依赖，触及共享接口才扩链路；性能改动保留关键行为/视觉/a11y回归。每轮只实施有证据的瓶颈优化，保留前后同条件比较和代价。
 
+## 当前新增基线与下一可测问题
+
+W01 cb4a392生产产物：JS1,081,775B/gzip323,056B；CSS82,839B/gzip15,047B。HTML同时入口与modulepreload两个大JS组，当前均为首屏请求，不能称已懒加载。后续测连接页/工作总览request/parse/interactive，再评估Thread与重renderer动态边界；保留官方完整组件。content-visibility仅减少屏外绘制，不等于网络或DOM有界。
+
+React.lazy会缓存load Promise/rejection；仅reset ErrorBoundary不保证重试import。必须实测chunk失败后实际再次请求/恢复与离线反馈，lazy定义模块级稳定，切换焦点/草稿不丢。不因本研究阻断当前两feature，仍按独立性能轮推进。
+
+原Goal Owner定向增量：后续用固定1/16/128合成task连续更新，同时实际输入与滚动，记录输入延迟/render数/long tasks/attention出现延迟。保持每task独立projection、未变对象与可见片区窄订阅；不指望startTransition把external mutation变非阻塞，不为猜测引状态库或全量机械memo。此为UI合成负载而非agent容量证明；现阶段M02/P01继续。
+
 ## TODO
 
 - [ ] **WPF-PERF01-01** 记录新W01生产体积、依赖使用和固定环境/fixture交互基线。

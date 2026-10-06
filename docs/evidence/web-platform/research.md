@@ -73,3 +73,30 @@ panels owner固定e888862只读调查：history.before响应nextCursor不得覆�
 
 
 WPF-P01接缝调查已持久化到[plugin-seams.md](plugin-seams.md)：位置→command→context/capability→disable清理，明确当前标记语义差异、同realm第三方无隔离保证和WPF-NAV-01后续统一导航。研究没有在旧panels树开展新实现，管理文档唯一owner落盘。
+
+
+## RS12 Host错误隔离（root研究#9）与准确主线基线
+
+React[ErrorBoundary](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary)不捕普通event handler/异步callback异常，host activation/command需要显式catch及plugin归属诊断；有Boundary不等于完整错误隔离。[VS Code Extension anatomy](https://code.visualstudio.com/api/get-started/extension-anatomy)区分static contribution/activation/API，支持manifest先登记、首次使用加载、退出清理。最小矩阵：并发execute一次activate、disable迟到不复活、激活失败全回滚、dispose一项抛错仍清其余、异步command无unhandledrejection、render故障局部可恢复、禁用后旧command/context拒绝；注册失败原子，无半套按钮。
+
+主线现已提供受控main/origin `108fddbd8261963f3d49088873b5a611b70a5dbf`（完整C02+M02，W01改版未在其中）。两新owner已收到：未建树从108f起显式合W01已审输入；已建树/改动不reset，受控merge并记录。共享代码/lock冲突交Lead。主线另查>200新task投影accepted/output因果顺序风险，局部PG修复不改API；待补丁SHA同步，不阻塞前端独立树。真实中心10task UI仍需我方执行。
+
+W01整体root独立review APPROVED targetcb4a39211e264538704ba9d474eeb08fc4b2759c：独立typecheck/10HTTP、官方sourcehash与结构、shell/projection/生命周期审读，CUA新任务queued→waiting→Approve后pane/sidebar同步，读owner10browser/3导航复验/production smoke且抽图；没有假称独立重跑全browser。范围不含真实中心/PTY/fs、reload草稿布局持久化和性能承诺。已令owner转录正式metadata，后续改版另审。
+
+
+## RS13 实际首屏资源与lazy重试（root研究#10）
+
+只读cb4a392产物index.html：入口index-Z6yWGp8n.js与modulepreload assistant-ui-zkRmV749.js均首屏加载，codeSplitting.groups只是分组。实际JS1,081,775B/gzip323,056B，CSS82,839B/gzip15,047B。后续测连接页/工作总览首屏请求、parse与interactive，再评估Thread/重renderer按需边界；保留完整官方组件，不以重命名/单chunk<500KB当优化。官方Thread content-visibility:auto减少屏外绘制，不减少下载或保证DOM有界。
+
+React[lazy](https://react.dev/reference/react/lazy)缓存load Promise及resolve；reject交最近Boundary，单纯reset Boundary不保证重新import。后续lazy/plugin性能验证实际再次请求/恢复策略；lazy定义模块级稳定，禁止render内重建导致draft/state丢失。MDN[speculative loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Speculative_loading)为背景来源，当前首屏结论以产物HTML证据为准。
+
+进行中M02发现（非正式review）：actions pending在offline/stop generation失效时可能不能清除，恢复后同task命令被永久pending守卫阻断。root已直接交唯一owner做本段修复与回归，记录实际结果在其证据；管理者不把反馈本身写成修复通过。
+
+主线D03新增status人读字段已通知W01/M02/P01唯一owner各自写：阶段、优先级1–9、当前产出、下一可用交付、当前阻塞NONE/ACTIVE、需用户决定NONE/REQUIRED、完整实现目标或UNKNOWN、literal实现路径含测试不含metadata。管理者仅写WPF-001，其他task不代写。纯字段验证不重跑工程全库。
+
+
+root只读clean-code停点2026-10-06 02:29–02:32 UTC：范围W01产物HTML/切chunk配置与M02草稿projection/overview；查职责、状态所有权、异步错误/取消、重复与复杂度。发现首屏两chunk均eager→PERF待测；generation失效pending滞留→M02 owner本地修复待回归；无成功快照的肯定空态→owner检查。root未写实现，未对未提交M02给approval，未扩大全链测试。
+
+Dashboard最近独立观察2026-10-06T02:31:15.901Z：4320仍17源，W01 actual a22ae38 clean、errors/issues空、checks targetcb4 passed、旧review显示metadata导致outdated；WPF尚未出现。D03换新registry后再复验，不频繁轮询，不声称已聚合。
+
+原Goal Owner增量定向研究（合并RS08，不是用户原话）：使用本地find-skills选择React性能与codebase-design，只读W01 useSyncExternalStore/TaskThread转换。[React caveats](https://react.dev/reference/react/useSyncExternalStore#caveats)说明external mutation不能靠startTransition自动非阻塞，snapshot须稳定不可变。保留每task projection，统一feed避免每条tool更新重算全部messages/panels；先保持未变对象与可见区域窄订阅。后续固定1/16/128合成task，连续更新时真实输入/滚动，记录输入延迟/render数/long task/attention出现延迟；这是UI合成负载，不是128 agents容量证明，不猜测性引入状态库或机械memo。当前M02/P01继续。

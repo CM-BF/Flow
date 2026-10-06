@@ -58,4 +58,16 @@ BR-01当前解除状态：未接收实现SHA/具体owner登记，四项均未验
 
 ## M02 Web消费队列增量
 
-新计划WPF-M02，暂由管理树`plans/web-platform/unified-workspace/status.md`唯一记录前置排队；实际实现派发时明确新owner worktree与平级受支持plan路径，旧管理记录显式转交，不能两份同时手填。主线输入origin/codex/m2-workspace完整e888862570cba3c59789053e68df7d5720650c36，后端clean；不得只拿405529d漏types。新Web功能在当前W01稳定候选后独立worktree实现，保留现chat、官方Thread和panels；后端PG5/CLI14/client3证据不作为Web通过。集成时由Lead选包含完整M02的基线/统一rootlock，不由Web改共享契约。
+WPF-M02早期草案曾在管理树`plans/web-platform/unified-workspace/status.md`记录；现已实际派发并转移交stub，唯一事实源见下节平级wpf-m02-web-workspace，不再更新旧草案。主线输入origin/codex/m2-workspace完整e888862570cba3c59789053e68df7d5720650c36，后端clean；不得只拿405529d漏types。新Web功能在当前W01稳定候选后独立worktree实现，保留现chat、官方Thread和panels；后端PG5/CLI14/client3证据不作为Web通过。集成时由Lead选包含完整M02的基线/统一rootlock，不由Web改共享契约。
+
+
+## 唯一来源实际转交：WPF-M02
+
+已创建新tree并建立唯一status，管理草案三文件已转移交stub。请Lead/D03增加平级安全源：id `WPF-M02`、title `Web统一工作入口`、role `工作线`、worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace`、branch `codex/web-unified-workspace`、planDir `plans/wpf-m02-web-workspace`、evidenceDir `docs/evidence/wpf-m02`。不聚合旧nested草案。初始化W01 cb4a392+完整M02 e888862合并c0c41f9881713f3b371ba62c8f4e68ca5d71e8db；新main108f已通知，owner保留已授权完整输入，不reset。后续主线无API变更的>200投影补丁待明确SHA。
+
+
+## 唯一来源实际转交：WPF-P01
+
+已只读核验独立tree与三件套，管理nested草案已转移交stub。登记条目：id `WPF-P01`、title `可信Web插件host`、role `工作线`、worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host`、branch `codex/web-plugin-host`、planDir `plans/wpf-p01-plugin-host`、evidenceDir `docs/evidence/wpf-p01`。初始化108f完整main+已审W01 a22ae38，merge0673653ac6b2da8259bc8ca40d9ae723da2ce875；具体新实现目标尚UNKNOWN。只读核验人读字段已在新status，完整typed接口尚未落齐，不宣称冻结。主App挂载归M02 owner，hostowner不改App或旧Thread/workspace目录。
+
+D03请仅聚合父WPF-001及两个新的平级owner源；旧nestedM02/plugin入口不登记。管理者不代写各ownerstatus，字段已分别通知唯一owner补全。

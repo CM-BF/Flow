@@ -73,6 +73,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-33 | U04 与既有全栈插件/协议计划对齐 | 管理者、原Lead X01 | WPF-P01仅X01 Web host子项；原P01=协议接入不重用，M02公共命令不另造 |
 | WPF-REQ-34 | U07 按影响范围做 local tests 并加快可审查交付 | 所有owner | 模块+直接依赖优先；共享接口才链路；纯metadata仅文档核验，保留必要视觉/行为/a11y |
 | WPF-REQ-35 | 主线M02已交付完整接口；Web整改稳定后接入统一工作总览 | WPF-M02 / 独立owner待派 | 连续feed/attention原地决策、锚点/409/100+分页/懒详情/连接隔离，真实Web验收独立 |
+| WPF-REQ-36 | 主线D03要求各权威status提供明确人读字段与实现范围 | 每个唯一owner自行写；管理者协调 | 阶段/优先级1–9/当前产出/下一可用交付/明确阻塞与决定/完整实现target与literal范围；不写其他owner状态 |
 
 ## 当前 owner 与接口冻结
 
@@ -80,6 +81,8 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | --- | --- | --- |
 | W01官方Thread+主shell+split/merge | w01_owner / `Flow-worktrees/m1-web` / `codex/m1-web`；本轮起点 `b04df95821a55384c55c833e94405daaf35af8ad` | `apps/web/**`（排除正在委派的workspace子组件合入前并发写）、`plans/w01-web/**`、`docs/evidence/w01/**`；唯一手填status在该树 |
 | 右侧workspace子交付 | workspace_panels_owner / `Flow-worktrees/web-workspace-panels` / `codex/web-workspace-panels`；同base `b04df958...` | 仅 `apps/web/src/components/workspace/**`、`docs/evidence/w01/workspace-panels/**`；不建第二W01 status。提交后由W01显式cherry-pick并复验 |
+| WPF-M02统一工作入口 | workspace_panels_owner / `Flow-worktrees/web-unified-workspace` / `codex/web-unified-workspace`；初始化merge c0c41f9881713f3b371ba62c8f4e68ca5d71e8db | `apps/web/**`中的feed与主App集成、`plans/wpf-m02-web-workspace/**`、`docs/evidence/wpf-m02/**`；host新增模块由另一owner独立提交后明确集成，不造第二协议 |
+| WPF-P01可信Web host | w01_owner / `Flow-worktrees/web-plugin-host` / `codex/web-plugin-host`；初始化0673653ac6b2da8259bc8ca40d9ae723da2ce875 | `apps/web/src/plugins/**`、plugin-host测试、`plans/wpf-p01-plugin-host/**`、`docs/evidence/wpf-p01/**`；不写主App、现有workspace组件或共享契约 |
 | 本管理计划 | d01_owner / `Flow-worktrees/web-platform-management` / `codex/web-platform-management` | 仅本文范围，管理与需求事实；不复制别人的进度事实 |
 | 只读研究/独立review | root | 原始研究#1～5转化为实现/验证条目，证据见[研究台账](../../docs/evidence/web-platform/research.md) |
 
@@ -117,11 +120,11 @@ type WorkspacePanelsProps = {
 
 | 队列 | 计划/交付 | 状态与开工条件 |
 | --- | --- | --- |
-| 当前验收 | W01 Thread/shell/splitmerge及已审panels | 稳定候选cb4a392整体review；panels组件target46a1dbd通过，metadata已接齐 |
+| 已审交付 | W01 Thread/shell/splitmerge及panels | root整体APPROVED cb4a392，owner正式review metadata收尾；组件46a1dbd通过 |
 | 当前管理 | WPF-001需求账本/研究/接口/来源登记清单 | 执行管理者维护；root只读核对完整性 |
 | 跨团队协作 | WPF-D01需求+管理来源登记 | 主线D03实施；我方提交清单并只读确认注册，不占我方实现槽 |
 | 下一ready实现 | [WPF-M02统一工作总览](unified-workspace/plan.md) | 已正式派发原panels owner；新树web-unified-workspace，从W01 cb4a392与完整M02 e888862输入准备，后端由Lead维护 |
-| 随后工程轮 | WPF-P01插件host | W01布局稳定+空出owner后派发；原Lead X01/M02能力对齐；不动共享契约 |
+| 当前独立准备 | WPF-P01插件host | 已复用W01 owner，新树web-plugin-host；仅plugins模块/adapter/fixture，M02 owner主App挂载，两者先冻结typed接口 |
 | 性能轮 | WPF-PERF01 | 当前W01 owner先记录新build基线；测量/优化owner空出后排队，每次一个有证据瓶颈 |
 
 ## TODO
@@ -151,3 +154,7 @@ type WorkspacePanelsProps = {
 - 2026-10-06主线接口交接：M02完整e888862可消费，新增WPF-M02作为当前W01稳定后的下一ready功能；插件/性能保持队列，rootUI提案明确非用户原话。
 
 - 2026-10-06 02:24 UTC：W01稳定可审cb4a392到位；panels完成复审后复用其owner正式派发WPF-M02独立新树，优先主线受控main，备用完整e888862合入已获主线授权。
+
+- 主线准确base更新为108fddbd8261963f3d49088873b5a611b70a5dbf（完整C02+M02）；新树优先从此base合已审W01，已有树不重建/reset。W01整体review通过后复用owner实施WPF-P01可信host，安装临时lock例外由root/Lead明确确认，最终还原不提交。
+
+- 主线D03新增人读status字段要求已登记REQ36并交各唯一owner，字段只作文档验证；主线因果修复已APPROVED并进入main8c57f2f，通知现有新树受控合入不reset。
