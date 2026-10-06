@@ -1,0 +1,11 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false
+  },
+  "include": [
+    "../../../packages/client/src/claude-message-settings-production.test.ts"
+  ],
+  "exclude": []
+}

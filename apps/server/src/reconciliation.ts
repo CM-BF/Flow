@@ -1,3 +1,4 @@
+import { assertTaskExecutionProfile } from './execution-profiles/store.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
@@ -124,6 +125,7 @@ export async function retryReconciled(pool: Pool, boss: PgBoss, taskId: string, 
     const newTaskId = randomUUID();
     const auditId = randomUUID();
     const submission = recoverySubmission(task, resolutionAudit, input, auditId);
+    if (submission.messageSettings) await assertTaskExecutionProfile(client, submission);
     await client.query('INSERT INTO flow.tasks(id,submission) VALUES($1,$2)', [newTaskId, JSON.stringify(submission)]);
     await copyRecoveryInput(client, task.id, newTaskId, task.submission.prompt, submission.prompt);
     await copyGoalRecoveryInput(client, task.id, newTaskId, task.submission.prompt, submission.prompt);

@@ -1,7 +1,9 @@
+import { assertClaudeTurnSettingsMatch } from '../../../../packages/contracts/src/claude-turn-settings.js';
+import { checkTaskMessageSettings } from '../conversations/message-settings.js';
 import type { Pool, PoolClient } from 'pg';
 import type { RunnerEvent } from '@flow/contracts';
 import type { AssistantMessage, AssistantMessagePage, AssistantMessageReference } from '../../../../packages/contracts/src/assistant.js';
-import { assistantSettingsSchema, codexAssistantSettingsSchema, codexSourceIdentitySchema } from '../../../../packages/contracts/src/assistant.js';
+import { claudeAssistantSettingsSchema, codexAssistantSettingsSchema, codexSourceIdentitySchema } from '../../../../packages/contracts/src/assistant.js';
 import { runnerEventSchema } from '../../../../packages/contracts/src/runner.js';
 import { assistantSourcePolicy, validAssistantIdentity } from '../native-harness-policy.js';
 import { requireExecutionProfile } from '../execution-profiles/store.js';
@@ -24,6 +26,16 @@ export async function saveAssistantFinal(client: PoolClient, task: TaskRecord, a
   if (!session.rowCount) throw new HttpError(409, 'assistant_session_mismatch', 'Assistant session is not assigned to this task and runner.');
   if (!validAssistantIdentity(event)) throw new HttpError(409, 'assistant_identity', 'Assistant message ID does not match its native source.');
   await requireRecognizedSessionSource(client, task.id, attempt.id, event.nativeSessionId, policy.adapterVersion);
+  if (event.source === 'claude.sdk.result') {
+    const requested = task.submission.messageSettings;
+    if (requested) {
+      if (!task.submission.executionProfile || !('messageSettings' in event.settings)) throw new HttpError(409, 'assistant_configuration_mismatch', 'Assistant final did not confirm the frozen message settings.');
+      const profile = await requireExecutionProfile(client, task.submission.executionProfile);
+      if (profile.reference.runnerId !== attempt.runner_id || !checkTaskMessageSettings(task.submission, profile).ok) throw new HttpError(409, 'assistant_configuration_mismatch', 'Assistant final does not match its configured runner.');
+      try { assertClaudeTurnSettingsMatch(requested, event.settings.messageSettings.snapshot); }
+      catch { throw new HttpError(409, 'assistant_configuration_mismatch', 'Assistant final did not confirm the frozen message settings.'); }
+    } else if ('messageSettings' in event.settings) throw new HttpError(409, 'assistant_configuration_mismatch', 'A legacy task cannot report message settings.');
+  }
   if (event.source === 'codex.app-server.agent-message') {
     await requireCodexFinalConfiguration(client, task, attempt, event, policy.adapterVersion);
   }
@@ -73,7 +85,7 @@ function reference(row: MessageRow): AssistantMessageReference {
 function settingsReference(row: MessageRow) {
   const result = reference(row);
   if (result.source === 'claude.sdk.result') {
-    const parsed = assistantSettingsSchema.safeParse(row.settings);
+    const parsed = claudeAssistantSettingsSchema.safeParse(row.settings);
     if (parsed.success) return { ...result, settings: parsed.data };
   } else {
     const parsed = codexAssistantSettingsSchema.safeParse(row.settings);

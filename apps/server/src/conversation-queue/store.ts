@@ -1,3 +1,4 @@
+import { claudeTurnSettingsSchema, type ClaudeTurnSettings } from '../../../../packages/contracts/src/claude-turn-settings.js';
 import type { PoolClient } from 'pg';
 import { CONVERSATION_QUEUE_PREVIEW_BYTES, type ConversationQueueItem } from '../../../../packages/contracts/src/conversation-queue.js';
 import type { ConversationQueueCurrentTurn } from '../../../../packages/contracts/src/conversation-queue.js';
@@ -8,6 +9,7 @@ import { HttpError } from '../database.js';
 
 export interface QueueRow {
   id: string; conversation_id: string; sequence: number; state: ConversationQueueItem['state']; user_text: string;
+  message_settings?: ClaudeTurnSettings | null;
   conversation_input_id?: string | null; turn_id: string | null; task_id: string | null; turn_number: number | null; text_truncated?: boolean; created_at: Date; updated_at: Date;
 }
 export function itemView(row: QueueRow): ConversationQueueItem {
@@ -17,7 +19,7 @@ export function itemView(row: QueueRow): ConversationQueueItem {
     if (bytes > CONVERSATION_QUEUE_PREVIEW_BYTES) break;
     preview += character;
   }
-  return { id: row.id, conversationId: row.conversation_id, sequence: row.sequence, state: row.state,
+  return { ...(row.message_settings != null ? { messageSettings: claudeTurnSettingsSchema.parse(row.message_settings) } : {}), id: row.id, conversationId: row.conversation_id, sequence: row.sequence, state: row.state,
     preview, truncated: row.text_truncated ?? preview.length < row.user_text.length,
     promoted: row.state === 'promoted' ? { taskId: row.task_id!, turnId: row.turn_id!, turnNumber: row.turn_number! } : null,
     createdAt: row.created_at.toISOString(), updatedAt: row.updated_at.toISOString() };

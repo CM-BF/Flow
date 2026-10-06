@@ -1,0 +1,20 @@
+{
+  "state": "FINISHED",
+  "startedAt": "2026-10-06T16:26:52.656862+00:00",
+  "finishedAt": "2026-10-06T16:26:54.885033+00:00",
+  "head": "c33d31246d1e83f824116f81cf8b90469e023163",
+  "exitCode": 0,
+  "elapsedMs": 2227.6187499519438,
+  "rawBytes": 0,
+  "limitFailure": null,
+  "freeAfterBytes": 1128894464,
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/lib/tsc.js",
+    "--noEmit",
+    "-p",
+    "docs/evidence/wpf-mature-02-message-settings-core/vertical-tsconfig.json"
+  ],
+  "scope": "five explicit entries and transitive type imports; no whole repository build; no PG/runtime/SDK/provider execution",
+  "sourceUnchanged": true
+}

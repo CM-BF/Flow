@@ -1,0 +1,26 @@
+{
+  "startedAt": "2026-10-06T17:28:14.313101+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/f01/claude-message-settings-production-tsconfig.json",
+    "--pretty",
+    "false"
+  ],
+  "freeBytesBefore": 1192730624,
+  "sourceHashes": {
+    "apps/server/src/index.ts": "0ebae470b22fdc1f8b08e2d74c824dff94e9ca724539281c6bb83c16584700d0",
+    "packages/client/src/claude-message-settings-production.test.ts": "a4bbd54c08ce7ff25b6ed440d8aa77ef4850b0d1f25e19eda5280186ba63fb4a"
+  },
+  "headBefore": "ab76b44f651ab5ebd345240adaf08a045c3e0648",
+  "testsRerun": "focused types only; no tests",
+  "productPG": 0,
+  "provider": 0,
+  "exitCode": 0,
+  "stopReason": null,
+  "durationSeconds": 2.291361332987435,
+  "stdout": "claude-message-settings-production-final-types.stdout.txt",
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

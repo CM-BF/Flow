@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-06T16:52:21.861367+00:00",
+  "sourceTarget": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+  "method": "Named it/test plus literal each arrays; parsed literal data only, no source execution. Checked against actual per-file Vitest totals; run counts remain raw stdout authority.",
+  "files": [
+    {
+      "path": "packages/client/src/execution-profiles.test.ts",
+      "finalCount": 5,
+      "existingCount": 2,
+      "newCount": 3,
+      "removedNames": [],
+      "sha256": "c1775f97e444d14e7a39b46135369dda40474f0c889dc41f6b73bacb041b2ae7"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.test.ts",
+      "finalCount": 52,
+      "existingCount": 47,
+      "newCount": 5,
+      "removedNames": [],
+      "sha256": "953da2195fb7a34b9bddd0783e757e92903be04d1bec758a9379169ffc02a67d"
+    },
+    {
+      "path": "packages/client/src/conversation-queue.test.ts",
+      "finalCount": 8,
+      "existingCount": 1,
+      "newCount": 7,
+      "removedNames": [],
+      "sha256": "97ee6565dde24d037be38640b2b5c8b2a1fad06e5617e671233c4e9b92521e34"
+    },
+    {
+      "path": "apps/cli/src/cli.test.ts",
+      "finalCount": 18,
+      "existingCount": 14,
+      "newCount": 4,
+      "removedNames": [],
+      "sha256": "90c50bcc6ce46dd1506926268759187a2488b9ccf522180ba12323e8ce1c25f7"
+    },
+    {
+      "path": "apps/cli/src/goal-progression.test.ts",
+      "finalCount": 1,
+      "existingCount": 1,
+      "newCount": 0,
+      "removedNames": [],
+      "sha256": "7137659de95aac3ba33ddbcc2fe40fe3186ac12349feef13eebb33726514fe3b"
+    },
+    {
+      "path": "apps/cli/src/json-input.test.ts",
+      "finalCount": 2,
+      "existingCount": 2,
+      "newCount": 0,
+      "removedNames": [],
+      "sha256": "e5601c9ca0e2b146f584bdd3a8a942da56c172d75460d325d0636ea6becc32a7"
+    }
+  ],
+  "distinct": 86,
+  "new": 19,
+  "existing": 67
+}

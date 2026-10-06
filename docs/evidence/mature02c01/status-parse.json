@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-06T16:51:43.884Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "客户端和命令行已支持完整逐消息设置，并能识别不确定的发送与入队回执；局部检查通过。",
+    "next": "独立审查后接入主线，供各客户端消费同一接口。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+    "scopes": [
+      "apps/cli/README.md",
+      "apps/cli/src/cli.test.ts",
+      "apps/cli/src/index.ts",
+      "packages/client/src/conversation-acknowledgement.test.ts",
+      "packages/client/src/conversation-acknowledgement.ts",
+      "packages/client/src/conversation-queue.test.ts",
+      "packages/client/src/execution-profiles.test.ts",
+      "packages/client/src/index.ts",
+      "packages/contracts/src/index.ts"
+    ],
+    "errors": []
+  },
+  "checks": {
+    "state": "passed",
+    "target": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+    "record": "PASSED 563b1ea151d8d26a2100238d8faf26b697f38d71；86不同用例分轮，最后2 selected/6未选；focused types exit0；[原始记录](../../docs/evidence/mature02c01/README.md)"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED",
+    "target": "563b1ea151d8d26a2100238d8faf26b697f38d71"
+  }
+}

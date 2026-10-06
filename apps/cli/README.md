@@ -51,3 +51,11 @@ These routes are disabled until the center host sets `FLOW_PLUGIN_INSTALL_CONFIG
 `goal authorize-progress GOAL --input FILE --key KEY` explicitly authorizes a finite set of existing node/input versions and registered read-only profiles, exact external dependencies, expiry and admission budget (at most 20 nodes). JSON is bounded to 65536 bytes and validated against the public authorization contract. The center continues eligible dependency work after this client exits; it never derives input from a node title.
 
 `goal progression GOAL PROGRESSION` reads the durable state and reason for waiting or stopping. `goal revoke-progress GOAL PROGRESSION --input FILE --key KEY` accepts `{ "reason": "..." }` and stops later admissions; it does not cancel already admitted tasks. Mutations require the original stable key/body for recovery and do not retry a conflict. Mechanical verification within this authorization remains distinct from independent owner acceptance.
+
+## Claude message settings
+
+`conversation profiles --after UUID --limit N --json` reads the explicit `flow.claude-turn-settings.v1` catalog of complete configured choices. Configured choices do not establish account entitlement or observed execution. Legacy profile readers retain their existing protocols.
+
+`conversation send CONVERSATION_ID --input FILE --key KEY --json` accepts a full follow-up request with `expectedRevision`, `text`, optional materials and optional `messageSettings`. `conversation enqueue CONVERSATION_ID --input FILE --key KEY --json` accepts the corresponding queue request with `expectedQueueRevision`. Files must be regular UTF-8 JSON, at most 131072 bytes. Settings are a complete public snapshot; no model/effort/speed flags or defaults are merged into it.
+
+Both mutations require an explicit stable key. Output confirms acceptance only. A missing or inconsistent opt-in acknowledgement exits 4; keep the unchanged input and original key for explicit recovery. Conflicts remain exit 3 and invalid input exit 2. No command silently retries or changes the request. Requested settings and later observed initialization are distinct; absent historical fields are not filled from the request. The existing `submit` command remains a task submission command.

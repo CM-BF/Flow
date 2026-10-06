@@ -1,0 +1,84 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts (48 tests | 1 failed | 47 skipped) 6ms
+   ↓ HTTP 200 unconfirmed creation ACK {} is unknown without hidden retry or raw data
+   ↓ HTTP 200 unconfirmed creation ACK {not-json is unknown without hidden retry or raw data
+   ↓ HTTP 200 unconfirmed creation ACK null is unknown without hidden retry or raw data
+   ↓ HTTP request identity is captured from the sent bytes before the caller can mutate its input
+   ↓ HTTP mismatched accepted turn is unknown and never becomes delivery success
+   × rejects a missing message settings snapshot in an otherwise valid send receipt 5ms
+   ↓ known receipt identity accepts additive fields without discarding them
+   ↓ creation title changes cannot confirm the frozen request
+   ↓ creation harness changes cannot confirm the frozen request
+   ↓ creation projectId changes cannot confirm the frozen request
+   ↓ creation profile changes cannot confirm the frozen request
+   ↓ creation model changes cannot confirm the frozen request
+   ↓ creation thinking changes cannot confirm the frozen request
+   ↓ creation tools changes cannot confirm the frozen request
+   ↓ creation revision changes cannot confirm the frozen request
+   ↓ creation timestamp changes cannot confirm the frozen request
+   ↓ creation capabilities changes cannot confirm the frozen request
+   ↓ creation replayed changes cannot confirm the frozen request
+   ↓ creation field helper preserves optional profile/project presence and canonical defaults for a later GET
+   ↓ turn conversation mismatch stays unknown
+   ↓ turn number mismatch stays unknown
+   ↓ turn revision mismatch stays unknown
+   ↓ turn text mismatch stays unknown
+   ↓ turn task mismatch stays unknown
+   ↓ turn telemetry mismatch stays unknown
+   ↓ turn effective mismatch stays unknown
+   ↓ turn assistant mismatch stays unknown
+   ↓ the maximum response revision is legal while oversized revisions and request exhaustion are rejected
+   ↓ ordered frozen context is matched through turn admission and never fetched as body
+   ↓ context order cannot pass as additive metadata
+   ↓ context project cannot pass as additive metadata
+   ↓ context source cannot pass as additive metadata
+   ↓ context version cannot pass as additive metadata
+   ↓ context digest cannot pass as additive metadata
+   ↓ context kind cannot pass as additive metadata
+   ↓ context start cannot pass as additive metadata
+   ↓ context end cannot pass as additive metadata
+   ↓ context byteLength cannot pass as additive metadata
+   ↓ context freezeVersion cannot pass as additive metadata
+   ↓ context freezeFlag cannot pass as additive metadata
+   ↓ context contextDigest cannot pass as additive metadata
+   ↓ context executionDigest cannot pass as additive metadata
+   ↓ context templateVersion cannot pass as additive metadata
+   ↓ context missing cannot pass as additive metadata
+   ↓ context absent/empty and reference/byte bounds preserve the existing v1 contract
+   ↓ available reply identities are tied to the accepted task and attempt without claiming execution completion
+   ↓ nested turn knowledge is frozen from the actual HTTP body, not the caller object after dispatch
+   ↓ attachment v2 ACK uses the same frozen public matcher and lost confirmation keeps the original HTTP identity
+ ❯ packages/client/src/execution-profiles.test.ts (3 tests | 1 failed | 2 skipped) 6ms
+   × message settings reader uses its exact protocol and rejects a legacy successful envelope 6ms
+   ↓ publishes only explicit configured facts and preserves owner pagination, runner identity and conflict errors
+   ↓ opts into the exact profile protocol on each requested page without leaking it to publication or fallback requests
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/conversation-acknowledgement.test.ts > rejects a missing message settings snapshot in an otherwise valid send receipt
+AssertionError: expected function to throw an error, but it didn't
+ ❯ packages/client/src/conversation-acknowledgement.test.ts:66:7
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/client/src/execution-profiles.test.ts > message settings reader uses its exact protocol and rejects a legacy successful envelope
+TypeError: client.claudeMessageSettingsProfiles is not a function
+ ❯ packages/client/src/execution-profiles.test.ts:19:25
+     17|   const client = new FlowClient({ baseUrl: `http://127.0.0.1:${(server…
+     18|   try {
+     19|     expect(await client.claudeMessageSettingsProfiles()).toEqual({ pro…
+       |                         ^
+     20|     await expect(client.claudeMessageSettingsProfiles({ after: 'legacy…
+     21|     expect(headers).toEqual(['flow.claude-turn-settings.v1', 'flow.cla…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 49 skipped (51)
+   Start at  09:40:04
+   Duration  630ms (transform 212ms, setup 0ms, import 434ms, tests 12ms, environment 0ms)
+

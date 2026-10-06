@@ -1,0 +1,45 @@
+{
+  "state": "FINISHED",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/wpf-mature-02-message-settings-core/vertical-vitest.config.ts",
+    "--configLoader",
+    "native",
+    "--reporter=json",
+    "--maxWorkers=1",
+    "packages/contracts/src/claude-message-settings.test.ts",
+    "packages/contracts/src/assistant.test.ts",
+    "packages/contracts/src/execution-profiles.test.ts"
+  ],
+  "exitCode": 0,
+  "elapsedMs": 752.4265829706565,
+  "rawBytes": 5945,
+  "rawLimit": 1048576,
+  "cacheBeforeBytes": 0,
+  "cacheAfterBytes": 332,
+  "cachePeakObservedBytes": 332,
+  "cacheBudgetBytes": 33554432,
+  "cacheRemoved": true,
+  "limitFailure": null,
+  "freeAfterBytes": 1134006272,
+  "finishedAt": "2026-10-06T16:21:52.407801+00:00",
+  "scope": "contracts only; no runner/PG/SDK/provider selection",
+  "testCounts": {
+    "numTotalTestSuites": 3,
+    "numPassedTestSuites": 3,
+    "numFailedTestSuites": 0,
+    "numTotalTests": 16,
+    "numPassedTests": 16,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "selectedFiles": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/packages/contracts/src/assistant.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/packages/contracts/src/claude-message-settings.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/packages/contracts/src/execution-profiles.test.ts"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "state": "FINISHED",
+  "startedAt": "2026-10-06T16:52:28.900549+00:00",
+  "finishedAt": "2026-10-06T16:52:30.822175+00:00",
+  "head": "723d4bb153be418584f34f77dab42cb67fac8243",
+  "sourceCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+  "exitCode": 1,
+  "elapsedMs": 1921.4143749559298,
+  "rawBytes": 3239,
+  "limitFailure": null,
+  "cacheAfterBytes": 137,
+  "temporaryAfterBytes": 0,
+  "cachePeakObservedBytes": 2555453,
+  "cacheRemoved": true,
+  "ownTemporaryRootRemoved": true,
+  "ownedProcessExited": true,
+  "freeAfterBytes": 1212690432,
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/wpf-mature-02-message-settings-core/vertical-pg-vitest.config.ts",
+    "--configLoader",
+    "native",
+    "--reporter=json",
+    "--maxWorkers=1",
+    "apps/server/src/conversations/message-settings.test.ts"
+  ],
+  "scope": "one eight-case private PG/HTTP file; no native SDK/provider; no retry",
+  "testCounts": {
+    "numTotalTests": 8,
+    "numPassedTests": 0,
+    "numFailedTests": 0,
+    "numPendingTests": 8,
+    "success": false
+  },
+  "selectedFiles": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/apps/server/src/conversations/message-settings.test.ts"
+  ],
+  "failedCases": [
+    {
+      "title": "migrates once, preserves old rows and rejects missing/null/extra snapshot fields in SQL",
+      "status": "skipped"
+    },
+    {
+      "title": "isolates all old catalog readers before pagination and publishes honest opt-in controls",
+      "status": "skipped"
+    },
+    {
+      "title": "freezes send and enqueue bodies through replay, promotion and explicit resume without reading a later draft",
+      "status": "skipped"
+    },
+    {
+      "title": "rejects opt-in bypass and steer before writes while retaining unavailable legacy queued intents",
+      "status": "skipped"
+    },
+    {
+      "title": "keeps legacy conversation requests and typed replies readable and resumable without new fields",
+      "status": "skipped"
+    },
+    {
+      "title": "blocks uncertain effort inheritance on both promotion paths and permits empty unpause without a task",
+      "status": "skipped"
+    },
+    {
+      "title": "binds typed final and context model to the frozen task and rolls back a mismatching whole event batch",
+      "status": "skipped"
+    },
+    {
+      "title": "retains the snapshot through audited retry and rejects a now-unavailable profile before any new retry writes",
+      "status": "skipped"
+    }
+  ],
+  "fixtureReceiptBytes": 611,
+  "fixture": {
+    "database": "flow_message_settings_22a12ff7c14849f8be3ecae6634043e7",
+    "creationRequested": true,
+    "counts": {
+      "tasks": 1,
+      "attempts": 0
+    },
+    "requests": 0,
+    "appClosed": true,
+    "bossClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "connections": 0,
+    "absent": true,
+    "errors": [],
+    "elapsedMs": 537.2178329999999,
+    "finishedAt": "2026-10-06T16:52:30.801Z",
+    "pre032Absent": true,
+    "providerCalls": 0
+  }
+}

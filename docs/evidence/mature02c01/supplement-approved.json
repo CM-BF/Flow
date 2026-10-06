@@ -1,0 +1,51 @@
+{
+  "decision": "APPROVED",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "at": "2026-10-06T17:26:05.899480+00:00",
+  "target": "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+  "priorTarget": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+  "headObserved": "b87500c4246bac3994cc6c6cc8bac4c5367712f8",
+  "dirtyObserved": [],
+  "scope": "Only the two-file supplemental acknowledgement P2 repair; prior approval/history and 86 distinct checks retained separately.",
+  "findingClosure": "New snapshot excludes runnerRequested before wrapper checking. New wrapper requires thinking unknown. Snapshot-free legacy still allowed; pending snapshot without wrapper remains valid. Both negative HTTP cases first assert valid direct decode, then unknown bad ACK and exactly one unchanged body/key HTTP request. No hidden resend.",
+  "manifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/docs/evidence/mature02c01/supplement-manifest.json",
+  "manifestSha256": "9b18dbe4a475c0aa5fb5506a07e9803eb714ebd175d13d688e2f5fcab2ed5160",
+  "bindings": "/tmp/flow-mature02c01-supplemental-review-bindings.json",
+  "bindingsSha256": "da221fb8e724046fcdad2bd78c7fa2702d78827615be8753774514bf8a85babe",
+  "checked": {
+    "entries": 107,
+    "changedSources": 2,
+    "unchangedPrior": 98,
+    "newRaw": 6,
+    "priorManifest": 1,
+    "mismatches": []
+  },
+  "authorEvidence": {
+    "red": {
+      "selected": 2,
+      "failed": 2,
+      "notSelected": 52
+    },
+    "green": {
+      "selected": 2,
+      "passed": 2,
+      "notSelected": 52,
+      "testMs": 29
+    },
+    "focusedTypesExit": 0,
+    "wholeRootTypes": "NOT_RUN",
+    "prior86": "not repeated"
+  },
+  "reviewerExecution": {
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "projectWrites": 0
+  },
+  "P3": "Non-blocking profile capability suggestion unchanged; no P3 redesign accepted here.",
+  "limits": [
+    "Malformed ACK consistency only; does not certify current CORE emits malformed data.",
+    "No new CORE/product/native/browser/PG approval.",
+    "Original supplemental REQUEST_CHANGES and red stdout retained."
+  ]
+}

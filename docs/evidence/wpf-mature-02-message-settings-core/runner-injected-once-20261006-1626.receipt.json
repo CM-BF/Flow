@@ -1,0 +1,43 @@
+{
+  "state": "FINISHED",
+  "startedAt": "2026-10-06T16:26:30.415475+00:00",
+  "finishedAt": "2026-10-06T16:26:31.129902+00:00",
+  "head": "c33d31246d1e83f824116f81cf8b90469e023163",
+  "exitCode": 0,
+  "elapsedMs": 713.735583005473,
+  "rawBytes": 2326,
+  "limitFailure": null,
+  "cacheBeforeBytes": 0,
+  "cacheAfterBytes": 132,
+  "temporaryAfterBytes": 0,
+  "temporaryAfterEntries": [],
+  "cachePeakObservedBytes": 998994,
+  "cacheBudgetBytes": 33554432,
+  "cacheRemoved": true,
+  "ownTemporaryRootRemoved": true,
+  "freeAfterBytes": 1129631744,
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/wpf-mature-02-message-settings-core/vertical-vitest.config.ts",
+    "--configLoader",
+    "native",
+    "--reporter=json",
+    "--maxWorkers=1",
+    "apps/runner/src/claude-message-settings.test.ts"
+  ],
+  "scope": "single runner test; injected query only; no native SDK target/provider/PG",
+  "sourceUnchanged": true,
+  "testCounts": {
+    "numTotalTests": 5,
+    "numPassedTests": 5,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "selectedFiles": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/apps/runner/src/claude-message-settings.test.ts"
+  ]
+}

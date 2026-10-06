@@ -1,4 +1,4 @@
-# WPF-MATURE-02-CORE Claude 消息设置 contract leaf
+# WPF-MATURE-02-CORE Claude 逐消息设置
 
 | 字段 | 内容 |
 | --- | --- |
@@ -11,11 +11,11 @@
 | Worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core / codex/claude-message-settings-core |
 | 基线 | 70cc4e852365e974cefde30bfad75c7d233985c6 |
 
-目标：在两个新文件中固定可复用的完整消息设置请求、有限配置策略、规范序列化和 ACK 精确匹配。没有中心 mutable next-settings 实体、settingsRevision、第二哈希、SDK runtime import 或新能力目录。本片不开放产品控件或实际模型资格。
+目标：以已main的纯leaf为基础，将每条消息的完整model/thinking/effort/speed意图沿中心、队列、既有Claude adapter冻结传递，并分开requested与observed。没有中心mutable next-settings实体、settingsRevision、第二哈希或新能力目录；全程0付费验证，UI由后继consumer消费正式合同。
 
-遵循[根模块化规则](../../AGENTS.md#modular-design)。派工仅允许两源和本 plan/evidence 目录；不修改 shared exports、profile、migration、center/client/runner/UI。后继由 Lead 精确协调独立 scope。
+遵循[根模块化规则](../../AGENTS.md#modular-design)。现claim v3为39 literal，包含032与reconciliation；F01 shared exports/client/index及UI仍不在scope。Lead已完成现source及155只读依赖物化；实现与验证边界见唯一status。
 
-## Interface 与资源
+## 首leaf Interface 与资源（历史已main）
 
 唯一 Module 的职责是检查完整、版本化的配置意图。输入是普通 JSON DTO，输出为严格解析快照、固定次序 JSON、有限 policy decision 或 ACK mismatch。调用方拥有可信 profile 来源、原幂等 body、持久化、取消与未知受理状态；本 leaf 没有 IO/生命周期资源。
 
@@ -29,11 +29,11 @@ effort 必填 discriminated union：level+固定 SDK 五值，或 not-requested�
 - [x] **M02CORE-02** 实现两文件 leaf 和五组行为测试源码，固定提交；实现不等于已验证。
 - [x] **M02CORE-03** 资源满足后执行本文件 Vitest/局部 strict：5/5 与 exit0，见 checks.json。
 - [x] **M02CORE-04** 独立固定 target review，修复 findings。
-- [ ] **M02CORE-05** Lead 受控接收/main 核对；仍有已派后继时保留原合法scope。
-- [ ] **M02CORE-06** 收敛中心/queue到既有Claude adapter的实际消息设置纵向片；先只读设计及精确scope请求，合法amend后才实现。
+- [x] **M02CORE-05** Lead 受控接收/main 核对；仍有已派后继时保留原合法scope。
+- [ ] **M02CORE-06** 完成中心/queue到既有Claude adapter的实际消息设置纵向片；39 literal源码已固定，29 distinct（16合同+5注入+8专库）与focused strict已通过，仍需共享接线及完整独审，不由局部通过提前完成。
 
 ## 验收
 
 五组直接行为：完整请求/非法与显式 omission；canonical 顺序与不同 effort/speed；缺证据/空策略/非笛卡尔组合；profile 三元身份与 32 条/重复边界；ACK 缺失/篡改与固定请求精确匹配。legacy 文件不改，不能把未跑测试写成 red/green。初始空间不足时未运行。2026-10-06 15:28:41 UTC 两项运行前 fresh 均达到 1GiB+32MiB，使用已授权固定依赖闭包完成单文件5/5与局部strict0；没有PG/build/install/target。
 
-Owner 维护 [status](status.md) 和 [review](review.md)。当前纯契约验证与独审通过，main 未接收；后继接线尚在设计；原大task其他验收继续开放。
+Owner 维护 [status](status.md) 和 [review](review.md)。首leaf验证与独审通过并已main22d5；后继接线source ea276已实施并完成本片合同/注入/真实专库验证，模块职责与精确接口见next-slice-handoff.md，共享消费与整体独审仍开放。原大task其他验收继续开放。

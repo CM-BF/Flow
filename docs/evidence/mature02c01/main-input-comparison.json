@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-06 16:56:25 UTC",
+  "observedMain": "9314c81a9966fefe9bfec759eea4eac6e6f9276a",
+  "sourceTarget": "563b1ea151d8d26a2100238d8faf26b697f38d71",
+  "controlledBase": "8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6",
+  "protectedDifferences": [
+    {
+      "path": "apps/cli/src/goal-progression.test.ts",
+      "requiredRef": "8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6",
+      "requiredBlob": "e01e9923dc03981a4f4b32b8da87e793f3f807bb",
+      "requiredSha256": "7137659de95aac3ba33ddbcc2fe40fe3186ac12349feef13eebb33726514fe3b",
+      "mainBlob": null,
+      "mainSha256": null
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "requiredRef": "8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6",
+      "requiredBlob": "5e0faf800c7dd9e5fed8504f87396337bcf9c588",
+      "requiredSha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997",
+      "mainBlob": "56429dfb3cb0704f99ef66a7063041bdc215c411",
+      "mainSha256": "a43b555855966d79f1f80d4e350d4f9b4bd1264e809e07f96f934a55ee5327c3"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "requiredRef": "8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6",
+      "requiredBlob": "d626d66b47fdff4f698315d8d2cfa959e65d02e3",
+      "requiredSha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b",
+      "mainBlob": "24af53c11c17f2b512ae8011b25302e4c98a6a15",
+      "mainSha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "requiredRef": "8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6",
+      "requiredBlob": "1062a9758e4d03696df4e9a8c9d2760c789528a8",
+      "requiredSha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "mainBlob": "8ee5f5bfcc77d37358ded0734381766c71603fb4",
+      "mainSha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "requiredRef": "8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6",
+      "requiredBlob": "fbc1c910113bc65e980a094be0e5d0a20472e513",
+      "requiredSha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962",
+      "mainBlob": "2cd2ed768a2ac595cc9eb10c4d190d1862b78a0e",
+      "mainSha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "requiredRef": "8e9b35233e5b1e93df19e2ea802e0f2fbefc23f6",
+      "requiredBlob": "62bf5e58fa7ce4cb464c4025ba5100bba4e09be3",
+      "requiredSha256": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7",
+      "mainBlob": "bb5bdf53f810698f45b6111c6cf7399838a80301",
+      "mainSha256": "6d7765c8e8c295c4da1b6aca845348604917108d5b359b20bd601d1053e3d884"
+    }
+  ],
+  "controlledPrerequisites": {
+    "CORE": "ea276572c3c99fb8400808a93efc69ce530d55a4 six public inputs; production integration waits CORE review/mount. No contract redesign.",
+    "F01O14": "73aabff4fac96c0439817bdc72358c1385371e8d existing CLI goalCommand, README prefix, dedicated test; preserve separately pending production validation.",
+    "existingMainExports": "Retain main contracts/index goal-progression export; do not replace entire index with CORE index."
+  },
+  "instructions": "Do not apply entire historical branch without controlled integration. Differences are fixed read-only facts, not approval to overwrite newer main or authority; lead owns composition. No installs/tests/PG/provider for this comparison."
+}

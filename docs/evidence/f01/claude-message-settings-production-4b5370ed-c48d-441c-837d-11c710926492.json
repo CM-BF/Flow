@@ -1,0 +1,46 @@
+{
+  "database": "flow_f01_settings_af15d23bc6844e4bbd478009293b8eb8",
+  "marker": "4b5370ed-c48d-441c-837d-11c710926492",
+  "providerCalls": 0,
+  "runtimeStarts": 0,
+  "startedAt": "2026-10-06T17:31:30.861Z",
+  "freeBytesBefore": 1193627648,
+  "before": [],
+  "creationRequested": true,
+  "created": true,
+  "marked": true,
+  "accepted": {
+    "taskId": "03347e3a-e94d-4c5c-9e80-b016846cf0e1",
+    "queueItemId": "69b9dbf9-6046-4233-9f1b-b4b525107c09",
+    "sendKey": "74b3e2d4-f641-4b66-8078-79ebf14ecf7f",
+    "queueKey": "443956c7-6ab8-4f7e-9935-de5dece43629"
+  },
+  "journey": {
+    "migrationAtStartup": true,
+    "publicCatalogNegotiated": true,
+    "legacyCatalogIsolated": true,
+    "receivedAckThenRestart": true,
+    "snapshotsFrozen": true,
+    "counts": {
+      "tasks": 1,
+      "attempts": 0,
+      "queued": 1
+    }
+  },
+  "appClosed": true,
+  "poolClosed": true,
+  "databaseBytes": 12385303,
+  "connectionObservations": [
+    {
+      "elapsedMs": 1,
+      "connections": []
+    }
+  ],
+  "connections": [],
+  "dropped": true,
+  "remaining": [],
+  "adminClosed": true,
+  "errors": [],
+  "endedAt": "2026-10-06T17:31:32.490Z",
+  "phase": "cleaned"
+}

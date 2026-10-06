@@ -19,7 +19,7 @@
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 中心持续推进明确授权的固定节点输入已进入主线；生产接线与独立审查证据已接收。 |
-| 下一可用交付 | 接收逐消息设置核心与共享入口，完成新网页兼容验证；终端真实中心旅程继续。 |
+| 下一可用交付 | 逐消息设置已审组合待两处旧读取方类型兼容修复；网页与终端验证继续。 |
 | 当前阻塞 | ACTIVE: 大型构建仍缺空间；局部验证依现场余量串行运行。 |
 | 需用户决定 | NONE |
 
@@ -201,3 +201,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 固定73a五文件由assignment_review唯一独立APPROVED，owner最终0be616d3；[逐文件比较](../../docs/evidence/i02/o14-production-main-comparison.json)确认实际集成blob与受审source相同、234静态/SQL等全部非证据运行输入相对当前main无差，未混入待审CORE或C01。原2/2生产PG与旧CLI1/types0分别运行，真实默认scan/队列重开、版本输入、单scan与关闭等待/普通DROP证据有效；没有重复工程测试。既有领域/薄client已main，本批补030生产await、权限route、现有生命周期调度与公开CLI。
 
 完整自然语言规划与模型批量输入仍属O15后继；本片只推进owner明确授权、输入完整的固定版本节点，机械验证不替代独立接受。个人服务与Web指针不因main接收改变。资源精确两cache清理达到准备线，CORE8/8已清理归还，WebB获得下一条件窗口；当前source/operator结果各自在唯一status维护。
+
+2026-10-06 17:37 UTC：逐消息设置45源与三份独立批准固定输入逐字一致，188保护runtime/config对组合前main无差；生产1/1和原领域/客户端证据复用。实际root noEmit发现旧Web深只读profile形参与TUI旧fixture发布union两处直接消费者类型问题（共4诊断），保留原输出，修复交各合法owner；未main、不重跑PG/领域。见[固定组合](../../docs/evidence/i02/message-settings-integration.json)。个人服务不变。

@@ -1,12 +1,109 @@
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
 import { once } from 'node:events';
 import { spawn } from 'node:child_process';
+import { randomUUID } from 'node:crypto';
 import { mkdtemp, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import type { AddressInfo } from 'node:net';
 import { expect, it } from 'vitest';
 import { runCli } from './index.js';
+
+function cliSettings() {
+  return { protocol: 'flow.claude-turn-settings.v1', profile: { id: randomUUID(), runnerId: randomUUID(), configDigest: 'a'.repeat(64) },
+    requested: { model: 'configured-alias', thinking: 'adaptive', effort: { kind: 'level', value: 'high' }, speed: 'fast' } };
+}
+
+it('conversation profiles uses the explicit catalog and preserves cursor, limit and cancellation', async () => {
+  const paths: string[] = [];
+  await withCenter((request, response) => {
+    paths.push(request.url!); expect(request.headers['x-flow-execution-profile']).toBe('flow.claude-turn-settings.v1');
+    response.writeHead(200, { 'content-type': 'application/json' });
+    response.end(JSON.stringify({ protocol: 'flow.claude-turn-settings.v1', profiles: [], nextCursor: null }));
+  }, async env => {
+    const output: string[] = []; const io = { out: (text: string) => output.push(text), err: (text: string) => output.push(text) };
+    const args = ['conversation', 'profiles', '--after', 'cursor/value', '--limit', '2', '--json'];
+    expect(await runCli(args, io, env)).toBe(0);
+    expect(JSON.parse(output[0]!).protocol).toBe('flow.claude-turn-settings.v1');
+    expect(await runCli(args, io, env, AbortSignal.abort())).toBe(4);
+    expect(await runCli(['conversation', 'profiles', '--limit', '0'], io, env)).toBe(2);
+  });
+  expect(paths).toEqual(['/api/execution-profiles?after=cursor%2Fvalue&limit=2']);
+});
+
+it('conversation send and enqueue consume complete bounded input and print acceptance without replacing settings', async () => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'flow-cli-settings-')); const filename = path.join(directory, 'input.json');
+  const conversationId = randomUUID(); const snapshot = cliSettings(); const requests: { path: string; key: unknown; body: unknown }[] = [];
+  const at = '2026-10-06T00:00:00Z';
+  try {
+    await withCenter(async (request, response) => {
+      let raw = ''; for await (const chunk of request) raw += chunk; const body = JSON.parse(raw);
+      requests.push({ path: request.url!, key: request.headers['idempotency-key'], body });
+      response.writeHead(200, { 'content-type': 'application/json' });
+      if (request.url!.endsWith('/queue')) response.end(JSON.stringify({ conversationId, queueRevision: 4, replayed: true,
+        item: { id: randomUUID(), conversationId, sequence: 4, state: 'waiting', preview: body.text, truncated: false, promoted: null,
+          createdAt: at, updatedAt: at, messageSettings: body.messageSettings } }));
+      else {
+        const taskId = randomUUID();
+        response.end(JSON.stringify({ replayed: false, conversation: { id: conversationId, title: 'CLI', harness: 'claude',
+          requested: { model: 'runner-default', thinking: 'disabled', tools: 'configured-readonly' }, revision: 1, createdAt: at, updatedAt: at },
+          turn: { id: randomUUID(), conversationId, number: 1, createdAt: at, user: { role: 'user', text: body.text },
+            task: { id: taskId, title: 'CLI', harness: 'claude', status: 'queued', verificationStatus: 'pending', createdAt: at, updatedAt: at },
+            telemetry: { kind: 'execution', taskId, title: 'Execution' }, effective: { model: null, tools: null, thinking: 'unknown', source: null },
+            assistant: { state: 'pending', reason: 'execution-pending' }, messageSettings: body.messageSettings } }));
+      }
+    }, async env => {
+      const output: string[] = []; const io = { out: (text: string) => output.push(text), err: (text: string) => output.push(text) };
+      await writeFile(filename, JSON.stringify({ expectedRevision: 0, text: '  Send 中文🙂\n', mode: 'follow-up', messageSettings: snapshot }));
+      expect(await runCli(['conversation', 'send', conversationId, '--input', filename, '--key', 'send-settings', '--json'], io, env)).toBe(0);
+      expect(JSON.parse(output[0]!).turn.messageSettings).toEqual(snapshot);
+      expect(JSON.parse(output[0]!).turn.task.status).toBe('queued');
+      await writeFile(filename, JSON.stringify({ expectedQueueRevision: 3, text: 'Queued text', messageSettings: snapshot }));
+      expect(await runCli(['conversation', 'enqueue', conversationId, '--input', filename, '--key', 'enqueue-settings', '--json'], io, env)).toBe(0);
+      expect(JSON.parse(output[1]!).item.messageSettings).toEqual(snapshot);
+      expect(JSON.parse(output[1]!).replayed).toBe(true);
+    });
+    expect(requests.map(({ path, key }) => ({ path, key }))).toEqual([
+      { path: `/api/conversations/${conversationId}/turns`, key: 'send-settings' }, { path: `/api/conversations/${conversationId}/queue`, key: 'enqueue-settings' },
+    ]);
+    expect(requests.every(request => (request.body as { messageSettings: unknown }).messageSettings && JSON.stringify((request.body as { messageSettings: unknown }).messageSettings) === JSON.stringify(snapshot))).toBe(true);
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});
+
+it('conversation mutation rejects missing key, malformed or oversized JSON and non-follow-up mode before HTTP', async () => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'flow-cli-settings-invalid-')); const filename = path.join(directory, 'input.json'); let calls = 0;
+  try {
+    await withCenter((request, response) => { calls++; request.resume(); response.end('{}'); }, async env => {
+      const io = { out() {}, err() {} }; const args = ['conversation', 'send', randomUUID(), '--input', filename];
+      await writeFile(filename, JSON.stringify({ expectedRevision: 0, text: 'Text' }));
+      expect(await runCli(args, io, env)).toBe(2);
+      for (const text of ['{invalid', ' '.repeat(131_073), JSON.stringify({ expectedRevision: 0, text: 'Text', mode: 'queue' })]) {
+        await writeFile(filename, text); expect(await runCli([...args, '--key', 'same-key'], io, env)).toBe(2);
+      }
+    });
+    expect(calls).toBe(0);
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});
+
+it('conversation unknown ACK and conflict use existing nonzero exits without new keys or hidden retries', async () => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'flow-cli-settings-unknown-')); const filename = path.join(directory, 'input.json');
+  const calls: { key: unknown; body: string }[] = [];
+  try {
+    await writeFile(filename, JSON.stringify({ expectedQueueRevision: 0, text: 'Text', messageSettings: cliSettings() }));
+    await withCenter(async (request, response) => {
+      let body = ''; for await (const chunk of request) body += chunk; calls.push({ key: request.headers['idempotency-key'], body });
+      response.writeHead(calls.length === 1 ? 200 : 409, { 'content-type': 'application/json' });
+      response.end(calls.length === 1 ? '{"secret":"do not echo raw"}' : JSON.stringify({ error: { code: 'queue_conflict', message: 'Refresh before a new action.' } }));
+    }, async env => {
+      const errors: string[] = []; const io = { out() {}, err: (text: string) => errors.push(text) };
+      const args = ['conversation', 'enqueue', randomUUID(), '--input', filename, '--key', 'original-settings-key'];
+      expect(await runCli(args, io, env)).toBe(4);
+      expect(errors[0]).toContain('original --key'); expect(errors[0]).not.toContain('secret'); expect(calls).toHaveLength(1);
+      expect(await runCli(args, io, env)).toBe(3);
+    });
+    expect(calls).toHaveLength(2); expect(calls[1]).toEqual(calls[0]);
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});
 
 async function withCenter(handler: (request: IncomingMessage, response: ServerResponse) => void, action: (env: NodeJS.ProcessEnv) => Promise<void>) {
   const server = createServer(handler).listen(0, '127.0.0.1');

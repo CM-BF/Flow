@@ -1,0 +1,162 @@
+{
+  "head": "ba2bfd527c8e2f620e52eeb688999aab83034a58",
+  "dirty": false,
+  "freeBytes": 1134010368,
+  "requiredFreeBytes": 1107296256,
+  "cacheExisted": false,
+  "entries": [
+    "packages/contracts/src/claude-message-settings.test.ts",
+    "packages/contracts/src/assistant.test.ts",
+    "packages/contracts/src/execution-profiles.test.ts"
+  ],
+  "relativeClosure": [
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "bytes": 4993,
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382"
+    },
+    {
+      "path": "packages/contracts/src/assistant.test.ts",
+      "bytes": 2225,
+      "sha256": "babb342aa8c616f0477c7297fb7e6f5831aee022ce19f78d4addc2a5bea374df"
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+    },
+    {
+      "path": "packages/contracts/src/claude-message-settings.test.ts",
+      "bytes": 8873,
+      "sha256": "18ed77abe1a065ba936d5150b3bfcb8b17464d3b65152e98c5c22d90424b3eab"
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "bytes": 4175,
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 6621,
+      "sha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35"
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.test.ts",
+      "bytes": 7301,
+      "sha256": "4ce75b9b03cb138aa9dc39f3577965e73731d0a4f233f34fdbb540b142b5d49d"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 12150,
+      "sha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962"
+    },
+    {
+      "path": "packages/contracts/src/goal-context.ts",
+      "bytes": 1443,
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "bytes": 2888,
+      "sha256": "b6da9b983a2a69d7c444e90212f6079f37f59e9a3d654af773e6b0685b88b15c"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "bytes": 5853,
+      "sha256": "2219151efc4b1daa1f76c40a2ca770c9dd587b4844914bfe7c92923ffd9f8160"
+    },
+    {
+      "path": "packages/contracts/src/goal-tool-runs.ts",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db"
+    },
+    {
+      "path": "packages/contracts/src/goals.ts",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "path": "packages/contracts/src/harnesses.ts",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "bytes": 4414,
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a"
+    },
+    {
+      "path": "packages/contracts/src/projects.ts",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0"
+    },
+    {
+      "path": "packages/contracts/src/protocol-task.ts",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7285,
+      "sha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 6428,
+      "sha256": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7"
+    }
+  ],
+  "external": [
+    "node:crypto",
+    "vitest",
+    "zod"
+  ],
+  "missing": [],
+  "observedAt": "2026-10-06T16:21:51.654780+00:00",
+  "admission": "OPEN"
+}

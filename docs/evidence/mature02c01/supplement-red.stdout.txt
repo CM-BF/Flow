@@ -1,0 +1,266 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts (54 tests | 2 failed | 52 skipped) 31ms
+   ↓ HTTP 200 unconfirmed creation ACK {} is unknown without hidden retry or raw data
+   ↓ HTTP 200 unconfirmed creation ACK {not-json is unknown without hidden retry or raw data
+   ↓ HTTP 200 unconfirmed creation ACK null is unknown without hidden retry or raw data
+   ↓ HTTP request identity is captured from the sent bytes before the caller can mutate its input
+   ↓ HTTP mismatched accepted turn is unknown and never becomes delivery success
+   ↓ rejects a missing message settings snapshot in an otherwise valid send receipt
+   ↓ nested send settings stay frozen to the exact body while a caller edits its next request
+   ↓ send settings mismatch or malformed observations retain unknown without raw response or retry
+   ↓ requested and observed settings preserve absent, null and alias facts and reject contradictory wrappers
+   × new settings reject legacy runnerRequested even before a final wrapper exists 24ms
+   × new settings reject disabled thinking in a final wrapper without changing the request identity 7ms
+   ↓ optional settings capability is finite and leaves all legacy capability flags false
+   ↓ known receipt identity accepts additive fields without discarding them
+   ↓ creation title changes cannot confirm the frozen request
+   ↓ creation harness changes cannot confirm the frozen request
+   ↓ creation projectId changes cannot confirm the frozen request
+   ↓ creation profile changes cannot confirm the frozen request
+   ↓ creation model changes cannot confirm the frozen request
+   ↓ creation thinking changes cannot confirm the frozen request
+   ↓ creation tools changes cannot confirm the frozen request
+   ↓ creation revision changes cannot confirm the frozen request
+   ↓ creation timestamp changes cannot confirm the frozen request
+   ↓ creation capabilities changes cannot confirm the frozen request
+   ↓ creation replayed changes cannot confirm the frozen request
+   ↓ creation field helper preserves optional profile/project presence and canonical defaults for a later GET
+   ↓ turn conversation mismatch stays unknown
+   ↓ turn number mismatch stays unknown
+   ↓ turn revision mismatch stays unknown
+   ↓ turn text mismatch stays unknown
+   ↓ turn task mismatch stays unknown
+   ↓ turn telemetry mismatch stays unknown
+   ↓ turn effective mismatch stays unknown
+   ↓ turn assistant mismatch stays unknown
+   ↓ the maximum response revision is legal while oversized revisions and request exhaustion are rejected
+   ↓ ordered frozen context is matched through turn admission and never fetched as body
+   ↓ context order cannot pass as additive metadata
+   ↓ context project cannot pass as additive metadata
+   ↓ context source cannot pass as additive metadata
+   ↓ context version cannot pass as additive metadata
+   ↓ context digest cannot pass as additive metadata
+   ↓ context kind cannot pass as additive metadata
+   ↓ context start cannot pass as additive metadata
+   ↓ context end cannot pass as additive metadata
+   ↓ context byteLength cannot pass as additive metadata
+   ↓ context freezeVersion cannot pass as additive metadata
+   ↓ context freezeFlag cannot pass as additive metadata
+   ↓ context contextDigest cannot pass as additive metadata
+   ↓ context executionDigest cannot pass as additive metadata
+   ↓ context templateVersion cannot pass as additive metadata
+   ↓ context missing cannot pass as additive metadata
+   ↓ context absent/empty and reference/byte bounds preserve the existing v1 contract
+   ↓ available reply identities are tied to the accepted task and attempt without claiming execution completion
+   ↓ nested turn knowledge is frozen from the actual HTTP body, not the caller object after dispatch
+   ↓ attachment v2 ACK uses the same frozen public matcher and lost confirmation keeps the original HTTP identity
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/conversation-acknowledgement.test.ts > new settings reject legacy runnerRequested even before a final wrapper exists
+AssertionError: promise resolved "{ conversation: { …(7) }, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "conversation": {
++     "createdAt": "2026-10-06T00:00:00Z",
++     "harness": "claude",
++     "id": "da67b0cd-2f1e-48a4-adc2-544b9900c425",
++     "requested": {
++       "model": "runner-default",
++       "thinking": "disabled",
++       "tools": "configured-readonly",
++     },
++     "revision": 1,
++     "title": "Original",
++     "updatedAt": "2026-10-06T00:00:00Z",
++   },
++   "replayed": false,
++   "turn": {
++     "assistant": {
++       "reason": "execution-pending",
++       "state": "pending",
++     },
++     "conversationId": "da67b0cd-2f1e-48a4-adc2-544b9900c425",
++     "createdAt": "2026-10-06T00:00:00Z",
++     "effective": {
++       "model": null,
++       "runnerRequested": {
++         "model": "legacy-model",
++         "permissionMode": "dontAsk",
++         "thinking": "disabled",
++       },
++       "source": null,
++       "thinking": "unknown",
++       "tools": null,
++     },
++     "id": "d5bfd73e-f964-4667-9088-f14d634ff78c",
++     "messageSettings": {
++       "profile": {
++         "configDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
++         "id": "f53a930a-5e79-455b-9195-d4b1c2463d9e",
++         "runnerId": "517531a3-0842-4225-9bb3-975c2531b6c6",
++       },
++       "protocol": "flow.claude-turn-settings.v1",
++       "requested": {
++         "effort": {
++           "kind": "level",
++           "value": "high",
++         },
++         "model": "configured-alias",
++         "speed": "fast",
++         "thinking": "adaptive",
++       },
++     },
++     "number": 1,
++     "task": {
++       "createdAt": "2026-10-06T00:00:00Z",
++       "harness": "claude",
++       "id": "dfde5b92-cc26-4a99-8d30-7dd3e8280c84",
++       "status": "queued",
++       "title": "Original",
++       "updatedAt": "2026-10-06T00:00:00Z",
++       "verificationStatus": "pending",
++     },
++     "telemetry": {
++       "kind": "execution",
++       "taskId": "dfde5b92-cc26-4a99-8d30-7dd3e8280c84",
++       "title": "Execution",
++     },
++     "user": {
++       "role": "user",
++       "text": "  Original 中文🙂
++ ",
++     },
++   },
+  }
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts:132:99
+    130|   value.turn.effective.runnerRequested = legacyRequested;
+    131|   const { client, requests } = await http(() => JSON.stringify(value));
+    132|   await expect(client.submitConversationTurn(value.conversation.id, in…
+       |                                                                                                   ^
+    133|     code: 'conversation_ack_unknown', message: 'The conversation ackno…
+    134|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/client/src/conversation-acknowledgement.test.ts > new settings reject disabled thinking in a final wrapper without changing the request identity
+AssertionError: promise resolved "{ conversation: { …(7) }, …(2) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "conversation": {
++     "createdAt": "2026-10-06T00:00:00Z",
++     "harness": "claude",
++     "id": "e9615b2e-b79e-454e-9030-c28e890cb517",
++     "requested": {
++       "model": "runner-default",
++       "thinking": "disabled",
++       "tools": "configured-readonly",
++     },
++     "revision": 1,
++     "title": "Original",
++     "updatedAt": "2026-10-06T00:00:00Z",
++   },
++   "replayed": false,
++   "turn": {
++     "assistant": {
++       "reason": "execution-pending",
++       "state": "pending",
++     },
++     "conversationId": "e9615b2e-b79e-454e-9030-c28e890cb517",
++     "createdAt": "2026-10-06T00:00:00Z",
++     "effective": {
++       "messageSettings": {
++         "observed": null,
++         "snapshot": {
++           "profile": {
++             "configDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
++             "id": "d6524e30-6260-4ed7-95b9-6f8349cc10bc",
++             "runnerId": "c6694c71-eedc-4358-9275-c6dab82896ee",
++           },
++           "protocol": "flow.claude-turn-settings.v1",
++           "requested": {
++             "effort": {
++               "kind": "level",
++               "value": "high",
++             },
++             "model": "configured-alias",
++             "speed": "fast",
++             "thinking": "adaptive",
++           },
++         },
++       },
++       "model": null,
++       "source": null,
++       "thinking": "disabled",
++       "tools": null,
++     },
++     "id": "3d629c50-200c-4313-879e-7331fd63ff3f",
++     "messageSettings": {
++       "profile": {
++         "configDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
++         "id": "d6524e30-6260-4ed7-95b9-6f8349cc10bc",
++         "runnerId": "c6694c71-eedc-4358-9275-c6dab82896ee",
++       },
++       "protocol": "flow.claude-turn-settings.v1",
++       "requested": {
++         "effort": {
++           "kind": "level",
++           "value": "high",
++         },
++         "model": "configured-alias",
++         "speed": "fast",
++         "thinking": "adaptive",
++       },
++     },
++     "number": 1,
++     "task": {
++       "createdAt": "2026-10-06T00:00:00Z",
++       "harness": "claude",
++       "id": "da7bcd6b-738e-4b70-9fa3-d07bf67ca549",
++       "status": "queued",
++       "title": "Original",
++       "updatedAt": "2026-10-06T00:00:00Z",
++       "verificationStatus": "pending",
++     },
++     "telemetry": {
++       "kind": "execution",
++       "taskId": "da7bcd6b-738e-4b70-9fa3-d07bf67ca549",
++       "title": "Execution",
++     },
++     "user": {
++       "role": "user",
++       "text": "  Original 中文🙂
++ ",
++     },
++   },
+  }
+
+ ❯ packages/client/src/conversation-acknowledgement.test.ts:145:97
+    143|   value.turn.effective.thinking = 'disabled';
+    144|   const { client, requests } = await http(() => JSON.stringify(value));
+    145|   await expect(client.submitConversationTurn(value.conversation.id, in…
+       |                                                                                                 ^
+    146|     code: 'conversation_ack_unknown', message: 'The conversation ackno…
+    147|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 52 skipped (54)
+   Start at  10:21:34
+   Duration  390ms (transform 147ms, setup 0ms, import 263ms, tests 31ms, environment 0ms)
+

@@ -1,0 +1,89 @@
+{
+  "task": "WPF-MATURE-02-CORE",
+  "verdict": "APPROVED",
+  "reviewer": {
+    "agent": "Mika/root",
+    "model": "gpt-6-astra",
+    "reviewedAt": "2026-10-06T17:13:34Z"
+  },
+  "sourceTarget": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+  "productionTarget": "92f768e3517a64235629858f50cdc3926d099b2d",
+  "packetTarget": "23016bbb5a56ccc6b12729c4d6ec365819207eba",
+  "manifest": {
+    "path": "docs/evidence/wpf-mature-02-message-settings-core/vertical-delivery-manifest.json",
+    "sha256": "a49256788e82098ebedaef02af92b7997ae80f995791a21af8964a3bdbc9fa09",
+    "bindings": 273,
+    "errors": []
+  },
+  "sourceFiles": 34,
+  "findings": {
+    "remainingP1": 0,
+    "remainingP2": 0,
+    "closed": [
+      "conversationTurnSchema extend compatibility",
+      "fixture cleanup hook deadline"
+    ]
+  },
+  "verification": {
+    "distinctChecks": 29,
+    "separateRuns": {
+      "contracts": 16,
+      "injectedAdapter": 5,
+      "privatePostgresHttp": 8
+    },
+    "strictExitCodes": [
+      0,
+      0
+    ],
+    "postgres": {
+      "selected": 8,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "tasks": 14,
+      "attempts": 11,
+      "httpRequests": 116,
+      "pre032Absent": true,
+      "allOwnedResourcesClosed": true,
+      "databaseConnectionsBeforeDrop": 0,
+      "databaseAbsentAfterDrop": true
+    },
+    "reviewerReruns": 0,
+    "historicalBeforeAllFailurePreserved": true,
+    "resourceNotRun1658Preserved": true
+  },
+  "auxiliaryReview": {
+    "agent": "architecture_read",
+    "bindingsChecked": 49,
+    "newFindings": 0,
+    "formalApproval": false
+  },
+  "scope": [
+    "immutable snapshot and profile policy",
+    "versioned catalog",
+    "admission and queue manual/automatic promotion functions",
+    "Claude adapter parameter mapping and observation",
+    "final and context projection",
+    "retry admission",
+    "032 migration helper"
+  ],
+  "notCovered": [
+    "F01 production factory/export/client",
+    "automatic scheduling end-to-end",
+    "Web/TUI user interface",
+    "actual SDK/provider execution",
+    "account or model qualification",
+    "complete WPF-MATURE-02 acceptance"
+  ],
+  "handoff": {
+    "stage": "integration",
+    "mainStatus": "NOT_INTEGRATED",
+    "sourceFrozen": true,
+    "claimId": "c652bc61-f8a9-4848-a709-978adbb425ed",
+    "claimVersion": 3,
+    "claimState": "ACTIVE",
+    "scopeCount": 39,
+    "claimRetainedForReviewFixes": true
+  },
+  "method": "Independent read-only source and original evidence review; no new tests, PG, provider, or source/raw/manifest edits."
+}

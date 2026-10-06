@@ -1,3 +1,4 @@
+import { checkTaskMessageSettings } from '../conversations/message-settings.js';
 import type { PoolClient } from 'pg';
 import { contextObservationEventSchema, contextObservationPayloadSchema, type ContextObservationEvent, type ContextObservationPayload } from '../../../../packages/contracts/src/context-observation-event.js';
 import { CONTEXT_DETAIL_TITLE, CONTEXT_HISTORY_PROTOCOL, contextHistoryMaterialsSchema, contextHistoryResponseSchema, contextHistorySampleSchema, type ContextHistoryMaterials, type ContextHistorySample } from '../../../../packages/contracts/src/context-observation-history.js';
@@ -62,8 +63,10 @@ async function bindIdentity(client: PoolClient, task: TaskRecord, attempt: Attem
   if (!session || session.adapterVersion !== payload.source.adapterVersion || session.activeTaskId !== task.id || session.identity.sourceTaskId !== task.id || session.identity.sourceAttemptId !== attempt.id || session.identity.runnerId !== attempt.runner_id || session.identity.nativeSessionId !== attempt.native_session_id) throw invalid();
   const profile = await requireExecutionProfile(client, task.submission.executionProfile);
   if (profile.configuration.harness !== 'claude' || profile.configuration.adapterVersion !== payload.source.adapterVersion || profile.reference.runnerId !== attempt.runner_id) throw invalid();
+  const settings = checkTaskMessageSettings(task.submission, profile);
+  if (!settings.ok) throw invalid();
   return { subject: { kind: 'attempt', taskId: task.id, attemptId: attempt.id, ownerVersion: attempt.owner_version, nativeSessionId: attempt.native_session_id },
-    harness: 'claude', requestedModel: profile.configuration.model, resolvedModel: payload.resolvedModel, profile: profile.reference,
+    harness: 'claude', requestedModel: settings.snapshot?.requested.model ?? profile.configuration.model, resolvedModel: payload.resolvedModel, profile: profile.reference,
     executionInputDigest: null, materialRevisionDigest: null, historyEpoch: null };
 }
 
