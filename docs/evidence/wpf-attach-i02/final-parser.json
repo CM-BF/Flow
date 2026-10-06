@@ -27,8 +27,8 @@
       },
       "phase": "M2",
       "priority": 1,
-      "output": "聊天可添加、预览、发送和排队文本附件，故障恢复已验证",
-      "next": "完成独立审查后接入主线",
+      "output": "聊天附件发送、故障恢复和长文件名窄屏操作已验证",
+      "next": "完成修复复审后接入主线",
       "blocker": {
         "state": "none",
         "text": ""
@@ -41,9 +41,11 @@
       "complete": true
     },
     "implementation": {
-      "target": "f82a3a7436f123ab741fd5ce845eb39cb752da3b",
+      "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
       "scopes": [
         "apps/web/src/App.tsx",
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css",
         "apps/web/src/conversation-context/receipts.ts",
         "apps/web/src/conversations/ConversationThread.tsx",
         "apps/web/src/conversations/messages.ts",
@@ -72,8 +74,8 @@
     "owner": "w01_owner / gpt-6-astra / ultra",
     "branch": "codex/web-attachment-production",
     "branchState": "in-progress / awaiting-review",
-    "updatedAt": "2026-10-06T12:47:00.000Z",
-    "updatedRecord": "2026-10-06 12:47 UTC",
+    "updatedAt": "2026-10-06T12:58:00.000Z",
+    "updatedRecord": "2026-10-06 12:58 UTC",
     "todos": [
       {
         "id": "ATTACHI02-01",
@@ -97,18 +99,18 @@
         "id": "ATTACHI02-04",
         "state": "pending",
         "owner": "w01_owner",
-        "evidence": "固定 f82a3a7436f123ab741fd5ce845eb39cb752da3b，独审NOT_STARTED/main待接"
+        "evidence": "固定 9eec51b72c6432b5b41df52f5b8fa783eb45e65b，P2修复待复审/main待接"
       }
     ],
     "errors": [],
-    "declaredHead": "base 1c4968354dabce1e6748f3301a2e6eecd33e77d4；完整实现 f82a3a7436f123ab741fd5ce845eb39cb752da3b",
+    "declaredHead": "base 1c4968354dabce1e6748f3301a2e6eecd33e77d4；完整实现 9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
     "declaredDirty": "实现已固定；本记录提交前仅 own evidence/plans metadata 待提交，提交后 clean/remote 以最终回执核验",
     "checks": {
       "state": "passed",
-      "target": "f82a3a7436f123ab741fd5ce845eb39cb752da3b",
-      "record": "PASSED f82a3a7436f123ab741fd5ce845eb39cb752da3b；189相关项 + 最终17 binding delta、Webtypes0/build0；实际App 10+1通过证据，未重跑最终mixed delta全browser"
+      "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+      "record": "PASSED 9eec51b72c6432b5b41df52f5b8fa783eb45e65b；长名actual App2项/浅深390/cleanup、Webtypes0；此前191独审和10+1旅程各按原target保留"
     },
-    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED；新target待P2复审，旧f82请求修改历史保留",
     "mainRecord": "NOT_INTEGRATED；本片固定实现待独审/主线接收，个人服务未操作",
     "next": "固定完整候选与 [22路径hash/逐轮绑定](../../docs/evidence/wpf-attach-i02/source-manifest.json) 交 root 独审。v2 claim 保留回修权。15轮生产App/HTTP共217.181秒，最终候选纯build1.181秒，总218.362/600秒；每轮同一专库与Chrome，全部专库已清理、无残留错误，0provider。最后 production-complete 是10项通过+末项失败，不能称整轮全绿；production-plain只重跑末项并通过。末项是会话GET未完成就按Enter的时序，改等实际加载/按钮可发送，没有产品修复。最终mixed失败/取消后直接remove另用17项真实官方core delta验证，未重复全browser。\n原始 first～final 历史均保留；第八轮起已实际验证badUpload原scope/key查询及明确恢复。存储失败纯文本可用、@file/drag、两主题390/键盘与CACHE保护均有实际App证据。只读根诊断已确认mixed修复，不等于本片整体APPROVED。下一步独审/主线接收，无额外dashboard取样。",
     "risks": "",
@@ -117,6 +119,6 @@
   "review": {
     "state": "not_started",
     "record": "NOT_STARTED**",
-    "target": "f82a3a7436f123ab741fd5ce845eb39cb752da3b"
+    "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b"
   }
 }

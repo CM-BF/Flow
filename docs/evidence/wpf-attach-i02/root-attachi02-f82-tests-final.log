@@ -1,0 +1,38 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web
+
+ ✓ test/conversation-context-receipts.test.ts (10 tests) 10ms
+ ✓ test/conversation-outbox.test.ts (18 tests) 11ms
+ ✓ test/conversation-queue.test.ts (28 tests) 171ms
+ ✓ test/plugin-host.test.ts (20 tests) 27ms
+ ✓ test/conversation-projection.test.ts (89 tests) 442ms
+ ✓ test/conversation-messages.test.ts (9 tests) 162ms
+stderr | test/attachment-integration.test.ts > official prepare-failure async rejection restores controller ownership and supports a fresh captured retry
+[assistant-ui] Failed to send attachments Error: Controlled preparation failure
+    at Object.send (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.test.ts:186:94)
+    at AttachmentSendOperations.send (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/utils/attachment-send-operations.js:21:32)
+    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:252:91
+    at Array.map (<anonymous>)
+    at Composer._prepareSubmission (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:252:49)
+    at Composer.send (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:234:14)
+    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.test.ts:203:28
+    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20
+
+stderr | test/attachment-integration.test.ts > official mixed-failure async rejection restores controller ownership and supports a fresh captured retry
+[assistant-ui] Failed to send attachments Error: Controlled preparation failure
+    at Object.send (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.test.ts:186:94)
+    at AttachmentSendOperations.send (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/utils/attachment-send-operations.js:21:32)
+    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:252:91
+    at Array.map (<anonymous>)
+    at Composer._prepareSubmission (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:252:49)
+    at Composer.send (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js:234:14)
+    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.test.ts:203:28
+    at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20
+
+ ✓ test/attachment-integration.test.ts (17 tests) 144ms
+
+ Test Files  7 passed (7)
+      Tests  191 passed (191)
+   Start at  05:48:55
+   Duration  1.96s (transform 2.70s, setup 0ms, import 5.47s, tests 968ms, environment 1ms)
+

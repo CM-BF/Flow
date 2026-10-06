@@ -1,11 +1,19 @@
 {
-  "target": "f82a3a7436f123ab741fd5ce845eb39cb752da3b",
+  "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
   "base": "1c4968354dabce1e6748f3301a2e6eecd33e77d4",
-  "generatedAt": "2026-10-06T12:46:05.878690+00:00",
+  "generatedAt": "2026-10-06T12:58:58.954553+00:00",
   "sources": [
     {
       "path": "apps/web/src/App.tsx",
       "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d"
+    },
+    {
+      "path": "apps/web/src/attachments/AttachmentPicker.tsx",
+      "sha256": "31f580820d0c161e016ce13856d47a91638800548f9f4445b1ad17de194e3858"
+    },
+    {
+      "path": "apps/web/src/attachments/attachments.css",
+      "sha256": "2616938a6f79caccec1a997b62b2e31be227e3ac1579c2abc259f63d35ab259f"
     },
     {
       "path": "apps/web/src/conversation-context/receipts.ts",
@@ -57,7 +65,7 @@
     },
     {
       "path": "apps/web/test/attachment-integration.browser.ts",
-      "sha256": "ac20a54fc38a3d173cd028d210833e65d60fb54ed8558af190818b072a316dbe"
+      "sha256": "cfae16b770bf217855e5e0d03415fb90ba0a448ac07dd141ee31069681a61f46"
     },
     {
       "path": "apps/web/test/attachment-integration.fixture.ts",
@@ -93,7 +101,9 @@
     }
   ],
   "protectedPaths": [
-    "apps/web/src/attachments",
+    "apps/web/src/attachments/controller.ts",
+    "apps/web/src/attachments/recovery.ts",
+    "apps/web/src/attachments/adapter.ts",
     "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
     "packages",
     "package.json",
@@ -106,6 +116,7 @@
     {
       "path": "production-complete-browser.json",
       "sha256": "340e2abe5b630a040ac7b8d7cc15151615b20935de096a191c019201c3cd9ad4",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 10,
       "failure": true,
       "wallMs": 17229,
@@ -117,11 +128,16 @@
         "apps/web/test/attachment-integration.browser.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-complete-cleanup.json"
     },
     {
       "path": "production-eighth-browser.json",
       "sha256": "b2084c20f282ad58fe7b4db6c7b367add6370539957dc0d5ea79e4e0c2213349",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 8,
       "failure": true,
       "wallMs": 15638,
@@ -134,11 +150,16 @@
         "apps/web/test/attachment-integration.fixture.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-eighth-cleanup.json"
     },
     {
       "path": "production-eleventh-browser.json",
       "sha256": "f8442d4d9532cf4896166fd4ad4bb0cee706ff8bc9719693ab765f77444e2fb6",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 9,
       "failure": true,
       "wallMs": 11264,
@@ -150,11 +171,16 @@
         "apps/web/test/attachment-integration.browser.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-eleventh-cleanup.json"
     },
     {
       "path": "production-fifth-browser.json",
       "sha256": "c566befee8a250f50e0e1906a951194e09e72d7f2ea803b5cd6542bab0b68adb",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 3,
       "failure": true,
       "wallMs": 17732,
@@ -169,11 +195,16 @@
         "apps/web/test/attachment-integration.fixture.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-fifth-cleanup.json"
     },
     {
       "path": "production-final-browser.json",
       "sha256": "a537e113d1787e06e563f416a8b68b44a38352e22014f397bbd4e7348951a93b",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 2,
       "failure": true,
       "wallMs": 14722,
@@ -185,11 +216,16 @@
         "apps/web/test/attachment-integration.browser.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-final-cleanup.json"
     },
     {
       "path": "production-first-browser.json",
       "sha256": "2c74f34ff068ccac916a82f4e1bc04a65d4a7926aac4ea1e1d01a94fe3a75afa",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 0,
       "failure": true,
       "wallMs": 15258,
@@ -207,11 +243,16 @@
         "apps/web/test/attachment-integration.fixture.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-first-cleanup.json"
     },
     {
       "path": "production-fourth-browser.json",
       "sha256": "12189d5a8937bfde0a5a105a7a74e071cded56339c24918603d91e40b009c006",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 2,
       "failure": true,
       "wallMs": 14050,
@@ -226,11 +267,62 @@
         "apps/web/test/attachment-integration.fixture.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-fourth-cleanup.json"
+    },
+    {
+      "path": "production-longnames-fixed-browser.json",
+      "sha256": "cd9c160025eb7abfe4282ccc0f2cfc0f86150b77e0c9d9f406032dbcd09a35e4",
+      "sourceCommit": "14ddfa9961cbc44faf6365c85d7a12456878699c",
+      "checks": 0,
+      "failure": true,
+      "wallMs": 13679,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts"
+      ],
+      "notRecordedInOriginalRun": [],
+      "cleanup": "production-longnames-fixed-cleanup.json"
+    },
+    {
+      "path": "production-longnames-ready-browser.json",
+      "sha256": "ec09cea32becd0f3fcdc90970ffa02fc19197dd436fb04c0f07fe1430278169c",
+      "sourceCommit": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+      "checks": 2,
+      "failure": false,
+      "wallMs": 10325,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [],
+      "changedTestPathsSinceRun": [],
+      "notRecordedInOriginalRun": [],
+      "cleanup": "production-longnames-ready-cleanup.json"
+    },
+    {
+      "path": "production-longnames-second-browser.json",
+      "sha256": "33a7b367860ead0f8ea7b9e27705ec289c5b5da9ac7c2dd9a3ffee94d2ad26fb",
+      "sourceCommit": "e86d81c7851ec7606649fb266d63224a5a0a00c6",
+      "checks": 1,
+      "failure": true,
+      "wallMs": 8624,
+      "pageErrors": [],
+      "changedProductionPathsSinceRun": [],
+      "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts"
+      ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
+      "cleanup": "production-longnames-second-cleanup.json"
     },
     {
       "path": "production-ninth-browser.json",
       "sha256": "43cb0da9c99a15604f30250fbfd7fd55afa296e9842b08a07fd50f8980e9da75",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 8,
       "failure": true,
       "wallMs": 19073,
@@ -242,11 +334,16 @@
         "apps/web/test/attachment-integration.browser.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-ninth-cleanup.json"
     },
     {
       "path": "production-plain-browser.json",
       "sha256": "2dbc87ea1c761ccbdd4db2f04e5dfc3f5425ff0dd759d254902ab58e7472c45e",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 1,
       "failure": false,
       "wallMs": 8943,
@@ -255,13 +352,19 @@
         "apps/web/src/plugin-integration/attachments.tsx"
       ],
       "changedTestPathsSinceRun": [
+        "apps/web/test/attachment-integration.browser.ts",
         "apps/web/test/attachment-integration.test.ts"
+      ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
       ],
       "cleanup": "production-plain-cleanup.json"
     },
     {
       "path": "production-second-browser.json",
       "sha256": "30db26fe4f50c6697286dbc054d33e9ade73c1855a53d0cd8169c3de6421ba6f",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 1,
       "failure": true,
       "wallMs": 7179,
@@ -279,11 +382,16 @@
         "apps/web/test/attachment-integration.fixture.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-second-cleanup.json"
     },
     {
       "path": "production-seventh-browser.json",
       "sha256": "1f335f0f9cc4ece17ba8cf4ada91a1ca5d8bc0d57e456b0db310eedf70629e9a",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 6,
       "failure": true,
       "wallMs": 18027,
@@ -296,11 +404,16 @@
         "apps/web/test/attachment-integration.fixture.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-seventh-cleanup.json"
     },
     {
       "path": "production-sixth-browser.json",
       "sha256": "9215b9e7195c78c6b921834c9b0d231f4a7e957215a32795b9560607c91d1029",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 4,
       "failure": true,
       "wallMs": 13906,
@@ -313,11 +426,16 @@
         "apps/web/test/attachment-integration.fixture.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-sixth-cleanup.json"
     },
     {
       "path": "production-tenth-browser.json",
       "sha256": "cfa1a39d73a2250697754a270482aa59b24069ecaf88d2273cc5572e8aa1f5f6",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 9,
       "failure": true,
       "wallMs": 19108,
@@ -329,11 +447,16 @@
         "apps/web/test/attachment-integration.browser.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-tenth-cleanup.json"
     },
     {
       "path": "production-third-browser.json",
       "sha256": "f4e1327276c1d7451908816c0a0159d5f327ed394c723c19fae046b246827a69",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 2,
       "failure": true,
       "wallMs": 13496,
@@ -349,11 +472,16 @@
         "apps/web/test/attachment-integration.fixture.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-third-cleanup.json"
     },
     {
       "path": "production-twelfth-browser.json",
       "sha256": "4924f94e1f3b61cdf258ced0745838f2b0c34f97e64a43515e1751509ae2d1a4",
+      "sourceCommit": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
       "checks": 9,
       "failure": true,
       "wallMs": 11556,
@@ -365,6 +493,10 @@
         "apps/web/test/attachment-integration.browser.ts",
         "apps/web/test/attachment-integration.test.ts"
       ],
+      "notRecordedInOriginalRun": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/attachments.css"
+      ],
       "cleanup": "production-twelfth-cleanup.json"
     }
   ],
@@ -372,7 +504,7 @@
     "production-complete-browser.json": 10,
     "production-plain-browser.json": 1
   },
-  "note": "production-complete is partial, not a fully passed run. Last plain case was pressed before load; focused retry waits for real loaded/enabled UI. Final mixed prepare/remove delta is official-core tested, not browser rerun.",
+  "note": "Prior actual App 10+1 and root191 are bound to f82 and earlier report hashes. This target changes only Picker presentation, bounded CSS, and the directed browser script; longnames-ready is the final actual App/build at this target. The first longnames interruption is preserved separately and manually cleaned; no original report rewritten.",
   "wireAudit": {
     "turn": {
       "key": "c7c60061-bd6c-4a9b-ba16-3e5d3eb808f4:turn",
@@ -393,13 +525,34 @@
     }
   },
   "budget": {
-    "browserRounds": 15,
-    "browserWallMs": 217181,
-    "candidateBuildMs": 1181,
-    "totalMs": 218362,
     "limitMs": 600000,
+    "rounds": 19,
+    "totalWallMs": 290133,
+    "basis": "max(browser.wallMs,budget.wallMs) for each round plus candidate standalone build; raw reports unchanged",
+    "durations": {
+      "production-third": 13496,
+      "production-twelfth": 11556,
+      "production-longnames-second": 8624,
+      "production-fifth": 17732,
+      "production-first": 15258,
+      "production-tenth": 19108,
+      "production-sixth": 13906,
+      "production-ninth": 19073,
+      "production-longnames-fixed": 13679,
+      "production-final": 14722,
+      "production-longnames-ready": 10325,
+      "production-second": 7179,
+      "production-plain": 8943,
+      "production-eighth": 15638,
+      "production-complete": 17229,
+      "production-eleventh": 11264,
+      "production-seventh": 18027,
+      "production-fourth": 14050,
+      "candidate-build": 1181,
+      "production-longnames": 39143
+    },
     "providerQueries": 0,
-    "remainingDatabases": 0
+    "evidenceBytes": 3893989
   },
   "candidateArtifact": [
     {
@@ -423,14 +576,14 @@
       "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
     },
     {
-      "path": "assets/index-B8uQTtuq.js",
-      "bytes": 790506,
-      "sha256": "62c9f140529de0163d6238e76b92a78f8a575c42c899bf9e454c7a30adfc46eb"
+      "path": "assets/index-CS6oUEtx.js",
+      "bytes": 790635,
+      "sha256": "a3332161c06368644a06b3f4a0dbfddc96222ddbec0c0e8074f79c1fe55d1295"
     },
     {
-      "path": "assets/index-DAuvZKJK.css",
-      "bytes": 112060,
-      "sha256": "67fd21360bae464e6c415be44ef85e66a2983654fbb5a4fafd873fbea2558f5d"
+      "path": "assets/index-DzESKX8S.css",
+      "bytes": 112165,
+      "sha256": "f7e34bb0b280ed753b5b2b40f509d90a9f36704c3f658136bacbe83d1e1ce036"
     },
     {
       "path": "assets/rolldown-runtime-qXqUbbKo.js",
@@ -438,19 +591,163 @@
       "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
     },
     {
-      "path": "assets/theme-BCFtbXFd.js",
+      "path": "assets/theme-BtweVK9E.js",
       "bytes": 806,
-      "sha256": "30b0856bc4751fafccdea923cbac68bb5775fc2702b3b9229faf03e4f11bc634"
+      "sha256": "4a6841f334221e5570f06e2ce9b06914084e93b2c8d5563c0bcf757e382f53b6"
     },
     {
-      "path": "assets/workspace-CpAHQeGd.js",
+      "path": "assets/workspace-Qs7g1oqj.js",
       "bytes": 1906,
-      "sha256": "3c2612d37a9f0c04f610ad8fb19b76f713e58cf78823ca0906d53a085ebd58f7"
+      "sha256": "e0135969b0dcb44c7cca2b4bbb105aa15100fb40c38dca3961e787bab8f767c0"
     },
     {
       "path": "index.html",
       "bytes": 705,
-      "sha256": "888dd237657e1d242010c3d767ebab8402a8cf1b6ee46466603624af5b0e07a9"
+      "sha256": "f7e958b0cb8410f71c23ea55c2b3aeedb307e199a23786edb967542b45bedb6d"
     }
-  ]
+  ],
+  "previousManifest": {
+    "path": "f82-source-manifest.json",
+    "sha256": "ca390e0b6e9682c7e72a5abef94ba146e712f816921c4a3a862392bb21494788",
+    "target": "f82a3a7436f123ab741fd5ce845eb39cb752da3b"
+  },
+  "deltaFromPrior": [
+    "apps/web/src/attachments/AttachmentPicker.tsx",
+    "apps/web/src/attachments/attachments.css",
+    "apps/web/test/attachment-integration.browser.ts",
+    "docs/evidence/wpf-attach-i02/.gitignore",
+    "docs/evidence/wpf-attach-i02/README.md",
+    "docs/evidence/wpf-attach-i02/candidate-binding-tests.log",
+    "docs/evidence/wpf-attach-i02/candidate-build-budget.json",
+    "docs/evidence/wpf-attach-i02/candidate-build.log",
+    "docs/evidence/wpf-attach-i02/candidate-types-fixed.log",
+    "docs/evidence/wpf-attach-i02/candidate-types.log",
+    "docs/evidence/wpf-attach-i02/explicit-remove-tests.log",
+    "docs/evidence/wpf-attach-i02/final-parser.json",
+    "docs/evidence/wpf-attach-i02/interface.md",
+    "docs/evidence/wpf-attach-i02/metadata-check.json",
+    "docs/evidence/wpf-attach-i02/mixed-remove-green.log",
+    "docs/evidence/wpf-attach-i02/mixed-remove-red.log",
+    "docs/evidence/wpf-attach-i02/owned-recovery-tests.log",
+    "docs/evidence/wpf-attach-i02/phase2-claim-observation.json",
+    "docs/evidence/wpf-attach-i02/phase2-claim-receipt.json",
+    "docs/evidence/wpf-attach-i02/phase2-direct-delta.log",
+    "docs/evidence/wpf-attach-i02/phase2-direct-final.log",
+    "docs/evidence/wpf-attach-i02/phase2-direct-first.log",
+    "docs/evidence/wpf-attach-i02/phase2-types-current.log",
+    "docs/evidence/wpf-attach-i02/phase2-types-final.log",
+    "docs/evidence/wpf-attach-i02/phase2-types-first.log",
+    "docs/evidence/wpf-attach-i02/phase2-types-fixture.log",
+    "docs/evidence/wpf-attach-i02/phase2-types-lifecycle.log",
+    "docs/evidence/wpf-attach-i02/phase2-types.log",
+    "docs/evidence/wpf-attach-i02/preparation-lifecycle-fixed.log",
+    "docs/evidence/wpf-attach-i02/preparation-lifecycle.log",
+    "docs/evidence/wpf-attach-i02/production-complete-browser.json",
+    "docs/evidence/wpf-attach-i02/production-complete-budget.json",
+    "docs/evidence/wpf-attach-i02/production-complete-build.log",
+    "docs/evidence/wpf-attach-i02/production-complete-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-complete-dark-390.png",
+    "docs/evidence/wpf-attach-i02/production-complete-failure.png",
+    "docs/evidence/wpf-attach-i02/production-complete-light-390.png",
+    "docs/evidence/wpf-attach-i02/production-complete.log",
+    "docs/evidence/wpf-attach-i02/production-eighth-browser.json",
+    "docs/evidence/wpf-attach-i02/production-eighth-budget.json",
+    "docs/evidence/wpf-attach-i02/production-eighth-build.log",
+    "docs/evidence/wpf-attach-i02/production-eighth-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-eighth-dark-390.png",
+    "docs/evidence/wpf-attach-i02/production-eighth-failure.png",
+    "docs/evidence/wpf-attach-i02/production-eighth-light-390.png",
+    "docs/evidence/wpf-attach-i02/production-eighth.log",
+    "docs/evidence/wpf-attach-i02/production-eleventh-browser.json",
+    "docs/evidence/wpf-attach-i02/production-eleventh-budget.json",
+    "docs/evidence/wpf-attach-i02/production-eleventh-build.log",
+    "docs/evidence/wpf-attach-i02/production-eleventh-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-eleventh-dark-390.png",
+    "docs/evidence/wpf-attach-i02/production-eleventh-failure.png",
+    "docs/evidence/wpf-attach-i02/production-eleventh-light-390.png",
+    "docs/evidence/wpf-attach-i02/production-eleventh.log",
+    "docs/evidence/wpf-attach-i02/production-fifth-browser.json",
+    "docs/evidence/wpf-attach-i02/production-fifth-budget.json",
+    "docs/evidence/wpf-attach-i02/production-fifth-build.log",
+    "docs/evidence/wpf-attach-i02/production-fifth-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-fifth-failure.png",
+    "docs/evidence/wpf-attach-i02/production-fifth.log",
+    "docs/evidence/wpf-attach-i02/production-final-browser.json",
+    "docs/evidence/wpf-attach-i02/production-final-budget.json",
+    "docs/evidence/wpf-attach-i02/production-final-build.log",
+    "docs/evidence/wpf-attach-i02/production-final-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-final-failure.png",
+    "docs/evidence/wpf-attach-i02/production-final.log",
+    "docs/evidence/wpf-attach-i02/production-first-browser.json",
+    "docs/evidence/wpf-attach-i02/production-first-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-first-failure.png",
+    "docs/evidence/wpf-attach-i02/production-first.log",
+    "docs/evidence/wpf-attach-i02/production-fourth-browser.json",
+    "docs/evidence/wpf-attach-i02/production-fourth-budget.json",
+    "docs/evidence/wpf-attach-i02/production-fourth-build.log",
+    "docs/evidence/wpf-attach-i02/production-fourth-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-fourth-failure.png",
+    "docs/evidence/wpf-attach-i02/production-fourth.log",
+    "docs/evidence/wpf-attach-i02/production-ninth-browser.json",
+    "docs/evidence/wpf-attach-i02/production-ninth-budget.json",
+    "docs/evidence/wpf-attach-i02/production-ninth-build.log",
+    "docs/evidence/wpf-attach-i02/production-ninth-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-ninth-dark-390.png",
+    "docs/evidence/wpf-attach-i02/production-ninth-failure.png",
+    "docs/evidence/wpf-attach-i02/production-ninth-light-390.png",
+    "docs/evidence/wpf-attach-i02/production-ninth.log",
+    "docs/evidence/wpf-attach-i02/production-plain-browser.json",
+    "docs/evidence/wpf-attach-i02/production-plain-budget.json",
+    "docs/evidence/wpf-attach-i02/production-plain-build.log",
+    "docs/evidence/wpf-attach-i02/production-plain-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-plain.log",
+    "docs/evidence/wpf-attach-i02/production-second-browser.json",
+    "docs/evidence/wpf-attach-i02/production-second-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-second-failure.png",
+    "docs/evidence/wpf-attach-i02/production-second.log",
+    "docs/evidence/wpf-attach-i02/production-seventh-browser.json",
+    "docs/evidence/wpf-attach-i02/production-seventh-budget.json",
+    "docs/evidence/wpf-attach-i02/production-seventh-build.log",
+    "docs/evidence/wpf-attach-i02/production-seventh-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-seventh-failure.png",
+    "docs/evidence/wpf-attach-i02/production-seventh.log",
+    "docs/evidence/wpf-attach-i02/production-sixth-browser.json",
+    "docs/evidence/wpf-attach-i02/production-sixth-budget.json",
+    "docs/evidence/wpf-attach-i02/production-sixth-build.log",
+    "docs/evidence/wpf-attach-i02/production-sixth-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-sixth-failure.png",
+    "docs/evidence/wpf-attach-i02/production-sixth.log",
+    "docs/evidence/wpf-attach-i02/production-tenth-browser.json",
+    "docs/evidence/wpf-attach-i02/production-tenth-budget.json",
+    "docs/evidence/wpf-attach-i02/production-tenth-build.log",
+    "docs/evidence/wpf-attach-i02/production-tenth-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-tenth-dark-390.png",
+    "docs/evidence/wpf-attach-i02/production-tenth-failure.png",
+    "docs/evidence/wpf-attach-i02/production-tenth-light-390.png",
+    "docs/evidence/wpf-attach-i02/production-tenth.log",
+    "docs/evidence/wpf-attach-i02/production-third-browser.json",
+    "docs/evidence/wpf-attach-i02/production-third-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-third-failure.png",
+    "docs/evidence/wpf-attach-i02/production-third.log",
+    "docs/evidence/wpf-attach-i02/production-twelfth-browser.json",
+    "docs/evidence/wpf-attach-i02/production-twelfth-budget.json",
+    "docs/evidence/wpf-attach-i02/production-twelfth-build.log",
+    "docs/evidence/wpf-attach-i02/production-twelfth-cleanup.json",
+    "docs/evidence/wpf-attach-i02/production-twelfth-dark-390.png",
+    "docs/evidence/wpf-attach-i02/production-twelfth-failure.png",
+    "docs/evidence/wpf-attach-i02/production-twelfth-light-390.png",
+    "docs/evidence/wpf-attach-i02/production-twelfth.log",
+    "docs/evidence/wpf-attach-i02/quality.md",
+    "docs/evidence/wpf-attach-i02/root-attachment-mixed-prepare-remove-fixed.json",
+    "docs/evidence/wpf-attach-i02/root-attachment-mixed-prepare-remove.json",
+    "docs/evidence/wpf-attach-i02/source-manifest.json",
+    "plans/wpf-attach-i02-production-binding/plan.md",
+    "plans/wpf-attach-i02-production-binding/review.md",
+    "plans/wpf-attach-i02-production-binding/status.md"
+  ],
+  "interruptedRun": {
+    "path": "production-longnames-interruption.json",
+    "sha256": "75590092fd233f3ef72e51f389cb5b0539260cc6afb19beeb4063b76a4ec725f",
+    "cleanupMode": "manual recovery; not normal automatic cleanup"
+  }
 }

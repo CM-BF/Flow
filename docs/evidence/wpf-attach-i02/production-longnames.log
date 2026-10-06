@@ -1,0 +1,16 @@
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+page.waitForEvent: Timeout 8000ms exceeded while waiting for event "filechooser"
+=========================== logs ===========================
+waiting for event "filechooser"
+============================================================
+    at upload (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:42:26)
+    at work (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:55:39)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/test/attachment-integration.browser.ts:222:7) {
+  log: [],
+  name: 'TimeoutError'
+}
+
+Node.js v24.20.0

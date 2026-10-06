@@ -31,3 +31,13 @@ root已证实官方complete恢复窗口；本段真实core0.3.22消费者（完�
 官方core混合恢复的事件顺序由root确认，原测试先recapture/setText掩盖直接remove。新增failure/cancel两项先红，最小修复在观察真实submission结束/草稿回返时记录restored IDs；不能等queued failed状态之后才识别。17 fixed tests通过，原五module不改。原稿held所有权与新草稿、显式remove与自动清理保持分开。
 
 真实App/HTTP通过10+1项，production-complete仍含最后1失败，明确不是整轮通过；定向plain等待GET完成后通过。最终mixed三行语义delta只重新跑直接17与types/build，未冒完整browser重跑。15轮217.181秒+候选build1.181秒，清理无残留；中间harness/locator错误全部原样保留。当前22路径fixed/current hash一致、保护0diff、claim外0，独审尚未开始。没有真实provider/个人服务操作，main新history producer交组合验证。
+
+## 2026-10-06 12:54 UTC 窄屏补验安全点
+
+沿已读 clean-code/webapp-testing 方法复核现有fixture所有权与错误处理。只增加自有browser的longnames模式（25s工作+20s清理），不修改产品/原模块。首轮filechooser等待与click分开await使等待Promise先reject，Node中断；手工按本轮唯一随机库/创建时间/空连接清理，总39.143s。改用Promise.all立即接管两Promise，并在官方Add Attachment前显式打开Files取得能力；未降低长名几何断言。局部重跑待root确认，旧15轮不可覆盖。
+
+12:55 UTC第二轮达到实际UI：双主题390宽度388→1740，证明完整文件名反复放入button形成不可断行min-content；优先短可见动作+完整accessible name，原strong保持全文，再有界CSS，避免仅断行造成重复长按钮。产品未改，先申请两literal。预算累加改为同轮budget/browser较大值，保守266.129s且不改raw。
+
+## 2026-10-06 12:58 UTC 交付安全复核
+
+已读取/核验v3原子scope后修改两UI文件。短动作与完整accessible name拆分只影响展示，无第二状态/权限或新依赖；原强文本保留文件名，CSS尺寸适配所有同面板动作。旧Single-upload门禁未改，专测逐文件真实ACK与draft ready等待，消除同步setFiles不代表上传完成的误用；Chooser两个promise立即接管。最终longnames源码hash固定，scope26外0、保护3模块/官方Thread/shared零改；Webtypes0与实际App2项通过。前15旅程不伪称用新CSS重跑，首长名轮人工清理/次轮产品溢出/修后首轮采样竞争均保原始日志。无未修作者发现，正式P2关闭待独审。

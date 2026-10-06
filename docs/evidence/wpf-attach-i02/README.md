@@ -41,3 +41,14 @@
 [根mixed原诊断](root-attachment-mixed-prepare-remove.json)和[根定向复验](root-attachment-mixed-prepare-remove-fixed.json)为独立纯内存事实，不代表整体review。独立真实provider、个人center、后继main context-history producer × attachment-only共享修复组合、ready草稿/Send或Queue receipt跨reload、跨tab journal原子性、屏读/Firefox/Safari均未验。后继main源由Lead集成验证，固定本树较早factory的成功不替代它。
 
 构建输出保留在本目录ignored `production-artifact/`，其文件hash/字节在manifest；这些是可重新生成的bundle，不作为源修改提交。源码diffcheck0；原始log的终端空白保留，不宣称全metadata无尾空格。阶段一历史见phase1-source-manifest，不覆盖旧模块证据。
+
+## 长文件名复审输入
+
+当前固定target **9eec51b72c6432b5b41df52f5b8fa783eb45e65b**；旧f82完整证据保留在 [原manifest](f82-source-manifest.json)。Root原技术191/191通过后，长名P2使f82正式REQUEST_CHANGES。经 [v3新增两UI路径](longnames-claim-receipt.json) 修复：短动作、原完整aria-label、完整旁边名称及有界布局，原controller/recovery/adapter未动。
+
+- 首定向轮：filechooser Promise未及时接管异常，39.143s含人工恢复清理；未到布局，不能称正常自动cleanup。
+- 第二轮：[几何红](production-longnames-second-geometry.json)，390px实际388→1740，旧产品长名失败，8.624s。
+- 修后首轮：只等setFiles触发单上传门禁，13.679s；采样器未等ready，产品限制保持。
+- [最终定向轮](production-longnames-ready-browser.json)：2项PASS，10.325s，Dialog388/388，11个动作最大124.954px，浅深主题恢复Enter/Escape和原draft保持；原始 [几何](production-longnames-ready-geometry.json)、[清理](production-longnames-ready-cleanup.json)、[浅色](production-longnames-ready-light-390.png)、[深色](production-longnames-ready-dark-390.png)。
+
+累计19轮含所有失败+独立build **290.133/600秒**（按每轮budget/browser较大值），0provider。该轮build编译新UI并真实运行；没有重跑旧10+1旅程/191。Web类型 [longnames-types](longnames-types.log) 通过。当前 [manifest](source-manifest.json)明确每轮缺失或改变的源码，旧报告未追写。
