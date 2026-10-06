@@ -96,3 +96,11 @@ RECOVERY01-03/04的2b01修复已获root和peer限定源码通过，见[review](r
 ### 2026-10-06 20:23:14 UTC — 原恢复编辑定向回归实证
 
 RECOVERY01-04本轮2b01共50受控case已单次通过，见[验证边界](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)。完整App/真实IDB材料恢复未验；-05首browser失败和-06完整独审/main不关闭。direct晚终态保守累计9969ms/余20031ms，后继需新准入。
+
+## 2026-10-06 20:35:20 UTC — browser parent晚停止P2 source-only修复
+
+[Root原报告](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-root-review.json)RECOVERY-BROWSER-LATE-STOP：cleanup把stopped置true后，SIGTERM/SIGINT的原stop(reason)可漏终态失败。此为父监督分类源码缺陷，未复现泄漏或产品失败。按20:34:02.072Z[原21fresh观察](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-claim.json)只改原browser parent，独立记录停止/外部interrupt事实与cleanup生命周期，保清理/硬截止/原worker断言。当前NOT_RUN，50实证与2b01产品批准不撤；旧14.846267375s、余75.153732625s含15清理不变，无运行许可。
+
+### 2026-10-06 20:36:49 UTC — 原RECOVERY01-05父监督窄修固定
+
+固定 `4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb`，仅修晚停止分类，未增加实际journey/运行预算。终态stdout/exit和各阶段报告必须共同判断，较早passed不能覆盖较晚interrupt。独立复审和新gate尚待，完整TODO保持开放。

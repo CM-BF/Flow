@@ -2,21 +2,21 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 20:23:14 UTC |
+| 最近更新 | 2026-10-06 20:36:49 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前P1限定source2b01eb6ff345175f7073c4e57125f5eecfd52cac；旧38受控执行仍bf14/7cc；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 994ce clean执行输入；19源固定2b01不改；本次仅第四轮原始证据/metadata，正常push后核local=origin/clean |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；产品/helper2b01；当前browser parent限定source4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb；metadata HEAD以Git为准 |
+| 工作树dirty状态 | c36b clean输入；一browser parent固定4d3303d7，worker/18其余源/原raw不改；本次metadata正常push后核local=origin/clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 恢复等待期间的新稿保护已获限定源码通过，并通过定向受控回归；实际浏览器恢复仍待复验 |
-| 下一可用交付 | 本轮受控证据已获独立接受；取得新准入后验证完整实际恢复旅程 |
+| 当前产出 | 恢复编辑保护已通过受控回归；验证父进程的晚停止判定已修复源码，待独审 |
+| 下一可用交付 | 独审本次parent窄修；有新准入后复验原实际恢复子集 |
 | 当前阻塞 | ACTIVE: 首浏览器失败未复验，真实IDB与完整中心恢复验收保持开放 |
 | 需用户决定 | NONE |
 | 检查状态 | FAILED: 首真实browser草稿旅程失败保留；当前2b01受控50/50 PASS、0pending/todo/fail，direct按终态保守累计9969/30000ms、清理通过；types未新增，不代表真实IDB/App通过 |
@@ -24,7 +24,7 @@
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；manager20:21:32.662Z观察与本人运行前安全CLI核active/身份/21scope；仅本次single-use gate已消费，无后继运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；20:34:02.072Z管理fresh/唯一owner/nooverlap，原件已核；本段source-only，无运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -209,3 +209,11 @@ Root澄清同slot不要求留两份：冲突不套用/删除旧稿，正常新�
 只验证受控IDB/mockfetch和App共用helper，不推mounted Workspace/Thread、完整App材料prepare或nativeIDB通过。独立运行证据已获root限定接受；完整feature NOT_STARTED/targetUNKNOWN/main未接。
 
 Root原件[DIRECT50_EVIDENCE_ACCEPTED_SCOPED](../../docs/evidence/wpf-conversation-recovery/direct-fourth-root-review.json)逐字归档；独立核19源/14原件/实际50与新12项、旧browser10raw保真、清理与晚终态，不是root复跑或完整feature审批。
+
+## 2026-10-06 20:35:20 UTC — browser parent晚停止P2 source-only修复
+
+[Root原报告](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-root-review.json)RECOVERY-BROWSER-LATE-STOP：cleanup把stopped置true后，SIGTERM/SIGINT的原stop(reason)可漏终态失败。此为父监督分类源码缺陷，未复现泄漏或产品失败。按20:34:02.072Z[原21fresh观察](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-claim.json)只改原browser parent，独立记录停止/外部interrupt事实与cleanup生命周期，保清理/硬截止/原worker断言。当前NOT_RUN，50实证与2b01产品批准不撤；旧14.846267375s、余75.153732625s含15清理不变，无运行许可。
+
+## 2026-10-06 20:36:49 UTC — late-stop固定源码安全点
+
+限定source `4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb`，见[19源manifest](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-checkpoint.json)。RECOVERY-BROWSER-LATE-STOP作者SOURCE_ADDRESSED_PENDING_REVIEW；stopReason与external interrupt事实不再由cleanup stopped抑制，晚终态失败/原清理保持。仅静态diff/hash核，无types/50重跑/browser/HTTP/PG/free。18其他源/worker/首失败10raw不变。实际50证据仍其原target；完整featureNOT_STARTED/targetUNKNOWN。

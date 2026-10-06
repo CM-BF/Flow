@@ -159,3 +159,7 @@ Root受控证据接受报告已逐字归档，SHA256 `11492f4990a29ffe5aca3ec59b
 本轮exact50/0skip等运行事实由原JSON和terminalstdout/exit共同确定；更早result不覆盖晚到终态，时间分列且未来预算保守向上取整。全部原raw复制后逐hash相同，旧失败不改绿；App共用helper的受控输入与mountedApp、真实材料callback明确分开。没有进一步类型/服务/browser或无关测试，剩余预算非许可。完整feature仍NOT_STARTED。
 
 Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60ca2e6a128a6cfffc7598e8fe064413cbaee；19源/14实际原件/新12passed/旧10raw保真与终态清理被核，无新增blocking，未复跑。
+
+## 2026-10-06 20:36:49 UTC — late-stop clean-code安全点
+
+复用已读find-skills/clean-code/codebase-design/webapp-testing方法。具体职责缺陷是stopped同时代表正常cleanup与错误已记账；用私有firststopreason/interrupt事实拆开，保持原parent唯一生命周期owner，不抽通用框架。重复signal不重复TERM、不抛异常穿过cleanup；已有有限失败报告分支承担晚停，不新增循环/场景。18其他源与worker/old10raw逐hash核同，diffcheck0；无类型或行为运行，未知范围不改绿。待独审新target，先前50受控与2b01产品源码批准仍各自原范围。

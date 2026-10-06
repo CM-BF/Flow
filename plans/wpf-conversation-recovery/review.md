@@ -111,3 +111,11 @@ Root实际review时间2026-10-06T20:06:10.368661+00:00，固定target `2b01eb6ff
 本次作者受控结果不是root复跑。新增回归未挂载Workspace/Thread，未调用全部App材料prepare；完整feature NOT_STARTED/targetUNKNOWN，首browser失败及真实验收开放项保持。
 
 Root于2026-10-06T20:24:02.675285+00:00给[DIRECT50_EVIDENCE_ACCEPTED_SCOPED](../../docs/evidence/wpf-conversation-recovery/direct-fourth-root-review.json)：实际50/50及新增12项、完整清理、19源和原件绑定已核，无新增blocking。只接受作者受控运行，不复跑、不关闭完整feature/真实浏览器边界。
+
+## 2026-10-06 20:35:20 UTC — browser parent晚停止P2 source-only修复
+
+[Root原报告](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-root-review.json)RECOVERY-BROWSER-LATE-STOP：cleanup把stopped置true后，SIGTERM/SIGINT的原stop(reason)可漏终态失败。此为父监督分类源码缺陷，未复现泄漏或产品失败。按20:34:02.072Z[原21fresh观察](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-claim.json)只改原browser parent，独立记录停止/外部interrupt事实与cleanup生命周期，保清理/硬截止/原worker断言。当前NOT_RUN，50实证与2b01产品批准不撤；旧14.846267375s、余75.153732625s含15清理不变，无运行许可。
+
+## 2026-10-06 20:36:49 UTC — 晚停止P2作者修复待复审
+
+固定 `4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb` / previous2b01(parent7ca)，[manifest](../../docs/evidence/wpf-conversation-recovery/browser-late-stop-checkpoint.json)仅一parentdiff，另18源和worker原样。Root原报告CHANGES_REQUESTED作为输入保留，当前作者SOURCE_ADDRESSED_PENDING_REVIEW，不自行批准。停止与cleanup状态拆开、SIGINT/TERM去重持续监听、原有一次报告失败更正和最终stdout/exit均看停止事实。未做signal注入或任何运行；50/首browser失败保持原范围，完整feature未审。
