@@ -31,14 +31,15 @@ export async function runTerminal(args = process.argv.slice(2), env = process.en
   const directory = env.FLOW_TUI_STATE_DIR ?? join(homedir(), '.flow-terminal');
   const store = goalId ? await openGoalIntentStore(directory, connectionId, goalId) : await openIntentStore(directory, connectionId);
   const client = new FlowClient({ baseUrl: url.origin, token, assistantStreamProtocol: 'patch-v1' });
-  const goal = goalId ? createGoalTerminal({ client, connectionId, goalId, intents: store as Awaited<ReturnType<typeof openGoalIntentStore>> }) : null;
-  const conversation = goal ? null : createInteractionController({ client, observe: client, connectionId, intents: store as Awaited<ReturnType<typeof openIntentStore>> });
-  const controller = goal ?? conversation!;
+  let controller: ReturnType<typeof createGoalTerminal> | ReturnType<typeof createInteractionController> | undefined;
   let unmount: (() => void) | undefined;
   const stopObservation = () => { try { unmount?.(); } finally { if (args.includes('--headless')) process.stdin.destroy(); } };
-  const stop = () => { void controller.dispose().then(stopObservation, stopObservation).catch(() => { process.exitCode = 1; }); };
-  process.once('SIGTERM', stop); if (args.includes('--headless')) process.once('SIGINT', stop);
+  const stop = () => { void (controller?.dispose() ?? Promise.resolve()).then(stopObservation, stopObservation).catch(() => { process.exitCode = 1; }); };
   try {
+    const goal = goalId ? createGoalTerminal({ client, connectionId, goalId, intents: store as Awaited<ReturnType<typeof openGoalIntentStore>> }) : null;
+    const conversation = goal ? null : createInteractionController({ client, observe: client, connectionId, intents: store as Awaited<ReturnType<typeof openIntentStore>> });
+    controller = goal ?? conversation!;
+    process.once('SIGTERM', stop); if (args.includes('--headless')) process.once('SIGINT', stop);
     await controller.initialize();
     if (args.includes('--headless')) await runHeadless(controller, process.stdin, process.stdout);
     else {
@@ -48,7 +49,7 @@ export async function runTerminal(args = process.argv.slice(2), env = process.en
     }
   } finally {
     process.off('SIGTERM', stop); process.off('SIGINT', stop);
-    await closeTerminalResources({ settle: controller.dispose, unmount: () => unmount?.(), closeJournal: store.close });
+    await closeTerminalResources({ settle: async () => { await controller?.dispose(); }, unmount: () => unmount?.(), closeJournal: store.close });
   }
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

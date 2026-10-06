@@ -10,7 +10,7 @@ export interface GoalTerminalResult { ok: boolean; code: string; message: string
 export function createGoalTerminal(options: GoalSessionOptions) {
   const session = createGoalSession(options), listeners = new Set<() => void>();
   let state: GoalTerminalSnapshot = { goal: session.snapshot(), draft: '', notice: '/help lists explicit goal commands.', closed: false, panel: 'plan', page: 1 };
-  const publish = (next: Partial<GoalTerminalSnapshot>) => { state = { ...state, ...next }; for (const listener of listeners) listener(); };
+  const publish = (next: Partial<GoalTerminalSnapshot>) => { state = { ...state, ...next }; for (const listener of listeners) { try { listener(); } catch { /* Presentation cannot break the shared session or cleanup. */ } } };
   const unsubscribe = session.subscribe(goal => publish({ goal }));
   const result = (ok: boolean, code: string, message: string, outcome?: GoalCommandOutcome): GoalTerminalResult => { publish({ notice: message }); return { ok, code, message, ...(outcome ? { outcome } : {}) }; };
   const finish = (outcome: GoalCommandOutcome) => result(outcome.state === 'acknowledged', outcome.state.toUpperCase(), outcome.state === 'unknown' ? 'Acknowledgement unknown. Original request saved; use /recover.' : outcome.state === 'rejected' ? `Rejected (${outcome.code}); refreshed plan, no replacement sent.` : 'Center acknowledged the command; refresh /observe for current state.', outcome);
@@ -36,7 +36,7 @@ export function createGoalTerminal(options: GoalSessionOptions) {
         case 'input': await session.read({ kind: 'input', nodeId: c.nodeId, version: c.version }); show('body'); break;
         case 'explain': await session.read({ kind: 'explanation', version: c.version }); show('body'); break;
         case 'artifact': { const node = observed(c.nodeId), binding = c.source === 'accepted' ? node.accepted : node.execution?.artifact; if (!binding) throw Error('No observed artifact'); await session.read({ kind: 'artifact', binding }); show('body'); break; }
-        case 'decision': { const ref = observed(c.nodeId).execution?.pendingDecision; if (!ref) throw Error('No observed pending decision'); await session.read({ kind: 'decision', ...ref }); show('body'); break; }
+        case 'decision': { const ref = observed(c.nodeId).execution?.pendingDecision; if (!ref) throw Error('No observed pending decision'); await session.read({ kind: 'decision', nodeId: ref.nodeId, taskId: ref.taskId, decisionId: ref.decisionId }); show('body'); break; }
         case 'decide': { const ref = observed(c.nodeId).execution?.pendingDecision; if (!ref) throw Error('No observed pending decision'); return finish(await session.command({ kind: 'decision', nodeId: c.nodeId, taskId: ref.taskId, input: { decisionId: ref.decisionId, answer: c.answer } })); }
         case 'cancel': { const taskId = observed(c.nodeId).execution?.task.id; if (!taskId) throw Error('No observed execution'); return finish(await session.command({ kind: 'cancel', nodeId: c.nodeId, taskId })); }
         case 'command': return finish(await session.command(c.command));
@@ -64,7 +64,7 @@ export function goalDisplay(state: GoalTerminalSnapshot, size = 1600) {
     case 'plan': text = goal.plan ? `Plan revision ${goal.plan.projectRevision} · ${goal.plan.nodes.length}/${goal.plan.totalNodes} nodes\n` + goal.plan.nodes.map(n => `${n.id} · ${n.title} · input ${n.inputRef?.version ?? 'undefined'} · depends ${n.dependsOn.join(', ') || 'none'}`).join('\n') + (goal.plan.nextCursor ? '\nMore: /plan next' : '') : 'Plan not read'; break;
     case 'state': text = goal.state?.nodes.map(n => `${n.nodeId} · ${n.execution?.task.status ?? 'not executed'} · ${n.reason}\nverification ${n.execution?.task.verificationStatus ?? 'unknown'} · accepted ${n.deliveryCurrent}\ndecision ${n.execution?.pendingDecision?.decisionId ?? 'none'} · artifact ${n.execution?.artifact?.artifactId ?? 'none'}`).join('\n') ?? 'Use /observe to refresh'; break;
     case 'history': text = goal.history ? `Historical references through ${goal.history.throughVersion}; not proof of current validity\n` + goal.history.items.map(i => `${i.reference.version}. ${i.kind} · ${JSON.stringify(i.source)}`).join('\n') + (goal.history.nextCursor ? '\nMore: /history next' : '') : 'Use /history'; break;
-    case 'body': text = JSON.stringify(goal.body, null, 2); break;
+    case 'body': text = 'Explicit recorded body (cached); refresh /plan and /observe for current validity.\n' + JSON.stringify(goal.body, null, 2); break;
   }
   const points = Array.from(text), pages = Math.max(1, Math.ceil(points.length / size)), page = Math.min(state.page, pages);
   return { text: points.slice((page - 1) * size, page * size).join(''), page, pages };

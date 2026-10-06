@@ -29,3 +29,12 @@ it('shares private atomic IO without changing the old filename and isolates goal
     expect(await conversation.load()).toEqual(old); expect((await readdir(dir)).filter(f => f.endsWith('.tmp'))).toEqual([]);
   } finally { await goal.close(); await conversation.close(); await rm(dir, { recursive: true, force: true }); }
 });
+
+it('releases the owned private journal when initialization cannot reach the center', async () => {
+  const { runTerminal } = await import('../main.js');
+  const dir = await mkdtemp(join(tmpdir(), 'flow-tui01d-invalid-'));
+  try {
+    await expect(runTerminal(['--goal', '-'.repeat(36), '--headless'], { FLOW_URL: 'http://127.0.0.1:1', FLOW_TOKEN: 'synthetic-owner', FLOW_TUI_STATE_DIR: dir })).rejects.toThrow();
+    expect((await readdir(dir)).filter(name => name.endsWith('.lock'))).toEqual([]);
+  } finally { await rm(dir, { recursive: true, force: true }); }
+});

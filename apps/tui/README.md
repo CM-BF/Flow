@@ -1,4 +1,4 @@
-# Flow terminal — conversations and live observation
+# Flow terminal — conversations and goals
 
 Run with Node 24 and installed workspace dependencies. Set `FLOW_URL` to your center's origin and provide its owner token through `FLOW_TOKEN` in your environment. Do not put a token in command arguments or shell history. `FLOW_TUI_STATE_DIR` optionally selects an absolute private directory; the default is `~/.flow-terminal`.
 
@@ -45,4 +45,37 @@ When the center supports the negotiated patch protocol, assistant text grows aut
 
 Activity and full-reply details are read only on request. Redacted activity has no public body; truncated activity is a fragment, and the remainder cannot be recovered through this view. Activity pages become visibly stale when the task changes, until `/activity` refreshes them. Observation allows at most two concurrent reads and four waiting reads, one activity page of 20 references, four cached bodies of at most 64 KiB each, and the stream protocol's 1 MiB / 256-block / 4,096-patch bounds. Display paging leaves original text and digests unchanged.
 
-Older-history navigation, queue/steer/cancel/decision controls, attachments and a login manager remain separate work. No real-provider conformance is claimed. The original conversation slice used isolated HTTP/PostgreSQL fixtures; this observation slice uses real local HTTP fixtures, an owned PTY and existing Web consumers, with no model call. See [conversation evidence](../../docs/evidence/tui01a/README.md) and [observation evidence](../../docs/evidence/tui01c/README.md).
+In conversation mode, older-history navigation, queue/steer/cancel/decision controls, attachments and a login manager remain separate work. No real-provider conformance is claimed. The original conversation slice used isolated HTTP/PostgreSQL fixtures; this observation slice uses real local HTTP fixtures, an owned PTY and existing Web consumers, with no model call. See [conversation evidence](../../docs/evidence/tui01a/README.md) and [observation evidence](../../docs/evidence/tui01c/README.md).
+
+## Observe and control an existing goal
+
+Select one saved goal explicitly. Without `--goal`, conversation behavior is unchanged.
+
+```sh
+pnpm --filter @flow/tui start --goal GOAL_UUID
+pnpm --filter @flow/tui start --goal GOAL_UUID --headless
+pnpm --filter @flow/tui start --goal --help
+```
+
+Goal mode uses the public goal session controller. Ordinary text stays in a local draft; Enter does not interpret it as an execution request. Ctrl-J inserts a newline. Reads and commands are explicit, and `/observe` refreshes execution state. There is no automatic dispatch or model explanation.
+
+| Command | Behavior |
+| --- | --- |
+| `/plan [next]` | Read a page of node titles, input versions and dependencies. |
+| `/observe [node IDs]` | Refresh the listed nodes, or the current plan page, without reading material bodies. |
+| `/history [next]` | Read immutable explanation references, 20 per page. Historical evidence does not assert current validity. |
+| `/goal`, `/input NODE VERSION`, `/explain VERSION` | Explicitly read the fixed goal, input or explanation body. |
+| `/artifact NODE [execution\|accepted]` | Read the artifact bound to the currently observed execution or accepted delivery. |
+| `/decision NODE` | Read the observed pending decision body. |
+| `/decide NODE approve\|reject`, `/cancel NODE` | Submit a command using the observed task and decision identities. Cancellation acceptance does not prove the runner has stopped. |
+| `/command JSON` | Submit an explicit public `GoalSessionCommand`; the existing `goal/execute` command runs a fixture. This mode does not implicitly authorize native execution. |
+| `/recover` | Recover an unresolved request with the original key and body. A version rejection refreshes observation without sending a replacement. |
+| `/page NUMBER`, `/quit` | Page the displayed content locally, or close observation without cancelling background work. |
+
+JSONL uses the same handlers, for example `{"type":"observe"}`, `{"type":"history"}`, `{"type":"input","nodeId":"NODE","version":1}`, or `{"type":"quit"}`. Domain writes use `{"type":"command","command":...}`; their schemas and authority remain in `@flow/interaction/goal`. Exact request bodies and keys are saved before submission. Restarting never resends them automatically.
+
+Goal journals use a separate connection-and-goal namespace. They share private file permissions, atomic replacement and exclusive locking with conversation journals; existing conversation filenames and JSON are unchanged. A goal can therefore be observed separately from a conversation, but two writers to the same goal journal are rejected. Draft text is local and is not a durable journal entry.
+
+Plan/history pages contain 20 references; one observation contains at most 50 nodes. Bodies are read only on explicit expansion, cached by the public controller and labelled as recorded content. Refresh `/plan` and `/observe` to check current validity. The screen shows bounded windows of at most 1,600 Unicode code points, adapted to terminal size. It does not silently truncate the stored body. Private journal and JSONL bounds remain 192 KiB.
+
+This goal slice is checked with two public clients, real local HTTP/PostgreSQL, actual JSONL and an owned terminal. It covers stale versions, lost acknowledgements, decisions, cancellation, artifacts, 57 historical references, Chinese/emoji/multiline input and resize. Browser handoff, real providers and the complete TUI→Web→TUI journey remain unverified here. See [goal evidence](../../docs/evidence/tui01d/README.md).
