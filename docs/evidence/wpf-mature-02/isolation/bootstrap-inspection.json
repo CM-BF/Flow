@@ -1,0 +1,426 @@
+{
+  "at": "2026-10-06T09:19:53.729271+00:00",
+  "inspectionOnly": true,
+  "sandboxExecuted": false,
+  "commands": [
+    "otool -L",
+    "otool -l",
+    "codesign -d --entitlements :-",
+    "read local sandbox-exec.1 and Apple system profile syntax"
+  ],
+  "node": {
+    "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "codex": {
+    "path": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+    "sha256": "4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc"
+  },
+  "nonSystemRuntimeHashes": {
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+    "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex": "4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc",
+    "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib": "a39670a770c581be982f65dee2ed21729c316660d22e4df1c406142aff7282c8",
+    "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib": "79897d8691289c284587a512e3a42d1725d7072b1304c96efa770e4fad97f7bb",
+    "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.0.0.dylib": "2a8957e7374abf80a57671c124aa08e3b4f7465bceb6fa1b4ed1330e8923189f",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.2.0.dylib": "574ff610bfd3a23d34a03843a59b9c48d509d4e3336d9fc763ae6b35d17cad3e",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.2.0.dylib": "9da99c892dbfea4d96eed9fcfab986bc83a47fd74f6bea02e2455b11343170a5",
+    "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.19.7.dylib": "5f268b4b7cbfd8221b516f8dbe05aaacc89ab8c764604f35269e302b904b1163",
+    "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.3.3.dylib": "11db880a22aff139d2c66dc2c1aee26cee12fbc98734bf7cbbce06e7f40f77b0",
+    "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib/libnghttp2.14.dylib": "5df5de1c71a96b5f2b02e10dc95082de0fd0774cc4f7a05b084fbda8bcf3addb",
+    "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.9.0.dylib": "1d4cb92df671d316dc29b6654aeb7cd3a647dd2d3eed4782600f72301f0c4d8b",
+    "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib/libngtcp2.16.dylib": "9a5cc6ab5144dd521bda8295304d5979cde90d8f00ce676110ff3c4467b82d7a",
+    "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.3.53.4.dylib": "c8d5d0225a3cf6462b0de9c38ea90c23c84a7234076032876783a92c01949629",
+    "/opt/homebrew/Cellar/uvwasi/0.0.23/lib/libuvwasi.dylib": "7662d10427d80edd044e273e2bcf7a1ebe068724d545b27e801a841d669730c8",
+    "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.5.7.dylib": "69d8dee81bccdee425d167300d11431f3c5ecc34a3011400e536aa89f7756189",
+    "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib": "48c160c3aaa46cb69e5874370d820c2bc8be0712f6ee690fa10581ad966474a7",
+    "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libssl.3.dylib": "a53b324db78c1146ff9ce68700f952e3997f4a1965ee6c6a802f6d3bdcd625ad",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.3.dylib": "b29beb6db94b7d92222aca40e2fef72fcd78e6861d2565ecd7333121e923770f",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib": "6fa74bc0a546cd34cdf733bf9ad8089e1088dba42e3eb8fe0c1c5a53c326af3e",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib": "6aedf71f8195bb339e9bd8680299327ec0ad75184fb073b9ff438130c81afc05",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib": "5cedc441f4317ce12a1a3c69b5d1e881ab39431feace497f7ad0f21be839779a"
+  },
+  "allowedRuntimeLoadPaths": [
+    "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+    "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+    "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+    "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+    "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+    "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+    "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+    "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+    "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/../lib/libbrotlicommon.1.dylib",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.2.0.dylib",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.2.0.dylib",
+    "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.19.7.dylib",
+    "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.3.3.dylib",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.dylib",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.3.dylib",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.dylib",
+    "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib/libnghttp2.14.dylib",
+    "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.9.0.dylib",
+    "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib/libngtcp2.16.dylib",
+    "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib",
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/../lib/libnode.137.dylib",
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+    "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib",
+    "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libssl.3.dylib",
+    "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.0.0.dylib",
+    "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.3.53.4.dylib",
+    "/opt/homebrew/Cellar/uvwasi/0.0.23/lib/libuvwasi.dylib",
+    "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.5.7.dylib",
+    "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+    "/opt/homebrew/opt/brotli/lib/libbrotlicommon.1.dylib",
+    "/opt/homebrew/opt/brotli/lib/libbrotlidec.1.dylib",
+    "/opt/homebrew/opt/brotli/lib/libbrotlienc.1.dylib",
+    "/opt/homebrew/opt/c-ares/lib/libcares.2.dylib",
+    "/opt/homebrew/opt/hdrhistogram_c/lib/libhdr_histogram.6.dylib",
+    "/opt/homebrew/opt/icu4c@78/lib/libicudata.78.dylib",
+    "/opt/homebrew/opt/icu4c@78/lib/libicui18n.78.dylib",
+    "/opt/homebrew/opt/icu4c@78/lib/libicuuc.78.dylib",
+    "/opt/homebrew/opt/libnghttp2/lib/libnghttp2.14.dylib",
+    "/opt/homebrew/opt/libnghttp3/lib/libnghttp3.9.dylib",
+    "/opt/homebrew/opt/libngtcp2/lib/libngtcp2.16.dylib",
+    "/opt/homebrew/opt/libuv/lib/libuv.1.dylib",
+    "/opt/homebrew/opt/node@24/lib/libnode.137.dylib",
+    "/opt/homebrew/opt/openssl@3/lib/libcrypto.3.dylib",
+    "/opt/homebrew/opt/openssl@3/lib/libssl.3.dylib",
+    "/opt/homebrew/opt/simdjson/lib/libsimdjson.33.dylib",
+    "/opt/homebrew/opt/sqlite/lib/libsqlite3.dylib",
+    "/opt/homebrew/opt/uvwasi/lib/libuvwasi.dylib",
+    "/opt/homebrew/opt/zstd/lib/libzstd.1.dylib",
+    "/usr/lib/dyld",
+    "/usr/lib/libSystem.B.dylib",
+    "/usr/lib/libbz2.1.0.dylib",
+    "/usr/lib/libc++.1.dylib",
+    "/usr/lib/libiconv.2.dylib",
+    "/usr/lib/liblzma.5.dylib",
+    "/usr/lib/libobjc.A.dylib",
+    "/usr/lib/libresolv.9.dylib",
+    "/usr/lib/libz.1.dylib"
+  ],
+  "dynamicLoadInspection": [
+    {
+      "file": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "dependencies": [
+        "@rpath/libnode.137.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/opt/homebrew/opt/libuv/lib/libuv.1.dylib",
+        "/opt/homebrew/opt/simdjson/lib/libsimdjson.33.dylib",
+        "/opt/homebrew/opt/brotli/lib/libbrotlidec.1.dylib",
+        "/opt/homebrew/opt/brotli/lib/libbrotlienc.1.dylib",
+        "/opt/homebrew/opt/c-ares/lib/libcares.2.dylib",
+        "/opt/homebrew/opt/hdrhistogram_c/lib/libhdr_histogram.6.dylib",
+        "/opt/homebrew/opt/libnghttp2/lib/libnghttp2.14.dylib",
+        "/opt/homebrew/opt/libnghttp3/lib/libnghttp3.9.dylib",
+        "/opt/homebrew/opt/libngtcp2/lib/libngtcp2.16.dylib",
+        "/opt/homebrew/opt/sqlite/lib/libsqlite3.dylib",
+        "/opt/homebrew/opt/uvwasi/lib/libuvwasi.dylib",
+        "/opt/homebrew/opt/zstd/lib/libzstd.1.dylib",
+        "/opt/homebrew/opt/openssl@3/lib/libcrypto.3.dylib",
+        "/opt/homebrew/opt/openssl@3/lib/libssl.3.dylib",
+        "/opt/homebrew/opt/icu4c@78/lib/libicui18n.78.dylib",
+        "/opt/homebrew/opt/icu4c@78/lib/libicuuc.78.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin",
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/../lib"
+      ]
+    },
+    {
+      "file": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+      "dependencies": [
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+        "/usr/lib/liblzma.5.dylib",
+        "/usr/lib/libbz2.1.0.dylib",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libobjc.A.dylib",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libiconv.2.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/node@24/lib/libnode.137.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/opt/homebrew/opt/libuv/lib/libuv.1.dylib",
+        "/opt/homebrew/opt/simdjson/lib/libsimdjson.33.dylib",
+        "/opt/homebrew/opt/brotli/lib/libbrotlidec.1.dylib",
+        "/opt/homebrew/opt/brotli/lib/libbrotlienc.1.dylib",
+        "/opt/homebrew/opt/c-ares/lib/libcares.2.dylib",
+        "/opt/homebrew/opt/hdrhistogram_c/lib/libhdr_histogram.6.dylib",
+        "/opt/homebrew/opt/libnghttp2/lib/libnghttp2.14.dylib",
+        "/opt/homebrew/opt/libnghttp3/lib/libnghttp3.9.dylib",
+        "/opt/homebrew/opt/libngtcp2/lib/libngtcp2.16.dylib",
+        "/opt/homebrew/opt/sqlite/lib/libsqlite3.dylib",
+        "/opt/homebrew/opt/uvwasi/lib/libuvwasi.dylib",
+        "/opt/homebrew/opt/zstd/lib/libzstd.1.dylib",
+        "/opt/homebrew/opt/openssl@3/lib/libcrypto.3.dylib",
+        "/opt/homebrew/opt/openssl@3/lib/libssl.3.dylib",
+        "/opt/homebrew/opt/icu4c@78/lib/libicui18n.78.dylib",
+        "/opt/homebrew/opt/icu4c@78/lib/libicuuc.78.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/libuv/lib/libuv.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.0.0.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/simdjson/lib/libsimdjson.33.dylib",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.2.0.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/brotli/lib/libbrotlidec.1.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "@rpath/libbrotlicommon.1.dylib"
+      ],
+      "rpaths": [
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/../lib"
+      ]
+    },
+    {
+      "file": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.2.0.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/brotli/lib/libbrotlienc.1.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "@rpath/libbrotlicommon.1.dylib"
+      ],
+      "rpaths": [
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/../lib"
+      ]
+    },
+    {
+      "file": "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.19.7.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/c-ares/lib/libcares.2.dylib",
+        "/usr/lib/libresolv.9.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/opt/homebrew/Cellar/c-ares/1.34.8/lib/../lib"
+      ]
+    },
+    {
+      "file": "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.3.3.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/hdrhistogram_c/lib/libhdr_histogram.6.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib/libnghttp2.14.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/libnghttp2/lib/libnghttp2.14.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.9.0.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/libnghttp3/lib/libnghttp3.9.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib/libngtcp2.16.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/libngtcp2/lib/libngtcp2.16.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.3.53.4.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/sqlite/lib/libsqlite3.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/opt/homebrew/Cellar/sqlite/3.53.4/lib"
+      ]
+    },
+    {
+      "file": "/opt/homebrew/Cellar/uvwasi/0.0.23/lib/libuvwasi.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/uvwasi/lib/libuvwasi.dylib",
+        "/opt/homebrew/opt/libuv/lib/libuv.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.5.7.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/zstd/lib/libzstd.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/../lib"
+      ]
+    },
+    {
+      "file": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/openssl@3/lib/libcrypto.3.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libssl.3.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/openssl@3/lib/libssl.3.dylib",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.3.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/icu4c@78/lib/libicui18n.78.dylib",
+        "@loader_path/libicuuc.78.dylib",
+        "@loader_path/libicudata.78.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/icu4c@78/lib/libicuuc.78.dylib",
+        "@loader_path/libicudata.78.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/node@24/lib/libnode.137.dylib",
+        "/usr/lib/libz.1.dylib",
+        "/opt/homebrew/opt/libuv/lib/libuv.1.dylib",
+        "/opt/homebrew/opt/simdjson/lib/libsimdjson.33.dylib",
+        "/opt/homebrew/opt/brotli/lib/libbrotlidec.1.dylib",
+        "/opt/homebrew/opt/brotli/lib/libbrotlienc.1.dylib",
+        "/opt/homebrew/opt/c-ares/lib/libcares.2.dylib",
+        "/opt/homebrew/opt/hdrhistogram_c/lib/libhdr_histogram.6.dylib",
+        "/opt/homebrew/opt/libnghttp2/lib/libnghttp2.14.dylib",
+        "/opt/homebrew/opt/libnghttp3/lib/libnghttp3.9.dylib",
+        "/opt/homebrew/opt/libngtcp2/lib/libngtcp2.16.dylib",
+        "/opt/homebrew/opt/sqlite/lib/libsqlite3.dylib",
+        "/opt/homebrew/opt/uvwasi/lib/libuvwasi.dylib",
+        "/opt/homebrew/opt/zstd/lib/libzstd.1.dylib",
+        "/opt/homebrew/opt/openssl@3/lib/libcrypto.3.dylib",
+        "/opt/homebrew/opt/openssl@3/lib/libssl.3.dylib",
+        "/opt/homebrew/opt/icu4c@78/lib/libicui18n.78.dylib",
+        "/opt/homebrew/opt/icu4c@78/lib/libicuuc.78.dylib",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+        "/usr/lib/libc++.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/brotli/lib/libbrotlicommon.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/../lib"
+      ]
+    },
+    {
+      "file": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/openssl@3/lib/libcrypto.3.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/icu4c@78/lib/libicuuc.78.dylib",
+        "@loader_path/libicudata.78.dylib",
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/icu4c@78/lib/libicudata.78.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    },
+    {
+      "file": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/brotli/lib/libbrotlicommon.1.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": [
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/../lib"
+      ]
+    },
+    {
+      "file": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib",
+      "dependencies": [
+        "/opt/homebrew/opt/icu4c@78/lib/libicudata.78.dylib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "rpaths": []
+    }
+  ],
+  "sharedCacheReadSubpath": "/System/Volumes/Preboot/Cryptexes/OS/System/Library/dyld",
+  "limits": "Transitive cached system images were not recursively enumerated; runtime startup is not proven. No broad /usr/lib or /System/Library grant. No sysctl or Mach allowances added.",
+  "wrapperAndOSMetadataHashes": {
+    "/usr/bin/sandbox-exec": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a",
+    "/System/Library/CoreServices/SystemVersion.plist": "6151cb883e5b48d43a33d4d41956405a1cd502e0c8622319388d943e2cb804a1"
+  }
+}

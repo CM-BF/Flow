@@ -99,3 +99,21 @@ R06默认encoded JSON frame上限1MiB（含envelope/转义、不含newline）；
 ### 本片工程证据
 
 27个本地确定性语义检查通过，范围与限制见[README](../../../experiments/codex-app-server-conformance/README.md)、[raw](conformance.tap)和[manifest](conformance-manifest.json)。只消费已解码帧，尚未运行R06组合。真实进程候选路径见[隔离方案](isolated-run-plan.md)，目前仅核sandbox-exec存在，canary隔离证据未完成，真实运行NOT_RUN。
+
+
+## 阻断性接线边界：access none尚无执行证据
+
+Mika转交status_read对固定Codex0.154.0 schema及官方current文档的只读结论（本次非运行证据）：`ThreadStartParams`、`TurnStartParams`、`SandboxPolicy`、`WebSearchMode`、`ServerRequest`没有证明一个“关闭全部工具”的总开关。readOnly / networkAccess:false不等于access:none，approvalPolicy=never表示不询问，并非禁止工具。config开放字典仅表示可传数据，不能证明任意键生效；ThreadStartResponse没有actual tools证据。
+
+因此requested.access:none仅表示Flow意图，effective必须unknown。生产adapter在可执行的无工具策略未核实前，应拒绝宣称已兑现none；中心可存profile意图/合成final seam，但不能据此发布可运行无工具能力。拒绝已收到的approval/dynamic tool请求只覆盖那些请求，不覆盖自动允许的动作。当前文档的features.shell_tool=false及web_search=disabled也只是部分控制候选，不证明固定0.154所有工具/MCP/app已禁用。
+
+来源：[固定E02归档](schema-source.json)及status_read只读输入；官方[config reference](https://learn.chatgpt.com/docs/config-file/config-reference)、[approvals/security](https://learn.chatgpt.com/docs/agent-approvals-security)是current资料，不能替代固定版本执行证据。隔离目录probe约束文件/网络/进程的启动边界，与以后允许provider网络后的无工具推理分开。
+
+## 隔离后继当前状态
+
+[静态设计](../../../experiments/codex-app-server-conformance/isolation/README.md)已绑定独审R06 target a239b14d5328c78cca02a8757e26f2b65502f926及其main e785a29f5dee324127603f73e9efda8a66242009；本轮仅profile/canary脚本、命令与失败清理的可审文件，不执行sandbox/R06组合/真实Codex。先前纯语义approval不覆盖本后继。
+
+账号后继补充（Mika/status_read只读输入）：GetAccountParams.refreshToken=true可主动刷新token，account/read不能一概称零网络只读；Account目录信息不证明模型entitlement。login结果/通知并非总有可关联loginId，AccountUpdated也不是请求receipt；任何实际account/read/login/logout均未授权/执行，secret/token/email/raw认证URL不进入普通日志。ModelReroutedNotification的同thread/turn from/to可作为逐turn实际模型证据候选，不能用ThreadStart配置回填actual。
+
+
+固定源码补证（status_read只读提供）：官方rust-v0.154.0 tag commit `6b9826e3aa83b1a5947db50f4332cb9c65f1b340` 的Cargo版本为0.154.0，ThreadStart schema与本地归档相同；但发布产物至本机binary `4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc` 的校验链尚未证明。[spec_plan.rs](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/core/src/tools/spec_plan.rs#L1079)中ShellTool=false仅跳过核心exec_command/write_stdin，MCP resource/apply_patch/view_image仍为独立注册；[hosted_spec.rs](https://github.com/openai/codex/blob/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/core/src/tools/hosted_spec.rs#L14)的Disabled不生成hosted search。这是0.154源码候选证据，不是本机binary全部无工具证明，不产生运行授权或access:none承诺。

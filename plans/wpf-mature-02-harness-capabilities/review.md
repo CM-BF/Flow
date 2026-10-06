@@ -1,6 +1,17 @@
-# WPF-MATURE-02 独立审查
+# WPF-MATURE-02 当前隔离设计审查
 
-状态：APPROVED；仅固定target的纯已解码语义consumer。
+状态：NOT_STARTED；本次只提交静态设计，不申请/执行真实app-server。
+
+Review target commit：待隔离设计提交后绑定。范围：experiments/codex-app-server-conformance/isolation 与 docs/evidence/wpf-mature-02/isolation，以及隔离方案/接口/本计划metadata。Base 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7，R06固定依赖a239b14d5328c78cca02a8757e26f2b65502f926。
+
+核对[manifest](../../docs/evidence/wpf-mature-02/isolation/manifest.json) source/raw与固定commit；逐条审default-deny的路径、Mach/network/exec边界；是否存在宽泛系统读取或macOS未知扩权路径；是否把POSIX拒绝/timeout/refused误计为Seatbelt通过；R06唯一子进程所有权、两个自有目录/loopback资源、未知关闭保留目录、无重试/放宽。不要执行sandbox/profile/canary/真实Codex，不做provider/auth。
+
+作者只执行2项node --check、SBPL括号/必需deny词法检查、链接和旧语义hash复核；这不是SBPL编译/运行证据。已修Mika草稿预审：control目录0700，使创建失败不再可由POSIX只读目录mode单独解释。其余独立findings待审。
+
+## 已封存语义片段审查（不受后继静态设计冒用）
+
+
+历史语义状态：APPROVED；仅固定target的纯已解码语义consumer。
 
 Base：9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；Review target commit: 0d0524c3439363d1fe60aad63f62817ba51fa2a5。worktree/branch/status见[status](status.md)。范围为本任务3scope；共享host/中心合同/Web修改不在首片。
 

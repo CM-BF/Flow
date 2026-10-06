@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:16:37 UTC / 2026-10-06 09:11:30 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:25:37 UTC / 2026-10-06 09:11:30 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,27 +11,28 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / 0d0524c3439363d1fe60aad63f62817ba51fa2a5（固定实现；后继仅metadata，实际HEAD由Git核） |
-| 工作树dirty状态 | 实现提交后clean；本次仅target绑定metadata，提交后由Git核 |
+| 工作树dirty状态 | 语义approval metadata提交后clean；本次隔离片仅3scope内新文件与计划/接口，提交后由Git核 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 检查状态 | PASSED 0d0524c3439363d1fe60aad63f62817ba51fa2a5：27/27本地语义检查，0 skipped；真实进程NOT_RUN |
+| 本片段交付阶段 | review |
+| 检查状态 | NOT_RUN：隔离片只执行2项JavaScript语法与SBPL词法/链接检查；没有运行sandbox或canary |
 | 已集成main状态 / HEAD | 未集成；最近观察main77c420cf9ee5de0291ea93014b6ea11aead6fab5；注册已入main，consumer未集成 |
-| 实现目标 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5 |
-| 实现范围 | plans/wpf-mature-02-harness-capabilities, docs/evidence/wpf-mature-02, experiments/codex-app-server-conformance |
+| 实现目标 | 隔离设计提交后绑定；已审语义目标见后继字段 |
+| 实现范围 | experiments/codex-app-server-conformance/isolation, docs/evidence/wpf-mature-02/isolation, docs/evidence/wpf-mature-02/isolated-run-plan.md, docs/evidence/wpf-mature-02/interface.md, plans/wpf-mature-02-harness-capabilities |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Codex目录与普通完成消息的本地验证模块已通过独立审查；支持选项与实际生效保持清晰区别。 |
-| 下一可用交付 | 接收已审本地模块；另行准备真实目录探针的隔离设计。 |
-| 当前阻塞 | ACTIVE: 真实目录探针仍需验证隔离；本地模块可先审查集成。 |
+| 当前产出 | 本地模型语义模块已审；真实目录探针的隔离脚本与检查步骤已准备，尚未执行。 |
+| 下一可用交付 | 审查隔离方案后，按明确边界验证自有临时文件与本地连接的拒绝行为。 |
+| 当前阻塞 | ACTIVE: 隔离机制尚无运行证据；真实目录探针仍未启动。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED 0d0524c3439363d1fe60aad63f62817ba51fa2a5（仅纯语义片） |
+| Review | [review.md](review.md)：当前隔离片NOT_STARTED；语义片APPROVED记录保留 |
+| 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，27/27行为检查，status_read独审APPROVED，metadata1aead2e；未重新运行/未改source/raw |
 | 架构影响 | 当前实验不改产品结构；生产host/合同由R05共享owner维护，后继接线需登记架构target。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-MATURE-02-01 | completed | chatui01_owner | [领取回执](../../docs/evidence/wpf-mature-02/take-receipt.json)，固定基线/计划/来源登记 |
 | WPF-MATURE-02-02 | completed | chatui01_owner | [manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)，27/27本地行为检查；status_read独审APPROVED；未集成 |
-| WPF-MATURE-02-03 | blocked | chatui01_owner | 真实进程文件/Keychain/外连隔离尚未证明；未启动，fixture独立继续 |
+| WPF-MATURE-02-03 | blocked | chatui01_owner | 具体profile/合成canary已准备，仅2项语法检查；静态交审，运行仍NOT_RUN |
 | WPF-MATURE-02-04 | pending | chatui01_owner | 等R05共享合同与路径交接；当前可继续独立实验 |
 | WPF-MATURE-02-05 | pending | d01（Web子任务owner） | 按本大task接口独立交付，尚未获得本task跨端验收证据 |
 | WPF-MATURE-02-06 | pending | chatui01_owner | 真实续接/账号/取消恢复未验收 |
@@ -50,3 +51,7 @@
 ## 本片验证与后继
 
 [conformance manifest](../../docs/evidence/wpf-mature-02/conformance-manifest.json)绑定6源码/README文件、29份固定schema及27项raw。未运行R06组合、真实Codex、账号、模型或Web检查；没有改产品。隔离候选[方案](../../docs/evidence/wpf-mature-02/isolated-run-plan.md)缺canary证据，由Mika审路径后才可能启动。生产架构target归R05/R06，当前仅实验模块，无main运行结构变动。
+
+## 隔离后继片段证据
+
+[静态manifest](../../docs/evidence/wpf-mature-02/isolation/manifest.json)独立于已审语义manifest，绑定profile、2脚本、README、bootstrap/R06输入及静态检查。固定R06 a239b14/main e785a29仅复用其唯一transport；当前未运行组合。控制目录保留0700，防止把POSIX只读mode的拒绝误当Seatbelt证据；所有实际macOS边界仍未证。

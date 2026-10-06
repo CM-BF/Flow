@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-06T09:24:47.681059+00:00",
+  "kind": "static-only; NOT_EXECUTED",
+  "syntaxChecks": [
+    {
+      "file": "experiments/codex-app-server-conformance/isolation/canary-preload.mjs",
+      "command": "node24 --check experiments/codex-app-server-conformance/isolation/canary-preload.mjs",
+      "exitCode": 0,
+      "output": ""
+    },
+    {
+      "file": "experiments/codex-app-server-conformance/isolation/compose-canary.mjs",
+      "command": "node24 --check experiments/codex-app-server-conformance/isolation/compose-canary.mjs",
+      "exitCode": 0,
+      "output": ""
+    }
+  ],
+  "profileLexicalBalance": true,
+  "profileCompiled": false,
+  "localLinks": {
+    "checked": 32,
+    "missing": []
+  },
+  "semanticSourceRawSchemaUnchanged": true,
+  "sandboxInvocations": 0,
+  "canaryInvocations": 0,
+  "listenerStarts": 0,
+  "appServerStarts": 0,
+  "authOrProviderCalls": 0,
+  "limits": "JavaScript parsing and simple SBPL lexical checks do not establish policy compilation or enforcement. No engineering behavior tests repeated.",
+  "metadataValidationAt": "2026-10-06T09:26:25.478024+00:00"
+}
