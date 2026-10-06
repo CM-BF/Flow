@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 05:38:05 UTC |
+| 最近更新 | 2026-10-06 05:38:21 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
@@ -45,3 +45,5 @@ claim 76b6ae1a-f414-49bb-a93d-d80cead6bd61 v1 ACTIVE，COMMITTED 05:10:36.101Z�
 2026-10-06 05:25:20 UTC：dashboard 2026-10-06T05:25:10.384Z 实采clean c95d6c9、approved/passed/unchanged/current/issues[]，delivery=integration，[回执](../../docs/evidence/k01/dashboard-receipt.json)。本metadata提交后停止K01领域写入；保留claim76b6ae1a-f414-49bb-a93d-d80cead6bd61 v1待明确main接收或授权修复。
 
 2026-10-06 05:38:05 UTC：MAIN_RECEIPT fb906cb42391971a8b315dbd813f7633927d7265，已实核main=origin/main clean、target祖先和完整9实现文件零diff；[回执](../../docs/evidence/k01/main-receipt.json)。Mika/Lead固定范围接收证据为main docs/evidence/i02/knowledge-maintenance-fixed-scopes.json。当前delivered仅指K01本片段；后继K01-06保持pending，不据此宣称hybrid/vector或全部下游接入完成。本轮仅metadata，无测试/服务重启；最终提交后停止所有K01写入，由Mika release当前claim v1。
+
+2026-10-06 05:38:21 UTC：dashboard 2026-10-06T05:38:12.500Z 实采clean1917b91、approved/passed/unchanged/current/main.current=true/issues[]；delivery=delivered，下一可用交付“本片段已交付”，[main dashboard回执](../../docs/evidence/k01/main-dashboard-receipt.json)。当前metadata提交后明确停止所有K01写入，请Mika核claim76b6ae1a v1并release；不自行回填release。
