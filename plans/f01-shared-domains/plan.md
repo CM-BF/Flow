@@ -73,4 +73,6 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 
 - [x] **F01-36** X01共享静态安装库正式workspace消费者与固定依赖lock接线；具体安装/loader独立owner，不重复实现。
 
-- [ ] **F01-37** 连接会话三方法与统一HTTP/SSE Cookie传输、固定028领域接收后的生产鉴权接线；父目标为WPF-MATURE-06，旧Bearer与CLI保持，公开thinclient不先冒领域/浏览器完成。
+- [x] **F01-37** 连接会话三方法与统一HTTP/SSE Cookie传输、固定028领域接收后的生产鉴权接线；父目标为WPF-MATURE-06，旧Bearer与CLI保持，公开thinclient不先冒领域/浏览器完成。
+
+- [ ] **F01-38** 为O13连续目标旅程增加按goal归属的规划运行轻列表薄传输；固定合同/原样分页与错误，不另建编排或提前批准领域。

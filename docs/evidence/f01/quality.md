@@ -242,3 +242,7 @@ CHAT10 startup独立APPROVED：assignment_review完整只读2d699两file/2source
 复用两个固定DTO和既有HTTP传输；POST保原body与runner鉴权，owner目录严格解码，purpose非法/409/abort不重试。新HTTP1与旧3通过，types0；独立native_center_owner只读审查已通过，未覆盖其自己领域或后续挂载。后续挂载只组合现registerEngineeringRoutes，无新权限状态机；必须待真实factory+PG和独审。
 
 2026-10-06T11:49:24.529827+00:00：O11公共接线按既有codebase-design/clean-code方法复核：领域负责稳定计划与新鲜状态，client只保留参数/错误/取消，生产仅owner mount，无第二状态。2直接用例→定向1/1后类型0；显式测试默认字段修复不改领域。原红/首typecheck失败保留，随机DB正常清理；0provider。
+
+## 2026-10-06T13:16:16.945431+00:00 Browser-session transport
+
+Fixed 5be830e2614d45dbaa023e98923fc74f470b37ec; 3 new HTTP/SSE +51 direct existing checks, initial3red retained, final54/54 and root types0. One transport seam shares existing Bearer and explicit Cookie mode; CSRF port remains Web state, no second identity/auth state machine. Schema errors/lost ACK remain unknown/no retry, explicit connect does not retain token. Browser CORS/jar/PG policy remain domain/Web acceptance. Sources/raw/contract bound in browser-session-client-manifest.json.
