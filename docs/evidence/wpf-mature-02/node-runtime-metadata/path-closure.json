@@ -1,0 +1,1739 @@
+{
+  "observedAt": "2026-10-06T13:56:43.231635+00:00",
+  "source": {
+    "path": "docs/evidence/wpf-mature-02/isolation/bootstrap-inspection.json",
+    "sha256": "98cd28ee66084d5562c3cfed8e143e246118e68884d2eaf1713ddd11a66d18a1"
+  },
+  "baseProfile": {
+    "path": "experiments/codex-app-server-conformance/node-rootliteral/candidate.sb",
+    "sha256": "f563a084a8223bb088626f0f1e580ffcabd09ccde6772c7a78f6e9cd22a17c5b"
+  },
+  "candidate": {
+    "path": "experiments/codex-app-server-conformance/node-runtime-metadata/candidate.sb",
+    "bytes": 16762,
+    "sha256": "37023e6516aa4ef6552a720b7d08d27aadb48fc7947d36b414ebd5c329391213"
+  },
+  "operations": [
+    "file-read-metadata",
+    "file-test-existence"
+  ],
+  "excludedSeed": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+  "seedCount": 61,
+  "literalCount": 177,
+  "limits": "Fixed seeds only; no directory enumeration or child execution. Absent standalone paths do not prove shared-cache presence or sandbox necessity.",
+  "nodes": [
+    {
+      "path": "/System",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/AppKit.framework",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/AppKit.framework/Versions",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/AppKit.framework/Versions/C",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/System/Library/Frameworks/CFNetwork.framework",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CFNetwork.framework/Versions",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CFNetwork.framework/Versions/A",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreFoundation.framework",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreFoundation.framework/Versions",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreFoundation.framework/Versions/A",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreGraphics.framework",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreGraphics.framework/Versions",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreGraphics.framework/Versions/A",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreServices.framework",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreServices.framework/Versions",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreServices.framework/Versions/A",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/System/Library/Frameworks/Foundation.framework",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/Foundation.framework/Versions",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/Foundation.framework/Versions/C",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/System/Library/Frameworks/IOKit.framework",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/IOKit.framework/Versions",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/IOKit.framework/Versions/A",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/System/Library/Frameworks/Security.framework",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/Security.framework/Versions",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/Security.framework/Versions/A",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/System/Library/Frameworks/SystemConfiguration.framework",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/SystemConfiguration.framework/Versions",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A",
+      "kind": "directory"
+    },
+    {
+      "path": "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/opt",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/brotli",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/brotli/1.2.0",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/brotli/1.2.0/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib",
+      "kind": "regular",
+      "bytes": 150128
+    },
+    {
+      "path": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.dylib",
+      "kind": "symlink",
+      "target": "libbrotlicommon.1.2.0.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.2.0.dylib",
+      "kind": "regular",
+      "bytes": 70128
+    },
+    {
+      "path": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.dylib",
+      "kind": "symlink",
+      "target": "libbrotlidec.1.2.0.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.2.0.dylib",
+      "kind": "regular",
+      "bytes": 639152
+    },
+    {
+      "path": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.dylib",
+      "kind": "symlink",
+      "target": "libbrotlienc.1.2.0.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/c-ares",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/c-ares/1.34.8",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/c-ares/1.34.8/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.19.7.dylib",
+      "kind": "regular",
+      "bytes": 227136
+    },
+    {
+      "path": "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.dylib",
+      "kind": "symlink",
+      "target": "libcares.2.19.7.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/hdrhistogram_c",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.3.3.dylib",
+      "kind": "regular",
+      "bytes": 57920
+    },
+    {
+      "path": "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.dylib",
+      "kind": "symlink",
+      "target": "libhdr_histogram.6.3.3.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/icu4c@78",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/icu4c@78/78.3",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/icu4c@78/78.3/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib",
+      "kind": "regular",
+      "bytes": 33371136
+    },
+    {
+      "path": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.dylib",
+      "kind": "symlink",
+      "target": "libicudata.78.3.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.3.dylib",
+      "kind": "regular",
+      "bytes": 3168704
+    },
+    {
+      "path": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.dylib",
+      "kind": "symlink",
+      "target": "libicui18n.78.3.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib",
+      "kind": "regular",
+      "bytes": 1859408
+    },
+    {
+      "path": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.dylib",
+      "kind": "symlink",
+      "target": "libicuuc.78.3.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libnghttp2",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libnghttp2/1.70.0",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib/libnghttp2.14.dylib",
+      "kind": "regular",
+      "bytes": 184336
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libnghttp3",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libnghttp3/1.18.0",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.9.0.dylib",
+      "kind": "regular",
+      "bytes": 183584
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.dylib",
+      "kind": "symlink",
+      "target": "libnghttp3.9.9.0.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libngtcp2",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libngtcp2/1.25.0",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib/libngtcp2.16.dylib",
+      "kind": "regular",
+      "bytes": 349184
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libuv",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libuv/1.52.1",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libuv/1.52.1/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib",
+      "kind": "regular",
+      "bytes": 189408
+    },
+    {
+      "path": "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.dylib",
+      "kind": "symlink",
+      "target": "libuv.1.0.0.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "kind": "regular",
+      "bytes": 50320
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "kind": "regular",
+      "bytes": 67359104
+    },
+    {
+      "path": "/opt/homebrew/Cellar/openssl@3",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/openssl@3/3.6.4",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib",
+      "kind": "regular",
+      "bytes": 4870816
+    },
+    {
+      "path": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libssl.3.dylib",
+      "kind": "regular",
+      "bytes": 888320
+    },
+    {
+      "path": "/opt/homebrew/Cellar/simdjson",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/simdjson/4.6.11",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/simdjson/4.6.11/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.0.0.dylib",
+      "kind": "regular",
+      "bytes": 95088
+    },
+    {
+      "path": "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.dylib",
+      "kind": "symlink",
+      "target": "libsimdjson.33.0.0.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/sqlite",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/sqlite/3.53.4",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/sqlite/3.53.4/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.3.53.4.dylib",
+      "kind": "regular",
+      "bytes": 1276416
+    },
+    {
+      "path": "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.dylib",
+      "kind": "symlink",
+      "target": "libsqlite3.3.53.4.dylib"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/uvwasi",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/uvwasi/0.0.23",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/uvwasi/0.0.23/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/uvwasi/0.0.23/lib/libuvwasi.dylib",
+      "kind": "regular",
+      "bytes": 65616
+    },
+    {
+      "path": "/opt/homebrew/Cellar/zstd",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/zstd/1.5.7_1",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/zstd/1.5.7_1/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.5.7.dylib",
+      "kind": "regular",
+      "bytes": 653328
+    },
+    {
+      "path": "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.dylib",
+      "kind": "symlink",
+      "target": "libzstd.1.5.7.dylib"
+    },
+    {
+      "path": "/opt/homebrew/opt",
+      "kind": "directory"
+    },
+    {
+      "path": "/opt/homebrew/opt/brotli",
+      "kind": "symlink",
+      "target": "../Cellar/brotli/1.2.0"
+    },
+    {
+      "path": "/opt/homebrew/opt/c-ares",
+      "kind": "symlink",
+      "target": "../Cellar/c-ares/1.34.8"
+    },
+    {
+      "path": "/opt/homebrew/opt/hdrhistogram_c",
+      "kind": "symlink",
+      "target": "../Cellar/hdrhistogram_c/0.11.10"
+    },
+    {
+      "path": "/opt/homebrew/opt/icu4c@78",
+      "kind": "symlink",
+      "target": "../Cellar/icu4c@78/78.3"
+    },
+    {
+      "path": "/opt/homebrew/opt/libnghttp2",
+      "kind": "symlink",
+      "target": "../Cellar/libnghttp2/1.70.0"
+    },
+    {
+      "path": "/opt/homebrew/opt/libnghttp3",
+      "kind": "symlink",
+      "target": "../Cellar/libnghttp3/1.18.0"
+    },
+    {
+      "path": "/opt/homebrew/opt/libngtcp2",
+      "kind": "symlink",
+      "target": "../Cellar/libngtcp2/1.25.0"
+    },
+    {
+      "path": "/opt/homebrew/opt/libuv",
+      "kind": "symlink",
+      "target": "../Cellar/libuv/1.52.1"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24",
+      "kind": "symlink",
+      "target": "../Cellar/node@24/24.20.0"
+    },
+    {
+      "path": "/opt/homebrew/opt/openssl@3",
+      "kind": "symlink",
+      "target": "../Cellar/openssl@3/3.6.4"
+    },
+    {
+      "path": "/opt/homebrew/opt/simdjson",
+      "kind": "symlink",
+      "target": "../Cellar/simdjson/4.6.11"
+    },
+    {
+      "path": "/opt/homebrew/opt/sqlite",
+      "kind": "symlink",
+      "target": "../Cellar/sqlite/3.53.4"
+    },
+    {
+      "path": "/opt/homebrew/opt/uvwasi",
+      "kind": "symlink",
+      "target": "../Cellar/uvwasi/0.0.23"
+    },
+    {
+      "path": "/opt/homebrew/opt/zstd",
+      "kind": "symlink",
+      "target": "../Cellar/zstd/1.5.7_1"
+    },
+    {
+      "path": "/usr",
+      "kind": "directory"
+    },
+    {
+      "path": "/usr/lib",
+      "kind": "directory"
+    },
+    {
+      "path": "/usr/lib/dyld",
+      "kind": "regular",
+      "bytes": 2562000
+    },
+    {
+      "path": "/usr/lib/libSystem.B.dylib",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/usr/lib/libbz2.1.0.dylib",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/usr/lib/libc++.1.dylib",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/usr/lib/libiconv.2.dylib",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/usr/lib/liblzma.5.dylib",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/usr/lib/libobjc.A.dylib",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/usr/lib/libresolv.9.dylib",
+      "kind": "absent",
+      "errno": 2
+    },
+    {
+      "path": "/usr/lib/libz.1.dylib",
+      "kind": "absent",
+      "errno": 2
+    }
+  ],
+  "chains": [
+    {
+      "seed": "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+      "status": "absent-standalone",
+      "missingAt": "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+      "trace": [
+        "/System",
+        "/System/Library",
+        "/System/Library/Frameworks",
+        "/System/Library/Frameworks/AppKit.framework",
+        "/System/Library/Frameworks/AppKit.framework/Versions",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C",
+        "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+      "status": "absent-standalone",
+      "missingAt": "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+      "trace": [
+        "/System",
+        "/System/Library",
+        "/System/Library/Frameworks",
+        "/System/Library/Frameworks/CFNetwork.framework",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A",
+        "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "status": "absent-standalone",
+      "missingAt": "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+      "trace": [
+        "/System",
+        "/System/Library",
+        "/System/Library/Frameworks",
+        "/System/Library/Frameworks/CoreFoundation.framework",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A",
+        "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "status": "absent-standalone",
+      "missingAt": "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+      "trace": [
+        "/System",
+        "/System/Library",
+        "/System/Library/Frameworks",
+        "/System/Library/Frameworks/CoreGraphics.framework",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A",
+        "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "status": "absent-standalone",
+      "missingAt": "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+      "trace": [
+        "/System",
+        "/System/Library",
+        "/System/Library/Frameworks",
+        "/System/Library/Frameworks/CoreServices.framework",
+        "/System/Library/Frameworks/CoreServices.framework/Versions",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A",
+        "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "status": "absent-standalone",
+      "missingAt": "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+      "trace": [
+        "/System",
+        "/System/Library",
+        "/System/Library/Frameworks",
+        "/System/Library/Frameworks/Foundation.framework",
+        "/System/Library/Frameworks/Foundation.framework/Versions",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C",
+        "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "status": "absent-standalone",
+      "missingAt": "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+      "trace": [
+        "/System",
+        "/System/Library",
+        "/System/Library/Frameworks",
+        "/System/Library/Frameworks/IOKit.framework",
+        "/System/Library/Frameworks/IOKit.framework/Versions",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A",
+        "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "status": "absent-standalone",
+      "missingAt": "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "trace": [
+        "/System",
+        "/System/Library",
+        "/System/Library/Frameworks",
+        "/System/Library/Frameworks/Security.framework",
+        "/System/Library/Frameworks/Security.framework/Versions",
+        "/System/Library/Frameworks/Security.framework/Versions/A",
+        "/System/Library/Frameworks/Security.framework/Versions/A/Security"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+      "status": "absent-standalone",
+      "missingAt": "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+      "trace": [
+        "/System",
+        "/System/Library",
+        "/System/Library/Frameworks",
+        "/System/Library/Frameworks/SystemConfiguration.framework",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A",
+        "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/brotli/1.2.0/lib/../lib/libbrotlicommon.1.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/brotli",
+        "/opt/homebrew/Cellar/brotli/1.2.0",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.dylib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/brotli",
+        "/opt/homebrew/Cellar/brotli/1.2.0",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.2.0.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/brotli",
+        "/opt/homebrew/Cellar/brotli/1.2.0",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.2.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.2.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.2.0.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/brotli",
+        "/opt/homebrew/Cellar/brotli/1.2.0",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.2.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.2.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.19.7.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/c-ares",
+        "/opt/homebrew/Cellar/c-ares/1.34.8",
+        "/opt/homebrew/Cellar/c-ares/1.34.8/lib",
+        "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.19.7.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.19.7.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.3.3.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/hdrhistogram_c",
+        "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10",
+        "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib",
+        "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.3.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.3.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/icu4c@78",
+        "/opt/homebrew/Cellar/icu4c@78/78.3",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/icu4c@78",
+        "/opt/homebrew/Cellar/icu4c@78/78.3",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.dylib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.3.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/icu4c@78",
+        "/opt/homebrew/Cellar/icu4c@78/78.3",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/icu4c@78",
+        "/opt/homebrew/Cellar/icu4c@78/78.3",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/icu4c@78",
+        "/opt/homebrew/Cellar/icu4c@78/78.3",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.dylib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib/libnghttp2.14.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/libnghttp2",
+        "/opt/homebrew/Cellar/libnghttp2/1.70.0",
+        "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib",
+        "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib/libnghttp2.14.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib/libnghttp2.14.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.9.0.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/libnghttp3",
+        "/opt/homebrew/Cellar/libnghttp3/1.18.0",
+        "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib",
+        "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.9.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.9.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib/libngtcp2.16.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/libngtcp2",
+        "/opt/homebrew/Cellar/libngtcp2/1.25.0",
+        "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib",
+        "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib/libngtcp2.16.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib/libngtcp2.16.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/libuv",
+        "/opt/homebrew/Cellar/libuv/1.52.1",
+        "/opt/homebrew/Cellar/libuv/1.52.1/lib",
+        "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/node@24/24.20.0/bin/../lib/libnode.137.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/node@24",
+        "/opt/homebrew/Cellar/node@24/24.20.0",
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin",
+        "/opt/homebrew/Cellar/node@24/24.20.0/lib",
+        "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/node@24",
+        "/opt/homebrew/Cellar/node@24/24.20.0",
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin",
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+      ],
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/node@24",
+        "/opt/homebrew/Cellar/node@24/24.20.0",
+        "/opt/homebrew/Cellar/node@24/24.20.0/lib",
+        "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/openssl@3",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4/lib",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libssl.3.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/openssl@3",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4/lib",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libssl.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libssl.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.0.0.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/simdjson",
+        "/opt/homebrew/Cellar/simdjson/4.6.11",
+        "/opt/homebrew/Cellar/simdjson/4.6.11/lib",
+        "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.0.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.0.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.3.53.4.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/sqlite",
+        "/opt/homebrew/Cellar/sqlite/3.53.4",
+        "/opt/homebrew/Cellar/sqlite/3.53.4/lib",
+        "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.3.53.4.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.3.53.4.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/uvwasi/0.0.23/lib/libuvwasi.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/uvwasi",
+        "/opt/homebrew/Cellar/uvwasi/0.0.23",
+        "/opt/homebrew/Cellar/uvwasi/0.0.23/lib",
+        "/opt/homebrew/Cellar/uvwasi/0.0.23/lib/libuvwasi.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/uvwasi/0.0.23/lib/libuvwasi.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.5.7.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/zstd",
+        "/opt/homebrew/Cellar/zstd/1.5.7_1",
+        "/opt/homebrew/Cellar/zstd/1.5.7_1/lib",
+        "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.5.7.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.5.7.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/brotli/lib/libbrotlicommon.1.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/brotli",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/brotli",
+        "/opt/homebrew/Cellar/brotli/1.2.0",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.dylib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/brotli/lib/libbrotlidec.1.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/brotli",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/brotli",
+        "/opt/homebrew/Cellar/brotli/1.2.0",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.dylib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.2.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.2.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/brotli/lib/libbrotlienc.1.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/brotli",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/brotli",
+        "/opt/homebrew/Cellar/brotli/1.2.0",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.dylib",
+        "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.2.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.2.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/c-ares/lib/libcares.2.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/c-ares",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/c-ares",
+        "/opt/homebrew/Cellar/c-ares/1.34.8",
+        "/opt/homebrew/Cellar/c-ares/1.34.8/lib",
+        "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.dylib",
+        "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.19.7.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.19.7.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/hdrhistogram_c/lib/libhdr_histogram.6.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/hdrhistogram_c",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/hdrhistogram_c",
+        "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10",
+        "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib",
+        "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.dylib",
+        "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.3.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.3.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/icu4c@78/lib/libicudata.78.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/icu4c@78",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/icu4c@78",
+        "/opt/homebrew/Cellar/icu4c@78/78.3",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.dylib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/icu4c@78/lib/libicui18n.78.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/icu4c@78",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/icu4c@78",
+        "/opt/homebrew/Cellar/icu4c@78/78.3",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.dylib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/icu4c@78/lib/libicuuc.78.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/icu4c@78",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/icu4c@78",
+        "/opt/homebrew/Cellar/icu4c@78/78.3",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.dylib",
+        "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/libnghttp2/lib/libnghttp2.14.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/libnghttp2",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/libnghttp2",
+        "/opt/homebrew/Cellar/libnghttp2/1.70.0",
+        "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib",
+        "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib/libnghttp2.14.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib/libnghttp2.14.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/libnghttp3/lib/libnghttp3.9.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/libnghttp3",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/libnghttp3",
+        "/opt/homebrew/Cellar/libnghttp3/1.18.0",
+        "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib",
+        "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.dylib",
+        "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.9.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.9.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/libngtcp2/lib/libngtcp2.16.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/libngtcp2",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/libngtcp2",
+        "/opt/homebrew/Cellar/libngtcp2/1.25.0",
+        "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib",
+        "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib/libngtcp2.16.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib/libngtcp2.16.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/libuv/lib/libuv.1.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/libuv",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/libuv",
+        "/opt/homebrew/Cellar/libuv/1.52.1",
+        "/opt/homebrew/Cellar/libuv/1.52.1/lib",
+        "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.dylib",
+        "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/node@24/lib/libnode.137.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/node@24",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/node@24",
+        "/opt/homebrew/Cellar/node@24/24.20.0",
+        "/opt/homebrew/Cellar/node@24/24.20.0/lib",
+        "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/openssl@3/lib/libcrypto.3.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/openssl@3",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/openssl@3",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4/lib",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/openssl@3/lib/libssl.3.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/openssl@3",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/openssl@3",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4/lib",
+        "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libssl.3.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libssl.3.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/simdjson/lib/libsimdjson.33.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/simdjson",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/simdjson",
+        "/opt/homebrew/Cellar/simdjson/4.6.11",
+        "/opt/homebrew/Cellar/simdjson/4.6.11/lib",
+        "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.dylib",
+        "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.0.0.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.0.0.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/sqlite/lib/libsqlite3.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/sqlite",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/sqlite",
+        "/opt/homebrew/Cellar/sqlite/3.53.4",
+        "/opt/homebrew/Cellar/sqlite/3.53.4/lib",
+        "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.dylib",
+        "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.3.53.4.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.3.53.4.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/uvwasi/lib/libuvwasi.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/uvwasi",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/uvwasi",
+        "/opt/homebrew/Cellar/uvwasi/0.0.23",
+        "/opt/homebrew/Cellar/uvwasi/0.0.23/lib",
+        "/opt/homebrew/Cellar/uvwasi/0.0.23/lib/libuvwasi.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/uvwasi/0.0.23/lib/libuvwasi.dylib"
+    },
+    {
+      "seed": "/opt/homebrew/opt/zstd/lib/libzstd.1.dylib",
+      "status": "resolved",
+      "trace": [
+        "/opt",
+        "/opt/homebrew",
+        "/opt/homebrew/opt",
+        "/opt/homebrew/opt/zstd",
+        "/opt/homebrew/Cellar",
+        "/opt/homebrew/Cellar/zstd",
+        "/opt/homebrew/Cellar/zstd/1.5.7_1",
+        "/opt/homebrew/Cellar/zstd/1.5.7_1/lib",
+        "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.dylib",
+        "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.5.7.dylib"
+      ],
+      "realpath": "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.5.7.dylib"
+    },
+    {
+      "seed": "/usr/lib/dyld",
+      "status": "resolved",
+      "trace": [
+        "/usr",
+        "/usr/lib",
+        "/usr/lib/dyld"
+      ],
+      "realpath": "/usr/lib/dyld"
+    },
+    {
+      "seed": "/usr/lib/libSystem.B.dylib",
+      "status": "absent-standalone",
+      "missingAt": "/usr/lib/libSystem.B.dylib",
+      "trace": [
+        "/usr",
+        "/usr/lib",
+        "/usr/lib/libSystem.B.dylib"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/usr/lib/libbz2.1.0.dylib",
+      "status": "absent-standalone",
+      "missingAt": "/usr/lib/libbz2.1.0.dylib",
+      "trace": [
+        "/usr",
+        "/usr/lib",
+        "/usr/lib/libbz2.1.0.dylib"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/usr/lib/libc++.1.dylib",
+      "status": "absent-standalone",
+      "missingAt": "/usr/lib/libc++.1.dylib",
+      "trace": [
+        "/usr",
+        "/usr/lib",
+        "/usr/lib/libc++.1.dylib"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/usr/lib/libiconv.2.dylib",
+      "status": "absent-standalone",
+      "missingAt": "/usr/lib/libiconv.2.dylib",
+      "trace": [
+        "/usr",
+        "/usr/lib",
+        "/usr/lib/libiconv.2.dylib"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/usr/lib/liblzma.5.dylib",
+      "status": "absent-standalone",
+      "missingAt": "/usr/lib/liblzma.5.dylib",
+      "trace": [
+        "/usr",
+        "/usr/lib",
+        "/usr/lib/liblzma.5.dylib"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/usr/lib/libobjc.A.dylib",
+      "status": "absent-standalone",
+      "missingAt": "/usr/lib/libobjc.A.dylib",
+      "trace": [
+        "/usr",
+        "/usr/lib",
+        "/usr/lib/libobjc.A.dylib"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/usr/lib/libresolv.9.dylib",
+      "status": "absent-standalone",
+      "missingAt": "/usr/lib/libresolv.9.dylib",
+      "trace": [
+        "/usr",
+        "/usr/lib",
+        "/usr/lib/libresolv.9.dylib"
+      ],
+      "realpath": null
+    },
+    {
+      "seed": "/usr/lib/libz.1.dylib",
+      "status": "absent-standalone",
+      "missingAt": "/usr/lib/libz.1.dylib",
+      "trace": [
+        "/usr",
+        "/usr/lib",
+        "/usr/lib/libz.1.dylib"
+      ],
+      "realpath": null
+    }
+  ],
+  "literals": [
+    "/System",
+    "/System/Library",
+    "/System/Library/Frameworks",
+    "/System/Library/Frameworks/AppKit.framework",
+    "/System/Library/Frameworks/AppKit.framework/Versions",
+    "/System/Library/Frameworks/AppKit.framework/Versions/C",
+    "/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit",
+    "/System/Library/Frameworks/CFNetwork.framework",
+    "/System/Library/Frameworks/CFNetwork.framework/Versions",
+    "/System/Library/Frameworks/CFNetwork.framework/Versions/A",
+    "/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork",
+    "/System/Library/Frameworks/CoreFoundation.framework",
+    "/System/Library/Frameworks/CoreFoundation.framework/Versions",
+    "/System/Library/Frameworks/CoreFoundation.framework/Versions/A",
+    "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+    "/System/Library/Frameworks/CoreGraphics.framework",
+    "/System/Library/Frameworks/CoreGraphics.framework/Versions",
+    "/System/Library/Frameworks/CoreGraphics.framework/Versions/A",
+    "/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics",
+    "/System/Library/Frameworks/CoreServices.framework",
+    "/System/Library/Frameworks/CoreServices.framework/Versions",
+    "/System/Library/Frameworks/CoreServices.framework/Versions/A",
+    "/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices",
+    "/System/Library/Frameworks/Foundation.framework",
+    "/System/Library/Frameworks/Foundation.framework/Versions",
+    "/System/Library/Frameworks/Foundation.framework/Versions/C",
+    "/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation",
+    "/System/Library/Frameworks/IOKit.framework",
+    "/System/Library/Frameworks/IOKit.framework/Versions",
+    "/System/Library/Frameworks/IOKit.framework/Versions/A",
+    "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+    "/System/Library/Frameworks/Security.framework",
+    "/System/Library/Frameworks/Security.framework/Versions",
+    "/System/Library/Frameworks/Security.framework/Versions/A",
+    "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+    "/System/Library/Frameworks/SystemConfiguration.framework",
+    "/System/Library/Frameworks/SystemConfiguration.framework/Versions",
+    "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A",
+    "/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration",
+    "/opt",
+    "/opt/homebrew",
+    "/opt/homebrew/Cellar",
+    "/opt/homebrew/Cellar/brotli",
+    "/opt/homebrew/Cellar/brotli/1.2.0",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.2.0.dylib",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlicommon.1.dylib",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.2.0.dylib",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlidec.1.dylib",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.2.0.dylib",
+    "/opt/homebrew/Cellar/brotli/1.2.0/lib/libbrotlienc.1.dylib",
+    "/opt/homebrew/Cellar/c-ares",
+    "/opt/homebrew/Cellar/c-ares/1.34.8",
+    "/opt/homebrew/Cellar/c-ares/1.34.8/lib",
+    "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.19.7.dylib",
+    "/opt/homebrew/Cellar/c-ares/1.34.8/lib/libcares.2.dylib",
+    "/opt/homebrew/Cellar/hdrhistogram_c",
+    "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10",
+    "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib",
+    "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.3.3.dylib",
+    "/opt/homebrew/Cellar/hdrhistogram_c/0.11.10/lib/libhdr_histogram.6.dylib",
+    "/opt/homebrew/Cellar/icu4c@78",
+    "/opt/homebrew/Cellar/icu4c@78/78.3",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.3.dylib",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicudata.78.dylib",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.3.dylib",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicui18n.78.dylib",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.3.dylib",
+    "/opt/homebrew/Cellar/icu4c@78/78.3/lib/libicuuc.78.dylib",
+    "/opt/homebrew/Cellar/libnghttp2",
+    "/opt/homebrew/Cellar/libnghttp2/1.70.0",
+    "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib",
+    "/opt/homebrew/Cellar/libnghttp2/1.70.0/lib/libnghttp2.14.dylib",
+    "/opt/homebrew/Cellar/libnghttp3",
+    "/opt/homebrew/Cellar/libnghttp3/1.18.0",
+    "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib",
+    "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.9.0.dylib",
+    "/opt/homebrew/Cellar/libnghttp3/1.18.0/lib/libnghttp3.9.dylib",
+    "/opt/homebrew/Cellar/libngtcp2",
+    "/opt/homebrew/Cellar/libngtcp2/1.25.0",
+    "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib",
+    "/opt/homebrew/Cellar/libngtcp2/1.25.0/lib/libngtcp2.16.dylib",
+    "/opt/homebrew/Cellar/libuv",
+    "/opt/homebrew/Cellar/libuv/1.52.1",
+    "/opt/homebrew/Cellar/libuv/1.52.1/lib",
+    "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.0.0.dylib",
+    "/opt/homebrew/Cellar/libuv/1.52.1/lib/libuv.1.dylib",
+    "/opt/homebrew/Cellar/node@24",
+    "/opt/homebrew/Cellar/node@24/24.20.0",
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin",
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/opt/homebrew/Cellar/node@24/24.20.0/lib",
+    "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+    "/opt/homebrew/Cellar/openssl@3",
+    "/opt/homebrew/Cellar/openssl@3/3.6.4",
+    "/opt/homebrew/Cellar/openssl@3/3.6.4/lib",
+    "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libcrypto.3.dylib",
+    "/opt/homebrew/Cellar/openssl@3/3.6.4/lib/libssl.3.dylib",
+    "/opt/homebrew/Cellar/simdjson",
+    "/opt/homebrew/Cellar/simdjson/4.6.11",
+    "/opt/homebrew/Cellar/simdjson/4.6.11/lib",
+    "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.0.0.dylib",
+    "/opt/homebrew/Cellar/simdjson/4.6.11/lib/libsimdjson.33.dylib",
+    "/opt/homebrew/Cellar/sqlite",
+    "/opt/homebrew/Cellar/sqlite/3.53.4",
+    "/opt/homebrew/Cellar/sqlite/3.53.4/lib",
+    "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.3.53.4.dylib",
+    "/opt/homebrew/Cellar/sqlite/3.53.4/lib/libsqlite3.dylib",
+    "/opt/homebrew/Cellar/uvwasi",
+    "/opt/homebrew/Cellar/uvwasi/0.0.23",
+    "/opt/homebrew/Cellar/uvwasi/0.0.23/lib",
+    "/opt/homebrew/Cellar/uvwasi/0.0.23/lib/libuvwasi.dylib",
+    "/opt/homebrew/Cellar/zstd",
+    "/opt/homebrew/Cellar/zstd/1.5.7_1",
+    "/opt/homebrew/Cellar/zstd/1.5.7_1/lib",
+    "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.5.7.dylib",
+    "/opt/homebrew/Cellar/zstd/1.5.7_1/lib/libzstd.1.dylib",
+    "/opt/homebrew/opt",
+    "/opt/homebrew/opt/brotli",
+    "/opt/homebrew/opt/brotli/lib",
+    "/opt/homebrew/opt/brotli/lib/libbrotlicommon.1.dylib",
+    "/opt/homebrew/opt/brotli/lib/libbrotlidec.1.dylib",
+    "/opt/homebrew/opt/brotli/lib/libbrotlienc.1.dylib",
+    "/opt/homebrew/opt/c-ares",
+    "/opt/homebrew/opt/c-ares/lib",
+    "/opt/homebrew/opt/c-ares/lib/libcares.2.dylib",
+    "/opt/homebrew/opt/hdrhistogram_c",
+    "/opt/homebrew/opt/hdrhistogram_c/lib",
+    "/opt/homebrew/opt/hdrhistogram_c/lib/libhdr_histogram.6.dylib",
+    "/opt/homebrew/opt/icu4c@78",
+    "/opt/homebrew/opt/icu4c@78/lib",
+    "/opt/homebrew/opt/icu4c@78/lib/libicudata.78.dylib",
+    "/opt/homebrew/opt/icu4c@78/lib/libicui18n.78.dylib",
+    "/opt/homebrew/opt/icu4c@78/lib/libicuuc.78.dylib",
+    "/opt/homebrew/opt/libnghttp2",
+    "/opt/homebrew/opt/libnghttp2/lib",
+    "/opt/homebrew/opt/libnghttp2/lib/libnghttp2.14.dylib",
+    "/opt/homebrew/opt/libnghttp3",
+    "/opt/homebrew/opt/libnghttp3/lib",
+    "/opt/homebrew/opt/libnghttp3/lib/libnghttp3.9.dylib",
+    "/opt/homebrew/opt/libngtcp2",
+    "/opt/homebrew/opt/libngtcp2/lib",
+    "/opt/homebrew/opt/libngtcp2/lib/libngtcp2.16.dylib",
+    "/opt/homebrew/opt/libuv",
+    "/opt/homebrew/opt/libuv/lib",
+    "/opt/homebrew/opt/libuv/lib/libuv.1.dylib",
+    "/opt/homebrew/opt/node@24",
+    "/opt/homebrew/opt/node@24/lib",
+    "/opt/homebrew/opt/node@24/lib/libnode.137.dylib",
+    "/opt/homebrew/opt/openssl@3",
+    "/opt/homebrew/opt/openssl@3/lib",
+    "/opt/homebrew/opt/openssl@3/lib/libcrypto.3.dylib",
+    "/opt/homebrew/opt/openssl@3/lib/libssl.3.dylib",
+    "/opt/homebrew/opt/simdjson",
+    "/opt/homebrew/opt/simdjson/lib",
+    "/opt/homebrew/opt/simdjson/lib/libsimdjson.33.dylib",
+    "/opt/homebrew/opt/sqlite",
+    "/opt/homebrew/opt/sqlite/lib",
+    "/opt/homebrew/opt/sqlite/lib/libsqlite3.dylib",
+    "/opt/homebrew/opt/uvwasi",
+    "/opt/homebrew/opt/uvwasi/lib",
+    "/opt/homebrew/opt/uvwasi/lib/libuvwasi.dylib",
+    "/opt/homebrew/opt/zstd",
+    "/opt/homebrew/opt/zstd/lib",
+    "/opt/homebrew/opt/zstd/lib/libzstd.1.dylib",
+    "/usr",
+    "/usr/lib",
+    "/usr/lib/dyld",
+    "/usr/lib/libSystem.B.dylib",
+    "/usr/lib/libbz2.1.0.dylib",
+    "/usr/lib/libc++.1.dylib",
+    "/usr/lib/libiconv.2.dylib",
+    "/usr/lib/liblzma.5.dylib",
+    "/usr/lib/libobjc.A.dylib",
+    "/usr/lib/libresolv.9.dylib",
+    "/usr/lib/libz.1.dylib"
+  ]
+}

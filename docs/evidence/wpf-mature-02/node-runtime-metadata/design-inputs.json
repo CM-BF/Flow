@@ -1,0 +1,104 @@
+{
+  "baseline": "51fc68db5acaf977019808319c72307adc67f6d1",
+  "runtime": "NOT_OPEN",
+  "claimId": "0dd97484-f0ce-4738-8075-505bd5e2541a",
+  "version": 5,
+  "readonlyInputs": [
+    {
+      "path": "experiments/codex-app-server-conformance/node-loader-cause/host.mjs",
+      "bytes": 9974,
+      "sha256": "5092418f6d9de6d8513eddebbf639ba35a25015b4ebc59dfc15575c382745920"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-loader-cause/observe.mjs",
+      "bytes": 1411,
+      "sha256": "778664030d330e23da12dc4cc8d0e13cb4d28fe8ab8eb9659a13eb3aacdef4b4"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/command.mjs",
+      "bytes": 4014,
+      "sha256": "4ca694a780192fc4ffeb968fca1720eed8aca630014bec3f9b32dca84a1835e7"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-rootliteral/host.mjs",
+      "bytes": 9722,
+      "sha256": "4acb44b6848de1527247f02b262fd41678cad2bfbe27e17ba04de2b877df2534"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-rootliteral/loader.mjs",
+      "bytes": 952,
+      "sha256": "b912406702f7654e153db59b0a674dacab43f75b4b23cf246eb819f3ba7b0488"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/isolation/compose-canary.mjs",
+      "bytes": 12792,
+      "sha256": "2e4e592d3536192f07392b4988124907cdbb4506dee9bac5380d4f98624ad21e"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/isolation/canary-preload.mjs",
+      "bytes": 3457,
+      "sha256": "d197b240be265f2606b0f6b9d00efd30993fc3de31c5ec0bd46daeb59a183e30"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/diagnostics/immediate-exit.mjs",
+      "bytes": 379,
+      "sha256": "6dc50ded369eab65ca2080685646ae8771978a3d572997307bb92087b9558785"
+    },
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    {
+      "path": "apps/runner/src/codex/fixtures/peer.mjs",
+      "bytes": 3728,
+      "sha256": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/isolation/bootstrap-inspection.json",
+      "bytes": 19917,
+      "sha256": "98cd28ee66084d5562c3cfed8e143e246118e68884d2eaf1713ddd11a66d18a1"
+    }
+  ],
+  "designInputs": [
+    {
+      "path": "docs/evidence/wpf-mature-02/node-runtime-metadata/derive-policy.py",
+      "bytes": 5699,
+      "sha256": "52ec60b9c779bd45df666c6b21e61c112de5ec11bc7e2286a76d10e9498e592e"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-runtime-metadata/path-closure.json",
+      "bytes": 58607,
+      "sha256": "7c6aa999c191eb0de7c34ba7aa09be0dd392f485be0beb550db43527a2d697c5"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/node-runtime-metadata/candidate.sb",
+      "bytes": 16762,
+      "sha256": "37023e6516aa4ef6552a720b7d08d27aadb48fc7947d36b414ebd5c329391213"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/node-runtime-metadata/interface.md",
+      "bytes": 6741,
+      "sha256": "681b52c821648fbe5fda89b434369274b395d5422aa383c212d92d4d14aaa854"
+    }
+  ],
+  "targetsStarted": 0,
+  "compilersStarted": 0,
+  "listenersStarted": 0,
+  "derivation": "One completed fixed-path metadata closure after Python API compatibility correction; no runtime target."
+}

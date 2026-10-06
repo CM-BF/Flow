@@ -4,6 +4,9 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [运行库元数据两槽候选](node-runtime-metadata/interface.md)：精确literal派生与复用方案待独审，go-node-runtime-metadata-once NOT_OPEN；旧cause9605封存。
+- [X01中心静态安装已审集成入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan/docs/evidence/x01/center-integration-ready.md)：a578固定领域/029；host及共享接线边界沿唯一owner，不可将executionSettled恒置true。
+
 - [F01 goal run list薄client已审98e5](goal-run-list-client-review.md)：Mika13:46:39 UTC APPROVED，仅transport。
 
 - [单目标加载观察已执行结果](node-loader-cause/run-report.md)：12f502b1已获Mika13:42:44限定APPROVED：完整双流命中固定库角色/errno未知；SIGABRT，启动隔离仍阻塞，无后继授权。
