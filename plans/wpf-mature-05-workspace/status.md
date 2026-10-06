@@ -15,7 +15,7 @@
 | 本片段交付阶段 | planning |
 | 优先级 | 2 |
 | 当前产出 | 已有split/merge与workspace-state基础；尚未完成一个顶层tab内A与B组合的完整验收。 |
-| 下一可用交付 | WORKSPACEPERF01固定partial基线独审后，panels转真实A与B组合tab方案/精准App窗口；不再以研究替代ready产品，完整实现仍开放 |
+| 下一可用交付 | WORKSPACEPERF01 fixed1711 partial基线已独审批准，panels转真实A与B组合tab方案/精准App窗口；完整实现仍开放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -46,3 +46,5 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 WORKSPACEPERF01：panels，base c450，c815bc00 v1四scope，[receipt](../../docs/evidence/web-platform/workspaceperf01-take-receipt.json)。90s含清理/8MiB，仅HTTPfixture真实App累计8/16/32会话观察，生产无改；原TODO05仍pending，首canonical待实际提交。
 
 GO/root固定c450的Overview/feed发现已落[原研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)与TODO05；WORKSPACEPERF只在原预算未冻结时补请求分类，否则后继，不扩90s/8MiB、不改生产。
+
+WORKSPACEPERF01 [限定审查来源](../../docs/evidence/web-platform/workspaceperf01-partial-review-observation.json)：8完成/1末尾locator失败，checks保FAILED/partial；累计79.322s含清理低于90s，没第三轮。root严格定向types0、2源/180依赖核，不重跑browser。没有完整性能/heap/真实优化结论，05仍pending。

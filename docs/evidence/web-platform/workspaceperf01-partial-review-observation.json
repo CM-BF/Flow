@@ -1,0 +1,44 @@
+{
+  "taskId": "WPF-WORKSPACEPERF01",
+  "implementation": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7",
+  "base": "c450c2da7e6185b88db9f46e0299ee504ee6f3e8",
+  "review": "APPROVED bounded partial baseline/tool only",
+  "reviewer": "/root",
+  "reviewTime": "2026-10-06 11:07:36 UTC",
+  "candidateMetadata": "db6e71831df4d5f55e2c382d7f1b16ba81509455",
+  "finalMetadata": "628156e199ee335ffadd22e28247f16a8887d82f",
+  "rootEvidence": {
+    "strictNode24Types": "exit0; /tmp/root-workspaceperf01-strict-types.log",
+    "audit": "/tmp/root-workspaceperf01-audit.json",
+    "fixedCurrentRunSourceCount": 2,
+    "readOnlyDependencies": 180,
+    "scopeOutside": 0,
+    "evidenceBytes": 437327,
+    "browserRerun": false
+  },
+  "authorEvidence": {
+    "checksCompleted": 8,
+    "themeLocatorFailures": 1,
+    "secondRunSeconds": 34.322,
+    "cleanupMs": 85,
+    "firstRunConservativeSeconds": 45,
+    "cumulativeSeconds": 79.322,
+    "maximumSeconds": 90,
+    "thirdRun": false
+  },
+  "limitations": [
+    "checks remain FAILED/partial; review approval not fullgreen",
+    "first incomplete cleanup history retained",
+    "native page-hidden, heap, reliable latency unknown",
+    "no production optimization or entire MATURE05 acceptance",
+    "claim c815 v1 retained until main and owner closeout"
+  ],
+  "managerReadOnlyFinalAudit": {
+    "localEqualsRemote": true,
+    "clean": true,
+    "sourceDiffAfterTarget": [],
+    "branchState": "in-progress / approved / waiting-main",
+    "checks": "FAILED / partial",
+    "review": "APPROVED fixed1711 partial-only"
+  }
+}

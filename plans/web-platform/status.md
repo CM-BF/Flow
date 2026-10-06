@@ -82,7 +82,7 @@
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
 | RELEASE02 → MATURE01 | web-release-type-fix / 03323bce v1三scope | root严格noUncheckedIndexedAccess下构建矩阵readonly tuple窄修，base2e71，runner_owner独审；不跑浏览器/PG/个人发布 |
 | ATTACHI01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md)，94b84c59 v1十一scope | base8701已审DTO/typed ports/官方Threadfixture；六client/HTTP/App仍pending，首canonical d6e6eba clean/parser0已owner建立 |
-| WORKSPACEPERF01 → MATURE05 | c815bc00 v1四scope / web-workspace-lifecycle-baseline | 90s/8MiB实际AppHTTP基线，overview/feed观察仅预算内，不生产优化 |
+| WORKSPACEPERF01 → MATURE05 | c815bc00 v1四scope / web-workspace-lifecycle-baseline | fixed1711/final628156已独审partial基线待main；8完成/1失败、累计79.322s，0生产优化 |
 | ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v1七scope | 2fa8/4e4e已独审150、main e4c82五源同；owner收口后release；v2公共扩展仍待准确输入 |
 | DPERF02 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md)，1cb4 v2 released四scope停写 | 已main da041，close8e9最终normalpush成功；两次失败/先release偏差已归档，无重测 |
 
