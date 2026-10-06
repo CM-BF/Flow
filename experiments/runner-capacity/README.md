@@ -50,7 +50,7 @@
 
 finally顺序：停止新增任务和读循环→关闭本人浏览器/代理连接→Abort/SIGTERM本人runner并限时等待→必要时仅对本人仍活PID SIGKILL并标记异常→关闭本人center/scheduler→关闭观察pool→确认专库连接为0再DROP→删除本人临时文件。无权停止他人服务或强制驱逐共享DB连接。每一步记录成功/失败及PID/端口/库不存在的最终独立观察；无法证明清理不能写全部完成。
 
-正式运行必须绑定实施commit与固定基线及当时实际source hash。功能入口为 `experiments/runner-capacity/smoke.ts`，需要本机专用PostgreSQL的 `FLOW_S01_ADMIN_URL`（不输出值）。从本worktree以Node24运行：`node --import tsx experiments/runner-capacity/smoke.ts <全新证据标签>`，并设置 `TSX_TSCONFIG_PATH=experiments/runner-capacity/tsconfig.json`。目录拒绝覆盖；4任务/2个runner，30秒含清理，工作预算20秒。正式四进程入口已实现待独审/窗口；超领门禁与故障/浏览器仍待实现。runner HTTP计量包装会完整读取响应后重新构造Response，此观察开销属于实验配置，不能将延迟当无观察器的生产值。
+正式运行必须绑定实施commit与固定基线及当时实际source hash。功能入口为 `experiments/runner-capacity/smoke.ts`，需要本机专用PostgreSQL的 `FLOW_S01_ADMIN_URL`（不输出值）。从本worktree以Node24运行：`node --import tsx experiments/runner-capacity/smoke.ts <全新证据标签>`，并设置 `TSX_TSCONFIG_PATH=experiments/runner-capacity/tsconfig.json`。目录拒绝覆盖；4任务/2个runner，30秒含清理，工作预算20秒。正式四进程入口已实现待独审/窗口；8任务超领门禁已准备待review/窗口；故障/浏览器仍待实现。runner HTTP计量包装会完整读取响应后重新构造Response，此观察开销属于实验配置，不能将延迟当无观察器的生产值。
 
 首轮功能结果整体FAIL：固定bfe49a4的smoke-first因校验SQL引用不存在的attempt.created_at失败；4任务完成与24事件核验、ACK/outbox/资源清理通过只是部分事实。原结果不改写。修复依据实际schema并由独立worker核对首次租期推导方法，第二轮另用新目录。
 
@@ -64,4 +64,4 @@ finally顺序：停止新增任务和读循环→关闭本人浏览器/代理连
 
 实际事件分层校验：96 runner events；80 task timeline；workspace含16 accepted共96。三个游标空间分别核对，轻读与最终追赶/详情验证的延迟不混算；正文仅最终按artifact detail引用获取。首次dispatch-ready已true表示左侧未知，保留SQL请求边界，不推造精确调度时刻。PG observer有独立URL app name并观察实际连接；center与scheduler只能合并报告，pool获取等待未测。正式场景不打开SSE，因此应报告0；实际关闭浏览器仍属后继独立功能，不以此替代。
 
-3个纯统计单测与noEmit通过，只验证nearest-rank、小样本/非法输入、半开区间与IPC/子进程时钟分离；没有运行正式负载，也没有容量结果。正式之前合同中的8任务协议超领门禁仍须完成准备并协调同一运行窗口。
+3个纯统计单测与noEmit通过，只验证nearest-rank、小样本/非法输入、半开区间与IPC/子进程时钟分离；没有运行正式负载，也没有容量结果。正式之前先在同一已协调窗口运行 `protocol-gate.ts <新标签>`：8个预先ready的任务，8个并发HTTP claim竞争capacity2，必须恰好2个唯一attempt/任务；用正式取消事件及owner cancel使8任务terminal，0 adapter/runner进程。gate与正式各自独有DB、各30秒含清理；gate失败就停止，不启动16任务正式场景。gate首次run-start即封存运行权，失败不能换label自动重跑。
