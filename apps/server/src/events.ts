@@ -6,6 +6,7 @@ import { canonical, HttpError, sha256, transaction } from './database.js';
 import { ownedAttempt, type AttemptRecord } from './runners.js';
 import type { TaskRecord } from './tasks.js';
 import { saveArtifact, saveDetail, verifyArtifact } from './evidence.js';
+import { assertEngineeringCompletion } from './engineering/verification.js';
 import { recordUsage } from './usage.js';
 import { recordSession } from './sessions.js';
 import { appendTimeline } from './timeline.js';
@@ -61,6 +62,7 @@ export async function applyEvent(client: PoolClient, task: TaskRecord, attempt: 
     task.status = 'waiting';
   }
   else if (event.type === 'completed') {
+    if (task.submission.engineering && event.outcome === 'succeeded') await assertEngineeringCompletion(client, task, attempt);
     await closePendingSteering(client, task, attempt);
     if (event.error) {
       const reference = await saveDetail(client, task.id, attempt.id, { title: 'Execution error', kind: 'detail', content: event.error, mediaType: 'text/plain' });

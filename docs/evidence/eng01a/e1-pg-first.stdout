@@ -1,0 +1,40 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-workspace-pipeline
+
+ ❯ apps/runner/src/engineering/integration.test.ts (3 tests | 2 failed) 3036ms
+   × executes a real synthetic Git repair and fixed Node checker through existing host/outbox to public PG artifact readback 747ms
+   × keeps failed engineering checks readable and lets the existing host publish only failed completion 768ms
+   ✓ retains an injected uncertain write and project lease across host restart without replaying writes 222ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/engineering/integration.test.ts > executes a real synthetic Git repair and fixed Node checker through existing host/outbox to public PG artifact readback
+Error: Missing public engineering artifact.
+ ❯ apps/runner/src/engineering/integration.test.ts:87:45
+     85|   const task = await owner.show(api.taskId); expect(task.verificationS…
+     86|   const artifact = task.entries.find(entry => entry.kind === 'referenc…
+     87|   if (artifact?.kind !== 'reference') throw new Error('Missing public …
+       |                                             ^
+     88|   const detail = await owner.detail(artifact.reference.id), receipt = …
+     89|   expect(receipt.result).toBe('passed'); expect(receipt.command.exitCo…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  apps/runner/src/engineering/integration.test.ts > keeps failed engineering checks readable and lets the existing host publish only failed completion
+Error: Missing failed engineering receipt.
+ ❯ apps/runner/src/engineering/integration.test.ts:106:45
+    104|   const task = await owner.show(api.taskId); expect(task.verificationS…
+    105|   const artifact = task.entries.find(entry => entry.kind === 'referenc…
+    106|   if (artifact?.kind !== 'reference') throw new Error('Missing failed …
+       |                                             ^
+    107|   const receipt = engineeringReceiptSchema.parse(JSON.parse((await own…
+    108|   expect(receipt.result).toBe('failed'); expect(receipt.command.exitCo…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  03:26:44
+   Duration  4.74s (transform 872ms, setup 0ms, import 1.56s, tests 3.04s, environment 0ms)
+

@@ -6,6 +6,7 @@ import { steeringReceiptSchema, steeringResultSchema, steeringFinalizationMetada
 import { assistantStreamDataSchema, assistantStreamMarkerSchema } from './assistant-stream.js';
 import { claudeAssistantFinalDataSchema, codexAssistantFinalDataSchema } from './assistant.js';
 import { nativeActivityDataSchema } from './native-activity.js';
+import { engineeringVerificationDataSchema } from './engineering.js';
 import { harnessSchema, idSchema, MAX_DETAIL_BYTES, MAX_BATCH_BYTES, type DecisionAnswer, type TaskSubmission, type AttemptView, type HarnessName } from './tasks.js';
 
 export const registerRunnerSchema = z.strictObject({
@@ -49,7 +50,10 @@ export const runnerEventSchema = z.discriminatedUnion('type', [
   z.strictObject({ ...envelope, type: z.literal('detail'), title, content, mediaType: z.string().max(120) }),
   z.strictObject({ ...envelope, type: z.literal('decision'), decisionId: idSchema, prompt: z.string().min(1).max(2000) }),
   z.strictObject({ ...envelope, type: z.literal('artifact'), artifactId: idSchema, title, version: digest, content, mediaType: z.string().max(120) }),
-  z.strictObject({ ...envelope, type: z.literal('verification'), artifactId: idSchema, artifactVersion: digest, verifierId: z.literal('flow.text'), verifierVersion: z.literal('1'), inputDigest: digest, result: z.enum(['passed', 'failed']), evidence: z.string().min(1).max(4000) }),
+  z.discriminatedUnion('verifierId', [
+    z.strictObject({ ...envelope, type: z.literal('verification'), artifactId: idSchema, artifactVersion: digest, verifierId: z.literal('flow.text'), verifierVersion: z.literal('1'), inputDigest: digest, result: z.enum(['passed', 'failed']), evidence: z.string().min(1).max(4000) }),
+    engineeringVerificationDataSchema.extend(envelope),
+  ]),
   z.strictObject({ ...envelope, type: z.literal('usage'), source: idSchema, scope: z.enum(['step', 'turn', 'session']), scopeId: idSchema, sampleId: idSchema, cumulative: z.boolean(), baseline: z.discriminatedUnion('kind', [z.strictObject({ kind: z.literal('new-session') }), z.strictObject({ kind: z.literal('sample'), sampleId: idSchema }), z.strictObject({ kind: z.literal('unknown') })]).optional(), accounting: z.enum(['authoritative', 'informational']), costKind: z.enum(['sdk_estimate', 'provider_actual', 'unknown']), model: z.string().max(180).optional(), inputTokens: tokenCount, outputTokens: tokenCount, cacheReadTokens: tokenCount.optional(), cacheWriteTokens: tokenCount.optional(), costUsd: z.number().nonnegative().nullable() }),
   z.strictObject({ ...envelope, type: z.literal('session'), nativeSessionId: idSchema, adapterVersion: idSchema, resources: z.array(z.string().max(200)).max(100).optional() }),
   z.strictObject({ ...envelope, type: z.literal('completed'), outcome: z.enum(['succeeded', 'failed', 'cancelled']), error: z.string().max(2000).optional() }),
