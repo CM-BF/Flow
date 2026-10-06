@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-06T19:03:51.909098+00:00",
+  "state": "APPROVED_SOURCE_SCOPED_NOT_RUN",
+  "target": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+  "base": "ec5da343880879154e2392f52eaa915d5b08aa77",
+  "metadataHead": "7311ac51113c27a8ddd0e368338dbb0f9e1037fd",
+  "dirty": "",
+  "scope": [
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs"
+  ],
+  "fixedCurrentPins": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "target": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+      "bytes": 6660,
+      "sha256": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
+      "currentSha256": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "target": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+      "bytes": 6353,
+      "sha256": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1",
+      "currentSha256": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "currentSha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 5903,
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "currentSha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 6883,
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "currentSha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "target": "ec5da343880879154e2392f52eaa915d5b08aa77",
+      "bytes": 2396,
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "currentSha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "currentEqualsFixed": true
+    }
+  ],
+  "mismatches": [],
+  "resolvedFinding": "P2 from676 resolved: plain primary record is separated from explicitly marked main synchronization before extraction; standalone year-like candidate also captures malformed slash dates but ignores embedded tasknumber prefixes. Addedfour missing/malformed main-sync cases andtwo taskidentifier explanation cases. Existing date/calendar/millisecond checks unchanged.",
+  "reviewedBehavior": [
+    "Legacyminute/second UTC/Z and exactzerooffset forms; deliberate milliseconds with updatedRecord preserved",
+    "Calendar roundtrip and earlyyears, endofday24:00 strictzero remainder, invalidinput yieldsnull+existingerror rather than toISOString throw",
+    "No missingprimary timestamp rescued by later main sync for supportedcombinedrecord marker; no taskid date confusion in reviewedcases",
+    "Unrelated owner/branch/TODO/check/review/integration fields preserved; no agingpolicy/mtime/otherowner mutation",
+    "Nodeonly test imports ownparseStatus; its4helper importclosure has no top-level Git/HTTP/PG execution. parseImplementation path is pure; Git helper functions are declared but unused. Old aggregate fixture is not imported."
+  ],
+  "testStatus": {
+    "declaredCases": 62,
+    "actualCasesRun": 0,
+    "reason": "Source review only. Casecount independently reconciled:19valid+30invalid+1equivalence+4invalidfirst+4missingprimarycombined+2taskprefix+1old+1future=62."
+  },
+  "runtimeNext": "Proceed with bounded pureNode validation preparation and freshmanagergate under originalfourclaim. Existing15s total including5cleanup,2MiBtmp/512KiBraw proposal applies; no centralPG/Chromewindow needed. Actualrunner fixedsource/pins/expected62 and cleanup must be reviewed before one run; no repeat old56candidate.",
+  "consumerAndDeliveryLimits": [
+    "Actual aggregate stale/future check remains separate at Leadintegration; unchangedpolicy source is not consumer-runtime proof",
+    "Lead19:02:38.991 real173source snapshot observedDPERF05live/c8d/humancomplete/errors[]/proofunchanged, according to incomingLeadreceipt; root did not resample4320. Registration is not sourceimplementationmain/deployment.",
+    "Source scoped approval does not say62tests passed or dashboardservice parserupdated. Finalreview can incorporate actualdirectevidence thenLeadconsumer/deployment."
+  ],
+  "method": "Local find-skills/clean-code inputinterface, calendar errorcontainment and focusedbehavioraltest review. Source/hash/metadata only, no Node import/test/HTTP/PG/Chrome/free sample. Root only writes/tmp report."
+}

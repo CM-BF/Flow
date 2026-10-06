@@ -1,0 +1,77 @@
+{
+  "startedAt": "2026-10-06T19:14:51.981149+00:00",
+  "implementation": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+  "sourceHead": "7311ac51113c27a8ddd0e368338dbb0f9e1037fd",
+  "sourceHashes": {
+    "apps/execution-dashboard/src/status.mjs": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1"
+  },
+  "bindingSha256": "28564373a20a4a0a14b63c87002dbba35a0a12ec6bda445b2c42b0b41c3ad8c3",
+  "runnerSha256": "8256f6b911627348288b43d4deeb040dde6ee073d6d209a3757e2d05b8120963",
+  "sandboxSha256": "b57921a64f44becdbf6ad98cd03b654a5528ba8e12cf19e71255e6f3064efc67",
+  "limits": {
+    "totalSeconds": 15,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 2097152,
+    "rawBytes": 524288,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.5
+  },
+  "kind": "one pure parser Node test file; no Git fixture, HTTP, PG, browser or network",
+  "samples": [
+    {
+      "seconds": 0.087,
+      "freeBytes": 1492041728,
+      "tmpBytes": 60695
+    }
+  ],
+  "previousRuntimeMs": 0,
+  "initialFreeBytes": 1492041728,
+  "command": [
+    "/usr/bin/sandbox-exec",
+    "-f",
+    "/private/tmp/dperf05-node-once-iozl0vgo/sandbox.sb",
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs"
+  ],
+  "pgid": 22632,
+  "observedTmpBytesBeforeReap": 73166,
+  "postReapBeforeRemoval": {
+    "groupAbsent": true,
+    "tmpBytes": 73166,
+    "freeBytes": 1492017152
+  },
+  "cleanup": {
+    "state": "fulfilled",
+    "errors": [],
+    "seconds": 0.0,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "basis": "Only the owned sandbox/Node process group and own scratch; no service/database created"
+  },
+  "exitCode": 0,
+  "logBytes": 12471,
+  "droppedObservedLogBytes": 0,
+  "tap": {
+    "tests": 62,
+    "pass": 62,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "expectedTests": 62
+  },
+  "finalFreeBytes": 1492017152,
+  "elapsedMs": 201,
+  "cumulativeMs": 201,
+  "remainingMs": 14799,
+  "finishedAt": "2026-10-06T19:14:52.182116+00:00",
+  "finalizationErrors": [],
+  "state": "PASS",
+  "sourceMeaning": "Pure parseStatus evidence only; no actual aggregate aging, deployment, registry, HTTP or browser proof."
+}

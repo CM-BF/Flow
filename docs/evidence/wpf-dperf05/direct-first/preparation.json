@@ -1,0 +1,62 @@
+{
+  "state": "PREPARED_CANDIDATE_NOT_RUN",
+  "at": "2026-10-06T19:07:02.266023+00:00",
+  "previousRuntimeMs": 0,
+  "files": {
+    "dperf04-to-dperf05.diff": {
+      "bytes": 12994,
+      "sha256": "83924ee4991caf043586080c9f3c4fa5443cc9dadc9b89edea61768f4372a03a"
+    },
+    "run.py": {
+      "bytes": 18871,
+      "sha256": "8256f6b911627348288b43d4deeb040dde6ee073d6d209a3757e2d05b8120963"
+    },
+    "binding.json": {
+      "bytes": 2394,
+      "sha256": "28564373a20a4a0a14b63c87002dbba35a0a12ec6bda445b2c42b0b41c3ad8c3"
+    },
+    "run-62fe-before-cleanup.py": {
+      "bytes": 16109,
+      "sha256": "62fe3301727b32e2824b9b3076dfa14538e544eb7bd354aaf20d7a66485c5a3f"
+    },
+    "sandbox.sb": {
+      "bytes": 165,
+      "sha256": "b57921a64f44becdbf6ad98cd03b654a5528ba8e12cf19e71255e6f3064efc67"
+    },
+    "cleanup-fix.diff": {
+      "bytes": 6376,
+      "sha256": "a67a47f7dc364db5dc4879f6ff45b53f5b4af89da6cc0e179b5b42ccaba96de9"
+    }
+  },
+  "baseline": {
+    "path": "/private/tmp/dperf04-node-once-kz6cfj2k/run.py",
+    "sha256": "c45999bf132e13fcabd50b4250744e7eda06e25216c768a23dd888b270a19dfd"
+  },
+  "minimalChanges": [
+    "DPERF05 fixed2+4helpers+root manifests/Node binding, one pure parser entry expected62",
+    "15s total/5s cleanup/2MiBtmp/512KiBraw, previous0; no localhost network exception",
+    "Terminal tmp/raw/free observations with errors -> FAIL; cleanup group absence + scratch deletion; TAP expected62 and 0failed/cancelled/skipped/todo",
+    "Sparse nonmaterialized pnpm manifests verified by fixed current HEAD Git blobs; no installation/materialization",
+    "Quota directory walk errors are fatal; post-consumption setup exceptions enter cleanup/report; consumption error starts no child and never reports PASS"
+  ],
+  "staticPythonAst": "parsed without executing runner or product",
+  "unknowns": [
+    "Sandbox/Node/test execution not performed",
+    "Polling limits are not filesystem quotas; deletion and filesystem observation are not preemptible hard deadlines",
+    "Disk/report-write failure may only remain on supervisor stdout",
+    "Actual aggregate consumer and deployed parser remain outside this run"
+  ],
+  "gate": "ABSENT; no allowRun authored",
+  "sourceDirty": "",
+  "cleanupRevision": {
+    "supersededRunnerSha256": "62fe3301727b32e2824b9b3076dfa14538e544eb7bd354aaf20d7a66485c5a3f",
+    "delta": "cleanup-fix.diff",
+    "behavior": [
+      "reap_owned no longer deletes scratch",
+      "only after confirmed own PGID absence sample terminal size/free, then safe scratch removal even if accounting fails",
+      "unknown/alive PGID retains scratch and fails",
+      "result write then actual tmp/raw/report/time accounting; at most one bounded failure rewrite, stdout reports last actual observation"
+    ],
+    "state": "SOURCE_CANDIDATE_NOT_RUN"
+  }
+}

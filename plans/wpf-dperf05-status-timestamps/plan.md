@@ -16,12 +16,12 @@
 
 - [x] DPERF05-01 — 核领取/固定基线，建立唯一 canonical 与 Interface。
 - [x] DPERF05-02 — 私有 UTC parser 与纯行为测试固定源码。
-- [ ] DPERF05-03 — 获明确运行准入后定向检查，保留原始结果。
+- [x] DPERF05-03 — 获明确运行准入后定向检查，保留原始结果。
 - [ ] DPERF05-04 — 独立 review、主线受控接收与停止写入。
 
 ## 验证与边界
 
-当前 source-only，产品检查 NOT_RUN。新专测只 Node 内建与 parser，不导入旧 PG/Git/HTTP fixture。未来纯检查 proposal 为 15 秒含至少 5 秒 cleanup、tmp 2MiB/raw 512KiB，未获得运行 gate。真实 aggregate aging 与部署观察由 Lead 集成阶段执行；本片不复制其公式冒充消费端验证。
+已获单次pure gate并完成62/62检查，详情与限制见[validation](../../docs/evidence/wpf-dperf05/validation.md)。新专测只 Node 内建与 parser，不导入旧 PG/Git/HTTP fixture。本次纯检查15秒含至少5秒cleanup额度、tmp2MiB/raw512KiB；实际201.404ms/清理完整，未自动获第二次许可。真实 aggregate aging 与部署观察由 Lead 集成阶段执行；本片不复制其公式冒充消费端验证。
 
 ## 来源
 

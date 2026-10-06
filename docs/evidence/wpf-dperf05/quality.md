@@ -16,3 +16,9 @@
 原56未运行，旧 candidate-676b.json 与 source-only-checks.json 保留。静态审查发现旧“首数字-”边界不够：缺日期或 slash 日期时仍会从 main 同步救活；合法任务号又被当作日期。最小修复仅在原 private parser 先切 primary/main 记录，再用独立 year-prefix 避免任务号。日期、zone、精度和 errors authority 不变，无额外公共接口/依赖。
 
 新增6个未运行行为 case：4个缺失/斜杠/反引号/英文 main sync；2个含任务 ID 的合法说明前缀。当前静态62 case，0产品执行，修复尚待独立复审。主段边界是明示的 main 同步/main sync，不声称解析任意自然语言记录。
+
+## 2026-10-06 19:16:26 UTC — source冻结后交付安全点
+
+c8d两源码及4只读helpers与run/gate hash逐项相同，未为检查改源。实际62行为覆盖UTC精度/非法日期/主段和main同步/任务号/其他字段；旧676问题和未运行56永久保留。监督tail修复将reap与删除分开、group未知保留scratch、清理后实际配额/时间失败不绿，原runner与delta归档。只归档证据与事实，不机械拆分parser，也不重复运行通过测试。真实aggregate/部署仍未验；各模块职责不变。
+
+Root62证据独审原文已同段归档，0blocking；本片source/runtime批准与主线/部署事实分开，未重跑、未修饰raw。

@@ -1,0 +1,53 @@
+{
+  "state": "CANDIDATE_NOT_RUN",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-status-timestamps",
+  "branch": "codex/dashboard-status-timestamps",
+  "implementation": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+  "head": "7311ac51113c27a8ddd0e368338dbb0f9e1037fd",
+  "sources": {
+    "apps/execution-dashboard/src/status.mjs": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1"
+  },
+  "readOnlyDependencies": {
+    "apps/execution-dashboard/src/human.mjs": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+    "apps/execution-dashboard/src/task-links.mjs": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+    "apps/execution-dashboard/src/proof.mjs": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+    "apps/execution-dashboard/src/git-snapshot.mjs": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+    "package.json": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+  },
+  "gitObjectDependencies": {
+    "pnpm-lock.yaml": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+    "pnpm-workspace.yaml": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+  },
+  "expectedTestCount": 62,
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "claim": {
+    "id": "9a876001-611c-4f79-819f-2284c04d8f61",
+    "version": 1,
+    "scopeCount": 4,
+    "worker": "workspace_panels_owner"
+  },
+  "commandArgs": [
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs"
+  ],
+  "limits": {
+    "totalSeconds": 15,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 2097152,
+    "rawBytes": 524288,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.5
+  },
+  "previousRuntimeMs": 0,
+  "preparedAt": "2026-10-06T19:07:02.266023+00:00",
+  "boundary": "Source approved c8d; supervisor candidate requires root review and independent manager single-use gate. No runtime admission implied."
+}
