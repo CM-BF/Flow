@@ -26,7 +26,7 @@
     },
     "phase": "M2",
     "priority": 1,
-    "output": "验证脚本已通过类型检查，实际兼容仍待受控运行",
+    "output": "验证脚本已收窄后台检查资源需求，等待固定差异审查",
     "next": "给出新前端与现有后台的真实兼容结果",
     "blocker": {
       "state": "active",
@@ -40,7 +40,7 @@
     "complete": true
   },
   "implementation": {
-    "target": "997d731a98c837ccfce61712d2c7318ae13fb3d2",
+    "target": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
     "scopes": [
       "apps/web/test/web-current-preview.fixture.ts",
       "apps/web/test/web-current-preview.browser.ts"
@@ -51,8 +51,8 @@
   "owner": "w01_owner / gpt-6-astra / ultra",
   "branch": "codex/web-current-preview-compatibility",
   "branchState": "in-progress",
-  "updatedAt": "2026-10-06T14:59:40.000Z",
-  "updatedRecord": "2026-10-06 14:59:40 UTC",
+  "updatedAt": "2026-10-06T15:03:06.000Z",
+  "updatedRecord": "2026-10-06 15:03:06 UTC",
   "todos": [
     {
       "id": "RELEASE03-01",
@@ -74,8 +74,8 @@
     }
   ],
   "errors": [],
-  "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / 997d731a98c837ccfce61712d2c7318ae13fb3d2",
-  "declaredDirty": "实现997d持续冻结；本次仅定向noEmit证据与metadata待提交，提交后实际clean另核",
+  "declaredHead": "362af3bac77541e5a60979326bcf4d4b8c947915 / 432b09ae1b552a68cc4720b369e42ed80bc942c9",
+  "declaredDirty": "实现432b已固定；本次仅metadata待提交，提交后clean另核；0业务/重复noEmit",
   "checks": {
     "state": "not_run",
     "target": null,

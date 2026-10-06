@@ -9,13 +9,13 @@
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 997d731a98c837ccfce61712d2c7318ae13fb3d2 |
-| 工作树dirty状态 | 本次A-only资源门禁/监视时点小delta待提交；未运行业务或重复noEmit |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 432b09ae1b552a68cc4720b369e42ed80bc942c9 |
+| 工作树dirty状态 | 实现432b已固定；本次仅metadata待提交，提交后clean另核；0业务/重复noEmit |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | NOT_RUN（实际兼容矩阵）；定向strict noEmit PASSED，见证据 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片尚未送固定实现独审 |
-| 实现目标 | 997d731a98c837ccfce61712d2c7318ae13fb3d2 |
+| 实现目标 | 432b09ae1b552a68cc4720b369e42ed80bc942c9 |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
