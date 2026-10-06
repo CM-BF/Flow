@@ -25,6 +25,8 @@ Web owner d01按本大task对接model/thinking/fast/access与账号/实际状态
 
 共享owner需固定实际模型能力目录、请求选项、init/effective回执与unsupported的合同；Web d01仅消费已落地字段，不修改本owner实验来伪造生产支持。
 
+共享审查输入：[TUI01A CHANGES_REQUESTED回执](tui01a-review.md)（2 P2，原owner修复）；[R05C纯投影APPROVED回执](production-projection-review.md)（仅projection.mjs/.d.mts，等共享entry后再薄import）。两者均非第二进度源，当前不跨WT导入或合入未审C1。
+
 **R05C复用交接：** [final投影提升回执](final-projection-handoff.md)。固定0d0524c算法只读提升至其已领取生产目录；本实验冻结，生产模块独审后改薄入口并复验直接消费者，禁止长期双实现。
 
 共享client输入：[native profile client独立review回执](native-profile-client-review.md)，固定095bdb8仅批准薄client接口，不复制F01进度，也不证明实际access:none。

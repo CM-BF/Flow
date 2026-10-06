@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:39:08 UTC / 2026-10-06 09:34:34 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:41:43 UTC / 2026-10-06 09:34:34 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7 / 7c6e3d835655e1c2c274b71ce0d65225e87172df（一次canary driver；当前HEAD由Git核） |
-| 工作树dirty状态 | 语义approval metadata提交后clean；失败证据已提交/push且clean；本次仅跨task review回执、链接与限定诊断事实metadata，提交后由Git核 |
+| 工作树dirty状态 | 语义approval metadata提交后clean；失败证据已提交/push且clean；本次仅新增TUI01A/生产projection跨task review回执与链接，提交后由Git核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | FAILED 7c6e3d835655e1c2c274b71ce0d65225e87172df：一次canary在报告前SIGABRT，七项结果不可用；原语义27项未重跑 |
@@ -63,3 +63,5 @@
 ## 共享依赖review回执
 
 [Native profile client review](../../docs/evidence/wpf-mature-02/native-profile-client-review.md)仅保存Mika接收的固定095bdb8独审结论，F01进度仍由其权威status维护。此metadata不改变02实现target/27项结果或隔离许可。限定诊断候选三项匹配均false，未读内容；没有新增探测。
+
+[TUI01A review](../../docs/evidence/wpf-mature-02/tui01a-review.md)记录2 P2交原owner；[production projection review](../../docs/evidence/wpf-mature-02/production-projection-review.md)仅批准纯投影提升。02算法继续冻结，待共享entry可用后才薄import；不复制其他任务进度。
