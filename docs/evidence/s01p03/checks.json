@@ -1,0 +1,82 @@
+{
+  "recordedAt": "2026-10-06T10:27:55.254681+00:00",
+  "base": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "toolchain": {
+    "node": "24.20.0",
+    "pnpm": "9.15.4",
+    "vitest": "4.0.18"
+  },
+  "commands": [
+    {
+      "command": "pnpm exec vitest run apps/runner/src/runtime-shutdown.test.ts --reporter=verbose",
+      "raw": "red-null.txt",
+      "exit": "red-null-exit.json",
+      "selected": 0,
+      "outcome": "dependency import failed; not behavior red evidence"
+    },
+    {
+      "command": "pnpm exec vitest run apps/runner/src/runtime-shutdown.test.ts --reporter=verbose",
+      "raw": "red-null-ready.txt",
+      "exit": "red-null-ready-exit.json",
+      "selected": 1,
+      "failed": 1,
+      "outcome": "Behavior red: durable inFlight remained non-null after definite null crossed normal stop; runtime still original base."
+    },
+    {
+      "command": "pnpm exec vitest run apps/runner/src/runtime-shutdown.test.ts --reporter=verbose",
+      "raw": "green-null.txt",
+      "exit": "green-null-exit.json",
+      "selected": 1,
+      "passed": 1,
+      "outcome": "First green after minimal runtime fix; overlaps final10, not added to totals."
+    },
+    {
+      "command": "pnpm exec vitest run apps/runner/src/runtime-shutdown.test.ts --reporter=verbose",
+      "raw": "shutdown-cases-first.txt",
+      "exit": "shutdown-cases-first-exit.json",
+      "selected": 10,
+      "passed": 10,
+      "outcome": "Final unchanged source; 10 distinct shutdown behavior cases."
+    },
+    {
+      "command": "pnpm exec vitest run apps/runner/src/runner.test.ts apps/runner/src/runtime-capacity.test.ts -t '^(?!.*real PG/HTTP)' --reporter=verbose",
+      "raw": "direct-consumers.txt",
+      "exit": "direct-consumers-exit.json",
+      "selected": 52,
+      "passed": 52,
+      "notRun": 4,
+      "perFile": {
+        "runner.test.ts": {
+          "passed": 33
+        },
+        "runtime-capacity.test.ts": {
+          "passed": 19,
+          "notRunRealPg": 4
+        }
+      },
+      "outcome": "Original assertions unchanged; four real PG instances deliberately not selected under this scope."
+    },
+    {
+      "command": "pnpm exec tsc --noEmit",
+      "raw": "typecheck-first.txt",
+      "exit": "typecheck-first-exit.json",
+      "outcome": "Root-wide failed because main has no installed TUI/interaction package dependencies; preserved, not called root strict success."
+    },
+    {
+      "command": "pnpm exec tsc --noEmit -p docs/evidence/s01p03/tsconfig.json",
+      "raw": "typecheck-local.txt",
+      "exit": "typecheck-local-exit.json",
+      "outcome": "PASS exit0, inherits every root option including strict/ES2023/noUnchecked/skipLibCheck; includes runtime+three test files and transitive imports."
+    }
+  ],
+  "distinctPassingBehaviorCases": 62,
+  "separateGroups": "10 new shutdown +33 existing runner +19 existing capacity loopback; earlier single-case green overlaps, not additional.",
+  "notRun": [
+    "4 existing real PG/HTTP capacity instances",
+    "real center/database workload",
+    "provider/model invocation",
+    "original S01 B window or rerun"
+  ],
+  "sourceUnchangedAfterPassingChecks": true,
+  "unchangedConsumersAndPublicFiles": "Verified byte-identical to base for both existing consumer tests, AdmissionJournal, AttemptControl, outbox, client, tsconfig and lockfile."
+}

@@ -1,4 +1,4 @@
-# S01P03 正常停止 claim 排空：待 Mika 审定
+# S01P03 正常停止 claim 排空：已审定接口
 
 这是已有 runner 生命周期上的有界修改，父大 task 为 FLOW-001；S01 的一次 FAIL 是输入证据，不新增第三层任务。候选只改变已发 claim 的取消来源，不增加公共参数、重试、恢复协议或第二调度器。
 
@@ -17,8 +17,8 @@ timeout、连接中断、丢 ACK、非法响应保持同一 inFlight UUID；不�
 
 验收 seam 是公开 `runRunner` + 实际动态 loopback HTTP + fake adapter + 私有目录。用 deferred 明确控制“服务端收到 claim→normal stop→响应”顺序，检查同目录重启行为与实际持久 identity；不模拟内部 AdmissionJournal。首个 red 用例是延迟明确 null 响应跨正常停止、停止后同目录可再次领取。随后分别覆盖 late non-null、原 deadline 不重置、timeout/丢 ACK/非法响应不重试、内部 fatal 抢占、原活动 attempt 清理。停止前未发用 pre-aborted 输入验证 0 claim；若需精确持久化期间的停止门禁，仅在测试的文件系统边界延迟真实 rename 的返回，保留真实磁盘结果，不加产品 test hook。
 
-强停候选验收为一个自有 Node child：服务端已收到 claim 后 SIGKILL，确认 child close，检查原意图后同目录重启拒绝第二 claim；只杀自有 PID，清理所有 socket/child/temp。此测试仍是 loopback，不启动真实 center、PG、provider 或原 mixed driver。是否纳入精确文件系统 race/child 强停由 Mika 审方案时确认。
+强停候选验收为一个自有 Node child：服务端已收到 claim 后 SIGKILL，确认 child close，检查原意图后同目录重启拒绝第二 claim；只杀自有 PID，清理所有 socket/child/temp。此测试仍是 loopback，不启动真实 center、PG、provider 或原 mixed driver。Mika已批准这两项，最终10项新回归均通过；证据和局限见checks.json/resource-check.json。
 
-直接消费者：`runner.test.ts` 全量；`runtime-capacity.test.ts` 精确选择非 `real PG/HTTP` 标题用例，四个真实 PG 参数实例明确未运行；strict noEmit。保留原取消、lease loss、native unknown、auth fatal及局部403断言，不删断言或编辑消费者测试。Node24 / pnpm9.15.4 / Vitest4.0.18；不安装或改变依赖版本。新 worktree 无 node_modules，验证前需按既有约定复用已安装依赖，未执行安装。
+直接消费者：`runner.test.ts` 全量；`runtime-capacity.test.ts` 精确选择非 `real PG/HTTP` 标题用例，四个真实 PG 参数实例明确未运行；strict noEmit。保留原取消、lease loss、native unknown、auth fatal及局部403断言，不删断言或编辑消费者测试。Node24 / pnpm9.15.4 / Vitest4.0.18；不安装或改变依赖版本。新worktree按许可用真实忽略目录内的symlink复用既有依赖，未安装。根级类型检查失败与局部严格通过分别保留，不把后者写成根通过。
 
 实现 scope 仅 runtime.ts、新 runtime-shutdown.test.ts、此证据目录和 plans/s01-graceful-stop。共享 main/server/client/contracts 不改。准备方案通过后才开始逐个 red→green；固定 target 独审后交 Lead 集成，不补原 B 窗口、不启动新容量负载。
