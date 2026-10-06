@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T03:49:08Z |
+| 最近更新 / 最近main同步核验 | 2026-10-06T03:50:31.964Z |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra（lead mika） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance |
@@ -72,3 +72,7 @@ mika逐一核写入锁/cursor前缀并独立8/8功能复跑，APPROVED实现70af
 ## 2026-10-06T03:49Z 最终证据复核
 
 mika独立核7个sourceFiles hash与source748df2d/实现70af7b4/工作树一致，重算4组workspace的n50分位数全部匹配；23检查、分页总数129/2064/16512/16385、真实INSERT索引计划及5库清理均核实。APPROVED after证据，未重跑性能；JSON SHA256为437262b7c5df5a68a554a3ac9c8ec05d258132f5019545d77712ceac75aa829d。当前可接收实现70af7b4及后续证据metadata；独占claimv2仍保留。实现范围字段仅列实际代码/测量入口，plan/docs为证据metadata不参与实现过期判定。
+
+## 2026-10-06T03:50Z Dashboard最终核验
+
+按已实际获批的review补标准字段“状态：APPROVED”“Review target commit：70af7b45814d5ed31d9638649512358e1a0a834b”，未改parser。03:50:31.964Z从4320实采[receipt](../../docs/evidence/b01/dashboard-receipt.json)：review.state=approved、review.proof.state=unchanged、implementationProof.state=unchanged、issues=[]、current=true；dirty=true仅当时一项review metadata尚未提交，主线仍not-contained。此次收尾提交只含review/status与采样receipt，不改变实现或原始性能证据。
