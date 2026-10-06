@@ -3,6 +3,7 @@ import type { ConversationContextExecutionReference } from './conversation-conte
 import type { GoalToolCapability, GoalToolRunReference } from './goal-tool-runs.js';
 import { z } from 'zod';
 import { assistantFinalDataSchema } from './assistant.js';
+import { nativeActivityDataSchema } from './native-activity.js';
 import { harnessSchema, idSchema, MAX_DETAIL_BYTES, MAX_BATCH_BYTES, type DecisionAnswer, type TaskSubmission, type AttemptView, type HarnessName } from './tasks.js';
 
 export const registerRunnerSchema = z.strictObject({
@@ -37,6 +38,7 @@ const digest = z.string().regex(/^[a-f0-9]{64}$/);
 const tokenCount = z.number().int().nonnegative().nullable();
 export const runnerEventSchema = z.discriminatedUnion('type', [
   assistantFinalDataSchema.extend(envelope),
+  nativeActivityDataSchema.safeExtend(envelope),
   z.strictObject({ ...envelope, type: z.literal('message'), text: z.string().min(1).max(4000) }),
   z.strictObject({ ...envelope, type: z.literal('detail'), title, content, mediaType: z.string().max(120) }),
   z.strictObject({ ...envelope, type: z.literal('decision'), decisionId: idSchema, prompt: z.string().min(1).max(2000) }),

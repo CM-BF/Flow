@@ -1,0 +1,7 @@
+PASS collapsed zero reads; keyboard expansion reads one timeline and no detail
+PASS reference is lazy/cached; text escaped and paged below the public 1 MiB limit
+PASS explicit pagination keeps at most 25 rows and updates source/stale without overriding host summary
+PASS errors preserve old entries and hide/offline stop new requests
+PASS same-ID center switch clears cached details and suppresses delayed old events
+PASS detail pending across hidden view and new center cannot reveal old content
+PASS light/dark narrow keyboard view has no overflow or animation and keeps one disclosure

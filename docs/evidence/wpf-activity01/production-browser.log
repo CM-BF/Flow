@@ -1,0 +1,17 @@
+vite v8.3.2 building client environment for production...
+transforming...
+✓ 141 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../../../var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-activity-zSn3pT/index.html                               0.34 kB │ gzip:   0.24 kB
+../../../../../../var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-activity-zSn3pT/assets/_activity-fixture-7Sq-mIj8.css   82.38 kB │ gzip:  14.53 kB
+../../../../../../var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-activity-zSn3pT/assets/_activity-fixture-Bs-DysoT.js   385.42 kB │ gzip: 115.01 kB
+
+✓ built in 158ms
+PASS collapsed zero reads; keyboard expansion reads one timeline and no detail
+PASS reference is lazy/cached; text escaped and paged below the public 1 MiB limit
+PASS explicit pagination keeps at most 25 rows and updates source/stale without overriding host summary
+PASS errors preserve old entries and hide/offline stop new requests
+PASS same-ID center switch clears cached details and suppresses delayed old events
+PASS detail pending across hidden view and new center cannot reveal old content
+PASS light/dark narrow keyboard view has no overflow or animation and keeps one disclosure
