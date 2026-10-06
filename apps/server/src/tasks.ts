@@ -1,3 +1,4 @@
+import { assertTaskExecutionProfile } from './execution-profiles/store.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
@@ -40,6 +41,7 @@ export async function wake(boss: PgBoss, client: PoolClient, taskId: string): Pr
   if (!id) throw new Error('Task wake-up was not persisted.');
 }
 export async function acceptTask(client: PoolClient, boss: PgBoss, input: TaskSubmission): Promise<TaskSummary> {
+  await assertTaskExecutionProfile(client, input);
   if (input.resumeSessionId) {
     const session = await client.query('SELECT 1 FROM flow.sessions WHERE id=$1 AND harness=$2', [input.resumeSessionId, input.harness]);
     if (!session.rowCount) throw new HttpError(409, 'unknown_session', 'This session is not recorded for this harness.');

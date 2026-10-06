@@ -1,0 +1,25 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-profiles
+
+ ✓ apps/server/src/conversations/conversations.test.ts (22 tests) 16878ms
+   ✓ projects only the exact final result and follows up on the same native session and runner  1604ms
+   ✓ pages immutable turns and returns long assistant content only through an owned lazy detail  622ms
+   ✓ rejects follow-up while queued, running, waiting, cancelling or uncertain without duplicating work  4319ms
+   ✓ keeps unknown-adapter unavailable instead of guessing from telemetry or a title  494ms
+   ✓ keeps missing-session unavailable instead of guessing from telemetry or a title  548ms
+   ✓ keeps missing-result unavailable instead of guessing from telemetry or a title  498ms
+   ✓ keeps ambiguous-result unavailable instead of guessing from telemetry or a title  498ms
+   ✓ keeps invalid-result unavailable instead of guessing from telemetry or a title  510ms
+   ✓ maps the actual Claude adapter final-result path through the runner using only an injected SDK  1080ms
+   ✓ never promotes retained artifacts belonging to a superseded attempt  432ms
+   ✓ leaves the effective model unknown when the session did not record one  496ms
+   ✓ prioritizes a typed final over artifacts and reports actual settings without overwriting unknown thinking  489ms
+   ✓ never falls back to a v1 artifact when a v2 attempt lacks its typed final  493ms
+   ✓ keeps a typed final pending until task success and deduplicates it through restart and replay  589ms
+   ✓ rejects foreign task/session/fence reports and confines each typed lazy reference to its bound turn  1117ms
+   ✓ does not reuse an old typed final after the current attempt binding changes  457ms
+   ✓ does not expose a reply when the actual adapter receives a non-success SDK result  535ms
+   ✓ keeps a corrupted typed body unavailable without falling back to its intact artifact  497ms
+   ✓ preserves null effective facts and exposes long typed content through its exact detail  435ms
+ ✓ apps/runner/src/runner.test.ts (25 tests) 1237ms
+   ✓ starts from environment configuration and stops cleanly on SIGTERM  377ms

@@ -1,4 +1,5 @@
-import { loadRunnerAdapters } from './configuration.js';
+import { loadRunnerConfiguration } from './configuration.js';
+import { guardExecutionProfile, publishExecutionProfile } from './execution-profiles.js';
 import { runRunner } from './runtime.js';
 import { loadProtocolEndpoints, runProtocolRunner } from './protocol-dispatch/index.js';
 
@@ -18,7 +19,12 @@ try {
   if (process.env.FLOW_A2A_ENDPOINTS_FILE) {
     await runProtocolRunner({ ...common, endpoints: await loadProtocolEndpoints(process.env.FLOW_A2A_ENDPOINTS_FILE) });
   } else {
-    await runRunner({ ...common, adapters: await loadRunnerAdapters(process.env.FLOW_CLAUDE_MATERIALS_FILE) });
+    const loaded = await loadRunnerConfiguration(process.env.FLOW_CLAUDE_MATERIALS_FILE);
+    const profile = loaded.profile;
+    const reference = profile ? await publishExecutionProfile({ ...common, configuration: profile }) : null;
+    const adapters = loaded.adapters.map(adapter => profile && reference && adapter.name === profile.harness
+      ? guardExecutionProfile(adapter, reference, profile) : adapter);
+    await runRunner({ ...common, adapters });
   }
 } catch {
   process.stderr.write('Runner stopped: check its configuration, center authentication and local event storage.\n');

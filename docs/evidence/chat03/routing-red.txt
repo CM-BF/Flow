@@ -1,0 +1,33 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-profiles
+
+ ❯ apps/server/src/execution-profiles/execution-profiles.test.ts (2 tests | 1 failed) 707ms
+   ✓ publishes an immutable configured profile without asserting provider availability or alias resolution 109ms
+   × pins a selected conversation to the configured runner and preserves that choice in the claimed task 32ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/execution-profiles/execution-profiles.test.ts > pins a selected conversation to the configured runner and preserves that choice in the claimed task
+AssertionError: expected 409 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 409
+
+ ❯ apps/server/src/execution-profiles/execution-profiles.test.ts:72:26
+     70|   await publish(runnerA, 'model-a'); const profileB = await publish(ru…
+     71|   const created = await request('/api/conversations', { title: 'Select…
+     72|   expect(created.status).toBe(201);
+       |                          ^
+     73|   expect(created.body.conversation.executionProfile).toEqual(profileB.…
+     74|   const admitted = await request(`/api/conversations/${created.body.co…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  21:00:23
+   Duration  1.05s (transform 148ms, setup 0ms, import 267ms, tests 707ms, environment 0ms)
