@@ -28,3 +28,7 @@
 - C2：生产App仅cookie入口，默认unsupported中心不能当Bearer fixture已有恢复支持；interface明确部署门槛。
 
 本安全点全部仍是源码修复+noEmit，单文件行为检查尚未执行。实际App auth/identity保持仍需后续browser验证。
+
+## R4-1 与首轮行为
+
+4ba固定20/20 direct PASS（受控IDB事件端口/public-client mock fetch），runner实际2.540秒、cleanup fulfilled；此轮不包含R4-1时序。随后binding DraftState显式绑定namespace，将commit得到的CAS version记录于该旧view状态，即使publicnamespace暂null；仍经current gate拒绝旧send，恢复授权只有用户明确操作可重试。新case控制auth=false/namespace=null→commit→同namespace reauth→旧port仍拒→新明确retry成功。跨namespace不借用版本；这项当前仅源码+types0，后继direct待fresh窗口。

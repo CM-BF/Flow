@@ -29,3 +29,7 @@ w01独立三项（原文及hash留early-peer-report.txt/source-manifest）：A a
 ## 2026-10-06 14:52 UTC — f13 修复安全点
 
 沿已读clean-code核错误处理和生命周期：open attempt与DB handle分离，失败只清本attempt；command authority首次await前固定，显式重试与自动继续分开；同key终态恢复复用原Outbox/Queue/Steer入口，不造第二decoder。只PUT目标记录，保全域预算/CAS同事务。记录root两P1/C1/C2+peer P2/P3+open P2均源码修正，未行为验；原82八项与f13报告原样保留。最新noEmit6.058s/exit0，累计40.603/60s，余19.397s。暂缓已批direct窗口等待X01实际结束回执，不把预计case数量当通过。
+
+## 2026-10-06 15:03 UTC — R4-1 与单文件检查
+
+Root固定4ba报告原样归档。首direct20/20，2.540秒、tmp9227B、清理无错误，全部mockIDB/mockfetch，不是真HTTP或浏览器。修复只在binding私有DraftState持有namespace/version，不从已撤权public identity判断成功commit是否发生；这只是CAS bookkeeping，不恢复授权/自动HTTP。新增精准auth-null用例，原跨中心/代际断言保留。完整Web noEmit6.059秒/0，累计46.662/60，余13.338；第二行为检查尚未执行。保原source-only review与原raw，不倒填首20case包含新修复。

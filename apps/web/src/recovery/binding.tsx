@@ -63,7 +63,7 @@ export function readRecoveryDraft(value: Json): CompleteDraft {
   return { steering, text: data.text, intent: data.intent as CompleteDraft["intent"], profile, projectId, projectTitle, knowledge, attachments };
 }
 interface DraftState {
-  lastData?: string; version: number; serial: number; savedSerial: number; chain: Promise<void>; error?: string;
+  namespace?: string; lastData?: string; version: number; serial: number; savedSerial: number; chain: Promise<void>; error?: string;
   handoff?: { data: Json; serial: number; domain: CommandRecord["domain"]; taskId?: string }; deferred?: Json;
 }
 interface RecoverySnapshot { open: boolean; records: readonly RecoveryRecord[]; loading: boolean; error?: string; saving: number }
@@ -103,15 +103,20 @@ export class RecoveryWorkspace {
   private uiAllowed() {
     return !this.session.signal.aborted && this.session.host.list().find(plugin => plugin.id === RECOVERY_OWNER)?.state === "active";
   }
-  private draft(viewKey: string) {
+  private draft(viewKey: string, namespace?: string) {
     let state = this.drafts.get(viewKey);
     if (!state) { state = { version: 0, serial: 0, savedSerial: 0, chain: Promise.resolve() }; this.drafts.set(viewKey, state); }
+    if (namespace) {
+      if (state.namespace && state.namespace !== namespace) throw new RecoveryError("conflict", "This view still retains draft state from another authenticated namespace.");
+      state.namespace = namespace;
+    }
     return state;
   }
   private enqueue(viewKey: string, data: Json): Promise<void> {
     const captured = this.current(), owner = captured.host.owner(viewKey), generation = captured.host.generation();
     if (!owner) throw new RecoveryError("unavailable", "The draft no longer belongs to this workspace.");
-    const state = this.draft(viewKey), serial = ++state.serial;
+    const capturedNamespace = namespaceKey(captured.namespace);
+    const state = this.draft(viewKey, capturedNamespace), serial = ++state.serial;
     const current = () => {
       const now = this.current(), currentOwner = now.host.owner(viewKey);
       if (now.host.generation() !== generation || namespaceKey(now.namespace) !== namespaceKey(captured.namespace) || currentOwner?.viewKey !== owner.viewKey || currentOwner.projectId !== owner.projectId)
@@ -121,10 +126,9 @@ export class RecoveryWorkspace {
     const run = async () => {
       current();
       const saved = await captured.host.journal.saveDraft(captured.namespace, owner, data, state.version);
-      // Commit can finish just before reauthentication. Remember its version only for this same
-      // namespace/view so a later explicit retry does not use the pre-commit CAS value.
-      const now = this.host(), identity = now?.namespace(), currentOwner = now?.owner(viewKey);
-      if (identity && namespaceKey(identity) === namespaceKey(captured.namespace) && currentOwner?.viewKey === owner.viewKey && currentOwner.projectId === owner.projectId) state.version = saved.version;
+      // The public namespace may already be null after revocation. This state belongs to the
+      // captured namespace, so retain its committed CAS version without restoring authorization.
+      if (this.drafts.get(viewKey) === state && state.namespace === capturedNamespace) state.version = saved.version;
       current();
       state.savedSerial = serial; state.error = undefined;
     };
@@ -237,7 +241,7 @@ export class RecoveryWorkspace {
       const live = (await host.journal.list(namespace)).find(item => item.id === record.id && item.version === record.version);
       const now = this.current();
       if (!live || !this.uiAllowed() || now.host.generation() !== generation || namespaceKey(now.namespace) !== namespaceKey(namespace)) throw Error("This recovery record changed. Refresh before acting.");
-      if (live.kind === "draft") this.draft(live.owner.viewKey).version = live.version;
+      if (live.kind === "draft") this.draft(live.owner.viewKey, live.namespace).version = live.version;
       this.restoring.add(live.owner.viewKey);
       try { await host.restore(live); } finally { this.restoring.delete(live.owner.viewKey); }
       const after = this.current(); if (after.host.generation() !== generation || namespaceKey(after.namespace) !== namespaceKey(namespace)) throw Error("This restore belongs to an older connection.");
@@ -254,7 +258,7 @@ export class RecoveryWorkspace {
       await this.refresh();
     } catch (error) { this.publish({ error: message(error) }); }
   }
-  adoptDraft(record: DraftRecord) { this.draft(record.owner.viewKey).version = record.version; }
+  adoptDraft(record: DraftRecord) { this.draft(record.owner.viewKey, record.namespace).version = record.version; }
   release(viewKey: string) { if (this.protection(viewKey).length) throw Error("This view still has an incomplete recovery checkpoint."); this.drafts.delete(viewKey); this.blockedCommands.delete(viewKey); }
   async flush() { await Promise.all([...this.drafts.values()].map(state => state.chain)); if ([...this.drafts.keys()].some(key => this.protection(key).length) || [...this.blockedCommands.values()].some(ids => ids.size)) throw Error("Some drafts are still only in this page. Keep it open or explicitly preserve that text before leaving."); }
   dispose() { this.closed = true; this.unsubscribeHost(); this.listeners.clear(); this.drafts.clear(); this.blockedCommands.clear(); }

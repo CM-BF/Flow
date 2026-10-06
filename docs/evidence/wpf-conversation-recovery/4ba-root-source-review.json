@@ -1,0 +1,83 @@
+{
+  "target": "4ba79ddbb9368dab8c75fca72fbd2425526f242f",
+  "reviewer": "root read-only independent source review",
+  "at": "2026-10-06T15:00:10.335973+00:00",
+  "execution": "NOT_RUN; source review is not real IDB/browser acceptance",
+  "files": [
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "433fb024d9012a1e64a170a638310978eb7aeee743d667f4005b3821b8f58e24",
+      "bytes": 21963
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "bytes": 21485
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+      "bytes": 69114
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "bytes": 8274
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "bytes": 8729
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "bytes": 28678
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "bytes": 16768
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "bytes": 24040
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "01216d648c226549c9a8b79410c597669dfec5f0c42c38cde43233f6b774c0c1",
+      "bytes": 16866
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "9d8c58b51fe2d5ce5e0e010f126b63e9688b34cf0440bc2f42faaaa69b3c2009",
+      "bytes": 24818
+    }
+  ],
+  "verifiedSourceFixes": [
+    "F13-1: command authority is captured synchronously before first draft-chain await, with generation checks at later boundaries.",
+    "F13-2: prior namespace/session/client tuple remains mounted but inactive, guarded before replacement; explicit discard is separate.",
+    "F13-3: failed/blocked open clears its own attempt; abandoned late success closes the old DB; superseded attempt cannot erase new one.",
+    "C1: restored command versions propagate through original controllers; delayed prepare rejects an advanced version.",
+    "Peer cached-knowledge: unverified restored citation bypasses body cache and performs fresh resolve.",
+    "Peer same-key terminal reconciliation: original outbox/queue/steer controllers now have identity-checked terminal paths, without POST."
+  ],
+  "findings": [
+    {
+      "id": "R4-1",
+      "priority": "P2",
+      "path": "apps/web/src/recovery/binding.tsx",
+      "lines": "128-133",
+      "title": "A draft commit finishing while public identity is revoked still loses its committed CAS version",
+      "evidence": "enqueue captures authorized namespace N and version 0, saveDraft commits version 1 while logout/offline/401 revokes authority. App recoveryHost.namespace() then returns null because ConnectionSession.authorized(N) is false. Post-commit update requires a non-null identity, so state.version remains 0; current() rejects, but durable draft is already version 1. Reauth of the same retained workspace and explicit retry uses stale expectedVersion 0 and repeatedly conflicts. Current same-namespace reauth test increments generation while namespace remains available and does not model this interval.",
+      "impact": "Explicit retry/saving can remain blocked after a valid reconnect, despite the original draft commit having succeeded. No data overwrite or automatic POST is claimed.",
+      "requested": "Retain successful version knowledge scoped to the captured workspace/namespace/view even during temporary auth loss; do not revive authorization or resume the old command. Add controlled commit-held -> public namespace null/auth false -> commit completes -> same namespace reauth -> explicit save/retry case, while cross-namespace case remains isolated."
+    }
+  ],
+  "remaining": [
+    "Controlled direct cases not yet executed.",
+    "Actual browser IDB/reopen/multitab/cookie/SSE and full App auth-loss draft retention are not proven.",
+    "Center-session three final semantics and production opt-in boundary remain."
+  ]
+}

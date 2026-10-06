@@ -68,10 +68,10 @@ function actions(recovery: AppActions["recovery"]): AppActions {
   return { recovery, knowsTask: () => false, task: () => null, hasDraft: () => true, openTask() {}, openWorkspace() {}, closeWorkspace() {}, loadReference: async () => {}, setTheme() {}, copy: async () => {} };
 }
 async function workspace(value: ConversationRecoveryJournal) {
-  let data = draft("original"), identity = ns, generation = 1;
-  const session = new AppPluginSession(actions({ journal: value, namespace: () => identity, authorized: () => true, generation: () => generation, owner: () => owner, draft: () => data, restore: async () => {}, retry: async () => {} }), themes[0]!);
+  let data = draft("original"), identity = ns, generation = 1, authorized = true;
+  const session = new AppPluginSession(actions({ journal: value, namespace: () => authorized ? identity : null, authorized: () => authorized, generation: () => generation, owner: () => owner, draft: () => data, restore: async () => {}, retry: async () => {} }), themes[0]!);
   cleanup.push(() => session.dispose()); await session.host.activate(RECOVERY_OWNER);
-  return { workspace: session.recovery, setDraft: (next: Json) => { data = next; }, reauthenticate: () => { generation++; }, switchCenter: () => { identity = { ...ns, centerId: uuid(20) }; generation++; } };
+  return { workspace: session.recovery, setDraft: (next: Json) => { data = next; }, revoke: () => { authorized = false; generation++; }, reauthenticate: () => { authorized = true; generation++; }, switchCenter: () => { identity = { ...ns, centerId: uuid(20) }; generation++; } };
 }
 
 describe("recovery storage barriers (controlled IDB event port)", () => {
@@ -119,6 +119,18 @@ describe("recovery storage barriers (controlled IDB event port)", () => {
     const store = new ConversationRecoveryJournal(factory); cleanup.push(() => store.close());
     await expect(store.list(ns)).rejects.toThrow("could not be opened"); expect(calls).toBe(1);
     expect(await store.list(ns)).toEqual([]); expect(calls).toBe(2);
+  });
+  it("remembers a committed draft version while the revoked public namespace is null, without resuming its send", async () => {
+    const { port, journal: store } = journal(), { workspace: binding, revoke, reauthenticate } = await workspace(store);
+    port.holdNextCommit = true; binding.beginHandoff(owner.viewKey, "queue");
+    const oldPort = binding.commandPort(owner.viewKey), preparing = oldPort.prepare(command);
+    const stopped = expect(preparing).rejects.toThrow(/authorize|Authentication|older connection/);
+    await vi.waitFor(() => expect(port.releases).toHaveLength(1)); revoke(); port.releases.shift()!(); await stopped;
+    expect(await store.list(ns)).toMatchObject([{ kind: "draft", version: 1, data: draft("original") }]);
+    reauthenticate(); await expect(oldPort.prepare({ ...command, explicitRetry: true })).rejects.toThrow("older connection");
+    expect((await store.list(ns)).filter(record => record.kind === "command")).toEqual([]);
+    await binding.commandPort(owner.viewKey).prepare({ ...command, explicitRetry: true });
+    expect((await store.list(ns)).filter(record => record.kind === "command")).toHaveLength(1);
   });
   it("closes abandoned blocked-open late success without replacing the newer database", async () => {
     const port = new TransactionPort(), close = vi.fn(); let calls = 0;
