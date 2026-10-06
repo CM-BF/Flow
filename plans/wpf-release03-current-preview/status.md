@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 17:33:12 UTC |
+| 最近更新时间 | 2026-10-06 17:36:43 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
@@ -21,7 +21,7 @@
 | 优先级 | 1 |
 | 当前产出 | 响应正文截断检查已通过源码审查，页面兼容仍待实测 |
 | 下一可用交付 | 在新受控窗口完成原键恢复与页面兼容验证 |
-| 当前阻塞 | ACTIVE: 新故障注入尚未执行；完整页面兼容仍待验 |
+| 当前阻塞 | ACTIVE: 本次运行资源不足，未启动；完整页面兼容仍待验 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；UNKNOWN：ef458双独立源码限定批准/0blocking，新运行未执行；原A通过/B失败保留，完整兼容未通过 |
 
@@ -126,3 +126,7 @@ B真实App plain Send省略材料字段与旧receipt路径已PASS；随后Files 
 ## 2026-10-06 17:33:12 UTC 双独立源码审查安全收口
 
 当前ef458已获root与workspace_panels_owner限定SOURCE批准，0blocking，[原报告与边界](review.md)。两源码固定未改；原43raw合464871B/history contract59cde不变。没有新增types/import/runtime/free/PG/Chrome；39935ms已用/140065ms剩余不变。下一B-only必须新协调窗口/fresh gate；不自动重试、不重跑A、不生成SVC绿报告。当前仅metadata正常提交/push，提交后双端clean另核。
+
+## 2026-10-06 17:36:43 UTC B1736未准入安全收口
+
+管理一次fresh于2026-10-06T17:35:43.958730+00:00观察free1,179,914,240B，低于start1,207,959,552B，差28,045,312B。原四scope/实际e223/ef458两源、backend/artifact/依赖/完整A proof原predicate通过，但没有gate；[准入原件](../../docs/evidence/wpf-release03/app2-admission-not-run-173543.json)。仅NOT_RUN_RESOURCE，非业务失败。窗口已归还，没有PG/Chrome/产品运行或本人新free采样，预算39935/180000ms、余140065ms不变，旧43raw保留。当前只归档metadata，源码冻结；不得复用本次准入或自动重试。

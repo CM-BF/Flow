@@ -47,3 +47,7 @@
 [管理fresh准入](history-admission-152729.json)、[本人live claim](history-owner-live-1527.json)、[完整结果索引](history-result-152729.json)。两项均按真实factory/client/HTTP执行，并各自保留上下文与wire，不因第一项失败跳过第二项。attachment-only的事件HTTP500；mixed的事件HTTP200但历史只标记知识sources，不能代表完整v2材料。A失败按固定入口停止，B/原key App retry/Queue均NOT_RUN，不能给正式前端与362整组背书。原raw不改，不追加自动重跑。
 
 当前候选新增app-only，不重复同输入已绿A；必须独立raw审查/freshgate，参见当前接口。原dbaa无B-only与003792闭包均为历史，不是当前准入示例。
+
+## B1736资源未准入
+
+[管理原件](app2-admission-not-run-173543.json)：17:35:43.958730Z free1,179,914,240 < start1,207,959,552B，gate=null，0运行/预算不变；所有非资源predicate通过。不是产品红，不授权重试。

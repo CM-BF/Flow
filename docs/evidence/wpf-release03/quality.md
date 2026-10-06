@@ -69,3 +69,7 @@
 ## 2026-10-06 17:33:12 UTC 限定独审归档clean-code
 
 原样归档root/peer固定ef458 source reviews，真实审查与未执行行为分别表示；顶层UNKNOWN避免将APPROVED_SOURCE_SCOPED错误映射成完整兼容批准。源码/manifest/raw/契约不改，只有自己metadata/原件副本。没有重复绿色检查、类型、资源采样或新运行；后继fresh gate仍由管理者负责。
+
+## 2026-10-06 17:36:43 UTC 未准入记录安全点
+
+原样归档管理fresh拒绝与无gate/0运行，不把共享空间变化归因本任务；源码/43raw/累计预算不改，不补跑检查或采样。仅own metadata正常提交/push；原SOURCE批准继续有效，完整兼容仍未验。
