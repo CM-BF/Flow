@@ -145,6 +145,31 @@ describe('fixed pagesize observations', () => {
     expect(fs.existsSync(path.join(fix.evidenceDirectory, 'slot-compile.json'))).toBe(true);
     expect(result.rootCleanupComplete).toBe(true);
   });
+  it('accounting delta: rejects a parseable truncated compiler prefix before helper startup', async () => {
+    const fix = fixture(), calls = [], fake = fakeCommand(calls);
+    const result = await runPagesize(args(fix), { now: () => 1000, rootBase: fix.root, command: async (...values) => {
+      const returned = await fake(...values);
+      return { ...returned, safe: { ...returned.safe, streams: { ...returned.safe.streams, stderr: { ...stream, truncated: true } } } };
+    } });
+    expect(calls).toHaveLength(1); expect(result.helperCalls).toBe(0); expect(result.compilerCommands).toBe(null);
+    expect(result.compilerOutputAccounting).toBe('unknown'); expect(result.outputAccountingComplete).toBe(false);
+    expect(fs.statSync(path.join(fix.evidenceDirectory, 'compiler.stderr')).size).toBeGreaterThan(0);
+  });
+  it('accounting delta: charges oversized closed stderr before bounded read and preserves its original', async () => {
+    const fix = fixture(), calls = [], fake = fakeCommand(calls); let compilerObserved = 0;
+    const result = await runPagesize(args(fix), { now: () => 1000, rootBase: fix.root, command: async (options, budget) => {
+      const returned = await fake(options, budget);
+      if (options.executable === toolchain.clang) compilerObserved = returned.stderr.length;
+      else fs.writeSync(options.stdio[2], Buffer.alloc(8193, 65));
+      return returned;
+    } });
+    expect(calls).toHaveLength(2); expect(result.targets[1].state).toBe('NOT_RUN');
+    expect(result.output.observedBytes).toBe(compilerObserved + 8193);
+    expect(result.targets[0].stderrClosedFileSampleBytes).toBe(8193);
+    expect(result.retainedRoots).toHaveLength(2); expect(result.outputAccountingComplete).toBe(false);
+    const original = result.descriptors.find(item => item.stdio && item.file.endsWith('stdio-2.file'));
+    expect(fs.statSync(original.file).size).toBe(8193);
+  });
   it('never invokes a command after the shared preparation deadline', async () => {
     const fix = fixture(), calls = [];
     const result = await runPagesize(args(fix), { now: () => 7000, command: fakeCommand(calls), rootBase: fix.root });

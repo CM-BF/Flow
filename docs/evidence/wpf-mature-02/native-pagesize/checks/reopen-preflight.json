@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-06T18:07:10.830527+00:00",
+  "head": "91b8be7d63d9f1f2bc74af34f66f9f803d36968c",
+  "claimVersion": 6,
+  "claimObservedAt": "2026-10-06T18:06:49.071Z",
+  "freeBytes": 1711628288,
+  "threshold": 1107296256,
+  "roots": [
+    {
+      "path": "/tmp/flow-wpf02-native-pagesize-vitest-cache",
+      "dev": 16777234,
+      "ino": 123118037,
+      "removed": false
+    },
+    {
+      "path": "/tmp/flow-wpf02-native-pagesize-check-tmp",
+      "dev": 16777234,
+      "ino": 123118038,
+      "removed": false
+    }
+  ],
+  "inputs": [
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/host.mjs",
+      "bytes": 17594,
+      "sha256": "3b2d77d99b8e091036e6479ada41012ce9e0d8a2e5b63dd6ca7d8a056bc0fa11"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/host.test.ts",
+      "bytes": 10653,
+      "sha256": "9778b824faceb9565b4a28792b74979bd399b8d5e2e1365b7a64ecbf7e6bc290"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/execute-reviewed.mjs",
+      "bytes": 4518,
+      "sha256": "a7bde140102f01982c81e5b221986b9b2ec7cd254217e1be57d2dff289e51c68"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/execute-window.sh",
+      "bytes": 2993,
+      "sha256": "e60e6c220f9575fa96fab13a22b99afcb76f4dd4155783e18b949b2e3a618da4"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/vitest.config.mjs",
+      "bytes": 404,
+      "sha256": "da422d40b8ad13848b3b3dbfeb928c68b8c8cc6697d7557a9a6d950a3409d7b8"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/pagesize.c",
+      "bytes": 2823,
+      "sha256": "c542ac2ca2ffc7e6af8c746088e2dee62da3ac9e32e71ac952d3c582dd6d878a"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/baseline.sb",
+      "bytes": 16939,
+      "sha256": "ea86f69fce19598ead57aa33e38d0782f7d766cd9909109dbfbb67cfdd946ae4"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/native-pagesize/pagesize.sb",
+      "bytes": 17058,
+      "sha256": "710b18475f41697b96892be1873ce64da9e81a721bdff9078ba2e2b9a6fb423c"
+    }
+  ],
+  "commands": [
+    [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+      "run",
+      "--configLoader",
+      "native",
+      "--config",
+      "experiments/codex-app-server-conformance/native-pagesize/vitest.config.mjs",
+      "--maxWorkers",
+      "1",
+      "--reporter=verbose"
+    ],
+    [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--experimental-transform-types",
+      "--input-type=module",
+      "-e",
+      "import cp from 'node:child_process';import net from 'node:net';import{syncBuiltinESMExports}from'node:module';let spawn=0,listeners=0;cp.spawn=()=>{spawn++;throw Error('forbidden')};net.createServer=()=>{listeners++;throw Error('forbidden')};syncBuiltinESMExports();await import('./experiments/codex-app-server-conformance/native-pagesize/execute-reviewed.mjs');if(spawn||listeners)throw Error('not inert');console.log(JSON.stringify({inert:true,spawn,listeners}));"
+    ],
+    [
+      "/bin/sh",
+      "-n",
+      "experiments/codex-app-server-conformance/native-pagesize/execute-window.sh"
+    ]
+  ],
+  "limits": {
+    "totalSeconds": 30,
+    "rawBytes": 16384,
+    "temporaryBytes": 33554432
+  },
+  "expectedSelected": 10,
+  "actualDiagnosticTargets": 0
+}

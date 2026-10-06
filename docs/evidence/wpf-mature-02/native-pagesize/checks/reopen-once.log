@@ -1,0 +1,25 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities
+
+ ✓ experiments/codex-app-server-conformance/native-pagesize/host.test.ts > fixed pagesize observations > accepts complete negative queries without converting them into helper failure 1ms
+ ✓ experiments/codex-app-server-conformance/native-pagesize/host.test.ts > fixed pagesize observations > keeps positive values and diagnostic errno separately, including pthread 0ms
+ ✓ experiments/codex-app-server-conformance/native-pagesize/host.test.ts > fixed pagesize observations > rejects a stale identity, extra fields, incomplete report and inconsistent direct value 3ms
+ ✓ experiments/codex-app-server-conformance/native-pagesize/host.test.ts > fixed pagesize observations > runs one fake compiler then A/B only, with the same binary and regular descriptors 73ms
+ ✓ experiments/codex-app-server-conformance/native-pagesize/host.test.ts > fixed pagesize observations > stops after A close unknown, preserves exact roots and never enters B 52ms
+ ✓ experiments/codex-app-server-conformance/native-pagesize/host.test.ts > fixed pagesize observations > preserves compiler roots when compiler diagnostic persistence fails 38ms
+ ✓ experiments/codex-app-server-conformance/native-pagesize/host.test.ts > fixed pagesize observations > keeps original stderr/root when the diagnostic copy write fails 56ms
+ ✓ experiments/codex-app-server-conformance/native-pagesize/host.test.ts > fixed pagesize observations > returns known identities and target counts when final result persistence fails 54ms
+stdout | experiments/codex-app-server-conformance/native-pagesize/host.test.ts
+{"fixtureCount":7,"fixtures":[{"path":"/tmp/flow-wpf02-native-pagesize-check-tmp/flow-pagesize-fake-ROBGtC","dev":16777234,"ino":123118040,"removed":true},{"path":"/tmp/flow-wpf02-native-pagesize-check-tmp/flow-pagesize-fake-vCl5rC","dev":16777234,"ino":123118078,"removed":true},{"path":"/tmp/flow-wpf02-native-pagesize-check-tmp/flow-pagesize-fake-F9adV5","dev":16777234,"ino":123118108,"removed":true},{"path":"/tmp/flow-wpf02-native-pagesize-check-tmp/flow-pagesize-fake-Vpaysf","dev":16777234,"ino":123118132,"removed":true},{"path":"/tmp/flow-wpf02-native-pagesize-check-tmp/flow-pagesize-fake-GRIHJh","dev":16777234,"ino":123118163,"removed":true},{"path":"/tmp/flow-wpf02-native-pagesize-check-tmp/flow-pagesize-fake-pylDFt","dev":16777234,"ino":123118192,"removed":true},{"path":"/tmp/flow-wpf02-native-pagesize-check-tmp/flow-pagesize-fake-hQY1zM","dev":16777234,"ino":123118213,"removed":true}]}
+
+ ✓ experiments/codex-app-server-conformance/native-pagesize/host.test.ts > fixed pagesize observations > consumes a slot but starts no command when its fsync crosses the common cutoff 47ms
+ ✓ experiments/codex-app-server-conformance/native-pagesize/host.test.ts > fixed pagesize observations > never invokes a command after the shared preparation deadline 33ms
+
+ Test Files  1 passed (1)
+      Tests  10 passed (10)
+   Start at  11:07:11
+   Duration  501ms (transform 43ms, setup 0ms, import 57ms, tests 374ms, environment 0ms)
+
+{"inert":true,"spawn":0,"listeners":0}
+(node:1476) ExperimentalWarning: Transform Types is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)

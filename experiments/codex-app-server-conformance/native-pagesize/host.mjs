@@ -53,6 +53,7 @@ export async function runPagesize({ sourceDirectory, evidenceDirectory, toolchai
     roots, descriptors, compilerCommands: null, compilerOutputAccounting: 'unknown', measurementComplete: false,
     processCleanupComplete: true, rootCleanupComplete: false, retainedRootsComplete: true, retainedRoots: [],
     outputAccountingComplete: false, resultPersisted: false, withinBudget: false,
+    regularStdioMeasurement: 'closed-file-size-samples; cumulative wire bytes unknown',
     unobservedFilesystemWriteDeletePeak: 'unknown', observedScope: 'received compiler streams and closed owned filesystem samples', output };
   let stage = 'reservation', writersClosed = true, inventoryComplete = false, descriptorsClosed = true, diagnosticCopyComplete = true;
   const knownBytes = () => output.preparedBytes + output.observedBytes + output.diskBytes + output.receiptBytes;
@@ -177,12 +178,11 @@ export async function runPagesize({ sourceDirectory, evidenceDirectory, toolchai
         '-isysroot', toolchain.sdk, '-arch', 'arm64', '-mmacosx-version-min=15.0', path.join(control, 'pagesize.c'), '-o', binary] });
     stage = 'compiler-stream-persistence'; diagnosticCopyComplete = false;
     write(path.join(evidenceDirectory, 'compiler.stdout'), compiled.stdout); write(path.join(evidenceDirectory, 'compiler.stderr'), compiled.stderr); diagnosticCopyComplete = true;
-    if (!writersClosed) fail();
+    stage = 'compiler-health'; if (!healthy(compiled.safe)) fail();
     stage = 'compiler-inventory'; const artifacts = inventory();
     result.compilerCommands = compilerInventory(compiled.stderr, control, artifacts, toolchain.clang, toolchain.linker);
     result.compilerOutputAccounting = 'visible-owned-files-and-verbose-outputs';
     write(path.join(evidenceDirectory, 'compiler-inventory.json'), { commands: result.compilerCommands, artifacts }, 'receipt');
-    stage = 'compiler-health'; if (!healthy(compiled.safe)) fail();
     const executable = artifacts.find(item => item.path === binary);
     if (!executable || executable.bytes < 1 || executable.bytes > 262144) fail(); result.binary = executable;
     for (const [index, arm, policy] of [[0, 'a', 'baseline.sb'], [1, 'b', 'pagesize.sb']]) {
@@ -196,14 +196,18 @@ export async function runPagesize({ sourceDirectory, evidenceDirectory, toolchai
       for (const item of stdio) { try { io.closeSync(item.fd); item.closed = true; } catch { descriptorsClosed = false; } item.closeAttempted = true; }
       if (!writersClosed || !descriptorsClosed) fail();
       inventory(); // No target is alive while its directories or regular stdio are read.
+      diagnosticCopyComplete = false;
       for (const [name, item] of [['stdout', stdio[1]], ['stderr', stdio[2]]]) {
-        if (!same(io.lstatSync(item.file), item.identity)) fail();
-        const bytes = read(item.file, 8192); output.observedBytes += bytes.length; if (!fits(0)) fail();
-        result.targets[index][`${name}Bytes`] = bytes.length;
+        const stat = io.lstatSync(item.file);
+        if (!same(stat, item.identity) || !stat.isFile() || !Number.isSafeInteger(stat.size) || stat.size < 0) fail();
+        output.observedBytes += stat.size; result.targets[index][`${name}ClosedFileSampleBytes`] = stat.size;
+        if (!fits(0)) fail();
+        const bytes = read(item.file, 8192); if (bytes.length !== stat.size) fail();
         if (name === 'stderr') {
-          diagnosticCopyComplete = false; write(path.join(evidenceDirectory, `helper-${arm}.stderr`), bytes); diagnosticCopyComplete = true;
+          write(path.join(evidenceDirectory, `helper-${arm}.stderr`), bytes);
         }
       }
+      diagnosticCopyComplete = true;
       if (!healthy(observed.safe)) fail();
       result.targets[index].report = decodePagesizeReport(read(reportFile, 2048), nonce, observed.safe.pid);
       result.targets[index].state = 'REPORTED';
@@ -224,7 +228,7 @@ export async function runPagesize({ sourceDirectory, evidenceDirectory, toolchai
     result.retainedRoots = roots.filter(root => !root.removed).map(root => ({ path: root.path, identity: root.identity }));
     result.rootCleanupComplete = writersClosed && descriptorsClosed && diagnosticCopyComplete && result.retainedRoots.length === 0;
   }
-  result.outputAccountingComplete = writersClosed && descriptorsClosed && inventoryComplete
+  result.outputAccountingComplete = writersClosed && descriptorsClosed && inventoryComplete && diagnosticCopyComplete
     && (result.compileCalls === 0 || result.compilerOutputAccounting === 'visible-owned-files-and-verbose-outputs');
   result.elapsedBeforePersistenceMs = now();
   try { write(path.join(evidenceDirectory, 'batch-result.json'), result, 'receipt'); result.resultPersisted = true; }
