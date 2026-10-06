@@ -20,3 +20,7 @@ Review target commit：9aa790552cb8847d6feb8c8f90c870407a54e572。现场clean129
 批准范围为**单个受管runner的本机预览更新**，不是多runner整个center停机安全。真实窗口前必须核全DB无其他runner未完成attempt、无其他活动runner部署；若存在或不确定，保留关闭并升级协调，不能只凭本runner计数0就停center。快照不是锁，也不能由idle=0推断其他部署离线。
 
 作者回应：不改变已审源码、不重跑；只把此边界登记到status/证据/部署提案。真实部署仍等已审main、当时任务事实和Root明确窗口；61227/61228未操作。
+
+## 新维护窗口准备（2026-10-06 07:33 UTC）
+
+原工具APPROVED9aa保持；本次assignment_review只准备b54更新，产品对253b、维护工具/领域对9aa零差异，证据绑定[manifest](../../docs/evidence/svc02/refresh-b54-manifest.json)。固定源码/原始快照/单runner边界见[方案](../../docs/evidence/svc02/refresh-b54-proposal.md)。本次操作窗口和resume均NOT_GRANTED，不以工具原批准代替部署许可；未重跑产品测试或调用provider。

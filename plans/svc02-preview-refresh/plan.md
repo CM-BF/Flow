@@ -20,7 +20,7 @@
 - [x] SVC02-02：受信本机bootstrap/drain/refresh/resume入口与私有持有校验。
 - [x] SVC02-03：专库/动态端口0模型行为检查，失败保门与清理，固定证据。
 - [x] SVC02-04：独立review、main接收与原fb906真实部署窗口。
-- [ ] SVC02-05：本次253b新领取、只读fresh facts与新窗口方案。
+- [x] SVC02-05：本次新领取、只读fresh facts与新窗口方案；精确b54产品等价253b。
 - [ ] SVC02-06：另经GO新窗口批准后drain→hold→refresh→fresh验证，失败保暂停/unknown。
 - [ ] SVC02-07：上述验证后另获GO显式resume，记录数据保留/恢复事实。
 
@@ -41,3 +41,5 @@
 2026-10-06 06:53:51 UTC：已核实现进入main/origin 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a，剩余owner实现范围零diff；运行安装仍fb906cb accepting，Lead交接确认后续2个任务已验收成功。本次不探测服务、不刷新、不新增模型；历史0任务仅当时部署证据。任务已完成，停止写入并于metadata提交后释放剩余claim，后续部署按新窗口/新take管理。
 
 2026-10-06 07:27 UTC：复用原任务和已审工具，新owner受控ff原树至253b8ad38fd869297e7d9948a26c1d310fef5c6c。原实现completed不变，新增三条操作TODO；当前只读准备，不用旧窗口授权，不实施child任务或模型试验。
+
+2026-10-06 07:33 UTC：准备交付，固定b54、工具对9aa零diff，0服务操作/0query。现态与限制见[新方案](../../docs/evidence/svc02/refresh-b54-proposal.md)。SVC02-06/07仍pending，原四项已交付不改成未实现。
