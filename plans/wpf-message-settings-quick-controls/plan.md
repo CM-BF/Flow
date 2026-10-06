@@ -19,8 +19,8 @@ Picker 每次打开建立独立私有存活标记；关闭、取消、详情导�
 ## TODO
 
 - [x] MSGQUICK-01：核准确 worktree、base、live claim，建立唯一三件套与本地技能记录。
-- [ ] MSGQUICK-02：快速选择、合法 tuple 投影与 ownership/opening 双层失效实现。
-- [ ] MSGQUICK-03：新增直接/fixture/browser 回归源码与精确只读依赖验证提案。
+- [x] MSGQUICK-02：快速选择、合法 tuple 投影与 ownership/opening 双层失效实现。
+- [x] MSGQUICK-03：新增直接/fixture/browser 回归源码与精确只读依赖验证提案。
 - [ ] MSGQUICK-04：获准后运行必要检查，固定实现/manifest、独立审查。
 - [ ] MSGQUICK-05：正式主线接收并收口；TODO-11 真实宿主接线另列后继。
 
