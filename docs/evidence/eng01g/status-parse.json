@@ -21,13 +21,13 @@
   },
   "human": {
     "delivery": {
-      "state": "review",
+      "state": "integration",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 1,
-    "output": "工程写入组合与现有原生消息处理已完成局部验证",
-    "next": "独立审查受限文件写入组合与未知结果保护",
+    "output": "工程写入组合已通过局部验证和独立审查",
+    "next": "集成受限文件写入组合与未知结果保护",
     "blocker": {
       "state": "none",
       "text": ""
@@ -60,8 +60,8 @@
   "owner": "native_center_owner / gpt-6-astra",
   "branch": "codex/engineering-native-writer",
   "branchState": "in-progress",
-  "updatedAt": "2026-10-06T12:24:45.000Z",
-  "updatedRecord": "2026-10-06 12:24:45 UTC",
+  "updatedAt": "2026-10-06T12:27:33.000Z",
+  "updatedRecord": "2026-10-06 12:27:33 UTC",
   "todos": [
     {
       "id": "ENG01G-01",
@@ -85,7 +85,7 @@
       "id": "ENG01G-04",
       "state": "pending",
       "owner": "native_center_owner",
-      "evidence": "独审/main未完成"
+      "evidence": "独审APPROVED；main未完成"
     }
   ],
   "errors": [],
@@ -96,7 +96,7 @@
     "target": "8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
     "record": "PASSED 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d；105 distinct分轮，types0；[manifest](../../docs/evidence/eng01g/fixed-manifest.json)"
   },
-  "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+  "reviewRecord": "[review.md](review.md)，APPROVED 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d",
   "mainRecord": "ENG01G未集成；base含已审ENG01F",
   "next": "",
   "risks": "",
