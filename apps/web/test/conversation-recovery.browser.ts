@@ -4,7 +4,7 @@ import { writeFileSync } from "node:fs";
 import { readFile, writeFile, readdir, lstat, statfs, mkdir, mkdtemp, rm, appendFile, realpath } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import type { Browser, Page, Request, Response } from "@playwright/test";
+import type { Browser, Locator, Page, Request, Response } from "@playwright/test";
 import type { RecoveryDatabaseLease, RecoveryWire, startRecoveryFixture } from "./conversation-recovery.fixture";
 
 // Only built-ins are loaded by the parent before fresh admission, monitoring and durable ownership facts.
@@ -378,6 +378,18 @@ async function worker(init: Init) {
       expect(fixture!.wire.some(row => row.path === "/api/browser-session" && row.cookie && !row.bearer && row.status === 200)).toBe(true);
     });
     let draftId = "";
+    const originalDraftRow = async (dialog: Locator) => {
+      expect(draftId).toMatch(/^draft:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i);
+      const row = dialog.locator(`[data-recovery-record-id="${draftId}"]`);
+      await expect(row).toHaveCount(1);
+      await expect(row).toContainText("Saved draft");
+      await expect(row).toContainText(`conversation:${fixture!.conversationId}`);
+      await expect(row).toContainText("Original recovery draft 中文🙂");
+      await expect(row).toContainText("Queue next");
+      await expect(row).toContainText("Files: 2");
+      await expect(row.locator("time")).toHaveCount(1);
+      return row;
+    };
     await run("text, intent and exact file reference survive reload and explicit restore without mutation", "textIntentDraft", async () => {
       const files = page.locator("[data-composer-view]").getByRole("button", { name: "Files", exact: true }).filter({ visible: true });
       await files.click();
@@ -395,7 +407,7 @@ async function worker(init: Init) {
       expect(saved.data?.attachments).toHaveLength(2);
       const contentReads = () => fixture!.wire.filter(row => /\/attachments\/.*\/content/.test(row.path)).length;
       const bodiesBefore = contentReads(), posts = postRows().length; await page.reload(); await expect(input()).toBeVisible();
-      const dialog = await openRecovery(), row = dialog.locator("li").filter({ hasText: "Saved draft" }).filter({ hasText: `conversation:${fixture!.conversationId}` });
+      const dialog = await openRecovery(), row = await originalDraftRow(dialog);
       await row.getByRole("button", { name: "Restore without sending", exact: true }).click(); await page.keyboard.press("Escape");
       await expect(input()).toHaveValue("Original recovery draft 中文🙂"); await expect(page.getByRole("radio", { name: "Queue next", exact: true })).toBeChecked(); expect(postRows()).toHaveLength(posts);
       const composerFiles = input().locator("xpath=ancestor::form").locator(".aui-composer-attachments .aui-attachment-root");
@@ -438,7 +450,7 @@ async function worker(init: Init) {
     await run("two actual tabs cannot overwrite the same restored draft version", "crossTabCas", async () => {
       const other = await context.newPage(); other.setDefaultTimeout(4500); other.on("pageerror", pageError);
       await other.goto(fixture!.url + `#conversation=${fixture!.conversationId}`); await expect(input(other)).toBeVisible();
-      const dialog = await openRecovery(other); await dialog.locator("li").filter({ hasText: "Saved draft" }).filter({ hasText: `conversation:${fixture!.conversationId}` }).getByRole("button", { name: "Restore without sending", exact: true }).click(); await other.keyboard.press("Escape");
+      const dialog = await openRecovery(other), row = await originalDraftRow(dialog); await row.getByRole("button", { name: "Restore without sending", exact: true }).click(); await other.keyboard.press("Escape");
       await page.bringToFront(); await input().fill("Tab A protected draft"); await expect.poll(async () => (await records(page)).find(record => record.id === draftId)?.data?.text).toBe("Tab A protected draft");
       await other.bringToFront(); await input(other).fill("Tab B conflict stays local"); await expect(other.getByRole("alert").filter({ hasText: "another tab" }).first()).toBeVisible();
       expect((await records(page)).find(record => record.id === draftId)?.data?.text).toBe("Tab A protected draft"); await other.close(); await page.bringToFront();

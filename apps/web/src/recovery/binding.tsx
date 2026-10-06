@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
 import type { PluginDefinition } from "../plugins/types";
 import type { AppPluginSession } from "../plugin-integration/session";
 import { configuredSelection, legacyDefaultSelection, readDirectoryProfile, type ProfileSelection } from "../execution-profiles/selection";
@@ -292,6 +292,16 @@ export class RecoveryWorkspace {
       dismiss: id => bound().dismiss(id),
     };
   }
+  /** A modal's external invoker may only regain focus in the same authorized generation. */
+  captureFocusPermission(): () => boolean {
+    try {
+      const { host, namespace } = this.current(), key = namespaceKey(namespace), generation = host.generation();
+      return () => {
+        try { const now = this.current(); return now.host.generation() === generation && namespaceKey(now.namespace) === key; }
+        catch { return false; }
+      };
+    } catch { return () => false; }
+  }
   async open() { if (!this.uiAllowed()) throw Error("Recovery is disabled in this workspace."); this.publish({ open: true }); await this.refresh(); }
   close() { this.publish({ open: false }); }
   async refresh() {
@@ -403,12 +413,51 @@ export function createRecoveryPlugin(workspace: RecoveryWorkspace): PluginDefini
     contributions: [{ kind: "button", id: RECOVERY_PANEL, slot: "sidebar.footer", title: "Saved drafts and receipts", commandId: RECOVERY_OPEN }] },
     load: async () => ({ activate(context) { context.command(RECOVERY_OPEN, { parse: () => null, run: () => workspace.open() }); } }) };
 }
+function draftPreview(value: unknown): string {
+  if (typeof value !== "string") return "Draft text unavailable";
+  let preview = "", length = 0;
+  for (const character of value) {
+    if (length === 120) return preview.trim() ? `${preview.trim()}…` : "Blank text preview…";
+    preview += /[\s\p{Cc}\p{Cs}]/u.test(character) ? " " : character;
+    length++;
+  }
+  return preview.trim() || "No text";
+}
+function RecoveryDraftSummary({ record }: { record: DraftRecord }) {
+  const data = record.data && typeof record.data === "object" && !Array.isArray(record.data) ? record.data as Record<string, unknown> : {};
+  const intent = data.intent === "queue" ? "Queue next" : data.intent === "follow-up" ? "Send now" : "Delivery choice unavailable";
+  const count = (value: unknown) => Array.isArray(value) && value.length <= 4 ? value.length : "unknown";
+  const saved = Number.isSafeInteger(record.updatedAt) && record.updatedAt >= 0 && record.updatedAt <= 8_640_000_000_000_000
+    ? new Date(record.updatedAt).toISOString() : null;
+  return <div className="space-y-1 text-sm">
+    <p className="[overflow-wrap:anywhere]" dir="auto">{draftPreview(data.text)}</p>
+    <p>{intent} · Files: {count(data.attachments)} · Knowledge: {count(data.knowledge)}</p>
+    <p className="text-muted-foreground">Saved on this device: {saved ? <time dateTime={saved}>{saved.replace("T", " ").replace("Z", " UTC")}</time> : "Time unavailable"}</p>
+  </div>;
+}
 export function RecoverySurface({ workspace }: { workspace: RecoveryWorkspace }) {
   const state = useSyncExternalStore(workspace.subscribe, workspace.getSnapshot);
-  return <Dialog open={state.open} onOpenChange={open => { if (!open) workspace.close(); }}><DialogContent className="max-h-[85dvh] overflow-y-auto"><DialogHeader><DialogTitle>Saved drafts and receipts</DialogTitle><DialogDescription>Records belong to this authenticated center and owner. Restoring never sends a command automatically.</DialogDescription></DialogHeader>
+  const invoker = useRef<{ element: HTMLElement; allowed: () => boolean } | null>(null);
+  useEffect(() => () => { invoker.current = null; }, [workspace]);
+  return <Dialog open={state.open} onOpenChange={open => { if (!open) workspace.close(); }}><DialogContent className="max-h-[85dvh] overflow-y-auto"
+    onOpenAutoFocus={() => {
+      const element = document.activeElement;
+      invoker.current = element instanceof HTMLElement ? { element, allowed: workspace.captureFocusPermission() } : null;
+    }}
+    onCloseAutoFocus={event => {
+      event.preventDefault();
+      if (workspace.getSnapshot().open) return;
+      const saved = invoker.current; invoker.current = null;
+      if (!saved?.allowed() || !saved.element.isConnected || saved.element.ownerDocument.visibilityState !== "visible") return;
+      const element = saved.element;
+      if (element.matches(":disabled, [aria-disabled='true']") || element.closest("[hidden], [inert], [aria-hidden='true']") || !element.getClientRects().length || getComputedStyle(element).visibility !== "visible") return;
+      element.focus({ preventScroll: true });
+    }}><DialogHeader><DialogTitle>Saved drafts and receipts</DialogTitle><DialogDescription>Records belong to this authenticated center and owner. Restoring never sends a command automatically.</DialogDescription></DialogHeader>
     <Button disabled={state.loading} onClick={() => { void workspace.refresh(); }}>Refresh saved records</Button>
     {state.error && <p role="alert">{state.error}</p>}{state.saving > 0 && <p role="status">Saving local drafts…</p>}
-    <ul className="space-y-3">{state.records.map(record => <li key={record.id} className="rounded border p-3"><p>{record.kind === "draft" ? "Saved draft" : `${record.domain} receipt · ${record.phase}`} · {record.owner.routeId}</p>
+    <ul className="space-y-3">{state.records.map(record => <li key={record.id} data-recovery-record-id={record.id} className="min-w-0 space-y-2 rounded border p-3"><p className="[overflow-wrap:anywhere]">{record.kind === "draft" ? "Saved draft" : `${record.domain} receipt · ${record.phase}`} · {record.owner.routeId}</p>
+      {record.kind === "draft" ? <RecoveryDraftSummary record={record} /> : null}
+      <details className="text-sm"><summary>Local record identity</summary><p className="[overflow-wrap:anywhere]"><code>{record.id}</code></p></details>
       <Button variant="outline" onClick={() => { void workspace.restore(record); }}>Restore without sending</Button>
       {record.kind === "command" && !["accepted", "rejected"].includes(record.phase) && <Button variant="outline" onClick={() => { void workspace.restore(record, true); }}>Retry original request</Button>}
       {(record.kind === "draft" || ["accepted", "rejected"].includes(record.phase)) && <Button variant="ghost" onClick={() => { void workspace.dismiss(record); }}>Remove saved record</Button>}
