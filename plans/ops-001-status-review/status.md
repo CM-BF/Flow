@@ -215,3 +215,5 @@ Web消息设置349精确tracked输入（逻辑约2.97MB）已将唯一新路径 
 2026-10-06 18:38 UTC：短源码窗口18:34:03固定362，18:36:52恢复main ec5 clean，refs未移动、依赖未改。GO授权下唯一operator一次Web bootstrap，中心/runner/DB/pointer保持；原外层ps空白误判证据保留，正式身份helper确认后才继续。新页面发布与本次恢复分开，不重复模型或产品矩阵。源窗口见[I02记录](../../docs/evidence/i02/svc05h-same-web-source-window.json)。
 
 2026-10-06T18:43:26.218360Z：按S01唯一request固定8d84逐Git blob供应57源码+4元数据，共284,628B，供给在私有临时目录由合法owner复制归档；没有触其dirty源码、安装、import或PG。实际free1,577,123,840→1,576,652,800B仅本次共享卷观察，不作后续窗口准入。见[精确供给](../../docs/quality/sparse-worktree-2026-10-06/s01-idle-fixed-source-receipt.json)。Web仍持唯一PG/Chrome窗口，R01/O16源实现并行。
+
+2026-10-06T18:46:29.411800Z：Web以权威 web-validation-window-return-1845.json 明确归还，Recovery原浏览器专库/Chrome/worker已清理，后续受控38和设置37均无PG/Chrome且已清理；不把局部通过当浏览器修复已验。当前共享重运行窗口无holder，R01候选待固定独审，O16仍源准备。18:48:22供给DPERF05精确10固定源码79,472B，du108KiB，主树/sharedconfig不变；新leaf需Web原子take，见[记录](../../docs/quality/sparse-worktree-2026-10-06/dperf05-source-provision.json)。本供给未安装/import/test/PG，实际空间不用于后续免fresh准入。
