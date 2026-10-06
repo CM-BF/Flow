@@ -14,7 +14,7 @@
 | 检查状态 | PASSED 3c9952583fa6b3413f76bdcb8a8c33b52c984fb1；6个guard/checkpoint行为检查，1条实际App最终旅程；[checks](../../docs/evidence/chatui01/run-2026-10-06T08-46-06.332Z-8c1e338d/checks.json) |
 | 已集成main状态 / HEAD | 未集成；main核验7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 |
 | 实现目标 | 3c9952583fa6b3413f76bdcb8a8c33b52c984fb1 |
-| 实现范围 | experiments/stream-ui-acceptance、plans/chatui01-stream-acceptance、docs/evidence/chatui01 |
+| 实现范围 | experiments/stream-ui-acceptance, plans/chatui01-stream-acceptance, docs/evidence/chatui01 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 已用真实聊天页面验证逐段增长、最终回复和草稿保留，准备独立审查。 |
