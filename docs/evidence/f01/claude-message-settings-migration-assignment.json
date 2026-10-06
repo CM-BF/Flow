@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-10-06T16:01:02.396616+00:00",
+  "migration": "packages/storage/migrations/032-claude-message-settings.sql",
+  "taskId": "WPF-MATURE-02-CORE",
+  "owner": "status_read",
+  "coLead": "mika",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+  "claimId": "c652bc61-f8a9-4848-a709-978adbb425ed",
+  "version": 3,
+  "claimedAt": "2026-10-06T15:50:24.492Z",
+  "observedAt": "2026-10-06T15:59:41.005Z",
+  "status": "RESERVED_AND_ATOMICALLY_CLAIMED",
+  "boundaries": [
+    "031 remains O15; 030 existing main.",
+    "Only new module migration; shared factory/client/export remain F01 separately.",
+    "No personal DB, PG execution, provider call or full module approval implied."
+  ]
+}

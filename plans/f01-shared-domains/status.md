@@ -214,3 +214,5 @@
 ## 2026-10-06 15:31 数据库准入未运行
 
 Web A-only 实际结束并正常清理后，fresh free1,098,022,912B低于1GiB+32MiB。未启动测试/数据库，窗口立即交回；不降原门槛、不重跑绿项。[真实准入记录](../../docs/evidence/f01/goal-progression-production-admission-not-run.json)。薄client已审进入mainfb9，3源同target逐字相同：[main回执](../../docs/evidence/f01/goal-progression-client-main-receipt.json)。个人服务保持362/v15。
+
+2026-10-06 16:01 UTC：消息设置032已分配并由Mika唯一writer原子领取v3；[固定账本观察](../../docs/evidence/f01/claude-message-settings-migration-assignment.json)。031仍为O15，030既有；本次只关闭DDL归属依赖，不表示生产挂载/PG已验，也不修改个人数据库。
