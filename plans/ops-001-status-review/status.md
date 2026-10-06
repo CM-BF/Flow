@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 22:22:27 UTC / mainfc3246b3（个人窗口已关闭） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 22:44:13 UTC / main60ca1942 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；三项后端最小源码供给完成，固定22a各树clean，等待owner原子领取 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/originfc3246b3已接个人发布、监督模块和首个实际消费者限定独审证据；实际backend af51 accepting v18、Web d629 v3，与源码main分开。 |
+| 已集成main状态 / HEAD | main/origin60ca1942已接完整原文任务登记，dashboard180源；个人实际backend af51 accepting v18、Web d629 v3，与源码main分开。 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 个人后台与新版网页已更新，原数据和旧网页资源保留；正在回收已结束工作的可恢复副本，恢复后续验证余量。 |
-| 下一可用交付 | 恢复足够磁盘余量后验证事务连接修复，再接终端与网页双端接续；监督模块与首个实际恢复包装器已审进主线。 |
-| 当前阻塞 | ACTIVE: 22:19样本开始观察约1.113GB可用，仍低于共享PG/浏览器验证门槛；完整后台固定产物仍需2.5GiB。个人发布旧intent已解除，其他检查按真实增量单独准入。 |
+| 当前产出 | 已完成一个停用工作目录的精确依赖回收并保留恢复材料；个人网页与后台正常版本保持。共享卷实际增量很小，继续核对可退役临时预览。 |
+| 下一可用交付 | 恢复足够实际磁盘余量后验证事务连接修复、完整工具正文，再接终端与网页双端接续。 |
+| 当前阻塞 | ACTIVE: 单树回收后实采约1.080GB，仍不足1GiB+128MiB的PG/浏览器线；逻辑508MB仅观察到约1.8MB共享卷增量。完整后台固定产物仍需2.5GiB，小检查按实际增量准入。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -327,3 +327,13 @@ OPS14 两个实际wrapper通过精确4482字节源码供给后由唯一owner实�
 2026-10-06T22:14:17.205811+00:00: 原CHAT05–06完整原文后继已分派assignment_review独立source-only树native-activity-body，固定fc3246，523files/3,714,128逻辑字节全部固定blob匹配，0安装/执行；[供给](../../docs/quality/chat05p01-source-provision.json)。scope/interface仍待fresh原子领取，runtime与共享exports的既有S01P07 writer不被覆盖；先源码/合同与局部传输，实际PG继续后验。
 
 2026-10-06T22:21:50.392984+00:00：已收到workspace-cache原owner限定消费者确认与3文件离线恢复样本（1473B，完整hash/mode/xattr核对，正常移除自有scratch）。全部真实依赖payload仍KEEP；下一步全映射属性核对及独立operator审查，不把样本当全树恢复证明。CHAT05P01已在fixed fc3246新树领取12scope并提交首合同7d075，资源验证与工具原文实现并行，0新PG/browser/provider。见[准备绑定](../../docs/quality/dependency-retirement-2026-10-06/preparation-bindings.json)。
+
+2026-10-06 22:32:46 UTC：原文片纯检查分轮22distinct已过，>2MiB样本完整字节相同；22:31:37 fresh 1,011,576,832B低于1GiB+8MiB，后续types明确NOT_RUN，未启动进程。29,606依赖payload的恢复属性候选已核且压缩映射可逐字重建；真实依赖仍未删除，资源operator/toy审查继续。
+
+2026-10-06 22:34:50 UTC：为解除低空间不能回收的循环，本次workspace-cache唯一候选资源恢复operator单独限额：retire只写≤10MiB持久证据、outer日志≤1MiB，fresh≥32MiB；删除前仍要求固定manifest、原owner消费者确认、fresh身份/内容/CAS属性、独审与单次许可。只用于精确可恢复payload回收，不降低PG/Chrome/types等产品检查reserve。恢复动作另需1GiB+精确restore集合logical bytes+12MiB，当前不执行restore。资源operator的3例故障toy仅≤128KiB自有fixture+≤128KiB结果、0真实依赖写入，fresh≥32MiB，独立于产品测试；实际删除仍未开始。
+
+## 2026-10-06 22:44:13 UTC 单树精确派生依赖回收
+
+唯一对象 web-workspace-cache@10ca8eef，原owner停写/claim released/无已知运行或冻结消费者，fresh kernel无命中。完整源/toy独审与薄caller独审后，固定一次操作3111a61fe8964590ae9b68ce0538f965移除29606清单内常规payload，508198354逻辑字节；41.009s，监督子进程22466 exit0且自有组absent，pending=null。全部73生成/缓存文件、4169目录、2228链接、26549 CAS身份及581包索引后置保留，目标Git clean/HEAD不变。详见[实际后置事实](../../docs/quality/dependency-retirement-2026-10-06/actual-retirement-postcheck.json)、[独立源审查](../../docs/quality/dependency-retirement-2026-10-06/operator-independent-review.json)和[监督结果](../../docs/quality/dependency-retirement-2026-10-06/one-shot-retire-supervision.json)。
+
+实际共享卷before1077436416→after1079205888，仅+1769472B；不是独立测得的物理回收量，未达到准备线，不扩批其他node_modules。该树明确NOT_RUNTIME_READY，历史fixture再执行前须固定精确restore、layout/入口核验及新运行准入；不清marker、不自动恢复。原CAS、私有/原始记录、服务与用户资料未动。一次准备专用持有已结束；共享PG/Chrome无holder。Web原owner接最多3个已交付且非明确保留preview的用途核对/有序退役，再给精确.vite可再生缓存边界；未知KEEP。实际结果由assignment_review独立核验APPROVED；29606 before/after与completed全集一一对应、恢复map重构hash一致、15个现态元数据样本与NOT_RUNTIME_READY marker吻合。全量保留计数归原postcheck，不冒审查者重hash；[限定独审](../../docs/quality/dependency-retirement-2026-10-06/actual-independent-review.json)。

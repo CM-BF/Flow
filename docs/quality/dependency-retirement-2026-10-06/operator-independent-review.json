@@ -1,0 +1,27 @@
+{
+  "atUnix": 1791326532.3954408,
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "decision": "APPROVED_ONE_EXACT_RETIRE",
+  "manifestSha256": "d9a9963b4465180cf32e3bfa15f25759b84ceab79e17c49075c7d309d0d236c3",
+  "operatorSha256": "f187f94794f7a725109655905255236559f1f56f6a11c510163973eb6cb19036",
+  "verifiedBindings": 32,
+  "review": "Complete operator and toy source read. Durable recoverable map and before/after journal precede each exact removal; fixed identity/content/xattr/ACL and preserved layout guards; cooperative owner freeze; no recursive removal, service action or installation. Independent OPS14 deadline used. Toy 3/3 and first zero-case failure retained; original sample 3-file restore proves limited attribute copy only. Fresh clean HEAD/released ledger/kernel no consumers verified. Real restoration NOT authorized.",
+  "resourceBoundary": {
+    "retireFreshMinBytes": 33554432,
+    "durableEvidenceCapBytes": 10485760,
+    "outerRawCapBytes": 1048576,
+    "stopAtFreeBytes": 1241513984,
+    "restoreFreshFormula": "1GiB + entire selected logicalBytes + 12MiB",
+    "toyOnlyFreshMinBytes": 33554432,
+    "productGatesUnchanged": true
+  },
+  "limitations": [
+    "No global/future-consumer absence proof; frozen manager confirmation is bounded.",
+    "No OS isolation; owner freeze is required for unlink TOCTOU.",
+    "No physical reclaimed byte prediction.",
+    "Marker never cleared; exact restoration and fresh runtime admission remain required.",
+    "No real action tested; first red and full raw kept."
+  ],
+  "GORequestNotNeeded": "Existing exact project dependency recovery authority; this independent review selects one qualified tree. Product validation gates unchanged.",
+  "preservedOwnerInputs": "All six original-owner source/evidence exact SHA256/bytes rechecked before action; unchanged."
+}
