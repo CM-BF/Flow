@@ -15,7 +15,7 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | CLI HTTP1红→1绿33ms，根types最终0；production PG NOT_RUN，资源门槛未达。 |
 | 已集成main状态 / HEAD | X01静态安装client67fd/生产5e121已审进入7810cbf1；O14领域已main，当前生产候选未集成。个人runtime362/v15未更新。 |
-| Review | NOT_STARTED 当前O14生产候选；薄deef独审排队。X015e121/67fd原独审已接收main。 |
+| Review | NOT_STARTED 当前O14生产候选；薄deef由status_read独审APPROVED，Mika接收。X015e121/67fd原独审已接收main。 |
 | 实现目标 | 73aabff4fac96c0439817bdc72358c1385371e8d |
 | 实现范围 | apps/cli/README.md, apps/cli/src/index.ts, apps/cli/src/goal-progression.test.ts, apps/server/src/index.ts, packages/client/src/goal-progression-production.test.ts |
 | 阶段 | M2 |
@@ -201,10 +201,12 @@
 
 2026-10-06T14:59:45.048714+00:00：F01-41薄client67fd获status_read/Mika独审，[原文](../../docs/evidence/f01/plugin-installation-client-independent-review.md)。生产固定5e121等待独审，[manifest](../../docs/evidence/f01/plugin-installation-mount-manifest.json)绑定10源、6领域输入、分轮证据与专库正常清理。静态installed不等于启用或可调用。
 
-| F01-42 | in-progress | Lead | 已审O14模块已mainaf976；薄client固定deef（HTTP1/1、types0）待独审；生产候选aea5536已写；CLI1/1、types0，真实PG受资源门槛阻塞，未集成 |
+| F01-42 | in-progress | Lead | 已审O14模块已mainaf976；薄client固定deef（HTTP1/1、types0）已独审；生产候选aea5536已写；CLI1/1、types0，真实PG受资源门槛阻塞，未集成 |
 
 2026-10-06T15:04:21.640726+00:00：X01生产接线5e121独审APPROVED，限定结果与原始资源事实已绑定；现在受控接收。O14 deef薄client另待审，未借本批准；scan产品修改尚未开始。
 
 2026-10-06T15:16:52.996330+00:00：O14生产候选已固定，见[候选绑定](../../docs/evidence/f01/goal-progression-production-candidate.json)与[Interface](../../docs/evidence/f01/goal-progression-interface.md)。两次作者测试DTO类型失败原文保留；没有运行PG或模型来补齐结果。X01已main收口，不再等待重复审查。
 
 独立源前检修复：生命周期用例自备profile/自动扫描模式，可单独选择；root types0。锁时点不证明关闭期间首次admission，重启key重放不冒lost ACK。原前检见[记录](../../docs/evidence/f01/goal-progression-production-source-precheck.json)，PG仍NOT_RUN。
+
+薄client独审已按Mika唯一canonical原文转录[批准记录](../../docs/evidence/f01/goal-progression-client-independent-review.md)，无重复复审。产品接线73aab独立源前检P2静态关闭，仍未执行PG，不借薄transport批准。
