@@ -241,3 +241,5 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 04:39 U11首连验收候选（GoalOwner/root观察，非新已实现能力）：SVC01真实Web http://127.0.0.1:61228 / center61227，由其owner保持服务；GoalOwner页面只预填center、尚未首次认证，0任务/模型。不能把“服务已运行”写成“可直接聊天”。root只读研究最小连接说明与安全本机取凭据流程，交Lead/SVC唯一owner；不塞token URL/localStorage、不弱鉴权、不抢X03 Appscope，当前PROFILE/queue优先。此接线候选未take，真实SVC与旧预览均不由本队重启替换。
 
 04:40 X03I01最终4b7e0f6553025ba1dbb93e7e3c2b82a9958b92e3 clean，84acdcaaa9687a4ca75ebdb40a6efc7e5539029a获root限定APPROVED。管理6md/39links/4TODO、保护范围和实现diff0通过；全metadata diffcheck仅两原始log空白例外保留，不清洗证据。PROFILE01 canonical ae47c8a1f8feb7b0dec71435e868c3a262c53d06 已给root桥Lead注册，独立模块实施继续。
+
+04:41 首连研究固定75a33dec228e17bbbd0d3be9fd01bc9ac18a0133：现URL留空可走本机/api代理，onConnect不等认证；未来表单说明候选与SVC owner显式本机copy-owner-token工具候选已记[研究](../../docs/evidence/web-platform/research.md)，无读真实凭据/剪贴板/实现，不扩X03或PROFILE scope。

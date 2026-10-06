@@ -362,3 +362,10 @@ root固定dd1只读的低优先REQ22/23候选：slot允许的context与command.c
 04:39 X03I01固定84acdcaaa9687a4ca75ebdb40a6efc7e5539029a/base4e已获root限定APPROVED，无blocking；root独立核开发8/生产7报告五源码hash，不冒充重跑作者typecheck/build/模型/DB。管理者固定diff审10路径全在a104v1七scope、保护shared/Mika模块/plugins/conversations/session/官方Thread/依赖零diff、diffcheck0。owner仅收metadata和一次自身dashboard，后续scope/docs局部复核不重复产品检查。
 
 SVC01首连候选由GoalOwner经root报告：真实Web61228/center61227/main75a33dec短SHA，用户tab5仅预填center而未认证，0任务/模型。只说服务已运行，不说可直接聊天；root只读研究首连说明与安全本机取凭据流程，协调Lead/SVC owner。没有本队token读取/注入URL或localStorage、弱鉴权、App抢写或服务重启。完整main SHA/后续认证结论待责任owner给出，不猜测。
+
+
+## 04:41 首连说明候选（root固定源码研究）
+
+固定main75a33dec228e17bbbd0d3be9fd01bc9ac18a0133，App Connection:879/897的URL本来可空；vite.config.ts通过FLOW_CENTER_URL代理/api，所以本机用户无需手填61227。现Same-origin proxy占位不够清晰，未来最小Web说明应解释留空连本地、另一个中心才填URL；onConnect只是构造client，不表示已认证。ownerToken只由本机操作方读取私有配置的单字段，不粘整配置或发聊天。root没有读取真实配置/凭据、没执行剪贴板/连接。
+
+SVC README/cli当前status可输出credentialsFile而不输出token。后继copy-owner-token CLI只能由SVC owner领取实施：校目录/0600/持有身份，仅用户显式调用后复制该字段到本机剪贴板，stdout/URL/日志/前端env都不含token，不创建匿名HTTP读凭据入口。这里只登记可用性候选与保护边界，不宣称工具已存在，不扩大本队X03/PROFILE范围。真正首连尚待用户认证，不把服务运行等于可直接聊天。
