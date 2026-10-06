@@ -211,7 +211,7 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
     await expect(apply).toBeDisabled(); await expect(combinations.getByRole("radio")).toHaveCount(1); // Only explicit omit remains; no page1 tuple is authorized.
     await expect(page.getByTestId("left-current")).toHaveText(laterCurrent!);
     await expect(page.getByTestId("left-sent")).toHaveText(laterSent); await expect(page.getByTestId("left-queued")).toHaveText(laterQueued);
-    await expect(left.getByLabel("Draft left", { exact: true })).toHaveValue("后页配置的草稿仍保留");
+    await expect(page.getByLabel("Draft left", { exact: true })).toHaveValue("后页配置的草稿仍保留");
     await expect(page.getByTestId("left-commits")).toHaveText("2");
     await dialog.getByRole("button", { name: "加载更多设置", exact: true }).click();
     await expect(page.getByTestId("catalog-state")).toContainText("current; 40");
