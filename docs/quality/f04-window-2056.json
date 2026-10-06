@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-06T20:55:52.465186+00:00",
+  "state": "F04_ADMITTED_PENDING_FRESH_GATE",
+  "windowId": "flow-tui01f04-20261006-2056",
+  "startBefore": "2026-10-06T21:06:00Z",
+  "owner": "native_center_owner",
+  "priorRelease": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/recovery01-4d-window-return.json",
+    "sha256": "ba12180f9da09a8cd55cf37b2882a336e021bfacfee580d7ab8e82d50b7c96e4",
+    "at": "2026-10-06T20:52:38.194471+00:00"
+  },
+  "sourceDigest": "b1559d552e0c2eaa875e5c852eb13c0a15db1d69f15cbf6ee8bb9859c47254e5",
+  "captureDigest": "5063d601b7c40d1a83cfb35bf0a85d09ea069f3ada1de2d5705e558707f9e275",
+  "providerCalls": 0,
+  "bounds": {
+    "workMs": 90000,
+    "cleanupMs": 60000,
+    "totalMs": 150000,
+    "startFreeBytes": 1207959552,
+    "liveReserveBytes": 1073741824,
+    "stageBytes": 4194304,
+    "privateBytes": 16777216,
+    "outerOutputBytes": 65536
+  },
+  "actual": "Not asserted by admission; owner actual reservation/checkpoint/results authoritative",
+  "repeat": false
+}
