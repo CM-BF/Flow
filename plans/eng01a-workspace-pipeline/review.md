@@ -14,4 +14,7 @@ Execution Lead独立只读APPROVED；8source+17evidence fixed/working bytes与ha
 
 Review target commit: 040fdede227fe22504972ea7a053c23f14a30f52
 
-6个新增runner engineering文件及E0已审8源组成14源候选；[固定manifest](../../docs/evidence/eng01a/e1-fixed-manifest.json)覆盖源、直接消费者、受保护宿主输入与原始证据。验收受管Git内容集/固定外部checker/生命周期/unknown与公开PG读回，详见Interface、validation.md。E1状态NOT_STARTED，不能用E0批准推断整片通过。targetRunnerId不是能力认证，错误普通target实际claim但不能工程通过是明确已测试限制；后继ENG001-04闭合。0provider/无生产入口。
+6个新增runner engineering文件及E0已审8源组成14源候选；[固定manifest](../../docs/evidence/eng01a/e1-fixed-manifest.json)覆盖源、直接消费者、受保护宿主输入与原始证据。验收受管Git内容集/固定外部checker/生命周期/unknown与公开PG读回，详见Interface、validation.md。E1状态APPROVED，由runner_owner独立只读审查。targetRunnerId不是能力认证，错误普通target实际claim但不能工程通过是明确已测试限制；后继ENG001-04闭合。0provider/无生产入口。
+
+
+E1 独立结论：APPROVED，reviewer runner_owner，2026-10-06 10:37:00 UTC，review target 040fdede227fe22504972ea7a053c23f14a30f52。完整读6新源码；14source+6validation+8protected+42evidence fixed/current bytes与SHA一致，manifest SHA256 0fa3fd9c7236fb1b9fc67131100c8f506cf462d34d7b3686008bc166fb52cbbf。E0对909b45零diff；80 distinct分轮/原始失败/DB cleanup/typecheck证据均核，reviewer未重跑测试，0provider。无P1/P2。批准只受信合成setup的0模型真实Git/checker/PG通路；同UID非sandbox、target仅路由pin、lostACK不伪成功、无provider和跨进程project重建结论保持。Owner源码停写等待受控main集成，不改已审target。

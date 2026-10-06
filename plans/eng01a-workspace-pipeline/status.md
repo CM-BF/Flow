@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:32:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:37:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -12,17 +12,17 @@
 | Branch | codex/engineering-workspace-pipeline |
 | 工作基线 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066 / 040fdede227fe22504972ea7a053c23f14a30f52 |
 | 工作树dirty状态 | 14源码冻结；仅本scope metadata收口 |
-| 工作分支状态 | ready-for-review |
-| 本片段交付阶段 | review |
+| 工作分支状态 | ready-for-integration |
+| 本片段交付阶段 | integration |
 | 检查状态 | 80不同检查：E0 10、E1模块18、直接消费者47、真实PG纵向5；root noEmit0；详见validation.md |
 | 已集成main状态 / HEAD | ENG01A未集成；基线f181d84已有R05宿主/普通native/S01 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 受控合成代码已能真实写改、独立检查并读回固定差异与结果；整片待独审 |
-| 下一可用交付 | 完成工程通路独审和主线集成；本片仍需受信专用配置 |
+| 当前产出 | 受控合成代码已能真实写改、独立检查并读回固定差异与结果；整片已通过独立审查，等待主线集成 |
+| 下一可用交付 | 集成已审工程通路；本片仍需受信专用配置 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，E0 APPROVED / E1 NOT_STARTED |
+| Review | [review.md](review.md)，E0 APPROVED / E1 APPROVED（runner_owner） |
 | Claim | 7830846a-55a7-4a3b-b889-7a1bb2a1e21b v2；10项literal，追加events.ts完成门禁 |
 | 实现目标 | 040fdede227fe22504972ea7a053c23f14a30f52 |
 | 实现范围 | apps/runner/src/engineering/adapter.ts, apps/runner/src/engineering/checker.ts, apps/runner/src/engineering/integration.test.ts, apps/runner/src/engineering/resources.ts, apps/runner/src/engineering/workspace.test.ts, apps/runner/src/engineering/workspace.ts, apps/server/src/engineering/verification.test.ts, apps/server/src/engineering/verification.ts, apps/server/src/events.ts, apps/server/src/evidence.ts, apps/server/src/runners.ts, packages/contracts/src/engineering.ts, packages/contracts/src/runner.ts, packages/contracts/src/tasks.ts |
@@ -34,7 +34,7 @@
 | ENG01A-02 | completed | native_center_owner | 受信工程intent/checker receipt与targetRunner过滤 |
 | ENG01A-03 | completed | native_center_owner | 不可变基线与完整内容集/命令资源边界 |
 | ENG01A-04 | completed | native_center_owner | 独立Git/PG真实纵向与unknown恢复 |
-| ENG01A-05 | in-progress | native_center_owner | E0独审APPROVED；E1待独审/整片main集成 |
+| ENG01A-05 | in-progress | native_center_owner | E0/E1独审APPROVED；等待整片main receipt |
 
 本status为唯一手填事实源；Lead已登记authority（registry125）。0模型，旧只读native、个人服务与既有预算保持。
 
