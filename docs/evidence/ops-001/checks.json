@@ -1,0 +1,22 @@
+{
+  "time": "2026-10-06T00:58:34.197953+00:00",
+  "result": "passed",
+  "scope": "documentation structure only",
+  "plans": 8,
+  "stableTodoIds": 49,
+  "localLinks": 128,
+  "unchangedHistoricalExperimentFiles": 26,
+  "checks": [
+    "local relative links",
+    "unique plan IDs",
+    "TODO/status correspondence",
+    "NOT_STARTED review markers",
+    "historical experiment SHA-256 equality with foundation",
+    "git diff --check"
+  ],
+  "notRun": [
+    "application tests",
+    "model experiments"
+  ],
+  "review": "independent template review reported no blocking omissions; commit-bound full review pending"
+}

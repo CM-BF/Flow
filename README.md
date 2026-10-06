@@ -2,7 +2,7 @@
 
 A personal, self-hosted workspace for durable agent work. The center keeps task state and evidence in PostgreSQL; Web and CLI are replaceable observers, and runners continue after a browser closes.
 
-M1 is under active implementation. See [execution plan](plans/2026-10-05-execution-assignment-plan.md), [public contract](docs/architecture/m1-contract.md), [scheduler decision](docs/architecture/m1-scheduler.md) and [skill/quality record](docs/quality/skills.md). F00 establishes the workspace and contract; app behavior is not yet delivered.
+M1 is under active implementation. See [execution plan](plans/flow-003-m1-execution/plan.md), [public contract](docs/architecture/m1-contract.md), [scheduler decision](docs/architecture/m1-scheduler.md) and [skill/quality record](docs/quality/skills.md). F00 establishes the workspace and contract; app behavior is not yet delivered.
 
 ## Development
 

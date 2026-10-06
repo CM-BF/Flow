@@ -5,7 +5,8 @@
 ## 目录组织
 
 - `README.md`：计划索引，记录每份计划的编号、状态、用途和链接。
-- `YYYY-MM-DD-<topic>-plan.md`：计划正文。文件名使用英文小写和连字符，正文默认中文，保留必要的技术名称。
+- `<plan-id-topic>/plan.md`：唯一权威计划正文；同目录必须有 `status.md` 与 `review.md`。目录名用英文小写和连字符，正文默认中文，保留必要技术名称。
+- `templates/`：统一plan/status/review模板。旧日期路径可保留明确跳转stub，不维护第二份正文。
 - 一份计划围绕一个明确目标组织。能独立推进、验证和交付的子项目，可拆成单独计划，并在索引与父计划中互相链接。
 - 在确有需要时创建 `archive/`，收纳已经被替代的计划。移动文件后更新所有相关链接。
 - 不在这里保存代码、原始运行日志、凭证或大体积产物；计划引用它们的实际位置。
@@ -67,3 +68,14 @@
 - 已确认约束没有遗漏，未决问题没有被静默改成决定。
 - 计划中的“完成”“支持”“兼容”“省 token”等结论都有相应证据或明确限定。
 - 纯文档修改检查内容、链接和一致性即可，不为其添加与产品行为无关的测试。
+
+## TODO、status 与 review（所有agents必须执行）
+
+- 每份权威plan正文必须有TODO list和稳定task IDs；已发布ID不重新编号，同目录status逐项对应。只有产物和证据确实满足才勾选；失败与未知保留。
+- status必须记录更新时间、单一owner/model、仓库/worktree/branch/base/head与dirty状态、每个TODO状态、证据/检查、阻塞/风险、下一步/handoff。启动、实质进展、受阻、交付、review修复后由该owner更新；无进展不造假。
+- 工作分支当前状态与已经集成main状态分开，分别写SHA与最近同步时间。branch测试通过不代表main已具备，历史通过也不自动覆盖新提交。
+- 并行features的plan/status/review由各owner在自己的worktree维护；跨任务汇总和索引由Execution Lead负责，不并发编辑他人status。review者默认只读实现，若要写review记录先明确该文件唯一owner与范围；实际写入仍须模型>=Sol。
+- review.md至少包含target/scope、base/head、验收criteria/关键文件、已执行与未执行检查、证据链接、独立review步骤、severity/blocking findings、结论/限制、作者回应/修复commit和复审。新建模板明确 `NOT_STARTED`，空模板不能当approval。
+- review模板须包含可复制任务说明，先验证实际worktree/base/head，结论绑定具体commit。Claude Code或其他外部agent可只读审查；直接修改Flow文件仍受Sol以上门槛与独立worktree规则约束。
+- 用户期望开发并发上限10（含Goal Owner+Execution Lead）；实际并行度=min(10,运行时cap,ready独立任务数)。区分期望和实际，不虚称可用槽；运行时拒绝后记录准确错误，不反复无意义探测或通过新task绕过。
+- 目录迁移必须更新本地相对链接、README索引与状态，并验证原始实验JSON/hash未被修改。

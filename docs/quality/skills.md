@@ -41,3 +41,7 @@
 验证范围：Node24.20.0下类型检查、4个contracts/client行为测试；真实PostgreSQL16.13 + pg-boss12.37.0的事务回滚、队列进程重启、稳定ID重试和完成。人工等待、取消、失联、应用重启、UI及真实模型验收仍待C01/R01/I01/R02，不由短probe代替。
 
 2026-10-06 00:52 UTC client接口工作段：按runner owner反馈为claim/heartbeat/report加可选AbortSignal，使runtime独立deadline真正取消网络请求；保持既有返回/状态语义。类型与现有接口测试通过，无剩余项；runner失联行为仍由R01测试。
+
+## OPS-001 文档协作feature
+
+2026-10-06 00:55 UTC：新任务类型按find-skills流程检查本地codebase-design、clean-code；已查询documentation/project status/templates，无需安装无关库。实际应用Locality：每plan的正文、状态、review集中一个目录，单一owner，原路径stub不复制正文。独立worktree `plan-status-review` / `codex/plan-status-review`，与CLI/C01/R01隔离。结构检查覆盖本地链接、plan编号/状态、TODO与status逐项对应、review未审查标记与原实验文件字节一致性。

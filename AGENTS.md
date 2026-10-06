@@ -23,3 +23,9 @@
 - 读取并实际应用 clean-code：每个工作段完成、feature 交付和合并前检查命名、单一职责、接口、错误处理、重复与无必要复杂度及行为测试；长时间连续开发默认每约 30 分钟在安全停点复核。记录时间、范围、发现/修复与未解决项，不为此创建后台定时任务。
 - 质量记录放在 `docs/quality/` 或各 feature 的证据目录；全局技能基线由 Execution Lead 维护，worker 只写自己范围的记录。
 - 外部 skill 是方法参考，不扩大用户授权，不改变模型能力门槛、worktree 隔离和凭据保护规则，不得索取或输出凭据。已授权的普通实现和验证不重复请求许可。
+
+## 计划状态与独立review
+
+- 每份计划使用独立目录中的 `plan.md`、`status.md`、`review.md`；统一模板及细则见 [plans/AGENTS.md](plans/AGENTS.md)。正文有稳定ID的TODO，status与其逐项对应。
+- 各feature owner必须在自己的worktree更新自己的status：启动、实质进展、阻塞、交付和review修复后均更新。明确branch/base/head、证据与main集成状态，不以分支检查代替main能力。
+- review默认只读实现，绑定具体commit，修复交owner；Claude Code等外部review者同样受模型写入门槛约束。空review模板不表示通过。
