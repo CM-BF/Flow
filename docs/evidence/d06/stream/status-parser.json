@@ -2,13 +2,13 @@
   "status": {
     "human": {
       "delivery": {
-        "state": "review",
+        "state": "integration",
         "source": "explicit"
       },
       "phase": "M2",
       "priority": 2,
-      "output": "架构图已补齐工具活动、逐段正文和后台任务，明确源码与实际运行的边界",
-      "next": "完成独立审查并交付可追溯的五视图架构快照",
+      "output": "架构图已通过独立审查，工具活动、逐段正文和后台任务边界清晰",
+      "next": "把已审架构快照交主线接收并部署",
       "blocker": {
         "state": "none",
         "text": ""
@@ -35,8 +35,8 @@
     "owner": "d01_owner / gpt-6-astra ultra",
     "branch": "codex/dashboard-architecture-stream",
     "branchState": "in-progress",
-    "updatedAt": "2026-10-06T08:13:01.000Z",
-    "updatedRecord": "2026-10-06 08:13:01 UTC",
+    "updatedAt": "2026-10-06T08:16:47.000Z",
+    "updatedRecord": "2026-10-06 08:16:47 UTC",
     "todos": [
       {
         "id": "D06-01",
@@ -60,7 +60,7 @@
         "id": "D06-04",
         "state": "in-progress",
         "owner": "d01_owner",
-        "evidence": "fixed 2c857bdc83e4769c5099de2f37f4a7f2140e834b 已交root独审；main接收/释放未完成"
+        "evidence": "fixed 2c857bdc83e4769c5099de2f37f4a7f2140e834b root08:16:16 APPROVED；main接收/释放未完成"
       }
     ],
     "errors": [],
@@ -71,15 +71,15 @@
       "target": "2c857bdc83e4769c5099de2f37f4a7f2140e834b",
       "record": "PASSED 2c857bdc83e4769c5099de2f37f4a7f2140e834b；13 Node、56来源/80固定行、五图Chrome浅深390/键盘；[验证](../../docs/evidence/d06/stream/validation.md)"
     },
-    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
-    "mainRecord": "NOT_INTEGRATED；本轮固定9c6源码数据已完成，等待独审/Lead接收；后续主线移动不改变该快照",
+    "reviewRecord": "[review.md](review.md)，APPROVED 2c857bdc83e4769c5099de2f37f4a7f2140e834b；root 2026-10-06 08:16:16 UTC",
+    "mainRecord": "NOT_INTEGRATED；本轮固定9c6源码数据已完成，已获独审，等待Lead接收；后续主线移动不改变该快照",
     "next": "",
     "risks": "",
     "decisions": ""
   },
   "review": {
-    "state": "not_started",
-    "record": "NOT_STARTED**",
+    "state": "approved",
+    "record": "APPROVED**",
     "target": "2c857bdc83e4769c5099de2f37f4a7f2140e834b"
   }
 }

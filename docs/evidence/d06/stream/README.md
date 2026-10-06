@@ -25,4 +25,4 @@ preview使用空tasks registry及动态端口，浏览器只读这个preview的�
 
 ## 限制
 
-原首次browser失败为断言将节点subtitle当作详情content的文案位置；只修检查locator期待并保留原log，最终检查通过。无真实产品DB/模型/registry/服务重启，未重跑全库。O09/CHAT09/正文App接线不在基线，维持后继状态；后续源迁移不表示此数据已main。独立审查与main接收仍待真实回执。
+原首次browser失败为断言将节点subtitle当作详情content的文案位置；只修检查locator期待并保留原log，最终检查通过。无真实产品DB/模型/registry/服务重启，未重跑全库。O09/CHAT09/正文App接线不在基线，维持后继状态；后续源迁移不表示此数据已main。root已于08:16:16 UTC独立APPROVED（详review）；main接收/部署仍待真实回执。
