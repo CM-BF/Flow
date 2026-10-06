@@ -22,4 +22,4 @@
 - [x] D06-07：小范围数据/来源/viewport验证，原失败与部署边界准确。
 - [ ] D06-08：固定独审、正常push、Lead窗口resume后受控main接收与合法收口。
 
-本批固定目标6570及[验证](../../docs/evidence/d06/snapshot-aeb/validation.md)已齐，D06-08仍等待独立review/main。用户重申“其他 agent leads…不要 overlap；take 工作最好也在 dashboard 标清楚”沿U08/REQ37，四literal实际claim6cad30a2 v1与唯一status/D04 receipt关联，不另手填领取或父进度。SVC05窗口已由Lead正式关闭，服务owner回执与固定source分开，管理没有服务查询。
+本批固定目标6570及[验证](../../docs/evidence/d06/snapshot-aeb/validation.md)已齐，D06-08的独立review已APPROVED，仍等待main/释放。用户重申“其他 agent leads…不要 overlap；take 工作最好也在 dashboard 标清楚”沿U08/REQ37，四literal实际claim6cad30a2 v1与唯一status/D04 receipt关联，不另手填领取或父进度。SVC05窗口已由Lead正式关闭，服务owner回执与固定source分开，管理没有服务查询。

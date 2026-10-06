@@ -1,17 +1,13 @@
 {
-  "at": "2026-10-06 12:49:54 UTC",
-  "taskId": "D06",
-  "featureBase": "631173ab1c1ffa3ae7d4636f0ea8c941e2c1943f",
+  "at": "2026-10-06T12:52:17.665403+00:00",
+  "reviewer": "workspace_panels_owner / gpt-6-astra ultra",
+  "base": "631173ab1c1ffa3ae7d4636f0ea8c941e2c1943f",
+  "target": "6570ef7e896d29040961247f46aa62dc4e466284",
   "fixedSource": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
-  "implementationTarget": "6570ef7e896d29040961247f46aa62dc4e466284",
-  "sourcePaths": [
-    "apps/execution-dashboard/public/architecture-data.js",
-    "apps/execution-dashboard/test/architecture.test.mjs",
-    "docs/evidence/d06/snapshot-aeb/source-audit.mjs",
-    "docs/evidence/d06/snapshot-aeb/preview.mjs",
-    "docs/evidence/d06/snapshot-aeb/browser-check.mjs"
-  ],
-  "sources": [
+  "head": "e77176914fd600de2e145d2397d0614c7c268a12",
+  "branch": "codex/dashboard-architecture-runtime",
+  "dirty": "",
+  "sourcesMatched": [
     {
       "path": "apps/execution-dashboard/public/architecture-data.js",
       "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800"
@@ -33,7 +29,7 @@
       "sha256": "bbaf8bac952ad7152dd9c915d1f859f66f4ef18beff21f2c3052f9ca806a4ce1"
     }
   ],
-  "readonly": [
+  "readonlyMatched": [
     {
       "path": "apps/execution-dashboard/public/architecture.js",
       "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
@@ -70,25 +66,23 @@
       "baseEqual": true
     }
   ],
-  "browserRun": {
-    "sourceCommit": "95d8664ca16c38cffc65774e9784bc83a43791ec",
-    "sourceDirty": [
-      "M apps/execution-dashboard/public/architecture-data.js",
-      " M apps/execution-dashboard/test/architecture.test.mjs",
-      "?? docs/evidence/d06/snapshot-aeb/browser-check.mjs",
-      "?? docs/evidence/d06/snapshot-aeb/browser.log",
-      "?? docs/evidence/d06/snapshot-aeb/node-final.log",
-      "?? docs/evidence/d06/snapshot-aeb/node-first.log",
-      "?? docs/evidence/d06/snapshot-aeb/preview.mjs",
-      "?? docs/evidence/d06/snapshot-aeb/source-audit.json",
-      "?? docs/evidence/d06/snapshot-aeb/source-audit.mjs",
-      "?? docs/evidence/d06/snapshot-aeb/source-first.log"
-    ],
-    "hashesEqualFixedTarget": true
-  },
-  "claimId": "6cad30a2-aa67-4baa-b465-4c957b682670",
-  "claimVersion": 1,
-  "scopeCount": 4,
-  "review": "APPROVED 2026-10-06T12:52:31Z by workspace_panels_owner; root accepted",
-  "main": "NOT_INTEGRATED"
+  "fixedSourceFiles": 106,
+  "exactEvidenceLines": 171,
+  "absent": [
+    "apps/server/src/browser-session/index.ts"
+  ],
+  "presentMigrations": [
+    "020-native-activity.sql",
+    "022-assistant-stream.sql",
+    "023-plugin-package-fetches.sql",
+    "024-active-steering.sql",
+    "025-native-harness-sources.sql",
+    "026-attachment-resources.sql",
+    "027-context-observation-history.sql"
+  ],
+  "scopeOutside": [],
+  "sourceDiffCheck": 0,
+  "postTargetProductDiff": "",
+  "helperCorrection": "First audit incorrectly required all base-to-target paths to be executable sources; corrected to permit owned canonical/evidence metadata. All source/hash/line checks had already passed before that assertion.",
+  "limits": "No browser rerun, PG, provider, personal service or 4320. Existing screenshots visually reviewed; authored browser source hashes independently checked."
 }

@@ -8,6 +8,6 @@
 - 实际目视modules-bottom-light、data-dark及data-dark-narrow：节点/分组清晰，新增工程职责及026/027不增加图高；390沿原42%最小zoom局部滚动，无page横溢。不是全部内容同时无滚动、也不宣称产品App窄屏验收。
 - 保护范围renderer/CSS/server/deps对feature base零差，生产两文件与脚本diffcheck0。原runtime批证据未改。
 
-脚本执行时HEAD95d8664、五执行文件尚未提交；冻结6570后的逐hash绑定证明同源，不冒称浏览器是在冻结commit之后重跑。独审NOT_STARTED，main未集成，4320/个人服务未采。既有服务版本只引用[SVC05正式receipt](service-owner-observation.json)，不把fixedaeb source当部署。
+脚本执行时HEAD95d8664、五执行文件尚未提交；冻结6570后的逐hash绑定证明同源，不冒称浏览器是在冻结commit之后重跑。独审APPROVED（独立18项/source审计，未重跑browser），main未集成，4320/个人服务未采。既有服务版本只引用[SVC05正式receipt](service-owner-observation.json)，不把fixedaeb source当部署。
 
 独立预览可用Node24运行本目录preview.mjs，它只提供空管理snapshot和真实static assets；结束需SIGTERM关闭自有server。本次浏览器自管preview已清理，没有新增常驻服务。
