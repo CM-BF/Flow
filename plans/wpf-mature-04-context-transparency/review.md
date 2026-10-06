@@ -81,3 +81,11 @@ APPROVED，仅绑定879c989a594a8f4f266b9a78a885e311c52eca0d的4文件schema/pur
 ## 历史持久化/公开读回局部实现（2026-10-06T10:36:04.816805+00:00）
 
 NOT_STARTED。8新文件，41局部用例与严格noEmit0；唯一正式migration尚未分配、真实PG/全局owner auth及events union挂载未验。不得将原879/3ab批准扩展到本片；精确source hash与限制见[history-checks](../../docs/evidence/wpf-mature-04/history-checks.json)。requested模型alias与host resolved独立，current/remaining恒unknown。固定target随后登记，root独审；DB证据必须在正式唯一DDL上补齐。
+
+## 历史片静态/模块预审（2026-10-06 10:42:39 UTC）
+
+Reviewer：Mika / gpt-6-astra。绑定target `a7357c21511a81ca8e603b728c3a24725d7cc140`。根审完整读取新8源与测试，并核[history-manifest](../../docs/evidence/wpf-mature-04/history-manifest.json)的19项（8source/7raw/4support）target Git=WT=bytes/SHA；requested alias与host resolvedModel分离修复成立。无剩余P1/P2静态发现。
+
+这是有界静态/模块预审，**不批准store/routes生产接入**。41不同局部用例=18wire+6DTO+11确定性query consumer+6fixture-auth inject，严格root选项8roots noEmit0；它们不证明真实PG事务、rollback、约束或共享owner-auth hook。根审未复跑工程测试；旧六源批准独立保持。全片正式验收/生产接入仍PENDING，待Execution Lead唯一migration编号/DDL owner及实际验证、共享挂载后复审。没有自占026或扩大producer框架。
+
+作者回应：fresh核65fa04dc clean、v4 ACTIVE，19项再次逐字核固定target；仅记录本结论，源码/raw不变、不重测。唯一DDL/grant到达后立即返回真实PG验证。

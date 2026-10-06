@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T10:36:36.543081+00:00 / main 0cee7556befa1988e60bae94b510240122c34b88，clean=True；仅核验不追merge |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:42:39 UTC / 最近main只读0cee7556 clean；本次metadata未重新声称集成 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
 | 工作基线 / HEAD | 原始b1c2e398；已受控合入8d8ab520 / 当前实现 a7357c21511a81ca8e603b728c3a24725d7cc140；metadata随后提交 |
-| 工作树dirty状态 | 实现a7357c21511a81ca8e603b728c3a24725d7cc140 clean后仅更新自有manifest/status；已审6源仍逐字固定 |
+| 工作树dirty状态 | 核65fa04dc clean、v4 ACTIVE后仅更新review/status；a735的19项source/raw/support仍等于固定target |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | 历史局部41/41（18wire+6DTO+11store consumer+6HTTP），8根文件继承root严格noEmit0；真实PG/全局owner鉴权未验；[证据](../../docs/evidence/wpf-mature-04/history-checks.json) |
@@ -24,7 +24,7 @@
 | 下一可用交付 | 采用唯一正式迁移完成数据库验证，再挂载历史读回；当前占用及剩余容量仍未知 |
 | 当前阻塞 | 历史数据库验证等待Execution Lead分配唯一迁移编号/owner；独立合同与HTTP片已推进，不等待Codex |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：新历史target a7357c21 NOT_STARTED，PG仍待验；旧879与3ab已独审APPROVED，批准不扩展到新8文件 |
+| Review | [review.md](review.md)：a7357c21静态/模块预审无P1/P2，Mika/gpt-6-astra，2026-10-06 10:42:39 UTC；不批准store/routes生产接入，真实PG/共享owner-auth仍PENDING；旧879/3ab批准独立保持 |
 | Claim | [COMMITTED amend v4](../../docs/evidence/wpf-mature-04/history-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v4 ACTIVE；仅追加8新history文件，已审6源码冻结 |
 | 架构影响 | 中心历史record/readLatestHistory与局部GET已实现未挂载，沿原事务/fence，无新runner端点；唯一DDL及全局挂载由Lead协调，架构视图待集成target更新 |
 
@@ -64,3 +64,5 @@
 2026-10-06T10:33:41.339595+00:00：固定main8d8已通过scope[] integration受控无冲突合入108d4276298b52911426bba166724298ee3cafdf，未借merge实现；integration claim1de954b3 v2已released。writer v4生效后8新文件实施中；33不同局部用例通过、8根文件继承root严格选项noEmit0，PG/真实owner鉴权/全局事件挂载仍待验。requestedModel保持DB配置alias，resolvedModel独立保留固定host报告，不以二者相等冒充provider验证。新增源码未提交；已审6源不变。
 
 2026-10-06T10:36:04.816805+00:00：历史片8新文件局部实现完成待唯一DDL。41不同用例=18wire+6history+11store事务consumer+6HTTP；前轮23/33/40均重叠不累计。8根文件继承root strict/noUnchecked/ES2023 noEmit0。store用确定性query响应验证小Interface，并非SQL、约束或PG回滚证据；全局owner auth仍待挂载验证。主线尚无本片，当前阶段implementation，待迁移号/owner而非等待Codex。原六源逐字等于批准target。
+
+2026-10-06 10:42:39 UTC：根审完成a735新8源/测试及19项manifest核验，静态/模块预审无P1/P2；不将41局部通过扩张为PG/全局鉴权或生产批准。源码/raw冻结，等待Lead唯一migration编号/owner，禁止自占026；无ready实现时不扩producer框架。
