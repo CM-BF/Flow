@@ -40,3 +40,5 @@
 ## 最小依赖视图准备
 
 [dependency-view.json](../../docs/evidence/svc05-history-compatibility/dependency-view.json)：9 个已固定第三方包 + @flow/contracts 自身源码，共 10 个 ignored symlink；目标字符串 1309 B，仅逻辑链接字节，非物理资源或闭包证明。0 安装/复制/import/type/tests/产品 PG/provider/个人操作。独立源码回执已归档，生成视图只用于随后已授权 Web 的显式候选输入。原 source-bindings 中 nodeModulesPresent=false 保留为更早观察；现以此记录为准。清理归属限本 owner 创建的确切链接，不跟随删除 donor。
+
+验收选择（Lead 15:39 补充）：后续仅优先 RELEASE03 真实 A 两项，再按原合同 B；四 case 源码只是已审来源，不再起 Vitest、不补包、不作额外前置。新风险才协调定向补测。

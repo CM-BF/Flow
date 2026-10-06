@@ -26,11 +26,11 @@ Web driver 已独立改为显式 `BackendInput {path,head,tree}` + runtime facto
 
 已逐个读取原 Web 依赖声明的 16 个第三方 package.json：实际路径在 web-attachment-production/node_modules/.pnpm，版本/原声明 hash 均同。Node24、pnpm9.15.4 保持；没有 import 包或写 donor。完整列表见 source-bindings.json。首次 source-binding 时候选没有 node_modules；现已按 Lead 追加授权生成 9 个固定第三方入口 + @flow/contracts 自身源码共 10 链接，见 dependency-view.json。未运行任何 import，不能声称已经能解析启动；@flow/contracts 只指候选自己的 packages/contracts；不借全局 npm、不安装整 workspace、不改原锁、不复制其他 feature 源。
 
-新 attachment-history.test.ts 还需固定 Vitest4.0.18 测试入口，当前 16 包复用清单不含 Vitest；其实际可解析入口需 Lead 另核，当前不为此安装。RELEASE03 现 tsx 路径可直接用于它原有 A/B 脚本，不要求提前运行这份 Vitest 文件。
+本候选不运行另一次四 case Vitest，也不为它补 Vitest 包。该精确已审测试文件仅保留来源；其本候选执行状态为 NOT_RUN，不作为 A/B 的形式前置。RELEASE03 原有 tsx 驱动承担本候选必要行为复验。
 
 ## 必要直接消费者与门槛
 
-1. 精确已审四测试：两种 v2，v1 knowledge + restart，batch rollback/纠正/重放；覆盖 auth/no-store/固定全文仍可读取。**本候选未运行**，不能继承另一个 source 组合的 green；由 Lead 结合剩余预算选局部确认，避免重复不相关领域。
+1. 精确已审四测试保留作来源：两种 v2，v1 knowledge + restart，batch rollback/纠正/重放，auth/no-store/固定全文。**本候选未运行，不另起重复四 case，不算候选 green，也不作等待更多测试的形式前置。** v1 实现与 18 输入对 362 零差已独立源码核对；仅在 A 暴露新风险后由 Lead 决定有界补测。
 2. RELEASE03 A 两公开 HTTP/PG 情景是原失败的必要复验；新 A 通过也不代表 B。
 3. B 复用现真实 App，按原 compatibility 检查读/send/recover/cap；不重构建 App、不用 fixture 壳冒充它，不改变个人 Web pointer / retained artifacts / tab。
 
