@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 14:42:20 UTC |
+| 最近更新时间 | 2026-10-06 14:44:50 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -12,9 +12,9 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
 | Branch | codex/plugin-management-plan |
 | 工作基线 / HEAD | host基线8e520b7274a6d4112e91318c6eb5ba1758bf7c1c；中心固定a578已main56d90；旧leaf已main2f16 |
-| 工作树 dirty 状态 | 本地host双gate实施中；center源码/raw冻结且写权已交回 |
+| 工作树 dirty 状态 | host两源与新证据待固定；center八源继续冻结 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 新host双gate NOT_RUN；历史center14distinct/strict0与leaf65保持，不移用 |
+| 检查状态 | host 21/21（14旧+7新）/strict局部0；真实TLA撤权1red保留，23own roots已清理；0PG/provider |
 | Review | NOT_STARTED 当前host双gate；历史center a578与leaf bf3378 APPROVED已main |
 | 已集成 main 状态 / HEAD | center a578八源已main56d90e8c36d48e6c23a796283f3b89d0d08e7294，默认factory/client/CLI未声称挂载；leaf bf3378+依赖f635已main2f16 |
 | 实现目标 | UNKNOWN（host双gate待固定） |
@@ -22,7 +22,7 @@
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 中心静态安装模块已进入主线；正在补齐包加载后再次执行前的当前权限核验 |
+| 当前产出 | 包加载后新增执行前的当前权限核验，异步加载期间撤权会阻止工具调用；局部验证通过，准备独审 |
 | 下一可用交付 | 包异步加载期间撤权后，阻止后续工具调用 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -99,3 +99,5 @@
 2026-10-06 14:09:00 UTC：后继接缝补有限host发布、enable/disable、冻结binding及load/invoke gate的最小字段候选，供Lead冻结；仍未定义第二执行FSM或领取新产品。P06正式main5db/v2释放收据已读回，旧占用解除不授本owner权限。029与100固定证据不动，O14 030不占。当前磁盘资源HOLD，仅小metadata，无新PG/build/install或清理。
 
 2026-10-06 14:42:20 UTC：正式MAIN_RECEIPT已核[center接收](../../docs/evidence/x01/center-main-acceptance.json)，8source逐fixed/main/owner/hash一致，0重测14/65。停写8center后v4→v5原子移出并追加host两源；[本地Interface](../../docs/evidence/x01/host-gates-interface.md)已获Mika设计核定，现仅局部双gate实现。Data1,157,612KiB≥1GiB+32MiB；不占runtime/公共DTO/DB/SQL。新host授权时序架构影响待固定后交Lead，原10TODO不减。
+
+2026-10-06 14:44:50 UTC：真实TLA撤权red已固定46f40f736098f7072d548fc41165834fc4ad143d；本地host最小双gate实现后一次21/21/strict0，见[检查](../../docs/evidence/x01/host-gates-checks.json)/[质量](../../docs/evidence/x01/host-gates-quality.md)。两个授权phase共用冻结binding，拒绝/ACK未知保持原异常；0PG/provider/安装/新实际runner。独审尚未开始，新main未接。

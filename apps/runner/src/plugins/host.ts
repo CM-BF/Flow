@@ -15,7 +15,8 @@ export interface PluginToolInput {
   binding: FrozenToolInvocation;
   input: string;
   signal: AbortSignal;
-  authorize(binding: Readonly<FrozenToolInvocation>): Promise<void>;
+  /** Check current permission at each phase; an earlier ACK does not authorize the next action. */
+  authorize(binding: Readonly<FrozenToolInvocation>, phase: 'load' | 'invoke'): Promise<void>;
   assertOwnership(): void | Promise<void>;
 }
 export interface PluginToolResult {
@@ -67,12 +68,14 @@ export async function invokeInstalledTool(input: PluginToolInput): Promise<Plugi
   if (installed.receipt.installationId !== binding.material.installationId || installed.receipt.storeId !== binding.material.storeId
     || installed.receipt.treeDigest !== binding.material.treeDigest) throw new PluginToolError('MATERIAL_MISMATCH');
   checkAbort(input.signal); await input.assertOwnership();
-  // An ES module's top level is executable. Both gates precede import, not merely its invoke call.
-  await input.authorize(binding); checkAbort(input.signal); await input.assertOwnership(); checkAbort(input.signal);
+  // An ES module's top level is executable, so loading needs its own current grant.
+  await input.authorize(binding, 'load'); checkAbort(input.signal); await input.assertOwnership(); checkAbort(input.signal);
   // Keep the canonical installation URL stable: no per-invocation query/fragment or require.cache manipulation.
   const module = await pending(() => import(installed.entrypoint.href) as Promise<Record<string, unknown>>, input.signal);
   if (module.hostApiMajor !== 1 || typeof module.invoke !== 'function') throw new PluginToolError('HOST_API_MISMATCH');
   await input.assertOwnership(); checkAbort(input.signal);
+  // Import may have awaited while permissions changed. Preserve authorization errors unchanged.
+  await input.authorize(binding, 'invoke'); checkAbort(input.signal); await input.assertOwnership(); checkAbort(input.signal);
   const invoke = module.invoke as (value: { input: string; config: Readonly<Record<string, string>>; signal: AbortSignal }) => unknown;
   const output = await pending(() => invoke({ input: text, config: binding.configuration, signal: input.signal }), input.signal);
   await input.assertOwnership(); checkAbort(input.signal);
