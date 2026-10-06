@@ -1,0 +1,52 @@
+{
+  "observedAt": "2026-10-06T12:51:36.301956+00:00",
+  "target": "f82a3a7436f123ab741fd5ce845eb39cb752da3b",
+  "artifact": "ATTACHI02 ignored candidate production-artifact, fixed hash manifest verified; not deployed service",
+  "entryHtmlSha256": "888dd237657e1d242010c3d767ebab8402a8cf1b6ee46466603624af5b0e07a9",
+  "initialHtmlReferences": [
+    {
+      "path": "assets/index-B8uQTtuq.js",
+      "bytes": 790506,
+      "sha256": "62c9f140529de0163d6238e76b92a78f8a575c42c899bf9e454c7a30adfc46eb",
+      "matchesCandidateManifest": true
+    },
+    {
+      "path": "assets/rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51",
+      "matchesCandidateManifest": true
+    },
+    {
+      "path": "assets/assistant-ui-C7NurJFc.js",
+      "bytes": 667364,
+      "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e",
+      "matchesCandidateManifest": true
+    },
+    {
+      "path": "assets/assistant-ui-CcdakA0V.css",
+      "bytes": 966,
+      "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5",
+      "matchesCandidateManifest": true
+    },
+    {
+      "path": "assets/index-DAuvZKJK.css",
+      "bytes": 112060,
+      "sha256": "67fd21360bae464e6c415be44ef85e66a2983654fbb5a4fafd873fbea2558f5d",
+      "matchesCandidateManifest": true
+    }
+  ],
+  "uniqueAssetBytes": 1571669,
+  "sourceFacts": [
+    "App statically imports both ConversationThread and TaskThread, plugin session/react, Radix Dialog/Tooltip",
+    "vite manual group combines assistant-ui, Radix and assistant-stream",
+    "index explicitly modulepreloads assistant-ui; separate file alone is not deferred chat loading"
+  ],
+  "skill": "/Users/citrine/.agents/skills/vercel-react-best-practices/SKILL.md + rules/bundle-conditional.md; existing local version1.0.0",
+  "existingPlan": "WPF-MATURE-01-05 / RS13 / WPF-001-35; no new task or claim",
+  "limitations": [
+    "Raw HTML-referenced unique asset bytes only; not measured actual network transfer, parse/evaluation time, TTI, first chat latency or a performance regression benchmark",
+    "No new build, HTTP, browser, model, service or project edit",
+    "Prior published artifact differs in source/feature scope; do not attribute byte delta solely to this attachment change"
+  ],
+  "designImplication": "Later connection/chat split must audit all static import paths including Radix manual chunk and fixtureMode; keep same session/controller authority and bound late-loading errors without losing draft"
+}

@@ -39,3 +39,5 @@ VISUAL01固定a8b/交付f708已独审并main4391接收，owner558895d收口且35
 现01/02的逐项源码、官方三来源、静态推断/未browser复现边界与后继验收集中见[主题与呈现研究](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。本轮只绑定已有TODO，不扩VISUAL已冻结九scope。
 
 已收w01固定253/VISUALa8的[18literal主题扩展候选](../../docs/evidence/web-platform/theme-extension-proposal.json)，仅绑定本计划01/02 TODO，不新大task、未领取或实施。保留official Thread局部inline默认，用受控root alias接有限token；requested preference与effective fallback分开，明确选择/禁用持久化与session退出临时fallback不同，旧epoch不得覆盖新选择。完整外部Ocean材质/插件reload矩阵须后继实际验证。附件P1优先，STEIRI重叠路径释放后仍fresh全范围查重。
+
+同TODO05/RS13新增固定观察：root只读f82候选HTML的5唯一asset共1,571,669原始字节，manifest匹配但assistant-ui仍预加载、两Thread/Radix静态依赖仍在。仅计数不等TTI/网络/部署/回归，不能把与旧caa1差额全部归附件；06关键路径后按完整初始图验收，见[原报告](../../docs/evidence/web-platform/attachi02-f82-initial-assets-research.json)。

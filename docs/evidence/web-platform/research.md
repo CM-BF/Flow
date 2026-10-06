@@ -685,3 +685,7 @@ Root最终一组独立source调用样本：[原report](dashboard-proof-fanout-re
 DPERF只读第二意见（panels固定2f4a5789，root方向认可）：[六literal/小Interface/方法hash/风险/预算](dperf03-readonly-proposal.json)。所有Git child（含备用show和E2BIG/尺寸二分）进入每aggregate同context，permit随child终结finally释放，避免递归持锁；只消除同snapshot main dirty/untracked重复，不缓存proof或跨snapshot绿色。必须明确定义captured HEAD与延后dirty读取、实测排队HEAD漂移时保守unknown，多命令不称原子观察。新增末尾HEAD核对后28次仅算术预计23，未新实验；后续root正式批准≤45s含≥10s清理/≤8MiB与两方法最终Interface，ATTACHI02首12实际派工后已fresh受领DPERF03，实测结果尚无。
 
 ATTACHI02完整附件回退后继从静态风险升级为root独立纯内存诊断：[原脚本/JSON byte绑定](attachment-complete-rollback-research/source-binding.json)。official core0.3.22真实send配显式rejecting handleSend：原chips/controller1/1，拒绝后text/chips恢复但controller0，重试capture失败；held capture仍保1ref。6.6ms逻辑/0.46s进程、finally完成、0HTTP/PG/browser/projectwrite，非实际App生产回归。root核controller/recovery/adapter从4c到1c496无diff；原module批准与历史证据保持，当前绑定生命周期解决，不未经amend修改保护模块。管理仅原样归档，未执行诊断。
+
+### RS13 固定ATTACHI02候选初始依赖观察（root 12:51:36 UTC）
+
+固定f82a3a7436f123ab741fd5ce845eb39cb752da3b既有candidate产物HTML引用5个唯一asset，合计1,571,669 raw bytes；逐项bytes/hash与manifest一致。assistant-ui仍modulepreload，App两Thread/session/react/Radix静态路径和manual group未断。原[只读报告](attachi02-f82-initial-assets-research.json) SHA256 285af0ef8deb6725ffd9ee54317a1bfbcfeb8a9c9b78edf5cb9129baceadec86，由管理原字节归档未重跑build/browser。这不是部署、网络transfer、parse/TTI或性能回归benchmark；不把对caa1差额全归附件。沿原MATURE01-05/RS13/35在06关键路径后审完整初始依赖图，无新task/claim。方法为root已读本地vercel-react-best-practices1.0.0 conditional rule，非新安装。

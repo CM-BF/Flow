@@ -64,7 +64,7 @@
 | WPF-001-33 | completed | d01_owner | 902c/aa715已main da041，收口8e9现remote一致/clean，1cb4 v2 released；push两次失败与先release偏差有原始记录；34.897s/16.08MB仅临时样本；[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md) |
 | WPF-001-34 | completed | d01_owner | root10:44–10:45实际129来源页面核六parent/co-lead、三子片领取/父导航；[证据](../../docs/evidence/web-platform/mature-dashboard-ui-acceptance.json)。仅计划落盘/显示专项，不是六feature完成。 |
 
-| WPF-001-35 | pending | d01_owner | RS13固定产物去重/初始依赖图/延后chat及静态host cache-encoding冷暖与回滚验收已落plan；未take/实施，ACK/附件/发布优先，0个人服务/模型。 |
+| WPF-001-35 | pending | d01_owner | RS13固定f82候选5asset/1,571,669 raw bytes仅观察，初始依赖图/延后chat及静态host cache-encoding冷暖与回滚验收已落plan；未take/实施，ACK/附件/发布优先，0个人服务/模型。 |
 
 | WPF-001-36 | completed | d01_owner | D01/DPERF两组隔离原证据与六scope[只读第二意见](../../docs/evidence/web-platform/dperf03-readonly-proposal.json)已归档；新增末尾HEAD核对后原28→23初为算术预期，实施后仅该临时样本已实测23，captured HEAD/permit/失败unknown为门槛；ATTACHI02实际派工后已root结构批准并fresh db0b7d25 v2七scope实施（新增专测分类helper）；45s/10s清理/8MiB，独审5609 APPROVED，已main a8aef五源同；7cc5双端clean全停写后db0b v3 released；不泛化CPU/SLO。 |
 
