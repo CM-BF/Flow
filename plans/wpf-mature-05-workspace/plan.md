@@ -10,7 +10,7 @@
 | 用户来源 | [成熟度原话与六项分工](../../docs/evidence/web-platform/mature-task-handoff.md)；原WPF REQ仅追溯，不形成第三层 |
 | 收益 | 一个顶层标签代表一组并排pane，让真实对话与文件/产物能在同一工作组独立操作且可恢复布局。 |
 | 边界 | 本计划定义完整用户结果；具体实现须独立worktree、fresh精确scope take和固定独审，计划目录领取不授产品写权 |
-| 依赖 | CONTEXTI已main并释放，当前STEIRI01独占App/Thread/types/validation，布局与插件入口后继等待精确交权；复用workspace-state，先核持久布局接口与真实view身份，不改会话历史。 |
+| 依赖 | CONTEXTI已main并释放，STEIRI01已main并释放，布局与插件入口后继仍须fresh精确交权，不能借旧free观察写入；复用workspace-state，先核持久布局接口与真实view身份，不改会话历史。 |
 
 ## 已有能力与gap
 
@@ -26,7 +26,7 @@
 - [ ] **WPF-MATURE-05-02** 接真实conversation双pane：同顶层tab显示A与B，独立焦点/滚动/未发草稿/上下文，不靠全局focused授权其他pane；真实ConversationList扩展用conversation/view上下文，不借旧task slot冒覆盖。
 - [ ] **WPF-MATURE-05-03** 提供布局操作与恢复：比例调整、交换、合回与恢复；关闭视图不cancel，split/merge只改布局不拼接history；组合pane菜单复用P01 registry并核sample贡献/禁用及跨连接身份。
 - [ ] **WPF-MATURE-05-04** 兼容内容种类与窄屏：模型可容chat/文件/产物；首个两栏旅程与3+后继分明，390键盘可达且不强迫外部内容同色。
-- [ ] **WPF-MATURE-05-05** 固定真实交互验收：实际App双会话及内容pane交互/刷新恢复/关闭重开证据，主题和比例/焦点测试；没有实现的3+明确开放。
+- [ ] **WPF-MATURE-05-05** 固定真实交互验收：实际App双会话及内容pane交互/刷新恢复/关闭重开证据，主题和比例/焦点测试；大量反复开关后DOM/缓存/订阅有界，区分visible/hidden/closed-clean/closed-protected，草稿/附件/unknown不可静默丢失，满额保护时拒新开，重开恢复且不cancel后台任务；实际0模型测DOM/effects读取/切换输入时延及未确认恢复，Activity不是内存上限；关联MATURE06-04，没有实现的3+明确开放。
 
 ## 验证与交付规则
 

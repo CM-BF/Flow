@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-06T10:46:45.501322+00:00",
+  "target": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b",
+  "head": "859992e477853a22dfc774131777082af9e8c854",
+  "dirty": [],
+  "outside": [],
+  "source": {
+    "apps/web/test/web-release-compatibility.fixture.ts": {
+      "current": "565d2b7e1b9dfe0a8bbff35b290cc3e7cdef6cd7f05117c08b0248d917c3db0f",
+      "target": "565d2b7e1b9dfe0a8bbff35b290cc3e7cdef6cd7f05117c08b0248d917c3db0f"
+    },
+    "apps/web/test/web-release-compatibility.browser.ts": {
+      "current": "a143860d233be3824284e9360a3574a159b2c5e7e6821e6ec6368d4731317fbc",
+      "target": "a143860d233be3824284e9360a3574a159b2c5e7e6821e6ec6368d4731317fbc"
+    }
+  },
+  "localLinks": 38,
+  "missing": [],
+  "scope": "management only; root independent product audit separate; no tests rerun",
+  "approvedDelivery": {
+    "head": "db08e7b5976ce462a0b829bbf6a5554fcaf43121",
+    "localRemoteEqual": true,
+    "clean": true,
+    "sourceDiffTo7805": 0,
+    "metadataPaths": 7,
+    "rootApprovedAt": "2026-10-06 10:46:30 UTC",
+    "independentScope": "two source full read, tsc, raw hashes and preserved artifact; browser/PG cleanup remain author evidence"
+  }
+}

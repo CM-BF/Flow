@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-06T10:45:17.544Z",
+  "state": "available",
+  "paths": [
+    "apps/web/src/conversation-stream/patches.ts",
+    "apps/web/src/conversation-stream/projection.ts",
+    "apps/web/src/conversation-stream/messages.ts",
+    "apps/web/src/conversation-activity/native/projection.ts",
+    "apps/web/package.json"
+  ],
+  "activeOverlaps": [],
+  "ownerConsent": [
+    "workspace_panels_owner explicitly stopped/no overlap",
+    "w01_owner explicitly stopped/no RELEASE/ACK/ATTACHI overlap"
+  ],
+  "action": "Lead/TUI01C may fresh atomically take exact paths, then implement; this observation is not writing permission",
+  "limits": "Public extraction + Web local consumer checks. Do not move App/Thread/private host state."
+}

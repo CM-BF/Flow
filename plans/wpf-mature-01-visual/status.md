@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 09:43:01 UTC |
+| 最近更新 | 2026-10-06 10:47:46 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -35,12 +35,12 @@
 
 ## 依赖与领取
 
-复用现有主题/官方Thread/布局接缝；与STEIRI当前App/Thread写权错峰。VISUAL01已main4391并由owner558895d收口、35e5 v3 released，源见[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)；未占App/Thread/validation。
+复用现有主题/官方Thread/布局接缝；STEIRI已main/released，后继仍fresh核所有精确写权。VISUAL01已main4391并由owner558895d收口、35e5 v3 released，源见[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)；未占App/Thread/validation。
 
 中性轻质外壳、低对比紧凑sidebar、分组小图标短行高；圆角选中容器内多个图标表示pane组合；嵌入式并排panel各有圆角细边框/轻阴影/窄gutter/精简header，活动pane靠明确边界而非大块高饱和背景。玻璃集中shell/sidebar/浮层，正文保持稳定不透明可读。控件紧凑而正文适度留白，避免满屏大卡片。
 
-登记/父关联待执行dashboard原owner处理，见[唯一管理登记队列](../../docs/evidence/web-platform/mature-task-handoff.md)。不得把新增字段等同已在页面显示；局部登记不阻断独立已授权实现。
+root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见[真实页面专项](../../docs/evidence/web-platform/mature-dashboard-ui-acceptance.json)；此项通过不代表本大task完整功能验收完成。
 
 既有01/02 TODO已有[18literal只读提案](../../docs/evidence/web-platform/theme-extension-proposal.json)，不构成take或新产品事实。附件P1优先；后继需固定base、全范围fresh查重、独立树，不能沿VISUAL旧释放范围写入。
 
-真实Web发布兼容由独立[WPF-RELEASE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)实施，首canonical1eff6e6f7543c7fdf30e5d94cec3c43b148bb764，20a6529a v1四scope；真实新旧App构建/专用PG及fixture runner，0provider/个人发布操作，尚无结果。
+真实Web发布兼容由独立[WPF-RELEASE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)实施，首canonical1eff6e6f7543c7fdf30e5d94cec3c43b148bb764，20a6529a v1四scope；真实新旧App构建/专用PG及fixture runner，0provider/个人发布操作，7805固定已root10:46:30 APPROVED，final db08e7b已正常push/clean，待Lead按同descriptor受控接收；仅真实旧/新App与固定b1c中心fixture兼容，个人发布仍Lead。

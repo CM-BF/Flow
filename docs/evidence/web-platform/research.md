@@ -105,6 +105,12 @@ Dashboard最近独立观察2026-10-06T02:31:15.901Z：4320仍17源，W01 actual 
 Host接口协调：M02已接受interface.md的ports/exports方向，P01进入实现。管理者发现局部ExtensionSlot context与global getContext可能不一致，要求hostUI绑定本次invocation上下文并验证args资源匹配，覆盖active A时B行action；ResourceContext实际判别kind/message/composer/reference身份。HostPort Promise<void>可throw，PluginHost返回OperationResult，两层约定分清。这两项属于同接口澄清，不另造协议，双方已收到；composer无安全接缝时明确unsupported不成功noop。完整接口/实现冻结记录由P01 owner维护。
 
 
+### 固定RELEASE01最终产物补证与静态host候选（GO经root，2026-10-06）
+
+实际最终run截止10:39:13.012/source8d8ab520a9d43c7b9dafb22911416ee799ebf665，新format2 artifact `caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe`。GO按唯一loaded asset去重：新JS 1,380,769B + CSS 110,630B = 1,491,399B，旧1,426,477B，差64,922B。旧10条loaded记录实际是5个唯一asset，不能拿记录条数夸性能。HTML cde7d9…仍直接index JS并modulepreload assistant-ui/runtime，现拆chunk没有延后连接页初始依赖图。以上是解码资源字节，不是压缩传输量/TTI/浏览器时延测量；本管理未新增重跑。原始输入沿 RELEASE01 canonical/new-manifest/source-manifest，缩写HTML hash仅GO定位，不作为完整hash绑定。
+
+同RS13下的后继独立静态host候选，非新大task/未take：GO固定main21e0a56的static-web.mjs:68/85资产no-store、release原bytes无Content-Encoding。先与ExecutionLead/SVC唯一owner明确同URL不可变性与回滚旧资产保留，再研究哈希asset缓存/编码；HTML/身份/API分别定义语义，不能全站cache、绕manifest或许诺立即撤销。用已有artifact在独立scope有界0模型测冷/暖与版本切换，不动个人服务；首屏请求/parse/可输入与首次打开chat等待共同衡量，不能只移动等待。优先RELEASE接收/ACK/ATTACH，后继ready才fresh take。方法来源root/GO已读本地frontend-design、vercel bundle-conditional/dynamic-imports、codebase-design/clean-code及官方[React lazy](https://react.dev/reference/react/lazy)、[HTTP caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching)、[Content-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Encoding)。本段为固定观察/候选，未实施或声称改善。
+
 ## RS14 多chat SSE连接占用：从假设到确认缺陷
 
 初始调查假设：W01所有曾打开未关闭chat均保持TaskProjection.watch，包括terminal；FlowClient fetch SSE，中心HTTP/1持续keepalive/查询。MDN[Using SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)说明非HTTP/2浏览器同源连接限制。不能以Node HTTP并发测试代替浏览器证明。

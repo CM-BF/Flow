@@ -10,7 +10,7 @@
 | 用户来源 | [成熟度原话与六项分工](../../docs/evidence/web-platform/mature-task-handoff.md)；原WPF REQ仅追溯，不形成第三层 |
 | 收益 | 真实增量聊天、工具与thinking详情、队列/补充指令/取消及恢复形成连续可靠旅程，输入与滚动不被后台更新破坏。 |
 | 边界 | 本计划定义完整用户结果；具体实现须独立worktree、fresh精确scope take和固定独审，计划目录领取不授产品写权 |
-| 依赖 | STEER01模块已main；STEIRI01十三scope实际App片已df29受领，CONTEXTI原范围已释放；CHAT10 admission/公共client已固定，个人steering仍off。真实provider观察预算须单独明确；voice公开输入依赖待核。 |
+| 依赖 | STEER01模块已main；STEIRI01十三scope实际App片已main f181/原scope释放，CONTEXTI亦已main并释放；CHAT10 admission/公共client已固定，个人steering仍off。真实provider观察预算须单独明确；voice公开输入依赖待核。 |
 
 ## 已有能力与gap
 
@@ -39,9 +39,9 @@ CHAT06I01固定9da已main，官方runtime权威repository避免伪branch；Activ
 
 ### 同一聊天呈现TODO的总体验收补充
 
-GO最新要求（非新增大task）：默认先正文、简短自然状态与需要行动；识别tool标题即可，native ID/Provider observations分页、来源计数/原因统一Details按需。系统状态与模型正文来源分开，不用模板冒充回复或模型润色；真实error/unknown/未确认取消/queue-steer受理≠生效及恢复动作必须可达。验收普通hi、正常stream/tool、queue等待、断线unknown四旅程，390及双pane不长期被工程说明占据。此为原MATURE06呈现验收、MATURE01视觉依赖，不扩大已审VISUAL或STEIRI业务写权。
+GO最新要求（非新增大task）：默认先正文、简短自然状态与需要行动；识别tool标题即可，native ID/Provider observations分页、来源计数/原因统一Details按需。成功回复不应常驻Activity succeeded、Open task controls、More actions、Task output和空0 waiting Center queue多处入口；收敛默认入口，但error/unknown/decision必须直接可见。系统状态与模型正文来源分开，不用模板冒充回复或模型润色；真实error/unknown/未确认取消/queue-steer受理≠生效及恢复动作必须可达。验收普通hi、正常stream/tool、queue等待、断线unknown四旅程，390及双pane不长期被工程说明占据。390截图若侧栏正打开，只能证明该状态，既不能推断手机坏，也不能当侧栏关闭时正文阅读/输入验收；此要求不导致重跑已审RELEASE。本段为原MATURE06呈现验收、MATURE01视觉依赖，不扩大已审VISUAL或STEIRI业务写权。
 
-WPF-MATURE-06-03的事实/呈现边界与四旅程细目见[固定研究](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。[ACTIVITYREAD01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability/plans/wpf-activity-readability/status.md)首bd580已正式实施，仅已展开活动区域；外层queue/stream/react仍后继，不将本片当整条TODO完成。
+WPF-MATURE-06-03的事实/呈现边界与四旅程细目见[固定研究](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。[ACTIVITYREAD01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability/plans/wpf-activity-readability/status.md)f2bc已审并main f181/原scope释放，仅已展开活动区域；外层queue/stream/react仍后继，不将本片当整条TODO完成。
 
 ## 会话刷新恢复补充（GO经root，2026-10-06 10:24:48 UTC）
 

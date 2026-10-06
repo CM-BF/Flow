@@ -1,5 +1,13 @@
 # 成熟聊天大task来源与登记队列
 
+## 同级立即可消费回复（2026-10-06 10:47:46 UTC）
+
+- **TUI01C五Web路径**：两原owner已明确停写，10:45:17.544Z [fresh PG](tui01c-web-scope-ledger.json)逐literal无active/handoff重叠；[精确范围与确认](tui01c-web-scope-handoff.json)。Lead/TUI01C可自行fresh原子take成功后实施，不等待GO；这条free观察不是写许可。只提纯public模块并做局部Web消费者验证，不移动App/Thread/host私有状态。
+- **WPF-ACK01已正式受领**：新web-shared-ack-consumer/codex同名、base0cee7556befa1988e60bae94b510240122c34b88；[a2674416 v1](ack01-take-receipt.json)10:45:38.879Z七literal，3wrapper/2test+plans/wpf-ack01-shared-consumer/docs/evidence/wpf-ack01，父MATURE06，owner w01。followup_task已唤醒；首canonical **ff04f355518484419c10d7abe8adf337619a9bf9** 已owner实核clean、parser0/human完整，10:46:15 live身份/七scope匹配。不等ATTACHruntime，不改RELEASE固定pair。
+- **RELEASE01 root已APPROVED**：7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b，10:46:30UTC；[管理范围/38links/两hash审计](release01-delivery-audit.json)核859992e clean且scope外0。root全文/独立tsc/原bytes与保留artifact审查，真实browser是作者证据，PG清理由作者记录；最终批准metadata **db08e7b5976ce462a0b829bbf6a5554fcaf43121** 已正常push/clean，仅7ownmetadata变化、两source对7805零差；原20a v1保留至main。new format2 releaseId `8d8ab520a9d43c7b9dafb22911416ee7`，report仅适用相同完整descriptor，不自动发布个人入口。
+- **六计划UI专项已实际完成**：[root真实页面证据](mature-dashboard-ui-acceptance.json)记录129来源、六大task身份/co-lead、ATTACH/RELEASE/DPERF父/worker领取及父导航。MATURE04旧stale已自恢复；其literal范围与标准阻塞字段另同级Mika合法owner安全修正，不影响父关联通过，不改其源。**这不是六大task功能Done。**
+- **DPERF聚合声明已修正**：六raw trace仅归档追加.log、原字节hash不变；public compareImplementation=unchanged、无outside；最终 `aa715ebe3e482118dac08c5bca6651be0e984a59` pushed/clean，仍902c产品/root批准，不重跑实验/工程测试、不改proof白名单。
+
 ## F01需读的具体回复（当前更新 2026-10-06 10:43:35 UTC）
 
 1. **有效writer与安全点已答**：[09:51:27.662Z四path观察](receipt-shared-writer-observation.json)及[原账本](receipt-shared-writer-ledger.json)：`conversations/projection.ts`、`conversation-context/receipts.ts`、`execution-profiles/selection.ts`、`conversation-context/selection.ts`均无active/handoff writer。这只是时点观察；F01固定公共receipt target与出口后，Web可立即以精确projection调用点+专测/自身记录fresh take，不必等待已释放的STEIRI App范围。所有路径均在apps/web/src下。
@@ -35,17 +43,17 @@ DPERF02在RELEASE01与ATTACH实际运行后已按root恢复授权完成限额实
 | Task / action | 固定实现 / 最终正常push、clean | 唯一canonical / 边界 |
 | --- | --- | --- |
 | WPF-VISUAL01 → MATURE01，主线收口完成 | a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231 / main4391bbf9f1785212d098ef6aa1c01a0320a003d3；owner final558895d7a64e1502ac4b397e24daf7946296e0ca 已push/clean，35e5 v3 released | web-visual-shell / plans/wpf-visual01-shell / docs/evidence/wpf-visual01；七source/祖先已只读核，九scope停写；SVC04另受控发布个人产物，非整个MATURE01完成 |
-| D08 → D01，已main；待4320正式部署 | eca59a5edab0820f724a9bd5bc854e22f48d9ea9 / main f181d84b5fb3652d62e2a181acff442d42b3e066；owner final605957f15470dbabef24c98c3614ead39442bcb2 push/clean | dashboard-task-links / plans/d08-task-links / docs/evidence/d08；七source零diff；九scope全停写后[49510580 v2 released](d08-main-release-receipt.json)。部署回执到达再由root一次核六大task/领取关联 |
+| D08 → D01，已main/实际页面父关联通过 | eca59a5edab0820f724a9bd5bc854e22f48d9ea9 / main f181d84b5fb3652d62e2a181acff442d42b3e066；owner final605957f15470dbabef24c98c3614ead39442bcb2 push/clean | dashboard-task-links / plans/d08-task-links / docs/evidence/d08；七source零diff；九scope全停写后[49510580 v2 released](d08-main-release-receipt.json)。root10:44–10:45实际页面已核六大task/领取关联，产品全目标另计 |
 | WPF-STEIRI01 → MATURE06，main收口完成 | 5cfebc639d7acd458d27f4543d00a32a9fd96fc7 / main f181d84b5fb3652d62e2a181acff442d42b3e066；owner final8273d71ef8970399b9d4f171edafb99184316ec8 push/clean | web-steering-integration / plans/wpf-steer-i01-integration / docs/evidence/wpf-steer-i01；11source零diff；十三scope全停写后[bc0ded75 v2 released](steiri01-main-release-receipt.json)；[独审](steiri01-independent-review.json)不冒真实provider/跨reload恢复 |
 | WPF-ACTIVITYREAD01 → MATURE06，main收口完成 | f2bcaae6623176acd718cf53707892154579970a / main f181d84b5fb3652d62e2a181acff442d42b3e066；owner finalbe977a23cff08edf6ac46d18750c3400bf9a2218 push/clean | web-activity-readability / plans/wpf-activity-readability / docs/evidence/wpf-activity-readability；四source零diff；六scope全停写后[6f427 v3 released](activityread01-main-release-receipt.json)，仅展开活动区简化 |
 | WPF-CONTEXTI01，main收口 | main df29含d0e/009e十八source相同；owner fe2b9215d1b230424d9470b8d187eed3d7e77231 pushed/clean | 原20scope停写后[55fe v2 released](contexti01-main-release-receipt.json)09:27:04.696Z，旧树不续写；新STEIRI只经[fresh take](steiri01-take-receipt.json)受权 |
 | WPF-ATTACH01 → MATURE03，phase1 APPROVED固定输入待受控发布 | fixed base f181d84b5fb3652d62e2a181acff442d42b3e066；[ef617d78 v1 take](attach01-contract-take-receipt.json)10:06:48.197Z，五literal | attachment-resources / plans/wpf-attach01-resources / docs/evidence/wpf-attach01；两个合同+一专测+自己plan/evidence，owner panels；final339086db54f8c5f9966df6121599046996dd2e48 push/clean；impl6bc2918 root已审，Lead可受控输入，phase1仍独立fixed批准；runtime已v2精准扩权，export/client/mount不在本claim |
-| D06 → D01，main收口完成 | impl2c3160f42784ee814d968a953d557251c81a243d / acceptedmain8d8ab520a9d43c7b9dafb22911416ee799ebf665；owner final631173ab正常push/clean，五source逐hash同 | dashboard-architecture-runtime / plans/d06-architecture-refresh；全四scope停写后[84fd v2 release](d06-runtime-main-release-receipt.json)10:24:18.920Z；唯一source迁移/126registry由Lead确认，4320实际部署仍待回执 |
-| WPF-RELEASE01 → MATURE01，实施/首source已就绪 | fixedWeb8d8ab520a9d43c7b9dafb22911416ee799ebf665；旧Web/backend b1c2e39837c2208e6fc2c59a80e16797f26448b5；[20a6529a v1](release01-take-receipt.json)四literal | web-release-compatibility / codex/web-release-compatibility / plans/wpf-release01-product-compatibility / docs/evidence/wpf-release01；首canonical1eff6e6f7543c7fdf30e5d94cec3c43b148bb764 clean/parser0；只两新test及记录，真实App构建/隔离HTTP-PG-fixture，不含provider或个人发布许可 |
-| WPF-DPERF02 → D01，root APPROVED待main | impl902c9b5d35e1795d564c077034dc78cf1a36b6a0 / final167e85378d1284bf92d0a5e594a6d31e1f6abf6c，local=origin/clean | dashboard-proof-batching / plans/wpf-dashboard-proof-batching / docs/evidence/wpf-dashboard-proof-batching；1cb4 v1四scope保留；root10:41:14独立27/27，作者27/27；合计34.897s/16.08MB临时Trace2，80%较少ls-tree仅此样本，无生产整体提速宣称 |
+| D06 → D01，main收口完成 | impl2c3160f42784ee814d968a953d557251c81a243d / acceptedmain8d8ab520a9d43c7b9dafb22911416ee799ebf665；owner final631173ab正常push/clean，五source逐hash同 | dashboard-architecture-runtime / plans/d06-architecture-refresh；全四scope停写后[84fd v2 release](d06-runtime-main-release-receipt.json)10:24:18.920Z；唯一source迁移/126registry由Lead确认，root实际页面已观察D06/D08范围不变；个人产物仍单列 |
+| WPF-RELEASE01 → MATURE01，root批准待Lead接收 | fixedWeb8d8ab520a9d43c7b9dafb22911416ee799ebf665；旧Web/backend b1c2e39837c2208e6fc2c59a80e16797f26448b5；[20a6529a v1](release01-take-receipt.json)四literal | web-release-compatibility / codex/web-release-compatibility / plans/wpf-release01-product-compatibility / docs/evidence/wpf-release01；fixed7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b / finaldb08e7b5976ce462a0b829bbf6a5554fcaf43121 pushed/clean，root10:46:30APPROVED；只两新test及记录，真实App构建/隔离HTTP-PG-fixture，不含provider或个人发布许可 |
+| WPF-DPERF02 → D01，root APPROVED待main | impl902c9b5d35e1795d564c077034dc78cf1a36b6a0 / finalaa715ebe3e482118dac08c5bca6651be0e984a59，local=origin/clean | dashboard-proof-batching / plans/wpf-dashboard-proof-batching / docs/evidence/wpf-dashboard-proof-batching；1cb4 v1四scope保留；root10:41:14独立27/27，作者27/27；合计34.897s/16.08MB临时Trace2，80%较少ls-tree仅此样本，无生产整体提速宣称 |
 | D01，合法owner显式父身份metadata | 2f3f33bf29177b930c524263115a5745ab67c66e 已push/clean，产品未改 | execution-dashboard原唯一plans/d01-execution-dashboard，只补大task/co-lead；D08读取原canonical，不复制状态 |
 
-这些是正式当前队列；此前09:09/09:16待审描述仅历史。新功能仍由ExecutionLead独占main受控集成；无需GO转普通ready。D08部署后root一次实际检查六大task父关联/take展示才报告计划请求Done，不将局部片段当整体完成。
+这些是正式当前队列；此前09:09/09:16待审描述仅历史。新功能仍由ExecutionLead独占main受控集成；无需GO转普通ready。root已实际完成六计划父关联/take专项页面验收；由root向GO一次结论，不将六大feature功能或局部片段误报整体完成。
 
 2026-10-06 09:32:24 UTC D01仅父身份metadata完成，正常push2f3f33b/clean、原产品零改；全部窄scope停写后[5fa8 v2 release](d01-parent-release-receipt.json)09:31:36.475Z，旧D01不继续修改。D08管理核七hash/范围正确，interface语法例子断链已owner仅metadata ce038修正push；[最终范围/链接/hash审计](visual-d08-delivery-audit.json)通过，不改变root产品批准。
 
@@ -54,9 +62,9 @@ DPERF02在RELEASE01与ATTACH实际运行后已按root恢复授权完成限额实
 本批[主线/owner收口与release](main-f181-closeout.json)已核；Lead59source/50direct+types沿其原证据归因，管理只读7+4+11源与祖先、0产品重跑。122来源正在部署，尚无正式完成回执，不提前采4320或报告六计划Done。历史段落按各时间保留，当前事实以上表为准。
 
 
-## 4320 有限现场观察（root来源，非fixed部署receipt）
+## 4320 当前真实页面观察
 
-root本轮只读OS：listener PID30289，cwd=/Users/citrine/Projects/AgentHarness/Flow，启动2026-10-06 10:30:39 UTC；当时main0b0d5fe7af9c0f40861ec6d2847f7383bcd76739。未HTTP/刷新用户tab/操作进程。说明已有新进程，仍不能证明某固定main/registry的完整部署；126-source registry与页面展示分开。此条替代“没有任何进程观察”，不替代正式部署receipt；收到后root一次hidden实际页面核六大task/父关联/take，管理不重复采样/催普通依赖。
+root10:44–10:45UTC已用自建后台tab42实际核六parent与已登记子片领取/父导航，tab关闭、用户tab未动，详见[专项证据](mature-dashboard-ui-acceptance.json)。10:30:39UTC PID30289是更早OS旁证，不再用“仅进程/未UI验”概括当前事实；registry、固定源码main、个人服务产物仍分别记录。DPERF一次定向API只用于root要求的review unknown诊断，不重采六计划。
 
 ## 用户原话（GO经root逐字转交，2026-10-06）
 

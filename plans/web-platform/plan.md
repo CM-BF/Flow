@@ -127,7 +127,7 @@ D06/runtime2c316已main8d8，631173 owner收口后84fd v2 released。D08/ACTIVIT
 | P1实施 | ATTACH01资源 + RELEASE01兼容 | 两worker各自独立tree/claim；附件runtime固定后独审；RELEASE真实App产物供Lead受控发布，0provider且不动个人入口 |
 | 已审待main | DPERF02 | 902c/167e已正常push；临时16/64/128样本34.897s，完整语义与27独立回归；main/4320收益未知 |
 | 已main / 已释放 | CONTEXTI、STEIRI、ACTIVITYREAD、D08、VISUAL、D06/runtime | 各canonical与release见[集中队列](../../docs/evidence/web-platform/mature-task-handoff.md)；片段通过不等六大task完成 |
-| 下一有界消费 | TUI01B共享ACK Web调用点 | main0cee7556已审公共输入；RELEASE之后w01新树fresh七scope，3wrapper/2test/记录；不碰App，不复制附件v2 decoder |
+| 下一有界消费 | TUI01B共享ACK Web调用点 | main0cee7556已审公共输入；已于10:45:38新树fresh七scope，3wrapper/2test/记录；不碰App，不复制附件v2 decoder |
 | 等合同/客户端实际输入 | ATTACHI01附件Web | official Thread既有附件控件接持久上传/引用/恢复，先固定public输入；不得预占宽23scope挡共享ACK窗口 |
 | 等正式部署验收 | 六计划+父关联/take | D08已main；root仅OS新进程观察尚非fixedreceipt，收到正式来源后一次真实页面核验，不能提前Done |
 
@@ -349,4 +349,6 @@ GO管理审计规则：active claim按实际开发/持续管理、冻结待审/�
 
 U11布局后继继续排在stream接线之后：目前FrozenConfiguration常驻heading/summary/details三行，composerHeader还有Thinking/Tools/发送意图及footer协议说明；稳定requested/locked/permission/digest归一个可达details/help，只model/access摘要、可操作delivery和失败/unknown常显。保留创建前选择、创建后锁定原因、unknown原身份重试；该明确后继不扩当前13scope或CONTEXT01。
 
-- [ ] **WPF-001-34** 六大task计划与dashboard可见请求：四Web大task三件套、Mika02/04唯一链接、当前worker父关联和真实页面展示齐后集中验收；[唯一登记队列](../../docs/evidence/web-platform/mature-task-handoff.md)。本项是管理请求，不是第三执行层或六featureDone。
+- [x] **WPF-001-34** 六大task计划与dashboard可见请求：四Web大task三件套、Mika02/04唯一链接、当前worker父关联和真实页面展示齐后集中验收；[唯一登记队列](../../docs/evidence/web-platform/mature-task-handoff.md)。本项是管理请求，不是第三执行层或六featureDone。
+
+RS13既有首屏后继已补RELEASE最终artifact唯一asset字节与静态host cache/编码候选，[固定研究](../../docs/evidence/web-platform/research.md)区分解码字节/TTI、同URL不变与回滚，优先ACK/附件/实际发布，不新大task或擅改SVC。
