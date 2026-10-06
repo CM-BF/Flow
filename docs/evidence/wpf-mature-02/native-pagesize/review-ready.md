@@ -1,0 +1,5 @@
+# 固定组合交审
+
+source acbb3311ad4a5b35cb8c91527e969da75853dd71；prepared 674a6aa391eb7dc554a01eef6bcd58ca8a443b43；input SHA 5c609aa98f2fcc92d3339a14d202e265ef2b4f292cafe2a85e47e5ee0f56c3ac；manifest SHA c6c04a311c0b6d71e057e4d0c38914490fe286f24c2648be75ce6bc2aa3a0e8f。runtime12、prepared29/131273B互斥于archive；外部33+Node实际流式hash；旧native seal 44 tracked一致，不读取344B私有全文。
+
+只请求准备组合批准；实际NOT_OPEN。12distinct分轮+原生惰性import/sh、初次0tests全部原raw。root已审source，最后核固定input/闭包、19absent、预算即可；无新测试或compiler/helper。预算/准确recipe见README及interface。原权限候选不改变。
