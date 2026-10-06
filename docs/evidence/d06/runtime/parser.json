@@ -22,13 +22,13 @@
     },
     "human": {
       "delivery": {
-        "state": "review",
+        "state": "integration",
         "source": "explicit"
       },
       "phase": "M2",
       "priority": 2,
-      "output": "五图已按固定源码更新并通过局部检查，等待独立审查",
-      "next": "独立审查后交付可追溯架构图，由主线owner受控发布",
+      "output": "固定五图已获独立审查通过，等待主线受控接收",
+      "next": "主线接收后由服务owner发布，个人运行版本仍需独立部署回执",
       "blocker": {
         "state": "none",
         "text": ""
@@ -54,9 +54,9 @@
     "taskId": "D06",
     "owner": "d01_owner / gpt-6-astra ultra",
     "branch": "codex/dashboard-architecture-runtime",
-    "branchState": "review",
-    "updatedAt": "2026-10-06T10:17:15.000Z",
-    "updatedRecord": "2026-10-06 10:17:15 UTC",
+    "branchState": "approved",
+    "updatedAt": "2026-10-06T10:19:31.000Z",
+    "updatedRecord": "2026-10-06 10:19:31 UTC",
     "todos": [
       {
         "id": "D06-01",
@@ -80,7 +80,7 @@
         "id": "D06-04",
         "state": "in-progress",
         "owner": "d01_owner",
-        "evidence": "固定target待独立review；main未接收"
+        "evidence": "root固定target APPROVED；main未接收，保留claim"
       }
     ],
     "errors": [],
@@ -91,15 +91,15 @@
       "target": "2c3160f42784ee814d968a953d557251c81a243d",
       "record": "PASSED 2c3160f42784ee814d968a953d557251c81a243d；15 Node、61来源/119行、五图browser；[证据](../../docs/evidence/d06/runtime/checks.json)"
     },
-    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "reviewRecord": "[review.md](review.md)，APPROVED 2c3160f42784ee814d968a953d557251c81a243d /root 10:18:41 UTC",
     "mainRecord": "NOT_INTEGRATED；source base f181已main，本轮图尚未交付",
     "next": "",
     "risks": "",
     "decisions": ""
   },
   "review": {
-    "state": "not_started",
-    "record": "NOT_STARTED",
+    "state": "approved",
+    "record": "APPROVED",
     "target": "2c3160f42784ee814d968a953d557251c81a243d"
   }
 }

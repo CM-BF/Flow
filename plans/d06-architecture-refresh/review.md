@@ -1,6 +1,6 @@
 # D06 独立审查
 
-状态: NOT_STARTED
+状态: APPROVED
 Review target commit: 2c3160f42784ee814d968a953d557251c81a243d
 Base commit: f181d84b5fb3652d62e2a181acff442d42b3e066
 
@@ -20,4 +20,8 @@ Base commit: f181d84b5fb3652d62e2a181acff442d42b3e066
 
 ## Findings与结论
 
-尚未独审；无通过结论。主线NOT_INTEGRATED，保持claim回修权。
+/root 于2026-10-06 10:18:41 UTC对固定 `2c3160f42784ee814d968a953d557251c81a243d` 限定APPROVED，无blocking。全读本轮data/test/三脚本，5hash fixed/current/报告一致，61固定source hash零差，四scope无越界、product diffcheck0。独立Node24.20.0 15/15、0skip、2570.27ms；[原日志](../../docs/evidence/d06/runtime/independent-node24.log)与[范围记录](../../docs/evidence/d06/runtime/independent-review.json)。
+
+独立CUA49510核runtime并发/unknown、Codex键盘Enter/固定source下钻、深色、states passed Space+正文规则；console warn/error=[]，tab41关闭；目视作者390双主题，42%局部滚动边界准确。没有重跑作者完整五图browser，也未测领域/DB/provider/真实4320/个人部署。系统默认Node23另跑只旁证，不替代固定Node24证据。
+
+作者仅转录结果，无产品改动或无因重测。主线NOT_INTEGRATED，claim保留回修权。
