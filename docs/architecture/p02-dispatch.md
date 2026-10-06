@@ -4,7 +4,7 @@
 
 ## 状态与失败窗口
 
-中心TaskSubmission为harness=a2a、protocol.endpointRef；ref只指可信host本地配置，中心不保存endpoint token。每attempt最多一个intent，commandId稳定随机，prepared→sending原子核对runner/task/attempt/ownerVersion和未过期租约；maySend只返回一次，重试不能再次得到true。发送请求前已持久标sending：此后任何无remoteTaskId恢复都变uncertain，可能零次发送但绝不为了进展盲重发。A2A messageId仅相关ID，不提供远端幂等保证。
+中心TaskSubmission为harness=a2a、protocol.endpointRef；ref只指可信host本地配置，中心不保存endpoint token。prepare同时固定规范化URL的SHA256 endpointDigest；同ref改指另一URL将拒绝，凭据本身不进入hash或中心。每attempt最多一个intent，commandId稳定随机，prepared→sending原子核对runner/task/attempt/ownerVersion和未过期租约；maySend只返回一次，重试不能再次得到true。发送请求前已持久标sending：此后任何无remoteTaskId恢复都变uncertain，可能零次发送但绝不为了进展盲重发。A2A messageId仅相关ID，不提供远端幂等保证。
 
 已得到remoteTaskId后bind幂等保存；ACK丢失后重启只在中心确有bound时GET恢复。恢复只允许原runner、原ownerVersion、未过期当前attempt；uncertain/过期不自动续租、不GET复活，保持reservation并使用C02人工确认。取消开始同样一次性许可，取消ACK之后仍轮询Task；只有明确remote CANCELED才向中心报告cancelled。
 
@@ -15,7 +15,7 @@
 | 路由 | 输入 / 结果 | 权限 |
 | --- | --- | --- |
 | GET /api/tasks/:id/protocol | ProtocolState或null | owner |
-| POST /api/runner/protocol/prepare | Ownership → ProtocolState | runner，有效ownership |
+| POST /api/runner/protocol/prepare | ProtocolPrepare（Ownership+规范化URL的endpointDigest） → ProtocolState | runner，有效ownership |
 | POST /api/runner/protocol/begin | ProtocolCommand → ProtocolDispatchPermit | runner；仅prepared首次maySend |
 | POST /api/runner/protocol/bind | ProtocolBind → ProtocolState | runner；重复同remoteTaskId可回放，异内容拒绝 |
 | POST /api/runner/protocol/uncertain | ProtocolUncertain → ProtocolState | runner；持久标未知且停止中心新事件 |
