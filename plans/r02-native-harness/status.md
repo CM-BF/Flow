@@ -19,7 +19,7 @@
 
 ## 检查、风险和下一步
 
-Node 24 / pnpm 9.15.4 冻结安装成功，无依赖更改。R01 review 修复独立提交后合入，不在此分支重复实现。继续 read-only Claude adapter 与模拟 SDK seam 回归，再进行最多 5 次已授权真实 query。原有实验发现 managed plugin/skill 资源即使显式空配置仍可出现在 init；记录实际资源并限制所有可执行工具，不声称完全隔离共享资源。
+Node 24 / pnpm 9.15.4 冻结安装成功，无依赖更改。R01 review 修复独立提交后合入，不在此分支重复实现。实现与模拟回归已经提交；等待独立review，后续真实系统query只由Execution Lead使用剩余2次预算执行。原有实验发现 managed plugin/skill 资源即使显式空配置仍可出现在 init；记录实际资源并限制所有可执行工具，不声称完全隔离共享资源。
 
 ## Dashboard 同步
 
