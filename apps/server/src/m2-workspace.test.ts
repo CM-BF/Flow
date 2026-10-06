@@ -84,6 +84,25 @@ it('paginates both directions and serializes concurrent projection without dupli
   expect((await get('/api/workspace?after=999999')).statusCode).toBe(409);
 });
 
+it('projects acceptance before output across the 200-task batch boundary without losing events', async () => {
+  let lastTaskId = '';
+  for (let i = 0; i < 201; i++) lastTaskId = (await submit(`Batch task ${i}`)).json().task.id;
+  const output = { id: randomUUID(), cursor: 1, createdAt: new Date().toISOString(), kind: 'text', text: 'Output from the last task' };
+  await pool.query('INSERT INTO flow.timeline(task_id,cursor,entry) VALUES($1,1,$2)', [lastTaskId, output]);
+  const first = (await get('/api/workspace?after=0&limit=100')).json<WorkspacePage>();
+  expect(first.watermark).toBe(200);
+  expect(first.projectionPending).toBe(true);
+  const second = (await get(`/api/workspace?after=${first.nextCursor}&limit=100`)).json<WorkspacePage>();
+  const third = (await get(`/api/workspace?after=${second.nextCursor}&limit=100`)).json<WorkspacePage>();
+  const all = [...first.entries, ...second.entries, ...third.entries];
+  expect(all).toHaveLength(202);
+  expect(new Set(all.map(item => item.entry.id)).size).toBe(202);
+  const lastTaskEvents = all.filter(item => item.task.id === lastTaskId);
+  expect(lastTaskEvents.map(item => item.entry.id)).toEqual([`accepted:${lastTaskId}`, output.id]);
+  expect(lastTaskEvents[0]!.cursor).toBeLessThan(lastTaskEvents[1]!.cursor);
+  expect(third.hasMore).toBe(false);
+});
+
 it('exposes ten task decisions together and rejects a stale decision after cancellation', async () => {
   const post = (url: string, payload: object, token = ownerToken) => server.inject({ method: 'POST', url, payload, headers: { authorization: `Bearer ${token}`, 'idempotency-key': randomUUID() } });
   const runner = (await post('/api/runners', { name: 'M02 protocol test runner', harnesses: ['fixture'], capacity: 10 })).json();
