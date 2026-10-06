@@ -1,9 +1,9 @@
 # MATURE02C01 独立审查
 
-状态：NOT_STARTED；Reviewer：assignment_review / gpt-6-astra；修复后增量待审
+状态：APPROVED；Reviewer：assignment_review / gpt-6-astra；补充P2 CLOSED
 Review target commit：6d1145de30eea1eb4c267c88386ebc0479dfbd99
 
-[后续补充REQUEST_CHANGES原件](../../docs/evidence/mature02c01/supplement-changes-requested.json)已原样归档；两项后续P2已局部修复，2红→2绿/52未选和focused types0已固定，待唯一reviewer增量审查。源停写；[增量证据](../../docs/evidence/mature02c01/supplement-README.md)。以下为原563完整独审历史，不能自动批准新增修复。
+[后续补充REQUEST_CHANGES原件](../../docs/evidence/mature02c01/supplement-changes-requested.json)已原样归档；两项后续P2已局部修复，2红→2绿/52未选和focused types0已固定，唯一reviewer已完整核2源delta/107bindings与原输出，无P1/P2、0重测。原样[批准回执](../../docs/evidence/mature02c01/supplement-approved.json)及[bindings](../../docs/evidence/mature02c01/supplement-review-bindings.json)。源停写；[增量证据](../../docs/evidence/mature02c01/supplement-README.md)。以下为原563完整独审历史，不能自动批准新增修复。
 
 ## 原完整独审历史
 
