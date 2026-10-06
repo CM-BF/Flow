@@ -2,7 +2,7 @@
 
 状态：NOT_STARTED
 
-- Review target：实现待固定；范围仅store.ts的3行v2 unknown分支和新attachment-history.test.ts。
+- Review target：4f87934f585b8241faa7cdb76b79a202fd353b6f；[manifest](../../docs/evidence/wpf-mature-04/attachment-manifest.json) SHA256 6651c75a82724e22b95a776a5ba49dc5290a550864a293f1325fdfc0b055a38f；范围仅store.ts的3行v2 unknown分支和新attachment-history.test.ts。
 - 4真实PG/HTTP组合+17直接schema/store=21不同，strict0；原red与两轮0连接/DROP完整保留；旧9PG未运行不累计。
 - 本次只修history DTO表达能力，不新增attachment材料DTO，不改变public schema、旧v1/stored history或真实executionInputDigest；current/remaining/SDK未知保留。
 - 已交producer eccb的approval及main接收不自动覆盖本次store修复。
