@@ -10,11 +10,11 @@
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-execution-profile |
 | Branch | codex/engineering-execution-profile |
-| 工作基线 / HEAD | c5bab40ffd9a334403c0db743f798d10815961f0 / codec a7d936f0；持久setup 6c9fbfde；受控共享输入 merge 332b3402 |
-| 工作树dirty状态 | 最后独立进程证据与交付metadata，正在固定 |
+| 工作基线 / HEAD | c5bab40ffd9a334403c0db743f798d10815961f0 / a750dbaa482ddd54aedd08495c66e73cc1458e53 |
+| 工作树dirty状态 | 仅最后manifest/review metadata；源码已冻结 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | 123不同检查分轮通过；实际main 4自有进程正常关闭；最终root noEmit见delivery-types |
+| 检查状态 | 123不同检查分轮通过；实际main 4自有进程正常关闭；最终root noEmit0，raw见delivery-types |
 | 已集成main状态 / HEAD | ENG01B未集成；基线c5bab40已有已审ENG01A |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -22,7 +22,7 @@
 | 下一可用交付 | 经审查后接收可配置的合成工程通路 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，待独立review，作者不自审领域 |
+| Review | [review.md](review.md)，PENDING_INDEPENDENT_REVIEW target a750dbaa482ddd54aedd08495c66e73cc1458e53 |
 | 实现范围 | apps/runner/src/engineering, apps/runner/src/main.ts, apps/runner/src/main-concurrency.test.ts, apps/server/src/engineering, apps/server/src/runners.ts, apps/server/src/execution-profiles/store.ts, apps/server/src/execution-profiles/publication.ts, packages/contracts/src/engineering-profile.ts, packages/contracts/src/engineering.ts, plans/eng01b-engineering-profile, docs/evidence/eng01b |
 | Claim | 172ae2c2-8910-4bc8-bca3-53d797da175b v2；11 literal（追加store/publication） |
 | 架构影响 | 工程profile用途/持久setup与薄main组合；旧runtime唯一，固定架构target待Lead登记 |
@@ -33,7 +33,7 @@
 | ENG01B-02 | completed | native_center_owner | 自有持久marker，未知lease不重建 |
 | ENG01B-03 | completed | native_center_owner | 已合入固定21e0a56c；中心用途门禁已验，main薄入口待接 |
 | ENG01B-04 | completed | native_center_owner | 41入口/旧维护+真实main2+role1；shared inputs固定已合 |
-| ENG01B-05 | pending | native_center_owner | 独审/main尚未开始 |
+| ENG01B-05 | pending | native_center_owner | 固定target/manifest已交付待独审，main未集成 |
 
 status唯一事实源，Lead已登记source131；等待聚合器下一次读取。0provider，不把受信fixture配置称为真实模型工程能力。ENG01A已main并release v3，旧scope停止写入。
 
