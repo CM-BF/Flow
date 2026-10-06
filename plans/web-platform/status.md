@@ -4,25 +4,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:33:42 UTC / 7106知识回执接收及六源码相同；b485 v2已释放 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:41 UTC / 7106知识回执已收；CHATREAD527获root限定批准待最终交接 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `7c2700fb61cb044d967c64e21ef6f1bbda0a9fb3`（本次metadata前实核clean；交付HEAD以Git回执为准） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `354ae158e580d031fdb68e3add99dcc285687cd0`（本次metadata前实核clean；交付HEAD以Git回执为准） |
 | 工作树dirty状态 | 本次仅管理证据、主线接收与新模块领取记录；提交后以实际Git为准 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 增量聊天和知识回执已进入主线，正在修复紧凑界面的任务下钻 |
+| 当前产出 | 紧凑聊天界面已审并已交主线接收，知识接线等待文件交接 |
 | 下一可用交付 | 交付紧凑且操作顺畅的聊天界面，再接通知识选择 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
-| 已集成main状态 / HEAD | 管理独核main/origin32c371d389a913f8dd71c3bd8b98dd0697411256 clean；CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已main7106、六源码相同，66695c收口后b485 v2释放；readability c832v1修复独审R1。ExecutionLead最新回执个人center/runner32c accepting v9、SVC02关闭、用户实际请求完成/operator0query；本管理未服务验证、无新增query授权。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
+| 已集成main状态 / HEAD | 管理独核main/origin32c371d389a913f8dd71c3bd8b98dd0697411256 clean；CHAT06I 9da/e30与D06 2c/3a祖先，十一+五实现文件相同，原a729/e06a均v2释放。CONTEXT02已main7106、六源码相同，66695c收口后b485 v2释放；readability c832v1的527修复已root08:39:09限定批准，final2f858 clean已push并once REVIEW_READY交Lead。ExecutionLead最新回执个人center/runner32c accepting v9、SVC02关闭、用户实际请求完成/operator0query；本管理未服务验证、无新增query授权。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
 | Review | [review.md](review.md)，本次固定发布APPROVED a5e500136438b197305339cbe0a5e10a196a4317；root2026-10-06 07:59 UTC；历史c075仅见归档，不覆盖本次 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |

@@ -65,3 +65,17 @@ GO经root明确：个人Web61228是main目录Vite，sourceAtStart32c只表示启
 root报告CHAT10 domain a329、client25a22、startup2d699各自独审通过，但尚待Lead正式main与完整可消费输入；这些仅消息中的短标识，不作为新派工完整基线。个人steer未启。真实stream本队0query；O10隔离query由GO另行授权他队，不复用该授权，也不重复执行。
 
 后继顺序仍沿REQ42/44：CONTEXT01/02均已main，不再拆选择模块；w01按已有20scope实际CONTEXTI方案，等CHATREAD正式main/release、精确组合base和fresh take后一个实际UI片。panels释放后可只读准备独立steering控制模块；需正式完整SHA、精确新scope与新take才写，避开CONTEXTI App/Thread/queue，不造另一权限引擎。当前只是排队记录，未新派实现/建树/领取。
+
+## 2026-10-06 08:41 UTC 集中研究收口与独立准备
+
+用户及时commit/push/merge、尽量三worker并行及管理集中收口后idle的要求由GO/root转达；本次合并剩余研究，不为相同事实反复搬metadata。CONTEXTI仍为同一20scope实际UI后继，已把固定7106的选择代际/真实receipt handoff与三组关键回归补入[唯一候选](context-app-integration-proposal.json)。controller.selected数组身份区分新选择，freeze只复制不消费；只有真实新receipt发布且绑定/token未变才同步消费捕获refs。异步函数的本地失败也会返回rejected Promise，必须挂失败处理并观察receipt，不能靠同步try/catch或SDK sendGeneration保护新稿。ACK/预算拒绝/重试不清新draft/refs，无新scope或实现。
+
+DPERF既有后继可行性观察，来源root固定7106只读proof.mjs与Git对象探针：每scope一次ls-tree的5调用，对照多path单调用，目录/Thread重叠去重后13条mode/type/OID/path字节一致；附加不存在路径不改变其他结果，可按相等/目录前缀识别缺失。[Git官方ls-tree](https://git-scm.com/docs/git-ls-tree)支持多path、-z与full-tree。这里只证明可行性，未改aggregate、未测刷新延迟；0服务/模型/产品DB写。未来单独scope/take，并验128scope、空/重复/缺失、模式限制、对象类型及dirty/main语义；不引跨snapshot cache，不丢mode/type/OID。优先级仍低于REQ42/44。
+
+D05首次适配有界准备见[四scope提案](architecture-first-fit-proposal.json)：固定clean7106源码，08:39:33.564Z live ledger无四路径重叠，D05v3仅持index/registry与旧资料，D06旧scope均released。新编号D05FIT01在本次registry/ledger及计划检索无重复；此时未创建树、未take、未实现。首次可见布局fit，手动zoom按视图保留，resize仅自动fit模式跟随，保留42%下限及窄屏局部滚动；20秒进度刷新不重置，完整页面reload为新首屏。技能本地find-skills→brainstorming有界设计、codebase-design/clean-code局部职责、webapp-testing真实DOM行为验证；没有安装技能或新依赖。
+
+CHATREAD R1修复527176c已root于08:39:09限定APPROVED；七hash与dev8/prod8一致，CUA两个下钻入口关闭modal/目标焦点、draft返回与Escape回焦通过。管理等owner最终clean做metadata窄核后一次交接，不重复测试/API。原b9失败和初次HMR错误作为历史保留，不覆盖固定新target。
+
+本次后继批准与交接：D05FIT01四scope已root批准，固定7106，接下来独立新树/fresh take后实施；不是沿D06旧权。CHATREAD最终2f8585985f702ffb57ab34a4ad4c4bb0282a46bf已正常push、local/remote同且clean，管理核73paths/9scope、七hash、6md48links/parser0，见[最终审计](chatread01-final-audit.json)；已一次REVIEW_READY经GO交ExecutionLead，等待正式main再release/CONTEXTI接权。没有重跑产品/浏览器/API。
+
+用户最新并发预算由GO/root转达：Root4 + Web4 + Mika4 = 12，覆盖历史总10；本树仍root与三现有成员合计4，不新增agent。runner可替换优先：统一宿主加独立AI SDK/Pi/native/custom adapters，能力显式协商；Web消费通用profile/caps，不增加Claude SDK类型或凭据耦合，不重写已审片。panels空窗只读REQ44独立sender模块，固定ca4c3f723d2f786601e7cc9bd0363d756d974810仅研究输入，正式main/take前不写。

@@ -1,0 +1,80 @@
+{
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "聊天正文空间已增大，配置可按需打开，队列提醒保持可见",
+    "next": "把已审的紧凑聊天展示集成主线",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "527176c2b13880e6009be9605f08ae560315624d",
+    "scopes": [
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/conversations.css",
+      "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-readability.browser.ts",
+      "apps/web/test/conversation-readability.fixture.ts"
+    ],
+    "errors": []
+  },
+  "taskId": "WPF-CHATREAD01",
+  "owner": "workspace_panels_owner / gpt-6-astra ultra",
+  "branch": "codex/web-conversation-readability",
+  "branchState": "COMPLETE",
+  "updatedAt": "2026-10-06T08:39:00.000Z",
+  "updatedRecord": "2026-10-06 08:39 UTC / 32c371d389a913f8dd71c3bd8b98dd0697411256",
+  "todos": [
+    {
+      "id": "WPF-CHATREAD01-01",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[receipt](../../docs/evidence/wpf-chat-readability/take-receipt.json)、[quality](../../docs/evidence/wpf-chat-readability/quality.md)"
+    },
+    {
+      "id": "WPF-CHATREAD01-02",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[固定展示实现](../../docs/evidence/wpf-chat-readability/README.md)，稳定说明进Dialog、异常留queue折叠外"
+    },
+    {
+      "id": "WPF-CHATREAD01-03",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[布局实测](../../docs/evidence/wpf-chat-readability/layout-comparison.json)、[dev/prod7](../../docs/evidence/wpf-chat-readability/validation.md)"
+    },
+    {
+      "id": "WPF-CHATREAD01-04",
+      "state": "in-progress",
+      "owner": "workspace_panels_owner",
+      "evidence": "固定target已独审通过；聚合部署仍待实际观察，不造通过"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "32c371d389a913f8dd71c3bd8b98dd0697411256 / 当前HEAD由Git聚合",
+  "declaredDirty": "实现已提交冻结；仅本任务metadata收口，最终dirty由Git聚合",
+  "checks": {
+    "state": "passed",
+    "target": "527176c2b13880e6009be9605f08ae560315624d",
+    "record": "PASSED 527176c2b13880e6009be9605f08ae560315624d；Web tsc/build、dev8/prod8 HTTPfixture；[验证归属](../../docs/evidence/wpf-chat-readability/validation.md)"
+  },
+  "reviewRecord": "[review.md](review.md)，APPROVED / R1 CLOSED",
+  "mainRecord": "NOT_INTEGRATED",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

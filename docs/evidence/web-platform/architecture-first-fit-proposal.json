@@ -1,0 +1,74 @@
+{
+  "taskId": "D05FIT01",
+  "owner": "d01_owner",
+  "state": "root approved bounded4scope design; pending independent worktree and fresh committed take",
+  "recordedAt": "2026-10-06T08:40:46.917642+00:00",
+  "baseline": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit",
+  "branch": "codex/dashboard-architecture-first-fit",
+  "scopes": [
+    "apps/execution-dashboard/public/architecture.js",
+    "apps/execution-dashboard/test/architecture-viewport.browser.mjs",
+    "plans/d05-first-fit",
+    "docs/evidence/d05-first-fit"
+  ],
+  "observations": [
+    "renderer starts zoom1 fitfalse, view change resets100%, manualFit alone enablesResizeObserver",
+    "architecture panel initiallyhidden, draw runs before activateTab, so fit must not commit from zero layout width",
+    "app refresh renders progress only every20s and does not rebuild architecture",
+    "existing fit clamp42%-100%, zoom controls40%-200%, viewport local overflow and responsive one-column detail layout"
+  ],
+  "proposal": [
+    "Per-view in-memory zoom mode starts auto-fit; compute only visible positive availablewidth",
+    "Retain existing fit42%-100% and narrow local horizontal scrolling, never shrink text to arbitrarily tiny fullwidth",
+    "Manual +/- changes that view to manual; resize/tab/snapshot refresh and returning to view preserve manual scale",
+    "Fit explicitly reenables responsive width fitting; each unseen view first fits independently",
+    "No new persisted setting; full browserreload is a new page, whereas20s data refresh is not"
+  ],
+  "alternatives": [
+    "Always fit on resize was rejected because it overrides manual zoom",
+    "Only initialize first default view was smaller but other first-visited wide views would still start clipped"
+  ],
+  "checksPlanned": [
+    "actual1280x720 and390x844, directhash and initiallyhidden progress→architecture",
+    "firstvisible nonzero width, fiveviews, manual state returned and resize preserved",
+    "Fit recomputes, refresh/tab does not reset manual, wholepage nooverflow while minimumzoom allows canvas localscroll",
+    "light/dark keyboard button and Enter/Space node selection with selected-node/focus unchanged",
+    "isolated dynamic static fixture and own browser script, zero4320/service changes"
+  ],
+  "protected": [
+    "architecture-data.js and D06 fixed9c6 content",
+    "architecture.css,index.html,app.js,registry.mjs",
+    "existing D05/D06 canonical trees"
+  ],
+  "ledger": {
+    "observedAt": "2026-10-06T08:39:33.564Z",
+    "state": "available",
+    "overlaps": [],
+    "taskIdPresent": false,
+    "D05": {
+      "claimId": "3a6240d0-f861-41fd-b245-3546b2e2dbf3",
+      "version": 3,
+      "state": "active",
+      "worker": "astra_ultra_execution_lead",
+      "scope": [
+        "AGENTS.md",
+        "apps/execution-dashboard/README.md",
+        "apps/execution-dashboard/public/index.html",
+        "apps/execution-dashboard/src/registry.mjs",
+        "docs/evidence/d05",
+        "plans/AGENTS.md",
+        "plans/README.md",
+        "plans/d05-architecture-view"
+      ]
+    }
+  },
+  "skills": [
+    "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+    "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+    "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "/Users/citrine/.agents/skills/webapp-testing/SKILL.md"
+  ],
+  "skillApplication": "local-first existing skills, bounded design with renderer zoom policy kept local; meaningful real DOM behavior validation; no new dependencies, no unrelated abstractions; root scope approval precedes feature take"
+}

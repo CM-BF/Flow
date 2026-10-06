@@ -72,5 +72,24 @@
     "32c session69/104-111/190-216",
     "32c plugins/types16-20/32-57/139-144;validation9-24/248-254",
     "32c client154/159/180/327/335/355"
-  ]
+  ],
+  "lifecycleSupplement": {
+    "source": "w01/root fixed7106 read-only study; no product test or new scope",
+    "baseline": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5",
+    "capture": "controller/binding identity + snapshot.selected array token + detached deep-frozen refs; ordinary network/readiness publications preserve token, remove/reselect creates new token",
+    "handoff": "Attach rejection handling, call send/enqueue and inspect public outbox/queue snapshot for an actual new matching receipt key. Consume once synchronously only if controller/binding/token still match; no receipt means no consumption.",
+    "consume": "At most four existing remove operations without await after one token check; no create-only consumption. ACK/timeout/budget failure/retry never clears new refs or sets composer text.",
+    "asyncBoundary": "A throw before first await still yields rejected Promise. Synchronous try/catch alone does not prove handoff. No-handoff validation may restore this draft once; published receipt failures must not become MessageNotSentError or unhandled rejection.",
+    "regressions": [
+      "capture A then remove/reselect A, old commit/ACK cannot remove new A; body/readiness-only publication retains eligible token",
+      "delay old text+refs HTTP while entering new draft/refs, then budget400/unknown/ACK preserves new input; unknown retries old key+refs",
+      "async local failure without new receipt: zero HTTP, no ref consumption, restore once, no unhandled rejection; successful handoff immediately permits next draft"
+    ],
+    "references": [
+      "7106 controller.ts:26-35,112-115,168-180,213-217; selection.ts:17-22",
+      "7106 ConversationThread.tsx:52-70; queue/projection.ts:99; outbox.ts:42-62",
+      "installed core0.3.22 base-composer-runtime-core.ts:325-350,458-474,564-572; external-store-thread-runtime-core.ts:669-741"
+    ],
+    "sdkLimit": "sendGeneration changes only on sends, not ordinary input editing; it does not prevent old MessageNotSentError prepend into newer draft"
+  }
 }
