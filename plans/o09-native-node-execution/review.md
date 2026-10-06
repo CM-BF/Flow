@@ -1,11 +1,13 @@
 # O09 独立审查
 
-**NOT_STARTED**；空记录不构成批准。Base84fdecebbb4939e43710fb17e48884cc49d1d030；Review target commit = 7ddd763a2e2274c040dea7e114dcf6d6da226cf6。实际metadata HEAD交付时另给，源码按target冻结。
+**APPROVED**。Review target commit = **7ddd763a2e2274c040dea7e114dcf6d6da226cf6**；审查现场clean HEAD ee737e7c0013d91ae4dda89eeef25aa6c9b8a523；base84fdecebbb4939e43710fb17e48884cc49d1d030。Reviewer：Execution Lead / gpt-6-astra ultra；2026-10-06 08:06 UTC由唯一owner转录其明确回执，作者不代行独立批准。
 
-审查scope：独立owner DTO/route、goals execute同TX复用、node grant不得扩大native执行/接受权限；版本/幂等/profile pin/K03实际输入、typed final/原artifact/verifier与显式业务接受分开。默认只读，修复交唯一owner；检查原始证据与固定blob/hash，未执行项必须注明。
+## 已审范围与证据
 
-可复制任务：核验native-goal-node-execution实际branch/base/head/dirty和AGENTS/本plan/status；独立读全部delta与必要直接消费者，按固定证据或授权隔离局部测试评估，0provider、不操作个人服务。输出固定target、reviewer/model/时间、已跑未跑、severity/blocking与复现/文件行、结论与边界。不能由作者自审批准。
+Reviewer完整阅读8源码、新9项测试及相关既有seams；核8source+11dependencies+13raw固定/current bytes/SHA，mismatches=[]。原始作者9新+18旧消费者为两轮27不同检查，tsc0及自有DB清理有效；reviewer未重跑测试、0provider。详见[独立回执](../../docs/evidence/o09/independent-review.json)、[原始manifest](../../docs/evidence/o09/manifest.json)、[作者报告](../../docs/evidence/o09/README.md)。原manifest的NOT_STARTED为当时历史，不覆盖本次独立批准，也不改写原始输出。
 
-Findings：未评估。结论：未审查。检查：未运行。真实模型/自然语言语义/用户UI不纳入本片。
+通过范围：独立owner readonly native child受理、普通purpose/profile pin，旧GoalCommand/工具grant fixture权限不扩，native接受要求owner；复用原O01/K03同TX冻结输入、task/artifact/verifier，机械通过和业务接受声明分开。无P1/P2、无blocking/nonblocking findings；无修复项。
 
-2026-10-06 08:00 UTC作者交付：9+18不同检查与tsc原始输出见[README](../../docs/evidence/o09/README.md)、[manifest](../../docs/evidence/o09/manifest.json)。独立review未开始，不能据作者检查当approval。
+## 限制与后继
+
+本批准不包括生产factory挂载/公共client、真实provider或自然语言语义验收。SDK query注入不冒称真实模型或原生child进程。owner显式accept是业务接收声明，不是自动语义检验。Lead负责薄共享接线与main接收；产品源码停止写入，claim保留待receipt/必要回修，未来新修改须再review。

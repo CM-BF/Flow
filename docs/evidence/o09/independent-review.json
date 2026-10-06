@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-10-06T08:06:18.036197+00:00",
+  "reviewer": "Execution Lead / gpt-6-astra ultra",
+  "decision": "APPROVED",
+  "target": "7ddd763a2e2274c040dea7e114dcf6d6da226cf6",
+  "reviewedCleanHead": "ee737e7c0013d91ae4dda89eeef25aa6c9b8a523",
+  "method": "Independent read-only review; owner transcribed explicit Lead receipt",
+  "sourceFiles": 8,
+  "dependencies": 11,
+  "rawOutputs": 13,
+  "hashMismatches": [],
+  "manifestSha256": "33b5b6e7f8e3343b2f6f189bf8648172845eef739fb889d9c17b1eb1b0438fb0",
+  "authorEvidence": {
+    "newTests": 9,
+    "existingConsumers": 18,
+    "distinctChecks": 27,
+    "batches": 2,
+    "typecheckExitCode": 0,
+    "databaseCleanup": "verified"
+  },
+  "reviewerReranTests": false,
+  "providerCalls": 0,
+  "findings": [],
+  "scope": "Owner readonly native child admission reusing existing O01/K03/task/artifact/verifier",
+  "notApprovedByThisReview": [
+    "production mounting",
+    "real provider execution",
+    "business semantic acceptance"
+  ],
+  "productWritingStopped": true
+}

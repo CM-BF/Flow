@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 08:00 UTC |
+| 最近更新时间 | 2026-10-06 08:06 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-node-execution |
@@ -10,16 +10,16 @@
 | 工作基线 / HEAD | base84fdecebbb4939e43710fb17e48884cc49d1d030；实现7ddd763a2e2274c040dea7e114dcf6d6da226cf6；metadata后继另记 |
 | 工作树dirty状态 | 源码已冻结；交付metadata提交后clean |
 | 工作分支状态 | completed |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED 7ddd763a2e2274c040dea7e114dcf6d6da226cf6：新domain9/9 + 旧消费者18/18，27不同；tsc0，0provider |
-| Review | NOT_STARTED |
+| Review | APPROVED 7ddd763a2e2274c040dea7e114dcf6d6da226cf6：Execution Lead独立只读，未重跑；见review.md |
 | 已集成main状态 / HEAD | base84fde已有依赖；O09未集成 |
 | 实现目标 | 7ddd763a2e2274c040dea7e114dcf6d6da226cf6 |
 | 实现范围 | packages/contracts/src/goal-native-executions.ts, apps/server/src/goal-native-executions/, apps/server/src/goals/commands.ts, apps/server/src/goal-tool-runs/runner.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 用户可为单节点选择只读执行配置；隔离验证已通过，待独立审查 |
-| 下一可用交付 | 完成独立审查与正式入口接线；文本完成和用户接受分别显示 |
+| 当前产出 | 单节点只读执行入口已通过独立审查，等待正式接线与主线接收 |
+| 下一可用交付 | 正式接线后交付可调用入口；真实模型验收另有候选预算 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 架构影响 | 新增owner单节点原生受理Interface；复用任务/冻结输入；Lead统一client与生产挂载 |
@@ -29,8 +29,10 @@
 | O09-01 | completed | assignment_review | [claim](../../docs/evidence/o09/claim.json)、[Interface](../../docs/evidence/o09/interface.md) |
 | O09-02 | completed | assignment_review | 公开HTTP/PG六项受理与授权行为通过 |
 | O09-03 | completed | assignment_review | 三项实际adapter query注入/PG通过；18旧消费者通过；0provider |
-| O09-04 | in-progress | assignment_review / reviewer | 原始证据/target已固定，独立review NOT_STARTED、未main |
+| O09-04 | in-progress | assignment_review / reviewer | 独立APPROVED；原证据固定，生产接线/main待Lead |
 
 claim34990d98-4a70-4464-b0e2-a3bf561ab053 v1已于07:50:11.346Z提交；6scope无冲突，旧SVC已release。只写本树，不碰CHAT08同源运行实现。首次canonical供Lead登记，暂无聚合回执。真实模型/NL/用户材料语义验收未证明；0模型预算，测试注入不冒充native provider。
 
 2026-10-06 08:00 UTC：作者固定实现7ddd763a2e2274c040dea7e114dcf6d6da226cf6，27个不同检查为新9与旧18分两批，全部通过；固定raw/manifest见[交付](../../docs/evidence/o09/README.md)。真实provider、NL语义、Web/CLI和生产mount未运行，SDK注入不冒充native调用。架构影响由Lead统一登记，claim保留回修；不自审批准。
+
+2026-10-06 08:06 UTC：Lead独立只读APPROVED 7ddd763a2e2274c040dea7e114dcf6d6da226cf6，完整8源码/新测试/相关调用链，8+11+13 hash一致；核作者27不同与tsc/清理，未重跑/0provider。已进入integration阶段。全产品源码明确停止写入，claim34990d98v1保留待main；仅计划/证据内准备0query候选，不自行调用模型或改服务。
