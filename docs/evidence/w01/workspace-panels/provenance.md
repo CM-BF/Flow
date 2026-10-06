@@ -37,4 +37,4 @@ Terminal 显示真实中心 `TimelineEntry.kind=text` 文本，名称为 Task ou
 
 `preview.html` / `preview.tsx` 是明确标记的组件 fixture，不是真实中心联调。以 `FLOW_WEB_TOOLING_DIR` 指向 W01 的 `apps/web` 运行 `typecheck.mjs` / `vite.config.mjs`，只读借用其已安装依赖与 ui/cn；不会运行 install 或修改其他 owner 文件。经管理者允许，本树已忽略的 node_modules 目录中临时 symlink 指向 W01 packages；Vite cache 写本树 ignored node_modules。
 
-完整行为检查、截图与 clean-code 结果随后记录于 validation.md。本候选尚未独立 review。
+完整行为检查、截图与 clean-code 结果见 [validation.md](validation.md)。独立组件审查与准确提交绑定见 [review.md](review.md)。

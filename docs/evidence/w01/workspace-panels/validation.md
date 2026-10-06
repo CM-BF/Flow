@@ -1,6 +1,6 @@
 # Workspace panels 验证
 
-2026-10-06 02:14 UTC，组件候选基于 `d54e9983f60bfd63fa5df290cb51c1f5c5659af1`；本目录提交包含随后兼容性/布局修复。独立 review 尚未执行，W01 最终 review 必须绑定集成后的具体提交。
+2026-10-06 02:19 UTC，组件最终审查 target 为 `46a1dbd60aa57a464d67e5ac3d39cb2673706c36`，独立组件 review APPROVED；具体 target、检查和限制见 [review.md](review.md)。W01 最终整体 review 仍必须绑定集成后的具体提交。
 
 独立组件 fixture URL：`http://127.0.0.1:58077/preview.html`（Vite 动态端口，进程仅本 owner 管理）。此地址明确显示 Component fixture，不是真实中心联调。W01 owner 接入产品后负责完整回归与 dashboard 状态同步。
 
@@ -27,7 +27,8 @@ git diff --check
 | 02:08 | 首段实现/上游组件 | 保留官方组合结构；将 tabs、显示内容、官方源分别集中；没有引入第二套业务状态或虚拟PTY。明确共享依赖由W01写入。 | 首候选需浏览器验证 |
 | 02:12 | 浏览器真实故障与审查反馈 | 找到 ansi-to-react 6.2.6 CommonJS default 在 Vite8 返回 namespace object，导致 TerminalContent 崩溃；加局部兼容适配。W01 owner 已确认其实际app同样复现。 | 只对实际发布包的两种导出形式适配 |
 | 02:14 | 交付前布局/可访问性 | 缓存每task纯布局，移除每个close图标额外tabstop（Delete可关闭），controlled activeTab同步单焦点入口；已选引用分组变化时展开其真实group；复制失败显式反馈，ResizeObserver仅在追尾时保持底部。 | 父级提供的details必须属于当前task；组件不保存detail副本 |
-| 02:22 | WP-R1 review 修复 | root 对 `a2be896405304111379d72e9b22e46f8e47a11a4` 独立 CUA review 发现 P2 blocking：FileTree 键盘打开详情后焦点落到 body。加入显式 pending focus，等待活动 detail tab 挂载后在 layout effect 聚焦；新增首次 Enter 与缓存 Space 打开的焦点/不重复请求检查。13组浏览器与类型检查通过。 | 待 root 对修复提交独立复审；不自行标记 APPROVED |
+| 02:17 | WP-R1 review 修复 | root 对 `a2be896405304111379d72e9b22e46f8e47a11a4` 独立 CUA review 发现 P2 blocking：FileTree 键盘打开详情后焦点落到 body。加入显式 pending focus，等待活动 detail tab 挂载后在 layout effect 聚焦；新增首次 Enter 与缓存 Space 打开的焦点/不重复请求检查。13组浏览器与类型检查通过。 | root 独立复审已关闭 WP-R1，见review.md |
+| 02:18 | 扩展定位属性 | 管理者批准 WPF-REQ-23：仅在现有DOM加4个稳定data-extension-slot，不改props、行为或样式；typecheck/diffcheck通过。 | 仅定位接缝，不构成已实现plugin host；workspace.actions当前位于Terminal页 |
 
 未验证：实际中心 HTTP/SSE 与该新版完整 shell 集成、真正 PTY、任意工作区文件系统、Safari/Firefox、真实屏幕阅读器。无可调用 PTY/fs 契约，不将只读组件测试声称为这两项后端能力。fixture 的 clipboard 成功/失败为浏览器API显式模拟。
 
