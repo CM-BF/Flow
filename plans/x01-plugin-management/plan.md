@@ -89,7 +89,7 @@
 - [ ] **X01-07** 实际工具、renderer、verifier 扩展示例与更换版本证据。Owner：Lead 派发集成 writer；依赖 X01-04/05/06；不能仅注册空 manifest。
 - [ ] **X01-08** 通用 context Interface 与唯一 compression owner、来源失效/恢复矩阵。Owner：Lead 派发 context writer；依赖 X01-02/04、G01 版本/项目身份和 usage 账本；不等待具体候选身份才设计窄接口。
 - [ ] **X01-09** 确认具体 billion-context 候选后，固定源码/许可并做上述兼容实验。Owner：Goal Owner 确认需求身份，Lead 派发 E01/context writer；依赖 X01-08 + 精确候选身份 + 实验预算（需要时）。
-- [ ] **X01-10** 独立 review、中心/CLI/Web/runner 整体验收并受控 main 集成。Owner：Lead 协调独立 reviewer/集成 writer；依赖 X01-03～09 的明确交付与限制。
+- [ ] **X01-10** 独立 review、中心/CLI/Web/runner 整体验收并受控 main 集成。Owner：Lead 协调独立 reviewer/集成 writer；通用管理验收与集成仅依赖 X01-03～08 的明确交付与限制；X01-09 候选插件另做后续兼容验收，不阻塞本项。
 
 ## 可检查的验收矩阵
 

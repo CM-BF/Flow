@@ -18,3 +18,7 @@
 作者已读现有规则/计划与真实owner状态；文档检查结果由[证据](../../docs/evidence/x01/README.md)记录。独立 reviewer/model/time：尚未指定；独立检查未执行；findings/severity/blocking均未评估。结论 NOT_STARTED，产品实现/测试均未开始。
 
 后续 owner 接收具体 finding 后记录修复 commit；独立 reviewer 复审新 target。空记录不能用于绿色通过状态。
+
+## 已收到的文档修正与作者回应
+
+2026-10-06 03:24 UTC，Goal Owner只读核对，经Lead回传：X01-10误依赖03～09，与候选身份不阻通用管理矛盾；当前无需用户行动。作者已将通用验收/集成依赖改为03～08，09保留blocked并独立后续验收，status需用户决定改NONE，未来候选阶段再核对身份。仅文档修复；独立复审尚未回传，不自记APPROVED。修复提交由本次handoff固定SHA绑定。
