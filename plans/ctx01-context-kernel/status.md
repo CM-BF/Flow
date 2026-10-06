@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 04:51:14 UTC |
+| 最近更新时间 | 2026-10-06 04:52:51 UTC |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-kernel-probe |
 | Branch | codex/context-kernel-probe |
@@ -11,13 +11,13 @@
 | 工作分支状态 | completed |
 | 检查状态 | PASSED f58fdf36b073e2a98a683c8f40442dbb64ee7eec：公开行为3/3；60批次/各20，7.878s，0失败；无模型 |
 | Review | APPROVED f58fdf36b073e2a98a683c8f40442dbb64ee7eec；Goal Owner独立只读核验，无重跑 |
-| 已集成main状态 / HEAD | 未集成；基线75a33不代表本实验存在 |
+| 已集成main状态 / HEAD | 已集成 c56fc9a786f33bed7d6e487fb278bd2750b30283，2026-10-06 04:52:51 UTC核验目标祖先且experiments/context-kernel范围零差异；仅实验能力 |
 | 实现目标 | f58fdf36b073e2a98a683c8f40442dbb64ee7eec |
 | 实现范围 | experiments/context-kernel/ |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 有界core实验与保存证据已通过独立方法审查 |
-| 下一可用交付 | Lead接收已审实验；Pi真实宿主hook兼容是后继独立片段 |
+| 下一可用交付 | 本片段已交付；Pi真实宿主hook兼容由CTX02后继独立验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 架构影响 | 仅实验host封套，不改变生产架构；生产compression owner后续独立设计 |
@@ -38,3 +38,5 @@
 2026-10-06 04:51:14 UTC Goal Owner独立APPROVED固定f58fdf36，审查观察clean HEAD5317fe4fb80019a20f5d4190ec89f1338ad940e0；详见[review](review.md)。实现/原始JSON不改，main仍待Lead接收；claim da082f7c-4d65-406f-9934-30389a191571 v1当前active，保留至明确停写/release。
 
 Dashboard回执：[review receipt](../../docs/evidence/ctx01/dashboard-review-receipt.json)。采样时main fa79b7b5a2ba618f93f99f5f5a1992e84e393814尚不包含本target；仅文档dirty，不混main能力。
+
+2026-10-06 04:52:51 UTC 已实际核对fixed f58fdf36为main c56fc9a786f33bed7d6e487fb278bd2750b30283祖先，声明实现范围零差异；Lead确认pushed/clean。停止CTX01全部写入，本metadata提交后release当前claim；后继改动必须重新领取。不重跑tests/负载，不扩展实验结论。
