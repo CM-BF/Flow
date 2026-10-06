@@ -2,9 +2,13 @@
 
 Review target commit: a1f82f36a5e63f859ecdcdbd1da3575724e82101
 
-SOURCE_PRECHECK（非完整 APPROVED）。native_center_owner 独立源码预检绑定 `044ab84db42606fb1757903258078e3dfbab9545`，NO_P1_P2_FOUND，原回执和 38 条 bindings 已归档。执行前复核 9 源/21 inputs/8 evidence 均一致，reviewer 0 tests/provider。
+APPROVED（限定 controller+Ink静态接线片），target `a1f82f36a5e63f859ecdcdbd1da3575724e82101`。reviewer native_center_owner，完整TUI验收不在范围。
 
-后继作者已实际执行 35+1 分轮 / focused noEmit0，新增一条真实 TurnObservation mock-port 聚焦旧轮次 test-only delta，产品逻辑未改。独立 reviewer 尚未复核这一增量/原始运行证据。真实 HTTP/PG/PTY/App 不因局部通过成为已验证。
+[正式回执](../../docs/evidence/tui01f/independent-incremental-review.json) / [bindings](../../docs/evidence/tui01f/independent-incremental-bindings.json) / [main与边界](../../docs/evidence/tui01f/approval.md)。
+
+以下为批准前历史过程：SOURCE_PRECHECK（当时非完整 APPROVED）。native_center_owner 独立源码预检绑定 `044ab84db42606fb1757903258078e3dfbab9545`，NO_P1_P2_FOUND，原回执和 38 条 bindings 已归档。执行前复核 9 源/21 inputs/8 evidence 均一致，reviewer 0 tests/provider。
+
+后继作者已实际执行 35+1 分轮 / focused noEmit0，新增一条真实 TurnObservation mock-port 聚焦旧轮次 test-only delta，产品逻辑未改。该段形成时独立 reviewer 尚未复核增量；现已完成上述限定批准。真实 HTTP/PG/PTY/App 不因局部通过成为已验证。
 
 - [原始预检](../../docs/evidence/tui01f/independent-source-precheck.json)
 - [原始 bindings](../../docs/evidence/tui01f/independent-source-bindings.json)

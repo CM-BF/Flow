@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-06T16:08:31.315480+00:00",
+  "target": "a1f82f36a5e63f859ecdcdbd1da3575724e82101",
+  "delivery": "46d8d7cdecf007f44f433a6fcd3139353ffafeeb",
+  "reviewSha256": "54f3a74f204d977e355f4ed85f1b2ebe321688679d7697752f5b8e3f2aed5246",
+  "reviewer": "native_center_owner",
+  "scope": "controller + Ink static binding; explicit /cancel and immutable unknown intent recovery",
+  "sources": [
+    {
+      "path": "apps/tui/README.md",
+      "bytes": 10768,
+      "sha256": "d8cde961719bed44c34e622c6db2b640f033b33109c40942ca3d2540dbc144f3"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4161,
+      "sha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892"
+    },
+    {
+      "path": "apps/tui/src/screen.tsx",
+      "bytes": 7341,
+      "sha256": "59794da3bc2e93346f9f8d87663e2dcf284a77f867db9dbd3cf7530c2d14618a"
+    },
+    {
+      "path": "apps/tui/src/task-controls/consumer.test.ts",
+      "bytes": 2249,
+      "sha256": "4d697e10b2b88c311cbaf949c6809e919f16376a21df4a0632d4c773204157cf"
+    },
+    {
+      "path": "packages/interaction/src/commands.ts",
+      "bytes": 6131,
+      "sha256": "dff891136914fca2774faf199f3181fe3667c4055d7dab6a2c5e5ac30983e0e8"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 22678,
+      "sha256": "2214199346f91f0fb91230e1dc694f704a664362682ff054399cdbc16141fa0b"
+    },
+    {
+      "path": "packages/interaction/src/task-control/controller.test.ts",
+      "bytes": 13386,
+      "sha256": "a7f5cf3af02be395dcc50c302b8bcf7280bef9d3dfbb7648ac24ba9a739178e5"
+    },
+    {
+      "path": "packages/interaction/src/task-control/index.ts",
+      "bytes": 1122,
+      "sha256": "9186c28eaf3d4efcb74aa3925b193dd8d6feaccbadb3fef9a6b6f9dc00f5eeeb"
+    },
+    {
+      "path": "packages/interaction/src/types.ts",
+      "bytes": 2645,
+      "sha256": "3cfcb54ddd03737a6aaa6e471c6ed67b32b30f0fa93cf2efb9f53ce8902ced4b"
+    }
+  ],
+  "integration": "Base a89 versus main e807 has no changes in these product paths; merged sources exactly match reviewed target. No new product/test edits.",
+  "originalValidation": "35+1 distinct =36; focused noEmit0, not root; no rerun at integration",
+  "open": [
+    "Real cancellation over HTTP/PG and public task state transitions with lost ACK.",
+    "Actual PTY resize/CJK/interactive editor behavior and real App/TUI/App handoff.",
+    "Complete TUI-001 control/continuation acceptance, root compilation and actual native/A2A stopped semantics are outside this slice."
+  ],
+  "providerCalls": 0,
+  "personalServices": "unchanged",
+  "reviewMetadataCorrection": "Reviewer split manifest hash and bindings-file hash after detecting duplicate JSON key; scope/target/verdict unchanged, no rerun."
+}
