@@ -1,0 +1,71 @@
+{
+  "window": "mika-c-fd-20261006-110819",
+  "recordedAt": "2026-10-06T11:10:39.604204+00:00",
+  "scope": "current safe archive files; not every filesystem write or erased compiler temp output",
+  "archiveReserveBytes": 131072,
+  "files": [
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/driver-input.json",
+      "bytes": 11347,
+      "sha256": "3bea168df09ccf606e587a289e64e8e52b5f6b1caeef2f1d9c05a9128cffd364"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/host-manifest.json",
+      "bytes": 10288,
+      "sha256": "efcdb353f1f30b8653581ad113637684c32a928ee23795de2ed182575bf9799e"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/safe-cli.stdout",
+      "bytes": 1674,
+      "sha256": "82f6c370b7e79701673f1dc86955dae28440a7e7f5223983db734e45ddf64afb"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/tool-run-receipt.json",
+      "bytes": 915,
+      "sha256": "e6a228805c60e1633a22fd11e9c25e0cf08a636dc966c6372eea22271673a692"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/run-report.md",
+      "bytes": 2889,
+      "sha256": "b935391e0bdaed74e29d924b1dacd21fed29c4db9044f7016207ccdbd0e0a116"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/run-manifest.json",
+      "bytes": 4880,
+      "sha256": "0641fe9aadee3568a1ef631767a29f0991bf64bf920d21f3ce0e114410ee0cfd"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/status.md",
+      "bytes": 16297,
+      "sha256": "476977e1499606a5f909a67ed2cd253454385a4837bd89ddd3f2cf1019490782"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/review.md",
+      "bytes": 16207,
+      "sha256": "78c51814e33116eb2c5f3f0bfa40b627ea05915baf3dbb44a83e4e439cf9877d"
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities/plan.md",
+      "bytes": 9227,
+      "sha256": "0cc6c1d0c4627cab3ccae25bf59bfdf8ee33f9090caf9c5d11fd6e0db28b8a2e"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/interface.md",
+      "bytes": 28934,
+      "sha256": "64897136c131a3c5574647a8c3ef428fbffafe73fc9cee5121b7ce1270b207ca"
+    }
+  ],
+  "listedArchiveBytes": 102658,
+  "thisReceiptBytes": 2643,
+  "actualArchiveBytes": 105301,
+  "archiveWithinReserve": true,
+  "preparedEvidenceBytes": 100984,
+  "runtimeCapturedBytes": 11679,
+  "runtimeArtifactVisibleBytes": 153999,
+  "runtimeReceiptBytes": 2265,
+  "runtimeCliEncodedBytes": 1674,
+  "visibleTotalIncludingArchiveBytes": 375902,
+  "outputAccountingComplete": false,
+  "overallBudgetVerdict": "UNKNOWN: compiler output accounting failed; visible size does not establish complete <=2MiB",
+  "maxBytes": 2097152
+}

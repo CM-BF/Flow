@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:08:11 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:10:09 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,18 +11,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / cf69dddff65d31a821a6c13b984ea0ef6d5fa648（C/host当前组合；metadata HEAD由Git核） |
-| 工作树dirty状态 | cf69dddff65d31a821a6c13b984ea0ef6d5fa648 clean时核；本次仅组合approval review/status metadata，提交后由Git核clean |
+| 工作树dirty状态 | cf69dddff65d31a821a6c13b984ea0ef6d5fa648 clean时核；运行输入clean HEAD为cdb900d95d26f5a3ee8b35a43805e4212789a683；本次仅固定运行证据/metadata，提交后由Git核clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | C_HOST_LOCAL_PASS（20 distinct零目标检查，分18+1+1，Node24惰性import/5语法通过）；CATALOG_LOCAL_PASS（33 distinct/strict0，分次证据）；DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
+| 本片段交付阶段 | review |
+| 检查状态 | C_FD_WINDOW_STOPPED（1编译exit0/0目标，cleanup=true，measurement=false/accounting=unknown，CLI1）；C_HOST_LOCAL_PASS（20 distinct零目标检查，分18+1+1，Node24惰性import/5语法通过）；CATALOG_LOCAL_PASS（33 distinct/strict0，分次证据）；DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源/薄consumer仍待Lead集成；不代表个人服务部署 |
 | 实现目标 | cf69dddff65d31a821a6c13b984ea0ef6d5fa648 |
 | 实现范围 | experiments/codex-app-server-conformance/fd-canary, docs/evidence/wpf-mature-02/fd-canary |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 原生配置目录已集成main，旧目录保持兼容；文件描述符诊断组合已通过独立审查，现处启动准备；尚未编译或启动目标。 |
-| 下一可用交付 | 按已审入口执行一次获准的有界诊断窗口，收集文件描述符差异与清理结果；等待内部窗口命名。 |
-| 当前阻塞 | ACTIVE: 原profile canary仍SIGABRT且无有效七项报告，实际Codex目录验证停止；父管道空stderr不能定位原因。 |
+| 当前产出 | 原生配置目录已集成main，旧目录保持兼容；文件描述符诊断唯一窗口已结束：编译正常退出，但测量前核验未知，三个目标未启动；自有资源已清理。 |
+| 下一可用交付 | 审查并接收本次失败证据；既有已审R06与薄入口可独立集成。实际诊断需后继预算与可判别方案。 |
+| 当前阻塞 | ACTIVE: C诊断窗口已消费，编译后核验未知且三个目标未运行；实际Codex目录验证仍停止，后继实际诊断需要新预算/方案。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：当前组合cf69dddf APPROVED（Mika，2026-10-06 11:07:30 UTC，0P1/P2）；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
@@ -102,8 +102,12 @@ P3 delta固定a761941fce5b2b6dd12d8c974c6d2c7e51894628已由status_read/gpt-6-as
 
 当前后继为[最小C诊断一页合同](../../docs/evidence/wpf-mature-02/fd-canary/contract.md)与source manifest，静态source准备交审。预算最多3目标/1编译/总60秒/2MiB含自有binary/object等；0编译/0目标，host未实现，无运行窗口。架构不改生产transport，不复制JSONRPC/agent loop；固定source与后继最薄host需整体独审后才执行。
 
-## 当前C fd组合已审、启动准备
+## C fd组合已审；唯一窗口已消费
 
 固定target `cf69dddff65d31a821a6c13b984ea0ef6d5fa648`，[当前README](../../docs/evidence/wpf-mature-02/fd-canary/README.md)、[v2合同](../../docs/evidence/wpf-mature-02/fd-canary/execution-plan-v2.md)、[driver-input](../../docs/evidence/wpf-mature-02/fd-canary/driver-input.json)、[host-manifest](../../docs/evidence/wpf-mature-02/fd-canary/host-manifest.json)。C/profile/schema仍722，R06复用文件仍077；当前host明确save-temps=obj、多编译子命令、fixed hash预检、一次预约、unknown保留、forced unref及所有root最终inventory。准备证据100984字节预扣，32KiB运行收据+128KiB安全归档预留，最终归档仍须实际计量。
 
 20 distinct检查来自18旧集合+两个单独新增；最后4项与4项delta各有重叠，不写成单次20/20。Node24直接惰性import已验证，无compiler/target/provider/auth启动。Mika于2026-10-06 11:07:30 UTC完成组合独审APPROVED（0P1/P2）；architecture_read优先04 DDL/PG。本窗口NOT_OPEN，等待本次clean metadata HEAD对应的明确命名窗口，S01串行占用解除不等于许可。claim v4 fresh active，store.ts交回后未改写。
+
+## 当前唯一C fd窗口结果
+
+[最终报告](../../docs/evidence/wpf-mature-02/fd-canary/run-report.md)绑定mika-c-fd-20261006-110819和执行HEADcdb900d9：开始11:08:42.729Z，1compile正常exit0/groupGone/close，0target，三项NOT_RUN。编译后产物/verbose核验未知，measurement=false/accounting=false；cleanup=true、retainedRoots=[]，结果已持久化，CLI1/1054.934625ms。可见268927B不等于完整计量；CLI和实际尾部归档另有清单，整体withinBudget不声明成功。实际诊断STOPPED，旧阶段的NOT_RUN/窗口待命是历史，不恢复预算，不读取raw或crash。源码/driver-input/host-manifest保持已审固定值；结果待Mika只读接收，不重跑。

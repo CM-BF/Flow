@@ -1,0 +1,133 @@
+{
+  "purpose": "faithful stopped diagnostic evidence; no fd measurement/no complete output accounting",
+  "window": "mika-c-fd-20261006-110819",
+  "executionHead": "cdb900d95d26f5a3ee8b35a43805e4212789a683",
+  "approvedSourceTarget": "cf69dddff65d31a821a6c13b984ea0ef6d5fa648",
+  "recordedAt": "2026-10-06T11:10:39.596703+00:00",
+  "fixedInputs": [
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/driver-input.json",
+      "bytes": 11347,
+      "sha256": "3bea168df09ccf606e587a289e64e8e52b5f6b1caeef2f1d9c05a9128cffd364"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/host-manifest.json",
+      "bytes": 10288,
+      "sha256": "efcdb353f1f30b8653581ad113637684c32a928ee23795de2ed182575bf9799e"
+    }
+  ],
+  "sourceBindings": [
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/candidate.sb",
+      "bytes": 6508,
+      "sha256": "fc8b5af386b2ea12208f565531d3dcbc94a671ba6d6e5840194abb4cd2681739"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/command.mjs",
+      "bytes": 3428,
+      "sha256": "1111682ef3c1c364bd2d4d1fc2e4347a93fbb7c7809aafb52dd25bd41309bc4e"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs",
+      "bytes": 4690,
+      "sha256": "1d791fb8f2dddf20584fae64c8e243252802af58eb161624236ffaff6043815a"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/fd-canary.c",
+      "bytes": 3712,
+      "sha256": "b0a7eea8cbc5354c8966cf4e1573114e9a2c41899f04bae01577d9b5af055917"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.mjs",
+      "bytes": 12479,
+      "sha256": "a7b9e20fb07cd31d95d419e8b8b732abf45882c179f538e748505e4db326fbe3"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.test.ts",
+      "bytes": 15857,
+      "sha256": "50809fc8df13485430f2e80586bf527542908dfaf5501d01855c9c651e7ef3f7"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.mjs",
+      "bytes": 4089,
+      "sha256": "a91be0811e956e4053945de053c658f29a18cde8f7ab7ecd71ac7a7c9d0af880"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.schema.json",
+      "bytes": 14433,
+      "sha256": "e10a048a368fc114657d87de2dd353034912b07a074f394f238d77f68dbdbb67"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/vitest.config.mjs",
+      "bytes": 396,
+      "sha256": "e5c5236223fc043004da69288ab1c0da6817c74e2ab59b1f34df22ec8ab971f9"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/isolation/default-deny.sb",
+      "bytes": 6252,
+      "sha256": "b050b371c0739f8081a26fd3e4df27487075fdd6b0adee0107da05b12e1ef779"
+    }
+  ],
+  "safeEvidence": [
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/batch-reservation.json",
+      "bytes": 308,
+      "sha256": "6295138fd6b0ff90875209047e641bdf5cc07d5e84ca1d2860e76ea10ccd4c5c"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/slot-compile.json",
+      "bytes": 71,
+      "sha256": "132eaa495946cc3cba6404d690603e463e904c92da12a05fb8f3f02a0f01dd23"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/batch-result.json",
+      "bytes": 1886,
+      "sha256": "e58daf6b04958ac3f5bd3a84fc87826a0d97db130920e278bfc715efdd8d7dfc"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/safe-cli.stdout",
+      "bytes": 1674,
+      "sha256": "82f6c370b7e79701673f1dc86955dae28440a7e7f5223983db734e45ddf64afb"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/tool-run-receipt.json",
+      "bytes": 915,
+      "sha256": "e6a228805c60e1633a22fd11e9c25e0cf08a636dc966c6372eea22271673a692"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/run-report.md",
+      "bytes": 2889,
+      "sha256": "b935391e0bdaed74e29d924b1dacd21fed29c4db9044f7016207ccdbd0e0a116"
+    }
+  ],
+  "result": {
+    "compileCalls": 1,
+    "compilerExitCode": 0,
+    "closeObserved": true,
+    "groupGone": true,
+    "targetReservations": 0,
+    "targetStartsObserved": 0,
+    "targets": [
+      "NOT_RUN",
+      "NOT_RUN",
+      "NOT_RUN"
+    ],
+    "measurementComplete": false,
+    "compilerOutputAccounting": "unknown",
+    "outputAccountingComplete": false,
+    "cleanupComplete": true,
+    "retainedRoots": [],
+    "resultPersisted": true,
+    "toolExitCode": 1,
+    "cliFinalElapsedMs": 1054.9346249999999,
+    "overallBudgetPass": false
+  },
+  "accountingNote": "archive-accounting.json independently binds this manifest and the current safe archive by SHA/bytes; kept outside this manifest to avoid mutual self-hash",
+  "rawCompilerStreamArchived": false,
+  "retry": false
+}

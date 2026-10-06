@@ -1,0 +1,29 @@
+{
+  "window": "mika-c-fd-20261006-110819",
+  "executionHead": "cdb900d95d26f5a3ee8b35a43805e4212789a683",
+  "approvedTarget": "cf69dddff65d31a821a6c13b984ea0ef6d5fa648",
+  "before": {
+    "current_time": "2026-10-06 11:08:42 UTC"
+  },
+  "after": {
+    "current_time": "2026-10-06 11:08:45 UTC"
+  },
+  "command": "/opt/homebrew/opt/node@24/bin/node experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs --reviewed-fd-window",
+  "initialTool": {
+    "chunk_id": "4967c0",
+    "wall_time_seconds": 1.002978583,
+    "session_id": 94375,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "completionTool": {
+    "chunk_id": "5c4f45",
+    "wall_time_seconds": 0.000012166,
+    "exit_code": 1,
+    "original_token_count": 419,
+    "output": "See safe-cli.stdout; exact tool-returned CLI output is stored there."
+  },
+  "actualCompileCalls": 1,
+  "actualSyntheticTargetStarts": 0,
+  "retry": false
+}

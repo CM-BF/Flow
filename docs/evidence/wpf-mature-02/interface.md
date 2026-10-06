@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [唯一C fd窗口最终结果：预算已消费，0目标、计量unknown](fd-canary/run-report.md)。固定编译正常退出且清理完成，后续三项全NOT_RUN；当前停止实际诊断，需后继独立预算/方案才能继续。此链接路由本大task阻塞证据；既有R06独立集成收据不受影响。
+
 - [S01P04 runners.ts 精确移交及登记请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-read-fence/docs/evidence/s01p04/interface.md)。仅路由其权威共享路径请求，不复制进度。
 
 - [F01 native catalog client固定APPROVED回执](native-catalog-client-review.md)：实现5ffe与metadata1fc raw绑定分开，Lead可独立接收；不是本owner冒称已main。
@@ -13,7 +15,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 目录已通过main固定 `21e0a56c4b2b65a04a1e8d510a9d132e77c3894b` 接收：本owner只读逐blob核4源=c9、测试=a761，见[main接收核验](native-catalog/main-accepted.json)；复用33+1证据，未重测，不代表个人服务已部署，也未包含R06 stderr/诊断。
 
-**当前03最小C诊断候选：** [一页合同](fd-canary/contract.md) / [source manifest](fd-canary/manifest.json)。固定source `722032083d2cdfc6790103d18749c333c1b8f9e1`，C/schema/profile静态已审；[当前host组合合同](fd-canary/execution-plan-v2.md)与[精确入口](fd-canary/README.md)已实现，0编译/0目标启动，窗口未开放；固定组合独审后Mika串行安排。旧失败原因仍unknown，三目标只观察自身fd metadata，不做Node/JSONRPC/provider或网络探针。
+**当前03最小C诊断候选：** [一页合同](fd-canary/contract.md) / [source manifest](fd-canary/manifest.json)。固定source `722032083d2cdfc6790103d18749c333c1b8f9e1`，C/schema/profile及组合已审；[当前host组合合同](fd-canary/execution-plan-v2.md)与[精确入口](fd-canary/README.md)已在唯一窗口消费，1编译/0目标，清理完成而计量unknown；[最终结果](fd-canary/run-report.md)是当前事实，冻结README中的NOT_RUN为运行前时点。旧失败原因仍unknown，三目标只观察自身fd metadata，不做Node/JSONRPC/provider或网络探针。
 
 ## 首片可独立实现
 
