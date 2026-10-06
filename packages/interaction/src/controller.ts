@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { FlowApiError } from '@flow/client';
-import { conversationCreationSchema, conversationTurnSchema, type ConversationSummary, type ConversationTurn, type ExecutionProfile } from '@flow/contracts';
+import { conversationCreationSchema, conversationTurnSchema, type ConversationSummary, type ConversationTurn, type ExecutionProfile, type ClaudeTurnSettings, type ClaudeMessageSettingsCatalogPage } from '@flow/contracts';
 import { commandDescriptors, commandSchema, parseInput, type Command } from './commands.js';
 import { turnView } from './projection.js';
 import { acknowledgedConversation } from './acknowledgement.js';
@@ -9,20 +9,23 @@ import { TurnObservation, type ObservationClient } from './observation/index.js'
 import { ObservationReads } from './observation/reads.js';
 import { dispatchQueueIntent, readQueuePage, type QueueControlPort } from './queue-control/index.js';
 import { dispatchTaskCancel, type TaskControlPort } from './task-control/index.js';
+import { MessageSettingsError, readSettingsPage, settingsProfile, selectSettings, validateSelection, sameSettings, describeRequested, type MessageSettingsPort } from './message-settings/index.js';
 class LocalError extends Error { constructor(readonly code: string, message: string) { super(message); } }
 const result = (ok: boolean, code: string, message: string): CommandResult => ({ ok, code, message });
 const freeze = <T>(value: T): T => { if (value && typeof value === 'object') { Object.freeze(value); for (const child of Object.values(value)) freeze(child); } return value; };
 
 /** Owns local observation and immutable intent, never center task/queue/execution state. */
-export function createInteractionController(options: { client: InteractionClient; connectionId: string; intents: IntentStore; makeKey?: () => string; pollMs?: number; observe?: ObservationClient; queue?: QueueControlPort; taskControl?: TaskControlPort }): InteractionController {
+export function createInteractionController(options: { client: InteractionClient; connectionId: string; intents: IntentStore; makeKey?: () => string; pollMs?: number; observe?: ObservationClient; queue?: QueueControlPort; taskControl?: TaskControlPort; messageSettings?: MessageSettingsPort }): InteractionController {
   if (!options.connectionId || options.connectionId.length > 160 || options.pollMs !== undefined && (!Number.isInteger(options.pollMs) || options.pollMs < 100 || options.pollMs > 60_000)) throw new Error('Invalid interaction options');
   const { client, intents } = options;
-  let state: InteractionSnapshot = freeze({ view: 'conversations', connected: false, busy: false, closed: false, draft: '', notice: 'Use /help or /conversations.', observation: null, queue: null, selected: null, turns: [], conversations: [], conversationCursor: null, profiles: [], profileCursor: null, pending: null });
+  let state: InteractionSnapshot = freeze({ view: 'conversations', connected: false, busy: false, closed: false, draft: '', notice: 'Use /help or /conversations.', observation: null, settings: { supported: false, selected: null, selectionLabel: null, profiles: [], nextCursor: null, page: 1 }, queue: null, selected: null, turns: [], conversations: [], conversationCursor: null, profiles: [], profileCursor: null, pending: null });
   const listeners = new Set<() => void>();
   const reads = new ObservationReads();
   let loadedTurns: ConversationTurn[] = []; let focused: number | null = null; let streamCapability = false;
   let queueCapability = false; let queueAfter: number | null = null;
   let queuePageVersion = 0;
+  let settingsPage: ClaudeMessageSettingsCatalogPage | null = null;
+  let currentSettingsProfile: ClaudeTurnSettings['profile'] | null = null;
   const observation = options.observe ? new TurnObservation(options.observe, options.connectionId, reads, value => patch({ observation: value })) : null;
   let initialized = false; let epoch = 0; let connection = new AbortController(); let timer: NodeJS.Timeout | undefined;
   let activeMutation: Promise<CommandResult> | null = null;
@@ -46,11 +49,15 @@ export function createInteractionController(options: { client: InteractionClient
     const snapshot = await reads.run(signal, () => client.conversation(id, signal));
     if (!current(version)) return;
     if (snapshot.conversation.id !== id) throw new LocalError('INVALID_RESPONSE', 'Conversation identity mismatch.');
+    const settings = settingsProfile(snapshot.conversation, snapshot.capabilities.messageSettings);
+    if (snapshot.capabilities.messageSettings !== undefined && !settings) throw new LocalError('INVALID_RESPONSE', 'Message settings capability is not bound to this conversation profile.');
     const page = await reads.run(signal, () => client.conversationTurns(id, { after: Math.max(0, (snapshot.lastTurn?.number ?? 0) - 20), limit: 20 }, signal));
     if (!current(version)) return;
     if (page.conversation.id !== id || page.turns.length > 20 || page.turns.some(turn => turn.conversationId !== id)) throw new LocalError('INVALID_RESPONSE', 'History identity or bound mismatch.');
+    if (settings && !settingsProfile(page.conversation, snapshot.capabilities.messageSettings)) throw new LocalError('INVALID_RESPONSE', 'History profile disagrees with the current settings capability.');
+    currentSettingsProfile = settings;
     loadedTurns = page.turns; streamCapability = snapshot.capabilities.liveAssistantText === true; queueCapability = snapshot.capabilities.queue === true;
-    patch({ selected: selection(page.conversation), turns: page.turns.map(turnView), connected: true }); syncObservation();
+    patch({ selected: selection(page.conversation), turns: page.turns.map(turnView), connected: true, settings: { ...state.settings, supported: Boolean(settings && options.messageSettings) } }); syncObservation();
     if (queueAfter !== null && pageVersion === queuePageVersion) {
       if (!queueCapability || !options.queue) { queueAfter = null; patch({ queue: null }); }
       else await refreshQueue(id, queueAfter, version, pageVersion);
@@ -120,7 +127,9 @@ export function createInteractionController(options: { client: InteractionClient
         try { await refresh(id, version); } catch { if (current(version)) patch({ connected: false, notice: 'Control accepted. Use /recover to observe current facts.' }); }
         return result(true, 'ACCEPTED', 'Queue control accepted; it does not prove current execution has stopped or completed.');
       }
+      if (pending.kind === 'send' && sameSettings(state.settings.selected, pending.input.messageSettings)) clearSettingsSelection();
       if (state.selected?.id !== conversation.id) {
+        currentSettingsProfile = null; clearSettingsSelection();
         focused = null; loadedTurns = []; streamCapability = false; queueAfter = null; queueCapability = false; observation?.dispose();
         patch({ observation: null, turns: [], queue: null });
       }
@@ -161,16 +170,42 @@ export function createInteractionController(options: { client: InteractionClient
       patch({ view: 'profiles', profiles: profiles.map(profile => ({ id: profile.reference.id, model: profile.model.value, access: profile.configuration.access, availability: 'not-probed' })), profileCursor: page.nextCursor });
       return result(true, 'PROFILES', 'Configured profiles loaded; provider availability has not been probed.');
     },
+    settings: async command => {
+      if (!options.messageSettings) throw new MessageSettingsError('UNSUPPORTED_SETTINGS', 'This client has no message settings catalog transport.');
+      const version = epoch, signal = connection.signal;
+      const page = readSettingsPage(await reads.run(signal, () => options.messageSettings!.claudeMessageSettingsProfiles({ after: command.after, limit: 6 }, signal)));
+      if (!current(version)) return result(false, 'STALE', 'Old settings observation ignored.');
+      settingsPage = page;
+      patch({ view: 'settings', settings: { ...state.settings, profiles: page.profiles.map(({ profile }) => ({ id: profile.reference.id,
+        access: profile.configuration.access, choices: profile.configuration.turnSettings!.choices.map(describeRequested) })), nextCursor: page.nextCursor, page: 1 } });
+      return result(true, 'SETTINGS', 'Configured complete choices loaded; availability remains unprobed. Create/open a matching conversation before selecting.');
+    },
+    'settings-page': async command => {
+      const count = state.settings.profiles.reduce((total, profile) => total + profile.choices.length, 0);
+      if (!settingsPage || command.number > Math.max(1, Math.ceil(count / 8))) throw new MessageSettingsError('SETTINGS_PAGE_NOT_LOADED', 'Choose a page from the loaded settings catalog.');
+      patch({ view: 'settings', settings: { ...state.settings, page: command.number } });
+      return result(true, 'SETTINGS_PAGE', 'Loaded settings page selected.');
+    },
+    setting: async command => {
+      requireFree();
+      if (!state.connected || !state.selected) throw new LocalError('NO_CONVERSATION', 'Open a connected conversation first.');
+      if (!options.messageSettings) throw new MessageSettingsError('UNSUPPORTED_SETTINGS', 'This client has no message settings catalog transport.');
+      const selected = selectSettings(settingsPage, currentSettingsProfile, command.profileId, command.choice);
+      patch({ view: 'conversation', settings: { ...state.settings, selected, selectionLabel: describeRequested(selected.requested) } });
+      syncObservation(); return result(true, 'SETTING_SELECTED', 'Complete tuple selected for the next message; observed settings remain unknown.');
+    },
+    'setting-clear': async () => { requireFree(); clearSettingsSelection(); return result(true, 'SETTING_CLEARED', 'Unsent message settings cleared.'); },
     open: async command => {
-      requireFree(); rotate(); focused = null; loadedTurns = []; queueAfter = null; queueCapability = false; observation?.dispose(); const version = epoch;
+      requireFree(); rotate(); currentSettingsProfile = null; clearSettingsSelection(); focused = null; loadedTurns = []; queueAfter = null; queueCapability = false; observation?.dispose(); const version = epoch;
       patch({ observation: null, queue: null, view: 'conversation', selected: null, turns: [], connected: false }); await refresh(command.id, version); schedule();
       if (!current(version)) return result(false, 'STALE', 'Old observation ignored.');
       return result(true, 'OPENED', 'Saved conversation opened.');
     },
     new: async command => {
       requireFree();
-      const profile = command.profileId ? profiles.find(item => item.reference.id === command.profileId) : undefined;
-      if (command.profileId && !profile) throw new LocalError('PROFILE_NOT_LOADED', 'Use /profiles to load the page containing this profile.');
+      const profile = command.profileId ? settingsPage?.profiles.find(entry => entry.profile.reference.id === command.profileId)?.profile
+        ?? profiles.find(item => item.reference.id === command.profileId) : undefined;
+      if (command.profileId && !profile) throw new LocalError('PROFILE_NOT_LOADED', 'Use /profiles or /settings to load the page containing this profile.');
       if (profile && !['none', 'configured-readonly'].includes(profile.configuration.access)) throw new LocalError('UNSUPPORTED_PROFILE', 'This profile is not for ordinary conversations.');
       const input = conversationCreationSchema.parse({ title: command.title, ...(profile ? { executionProfile: profile.reference,
         requested: { model: profile.configuration.model, thinking: 'disabled', tools: profile.configuration.access === 'none' ? 'none' : 'configured-readonly' } } : {}) });
@@ -178,7 +213,12 @@ export function createInteractionController(options: { client: InteractionClient
     },
     send: async command => {
       requireFree(); if (!state.selected) throw new LocalError('NO_CONVERSATION', 'Create or open a conversation first.');
-      const input = conversationTurnSchema.parse({ expectedRevision: state.selected.revision, text: command.text, mode: 'follow-up' });
+      const selected = state.settings.selected;
+      if (selected) {
+        if (!state.connected) throw new LocalError('NO_CONVERSATION', 'Reconnect before sending selected message settings.');
+        validateSelection(selected, currentSettingsProfile);
+      } else if (currentSettingsProfile) throw new MessageSettingsError('SETTINGS_REQUIRED', 'Select a complete tuple with /settings and /setting for this message.');
+      const input = conversationTurnSchema.parse({ expectedRevision: state.selected.revision, text: command.text, mode: 'follow-up', ...(selected ? { messageSettings: selected } : {}) });
       return mutate(intentSchema.parse({ version: 1, connectionId: options.connectionId, key: (options.makeKey ?? randomUUID)(), kind: 'send', conversationId: state.selected.id, input }), false);
     },
     recover: async () => {
@@ -222,6 +262,7 @@ export function createInteractionController(options: { client: InteractionClient
     disconnect: async () => { disconnect(); return result(true, 'DISCONNECTED', 'Observation stopped. Center work is not cancelled.'); },
     quit: async () => { await dispose(); return result(true, 'QUIT', 'Terminal closed. Center work is not cancelled.'); },
   };
+  function clearSettingsSelection() { patch({ settings: { ...state.settings, selected: null, selectionLabel: null, supported: Boolean(currentSettingsProfile && options.messageSettings) } }); }
   async function queueCommand(kind: 'queue-pause' | 'queue-resume') {
     requireFree(); requireQueue();
     if (!state.queue || state.queue.conversationId !== state.selected!.id) throw new LocalError('QUEUE_NOT_LOADED', 'Use /queue before changing its state.');
@@ -245,7 +286,7 @@ export function createInteractionController(options: { client: InteractionClient
     try {
       const answer = await handlers[command.type](command as never); if (!state.closed) patch({ notice: answer.message }); return answer;
     } catch (error) {
-      const answer = error instanceof LocalError ? result(false, error.code, error.message)
+      const answer = error instanceof LocalError || error instanceof MessageSettingsError ? result(false, error.code, error.message)
         : result(false, error instanceof FlowApiError ? `HTTP_${error.status}` : 'READ_FAILED', 'Request failed. No automatic mutation retry was performed.');
       if (!state.closed) patch({ notice: answer.message, ...(['recover', 'open'].includes(command.type) ? { connected: false } : {}) }); return answer;
     } finally { if (!state.closed) patch({ busy: false }); }

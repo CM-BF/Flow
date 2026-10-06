@@ -87,3 +87,13 @@ Goal journals use a separate connection-and-goal namespace. They share private f
 Plan/history pages contain 20 references; one observation contains at most 50 nodes. Bodies are read only on explicit expansion, cached by the public controller and labelled as recorded content. Refresh `/plan` and `/observe` to check current validity. The screen shows bounded windows of at most 1,600 Unicode code points, adapted to terminal size. It does not silently truncate the stored body. Private journal and JSONL bounds remain 192 KiB.
 
 This goal slice is checked with two public clients, real local HTTP/PostgreSQL, actual JSONL and an owned terminal. It covers stale versions, lost acknowledgements, decisions, cancellation, artifacts, 57 historical references, Chinese/emoji/multiline input and resize. Browser handoff, real providers and the complete TUI→Web→TUI journey remain unverified here. See [goal evidence](../../docs/evidence/tui01d/README.md).
+
+## Claude 逐消息设置
+
+`/settings [cursor]` 读取当前公开目录的一页（最多 6 个配置），只显示受配置允许的完整 model/thinking/effort/speed 组合，不代表账户资格或 provider 可用。每个配置最多 32 项；`/settings-page <number>` 每次显示 8 项，后续目录页按显示的 cursor 显式读取。access 只读显示，不能在消息设置中改变。
+
+用 `/new --profile <id> [title]` 创建绑定配置的 Claude 会话，或 `/open <id>` 打开已有会话。当前会话明确提供逐消息能力且 profile 三元身份与目录一致后，`/setting <profile-id> <choice>` 选定下一条消息的完整组合；`/setting-clear` 清除尚未发送的选择。支持逐消息设置的会话每条消息均需显式选择。旧中心/旧会话没有该能力时设置选择明确 unsupported，原普通聊天仍可用；Codex 普通会话不支持。
+
+提交前正文、revision、messageSettings 和稳定 key 一起写入原意图日志。成功 ACK 清除该次选择；丢失或矛盾 ACK 保持 unknown，只有 `/recover` 明确重放原请求，不借新目录替换组合。过期 revision 的确定拒绝保留草稿及未发送选择，不自动重发。切换会话清除本地选择。退出仅停止观察，不取消后台工作。
+
+消息分别显示 Requested 和 Observed；Observed 只来自与当前任务/最终消息绑定的 SDK init 记录，缺失或矛盾时 unknown，实际 thinking 始终 unknown。新目录、请求的 adaptive/fast 或旧 runnerRequested 都不构成观察证明。headless 使用相同 typed `settings` / `setting` / `setting-clear` / `settings-page` 命令与 controller。
