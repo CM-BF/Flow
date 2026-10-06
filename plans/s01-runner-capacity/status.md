@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:38:35 UTC；唯一128结果已独审，main接收另计 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:42:31 UTC；base1c保持，128历史结果冻结 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -12,18 +12,18 @@
 | 工作基线 / HEAD | base main1c496835；source 6de928d8092ba8c22ac2222ac7c16af3660be48a；execution 70c92414d3f0fc90b256e857acf64ba3dba35b30；result 64911a3c88488dfdebaa3a678bad659211e29209 |
 | 工作树dirty状态 | source/raw冻结；本次仅审批/ready与owner metadata，提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED：准备41distinct/strict0；实际128tasks/attempts/sessions，2304events/ACK，8空journal，CLI0/外层14.64s；结果待独审 |
+| 检查状态 | PASSED：observer后继4/4 fake direct+局部strict0；128历史结果APPROVED保持，不新增实际调用 |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
 | 实现目标 | 64911a3c88488dfdebaa3a678bad659211e29209 |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 固定64911a3c结果经Mika 2026-10-06 12:37:14 UTC APPROVED，128fixture执行/持久session/ACK/cleanup通过；share耗时UNKNOWN |
-| 下一可用交付 | Lead受控接收已审S01小片；events三次UPDATE合并候选先只读，等待独立WT/路径移交 |
+| 当前产出 | 观测器已按真实P04查询修复共享锁分类，原128结果中的UNKNOWN保持原样 |
+| 下一可用交付 | 固定observer两源与red/green证据，Mika只读独审；P05独立metadata等待共享events移交 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED：result 64911a3c88488dfdebaa3a678bad659211e29209，Mika/gpt-6-astra，2026-10-06 12:37:14 UTC，0P1/P2；限定128fixture结果 |
+| Review | NOT_STARTED：observer小fix待固定source；历史128 result64911已APPROVED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -177,3 +177,7 @@ GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅
 2026-10-06 12:35:33 UTC：结果target `64911a3c88488dfdebaa3a678bad659211e29209` 固定，[manifest](../../docs/evidence/s01/mixed-128-run/manifest.json) SHA `3c66deb37fbcc3163093cb70857b651c6275346be5b82788d825fb90ae92328e`，26source/27readonly/9raw/6support/2preparation绑定，source=6de=70c=target=WT，27readonly=固定main1c，另6runtime/172历史Git核符。独立结果review待Mika；原运行5raw/外壳CLI/time与receipt不可改写，report明确共享锁分类缺失而不影响独立容量证明边界。完整保守归档上界118,431,893B<256MiB。
 
 2026-10-06 12:38:35 UTC：结果独审APPROVED `64911a3c88488dfdebaa3a678bad659211e29209`，Mika/Astra精确12:37:14 UTC，70绑定与128身份/1536窗内ACK/2304事件/30样本/8journal/完整cleanup及外层时间独立核符。见[审批](../../docs/evidence/s01/mixed-128-run/independent-review.json)与[接收入口](../../docs/evidence/s01/mixed-128-run/integration-ready.md)。原archive-budget是早期快照并预留尾部，独审另核118,449,471B保守总上界，不重写原snapshot。原S01其他验收保持开放；新性能候选仅只读，F01仍占events.ts，当前未claim/开工/实际运行。
+
+2026-10-06 12:41:40 UTC：128 fixed结果/raw已冻结并APPROVED；Mika明确授权原实验observer最小后继fix，fresh writer v3 ACTIVE。仅固定P04真实SELECT id,revoked分类与fake direct反例，随后局部strict；0真实负载。新源码不沿用64911批准，旧manifest按fixedGit历史绑定，当前WT将仅两observer源漂移。P05 metadata独立树已claim/请求移交，不在本树写产品。
+
+2026-10-06 12:42:31 UTC：observer后继真实反例4选3绿1红→4/4，strict0；仅精确两列FOR SHARE分类，原透传断言未删。[证据](../../docs/evidence/s01/observer-share-fix/README.md)。原64911的70fixedGit绑定仍核符，当前WT仅observe-pg.ts/.test两个新源漂移，raw/support/preparation零漂移；不再声称旧manifest源与当前WT全部相等。无新实际窗口，P05source仍未领取。

@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { expect, test } from 'vitest';
 import { observePg, type PgObservation } from './observe-pg.js';
 
@@ -45,4 +46,26 @@ test('callback error and synchronous throw preserve object identity; observer fa
   const pool = Object.create(prototype); const observer = observePg(prototype, () => { throw new Error('broken observer'); });
   expect(pool.connect((value: Error) => { callbacks++; expect(value).toBe(error); })).toBe(result);
   expect(() => pool.connect()).toThrow(error); expect(callbacks).toBe(1); expect(observer.dropped).toBe(2); observer.restore();
+});
+
+
+test('classifies the fixed P04 shared fence query through the observed client without broadening nearby SQL', async () => {
+  const source = readFileSync(new URL('../../../apps/server/src/runners.ts', import.meta.url), 'utf8');
+  const sql = source.match(/'([^']+FOR SHARE)'/)?.[1];
+  expect(sql).toBe('SELECT id,revoked FROM flow.runners WHERE id=$1 FOR SHARE');
+  const events: PgObservation[] = [];
+  const client = { processID: 9, query(_sql: string) { return Promise.resolve({ rows: [] }); } };
+  const prototype = { connect() { return Promise.resolve(client); } };
+  const pool = Object.create(prototype);
+  const observer = observePg(prototype, event => events.push(event));
+  try {
+    await pool.connect();
+    await client.query(sql!);
+    await client.query('SELECT * FROM flow.runners WHERE id=$1 FOR SHARE');
+    await client.query('SELECT * FROM flow.runners WHERE id=$1 FOR UPDATE');
+    await client.query('SELECT id,revoked FROM flow.other WHERE id=$1 FOR SHARE');
+    expect(events.filter(event => event.kind === 'sql').map(event => event.category))
+      .toEqual(['runner-row-share', 'other', 'runner-row', 'other']);
+    expect(JSON.stringify(events)).not.toContain('SELECT');
+  } finally { observer.restore(); }
 });
