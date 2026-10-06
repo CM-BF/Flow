@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['R05', '可替换的原生执行工具接口', '工作线', 'native-harness-host', 'r05-native-harness-host'],
   ['CHATUI01', '真实逐段正文界面验收', '技术验证', 'stream-ui-acceptance', 'chatui01-stream-acceptance'],
   ['D05FIT01', '架构图首次打开适配', '工作线', 'dashboard-architecture-first-fit', 'd05-first-fit'],
   ['SVC03', '固定版本的真实网页预览', '工作线', 'static-preview', 'svc03-static-preview'],
