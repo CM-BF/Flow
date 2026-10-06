@@ -312,3 +312,5 @@ QUEUE01受领：PROFILEI01最后07cffeba1a818f5697c23efc37a7e5c2b813c035 clean�
 root05:21:58.690Z实际63源确认PROFILEI01/PROFILEUX/DPERF三个最终canonical与main同实现、review和delivery完整，见[来源注明摘录](profile-delivery-root-observation.json)；管理未重复抓API。QUEUE01一次登记请求与尚未确认服务卡片分开。
 
 D06迁移新receipt：[e5b2v1](d06-current-take-receipt.json)，committed05:26:04.403Z。管理独立核newtree/branch/eb14991/clean与freshledger旧f619v2released、五项无active冲突；Lead已明确原source迁移，待首canonical新owner记录后一次切原registry指向，不新增第二D06。旧dashboard-architecture-refresh保持历史只读，旧8f approval不覆盖新eb/data/renderer实现。无index/CSS/registry/服务写权，全部源码git show固定eb，不混后继movingmain。
+
+D06首canonical f254e13cb63a343218358a9ba3c5fbf2f72a7e26 clean已独立核：新owner w01、五scope新claim、implementation/UNKNOWN/NOT_STARTED及原8f审查隔离正确。当前新三件套本地链接正常；旧三份md原文移动到current/导致14处相对链接失效，已交owner同scope安全点修复（保留raw/provenance或说明重定位），不宣称全7md26links通过、不阻源码/登记。source完整字段已给root一次桥Lead迁移原D06卡，旧树保持只读历史。
