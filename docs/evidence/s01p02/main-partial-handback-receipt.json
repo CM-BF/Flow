@@ -1,0 +1,28 @@
+{
+  "requestId": "s01p02-main-partial-handback-20261006-v1",
+  "action": "amend",
+  "committedAt": "2026-10-06T09:56:07.746Z",
+  "claim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/runner/src/concurrency-configuration.test.ts",
+      "apps/runner/src/concurrency-configuration.ts",
+      "apps/runner/src/main-concurrency.test.ts",
+      "docs/evidence/s01p02",
+      "plans/s01-concurrency-entry"
+    ],
+    "state": "active",
+    "branch": "codex/runner-concurrency-entry",
+    "origin": "new",
+    "taskId": "S01P02",
+    "worker": "architecture_read",
+    "claimId": "d2c55153-7116-403d-a7db-44b10e943241",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry",
+    "createdAt": "2026-10-06T09:43:47.382Z",
+    "updatedAt": "2026-10-06T09:56:07.746Z",
+    "observedAt": null
+  }
+}

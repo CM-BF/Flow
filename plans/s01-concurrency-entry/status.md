@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:52:15 UTC / main187d97648dd2d4edf45641720f8ba771ea9f25fa clean，main.ts仍与base相同 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:56:14 UTC / main187d97648dd2d4edf45641720f8ba771ea9f25fa clean，main.ts仍与base相同 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 小task |
 | 所属大task | [FLOW-001](../flow-001-architecture/plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry |
 | Branch | codex/runner-concurrency-entry |
 | 工作基线 / HEAD | 4391bbf9f1785212d098ef6aa1c01a0320a003d3 / 实现c77fbc4e12b0ffc0ee40f597bd99c82d9b37edc7，后继仅metadata |
-| 工作树dirty状态 | 更新前HEAD e03e737a0e4d0319220754b3f2e63eb58d5ddd05 clean；本轮仅approval metadata，4源码与已审target完全一致并冻结 |
+| 工作树dirty状态 | 更新前HEAD 4585a12561d2bfae307a5c952560eb6fdad194e5 clean；本轮仅部分交回metadata，4源码与已审target完全一致并冻结 |
 | 工作分支状态 | completed |
 | 本片段交付阶段 | integration |
 | 检查状态 | PASSED c77fbc4e12b0ffc0ee40f597bd99c82d9b37edc7；2文件64/64、root严格局部noEmit0；[证据](../../docs/evidence/s01p02/README.md)，非真实并发 |
@@ -25,7 +25,7 @@
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED；Mika / gpt-6-astra，2026-10-06 09:50:43 UTC，无P1/P2 |
-| Claim | d2c55153-7116-403d-a7db-44b10e943241 v1 ACTIVE，09:43:47.382Z COMMITTED；[receipt](../../docs/evidence/s01p02/claim-receipt.json) |
+| Claim | d2c55153-7116-403d-a7db-44b10e943241 v2 ACTIVE，09:56:07.746Z COMMITTED；仅移除main.ts写权，保留5scope；[部分交回receipt](../../docs/evidence/s01p02/main-partial-handback-receipt.json) |
 | 架构影响 | 仅纯参数解析+既有main→runRunner接线，不改scheduler/DB/运行状态机；待target由Lead登记入口关联 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -39,3 +39,5 @@ status为唯一手填进度，canonical登记/聚合由mika协调，当前未采
 2026-10-06 09:47:54 UTC：fresh ledger核v1 ACTIVE与全部6scope一致；纯parser/main接线和局部验证完成，无共享实现改动。只读main253035的入口仍与base相同，未把branch通过当main能力。
 
 2026-10-06 09:52:15 UTC：fresh ledger核v1 ACTIVE、原6scope与身份一致；保存Mika只读批准。[唯一integration-ready receipt](../../docs/evidence/s01p02/integration-ready.json)固定target、review与原始证据hash，不维护第二份进度。4源码冻结，metadata未重跑已通过检查；main187d97648dd2d4edf45641720f8ba771ea9f25fa尚无本片parser且main.ts仍与base一致，等待Lead受控集成。
+
+2026-10-06 09:56:14 UTC：[main.ts部分交回](../../docs/evidence/s01p02/main-partial-handback.md)已完成原子amend，原owner不恢复该路径写权；新R05D须独立take成功及Lead给定包含已审改动的base才开写。源码停写，0重测；批准target与唯一integration-ready receipt不变，仍待main集成。
