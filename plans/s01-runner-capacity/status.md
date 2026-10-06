@@ -27,9 +27,9 @@
 | --- | --- | --- | --- |
 | S01-01 | completed | mika | [research](../../docs/evidence/s01/research.md)：权威来源/head/dirty核验及差距 |
 | S01-02 | completed | mika | [合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json) |
-| S01-03 | in-progress | mika | [smoke-manifest](../../docs/evidence/s01/smoke-manifest.json)：四任务修复复核通过；正式计量入口仍待完成 |
-| S01-04 | pending | mika / Lead | 正式计时待协调Web共享主机窗口 |
-| S01-05 | in-progress | 独立reviewer | 方法已接受，53c8713功能实现片段与结果独审中；main未集成 |
+| S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
+| S01-04 | in-progress | mika / Lead | W1首个128空会话+4runner/16task场景已运行并清理；可选control16/control12未运行，待证据决定 |
+| S01-05 | in-progress | 独立reviewer | 准备代码APPROVED9da；W1固定结果9e10e09独审中，main尚未接收 |
 | S01-06 | pending | 后继owner | 真实provider与更大并发未包含 |
 
 ## 权限、优先级与事实边界
