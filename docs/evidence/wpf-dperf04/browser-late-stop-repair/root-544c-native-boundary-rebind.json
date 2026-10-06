@@ -1,0 +1,50 @@
+{
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "recordedAt": "2026-10-06T21:10:30.496470+00:00",
+  "recordedBy": "Web co-lead /root, exact source-only rebind under unchanged explicit GO authorization",
+  "authority": {
+    "sourceThreadId": "01a10e15-b908-7a72-b8c0-222a26bf93ff",
+    "receivedVia": "codex_delegation inbound to this Web coordination task",
+    "decision": "GO explicitly accepted this native Chrome sibling boundary after readingB3 and R01 native-launch evidence; delegated co-lead exact runner/worker binding after SCAN-ERROR/source review; DPERF04 same launch boundary accepted with its own reviewed candidate, budget and window.",
+    "furtherGOOrUserConfirmationRequired": false
+  },
+  "conditions": [
+    "Chrome keeps its own native sandbox and this attempt owned short profile/cache/tmp/crash paths, explicit environment and owned processgroup.",
+    "Node fixture keeps the reviewed custom write/localhost-network sandbox.",
+    "Chrome no longer has the prior custom outer OS write/egress restriction; this is explicitly not equivalent confinement.",
+    "No personal profile, existingtabs, credentials or provider operations are authorized.",
+    "Fresh exact originalclaim/source/head/dependency/resource checks and separately available sharedwindow remain required. This record itself is not a gate or window.",
+    "Old failures, cumulative time and existing retained/scratch/free/cleanup limits are preserved; no blind retry loop."
+  ],
+  "runtime": "NOT_RUN by this acceptance",
+  "currentWindow": "No Web holder/admission; last received Mika SVC07 HOLD/NOT_RUN returned window. Fresh explicit scheduling and resources remain required.",
+  "task": "WPF-DPERF04",
+  "candidate": "/private/tmp/dperf-b2",
+  "runnerSha256": "544c11c8f0ff95c78f683299ab6f2758cc7f5d1de2d2fabab9af83be62f4bd4c",
+  "workerSha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7",
+  "sourceReview": {
+    "path": "/tmp/root-dperf04-544c-late-stop-source-review.json",
+    "sha256": "244ce2c45ab0ab8be3637d65851912d4114e2838dd3d20378c9903dc59ce1b31",
+    "scope": "Only late-stop fixed parent/source preparation; not behavioral pass"
+  },
+  "budget": {
+    "spentMs": 0,
+    "remainingMs": 60000,
+    "cleanupReserveMs": 15000,
+    "historicalNodeSpentMs": 3950
+  },
+  "limits": {
+    "scratchObservedMaxBytes": 67108864,
+    "retainedMaxBytes": 8388608,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688
+  },
+  "scope": "Only this exact reviewed runner and worker boundary; any materially different boundary or launch must remain explicit. Metadata-only sourcehead rebinding does not change these executable hashes.",
+  "previousAcceptance": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/dperf04-b2-native-chrome-boundary-acceptance.json",
+    "sha256": "20a96bff43e064130860707bf4bac56a5078b6a0bbcae9fb56859010844c5c9e",
+    "runnerSha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79"
+  },
+  "change": "Only final interruption truth and bounded persistence/accounting; same native Chrome and sandboxed Node launch boundary. No repeated GO/user approval required under original delegation."
+}

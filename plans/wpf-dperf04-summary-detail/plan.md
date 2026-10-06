@@ -1,6 +1,6 @@
 # WPF-DPERF04 首页轻摘要与按需核验
 
-状态：in-progress。创建：2026-10-06 16:12:35 UTC；更新：2026-10-06 21:08:38 UTC。owner w01_owner / gpt-6-astra / ultra。直接父[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root。遵循[模块规则](../../AGENTS.md#modular-design)。
+状态：in-progress。创建：2026-10-06 16:12:35 UTC；更新：2026-10-06 21:11:54 UTC。owner w01_owner / gpt-6-astra / ultra。直接父[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root。遵循[模块规则](../../AGENTS.md#modular-design)。
 
 ## 用户结果与范围
 
@@ -18,7 +18,7 @@
 
 ## 验证与资源
 
-历史受控Node第二次7叶项+父项8PASS，累计3950ms，首失败保留且不重跑；本轮仅源码。browser仍0/60s含15清理、单fixture+Chrome/raw8MiB、scratch64MiB，45f8生命周期源码和准备稿已获root限定批准，GO已接受native Chrome外层权限差异；当前late-stop父准备补修待限定复审及精确hash重绑，再等新窗口fresh准入。不运行旧真实registry脚本或PG/真实4320。GO一次8s超时后10428ms/2071666B/165tasks、静态20ms仅单次来源观察，不作统计基准或宕机判断。
+历史受控Node第二次7叶项+父项8PASS，累计3950ms，首失败保留且不重跑；本轮仅源码。browser仍0/60s含15清理、单fixture+Chrome/raw8MiB、scratch64MiB，45f8生命周期源码和准备稿已获root限定批准，GO已接受native Chrome外层权限差异；当前late-stop父准备补修与新精确hash边界已获root限定批准，等待新窗口fresh准入。不运行旧真实registry脚本或PG/真实4320。GO一次8s超时后10428ms/2071666B/165tasks、静态20ms仅单次来源观察，不作统计基准或宕机判断。
 
 ## 完成条件
 

@@ -53,3 +53,7 @@ wrapper只接精确parent端点、停止spawn/killChrome；fixture与check bodie
 ## 2026-10-06 21:08:38 UTC late-stop clean-code 安全段
 
 沿已读本地find-skills/clean-code/webapp-testing方法，保一个既有清理owner和单一停止真值。handler立即失效，persist与exit共享明确not stopping/no errors/cleanup规则；复用既审Settings有界终态补写方法，不加重试框架、信号探针或运行。结果写失败仍失败，终态stdout区别真实退出判断与较早文件，SIGKILL/掉电不保证。原候选完整逐字归档，七45f8项目源码/worker不变。GO边界事实校准为已接受，新执行字节仍待独审重绑；no gate/0运行/free。仅文本/diff/hash/链接检查，原Node和raw未改。
+
+## 2026-10-06 21:11:54 UTC 544c 独审 metadata seal
+
+只原样归档root544c源码复审/边界重绑原件，按当前事实校准UNKNOWN与运行待验，避免保留“当前待复审”的旧结论。修前/修后candidate准备字节和历史报告保留；不改七源、worker、原Node/raw，不复跑root AST或产品检查。最终TMP HEAD/boundary重绑属于独立准备artifact，保持PREPARED/no gate，管理核其哈希；状态记录不循环追写。
