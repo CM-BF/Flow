@@ -88,3 +88,9 @@ DB/public行集清理后未留存，只认可固定程序完整断言通过，�
 ## after-drain-v1 独立窗口准备
 
 Review target commit: `51541b0cad73dcad32c7374dc87d631f0b9a8432`。当前NOT_STARTED，之前634准备与6a596如实FAIL结果APPROVED不自动覆盖本次。范围为2旧源输入适配+2新identity/test，21 source/21 fixed-main readonly/8 new raw/9 support见[manifest](../../docs/evidence/s01/mixed-after-drain-preparation/manifest.json)。请只读核Git/WT/hash、固定base祖先、P03两源及client输入；确认identity只选固定目录与base，负载/观察/cleanup/proof未变。10新纯checks/strict0、初始0tests与1red保留，旧14不重跑。不得由review自行启动窗口；新windowId/execution HEAD仅由Mika最后指定。
+
+2026-10-06 10:45:57 UTC：Mika / gpt-6-astra正式只读APPROVED准备51541b0cad73dcad32c7374dc87d631f0b9a8432，59项绑定一致，0P1/P2。随后只授权并执行一次mika-s01-after-drain-20261006-104557。准备批准不预断实际结果。
+
+## after-drain-v1 真实结果独立审查
+
+Review target commit: `339147cb015fdd40ed1cedbc66aca26e736b3ee7`。状态PENDING_INDEPENDENT_REVIEW，runVerdict=PASS待核。实现51541b0c，实际execution5ea1b26f，productionBase0cee。57项manifest=21source/21readonly/8raw/7support。审查任务：只读核固定Git/WT/SHA/bytes、32真实身份及A/B各16重叠/各12成功4取消、1027事件id/seq/digest/fence/accepted、5journal清空、资源清理和含清理总预算；保留1次无类别/attemptID的heartbeat错误、略早timer标记与实际adapter区间区别、背景/观测/phase限制。核旧FAIL/raw/journal冻结。不要重审同一source设计、重跑检查/PG/HTTP/provider或追加窗口；如有发现精确定位原证据，修复不能覆盖raw。

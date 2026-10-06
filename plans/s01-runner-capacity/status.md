@@ -9,12 +9,12 @@
 | 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | 新实现51541b0cad73dcad32c7374dc87d631f0b9a8432；实际执行5ea1b26f23fd7f24d1b89199a10b553dcab7fc18；新结果待固定。原634/121/6a596历史保留 |
-| 工作树dirty状态 | 指定执行HEAD5ea1b26f clean；当前仅新增after-drain结果及本任务metadata，源码和旧raw冻结 |
+| 工作基线 / HEAD | 新实现51541b0cad73dcad32c7374dc87d631f0b9a8432；实际执行5ea1b26f23fd7f24d1b89199a10b553dcab7fc18；新结果339147cb015fdd40ed1cedbc66aca26e736b3ee7；原634/121/6a596历史保留 |
+| 工作树dirty状态 | 新结果339147cb已固定clean；其后仅manifest/status/review metadata，源码与raw冻结 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新唯一窗口PASS：32真实attempt，A/B各12成功4取消、1027事件ACK、5journal清空；19.272秒/完整字节计量，无本次遗留；结果待独审 |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
-| 实现目标 | 51541b0cad73dcad32c7374dc87d631f0b9a8432 |
+| 实现目标 | 339147cb015fdd40ed1cedbc66aca26e736b3ee7 |
 | 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
@@ -151,3 +151,5 @@ Mika在准备独审后批准唯一window `mika-s01-mixed-20261006-100634`，执�
 2026-10-06T10:45:02.650Z：新窗口实现target `51541b0cad73dcad32c7374dc87d631f0b9a8432` 已固定，[manifest](../../docs/evidence/s01/mixed-after-drain-preparation/manifest.json)绑定21source/21readonly/8raw/9support（SHA 32965654f0e3960302ec66ed9492ec20ba00abaa2a2ffa19f27fe50ced305b11）。readonly逐字=固定main0cee，P03两源=a677；旧17实验源未改、2源输入适配+2新源，原raw/manifest冻结。源码/检查不再改动，提交后交Mika正式独审；没有已授权windowId、没有新真实调用。
 
 2026-10-06T10:51:09.061Z：Mika点名唯一新窗口mika-s01-after-drain-20261006-104557，执行前fresh claim8e4660a6 v3 active/HEAD5ea clean；仅一次已完成，CLI exit0。32真实task/attempt，两组各12成功4取消；1027事件逐项seq/digest/fence/accepted绑定，5journal全null/[]。耗时19271.849875ms含清理/最后证据写入，完整计量36092931B；两个自有child自然0、唯一新DB dropped、新workdir removed、无本次retained。保留1次A settlement heartbeat错误：无status/错误类/attemptId，原因unknown，不能写零HTTP错误。实际正常adapter重叠最小6000.02025/6000.055792ms；timer标记略早单独记录。见[报告](../../docs/evidence/s01/mixed-after-drain-run/report.md)和[归档预算](../../docs/evidence/s01/mixed-after-drain-run/archive-budget.json)。旧FAIL/raw/FKye9L不动，无重跑/补跑，C串行占用已交还Mika。结果待独审，不作>100执行/SLO或严格speedup。
+
+2026-10-06T10:51:52.971Z：固定新PASS结果target `339147cb015fdd40ed1cedbc66aca26e736b3ee7`；[result manifest](../../docs/evidence/s01/mixed-after-drain-run/manifest.json)绑定21source/21readonly/8raw/7support，SHA d2e7debddc741a69ad940315cd5b52d39d3e35b8c20078e162fad65a6baa2d2a，旧515准备/5ea执行与新339结果明确分开。源/raw已冻结，待独立只读结果review，不重跑。
