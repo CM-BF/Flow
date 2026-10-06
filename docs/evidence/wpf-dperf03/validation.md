@@ -22,4 +22,6 @@
 
 mainChanges读取dirty与untracked完成后核HEAD，guard失败缓存为unknown，本次不重试/下一snapshot新读。查询不是Git原子快照；不能检出A→B→A、相同SHA换branch或查询间工作区变化。main.git.dirty早于scope变化查询，允许不同观察时刻。只缓存main观察Promise，未缓存完整proof或跨snapshot结果。独立调用分别新context，不声称多服务器/并行调用共享全进程上限。
 
-独立review：root 2026-10-06 12:18:07 UTC APPROVED。独立37/37、0skip、26713.567417ms，见[日志](root-direct-tests.log)和[审计](root-audit.json)；未重跑opt-in实验。main接收/正式部署：尚无。
+独立review：root 2026-10-06 12:18:07 UTC APPROVED。独立37/37、0skip、26713.567417ms，见[日志](root-direct-tests.log)和[审计](root-audit.json)；未重跑opt-in实验。原审查时main接收/正式部署尚无；现main接收与root页面观察见main-observation.json。
+
+主线收口 a8aef18291de147c0a6ce9a3bba9383b54f5cf1f：五源与固定target相同，Lead registry直接消费者1/1归Lead，原37与实验不重跑；owner无新API/browser/PG/model调用。

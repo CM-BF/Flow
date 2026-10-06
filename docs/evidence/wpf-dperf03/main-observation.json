@@ -1,0 +1,53 @@
+{
+  "observedAt": "2026-10-06T12:25:48.304385+00:00",
+  "accepted": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+  "headBefore": "cc390fd7613c5a0b6ce801bb5dccc85b20437764",
+  "dirtyBefore": "?? docs/evidence/wpf-dperf03/main-integration.json\n",
+  "main": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+  "originMain": "a8aef18291de147c0a6ce9a3bba9383b54f5cf1f",
+  "targetAncestor": false,
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "hashes": {
+        "fixed": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+        "main": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+        "current": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee"
+      }
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "hashes": {
+        "fixed": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+        "main": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+        "current": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+      }
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "hashes": {
+        "fixed": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+        "main": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+        "current": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a"
+      }
+    },
+    {
+      "path": "apps/execution-dashboard/test/git-snapshot.test.mjs",
+      "hashes": {
+        "fixed": "1acb9177f68de415b716aa8acdd023da08d9bd83be051bffe17d9be785cc4ae2",
+        "main": "1acb9177f68de415b716aa8acdd023da08d9bd83be051bffe17d9be785cc4ae2",
+        "current": "1acb9177f68de415b716aa8acdd023da08d9bd83be051bffe17d9be785cc4ae2"
+      }
+    },
+    {
+      "path": "apps/execution-dashboard/test/proof-snapshot.test.mjs",
+      "hashes": {
+        "fixed": "f74c0eea4d774ac53068e9f10258c24a38c8cbfa381f755e3c6950a317994de3",
+        "main": "f74c0eea4d774ac53068e9f10258c24a38c8cbfa381f755e3c6950a317994de3",
+        "current": "f74c0eea4d774ac53068e9f10258c24a38c8cbfa381f755e3c6950a317994de3"
+      }
+    }
+  ],
+  "rootDeploymentObservation": "Root reported existing4320 DOM148 sources/a8aef clean/source approved and main same. Not this owner API/browser sample.",
+  "checks": "No new author tests; Lead registry targeted1/1, did not repeat37 or opt-in experiment."
+}

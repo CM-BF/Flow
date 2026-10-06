@@ -10,4 +10,6 @@ Root全文审查五变更源、相关旧测试、Interface、质量与两次实�
 
 五源manifest/checks/current/fixed全同，十三只读依赖等base、scopeoutside为空、source diffcheck0，审查时fd949d3dbfe7c59e678b6470b9496229217d3605 clean。Root直接解析成功four-main-proofs raw Trace2：23starts = cat-file8 + ls-tree8 + merge-base4 + dirty1 + untracked1 + HEAD1，峰4、未闭区间0；两个临时root已不存在。首次失败实验的专测源码hash不同，不能把首次完整矩阵绑定最终SHA。
 
-小Interface、child close后许可释放、串行bisect、失败unknown缓存与下一snapshotfresh符合约定，无阻塞发现。限制：每context并发上限不等全进程，查询非atomic，未测CPU/SLO；current观察并非同瞬间，A→B→A等不覆盖。作者真实运行源2a52+dirty保留，不倒填执行HEAD。[作者验证](../../docs/evidence/wpf-dperf03/validation.md)和[固定manifest](../../docs/evidence/wpf-dperf03/candidate.json)独立归因。main集成和部署尚未确认，claim保留至正式接收。
+小Interface、child close后许可释放、串行bisect、失败unknown缓存与下一snapshotfresh符合约定，无阻塞发现。限制：每context并发上限不等全进程，查询非atomic，未测CPU/SLO；current观察并非同瞬间，A→B→A等不覆盖。作者真实运行源2a52+dirty保留，不倒填执行HEAD。[作者验证](../../docs/evidence/wpf-dperf03/validation.md)和[固定manifest](../../docs/evidence/wpf-dperf03/candidate.json)独立归因。原审查时main集成和部署尚未确认，claim保留至正式接收。
+
+主线收口 a8aef18291de147c0a6ce9a3bba9383b54f5cf1f：五源与固定target相同，Lead registry直接消费者1/1归Lead，原37与实验不重跑；owner无新API/browser/PG/model调用。
