@@ -92,3 +92,5 @@ OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留ca
 三队仅各自核对已结束、自有且身份明确、可重建的临时安装/测试产物；不得删除用户数据、他人worktree/node_modules、active/unknown资源或审查原始证据。本次Execution Lead未删除文件。ConnectionSession源码、小范围现有依赖检查和已授权有界诊断继续，不全局停工、不操作个人服务。共享资源观察见[固定事实](../../docs/quality/resource-space-2026-10-06.json)，SVC06具体峰值与清理记录由其唯一owner维护。纯文档核对，不跑产品测试。
 
 2026-10-06 13:37:42 UTC：旧R05可重建依赖限定清理实际只回收9,834,496B，非du553748KiB；Web旧CONTEXTI有活跃消费者不删。现资源事实见[同一记录](../../docs/quality/resource-space-2026-10-06.json)，SVC06完整准备仍保留2.5GiB gate，普通小验证继续。后续新worktree sparse-checkout仅候选，先自有≤5MiB toy核Git2.50.1每树配置/共享worktreeConfig，不转换活跃树/删除历史，未测不称节省。
+
+2026-10-06 13:49:04 UTC：实际Data available1,388,440KiB（约1.32GiB），共享消耗归因unknown。SVC06完整准备仍不达2.5GiB；小源码/局部验证继续，大字节操作先预检并保留约1GiB收尾余量。两co-lead已直接协调，无删除/大复制/个人服务操作。
