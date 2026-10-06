@@ -1,0 +1,127 @@
+{
+  "target": "a3296e0f6ffc37c746cf1d59a7105aeb2131579b",
+  "base": "32c371d389a913f8dd71c3bd8b98dd0697411256",
+  "source": [
+    {
+      "path": "apps/server/src/active-steering-configuration.test.ts",
+      "bytes": 808,
+      "sha256": "ea9b5d676a06ba57a1a3232f431ecc9e3f31503002d4c9d75e1e734987b21777"
+    },
+    {
+      "path": "apps/server/src/active-steering-configuration.ts",
+      "bytes": 319,
+      "sha256": "8138cd0125132b8a680a0842dad40d573c2f1a4832ab7af7cb0a59ba0dacb09d"
+    },
+    {
+      "path": "apps/server/src/active-steering/admission-policy.ts",
+      "bytes": 1756,
+      "sha256": "508dbe8530c00a43f8e8ef66fd1a0279245df1f46cf71184178f59de2dc9f6bf"
+    },
+    {
+      "path": "apps/server/src/active-steering/admission.test.ts",
+      "bytes": 16113,
+      "sha256": "0102abedb446a3f3f3e8b5860233f755e6cf493d50ac09bdfc46dff097a2dc30"
+    },
+    {
+      "path": "apps/server/src/active-steering/admission.ts",
+      "bytes": 4315,
+      "sha256": "839e2148bdf208fa579c766abbb2cc573bee2bafd70aa698a5a8e4682eb59783"
+    },
+    {
+      "path": "apps/server/src/active-steering/commands.ts",
+      "bytes": 6995,
+      "sha256": "8e105358e2ba9eb2946cf7a7bc2668a3c293f6731d884918bcce9266d41fe920"
+    },
+    {
+      "path": "apps/server/src/active-steering/index.ts",
+      "bytes": 4109,
+      "sha256": "ed1b9aff63601aadd81796f83ccc448e6722f2bfacdc216b93e3f75a4a6241bd"
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/chat10/admission-first.txt",
+      "bytes": 2859,
+      "sha256": "64ce54a03e23b802ddd3f036bb17208214b0ab253c12847ac66985dcc562d9a3"
+    },
+    {
+      "path": "docs/evidence/chat10/admission-red.txt",
+      "bytes": 2793,
+      "sha256": "6313adbfe7942853604e671c1971c760e0b7ae39b8dc6a651da82c41282c4ca2"
+    },
+    {
+      "path": "docs/evidence/chat10/behavior-final.txt",
+      "bytes": 1081,
+      "sha256": "ed4e89dfa5481862519b67e2c9ed785133c8892c1c184f16fbfff308cb14a4fe"
+    },
+    {
+      "path": "docs/evidence/chat10/checks.json",
+      "bytes": 2651,
+      "sha256": "e762e687f5df8d8239a273bc068ca43520e7847bc963b645f45e962164646583"
+    },
+    {
+      "path": "docs/evidence/chat10/cleanup-final.json",
+      "bytes": 240,
+      "sha256": "b6391a51ae37a3f949aae6395df9616d4852c07a274eac8c3833066aab80b6de"
+    },
+    {
+      "path": "docs/evidence/chat10/configuration-red.txt",
+      "bytes": 1090,
+      "sha256": "e67331502fb3db3a40d77dc843a1a796f1f63365d8067f63936fbeee517d130a"
+    },
+    {
+      "path": "docs/evidence/chat10/install.txt",
+      "bytes": 657,
+      "sha256": "c34206b28446f3270bf36cbed975d02e2f5f30459e850ba74e165bb682dfa5b9"
+    },
+    {
+      "path": "docs/evidence/chat10/startup-boundary-final.txt",
+      "bytes": 365,
+      "sha256": "6b061721f732ec25f073ddb9769173c53df04bf9c02c9c4559c3f7fc8450d318"
+    },
+    {
+      "path": "docs/evidence/chat10/typecheck-final.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/chat10/typecheck-first.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "readOnlyInputs": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 12741,
+      "sha256": "5fa81b90376f441b84f20578b79845aec20fc6a3a5cdcbc9e369a1ee64599401"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 10369,
+      "sha256": "9e293af3092aba2e138cd8b36fd763ff29923a60bb8f8166bd5b8e490c8dcb8c"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 6565,
+      "sha256": "d7ef03b7df8927098fd6590d92c2bb92e0ee28a55fbeea973eaba3516dc450af"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6497,
+      "sha256": "c83f04c42ec26e69147baf929a18b53f49faf560602df4322cefccd67c40c7fc"
+    }
+  ],
+  "sourceCount": 8,
+  "providerQueries": 0
+}

@@ -221,3 +221,13 @@ Fixed 1bd4855f1582107e3b1b17ba9ba77cb43801e74d consumes strict contract d5d32ec1
 ## 2026-10-06 08:14 UTC — CHAT09 client
 
 固定89931e0d9cfd00b5f51f5b266b7aaa38bba2718b，2文件薄改。executionProfiles options.profileProtocol只接受steering-v1并每次GET发精确header；不变URL游标/limit、缺省不发、publication不带。红1/2(缺header)→绿2/2 122ms、tsc0；strict新publication schema、ownerBearer、409不fallback/不重试、abort不多发均实NodeHTTP。不写domain、manifest或Web、不启cap/个人服务。原CHAT09 fixed cd859独审输入受控合并，F01历史metadata冲突采用本树canonical，不碰产品。
+
+### 2026-10-06 08:24:26 UTC CHAT10只读受理状态client
+
+固定25a22e0488d6d9aef1f3308e3179e0e874fa425f，消费合同3b157a3；一个GET方法复用request/auth/abort/errors。真实HTTP1红（方法不存在）→1绿28ms，suite199ms；403/404/409保持原错误且不重试，abort不发请求，原nullable unavailable/ready身份不推断权限。tsc exit0，0PG/provider。clean-code复核：无重复策略、状态机或输入重写，仅可选attempt查询编码；证据见 steering-admission-client-manifest.json。
+
+## CHAT10可信启动接线 2d69959a50954912c388eddb18d3b6a9574bf680
+
+两文件增量，main仅调用已审严格parser并传activeSteering。真实子进程中心absent/0默认关闭，1只开启受理门且错误attempt仍404；非法值启动exit1且不回显。首次red保留（1仍disabled）；final1selected/2未选，typecheck0。随机专库before[]/createdtrue/connections[]/remaining[]；每个child正常退出断言。域8源对a329精确一致。未重48/106或provider，不动个人服务。
+
+CHAT10 startup独立APPROVED：assignment_review完整只读2d699两file/2source+3raw+8domain hashes无差，1selected green/2未选和清理证据核验，无P1/P2/未重跑。Root接收，默认off/个人profile不改，准受控主线集成。

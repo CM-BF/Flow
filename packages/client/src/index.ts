@@ -1,4 +1,4 @@
-import type { SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage, SteeringMailbox, SteeringFinalizationInput, SteeringFinalizationResult, SteeringProposalLookup, SteeringProposalStatus } from '@flow/contracts';
+import type { SteeringAdmission, SteeringCommandInput, SteeringCommandResult, SteeringReceiptInput, SteeringState, SteeringText, SteeringAuditPage, SteeringMailbox, SteeringFinalizationInput, SteeringFinalizationResult, SteeringProposalLookup, SteeringProposalStatus } from '@flow/contracts';
 import type { PackageFetchRequest, PackageFetchCommand, PackageFetchAccepted, PackageFetchOperation, PackageFetchList, PackageFetchHistory } from '@flow/contracts';
 import type { AssistantStreamPage, AssistantStreamPatchPage, AssistantStreamBlock } from '@flow/contracts';
 import type { NativeActivityPage, NativeActivity } from '@flow/contracts';
@@ -87,6 +87,11 @@ export class FlowClient {
     const query = new URLSearchParams();
     for (const name of ['attemptId', 'after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering${query.size ? `?${query}` : ''}`, { signal });
+  }
+  steeringAdmission(taskId: string, options: { attemptId?: string } = {}, signal?: AbortSignal): Promise<SteeringAdmission> {
+    const query = new URLSearchParams();
+    if (options.attemptId !== undefined) query.set('attemptId', options.attemptId);
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering/admission${query.size ? `?${query}` : ''}`, { signal });
   }
   steeringText(taskId: string, commandId: string, signal?: AbortSignal): Promise<SteeringText> {
     return this.request(`/api/tasks/${encodeURIComponent(taskId)}/steering/${encodeURIComponent(commandId)}/text`, { signal });
