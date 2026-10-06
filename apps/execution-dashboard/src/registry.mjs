@@ -5,6 +5,9 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['TUI-001', '可日用终端客户端', '总体计划', 'tui-client', 'tui01-terminal-client'],
+  ['COST-001', '执行成本与预算解释', '总体计划', 'execution-cost', 'cost01-execution-cost'],
+  ['R05B', 'Codex中心身份与来源校验', '工作线', 'native-center-policy', 'r05b-native-center-policy'],
   ['WPF-MATURE-01', '成熟双主题视觉', '总体计划', 'web-platform-management', 'wpf-mature-01-visual'],
   ['WPF-MATURE-02', 'Claude与Codex执行选项', '总体计划', 'claude-codex-capabilities', 'wpf-mature-02-harness-capabilities'],
   ['WPF-MATURE-03', '附件与文件输入', '总体计划', 'web-platform-management', 'wpf-mature-03-attachments'],
@@ -128,7 +131,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'WPF-MATURE-01': 'web-platform', 'WPF-MATURE-02': 'wpf-mature-02', 'WPF-MATURE-03': 'web-platform', 'WPF-MATURE-04': 'wpf-mature-04', 'WPF-MATURE-05': 'web-platform', 'WPF-MATURE-06': 'web-platform', 'WPF-CONTEXTI01': 'wpf-context-i01', 'WPF-STEER01': 'wpf-steering-control', 'WPF-VISUAL01': 'wpf-visual01', 'D05FIT01': 'd05fit01', 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'TUI-001': 'tui01', 'COST-001': 'cost01', 'WPF-MATURE-01': 'web-platform', 'WPF-MATURE-02': 'wpf-mature-02', 'WPF-MATURE-03': 'web-platform', 'WPF-MATURE-04': 'wpf-mature-04', 'WPF-MATURE-05': 'web-platform', 'WPF-MATURE-06': 'web-platform', 'WPF-CONTEXTI01': 'wpf-context-i01', 'WPF-STEER01': 'wpf-steering-control', 'WPF-VISUAL01': 'wpf-visual01', 'D05FIT01': 'd05fit01', 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };
