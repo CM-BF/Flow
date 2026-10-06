@@ -2,14 +2,14 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 07:18 UTC / 30b97cbf3665c4ef7a314a6a8b59394ae68781af |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:23:11 UTC / main32c371d389a913f8dd71c3bd8b98dd0697411256 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
 | Branch | `codex/plan-status-review` |
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
 | 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
-| 工作分支状态 | 依下方TODO；M1系统旅程、最终独立review及main集成已完成 |
+| 工作分支状态 | delivered；原历史TODO与独立review边界保留 |
 | 已集成main状态 / HEAD | 30b97cbf3665c4ef7a314a6a8b59394ae68781af；三件套、原子领取、独立审查和三队短交接约定已在使用。 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
@@ -38,7 +38,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-- 用户期望并发上限10；运行时当前实测cap4，启动第5worker返回`collab spawn failed: agent thread limit reached`。ready任务随实际可用槽派发。
+- 当前工程配额为本队4/Web4/Mika2，共10。历史单树第5worker被拒是当时工具上限记录，不代表当前全队容量或产品runner容量。
 - M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
@@ -68,3 +68,5 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 OPS-001-07 completed：两外部Lead确认短交接约定，完整细节仍留canonical status/evidence。全矩阵更新核实main4e0289f与实际4320的47源，不重跑产品测试；保留原始验收和未完成项。
 
 2026-10-06 07:18 UTC：仅补当前人读摘要；OPS-001-01～07既有完成证据与模板独立核对范围保留，不重新宣布整项目通过。三队当前4/4/2，旧单队cap错误仍是历史观察。无产品测试。
+
+2026-10-06 08:23:11 UTC：只核本权威来源既有6个人读字段均齐备，保留FLOW-002未完成工程验收与OPS历史review边界；本次仅更新协作配额/观察时间，不新增产品测试或模型。
