@@ -21,4 +21,4 @@ pnpm exec vitest run apps/server/src/assistant-stream/stream.test.ts -t 'makes d
 pnpm typecheck
 ```
 
-[manifest.json](manifest.json)绑定7项source（含授权test delta）、固定公共合同依赖与原始证据。独立review当前NOT_STARTED，main/公共挂载/实际Web消费待Lead；本片没有浏览器或provider验收。协商就绪检查每次显式opt-in增加一条只读SQL（无正文扫描），不是容量测量；通用timeline过滤不授权其他角色读取，现owner鉴权保持。已有CHAT06 prefix校验累计DB读取成本仍是REQ15/17后继，不在本片优化。
+[manifest.json](manifest.json)绑定7项source（含授权test delta）、固定公共合同依赖与原始证据。assignment_review已独立只读APPROVED77f（[正式记录](../../../plans/chat06c02-stream-compatibility/review.md)），未重跑；main/公共挂载/实际Web消费待Lead；本片没有浏览器或provider验收。协商就绪检查每次显式opt-in增加一条只读SQL（无正文扫描），不是容量测量；通用timeline过滤不授权其他角色读取，现owner鉴权保持。已有CHAT06 prefix校验累计DB读取成本仍是REQ15/17后继，不在本片优化。
