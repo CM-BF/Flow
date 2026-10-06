@@ -30,10 +30,17 @@
   ],
   "sharedDecoder": {
     "target": "dc7f3e186ee7a628187f82734db73f48866b9f6e",
-    "path": "packages/client/src/conversation-receipts.ts",
-    "unchanged": true
+    "path": "packages/client/src/conversation-acknowledgement.ts",
+    "unchanged": true,
+    "bytes": 10480,
+    "sha256": "3f76cfde9b61ea049da7575c905d91588ea9d8a400c5bcc0336036998c0020d5"
   },
   "review": "Web root independent APPROVED; 150 original direct/HTTP checks and author types reused, no duplicated tests",
   "providerCalls": 0,
-  "personalServicesChanged": false
+  "personalServicesChanged": false,
+  "correction": {
+    "at": "2026-10-06T11:02:21.838318+00:00",
+    "previousPath": "packages/client/src/conversation-receipts.ts",
+    "reason": "Previous empty git diff for a nonexistent path did not prove binding; corrected to actual shared decoder and compared fixed blob bytes."
+  }
 }
