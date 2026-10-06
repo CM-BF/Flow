@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:55:19 UTC / settings main 8d84d529a0756116bd0fc8bad969d61a6c26248e |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:57:49 UTC / settings main 8d84d529a0756116bd0fc8bad969d61a6c26248e |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -12,19 +12,19 @@
 | Claim | 8470e7d2-662a-4dbe-9b0e-12ef82aac90e v48 active；7literal：[O15追加回执](../../docs/evidence/f01/goal-plan-confirmation-scope-amend.json)，client/contracts index已由C01 v2合法交回 |
 | Branch | `codex/m2-shared-foundation` |
 | 工作基线 / HEAD | O15受控input 1c0018d2；本共享source 7f59daa552aa0618776468ec54b6ed4c5a6990cb；原settings组合与O14保持 |
-| 工作树dirty状态 | 四新源固定；本次仅source preflight/status证据，提交后clean |
+| 工作树dirty状态 | 四新源停止写入；本次只固定1case实际PG证据，提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 新shared focusedtypes0；214源/30SQL/19packages实际入口无缺件；新PG NOT_RUN。旧032/O15已审检查不重跑 |
+| 检查状态 | 新生产PG1选中/1过/exit0，正常DROP与目录清理；focusedtypes0；214源/30SQL/19包预检无缺件；原O15 thirteen/settings不重跑 |
 | 已集成main状态 / HEAD | O14已main bd14；settings45源已main 8d84d529a0756116bd0fc8bad969d61a6c26248e exact。当前O15共享接线尚未main，个人服务不变 |
-| Review | 新O15共享接线待独立源前检/真实PG；032 0ee独审APPROVED保持，见review.md |
+| Review | O15新共享target7f59待Lead唯一最终窄审；原032/O15领域独审分别保持 |
 | 实现目标 | 7f59daa552aa0618776468ec54b6ed4c5a6990cb |
 | 实现范围 | apps/server/src/index.ts, packages/client/src/index.ts, packages/contracts/src/index.ts, packages/client/src/goal-plan-confirmation-production.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 消息设置生产入口已审；正在接入一次确认完整计划输入的生产入口。 |
-| 下一可用交付 | 用户确认后由中心现有扫描周期推进依赖任务，退出客户端仍保留原授权。 |
-| 当前阻塞 | ACTIVE: 等待串行数据库窗口；已固定来源和入口，当前不启动PG。 |
+| 当前产出 | 生产入口已验证一次确认后自动推进两步依赖任务，重启保留原确认与执行记录。 |
+| 下一可用交付 | 独立审查与主线接收这段生产接线；真实模型规划仍为后继。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -242,6 +242,8 @@ O14旧源码及CLI证据保持，PG仍NOT_RUN；不复跑CLI/types、无install/
 
 2026-10-06 17:14:15 UTC：O14本片delivered，五源对main逐hash相同，[main receipt](../../docs/evidence/f01/goal-progression-production-main-receipt.json)，0重测。当前source准备转032消费者，只新增一个测试文件，未修改已冻结O14 factory/其他source；不将历史批准继承到新片。架构影响为迁移前置依赖，正式target固定后由ExecutionLead同步；现无第二鉴权/scan/runtime。
 
-| F01-44 | in-progress | native_center_owner | [O15生产Interface](../../docs/evidence/f01/goal-plan-confirmation-production-interface.md)；已审域受控输入，实际生产专测待固定/窗口 |
+| F01-44 | in-progress | native_center_owner | [真实生产1case](../../docs/evidence/f01/goal-plan-confirmation-production-README.md)，正常资源清理；target7f59待独立最终审查 |
 
 2026-10-06 17:53:52 UTC：F01-44固定四源7f59daa552aa0618776468ec54b6ed4c5a6990cb，复用既有scan不新增timer；[真实入口预检](../../docs/evidence/f01/goal-plan-confirmation-production-preflight.json)与[下一窗口请求](../../docs/evidence/f01/goal-plan-confirmation-production-request.json)。新PG未跑，旧13领域/032不重复。
+
+2026-10-06 17:57:49 UTC：F01-O15-PRODUCTION-1756窗口已正常归还；1/1实际生产入口通过，未补跑13领域/旧settings。源码停写，Lead唯一最终窄审。

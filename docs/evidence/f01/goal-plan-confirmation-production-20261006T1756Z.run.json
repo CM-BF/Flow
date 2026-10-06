@@ -1,0 +1,151 @@
+{
+  "window": "F01-O15-PRODUCTION-20261006-1756",
+  "startedAt": "2026-10-06T17:56:48.863808+00:00",
+  "head": "f4234a4e02b0f9b885307ed0148e8a4ab2c47bf8",
+  "sourceTarget": "7f59daa552aa0618776468ec54b6ed4c5a6990cb",
+  "approvedDomain": "e0c0db91d7e6c52b9bb5df890787930db8b7e91d",
+  "settings": [
+    "ea276572c3c99fb8400808a93efc69ce530d55a4",
+    "6d1145de30eea1eb4c267c88386ebc0479dfbd99",
+    "0ee2494ed4298169c56ac3a6950fa1910ed62a7a"
+  ],
+  "providerCalls": 0,
+  "expectedSelected": 1,
+  "expectedUnselected": 0,
+  "gateBytes": 1140850688,
+  "limits": {
+    "workSeconds": 120,
+    "cleanupObservationSeconds": 30,
+    "rawBytes": 2097152,
+    "cachePlusRuntimeBytes": 8388608,
+    "reserveBytes": 1073741824,
+    "PGWAL": "separate; DB bytes and volume observation only"
+  },
+  "cleanBefore": true,
+  "sourceBindingsVerified": 279,
+  "preflightSha256": "d2f1f028c000da7439817d84de671dac3fd20d8ca3fa714501b665ffe9dde42a",
+  "freeBeforeBytes": 1737261056,
+  "cacheBeforeBytes": 7046,
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "packages/client/src/goal-plan-confirmation-production.test.ts",
+    "--maxWorkers=1",
+    "--no-cache",
+    "--testTimeout=30000",
+    "--hookTimeout=30000"
+  ],
+  "environment": {
+    "FLOW_F01_O15_WINDOW": "F01-O15-PRODUCTION-20261006-1756"
+  },
+  "pid": 52469,
+  "processGroup": 52469,
+  "state": "FINISHED",
+  "exitCode": 0,
+  "stopReason": null,
+  "durationSeconds": 5.651935708010569,
+  "endedAt": "2026-10-06T17:56:59.280085+00:00",
+  "freeMinimumBytes": 1710784512,
+  "freeAfterBytes": 1712910336,
+  "cachePeakBytes": 7046,
+  "cacheAfterBytes": 7046,
+  "runtimePeakBytes": 567,
+  "stdout": "goal-plan-confirmation-production-20261006T1756Z.stdout.txt",
+  "stdoutBytes": 721,
+  "stdoutSha256": "4453ca7b9624e7ac06388b7f9b8f6f9c3cb346dedf970483fece7472cbc85bfd",
+  "ownedProcessGroupAlive": false,
+  "fixtureRecords": [
+    {
+      "path": "docs/evidence/f01/goal-plan-confirmation-production-2e70c97d-45c8-4afc-a39b-20c15626517c.json",
+      "bytes": 2797,
+      "sha256": "2a2ebe0c2fe553f80131d3613f24bbe81b61da7ee099e6d3f1b8240cce2ef3a7",
+      "facts": {
+        "database": "flow_f01_confirmation_9ccd3015f7e2407abfcab7cc2b272a99",
+        "marker": "2e70c97d-45c8-4afc-a39b-20c15626517c",
+        "providerCalls": 0,
+        "startedAt": "2026-10-06T17:56:55.583Z",
+        "freeBeforeBytes": 1733324800,
+        "evidenceDirectorySynced": true,
+        "creationRequested": true,
+        "created": true,
+        "marked": true,
+        "directory": {
+          "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-f01-confirmation-UnpefR",
+          "dev": 16777234,
+          "ino": 123112443
+        },
+        "runtimeStarts": 1,
+        "journey": {
+          "goalId": "5ccd93c5-0b05-427f-8c65-493fc23fd291",
+          "proposalId": "d8ce851d-4480-4e83-a15c-b606fae8efd1",
+          "progressionId": "05fd88a1-014e-4dc5-bab5-c7fded16ad2e",
+          "confirmation": {
+            "proposalId": "d8ce851d-4480-4e83-a15c-b606fae8efd1",
+            "proposalDigest": "2a3ca9ba797ee31c8afb2961ff79e29bf2bb371481d1d3cebb4a450844760882",
+            "confirmationDigest": "8066995c60aa9a317d65a39df0f34e6ce1da49bb15c41cd93b166fcf41174ba2",
+            "goalId": "5ccd93c5-0b05-427f-8c65-493fc23fd291",
+            "projectId": "6908877e-6b1d-427d-9909-ae552eb7ecd6",
+            "graph": {
+              "proposalId": "d8ce851d-4480-4e83-a15c-b606fae8efd1",
+              "goalId": "5ccd93c5-0b05-427f-8c65-493fc23fd291",
+              "projectId": "6908877e-6b1d-427d-9909-ae552eb7ecd6",
+              "proposalDigest": "2a3ca9ba797ee31c8afb2961ff79e29bf2bb371481d1d3cebb4a450844760882",
+              "fromRevision": 1,
+              "toRevision": 4,
+              "nodeIds": {
+                "A": "d0fdd4b4-6164-427e-8faa-848ed6607f6e",
+                "B": "d0bbf87e-42da-43f1-944b-498f3e3cb54b"
+              },
+              "actor": {
+                "kind": "owner"
+              },
+              "appliedAt": "2026-10-06T17:56:57.182Z"
+            },
+            "inputs": [
+              {
+                "key": "A",
+                "nodeId": "d0fdd4b4-6164-427e-8faa-848ed6607f6e",
+                "inputVersion": 1
+              },
+              {
+                "key": "B",
+                "nodeId": "d0bbf87e-42da-43f1-944b-498f3e3cb54b",
+                "inputVersion": 1
+              }
+            ],
+            "progressionId": "05fd88a1-014e-4dc5-bab5-c7fded16ad2e",
+            "authorizationDigest": "36f407cab77eb4497b25b7f4086b71eb581abaaccda40d129bb36d76c33190ca",
+            "confirmedAt": "2026-10-06T17:56:57.194Z"
+          },
+          "defaultReadyAdmission": true,
+          "automaticSecondAdmission": true,
+          "recoveredAcknowledgedKey": true,
+          "injectedQueries": 2,
+          "closedQueries": 2,
+          "admissions": 2,
+          "accepted": false,
+          "modelCalls": 0
+        },
+        "runtimeStopped": true,
+        "appClosed": true,
+        "poolClosed": true,
+        "databaseBytes": 12975127,
+        "connectionObservations": [
+          {
+            "elapsedMs": 1,
+            "connections": []
+          }
+        ],
+        "connections": [],
+        "databaseDropped": true,
+        "remaining": [],
+        "directoryRemoved": true,
+        "adminClosed": true,
+        "errors": [],
+        "endedAt": "2026-10-06T17:56:59.242Z",
+        "phase": "cleaned"
+      }
+    }
+  ]
+}
