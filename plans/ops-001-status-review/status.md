@@ -281,3 +281,5 @@ S01P07最后一个原请求的packages/protocols/package.json已于20:37:28补�
 2026-10-06 21:17 UTC：SVC07在21:08因空间HOLD/0child/0PG明确归还；原SVC05H operator曾被runtime拒绝唤醒，在GO释放只读槽后一次恢复成功，未更换操作者/claim。固定0a8/7fb已独审130绑定，通过新exclusive run-retirement-release-20261006T211659Z与I02 388bb3f5 source-window启动一次已授权窗口；root准确af51，main421b冻结。09 drain起≤900秒，每步明确成功才继续，unknown保留维护与原件，0provider/用户tab。两peer已通知无新PG/Chrome；源码工作继续。
 
 2026-10-06 21:21 UTC：run211659仅01只读613ms与02比较57ms；唯一retained false为实际descriptor同三字段不同键序，原JSON.stringify误拒，0材料/维护/退役/发布。窗口已关闭，root恢复main421b后正常发布MessageSettings至c8e，operator仅原范围局部修复，不预占PG/Chrome。原失败保持；独立0a8批准与此次实际失败分开。OPS14最小独立树owned-process-supervision/codex已供给c8e、53,701B，原native_center_owner受派fresh take三scope（tools模块/自有plan/evidence），两个在用wrapper不改；完整复用需后继正式交权。
+
+2026-10-06 21:23 UTC：descriptor专用三字段比较6e7109已增量独审，146固定/145现场绑定全同；原保存反例与值/未知键/列表顺序3纯例通过116ms，旧18不重跑。新exclusive run212322、source-window34621ca0，root固定af51/main冻结c8e；原operator已获START，fresh现场/原24步/09起900秒不变，无模型许可。旧211659失败仅作为已封存反例，不改绿。
