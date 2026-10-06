@@ -3,7 +3,7 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 | C02 |
-| 状态 | `in-progress` |
+| 状态 | `completed` |
 | 创建日期 / 最近更新 | 2026-10-06 / 2026-10-06 |
 | 父计划 | [FLOW-001](../flow-001-architecture/plan.md) |
 | Owner / model | runner_owner / gpt-6-astra |
@@ -17,9 +17,11 @@
 ## TODO
 
 - [x] **C02-T01** 核对规则、独立基线、技能与设计，协调唯一公共接口。
-- [ ] **C02-T02** 只读核对接口、真实时间戳、不可变观察审计与幂等。
-- [ ] **C02-T03** 明确停止/副作用确认后安全终止，释放容量/session，阻止迟到旧 owner。
-- [ ] **C02-T04** 操作者显式 retry，新任务 provenance，保留原始历史。
-- [ ] **C02-T05** 真实 PG/动态 HTTP 安全、冲突、重启与行为验证，clean-code 和可审查交付。
+- [x] **C02-T02** 只读核对接口、真实时间戳、不可变观察审计与幂等。
+- [x] **C02-T03** 明确停止/副作用确认后安全终止，释放容量/session，阻止迟到旧 owner。
+- [x] **C02-T04** 操作者显式 retry，新任务 provenance，保留原始历史。
+- [x] **C02-T05** 真实 PG/动态 HTTP 安全、冲突、重启与行为验证，clean-code 和可审查交付。
 
 以真实 HTTP seam 测试用户行为（已经派工授权），不以私有实现 mock 代替数据库原子性。专属 flow_c02，不操作其他测试 DB 或固定端口。独立 [review](review.md) 初始 NOT_STARTED；状态事实源由本人维护 [status](status.md)，main 集成单独核验。
+
+分支实现交付 `97ab1e5bd169cda7ed7bf0bbdeddcda1414833f8`，12 条真实 PG/HTTP 与类型检查通过。retry 的 safety evidence、已知副作用与剩余工作上下文作为必要条件，详见架构和证据；独立 review/main 尚未完成。

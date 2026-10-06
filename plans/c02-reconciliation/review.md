@@ -5,9 +5,9 @@
 ## Target 与 scope
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Review target commit：待审查者核验并填写完整SHA；禁止笼统复用旧通过状态。
-- Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
-- 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
+- Review target commit：`97ab1e5bd169cda7ed7bf0bbdeddcda1414833f8`（实现与测试）；metadata 随后交付，禁止笼统复用旧通过状态。
+- Base commit：`e845eb069c594989117fadf380335650efef27a2`；实现 head：`97ab1e5bd169cda7ed7bf0bbdeddcda1414833f8`；worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-reconciliation` / branch `codex/m2-reconciliation`；请复核实际 HEAD/dirty。
+- Scope：apps/server 恢复 service/routes、002 migration、12 条真实 HTTP/PG 测试和本任务文档；排除 m2-workspace、真实模型和跨机恢复。重点审查 stopped/effects assertion gate、owner fence、runner→task→attempt 锁顺序、不可变审计、幂等、唯一 successor、revised-work 上下文、source/provenance 和升级保历史。已知作者检查见 docs/evidence/c02，不当作独立 approval。
 - Reviewer / model / harness / 时间：待填写。
 
 ## 可直接复制的审查任务说明
