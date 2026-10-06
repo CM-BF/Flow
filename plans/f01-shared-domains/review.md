@@ -257,3 +257,9 @@ NOT_STARTED；限定两源与1HTTP，不复核O11领域。
 Review target commit: ec6ad20479872a8cb701917b6fa448ca23a2a843
 
 APPROVED — native_center_owner独立只读2源/6raw，hash全同，无P1/P2。1HTTP/5请求/types0复用，0重跑；已发送mutation取消观察仍保持未知ACK语义。见[回执](../../docs/evidence/f01/goal-session-transport-independent-review.json)。
+
+## 原生工程配置薄传输
+
+Review target commit: 79b569a14d14c218874781e2d05ae6e42e234ce2
+
+NOT_STARTED；仅3source、2HTTP与types，领域916e另已独审；不复跑PG/native。
