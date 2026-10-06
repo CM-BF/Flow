@@ -1,0 +1,10 @@
+{
+  "extends": "../journey-focused-tsconfig.json",
+  "files": [
+    "../../../../apps/tui/src/task-controls/fixture.ts",
+    "../../../../apps/tui/src/task-controls/fixture-cleanup.ts",
+    "../../../../apps/tui/src/task-controls/fixture-cleanup.test.ts"
+  ],
+  "include": [],
+  "exclude": []
+}

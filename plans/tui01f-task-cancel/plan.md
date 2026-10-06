@@ -38,3 +38,5 @@
 2026-10-06 17:02 UTC：运行links由Lead完成，固定实际factory/PTY入口文件已核齐；本轮只metadata，后续唯一命令/2选择及unknown保留边界见[journey-runtime-entry](../../docs/evidence/tui01f/journey-runtime-entry.md)。03/04尚未执行/完成；等待另定串行窗口，原建议32MiB不冒实测峰值。
 
 2026-10-06 17:17 UTC：03首次真实2场景行为通过，但afterAll连接检查unknown导致suite失败，未完成03。原DB/tmp和checkpoint保留；[窗口结果](../../docs/evidence/tui01f/journey-1714/README.md)。未自动重试/清理，04浏览器仍open。
+
+2026-10-06 17:29 UTC：原claim内收尾修复仅test-only：≤3s连接观察、初始dev/ino和checkpoint门槛。10新定向检查/types0；未重跑原两行为或36，原suite exit1/旧tmp KEEP保留，03/04继续open。独立审查后再决定必要PG cleanup-only。

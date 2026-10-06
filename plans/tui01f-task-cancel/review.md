@@ -1,6 +1,12 @@
+# TUI01F test-only cleanup repair
+
+Review target commit: 45709c982df080af5a71ecbd66760a76ab65cf94
+
+NOT_STARTED。作者仅新增10项纯定向检查/focused types0；原实际2行为passed、suite exit1保留。请独立审查连接观察有界、异常保留、checkpoint顺序、初始目录身份与删除前核对；真实PG cleanup-only未运行，不据局部检查勾03。[固定证据](../../docs/evidence/tui01f/cleanup-local/README.md)。
+
 # TUI01F-03 限定静态准备批准
 
-Review target commit: 40508f18432ffc20eadd638b208841a364c72bea
+Historical review target commit: 40508f18432ffc20eadd638b208841a364c72bea
 
 SCOPED_APPROVED。Execution Lead / gpt-6-astra 于2026-10-06T16:46:48.254Z独立只读核2增量/3旅程/9保护/23输入、710 compiler inputs与5raw；未发现P1/P2，未重跑。批准仅宿主identity缺失拒绝及focused类型配置，不表示PG/HTTP/PTY/browser旅程通过。[原回执](../../docs/evidence/tui01f/independent-static-delta-review.json)，SHA67acee23da8bcaf5e1ae5d1272edda2ac4c8031657d1a75378a17879b7a91d3e。
 

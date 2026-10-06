@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/tui/src/task-controls/fixture-cleanup.test.ts",
+    "--no-cache",
+    "--configLoader",
+    "runner",
+    "--maxWorkers",
+    "1"
+  ],
+  "exitCode": 1,
+  "durationSeconds": 0.47523041698150337,
+  "pid": 50053,
+  "processGroup": "absent",
+  "freeBeforeBytes": 1205760000,
+  "scratch": "/tmp/flow-tui01f-cleanup-local",
+  "rawBytes": 1378,
+  "rawSha256": "27bc7243222f12bba2a674c46e1949e7553b63868a76299b3ff67d12a91759e8"
+}

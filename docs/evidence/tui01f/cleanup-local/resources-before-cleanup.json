@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-06T17:28:52.448044+00:00",
+  "testProcesses": [
+    {
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/tui/src/task-controls/fixture-cleanup.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner",
+        "--maxWorkers",
+        "1"
+      ],
+      "exitCode": 1,
+      "durationSeconds": 0.47523041698150337,
+      "pid": 50053,
+      "processGroup": "absent",
+      "freeBeforeBytes": 1205760000,
+      "scratch": "/tmp/flow-tui01f-cleanup-local",
+      "rawBytes": 1378,
+      "rawSha256": "27bc7243222f12bba2a674c46e1949e7553b63868a76299b3ff67d12a91759e8"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/tui/src/task-controls/fixture-cleanup.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner",
+        "--maxWorkers",
+        "1"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 0.4913066669832915,
+      "pid": 14576,
+      "processGroup": "absent",
+      "freeBeforeBytes": 1203077120,
+      "rawBytes": 321,
+      "rawSha256": "54ee141ba00edba6da3cd5f5ee4147eb595e3f14ff955a73edf200bfa099811b"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--project",
+        "docs/evidence/tui01f/cleanup-local/tsconfig.json",
+        "--pretty",
+        "false"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 2.2969310409389436,
+      "pid": 47734,
+      "processGroup": "absent",
+      "freeBeforeBytes": 1198739456,
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "focused fixture cleanup and direct type closure, not root noEmit"
+    }
+  ],
+  "newRawBytes": 1699,
+  "scratch": {
+    "path": "/tmp/flow-tui01f-cleanup-local",
+    "dev": 16777234,
+    "ino": 123098942,
+    "logicalBytes": 1357812,
+    "generatedFiles": [
+      {
+        "path": "/tmp/flow-tui01f-cleanup-local/node-compile-cache/v24.20.0-arm64-964aae3f-501/b16c272a",
+        "bytes": 1357812,
+        "sha256": "ba3a27969f0449a709b3b118eac76029f076ff5aed130cc4b56ec336c22ce2b2",
+        "dev": 16777234,
+        "ino": 123099742
+      }
+    ],
+    "removed": false
+  },
+  "oldJourneyPrivateTmp": "KEEP; no initial dev/ino was recorded; never read/deleted by this follow-up",
+  "PG": 0,
+  "PTY": 0,
+  "provider": 0,
+  "install": 0,
+  "limits": "Each selected process <=30s; raw <=2MiB; scratch <=8MiB; no new full journey",
+  "metadataNote": "Initial empty-cache assertion and next string-prefix assertion failed before any deletion. Node generated one 1357812B compile cache; corrected exact path-components check follows."
+}
