@@ -1,0 +1,15 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-payload
+
+stdout | packages/protocols/test/a2a-official-peer.test.ts > explicit history selection preserves optional zero on HTTP and leaves status and artifacts complete
+P03_OFFICIAL_HISTORY_BYTES [{"historyCount":1,"fullBytes":18708,"zeroBytes":16580},{"historyCount":1024,"fullBytes":2185338,"zeroBytes":16580}]
+
+ ✓ packages/protocols/test/a2a-official-peer.test.ts (2 tests) 79ms
+ ✓ packages/protocols/test/a2a-observe.test.ts (2 tests) 34ms
+ ✓ packages/protocols/test/a2a-client.test.ts (2 tests) 26ms
+
+ Test Files  3 passed (3)
+      Tests  6 passed (6)
+   Start at  20:56:03
+   Duration  648ms (transform 57ms, setup 0ms, import 290ms, tests 138ms, environment 0ms)
+

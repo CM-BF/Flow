@@ -1,0 +1,42 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/protocol-payload
+
+ ❯ packages/protocols/test/a2a-official-peer.test.ts (2 tests | 1 failed) 15039ms
+   ✓ outbound client exchanges direct and streaming messages with the official SDK request handler 29ms
+   × explicit history selection preserves optional zero on HTTP and leaves status and artifacts complete 15010ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/protocols/test/a2a-official-peer.test.ts > explicit history selection preserves optional zero on HTTP and leaves status and artifacts complete
+TimeoutError: The operation was aborted due to timeout
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯ Unhandled Rejection ⎯⎯⎯⎯⎯
+TypeError: Cannot convert undefined or null to object
+ ❯ Server.<anonymous> packages/protocols/test/a2a-official-peer.test.ts:47:116
+     45|     const result = await transport.handle(raw, context);
+     46|     const serialized = JSON.stringify(result);
+     47|     exchanges.push({ params: body.params, responseBytes: Buffer.byteLe…
+       |                                                                                                                    ^
+     48|     response.end(serialized);
+     49|   });
+ ❯ processTicksAndRejections node:internal/process/task_queues:104:5
+
+This error originated in "packages/protocols/test/a2a-official-peer.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The latest test that might've caused the error is "explicit history selection preserves optional zero on HTTP and leaves status and artifacts complete". It might mean one of the following:
+- The error was thrown, while Vitest was running this test.
+- If the error occurred after the test had been completed, this was the last documented test before it was thrown.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+     Errors  1 error
+   Start at  20:55:12
+   Duration  15.31s (transform 44ms, setup 0ms, import 184ms, tests 15.04s, environment 0ms)
+
