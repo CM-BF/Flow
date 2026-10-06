@@ -89,3 +89,11 @@ Root已独立复核固定f58fdf36b073e2a98a683c8f40442dbb64ee7eec/最终c003444�
 O04产品1420+测试a169由Root独审，最终ccfe96：103不同作者检查分77+25+1，未复跑；B03产品9b2156/final781a09由Mika独审，43行为+126测量保存证据。合并唯一冲突为共享queue-production.test.ts的旧2测试副本对已主线3测试版本：保留已审主线原文件，git diff82eaf确认零变化，不手工改语义。O04/B03各已批准实现scope对组合HEAD零diff，见o04-b03-fixed-scopes.json。组合root/Web typecheck两个真实输出均exit0，未重复全库/负载/模型。O04仍query注入而非native子进程或NL图生成；B03只减DB→应用正文搬运，252SELECT/50次PG完整digest仍在。
 
 本批registry59源候选包括D07/PROFILEI01/DPERF01；D07实现仍独立review中未合入，本批只登记和阶段规则。常驻center/runner未刷新，下一SVC02要先有durable drain证据，不能用主线合并宣称用户运行能力已更新。
+
+## 05:18 UTC — 聊天配置接线、紧凑摘要与插件兼容证据
+
+受控接收外部独审 PROFILEI01 实现2e4c5fe/最终c1dc77、PROFILEUX实现55b244/最终60d8bc；四个App产品文件与模块Picker/CSS在各自已审scope保持逐字相同，无手工产品冲突。实际App现在消费配置目录/冻结选择/严格ACK pin；紧凑摘要折叠技术细节。外部作者及独审44/9等具体范围仍见各canonical review，不冒称由Lead重跑。两次必要Web组合typecheck exit0（profile-ctx02-web-typecheck.txt、profile-summary-web-typecheck.txt），新增摘要到达后第二次覆盖新组合，无无关全库测试。
+
+CTX02实现8abe014/最终efda7fc按Root方法APPROVED接收；实验脚本对已审target零diff，无模型/无负载重跑。默认loader拒绝、factory默认窗口不压缩、显式toy配置与未知sidecar仅警告降写都保留；不等于生产插件兼容。D07/B03/O04/PROFILE/QUEUE/DPERF仅作者最终metadata和release事实一并接收。
+
+来源登记63：K01、SVC02、WPF-PROFILEUX01的真实三件套及精确权威路径已核。find-skills沿用同stack本地codebase-design/clean-code；本段合并前检查仅组合接口、目标blob、失败语义与证据出处，无新抽象。所有合并无产品冲突。固定scope核对见profile-ctx02-fixed-scopes.json。常驻center/runner仍75a33，Web为开发服务可随源码刷新；新main不代表常驻服务已升级，不发模型消息。

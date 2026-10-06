@@ -1,0 +1,21 @@
+PASS actual Thread opens a per-connection directory; unsupported profiles stay visible and disabled beside valid choices
+PASS first Enter freezes the exact runner pin and requested settings; accepted route keeps focus and an independent next draft
+10:09:30 PM [vite] http proxy error: /api/conversations
+Error: socket hang up
+    at Socket.socketOnEnd (node:_http_client:790:25)
+    at Socket.emit (node:events:526:24)
+    at endReadableNT (node:internal/streams/readable:1757:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+PASS unknown CREATE retries identical keys and pin while its new draft survives; no turn is sent before receipt identity is confirmed
+PASS a mismatched CREATE pin remains unknown without submitting a turn; correct replay recovers the original configuration
+10:09:35 PM [vite] http proxy error: /api/conversations/28133a20-35e8-4c27-bedb-461d93b3a735/turns
+Error: socket hang up
+    at Socket.socketOnEnd (node:_http_client:790:25)
+    at Socket.emit (node:events:526:24)
+    at endReadableNT (node:internal/streams/readable:1757:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+PASS known CREATE plus lost turn ACK retries only that turn; a later rejected turn never unlocks the existing profile
+PASS stale directory blocks first configured Send without clearing draft; refresh and explicit pagination confirm a retained selection
+PASS each draft retains its selection across tabs, while an existing legacy conversation stays explicitly unpinned
+PASS changing connection discards old catalog delivery and draft selection even when profile identities match
+PASS profile picker and locked configuration fit desktop and 390px in both themes with keyboard return focus

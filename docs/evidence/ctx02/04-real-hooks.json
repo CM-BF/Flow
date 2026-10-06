@@ -1,0 +1,73 @@
+{
+  "startedAt": "2026-10-06T05:00:10.931Z",
+  "completedAt": "2026-10-06T05:00:11.387Z",
+  "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "pi": "/private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent",
+  "plugin": "/private/tmp/flow-ctx02-upstream-0.1.83/package",
+  "policy": "(version 1)\n(allow default)\n(deny network*)\n(deny process-fork)\n(deny file-write*)\n(allow file-write* (subpath \"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-v2OrVF\") (literal \"/dev/null\"))\n",
+  "nodePermissions": [
+    "--permission",
+    "--allow-fs-read=/private/tmp/flow-harness-eval.iq7BzZ/node_modules",
+    "--allow-fs-read=/private/tmp/flow-ctx02-upstream-0.1.83/package",
+    "--allow-fs-read=/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-v2OrVF",
+    "--allow-fs-write=/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-v2OrVF"
+  ],
+  "status": 0,
+  "signal": null,
+  "child": {
+    "probe": "CTX02",
+    "cases": [
+      {
+        "name": "OS barriers before any dependency import",
+        "result": {
+          "deniedSyntheticRead": "ERR_ACCESS_DENIED",
+          "deniedLoopbackConnect": "EPERM",
+          "deniedChildProcess": "ERR_ACCESS_DENIED",
+          "enforcement": "Node Permission Model read/child-process; macOS sandbox-exec network/fork/write; no JS interception"
+        },
+        "elapsedMs": 1.4738330000000026,
+        "passed": true
+      },
+      {
+        "name": "import unmodified fixed SDK and plugin",
+        "result": {
+          "sdkCreateAgentSession": "function",
+          "pluginCreateAcpExtension": "function"
+        },
+        "elapsedMs": 392.04837499999996,
+        "passed": true
+      },
+      {
+        "name": "real SDK loads two isolated sessions and projects real context hooks",
+        "error": {
+          "name": "Error",
+          "code": "ERR_ACCESS_DENIED",
+          "message": "Access to this API has been restricted. Use --allow-fs-read to manage permissions.",
+          "stack": "Error: Access to this API has been restricted. Use --allow-fs-read to manage permissions.\n    at existsSync (node:fs:294:18)\n    at findGitRepoRoot (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:277:13)\n    at collectAncestorAgentsSkillDirs (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:290:25)\n    at DefaultPackageManager.addAutoDiscoveredResources (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:1979:15)\n    at DefaultPackageManager.resolve (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:730:14)\n    at async DefaultResourceLoader.reload (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/resource-loader.js:276:31)\n    at async open (file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-v2OrVF/worker.mjs:68:5)"
+        },
+        "elapsedMs": 3.090915999999993,
+        "passed": false
+      }
+    ],
+    "outcome": "blocked",
+    "promptCalls": 0,
+    "providerCalls": 0,
+    "loaded": {
+      "sdkCreateAgentSession": "function",
+      "pluginCreateAcpExtension": "function"
+    },
+    "error": {
+      "name": "Error",
+      "code": "ERR_ACCESS_DENIED",
+      "message": "Access to this API has been restricted. Use --allow-fs-read to manage permissions.",
+      "stack": "Error: Access to this API has been restricted. Use --allow-fs-read to manage permissions.\n    at existsSync (node:fs:294:18)\n    at findGitRepoRoot (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:277:13)\n    at collectAncestorAgentsSkillDirs (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:290:25)\n    at DefaultPackageManager.addAutoDiscoveredResources (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:1979:15)\n    at DefaultPackageManager.resolve (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:730:14)\n    at async DefaultResourceLoader.reload (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/resource-loader.js:276:31)\n    at async open (file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-v2OrVF/worker.mjs:68:5)"
+    },
+    "elapsedMs": 397.91925000000003
+  },
+  "stdout": "{\"probe\":\"CTX02\",\"cases\":[{\"name\":\"OS barriers before any dependency import\",\"result\":{\"deniedSyntheticRead\":\"ERR_ACCESS_DENIED\",\"deniedLoopbackConnect\":\"EPERM\",\"deniedChildProcess\":\"ERR_ACCESS_DENIED\",\"enforcement\":\"Node Permission Model read/child-process; macOS sandbox-exec network/fork/write; no JS interception\"},\"elapsedMs\":1.4738330000000026,\"passed\":true},{\"name\":\"import unmodified fixed SDK and plugin\",\"result\":{\"sdkCreateAgentSession\":\"function\",\"pluginCreateAcpExtension\":\"function\"},\"elapsedMs\":392.04837499999996,\"passed\":true},{\"name\":\"real SDK loads two isolated sessions and projects real context hooks\",\"error\":{\"name\":\"Error\",\"code\":\"ERR_ACCESS_DENIED\",\"message\":\"Access to this API has been restricted. Use --allow-fs-read to manage permissions.\",\"stack\":\"Error: Access to this API has been restricted. Use --allow-fs-read to manage permissions.\\n    at existsSync (node:fs:294:18)\\n    at findGitRepoRoot (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:277:13)\\n    at collectAncestorAgentsSkillDirs (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:290:25)\\n    at DefaultPackageManager.addAutoDiscoveredResources (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:1979:15)\\n    at DefaultPackageManager.resolve (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:730:14)\\n    at async DefaultResourceLoader.reload (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/resource-loader.js:276:31)\\n    at async open (file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-v2OrVF/worker.mjs:68:5)\"},\"elapsedMs\":3.090915999999993,\"passed\":false}],\"outcome\":\"blocked\",\"promptCalls\":0,\"providerCalls\":0,\"loaded\":{\"sdkCreateAgentSession\":\"function\",\"pluginCreateAcpExtension\":\"function\"},\"error\":{\"name\":\"Error\",\"code\":\"ERR_ACCESS_DENIED\",\"message\":\"Access to this API has been restricted. Use --allow-fs-read to manage permissions.\",\"stack\":\"Error: Access to this API has been restricted. Use --allow-fs-read to manage permissions.\\n    at existsSync (node:fs:294:18)\\n    at findGitRepoRoot (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:277:13)\\n    at collectAncestorAgentsSkillDirs (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:290:25)\\n    at DefaultPackageManager.addAutoDiscoveredResources (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:1979:15)\\n    at DefaultPackageManager.resolve (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/package-manager.js:730:14)\\n    at async DefaultResourceLoader.reload (file:///private/tmp/flow-harness-eval.iq7BzZ/node_modules/@ai-sdk/harness-pi/node_modules/@earendil-works/pi-coding-agent/dist/core/resource-loader.js:276:31)\\n    at async open (file:///private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-ctx02-v2OrVF/worker.mjs:68:5)\"},\"elapsedMs\":397.91925000000003}\n",
+  "stderr": "",
+  "sourceHashes": {
+    "run.mjs": "f12b913db40182b513db244485641ffaeaa567a087063b2dcdea5c78e01f2980",
+    "worker.mjs": "7bf1970cac000db5aa4a5f3181654fa37f0b0b9c52ceb064e64f679750331760"
+  }
+}

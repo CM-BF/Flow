@@ -39,4 +39,4 @@ B02固定38b2353结果SHA `ee6ae620eef3fce714d59d5e1b9a4de8f0e8e2d94454cce5b1b04
 
 ## 交付限制
 
-内部assistant读取Interface改变，公共HTTP契约/FSM/DB迁移/依赖边界不变；固定架构baseline的内部箭头由Execution Lead集成后同步。Root已于2026-10-06 05:04:57 UTC独审APPROVED固定target；产品仍待main接收；原main与常驻运行事实分别记录在status。无执行容量、模型token或CPU节省结论。
+内部assistant读取Interface改变，公共HTTP契约/FSM/DB迁移/依赖边界不变；固定架构baseline的内部箭头由Execution Lead集成后同步。Root已于2026-10-06 05:04:57 UTC独审APPROVED固定target；产品已由固定main `da8d73a984118e0a5c406bd04dbfbc5d5c9c148f` 接收，完整9文件scope零diff，见main-receipt.json；原main与常驻运行事实分别记录在status。无执行容量、模型token或CPU节省结论。

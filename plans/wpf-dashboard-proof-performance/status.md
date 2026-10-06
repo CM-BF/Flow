@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:09 UTC；固定698输入 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:14 UTC；实际main/origin 6b4b89f397b35d7e769846df457e76bb29f4a265 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra（派发指定） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance |
@@ -10,15 +10,15 @@
 | 工作基线 / HEAD | 698ffcd94ae073b23bcc67f6665fb19f707a93e4；实现 5cd7f00dbe091785b2b7be9cb2b03d33f2af8c52，后续仅metadata |
 | 工作树dirty状态 | 实现已提交；本次仅文档与证据，提交后clean |
 | 工作分支状态 | completed（branch） |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 5cd7f00dbe091785b2b7be9cb2b03d33f2af8c52：4项专用行为；关联26项25通过/1项固定基线旧registry-count失败，见证据 |
-| 已集成main状态 / HEAD | 本功能未集成；698为输入 |
+| 已集成main状态 / HEAD | main/origin 6b4b89f397b35d7e769846df457e76bb29f4a265包含5cd；两实现路径内容相同 |
 | 实现目标 | 5cd7f00dbe091785b2b7be9cb2b03d33f2af8c52 |
 | 实现范围 | apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/test/proof-snapshot.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 刷新时减少重复核验的改动已验证通过 |
-| 下一可用交付 | 把已审查的改动接入工程看板 |
+| 下一可用交付 | 已交付工程看板，后续改进另行领取 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED，固定实现5cd7f00dbe091785b2b7be9cb2b03d33f2af8c52 |
@@ -33,6 +33,10 @@
 
 [技能与质量](../../docs/evidence/wpf-dperf01/quality.md)，[结果与复现](../../docs/evidence/wpf-dperf01/README.md)。本次没有新UI/服务；无需新预览和截图。没有运行真实4320或模型。canonical已交管理者登记，作者尚未实际聚合，不推已显示。
 
-关联检查唯一失败是未改动的human-proof.test.mjs硬编码任务数28，而固定698的registry已有54项；此两文件基线diff为空。已报管理/root，不跨claim修测试、不把26项称全绿。此失败不影响新增4项及其余25项行为结果；当前功能独审已通过，main集成仍pending。
+关联检查唯一失败是未改动的human-proof.test.mjs硬编码任务数28，而固定698的registry已有54项；此两文件基线diff为空。已报管理/root，不跨claim修测试、不把26项称全绿。此失败不影响新增4项及其余25项行为结果；当前功能独审已通过，main集成已实际核验。
 
-05:06:23 UTC root独立审查APPROVED：完整两实现文件diff、依赖proof语义/fixture及diffcheck；独立Node24新增4tests PASS（2790.10ms），真实Trace2 24starts/1比较。作者红测29/2及关联25/26原log为复核来源，root未重跑红测或生产性能测量。报告/原始证据固定b873d97e4a1d0b0f459d7bad7c41b3e01fa31c05，后续仅metadata不自动扩大实现审查。claim保留至main接收；不自行merge。
+05:06:23 UTC root独立审查APPROVED：完整两实现文件diff、依赖proof语义/fixture及diffcheck；独立Node24新增4tests PASS（2790.10ms），真实Trace2 24starts/1比较。作者红测29/2及关联25/26原log为复核来源，root未重跑红测或生产性能测量。报告/原始证据固定b873d97e4a1d0b0f459d7bad7c41b3e01fa31c05，后续仅metadata不自动扩大实现审查。未由本owner执行merge；接收事实见下段。
+
+05:14 UTC 本owner只读Git核main与origin均6b4b89f397b35d7e769846df457e76bb29f4a265，5cd祖先退出0，两实现路径diff0。root已于05:13:09.350Z单次真实60source快照核本卡live/current/issues空、checks/review固定5cd、proof unchanged、claim bb7efv1匹配且main.current=true；这是root提供证据，本owner没有重复API采样。
+
+本owner已live核claim v1 active/owner/四scope匹配；本metadata提交后全部四scope停止写入，再按v1执行release，原始committed receipt交manager保管。释放结果由账本及manager证据记录，本canonical不在release后追写。具体后继修复必须新take。0产品重测/模型调用。

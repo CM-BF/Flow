@@ -8,14 +8,16 @@ import tailwindcss from "@tailwindcss/vite";
 import type { DirectoryProfile } from "../src/execution-profiles/selection";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
-const evidence = fileURLToPath(new URL("../../../docs/evidence/wpf-profile01/", import.meta.url));
+const evidence = fileURLToPath(new URL("../../../docs/evidence/wpf-profileux/", import.meta.url));
 const id = (value: number) => `10000000-0000-4000-8000-${String(value).padStart(12, "0")}`;
+const longModel = "team-configured-" + "long-model-alias-".repeat(8);
 function profile(value: number, connection: number): DirectoryProfile {
+  const model = value === 21 ? longModel : connection === 1 ? "configured-alias" : "other-center-alias";
   return {
     reference: { id: id(value), runnerId: id(100 + value), configDigest: "a".repeat(64) },
-    configuration: { harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: connection === 1 ? "configured-alias" : "other-center-alias", thinking: "disabled", permissionMode: "dontAsk", access: value === 1 ? "none" : value === 2 ? "goal-tools" : value === 3 ? "unsupported-fixture-access" : "configured-readonly", requireReadApproval: value > 3, materialScopeDigest: value === 2 ? "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945" : "b".repeat(64), limits: { maxTurns: 4, maxBudgetUsd: 1, timeoutMs: 90000 } },
+    configuration: { harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model, thinking: "disabled", permissionMode: "dontAsk", access: value === 1 ? "none" : value === 2 ? "goal-tools" : value === 3 ? "unsupported-fixture-access" : "configured-readonly", requireReadApproval: value > 3, materialScopeDigest: value === 2 ? "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945" : "b".repeat(64), limits: { maxTurns: 4, maxBudgetUsd: 1, timeoutMs: 90000 } },
     source: "runner-configured", availability: "not-probed",
-    model: { value: connection === 1 ? "configured-alias" : "other-center-alias", resolvedModel: null, displayName: "Configured model", description: "Fixture declaration", providerCapabilities: "unknown" },
+    model: { value: model, resolvedModel: null, displayName: "Configured model", description: "Fixture declaration", providerCapabilities: "unknown" },
     controls: { model: "select-configured-profile", thinking: "fixed-disabled", effort: "unsupported", access: "configured-policy", queue: false, steer: false }, createdAt: "2026-10-06T04:00:00Z",
   };
 }
@@ -48,10 +50,11 @@ async function startFixture() {
 }
 async function main() {
   const fixture = await startFixture();
-  if (process.argv.includes("--serve")) { console.log(`PROFILE01_HTTP_FIXTURE=${fixture.url}`); return; }
+  if (process.argv.includes("--serve")) { console.log(`PROFILEUX01_HTTP_FIXTURE=${fixture.url}`); return; }
   const browser = await chromium.launch({ channel: "chrome", headless: true });
   const page = await browser.newPage({ viewport: { width: 1100, height: 900 }, reducedMotion: "reduce" });
-  const errors: string[] = [], checks: string[] = []; page.on("pageerror", error => errors.push(error.message));
+  const errors: string[] = [], checks: string[] = [];
+  const geometry: Array<{ label: string; width: number; height: number }> = []; page.on("pageerror", error => errors.push(error.message));
   page.setDefaultTimeout(10000);
   const open = async () => { await page.getByRole("button", { name: /^Execution profile:/ }).click(); await expect(page.getByRole("dialog")).toBeVisible(); };
   const close = async () => { await page.keyboard.press("Escape"); await expect(page.getByRole("dialog")).toHaveCount(0); };
@@ -101,9 +104,80 @@ async function main() {
     await page.getByRole("button", { name: "Show created lock" }).click(); await expect(page.getByRole("region", { name: "Locked execution profile" })).toContainText("Conversation profile locked");
     await expect(page.getByTestId("selection")).toContainText('"tools":"configured-readonly"');
     checks.push("New connection has new catalog and explicit default; created lock reports selected access without claiming effective settings");
+    const locked = page.getByRole("region", { name: "Locked execution profile" });
+    const disclosure = locked.locator("summary");
+    const noSideEffects = async () => {
+      const requestsBefore = fixture.requests.length;
+      const selectionBefore = await page.getByTestId("selection").textContent();
+      const draftBefore = await page.getByLabel("Draft", { exact: true }).inputValue();
+      await disclosure.focus(); await page.keyboard.press("Enter");
+      await expect(locked.locator("details")).toHaveAttribute("open", "");
+      await expect(disclosure).toBeFocused();
+      const creation = JSON.parse(selectionBefore!);
+      if (creation.executionProfile) {
+        await expect(locked.getByText(creation.executionProfile.id, { exact: true })).toBeVisible();
+        await expect(locked.getByText(creation.executionProfile.runnerId, { exact: true })).toBeVisible();
+        await expect(locked.getByText(creation.executionProfile.configDigest, { exact: true })).toBeVisible();
+      }
+      await expect(locked.getByText("Requested configuration only.", { exact: false })).toBeVisible();
+      await page.keyboard.press("Space");
+      await expect(locked.locator("details")).not.toHaveAttribute("open");
+      await expect(disclosure).toBeFocused();
+      assert.equal(fixture.requests.length, requestsBefore, "Disclosure must not refresh or send");
+      assert.equal(await page.getByTestId("selection").textContent(), selectionBefore);
+      assert.equal(await page.getByLabel("Draft", { exact: true }).inputValue(), draftBefore);
+    };
+    const measure = async (label: string, maximumHeight: number) => {
+      const box = await locked.boundingBox(); assert(box);
+      geometry.push({ label, width: box.width, height: box.height });
+      assert(box.height <= maximumHeight, `${label}: ${box.height} > ${maximumHeight}`);
+      assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      await expect(locked.getByText("Requested only · actual settings unknown", { exact: true })).toBeVisible();
+    };
+    // The frozen display works without a loaded directory and never exposes a reconfiguration action.
+    await page.getByLabel("Draft", { exact: true }).fill("Still editing after creation");
+    await expect(locked.locator("dl")).not.toBeVisible();
+    await measure("created-dark-390", 110); await noSideEffects();
+    await page.screenshot({ path: `${evidence}summary-created-dark-390.png` });
+    await page.setViewportSize({ width: 1280, height: 720 });
+    await measure("created-dark-1280", 90);
+    await page.screenshot({ path: `${evidence}summary-created-dark.png` });
+    await page.getByRole("button", { name: "Light", exact: true }).click();
+    await measure("created-light-1280", 90);
+    await page.screenshot({ path: `${evidence}summary-created-light.png` });
+    checks.push("Created compact summary preserves full pin/digest behind native disclosure; Enter/Space retain focus and emit zero HTTP, selection or draft changes; actual remains explicitly unknown");
+
+    await page.goto(fixture.url); await expect(page.getByTestId("catalog-state")).toContainText("current; 20");
+    await page.getByRole("button", { name: "Show created lock" }).click();
+    await expect(locked.getByText("Unpinned legacy default", { exact: false }).first()).toBeVisible();
+    await expect(locked.locator("dl")).not.toBeVisible(); await noSideEffects();
+    checks.push("Legacy created conversation stays visibly unpinned; details reveal the exact legacy request without inventing a profile");
+
+    await page.goto(fixture.url); await expect(page.getByTestId("catalog-state")).toContainText("current; 20");
+    await open(); await page.getByRole("radio").nth(1).check(); await close();
+    await page.getByLabel("Draft", { exact: true }).fill("Pending creation must preserve this draft");
+    await page.getByRole("button", { name: "Freeze pending creation" }).click();
+    await expect(locked).toContainText("Creation receipt pending");
+    await expect(page.getByRole("button", { name: /^Execution profile:/ })).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "Show created lock" })).toBeDisabled();
+    await noSideEffects(); await measure("pending-light-1280", 90);
+    await page.screenshot({ path: `${evidence}summary-pending-light.png` });
+    await page.getByRole("button", { name: "Dark", exact: true }).click();
+    await page.setViewportSize({ width: 390, height: 844 }); await measure("pending-dark-390", 110);
+    await page.screenshot({ path: `${evidence}summary-pending-dark-390.png` });
+    checks.push("Pending receipt cannot change profile; collapsing and expanding keeps the exact original reference and live unsent draft");
+
+    await page.goto(fixture.url); await expect(page.getByTestId("catalog-state")).toContainText("current; 20");
+    await open(); await page.getByRole("button", { name: "Load more profiles" }).click();
+    await expect(page.getByRole("radio")).toHaveCount(22); await page.getByRole("radio").nth(21).check(); await close();
+    await page.getByRole("button", { name: "Show created lock" }).click();
+    await expect(locked.getByText(`Requested: ${longModel}`, { exact: true })).toBeVisible();
+    await measure("long-model-light-390", 180); await noSideEffects();
+    await page.screenshot({ path: `${evidence}summary-long-model-light-390.png` });
+    checks.push("Long declared model wraps at 390px without clipping or horizontal overflow; loaded duplicate display names retain separate full runner/profile labels");
     assert.deepEqual(errors, []);
   } finally {
-    await writeFile(`${evidence}browser-results.json`, JSON.stringify({ at: new Date().toISOString(), url: fixture.url, checks, errors, requests: fixture.requests, browser: browser.version(), fixtureOnly: true }, null, 2));
+    await writeFile(`${evidence}browser-results.json`, JSON.stringify({ at: new Date().toISOString(), url: fixture.url, checks, errors, geometry, requests: fixture.requests, browser: browser.version(), fixtureOnly: true }, null, 2));
     await browser.close(); await fixture.server.close();
   }
   console.log(JSON.stringify({ passed: checks.length, errors }));

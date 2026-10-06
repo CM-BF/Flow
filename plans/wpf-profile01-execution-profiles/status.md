@@ -2,21 +2,21 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:53 UTC；04:53:18.107Z dashboard实采 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:58:45 UTC；固定main698与origin/main已实核 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra（派发指定；上下文GPT-6） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles |
 | Branch | codex/web-execution-profiles |
-| 工作基线 / HEAD | base 4e0289f29ffa48c6c49003837d4520f57c22b6b0；实采metadata a2130834639491c38e88e9303b15f23012ead376 clean；随后仅本次采样metadata |
-| 工作树dirty状态 | 实现固定；a213实采clean，本次证据文档提交后另核git status |
-| 工作分支状态 | implemented |
+| 工作基线 / HEAD | base 4e0289f29ffa48c6c49003837d4520f57c22b6b0；元数据停点前3919a62a02e4c07e2a28fcc9927b7bb2a56f2a3b clean；实现4f不变 |
+| 工作树dirty状态 | 实现固定；本次仅主线事实与停写元数据，提交后核clean |
+| 工作分支状态 | completed |
 | 检查状态 | PASSED 4f1985769564eafad9218570411d5ce1114b4ec0：16局部tests、Web typecheck、5组混合目录HTTP browser；root独立16tests/CUA/源码通过 |
-| 已集成main状态 / HEAD | 04:53实采not-contained；模块尚未接入App/main |
+| 已集成main状态 / HEAD | 已集成main 698ffcd94ae073b23bcc67f6665fb19f707a93e4；4f为ancestor且7path内容相同；App接线仍另片 |
 | 实现目标 | 4f1985769564eafad9218570411d5ce1114b4ec0 |
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/catalog.ts, apps/web/src/execution-profiles/execution-profiles.css, apps/web/src/execution-profiles/selection.ts, apps/web/test/execution-profiles.browser.ts, apps/web/test/execution-profiles.fixture.tsx, apps/web/test/execution-profiles.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 聊天执行选项已验证，不支持的配置会明确禁用 |
+| 当前产出 | 聊天执行选项模块已纳入主线，不支持的配置会明确禁用 |
 | 下一可用交付 | 把执行选项接到聊天界面 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -54,3 +54,10 @@ root / GPT-6只读，04:51:33 UTC正式APPROVED target4f/base4e。独立16tests 
 04:53:18.107Z实际4320 source HEAD a2130834639491c38e88e9303b15f23012ead376 clean；human.complete=true/issues=[]，checks passed target4f，review.state=approved/target4f、review.proof和implementationProof均unchanged；main not-contained；claim17093 v1 active matchesSource。原样[最终采样](../../docs/evidence/wpf-profile01/dashboard-final.json)。04:44旧snapshot仅历史，不作为新review解析依据。
 
 交管理者/原Execution Lead与App owner固定target4f；后续metadata不扩approval。等待独立App领取接线，保留本claim修复权，不merge main。
+
+
+## 主线事实与停止写入（04:58:45 UTC）
+
+独立只读核main与origin/main均为698ffcd94ae073b23bcc67f6665fb19f707a93e4且主仓clean；`git merge-base --is-ancestor 4f1985769564eafad9218570411d5ce1114b4ec0 698ffcd94ae073b23bcc67f6665fb19f707a93e4` exit0，声明的7实现/测试路径diff为空。模块集成与App挂载分开，本次0产品测试/0模型。
+
+本次元数据提交后明确停止claim17093c4c-a8fa-4e43-bc72-6bd54cab0795的全部9scope写入；依据当前v1执行release。receipt交管理者保存，release后不回写本canonical。后续修复需新take；不是handoff给未知owner。此段记录停写及释放意图，实际release以D04 committed receipt为准。

@@ -1,0 +1,44 @@
+ExpectError: expect(locator).toHaveCount(expected) failed
+
+Locator:  getByRole('radio')
+Expected: 22
+Received: 21
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveCount" getByRole('radio') with timeout 5000ms
+  - waiting for getByRole('radio')
+    14 × locator resolved to 21 elements
+       - unexpected value "21"
+
+    at captureRawStack (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js:8588:17)
+    at callMatcherAsStep (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13310:57)
+    at Object.toHaveCount (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/matchers/expect.js:13302:23)
+    at main (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary/apps/web/test/execution-profiles.browser.ts:78:115) {
+  matcherResult: {
+    actual: 21,
+    expected: 22,
+    message: 'expect(locator).toHaveCount(expected) failed\n' +
+      '\n' +
+      "Locator:  getByRole('radio')\n" +
+      'Expected: 22\n' +
+      'Received: 21\n' +
+      'Timeout:  5000ms\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toHaveCount" getByRole('radio') with timeout 5000ms\n` +
+      "  - waiting for getByRole('radio')\n" +
+      '    14 × locator resolved to 21 elements\n' +
+      '       - unexpected value "21"\n',
+    name: 'toHaveCount',
+    pass: false,
+    log: [
+      `  - Expect "toHaveCount" getByRole('radio') with timeout 5000ms`,
+      "  - waiting for getByRole('radio')",
+      '    14 × locator resolved to 21 elements',
+      '       - unexpected value "21"'
+    ],
+    timeout: 5000,
+    ariaSnapshot: undefined
+  }
+}

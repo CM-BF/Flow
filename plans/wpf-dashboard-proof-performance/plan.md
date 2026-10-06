@@ -1,6 +1,6 @@
 # WPF-DPERF01 看板证明计算去重
 
-状态：completed（branch），待integration；创建2026-10-06 05:02 UTC；更新2026-10-06 05:09 UTC；owner w01_owner / gpt-6-astra ultra（派发指定）。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance`，branch `codex/dashboard-proof-performance`，base `698ffcd94ae073b23bcc67f6665fb19f707a93e4`。
+状态：completed，main已接收；创建2026-10-06 05:02 UTC；更新2026-10-06 05:09 UTC；owner w01_owner / gpt-6-astra ultra（派发指定）。Worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance`，branch `codex/dashboard-proof-performance`，base `698ffcd94ae073b23bcc67f6665fb19f707a93e4`。
 
 目标：同任务、同次快照、review target等于implementation target时复用已算结果，减少重复Git子进程且保留最新检查。只改aggregate.mjs，proof.mjs只读。不加TTL/跨快照缓存/并发限流，不扩tree/main读取缓存，不改registry/human/4320或产品模型服务。
 
