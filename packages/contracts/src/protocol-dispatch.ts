@@ -3,6 +3,8 @@ import { idSchema, type TaskStatus, type Reference } from './tasks.js';
 import { ownershipSchema, type ClaimedTask } from './runner.js';
 
 export { protocolTaskSchema, type ProtocolTask } from './protocol-task.js';
+export const protocolPrepareSchema = ownershipSchema.extend({ endpointDigest: z.string().regex(/^[a-f0-9]{64}$/) });
+export type ProtocolPrepare = z.infer<typeof protocolPrepareSchema>;
 export const protocolCommandSchema = ownershipSchema.extend({ commandId: idSchema });
 export const protocolBindSchema = protocolCommandSchema.extend({ remoteTaskId: idSchema });
 export const protocolUncertainSchema = protocolCommandSchema.extend({ reason: z.enum(['send-result-unknown', 'recovered-inflight-send', 'remote-read-failed', 'unsupported-remote-result', 'local-storage-failed']) });
@@ -14,6 +16,7 @@ export interface ProtocolIntent {
   attemptId: string;
   ownerVersion: number;
   endpointRef: string;
+  endpointDigest: string;
   commandId: string;
   phase: 'prepared' | 'sending' | 'bound' | 'uncertain';
   remoteTaskId: string | null;
