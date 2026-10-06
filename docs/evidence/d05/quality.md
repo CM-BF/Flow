@@ -21,3 +21,5 @@ clean-code工作段/合并前：架构数据、SVG交互、原进度聚合各自
 03:59同批补登记R04：claim1714e82b v1、真实canonical三件套已存在；42源合法，仍只有owner status为进度源。
 
 2026-10-06 05:01 UTC：沿已固定find-skills/codebase-design/clean-code方法登记CTX02、B03唯一canonical source；逐项核claim、真实三件套与WT/branch，不复制进度。根/plans规则补用户摘要写法，技术hash与命令保留详情，不伪造TODO完成。仅登记与文档检查，无产品测试；D07交付选择语义另领范围，未修改human renderer。
+
+2026-10-06 05:08 UTC：登记已领取且真实canonical存在的D07/WPF-PROFILEI01/WPF-DPERF01，59源唯一；交付阶段语义由Root明确，规则先落而D07 renderer独立review，不修改DPERF范围。
