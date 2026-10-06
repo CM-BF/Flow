@@ -2,13 +2,13 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:54:27 UTC |
+| 最近更新 | 2026-10-06 18:57:40 UTC |
 | 单一 status owner | workspace_panels_owner / gpt-6-astra Ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已确认更新时间格式修复范围，正在实现严格 UTC 解析。 |
+| 当前产出 | 已完成高精度 UTC 与坏时间隔离的源码及专测，待固定审查。 |
 | 下一可用交付 | 支持高精度 UTC，坏时间不会中断任务状态读取。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -17,7 +17,7 @@
 | branch | codex/dashboard-status-timestamps |
 | 工作基线 | ec5da343880879154e2392f52eaa915d5b08aa77 |
 | HEAD | ec5da343880879154e2392f52eaa915d5b08aa77（首 canonical 提交前观察） |
-| 工作树 dirty 状态 | 初始 clean；本段新增本片 canonical/evidence 待提交 |
+| 工作树 dirty 状态 | 首 canonical edd4e6b15d799a535debb778a7c03984aaaca322 clean；本段两源/证据变更待固定 |
 | 工作分支状态 | in-progress / source-only |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
@@ -33,7 +33,7 @@
 | TODO ID | 状态 | owner | 证据 |
 | --- | --- | --- | --- |
 | DPERF05-01 | completed | workspace_panels_owner | [claim](../../docs/evidence/wpf-dperf05/claim-observation.json)、[设计](../../docs/evidence/wpf-dperf05/approved-design.json) |
-| DPERF05-02 | in-progress | workspace_panels_owner | 私有 parser / 纯测试实现中 |
+| DPERF05-02 | completed | workspace_panels_owner | 私有 parser + 56 静态 case；尚未运行 |
 | DPERF05-03 | pending | workspace_panels_owner | 定向检查 NOT_RUN |
 | DPERF05-04 | pending | workspace_panels_owner | 独审/main 未开始 |
 
@@ -43,7 +43,7 @@
 
 ## 风险 / 未验证
 
-原 aggregate 老化策略、全真实源、部署均未测。GO 两个实际 UTC 示例待管理给原字面值；不读他人移动 status 填造来源。
+原 aggregate 老化策略、全真实源、部署均未测。两个 GO 实际 UTC 示例已按管理原记录固定，见 reported-examples.json；owner 未采页面。
 
 ## 用户决定
 

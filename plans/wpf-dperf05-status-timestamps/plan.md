@@ -15,7 +15,7 @@
 ## TODO
 
 - [x] DPERF05-01 — 核领取/固定基线，建立唯一 canonical 与 Interface。
-- [ ] DPERF05-02 — 私有 UTC parser 与纯行为测试固定源码。
+- [x] DPERF05-02 — 私有 UTC parser 与纯行为测试固定源码。
 - [ ] DPERF05-03 — 获明确运行准入后定向检查，保留原始结果。
 - [ ] DPERF05-04 — 独立 review、主线受控接收与停止写入。
 
