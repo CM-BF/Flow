@@ -9,6 +9,7 @@ import { setTimeout as sleep } from 'node:timers/promises';
 import { Pool } from 'pg';
 import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener } from './process.mjs';
 import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
+import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
 
 const repository = fileURLToPath(new URL('../../', import.meta.url));
 const entry = fileURLToPath(new URL('./cli.mjs', import.meta.url));
@@ -133,13 +134,22 @@ async function configuredProfile(config) {
 async function reachable(url) {
   try { const response = await fetch(url, { signal: AbortSignal.timeout(700) }); await response.body?.cancel(); return response.ok; } catch { return false; }
 }
-async function waitReady(config, role, record) {
+async function webIdentity(config, artifact) {
+  if (!artifact) return false;
+  try {
+    const response = await fetch(`http://127.0.0.1:${config.webPort}/__flow_preview_identity`, { signal: AbortSignal.timeout(700) });
+    if (!response.ok) return false;
+    const actual = await response.json();
+    return actual.artifactId === artifact.artifactId && actual.sourceHead === artifact.sourceHead && actual.manifestDigest === artifact.manifestDigest;
+  } catch { return false; }
+}
+async function waitReady(config, role, record, artifact) {
   const deadline = Date.now() + 10_000;
   do {
     if (await inspectOwnedProcess(record) !== 'running') fail('SERVICE_EXITED_DURING_START');
     if (role === 'runner') { if (await configuredProfile(config)) return; }
     else if (await ownsListener(record, role === 'center' ? config.centerPort : config.webPort)
-      && await reachable(role === 'center' ? `http://127.0.0.1:${config.centerPort}/api/health` : `http://127.0.0.1:${config.webPort}/`)) return;
+      && (role === 'center' ? await reachable(`http://127.0.0.1:${config.centerPort}/api/health`) : await webIdentity(config, artifact))) return;
     await sleep(50);
   } while (Date.now() < deadline);
   fail('SERVICE_START_UNCONFIRMED');
@@ -181,7 +191,15 @@ export async function statusPreview({ directory }) {
   const centerUrl = `http://127.0.0.1:${config.centerPort}`;
   let profile = null;
   try { profile = await configuredProfile(config); } catch { /* Configuration publication is not an online/provider guarantee. */ }
-  return { installationId: config.installationId, observedAt: new Date().toISOString(), startedAt: state.startedAt ?? null, sourceAtStart: state.source ?? null, configured: NATIVE_CONFIGURATION.model, provider: 'not-probed', processes,
+  let webArtifact = { state: 'unknown', reason: 'legacy-or-unconfirmed' };
+  if (state.webArtifact) {
+    try {
+      await verifyWebArtifact({ directory: config.directory, artifact: state.webArtifact });
+      const identityMatches = processes.web === 'running' && await ownsListener(state.processes.web, config.webPort) && await webIdentity(config, state.webArtifact);
+      webArtifact = { ...state.webArtifact, state: 'verified', serving: identityMatches ? 'confirmed' : 'unknown' };
+    } catch { webArtifact = { state: 'unknown', reason: 'artifact-verification-failed' }; }
+  }
+  return { installationId: config.installationId, webArtifact, observedAt: new Date().toISOString(), startedAt: state.startedAt ?? null, sourceAtStart: state.source ?? null, configured: NATIVE_CONFIGURATION.model, provider: 'not-probed', processes,
     center: { url: centerUrl, reachable: processes.center === 'running' && await ownsListener(state.processes.center, config.centerPort) && await reachable(`${centerUrl}/api/health`) }, webUrl: `http://127.0.0.1:${config.webPort}`, database: databaseState, work, lastError: state.lastError,
     profile, lastProcessExits, credentialsFile: join(config.directory, 'config.json'), limits: { maxTurns: 2, maxBudgetUsd: 0.20, timeoutMs: 60_000, scope: 'per-query-not-project-total' } };
 }
@@ -219,7 +237,12 @@ export async function runService(directory, role) {
   } else if (role === 'runner') {
     args = ['--import', 'tsx', 'apps/runner/src/main.ts'];
   } else {
-    cwd = join(config.repository, 'apps/web'); args = ['node_modules/vite/bin/vite.js', '--host', '127.0.0.1', '--port', String(config.webPort), '--strictPort'];
+    const state = await privateJson(join(config.directory, 'state.json'));
+    const artifact = state.webArtifact;
+    await verifyWebArtifact({ directory: config.directory, artifact });
+    cwd = config.directory;
+    args = [fileURLToPath(new URL('./static-web.mjs', import.meta.url)), config.directory, config.repository,
+      String(config.webPort), String(config.centerPort), artifact.artifactId, artifact.sourceHead, artifact.manifestDigest];
   }
   const child = spawn(process.execPath, args, { cwd, env, stdio: 'ignore' });
   let stopping = false;
@@ -232,7 +255,14 @@ export async function runService(directory, role) {
 
 /** Trusted local maintenance reuses the same private validation and launch implementation. */
 export { load as loadPreviewConfiguration, privateJson as readPreviewJson, save as savePreviewJson, locked as withPreviewLock, assertMarker as assertPreviewMarker };
-export async function startPreviewServices(config, state) {
+export async function preparePreviewWeb(config, target) {
+  const head = target ?? (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
+  return prepareWebArtifact({ directory: config.directory, repository: config.repository, target: head });
+}
+export async function startPreviewServices(config, state, preparedArtifact) {
+  const artifact = preparedArtifact ?? await preparePreviewWeb(config);
+  await verifyWebArtifact({ directory: config.directory, artifact });
+  state.webArtifact = artifact;
   state.processes = {}; state.lastError = null;
   try {
     for (const role of roles) {
@@ -246,7 +276,7 @@ export async function startPreviewServices(config, state) {
       const record = await spawnOwnedProcess({ args: [entry, 'internal-service', config.directory, role], cwd: config.repository, env: baseServiceEnvironment(role),
         onSpawn: async pending => { state.processes[role] = pending; await save(join(config.directory, 'state.json'), state); } });
       state.processes[role] = record; await save(join(config.directory, 'state.json'), state);
-      await waitReady(config, role, record);
+      await waitReady(config, role, record, artifact);
     }
     const revision = await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 });
     const changes = await execute('git', ['-C', config.repository, 'status', '--porcelain'], { timeout: 1000 });

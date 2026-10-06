@@ -32,13 +32,18 @@ test('starts an owned empty preview without a model request, persists identity, 
   const directory = join(parent, 'personal');
   let config;
   try {
-    const boot = await execute(process.execPath, [cli, 'start', '--directory', directory], { env: { ...process.env, FLOW_PREVIEW_ADMIN_URL: adminUrl }, timeout: 20_000 });
+    const boot = await execute(process.execPath, [cli, 'start', '--directory', directory], { env: { ...process.env, FLOW_PREVIEW_ADMIN_URL: adminUrl }, timeout: 100_000 });
     const started = JSON.parse(boot.stdout); // The launching CLI has exited; detached services remain owned and running.
     assert.equal(started.center.reachable, true);
     assert.equal(started.processes.runner, 'running');
     assert.equal(started.provider, 'not-probed');
     assert.deepEqual({ source: started.profile.source, model: started.profile.model }, { source: 'runner-configured', model: 'claude-sonnet-5-5' });
     assert.equal(started.work.total, 0);
+    assert.equal(started.webArtifact.state, 'verified');
+    assert.equal(started.webArtifact.serving, 'confirmed');
+    assert.equal(started.webArtifact.sourceHead, started.sourceAtStart.head);
+    assert.deepEqual(await (await fetch(`${started.webUrl}/__flow_preview_identity`)).json(), { artifactId: started.webArtifact.artifactId, sourceHead: started.webArtifact.sourceHead, manifestDigest: started.webArtifact.manifestDigest });
+    assert.ok(!(await (await fetch(started.webUrl)).text()).includes('/@vite/client'));
     config = JSON.parse(await readFile(join(directory, 'config.json'), 'utf8'));
     assert.equal((await stat(join(directory, 'config.json'))).mode & 0o777, 0o600);
     const reported = JSON.stringify(await statusPreview({ directory }));
@@ -49,7 +54,7 @@ test('starts an owned empty preview without a model request, persists identity, 
     const manifest = JSON.parse(await readFile(join(directory, 'claude.json'), 'utf8'));
     assert.deepEqual(manifest, { model: 'claude-sonnet-5-5', materialFiles: [], allowRead: false, requireReadApproval: false, maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 60000 });
     assert.equal((await startPreview({ directory })).installationId, started.installationId);
-    const stopped = JSON.parse((await execute(process.execPath, [cli, 'stop', '--directory', directory], { timeout: 20_000 })).stdout);
+    const stopped = JSON.parse((await execute(process.execPath, [cli, 'stop', '--directory', directory], { timeout: 100_000 })).stdout);
     assert.ok(Object.values(stopped.processes).every(value => value === 'stopped'));
     assert.equal((await statusPreview({ directory })).center.reachable, false);
   } finally {

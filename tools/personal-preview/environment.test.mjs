@@ -29,3 +29,9 @@ test('actual child environments isolate management and role credentials using sy
     }
   }
 });
+
+test('build environment strips all inherited application, provider and public VITE values', async () => {
+  const { buildEnvironment } = await import('./environment.mjs');
+  const env = buildEnvironment({ PATH: '/synthetic/bin', HOME: '/synthetic/home', FLOW_TOKEN: 'owner-marker', FLOW_PREVIEW_ADMIN_URL: 'admin-marker', DATABASE_URL: 'database-marker', ANTHROPIC_API_KEY: 'provider-marker', VITE_SECRET: 'public-marker', NODE_OPTIONS: '--require injected', NODE_ENV: 'development', VITE_FLOW_FIXTURE: 'true' });
+  assert.deepEqual(env, { PATH: '/synthetic/bin', HOME: '/synthetic/home', NODE_ENV: 'production', VITE_FLOW_FIXTURE: 'false' });
+});

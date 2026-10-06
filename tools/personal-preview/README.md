@@ -77,3 +77,15 @@ node tools/personal-preview/cli.mjs maintenance resume --directory "$HOME/.flow-
 该命令会允许已有合法queued任务继续，可能启动模型，因此必须由操作方明确选择执行；本功能测试只有fixture任务，生产部署与恢复窗口另行确认。每次恢复带CAS/幂等和中心不可变审计，重复同一次确认不会再创建审计。启动器的普通start/stop保留原有语义；普通start不会解除维护gate。
 
 状态措辞为停止接新任务/等待当前任务/可更新/恢复接收；这些状态不声称旧任务已取消或外部副作用已撤销。私有maintenance.json只保存本机操作ID、幂等key与版本，不存新凭据。丢失或未知操作记录拒绝自动接管，须先核对。
+
+## Fixed Web artifact (SVC03)
+
+The launcher now builds a static Web artifact before starting services. `maintenance refresh --target <full SHA>` prepares and verifies that artifact **before stopping any owned process**. A failed build or artifact check leaves the old processes alone; an existing maintenance hold remains paused. Start/refresh require an exact clean source checkout. Build has a 90-second limit and uses installed dependencies only, a system-only environment, `VITE_FLOW_FIXTURE=false`, and no `.env` loading. It never reads the private service configuration to build the page.
+
+Artifacts are kept under the installation's private `web-artifacts/<manifest SHA256>/` directory. The manifest records source SHA/tree, lock digest, Node/Vite versions, and every served file's byte count and SHA256. Limits are 4,096 files, 32 MiB per file and 64 MiB total. Temporary stages publish by same-directory rename; a prior artifact is neither overwritten nor removed on failure. This is a trusted frozen-worktree build, not a hermetic or reproducibility guarantee. Same-user filesystem mutation remains possible; startup and status detect changed files rather than treating the host as a security sandbox.
+
+The Web child uses Vite's **local preview** with a fixed artifact root, no source config or env loading, no dev server or HMR, loopback binding and a strict original port. `/api` keeps its same-origin proxy to the original loopback center; authorization and SSE stay in the existing request flow. Web receives no DB, owner, runner or provider credentials. This remains a personal local preview, not an internet production server.
+
+`status` reports `sourceAtStart` for the backend separately from `webArtifact` (`sourceHead`, `artifactId`, `manifestDigest`, integrity `state`, and serving identity). The no-store `/__flow_preview_identity` endpoint contains only those three artifact identifiers. Legacy running dev servers report unknown until an explicitly approved maintenance refresh; merely invoking status does not restart them.
+
+Publishing a new artifact never reloads a user's tab automatically. Keep old artifacts for an explicitly reviewed rollback, which must account for API compatibility and use the maintenance/owned-process procedure. No automatic fallback, DB rollback, or automatic resume is provided. Current services and ports must only be changed in a separately approved maintenance window.
