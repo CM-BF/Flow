@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-10-06T10:20:13.085433+00:00",
+  "base": "41315b033deb0b1953484359b686c0b228997367",
+  "task": "TUI01B",
+  "owner": "runner_owner",
+  "worktree": "shared-conversation-ack",
+  "branch": "codex/shared-conversation-ack",
+  "stoppedWriting": [
+    "packages/client/src/index.ts",
+    "packages/client/src/conversations.test.ts"
+  ],
+  "receipt": "tui-ack-scope-amend-receipt.json",
+  "scopePolicy": "Remaining packages/client files retained as exact literals; new decoder/test require new owner take",
+  "unchanged": "contracts/export, server index, migrations, package/lock remain F01; no product changes"
+}

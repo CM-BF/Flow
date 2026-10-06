@@ -1,0 +1,116 @@
+{
+  "target": "47e6943080a0d4713190c51dd5ffb234b8efd915",
+  "base": "d7e1e64e7792f4d1ad4933db042f10f266ad0cca",
+  "checkedAt": "2026-10-06T08:53:19.647Z",
+  "environment": {
+    "node": "v24.20.0",
+    "pnpm": "9.15.4",
+    "vitest": "4.0.18"
+  },
+  "sources": [
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "bytes": 938,
+      "sha256": "7ddaa80ce468c1efe0094f6c37f8fc64113ab46f0b5c5ba0745021bc5a14ad40"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 2149,
+      "sha256": "605f99ae2d898468a86a5dc3512b42a2582b30dc4f487d1f36f028bd0a804de2"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 3535,
+      "sha256": "c0b1fd4ae2bcbebdd0c1e1d4f3e46af8def2697e38da89f62d360c21b3926729"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 1663,
+      "sha256": "a97cb1217313d54f40c2c910bf55069ca4a983f07b5a6a269c4f74f90795b9fc"
+    },
+    {
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "bytes": 3286,
+      "sha256": "fc4626777e2d3215a10280c3047cd0b6384e0c43ada39496273461b22bb7d135"
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "bytes": 980,
+      "sha256": "8446fe7583d100ad2bdb694cb1ca74e1df9c0c4b4b38f70b4d58c97968cb197a"
+    },
+    {
+      "path": "apps/runner/src/native-harness.test.ts",
+      "bytes": 3470,
+      "sha256": "6d0e715e34bdc8aa1783617a7fff29ba2e60fa0c0b83ff93d4383397c58c4efb"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 3151,
+      "sha256": "cfcdfa0887f544e327261fa0876a50d2080e0de42c8b2c244f1a43b470b96d84"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.test.ts",
+      "bytes": 11165,
+      "sha256": "5ec276b021e1623217ff32354e22069926111e0aace2a102e228489fd4cd88de"
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/configuration.test.ts",
+      "bytes": 1675,
+      "sha256": "b947b9f3d3acea0c7e09357799cd0552a18d62dca6b072c375318b3c847c3fb5"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/sdk.test.ts",
+      "bytes": 5802,
+      "sha256": "937373bbcca8723ed4bc36bf7b0840d949978ba585b1d5b2f4962d726966a210"
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/r05/install.txt",
+      "bytes": 657,
+      "sha256": "a9c326627547e8c408b71ae3d40873c8bd15ddb6eb1a59fa716a81981ffc6662"
+    },
+    {
+      "path": "docs/evidence/r05/descriptor-red.txt",
+      "bytes": 1541,
+      "sha256": "8ddf0819e95b518a2a47d800cde62fbd0116eb167bf4ac06c7dd7bed7d9cbedf"
+    },
+    {
+      "path": "docs/evidence/r05/descriptor-green.txt",
+      "bytes": 311,
+      "sha256": "d4e749ae8b66502cb013d85f86797fb4e2ed0e2dd2a573e0fe7a8b0039a94bb8"
+    },
+    {
+      "path": "docs/evidence/r05/configuration-consumers.txt",
+      "bytes": 986,
+      "sha256": "58cb5aa62e2ba494d18ac9f200ade454f2e3dde8a80cdd5ddf039ac57ec38f73"
+    },
+    {
+      "path": "docs/evidence/r05/typecheck.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/r05/preservation.json",
+      "bytes": 2495,
+      "sha256": "85ec765cc061ae5111f8267b3f6b63e08ea9aa059dbb28f42e6b9df7be4f3a16"
+    }
+  ],
+  "checks": {
+    "newTests": 8,
+    "unchangedConsumerTests": 34,
+    "finalPassed": 42,
+    "distinctPassed": 42,
+    "typecheckExit": 0,
+    "providerCalls": 0,
+    "personalServiceActions": 0
+  },
+  "limitations": [
+    "author checks only",
+    "no terminal semantics changes",
+    "no new native harness or center capability",
+    "no database or model experiment"
+  ]
+}

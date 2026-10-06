@@ -19,7 +19,7 @@ import { createConversationActivityBindings, ActivityBindingsContext } from "./a
 import type { ConversationProjection } from "../conversations/projection";
 
 const StreamBindingsContext = createContext<ConversationStreamHost | null>(null);
-const SessionContext = createContext<AppPluginSession | null>(null);
+export const SessionContext = createContext<AppPluginSession | null>(null);
 const ThreadScope = createContext<{ viewId: string; taskId: string | null; editableComposer?: boolean; messageTask?: (id: string) => string | null }>({ viewId: "", taskId: null });
 const globalContext: ResourceContext = { kind: "global" };
 export function PluginProvider({ session, children }: { session: AppPluginSession; children: ReactNode }) {
@@ -116,7 +116,7 @@ export function MessageActions() {
 }
 export function ComposerActions() {
   const { viewId, taskId, editableComposer } = useContext(ThreadScope);
-  return <AppSlot slot="chat.composer.actions" context={{ kind: "composer", viewId, isDraft: editableComposer ?? (!taskId && viewId.startsWith("draft-")) }} />;
+  return <span data-composer-view={viewId}><AppSlot slot="chat.composer.actions" context={{ kind: "composer", viewId, isDraft: editableComposer ?? (!taskId && viewId.startsWith("draft-")) }} /></span>;
 }
 
 /** The rail stays 48px wide; text-based contributed actions live in an accessible popover. */
@@ -255,3 +255,5 @@ export function PluginWorkspace({ state, activeTab, focusRequest, container, onC
     <WorkspaceContributions context={context} request={focusRequest?.serial} onClose={onClose} />
   </div></WorkspaceChromeContext.Provider>;
 }
+
+export { ConversationSteering } from "./steering";

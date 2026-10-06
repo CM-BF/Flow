@@ -1,0 +1,127 @@
+{
+  "observedAt": "2026-10-06T10:05:57.170Z",
+  "main": "c34033234e0f313e89b0982eb233f268b5f2172e",
+  "mainDirty": false,
+  "count": 123,
+  "ledger": "available",
+  "unregistered": [],
+  "tasks": [
+    {
+      "id": "R05D",
+      "current": true,
+      "issues": [],
+      "humanComplete": false,
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "parent": {
+          "state": "unknown",
+          "record": "[FLOW-002](../flow-002-provider-harness/plan.md)",
+          "reason": "父 ID 与登记计划链接不一致"
+        }
+      }
+    },
+    {
+      "id": "ENG-001",
+      "current": true,
+      "issues": [],
+      "humanComplete": true,
+      "links": {
+        "kind": "big",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead / astra_ultra_execution_lead",
+          "value": "Execution Lead / astra_ultra_execution_lead"
+        },
+        "parent": {
+          "state": "none",
+          "record": "",
+          "reason": "已显式声明为大task，无所属父任务"
+        }
+      }
+    },
+    {
+      "id": "TUI-001",
+      "current": true,
+      "issues": [],
+      "humanComplete": true,
+      "links": {
+        "kind": "big",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead / astra_ultra_execution_lead",
+          "value": "Execution Lead / astra_ultra_execution_lead"
+        },
+        "parent": {
+          "state": "none",
+          "record": "",
+          "reason": "已显式声明为大task，无所属父任务"
+        }
+      }
+    },
+    {
+      "id": "FLOW-001",
+      "current": true,
+      "issues": [],
+      "humanComplete": true,
+      "links": {
+        "kind": "big",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead / astra_ultra_execution_lead",
+          "value": "Execution Lead / astra_ultra_execution_lead"
+        },
+        "parent": {
+          "state": "none",
+          "record": "",
+          "reason": "已显式声明为大task，无所属父任务"
+        }
+      }
+    },
+    {
+      "id": "FLOW-002",
+      "current": true,
+      "issues": [],
+      "humanComplete": true,
+      "links": {
+        "kind": "big",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead / astra_ultra_execution_lead",
+          "value": "Execution Lead / astra_ultra_execution_lead"
+        },
+        "parent": {
+          "state": "none",
+          "record": "",
+          "reason": "已显式声明为大task，无所属父任务"
+        }
+      }
+    },
+    {
+      "id": "I02",
+      "current": true,
+      "issues": [],
+      "humanComplete": true,
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+          "reason": "",
+          "targetId": "FLOW-001",
+          "title": "产品与技术架构"
+        }
+      }
+    }
+  ],
+  "limits": "R05D human false was observed before its owner corrected the exact NONE field; no retroactive rewrite of this snapshot."
+}

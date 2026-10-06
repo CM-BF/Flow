@@ -1,3 +1,7 @@
+import { SteeringWorkspace, createSteeringPlugin, type SteeringIdentity, type SteeringPorts } from "./steering";
+import { ConversationKnowledge, createKnowledgePlugin, KNOWLEDGE_OWNER, KNOWLEDGE_PANEL, type KnowledgeReaders, type KnowledgeIdentity } from "./knowledge";
+import type { ConversationProjection } from "../conversations/projection";
+import type { FrozenCitation } from "../conversation-context/selection";
 import { StreamConnectionBudget, STREAM_PANEL, type StreamIdentity, type StreamReaders, type StreamAuthority } from "../conversation-stream/host";
 import { createAssistantStreamPlugin } from "./react";
 import type { TaskSnapshot, Detail, EventPage, NativeActivity, NativeActivityPage } from "@flow/contracts";
@@ -32,7 +36,9 @@ export interface AppActions {
   task(id: string): TaskSnapshot | null;
   hasDraft(id: string): boolean;
   activity?: ActivityReaders;
+  knowledge?: KnowledgeReaders;
   stream?: StreamReaders;
+  steering?: SteeringPorts;
   ownsMessage?(taskId: string, messageId: string, role: "user" | "assistant"): boolean;
   openTask(id: string): void;
   openWorkspace(id: string, tab: WorkspaceTabId): void;
@@ -51,8 +57,10 @@ export class AppPluginSession {
   readonly theme: ReturnType<typeof createStore<ThemeSnapshot>>;
   readonly workspace = createStore<WorkspaceDisplay>(emptyDisplay);
   readonly host: PluginHost;
+  readonly steering: SteeringWorkspace;
   readonly streamBudget = new StreamConnectionBudget();
   readonly dataRenderers: ReturnType<typeof createDataRendererRegistry>;
+  private readonly knowledgeBindings = new Map<string, ConversationKnowledge>();
   private readonly lifetime = new AbortController();
   get signal() { return this.lifetime.signal; }
   private closed = false;
@@ -102,6 +110,8 @@ export class AppPluginSession {
       },
     };
     this.host = new PluginHost(port);
+    this.steering = new SteeringWorkspace(this);
+    this.host.register(createSteeringPlugin(this.steering));
     this.dataRenderers = createDataRendererRegistry([flowReplyDeclaration], this.host);
     this.host.register(createReplyRendererPlugin(this.dataRenderers));
     for (const plugin of createBuiltinPlugins({ workspace: this.workspace })) this.host.register(plugin);
@@ -109,9 +119,14 @@ export class AppPluginSession {
     this.host.register(createTaskActionsPlugin());
     this.host.register(createActivityPlugin());
     this.host.register(createAssistantStreamPlugin());
+    this.host.register(createKnowledgePlugin(viewId => {
+      const binding = [...this.knowledgeBindings.values()].find(item => { const context = item.context(); return context.kind === "composer" && context.viewId === viewId; });
+      if (!binding) throw Error("Knowledge is not available in this composer.");
+      binding.open();
+    }));
   }
 
-  updateActions(actions: AppActions) { if (!this.closed) this.actions = actions; }
+  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.steering.sync(); } }
   publishNavigation(next: NavigationSnapshot, context: ResourceContext) {
     if (this.closed) return;
     this.context = context;
@@ -131,7 +146,40 @@ export class AppPluginSession {
     if (old.themeId !== theme.id || old.scheme !== theme.scheme)
       this.theme.set({ themeId: theme.id, scheme: theme.scheme, availableThemes: [...themes, ...(themes.some(item => item.id === theme.id) ? [] : [theme])] });
   }
-  private authorizeResource(_capability: Capability, context: ResourceContext) { return !this.closed && this.validContext(context); }
+  private authorizeResource(capability: Capability, context: ResourceContext) {
+    if (this.closed || !this.validContext(context)) return false;
+    if (capability === "task.steering.read" || capability === "task.steering.write") return this.steering.authorize(context, capability === "task.steering.read" ? "read" : "write");
+    return true;
+  }
+  steeringAllowed(identity: SteeringIdentity, mode: "read" | "write") { return !this.closed && identity.connectionScope === this.id && this.actions.steering?.allowed(identity, mode) === true; }
+  steeringAdmission(identity: SteeringIdentity, options: { attemptId?: string }, signal: AbortSignal) { if (!this.steeringAllowed(identity, "read")) throw Error("Steering read denied."); return this.actions.steering!.admission(identity, options, signal); }
+  steeringState(identity: SteeringIdentity, options: { attemptId: string; after: number; limit: number }, signal: AbortSignal) { if (!this.steeringAllowed(identity, "read")) throw Error("Steering read denied."); return this.actions.steering!.state(identity, options, signal); }
+  steeringAccept(identity: SteeringIdentity, input: Parameters<SteeringPorts["accept"]>[1], key: string, signal: AbortSignal) { if (!this.steeringAllowed(identity, "write")) throw Error("Steering write denied."); return this.actions.steering!.accept(identity, input, key, signal); }
+  knowledgeBinding(viewKey: string, projection: ConversationProjection) {
+    let binding = this.knowledgeBindings.get(viewKey);
+    if (!binding) { binding = new ConversationKnowledge(viewKey, projection, this); this.knowledgeBindings.set(viewKey, binding); }
+    return binding;
+  }
+  canReadKnowledge(identity: KnowledgeIdentity, context: ResourceContext, knowledge: boolean) {
+    const binding = this.knowledgeBindings.get(identity.viewKey);
+    const source = binding?.projection.getSnapshot();
+    return !this.closed && identity.connectionId === this.id && !!binding && this.validContext(context)
+      && this.actions.knowledge?.current(identity) === true && this.host.checkView(KNOWLEDGE_PANEL, context).ok
+      && this.host.list().find(plugin => plugin.id === KNOWLEDGE_OWNER)?.state === "active"
+      && this.authorizeResource(knowledge ? "knowledge.read" : "workspace.read", context)
+      && (!knowledge || (!!identity.projectId && source?.snapshot?.capabilities.knowledgeContext === true));
+  }
+  private async readKnowledge<T>(identity: KnowledgeIdentity, context: ResourceContext, signal: AbortSignal, knowledge: boolean, operation: (readers: KnowledgeReaders, signal: AbortSignal) => Promise<T>): Promise<T> {
+    signal = AbortSignal.any([signal, this.signal]);
+    const current = () => { const binding = this.knowledgeBindings.get(identity.viewKey), state = binding?.getSnapshot(); return !signal.aborted && this.canReadKnowledge(identity, context, knowledge) && state?.open && state.visible && binding?.projection.getSnapshot().connection === "live"; };
+    if (!current() || !this.actions.knowledge) throw Error("Knowledge reading is unavailable in this view.");
+    const result = await operation(this.actions.knowledge, signal);
+    if (!current()) throw Error("Knowledge reading belongs to an expired view.");
+    return result;
+  }
+  readKnowledgeProjects(identity: KnowledgeIdentity, context: ResourceContext, after: string | null, signal: AbortSignal) { return this.readKnowledge(identity, context, signal, false, (readers, bound) => readers.projects(identity, after, bound)); }
+  readKnowledgeSearch(identity: KnowledgeIdentity, context: ResourceContext, query: { q: string; limit: number }, signal: AbortSignal) { return this.readKnowledge(identity, context, signal, true, (readers, bound) => readers.search(identity, query, bound)); }
+  readKnowledgeBody(identity: KnowledgeIdentity, context: ResourceContext, citation: FrozenCitation, signal: AbortSignal) { return this.readKnowledge(identity, context, signal, true, (readers, bound) => readers.resolve(identity, citation, bound)); }
   canReadActivity(identity: ActivityIdentity) {
     return !this.closed && identity.connectionId === this.id && this.actions.hasDraft(identity.viewId)
       && this.validContext({ kind: "message", taskId: identity.taskId, messageId: identity.messageId, role: "user" });
@@ -204,6 +252,8 @@ export class AppPluginSession {
     if (this.closed) return;
     this.closed = true;
     this.lifetime.abort();
+    this.steering.dispose();
+    this.knowledgeBindings.forEach(binding => binding.dispose()); this.knowledgeBindings.clear();
     this.dataRenderers.dispose();
     // Clear the old connection's custom palette synchronously, before a new connection can render.
     const active = this.theme.getSnapshot();

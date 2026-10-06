@@ -1,10 +1,14 @@
-import { readFile, stat } from 'node:fs/promises';
+import { open, stat } from 'node:fs/promises';
+import { constants } from 'node:fs';
 import { isAbsolute } from 'node:path';
 import type { HarnessAdapter } from '@flow/contracts';
 import { createFixtureAdapter } from './fixture.js';
-import { createClaudeAdapter, type ClaudeAdapterOptions } from './claude.js';
-import { describeExecutionProfile } from './execution-profiles.js';
-import type { ExecutionProfileConfiguration } from '../../../packages/contracts/src/execution-profiles.js';
+import { configureClaudeHarness } from './native-harness/claude.js';
+import { configureCodexLaunch } from './native-harness/codex/launch.js';
+import type { CodexTransportFactory } from './native-harness/codex/index.js';
+import { describeNativeHarness } from './native-harness/descriptor.js';
+import type { ConfiguredNativeHarness } from '../../../packages/contracts/src/native-harness.js';
+import type { CodexExecutionProfileConfiguration, ExecutionProfileConfiguration, NativeExecutionProfileConfiguration } from '../../../packages/contracts/src/execution-profiles.js';
 
 /** An explicit operator manifest enables Claude; omission preserves fixture-only startup. */
 export async function loadRunnerAdapters(manifestFile?: string): Promise<HarnessAdapter[]> {
@@ -13,27 +17,57 @@ export async function loadRunnerAdapters(manifestFile?: string): Promise<Harness
   return configured.adapters;
 }
 
-export async function loadRunnerConfiguration(manifestFile?: string): Promise<{ adapters: HarnessAdapter[]; profile: ExecutionProfileConfiguration | null; activeSteering: boolean }> {
-  const adapters = [createFixtureAdapter()];
-  if (!manifestFile) return { adapters, profile: null, activeSteering: false };
-  if (!isAbsolute(manifestFile) || (await stat(manifestFile)).size > 16_384) throw new Error('Claude manifest must be a small, explicitly selected absolute file.');
-  const content = await readFile(manifestFile, 'utf8');
-  if (Buffer.byteLength(content) > 16_384) throw new Error('Claude manifest exceeds its size limit.');
-  const { activeSteering = false, ...options } = parseManifest(JSON.parse(content));
-  const adapter = createClaudeAdapter(options);
-  const profile = describeExecutionProfile(options, adapter, activeSteering);
-  adapters.push(adapter);
-  return { adapters, profile, activeSteering };
+export interface RunnerConfiguration<Profile extends NativeExecutionProfileConfiguration = ExecutionProfileConfiguration> {
+  harnesses: ConfiguredNativeHarness[];
+  /** Compatibility views for existing local consumers. */
+  adapters: HarnessAdapter[];
+  profile: Profile | null;
+  activeSteering: boolean;
 }
 
-function parseManifest(value: unknown): ClaudeAdapterOptions & { activeSteering?: boolean } {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Claude manifest must be an object.');
-  const config = value as Record<string, unknown>;
-  const fields = ['materialFiles', 'activeSteering', 'goalTools', 'goalGraphTools', 'model', 'allowRead', 'requireReadApproval', 'maxTurns', 'maxBudgetUsd', 'timeoutMs'];
-  if (Object.keys(config).some(key => !fields.includes(key))) throw new Error('Claude manifest contains an unsupported field.');
-  if (!Array.isArray(config.materialFiles) || config.materialFiles.length > 32 || config.materialFiles.some(file => typeof file !== 'string' || !isAbsolute(file))) throw new Error('Claude materialFiles must explicitly list at most 32 absolute paths.');
-  if (config.model !== undefined && (typeof config.model !== 'string' || config.model.length === 0 || config.model.length > 180)) throw new Error('Invalid Claude model.');
-  for (const field of ['activeSteering', 'allowRead', 'requireReadApproval', 'goalTools', 'goalGraphTools']) if (config[field] !== undefined && typeof config[field] !== 'boolean') throw new Error('Invalid Claude read policy.');
-  for (const field of ['maxTurns', 'maxBudgetUsd', 'timeoutMs']) if (config[field] !== undefined && typeof config[field] !== 'number') throw new Error('Invalid Claude execution limit.');
-  return config as unknown as ClaudeAdapterOptions;
+export async function loadRunnerConfiguration(manifestFile?: string): Promise<RunnerConfiguration> {
+  const fixture = describeNativeHarness(createFixtureAdapter(), null);
+  if (!manifestFile) return { harnesses: [fixture], adapters: [fixture.adapter], profile: null, activeSteering: false };
+  const configured = configureClaudeHarness(await readManifest(manifestFile, 'Claude'));
+  const harnesses = [fixture, configured];
+  return { harnesses, adapters: harnesses.map(item => item.adapter), profile: configured.descriptor.publicProfile,
+    activeSteering: configured.descriptor.ports.steering === 'flow.active-steering.v1' };
+}
+
+/** Explicit selection only; neither this loader nor its factory construction launches a process. */
+export async function loadCodexRunnerConfiguration(manifestFile: string, createTransport?: CodexTransportFactory): Promise<RunnerConfiguration<CodexExecutionProfileConfiguration>> {
+  const configured = configureCodexLaunch(await readManifest(manifestFile, 'Codex'), createTransport);
+  const harnesses = [describeNativeHarness(createFixtureAdapter(), null), configured];
+  return { harnesses, adapters: harnesses.map(item => item.adapter), profile: configured.descriptor.publicProfile, activeSteering: false };
+}
+
+export async function loadSelectedRunnerConfiguration(options: {
+  claudeManifestFile?: string; codexManifestFile?: string; codexTransportFactory?: CodexTransportFactory;
+} = {}): Promise<RunnerConfiguration<NativeExecutionProfileConfiguration>> {
+  if (options.claudeManifestFile && options.codexManifestFile) throw new Error('Select only one native manifest.');
+  return options.codexManifestFile
+    ? loadCodexRunnerConfiguration(options.codexManifestFile, options.codexTransportFactory)
+    : loadRunnerConfiguration(options.claudeManifestFile);
+}
+
+async function readManifest(path: string, harness: 'Claude' | 'Codex'): Promise<unknown> {
+  const maximumBytes = 16_384;
+  if (!isAbsolute(path)) throw new Error(`${harness} manifest must be a small, explicitly selected absolute file.`);
+  const initial = await stat(path);
+  if (!initial.isFile() || initial.size > maximumBytes) throw new Error(`${harness} manifest must be a small, explicitly selected absolute file.`);
+  const file = await open(path, constants.O_RDONLY | constants.O_NONBLOCK);
+  try {
+    const opened = await file.stat();
+    if (!opened.isFile() || opened.size > maximumBytes) throw new Error(`${harness} manifest exceeds its size limit.`);
+    // One extra byte detects growth without allocating/reading an unbounded replacement file.
+    const buffer = Buffer.alloc(maximumBytes + 1);
+    let offset = 0;
+    while (offset < buffer.length) {
+      const { bytesRead } = await file.read(buffer, offset, buffer.length - offset, offset);
+      if (bytesRead === 0) break;
+      offset += bytesRead;
+    }
+    if (offset > maximumBytes) throw new Error(`${harness} manifest exceeds its size limit.`);
+    return JSON.parse(buffer.subarray(0, offset).toString('utf8'));
+  } finally { await file.close(); }
 }

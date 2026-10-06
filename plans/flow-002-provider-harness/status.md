@@ -2,9 +2,9 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:45:00 UTC / maind7e1e64e7792f4d1ad4933db042f10f266ad0cca |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:03:06 UTC / mainf181d84b5fb3652d62e2a181acff442d42b3e066 |
 | Plan | [plan.md](plan.md) |
-| 所属大task | FLOW-002（[大task定义](plan.md)） |
+| 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review` |
@@ -12,14 +12,14 @@
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
 | 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
 | 工作分支状态 | planning；原历史TODO与独立review边界保留 |
-| 已集成main状态 / HEAD | d7e1e64e7792f4d1ad4933db042f10f266ad0cca；首个原生Claude adapter已用于聊天与限定只读目标子任务。可替换接口和第二真实harness消费者尚未完成；历史wrapper工程对照保持开放。 |
+| 已集成main状态 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066；已含TUI01A、R05C/C1、S01P02与聊天操作界面。真实Codex进程诊断和配置接入仍后继；个人backend/static保持b1c2e398、accepting v12。10:00:58.896Z实际看板122源且账本available。 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | planning |
 | 优先级 | 1 |
-| 当前产出 | 原生聊天与恢复路径已有实际验收，身份刷新和上下文插件实验记录了明确限制。 |
-| 下一可用交付 | 收拢执行器与原生工具的边界，并让第二种实际执行工具消费同一接口。 |
+| 当前产出 | 终端会话首片、Codex普通任务执行接口和聊天操作已进入主线；工程任务通路进入准备。 |
+| 下一可用交付 | 保持现有Claude行为，接通Codex可信启动配置与真实能力观察。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -33,7 +33,7 @@
 | FLOW-002-T04 | completed | Execution Lead | 本文或既有已归档证据；见下方边界 |
 | FLOW-002-T05 | pending | Execution Lead | 未完成，无通过结论 |
 | FLOW-002-T06 | completed | Execution Lead | 本文或既有已归档证据；见下方边界 |
-| FLOW-002-T07 | pending | Execution Lead | 未完成，无通过结论 |
+| FLOW-002-T07 | pending | Execution Lead | [ENG-001](../eng01-engineering-delivery/plan.md)为唯一生产工程目标；E01保留对照，未完成真实工程验收 |
 | FLOW-002-T08 | pending | Execution Lead | 未完成，无通过结论 |
 
 ## 已完成证据与检查
@@ -55,6 +55,8 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 
 2026-10-06 08:23:11 UTC：只核本权威来源既有6个人读字段均齐备，保留FLOW-002未完成工程验收与OPS历史review边界；本次仅更新协作配额/观察时间，不新增产品测试或模型。
 
-| FLOW-002-T09 | in-progress | Execution Lead / 只读审查双方 | 用户要求提升为下一小批；本机运行时与Pi/AI SDK两端事实汇总后确定精确scope/独立owner，接口和第二真实消费者均必须验收。当前仅只读设计，未完成产品抽象。 |
+| FLOW-002-T09 | in-progress | Execution Lead / 只读审查双方 | R05-A已main，R06有界transport与R05B有限中心来源已审main3418；R05C准备普通Codex adapter。Pi/AI SDK研究保留不作串行门槛，真实原生与会话完整可替换性未完成。 |
 
 2026-10-06 08:45 UTC：按用户最新要求及时commit/push/merge；各Lead负责方向与接口，独立workers实施。当前授权4/4/4上限12，工具实际threadlimit拒绝已停止重试，不以授权槽数冒充实跑。已审交付不等待新的宿主抽象设计。
+
+2026-10-06 08:57:11 UTC：用户新增成熟界面大方向已追溯到FLOW-002-T09与WPF-MATURE-02；Mika负责模型能力与Codex消费方，本队负责共享宿主/中心契约，Web沿唯一界面大task管理。无新增provider/auth操作。

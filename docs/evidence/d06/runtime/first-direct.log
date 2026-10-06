@@ -1,0 +1,48 @@
+fatal: path 'plans/wpf-mature-03-attachments/plan.md' does not exist in 'f181d84b5fb3652d62e2a181acff442d42b3e066'
+✖ curated architecture cites existing files at its fixed source commit and valid graph nodes (1208.534209ms)
+✔ architecture static assets stay within existing read-only loopback server policy (44.37ms)
+✔ fixed snapshot separates integrated Web and center capabilities from later UI work (236.47275ms)
+✔ integrated queue and graph proposal descriptions preserve explicit admission and application (150.199959ms)
+✔ native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation (215.462166ms)
+✔ state graph covers every active completed outcome and uncertain route without reviving the old task (0.215333ms)
+✔ current PG content and assistant provenance never become an implemented blob edge (39.672ms)
+✔ Web knowledge is explicit project selection and frozen citations, not automatic file material (218.309125ms)
+✔ graph run authority and native graph tools retain separate purposes and bounded commands (196.152292ms)
+✔ package download is opt-in durable work and does not install or execute plugins (142.767084ms)
+✔ typed activity, renderer, streaming and steering are mounted in the same official Thread (79.383375ms)
+✔ assistant patches have explicit negotiation and durable settlement, not a task success signal (235.049209ms)
+✔ steering UI is mounted but defaults off and requires explicit trusted center and runner configuration (328.19525ms)
+✔ TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter (225.763041ms)
+✔ task verification summary is not a per-artifact engineering approval or a deployment receipt (27.287125ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3466.822208
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/architecture.test.mjs:9:1
+✖ curated architecture cites existing files at its fixed source commit and valid graph nodes (1208.534209ms)
+  Error: Command failed: git cat-file -e f181d84b5fb3652d62e2a181acff442d42b3e066:plans/wpf-mature-03-attachments/plan.md
+  fatal: path 'plans/wpf-mature-03-attachments/plan.md' does not exist in 'f181d84b5fb3652d62e2a181acff442d42b3e066'
+  
+      at genericNodeError (node:internal/errors:986:15)
+      at wrappedFn (node:internal/errors:540:14)
+      at checkExecSyncError (node:child_process:942:11)
+      at execFileSync (node:child_process:978:15)
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/test/architecture.test.mjs:17:7)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.start (node:internal/test_runner/test:1257:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    status: 128,
+    signal: null,
+    output: [ null, <Buffer >, <Buffer 66 61 74 61 6c 3a 20 70 61 74 68 20 27 70 6c 61 6e 73 2f 77 70 66 2d 6d 61 74 75 72 65 2d 30 33 2d 61 74 74 61 63 68 6d 65 6e 74 73 2f 70 6c 61 6e 2e ... 65 more bytes> ],
+    pid: 94479,
+    stdout: <Buffer >,
+    stderr: <Buffer 66 61 74 61 6c 3a 20 70 61 74 68 20 27 70 6c 61 6e 73 2f 77 70 66 2d 6d 61 74 75 72 65 2d 30 33 2d 61 74 74 61 63 68 6d 65 6e 74 73 2f 70 6c 61 6e 2e ... 65 more bytes>
+  }

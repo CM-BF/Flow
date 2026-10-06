@@ -125,6 +125,15 @@ function definition(
 }
 
 describe("trusted PluginHost lifecycle and authority", () => {
+  it("allows the declared composer context panel only in a composer and rechecks knowledge authority", async () => {
+    const s = setup(); const declaration = manifest({ capabilities: ["knowledge.read"], activationEvents: ["view:chat.composer.context"], commands: [], contributions: [{ kind: "panel", id: "test.plugin.knowledge-panel", slot: "chat.composer.context", title: "Knowledge", capability: "knowledge.read" }] });
+    s.host.register({ manifest: declaration, load: async () => ({ activate(context) { context.contribute("test.plugin.knowledge-panel", () => null); } }) });
+    await s.host.activate(declaration.id);
+    expect(s.host.checkView("test.plugin.knowledge-panel", { kind: "composer", viewId: "draft", isDraft: true }).ok).toBe(true);
+    expect(s.host.checkView("test.plugin.knowledge-panel", { kind: "task", taskId: "A" }).ok).toBe(false);
+    s.deny(); expect(s.host.checkView("test.plugin.knowledge-panel", { kind: "composer", viewId: "draft", isDraft: true }).ok).toBe(false);
+    await s.host.dispose();
+  });
   it("validates JSON declarations atomically without running a loader", () => {
     const { host } = setup();
     let loads = 0;
@@ -628,4 +637,15 @@ describe("independent assistant stream capability", () => {
     expect(s.host.checkView("test.stream.panel",context).ok).toBe(true);s.deny();expect(s.host.checkView("test.stream.panel",context).ok).toBe(false);
     expect(s.host.checkView("test.stream.panel",{kind:"global"}).ok).toBe(false);await s.host.dispose();
   });
+});
+
+it("steering read declaration cannot grant write execution, and host policy still gates declared write", async () => {
+  const s=setup(); let writes=0;
+  const definition:PluginDefinition={manifest:{id:"test.steering",version:"1.0.0",hostApi:1,contributions:[],capabilities:["task.steering.read","task.steering.write"],activationEvents:["command:test.steering.accept"],commands:[{id:"test.steering.accept",title:"Accept",capability:"task.steering.write",contexts:["message"]}]},load:async()=>({activate(context){context.command("test.steering.accept",{parse:value=>value,run:()=>{writes++;}});}})};
+  s.port.authorize=(_plugin,capability)=>capability==="task.steering.read";
+  s.host.register(definition);
+  expect((await s.host.execute("test.steering.accept",{}, {kind:"message",taskId:"A",messageId:"m",role:"user"})).ok).toBe(false);expect(writes).toBe(0);
+  s.port.authorize=()=>true;
+  expect((await s.host.execute("test.steering.accept",{}, {kind:"message",taskId:"A",messageId:"m",role:"user"})).ok).toBe(true);expect(writes).toBe(1);
+  await s.host.dispose();
 });

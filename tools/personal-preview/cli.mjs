@@ -1,10 +1,26 @@
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { baseServiceEnvironment } from './environment.mjs';
-import { startPreview, statusPreview, stopPreview, runService } from './preview.mjs';
+import { startPreview, statusPreview, stopPreview, runService, bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb, preparePreviewRelease, importPreviewCompatibility, readPreviewJson } from './preview.mjs';
 try {
   const [action, flag, directory, ...rest] = process.argv.slice(2);
-  if (action === 'maintenance') {
+  if (action === 'web') {
+    const [subcommand, ...values] = process.argv.slice(3);
+    if (values.length % 2) throw new Error('USAGE');
+    const options = {};
+    for (let index = 0; index < values.length; index += 2) { if (Object.hasOwn(options, values[index])) throw new Error('USAGE'); options[values[index]] = values[index + 1]; }
+    const privateDirectory = options['--directory'];
+    let result;
+    if (subcommand === 'prepare' && Object.keys(options).sort().join() === '--directory,--release-id,--target') result = await preparePreviewRelease({ directory: privateDirectory, target: options['--target'], releaseId: options['--release-id'] });
+    else if (subcommand === 'import-compatibility' && Object.keys(options).sort().join() === '--directory,--report-directory') result = await importPreviewCompatibility({ directory: privateDirectory, reportDirectory: options['--report-directory'] });
+    else if (['bootstrap', 'publish', 'rollback'].includes(subcommand) && Object.keys(options).sort().join() === '--directory,--request') {
+      const input = await readPreviewJson(options['--request']);
+      const allowed = ['expectedVersion', 'expectedBackendHead', 'compatibilityId', ...(subcommand === 'bootstrap' ? [] : ['artifact'])];
+      if (Object.keys(input).sort().join() !== allowed.sort().join()) throw new Error('USAGE');
+      result = await ({ bootstrap: bootstrapPreviewWeb, publish: publishPreviewWeb, rollback: rollbackPreviewWeb })[subcommand]({ ...input, directory: privateDirectory });
+    } else throw new Error('USAGE');
+    process.stdout.write(`${JSON.stringify(result)}\n`);
+  } else if (action === 'maintenance') {
     const [subcommand, directoryFlag, privateDirectory, targetFlag, target, ...extra] = process.argv.slice(3);
     if (directoryFlag !== '--directory' || !privateDirectory || extra.length || (targetFlag && targetFlag !== '--target') || (subcommand === 'refresh' ? !target : targetFlag)) throw new Error('USAGE');
     const child = spawn(process.execPath, ['--import', 'tsx', fileURLToPath(new URL('./maintenance-host.mjs', import.meta.url)), subcommand, privateDirectory, ...(target ? [target] : [])], { env: baseServiceEnvironment('center'), cwd: fileURLToPath(new URL('../../', import.meta.url)), stdio: 'inherit' });

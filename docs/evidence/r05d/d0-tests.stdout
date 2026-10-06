@@ -1,0 +1,17 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-launch
+
+ ✓ apps/runner/src/execution-profiles.test.ts (13 tests) 3219ms
+   ✓ publishes from the real startup entry before polling (accepted: true, steering: false)  1248ms
+   ✓ publishes from the real startup entry before polling (accepted: false, steering: false)  632ms
+   ✓ publishes from the real startup entry before polling (accepted: true, steering: true)  624ms
+   ✓ publishes from the real startup entry before polling (accepted: false, steering: true)  683ms
+ ✓ apps/runner/src/configuration.test.ts (19 tests) 299ms
+ ✓ apps/runner/src/native-harness.test.ts (8 tests) 124ms
+ ✓ apps/runner/src/native-harness/codex/launch.test.ts (10 tests) 7ms
+
+ Test Files  4 passed (4)
+      Tests  50 passed (50)
+   Start at  03:04:18
+   Duration  5.15s (transform 190ms, setup 0ms, import 1.00s, tests 3.65s, environment 0ms)
+

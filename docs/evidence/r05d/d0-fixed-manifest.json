@@ -1,0 +1,152 @@
+{
+  "sourceCommit": "ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4",
+  "baseCommit": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+  "source": [
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 5884,
+      "sha256": "9a5915ba4da85a2a0368e1e0ead3de61b5ef0d018837db9ae378bbfbe3a11865",
+      "commit": "ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4493,
+      "sha256": "76aaeb1306a167bef204d5393f764739970ab8529268d9276de95b14f9896642",
+      "commit": "ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+      "bytes": 2135,
+      "sha256": "4e4cc90057bc5f700f1485578d7b71f78f9034b87c26f6a7c65218c28374fbd6",
+      "commit": "ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "bytes": 757,
+      "sha256": "e3e32c49f81f665c90093c50c59913756f74a2ea4bfc261dbdc2afd06dfc3aef",
+      "commit": "ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4"
+    }
+  ],
+  "validation": [
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+      "bytes": 2135,
+      "sha256": "4e4cc90057bc5f700f1485578d7b71f78f9034b87c26f6a7c65218c28374fbd6",
+      "commit": "ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4"
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 5884,
+      "sha256": "9a5915ba4da85a2a0368e1e0ead3de61b5ef0d018837db9ae378bbfbe3a11865",
+      "commit": "ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.test.ts",
+      "bytes": 14503,
+      "sha256": "1332ee5b8539cbb723e4ea9bf1a5cdaf771a0d7bb5344167c2f3cc0e8c389033",
+      "commit": "ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4"
+    },
+    {
+      "path": "apps/runner/src/native-harness.test.ts",
+      "bytes": 3470,
+      "sha256": "6d0e715e34bdc8aa1783617a7fff29ba2e60fa0c0b83ff93d4383397c58c4efb",
+      "commit": "ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4"
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "bytes": 6306,
+      "sha256": "196b18ea53527862ad6a7865c89ea18d821143b237f5e21eee529731695b2d6e",
+      "commit": "ad05cfd2a0d2c5ab769fddc5483805d5c164bcd4"
+    }
+  ],
+  "unchangedInputs": [
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 1915,
+      "sha256": "b6461ea0edebe5ca7fb52ebbc0c62b678aeea891b00cf69b78a1636900c95ba8",
+      "commit": "f181d84b5fb3652d62e2a181acff442d42b3e066"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 278664,
+      "sha256": "621490272149c9e9468c6ebec407f0eff3b508b7ca1e5b285573f101bb8a062d",
+      "commit": "f181d84b5fb3652d62e2a181acff442d42b3e066"
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "commit": "f181d84b5fb3652d62e2a181acff442d42b3e066"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/evidence/r05d/bootstrap.json",
+      "bytes": 148,
+      "sha256": "39ef492ea94338fae43a830ce99347de068e41593312b5e68437ed4dfd73cd36"
+    },
+    {
+      "path": "docs/evidence/r05d/bootstrap.stdout",
+      "bytes": 658,
+      "sha256": "5ba2f0ec380094c963d62c485c02c33dff64238311d1db629fd2ded48b98c3fd"
+    },
+    {
+      "path": "docs/evidence/r05d/claim.json",
+      "bytes": 818,
+      "sha256": "f900d2bac96808b0e251676bd1dff833add769cc9b2ec857f3aa540c6f82cd4e"
+    },
+    {
+      "path": "docs/evidence/r05d/d0-main-consumer.json",
+      "bytes": 370,
+      "sha256": "ba4e0ede6ca42d990f65acb4a74ce9b695b9cd4dc23c50cbef61e2d272d5a54b"
+    },
+    {
+      "path": "docs/evidence/r05d/d0-main-consumer.stdout",
+      "bytes": 318,
+      "sha256": "7f8c4ecc1e19224b0b784c435232ba695b0d21a0c1658f5041e504c7c494f1b4"
+    },
+    {
+      "path": "docs/evidence/r05d/d0-red.json",
+      "bytes": 469,
+      "sha256": "e64fe2e38f4ba388af41a0e320cbc968b5d33494a3271f0f6d3e337937fc6d7d"
+    },
+    {
+      "path": "docs/evidence/r05d/d0-red.stdout",
+      "bytes": 5710,
+      "sha256": "5a1be855e30a192ce8092367cb9e83d9464fd91a5a1daadc95a9c65dc085ea66"
+    },
+    {
+      "path": "docs/evidence/r05d/d0-tests.json",
+      "bytes": 530,
+      "sha256": "03938b976f9cc500e1c209b7467eda8548b2ed33cd2cc37ae88c6cad66508040"
+    },
+    {
+      "path": "docs/evidence/r05d/d0-tests.stdout",
+      "bytes": 921,
+      "sha256": "fe4707639502ba914d075de1a5faa9407e15641f5a272fb1b78686a2021bc855"
+    },
+    {
+      "path": "docs/evidence/r05d/d0-typecheck.json",
+      "bytes": 103,
+      "sha256": "b373d6d10d72fa2ac08416aae1593c77780858bd84bc89b84f6ce7feaf61c55c"
+    },
+    {
+      "path": "docs/evidence/r05d/d0-typecheck.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/r05d/predecessor-release.json",
+      "bytes": 973,
+      "sha256": "b795f8254995fd573680525a972feab263639f0261bb1eefe874bb6d7f6016ee"
+    }
+  ],
+  "checks": {
+    "selectedDistinct": 72,
+    "passed": 72,
+    "typecheckExitCode": 0,
+    "nativeProviderCalls": 0,
+    "appServerStarts": 0,
+    "nativeAuthRequests": 0
+  }
+}

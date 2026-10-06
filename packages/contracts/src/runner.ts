@@ -4,7 +4,7 @@ import type { GoalToolCapability, GoalToolRunReference } from './goal-tool-runs.
 import { z } from 'zod';
 import { steeringReceiptSchema, steeringResultSchema, steeringFinalizationMetadataSchema, type ActiveSteeringPort } from './active-steering.js';
 import { assistantStreamDataSchema, assistantStreamMarkerSchema } from './assistant-stream.js';
-import { assistantFinalDataSchema } from './assistant.js';
+import { claudeAssistantFinalDataSchema, codexAssistantFinalDataSchema } from './assistant.js';
 import { nativeActivityDataSchema } from './native-activity.js';
 import { harnessSchema, idSchema, MAX_DETAIL_BYTES, MAX_BATCH_BYTES, type DecisionAnswer, type TaskSubmission, type AttemptView, type HarnessName } from './tasks.js';
 
@@ -41,7 +41,7 @@ const tokenCount = z.number().int().nonnegative().nullable();
 export const runnerEventSchema = z.discriminatedUnion('type', [
   z.strictObject({ ...envelope, type: z.literal('steering-receipt'), receipt: steeringReceiptSchema }),
   z.strictObject({ ...envelope, type: z.literal('steering-result'), result: steeringResultSchema }),
-  assistantFinalDataSchema.extend(envelope),
+  z.discriminatedUnion('source', [claudeAssistantFinalDataSchema.extend(envelope), codexAssistantFinalDataSchema.extend(envelope)]),
   assistantStreamDataSchema.safeExtend(envelope),
   assistantStreamMarkerSchema.extend(envelope),
   nativeActivityDataSchema.safeExtend(envelope),

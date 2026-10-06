@@ -1,0 +1,58 @@
+{
+  "observedAt": "2026-10-06T09:10:33.037758+00:00",
+  "base": "1737cd6a5c8bbb1d5793325ee924802bfbe2a2e9",
+  "implementation": "b2cbbca5f823e122ec4e234e16fb7ef45a063af9",
+  "delivery": "5d02e8d31c62904155587b32fbc47d2baa341d06",
+  "sourceFiles": [
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "bytes": 5414,
+      "sha256": "ad001378fe9528e8e5741c94e64e840ab09dc6236289a0eb723922ed674e15e9",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "bytes": 20499,
+      "sha256": "be419bae85345d5d12d83f4a9fa3067c4ec479ca001dbda86fa4b3360dcbddc2",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/steering.css",
+      "bytes": 1506,
+      "sha256": "1ff9acd487e6d53681e32301d8c098df8a46d6669e095b7330ab41111045e154",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/web/test/conversation-steering.browser.ts",
+      "bytes": 8846,
+      "sha256": "6631a807ad989d725e24450e6d9fc1155722456a63bebd9e9f6c27ae41d486d1",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/web/test/conversation-steering.fixture.ts",
+      "bytes": 10622,
+      "sha256": "7a231d9c723650d05c22124914b6e31abcd25ba566ba309729cf21fd635b95ae",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/web/test/conversation-steering.test.ts",
+      "bytes": 15138,
+      "sha256": "6c277dfb07d5335bbb3738cf8d5e78a9caee1e5339ca7f662ae58b96e89c3d1f",
+      "matchesTarget": true,
+      "matchesManifest": true
+    }
+  ],
+  "webTypecheck": {
+    "exitCode": 0,
+    "path": "docs/evidence/i02/steering-module-typecheck.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "reviewReuse": "Web Lead independent APPROVED 33 direct + CUA; no repeat browser/domain/provider tests",
+  "scope": "Unattached steering control module only; no App, runtime, profile, service or provider activation."
+}

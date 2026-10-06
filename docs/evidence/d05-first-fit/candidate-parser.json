@@ -1,0 +1,75 @@
+{
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "架构图首次自动适配已验证，手动缩放与五视图选择保持",
+    "next": "独审后交付首次适配与手动缩放保持",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "0ac7a127f06d534f6514a98331f533e42993378a",
+    "scopes": [
+      "apps/execution-dashboard/public/architecture.js",
+      "apps/execution-dashboard/test/architecture-viewport.browser.mjs"
+    ],
+    "errors": []
+  },
+  "taskId": "D05FIT01",
+  "owner": "d01_owner / gpt-6-astra ultra",
+  "branch": "codex/dashboard-architecture-first-fit",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-06T08:46:00.000Z",
+  "updatedRecord": "2026-10-06 08:46 UTC / 固定main7106已核",
+  "todos": [
+    {
+      "id": "D05FIT01-01",
+      "state": "completed",
+      "owner": "d01_owner",
+      "evidence": "[plan](plan.md)、receipt与[quality](../../docs/evidence/d05-first-fit/quality.md)"
+    },
+    {
+      "id": "D05FIT01-02",
+      "state": "completed",
+      "owner": "d01_owner",
+      "evidence": "0ac7a127f06d534f6514a98331f533e42993378a，两源码已冻结"
+    },
+    {
+      "id": "D05FIT01-03",
+      "state": "completed",
+      "owner": "d01_owner",
+      "evidence": "[五组浏览器](../../docs/evidence/d05-first-fit/second-green.json)、双主题1280/390与失败日志"
+    },
+    {
+      "id": "D05FIT01-04",
+      "state": "in-progress",
+      "owner": "d01_owner / root / Lead",
+      "evidence": "独审/main未完成"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 / 当前HEAD由Git聚合",
+  "declaredDirty": "两实现已冻结提交；此刻仅自有metadata收口，最终dirty由Git聚合",
+  "checks": {
+    "state": "passed",
+    "target": "0ac7a127f06d534f6514a98331f533e42993378a",
+    "record": "PASSED 0ac7a127f06d534f6514a98331f533e42993378a；五组真实浏览器/两语法检查，[验证](../../docs/evidence/d05-first-fit/validation.md)"
+  },
+  "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+  "mainRecord": "NOT_INTEGRATED",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

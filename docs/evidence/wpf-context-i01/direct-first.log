@@ -1,0 +1,54 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web
+
+ ❯ test/plugin-host.test.ts (18 tests | 1 failed) 19ms
+     × allows the declared composer context panel only in a composer and rechecks knowledge authority 6ms
+     ✓ validates JSON declarations atomically without running a loader 2ms
+     ✓ shares activation for concurrent distinct command requests and binds local B context 1ms
+     ✓ rolls back partial activation and actually reloads on retry 1ms
+     ✓ invalidates pending load on disable without reviving or running activation 0ms
+     ✓ disposes late activation return once while preserving the new generation 0ms
+     ✓ continues cleanup after one failure and rejects captured contexts 0ms
+     ✓ rechecks dynamic authorization after asynchronous activation 0ms
+     ✓ catches async handler and bridge failures without unhandled rejection 0ms
+     ✓ keeps list/slot snapshots stable across navigation and makes narrow copies immutable 0ms
+     ✓ rejects wrong task/reference/composer invocation and mismatched semantic slots 0ms
+     ✓ falls back from a disabled custom theme without retaining it through App snapshots 1ms
+     ✓ whole-host disposal invalidates pending commands, views and old connection context 0ms
+   ✓ isolates synchronous and asynchronous subscription failures while continuing fan-out 3ms
+   ✓ atomically rejects unknown and prototype slots and activation events 1ms
+   ✓ checks view resource and current grants synchronously without loading 0ms
+   ✓ accepts the typed message footer and rejects non-message invocations 0ms
+     ✓ accepts the explicit stream read capability but active state does not bypass resource permission 0ms
+ ✓ test/conversation-outbox.test.ts (15 tests) 8ms
+ ✓ test/conversation-queue.test.ts (26 tests) 42ms
+ ✓ test/conversation-projection.test.ts (79 tests) 55ms
+ ✓ test/conversation-context-integration.test.ts (6 tests) 17ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/plugin-host.test.ts > trusted PluginHost lifecycle and authority > allows the declared composer context panel only in a composer and rechecks knowledge authority
+Error: Contribution and command IDs must use the plugin namespace
+ ❯ assert src/plugins/validation.ts:80:25
+     78|   typeof value === "string" && value.trim().length > 0;
+     79| export function assert(condition: unknown, message: string): asserts c…
+     80|   if (!condition) throw new Error(message);
+       |                         ^
+     81| }
+     82| export function immutable<T>(value: T): T {
+ ❯ reserve src/plugins/validation.ts:210:5
+ ❯ validateManifest src/plugins/validation.ts:233:5
+ ❯ PluginHost.register src/plugins/host.ts:90:22
+ ❯ test/plugin-host.test.ts:130:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  1 failed | 143 passed (144)
+   Start at  01:57:14
+   Duration  1.52s (transform 1.19s, setup 0ms, import 2.41s, tests 141ms, environment 1ms)
+
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run test/conversation-outbox.test.ts test/conversation-projection.test.ts test/conversation-queue.test.ts test/plugin-host.test.ts test/conversation-context-integration.test.ts

@@ -1,0 +1,23 @@
+✔ ordinary final requires completed item plus matching successful terminal; hashes retain all native identities (1.433084ms)
+✔ full terminal item is cross-checked; last commentary never replaces explicit final (1.819041ms)
+✔ unknown phase cannot yield ordinary final (0.137084ms)
+✔ ambiguous finals cannot yield ordinary final (0.091875ms)
+✔ only commentary cannot yield ordinary final (0.073333ms)
+✔ no completed item cannot yield ordinary final (0.056292ms)
+✔ async delivery cannot yield ordinary final (0.070958ms)
+✔ interactive question cannot yield ordinary final (0.086917ms)
+✔ full item view cannot hide unknown phase, async or an additional final absent from live items (0.158208ms)
+✔ failed and interrupted turn remain distinct even with a completed final item (0.154ms)
+✔ foreign identity or non-success evidence permanently invalidates this projection (0.655708ms)
+✔ duplicate item must be identical, terminal must not change, late items fail closed (0.348959ms)
+✔ native IDs and final UTF8 content have independent Flow bounds (0.997208ms)
+✔ decoded evidence storage is bounded by item count and accumulated bytes (7.367667ms)
+✔ content bytes are not wire bytes; escaping may exceed R06 frame before Flow content limit (2.279666ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 73.725625

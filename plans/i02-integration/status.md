@@ -2,22 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:44:00 UTC / main7106a354 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T10:18:50.449758+00:00 / mainc9c0842406e77082f2ba4bd6e98c5279da7cd2dd |
 | Plan | [plan.md](plan.md) |
+| 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
+| co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 7106a35447bf43026ad7b5ad7c25dc530fd0c4f5 / 已审受理条件、并行运行内核和紧凑聊天展示 |
-| 工作树dirty状态 | 候选已提交；当前交付记录整理 |
+| 工作基线 / HEAD | c9c0842406e77082f2ba4bd6e98c5279da7cd2dd / 已审Codex配置与网页独立发布组合 |
+| 工作树dirty状态 | 固定实现零差；本批证据随后提交 |
 | 工作分支状态 | in-progress（前批已审片段进入main；CHAT三端继续） |
-| 检查状态 | PASSED；固定输入逐文件一致，root/Web类型检查exit0；S01初始ES2023红与修复分别保留；0新增provider |
-| 已集成main状态 / HEAD | 上一main7106a354已发布；本候选接收CHAT10、S01P01、CHATREAD01、O10限定验收证据与SVC更新回执。个人服务已受控更新到32c371d / accepting v9，原端口/数据/身份保留；用户主动请求正常完成，operator主动0query。 |
+| 检查状态 | PASSED；18项固定源码/保护输入完全一致，root类型检查exit0；复用原局部行为与浏览器证据，0provider |
+| 已集成main状态 / HEAD | 前批41315b0已推送；126源与固定架构图候选待紧接fast-forward。个人backend/static仍b1c2、accepting v12。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 聊天布局更紧凑；运行中补充指令的受理条件和有界并行运行内核已审通过。 |
-| 下一可用交付 | 发布已审片段，再接聊天资料选择与可替换运行器接口。 |
+| 当前产出 | Codex显式启动配置和网页独立发布工具已完成审查，原页面资源可在发布和回退后继续读取。 |
+| 下一可用交付 | 共享会话确认与工程通路并行实施；个人网页发布仍待实际组合兼容验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -99,3 +101,23 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-06 08:44 UTC：CHAT10领域/薄client/可信启动、CHATREAD01展示、S01P01及ES2023增量各自已独审；固定source与原主线三个runner保护文件hash一致，root/Web组合types通过，S01默认2项生产消费者复用原绿。O10原生单child限定语义由GO独立通过，预算1/1封存，本文未追加模型。初始root类型红保留，未重跑既有领域/浏览器矩阵。证据见pool-readability-final-comparison.json及steering-native-child-comparison.json。个人center/runner仍32c/v9，Vite Web来自移动主线；SVC03固定产物另行实现，不能把main发布称后台重启。
 
 2026-10-06 08:55 UTC：SVC03固定artifact与static Web独立审查通过，11源码在实际集成点对d938逐字一致；原7+10行为/有界构建证据复用，无重复测试。两层任务与消息预算最终规则在根AGENTS/plans/OPS同步，101来源含R05/CHATUI01/D05FIT01/SVC03均本地parse无错/人读字段完整。即将发布本批；实际个人服务切换尚未执行，原32c/v9保留。
+
+2026-10-06 08:58:18 UTC：本批[R05-A与首次fit固定对照](../../docs/evidence/i02/native-harness-fit-integration.json)18项全一致，根类型检查exit0；复用作者42局部检查及Web已有五组浏览器/独立可视审查，不重复工程矩阵。SVC03实际窗口已关闭，后端与静态产物固定b1c/v12，后继main不改变其运行版本。
+
+2026-10-06 09:10:33 UTC：[补充指令独立模块组合](../../docs/evidence/i02/steering-module-integration.json)六源码与Web独审target/manifest逐字一致，当前Web类型检查exit0。未重复33/浏览器、未挂App或启个人steer。登记111源已实采；实际个人center/runner/staticWeb仍b1c/v12，不随main前进。
+
+2026-10-06 09:40 UTC：[视觉与C0组合](../../docs/evidence/i02/visual-c0-source-comparison.json)12源码与各独审target完全一致，其中原10项也与manifest完全一致，root/Web类型检查exit0；沿用固定领域/浏览器证据，无模型或个人服务更新。C0仅可信原生未知状态，不涵盖正在实施的Codex adapter。ENG计划与117源实采回执同批归档；纯文档不跑工程测试。
+
+同批普通终文投影提升6313c885另获Execution Lead限定独审：算法与Mika原0d0524来源逐字相同，15项原断言仅换import后的原始输出已核。当前无adapter连接，不将投影completed等同Flow任务完成；未来adapter必须归一可能含原文的AssertionError。
+
+2026-10-06 09:43 UTC：通用native profile薄client095已由status_read独审、Mika接收；本批两源码对target/manifest完全一致，原3/3 HTTP和类型检查复用，无重复PG/模型。见[独审接收](../../docs/evidence/i02/native-profile-client-integration.json)。此接口只透明发布，配置存在不等于工具授权或原生运行完成。
+
+历史手工管理时间标签 09:54（非执行观测；实际118源快照为09:51:58.837Z）：接收SVC04唯一计划、TUI共享ACK后继、F01/main回执与FLOW当前事实，118来源登记通过；[本批receipt](../../docs/evidence/i02/release-ack-planning-integration.json)。本批只文档与registry，不重跑产品测试、不变个人服务。
+
+2026-10-06T09:58:56.844754+00:00：本批[固定集成回执](../../docs/evidence/i02/native-tui-integration.json)记录59源同获审target一致、4文件50直接检查及root/Web类型检查通过。TUI两项P2已由原owner修复并获Mika独审；离线固定锁安装41复用、0下载、未运行安装脚本。未重跑领域/PTY/浏览器验收，未调用provider或修改个人服务。
+
+2026-10-06 10:13:06 UTC：工程/附件唯一计划与共享026交接、S01配置范围归还、125源候选组成纯metadata批。4个相关source解析/人读字段完整；产品目录无改，不重复工程测试。实际123源旧回执保留，125实际部署另记；个人b1c/v12不动。见[本批记录](../../docs/evidence/i02/attachment-engineering-metadata.json)。
+
+2026-10-06T10:18:50.449758+00:00：已审R05D配置与SVC04独立网页发布组合接收，18项逐文件相同、root类型检查exit0；不重跑已核72/15与原浏览器/PG。首次类型命令退出码包装失败保留，后一次独立记录exit0。个人服务不动。见[固定组合](../../docs/evidence/i02/launch-web-release-integration.json)。
+
+2026-10-06T10:22:16.377582+00:00：固定架构图2c316（源码基线f181）五执行源hash精确相同、renderer/CSS保持；126来源含TUI01B与唯一D06新树。原独审15/浏览器证据复用，不重跑。其他仅明确文档与领取交接，见[本批记录](../../docs/evidence/i02/shared-ack-architecture-integration.json)。

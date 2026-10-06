@@ -1,0 +1,59 @@
+{
+  "recordedAt": "2026-10-06 09:00:20 UTC",
+  "implementationTarget": "b2cbbca5f823e122ec4e234e16fb7ef45a063af9",
+  "base": "ca4c3f723d2f786601e7cc9bd0363d756d974810",
+  "executionSourceCommit": "a3bf1b0a8122de23e72722e0d36e4c421f954f73",
+  "executionSourceDirty": " M docs/evidence/wpf-steering-control/quality.md\n M plans/wpf-steering-control/status.md\n?? apps/web/src/conversation-steering/\n?? apps/web/test/conversation-steering.browser.ts\n?? apps/web/test/conversation-steering.fixture.ts\n?? apps/web/test/conversation-steering.test.ts\n?? docs/evidence/wpf-steering-control/before-interleaving-fix-development-browser.json\n?? docs/evidence/wpf-steering-control/before-interleaving-fix-production-browser.json\n?? docs/evidence/wpf-steering-control/before-stale-fix-development-browser.json\n?? docs/evidence/wpf-steering-control/before-stale-fix-production-browser.json\n?? docs/evidence/wpf-steering-control/development-browser.json\n?? docs/evidence/wpf-steering-control/development-browser.log\n?? docs/evidence/wpf-steering-control/development-dark-1280.png\n?? docs/evidence/wpf-steering-control/development-dark-390.png\n?? docs/evidence/wpf-steering-control/development-light-1280.png\n?? docs/evidence/wpf-steering-control/development-light-390.png\n?? docs/evidence/wpf-steering-control/direct.log\n?? docs/evidence/wpf-steering-control/first-development-browser.json\n?? docs/evidence/wpf-steering-control/first-development-browser.log\n?? docs/evidence/wpf-steering-control/first-development-failure.png\n?? docs/evidence/wpf-steering-control/first-direct.log\n?? docs/evidence/wpf-steering-control/first-typecheck.log\n?? docs/evidence/wpf-steering-control/history-budget-red.log\n?? docs/evidence/wpf-steering-control/install.log\n?? docs/evidence/wpf-steering-control/interleaving-red.log\n?? docs/evidence/wpf-steering-control/production-browser.json\n?? docs/evidence/wpf-steering-control/production-browser.log\n?? docs/evidence/wpf-steering-control/production-dark-1280.png\n?? docs/evidence/wpf-steering-control/production-dark-390.png\n?? docs/evidence/wpf-steering-control/production-light-1280.png\n?? docs/evidence/wpf-steering-control/production-light-390.png\n?? docs/evidence/wpf-steering-control/second-typecheck.log\n?? docs/evidence/wpf-steering-control/typecheck.log\n",
+  "binding": "Owner ran checks before the implementation commit. Six source SHA256 values in both browser reports match the later fixed target; no source edits followed those checks. Direct/typecheck logs are retained with their actual execution times.",
+  "sourceFiles": {
+    "apps/web/src/conversation-steering/SteeringControl.tsx": "ad001378fe9528e8e5741c94e64e840ab09dc6236289a0eb723922ed674e15e9",
+    "apps/web/src/conversation-steering/control.ts": "be419bae85345d5d12d83f4a9fa3067c4ec479ca001dbda86fa4b3360dcbddc2",
+    "apps/web/src/conversation-steering/steering.css": "1ff9acd487e6d53681e32301d8c098df8a46d6669e095b7330ab41111045e154",
+    "apps/web/test/conversation-steering.browser.ts": "6631a807ad989d725e24450e6d9fc1155722456a63bebd9e9f6c27ae41d486d1",
+    "apps/web/test/conversation-steering.fixture.ts": "7a231d9c723650d05c22124914b6e31abcd25ba566ba309729cf21fd635b95ae",
+    "apps/web/test/conversation-steering.test.ts": "6c277dfb07d5335bbb3738cf8d5e78a9caee1e5339ca7f662ae58b96e89c3d1f"
+  },
+  "direct": {
+    "tests": 33,
+    "exitCode": 0,
+    "startedLocal": "2026-10-06 01:58:33 -07:00",
+    "log": "direct.log"
+  },
+  "typecheck": {
+    "exitCode": 0,
+    "log": "typecheck.log"
+  },
+  "browser": {
+    "development": {
+      "observedAt": "2026-10-06T08:59:00.755Z",
+      "checks": 8,
+      "errors": [],
+      "failure": null,
+      "report": "development-browser.json"
+    },
+    "production": {
+      "observedAt": "2026-10-06T08:59:10.737Z",
+      "checks": 8,
+      "errors": [],
+      "failure": null,
+      "report": "production-browser.json"
+    }
+  },
+  "sourceDiffCheck": {
+    "exitCode": 0,
+    "scope": [
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversation-steering/steering.css",
+      "apps/web/test/conversation-steering.browser.ts",
+      "apps/web/test/conversation-steering.fixture.ts",
+      "apps/web/test/conversation-steering.test.ts"
+    ]
+  },
+  "limitations": [
+    "Independent module, not App/P01 wiring",
+    "Public FlowClient against isolated HTTP fixture; no real center, runner, provider, DB or model calls",
+    "Page-local uncertain receipt recovery only; reload/connection replacement loses local keys",
+    "Production build is this fixture, not complete product performance validation"
+  ]
+}

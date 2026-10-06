@@ -1,0 +1,42 @@
+✔ explicit two-level declarations resolve without changing progress or inferring slash-separated leads (1.630041ms)
+✔ explicit big task can omit its redundant self ID, but old tasks do not become big implicitly (0.113583ms)
+✔ duplicate fields and multi-value parents remain unknown and retain declarations (0.177084ms)
+✔ the actual status parser retains duplicate rows instead of trusting the last value (2.159625ms)
+✔ ID and canonical plan path must both match before creating a navigation action (0.159333ms)
+✔ self, cycle, and third level are unknown, including MATURE-shaped IDs (0.143834ms)
+✔ unknown parent is pending registration; registered legacy parent remains unknown (0.073375ms)
+✔ registered missing parent stays inspectable but never known (0.078458ms)
+✔ registered frozen parent stays inspectable but never known (0.068583ms)
+✔ registered stale parent stays inspectable but never known (0.096709ms)
+✔ invalid own source invalidates relation and co-lead, without borrowing parent ownership (0.069792ms)
+✔ contradictory big identity, layer or self plan does not resolve (0.080792ms)
+✔ external and malicious link declarations never become locations, bounded raw text remains visible (0.131125ms)
+✖ actual aggregation follows status changes, missing/frozen sources, and registered-only documents (254.276208ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 13
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 362.882167
+
+✖ failing tests:
+
+test at apps/execution-dashboard/test/task-links.test.mjs:98:1
+✖ actual aggregation follows status changes, missing/frozen sources, and registered-only documents (254.276208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  404 !== 403
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links/apps/execution-dashboard/test/task-links.test.mjs:107:128)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 404,
+    expected: 403,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-10-06T09:30:41.855472+00:00",
+  "fixedMain": "3418fe682944145494463dca9e09f89c8b9c2295",
+  "files": [
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 19269,
+      "sha256": "3659f874a9ac06963cedb426068fdd481227e861abb9be19c22a68f4844a4439"
+    },
+    {
+      "path": "apps/runner/src/verifier.ts",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 5543,
+      "sha256": "6587cee21f105353943da96d57982768984bfbd54ad83ca94dd4a6ad9843ab19"
+    },
+    {
+      "path": "plans/e01-harness-probes/plan.md",
+      "bytes": 3986,
+      "sha256": "35047853d281256911d0051d5d524cd093e1b185b9e14dda7796b0bd13b707d5"
+    }
+  ],
+  "providerCalls": 0,
+  "testsRun": 0,
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "applied": "local discovery; cohesive small interfaces; genuine reuse; error/resource/evidence boundaries"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "applied": "local discovery; cohesive small interfaces; genuine reuse; error/resource/evidence boundaries"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "applied": "local discovery; cohesive small interfaces; genuine reuse; error/resource/evidence boundaries"
+    }
+  ]
+}

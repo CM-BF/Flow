@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration
+
+ ✓ apps/runner/src/execution-profiles.test.ts (13 tests) 2188ms
+   ✓ publishes from the real startup entry before polling (accepted: true, steering: false)  840ms
+   ✓ publishes from the real startup entry before polling (accepted: false, steering: false)  370ms
+   ✓ publishes from the real startup entry before polling (accepted: true, steering: true)  580ms
+   ✓ publishes from the real startup entry before polling (accepted: false, steering: true)  365ms
+ ✓ apps/web/test/conversation-steering-integration.test.ts (8 tests) 1173ms
+     ✓ bounded visited bindings never silently evict unknown receipts; explicit close releases only that view  527ms
+ ✓ apps/web/test/conversation-activity-integration.test.ts (7 tests) 95ms
+ ✓ apps/runner/src/main-concurrency.test.ts (22 tests) 25ms
+
+ Test Files  4 passed (4)
+      Tests  50 passed (50)
+   Start at  02:56:20
+   Duration  6.51s (transform 912ms, setup 0ms, import 2.66s, tests 3.48s, environment 0ms)
+

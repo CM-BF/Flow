@@ -463,4 +463,6 @@ UI 插件负责渲染或触发公共命令，不能成为某项业务执行的�
 
 2026-10-06 02:05 UTC：用户明确继续完整计划。逐项追溯见 [完整验收矩阵](full-plan-matrix.md)，M1通过仅是基础；后续跨任务、动态计划、协议、KB、context成本、插件、harness与容量不能由M1/toy代替。
 
-2026-10-06 08:49 UTC协作更新：当前职责和并发以[OPS-001](../ops-001-status-review/plan.md)及根AGENTS为准；本计划早期单队分工/额度是历史。GO不微操co-lead，普通回执由dashboard传递，重要接口/范围/资源裁决才直接短消息。
+2026-10-06 08:49 UTC协作记录（随后由用户最终规则覆盖）：当前职责、两层任务和跨层消息预算以[OPS-001](../ops-001-status-review/plan.md)及根AGENTS为准；早期分工/额度和泛化重要接口消息例外均为历史。co-lead→GO仅每大task独立blockers+完整Done一次，日常接口/领取/集成由status→dashboard传递。
+
+2026-10-06 09:45 UTC发布后继：FLOW-001-T04/REQ-19增加SVC04独立Web artifact发布与回退。沿用已审SVC03固定artifact/自有进程/锁，纯前端更新不能要求后台任务清零；旧tab的lazy assets需精确manifest白名单、有界保留且不自动reload。先0provider自有fixture验证后台持续、失败保旧和rollback，真实安装切换另走现有受控流程。现SVC03仍是固定单artifact服务，以上是授权后继，不冒称已实现；co-lead已安排原runner_owner在TUI审查修复安全停点准备独立scope。

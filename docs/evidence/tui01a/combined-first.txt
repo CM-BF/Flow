@@ -1,0 +1,46 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations
+
+stdout | apps/tui/src/journey.test.ts > real HTTP lost ACK reuses original key, PTY exit leaves execution running, reopen/headless recover final history
+TUI01A PTY send {"error": "PTY never entered raw mode", "output": "\u001b[?2026h\u001b[?25l\u001b[1mFlow \u00b7 not observing\u001b[22m\r\n\u001b[2mSelect /conversations or /new. /help lists commands.\u001b[22m\r\n\u001b[2mUse /help or /conversations.\u001b[22m\r\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\r\n\u2502 \u001b[32m\u203a \u001b[39m\u001b[2mMessage or /command\u001b[22m                                                                            \u2502\r\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\r\n\u001b[2mEnter send \u00b7 Ctrl-J newline \u00b7 Tab complete \u00b7 Ctrl-C disconnect and quit\u001b[22m\r\n"}
+Traceback (most recent call last):
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-conversations/apps/tui/test-fixtures/terminal_driver.py", line 26, in <module>
+    if time.monotonic()>deadline: raise RuntimeError('PTY never entered raw mode')
+RuntimeError: PTY never entered raw mode
+
+
+stdout | apps/tui/src/journey.test.ts
+TUI01A cleanup {"database":"flow_tui01a_c0c8dd5f74ca","remaining":[],"ownedRunnerStopped":true}
+
+ ❯ apps/tui/src/journey.test.ts (1 test | 1 failed) 6823ms
+   × real HTTP lost ACK reuses original key, PTY exit leaves execution running, reopen/headless recover final history 5441ms
+ ✓ packages/interaction/src/controller.test.ts (9 tests) 8ms
+ ✓ apps/tui/src/terminal.test.ts (3 tests) 108ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/tui/src/journey.test.ts > real HTTP lost ACK reuses original key, PTY exit leaves execution running, reopen/headless recover final history
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ apps/tui/src/journey.test.ts:85:175
+     83|   const environment = { PATH: '/opt/homebrew/opt/node@24/bin:/usr/bin:…
+     84|     FLOW_TUI_STATE_DIR: join(directory, 'state'), TUI_TEST_NODE: proce…
+     85|   const first = await child('/usr/bin/python3', ['apps/tui/test-fixtur…
+       |                                                                                                                                                                               ^
+     86|   const afterExit = await client.conversation(conversationId!); expect…
+     87|   expect(afterExit.lastTurn?.user.text).toBe(`${nonce} 中文\nsecond🙂`);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 12 passed (13)
+   Start at  02:32:48
+   Duration  8.47s (transform 449ms, setup 0ms, import 1.30s, tests 6.94s, environment 0ms)
+

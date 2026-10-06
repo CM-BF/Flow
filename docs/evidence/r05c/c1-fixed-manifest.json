@@ -1,0 +1,297 @@
+{
+  "sourceCommit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c",
+  "baseCommit": "3418fe682944145494463dca9e09f89c8b9c2295",
+  "comparisonInput": "fa39510aca91e032af7925cd79e81d27873da03c",
+  "source": [
+    {
+      "path": "apps/runner/src/execution-profiles.test.ts",
+      "bytes": 14503,
+      "sha256": "1332ee5b8539cbb723e4ea9bf1a5cdaf771a0d7bb5344167c2f3cc0e8c389033",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+      "bytes": 9014,
+      "sha256": "65bc3e97e891f6fb1767f349e31b3bf4fe92b25ed9daaf331c471c5801e373cb",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 6469,
+      "sha256": "59ca472b509f580512b50d6c71406e3e66f411aabd2c8622a90c7ad703821df5",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+      "bytes": 2430,
+      "sha256": "8140bc49ddf94ee35ff26760a97f7cf5975834f250a87dc6a38d77e3ddde9dd0",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "bytes": 4041,
+      "sha256": "31c5b334c93f2ca3d1f16d0d1fb8b1233b53fd5254d9975dbf73d23e90159ec9",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "bytes": 851,
+      "sha256": "03575f0f86fdb1b15ceb9298fac13add895b5f92b5a80165ba2e13019639205a",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/integration.test.ts",
+      "bytes": 11320,
+      "sha256": "68ac70664589b5ab31ccea56a2534a6eed6782b2f76356e08adf42ad1f0ca539",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/peer.mjs",
+      "bytes": 6699,
+      "sha256": "287e78f0b10c1c008d13365c4bcc099bcae8e6e55a1e2ebbb85c7da85542ff63",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/policy.ts",
+      "bytes": 1696,
+      "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "bytes": 2016,
+      "sha256": "57d5ce950fbecd4193a432f5dc9fad8b8790ab5a00888ab0ff4095fe17c636d5",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "bytes": 1064,
+      "sha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "bytes": 1134,
+      "sha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    }
+  ],
+  "validation": [
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+      "bytes": 9014,
+      "sha256": "65bc3e97e891f6fb1767f349e31b3bf4fe92b25ed9daaf331c471c5801e373cb",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+      "bytes": 2430,
+      "sha256": "8140bc49ddf94ee35ff26760a97f7cf5975834f250a87dc6a38d77e3ddde9dd0",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/integration.test.ts",
+      "bytes": 11320,
+      "sha256": "68ac70664589b5ab31ccea56a2534a6eed6782b2f76356e08adf42ad1f0ca539",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.test.ts",
+      "bytes": 14503,
+      "sha256": "1332ee5b8539cbb723e4ea9bf1a5cdaf771a0d7bb5344167c2f3cc0e8c389033",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/native-harness.test.ts",
+      "bytes": 3470,
+      "sha256": "6d0e715e34bdc8aa1783617a7fff29ba2e60fa0c0b83ff93d4383397c58c4efb",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 3151,
+      "sha256": "cfcdfa0887f544e327261fa0876a50d2080e0de42c8b2c244f1a43b470b96d84",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "packages/client/src/execution-profiles.test.ts",
+      "bytes": 5679,
+      "sha256": "3d3a28aa0cadae83e108a288fe99464be5f69372dc1a614a7a1e2d92bbab8a26",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "packages/client/src/native-profile-publication.test.ts",
+      "bytes": 3443,
+      "sha256": "bb4a5d3a8ba0355be49653ffc4a965c3569a5c9aa80f8f7ecb92c95328b9028a",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.test.ts",
+      "bytes": 2823,
+      "sha256": "63e3cfb96521dab7c90c5b43c0a325d2d97832e7ef09943ae654edbb536629ea",
+      "commit": "7127b5bfda3135670e1595dd4b6e90c4c9ea416c"
+    }
+  ],
+  "approvedInputs": [
+    {
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb",
+      "commit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14314,
+      "sha256": "5437645e446b53f558cb960582f09a90f1df49fb0c6a90be24c36d239f057bd2",
+      "commit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "apps/runner/src/runner.test.ts",
+      "bytes": 32676,
+      "sha256": "8f6b91429eef8c1135e33428ec7a2f68f8ea5103068becc1535423473c15e5eb",
+      "commit": "27022407f175597d1d9c897f23f59261f24ab49b"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.mjs",
+      "bytes": 5179,
+      "sha256": "01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad",
+      "commit": "6313c885c5c5524faedba9b8c49e4d3e164028d5"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.d.mts",
+      "bytes": 716,
+      "sha256": "8595d7c661688e9c2aad8cb3a69530a904167798cccc218bd0a450bd8e8e3e6c",
+      "commit": "6313c885c5c5524faedba9b8c49e4d3e164028d5"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 38126,
+      "sha256": "28ac0941db1306a4276ae4217d4d680c937012c6090878c05d79cc501da6441b",
+      "commit": "095bdb849a4ba688be7c2b55d90021b9d15e4b53"
+    },
+    {
+      "path": "packages/client/src/native-profile-publication.test.ts",
+      "bytes": 3443,
+      "sha256": "bb4a5d3a8ba0355be49653ffc4a965c3569a5c9aa80f8f7ecb92c95328b9028a",
+      "commit": "095bdb849a4ba688be7c2b55d90021b9d15e4b53"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/evidence/r05c/c1-adapter-tests.json",
+      "bytes": 272,
+      "sha256": "2cd4a21219ebcfba3c25892af19029b1649346f450241fd22a90c22d8ec79f75"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-adapter-tests.stdout",
+      "bytes": 334,
+      "sha256": "7b90d93a209751096fa404182da0a3d19904eb8f340d6b861bfa0369b5b6036e"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-claim-check.json",
+      "bytes": 1227,
+      "sha256": "987949764ac4f7746889aa89d0fd32ff42e0e7490e6d5ca0570d1c590012d359"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-consumers.json",
+      "bytes": 487,
+      "sha256": "450608c781913bb00b55a6afd4931caaf3ac26f30813924514cf6c578e7b2df4"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-consumers.stdout",
+      "bytes": 1057,
+      "sha256": "8069061ce59189d9eb542987270d518a759ca202f39555b4192f8cc85ff5af9d"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-final-adapter-tests.json",
+      "bytes": 359,
+      "sha256": "28953bad74f4734e261b453ac8e93e6e97ea13739b7052a3d64f050e4d3a5573"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-final-adapter-tests.stdout",
+      "bytes": 409,
+      "sha256": "b4a8567e59746e029c6a1f39843236618ca1042498069dc22d77ee26c86b7f12"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-pg-resources.json",
+      "bytes": 996,
+      "sha256": "78e366cdd39d65ca3e2a78d25af35025c7ed1a1308129003ab5745198f0995cd"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-pg-selected-resources.json",
+      "bytes": 341,
+      "sha256": "57e297bd1122a0d76e18f8f247d9f38a1ff728498d8b07a5fb644f11acb9b2a5"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-pg-selected.json",
+      "bytes": 532,
+      "sha256": "99bb1b82096a5af7ef87b2b33f7fa95e40c20b86bfbbea73392da907d3c21911"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-pg-selected.stdout",
+      "bytes": 482,
+      "sha256": "ede350c7fcb8da4663e6b22235a9d779eb4d39d742f0a8eec550fad2828e082e"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-pg-tests.json",
+      "bytes": 328,
+      "sha256": "fe170e5be1d84b353f2b2494141755df68e0ffad39287b3ba72030084c2c5b77"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-pg-tests.stdout",
+      "bytes": 1941,
+      "sha256": "4d4b6939deaca540428fc1920ae1a50bbbc3006b9064c6c6da23898859428c46"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-shared-inputs.json",
+      "bytes": 789,
+      "sha256": "3bc896e983ac90795f00058eb7ce1e16a1caeba58e66fc0a97805b2035cb1f3c"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-typecheck-initial.json",
+      "bytes": 283,
+      "sha256": "de985ee26192e5602f55de6a04a2af72aa28de84230d1d3f7e5756e913f86147"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-typecheck-initial.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-typecheck.json",
+      "bytes": 149,
+      "sha256": "bf0984afdee7000ee134e3604959628bb8d672fb0d96539ef2c7b45a296b5917"
+    },
+    {
+      "path": "docs/evidence/r05c/c1-typecheck.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "distinctC1": 95,
+    "adapter": 44,
+    "observationBounds": 4,
+    "directConsumers": 42,
+    "pgDistinct": 5,
+    "pgFirst": {
+      "passed": 4,
+      "failed": 1
+    },
+    "pgRepairSelected": {
+      "passed": 1,
+      "unselected": 4
+    },
+    "typecheckExitCode": 0,
+    "nativeProviderCalls": 0,
+    "appServerStarts": 0,
+    "nativeAuthRequests": 0
+  },
+  "evidencePolicy": "Raw process outputs preserved including failed test-only SQL query. Selected rerun retained. No provider evidence inferred."
+}

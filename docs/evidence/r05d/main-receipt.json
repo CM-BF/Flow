@@ -1,0 +1,33 @@
+{
+  "mainCommit": "41315b033deb0b1953484359b686c0b228997367",
+  "reviewedTarget": "178ef49e568147849e63e08b3f7211ee5df823d3",
+  "source": [
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 7311,
+      "sha256": "337f7ee2af4dfc9d60f3f82c38f573dbab4f828d3ab1cba40b48247da347c190",
+      "commit": "178ef49e568147849e63e08b3f7211ee5df823d3"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa",
+      "commit": "178ef49e568147849e63e08b3f7211ee5df823d3"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+      "bytes": 2135,
+      "sha256": "4e4cc90057bc5f700f1485578d7b71f78f9034b87c26f6a7c65218c28374fbd6",
+      "commit": "178ef49e568147849e63e08b3f7211ee5df823d3"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "bytes": 757,
+      "sha256": "e3e32c49f81f665c90093c50c59913756f74a2ea4bfc261dbdc2afd06dfc3aef",
+      "commit": "178ef49e568147849e63e08b3f7211ee5df823d3"
+    }
+  ],
+  "sourceEquality": "verified from local Git objects",
+  "integrationChecks": "Execution Lead receipt: root noEmit exit0; protected main/runtime/profile/lock unchanged; 72 checks not rerun",
+  "scope": "D0 configuration and injected construction only; production factory/app-server NOT_RUN"
+}

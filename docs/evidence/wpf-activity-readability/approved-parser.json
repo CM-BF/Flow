@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-06T09:48:23.625Z",
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "活动状态更简短，技术信息按需展开；错误、未知与恢复入口保持可见",
+      "next": "将已通过独立审查的活动区可读性改进集成到主线",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "f2bcaae6623176acd718cf53707892154579970a",
+      "scopes": [
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "apps/web/src/conversation-activity/native/tool.tsx",
+        "apps/web/test/conversation-activity-integration.browser.ts",
+        "apps/web/test/conversation-activity-integration.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-ACTIVITYREAD01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/web-activity-readability",
+    "branchState": "completed",
+    "updatedAt": "2026-10-06T09:47:39.000Z",
+    "updatedRecord": "2026-10-06 09:47:39 UTC",
+    "todos": [
+      {
+        "id": "WPF-ACTIVITYREAD01-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[take](../../docs/evidence/wpf-activity-readability/take-receipt.json)、[quality](../../docs/evidence/wpf-activity-readability/quality.md)"
+      },
+      {
+        "id": "WPF-ACTIVITYREAD01-02",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Interface](../../docs/evidence/wpf-activity-readability/interface.md)，固定显示实现与验证完成"
+      },
+      {
+        "id": "WPF-ACTIVITYREAD01-03",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[validation](../../docs/evidence/wpf-activity-readability/validation.md)"
+      },
+      {
+        "id": "WPF-ACTIVITYREAD01-04",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "clean-code/固定独审APPROVED/交付完成；main接收记录待正式回执"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "3418fe682944145494463dca9e09f89c8b9c2295 / 当前Git聚合",
+    "declaredDirty": "四实现/专测已固定；metadata提交后clean，以Git聚合为准",
+    "checks": {
+      "state": "passed",
+      "target": "f2bcaae6623176acd718cf53707892154579970a",
+      "record": "PASSED f2bcaae6623176acd718cf53707892154579970a; 作者direct16、Web tsc/build、dev13/prod12；root独立direct16及局部CUA；[证据](../../docs/evidence/wpf-activity-readability/validation.md)"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED f2bcaae6623176acd718cf53707892154579970a，root，09:47:23 UTC后",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED**",
+    "target": "f2bcaae6623176acd718cf53707892154579970a"
+  }
+}

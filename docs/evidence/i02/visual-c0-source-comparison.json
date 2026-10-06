@@ -1,0 +1,132 @@
+{
+  "observedAt": "2026-10-06T09:38:17.567230+00:00",
+  "base": "80ba95ad70cdf724251be4d88130b6bac56d3606",
+  "comparison": [
+    {
+      "path": "apps/web/src/assistant-ui.css",
+      "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+      "bytes": 6661,
+      "sha256": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/web/src/plugins/builtins.ts",
+      "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+      "bytes": 2770,
+      "sha256": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+      "bytes": 21387,
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+      "bytes": 13124,
+      "sha256": "52a733934b498c8940c710898f34576c035b37a810bc0b8857600cebe8f8e3c4",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/web/src/themes.ts",
+      "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+      "bytes": 1822,
+      "sha256": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/web/test/visual-shell.browser.ts",
+      "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+      "bytes": 16162,
+      "sha256": "ce0141c0fde1432679630242b3c28761ccfa1619b4e7c6929aa36cd60badc505",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/web/test/visual-shell.fixture.ts",
+      "target": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+      "bytes": 4829,
+      "sha256": "334c6cf7519b3f7463e18cb6a89f92f91331c1f94f2dccd866e1c2df74eefcf0",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "target": "27022407f175597d1d9c897f23f59261f24ab49b",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "target": "27022407f175597d1d9c897f23f59261f24ab49b",
+      "bytes": 14314,
+      "sha256": "5437645e446b53f558cb960582f09a90f1df49fb0c6a90be24c36d239f057bd2",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/runner.test.ts",
+      "target": "27022407f175597d1d9c897f23f59261f24ab49b",
+      "bytes": 32676,
+      "sha256": "8f6b91429eef8c1135e33428ec7a2f68f8ea5103068becc1535423473c15e5eb",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.mjs",
+      "target": "6313c885c5c5524faedba9b8c49e4d3e164028d5",
+      "bytes": 5179,
+      "sha256": "01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad",
+      "matchesTarget": true,
+      "matchesManifest": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.d.mts",
+      "target": "6313c885c5c5524faedba9b8c49e4d3e164028d5",
+      "bytes": 716,
+      "sha256": "8595d7c661688e9c2aad8cb3a69530a904167798cccc218bd0a450bd8e8e3e6c",
+      "matchesTarget": true,
+      "matchesManifest": null
+    }
+  ],
+  "providerCalls": 0,
+  "personalRuntimeChanged": false,
+  "reviews": {
+    "visual": "Web root APPROVED a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231, fixed 7 source; 17 direct and development/production 8 each reused",
+    "c0": "Execution Lead independent readonly APPROVED 27022407f175597d1d9c897f23f59261f24ab49b, 3 source + runtime/control/outbox/admission; fixed/working 17 manifest entries matched; no tests repeated",
+    "projection": "Execution Lead independent readonly APPROVED 6313c885c5c5524faedba9b8c49e4d3e164028d5: complete pure projection + d.mts; algorithm byte identical to Mika approved 0d0524 fixed source; source and 3 evidence hashes exact; 15 actual consumer checks read, no rerun. Only evidence projection; raw AssertionError must be discarded by future adapter."
+  },
+  "validation": {
+    "rootTypecheckExit": 0,
+    "webTypecheckExit": 0,
+    "logs": [
+      {
+        "path": "docs/evidence/i02/visual-c0-root-typecheck.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "docs/evidence/i02/visual-c0-web-typecheck.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "typechecksIncludeProjection": true
+  },
+  "limits": [
+    "No C1 Codex adapter or actual provider validation",
+    "Personal runtime and static Web remain b1c2e398/v12; no tab reload",
+    "Visual full MATURE-01 goal remains open",
+    "No old PG/browser test matrix repeated"
+  ]
+}

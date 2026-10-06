@@ -1,3 +1,4 @@
+import { SteeringSurfaces, type SteeringIdentity } from "./plugin-integration/steering";
 import {
   Activity,
   useEffect,
@@ -233,7 +234,7 @@ function ChatPane({
   );
   const [confirm, setConfirm] = useState(false);
   const task = state.task;
-  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
+  if (view.conversation) return <section className="flow-chat-pane" onFocusCapture={onActivate} onPointerDown={onActivate} aria-label={view.conversation.getSnapshot().snapshot?.conversation.title ?? "New conversation"}><div className="flow-thread"><ConversationThread viewKey={view.key} viewId={viewId} visible={visible} projection={view.conversation} drafts={drafts} profiles={profiles} profileSelection={profileSelection} onProfileSelection={onProfileSelection} onAccepted={onAccepted} onInspect={onInspect} onOpenTask={onOpenTask} onCurrentTask={id => { if (view.projection.getSnapshot().task?.id !== id) void view.projection.select(id); }} /></div></section>;
   if (!task && !viewId.startsWith("draft-")) return <section className="flow-no-chat" aria-label="Task loading state">
     {state.error ? <><p role="alert">Could not load this task: {state.error}</p><Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button></> : <p role="status">{state.connection === "disconnected" ? "Task is not loaded. Reconnect to the center or retry." : "Loading task…"}</p>}
     {!state.error && state.connection === "disconnected" && <Button variant="outline" onClick={() => void view.projection.select(viewId)}>Retry task</Button>}
@@ -510,7 +511,8 @@ function Workspace({
     setPanelOpen(false);
     requestAnimationFrame(() => document.querySelector<HTMLButtonElement>('.flow-workspace-bar button[aria-label="Toggle workspace panel"]')?.focus());
   };
-  const close = (id: string) => {
+  const [leaving, setLeaving] = useState<{ kind: "view"; id: string } | { kind: "connection" } | null>(null);
+  const closeNow = (id: string) => {
     const next = closeChat(groups, id);
     setGroups(next);
     const targetGroup =
@@ -526,10 +528,12 @@ function Workspace({
       target?.focus();
     });
     const closing = views.get(id);
+    if (closing) session?.steering.closeView(closing.key);
     if (closing?.conversation) { closing.conversation.setVisible(false); closing.projection.setVisible(false); }
     else { closing?.projection.disconnect(); views.delete(id); drafts.delete(id); }
     void refreshChats();
   };
+  const close = (id: string) => { const view = views.get(id); if (view && session?.steering.risks(view.key)) setLeaving({ kind: "view", id }); else closeNow(id); };
   const accepted = (oldId: string, id: string) => {
     void refreshChats();
     const view = views.get(oldId);
@@ -566,10 +570,31 @@ function Workspace({
     if (state?.snapshot?.conversation.id !== identity.conversationId || turn?.task.id !== identity.taskId || userMessageId(turn) !== identity.messageId)
       throw Error("This activity does not belong to the bound conversation view.");
   };
+  const ownsSteering = (identity: SteeringIdentity) => {
+    const view = [...views.values()].find(item => item.key === identity.viewKey), state = view?.conversation?.getSnapshot();
+    return state?.snapshot?.conversation.id === identity.conversationId && state.turns.some(turn => turn.id === identity.turnId && turn.task.id === identity.taskId && userMessageId(turn) === identity.messageId);
+  };
   const actions: AppActions = {
     knowsTask: id => Boolean(taskView(id)) || conversationOwnsTask(id) || catalog.getSnapshot().tasks.some(task => task.id === id),
     task: id => taskView(id)?.[1].projection.getSnapshot().task ?? null,
     hasDraft: id => Boolean(views.get(id)?.conversation) || (id.startsWith("draft-") && views.has(id)),
+    steering: {
+      // Explicit trusted owner-connection policy. Server admission/POST still decides capability and attempt authority.
+      allowed: identity => ownsSteering(identity),
+      admission: (identity, options, signal) => { if (!ownsSteering(identity)) throw Error("Expired steering view."); return client.steeringAdmission(identity.taskId, options, signal); },
+      state: (identity, options, signal) => { if (!ownsSteering(identity)) throw Error("Expired steering view."); return client.steering(identity.taskId, options, signal); },
+      accept: (identity, input, key, signal) => { if (!ownsSteering(identity)) throw Error("Expired steering view."); return client.acceptSteering(identity.taskId, input, key, signal); },
+    },
+    knowledge: {
+      current: identity => {
+        const view = [...views.values()].find(view => view.key === identity.viewKey);
+        const conversation = view?.conversation?.getSnapshot().snapshot?.conversation;
+        return !!view?.conversation && (conversation?.id ?? null) === identity.conversationId && (conversation?.projectId ?? null) === identity.projectId;
+      },
+      projects: (_identity, after, signal) => client.projects({ limit: 40, ...(after ? { after } : {}) }, signal),
+      search: (identity, query, signal) => client.searchKnowledge(identity.projectId!, query, signal),
+      resolve: (identity, citation, signal) => client.resolveKnowledge(identity.projectId!, citation, signal),
+    },
     activity: {
       events: (identity, after) => { assertActivity(identity); return client.events(identity.taskId, after); },
       detail: (identity, id, signal) => { assertActivity(identity); return client.conversationDetail(identity.conversationId, identity.turnId, id, signal); },
@@ -612,9 +637,16 @@ function Workspace({
       selectedTaskId ? { kind: "task", taskId: selectedTaskId } : selectedId ? { kind: "composer", viewId: selectedId, isDraft: true } : { kind: "global" });
     session?.publishTheme(theme);
   });
+  useEffect(() => {
+    const preventLoss = (event: BeforeUnloadEvent) => { if (session?.steering.risks()) { event.preventDefault(); event.returnValue = ""; } };
+    window.addEventListener("beforeunload", preventLoss); return () => window.removeEventListener("beforeunload", preventLoss);
+  }, [session]);
+  const disconnectNow = () => { void session?.dispose(); onDisconnect(); };
   if (!session) return <p role="status">Opening workspace…</p>;
   return (
-    <PluginProvider session={session}><div className="flow-shell">
+    <PluginProvider session={session}><SteeringSurfaces workspace={session.steering} />
+    <Dialog open={!!leaving} onOpenChange={open => { if (!open) setLeaving(null); }}><DialogContent><DialogHeader><DialogTitle>Leave unconfirmed steering receipts?</DialogTitle><DialogDescription>Leaving loses this page’s original command keys and local recovery record. A command may already be accepted or running. Closing this view does not cancel work at the center.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" onClick={() => setLeaving(null)}>Keep this page</Button><Button onClick={() => { const destination = leaving; setLeaving(null); if (destination?.kind === "view") closeNow(destination.id); else if (destination) disconnectNow(); }}>Leave and discard local recovery</Button></DialogFooter></DialogContent></Dialog>
+    <div className="flow-shell">
       <nav
         data-extension-slot="activityBar.primary"
         className="flow-rail"
@@ -669,7 +701,7 @@ function Workspace({
           </IconButton>
           <PluginRail />
           <PluginSettings registry={registry} />
-          <IconButton label="Change connection" onClick={() => { void session.dispose(); onDisconnect(); }}>
+          <IconButton label="Change connection" onClick={() => { if (session.steering.risks()) setLeaving({ kind: "connection" }); else disconnectNow(); }}>
             <Settings2 size={18} />
           </IconButton>
         </div>

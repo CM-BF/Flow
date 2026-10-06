@@ -8,13 +8,15 @@ import { chromium, expect } from "@playwright/test";
 import type { NativeActivity, NativeActivityReference } from "@flow/contracts";
 import { startQueuePreview } from "./conversation-queue.fixture";
 const root=fileURLToPath(new URL("../../../",import.meta.url));
-const output=root+"docs/evidence/wpf-activity-i01/";
+const output=root+"docs/evidence/wpf-activity-readability/";
 const production=process.argv.includes("--production"),offlineOnly=process.argv.includes("--offline-only"),label=(production?"production":"development")+(offlineOnly?"-offline":"");
 const preview=await startQueuePreview(production);
-const sourcePaths=(JSON.parse(await readFile(output+"take-receipt.json","utf8")).claim.scope as string[]).filter(p=>p.startsWith("apps/"));
-sourcePaths.push("apps/web/src/conversation-activity/projection.ts","apps/web/test/conversation-activity.test.ts");
+const sourcePaths=(JSON.parse(await readFile(output+"amend-receipt.json","utf8")).claim.scope as string[]).filter(p=>p.startsWith("apps/"));
+const dependencyPaths = ["apps/web/src/conversation-activity/native/projection.ts", "apps/web/src/conversation-activity/projection.ts", "apps/web/src/plugin-integration/activity.tsx", "apps/web/src/plugin-integration/react.tsx", "apps/web/src/plugin-integration/session.ts", "apps/web/src/conversations/ConversationThread.tsx", "apps/web/src/App.tsx", "apps/web/test/conversation-queue.fixture.ts", "apps/web/test/conversation.fixture.ts"];
+const dependencyFiles = Object.fromEntries(await Promise.all(dependencyPaths.map(async p => [p, createHash("sha256").update(await readFile(root+p)).digest("hex")])));
 const sourceFiles=Object.fromEntries(await Promise.all(sourcePaths.map(async p=>[p,createHash("sha256").update(await readFile(root+p)).digest("hex")])));
 const sourceCommit=execFileSync("git",["rev-parse","HEAD"],{cwd:root,encoding:"utf8"}).trim();
+const sourceDirty=execFileSync("git",["status","--porcelain"],{cwd:root,encoding:"utf8"}).trim();
 const reads:{center:number;kind:string;taskId?:string;id?:string;after?:string|null}[]=[];
 const rows=new Map<string,NativeActivityReference[]>();
 const bodies=new Map<string,NativeActivity>();
@@ -22,7 +24,7 @@ let bodyDelay=0;
 for(const [center,fixture] of [preview.first,preview.second].entries()){
  for(const chat of fixture.chats.values())for(const turn of chat.turns){
   const list:NativeActivityReference[]=[];
-  for(let n=0;n<23;n++){
+  for(let n=0;n<(chat.snapshot.conversation.id==="chat-3"?6:23);n++){
    const id=createHash("sha256").update(`${center}:${turn.task.id}:${n}`).digest("hex");
    const kind=n===1||n===2?"thinking":n===3?"unsupported":"tool";
    const row:NativeActivityReference={id,activityId:id,taskId:turn.task.id,attemptId:n>20?"retry-attempt":"attempt",eventId:`event-${n}`,sequence:n>20?n-21:n,createdAt:turn.task.createdAt,nativeSessionId:`native-${center}`,source:"claude.sdk.message",sourceMessageId:`source-${n}`,nativeMessageId:null,blockIndex:n,parentToolUseId:null,kind,phase:n===2?"redacted":kind==="tool"?"input-ready":"observed",toolUseId:kind==="tool"?`tool-${n}`:null,toolName:kind==="tool"?`Read ${n}`:null,detail:n===2?null:{id:`native-detail-${n}`,title:`Native ${n}`},status:kind==="tool"?"input-ready":n===2?"redacted":"observed"};
@@ -33,6 +35,8 @@ for(const [center,fixture] of [preview.first,preview.second].entries()){
  }
  const original=fixture.server.listeners("request")[0] as (req:IncomingMessage,res:ServerResponse)=>void;fixture.server.removeAllListeners("request");
  fixture.server.on("request",(req,res)=>{
+  // The App now negotiates patch-v1 on conversation GET; this separate fixture origin must allow that public header.
+  if(req.method==="OPTIONS"){res.writeHead(204,{"access-control-allow-origin":"*","access-control-allow-headers":"authorization,content-type,idempotency-key,x-flow-assistant-stream"});res.end();return;}
   const url=new URL(req.url??"/","http://fixture"),list=/^\/api\/tasks\/([^/]+)\/native-activities$/.exec(url.pathname),detail=/^\/api\/native-activities\/([^/]+)$/.exec(url.pathname);
   if(!list&&!detail){if(url.pathname.endsWith("/events"))reads.push({center,kind:"events"});original(req,res);return;}
   res.setHeader("access-control-allow-origin","*");res.setHeader("access-control-allow-headers","authorization,content-type");if(req.method==="OPTIONS"){res.writeHead(204);res.end();return;}
@@ -49,12 +53,18 @@ function ThreadView(){const rt=useExternalStoreRuntime({messages,convertMessage:
 function App(){const[hidden,setHidden]=useState(false);return h(PluginProvider,{session},h('button',{onClick:()=>setHidden(!hidden)},hidden?'Restore Activity':'Hide Activity'),h(Activity,{mode:hidden?'hidden':'visible'},h('section',{style:{height:'85vh',display:'flex',flexDirection:'column'}},h(ThreadView))));}createRoot(document.getElementById('root')).render(h(StrictMode,null,h(App)));`;
  const server=await createServer({root:root+'apps/web',server:{host:'127.0.0.1',port:0,proxy:{'/api':preview.centers[0]!}},plugins:[{name:'activity-consumer',resolveId(id){if(id==='/activity-consumer.tsx')return '\0activity-consumer.tsx';},load(id){if(id==='\0activity-consumer.tsx')return code;},configureServer(server){server.middlewares.use(async(req,res,next)=>{if(req.url!=='/lifetime')return next();res.setHeader('content-type','text/html');res.end(await server.transformIndexHtml('/lifetime','<!doctype html><html><body><div id="root"></div><script type="module" src="/activity-consumer.tsx"></script></body></html>'));});}}]});await server.listen();const address=server.httpServer!.address();if(!address||typeof address==='string')throw Error('lifetime address');return{server,url:`http://127.0.0.1:${address.port}/lifetime`};
 }
-const browser=await chromium.launch({channel:"chrome",headless:true});const context=await browser.newContext({viewport:{width:1280,height:900},reducedMotion:"reduce",permissions:["clipboard-read","clipboard-write"]});const page=await context.newPage();page.setDefaultTimeout(8000);
+const browser=await chromium.launch({channel:"chrome",headless:true});const context=await browser.newContext({viewport:{width:1280,height:720},reducedMotion:"reduce",permissions:["clipboard-read","clipboard-write"]});const page=await context.newPage();page.setDefaultTimeout(8000);
 const attemptedActivityRequests:string[]=[];page.on("request",request=>{if(/\/native-activities(?:\/|\?|$)|\/events(?:\?|$)/.test(request.url()))attemptedActivityRequests.push(request.url());});
 const errors:string[]=[],checks:string[]=[];let failure:string|undefined;page.on("pageerror",error=>errors.push(error.message));
 const pane=(n:number)=>page.locator(`[id="panel-conversation:chat-${n}"]`),input=(n:number)=>pane(n).getByRole("textbox",{name:"Message input",exact:true});
 const activity=(n:number)=>pane(n).locator("details[data-conversation-activity]").first();
 const open=async(n:number)=>{await page.getByRole("navigation",{name:"Conversations",exact:true}).getByRole("button",{name:`Conversation ${n}`,exact:true}).click();await expect(input(n)).toBeVisible();};
+const captures:unknown[]=[];
+async function capture(name:string) {
+ await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+ captures.push({name,at:new Date().toISOString(),geometry:await page.evaluate(()=>({viewport:{width:innerWidth,height:innerHeight},document:{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight},theme:document.documentElement.dataset.theme,regions:[...document.querySelectorAll('[aria-label="Native execution activity"]')].filter(el=>el.getClientRects().length).map(el=>{const rect=el.getBoundingClientRect();return{x:rect.x,y:rect.y,width:rect.width,height:rect.height};})}))});
+ await page.screenshot({path:output+`${label}-${name}.png`,fullPage:false});
+}
 const check=async(name:string,fn:()=>Promise<void>)=>{if(offlineOnly&&!name.startsWith("offline"))return;await fn();checks.push(name);console.log(`PASS ${name}`);};
 try{
  await page.goto(preview.url);if(production){await page.getByLabel("Owner token").fill("flow-fixture-only");await page.getByRole("button",{name:"Connect workspace"}).click();}
@@ -68,12 +78,13 @@ try{
  });
  await check("TaskSummary update refreshes displayed metadata without body requests or automatic history drain",async()=>{
   const taskId=preview.first.chats.get("chat-2")!.turns[0]!.task.id;rows.get(`0:${taskId}`)![0]!.status="unknown";preview.first.setCurrentStatus("chat-2","failed");
-  await expect(activity(2).getByRole("button",{name:"Read 0 unknown",exact:true})).toBeVisible();expect(reads.filter(r=>r.kind==="native"&&r.after!==null)).toHaveLength(0);expect(reads.filter(r=>r.kind==="body")).toHaveLength(2);
+  await expect(activity(2).getByRole("button",{name:"Read 0 Outcome unknown",exact:true})).toBeVisible();expect(reads.filter(r=>r.kind==="native"&&r.after!==null)).toHaveLength(0);expect(reads.filter(r=>r.kind==="body")).toHaveLength(2);
   await activity(2).getByRole("button",{name:"Next activity page"}).click();await expect(activity(2).locator("[data-native-activity]")).toHaveCount(3);await activity(2).getByRole("button",{name:"Previous activity page"}).click();await expect(activity(2).locator("[data-native-activity]")).toHaveCount(20);
  });
  await check("native hidden resume retains disclosure and draft with zero extra activity reads",async()=>{const before=reads.length;await open(1);await expect(pane(2)).toHaveAttribute("hidden","");await open(2);await expect(activity(2)).toHaveAttribute("open","");await expect(input(2)).toHaveValue("Preserve my next draft");expect(reads).toHaveLength(before);});
  await check("split panes use local message context; generic source reads only on explicit selection",async()=>{
   await open(1);await page.getByRole("button",{name:"Split chat",exact:true}).click();await expect(input(2)).toBeVisible();await expect(input(1)).toBeVisible();await activity(1).locator("summary").first().click();await expect(activity(1).locator("[data-native-activity]")).toHaveCount(20);
+  const firstAbout=activity(1).getByText("About activity",{exact:true}),secondAbout=activity(2).getByText("About activity",{exact:true});await firstAbout.focus();await page.keyboard.press("Enter");await expect(firstAbout.locator("..")).toHaveAttribute("open","");await expect(secondAbout.locator("..")).not.toHaveAttribute("open","");await page.keyboard.press("Space");
   await activity(1).getByRole("radio",{name:"Task events",exact:true}).check();await expect(activity(1).getByRole("list",{name:"Activity entries"})).toContainText("Runner accepted");expect(reads.filter(r=>r.kind==="events")).toHaveLength(1);
  });
  await check("footer menu and button are real plugin actions; disable removes activity without cancelling",async()=>{
@@ -83,16 +94,16 @@ try{
  });
  await check("light/dark narrow keyboard geometry keeps footer in full message row",async()=>{
   await page.getByRole("button",{name:"Merge tabs",exact:true}).click();await open(2);await activity(2).locator("summary").first().click();await expect(activity(2).locator("[data-native-activity]")).toHaveCount(20);
-  await page.screenshot({path:output+`${label}-light.png`,fullPage:true});await page.getByRole("button",{name:"Use dark theme",exact:true}).click();await page.setViewportSize({width:390,height:844});await page.getByRole("button",{name:"Hide chat list",exact:true}).click();
+  await capture("light");await page.getByRole("button",{name:"Use dark theme",exact:true}).click();await page.setViewportSize({width:390,height:844});await page.getByRole("button",{name:"Hide chat list",exact:true}).click();
   await expect(activity(2).locator("summary").first()).toBeVisible();const geometry=await activity(2).evaluate(el=>({width:el.getBoundingClientRect().width,scroll:document.documentElement.scrollWidth,viewport:innerWidth}));expect(geometry.width).toBeGreaterThan(250);expect(geometry.scroll).toBeLessThanOrEqual(geometry.viewport+1);
-  await activity(2).locator("summary").first().focus();await page.keyboard.press("Space");await expect(activity(2)).not.toHaveAttribute("open","");await page.keyboard.press("Enter");await expect(activity(2)).toHaveAttribute("open","");await expect(input(2)).toHaveValue("Preserve my next draft");await page.screenshot({path:output+`${label}-dark-390.png`,fullPage:true});
+  await activity(2).locator("summary").first().focus();await page.keyboard.press("Space");await expect(activity(2)).not.toHaveAttribute("open","");await page.keyboard.press("Enter");await expect(activity(2)).toHaveAttribute("open","");await expect(input(2)).toHaveValue("Preserve my next draft");await capture("dark-390");await page.getByRole("button",{name:"Use light theme",exact:true}).click();await capture("light-390");await page.getByRole("button",{name:"Use dark theme",exact:true}).click();
  });
  await check("redacted thinking reads no body and truncated JSON displays an honest prefix",async()=>{
-  const before=reads.filter(r=>r.kind==="body").length;await activity(2).getByRole("button",{name:"Reasoning",exact:true}).nth(1).click();await expect(activity(2).getByText("Provider redacted this thinking. No body is available.")).toBeVisible();expect(reads.filter(r=>r.kind==="body")).toHaveLength(before);
-  await activity(2).getByRole("button",{name:"Read 4 input ready",exact:true}).click();await expect(activity(2).getByLabel("Native activity content")).toContainText('{"truncated":');await expect(activity(2).getByText(/Truncated UTF-8 prefix/)).toBeVisible();
+  const before=reads.filter(r=>r.kind==="body").length;await activity(2).getByRole("button",{name:"Reasoning",exact:true}).nth(1).click();await expect(activity(2).getByText("This reasoning was not shared. No content is available.")).toBeVisible();expect(reads.filter(r=>r.kind==="body")).toHaveLength(before);
+  await activity(2).getByRole("button",{name:"Read 4 input ready",exact:true}).click();await expect(activity(2).getByLabel("Native activity content")).toContainText('{"truncated":');await expect(activity(2).getByText(/Content is shortened/)).toBeVisible();
  });
  await check("footer button opens the bound task; queue Enter/button retain delivery intent and draft",async()=>{
-  await page.setViewportSize({width:1280,height:900});await page.getByRole('button',{name:'Chats',exact:true}).click();
+  await page.setViewportSize({width:1280,height:720});await page.getByRole('button',{name:'Chats',exact:true}).click();
   await pane(2).locator('[data-extension-slot="chat.message.footer"]').getByRole('button',{name:'Open task controls',exact:true}).click();await expect(page).toHaveURL(new RegExp(preview.first.chats.get('chat-2')!.turns[0]!.task.id));
   preview.first.setCurrentStatus('chat-4','running');await open(4);await pane(4).getByRole('radio',{name:'Queue next',exact:true}).check();await input(4).fill('Queue Enter with activity');await input(4).press('Enter');await expect.poll(()=>preview.first.requests.filter(r=>r.method==='POST'&&r.path==='/api/conversations/chat-4/queue').length).toBe(1);
   await input(4).fill('Queue button with activity');await pane(4).getByRole('button',{name:'Add to queue',exact:true}).click();await expect.poll(()=>preview.first.requests.filter(r=>r.method==='POST'&&r.path==='/api/conversations/chat-4/queue').length).toBe(2);await pane(4).getByRole('radio',{name:'Send now',exact:true}).check();await input(4).fill('Keep new draft');await expect(pane(4).getByRole('button',{name:'Send message',exact:true})).toBeDisabled();
@@ -103,16 +114,31 @@ try{
   await a.getByRole('button',{name:'Read 0 input ready',exact:true}).click();await arrived;await page.getByRole('button',{name:'Change connection',exact:true}).click();await page.getByLabel('Center URL').fill(preview.centers[1]!);await page.getByLabel('Owner token').fill('flow-fixture-only');await page.getByRole('button',{name:'Connect workspace',exact:true}).click();await open(1);release();await activity(1).locator('summary').first().click();await activity(1).getByRole('button',{name:'Read 0 input ready',exact:true}).click();await expect(activity(1).getByLabel('Native activity content')).toContainText('center-1/file-0');await expect(activity(1)).not.toContainText('center-0/file-0');expect(preview.first.requests.filter(r=>r.path.endsWith('/cancel'))).toHaveLength(0);
  });
  await check("offline same-turn disconnect stops all activity reads, aborts in-flight body and resumes safely",async()=>{
-  await page.setViewportSize({width:1280,height:900});await open(2);await input(2).fill('Offline draft');const before=attemptedActivityRequests.length;await context.setOffline(true);await expect.poll(()=>page.evaluate(()=>navigator.onLine)).toBe(false);
+  await page.setViewportSize({width:1280,height:720});await open(2);await expect(activity(2)).toBeVisible();await input(2).fill('Offline draft');const before=attemptedActivityRequests.length;await context.setOffline(true);await expect.poll(()=>page.evaluate(()=>navigator.onLine)).toBe(false);
   if(await activity(2).getAttribute('open')===null)await activity(2).locator('summary').first().click();await expect(activity(2).getByText(/Activity reading is paused/)).toBeVisible();await activity(2).getByRole('radio',{name:'Task events',exact:true}).check();await activity(2).getByRole('radio',{name:'Tools and thinking',exact:true}).check();expect(attemptedActivityRequests).toHaveLength(before);await expect(input(2)).toHaveValue('Offline draft');
   await context.setOffline(false);await expect(activity(2).locator('[data-native-activity]')).toHaveCount(20);await expect(activity(2).getByText(/Activity reading is paused/)).toHaveCount(0);
   let release!:()=>void,received!:()=>void;const gate=new Promise<void>(r=>{release=r;}),arrived=new Promise<void>(r=>{received=r;});await page.route(url=>url.pathname.startsWith('/api/native-activities/'),async route=>{const response=await route.fetch();received();await gate;try{await route.fulfill({response});}catch{/* canceled display request */}},{times:1});
-  const tool=activity(2).getByRole('button',{name:/Read 5 (input ready|unknown)/});await tool.click();await arrived;await context.setOffline(true);await expect(activity(2).getByText(/Activity reading is paused/)).toBeVisible();release();await expect(activity(2).getByLabel('Native activity content')).toHaveCount(0);await expect(activity(2).getByRole('button',{name:'Retry activity content',exact:true})).toBeDisabled();
+  const tool=activity(2).getByRole('button',{name:/Read 5 (input ready|Outcome unknown)/});await tool.click();await arrived;await context.setOffline(true);await expect(activity(2).getByText(/Activity reading is paused/)).toBeVisible();release();await expect(activity(2).getByLabel('Native activity content')).toHaveCount(0);await expect(activity(2).getByRole('button',{name:'Retry activity content',exact:true})).toBeDisabled();
   const after=attemptedActivityRequests.length;await page.getByRole('button',{name:'Work overview',exact:true}).click();await context.setOffline(false);await expect.poll(()=>page.evaluate(()=>navigator.onLine)).toBe(true);expect(attemptedActivityRequests).toHaveLength(after);await open(2);await expect(activity(2).getByText(/Activity reading is paused/)).toHaveCount(0);await activity(2).getByRole('button',{name:'Retry activity content',exact:true}).click();await expect(activity(2).getByLabel('Native activity content')).toContainText('file-5');await expect(input(2)).toHaveValue('Offline draft');
+ });
+ await check("concise single-page activity keeps outcome, stale, errors and recovery outside technical details",async()=>{
+  await open(3);await input(3).fill('Readability draft');await activity(3).locator('summary').first().click();const native=activity(3).getByRole('region',{name:'Native execution activity'});
+  await expect(native.locator('[data-native-activity]')).toHaveCount(6);await expect(native.getByRole('navigation',{name:'Native activity pages'})).toHaveCount(0);
+  const about=native.locator('details').filter({has:page.locator('summary').filter({hasText:/^About activity$/})});await expect(about).not.toHaveAttribute('open','');await expect(native.getByText(/Input ready means/)).not.toBeVisible();await expect(native.getByText('Reasoning not shared',{exact:true})).toBeVisible();await expect(native.getByText(/Unsupported activity/)).toBeVisible();
+  const taskId=preview.second.chats.get('chat-3')!.turns[0]!.task.id,row=rows.get(`1:${taskId}`)![0]!;const beforeBodies=reads.filter(r=>r.kind==='body').length;
+  for(const [status,label] of [['running','running'],['failed','failed'],['unknown','Outcome unknown']] as const){row.status=status;await native.getByRole('button',{name:'Refresh activity',exact:true}).click();await expect(native.getByRole('button',{name:`Read 0 ${label}`,exact:true})).toBeVisible();}
+  expect(reads.filter(r=>r.kind==='body')).toHaveLength(beforeBodies);
+  await page.route(url=>url.pathname.endsWith('/native-activities'),route=>route.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:{code:'unavailable',message:'Activity temporarily unavailable'}})}),{times:1});preview.second.setCurrentStatus('chat-3','failed');
+  await expect(native.getByRole('alert')).toBeVisible();await expect(native.getByText('May be out of date. Refresh to check for changes.')).toBeVisible();await expect(about).not.toHaveAttribute('open','');await native.getByRole('button',{name:'Refresh activity',exact:true}).click();await expect(native.getByRole('alert')).toHaveCount(0);
+  await page.route(url=>url.pathname.startsWith('/api/native-activities/'),route=>route.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:{code:'unavailable',message:'Content temporarily unavailable'}})}),{times:1});await native.getByRole('button',{name:'Read 0 Outcome unknown',exact:true}).click();await expect(native.getByRole('alert')).toBeVisible();await native.getByRole('button',{name:'Retry activity content',exact:true}).click();await expect(native.getByLabel('Native activity content')).toContainText('center-1/file-0');
+  const details=native.locator('details').filter({has:page.locator('summary').filter({hasText:/^Content details$/})});await expect(details).not.toHaveAttribute('open','');await expect(native.getByText(row.sourceMessageId,{exact:false})).not.toBeVisible();const beforeDetails=reads.length;await details.locator('summary').focus();await page.keyboard.press('Enter');await expect(details).toHaveAttribute('open','');await expect(details.getByText(row.sourceMessageId,{exact:false})).toBeVisible();await page.keyboard.press('Space');await expect(details).not.toHaveAttribute('open','');expect(reads).toHaveLength(beforeDetails);
+  await about.locator('summary').focus();await page.keyboard.press('Enter');await expect(about).toContainText('This is not a total count.');await page.keyboard.press('Space');await expect(about).not.toHaveAttribute('open','');await expect(input(3)).toHaveValue('Readability draft');
+  await native.getByRole('button',{name:'Read 0 Outcome unknown',exact:true}).click();await native.getByRole('button',{name:'Read 0 Outcome unknown',exact:true}).click();expect(reads.filter(r=>r.kind==='body')).toHaveLength(beforeBodies+1);
+  await capture('recovery-dark');
  });
  if(!production)await check("direct dev StrictMode and React.Activity cleanup/resume retain draft and loaded body without new reads",async()=>{
   const fixture=await lifetimePreview();try{await page.goto(fixture.url);const disclosure=page.locator('details[data-conversation-activity]').first();await expect(disclosure).toBeVisible();await disclosure.locator('summary').first().click();await disclosure.getByRole('button',{name:'Read 0 input ready',exact:true}).click();await expect(disclosure.getByLabel('Native activity content')).toContainText('file-0');await page.getByRole('textbox',{name:'Message input'}).fill('Strict draft');const before=reads.length;await page.getByRole('button',{name:'Hide Activity',exact:true}).click();await expect(disclosure).not.toBeVisible();await page.getByRole('button',{name:'Restore Activity',exact:true}).click();await expect(disclosure.getByLabel('Native activity content')).toContainText('file-0');await expect(page.getByRole('textbox',{name:'Message input'})).toHaveValue('Strict draft');expect(reads).toHaveLength(before);}finally{await fixture.server.close();}
  });
 }catch(error){failure=String(error);console.error(error);await page.screenshot({path:output+`${label}-failure.png`,fullPage:true});}
-finally{await writeFile(output+`${label}-browser.json`,JSON.stringify({at:new Date().toISOString(),sourceCommit,sourceFiles,production,url:preview.url,checks,errors,reads,attemptedActivityRequests,failure},null,2)+"\n");await browser.close();await preview.close();}
+finally{await writeFile(output+`${label}-browser.json`,JSON.stringify({at:new Date().toISOString(),sourceCommit,sourceDirty,sourceFiles,dependencyFiles,captures,production,url:preview.url,checks,errors,reads,attemptedActivityRequests,failure},null,2)+"\n");await browser.close();await preview.close();}
 if(failure||errors.length)process.exitCode=1;

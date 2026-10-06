@@ -22,4 +22,8 @@
 
 ## 独立审查
 
-NOT_STARTED。固定源码/原始证据hash见 [manifest.json](manifest.json)，审查11个source条目（含README）与13份raw；不需要重跑全项目。
+APPROVED：Execution Lead独立只读，固定d938，无P1/P2，未重跑/0provider。固定源码/原始证据hash见 [manifest.json](manifest.json)，审查11个source条目（含README）与13份raw；不需要重跑全项目。
+
+## 已部署补充（不改原实现证据）
+
+2026-10-06 08:57:42 UTC：已审源码按 [实际回执](deployment-receipt.md) 在固定main b1c完成首次static切换并唯一resume；0query/0tabreload。此前“未部署”描述绑定原检查时点，当前事实以canonical status/回执为准。

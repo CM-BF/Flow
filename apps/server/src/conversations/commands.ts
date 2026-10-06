@@ -13,6 +13,7 @@ import { capabilities, conversationView, loadConversation } from './state.js';
 export async function createConversation(pool: Pool, input: ConversationCreation, key: string): Promise<ConversationCreated> {
   const result = await command(pool, 'conversation.create', key, input, async client => {
     const profile = input.executionProfile ? await requireExecutionProfile(client, input.executionProfile) : undefined;
+    if (profile && profile.configuration.harness !== input.harness) throw new HttpError(409, 'profile_harness_mismatch', 'The selected profile does not support this conversation harness.');
     const requestedModelSupported = input.requested.model === 'runner-default' || input.requested.model === profile?.configuration.model;
     const requestedToolsSupported = input.requested.tools === 'configured-readonly' || profile?.configuration.access === 'none';
     if (!requestedModelSupported || input.requested.thinking !== 'disabled' || !requestedToolsSupported) {

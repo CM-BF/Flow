@@ -1,0 +1,94 @@
+{
+  "status": {
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "已确认运行中补充指令的受理与回执边界",
+      "next": "可独立试用的指令控件，保留未知回执和新草稿",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": null,
+      "scopes": [
+        "apps/web/src/conversation-steering/SteeringControl.tsx",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversation-steering/steering.css",
+        "apps/web/test/conversation-steering.browser.ts",
+        "apps/web/test/conversation-steering.fixture.ts",
+        "apps/web/test/conversation-steering.test.ts"
+      ],
+      "errors": [
+        "实现目标需完整 SHA"
+      ]
+    },
+    "taskId": "WPF-STEER01",
+    "owner": "workspace_panels_owner / gpt-6-astra ultra",
+    "branch": "codex/web-steering-control",
+    "branchState": "IN_PROGRESS",
+    "updatedAt": "2026-10-06T08:46:54.000Z",
+    "updatedRecord": "2026-10-06 08:46:54 UTC / 固定PUBLIC_READY输入ca4c3f723d2f786601e7cc9bd0363d756d974810",
+    "todos": [
+      {
+        "id": "WPF-STEER01-01",
+        "state": "completed",
+        "owner": "workspace_panels_owner",
+        "evidence": "[receipt](../../docs/evidence/wpf-steering-control/take-receipt.json)、[quality](../../docs/evidence/wpf-steering-control/quality.md)"
+      },
+      {
+        "id": "WPF-STEER01-02",
+        "state": "in-progress",
+        "owner": "workspace_panels_owner",
+        "evidence": "[Interface](../../docs/evidence/wpf-steering-control/interface.md)，待实现"
+      },
+      {
+        "id": "WPF-STEER01-03",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "UI/HTTPfixture尚未运行"
+      },
+      {
+        "id": "WPF-STEER01-04",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "尚无固定candidate/独审/部署观察"
+      },
+      {
+        "id": "WPF-STEER01-05",
+        "state": "pending",
+        "owner": "workspace_panels_owner",
+        "evidence": "后继App接线/跨reload回执恢复，另领范围"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "ca4c3f723d2f786601e7cc9bd0363d756d974810 / 当前HEAD由Git聚合",
+    "declaredDirty": "首canonical新增，未有产品实现；实际dirty由Git聚合",
+    "checks": {
+      "state": "not_run",
+      "target": null,
+      "record": "NOT_RUN；启动记录/实际parser核验，不称产品通过"
+    },
+    "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+    "mainRecord": "NOT_INTEGRATED",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": null
+  }
+}

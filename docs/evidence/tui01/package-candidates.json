@@ -1,0 +1,135 @@
+{
+  "observedAt": "2026-10-06T09:13:00.366299+00:00",
+  "packages": [
+    {
+      "name": "ink",
+      "version": "8.0.0",
+      "license": "MIT",
+      "engines": {
+        "node": ">=22"
+      },
+      "peerDependencies": {
+        "react": ">=19.3.0",
+        "@types/react": ">=19.3.0",
+        "react-devtools-core": ">=6.1.2"
+      },
+      "dependencies": {
+        "chalk": "^6.0.1",
+        "is-in-ci": "^2.0.0",
+        "auto-bind": "^5.0.1",
+        "cli-boxes": "^4.0.1",
+        "quick-lru": "^7.3.0",
+        "type-fest": "^5.10.0",
+        "wrap-ansi": "^10.0.2",
+        "cli-cursor": "^4.0.0",
+        "es-toolkit": "^1.52.0",
+        "ansi-styles": "^7.0.0",
+        "signal-exit": "^3.0.7",
+        "stack-utils": "^2.0.6",
+        "widest-line": "^6.0.0",
+        "yoga-layout": "~3.2.1",
+        "ansi-escapes": "^7.3.0",
+        "cli-truncate": "^6.0.0",
+        "code-excerpt": "^4.0.0",
+        "string-width": "^8.3.0",
+        "indent-string": "^5.0.0",
+        "patch-console": "^2.0.0",
+        "terminal-size": "^4.0.1",
+        "react-reconciler": "^0.34.0",
+        "@alcalzone/ansi-tokenize": "^0.3.1"
+      },
+      "exports": {
+        "types": "./build/index.d.ts",
+        "default": "./build/index.js"
+      },
+      "source": "https://registry.npmjs.org/ink/8.0.0",
+      "integrity": "sha512-M2aFwZOqmkFxCwedy6xrP4E+DGoK57iahAFnfTqNyOyJ54O7DZzu027z/NI8EGy44Sw9O9BcbTF4QEUS2GHAtg=="
+    },
+    {
+      "name": "@assistant-ui/react-ink",
+      "version": "0.0.48",
+      "license": "MIT",
+      "engines": null,
+      "peerDependencies": {
+        "ink": ">=6",
+        "react": "^19",
+        "@types/react": "*"
+      },
+      "dependencies": {
+        "diff": "^9.0.0",
+        "parse-diff": "^0.12.0",
+        "ink-spinner": "^5.0.0",
+        "string-width": "^8.3.0",
+        "assistant-cloud": "^0.2.5",
+        "assistant-stream": "^0.3.48",
+        "@assistant-ui/tap": "^0.9.21",
+        "@assistant-ui/core": "^0.3.24",
+        "@assistant-ui/store": "^0.3.17"
+      },
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "./internal": {
+          "types": "./dist/internal.d.ts",
+          "default": "./dist/internal.js"
+        }
+      },
+      "source": "https://registry.npmjs.org/@assistant-ui%2Freact-ink/0.0.48",
+      "integrity": "sha512-qcK5iLRb1ri/FxeC/7O8RLR9mm3SvVAfOhIwxPOfes4axi2KQ5zHfjAbBwktAZitYLTSniQF4S5OfsW6GZRyUA=="
+    },
+    {
+      "name": "@assistant-ui/react-ink",
+      "version": "0.0.46",
+      "license": "MIT",
+      "engines": null,
+      "peerDependencies": {
+        "ink": ">=6",
+        "react": "^19",
+        "@types/react": "*"
+      },
+      "dependencies": {
+        "diff": "^9.0.0",
+        "parse-diff": "^0.12.0",
+        "ink-spinner": "^5.0.0",
+        "string-width": "^8.2.2",
+        "assistant-cloud": "^0.2.4",
+        "assistant-stream": "^0.3.46",
+        "@assistant-ui/tap": "^0.9.20",
+        "@assistant-ui/core": "^0.3.22",
+        "@assistant-ui/store": "^0.3.16"
+      },
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "./internal": {
+          "types": "./dist/internal.d.ts",
+          "default": "./dist/internal.js"
+        }
+      },
+      "source": "https://registry.npmjs.org/@assistant-ui%2Freact-ink/0.0.46",
+      "integrity": "sha512-8dRsX1LvNKr4hiLhfKHAllxdB6f9PUe1Bsw6IHdGsarDB+upG7XakVogeiwOyFwSpxAjTA7Sl8q8JM4OSoFwew=="
+    },
+    {
+      "name": "ink-testing-library",
+      "version": "4.0.0",
+      "license": "MIT",
+      "engines": {
+        "node": ">=18"
+      },
+      "peerDependencies": {
+        "@types/react": ">=18.0.0"
+      },
+      "dependencies": null,
+      "exports": {
+        "types": "./build/index.d.ts",
+        "default": "./build/index.js"
+      },
+      "source": "https://registry.npmjs.org/ink-testing-library/4.0.0",
+      "integrity": "sha512-yF92kj3pmBvk7oKbSq5vEALO//o7Z9Ck/OaLNlkzXNeYdwfpxMQkSowGTFUCS5MSu9bWfSZMewGpp7bFc66D7Q=="
+    }
+  ]
+}

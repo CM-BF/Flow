@@ -179,8 +179,18 @@ Paseo 的模型认证主要依赖用户已有 CLI 登录；其 server/auth 是 d
 
 Execution Lead汇总两端只读审查后拆最小独立片：保留既有claim、session、journal、lease、outbox、fence、verifier和默认并发保护；把adapter本地descriptor与有限可选port放在明确边界，中心继续校验已识别协议/来源和不可变profile。不能将Claude选项、字符串harness判断或会话正文来源标签扩散到宿主，也不以宽string/schema绕过能力授权。A2A保留独立持久协议driver，不伪装为本地SDK生命周期。
 
-第二consumer必须使用固定版本的真实Pi或AI SDK实现来证明接口适配；先零provider验证订阅/背压、settled、abort/close、opaque resume locality、usage累计与不可用能力。Pi同步emit没有背压，agent_end可能早于retry/compaction完成，abort需确认idle，dispose不等于停止；wrapper统计累计与本地resume限制须真实表达。具体产品slice/claim在两端审查汇总后冻结，不提前宣称Pi已接入或发起新模型调用。架构影响包括运行器本地宿主/adapter/center协议校验边界；实施交付须登记固定图更新目标并保留旧图基线。
+用户当前明确优先Claude与Codex两条真实接入路径，第二consumer优先固定Codex原生app-server；Pi和AI SDK既有研究保留，但不成为该目标的串行前置。各adapter以固定版本零provider验证其真实可用协议、事件结束/未知、取消与清理、会话locality、usage口径及不支持项。Pi同步emit没有背压，agent_end可能早于retry/compaction完成，abort需确认idle，dispose不等于停止；wrapper统计累计与本地resume限制须真实表达。具体产品slice/claim在两端审查汇总后冻结，不提前宣称Pi已接入或发起新模型调用。架构影响包括运行器本地宿主/adapter/center协议校验边界；实施交付须登记固定图更新目标并保留旧图基线。
 
 验收保留主线CHAT09配置/pin/port保护与S01默认1/unknown admission；新能力选择只依已核descriptor/port，拒绝未识别配置。第二consumer的测试和真实native预算分开，原O10/QUEUE/R02等额度已封存。
 
-历史动机：[AQ-01质量台账](../../docs/quality/architecture-health-2026-10-06.md)记录M1固定6434fba的P2，不冒充本轮未修bug。下一独立实现子计划R05由assignment_review在native-harness-host建立唯一source，首A保行为配置/descriptor提取；若改变terminal/unknown语义，拆独立可审子步和lease恢复直接消费者。B中心版本化来源/前进迁移；C固定真实Pi SDK零远程query再PG普通正文，不继承未证stream/resume/steer/goal权限。
+历史动机：[AQ-01质量台账](../../docs/quality/architecture-health-2026-10-06.md)记录M1固定6434fba的P2，不冒充本轮未修bug。下一独立实现子计划R05由assignment_review在native-harness-host建立唯一source，首A保行为配置/descriptor提取；若改变terminal/unknown语义，拆独立可审子步和lease恢复直接消费者。B中心版本化来源/前进迁移；C优先固定真实Codex协议零远程query，再PG普通正文小旅程。Pi保留独立conformance候选。两条新路径均不继承未证stream/resume/steer/goal权限。
+
+## 2026-10-06 08:57:11 UTC 用户成熟界面方向的宿主依赖
+
+WPF-MATURE-02由Mika统筹Claude+Codex模型、thinking/effort、fast与access的真实能力链，Web负责选择与展示；FLOW-002-T09/R05负责可替换宿主与中心识别来源的契约。每个sub-task只关联一个大task，交叉依赖用链接，不复建总计划。模型目录、账号可用性、请求配置、实际响应模型与权限必须分别记录；不能用前端下拉、宽泛字符串或配置声明代替执行证据。Codex固定0.154.0 stable schema及真实initialize协商优先于latest文档；实验字段、分页/恢复、dynamicTools各自验证。此计划不新增认证、provider query或预算许可。
+
+其余成熟界面大task由WPF-001唯一管理源维护：视觉/双主题、拖放与文件输入、context占用/压缩透明、单tab双面板/split，以及聊天/queue/steer/voice可靠性。FLOW-001总矩阵保留这些需求与跨lead依赖，不把本地descriptor提取当界面或第二harness已完成。
+
+## 2026-10-06 生产工程目标归属
+
+FLOW-002-T07 / REQ-06的实际源码修改、监督检查与固定产物交付统一由[ENG-001](../eng01-engineering-delivery/plan.md)规划生产子任务；E01继续保存公平harness比较输入，不复制工程实现计划。先完成当前TUI/R05基础接通，随后工程纵向片优先于COST观测扩展。只读聊天、文本child或fixture通过不能关闭T07；>=Sol模型门槛与具体provider预算保持。

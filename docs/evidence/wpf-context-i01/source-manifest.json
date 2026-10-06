@@ -1,0 +1,78 @@
+{
+  "target": "d0e05c26df6f331e0b1f15e7b738e4fe53208125",
+  "base": "d7e1e64e7792f4d1ad4933db042f10f266ad0cca",
+  "files": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "dd95cc085103fea31c11430530bb40ee0a92980262dc66822c8f8928d00ebbdf"
+    },
+    {
+      "path": "apps/web/src/conversation-context/projects.ts",
+      "sha256": "04b47c9b45cd1365b35b858ae93010d83fef2bd6edf1fa1768be560a13f93fa0"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "0bb775447faaa83a3b685bf6928fdf19da9bd153370662d7b8d7ffcee0e9866c"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "2c2e726dc0ade601b62cc0fbf2a0a617929f8e514878230804f84d12bdef1461"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "808395c53eb621ca0298ab3edb4d3ebf51330cdb189fe2252f6b6a020e942925"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "sha256": "5adbf3bc3765f72ce3fa7f4097332fb52702f6df6eccf4604938fd7bb8fb5e47"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "8a325158037cb0d2c59cd6b5c86630a0fe6495feb4195b254c1fd58673c83298"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "fe7d2951dc342d3c63b3a32eddc274aad41c8480733b7fbcc818bb7392763093"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "c15fc54641856c4b90f5e941afc5af3a49cac36ec0c293c687d565d1e74374fa"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "sha256": "9b2effc324ea05afb923d581313266dcf12071233d1029516b68899e204bbea2"
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "sha256": "47aa014d47408187c75ab432336536c296764947f811251818dd6f02eb081abc"
+    },
+    {
+      "path": "apps/web/test/conversation-context-integration.browser.ts",
+      "sha256": "c4424deb816da2815ca1edf88977b59320e15fcf96046948c7e192e746148581"
+    },
+    {
+      "path": "apps/web/test/conversation-context-integration.fixture.ts",
+      "sha256": "11693e5df7949e81575266ee2d4eec95cbeff50e78bf803b9f64bd96c6b0fd04"
+    },
+    {
+      "path": "apps/web/test/conversation-context-integration.test.ts",
+      "sha256": "03245cda1671a3bed9bb7dbbd4a76aa0e9e9195318ec36e8197c1f2d0a2a1f5e"
+    },
+    {
+      "path": "apps/web/test/conversation-outbox.test.ts",
+      "sha256": "6aff3efa4ab241bf8f51b352b22ce04301318f2aeb4583a121638887931be33d"
+    },
+    {
+      "path": "apps/web/test/conversation-projection.test.ts",
+      "sha256": "202d6863801ac699b2b085a67078dad78477c07474ad92817a7d1feb3f9f205b"
+    },
+    {
+      "path": "apps/web/test/conversation-queue.test.ts",
+      "sha256": "675bd29c7da084204c285bcf5c6e65c313cd34baecdea6097a6bcb74a9ab3dff"
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "sha256": "ff492a7f4ea0a773175bec1427bdbf3f79c1a402d0a87aaf05d07b1e18a60594"
+    }
+  ]
+}

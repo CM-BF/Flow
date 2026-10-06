@@ -43,3 +43,5 @@
 - [x] **OPS-001-09** 用户最终两层规则：GO只规划大task的用户结果/优先级/边界/依赖/验收并负责全局优化；co-lead自主规划管理sub-tasks和workers、局部独审/提交推送/受控集成。每sub-task的status填写唯一所属大task及co-lead，dashboard关联，无第三任务层或改名绕预算。
 
 co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须大task受阻且需要GO介入，同一blocker只一次，无变化不重复；大task满足完整验收才一次Done。片段完成/ready/review/merge/登记/claim/metadata/普通接口确认均只更新status/dashboard，可自行解决的内部问题不是blocker。本规则覆盖此前“重要决策/关键里程碑”泛化例外。worker↔本组lead执行通信正常，co-lead间处理具体依赖不逐条抄送GO。已一次同步两外部lead；本次规则修订按一个大task收口，不把子片当多个Done。
+
+- [x] **OPS-001-10** 用户全局模块化/复用/扩展/性能规则：根AGENTS为唯一权威，plans规则要求风险相称的职责/Interface/依赖/扩展点及行为/性能证据；WPF-MATURE六大task统一引用，不复制六份。实际规则固定1d36a7a4532bbd2f29300c220d5451f755bd756c，经runner_owner独立只读批准；本批随主线发布，原始质量证据与限制保留。

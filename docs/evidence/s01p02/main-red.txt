@@ -1,0 +1,212 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry
+
+ ❯ apps/runner/src/main-concurrency.test.ts (20 tests | 17 failed) 47ms
+     × passes the default local limit without changing configured adapters 39ms
+     × passes an explicit native limit while preserving profile publication and guards 1ms
+     × rejects invalid native input "" before configuration or external startup 0ms
+     × rejects invalid native input "0" before configuration or external startup 1ms
+     × rejects invalid native input "-1" before configuration or external startup 0ms
+     × rejects invalid native input "1.5" before configuration or external startup 0ms
+     × rejects invalid native input "1e0" before configuration or external startup 0ms
+     × rejects invalid native input " 2 " before configuration or external startup 0ms
+     × rejects invalid native input "17" before configuration or external startup 0ms
+     × rejects invalid native input "01" before configuration or external startup 0ms
+     × rejects invalid native input "1\n" before configuration or external startup 0ms
+     ✓ keeps A2A startup supported for undefined 1ms
+     ✓ keeps A2A startup supported for "1" 0ms
+     × rejects unsupported A2A input "2" before reading endpoint files 0ms
+     × rejects unsupported A2A input "16" before reading endpoint files 0ms
+     × rejects unsupported A2A input "" before reading endpoint files 0ms
+     × rejects unsupported A2A input "1.0" before reading endpoint files 0ms
+     × rejects unsupported A2A input " 1" before reading endpoint files 0ms
+     ✓ keeps SIGINT cancellation and removes both signal handlers after completion 0ms
+     × retains the fixed startup error without echoing rejected input or dependency errors 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 17 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > passes the default local limit without changing configured adapters
+AssertionError: expected "vi.fn()" to be called with arguments: [ ObjectContaining{…} ]
+
+Received: 
+
+  1st vi.fn() call:
+
+  [
+-   ObjectContaining {
++   {
+      "activeSteering": false,
+      "adapters": [
+        {
+          "name": "fixture",
+        },
+      ],
+-     "maxConcurrentAttempts": 1,
++     "baseUrl": "http://synthetic.invalid",
++     "onNotice": [Function onNotice],
++     "signal": AbortSignal {
++       Symbol(kEvents): undefined,
++       Symbol(events.maxEventTargetListeners): 0,
++       Symbol(events.maxEventTargetListenersWarned): false,
++       Symbol(kHandlers): undefined,
++       Symbol(kAborted): false,
++       Symbol(kReason): undefined,
++       Symbol(kComposite): false,
++     },
++     "token": "synthetic-token",
++     "workingDirectory": "/synthetic-workdir",
+    },
+  ]
+
+
+Number of calls: 1
+
+ ❯ apps/runner/src/main-concurrency.test.ts:45:33
+     43|   it('passes the default local limit without changing configured adapt…
+     44|     await start();
+     45|     expect(dependencies.native).toHaveBeenCalledWith(expect.objectCont…
+       |                                 ^
+     46|     expect(dependencies.load).toHaveBeenCalledWith('/synthetic-materia…
+     47|     expect(dependencies.publish).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/17]⎯
+
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > passes an explicit native limit while preserving profile publication and guards
+AssertionError: expected "vi.fn()" to be called with arguments: [ ObjectContaining{…} ]
+
+Received: 
+
+  1st vi.fn() call:
+
+  [
+-   ObjectContaining {
++   {
+      "activeSteering": true,
+      "adapters": [
+        {
+          "synthetic": "guarded",
+        },
+      ],
+-     "maxConcurrentAttempts": 4,
++     "baseUrl": "http://synthetic.invalid",
++     "onNotice": [Function onNotice],
++     "signal": AbortSignal {
++       Symbol(kEvents): undefined,
++       Symbol(events.maxEventTargetListeners): 0,
++       Symbol(events.maxEventTargetListenersWarned): false,
++       Symbol(kHandlers): undefined,
++       Symbol(kAborted): false,
++       Symbol(kReason): undefined,
++       Symbol(kComposite): false,
++     },
++     "token": "synthetic-token",
++     "workingDirectory": "/synthetic-workdir",
+    },
+  ]
+
+
+Number of calls: 1
+
+ ❯ apps/runner/src/main-concurrency.test.ts:59:33
+     57|     expect(dependencies.publish.mock.calls[0]![0]).not.toHaveProperty(…
+     58|     expect(dependencies.guard).toHaveBeenCalledWith(adapter, reference…
+     59|     expect(dependencies.native).toHaveBeenCalledWith(expect.objectCont…
+       |                                 ^
+     60|     expect(dependencies.native.mock.calls[0]![0]).not.toHaveProperty('…
+     61|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/17]⎯
+
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects invalid native input "" before configuration or external startup
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects invalid native input "0" before configuration or external startup
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects invalid native input "-1" before configuration or external startup
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects invalid native input "1.5" before configuration or external startup
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects invalid native input "1e0" before configuration or external startup
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects invalid native input " 2 " before configuration or external startup
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects invalid native input "17" before configuration or external startup
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects invalid native input "01" before configuration or external startup
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects invalid native input "1\n" before configuration or external startup
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received: 
+
+  1st vi.fn() call:
+
+    Array [
+      "/synthetic-materials.json",
+    ]
+
+
+Number of calls: 1
+
+ ❯ noStartup apps/runner/src/main-concurrency.test.ts:38:80
+     36| const start = () => import('./main.js');
+     37| const noStartup = () => {
+     38|   for (const dependency of Object.values(dependencies)) expect(depende…
+       |                                                                                ^
+     39|   expect(process.exitCode).toBe(1);
+     40| };
+ ❯ apps/runner/src/main-concurrency.test.ts:64:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/17]⎯
+
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects unsupported A2A input "2" before reading endpoint files
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects unsupported A2A input "16" before reading endpoint files
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects unsupported A2A input "" before reading endpoint files
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects unsupported A2A input "1.0" before reading endpoint files
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > rejects unsupported A2A input " 1" before reading endpoint files
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received: 
+
+  1st vi.fn() call:
+
+    Array [
+      "/synthetic-endpoints.json",
+    ]
+
+
+Number of calls: 1
+
+ ❯ noStartup apps/runner/src/main-concurrency.test.ts:38:80
+     36| const start = () => import('./main.js');
+     37| const noStartup = () => {
+     38|   for (const dependency of Object.values(dependencies)) expect(depende…
+       |                                                                                ^
+     39|   expect(process.exitCode).toBe(1);
+     40| };
+ ❯ apps/runner/src/main-concurrency.test.ts:79:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/17]⎯
+
+ FAIL  apps/runner/src/main-concurrency.test.ts > runner main concurrency entry > retains the fixed startup error without echoing rejected input or dependency errors
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received: 
+
+  1st vi.fn() call:
+
+    Array [
+      "/synthetic-materials.json",
+    ]
+
+
+Number of calls: 1
+
+ ❯ noStartup apps/runner/src/main-concurrency.test.ts:38:80
+     36| const start = () => import('./main.js');
+     37| const noStartup = () => {
+     38|   for (const dependency of Object.values(dependencies)) expect(depende…
+       |                                                                                ^
+     39|   expect(process.exitCode).toBe(1);
+     40| };
+ ❯ apps/runner/src/main-concurrency.test.ts:94:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/17]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  17 failed | 3 passed (20)
+   Start at  02:46:07
+   Duration  172ms (transform 57ms, setup 0ms, import 35ms, tests 47ms, environment 0ms)
+

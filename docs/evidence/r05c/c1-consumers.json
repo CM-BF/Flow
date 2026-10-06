@@ -1,0 +1,10 @@
+{
+  "command": "pnpm exec vitest run apps/runner/src/execution-profiles.test.ts apps/runner/src/native-harness.test.ts apps/runner/src/configuration.test.ts packages/client/src/execution-profiles.test.ts packages/client/src/native-profile-publication.test.ts packages/contracts/src/execution-profiles.test.ts",
+  "exitCode": 0,
+  "source": "process stdout/stderr captured directly",
+  "output": "c1-consumers.stdout",
+  "selected": 42,
+  "passed": 42,
+  "unselected": 0,
+  "failed": 0
+}

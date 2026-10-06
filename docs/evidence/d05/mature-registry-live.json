@@ -1,0 +1,108 @@
+{
+  "observedAt": "2026-10-06T09:09:25.827Z",
+  "main": {
+    "available": true,
+    "branch": "main",
+    "head": "1737cd6a5c8bbb1d5793325ee924802bfbe2a2e9",
+    "dirty": false,
+    "changedFiles": 0,
+    "observedAt": "2026-10-06T09:09:26.961Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "count": 111,
+  "registered": [
+    {
+      "id": "WPF-MATURE-01",
+      "current": true,
+      "issues": []
+    },
+    {
+      "id": "WPF-MATURE-02",
+      "current": true,
+      "issues": []
+    },
+    {
+      "id": "WPF-MATURE-03",
+      "current": true,
+      "issues": []
+    },
+    {
+      "id": "WPF-MATURE-04",
+      "current": true,
+      "issues": []
+    },
+    {
+      "id": "WPF-MATURE-05",
+      "current": true,
+      "issues": []
+    },
+    {
+      "id": "WPF-MATURE-06",
+      "current": true,
+      "issues": []
+    },
+    {
+      "id": "R06",
+      "current": true,
+      "issues": []
+    },
+    {
+      "id": "WPF-CONTEXTI01",
+      "current": true,
+      "issues": []
+    },
+    {
+      "id": "WPF-STEER01",
+      "current": true,
+      "issues": []
+    },
+    {
+      "id": "WPF-VISUAL01",
+      "current": true,
+      "issues": []
+    }
+  ],
+  "unregisteredAssignments": [
+    {
+      "lead": "astra_ultra_execution_lead",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/server/src/assistant/native-harness.test.ts",
+        "apps/server/src/assistant/store.ts",
+        "apps/server/src/conversations/commands.ts",
+        "apps/server/src/conversations/replies.ts",
+        "apps/server/src/execution-profiles/index.ts",
+        "apps/server/src/execution-profiles/native-harness.test.ts",
+        "apps/server/src/execution-profiles/store.ts",
+        "apps/server/src/native-harness-migration.ts",
+        "apps/server/src/native-harness-policy.test.ts",
+        "apps/server/src/native-harness-policy.ts",
+        "docs/evidence/r05b",
+        "packages/contracts/src/assistant.test.ts",
+        "packages/contracts/src/assistant.ts",
+        "packages/contracts/src/execution-profiles.test.ts",
+        "packages/contracts/src/execution-profiles.ts",
+        "packages/contracts/src/harnesses.test.ts",
+        "packages/contracts/src/harnesses.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/contracts/src/tasks.ts",
+        "packages/storage/migrations/025-native-harness-sources.sql",
+        "plans/r05b-native-center-policy"
+      ],
+      "state": "active",
+      "branch": "codex/native-center-policy",
+      "origin": "new",
+      "taskId": "R05B",
+      "worker": "native_center_owner",
+      "claimId": "b205dd73-4edb-4d76-a13b-0fc8a7532b1b",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-center-policy",
+      "createdAt": "2026-10-06T09:08:43.973Z",
+      "updatedAt": "2026-10-06T09:08:43.973Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "scope": "Source registration only; no user product service, model call, tab reload, or architecture rebuild."
+}

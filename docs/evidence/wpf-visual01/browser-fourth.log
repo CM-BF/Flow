@@ -1,0 +1,15 @@
+PASS actual empty App and long Markdown keep readable pane/code/table bounds at desktop and 390
+PASS four Appearance choices use scheme, opaque removes blur, persisted choice survives real reload
+PASS plugin palette still applies and disabled contributed theme falls back by dark scheme
+locator.press: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('[id="panel-conversation:chat-3"]').getByRole('region', { name: 'Native execution activity', exact: true }).getByRole('button', { name: /Thought/ })[22m
+
+    at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:107:61)
+    at async check (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:59:67)
+    at async <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/apps/web/test/visual-shell.browser.ts:101:5) {
+  log: [
+    `  - waiting for locator('[id="panel-conversation:chat-3"]').getByRole('region', { name: 'Native execution activity', exact: true }).getByRole('button', { name: /Thought/ })`
+  ],
+  name: 'TimeoutError'
+}

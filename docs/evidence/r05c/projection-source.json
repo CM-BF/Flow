@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "0d0524c3439363d1fe60aad63f62817ba51fa2a5",
+  "sourcePath": "experiments/codex-app-server-conformance/final.mjs",
+  "productionPath": "apps/runner/src/native-harness/codex/projection.mjs",
+  "bytes": 5179,
+  "sha256": "01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad",
+  "handoff": "WPF-MATURE-02 final-projection-handoff.md via Execution Lead",
+  "experimentWriteScope": false,
+  "consumerMigration": "Mika will replace experimental algorithm with thin import after production entry is fixed and independently reviewed",
+  "errors": "Projection may throw AssertionError with native evidence; adapter must discard it and propagate only a fixed local error without cause"
+}

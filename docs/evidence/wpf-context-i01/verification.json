@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-06T09:02:02.507069+00:00",
+  "target": "d0e05c26df6f331e0b1f15e7b738e4fe53208125",
+  "base": "d7e1e64e7792f4d1ad4933db042f10f266ad0cca",
+  "sourceFiles": 18,
+  "currentFixedDevelopmentProductionHashesEqual": true,
+  "browserChecks": {
+    "development": 12,
+    "production": 12
+  },
+  "browserPageErrors": {
+    "development": [],
+    "production": []
+  },
+  "outsideClaimPaths": [],
+  "protectedPaths": [
+    "apps/web/src/conversation-context/controller.ts",
+    "apps/web/src/conversation-context/selection.ts",
+    "apps/web/src/conversation-context/ContextPicker.tsx",
+    "apps/web/src/conversation-context/context-picker.css",
+    "apps/web/src/conversation-context/receipts.ts",
+    "apps/web/src/conversations/queue/commands.ts",
+    "apps/web/src/execution-profiles",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx",
+    "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+    "apps/web/src/conversations/streams",
+    "apps/web/src/conversations/messages.ts",
+    "packages",
+    "package.json",
+    "pnpm-lock.yaml",
+    "apps/web/package.json"
+  ],
+  "protectedChanges": [],
+  "sourceDiffCheckExit": 0
+}

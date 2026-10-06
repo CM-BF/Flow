@@ -1,0 +1,19 @@
+✔ serves fixed bytes with no HMR, preserves same-origin authorization and streams SSE before completion (462.143709ms)
+✔ builds a fixed verified artifact with no inherited or dotenv secrets and detects tampering (393.547583ms)
+✔ rejects a dirty or mismatched source before building and cleans a failed stage without changing the old artifact (577.294333ms)
+✔ concurrent identical builds converge without overwriting and reject extra files or symbolic links (318.64675ms)
+✔ a source change during the build is rejected and leaves no published artifact (358.9075ms)
+✔ release namespace is fixed before build while manifest identity follows built bytes (657.640458ms)
+✔ rejects oversized asset metadata before reading its bytes (532.996458ms)
+✔ release CAS retains precise old namespaces, rollback changes only current, and full retention refuses publication (151.542542ms)
+✔ legacy collisions, namespace reuse, unsafe paths and corrupt metadata fail before replacing the old release (123.033208ms)
+✔ changed file bytes, backend mismatch, invalid compatibility and metadata limits are rejected (37.353167ms)
+✔ hot publish and rollback preserve an open SSE stream, old chunks and same-origin credentials (221.605042ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2889.920625

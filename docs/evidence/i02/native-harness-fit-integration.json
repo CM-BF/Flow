@@ -1,0 +1,144 @@
+{
+  "observedAt": "2026-10-06T08:58:02.604457+00:00",
+  "base": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "sourceComparison": [
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "target": "47e6943080a0d4713190c51dd5ffb234b8efd915",
+      "sha256": "7ddaa80ce468c1efe0094f6c37f8fc64113ab46f0b5c5ba0745021bc5a14ad40",
+      "bytes": 938,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "target": "47e6943080a0d4713190c51dd5ffb234b8efd915",
+      "sha256": "605f99ae2d898468a86a5dc3512b42a2582b30dc4f487d1f36f028bd0a804de2",
+      "bytes": 2149,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "target": "47e6943080a0d4713190c51dd5ffb234b8efd915",
+      "sha256": "c0b1fd4ae2bcbebdd0c1e1d4f3e46af8def2697e38da89f62d360c21b3926729",
+      "bytes": 3535,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "target": "47e6943080a0d4713190c51dd5ffb234b8efd915",
+      "sha256": "a97cb1217313d54f40c2c910bf55069ca4a983f07b5a6a269c4f74f90795b9fc",
+      "bytes": 1663,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "target": "47e6943080a0d4713190c51dd5ffb234b8efd915",
+      "sha256": "fc4626777e2d3215a10280c3047cd0b6384e0c43ada39496273461b22bb7d135",
+      "bytes": 3286,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "target": "47e6943080a0d4713190c51dd5ffb234b8efd915",
+      "sha256": "8446fe7583d100ad2bdb694cb1ca74e1df9c0c4b4b38f70b4d58c97968cb197a",
+      "bytes": 980,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/native-harness.test.ts",
+      "target": "47e6943080a0d4713190c51dd5ffb234b8efd915",
+      "sha256": "6d0e715e34bdc8aa1783617a7fff29ba2e60fa0c0b83ff93d4383397c58c4efb",
+      "bytes": 3470,
+      "exact": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "target": "0ac7a127f06d534f6514a98331f533e42993378a",
+      "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+      "bytes": 7689,
+      "exact": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture-viewport.browser.mjs",
+      "target": "0ac7a127f06d534f6514a98331f533e42993378a",
+      "sha256": "923432c06413699e089434c387574ee2b363b32f94dc6afeebd1d1a87188fbdc",
+      "bytes": 10764,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "protectedBase": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "sha256": "cb91b42d9bc672b767f8539c2e5989e558c896a95acf128cca3b7b4519dac740",
+      "bytes": 13786,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "protectedBase": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "bytes": 5175,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/attempt-control.ts",
+      "protectedBase": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2",
+      "bytes": 4720,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "protectedBase": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "bytes": 5640,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "protectedBase": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "sha256": "3659f874a9ac06963cedb426068fdd481227e861abb9be19c22a68f4844a4439",
+      "bytes": 19269,
+      "exact": true
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/index.ts",
+      "protectedBase": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "sha256": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51",
+      "bytes": 8396,
+      "exact": true
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "protectedBase": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "sha256": "6636f0dd920184a70dec7cfcf488aae2c4712e1c526c6694527a11ff27e3e5ac",
+      "bytes": 6419,
+      "exact": true
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "protectedBase": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "sha256": "3043252bbf514e5cbfcc57a86a3e70e9a6751b486eee2cd067e8ced46fc8eb0e",
+      "bytes": 3405,
+      "exact": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "protectedBase": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "sha256": "abe69ba292c534bc77612d1b7d65eed0d0f857849b31d4166324b8e1c042449a",
+      "bytes": 34850,
+      "exact": true
+    }
+  ],
+  "typecheck": {
+    "exitCode": 0,
+    "stdout": "native-harness-integration-typecheck.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "review": "R05-A ExecutionLead read-only APPROVED 47e; D05FIT Web root independent APPROVED 0ac",
+  "limits": [
+    "No new provider calls or DB suite",
+    "Author R05 42 distinct checks reused",
+    "D05FIT 5 browser groups and independent visual review reused, no repeated browser suite",
+    "Personal backend and static artifact remain fixed b1c, this main update is not a deployment"
+  ]
+}
