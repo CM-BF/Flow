@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T12:14:43.577454+00:00 / main362af3bac77541e5a60979326bcf4d4b8c947915 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:15:31 UTC / main 362af3bac77541e5a60979326bcf4d4b8c947915 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -148,7 +148,7 @@
 
 | F01-31 | completed | Lead | 工程profile薄client3a12独审通过；挂载1c081待真实factory输入验证，不提前main领域。 |
 
-| F01-32 | in-progress | Lead / Mika context owner | [027编号与唯一writer](../../docs/evidence/f01/context-history-migration-assignment.json)；已交同级fresh amend，后续固定DDL/真实PG及共享接线待验，不改个人DB |
+历史 F01-32 领取记录（已由下方 completed 主线记录替代）：Lead / Mika context owner 的[027编号与唯一writer](../../docs/evidence/f01/context-history-migration-assignment.json)曾交同级fresh amend；当时DDL/PG/接线待验，个人DB未改。
 
 11:12 管理安全点：工程domain/client/mount各有独审且main2e71已接，组合root typecheck仍因既有RELEASE fixture tuple类型失败，已交Web原owner窄修；不冒称组合通过。附件ACK v2 target df8d077accea7a28536f1f56407a729c41e4639c 47/47/root types0待独审，不扩domain批准。027已正式给Mika原owner，现50/50含9PG、v5 DDL已实装并独审中，不再等待编号。
 
