@@ -4,25 +4,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:02:07 UTC / 固定管理文档与知识选择模块均已获独审；待Lead接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:16:04 UTC / Lead fc113接收后管理183文档/7源码固定比较通过 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `9c492f1cfd468f2d940af66e164ee65e2ea6ffed`（本次批准metadata前实核clean；交付HEAD以Git回执为准） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `9fc332c7ec754958a2cb358c4c01bf27eed0159e`（本次metadata前实核clean；交付HEAD以Git回执为准） |
 | 工作树dirty状态 | 本次仅管理证据、主线接收与新模块领取记录；提交后以实际Git为准 |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 管理需求文档与知识选择组件已通过独立审查 |
-| 下一可用交付 | 发布完整需求文档，并把增量正文接入聊天 |
+| 当前产出 | 完整需求文档与知识选择组件已进入主线，增量聊天修复已通过独审 |
+| 下一可用交付 | 交付增量正文接线，并验证知识引用回执 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
-| 已集成main状态 / HEAD | 管理独核main/origin6426b44cd32d10216141af13ecfa83b8879025fb clean；ActivityI ba341祖先，S01 3ac/PERF03 f909及各final祖先、8源码相同。两旧claim已v2释放。ExecutionLead回执个人center/runner b54 accepting v6、61227/61228原端口与数据保留，0新增provider；本管理未服务验证。管理文档main仍旧副本，本次a5固定发布已由root07:59限定APPROVED，等待Lead受控同步 |
+| 已集成main状态 / HEAD | 管理独核main/origin6426b44cd32d10216141af13ecfa83b8879025fb clean；ActivityI ba341祖先，S01 3ac/PERF03 f909及各final祖先、8源码相同。两旧claim已v2释放。ExecutionLead回执个人center/runner b54 accepting v6、61227/61228原端口与数据保留，0新增provider；本管理未服务验证。管理文档固定33bd已由Lead受控同步fc113，183文件本管理逐字核同；a5独审仅覆盖该内容快照。CONTEXT01已接收fc113，七源码祖先/hash同，原bfe v2释放。后续管理事实见[发布后观察](../../docs/evidence/web-platform/post-publication-0818.md)，不滚旧a5审批 |
 | Review | [review.md](review.md)，本次固定发布APPROVED a5e500136438b197305339cbe0a5e10a196a4317；root2026-10-06 07:59 UTC；历史c075仅见归档，不覆盖本次 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -52,23 +52,24 @@
 | WPF-001-23 | completed | d01_owner | ACTIVITYC01固定889f433/root独立44通过、最终ce0608 clean，管理两hash/范围/parser/28links通过；07:10:06核fa9已含且两路径相同，owner最终b029f3a2 clean，5896 v2于07:11:50.505Z released |
 | WPF-001-24 | completed | d01_owner | WPF-CHAT06S01独立web-conversation-stream，完整已审base fa9；d94ae4bb v1于07:10:10.763Z正式领取七新scope，固定3ac11cba/root54独审APPROVED，最终63b7a302 clean；五hash/proof/7md42links管理核验后已入6426；owner f367记录后d94 v2释放，实际App接线另片 |
 | WPF-001-25 | completed | d01_owner | PERF03 f909/root8独审，最终7998已入6426且3源码相同；owner9cea记录后2ec58 v2释放，仅对象/转换计数，不声称浏览器收益 |
-| WPF-001-26 | in-progress | d01_owner | WPF-CONTEXT01 / w01_owner，固定b54新独立树，九scope原子take bfecec43 v1；复用REQ42、仅选择模块，实际Send/Queue后继 |
+| WPF-001-26 | in-progress | d01_owner | REQ42：CONTEXT01 736已审/main fc113、59b收口/bfe v2释放；后继CONTEXT02 b485v1独立八scope实施纯receipt，实际App Send/Queue UI仍待接 |
 
-| WPF-001-27 | in-progress | d01_owner | CHAT06I01 / panels，准确6426独立树13scope a729v1已正式take，首0a497已送登记；实际App接线实施，S01源码与PERF messages只读 |
+| WPF-001-27 | in-progress | d01_owner | CHAT06I01 / panels，准确6426独立树13scope a729v1已正式take，首0a497已送登记；fixed9dafff已rootAPPROVED，finale30a clean已交Lead；S01源码与PERF messages只读 |
 
 ## 当前唯一owner、claim与下一步
 
-[07:49新领取与释放后的当前账本](../../docs/evidence/web-platform/current-owner-observation-0749.json)只列当前三active来源。已释放范围不可续写；claimed数量不是agent并发。历史版本、旧表与原receipt均保留。
+以下为本次当前分配；plan的已审a5固定内容保留07:56截止时点，当前领取/下一步只在此metadata更新。旧观察仍见[07:49历史账本](../../docs/evidence/web-platform/current-owner-observation-0749.json)，不得沿旧权续写。
 
 | 当前工作 | 唯一来源、范围与下一步 |
 | --- | --- |
-| WPF-001 | d01_owner / web-platform-management，632a7149 v2，仅管理plan/evidence；准备主线固定发布快照 |
-| WPF-CONTEXT01 | w01_owner / web-knowledge-selection，bfecec43 v1，九新scope；首3412347f已送登记；固定736ef0已由root07:56:55APPROVED/R1 CLOSED，final d6a609 clean；管理七hash/九scope/36本地links核验通过，待Lead集成，Send/Queue后继 |
-| WPF-CHAT06I01 | workspace_panels_owner / web-conversation-stream-integration，a7293487 v1，十三scope；首0a497624已送登记，基于6426实际App接线，模块源码只读 |
+| WPF-001 | d01_owner / web-platform-management，632a7149 v2，仅管理两目录；33bd固定副本已fc113发布，authority不迁 |
+| D06 | d01_owner / dashboard-architecture-stream，e06a216c v1，独立树四scope；固定9c6来源，2c857bd获root08:16:16APPROVED，final3a0f8a1 clean已交Lead，50039局部预览 |
+| WPF-CONTEXT02 | w01_owner / web-context-receipts，b4858792 v1，固定fc113八scope；首d1328c已送登记，纯冻结/回执逻辑，不占App/Thread/projection |
+| WPF-CHAT06I01 | workspace_panels_owner / web-conversation-stream-integration，a7293487 v1，十三scope；9dafff获root08:15:26APPROVED/R1 CLOSED，finale30a clean已once交Lead，等待准确main接收 |
 
 ## 当前交付与依赖（局部窗口，不是整个goal受阻）
 
-K02、renderer、generic活动及typed ActivityI都已在主线；S01增量正文模块3ac与PERF03消息复用f909也已正式接收于6426，管理独核祖先及八源码相同，旧d94/2ec均v2释放。CHAT06I01以该完整基线领取新十三scope，由同一panels接真实App；CONTEXT01继续原已审b54九scope，不rebase/reset既有树。主线模块就绪不等新的接线已验证。
+K02、renderer、generic活动及typed ActivityI都已在主线；S01增量正文模块3ac与PERF03消息复用f909也已正式接收于6426，管理独核祖先及八源码相同，旧d94/2ec均v2释放。CHAT06I01以该完整基线领取新十三scope，由同一panels接真实App；CONTEXT01已接收fc113并全九scope释放；CONTEXT02用新独立fc113八scope接纯回执逻辑，知识实际App UI仍后继。主线模块就绪不等新的接线已验证。
 
 当前个人center/runner版本以ExecutionLead的b54 accepting v6回执为准，Web源码、main和后台运行版本分开。旧fb906/75a观察在下方历史时点保留，不能据main推进推断服务自动重载。管理文档主线固定副本由Lead受控同步，唯一实时权威仍是管理worktree。
 
@@ -351,3 +352,7 @@ CONTEXT01初段接口澄清由root交owner在原九scope收敛：picker关闭不
 ExecutionLead最新REGISTERED回执：main/origin bbe2b4f7ed1adf58f6f81de0f23a65d682f29047 clean、4320共90来源，O09/CHAT06I01/CHAT06P01 issues=[]，所见CHAT06I01首0a497；GO07:59只读浏览器另见领取/CONTEXT独审清楚且无重叠。本管理未再fetch，Lead本条未给精确采样秒数，不伪造。Web实施固定6426，个人center/runner仍Lead报告b54/v6；未重启或reload用户tab。
 
 本次管理安全停点继续应用已读本地find-skills与clean-code：选择本地已有方法，无安装；检查唯一权威、审批target、时间归因、原始日志边界与必要复杂度。固定plan/research/publication说明三内容文件未变，仅审批/as-of元数据和审计记录。下一CHAT06I优先固定独审；真实聊天验收须明确候选和GO单次预算，当前0新增provider。
+
+## 2026-10-06 08:16:04 UTC 管理安全停点
+
+[发布后观察与后继研究](../../docs/evidence/web-platform/post-publication-0818.md)记录fc113实际接收、当前新领取和既有REQ42/43安排，不改a5已审内容或33bd已发布文件来源。无重复API/产品测试/model。

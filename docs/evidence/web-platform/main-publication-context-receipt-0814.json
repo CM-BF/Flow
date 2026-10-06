@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-06T08:14:49.724567+00:00",
+  "source": "ExecutionLead MAIN_RECEIPT relayed by root; manager fixed Git comparison",
+  "mainAccepted": "fc113945ff73d1a43092d0a70b51e901aa4be1e2",
+  "publicationHead": "33bd93ddca59df78a6abb1c54cfd3a01163dba28",
+  "publicationContentTarget": "a5e500136438b197305339cbe0a5e10a196a4317",
+  "selectedPaths": [
+    "plans/web-platform",
+    "docs/evidence/web-platform"
+  ],
+  "publishedFiles": 183,
+  "mismatched": [],
+  "authority": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform",
+  "runtime": "personal b54 accepting v6 per Lead; not manager service validation",
+  "dashboard": "Lead reports D06 unique source moved and service reloaded 92 candidate sources; exact snapshot time unavailable; manager did not fetch",
+  "context01": {
+    "target": "736ef0b9f5647faa4c8d8e6c4755eaf95697b02d",
+    "final": "d6a609a82c3aec3b8b4e6609a83a452d11ac1d89",
+    "ownerCloseout": "59b9650f4c17e369d2aa53e59861086778576cf9",
+    "mainSourceHashes": {
+      "apps/web/src/conversation-context/selection.ts": "6baaf6a13ab95360b628afc70986b7b48599fddc7dd3419c97dfe80c82870543",
+      "apps/web/src/conversation-context/controller.ts": "794fa1d0b553c323fd097f1fc1549d70b74d9a58b474585861b3caeed7acfea7",
+      "apps/web/src/conversation-context/ContextPicker.tsx": "058f8b75af5f31b3852ba733ff09ac05c09b1504d1df3488bf581659090473ee",
+      "apps/web/src/conversation-context/context-picker.css": "c81b7b60b5434d491b0a8ac3cad283682050ca56c27ba72055154d8df237bedf",
+      "apps/web/test/conversation-context.test.ts": "e43064dbf855b0f609d2992fe19fed17409506aff1a04cc2f1db1cfdfbce0e07",
+      "apps/web/test/conversation-context.fixture.tsx": "09b935d98bb545d889068923d55a365c72be238a5e5a11ddae0ca62f1df50761",
+      "apps/web/test/conversation-context.browser.ts": "9ed0ed62fac6630c641f8f718405905a65b4386a807f1dcef7e957ecb2112021"
+    },
+    "ancestryVerified": true
+  }
+}

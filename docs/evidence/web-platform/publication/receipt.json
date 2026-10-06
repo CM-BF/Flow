@@ -1,9 +1,9 @@
 {
   "preparedAt": "2026-10-06T07:53:06.710792+00:00",
   "contentTarget": "a5e500136438b197305339cbe0a5e10a196a4317",
-  "finalPublicationHead": null,
+  "finalPublicationHead": "33bd93ddca59df78a6abb1c54cfd3a01163dba28",
   "review": "APPROVED a5e500136438b197305339cbe0a5e10a196a4317",
-  "mainPublication": "NOT_PUBLISHED",
+  "mainPublication": "PUBLISHED",
   "sourceWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
   "sourceBranch": "codex/web-platform-management",
   "selectedPaths": [
@@ -17,7 +17,7 @@
   "reviewedAt": "2026-10-06 07:59 UTC",
   "metadataRecordedAt": "2026-10-06 08:02:07 UTC",
   "contentObservationCutoff": "2026-10-06T07:56:21.089Z",
-  "publicationHeadBinding": "Final committed clean full HEAD is supplied once in the controlled Execution Lead handoff; null avoids a self-referential commit hash.",
+  "publicationHeadBinding": "The fixed clean publication HEAD33bd was copied only for the two selected paths. Current canonical metadata is later and does not alter the reviewed a5 content snapshot.",
   "reviewScope": "Only plans/web-platform and docs/evidence/web-platform; no product or service approval.",
   "independentReview": {
     "markdown": 32,
@@ -61,5 +61,7 @@
       "observation": "CHAT06I01 implementation and CONTEXT review/claims visible; no overlap reported",
       "managerRepeatedApi": false
     }
-  ]
+  ],
+  "mainReceipt": "../main-publication-context-receipt-0814.json",
+  "publishedMain": "fc113945ff73d1a43092d0a70b51e901aa4be1e2"
 }

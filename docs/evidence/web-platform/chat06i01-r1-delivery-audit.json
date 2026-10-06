@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-06T08:14:40.111257+00:00",
+  "head": "0b5be942f9a80ba300c8ecf8f986ddf8c70b041a",
+  "dirty": "",
+  "target": "9dafff7702f700e8b89f8ccee1992bce9ccb63d1",
+  "base": "6426b44cd32d10216141af13ecfa83b8879025fb",
+  "paths": 86,
+  "scopeCount": 13,
+  "outside": [],
+  "hashes": {
+    "apps/web/src/App.tsx": "fa940ea321e649258fdd4f749975f4e6e9a68b0b32c6dd8e84cbb540b1a4e049",
+    "apps/web/src/conversation-stream/host.ts": "506efd942fb3f47831db7e1c381616132c1e2ffd6798f2c6c3bc5e22f10b6848",
+    "apps/web/src/conversations/ConversationThread.tsx": "bf64cb702ad35e564c3ccef3a8dffd21369ef7222d432b5f30f03f31b3998be4",
+    "apps/web/src/plugin-integration/react.tsx": "69486ceac7f6215cb26c482a2240717e6b50c261c710996362b60db31172484a",
+    "apps/web/src/plugin-integration/session.ts": "7574aa1a448e67f1e4eca2bfb8964969832557a6015b69b28ea74d8c9e381f3e",
+    "apps/web/src/plugins/types.ts": "2dd8d0d6b9d3108d6546d582e66e0697d25e738d82c3fe5f43ff09ebd03c5e0f",
+    "apps/web/src/plugins/validation.ts": "51d1e9d5abffbd2add15812f3272f606f3d474a668209f0d374d5b1b2c37d5de",
+    "apps/web/test/conversation-stream-integration.browser.ts": "051d442399e8fd004aed9e6e4d7df623688bf3d92e542c45f70c1df606b754ea",
+    "apps/web/test/conversation-stream-integration.fixture.ts": "550c29f29cfdacb57bcfe49c61e0bc9ff6f8fe07f67888f356a6a48bcd9936df",
+    "apps/web/test/conversation-stream-integration.test.ts": "d7646add985ef3d288c46aed0ca0e6f7553ce0508a5bc8bb8df2b24f192f96cc",
+    "apps/web/test/plugin-host.test.ts": "26f73c5dc218026965831094a3c555c1e775859c4f99619c9a67ca50c0b36e43"
+  },
+  "reports": {
+    "development-browser.json": {
+      "startedSource": "972cd8437074e9f04c43d872515442fe1a9a0059",
+      "at": "2026-10-06T08:10:51.799Z",
+      "count": 8,
+      "failure": null,
+      "errors": []
+    },
+    "production-browser.json": {
+      "startedSource": "972cd8437074e9f04c43d872515442fe1a9a0059",
+      "at": "2026-10-06T08:10:50.180Z",
+      "count": 8,
+      "failure": null,
+      "errors": []
+    }
+  },
+  "markdown": 7,
+  "localLinks": 34,
+  "broken": [],
+  "review": "APPROVED fixed9dafff by root at 2026-10-06T08:15:26Z; R1 CLOSED",
+  "note": "No repeated product/browser/API checks. Original audit0b5be remains timed history; finalmetadata source0diff/parserapproved/humancomplete independently checked.",
+  "finalMetadata": "e30a9a3b7e36920251d8b472399736f9790e6e0c",
+  "reviewTimeCorrection": "Earlier root08:17 label was erroneous and superseded by explicit root clock08:15:26; evidence unchanged."
+}
