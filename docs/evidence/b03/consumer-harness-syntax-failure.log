@@ -1,0 +1,4 @@
+First consumer harness invocation exited 1 before any tests/DB creation.
+Node24 SyntaxError: Unexpected token ')' at run-consumer.mjs:44 (extra closing parenthesis in originalBodies guard; same generatedBodies expression corrected).
+Observed command: /opt/homebrew/opt/node@24/bin/node experiments/bounded-preview/run-consumer.mjs
+This is a preserved diagnostic summary from the tool output, not fabricated test stdout.

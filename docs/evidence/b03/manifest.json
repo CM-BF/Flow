@@ -1,0 +1,276 @@
+{
+  "implementation": "9b2156d1b3481643bc5abd01241831e8c7f4dbdf",
+  "base": "e802854f346a81749efdef3f36737b16141b98ef",
+  "recordedAt": "2026-10-06 05:04:22 UTC",
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "sha256": "9443faf1dff64220e651b02acba13c7fe5069e5c8be10b05aa9fe70e121cd2c5"
+    },
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "sha256": "7f332f6a91d6ea14a3ae467b99c52b2e92e4ce9f627b1ff2c7d6ca6c0be9e5d3"
+    },
+    {
+      "path": "apps/server/src/assistant/preview.test.ts",
+      "sha256": "3e3aa5287816b5aa58383ebdcb6001329cc79f4ea0702f9b6bf4e8be137c7adf"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "sha256": "f674a526e14f7534b3b11bb284b3f177a1128d8169274e522536434ef48d969c"
+    },
+    {
+      "path": "experiments/bounded-preview/fixture.ts",
+      "sha256": "80f70cc02e702af25f806ce43f2216fb6ab5f76b4c141d39ff9e6964c6fcc0fc"
+    },
+    {
+      "path": "experiments/bounded-preview/instrument.ts",
+      "sha256": "da1cde761e8afd6f62a87c7338af262cba73661fb247b1404b93f0112cf64d74"
+    },
+    {
+      "path": "experiments/bounded-preview/run-consumer.mjs",
+      "sha256": "7eadc98cdf0966931ab0ee74c1df7775afc8f8388a7ee52d1ad8420dea5d5347"
+    },
+    {
+      "path": "experiments/bounded-preview/run.ts",
+      "sha256": "703f2fda993d95ac91e100f4a2bcbf0a9aa252ec0e56ae61e3905d8aebfa5450"
+    },
+    {
+      "path": "experiments/bounded-preview/vitest.consumer.config.ts",
+      "sha256": "fce9706fc7c0172c28ac5627bac45e89e5cd578236bb278b4f673f861c992194"
+    }
+  ],
+  "logs": [
+    {
+      "path": "docs/evidence/b03/after-cleanup.json",
+      "sha256": "337a455babd99bb247f767f7513a649663a646ce662f1516d01f575305a7ee33",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/b03/after-command.json",
+      "sha256": "ed6f377c76f1d933dc7d3d530e3a588296c51e8a0b43d23688882fc7cb5af51a",
+      "bytes": 280
+    },
+    {
+      "path": "docs/evidence/b03/after-resource.json",
+      "sha256": "87dd42e86045aa12104e4ab09728ca887b1ce02c46f305f07c5d09a620fdb58d",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/b03/after.json",
+      "sha256": "e1615e29c8f4947a79edbe672676064b6765beba89752c679adf9222f1479b4e",
+      "bytes": 444679
+    },
+    {
+      "path": "docs/evidence/b03/after.log",
+      "sha256": "7d0ac33a517cc56b1deb1b2d30fcb6998d9344ff1dbec3dc1fcfaddd353e93a6",
+      "bytes": 2167
+    },
+    {
+      "path": "docs/evidence/b03/baseline-reference.json",
+      "sha256": "9fa5fc2a275100050ce3d3e0fbbe0f822a03584d7d5d9154ed6115ebfb5f3596",
+      "bytes": 4484
+    },
+    {
+      "path": "docs/evidence/b03/consumer-cleanup.json",
+      "sha256": "93b728bc6748f0f6760061b95fb594cb50f490ad06af267862c9ed278a1b047f",
+      "bytes": 111
+    },
+    {
+      "path": "docs/evidence/b03/consumer-harness-syntax-failure.log",
+      "sha256": "6691d43d4f01459cdd14a7920145df4cbc5565b0c934bfd357d408fc55c096bd",
+      "bytes": 420
+    },
+    {
+      "path": "docs/evidence/b03/consumer-result.json",
+      "sha256": "fbed2c3b8fb49ed04b23e619c86ef379c8a2469ab649dea30414dab3c5b99b45",
+      "bytes": 892
+    },
+    {
+      "path": "docs/evidence/b03/consumer.log",
+      "sha256": "602dfdcfbabededd7b58d684879678e610df5cacad609fa5e471d133aee5ae08",
+      "bytes": 2235
+    },
+    {
+      "path": "docs/evidence/b03/observer-provenance.json",
+      "sha256": "d667b96218de589e231b465dcd2590384d4257331b4d4d5cd163185a46e4c4d2",
+      "bytes": 382
+    },
+    {
+      "path": "docs/evidence/b03/pre-measure-typecheck-result.json",
+      "sha256": "1638aefee4fec88595581c1d56001b2ae698201c8130f7be169a10185262c537",
+      "bytes": 287
+    },
+    {
+      "path": "docs/evidence/b03/pre-measure-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/b03/preview-cleanup.json",
+      "sha256": "7b7fac560f0f09321b84dd21dc4c6d25d98cbd69c077a7a8a9f5368b0074566d",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/b03/preview-first-green-cleanup.json",
+      "sha256": "7af993da738c57d48525440fc0bea283b9e31353b434ccb9a6d49d0d9ba04960",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/b03/preview-first-green-resource.json",
+      "sha256": "b27903068a6dda3eb0d136634ecb22153fe896aa20b9b8ee4f8c86fc597f30f4",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/b03/preview-first-green-result.json",
+      "sha256": "701111a59759a610c72f3e2b6a88d9c7afb894b89423413a63d26bf61f2883aa",
+      "bytes": 328
+    },
+    {
+      "path": "docs/evidence/b03/preview-first-green.log",
+      "sha256": "56884c810dfe32e3b0c1a4394220f45e75963d80c32449943e1469418832f052",
+      "bytes": 327
+    },
+    {
+      "path": "docs/evidence/b03/preview-matrix-result.json",
+      "sha256": "bf7ede52e62c9e73136b749c3b2107ecb034430d501f47b9b118e190be8844d1",
+      "bytes": 328
+    },
+    {
+      "path": "docs/evidence/b03/preview-matrix.log",
+      "sha256": "c218fa98bdb523c9e9b72cd672048b4882b6e47fe624209ae9305108ef6b1271",
+      "bytes": 332
+    },
+    {
+      "path": "docs/evidence/b03/preview-red-cleanup.json",
+      "sha256": "2ed22d516e589659dcc9a1c8b536601676885af13860274e7b65dcc507dcb221",
+      "bytes": 150
+    },
+    {
+      "path": "docs/evidence/b03/preview-red-resource.json",
+      "sha256": "3aa3710d44349c6386a6c4cf817dd06948a036d78f18d2e04481b996e9f27cd4",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/b03/preview-red-result.json",
+      "sha256": "200dbfca496475a2936018acd681dd3a6a7de289ab8bea3418b02b480659fbbc",
+      "bytes": 328
+    },
+    {
+      "path": "docs/evidence/b03/preview-red.log",
+      "sha256": "3c69070edf1bd96467f3b9fcab50ec5c5d93c3d8408648ac3feffbd620161afe",
+      "bytes": 1132
+    },
+    {
+      "path": "docs/evidence/b03/preview-resource.json",
+      "sha256": "bb4fbdaa8facadb335e5e977c188eae6a28d2b68be95ef96408ee1e992b48fa8",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/b03/tsconfig.json",
+      "sha256": "b78d9a1d17fc3e3e8f9bf4a2ffa3904072fe05b1fa61708722bddbbce3f96d1f",
+      "bytes": 216
+    },
+    {
+      "path": "docs/evidence/b03/typecheck-result.json",
+      "sha256": "90aecb11b279c8c1746fb2502a911835d447164aec2184cbb29e4cfeb091e4d0",
+      "bytes": 287
+    },
+    {
+      "path": "docs/evidence/b03/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "checks": {
+    "preview": {
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/assistant/preview.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner"
+      ],
+      "startedAt": "2026-10-06T05:00:06.491Z",
+      "endedAt": "2026-10-06T05:00:08.051Z",
+      "exitCode": 0
+    },
+    "previewSelected": 21,
+    "previewPassed": 21,
+    "consumer": {
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "experiments/bounded-preview/consumer.generated.test.ts",
+        "--no-cache",
+        "--configLoader",
+        "runner",
+        "--config",
+        "experiments/bounded-preview/vitest.consumer.config.ts"
+      ],
+      "testBodiesSha256": "7e0869cbec9b3770fb7a963125cb131bf9e71fe0890f1aa77c93441eaaabb525",
+      "sourcePath": "apps/server/src/conversations/conversations.test.ts",
+      "sourceSha256": "43546004f5eafb7b275206fd1bd1cb83744b4c9aa1006913b49e71f776dbaaa4",
+      "generatedSha256": "51d23078b3f25d573c4f4dd5c77d1054d22a42ccbedcfe2f910e0fc4435f89d3",
+      "startedAt": "2026-10-06T05:01:08.453Z",
+      "endedAt": "2026-10-06T05:01:25.684Z",
+      "exitCode": 0,
+      "changes": "Only relative imports and unique test resource setup/cleanup. All original test cases/assertions retained. No production index edits."
+    },
+    "consumerSelected": 22,
+    "consumerPassed": 22,
+    "distinctTests": 43,
+    "after": {
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--import",
+        "tsx",
+        "experiments/bounded-preview/run.ts"
+      ],
+      "startedAt": "2026-10-06T05:02:26.434Z",
+      "endedAt": "2026-10-06T05:02:33.256Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    "httpSamples": 126,
+    "noEmit": {
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--project",
+        "docs/evidence/b03/tsconfig.json"
+      ],
+      "startedAt": "2026-10-06T05:01:59.271Z",
+      "endedAt": "2026-10-06T05:02:00.647Z",
+      "exitCode": 0
+    }
+  },
+  "consumerPostRunFix": "finally pool.end if stopServer throws; original test bodies preserved, node --check exit0; no repeat22",
+  "backgroundSqlQueries": 29,
+  "baselineResultsSha256": "ee6ae620eef3fce714d59d5e1b9a4de8f0e8e2d94454cce5b1b0463deeb8b62f",
+  "runtimeFilesUnchangedSinceGreen": [
+    "apps/server/src/assistant/store.ts",
+    "apps/server/src/assistant/index.ts",
+    "apps/server/src/assistant/preview.test.ts",
+    "apps/server/src/conversations/replies.ts"
+  ],
+  "cleanupFiles": [
+    "docs/evidence/b03/after-cleanup.json",
+    "docs/evidence/b03/consumer-cleanup.json",
+    "docs/evidence/b03/preview-cleanup.json",
+    "docs/evidence/b03/preview-first-green-cleanup.json",
+    "docs/evidence/b03/preview-red-cleanup.json"
+  ],
+  "limitations": [
+    "decoded JSON not PG wire",
+    "PG still performs full body hash; N+1 unchanged",
+    "shared host n20 not CPU/latency/SLO proof",
+    "legacy and full detail readers unchanged"
+  ],
+  "review": "NOT_STARTED"
+}

@@ -1,0 +1,26 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-conversation-preview
+
+ ❯ apps/server/src/assistant/preview.test.ts (1 test | 1 failed) 863ms
+   × returns a bounded preview from PostgreSQL without transferring the full typed body to the page reader 85ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  21:58:04
+   Duration  1.25s (transform 172ms, setup 0ms, import 309ms, tests 863ms, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/assistant/preview.test.ts > returns a bounded preview from PostgreSQL without transferring the full typed body to the page reader
+AssertionError: expected 133401 to be less than 20000
+ ❯ apps/server/src/assistant/preview.test.ts:12:24
+     10|   expect(page.body.turns[0].assistant).toMatchObject({ state: 'availab…
+     11|   const decodedBytes = Object.values(page.work!.sql).reduce((sum,value…
+     12|   expect(decodedBytes).toBeLessThan(20_000);
+       |                        ^
+     13| });
+     14| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
