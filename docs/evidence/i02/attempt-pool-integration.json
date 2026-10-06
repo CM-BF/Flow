@@ -1,0 +1,64 @@
+{
+  "target": "d655a3315bf8d967f4c822969e1a0b72952dc493",
+  "delivery": "fe63a932a1c422f27af69c57da98b77c3382ed0d",
+  "sources": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "cb91b42d9bc672b767f8539c2e5989e558c896a95acf128cca3b7b4519dac740",
+      "bytes": 13786,
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "sha256": "40e103f5d9941e7519a80b8d116a0ac316a6376bbbe570cc51a3dc11e63b3d78",
+      "bytes": 26542,
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "bytes": 5175,
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "sha256": "76edf9ace719161329d6534bfd37d27d1185704bf1f1896ebffe9df45adc8559",
+      "bytes": 5733,
+      "fixedMatch": true
+    },
+    {
+      "path": "docs/evidence/s01p01/check.mjs",
+      "sha256": "28c5038636a5390eb26334e6f09125957e7d7bc78bd6048d0663d71a22c7b1c4",
+      "bytes": 3006,
+      "fixedMatch": true
+    },
+    {
+      "path": "docs/evidence/s01p01/vitest.config.mjs",
+      "sha256": "8db216ac2bf6ec48c3fae74de376f254154b685e59474fb06eb1a89f63428d34",
+      "bytes": 2752,
+      "fixedMatch": true
+    },
+    {
+      "path": "docs/evidence/s01p01/types.tsconfig.json",
+      "sha256": "c75d8c36a5bed972a5fa76fac39ad5c7e753040b5fcdefcd2634d5755b85b7ca",
+      "bytes": 2422,
+      "fixedMatch": true
+    }
+  ],
+  "typecheckExit": 2,
+  "defaultConsumerExit": 0,
+  "consumer": "existing steering production factory: 2/2, default one runtime with injected SDK, no provider",
+  "raw": [
+    {
+      "path": "docs/evidence/i02/attempt-pool-typecheck.txt",
+      "bytes": 1903,
+      "sha256": "369168ab7fbc0d6df9c747670550f0e9a57fbaa7b1cdb4ed744fe94b8b219e2f"
+    },
+    {
+      "path": "docs/evidence/i02/attempt-pool-default-consumer.txt",
+      "bytes": 533,
+      "sha256": "f8d26285153459459052528bc55597da8917b842de71b3be53a1bbede830655b"
+    }
+  ],
+  "limitations": "No runner CLI opt-in wiring, no real model capacity, no personal runtime reload."
+}
