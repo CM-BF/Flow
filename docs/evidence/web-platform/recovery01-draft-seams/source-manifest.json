@@ -1,0 +1,155 @@
+{
+  "at": "2026-10-06T13:33:13.798552+00:00",
+  "base": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "method": "git show fixed object; installed source bytes pinned by lock version and per-file SHA256; read-only research, no behavior execution",
+  "projectSources": [
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "gitBlob": "9e459b714d11f4a7c11b5459bc797a4640a7a119",
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c",
+      "bytes": 22770,
+      "lines": 216
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "gitBlob": "49c91049885c56837778ebe04f21f6cae6d139bb",
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+      "bytes": 50767,
+      "lines": 1104
+    },
+    {
+      "path": "apps/web/src/TaskThread.tsx",
+      "gitBlob": "508180b66c1060005c53bdd26f04c382727d7e10",
+      "sha256": "62c5643735b0546d5d99b4340f8a0f4b8ddeec6f6b3421f24bfc6670d36f0a01",
+      "bytes": 10543,
+      "lines": 296
+    },
+    {
+      "path": "apps/web/src/workspace-state.ts",
+      "gitBlob": "12faa5fcd571d9d8bb53a866de318b2485d56965",
+      "sha256": "0ed02e547395893672a4b5f4f16fc4eac759d9841366e62805b030b7cf68a66b",
+      "bytes": 1784,
+      "lines": 65
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "gitBlob": "35757c68f80c87be239eb7a1d95fd2d4a645275d",
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+      "bytes": 32735,
+      "lines": 887
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "gitBlob": "c9883d287d2c5bd391ef95808b8c72e6607eb3fa",
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38",
+      "bytes": 22822,
+      "lines": 321
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "gitBlob": "0de627053cf623022abfb7d9961de625c3b6f1f5",
+      "sha256": "8a325158037cb0d2c59cd6b5c86630a0fe6495feb4195b254c1fd58673c83298",
+      "bytes": 12925,
+      "lines": 130
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "gitBlob": "84c1edcf396caebd24afe6676d7b590aba38c9e4",
+      "sha256": "ecec5a76bb0c0e89c4ac3b5cd4f4d56345299d737e15ca86088f244228fcd56b",
+      "bytes": 19732,
+      "lines": 277
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "gitBlob": "f64806657eaaf8e66d5a73dd8d386604bdafc39a",
+      "sha256": "b7c180fe00e97272aa48e7fd0e0b76e28234f4483b01bfd796518d4ff94f87c9",
+      "bytes": 18510,
+      "lines": 223
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "gitBlob": "fa337785d311c5f3b810f94b8adf1431f38da7c7",
+      "sha256": "ad001378fe9528e8e5741c94e64e840ab09dc6236289a0eb723922ed674e15e9",
+      "bytes": 5414,
+      "lines": 51
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "gitBlob": "a043e6b721193e0a0994f7900b9308dbc1c55224",
+      "sha256": "794fa1d0b553c323fd097f1fc1549d70b74d9a58b474585861b3caeed7acfea7",
+      "bytes": 15502,
+      "lines": 225
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "gitBlob": "0c6a1d0ad73601da371bd7ce91856f3010840966",
+      "sha256": "0c6eb70bd3ce9bff108e67c3a0bdf3e7142dcdab1b16371654f6e78e89f20576",
+      "bytes": 22497,
+      "lines": 272
+    },
+    {
+      "path": "apps/web/src/attachments/adapter.ts",
+      "gitBlob": "91a9a1f0526c30dc938bc511497896fb95542bfe",
+      "sha256": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3",
+      "bytes": 3138,
+      "lines": 52
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "gitBlob": "4505e3134fad143a23a580db1517d698fc66bce8",
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+      "bytes": 278830,
+      "lines": 7518
+    }
+  ],
+  "installedSources": [
+    {
+      "package": "@assistant-ui/core",
+      "version": "0.3.22",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/package.json",
+      "sha256": "eca9c8f55657de768140bac406c84ac18a94111eeb9f99c8d9f30be17dc07a28",
+      "bytes": 2995,
+      "lines": 123
+    },
+    {
+      "package": "@assistant-ui/core",
+      "version": "0.3.22",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/api/composer-runtime.ts",
+      "sha256": "a5c007fc5cefaefdfb3293927abb6d087ff128699f4e62ac373e9682a5b7c35e",
+      "bytes": 17394,
+      "lines": 585
+    },
+    {
+      "package": "@assistant-ui/core",
+      "version": "0.3.22",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/base/base-composer-runtime-core.ts",
+      "sha256": "6de137d5c36d9b4278b2363e5e797afddd3ebf9520060783c67cdc26c1831719",
+      "bytes": 39362,
+      "lines": 1246
+    },
+    {
+      "package": "@assistant-ui/core",
+      "version": "0.3.22",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtimes/external-store/external-store-thread-runtime-core.ts",
+      "sha256": "11ec03e09d2c49916fd75fb768aba7ed52c2081a858f230b4490071da8d91688",
+      "bytes": 41161,
+      "lines": 1119
+    },
+    {
+      "package": "@assistant-ui/react",
+      "version": "0.15.23",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/package.json",
+      "sha256": "1d0c3747b6ce89f3e4f6c5a7b780d192b3780df1bc8cbd1092934ff4fb66eca0",
+      "bytes": 2635,
+      "lines": 118
+    },
+    {
+      "package": "@assistant-ui/react",
+      "version": "0.15.23",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/src/primitives/composer/ComposerInput.tsx",
+      "sha256": "d8197a02ab2efb210c894d1f1f562637eccb7dd34bb4fb00f6f2682ea21dd6ea",
+      "bytes": 14592,
+      "lines": 455
+    }
+  ]
+}

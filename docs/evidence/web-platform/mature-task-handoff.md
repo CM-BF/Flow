@@ -12,6 +12,16 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 ## 当前优先队列（当前安全点；以下较早时点只作历史）
 
+**已审稳定Web发布与恢复并行（2026-10-06 13:37 UTC）**：GO要求推进实际预览，不以整Recovery或SVC06大构建作为发布前置。原机制仍SVC04唯一operator；本组[w01/RELEASE03四范围与180秒方案](release03-current-preview-proposal.json)已root结构批准，直接MATURE01，尚未take/建树；[四scope查重](release03-scope-proposal-observation.json)当时无重叠，不代表写权。
+
+现成9eec产物[root只读核验](release03-existing-artifact-root-audit.json)：10文件/1,588,017逻辑字节，固定hash齐、无symlink、五HTML引用齐、fixture=false；但它是普通/assets且无正式format2 manifest/releaseId。既有prepareWebArtifact仅复用已有完整matching descriptor，否则internal-build注入namespace；不得手造manifest绕过。现场available1750444KiB低于2.5GiB构建门槛；362 checkout文件4KiB取整估102,043,648B还不含依赖/DB/browser，physical增量+1GiB余量未证。当前保持Web8d8/caa1/v2，不操作个人目录/进程/用户tabs。解除条件是资源满足后一次正式format2准备，或原SVC提供合法现成matching descriptor；不是要求完成所有SVC06。
+
+**另有具体后台兼容门槛**：[root固定362/history缺口审计](release03-backend362-history-root-audit.json)证明362仍是旧attachment-only材料投影，缺已审4f879/cde三行修复。本段无新runtime复现，不能凭Send/Queue成功给完整兼容PASS；未来最小180秒包含exact362 factory附件only/mixed native context_observation/reportEvents（0provider），若失败由原backendoperator处理最小已审修复及验证，不禁附件或丢观察绕过。发布仍需exactbackend/descriptor四类raw报告+retained旧chunk/CAS门禁，Webtake不授权个人发布。
+
+Recovery继续原方案：[w01官方composer/材料草稿接缝报告](recovery01-draft-seams/report.md)已原样归档，14项目blob/6库hash，仅只读不扩大21写权；panels不转去发布。Root已确认草稿接缝仍21范围；storage坏/拒绝时“纯文可用”仅可继续编辑内存完整草稿，0mutation，不得绕durable barrier发纯文。官方empty通知不能删旧durable稿；Queue intent跨group重挂风险仍待实测。
+
+[panels完整envelope候选研究](recovery01-envelope-candidate/report.md)已原样归档：合法构造完整对象110082B，全摊slot/namespace116451B、增长8805B；双重JSON字符串全摊133581B反而超128KiB。仅纯内存设计样本，非全部合法record/IDB/App证明；有限ACK字段超界要保原record/key与已知内存事实，不截身份、不称HTTP拒绝。Root已结构批准128KiB initial record+slot/index、32KiB预付增长与4MiB global用于实施；实际准入/IDB/App仍待验证，不据候选数字假报已实现。129651B含非法display/date组合的过估不当合法最大值；initial迭代证据保留，21范围不变。
+
 **Recovery01结构已批准、尚未领取**：[fixedcde21literal/P01入口/完整材料恢复](recovery01-fixed-cde-proposal.json)获root正式结构批准，子task直归MATURE06、panels唯一owner；90秒累计真实App/HTTP含15秒清理、8MiB、1PG+1Chrome/0provider预算获准。[W01固定public请求正文上界](recovery01-request-bounds/report.md)已核：CREATE+turn103303B，示例完整record对象107379B/字符串双转义124533B；不等实际journal完整128KiB已验。初始+32KiB预留/4MiB最终仍待owner完整envelope与准入验证，不截断。
 
 [本段只读就绪核验](recovery01-readiness-preflight.json)：F01已有固定 **5be830e2614d45dbaa023e98923fc74f470b37ec** 三源，manifest与fixed完全匹配，canonical review仍NOT_STARTED；当前共享树正在集成，不能拿moving出口作base。中心 **582f41f…** 已由ExecutionLead13:21:44领域独审APPROVED（metadata5f19），但实际callerOrigin绑定、迟到ClearCookie、重复connect/32slot三项Web消费语义仍待对齐；不把后续消费差异改写为中心独审失败。[root固定源码三项审计](connection-fixed-consumer-root-audit.json)已补真实行/hash；它不替代领域review，不称浏览器复现，受信Origin共享是设计差异待明确。现场available1708720KiB低于完整构建2.5GiB门槛，另需physical增量+1GiB余量。新树/branch均不存在，未take/派实现/安装/测试；root排程澄清：F01固定/已审/主线组合输入与轻量资源满足后即可fresh21精确claim并实施；三项中心语义可并行处理，在完整浏览器旅程/整片批准前必须对齐，不等它们才写第一行。完整install/build门槛不放宽；当前不预占App、不复制HTTP/DTO。

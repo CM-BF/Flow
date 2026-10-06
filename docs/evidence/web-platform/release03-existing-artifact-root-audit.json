@@ -1,0 +1,121 @@
+{
+  "at": "2026-10-06T13:33:57.850623+00:00",
+  "scope": "Read-only existing artifact/source manifest audit; no build, HTTP, DB, browser, provider or personal operations",
+  "target": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+  "artifactDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
+  "sourceManifestSha256": "01123c977114e3ae355397262a12abe3dcbe9f9816608b84a19acf88ac6b4a18",
+  "files": [
+    {
+      "path": "assets/PluginManagement-A83k3W8t.js",
+      "bytes": 9854,
+      "sha256": "f6a718118ea8959a74b65825ff773fceb0c98e07a927fc9cb30c31ecfb771ad1",
+      "matches": true,
+      "isSymlink": false
+    },
+    {
+      "path": "assets/PluginManagement-Dok11XwQ.css",
+      "bytes": 2843,
+      "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9",
+      "matches": true,
+      "isSymlink": false
+    },
+    {
+      "path": "assets/assistant-ui-C7NurJFc.js",
+      "bytes": 667364,
+      "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e",
+      "matches": true,
+      "isSymlink": false
+    },
+    {
+      "path": "assets/assistant-ui-CcdakA0V.css",
+      "bytes": 966,
+      "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5",
+      "matches": true,
+      "isSymlink": false
+    },
+    {
+      "path": "assets/index-CS6oUEtx.js",
+      "bytes": 790635,
+      "sha256": "a3332161c06368644a06b3f4a0dbfddc96222ddbec0c0e8074f79c1fe55d1295",
+      "matches": true,
+      "isSymlink": false
+    },
+    {
+      "path": "assets/index-DzESKX8S.css",
+      "bytes": 112165,
+      "sha256": "f7e34bb0b280ed753b5b2b40f509d90a9f36704c3f658136bacbe83d1e1ce036",
+      "matches": true,
+      "isSymlink": false
+    },
+    {
+      "path": "assets/rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51",
+      "matches": true,
+      "isSymlink": false
+    },
+    {
+      "path": "assets/theme-BtweVK9E.js",
+      "bytes": 806,
+      "sha256": "4a6841f334221e5570f06e2ce9b06914084e93b2c8d5563c0bcf757e382f53b6",
+      "matches": true,
+      "isSymlink": false
+    },
+    {
+      "path": "assets/workspace-Qs7g1oqj.js",
+      "bytes": 1906,
+      "sha256": "e0135969b0dcb44c7cca2b4bbb105aa15100fb40c38dca3961e787bab8f767c0",
+      "matches": true,
+      "isSymlink": false
+    },
+    {
+      "path": "index.html",
+      "bytes": 705,
+      "sha256": "f7e958b0cb8410f71c23ea55c2b3aeedb307e199a23786edb967542b45bedb6d",
+      "matches": true,
+      "isSymlink": false
+    }
+  ],
+  "actualFilesEqualManifest": true,
+  "totalLogicalBytes": 1588017,
+  "htmlReferences": [
+    {
+      "path": "/assets/index-CS6oUEtx.js",
+      "exists": true
+    },
+    {
+      "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+      "exists": true
+    },
+    {
+      "path": "/assets/assistant-ui-C7NurJFc.js",
+      "exists": true
+    },
+    {
+      "path": "/assets/assistant-ui-CcdakA0V.css",
+      "exists": true
+    },
+    {
+      "path": "/assets/index-DzESKX8S.css",
+      "exists": true
+    }
+  ],
+  "buildSource": {
+    "path": "apps/web/test/attachment-integration.fixture.ts",
+    "sha256": "340c839bf921febd23bde195276691701f94419fad66adfc6d7a87d5da51857f",
+    "currentEqualsTarget": true,
+    "viteFixtureFalseExplicit": true,
+    "buildCallLines": [
+      96,
+      97
+    ]
+  },
+  "mainBundleHasFixtureOnlyCredentialString": false,
+  "limitations": [
+    "Logical artifact bytes are not physical disk allocation.",
+    "Ten asset hashes bind existing9eec candidate, not every newer main frontend feature.",
+    "No release manifest/import validation performed.",
+    "No fixed backend362 compatibility journey performed in this segment.",
+    "No approval or deployed-version claim."
+  ]
+}

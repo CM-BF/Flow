@@ -62,7 +62,7 @@
     "Hydrate prepared never autosends; dispatching becomesunknown; ACK checkpointfailure remains originalkey recoverable; reauth/GETsamebody/reload never autoPOST."
   ],
   "capacityProposal": {
-    "status": "W01 fixedpublicbody bounds completed and archived; actualfullenvelope/owneradmission tests and finalcapacityfreeze pending, nevertruncate",
+    "status": "Root structurally approved complete candidate for implementation:128KiB initialrecord+slot/index,32KiBprepaidgrowth,4MiBglobal. Still not actualIDB/App oralllegalenvelope proof; owner enforcesfullserialization andraiseslimitsratherthantruncates ifneeded.",
     "webOriginTotalChargedBytes": 4194304,
     "maxDraftRecords": 32,
     "maxLogicalCommandRecords": 128,
@@ -76,7 +76,70 @@
     "chargeFormula": "manifest+namespace actualUTF8JSON + sum(command initialRecordBytes +32768 reserved growth) + sum(draft recordBytes); initialcommand<=131072, maxcharge163840. Immutableinitialbase kept, checkpoint consumes reserve without doublecharge or returningunusedreserve. Newrecord>initial+reserve preservesold/unknown. Explicitconfirmed dismiss releases. Genericquotaerrors do not disclose othernamespace counts/content.",
     "boundedAckProjection": "Only decodedknownidentity projections: CREATEid/revision+match; turnid/task/number/revision/context identity; queue slot/key/request/revision/item/sequence/outcome/currentturn; steer command/task/attempt/owner/native/useruuid/revisions/status/bytes/digest/dates. Do not duplicate fullsummaries/replies/contextbody/history. Fixedinput savedonce.",
     "worstCaseValidation": "Construct complete envelope with publicid<=128 arbitrarycodeunits, creationtitle/model<=180, turn<=16000, references<=4, name<=512UTF8 plus localview/slot/keys/materialdisplay/namespace reference. If legalrequest exceeds128KiB raiseperrecordcap/acceptfewercount, nevertruncate. Logicalcharge is not UA physicalquota/heap/disk guarantee.",
-    "independentBodyBounds": "recovery01-request-bounds/report.md"
+    "independentBodyBounds": "recovery01-request-bounds/report.md",
+    "envelopeCandidateResearch": {
+      "report": "recovery01-envelope-candidate/report.md",
+      "fixed": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+      "owner": "workspace_panels_owner",
+      "type": "pure-memory publicschema+candidateserializedobject, not implementation/IDB/App",
+      "sampleAt": "2026-10-06T13:34:02.679Z",
+      "initialObjectBytes": 110082,
+      "withSlotIndexBytes": 110537,
+      "fullyAllocatedNamespaceBytes": 116451,
+      "headroomTo128KiB": 14621,
+      "checkpointGrowthBytes": 8805,
+      "reserveChargedTotalBytes": 149219,
+      "bodyAsStringWithAuxBytes": 133581,
+      "limits": "Completecandidate not allvalidenvelopes proof. Queueid/Steerdate guards mayacceptunboundedACKfield; boundedjournal checkpointfailure retainsoriginalkey/record andknowninmemory observation, notHTTP rejection oridentitytruncation. Capacity remainsproposal untilowneractualparser/admission/IDBtests.",
+      "archives": [
+        {
+          "name": "source-manifest.json",
+          "bytes": 2823,
+          "sha256": "4132b38323c1b43539a6ad0e79f8c926b172ae34fc249e7a4bc64573e4ba535e"
+        },
+        {
+          "name": "probe.mjs",
+          "bytes": 11079,
+          "sha256": "e406c02cff2778817ad2f6e153c9d517c80992a9db30221a4867acfb5b7e1f28"
+        },
+        {
+          "name": "probe.initial.mjs",
+          "bytes": 10137,
+          "sha256": "2c9dbf11fad8aac9981fcb2420dcb97a16be6de565578a8b0913d113d59b0773"
+        },
+        {
+          "name": "max-initial-sample.json",
+          "bytes": 111249,
+          "sha256": "2699aa89d41e275f4ace1176bdfe63d1454d83b51c2d1afafefe1de0ec8ef752"
+        },
+        {
+          "name": "report.md",
+          "bytes": 14118,
+          "sha256": "2a1d6a3af298f7d12b0313c4c567c311cb2dbc7a919b13211eb03517b66c8f0b"
+        },
+        {
+          "name": "results.json",
+          "bytes": 5419,
+          "sha256": "9207021c882ddd42057c17a121c687883d088ecb84ed29b710ec2e0eaff69f19"
+        },
+        {
+          "name": "namespace-sample.json",
+          "bytes": 5811,
+          "sha256": "667eebc3d9e767c795b8662069ae448da8587104206e2b60290c7564e4a005ad"
+        },
+        {
+          "name": "results.initial.json",
+          "bytes": 4853,
+          "sha256": "88d93adcabcb617fd8d4b937595352e125c88e907e83defa2eb91dc1ed31e161"
+        },
+        {
+          "name": "max-checkpoint-sample.json",
+          "bytes": 119701,
+          "sha256": "c75d364dee9e4c136f7a388e2be2fae1b2ac9a5cc7957a5e60cec7600f57c914"
+        }
+      ],
+      "rootDecision": "APPROVED for implementation structure;21scope unchanged.116451B includes entire namespace/manifest, growth8805B.129651B overestimate includes illegal display/date combinations, not legalmaximum acceptance. Preserve initialiteration attribution."
+    }
   },
   "dependencies": {
     "ATTACHI02": "9eec main cde, oldclaim nowv4released; no inheritedwrite right",
@@ -151,5 +214,13 @@
     "record": "recovery01-readiness-preflight.json",
     "claim": "NOT_TAKEN",
     "implementationGates": "F01 fixed+approved+main combination; fresh exact21/nooverlap; isolatednewtree; light resourcefit. Threecentersemantics are parallel work and finalbrowser/featureapproval gates, not mandatory firstline blockers."
+  },
+  "draftSeamResearch": {
+    "report": "recovery01-draft-seams/report.md",
+    "manifest": "recovery01-draft-seams/source-manifest.json",
+    "fixed": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+    "scope": "14 projectblobs/6officiallibraryhashes, sourceonly0tests; fullDraft includescomposertext,intent,Appprofile,knowledgeproject/selection,attachmentrefs/heldcapture,Steerlocaltext. Emptycomposernotification precedeslocalreceipt; preserve sync handoff/nextdraft isolation.",
+    "decision": "Researchinput; no scopeincrease/take inferred; root handles anystructuraldelta",
+    "rootClarification": "Root accepts still21scope, no workspace-state/TaskThread expansion. Storagefailure may keep editing fullmemorydraft but0mutation: no plaintext bypass of prepare/dispatchingCAS. Composerempty notification beforeonNew cannot deleteoldpersisteddraft. Queueintent remount/group risk requires actualtest, not reproduced/fixed bysourceaudit."
   }
 }

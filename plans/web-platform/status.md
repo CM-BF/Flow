@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:32 UTC / 会话生产固定接口已到，独审/main待；Recovery21范围与预算无变化 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:37 UTC / 已审页面发布与恢复并行；RELEASE03结构批准未take，产物格式/资源与后台差分门槛明确 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -112,3 +112,5 @@ ExecutionLead新通知：SVC05由唯一operator assignment_review对固定362个
 ## 证据与历史入口
 
 [本次收敛前原文历史](status-history.md)保留原时点、失败、未验、SHA与原始证据链接；仅历史不得更新成第二状态源。[plan](plan.md)保留完整U00–U12/REQ01–45与稳定36TODO；[research](../../docs/evidence/web-platform/research.md)记录研究依据；[固定发布说明](../../docs/evidence/web-platform/publication/README.md)界定a5独审副本；[本轮成熟度handoff](../../docs/evidence/web-platform/mature-task-handoff.md)供正常登记/集成。
+
+[RELEASE03候选/批准范围](../../docs/evidence/web-platform/release03-current-preview-proposal.json)直接MATURE01，w01唯一验证owner、未claim；不复用RELEASE01/02释放权，不抢Recovery。原SVCoperator独立接精确descriptor/compatibility后发布；个人服务未操作。

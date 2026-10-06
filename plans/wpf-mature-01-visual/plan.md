@@ -41,3 +41,10 @@ VISUAL01固定a8b/交付f708已独审并main4391接收，owner558895d收口且35
 已收w01固定253/VISUALa8的[18literal主题扩展候选](../../docs/evidence/web-platform/theme-extension-proposal.json)，仅绑定本计划01/02 TODO，不新大task、未领取或实施。保留official Thread局部inline默认，用受控root alias接有限token；requested preference与effective fallback分开，明确选择/禁用持久化与session退出临时fallback不同，旧epoch不得覆盖新选择。完整外部Ocean材质/插件reload矩阵须后继实际验证。附件P1优先，STEIRI重叠路径释放后仍fresh全范围查重。
 
 同TODO05/RS13新增固定观察：root只读f82候选HTML的5唯一asset共1,571,669原始字节，manifest匹配但assistant-ui仍预加载、两Thread/Radix静态依赖仍在。仅计数不等TTI/网络/部署/回归，不能把与旧caa1差额全部归附件；06关键路径后按完整初始图验收，见[原报告](../../docs/evidence/web-platform/attachi02-f82-initial-assets-research.json)。
+
+
+## 已审前端实际预览发布优先级
+
+2026-10-06 13:37 UTC GO明确要求：恢复主线继续同时，沿既有WPF-RELEASE/SVC独立Web发布机制推进已审稳定前端到实际预览，不能以SVC06大构建或整Recovery完成作前置；0provider、优先现成产物、真实产品兼容，不刷新用户tab/换会话/发送。沿原TODO05，root已批[RELEASE03四literal/180秒](../../docs/evidence/web-platform/release03-current-preview-proposal.json)，直接本大task、w01唯一验证owner，原operator发布；未take。
+
+现9eec10文件hash齐不等SVC format2可发布；既有API实际需正式build，而资源低于2.5GiB且依赖physical增量未知，先保现版本并写解除条件。另actual backend362仍缺已审history v2三行修复，未来须exact362 attachment-only/mixed reportEvents差分；失败则交原backendowner最小已审修复，不把“等SVC06”当笼统阻塞。完整descriptor、兼容四类raw、retained/oldchunk/CAS均沿原工具，无第二发布框架或新的产品写权。

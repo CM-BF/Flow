@@ -1,0 +1,106 @@
+{
+  "at": "2026-10-06T13:37:19.353751+00:00",
+  "source": "GO explicit priority via root; root structure approved four scopes and180s budget",
+  "task": "WPF-RELEASE03",
+  "parent": "WPF-MATURE-01",
+  "owner": "w01_owner",
+  "state": "STRUCTURE_APPROVED_NOT_TAKEN",
+  "candidateWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+  "candidateBranch": "codex/web-current-preview-compatibility",
+  "candidateBase": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "scopes": [
+    "apps/web/test/web-current-preview.fixture.ts",
+    "apps/web/test/web-current-preview.browser.ts",
+    "plans/wpf-release03-current-preview",
+    "docs/evidence/wpf-release03"
+  ],
+  "priority": "Advance reviewed stablefrontend to actualpreview while Recovery continues; neither entireRecovery norSVC06bigbuild is prerequisite. Ordinaryupdates only canonicalstatus/dashboard, noGOACK.",
+  "frontend": {
+    "source": "9eec51b72c6432b5b41df52f5b8fa783eb45e65b",
+    "artifact": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/docs/evidence/wpf-attach-i02/production-artifact",
+    "audit": "release03-existing-artifact-root-audit.json",
+    "files": 10,
+    "logicalBytes": 1588017,
+    "verifiedRootScope": "Exact10files/hashes/finalsource-manifest/noSymlinks/fiveHTMLrefs, fixturefalse fixedbuildsource; no runtimecheck",
+    "releaseReady": false,
+    "reason": "Plain/assets bytes, no releaseId/SVC descriptor manifest. ExistingSVC04 prepare has no prebuiltimport; only reuses already verified matching formalartifact, otherwise internal-build withformat2base. Do not forge manifest or rewritebytes under oldevidence."
+  },
+  "backend": {
+    "source": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "sourceEvidence": "SVC05 formal live receipt; no personalresampling",
+    "testMustUse": "Exact362 realcreateServer; never run cde but label362",
+    "requiredAdditionalGate": "Attachment-only and mixed v2 context_observation reportEvents deterministic no-provider nativepath; Send/Queue admissionalone insufficient",
+    "gapAudit": "release03-backend362-history-root-audit.json",
+    "knownGap": "362store bytes equal priorf3e569 failingprojection; approved4f879 equalscde fixes3lines. Currentanalysis sourceonly, no new362runtimefailure claim.",
+    "minimalRemediation": "Originalbackendoperator receives approved4f879/cde minimalhistoryfix with focusedverification/deployment if362fails; no attachmentdisable/dropobservation workaround, no blanketSVC06wait."
+  },
+  "svcInterface": {
+    "fixedToolSource": "aae1eb1054d75e78273e7c91ed048aeac80195da",
+    "canonicalOwner": "runner_owner / web-artifact-release / plans/svc04-web-release",
+    "operatorAuthority": "ExecutionLead selects originallegalSVCoperator; Webverificationtake doesnotauthorize personaldirectory/processoperations",
+    "prepare": "tools/personal-preview/web-artifact.mjs:75–106; reusedartifact requires matching releaseId/sourceTree/lock/toolchain andfullverify, otherwiseinternal-build93; base namespace injected111",
+    "publish": "SVC04 publish pointerCAS expectedVersion+actualbackendHead+exactartifact+compatibilityId; no backend/runner/Webrestart foralreadybootstrappedhost; nousertabreload",
+    "retained": "max3artifacts/192MiB,total each64MiB,compatibility32; existingtwo perSVC05receipt, actualfreshcapacity/compatibility/oldchunks verifiedonlybyoperator beforepublish; noTTL/removeunknownoldtabs",
+    "checks": "read/send/recover/negotiation realApp rawJSONSHA binds exactbackend+artifact, report≤4KiB each; importandverify usingexistingSVCAPI onownstate only"
+  },
+  "validation": {
+    "budgetSeconds": 180,
+    "minimumCleanupSeconds": 20,
+    "rawMaxBytes": 8388608,
+    "maxPG": 1,
+    "maxChrome": 1,
+    "provider": 0,
+    "journey": [
+      "actual App connect/read",
+      "ordinarysend fixedprofile",
+      "drop committedACK then realUIsamekey/body/sameturnretry withnextdraftpreserved",
+      "legacy/stream/profile negotiation",
+      "attachmentSend/Queuev2",
+      "backend362 attachment-only/mixed reportEventscontext_observation"
+    ],
+    "noFullRerun": [
+      "191 business",
+      "longname fullmatrix",
+      "allPG suites",
+      "personalservice"
+    ],
+    "failure": "Preserve actual red andcleanup; timeoutpartial noautomaticbudgetextension"
+  },
+  "resourcePreflight": {
+    "availableKiB": 1750444,
+    "fullInstallBuildMinimumGiB": 2.5,
+    "extraMargin": "estimatedphysicalincrement+1GiB",
+    "baseTrackedFiles": 6103,
+    "baseLogicalBytes": 87006191,
+    "rounded4KiBFileDataEstimate": 102043648,
+    "estimateBoundary": "Not physicalmeasurement; excludes directories/gitindex/dependencies/build/DB/browser. Dependencyincrement unknown, no claimingcapacitysafe.",
+    "takeDecision": "No placeholdertake/newtree/install/build/PG; actualAPI requires formalbuild and currentgatefails. Legal existingformat2descriptor orresourcegates plus exactpreflight required."
+  },
+  "recoveryParallel": "Panels stays Recoverydesign; w01draft research complete, available forreleasevalidation onlyafterCOMMITTED. No newagents orsharedscopeclaims.",
+  "archives": [
+    {
+      "source": "/tmp/root-attachi02-existing-release-artifact-audit.json",
+      "archive": "release03-existing-artifact-root-audit.json",
+      "bytes": 3820,
+      "sha256": "34ebd1ae00330b0784acde426cd11a5ca386998baae7fc7b751232817b637b45"
+    },
+    {
+      "source": "/tmp/root-release03-backend362-history-gap.json",
+      "archive": "release03-backend362-history-root-audit.json",
+      "bytes": 3391,
+      "sha256": "9cd2083022b1952bf57df554e3019073f341242ba66c55ee003c6018dc014550"
+    },
+    {
+      "source": "/tmp/recovery01-draft-seams/report.md",
+      "archive": "recovery01-draft-seams/report.md",
+      "bytes": 10853,
+      "sha256": "5c87d08ae97ca9012fd12db9a1c91e5f5449c1df4b244fc9459e43e726e084a1"
+    },
+    {
+      "source": "/tmp/recovery01-draft-seams/source-manifest.json",
+      "archive": "recovery01-draft-seams/source-manifest.json",
+      "bytes": 6927,
+      "sha256": "2d2835845f4c8df32c8972d59e7622fcdfdba2b4179cd5ec40c9450b7b594fa3"
+    }
+  ]
+}

@@ -71,3 +71,7 @@ Root方向已批准进入Interface与合法owner协调，不授共享中心写�
 排程门槛已明确：F01固定且独审/main组合输入到位、fresh无冲突和轻量开发资源满足即可开工，中心三项语义并行对齐，完整浏览器旅程与整片批准前必须解决；不因这些不改DTO的方法细节推迟所有journal/controller工作。[独立正文容量依据](../../docs/evidence/web-platform/recovery01-request-bounds/report.md)已到，仅证明public请求body上界；owner必须测实际完整record与预留增长，全量预算不足不得截断或淘汰unknown。完整构建资源门槛独立保留。
 
 2026-10-06 13:32 UTC 固定生产接口9406已核：[factory/session接缝](../../docs/evidence/web-platform/recovery-session-production-fixed-interface.md)。Recovery自有真实fixture显式传browserSession配置；未配置中心准确显示unsupported。接口无需新增21范围或扩预算，独审/main仍是开工输入门槛；Node测试cookie jar不替代浏览器cookie→read→SSE→reload，TLS/proxy及个人启用不在当前证明范围。
+
+只读草稿与[完整envelope候选](../../docs/evidence/web-platform/recovery01-envelope-candidate/report.md)已补，root确认仍21范围。官方empty通知先于onNew不能删旧durable稿；storage失败允许编辑完整内存稿但0mutation，不存在纯文发送绕过。Queue intent跨group重挂须实测；完整对象样本适配候选预算不等实现全部合法输入/IDB已验，ACK有限投影超界保原record/key与内存结果，不截身份或误报HTTP拒绝。
+
+Root已接收完整envelope候选并批准用于实现：128KiB初始record连slot/index、32KiB预付增长、4MiB全局；仍须实际serializer/CAS准入，非所有合法输入或IDB/App已验。116451B样本包含namespace/manifest，增长8805B；含非法字段组合的129651B过估不作合法极值。保draftVersion精确交接、ACK超界原identity/unknown及存储失败0mutation。21范围不变，不另启设计回合。

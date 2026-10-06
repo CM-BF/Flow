@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-06T13:35:43.991484+00:00",
+  "path": "apps/server/src/context-transparency/store.ts",
+  "sources": {
+    "actualBackend": {
+      "ref": "362af3bac77541e5a60979326bcf4d4b8c947915",
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7",
+      "bytes": 10963
+    },
+    "priorPureReproducer": {
+      "ref": "f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa",
+      "sha256": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7",
+      "bytes": 10963
+    },
+    "approvedHistoryFix": {
+      "ref": "4f87934f585b8241faa7cdb76b79a202fd353b6f",
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245",
+      "bytes": 11267
+    },
+    "mainCombined": {
+      "ref": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245",
+      "bytes": 11267
+    }
+  },
+  "actualBackendEqualsPriorReproducer": true,
+  "approvedFixEqualsMain": true,
+  "delta": "diff --git a/apps/server/src/context-transparency/store.ts b/apps/server/src/context-transparency/store.ts\nindex e67950ce..9db16d2c 100644\n--- a/apps/server/src/context-transparency/store.ts\n+++ b/apps/server/src/context-transparency/store.ts\n@@ -72,6 +72,9 @@ async function frozenMaterials(client: PoolClient, taskId: string): Promise<{ ex\n   if (!binding || binding.conversation_input_id && binding.goal_input_id) throw invalid();\n   const context = await contextReference(client, binding.conversation_input_id);\n   if (context) {\n+    // This history DTO describes knowledge citations only; a v2 subset is not a complete inventory.\n+    if (context.templateVersion === 2) return { executionInputDigest: context.executionInputDigest,\n+      materialRevisionDigest: null, materials: { state: 'unknown', reason: 'metadata-unavailable' } };\n     const materials = contextHistoryMaterialsSchema.parse({ state: 'known', sources: context.sources.map(({ citation, byteLength }) => ({ citation, byteLength, tokens: null })) });\n     return { executionInputDigest: context.executionInputDigest, materialRevisionDigest: sha256(canonical({ version: 1, citations: context.sources.map(source => source.citation) })), materials };\n   }\n",
+  "finding": "The actually retained backend362 still has the old v2 attachment context-observation material projection. Successful attachment turn/queue admission alone cannot establish release compatibility through native context observation.",
+  "requiredReleaseCheck": "Use exact backend362 production factory, admitted attachment-only/mixed v2 task and deterministic no-provider native context_observation reportEvents. Preserve failure if present; do not substitute cde backend or drop observations/materials.",
+  "knownFixedEvidence": "cde I02 attachment-current-integration receipt reports2 actual productionPG cases passed; not a362 run.",
+  "minimalRemediationInput": "Already approved4f879 history correction/maincde, to original backend operator; no implementation here, no blanket requirement to finishallSVC06/Recovery.",
+  "performed": {
+    "sourceOnly": true,
+    "newPG": 0,
+    "newHTTP": 0,
+    "newBrowser": 0,
+    "provider": 0,
+    "personalService": 0,
+    "projectWrites": 0
+  },
+  "limits": "Source identity/inference based on earlier defect and approvedfix; not new runtime reproduction or personalservice failure observation."
+}

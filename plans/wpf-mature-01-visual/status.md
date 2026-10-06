@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 13:05 UTC |
+| 最近更新 | 2026-10-06 13:37 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | VISUAL01四builtin材质/实际App片已root独审并main4391接收，九scope已释放；plugin材质/reload与完整视觉验收仍开放 |
-| 下一可用交付 | SVC04受控发布已审片；后继统一插件材质合同与reload生命周期等待精确新scope |
+| 下一可用交付 | 将已审页面推进实际预览；先满足产物构建资源和固定后台兼容门槛，恢复工作并行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -46,3 +46,5 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 真实Web发布兼容由独立[WPF-RELEASE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)实施，首canonical1eff6e6f7543c7fdf30e5d94cec3c43b148bb764，20a6529a v1四scope；真实新旧App构建/专用PG及fixture runner，0provider/个人发布操作，7805固定已root10:46:30 APPROVED，final db08e7b已正常push/clean，待Lead按同descriptor受控接收；仅真实旧/新App与固定b1c中心fixture兼容，个人发布仍Lead。
 
 RELEASE01兼容输入已main c450且20a v2释放；后继根严格类型检查发现fixture构建矩阵的noUncheckedIndexedAccess两错，RELEASE02独立base2e71/03323bce v1三scope由w01窄修，runner_owner独立审。不是env/ENG失败，旧定向检查与原browser报告保其真实范围；不重跑旅程或个人发布。[当前接收队列](../../docs/evidence/web-platform/mature-task-handoff.md)。
+
+实际发布新增[RELEASE03批准方案](../../docs/evidence/web-platform/release03-current-preview-proposal.json)：w01拟唯一验证owner、四范围未take，原SVCoperator发布。现成9eec hash核齐但无正式format2，当前资源不够正式build；backend362有特定history v2缺口须最小差分/合法修复，不等整Recovery或全SVC06。0个人操作，当前产物保持8d8/caa1/v2，来源与解除条件见中央队列。
