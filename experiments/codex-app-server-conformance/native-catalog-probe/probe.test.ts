@@ -1,16 +1,39 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterAll, afterEach, describe, expect, it, vi } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { runNativeCatalogProbe, inspectOwnedRoots, bounds } from './probe.mjs';
 import { prepareDelivery } from './execute-reviewed.mjs';
 
-const owned: string[] = [];
-afterEach(() => { for (const directory of owned.splice(0)) fs.rmSync(directory, { recursive: true, force: true }); });
+const owned: { path: string; identity: { dev: number; ino: number } | null; removed: boolean }[] = [];
+function fixtureRoot(prefix: string) {
+  const directory = fs.mkdtempSync(prefix);
+  const record = { path: directory, identity: null as { dev: number; ino: number } | null, removed: false }; owned.push(record);
+  const stat = fs.lstatSync(directory);
+  if (!stat.isDirectory() || stat.isSymbolicLink()) throw Error('Unknown fixture root');
+  record.identity = { dev: stat.dev, ino: stat.ino }; return directory;
+}
+afterEach(() => {
+  for (const record of owned.filter(item => !item.removed)) {
+    const stat = fs.lstatSync(record.path);
+    if (!record.identity || !stat.isDirectory() || stat.isSymbolicLink()
+      || stat.dev !== record.identity.dev || stat.ino !== record.identity.ino) throw Error('Fixture identity changed');
+    fs.rmSync(record.path, { recursive: true, force: false });
+    try { fs.lstatSync(record.path); } catch (error: any) { if (error?.code === 'ENOENT') record.removed = true; else throw error; }
+    expect(record.removed).toBe(true);
+  }
+});
+afterAll(() => {
+  const bytes = Buffer.from(`${JSON.stringify({ fixtures: owned, allRemoved: owned.every(item => item.removed) })}\n`);
+  if (bytes.length > 4096) throw Error('Fixture receipt bound');
+  const fd = fs.openSync('docs/evidence/wpf-mature-02/native-catalog-probe/checks/fake-roots.json',
+    fs.constants.O_WRONLY | fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_NOFOLLOW, 0o600);
+  try { fs.writeFileSync(fd, bytes); fs.fsyncSync(fd); } finally { fs.closeSync(fd); }
+});
 const page = { data: [{ id: 'fixture', model: 'fixture', displayName: 'Fixture', hidden: false, isDefault: true,
   supportedReasoningEfforts: [{ reasoningEffort: 'low', description: '' }], defaultReasoningEffort: 'low',
   serviceTiers: [], defaultServiceTier: null }], nextCursor: null };
 function setup(options: Record<string, any> = {}) {
-  const base = fs.mkdtempSync('/private/tmp/flow-native-probe-fake-'); owned.push(base);
+  const base = fixtureRoot('/private/tmp/flow-native-probe-fake-');
   const evidenceDirectory = path.join(base, 'evidence'); fs.mkdirSync(evidenceDirectory);
   const messages = [...(options.messages ?? [])]; let waiter: ((value: any) => void) | undefined, closed = false;
   const stderr = Buffer.from(options.stderr ?? 'fixture stderr');
@@ -125,7 +148,7 @@ describe('native catalog caller without any real child or listener', () => {
     expect(JSON.parse(prepareDelivery(result, 110).line).descriptors).toContainEqual(record);
   });
   it('rejects byte excess and nested directory replacement in bounded inventory', () => {
-    const base = fs.mkdtempSync('/private/tmp/flow-native-probe-inventory-'); owned.push(base);
+    const base = fixtureRoot('/private/tmp/flow-native-probe-inventory-');
     const nested = path.join(base, 'nested'); fs.mkdirSync(nested); const stat = fs.lstatSync(base);
     const roots = [{ path: base, identity: { dev: stat.dev, ino: stat.ino } }];
     const large = inspectOwnedRoots(roots, { ...fs, lstatSync(file: any) {
