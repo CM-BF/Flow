@@ -110,3 +110,5 @@
 - 既有授权开工者保留 migration 标记与原观察时间。账本是同机合作约束，不声称 OS 强隔离。受控 integration 仅应用已审提交；手工冲突修复/新实现须与原 owner 协调路径，不能借 integration 绕过 scope。
 - status 的“阶段”为最长24字的共同里程碑（当前 M2），任务步骤放“当前产出/下一可用交付”。页面总标题只取明确全局 FLOW-001 来源，缺失/过期显示未知，不拼接各任务自由段落。
 - 使用与恢复边界见 [D04说明](../docs/evidence/d04/README.md)。
+
+跨 task 部分范围移交允许：旧 owner 明确停写该范围 → 当前 version 的 amend 移除 → 新 owner take 成功后开工；期间新领取若冲突则重新协调，旧 owner 不恢复已交回写权。扩大原 claim 仍用原子 amend，整 claim handoff 保持 pending 占用。

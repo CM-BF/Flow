@@ -30,3 +30,5 @@
 [迁移输入](migration-inputs.json)记录既有合法开工者，不能冒充新领取前已执行检查。[实际回执](migration-receipts.json)保留首次receipt和currentReceipt；[纠正记录](migration-corrections.json)保留首次脚本误用未来02:55观察时间的8项原值与受审计amend，已纠正为实际02:48:42读取时间，输入校验现拒绝未来时间。外部WPF原02:41观察时间保留，WorkspacePanels.tsx追加已包括。
 
 clean-code/结构检查：账本集中事务、幂等与范围冲突；CLI不输出PG内部错误/凭据；页面只读textContent，进度不复制入DB；错误不变空闲，未过时重试不自动改owner。保留本机合作身份、全局工程低频锁、DB可用性和有限数据量限制；不称完整分布式调度/权限系统。
+
+跨 task 部分范围移交允许：旧 owner 明确停写该范围 → 当前 version 的 amend 移除 → 新 owner take 成功后开工；期间新领取若冲突则重新协调，旧 owner 不恢复已交回写权。扩大原 claim 仍用原子 amend，整 claim handoff 保持 pending 占用。
