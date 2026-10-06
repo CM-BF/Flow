@@ -11,7 +11,7 @@
 | Branch | codex/web-shared-ack-consumer |
 | 工作基线 / HEAD | base 0cee7556befa1988e60bae94b510240122c34b88；实现 2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d |
 | 工作树dirty状态 | 独审输入3054a272b231124fdf0471af4a284321965adeb7已核clean；此批准metadata提交前待提交，提交后clean以Git回执为准 |
-| 工作分支状态 | implemented / approved |
+| 工作分支状态 | in-progress / approved / waiting-main |
 | 本片段交付阶段 | integration |
 | 检查状态 | PASSED 2fa8d2cb3b6f5cbb39f6d3d5b784551d7b27867d；4直接消费者137+真实HTTP13 PASS；Web typecheck0 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；输入main 0cee7556befa1988e60bae94b510240122c34b88，非本片交付 |
