@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T21:29:07.084169+00:00",
-  "state": "NO_HOLDER_MIKA_212825_NOT_RUN_RESOURCE_WEB_NOT_ADMITTED",
-  "groupWindowOwnership": "Mika fresh21:28:25 below fixedfloor, noentry/child/PG/HTTP; returned with noreservation. Web also noholder/gate/free. Wait actual resource and scheduling; logical sparsecandidate bytes do not establish physicalfree.",
+  "recordedAt": "2026-10-06T21:41:34.226572+00:00",
+  "state": "NO_WEB_HOLDER_OPS_RESOURCE_RECOVERY_PRIORITY_NO_HEAVY_WINDOW",
+  "groupWindowOwnership": "Lead reports two readability narrow sparse operations and two native short-Git operations complete; Git configuration protection window explicitly returned. Shared volume still below original runtime floor at latest reported observation; no new Web resource sample or runtime window. Second readability config attribution remains historical UNKNOWN/APPLIED_PENDING_VERIFY, not changed by native result.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,11 +407,11 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "source": "Leadvia root",
-    "record": "f04-cleanup-only-window-intake.json",
-    "allocatedHolder": "Lead F04 cleanup-only",
+    "source": "Execution Lead inbound via root",
+    "record": "ops-next-five-sparse-candidates/lead-resource-intake.json",
+    "allocatedHolder": null,
     "webHolder": null,
-    "next": "Wait actualcleanup return/newsharedwindow; no Webrun"
+    "next": "OPS bounded five candidate preflight by Lead; heavy runtime window not open"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -816,6 +816,19 @@
       "provider": 0,
       "personalOperations": 0,
       "next": "Lead schedules next holder; no automatic DPERF04/Recovery/b4 retry. Source/data diagnosis before new fixed candidate and gate."
+    },
+    {
+      "recordedAt": "2026-10-06T21:29:07.084169+00:00",
+      "state": "NO_HOLDER_MIKA_212825_NOT_RUN_RESOURCE_WEB_NOT_ADMITTED",
+      "groupWindowOwnership": "Mika fresh21:28:25 below fixedfloor, noentry/child/PG/HTTP; returned with noreservation. Web also noholder/gate/free. Wait actual resource and scheduling; logical sparsecandidate bytes do not establish physicalfree.",
+      "source": "Preserved previous current snapshot before OPS bounded5 intake",
+      "priorLatestCoordination": {
+        "source": "Leadvia root",
+        "record": "f04-cleanup-only-window-intake.json",
+        "allocatedHolder": "Lead F04 cleanup-only",
+        "webHolder": null,
+        "next": "Wait actualcleanup return/newsharedwindow; no Webrun"
+      }
     }
   ],
   "dperf05Pure": {
@@ -967,7 +980,7 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "mika-svc07-not-run-return-212825.json",
+  "currentWindowEvidence": "ops-next-five-sparse-candidates/lead-resource-intake.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
@@ -999,5 +1012,15 @@
     },
     "previousAck": "lead-personal-next-window-ack-2124.json",
     "boundary": "Personal managed operation attribution belongs to original Lead/operator; does not imply settings270c or Recovery8ed personal deployment."
+  },
+  "opsBoundedCandidates": {
+    "count": 5,
+    "index": "ops-next-five-sparse-candidates/candidate-index.json",
+    "status": "FIVE_WITH_OWNER_KEEP_CLOSURE_READY_FOR_LEAD_EXACT_FILE_REVIEW",
+    "originalEight": 8,
+    "excludedAlreadySparse": 3,
+    "onlyOperator": "Execution Lead",
+    "writesByWeb": 0,
+    "report": "ops-next-five-sparse-candidates/report.md"
   }
 }

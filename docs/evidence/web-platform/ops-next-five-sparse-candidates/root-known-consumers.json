@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-06T21:39:18.684369+00:00",
+  "verdict": "NO_DIRECT_KNOWN_RUNTIME_INPUT_HIT_FOR_EIGHT_NAMED_CANDIDATES",
+  "scope": "Only current sealed Recovery next8ed, DPERF04 b2 bindings and preserved Settings b5 direct source/package/harness declarations. Freshly re-resolved those paths; no general reverse-dependency or live-process scan.",
+  "candidateRoots": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer"
+  ],
+  "inputs": [
+    {
+      "path": "/private/tmp/recovery-next8ed-sparse-dependency-okz_k7lw/audit.json",
+      "sha256": "4360366d55a22c145738ecd7a9a94b3e37747eaafea0b1ae5691362c3b23122b"
+    },
+    {
+      "path": "/private/tmp/w01-sparse-known-consumers-2120/audit.json",
+      "sha256": "f6d4579776782479cb8d6488b34a2a2e989b0cf44b183d23114d02ea382b6ce2"
+    },
+    {
+      "path": "/private/tmp/recovery-browser-next8ed-0v6ddc46/manifest.json",
+      "sha256": "4db938e316990f45c90561fd0357035ed3de8e25d13f6450973f1a0b3afa7546"
+    },
+    {
+      "path": "/private/tmp/dperf-b2/binding.json",
+      "sha256": "9fab801921548b4322e21ea35824c5a2f19f26690773e8615f5c3cd28bcdf3df"
+    },
+    {
+      "path": "/private/tmp/msgset-b5/binding.json",
+      "sha256": "dbd44eb3de82d2c5e6d6ac9886a90a118db67ed1d88dee089ac90b09d345adde"
+    }
+  ],
+  "consumers": [
+    {
+      "consumer": "Recovery-next8ed",
+      "uniqueDeclaredPaths": 124,
+      "currentLexicalAndResolvedHits": [],
+      "knownWorktreeRoots": [
+        "web-attachment-production",
+        "web-conversation-recovery"
+      ]
+    },
+    {
+      "consumer": "DPERF04",
+      "uniqueDeclaredPaths": 47,
+      "currentLexicalAndResolvedHits": [],
+      "knownWorktreeRoots": [
+        "dashboard-summary-detail",
+        "web-attachment-production"
+      ]
+    },
+    {
+      "consumer": "Settings-b5",
+      "uniqueDeclaredPaths": 167,
+      "currentLexicalAndResolvedHits": [],
+      "knownWorktreeRoots": [
+        "m2-integration",
+        "web-message-settings",
+        "web-platform-management"
+      ]
+    }
+  ],
+  "preserve": [
+    "All source/tests/scripts/rules/plans/D04/dependencies/ignored/untracked files remain KEEP, including donors excluded from this8.",
+    "Each candidate entire own evidence and concrete runtime/preview input closure must be supplied by original owner; unknown concrete path stays KEEP.",
+    "Whole chat06p01; w01/workspace-panels executable preview closure; thread-revision/upstream + provenance.md and w01/.gitattributes; every d06 mjs."
+  ],
+  "limits": [
+    "This observation is not eligibility, release, historical sparse, hash/current-main equality, physical savings or operation approval. Manager and owners perform their bounded8 checks; Lead sole final operator.",
+    "No new or future gate/admin input is yet bound; those cannot be certified. Dynamic package/import closure and all other leads consumers were not inspected.",
+    "Historical Settings is delivered/released and not proposed to rerun; its proof inputs were checked only to protect provenance."
+  ],
+  "operations": {
+    "projectWrites": 0,
+    "sparse": 0,
+    "freeQueries": 0,
+    "testsOrImports": 0,
+    "PGOrChrome": 0,
+    "serviceOrPersonalReads": 0,
+    "globalTraversal": 0
+  },
+  "methods": "find-skills local reuse/codebase-design/clean-code: explicit input ownership, current pins and lexical/realpath identity, no authority inferred from negative lookup."
+}

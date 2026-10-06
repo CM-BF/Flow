@@ -1,0 +1,521 @@
+{
+  "at": "2026-10-06T21:37:38.957791+00:00",
+  "ledgerObservedAt": "2026-10-06T21:36:49.456Z",
+  "boundedNames": [
+    "web-message-reuse",
+    "dashboard-proof-performance",
+    "web-context-receipts",
+    "dashboard-architecture-runtime",
+    "web-workspace-lifecycle-baseline",
+    "web-attachment-input-preview",
+    "attachment-resources",
+    "web-shared-ack-consumer"
+  ],
+  "rows": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+      "exists": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/conversations/messages.ts",
+            "apps/web/test/conversation-message-reuse.probe.ts",
+            "apps/web/test/conversation-messages.test.ts",
+            "docs/evidence/wpf-perf03",
+            "plans/wpf-perf03-message-reuse"
+          ],
+          "state": "released",
+          "branch": "codex/web-message-reuse",
+          "origin": "new",
+          "taskId": "WPF-PERF03",
+          "worker": "w01_owner",
+          "claimId": "2ec58c2c-811d-4f24-a14b-cf1a3e89cdb3",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+          "createdAt": "2026-10-06T07:22:56.375Z",
+          "updatedAt": "2026-10-06T07:49:41.137Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "head": {
+        "exit": 0,
+        "stdout": "9cea63212b13c624fde53981721aee116d0caeed",
+        "stderr": ""
+      },
+      "branch": {
+        "exit": 0,
+        "stdout": "codex/web-message-reuse",
+        "stderr": ""
+      },
+      "porcelain": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "sparseConfig": {
+        "exit": 0,
+        "stdout": "file:/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-message-reuse/config.worktree\ttrue",
+        "stderr": ""
+      },
+      "worktreeConfig": {
+        "exit": 0,
+        "stdout": "file:/Users/citrine/Projects/AgentHarness/Flow/.git/config\ttrue",
+        "stderr": ""
+      }
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+      "exists": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/src/aggregate.mjs",
+            "apps/execution-dashboard/test/proof-snapshot.test.mjs",
+            "docs/evidence/wpf-dperf01",
+            "plans/wpf-dashboard-proof-performance"
+          ],
+          "state": "released",
+          "branch": "codex/dashboard-proof-performance",
+          "origin": "new",
+          "taskId": "WPF-DPERF01",
+          "worker": "w01_owner",
+          "claimId": "bb7ef22f-e7d9-4cd3-8b72-cc69c591c2c7",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+          "createdAt": "2026-10-06T04:59:56.342Z",
+          "updatedAt": "2026-10-06T05:14:24.445Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "head": {
+        "exit": 0,
+        "stdout": "08bd0a71494f54809f4c4a2fa5b9718285103ea3",
+        "stderr": ""
+      },
+      "branch": {
+        "exit": 0,
+        "stdout": "codex/dashboard-proof-performance",
+        "stderr": ""
+      },
+      "porcelain": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "sparseConfig": {
+        "exit": 0,
+        "stdout": "file:/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/dashboard-proof-performance/config.worktree\ttrue",
+        "stderr": ""
+      },
+      "worktreeConfig": {
+        "exit": 0,
+        "stdout": "file:/Users/citrine/Projects/AgentHarness/Flow/.git/config\ttrue",
+        "stderr": ""
+      }
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+      "exists": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/conversation-context/receipts.ts",
+            "apps/web/src/conversations/outbox.ts",
+            "apps/web/src/conversations/queue/commands.ts",
+            "apps/web/test/conversation-context-receipts.test.ts",
+            "apps/web/test/conversation-outbox.test.ts",
+            "apps/web/test/conversation-queue.test.ts",
+            "docs/evidence/wpf-context-receipts",
+            "plans/wpf-context-receipts"
+          ],
+          "state": "released",
+          "branch": "codex/web-context-receipts",
+          "origin": "new",
+          "taskId": "WPF-CONTEXT02",
+          "worker": "w01_owner",
+          "claimId": "b4858792-3946-486b-b3a4-621fca9a4981",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+          "createdAt": "2026-10-06T08:13:30.510Z",
+          "updatedAt": "2026-10-06T08:33:02.956Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "head": {
+        "exit": 0,
+        "stdout": "66695c6579189644ae6399dcaca80cc04487a178",
+        "stderr": ""
+      },
+      "branch": {
+        "exit": 0,
+        "stdout": "codex/web-context-receipts",
+        "stderr": ""
+      },
+      "porcelain": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "sparseConfig": {
+        "exit": 0,
+        "stdout": "file:/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-context-receipts/config.worktree\ttrue",
+        "stderr": ""
+      },
+      "worktreeConfig": {
+        "exit": 0,
+        "stdout": "file:/Users/citrine/Projects/AgentHarness/Flow/.git/config\ttrue",
+        "stderr": ""
+      }
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+      "exists": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/public/architecture-data.js",
+            "apps/execution-dashboard/test/architecture.test.mjs",
+            "docs/evidence/d06",
+            "plans/d06-architecture-refresh"
+          ],
+          "state": "released",
+          "branch": "codex/dashboard-architecture-runtime",
+          "origin": "new",
+          "taskId": "D06",
+          "worker": "d01_owner",
+          "claimId": "6cad30a2-aa67-4baa-b465-4c957b682670",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+          "createdAt": "2026-10-06T12:39:42.275Z",
+          "updatedAt": "2026-10-06T13:09:51.032Z",
+          "observedAt": null,
+          "needsVerification": false
+        },
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "plans/d06-architecture-refresh/plan.md"
+          ],
+          "state": "released",
+          "branch": "codex/dashboard-architecture-runtime",
+          "origin": "new",
+          "taskId": "D06",
+          "worker": "d01_owner",
+          "claimId": "eccd968a-cd57-4448-99c1-2f99a9858a47",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+          "createdAt": "2026-10-06T13:13:04.159Z",
+          "updatedAt": "2026-10-06T13:13:27.302Z",
+          "observedAt": null,
+          "needsVerification": false
+        },
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/public/architecture-data.js",
+            "apps/execution-dashboard/test/architecture.test.mjs",
+            "docs/evidence/d06",
+            "plans/d06-architecture-refresh"
+          ],
+          "state": "released",
+          "branch": "codex/dashboard-architecture-runtime",
+          "origin": "new",
+          "taskId": "D06",
+          "worker": "d01_owner",
+          "claimId": "84fd3e7d-6ee1-4a0a-b73c-57294499e9e4",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+          "createdAt": "2026-10-06T10:07:49.978Z",
+          "updatedAt": "2026-10-06T10:24:18.920Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "head": {
+        "exit": 0,
+        "stdout": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+        "stderr": ""
+      },
+      "branch": {
+        "exit": 0,
+        "stdout": "codex/dashboard-architecture-runtime",
+        "stderr": ""
+      },
+      "porcelain": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "sparseConfig": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": ""
+      },
+      "worktreeConfig": {
+        "exit": 0,
+        "stdout": "file:/Users/citrine/Projects/AgentHarness/Flow/.git/config\ttrue",
+        "stderr": ""
+      }
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline",
+      "exists": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/test/workspace-lifecycle.browser.ts",
+            "apps/web/test/workspace-lifecycle.fixture.ts",
+            "docs/evidence/wpf-workspace-lifecycle-baseline",
+            "plans/wpf-workspace-lifecycle-baseline"
+          ],
+          "state": "released",
+          "branch": "codex/web-workspace-lifecycle-baseline",
+          "origin": "new",
+          "taskId": "WPF-WORKSPACEPERF01",
+          "worker": "workspace_panels_owner",
+          "claimId": "c815bc00-fd71-4652-b2c0-7affc0d7361e",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline",
+          "createdAt": "2026-10-06T10:56:20.443Z",
+          "updatedAt": "2026-10-06T12:21:16.237Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "head": {
+        "exit": 0,
+        "stdout": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50",
+        "stderr": ""
+      },
+      "branch": {
+        "exit": 0,
+        "stdout": "codex/web-workspace-lifecycle-baseline",
+        "stderr": ""
+      },
+      "porcelain": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "sparseConfig": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": ""
+      },
+      "worktreeConfig": {
+        "exit": 0,
+        "stdout": "file:/Users/citrine/Projects/AgentHarness/Flow/.git/config\ttrue",
+        "stderr": ""
+      }
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview",
+      "exists": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/attachments/AttachmentPicker.tsx",
+            "apps/web/src/attachments/adapter.ts",
+            "apps/web/src/attachments/attachments.css",
+            "apps/web/src/attachments/controller.ts",
+            "apps/web/src/attachments/recovery.ts",
+            "apps/web/test/attachment-controller.test.ts",
+            "apps/web/test/attachment-input.browser.ts",
+            "apps/web/test/attachment-input.fixture.tsx",
+            "apps/web/test/attachment-recovery.test.ts",
+            "docs/evidence/wpf-attach-i01",
+            "plans/wpf-attach-i01-input-preview"
+          ],
+          "state": "released",
+          "branch": "codex/web-attachment-input-preview",
+          "origin": "new",
+          "taskId": "WPF-ATTACHI01",
+          "worker": "w01_owner",
+          "claimId": "94b84c59-ab64-4ad5-b1de-fe11e62c443c",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview",
+          "createdAt": "2026-10-06T11:02:32.557Z",
+          "updatedAt": "2026-10-06T12:05:09.998Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "head": {
+        "exit": 0,
+        "stdout": "2b0a33e6ed00673bc66545577abce0d02148a19a",
+        "stderr": ""
+      },
+      "branch": {
+        "exit": 0,
+        "stdout": "codex/web-attachment-input-preview",
+        "stderr": ""
+      },
+      "porcelain": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "sparseConfig": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": ""
+      },
+      "worktreeConfig": {
+        "exit": 0,
+        "stdout": "file:/Users/citrine/Projects/AgentHarness/Flow/.git/config\ttrue",
+        "stderr": ""
+      }
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+      "exists": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/server/src/attachments/attachments.test.ts",
+            "apps/server/src/attachments/context.test.ts",
+            "apps/server/src/attachments/fixture.ts",
+            "apps/server/src/attachments/index.ts",
+            "apps/server/src/attachments/storage.ts",
+            "apps/server/src/conversation-context/store.ts",
+            "apps/server/src/conversation-queue/commands.ts",
+            "apps/server/src/conversations/commands.ts",
+            "apps/server/src/conversations/queries.ts",
+            "apps/server/src/conversations/state.ts",
+            "docs/evidence/wpf-attach01",
+            "packages/contracts/src/attachments.test.ts",
+            "packages/contracts/src/attachments.ts",
+            "packages/contracts/src/conversation-context.ts",
+            "packages/contracts/src/conversation-queue.ts",
+            "packages/contracts/src/conversations.ts",
+            "packages/storage/migrations/026-attachment-resources.sql",
+            "plans/wpf-attach01-resources"
+          ],
+          "state": "released",
+          "branch": "codex/attachment-resources",
+          "origin": "new",
+          "taskId": "WPF-ATTACH01",
+          "worker": "workspace_panels_owner",
+          "claimId": "ef617d78-eb39-484e-898e-5f057fca50d4",
+          "version": 3,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+          "createdAt": "2026-10-06T10:06:48.197Z",
+          "updatedAt": "2026-10-06T11:33:32.480Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "head": {
+        "exit": 0,
+        "stdout": "c6989b894aa4e9103472279e697d129b28cce5ff",
+        "stderr": ""
+      },
+      "branch": {
+        "exit": 0,
+        "stdout": "codex/attachment-resources",
+        "stderr": ""
+      },
+      "porcelain": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "sparseConfig": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": ""
+      },
+      "worktreeConfig": {
+        "exit": 0,
+        "stdout": "file:/Users/citrine/Projects/AgentHarness/Flow/.git/config\ttrue",
+        "stderr": ""
+      }
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer",
+      "exists": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/conversation-context/receipts.ts",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/execution-profiles/selection.ts",
+            "apps/web/test/conversation-ack-http.test.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "docs/evidence/wpf-ack01",
+            "plans/wpf-ack01-shared-consumer"
+          ],
+          "state": "released",
+          "branch": "codex/web-shared-ack-consumer",
+          "origin": "new",
+          "taskId": "WPF-ACK01",
+          "worker": "w01_owner",
+          "claimId": "a2674416-2084-48b9-962b-d09cd5bb7afe",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer",
+          "createdAt": "2026-10-06T10:45:38.879Z",
+          "updatedAt": "2026-10-06T11:11:21.768Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "head": {
+        "exit": 0,
+        "stdout": "8301991ad698410478bfbfa1c2443cc1bad37a27",
+        "stderr": ""
+      },
+      "branch": {
+        "exit": 0,
+        "stdout": "codex/web-shared-ack-consumer",
+        "stderr": ""
+      },
+      "porcelain": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "sparseConfig": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": ""
+      },
+      "worktreeConfig": {
+        "exit": 0,
+        "stdout": "file:/Users/citrine/Projects/AgentHarness/Flow/.git/config\ttrue",
+        "stderr": ""
+      }
+    }
+  ],
+  "operations": "Only exact8 Git HEAD/branch/status/config reads and existingledger; no process/deps/treecontents/free/product/sparse writes"
+}

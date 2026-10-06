@@ -1,0 +1,220 @@
+{
+  "kind": "READ_ONLY_CANDIDATE_SCREEN_NOT_OPERATION_AUTHORIZATION",
+  "observations": [
+    {
+      "name": "web-message-reuse",
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+      "branch": "codex/web-message-reuse",
+      "head": "9cea63212b13c624fde53981721aee116d0caeed",
+      "dirty": "",
+      "gitdir": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-message-reuse",
+      "coreSparseCheckout": {
+        "exit": 0,
+        "out": "true",
+        "error": ""
+      },
+      "coreSparseCheckoutCone": {
+        "exit": 0,
+        "out": "false",
+        "error": ""
+      },
+      "worktreeConfig": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-message-reuse/config.worktree",
+        "sha256": "97997ba84fd1c44263deb6f412fc3bef4b05e0103d00c5a97a97ca928299aa13",
+        "text": "[core]\n\tsparseCheckout = true\n\tsparseCheckoutCone = false\n"
+      },
+      "sparseRules": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-message-reuse/info/sparse-checkout",
+        "sha256": "97b0c13497524036a6c9abd20c5332f39fa5b2c334f5100546eb9c2b8fb5b72a",
+        "bytes": 28207,
+        "lines": 655
+      },
+      "skippedTrackedEvidence": 654,
+      "decision": "EXCLUDE_ALREADY_SPARSE"
+    },
+    {
+      "name": "dashboard-proof-performance",
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+      "branch": "codex/dashboard-proof-performance",
+      "head": "08bd0a71494f54809f4c4a2fa5b9718285103ea3",
+      "dirty": "",
+      "gitdir": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/dashboard-proof-performance",
+      "coreSparseCheckout": {
+        "exit": 0,
+        "out": "true",
+        "error": ""
+      },
+      "coreSparseCheckoutCone": {
+        "exit": 0,
+        "out": "false",
+        "error": ""
+      },
+      "worktreeConfig": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/dashboard-proof-performance/config.worktree",
+        "sha256": "97997ba84fd1c44263deb6f412fc3bef4b05e0103d00c5a97a97ca928299aa13",
+        "text": "[core]\n\tsparseCheckout = true\n\tsparseCheckoutCone = false\n"
+      },
+      "sparseRules": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/dashboard-proof-performance/info/sparse-checkout",
+        "sha256": "642111316e4de8e837ddb79f52dbd79279ee1a1762cf39b9cef51c0b309976af",
+        "bytes": 13083,
+        "lines": 311
+      },
+      "skippedTrackedEvidence": 310,
+      "decision": "EXCLUDE_ALREADY_SPARSE"
+    },
+    {
+      "name": "web-context-receipts",
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+      "branch": "codex/web-context-receipts",
+      "head": "66695c6579189644ae6399dcaca80cc04487a178",
+      "dirty": "",
+      "gitdir": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-context-receipts",
+      "coreSparseCheckout": {
+        "exit": 0,
+        "out": "true",
+        "error": ""
+      },
+      "coreSparseCheckoutCone": {
+        "exit": 0,
+        "out": "false",
+        "error": ""
+      },
+      "worktreeConfig": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-context-receipts/config.worktree",
+        "sha256": "97997ba84fd1c44263deb6f412fc3bef4b05e0103d00c5a97a97ca928299aa13",
+        "text": "[core]\n\tsparseCheckout = true\n\tsparseCheckoutCone = false\n"
+      },
+      "sparseRules": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/web-context-receipts/info/sparse-checkout",
+        "sha256": "b29cc6483887bca78fea1cd1623f566fc85e4caff1aa346781f57477640c8217",
+        "bytes": 31802,
+        "lines": 732
+      },
+      "skippedTrackedEvidence": 731,
+      "decision": "EXCLUDE_ALREADY_SPARSE"
+    },
+    {
+      "name": "dashboard-architecture-runtime",
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+      "branch": "codex/dashboard-architecture-runtime",
+      "head": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "dirty": "",
+      "gitdir": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/dashboard-architecture-runtime",
+      "coreSparseCheckout": {
+        "exit": 1,
+        "out": "",
+        "error": ""
+      },
+      "coreSparseCheckoutCone": {
+        "exit": 1,
+        "out": "",
+        "error": ""
+      },
+      "worktreeConfig": null,
+      "sparseRules": null,
+      "skippedTrackedEvidence": 0,
+      "decision": "CANDIDATE_ONLY_FOR_LEAD_EXACTFILE_REVIEW"
+    }
+  ],
+  "d06Sources": [
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "AGENTS.md",
+      "sha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa",
+      "bytes": 17226
+    },
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "plans/AGENTS.md",
+      "sha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c",
+      "bytes": 15077
+    },
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "plans/d06-architecture-refresh/plan.md",
+      "sha256": "64f78140ba1b2512aa81a9c56bc107171deb2d067827d7ee0b95d24f910b3e25",
+      "bytes": 3557
+    },
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "plans/d06-architecture-refresh/status.md",
+      "sha256": "761fd620a548e886714bd301b84675c8fb36d7272b564802b98979c158d86d4a",
+      "bytes": 3608
+    },
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "docs/evidence/d06/snapshot-aeb/README.md",
+      "sha256": "3925bab93832a0976d82241843f0d6156d46703bca82c8d5b7c2fbf46fea5986",
+      "bytes": 1990
+    },
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "docs/evidence/d06/snapshot-aeb/candidate.json",
+      "sha256": "0b58acd20cc54160337262a77fabcef43b4ed5f66d982d08ed9bec7060a8f22b",
+      "bytes": 3661
+    },
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "docs/evidence/d06/snapshot-aeb/preview.mjs",
+      "sha256": "3e4389f4c8237fc97f003e0ab9b7da16de433569aa6a7db4140f33ed85294963",
+      "bytes": 1771
+    },
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "docs/evidence/d06/snapshot-aeb/browser-check.mjs",
+      "sha256": "bbaf8bac952ad7152dd9c915d1f859f66f4ef18beff21f2c3052f9ca806a4ce1",
+      "bytes": 9367
+    },
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "docs/evidence/d06/snapshot-aeb/source-audit.mjs",
+      "sha256": "9778ced323329503a7803e29ea75af8dc88dbe5964585a8f25f54ad70909bd37",
+      "bytes": 11328
+    },
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "docs/evidence/d06/snapshot-aeb/browser-checks.json",
+      "sha256": "43a5aa4b2d2ea2b7836b882e98a810066a8c3384d5881b40daf444961a670dc7",
+      "bytes": 2967
+    },
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "docs/evidence/d06/runtime/preview.mjs",
+      "sha256": "4ed4303abf13cb719db8f1a30ced5666fab1ba636fae09473951fc8830736e02",
+      "bytes": 717
+    },
+    {
+      "commit": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "path": "docs/evidence/d06/preview.mjs",
+      "sha256": "1513adad96d85e826e7358c3d4d724a286d2f5b2e2ab35b0fd349ac892435ab2",
+      "bytes": 474
+    }
+  ],
+  "wholeOwnEvidenceCount": 182,
+  "ownEvidenceCurrentMissing": [],
+  "ownExecutableMjsPaths": [
+    "docs/evidence/d06/browser-check.mjs",
+    "docs/evidence/d06/context/browser-check.mjs",
+    "docs/evidence/d06/context/preview.mjs",
+    "docs/evidence/d06/context/source-audit.mjs",
+    "docs/evidence/d06/current/browser-check.mjs",
+    "docs/evidence/d06/current/review-fix-check.mjs",
+    "docs/evidence/d06/preview.mjs",
+    "docs/evidence/d06/runtime/browser-check.mjs",
+    "docs/evidence/d06/runtime/preview.mjs",
+    "docs/evidence/d06/runtime/source-audit.mjs",
+    "docs/evidence/d06/snapshot-aeb/browser-check.mjs",
+    "docs/evidence/d06/snapshot-aeb/preview.mjs",
+    "docs/evidence/d06/snapshot-aeb/source-audit.mjs",
+    "docs/evidence/d06/stream/browser-check.mjs",
+    "docs/evidence/d06/stream/preview.mjs",
+    "docs/evidence/d06/stream/source-audit.mjs"
+  ],
+  "exclusionFileListPrepared": false,
+  "resourceSavingMeasured": false,
+  "runtimeOrServiceObserved": false,
+  "recoveryTouched": false,
+  "projectWrites": false,
+  "supersededList": "dashboard-task-links/dashboard-architecture-first-fit/web-visual-shell/web-steering-control: only prior light branch/HEAD/clean/config observation; no candidate admission, no continued closure research"
+}

@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-10-06T21:41:04.188776+00:00",
+  "source": "Execution Lead inbound relayed by /root; not independently sampled by Web",
+  "readabilityOperations": {
+    "trees": [
+      "web-activity-readability",
+      "web-conversation-readability"
+    ],
+    "selectedFilesPerTree": 232,
+    "reportedReclaimedApproxMB": [
+      18.59,
+      18.33
+    ],
+    "remainingFreeApprox": "1.068GB",
+    "gateSatisfied": false,
+    "secondTreeConfiguration": "APPLIED_PENDING_VERIFY; shared config change attribution unknown, later contents reverified per Lead; preserve config, do not reapply or infer actor"
+  },
+  "gitConfigurationWindow": {
+    "holder": "Execution Lead",
+    "phase": "RETURNED_BY_EXPLICIT_LEAD_INBOUND",
+    "trees": [
+      "native-graph-acceptance",
+      "native-active-steering"
+    ],
+    "plannedMaximumSeconds": 30,
+    "actualReturnReceived": true,
+    "restrictions": [
+      "No branch/worktree creation or shared Git config change",
+      "Existing branch ordinary push/read-only source work may continue",
+      "Elapsed time is not return"
+    ],
+    "reportedResult": "Both native candidates completed; shared/other config unchanged and KEEP hashes consistent, according to Lead. No Web sample."
+  },
+  "web": {
+    "holder": false,
+    "reservation": false,
+    "gate": false,
+    "runtime": false,
+    "freeSampling": false,
+    "sparseOrConfigWrites": false
+  },
+  "priority": "OPS finite released-tree closure preparation before quick-controls provision",
+  "heavyRuntimeWindow": "NOT_OPEN",
+  "updatedAt": "2026-10-06T21:41:34.226572+00:00"
+}

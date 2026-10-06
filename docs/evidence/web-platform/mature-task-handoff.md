@@ -1,17 +1,18 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-06T21:28:49.564681+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+更新：2026-10-06T21:41:34.226572+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
 
 ## 共享窗口
 
-**当前无 holder：Mika 21:28:25 fresh资源不足、未调用入口即归还；Web 无运行、预约或 gate。**
-[最新入站](mika-svc07-not-run-return-212825.json)：free 1,143,750,656 B，低于原门槛64,208,896 B；0 child/PG/HTTP。本组未另取样，不追涨或自动重试。
-[Lead 个人发布已21:27:19完成归还](lead-personal-publication-return-212719.json)：af51 accepting v18、d629 current v3、3 retained，0 query/tab，均按原 operator 入站归因。
-[当前资源事实](resource-window-current.json)保留原门槛；232文件逻辑字节不等于实际物理回收或已满足gate。
+**Web 无运行、预约或 gate；当前优先协助恢复资源，重运行窗未开放。**
+[Lead 最新资源入站](ops-next-five-sparse-candidates/lead-resource-intake.json)：两 readability 窄范围 sparse 已完成，约回收 18.59MB / 18.33MB，但所报共享卷约 1.068GB 仍不足原门槛。本组未采 free，不据逻辑字节推准入。
+Lead 两 native 树的短 Git 配置保护窗已明确归还；不因此启动 PG/Chrome。第二 readability 树的 shared-config 归因不明仍保留历史记录，不改配置或重做操作。
+[当前资源事实](resource-window-current.json) · [历史个人发布完成](lead-personal-publication-return-212719.json) · [此前 Mika NOT_RUN 归还](mika-svc07-not-run-return-212825.json)。
 
-**供 Lead 直接读取：两棵旧树消费者确认已完成。**
-[短报告](readability-sparse-known-consumers/report.md) · [fresh RELEASED + 精确机器证明](readability-sparse-known-consumers/manager-confirmation.json) · [root 独立接收](readability-sparse-known-consumers/root-review.json)。
-全12目录零已知依赖命中蕴含更窄232-file子集；KEEP整个chat06p01、w01/workspace-panels闭包、thread-revision/upstream与provenance.md、w01/.gitattributes、10个d06 .mjs及所有preview/deps/未知路径。仅Lead在个人窗口外逐树sparse，本组不操作。
+**供 Lead 读取：下一批五棵有限候选与保留输入已齐。**
+[短报告](ops-next-five-sparse-candidates/report.md) · [root 限定批准](ops-next-five-sparse-candidates/root-five-review.json) · [八棵筛选与 fresh RELEASED 证明](ops-next-five-sparse-candidates/candidate-index.json)：三棵已启用 sparse 排除；其余五棵当前未启用、clean，原 claim 均 released。
+[本组当前声明输入独立核验](ops-next-five-sparse-candidates/root-known-consumers.json)对八个根无命中；不证明全局或未来动态闭包。各树 own evidence、preview/fixture 输入、deps 与未知路径全保留，只有 Lead 操作。
+[已处理两 readability 树的限定确认](readability-sparse-known-consumers/manager-confirmation.json)与[root 审查](readability-sparse-known-consumers/root-review.json)保留原范围；不再列为新候选。
 
 ## 唯一 owner 与领取
 
@@ -51,8 +52,8 @@
 
 ## 旧树资源候选
 
-[限定已知消费者确认](readability-sparse-known-consumers/report.md)：两旧 claim 已 released，Recovery/Settings/DPERF 声明及延迟读取对12目录零命中，可涵盖 Lead 更窄232文件子集。
-所有明确 KEEP 与未知具体路径保留；只有 Lead 在个人窗口外逐树 sparse，本组不操作或保证全系统未来依赖。
+当前仅[下一批五棵候选](ops-next-five-sparse-candidates/candidate-index.json)，不扩大树名单；[owner 闭包与 KEEP](ops-next-five-sparse-candidates/report.md)已齐；只供 Lead 精确文件核查，未知保留。
+此前两 readability 树已由 Lead 操作；其 KEEP 原则仍保留整个 chat06p01、w01/workspace-panels、thread-revision/upstream/provenance、w01/.gitattributes、所有 d06 .mjs、preview/deps/未知路径。
 
 ## 需求与后继
 
@@ -60,7 +61,7 @@
 P01 认证外层 host 的[限定差异研究](recovery-connection-p01-4d330-delta/intake.json)归原 REQ22/23、MATURE06-04；不新增 task/slot/claim。
 其 private RecoveryHost.restore(record, lease) 与 UI RecoveryWorkspace.restore(record, retry?) 不可混用。
 [MATURE02 快速设置接口已收敛](message-settings-ownership-interface/root-review.json)：opaque token + 同步 host CAS，另以每次打开的私有 liveness 撤销关闭后的 Apply/omit；组件接口可独立，生产host交权另计。原 TODO11四产品literal候选仍 NOT_TAKEN。
-[供 Lead 审阅的精确 provision/take 候选](message-settings-quick-controls-provision/request.json)：WPF-MESSAGESETTINGS02 / W01，新web-message-settings-quick-controls树，固定c8e，四产品文件+own plan/evidence共6scope；352输入/3,019,669逻辑B，未建树/未take/无运行许可。
+[供 Lead 审阅的精确 provision/take 候选](message-settings-quick-controls-provision/request.json)：WPF-MESSAGESETTINGS02 / W01，新web-message-settings-quick-controls树，固定c8e，四产品文件+own plan/evidence共6scope；352输入/3,019,669逻辑B，[root 限定设计批准](message-settings-quick-controls-provision/root-review.json)；OPS 资源优先，未建树/未take/无运行许可。
 [领取历史显示后继](dashboard-claim-presentation/root-review.json)归 U08/U12/REQ37 与原 D04-03/D01-02/03：区分曾释放/从未领取，不改变账本或当前45f8候选，不占其预算。
 MATURE01/05/06 视觉与 D06 固定架构快照沿已有计划，不扩当前 source 范围。
 

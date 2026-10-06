@@ -1,0 +1,136 @@
+{
+  "at": "2026-10-06T21:42:41.605197+00:00",
+  "verdict": "ACCEPTED_FIVE_BOUNDED_CANDIDATES_FOR_LEAD_EXACT_FILE_PREFLIGHT_ONLY",
+  "candidateCount": 5,
+  "candidates": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+      "branch": "codex/dashboard-architecture-runtime",
+      "head": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "releasedClaims": [
+        {
+          "id": "6cad30a2-aa67-4baa-b465-4c957b682670",
+          "version": 2
+        },
+        {
+          "id": "eccd968a-cd57-4448-99c1-2f99a9858a47",
+          "version": 2
+        },
+        {
+          "id": "84fd3e7d-6ee1-4a0a-b73c-57294499e9e4",
+          "version": 2
+        }
+      ]
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline",
+      "branch": "codex/web-workspace-lifecycle-baseline",
+      "head": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50",
+      "releasedClaims": [
+        {
+          "id": "c815bc00-fd71-4652-b2c0-7affc0d7361e",
+          "version": 2
+        }
+      ]
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview",
+      "branch": "codex/web-attachment-input-preview",
+      "head": "2b0a33e6ed00673bc66545577abce0d02148a19a",
+      "releasedClaims": [
+        {
+          "id": "94b84c59-ab64-4ad5-b1de-fe11e62c443c",
+          "version": 2
+        }
+      ]
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+      "branch": "codex/attachment-resources",
+      "head": "c6989b894aa4e9103472279e697d129b28cce5ff",
+      "releasedClaims": [
+        {
+          "id": "ef617d78-eb39-484e-898e-5f057fca50d4",
+          "version": 3
+        }
+      ]
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer",
+      "branch": "codex/web-shared-ack-consumer",
+      "head": "8301991ad698410478bfbfa1c2443cc1bad37a27",
+      "releasedClaims": [
+        {
+          "id": "a2674416-2084-48b9-962b-d09cd5bb7afe",
+          "version": 2
+        }
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "path": "/private/tmp/ops-four-sparse-readonly-e52g7bfl/report.md",
+      "bytes": 5265,
+      "sha256": "c7f6428ae41783814c19416862dfe203eb4556baa7138cd6ed1cec3f1c9f3e97"
+    },
+    {
+      "path": "/private/tmp/ops-four-sparse-readonly-e52g7bfl/audit.json",
+      "bytes": 8679,
+      "sha256": "9ca28513b3a7c80d2c9fe576bb8e56d60bdccf0e10cbee94acebe56fb1f77699"
+    },
+    {
+      "path": "/private/tmp/ops-four-sparse-readonly-e52g7bfl/d06-own-evidence-keep.json",
+      "bytes": 32384,
+      "sha256": "dbea4fa34bf3259009c41ee9349badb8d9e91caf7bdba9df9fdbd60063e3157c"
+    },
+    {
+      "path": "/private/tmp/w01-ops-known-four-evidence/report.md",
+      "bytes": 4282,
+      "sha256": "675a98d95094551510db6927c43858de723ce417095e1c9072b5649ea0e4209d"
+    },
+    {
+      "path": "/private/tmp/w01-ops-known-four-evidence/audit.json",
+      "bytes": 11054,
+      "sha256": "fb3c606687b50f954595ff8f25d803bb676b723ea9c83d184cf586f85e2b235d"
+    },
+    {
+      "path": "/private/tmp/d01-ops-next-eight-git-observation.json",
+      "bytes": 17437,
+      "sha256": "6e93eccc81d61be2c767abcc49013b107157aacb6f368a238951064c5036abeb"
+    },
+    {
+      "path": "/tmp/root-eight-sparse-known-runtime-consumers.json",
+      "bytes": 4001,
+      "sha256": "c1c3ac69b07bda90c306e9cbcc4decba0c8a787fb8e19645f3a577076976dd0f"
+    }
+  ],
+  "rootVerification": {
+    "fixedSourceAndStatusHashes": 24,
+    "wholeD06FixedTrackedEntries": 182,
+    "d06Mjs": 16,
+    "threeHistoricalTreeIdsEqualAcrossFour": true,
+    "managerObservation": "Git21:37:38/D0421:36:49 original observation checked. Manager later21:40:24 states all8 no unreleased claims. Root did not query ledger or update config.",
+    "knownConsumerProof": "Current sealed Recovery/DPERF/Settings direct declared inputs freshly resolved against8;0 hit, bounded only."
+  },
+  "mandatoryKeep": [
+    "All source/tests/scripts/rules/plans/Git/dependencies/node_modules/ignored/untracked content.",
+    "Complete own evidence directories for each5, not only latest run. D06 whole182 files/16mjs plus svc04/interface.md provenance.",
+    "Whole w01 and chat06p01; all d06 evidence conservatively KEEP this batch; all preview fixture/upstream/provenance and .gitattributes.",
+    "Input-preview61261 historical retained preview and its entire source/dependency/own-evidence closure; no current port/process observation or stop permission.",
+    "Every unknown concrete path and any other known runtime consumer. Donors attachment-production/CONTEXTI/m2-integration are not candidates."
+  ],
+  "nextOperator": "Lead sole Git operator. Only exact copied nonexecuting historical evidence files after owner/current-main equality, process/consumer checks and protected-byte checks; three named historical directories are candidate pools, not approved removal units. No historical-never-sparse or physical-reclaim claim.",
+  "notAllowedByReview": [
+    "Whole-tree removal or moving dependencies",
+    "Repeated operation on already-sparse three prior candidates or two readability trees",
+    "Any source/config/claim/runtime change by this group",
+    "PG/Chrome retry on Git-window release; heavy runtime still awaits explicit coordination/fresh original gate"
+  ],
+  "operations": {
+    "rootProjectWrites": 0,
+    "sparseOrConfigWrites": 0,
+    "freeQueries": 0,
+    "testsOrServices": 0
+  },
+  "methods": "Local find-skills/clean-code: exact finite candidates, immutable provenance, state observations vs rights separated; review accepted only the evidence-supported preparation."
+}

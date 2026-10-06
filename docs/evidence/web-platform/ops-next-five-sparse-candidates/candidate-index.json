@@ -1,0 +1,488 @@
+{
+  "recordedAt": "2026-10-06T21:41:04.188776+00:00",
+  "state": "FIVE_RELEASED_CLEAN_CURRENTLY_NON_SPARSE_CANDIDATES_WITH_BOUNDED_KEEP_CLOSURE",
+  "ledgerObservedAt": "2026-10-06T21:40:24.865Z",
+  "sourceSelection": [
+    "released-sparse-candidates/report.json (already handled original4 excluded)",
+    "sparse-next-candidates/report.md (original3 nominal now observed sparse, excluded)",
+    "known completed D06/WORKSPACEPERF01/ATTACHI01/ATTACH01/ACK01 source records"
+  ],
+  "rows": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+      "branch": "codex/web-message-reuse",
+      "head": "9cea63212b13c624fde53981721aee116d0caeed",
+      "clean": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/conversations/messages.ts",
+            "apps/web/test/conversation-message-reuse.probe.ts",
+            "apps/web/test/conversation-messages.test.ts",
+            "docs/evidence/wpf-perf03",
+            "plans/wpf-perf03-message-reuse"
+          ],
+          "state": "released",
+          "branch": "codex/web-message-reuse",
+          "origin": "new",
+          "taskId": "WPF-PERF03",
+          "worker": "w01_owner",
+          "claimId": "2ec58c2c-811d-4f24-a14b-cf1a3e89cdb3",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+          "createdAt": "2026-10-06T07:22:56.375Z",
+          "updatedAt": "2026-10-06T07:49:41.137Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "classification": "EXCLUDED_ALREADY_SPARSE_ENABLED",
+      "scopeAuthority": "RELEASED; no take or write requested",
+      "protectedOwnPaths": [
+        "docs/evidence/wpf-perf03",
+        "plans/wpf-perf03-message-reuse"
+      ]
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+      "branch": "codex/dashboard-proof-performance",
+      "head": "08bd0a71494f54809f4c4a2fa5b9718285103ea3",
+      "clean": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/src/aggregate.mjs",
+            "apps/execution-dashboard/test/proof-snapshot.test.mjs",
+            "docs/evidence/wpf-dperf01",
+            "plans/wpf-dashboard-proof-performance"
+          ],
+          "state": "released",
+          "branch": "codex/dashboard-proof-performance",
+          "origin": "new",
+          "taskId": "WPF-DPERF01",
+          "worker": "w01_owner",
+          "claimId": "bb7ef22f-e7d9-4cd3-8b72-cc69c591c2c7",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance",
+          "createdAt": "2026-10-06T04:59:56.342Z",
+          "updatedAt": "2026-10-06T05:14:24.445Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "classification": "EXCLUDED_ALREADY_SPARSE_ENABLED",
+      "scopeAuthority": "RELEASED; no take or write requested",
+      "protectedOwnPaths": [
+        "docs/evidence/wpf-dperf01",
+        "plans/wpf-dashboard-proof-performance"
+      ]
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+      "branch": "codex/web-context-receipts",
+      "head": "66695c6579189644ae6399dcaca80cc04487a178",
+      "clean": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/conversation-context/receipts.ts",
+            "apps/web/src/conversations/outbox.ts",
+            "apps/web/src/conversations/queue/commands.ts",
+            "apps/web/test/conversation-context-receipts.test.ts",
+            "apps/web/test/conversation-outbox.test.ts",
+            "apps/web/test/conversation-queue.test.ts",
+            "docs/evidence/wpf-context-receipts",
+            "plans/wpf-context-receipts"
+          ],
+          "state": "released",
+          "branch": "codex/web-context-receipts",
+          "origin": "new",
+          "taskId": "WPF-CONTEXT02",
+          "worker": "w01_owner",
+          "claimId": "b4858792-3946-486b-b3a4-621fca9a4981",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts",
+          "createdAt": "2026-10-06T08:13:30.510Z",
+          "updatedAt": "2026-10-06T08:33:02.956Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "classification": "EXCLUDED_ALREADY_SPARSE_ENABLED",
+      "scopeAuthority": "RELEASED; no take or write requested",
+      "protectedOwnPaths": [
+        "docs/evidence/wpf-context-receipts",
+        "plans/wpf-context-receipts"
+      ]
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+      "branch": "codex/dashboard-architecture-runtime",
+      "head": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+      "clean": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/public/architecture-data.js",
+            "apps/execution-dashboard/test/architecture.test.mjs",
+            "docs/evidence/d06",
+            "plans/d06-architecture-refresh"
+          ],
+          "state": "released",
+          "branch": "codex/dashboard-architecture-runtime",
+          "origin": "new",
+          "taskId": "D06",
+          "worker": "d01_owner",
+          "claimId": "6cad30a2-aa67-4baa-b465-4c957b682670",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+          "createdAt": "2026-10-06T12:39:42.275Z",
+          "updatedAt": "2026-10-06T13:09:51.032Z",
+          "observedAt": null,
+          "needsVerification": false
+        },
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "plans/d06-architecture-refresh/plan.md"
+          ],
+          "state": "released",
+          "branch": "codex/dashboard-architecture-runtime",
+          "origin": "new",
+          "taskId": "D06",
+          "worker": "d01_owner",
+          "claimId": "eccd968a-cd57-4448-99c1-2f99a9858a47",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+          "createdAt": "2026-10-06T13:13:04.159Z",
+          "updatedAt": "2026-10-06T13:13:27.302Z",
+          "observedAt": null,
+          "needsVerification": false
+        },
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/execution-dashboard/public/architecture-data.js",
+            "apps/execution-dashboard/test/architecture.test.mjs",
+            "docs/evidence/d06",
+            "plans/d06-architecture-refresh"
+          ],
+          "state": "released",
+          "branch": "codex/dashboard-architecture-runtime",
+          "origin": "new",
+          "taskId": "D06",
+          "worker": "d01_owner",
+          "claimId": "84fd3e7d-6ee1-4a0a-b73c-57294499e9e4",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+          "createdAt": "2026-10-06T10:07:49.978Z",
+          "updatedAt": "2026-10-06T10:24:18.920Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "classification": "CANDIDATE_FOR_LEAD_EXACT_FILE_REVIEW_NOT_SPARSE_APPROVAL",
+      "scopeAuthority": "RELEASED; no take or write requested",
+      "protectedOwnPaths": [
+        "docs/evidence/d06",
+        "plans/d06-architecture-refresh",
+        "plans/d06-architecture-refresh/plan.md"
+      ],
+      "ownerStoppedWritingSource": "d06-report.md and fixed status",
+      "knownClosureReport": "d06-report.md",
+      "writeAuthority": "None; released remains released, no new take"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline",
+      "branch": "codex/web-workspace-lifecycle-baseline",
+      "head": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50",
+      "clean": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/test/workspace-lifecycle.browser.ts",
+            "apps/web/test/workspace-lifecycle.fixture.ts",
+            "docs/evidence/wpf-workspace-lifecycle-baseline",
+            "plans/wpf-workspace-lifecycle-baseline"
+          ],
+          "state": "released",
+          "branch": "codex/web-workspace-lifecycle-baseline",
+          "origin": "new",
+          "taskId": "WPF-WORKSPACEPERF01",
+          "worker": "workspace_panels_owner",
+          "claimId": "c815bc00-fd71-4652-b2c0-7affc0d7361e",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-lifecycle-baseline",
+          "createdAt": "2026-10-06T10:56:20.443Z",
+          "updatedAt": "2026-10-06T12:21:16.237Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "classification": "CANDIDATE_FOR_LEAD_EXACT_FILE_REVIEW_NOT_SPARSE_APPROVAL",
+      "scopeAuthority": "RELEASED; no take or write requested",
+      "protectedOwnPaths": [
+        "docs/evidence/wpf-workspace-lifecycle-baseline",
+        "plans/wpf-workspace-lifecycle-baseline"
+      ],
+      "ownerStoppedWritingSource": "four-owner-report.md and fixed status",
+      "knownClosureReport": "four-owner-report.md",
+      "writeAuthority": "None; released remains released, no new take"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview",
+      "branch": "codex/web-attachment-input-preview",
+      "head": "2b0a33e6ed00673bc66545577abce0d02148a19a",
+      "clean": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/attachments/AttachmentPicker.tsx",
+            "apps/web/src/attachments/adapter.ts",
+            "apps/web/src/attachments/attachments.css",
+            "apps/web/src/attachments/controller.ts",
+            "apps/web/src/attachments/recovery.ts",
+            "apps/web/test/attachment-controller.test.ts",
+            "apps/web/test/attachment-input.browser.ts",
+            "apps/web/test/attachment-input.fixture.tsx",
+            "apps/web/test/attachment-recovery.test.ts",
+            "docs/evidence/wpf-attach-i01",
+            "plans/wpf-attach-i01-input-preview"
+          ],
+          "state": "released",
+          "branch": "codex/web-attachment-input-preview",
+          "origin": "new",
+          "taskId": "WPF-ATTACHI01",
+          "worker": "w01_owner",
+          "claimId": "94b84c59-ab64-4ad5-b1de-fe11e62c443c",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview",
+          "createdAt": "2026-10-06T11:02:32.557Z",
+          "updatedAt": "2026-10-06T12:05:09.998Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "classification": "CANDIDATE_FOR_LEAD_EXACT_FILE_REVIEW_NOT_SPARSE_APPROVAL",
+      "scopeAuthority": "RELEASED; no take or write requested",
+      "protectedOwnPaths": [
+        "docs/evidence/wpf-attach-i01",
+        "plans/wpf-attach-i01-input-preview"
+      ],
+      "ownerStoppedWritingSource": "four-owner-report.md and fixed status",
+      "knownClosureReport": "four-owner-report.md",
+      "writeAuthority": "None; released remains released, no new take"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+      "branch": "codex/attachment-resources",
+      "head": "c6989b894aa4e9103472279e697d129b28cce5ff",
+      "clean": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/server/src/attachments/attachments.test.ts",
+            "apps/server/src/attachments/context.test.ts",
+            "apps/server/src/attachments/fixture.ts",
+            "apps/server/src/attachments/index.ts",
+            "apps/server/src/attachments/storage.ts",
+            "apps/server/src/conversation-context/store.ts",
+            "apps/server/src/conversation-queue/commands.ts",
+            "apps/server/src/conversations/commands.ts",
+            "apps/server/src/conversations/queries.ts",
+            "apps/server/src/conversations/state.ts",
+            "docs/evidence/wpf-attach01",
+            "packages/contracts/src/attachments.test.ts",
+            "packages/contracts/src/attachments.ts",
+            "packages/contracts/src/conversation-context.ts",
+            "packages/contracts/src/conversation-queue.ts",
+            "packages/contracts/src/conversations.ts",
+            "packages/storage/migrations/026-attachment-resources.sql",
+            "plans/wpf-attach01-resources"
+          ],
+          "state": "released",
+          "branch": "codex/attachment-resources",
+          "origin": "new",
+          "taskId": "WPF-ATTACH01",
+          "worker": "workspace_panels_owner",
+          "claimId": "ef617d78-eb39-484e-898e-5f057fca50d4",
+          "version": 3,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+          "createdAt": "2026-10-06T10:06:48.197Z",
+          "updatedAt": "2026-10-06T11:33:32.480Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "classification": "CANDIDATE_FOR_LEAD_EXACT_FILE_REVIEW_NOT_SPARSE_APPROVAL",
+      "scopeAuthority": "RELEASED; no take or write requested",
+      "protectedOwnPaths": [
+        "docs/evidence/wpf-attach01",
+        "plans/wpf-attach01-resources"
+      ],
+      "ownerStoppedWritingSource": "four-owner-report.md and fixed status",
+      "knownClosureReport": "four-owner-report.md",
+      "writeAuthority": "None; released remains released, no new take"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer",
+      "branch": "codex/web-shared-ack-consumer",
+      "head": "8301991ad698410478bfbfa1c2443cc1bad37a27",
+      "clean": true,
+      "claims": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/conversation-context/receipts.ts",
+            "apps/web/src/conversations/projection.ts",
+            "apps/web/src/execution-profiles/selection.ts",
+            "apps/web/test/conversation-ack-http.test.ts",
+            "apps/web/test/conversation-projection.test.ts",
+            "docs/evidence/wpf-ack01",
+            "plans/wpf-ack01-shared-consumer"
+          ],
+          "state": "released",
+          "branch": "codex/web-shared-ack-consumer",
+          "origin": "new",
+          "taskId": "WPF-ACK01",
+          "worker": "w01_owner",
+          "claimId": "a2674416-2084-48b9-962b-d09cd5bb7afe",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer",
+          "createdAt": "2026-10-06T10:45:38.879Z",
+          "updatedAt": "2026-10-06T11:11:21.768Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "classification": "CANDIDATE_FOR_LEAD_EXACT_FILE_REVIEW_NOT_SPARSE_APPROVAL",
+      "scopeAuthority": "RELEASED; no take or write requested",
+      "protectedOwnPaths": [
+        "docs/evidence/wpf-ack01",
+        "plans/wpf-ack01-shared-consumer"
+      ],
+      "ownerStoppedWritingSource": "four-owner-report.md and fixed status",
+      "knownClosureReport": "four-owner-report.md",
+      "writeAuthority": "None; released remains released, no new take"
+    }
+  ],
+  "managerClaim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/web-platform",
+      "plans/web-platform",
+      "plans/wpf-mature-01-visual",
+      "plans/wpf-mature-03-attachments",
+      "plans/wpf-mature-05-workspace",
+      "plans/wpf-mature-06-chat"
+    ],
+    "state": "active",
+    "branch": "codex/web-platform-management",
+    "origin": "migration",
+    "taskId": "WPF-001",
+    "worker": "external_web_d01_owner",
+    "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+    "createdAt": "2026-10-06T02:48:43.295Z",
+    "updatedAt": "2026-10-06T08:56:20.186Z",
+    "observedAt": "2026-10-06T02:48:42.000Z",
+    "needsVerification": false
+  },
+  "activeCandidateTreeClaims": [],
+  "limits": [
+    "The core.sparseCheckout absence only establishes current configuration, not a historical never-sparsed proof. Lead must consult operation history.",
+    "Source, tests, scripts, plans, own evidence, dependencies, ignored/untracked files, every known executable/preview input and every unknown path remain KEEP.",
+    "No physical savings, global reverse-dependency absence or running-process absence is claimed.",
+    "Only original Lead may perform subsequent fixed/current/main identity and sparse operations; no Git configuration change is authorized here.",
+    "No new roots beyond these8; no settings provision/take or runtime is authorized."
+  ],
+  "rootConsumerReview": "root-known-consumers.json",
+  "ownerClosure": "Reviewed and archived; only finite known inputs, not a global no-consumer proof",
+  "ownerReports": [
+    {
+      "path": "d06-report.md",
+      "source": "/private/tmp/ops-four-sparse-readonly-e52g7bfl/report.md",
+      "bytes": 5265,
+      "sha256": "c7f6428ae41783814c19416862dfe203eb4556baa7138cd6ed1cec3f1c9f3e97"
+    },
+    {
+      "path": "d06-audit.json",
+      "source": "/private/tmp/ops-four-sparse-readonly-e52g7bfl/audit.json",
+      "bytes": 8679,
+      "sha256": "9ca28513b3a7c80d2c9fe576bb8e56d60bdccf0e10cbee94acebe56fb1f77699"
+    },
+    {
+      "path": "d06-own-evidence-keep.json",
+      "source": "/private/tmp/ops-four-sparse-readonly-e52g7bfl/d06-own-evidence-keep.json",
+      "bytes": 32384,
+      "sha256": "dbea4fa34bf3259009c41ee9349badb8d9e91caf7bdba9df9fdbd60063e3157c"
+    },
+    {
+      "path": "four-owner-report.md",
+      "source": "/private/tmp/w01-ops-known-four-evidence/report.md",
+      "bytes": 4282,
+      "sha256": "675a98d95094551510db6927c43858de723ce417095e1c9072b5649ea0e4209d"
+    },
+    {
+      "path": "four-owner-audit.json",
+      "source": "/private/tmp/w01-ops-known-four-evidence/audit.json",
+      "bytes": 11054,
+      "sha256": "fb3c606687b50f954595ff8f25d803bb676b723ea9c83d184cf586f85e2b235d"
+    }
+  ],
+  "keep": [
+    "All source/tests/scripts/rules/plans/Git objects/config/deps/node_modules/ignored/untracked paths",
+    "Each candidate entire own evidence (D06 all182 tracked and16mjs)",
+    "Entire w01 and chat06p01 directories; d06 entire directory for this proposal",
+    "w01 executable preview/upstream/provenance/.gitattributes; all executable evidence and its inputs",
+    "D06 source-audit referenced docs/evidence/svc04/interface.md",
+    "input-preview61261 and all other historical/current previews, without any activity inference",
+    "Known donor web-attachment-production and CONTEXTI, never candidates",
+    "Every unknown exact path or external/dynamic consumer"
+  ],
+  "nonOwnHistoricalPools": {
+    "fourW01ReviewedTrees": [
+      "docs/evidence/d01",
+      "docs/evidence/i01",
+      "docs/evidence/wpf-perf01"
+    ],
+    "d06Tree": "Lead exact-file selection still needed outside all KEEP. No specific exclude manifest proposed by manager.",
+    "semantics": "Pools for independent Lead identity/reference verification only, not whole-directory exclusions."
+  },
+  "operationAuthority": "Execution Lead only; worktree/config/sparse changes not performed or delegated by this report.",
+  "rootReview": {
+    "path": "root-five-review.json",
+    "sha256": "fafc7292aa50655d2e2248d2159fb338aa521d696cac824f829f31f90b39c6ad",
+    "verdict": "ACCEPTED_FIVE_BOUNDED_CANDIDATES_FOR_LEAD_EXACT_FILE_PREFLIGHT_ONLY"
+  }
+}
