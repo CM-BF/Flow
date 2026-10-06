@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:16:38 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 15:20:15 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -18,10 +18,10 @@
 | 当前检查 | 仅管理文档一致性/链接核验，0工程测试/目标/PG/build；OpenSSL ca6a仍PENDING_RESOURCE。fresh Data1056984KiB低于1GiB+32MiB门槛。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
-| 实现目标 / 范围 | 当前优先Claude逐消息设置：产品core→共享consumer两层子任务，独立source-only WT/兼容合同/精确scope待Lead协调；本树只parent管理。 |
+| 实现目标 / 范围 | 当前优先Claude逐消息设置：产品core→共享consumer两层子任务，先请求core source-only WT/登记及两新契约文件+ sibling管理scope；后继分片扩大，本树只parent管理。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已明确Claude下一条消息设置的交付边界：用户选择模型、思考/effort和fast，历史与已发送/排队配置各自保留。核心与界面两层交接已准备。 |
+| 当前产出 | 已明确Claude下一条消息设置的交付边界：用户选择模型、思考/effort和fast，历史与已发送/排队配置各自保留。已收窄为两个新契约文件的核心首片，再接中心/执行及共享界面。 |
 | 下一可用交付 | 先交付Claude中心冻结配置与执行传递，再把同一能力接到Web/TUI；不等待Codex全资格或Node小对照完成。 |
 | 当前阻塞 | ACTIVE: Claude独立工作树、共享兼容接口及精确写入范围待Lead协调；涉及PG/构建的验证还需磁盘满足预留。小范围计划与源码准备可继续。 |
 | 需用户决定 | NONE |
@@ -41,7 +41,7 @@
 | WPF-MATURE-02-07 | in-progress | chatui01_owner | 纯语义固定target已独审通过，待集成；后继隔离片另审 |
 | WPF-MATURE-02-08 | pending | chatui01_owner | 完整目标未验收 |
 | WPF-MATURE-02-09 | pending | R05共享owner / d01 | 下一条配置可变与历史/当前/队列冻结分离；CAS/未知ACK/恢复/跨harness，04测量失效，见唯一interface |
-| WPF-MATURE-02-10 | pending | status_read（拟owner）/ mika | Claude产品core；source-only独立WT、共享兼容合同/SQL编号/精确scope待Lead协调，尚未take |
+| WPF-MATURE-02-10 | pending | status_read（拟owner）/ mika | Claude产品core先两文件有限v1 leaf，再中心/adapter；最小WT/登记及4scope待Lead，尚未take |
 | WPF-MATURE-02-11 | pending | Lead待分配 | 同合同client/interaction/Web/TUI consumer；待core固定接口与独立WT/精确scope，不在诊断树实现 |
 
 ## 接口与dashboard
@@ -80,4 +80,6 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary分开验收�
 
 ## Claude当前优先交接
 
-[claude-message-settings-handoff](../../docs/evidence/wpf-mature-02/claude-message-settings-handoff.md)是最新可行动请求：core拟status_read/mika，sibling管理路径避免parent scope冲突；consumer稍后独立领取。02现四个execution-profile路径可在最终派工后停写并部分移交，当前v5保留，未amend。F01 v40、R05兼容、migration唯一编号及RECOVERY01 v4由Lead协调。没有用户待决定项，不改变完整Codex与Claude验收要求。
+[claude-message-settings-handoff](../../docs/evidence/wpf-mature-02/claude-message-settings-handoff.md)是最新可行动请求：core拟status_read/mika，sibling管理路径避免parent scope冲突；consumer稍后独立领取。02现四个execution-profile路径暂不移交，当前v5保留未amend；先只领取claude-turn-settings.ts/.test.ts与sibling管理目录。F01 v40、R05兼容、migration唯一编号及RECOVERY01 v4由Lead协调。没有用户待决定项，不改变完整Codex与Claude验收要求。
+
+15:20设计决策：draft只在客户端，不新建中心next-settings/settingsRevision；profile reference/configDigest与请求body完整组合的既有幂等digest复用。task沿submission JSONB，queue仅后继nullable snapshot，turn从task读；自动/手动promotion都沿已存组合。031已O15，SQL编号不猜。最小provision请求经canonical正式待输入，跨task App发送已被runtime拒绝。

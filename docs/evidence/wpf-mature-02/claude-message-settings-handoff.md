@@ -1,42 +1,48 @@
-# Claude逐消息设置：Lead交接请求
+# Claude逐消息设置：Lead最小交接请求
 
-2026-10-06 15:16:38 UTC；parent WPF-MATURE-02，co-lead mika。GO已将Claude产品线提为当前优先；本页为待协调输入，不是生产scope领取或能力交付。父状态唯一来源：[status](../../../plans/wpf-mature-02-harness-capabilities/status.md)。
+2026-10-06 15:20:15 UTC；parent WPF-MATURE-02，co-lead mika。GO当前优先Claude产品线；本页是正式待输入，不是领取/实现批准或已交付能力。父进度只在[status](../../../plans/wpf-mature-02-harness-capabilities/status.md)。
 
-## 先交付的用户能力
+## 当前只请求最小core provision与登记
 
-同Claude会话可为下一条选择实际支持的model、thinking或effort、fast；requested/observed/unsupported分开。运行中的A、已排队B、后改的草稿C各自保留配置，历史可读可续。Web/TUI消费同一中心合同，不让Codex资格或Node诊断成为Claude产品线前置。首段固定SDK0.3.290声明、注入SDK及真实中心验证，0付费/新安装；不把注入验证称真实账户效果。
+请Lead以source-only方式准备 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core`，branch `codex/claude-message-settings-core`，拟owner status_read/gpt-6-astra、co-lead mika，并明确固定基线/登记权威status。不得新建full checkout或改shared Git/sparse；低磁盘provision由Lead唯一协调。
 
-## 两层直接子任务
+随后由新owner fresh账本、原子take以下四个精确scope，COMMITTED后可开始小源码：
 
-| 父计划稳定TODO | 子任务范围与owner | 独立目录/分支 | 当前门禁 |
-| --- | --- | --- | --- |
-| WPF-MATURE-02-10 | 产品core：共享契约、中心事务冻结、既有Claude adapter/query传递；拟owner status_read，co-lead mika | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core`；`codex/claude-message-settings-core` | Lead source-only provision、固定基线/精确scope、原子take后写 |
-| WPF-MATURE-02-11 | 共享consumer：F01 client/interaction与Web/TUI下一草稿控件、intent冻结及历史snapshot；owner待Lead分配 | 独立WT/branch待精确scope；不与core或诊断树共写 | 先固定core兼容合同，再按最小vertical领取 |
+- `packages/contracts/src/claude-turn-settings.ts`
+- `packages/contracts/src/claude-turn-settings.test.ts`
+- `plans/wpf-mature-02-message-settings-core`
+- `docs/evidence/wpf-mature-02-message-settings-core`
 
-core的管理目录必须是 sibling `plans/wpf-mature-02-message-settings-core` 与 `docs/evidence/wpf-mature-02-message-settings-core`，避开本parent证据目录领取范围。当前不创建它们、不新建full checkout、不改shared Git/sparse；低磁盘source-only provision由Lead唯一协调。consumer管理路径由最终派工确定，仍归本大task，不另造第三层任务。
+后两者是sibling管理目录，避开本parent scope。**当前不请求contracts index、现有schema或其余30余路径；不移交02的四个execution-profile路径，claim v5保留不amend。** 两新源先交独立小leaf，仍属同一个产品core直接子任务，不增第三层；通过后依精确合同分片amend接中心/adapter。
 
-## 请求Lead固定的输入
+既有跨task App发送工具被runtime拒绝（multi-agent v2子agent direct input限制），canonical是正式待输入；不反复调用，不经GO转发普通ACK。
 
-1. **R05/profile兼容。** 每runner唯一不可变profile、同session原runner约束不改；不能每条重发profile或给legacy canonical JSON补键破digest。send/enqueue在既有CAS/幂等事务冻结版本化message settings，promotion仅消费该snapshot。
-2. **版本协商/共享消费者。** 现client/Web ACK要求perTurnModel/Thinking=false与thinking.disabled；需先冻结兼容envelope/版本协商，不能整体改true。F01 v40持client index/ACK/contracts index；Web RECOVERY01 v4持相关路径，由Lead协调唯一writer及交接。core只先领取最小必要literal，不一次占全部目录。
-3. **数据库。** 若需窄immutable message snapshot migration，唯一编号/SQL owner与挂载由Lead分配，030已O14；不自行占号。PG/HTTP验证仅资源fresh达标后运行。
-4. **四个现有02路径。** 本owner明确可在完整scope决策后停写并原子部分移交；目前仅记录可移交，claim v5保留、不先amend。精确路径如下；store.ts已交回，不属于本次可移交承诺。
+## 两层直接子任务与用户能力
 
-- `packages/contracts/src/execution-profiles.ts`
-- `packages/contracts/src/execution-profiles.test.ts`
-- `apps/server/src/execution-profiles/index.ts`
-- `apps/server/src/execution-profiles/native-catalog.test.ts`
+| 父稳定TODO | 直接子任务与顺序 | 当前状态 |
+| --- | --- | --- |
+| WPF-MATURE-02-10 | 产品core：两文件有限契约leaf → 中心冻结snapshot → 既有Claude adapter/query传递；status_read/mika | 待上述最小WT/登记/take |
+| WPF-MATURE-02-11 | 共享consumer：同中心合同client/interaction/Web/TUI下一草稿控件、intent与历史snapshot；owner/独立WT/精确scope后定 | 待core兼容接口，不在诊断树实现 |
 
-正式顺序：root固定完整core scope/源基线 → 本owner明确停写上述实际需要路径 → fresh当前version amend移除 → 新owner take成功 → core开工。不得先释放全部02 claim，也不得在移交后恢复写入。本诊断WT只父管理与已领取实验，绝不并行改Claude产品。
+用户可为Claude下一条选择实际支持的model、thinking或effort、fast；requested/observed/unsupported分开。运行A、持久队列B、后来草稿C互不改写；历史可读可续，Web/TUI同合同。不等Codex全资格或Node诊断。
 
-## 已有只读输入与最小验收
+## root已选核心设计
 
-status_read输入固定main `cbd3dd95754be96bf7eeed534fb4c7fcce8a16a8`；相关源自56d90未变。固定SDK0.3.290 `sdk.d.ts` SHA `193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541`：thinking/effort、Settings.fastMode/fastModePerSessionOptIn、init观测字段存在；未知组合unsupported，init缺/null保持unknown。fast不得暗换model、继承全局或暗示免费；不把当前上游新thinking枚举塞进固定SDK。目录声明、请求选择、SDK实际观测及账户效果分层。
+- 新leaf只提供受控finite v1 requested组合、能力校验及ACK组合比较复用，字节/字段有界；暂不挂export、不改现schema。SDK声明不等于账号能力：manual thinking首片unsupported，无可信adaptive/effort/fast能力输入则unknown并拒绝组合。fast显式false/true，不暗换model、继承全局或暗示免费；effort omitted与显式值不同，resume重置语义须证明。
+- **不引入中心可变next-settings实体或settingsRevision。** draft由客户端持有；配置稳定身份复用profile reference/configDigest，完整组合进入现有请求body幂等digest，避免第二个版本状态机。每runner唯一不可变profile、同session原runner约束不改；旧profile/codec不补键破digest。
+- opt-in版本新能力；legacy缺字段走原路径。现client/Web ACK固定要求perTurnModel/Thinking=false与thinking.disabled，先冻结兼容envelope/协商，再开放控件，不能直接全改true。
+- task复用现submission JSONB，queue后续只加nullable snapshot；turn从task读取，不存第三份。send/enqueue既有CAS/幂等事务冻结完整组合，自动和手动promotion都只读已存snapshot。
 
-core：注入query核精确options、legacy/resume、unsupported在调用前拒绝；真实PG/HTTP核A/B/C冻结、同key、CAS、回滚。consumer：同DTO贯穿Web/TUI，未知ACK保留原key/body/settings；历史snapshot不被草稿变更重写。不会为低资源跳过必要资源/事务验证，当前小metadata可做，PG/build/实际运行未满足fresh门槛则PENDING_RESOURCE。
+固定只读输入：main `cbd3dd95754be96bf7eeed534fb4c7fcce8a16a8`（status_read核相关源自56d90未变）；SDK0.3.290 `sdk.d.ts` SHA `193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541`有thinking/effort、Settings.fastMode/fastModePerSessionOptIn和init观测字段。init缺/null保持unknown；不把当前上游新枚举塞进固定SDK，不把观测当真实推理强度/账号效果。
+
+## 后继由Lead逐片协调，当前不扩scope
+
+F01 v40的client index/ACK/contracts index，R05 profile兼容与Web RECOVERY01 v4均由Lead协调唯一writer。若窄queue snapshot需migration，编号/SQL owner由Lead唯一分配；**030已O14、031已O15，不猜下一号**。02现有execution-profiles.ts/.test.ts、server execution-profiles/index.ts/native-catalog.test.ts保持原claim，完整后继决策到达再明确停写→fresh amend移除→新owner领取，不先交回。store.ts不属本次owner。
+
+最小验收：leaf有限组合/字节/ACK比较与unsupported；后继注入query精确options、legacy/resume和调用前拒绝；真实PG/HTTP A/B/C冻结、同key/CAS/回滚；consumer未知ACK保原key/body/settings。0付费/新安装，PG/构建/实际运行fresh资源未达则PENDING_RESOURCE，不因资源不足省略必要验证。
 
 ## 诊断与方法边界
 
-OpenSSL候选 `ca6a7a15f76d333f20caf0690ed85b76e29d2c54` 保持PENDING_RESOURCE/NOT_OPEN，不扩大诊断。Flow Node宿主、Node synthetic canary、真实固定Codex native binary三角色分开；Node失败不证明Codex失败，Codex自身启动/权限/模型/停止验收仍开放，完整02目标不减。
+OpenSSL `ca6a7a15f76d333f20caf0690ed85b76e29d2c54` 保持checkpoint/PENDING_RESOURCE/NOT_OPEN，不再扩诊断。Flow Node宿主、Node synthetic canary、固定Codex native binary三角色独立；Node失败不证明Codex失败，也不是所有harness永久前置，完整Codex启动/权限/模型/停止验收保留。
 
-15:16:38安全点复核本地 `/Users/citrine/.agents/skills/find-skills/SKILL.md`、`/Users/citrine/.agents/skills/clean-code/SKILL.md`，安装来源沿固定sickn33@bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5，不重装。按clean-code检查命名/单一owner/共享合同与consumer分责、错误与unknown语义，避免双profile/重复状态机；本轮仅管理文档，未跑工程测试。
+本轮沿15:16:38已复核的本地find-skills/clean-code（`/Users/citrine/.agents/skills/`；用户固定sickn33@bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5），15:20:15安全点检查命名、单一owner/有限接口/错误与unknown/无重复状态机。不重装/联网搜索；本轮只管理文档，0工程测试/新target/PG/build。
