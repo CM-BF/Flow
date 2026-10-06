@@ -1,5 +1,25 @@
 # 成熟聊天大task来源与登记队列
 
+## MATURE04 × 附件v2组合缺陷：请Mika合法owner优先处理（12:22 UTC）
+
+**当前跨lead实际输入**：[root原诊断/三源hash](context-attachment-shape-research/result.json)、[原脚本](context-attachment-shape-research/diagnostic.mts.txt)、[归因及fresh写权观察](context-attachment-shape-research/source-binding.json)。固定mainf3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa，`apps/server/src/context-transparency/store.ts` frozenMaterials:72–77仅投影context.sources并计算knowledge-only materialRevisionDigest。**已确认缺陷是合法v2仅附件sources=[]触发history known/min1拒绝。** 混合输入的knowledge-only metadata/revision属于额外coverage语义待owner明确，不在缺定义依据时把每项都定为bug。实际public schemas+原投影表达式纯内存已复现，但**不是reportEvents/HTTP/PG端到端复现，尚不推断运行任务具体失败**。[补充固定三源审计](context-attachment-shape-research/fixed-source-audit.json)与报告f3e569逐hash相同；原文件字节/hash保留，管理未重跑。
+
+12:21:58 fresh账本这三精确路径无有效writer；现有MATURE04唯一owner属Mika，应先合法fresh取最小范围修复并真实组合定向验证，不由W01越权。若现协议不足表达附件材料，应准确unknown而非known全量或放宽空数组；保execution identity及历史事实，不丢附件/禁采样绕过。公共history入口ready仍成立，组合材料正确性是该合法owner需解除的依赖。ATTACHI继续当前生产UI范围，后续完整组合验收须覆盖该输入，未将整个大task标blocked。
+
+## DPERF03 固定批准输入，请受控接收（12:22 UTC）
+
+**实现 5609ea719ec400a803bb6036429312b7a212c90f / final cc390fd7613c5a0b6ce801bb5dccc85b20437764**，normalpush、ls-remote=local、clean已核；[管理五源/十三只读依赖/原始独审字节核验](dperf03-final-management-audit.json)。唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/plans/wpf-dperf03/status.md)，完整[5-source candidate manifest](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/docs/evidence/wpf-dperf03/candidate.json)、[review](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/plans/wpf-dperf03/review.md)、[root audit](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/docs/evidence/wpf-dperf03/root-audit.json)、[原独立37项log](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/docs/evidence/wpf-dperf03/root-direct-tests.log)。Root12:18:07限定APPROVED，37/37独立26713.567ms；作者直接回归与2次临时Git累计2.151s是不同口径。四proof23starts、三共用观察各一次、trace峰4/unclosed0与两临时root清理按原raw；首红/hash差和非原子/非CPU/SLO限制保留。管理不重跑工程测试/实验。
+
+全部七scope源码停写，**db0b7d25 v2保留至正式main收口**，尚未main/部署；不得借批准省掉受控source接收。
+
+**WORKSPACEPERF01 主线收口/释放完成**：final12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50正常push双端clean，两源=1711/正式main362，source intake非祖先merge；[收口审计](workspaceperf-main-closeout-audit.json)。四scope全停写后 **c815bc00 v2 released12:21:16.237Z**，[原receipt](workspaceperf-main-release-receipt.json)。检查仍FAILED/partial8完成1locator失败，没有新browser或完整性能结论，旧树不再写。
+
+## ATTACHI02 实际接线范围已解锁（2026-10-06 12:18 UTC）
+
+作者首段安全点为 **4a91cfce17ee9e577057c115d4b81889af728d66 / metadata c5f5cb94e11141fc44664452e0fbd2e40feeeb7d**；[管理固定十源/保护范围核对](attachi02-phase1-source-audit.json)通过。作者88局部+后续12与Webtypes0只覆盖材料/Outbox/Queue/真实P01及官方core路径，未执行生产App/HTTP，review NOT_STARTED，不把局部阶段当完整交付。
+
+已按作者申请fresh12:17:58.580Z核后12无重叠，原 **0b7fc000 v2 active24scope** 于12:18:09.220Z [原子amend COMMITTED](attachi02-phase2-amend-receipt.json)，[24精确literal](attachi02-phase2-amend-request.json)。没有释放窗口、没有预占第三方范围；owner已获正式receipt，唯一canonical仍web-attachment-production/plans/wpf-attach-i02-production-binding。CACHE六共享路径已合法交回，余下实际App/HTTP按原累计600秒/每轮20秒cleanup/16MiB执行；rollback与pending capture保护仍属真实消费者验收。
+
 ## 最新必要接收与写权增量（2026-10-06 12:16 UTC）
 
 DPERF03 原 claim **db0b7d25 v2** 已于12:14:24.927Z [原子 amend](dperf03-amend-receipt.json)，fresh无重叠；原六scope增加唯一 `apps/execution-dashboard/test/proof-snapshot.test.mjs`。只修 comparisons() 的命令形状分类：固定flags后两完整SHA及末尾 `--` 是committed比较，dirty只有一个SHA；保原四行为/次数/跨snapshot/unknown断言。已给唯一owner，独审仍NOT_STARTED，预算不增。
@@ -368,3 +388,13 @@ WPF-001-36沿原D01保留[只读来源、两方法最终Interface与精确六sco
 两新source的[固定首canonical解析观察](attachi02-dperf03-first-source-audit.json)已核，实际注册/部署仍仅按后续Lead回执；用户U08/REQ37继续要求跨lead防overlap及领取/释放在dashboard清楚可见，canonical与PG账本是唯一手填源/领取authority，不另造状态副本。
 
 ATTACHI02新增组合失败路径已有[root纯内存实证](attachment-complete-rollback-research/source-binding.json)：完整附件提交拒绝后chips回退而controller refs缺失，held capture仍可保引用。属于当前绑定生命周期验收，非实际App/HTTP回归；原module历史批准不倒填、不越scope改旧模块。owner已收，矩阵状态与实际修复/未验分开。
+
+## MATURE04 Web历史输入ready（12:21同级来源核对）
+
+[唯一owner handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/handoff-current.md)12:15段与[管理只读来源记录](context-history-web-input.json)：main362已含 `FlowClient.contextHistory(taskId,signal)`、owner GET/DTO，无需等新contract；Web consumer未开工，沿WPF-001-09/MATURE04-05排程，不复制04大plan。只显示current_attempt_id按原始eventSequence最新一条历史SDK估算；latest:null不是0，current/remaining/capacity/cut未知，403非空、not-observed非未压缩，detail按精确ref显式展开。Root最新归因producer eccb已chatui01/Mika独审但尚待main；不将其当当前服务有样本。ATTACHI写权优先，后续需完整实际挂载子task/精确freshscope，不先占App。
+
+## 登记与发布准备新来源（Lead 12:23入站）
+
+Lead正式告ATTACHI02已登记147-source候选并随main **7cbda706632c85fc5da12a371b282419c933ab9a** 发布，原话“4320即刻正常换载”。这是registry/换载宣布，尚不是本组实际页面证据；root现在仅沿既有页面一次read-only DOM核147/摘要，无refresh/新API，本管理不重复采样。DPERF03固定批准仍等独立main接收，不能由来源登记推源码已接。
+
+SVC05唯一source仍personal-current-release/plans/svc05-current-release，负责actualApp+全部retained artifacts对backend362兼容；个人现runtime b1c/8d8未据此宣称变更。ATTACHI02固定真实App后交新的可审Web target，实施不等待发布准备。04 producer已main仅history，attachment-only组合缺陷仍须合法owner处理，不能因producer接收而省掉组合验证。

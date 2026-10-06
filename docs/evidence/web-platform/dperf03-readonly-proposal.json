@@ -1,6 +1,6 @@
 {
   "recordedAt": "2026-10-06T12:15:16.630381+00:00",
-  "state": "ROOT_STRUCTURE_APPROVED_FRESH_CLAIM_COMMITTED_IMPLEMENTATION_DISPATCHED",
+  "state": "FIXED_IMPLEMENTATION_INDEPENDENTLY_APPROVED_WAITING_MAIN",
   "candidateId": "WPF-DPERF03",
   "candidateIdUniqueness": "Verified registry/index/plans directory/ledger no existing WPF-DPERF03 before take",
   "parent": "D01",
@@ -121,7 +121,7 @@
     "receipt": "dperf03-amend-receipt.json",
     "originalTakeReceipt": "dperf03-take-receipt.json"
   },
-  "review": "NOT_STARTED",
+  "review": "APPROVED 5609ea719ec400a803bb6036429312b7a212c90f",
   "sourceCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/plans/wpf-dperf03/status.md",
   "sourceState": "first canonical actually committed; implementation active",
   "firstCanonicalCommit": "2a52b8ae5250781c712b71117ccd5321a6b4103d",
@@ -148,5 +148,12 @@
     "unchanged": "Four original behavior/count/cross-snapshot/unknown assertions; no other scope expansion",
     "freshLedgerObservedAt": "2026-10-06T12:14:13.227Z",
     "conflicts": []
+  },
+  "delivery": {
+    "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+    "final": "cc390fd7613c5a0b6ce801bb5dccc85b20437764",
+    "managementAudit": "dperf03-final-management-audit.json",
+    "claimState": "v2 active until main; all7source scopes stopped",
+    "main": "NOT_INTEGRATED"
   }
 }

@@ -38,7 +38,7 @@
 
 ### 组结构和预算后继验证（root 09:12固定main77c只读）
 
-现App tabs.map在groups.map内，跨group移动即使View.key同也可能remount，未来A|B合并/交换/resize需实际验证composer草稿、scroll、知识/附件选择、unknown receipt；不能只测纯reducer。持久仅版本化有界结构/相对比例/view refs，不存token；reload身份另核，未知ID占位不后台遍历conversation。现stream连接预算最多2读取lease、8cachedturn/4MiB（pane4turn/2MiB），3+pane须测公平前进/隐藏释放，不能解开UI上限就声称全部实时，A|B不需改host。原slot手动focus/Enter激活避免方向键触发批量按需读。React官方preserving-and-resetting-state支持tree位置推断，本轮无实测失败；来源https://react.dev/learn/preserving-and-resetting-state 与https://www.w3.org/WAI/ARIA/apg/patterns/tabs/ 。
+现App tabs.map在groups.map内，跨group移动即使View.key同也可能remount，未来A|B合并/交换/resize需实际验证composer草稿、scroll、知识/附件选择、unknown receipt；不能只测纯reducer。持久仅版本化有界结构/相对比例/view refs，不存token；reload身份另核，未知ID占位不后台遍历conversation。现stream连接预算最多2读取lease、8cachedturn/4MiB（pane4turn/2MiB），3+pane须测公平前进/隐藏释放，不能解开UI上限就声称全部实时，A|B不需改host。Root后续核 `conversation-stream/host.ts` 的 acquire仍上限2；CACHE每pane reply/queue各一flight、两可见pane共四bodyflight的保证依赖该可见数量。3+布局必须重新核整套读取预算，不能仅解除groups限制；panels在两项metadata收口后只读收敛原Arc Interface/scope，ATTACHI当前App/session/types/validation写权优先，不建树/take/新实验。原slot手动focus/Enter激活避免方向键触发批量按需读。React官方preserving-and-resetting-state支持tree位置推断，本轮无实测失败；来源https://react.dev/learn/preserving-and-resetting-state 与https://www.w3.org/WAI/ARIA/apg/patterns/tabs/ 。
 
 实际插件入口覆盖见[root固定main80ba只读研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，沿REQ22–23/WPF-001-05；未browser复现或实施，不扩大STEIRI写权。
 
@@ -67,3 +67,5 @@ CACHE完整[16literal只读方案](../../docs/evidence/web-platform/workspace-ca
 当前Arc边界按root固定eb95[源码研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)：两独立tablist/flatten merge不等顶层tab内A|B，CACHE不等全部DOM/订阅优化。沿01/02/03/05保留唯一layout引用模型、stable view.key和原App资源owner；持久化的连接/版本/无效ID/storage失败未验仍开放，不新增重叠App/session写权。
 
 原05-02/03的具体后继验收：现App方向键立即activate、关闭active默认最后tab仅是已定位源码事实（未browser测）；Arc新接口须显式focus/Enter或Space激活、关闭后稳定相邻焦点。同一view只归一个pane，split/merge移动已有view.key，拒不存在/重复key且无history副作用，App仍唯一保护/回收owner。详[现有研究](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，当前不领取App。
+
+Arc后继当前只读18literal方案已集中到[现有研究入口](../../docs/evidence/web-platform/workspace-arc-readonly-proposal.json)，仍归本计划01/02/03；没有新写权或第三层执行计划。候选同一平铺ChatPane父节点保持view.key与实际composer/材料，唯一layout有界pane数组；首片2可见、3+和持久化后继。正式实施先等附件固定接收和五条当前交集移交，再核准确base/结构/fresh scope；90秒/10秒清理/8MiB只是候选验收预算，尚未执行。

@@ -1,0 +1,20 @@
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { conversationContextReferenceSchema } from '/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/src/conversation-context.ts';
+import { contextHistoryMaterialsSchema } from '/Users/citrine/Projects/AgentHarness/Flow/packages/contracts/src/context-observation-history.ts';
+const root='/Users/citrine/Projects/AgentHarness/Flow';
+const sources=['apps/server/src/context-transparency/store.ts','packages/contracts/src/context-observation-history.ts','packages/contracts/src/conversation-context.ts'];
+const head=execFileSync('git',['-C',root,'rev-parse','HEAD'],{encoding:'utf8'}).trim();
+const hashes=Object.fromEntries(sources.map(path=>[path,createHash('sha256').update(readFileSync(`${root}/${path}`)).digest('hex')]));
+const attachment={reference:{kind:'upload',projectId:'project-a',resourceId:'20000000-0000-4000-8000-000000000001',version:1,contentDigest:'a'.repeat(64)},name:'synthetic.txt',mediaType:'text/plain',byteLength:5};
+const citation={projectId:'project-a',sourceId:'30000000-0000-4000-8000-000000000001',version:1,contentDigest:'b'.repeat(64),locator:{kind:'utf8-bytes',start:0,end:5}};
+const reference={id:'context-a',contextDigest:'c'.repeat(64),executionInputId:'input-a',executionInputDigest:'d'.repeat(64),templateVersion:2,order:'knowledge-then-attachments',sources:[],attachments:[attachment]};
+const cases=[];
+for(const [name,sources] of [['attachment-only',[]],['knowledge-plus-attachment',[{citation,byteLength:5,currentVersionAtFreeze:1,isCurrentAtFreeze:true}]]] as const){
+ const context=conversationContextReferenceSchema.parse({...reference,sources});
+ // Exact projection expression in frozenMaterials; this diagnostic does not run record()/HTTP/PG.
+ const result=contextHistoryMaterialsSchema.safeParse({state:'known',sources:context.sources.map(({citation,byteLength})=>({citation,byteLength,tokens:null}))});
+ cases.push({name,validConversationContext:true,sourceCount:context.sources.length,attachmentCount:context.templateVersion===2?context.attachments.length:0,historyMaterialsAccepted:result.success,projectedMaterials:result.success?result.data:null,issues:result.success?[]:result.error.issues.map(({path,code,message})=>({path,code,message}))});
+}
+console.log(JSON.stringify({recordedAt:new Date().toISOString(),head,hashes,purpose:'Public schema compatibility diagnostic applying exact current frozenMaterials expression; not reportEvents/HTTP/PG execution',cases,projectWrites:0,httpCalls:0,providerCalls:0},null,2));

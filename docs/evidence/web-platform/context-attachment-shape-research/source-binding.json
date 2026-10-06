@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-06T12:22:32.665738+00:00",
+  "source": "Root independent public-schema/exact projection diagnostic; manager archives only",
+  "fixedMain": "f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa",
+  "mapping": [
+    {
+      "source": "/tmp/root-context-attachment-shape.mts",
+      "archive": "diagnostic.mts.txt",
+      "sha256": "1382da27fe57c17391630b5f2a04711ea70a18505f3a6aaae26f9a3c62c5ed14",
+      "bytes": 2613
+    },
+    {
+      "source": "/tmp/root-context-attachment-shape.json",
+      "archive": "result.json",
+      "sha256": "edab05c49e4b39ecbc4f4232742a8c4362d1f899af4000d03371af90db626999",
+      "bytes": 1914
+    },
+    {
+      "source": "/tmp/root-context-attachment-source-audit.json",
+      "archive": "fixed-source-audit.json",
+      "sha256": "fcbe5259dc7dd28f07311979de1b4fad6db9e2c02f368b351b970beaa79b021d",
+      "bytes": 855
+    }
+  ],
+  "finding": "Confirmed defect:合法attachment-only v2 sources=[]被现history known/min1投影拒绝。Mixed knowledge-only metadata/revision is additional coverage semantics for owner to clarify, not all independently established bugs.",
+  "boundary": "0.453s process; no record/reportEvents/HTTP/PG/provider execution, no inferred exact running-task failure",
+  "latestClaims": {
+    "observedAt": "2026-10-06T12:21:58.817Z",
+    "threeExactPathsEffectiveWriters": [],
+    "authority": "Existing MATURE04 Mika owner, new exact fresh claim required; no Web product scope authorized"
+  },
+  "requestedResolution": "Mika/04 legal owner smallest correction and actual combined targeted validation; preserve accurate execution identity and existing historical schema. If attachment materials cannot be represented, explicit unknown rather than known full/empty schema relaxation. No dropping attachments or disabling sampling to bypass.",
+  "managerProductTests": 0,
+  "coordination": "One direct Mika same-level dependency request sent successfully; conclusion corrected to distinguish confirmed attachment-only failure from mixed coverage semantics"
+}

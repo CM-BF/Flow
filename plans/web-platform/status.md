@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:16 UTC / ATTACHI02首12实施、DPERF03 v2七scope；WORKSPACEPERF正式main待owner收口 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:22 UTC / ATTACHI02 v2全24实际接线、DPERF03固定批准待main；WORKSPACEPERF已收口释放 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,8 +17,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 附件正式中心入口及公共桥接已接主线；输入模块已main，生产聊天附件绑定首12实施尚未完成 |
-| 下一可用交付 | ATTACHI02按1c496首12实际消费者推进，余12后amend；摘要实际部署待回执 |
+| 当前产出 | 附件正式中心入口及公共桥接已接主线；输入模块已main，生产聊天附件绑定已扩24实际接线尚未完成 |
+| 下一可用交付 | ATTACHI02按1c496完整24范围推进实际App/HTTP；摘要实际部署待回执 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
@@ -37,7 +37,7 @@
 | WPF-001-06 | completed | d01_owner | PERF01基线3d47和PERF02窗口a87限定批准、后者main已含；d36 v2 released，未来优化另凭证据领取 |
 | WPF-001-07 | completed | d01_owner | M02 d47已审集成，原保留范围已于06:45:37由owner完成main收口并release v4；后继不沿旧权写入 |
 | WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验；最新CHATv5→QUEUE01v1与旧D06v2释放→新e5b2v1均有原始receipt |
-| WPF-001-09 | in-progress | d01_owner | CHAT与queue已审集成；GO/Lead真实两query结果CLOSED 2/2已收到，沿固定证据不重测；tool/thinking、context、steer、voice后继仍开放 |
+| WPF-001-09 | in-progress | d01_owner | CHAT与queue已审集成；GO/Lead真实两query结果CLOSED 2/2已收到，沿固定证据不重测；tool/thinking、context、steer、voice后继仍开放；04历史GET/client/DTO已main362 ready，Web consumer待排程；新附件v2材料投影缺口交Mika合法owner，未推断HTTP失败 |
 | WPF-001-10 | completed | d01_owner | X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计 |
 | WPF-001-11 | completed | d01_owner | PROFILE独立模块4f198576获rootAPPROVED、finale730clean，管理范围/6md20links/4TODO通过；App接线仍另片 |
 | WPF-001-12 | completed | d01_owner | QUEUE00 5acc已审，d10b4b0记录main698实现相同、claim13185v2 released |
@@ -66,7 +66,7 @@
 
 | WPF-001-35 | pending | d01_owner | RS13固定产物去重/初始依赖图/延后chat及静态host cache-encoding冷暖与回滚验收已落plan；未take/实施，ACK/附件/发布优先，0个人服务/模型。 |
 
-| WPF-001-36 | in-progress | d01_owner | D01/DPERF两组隔离原证据与六scope[只读第二意见](../../docs/evidence/web-platform/dperf03-readonly-proposal.json)已归档；新增末尾HEAD核对后28→23仅算术预期，captured HEAD/permit/失败unknown为门槛；ATTACHI02实际派工后已root结构批准并fresh db0b7d25 v2七scope实施（新增专测分类helper）；45s/10s清理/8MiB，独审NOT_STARTED，不压4320。 |
+| WPF-001-36 | in-progress | d01_owner | D01/DPERF两组隔离原证据与六scope[只读第二意见](../../docs/evidence/web-platform/dperf03-readonly-proposal.json)已归档；新增末尾HEAD核对后28→23仅算术预期，captured HEAD/permit/失败unknown为门槛；ATTACHI02实际派工后已root结构批准并fresh db0b7d25 v2七scope实施（新增专测分类helper）；45s/10s清理/8MiB，独审5609 APPROVED，cc390双端clean五源同；main待接，不压4320。 |
 
 ## 当前唯一来源、写权与下一步
 
@@ -84,12 +84,12 @@
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
 | RELEASE02 → MATURE01 | web-release-type-fix / 03323bce v2 released三scope | fixed560c已Lead独审并main648e；ownerfed5 normalpush双端clean/parser0后全停写，03323 v2已release；0浏览器/PG/个人发布 |
 | ATTACHI01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-input-preview/plans/wpf-attach-i01-input-preview/status.md)，94b84c59 v2 released十一scope | fixed4c4d已main1c496九源同，owner2b0a33e双端clean/parser0后全停写；94b84 v2 released，实际App仍属新生产绑定片 |
-| ATTACHI02 → MATURE03 | web-attachment-production / 0b7fc000 v1首十二scope | fixed1c496组合输入、新独立树clean及fresh无冲突；owner已followup开工，首canonical6f2299已实际建立/parser0；余12含App后fresh amend，完整App/HTTP未完成 |
-| WORKSPACEPERF01 → MATURE05 | c815bc00 v1四scope / web-workspace-lifecycle-baseline | fixed1711已正式main362af3两源同；8完成/1失败、累计79.322s保持partial，owner安全点收口后才release；0生产优化 |
+| ATTACHI02 → MATURE03 | web-attachment-production / 0b7fc000 v2完整二十四scope | fixed1c496输入；首段4a91固定十源和局部检查，12:18后十二fresh无冲突原子amend成功；同一owner实际接线，完整App/HTTP未完成 |
+| WORKSPACEPERF01 → MATURE05 | c815bc00 v2 released四scope / web-workspace-lifecycle-baseline | fixed1711已正式main362af3两源同；owner12e4双端clean/全停写后c815 v2 released；8完成/1失败、累计79.322s保持partial，0生产优化 |
 | DASHSUM01 → D01 | dashboard-human-summary / fe63511a v2 released六scope | fixedc1de已main017adc，owner2daf070双端clean/parser0后全停写；fe635 v2正式释放，实际登记/部署待回执 |
 | WORKSPACECACHE01 → MATURE05 | web-workspace-cache / 883321bc v2 released十六scope | fixed4ec已main017adc、十四hash同，owner10ca8双端clean后全停写/883321 v2释放；含六ATTACHI交集；原分次browser限制保留 |
 | ACK01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-ack-consumer/plans/wpf-ack01-shared-consumer/status.md)，a2674416 v2 released七scope | 2fa8已main e4c82；owner8301991 normalpush/clean后全停写释放；v2公共扩展已fd1322接收，生产附件consumer另片 |
-| DPERF03 → D01 | dashboard-git-snapshot / db0b7d25 v2七scope | fixedeb95新独立树、fresh无重叠、两方法Interface已批后实际派工；首canonical2a52b8已实际建立/parser0，预算45s/8MiB，未审NOT_STARTED |
+| DPERF03 → D01 | dashboard-git-snapshot / db0b7d25 v2七scope | fixed5609获root独立37/37批准，finalcc390双端clean/5源同/13只读依赖同；claim v2保留至main，原临时Git2.151s/原失败/非原子边界保留 |
 | DPERF02 → D01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching/plans/wpf-dashboard-proof-batching/status.md)，1cb4 v2 released四scope停写 | 已main da041，close8e9最终normalpush成功；两次失败/先release偏差已归档，无重测 |
 
 ## 当前依赖与登记队列

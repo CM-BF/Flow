@@ -1,0 +1,119 @@
+{
+  "at": "2026-10-06T12:23:40.538106+00:00",
+  "purpose": "ATTACHI02 phase2 exact claim; DPERF fixed approved intake; baseline mainrelease; cross-lead history/attachment dependency; existingArc read-only proposal",
+  "paths": [
+    "docs/evidence/web-platform/attachi02-phase1-source-audit.json",
+    "docs/evidence/web-platform/attachi02-phase2-amend-receipt.json",
+    "docs/evidence/web-platform/attachi02-phase2-amend-request.json",
+    "docs/evidence/web-platform/context-attachment-shape-research/diagnostic.mts.txt",
+    "docs/evidence/web-platform/context-attachment-shape-research/fixed-source-audit.json",
+    "docs/evidence/web-platform/context-attachment-shape-research/result.json",
+    "docs/evidence/web-platform/context-attachment-shape-research/source-binding.json",
+    "docs/evidence/web-platform/context-history-web-input.json",
+    "docs/evidence/web-platform/conversation-plugin-coverage-research.md",
+    "docs/evidence/web-platform/dperf03-final-management-audit.json",
+    "docs/evidence/web-platform/dperf03-readonly-proposal.json",
+    "docs/evidence/web-platform/mature-task-handoff.md",
+    "docs/evidence/web-platform/workspace-arc-readonly-proposal.json",
+    "docs/evidence/web-platform/workspace-cache-attachment-binding-proposals.json",
+    "docs/evidence/web-platform/workspaceperf-main-closeout-audit.json",
+    "docs/evidence/web-platform/workspaceperf-main-release-receipt.json",
+    "docs/evidence/web-platform/workspaceperf-main-release-request.json",
+    "plans/web-platform/plan.md",
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-03-attachments/status.md",
+    "plans/wpf-mature-05-workspace/plan.md",
+    "plans/wpf-mature-05-workspace/status.md"
+  ],
+  "outsideClaim": [],
+  "linksChecked": 268,
+  "newMissingLinks": [],
+  "baselineMissingLinks": [
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../d05-architecture-view/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../d06-architecture-refresh/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../x01-plugin-management/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../wpf-chat01-conversations/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../wpf-perf02-activity-window/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../wpf-queue01-ui/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../wpf-renderer01-data-renderers/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../wpf-k02-compatibility/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../wpf-activity01/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../wpf-renderer-i01-integration/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../x01-plugin-management/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../d06-architecture-refresh/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../wpf-queue01-ui/plan.md"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../../docs/evidence/f01/queue-live-preflight/second-reply-dark-narrow.png"
+    },
+    {
+      "file": "plans/web-platform/plan.md",
+      "link": "../../docs/evidence/f01/queue-live/second-reply-dark-narrow.png"
+    }
+  ],
+  "parsers": [
+    {
+      "id": "WPF-001",
+      "errors": [],
+      "humanComplete": true,
+      "todos": 36
+    },
+    {
+      "id": "WPF-MATURE-03",
+      "errors": [],
+      "humanComplete": true,
+      "todos": 6
+    },
+    {
+      "id": "WPF-MATURE-05",
+      "errors": [],
+      "humanComplete": true,
+      "todos": 5
+    }
+  ],
+  "cleanCode": "Reused local method skills; explicit authority/known versus coverage semantics/source versus deployment; fixed hashes and no invented task progress. Existing historical links not rewritten.",
+  "managerProductTests": 0,
+  "managerDiagnosticRuns": 0,
+  "apiSamples": 0,
+  "personalServiceActions": 0,
+  "coordination": "Mika one concrete dependency and necessary conclusion correction sent; no GO or unavailable Lead route attempt"
+}

@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-06T12:18:49.321475+00:00",
+  "target": "4a91cfce17ee9e577057c115d4b81889af728d66",
+  "metadata": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
+  "remoteObserved": "c5f5cb94e11141fc44664452e0fbd2e40feeeb7d",
+  "scopeAtFirstStage": [
+    "apps/web/src/conversation-context/receipts.ts",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/queue/commands.ts",
+    "apps/web/src/plugin-integration/attachments.tsx",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/test/attachment-integration.test.ts",
+    "apps/web/test/conversation-context-receipts.test.ts",
+    "apps/web/test/conversation-outbox.test.ts",
+    "apps/web/test/plugin-host.test.ts",
+    "docs/evidence/wpf-attach-i02",
+    "plans/wpf-attach-i02-production-binding"
+  ],
+  "outsideFirstStage": [],
+  "sources": [
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "sha256": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072",
+      "targetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085",
+      "targetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523",
+      "targetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "d8a3b1d1c2d412ff8ae5d3b82f5343a46b7143e00ceb597201c7652fe27c0b0a",
+      "targetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+      "targetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831",
+      "targetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/test/attachment-integration.test.ts",
+      "sha256": "163efb012093b71154c49f4fa9ed906dc213ed3c9a1a743482000e8f4aa8b1ba",
+      "targetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/test/conversation-context-receipts.test.ts",
+      "sha256": "7c67d0dc0f17ff4cb8bfa3068839a79b026657ce8aede802840d333bc38fdcc0",
+      "targetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/test/conversation-outbox.test.ts",
+      "sha256": "cc416bd25c913aa8eb9ade159b3c78a28712d9902b35c5bef4b4089a345b8b15",
+      "targetEqualsMetadata": true
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "sha256": "92767f0fa52c4c4232a579c3f8d979d6ed0b74104932f08166a0412b4833d2dd",
+      "targetEqualsMetadata": true
+    }
+  ],
+  "protectedAtFirstStageDiff": [],
+  "authorAttributedChecks": "88 local consumers + later12 binding checks, Webtypes0; no real App/HTTP/PG/browser",
+  "review": "NOT_STARTED; no separate partial-delivery approval inferred",
+  "currentImplementation": "Phase2 may now modify same sources after committed24scope amendment; this audit binds fixed phase1, not moving bytes",
+  "managerProductTests": 0
+}

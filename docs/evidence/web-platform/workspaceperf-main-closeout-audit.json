@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-06T12:21:10.792746+00:00",
+  "final": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50",
+  "remote": "12e4f3f4ca8bba8b109eb1efa03a4e50fd0fcc50",
+  "dirty": [],
+  "main": "362af3bac77541e5a60979326bcf4d4b8c947915",
+  "sources": [
+    {
+      "path": "apps/web/test/workspace-lifecycle.fixture.ts",
+      "sha256": "44becc897d2fca5288da15b222d69b9094a3f84c31a7001914c22437f6ff3a0d"
+    },
+    {
+      "path": "apps/web/test/workspace-lifecycle.browser.ts",
+      "sha256": "29400ad8913900212dd40cbfa19687c4bdb43dfcfc18a4b9508b247d71d022b5"
+    }
+  ],
+  "sourceIntakeNotAncestorMerge": true,
+  "parser": {
+    "id": "WPF-WORKSPACEPERF01",
+    "errors": [],
+    "humanComplete": true,
+    "todos": 4,
+    "implementation": {
+      "target": "1711e2b0933ec28b8bbd9af11cba4243b644e0d7",
+      "scopes": [
+        "apps/web/test/workspace-lifecycle.fixture.ts",
+        "apps/web/test/workspace-lifecycle.browser.ts"
+      ],
+      "errors": []
+    }
+  },
+  "checks": "FAILED/partial8passed1locator retained; no browser rerun",
+  "ownerAllFourStopped": true,
+  "freshLedgerObservedAt": "2026-10-06T12:20:42.576Z",
+  "claimId": "c815bc00-fd71-4652-b2c0-7affc0d7361e",
+  "version": 1,
+  "managerProductTests": 0
+}

@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-10-06T12:22:10.485385+00:00",
+  "target": "f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa",
+  "sourceChecks": [
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "matchesFixedMain": true
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "matchesFixedMain": true
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "matchesFixedMain": true
+    }
+  ],
+  "confirmed": "attachment-only public v2 passes but exact existing known-materials projection fails minItems=1",
+  "secondaryQuestion": "mixed input material metadata/revision remain knowledge-only; legal owner must state coverage or support attachments rather than claim complete inventory",
+  "method": "pure public schemas + exact mapping expression; no record()/HTTP/PG/provider run"
+}

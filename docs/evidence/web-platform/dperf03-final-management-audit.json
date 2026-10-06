@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-06T12:21:09.744864+00:00",
+  "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+  "final": "cc390fd7613c5a0b6ce801bb5dccc85b20437764",
+  "base": "eb95fba43b0305db0dd40dfe85ccc0d58eb9a6ea",
+  "remote": "cc390fd7613c5a0b6ce801bb5dccc85b20437764",
+  "dirty": "",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee"
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a"
+    },
+    {
+      "path": "apps/execution-dashboard/test/git-snapshot.test.mjs",
+      "sha256": "1acb9177f68de415b716aa8acdd023da08d9bd83be051bffe17d9be785cc4ae2"
+    },
+    {
+      "path": "apps/execution-dashboard/test/proof-snapshot.test.mjs",
+      "sha256": "f74c0eea4d774ac53068e9f10258c24a38c8cbfa381f755e3c6950a317994de3"
+    }
+  ],
+  "readonlyDependenciesChecked": 13,
+  "outOfScope": [],
+  "rootRawPreservation": [
+    {
+      "source": "/tmp/root-dperf03-5609-tests.log",
+      "stored": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/docs/evidence/wpf-dperf03/root-direct-tests.log",
+      "sha256": "d73096b82f92e10cd426d9a0c62289f53b77254af3e384d498576ac5da463757"
+    },
+    {
+      "source": "/tmp/root-dperf03-5609-audit.json",
+      "stored": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-git-snapshot/docs/evidence/wpf-dperf03/root-audit.json",
+      "sha256": "607dc60fbdead68e3674bb52fb8ae626aaf334c9baeed86d6bd15bfaad52e076"
+    }
+  ],
+  "rootReview": "APPROVED12:18:07UTC;37/37,26713.567ms; raw23starts shared3 observations each1,peak4,unclosed0",
+  "authorExperiment": "2.151s cumulative two runs; original red/current attribution preserved; no atomic/CPU/SLO guarantee",
+  "managerProductTests": 0,
+  "claim": {
+    "id": "db0b7d25-9e70-477d-a75e-f8bfb0878578",
+    "version": 2,
+    "state": "active until main closeout"
+  },
+  "parser": {
+    "id": "WPF-DPERF03",
+    "errors": [],
+    "humanComplete": true,
+    "todos": 4,
+    "implementation": {
+      "target": "5609ea719ec400a803bb6036429312b7a212c90f",
+      "scopes": [
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/proof.mjs",
+        "apps/execution-dashboard/src/git-snapshot.mjs",
+        "apps/execution-dashboard/test/git-snapshot.test.mjs",
+        "apps/execution-dashboard/test/proof-snapshot.test.mjs"
+      ],
+      "errors": []
+    }
+  }
+}

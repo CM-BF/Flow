@@ -1,0 +1,60 @@
+{
+  "recordedAt": "2026-10-06T12:21:16.507Z",
+  "head": "f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa",
+  "hashes": {
+    "apps/server/src/context-transparency/store.ts": "6bf6e221195c25738569091978cfec4ca3ad644d41ea4cf6ed05eb3a1137e1e7",
+    "packages/contracts/src/context-observation-history.ts": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126",
+    "packages/contracts/src/conversation-context.ts": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+  },
+  "purpose": "Public schema compatibility diagnostic applying exact current frozenMaterials expression; not reportEvents/HTTP/PG execution",
+  "cases": [
+    {
+      "name": "attachment-only",
+      "validConversationContext": true,
+      "sourceCount": 0,
+      "attachmentCount": 1,
+      "historyMaterialsAccepted": false,
+      "projectedMaterials": null,
+      "issues": [
+        {
+          "path": [
+            "sources"
+          ],
+          "code": "too_small",
+          "message": "Too small: expected array to have >=1 items"
+        }
+      ]
+    },
+    {
+      "name": "knowledge-plus-attachment",
+      "validConversationContext": true,
+      "sourceCount": 1,
+      "attachmentCount": 1,
+      "historyMaterialsAccepted": true,
+      "projectedMaterials": {
+        "state": "known",
+        "sources": [
+          {
+            "citation": {
+              "projectId": "project-a",
+              "sourceId": "30000000-0000-4000-8000-000000000001",
+              "version": 1,
+              "contentDigest": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "locator": {
+                "kind": "utf8-bytes",
+                "start": 0,
+                "end": 5
+              }
+            },
+            "byteLength": 5,
+            "tokens": null
+          }
+        ]
+      },
+      "issues": []
+    }
+  ],
+  "projectWrites": 0,
+  "httpCalls": 0,
+  "providerCalls": 0
+}

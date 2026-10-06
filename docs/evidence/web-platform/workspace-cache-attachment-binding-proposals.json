@@ -1,5 +1,5 @@
 {
-  "state": "CACHE_RELEASED_MODULE_MAIN_ACCEPTED_ATTACHMENT_FIRST12_COMMITTED",
+  "state": "CACHE_RELEASED_MODULE_MAIN_ACCEPTED_ATTACHMENT_FULL24_AMENDED",
   "source": "root structural approvals; manager fresh D04 COMMITTED after owner main-close",
   "baseObserved": "53ce2ec2c95b489aa7a2a2eaa49849821af00c16",
   "cache": {
@@ -157,7 +157,7 @@
       "plans/wpf-attach-i02-production-binding",
       "docs/evidence/wpf-attach-i02"
     ],
-    "phase1State": "root approved12literal; no take until module4c formal combinedmain",
+    "phase1State": "first12 implemented fixed4a91, author local checks, no independent approval/fullApp result",
     "phase1Consumers": [
       "real Outbox.begin and QueueCommands.execute with shared materials freeze and shared v2 matcher",
       "real PluginHost loading builtin with bound authority; no missing Session stub/cast"
@@ -196,7 +196,40 @@
       "receipt": "attachi02-take-receipt.json"
     },
     "firstCanonicalCommit": "6f2299c5d754ee42cb0f816f53a0e88d9b646ab3",
-    "sourceCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/plans/wpf-attach-i02-production-binding/status.md"
+    "sourceCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/plans/wpf-attach-i02-production-binding/status.md",
+    "phase2Claim": {
+      "claimId": "0b7fc000-2096-4075-95c1-f6c5a347d584",
+      "version": 2,
+      "committedAt": "2026-10-06T12:18:09.220Z",
+      "receipt": "attachi02-phase2-amend-receipt.json",
+      "scopes": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/test/attachment-integration.browser.ts",
+        "apps/web/test/attachment-integration.fixture.ts",
+        "apps/web/test/attachment-integration.test.ts",
+        "apps/web/test/conversation-context-receipts.test.ts",
+        "apps/web/test/conversation-messages.test.ts",
+        "apps/web/test/conversation-outbox.test.ts",
+        "apps/web/test/conversation-projection.test.ts",
+        "apps/web/test/conversation-queue.test.ts",
+        "apps/web/test/plugin-host.test.ts",
+        "docs/evidence/wpf-attach-i02",
+        "plans/wpf-attach-i02-production-binding"
+      ]
+    },
+    "phase2State": "COMMITTED; owner notified to verify live then actual production App integration"
   },
   "exactIntersection": [
     "apps/web/src/App.tsx",

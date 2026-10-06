@@ -1,0 +1,68 @@
+{
+  "recordedAt": "2026-10-06T12:23:21.649509+00:00",
+  "state": "READ_ONLY_CANDIDATE_NOT_TAKEN_NOT_IMPLEMENTED",
+  "source": "workspace_panels_owner bounded proposal after DPERF and baseline metadata closeout",
+  "fixedResearch": "f3e569dbcb5fb84437cf2e3542f3a3f3b6bec9aa",
+  "candidateTaskId": "WPF-WORKSPACEARC01",
+  "candidateIdNotReserved": true,
+  "parent": "WPF-MATURE-05",
+  "candidateWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+  "candidateBranch": "codex/web-workspace-composition",
+  "requiredBase": "After ATTACHI02 fixed integration, fresh compare and approval; current research is not implementation base",
+  "interface": [
+    "App sole Layout={tabs:[{id,panes:[{id,viewKey,weight}],activePaneId}],activeTabId}; workspace-state only bounded legal reference transforms, no second View/draft/controller owner",
+    "Each view.key occurs at most once; alias rename preserves pane; first max2panes/tab and connection visible<=2, resident32 fromCACHE;3+ and persistence remain later",
+    "Single stable flat ChatPane host parent keyed by view.key; grid placement/hidden avoids cross-parent runtime remount",
+    "Tab arrows roving focus only, Enter/Space activate; close chooses right neighbor elseleft; pointer/keyboard same proportion, pointercancel cancels preview; narrow vertical",
+    "Close delegates App original protection/steering/retained/release; group close first collects all risks and rechecks identity; no implicit cancellation or eager history",
+    "P01 onehost; conversation catalog context and conversation-view {viewKey,conversationId:null only verified draft}; sidebar may show closed member without ensureView/read; new chat.tab.actions only real layout member",
+    "flow.conversation.open/flow.view.close/discriminated flow.layout.change through existing ui.navigate/ui.layout and private App authority, context/anchor/member/connection checked; no focused/taskId authorization shortcut",
+    "Original stream2leases and CACHE flights retained;3+ requires aggregate read budget/fairness before enablement"
+  ],
+  "candidateScopes": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/workspace-state.ts",
+    "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+    "apps/web/src/workspace-layout/layout.css",
+    "apps/web/src/conversations/ConversationList.tsx",
+    "apps/web/src/plugin-integration/layout.ts",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/src/plugins/host.ts",
+    "apps/web/src/plugins/sample.tsx",
+    "apps/web/test/workspace-layout.test.ts",
+    "apps/web/test/workspace-layout.fixture.ts",
+    "apps/web/test/workspace-layout.browser.ts",
+    "apps/web/test/plugin-host.test.ts",
+    "apps/web/test/plugin-integration.test.ts",
+    "plans/wpf-workspace-arc",
+    "docs/evidence/wpf-workspace-arc"
+  ],
+  "currentAttachmentIntersection": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/test/plugin-host.test.ts"
+  ],
+  "validationProposal": {
+    "direct": "layout/host duplicate/missingkey/two-pane bound/neighbor focus/refusal no mutation",
+    "actualApp": [
+      "A+B one top tab,swap/resize/separate retain same composer DOM/drafts/unknown receipt",
+      "inactive0newstream/details;close protection/capacity/reopen",
+      "sidebar sample cold-open no prefetch;pane disable/revoke/connection fences",
+      "1280/390 both themes stable screenshots andkeyboard"
+    ],
+    "cumulativeBrowserSecondsIncludingCleanup": 90,
+    "cleanupReserveSeconds": 10,
+    "maxEvidenceBytes": 8388608,
+    "failure": "partial, no automatic budget extension",
+    "reuse": "only existing HTTP start helpers, no old budget scripts/evidence writes",
+    "limits": "DOM/requests not heap/CPU; attachment state/protection from actual binding only"
+  },
+  "newWorktrees": 0,
+  "newClaims": 0,
+  "experiments": 0,
+  "productWrites": 0
+}

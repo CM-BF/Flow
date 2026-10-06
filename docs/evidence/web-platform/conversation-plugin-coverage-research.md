@@ -46,3 +46,7 @@ WorkspaceFeedProjection在arrived=[]/following=true时仍merge旧entries/buffere
 workspace-state.ts:1–61与App:803–965仍是ChatGroup[]各自tabs/activeId和至多2个独立tablist，splitChat硬上限2，merge flatten回一个tablist；不是一个顶层tab内部A|B。隐藏tab仍挂ChatPane，CACHE限定回收也不代表全部DOM/订阅优化已完成。MATURE05-01/02/03/05继续pending/in-progress：一个唯一layout模型表达顶层tab持有有界pane数组，先A|B、3+另验；stable view.key与App既有views/aliases仍唯一资源owner，layout命令仅移动引用、不复制材料/消息或cancel。无连接/版本/无效ID/storage失败设计与验证的持久布局保持后继未知，不能另造views镜像或通用docking引擎。ATTACHI优先，不另派App/session重叠writer。本段无新实验/代码。
 
 Root后续源码只读定位（同现有MATURE05研究，未browser验证）：App `navigateChatTabs` 110–135方向键立即activate并focus；有加载延迟的pane后继须分离focus与activation，Enter/Space确认。`closeNow` 548+沿workspace-state.closeChat关闭active默认tabs.at(-1)，并非稳定相邻tab。新layout命令只移动原view.key，每view只被一个pane持有，拒不存在/重复key，split/merge不创建新runtime或复制材料/读history；App继续唯一保护/回收权。原05-02/03验收覆盖，不新增App writer。
+
+Arc后继读取预算（root源码核对，未新实验）：`conversation-stream/host.ts` 的 StreamConnectionBudget.acquire仍为每连接最多2个lease；CACHE四bodyflight保证建立于最多2可见pane。3+不可只解除groups>=2限制；同一layout方案须明确整体预算、公平前进/隐藏释放与实际消费者验证。panels仅在DPERF/基线metadata安全收口后续原Arc只读Interface/scope研究，ATTACHI写权优先，无新task/claim或workspace authority。
+
+Panels现有Arc只读Interface已收敛，[候选18literal/唯一layout/稳定平铺host/P01实际消费者与90s预算](workspace-arc-readonly-proposal.json)。正式base必须等待ATTACHI02固定接收再核；与其已领24范围交集五处（App/session/types/validation/plugin-host专测），未建树/take/实验，ID只是未预留候选。首验同一顶层tab的A+B，2可见沿现预算，3+与持久恢复开放，不另造views/aliases/材料状态权威。
