@@ -1,6 +1,6 @@
 # R03 租期可靠性片段
 
-固定实现 `9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a`；基线 `3773db5d014a6d38d09553acd0a5fe8df900b7c4`。2026-10-06 03:32 UTC，作者局部检查通过，独立review进行中，尚未集成main。
+固定实现 `9c59740fd45575c7ca5cccbdfdbd5772e5cf1d2a`；基线 `3773db5d014a6d38d09553acd0a5fe8df900b7c4`。2026-10-06 03:32 UTC，作者局部检查通过，Mika独立review APPROVED，独立48/48（3.97s），尚未集成main。
 
 ClaimResponse新增顶层remainingLeaseMs（无任务=0），中心在授予租期时固定时长。generic runner用请求发送前的单调时钟起点加授予时长，扣除往返、解析与本地准备；不使用中心时间戳减本机墙钟。heartbeat同样计时，并先核对旧租期仍有效。同步deadline gate保证event loop延迟timer时也不续活；过期或关闭的控制器不接受晚回包。目录无法准备明确停止，事件落盘失败清理心跳。
 
@@ -30,4 +30,6 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm typecheck
 
 ## 结论边界
 
-0模型/0云；未验证跨机器部署或真实模型行为。没有更改并发、outbox索引、FS/process/PTY或answer轮询，没有宣称可强杀无视abort的adapter。P02运行时suite固定使用另一独占数据库，本次未重跑；其ClaimedTask未变，公共类型和generic直接消费者已核验。完整R03的BR-01/S01后继保持open，当前独立审查与main接收分开记录。
+0模型/0云；未验证跨机器部署或真实模型行为。没有更改并发、outbox索引、FS/process/PTY或answer轮询，没有宣称可强杀无视abort的adapter。P02运行时suite固定使用另一独占数据库，本次未重跑；其ClaimedTask未变，公共类型和generic直接消费者已核验。完整R03的BR-01/S01后继保持open，本片段独立APPROVED与main接收分开记录。
+
+独立审查原始日志：[independent-checks.txt](independent-checks.txt)。Mika核对6源码+4作者stdout hash一致，无findings；Node24/Vitest4 lease+runner 48/48，未重跑其他范围。
