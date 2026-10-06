@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 19:07:03 UTC |
+| 最近更新 | 2026-10-06 19:11:46 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -15,14 +15,14 @@
 | Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1 active；三literal，18:16:25.736 UTC取得 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 局部25不同通过（原19纯检查+operator3自有进程例+独立watchdog3例；重叠轮次不累计）；最初missing-module红保留，4+5分轮重叠不累计；0SDK/PG/provider |
-| Review | NOT_STARTED |
+| Review | APPROVED preparation；[review.md](review.md)，实际PG/模型仍NOT_RUN |
 | 实现目标 | e9319eda0189e878035c2115b9f050f35e130145 |
 | 实现范围 | experiments/continuous-goal-acceptance |
 | 已集成main状态 | 未集成；基线已含O15/CLI，不证明本实验 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 已完成分阶段旅程入口与局部检查，正在准备独立审查和零模型公开旅程。 |
+| 当前产出 | 分阶段旅程与独立超时保护已通过源码准备审查，等待一次零模型公开旅程验证。 |
 | 下一可用交付 | 获串行资源窗口后验证公开规划、确认、自动推进与独立接受的完整连接。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -30,10 +30,10 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | O16-01 | completed | native_center_owner | [claim](../../docs/evidence/o16/claim.json)、[Interface](../../docs/evidence/o16/interface.md) |
-| O16-02 | in-progress | native_center_owner | phase/assignment/query入口及合同/持久记录共25不同检查；无SDK query/auth；新candidate尚未独审 |
+| O16-02 | completed | native_center_owner | phase/assignment/query入口及合同/持久记录共25不同检查；无SDK query/auth；固定准备源已独立APPROVED |
 | O16-03 | in-progress | native_center_owner | public staged driver已实现、模块装配0通过；真实PG旅程NOT_RUN，proposal/decision同一中心公开口 |
-| O16-04 | pending | native_center_owner | 25不同局部检查分轮通过；真实SDK MCP仅tools/list、不query；装配red后0；PG需Lead串行窗口 |
-| O16-05 | pending | native_center_owner | manifest/独审待固定 |
+| O16-04 | in-progress | native_center_owner | 25不同局部检查分轮通过；真实SDK MCP仅tools/list、不query；装配red后0；PG需Lead串行窗口 |
+| O16-05 | in-progress | native_center_owner | 固定manifest与准备独审已归档；实际PG旅程与最终独审尚待 |
 | O16-06 | pending | native_center_owner | 新模型预算未授，旧O08/O10封存；不影响零query准备 |
 
 架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
