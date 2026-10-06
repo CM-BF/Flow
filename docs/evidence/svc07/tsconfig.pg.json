@@ -1,0 +1,5 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": ["../../../apps/server/src/database.ts", "./pg-transaction.test.ts"],
+  "exclude": ["node_modules"]
+}
