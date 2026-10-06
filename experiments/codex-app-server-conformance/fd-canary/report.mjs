@@ -30,31 +30,68 @@ export function decodeReport(bytes, nonce, pid) {
   return records;
 }
 
+const compilerCodes = new Set(['compiler-output-limit', 'compiler-include-search-syntax', 'compiler-command-syntax',
+  'compiler-executable', 'compiler-role', 'compiler-output-option', 'compiler-output-location', 'compiler-output-missing',
+  'compiler-include-search-unclosed', 'compiler-command-count']);
+class CompilerInventoryError extends Error {
+  constructor(code) { super('Compiler inventory unavailable'); this.code = code; }
+}
+const requireCompiler = (condition, code) => { if (!condition) throw new CompilerInventoryError(code); };
+export const compilerFailureCode = error => error instanceof CompilerInventoryError && compilerCodes.has(error.code) ? error.code : 'unclassified';
+
+function compilerWords(line) {
+  requireCompiler(Buffer.byteLength(line) <= 16384 && /^"\//.test(line), 'compiler-command-syntax');
+  const words = []; let index = 0;
+  while (index < line.length) {
+    while (line[index] === ' ' || line[index] === '\t') index++;
+    if (index === line.length) break;
+    let word = '';
+    if (line[index] === '"') {
+      index++; let ended = false;
+      while (index < line.length) {
+        const char = line[index++];
+        if (char === '"') { ended = true; break; }
+        if (char === '\\') {
+          const escaped = line[index++];
+          requireCompiler(['"', '\\', '$'].includes(escaped), 'compiler-command-syntax'); word += escaped;
+        } else { requireCompiler(char.charCodeAt(0) >= 32 && char !== '\u007f', 'compiler-command-syntax'); word += char; }
+      }
+      requireCompiler(ended && (index === line.length || /[ \t]/.test(line[index])), 'compiler-command-syntax');
+    } else {
+      while (index < line.length && !/[ \t]/.test(line[index])) {
+        const char = line[index++];
+        requireCompiler(char.charCodeAt(0) >= 32 && !['"', '\\', '$', '\u007f'].includes(char), 'compiler-command-syntax'); word += char;
+      }
+    }
+    requireCompiler(words.length < 2048 && Buffer.byteLength(word) <= 4096, 'compiler-command-syntax'); words.push(word);
+  }
+  return words;
+}
+
 export function compilerInventory(bytes, directory, artifacts, clang, linker) {
-  assert.ok(bytes.length <= 65536);
+  requireCompiler(bytes.length <= 65536, 'compiler-output-limit');
   const commands = []; let includeSearch = false;
   for (const line of bytes.toString('utf8').split('\n')) {
     const trimmed = line.trim();
     if (/^#include .* search starts here:$/.test(trimmed)) { includeSearch = true; continue; }
     if (trimmed === 'End of search list.') { includeSearch = false; continue; }
-    if (includeSearch) { assert.ok(/^\/[^\n]+(?: \(framework directory\))?$/.test(trimmed)); continue; }
+    if (includeSearch) { requireCompiler(/^\/[^\n]+(?: \(framework directory\))?$/.test(trimmed), 'compiler-include-search-syntax'); continue; }
     if (/^clang -cc1 version [0-9][^\n]* default target [A-Za-z0-9_.-]+$/.test(trimmed)) continue;
     const commandLike = /^["/]/.test(trimmed) || /(?:^|\s)-(?:cc1|cc1as|o)(?:\s|$)/.test(trimmed);
     if (!commandLike) continue;
-    // Unknown or mixed unquoted invocation syntax cannot be silently omitted from the inventory.
-    assert.ok(/^"\//.test(trimmed));
-    const tokens = [...trimmed.matchAll(/"(?:[^"\\]|\\.)*"/g)].map(match => match[0]);
-    assert.equal(trimmed.replace(/"(?:[^"\\]|\\.)*"/g, '').trim(), '');
-    const words = tokens.map(token => JSON.parse(token));
-    assert.ok(words.length > 1 && [clang, linker].includes(words[0]));
+    // LLVM printArg quotes the executable; arguments may be bare or quote/escape only ", backslash and $.
+    // This decodes data only and never evaluates shell syntax.
+    const words = compilerWords(trimmed);
+    requireCompiler(words.length > 1 && [clang, linker].includes(words[0]), 'compiler-executable');
     const role = words[0] === linker ? 'linker' : words.includes('-cc1as') ? 'assembler' : words.includes('-cc1') ? 'frontend' : null;
-    assert.ok(role);
-    const outputIndex = words.indexOf('-o'); assert.ok(outputIndex >= 0 && outputIndex + 1 < words.length);
+    requireCompiler(role, 'compiler-role');
+    const outputIndex = words.indexOf('-o'); requireCompiler(outputIndex >= 0 && outputIndex + 1 < words.length && words.filter(word => word === '-o').length === 1, 'compiler-output-option');
     const output = words[outputIndex + 1];
-    assert.ok(output.startsWith(`${directory}/`) && artifacts.some(item => item.path === output));
+    requireCompiler(output.startsWith(`${directory}/`), 'compiler-output-location');
+    requireCompiler(artifacts.some(item => item.path === output), 'compiler-output-missing');
     commands.push({ executable: words[0], role, output: output.slice(directory.length + 1), pid: null, evidence: 'compiler-verbose-command' });
   }
-  assert.equal(includeSearch, false);
-  assert.ok(commands.length >= 2 && commands.length <= 8 && commands.some(item => item.role === 'frontend') && commands.some(item => item.role === 'linker'));
+  requireCompiler(!includeSearch, 'compiler-include-search-unclosed');
+  requireCompiler(commands.length >= 2 && commands.length <= 8 && commands.some(item => item.role === 'frontend') && commands.some(item => item.role === 'linker'), 'compiler-command-count');
   return commands;
 }

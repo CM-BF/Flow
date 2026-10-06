@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "experiments/codex-app-server-conformance/fd-canary/vitest.config.mjs",
+    "experiments/codex-app-server-conformance/fd-canary/host.test.ts",
+    "-t",
+    "persists bounded compiler|persists compiler failure|keeps log persistence|charges persisted compiler|never overwrites|classifies a fixed compiler"
+  ],
+  "startedAt": "2026-10-06T11:14:15.597625+00:00",
+  "finishedAt": "2026-10-06T11:14:16.251360+00:00",
+  "elapsedSeconds": 0.6471689169993624,
+  "exitCode": 0,
+  "actualCompileCalls": 0,
+  "actualSyntheticTargetStarts": 0
+}

@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-06T11:17:18.600357+00:00",
+  "scope": "affected-final26/26 plus native import and three runtime syntax checks; initial red/green/regression/lexer raw are intermediate historical checkpoints, not final-source runs",
+  "syntax": [
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.mjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.mjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "files": [
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.mjs",
+      "bytes": 14298,
+      "sha256": "0fdc97c3b9706d644468ed9a916c8bb903ea619e4548ecae19701a990dc1a59e"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.mjs",
+      "bytes": 6336,
+      "sha256": "e8f7f00df2a40fd30ed7338f755d66846618c97da577208e7eebfdb1f8d6db63"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs",
+      "bytes": 4728,
+      "sha256": "c7ea2ac76c55c49cf64417d72fd3d9112239fc1b87873c8091574c4d00ea7d79"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/command.mjs",
+      "bytes": 3428,
+      "sha256": "1111682ef3c1c364bd2d4d1fc2e4347a93fbb7c7809aafb52dd25bd41309bc4e"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/host.test.ts",
+      "bytes": 23449,
+      "sha256": "08b9420b4930fc8207d42336491221160b0c65276f12e19cd442490572118e25"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/vitest.config.mjs",
+      "bytes": 396,
+      "sha256": "e5c5236223fc043004da69288ab1c0da6817c74e2ab59b1f34df22ec8ab971f9"
+    }
+  ]
+}

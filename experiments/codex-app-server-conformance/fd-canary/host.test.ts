@@ -35,7 +35,7 @@ function fixture(override?: (options: any, number: number) => any) {
   } });
   async function command(options: any, budget: any) {
     calls.push(options); const number = calls.length;
-    const replacement = override?.(options, number); if (replacement) return replacement;
+    const replacement = override?.(options, number); if (replacement) { budget.consume(replacement.stdout.length + replacement.stderr.length); return replacement; }
     let stderr = Buffer.alloc(0);
     if (number === 1) {
       for (const name of ['fd-canary.i', 'fd-canary.o', 'fd-canary']) fs.writeFileSync(path.join(options.cwd, name), 'owned synthetic compiler output', { mode: 0o700 });
@@ -192,4 +192,96 @@ it('reserves prepared evidence and archive tail before any command can consume t
   expect(result.withinBudget).toBe(true);
   const invalid = fixture(); await expect(runFdCanaryBatch({ ...invalid.input, preparedEvidenceBytes: 2097152 }, invalid)).rejects.toThrow();
   expect(invalid.calls).toHaveLength(0); expect(fs.existsSync(path.join(invalid.evidenceDirectory, 'batch-reservation.json'))).toBe(false);
+});
+
+function failedCompilerFixture(stderr: Buffer, code = 0) {
+  return fixture((options, number) => {
+    if (number !== 1) return;
+    for (const name of ['fd-canary.o', 'fd-canary']) fs.writeFileSync(path.join(options.cwd, name), 'owned output');
+    return { safe: { ...normal(), code }, stdout: Buffer.from('owned stdout'), stderr };
+  });
+}
+it('persists bounded compiler bytes before a syntax failure without putting raw bytes in the safe result', async () => {
+  const raw = Buffer.from(' "/fixed/clang" "-cc1" -o "/owned/unterminated\nSYNTHETIC_PRIVATE_MARKER\n');
+  const f = failedCompilerFixture(raw); const result = await runFdCanaryBatch(f.input, f);
+  expect(result).toMatchObject({ measurementComplete: false, failureStage: 'compiler-command-inventory', failureCheck: 'compiler-command-syntax', cleanupComplete: true, targetReservations: 0 });
+  expect(fs.readFileSync(path.join(f.evidenceDirectory, 'compiler.stderr'))).toEqual(raw);
+  expect(fs.readFileSync(path.join(f.evidenceDirectory, 'compiler.stdout'))).toEqual(Buffer.from('owned stdout'));
+  for (const name of ['compiler.stderr', 'compiler.stdout']) expect(fs.statSync(path.join(f.evidenceDirectory, name)).mode & 0o777).toBe(0o600);
+  expect(result.compilerOutputFiles).toHaveLength(2); expect(result.compilerOutputFiles.every((x: any) => x.persisted && x.closed)).toBe(true);
+  expect(JSON.stringify(result)).not.toContain('SYNTHETIC_PRIVATE_MARKER'); expect(f.calls).toHaveLength(1);
+});
+it('persists compiler failure output before checking exit status and still cleans owned roots', async () => {
+  const f = failedCompilerFixture(Buffer.from('synthetic compiler failure'), 1); const result = await runFdCanaryBatch(f.input, f);
+  expect(result).toMatchObject({ failureStage: 'compiler-health', failureCheck: 'unclassified', cleanupComplete: true, targetReservations: 0 });
+  expect(fs.readFileSync(path.join(f.evidenceDirectory, 'compiler.stderr'), 'utf8')).toBe('synthetic compiler failure');
+});
+it('keeps log persistence failure separate and closes its owned descriptor in finally', async () => {
+  const f = fixture(); const descriptors = new Map<number, string>(); const closed: number[] = [];
+  const io = new Proxy(f.io, { get(target, name) {
+    if (name === 'openSync') return (...args: any[]) => { const fd = (fs.openSync as any)(...args); descriptors.set(fd, String(args[0])); return fd; };
+    if (name === 'fsyncSync') return (fd: number) => { if (descriptors.get(fd)?.endsWith('/compiler.stderr')) throw new Error('synthetic sync failure'); fs.fsyncSync(fd); };
+    if (name === 'closeSync') return (fd: number) => { if (descriptors.get(fd)?.endsWith('/compiler.stderr')) closed.push(fd); fs.closeSync(fd); };
+    return Reflect.get(target, name);
+  } });
+  const result = await runFdCanaryBatch(f.input, { ...f, io });
+  expect(result).toMatchObject({ failureStage: 'compiler-output-persistence', failureCheck: 'unclassified', cleanupComplete: true, targetReservations: 0 });
+  expect(result.compilerOutputFiles[0]).toMatchObject({ persisted: false, closed: true }); expect(closed).toHaveLength(1);
+});
+it('charges persisted compiler output before writing it and stops when the shared budget is exhausted', async () => {
+  const f = failedCompilerFixture(Buffer.alloc(5000, 65));
+  const sourceBytes = ['fd-canary.c', 'candidate.sb'].reduce((sum, name) => sum + fs.statSync(path.join(sourceDirectory, name)).size, 0);
+  const preparedEvidenceBytes = 2097152 - 131072 - 32768 - sourceBytes - 8000;
+  const result = await runFdCanaryBatch({ ...f.input, preparedEvidenceBytes }, f);
+  expect(result).toMatchObject({ failureStage: 'compiler-output-persistence', withinBudget: false, cleanupComplete: true, targetReservations: 0 });
+  expect(fs.existsSync(path.join(f.evidenceDirectory, 'compiler.stderr'))).toBe(false); expect(f.calls).toHaveLength(1);
+});
+it('never overwrites an existing compiler evidence file', async () => {
+  const f = fixture(); const file = path.join(f.evidenceDirectory, 'compiler.stderr'); fs.writeFileSync(file, 'previous own receipt');
+  const result = await runFdCanaryBatch(f.input, f);
+  expect(result).toMatchObject({ failureStage: 'compiler-output-persistence', cleanupComplete: true, targetReservations: 0 });
+  expect(fs.readFileSync(file, 'utf8')).toBe('previous own receipt');
+});
+it.each([
+  [' /fixed/clang -cc1 -o /owned/a.o', 'compiler-command-syntax'],
+  [' "/fixed/clang" "-cc1" -o "/owned/a.o', 'compiler-command-syntax'],
+  [' "/fixed/unknown" "-cc1" "-o" "/owned/a.o"', 'compiler-executable'],
+  [' "/fixed/clang" "-cc1" "-o" "/owned/missing.o"', 'compiler-output-missing'],
+])('classifies a fixed compiler rejection without exposing its raw assertion: %s', (line, code) => {
+  let error: any; try { compilerInventory(Buffer.from(line + '\n'), '/owned', [{ path: '/owned/a.o' }], toolchain.clang, toolchain.linker); } catch (caught) { error = caught; }
+  expect(error).toMatchObject({ code }); expect(error.message).toBe('Compiler inventory unavailable'); expect(error).not.toHaveProperty('actual');
+});
+
+it('preserves an unknown compiler-log close without retrying that descriptor or deleting roots', async () => {
+  const f = fixture(); const descriptors = new Map<number, string>(); let attempts = 0;
+  const io = new Proxy(f.io, { get(target, name) {
+    if (name === 'openSync') return (...args: any[]) => { const fd = (fs.openSync as any)(...args); descriptors.set(fd, String(args[0])); return fd; };
+    if (name === 'closeSync') return (fd: number) => {
+      fs.closeSync(fd);
+      if (descriptors.get(fd)?.endsWith('/compiler.stderr')) { attempts++; descriptors.delete(fd); throw new Error('synthetic unknown close ACK'); }
+    };
+    return Reflect.get(target, name);
+  } });
+  const result = await runFdCanaryBatch(f.input, { ...f, io });
+  expect(result).toMatchObject({ failureStage: 'compiler-output-persistence', cleanupComplete: false, descriptorsClosed: false, targetReservations: 0 });
+  expect(result.compilerOutputFiles[0]).toMatchObject({ persisted: true, closed: false }); expect(result.retainedRoots).toHaveLength(2); expect(attempts).toBe(1);
+});
+
+it('decodes documented quoted executables with bare and escaped arguments as data only', () => {
+  const artifacts = [{ path: '/owned/space name.o' }, { path: '/owned/final' }];
+  const text = String.raw` "/fixed/clang" -cc1 -DVALUE="ignored" -o "/owned/space name.o"`;
+  // Embedded partial quoting is not printArg output; the whole argument must be quoted if it needs escaping.
+  expect(() => compilerInventory(Buffer.from(text + '\n'), '/owned', artifacts, toolchain.clang, toolchain.linker)).toThrow();
+  const verbose = String.raw` "/fixed/clang" -cc1 "-DVALUE=\"literal\"" "-DDOLLAR=\$VALUE" "-DBACKSLASH=\\value" -o "/owned/space name.o"
+ "/fixed/ld" -o /owned/final` + '\n';
+  const commands = compilerInventory(Buffer.from(verbose), '/owned', artifacts, toolchain.clang, toolchain.linker);
+  expect(commands.map(x => x.output)).toEqual(['space name.o', 'final']); expect(commands.map(x => x.role)).toEqual(['frontend', 'linker']);
+});
+it.each([
+  ' "/fixed/clang" -cc1 "bad\\q" -o /owned/a.o',
+  ' "/fixed/clang" -cc1 -o /owned/a.o -o /owned/other.o',
+  ' "/fixed/clang" -cc1 -o /outside/a.o',
+  ' "/fixed/clang" -cc1 "' + 'a'.repeat(4097) + '" -o /owned/a.o',
+])('rejects unsupported or ambiguous compiler tokens without executing them: %s', line => {
+  expect(() => compilerInventory(Buffer.from(line + '\n'), '/owned', [{ path: '/owned/a.o' }], toolchain.clang, toolchain.linker)).toThrow();
 });

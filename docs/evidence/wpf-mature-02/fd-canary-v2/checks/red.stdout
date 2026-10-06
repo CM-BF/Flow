@@ -1,0 +1,39 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts (29 tests | 9 failed | 20 skipped) 142ms
+   ↓ runs the finite fake compile and three contrasting reports, then removes only its roots
+   ↓ refuses a consumed reservation without a compiler or target call
+   ↓ stops after a failed compiler and still closes and removes owned roots
+   ↓ retains roots when the owned process group is not confirmed gone
+   ↓ stops at the first missing report without silently consuming later targets
+   ↓ measures an oversized own compiler artifact and cleans it without reading its contents
+   ↓ retains a root registered before realpathSync preparation fails
+   ↓ retains a root registered before lstatSync preparation fails
+   ↓ retains a root registered before chmodSync preparation fails
+   ↓ reports the outer elapsed time after final fsync crosses the 60 second limit
+   ↓ rejects contradictory syscall data, report identity and incomplete record sequences
+   ↓ rejects compiler output claims absent from the owned inventory
+   ↓ waits for close and captures stderr arriving after exit without a real child
+   ↓ bounds TERM/KILL/forced close from the first stop and never claims an undrained group closed
+   ↓ stops a fake output stream at the capture bound without copying extra bytes
+   ↓ makes accounting unknown when final root enumeration cannot finish after all commands close
+   ↓ rejects caller identity outside the report schema even when the payload echoes it
+   ↓ refuses an unquoted or unknown compiler command instead of omitting it from known commands
+   ↓ requires all final CLI gates and counts its exact encoded bytes without claiming post-write elapsed
+   ↓ reserves prepared evidence and archive tail before any command can consume the runtime budget
+   × persists bounded compiler bytes before a syntax failure without putting raw bytes in the safe result 27ms
+   × persists compiler failure output before checking exit status and still cleans owned roots 18ms
+   × keeps log persistence failure separate and closes its owned descriptor in finally 36ms
+   × charges persisted compiler output before writing it and stops when the shared budget is exhausted 21ms
+   × never overwrites an existing compiler evidence file 36ms
+   × classifies a fixed compiler rejection without exposing its raw assertion:  /fixed/clang -cc1 -o /owned/a.o 2ms
+   × classifies a fixed compiler rejection without exposing its raw assertion:  "/fixed/clang" "-cc1" -o "/owned/a.o" 0ms
+   × classifies a fixed compiler rejection without exposing its raw assertion:  "/fixed/unknown" "-cc1" "-o" "/owned/a.o" 0ms
+   × classifies a fixed compiler rejection without exposing its raw assertion:  "/fixed/clang" "-cc1" "-o" "/owned/missing.o" 1ms
+
+ Test Files  1 failed (1)
+      Tests  9 failed | 20 skipped (29)
+   Start at  04:13:46
+   Duration  253ms (transform 34ms, setup 0ms, import 46ms, tests 142ms, environment 0ms)
+

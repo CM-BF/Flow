@@ -1,0 +1,217 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 9 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > persists bounded compiler bytes before a syntax failure without putting raw bytes in the safe result
+AssertionError: expected { …(21) } to match object { measurementComplete: false, …(4) }
+(28 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "cleanupComplete": true,
+-   "failureCheck": "compiler-command-syntax",
+-   "failureStage": "compiler-command-inventory",
+    "measurementComplete": false,
+    "targetReservations": 0,
+  }
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:207:18
+    205|   const raw = Buffer.from(' "/fixed/clang" "-cc1" -o "/owned/mixed-tok…
+    206|   const f = failedCompilerFixture(raw); const result = await runFdCana…
+    207|   expect(result).toMatchObject({ measurementComplete: false, failureSt…
+       |                  ^
+    208|   expect(fs.readFileSync(path.join(f.evidenceDirectory, 'compiler.stde…
+    209|   expect(fs.readFileSync(path.join(f.evidenceDirectory, 'compiler.stdo…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > persists compiler failure output before checking exit status and still cleans owned roots
+AssertionError: expected { …(21) } to match object { …(4) }
+(29 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "cleanupComplete": true,
+-   "failureCheck": "unclassified",
+-   "failureStage": "compiler-health",
+    "targetReservations": 0,
+  }
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:216:18
+    214| it('persists compiler failure output before checking exit status and s…
+    215|   const f = failedCompilerFixture(Buffer.from('synthetic compiler fail…
+    216|   expect(result).toMatchObject({ failureStage: 'compiler-health', fail…
+       |                  ^
+    217|   expect(fs.readFileSync(path.join(f.evidenceDirectory, 'compiler.stde…
+    218| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > keeps log persistence failure separate and closes its owned descriptor in finally
+AssertionError: expected { …(22) } to match object { …(4) }
+(32 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "cleanupComplete": true,
+-   "failureCheck": "unclassified",
+-   "failureStage": "compiler-output-persistence",
+-   "targetReservations": 0,
++   "targetReservations": 3,
+  }
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:228:18
+    226|   } });
+    227|   const result = await runFdCanaryBatch(f.input, { ...f, io });
+    228|   expect(result).toMatchObject({ failureStage: 'compiler-output-persis…
+       |                  ^
+    229|   expect(result.compilerOutputFiles[0]).toMatchObject({ persisted: fal…
+    230| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > charges persisted compiler output before writing it and stops when the shared budget is exhausted
+AssertionError: expected { …(21) } to match object { …(4) }
+(28 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "cleanupComplete": true,
+-   "failureStage": "compiler-output-persistence",
+    "targetReservations": 0,
+    "withinBudget": false,
+  }
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:236:18
+    234|   const preparedEvidenceBytes = 2097152 - 131072 - 32768 - sourceBytes…
+    235|   const result = await runFdCanaryBatch({ ...f.input, preparedEvidence…
+    236|   expect(result).toMatchObject({ failureStage: 'compiler-output-persis…
+       |                  ^
+    237|   expect(fs.existsSync(path.join(f.evidenceDirectory, 'compiler.stderr…
+    238| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/9]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > never overwrites an existing compiler evidence file
+AssertionError: expected { …(22) } to match object { …(3) }
+(32 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "cleanupComplete": true,
+-   "failureStage": "compiler-output-persistence",
+-   "targetReservations": 0,
++   "targetReservations": 3,
+  }
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:242:18
+    240|   const f = fixture(); const file = path.join(f.evidenceDirectory, 'co…
+    241|   const result = await runFdCanaryBatch(f.input, f);
+    242|   expect(result).toMatchObject({ failureStage: 'compiler-output-persis…
+       |                  ^
+    243|   expect(fs.readFileSync(file, 'utf8')).toBe('previous own receipt');
+    244| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/9]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > classifies a fixed compiler rejection without exposing its raw assertion:  /fixed/clang -cc1 -o /owned/a.o
+AssertionError: expected AssertionError: The expression evaluated … { …(6) } to match object { code: 'compiler-command-syntax' }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "compiler-command-syntax",
++ AssertionError {
++   "code": "ERR_ASSERTION",
+  }
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:252:17
+    250| ])('classifies a fixed compiler rejection without exposing its raw ass…
+    251|   let error: any; try { compilerInventory(Buffer.from(line + '\n'), '/…
+    252|   expect(error).toMatchObject({ code }); expect(error.message).toBe('C…
+       |                 ^
+    253| });
+    254| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/9]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > classifies a fixed compiler rejection without exposing its raw assertion:  "/fixed/clang" "-cc1" -o "/owned/a.o"
+AssertionError: expected AssertionError: Expected values to be str… { …(6) } to match object { code: 'compiler-command-syntax' }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "compiler-command-syntax",
++ AssertionError {
++   "code": "ERR_ASSERTION",
+  }
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:252:17
+    250| ])('classifies a fixed compiler rejection without exposing its raw ass…
+    251|   let error: any; try { compilerInventory(Buffer.from(line + '\n'), '/…
+    252|   expect(error).toMatchObject({ code }); expect(error.message).toBe('C…
+       |                 ^
+    253| });
+    254| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/9]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > classifies a fixed compiler rejection without exposing its raw assertion:  "/fixed/unknown" "-cc1" "-o" "/owned/a.o"
+AssertionError: expected AssertionError: The expression evaluated … { …(6) } to match object { code: 'compiler-executable' }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "compiler-executable",
++ AssertionError {
++   "code": "ERR_ASSERTION",
+  }
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:252:17
+    250| ])('classifies a fixed compiler rejection without exposing its raw ass…
+    251|   let error: any; try { compilerInventory(Buffer.from(line + '\n'), '/…
+    252|   expect(error).toMatchObject({ code }); expect(error.message).toBe('C…
+       |                 ^
+    253| });
+    254| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/9]⎯
+
+ FAIL  experiments/codex-app-server-conformance/fd-canary/host.test.ts > classifies a fixed compiler rejection without exposing its raw assertion:  "/fixed/clang" "-cc1" "-o" "/owned/missing.o"
+AssertionError: expected AssertionError: The expression evaluated … { …(6) } to match object { code: 'compiler-output-missing' }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "compiler-output-missing",
++ AssertionError {
++   "code": "ERR_ASSERTION",
+  }
+
+ ❯ experiments/codex-app-server-conformance/fd-canary/host.test.ts:252:17
+    250| ])('classifies a fixed compiler rejection without exposing its raw ass…
+    251|   let error: any; try { compilerInventory(Buffer.from(line + '\n'), '/…
+    252|   expect(error).toMatchObject({ code }); expect(error.message).toBe('C…
+       |                 ^
+    253| });
+    254| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/9]⎯
+

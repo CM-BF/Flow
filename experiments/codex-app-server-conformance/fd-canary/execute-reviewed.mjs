@@ -7,7 +7,7 @@ import { performance } from 'node:perf_hooks';
 import { runFdCanaryBatch } from './host.mjs';
 const sourceDirectory = path.dirname(fileURLToPath(import.meta.url));
 const repository = path.resolve(sourceDirectory, '../../..');
-const evidenceDirectory = path.join(repository, 'docs/evidence/wpf-mature-02/fd-canary');
+const evidenceDirectory = path.join(repository, 'docs/evidence/wpf-mature-02/fd-canary-v2');
 function fingerprint(file, expected) {
   const stat = fs.lstatSync(file);
   if (!stat.isFile() || stat.isSymbolicLink() || stat.size !== expected.bytes) throw new Error();
@@ -24,7 +24,7 @@ function fingerprint(file, expected) {
 }
 export async function executeReviewed(start = performance.now(), startedAt = new Date().toISOString()) {
   const input = JSON.parse(fs.readFileSync(path.join(evidenceDirectory, 'driver-input.json'), 'utf8'));
-  if (input.totalMs !== 60000 || input.maxTargets !== 3 || input.maxCompileCalls !== 1 || input.maxBytes !== 2097152) throw new Error();
+  if (input.candidateVersion !== 2 || input.totalMs !== 60000 || input.maxTargets !== 3 || input.maxCompileCalls !== 1 || input.maxBytes !== 2097152) throw new Error();
   if (fs.realpathSync(process.execPath) !== input.node.path) throw new Error();
   for (const item of input.files) {
     if (item.path.startsWith('/') || item.path.split('/').includes('..')) throw new Error();
@@ -56,7 +56,7 @@ export function prepareDelivery(result, elapsedMs) {
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   process.stdout.once('error', () => { process.exitCode = 1; });
-  if (process.argv.length !== 3 || process.argv[2] !== '--reviewed-fd-window') {
+  if (process.argv.length !== 3 || process.argv[2] !== '--reviewed-fd-window-v2') {
     process.stdout.write('{"state":"NOT_RUN","reason":"explicit-reviewed-window-argument-required"}\n'); process.exitCode = 2;
   } else try {
     const start = performance.now(); const startedAt = new Date().toISOString();
