@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:54 UTC / main8d84d529 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:43 UTC / main ec5da343 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 聊天配置兼容修复已进入看板，169个来源继续读取各自负责人的实际状态。 |
+| 当前产出 | 现用页面已恢复；保留网页兼容检查正在实施，本批登记172个独立来源，实际换载后另记回执。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -159,3 +159,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-06 18:19 UTC：O16首canonical59249/三literal f72ba7c9 v1已提交，唯一source登记至171候选；仅真实连续目标验收准备，0query/PG未运行，非自然语言全目标完成。仅registry/source parser核验，固定架构不变。
 
 2026-10-06 18:19:44 UTC：mainf8be来源已在唯一owned4320换载；单次snapshot171，O16 live/current/issues[]/人读完整，NOT_RUN保持。[实采](../../docs/evidence/d05/o16-live-receipt.json)。仅自身工程看板换载，个人端口/用户tab及固定架构不动。
+
+2026-10-06 18:43 UTC：新增 SVC05R01 唯一source，172来源候选。只核首canonical、六literal领取、三件套和解析；状态仍由原owner维护，原当前阻塞字段含解释导致unknown已交owner修正。见[登记回执](../../docs/evidence/d05/retained-web-registration.json)。不改架构图或个人服务，不跑产品测试。

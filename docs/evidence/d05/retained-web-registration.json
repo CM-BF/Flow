@@ -1,0 +1,50 @@
+{
+  "observedAt": "2026-10-06T18:42:09.778Z",
+  "task": {
+    "id": "SVC05R01",
+    "title": "保留网页与新后台兼容",
+    "role": "技术验证",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility",
+    "branch": "codex/personal-retained-web-compatibility",
+    "planDir": "plans/svc05-retained-web-compatibility",
+    "evidenceDir": "docs/evidence/svc05-retained-web-compatibility"
+  },
+  "uniqueCount": 172,
+  "firstCanonical": "406dec4d22878fced7a8d58f32f4fc0e743c6a08",
+  "observedHead": "406dec4d22878fced7a8d58f32f4fc0e743c6a08",
+  "claim": {
+    "id": "ccb8ac1a-7657-492e-98d3-fdbfd9b7a051",
+    "version": 1
+  },
+  "parserErrors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "正在准备两个保留页面对新后台的独立兼容检查，避免发布后旧页面失去读写或恢复能力。",
+    "next": "固定只读产物、真实后台及显式恢复的可审隔离脚本。",
+    "blocker": {
+      "state": "unknown",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [
+      "当前阻塞"
+    ],
+    "complete": false
+  },
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN；仅输入与领取核验"
+  },
+  "review": "NOT_STARTED；[review.md](review.md)",
+  "sourceOnly": true,
+  "productTests": 0
+}
