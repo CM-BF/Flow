@@ -55,8 +55,26 @@
       "kind": "sub-task"
     }
   ],
-  "mikaParentsAwaitingCanonical": [
-    "WPF-MATURE-02",
-    "WPF-MATURE-04"
-  ]
+  "mikaParentsAwaitingCanonical": [],
+  "mikaCanonical": {
+    "WPF-MATURE-02": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/status.md",
+    "WPF-MATURE-04": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md"
+  },
+  "deploymentObservation": {
+    "source": "ExecutionLead",
+    "observedAt": "2026-10-06T09:09:25Z",
+    "sources": 111,
+    "registered": [
+      "WPF-MATURE-01",
+      "WPF-MATURE-02",
+      "WPF-MATURE-03",
+      "WPF-MATURE-04",
+      "WPF-MATURE-05",
+      "WPF-MATURE-06",
+      "WPF-CONTEXTI01",
+      "WPF-STEER01",
+      "WPF-VISUAL01"
+    ],
+    "parentUI": "not implemented; D08 candidate"
+  }
 }

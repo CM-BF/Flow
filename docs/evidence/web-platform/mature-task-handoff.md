@@ -17,9 +17,9 @@ GO定义以下六个大task；WPF-001与FLOW/REQ只是来源/协调索引，不�
 | 大task | co-lead / priority | 唯一canonical / 当前依赖 |
 | --- | --- | --- |
 | WPF-MATURE-01 成熟聊天视觉与材质 | Web /root / P1 | [plan](../../../plans/wpf-mature-01-visual/plan.md)；[status](../../../plans/wpf-mature-01-visual/status.md) |
-| WPF-MATURE-02 真实Claude与Codex能力 | Mika / P1，Web消费UI | Mika唯一canonical路径待其提供；本队不创建其计划。真实provider可发现/选择/执行，model/thinking/fast/access由center能力和runner落实，requested/actual/unavailable分开；不硬编码映射或以低effort冒fast。Codex真实harness/auth，账号状态不泄凭据，复用Lead R05 host，Pi研究不挡目标。 |
+| WPF-MATURE-02 真实Claude与Codex能力 | Mika / P1，Web消费UI | [Mika唯一plan](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)；本队不复制。真实provider可发现/选择/执行，model/thinking/fast/access由center能力和runner落实，requested/actual/unavailable分开；不硬编码映射或以低effort冒fast。Codex真实harness/auth，账号状态不泄凭据，复用Lead R05 host，Pi研究不挡目标。 |
 | WPF-MATURE-03 附件与文件上下文真实发送 | Web /root / P1 | [plan](../../../plans/wpf-mature-03-attachments/plan.md)；CONTEXTI01直接归本任务 |
-| WPF-MATURE-04 context窗口与压缩可见 | Mika / P2，Web消费UI | Mika唯一canonical路径待其提供；本队不创建其计划。model窗口/已用剩余/材料占用/压缩摘要结果可见；provider报告/估算/unknown分开，usage不简单累加冒当前context；切model/附件更新、超限行为和压缩前后引用可追溯，不强制新压缩plugin。 |
+| WPF-MATURE-04 context窗口与压缩可见 | Mika / P2，Web消费UI | [Mika唯一plan](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/plan.md)；本队不复制。model窗口/已用剩余/材料占用/压缩摘要结果可见；provider报告/估算/unknown分开，usage不简单累加冒当前context；切model/附件更新、超限行为和压缩前后引用可追溯，不强制新压缩plugin。 |
 | WPF-MATURE-05 Arc式组合标签与独立pane | Web /root / P2 | [plan](../../../plans/wpf-mature-05-workspace/plan.md)；[status](../../../plans/wpf-mature-05-workspace/status.md) |
 | WPF-MATURE-06 完整可靠聊天与执行控制 | Web /root / P1 | [plan](../../../plans/wpf-mature-06-chat/plan.md)；[status](../../../plans/wpf-mature-06-chat/status.md) |
 
@@ -63,3 +63,7 @@ VISUAL01已独立web-visual-shell/codex/web-visual-shell，固定9d6bd45abdf5149
 STEER01独立APPROVED模块由owner正常push至5d02e8d31c62904155587b32fbc47d2baa341d06，impl b2cbbca5f823e122ec4e234e16fb7ef45a063af9，claim2bae v1保留修复权，产品停写待main。权威证据仍其docs/evidence/wpf-steering-control；本管理不重复检查/浏览器。仅模块，App/P01/跨reload恢复仍pending，MATURE06不勾整体完成。CONTEXTI仍由w01唯一owner独审接收过程中，普通进度以其status为准。
 
 ExecutionLead请求Web小片显式解析展示所属大task/co-lead；候选D08先由panels只读核既有ID/父dashboard权威ID/精确status.mjs与public/app.js及直接tests，fresh take后才写，registry仍Lead队唯一owner。本队不提前声称六大task已关联展示，也不为此造新大task。
+
+09:12 UTC实际只读main77c420 registry与两Mika status核到02/04唯一路径（上表），co-lead均mika；不复制其实现进展。Lead正式09:09:25采样111source/current/issues[]，六MATURE与CONTEXTI/STEER/VISUAL登记；此为Lead来源，本管理0重复API。D08父字段UI仍待实现/部署，计划请求未Done。CONTEXTI固定d0e05c26df6f331e0b1f15e7b738e4fe53208125/final009e67fd34b3bbef34a369d22acd67f08421620d已owner正常push/clean、root独审通过，20scope冻结等main；以其canonical为准，不重复产品检查。
+
+MATURE06语音研究（root已读官方dictation/MDN与installed core0.3.22）：当前adapters.dictation已有入口，现Thread Dictate/StopDictation可复用；实际send先cancel+cleanup，并非等待final转写。成功路径必须显式Stop→final可编辑→Send/Queue，adapter wrapper掌握离开/撤权cancel与pane/view/connection/draft代际。WebSpeechAdapter不提供processLocally且浏览器默认false/experimental，不宣称默认本地/离线；fixture只验lifecycle，0mic/付费。来源https://www.assistant-ui.com/docs/guides/dictation 与MDN SpeechRecognition stop/abort/processLocally；后继仍原VOICE TODO。
