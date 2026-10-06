@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 08:17 UTC / 6426b44cd32d10216141af13ecfa83b8879025fb |
+| 最近更新 / 最近main同步核验 | 2026-10-06 08:15 UTC / 6426b44cd32d10216141af13ecfa83b8879025fb |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | 阶段 | M2 |
@@ -37,4 +37,4 @@
 
 GO经root转述2026-10-06 07:59实际查看4320共90sources，确认本线状态/领取清晰；这里不伪称本owner已fetch或最终metadata被采样。本地parser随后验证固定target字段。原61081开发进程仅为本轮fixture源码对齐正常替换为65339；其它所有预览/用户tab服务不动。
 
-2026-10-06 08:17 UTC：root限定固定9da独审APPROVED，R1 CLOSED。全部13scope产品停写，claim a729v1保留回修权待主线正式接收；未自行merge/release。真实provider/个人服务仍未验证。
+2026-10-06 08:15 UTC：root限定固定9da独审APPROVED，R1 CLOSED。全部13scope产品停写，claim a729v1保留回修权待主线正式接收；未自行merge/release。真实provider/个人服务仍未验证。
