@@ -41,3 +41,5 @@ claim e8a8767c-4387-4c03-93a6-02153bb491c4 当前v2 active；[初始receipt](../
 批准后dashboard 2026-10-06T05:29:37.925Z实际live/current、review approved、3/4、implementation unchanged、issues[]；[批准回执](../../docs/evidence/svc02/dashboard-approved-receipt.json)。05:28:35Z全库只读0task/0未完attempt，仅1个受管注册runner；[脱敏事实](../../docs/evidence/svc02/live-readonly-facts.json)不作为锁或部署许可。
 
 2026-10-06 05:36:59 UTC 收到Lead main/origin fb906cb42391971a8b315dbd813f7633927d7265 clean接收事实；本地复核9aa祖先与全部5组实现范围零diff。实际常驻仍75a33，部署由Lead在Root确认窗口后执行，本owner不操作服务、不提交main。SVC02-04保留open。此次metadata仅核事实、链接与diff，未重跑产品检查。
+
+2026-10-06T05:37:32.832Z 实际dashboard聚合：本canonical live/current，fe3bac2 clean，checks passed/review approved，implementation unchanged，main historicalIntegrated=true/current=true/scopeEqual=true，3/4，issues=[]；claim v2范围已显示。此后仅追加本次观察记录，不追逐main后继metadata。
