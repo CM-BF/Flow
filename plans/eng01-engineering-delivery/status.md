@@ -2,19 +2,19 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:29 UTC / main3418fe682944145494463dca9e09f89c8b9c2295 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:38 UTC / main80ba95ad70cdf724251be4d88130b6bac56d3606 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery |
 | Branch | codex/engineering-delivery |
-| 工作基线 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295 / 首计划待提交 |
-| 工作树dirty状态 | 本计划与证据提交后clean |
+| 工作基线 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295 / 首计划5ad85748f213a80d4be0cb6753319914a7683142；后续metadata由Git记录 |
+| 工作树dirty状态 | 原计划已提交/push；本次仅main与看板回执 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | planning |
 | 检查状态 | NOT_RUN；本次只读源码与文档核对，无工程通路实现 |
-| 已集成main状态 / HEAD | 首计划待发布；工程执行产品尚未实现 |
+| 已集成main状态 / HEAD | 计划5ad85748已在main80ba95ad70cdf724251be4d88130b6bac56d3606发布；工程执行产品尚未实现 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/eng01-engineering-delivery, docs/evidence/eng01 |
 | 阶段 | M2 |
@@ -39,3 +39,5 @@
 | ENG001-08 | pending | co-lead / 独立review | 完整目标未完成 |
 
 唯一status进入dashboard；仅排队不占当前writer，不把排队称阻塞。现只读profile、个人服务与已封存模型预算均保持。
+
+2026-10-06 09:36:30 UTC：实际4320聚合117个来源，ENG-001唯一source current=true、issues=[]、人读字段完整。计划已可见不代表工程能力已实现；无工程测试或provider调用。见[main回执](../../docs/evidence/eng01/main-receipt.json)。
