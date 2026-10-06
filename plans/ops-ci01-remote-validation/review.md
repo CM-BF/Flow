@@ -2,7 +2,7 @@
 
 状态：NOT_STARTED
 
-Review target commit：b8957d7c4a291ac6bf5b347fba45ceebca75a17a
+Review target commit：cdd96bc759826f4e061da9cbb61b4f0881f2cbd9
 
 范围仅 docs/ci/README.md 与 docs/ci/check-workflow.yml；基线 37f75d3654fc500d37b1ddfda0871807d878715f。作者 native_center_owner；独立 reviewer Execution Lead。
 

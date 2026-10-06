@@ -6,7 +6,7 @@
 | 所属大task | [OPS-001](../../../plan-status-review/plans/ops-001-status-review/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-06 22:58:52 UTC |
+| 更新时间 | 2026-10-06 23:00:36 UTC |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
@@ -17,13 +17,13 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/ops-remote-validation |
 | Branch | codex/ops-remote-validation |
 | Base | 37f75d3654fc500d37b1ddfda0871807d878715f |
-| Head | b8957d7c4a291ac6bf5b347fba45ceebca75a17a；随后仅管理记录 |
+| Head | cdd96bc759826f4e061da9cbb61b4f0881f2cbd9；随后仅管理记录 |
 | 工作树 dirty 状态 | 候选源码已冻结；本次仅管理归档 |
 | 工作分支状态 | in-progress |
-| 实现目标 | b8957d7c4a291ac6bf5b347fba45ceebca75a17a |
+| 实现目标 | cdd96bc759826f4e061da9cbb61b4f0881f2cbd9 |
 | 实现范围 | docs/ci/README.md, docs/ci/check-workflow.yml |
 | Claim | 1de78d9e-08fe-4f86-8dae-a3e7c6311988 v1 active；4 literal |
-| 检查状态 | PASSED b8957d7c4a291ac6bf5b347fba45ceebca75a17a；仅 YAML/7 syntax/选择与375输入静态检查，所有产品与远程检查 NOT_RUN |
+| 检查状态 | PASSED cdd96bc759826f4e061da9cbb61b4f0881f2cbd9；YAML/7 syntax/选择与375输入静态检查复用原b895；仅README启用说明补充，所有产品与远程检查 NOT_RUN |
 | Review | NOT_STARTED |
 | 已集成 main 状态 | 未集成 |
 | 架构影响 | 无产品结构变更；新增停用的 CI 运行合同候选 |

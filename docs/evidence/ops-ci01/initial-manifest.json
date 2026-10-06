@@ -1,17 +1,17 @@
 {
   "kind": "OPS-CI01-documentation-candidate",
-  "target": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9",
+  "target": "b8957d7c4a291ac6bf5b347fba45ceebca75a17a",
   "base": "37f75d3654fc500d37b1ddfda0871807d878715f",
   "source": [
     {
       "path": "docs/ci/README.md",
-      "ref": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9",
-      "bytes": 7293,
-      "sha256": "334dccbf62a82e4f6bfcbcc06bc6ec055bffdce490a94d12c45248fac7e3cbf7"
+      "ref": "b8957d7c4a291ac6bf5b347fba45ceebca75a17a",
+      "bytes": 6195,
+      "sha256": "95310433eddcffb0ad49096962efef06e102739ffe903616e08ed041af2a52d1"
     },
     {
       "path": "docs/ci/check-workflow.yml",
-      "ref": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9",
+      "ref": "b8957d7c4a291ac6bf5b347fba45ceebca75a17a",
       "bytes": 7030,
       "sha256": "d4cab9cfd16ab461629a1b8de12ca88589de289beae9dfdd4161d27869bde46f"
     }
@@ -2367,10 +2367,5 @@
     }
   ],
   "validation": "Static only; remote/local product tests, installs and databases NOT_RUN.",
-  "scope": "two documentation files, no .github/workflows activation",
-  "readmeOnlyDelta": {
-    "base": "b8957d7c4a291ac6bf5b347fba45ceebca75a17a",
-    "target": "cdd96bc759826f4e061da9cbb61b4f0881f2cbd9",
-    "scope": "Exact user activation destination, permission refusal stop and observed selection/cleanup checklist. YAML and all prior static evidence unchanged; no test rerun."
-  }
+  "scope": "two documentation files, no .github/workflows activation"
 }
