@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:34:00 UTC / 2026-10-06 05:34:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:35:00 UTC / 2026-10-06 05:35:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
@@ -11,12 +11,12 @@
 | 工作树dirty状态 | 实现已提交；仅本次证据与status收尾 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED；当前11/11直接消费者+typecheck；review修复2/2模块+typecheck，旧FIFO超时及测试harness失败保留 |
-| 已集成main状态 / HEAD | main eb14991a170b72d7d974428b2e440e1faada2c1e 已含O05领域/薄client/生产208a；K01/SVC02领域及薄client已审，当前生产挂载待小delta审查，未main/未部署 |
-| Review | 当前知识CLI/015/016挂载复审中；Mika P2已修为非阻塞打开与单buffer；K01 b5和SVC02 caea均Mika独审APPROVED，见review.md |
+| 已集成main状态 / HEAD | main eb14991a170b72d7d974428b2e440e1faada2c1e 已含O05领域/薄client/生产208a；K01/SVC02领域及薄client已审，当前生产挂载已独审，待main；常驻未部署 |
+| Review | Mika独立APPROVED c03主体+59219修复，P2已关闭；K01 b5和SVC02 caea均Mika独审APPROVED，见review.md |
 | 实现目标 | 59219dbf693964555c075685cf961aa1f9509cf0 |
 | 实现范围 | apps/server/src/index.ts, apps/cli/src/index.ts, apps/cli/src/json-input.ts, apps/cli/src/knowledge.test.ts, apps/cli/src/json-input.test.ts, apps/cli/README.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 目标拆分提案已可保存和应用；正在接入知识原文引用与安全维护接口 |
 | 下一可用交付 | 保存和检索项目知识原文；安全更新真实预览 |
