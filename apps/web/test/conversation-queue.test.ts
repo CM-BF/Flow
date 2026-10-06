@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { FlowApiError } from "@flow/client";
+import { FlowApiError, FlowClient } from "@flow/client";
 import type { ConversationQueueItem, ConversationQueuePage } from "@flow/contracts";
 import { QueueCommands, type QueuePort } from "../src/conversations/queue/commands";
 import { ConversationQueueProjection } from "../src/conversations/queue/projection";
@@ -19,9 +19,85 @@ function port() {
   };
 }
 const disposables: { dispose(): void }[] = [];
-afterEach(() => { disposables.splice(0).forEach(value => value.dispose()); vi.useRealTimers(); });
+afterEach(() => { disposables.splice(0).forEach(value => value.dispose()); vi.useRealTimers(); vi.unstubAllGlobals(); });
 function setup() { const api = port(); const queue = new ConversationQueueProjection(api, 100000); disposables.push(queue); queue.configure("chat", true); return { api, queue }; }
+const citation = (n = 1) => ({ projectId: "project-a", sourceId: `10000000-0000-4000-8000-${String(n).padStart(12, "0")}`, version: 1, contentDigest: "a".repeat(64), locator: { kind: "utf8-bytes" as const, start: 0, end: 4 } });
+const contextFor = (refs = [citation()]) => ({ id: "ctx", contextDigest: "b".repeat(64), executionInputId: "input", executionInputDigest: "c".repeat(64), templateVersion: 1 as const, sources: refs.map(ref => ({ citation: structuredClone(ref), byteLength: 4, currentVersionAtFreeze: 1, isCurrentAtFreeze: true })) });
 describe("queue commands and current projection", () => {
+  it("serializes the frozen citations through the real client unchanged across unknown ACK replay", async () => {
+    const client = new FlowClient({ baseUrl: "http://fixture.invalid", token: "public-fixture" });
+    const calls: { url: string; body: string; key: string | null }[] = [];
+    const fetch = vi.fn<typeof globalThis.fetch>(async (url, init) => {
+      calls.push({ url: String(url), body: String(init?.body), key: new Headers(init?.headers).get("Idempotency-Key") });
+      const context = calls.length === 1 ? contextFor([citation(2)]) : contextFor();
+      return Response.json({ conversationId: "chat", queueRevision: 2, replayed: calls.length > 1, item: { ...item(2), context } }, { status: 202 });
+    });
+    vi.stubGlobal("fetch", fetch);
+    const commands = new QueueCommands(client, async () => {}); disposables.push(commands);
+    const input = { expectedQueueRevision: 1, text: "message 2", knowledge: [citation()] };
+    await commands.execute({ kind: "enqueue", conversationId: "chat", input });
+    const receipt = commands.getSnapshot()[0]!; expect(receipt.state).toBe("unknown");
+    input.knowledge[0]!.contentDigest = "f".repeat(64);
+    await commands.retry(receipt.key); expect(commands.getSnapshot()[0]?.state).toBe("accepted");
+    expect(calls).toHaveLength(2); expect(calls[1]).toEqual(calls[0]);
+    expect(calls[0]!.url).toBe("http://fixture.invalid/api/conversations/chat/queue");
+    expect(JSON.parse(calls[0]!.body)).toEqual({ expectedQueueRevision: 1, text: "message 2", knowledge: [citation()] });
+  });
+
+  it("deep-freezes queued knowledge and retries the same key after loss while the next draft changes", async () => {
+    const api = port(), commands = new QueueCommands(api, async () => {}); disposables.push(commands);
+    const slow = deferred<Awaited<ReturnType<QueuePort["enqueueConversationTurn"]>>>();
+    api.enqueueConversationTurn.mockReturnValueOnce(slow.promise);
+    const input = { expectedQueueRevision: 1, text: "original", knowledge: [citation()] };
+    const sending = commands.execute({ kind: "enqueue", conversationId: "chat", input });
+    input.text = "next draft"; input.knowledge[0]!.locator.end = 8; input.knowledge.splice(0);
+    slow.reject(Error("lost")); await sending;
+    const first = commands.getSnapshot()[0]!;
+    const sent = api.enqueueConversationTurn.mock.calls[0]![1];
+    expect(sent.knowledge).toEqual([citation()]); expect(Object.isFrozen(sent.knowledge)).toBe(true); expect(Object.isFrozen(sent.knowledge?.[0]?.locator)).toBe(true);
+    api.enqueueConversationTurn.mockResolvedValueOnce({ conversationId: "chat", queueRevision: 2, replayed: true, item: { ...item(2), preview: "original", context: contextFor() } });
+    await commands.retry(first.key); expect(commands.getSnapshot()[0]?.state).toBe("accepted");
+    expect(api.enqueueConversationTurn.mock.calls[1]![1]).toBe(sent); expect(api.enqueueConversationTurn.mock.calls[1]![2]).toBe(first.key);
+    expect(input.text).toBe("next draft"); expect(api.conversationQueueItem).not.toHaveBeenCalled();
+  });
+  it.each(["missing", "reversed", "tuple", "extra", "malformed"])("keeps %s knowledge acknowledgement unknown until an exact original-key replay", async kind => {
+    const api = port(), commands = new QueueCommands(api, async () => {}); disposables.push(commands);
+    const refs = [citation(1), citation(2)], context = contextFor(refs);
+    if (kind === "reversed") context.sources.reverse();
+    if (kind === "tuple") context.sources[0]!.citation.contentDigest = "f".repeat(64);
+    if (kind === "extra") context.sources.push(contextFor([citation(3)]).sources[0]!);
+    if (kind === "malformed") context.sources[0]!.byteLength = 3;
+    api.enqueueConversationTurn.mockResolvedValueOnce({ conversationId: "chat", queueRevision: 2, replayed: false, item: { ...item(2), ...(kind === "missing" ? {} : { context }) } });
+    await commands.execute({ kind: "enqueue", conversationId: "chat", input: { expectedQueueRevision: 1, text: "message 2", knowledge: refs } });
+    const first = commands.getSnapshot()[0]!; expect(first).toMatchObject({ state: "unknown", everUnknown: true });
+    commands.dismiss(first.key); expect(commands.getSnapshot()[0]).toBe(first);
+    api.enqueueConversationTurn.mockRejectedValueOnce(new FlowApiError(400, "conversation_context_budget", "budget"));
+    await commands.retry(first.key); expect(commands.getSnapshot()[0]?.state).toBe("unknown");
+    api.enqueueConversationTurn.mockResolvedValueOnce({ conversationId: "chat", queueRevision: 2, replayed: true, item: { ...item(2), context: contextFor(refs) } });
+    await commands.retry(first.key); expect(commands.getSnapshot()[0]?.state).toBe("accepted");
+    for (const call of api.enqueueConversationTurn.mock.calls) expect(call.slice(0,3)).toEqual(api.enqueueConversationTurn.mock.calls[0]!.slice(0,3));
+  });
+  it("rejects invalid reference input before HTTP and keeps definite budget rejection payload intact", async () => {
+    const api = port(), commands = new QueueCommands(api, async () => {}); disposables.push(commands);
+    await expect(commands.execute({ kind: "enqueue", conversationId: "chat", input: { expectedQueueRevision: 1, text: "message 2", knowledge: [citation(), citation()] } })).rejects.toThrow();
+    expect(api.enqueueConversationTurn).not.toHaveBeenCalled(); expect(commands.getSnapshot()).toEqual([]);
+    api.enqueueConversationTurn.mockRejectedValueOnce(new FlowApiError(400, "conversation_context_budget", "complete input too large"));
+    await commands.execute({ kind: "enqueue", conversationId: "chat", input: { expectedQueueRevision: 1, text: "message 2", knowledge: [citation()] } });
+    const receipt = commands.getSnapshot()[0]!; expect(receipt.state).toBe("rejected");
+    expect(receipt.command).toMatchObject({ input: { text: "message 2", knowledge: [citation()] } });
+    await commands.retry(receipt.key); expect(api.enqueueConversationTurn).toHaveBeenCalledTimes(1);
+  });
+  it("rejects unrequested nonempty context while plain and explicit-empty requests keep their wire shape", async () => {
+    for (const knowledge of [undefined, []]) {
+      const api = port(), commands = new QueueCommands(api, async () => {}); disposables.push(commands);
+      const input = { expectedQueueRevision: 1, text: "message 2", ...(knowledge ? { knowledge } : {}) };
+      api.enqueueConversationTurn.mockResolvedValueOnce({ conversationId: "chat", queueRevision: 2, replayed: false, item: { ...item(2), context: contextFor() } });
+      await commands.execute({ kind: "enqueue", conversationId: "chat", input });
+      expect(commands.getSnapshot()[0]?.state).toBe("unknown");
+      expect(api.enqueueConversationTurn.mock.calls[0]![1]).toEqual(input);
+    }
+  });
+
   it("preserves optional context metadata in waiting items and accepts metadata-bearing receipts without context reads", async () => {
     const context: NonNullable<ConversationQueueItem["context"]> = { id: "context-only", contextDigest: "a".repeat(64), executionInputId: "private-input-id", executionInputDigest: "b".repeat(64), templateVersion: 1, sources: [] };
     const { api, queue } = setup();

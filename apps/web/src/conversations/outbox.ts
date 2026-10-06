@@ -4,12 +4,15 @@ import {
   type ConversationCreation,
   type ConversationTurnAdmission,
 } from "@flow/contracts";
+import { freezeKnowledgeRequest } from "../conversation-context/receipts";
+import type { FrozenCitation } from "../conversation-context/selection";
 
 export interface OutgoingConversationTurn {
   conversationId: string | null;
   expectedRevision: number;
   text: string;
   creation?: ConversationCreation;
+  knowledge?: readonly FrozenCitation[];
 }
 export interface OutboxEntry {
   readonly id: string;
@@ -40,11 +43,14 @@ export class ConversationOutbox {
     if (this.closed) throw Error("This conversation connection is closed.");
     if (this.entry && this.entry.state !== "rejected")
       throw Error("The previous admission is unresolved. Check or retry its receipt first.");
-    const request = Object.freeze(conversationTurnSchema.parse({
-      expectedRevision: input.expectedRevision, text: input.text, mode: "follow-up",
-    }));
     const creation = input.creation ? conversationCreationSchema.parse(input.creation) : null;
     if (!input.conversationId && !creation) throw Error("New conversations require creation settings.");
+    if (!input.conversationId && input.knowledge?.length && !creation?.projectId)
+      throw Error("Knowledge requires a fixed conversation project.");
+    const request = freezeKnowledgeRequest(conversationTurnSchema.parse({
+      expectedRevision: input.expectedRevision, text: input.text, mode: "follow-up",
+      ...(input.knowledge !== undefined ? { knowledge: input.knowledge } : {}),
+    }), creation?.projectId);
     const id = this.nextId();
     this.publish({
       id, conversationId: input.conversationId,
