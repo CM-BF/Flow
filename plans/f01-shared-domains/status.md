@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:59:00 UTC / 2026-10-06 05:49:00 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 06:04:00 UTC / 2026-10-06 05:49:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
@@ -18,8 +18,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 已接入持久排队与受限目标拆分；真实聊天验收的浏览器预演已通过 |
-| 下一可用交付 | 验证运行中排队后能在同一会话收到真实回复，关闭重开仍可读 |
+| 当前产出 | 真实运行中排队与同会话回复已验证，关闭测试浏览器后后台继续、重开正文可见 |
+| 下一可用交付 | 接入版本化知识引用与原生目标拆分工具；两次聊天验收额度已封存 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -67,3 +67,6 @@
 2026-10-06 05:46 UTC：O06生产target bf03a7c241d8f1c1d9d0bfa1ee7f9be49e090c00，9/9真实PG/HTTP与noEmit通过；薄client79e06与该2文件挂载分别待独审，不提前声称原生query。
 
 05:49 UTC：O06两共享delta已独立批准，正在受控main集成；真实queue driver仅0模型准备，新预算未开启。
+
+| F01-14 | completed | Lead | O06 client/mount独审并main3d；边界见review/quality |
+| F01-15 | completed | Lead | [真实queue旅程](../../docs/evidence/f01/queue-live/README.md)，GO独立读事实/目视接受；2/2已封存 |

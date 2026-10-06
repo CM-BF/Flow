@@ -128,3 +128,5 @@ Mika审c03发现P2：open只读FIFO会在fstat前等待；多个短读的subarra
 clean-code复核了秘密不输出、读预检与有副作用执行分隔、浏览器/Vite生命周期、失败保存、已存在started文件拒绝重跑；发现attempt表无created_at，最终审计只读实际列，避免成功后证据SQL失败。没有重复产品全套测试/模型调用。
 
 2026-10-06 06:02 UTC：assignment_review只读outerguard发现Playwright fill失败call log可含password值；本轮真实调用尚未开始。修复为统一evidenceJson/错误输出脱敏ownerToken、runner token与DB URLs；合成fill TimeoutError/转义秘密回归1/1通过，不触真实凭据/模型。已保存证据扫描无秘密匹配。120s是query准入与结果观察门槛，每query实际SDK60s/$.20；driver截图/资源关闭可超过120s，不称OS硬终止或provider底层request≤2。
+
+2026-10-06 06:04 UTC：GO明确窗口后运行固定0695 caller一次，06:02:19～28完整通过；2query保守SDK和$.012396，后台继续用browser exit后即时GET running证明，严格visible第二assistant精确nonce。两实图已目视，原服务/DB保留，0未完attempt。GO已读事实/目视接受，无重跑/第三query；报告保留plugins/skills实际差异、usage累计unknown与显式Continue边界。
