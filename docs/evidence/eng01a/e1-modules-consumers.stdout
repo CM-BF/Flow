@@ -1,0 +1,33 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-workspace-pipeline
+
+ ✓ apps/runner/src/runner.test.ts (33 tests) 2816ms
+   ✓ starts from environment configuration and stops cleanly on SIGTERM  735ms
+ ✓ apps/server/src/reconciliation.test.ts (12 tests) 36377ms
+   ✓ shows durable uncertain ownership and retained evidence without interpreting lease expiry as a stop  2668ms
+   ✓ restricts reconciliation to the owner and reports unknown clocks before any heartbeat or event  1374ms
+   ✓ preserves v1 evidence during migration and leaves historical heartbeat/event clocks unknown  2666ms
+   ✓ records an immutable observation exactly once while preserving uncertain capacity and session occupancy  2564ms
+   ✓ resolves confirmed stopped work atomically, retains history and rejects every late original owner report  3651ms
+   ✓ rejects unconfirmed stop, unknown effects, stale ownership and runner-authored operator evidence  3224ms
+   ✓ refuses reconciliation of running work even when an operator supplies a stop assertion  1364ms
+   ✓ requires explicit retry after a resolution, creates one new task with provenance and preserves original history  3495ms
+   ✓ does not blindly repeat a successful external write whose completion acknowledgement was lost  3098ms
+   ✓ allows original work only after none-confirmed safety evidence and rejects oversized context without partial retries  3041ms
+   ✓ paginates immutable audit history and rejects storage mutation without losing earlier observations  4014ms
+   ✓ serializes conflicting resolutions and can release a revoked runner without trusting its credentials  3548ms
+ ✓ apps/runner/src/engineering/workspace.test.ts (18 tests) 4976ms
+   ✓ captures staged, unstaged, ignored untracked, deleted and executable modes in one immutable content set  692ms
+   ✓ requires real fixed checker cases and publishes a digest of the same content set  390ms
+   ✓ refuses engineering success for wrong-result  384ms
+   ✓ refuses engineering success for nonempty-log  383ms
+   ✓ refuses engineering success for missing-case  369ms
+   ✓ refuses engineering success for mutated-workspace  396ms
+   ✓ refuses engineering success for mutated-baseline  427ms
+ ✓ packages/contracts/src/contracts.test.ts (2 tests) 5ms
+
+ Test Files  4 passed (4)
+      Tests  65 passed (65)
+   Start at  03:29:05
+   Duration  46.02s (transform 624ms, setup 0ms, import 1.40s, tests 44.17s, environment 0ms)
+

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:22:15 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:27:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -10,11 +10,11 @@
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-workspace-pipeline |
 | Branch | codex/engineering-workspace-pipeline |
-| 工作基线 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066 / 初始Interface 5a1d58f；E0合同/中心实现待固定 |
-| 工作树dirty状态 | 本scope合同/中心实现与证据 |
+| 工作基线 / HEAD | f181d84b5fb3652d62e2a181acff442d42b3e066 / E0 909b45e232e1477426cb1d44e696a3187f80cdd8；E1 runner工程模块实施 |
+| 工作树dirty状态 | E0源冻结；E1自有engineering目录与metadata |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | 合同PG 10不同检查通过（首轮9，修测试构造后单选1/9未选）；root noEmit0；真实Git/checker未实现 |
+| 检查状态 | 合同PG 10不同检查通过（首轮9，修测试构造后单选1/9未选）；root noEmit0；真实Git/checker初轮16通过；正在补真实host/PG纵向及边界复核 |
 | 已集成main状态 / HEAD | ENG01A未集成；基线f181d84已有R05宿主/普通native/S01 |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -22,7 +22,7 @@
 | 下一可用交付 | 不调用模型即可真实修改合成代码，并公开读回检查结果与差异 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，E0 APPROVED / E1 NOT_STARTED |
 | Claim | 7830846a-55a7-4a3b-b889-7a1bb2a1e21b v2；10项literal，追加events.ts完成门禁 |
 | 架构影响 | 新workspace/checker/receipt小Module，center只验关联；runtime/outbox复用。架构固定数据待Lead于已审target登记 |
 

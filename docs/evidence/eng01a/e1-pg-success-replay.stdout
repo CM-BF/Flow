@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-workspace-pipeline
+
+ ✓ apps/runner/src/engineering/integration.test.ts (4 tests | 2 skipped) 4428ms
+   ✓ executes a real synthetic Git repair and fixed Node checker through existing host/outbox to public PG artifact readback  1559ms
+   ✓ replays a lost artifact acknowledgement without fabricating the verification or reexecuting engineering  1247ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed | 2 skipped (4)
+   Start at  03:28:20
+   Duration  6.40s (transform 961ms, setup 0ms, import 1.84s, tests 4.43s, environment 0ms)
+

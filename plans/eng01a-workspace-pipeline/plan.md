@@ -11,8 +11,8 @@
 
 - [x] **ENG01A-01** 固定来源、10项literal claim、Interface及独立WT。
 - [x] **ENG01A-02** 严格工程intent/receipt/checker合同及最窄中心关联/targetRunner过滤，旧flow.text不变。
-- [ ] **ENG01A-03** 工作区/内容快照/checker/fixture adapter模块，受信基线不可由fixture配置改写，资源有界。
-- [ ] **ENG01A-04** 随机真实PG+自有合成Git/命令纵向，公开artifact读回；失败/篡改/lease lost/丢ACK与重启未知覆盖。
+- [x] **ENG01A-03** 工作区/内容快照/checker/fixture adapter模块，受信基线不可由fixture配置改写，资源有界。
+- [x] **ENG01A-04** 随机真实PG+自有合成Git/命令纵向，公开artifact读回；失败/篡改/lease lost/丢ACK与重启未知覆盖。
 - [ ] **ENG01A-05** 固定manifest、局部验证、独审、受控main集成与资源收口。
 
-仅允许专用fixture工程intent，目标runner固定、本机project/checker registry受信；不让普通fixture/native误消费，不放宽native只读profile。生产Git仓库、个人服务、真实模型与工程UI不在本片。中心只验receipt与intent/artifact/attempt关联，不宣称自己重跑远端测试。共享contracts/index/export与必要薄client由F01唯一owner处理。
+仅允许专用fixture工程intent，目标runner固定、本机project/checker registry受信；通过target隔离其它fixture/native；误将普通fixture设为target仍会领取但无法通过工程验收（已验证限制，后继ENG001-04关闭能力登记缺口），不放宽native只读profile。生产Git仓库、个人服务、真实模型与工程UI不在本片。中心只验receipt与intent/artifact/attempt关联，不宣称自己重跑远端测试。共享contracts/index/export与必要薄client由F01唯一owner处理。
