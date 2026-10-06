@@ -25,7 +25,7 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-001-01 | completed | d01_owner | U00～U08及WPF-REQ-01～37已落[plan](plan.md) |
-| WPF-001-02 | completed | d01_owner | 5个子计划齐三件套；P01/M02转独立唯一owner，dashboard/性能/I01准备在管理树 |
+| WPF-001-02 | completed | d01_owner | 5个子计划齐三件套；P01/M02/I01转独立唯一owner，dashboard/性能准备在管理树 |
 | WPF-001-03 | in-progress | d01_owner | W01 cb4a392历史APPROVED；后发现SSE由M02 d47修复，M02 d47独立APPROVED已关闭；待正式交原Lead集成 |
 | WPF-001-04 | completed | d01_owner | 02:38:47.600Z新版22源，WPF001/M02/P01 human完整、missing/issues空；仅来源登记 |
 | WPF-001-05 | in-progress | d01_owner | P01模块3d812独立APPROVED，PH-R1/R2关闭；整包d810 PH-R3关闭；e534新增PH-R4布局丢失P2，整包REQUEST_CHANGES，原模块approval保留，完整X01仍开放；I01实际App挂载另计划 |
@@ -42,7 +42,7 @@
 - W01历史实现cb4a392已审；最新owner元数据d2631f03b4bdc9bc0d543f09c11c8961a1fdf557关闭SSE后发现并规范NONE，代码冻结。panels组件46a1dbd已审并已接入W01；其最终metadata16d518已交接。
 - WPF-M02：web-unified-workspace / codex/web-unified-workspace，base35f0bb9d包含W01、完整M02和main8c57；实现d47c602f3bab1fe97a9be70fd37780c2918bcfbc，02:49核验HEAD0a9e85f78ff2c7934d9517f64eb072507c2ff403 clean。38文件全在claim，root/shared零改动；待owner将checks/review标记改为dashboard可解析格式，；root已给d47整体APPROVED。预览http://127.0.0.1:49922为HTTP fixture。
 - WPF-P01：web-plugin-host / codex/web-plugin-host，模块3d8121006fea24b6b9f25457eb363a10110781ad获root scoped APPROVED，14模块测试通过；整包d81075c1220fc0305bf698d84823caa4877c2d89的React/builtins/sample/fixture另审。预览http://127.0.0.1:5190/src/plugins/fixture/index.html仅隔离fixture。
-- [WPF-I01](plugin-integration/plan.md)：独立主App集成准备，root已同意新feature/tree/branch。两固定审定输入和D04交接到位后复用M02 owner，不在M02旧树或P01树扩写App。
+- [WPF-I01](plugin-integration/plan.md)：独立主App集成已受领；首文档e9dc690 clean，D04v1 active，管理准备转stub。等待P01修复审定输入，未安装/合入/写App。
 
 ## 阻塞与未验证
 

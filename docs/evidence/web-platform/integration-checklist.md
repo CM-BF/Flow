@@ -150,3 +150,8 @@ docs/evidence/wpf-i01/
 已读取并原样保存[旧scope amend回执](m02-to-i01-amend-receipt.json)与[I01 take回执](i01-take-receipt.json)：requestId分别wpf-m02-stop-three-paths-20261006 / wpf-i01-plugin-integration-20261006。M02 claim dea92c6b-3450-404c-a32c-3fd007485ac6于02:58:05.940Z升v2移出3相交文件；I01 claim b6666c29-ebc5-47b2-b754-55b62687fd00 v1于02:58:06.016Z committed，active精确11scope，lead external_web_d01_owner/worker workspace_panels_owner。此处为原始receipt证据副本，当前version/state仍必须从PG核验，不作为第二可编辑claim账本。
 
 owner已正式收到followup派工：在新tree建立plans/wpf-i01-plugin-integration唯一三件套和docs/evidence/wpf-i01；P01 PH-R4依赖未审定时只做文档与只读接口准备，不安装/merge/写产品。source成立后管理准备stub化并交Lead registry登记。已读采用主仓AGENTS多Lead规则及D04 README；安全source配置不输出，续工核live version/state，未知不当闲置，review修复保留writer范围，任何额外scope须amend receipt。
+
+
+## WPF-I01唯一进度来源移交
+
+首文档e9dc6904cac949638a993b8f00d0d485a010a1f1，tree/branch已按上节受领且clean，仅8个plan/evidence文件；未安装/合未审P01/改产品。正式source请求已tool交GoalOwner：id WPF-I01、title Web插件主App挂载、worktree /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration、branch codex/web-plugin-integration、planDir plans/wpf-i01-plugin-integration、evidenceDir docs/evidence/wpf-i01。唯一status为新平级目录status.md；管理nested plugin-integration三文件已改stub，不登记第二source。D04claim与进度来源不同：前者已committed，后者等待Lead注册后单次实际聚合验证。

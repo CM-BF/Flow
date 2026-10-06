@@ -187,3 +187,8 @@ I01预留树已由拟owner仅git worktree add创建，管理者独立核branch c
 
 
 03:00:30聚合收口发现W01 NONE；解释同样不合D03严格字段语法，human blocker unknown/missing。交唯一W01 owner在plans-only claim v2改纯NONE、解释留正文，metadata d2631f03b4bdc9bc0d543f09c11c8961a1fdf557 clean。管理者03:01:16.398Z再读4320确认human完整、none、missing/issues空；只修事实源格式，不改解析器。当前26来源、activeclaim数均不代表活跃agent数。
+
+
+I01已由唯一owner在新tree落canonical三件套，首文档e9dc6904cac949638a993b8f00d0d485a010a1f1 clean；管理准备三件套转stub，source注册请求已tool给Lead。root新增验收强调同host任务切换保留局部UI，而host/center epoch变化卸载整个plugin view lifetime，相同task/ref ID不能继承旧center缓存，dispose后旧bound command拒绝；此为集成要求尚未实证缺陷，不另报P2。已交I01 owner补canonical plan/seams。
+
+P01 PH-R4新候选6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6，owner15模块/12browser/typecheck通过；root与原finding reviewer分别做CUA/diff和独立15模块/行为复审，整包结论尚未给，不提前放行I01。

@@ -1,14 +1,9 @@
-# WPF-I01 准备状态
+# WPF-I01 status 已移交
 
-更新2026-10-06 02:50 UTC；准备owner d01_owner / gpt-6-astra ultra。工作树web-platform-management，branch codex/web-platform-management；固定管理base d444608ab6c796c731e44e51a892868bf39bec2a。状态accepted/queued，预留初始化tree已存在且clean，I01已获committed claim b6666c29-ebc5-47b2-b754-55b62687fd00 v1，target UNKNOWN，NOT_RUN，未集成main。
+2026-10-06：workspace_panels_owner / gpt-6-astra ultra 已在独立 web-plugin-integration / codex/web-plugin-integration 建立唯一权威三件套。本文仅保留迁移入口，不再维护第二套进度；稳定TODO IDs WPF-I01-01～04已由新owner继承。
 
-| TODO ID | 状态 | Owner | 证据/下一步 |
-| --- | --- | --- | --- |
-| WPF-I01-01 | pending | d01_owner→拟workspace_panels_owner | M02d47已APPROVED；P01e534 PH-R4整包REQUEST_CHANGES，D04amend/take已committed；owner接建平级三件套后移交此准备源 |
-| WPF-I01-02 | pending | 待正式领取 | 接口沿P01 v1，不建第二协议 |
-| WPF-I01-03 | pending | 待正式领取 | 实现后局部/产品验证 |
-| WPF-I01-04 | pending | 待正式领取 | NOT_STARTED，目标UNKNOWN |
+- [唯一权威 status.md](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md)
+- 父需求与协调见[WPF-001](../plan.md)，精确scope和正式receipt见[集成清单](../../../docs/evidence/web-platform/integration-checklist.md)。
+- 初始化输入M02已审实现d47的最终metadata c526c1c889437ee39155d669921577995195c74e；首文档e9dc6904cac949638a993b8f00d0d485a010a1f1，仅文档未实施。D04claim b6666c29-ebc5-47b2-b754-55b62687fd00 v1已committed，当前version续工仍核PG；P01输入未审定不提前合入。
 
-[plan](plan.md) / [review](review.md)。当前准备不另注册dashboard来源；正式owner平级status成立后转交并将本目录stub化。原Lead负责main/lock/registry，管理者不写他人status。
-
-仅初始化实采：/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration，branch codex/web-plugin-integration，HEAD c526c1c889437ee39155d669921577995195c74e clean；无安装/文件修改/P01合入。管理者已回MainLead满足take实物核验，收到receipt和P01审定输入前不实施。
+旧准备正文见管理commit082c4cb2f275d97b483c6600c1c4dd811fee6d6d及cd99fc392989f5240ffe2b317413095efd45ce1e历史。实施、检查、review/main事实只读新owner status，本目录不是dashboard source。
