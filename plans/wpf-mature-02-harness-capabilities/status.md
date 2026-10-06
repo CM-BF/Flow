@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 14:24:20 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 14:26:01 UTC / 2026-10-06 12:15:20 UTC（main362af3 R06五源已核） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,21 +10,21 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 2ac2993652e21d77c62a25e46c012c0188abfb05（已审设计；新源码待固定） |
-| 工作树dirty状态 | 新runtime-metadata组合/观察/用例，以及cause/Node host/compose最小接缝；定向验证完成、固定包整理中；sealed raw/旧profile/R06未改。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 26148841fefba19b62acbb566bd9dc51562f0160（新源码；组合metadata另记） |
+| 工作树dirty状态 | 新runtime-metadata组合/观察/用例，以及cause/Node host/compose最小接缝；定向验证完成、固定包待独审；sealed raw/旧profile/R06未改。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 检查状态 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合尚待独审。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；薄consumer仍待集成确认；不代表个人服务部署 |
-| 实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合待固定独审；实际NOT_OPEN |
+| 实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合已固定待独审；实际NOT_OPEN |
 | 实现范围 | 新node-runtime-metadata实验/证据；后继仅复用cause双流/Node单canary固定recipe；R06已交回只读 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 两步对照已完成接线与定向验证，失败时会保留未知资源和不完整计量事实。 |
-| 下一可用交付 | 固定组合与精确预算清单交独审；实际运行尚未开放。 |
+| 下一可用交付 | 固定组合与精确预算清单已交待审；实际运行尚未开放。 |
 | 当前阻塞 | ACTIVE: Node/Codex启动隔离与真实权限资格仍未证明；新对照待固定独审及运行门禁。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：当前仅设计APPROVED，组合准备未审；旧cause12f502b1结果批准只在历史范围成立。 |
+| Review | [review.md](review.md)：26148841功能APPROVED，原P2关闭；最终组合绑定/预算待审；旧cause12f502b1结果批准只在历史范围成立。 |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | Node复用已交回R06唯一进程owner、旧owned canary与私有sink；新增仅实验接缝，未改变生产Interface/运行生命周期。ENG当前仅资格/撤销输入建议，无新公共合同。 |
 
