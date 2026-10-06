@@ -58,3 +58,12 @@ Flow项目写入只允许确认>=Sol的模型，优先本机可确认gpt-6-astra
 受管worktree共享Git refs及默认config；worktree lock只防移动/清理，不是并发写锁。交付内容集须覆盖新增未跟踪、已暂存/未暂存、删除、文件类型/模式；首片可明确拒绝binary/submodule，不可漏掉仍称完整。受信检查前后必须绑定同一内容集，禁外部diff与textconv，只读Git用GIT_OPTIONAL_LOCKS=0；不为这些约束造通用Git框架。来源：[Git worktree](https://git-scm.com/docs/git-worktree)、[Git diff](https://git-scm.com/docs/git-diff)，GO于2026-10-06提供的已核研究输入，实施owner仍核实际固定工具行为。
 
 当前片段映射：ENG01A已完成上述0模型真实工程通路并进入mainc5；ENG01B在独立worktree接专用profile/用途授权与持久启动。真实合格模型写改、业务接受和完整日用仍未完成，固定fixture成功不扩为该结论。
+
+
+## 当前宿主之后的原生工程执行（2026-10-06 11:15）
+
+ENG01B固定a750及已审shared client/mount现已main2e71，123不同局部证据只证明同UID固定calculator fixture的profile/purpose/pin/lease/持久setup/检查/产物关联。原ENG001-04/05/06立即进入下一执行方向，不等待完整Web或完整Codex能力；native_center_owner在现安全点只读准备独立native writer Interface与精确scope，生产实现仍需独立WT/原子claim。
+
+复用 engineering/adapter.ts 的 execute 接缝、现workspace/checker/receipt/runtime；下一片收敛显式工程profile/purpose与一个可替换native writer。写入必须可确定已停止后检查同一内容集；执行模型不能改验收基线或监督器。现tasks/profile fixture-only限制需有受控版本化扩展，旧readonly profile保持。权限许可不等OS隔离，先核现harness/可用sandbox能力和本场景边界，不借抽象造新循环或通用沙箱项目；Mika仍是Codex实际诊断唯一owner。
+
+真实下一用户结果是>=Sol来源在同一受管合成repo修复缺陷，host检查，固定diff/证据，再由独立actor沿goals/commands的固定产物版本接受/拒绝。机械收据passed不是业务接受；模型自报不构成检查。若首合格来源有阻碍，0模型合同/adapter与FLOW/O01/M02统一读口可并行，只有固定可审候选/新预算后才运行provider，旧额度不复用。

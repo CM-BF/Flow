@@ -100,3 +100,5 @@ main3773db5已推送clean；G01/P02/F01/WPF-M02分别获独立审查，必要组
 SVC04真实Web-only发布已完成，固定报告与脱敏操作事实见[发布回执](../../docs/evidence/svc04/personal-release.md)。这是新旧资产和后台保持的发布验收，不新增模型/用户页面操作。ENG01A E0/E1已审main；ENG01B工程配置与TUI01C共用流/活动模块正在安全交付点收口。
 
 之后优先推进原O01-05与M02/REQ-01、REQ-22的连续目标闭环，不新增重复大task：由Execution Lead协调中心命令/持久因果事实与CLI/headless/TUI公开旅程，Web并行消费。下一片先固定现有goal/proposal/execute/verification/decision之间的有界关联和统一交付读模型；原有入口/逐任务手动操作不算自动闭环。完整验收、接口责任与依赖见[计划的连续目标路径](plan.md#continuous-goal-delivery)，零模型协议旅程与实际native语义分开，不复用已封存预算。
+
+2026-10-06 11:15：连续目标统一读口新增GO只读研究输入，见plan同名小节；稳定材料分页与实时活动分离仍是待实现验收，不冒称已测token收益。工程ENG01B已审main2e71，TUI01C唯一P2已闭合、待组合接收；真实native工程仍沿ENG001-04/05/06继续，非fixture完成即大目标Done。无新模型/工程测试。

@@ -1,0 +1,40 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity
+
+ ❯ apps/tui/src/observation.test.ts (8 tests | 1 failed | 7 skipped) 48ms
+   ↓ HTTP observation grows twice using cursor patches, then only explicit settlement replaces the draft
+   ↓ activity headers stay lazy, redaction issues no body request, and bounded fragments remain visibly truncated
+   ↓ mismatched loaded activity identity is rejected and never cached
+   ↓ disconnect while a body is in flight rejects its late response; work and saved raw stream remain separate
+   ↓ old capability stays final-only without touching stream endpoints
+   ↓ missing patch history preserves verified text and reports a gap instead of completion
+   ↓ only four loaded bodies are cached and final details require the bound route/reference
+   × full final detail cannot override a verified nontruncated preview with different bytes 47ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/tui/src/observation.test.ts > full final detail cannot override a verified nontruncated preview with different bytes
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ apps/tui/src/observation.test.ts:66:49
+     64| test('full final detail cannot override a verified nontruncated previe…
+     65|   const {fixture,controller,open}=await setup();fixture.finish('Expect…
+     66|   expect((await controller.input('/reply')).ok).toBe(false);expect(con…
+       |                                                 ^
+     67| });
+     68| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 skipped (8)
+   Start at  03:57:00
+   Duration  658ms (transform 304ms, setup 0ms, import 483ms, tests 48ms, environment 0ms)
+

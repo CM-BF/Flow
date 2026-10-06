@@ -1,0 +1,57 @@
+{
+  "target": "0fff6790e040ce6d19b8070b61d77709cdaec9be",
+  "baseReviewTarget": "d26dde66d01cd667aab54fcb0e348654f1537fd5",
+  "sources": [
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 16772,
+      "sha256": "ecc97f9795a4ff05a9340c5d71836f59b86246d1f0daa63dfcf3282e3295267f"
+    },
+    {
+      "path": "packages/interaction/src/controller.test.ts",
+      "bytes": 15628,
+      "sha256": "dc68b8763b0187b09d9e1cc61a343522e503077bb4805fe96ba036ef6f7bba56"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/tui01c/focus-red.txt",
+      "bytes": 3489,
+      "sha256": "24c0336785b6517d3fe72a15a97c12fcf7136971d5cdcc35b1b34706a5be27ce"
+    },
+    {
+      "path": "docs/evidence/tui01c/focus-red.json",
+      "bytes": 283,
+      "sha256": "2faa1d7c0eb818bf530729afbf589bbc163b569002f88bec4d2ed8545f9b2822"
+    },
+    {
+      "path": "docs/evidence/tui01c/focus-green.txt",
+      "bytes": 347,
+      "sha256": "e22e92928ba33d2c6e7be05c391d1b5e69a0c93066369e528b159de783462d7a"
+    },
+    {
+      "path": "docs/evidence/tui01c/focus-green.json",
+      "bytes": 283,
+      "sha256": "0a5bb254928f92a9ab8253b5e7abb02a2bdfd62d1fc2e5babec88cdcd686be81"
+    },
+    {
+      "path": "docs/evidence/tui01c/focus-types.txt",
+      "bytes": 107,
+      "sha256": "abb35d871894375a7e9f816b06e65ab090f50f4c0c2b7561a2fa183243ed9755"
+    },
+    {
+      "path": "docs/evidence/tui01c/focus-types.json",
+      "bytes": 168,
+      "sha256": "28634546473cb119c9cc8c41400d3163745b6160f161559b6a12ec54f19b62fa"
+    }
+  ],
+  "scope": "one P2: reset previous conversation focus only after confirmed acknowledgement; normal and lost-create-ACK recovery",
+  "checks": {
+    "selected": 2,
+    "passed": 2,
+    "unselected": 13,
+    "typecheckExit": 0,
+    "providerQueries": 0,
+    "old122Rerun": false
+  }
+}

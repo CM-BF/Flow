@@ -1,0 +1,14 @@
+{
+  "startedAt": "2026-10-06T11:09:39.908089+00:00",
+  "endedAt": "2026-10-06T11:09:41.096764+00:00",
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "packages/interaction/src/controller.test.ts",
+    "-t",
+    "confirmed new conversation"
+  ],
+  "exitCode": 0
+}

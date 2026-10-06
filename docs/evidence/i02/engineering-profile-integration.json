@@ -376,5 +376,12 @@
     "processNote": "Integration shell continued after the failed metadata assertion and published reviewed source221809d3 before this evidence record. No typecheck success claimed. Corrective owner fix is pending."
   },
   "providerCalls": 0,
-  "personalRuntimeChanged": false
+  "personalRuntimeChanged": false,
+  "followUp": {
+    "observedAt": "2026-10-06T11:15:27.417983+00:00",
+    "fixTarget": "560cbd2b6a5dc43bc18458d1335ced73b0e9254d",
+    "independentReview": "release02-independent-review.json",
+    "combinedTypecheck": "tui-engineering-release-combined-types.json",
+    "result": "PASS; original failure and ownership facts preserved"
+  }
 }

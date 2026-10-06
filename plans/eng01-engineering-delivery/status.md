@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:51:29 UTC / mainc450c2da |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:15 UTC / main2e71fabc |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -14,13 +14,13 @@
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | ENG01A E0/E1独审通过并main；集成点新S01停止语义下3个直接PG旅程和root类型通过，本管理批不重测 |
-| 已集成main状态 / HEAD | ENG01A 040fdede227fe22504972ea7a053c23f14a30f52 已在c5bab40受控接收；当前mainc450c2da。ENG01B专用profile与持久setup正在独立实现 |
+| 已集成main状态 / HEAD | ENG01A 040fdede227fe22504972ea7a053c23f14a30f52 已在c5bab40受控接收；当前main2e71fabc已接ENG01B a750及3a12/1c081已审接线；既有RELEASE fixture tuple导致组合root types失败正在独立窄修 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/eng01-engineering-delivery, docs/evidence/eng01 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 合成工程任务已能在受管工作区实际修改代码、运行受信检查并保存固定差异；未知结果保持原事实。 |
-| 下一可用交付 | 明确选择并恢复专用工程执行配置，再准备合格原生模型的有界工程验收。 |
+| 下一可用交付 | 复用已交付工程宿主接入合格原生writer，准备实际写改与独立接受旅程。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -45,3 +45,5 @@
 2026-10-06 10:02:20 UTC：按GO优先级调整，SVC04继续当前交付；native_center_owner完成R05D最小可冻结配置点后顺序接工程子片，不等待其真实app-server诊断。当前只有plan/evidence写权；生产文件在独立子片worktree/fresh claim后实施。无新增provider许可，fixture只证明写改、监督检查、产物与恢复通路，真实合格模型验收保持open。
 
 2026-10-06 10:27:04 UTC：唯一生产子片为[ENG01A](../../../engineering-workspace-pipeline/plans/eng01a-workspace-pipeline/plan.md)。E0固定909b45e的8源码/17证据同源核验和源码独审通过，只涵盖受信工程收据、目标runner授权和完成门禁；10不同PG检查来自首轮9项通过与修复测试构造后的定向1项，非单轮10/10。E1真实Git/监督检查正在实施，不能把中心关联通过写成已执行工程检查或完整native交付。父计划不复制子片状态权威，不另跑测试。
+
+11:15 当前ENG01B领域与公共挂载已独审并main，fixture用途不扩为native。原ENG001-04/05/06进入后继准备，唯一worker先给native writer小接口/精确scope，Mika Codex诊断不重复；同FLOW统一读口按可用scope并行。无新provider授权，不等完整UI才做0模型准备。

@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-stream-activity
+
+ ✓ apps/tui/src/observation.test.ts (7 tests) 1946ms
+   ✓ HTTP observation grows twice using cursor patches, then only explicit settlement replaces the draft  1057ms
+   ✓ disconnect while a body is in flight rejects its late response; work and saved raw stream remain separate  326ms
+   ✓ missing patch history preserves verified text and reports a gap instead of completion  415ms
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  03:49:31
+   Duration  2.26s (transform 150ms, setup 0ms, import 236ms, tests 1.95s, environment 0ms)
+
