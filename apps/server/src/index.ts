@@ -1,3 +1,4 @@
+import { migrateConversations, registerConversationRoutes } from './conversations/index.js';
 import { migrateAssistantMessages, registerAssistantRoutes } from './assistant/index.js';
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
@@ -73,6 +74,7 @@ export async function createServer(options: ServerOptions) {
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
   registerGoalRoutes(app, pool, boss);
+  registerConversationRoutes(app, pool, boss);
   registerAssistantRoutes(app, pool);
   registerStreams(app, pool);
   app.post('/api/runners', async request => {
