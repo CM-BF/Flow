@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 17:00:45 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:08:25 UTC / 2026-10-06 16:07:03 UTC（只读032 assignment main e807 receipt；仅号/领取，不是DDL运行） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,8 +10,8 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 0d5bb67023524dcfce4cc247b858046420b0d3bc（本轮资源NOT_RUN路由基线；ca6a源码与prepared不变） |
-| 工作树dirty状态 | 本轮仅CORE新窗口资源NOT_RUN路由/父状态；已有诊断accounting保留固定快照，执行前再核增量；0产品/诊断源码、旧raw/input/prepared改动，提交后clean。 |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 78ace7263b9305b97f33b955a98967d2aedd5e49（本轮资源依赖/正式review路由基线；ca6a源码与prepared不变） |
+| 工作树dirty状态 | 本轮仅B01/P03资源依赖、Lead窗口报告及C01正式review路由/父状态；已有诊断accounting保留固定快照，执行前再核增量；0产品/诊断源码、旧raw/input/prepared改动，提交后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
@@ -21,9 +21,9 @@
 | 实现目标 / 范围 | Claude产品core首契约已main；当前接入现profile、中心事务、队列与已有adapter。child next-slice-handoff维护唯一精确合同/闭包；本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | Claude逐消息设置的契约与注入执行器检查已通过；公共客户端已领取独立源码范围并开始接线，数据库与界面验收尚未完成。 |
+| 当前产出 | Claude逐消息设置的契约与注入执行器检查已通过；公共客户端已通过正式独审，后续矛盾回执反馈仍待处理；数据库与界面验收尚未完成。 |
 | 下一可用交付 | 让合法owner并行接通目录、发送和排队快照，保护修改后的草稿，并在Web/TUI保留真实执行设置。 |
-| 当前阻塞 | ACTIVE: 中心缺件已恢复，但新的专库窗口因空间不足未启动并归还；等资源和新明确槽位。客户端矛盾回执反馈待正式reviewer处理，生产挂载与Web/TUI尚未完成。 |
+| 当前阻塞 | ACTIVE: 中心缺件已恢复，但新的专库窗口因空间不足未启动并归还；等资源和新明确槽位。客户端原片已正式批准，补充矛盾回执反馈待指定reviewer处理；生产挂载与Web/TUI尚未完成。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
 | Review | core首plain-contract leaf已APPROVED且main22d5接收；后继center/adapter未沿用该批准。OpenSSL ca6原SOURCE_REVIEW保留，现四fake通过；[准备包批准](../../docs/evidence/wpf-mature-02/node-owned-openssl/preparation-review.json)绑定c46f2e05，architecture_read16:45:31/Mika接收，0P1/P2仅packet；实际NOT_OPEN，本段0入口/目标/监听/检查执行。 |

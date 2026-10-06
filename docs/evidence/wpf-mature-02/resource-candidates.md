@@ -42,3 +42,14 @@ Mika转architecture_read的16:06:11 UTC核验：`plugin-management-plan` / `code
 ## 资源与方法限制
 
 Lead最新报告Data available896,360,448B，实际窗口关闭，只小源码/static；本owner未重采df或推算净回收。方法沿本地find-skills/固定clean-code，核单一owner、已交付/完整任务、当前稀疏/历史未知、出向依赖/反向消费者区别；只写本父证据，不改四个候选树。Lead执行前fresh核HEAD/dirty/claim、自己的Git操作历史、需保留闭包与确切外部消费者，再单独记录资源变化。
+
+
+## B01/P03历史输入的有界核验（2026-10-06 17:05）
+
+本条供Lead sole Git operator决定next4c保留集合；本组0稀疏/回收/运行，不声称全局无依赖。只读owner报告及已登记配置，不读取环境/进程或反扫所有任务。
+
+B01（architecture_read核）：task-read-projections，HEAD429a2dbd3be92093f10aec938b8edc470e15680d，正确branch/clean/非sparse，claim190bd45e v3 RELEASED12:05:53.726Z。现status/own manifest-config-fixture/main显式引用未发现当前跨task读取该树非B01历史evidence；原owner确认CORE、S01A/B与其安排延迟任务无此依赖，其他未登记owner引用unknown。**精确保留6历史fixture**：`docs/evidence/b03/baseline-reference.json`、`docs/evidence/d04/migration-inputs.json`、`docs/evidence/s01/smoke-first/result.json`、`docs/evidence/s01/smoke-repair/result.json`、`docs/evidence/s01/w1-protocol-gate/result.json`、`docs/evidence/s01/w1-four-processes/result.json`。B01唯一已见跨task引用指主树`docs/evidence/i02/attachment-task-read-source-comparison.json`，不依赖B01树该I02副本；不泛化为所有I02可删。
+
+P03（status_read核，ledger17:05:58.733Z；本owner后续只读核同HEAD clean）：protocol-payload，HEAD06cddb84f3f33c5e3f602e43a0ca4c7765a55ff1；权威`plans/p03-protocol-payload/status.md`，claimf61ea3f3-f3dd-4d4c-a322-f05a4fb84c77 v2 RELEASED04:13:37.137Z，无active/handoff。**KEEP完整`docs/evidence/w01/workspace-panels`**：vite.config root就是该目录；typecheck.mjs直接include preview.tsx；browser-checks.mjs读取FLOW_WORKSPACE_PREVIEW_URL并向同目录输出，连preview/html/CSS闭包一起保留。`packages/protocols/test/fixtures/mcp-2026.json`是source test明确readFile输入，保留。scripts/native-system-probe.ts及web-system-probe.ts中的docs/evidence/i01路径为输出，不据此认定输入依赖或全目录无用。
+
+P03自身tsconfig/dependency依赖本树source/root规则与main已装SDK；现CORE/S01已知配置未引用protocol-payload。loadProtocolEndpoints允许外部显式absolute manifest，未登记consumer保持unknown；若Lead有手工回放manifest，须保留其精确输入。这里不宣布无其他消费者，也不触未知/active素材。原较早候选快照与X01 ACTIVE KEEP不追改。

@@ -92,7 +92,7 @@ Web直接tests：`apps/web/test/execution-profiles.test.ts`、`conversation-outb
 
 ## 固定C01补充校验反馈，交assignment正式reviewer
 
-Mika/architecture_read只读固定source `563b1ea151d8d26a2100238d8faf26b697f38d71` 提出的补充P2；本parent复读同Git关键段，0测试/代码修改。作者packet HEAD `a23883fbc595564dcb66e0030b430674b896574e` clean（16:55读），[正式包](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/docs/evidence/mature02c01/README.md) / fixed-manifest SHA `23347f1107af75427b0dd1ca269e4bdc2e31b5744437df761057a4b036f2bca8`；作者86 distinct分轮/focused types0，本组不重复验证，也不签发本片APPROVED。assignment是唯一正式独审者，问题交原owner修复后由其收口。
+Mika/architecture_read只读固定source `563b1ea151d8d26a2100238d8faf26b697f38d71` 提出的补充P2；本parent复读同Git关键段，0测试/代码修改。作者packet HEAD `a23883fbc595564dcb66e0030b430674b896574e` clean（16:55读），[正式包](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-client/docs/evidence/mature02c01/README.md) / fixed-manifest SHA `23347f1107af75427b0dd1ca269e4bdc2e31b5744437df761057a4b036f2bca8`；作者86 distinct分轮/focused types0，本组不重复验证，也不签发本片APPROVED。assignment是唯一正式独审者；其16:55:18已APPROVED固定563b，当前metadata5739900142a0ec04f492ccea15ec54e5e6520841 clean（本parent17:05只读核status/review）。下面是后续补充P2，交指定reviewer判断并由原owner修复后收口，不能继续将原正式审查标为进行中。
 
 **P2：新设置回执可接受互相矛盾的旧requested/effective字段。** `packages/client/src/conversation-acknowledgement.ts:118–126`仅在effective.messageSettings wrapper出现时排除runnerRequested；所以turn已含新snapshot但finalwrapper尚无时，仍可接受旧disabled-only runnerRequested。有newwrapper时，又允许effective.thinking='disabled'。固定CORE ea276的replies.ts90–92将新messageSettings与旧runnerRequested互斥；assistant.ts11–12/28规定新effective thinking为unknown。decoder应在snapshot存在时拒绝runnerRequested，并在newwrapper存在时要求thinking='unknown'。这属于外部回执矛盾校验缺口，不声称当前CORE真实会发错值；不能反向要求queued/pending ACK提前有finalwrapper。
 
