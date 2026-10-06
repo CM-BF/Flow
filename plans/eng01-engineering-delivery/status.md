@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:40:26 UTC / main ref aeb764e5d2c2ec043ae8673cde2724f5330db2ab |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:59 UTC / main 280289008a5a3779e4e5e6453181b96062ed9514 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -13,14 +13,14 @@
 | 工作树dirty状态 | 本次仅父计划与实际子片状态对齐，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | G八源独审/85绑定与48直接输入相同；105不同原检查复用、集成root types0；本次父metadata不重测。 |
-| 已集成main状态 / HEAD | ENG01A至G均已受控main，G固定8f067/主线557397；真实authority、模型写入及业务接受仍未完成。 |
+| 检查状态 | ENG01H中心61不同原检查与F01薄HTTP2独审复用，集成28源逐字同/root types0；父metadata不重测 |
+| 已集成main状态 / HEAD | ENG01A至H及公共client已受控main280289008a5a3779e4e5e6453181b96062ed9514；真实authority/模型写入/独立接受未完成 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/eng01-engineering-delivery, docs/evidence/eng01 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 原生通信与工程快照检查已交付；正在接入独立工程用途、固定执行配置与结果关联。 |
-| 下一可用交付 | 中心可明确受理原生工程任务，并校验执行身份、固定内容集与检查收据；真实宿主写权限随后接通。 |
+| 当前产出 | 原生工程的独立用途、固定执行配置和检查收据关联已进入主线；终端可读取目标交付历史。 |
+| 下一可用交付 | 复用现宿主完成写入结束、完整内容检查和中心收据的编排，同时验证真实写权限与模型身份。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -32,7 +32,7 @@
 | ENG001-01 | completed | Execution Lead | plan / research / source-observation / claim receipt |
 | ENG001-02 | completed | native_center_owner | ENG01A工作区/检查合同已main；[ENG01B执行配置](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)补用途/pin/恢复门禁 |
 | ENG001-03 | completed | native_center_owner / 独立runner_owner review | ENG01A E0+E1固定040已mainc5；真实Git/checker/PG、unknown重启/丢ACK恢复；fixture非native |
-| ENG001-04 | in-progress | native_center_owner | [ENG01H](../../../engineering-native-contract/plans/eng01h-native-engineering-contract/status.md) 已领取15个精确范围、首合同d0e697af；旧v1及只读配置保持，真实资格与原生写入仍开放 |
+| ENG001-04 | in-progress | native_center_owner | ENG01H已审main280289；ENG01I受信宿主编排独立准备，具体authority资格由Mika唯一原生诊断提供，不重复probe |
 | ENG001-05 | pending | 独立operator/reviewer | 无新provider许可或执行 |
 | ENG001-06 | pending | Web/TUI owner | 交付读取与接受待公开合同 |
 | ENG001-07 | pending | adapter owner | 第二harness扩展未实现 |
@@ -59,3 +59,5 @@
 2026-10-06 12:29:32 UTC：G固定受控接收已完成，原105不同检查不重跑。当前只证明注入可信authority与synthetic JSONL peer组合，不证明实际>=Sol模型、OS写入边界或完整停止。SVC05由同槽完成后交独立审查，TUI01D已并行派工；工程后继不占终端执行槽。
 
 2026-10-06 12:40:26 UTC：ENG01H 以aeb764e5固定base独立实施；首合同分离声明配置、任务用途和原生检查收据，复用已有发布表、授权锁及S01读取隔离。profile存在不等可执行，缺真实host qualification仍fail closed；中心只关联声明、产物和当前attempt，不冒充OS停止证明。F01已正式交回runner合同，公开出口/薄client后续局部接线。没有新provider许可，TUI01D和个人SVC更新独立推进。
+
+2026-10-06 12:59 UTC：H13源码对916e/main280289一致；中心验证的是可信宿主声明与固定产物关联，不证明OS停止。下一I模块组合真实G通信与F检查，不新增默认authority，不把注入peer验证写成真实模型通过。
