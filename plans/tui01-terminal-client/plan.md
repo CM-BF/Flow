@@ -65,4 +65,4 @@ MATURE02/04提供能力与上下文来源，MATURE03提供文件生命周期，M
 
 当前唯一子片：TUI01B已交付共享ACK与冲突恢复；Web WPF-ACK01接其真实第二消费者，TUI001-09已按两消费者独审/main关闭；完整双客户端旅程仍归08。TUI01C承担TUI001-03，以共享浏览器安全协议/中立正文段落复用既有Web规则，不复制终端状态机或迁移Web host。
 
-11:34主线验收映射：TUI01C已main648e、焦点修复及类型组合通过；03仅流式/详情子片完成。后继06优先复用已发布queue/cancel/decision小typed handler与headless，不等待整个能力目录或Web视觉；实际实施仍由空闲worker独立take，当前无新增writer。
+11:32:04主线验收映射：TUI01C已main648e、焦点修复及类型组合通过；03仅流式/详情子片完成。后继06优先复用已发布queue/cancel/decision小typed handler与headless，不等待整个能力目录或Web视觉；实际实施仍由空闲worker独立take，当前无新增writer。
