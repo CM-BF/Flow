@@ -1,3 +1,4 @@
+import { registerUsageReadoutRoutes } from './usage-readout/index.js';
 import { createBrowserSessionAuthentication, migrateBrowserSessions, registerBrowserSessionRoutes, type BrowserSessionAuthentication, type BrowserSessionOptions } from './browser-session/index.js';
 import { migrateContextObservationHistory } from './context-transparency/migration.js';
 import { registerContextHistoryRoutes } from './context-transparency/routes.js';
@@ -139,6 +140,7 @@ export async function createServer(options: ServerOptions) {
   app.get('/api/health', async () => ({ ok: true }));
   registerWorkspaceRoutes(app, pool);
   registerTaskIndexRoutes(app, pool);
+  registerUsageReadoutRoutes(app, pool);
   registerReconciliation(app, pool, boss);
   registerProtocolDispatch(app, pool);
   registerProjectRoutes(app, pool);
