@@ -25,3 +25,7 @@ source25b未变；一次exit1，0App，缺@flow/client导致runtime导入失败�
 ## 2026-10-06 19:15 UTC 依赖批准与第二次运行待事实审查
 
 Lead对a3ad296d独立APPROVED_DEPENDENCY_VIEW_DELTA，94绑定、67固定backend输入、一次四入口export检查核实，[回执](../../docs/evidence/svc05-retained-web-compatibility/runtime-dependency-delta/independent-review.json)。第二次源仍25b、exit1/0完整App，Chrome已运行，采样ENOENT和页面独立失败按原样封存；两组/三端口/DB/tmp正常清理。此事实不扩成兼容批准；[second-run-manifest](../../docs/evidence/svc05-retained-web-compatibility/second-run-manifest.json)交Lead独立核。
+
+## 2026-10-06 19:20 UTC 窄修待审/纯检查未启动
+
+新target `b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16`，两源采样/异常保留与9个own-evidence小用例。此前25b与a3ad批准不自动扩到本delta。前置free不足时在reservation/测试进程前退出；selected0，不能声称9项通过。[manifest](../../docs/evidence/svc05-retained-web-compatibility/sampling-delta/manifest.json)，无新增PG/Chrome/provider。

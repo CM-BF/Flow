@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-06T19:20:41.674249+00:00",
+  "source": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16",
+  "priorSource": "25b70880619037ddd2ad84ba2790ad23267dc5f9",
+  "state": "SOURCE_READY_TEST_NOT_RUN_RESOURCE_GATE",
+  "entries": [
+    {
+      "path": "experiments/personal-current-release/fixture.mjs",
+      "bytes": 15439,
+      "sha256": "29a1129103eb05ba29a526b2baf86500abe6bf9d2b7f60aba596e0d0b47645fd",
+      "kind": "source",
+      "commit": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16"
+    },
+    {
+      "path": "experiments/personal-current-release/browser.mjs",
+      "bytes": 27090,
+      "sha256": "26428e653f3c41f4c3462a5be2366eddce533337c006d05aa2da07c773610098",
+      "kind": "source",
+      "commit": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16"
+    },
+    {
+      "path": "experiments/personal-current-release/inventory.mjs",
+      "bytes": 5165,
+      "sha256": "7cd7d4bf63b964becae3af7e0cc06be75d42f7ab8311cbd22614c2e822ea5e46",
+      "kind": "source",
+      "commit": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16"
+    },
+    {
+      "path": "experiments/personal-current-release/transport.mjs",
+      "bytes": 8743,
+      "sha256": "fb1d6cc892c6377b5b66bded4d1f1bd8ccd4968083a272312e3f489888a4d1aa",
+      "kind": "source",
+      "commit": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/checks.test.mjs",
+      "bytes": 6333,
+      "sha256": "f1351596984019b3dc9a0f9a276b3c97b993022e44c8459583919b6767f97725",
+      "kind": "new test source NOT_RUN",
+      "commit": "b41ae1a7dc478fcb2de4e15bcbb0a27273c61c16"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/preflight-failure.txt",
+      "bytes": 88,
+      "sha256": "ac45f41b84f5f7903b2f0e0a971871deafcd85cb989783a139c0f536cf8179a3",
+      "kind": "preparation evidence"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/not-run.json",
+      "bytes": 780,
+      "sha256": "4e89f0cb32f87fab5d1fc6f60d19102b275a6af7078edfbf958d3a00338daf91",
+      "kind": "preparation evidence"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/sampling-delta/README.md",
+      "bytes": 1444,
+      "sha256": "419c56b26226f62c83fa6772ad4db60e12a708e7d8a37c37bc1882f39cdb961e",
+      "kind": "preparation evidence"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/first-run-manifest.json",
+      "bytes": 6857,
+      "sha256": "c0a623b1e358a3ba6e0c33234580930bbc920567277fc57321ef389ee8ed531d",
+      "kind": "immutable prior evidence"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/second-run-manifest.json",
+      "bytes": 8738,
+      "sha256": "efb4ebbfd239e440adbe5c1342721d89e78131d0e2c593528091cb9d5862207c",
+      "kind": "immutable prior evidence"
+    },
+    {
+      "path": "docs/evidence/svc05-retained-web-compatibility/runtime-dependency-delta/manifest.json",
+      "bytes": 31904,
+      "sha256": "469542723f7962db03e07859498559292ca280eb7dd6cf61d09176bcd8bf43e9",
+      "kind": "immutable prior evidence"
+    }
+  ],
+  "selectedTests": 0,
+  "plannedTests": 9,
+  "sourceOnlyChecks": "Fixed blob/hash and diff whitespace; not types or runtime checks",
+  "review": "PENDING"
+}
