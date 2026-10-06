@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:47:54 UTC / main253035e11ab18ba33095c018949f856442021d49 clean，main.ts仍与base相同 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:48:49 UTC / main253035e11ab18ba33095c018949f856442021d49 clean，main.ts仍与base相同 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 小task |
 | 所属大task | [FLOW-001](../flow-001-architecture/plan.md) |
@@ -10,13 +10,13 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-concurrency-entry |
 | Branch | codex/runner-concurrency-entry |
-| 工作基线 / HEAD | 4391bbf9f1785212d098ef6aa1c01a0320a003d3 / 初始同base |
-| 工作树dirty状态 | 初始clean；take成功后仅本scope实施 |
+| 工作基线 / HEAD | 4391bbf9f1785212d098ef6aa1c01a0320a003d3 / 实现c77fbc4e12b0ffc0ee40f597bd99c82d9b37edc7，后继仅metadata |
+| 工作树dirty状态 | 核验实现c77fbc4e12b0ffc0ee40f597bd99c82d9b37edc7 clean；本轮仅绑定metadata，源码停写待审 |
 | 工作分支状态 | completed |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED当前4源码；2文件64/64、root严格局部noEmit0；[证据](../../docs/evidence/s01p02/README.md)，非真实并发 |
+| 检查状态 | PASSED c77fbc4e12b0ffc0ee40f597bd99c82d9b37edc7；2文件64/64、root严格局部noEmit0；[证据](../../docs/evidence/s01p02/README.md)，非真实并发 |
 | 已集成main状态 / HEAD | 未集成本片；未部署；真实并发未验 |
-| 实现目标 | PENDING_S01P02_TARGET |
+| 实现目标 | c77fbc4e12b0ffc0ee40f597bd99c82d9b37edc7 |
 | 实现范围 | apps/runner/src/main.ts, apps/runner/src/concurrency-configuration.ts, apps/runner/src/concurrency-configuration.test.ts, apps/runner/src/main-concurrency.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
@@ -32,7 +32,7 @@
 | --- | --- | --- | --- |
 | S01P02-01 | completed | architecture_read | 42项parser行为，默认/规范整数/1..16/A2A |
 | S01P02-02 | completed | architecture_read | 22项真实main入口mock，早拒绝/传参/profile/signals/脱敏 |
-| S01P02-03 | in-progress | architecture_read / mika | 64/64、strict noEmit0已过；待固定target独审/集成 |
+| S01P02-03 | in-progress | architecture_read / mika | 64/64、strict noEmit0已过；target已固定，待独审/集成 |
 
 status为唯一手填进度，canonical登记/聚合由mika协调，当前未采样dashboard。S01为前序关联；中心capacity与本地limit独立。04仍保留原WT/v3及冻结6源码，不在本片修改。0 provider/auth/实际runner负载/PG/个人服务操作；无安装。
 
