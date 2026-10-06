@@ -5,6 +5,8 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['S01', '实际执行容量验证', '技术验证', 'runner-capacity-probe', 's01-runner-capacity'],
+  ['WPF-RENDERERI01', '聊天可插拔详情接入', '工作线', 'web-data-renderer-integration', 'wpf-renderer-i01-integration'],
   ['CHAT06', '助手正文逐步显示', '工作线', 'native-assistant-stream', 'chat06-assistant-stream'],
   ['X05', '可恢复的包下载', '工作线', 'plugin-package-fetches', 'x05-package-fetch-operations'],
   ['WPF-QUEUE01', '聊天待发送消息', '工作线', 'web-conversation-queue', 'wpf-queue01-ui'],
@@ -52,7 +54,7 @@ const assignments = [
   ['CTX01', '上下文内核合成验证', '技术验证', 'context-kernel-probe', 'ctx01-context-kernel'],
   ['WPF-PROFILE01', '对话执行选项', '工作线', 'web-execution-profiles', 'wpf-profile01-execution-profiles'],
   ['O02', '原生目标工具桥接', '工作线', 'native-goal-tools', 'o02-native-goal-tools'],
-  ['D06', '架构固定快照更新', '工程协作', 'dashboard-architecture-current', 'd06-architecture-refresh'],
+  ['D06', '架构固定快照更新', '工程协作', 'dashboard-architecture-context', 'd06-architecture-refresh'],
   ['CHAT04', '持久消息队列', '工作线', 'conversation-queue', 'chat04-conversation-queue'],
   ['WPF-QUEUE00', '旧新队列能力兼容', '工作线', 'web-queue-compatibility', 'wpf-queue00-compatibility'],
   ['O03', '目标工具执行授权', '工作线', 'goal-tool-authorization', 'o03-goal-tool-authorization'],
@@ -92,7 +94,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };

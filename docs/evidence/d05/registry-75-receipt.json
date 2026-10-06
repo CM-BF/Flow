@@ -1,0 +1,108 @@
+{
+  "observedAt": "2026-10-06T06:27:06.326Z",
+  "main": "acfd409a493315a00f1cc19ac96c5f1b36c19e57",
+  "sourceCount": 75,
+  "assignmentsState": "available",
+  "unregistered": [
+    {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/s01",
+        "experiments/runner-capacity",
+        "plans/s01-runner-capacity"
+      ],
+      "state": "active",
+      "branch": "codex/runner-capacity-probe",
+      "origin": "new",
+      "taskId": "S01",
+      "worker": "mika",
+      "claimId": "8e4660a6-625f-4ada-8558-20c19b9e23e0",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+      "createdAt": "2026-10-06T06:22:33.774Z",
+      "updatedAt": "2026-10-06T06:22:33.774Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/test/data-renderer-integration.browser.ts",
+        "apps/web/test/data-renderer-integration.test.ts",
+        "docs/evidence/wpf-renderer-i01",
+        "plans/wpf-renderer-i01-integration"
+      ],
+      "state": "active",
+      "branch": "codex/web-data-renderer-integration",
+      "origin": "new",
+      "taskId": "WPF-RENDERERI01",
+      "worker": "w01_owner",
+      "claimId": "ff62150f-30ec-4ee5-9ea5-19e589125cfc",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-data-renderer-integration",
+      "createdAt": "2026-10-06T06:25:30.088Z",
+      "updatedAt": "2026-10-06T06:25:30.088Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "tasks": [
+    {
+      "id": "CHAT06",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:23:24.286Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-assistant-stream/plans/chat06-assistant-stream/status.md",
+        "syncedAt": "2026-10-06T06:27:06.326Z",
+        "stale": false,
+        "ageHours": 0.079535
+      },
+      "issues": []
+    },
+    {
+      "id": "X05",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:23:56.888Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-package-fetches/plans/x05-package-fetch-operations/status.md",
+        "syncedAt": "2026-10-06T06:27:06.326Z",
+        "stale": false,
+        "ageHours": 0.0684238888888889
+      },
+      "issues": []
+    },
+    {
+      "id": "CHAT05",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:22:19.940Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity/plans/chat05-native-activity/status.md",
+        "syncedAt": "2026-10-06T06:27:06.326Z",
+        "stale": false,
+        "ageHours": 0.11675722222222222
+      },
+      "issues": []
+    },
+    {
+      "id": "WPF-ACTIVITY01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T06:18:12.720Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md",
+        "syncedAt": "2026-10-06T06:27:06.326Z",
+        "stale": false,
+        "ageHours": 0.1517572222222222
+      },
+      "issues": []
+    }
+  ]
+}
