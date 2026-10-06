@@ -106,6 +106,13 @@
       "sparseOperation": "four-ended-engineering-trees",
       "evidence": "sparse-worktree-2026-10-06/engineering-four-summary.json",
       "decision": "Still insufficient for 1GiB + 32MiB PG window; SVC06 full gate unchanged. No additional candidate authorized by this batch."
+    },
+    {
+      "observedAt": "2026-10-06 15:26:50 UTC",
+      "availableBytes": 1127505920,
+      "action": "Seven qualified same-team ended worktrees dematerialized only committed same-main historical copies; eighth planning excluded.",
+      "evidence": "sparse-worktree-2026-10-06/next-eight-summary.json",
+      "decision": "Web RELEASE03 A-only first, >=1GiB+32MiB fresh gate and original monitor; O14/O15 PG wait cleanup. SVC06 full 2.5GiB remains blocked. No lowered reserve."
     }
   ]
 }

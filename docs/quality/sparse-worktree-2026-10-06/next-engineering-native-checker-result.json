@@ -1,0 +1,69 @@
+{
+  "startedAt": "2026-10-06T15:25:52.196485+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-checker",
+  "head": "ca71f8e96e5e1b2c9532b46fd1a6935d3d9965b6",
+  "ledgerObservedAt": "2026-10-06T15:25:49.446Z",
+  "openFiles": [],
+  "exit": 0,
+  "stderr": "",
+  "freeBeforeBytes": 1099341824,
+  "freeAfterBytes": 1111355392,
+  "logicalDematerializedBytes": 8672417,
+  "candidateCount": 1264,
+  "retainedCount": 4338,
+  "preflightSha256": "7e5aae26899ecc8309738abf4f1e59e68c75bce304fb06e7828496809cb0e8bf",
+  "finishedAt": "2026-10-06T15:25:53.111700+00:00",
+  "allRetainedHashesUnchanged": true,
+  "sameMainBlobForAllDematerialized": true,
+  "protectedWorktreesUnchanged": {
+    "/Users/citrine/Projects/AgentHarness/Flow": {
+      "head": "fb9fe5e745ee1617f889a7fea420d445a0b7c05c",
+      "status": "",
+      "index": "3c1ac034e43ef48841a0b50ba1c03e7eaff184bbbc7713f962d8acb1f223c420"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation": {
+      "head": "c41455ea68347db3743cb66e4ec406375d83ed43",
+      "status": "",
+      "index": "230e672a545da7b48b97f5f45eaf003d2697725383888494f24fb4558f5a6f66"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration": {
+      "head": "fb9fe5e745ee1617f889a7fea420d445a0b7c05c",
+      "status": "",
+      "index": "3f5ed2247150fc76acef3a3710b444c199d6e0f052af1eb18b34f73b2624a2be"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review": {
+      "head": "e58178e77e82f1896364ad2a2955073eb03a55ad",
+      "status": "",
+      "index": "25275a0788090228931f3bdf094b7173ba7dc5461ab53a3e4be6cc95dc4cf8c7"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture": {
+      "head": "974a41d8d67f90bae18beedf491821bf52c08e2e",
+      "status": "",
+      "index": "08dba686c4b53dd9fc3d417326d30914d06e78e80e6e83850ea0d46d07b1d7f8"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session": {
+      "head": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "status": "",
+      "index": "fa675e99acefdfc7a7abdbd505e4660200d00ce4bb7dea3f4cee7ebd771236d0"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-queue-controls": {
+      "head": "e5c47893b5973571ac02d55bd7b510952d59c06f",
+      "status": "",
+      "index": "b776f6de5668be9ed964a5bb47ba3e9df26e8c0ea4e28dba4754629dd016c2fd"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-goal-journey": {
+      "head": "8823b5bd44af1b25d651e42b7d16c2a21eaf30fe",
+      "status": "",
+      "index": "470fbaaba0fb385d6db5ef3fadc44d9d074a5120b36b5692c6d00baf27548faa"
+    }
+  },
+  "sharedConfigUnchanged": true,
+  "nodeModulesUntouched": true,
+  "clean": true,
+  "patternsSha256": "5ce1782d1ca6e826a6a81bac511faaabc7330029f47be6803b653e388ee4fd3f",
+  "rollback": "git sparse-checkout disable restores committed copies; no objects/branches/data/dependencies deleted",
+  "providerCalls": 0,
+  "productTests": 0,
+  "observedVolumeDeltaBytes": 12013568,
+  "physicalAttribution": "Shared volume before/after; not exclusive attribution."
+}
