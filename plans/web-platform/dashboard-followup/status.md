@@ -52,3 +52,5 @@ WPF-001父源和六个独立feature canonical源已实际注册；本nested协�
 05:23 GoalOwner明确下个ready调查为原架构页基线刷新：w01只读固定14c61主线及D05/D06来源，五scope候选限architecture-data.js、architecture.js、architecture.test.mjs及原D06plan/evidence，旧D06f619v2released；D05v3占index/registry等但不占候选五项。上部文字从同一baseline对象显示短SHA/真实verifiedAt/固定源码快照，避免双事实源；新owner/worktree/claim与registry重定向须主Lead明确后执行。尚未take/创建新树/实现，不借旧D06文档中的历史claimv1恢复写权。后继main已前进eb14991，候选研究保持14c61不倒灌O05，正式base由Lead另定。
 
 05:26正式迁移：GoalOwner/Lead固定eb14991，准新tree dashboard-architecture-current与branch codex/dashboard-architecture-current，w01为唯一owner；freshledger确认旧D06v2released、候选五项无冲突，新claim e5b2fb56-8e3a-40b7-bfa4-192f34187c0b v1已commit后开写。新首canonical由root一次桥Lead重定向原D06，不另建事实源；目前未假称4320新图已部署。
+
+05:31:45.221Z原D06 registry已实际指向dashboard-architecture-current，manager单次65源API确认live/current/e5b2matchesSource，人读完整。候选375未批准，proof因可执行browser脚本缺literal实现范围为unknown已交owner；source迁移完成不替代这轮实现review。旧三档归raw保持byte相等，索引链接正常；原f619释放记录不改。

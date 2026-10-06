@@ -282,3 +282,5 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 05:20 QUEUE01移交已执行：PROFILEI01全十scope release v2，旧CHAT officialThread明确停写后v4→v5 CAS，仅移出一文件，freshledger无其他相交；新b4ea85d0v1/13scope成功take后才派实现。独立canonical plans/wpf-queue01-ui由唯一owner建立，父目录不复制其TODO/check/review。
 
 05:25 计划质量修复：root只读发现REQ44及无历史标题的U11段仍描述早期“按pause ACK currentTurn取消/v2待冻结”，与已固定合同和当前防旧ACK竞态规则矛盾。已更新当前验收为fresh GET后用户单独取消、两receipt分开/sameRevision动态事实，并把旧e423/v2提议明确标历史被取代；用户原话未改，0产品变更/测试。
+
+05:33 U11/REQ42 context后继依赖预警（GoalOwner转Mika，非固定合同）：获批设计K02拟为conversation/queue增加optional immutable projectId及固定KnowledgeCitation context≤4/8KiB，目前未take/未freeze。等待正式exactSHA后才定reader/receipt兼容与用户选择UI，现QUEUE01/D06优先，不开放context按钮、不造私有ref。公共task/turn/queue/SSE初始数据不带引用正文，正文仅授权claim执行副本或按需detail。当前未实证回执失败，不能列现存bug。

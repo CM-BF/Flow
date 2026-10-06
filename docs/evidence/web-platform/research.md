@@ -427,3 +427,13 @@ PROFILEUX组合边界：root已审PROFILEI01测试使用region `Locked execution
 来源纠正归因：root曾用动态cwd读取index.ts，将新goal-graph-proposals误归固定14c/O04；w01以git show固定14c证实目录不存在且迁移仅至013，root独立核当前HEAD已eb14991 clean后撤回原claim。此错误不作为图源、不改已审旧D06，后继严格git show固定SHA。原D06唯一source迁移/newbase请求已由root一次桥Lead（拟dashboard-architecture-current/codex/dashboard-architecture-current），未确认前不take；这是证据质量/clean-code安全停点的真实发现与纠正。
 
 05:25 root发现父plan当前REQ44和U11段仍残留早期pause ACK直接选task/v2待冻结，属于实际文档质量finding。管理已修当前工程验收并明确历史时点，保留用户原话/当前14c公共合同与QUEUE01单源，不用末尾追加掩盖正文矛盾。当前fresh GET/单独取消/两receipt/sameRevision规则与owner方案一致；纯文档局部核验，不重复产品测试。
+
+## 未变会话轮询的引用稳定性：固定源码内存探针（root约05:30）
+
+root在已释放PROFILEI树只读运行内存20turn相同GET探针，预先核 `eb14991a170b72d7d974428b2e440e1faada2c1e` 与该树HEAD的 `conversations/projection.ts` / `messages.ts` 两文件diff0。结果无error：各turn对象same=true、turns数组same=false、snapshot same=false；一次未变refresh通知1次，conversationMessages新建40/40消息对象，detail请求0。这是公共内存路径观察，非浏览器timing/卡顿/内存泄漏或模型容量结论；0项目写、0模型，未触已释放scope。
+
+归RS08稳定引用/窄订阅后继候选：QUEUE01集成后独立测真实render，再决定是否保持未变message数组/对象；同revision仍可异步reply/status变化，禁止以revision缓存丢动态事实。当前QUEUE writer独占，不为此另take、不抢实施、不加状态框架；代码与行为证据由root观察，不冒称管理者复跑。
+
+## K02上下文后继预警（未冻结，不是现存finding）
+
+GoalOwner转Mika：已批准设计conversation/queue optional immutable projectId、KnowledgeCitation context≤4/8KiB，尚未take/contractfreeze。未来existing creationFields与assertCreationReceiptMatches显式投影可能遗漏新projectId，应在正式presence/identity语义和exact合同SHA到达后安排最小reader/receipt兼容；root尚未实证未来回执失败，不写成已发生bug。正文只给授权claim执行副本及按需detail，公共task/turn/queue/SSE首读不含正文。保持QUEUE01/D06当前scope，context选择UI另片，不私造K01/K02引用DTO或抢写当前字段。

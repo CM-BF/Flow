@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:26 UTC / 主线14c61已接聊天选项与紧凑摘要；root服务实际05:21:58.690Z已63源确认三片delivered |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:33 UTC / 实采05:31:45.221Z65源，两新source正确；固定架构候选修复待独审 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
@@ -13,8 +13,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 聊天执行选项和紧凑摘要已合入主线；看板减少重复检查 |
-| 下一可用交付 | 开放消息排队、暂停与继续操作 |
+| 当前产出 | 聊天执行选项和紧凑摘要已合入；排队界面与架构图正在更新 |
+| 下一可用交付 | 可操作的消息队列与标明版本的架构图 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c075bb5c00ac2f27d54dd264982be30261a9dc51 |
@@ -28,11 +28,11 @@
 | WPF-001-01 | completed | d01_owner | U00～U12与WPF-REQ-01～45落[plan](plan.md)，REQ44后继pause/continue变更保持来源 |
 | WPF-001-02 | completed | d01_owner | 七子计划三件套齐；六准备目录已转独立canonical stub；新增实现各自独立平级source |
 | WPF-001-03 | completed | d01_owner | W01 cb4通过；SSE由M02 d47修复/复验，实证main已含 |
-| WPF-001-04 | completed | d01_owner | 管理源和既有Web来源均实际聚合；X03I01已获Lead注册通知，作者下一固定交付时实采 |
+| WPF-001-04 | completed | d01_owner | 管理源和后继来源已实际聚合；05:31:45.221Z65源核QUEUE01新卡与D06唯一迁移/claim匹配 |
 | WPF-001-05 | in-progress | d01_owner | P01/I01可信host与X02 registry已审集成；X03I01消费只读管理模块，完整npm生命周期/第三方隔离仍开放 |
 | WPF-001-06 | completed | d01_owner | PERF01基线3d47和PERF02窗口a87限定批准、后者main已含；d36 v2 released，未来优化另凭证据领取 |
 | WPF-001-07 | completed | d01_owner | M02 d47已审集成，当前v3范围按正式转交保留 |
-| WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验；最新CHATv2/I01v3→X03I01v1有原始receipt |
+| WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验；最新CHATv5→QUEUE01v1与旧D06v2释放→新e5b2v1均有原始receipt |
 | WPF-001-09 | in-progress | d01_owner | CHAT7cb/083已审集成main；真实两query仅Lead执行、结果未收到；profile/queue/steer/voice完整需求仍开放 |
 | WPF-001-10 | completed | d01_owner | X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计 |
 | WPF-001-11 | completed | d01_owner | PROFILE独立模块4f198576获rootAPPROVED、finale730clean，管理范围/6md20links/4TODO通过；App接线仍另片 |
@@ -54,9 +54,9 @@
 | WPF-PROFILEI01 | 实现2e4c5fe7d795e397ab1b1e492605562a847c5fb0/rootAPPROVED，交付c1dc；最后07cffeba1a818f5697c23efc37a7e5c2b813c035 clean亲核main14c61/8paths相同，7f1daa29 v2于05:18:50.266Z released，全部10scope停写；51832保留 |
 | WPF-DPERF01 | 实现5cd7f00dbe091785b2b7be9cb2b03d33f2af8c52限定APPROVED，最后canonical08bd0a71494f54809f4c4a2fa5b9718285103ea3 clean核main6b4祖先/两path相同；全部四scope停写，bb7ef22f v2于05:14:24.445Z released。4新检查与关联旧registry-count失败分开；proof.mjs/registry/human未修改 |
 | WPF-PROFILEUX01 | w01_owner / web-execution-profile-summary / codex/web-execution-profile-summary，base698；55b244b22a147f3360b12281bac152666749364b获root05:14:39限定APPROVED，交付60d8，main记录ef8698344f90412891e35fed05c21743d97cb708 clean；main14c61祖先/四path相同，d113be51 v2于05:18:15.732Z released，全六scope停写；54239保留 |
-| WPF-QUEUE01 | workspace_panels_owner / web-conversation-queue / codex/web-conversation-queue，固定14c61b4062f8040ba6c7239860929366e5bd3fc1，新树clean预检；b4ea85d0-ad87-4903-9a59-73281ad17752 v1于05:19:31.947Z committed，13scope只含conversation queue+必要官方Input seam/专测/plan/evidence；首canonical c80d1769442b7b610397efe04f49da0bb1eeda6e，planDir plans/wpf-queue01-ui、evidenceDir docs/evidence/wpf-queue01已给root桥登记，不宣称已注册 |
+| WPF-QUEUE01 | workspace_panels_owner / web-conversation-queue / codex/web-conversation-queue，固定14c61b4062f8040ba6c7239860929366e5bd3fc1，新树clean预检；b4ea85d0-ad87-4903-9a59-73281ad17752 v1于05:19:31.947Z committed，13scope只含conversation queue+必要官方Input seam/专测/plan/evidence；首canonical c80d1769442b7b610397efe04f49da0bb1eeda6e，05:31:45.221Z实采卡片live/claim匹配/human完整/NOT_STARTED，实施中targetUNKNOWN |
 | 已交付CHAT | 7cb / 集成metadata083978b318ede4bb1cabb5050f8d211b17bb9055 clean；owner04:21实际dashboard main ancestor/scopeEqual，14实现paths相同。claim08259c1d v5已转App/react给X03与projection/直接test给QUEUE00，04:59再转Thread/outbox/outbox-test给PROFILEI01，05:19再转officialThread给QUEUE01，当前其余8scope保留。真实两query不冒称通过 |
-| D06（新轮受领） | 旧ef42277固定8f已审集成且f619v2released，旧tree只读；新w01_owner / dashboard-architecture-current / codex/dashboard-architecture-current / 固定eb14991a170b72d7d974428b2e440e1faada2c1e，e5b2fb56-8e3a-40b7-bfa4-192f34187c0b v1于05:26:04.403Z committed，五scope限原data/renderer/test/同D06plan-evidence；唯一source迁移获Lead确认，首canonical f254e13cb63a343218358a9ba3c5fbf2f72a7e26已核clean/current三件套后一次交root，服务重定向待确认 |
+| D06（新轮受领） | 旧ef42277固定8f已审集成且f619v2released，旧tree只读；新w01_owner / dashboard-architecture-current / codex/dashboard-architecture-current / 固定eb14991a170b72d7d974428b2e440e1faada2c1e，e5b2fb56-8e3a-40b7-bfa4-192f34187c0b v1于05:26:04.403Z committed，五scope限原data/renderer/test/同D06plan-evidence；唯一source迁移获Lead确认，首canonical f254e13cb63a343218358a9ba3c5fbf2f72a7e26已核clean/current三件套后一次交root，05:31:45.221Z实采唯一source迁移已生效；候选375待来源P3修复/独审，测试脚本literal范围需补 |
 | 已交付PERF02 | a87 / b61707d20ee9803e7397f21961549deb65ceef1d clean，main已含；claimd36 v2 released于04:12:26.441Z，后续修复新take |
 | 跨Lead | Mika负责CHAT04持久队列/暂停/继续，ExecutionLead负责公共API/集成/4320；域ae9与client83f7已在698成套独审集成。完整queue UI已从14c61新树正式受领13scope，PROFILEI01已release、旧CHAT官方Thread停写后CAS至v5，禁止跨树双写 |
 
@@ -155,3 +155,5 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 05:21:58.690Z root一次真实4320采样63tasks、main14c61 clean：PROFILEUX ef869、PROFILEI01 07cff、DPERF08bd均live/current/clean/issues空/reviewapproved/proofunchanged/maincurrent及scopeEqual真/deliverydelivered。[归属明确摘录](../../docs/evidence/web-platform/profile-delivery-root-observation.json)不是管理者伪造raw；未再抓API。QUEUE01仍一次桥Lead登记待结果。
 
 05:26 D06沿唯一源迁移已获GoalOwner/ExecutionLead明确确认，固定base选eb14991而不是研究14c。新tree/branch/HEAD/clean管理独立核，freshledger05:25:56.913Z旧f619v2released、五scope无active重叠；[新take](../../docs/evidence/web-platform/d06-current-take-receipt.json) e5b2v1成功后才followup w01实施。旧图/plan/evidence在旧树保留历史只读，registry重定向由Lead执行，不新注册第二D06。全部源码证据git show固定eb，O05可记已含，K01/O06/SVC02未含只planned；常驻75a运行另列。
+
+05:31:45.221Z管理在Lead明确SOURCE_MOVED后一次[真实65源采样](../../docs/evidence/web-platform/d06-queue-source-observation.json)确认D06迁移和QUEUE01登记均成功，source/claim匹配。D06新candidate375仍NOT_STARTED，脚本scope导致proofunknown的真实finding已交owner补，不能因issues空冒称证明通过；其root来源P3待新fix。QUEUE实现未固定仍UNKNOWN，不冒审批/主线就绪。

@@ -15,14 +15,14 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | WPF-PERF01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-performance | codex/web-performance | plans/wpf-perf01-web-performance | docs/evidence/wpf-perf01 |
 | WPF-PERF02 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-window | codex/web-activity-window | plans/wpf-perf02-activity-window | docs/evidence/wpf-perf02 |
 | WPF-CHAT01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations | codex/web-conversations | plans/wpf-chat01-conversations | docs/evidence/wpf-chat01 |
-| D06（迁移待服务切换） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current | codex/dashboard-architecture-current | plans/d06-architecture-refresh | docs/evidence/d06 |
+| D06 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current | codex/dashboard-architecture-current | plans/d06-architecture-refresh | docs/evidence/d06 |
 | WPF-X03I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration | codex/web-plugin-management-integration | plans/wpf-x03-plugin-integration | docs/evidence/wpf-x03 |
 | WPF-PROFILE01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles | codex/web-execution-profiles | plans/wpf-profile01-execution-profiles | docs/evidence/wpf-profile01 |
 | WPF-QUEUE00 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-queue-compatibility | codex/web-queue-compatibility | plans/wpf-queue00-compatibility | docs/evidence/wpf-queue00 |
 | WPF-PROFILEI01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration | codex/web-profile-integration | plans/wpf-profile-integration | docs/evidence/wpf-profile-integration |
 | WPF-DPERF01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-performance | codex/dashboard-proof-performance | plans/wpf-dashboard-proof-performance | docs/evidence/wpf-dperf01 |
 | WPF-PROFILEUX01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profile-summary | codex/web-execution-profile-summary | plans/wpf-profileux-execution-summary | docs/evidence/wpf-profileux |
-| WPF-QUEUE01（待登记） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue | codex/web-conversation-queue | plans/wpf-queue01-ui | docs/evidence/wpf-queue01 |
+| WPF-QUEUE01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-queue | codex/web-conversation-queue | plans/wpf-queue01-ui | docs/evidence/wpf-queue01 |
 
 WPF-D01仅协作，无第二dashboard实现；七源均已实际聚合，未知/未验证项仍来自各owner。新增两项证据见[实采与19claim范围审计](chat-perf-source-verification.json)。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
 
@@ -314,3 +314,9 @@ root05:21:58.690Z实际63源确认PROFILEI01/PROFILEUX/DPERF三个最终canonica
 D06迁移新receipt：[e5b2v1](d06-current-take-receipt.json)，committed05:26:04.403Z。管理独立核newtree/branch/eb14991/clean与freshledger旧f619v2released、五项无active冲突；Lead已明确原source迁移，待首canonical新owner记录后一次切原registry指向，不新增第二D06。旧dashboard-architecture-refresh保持历史只读，旧8f approval不覆盖新eb/data/renderer实现。无index/CSS/registry/服务写权，全部源码git show固定eb，不混后继movingmain。
 
 D06首canonical f254e13cb63a343218358a9ba3c5fbf2f72a7e26 clean已独立核：新owner w01、五scope新claim、implementation/UNKNOWN/NOT_STARTED及原8f审查隔离正确。当前新三件套本地链接正常；旧三份md原文移动到current/导致14处相对链接失效，已交owner同scope安全点修复（保留raw/provenance或说明重定位），不宣称全7md26links通过、不阻源码/登记。source完整字段已给root一次桥Lead迁移原D06卡，旧树保持只读历史。
+
+## 实采65源：D06唯一迁移与QUEUE01注册
+
+Lead SOURCE_MOVED通知后管理者只读一次，generatedAt=2026-10-06T05:31:45.221Z，main44713719f7e2f76d0f36dba979d779a96e1a80ca，共65tasks。[两任务原样摘录](d06-queue-source-observation.json)证实：D06新tree/branch、e5b2v1matchesSource、HEAD11617bec clean、human完整、reviewNOT_STARTED/target375；QUEUE01正确tree/branch、b4ea85v1matchesSource、HEADc80dirty、human完整、reviewNOT_STARTED/targetUNKNOWN。没有重复D06源，不将注册当实现通过。
+
+实际metadata/proof finding：D06实现范围只列三源码而新可执行`docs/evidence/d06/current/browser-check.mjs`属于测试，proof unknown/outsideChanges记录该文件（issues仍空）。已交唯一owner同原evidence claim内补literal实现范围，后续P3修复新target包含该test并交root审；不改后缀假扮metadata。当前375另有root指出nextbackend引用固定eb不含O06/SVC02的来源P3，owner窄修中，尚未产品批准。原D06历史档案已由.md改原样.txt及新index；管理逐byte核三文件原文一致、索引7本地links正常，最终全md等固定metadata。
