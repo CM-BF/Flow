@@ -70,6 +70,18 @@ describe('Claude summary response through the public context projection', () => 
     expect(result.windows.compactionPolicy.remaining.value).toBeNull();
     expect(result.categories).toEqual([]);
   });
+  it('still rejects invalid response readings when the host resolved model is unknown', () => {
+    const changes: Partial<SDKControlGetContextUsageResponse>[] = [
+      { model: '' }, { totalTokens: NaN }, { rawMaxTokens: 0 }, { categories: [row('used', -1)] },
+      { categories: [row('used', Number.MAX_SAFE_INTEGER), row('used', 1)] },
+      { categories: Array.from({ length: CONTEXT_LIMITS.categories + 1 }, () => row('used', 1)) },
+    ];
+    for (const change of changes) {
+      const value = input(); value.identity.resolvedModel = null;
+      Object.assign(value.response, change);
+      expect(() => mapClaudeContextSummary(value)).toThrow();
+    }
+  });
   it('rejects a mismatched model or harness without changing the host identity', () => {
     const value = input(); value.response.model = 'model-v2';
     expect(() => mapClaudeContextSummary(value)).toThrow('resolved model');

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/homebrew/bin/pnpm",
+    "exec",
+    "tsc",
+    "--project",
+    "/tmp/flow-04-normalize-tsconfig.json",
+    "--noEmit"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+  "exitCode": 0,
+  "finishedAt": "2026-10-06T11:19:55.687705+00:00",
+  "rootCompilerOptionsUnchanged": true,
+  "rootFiles": 6
+}

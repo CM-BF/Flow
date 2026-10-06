@@ -1,3 +1,11 @@
+# WPF-MATURE-04 当前纯归一化片审查
+
+状态：NOT_STARTED
+
+- Review target commit：待固定；起点9f9bb00e263b8517a036822f74ae65ce94b86200。
+- 范围：新增claude-summary-values.ts/.test.ts，保持行为提取claude-summary.ts/.test.ts。
+- 9ac/3ab等旧批准仅绑定各自固定Git，不转移到新mapper源码。历史domain的[固定集成输入](../../docs/evidence/wpf-mature-04/history-integration-ready.json)不变。
+
 # WPF-MATURE-04 独立审查记录
 
 状态：APPROVED（9ac历史Module与正式027；全局挂载/真实SDK/current不在本target范围）

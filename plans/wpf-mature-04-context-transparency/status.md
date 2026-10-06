@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:12:42 UTC / 最近main核2e71fabc clean；本次批准metadata |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:20:53 UTC / main648e331c clean；本轮纯归一化待固定 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -10,23 +10,23 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
-| 工作基线 / HEAD | 原始b1c2e398；受控合入8d8ab520 / 实现 9ac549dddd12b6bb186bf34116c4c72fe9889cfc；metadata随后提交 |
-| 工作树dirty状态 | 核661f8ba7 clean/v5 ACTIVE后仅录批准metadata；9ac的10源、绑定support/raw与manifest冻结 |
+| 工作基线 / HEAD | 原始b1c2e398；受控合入8d8ab520 / 本片起点9f9bb00e263b8517a036822f74ae65ce94b86200；未固定新源码 |
+| 工作树dirty状态 | fresh 9f9bb00e clean后v6追加成功；开始4源提取，历史9ac的10源/raw/support/manifest不改 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 检查状态 | PASSED 9ac549dddd12b6bb186bf34116c4c72fe9889cfc：50/50（41既有+9真实PG）、root严格noEmit0；真实专库已DROP；全局鉴权/挂载NOT_RUN，见[证据](../../docs/evidence/wpf-mature-04/history-pg-checks.json) |
-| 已集成main状态 / HEAD | 未集成：本次核main 2e71fabc218df28f6ccb78a927432ae1101c17c5 clean，879/3ab/9ac均非祖先；[固定集成输入](../../docs/evidence/wpf-mature-04/integration-readiness.json) |
-| 实现目标 | 9ac549dddd12b6bb186bf34116c4c72fe9889cfc |
-| 实现范围 | apps/server/src/context-transparency/migration.ts, apps/server/src/context-transparency/routes.test.ts, apps/server/src/context-transparency/routes.ts, apps/server/src/context-transparency/store.test.ts, apps/server/src/context-transparency/store.ts, packages/contracts/src/context-observation-event.test.ts, packages/contracts/src/context-observation-event.ts, packages/contracts/src/context-observation-history.test.ts, packages/contracts/src/context-observation-history.ts, packages/storage/migrations/027-context-observation-history.sql |
+| 本片段交付阶段 | review |
+| 检查状态 | 待固定target：本片58/58及strict0；首次strict失败保留。历史9ac证据保持原target |
+| 已集成main状态 / HEAD | 未集成：本次核main 648e331c58043cf7ee307300521ab1c628cb2ee1 clean，879/3ab/9ac均非祖先；[固定集成输入](../../docs/evidence/wpf-mature-04/integration-readiness.json) |
+| 实现目标 | 待固定：Claude summary纯归一化；历史9ac另见固定integration-ready |
+| 实现范围 | apps/runner/src/context-observations/claude-summary-values.ts, apps/runner/src/context-observations/claude-summary-values.test.ts, apps/runner/src/context-observations/claude-summary.ts, apps/runner/src/context-observations/claude-summary.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 历史样本保存与读回及正式迁移已获独审通过，等待中心接线集成 |
-| 下一可用交付 | Lead接入既有事件和鉴权读回后可展示历史估算；当前占用与剩余仍未知 |
+| 当前产出 | 提取单一数值校验与类别汇总，保持历史估算和未知结果的公开行为 |
+| 下一可用交付 | 纯归一化模块供后续采样复用；已审历史持久化片仍可独立集成 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED 9ac549dddd12b6bb186bf34116c4c72fe9889cfc：status_read / gpt-6-astra，2026-10-06 11:11:12 UTC，Mika接收，无P1/P2；仅历史Module+027，不含global/SDK/current |
-| Claim | [COMMITTED amend v5](../../docs/evidence/wpf-mature-04/history-ddl-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v5 ACTIVE；18 scopes；review修复期保留，旧6停写 |
-| 架构影响 | 新增中心历史record/read/local GET、唯一027表/归属复合FK与索引、migration(pool)入口；无新runner端点/FSM；全局挂载及固定架构视图由Lead于集成target更新 |
+| Review | NOT_STARTED 新归一化片待固定独审；9ac历史Module+027的APPROVED保持原target |
+| Claim | [COMMITTED amend v6](../../docs/evidence/wpf-mature-04/normalize-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v6 ACTIVE；20 scopes，新增仅2归一化文件 |
+| 架构影响 | 纯数值归一化为单一Module，mapper仅绑定host身份/证据；无IO/SDK运行依赖/状态或采集挂载。9ac正式历史模块的架构接线仍由Lead集成时更新 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -80,3 +80,5 @@
 2026-10-06 11:12:42 UTC：接收status_read固定9ac的APPROVED（11:11:12 UTC，无P1/P2），28bindings与旧6均核实，50不同+strict0/twoDB清理成立；未重跑。独审仅历史Module/DDL，[唯一已审集成输入](../../docs/evidence/wpf-mature-04/history-integration-ready.json)引用原manifest与新review收据，原绑定资料不改。保持v5修复期/source冻结；下一producer仅做有界接缝准备，不扩大范围。
 
 2026-10-06 11:14:40 UTC：下一producer仅完成[有界接缝准备](../../docs/evidence/wpf-mature-04/producer-seam-preparation.md)：fresh11:12:19核共享归一化/Claude caller候选写权，提出单一纯normalize与普通result一次summary接缝、fake Query验证及真实SDK生命周期unknown；未amend/改源码/测试。既有coalescer在result yield之后才next的本地事实已确认，不扩大为SDK内部消费cut。全局事件接线和包含两片的base待Lead，当前片仍integration。
+
+2026-10-06 11:20:53 UTC：纯归一化片4源实现，58不同=8helper+27mapper+23直接projection，strict0；旧26断言逐字保留，首次strict fixture缺apiUsage记录未删。9ac domain10源及固定集成输入不变；新mapper待独审，旧3ab批准不转移。保持v6修复期；无采集/SDK/provider/global接线。
