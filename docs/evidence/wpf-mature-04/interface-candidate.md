@@ -1,6 +1,6 @@
 # WPF-MATURE-04 最小公共 Interface 候选
 
-状态：proposal，未发布/未实现。对应[唯一计划](../../../plans/wpf-mature-04-context-transparency/plan.md)。本候选供 mika 协调，不占用所列未来源码路径。
+状态：首片schema/纯投影已实现于879c989a594a8f4f266b9a78a885e311c52eca0d，并获Mika独立APPROVED；生产SDK采集、持久化、公开挂载及Web仍属proposal/未实现。对应[唯一计划](../../../plans/wpf-mature-04-context-transparency/plan.md)。当前只领取并实施下述4文件，不占用后继共享路径。
 
 ## 统一语义
 
@@ -35,16 +35,16 @@ CompressionObservation候选包含稳定id、task/attempt/ownerVersion/session�
 
 draft预估需要针对已有草稿提交权限、已加载profile和citation selection的精确版本；最小metadata preview命令不包含已存知识全文，新增用户文本仍沿正常输入路径，不为测量引入第二次全文传输。首片纯投影可接受host提供的已计算尺寸/估算，真正前端请求接线待协调，不绕过locked conversation模型门禁。
 
-## 可独立实现的第一片与精确候选 scope
+## 已实施第一片与精确 scope
 
-在保留现有 plan/evidence claim 的前提下，建议下一片只追加以下四个新文件；须 mika 核对账本并原子amend成功后实施：
+在保留现有plan/evidence claim的前提下，mika已批准以下4个新文件，fresh ledger核对无冲突并原子amend v2成功后实施：
 
 - `packages/contracts/src/context-transparency.ts`：版本化schema/types，明确测量来源、coverage、输入身份、unknown及引用上限。
 - `packages/contracts/src/context-transparency.test.ts`：公开schema语义边界，避免让错误provider/unknown值组合进入消费者。
 - `apps/server/src/context-transparency/projection.ts`：纯函数把已验证profile/K02 metadata和可选同输入观测投影为ContextSnapshot；无pool、网络、文本读取、tokenizer或provider调用。
 - `apps/server/src/context-transparency/projection.test.ts`：通过该纯投影Interface验证用户可见语义，不测试私有函数。
 
-该片可由本owner独立完成，输入只使用固定existing contracts；不修改index exports、client、server/index、runner.ts/events/claude/R05、数据库迁移或Web。模块消费者可先使用显式相对路径，正式共享导出/生产接线另协调，绝不以未挂载模块宣称页面已支持。若Lead认为共享schema应归中央owner，则由其实现第一个文件，本owner只接收固定commit，不复制第二套合同。
+该片由本owner独立完成，输入只使用固定existing contracts；未修改index exports、client、server/index、runner.ts/events/claude/R05、数据库迁移或Web。当前模块消费者使用显式相对路径，正式共享导出/生产接线另协调，不以未挂载模块宣称页面已支持。后继若移交共享schema则沿claim协调，不复制第二套合同。
 
 第一片行为验收：
 
