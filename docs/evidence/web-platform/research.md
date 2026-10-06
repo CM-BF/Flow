@@ -100,3 +100,6 @@ root只读clean-code停点2026-10-06 02:29–02:32 UTC：范围W01产物HTML/切
 Dashboard最近独立观察2026-10-06T02:31:15.901Z：4320仍17源，W01 actual a22ae38 clean、errors/issues空、checks targetcb4 passed、旧review显示metadata导致outdated；WPF尚未出现。D03换新registry后再复验，不频繁轮询，不声称已聚合。
 
 原Goal Owner增量定向研究（合并RS08，不是用户原话）：使用本地find-skills选择React性能与codebase-design，只读W01 useSyncExternalStore/TaskThread转换。[React caveats](https://react.dev/reference/react/useSyncExternalStore#caveats)说明external mutation不能靠startTransition自动非阻塞，snapshot须稳定不可变。保留每task projection，统一feed避免每条tool更新重算全部messages/panels；先保持未变对象与可见区域窄订阅。后续固定1/16/128合成task，连续更新时真实输入/滚动，记录输入延迟/render数/long task/attention出现延迟；这是UI合成负载，不是128 agents容量证明，不猜测性引入状态库或机械memo。当前M02/P01继续。
+
+
+Host接口协调：M02已接受interface.md的ports/exports方向，P01进入实现。管理者发现局部ExtensionSlot context与global getContext可能不一致，要求hostUI绑定本次invocation上下文并验证args资源匹配，覆盖active A时B行action；ResourceContext实际判别kind/message/composer/reference身份。HostPort Promise<void>可throw，PluginHost返回OperationResult，两层约定分清。这两项属于同接口澄清，不另造协议，双方已收到；composer无安全接缝时明确unsupported不成功noop。完整接口/实现冻结记录由P01 owner维护。

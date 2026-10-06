@@ -2,13 +2,13 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 02:30 UTC / main交接2026-10-06 02:30 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 02:34 UTC / main交接2026-10-06 02:30 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `dfb497e239d9f2c155b93d63d3621eb370b1194a`（本次状态同步前HEAD；review仍绑定c075bb5） |
-| 工作树dirty状态 | dfb497e核验时clean；本次仅管理范围状态/派工同步待提交 |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `c107fddc8db5ba5c58d3f5b1778c401be22baa32`（本次核验HEAD；review仍绑定c075bb5） |
+| 工作树dirty状态 | 本次核验c107fdd；当前仅管理范围文档/来源/接口同步pending，下一提交不自指 |
 | 工作分支状态 | in-progress；持续执行管理按轮验收，不宣称完美 |
 | 阶段 | W01已审待主线集成；M02消费与Web host并行实施 |
 | 优先级 | 2 |
@@ -28,13 +28,13 @@
 | WPF-001-02 | completed | d01_owner | 四个子计划登记（plugin/M02已转独立owner唯一三件套；dashboard协作/性能留管理树），owner边界、接口及依赖已落盘；无编号冲突 |
 | WPF-001-03 | in-progress | d01_owner | panels最终组件46a1dbd获独立APPROVED并已接齐；W01实现cb4a392整体APPROVED，最终metadata a22ae38已报Lead，等待主线集成 |
 | WPF-001-04 | in-progress | d01_owner | [来源集成清单](../../docs/evidence/web-platform/integration-checklist.md)已发主线Goal Owner；等待D03登记与只读核验 |
-| WPF-001-05 | in-progress | d01_owner | WPF-P01为X01 Web子项，新树web-plugin-host基线0673653已核验，唯一status转至plans/wpf-p01-plugin-host；typed完整接口待冻结，无实现外部阻塞 |
+| WPF-001-05 | in-progress | d01_owner | WPF-P01为X01 Web子项，新树web-plugin-host基线0673653已核验，唯一status转至plans/wpf-p01-plugin-host；typed接口已由M02接受方向并进入实现；局部invocation context与判别类型正在最后对齐，无外部阻塞 |
 | WPF-001-06 | pending | d01_owner | WPF-PERF01排队；W01已报告新JS总1.08MB/gzip323KB，待读取正式证据并选实测瓶颈，不把体积当验收 |
 | WPF-001-07 | in-progress | d01_owner | [WPF-M02](unified-workspace/plan.md)已建立，M02 e888862只读核验clean，已复用panels owner正式派发web-unified-workspace独立树；W01 cb4a392+完整M02 e888862输入，新树merge c0c41f988已回报，唯一status已转交 |
 
 ## 当前管理工作与检查
 
-36条稳定要求、4个子计划与研究/接口/后端能力请求已落盘，首版c075bb5获独立文档APPROVED；后续管理提交dfb497e已交接，新增文档仅作者内容/链接/一致检查，不自动继承旧review。主线D03独占dashboard后续，我方只交需求和来源登记。
+36条稳定要求、4个子计划与研究/接口/后端能力请求已落盘，首版c075bb5获独立文档APPROVED；后续管理提交c107fdd已交接，新增文档仅作者内容/链接/一致检查，不自动继承旧review。主线D03独占dashboard后续，我方只交需求和来源登记。
 
 当前root持续只读研究与独立review，管理者持续协调，W01 owner完成正式review metadata后已复用为WPF-P01 owner；原panels owner已复用为WPF-M02 owner。当前本队4个agent，符合runtime4；项目总量按主线同步，不把旧8/10快照写成永久事实。没有因槽位闲置停掉ready工作。
 
@@ -54,8 +54,8 @@
 
 ## 下一步与handoff
 
-取得W01整体review结论及最终metadata回报Lead；核验WPF-M02新树/base/公共输入和唯一status转交，推进首个可看工作总览；D03登记管理源后只读确认。WPF-P01具体slot/command/lifecycle调查已落盘，等待下一ready实现轮；性能按已测基线选瓶颈。原Execution Lead负责main、根lock、总索引和4320，我方不merge main或控制其服务。
+W01已审最终metadata已报Lead；继续验证WPF-M02现有预览63182的浏览器/真实中心10task旅程，P01接口进入实际types/生命周期/两个builtin实现并准备主App接入。D03新registry后复验3个新增源；性能按已测基线排后续实验，不打断当前两feature。原Execution Lead负责main、根lock、总索引和4320，我方不merge main或控制其服务。
 
 ## Dashboard同步
 
-本文件为WPF-001唯一手填事实源。2026-10-06T02:17:22.204Z只读4320快照仍17任务、没有WPF来源，来源清单已回报，未宣称已聚合。待主线D03登记`plans/web-platform`后只读验证JSON/source/live Git，不手填生成JSON或第二进度源。子计划尚未独立聚合，不能说已显示。
+本文件为WPF-001唯一手填事实源。2026-10-06T02:31:15.901Z root只读4320仍17任务、无WPF来源，W01 a22ae38 clean/errors及issues空；checks targetcb4 passed，旧review因metadata显示outdated。当前3源清单已回报，未宣称已聚合。待主线D03登记`plans/web-platform`后只读验证JSON/source/live Git，不手填生成JSON或第二进度源。M02/P01已各转平级唯一owner源，待D03登记；旧nested为stub不聚合，不能说已显示。

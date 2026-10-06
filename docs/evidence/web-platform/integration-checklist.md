@@ -2,27 +2,21 @@
 
 2026-10-06 02:15 UTC；这是路径、接口及待集成项登记，进度事实以各唯一status为准。原Execution Lead单独负责集成main、根lock、总索引与4320；我方不修改这些文件/服务。
 
-## Dashboard来源增量
+## Dashboard当前待登记来源
 
-保留主线最新17来源；只追加以下父管理源（没有第二手填进度）：
+保留主线已有17来源，新增下面3个唯一平级源。每项事实仅来自其planDir/status.md，JSON与网页只派生；管理树nested plugin-system/unified-workspace均已转只读移交stub，不能登记为第二源。
 
-```json
-{
-  "id": "WPF-001",
-  "title": "Web 平台持续执行",
-  "role": "工程协作",
-  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
-  "branch": "codex/web-platform-management",
-  "planDir": "plans/web-platform",
-  "evidenceDir": "docs/evidence/web-platform"
-}
-```
+| Task | Worktree | Branch | planDir | evidenceDir |
+| --- | --- | --- | --- | --- |
+| WPF-001 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management | codex/web-platform-management | plans/web-platform | docs/evidence/web-platform |
+| WPF-M02 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-unified-workspace | codex/web-unified-workspace | plans/wpf-m02-web-workspace | docs/evidence/wpf-m02 |
+| WPF-P01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host | codex/web-plugin-host | plans/wpf-p01-plugin-host | docs/evidence/wpf-p01 |
 
-子项WPF-P01、WPF-D01、WPF-PERF01当前权威status分别在`plans/web-platform/{plugin-system,dashboard-followup,performance-cycle}/status.md`。当前registry只允许一级planDir，暂不声称可聚合nested路径；Lead可先登记父项并做受限下钻，若扩展路径必须补白名单、穿越/绝对/编码/realpath测试并维持唯一来源。源注册后只读核对原17源仍在、WPF-001 owner/TODO/source/live HEAD/dirty正确且无解析警告；子项未登记明确标记。
+留在管理树的WPF-D01协作/ WPF-PERF01排队文档暂无独立实施源，不能冒称已注册nested目录。2026-10-06T02:31:15.901Z root实际只读4320仍17来源，WPF尚未出现；D03新registry上线后再核对原源保留、3项owner/TODO/source/live HEAD/dirty正确。来源登记不是实现/测试/review或main集成通过。
 
-D03由主线单owner实现紧凑中性视觉及高层语义，包含当前阶段/当前工作/下一交付/真正决策、历史下钻、实现review与metadata区分、已集成main与旧SHA区分、过滤“无”。我方WPF-D01只协作登记需求与来源，不派重复实现、不切换4320。
+D03由主线单owner负责紧凑中性视觉及当前阶段/当前工作/下一交付/真正决策、历史下钻、实现review与metadata区分、main与旧SHA区分。WPF-D01只协作需求与来源，不另派实现、不切换4320。每个唯一owner已收到8字段规范，由各自更新，管理者不代写。
 
-## 当前实现边界与版本
+## 已交付W01输入边界与版本
 
 | Owner | Worktree / branch | 独占写入 | 依赖与交接 |
 | --- | --- | --- | --- |
@@ -71,3 +65,10 @@ WPF-M02早期草案曾在管理树`plans/web-platform/unified-workspace/status.m
 已只读核验独立tree与三件套，管理nested草案已转移交stub。登记条目：id `WPF-P01`、title `可信Web插件host`、role `工作线`、worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host`、branch `codex/web-plugin-host`、planDir `plans/wpf-p01-plugin-host`、evidenceDir `docs/evidence/wpf-p01`。初始化108f完整main+已审W01 a22ae38，merge0673653ac6b2da8259bc8ca40d9ae723da2ce875；具体新实现目标尚UNKNOWN。只读核验人读字段已在新status，完整typed接口尚未落齐，不宣称冻结。主App挂载归M02 owner，hostowner不改App或旧Thread/workspace目录。
 
 D03请仅聚合父WPF-001及两个新的平级owner源；旧nestedM02/plugin入口不登记。管理者不代写各ownerstatus，字段已分别通知唯一owner补全。
+
+
+## X01父范围保持开放
+
+主线FLOW-001 full-plan-matrix REQ-11/12/13仍将npm插件install/enable/disable/upgrade/remove、版本配置/能力作用域、trusted/isolated第三方执行、tool/renderer/verifier、CLI等价与未知UI fallback列为X01全栈范围；当前未完成，主线队列在D03/G01之后。WPF-P01只关闭可信Web host子验收，不能关闭用户完整plugin系统/所有组件可插拔需求。
+
+接收协调owner为原Execution Lead；下一全栈实施owner由其在D03/G01后有ready槽位、Web host接口/证据可消费且公共权限/隔离输入明确时正式登记。我方已发送ready子项与BR-01接口需求，不擅自占其owner或添加新agent。主线登记后把具体计划/owner/输入SHA补入交接；当前标未指定，不能说全系统已开工或完成。
