@@ -78,3 +78,12 @@
 status 的“当前产出/下一可用交付/当前阻塞/需用户决定”描述用户已获得或即将获得的能力、实际影响和需要采取的动作。SHA、命令、测试数、内部schema/claim及路径留在已有技术字段与证据，不将技术交接原文贴成首屏摘要。已交付片段与尚未领取的后继分别记录；无当前待交付写“本片段已交付”，不为让首页消失而勾选未完成TODO。真正待审/待集成仍如实可见，由唯一owner维护，页面不得猜测或调用模型代写。
 
 status可选枚举 `本片段交付阶段`：planning（未来计划）、implementation（实施）、review（待审/修复）、integration（已审待集成）、delivered（本片段已交付）。它与完整plan的开放TODO独立，禁止为了首页筛选勾选后继。显式非法值为未知；旧记录只按标准branchState token兼容，completed仅作者完成的legacy历史，不推断review/main事实。当前下一交付只展示implementation/review/integration，真实当前阻塞优先。新增任务及活跃owner在安全更新点采用字段，不要求全历史机械补写。
+
+
+## Lead职责与沟通边界（用户2026-10-06更新）
+
+- Goal Owner负责总任务规划、查缺补漏、研究、发现问题、督促交付与全局优化；co-lead自主细化计划、技术优化、接口、验收与集成，并管理subagents；workers执行有界实现和验证。Goal Owner不把co-lead当执行worker微操，不重复已有独立审查或检查。
+- 进度默认通过唯一owner status → dashboard传递，Goal Owner主动查看。普通进展、完成/审查/merge回执、metadata SHA及领取/释放细节不逐条私信、不多路转发、不确认套确认。重要交接结果回写看板。
+- 直接对话仅用于需要跨Lead裁决的重要接口/范围/资源决定、紧急用户影响，或无法通过dashboard解除的真实阻塞；一次简短消息说明决策点并链接canonical记录，收到无需ACK。
+- co-lead在已授权范围内自主派工、独立验收、提交推送和受控集成；普通技术步骤不再等待Goal Owner批准。可审小交付及时commit/push，独审后完成必要直接消费者检查即merge/main push；不等待无关片段，不改写已审target，不绕实际运行窗口冻结。
+- 当前用户授权每Lead任务1+3，三队4/4/4上限12；实际工具threadlimit与ready独立任务数仍限制运行，拒绝后不反复唤醒/创建新用户任务绕cap，不把授权上限称为正在运行人数。当前分配与实际观察以OPS-001及唯一状态源为准。
