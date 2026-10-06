@@ -2,15 +2,15 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 05:33 UTC |
+| 最近更新 | 2026-10-06 05:34 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / 派发 gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current |
 | Branch | codex/dashboard-architecture-current |
 | 工作基线 / HEAD | eb14991a170b72d7d974428b2e440e1faada2c1e / 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66（实现；后续 metadata） |
 | 工作树dirty状态 | 实现已冻结，仅本任务 metadata；现场 Git 由聚合器核验 |
-| 工作分支状态 | implemented |
-| 本片段交付阶段 | review |
+| 工作分支状态 | reviewed |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66；7局部Node；初始五图Chrome与R2两节点局部Chrome/补图，来源分列 |
 | 已集成main状态 / HEAD | 旧 ef42277 轮已集成；本轮刷新未集成 |
 | 实现目标 | 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66 |
@@ -18,17 +18,17 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 架构图已补齐新会话、配置、队列与图提案，图对应版本清晰可见 |
-| 下一可用交付 | 独立审查后的架构页更新 |
+| 下一可用交付 | 将已审架构图更新到工程看板 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，APPROVED 5ec6ce2051ed399be4906c6f99f7183e0ed1bb66 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | D06-01 | completed | w01_owner | 固定新树 clean、正式 receipt/live v1、原历史归档与技能读取 |
 | D06-02 | completed | w01_owner | 固定eb源码已核，5ec6ce2三应用文件及两浏览器测试，含R2来源修复 |
 | D06-03 | completed | w01_owner | 7 Node/五图Chrome、双主题390与clean-code，current证据 |
-| D06-04 | in-progress | w01_owner | 候选5ec6ce2交root复审，未集成本轮 |
+| D06-04 | in-progress | w01_owner | root APPROVED 5ec6ce2；待Lead接收和最终聚合核验 |
 
 ## 领取与来源
 
@@ -44,4 +44,6 @@
 
 [本轮验证与固定源码](../../docs/evidence/d06/current/README.md)、[质量](../../docs/evidence/d06/current/quality.md)。http://127.0.0.1:58207/#architecture；动态独立预览，未重启4320/旧55247。首次缺依赖/旧测试源定位失败保留，修正后7局部PASS；本树frozen安装不改锁，无新依赖。无模型/产品DB/全库；浏览器仅架构静态UI，Safari/Firefox/屏读未验。
 
-D06-R2 P3已修候选5ec6ce2待root结论；375首次root独立7测试与目视/CUA是其实际检查，不能当最终所有范围已复审。最新截图、初次失败和hash绑定见current/README。无新运行服务/产品模型验收。
+D06-R2 P3已在5ec6ce2关闭，root正式限定APPROVED；375首次root独立7测试与目视/CUA是其实际检查，最终5文件diff/bytes、92source行与CUA已独立复核，未重跑作者全browser。最新截图、初次失败和hash绑定见current/README。无新运行服务/产品模型验收。
+
+05:33:19 UTC root最终独立APPROVED，见review精确检查范围。交付清单/启动/双主题图/hash/技能见current证据；metadata收口后保持claim供必要修复，main尚未接本轮、不自行merge。

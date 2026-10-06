@@ -1,6 +1,6 @@
 # D06 固定基线架构刷新
 
-状态：in-progress。更新：2026-10-06 05:31 UTC。唯一 owner：w01_owner；派发模型 gpt-6-astra / ultra（运行时未另提供型号证明）。
+状态：in-progress。更新：2026-10-06 05:34 UTC。唯一 owner：w01_owner；派发模型 gpt-6-astra / ultra（运行时未另提供型号证明）。
 
 目标：沿既有五视图，将源码事实刷新到固定已发布提交 `eb14991a170b72d7d974428b2e440e1faada2c1e`，并在标题旁公开固定快照与源码核验时间。该图不代表实时服务部署或所有在研分支。
 
@@ -27,3 +27,5 @@
 旧轮：ef42277ff55d1cbb76ea707836481a9788619033/base8f 独审 APPROVED 并已集成，其 [plan](../../docs/evidence/d06/current/historical-8f-plan.txt)、[status](../../docs/evidence/d06/current/historical-8f-status.txt)、[review](../../docs/evidence/d06/current/historical-8f-review.txt) 原文保留；其中旧 active claim 是当时记录，当前领取以新 receipt/live 为准。
 
 [status](status.md) · [review](review.md) · [本轮质量](../../docs/evidence/d06/current/quality.md)
+
+05:33:19 UTC root正式APPROVED最终5ec6ce2，R2来源修正关闭；D06-04的review已完成，Lead集成/最终聚合仍待，故不提前勾选整项。

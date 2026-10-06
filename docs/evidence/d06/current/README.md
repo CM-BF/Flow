@@ -29,4 +29,11 @@
 
 D06-R2（P3、来源追溯）：root在375发现planned编号不能由固定计划证明。1ca3e5b只修两个节点，Queue/Steer依据固定ConversationThread，总计划方向依据原plan；后继派工编号和常驻服务不再塞进固定source节点。7局部Node再过，见 [输出](review-fix-node-tests.txt)。两节点/href补验与最新图见 [局部脚本](review-fix-check.mjs)、[结果](review-fix-browser.json)、[浅色模块](review-fix-modules-light.png)、[390深色模块](review-fix-modules-dark-narrow.png)。首轮补验脚本误用HTMLElement innerText读SVG失败，原 [失败](review-fix-svg-read-failure.txt) 保留；改DOM textContent后通过。未重跑不受影响的全五视图。
 
-初次browser原JSON时间05:29:53.726Z是提交前工作树捕获，作者确认三应用文件至375提交间无变化；不是事后伪写JSON带实现SHA。baseline verifiedAt=05:30:00Z表示该分钟源码核验收口，不是截图捕获/自动测试/服务发布时间。原始图仍保留当时两个planned节点文案，最新两张补图对应1ca生产修复。固定 [源码hash与绑定](source-binding.json) 列原375、最终目标与工作树hash；最终目标中的两个浏览器脚本明确归入实现范围。当前独立结论待root复审，不自动继承375检查。
+初次browser原JSON时间05:29:53.726Z是提交前工作树捕获，作者确认三应用文件至375提交间无变化；不是事后伪写JSON带实现SHA。baseline verifiedAt=05:30:00Z表示该分钟源码核验收口，不是截图捕获/自动测试/服务发布时间。原始图仍保留当时两个planned节点文案，最新两张补图对应1ca生产修复。固定 [源码hash与绑定](source-binding.json) 列原375、最终目标与工作树hash；最终目标中的两个浏览器脚本明确归入实现范围。root05:33:19正式限定APPROVED最终5ec6ce2；检查来源逐项见当前review，不冒称其重跑最终全部browser。
+
+
+## 独立审查与交付
+
+root正式APPROVED固定5ec6ce2，D06-R2 CLOSED；详细范围和实际检查在 [review](../../../../plans/d06-architecture-refresh/review.md)。三应用文件及两测试脚本冻结，metadata后续提交不自动改变批准目标。branch `codex/dashboard-architecture-current`，工作树 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-current`。启动命令上述动态preview，新服务58207保留；浅深截图含原始捕获和最终planned补图，两者版本绑定明确。
+
+main本轮未集成，交Lead接收；review修复期间claim继续active。未运行产品DB/模型/性能；不把派工常驻61227事实伪装本人运行核验。原旧55247和4320保留。
