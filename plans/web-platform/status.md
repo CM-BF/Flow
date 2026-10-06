@@ -2,12 +2,12 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 05:44 UTC / 架构与排队操作已被主线接收；可信内容展示模块正式受领 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 05:47 UTC / 架构与排队操作已被主线接收；可信内容展示模块唯一源已交登记 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `32ef566e95097c17d789b07ee3ccd49408da7c41`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `df6724c222f6fe3e5be850989512729173ebbec5`（本次管理停点前实核） |
 | 工作树dirty状态 | 本次仅管理范围的交付、正式领取回执与计划文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
@@ -41,7 +41,7 @@
 | WPF-001-14 | completed | d01_owner | DPERF5cd限定APPROVED/final4d7425 clean；5md15links3TODO/范围0越界，4新检查与旧关联失败分开；main6b4已含、08bd记录后bb7efv2 released |
 | WPF-001-15 | completed | d01_owner | PROFILEUX55b获root限定APPROVED，60d8交付与5md27links3TODO通过，ef869记录main14c61；d113v2已release |
 | WPF-001-16 | in-progress | d01_owner | QUEUE01新14c61树已核clean，CHATv5移出官方Thread，b4ea85d0v1正式13scope受领；首canonical已注册；固定309ec0e37bc92cc0f91d8f3bfd8f9e9f6519432croot05:40:36 APPROVED、最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean，41paths/13scope、6md36links、原样聚合和11源码hash核验通过，待主线 |
-| WPF-001-17 | in-progress | d01_owner | RENDERER01新fb906树已核clean、05:44:10.659Z原子take87948975v1八scope，先canonical后模块实现，不改QUEUE/App/shared |
+| WPF-001-17 | in-progress | d01_owner | RENDERER01新fb906树已核clean、05:44:10.659Z原子take87948975v1八scope，canonical2e25d807cf88c55d0c0bb6897642a118e40c07e7已核clean/解析0errors，已给root登记，模块实施不改QUEUE/App/shared |
 
 ## 当前唯一owner、claim与下一步
 
@@ -166,3 +166,5 @@ QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibil
 05:43 QUEUE01最终496db69b7a4973fc9d773aaef5389ef62cd1eef7 clean管理检查闭合，复用作者05:41:16.755Z唯一API原样摘录，不另取样。实现309 root05:40:36批准；41paths在13scope、6md36links/5TODO、11源码及两份报告hash匹配，F01 pending与三个raw日志空白例外保留。产品全scope停写保留claim回修，完整OPS字段已交root一次桥Lead。当前无真实queue模型旅程通过的主张。
 
 05:44 RENDERER01正式受领：[原take](../../docs/evidence/web-platform/renderer01-take-receipt.json) 87948975-fa99-49b6-a84c-3ca126aaeb92 v1，固定fb906，web-data-renderers/codex/web-data-renderers；manager独立HEAD/branch/clean及05:44:02.397Z freshledger通过后原子take。八scope不含App/QUEUE/P01/shared，w01已followup实施，首canonical未回前仅领取可见不称进度卡注册。MainLead已RECEIVED D06与QUEUE309/496，等待组合集成精确SHA，所有旧产品scope保留回修权不提前release。
+
+05:47 RENDERER唯一来源已交root登记：web-data-renderers中的plans/wpf-renderer01-data-renderers/status.md，首d298/规范修正2e25d807cf88c55d0c0bb6897642a118e40c07e7 clean，实际parser errors=[]/4TODO/checksnot_run/reviewnot_started/human完整，targetUNKNOWN，stageimplementation。尚未得到registry部署通知，不宣称服务卡已出现；不重复API轮询。

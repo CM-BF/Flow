@@ -467,3 +467,5 @@ composer精确安装源码补充：core0.3.22 `runtime/interfaces/composer-runti
 最小后继候选为projection.ts、execution-profiles/selection.ts及直接projection/profile/outbox/queue四test，自己的plans/wpf-k02-compatibility与docs/evidence/wpf-k02-compatibility（拟名）。owner05:43:48 ledger观察QUEUE仍占projection及两相关test，其他候选当时无writer；此历史观察不授写权，必须QUEUE交付后freshledger/CAS再take。App/Thread/messages/queue生产模块不需为薄reader变化，0UI开放/0context detail GET。
 
 必要验收：旧缺字段plain发送/queue字节保持且0detail；capability缺省false、合法bool读入/非法类型拒绝；project有无/同值/错值/意外新增/漏值在CREATE ACK、snapshot/page一致校验，错ACK为unknown且不续发；context元数据在页/详情保留但不映user/assistant正文；原key/body/pin/project重试与新draft分离、unknown后401不清、跨连接同ID隔离。未来knowledge发送另需typed input透传+深冻结citation/locator，不重取最新版或换key；薄reader不声称已支持引用发送，也不为digest预取冻结正文。panels本次0写/测试/模型，复用本地find-skills/codebase-design/clean-code，设计只在已有身份边界集中校验，无第二DTO/client/状态源。
+
+本段 O07执行配置接口风险预告（root固定源码只读，非Web实现）：Lead给native graph内部access字面量`goal-graph-tools`，完整源target `f95c8eb9e8fc7d29d788fe22a6fd8b7dff098be5`；root核固定fb906 selection.ts的ChatAccess/isChatAccess及configuredSelection仍严格只允许none/configured-readonly。新增内部字面量或unknown目录项可见但不可选，不能因共享合同增加自动开放普通chat。O07尚未独审/无Web入口，本次无修改测试模型；后继K02 receipt薄reader必须保留该allowlist，不扩新Webscope。

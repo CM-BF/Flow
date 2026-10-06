@@ -342,3 +342,7 @@ GO/SVC来源通知：05:40:49真实61227/61228 center/runner完成受控bootstra
 05:44 正式renderer领取：GO/root明确批准八scope，固定fb906cb42391971a8b315dbd813f7633927d7265；w01仅新树初始化后manager再独立核branch/HEAD/clean。freshledger05:44:02.397Z无active literal overlap、无重复task；[take](renderer01-take-receipt.json)87948975-fa99-49b6-a84c-3ca126aaeb92 v1/05:44:10.659Z committed后followup开写。严格3新源码+3专测+plan/evidence，公开P01/X01 lifecycle复用无第二安装/启停/权限权威，无App/shared/newdeps；先canonical首SHA再一次root登记。
 
 MainLead已RECEIVED两交付：QUEUE309/496、D06 5ec/61d70进入主线组合检查，明确不重跑全套UI；本管理证据不改为已集成，scope保持待main receipt。SVC fb906/v3 accepting/0任务0query来自GO/SVC，后继main/Vite变化不代替center重启证明，真实queue两query尚无GO执行许可。
+
+RENDERER首canonical d298b45076f448c8363b5befa1ad325d000c8bc5独立Gitclean、5paths在原八scope、4md11links正常。实际调用主线parseStatus发现3项metadata格式issue：Owner键未匹配、UTC在表外、TODO表ID头且3列导致todos空；checks NOT_STARTED也落unknown。human.complete=true并不能代替完整解析。已交唯一owner表内标准owner/时间/4列TODO(pending)和NOT_RUN修正，纯metadata后复核再登记；未替写owner状态或因此重跑产品。
+
+05:47 RENDERER元数据finding已闭合：owner仅plan/status提交2e25d807cf88c55d0c0bb6897642a118e40c07e7，管理亲核clean及实际parseStatus errors=[]、四TODO、checksnot_run、reviewNOT_STARTED/human完整；上一错误样本不改写。唯一planDir/evidenceDir/fullSHA/claim字段已一次给root桥Lead登记，未以首canonical代服务聚合，无产品重测。
