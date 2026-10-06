@@ -106,13 +106,15 @@
     }
   ],
   "leadRequest": {
-    "migrationNumber": "UNASSIGNED; must be assigned by Execution Lead",
-    "migrationOwner": "UNASSIGNED; authorize sole DDL owner and exact migration path before PG checks",
+    "migrationNumber": 27,
+    "migrationOwner": "architecture_read; d3a9be2b v5 COMMITTED 2026-10-06T11:03:13.290Z",
     "sharedHooks": {
       "runner.ts/events.ts": "ENG01A",
       "client/src/index.ts": "TUI01B",
       "server/src/index.ts/contracts/src/index.ts": "F01"
-    }
+    },
+    "migrationPath": "packages/storage/migrations/027-context-observation-history.sql",
+    "migrationEntry": "apps/server/src/context-transparency/migration.ts: migrateContextObservationHistory(pool)"
   },
-  "nextSlice": "historical record/readLatest + bounded owner GET only; no SDK collection, no current/remaining claim; eight new source paths require atomic amend"
+  "nextSlice": "Historical store/DTO/routes plus official migration 027 validated locally with real PostgreSQL; current/remaining remain unknown. Final target/independent review recorded in history-pg-manifest.json and owner status."
 }

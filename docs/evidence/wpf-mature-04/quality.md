@@ -30,3 +30,11 @@
 ## 2026-10-06T10:33:41.339595+00:00 历史片工作段
 
 本地find-skills发现既有TypeScript/PostgreSQL/HTTP相关方法，沿codebase-design/brainstorming已批准八文件的小Interface与固定clean-code（sickn33 bdacd76，未安装）实施。按AGENTS modular-design：事务/fence仍归reportEvents，归一化归runner，store仅身份/引用绑定与历史幂等，GET只读。检查并修正requested alias不能充当resolved事实；严格有限wire不收正文/路径/伪ref，历史DTO不计算current/remaining。33局部用例与继承root严格noEmit通过；真实PG与生产鉴权尚未验证，等待唯一正式migration，不复制DDL。六个已审源保持冻结。
+
+## 2026-10-06T11:07:34.218990+00:00 正式027与真实PG交付前复核
+
+沿已读本地find-skills发现相同TypeScript/PostgreSQL领域方法；继续应用codebase-design/clean-code固定sickn33 bdacd76，无重装。brainstorming按已授权有界方案收敛为一个migration(pool)入口，复用原advisory事务锁；027唯一DDL、无026依赖，无重复临时CREATE。复合外键把task/attempt/detail归属放入数据库，支撑索引仅为该约束；append-only阻止历史内容改写，wire/sample各≤65536字节，latest索引最多读一条。store仍只负责绑定/幂等、事务生命周期归调用者，没有第二FSM或provider归一化。
+
+旧41断言保留，加9真实PG=50不同通过；首次49轮重叠不累加。首次strict缺真实Fastify augmentation、补真实index后缺已安装第三方声明路径均保留原始失败；最终配置纳入真实源与已安装@types，无fake声明/放宽strict/noUnchecked/ES2023。专库随机名称创建前确认不存在、CREATE请求前记账以覆盖未知ACK；所有PoolClient通过transaction finally释放，两轮实际0连接、DROP后不存在。没有启动HTTP服务、scheduler、runner、SDK或provider。生命周期失败保留精确自有库名，禁止终止其他连接。
+
+实际职责/架构影响：新增migration入口/唯一027表与两条归属支撑索引；事件/全局route/auth/client尚待Lead集成，固定架构视图由Lead在集成target更新。source/master口径不扩大为当前context或provider真实计量；没有性能提升声明。

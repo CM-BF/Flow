@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:45:51 UTC / 最近main核验0cee7556 clean；本次仅解析格式同步 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:03:13 UTC / 最近main核验0cee7556 clean；本次恢复唯一DDL实施 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-04](plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency |
 | Branch | codex/context-transparency |
 | 工作基线 / HEAD | 原始b1c2e398；已受控合入8d8ab520 / 当前实现 a7357c21511a81ca8e603b728c3a24725d7cc140；metadata随后提交 |
-| 工作树dirty状态 | 核955650ed clean与v4 ACTIVE后仅更正自有status/review解析格式；源码/raw冻结 |
+| 工作树dirty状态 | 核bdea351a clean与v4 ACTIVE；v5 COMMITTED后实施027/局部入口/真实PG检查；旧6源码冻结 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | NOT_RUN a7357c21511a81ca8e603b728c3a24725d7cc140：真实PG事务/rollback/约束及全局owner鉴权待验；局部41/41与8根文件strict noEmit0见[证据](../../docs/evidence/wpf-mature-04/history-checks.json) |
@@ -20,13 +20,13 @@
 | 实现范围 | apps/server/src/context-transparency/routes.test.ts, apps/server/src/context-transparency/routes.ts, apps/server/src/context-transparency/store.test.ts, apps/server/src/context-transparency/store.ts, packages/contracts/src/context-observation-event.test.ts, packages/contracts/src/context-observation-event.ts, packages/contracts/src/context-observation-history.test.ts, packages/contracts/src/context-observation-history.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 历史样本保存和读回模块已完成局部验证；规范估算与摘要转换两片已审待集成 |
+| 当前产出 | 历史样本保存和读回模块已完成局部验证；现已开始正式数据库持久化验证 |
 | 下一可用交付 | 采用唯一正式迁移完成数据库验证，再挂载历史读回；当前占用及剩余容量仍未知 |
-| 当前阻塞 | ACTIVE: 历史数据库验证等待Execution Lead分配唯一迁移编号/owner；局部合同与HTTP片已完成验证，不等待Codex |
+| 当前阻塞 | NONE：唯一正式迁移027已分配并领取，正在验证历史保存、回滚与重启读回 |
 | 需用户决定 | NONE |
 | Review | NOT_STARTED a7357c21511a81ca8e603b728c3a24725d7cc140：待唯一DDL和真实PG后最终审查；2026-10-06 10:42:39 UTC静态/模块预审无P1/P2，不批准生产接入，见[review.md](review.md) |
 | Claim | [COMMITTED amend v4](../../docs/evidence/wpf-mature-04/history-amend-receipt.json)，d3a9be2b-6321-49b5-992b-9e3f9f216f49 v4 ACTIVE；仅追加8新history文件，已审6源码冻结 |
-| 架构影响 | 中心历史record/readLatestHistory与局部GET已实现未挂载，沿原事务/fence，无新runner端点；唯一DDL及全局挂载由Lead协调，架构视图待集成target更新 |
+| 架构影响 | 中心历史record/readLatestHistory与局部GET已实现未挂载，沿原事务/fence，无新runner端点；唯一DDL027由本owner实施，新增局部migration入口/归属外键及历史索引；全局挂载与架构视图待Lead集成target更新 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -68,3 +68,5 @@
 2026-10-06 10:42:39 UTC：根审完成a735新8源/测试及19项manifest核验，静态/模块预审无P1/P2；不将41局部通过扩张为PG/全局鉴权或生产批准。源码/raw冻结，等待Lead唯一migration编号/owner，禁止自占026；无ready实现时不扩producer框架。
 
 2026-10-06 10:45:51 UTC：metadata解析安全点；Mika报告2026-10-06 10:45:18 UTC对4320的一次snapshot已确认04 source live、stale=false、955650ed clean，任务层级大task/co-lead正确；本owner未另抓大聚合。修正8个实现literal、ACTIVE阻塞及NOT_RUN总体验证字段；TODO完成度不变。当前review首状态/target改为a735待PG最终审，静态预审与旧批准分开保留。
+
+2026-10-06 11:03:13 UTC：Execution Lead正式分配027-context-observation-history.sql，026仍属ATTACH01。fresh bdea351a clean、原v4后原子追加SQL及局部migration.ts为v5；[收据](../../docs/evidence/wpf-mature-04/history-ddl-amend-receipt.json)。仅正式DDL供真实随机专库验证，未改全局mount/事件/client；旧6与历史raw保持固定。
