@@ -1,0 +1,165 @@
+{
+  "recordedAt": "2026-10-06T04:50:29.778367+00:00",
+  "implementationTarget": "38b2353dade0431dded067f20711ddc79b4c7430",
+  "productBase": "75a33dec228e17bbbd0d3be9fd01bc9ac18a0133",
+  "implementationFiles": [
+    {
+      "path": "experiments/conversation-read-cost/instrument.ts",
+      "sha256": "da1cde761e8afd6f62a87c7338af262cba73661fb247b1404b93f0112cf64d74"
+    },
+    {
+      "path": "experiments/conversation-read-cost/run.ts",
+      "sha256": "2b746e43312d9ebee27ad6ca7dc1291f0c644abc5b6358e752790e3d6bf39874"
+    },
+    {
+      "path": "experiments/conversation-read-cost/tsconfig.json",
+      "sha256": "16d194bc2cf8861df1080444a95f9db0b394b8bf63df9896bfc47d0848a6a080"
+    }
+  ],
+  "productSourceFiles": [
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "sha256": "a37640dc52ad4116230af8908688404c4b0b2ed0a1e44d2b549ed401db3dd715"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "sha256": "f22dd554dbd7c687efb3abe9d93fb553e8c455482a1a8738a504548bcd7b77b7"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "sha256": "9ab014a39aefa7e2081a07f54c3b4125c8f26746bc5c9bd5bf9e24a78e6aaea5"
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "sha256": "b9216162b1cecb1badf38101f3b11a791a56c6d6c220325207d2b8469a2caddd"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "sha256": "9fa16826ccdaf38819fa5408b2ca4216b27a4d77a3ef945906fd05ec79151f9a"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    }
+  ],
+  "logs": [
+    {
+      "path": "docs/evidence/b02/results.json",
+      "sha256": "ee6ae620eef3fce714d59d5e1b9a4de8f0e8e2d94454cce5b1b0463deeb8b62f",
+      "bytes": 765694
+    },
+    {
+      "path": "docs/evidence/b02/baseline.log",
+      "sha256": "dc34403e30717f0b877c91661582c70ea1db0f2a1d0db047494d836e060062fe",
+      "bytes": 2264
+    },
+    {
+      "path": "docs/evidence/b02/baseline-command.json",
+      "sha256": "389bd15a5d1f17624b7fdefe617dd72d5ae2dc3e0739aefd4de024df6755d42f",
+      "bytes": 287
+    },
+    {
+      "path": "docs/evidence/b02/resource.json",
+      "sha256": "878ea00d58a05db3705b96b2488789b98d0224cd934118cfcc4894e5322713de",
+      "bytes": 81
+    },
+    {
+      "path": "docs/evidence/b02/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/b02/typecheck-result.json",
+      "sha256": "b14040d34029c032364ae27749ca170f3fc3ac7b4465240cf844d3c65435cd85",
+      "bytes": 315
+    },
+    {
+      "path": "docs/evidence/b02/typecheck-initial.log",
+      "sha256": "7da1f83edb7a2de6edb7c80db4d31aaf0a05e13eb2533aec0f5898d3597bc9fe",
+      "bytes": 312
+    },
+    {
+      "path": "docs/evidence/b02/typecheck-second.log",
+      "sha256": "eafa23ecd90667610e44dabb3a02efb33caad3dc67f96652a77d169900f2471d",
+      "bytes": 296
+    },
+    {
+      "path": "docs/evidence/b02/dependency-resolution.json",
+      "sha256": "a94a48a371dc11d31109e1a4dee1d20fac7f5c6b5999ed01993a8cd2528bc275",
+      "bytes": 2029
+    }
+  ],
+  "checks": {
+    "measuredHttpRequests": 126,
+    "workloadGroups": 6,
+    "semanticGuards": [
+      "uncommitted typed final stays pending",
+      "committed typed final remains pending before task success",
+      "success exposes exact bound final",
+      "digest corruption rejected",
+      "foreign native session binding rejected",
+      "foreign conversation detail access rejected",
+      "prior attempt final not reused by current attempt"
+    ],
+    "constantFieldsPerGroup": [
+      "selectCount",
+      "transactionCount",
+      "decodedSelectRowsJsonUtf8Bytes",
+      "httpUtf8Bytes",
+      "bodyHashCount",
+      "bodyHashInputBytes"
+    ],
+    "baseline": {
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--import",
+        "tsx",
+        "experiments/conversation-read-cost/run.ts"
+      ],
+      "startedAt": "2026-10-06T04:48:12.850Z",
+      "endedAt": "2026-10-06T04:48:20.775Z",
+      "exitCode": 0,
+      "signal": null,
+      "error": null
+    },
+    "noEmit": {
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "experiments/conversation-read-cost/tsconfig.json",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-06T04:47:49.837Z",
+      "endedAt": "2026-10-06T04:47:50.760Z",
+      "exitCode": 0,
+      "signal": null
+    },
+    "initialFailures": [
+      {
+        "path": "typecheck-initial.log",
+        "exitCode": 2,
+        "code": "TS18003",
+        "interpretation": "zero inputs is failure"
+      },
+      {
+        "path": "typecheck-second.log",
+        "exitCode": 2,
+        "code": "TS2683",
+        "interpretation": "explicit this type required"
+      }
+    ]
+  },
+  "resourceCleanup": {
+    "databaseName": "flow_b02_71695_dd2aa05b",
+    "remaining": []
+  },
+  "instrumentationRestored": true,
+  "limitations": [
+    "SQL seed is not runner execution or agent capacity",
+    "decoded rows JSON UTF8 is not PostgreSQL wire",
+    "instrumented shared-host n20 p99=max; no cold cache/SLO/optimization gain",
+    "7 guards cover the recorded sequence, not full PG isolation/concurrent late-commit matrix"
+  ],
+  "review": "NOT_STARTED"
+}
