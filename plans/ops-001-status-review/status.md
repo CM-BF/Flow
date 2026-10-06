@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 18:06 UTC / main0e4c7b0f |
+| 最近更新 / 最近main同步核验 | 2026-10-06 18:20 UTC / main0b8cd6f4 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | OPS-001：用户协作与设计规则更新（[各次明确验收](plan.md)） |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,15 +12,15 @@
 | 工作基线 / 本记录核验时HEAD | 资源 next4c 2/4 到准备线后停止；本次串行验证已清理，共享source-only新路径移交Web |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main0e4c7b0f已接逐消息配置、终端收尾、RELEASE03工具证据和完整目标输入接线；个人runtime362/v15保持 |
+| 已集成main状态 / HEAD | main0b8cd6f4已接流式增量哈希、逐消息配置、终端收尾、RELEASE03工具证据和完整目标输入接线；个人runtime362/v15保持 |
 | Review | [review.md](review.md)，本次OPS-001-10限定文档APPROVED；历史全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 5 |
 | 当前产出 | 逐消息设置、终端控制与完整目标输入接线已进入主线；新版网页的发送和恢复兼容验证已通过。 |
-| 下一可用交付 | Web消息设置界面独立开工；补齐保留旧页面的后台兼容证明，准备实际发布。 |
-| 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；个人发布等两组旧页面兼容证明，小验证由两lead串行安排。 |
+| 下一可用交付 | Web消息设置界面与O16准备已独立开工；补齐保留页面兼容和个人网页身份诊断。 |
+| 当前阻塞 | ACTIVE: 完整后台构建仍缺空间；个人发布等保留页面兼容与当前Web身份恢复事实，小验证由两lead串行安排。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -209,3 +209,5 @@ Donor审计口径更正：此前4条可执行文本引用中，harness-compariso
 2026-10-06 18:06 UTC：F01 O15 单次 PG 1/1 exit0（5.652s）已正常删除自有DB/目录、process group absent，窗口归还 Web 用于原 Recovery 固定旅程；未启动新模型。RELEASE03 原 A/B 已独审并main，个人服务未操作。原 next4c 剩余两树未动，大构建门槛不因当前约1.7GB观察解除。
 
 Web消息设置349精确tracked输入（逻辑约2.97MB）已将唯一新路径 `web-message-settings` / `codex/web-message-settings` 的 source-only provision 一次移交 Web manager，自固定已合并8d84准备、上限4MiB，无安装/构建/运行，不改共享Git config或已有worktree；原563仅历史输入。本Lead不同时操作此新路径，后续由Web fresh八literal take及权威status记实际完成。小源码准备不套PG余量门槛。
+
+2026-10-06 18:20 UTC：CHAT06P03两源算法原批准＋两type引用适配已main0b8；实际root types0/9.295s，保留初始解析失败，不重跑原5项。O16仅三scope独立实施，first59249，0query/PG未运行。当前61228三次identity GET记录ECONNRESET，实际listener65263/PGID65219的一次1 LISTEN+64 CLOSED与固定maxConnections64相关但非根因；原用户服务未重启/清连接，SVC05H只做独立诊断准备。
