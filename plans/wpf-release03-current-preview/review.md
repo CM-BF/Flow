@@ -12,7 +12,7 @@ Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
 核 actual factory/client/contracts 来源、正式 format2 全 descriptor、history attachment-only/mixed门槛、实际App原key/body与新稿保护、生命周期/累计预算/清理、SVC observation条件。绑定固定commit；问题交作者修，原始失败不覆盖。检查与未执行范围分别列明；个人发布不在此批准内。
 
-历史362两项业务失败保留；新af51两项A与后继B1750实际通过，完整独立结果审查待完成。原997d定向strict noEmit只沿原范围归因，没有借后继通过冒称重复检查。
+历史362两项业务失败保留；新af51两项A与后继B1750实际通过，root完整限定结果审查已完成，结论与范围见页首及原样报告。原997d定向strict noEmit只沿原范围归因，没有借后继通过冒称重复检查。
 
 ## 原checkpoint限定审查
 
