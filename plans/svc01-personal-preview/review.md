@@ -4,7 +4,7 @@
 
 Review target commit：UNKNOWN
 
-Scope：tools/personal-preview/；计划与证据下钻。Base：8f1481df880cf5077e1ddb9a8f302fe700a7ece8。尚未执行审查，不构成approval。
+Scope：tools/personal-preview/；计划与证据下钻。实现基线：dd1b9dafc77fb56a580d3d41dc7ddec3b1996ef8（受控合入已审三端/R04；原计划base8f1481）。尚未执行审查，不构成approval。
 
 ## 可复制审查任务
 
