@@ -1,14 +1,22 @@
 # R02 状态
 
-- 更新时间 / main同步核验：2026-10-06 01:28 UTC / 2026-10-06 01:28 UTC。
-- 唯一owner / model：runner_owner / gpt-6-astra；[plan.md](plan.md)、[review.md](review.md)。
-- 仓库 `/Users/citrine/Projects/AgentHarness/Flow`；权威worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-native-harness`；branch `codex/m1-native-harness`。
-- 初始base `39f2e178df5914e2610c796bbd98537e459ea9c8`；实现commit `e4f12efbe1c2efdc4fd287dfe39a6e6949b4d1a2`（父提交 `64b4f69355bc75b2e7c7c47141c110020b3b93da`）；本记录更新前HEAD `a0336ca08ef31e38fd9e667ce91d484a1c7b133c`，干净。本次只补文档，不改实现。
-- 工作分支：只读adapter、manifest普通入口、57条分支测试与typecheck通过，独立review PASSED。
-- Main `0763d4653264b09ddd355c292fc8bd88dfc3c584`，尚未集成；不得将分支/集成worktree验证写成main能力。
-- Review target：实现e4f12ef、metadata a0336ca；Execution Lead / gpt-6-astra独立审查无blocking。
+| 字段 | 记录 |
+| --- | --- |
+| 最近更新 / 最近main同步核验 | 2026-10-06 01:39 UTC / 2026-10-06 01:28 UTC |
+| Plan | [plan.md](plan.md) |
+| 单一status owner / model | runner_owner / gpt-6-astra |
+| Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-native-harness` |
+| Branch | `codex/m1-native-harness` |
+| 工作基线 / 本记录核验时HEAD | 初始base `39f2e178df5914e2610c796bbd98537e459ea9c8` / 当前metadata HEAD `5361167b70b1b8a4dc16b6e60d99d43ada9ea607`；实现 `e4f12efbe1c2efdc4fd287dfe39a6e6949b4d1a2`，父提交 `64b4f69355bc75b2e7c7c47141c110020b3b93da` |
+| 工作树dirty状态 | 更新前干净；本次仅规范status表格，不改实现与历史证据 |
+| 工作分支状态 | 已交付只读adapter与manifest入口，已验证，独立review通过 |
+| 检查状态 | 57/57分支测试与typecheck通过；独立Claude/configuration 28/28与typecheck通过；R02+I01真实5/5预算已用完 |
+| Review | [review.md](review.md)，PASSED，绑定实现e4f12ef与metadata a0336ca；Execution Lead/gpt-6-astra，无blocking |
+| 已集成main状态 / HEAD | 尚未集成；`0763d4653264b09ddd355c292fc8bd88dfc3c584`；不以集成worktree验证代替main能力 |
 
-| TODO | 状态 | Owner | 证据 |
+## TODO状态（与plan稳定ID逐项对应）
+
+| TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | R02-01 | completed（branch e4f12ef） | runner_owner | 私有材料快照、canonical路径与逐工具ownership gate、cancel/timeout模拟通过 |
 | R02-02 | completed（branch e4f12ef） | runner_owner | session/保存产物/verifier、累计modelUsage与unknown恢复基线通过 |
