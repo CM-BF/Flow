@@ -1,0 +1,48 @@
+{
+  "initialBrowser": {
+    "at": "2026-10-06T05:29:53.726Z",
+    "state": "author working tree before implementation commit",
+    "applicationSourceBoundTo": "37561609fc776c5a87dc45a11c07bd0595089e12",
+    "basis": "author observed no application source edits between browser run and 3756160 commit; original JSON remains unchanged",
+    "browserScriptCommittedAt": "11617bec69a8da2aaa35248c3f9eab390b117668"
+  },
+  "supplementalBrowser": {
+    "at": "2026-10-06T05:32:34.792Z",
+    "applicationSourceBoundTo": "1ca3e5b2be7495042dadcbfdb179e751fb1e90b3",
+    "testScriptBoundTo": "5ec6ce2051ed399be4906c6f99f7183e0ed1bb66",
+    "scope": "two planned nodes and screenshots, not repeat of original full five-view run"
+  },
+  "finalImplementationTarget": "5ec6ce2051ed399be4906c6f99f7183e0ed1bb66",
+  "files": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "initial375SHA256": "b456dd950a9aeb4a58940ece104d94f5d99fcd5d89060b18e0c7f96dbe3fd07f",
+      "finalSHA256": "8f4a71523b876fc6555fc255dc2709a1668a9f2cec7cc6e21eca5bc61edc1f05",
+      "workingSHA256": "8f4a71523b876fc6555fc255dc2709a1668a9f2cec7cc6e21eca5bc61edc1f05"
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "initial375SHA256": "d0c0dc52413dea09e05c896f4e1f0cc034f0689b02c89d03f15b89c6c2aa9ffc",
+      "finalSHA256": "d0c0dc52413dea09e05c896f4e1f0cc034f0689b02c89d03f15b89c6c2aa9ffc",
+      "workingSHA256": "d0c0dc52413dea09e05c896f4e1f0cc034f0689b02c89d03f15b89c6c2aa9ffc"
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "initial375SHA256": "1b0af5149be9d5fd7270300ffe49300bf73da88ae5e861d8746becc5055d845b",
+      "finalSHA256": "1b0af5149be9d5fd7270300ffe49300bf73da88ae5e861d8746becc5055d845b",
+      "workingSHA256": "1b0af5149be9d5fd7270300ffe49300bf73da88ae5e861d8746becc5055d845b"
+    },
+    {
+      "path": "docs/evidence/d06/current/browser-check.mjs",
+      "initial375SHA256": null,
+      "finalSHA256": "0741b0fb92be795412ea9f2e4deb75a8c24f2e42f815697d4ceae1dd8984af2f",
+      "workingSHA256": "0741b0fb92be795412ea9f2e4deb75a8c24f2e42f815697d4ceae1dd8984af2f"
+    },
+    {
+      "path": "docs/evidence/d06/current/review-fix-check.mjs",
+      "initial375SHA256": null,
+      "finalSHA256": "e38b5b28b554fba03bbc8f37fe05144f8b2f2ba520b7ec44d9ac89a2cf48dbc4",
+      "workingSHA256": "e38b5b28b554fba03bbc8f37fe05144f8b2f2ba520b7ec44d9ac89a2cf48dbc4"
+    }
+  ]
+}

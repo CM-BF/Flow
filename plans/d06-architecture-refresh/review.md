@@ -2,10 +2,10 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：37561609fc776c5a87dc45a11c07bd0595089e12
+Review target commit：5ec6ce2051ed399be4906c6f99f7183e0ed1bb66
 Base：eb14991a170b72d7d974428b2e440e1faada2c1e
 
-当前 owner w01_owner；branch codex/dashboard-architecture-current；工作树 dashboard-architecture-current。范围：architecture-data.js、architecture.js、architecture.test.mjs。metadata 不自动继承实现审查。
+当前 owner w01_owner；branch codex/dashboard-architecture-current；工作树 dashboard-architecture-current。范围：architecture-data.js、architecture.js、architecture.test.mjs，加 docs/evidence/d06/current/browser-check.mjs / review-fix-check.mjs 两可执行浏览器测试。metadata 不自动继承实现审查。
 
 ## 验收入口
 
@@ -16,3 +16,11 @@ Base：eb14991a170b72d7d974428b2e440e1faada2c1e
 ## 历史批准
 
 [8f 轮完整 review](../../docs/evidence/d06/current/historical-8f-review.txt)：ef42277ff55d1cbb76ea707836481a9788619033，root APPROVED；原 D06-R1 已修复。该结论只覆盖旧目标，不覆盖本轮源码刷新/renderer。
+
+## 当前轮 findings / 检查来源
+
+| ID | Severity | Blocking | Finding 与响应 | 状态 |
+| --- | --- | --- | --- | --- |
+| D06-R2 | P3 | 非功能blocking，需来源修正 | root375发现nextbackend的O06/SVC02编号不在所引固定plan；1ca3e5b改为固定plan方向，nextweb同样只保留固定Thread可证控件；最终5ec6ce2含局部脚本 | 等root复审关闭 |
+
+Root375实际独立7 Node PASS（1034.452ms）、3文件diff/source、fixed diffcheck0、CUA58207顶栏与浅色/390深色图；不冒称root重跑作者浏览器套件。作者修复后7 Node PASS（1863.979ms），两节点href局部Chrome PASS，无新产品DB/模型。最终target多含2浏览器脚本，已明确请求root一并只读审查；尚未收到最终批准。
