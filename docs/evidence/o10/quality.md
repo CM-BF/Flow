@@ -9,3 +9,5 @@
 产品apps/packages/rootmanifest/lock及旧O08实验对fixedBASE零diff。原native预算未批准，未生成有效permit，未读取登录文件、调用query或操作个人服务。剩余：唯一独立review、main接收、另行GO原生预算；对主动脱组子进程/组织hook副作用/硬OS时间/实际provider均无证明。
 
 2026-10-06 08:31 UTC P2复核：实际再读tdd，沿已授权run/public HTTP/PG/文件清理seam先实际写失败红；saveCheckpoint私有小函数只承担排他写与durability，收尾只在证据已保存且进程/center停止时删资源。报告不泄漏底层异常/凭据；无新抽象/loop。2/2绿+两语法，失败保留和成功清理证据分别保存；旧11不重测。请求独立Root增量review，不调用native。
+
+2026-10-06 08:37 UTC：Root准备批准与新一次性预算分别转录；Lead确认无并行实验provider。执行只走原fixeddriver，源码无变化，1query后封存。实际init/request/modelUsage分开、host允许与同ID工具结果分开、机械与GO语义分开；checkpoint成功在不可恢复清理前。此次仅检查固定source/rawhash与报告，不追加模型/测试。Root语义review未到，pending保留。
