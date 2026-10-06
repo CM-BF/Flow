@@ -147,3 +147,5 @@
 | F01-30 | completed | Lead | 原生目录严格薄client；[固定证据](../../docs/evidence/f01/native-catalog-client-manifest.json)，没有原生能力或认证结论。 |
 
 | F01-31 | in-progress | Lead | 工程profile薄client3a12独审通过；挂载1c081待真实factory输入验证，不提前main领域。 |
+
+| F01-32 | in-progress | Lead / Mika context owner | [027编号与唯一writer](../../docs/evidence/f01/context-history-migration-assignment.json)；已交同级fresh amend，后续固定DDL/真实PG及共享接线待验，不改个人DB |
