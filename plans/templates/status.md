@@ -14,6 +14,14 @@
 | 工作分支状态 | pending |
 | 检查状态 | NOT_RUN；未知不表示通过；通过时写PASSED及完整target SHA和实际范围 |
 | 已集成main状态 / HEAD | 待核验；分支完成不等于main具备 |
+| 实现目标 | 未提交；交付后填完整实现SHA |
+| 实现范围 | 待填写仓库相对 literal 文件/目录，逗号分隔、不用glob |
+| 阶段 | 待填写 |
+| 优先级 | 5 |
+| 当前产出 | 待填写面向用户的一句话 |
+| 下一可用交付 | 待填写面向用户的一句话 |
+| 当前阻塞 | UNKNOWN；核实后 NONE 或 ACTIVE: 描述 |
+| 需用户决定 | UNKNOWN；核实后 NONE 或 REQUIRED: 描述 |
 | Review | [review.md](review.md)，NOT_STARTED；空模板不构成approval |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
