@@ -15,3 +15,5 @@
 风险：immutable triggers按列触发必须保持固定列；undefined/null值不能被默认转换；accepted0不能更新；finalization跨多表状态须完整回滚。当前阻塞责任F01/Lead路径移交，解除为停写+amend移除+新claim追加COMMITTED；可独立完成metadata及原S01 observer fake修复。
 
 新source未实现、真实PG未执行、未来A/B未OPEN；本计划不会改变旧S01已封存128结果。
+
+2026-10-06 12:48:38 UTC：验收细化为7类真实行为（不是已通过测试数），A/B只有预算候选且不得自行运行；原稳定TODO未新增目标。

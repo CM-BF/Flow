@@ -35,3 +35,7 @@ Lead登记请求：task S01P05、所属[FLOW-001](/Users/citrine/Projects/AgentH
 真实PG功能检查需取得上述scope并固定最小fixture；随机专库、动态port（如需HTTP）、CREATE-request-before-send、有限query/close，确认own连接结束后exact DROP/absent，无FORCE、无未知重试、0 provider。旧共享库/不安全fixture不运行。直接消费者和局部strict依实际影响选取，不全库。当前0测试/PG/HTTP/child调用。
 
 后继A/B各128、总256task/attempt、8×16、5min/512MiB仅GO预算方向预授权；还需fixed两版本/profile预算独审及Mika唯一window OPEN，与发布/Nodeactual串行。此生产片不自行启动任何capacity窗口。原S01 FOR SHARE classifier修复独立实验target，不改64911结果/raw。
+
+## 验收和后继预算细化
+
+[最小行为矩阵](validation-matrix.md)明确reportEvents/finalizeSteering完整rollback、pure replay timestamp、null/unknown及018/021列trigger；[A/B设计](ab-design.md)固定共同observer/profile、一个总clock与清理reserve候选。两页均为metadata，0source/test/PG/load调用。剩余唯一生产范围请求仍events.ts和新event-state.test.ts，取得COMMITTED追加后才实施。
