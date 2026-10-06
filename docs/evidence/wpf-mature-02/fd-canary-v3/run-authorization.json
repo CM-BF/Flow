@@ -1,0 +1,29 @@
+{
+  "window": "go-c-fd-v3-a10b4fae-once",
+  "authorization": "GO explicitly approved; Mika serial dispatch; B01 runtime held until completion",
+  "recordedAt": "2026-10-06T11:42:57.918569+00:00",
+  "preparationHead": "99320aa5755ad62718460218f2dfa5eb37b8fa04",
+  "clean": true,
+  "freshClaim": {
+    "claimId": "0dd97484-f0ce-4738-8075-505bd5e2541a",
+    "version": 4,
+    "state": "active",
+    "checkedAt": "2026-10-06T11:42:47.042Z"
+  },
+  "target": "a10b4faedb151805674272e28795fca188639e31",
+  "source": "3636614f3850d7eb9ca63a42c01ea0d95df19db2",
+  "inputSha256": "6d5f6b14d832fe0e853289d58ff3e740391c1ff846ba78afe916892ccab5c442",
+  "manifestSha256": "b07977122645a949d66fcdea7aca312866c202dfddb4443389c22344024d6f10",
+  "budget": {
+    "compileCalls": 1,
+    "targets": 2,
+    "totalMs": 60000,
+    "maxBytes": 2097152,
+    "preparedBytes": 122648,
+    "receiptReserveBytes": 32768,
+    "archiveReserveBytes": 131072
+  },
+  "timeScope": "entry hash through all automatic runtime evidence/cleanup/result/CLI; manual review/Git/archive outside runtime time, actual bytes still inside archive reserve",
+  "entry": "/opt/homebrew/opt/node@24/bin/node experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs --reviewed-fd-window-v3",
+  "constraints": "fresh fixed bindings and absent outputs before one call; no retry/third case/profile changes/Codex/SDK/provider/auth/network/personal service; raw compiler streams local0600 ignored, no raw console/Git"
+}

@@ -133,3 +133,7 @@ GO批准、Mika串行派工 `go-c-fd-v2-851fd8c7-once`，见[运行授权](../..
 ## v3独立准备阶段（当前0实际运行）
 
 [候选](../../docs/evidence/wpf-mature-02/fd-canary-v3/README.md)落实已审两case设计：socket控制后直接regular-file profile对照。父fd身份/regular已核才传递，子负errno仍原样；新增自动compiler清单进入同一clock/receipt，关闭未知保留roots。最终28/28选中、16未选，源3636614f；input预扣122648B。只读独审已APPROVED，真实compile/target0，新运行授权NONE；[具体GO请求](../../docs/evidence/wpf-mature-02/fd-canary-v3/approval-window-request.md)。旧v2 archive的6b快照及c32接收仍固定；本段及B01路由属于新准备阶段，不倒改旧窗口hash/时长。
+
+## v3唯一窗口已获GO许可（本记录提交时未运行）
+
+[授权](../../docs/evidence/wpf-mature-02/fd-canary-v3/run-authorization.json)绑定go-c-fd-v3-a10b4fae-once及a10固定组合；fresh11:42:47 UTC v4 ACTIVE/99320aa5 clean。仅本metadata提交后再核固定源/外部/预约，唯一入口一次。B01运行串行等待本窗口结束。
