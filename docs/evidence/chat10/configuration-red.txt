@@ -1,0 +1,24 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-admission-readiness
+
+ ❯ apps/server/src/active-steering-configuration.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/active-steering-configuration.test.ts [ apps/server/src/active-steering-configuration.test.ts ]
+Error: Cannot find module './active-steering-configuration.js' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/steering-admission-readiness/apps/server/src/active-steering-configuration.test.ts'
+ ❯ apps/server/src/active-steering-configuration.test.ts:2:1
+      1| import { expect, it } from 'vitest';
+      2| import { parseActiveSteeringConfiguration } from './active-steering-co…
+       | ^
+      3| 
+      4| it('enables trusted intake only for the exact opt-in value', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  01:23:00
+   Duration  161ms (transform 20ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

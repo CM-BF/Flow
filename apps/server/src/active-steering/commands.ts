@@ -1,22 +1,30 @@
 import { assertSteeringExecutionProfile } from '../execution-profiles/store.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
-import { MAX_STEERING_COMMANDS_PER_ATTEMPT, steeringSealSchema, type SteeringCommandInput, type SteeringCommandResult, type SteeringReceiptInput, type SteeringSeal, type SteeringSealInput } from '../../../../packages/contracts/src/active-steering.js';
+import { steeringSealSchema, type SteeringCommandInput, type SteeringCommandResult, type SteeringReceiptInput, type SteeringSeal, type SteeringSealInput } from '../../../../packages/contracts/src/active-steering.js';
 import { canonical, HttpError, sha256, transaction } from '../database.js';
 import { commandInTransaction } from '../tasks.js';
 import { appendAudit, assertNoPending, commandColumns, commandReference, conflict, control, liveAttempt, ownerAttempt, type CommandRow } from './storage.js';
+import { commandAdmissionBlock, readCommandAdmission, type CommandAdmissionBlock } from './admission-policy.js';
+
+const admissionErrors: Record<CommandAdmissionBlock, [string, string]> = {
+  'final-exists': ['steering_final_exists', 'This attempt already has a canonical final.'],
+  'limit-reached': ['steering_limit', 'This attempt reached its bounded command limit.'],
+  sealed: ['steering_sealed', 'This attempt is sealed for its final result.'],
+  'stale-revision': ['steering_revision', 'Refresh the steering revision before submitting.'],
+  pending: ['steering_pending', 'An unresolved steering command already exists.'],
+  'unknown-pending': ['steering_pending', 'An unresolved steering command already exists.'],
+};
 
 export async function acceptSteering(pool: Pool, taskId: string, input: SteeringCommandInput, key: string): Promise<SteeringCommandResult> {
   return transaction(pool, async client => {
     const { task, attempt } = await ownerAttempt(client, taskId, input);
     await assertSteeringExecutionProfile(client, task.submission, attempt.runner_id);
     const result = await commandInTransaction(client, `steering.accept:${taskId}`, key, input, async () => {
-      if ((await client.query('SELECT 1 FROM flow.assistant_messages WHERE attempt_id=$1', [attempt.id])).rowCount) conflict('steering_final_exists', 'This attempt already has a canonical final.');
-      const state = await control(client, taskId, attempt.id);
-      if (state.revision >= MAX_STEERING_COMMANDS_PER_ATTEMPT) conflict('steering_limit', 'This attempt reached its bounded command limit.');
-      if (state.seal) conflict('steering_sealed', 'This attempt is sealed for its final result.');
-      if (state.revision !== input.expectedRevision) conflict('steering_revision', 'Refresh the steering revision before submitting.');
-      await assertNoPending(client, attempt.id);
+      const state = await readCommandAdmission(client, attempt.id);
+      const blocked = commandAdmissionBlock(state, input.expectedRevision);
+      if (blocked) conflict(...admissionErrors[blocked]);
+      await control(client, taskId, attempt.id);
       const row = (await client.query<CommandRow>(`INSERT INTO flow.steering_commands(id,task_id,attempt_id,owner_version,native_session_id,revision,user_message_uuid,text,input_digest,status)
         VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,'accepted') RETURNING ${commandColumns}`,
       [randomUUID(), taskId, attempt.id, input.ownerVersion, attempt.native_session_id, state.revision + 1, randomUUID(), input.text, sha256(input.text)])).rows[0]!;

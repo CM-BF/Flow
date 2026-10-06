@@ -1,12 +1,13 @@
 import { readFile } from 'node:fs/promises';
 import type { FastifyInstance } from 'fastify';
 import type { Pool } from 'pg';
-import { steeringCommandSchema, steeringReceiptSchema, steeringPageSchema, steeringStateQuerySchema, steeringMailboxSchema, steeringProposalLookupSchema } from '../../../../packages/contracts/src/active-steering.js';
+import { steeringCommandSchema, steeringReceiptSchema, steeringPageSchema, steeringStateQuerySchema, steeringMailboxSchema, steeringProposalLookupSchema, steeringAdmissionQuerySchema } from '../../../../packages/contracts/src/active-steering.js';
 import { steeringFinalizationSchema } from '../../../../packages/contracts/src/runner.js';
 import { finalizeSteering, steeringMailbox, steeringProposalStatus } from './finalization.js';
 import { HttpError, transaction } from '../database.js';
 import { acceptSteering, recordReceipt } from './commands.js';
 import { steeringAudit, steeringState, steeringText } from './queries.js';
+import { steeringAdmission } from './admission.js';
 export { sealForFinal } from './commands.js';
 export async function migrateActiveSteering(pool: Pool): Promise<void> {
   await transaction(pool, async client => {
@@ -23,6 +24,11 @@ function parse<T>(schema: { safeParse(value: unknown): { success: true; data: T 
   return result.data;
 }
 export function registerActiveSteeringRoutes(app: FastifyInstance, pool: Pool, options: { acceptCommands?: boolean } = {}): void {
+  app.get<{ Params: { id: string } }>('/api/tasks/:id/steering/admission', (request, reply) => {
+    reply.header('Cache-Control', 'no-store');
+    const query = parse(steeringAdmissionQuerySchema, request.query);
+    return steeringAdmission(pool, request.params.id, options.acceptCommands === true, query.attemptId);
+  });
   app.post<{ Params: { id: string } }>('/api/tasks/:id/steering', async (request, reply) => {
     if (!options.acceptCommands) throw new HttpError(409, 'steering_unsupported', 'Active steering intake is not enabled.');
     const key = request.headers['idempotency-key'];
