@@ -1,3 +1,4 @@
+import type { ConversationCreation, ConversationCreated, ConversationList, ConversationSnapshot, ConversationTurnAdmission, ConversationTurnAccepted, ConversationTurnPage } from '@flow/contracts';
 import type { AcceptedTask, ClaimResponse, DecisionAnswer, Detail, EventAcknowledgement, EventBatch, EventPage, HeartbeatResponse, Ownership, RegisterRunner, RunnerRegistration, TaskList, TaskSnapshot, TaskSubmission, TaskSummary } from '@flow/contracts';
 import type { ReconciliationObservation, ReconciliationResolution, ReconciliationResult, ReconciliationRetry, ReconciliationRetryResult, ReconciliationView } from '@flow/contracts';
 import type { ProtocolPrepare, ProtocolCommand, ProtocolBind, ProtocolUncertain, ProtocolState, ProtocolDispatchPermit, ProtocolRecoverResponse } from '@flow/contracts';
@@ -73,6 +74,29 @@ export class FlowClient {
     const query = new URLSearchParams({ nodeId: options.nodeId });
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
     return this.request(`/api/goals/${encodeURIComponent(id)}/executions?${query}`, { signal });
+  }
+
+  createConversation(input: ConversationCreation, key: string, signal?: AbortSignal): Promise<ConversationCreated> {
+    return this.request('/api/conversations', { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  conversations(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationList> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/conversations${query.size ? `?${query}` : ''}`, { signal });
+  }
+  conversation(id: string, signal?: AbortSignal): Promise<ConversationSnapshot> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}`, { signal });
+  }
+  conversationTurns(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationTurnPage> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/turns${query.size ? `?${query}` : ''}`, { signal });
+  }
+  submitConversationTurn(id: string, input: ConversationTurnAdmission, key: string, signal?: AbortSignal): Promise<ConversationTurnAccepted> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/turns`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
+  }
+  conversationDetail(id: string, turnId: string, detailId: string, signal?: AbortSignal): Promise<Detail> {
+    return this.request(`/api/conversations/${encodeURIComponent(id)}/turns/${encodeURIComponent(turnId)}/details/${encodeURIComponent(detailId)}`, { signal });
   }
 
   queryTasks(options: TaskIndexQuery = {}, signal?: AbortSignal): Promise<TaskIndexPage> {
