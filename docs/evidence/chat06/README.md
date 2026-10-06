@@ -1,6 +1,6 @@
 # CHAT06 持久助手正文流证据
 
-固定实现 **5ff8880b3518992121216998c169dd01ab44cee0**，base79d6204e4a5781a7041a1545a7424513feaccdae，已受控合入main115b/acfd依赖。此交付是SDK adapter→既有durable outbox→真实PG→owner HTTP的零模型片段；**没有实际provider请求、云调用、Web页面验收或现服务操作**。独立review尚未开始。
+固定实现 **5ff8880b3518992121216998c169dd01ab44cee0**，base79d6204e4a5781a7041a1545a7424513feaccdae，已受控合入main115b/acfd依赖。此交付是SDK adapter→既有durable outbox→真实PG→owner HTTP的零模型片段；**没有实际provider请求、云调用、Web页面验收或现服务操作**。Root已独立只读APPROVED该实现；[正式review](../../../plans/chat06-assistant-stream/review.md)记录核对范围，未重跑检查。main/生产挂载仍待Lead接收。
 
 ## 行为与读取
 
@@ -31,7 +31,7 @@ SDKResult没有nativeMessageId关联字段，本片**不声称provider一一对�
 
 三种SDK闭环均在result前通过owner HTTP读到文字；success保留两个独立工具前text message，并由canonical final结算工具后的draft（final正文故意不同）；failure/cancel不制造final。两次ACK丢失窗口在保存前/后分别终止runner并重启中心，再由原outbox恢复，不再次调用注入SDK。SDK query均为注入函数，不能冒充真实provider验收。
 
-小型传输样例：[wire-bytes.json](wire-bytes.json)。98,304正文bytes，12patch，持久文字98,304bytes、持久patch JSON104,866bytes，owner两页JSON共107,220bytes。重连cursor后返回空页；未反复传递增长全文。数值仅为本例**逻辑JSON bytes**，不含PG WAL/磁盘物理写放大、HTTP/TLS封套或provider流量；不作吞吐/费用/首token声明。服务端prefix完整性校验会读取有界历史，未做容量优化。
+小型传输样例：[wire-bytes.json](wire-bytes.json)。98,304正文bytes，12patch，持久文字98,304bytes、持久patch JSON104,866bytes，owner两页JSON共107,220bytes。重连cursor后返回空页；未反复传递增长全文。数值仅为本例**逻辑JSON bytes**，不含PG WAL/磁盘物理写放大、HTTP/TLS封套或provider流量；不作吞吐/费用/首token声明。服务端每patch重读并重哈希已有prefix，累计DB读取为O(n²)，未做容量优化；Root列为REQ15/17非阻断后继（CHAT06-07），本样例不能证明DB容量。
 
 初始红：[mapper-red.txt](mapper-red.txt)为公开空实现返回空，HTTP红为原事件入口400 unsupported_event。后续[boundary-red.txt](boundary-red.txt)、[integrity-red.txt](integrity-red.txt)分别定位迟到aborted/不一致schema、缺完整块及持久patch篡改读取。原输出保留；checks-first64与checks-before-integrity-refinement70是中间阶段，不替代最终72。中间typecheck-first有测试UUID类型比较错误，已修，不删原记录。旧CHAT05的85条未重跑。
 
