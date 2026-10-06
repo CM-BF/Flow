@@ -1,0 +1,77 @@
+{
+  "purpose": "first static C fd source/profile/schema and bounded one-shot execution design; no compile/target/driver",
+  "recordedAt": "2026-10-06T10:46:29.238710+00:00",
+  "claimId": "0dd97484-f0ce-4738-8075-505bd5e2541a",
+  "claimVersion": 4,
+  "files": [
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/fd-canary.c",
+      "bytes": 3712,
+      "sha256": "b0a7eea8cbc5354c8966cf4e1573114e9a2c41899f04bae01577d9b5af055917"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/candidate.sb",
+      "bytes": 6508,
+      "sha256": "fc8b5af386b2ea12208f565531d3dcbc94a671ba6d6e5840194abb4cd2681739"
+    },
+    {
+      "path": "experiments/codex-app-server-conformance/fd-canary/report.schema.json",
+      "bytes": 14433,
+      "sha256": "e10a048a368fc114657d87de2dd353034912b07a074f394f238d77f68dbdbb67"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/contract.md",
+      "bytes": 3501,
+      "sha256": "27651852243d067063713c1ba45d3363184c98e2b79ba7e1b0287827538e15da"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/execution-plan.md",
+      "bytes": 7102,
+      "sha256": "612d2523d0dd50fe3733f289a67392c02cd06a119af9d6d9cf7ff48fcb05c392"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/static-checks.json",
+      "bytes": 579,
+      "sha256": "cdfa36cbe41fe0da82c8060ce1e7887b6d2dc7f02cc868f28c012f97a28184a9"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02/fd-canary/toolchain-static-inputs.json",
+      "bytes": 1055,
+      "sha256": "030be709bcde5335ba41fd75d8b4399143c1b291c25ec559586b2d307464ea45"
+    }
+  ],
+  "frozenProfile": {
+    "target": "7297986fbc879bb5040879daf97c7d5bb8b657ac",
+    "path": "experiments/codex-app-server-conformance/isolation/default-deny.sb",
+    "bytes": 6252,
+    "sha256": "b050b371c0739f8081a26fd3e4df27487075fdd6b0adee0107da05b12e1ef779"
+  },
+  "toolchainInputs": [
+    {
+      "path": "/Library/Developer/CommandLineTools/usr/bin/clang",
+      "bytes": 269112240,
+      "sha256": "bcac6febe0148c3696bd3f7c42fb5bb475720fee4a1412de56e3b16ea1c04e5f"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/usr/bin/ld",
+      "bytes": 4616992,
+      "sha256": "f72642cacf25674cb1558893908e99ef5ef396e7510ac447ba3bb52fc2a3fae1"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/SDKSettings.json",
+      "bytes": 7529,
+      "sha256": "7a2223423d955944a74542b8a72fda83cf970fa30749ba305fa904451f3a16c1"
+    },
+    {
+      "path": "/usr/bin/sandbox-exec",
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a"
+    }
+  ],
+  "executionState": {
+    "compilations": 0,
+    "syntheticTargetStarts": 0,
+    "driver": "NOT_IMPLEMENTED",
+    "window": "NOT_OPEN"
+  }
+}

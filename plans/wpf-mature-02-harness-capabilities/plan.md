@@ -63,3 +63,8 @@ WPF-MATURE-02-03唯一新诊断batch已在Mika窗口中执行并封存：控制�
 ## WPF-MATURE-02-04 versioned 配置目录独立片段
 
 按[固定f181最小设计](../../docs/evidence/wpf-mature-02/native-catalog-seam.md)推进原生已配置profile的新reader与显式conversation unsupported；不等待真实目录探针。建议精确header+新DTO/新client method，legacy Claude-only、配置canonical bytes与admission保持。共享Lead分配contracts/server领域/F01 client精确路径后实施；不新建第三层task、不开provider、不扩大本owner原claim。直接验收覆盖strict合同、旧读者隔离、SQL-before-limit分页、坏数据/撤销、安全client协议失败与Codex会话拒绝。当前仅设计，不把它记为02完整能力已交付。
+
+
+## WPF-MATURE-02-03 最小C文件描述符对照
+
+新的独立授权上限为一次必要编译调用及其如实列明子命令、最多三个合成目标、同一60秒含清理/末次持久化、2MiB含binary/object等已量输出。旧窗口/失败证据不动，不重试。当前只交[C源码与一页合同](../../docs/evidence/wpf-mature-02/fd-canary/contract.md)，先控制socket、同profile socket、同profile普通file，只测自身fstat/fcntl；profile仅追加自有binary literal，无真实Node/Codex/provider/auth/网络探测。固定source和最薄host组合独审后由Mika安排串行窗口。当前0编译/0目标、host未实现；这不满足实际catalog或隔离验收。

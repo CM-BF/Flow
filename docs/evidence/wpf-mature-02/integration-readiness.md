@@ -28,3 +28,6 @@ R06五源在本记录安全点逐字等于077固定Git；字节与SHA如下，�
 ## 原生配置目录独立接收（2026-10-06 10:37:43 UTC）
 
 固定生产target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22`，status_read/gpt-6-astra于10:35:37 UTC独审APPROVED，Mika复核接收，0P1/P2。[目录manifest](native-catalog/manifest.json)42项逐字匹配；33 distinct分次行为证据与strict0，不是一次33/33、review未重跑。精确路径：packages/contracts/src/execution-profiles.ts及.test.ts，apps/server/src/execution-profiles/store.ts、index.ts、native-catalog.test.ts。生产合同/reader/routes可独立接收；client未接线，configured/not-probed不代表真实Codex/普通会话可用。非阻断test-only CREATE ACK清理修复另[delta](native-catalog/ack-cleanup/README.md)，不重写原target证据；Lead将共享接缝收窄为store.ts单路径：已停写并v4 amend移除，见[COMMITTED部分交回回执](catalog-store-partial-handback.json)。其余四目录路径、R06五源和本task证据继续保留，不代写ENG01B publication新文件。
+
+
+P3 test-only delta a761941fce5b2b6dd12d8c974c6d2c7e51894628于2026-10-06 10:39:53 UTC由status_read/gpt-6-astra独审APPROVED；manifest2968c67361df3679b01b86c6d8b7b3848e11186414e58b8577130881efa0fb0d全部14项匹配、4不变输入=c9，1定向/strict0可信，未重跑原33。生产target仍c9；store.ts交回v4已完成，其余scope仍保留。

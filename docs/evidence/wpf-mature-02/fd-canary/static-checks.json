@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-06T10:46:29.238710+00:00",
+  "checks": {
+    "candidatePreservesFrozenProfilePrefix": true,
+    "onlyNewGrantExactCanaryLiteral": true,
+    "schemaJsonDecodedAndFiveRecordShape": true,
+    "immediateErrnoPreservationSourceRead": true,
+    "reportFdBelowThreeRejected": true,
+    "failedCallCannotHaveZeroErrnoInSchema": true
+  },
+  "compilations": 0,
+  "targetStarts": 0,
+  "cSyntaxValidation": "NOT_RUN",
+  "sbplCompile": "NOT_RUN",
+  "dynamicSyscallValidation": "NOT_RUN",
+  "driver": "NOT_IMPLEMENTED; fixed input/source review required before execution"
+}

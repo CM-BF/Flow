@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:39:02 UTC / 2026-10-06 10:26:02 UTC（main41315b受控merge944780d已完成） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:41:00 UTC / 2026-10-06 10:26:02 UTC（main41315b受控merge944780d已完成） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -13,18 +13,18 @@
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / c9c6e891003af2fc52ca77b0c4527d6d85e20e22（目录实现；metadata HEAD由Git核） |
 | 工作树dirty状态 | c9c6e891003af2fc52ca77b0c4527d6d85e20e22 clean时核；随后test-only清理delta与metadata更新，提交后由Git核clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 检查状态 | CATALOG_LOCAL_PASS（33 distinct/strict0，分次证据）；DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
-| 已集成main状态 / HEAD | R06五源/薄consumer仍待Lead集成；只读main41315b含R05D四源，尚无optional sink；本树已受控合入main41315b |
+| 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源/薄consumer仍待Lead集成；不代表个人服务部署 |
 | 实现目标 | c9c6e891003af2fc52ca77b0c4527d6d85e20e22 |
 | 实现范围 | 当前目录精确5文件/局部验证配置/本task计划证据；R06历史5文件已审保持不变 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 原生配置目录已通过独立审查，可交付集成；明确显示Codex尚不支持普通会话，旧目录保持兼容。 |
-| 下一可用交付 | 完成测试资源清理小修的短复审；共享存储路径已交回，client接线待共享owner。 |
+| 当前产出 | 原生配置目录已集成main，旧目录保持兼容；最小文件描述符诊断源码已准备，尚未编译或运行。 |
+| 下一可用交付 | 审查最小C诊断源码与运行合同，再实现有界执行器；client接线待共享owner。 |
 | 当前阻塞 | ACTIVE: 原profile canary仍SIGABRT且无有效七项报告，实际Codex目录验证停止；父管道空stderr不能定位原因。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：目录c9c6e891 APPROVED；test-only清理delta待短复审；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
+| Review | [review.md](review.md)：目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 目录Module新增versioned reader/严格DTO，既有挂载与存储不变；R06历史private sink已审，process owner不变。最终target架构更新待Mika/ExecutionLead集成。 |
 
@@ -95,3 +95,9 @@ WPF-MATURE-02-03新增独立诊断阶段：最多3次自有合成子进程，总
 目录首实现已通过33 distinct行为检查与strict0，见[native-catalog报告](../../docs/evidence/wpf-mature-02/native-catalog/README.md)。7合同、9真实PG/HTTP（8先绿+Host修正后1单验）、17旧消费者，所有未选中数/早期setup失败留档。源码交审中，未触client/index、descriptor/runner启动、server/contracts全局index或migration。架构影响为已挂载目录Module新增versioned reader/DTO，待Lead按最终source更新dashboard架构基线；不是实际模型或账户探测。
 
 目录独审接收：status_read/gpt-6-astra，2026-10-06 10:35:37 UTC，固定c9c6e891，0P1/P2，42manifest全部匹配；Mika复核通过。非阻断P3仅测试夹具未知CREATE ACK清理，当前已修并单选1项真实PG/注入丢ACK检查通过、9旧项未选、strict0；旧生产/33证据冻结。见[delta](../../docs/evidence/wpf-mature-02/native-catalog/ack-cleanup/README.md)，后续Lead已收窄为store.ts单路径，已停写并v4原子移除；其余四目录路径继续保留。见[COMMITTED回执](../../docs/evidence/wpf-mature-02/catalog-store-partial-handback.json)，不释放02其他scope。
+
+P3 delta固定a761941fce5b2b6dd12d8c974c6d2c7e51894628已由status_read/gpt-6-astra于2026-10-06 10:39:53 UTC独审APPROVED，原P3关闭，0P1/P2；14manifest条全部匹配、4输入=c9，review未重跑。store.ts交回已COMMITTED v4，其余scope保留。WPF-MATURE-02-03新增最小C诊断候选，独立新额度最多3个合成目标+1次必要编译调用、总60秒含清理/持久化、证据2MiB；当前只准备源码/合同，0编译/0目标启动，固定source独审及Mika串行窗口前禁止执行，旧raw/profile/失败不动。
+
+目录main事实：只读核main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b与其i02/native-catalog-integration receipt，4源码=c9/测试=a761，见[接收证据](../../docs/evidence/wpf-mature-02/native-catalog/main-accepted.json)。目录本片delivered，33+1复用，无重测；完整02的client/Web/真实目录/账号/设置等TODO仍开放。
+
+当前后继为[最小C诊断一页合同](../../docs/evidence/wpf-mature-02/fd-canary/contract.md)与source manifest，静态source准备交审。预算最多3目标/1编译/总60秒/2MiB含自有binary/object等；0编译/0目标，host未实现，无运行窗口。架构不改生产transport，不复制JSONRPC/agent loop；固定source与后继最薄host需整体独审后才执行。

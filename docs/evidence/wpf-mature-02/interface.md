@@ -5,7 +5,11 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 ## Lead待输入
 
 - [04权威center-store请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/center-store-request.md)：请分配唯一migration号与DDL owner，解锁真实PG验证；04 owner建议负责DDL及同Module migration函数。这里仅路由请求，进度仍见04权威status。
-- 本目录生产target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22` 已独审APPROVED，client接线待共享owner。[集成输入](integration-readiness.md)。已停止写入唯一共享store.ts并完成[部分交回COMMITTED回执](catalog-store-partial-handback.json)（v4，10:39:02.809 UTC）；[停写与固定source](catalog-store-stopped.json)。ENG01B/Lead可take该单一路径，其他四个目录路径仍由本owner保留，P3测试delta独立短复审。
+- 本目录生产target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22` 已独审APPROVED，client接线待共享owner。[集成输入](integration-readiness.md)。已停止写入唯一共享store.ts并完成[部分交回COMMITTED回执](catalog-store-partial-handback.json)（v4，10:39:02.809 UTC）；[停写与固定source](catalog-store-stopped.json)。ENG01B/Lead可take该单一路径，其他四个目录路径仍由本owner保留，P3测试delta a761941f已于10:39:53 UTC独审APPROVED。
+
+目录已通过main固定 `21e0a56c4b2b65a04a1e8d510a9d132e77c3894b` 接收：本owner只读逐blob核4源=c9、测试=a761，见[main接收核验](native-catalog/main-accepted.json)；复用33+1证据，未重测，不代表个人服务已部署，也未包含R06 stderr/诊断。
+
+**当前03最小C诊断候选：** [一页合同](fd-canary/contract.md) / [source manifest](fd-canary/manifest.json)。仅C/schema/profile与有限执行设计，0编译/0目标启动，host未实现，窗口未开放；固定组合独审后Mika串行安排。旧失败原因仍unknown，三目标只观察自身fd metadata，不做Node/JSONRPC/provider或网络探针。
 
 ## 首片可独立实现
 
@@ -186,3 +190,6 @@ R05D接入依赖：已只读核[main41315b四源接收](r05d-dependency.json)等
 共享接收指针：[S01P03 integration-ready](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop/docs/evidence/s01p03/integration-ready.md)及[权威status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop/plans/s01-graceful-stop/status.md)。这里只指向owner交付，时间/进度由该处维护。
 
 目录固定实现target `c9c6e891003af2fc52ca77b0c4527d6d85e20e22`，status_read / gpt-6-astra于2026-10-06 10:35:37 UTC独审APPROVED，0 P1/P2，Mika接收；manifest只绑定此source。33 distinct分次证据与strict0未重跑。原R06五源/薄consumer仍独立已审待Lead集成；目录配置事实不证明provider可用，client未接线。非阻断test-only清理delta见native-catalog/ack-cleanup，store.ts已按收窄协调v4单路径交回，其他四目录路径保留。
+
+
+P3 test-only delta `a761941fce5b2b6dd12d8c974c6d2c7e51894628` 已由status_read/gpt-6-astra于2026-10-06 10:39:53 UTC独审APPROVED，原问题关闭；只有1项定向检查与strict0，原c9生产33证据不变。共享store.ts已通过页首v4 receipt交回，其他四目录路径/R06/本task证据保留；不恢复store写入。S01P03当前main接收/释放只查[权威status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-graceful-stop/plans/s01-graceful-stop/status.md)及其receipt，不在02复制进度。

@@ -1,0 +1,579 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:flow:fd-canary:v1:decoded-report",
+  "description": "Host decodes exactly five bounded JSONL records after verifying owned regular file and <=4096 bytes. Nonce/PID binding is a host check. Incomplete files are diagnostics, never complete reports.",
+  "type": "array",
+  "minItems": 5,
+  "maxItems": 5,
+  "prefixItems": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record",
+        "protocol",
+        "nonce",
+        "pid"
+      ],
+      "properties": {
+        "record": {
+          "const": "start"
+        },
+        "protocol": {
+          "const": "flow.fd-canary.v1"
+        },
+        "nonce": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{32}$"
+        },
+        "pid": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record",
+        "fd",
+        "fstat",
+        "fcntl"
+      ],
+      "properties": {
+        "record": {
+          "const": "fd"
+        },
+        "fd": {
+          "const": 0
+        },
+        "fstat": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "kind",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "errno": {
+                  "type": "null"
+                },
+                "kind": {
+                  "enum": [
+                    "socket",
+                    "fifo",
+                    "regular",
+                    "character",
+                    "other"
+                  ]
+                },
+                "result": {
+                  "const": 0
+                },
+                "errnoNumber": {
+                  "const": 0
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "kind",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "errno": {
+                  "enum": [
+                    "EPERM",
+                    "EACCES",
+                    "EBADF",
+                    "EINTR",
+                    "OTHER"
+                  ]
+                },
+                "kind": {
+                  "const": "unknown"
+                },
+                "result": {
+                  "const": -1
+                },
+                "errnoNumber": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 2147483647
+                }
+              }
+            }
+          ]
+        },
+        "fcntl": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "access",
+                "nonblocking",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "errno": {
+                  "type": "null"
+                },
+                "access": {
+                  "enum": [
+                    "read-only",
+                    "write-only",
+                    "read-write",
+                    "unknown"
+                  ]
+                },
+                "nonblocking": {
+                  "type": "boolean"
+                },
+                "result": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 2147483647
+                },
+                "errnoNumber": {
+                  "const": 0
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "access",
+                "nonblocking",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "errno": {
+                  "enum": [
+                    "EPERM",
+                    "EACCES",
+                    "EBADF",
+                    "EINTR",
+                    "OTHER"
+                  ]
+                },
+                "access": {
+                  "const": "unknown"
+                },
+                "nonblocking": {
+                  "type": "null"
+                },
+                "result": {
+                  "const": -1
+                },
+                "errnoNumber": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 2147483647
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record",
+        "fd",
+        "fstat",
+        "fcntl"
+      ],
+      "properties": {
+        "record": {
+          "const": "fd"
+        },
+        "fd": {
+          "const": 1
+        },
+        "fstat": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "kind",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "errno": {
+                  "type": "null"
+                },
+                "kind": {
+                  "enum": [
+                    "socket",
+                    "fifo",
+                    "regular",
+                    "character",
+                    "other"
+                  ]
+                },
+                "result": {
+                  "const": 0
+                },
+                "errnoNumber": {
+                  "const": 0
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "kind",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "errno": {
+                  "enum": [
+                    "EPERM",
+                    "EACCES",
+                    "EBADF",
+                    "EINTR",
+                    "OTHER"
+                  ]
+                },
+                "kind": {
+                  "const": "unknown"
+                },
+                "result": {
+                  "const": -1
+                },
+                "errnoNumber": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 2147483647
+                }
+              }
+            }
+          ]
+        },
+        "fcntl": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "access",
+                "nonblocking",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "errno": {
+                  "type": "null"
+                },
+                "access": {
+                  "enum": [
+                    "read-only",
+                    "write-only",
+                    "read-write",
+                    "unknown"
+                  ]
+                },
+                "nonblocking": {
+                  "type": "boolean"
+                },
+                "result": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 2147483647
+                },
+                "errnoNumber": {
+                  "const": 0
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "access",
+                "nonblocking",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "errno": {
+                  "enum": [
+                    "EPERM",
+                    "EACCES",
+                    "EBADF",
+                    "EINTR",
+                    "OTHER"
+                  ]
+                },
+                "access": {
+                  "const": "unknown"
+                },
+                "nonblocking": {
+                  "type": "null"
+                },
+                "result": {
+                  "const": -1
+                },
+                "errnoNumber": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 2147483647
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record",
+        "fd",
+        "fstat",
+        "fcntl"
+      ],
+      "properties": {
+        "record": {
+          "const": "fd"
+        },
+        "fd": {
+          "const": 2
+        },
+        "fstat": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "kind",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "errno": {
+                  "type": "null"
+                },
+                "kind": {
+                  "enum": [
+                    "socket",
+                    "fifo",
+                    "regular",
+                    "character",
+                    "other"
+                  ]
+                },
+                "result": {
+                  "const": 0
+                },
+                "errnoNumber": {
+                  "const": 0
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "kind",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "errno": {
+                  "enum": [
+                    "EPERM",
+                    "EACCES",
+                    "EBADF",
+                    "EINTR",
+                    "OTHER"
+                  ]
+                },
+                "kind": {
+                  "const": "unknown"
+                },
+                "result": {
+                  "const": -1
+                },
+                "errnoNumber": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 2147483647
+                }
+              }
+            }
+          ]
+        },
+        "fcntl": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "access",
+                "nonblocking",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "errno": {
+                  "type": "null"
+                },
+                "access": {
+                  "enum": [
+                    "read-only",
+                    "write-only",
+                    "read-write",
+                    "unknown"
+                  ]
+                },
+                "nonblocking": {
+                  "type": "boolean"
+                },
+                "result": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 2147483647
+                },
+                "errnoNumber": {
+                  "const": 0
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "ok",
+                "errno",
+                "access",
+                "nonblocking",
+                "result",
+                "errnoNumber"
+              ],
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "errno": {
+                  "enum": [
+                    "EPERM",
+                    "EACCES",
+                    "EBADF",
+                    "EINTR",
+                    "OTHER"
+                  ]
+                },
+                "access": {
+                  "const": "unknown"
+                },
+                "nonblocking": {
+                  "type": "null"
+                },
+                "result": {
+                  "const": -1
+                },
+                "errnoNumber": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 2147483647
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record",
+        "count"
+      ],
+      "properties": {
+        "record": {
+          "const": "complete"
+        },
+        "count": {
+          "const": 3
+        }
+      }
+    }
+  ],
+  "items": false
+}

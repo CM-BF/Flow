@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-06T10:44:29.809841+00:00",
+  "method": "read bytes/stat only; no compiler/version/linker or target invocation",
+  "compilerVersion": "NOT_OBSERVED; record during the sole authorized compile",
+  "sdkBinding": "SDKSettings metadata only; not a hash inventory of every SDK header",
+  "inputs": [
+    {
+      "path": "/Library/Developer/CommandLineTools/usr/bin/clang",
+      "bytes": 269112240,
+      "sha256": "bcac6febe0148c3696bd3f7c42fb5bb475720fee4a1412de56e3b16ea1c04e5f"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/usr/bin/ld",
+      "bytes": 4616992,
+      "sha256": "f72642cacf25674cb1558893908e99ef5ef396e7510ac447ba3bb52fc2a3fae1"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/SDKSettings.json",
+      "bytes": 7529,
+      "sha256": "7a2223423d955944a74542b8a72fda83cf970fa30749ba305fa904451f3a16c1"
+    },
+    {
+      "path": "/usr/bin/sandbox-exec",
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a"
+    }
+  ]
+}
