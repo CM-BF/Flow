@@ -1,6 +1,6 @@
 # WPF-MATURE-02 Claude与Codex能力贯通
 
-状态：in-progress。创建/更新：2026-10-06 09:01:08 UTC。阶段M2。单一owner chatui01_owner / gpt-6-astra；co-lead mika。
+状态：in-progress。创建：2026-10-06 09:01:08 UTC；更新：2026-10-06 09:11:30 UTC。阶段M2。单一owner chatui01_owner / gpt-6-astra；co-lead mika。
 
 ## 完整目标
 
@@ -12,20 +12,22 @@ Claude与Codex可被发现、选择和运行；model/thinking/fast/access从中�
 
 ## 已确认方案与首个独立片段
 
-先在独立实验scope实现有界RPC consumer、模型目录归一化与普通final事件conformance，通过注入本地确定性transport跨同一Interface验证，不启动真实Codex、不读个人CODEX_HOME/凭据、不发网络/模型请求。固定schema而非latest文档决定本机字段；ReasoningEffort保留返回字符串，serviceTiers/id保持公开目录值，不发明fast枚举。serviceTier持续thread覆盖与serviceTierForTurn本turn覆盖分别记录，默认/继承不混淆。
+先在独立实验scope实现语义consumer、模型目录归一化与普通final事件conformance，通过注入本地确定性的已解码request结果/notification验证，不启动真实Codex、不读个人CODEX_HOME/凭据、不发网络/模型请求。固定schema而非latest文档决定本机字段；ReasoningEffort保留返回字符串，serviceTiers/id保持公开目录值，不发明fast枚举。serviceTier持续thread覆盖与serviceTierForTurn本turn覆盖分别记录，默认/继承不混淆。
 
-首片Interface：初始化握手、限页数/字节/并发/超时的model/list消费；正常final与failed/interrupted分开；EOF、未知id、坏JSON和超界fail-closed。transport seam由外部注入，实验不拥有host lifecycle、auth或生产profile发布。目录的accountAvailability固定unknown/unverified，实际配置需后继执行证据。
+首片Interface：caller等待R06 ready后，限页数/decoded字节/目录总数的model/list消费；正常final与failed/interrupted分开；错误身份、未知phase和超界拒绝。request/receive seam由R06提供并外部注入；初始化握手、EOF、未知RPC id、坏JSON、并发、超时和资源关闭归R06，实验不拥有host lifecycle、auth或生产profile发布。目录的accountAvailability固定unknown/unverified，实际配置需后继执行证据。
 
 ## TODO与验收
 
 - [x] WPF-MATURE-02-01：独立树/领取、完整计划、固定schema与技能来源登记。
-- [ ] WPF-MATURE-02-02：零模型bounded RPC、目录/effort/service-tier归一化和ordinary final合规片段；确定性故障检查与固定manifest。
+- [x] WPF-MATURE-02-02：零模型语义consumer、目录/effort/service-tier归一化和ordinary final合规片段；确定性故障检查与固定manifest。
 - [ ] WPF-MATURE-02-03：提交隔离真实app-server initialize/model-list方案，Mika审运行路径后才执行0query探针；不得turn/start/auth/login。
 - [ ] WPF-MATURE-02-04：对齐R05共享合同，贯通中心/runner模型consumer；需要正式scope与稳定合同后实施。
 - [ ] WPF-MATURE-02-05：d01 Web选择、requested/actual/unsupported/unknown透明，thinking/fast/access独立语义验收。
 - [ ] WPF-MATURE-02-06：账号状态、Claude/Codex续接、错误/取消/恢复，真实边界证据；执行许可另定。
 - [ ] WPF-MATURE-02-07：独立review、每个小target及时commit/push/main集成与架构基线更新。
 - [ ] WPF-MATURE-02-08：按完整跨端验收矩阵验收；不以目录或fixture替代真正模型运行。
+
+- [ ] WPF-MATURE-02-09：同harness空闲会话支持下一条设置变更；CAS/unknown ACK/恢复可追溯，历史/当前/入队配置冻结，跨harness路径明确，新选择使04测量失效。
 
 ## 依赖与交接
 
@@ -37,7 +39,7 @@ Claude与Codex可被发现、选择和运行；model/thinking/fast/access从中�
 
 ## 模块职责与设计规则
 
-统一遵循[仓库modular-design](/Users/citrine/Projects/AgentHarness/Flow/AGENTS.md#modular-design)，不复制独立规则。目录归一Module隐藏raw catalogue语义；RPC Module只管bounded framing/关联/顺序/释放；普通final Module只管同thread/turn/item完成证据，不管任务调度/权限/进程。生产transport/adapter由ExecutionLead的runner worker实现；R05 owner负责中心profile/policy/session/final，Web d01消费正式合同。本实验不持有上述状态。
+统一遵循[仓库modular-design](/Users/citrine/Projects/AgentHarness/Flow/AGENTS.md#modular-design)，不复制独立规则。目录归一Module隐藏raw catalogue语义；R06独占Module负责JSONL/stdio/ID/背压/timeout/child生命周期，本consumer不重复；普通final Module只管同thread/turn/item完成证据，不管任务调度/权限/进程。生产transport/adapter由ExecutionLead的runner worker实现；R05 owner负责中心profile/policy/session/final，Web d01消费正式合同。本实验不持有上述状态。
 
 ## 验证与架构
 

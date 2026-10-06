@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: catalog choices preserve native strings, separate effort/speed and never assert entitlement
+ok 1 - catalog choices preserve native strings, separate effort/speed and never assert entitlement
+  ---
+  duration_ms: 2.22075
+  type: 'test'
+  ...
+# Subtest: omission, explicit null and turn-only default survive without inferred persistent-null semantics
+ok 2 - omission, explicit null and turn-only default survive without inferred persistent-null semantics
+  ---
+  duration_ms: 0.371417
+  type: 'test'
+  ...
+# Subtest: catalog rejects duplicate choices, oversized UTF8 and malformed cursor; absent default option grants nothing
+ok 3 - catalog rejects duplicate choices, oversized UTF8 and malformed cursor; absent default option grants nothing
+  ---
+  duration_ms: 0.596667
+  type: 'test'
+  ...
+# Subtest: ready caller seam walks exact cursors and only publishes a complete bounded catalog
+ok 4 - ready caller seam walks exact cursors and only publishes a complete bounded catalog
+  ---
+  duration_ms: 0.267416
+  type: 'test'
+  ...
+# Subtest: catalog rejects cursor loop
+ok 5 - catalog rejects cursor loop
+  ---
+  duration_ms: 0.153625
+  type: 'test'
+  ...
+# Subtest: catalog rejects duplicate identity across pages
+ok 6 - catalog rejects duplicate identity across pages
+  ---
+  duration_ms: 0.108
+  type: 'test'
+  ...
+# Subtest: catalog rejects page overflow
+ok 7 - catalog rejects page overflow
+  ---
+  duration_ms: 0.076833
+  type: 'test'
+  ...
+# Subtest: catalog rejects total model overflow
+ok 8 - catalog rejects total model overflow
+  ---
+  duration_ms: 0.113333
+  type: 'test'
+  ...
+# Subtest: catalog rejects response exceeds requested page size
+ok 9 - catalog rejects response exceeds requested page size
+  ---
+  duration_ms: 0.101
+  type: 'test'
+  ...
+# Subtest: catalog rejects decoded byte overflow
+ok 10 - catalog rejects decoded byte overflow
+  ---
+  duration_ms: 3.108958
+  type: 'test'
+  ...
+# Subtest: unknown RPC delivery propagates once without retry or partial-success catalog
+ok 11 - unknown RPC delivery propagates once without retry or partial-success catalog
+  ---
+  duration_ms: 0.189459
+  type: 'test'
+  ...
+# Subtest: invalid bounds reject before using transport
+ok 12 - invalid bounds reject before using transport
+  ---
+  duration_ms: 0.4575
+  type: 'test'
+  ...
+# Subtest: ordinary final requires completed item plus matching successful terminal; hashes retain all native identities
+ok 13 - ordinary final requires completed item plus matching successful terminal; hashes retain all native identities
+  ---
+  duration_ms: 1.415125
+  type: 'test'
+  ...
+# Subtest: full terminal item is cross-checked; last commentary never replaces explicit final
+ok 14 - full terminal item is cross-checked; last commentary never replaces explicit final
+  ---
+  duration_ms: 1.610459
+  type: 'test'
+  ...
+# Subtest: unknown phase cannot yield ordinary final
+ok 15 - unknown phase cannot yield ordinary final
+  ---
+  duration_ms: 0.088167
+  type: 'test'
+  ...
+# Subtest: ambiguous finals cannot yield ordinary final
+ok 16 - ambiguous finals cannot yield ordinary final
+  ---
+  duration_ms: 0.077833
+  type: 'test'
+  ...
+# Subtest: only commentary cannot yield ordinary final
+ok 17 - only commentary cannot yield ordinary final
+  ---
+  duration_ms: 0.059167
+  type: 'test'
+  ...
+# Subtest: no completed item cannot yield ordinary final
+ok 18 - no completed item cannot yield ordinary final
+  ---
+  duration_ms: 0.044708
+  type: 'test'
+  ...
+# Subtest: async delivery cannot yield ordinary final
+ok 19 - async delivery cannot yield ordinary final
+  ---
+  duration_ms: 0.058417
+  type: 'test'
+  ...
+# Subtest: interactive question cannot yield ordinary final
+ok 20 - interactive question cannot yield ordinary final
+  ---
+  duration_ms: 0.074917
+  type: 'test'
+  ...
+# Subtest: full item view cannot hide unknown phase, async or an additional final absent from live items
+ok 21 - full item view cannot hide unknown phase, async or an additional final absent from live items
+  ---
+  duration_ms: 0.1295
+  type: 'test'
+  ...
+# Subtest: failed and interrupted turn remain distinct even with a completed final item
+ok 22 - failed and interrupted turn remain distinct even with a completed final item
+  ---
+  duration_ms: 0.146666
+  type: 'test'
+  ...
+# Subtest: foreign identity or non-success evidence permanently invalidates this projection
+ok 23 - foreign identity or non-success evidence permanently invalidates this projection
+  ---
+  duration_ms: 0.614959
+  type: 'test'
+  ...
+# Subtest: duplicate item must be identical, terminal must not change, late items fail closed
+ok 24 - duplicate item must be identical, terminal must not change, late items fail closed
+  ---
+  duration_ms: 0.305834
+  type: 'test'
+  ...
+# Subtest: native IDs and final UTF8 content have independent Flow bounds
+ok 25 - native IDs and final UTF8 content have independent Flow bounds
+  ---
+  duration_ms: 1.016792
+  type: 'test'
+  ...
+# Subtest: decoded evidence storage is bounded by item count and accumulated bytes
+ok 26 - decoded evidence storage is bounded by item count and accumulated bytes
+  ---
+  duration_ms: 7.227791
+  type: 'test'
+  ...
+# Subtest: content bytes are not wire bytes; escaping may exceed R06 frame before Flow content limit
+ok 27 - content bytes are not wire bytes; escaping may exceed R06 frame before Flow content limit
+  ---
+  duration_ms: 2.2695
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 74.962459

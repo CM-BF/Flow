@@ -1,10 +1,10 @@
 {
   "task": "WPF-MATURE-02",
-  "at": "2026-10-06 09:01:08 UTC",
+  "at": "2026-10-06 09:11:04 UTC",
   "stack": [
     "Node24",
     "codex-cli0.154.0 stable app-server schema",
-    "bounded JSON-line transport consumer"
+    "decoded semantic consumer"
   ],
   "discovery": "Local find-skills matched clean-code/codebase-design/brainstorming/openai-docs; no install/update.",
   "skills": [
@@ -35,7 +35,7 @@
     }
   ],
   "cleanCodeSource": "https://github.com/sickn33/agentic-awesome-skills@bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5",
-  "application": "Authorized architectural goal recorded; first slice bounded to injected transport/catalog/final, shared host untouched. Test through the Interface, preserve unknown capabilities.",
+  "application": "Bounded catalogue and ordinary-final evidence modules; R06 alone owns transport. Original authorized design narrowed without a duplicate RPC state machine; unknown/null/omission retained.",
   "sources": [
     {
       "url": "https://learn.chatgpt.com/docs/app-server",
@@ -47,5 +47,19 @@
       "opened": "2026-10-06T08:59Z",
       "scope": "model/list can be bundled catalog; not account entitlement; no token sharing authorized"
     }
-  ]
+  ],
+  "cleanCodeReview": {
+    "at": "2026-10-06 09:11:04 UTC",
+    "scope": "3 semantic modules and 2 local tests",
+    "findingsFixed": [
+      "Removed duplicate initialize ownership after fixed R06 Interface",
+      "Preserved missing vs null requested controls without inferring persistent null semantics",
+      "Separated full terminal item verification from host completion",
+      "Bounded evidence storage and latched invalid semantic evidence"
+    ],
+    "unresolved": [
+      "No actual app-server/R06 combination or account/model execution",
+      "Production contracts and next-turn settings revision remain R05-owned"
+    ]
+  }
 }

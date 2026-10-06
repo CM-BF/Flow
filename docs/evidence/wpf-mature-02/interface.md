@@ -4,7 +4,7 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../plans/wpf-ma
 
 ## 首片可独立实现
 
-固定codex-cli0.154.0 stable schema，注入一个只传JSON行的transport；consumer负责有界请求/响应关联、initialize→initialized顺序、model/list分页与public目录归一、ordinary final/failed/interrupted事件判别。没有spawn/auth/provider/账户文件读取。
+固定codex-cli0.154.0 stable schema，注入小的request/receive Interface并只处理已解码帧；R06 runner_owner独占JSONL/stdio/ID关联/背压/timeout/child关闭，caller等待R06 ready成功（它独占initialize→initialized），consumer只负责model/list分页边界与目录归一、ordinary final/failed/interrupted语义。没有spawn/auth/provider/账户文件读取。
 
 ## 共享合同需求（待R05 owner固定）
 
@@ -25,7 +25,7 @@ Web owner d01按本大task对接model/thinking/fast/access与账号/实际状态
 
 共享owner需固定实际模型能力目录、请求选项、init/effective回执与unsupported的合同；Web d01仅消费已落地字段，不修改本owner实验来伪造生产支持。
 
-## R05-B固定consumer答复（0.154.0，2026-10-06 09:05 UTC）
+## R05-B固定consumer答复（0.154.0，2026-10-06 09:11:04 UTC）
 
 对照共享候选 `8a148c5f4288d3f3075bf4bde78504b5214c87f3:docs/evidence/r05/b-codex-interface.md`。以下区分原生字段与Flow拟定映射；生产adapter由ExecutionLead/runner worker维护，本owner只负责schema事实与实验conformance，绝不领取apps/runner/src/codex。
 
@@ -47,9 +47,9 @@ Web owner d01按本大task对接model/thinking/fast/access与账号/实际状态
 ```ts
 requested: {
   model: string; // explicit configured model; no latest substitution
-  reasoningEffort: string | null; // catalogue-bound if non-null; never fast
-  serviceTier: string | null; // thread persistent override; preserve null
-  serviceTierForTurn: string | null; // new-turn-only; "default" standard speed
+  reasoningEffort?: string | null; // catalogue-bound if non-null; preserve omission
+  serviceTier?: string | null; // persistent override; omission vs null preserved, semantics unknown
+  serviceTierForTurn?: string | null; // new-turn-only; omission/null inherits, "default" standard speed
   access: "none"; // Flow policy intent, not inferred from sandbox alone
 }
 observedThreadConfiguration: {
@@ -71,3 +71,31 @@ Codex没有这里可直接套用的Claude SDK maxBudgetUsd/maxTurns效果声明�
 ### 真实握手运行方案状态
 
 status_read独立只读核实wrapper会继承process.env，固定schema/临时CODEX_HOME不能证明免个人Keychain/系统配置/网络/遥测。当前**未启动真实app-server**。批准候选须提供可验证进程级文件/Keychain/外连拒绝、白名单环境、空cwd/state、bounded输出与时限/清理；只允许initialize→initialized→model/list。缺这些控制则保持NOT_RUN，实验fixture继续独立推进，不把无凭据参数或关analytics当零副作用证明。
+
+生产transport唯一owner：R06 runner_owner，独立codex-native-transport树；接口待其 docs/evidence/r06/interface.md 固定后组合。当前in-memory conformance不复制transport状态机，不持有进程/计时器/网络。此前标题09:05为作者错误估计；本次更新记录真实系统UTC，旧commit保留。
+
+
+## 下一条配置与历史冻结（完整验收增补）
+
+WPF-MATURE-02-09：同harness空闲会话对实际支持的model/effort/fast提供“下一条生效”的设置修改；不能将整会话永久Locked。运行中修改只有实际能力支持时开放。跨Claude/Codex不宣称旧native session可互通，须明确续聊兼容或新会话路径。
+
+R05共享owner需区分可变 `nextTurnSettingsRevision` 与不可变 `profileSnapshot`；这些名字是合同需求候选，不是已落地字段。提交采用expected revision/CAS，持久记录请求选择、ACK状态与实际执行回执。未知ACK不可盲重试/回填成功；刷新/恢复后从持久事实恢复。历史turn、正在运行turn和已持久入队项各自持有入队/创建时冻结的snapshot identity，后续设置修改不能覆盖它们。目录能力降级/换model后的unsupported/unknown显式呈现。
+
+每次新选择使WPF-MATURE-04 context measurement失效；与04 architecture_read直接对接settings identity和失效关联。Web d01消费正式合同，当前实验不删除锁、不改公共contracts/UI、不改变现存profile hash。
+
+## 固定R06组合端口（c6c98a29bc7205b0cd876fd8a01bec17097a3d5b）
+
+已读codex-native-transport树 `docs/evidence/r06/interface.md`。组合caller唯一等待 `transport.ready`（initialize成功且initialized写入），目录module只调用 `request('model/list',params)`；普通final投影消费caller从 `receive()` 获得的已解码notification。module不二次握手、不负责server request/respond、close或timeout。EOF/未知ACK/进程隔离由R06/组合caller报告，本module不能把它转成成功final。
+
+R06默认encoded JSON frame上限1MiB（含envelope/转义、不含newline）；Flow正文1MiB UTF8上限是另一层限制。正文在上限内不保证wire frame可传，JSON转义还会放大字节。组合时必须核实际encoded frame字节并将超界显式unknown/unsupported，禁止截断；本地decoded page上限也不替代transport wire限制。固定R06接口未在本片运行组合，测试使用in-memory已解码数据，不能声称R06已通过本片测试。
+
+本次实际更新时间：2026-10-06 09:07:59 UTC。
+
+
+### 与04的settings identity对齐（architecture_read只读输入）
+
+候选共享identity包含harness、requested/resolvedModel、immutable profile configDigest、executionInputDigest、materialRevisionDigest、historyEpoch。draft subject用draftId + next-turn settingsRevision；queued subject用queueItemId + 自身冻结settingsRevision；attempt subject用taskId/attemptId/ownerVersion/nativeSessionId及自身冻结profile。每次有效的新选择都变更settingsRevision（即使model同名、但effort/fast改变），令draft context观测失效，不重写queue/attempt identity。R05 owner负责正式字段和CAS/持久snapshot语义；02/04实验只消费，不能擅改共享profile hash。
+
+### 本片工程证据
+
+27个本地确定性语义检查通过，范围与限制见[README](../../../experiments/codex-app-server-conformance/README.md)、[raw](conformance.tap)和[manifest](conformance-manifest.json)。只消费已解码帧，尚未运行R06组合。真实进程候选路径见[隔离方案](isolated-run-plan.md)，目前仅核sandbox-exec存在，canary隔离证据未完成，真实运行NOT_RUN。
