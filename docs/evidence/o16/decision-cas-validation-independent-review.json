@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-06T19:35:08.583020+00:00",
+  "result": "APPROVED_BOUNDED_PREPARATION",
+  "source": "4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa",
+  "delivery": "924873c27ac4db42d199e25f5d81b39def1c7861",
+  "reviewer": "Execution Lead",
+  "manifestSha256": "d1617e01120decf8166c0637374992c8a8bc5f63094ac1a8cb5a35aa3632ab14",
+  "bindingsVerified": 16,
+  "checks": {
+    "selected": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "elapsedMs": 1209,
+    "original25Repeated": false,
+    "totalDistinctPurePreparationAcrossRounds": 26,
+    "actualPg": "original 1 selected/0 passed/1 failed; unchanged",
+    "retainedPgTouched": false,
+    "provider": 0,
+    "pg": 0
+  },
+  "resources": {
+    "rawBytes": 230,
+    "temporaryPeakObservedBytes": 1917,
+    "processGroup": "absent",
+    "cleanup": "own empty temporary parent removed"
+  },
+  "sourceReview": "o16-decision-cas-source-review.json",
+  "reviewerTests": 0,
+  "limits": "Pure helper covers accepted=null or prior accepted ID. Actual driver still requires fresh never-accepted nodes; no expanded replacement workflow. Original failed run is not resubmitted or cleaned."
+}
