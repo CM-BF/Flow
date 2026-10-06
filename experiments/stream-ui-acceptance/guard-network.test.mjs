@@ -25,7 +25,9 @@ async function withServer(mode, run) {
       if (mode === 'wrong-profile') conversation.executionProfile = { ...creation.executionProfile, id: 'wrong-profile' };
       response.writeHead(201, { 'content-type': 'application/json' }); response.end(JSON.stringify({ conversation, replayed: false })); return;
     }
-    response.writeHead(200, { 'content-type': 'application/json' }); response.end('{"accepted":true}');
+    if (mode === 'lost-turn-response') { request.socket.destroy(); return; }
+    if (mode === 'turn-http-503') { response.writeHead(503, { 'content-type': 'application/json' }); response.end('{"error":"unavailable"}'); return; }
+    response.writeHead(200, { 'content-type': 'application/json' }); response.end(JSON.stringify({ conversation: { id: createdId, revision: 1 }, turn: { id: 'turn-1', conversationId: createdId, number: 1, user: { text: 'prompt' }, task: { id: 'task-1' } }, replayed: false }));
   });
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const origin = `http://127.0.0.1:${server.address().port}`, context = await browser.newContext();
@@ -63,3 +65,19 @@ test('actual successful create binds turn identity and persists receipt before t
     assert.equal(requests.length, 2);
   });
 });
+
+for (const mode of ['lost-turn-response', 'turn-http-503']) {
+  test(`actual turn ${mode} reaches the server exactly once after successful creation`, async () => {
+    await withServer(mode, async ({ requests, evidence, post }) => {
+      assert.deepEqual(await post('/api/conversations', { ...creation, title: 'One conversation' }), { received: true, status: 201 });
+      const result = await post(`/api/conversations/${createdId}/turns`, { text: 'prompt', expectedRevision: 0 });
+      assert.equal(requests.length, 2, 'Exactly one create and one turn POST, including implicit transport retry.');
+      assert.equal(requests.filter(request => request.path.endsWith('/turns')).length, 1);
+      assert.equal(result.received, false);
+      assert.equal(evidence.mutationFailure?.kind, 'turn');
+      await post(`/api/conversations/${createdId}/turns`, { text: 'prompt', expectedRevision: 0 });
+      await post('/api/conversations', { ...creation, title: 'One conversation' });
+      assert.equal(requests.length, 2, 'Unknown turn budget remains spent.');
+    });
+  });
+}

@@ -57,22 +57,34 @@ export function mutationGuard({ origin, evidence, checkpoint, expectedPrompt, ex
       // Spend before sending; neither an unknown response nor a local failure restores permission.
       try {
         await checkpoint();
-        if (kind === 'turn') { await route.continue(); return; }
         const response = await route.fetch({ maxRetries: 0, maxRedirects: 0, timeout: 12000 });
-        assert.ok(response.ok(), 'Creation response was not successful.');
-        const bytes = await response.body(); assert.ok(bytes.length <= 65536, 'Creation receipt exceeds its limit.');
-        const receipt = JSON.parse(bytes.toString('utf8')), created = receipt?.conversation;
-        assert.ok(created && typeof created.id === 'string' && /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/.test(created.id), 'Missing or unsafe conversation identity.');
-        assert.equal(receipt.replayed, false, 'This new window must not adopt a replayed creation.');
-        assert.equal(created.revision, 0, 'Only a newly created conversation is accepted.');
-        assert.equal(created.title, body.title, 'Creation title changed.');
-        assert.deepEqual({ harness: created.harness, requested: created.requested, executionProfile: created.executionProfile }, expectedCreation);
-        assert.equal(created.projectId, body.projectId, 'Creation project changed.');
-        evidence.creationReceipt = { conversationId: created.id, revision: created.revision, requested: created.requested,
-          executionProfile: created.executionProfile, responseDigest: sha256(bytes), receivedAt: new Date().toISOString() };
-        await checkpoint();
-        // Only this verified, durable identity can authorize the one following turn.
-        conversationId = created.id;
+        assert.ok(response.ok(), 'Mutation response was not successful.');
+        const bytes = await response.body(); assert.ok(bytes.length <= 65536, 'Mutation receipt exceeds its limit.');
+        const receipt = JSON.parse(bytes.toString('utf8'));
+        assert.equal(receipt.replayed, false, 'This new window must not adopt a replayed mutation.');
+        if (kind === 'create') {
+          const created = receipt?.conversation;
+          assert.ok(created && typeof created.id === 'string' && /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/.test(created.id), 'Missing or unsafe conversation identity.');
+          assert.equal(created.revision, 0, 'Only a newly created conversation is accepted.');
+          assert.equal(created.title, body.title, 'Creation title changed.');
+          assert.deepEqual({ harness: created.harness, requested: created.requested, executionProfile: created.executionProfile }, expectedCreation);
+          assert.equal(created.projectId, body.projectId, 'Creation project changed.');
+          evidence.creationReceipt = { conversationId: created.id, revision: created.revision, requested: created.requested,
+            executionProfile: created.executionProfile, responseDigest: sha256(bytes), receivedAt: new Date().toISOString() };
+          await checkpoint();
+          // Only this verified, durable identity can authorize the one following turn.
+          conversationId = created.id;
+        } else {
+          assert.equal(receipt.conversation?.id, conversationId, 'Turn conversation changed.');
+          assert.equal(receipt.conversation?.revision, 1, 'Only the first turn is accepted.');
+          assert.equal(receipt.turn?.conversationId, conversationId, 'Turn belongs to another conversation.');
+          assert.equal(receipt.turn?.number, 1, 'Only the first turn is accepted.');
+          assert.equal(receipt.turn?.user?.text, expectedPrompt, 'Turn prompt changed.');
+          assert.ok(typeof receipt.turn?.id === 'string' && receipt.turn.id.length > 0 && typeof receipt.turn?.task?.id === 'string' && receipt.turn.task.id.length > 0, 'Turn execution identity is missing.');
+          evidence.turnReceipt = { conversationId, turnId: receipt.turn.id, taskId: receipt.turn.task.id,
+            responseDigest: sha256(bytes), receivedAt: new Date().toISOString() };
+          await checkpoint();
+        }
         await route.fulfill({ response });
       } catch {
         failed = true;
