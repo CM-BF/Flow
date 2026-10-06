@@ -38,4 +38,8 @@ PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm --filter @flow/web exec tsx test/a
 
 固定审查预览：http://127.0.0.1:61261（本任务动态端口，保持服务；不会更改个人入口）。
 
-独立审查：root APPROVED固定4c4de124（仅模块），实际17/17与9源四方哈希审计见[independent review](independent-review-audit.json)/[tests](independent-tests.log)。未独立重跑作者10组浏览器/typecheck。主线与生产接线仍pending。
+独立审查：root APPROVED固定4c4de124（仅模块），实际17/17与9源四方哈希审计见[independent review](independent-review-audit.json)/[tests](independent-tests.log)。未独立重跑作者10组浏览器/typecheck。主线已接收，生产接线仍pending。
+
+## 主线接收
+
+2026-10-06 12:04:39 UTC 固定main `1c4968354dabce1e6748f3301a2e6eecd33e77d4` 已接获审模块9源码，本人逐字hash核对并保存[原receipt](main-integration-receipt.json)/[核验](main-observation.json)。Lead root/Web types0沿其回执，本人仅metadata，未重跑模块/browser/types。该main有六公共client/共享v2/factory输入，但本模块尚未接实际App/Send/Queue；不改变上述typed内存port验收限制。全部11scope在正常push/clean后停写交manager释放，61261保留。

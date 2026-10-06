@@ -2,13 +2,13 @@
   "errors": [],
   "human": {
     "delivery": {
-      "state": "integration",
+      "state": "delivered",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 1,
-    "output": "附件输入、预览与原键恢复已在独立页面验证",
-    "next": "接收附件模块，再接到真实聊天界面",
+    "output": "附件输入、预览与原键恢复模块已审查并合入主线",
+    "next": "把附件模块接到真实聊天界面",
     "blocker": {
       "state": "none",
       "text": ""
@@ -25,5 +25,24 @@
     "record": "APPROVED**",
     "target": "4c4de124b24a85b9e2a13e097b29c80b1e84d11a"
   },
-  "todos": 3
+  "todos": [
+    {
+      "id": "ATTACHI01-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "已审DTO与官方runtime接口已只读核对"
+    },
+    {
+      "id": "ATTACHI01-02",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "17局部、10浏览器/双主题390通过，typed ports模拟"
+    },
+    {
+      "id": "ATTACHI01-03",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "root APPROVED；main 1c4968354dabce1e6748f3301a2e6eecd33e77d4 接收，[9源核验](../../docs/evidence/wpf-attach-i01/main-observation.json)"
+    }
+  ]
 }

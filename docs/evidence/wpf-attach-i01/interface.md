@@ -1,6 +1,6 @@
 # ATTACHI01 Interface
 
-固定输入8701a6cf547248e70aa5758f05da1d7d314ae9c0的packages/contracts/src/attachments.ts。公共index/client未发布，首片直接复用这个本树固定Module，绝不复制DTO/HTTP/ACK解析。typed ports由宿主注入并已验证其HTTP回执；Module仍核当前绑定/ref/order/bytes及真实text digest，不把TypeScript当授权。未来FlowClient六方法是后继适配层，当前无stub。
+固定输入8701a6cf547248e70aa5758f05da1d7d314ae9c0的packages/contracts/src/attachments.ts。公共index/client未发布，首片直接复用这个本树固定Module，绝不复制DTO/HTTP/ACK解析。typed ports由宿主注入；TypeScript返回类型不保证HTTP shape，Module运行时解析并核当前绑定/ref/order/bytes及真实text digest，不把TypeScript当授权。未来FlowClient六方法是后继适配层，当前无stub。
 
 Controller绑定不可变connectionKey/viewId/projectId，暴露稳定subscribe/getSnapshot、显式readiness、目录/选择/预览、upload/recover、capture/consume/dispose。visible/online/read/write只限制现view动作，不赋权限；dispose只表示宿主最终销毁绑定，不等于用户关闭tab。未发送ready选择属于protected draft，宿主关闭view应先停读并保留绑定，只有唯一session/view owner确认可回收后才dispose；换连接/撤销旧授权仍必须失效旧引用。hide/offline/revoke使旧epoch无效并settle本地请求，不保证取消中心commit。未知upload保留原key/body identity，不能从abort/404推定未受理。
 
@@ -18,6 +18,8 @@ Module无定时poll。单飞upload/list、2并发正文，15秒本地deadline即
 
 `controller.ts` 的 `createAttachmentInput` 返回 `AttachmentInput`：稳定`subscribe/getSnapshot`，显式`setReadiness/browse/upload/select/remove/preview/recover/forgetRecovery`，`capture/assertCapture/consume`与终结`dispose`。`recovery.ts`导出有限`createRecoveryJournal`，storage由host注入并序列化；known记录可显式forget，unknown禁止丢弃。`adapter.ts`导出`createAttachmentAdapter`、`createExistingAttachment`、`bindAttachmentComposer`，后者只跟踪实际公开composer曾持有的ID，不能删除尚在准备的独立恢复上传。`AttachmentPicker`只接input和onAttach/onRemove窄回调，Dialog/焦点与P01 authority由host拥有。
 
-公共ports读回已通过中心decoder验证的值，本Module再次核ref/metadata绑定。upload receipt的requestDigest是中心对完整请求的标识，本片不虚称独立重算；恢复依完整不可变请求identity与原字节内容digest。一个绑定最多5个逻辑flight（upload/list/recovery各1、body2），每个内部capabilities读取有同一deadline，后续使用该绑定的缓存cap；新授权/connection由新代际或新实例提供，不能缓存token/权限。
+公共client是thin transport而非HTTP shape decoder；本Module以公共schema解析ports返回值并核ref/metadata绑定。upload receipt的requestDigest是中心对完整请求的标识，本片不虚称独立重算；恢复依完整不可变请求identity与原字节内容digest。一个绑定最多5个逻辑flight（upload/list/recovery各1、body2），每个内部capabilities读取有同一deadline，后续使用该绑定的缓存cap；新授权/connection由新代际或新实例提供，不能缓存token/权限。
 
 生产接线必须在官方composer开始异步附件准备之前冻结click intent/text/knowledge/attachment IDs，onNew只验证该一次capture，不读取后来改变的intent/profile/knowledge。只有新outbox/queue receipt实际同步接管后consume；其后异步失败保留receipt/旧稿并与新稿分离，不能让MessageNotSentError自动拼回旧text。fixture演示失败capture单列，而未实现真实生产receipt恢复。
+
+主线输入更新（2026-10-06 12:04:39 UTC）：组合main `1c4968354dabce1e6748f3301a2e6eecd33e77d4` 已含本9文件、六public方法/shared v2/factory；上文pending指实际宿主消费尚未实施。真实第六方法为`attachmentUploadReceipt`。新片按窄授权ports绑定，不把活动插件/IDs/同URL当权限，不改本模块接口。

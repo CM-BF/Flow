@@ -12,4 +12,6 @@ Base：8701a6cf547248e70aa5758f05da1d7d314ae9c0
 
 独立实际检查：全文读910行实现/fixture/tests及公共DTO/knowledge selection，独立17/17通过（2files、807ms），[原始测试日志](../../docs/evidence/wpf-attach-i01/independent-tests.log)；9source manifest/current/target/browser四方同hash，保护范围零差、outscope0、源diffcheck0，见[审计](../../docs/evidence/wpf-attach-i01/independent-review-audit.json)。目视浅色desktop/390深色图，读10组浏览器原始结果，未独立重跑浏览器或types。
 
-未验证/未实施：真实公共HTTP、生产App/Send/Queue、ready选择reload恢复、跨tab journal原子性、Firefox/Safari/屏读及真实center/provider。主线接收pending；此后metadata HEAD不替代固定实现target。
+未验证/未实施：真实公共HTTP、生产App/Send/Queue、ready选择reload恢复、跨tab journal原子性、Firefox/Safari/屏读及真实center/provider。主线接收已完成（见后续记录）；此后metadata HEAD不替代固定实现target。
+
+2026-10-06 12:04:39 UTC 后续主线回执：`1c4968354dabce1e6748f3301a2e6eecd33e77d4` 接收固定9源，本人核main/target/current/hash全等，[来源](../../docs/evidence/wpf-attach-i01/main-observation.json)。独审范围不扩大，types按Lead归因，作者未重跑；生产绑定仍未实施。

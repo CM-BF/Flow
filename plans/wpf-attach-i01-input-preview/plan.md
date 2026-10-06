@@ -1,6 +1,6 @@
 # WPF-ATTACHI01 附件输入与恢复模块
 
-状态：in-progress。创建/更新：2026-10-06 11:03:55 UTC。直接父任务：[WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)。沿[统一模块规则](../../AGENTS.md#modular-design)。
+状态：completed / approved。创建/更新：2026-10-06 11:03:55 UTC。直接父任务：[WPF-MATURE-03](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-03-attachments/plan.md)。沿[统一模块规则](../../AGENTS.md#modular-design)。
 
 采用已批准设计：用已审8701附件DTO、宿主绑定typed ports与现assistant-ui0.15.23/core0.3.22，提供文件选择/拖入/@file、metadata和按需正文预览、固定引用捕获、有限upload恢复日志。实际官方Thread隔离fixture验证，不改App、公共client/decoder、共享合同、依赖、既有Send/Queue或官方Thread。六公共HTTP方法/生产App接线后继明确pending，不把独立模块当完整附件Done。
 
@@ -12,6 +12,8 @@
 
 - [x] ATTACHI01-01 实现绑定ports、官方attachment adapter及固定引用捕获，局部语义测试。
 - [x] ATTACHI01-02 实现有界原key上传恢复与官方Thread可用输入/预览，双主题390/键盘验证。
-- [ ] ATTACHI01-03 clean-code、固定source证据、独立review与主线交付。
+- [x] ATTACHI01-03 clean-code、固定source证据、独立review与主线交付。
 
 无真实模型/产品DB；本片模拟ports不是真实HTTP或center重启证明。浏览器reload恢复只覆盖upload记录；Send/Queue unknown跨reload恢复仍未实现。公开exports未桥接时仅直接导入本树已审合同文件，不创建伪client方法；最终公共client接线另审。
+
+主线接收 `1c4968354dabce1e6748f3301a2e6eecd33e77d4`：9源码逐字等获审target，见[固定核验](../../docs/evidence/wpf-attach-i01/main-observation.json)。本模块片已完成，生产接线仍后继独立领取，不能将首片标为完整附件目标Done。
