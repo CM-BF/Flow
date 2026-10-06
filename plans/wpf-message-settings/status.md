@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 20:19:12 UTC |
+| 最近更新时间 | 2026-10-06 20:38:50 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -10,7 +10,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings |
 | Branch | codex/web-message-settings |
 | 工作基线 / HEAD | 8d84d529a0756116bd0fc8bad969d61a6c26248e；实现 270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67；当前仅locator窄修，原b4运行HEAD仍18ede |
-| 工作树dirty状态 | 本轮修改前 ba437 clean；本次仅 metadata，最终提交与 remote/clean 以交付回执为准 |
+| 工作树dirty状态 | 本轮修改前 20957 clean；本次仅 metadata，最终提交与 remote/clean 以交付回执为准 |
 | 工作分支状态 | in-progress |
 | 检查状态 | UNKNOWN；strict noEmit exit0、两direct37/37，父预期计数20误漏参数化17项，原FAIL保留；browser第三次到达fixture后首定位器歧义失败/0完成checks；前两次初始化失败保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；基线 8d84d529a0756116bd0fc8bad969d61a6c26248e |
@@ -20,15 +20,15 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 已实现逐条消息组合选择；目录与冻结接口的本地检查通过，浏览器体验尚待验证。 |
-| 下一可用交付 | 定位器源码复审已通过；新候选绑定与独立运行准入后继续界面验收。 |
-| 当前阻塞 | ACTIVE: 270c 定位器源码已限定批准，browser 尚未复验，等待新候选精确绑定与独立准入；尚无完成的界面用例。 |
+| 下一可用交付 | 270c定位器与b5软停止修复均已限定批准；候选重绑最终HEAD、获新运行准入后继续界面验收。 |
+| 当前阻塞 | ACTIVE: b5准备与精确native边界已接受，browser尚未复验；等待管理重绑最终HEAD及新shared窗口/fresh准入，当前无gate。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN；270c APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN；历史限定审查/实际b4失败清理已接受，新locator尚未复验，类型/direct证据保留，完整验收待完成 |
+| Review | [review.md](review.md)，UNKNOWN；270c定位器与b5 ea3c准备限定源码已批准；旧b4失败清理已接受，新browser尚未复验，类型/direct证据保留，完整验收待完成 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | MSGSET-01 | completed | w01_owner | 源码 f3a6a7ec89d5b3f789c49b0d8662401b23032ab2；[manifest](../../docs/evidence/wpf-message-settings/source-manifest.json)；strict noEmit及37项direct PASS，浏览器未验 |
-| MSGSET-02 | in-progress | w01_owner | [原始检查](../../docs/evidence/wpf-message-settings/checks-first-observation.json)，noEmit0/direct37，父FAIL保留；browser未验 |
+| MSGSET-02 | in-progress | w01_owner | [原始检查](../../docs/evidence/wpf-message-settings/checks-first-observation.json)，noEmit0/direct37，父FAIL保留；b5准备已限定批准，browser未复验 |
 | MSGSET-03 | pending | w01_owner | 限定源码/运行证据独审已完成；完整浏览器验收与 main 接收待完成 |
 
 ## Dashboard 与边界
@@ -73,6 +73,14 @@ PGID66244 absent、Chrome exited、fixtureClosed/scratchAbsent=true、cleanup.er
 
 [差异/来源](../../docs/evidence/wpf-message-settings/browser-locator-fix-source.json)核反替逐字等原1cd、其他五源与19原raw不变。此处20:11提交时新delta待独审；20:12:51 UTC 已获限定源码批准，0运行/types/direct/Chrome/PG/free；累计20609/余39391不重置。原b4候选执行代码、binding、consumed gate未改，任何后继须新actualHEAD/sourcehash绑定与独立gate，不复用旧gate。
 
-## 2026-10-06 20:19:12 UTC 定位器限定源码批准与后继准备边界
+## 2026-10-06 20:19:12 UTC 定位器限定源码批准与后继准备边界（历史）
 
 [Root原件](../../docs/evidence/wpf-message-settings/root-270c-locator-source-review.json)绑定270c/ba437，MSGSET-B4-LOCATOR/P2为SOURCE_ADDRESSED、0blocking。[Fresh范围观察](../../docs/evidence/wpf-message-settings/locator-approval-metadata-observation.json)仍为原a5b v1八范围。当前完整feature UNKNOWN/browser未复验/main未集成；下一候选只在新的私有临时目录，最终HEAD/六源与20609ms、741839B既有预算重新绑定，旧b4目录/gate/raw保持不变。准备本身不签gate、不授运行，native Chrome精确边界须按新prepared pins确认。
+
+## 2026-10-06 20:38:50 UTC b5准备限定批准，未进入下一运行
+
+[Root软停止复审](../../docs/evidence/wpf-message-settings/root-browser-b5-repaired-review.json)绑定parent `ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7` / worker `71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b`，APPROVED_SCOPED_PREPARATION_NOT_RUN、0blocking。补审MSGSET-SOFT-STOP-LATE为SOURCE_ADDRESSED；[初批](../../docs/evidence/wpf-message-settings/root-browser-b5-initial-preparation-review.json)、[补审P2](../../docs/evidence/wpf-message-settings/root-browser-b5-soft-stop-addendum.json)与旧精确boundary保历史。
+
+[精确GO边界接受](../../docs/evidence/wpf-message-settings/browser-b5-repaired-native-boundary-acceptance.json)覆盖当前ea3c/71a643，不声称native Chrome与旧外层OS写/egress限制等价，也不构成运行gate。当前[准备归档](../../docs/evidence/wpf-message-settings/browser-b5-preparation-archive.json)为PREPARED/no gate，候选原绑定20957；本次正常metadata完成后仅manager重绑新HEAD。六产品源仍270c，原b4目录/失败raw不改。
+
+实际browser仍第三次b4 FAIL、checks0/screenshots0；累计20609/60000、余39391=24391工作+15000清理，既有retained741839B。新b5 NOT_RUN，完整feature UNKNOWN/main NOT_INTEGRATED；没有重跑types/direct37或Chrome/PG/free，后继需要真实共享窗口和fresh准入。

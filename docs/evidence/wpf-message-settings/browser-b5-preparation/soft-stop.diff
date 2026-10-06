@@ -1,0 +1,327 @@
+--- before-soft-stop/supervisor.py
++++ supervisor.py
+@@ -89,7 +89,10 @@
+     def request_stop(sig, frame):
+         nonlocal stopping
+         stopping = True
+-        if 'stopSignal' not in report: report['stopSignal'] = signal.Signals(sig).name
++        if 'stopSignal' not in report:
++            report['stopSignal'] = signal.Signals(sig).name
++            errors.append('Cooperative stop: '+report['stopSignal'])
++        report['state'] = 'FAILED'
+     previous_handlers = {sig:signal.signal(sig,request_stop) for sig in (signal.SIGTERM,signal.SIGINT)}
+     def observe_resources(phase):
+         available = free(root); tmp = sizes(scratch); retained = sizes(BASE)[0]-tmp[0]+binding['previousEvidenceBytes']
+@@ -141,158 +144,162 @@
+             chrome_facts['signals'].append({'signal':signal.Signals(sig).name,'at':now(),'target':'owned-chrome-pgid'})
+         stop(p,sig)
+     try:
+-        assert git('rev-parse','HEAD')==binding['head'] and git('branch','--show-current')==binding['branch']
+-        assert git('status','--porcelain')==''
+-        save(budget,{'complete':False,'spentMs':gate['previousRuntimeMs'],'run':gate['run'],'startedAt':report['startedAt']})
+-        for p,h in {**binding['readOnlyDependencies'],**binding['sources']}.items():
+-            checkpoint(); assert sha(root/p)==h,p
+-        for p,h in binding['preparedFiles'].items():
+-            checkpoint(); assert sha(BASE/p)==h,p
+-        assert sha(binding['node']['realpath'])==binding['node']['sha256']
+-        for item in binding['externalPins']:
+-            checkpoint(); p=Path(item['path']); assert str(p.resolve())==item['realpath'] and sha(p)==item['sha256']
+-        assert free(root)>=gate['startFreeBytes']
+-        checkpoint(); assert not scratch.exists() and not output.exists()
+-        scratch.mkdir(mode=0o700); output.mkdir(parents=True,mode=0o700)
+-        chrome_dirs={name:scratch/name for name in ('profile','temp','cache','crash')}
+-        for directory in chrome_dirs.values(): directory.mkdir(mode=0o700)
+-        # A separate native process/session. No sandbox disabling flags; no user configuration discovery.
+-        chrome_args=['--headless=new','--no-first-run','--no-default-browser-check','--disable-background-networking',
+-          '--disable-component-update','--disable-sync','--remote-debugging-port=0','--remote-debugging-address=127.0.0.1',
+-          '--user-data-dir='+str(chrome_dirs['profile']),'--disk-cache-dir='+str(chrome_dirs['cache']),'about:blank']
+-        chrome_env={k:os.environ[k] for k in ('PATH','HOME','USER','LOGNAME','LANG','LC_ALL','LC_CTYPE','TZ','__CF_USER_TEXT_ENCODING') if k in os.environ}
+-        temp={k:str(chrome_dirs['temp']) for k in ('TMPDIR','TMP','TEMP','MAC_CHROMIUM_TMPDIR')}
+-        temp.update(XDG_CACHE_HOME=str(chrome_dirs['cache']),BREAKPAD_DUMP_LOCATION=str(chrome_dirs['crash']))
+-        chrome_env.update(temp)
+-        chrome_facts={'parentPid':os.getpid(),'chromePid':None,'pgid':None,'processGroup':'separate-parent-owned-session',
+-          'authorityBoundary':BOUNDARY,'argv':[binding['chrome'],*chrome_args],'temp':temp,
+-          'spawnAttemptedAt':now(),'spawnReturnedAt':None,'cdpPortDiscoveredAt':None,'exit':None,'close':None,
+-          'launchError':None,'signals':[],'streams':streams}
+-        persist_chrome(); checkpoint()
+-        chrome_log=(output/'chrome.log').open('xb'); handles.append(chrome_log)
+         try:
+-            chrome=subprocess.Popen([binding['chrome'],*chrome_args],cwd=scratch,env=chrome_env,stdin=subprocess.DEVNULL,
+-              stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True)
+-        except BaseException as e:
+-            chrome_facts['launchError']={'type':type(e).__name__,'message':str(e)[:1024]}; persist_chrome(); raise
+-        chrome_facts.update(chromePid=chrome.pid,pgid=chrome.pid,spawnReturnedAt=now())
+-        report['chromePgid']=chrome.pid
+-        register(chrome.stdout,'chrome.stdout',chrome_log); register(chrome.stderr,'chrome.stderr',chrome_log)
+-        persist_chrome()
+-        port_file=chrome_dirs['profile']/'DevToolsActivePort'; port=None; launch_deadline=min(work,time.monotonic()+8)
+-        while port is None:
+-            checkpoint(); pump(.025)
+-            if errors: raise RuntimeError('Chrome stream evidence cap')
+-            if chrome.poll() is not None: raise RuntimeError('Owned native Chrome exited before CDP port discovery')
+-            if time.monotonic()>=launch_deadline: raise TimeoutError('Owned Chrome CDP port discovery timeout')
+-            if port_file.exists():
+-                assert not port_file.is_symlink() and port_file.is_file() and port_file.stat().st_size<=512
+-                lines=port_file.read_text().splitlines()
+-                assert len(lines)==2 and re.fullmatch('[0-9]{1,5}',lines[0]) and re.fullmatch('/devtools/browser/[A-Za-z0-9-]+',lines[1])
+-                port=int(lines[0]); assert 0<port<=65535
+-        endpoint='http://127.0.0.1:'+str(port)
+-        chrome_facts.update(cdpPortDiscoveredAt=now(),cdpEndpoint=endpoint); persist_chrome(); checkpoint()
+-        profile=BASE/'sandbox.sb'
+-        profile.write_text('(version 1)\n(allow default)\n(deny file-write*)\n(allow file-write* (subpath '+json.dumps(str(scratch))+') (subpath '+json.dumps(str(output))+') (literal "/dev/null"))\n(deny network*)\n(allow network-bind (local ip "localhost:*"))\n(allow network-inbound (local ip "localhost:*"))\n(allow network-outbound (remote ip "localhost:*"))\n')
+-        child_gate={**gate,'supervision':{'startedAtMs':wall_ms,'workDeadlineMs':wall_ms+gate['totalMs']-CLEANUP_MS,
+-          'hardDeadlineMs':wall_ms+gate['totalMs'],'scratch':str(scratch),'output':str(output),'parentPid':os.getpid(),
+-          'chromePid':chrome.pid,'chromePgid':chrome.pid,'chromeEndpoint':endpoint,'chromeOwnership':'external-parent-native-sibling'}}
+-        save(BASE/'child-gate.json',child_gate)
+-        env={k:v for k,v in os.environ.items() if not k.startswith(('FLOW_','PG','POSTGRES_','DPERF04_','MESSAGE_SETTINGS_')) and k not in ('DATABASE_URL','NODE_OPTIONS','HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy')}
+-        for key in ('TMPDIR','TMP','TEMP','MAC_CHROMIUM_TMPDIR','XDG_CACHE_HOME','NODE_COMPILE_CACHE'): env[key]=str(scratch)
+-        env.update({'NODE_DISABLE_COMPILE_CACHE':'1','TSX_DISABLE_CACHE':'1','GIT_CONFIG_GLOBAL':'/dev/null','GIT_CONFIG_SYSTEM':'/dev/null',
+-          'GIT_OPTIONAL_LOCKS':'0','MESSAGE_SETTINGS_BROWSER_GATE':str(BASE/'child-gate.json'),'TSX_TSCONFIG_PATH':str(BASE/'runtime-tsconfig.json')})
+-        checkpoint()
+-        worker_log=(BASE/'worker.log').open('xb'); handles.append(worker_log)
+-        process=subprocess.Popen(['/usr/bin/sandbox-exec','-f',str(profile),binding['node']['realpath'],'--import',binding['tsxLoader'],str(BASE/ENTRY)],
+-          cwd=root,env=env,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,start_new_session=True)
+-        report['pgid']=process.pid; assert process.pid!=chrome.pid
+-        register(process.stdout,'worker',worker_log)
+-        while True:
+-            checkpoint(); pump(min(.25,max(0,work-time.monotonic())))
+-            if errors: raise RuntimeError('Process stream evidence cap')
+-            if chrome.poll() is not None: raise RuntimeError('Owned Chrome exited before parent cleanup')
+-            if process.poll() is not None and streams['worker']['eof']: break
+-    except BaseException as e: errors.append(type(e).__name__+': '+str(e))
++            assert git('rev-parse','HEAD')==binding['head'] and git('branch','--show-current')==binding['branch']
++            assert git('status','--porcelain')==''
++            save(budget,{'complete':False,'spentMs':gate['previousRuntimeMs'],'run':gate['run'],'startedAt':report['startedAt']})
++            for p,h in {**binding['readOnlyDependencies'],**binding['sources']}.items():
++                checkpoint(); assert sha(root/p)==h,p
++            for p,h in binding['preparedFiles'].items():
++                checkpoint(); assert sha(BASE/p)==h,p
++            assert sha(binding['node']['realpath'])==binding['node']['sha256']
++            for item in binding['externalPins']:
++                checkpoint(); p=Path(item['path']); assert str(p.resolve())==item['realpath'] and sha(p)==item['sha256']
++            assert free(root)>=gate['startFreeBytes']
++            checkpoint(); assert not scratch.exists() and not output.exists()
++            scratch.mkdir(mode=0o700); output.mkdir(parents=True,mode=0o700)
++            chrome_dirs={name:scratch/name for name in ('profile','temp','cache','crash')}
++            for directory in chrome_dirs.values(): directory.mkdir(mode=0o700)
++            # A separate native process/session. No sandbox disabling flags; no user configuration discovery.
++            chrome_args=['--headless=new','--no-first-run','--no-default-browser-check','--disable-background-networking',
++              '--disable-component-update','--disable-sync','--remote-debugging-port=0','--remote-debugging-address=127.0.0.1',
++              '--user-data-dir='+str(chrome_dirs['profile']),'--disk-cache-dir='+str(chrome_dirs['cache']),'about:blank']
++            chrome_env={k:os.environ[k] for k in ('PATH','HOME','USER','LOGNAME','LANG','LC_ALL','LC_CTYPE','TZ','__CF_USER_TEXT_ENCODING') if k in os.environ}
++            temp={k:str(chrome_dirs['temp']) for k in ('TMPDIR','TMP','TEMP','MAC_CHROMIUM_TMPDIR')}
++            temp.update(XDG_CACHE_HOME=str(chrome_dirs['cache']),BREAKPAD_DUMP_LOCATION=str(chrome_dirs['crash']))
++            chrome_env.update(temp)
++            chrome_facts={'parentPid':os.getpid(),'chromePid':None,'pgid':None,'processGroup':'separate-parent-owned-session',
++              'authorityBoundary':BOUNDARY,'argv':[binding['chrome'],*chrome_args],'temp':temp,
++              'spawnAttemptedAt':now(),'spawnReturnedAt':None,'cdpPortDiscoveredAt':None,'exit':None,'close':None,
++              'launchError':None,'signals':[],'streams':streams}
++            persist_chrome(); checkpoint()
++            chrome_log=(output/'chrome.log').open('xb'); handles.append(chrome_log)
++            try:
++                chrome=subprocess.Popen([binding['chrome'],*chrome_args],cwd=scratch,env=chrome_env,stdin=subprocess.DEVNULL,
++                  stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True)
++            except BaseException as e:
++                chrome_facts['launchError']={'type':type(e).__name__,'message':str(e)[:1024]}; persist_chrome(); raise
++            chrome_facts.update(chromePid=chrome.pid,pgid=chrome.pid,spawnReturnedAt=now())
++            report['chromePgid']=chrome.pid
++            register(chrome.stdout,'chrome.stdout',chrome_log); register(chrome.stderr,'chrome.stderr',chrome_log)
++            persist_chrome()
++            port_file=chrome_dirs['profile']/'DevToolsActivePort'; port=None; launch_deadline=min(work,time.monotonic()+8)
++            while port is None:
++                checkpoint(); pump(.025)
++                if errors: raise RuntimeError('Chrome stream evidence cap')
++                if chrome.poll() is not None: raise RuntimeError('Owned native Chrome exited before CDP port discovery')
++                if time.monotonic()>=launch_deadline: raise TimeoutError('Owned Chrome CDP port discovery timeout')
++                if port_file.exists():
++                    assert not port_file.is_symlink() and port_file.is_file() and port_file.stat().st_size<=512
++                    lines=port_file.read_text().splitlines()
++                    assert len(lines)==2 and re.fullmatch('[0-9]{1,5}',lines[0]) and re.fullmatch('/devtools/browser/[A-Za-z0-9-]+',lines[1])
++                    port=int(lines[0]); assert 0<port<=65535
++            endpoint='http://127.0.0.1:'+str(port)
++            chrome_facts.update(cdpPortDiscoveredAt=now(),cdpEndpoint=endpoint); persist_chrome(); checkpoint()
++            profile=BASE/'sandbox.sb'
++            profile.write_text('(version 1)\n(allow default)\n(deny file-write*)\n(allow file-write* (subpath '+json.dumps(str(scratch))+') (subpath '+json.dumps(str(output))+') (literal "/dev/null"))\n(deny network*)\n(allow network-bind (local ip "localhost:*"))\n(allow network-inbound (local ip "localhost:*"))\n(allow network-outbound (remote ip "localhost:*"))\n')
++            child_gate={**gate,'supervision':{'startedAtMs':wall_ms,'workDeadlineMs':wall_ms+gate['totalMs']-CLEANUP_MS,
++              'hardDeadlineMs':wall_ms+gate['totalMs'],'scratch':str(scratch),'output':str(output),'parentPid':os.getpid(),
++              'chromePid':chrome.pid,'chromePgid':chrome.pid,'chromeEndpoint':endpoint,'chromeOwnership':'external-parent-native-sibling'}}
++            save(BASE/'child-gate.json',child_gate)
++            env={k:v for k,v in os.environ.items() if not k.startswith(('FLOW_','PG','POSTGRES_','DPERF04_','MESSAGE_SETTINGS_')) and k not in ('DATABASE_URL','NODE_OPTIONS','HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy')}
++            for key in ('TMPDIR','TMP','TEMP','MAC_CHROMIUM_TMPDIR','XDG_CACHE_HOME','NODE_COMPILE_CACHE'): env[key]=str(scratch)
++            env.update({'NODE_DISABLE_COMPILE_CACHE':'1','TSX_DISABLE_CACHE':'1','GIT_CONFIG_GLOBAL':'/dev/null','GIT_CONFIG_SYSTEM':'/dev/null',
++              'GIT_OPTIONAL_LOCKS':'0','MESSAGE_SETTINGS_BROWSER_GATE':str(BASE/'child-gate.json'),'TSX_TSCONFIG_PATH':str(BASE/'runtime-tsconfig.json')})
++            checkpoint()
++            worker_log=(BASE/'worker.log').open('xb'); handles.append(worker_log)
++            process=subprocess.Popen(['/usr/bin/sandbox-exec','-f',str(profile),binding['node']['realpath'],'--import',binding['tsxLoader'],str(BASE/ENTRY)],
++              cwd=root,env=env,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,start_new_session=True)
++            report['pgid']=process.pid; assert process.pid!=chrome.pid
++            register(process.stdout,'worker',worker_log)
++            while True:
++                checkpoint(); pump(min(.25,max(0,work-time.monotonic())))
++                if errors: raise RuntimeError('Process stream evidence cap')
++                if chrome.poll() is not None: raise RuntimeError('Owned Chrome exited before parent cleanup')
++                if process.poll() is not None and streams['worker']['eof']: break
++        except BaseException as e: errors.append(type(e).__name__+': '+str(e))
++        finally:
++            # TERM both groups together, then KILL only surviving owned groups. No work-deadline guard in cleanup.
++            for p in (process,chrome):
++                try: signal_owned(p,signal.SIGTERM)
++                except BaseException as e: cleanup.append('TERM owned group: '+str(e))
++            until=min(hard-5,time.monotonic()+3)
++            while any(alive(p) for p in (process,chrome)) and time.monotonic()<until:
++                try: pump(.025)
++                except BaseException as e: cleanup.append('Drain/reap: '+str(e)); break
++            for p in (process,chrome):
++                try:
++                    if alive(p): signal_owned(p,signal.SIGKILL)
++                    if p: p.wait(timeout=max(.01,min(1,hard-time.monotonic()-3)))
++                except BaseException as e: cleanup.append('Owned process cleanup: '+str(e))
++            until=min(hard-3,time.monotonic()+1)
++            while (any(alive(p) for p in (process,chrome)) or selector.get_map()) and time.monotonic()<until:
++                try: pump(.025)
++                except BaseException as e: cleanup.append('Final stream drain: '+str(e)); break
++            for name,p in (('worker',process),('chrome',chrome)):
++                if alive(p): cleanup.append(name+' process group remains; scratch retained')
++            if chrome is not None and chrome_facts['close'] is None: cleanup.append('Chrome exit and pipe-close observation incomplete')
++            if selector.get_map(): cleanup.append('Captured process streams not fully closed')
++            for key in list(selector.get_map().values()):
++                try: selector.unregister(key.fileobj); key.fileobj.close()
++                except BaseException as e: cleanup.append('Pipe close: '+str(e))
++            selector.close()
++            for p in (process,chrome):
++                if p:
++                    for pipe in (p.stdout,p.stderr):
++                        if pipe and not pipe.closed:
++                            try: pipe.close()
++                            except BaseException as e: cleanup.append('Remaining pipe close: '+str(e))
++            for handle in handles:
++                try: handle.close()
++                except BaseException as e: cleanup.append('Log close: '+str(e))
++            try: persist_chrome()
++            except BaseException as e: errors.append('Chrome evidence write: '+str(e))
++            groups_absent=not any(alive(p) for p in (process,chrome))
++            if groups_absent:
++                try: observe_resources('after-both-groups-reaped-before-scratch-removal')
++                except BaseException as e: errors.append('Final resource observation: '+str(e))
++            try:
++                if groups_absent and scratch.exists(): shutil.rmtree(scratch)
++                if scratch.exists(): cleanup.append('Scratch remains')
++            except BaseException as e: cleanup.append('Scratch cleanup: '+str(e))
++            if time.monotonic()>hard: cleanup.append('Total deadline exceeded')
++            try:
++                result=load(output/'browser-results.json')
++                assert result['sourceHead']==binding['head'] and result['sourceHashes']==binding['sources']
++                assert result['outcome']=='passed' and not result.get('failure') and result['cleanupErrors']==[]
++                assert result['fixtureClosed'] is True and result['contextClosed'] is True
++                assert result['chromeCleanupOwner']=='external-parent-native-sibling' and chrome is not None and result['chromePid']==chrome.pid
++                assert result['pg']==0 and len(result['checks'])==4 and result['pageErrors']==[]
++            except BaseException as e: errors.append('Browser report: '+str(e))
++            def persist_results():
++                elapsed=round((time.monotonic()-started)*1000); cumulative=gate['previousRuntimeMs']+elapsed
++                if cumulative>TOTAL_MS and 'Cumulative allowance exceeded' not in errors: errors.append('Cumulative allowance exceeded')
++                retained=None
++                try:
++                    retained=sizes(BASE)[0]-sizes(scratch)[0]+binding['previousEvidenceBytes']
++                    if retained>8*MiB-128*1024: raise RuntimeError('Retained evidence reserve exceeded')
++                except BaseException as e: errors.append('Final evidence accounting: '+str(e))
++                report.update(elapsedMs=elapsed,cumulativeMs=cumulative,remainingMs=max(0,TOTAL_MS-cumulative),
++                  exitCode=process.returncode if process else None,chromeExit=chrome_facts['exit'] if chrome_facts else None,
++                  logStreams=streams,retainedBytes=retained,cleanup={'errors':cleanup,'groupAbsent':groups_absent,
++                    'workerGroupAbsent':not alive(process),'chromeGroupAbsent':not alive(chrome),'scratchAbsent':not scratch.exists()},
++                  state='PASS' if not stopping and not errors and not cleanup and process and process.returncode==0 else 'FAILED')
++                save(BASE/'result.json',report)
++                save(budget,{'complete':not cleanup,'spentMs':cumulative,'limitMs':TOTAL_MS,'cleanupReserveMs':CLEANUP_MS,
++                  'run':gate['run'],'supervisorResult':str(BASE/'result.json')})
++            persist_results()
++            try: observe_resources('after-result-and-budget-write')
++            except BaseException as e: errors.append('Post-write resource observation: '+str(e))
++            persist_results()
++            try:
++                if sizes(BASE)[0]-sizes(scratch)[0]+binding['previousEvidenceBytes']>8*MiB: raise RuntimeError('Final retained evidence cap exceeded')
++                if time.monotonic()>hard: raise TimeoutError('Total deadline includes final evidence writes')
++            except BaseException as e: errors.append('Final evidence completion: '+str(e)); persist_results()
+     finally:
+-        # TERM both groups together, then KILL only surviving owned groups. No work-deadline guard in cleanup.
+-        for p in (process,chrome):
+-            try: signal_owned(p,signal.SIGTERM)
+-            except BaseException as e: cleanup.append('TERM owned group: '+str(e))
+-        until=min(hard-5,time.monotonic()+3)
+-        while any(alive(p) for p in (process,chrome)) and time.monotonic()<until:
+-            try: pump(.025)
+-            except BaseException as e: cleanup.append('Drain/reap: '+str(e)); break
+-        for p in (process,chrome):
+-            try:
+-                if alive(p): signal_owned(p,signal.SIGKILL)
+-                if p: p.wait(timeout=max(.01,min(1,hard-time.monotonic()-3)))
+-            except BaseException as e: cleanup.append('Owned process cleanup: '+str(e))
+-        until=min(hard-3,time.monotonic()+1)
+-        while (any(alive(p) for p in (process,chrome)) or selector.get_map()) and time.monotonic()<until:
+-            try: pump(.025)
+-            except BaseException as e: cleanup.append('Final stream drain: '+str(e)); break
+-        for name,p in (('worker',process),('chrome',chrome)):
+-            if alive(p): cleanup.append(name+' process group remains; scratch retained')
+-        if chrome is not None and chrome_facts['close'] is None: cleanup.append('Chrome exit and pipe-close observation incomplete')
+-        if selector.get_map(): cleanup.append('Captured process streams not fully closed')
+-        for key in list(selector.get_map().values()):
+-            try: selector.unregister(key.fileobj); key.fileobj.close()
+-            except BaseException as e: cleanup.append('Pipe close: '+str(e))
+-        selector.close()
+-        for p in (process,chrome):
+-            if p:
+-                for pipe in (p.stdout,p.stderr):
+-                    if pipe and not pipe.closed:
+-                        try: pipe.close()
+-                        except BaseException as e: cleanup.append('Remaining pipe close: '+str(e))
+-        for handle in handles:
+-            try: handle.close()
+-            except BaseException as e: cleanup.append('Log close: '+str(e))
+-        try: persist_chrome()
+-        except BaseException as e: errors.append('Chrome evidence write: '+str(e))
+-        groups_absent=not any(alive(p) for p in (process,chrome))
+-        if groups_absent:
+-            try: observe_resources('after-both-groups-reaped-before-scratch-removal')
+-            except BaseException as e: errors.append('Final resource observation: '+str(e))
+-        try:
+-            if groups_absent and scratch.exists(): shutil.rmtree(scratch)
+-            if scratch.exists(): cleanup.append('Scratch remains')
+-        except BaseException as e: cleanup.append('Scratch cleanup: '+str(e))
+-        if time.monotonic()>hard: cleanup.append('Total deadline exceeded')
+-        try:
+-            result=load(output/'browser-results.json')
+-            assert result['sourceHead']==binding['head'] and result['sourceHashes']==binding['sources']
+-            assert result['outcome']=='passed' and not result.get('failure') and result['cleanupErrors']==[]
+-            assert result['fixtureClosed'] is True and result['contextClosed'] is True
+-            assert result['chromeCleanupOwner']=='external-parent-native-sibling' and chrome is not None and result['chromePid']==chrome.pid
+-            assert result['pg']==0 and len(result['checks'])==4 and result['pageErrors']==[]
+-        except BaseException as e: errors.append('Browser report: '+str(e))
+-        def persist_results():
+-            elapsed=round((time.monotonic()-started)*1000); cumulative=gate['previousRuntimeMs']+elapsed
+-            if cumulative>TOTAL_MS and 'Cumulative allowance exceeded' not in errors: errors.append('Cumulative allowance exceeded')
+-            retained=None
+-            try:
+-                retained=sizes(BASE)[0]-sizes(scratch)[0]+binding['previousEvidenceBytes']
+-                if retained>8*MiB-128*1024: raise RuntimeError('Retained evidence reserve exceeded')
+-            except BaseException as e: errors.append('Final evidence accounting: '+str(e))
+-            report.update(elapsedMs=elapsed,cumulativeMs=cumulative,remainingMs=max(0,TOTAL_MS-cumulative),
+-              exitCode=process.returncode if process else None,chromeExit=chrome_facts['exit'] if chrome_facts else None,
+-              logStreams=streams,retainedBytes=retained,cleanup={'errors':cleanup,'groupAbsent':groups_absent,
+-                'workerGroupAbsent':not alive(process),'chromeGroupAbsent':not alive(chrome),'scratchAbsent':not scratch.exists()},
+-              state='PASS' if not errors and not cleanup and process and process.returncode==0 else 'FAILED')
+-            save(BASE/'result.json',report)
+-            save(budget,{'complete':not cleanup,'spentMs':cumulative,'limitMs':TOTAL_MS,'cleanupReserveMs':CLEANUP_MS,
+-              'run':gate['run'],'supervisorResult':str(BASE/'result.json')})
+-        persist_results()
+-        try: observe_resources('after-result-and-budget-write')
+-        except BaseException as e: errors.append('Post-write resource observation: '+str(e))
+-        persist_results()
+-        try:
+-            if sizes(BASE)[0]-sizes(scratch)[0]+binding['previousEvidenceBytes']>8*MiB: raise RuntimeError('Final retained evidence cap exceeded')
+-            if time.monotonic()>hard: raise TimeoutError('Total deadline includes final evidence writes')
+-        except BaseException as e: errors.append('Final evidence completion: '+str(e)); persist_results()
+         for sig,handler in previous_handlers.items(): signal.signal(sig,handler)
+-    return 0 if report['state']=='PASS' else 1
++    # Seal a stop delivered during final writes only after our handlers are restored.
++    if stopping: persist_results()
++    return 0 if not stopping and report['state']=='PASS' else 1
+ 
+ if __name__=='__main__': sys.exit(main())

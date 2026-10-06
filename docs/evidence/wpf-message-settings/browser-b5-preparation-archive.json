@@ -1,0 +1,96 @@
+{
+  "at": "2026-10-06 20:38:50 UTC",
+  "state": "APPROVED_SCOPED_PREPARATION_NOT_RUN",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "observedCandidateMetadataHead": "20957ebb0df3bbeb907aa3c654eeaa55f71f573d",
+  "candidateState": "PREPARED",
+  "gate": false,
+  "files": [
+    {
+      "source": "/private/tmp/msgset-b5/supervisor.py",
+      "archive": "browser-b5-preparation/supervisor.py",
+      "bytes": 21992,
+      "sha256": "ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/worker.mjs",
+      "archive": "browser-b5-preparation/worker.mjs",
+      "bytes": 6976,
+      "sha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/binding.json",
+      "archive": "browser-b5-preparation/binding.json",
+      "bytes": 34247,
+      "sha256": "f64a6503eefc20346a3e55098476f95b7dfc89f129466e134e3183d2a1030049"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/manifest.json",
+      "archive": "browser-b5-preparation/manifest.json",
+      "bytes": 8915,
+      "sha256": "d1bd98c7816c2985e81f0321cc3269930f22b969d0adf2f56add7ca0fef68483"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/browser-budget.json",
+      "archive": "browser-b5-preparation/browser-budget.json",
+      "bytes": 199,
+      "sha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/aliases.json",
+      "archive": "browser-b5-preparation/aliases.json",
+      "bytes": 3453,
+      "sha256": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/runtime-tsconfig.json",
+      "archive": "browser-b5-preparation/runtime-tsconfig.json",
+      "bytes": 1590,
+      "sha256": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/source-audit.json",
+      "archive": "browser-b5-preparation/source-audit.json",
+      "bytes": 8474,
+      "sha256": "d3a5089b6edff3b45c9e4a64341fd57c973005423a4a17d92e56888f61cfd291"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/report.md",
+      "archive": "browser-b5-preparation/report.md",
+      "bytes": 6084,
+      "sha256": "95f76c61a35eb1847913045e9fbfa5f4d6e7e78d7c7a85d4d5313fe396f5ce88"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/soft-stop.diff",
+      "archive": "browser-b5-preparation/soft-stop.diff",
+      "bytes": 26263,
+      "sha256": "d2c2af7844c79d8086e358a89e8dcf991fa3b10be26aa7752994cd536fe8e141"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/soft-stop-semantic.diff",
+      "archive": "browser-b5-preparation/soft-stop-semantic.diff",
+      "bytes": 2475,
+      "sha256": "07b4ee1f054fbfc6d0716907cbf30ce08af233e173f7996d36f57d9b838e6e11"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/soft-stop-binding.diff",
+      "archive": "browser-b5-preparation/soft-stop-binding.diff",
+      "bytes": 1527,
+      "sha256": "a6a22d4833fac86073a0093cfa13622afafb442842d0d1d993b94df060a6820a"
+    },
+    {
+      "source": "/private/tmp/msgset-b5/readonly-pin-fix.diff",
+      "archive": "browser-b5-preparation/readonly-pin-fix.diff",
+      "bytes": 1023,
+      "sha256": "3fb644b54e31207743b70b44c1a6ed6115801884f2d94186ab0b4b7a7f5c84e7"
+    }
+  ],
+  "archiveScope": "Exact current prepared inputs/reports/diffs only; complete pre-fix candidate remains in own/tmp before-soft-stop and is hash-pinned in source-audit. Archived current manifest is raw and retains its original absolute source references.",
+  "previousRuntimeMs": 20609,
+  "remainingMs": 39391,
+  "workMs": 24391,
+  "cleanupMs": 15000,
+  "previousEvidenceBytes": 741839,
+  "boundary": "Native Chrome outside custom outer write/egress restriction, with own native sandbox and owned profile; precise GO boundary acceptance applies to ea3c parent/71a643 worker. No runtime window granted.",
+  "next": "Manager alone rebinds actual final metadata HEAD after this seal; owner does not mutate candidate again."
+}

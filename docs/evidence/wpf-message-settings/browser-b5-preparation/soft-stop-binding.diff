@@ -1,0 +1,22 @@
+--- before-soft-stop/binding.json
++++ binding.json
+@@ -348,7 +348,7 @@
+     "worker.mjs": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+     "runtime-tsconfig.json": "2377915ccc73544a3feae90a33c5e9ebe09ca8cf9947bfcac4d23a5f93b3f01c",
+     "aliases.json": "406a1bdae748e1ab95c3b67354e43ef4d9f70b4c93aa2b10e82a2213c3545bf0",
+-    "supervisor.py": "1a478638173e16f1b59a8ea3eb15e445ac305f6aae6de4c801eaa41e21b0e586"
++    "supervisor.py": "ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7"
+   },
+   "entryPinLimits": "Exact public entries/package metadata; transitive package bytes and Chrome framework are not exhaustively hashed. No runtime or peak verification.",
+   "previousEvidenceBytes": 741839,
+@@ -357,9 +357,6 @@
+     "sha256": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c",
+     "method": "Actual b4 parent retainedBytes including previous attempt carry; cumulative20609 and exact five-field successful dual-group/scratch cleanup are required. New candidate is charged in addition; original raw unchanged."
+   },
+-  "nativeChromeBoundaryApproval": {
+-    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/message-settings-b5-prepared/native-chrome-boundary-acceptance.json",
+-    "sha256": "94f54941ef0795c1c3ff229387a1ccf6ac6129fe0ed2d19cd0c6fb3369e360ac"
+-  },
++  "nativeChromeBoundaryApproval": null,
+   "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox"
+ }

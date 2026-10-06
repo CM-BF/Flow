@@ -21,7 +21,7 @@ Root 转述 peer 对 catalog/selection/direct 源码未发现 blocking；此不�
 
 [首次 raw](../../docs/evidence/wpf-message-settings/checks-first-observation.json)绑定 f3a6/85aba：strict noEmit exit0，两 direct37/37。监督器 expected20 漏计17个参数化用例，原父 FAIL、binding/gate/raw 保留。[Root限定证据审查](../../docs/evidence/wpf-message-settings/root-direct-evidence-review.json)已核实际21+16项、六源码及原raw，接受类型/direct PASS与独立父计数错误分类；并未重跑产品。无 pending计数判断或本地重试。
 
-## 浏览器准备限定审查
+## 浏览器首次准备限定审查（历史）
 
 Root 于18:48:17 UTC给出[APPROVED_BROWSER_PREPARATION_SOURCE_SCOPED_NOT_RUN](../../docs/evidence/wpf-message-settings/root-browser-preparation-review.json)，peer给出[APPROVED_WORKER_SOURCE_SCOPED_NOT_RUN](../../docs/evidence/wpf-message-settings/peer-browser-worker-review.md)。最终 supervisor 删除scratch前采样且结果写后复核；[初稿 P2](../../docs/evidence/wpf-message-settings/root-browser-supervisor-initial-review.json)与[窄修差异](../../docs/evidence/wpf-message-settings/browser-preparation/final-resource-sample.diff)分别保留。完整源/依赖/准备脚本 pins 见[归档索引](../../docs/evidence/wpf-message-settings/browser-preparation-archive.json)。
 
@@ -48,3 +48,9 @@ Root 于18:48:17 UTC给出[APPROVED_BROWSER_PREPARATION_SOURCE_SCOPED_NOT_RUN](.
 ## 2026-10-06 20:19:12 UTC 当前限定源码复审结论
 
 Root于20:12:51.320495 UTC独立核固定270c的三行locator差异、六源hash与原b4十份证据子集，结论[APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN](../../docs/evidence/wpf-message-settings/root-270c-locator-source-review.json)、0blocking。原b4 strict4失败、19份owner归档、历史37/types及父计数FAIL保持；未运行新源码或继承行为通过。完整feature顶层UNKNOWN，browser复验/main接收/实际App接线仍待。
+
+## 2026-10-06 20:38:50 UTC 当前b5准备审查及接受范围
+
+270c locator源码已审；[b5软停止修复](../../docs/evidence/wpf-message-settings/root-browser-b5-repaired-review.json)已于20:34:01 UTC由root限定批准，0blocking，状态APPROVED_SCOPED_PREPARATION_NOT_RUN。handler记Cooperative stop/FAILED、终态与exit排stopping、outer finally恢复handlers并封存晚到stop；此前[补审P2](../../docs/evidence/wpf-message-settings/root-browser-b5-soft-stop-addendum.json)关闭为SOURCE_ADDRESSED。初批与旧边界接受原件仍保留，不将旧审批移绑新字节。
+
+[当前精确boundary](../../docs/evidence/wpf-message-settings/browser-b5-repaired-native-boundary-acceptance.json)由root依既有GO授权记录，parent ea3c / worker71a643；[当前候选与pins](../../docs/evidence/wpf-message-settings/browser-b5-preparation-archive.json)仅准备归档，PREPARED/no gate。Root的AST/源pins核验按其报告归因，owner未运行新parser/产品。实际第三次b4仍FAIL/0完成checks，累计20609、余39391；新b5未运行，完整feature顶层UNKNOWN、主线与实际host接线未完成。

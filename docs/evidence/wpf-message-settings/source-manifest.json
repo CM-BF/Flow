@@ -60,5 +60,14 @@
     "report": "root-270c-locator-source-review.json",
     "blocking": 0,
     "runtime": "NOT_RUN"
+  },
+  "browserPreparation": {
+    "report": "root-browser-b5-repaired-review.json",
+    "verdict": "APPROVED_SCOPED_PREPARATION_NOT_RUN",
+    "runnerSha256": "ea3c5470ec217517236e715338d66881278b56f1bdc861e3d6066e6f8f736cd7",
+    "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+    "boundaryAcceptance": "browser-b5-repaired-native-boundary-acceptance.json",
+    "runtime": "NOT_RUN",
+    "archive": "browser-b5-preparation-archive.json"
   }
 }
