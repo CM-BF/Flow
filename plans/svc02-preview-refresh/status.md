@@ -2,23 +2,23 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 05:40:49 UTC |
+| 最近更新时间 | 2026-10-06 06:53:51 UTC |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh |
 | Branch | codex/preview-refresh |
 | 工作基线 / HEAD | base6b4b89f397b35d7e769846df457e76bb29f4a265；固定实现9aa790552cb8847d6feb8c8f90c870407a54e572 |
-| 工作树dirty状态 | 实现冻结不变；本次仅已批准真实部署的脱敏操作回执与metadata |
+| 工作树dirty状态 | 实现冻结不变；本次仅主线接收/运行交接事实与释放metadata |
 | 工作分支状态 | completed |
 | 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 9aa790552cb8847d6feb8c8f90c870407a54e572：9 PG/HTTP + 12 host/直接消费者；host源d122到target仅缩进，tsc通过 |
 | Review | APPROVED 9aa790552cb8847d6feb8c8f90c870407a54e572：Root独立只读，未重跑 |
-| 已集成main状态 / HEAD | 已集成 fb906cb42391971a8b315dbd813f7633927d7265（05:36 UTC观察）；9aa目标为祖先且声明实现范围零diff；05:40:49Z常驻已更新到同一固定版本且显式恢复接收，0task/0未完attempt/0query |
+| 已集成main状态 / HEAD | 已集成fb906cb（05:36观察）；本次核main/origin 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a，9aa为祖先且本owner保留范围零diff；运行安装仍fb906cb accepting，后续已验收2个成功任务（Lead本次交接事实，非新探测） |
 | 实现目标 | 9aa790552cb8847d6feb8c8f90c870407a54e572 |
 | 实现范围 | packages/contracts/src/runner-maintenance.ts, apps/server/src/runner-maintenance/, apps/server/src/runners.ts, packages/storage/migrations/016-runner-maintenance.sql, tools/personal-preview/ |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 常驻预览已安全更新并恢复接收任务，原访问地址和数据保留 |
-| 下一可用交付 | 本片段已交付；真实消息验证由后续独立验收负责 |
+| 下一可用交付 | 本片段已交付；后续更新按新的维护窗口执行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 架构影响 | 新持久runner维护状态与尝试领取门禁；待Lead同步固定架构视图 |
@@ -30,7 +30,9 @@
 | SVC02-03 | completed | runner_owner | 9+12、tsc、完整失败保留与自有资源清理 |
 | SVC02-04 | completed | Lead / runner_owner | Root分步批准窗口与恢复；fb906cb bootstrap/refresh/resume完成，v3 accepting，原始回执已固定 |
 
-claim e8a8767c-4387-4c03-93a6-02153bb491c4 当前v2 active；[初始receipt](../../docs/evidence/svc02/claim.json)、[移交领取入口receipt](../../docs/evidence/svc02/claim-amend-runners-receipt.json)。05:36:59Z显式停写并原子移出 apps/server/src/runners.ts，后继K02由Lead协调领取；其余6scope保留部署证据与回修。历史实现范围仍按已审target追溯，不表示当前写权。截至05:37仅只读；05:38经Root窗口批准，由本owner唯一执行bootstrap/refresh，现保持maintenance；0新query。
+06:53 UTC fresh核claim e8a8767c-4387-4c03-93a6-02153bb491c4 v2仍归本owner；无当前修复，源码/服务操作已停止，本次metadata提交后release，外部实际回执为 `/tmp/flow-svc02-release-receipt.json`。未来配置/部署需新take和明确维护窗口；[初始receipt](../../docs/evidence/svc02/claim.json)、[移交领取入口receipt](../../docs/evidence/svc02/claim-amend-runners-receipt.json)。05:36:59Z显式停写并原子移出 apps/server/src/runners.ts，后继K02由Lead协调领取；其余6scope此前为部署证据与回修保留，现本片交付后释放。历史实现范围仍按已审target追溯，不表示未来写权。截至05:37仅只读；05:38经Root窗口批准，由本owner唯一执行bootstrap/refresh，现保持maintenance；0新query。
+
+## 历史过程（当时事实，不作为当前任务计数）
 
 2026-10-06 05:23:40 UTC 实现交独立review；[证据与限制](../../docs/evidence/svc02/README.md)、[源码/输出manifest](../../docs/evidence/svc02/manifest.json)。真实常驻服务未动；main未接收本实现。Lead于05:17:34.183Z核dashboard SVC02 live/issues[]；下一次聚合回执随交付metadata记录。
 
@@ -49,3 +51,7 @@ claim e8a8767c-4387-4c03-93a6-02153bb491c4 当前v2 active；[初始receipt](../
 2026-10-06 05:40:49 UTC Root追加明确resume授权后，先fresh核0任务/0未完attempt、同operation/source/owned PIDs，再执行一次已审resume：exit0/265ms，v3 accepting。最后只读全库仍0任务/attempt、唯一原runner；三服务身份与监听匹配；主线fb906cb clean未前进。不可变审计恰好drain→hold→resume，同operation。0消息/模型健康请求/模型调用。SVC02-04完成；本owner结束窗口，不再操作服务。[恢复原始证据](../../docs/evidence/svc02/resume-manifest.json)。
 
 实际dashboard 2026-10-06T05:41:36.383Z 已聚合本canonical live、4/4、delivered、review approved、implementation unchanged、issues=[]；[交付回执](../../docs/evidence/svc02/dashboard-delivered-receipt.json)。本次仅部署metadata收口，clean-code核事实/凭据最小输出/链接/原始证据不改写；未新增产品测试。
+
+## 本次停止持有
+
+2026-10-06 06:53:51 UTC：核main/origin 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a含9aa，runner-maintenance领域/合同/016/tools保留范围对已审实现零diff。runners.ts早已交回，后继修改不套本次旧批准。Lead确认实际安装仍fb906cb accepting，2个任务已独立验收成功；这是交接事实，本次没有请求服务/DB状态、refresh或模型。历史05:40零任务保留原时间，不改写原始回执。clean-code仅核当前/历史措辞与链接；无新测试。

@@ -21,7 +21,7 @@
 - [x] SVC02-03：专库/动态端口0模型行为检查，失败保门与清理，固定证据。
 - [x] SVC02-04：独立review、main接收与另经批准的真实部署窗口。
 
-共享exports/client/server mount由Lead接。精确scope见[claim](../../docs/evidence/svc02/claim.json)。真实61227/61228本轮禁止操作；当前仅临时专库/自有进程验证，真实部署须另给已审main/实际状态/回退语义并获Root窗口确认。
+共享exports/client/server mount由Lead接。精确scope见[claim](../../docs/evidence/svc02/claim.json)。初始实现仅在临时专库/自有进程验证；随后按下述独立批准窗口完成真实部署。本窗口已结束，未来61227/61228操作须新领取并给出已审main/实际状态/回退语义，另获Root窗口确认。
 
 ## 技能与验收
 
@@ -34,3 +34,5 @@
 2026-10-06 05:39 UTC：Root批准窗口中，唯一执行owner runner_owner已完成实际bootstrap→refresh并核原DB/配置/native目录/端口保留。更新source固定fb906cb，暂不resume；SVC02-04仅保留明确恢复接收的后续操作，不把进程就绪称模型可用。
 
 2026-10-06 05:40 UTC：Root单独批准恢复后完成一次resume，v3 accepting；全库0任务/未完attempt，3自有进程就绪，0模型。SVC02本片段已交付，原始失败/实验范围与单runner边界保留。真实消息/排队或多runner能力不纳本验收。
+
+2026-10-06 06:53:51 UTC：已核实现进入main/origin 07b7e5bdbd8c9f68e8e7de7e13a03d60f948999a，剩余owner实现范围零diff；运行安装仍fb906cb accepting，Lead交接确认后续2个任务已验收成功。本次不探测服务、不刷新、不新增模型；历史0任务仅当时部署证据。任务已完成，停止写入并于metadata提交后释放剩余claim，后续部署按新窗口/新take管理。
