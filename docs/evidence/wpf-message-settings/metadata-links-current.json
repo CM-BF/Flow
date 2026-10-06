@@ -1,15 +1,7 @@
 {
   "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
-  "sourceHashesMatch": {
-    "apps/web/src/execution-profiles/catalog.ts": true,
-    "apps/web/src/execution-profiles/selection.ts": true,
-    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": true,
-    "apps/web/test/message-settings.test.ts": true,
-    "apps/web/test/message-settings.fixture.tsx": true,
-    "apps/web/test/message-settings.browser.ts": true
-  },
-  "candidateBindingUnchanged": true,
-  "linksChecked": 37,
+  "sourceHashesMatch": true,
+  "linksChecked": 40,
   "links": [
     {
       "file": "plans/wpf-message-settings/status.md",
@@ -79,6 +71,11 @@
     {
       "file": "plans/wpf-message-settings/status.md",
       "target": "../../docs/evidence/wpf-message-settings/browser-preparation-archive.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-message-settings/status.md",
+      "target": "../../docs/evidence/wpf-message-settings/browser-first-observation.json",
       "exists": true
     },
     {
@@ -172,6 +169,11 @@
       "exists": true
     },
     {
+      "file": "plans/wpf-message-settings/review.md",
+      "target": "../../docs/evidence/wpf-message-settings/browser-first-observation.json",
+      "exists": true
+    },
+    {
       "file": "docs/evidence/wpf-message-settings/interface.md",
       "target": "readonly-dependency-proposal.json",
       "exists": true
@@ -192,10 +194,15 @@
       "exists": true
     },
     {
+      "file": "docs/evidence/wpf-message-settings/interface.md",
+      "target": "browser-first-observation.json",
+      "exists": true
+    },
+    {
       "file": "docs/evidence/wpf-message-settings/quality.md",
       "target": "skills.json",
       "exists": true
     }
   ],
-  "scope": "metadata only; no product test or space sample"
+  "scope": "Metadata archive only; no new product runtime/free"
 }

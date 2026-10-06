@@ -31,7 +31,7 @@ Picker 由宿主传入 value/onChange；只持有 Dialog 展开状态，不增�
 - MSGSET-02：固定源码后申请必要只读依赖与轻量 checks；官方组件 fixture 的双主题 390px/键盘/双 pane/callback 检查须独立运行准入。
 - MSGSET-03：固定来源/clean-code/独立审查、交付与 main 接收分别留证。
 
-当前 strict noEmit 与37项 direct 已运行通过；原父 expected20 计数断言 FAIL 保留并由独审分类，不重跑。浏览器准备源码已限定独审，browser仍 NOT_RUN、无 gate，等待 Lead R01 共享窗口和 fresh准入。无安装、依赖写入、PG、Chrome、build 或真实服务采样。
+当前 strict noEmit 与37项 direct 已运行通过；原父 expected20 计数断言 FAIL 保留并由独审分类，不重跑。浏览器准备源码已限定独审；首次获准入口运行5197ms后在Chrome CDP就绪前失败，0界面断言/截图，清理完成且窗口归还。等待受控启动/扫描配置定位与新的独审/准入，不重试。无安装、依赖写入、PG、build 或真实服务采样。
 
 ## 后继与限制
 

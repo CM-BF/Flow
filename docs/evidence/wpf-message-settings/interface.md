@@ -24,6 +24,6 @@ requested/observed 读回另属后继：保真实 nullable/omitted fast/effort �
 
 Direct：`apps/web/test/message-settings.test.ts` + 原 `execution-profiles.test.ts`。必要 noEmit 使用本树公共 source aliases，第三方只读固定 realpaths，禁止 moving @flow/dist。具体依赖指纹见 [proposal](readonly-dependency-proposal.json)。无本树 node_modules 安装/链接。
 
-Browser 文件没有自动 launcher；导出 `startMessageSettingsFixture({cacheDir,aliases})` 与 `checkMessageSettingsPicker(page,fixture,evidence)`。未来获准外层 supervisor 先持有 own scratch/deadline，再创建唯一 Chrome/Page，调用一次检查，finally 独立关闭 browser 与 fixture。Vite configFile=false，缓存必须落 own scratch，aliases 固定本树 @flow source 与已审第三方；不会调用默认实际 registry/center。类型检查与两direct共37项已运行通过，包含专测自有loopback HTTP；原父计数FAIL单独保留，见[root限定证据](root-direct-evidence-review.json)。浏览器入口/Chrome/真实App仍NOT_RUN。浏览器预算与全体 cleanup 由后续明确准入的父 runner 负责，不能直接把导出函数当运行许可。
+Browser 文件没有自动 launcher；导出 `startMessageSettingsFixture({cacheDir,aliases})` 与 `checkMessageSettingsPicker(page,fixture,evidence)`。未来获准外层 supervisor 先持有 own scratch/deadline，再创建唯一 Chrome/Page，调用一次检查，finally 独立关闭 browser 与 fixture。Vite configFile=false，缓存必须落 own scratch，aliases 固定本树 @flow source 与已审第三方；不会调用默认实际 registry/center。类型检查与两direct共37项已运行通过，包含专测自有loopback HTTP；原父计数FAIL单独保留，见[root限定证据](root-direct-evidence-review.json)。浏览器入口/Chrome首次已运行但CDP就绪前失败，0界面断言；真实App未验。浏览器预算与全体 cleanup 由后续明确准入的父 runner 负责，不能直接把导出函数当运行许可。
 
-浏览器准备已通过[root/peer限定源码审查](root-browser-preparation-review.json)，[固定准备稿](browser-preparation/report.md)复用已有监督方法；无运行gate，不改变六个已审源。下次实际绑定须使用届时metadata HEAD。
+浏览器准备已通过[root/peer限定源码审查](root-browser-preparation-review.json)，[固定准备稿](browser-preparation/report.md)复用已有监督方法；首次运行gate及失败原件见[browser-first-observation.json](browser-first-observation.json)，不改变六个已审源。任何后继须新准入并绑定届时metadata HEAD。

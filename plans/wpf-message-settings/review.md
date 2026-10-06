@@ -3,7 +3,7 @@
 **状态：UNKNOWN — 完整片段的运行验收尚未完成。**
 
 Review target commit：f3a6a7ec89d5b3f789c49b0d8662401b23032ab2。Base：8d84d529a0756116bd0fc8bad969d61a6c26248e。
-限定源码结论：**APPROVED_SOURCE_SCOPED_NOT_RUN**。Root 于 2026-10-06T18:25:38.301159Z 完成 f3a6 复审，源码无 blocking。该结论为18:25源码审查时点；后续 strict noEmit/direct37 的限定证据已独立接受，浏览器仍 NOT_RUN，不构成完整功能或 main/deployment approval。
+限定源码结论：**APPROVED_SOURCE_SCOPED_NOT_RUN**。Root 于 2026-10-06T18:25:38.301159Z 完成 f3a6 复审，源码无 blocking。该结论为18:25源码审查时点；后续 strict noEmit/direct37 的限定证据已独立接受，后续浏览器入口首次执行在CDP前失败、0界面断言，不构成完整功能或 main/deployment approval。
 
 ## 已执行的源码审查与历史
 
@@ -25,4 +25,8 @@ Root 转述 peer 对 catalog/selection/direct 源码未发现 blocking；此不�
 
 Root 于18:48:17 UTC给出[APPROVED_BROWSER_PREPARATION_SOURCE_SCOPED_NOT_RUN](../../docs/evidence/wpf-message-settings/root-browser-preparation-review.json)，peer给出[APPROVED_WORKER_SOURCE_SCOPED_NOT_RUN](../../docs/evidence/wpf-message-settings/peer-browser-worker-review.md)。最终 supervisor 删除scratch前采样且结果写后复核；[初稿 P2](../../docs/evidence/wpf-message-settings/root-browser-supervisor-initial-review.json)与[窄修差异](../../docs/evidence/wpf-message-settings/browser-preparation/final-resource-sample.diff)分别保留。完整源/依赖/准备脚本 pins 见[归档索引](../../docs/evidence/wpf-message-settings/browser-preparation-archive.json)。
 
-以上没有浏览器运行、截图、实际Vite解析或Chrome sandbox/资源峰值验证。候选仍 PREPARED_NOT_REVIEWED_NOT_RUN，无 gate；等待Lead R01共享窗与管理重新绑定实际HEAD/独立准入。完整 feature 顶层 UNKNOWN 保持，main NOT_INTEGRATED。已冻结 A/B 样本只属本地 capture，不代表实际 Send/Queue/Recovery。
+以上为运行前SOURCE_SCOPED批准。随后首次入口已按独立gate执行，实际结果见下节，不能把准备批准当运行通过。完整 feature 顶层 UNKNOWN 保持，main NOT_INTEGRATED。已冻结 A/B 样本只属本地 capture，不代表实际 Send/Queue/Recovery。
+
+## 首次浏览器入口运行（待独立证据审）
+
+[原始记录](../../docs/evidence/wpf-message-settings/browser-first-observation.json)绑定 f3/f800，5197ms、父FAILED，0行为断言/截图。Chrome在CDP readiness前退出；原日志含ProcessSingleton目录失败及Crashpad写入拒绝，Vite另报自动扫描非fixture图依赖未解析。尚无产品UI行为红/绿结论。ownPGID/Chrome/fixture/scratch清理均确认、无错误，窗口已归还，未重试或扩大权限。完整feature仍UNKNOWN；strict noEmit/direct37证据及父计数FAIL各自保留。

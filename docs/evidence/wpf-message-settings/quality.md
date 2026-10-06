@@ -13,3 +13,5 @@
 2026-10-06 18:35:05 UTC：按唯一准入运行一次父检查，0产品修改。noEmit/direct真实通过但父20vs37计数FAIL；读取原predicate及两个suite原断言数21/16，独立归因不覆盖原raw。cleanup groupAbsent/scratchAbsent/errors[]；新报告和Lead注册观察一起归档，不复采空间/4320。后续仅审证据，不为监督计数重跑未变产品。
 
 2026-10-06 18:53:17 UTC：metadata-only 安全段。本人fresh核原a5b v1八scope active/唯一writer；逐字归档root direct37证据分类与browser准备root/peer审查、完整pins/原稿窄修。逐段纠正plan/status/review/interface的当前旧NOT_RUN和计数待核表述；保历史父FAIL及源码审查时点。clean-code复核事实边界、取消/资源所有权与链接；六产品源及候选binding均未改，不将部分检查记为完整feature批准。只执行metadata parser/links/hash/Git检查，无产品重跑/空间采样。
+
+2026-10-06 18:59:41 UTC：首次browser唯一准入运行后安全收口。父5197ms/FAIL、0checks，Chrome CDP前退出；未为通过擅自放宽sandbox/安装依赖。原16文件逐字封存，资源末尾采样与清理确认均保留，窗口立即归还。clean-code复核启动失败与产品行为的归因分开，types/direct原证据不受覆盖；六源未改，无自动重试/额外空间采样。
