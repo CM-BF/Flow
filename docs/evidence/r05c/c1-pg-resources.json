@@ -1,0 +1,44 @@
+{
+  "database": "flow_r05c_d5924e3648544f059b2aa7879d2b4c0c",
+  "nativeProviderCalls": 0,
+  "appServerStarts": 0,
+  "nativeAuthRequests": 0,
+  "databaseRemoved": true,
+  "samples": [
+    {
+      "scenario": "success",
+      "processes": 1,
+      "peakInboundBytes": 411,
+      "peakOutboundBytes": 559,
+      "childClosed": true
+    },
+    {
+      "scenario": "deny:item/commandExecution/requestApproval",
+      "processes": 1,
+      "peakInboundBytes": 0,
+      "peakOutboundBytes": 559,
+      "childClosed": true
+    },
+    {
+      "scenario": "terminal-tool:mcpToolCall",
+      "processes": 1,
+      "peakInboundBytes": 455,
+      "peakOutboundBytes": 559,
+      "childClosed": true
+    },
+    {
+      "scenario": "eof",
+      "processes": 1,
+      "peakInboundBytes": 0,
+      "peakOutboundBytes": 559,
+      "childClosed": true
+    },
+    {
+      "scenario": "success",
+      "processes": 1,
+      "peakInboundBytes": 0,
+      "peakOutboundBytes": 360,
+      "childClosed": true
+    }
+  ]
+}
