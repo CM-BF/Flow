@@ -1,0 +1,131 @@
+{
+  "at": "2026-10-06T07:21:52.804965+00:00",
+  "target": "ba341d77672ba8456197d64d54193aee79719e46",
+  "files": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 39310,
+      "sha256": "7bf7e58d9a44469588594a02336f4e8fb860df56a707dbf8e7b80d19d38b4226",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "bytes": 32735,
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+      "bytes": 5244,
+      "sha256": "1a17117598fbaed84438ff636f0f1a75a9db6033472c35ed674e2c47a2e2e9fd",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/projection.ts",
+      "bytes": 11106,
+      "sha256": "55eafaa0aa50a2531667b105801635042ae4391490b36a131c4d5de175af7830",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/tool.tsx",
+      "bytes": 1864,
+      "sha256": "a30d60afd113f471bf594db5162758e5a64d9ef1185bb4ceece46d8a46db61ff",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 12835,
+      "sha256": "5b25dbe1f12c7b7f4f4b2f18b2b285889720dafc8a3a99922ff3642a0e93208d",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/activity.tsx",
+      "bytes": 9512,
+      "sha256": "8ad48a26e40bc4462221329fdfe9f1d922af3b21f7dfeaf664e1dd21ddfe6ed2",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 17047,
+      "sha256": "9751ec0b3d8560624a938cbeac7b0982cdd7a28126c57ceac09efe5de59adb05",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 11362,
+      "sha256": "df68b2c0b49228d08c35ebc772b43fd6925a5a0b7e584a6deaf2dd09d79c21fe",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "bytes": 6589,
+      "sha256": "4f8c093f916ea5a3a2b9608f171bad6c1bd5e1441b1d62eecd0a55708f5faeed",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "bytes": 8577,
+      "sha256": "a489ca5a350f1427265bb929c15516c6094062c848377745737fb4e664efa9ed",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-activity-integration.browser.ts",
+      "bytes": 22134,
+      "sha256": "b60cab56e3e2cad5828e10cd31132ec6e2fdd75ecaf59d4b17ef566b2e0de184",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-activity-integration.test.ts",
+      "bytes": 9248,
+      "sha256": "589c7e6d40433fe200706b24f0163d8e2fd4c5a42d3682c8863d74d04e2574ab",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/test/native-activity.test.ts",
+      "bytes": 7200,
+      "sha256": "8fe55fcaf4182b17abceb4faaf48bf5848a1f9641c8ca203ede1790b2d524f1c",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "bytes": 18598,
+      "sha256": "8192ae0a9228d91005d20e3600c8a1fc1ecb8743f2a558e46c13bc1d7d7e6523",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/src/conversation-activity/projection.ts",
+      "bytes": 11679,
+      "sha256": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-activity.test.ts",
+      "bytes": 20428,
+      "sha256": "aee15c31454920e41d175af7ba682e3f41ef1aee05ab6c85bd6e564ab56e07ff",
+      "fixedEqual": true,
+      "approvedHashEqual": true
+    }
+  ],
+  "checks": {
+    "directConsumers": 51,
+    "webTypecheckExit": 0,
+    "newBrowserRuns": 0,
+    "providerQueries": 0
+  }
+}
