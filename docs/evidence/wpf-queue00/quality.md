@@ -11,3 +11,5 @@
 - webapp-testing SHA256 51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2
 
 首段clean-code：能力读取与实际发送支持应分开；现有深projection接口足以测试，无需新抽象。发现原错误提示将queue true后台归因成connection不支持，计划仅改为本Web版本未提供。保留所有其它strict校验；先补失败测试，再落两行产品修复。
+
+04:46实现/交付clean-code：仅原能力谓词与运行中提示改动；没有新状态/API/抽象，不碰shared类型，发送仍由既有门禁统一。测试经公开projection接口，paired boolean覆盖读/创建/续发/重试；raw red证明原故障，修复后35直接检查/typecheck通过。提示明确本Web能力，避免把后台true与前端已支持混为一谈。实现两文件diffcheck0；交固定target独审，无其它整改项。
