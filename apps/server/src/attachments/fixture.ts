@@ -8,8 +8,63 @@ import { setTimeout as delay } from 'node:timers/promises';
 import { Pool } from 'pg';
 import { PgBoss } from 'pg-boss';
 import { createServer } from '../index.js';
-import { sha256 } from '../database.js';
+import { migrate, sha256 } from '../database.js';
 import { migrateAttachments, registerAttachmentRoutes } from './index.js';
+import { migrateWorkspace } from '../m2-workspace.js';
+import { migrateProjects } from '../projects/index.js';
+import { migrateProtocolDispatch } from '../protocol-dispatch/index.js';
+import { migrateGoals } from '../goals/index.js';
+import { migrateConversations } from '../conversations/index.js';
+import { migratePlugins } from '../plugins/index.js';
+import { migrateAssistantMessages } from '../assistant/index.js';
+import { migrateExecutionProfiles } from '../execution-profiles/index.js';
+import { migrateConversationQueue } from '../conversation-queue/index.js';
+import { migrateGoalToolRuns } from '../goal-tool-runs/index.js';
+import { migrateGoalGraphProposals } from '../goal-graph-proposals/index.js';
+import { migrateKnowledge } from '../knowledge/index.js';
+import { migrateRunnerMaintenance } from '../runner-maintenance/index.js';
+import { migrateConversationContext } from '../conversation-context/index.js';
+import { migrateGoalGraphRuns } from '../goal-graph-runs/index.js';
+import { migrateNativeActivities } from '../native-activity/index.js';
+import { migrateGoalContext } from '../goal-context/index.js';
+import { migrateAssistantStreams } from '../assistant-stream/index.js';
+import { migratePackageFetches } from '../plugin-package-fetches/index.js';
+import { migrateActiveSteering } from '../active-steering/index.js';
+import { migrateNativeHarnessSources } from '../native-harness-migration.js';
+
+/** Explicit historical schema, built forward without calling the current server factory. */
+async function migrateBeforeAttachments(pool: Pool) {
+  for (const migration of [migrate, migrateWorkspace, migrateProjects, migrateProtocolDispatch, migrateGoals,
+    migrateConversations, migratePlugins, migrateAssistantMessages, migrateExecutionProfiles, migrateConversationQueue,
+    migrateGoalToolRuns, migrateGoalGraphProposals, migrateKnowledge, migrateRunnerMaintenance, migrateConversationContext,
+    migrateGoalGraphRuns, migrateNativeActivities, migrateGoalContext, migrateAssistantStreams, migratePackageFetches,
+    migrateActiveSteering, migrateNativeHarnessSources]) await migration(pool);
+  assert.deepEqual((await pool.query('SELECT version FROM flow.migrations ORDER BY version')).rows.map(row => row.version), Array.from({ length: 25 }, (_, index) => index + 1));
+  assert.equal((await pool.query("SELECT to_regclass('flow.attachment_resources') AS resource")).rows[0].resource, null);
+}
+
+const attachmentRoutes = [
+  { method: 'GET', url: '/api/projects/:projectId/attachments/capabilities' },
+  { method: 'POST', url: '/api/projects/:projectId/attachments' },
+  { method: 'GET', url: '/api/projects/:projectId/attachments' },
+  { method: 'GET', url: '/api/projects/:projectId/attachments/upload-receipt' },
+  { method: 'GET', url: '/api/projects/:projectId/attachments/:resourceId' },
+  { method: 'GET', url: '/api/projects/:projectId/attachments/:resourceId/versions/:version/content' },
+] as const;
+/** Compatibility for the historical unmounted factory; never masks a partial production mount. */
+async function completeFixtureMount(app: Awaited<ReturnType<typeof createServer>>, pool: Pool) {
+  await app.after(); // Attachment routes are registered inside an asynchronous Fastify plugin.
+  const factoryRoutes = attachmentRoutes.map(route => ({ ...route, present: app.hasRoute(route) }));
+  const count = factoryRoutes.filter(route => route.present).length;
+  const factoryMigration = Boolean((await pool.query('SELECT 1 FROM flow.migrations WHERE version=26')).rowCount);
+  assert.ok(count === 0 || count === attachmentRoutes.length, 'Partial attachment route mount; refusing fixture repair.');
+  if (count) assert.ok(factoryMigration, 'Mounted attachment routes require migration 026.');
+  else { await migrateAttachments(pool); registerAttachmentRoutes(app, pool); await app.after(); }
+  assert.ok(attachmentRoutes.every(route => app.hasRoute(route)), 'Attachment fixture routes are incomplete.');
+  return { observedAt: new Date().toISOString(), factoryMigration, factoryRoutes,
+    fallbackMigration: !factoryMigration, fallbackRoutes: count === 0 };
+}
+type FactoryObservation = Awaited<ReturnType<typeof completeFixtureMount>>;
 
 /** Real HTTP + isolated PG; this fixture never uses a provider or an existing project DB. */
 export async function startAttachmentFixture(label: string, installed = true, processServer = false) {
@@ -27,25 +82,34 @@ export async function startAttachmentFixture(label: string, installed = true, pr
   const admin = new Pool({ connectionString: adminUrl, max: 1, connectionTimeoutMillis: 3000, statement_timeout: 5000 });
   const ownerToken = randomUUID();
   let created = false; let boss: PgBoss | undefined; let pool: Pool | undefined; let app: Awaited<ReturnType<typeof createServer>> | undefined; let base = ''; let child: ChildProcess | undefined;
+  const factoryObservations: FactoryObservation[] = [];
+  async function recordFactory(observation: FactoryObservation) {
+    factoryObservations.push(observation);
+    await writeEvidence(label + '-factory.json', { startedAt, factoryObservations });
+  }
   async function startServer() {
     if (processServer) {
       child = fork(fileURLToPath(import.meta.url), ['--attachment-server-child'], { execArgv: ['--import', 'tsx'], stdio: ['ignore', 'ignore', 'inherit', 'ipc'] });
-      const started = new Promise<string>((accept, reject) => {
-        child!.once('message', message => typeof message === 'string' && message.startsWith('http://127.0.0.1:') ? accept(message) : reject(Error('Isolated server startup failed.')));
+      const started = new Promise<{ url: string; factory: FactoryObservation }>((accept, reject) => {
+        child!.once('message', message => {
+          const ready = message as { url?: string; factory?: FactoryObservation };
+          if (ready.url?.startsWith('http://127.0.0.1:') && ready.factory) accept({ url: ready.url, factory: ready.factory });
+          else reject(Error('Isolated server startup failed.'));
+        });
         child!.once('exit', () => reject(Error('Isolated server exited before readiness.')));
         child!.once('error', reject);
       });
-      child.send({ databaseUrl: databaseUrl.href, ownerToken, installed });
+      child.send({ databaseUrl: databaseUrl.href, ownerToken });
       const timer = setTimeout(() => child?.kill('SIGKILL'), 10_000);
-      try { base = await started; } finally { clearTimeout(timer); }
+      try { const ready = await started; base = ready.url; await recordFactory(ready.factory); } finally { clearTimeout(timer); }
       return;
     }
     app = await createServer({ databaseUrl: databaseUrl.href, ownerToken, automaticQueueScan: false });
-    if (installed) await migrateAttachments(pool!);
-    registerAttachmentRoutes(app, pool!);
+    await recordFactory(await completeFixtureMount(app, pool!));
     base = await app.listen({ host: '127.0.0.1', port: 0 });
   }
   async function http(path: string, body?: unknown, options: { key?: string; token?: string } = {}) {
+    assert.ok(base, 'Pre-026 fixture is PG/domain only; install before using HTTP.');
     const response = await fetch(base + path, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: 'Bearer ' + (options.token ?? ownerToken), 'content-type': 'application/json', 'idempotency-key': options.key ?? randomUUID() }, body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(20_000) });
     const text = await response.text();
     return { status: response.status, body: JSON.parse(text), httpUtf8Bytes: Buffer.byteLength(text) };
@@ -89,14 +153,16 @@ export async function startAttachmentFixture(label: string, installed = true, pr
     await writeEvidence(label + '-resource.json', { startedAt, databaseName });
     await admin.query('CREATE DATABASE "' + databaseName + '"'); created = true;
     pool = new Pool({ connectionString: databaseUrl.href, max: 6, connectionTimeoutMillis: 3000, statement_timeout: 10_000 });
-    await startServer();
+    if (installed) await startServer();
+    else { assert.ok(!processServer, 'Pre-026 setup runs only in the isolated fixture process.'); await migrateBeforeAttachments(pool); }
     boss = new PgBoss({ connectionString: databaseUrl.href, max: 1, connectionTimeoutMillis: 3000 });
     boss.on('error', error => process.stderr.write('Attachment fixture scheduler: ' + error.message + '\n'));
     await boss.start();
+    await boss.createQueue('flow-wake', { retryLimit: 5, retryDelay: 1, retryBackoff: true, expireInSeconds: 30 });
     const readyPool = pool;
     return { pool: readyPool, boss, http, close, writeEvidence, get baseUrl() { return base; },
-      install: async () => { installed = true; await migrateAttachments(readyPool); },
-      restart: async () => { await stopServer(); await startServer(); },
+      install: async () => { if (installed) await migrateAttachments(readyPool); else { await startServer(); installed = true; } },
+      restart: async () => { assert.ok(installed); await stopServer(); await startServer(); },
       crashRestart: async () => { assert.ok(processServer, 'Only the fixture-owned child process can be killed.'); await stopServer('SIGKILL'); await startServer(); },
       project: async () => {
         const response = await http('/api/projects', { workspaceId: 'personal', title: 'Attachment isolated project' }); assert.equal(response.status, 201); return response.body.snapshot.project.id as string;
@@ -140,12 +206,11 @@ export async function startAttachmentFixture(label: string, installed = true, pr
 
 // Separate center process only for the crash/restart case; no production entry point or shared mount.
 if (process.argv.includes('--attachment-server-child')) {
-  process.once('message', async (config: { databaseUrl: string; ownerToken: string; installed: boolean }) => {
+  process.once('message', async (config: { databaseUrl: string; ownerToken: string }) => {
     const pool = new Pool({ connectionString: config.databaseUrl, max: 3 });
     const app = await createServer({ databaseUrl: config.databaseUrl, ownerToken: config.ownerToken, automaticQueueScan: false });
-    if (config.installed) await migrateAttachments(pool);
-    registerAttachmentRoutes(app, pool);
+    const factory = await completeFixtureMount(app, pool);
     process.once('SIGTERM', () => { void app.close().then(() => pool.end()).then(() => process.exit(0), () => process.exit(1)); });
-    process.send!(await app.listen({ host: '127.0.0.1', port: 0 }));
+    process.send!({ url: await app.listen({ host: '127.0.0.1', port: 0 }), factory });
   });
 }
