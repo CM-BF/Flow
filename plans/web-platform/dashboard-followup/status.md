@@ -28,7 +28,8 @@
 | WPF-D01-02 | completed | d01_owner（协作） | 03:17:14.324Z实际30源与main8c57原17ID比较missing=[]；03:12 root五源human完整 |
 | WPF-D01-03 | completed | d01_owner（协作） | 四独立feature平级planDir已注册，nested转stub；4320入口与receipts真实验证，无放宽nested安全范围 |
 | WPF-D01-04 | completed | d01_owner（协作）；原Lead实施 | U09架构tab已部署，root读取固定3773图；管理04:07 CUA见可访问架构入口；不是最新8f图已交付 |
-| WPF-D01-05 | in-progress | d01_owner（协作） | D05v2释放→D06 f619 v1正式受领，独立canonical已交Lead注册，候选ef42277待root总审 |
+| WPF-D01-05 | in-progress | d01_owner（协作） | D06 f619 v1/ef42277已独立APPROVED，等待来源注册/受控集成 |
+| WPF-D01-06 | pending | d01_owner（协作） | GoalOwner非阻塞建议标题旁显示固定SHA/快照，待renderer新scope；本轮不改 |
 
 ## 阻塞 / 风险 / 未验证
 

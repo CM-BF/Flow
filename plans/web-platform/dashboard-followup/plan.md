@@ -31,3 +31,5 @@ D04领取详情已经root实际CUA验证ID/version/lead/worker/scope/branch/时�
 工程dashboard实现行为、双主题/窄屏/键盘、安全测试和发布review均由其主线owner负责；本协作检查不冒充重新运行那些测试。root部署后发现详情用户决定仍读旧章节导致NONE显示未知，已交原dashboard owner；我方不写app.js，不因此撤销领取功能验证。详情见[研究台账](../../../docs/evidence/web-platform/research.md)。
 
 04:07:57实际42来源、当前21activewriterclaims literal0overlap，PERF02 b617 main集成记录正确；仅X03新claim待canonical注册。管理者独立CUA实际看见owner/lead/worktree/branch/16scope/state/version与来源，见[领取可见实证](../../../docs/evidence/web-platform/assignment-visibility-verification.json)。U12不新增第二账本；进度仍唯一owner status。
+
+- [ ] WPF-D01-06：后继取得标题/renderer正式scope后，把架构短SHA与固定快照提示放标题旁。GoalOwner目视D06无阻塞但当前“当前代码”标题易与底部折叠说明不一致；不扩本轮四scope、不阻D06集成。
