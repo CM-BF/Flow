@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T21:12:36.983729+00:00",
-  "state": "NO_HOLDER_LAST_SVC07_ADMISSION_RESOURCE_HOLD",
-  "groupWindowOwnership": "Mika SVC07 freshgate HOLD/NOT_RUN exit2 with0attempt/child/PG/HTTP and no pendinglaunch; window returned. Latest attributed21:08:06 free1176248320<1207959552. Web source fixes continue, no newgate/reservation/resourcepolling.",
+  "recordedAt": "2026-10-06T21:29:07.084169+00:00",
+  "state": "NO_HOLDER_MIKA_212825_NOT_RUN_RESOURCE_WEB_NOT_ADMITTED",
+  "groupWindowOwnership": "Mika fresh21:28:25 below fixedfloor, noentry/child/PG/HTTP; returned with noreservation. Web also noholder/gate/free. Wait actual resource and scheduling; logical sparsecandidate bytes do not establish physicalfree.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -852,21 +852,19 @@
   },
   "currentLedgerAvailability": {
     "state": "available",
-    "observedAt": "2026-10-06T20:27:42.487Z",
-    "source": "web-mika-take-observation-2027.json",
+    "observedAt": "2026-10-06T21:24:05.952Z",
+    "source": "message-settings-main-reception/main-close-claim-observation.json",
     "overlap": []
   },
   "nativeChromeBoundaryDecision": {
     "state": "ACCEPTED_EXPLICIT_GO",
     "evidence": "native-chrome-boundary-go-intake.json",
-    "execution": "Still no Web shared window or gate; Mika native diagnostic owns current window",
+    "execution": "Exact accepted boundary remains valid only for its pinned candidate; no current Web shared window/gate.",
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "PREPARATIONS_APPROVED_NOT_RUN_WAIT_LEAD_RETURN",
-    "priority": "Settings270c/ea3c exactboundary approved, metadata0925 rebound; Recovery4d330 parentapproved and owner finalprep pending. No newgate.",
-    "boundary": "Exact real GO delegated acceptance138552 binds currentea3c runner/71a643 worker; preserved native Chrome sandbox, custom Node restrictions, no custom Chrome outerwrite/egress guarantee",
-    "remainingSettingsMs": 39391,
+    "state": "PREPARED_NO_HOLDER_WAIT_RESOURCE_AND_NEW_SCHEDULING",
+    "priority": "Recovery8ed/000a and DPERF544c/929b source/preparation approved; fresh independent scheduling and admission remain required. Settings270c received on main, owner metadata closeout pending; no repeat checks.",
     "gate": null
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -968,13 +966,38 @@
   "recovery4dAdmission": "recovery01-4d-admission.json",
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
-  "recovery4dFinding": "Two-file identity/focus repair now fixed8ed/currentb995 clean,19pins17unchanged; pending independent review/no runtime.",
-  "currentWindowEvidence": "mika-svc07-not-run-return.json",
+  "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
+  "currentWindowEvidence": "mika-svc07-not-run-return-212825.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": "544c limited source/preparation approved, final929b HEAD and newboundary/pins verified; PREPARED NOTRUN, no gate/holder/reservation",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
   "webReservation": false,
-  "recoveryIdentityCandidate": "recovery01-8ed-identity-source/intake.json"
+  "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
+  "latestPersonalPublication": {
+    "recordedAt": "2026-10-06T21:28:49.564681+00:00",
+    "source": "Execution Lead formal inbound via root; no Web personal/service/tab/free inspection",
+    "state": "PERSONAL_PUBLICATION_COMPLETED_WINDOW_RETURNED_MIKA_NEXT",
+    "completedAt": "2026-10-06T21:27:19Z",
+    "reportedPersonal": {
+      "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+      "acceptingVersion": 18,
+      "webArtifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "webCurrentVersion": 3,
+      "retainedArtifacts": 3,
+      "queries": 0,
+      "tabs": 0
+    },
+    "rootCheckout": "main c8e2e9e clean restored per Lead",
+    "nextHolder": "Mika SVC07 one reviewed HTTP journey; next allocation, no actual result reported here",
+    "web": {
+      "running": false,
+      "reservation": false,
+      "gate": null,
+      "freeSample": false
+    },
+    "previousAck": "lead-personal-next-window-ack-2124.json",
+    "boundary": "Personal managed operation attribution belongs to original Lead/operator; does not imply settings270c or Recovery8ed personal deployment."
+  }
 }

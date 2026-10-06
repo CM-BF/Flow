@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-06T21:27:39.212972+00:00",
+  "verdict": "ACCEPTED_SCOPED_METADATA_CLOSEOUT_AND_STOPPED_OWNER_READY_FOR_MANAGER_RELEASE",
+  "fixedSource": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "main": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "final": "f80f249fa2b6db19fac031f4711eadcc6952ec8f",
+  "references": {
+    "HEAD": "f80f249fa2b6db19fac031f4711eadcc6952ec8f",
+    "origin/codex/web-message-settings": "f80f249fa2b6db19fac031f4711eadcc6952ec8f"
+  },
+  "dirty": "",
+  "changedPaths": [
+    "docs/evidence/wpf-message-settings/main-close-observation.json",
+    "docs/evidence/wpf-message-settings/main-component-receipt.json",
+    "docs/evidence/wpf-message-settings/metadata-links-current.json",
+    "docs/evidence/wpf-message-settings/metadata-parser-current.json",
+    "docs/evidence/wpf-message-settings/quality.md",
+    "docs/evidence/wpf-message-settings/root-main-integration-review.json",
+    "plans/wpf-message-settings/plan.md",
+    "plans/wpf-message-settings/review.md",
+    "plans/wpf-message-settings/status.md"
+  ],
+  "metadataOnly": true,
+  "sourcePins": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "bytes": 5649,
+      "baseFinalMainEqual": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "bytes": 9174,
+      "baseFinalMainEqual": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+      "bytes": 14325,
+      "baseFinalMainEqual": true
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+      "bytes": 12100,
+      "baseFinalMainEqual": true
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "sha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+      "bytes": 6381,
+      "baseFinalMainEqual": true
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "sha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c",
+      "bytes": 11807,
+      "baseFinalMainEqual": true
+    }
+  ],
+  "rootApprovalArchivedByteEqual": true,
+  "leadReceiptArchivedByteEqual": true,
+  "reviewedStatus": "delivered; PASSED fixed270c scoped Picker; INTEGRATED c8e; all three leaf TODO complete. Full parent MATURE02 and actual App/P01/Send/Queue/Recovery/quick controls remain open. Original failures retained as historical. Owner stops all eight scopes before manager release.",
+  "reviewedPlanAndReview": "Source target270c remains explicit; main receipt and independent main approval linked; historical NOT_RUN/failures not reclassified; no new product validation claimed.",
+  "limitations": [
+    "No release performed by root; fresh ledger CAS and authority remain manager.",
+    "Three original I02 relative reference strings remain a known nonblocking navigation correction for Lead; original receipt preserved.",
+    "No runtime, type, unit, browser, service, free-space or personal operation executed."
+  ],
+  "cleanCode": "Metadata links distinguish current outcome, fixed source and historical failures. No duplicate state authority, new TODO or implementation change."
+}

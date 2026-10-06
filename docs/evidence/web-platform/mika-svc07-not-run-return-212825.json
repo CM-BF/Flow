@@ -1,0 +1,20 @@
+{
+  "recordedAt": "2026-10-06T21:29:07.084169+00:00",
+  "source": "Mika direct inbound via root, not Web sampling",
+  "state": "MIKA_SVC07_NOT_RUN_RESOURCE_RETURNED",
+  "observedAt": "2026-10-06T21:28:25Z",
+  "freeBytes": 1143750656,
+  "startBytes": 1207959552,
+  "shortfallBytes": 64208896,
+  "entryInvoked": false,
+  "child": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "PGChromeHolder": null,
+  "reservation": false,
+  "ownerHead": "997a9f5",
+  "ownerCleanReported": true,
+  "packetUnchangedReported": true,
+  "next": "No automatic retry/new sample. Wait actual resource operation receipt and explicit scheduling; all future runtime requires own fresh gate.",
+  "resourceLimit": "Two trees times17926808 logicalB is not a physical recovery guarantee and cannot establish admission."
+}

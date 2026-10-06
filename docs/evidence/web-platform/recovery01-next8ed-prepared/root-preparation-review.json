@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-06T21:19:32.355623+00:00",
+  "verdict": "APPROVED_SCOPED_PREPARATION_NOT_RUN",
+  "candidate": "/private/tmp/recovery-browser-next8ed-0v6ddc46",
+  "manifestSha256": "4db938e316990f45c90561fd0357035ed3de8e25d13f6450973f1a0b3afa7546",
+  "reportSha256": "bfb4d918403afe50bee6f10f849e448c0f14b85663750e191bd34a9c658d0e3c",
+  "metadataHead": "000a4182a3416bf9a8f5685ae2dbbf8f5f950b06",
+  "implementation": "8ed2741327779e57d717653d10c2180e1897c26a",
+  "browserParentLogicSource": "4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb",
+  "sourceReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/8ed-identity-focus-root-approval.json",
+    "sha256": "7a7f7e5590fc8189b0b4d0f7bec15ef05c53d661fd15f7b2860de491eee2485a",
+    "verdict": "APPROVED_SCOPED_IDENTITY_FOCUS_SOURCE_NOT_RUN"
+  },
+  "validation": {
+    "sourcePinsVerified": 19,
+    "publicInputPinsVerified": 9,
+    "packageIdentityPinsVerified": 11,
+    "runtimeFilesVerified": 11,
+    "nodeAndChromePlistPinsVerified": true,
+    "oldBrowserRawVerified": 25,
+    "actualMetadataHeadMatches": true,
+    "worktreeClean": true,
+    "runtime": "NOT_RUN",
+    "spaceSampling": false,
+    "credentialAccess": false,
+    "projectWrites": false
+  },
+  "budget": {
+    "browserTotalMs": 90000,
+    "serializedPriorMs": 25517.401250000003,
+    "usedLateTerminalMs": 25520.435,
+    "remainingLateTerminalMs": 64479.565,
+    "conservativeFutureIntegerSpentMs": 25521,
+    "proposedIntegerTotalMs": 64479,
+    "cleanupReserveMs": 15000,
+    "proposedIntegerWorkMs": 49479,
+    "scratchBytes": 67108864,
+    "evidenceBytes": 8388608,
+    "perRunRetainReserveBytes": 5242880,
+    "logBytes": 1048576,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688,
+    "currentLogicalEvidenceBytes": 1020574,
+    "currentHeadroomBeforeParentRunReserveBytes": 2125154
+  },
+  "budgetInterpretation": "Keep earlier serialized sum25517.401250 and authoritative late cumulative25520.435 separate. Future total<=64479 (including15000cleanup) uses later conservative allowance; original files remain untouched.",
+  "blockingSourceFindings": [],
+  "nextPrerequisites": [
+    "Original6ffv4/21 fresh exactscope, current source/HEAD/dependency checks at actual admission.",
+    "Sharedwindow explicitly returned by Lead after fixedpersonal release; Web currently forbiddenPG/Chrome and has no reservation.",
+    "One fresh resource check only when otherwise ready and a new controlledisolatedadmin input plus singleusegate; oldfree/gates/envs are historical or deleted.",
+    "Capture original reports, later terminalstdout/stderr/actualexit and DB/process/scratchcleanup; do not auto retry or widen scenarios."
+  ],
+  "limits": [
+    "Declared file pins are not a complete dynamic runtime closure or a tested browser readiness guarantee.",
+    "Same original one-origin subset only; actual8ed UI/restore/material/focus and fullfeature remain unverified.",
+    "Existing50direct/runtime evidence stays bound to prior product/helper2b01; no types/direct rerun."
+  ],
+  "cleanCode": "Kept one unchanged supervised entry; exact readonly input binding and conservative late-budget accounting; no newcollector/adminenv/framework."
+}

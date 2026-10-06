@@ -1,0 +1,132 @@
+{
+  "at": "2026-10-06T21:19:32.355623+00:00",
+  "verdict": "APPROVED_SCOPED_INDEPENDENT_MAIN_RECEPTION_PACKAGE",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "ownerFinal": "3b945339151abd29e213ff37774ea7d6c5aee93f",
+  "fixedMainObservation": "a9f3aab4d636edc187ce508c60d060f4fb8be832",
+  "base": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "report": {
+    "path": "/private/tmp/message-settings-main-intake-a9f3/report.md",
+    "sha256": "be7f37ca7a8d792fdc259f1e40a607c5b4690d9ed2ab70b87ff31601b733a556"
+  },
+  "audit": {
+    "path": "/private/tmp/message-settings-main-intake-a9f3/audit.json",
+    "sha256": "afcad6952bec08d8cf23658ea210043fe0da56f772724563802a5ca9bdeb1e17"
+  },
+  "independentValidation": {
+    "sixSourcePinsVerified": 6,
+    "mainEqualsBaseOnAllSixTargets": true,
+    "consumerDependencyPinsVerified": 15,
+    "ownerEvidencePinsVerified": 10,
+    "minimalPureSourceCommitsVerified": 4,
+    "mergeExecution": "NOT_RUN",
+    "runtime": "NOT_RUN",
+    "projectWrites": false
+  },
+  "reception": {
+    "blockingFindings": [],
+    "minimalSourceCommits": [
+      {
+        "commit": "ed769f929a7efe01a279ddd85c2e1e88b46839e6",
+        "paths": [
+          "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+          "apps/web/src/execution-profiles/catalog.ts",
+          "apps/web/src/execution-profiles/selection.ts",
+          "apps/web/test/message-settings.browser.ts",
+          "apps/web/test/message-settings.fixture.tsx",
+          "apps/web/test/message-settings.test.ts"
+        ]
+      },
+      {
+        "commit": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+        "paths": [
+          "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+          "apps/web/test/message-settings.browser.ts"
+        ]
+      },
+      {
+        "commit": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+        "paths": [
+          "apps/web/test/message-settings.browser.ts"
+        ]
+      },
+      {
+        "commit": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+        "paths": [
+          "apps/web/test/message-settings.browser.ts"
+        ]
+      }
+    ],
+    "requiredFinalSourceHashes": [
+      {
+        "path": "apps/web/src/execution-profiles/catalog.ts",
+        "bytes": 5649,
+        "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+        "baseSha256": "b4092cd354d9058457eaa531fb35567ddbe16228363720741bd4365932197ec3",
+        "mainSha256": "b4092cd354d9058457eaa531fb35567ddbe16228363720741bd4365932197ec3",
+        "mainEqualsBase": true,
+        "targetEqualsOwner": true,
+        "baseAndMainMissing": false
+      },
+      {
+        "path": "apps/web/src/execution-profiles/selection.ts",
+        "bytes": 9174,
+        "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+        "baseSha256": "fe983e85eb444a7be08fc126877184ad62a8a1b71c07bbe16fe063a9f52749c0",
+        "mainSha256": "fe983e85eb444a7be08fc126877184ad62a8a1b71c07bbe16fe063a9f52749c0",
+        "mainEqualsBase": true,
+        "targetEqualsOwner": true,
+        "baseAndMainMissing": false
+      },
+      {
+        "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "bytes": 14325,
+        "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+        "baseSha256": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c",
+        "mainSha256": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c",
+        "mainEqualsBase": true,
+        "targetEqualsOwner": true,
+        "baseAndMainMissing": false
+      },
+      {
+        "path": "apps/web/test/message-settings.test.ts",
+        "bytes": 12100,
+        "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+        "baseSha256": null,
+        "mainSha256": null,
+        "mainEqualsBase": true,
+        "targetEqualsOwner": true,
+        "baseAndMainMissing": true
+      },
+      {
+        "path": "apps/web/test/message-settings.fixture.tsx",
+        "bytes": 6381,
+        "sha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+        "baseSha256": null,
+        "mainSha256": null,
+        "mainEqualsBase": true,
+        "targetEqualsOwner": true,
+        "baseAndMainMissing": true
+      },
+      {
+        "path": "apps/web/test/message-settings.browser.ts",
+        "bytes": 11807,
+        "sha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c",
+        "baseSha256": null,
+        "mainSha256": null,
+        "mainEqualsBase": true,
+        "targetEqualsOwner": true,
+        "baseAndMainMissing": true
+      }
+    ],
+    "metadataSource": "Authoritative plans/wpf-message-settings and docs/evidence/wpf-message-settings are owner3b945; preserve source/runtime scopes and prior failed evidence.",
+    "directConsumerReason": "Existing consumer and required public input pins checked against fixedmain/base; newindex additions are GoalPlanConfirmation/confirmGoalPlan, separate from this component. Reuse existing37direct/types and4browser evidence; no independent proof requiring Recovery is missing for this controlled component leaf.",
+    "operator": "Original Execution Lead alone performs integration. At actual acceptance, compare any main delta since a9f3 and honor active frozen personal publish source window; this report does not modify or authorize runtime outside it."
+  },
+  "scopeLimits": [
+    "Controller/Picker leaf may be received independently under OPS-001-08; do not wait for unrelated Recovery browser/fullApp completion.",
+    "Actual App/P01 catalog wiring, per-submit capture, Send/Queue/Recovery and mature quick selector remain originalTODO11; no completeMATURE02/provider/preview claim.",
+    "Originaldirect parent expected20-versus37FAIL remains; accepted actual type/direct evidence is not a rewrite of its report."
+  ],
+  "cleanCode": "Kept deliverable small and fixed; verified consumer compatibility and source composition rather than adding unrelated implementation or rerunning unchanged checks."
+}

@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-06T21:22:11.402560+00:00",
+  "verdict": "APPROVED_SCOPED_MAIN_INTEGRATION_WITH_NONBLOCKING_RECEIPT_REFERENCE_NOTE",
+  "main": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "ownerInput": "3b945339151abd29e213ff37774ea7d6c5aee93f",
+  "receipt": {
+    "path": "docs/evidence/i02/message-settings-component-receipt.json",
+    "sha256": "db3b2054ac32c3a8162b3314e6dcc9960ca03f45115326094f17f3f8a59ed855"
+  },
+  "validation": {
+    "sixSourcesMatchReviewed270c": true,
+    "directConsumerDependencyInputsUnchangedFromFixedA9f3": true,
+    "consumerInputCount": 15,
+    "mainAndOriginMainContainCommit": true,
+    "includedProofsVerified": [
+      {
+        "sourceApprovalPathInReceipt": "../message-settings-first-root-evidence-review.json",
+        "includedVerifiedMainProof": "docs/evidence/wpf-message-settings/root-direct-evidence-review.json",
+        "suggestedReceiptRelativePath": "../wpf-message-settings/root-direct-evidence-review.json",
+        "sha256": "a7464bbd266bc6e77e1b7f50bd4ae9e25dd3a2a24aa3fb84d9a262685f1fa073"
+      },
+      {
+        "sourceApprovalPathInReceipt": "../message-settings-270c-root-source-review.json",
+        "includedVerifiedMainProof": "docs/evidence/wpf-message-settings/root-270c-locator-source-review.json",
+        "suggestedReceiptRelativePath": "../wpf-message-settings/root-270c-locator-source-review.json",
+        "sha256": "a96a893b8ef870da4bcb5d3e12eb4156b4829e2e3f8c3f2f80f5e25f74826abe"
+      },
+      {
+        "sourceApprovalPathInReceipt": "../message-settings-b5-actual/root-runtime-review.json",
+        "includedVerifiedMainProof": "docs/evidence/wpf-message-settings/root-browser-b5-runtime-review.json",
+        "suggestedReceiptRelativePath": "../wpf-message-settings/root-browser-b5-runtime-review.json",
+        "sha256": "5e940da0e7b766a99639cf51ab93a3108f80ed6276aa23c6f8619d81fbefcdfc"
+      }
+    ],
+    "newChecks": 0,
+    "projectWrites": false
+  },
+  "acceptedEvidence": "Originaltypes/direct37 and controlledb5 browser4/4 plus two390screenshots remain independently accepted in their original scopes; no rerun or main runtime claim. Historical expected20 parentFAIL and earlierbrowserfailures retained.",
+  "nonblockingMetadataNote": {
+    "issue": "independentApprovals.path strings in I02 receipt preserve management-intake relative paths; relative to receipt directory those three locations do not exist. Identical approved proof bytes are included under wpf-message-settings and verified above.",
+    "action": "Execution Lead can correct the three paths to suggestedReceiptRelativePath in the next normal I02 metadata update. This provenance navigation issue does not invalidate matched source bytes or the independently resolved approvals and need not block owner leafcloseout/release.",
+    "owner": "Original Execution Lead only; root does not modify I02/main."
+  },
+  "closeout": "OriginalSettings owner may do one authorized metadata closeout under fresha5b/8, recording this exact mainreceipt and preserved proof scope, then manager releases originalclaim. No furtherwrite afterrelease.",
+  "openParentScope": [
+    "RealApp/P01/Send/Queue/Recovery wiring",
+    "Mature quickmodel/thinking/effort/speedselection and largecatalog UX",
+    "WholeMATURE02/provider behavior/personalpreviewdeployment"
+  ],
+  "cleanCode": "Checked actual six-blob main integration and unchanged direct-consumer input; retained original evidence and separated harmless receipt navigation correction from product behavior."
+}

@@ -1,0 +1,167 @@
+{
+  "recordedAt": "2026-10-06T21:25:52.538966+00:00",
+  "state": "SCOPED_KNOWN_CONSUMERS_ZERO_HIT_NOT_GLOBAL_DELETE_AUTHORIZATION",
+  "observation": {
+    "observedAt": "2026-10-06T21:24:05.952Z",
+    "source": "/private/tmp/d01-settings-main-close-live.json",
+    "sha256": "dd62d57284cc752f85b63e15749d9e52b1b722243b18a96cb149be1be19c2533",
+    "claims": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+          "apps/web/src/conversation-activity/native/tool.tsx",
+          "apps/web/test/conversation-activity-integration.browser.ts",
+          "apps/web/test/conversation-activity-integration.test.ts",
+          "docs/evidence/wpf-activity-readability",
+          "plans/wpf-activity-readability"
+        ],
+        "state": "released",
+        "branch": "codex/web-activity-readability",
+        "origin": "new",
+        "taskId": "WPF-ACTIVITYREAD01",
+        "worker": "workspace_panels_owner",
+        "claimId": "6f427ac5-8f10-4c02-8446-07cead914163",
+        "version": 3,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability",
+        "createdAt": "2026-10-06T09:33:19.306Z",
+        "updatedAt": "2026-10-06T10:02:11.452Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/conversations.css",
+          "apps/web/src/conversations/queue/ConversationQueue.tsx",
+          "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+          "apps/web/src/execution-profiles/execution-profiles.css",
+          "apps/web/test/conversation-readability.browser.ts",
+          "apps/web/test/conversation-readability.fixture.ts",
+          "docs/evidence/wpf-chat-readability",
+          "plans/wpf-chat-readability"
+        ],
+        "state": "released",
+        "branch": "codex/web-conversation-readability",
+        "origin": "new",
+        "taskId": "WPF-CHATREAD01",
+        "worker": "workspace_panels_owner",
+        "claimId": "c832542c-0222-4167-bb6f-3746d585a10c",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability",
+        "createdAt": "2026-10-06T08:23:06.246Z",
+        "updatedAt": "2026-10-06T08:46:17.837Z",
+        "observedAt": null,
+        "needsVerification": false
+      }
+    ],
+    "activeWriterOrHandoffOnTargetWorktrees": []
+  },
+  "candidateTrees": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability",
+      "head": "be977a23cff08edf6ac46d18750c3400bf9a2218",
+      "clean": "W01 bounded read observed clean"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability",
+      "head": "cd26404fd0a3eed6c0053ae374d198ee5e5fc4fb",
+      "clean": "W01 bounded read observed clean"
+    }
+  ],
+  "checkedSuperset": "Each tree docs/evidence/{w01,d06,i01,chat06p01,d01,wpf-perf01}, 12 exact directories",
+  "leadNarrowedSubset": {
+    "source": "Latest Lead inbound via root, not a fresh manager enumeration",
+    "filesPerTree": 232,
+    "logicalBytesPerTree": 17926808,
+    "preserve": [
+      "entire chat06p01",
+      "w01/workspace-panels executable preview closure",
+      "w01/thread-revision/upstream",
+      "w01/thread-revision/provenance.md",
+      "w01/.gitattributes",
+      "all ten d06 .mjs",
+      "61108 and 55616 previews",
+      "node_modules",
+      "source/apps/packages/deps",
+      "own feature evidence and all configuration"
+    ],
+    "rule": "Only the exact Lead-manifest subset remaining after these KEEP exclusions. An unlisted or unresolved concrete path stays KEEP. Logical bytes are Lead accounting, not physical reclaim measurement."
+  },
+  "knownConsumers": [
+    {
+      "label": "Recovery next8ed",
+      "checkedPaths": 114,
+      "hits": [],
+      "audit": "recovery-audit.json"
+    },
+    {
+      "label": "DPERF04 final929b",
+      "checkedPaths": 80,
+      "hits": [],
+      "audit": "settings-dperf-audit.json"
+    },
+    {
+      "label": "Settings b5 archived executed package",
+      "checkedPaths": 234,
+      "hits": [],
+      "audit": "settings-dperf-audit.json"
+    }
+  ],
+  "inference": "The narrowed subset lies within the checked 12-directory superset. Zero known declared/delayed-path overlap with the superset implies zero overlap for that subset, subject to the listed evidence limits.",
+  "ownerStopped": "Both original owners reached delivered/main and stopped their scopes; original release receipts and current D04 agree. Old active text in fixed status is pre-release history, not a current take.",
+  "releaseReceipts": [
+    "../activityread01-main-release-receipt.json",
+    "../chatread01-release-receipt.json"
+  ],
+  "unknowns": [
+    "All unexamined external, other-lead or future dynamic consumers remain UNKNOWN/KEEP; no global dependency guarantee.",
+    "No manager or workers proc/preview/service probes or full-disk/free samples were made; Lead earlier no-handle observation is only its own time-bounded report.",
+    "Future Recovery gate/adminenv and run paths are not yet bound and must be checked when supplied.",
+    "Declared input identity is not proof the complete dynamic runtime import closure executed."
+  ],
+  "operator": "Execution Lead alone, one tree at a time and outside personal publication; Web performs no sparse/delete or preview/dependency/config change.",
+  "operations": {
+    "productRuns": 0,
+    "freeSamples": 0,
+    "sparseChanges": 0,
+    "personalOperations": 0
+  },
+  "originals": [
+    {
+      "source": "/private/tmp/recovery-next8ed-sparse-dependency-okz_k7lw/report.md",
+      "archive": "recovery-report.md",
+      "bytes": 4057,
+      "sha256": "4d9ce055c73bc5b846b2f917723026ed3c1de639c8c9de02760d8a0b7fc0270e"
+    },
+    {
+      "source": "/private/tmp/recovery-next8ed-sparse-dependency-okz_k7lw/audit.json",
+      "archive": "recovery-audit.json",
+      "bytes": 52429,
+      "sha256": "4360366d55a22c145738ecd7a9a94b3e37747eaafea0b1ae5691362c3b23122b"
+    },
+    {
+      "source": "/private/tmp/w01-sparse-known-consumers-2120/report.md",
+      "archive": "settings-dperf-report.md",
+      "bytes": 4198,
+      "sha256": "4f99e2c0e1b158cd6f9fc1d76776b83279d9cd949131ace65dbcb2491cfacf94"
+    },
+    {
+      "source": "/private/tmp/w01-sparse-known-consumers-2120/audit.json",
+      "archive": "settings-dperf-audit.json",
+      "bytes": 10303,
+      "sha256": "f6d4579776782479cb8d6488b34a2a2e989b0cf44b183d23114d02ea382b6ce2"
+    }
+  ],
+  "rootReview": {
+    "archive": "root-review.json",
+    "bytes": 3372,
+    "sha256": "b3b8f2f966ebdb701d4e074560ccfc49699bab748b907c2832c31ac59575dc6a",
+    "verdict": "ACCEPTED_NO_KNOWN_WEB_CONSUMER_HITS_LIMITED_SCOPE"
+  }
+}

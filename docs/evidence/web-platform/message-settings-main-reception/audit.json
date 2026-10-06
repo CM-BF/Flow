@@ -1,0 +1,261 @@
+{
+  "observedAt": "2026-10-06T21:17:18.481176+00:00",
+  "task": "WPF-MESSAGESETTINGS01",
+  "base": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "fixedMain": "a9f3aab4d636edc187ce508c60d060f4fb8be832",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "ownerFinal": "3b945339151abd29e213ff37774ea7d6c5aee93f",
+  "ownerBranch": "codex/web-message-settings",
+  "ownerClean": true,
+  "sixSources": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "baseSha256": "b4092cd354d9058457eaa531fb35567ddbe16228363720741bd4365932197ec3",
+      "mainSha256": "b4092cd354d9058457eaa531fb35567ddbe16228363720741bd4365932197ec3",
+      "mainEqualsBase": true,
+      "targetEqualsOwner": true,
+      "baseAndMainMissing": false
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "baseSha256": "fe983e85eb444a7be08fc126877184ad62a8a1b71c07bbe16fe063a9f52749c0",
+      "mainSha256": "fe983e85eb444a7be08fc126877184ad62a8a1b71c07bbe16fe063a9f52749c0",
+      "mainEqualsBase": true,
+      "targetEqualsOwner": true,
+      "baseAndMainMissing": false
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+      "baseSha256": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c",
+      "mainSha256": "12e144a66e765235a5e93e18483599aea434d2e62a4448670561c2e70186d79c",
+      "mainEqualsBase": true,
+      "targetEqualsOwner": true,
+      "baseAndMainMissing": false
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "bytes": 12100,
+      "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19",
+      "baseSha256": null,
+      "mainSha256": null,
+      "mainEqualsBase": true,
+      "targetEqualsOwner": true,
+      "baseAndMainMissing": true
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "bytes": 6381,
+      "sha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45",
+      "baseSha256": null,
+      "mainSha256": null,
+      "mainEqualsBase": true,
+      "targetEqualsOwner": true,
+      "baseAndMainMissing": true
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 11807,
+      "sha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c",
+      "baseSha256": null,
+      "mainSha256": null,
+      "mainEqualsBase": true,
+      "targetEqualsOwner": true,
+      "baseAndMainMissing": true
+    }
+  ],
+  "minimalSourceCommitsInOrder": [
+    {
+      "commit": "ed769f929a7efe01a279ddd85c2e1e88b46839e6",
+      "paths": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/catalog.ts",
+        "apps/web/src/execution-profiles/selection.ts",
+        "apps/web/test/message-settings.browser.ts",
+        "apps/web/test/message-settings.fixture.tsx",
+        "apps/web/test/message-settings.test.ts"
+      ]
+    },
+    {
+      "commit": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+      "paths": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/test/message-settings.browser.ts"
+      ]
+    },
+    {
+      "commit": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+      "paths": [
+        "apps/web/test/message-settings.browser.ts"
+      ]
+    },
+    {
+      "commit": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+      "paths": [
+        "apps/web/test/message-settings.browser.ts"
+      ]
+    }
+  ],
+  "directConsumerAndDependencyPins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "baseSha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+      "mainSha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+      "unchanged": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "baseSha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c",
+      "mainSha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c",
+      "unchanged": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "baseSha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db",
+      "mainSha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db",
+      "unchanged": true
+    },
+    {
+      "path": "apps/web/src/components/ui/button.tsx",
+      "baseSha256": "225183a39c85425b5a807b082983b21ba8cb337ad76782abd83d65c0a38e698f",
+      "mainSha256": "225183a39c85425b5a807b082983b21ba8cb337ad76782abd83d65c0a38e698f",
+      "unchanged": true
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "baseSha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0",
+      "mainSha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0",
+      "unchanged": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "baseSha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+      "mainSha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+      "unchanged": true
+    },
+    {
+      "path": "apps/web/test/execution-profiles.test.ts",
+      "baseSha256": "03ee026277f3f52373d328a516ca3722ec4e5c95cc5c68d5a766f6bfc180350d",
+      "mainSha256": "03ee026277f3f52373d328a516ca3722ec4e5c95cc5c68d5a766f6bfc180350d",
+      "unchanged": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "baseSha256": "6355ed6f114a7b01833a03488ed4b0c59fb9ebd91f88acedffcd4051834bbee5",
+      "mainSha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277",
+      "unchanged": false
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "baseSha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "mainSha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "unchanged": true
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "baseSha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962",
+      "mainSha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962",
+      "unchanged": true
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "baseSha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "mainSha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "unchanged": true
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "baseSha256": "d62739a19e76a0f65effacb34d4e1b0d2d7d5fd90bf32fd2e2bcb1ef79351384",
+      "mainSha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9",
+      "unchanged": false
+    },
+    {
+      "path": "package.json",
+      "baseSha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "mainSha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "unchanged": true
+    },
+    {
+      "path": "apps/web/package.json",
+      "baseSha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "mainSha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "unchanged": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "baseSha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "mainSha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "unchanged": true
+    }
+  ],
+  "ownerEvidence": [
+    {
+      "path": "plans/wpf-message-settings/review.md",
+      "sha256": "d2d6b36ae9aeb85af74050be51819f7c5df8424820e4262eaf90fa941c2a6854",
+      "bytes": 11243
+    },
+    {
+      "path": "plans/wpf-message-settings/status.md",
+      "sha256": "0a6318c4c6938106be5b121c02f3613d0a4495e514f5bd71a53060332c35cc7a",
+      "bytes": 16140
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/source-manifest.json",
+      "sha256": "9723e1dbccd0ffe2a9491c9a0f888533cb06faa36b440e569e4b31fabdd6d6a2",
+      "bytes": 3645
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/root-f3-source-review.json",
+      "sha256": "24b1ad3cf5128dc82d8c46ba5fb5d80ac49f7d5c079c0de272a9fb6f2b690d91",
+      "bytes": 6980
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/peer-ed769-source-review.md",
+      "sha256": "8ad15130726b254f9adfbfb2d1fc25a31eafe7d16cbfa3fd185500b6643f500d",
+      "bytes": 5530
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/root-direct-evidence-review.json",
+      "sha256": "a7464bbd266bc6e77e1b7f50bd4ae9e25dd3a2a24aa3fb84d9a262685f1fa073",
+      "bytes": 6335
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/checks-first-observation.json",
+      "sha256": "ff786b9fbd6e320fa3264d9d7336a9605314a88be494b6cd8de1687feb5a4366",
+      "bytes": 4117
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/root-270c-locator-source-review.json",
+      "sha256": "a96a893b8ef870da4bcb5d3e12eb4156b4829e2e3f8c3f2f80f5e25f74826abe",
+      "bytes": 3559
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/root-browser-b5-runtime-review.json",
+      "sha256": "5e940da0e7b766a99639cf51ab93a3108f80ed6276aa23c6f8619d81fbefcdfc",
+      "bytes": 8802
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings/browser-fourth-observation.json",
+      "sha256": "8291d7b78b0c289e8b8b0ac1cc8c6de0adce4ff07dafc89a798455f351021fd4",
+      "bytes": 9951
+    }
+  ],
+  "conclusion": "Independent controlled component source intake is ready; no six-file drift or identified missing public dependency at fixed main. Actual merge/build not performed by this readonly review. Only Execution Lead may write main.",
+  "notRun": [
+    "merge/cherry-pick/checkout",
+    "compiler/direct/browser rerun",
+    "PG/Chrome/free/service probing"
+  ],
+  "deferred": [
+    "App controlled draft/authorized host registration and lifecycle",
+    "Send/outbox/Queue immutable settings capture and actual ACK/readback",
+    "Recovery persistence/restoration of current settings intent",
+    "mature quick model/thinking-effort/speed grouping/staged Apply UX",
+    "full MATURE02/provider/preview acceptance"
+  ]
+}

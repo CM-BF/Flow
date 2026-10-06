@@ -1,6 +1,6 @@
 {
   "recordedAt": "2026-10-06T21:12:36.983729+00:00",
-  "state": "FIXED_SOURCE_RECEIVED_PENDING_INDEPENDENT_REVIEW",
+  "state": "APPROVED_SCOPED_SOURCE_OWNER_SEALED_PREPARED_NOT_RUN",
   "owner": "workspace_panels_owner",
   "implementation": "8ed2741327779e57d717653d10c2180e1897c26a",
   "metadataHead": "b9957e8d6cbe542c18a7dd4e856dcb77dd4865e7",
@@ -25,5 +25,20 @@
     "cleanupReserveMs": 15000
   },
   "fullFeature": "NOT_STARTED/UNKNOWN; sourcefinding not runtimepass",
-  "next": "Root review fixed two-file delta; no run gate/window reserved"
+  "next": "Await separately coordinated window, onefresh originalclaim/resource gate and newcontrolledadmininput. No rerun50/types or implicitretry.",
+  "sourceReview": "root-source-review.json",
+  "sourceFindingStatus": "Both identity andreturnfocus SOURCE_ADDRESSED,0blocking in source only",
+  "metadataDispatch": {
+    "at": "2026-10-06T21:14:53.679323+00:00",
+    "claimEvidence": "approval-metadata-claim-observation.json",
+    "worker": "workspace_panels_owner",
+    "kind": "followup_task",
+    "finalOwnRecordsThenTmpBinding": true,
+    "budgetIntegerTotalMs": 64479,
+    "cleanupMs": 15000,
+    "workMs": 49479,
+    "runtime": false
+  },
+  "ownerFinalHead": "000a4182a3416bf9a8f5685ae2dbbf8f5f950b06",
+  "preparedEvidence": "../recovery01-next8ed-prepared/manager-verification.json"
 }

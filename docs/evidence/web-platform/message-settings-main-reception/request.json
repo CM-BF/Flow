@@ -1,0 +1,150 @@
+{
+  "recordedAt": "2026-10-06T21:16:15.383327+00:00",
+  "request": "FORMAL_MAIN_RECEPTION_REQUEST_SCOPED_CONTROLLED_MESSAGE_SETTINGS",
+  "state": "MAIN_DELIVERED_OWNER_STOPPED_CAS_RELEASED",
+  "authority": "GO inbound via root: under OPS-001-08, already-reviewed controlled component should be submitted independently now; do not wait Recovery realpage or futureApp wiring. Main operator remains original Execution Lead.",
+  "task": "WPF-MESSAGESETTINGS01",
+  "parent": "WPF-MATURE-02/TODO-11",
+  "owner": "w01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings",
+  "branch": "codex/web-message-settings",
+  "claim": {
+    "id": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+    "version": 1,
+    "scopeCount": 8,
+    "state": "COMMITTED retained, owner stoppedwriting pendingmain",
+    "observation": "../web-source-dispatch-take-observation-2101.json"
+  },
+  "base": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+  "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+  "ownerFinalHead": "3b945339151abd29e213ff37774ea7d6c5aee93f",
+  "cleanAtRead": true,
+  "sourceManifest": "source-manifest.json",
+  "sourceManifestSha256": "9723e1dbccd0ffe2a9491c9a0f888533cb06faa36b440e569e4b31fabdd6d6a2",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee"
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "bytes": 12100,
+      "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19"
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "bytes": 6381,
+      "sha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45"
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 11807,
+      "sha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c"
+    }
+  ],
+  "approvedRecordDirectories": [
+    "plans/wpf-message-settings",
+    "docs/evidence/wpf-message-settings"
+  ],
+  "ownerStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/plans/wpf-message-settings/status.md",
+  "ownerReview": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/plans/wpf-message-settings/review.md",
+  "reviewStatus": "APPROVED onlycontrolledPicker scope; 0blocking, mainnotyetreceived",
+  "evidenceReviews": [
+    {
+      "path": "../message-settings-first-root-evidence-review.json",
+      "sha256": "a7464bbd266bc6e77e1b7f50bd4ae9e25dd3a2a24aa3fb84d9a262685f1fa073",
+      "bytes": 6335
+    },
+    {
+      "path": "../message-settings-270c-root-source-review.json",
+      "sha256": "a96a893b8ef870da4bcb5d3e12eb4156b4829e2e3f8c3f2f80f5e25f74826abe",
+      "bytes": 3559
+    },
+    {
+      "path": "../message-settings-b5-actual/root-runtime-review.json",
+      "sha256": "5e940da0e7b766a99639cf51ab93a3108f80ed6276aa23c6f8619d81fbefcdfc",
+      "bytes": 8802
+    }
+  ],
+  "checkTuple": {
+    "typesDirect": {
+      "implementation": "f3a6a7ec89d5b3f789c49b0d8662401b23032ab2",
+      "actualHead": "85abae9dd5ec95a52422fcca357007c124b60a49",
+      "strictNoEmitExit": 0,
+      "directDistinct": 37,
+      "directNew": 16,
+      "directLegacy": 21,
+      "failed": 0,
+      "skip": 0,
+      "todo": 0,
+      "parent": "FAIL preserved: expected20 only countedplain declarations; actual37 independentlyaccepted, no rewrittenraw",
+      "scope": "Targeted controlled source; not fullApp/rootintegration"
+    },
+    "browser": {
+      "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+      "actualHead": "0925d6e3b1c86c432449cbe324f4f8ebfe1ebf0e",
+      "run": "settings-b5-20261006-204433-4029cd",
+      "checksPassed": 4,
+      "pageErrors": [],
+      "screenshots": 2,
+      "imageViewport": "390x844 light/dark",
+      "parentExit": 0,
+      "parentState": "PASS",
+      "cleanup": "worker20627/chrome16283 absent, fixture/contextclosed, scratchabsent,errors[]",
+      "elapsedMs": 8267,
+      "cumulativeBrowserMs": 28876,
+      "provider": false,
+      "PG": false,
+      "scope": "Standalone controlledpicker with own syntheticHTTPcatalog; not realAppSend/Queue/Recovery"
+    }
+  },
+  "openFollowup": [
+    "MATURE02 quickmodel/thinking/speed selection and largecatalog/pagination/error UX staysTODO11",
+    "RealAppSend/Queue/Recovery host integration and frozenreceipt/draftroundtrip stayTODO11",
+    "No personal deployment or fullMATURE02completion claimed"
+  ],
+  "integrationCheck": "Read-only owner+root fixedmain comparison approved for independentreception; actual candidate/main outcome remains Lead responsibility.",
+  "noActions": {
+    "merge": true,
+    "testRerun": true,
+    "freeSampling": true,
+    "externalThreadSend": true,
+    "newTask": true
+  },
+  "readonlyMainComparison": {
+    "fixedMain": "a9f3aab4d636edc187ce508c60d060f4fb8be832",
+    "report": "report.md",
+    "audit": "audit.json",
+    "rootReview": "root-review.json",
+    "result": "No identified independent reception blocker at fixedmain; not actualmerge execution"
+  },
+  "leadCandidate": {
+    "source": "Execution Lead inbound via root",
+    "candidate": "dab5 (reported shortref, not manager inferred fullSHA)",
+    "sixSourcesMatch": true,
+    "mainIntegrated": false,
+    "next": "OriginalLead normal mainreceipt after legal integration; do not waitRecovery and do not repeat37"
+  },
+  "main": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "mainReview": "main-integration-review.json",
+  "mainCloseClaimObservation": "main-close-claim-observation.json",
+  "nonblockingReceiptNavigation": {
+    "owner": "Original Execution Lead; no Web I02 write",
+    "action": "Next normal I02 metadata update can correct independentApprovals to ../wpf-message-settings/{root-direct-evidence-review.json,root-270c-locator-source-review.json,root-browser-b5-runtime-review.json}; identical proof bytes independently resolved."
+  },
+  "ownerFinal": "f80f249fa2b6db19fac031f4711eadcc6952ec8f",
+  "releaseReceipt": "release-receipt.json",
+  "claimState": "released",
+  "claimVersion": 2
+}

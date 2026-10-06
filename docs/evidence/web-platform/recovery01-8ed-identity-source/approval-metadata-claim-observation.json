@@ -1,0 +1,82 @@
+{
+  "observedAt": "2026-10-06T21:13:59.691Z",
+  "rawPath": "/private/tmp/d01-recovery8ed-approval-metadata-live.json",
+  "rawSha256": "d0aef308cb80c814ed92df7330e0be215ad0f3445926b33add927a2a8fe3343e",
+  "observations": [
+    {
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/attachments/controller.ts",
+          "apps/web/src/connection/session.ts",
+          "apps/web/src/conversation-context/controller.ts",
+          "apps/web/src/conversation-steering/SteeringControl.tsx",
+          "apps/web/src/conversation-steering/control.ts",
+          "apps/web/src/conversations/ConversationThread.tsx",
+          "apps/web/src/conversations/outbox.ts",
+          "apps/web/src/conversations/projection.ts",
+          "apps/web/src/conversations/queue/commands.ts",
+          "apps/web/src/plugin-integration/attachments.tsx",
+          "apps/web/src/plugin-integration/knowledge.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/src/plugin-integration/steering.tsx",
+          "apps/web/src/recovery/binding.tsx",
+          "apps/web/src/recovery/journal.ts",
+          "apps/web/test/conversation-recovery.browser.ts",
+          "apps/web/test/conversation-recovery.fixture.ts",
+          "apps/web/test/conversation-recovery.test.ts",
+          "docs/evidence/wpf-conversation-recovery",
+          "plans/wpf-conversation-recovery"
+        ],
+        "state": "active",
+        "branch": "codex/web-conversation-recovery",
+        "origin": "new",
+        "taskId": "WPF-RECOVERY01",
+        "worker": "workspace_panels_owner",
+        "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+        "version": 4,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+        "createdAt": "2026-10-06T13:46:08.213Z",
+        "updatedAt": "2026-10-06T14:05:53.395Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      "overlaps": []
+    },
+    {
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "docs/evidence/web-platform",
+          "plans/web-platform",
+          "plans/wpf-mature-01-visual",
+          "plans/wpf-mature-03-attachments",
+          "plans/wpf-mature-05-workspace",
+          "plans/wpf-mature-06-chat"
+        ],
+        "state": "active",
+        "branch": "codex/web-platform-management",
+        "origin": "migration",
+        "taskId": "WPF-001",
+        "worker": "external_web_d01_owner",
+        "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+        "version": 3,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+        "createdAt": "2026-10-06T02:48:43.295Z",
+        "updatedAt": "2026-10-06T08:56:20.186Z",
+        "observedAt": "2026-10-06T02:48:42.000Z",
+        "needsVerification": false
+      },
+      "overlaps": []
+    }
+  ],
+  "inputHead": "b9957e8d6cbe542c18a7dd4e856dcb77dd4865e7",
+  "clean": true,
+  "runtime": false,
+  "freeSampling": false
+}

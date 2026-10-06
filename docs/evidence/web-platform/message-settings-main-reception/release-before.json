@@ -1,0 +1,93 @@
+{
+  "observedAt": "2026-10-06T21:27:11.068Z",
+  "rawPath": "/private/tmp/d01-settings-main-release-live.json",
+  "rawSha256": "2377494c32a402ec139cd93c60cb08e0faa49ddef812c7820dd532433b5c7b05",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/catalog.ts",
+      "apps/web/src/execution-profiles/selection.ts",
+      "apps/web/test/message-settings.browser.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "docs/evidence/wpf-message-settings",
+      "plans/wpf-message-settings"
+    ],
+    "state": "active",
+    "branch": "codex/web-message-settings",
+    "origin": "new",
+    "taskId": "WPF-MESSAGESETTINGS01",
+    "worker": "w01_owner",
+    "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings",
+    "createdAt": "2026-10-06T18:07:51.094Z",
+    "updatedAt": "2026-10-06T18:07:51.094Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "managerClaim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/web-platform",
+      "plans/web-platform",
+      "plans/wpf-mature-01-visual",
+      "plans/wpf-mature-03-attachments",
+      "plans/wpf-mature-05-workspace",
+      "plans/wpf-mature-06-chat"
+    ],
+    "state": "active",
+    "branch": "codex/web-platform-management",
+    "origin": "migration",
+    "taskId": "WPF-001",
+    "worker": "external_web_d01_owner",
+    "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+    "createdAt": "2026-10-06T02:48:43.295Z",
+    "updatedAt": "2026-10-06T08:56:20.186Z",
+    "observedAt": "2026-10-06T02:48:42.000Z",
+    "needsVerification": false
+  },
+  "ownerFinal": "f80f249fa2b6db19fac031f4711eadcc6952ec8f",
+  "ownerStoppedWriting": "W01 explicit all8stopped inbound; no writes after release",
+  "ownerLocalEqualsRemote": true,
+  "ownerClean": true,
+  "sixSourcesCurrentEquals270cEqualsMain": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 11807,
+      "sha256": "9983774ff3d399cdff85586ac298dc3ad6e0f593fd12054e71ad9f0498f3105c"
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "bytes": 6381,
+      "sha256": "002cff6fc91f4440fe7a421b4d6e801bf7034c62b5a05198ff5f16e293206b45"
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "bytes": 12100,
+      "sha256": "002b26dd248ed80cdd01c7c006e22a5015aa8047d1da8a7d34f22cf2125b8f19"
+    }
+  ]
+}
