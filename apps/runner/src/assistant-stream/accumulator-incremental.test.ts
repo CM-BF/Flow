@@ -67,7 +67,7 @@ async function measured(run: Coalescer, frames: SDKMessage[]) {
   const originalUpdate = prototype.update;
   const update = vi.spyOn(prototype, 'update').mockImplementation(function (this: Hash, data: string | NodeJS.ArrayBufferView, encoding?: BufferEncoding) {
     counters.hashInputBytes += typeof data === 'string' ? originalByteLength(data, encoding) : data.byteLength;
-    return typeof data === 'string' ? originalUpdate.call(this, data, encoding) : originalUpdate.call(this, data);
+    return Reflect.apply(originalUpdate, this, encoding === undefined ? [data] : [data, encoding]) as Hash;
   });
   const byteLength = vi.spyOn(Buffer, 'byteLength').mockImplementation((value, encoding) => {
     const bytes = originalByteLength(value, encoding); counters.byteLengthInputBytes += bytes; return bytes;

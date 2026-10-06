@@ -45,10 +45,12 @@ def run(label, argv, env, maximum):
         record['exitCode'] = active.wait(timeout=max(0.01, timeout - time.monotonic()))
         record['ownedProcessExited'] = True
     finally:
-        if active and active.poll() is None:
-            os.killpg(active.pid, signal.SIGKILL)
+        if active and not record['ownedProcessExited']:
+            # Pipe EOF can lag leader exit; terminate only this registered child group.
+            try: os.killpg(active.pid, signal.SIGKILL); record['cleanupSignal'] = 'SIGKILL'
+            except ProcessLookupError: record['cleanupSignal'] = 'group-absent'
             try: active.wait(timeout=max(0.01, deadline - time.monotonic())); record['ownedProcessExited'] = True
-            except subprocess.TimeoutExpired: pass
+            except subprocess.TimeoutExpired: record['cleanupUnknown'] = True
         if active:
             for pipe in [active.stdout, active.stderr]:
                 if pipe: pipe.close()
