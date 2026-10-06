@@ -140,5 +140,6 @@
     "staticReview": "release03-supervisor-static-review/static-guard-review.md",
     "executionBeforeFixes": "Two unexecuted supervisor guard findings fixed by W01 and read-only checked by root; see guard-fix-audit.json. No run/probe/build or resource-gate clearance.",
     "supervisorSha256": "6dcfd01d9713fd6af282d22c2a3e0b9eac83cb268bed2703c1e558e9e50e8d9f"
-  }
+  },
+  "futureWorktreeCoordination": "Lead sole Git owner will serially enable shared extensions.worktreeConfig for O14, with sparse flags only its new config.worktree. This group changes no shared Git config/provision now. Future RELEASE03 sparse WT must coordinate with the same Git owner; estimate is not permission."
 }

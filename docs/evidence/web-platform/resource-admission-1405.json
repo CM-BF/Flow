@@ -28,9 +28,14 @@
   "unlock": "New substantive resource recovery evidence, then one fresh admission satisfying >=1GiB+128MiB and all original scope/consumer/sandbox conditions. Do not poll unchanged state.",
   "limits": "Both readings are whole-host available space, not allocation attribution or reserved capacity; no deletion, process stopping, personal service access or lowered threshold.",
   "laterLeadMessage": {
-    "reportedAt": "2026-10-06 14:13 UTC per inbound Lead message",
-    "availableKiB": 887108,
-    "availableBytes": 908398592,
-    "attribution": "Lead whole-host observation via root; not sampled by this manager and not attributable to a team"
+    "reportedAt": "2026-10-06T14:08:56Z",
+    "availableKiB": 892260,
+    "availableBytes": 913674240,
+    "attribution": "Lead corrected authoritative whole-host observation via root; not manager sample or allocation attribution",
+    "supersededAsReported": {
+      "reportedAt": "2026-10-06 14:13 UTC",
+      "availableKiB": 887108,
+      "reason": "Lead explicitly corrected the prior timestamp/readout in subsequent inbound"
+    }
   }
 }
