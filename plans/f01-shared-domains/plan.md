@@ -58,3 +58,5 @@ status唯一事实源；review绑定实现target。G01迁移004，P02迁移005�
 - [ ] **F01-28** 配合TUI-001的共享ACK后继，将创建/提交会话的结构与冻结身份校验收敛到窄client Interface；唯一设计/验收归[TUI001-09](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-client/docs/evidence/tui01/shared-ack-design.md)，不展开全API框架，不阻TUI01A局部修复。
 
 - [ ] **F01-29** 为 WPF-MATURE-03 附件领域提供固定合同的公共传输/导出/生产挂载；领域由 Web 唯一 owner 实现。预留前进迁移026，旧会话合同范围已正式交回，兼容和未知回执按[交接记录](../../docs/evidence/f01/attachment-handoff.json)成套验收。
+
+- [ ] **F01-30** 提供显式native-v1目录读取与严格回应解码，每页保留协商、旧目录无变，不把配置记录视作可调用能力。

@@ -1,5 +1,14 @@
 # F01 共享接线审查
 
+当前增量状态：NOT_STARTED（原生配置目录薄client）
+
+Review target commit：5ffe8c19e89a7beb8de6b940cddc24d3d1cfcdf7
+
+Scope：packages/client/src/index.ts, packages/client/src/native-profile-catalog.test.ts。固定manifest：docs/evidence/f01/native-catalog-client-manifest.json；3/3 HTTP与最终typecheck通过。独立review须核实际协商、严格schema、旧消费者、abort/409无重试；不覆盖领域、原生进程或个人服务。
+
+## 历史批准（下列结论仍仅各自范围）
+
+
 **当前增量状态：APPROVED（CHAT10可信启动配置薄挂载）**
 
 Review target commit：2d69959a50954912c388eddb18d3b6a9574bf680

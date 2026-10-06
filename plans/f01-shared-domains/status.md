@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:40:54 UTC / mainc5bab40ffd9a334403c0db743f798d10815961f0 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:47:57 UTC / main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,19 +10,19 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation` |
 | Branch | `codex/m2-shared-foundation` |
-| 工作基线 / HEAD | mainc5bab40f同步；当前无新共享产品delta |
-| 工作树dirty状态 | 本批仅已交付ACK的scope回收与状态事实 |
+| 工作基线 / HEAD | 6a41a0bd7c61f85bd83888b7121cf45b04b95b08 / 实现 5ffe8c19e89a7beb8de6b940cddc24d3d1cfcdf7 |
+| 工作树dirty状态 | 产品已固定；本提交仅补证据与审查待办 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED：新native publication HTTP1 + 旧profile2，共3/3；根noEmit exit0，原红保留；0provider |
+| 检查状态 | PASSED：新目录HTTP1 + 旧profile2，共3/3；最终根noEmit exit0；首类型失败与离线依赖恢复保留，0provider |
 | 已集成main状态 / HEAD | 原生配置薄client095、共享ACK dc7f和工程核心040均已有独立review并main；个人backend/static仍b1c2e398 accepting v12。 |
-| Review | 当前client由status_read独立APPROVED095，经Mika接收；025独审5365已main。 |
-| 实现目标 | 095bdb849a4ba688be7c2b55d90021b9d15e4b53 |
-| 实现范围 | packages/client/src/index.ts, packages/client/src/native-profile-publication.test.ts |
+| Review | NOT_STARTED：原生目录读取薄client，等待独立只读审查 |
+| 实现目标 | 5ffe8c19e89a7beb8de6b940cddc24d3d1cfcdf7 |
+| 实现范围 | packages/client/src/index.ts, packages/client/src/native-profile-catalog.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 终端和公开客户端已共用发送确认校验，冲突恢复保持原草稿；共享出口已接回。 |
-| 下一可用交付 | 附件与工程配置的固定合同接线，随后Web替换重复回执校验。 |
+| 当前产出 | 共享客户端已能明确读取原生配置目录，并拒绝无法确认的能力回应。 |
+| 下一可用交付 | 审查通过后供终端和Web复用原生配置目录。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -143,3 +143,5 @@
 2026-10-06 10:19:29.714 UTC：F01 v24原子amend将packages/client目录展开为其他literal文件，明确归还index.ts与conversations.test.ts给TUI01B；本owner已停写两个路径，新owner须fresh take。共享ACK后继唯一设计在TUI-001，Web独立消费者由同级协调；附件薄client接入须等待该文件正式handback，不阻附件模块独立实现。见[交接](../../docs/evidence/f01/tui-ack-handoff.json)。0产品修改/工程重测。
 
 2026-10-06 10:40:27 UTC：TUI01B已在main0cee收口、198f v2released。F01 fresh CAS v25仅接回client/index.ts；新ACK decoder文件保持已审输入且无本次改写。见[回收回执](../../docs/evidence/f01/tui-ack-return-receipt.json)。普通共享后继不继承095的产品批准范围。
+
+| F01-30 | review | Lead | 原生目录严格薄client；[固定证据](../../docs/evidence/f01/native-catalog-client-manifest.json)，没有原生能力或认证结论。 |
