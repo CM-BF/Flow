@@ -136,3 +136,5 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 - R05C：FLOW-002下的[Codex普通执行adapter](/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-native-adapter/plans/r05c-codex-native-adapter/plan.md)，先固定unknown结算，再复用R06/025纵向接线；0provider准备。
 
 - SVC04：FLOW-001下的[网页独立发布与回退](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release/plans/svc04-web-release/plan.md)，唯一权威 `web-artifact-release`；先专用fixture证明后台持续、旧资源与失败保旧，个人服务不在本轮切换。
+
+新增唯一来源：S01P02并发入口（runner-concurrency-entry）、D08两层任务关系（dashboard-task-links）、WPF-ACTIVITYREAD01活动阅读（web-activity-readability）、WPF-STEIRI01补充指令接线（web-steering-integration）。各独审范围与main接收分别以唯一status为准；本批不切换个人服务。

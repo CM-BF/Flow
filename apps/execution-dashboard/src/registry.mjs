@@ -5,6 +5,10 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['S01P02', '执行器并发配置入口', '工作线', 'runner-concurrency-entry', 's01-concurrency-entry'],
+  ['D08', '两层任务关系展示', '工程协作', 'dashboard-task-links', 'd08-task-links'],
+  ['WPF-ACTIVITYREAD01', '工具活动阅读简化', '工作线', 'web-activity-readability', 'wpf-activity-readability'],
+  ['WPF-STEIRI01', '运行中补充指令接入', '工作线', 'web-steering-integration', 'wpf-steer-i01-integration'],
   ['SVC04', '网页独立发布与回退', '工作线', 'web-artifact-release', 'svc04-web-release'],
   ['ENG-001', '真实工程任务交付', '总体计划', 'engineering-delivery', 'eng01-engineering-delivery'],
   ['R05C', 'Codex普通执行与未知状态', '工作线', 'codex-native-adapter', 'r05c-codex-native-adapter'],
@@ -135,7 +139,7 @@ export function defaultRegistry() {
     tasks: assignments.map(([id, title, role, directory, plan, app]) => ({
       id, title, role, worktree: path.join(roots, directory),
       branch: `codex/${directory}`, planDir: `plans/${plan}`,
-      evidenceDir: `docs/evidence/${({ 'ENG-001': 'eng01', 'TUI-001': 'tui01', 'COST-001': 'cost01', 'WPF-MATURE-01': 'web-platform', 'WPF-MATURE-02': 'wpf-mature-02', 'WPF-MATURE-03': 'web-platform', 'WPF-MATURE-04': 'wpf-mature-04', 'WPF-MATURE-05': 'web-platform', 'WPF-MATURE-06': 'web-platform', 'WPF-CONTEXTI01': 'wpf-context-i01', 'WPF-STEER01': 'wpf-steering-control', 'WPF-VISUAL01': 'wpf-visual01', 'D05FIT01': 'd05fit01', 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
+      evidenceDir: `docs/evidence/${({ 'WPF-ACTIVITYREAD01': 'wpf-activity-readability', 'WPF-STEIRI01': 'wpf-steer-i01', 'ENG-001': 'eng01', 'TUI-001': 'tui01', 'COST-001': 'cost01', 'WPF-MATURE-01': 'web-platform', 'WPF-MATURE-02': 'wpf-mature-02', 'WPF-MATURE-03': 'web-platform', 'WPF-MATURE-04': 'wpf-mature-04', 'WPF-MATURE-05': 'web-platform', 'WPF-MATURE-06': 'web-platform', 'WPF-CONTEXTI01': 'wpf-context-i01', 'WPF-STEER01': 'wpf-steering-control', 'WPF-VISUAL01': 'wpf-visual01', 'D05FIT01': 'd05fit01', 'WPF-001': 'web-platform', 'WPF-X03I01': 'wpf-x03', 'WPF-PROFILEI01': 'wpf-profile-integration', 'WPF-PROFILEUX01': 'wpf-profileux', 'WPF-K02C01': 'wpf-k02-compatibility', 'WPF-RENDERERI01': 'wpf-renderer-i01', 'WPF-CHAT06C01': 'wpf-chat06-compatibility', 'WPF-ACTIVITYI01': 'wpf-activity-i01', 'WPF-ACTIVITYC01': 'wpf-activity-cursor-compatibility', 'WPF-CHAT06S01': 'wpf-chat06-stream', 'WPF-CHAT06I01': 'wpf-chat06-stream-integration', 'WPF-PERF03': 'wpf-perf03', 'WPF-CONTEXT02': 'wpf-context-receipts', 'WPF-CHATREAD01': 'wpf-chat-readability' })[id] ?? id.toLowerCase()}`,
       ...(app ? { appEvidence: `apps/${app}/EVIDENCE.md` } : {}),
     })),
   };
