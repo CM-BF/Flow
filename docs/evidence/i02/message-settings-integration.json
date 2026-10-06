@@ -389,5 +389,31 @@
   },
   "gate": "HOLD main: direct legacy readers require narrow type compatibility repair; fixed domain approvals remain valid",
   "provider": 0,
-  "personalService": "unchanged"
+  "personalService": "unchanged",
+  "completedAt": "2026-10-06T17:53:11.884531+00:00",
+  "typeCompatibility": [
+    {
+      "source": "ec30bb6246ac95e5843c7166dee7118b684fd089",
+      "path": "apps/tui/src/journey.test.ts",
+      "review": "tui01f-final-two-delta-independent-review.json"
+    },
+    {
+      "source": "2d1e2ade19941e9a8b38f18148e6a2d434f8c730",
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "review": "profilec02-independent-review.json"
+    }
+  ],
+  "rootTypes": {
+    "firstExitCode": 2,
+    "finalExitCode": 0,
+    "selected": "root noEmit, all current included sources",
+    "first": "message-settings-root-types.txt",
+    "final": "message-settings-root-types-final.txt"
+  },
+  "publishState": "READY_REVIEWED_COMBINATION",
+  "limits": [
+    "CORE29/C0186+2/F01PG1 evidence retained by component; no aggregate same-run count.",
+    "No provider or personal-runtime deployment.",
+    "Original TUI whole-suite exit1 retained; new cleanup-only1 passed separately."
+  ]
 }

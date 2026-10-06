@@ -16,10 +16,10 @@
 | 已集成main状态 / HEAD | 目标推进生产/CLI五源已main bd14f984并推送，4df08fb3含资源与交接记录；167来源不变。个人runtime362/v15与Web8d8/v2不变 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 逐消息配置与终端收尾已完成独立审查，正在接收两个旧读取方的类型兼容修复。 |
-| 下一可用交付 | 逐消息设置已审组合待两处旧读取方类型兼容修复；网页与终端验证继续。 |
+| 当前产出 | 逐消息配置和终端收尾的已审组合已通过检查，可从公共接口与命令行使用；实际个人版本另行发布。 |
+| 下一可用交付 | 网页新版兼容结果正在独审，完整目标输入的生产接线继续。 |
 | 当前阻塞 | ACTIVE: 大型构建仍缺空间；局部验证依现场余量串行运行。 |
 | 需用户决定 | NONE |
 
@@ -209,3 +209,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 固定4015含CORE ea276、C01 6d114、F01 0ee两源：45项逐字同已审target，188运行保护源未改。原root noEmit exit2保留，只定位Web深readonly/TUI旧profile两处直接消费者。TUI ec30 test-only窄修已独审并接收，Web PROFILEC02正在合法独立范围收口；完整组合绿前main仍b4ab。
 
 同时接收TUI原真实两行为证据（整suiteexit1不改）、457有限连接观察10项、f4cleanup-only1项及逐字源7项；独立review绑定251manifest条目、207固定project/713compiler输入，未重新跑这些检查。原不明初始inode目录KEEP，真实Web交替仍open。见[tui01f收口](../../docs/evidence/i02/tui01f-closeout-integration.json)。OPS next4c最终2/4，余两树因现场已过准备线而未操作；Web B1750独占PG/Chrome窗口，个人服务不变。
+
+2026-10-06 17:53 UTC：两处类型冲突已由固定ec30/2d1窄修闭合，实际root noEmit exit0（9.09s），保留首次exit2原文。已审45源全hash保持，TUI7检查源/单Web类型源逐字绑定，registry169只做登记与局部parser。此批准备FF main并push，不刷新个人服务、用户tab或调用模型。

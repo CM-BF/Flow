@@ -61,7 +61,7 @@ export function readDirectoryProfile(input: unknown): Immutable<DirectoryProfile
 }
 
 /** This explicit allowlist stays narrow even when the shared publication schema gains new purposes. */
-export function configuredSelection(input: DirectoryProfile): Extract<ProfileSelection, { kind: "configured" }> {
+export function configuredSelection(input: Immutable<DirectoryProfile>): Extract<ProfileSelection, { kind: "configured" }> {
   const profile = readDirectoryProfile(input);
   const access = profile.configuration.access;
   if (!isChatAccess(access)) throw new Error("This execution profile cannot be used for ordinary chat");
