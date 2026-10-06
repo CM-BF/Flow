@@ -1,6 +1,6 @@
 # REQ15 独立审查
 
-状态：**NOT_STARTED**。尚无实现target，无approval。
+当前状态：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **REVIEW_PENDING**，尚未执行types/collect/PG。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
 
 ## Target / scope / 验收
 
@@ -43,3 +43,11 @@ Mika，2026-10-06 21:45UTC，target `d209eb7275777d50f214fd73f66d6b3c1520c459`�
 root/Mika + architecture_read，2026-10-06（reviewer消息回传，未提供独立完成时刻），target `98b60b4b18a4f58e03ec9662f54f6d96feac310f`，**DESIGN_REVIEW_APPROVED /0 P1/P2**。请求SHA `5844c5a2e26099362ec85cd4b5aff89562a988177af8eab0cc1fd59ecefe22e1`与计划SHA `d61760f31aec9b406b56504d8f977f4de14b816a143170d7815dbb30052b4003`已核；007/025两SQL2681B待Lead sole供给，002/009=base。仅设计审，不是fixture source/types/collect/PG执行批准。
 
 作者已静态核pg8.23.1/pg-protocol1.16.1接缝，见[driver观察边界](../../docs/evidence/req15-turn-page-batch/pg-driver-seam.md)。direct error.code与turnPage invalid/邻项健康分别验收，duplicate-session用details重复、legacy用不同identity、第51坏项不提前投影；收到供给后落实，不改已审产品。
+
+## 真实PG准备包源码审查请求
+
+2026-10-06 23:33:15 UTC：两SQL供给回执已核并归档，driver静态接缝另获Mika STATIC_MEASUREMENT_DESIGN_ACCEPTED/0 P1/P2（非执行批准）。本次[固定准备包](../../docs/evidence/req15-turn-page-batch/pg-window.md)新增两case、seed/observer小支持模块和一次性封套；固定提交由owner交回完整HEAD，结论 **REVIEW_PENDING**。
+
+请按[输入manifest](../../docs/evidence/req15-turn-page-batch/pg-prepared-manifest.json)分别审查：（1）公开turnPage/readAssistantFinalPreviews断言与真实SQL/schema/UTF8观察接缝，尤其第51项、每task LIMIT2、paired绑定、RR writer COMMIT ACK；（2）专库CREATE/OID/marker/zero-connections普通DROP、原Promise结算、首失败保留、输出wx、固定supervisor/30s预算与UNKNOWN边界。只读，不运行导入/types/PG。新types/collect/PG全部NOT_RUN；旧26/26与strict-v2不重复，六产品和两fake文件不变。
+
+共享协调PG已由Lead报告不可用；当前合法claim保留，本段固定后停写。后继新工作须待Lead恢复并重新核claim，禁止将读取失败当空闲或重复take/amend。

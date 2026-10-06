@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:57:19 UTC；main未集成，本次静态driver接缝/设计审归档 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 23:33:15 UTC；main未集成，本次真实PG fixture/封套准备，0执行 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,19 +10,19 @@
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；实现/验证d209eb7275777d50f214fd73f66d6b3c1520c459；准备前HEAD5b8eb93dd2eb282b6bf2d8442a30b99dde6cd8d2 |
-| 工作树dirty状态 | 归档前98b60b4 clean；本次仅PG driver静态记录与status/review，已审8产品/测试及设计packet hash不变 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品/局部验证d209eb7275777d50f214fd73f66d6b3c1520c459；本次准备前HEAD d9e31e7baf4180c7a94cb0575947f0e03bcd291a |
+| 工作树dirty状态 | 原HEAD d9e31e7b；dirty仅自身PG fixture/封套/供给回执和计划元数据，已审8产品/测试及设计packet不变 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 实现目标 | d209eb7275777d50f214fd73f66d6b3c1520c459 |
 | 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts |
-| 检查状态 | 局部source+fake26/26+strict-v2已独立APPROVED d209；真实PG/HTTP NOT_RUN，准备packet非可执行 |
+| 检查状态 | 局部source+fake26/26+strict-v2已独立APPROVED d209；新PG fixture types/collect/PG均NOT_RUN，source待独审；HTTP NOT_RUN |
 | 已集成main状态 / HEAD | 未集成；实现3cd7a6e8已固定，未在main验证 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 批量读取局部验收和真实数据库设计审均通过，测量接缝已静态核实 |
-| 下一可用交付 | 收到两份SQL后固定真实数据库用例与执行准备包，供独立审查 |
-| 当前阻塞 | NONE |
+| 当前产出 | 批量读取局部验收已通过，真实分页与并发快照验收包已准备待审 |
+| 下一可用交付 | 完成真实数据库验收包独立静态审查，资源恢复后安排局部检查 |
+| 当前阻塞 | ACTIVE: 后继运行等待可用资源与共享数据库恢复；当前静态审可继续 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED d209eb7275777d50f214fd73f66d6b3c1520c459（局部source+fake+strict）；后继PG准备另审 |
 | Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v1 ACTIVE；10 literal见[回执](../../docs/evidence/req15-turn-page-batch/claim-receipt.json) |
@@ -33,11 +33,11 @@
 | REQ15-01 | completed | db_transaction_owner | 20:36:40.398Z原子take，90路径既有供给，规则/技能读取完成 |
 | REQ15-02 | completed | db_transaction_owner | 3cd7a6e867bd84ca877e07ea4e6e97f70d685e32批量接口+单项复用已固定；首红26/17/9，green待资源 |
 | REQ15-03 | completed | db_transaction_owner / mika | 依赖已核；[源码manifest](../../docs/evidence/req15-turn-page-batch/source-manifest.json)Mika21:45UTC独立APPROVED；green26/26+strict-v2 exit0，首错保留 |
-| REQ15-04 | in-progress | db_transaction_owner / mika / Execution Lead | [PG准备设计](../../docs/evidence/req15-turn-page-batch/pg-acceptance-plan.md)与[两SQL供给请求](../../docs/evidence/req15-turn-page-batch/pg-provision-request.json)；0运行，HTTP留实际集成点 |
+| REQ15-04 | in-progress | db_transaction_owner / mika / Execution Lead | [两case准备包](../../docs/evidence/req15-turn-page-batch/pg-window.md)与固定输入manifest待源码独审；两SQL已供给，types/collect/PG均未运行；HTTP留实际集成点 |
 
 ## Dashboard 与交接
 
-唯一status canonical为 `/root/db_transaction_owner`；Lead已登记dashboard178权威来源，等待正常聚合；不编辑生成JSON或全局索引。本片产品源码已静态独审，green26/26与strict-v2通过，验证结果/一行fixture修复已独立APPROVED；当前只准备真实PG的输入与方案，依赖已就绪。SVC07独立旧claim保留且停止执行，不交叉使用claim。
+唯一status canonical为 `/root/db_transaction_owner`；Lead已登记dashboard178权威来源，等待正常聚合；不编辑生成JSON或全局索引。本片产品源码已静态独审，green26/26与strict-v2通过，验证结果/一行fixture修复已独立APPROVED；两份SQL供给已解除等待，当前只准备真实PG fixture/执行封套，依赖已就绪。SVC07独立旧claim保留且停止执行，不交叉使用claim。
 
 ## 最近安全点
 
@@ -62,3 +62,7 @@
 2026-10-06 21:49:49 UTC：Mika21:45UTC结果复审APPROVED/0 P1/P2已归档；产品冻结。后继采用原始schema最小读取闭包，额外仅007/025两SQL2681B，0新deps；不引完整createServer闭包，HTTP由实际集成点验收。当前packet仅设计/精确供给请求，NOT_EXECUTABLE，0import/tests/PG；SVC07真实HTTP保持优先，未预约窗口。
 
 2026-10-06 21:57:19 UTC：root/Mika+architecture_read对98b60b4设计packet给出DESIGN_REVIEW_APPROVED/0 P1/P2；非fixture/source/执行批准。owner静态核pg8.23.1 DataRow/ReadyForQuery与pg-protocol1.16.1 UTF8 parser，固定输入/hash与指标边界见[driver接缝](../../docs/evidence/req15-turn-page-batch/pg-driver-seam.md)。两SQL尚待Lead回执并逐bytes/hash核对；当前不写fixture/封套，不自行物化，不运行types/collect/已绿26/strict/PG。claim v1在21:54:33由Mika fresh核active；SVC HTTP优先且NOT_OPEN，OPS14迁移后继不修改历史入口。
+
+2026-10-06 23:22:24 UTC：两SQL由唯一供给方23:19:09交回，owner核007/025及原002/009 bytes/hash并逐字归档[回执](../../docs/evidence/req15-turn-page-batch/pg-provision-receipt.json)，SHA32fa2093f32b2f50fe3b09b0e086ceeaeaf8471620f6dddfb6e7b1e853000862。SQL等待解除，当前在原scope编写两case PG fixture/封套；产品8路径冻结。供给末free1070768128B为operator观察，仍无运行许可；0import/types/tests/PG/HTTP。driver静态设计获root STATIC_MEASUREMENT_DESIGN_ACCEPTED/0 P1/P2，严格限专属subject、UTF8/text、串行await及仅移自身listener；不是真实测量通过。SVC旧入口SHA982c不变，OPS14后继延至其真实HTTP结果封存后单独协调，不改历史raw。
+
+2026-10-06 23:33:15 UTC准备安全点：静态source闭包74个TS文件均在本树，无missing；新增seed/observer/两case和薄封套职责分开，固定旧supervisor纯函数，不迁移OPS14、不改产品8路径。观察器在Pool.query seed结束后安装以避开callback-form；cleanup先等原Promise，再关池、核OID/marker/owner/零连接、普通DROP，secondary不替主错误。clean-code复核命名/单一职责/小Interface/错误与资源生命周期，保留行为断言而非实现镜像；新types/collect/实际PG仍NOT_RUN。Lead报告OrbStack socket与55432无监听、沿原身份恢复，owner没有重复ledger/PG探针；既有v1claim保留，固定后停止本段写入，后继须fresh核验恢复事实。主线与HTTP未集成/未验证，不用本packet替代。
