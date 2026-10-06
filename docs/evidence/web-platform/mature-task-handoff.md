@@ -12,6 +12,10 @@ Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f53
 
 ## 当前优先队列（当前安全点；以下较早时点只作历史）
 
+**Recovery01仍只读候选**：[fixedcde21literal/P01入口/容量/真实消费者与验证预算](recovery01-fixed-cde-proposal.json)已收，原20方向认可，新增单一binding接现sidebar.footer，最终21范围裁决待到；未建树/take。F01 cookie client只有精确薄接口候选、尚无fixedSHA；不以stub取代。
+
+**单目录资源清理未执行**：经Lead明确授权只盘点原CONTEXTI01自有node_modules；fresh临时005375ad v1单literal已取，但原owner发现实际运行消费者，决定保留、不停进程，随后v2释放13:17:20.601Z。[take](contexti-owned-dependencies-cleanup-take-receipt.json) / [release](contexti-owned-dependencies-cleanup-release-receipt.json)。现场13:16:50观察先于13:16:52领取回执，两者并行交叉到达；没有删除或旧source写入。[原owner完整盘点与df归因](contexti-owned-dependencies-cleanup-outcome.json)已原样归档；两组fixture/12个native或executable FD确有消费者，删除0。没有继续跨WT反向扫描，不冒完整排除；总df变化不归本组。
+
 **环境核验历史与解除**：Lead先报告ENOSPC使I02组合import前退出、0tests，types0，非产品红；后续SVC仅清自有stage，Lead报约1.85GiB可用/无复制进程，将只重跑此前两项。Lead随后报告附件组合PG2+UI17/rootWebtypes通过、正在接收但尚无mainSHA；我方不重跑191或长名，[通知及解除归因](environment-enospc-intake-note.json)。本段仅小metadata，未清他人目录或重采服务。
 
 1. **MATURE04 × attachment-only 修复已正式main cde6646**：fixed4f879两源与ATTACHI9eec同批31-source接收；[原Leadreceipt](attachment-current-main-intake-receipt.json) / [管理31源只读核验](attachment-current-main-management-audit.json)。实际生产factory仅附件+mixed v2 PG2（2未选）、officialUI17/root+Webtypes0按Lead归因，ENOSPC0tests原raw保留，无我方复测。v2材料准确unknown/metadata-unavailable与revision null，executionInputDigest/SDKsample、v1/旧历史保留；不是完整材料展示Done。Mika自身main收口由其合法owner负责，不由Web释放其claim。

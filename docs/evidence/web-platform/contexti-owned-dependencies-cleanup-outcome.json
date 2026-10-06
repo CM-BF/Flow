@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-06T13:18:48.472201+00:00",
+  "sourceAttribution": "Original owner w01 read-only /tmp audit; manager archived exact bytes, did not inspect/query fixture endpoints or stop processes",
+  "originals": [
+    {
+      "source": "/tmp/contexti01-dependency-retained-report.json",
+      "archive": "contexti-owned-dependencies-retained-report.json",
+      "bytes": 7994,
+      "sha256": "eda2e382c69c8174b6d3d5c2f5a90a19866f2debc788bff53fa268f23fc826b1"
+    },
+    {
+      "source": "/tmp/contexti01-dependency-process-audit.json",
+      "archive": "contexti-owned-dependencies-process-audit.json",
+      "bytes": 2923,
+      "sha256": "9081006c86896d17e298f81e10f9f4091a66370a2a00ca614b55b9d4be798b91"
+    }
+  ],
+  "authorizedScope": "Only web-context-integration/node_modules after all dependency checks pass",
+  "decision": "RETAINED: actual active consumers;0 filesdeleted/0 processesstopped",
+  "observedConsumers": "Two actual fixture groups and12target native/executable FDs per owner;39494 ports62863–62865 and59670 ports64535–64537;esbuild39495/59669 paths in target",
+  "duKiB": 564084,
+  "duMeaning": "allocation estimate only, not reclaimable physical guarantee",
+  "dfAvailableKiBBefore": 1800600,
+  "dfAvailableKiBAfter": 1811512,
+  "dfAttribution": "No own deletion, total delta is not attributable to this owner; other cleanup concurrent",
+  "inspectionBoundary": "Reverse other-worktree link scan stopped when active condition already failed; do not claim full reverse-dependency clearance",
+  "claim": "005375ad v1 taken13:16:52.665Z after initial13:16:50 process observation; crossed messages. No mutation. v2 released13:17:20.601Z.",
+  "canonical": "Original delivered source/status/lock untouched,fe2b9215 clean; this management archive only",
+  "resourceGate": "Fullinstall/build requires>=2.5GiB and expectedphysicalgrowth+1GiB margin; smallchecks remain distinct, not all development blocked"
+}

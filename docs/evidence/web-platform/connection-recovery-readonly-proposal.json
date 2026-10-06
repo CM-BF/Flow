@@ -221,5 +221,12 @@
       "Explicit repeat connect and singleton32 slot semantics"
     ],
     "fields": "Existing ready centerId/ownerPrincipalId/expiresAt/csrfToken sufficient; no hard requirement for additional sessionRef/authEpoch/boundOrigin DTO fields"
+  },
+  "latestRecoveryScopeProposal": {
+    "record": "recovery01-fixed-cde-proposal.json",
+    "state": "root20direction认可; final21scope/P01 entry refinement pending finaldecision; no claim",
+    "fixedMain": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+    "reason": "Add existing-slot trusted P01 binding to20candidate rather than hardcoded recoveryentry; underlying16+4materialseams retained",
+    "F01FixedSha": null
   }
 }

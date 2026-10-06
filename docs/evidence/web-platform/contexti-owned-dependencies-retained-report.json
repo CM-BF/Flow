@@ -1,0 +1,187 @@
+{
+  "observedAt": "2026-10-06T13:17:39.147048+00:00",
+  "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules",
+  "decision": "KEEP: active consumers; no removal and no processes stopped",
+  "processIdentity": [
+    {
+      "pid": 38754,
+      "ppid": 46117,
+      "executable": "node",
+      "relevantScriptPaths": [
+        "test/conversation-context-integration.fixture.ts"
+      ],
+      "redactedOtherArguments": true
+    },
+    {
+      "pid": 39371,
+      "ppid": 38754,
+      "executable": "node",
+      "relevantScriptPaths": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.bin/../tsx/dist/cli.mjs",
+        "test/conversation-context-integration.fixture.ts"
+      ],
+      "redactedOtherArguments": true
+    },
+    {
+      "pid": 39494,
+      "ppid": 39371,
+      "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "relevantScriptPaths": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs",
+        "file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+        "test/conversation-context-integration.fixture.ts"
+      ],
+      "redactedOtherArguments": true
+    },
+    {
+      "pid": 39495,
+      "ppid": 39494,
+      "executable": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "relevantScriptPaths": [],
+      "redactedOtherArguments": true
+    },
+    {
+      "pid": 58575,
+      "ppid": 46117,
+      "executable": "node",
+      "relevantScriptPaths": [],
+      "redactedOtherArguments": true
+    },
+    {
+      "pid": 59491,
+      "ppid": 58575,
+      "executable": "node",
+      "relevantScriptPaths": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.bin/../tsx/dist/cli.mjs"
+      ],
+      "redactedOtherArguments": true
+    },
+    {
+      "pid": 59669,
+      "ppid": 59491,
+      "executable": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "relevantScriptPaths": [],
+      "redactedOtherArguments": true
+    },
+    {
+      "pid": 59670,
+      "ppid": 59491,
+      "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "relevantScriptPaths": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs",
+        "file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs"
+      ],
+      "redactedOtherArguments": true
+    }
+  ],
+  "openTargetFiles": [
+    {
+      "pid": 39371,
+      "command": "node",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+    },
+    {
+      "pid": 39494,
+      "command": "node",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+    },
+    {
+      "pid": 39494,
+      "command": "node",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node"
+    },
+    {
+      "pid": 39494,
+      "command": "node",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node"
+    },
+    {
+      "pid": 39494,
+      "command": "node",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node"
+    },
+    {
+      "pid": 39495,
+      "command": "esbuild",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild"
+    },
+    {
+      "pid": 59491,
+      "command": "node",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+    },
+    {
+      "pid": 59669,
+      "command": "esbuild",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild"
+    },
+    {
+      "pid": 59670,
+      "command": "node",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/fsevents@2.3.3/node_modules/fsevents/fsevents.node"
+    },
+    {
+      "pid": 59670,
+      "command": "node",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node"
+    },
+    {
+      "pid": 59670,
+      "command": "node",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node"
+    },
+    {
+      "pid": 59670,
+      "command": "node",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node"
+    }
+  ],
+  "fdExit": 0,
+  "fdWarnings": [],
+  "listeners": [
+    "p39494",
+    "cnode",
+    "f32",
+    "n127.0.0.1:62865",
+    "f56",
+    "n127.0.0.1:62863",
+    "f57",
+    "n127.0.0.1:62864",
+    "p59670",
+    "cnode",
+    "f16",
+    "n127.0.0.1:64535",
+    "f17",
+    "n127.0.0.1:64536",
+    "f18",
+    "n127.0.0.1:64537"
+  ],
+  "listenerExit": 0,
+  "directoryAllocatedDuKiB": 564084,
+  "sizeMeaning": "du allocation estimate, not physically reclaimable byte count; no unlink performed",
+  "dfAfterInspection": "Filesystem   1024-blocks      Used Available Capacity iused    ifree %iused  Mounted on\n/dev/disk3s5   971350180 944756424   1811512   100% 9035658 18115120   33%   /System/Volumes/Data\n",
+  "gitHead": "fe2b9215d1b230424d9470b8d187eed3d7e77231",
+  "gitDirty": "",
+  "otherWorktreeReverseLinks": "NOT_ASSESSED: positive active consumers already fail deletion precondition",
+  "rebuildLock": "tracked pnpm-lock.yaml retained; sha256 cac4ee68595237001f83b47f71bc4c7e735aefe1ae7e03e412758a0c0f6ed08c",
+  "physicalReclaimedBytes": 0,
+  "modelsOrServicesStarted": 0,
+  "environmentRead": false,
+  "projectWrites": false,
+  "dfBeforeInspection": {
+    "availableKiB": 1800600,
+    "usedKiB": 944767336,
+    "source": "earlier same-turn df -k node_modules read, before process/FD inspection"
+  },
+  "dfAfterInspectionAvailableKiB": 1811512,
+  "dfDeltaAttribution": "+10912 KiB observed while no file was removed; concurrent filesystem changes, not recovery credited to this operation",
+  "skills": {
+    "discovery": "existing local find-skills and clean-code, no installation",
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "method": "exact path/ownership, fail closed on live consumers, preserve source and raw evidence; no broad cleanup or dependency traversal after blocker established"
+  },
+  "writeScopeStopped": true
+}

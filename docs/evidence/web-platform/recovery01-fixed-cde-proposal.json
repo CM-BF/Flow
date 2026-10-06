@@ -1,0 +1,143 @@
+{
+  "recordedAt": "2026-10-06T13:18:04.895488+00:00",
+  "source": "workspace_panels_owner final21-literal read-only refinement; root20 direction认可, final21 scope decision and fixed shared input pending",
+  "fixedMain": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+  "state": "PROPOSED_NOT_TAKEN",
+  "parent": "WPF-MATURE-06",
+  "stableTodo": "WPF-MATURE-06-04",
+  "candidateTask": "WPF-RECOVERY01",
+  "candidateOwner": "workspace_panels_owner",
+  "candidateWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "candidateBranch": "codex/web-conversation-recovery",
+  "candidateScope": [
+    "apps/web/src/connection/session.ts",
+    "apps/web/src/recovery/journal.ts",
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/conversations/queue/commands.ts",
+    "apps/web/src/conversation-steering/control.ts",
+    "apps/web/src/conversation-steering/SteeringControl.tsx",
+    "apps/web/src/plugin-integration/steering.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/test/conversation-recovery.test.ts",
+    "apps/web/test/conversation-recovery.fixture.ts",
+    "apps/web/test/conversation-recovery.browser.ts",
+    "plans/wpf-conversation-recovery",
+    "docs/evidence/wpf-conversation-recovery",
+    "apps/web/src/plugin-integration/knowledge.tsx",
+    "apps/web/src/conversation-context/controller.ts",
+    "apps/web/src/plugin-integration/attachments.tsx",
+    "apps/web/src/attachments/controller.ts"
+  ],
+  "scopeReason": "Revised16core+4material seams plus trusted P01 recovery binding; avoid new hardcoded entry/second authority. No scope taken.",
+  "facts": [
+    "SteeringControl18/22 privately owns draft",
+    "Knowledge controller168–174 add accepts known searched entries",
+    "Attachment controller190–198 select accepts current page/items/recovery metadata",
+    "App stable view/key/route remains unique authority. Queue binding restores after Projection creation and before sending; no queue projection scope needed."
+  ],
+  "modules": {
+    "ConnectionSession": "Verified namespace/generation and cookie-only read/connect/logout; classify ready/offline/reauth/forbidden and observe reconnect. Only actual F01 public client, no copied fetch/DTO.",
+    "ConversationJournal": {
+      "interface": [
+        "loadVerified",
+        "saveDraft(expectedVersion)",
+        "prepare(frozenReceipt)",
+        "markDispatching(expectedVersion)",
+        "checkpoint(decodedIdentity)",
+        "dismissConfirmed"
+      ],
+      "authority": "IDB transaction CAS/budget only; Outbox/QueueCommands/SteeringControl remain business authorities. App owns views/routes/layout."
+    }
+  },
+  "restore": "Restore stableview/draft ID and alias, profile/project locked by creation receipt. Existing controllers need explicit material restore under current namespace/project/permission/cap and exactrefs. Keep old versions/order and unavailable/expired/unknown blocking reasons; no silent plain-text fallback. File bytes not persisted; unresolved uploads use original upload recovery/reselect. No body prefetch.",
+  "handoff": [
+    "Turn/Queue firstawait occurs after original authority sync freezes/publishes receipt; Thread immediately accepts ID/key and consumes capture.",
+    "Durableprepare transaction complete then dispatchingCAS transaction complete then one publicclient call; strict durabilityhint for both. Put success followed by commitabort still0HTTP.",
+    "Steer retains digest/generation then sync receipt. Storage/quota/CAS failures keep sameID/key/body/materials and nextdraft; no newkey or delayed restoreovernewdraft; everUnknown never downgraded.",
+    "CREATE+turn one logicalrecord with two fixedkeys/steps; decodedCREATEACK/conversationbinding checkpointcomplete before turn dispatchbarrier. Failure no secondstep.",
+    "Hydrate prepared never autosends; dispatching becomesunknown; ACK checkpointfailure remains originalkey recoverable; reauth/GETsamebody/reload never autoPOST."
+  ],
+  "capacityProposal": {
+    "status": "Root decision pending, not current capability",
+    "webOriginTotalChargedBytes": 4194304,
+    "maxDraftRecords": 32,
+    "maxLogicalCommandRecords": 128,
+    "initialCommandEnvelopeMaxBytes": 131072,
+    "commandGrowthReservationBytes": 32768,
+    "draftSerializedMaxBytes": 131072,
+    "accounting": "Entire versioned known-field JSON.stringify thenTextEncoder UTF8, include manifest/namespace and state growth. CAS/quota/version/record in same readwrite transaction; prevent ABA by persistent generation. Namespaceaddress once, not copied perrecord.",
+    "units": "CREATE+turn share1record; each pause/resume/cancel-item/cancel-task and originalsteerkey onecommand; draft=stableview+surface nextdraft separate from receipt.",
+    "semanticPreservation": "Preserve exact presence/omission vs[], orderedrefs,BOM/newlines/surrogatevalues; no TaskSummary/reply/history/unknown serveradditives stored.",
+    "limits": "Must test actual maximum legal schemas fit full128KiB envelope; otherwise revisecapacity rather than truncate. 32KiB reserve for shortACKidentity/binding/state/code/boundeddiagnostic. Does not promise128 maximalrecords fit4MiB. Oversizeunsenttextarea stays completeinmemory visiblyunsaved. Unknown neverLRU; explicitdismiss reclaims settledrecords.",
+    "chargeFormula": "manifest+namespace actualUTF8JSON + sum(command initialRecordBytes +32768 reserved growth) + sum(draft recordBytes); initialcommand<=131072, maxcharge163840. Immutableinitialbase kept, checkpoint consumes reserve without doublecharge or returningunusedreserve. Newrecord>initial+reserve preservesold/unknown. Explicitconfirmed dismiss releases. Genericquotaerrors do not disclose othernamespace counts/content.",
+    "boundedAckProjection": "Only decodedknownidentity projections: CREATEid/revision+match; turnid/task/number/revision/context identity; queue slot/key/request/revision/item/sequence/outcome/currentturn; steer command/task/attempt/owner/native/useruuid/revisions/status/bytes/digest/dates. Do not duplicate fullsummaries/replies/contextbody/history. Fixedinput savedonce.",
+    "worstCaseValidation": "Construct complete envelope with publicid<=128 arbitrarycodeunits, creationtitle/model<=180, turn<=16000, references<=4, name<=512UTF8 plus localview/slot/keys/materialdisplay/namespace reference. If legalrequest exceeds128KiB raiseperrecordcap/acceptfewercount, nevertruncate. Logicalcharge is not UA physicalquota/heap/disk guarantee."
+  },
+  "dependencies": {
+    "ATTACHI02": "9eec main cde, oldclaim nowv4released; no inheritedwrite right",
+    "Center": "31824d8 firstDTO; actualcallerOrigin/lateclear/repeatconnect semantics pending",
+    "F01": "No fixed SHA yet. Proposed mutually exclusive legacyBearer or browserSession:{csrfToken:()=>string|undefined}; HTTP/watchinclude/noAuthorization; browserSession/connectBrowserSession(ownerToken)/logoutBrowserSession, no tokensaved/noautoretry. MissingCSRF is localbeforefetchfailure, not definitiveHTTP4xx; frozenlogoutCSRF not auto-updated/retried.",
+    "SharedAck": "Sole ACKdecoder; queue existingcontextguard retained. No localdecoder",
+    "UploadJournal": "Existing localStoragecross-tabCAS remains independent, not implicitly fixed"
+  },
+  "validationProposal": {
+    "direct": "four authorities, malformed/CAS/quota/commitabort/nextdraft/CREATEcrash; purecontrolledports not claimedrealIDB",
+    "actual": "OneChrome multiple tabs+oneisolatedPG/dynamicports; cumulative<=90s including>=15scleanup, raw<=8MiB,0provider. CookieGET/SSE/reload, lostACK0autoreplay+originalretry,CREATEcrash,multi-tabCAS,materials/steerdraft,expiry/revoke/namespace,quota/commitabort. Anysecondcentercontractfixture labelledsimulated, nosecondPG.",
+    "resources": "About1.7GiB perLead; fullinstall/build>=2.5GiB and physicalgrowth+1GiB safety. No install/build/PG/browser before resources and fixedinputs; no othernode_modules/userartifacts."
+  },
+  "sourceAnchors": [
+    "Outbox18–31/58–106",
+    "QueueCommands13–29/98–130",
+    "steer/control210–250",
+    "Thread109–144/176–180",
+    "App405–418/530–547/1064–1104",
+    "session67–69",
+    "SteeringControl18–22",
+    "knowledge controller168–174",
+    "attachments controller190–198/250–264"
+  ],
+  "methods": "Panels actually read local find-skills/codebase-design/clean-code; manager records only, no experiments/newworktree/claim",
+  "prior20Scope": [
+    "apps/web/src/connection/session.ts",
+    "apps/web/src/recovery/journal.ts",
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/conversations/queue/commands.ts",
+    "apps/web/src/conversation-steering/control.ts",
+    "apps/web/src/conversation-steering/SteeringControl.tsx",
+    "apps/web/src/plugin-integration/steering.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/test/conversation-recovery.test.ts",
+    "apps/web/test/conversation-recovery.fixture.ts",
+    "apps/web/test/conversation-recovery.browser.ts",
+    "plans/wpf-conversation-recovery",
+    "docs/evidence/wpf-conversation-recovery",
+    "apps/web/src/plugin-integration/knowledge.tsx",
+    "apps/web/src/conversation-context/controller.ts",
+    "apps/web/src/plugin-integration/attachments.tsx",
+    "apps/web/src/attachments/controller.ts"
+  ],
+  "p01Refinement": {
+    "entry": "trusted builtin flow.conversation-recovery contributes existing sidebar.footer button 恢复草稿与回执; plugin-owned flow.conversation-recovery.open uses existing ui.navigate/global only to open surface",
+    "consumer": "session createRecoveryPlugin(privateBinding), App RecoverySurface within existing PluginProvider; no new HostCommand/slot/capability/types/validation/host/registry scope",
+    "hostInterface": [
+      "currentVerifiedScope()",
+      "listSummary()",
+      "openRecord(recordId,version)",
+      "restoreDraft(recordId,version)",
+      "retryReceipt(recordId,version)",
+      "dismissConfirmed(recordId,version)"
+    ],
+    "authorization": "Every callback verifies authenticated namespace, record schema/version, stableview/currentroute membership, project and existing P01/domain grants then original authority. ui.navigate cannot authorize a send. No rawclient/store/token/allnamespace exposure.",
+    "lifecycle": "Disabled or old connection closes surface, invalidates reads; does not erase journal or disable command durable barrier; binding owns only UI state/focus, not commandfacts",
+    "fixedAnchors": "types48–64/85–113/186–200; App803; session117–132"
+  },
+  "baseAddress": "Normalize fullcenter baseURL including APIpathname/proxy mode; reject userinfo/query/fragment without echoing secrets. No token/cookie/CSRF/tokenhash persisted. Durable namespace=canonicaladdress+verifiedcenter/principal; ephemeralauthgeneration excluded. Revalidate savedschema/version/identity/hash; expiry only wakesserverread, localclock neverauthority.",
+  "restoreRefinement": "Selection restoration can displayunverified/expired/unavailable while retaining exactref/order; no autobody/reupload/newversion/refreplacement. NewSend checks currentgrant/cap/bytes/expiry, unverifiablekeepsdraftblocked. Originalunknownretry usesfrozenbody/key and serverreplay, notcurrentpickerexpiry/newdraft; uploadjournalcross-tab remains separate."
+}

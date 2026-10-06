@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:12 UTC / 正式main cde6646接31源；D06与ATTACHI双端收口clean且fresh释放 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 13:18 UTC / main cde6646交付收口完成；原CONTEXTI依赖因active消费者保留，临时claim已释放 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,8 +17,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | ATTACHI02与MATURE04附件历史修复、D06已受控main；中心会话正式九scope领取，固定DTO三项consumer差异待确认 |
-| 下一可用交付 | 中心固定DTO三项consumer差异确认；Recovery新树/fresh范围待派，完整build≥2.5GiB门槛；个人产物未切换 |
+| 当前产出 | 附件发送与固定架构已接收；连接恢复方案正在确认，原依赖目录因仍有运行消费者而保留 |
+| 下一可用交付 | 冻结会话接口与恢复方案后再领取实现；完整构建需满足资源门槛，个人产物未切换 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |

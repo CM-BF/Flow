@@ -1,0 +1,96 @@
+{
+  "observedAt": "2026-10-06T13:16:50.454139+00:00",
+  "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules",
+  "selfInspectionPidsExcluded": [
+    24058,
+    46117
+  ],
+  "commandMatches": [
+    {
+      "pid": 39371,
+      "ppid": 38754,
+      "executable": "node",
+      "commandReferencesTargetWorktree": true
+    },
+    {
+      "pid": 39494,
+      "ppid": 39371,
+      "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "commandReferencesTargetWorktree": true
+    },
+    {
+      "pid": 39495,
+      "ppid": 39494,
+      "executable": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "commandReferencesTargetWorktree": true
+    },
+    {
+      "pid": 59491,
+      "ppid": 58575,
+      "executable": "node",
+      "commandReferencesTargetWorktree": true
+    },
+    {
+      "pid": 59669,
+      "ppid": 59491,
+      "executable": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "commandReferencesTargetWorktree": true
+    },
+    {
+      "pid": 59670,
+      "ppid": 59491,
+      "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "commandReferencesTargetWorktree": true
+    }
+  ],
+  "cwdMatches": [
+    {
+      "pid": 24079,
+      "command": "lsof",
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration"
+    },
+    {
+      "pid": 38754,
+      "command": "node",
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration"
+    },
+    {
+      "pid": 39371,
+      "command": "node",
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web"
+    },
+    {
+      "pid": 39494,
+      "command": "node",
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web"
+    },
+    {
+      "pid": 39495,
+      "command": "esbuild",
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web"
+    },
+    {
+      "pid": 58575,
+      "command": "node",
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration"
+    },
+    {
+      "pid": 59491,
+      "command": "node",
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web"
+    },
+    {
+      "pid": 59669,
+      "command": "esbuild",
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web"
+    },
+    {
+      "pid": 59670,
+      "command": "node",
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/apps/web"
+    }
+  ],
+  "lsofCwdExit": 0,
+  "lsofCwdWarnings": [],
+  "environmentRead": false
+}
