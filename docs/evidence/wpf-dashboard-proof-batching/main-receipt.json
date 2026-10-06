@@ -1,0 +1,34 @@
+{
+  "at": "2026-10-06 10:52:07 UTC",
+  "source": "Lead formal acceptance via root; owner exact Git scope comparison",
+  "acceptedMain": "da04127fd0c033135d20657742979845e1b80a63",
+  "observedMain": "c450c2da7e6185b88db9f46e0299ee504ee6f3e8",
+  "sourceHashes": {
+    "apps/execution-dashboard/src/proof.mjs": {
+      "902c9b5d35e1795d564c077034dc78cf1a36b6a0": "0ff14488a80ba10624e7c5ab5e8dd961f2ff4e994d0faf42ef768c9509d563d9",
+      "da04127fd0c033135d20657742979845e1b80a63": "0ff14488a80ba10624e7c5ab5e8dd961f2ff4e994d0faf42ef768c9509d563d9",
+      "c450c2da7e6185b88db9f46e0299ee504ee6f3e8": "0ff14488a80ba10624e7c5ab5e8dd961f2ff4e994d0faf42ef768c9509d563d9",
+      "working": "0ff14488a80ba10624e7c5ab5e8dd961f2ff4e994d0faf42ef768c9509d563d9"
+    },
+    "apps/execution-dashboard/test/proof-tree-batch.test.mjs": {
+      "902c9b5d35e1795d564c077034dc78cf1a36b6a0": "810ca77798d40f6d819ae37435c259d038e71949f53acb61381c20097222410f",
+      "da04127fd0c033135d20657742979845e1b80a63": "810ca77798d40f6d819ae37435c259d038e71949f53acb61381c20097222410f",
+      "c450c2da7e6185b88db9f46e0299ee504ee6f3e8": "810ca77798d40f6d819ae37435c259d038e71949f53acb61381c20097222410f",
+      "working": "810ca77798d40f6d819ae37435c259d038e71949f53acb61381c20097222410f"
+    },
+    "docs/evidence/wpf-dashboard-proof-batching/measure.mjs": {
+      "902c9b5d35e1795d564c077034dc78cf1a36b6a0": "2dc49d5d5e5615314cad135153a43e65f5d590d5e2b5c9e87922fddc2eacb8c3",
+      "da04127fd0c033135d20657742979845e1b80a63": "2dc49d5d5e5615314cad135153a43e65f5d590d5e2b5c9e87922fddc2eacb8c3",
+      "c450c2da7e6185b88db9f46e0299ee504ee6f3e8": "2dc49d5d5e5615314cad135153a43e65f5d590d5e2b5c9e87922fddc2eacb8c3",
+      "working": "2dc49d5d5e5615314cad135153a43e65f5d590d5e2b5c9e87922fddc2eacb8c3"
+    }
+  },
+  "ancestryExitCodes": {
+    "902c9b5d35e1795d564c077034dc78cf1a36b6a0": 1,
+    "aa715ebe3e482118dac08c5bca6651be0e984a59": 1
+  },
+  "method": "scope-tree byte identity, not ancestor; controlled integration",
+  "auditCorrection": "Initial owner audit incorrectly asserted ancestry as required and stopped before writing. Exact sources passed; accepted integration uses scope identity, no ancestry claim.",
+  "testsRerun": false,
+  "deployment": "Lead reports owned4320 reload131sources; owner no new API/benchmark"
+}

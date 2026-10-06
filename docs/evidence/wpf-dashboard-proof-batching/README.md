@@ -10,4 +10,6 @@
 
 实验已用34.897秒/16.08MB trace完成，**不再执行更多baseline/after**。普通行为复验：`/opt/homebrew/opt/node@24/bin/node --test apps/execution-dashboard/test/proof-tree-batch.test.mjs apps/execution-dashboard/test/proof-snapshot.test.mjs apps/execution-dashboard/test/human-proof.test.mjs`。它仅创建自有临时Git样本；0个人服务/产品DB/模型。
 
-单次128来源ls-tree1920→384、总Git3080→1544；时延9.27→8.10秒仅样本，非生产SLA。source assignment因无DB明确unknown；root已APPROVED；main/deployment尚未完成，未创建预览/新服务。
+单次128来源ls-tree1920→384、总Git3080→1544；时延9.27→8.10秒仅样本，非生产SLA。source assignment因无DB明确unknown；root已APPROVED；已受控main接收da04127，实际部署时延未测，未创建预览/新服务。
+
+[main原始事实与精确范围核对](main-receipt.json)：三源相同，原target不是main祖先，按scope-tree而非伪造ancestry判断。
