@@ -101,3 +101,8 @@ R03远端租约和CHAT01持久对话已领取并在独立owner树实施，当前
 2026-10-06 05:45 UTC：K02 聊天固定知识引用与 O07 原生目标拆分工具已各自领取独立范围，唯一工作源已登记。K02权威工作树 `conversation-context`、计划 `plans/k02-conversation-context`；O07权威工作树 `native-graph-tools`、计划 `plans/o07-native-graph-tools`。两领域未实现批准，不将接口/stub当功能。SVC02真实预览已升级fb906cb/v3接受，后续main前进不等于再次部署。
 
 - WPF-CHAT06S01：聊天逐段正文读取；唯一source `web-conversation-stream/plans/wpf-chat06-stream`，已登记领取/实施，App挂载后继。
+
+- CHAT08：原生对话中的补充指令；唯一source `native-active-steering/plans/chat08-native-active-steering`，仍0provider实施。
+- CHAT06P01：流式正文存储成本测量；唯一source `assistant-stream-cost-probe/plans/chat06-stream-cost`，方法准备，真实测量待协调窗口。
+
+- WPF-PERF03：聊天消息复用；唯一source `web-message-reuse/plans/wpf-perf03-message-reuse`，不变消息转换优化实施，不声称浏览器延迟收益。

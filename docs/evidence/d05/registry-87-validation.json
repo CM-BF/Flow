@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-06T07:26:22.829Z",
+  "count": 87,
+  "unique": 87,
+  "selected": [
+    {
+      "id": "WPF-PERF03",
+      "title": "聊天消息复用",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-reuse",
+      "branch": "codex/web-message-reuse",
+      "planDir": "plans/wpf-perf03-message-reuse",
+      "evidenceDir": "docs/evidence/wpf-perf03",
+      "parseErrors": [],
+      "humanComplete": true
+    },
+    {
+      "id": "CHAT08",
+      "title": "原生对话中的补充指令",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering",
+      "branch": "codex/native-active-steering",
+      "planDir": "plans/chat08-native-active-steering",
+      "evidenceDir": "docs/evidence/chat08",
+      "parseErrors": [],
+      "humanComplete": true
+    },
+    {
+      "id": "CHAT06P01",
+      "title": "流式正文存储成本测量",
+      "role": "技术验证",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-cost-probe",
+      "branch": "codex/assistant-stream-cost-probe",
+      "planDir": "plans/chat06-stream-cost",
+      "evidenceDir": "docs/evidence/chat06p01",
+      "parseErrors": [],
+      "humanComplete": true
+    }
+  ],
+  "canonicalExists": true
+}

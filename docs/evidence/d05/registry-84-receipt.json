@@ -1,0 +1,136 @@
+{
+  "observedAt": "2026-10-06T07:16:43.321760+00:00",
+  "sourceCount": 84,
+  "selected": [
+    {
+      "id": "WPF-CHAT06S01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:11:19.008Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-stream/plans/wpf-chat06-stream/status.md",
+        "syncedAt": "2026-10-06T07:16:38.910Z",
+        "stale": false,
+        "ageHours": 0.11080833333333333
+      },
+      "issues": [],
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED**",
+        "target": null
+      },
+      "proof": null,
+      "human": null
+    },
+    {
+      "id": "CHAT06C02",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:15:41.188Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-compatibility/plans/chat06c02-stream-compatibility/status.md",
+        "syncedAt": "2026-10-06T07:16:38.910Z",
+        "stale": false,
+        "ageHours": 0.029141666666666666
+      },
+      "issues": [],
+      "review": {
+        "state": "approved",
+        "record": "APPROVED",
+        "target": "5f4fe454881a792823504db242f4d948e5b7180b",
+        "proof": {
+          "target": "5f4fe454881a792823504db242f4d948e5b7180b",
+          "head": "e5f2ab0067e7f423d7968d087b409c2af6643b98",
+          "scopes": [
+            "apps/server/src/queries.ts",
+            "apps/server/src/tasks.ts",
+            "apps/server/src/m2-workspace.ts",
+            "apps/server/src/conversations/index.ts",
+            "apps/server/src/assistant-stream-compatibility"
+          ],
+          "observedAt": "2026-10-06T07:16:39.656Z",
+          "state": "unchanged",
+          "implementationChanges": [],
+          "outsideChanges": [],
+          "metadataChanges": [
+            "docs/evidence/chat06c02/main-receipt.json",
+            "docs/evidence/chat06c02/review-anchor-claim.json",
+            "docs/evidence/chat06c02/review-anchor-proof.json",
+            "docs/evidence/chat06c02/review-anchor.json",
+            "plans/chat06c02-stream-compatibility/plan.md",
+            "plans/chat06c02-stream-compatibility/review.md",
+            "plans/chat06c02-stream-compatibility/status.md"
+          ],
+          "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+        },
+        "declarationProof": "unchanged"
+      },
+      "proof": null,
+      "human": null
+    },
+    {
+      "id": "CHAT06",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:15:40.996Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-assistant-stream/plans/chat06-assistant-stream/status.md",
+        "syncedAt": "2026-10-06T07:16:38.910Z",
+        "stale": false,
+        "ageHours": 0.029141666666666666
+      },
+      "issues": [],
+      "review": {
+        "state": "approved",
+        "record": "APPROVED",
+        "target": "d9a162738c5c3b3531fc7f5da3a5c0ea1e846e67",
+        "proof": {
+          "target": "d9a162738c5c3b3531fc7f5da3a5c0ea1e846e67",
+          "head": "594e1a912a24cad6b1c12837ea379fba12ef3a7f",
+          "scopes": [
+            "packages/contracts/src/assistant-stream.ts",
+            "packages/contracts/src/runner.ts",
+            "packages/contracts/src/tasks.ts",
+            "apps/runner/src/assistant-stream",
+            "apps/runner/src/claude.ts",
+            "apps/server/src/assistant-stream",
+            "apps/server/src/events.ts",
+            "packages/storage/migrations/022-assistant-stream.sql"
+          ],
+          "observedAt": "2026-10-06T07:16:39.658Z",
+          "state": "unchanged",
+          "implementationChanges": [],
+          "outsideChanges": [],
+          "metadataChanges": [
+            "docs/evidence/chat06/main-receipt.json",
+            "docs/evidence/chat06/review-anchor-claim.json",
+            "docs/evidence/chat06/review-anchor-proof.json",
+            "docs/evidence/chat06/review-anchor.json",
+            "plans/chat06-assistant-stream/review.md",
+            "plans/chat06-assistant-stream/status.md"
+          ],
+          "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+        },
+        "declarationProof": "unchanged"
+      },
+      "proof": null,
+      "human": null
+    },
+    {
+      "id": "F01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T07:14:05.412Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/plans/f01-shared-domains/status.md",
+        "syncedAt": "2026-10-06T07:16:38.910Z",
+        "stale": false,
+        "ageHours": 0.04414166666666667
+      },
+      "issues": [],
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED（steering薄client）**",
+        "target": "1b16d23de5b00f897fe9bd0fa07879c84d78e936"
+      },
+      "proof": null,
+      "human": null
+    }
+  ]
+}
