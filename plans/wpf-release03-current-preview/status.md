@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 15:47:11 UTC |
+| 最近更新时间 | 2026-10-06 15:53:47 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098（后继源码固定） |
-| 工作树dirty状态 | 负兼容676f与后继d837双端clean已核；新源码1a7c已提交，本段仅计划/证据待提交，最终clean另核 |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / 269103d44f153f13a2f35fadb08bf11d4f62e48d（后继源码固定） |
+| 工作树dirty状态 | 修复源码269103d已提交；本记录为metadata提交前时点，完成后local/remote/clean另核 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | NOT_RUN 1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098（新后端及B-only源码）；旧432b实际A两项FAILED，B未运行 |
+| 检查状态 | NOT_RUN 269103d44f153f13a2f35fadb08bf11d4f62e48d（新后端及B-only源码）；旧432b实际A两项FAILED，B未运行 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；新后端重绑待独审；旧A失败/新组合未运行 |
-| 实现目标 | 1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098 |
+| 实现目标 | 269103d44f153f13a2f35fadb08bf11d4f62e48d |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 修复版本与分阶段前端验证入口已准备，等待检查 |
+| 当前产出 | 详情响应校验已修正，等待独立复核 |
 | 下一可用交付 | 后台最小修复后继续未完成的真实前端验证 |
-| 当前阻塞 | ACTIVE: 原后台附件历史检查失败；等待固定修复版本、来源审查和新的运行准入 |
+| 当前阻塞 | ACTIVE: 原后台检查失败；修复组合已固定，验证脚本修正待复核与新准入 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，新B-only/后端闭包源码及完整兼容审查NOT_STARTED；旧432b源码条件APPROVED |
+| Review | [review.md](review.md)，269103d修复待审，原1a7源码REQUEST_CHANGES/P1；完整兼容NOT_STARTED；旧432b源码条件APPROVED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -76,3 +76,7 @@ root已只读独立核10份raw共80,470B，见[原样结果审计](../../docs/ev
 ## 2026-10-06 15:47:11 UTC B-only与最终输入待审
 
 固定1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098：metadata闭包改为root外部af51精确列表；新增app模式消费独立审查钉住的成功A十份raw，共用历史事实断言与独立contracthash。不会重复A、不会信passed布尔自动开Chrome。[当前接口](../../docs/evidence/wpf-release03/backend-input-interface.md)、[静态审计](../../docs/evidence/wpf-release03/app-attestation-source-audit.json)。新源码0types/运行，旧3874ms/80470B不变；等待fixed独审及freshgate。前段“无B-only”描述仅dbaa历史，已被本源码候选替代，尚无运行证明。
+
+## 2026-10-06 15:53:47 UTC 详情合同窄修
+
+root对1a7源码指出P1：把GET详情当执行输入reference解析，会拒绝合法响应。固定修复269103d44f153f13a2f35fadb08bf11d4f62e48d只改fixture，改为真实detail身份/有序冻结metadata/正文校验；不伪造execution字段、不改旧raw或原history预期。新history契约hash已更新，因此后续A/B必须绑定本次修复后的region。见[窄修审计](../../docs/evidence/wpf-release03/detail-contract-fix.json)。新types/PG/Chrome均NOT_RUN，累计仍3,874ms/余176,126ms，无gate。

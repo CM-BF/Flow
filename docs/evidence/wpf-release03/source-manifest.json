@@ -1,12 +1,12 @@
 {
-  "implementationTarget": "1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098",
+  "implementationTarget": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
   "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
-  "method": "Source-only fixed bytes, marker region and original raw preservation; no new import/types/PG/Chrome",
+  "method": "Source-only detail DTO correction and raw byte preservation; no imports/types/PG/Chrome",
   "files": [
     {
       "path": "apps/web/test/web-current-preview.fixture.ts",
-      "bytes": 26829,
-      "sha256": "6ae1fcdd23bbf6643047d05a0e6bdf8442667119c583a39141b55df5edc2308e"
+      "bytes": 28313,
+      "sha256": "353aabc21dffc9461015f2d798e3a6894f5eeb58714368de21a75bf18d38a1bb"
     },
     {
       "path": "apps/web/test/web-current-preview.browser.ts",
@@ -48,7 +48,7 @@
     "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
     "approvedFix": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd"
   },
-  "historyContractSha256": "612f03112126a305785bfce31e51843de05c380724fb2226739b40fe0a37dbe8",
-  "historyContractRegionBytes": 10340,
+  "historyContractSha256": "59cde31c515e29ef9856cfd5733a8d2ce9733fff31dc8dec466232abd5507086",
+  "historyContractRegionBytes": 11859,
   "gateAccounting": "previousRuntimeMs must equal sum of all existing completed budgets; current3874/180000ms"
 }

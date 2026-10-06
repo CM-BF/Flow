@@ -34,3 +34,7 @@
 ## 2026-10-06 15:47:11 UTC 条件链实现
 
 原四scope内fixed 1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098实现history→独立app gate，不将已通过A无理由重跑。historyregion与整个harnessHEAD分开；raw/digest、实际factorytuple、清理/累计预算共同门禁。完整接口与未运行边界见当前backend-input-interface，实际runtime等待源码审查后管理freshgate。
+
+## 2026-10-06 15:53:47 UTC 独审修复
+
+root的1a7详情DTO误用P1由fixture窄修处理，固定269103d44f153f13a2f35fadb08bf11d4f62e48d；原history真实兼容仍待运行，旧362负结果和预算不变。不修改后端/shared/raw。

@@ -1,0 +1,176 @@
+{
+  "fixed": "1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098",
+  "comparison": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+  "sources": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "sha256": "6ae1fcdd23bbf6643047d05a0e6bdf8442667119c583a39141b55df5edc2308e",
+      "bytes": 26829,
+      "currentMatches": false
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "sha256": "f741966746e4222380288c93f92e6fbec092ff042633717752b785cc69943ffa",
+      "bytes": 43464,
+      "currentMatches": true
+    }
+  ],
+  "retainedRaw": [
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/budget.json",
+      "bytes": 130,
+      "sha256": "bcb5a5c00c8dd5f1aeaf1a20027a95f45c544e9183e989ff08e887142b4536a9",
+      "unchangedSinceDbaa": true,
+      "shape": [
+        "complete",
+        "startedAt",
+        "elapsedMs",
+        "previousMs",
+        "permittedMs"
+      ],
+      "budget": {
+        "complete": true,
+        "startedAt": "2026-10-06T15:27:55.348Z",
+        "elapsedMs": 3874,
+        "previousMs": 0,
+        "permittedMs": 60000
+      }
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/cleanup.json",
+      "bytes": 333,
+      "sha256": "4aa56df066f005d55c9c3ddf6ad35aebdda095bae96f5f7364a5e300ee260f8a",
+      "unchangedSinceDbaa": true,
+      "shape": [
+        "databaseName",
+        "databaseCreateAttempted",
+        "databaseCreated",
+        "markerWritten",
+        "databaseRemoved",
+        "errors",
+        "processIds",
+        "finishedAt"
+      ],
+      "cleanup": {
+        "databaseCreateAttempted": true,
+        "databaseCreated": true,
+        "markerWritten": true,
+        "databaseRemoved": true,
+        "errors": [],
+        "processIds": [
+          {
+            "pid": 381,
+            "exitCode": 0,
+            "signalCode": null
+          }
+        ]
+      }
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/database-owner.json",
+      "bytes": 169,
+      "sha256": "48854241d7bc4235916c04ac8b4cae5473dbcd6f089c145b95622a65afa79dae",
+      "unchangedSinceDbaa": true,
+      "shape": [
+        "databaseName",
+        "marker",
+        "backend"
+      ]
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/history.json",
+      "bytes": 10667,
+      "sha256": "ec0acc6f40709c56a5e0251fbac50daf7d3e6a1d159b1f96fc82166d2cb9c9ef",
+      "unchangedSinceDbaa": true,
+      "shape": {
+        "kind": "array",
+        "length": 2
+      }
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/outcome.json",
+      "bytes": 299,
+      "sha256": "9d1f8d2484123c39c0384eb7f53ea63c407c243fcc325740fadcc27be6556f60",
+      "unchangedSinceDbaa": true,
+      "shape": [
+        "passed",
+        "historyPassed",
+        "mode",
+        "phaseB",
+        "compatibilityId",
+        "errors",
+        "cleanupErrors",
+        "backend",
+        "artifactId"
+      ],
+      "outcome": {
+        "passed": false,
+        "historyPassed": false,
+        "mode": "history",
+        "phaseB": "NOT_RUN",
+        "compatibilityId": null
+      }
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/process.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "unchangedSinceDbaa": true
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/sources.json",
+      "bytes": 1779,
+      "sha256": "116fde366ebd9c15211b334ed6c552a996f92e332c8116015f8505914ea47ae1",
+      "unchangedSinceDbaa": true,
+      "shape": [
+        "head",
+        "backend",
+        "sourceTree",
+        "dirty",
+        "files"
+      ]
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/supervisor.json",
+      "bytes": 12802,
+      "sha256": "4848a7019a7a5818e0e0e5afb5312c19437d3964208753b2a74e2e0735bd78f8",
+      "unchangedSinceDbaa": true,
+      "shape": [
+        "checksAndCleanupPassed",
+        "result",
+        "errors",
+        "cleanup",
+        "resourcePolicy",
+        "minimumFreeBytes",
+        "freeAtEnd",
+        "attribution",
+        "providerQueries"
+      ]
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/wire.json",
+      "bytes": 42857,
+      "sha256": "518256c57ea810d85bf633f938ca1744007ebda0be596aeb7d70bd3cda49bb82",
+      "unchangedSinceDbaa": true,
+      "shape": {
+        "kind": "array",
+        "length": 40
+      }
+    },
+    {
+      "path": "docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/worker.json",
+      "bytes": 11434,
+      "sha256": "1f2070ccf37da760b1ca567dd314f2765738a7b31681ddc07fe18b6cc1ab22b0",
+      "unchangedSinceDbaa": true,
+      "shape": [
+        "passed",
+        "historyPassed",
+        "history",
+        "app",
+        "errors",
+        "cleanupErrors"
+      ]
+    }
+  ],
+  "method": "read fixed git objects and existing raw files only; no import/execution/test/gate/resource sample"
+}

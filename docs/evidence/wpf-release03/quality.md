@@ -35,3 +35,7 @@
 ## 2026-10-06 15:47:11 UTC 分阶段证据clean-code
 
 复用find-skills/clean-code/codebase-design：原两脚本职责不变，sharedassertHistoryFacts唯一维护live/reuse历史事实，boundedFile复用O_NOFOLLOW/有界读取，backendclosure由外部可信准入提供而非候选自授。改正接口sourceCommit=实际A执行HEAD、cleanup无marker字段；不以false的全链passed否决合法A-only，也不以true布尔替事实。原十rawhash未改、累计不清零。仅Gitdiffcheck/Python固定源与marker/raw/保护范围检查；没有import/types/PG/browser/空间采样。新候选仍NOT_STARTED。
+
+## 2026-10-06 15:53:47 UTC detail DTO清码安全点
+
+继续复用已读本地clean-code/codebase-design：reference和detail是不同公开合同，不以同名上下文概念共用不适用解析器。仅fixture删除错误schema调用/导入，使用已验证reference核真实detail身份、有序metadata、UTF8正文与whole-file摘要；没有新增通用decoder/服务修改。原history语义不降级，当前版本观察不与冻结观察混淆。原十raw全hash不变，保护路径零差、源码diffcheck0；只有文本/hash检查，未运行代码/import/types/PG/Chrome。新target待独审。

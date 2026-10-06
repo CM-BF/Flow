@@ -1,6 +1,6 @@
 # RELEASE03 固定组合验证（旧A失败；新后端重绑待审）
 
-当前后继重绑target `1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098` 已固定，未运行；[backend输入接口](backend-input-interface.md)。旧362结果仍绑定432b，未回填新后端。
+当前后继修复target `269103d44f153f13a2f35fadb08bf11d4f62e48d` 已固定，未运行；原1a7详情合同P1源级finding保留，修复待独审；[backend输入接口](backend-input-interface.md)。旧362结果仍绑定432b，未回填新后端。
 
 历史固定432b已完成唯一一次 A-only 真实HTTP检查：attachment-only与mixed两项均失败，复现固定362的附件历史缺口；专库/worker清理成功。累计3,874/180,000ms，B/Chrome NOT_RUN，0provider，无SVC全绿报告或发布操作。见[本次结果及原样hash](history-result-152729.json)。原strict noEmit成功与源码条件批准保持其历史范围，不等业务兼容通过。
 
@@ -18,7 +18,7 @@
 
 ## 准入与资源
 
-本次唯一A准入已消费完；后续运行仍需 manager/root 新明确准入提供 `FLOW_RELEASE03_GATE`，其JSON必须含 allowRun、mode（history或all）、准确backend/artifactId、唯一简单run名、过期时间、totalMs及minimumFreeBytes。脚本要求累计<=180000ms、每轮>=20000ms清理，mode=history单次至多60000ms（含20000ms清理），start>=1GiB+32MiB、stop<=1GiB+16MiB；mode=all保留start128MiB/stop64MiB附加余量。monitor失败也停工作。监视先于business import/CREATE启动，关键await后fresh checkpoint防止已stop后继续spawn；worker import/factory/listen/manifest await亦核abort。250ms轮询不是硬配额，无法排除其他进程/OS并发。Lead此前同factory专库12,360,727B是实测数据库大小，不是PG/WAL物理增量上限；32MiB给A-only一个受监督的增量窗口，不能源级证明瞬间peak。A不生成Chrome profile、不build/clone/install，retained证据仍总8MiB，剩余约1GiB用于未知并发/清理；fresh资源准入仍必要。
+本次唯一A准入已消费完；后续运行仍需 manager/root 新明确准入提供 `FLOW_RELEASE03_GATE`，其JSON必须含 allowRun、mode（history、app或all）、准确backend/artifactId、唯一简单run名、过期时间、totalMs及minimumFreeBytes。脚本要求累计<=180000ms、每轮>=20000ms清理，mode=history单次至多60000ms（含20000ms清理），start>=1GiB+32MiB、stop<=1GiB+16MiB；mode=all保留start128MiB/stop64MiB附加余量。monitor失败也停工作。监视先于business import/CREATE启动，关键await后fresh checkpoint防止已stop后继续spawn；worker import/factory/listen/manifest await亦核abort。250ms轮询不是硬配额，无法排除其他进程/OS并发。Lead此前同factory专库12,360,727B是实测数据库大小，不是PG/WAL物理增量上限；32MiB给A-only一个受监督的增量窗口，不能源级证明瞬间peak。A不生成Chrome profile、不build/clone/install，retained证据仍总8MiB，剩余约1GiB用于未知并发/清理；fresh资源准入仍必要。
 
 实际运行沿此命令形式（本次gate原样保留在[history-gate](history-gate-152729.json)，后续不得复用）：`TSX_DISABLE_CACHE=1 FLOW_RELEASE03_GATE=<manager-owned-admission> /opt/homebrew/opt/node@24/bin/node --import tsx apps/web/test/web-current-preview.browser.ts`。没有install、build、复制源码/依赖步骤。
 

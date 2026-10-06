@@ -2,7 +2,7 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098
+Review target commit：269103d44f153f13a2f35fadb08bf11d4f62e48d
 
 Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
@@ -37,3 +37,7 @@ Base：362af3bac77541e5a60979326bcf4d4b8c947915
 ## 2026-10-06 15:47:11 UTC 新源码待独审
 
 当前target=1a7c42ac90e73471cce1fc8e1d56f4d0e60c2098：B-only原始证据准入、共享history事实断言、contractregion与外部13metadata闭包。纯SOURCE审查待开始，types/PG/Chrome均NOT_RUN；原dbaa批注只说明旧guard不接实际backend，不冒本轮已审。最新实际input见root原样af51审计；旧362业务FAIL独立保留。
+
+## 2026-10-06 15:53:47 UTC 1a7源码P1与新修复
+
+root固定1a7源码结论REQUEST_CHANGES：GET ContextDetail不含executionInputId/executionInputDigest，不能调用reference响应schema。此为源级必然拒绝，不是新A运行失败。修复target 269103d44f153f13a2f35fadb08bf11d4f62e48d：只有fixture详情校验改动，公共合同与原history断言保持；新target独审NOT_STARTED，不能把旧源码批准扩为本轮批准。[作者窄修审计](../../docs/evidence/wpf-release03/detail-contract-fix.json)。未重新types/PG/Chrome。
